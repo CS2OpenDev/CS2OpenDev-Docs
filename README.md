@@ -7,32 +7,41 @@ and published to **GitHub Pages**.
 
 ### How it works
 
-[GameTracking-CS2](https://github.com/SteamDatabase/GameTracking-CS2) is
-included as a **read-only git submodule** at `data/`.  A scheduled GitHub
-Actions workflow runs every **30 minutes**, advances the submodule to the latest
-upstream HEAD, and regenerates documentation if anything has changed.  The
-updated submodule pointer and generated Markdown are committed back to this
-repo and deployed to GitHub Pages automatically.
+Two upstream repos are included as **read-only git submodules**:
+
+- [`SteamDatabase/GameTracking-CS2`](https://github.com/SteamDatabase/GameTracking-CS2)
+  at `data/` — Protobufs, .gameevents, ConVars, commands.
+- [`ValveResourceFormat/SchemaExplorer`](https://github.com/ValveResourceFormat/SchemaExplorer)
+  at `schema-explorer/` — DumpSource2's structured `cs2.json.gz` (the source of
+  truth for entity schemas: classes, enums, fields, offsets, sizes, parents,
+  metadata).
+
+A scheduled GitHub Actions workflow runs every **4 hours**, advances both
+submodules to upstream HEAD, and regenerates documentation if anything
+changed.  The updated submodule pointers and generated Markdown are committed
+back to this repo and deployed to GitHub Pages automatically.
 
 ```
-SteamDatabase/GameTracking-CS2  (upstream, read-only)
-    └── data/  ← git submodule (pointer committed here)
-            │
-            ▼
+SteamDatabase/GameTracking-CS2          ValveResourceFormat/SchemaExplorer
+    └── data/  ← submodule pointer            └── schema-explorer/  ← submodule pointer
+            │                                            │
+            ▼                                            ▼
   this repo
     ├── docs/generate_docs.py   ← generator
-    ├── docs/overlays/          ← community annotations
-    └── docs/*.md               ← generated output (committed) → GitHub Pages
+    ├── docs/overlays/          ← community annotations (hand-edited)
+    ├── docs/index.md           ← generated home page
+    └── docs/generated/         ← generated reference docs (committed) → GitHub Pages
 ```
 
 ### Browse the docs
 
-Visit the GitHub Pages site for this repository, or browse `docs/` directly.
+Visit the GitHub Pages site for this repository, or browse `docs/generated/`
+directly.
 
 ### Protobuf Reference
 
-Every Protobuf file has a page in [`docs/proto/`](docs/proto/) containing a
-Mermaid class diagram, full field tables, enum value listings, and
+Every Protobuf file has a page in [`docs/generated/proto/`](docs/generated/proto/)
+containing a Mermaid class diagram, full field tables, enum value listings, and
 overlay-based annotations.
 
 ### Contributing annotations
@@ -46,19 +55,27 @@ See [`docs/overlays/README.md`](docs/overlays/README.md) for the full format and
 ### Running the generator locally
 
 ```bash
-# Clone with submodule
+# Clone with both submodules
 git clone --recurse-submodules https://github.com/sid2934/CS2-OpenDevDocs.git
 cd CS2-OpenDevDocs
 
-# Or initialise the submodule in an existing clone
-git submodule update --init
+# Or initialise the submodules in an existing clone
+git submodule update --init --recursive
 
-pip install pyyaml
+pip install pyyaml jsonschema protobuf
+# protoc itself must also be on PATH (brew install protobuf / apt install protobuf-compiler)
 
 python3 docs/generate_docs.py \
   --repo-root . \
   --data-root ./data \
   --output docs
+```
+
+For local development without an upstream submodule pull, point at any
+DumpSource2 `cs2.json` (gzipped or not) directly:
+
+```bash
+python3 docs/generate_docs.py --schema-json /path/to/cs2.json
 ```
 
 ### Join our Discord

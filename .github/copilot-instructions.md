@@ -12,16 +12,20 @@ game-file dump (a read-only git submodule at `data/`).
 | `data/` | Git submodule – raw CS2 game files (DumpSource2 schemas, Protobufs, convars) |
 | `docs/generate_docs.py` | Python generator that produces all Markdown docs from `data/` |
 | `docs/overlays/` | YAML community-annotation files merged into the generated docs |
-| `docs/schemas/` | One Markdown file per engine module (entity classes, structs, enums) |
-| `docs/proto/` | One Markdown file per `.proto` file (messages, fields, enums) |
-| `docs/diagrams/` | Mermaid UML class-hierarchy diagrams per module |
-| `docs/convars.md` | All CS2 console variables (name, default, flags, description) |
-| `docs/commands.md` | All CS2 console commands |
+| `docs/generated/schemas/` | One Markdown file per engine module (entity classes, structs, enums) |
+| `docs/generated/proto/` | One Markdown file per `.proto` file (messages, fields, enums) |
+| `docs/generated/diagrams/` | Mermaid UML class-hierarchy diagrams per module |
+| `docs/generated/convars.md` | All CS2 console variables (name, default, flags, description) |
+| `docs/generated/commands.md` | All CS2 console commands |
 | `.github/workflows/generate-docs.yml` | Scheduled workflow: updates submodule → regenerates docs → opens a PR |
+
+> Everything under `docs/generated/` is auto-generated — do not hand-edit. To
+> change content, edit `docs/generate_docs.py` or add an overlay under
+> `docs/overlays/`.
 
 ## Key entity classes (server-side)
 
-- **`CBaseEntity`** → base of all server entities (see `docs/schemas/server.md`)
+- **`CBaseEntity`** → base of all server entities (see `docs/generated/schemas/server.md`)
 - **`CCSPlayerController`** → CS2 player controller
 - **`CCSWeaponBase`** / **`CCSWeaponBaseGun`** → weapon hierarchy
 - **`CCSGameRules`** → game-rules singleton
