@@ -40,20 +40,37 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
-      - name: Update submodule to latest upstream HEAD
+      - name: Update submodules to latest upstream HEAD
         id: submodule
         run: |
+          # GameTracking-CS2 — primary source for .proto, .gameevents, convars, commands.
           BEFORE=$(git -C data rev-parse HEAD)
           git submodule update --remote --merge data
           AFTER=$(git -C data rev-parse HEAD)
           echo "before=$BEFORE" >> "$GITHUB_OUTPUT"
           echo "after=$AFTER"   >> "$GITHUB_OUTPUT"
-          if [ "$BEFORE" = "$AFTER" ] && [ "${{ github.event_name }}" = "schedule" ]; then
+
+          # SchemaExplorer — DumpSource2's cs2.json.gz redistribution.  Same
+          # upstream pipeline as GameTracking-CS2, so it should advance in lockstep,
+          # but we bump it independently to be safe.  See TOOLING_OVERHAUL.md § 1.1.
+          # The submodule may not exist yet on branches that predate the pivot;
+          # tolerate its absence so old branches still build.
+          SCHEMA_BEFORE=""
+          SCHEMA_AFTER=""
+          if [ -d schema-explorer ]; then
+            SCHEMA_BEFORE=$(git -C schema-explorer rev-parse HEAD)
+            git submodule update --remote --merge schema-explorer || true
+            SCHEMA_AFTER=$(git -C schema-explorer rev-parse HEAD)
+          fi
+          echo "schema_before=$SCHEMA_BEFORE" >> "$GITHUB_OUTPUT"
+          echo "schema_after=$SCHEMA_AFTER"   >> "$GITHUB_OUTPUT"
+
+          if [ "$BEFORE" = "$AFTER" ] && [ "$SCHEMA_BEFORE" = "$SCHEMA_AFTER" ] && [ "${{ github.event_name }}" = "schedule" ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
-            echo "Submodule unchanged ($AFTER). Nothing to do."
+            echo "Submodules unchanged. Nothing to do."
           else
             echo "skip=false" >> "$GITHUB_OUTPUT"
-            echo "Will regenerate (was: $BEFORE, now: $AFTER, trigger: ${{ github.event_name }})."
+            echo "Will regenerate (data: $BEFORE → $AFTER, schema: $SCHEMA_BEFORE → $SCHEMA_AFTER, trigger: ${{ github.event_name }})."
           fi
 
       - name: Set up Python
@@ -62,9 +79,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install protoc
+        if: steps.submodule.outputs.skip == 'false'
+        run: sudo apt-get install -y --no-install-recommends protobuf-compiler
+
       - name: Install Python dependencies
         if: steps.submodule.outputs.skip == 'false'
-        run: pip install pyyaml -q
+        run: pip install pyyaml jsonschema protobuf -q
 
       - name: Generate documentation
         if: steps.submodule.outputs.skip == 'false'
@@ -81,6 +102,7 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data docs/
+          if [ -d schema-explorer ]; then git add schema-explorer; fi
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
