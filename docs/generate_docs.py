@@ -28,6 +28,7 @@ Dependencies (all in the Python 3 stdlib except PyYAML):
 from __future__ import annotations
 
 import argparse
+import copy
 import gzip
 import json
 import re
@@ -101,8 +102,8 @@ def _metadata_friendly_text(metas: list[dict[str, Any]] | None) -> str:
 
 def _stringify_type(t: dict[str, Any]) -> str:
     """Convert a structured cs2.json type node into the legacy string form
-    that the rest of the generator (`map_cs2_type`, `_extract_type_refs`,
-    Mermaid renderers) understands.
+    that the rest of the generator (`_extract_type_refs`, Mermaid
+    renderers, Markdown tables) understands.
 
     Mapping:
       builtin / declared_class / declared_enum  -> name
@@ -203,6 +204,10 @@ def _convert_class(cls: dict[str, Any]) -> dict[str, Any]:
         "metadata": list(cls.get("metadata", [])),
         "enum_underlying": None,
         "size": cls.get("size"),
+        # Original upstream record preserved verbatim so the generated
+        # cs2_schema.json can echo cs2.json.gz's exact shape with overlay
+        # annotations layered on top.  See generate_cs2_schema().
+        "raw": cls,
     }
 
 
@@ -234,6 +239,8 @@ def _convert_enum(en: dict[str, Any]) -> dict[str, Any]:
         "fields": fields,
         "metadata": list(en.get("metadata", [])),
         "enum_underlying": en.get("alignment"),
+        # Original upstream record preserved verbatim — see _convert_class.
+        "raw": en,
     }
 
 
@@ -1691,522 +1698,101 @@ def generate_gameevents_md_page(
     (out_dir / "gameevents.md").write_text("\n".join(lines), encoding="utf-8")
 
 
-def generate_gameevents_json_schema(
+def generate_gameevents_schema(
     gameevents: list[dict[str, Any]],
     overlays: dict[str, dict],
     out_dir: Path,
 ) -> None:
-    """Generate a JSON Schema file describing all game events.
+    """Generate ``gameevents_schema.json`` — a community-enriched mirror
+    of the parsed ``.gameevents`` registry.
 
-    The schema follows the JSON Schema 2020-12 specification and uses
-    ``$defs`` to define each event as a reusable sub-schema.
+    Format mirrors the natural shape of the upstream KV1 source: a flat
+    list of events under top-level ``events``, each preserving its
+    parsed ``name`` / ``comment`` / ``source`` / ``properties`` /
+    ``fields`` keys.  Field type tags (``bool``, ``byte``, ``short``,
+    ``player_controller``, …) come straight from the .gameevents
+    sources — see ``_GAMEEVENTS_TYPE_MAP`` for human-readable mappings,
+    rendered into the Markdown reference page.
+
+    The single addition is an optional ``annotations`` block on events
+    and fields carrying community-curated descriptions / notes /
+    warnings from ``docs/overlays/gameevents.yml``.
+
+    See ``generate_cs2_schema`` for the matching cs2_schema.json
+    pivot — same pattern, same rationale (JSON Schema 2020-12 was
+    abandoned for the entity dump, kept here would be inconsistent).
     """
     overlay = overlays.get("gameevents", {})
     overlay_events: dict = overlay.get("events", {}) or {}
 
-    defs: dict[str, Any] = {}
+    events_out: list[dict[str, Any]] = []
     for ev in gameevents:
         ename = ev["name"]
         eov = overlay_events.get(ename, {}) if isinstance(overlay_events, dict) else {}
 
-        # Build description from overlay or inline comment
-        desc_parts: list[str] = []
-        if eov and isinstance(eov, dict) and eov.get("description"):
-            desc_parts.append(str(eov["description"]))
-        elif ev["comment"]:
-            desc_parts.append(ev["comment"])
-        if ev["properties"]:
-            props = ", ".join(f"{k}={v}" for k, v in ev["properties"].items())
-            desc_parts.append(f"(properties: {props})")
-
-        event_schema: dict[str, Any] = {
-            "type": "object",
-            "unevaluatedProperties": False,
+        record: dict[str, Any] = {
+            "name": ename,
+            "comment": ev.get("comment", ""),
+            "source": ev.get("source", ""),
+            "properties": dict(ev.get("properties", {})),
+            "fields": [
+                {
+                    "name": fld["name"],
+                    "type": fld["type"],
+                    "comment": fld.get("comment", ""),
+                }
+                for fld in ev.get("fields", [])
+            ],
         }
-        if desc_parts:
-            event_schema["description"] = " ".join(desc_parts)
 
-        # Add source metadata
-        event_schema["x-source"] = ev["source"]
+        annots = _overlay_annotations(eov)
+        if annots:
+            record["annotations"] = annots
 
-        properties: dict[str, Any] = {}
-        required: list[str] = []
-        overlay_flds: dict = (
-            eov.get("fields", {}) or {}
-            if eov and isinstance(eov, dict) else {}
-        )
-        for fld in ev["fields"]:
-            fname = fld["name"]
-            ftype = fld["type"]
-            fov = overlay_flds.get(fname, {}) if isinstance(overlay_flds, dict) else {}
+        # Per-field overlays — same `annotations` projection.
+        overlay_flds = eov.get("fields", {}) if isinstance(eov, dict) else {}
+        if isinstance(overlay_flds, dict) and overlay_flds:
+            for fld in record["fields"]:
+                fov = overlay_flds.get(fld["name"])
+                fld_annots = _overlay_annotations(fov)
+                if fld_annots:
+                    fld["annotations"] = fld_annots
 
-            type_info = _GAMEEVENTS_TYPE_MAP.get(ftype, {"type": "string"})
-            fprop: dict[str, Any] = {"type": type_info["type"]}
+        events_out.append(record)
 
-            # Use the original game-event type as a format hint
-            fprop["x-gameevents-type"] = ftype
-
-            # Build field description
-            fdesc_parts: list[str] = []
-            if fov and isinstance(fov, dict) and fov.get("description"):
-                fdesc_parts.append(str(fov["description"]))
-            if fld["comment"]:
-                fdesc_parts.append(fld["comment"])
-            if fov and isinstance(fov, dict) and fov.get("notes"):
-                fdesc_parts.append(fov["notes"])
-            if fdesc_parts:
-                fprop["description"] = " ".join(fdesc_parts)
-
-            properties[fname] = fprop
-            required.append(fname)
-
-        if properties:
-            event_schema["properties"] = properties
-        if required:
-            event_schema["required"] = required
-
-        defs[ename] = event_schema
-
-    schema: dict[str, Any] = {
-        "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "$id": "https://sid2934.github.io/CS2-OpenDevDocs/gameevents_schema.json",
-        "title": "CS2 Game Events Schema",
-        "description": (
-            "JSON Schema describing all game events extracted from CS2's "
-            ".gameevents resource files.  Each event is defined under $defs "
-            "and can be referenced individually."
-        ),
-        "type": "object",
-        "oneOf": [
-            {"$ref": f"#/$defs/{name}"} for name in defs
-        ],
-        "$defs": defs,
-    }
-
-    (out_dir / "gameevents_schema.json").write_text(
-        json.dumps(schema, indent=2, ensure_ascii=False) + "\n",
+    out: dict[str, Any] = {"events": events_out}
+    schema_dir = out_dir / "downstream-codegen-schemas"
+    schema_dir.mkdir(parents=True, exist_ok=True)
+    (schema_dir / "gameevents_schema.json").write_text(
+        json.dumps(out, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
 
 
 # ---------------------------------------------------------------------------
-# CS2 entity JSON Schema generation
+# CS2 entity schema generation
 # ---------------------------------------------------------------------------
-
-# Atomic CS2 / engine types that map directly to JSON Schema primitives.
-# Anything not in this table goes through the structural decomposers
-# (template / pointer / array / bitfield) and finally the entity-$ref fallback.
-_CS2_PRIMITIVE_TYPES: dict[str, dict[str, Any]] = {
-    "bool":      {"type": "boolean"},
-    "int8":      {"type": "integer", "format": "int8"},
-    "int16":     {"type": "integer", "format": "int16"},
-    "int32":     {"type": "integer", "format": "int32"},
-    "int64":     {"type": "integer", "format": "int64"},
-    "uint8":     {"type": "integer", "format": "uint8"},
-    "uint16":    {"type": "integer", "format": "uint16"},
-    "uint32":    {"type": "integer", "format": "uint32"},
-    "uint64":    {"type": "integer", "format": "uint64"},
-    "uint8_t":   {"type": "integer", "format": "uint8"},
-    "uint16_t":  {"type": "integer", "format": "uint16"},
-    "uint32_t":  {"type": "integer", "format": "uint32"},
-    "uint64_t":  {"type": "integer", "format": "uint64"},
-    "float32":   {"type": "number", "format": "float"},
-    "float64":   {"type": "number", "format": "double"},
-    "float":     {"type": "number", "format": "float"},
-    "double":    {"type": "number", "format": "double"},
-    # CS2 string-ish atoms
-    "CUtlSymbolLarge": {"type": "string"},
-    "CUtlString":      {"type": "string"},
-    "CUtlStringToken": {"type": "string"},
-    "CGlobalSymbol":   {"type": "string"},
-    # CS2 time scalars (ticks are integers, GameTime_t is a float)
-    "GameTime_t": {"type": "number", "format": "float"},
-    "GameTick_t": {"type": "integer", "format": "int32"},
-    # CEntityHandle is structurally a handle but with no entity arg
-    "CEntityHandle": {"type": "integer", "format": "uint32", "x-cs2-handle": True},
-}
-
-# Compound/math types that show up in entity bodies but aren't dumped as
-# separate header files.  We inject them into $defs upfront so other entities
-# can $ref them.
-_CS2_SYNTHETIC_DEFS: dict[str, dict[str, Any]] = {
-    "Vector": {
-        "type": "object",
-        "title": "Vector",
-        "description": "3D vector.",
-        "properties": {
-            "x": {"type": "number", "format": "float"},
-            "y": {"type": "number", "format": "float"},
-            "z": {"type": "number", "format": "float"},
-        },
-        "required": ["x", "y", "z"],
-        "x-cs2-synthetic": True,
-    },
-    "VectorAligned": {
-        "type": "object",
-        "title": "VectorAligned",
-        "description": "16-byte-aligned 3D vector (memory layout: Vector + padding).",
-        "properties": {
-            "x": {"type": "number", "format": "float"},
-            "y": {"type": "number", "format": "float"},
-            "z": {"type": "number", "format": "float"},
-        },
-        "required": ["x", "y", "z"],
-        "x-cs2-synthetic": True,
-    },
-    "Vector2D": {
-        "type": "object",
-        "title": "Vector2D",
-        "description": "2D vector.",
-        "properties": {
-            "x": {"type": "number", "format": "float"},
-            "y": {"type": "number", "format": "float"},
-        },
-        "required": ["x", "y"],
-        "x-cs2-synthetic": True,
-    },
-    "Vector4D": {
-        "type": "object",
-        "title": "Vector4D",
-        "description": "4D vector.",
-        "properties": {
-            "x": {"type": "number", "format": "float"},
-            "y": {"type": "number", "format": "float"},
-            "z": {"type": "number", "format": "float"},
-            "w": {"type": "number", "format": "float"},
-        },
-        "required": ["x", "y", "z", "w"],
-        "x-cs2-synthetic": True,
-    },
-    "QAngle": {
-        "type": "object",
-        "title": "QAngle",
-        "description": "Euler angles (pitch, yaw, roll), in degrees.",
-        "properties": {
-            "pitch": {"type": "number", "format": "float"},
-            "yaw":   {"type": "number", "format": "float"},
-            "roll":  {"type": "number", "format": "float"},
-        },
-        "required": ["pitch", "yaw", "roll"],
-        "x-cs2-synthetic": True,
-    },
-    "Quaternion": {
-        "type": "object",
-        "title": "Quaternion",
-        "description": "Unit quaternion.",
-        "properties": {
-            "x": {"type": "number", "format": "float"},
-            "y": {"type": "number", "format": "float"},
-            "z": {"type": "number", "format": "float"},
-            "w": {"type": "number", "format": "float"},
-        },
-        "required": ["x", "y", "z", "w"],
-        "x-cs2-synthetic": True,
-    },
-    "Color": {
-        "type": "object",
-        "title": "Color",
-        "description": "RGBA color, 8 bits per channel.",
-        "properties": {
-            "r": {"type": "integer", "format": "uint8"},
-            "g": {"type": "integer", "format": "uint8"},
-            "b": {"type": "integer", "format": "uint8"},
-            "a": {"type": "integer", "format": "uint8"},
-        },
-        "required": ["r", "g", "b", "a"],
-        "x-cs2-synthetic": True,
-    },
-    "Color32": {
-        "type": "object",
-        "title": "Color32",
-        "description": "Packed 32-bit RGBA color.",
-        "properties": {
-            "r": {"type": "integer", "format": "uint8"},
-            "g": {"type": "integer", "format": "uint8"},
-            "b": {"type": "integer", "format": "uint8"},
-            "a": {"type": "integer", "format": "uint8"},
-        },
-        "required": ["r", "g", "b", "a"],
-        "x-cs2-synthetic": True,
-    },
-    "CTransform": {
-        "type": "object",
-        "title": "CTransform",
-        "description": "Position + rotation transform.",
-        "properties": {
-            "position": {"$ref": "#/$defs/VectorAligned"},
-            "rotation": {"$ref": "#/$defs/Quaternion"},
-        },
-        "required": ["position", "rotation"],
-        "x-cs2-synthetic": True,
-    },
-    "matrix3x4_t": {
-        "type": "array",
-        "title": "matrix3x4_t",
-        "description": "3x4 transform matrix (row-major, 12 floats).",
-        "items": {"type": "number", "format": "float"},
-        "minItems": 12,
-        "maxItems": 12,
-        "x-cs2-synthetic": True,
-    },
-    "matrix3x4a_t": {
-        "type": "array",
-        "title": "matrix3x4a_t",
-        "description": "16-byte-aligned 3x4 transform matrix.",
-        "items": {"type": "number", "format": "float"},
-        "minItems": 12,
-        "maxItems": 12,
-        "x-cs2-synthetic": True,
-    },
-    "matrix4x4_t": {
-        "type": "array",
-        "title": "matrix4x4_t",
-        "description": "4x4 transform matrix (row-major, 16 floats).",
-        "items": {"type": "number", "format": "float"},
-        "minItems": 16,
-        "maxItems": 16,
-        "x-cs2-synthetic": True,
-    },
-    "AABB_t": {
-        "type": "object",
-        "title": "AABB_t",
-        "description": "Axis-aligned bounding box.",
-        "properties": {
-            "mins": {"$ref": "#/$defs/Vector"},
-            "maxs": {"$ref": "#/$defs/Vector"},
-        },
-        "required": ["mins", "maxs"],
-        "x-cs2-synthetic": True,
-    },
-}
-
-
-def _normalize_cs2_type(s: str) -> str:
-    """Strip whitespace inside angle brackets: 'CHandle< X >' → 'CHandle<X>'."""
-    s = re.sub(r"\s+", " ", s).strip()
-    s = s.replace("< ", "<").replace(" >", ">")
-    return s
-
-
-_TEMPLATE_RE = re.compile(r"^([A-Za-z_]\w*)\s*<\s*(.+)\s*>$")
-_ARRAY_RE = re.compile(r"^(.+?)\[(\d*)\]$")
-_BITFIELD_RE = re.compile(r"^bitfield\s*:\s*(\d+)$")
-
-
-def _split_template_args(arg_str: str) -> list[str]:
-    """Split T1, T2, T3 respecting nested angle brackets."""
-    args: list[str] = []
-    depth = 0
-    current = ""
-    for ch in arg_str:
-        if ch == "<":
-            depth += 1
-            current += ch
-        elif ch == ">":
-            depth -= 1
-            current += ch
-        elif ch == "," and depth == 0:
-            args.append(current.strip())
-            current = ""
-        else:
-            current += ch
-    if current.strip():
-        args.append(current.strip())
-    return args
-
-
-# Templates that wrap a single inner type and behave as arrays in JSON.
-_VECTOR_TEMPLATES = {
-    "CUtlVector",
-    "CUtlVectorEmbeddedNetworkVar",
-    "CNetworkUtlVectorBase",
-    "CUtlLeanVector",
-    "CCopyableUtlVector",
-}
-
-
-def _entity_def_ref(name: str) -> dict[str, Any]:
-    """Return a $ref to an entity, marked nullable (handles/pointers can be null)."""
-    return {"$ref": f"#/$defs/{name}"}
-
-
-def _nullable(schema: dict[str, Any]) -> dict[str, Any]:
-    """Make a schema nullable in a portable way (oneOf + null)."""
-    return {"oneOf": [schema, {"type": "null"}]}
-
-
-def map_cs2_type(
-    raw_type: str,
-    entities: dict[str, dict],
-    synthetic_names: set[str],
-) -> dict[str, Any]:
-    """Map a CS2 type string to a JSON Schema fragment.
-
-    The original type is always preserved in `x-cs2-type` so consumers never
-    lose information.  Unknown types are emitted with `x-cs2-unresolved: True`
-    rather than as dangling $refs.
-    """
-    original = raw_type
-    t = _normalize_cs2_type(raw_type)
-
-    # --- Pointers (Foo*) — nullable $ref ---
-    if t.endswith("*"):
-        inner = t[:-1].strip()
-        inner_schema = map_cs2_type(inner, entities, synthetic_names)
-        # Strip the inner's x-cs2-type so we don't double-wrap
-        inner_schema.pop("x-cs2-type", None)
-        return {
-            **_nullable(inner_schema),
-            "x-cs2-pointer": True,
-            "x-cs2-type": original,
-        }
-
-    # --- Fixed-size arrays (T[N]) — JSON array with min/maxItems ---
-    arr_m = _ARRAY_RE.match(t)
-    if arr_m:
-        elem_type, dim = arr_m.group(1).strip(), arr_m.group(2)
-        elem_schema = map_cs2_type(elem_type, entities, synthetic_names)
-        elem_schema.pop("x-cs2-type", None)
-        result: dict[str, Any] = {
-            "type": "array",
-            "items": elem_schema,
-            "x-cs2-type": original,
-        }
-        if dim:
-            n = int(dim)
-            result["minItems"] = n
-            result["maxItems"] = n
-        return result
-
-    # --- Bitfields (bitfield:N) — integer with bit-width hint ---
-    bf_m = _BITFIELD_RE.match(t)
-    if bf_m:
-        return {
-            "type": "integer",
-            "x-cs2-bitfield-bits": int(bf_m.group(1)),
-            "x-cs2-type": original,
-        }
-
-    # --- Templates ---
-    tmpl_m = _TEMPLATE_RE.match(t)
-    if tmpl_m:
-        tmpl_name, args_raw = tmpl_m.group(1), tmpl_m.group(2)
-        args = _split_template_args(args_raw)
-
-        # CHandle<X>, CWeakHandle<X>, CStrongHandle<X> — typed reference, nullable
-        if tmpl_name in {"CHandle", "CWeakHandle", "CStrongHandle"} and len(args) == 1:
-            target = args[0].strip()
-            if target in entities or target in synthetic_names:
-                return {
-                    **_nullable(_entity_def_ref(target)),
-                    "x-cs2-handle": True,
-                    "x-cs2-handle-target": target,
-                    "x-cs2-type": original,
-                }
-            # Unresolved handle target — keep the metadata, drop the $ref
-            return {
-                "type": ["integer", "null"],
-                "x-cs2-handle": True,
-                "x-cs2-handle-target": target,
-                "x-cs2-type": original,
-                "x-cs2-unresolved": True,
-            }
-
-        # Vector-like containers — JSON arrays
-        if tmpl_name in _VECTOR_TEMPLATES and len(args) == 1:
-            elem_schema = map_cs2_type(args[0], entities, synthetic_names)
-            elem_schema.pop("x-cs2-type", None)
-            return {
-                "type": "array",
-                "items": elem_schema,
-                "x-cs2-type": original,
-            }
-
-        # CResource* family — opaque resource references; treat as strings
-        if tmpl_name.startswith("CResource"):
-            return {
-                "type": "string",
-                "x-cs2-type": original,
-            }
-
-        # Unknown template — preserve and mark unresolved
-        return {
-            "x-cs2-type": original,
-            "x-cs2-unresolved": True,
-        }
-
-    # --- Atomic primitives ---
-    if t in _CS2_PRIMITIVE_TYPES:
-        return {**_CS2_PRIMITIVE_TYPES[t], "x-cs2-type": original}
-
-    # --- Synthetic compound types (Vector, QAngle, Color, ...) ---
-    if t in synthetic_names:
-        return {"$ref": f"#/$defs/{t}", "x-cs2-type": original}
-
-    # --- Tracked entity ---
-    if t in entities:
-        return {"$ref": f"#/$defs/{t}", "x-cs2-type": original}
-
-    # --- Unresolved — preserve original, flag for consumer ---
-    return {
-        "x-cs2-type": original,
-        "x-cs2-unresolved": True,
-    }
-
-
-def _enum_format_from_underlying(underlying: str | None) -> tuple[str, str | None]:
-    """Map an enum's underlying C++ type to a JSON Schema (type, format)."""
-    if not underlying:
-        return ("integer", None)
-    u = underlying.replace("_t", "")
-    if u in {"int8", "int16", "int32", "int64", "uint8", "uint16", "uint32", "uint64"}:
-        return ("integer", u)
-    return ("integer", None)
+#
+# cs2_schema.json is now a community-enriched mirror of upstream
+# cs2.json.gz from DumpSource2 (no longer a JSON Schema 2020-12 document).
+# The earlier JSON Schema attempt was abandoned because standard codegens
+# (quicktype, json-schema-to-typescript, NJsonSchema, ...) couldn't handle
+# the layered allOf/$ref inheritance and synthetic defs we used to model
+# native CS2 types.  See generate_cs2_schema() for details and
+# TOOLING_OVERHAUL.md for the full rationale.
 
 
 def _collect_module_variants(entity: dict[str, Any]) -> list[dict[str, Any]]:
     """Return [primary, *duplicates] in module-sorted order.
 
     Cross-module twins (e.g. ``CCSPlayerController`` in both ``client`` and
-    ``server``) are bare-name-collapsed in `$defs`, but the per-module
-    variants can differ in size and field set.  This helper yields them all
-    so the JSON Schema emitter can tag every module the entity exists in
-    and surface where the variants diverge.
+    ``server``) get collapsed to a single in-memory entry by
+    ``_add_entity`` (with the alternative variant attached as a
+    ``duplicate``).  This helper yields them all so the schema emitter can
+    write one record per (module, name).
     """
     variants = [entity, *entity.get("duplicates", [])]
     return sorted(variants, key=lambda v: v.get("module", ""))
-
-
-def _module_tag(variants: list[dict[str, Any]]) -> Any:
-    """Render the ``x-cs2-module`` value: bare string for one module,
-    array for cross-module twins.  Keeping the singular form for the
-    common 96%+ case avoids forcing every consumer to handle arrays."""
-    mods = sorted({v["module"] for v in variants if v.get("module")})
-    return mods[0] if len(mods) == 1 else mods
-
-
-def _variant_summary(variants: list[dict[str, Any]]) -> list[dict[str, Any]] | None:
-    """Return a per-module variant summary when twins disagree on shape.
-
-    For documentation/codegen consumers the bare-name `$def` only
-    describes ONE variant's properties — this surfaces what the others
-    look like (size, field count) so the consumer knows there's drift
-    and can fall back to per-module Markdown for the full picture.
-    """
-    if len(variants) < 2:
-        return None
-    sizes = {v.get("size") for v in variants}
-    field_counts = {len(v.get("fields", [])) for v in variants}
-    if len(sizes) == 1 and len(field_counts) == 1:
-        return None
-    return [
-        {
-            "module": v.get("module", ""),
-            **({"size": v["size"]} if v.get("size") is not None else {}),
-            "field-count": len(v.get("fields", [])),
-        }
-        for v in variants
-    ]
 
 
 def _build_description(
@@ -2226,250 +1812,184 @@ def _build_description(
     return " ".join(parts).strip() or None
 
 
-def generate_cs2_json_schema(
+def _overlay_annotations(overlay: dict[str, Any] | None) -> dict[str, Any]:
+    """Project a (sub-)overlay into the additive ``annotations`` block used
+    by cs2_schema.json.  Empty / missing values are skipped so a no-op
+    overlay leaves no residue."""
+    out: dict[str, Any] = {}
+    if not isinstance(overlay, dict):
+        return out
+    for key in ("description", "notes", "warning"):
+        val = overlay.get(key)
+        if val:
+            out[key] = str(val).strip()
+    return out
+
+
+def _enrich_record(
+    raw: dict[str, Any],
+    entity: dict[str, Any],
+    overlays: dict[str, dict],
+) -> dict[str, Any]:
+    """Return a deep-copy of ``raw`` with overlay-derived ``annotations``
+    blocks layered onto the entity itself, its fields (classes), or its
+    members (enums).  ``raw`` stays otherwise byte-identical to upstream
+    cs2.json.gz.
+    """
+    record = copy.deepcopy(raw)
+    overlay = get_overlay(overlays, entity.get("module", ""), entity["name"]) or {}
+
+    annots = _overlay_annotations(overlay)
+    if annots:
+        record["annotations"] = annots
+
+    overlay_fields = overlay.get("fields") if isinstance(overlay, dict) else None
+    if isinstance(overlay_fields, dict) and overlay_fields:
+        children_key = "members" if entity["kind"] == "enum" else "fields"
+        for child in record.get(children_key, []):
+            cov = overlay_fields.get(child.get("name", ""))
+            child_annots = _overlay_annotations(cov)
+            if child_annots:
+                child["annotations"] = child_annots
+
+    return record
+
+
+def generate_cs2_schema(
     entities: dict[str, dict],
     overlays: dict[str, dict],
     out_dir: Path,
     source_info: dict[str, Any] | None = None,
 ) -> Path:
-    """Generate a single cs2_schema.json describing every parsed entity.
+    """Generate ``cs2_schema.json`` — a community-enriched mirror of
+    upstream ``cs2.json.gz`` from DumpSource2.
 
-    Inheritance is preserved via allOf+$ref.  Native types (CHandle<X>, Vector,
-    CUtlVector<T>, ...) map to portable JSON Schema fragments with x-cs2-* hints
-    that preserve all original information.  Overlays drive descriptions, notes
-    and warnings.  The output validates against the JSON Schema 2020-12
-    meta-schema.
+    Format mirrors cs2.json.gz exactly: same top-level keys (``generator``,
+    ``revision``, ``version_date``, ``version_time``, ``classes``,
+    ``enums``), same per-class and per-enum shape, same field/member
+    structure with structured ``type`` objects and ``[{name, value}]``
+    metadata.  Consumers can use any tooling that already targets the
+    DumpSource2 dump.
+
+    The single addition is an optional ``annotations`` block on classes,
+    fields, enums, and members carrying community-curated descriptions,
+    notes, and warnings from ``docs/overlays/``.  Entities with no
+    overlay match are emitted byte-for-byte as upstream.
+
+    Why not JSON Schema 2020-12: tried and abandoned.  Standard codegens
+    (quicktype, json-schema-to-typescript, NJsonSchema, etc.) couldn't
+    handle the layered ``allOf``/``$ref`` inheritance or the synthetic
+    defs we used to model native CS2 types (CHandle<X>, CUtlVector<T>,
+    Vector, ...).  Mirroring upstream's structured shape lets each
+    consumer apply its own type-mapping policy without fighting JSON
+    Schema's vocabulary.  See ``TOOLING_OVERHAUL.md``.
     """
-    synthetic_names = set(_CS2_SYNTHETIC_DEFS.keys())
-    defs: dict[str, Any] = {}
+    seen: set[tuple[str, str]] = set()
+    classes_out: list[dict[str, Any]] = []
+    enums_out: list[dict[str, Any]] = []
 
-    # 1. Inject synthetic compound defs upfront so entities can $ref them.
-    for name, schema in _CS2_SYNTHETIC_DEFS.items():
-        defs[name] = dict(schema)
+    # Walk every (module, name) variant — cross-module twins (e.g.
+    # CCSPlayerController in both client + server) emit one record each,
+    # mirroring upstream's natural representation.  ``_collect_module_variants``
+    # yields the primary plus any duplicates the (module, name) deduper
+    # held back.
+    for entity in sorted(entities.values(), key=lambda e: (e["kind"], e["name"])):
+        for variant in _collect_module_variants(entity):
+            key = (variant.get("module", ""), variant["name"])
+            if key in seen:
+                continue
+            seen.add(key)
+            raw = variant.get("raw")
+            if raw is None:
+                continue  # synthetic / unsourced entity — skip
+            record = _enrich_record(raw, variant, overlays)
+            (enums_out if variant["kind"] == "enum" else classes_out).append(record)
 
-    # 2. Walk parsed entities.
-    for name, entity in sorted(entities.items()):
-        kind = entity["kind"]
-        mod = entity["module"]
-        overlay = get_overlay(overlays, mod, name) or {}
-        overlay_fields = overlay.get("fields") or {}
-        variants = _collect_module_variants(entity)
-
-        if kind == "enum":
-            etype, efmt = _enum_format_from_underlying(entity.get("enum_underlying"))
-            value_map: dict[str, int] = {}
-            value_descriptions: dict[str, str] = {}
-            value_metadata: dict[str, list[dict[str, Any]]] = {}
-            allowed_values: list[int] = []
-            for v in entity["fields"]:
-                vname = v["name"]
-                vraw = v.get("value", "")
-                try:
-                    vnum = int(vraw, 0) if vraw else 0
-                except ValueError:
-                    continue
-                value_map[vname] = vnum
-                if vnum not in allowed_values:
-                    allowed_values.append(vnum)
-                # Description preference: overlay → DumpSource2 metadata
-                # (MPropertyFriendlyName + MPropertyDescription).
-                vov = overlay_fields.get(vname) if isinstance(overlay_fields, dict) else None
-                if isinstance(vov, dict) and vov.get("description"):
-                    value_descriptions[vname] = str(vov["description"]).strip()
-                else:
-                    auto_desc = _metadata_friendly_text(v.get("annotations"))
-                    if auto_desc:
-                        value_descriptions[vname] = auto_desc
-                # Always preserve the structured metadata for codegen consumers
-                # that want raw access (e.g. the M-flag conventions).
-                if v.get("annotations"):
-                    value_metadata[vname] = list(v["annotations"])
-
-            enum_def: dict[str, Any] = {
-                "title": name,
-                "type": etype,
-                "x-cs2-kind": "enum",
-                "x-cs2-module": _module_tag(variants),
-                "x-cs2-enum-values": value_map,
-            }
-            variant_summary = _variant_summary(variants)
-            if variant_summary is not None:
-                enum_def["x-cs2-variants"] = variant_summary
-            if efmt:
-                enum_def["format"] = efmt
-            if entity.get("enum_underlying"):
-                enum_def["x-cs2-enum-underlying"] = entity["enum_underlying"]
-            if allowed_values:
-                enum_def["enum"] = allowed_values
-            desc = _build_description(overlay)
-            if desc:
-                enum_def["description"] = desc
-            if value_descriptions:
-                enum_def["x-cs2-enum-value-descriptions"] = value_descriptions
-            if value_metadata:
-                enum_def["x-cs2-enum-value-metadata"] = value_metadata
-            if entity.get("metadata"):
-                enum_def["x-cs2-metadata"] = list(entity["metadata"])
-            if overlay.get("notes"):
-                enum_def["x-cs2-notes"] = str(overlay["notes"]).strip()
-            if overlay.get("warning"):
-                enum_def["x-cs2-warning"] = str(overlay["warning"]).strip()
-            defs[name] = enum_def
-            continue
-
-        # --- class / struct ---
-        ent_def: dict[str, Any] = {
-            "type": "object",
-            "title": name,
-            "x-cs2-kind": kind,
-            "x-cs2-module": _module_tag(variants),
-        }
-        variant_summary = _variant_summary(variants)
-        if variant_summary is not None:
-            ent_def["x-cs2-variants"] = variant_summary
-        if entity.get("size") is not None:
-            ent_def["x-cs2-size"] = entity["size"]
-        desc = _build_description(overlay)
-        if desc:
-            ent_def["description"] = desc
-        if overlay.get("notes"):
-            ent_def["x-cs2-notes"] = str(overlay["notes"]).strip()
-        if overlay.get("warning"):
-            ent_def["x-cs2-warning"] = str(overlay["warning"]).strip()
-
-        # Inheritance — only refs we can actually resolve.  Base modules
-        # are kept in lockstep with the resolved-bases list so consumers
-        # can disambiguate cross-module parents (e.g. a server class that
-        # inherits from a client base, of which we have 142 in the dump).
-        bases_resolved: list[str] = []
-        bases_resolved_modules: list[str] = []
-        bases_external: list[str] = []
-        for b, b_mod in zip(
-            entity.get("bases", []),
-            entity.get("base_modules", []) + [""] * len(entity.get("bases", [])),
-        ):
-            b_clean = b.replace("*", "").strip()
-            if b_clean in entities or b_clean in synthetic_names:
-                bases_resolved.append(b_clean)
-                bases_resolved_modules.append(b_mod or "")
-            elif b_clean:
-                bases_external.append(b_clean)
-        if bases_resolved:
-            ent_def["allOf"] = [
-                {"$ref": f"#/$defs/{b}"} for b in bases_resolved
-            ]
-            # Surface a parallel modules array only when at least one base
-            # actually came with module info (and at least one is "useful":
-            # different from the entity's own module or otherwise tagged).
-            if any(bases_resolved_modules):
-                ent_def["x-cs2-base-modules"] = bases_resolved_modules
-        if bases_external:
-            ent_def["x-cs2-base-external"] = bases_external
-
-        # Entity-level CS2 metadata, minus the noisy MNetworkVarNames lines
-        # (those duplicate the field info we already emit as properties).
-        # Preserved in structured ``[{name, value}]`` form so codegen
-        # consumers can read tags like MGetKV3ClassDefaults without
-        # re-parsing a stringified blob.
-        if entity.get("metadata"):
-            md_struct = [
-                m for m in entity["metadata"]
-                if isinstance(m, dict)
-                and m.get("name")
-                and not m["name"].startswith("MNetworkVarNames")
-            ]
-            if md_struct:
-                ent_def["x-cs2-metadata"] = md_struct
-
-        # Fields → properties
-        properties: dict[str, Any] = {}
-        for fld in entity.get("fields", []):
-            fname = fld["name"]
-            ftype = fld["type"]
-            fov = overlay_fields.get(fname) if isinstance(overlay_fields, dict) else None
-            fov = fov if isinstance(fov, dict) else None
-
-            fschema = map_cs2_type(ftype, entities, synthetic_names)
-
-            fdesc_parts: list[str] = []
-            if fov and fov.get("description"):
-                fdesc_parts.append(str(fov["description"]).strip())
-            if fov and fov.get("notes"):
-                fdesc_parts.append(str(fov["notes"]).strip())
-            if fdesc_parts:
-                # Don't clobber a description supplied by a synthetic def.
-                fschema["description"] = " ".join(fdesc_parts)
-
-            annots = [
-                a for a in (fld.get("annotations") or [])
-                if isinstance(a, dict) and a.get("name")
-            ]
-            if annots:
-                fschema["x-cs2-metadata"] = annots
-
-            if fld.get("offset") is not None:
-                fschema["x-cs2-offset"] = fld["offset"]
-
-            # Module of the referenced declared class/enum, when known.
-            # Consumers can use this to disambiguate which $def to follow
-            # for cross-module twins (e.g. a property typed
-            # ``CHandle<CCSPlayerController>`` could mean either the
-            # client or the server variant).
-            if fld.get("type_module"):
-                fschema["x-cs2-type-module"] = fld["type_module"]
-
-            properties[fname] = fschema
-
-        if properties:
-            ent_def["properties"] = properties
-        ent_def["unevaluatedProperties"] = False
-        defs[name] = ent_def
-
-    schema: dict[str, Any] = {
-        "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "$id": "https://sid2934.github.io/CS2-OpenDevDocs/generated/cs2_schema.json",
-        "title": "CS2 Entity Schema",
-        "description": (
-            "JSON Schema describing every entity (class, struct, enum) parsed "
-            "from CS2's DumpSource2 schema dump.  Inheritance is preserved via "
-            "allOf+$ref.  Native CS2 types (CHandle<X>, Vector, CUtlVector<T>, "
-            "and friends) are mapped to portable JSON Schema fragments; the "
-            "original C++ type is always retained in `x-cs2-type`.  "
-            "`x-cs2-module` is a string when the entity exists in only one "
-            "module and an array of strings when it lives in multiple "
-            "(e.g. CCSPlayerController in client + server).  When the "
-            "per-module variants disagree on size or field count, "
-            "`x-cs2-variants` lists each module's shape — the bare-name "
-            "$def in this schema describes one variant; consult the "
-            "Markdown reference for the others.  Schema-level provenance "
-            "(generator, build revision, version date) lives under "
-            "`x-cs2-source`."
-        ),
-        "$defs": defs,
-    }
-    # Schema-level provenance — pulled directly from cs2.json's header so
-    # consumers can know exactly which CS2 build the schema describes.
+    out: dict[str, Any] = {}
+    # Echo upstream's header keys verbatim so the file remains a drop-in
+    # peer of cs2.json.gz for build/revision tracking.
     if source_info:
-        schema["x-cs2-source"] = dict(source_info)
+        for k in ("generator", "revision", "version_date", "version_time"):
+            if k in source_info:
+                out[k] = source_info[k]
+    out["classes"] = classes_out
+    out["enums"] = enums_out
 
-    # Validate against the JSON Schema 2020-12 meta-schema if jsonschema is
-    # available.  Same graceful-fallback pattern as PyYAML.
-    try:
-        from jsonschema import Draft202012Validator
-        Draft202012Validator.check_schema(schema)
-    except ImportError:
-        print("  WARNING: jsonschema not installed – skipping meta-schema validation.")
-        print("  Install with: pip install jsonschema")
-    except Exception as exc:  # pylint: disable=broad-except
-        # Re-raise — a meta-schema failure is a real bug worth surfacing loudly.
-        raise RuntimeError(f"cs2_schema.json failed meta-schema validation: {exc}") from exc
-
-    out_path = out_dir / "cs2_schema.json"
+    schema_dir = out_dir / "downstream-codegen-schemas"
+    schema_dir.mkdir(parents=True, exist_ok=True)
+    out_path = schema_dir / "cs2_schema.json"
     out_path.write_text(
-        json.dumps(schema, indent=2, ensure_ascii=False) + "\n",
+        json.dumps(out, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
     return out_path
+
+
+def generate_codegen_schemas_readme(
+    out_dir: Path,
+    source_info: dict[str, Any] | None = None,
+) -> None:
+    """Emit ``downstream-codegen-schemas/README.md`` — a small landing
+    page next to the JSON files that explains what they are and points
+    at ``AGENTS.md`` for the full format reference.  Generated each run
+    so the source-revision footer stays current.
+    """
+    schema_dir = out_dir / "downstream-codegen-schemas"
+    schema_dir.mkdir(parents=True, exist_ok=True)
+
+    rev_line = ""
+    if source_info:
+        rev = source_info.get("revision")
+        date = source_info.get("version_date")
+        if rev and date:
+            rev_line = f"\n_Last regenerated against CS2 build `{rev}` ({date})._\n"
+
+    body = f"""# Downstream codegen schemas
+
+Machine-readable schemas for CS2 entity classes, structs, enums, and game
+events — kept in shapes that mirror upstream sources so any tooling that
+already targets those sources works unchanged.
+
+## Files
+
+- **`cs2_schema.json`** — community-enriched mirror of
+  [DumpSource2's `cs2.json.gz`](https://github.com/ValveResourceFormat/SchemaExplorer/blob/main/schemas/cs2.json.gz).
+  Top-level: `generator`, `revision`, `version_date`, `version_time`,
+  `classes`, `enums` — exactly upstream's shape.  Optional
+  `annotations` blocks layer in community-curated descriptions / notes
+  / warnings.  Cross-module twins (e.g. `CCSPlayerController` in both
+  `client` and `server`) emit one record per `(module, name)`.
+
+- **`gameevents_schema.json`** — community-enriched mirror of the
+  parsed `.gameevents` KV1 registry.  Top-level: `events` list; each
+  record preserves its parsed `name` / `comment` / `source` /
+  `properties` / `fields` from the upstream KV1 source.  Same
+  `annotations` enrichment pattern as `cs2_schema.json`.
+
+## Why this shape (and not JSON Schema 2020-12)
+
+Both files used to be JSON Schema 2020-12 documents.  Standard codegens
+(quicktype, NJsonSchema, json-schema-to-typescript) couldn't handle the
+layered `allOf` / `$ref` inheritance and the synthetic defs needed to
+model native CS2 types (`CHandle<X>`, `CUtlVector<T>`, `Vector`, …).
+Mirroring the upstream structured shape lets each consumer apply its
+own type-mapping policy without fighting JSON Schema's vocabulary.
+
+## Format reference
+
+Full per-key documentation lives in
+[`AGENTS.md`](https://github.com/sid2934/CS2-OpenDevDocs/blob/main/AGENTS.md#cs2_schemajson-format)
+at the repository root.
+
+## Auto-generated — do not hand-edit
+
+These files are regenerated every 4 hours from upstream by
+[`.github/workflows/generate-docs.yml`](https://github.com/sid2934/CS2-OpenDevDocs/blob/main/.github/workflows/generate-docs.yml).
+To change the generated output, edit the generator
+(`docs/generate_docs.py`) or the community overlays under
+`docs/overlays/` instead.
+{rev_line}"""
+    (schema_dir / "README.md").write_text(body, encoding="utf-8")
 
 
 def generate_index_md(
@@ -2508,10 +2028,10 @@ def generate_index_md(
     lines.append(f"| Commands | {len(commands)} |")
     lines.append("")
     lines.append("## Quick Links\n")
-    lines.append("- [Schema Entities](generated/schemas.md) – Classes, structs, and enums from CS2's schema dump ([JSON Schema](generated/cs2_schema.json))")
+    lines.append("- [Schema Entities](generated/schemas.md) – Classes, structs, and enums from CS2's schema dump ([codegen schema](generated/downstream-codegen-schemas/cs2_schema.json))")
     lines.append("- [Protobufs](generated/protobufs.md) – Network message and game event definitions")
     if gameevents is not None:
-        lines.append("- [Game Events](generated/gameevents.md) – Game event definitions with field schemas ([JSON Schema](generated/gameevents_schema.json))")
+        lines.append("- [Game Events](generated/gameevents.md) – Game event definitions with field schemas ([codegen schema](generated/downstream-codegen-schemas/gameevents_schema.json))")
     lines.append("- [ConVars](generated/convars.md) – Console variable reference with flags and defaults")
     lines.append("- [Commands](generated/commands.md) – Console command reference")
     lines.append("- [Entity Hierarchy Diagram](generated/diagrams/server_hierarchy.md) – UML inheritance diagram for server & client entities")
@@ -2677,14 +2197,16 @@ def main(argv: list[str] | None = None) -> int:
 
     print("Generating game events documentation…")
     generate_gameevents_md_page(gameevents, overlays, generated_dir)
-    generate_gameevents_json_schema(gameevents, overlays, generated_dir)
+    generate_gameevents_schema(gameevents, overlays, generated_dir)
 
-    print("Generating cs2_schema.json (full entity JSON Schema)…")
-    cs2_schema_path = generate_cs2_json_schema(
+    print("Generating cs2_schema.json (community-enriched mirror of cs2.json.gz)…")
+    cs2_schema_path = generate_cs2_schema(
         entities, overlays, generated_dir, source_info=schema_source_info
     )
     schema_kb = cs2_schema_path.stat().st_size // 1024
     print(f"  Wrote {cs2_schema_path.name} ({schema_kb} KiB).")
+
+    generate_codegen_schemas_readme(generated_dir, source_info=schema_source_info)
 
     print("Generating Markdown home page…")
     generate_index_md(entities, protos, convars, commands, out_dir, gameevents=gameevents)
