@@ -14,17 +14,17 @@ Auto-generated documentation from the CS2 game tracking data. Includes entity sc
 | Category | Count |
 |----------|-------|
 | Schema Entities | 3974 |
-| Proto Files | 13 |
-| Proto Messages | 122 |
+| Proto Files | 42 |
+| Proto Messages | 774 |
 | Game Events | 288 |
 | ConVars | 3866 |
 | Commands | 1125 |
 
 ## Quick Links
 
-- [Schema Entities](generated/schemas.md) – Classes, structs, and enums from CS2's schema dump ([JSON Schema](generated/cs2_schema.json))
+- [Schema Entities](generated/schemas.md) – Classes, structs, and enums from CS2's schema dump ([codegen schema](generated/downstream-codegen-schemas/cs2_schema.json))
 - [Protobufs](generated/protobufs.md) – Network message and game event definitions
-- [Game Events](generated/gameevents.md) – Game event definitions with field schemas ([JSON Schema](generated/gameevents_schema.json))
+- [Game Events](generated/gameevents.md) – Game event definitions with field schemas ([codegen schema](generated/downstream-codegen-schemas/gameevents_schema.json))
 - [ConVars](generated/convars.md) – Console variable reference with flags and defaults
 - [Commands](generated/commands.md) – Console command reference
 - [Entity Hierarchy Diagram](generated/diagrams/server_hierarchy.md) – UML inheritance diagram for server & client entities

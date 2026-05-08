@@ -36,50 +36,131 @@ The documentation covers:
 | **ConVars** | Every console variable with default value, flags, and description (~3 800 entries) | https://sid2934.github.io/CS2-OpenDevDocs/generated/convars |
 | **Commands** | Every console command with flags and description (~1 130 entries) | https://sid2934.github.io/CS2-OpenDevDocs/generated/commands |
 | **UML diagrams** | Mermaid class-hierarchy diagrams for every schema module | https://sid2934.github.io/CS2-OpenDevDocs/generated/diagrams/server_hierarchy |
-| **JSON Schemas** | `cs2_schema.json` and `gameevents_schema.json`, JSON Schema 2020-12.  Carries `x-cs2-source` provenance (DumpSource2 build revision + version date).  See the [`x-cs2-*` extension legend](#x-cs2--json-schema-extensions) below. | https://sid2934.github.io/CS2-OpenDevDocs/generated/cs2_schema.json |
+| **Entity schema** | `downstream-codegen-schemas/cs2_schema.json` — community-enriched mirror of upstream `cs2.json.gz` from DumpSource2.  Mirrors upstream's exact shape (top-level `generator` / `revision` / `version_date` / `version_time` / `classes` / `enums`) so any tooling that targets the DumpSource2 dump works unchanged.  Optional `annotations` blocks layer in community-curated descriptions, notes, and warnings.  See the [format reference](#cs2_schemajson-format) below. | https://sid2934.github.io/CS2-OpenDevDocs/generated/downstream-codegen-schemas/cs2_schema.json |
+| **Game events schema** | `downstream-codegen-schemas/gameevents_schema.json` — community-enriched mirror of the parsed `.gameevents` KV1 registry.  Top-level `events` list; each event preserves its `name` / `comment` / `source` / `properties` / `fields` from the upstream KV1 source.  Same `annotations` enrichment pattern as `cs2_schema.json`. | https://sid2934.github.io/CS2-OpenDevDocs/generated/downstream-codegen-schemas/gameevents_schema.json |
 
-### `x-cs2-*` JSON Schema extensions
+### `cs2_schema.json` format
 
-`cs2_schema.json` is JSON Schema 2020-12 with `x-cs2-*` extensions that
-preserve everything DumpSource2 captures from CS2's runtime reflection.
-A consumer that ignores all `x-cs2-*` keys still gets a valid schema; a
-consumer that reads them gets full memory layout, source provenance,
-and cross-module disambiguation.
+The file is a community-enriched mirror of upstream `schema-explorer/schemas/cs2.json.gz`.
+It is **not** JSON Schema — that approach was tried and abandoned because
+standard codegens (quicktype, NJsonSchema, json-schema-to-typescript, …)
+couldn't handle the layered `allOf`/`$ref` inheritance and synthetic
+defs needed to model native CS2 types.  Mirroring upstream's structured
+shape lets each consumer apply its own type-mapping policy.
 
-**Schema-level**
+**Top-level**
 
-| Key | What it carries |
-|---|---|
-| `x-cs2-source` | `{generator, revision, version_date, version_time}` — the cs2.json header.  Use `revision` to know which CS2 build the schema describes. |
+```json
+{
+  "generator": "https://github.com/ValveResourceFormat/DumpSource2",
+  "revision": 10627055,
+  "version_date": "Apr 30 2026",
+  "version_time": "15:09:15",
+  "classes": [...],
+  "enums":   [...]
+}
+```
 
-**On every `$defs[*]` entry**
+`generator` / `revision` / `version_date` / `version_time` come straight
+from upstream's header and identify the CS2 build the schema describes.
 
-| Key | What it carries |
-|---|---|
-| `x-cs2-kind` | `"class"` / `"struct"` / `"enum"`. |
-| `x-cs2-module` | The CS2 engine module the entity lives in.  **String** when single-module, **array of strings** when the same name lives in multiple modules (e.g. `CCSPlayerController` is `["client", "server"]`). |
-| `x-cs2-size` | Class instance size in bytes (the C++ `sizeof`). |
-| `x-cs2-variants` | Present only when cross-module twins disagree on size or field count.  Each entry: `{module, size, field-count}`.  The bare-name `$def` describes one variant; the others can be retrieved from the per-module Markdown. |
-| `x-cs2-base-modules` | Parallel to `allOf`'s `$ref` order, telling you which module each base lives in (matters for the 142 cross-module inheritance edges). |
-| `x-cs2-base-external` | Names of bases that aren't defined in the schema (forward declarations etc.). |
-| `x-cs2-metadata` | Class-level metadata as `[{name, value?}]`.  E.g. `{"name": "MGetKV3ClassDefaults", "value": "{...}"}` — the structured form so codegen consumers don't have to re-parse a stringified blob. |
-| `x-cs2-enum-underlying` | Underlying integer type for enums (`uint32_t`, `int8_t`, …). |
-| `x-cs2-enum-values` | `{name: numeric_value}` map for enum members. |
-| `x-cs2-enum-value-descriptions` | Human-readable per-member description, derived from overlay → `MPropertyFriendlyName`/`MPropertyDescription` metadata. |
-| `x-cs2-enum-value-metadata` | Raw structured metadata per member: `{member_name: [{name, value?}]}` — preserves all 1017 enum-member metadata entries DumpSource2 captures. |
-
-**On every property (field)**
+**Per-class entry** (one per `(module, name)` — cross-module twins like
+`CCSPlayerController` emit one record each):
 
 | Key | What it carries |
 |---|---|
-| `x-cs2-type` | Original C++ type string (e.g. `CHandle<CCSPlayerPawn>`, `Vector*`, `bitfield:3`). |
-| `x-cs2-offset` | Byte offset of the field within its containing class. |
-| `x-cs2-type-module` | Module of the *innermost* declared class/enum referenced by this field's type — recurses through `*`, `[]`, `CHandle<>`, `CUtlVector<>` etc.  Disambiguates which $def to follow when the target name lives in multiple modules. |
-| `x-cs2-metadata` | Field-level metadata as `[{name, value?}]` (e.g. `{"name": "MNetworkVarTypeOverride", "value": "..."}`).  ~4700 fields carry value-bearing metadata. |
-| `x-cs2-handle` / `x-cs2-handle-target` | Set on `CHandle<T>` style fields — flags the target type and that the value is a typed handle, not the target itself. |
-| `x-cs2-pointer` | Set when the original C++ type was a raw pointer.  The schema marks the value nullable. |
-| `x-cs2-bitfield-bits` | Bit width for `bitfield:N` fields. |
-| `x-cs2-unresolved` | Marker that a referenced type wasn't found in the schema (rare; usually a forward-decl or platform-only type). |
+| `name` | C++ class / struct name. |
+| `module` | The CS2 engine module the entity lives in (`client`, `server`, `animationsystem`, …). |
+| `size` | Class instance size in bytes (the C++ `sizeof`). |
+| `parents` | Inheritance list as `[{module, name}]`.  Empty when the class has no base. |
+| `fields` | List of field records (see below). |
+| `metadata` | Class-level metadata as `[{name, value?}]`.  Preserves runtime reflection tags like `MGetKV3ClassDefaults`, `MNetworkVarNames`, etc.  Pass through to codegen consumers as needed. |
+| `annotations` *(optional)* | Community enrichment: `{description?, notes?, warning?}`.  Only present when an overlay matches the entity. |
+
+**Per-field entry** (under a class's `fields` list):
+
+| Key | What it carries |
+|---|---|
+| `name` | Field identifier (e.g. `m_hPawn`). |
+| `offset` | Byte offset within the containing class. |
+| `type` | Structured type record (see below). |
+| `metadata` | Field-level metadata as `[{name, value?}]` — `MNetworkVarTypeOverride`, `MPropertyFriendlyName`, `MPropertyDescription`, etc.  ~4700 fields carry value-bearing metadata. |
+| `annotations` *(optional)* | Community enrichment: `{description?, notes?, warning?}`.  Only present when an overlay matches the field. |
+
+**Field `type` shapes** (`category` discriminates the variant):
+
+| `category` | Other keys | Example |
+|---|---|---|
+| `builtin` | `name` | `{"category": "builtin", "name": "int32"}` |
+| `declared_class` | `name`, `module` | `{"category": "declared_class", "module": "server", "name": "CCSPlayerPawn"}` |
+| `declared_enum` | `name`, `module` | `{"category": "declared_enum", "module": "client", "name": "AmmoIndex_t"}` |
+| `atomic` | `name`, `inner` (sometimes `inner2`, `inner3`) | `{"category": "atomic", "name": "CHandle", "inner": {...}}` |
+| `ptr` | `inner` | `{"category": "ptr", "inner": {...}}` |
+| `fixed_array` | `inner`, `count` | `{"category": "fixed_array", "count": 16, "inner": {...}}` |
+| `bitfield` | `count` (bits) | `{"category": "bitfield", "count": 3}` |
+
+`inner` is itself a type record — recurse to resolve `CHandle<CCSPlayerPawn>*[16]` and friends.  When the innermost type is a `declared_class` or `declared_enum`, its `module` field disambiguates which class lives where.
+
+**Per-enum entry**:
+
+| Key | What it carries |
+|---|---|
+| `name` | Enum name. |
+| `module` | Engine module. |
+| `alignment` | Underlying integer type (`uint32_t`, `int8_t`, …). |
+| `members` | List of `{name, value, metadata}` member records.  ~1017 members across all enums carry metadata (`MPropertyFriendlyName`, `MPropertyDescription`). |
+| `metadata` | Enum-level metadata. |
+| `annotations` *(optional)* | Community enrichment, same shape as on classes. |
+
+**Per-enum-member entry**:
+
+| Key | What it carries |
+|---|---|
+| `name` | Member identifier. |
+| `value` | Numeric value. |
+| `metadata` | Member-level metadata as `[{name, value?}]`. |
+| `annotations` *(optional)* | Community enrichment when the overlay supplies a per-member description. |
+
+A consumer that has never heard of `annotations` ignores the key and gets exactly upstream's shape.  A consumer that reads `annotations` gets the curated descriptions / notes / warnings on top.
+
+### `gameevents_schema.json` format
+
+Same enrichment pattern as `cs2_schema.json`, applied to the parsed
+`.gameevents` registry.  Top-level is a single `events` list:
+
+```json
+{
+  "events": [
+    {
+      "name": "player_death",
+      "comment": "a game event, name may be 32 charaters long",
+      "source": "game.gameevents",
+      "properties": {},
+      "fields": [
+        {"name": "userid",   "type": "player_controller_and_pawn", "comment": "user ID"},
+        {"name": "attacker", "type": "player_controller_and_pawn", "comment": "attacker"},
+        {"name": "weapon",   "type": "string", "comment": "weapon name killer used"}
+      ],
+      "annotations": {"description": "Fired when a player is killed."}
+    }
+  ]
+}
+```
+
+| Key | What it carries |
+|---|---|
+| `name` | Event name (no spaces, ≤32 chars by upstream convention). |
+| `comment` | Trailing `//` comment from the source `.gameevents` line. |
+| `source` | Basename of the originating file (`core.gameevents`, `game.gameevents`, `mod.gameevents`, …). |
+| `properties` | Event-level metadata from the KV1 source (`local`, `reliable` flags). |
+| `fields` | List of `{name, type, comment, annotations?}` records. |
+| `annotations` *(optional)* | Community enrichment from `docs/overlays/gameevents.yml`. |
+
+Field `type` values are the raw .gameevents type tags — `none`,
+`string`, `bool`, `byte`, `short`, `long`, `float`, `uint64`, `local`,
+`player_controller`, `player_controller_and_pawn`, `player_pawn`,
+`ehandle`.  See the [generated reference page](https://sid2934.github.io/CS2-OpenDevDocs/generated/gameevents)
+for human-readable type meanings.
 
 ---
 

@@ -62,7 +62,7 @@ cd CS2-OpenDevDocs
 # Or initialise the submodules in an existing clone
 git submodule update --init --recursive
 
-pip install pyyaml jsonschema protobuf
+pip install pyyaml protobuf
 # protoc itself must also be on PATH (brew install protobuf / apt install protobuf-compiler)
 
 python3 docs/generate_docs.py \

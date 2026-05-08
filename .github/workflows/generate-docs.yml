@@ -85,7 +85,7 @@ jobs:
 
       - name: Install Python dependencies
         if: steps.submodule.outputs.skip == 'false'
-        run: pip install pyyaml jsonschema protobuf -q
+        run: pip install pyyaml protobuf -q
 
       - name: Generate documentation
         if: steps.submodule.outputs.skip == 'false'
