@@ -227,6 +227,11 @@
           "name": "PlayerID",
           "type": "short",
           "comment": ""
+        },
+        {
+          "name": "ever_fully_connected",
+          "type": "bool",
+          "comment": "Was the player ever fully connected?"
         }
       ]
     },

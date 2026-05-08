@@ -43,4 +43,4 @@ To change the generated output, edit the generator
 (`docs/generate_docs.py`) or the community overlays under
 `docs/overlays/` instead.
 
-_Last regenerated against CS2 build `10627055` (Apr 30 2026)._
+_Last regenerated against CS2 build `10641237` (May 07 2026)._

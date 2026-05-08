@@ -50,7 +50,7 @@ Game events extracted from CS2's `.gameevents` resource files. These events are 
 | [player_connect_full](#player_connect_full) | `core.gameevents` | 1 | player has sent final message in the connection sequence |
 | [player_full_update](#player_full_update) | `core.gameevents` | 2 |  |
 | [player_connect](#player_connect) | `core.gameevents` | 5 | a new client connected |
-| [player_disconnect](#player_disconnect) | `core.gameevents` | 6 | a client was disconnected |
+| [player_disconnect](#player_disconnect) | `core.gameevents` | 7 | a client was disconnected |
 | [player_info](#player_info) | `core.gameevents` | 4 | a player changed his name |
 | [player_spawn](#player_spawn) | `core.gameevents` | 1 | player spawned in game |
 | [player_team](#player_team) | `core.gameevents` | 7 |  |
@@ -431,6 +431,7 @@ a client was disconnected
 | `networkid` | `string` | player network (i.e steam) id |
 | `xuid` | `uint64` | steam id |
 | `PlayerID` | `short` |  |
+| `ever_fully_connected` | `bool` | Was the player ever fully connected? |
 
 ### player_info
 
