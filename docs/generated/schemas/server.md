@@ -43,7 +43,7 @@ nav_exclude: true
 | [CBaseModelEntityAPI](#cbasemodelentityapi) | class |  | 0 |
 | [CBaseMoveBehavior](#cbasemovebehavior) | class | CPathKeyFrame | 11 |
 | [CBasePlatTrain](#cbaseplattrain) | class | CBaseToggle | 5 |
-| [CBasePlayerController](#cbaseplayercontroller) | class | CBaseEntity | 24 |
+| [CBasePlayerController](#cbaseplayercontroller) | class | CBaseEntity | 25 |
 | [CBasePlayerControllerAPI](#cbaseplayercontrollerapi) | class |  | 0 |
 | [CBasePlayerPawn](#cbaseplayerpawn) | class | CBaseCombatCharacter | 25 |
 | [CBasePlayerVData](#cbaseplayervdata) | class | CEntitySubclassVDataBase | 15 |
@@ -127,7 +127,7 @@ nav_exclude: true
 | [CCSPlayer_DamageReactServices](#ccsplayer_damagereactservices) | class | CPlayerPawnComponent | 0 |
 | [CCSPlayer_HostageServices](#ccsplayer_hostageservices) | class | CPlayerPawnComponent | 2 |
 | [CCSPlayer_ItemServices](#ccsplayer_itemservices) | class | CPlayer_ItemServices | 2 |
-| [CCSPlayer_MovementServices](#ccsplayer_movementservices) | class | CPlayer_MovementServices_Humanoid | 53 |
+| [CCSPlayer_MovementServices](#ccsplayer_movementservices) | class | CPlayer_MovementServices_Humanoid | 52 |
 | [CCSPlayer_PingServices](#ccsplayer_pingservices) | class | CPlayerPawnComponent | 2 |
 | [CCSPlayer_RadioServices](#ccsplayer_radioservices) | class | CPlayerPawnComponent | 5 |
 | [CCSPlayer_UseServices](#ccsplayer_useservices) | class | CPlayer_UseServices | 3 |
@@ -2035,6 +2035,7 @@ classDiagram
 | `m_hSplitScreenPlayers` | CUtlVector<CHandle<[CBasePlayerController](../schemas/server.md#cbaseplayercontroller)>> | `MNotSaved` |
 | `m_bIsHLTV` | bool |  |
 | `m_iConnected` | [PlayerConnectedState](../schemas/client.md#playerconnectedstate) | PlayerConnectedState enum – 0 = Disconnected, 1 = Connected, 2 = Connecting. `MNotSaved` |
+| `m_iMostConnected` | [PlayerConnectedState](../schemas/client.md#playerconnectedstate) | `MNotSaved` |
 | `m_iszPlayerName` | char[128] | Display name of the player, as reported by Steam (up to 128 bytes, UTF-8). `MNotSaved` |
 | `m_szNetworkIDString` | CUtlString | `MNotSaved` |
 | `m_fLerpTime` | float32 | `MNotSaved` |
@@ -4751,7 +4752,6 @@ classDiagram
 |------|------|-------------|
 | `m_AnimationState` | [CCSPlayerAnimationState](../schemas/client.md#ccsplayeranimationstate) |  |
 | `m_bUsingGroundTopologyOffset` | bool |  |
-| `m_flAltitudeAtLastUsingGroundTopologyOffsetTransition` | float32 |  |
 | `m_flUsingGroundTopologyOffsetTransitionSmoothing` | float32 |  |
 | `m_vecLadderNormal` | Vector |  |
 | `m_nLadderSurfacePropIndex` | int32 |  |

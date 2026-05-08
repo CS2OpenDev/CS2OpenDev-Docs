@@ -927,6 +927,7 @@ All console variables extracted from CS2.
 | `debug_takedamage_summaries` | `false` | `gamedll` `cheat` | <no description> |
 | `debug_video_config_cvars` | `false` | `developmentonly` `clientdll` | <no description> |
 | `debug_visibility_monitor` | `0` | `gamedll` `cheat` | <no description> |
+| `debugoverlay_enable_dotted_dashed` | `true` | `cheat` | Toggle the use of dotted/dashed debugoverlay lines to indicate source |
 | `debugoverlay_force_respect_ttl` | `false` | `cheat` | Force respect TTL even when clearing scopes |
 | `debugoverlay_show_text_outline` | `false` | `cheat` | Toggle display of box around text |
 | `debugoverlay_text_scale` | `1` | `archive` `cheat` | Scale of the text used for 3d display, but see also debug_font_{size,name} |
@@ -1578,7 +1579,7 @@ All console variables extracted from CS2.
 | `mp_dm_bonusweapon_dogtags` | `0` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Additional dogtags to drop when making a kill with the bonus weapon |
 | `mp_dm_dogtag_score` | `0` | `min:` `0,` `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Points to award for picking up a dogtag in deathmatch. |
 | `mp_dm_healthshot_killcount` | `3` | `gamedll` `clientdll` `replicated` `release` | Grant healthshots in deathmatch after n kills |
-| `mp_dm_kill_base_score` | `10` | `min:` `0,` `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Number of base points to award for a kill in deathmatch.  Cheaper weapons award 1 or 2 additional points. |
+| `mp_dm_kill_base_score` | `8` | `min:` `0,` `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Number of base points to award for a kill in deathmatch.  Cheaper weapons award 1 or 2 additional points. |
 | `mp_dm_taser_bonus_streak_max` | `2` | `min:` `0,` `gamedll` `clientdll` `replicated` `release` | Maximum times to multiply the score for getting a streak of taser kills in a single life. |
 | `mp_dm_teammode` | `0` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | In deathmatch, enables team DM visuals & scoring (0: personal, 1: team mode, 2: use team contribution score) |
 | `mp_dm_teammode_bonus_score` | `1` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Team deathmatch victory points to award for kill with bonus weapon |
@@ -3785,7 +3786,7 @@ All console variables extracted from CS2.
 | `videocfg_shadow_quality` | `1` | `developmentonly` `clientdll` `defensive` | <no description> |
 | `videocfg_texture_detail` | `1` | `developmentonly` `clientdll` `defensive` | <no description> |
 | `view_punch_decay` | `18` | `gamedll` `clientdll` `replicated` `cheat` `release` | Decay factor exponent for view punch |
-| `viewmodel_fov` | `60` | `min:` `54,` `max:` `68,` `clientdll` `archive` `userinfo` `per_user` | Viewmodel FOV |
+| `viewmodel_fov` | `60` | `min:` `60,` `max:` `68,` `clientdll` `archive` `userinfo` `per_user` | Viewmodel FOV |
 | `viewmodel_offset_x` | `1` | `min:` `-2,` `max:` `2.5,` `clientdll` `archive` `userinfo` `per_user` | viewmodel_offset_x |
 | `viewmodel_offset_y` | `1` | `min:` `-2,` `max:` `2,` `clientdll` `archive` `userinfo` `per_user` | viewmodel_offset_y |
 | `viewmodel_offset_z` | `-1` | `min:` `-2,` `max:` `2,` `clientdll` `archive` `userinfo` `per_user` | viewmodel_offset_z |

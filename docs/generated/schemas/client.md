@@ -50,7 +50,7 @@ nav_exclude: true
 | [CBaseAnimGraphDestructibleParts_GraphController](#cbaseanimgraphdestructibleparts_graphcontroller) | class | CAnimGraphControllerBase | 0 |
 | [CBaseAnimGraphVariationUserData](#cbaseanimgraphvariationuserdata) | class | CNmGraphVariationUserData | 0 |
 | [CBaseFilter](#cbasefilter) | class | CLogicalEntity | 3 |
-| [CBasePlayerController](#cbaseplayercontroller) | class | C_BaseEntity | 16 |
+| [CBasePlayerController](#cbaseplayercontroller) | class | C_BaseEntity | 17 |
 | [CBasePlayerControllerAPI](#cbaseplayercontrollerapi) | class |  | 0 |
 | [CBasePlayerVData](#cbaseplayervdata) | class | CEntitySubclassVDataBase | 15 |
 | [CBasePlayerWeaponVData](#cbaseplayerweaponvdata) | class | CEntitySubclassVDataBase | 32 |
@@ -103,7 +103,7 @@ nav_exclude: true
 | [CCSPlayer_GlowServices](#ccsplayer_glowservices) | class | CPlayerPawnComponent | 0 |
 | [CCSPlayer_HostageServices](#ccsplayer_hostageservices) | class | CPlayerPawnComponent | 2 |
 | [CCSPlayer_ItemServices](#ccsplayer_itemservices) | class | CPlayer_ItemServices | 2 |
-| [CCSPlayer_MovementServices](#ccsplayer_movementservices) | class | CPlayer_MovementServices_Humanoid | 51 |
+| [CCSPlayer_MovementServices](#ccsplayer_movementservices) | class | CPlayer_MovementServices_Humanoid | 50 |
 | [CCSPlayer_PingServices](#ccsplayer_pingservices) | class | CPlayerPawnComponent | 1 |
 | [CCSPlayer_UseServices](#ccsplayer_useservices) | class | CPlayer_UseServices | 0 |
 | [CCSPlayer_WaterServices](#ccsplayer_waterservices) | class | CPlayer_WaterServices | 3 |
@@ -1639,6 +1639,7 @@ classDiagram
 | `m_hSplitScreenPlayers` | CUtlVector<CHandle<[CBasePlayerController](../schemas/client.md#cbaseplayercontroller)>> | `MNotSaved` |
 | `m_bIsHLTV` | bool |  |
 | `m_iConnected` | [PlayerConnectedState](../schemas/client.md#playerconnectedstate) | PlayerConnectedState enum – 0 = Disconnected, 1 = Connected, 2 = Connecting. `MNotSaved` |
+| `m_iMostConnected` | [PlayerConnectedState](../schemas/client.md#playerconnectedstate) | `MNotSaved` |
 | `m_iszPlayerName` | char[128] | Display name of the player, as reported by Steam (up to 128 bytes, UTF-8). `MNotSaved` |
 | `m_steamID` | uint64 | 64-bit Steam account ID (SteamID64) of the connected client. *Transmitted as a fixed64; only sent to the owning player and GOTV.* `MNotSaved` |
 | `m_bIsLocalPlayerController` | bool | `MNotSaved` |
@@ -2962,7 +2963,6 @@ classDiagram
 |------|------|-------------|
 | `m_AnimationState` | [CCSPlayerAnimationState](../schemas/client.md#ccsplayeranimationstate) |  |
 | `m_bUsingGroundTopologyOffset` | bool |  |
-| `m_flAltitudeAtLastUsingGroundTopologyOffsetTransition` | float32 |  |
 | `m_flUsingGroundTopologyOffsetTransitionSmoothing` | float32 |  |
 | `m_vecLadderNormal` | Vector |  |
 | `m_nLadderSurfacePropIndex` | int32 |  |
