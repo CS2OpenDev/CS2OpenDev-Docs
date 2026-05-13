@@ -5,8 +5,8 @@ remote_theme: just-the-docs/just-the-docs
 plugins:
   - jekyll-remote-theme
 
-url: "https://sid2934.github.io"
-baseurl: "/CS2-OpenDevDocs"
+url: "https://cs2opendev.github.io"
+baseurl: "/CS2OpenDev-Docs"
 
 # Dark color scheme (follows the just-the-docs built-in dark theme)
 color_scheme: dark
@@ -33,7 +33,7 @@ back_to_top: true
 back_to_top_text: "Back to top"
 
 # Footer
-footer_content: "Auto-generated from <a href='https://github.com/sid2934/CS2-OpenDevDocs'>CS2-OpenDevDocs</a>."
+footer_content: "Auto-generated from <a href='https://github.com/CS2OpenDev/CS2OpenDev-Docs'>CS2OpenDev-Docs</a>."
 
 # Exclude the generator script and the hand-edited overlay sources from
 # Jekyll processing.  Generated content under docs/generated/ IS published.

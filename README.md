@@ -56,8 +56,8 @@ See [`docs/overlays/README.md`](docs/overlays/README.md) for the full format and
 
 ```bash
 # Clone with both submodules
-git clone --recurse-submodules https://github.com/sid2934/CS2-OpenDevDocs.git
-cd CS2-OpenDevDocs
+git clone --recurse-submodules https://github.com/CS2OpenDev/CS2OpenDev-Docs.git
+cd CS2OpenDev-Docs
 
 # Or initialise the submodules in an existing clone
 git submodule update --init --recursive

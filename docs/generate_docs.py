@@ -15,7 +15,7 @@ Usage:
 
     --repo-root  Root of the repository that contains docs/, overlays/, etc.
                  (default: current directory)
-    --data-root  Root of the CS2-OpenDevDocs data tree that contains
+    --data-root  Root of the CS2OpenDev-Docs data tree that contains
                  DumpSource2/ and Protobufs/.  Defaults to --repo-root, which
                  is the right value when running inside this repository.  Set
                  this to a submodule or sibling checkout path when running
@@ -1978,13 +1978,13 @@ own type-mapping policy without fighting JSON Schema's vocabulary.
 ## Format reference
 
 Full per-key documentation lives in
-[`AGENTS.md`](https://github.com/sid2934/CS2-OpenDevDocs/blob/main/AGENTS.md#cs2_schemajson-format)
+[`AGENTS.md`](https://github.com/CS2OpenDev/CS2OpenDev-Docs/blob/main/AGENTS.md#cs2_schemajson-format)
 at the repository root.
 
 ## Auto-generated — do not hand-edit
 
 These files are regenerated every 4 hours from upstream by
-[`.github/workflows/generate-docs.yml`](https://github.com/sid2934/CS2-OpenDevDocs/blob/main/.github/workflows/generate-docs.yml).
+[`.github/workflows/generate-docs.yml`](https://github.com/CS2OpenDev/CS2OpenDev-Docs/blob/main/.github/workflows/generate-docs.yml).
 To change the generated output, edit the generator
 (`docs/generate_docs.py`) or the community overlays under
 `docs/overlays/` instead.
@@ -2103,7 +2103,7 @@ def main(argv: list[str] | None = None) -> int:
         "--data-root",
         default=None,
         help=(
-            "Path to the CS2-OpenDevDocs data tree (contains DumpSource2/ and "
+            "Path to the CS2OpenDev-Docs data tree (contains DumpSource2/ and "
             "Protobufs/).  Defaults to --repo-root.  Override when running from a "
             "standalone documentation repository that tracks game data in a "
             "submodule or sibling checkout."
