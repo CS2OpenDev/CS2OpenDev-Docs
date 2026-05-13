@@ -10,7 +10,7 @@ your AI tool's context, or copy-paste the content directly into a system
 prompt / custom instructions field:
 
 ```
-https://raw.githubusercontent.com/sid2934/CS2-OpenDevDocs/main/AGENTS.md
+https://raw.githubusercontent.com/CS2OpenDev/CS2OpenDev-Docs/main/AGENTS.md
 ```
 
 ---
@@ -31,13 +31,13 @@ The documentation covers:
 
 | Section | Contents | Browse URL |
 |---------|----------|------------|
-| **Schema entities** | All C++ entity classes, structs, and enums from CS2's DumpSource2 dump (~3 970 types across 46 engine modules), each with field offsets and class sizes | https://sid2934.github.io/CS2-OpenDevDocs/generated/schemas |
-| **Protobufs** | All `.proto` message definitions — game events, network messages, GC messages, demo format (42 files, ~777 messages).  Compiled via `protoc` and walked as `FileDescriptorProto`s, so source-info comments and default values are preserved verbatim. | https://sid2934.github.io/CS2-OpenDevDocs/generated/protobufs |
-| **ConVars** | Every console variable with default value, flags, and description (~3 800 entries) | https://sid2934.github.io/CS2-OpenDevDocs/generated/convars |
-| **Commands** | Every console command with flags and description (~1 130 entries) | https://sid2934.github.io/CS2-OpenDevDocs/generated/commands |
-| **UML diagrams** | Mermaid class-hierarchy diagrams for every schema module | https://sid2934.github.io/CS2-OpenDevDocs/generated/diagrams/server_hierarchy |
-| **Entity schema** | `downstream-codegen-schemas/cs2_schema.json` — community-enriched mirror of upstream `cs2.json.gz` from DumpSource2.  Mirrors upstream's exact shape (top-level `generator` / `revision` / `version_date` / `version_time` / `classes` / `enums`) so any tooling that targets the DumpSource2 dump works unchanged.  Optional `annotations` blocks layer in community-curated descriptions, notes, and warnings.  See the [format reference](#cs2_schemajson-format) below. | https://sid2934.github.io/CS2-OpenDevDocs/generated/downstream-codegen-schemas/cs2_schema.json |
-| **Game events schema** | `downstream-codegen-schemas/gameevents_schema.json` — community-enriched mirror of the parsed `.gameevents` KV1 registry.  Top-level `events` list; each event preserves its `name` / `comment` / `source` / `properties` / `fields` from the upstream KV1 source.  Same `annotations` enrichment pattern as `cs2_schema.json`. | https://sid2934.github.io/CS2-OpenDevDocs/generated/downstream-codegen-schemas/gameevents_schema.json |
+| **Schema entities** | All C++ entity classes, structs, and enums from CS2's DumpSource2 dump (~3 970 types across 46 engine modules), each with field offsets and class sizes | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas |
+| **Protobufs** | All `.proto` message definitions — game events, network messages, GC messages, demo format (42 files, ~777 messages).  Compiled via `protoc` and walked as `FileDescriptorProto`s, so source-info comments and default values are preserved verbatim. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/protobufs |
+| **ConVars** | Every console variable with default value, flags, and description (~3 800 entries) | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/convars |
+| **Commands** | Every console command with flags and description (~1 130 entries) | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/commands |
+| **UML diagrams** | Mermaid class-hierarchy diagrams for every schema module | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/server_hierarchy |
+| **Entity schema** | `downstream-codegen-schemas/cs2_schema.json` — community-enriched mirror of upstream `cs2.json.gz` from DumpSource2.  Mirrors upstream's exact shape (top-level `generator` / `revision` / `version_date` / `version_time` / `classes` / `enums`) so any tooling that targets the DumpSource2 dump works unchanged.  Optional `annotations` blocks layer in community-curated descriptions, notes, and warnings.  See the [format reference](#cs2_schemajson-format) below. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/cs2_schema.json |
+| **Game events schema** | `downstream-codegen-schemas/gameevents_schema.json` — community-enriched mirror of the parsed `.gameevents` KV1 registry.  Top-level `events` list; each event preserves its `name` / `comment` / `source` / `properties` / `fields` from the upstream KV1 source.  Same `annotations` enrichment pattern as `cs2_schema.json`. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/gameevents_schema.json |
 
 ### `cs2_schema.json` format
 
@@ -159,7 +159,7 @@ Same enrichment pattern as `cs2_schema.json`, applied to the parsed
 Field `type` values are the raw .gameevents type tags — `none`,
 `string`, `bool`, `byte`, `short`, `long`, `float`, `uint64`, `local`,
 `player_controller`, `player_controller_and_pawn`, `player_pawn`,
-`ehandle`.  See the [generated reference page](https://sid2934.github.io/CS2-OpenDevDocs/generated/gameevents)
+`ehandle`.  See the [generated reference page](https://cs2opendev.github.io/CS2OpenDev-Docs/generated/gameevents)
 for human-readable type meanings.
 
 ---
@@ -185,7 +185,7 @@ All server-side entities ultimately derive from `CEntityInstance` →
 
 ### `CBaseEntity`
 *Root entity. Every server entity derives from this.*
-Full reference: https://sid2934.github.io/CS2-OpenDevDocs/generated/schemas/server#cbaseentity
+Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server#cbaseentity
 
 Key fields:
 
@@ -203,7 +203,7 @@ Key fields:
 
 ### `CCSPlayerController`
 *One per connected client, persists across rounds.*
-Full reference: https://sid2934.github.io/CS2-OpenDevDocs/generated/schemas/server#ccsplayercontroller
+Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server#ccsplayercontroller
 
 Inheritance: `CEntityInstance` → `CBaseEntity` → `CBasePlayerController` → `CCSPlayerController`
 
@@ -231,7 +231,7 @@ Key fields:
 
 ### `CCSPlayerPawn`
 *The in-world player body; recreated each round.*
-Full reference: https://sid2934.github.io/CS2-OpenDevDocs/generated/schemas/server#ccsplayerpawn
+Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server#ccsplayerpawn
 
 Inheritance: `CBaseEntity` → `CBaseModelEntity` → `CBaseFlex` → `CBaseAnimGraph` → `CBaseCombatCharacter` → `CBasePlayerPawn` → `CCSPlayerPawnBase` → `CCSPlayerPawn`
 
@@ -257,7 +257,7 @@ Key fields:
 
 ### `CCSGameRules`
 *Singleton holding all match-level state.*
-Full reference: https://sid2934.github.io/CS2-OpenDevDocs/generated/schemas/server#ccsgamerules
+Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server#ccsgamerules
 
 Accessed via the `CCSGameRulesProxy` entity on the client. Inheritance:
 `CGameRules` → `CMultiplayRules` → `CTeamplayRules` → `CCSGameRules`
@@ -288,7 +288,7 @@ Key fields:
 
 ### `CCSWeaponBase` / `CCSWeaponBaseGun`
 *Base weapon classes.*
-Full reference: https://sid2934.github.io/CS2-OpenDevDocs/generated/schemas/server#ccsweaponbase
+Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server#ccsweaponbase
 
 Inheritance: `CBaseEntity` → `CBaseModelEntity` → `CBasePlayerWeapon` → `CCSWeaponBase` → `CCSWeaponBaseGun`
 
@@ -310,13 +310,13 @@ All individual weapons (`CAWP`, `CAK47`, `CDEAGLE`, etc.) inherit from
 `CCSWeaponBaseGun` and typically carry 0 additional fields (all data is in
 `CCSWeaponBaseVData` and the base classes).
 
-Full weapon list: https://sid2934.github.io/CS2-OpenDevDocs/generated/schemas/server
+Full weapon list: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server
 
 ---
 
 ### `CPlantedC4`
 *The planted bomb entity.*
-Full reference: https://sid2934.github.io/CS2-OpenDevDocs/generated/schemas/server#cplantedc4
+Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server#cplantedc4
 
 | Field | Type | Notes |
 |-------|------|-------|
@@ -333,13 +333,13 @@ Full reference: https://sid2934.github.io/CS2-OpenDevDocs/generated/schemas/serv
 ## Key Protobuf message groups
 
 ### Game events (`cs_gameevents.proto`)
-Reference: https://sid2934.github.io/CS2-OpenDevDocs/generated/proto/cs_gameevents
+Reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/proto/cs_gameevents
 
 CS2-specific game event messages (e.g. bomb plant/defuse, kill, round end).
 Sent as `CMsgSource1LegacyGameEvent` on the network.
 
 ### CS2 user messages (`cstrike15_usermessages.proto`)
-Reference: https://sid2934.github.io/CS2-OpenDevDocs/generated/proto/cstrike15_usermessages
+Reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/proto/cstrike15_usermessages
 
 73 messages sent from server to individual clients: HUD hints, radar updates,
 kill cam data, round end summary, item purchases, etc.
@@ -349,7 +349,7 @@ Key messages: `CCSUsrMsg_RoundEnd`, `CCSUsrMsg_SendAudio`,
 `CCSUsrMsg_MatchEndData`
 
 ### CS2 GC messages (`cstrike15_gcmessages.proto`)
-Reference: https://sid2934.github.io/CS2-OpenDevDocs/generated/proto/cstrike15_gcmessages
+Reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/proto/cstrike15_gcmessages
 
 156 messages between the game client/server and Valve's Game Coordinator:
 matchmaking, lobbies, item inventory, competitive ranks, GOTV relay, etc.
@@ -359,7 +359,7 @@ Key messages: `CMsgGCCStrike15_v2_MatchmakingClient2GCHello`,
 `CMsgGCCStrike15_v2_MatchList`
 
 ### Core net messages (`netmessages.proto`)
-Reference: https://sid2934.github.io/CS2-OpenDevDocs/generated/proto/netmessages
+Reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/proto/netmessages
 
 63 engine-level network messages: snapshot packets, string tables, data
 tables (SendTables), sound events, entity creation/deletion.
@@ -368,14 +368,14 @@ Key messages: `CNETMsg_Tick`, `CSVCMsg_PacketEntities`,
 `CSVCMsg_CreateStringTable`, `CSVCMsg_GameEvent`, `CSVCMsg_UserMessage`
 
 ### Demo file format (`demo.proto`)
-Reference: https://sid2934.github.io/CS2-OpenDevDocs/generated/proto/demo
+Reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/proto/demo
 
 Messages defining the `.dem` file format: `CDemoHeader`, `CDemoFileHeader`,
 `CDemoPacket`, `CDemoFullPacket`, `CDemoStringTables`, `CDemoClassInfo`.
 CS2 demos are written in the Source 2 "PBDEMS2" binary format.
 
 ### User commands (`cs_usercmd.proto`)
-Reference: https://sid2934.github.io/CS2-OpenDevDocs/generated/proto/cs_usercmd
+Reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/proto/cs_usercmd
 
 `CCSUsrCmd` — the per-tick command sent from client to server: move direction,
 view angles, attack buttons, subtick data.
@@ -414,22 +414,22 @@ view angles, attack buttons, subtick data.
 
 | Module | Entities | Description | URL |
 |--------|----------|-------------|-----|
-| `server` | ~574 | Server-side entity classes (weapons, players, game rules, …) | https://sid2934.github.io/CS2-OpenDevDocs/generated/schemas/server |
-| `client` | ~714 | Client-side entity mirrors and UI components | https://sid2934.github.io/CS2-OpenDevDocs/generated/schemas/client |
-| `particles` | ~502 | Particle system types | https://sid2934.github.io/CS2-OpenDevDocs/generated/schemas/particles |
-| `animgraphlib` | ~265 | Animation graph nodes and types | https://sid2934.github.io/CS2-OpenDevDocs/generated/schemas/animgraphlib |
-| `animlib` | ~210 | Core animation types | https://sid2934.github.io/CS2-OpenDevDocs/generated/schemas/animlib |
-| `animationsystem` | ~55 | Top-level animation system | https://sid2934.github.io/CS2-OpenDevDocs/generated/schemas/animationsystem |
-| `physicslib` | ~98 | Physics types | https://sid2934.github.io/CS2-OpenDevDocs/generated/schemas/physicslib |
-| `vphysics2` | ~5 | Havok physics integration | https://sid2934.github.io/CS2-OpenDevDocs/generated/schemas/vphysics2 |
-| `modellib` | ~140 | Model/mesh types | https://sid2934.github.io/CS2-OpenDevDocs/generated/schemas/modellib |
-| `soundsystem` | ~23 | Sound system types | https://sid2934.github.io/CS2-OpenDevDocs/generated/schemas/soundsystem |
-| `materialsystem2` | ~19 | Material types | https://sid2934.github.io/CS2-OpenDevDocs/generated/schemas/materialsystem2 |
-| `entity2` | ~17 | Base entity framework types (`CEntityInstance`, `GameTime_t`, …) | https://sid2934.github.io/CS2-OpenDevDocs/generated/schemas/entity2 |
-| `navlib` | ~11 | Navigation mesh types | https://sid2934.github.io/CS2-OpenDevDocs/generated/schemas/navlib |
-| `resourcesystem` | ~48 | Resource/asset system types | https://sid2934.github.io/CS2-OpenDevDocs/generated/schemas/resourcesystem |
-| `scenesystem` | ~12 | Scene graph types | https://sid2934.github.io/CS2-OpenDevDocs/generated/schemas/scenesystem |
-| `pulse_system` | ~30 | Pulse scripting system | https://sid2934.github.io/CS2-OpenDevDocs/generated/schemas/pulse_system |
+| `server` | ~574 | Server-side entity classes (weapons, players, game rules, …) | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server |
+| `client` | ~714 | Client-side entity mirrors and UI components | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/client |
+| `particles` | ~502 | Particle system types | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/particles |
+| `animgraphlib` | ~265 | Animation graph nodes and types | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/animgraphlib |
+| `animlib` | ~210 | Core animation types | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/animlib |
+| `animationsystem` | ~55 | Top-level animation system | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/animationsystem |
+| `physicslib` | ~98 | Physics types | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/physicslib |
+| `vphysics2` | ~5 | Havok physics integration | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/vphysics2 |
+| `modellib` | ~140 | Model/mesh types | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/modellib |
+| `soundsystem` | ~23 | Sound system types | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/soundsystem |
+| `materialsystem2` | ~19 | Material types | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/materialsystem2 |
+| `entity2` | ~17 | Base entity framework types (`CEntityInstance`, `GameTime_t`, …) | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/entity2 |
+| `navlib` | ~11 | Navigation mesh types | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/navlib |
+| `resourcesystem` | ~48 | Resource/asset system types | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/resourcesystem |
+| `scenesystem` | ~12 | Scene graph types | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/scenesystem |
+| `pulse_system` | ~30 | Pulse scripting system | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/pulse_system |
 
 ---
 
@@ -440,18 +440,18 @@ content for a specific section:
 
 | Content | Raw URL |
 |---------|---------|
-| Server schema (full, ~large) | `https://raw.githubusercontent.com/sid2934/CS2-OpenDevDocs/main/docs/generated/schemas/server.md` |
-| Client schema (full, ~large) | `https://raw.githubusercontent.com/sid2934/CS2-OpenDevDocs/main/docs/generated/schemas/client.md` |
-| ConVars | `https://raw.githubusercontent.com/sid2934/CS2-OpenDevDocs/main/docs/generated/convars.md` |
-| Commands | `https://raw.githubusercontent.com/sid2934/CS2-OpenDevDocs/main/docs/generated/commands.md` |
-| cs_gameevents proto | `https://raw.githubusercontent.com/sid2934/CS2-OpenDevDocs/main/docs/generated/proto/cs_gameevents.md` |
-| cstrike15_usermessages proto | `https://raw.githubusercontent.com/sid2934/CS2-OpenDevDocs/main/docs/generated/proto/cstrike15_usermessages.md` |
-| cstrike15_gcmessages proto | `https://raw.githubusercontent.com/sid2934/CS2-OpenDevDocs/main/docs/generated/proto/cstrike15_gcmessages.md` |
-| netmessages proto | `https://raw.githubusercontent.com/sid2934/CS2-OpenDevDocs/main/docs/generated/proto/netmessages.md` |
-| demo proto | `https://raw.githubusercontent.com/sid2934/CS2-OpenDevDocs/main/docs/generated/proto/demo.md` |
-| cs_usercmd proto | `https://raw.githubusercontent.com/sid2934/CS2-OpenDevDocs/main/docs/generated/proto/cs_usercmd.md` |
-| Entity hierarchy diagram | `https://raw.githubusercontent.com/sid2934/CS2-OpenDevDocs/main/docs/generated/diagrams/server_hierarchy.md` |
-| This file (AGENTS.md) | `https://raw.githubusercontent.com/sid2934/CS2-OpenDevDocs/main/AGENTS.md` |
+| Server schema (full, ~large) | `https://raw.githubusercontent.com/CS2OpenDev/CS2OpenDev-Docs/main/docs/generated/schemas/server.md` |
+| Client schema (full, ~large) | `https://raw.githubusercontent.com/CS2OpenDev/CS2OpenDev-Docs/main/docs/generated/schemas/client.md` |
+| ConVars | `https://raw.githubusercontent.com/CS2OpenDev/CS2OpenDev-Docs/main/docs/generated/convars.md` |
+| Commands | `https://raw.githubusercontent.com/CS2OpenDev/CS2OpenDev-Docs/main/docs/generated/commands.md` |
+| cs_gameevents proto | `https://raw.githubusercontent.com/CS2OpenDev/CS2OpenDev-Docs/main/docs/generated/proto/cs_gameevents.md` |
+| cstrike15_usermessages proto | `https://raw.githubusercontent.com/CS2OpenDev/CS2OpenDev-Docs/main/docs/generated/proto/cstrike15_usermessages.md` |
+| cstrike15_gcmessages proto | `https://raw.githubusercontent.com/CS2OpenDev/CS2OpenDev-Docs/main/docs/generated/proto/cstrike15_gcmessages.md` |
+| netmessages proto | `https://raw.githubusercontent.com/CS2OpenDev/CS2OpenDev-Docs/main/docs/generated/proto/netmessages.md` |
+| demo proto | `https://raw.githubusercontent.com/CS2OpenDev/CS2OpenDev-Docs/main/docs/generated/proto/demo.md` |
+| cs_usercmd proto | `https://raw.githubusercontent.com/CS2OpenDev/CS2OpenDev-Docs/main/docs/generated/proto/cs_usercmd.md` |
+| Entity hierarchy diagram | `https://raw.githubusercontent.com/CS2OpenDev/CS2OpenDev-Docs/main/docs/generated/diagrams/server_hierarchy.md` |
+| This file (AGENTS.md) | `https://raw.githubusercontent.com/CS2OpenDev/CS2OpenDev-Docs/main/AGENTS.md` |
 
 ---
 
