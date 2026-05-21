@@ -318,8 +318,8 @@ def find_schema_json(data_root: Path) -> Path | None:
     ``ValveResourceFormat/SchemaExplorer`` (the Phase 1.1 input source).
 
     The sibling layout is necessary because ``data_root`` is itself a git
-    submodule, so a *nested* ``data/SchemaExplorer`` submodule would be
-    rejected by Git's submodule-of-submodule prohibition.
+    submodule, so a *nested* ``upstream/data/SchemaExplorer`` submodule would
+    be rejected by Git's submodule-of-submodule prohibition.
 
     Preference order:
       1. <data-root>/DumpSource2/schemas.json[.gz]  (Phase 2.1 future)
@@ -2151,7 +2151,7 @@ def main(argv: list[str] | None = None) -> int:
             f"{data_root}/DumpSource2/ and "
             f"{data_root.parent}/schema-explorer/schemas/.  "
             "Pass --schema-json PATH, or initialise the schema-explorer submodule "
-            "(`git submodule update --init schema-explorer`).",
+            "(`git submodule update --init upstream/schema-explorer`).",
             file=sys.stderr,
         )
         return 2

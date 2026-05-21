@@ -10,11 +10,11 @@ and published to **GitHub Pages**.
 Two upstream repos are included as **read-only git submodules**:
 
 - [`SteamDatabase/GameTracking-CS2`](https://github.com/SteamDatabase/GameTracking-CS2)
-  at `data/` — Protobufs, .gameevents, ConVars, commands.
+  at `upstream/data/` — Protobufs, .gameevents, ConVars, commands.
 - [`ValveResourceFormat/SchemaExplorer`](https://github.com/ValveResourceFormat/SchemaExplorer)
-  at `schema-explorer/` — DumpSource2's structured `cs2.json.gz` (the source of
-  truth for entity schemas: classes, enums, fields, offsets, sizes, parents,
-  metadata).
+  at `upstream/schema-explorer/` — DumpSource2's structured `cs2.json.gz` (the
+  source of truth for entity schemas: classes, enums, fields, offsets, sizes,
+  parents, metadata).
 
 A scheduled GitHub Actions workflow runs every **4 hours**, advances both
 submodules to upstream HEAD, and regenerates documentation if anything
@@ -23,7 +23,7 @@ back to this repo and deployed to GitHub Pages automatically.
 
 ```
 SteamDatabase/GameTracking-CS2          ValveResourceFormat/SchemaExplorer
-    └── data/  ← submodule pointer            └── schema-explorer/  ← submodule pointer
+    └── upstream/data/  ← submodule pointer    └── upstream/schema-explorer/  ← submodule pointer
             │                                            │
             ▼                                            ▼
   this repo
@@ -67,7 +67,7 @@ pip install pyyaml protobuf
 
 python3 docs/generate_docs.py \
   --repo-root . \
-  --data-root ./data \
+  --data-root ./upstream/data \
   --output docs
 ```
 

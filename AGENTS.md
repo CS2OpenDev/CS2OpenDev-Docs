@@ -41,7 +41,7 @@ The documentation covers:
 
 ### `cs2_schema.json` format
 
-The file is a community-enriched mirror of upstream `schema-explorer/schemas/cs2.json.gz`.
+The file is a community-enriched mirror of upstream SchemaExplorer's `schemas/cs2.json.gz`.
 It is **not** JSON Schema — that approach was tried and abandoned because
 standard codegens (quicktype, NJsonSchema, json-schema-to-typescript, …)
 couldn't handle the layered `allOf`/`$ref` inheritance and synthetic

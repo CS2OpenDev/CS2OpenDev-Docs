@@ -44,9 +44,9 @@ jobs:
         id: submodule
         run: |
           # GameTracking-CS2 — primary source for .proto, .gameevents, convars, commands.
-          BEFORE=$(git -C data rev-parse HEAD)
-          git submodule update --remote --merge data
-          AFTER=$(git -C data rev-parse HEAD)
+          BEFORE=$(git -C upstream/data rev-parse HEAD)
+          git submodule update --remote --merge upstream/data
+          AFTER=$(git -C upstream/data rev-parse HEAD)
           echo "before=$BEFORE" >> "$GITHUB_OUTPUT"
           echo "after=$AFTER"   >> "$GITHUB_OUTPUT"
 
@@ -57,10 +57,10 @@ jobs:
           # tolerate its absence so old branches still build.
           SCHEMA_BEFORE=""
           SCHEMA_AFTER=""
-          if [ -d schema-explorer ]; then
-            SCHEMA_BEFORE=$(git -C schema-explorer rev-parse HEAD)
-            git submodule update --remote --merge schema-explorer || true
-            SCHEMA_AFTER=$(git -C schema-explorer rev-parse HEAD)
+          if [ -d upstream/schema-explorer ]; then
+            SCHEMA_BEFORE=$(git -C upstream/schema-explorer rev-parse HEAD)
+            git submodule update --remote --merge upstream/schema-explorer || true
+            SCHEMA_AFTER=$(git -C upstream/schema-explorer rev-parse HEAD)
           fi
           echo "schema_before=$SCHEMA_BEFORE" >> "$GITHUB_OUTPUT"
           echo "schema_after=$SCHEMA_AFTER"   >> "$GITHUB_OUTPUT"
@@ -92,7 +92,7 @@ jobs:
         run: |
           python3 docs/generate_docs.py \
             --repo-root . \
-            --data-root ./data \
+            --data-root ./upstream/data \
             --output docs
 
       # On direct push events we commit straight to the current branch.
@@ -101,8 +101,8 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data docs/
-          if [ -d schema-explorer ]; then git add schema-explorer; fi
+          git add upstream/data docs/
+          if [ -d upstream/schema-explorer ]; then git add upstream/schema-explorer; fi
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else

@@ -3,14 +3,14 @@
 This repository contains **auto-generated, structured documentation** for
 Counter-Strike 2, extracted from the
 [SteamDatabase/GameTracking-CS2](https://github.com/SteamDatabase/GameTracking-CS2)
-game-file dump (a read-only git submodule at `data/`).
+game-file dump (a read-only git submodule at `upstream/data/`).
 
 ## What is in this repo
 
 | Path | Contents |
 |------|----------|
-| `data/` | Git submodule – raw CS2 game files (DumpSource2 schemas, Protobufs, convars) |
-| `docs/generate_docs.py` | Python generator that produces all Markdown docs from `data/` |
+| `upstream/data/` | Git submodule – raw CS2 game files (DumpSource2 schemas, Protobufs, convars) |
+| `docs/generate_docs.py` | Python generator that produces all Markdown docs from `upstream/data/` |
 | `docs/overlays/` | YAML community-annotation files merged into the generated docs |
 | `docs/generated/schemas/` | One Markdown file per engine module (entity classes, structs, enums) |
 | `docs/generated/proto/` | One Markdown file per `.proto` file (messages, fields, enums) |
@@ -49,5 +49,5 @@ generator. See `docs/overlays/README.md` for the format.
 git clone --recurse-submodules https://github.com/CS2OpenDev/CS2OpenDev-Docs.git
 cd CS2OpenDev-Docs
 pip install pyyaml
-python3 docs/generate_docs.py --repo-root . --data-root ./data --output docs
+python3 docs/generate_docs.py --repo-root . --data-root ./upstream/data --output docs
 ```
