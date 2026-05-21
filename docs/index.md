@@ -15,10 +15,10 @@ Auto-generated documentation from the CS2 game tracking data. Includes entity sc
 |----------|-------|
 | Schema Entities | 3974 |
 | Proto Files | 13 |
-| Proto Messages | 122 |
+| Proto Messages | 123 |
 | Game Events | 288 |
 | ConVars | 3867 |
-| Commands | 1125 |
+| Commands | 1128 |
 
 ## Quick Links
 

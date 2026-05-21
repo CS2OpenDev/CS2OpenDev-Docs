@@ -76,7 +76,7 @@ nav_exclude: true
 | [CCSGameModeRules_ArmsRace](#ccsgamemoderules_armsrace) | class | CCSGameModeRules | 1 |
 | [CCSGameModeRules_Deathmatch](#ccsgamemoderules_deathmatch) | class | CCSGameModeRules | 3 |
 | [CCSGameModeRules_Noop](#ccsgamemoderules_noop) | class | CCSGameModeRules | 0 |
-| [CCSObserver_CameraServices](#ccsobserver_cameraservices) | class | CCSPlayerBase_CameraServices | 0 |
+| [CCSObserver_CameraServices](#ccsobserver_cameraservices) | class | CCSPlayerBase_CameraServices | 1 |
 | [CCSObserver_MovementServices](#ccsobserver_movementservices) | class | CPlayer_MovementServices | 0 |
 | [CCSObserver_ObserverServices](#ccsobserver_observerservices) | class | CPlayer_ObserverServices | 1 |
 | [CCSObserver_UseServices](#ccsobserver_useservices) | class | CPlayer_UseServices | 0 |
@@ -338,7 +338,7 @@ nav_exclude: true
 | [C_CSMinimapBoundary](#c_csminimapboundary) | class | C_BaseEntity | 0 |
 | [C_CSObserverPawn](#c_csobserverpawn) | class | C_CSPlayerPawnBase | 1 |
 | [C_CSPetPlacement](#c_cspetplacement) | class | C_BaseEntity | 0 |
-| [C_CSPlayerPawn](#c_csplayerpawn) | class | C_CSPlayerPawnBase | 105 |
+| [C_CSPlayerPawn](#c_csplayerpawn) | class | C_CSPlayerPawnBase | 102 |
 | [C_CSPlayerPawnBase](#c_csplayerpawnbase) | class | C_BasePlayerPawn | 26 |
 | [C_CSPlayerResource](#c_csplayerresource) | class | C_BaseEntity | 10 |
 | [C_CSTeam](#c_csteam) | class | C_Team | 10 |
@@ -2369,7 +2369,14 @@ classDiagram
     CCSPlayerBase_CameraServices <|-- CCSObserver_CameraServices
     CPlayer_CameraServices <|-- CCSPlayerBase_CameraServices
     CPlayerPawnComponent <|-- CPlayer_CameraServices
+    CCSObserver_CameraServices --> C_PostProcessingVolume
 ```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_hPrevPostProcessingVolume` | CHandle<[C_PostProcessingVolume](../schemas/client.md#c_postprocessingvolume)> |  |
 
 ### CCSObserver_MovementServices
 
@@ -9062,9 +9069,6 @@ classDiagram
 | `m_angStashedShootAngles` | QAngle |  |
 | `m_vecStashedGrenadeThrowPosition` | Vector |  |
 | `m_vecStashedVelocity` | Vector |  |
-| `m_angShootAngleHistory` | QAngle[2] |  |
-| `m_vecThrowPositionHistory` | Vector[2] |  |
-| `m_vecVelocityHistory` | Vector[2] |  |
 | `m_bShouldAutobuyDMWeapons` | bool |  |
 | `m_fImmuneToGunGameDamageTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_bGunGameImmunity` | bool |  |

@@ -158,6 +158,7 @@ direction LR
     +List~fixed32~ utcdatetime_vals
     +List~fixed64~ steamidtrustbucket_vals
     +List~CMsgSource2PlayStatsPackedRecordList.SteamIDList~ trustbucket_vals
+    +List~uint64~ steamid_vals
   }
 
   class FieldDef {
@@ -193,6 +194,15 @@ direction LR
     +string data
   }
 
+  class CUserMessage_UserSentBugBug {
+    +string command_line
+    +string autoexec_cfg
+    +CMsgSource2SystemSpecs system_specs
+    +uint32 build_id
+    +int32 osversion
+    +string command_logs
+  }
+
   CMsgSource2VProfLiteReport --> CMsgSource2VProfLiteReportItem : total
   CMsgSource2PerfIntervalSample --> Tag : tags[]
   CSource2Metrics_MatchPerfSummary_Notification --> CMsgSource2VProfLiteReport : server_profile
@@ -206,6 +216,7 @@ direction LR
   FieldDef --> ESource2PlayStatsFieldType : field_type
   CSource2Metrics_RecordPlayStats_Notification --> CMsgSource2PlayStatsPackedRecordList : record_types[]
   CSource2Metrics_FetchMapData_Response --> MapData : results[]
+  CUserMessage_UserSentBugBug --> CMsgSource2SystemSpecs : system_specs
 
   class ESource2PlayStatsFieldType{
     <<enumeration>>
@@ -226,6 +237,7 @@ direction LR
     Source2PlayStats_UTCDateTime
     Source2PlayStats_SteamIDTrustBucket
     Source2PlayStats_SteamIDTrustBucketMin
+    Source2PlayStats_SteamID
   }
 
 ```
@@ -253,6 +265,7 @@ direction LR
 | `Source2PlayStats_UTCDateTime` | 14 |
 | `Source2PlayStats_SteamIDTrustBucket` | 15 |
 | `Source2PlayStats_SteamIDTrustBucketMin` | 16 |
+| `Source2PlayStats_SteamID` | 17 |
 
 ## Messages
 
@@ -401,6 +414,7 @@ direction LR
 | `utcdatetime_vals` | 17 | fixed32 | repeated | *(packed)* |
 | `steamidtrustbucket_vals` | 18 | fixed64 | repeated | *(packed)* |
 | `trustbucket_vals` | 19 | CMsgSource2PlayStatsPackedRecordList.SteamIDList | repeated |  |
+| `steamid_vals` | 20 | uint64 | repeated | *(packed)* |
 
 ### `CSource2Metrics_RecordPlayStats_Notification`
 
@@ -425,3 +439,14 @@ direction LR
 | Field | Ordinal | Type | Label | Description |
 |-------|---------|------|-------|-------------|
 | `results` | 1 | CSource2Metrics_FetchMapData_Response.MapData | repeated |  |
+
+### `CUserMessage_UserSentBugBug`
+
+| Field | Ordinal | Type | Label | Description |
+|-------|---------|------|-------|-------------|
+| `command_line` | 1 | string | optional |  |
+| `autoexec_cfg` | 2 | string | optional |  |
+| `system_specs` | 3 | [CMsgSource2SystemSpecs](#cmsgsource2systemspecs) | optional |  |
+| `build_id` | 4 | uint32 | optional |  |
+| `osversion` | 5 | int32 | optional |  |
+| `command_logs` | 6 | string | optional |  |

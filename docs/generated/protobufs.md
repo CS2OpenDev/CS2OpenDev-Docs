@@ -15,7 +15,7 @@ Network message definitions and game event structures from CS2's Protobufs direc
 | [enums_clientserver.proto](proto/enums_clientserver.md) | 0 | 4 |
 | [gcsystemmsgs.proto](proto/gcsystemmsgs.md) | 13 | 6 |
 | [networksystem_protomessages.proto](proto/networksystem_protomessages.md) | 5 | 0 |
-| [source2_steam_stats.proto](proto/source2_steam_stats.md) | 10 | 1 |
+| [source2_steam_stats.proto](proto/source2_steam_stats.md) | 11 | 1 |
 | [steamdatagram_messages_auth.proto](proto/steamdatagram_messages_auth.md) | 6 | 0 |
 | [steamdatagram_messages_sdr.proto](proto/steamdatagram_messages_sdr.md) | 33 | 1 |
 | [steammessages_gamenetworkingui.proto](proto/steammessages_gamenetworkingui.md) | 5 | 0 |

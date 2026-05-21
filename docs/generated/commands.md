@@ -88,6 +88,7 @@ All console commands extracted from CS2.
 | `bot_all_weapons` | `gamedll` `release` | Allows the bots to use all weapons |
 | `bot_goto_mark` | `gamedll` `cheat` | Sends a bot to the marked nav area (useful for testing navigation meshes) |
 | `bot_goto_selected` | `gamedll` `cheat` | Sends a bot to the selected nav area (useful for testing navigation meshes) |
+| `bot_hurt` | `gamedll` `cheat` | <no description> |
 | `bot_kick` | `gamedll` `release` | bot_kick <all> <t\|ct> <type> <difficulty> <name> - Kicks a specific bot, or all bots, matching the given criteria. |
 | `bot_kill` | `gamedll` `cheat` | bot_kill <all> <t\|ct> <type> <difficulty> <name> - Kills a specific bot, or all bots, matching the given criteria. |
 | `bot_knives_only` | `gamedll` `release` | Restricts the bots to only using knives |
@@ -98,6 +99,8 @@ All console commands extracted from CS2.
 | `box` | `gamedll` `cheat` | Draw a bbox |
 | `breakable_force_break` | `developmentonly` `gamedll` `defensive` | Force a breakable to break |
 | `bug` | `developmentonly` `dontrecord` `defensive` | bug [auto_fill_tokens] [-title <text>] [-noscreenshot] : Activate the bug reporter. |
+| `bugbug` | `clientdll` `release` | bugbug |
+| `bugbug_commit` | `clientdll` `release` | bugbug_commit |
 | `bugvoice_clear` | `developmentonly` `dontrecord` `defensive` | Clear voice attachment data. |
 | `bugvoice_save` | `developmentonly` `dontrecord` `defensive` | Write buffered voice attachment data to file. |
 | `buildcubemaps` | `developmentonly` `clientdll` `defensive` | Build Cubemaps |

@@ -689,7 +689,6 @@ All console variables extracted from CS2.
 | `cl_showusercmd` | `false` | `developmentonly` `clientdll` `defensive` | Show user command encoding |
 | `cl_silencer_mode` | `0` | `clientdll` `archive` `userinfo` `per_user` | 0: cannot detach; 1: press secondary fire to detach |
 | `cl_simulate_dormant_entities` | `true` | `developmentonly` `clientdll` `defensive` | <no description> |
-| `cl_skel_constraints_enable` | `true` | `replicated` `cheat` | <no description> |
 | `cl_skeleton_instance_smear_boneflags` | `false` | `clientdll` `cheat` | Smear boneflags across the model.  Costs computation, but tests to make sure your bone flags are consistent. |
 | `cl_skip_hierarchy_update_for_unchanged_entities` | `true` | `developmentonly` `gamedll` `clientdll` `replicated` | Skip updating hierarchy information in PostDataUpdate for entities that have not changed |
 | `cl_skip_update_animations` | `false` | `developmentonly` `clientdll` | Enable to skip game animations |
@@ -3851,6 +3850,7 @@ All console variables extracted from CS2.
 | `weapon_accuracy_nospread` | `false` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Disable weapon inaccuracy spread |
 | `weapon_accuracy_reset_on_deploy` | `false` | `gamedll` `clientdll` `replicated` `cheat` `release` | On deploy, forcibly reset weapon accuracy to zero. |
 | `weapon_accuracy_shotgun_spread_patterns` | `true` | `gamedll` `clientdll` `replicated` `release` | <no description> |
+| `weapon_accuracy_stack_boost_limit` | `2` | `gamedll` `clientdll` `replicated` `release` | Apply ladder inaccuracy to players boosted by a stack of this many (or more) players |
 | `weapon_air_spread_scale` | `1` | `min:` `0,` `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Scale factor for jumping inaccuracy, set to 0 to make jumping accuracy equal to standing |
 | `weapon_all_nametag` | `false` | `developmentonly` `clientdll` | <no description> |
 | `weapon_all_stattrak` | `false` | `developmentonly` `clientdll` | <no description> |
