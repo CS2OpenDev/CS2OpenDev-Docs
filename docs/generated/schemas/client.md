@@ -342,7 +342,7 @@ nav_exclude: true
 | [C_CSPlayerPawnBase](#c_csplayerpawnbase) | class | C_BasePlayerPawn | 26 |
 | [C_CSPlayerResource](#c_csplayerresource) | class | C_BaseEntity | 10 |
 | [C_CSTeam](#c_csteam) | class | C_Team | 10 |
-| [C_CSWeaponBase](#c_csweaponbase) | class | C_BasePlayerWeapon | 53 |
+| [C_CSWeaponBase](#c_csweaponbase) | class | C_BasePlayerWeapon | 54 |
 | [C_CSWeaponBaseGun](#c_csweaponbasegun) | class | C_CSWeaponBase | 7 |
 | [C_CSWeaponBaseShotgun](#c_csweaponbaseshotgun) | class | C_CSWeaponBase | 0 |
 | [C_Chicken](#c_chicken) | class | C_DynamicProp, IHasAttributes | 7 |
@@ -9266,6 +9266,7 @@ classDiagram
 | `m_bVisualsDataSet` | bool |  |
 | `m_bUIWeapon` | bool |  |
 | `m_nCustomEconReloadEventId` | int32 |  |
+| `m_bCanBePickedUp` | bool |  |
 | `m_nextPrevOwnerUseTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_hPrevOwner` | CHandle<[C_CSPlayerPawn](../schemas/client.md#c_csplayerpawn)> |  |
 | `m_nDropTick` | [GameTick_t](../schemas/entity2.md#gametick_t) |  |
