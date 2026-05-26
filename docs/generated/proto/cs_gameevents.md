@@ -69,6 +69,7 @@ direction LR
     +int32 damage
     +int32 penetration_count
     +bool is_kill
+    +bool through_smoke
   }
 
   CMsgTEFireBullets --> Extra : extra
@@ -161,3 +162,4 @@ Sent to the attacker (and optionally team) when a bullet registers a hit. Used b
 | `damage` | 5 | int32 | optional | Raw damage dealt before armour reduction. |
 | `penetration_count` | 6 | int32 | optional | Number of surfaces the bullet penetrated before this hit. |
 | `is_kill` | 7 | bool | optional | True if this hit resulted in the victim's death. |
+| `through_smoke` | 8 | bool | optional |  |

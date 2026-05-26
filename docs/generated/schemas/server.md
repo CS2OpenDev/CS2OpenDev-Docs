@@ -116,7 +116,7 @@ nav_exclude: true
 | [CCSPlayerController_InventoryServices::NetworkedLoadoutSlot_t](#ccsplayercontroller_inventoryservicesnetworkedloadoutslot_t) | class |  | 3 |
 | [CCSPlayerLegacyJump](#ccsplayerlegacyjump) | class |  | 2 |
 | [CCSPlayerModernJump](#ccsplayermodernjump) | class |  | 9 |
-| [CCSPlayerPawn](#ccsplayerpawn) | class | CCSPlayerPawnBase | 108 |
+| [CCSPlayerPawn](#ccsplayerpawn) | class | CCSPlayerPawnBase | 105 |
 | [CCSPlayerPawnBase](#ccsplayerpawnbase) | class | CBasePlayerPawn | 15 |
 | [CCSPlayerResource](#ccsplayerresource) | class | CBaseEntity | 10 |
 | [CCSPlayer_ActionTrackingServices](#ccsplayer_actiontrackingservices) | class | CPlayerPawnComponent | 4 |
@@ -4490,9 +4490,6 @@ classDiagram
 | `m_angStashedShootAngles` | QAngle |  |
 | `m_vecStashedGrenadeThrowPosition` | Vector |  |
 | `m_vecStashedVelocity` | Vector |  |
-| `m_angShootAngleHistory` | QAngle[2] |  |
-| `m_vecThrowPositionHistory` | Vector[2] |  |
-| `m_vecVelocityHistory` | Vector[2] |  |
 | `m_bCommittingSuicideOnTeamChange` | bool |  |
 | `m_wasNotKilledNaturally` | bool |  |
 | `m_fImmuneToGunGameDamageTime` | [GameTime_t](../schemas/entity2.md#gametime_t) | GameTime until which the player is immune to damage in Gun Game / Arms Race mode. |

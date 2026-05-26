@@ -1,0 +1,243 @@
+# docs/overlays/gameevents.yml
+#
+# Community-curated annotations for CS2 game events.  The generator
+# applies these to gameevents_schema.json by matching the top-level
+# `events` map keys against event names from the upstream
+# .gameevents files.  An overlay key matches all source files that
+# declare the event (core / game / mod .gameevents) — a single
+# annotation flows through to every variant.
+#
+# Format reference: docs/overlays/README.md
+#
+# Field name semantics that show up repeatedly:
+#   userid    — usually `player_controller_and_pawn`: encodes both the
+#               controller (persistent across rounds) and the active
+#               pawn (per-round) of the actor.  Decode with
+#               `controller_id = userid & 0xFF`, `pawn_index = (userid >> 8)`.
+#               When the field type is just `player_controller`, only
+#               the controller half is meaningful.
+#   site      — bombsite index: 0 = A, 1 = B (CS:GO/CS2 convention).
+#   weapon    — weapon classname, lowercase, no `weapon_` prefix
+#               (e.g. "ak47", "deagle", "knife", "hegrenade").
+
+events:
+
+  # -------------------------------------------------------------------------
+  # Round flow
+  # -------------------------------------------------------------------------
+
+  round_start:
+    description: >
+      Fired by the game rules when a new round begins.  Marks the start
+      of the freeze (buy) period — players have just spawned and are
+      frozen in place.  Use this to reset per-round bookkeeping.
+    notes: >
+      Followed by `round_freeze_end` when the freeze period ends and
+      live play begins.
+
+  round_freeze_end:
+    description: >
+      Fired when the buy/freeze period ends and live play begins.
+      Players regain movement; this is the canonical "round live" tick
+      for demo-parsing tooling and stat trackers.
+
+  round_end:
+    description: >
+      Fired when a round concludes.  Carries the winning team
+      (`winner`), the reason for the win (`reason`, see RoundEndReason
+      table below), and a human-readable `message` string.
+    notes: >
+      The `winner` value uses the same team-number scheme as the
+      `Team` constant in `well_known_constants.json` (2=T, 3=CT, 0/1
+      for draw / unassigned).  The `reason` byte enumerates win
+      conditions: bomb detonation, defusal, time expiry, eliminations,
+      surrender, etc. — full mapping is in
+      `public/cstrike15_gameconstants.h` upstream.
+
+  cs_round_final_beep:
+    description: >
+      Fired on the final pre-explosion beep of the planted C4.  Useful
+      for demo-parsing tooling that wants to mark "bomb is about to
+      detonate" without polling `m_flC4Blow` on the C4 entity.
+
+  round_mvp:
+    description: >
+      Fired at the end of a round to announce the MVP and the music
+      kit that played.  `reason` enumerates why this player was
+      selected (kills, defuse, plant, …); `musickitid` is the Steam
+      item definition index of the MVP anthem.
+
+  # -------------------------------------------------------------------------
+  # Player lifecycle and combat
+  # -------------------------------------------------------------------------
+
+  player_spawn:
+    description: >
+      Fired when a player's pawn spawns (per-round).  The controller
+      persists across rounds; the pawn does not, so this event marks
+      "new pawn is alive."
+
+  player_team:
+    description: >
+      Fired when a player switches teams (T ↔ CT, or to/from
+      Spectator).  `team` is the new team; `oldteam` is the previous.
+      `disconnect=true` indicates the team change was caused by the
+      player leaving rather than a deliberate switch.
+
+  player_hurt:
+    description: >
+      Fired when a player takes damage from any source.  The pre-CS2
+      `weapon` / `dmg_armor` / `dmg_health` / `hitgroup` fields were
+      removed in CS2; for those, use `bullet_damage` (firearm damage)
+      or correlate with the relevant grenade-detonation event.
+
+  player_death:
+    description: >
+      Fired when a player dies.  Carries `userid` (the victim) and
+      `attacker`.  Detailed kill information (weapon, headshot,
+      assister, penetration count, no-scope flag, distance) lives on
+      the legacy `cs_gameevents.proto` user-message
+      `CMsgSource1LegacyGameEvent` payload — extract those keys when
+      parsing demos.
+
+  bullet_damage:
+    description: >
+      Fired on every firearm-projectile hit landed on a player.  Far
+      richer than `player_hurt`: includes shot angles, aim-punch,
+      inaccuracy components, penetration count, and lag-compensation
+      type.  This is the right event for ballistics analysis and
+      cheat-detection heuristics.
+    fields:
+      no_scope:
+        description: "True if the attacker fired while not scoped on a sniper rifle."
+      in_air:
+        description: "True if the attacker was airborne when the shot connected."
+      num_penetrations:
+        description: "Count of solid surfaces the bullet passed through before hitting the victim."
+      recoil_index:
+        description: "Position in the weapon's recoil pattern.  Float so the server-side prediction can interpolate."
+
+  # -------------------------------------------------------------------------
+  # Weapons and items
+  # -------------------------------------------------------------------------
+
+  weapon_fire:
+    description: >
+      Fired each time a player pulls the trigger and a shot is taken.
+      `weapon` is the lowercase classname (`ak47`, `awp`, `knife`,
+      `hegrenade`, …).  Use `bullet_damage` for the *hit* event
+      counterpart.
+
+  grenade_thrown:
+    description: >
+      Fired when a grenade leaves a player's hand.  Pair with the
+      matching `<type>_detonate` event for landing/explosion location.
+
+  item_pickup:
+    description: >
+      Fired when a player picks up a weapon or piece of gear.  `item`
+      is the classname / definition string (`tmp`, `hegrenade`,
+      `nvgs`, …); `defindex` is the Steam economy item definition
+      index of the specific skin / version picked up.
+
+  item_equip:
+    description: >
+      Fired when a player switches to a different weapon or gear slot.
+      Carries flags describing the equipped item (silencer, tracers,
+      paint kit) so demo tooling doesn't need a second lookup.
+
+  # -------------------------------------------------------------------------
+  # Bomb (C4)
+  # -------------------------------------------------------------------------
+
+  bomb_beginplant:
+    description: >
+      Fired the moment a player begins the C4 plant animation.  The
+      plant can still be interrupted (player damaged, switches
+      weapon, leaves site); listen for `bomb_planted` to confirm
+      completion.
+
+  bomb_planted:
+    description: >
+      Fired when the C4 is successfully armed.  `site` is the bombsite
+      index (0=A, 1=B).  At this point a `CPlantedC4` entity exists
+      and the 40-second countdown begins.
+
+  bomb_defused:
+    description: >
+      Fired when the C4 is successfully defused.  `userid` is the
+      defuser; `site` is the bombsite.
+
+  bomb_exploded:
+    description: >
+      Fired when the C4 detonates (defuse failed / timer expired).
+      `userid` is the original planter (the actor who armed it), not
+      the player nearest the explosion.
+
+  bomb_dropped:
+    description: >
+      Fired when a player carrying the C4 drops it (death,
+      voluntary drop, disconnect).  `entindex` identifies the C4 world
+      entity now sitting on the ground.
+
+  bomb_pickup:
+    description: >
+      Fired when a player picks up a dropped C4.  `userid` here is a
+      `player_pawn` (not `player_controller_and_pawn`) — only the
+      pawn half is meaningful.
+
+  bomb_beep:
+    description: >
+      Fired on each beep of an armed C4.  `entindex` references the
+      `CPlantedC4`.  Cadence accelerates as detonation approaches.
+
+  # -------------------------------------------------------------------------
+  # Hostages
+  # -------------------------------------------------------------------------
+
+  hostage_killed:
+    description: >
+      Fired when a hostage entity is killed.  CTs incur a money
+      penalty; this event is the canonical hook for that bookkeeping.
+      `hostage` is the hostage entity index, not the hostage definition.
+
+  hostage_rescued:
+    description: >
+      Fired when a hostage reaches a rescue zone.  `site` is the
+      rescue-zone index when a map carries more than one.
+
+  # -------------------------------------------------------------------------
+  # Grenade detonations
+  # -------------------------------------------------------------------------
+
+  hegrenade_detonate:
+    description: >
+      Fired when an HE grenade explodes.  `x`/`y`/`z` is the world
+      position of the detonation; `entityid` is the projectile's
+      entity index (now removed).
+
+  flashbang_detonate:
+    description: >
+      Fired when a flashbang explodes.  Per-player flash duration is
+      *not* on this event — read `m_flFlashDuration` /
+      `m_flFlashMaxAlpha` on each affected `CCSPlayerPawn` instead.
+
+  smokegrenade_detonate:
+    description: >
+      Fired when a smoke grenade pops and begins emitting smoke.
+      Pair with `smokegrenade_expired` for the lifetime window.
+
+  smokegrenade_expired:
+    description: >
+      Fired when a smoke cloud fully dissipates.
+
+  molotov_detonate:
+    description: >
+      Fired when a Molotov / Incendiary grenade ignites and begins
+      laying fire.  The resulting `CInferno` entity carries the
+      per-fragment damage volumes.
+
+  decoy_detonate:
+    description: >
+      Fired each time a decoy grenade fires its fake gunshot sound.
+      Multiple per decoy lifetime.

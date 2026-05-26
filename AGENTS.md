@@ -38,6 +38,9 @@ The documentation covers:
 | **UML diagrams** | Mermaid class-hierarchy diagrams for every schema module | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/server_hierarchy |
 | **Entity schema** | `downstream-codegen-schemas/cs2_schema.json` — community-enriched mirror of upstream `cs2.json.gz` from DumpSource2.  Mirrors upstream's exact shape (top-level `generator` / `revision` / `version_date` / `version_time` / `classes` / `enums`) so any tooling that targets the DumpSource2 dump works unchanged.  Optional `annotations` blocks layer in community-curated descriptions, notes, and warnings.  See the [format reference](#cs2_schemajson-format) below. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/cs2_schema.json |
 | **Game events schema** | `downstream-codegen-schemas/gameevents_schema.json` — community-enriched mirror of the parsed `.gameevents` KV1 registry.  Top-level `events` list; each event preserves its `name` / `comment` / `source` / `properties` / `fields` from the upstream KV1 source.  Same `annotations` enrichment pattern as `cs2_schema.json`. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/gameevents_schema.json |
+| **ConVars schema** | `downstream-codegen-schemas/convars_schema.json` — structured projection of `DumpSource2/convars.txt`.  Top-level `convars` list, each `{ name, default, flags, description }`. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/convars_schema.json |
+| **Commands schema** | `downstream-codegen-schemas/commands_schema.json` — structured projection of `DumpSource2/commands.txt`.  Top-level `commands` list, each `{ name, flags, description }`. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/commands_schema.json |
+| **Well-known constants** | `downstream-codegen-schemas/well_known_constants.json` — integer / enum values downstream tooling needs but that DumpSource2 doesn't expose as named enum types (team numbers, `m_gamePhase`, `CSWeaponState_t`, …).  Source of truth is `docs/overlays/well_known_constants.yml`. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/well_known_constants.json |
 
 ### `cs2_schema.json` format
 
@@ -52,6 +55,7 @@ shape lets each consumer apply its own type-mapping policy.
 
 ```json
 {
+  "schema_format_version": "1.1",
   "generator": "https://github.com/ValveResourceFormat/DumpSource2",
   "revision": 10627055,
   "version_date": "Apr 30 2026",
@@ -63,6 +67,12 @@ shape lets each consumer apply its own type-mapping policy.
 
 `generator` / `revision` / `version_date` / `version_time` come straight
 from upstream's header and identify the CS2 build the schema describes.
+`schema_format_version` describes the JSON shape itself — major bumps on
+field removal / rename, minor bumps on field addition.  Additive
+`annotations` blocks do not require a bump.  All four codegen schemas
+(`cs2_schema.json`, `gameevents_schema.json`, `convars_schema.json`,
+`commands_schema.json`, `well_known_constants.json`) carry the same
+`schema_format_version` value.
 
 **Per-class entry** (one per `(module, name)` — cross-module twins like
 `CCSPlayerController` emit one record each):
@@ -122,6 +132,57 @@ from upstream's header and identify the CS2 build the schema describes.
 | `annotations` *(optional)* | Community enrichment when the overlay supplies a per-member description. |
 
 A consumer that has never heard of `annotations` ignores the key and gets exactly upstream's shape.  A consumer that reads `annotations` gets the curated descriptions / notes / warnings on top.
+
+**Parsed KV3 defaults.**  Class- and field-level `metadata` entries
+named `MGetKV3ClassDefaults` carry the entity's KV3-encoded default
+values as an escaped string.  When that string parses cleanly as JSON
+(with tolerant handling of trailing commas and `<HIDDEN FOR DIFF>`
+sentinels), the generator adds a sibling `value_parsed` key alongside
+the raw `value` so consumers can read the structured form directly.
+The raw `value` is always preserved unchanged; `value_parsed` is
+absent when the string fails to parse (about 5% of entries, including
+the upstream "Could not parse KV3 Defaults" sentinel).
+
+**Classes with `size > 0` and no fields.**  ~165 classes (e.g.
+`CNmGraphInstance`, `CBasePulseGraphInstance`, `CNavVolume`, `CBtNode`)
+report a non-zero `size` but expose zero fields.  These are internal
+Source 2 runtime classes that the schema reflection system knows the
+binary size of but never registers field-level reflection for.
+Downstream consumers can emit them as empty (sized) classes; field
+layout is not recoverable from the dump.
+
+**Fields that older dumps carried but the current dump does not.**
+The mirror passes through exactly what upstream `cs2.json.gz` emits.
+Several fields that were present in older SchemaExplorer revisions
+(`abstract` on classes, `flags` on enums, `handle_kind` on `CHandle` /
+`CStrongHandle` / `CWeakHandle` atomics, `storage_size` on enums) are
+not present in the current upstream output and so are absent from this
+mirror as well.  File requests upstream at
+`ValveResourceFormat/SchemaExplorer` if you need them restored.
+
+#### Deriving handle kind from atomic name
+
+Until upstream restores the `handle_kind` discriminator, downstream
+codegen can recover it from the atomic `name` directly — every handle
+atomic name in the current schema derives from `CBaseHandle` and the
+name carries the distinction.  Observed in the current build (counts
+are field occurrences across all classes):
+
+| Atomic name | Kind | Notes |
+|---|---|---|
+| `CHandle` | entity | Weak reference to a `CBaseEntity`-derived target.  408 fields. |
+| `CEntityHandle` | entity | Non-templated entity handle; same lifetime semantics as `CHandle` but no compile-time type tag.  28 fields. |
+| `CStrongHandle` | strong | Resource handle that keeps its target alive (refcount).  Used for KV3/resource references.  187 fields. |
+| `CStrongHandleCopyable` | strong | `CStrongHandle` variant with copy-constructor semantics.  5 fields. |
+| `CStrongHandleVoid` | strong | Type-erased `CStrongHandle<void>` for opaque resource targets.  2 fields. |
+| `CWeakHandle` | weak | Non-owning resource handle that doesn't keep the target alive.  42 fields. |
+
+Suggested derivation, in priority order: exact-name table lookup
+first, then prefix match (`CStrongHandle*` → `strong`,
+`CWeakHandle*` → `weak`, anything else containing `Handle` and
+derived from `CBaseHandle` → `entity`).  The exact-name table is
+authoritative for the current schema; the prefix rule is the
+forward-compatible fallback if upstream adds new variants.
 
 ### `gameevents_schema.json` format
 

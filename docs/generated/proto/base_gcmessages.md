@@ -261,15 +261,6 @@ direction LR
   class CMsgRequestInventoryRefresh {
   }
 
-  class CMsgConVarValue {
-    +string name
-    +string value
-  }
-
-  class CMsgReplicateConVars {
-    +List~CMsgConVarValue~ convars
-  }
-
   class CMsgUseItem {
     +uint64 item_id
     +fixed64 target_steam_id
@@ -543,7 +534,6 @@ direction LR
   CSOEconItem --> CSOEconItemAttribute : attribute[]
   CSOEconItem --> CSOEconItem : interior_item
   CSOEconItem --> CSOEconItemEquipped : equipped_state[]
-  CMsgReplicateConVars --> CMsgConVarValue : convars[]
   CMsgSetItemPositions --> ItemPosition : item_positions[]
   CMsgGCBannedWord --> GC_BannedWordType : word_type
   CMsgGCBannedWordListResponse --> CMsgGCBannedWord : word_list[]
@@ -935,19 +925,6 @@ direction LR
 | `error_text` | 1 | string | optional |  |
 
 ### `CMsgRequestInventoryRefresh`
-
-### `CMsgConVarValue`
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `name` | 1 | string | optional |  |
-| `value` | 2 | string | optional |  |
-
-### `CMsgReplicateConVars`
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `convars` | 1 | [CMsgConVarValue](#cmsgconvarvalue) | repeated |  |
 
 ### `CMsgUseItem`
 

@@ -1,0 +1,95 @@
+{
+  "schema_format_version": "1.1",
+  "revision": 10673343,
+  "version_date": "May 20 2026",
+  "version_time": "15:25:57",
+  "constants": [
+    {
+      "name": "Team",
+      "comment": "CCSPlayerController.m_iTeamNum / CBaseEntity.m_iTeamNum values.",
+      "annotations": {
+        "description": "CS2 team assignment.  Spectator is a real team slot, not just an absence of one."
+      },
+      "members": [
+        {
+          "name": "Unassigned",
+          "value": 0
+        },
+        {
+          "name": "Spectator",
+          "value": 1
+        },
+        {
+          "name": "Terrorist",
+          "value": 2
+        },
+        {
+          "name": "CounterTerrorist",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "name": "GamePhase",
+      "comment": "CCSGameRules.m_gamePhase values.",
+      "annotations": {
+        "description": "Match-level phase indicator.  Pre-overtime is the half-time between regulation and OT periods, not the buy phase of an OT round."
+      },
+      "members": [
+        {
+          "name": "FirstHalf",
+          "value": 1
+        },
+        {
+          "name": "SecondHalf",
+          "value": 2
+        },
+        {
+          "name": "PreOvertime",
+          "value": 3,
+          "annotations": {
+            "description": "Half-time of overtime (between regulation and OT)."
+          }
+        },
+        {
+          "name": "Overtime",
+          "value": 4
+        },
+        {
+          "name": "GameOver",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "name": "CSWeaponState",
+      "comment": "CCSWeaponBase.m_iState values (CSWeaponState_t).",
+      "annotations": {
+        "description": "Tracks where a weapon currently lives — on the ground, in someone's inventory, or actively held."
+      },
+      "members": [
+        {
+          "name": "NotCarried",
+          "value": 0,
+          "annotations": {
+            "notes": "Source symbol: WEAPON_NOT_CARRIED.  On the ground."
+          }
+        },
+        {
+          "name": "CarriedByPlayer",
+          "value": 1,
+          "annotations": {
+            "notes": "Source symbol: WEAPON_IS_CARRIED_BY_PLAYER.  In a player's inventory but not active."
+          }
+        },
+        {
+          "name": "Active",
+          "value": 2,
+          "annotations": {
+            "notes": "Source symbol: WEAPON_IS_ACTIVE.  Currently held / drawn."
+          }
+        }
+      ]
+    }
+  ]
+}
