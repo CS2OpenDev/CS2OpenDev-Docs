@@ -1,0 +1,33 @@
+{
+  "cSpell.words": [
+    "codegen",
+    "convars",
+    "cstrike",
+    "cvars",
+    "fltx",
+    "gameevents",
+    "gcmessages",
+    "kramdown",
+    "matrix3x4",
+    "matrix3x4a",
+    "modtools",
+    "netmessages",
+    "pawn",
+    "particleslib",
+    "physicslib",
+    "protoc",
+    "protobufs",
+    "pyyaml",
+    "scenesystem",
+    "schemasystem",
+    "smartprops",
+    "sounddoc",
+    "soundsystem",
+    "steamaudio",
+    "texturelib",
+    "toolutils",
+    "usermessages",
+    "vphysics",
+    "worldrenderer"
+  ]
+}

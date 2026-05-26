@@ -44,6 +44,29 @@ Every Protobuf file has a page in [`docs/generated/proto/`](docs/generated/proto
 containing a Mermaid class diagram, full field tables, enum value listings, and
 overlay-based annotations.
 
+### Downstream codegen schemas
+
+For tooling builders (C# / Rust / Go / TypeScript SDKs, demo parsers,
+plugins, etc.), structured JSON outputs live under
+[`docs/generated/downstream-codegen-schemas/`](docs/generated/downstream-codegen-schemas/):
+
+- `cs2_schema.json` — community-enriched mirror of DumpSource2's
+  `cs2.json.gz` (classes, structs, enums, field offsets, sizes, inheritance,
+  metadata).  Byte-for-byte compatible with upstream so any tool already
+  targeting `cs2.json.gz` works unchanged.
+- `gameevents_schema.json` — structured mirror of the parsed
+  `.gameevents` registry.
+- `convars_schema.json` / `commands_schema.json` — structured projections
+  of the ConVars and commands tables.
+- `well_known_constants.json` — curated tables for values not exposed as
+  named enums in the dump (team numbers, `m_gamePhase`, `CSWeaponState_t`).
+
+All five share an additive `annotations` enrichment pattern and a top-level
+`schema_format_version` string.  See the
+[index README](docs/generated/downstream-codegen-schemas/README.md) for the
+format reference, a per-build type-vocabulary inventory, and the version
+bump policy.
+
 ### Contributing annotations
 
 Community members can add descriptions, notes, and reverse-engineered details

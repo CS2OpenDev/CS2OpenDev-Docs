@@ -25,8 +25,10 @@ Auto-generated documentation from the CS2 game tracking data. Includes entity sc
 - [Schema Entities](generated/schemas.md) – Classes, structs, and enums from CS2's schema dump ([codegen schema](generated/downstream-codegen-schemas/cs2_schema.json))
 - [Protobufs](generated/protobufs.md) – Network message and game event definitions
 - [Game Events](generated/gameevents.md) – Game event definitions with field schemas ([codegen schema](generated/downstream-codegen-schemas/gameevents_schema.json))
-- [ConVars](generated/convars.md) – Console variable reference with flags and defaults
-- [Commands](generated/commands.md) – Console command reference
+- [ConVars](generated/convars.md) – Console variable reference with flags and defaults ([codegen schema](generated/downstream-codegen-schemas/convars_schema.json))
+- [Commands](generated/commands.md) – Console command reference ([codegen schema](generated/downstream-codegen-schemas/commands_schema.json))
+- [Well-Known Constants](generated/downstream-codegen-schemas/well_known_constants.json) – Curated tables for team numbers, game phase, weapon state, etc.
+- [Codegen schemas index](generated/downstream-codegen-schemas/README.md) – Format reference, type vocabulary, and version policy for all five JSON schemas above
 - [Entity Hierarchy Diagram](generated/diagrams/server_hierarchy.md) – UML inheritance diagram for server & client entities
 
 ## Schema Modules

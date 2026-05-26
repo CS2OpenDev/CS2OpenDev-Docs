@@ -46,6 +46,11 @@ try:
 except ImportError:
     HAS_YAML = False
 
+# Version of the JSON shape emitted under docs/generated/downstream-codegen-schemas/.
+# Bump the major when a field is removed or renamed; the minor when a field is added.
+# Additive `annotations` blocks do not require a bump — they were part of 1.0.
+SCHEMA_FORMAT_VERSION = "1.1"
+
 # ---------------------------------------------------------------------------
 # Parsers
 # ---------------------------------------------------------------------------
@@ -284,13 +289,14 @@ def load_schema_json(path: Path) -> tuple[dict[str, dict], dict[str, Any]]:
 
     Returns a pair ``(entities, source_info)`` where:
 
-    * ``entities`` is the entity map keyed by name (replaces the old
-      regex-based ``parse_all_schemas`` walk over .h files).
+    * ``entities`` is the entity map keyed by name.  This is the
+      structured-JSON path that replaced an older regex walk over the
+      per-module ``.h`` files in ``DumpSource2/schemas/``; the JSON
+      carries inheritance / sizes / offsets / metadata directly, so
+      no header parsing is needed any more.
     * ``source_info`` carries the cs2.json header — generator URL, build
       revision, version date/time — so consumers of the generated
-      JSON Schema can know what game build it corresponds to.
-
-    See ``TOOLING_OVERHAUL.md`` § Phase 1.1 for the rationale.
+      schema files can identify the game build the data corresponds to.
     """
     with _open_schema_json(path) as fh:
         data = json.load(fh)
@@ -312,18 +318,19 @@ def load_schema_json(path: Path) -> tuple[dict[str, dict], dict[str, Any]]:
 def find_schema_json(data_root: Path) -> Path | None:
     """Locate the cs2 schema JSON file.
 
-    Looks first inside ``data_root`` (the GameTracking-CS2 submodule) for the
-    cs2.json that DumpSource2 writes there once Phase 2.1 lands upstream, and
-    falls back to a sibling ``schema-explorer`` submodule that tracks
-    ``ValveResourceFormat/SchemaExplorer`` (the Phase 1.1 input source).
+    Looks first inside ``data_root`` (the GameTracking-CS2 submodule) for a
+    cs2.json that DumpSource2 may someday write there, and falls back to a
+    sibling ``schema-explorer`` submodule tracking
+    ``ValveResourceFormat/SchemaExplorer`` (today's actual source).
 
     The sibling layout is necessary because ``data_root`` is itself a git
     submodule, so a *nested* ``upstream/data/SchemaExplorer`` submodule would
     be rejected by Git's submodule-of-submodule prohibition.
 
     Preference order:
-      1. <data-root>/DumpSource2/schemas.json[.gz]  (Phase 2.1 future)
-      2. <data-root>/../schema-explorer/schemas/cs2.json[.gz]  (Phase 1.1)
+      1. <data-root>/DumpSource2/schemas.json[.gz]   (future: DumpSource2
+                                                      ships the JSON directly)
+      2. <data-root>/../schema-explorer/schemas/cs2.json[.gz]  (current)
     """
     sibling = data_root.parent / "schema-explorer"
     candidates = [
@@ -342,9 +349,9 @@ def find_schema_json(data_root: Path) -> Path | None:
 # Proto loader (protoc → FileDescriptorSet)
 # ---------------------------------------------------------------------------
 #
-# Phase 1.2 of TOOLING_OVERHAUL.md: we no longer regex-parse .proto files.
-# Instead protoc emits a binary FileDescriptorSet for each input file and we
-# walk it via google.protobuf.descriptor_pb2.  This gives us oneofs, services,
+# Proto loading uses protoc, not a regex parser: protoc emits a binary
+# FileDescriptorSet for each input file and we walk it via
+# google.protobuf.descriptor_pb2.  This gives us oneofs, services,
 # default values, source-info comments, and full type resolution for free.
 #
 # Why per-file rather than one big set: CS2's protobuf dump has cross-file
@@ -859,6 +866,12 @@ def load_overlays(overlays_root: Path) -> dict[str, dict]:
         individual overlay dicts.  Each entry expands to key
         ``{module}/{EntityName}``.
 
+        Module-level files are *also* stored raw under the bare module
+        key so consumers wanting the wrapped shape (for example
+        ``gameevents.yml``'s top-level ``events:`` mapping, which the
+        gameevents schema generator reads as a unit) can fetch the
+        file content directly via ``overlays[module]``.
+
     Both formats can coexist.  If the same key appears in both, the
     single-entity file (processed last due to ``sorted``) wins.
     """
@@ -876,8 +889,13 @@ def load_overlays(overlays_root: Path) -> dict[str, dict]:
         key = str(rel).replace("\\", "/")
         parts = key.split("/")
         if len(parts) == 1:
-            # Module-level multi-entity file: each top-level key is an entity name.
+            # Module-level multi-entity file: each top-level key is an
+            # entity name.  Also keep the raw file content under the
+            # bare module key so consumers that want the wrapped shape
+            # (e.g. ``gameevents.yml`` with a top-level ``events:``
+            # mapping) can retrieve it directly.
             module = parts[0]
+            overlays[module] = data
             for entity_name, entity_data in data.items():
                 if isinstance(entity_data, dict):
                     overlays[f"{module}/{entity_name}"] = entity_data
@@ -1760,7 +1778,10 @@ def generate_gameevents_schema(
 
         events_out.append(record)
 
-    out: dict[str, Any] = {"events": events_out}
+    out: dict[str, Any] = {
+        "schema_format_version": SCHEMA_FORMAT_VERSION,
+        "events": events_out,
+    }
     schema_dir = out_dir / "downstream-codegen-schemas"
     schema_dir.mkdir(parents=True, exist_ok=True)
     (schema_dir / "gameevents_schema.json").write_text(
@@ -1778,8 +1799,7 @@ def generate_gameevents_schema(
 # The earlier JSON Schema attempt was abandoned because standard codegens
 # (quicktype, json-schema-to-typescript, NJsonSchema, ...) couldn't handle
 # the layered allOf/$ref inheritance and synthetic defs we used to model
-# native CS2 types.  See generate_cs2_schema() for details and
-# TOOLING_OVERHAUL.md for the full rationale.
+# native CS2 types.  See generate_cs2_schema() for details.
 
 
 def _collect_module_variants(entity: dict[str, Any]) -> list[dict[str, Any]]:
@@ -1826,6 +1846,52 @@ def _overlay_annotations(overlay: dict[str, Any] | None) -> dict[str, Any]:
     return out
 
 
+_KV3_TRAILING_COMMA_RE = re.compile(r",(\s*[}\]])")
+
+
+def _try_parse_kv3_defaults(value: str) -> Any:
+    """Attempt to parse an ``MGetKV3ClassDefaults`` value string as JSON.
+
+    Upstream emits the KV3 defaults as a tab-indented string; the basic
+    shape is JSON-compatible but tolerates two non-JSON forms:
+
+    - trailing commas in arrays / objects (stripped)
+    - ``<HIDDEN FOR DIFF>`` opaque-value sentinels (mapped to ``null``)
+
+    Returns the parsed object on success, ``None`` on failure.  The raw
+    string is *always* preserved on the metadata record; this is an
+    additive companion, never a replacement.
+    """
+    if not isinstance(value, str):
+        return None
+    if "Could not parse" in value:
+        return None
+    normalized = value.replace("<HIDDEN FOR DIFF>", "null")
+    normalized = _KV3_TRAILING_COMMA_RE.sub(r"\1", normalized)
+    try:
+        return json.loads(normalized)
+    except (json.JSONDecodeError, ValueError):
+        return None
+
+
+def _attach_kv3_value_parsed(metadata: list[dict[str, Any]] | None) -> None:
+    """Walk a metadata list and add a ``value_parsed`` companion key to
+    every ``MGetKV3ClassDefaults`` entry whose JSON-encoded ``value``
+    parses successfully.  Modifies ``metadata`` in place; tolerates a
+    missing or non-list input.
+    """
+    if not isinstance(metadata, list):
+        return
+    for entry in metadata:
+        if not isinstance(entry, dict):
+            continue
+        if entry.get("name") != "MGetKV3ClassDefaults":
+            continue
+        parsed = _try_parse_kv3_defaults(entry.get("value"))
+        if parsed is not None:
+            entry["value_parsed"] = parsed
+
+
 def _enrich_record(
     raw: dict[str, Any],
     entity: dict[str, Any],
@@ -1834,7 +1900,8 @@ def _enrich_record(
     """Return a deep-copy of ``raw`` with overlay-derived ``annotations``
     blocks layered onto the entity itself, its fields (classes), or its
     members (enums).  ``raw`` stays otherwise byte-identical to upstream
-    cs2.json.gz.
+    cs2.json.gz, plus a ``value_parsed`` companion on parseable KV3
+    default-metadata entries.
     """
     record = copy.deepcopy(raw)
     overlay = get_overlay(overlays, entity.get("module", ""), entity["name"]) or {}
@@ -1842,6 +1909,10 @@ def _enrich_record(
     annots = _overlay_annotations(overlay)
     if annots:
         record["annotations"] = annots
+
+    _attach_kv3_value_parsed(record.get("metadata"))
+    for child in record.get("fields", []) or []:
+        _attach_kv3_value_parsed(child.get("metadata"))
 
     overlay_fields = overlay.get("fields") if isinstance(overlay, dict) else None
     if isinstance(overlay_fields, dict) and overlay_fields:
@@ -1882,7 +1953,7 @@ def generate_cs2_schema(
     defs we used to model native CS2 types (CHandle<X>, CUtlVector<T>,
     Vector, ...).  Mirroring upstream's structured shape lets each
     consumer apply its own type-mapping policy without fighting JSON
-    Schema's vocabulary.  See ``TOOLING_OVERHAUL.md``.
+    Schema's vocabulary.
     """
     seen: set[tuple[str, str]] = set()
     classes_out: list[dict[str, Any]] = []
@@ -1905,7 +1976,7 @@ def generate_cs2_schema(
             record = _enrich_record(raw, variant, overlays)
             (enums_out if variant["kind"] == "enum" else classes_out).append(record)
 
-    out: dict[str, Any] = {}
+    out: dict[str, Any] = {"schema_format_version": SCHEMA_FORMAT_VERSION}
     # Echo upstream's header keys verbatim so the file remains a drop-in
     # peer of cs2.json.gz for build/revision tracking.
     if source_info:
@@ -1925,14 +1996,261 @@ def generate_cs2_schema(
     return out_path
 
 
+def generate_convars_schema(
+    convars: list[dict],
+    out_dir: Path,
+    source_info: dict[str, Any] | None = None,
+) -> None:
+    """Emit ``convars_schema.json`` — a structured projection of
+    DumpSource2/convars.txt.
+
+    Each entry preserves the four fields ``parse_convars`` already
+    surfaces (``name``, ``default``, ``flags``, ``description``).  This
+    is the codegen-friendly counterpart to ``convars.md``; downstream
+    consumers wanting strongly-typed convar constants no longer need to
+    parse Markdown.  No overlay annotation pipeline is wired up yet —
+    add one if community-curated convar notes become a need.
+    """
+    schema_dir = out_dir / "downstream-codegen-schemas"
+    schema_dir.mkdir(parents=True, exist_ok=True)
+
+    out: dict[str, Any] = {"schema_format_version": SCHEMA_FORMAT_VERSION}
+    if source_info:
+        for k in ("revision", "version_date", "version_time"):
+            if k in source_info:
+                out[k] = source_info[k]
+    out["convars"] = [
+        {
+            "name": cv["name"],
+            "default": cv.get("default", ""),
+            "flags": list(cv.get("flags", []) or []),
+            "description": cv.get("description", ""),
+        }
+        for cv in convars
+    ]
+    (schema_dir / "convars_schema.json").write_text(
+        json.dumps(out, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+
+
+def generate_commands_schema(
+    commands: list[dict],
+    out_dir: Path,
+    source_info: dict[str, Any] | None = None,
+) -> None:
+    """Emit ``commands_schema.json`` — structured counterpart to
+    ``commands.md``.  Mirrors :func:`generate_convars_schema`; commands
+    just have no ``default`` value.
+    """
+    schema_dir = out_dir / "downstream-codegen-schemas"
+    schema_dir.mkdir(parents=True, exist_ok=True)
+
+    out: dict[str, Any] = {"schema_format_version": SCHEMA_FORMAT_VERSION}
+    if source_info:
+        for k in ("revision", "version_date", "version_time"):
+            if k in source_info:
+                out[k] = source_info[k]
+    out["commands"] = [
+        {
+            "name": cmd["name"],
+            "flags": list(cmd.get("flags", []) or []),
+            "description": cmd.get("description", ""),
+        }
+        for cmd in commands
+    ]
+    (schema_dir / "commands_schema.json").write_text(
+        json.dumps(out, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+
+
+def _project_constant_annotations(entry: dict[str, Any]) -> dict[str, str]:
+    """Pull description/notes/warning out of a well-known-constants YAML
+    entry and return them as the `annotations` block used everywhere
+    else in the codegen schemas.
+    """
+    out: dict[str, str] = {}
+    for key in ("description", "notes", "warning"):
+        val = entry.get(key)
+        if val:
+            out[key] = str(val).strip()
+    return out
+
+
+def generate_well_known_constants_schema(
+    overlays_dir: Path,
+    out_dir: Path,
+    source_info: dict[str, Any] | None = None,
+) -> None:
+    """Emit ``well_known_constants.json`` from
+    ``docs/overlays/well_known_constants.yml`` — integer / enum values
+    that downstream tooling needs but that DumpSource2 doesn't expose as
+    named enum types (team numbers, ``m_gamePhase``, ``CSWeaponState_t``,
+    …).
+
+    The YAML is the source of truth; the matching tables in
+    ``AGENTS.md`` are kept in sync by hand.  Per-constant and per-member
+    ``description`` / ``notes`` / ``warning`` keys are projected into
+    the JSON as the same ``annotations`` block used by
+    ``cs2_schema.json``.
+    """
+    schema_dir = out_dir / "downstream-codegen-schemas"
+    schema_dir.mkdir(parents=True, exist_ok=True)
+
+    if not HAS_YAML:
+        return
+    src = overlays_dir / "well_known_constants.yml"
+    try:
+        text = src.read_text(encoding="utf-8")
+    except OSError:
+        return
+
+    try:
+        raw = yaml.safe_load(text) or {}
+    except yaml.YAMLError as exc:  # pragma: no cover — surfaced at gen time
+        print(f"  WARN: well_known_constants.yml failed to parse: {exc}", file=sys.stderr)
+        return
+
+    constants_out: list[dict[str, Any]] = []
+    for entry in raw.get("constants", []) or []:
+        if not isinstance(entry, dict) or "name" not in entry:
+            continue
+        rec: dict[str, Any] = {
+            "name": entry["name"],
+            "comment": entry.get("comment", ""),
+        }
+        annots = _project_constant_annotations(entry)
+        if annots:
+            rec["annotations"] = annots
+        members_out: list[dict[str, Any]] = []
+        for m in entry.get("members", []) or []:
+            if not isinstance(m, dict) or "name" not in m or "value" not in m:
+                continue
+            mrec: dict[str, Any] = {"name": m["name"], "value": m["value"]}
+            mannots = _project_constant_annotations(m)
+            if mannots:
+                mrec["annotations"] = mannots
+            members_out.append(mrec)
+        rec["members"] = members_out
+        constants_out.append(rec)
+
+    out: dict[str, Any] = {"schema_format_version": SCHEMA_FORMAT_VERSION}
+    if source_info:
+        for k in ("revision", "version_date", "version_time"):
+            if k in source_info:
+                out[k] = source_info[k]
+    out["constants"] = constants_out
+
+    (schema_dir / "well_known_constants.json").write_text(
+        json.dumps(out, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+
+
+def _collect_type_vocabulary(entities: dict[str, dict]) -> dict[str, Any]:
+    """Walk every (module, name) entity variant and return the actually-
+    occurring values for ``type.category``, ``type.name`` (for the
+    ``builtin`` and ``atomic`` categories), and ``metadata.name``.  Used
+    by the codegen-schemas README so the documented vocabulary tracks
+    reality instead of rotting against upstream additions.
+
+    Also counts the "size > 0 + zero fields" classes so the README can
+    quote an exact number from the current build instead of a stale
+    figure.
+    """
+    categories: set[str] = set()
+    builtins: set[str] = set()
+    atomics: set[str] = set()
+    metadata_keys: set[str] = set()
+    size_only_classes = 0
+
+    def walk_type(t: Any) -> None:
+        if not isinstance(t, dict):
+            return
+        cat = t.get("category")
+        if isinstance(cat, str):
+            categories.add(cat)
+            name = t.get("name")
+            if isinstance(name, str):
+                if cat == "builtin":
+                    builtins.add(name)
+                elif cat == "atomic":
+                    atomics.add(name)
+        for k in ("inner", "inner2", "inner3"):
+            inner = t.get(k)
+            if inner is not None:
+                walk_type(inner)
+
+    def walk_metadata(meta: Any) -> None:
+        if not isinstance(meta, list):
+            return
+        for entry in meta:
+            if isinstance(entry, dict):
+                key = entry.get("name")
+                if isinstance(key, str):
+                    metadata_keys.add(key)
+
+    size_only_records = 0
+    for entity in entities.values():
+        for variant in _collect_module_variants(entity):
+            raw = variant.get("raw")
+            if not isinstance(raw, dict):
+                continue
+            walk_metadata(raw.get("metadata"))
+            fields = raw.get("fields") or []
+            if (entity.get("kind") != "enum"
+                    and raw.get("size", 0) > 0
+                    and not fields
+                    and not raw.get("parents")):
+                # Schema-unregistered runtime class: has a binary size
+                # but neither fields nor a schema parent.  Subclasses
+                # that simply add no fields of their own (e.g. CAK47 →
+                # CCSWeaponBaseGun) don't count — their parent has the
+                # schema data.
+                size_only_records += 1
+            for fld in fields:
+                walk_type(fld.get("type"))
+                walk_metadata(fld.get("metadata"))
+            for mem in raw.get("members", []) or []:
+                walk_metadata(mem.get("metadata"))
+    size_only_classes = size_only_records
+
+    return {
+        "categories": sorted(categories),
+        "builtins": sorted(builtins),
+        "atomics": sorted(atomics),
+        "metadata_keys": sorted(metadata_keys),
+        "size_only_classes": size_only_classes,
+    }
+
+
+def _format_vocab_section(title: str, items: list[str], wrap: bool = True) -> str:
+    if not items:
+        return f"### {title}\n\n_(none observed in this build)_\n"
+    if wrap:
+        rendered = ", ".join(f"`{it}`" for it in items)
+        return f"### {title}\n\n{rendered}\n"
+    # One per line for long metadata lists.
+    rendered = "\n".join(f"- `{it}`" for it in items)
+    return f"### {title}\n\n{rendered}\n"
+
+
 def generate_codegen_schemas_readme(
     out_dir: Path,
     source_info: dict[str, Any] | None = None,
+    entities: dict[str, dict] | None = None,
 ) -> None:
     """Emit ``downstream-codegen-schemas/README.md`` — a small landing
     page next to the JSON files that explains what they are and points
     at ``AGENTS.md`` for the full format reference.  Generated each run
     so the source-revision footer stays current.
+
+    When ``entities`` is supplied, the README also includes a "Type
+    vocabulary observed in this build" section enumerating every
+    ``category`` / ``builtin`` / ``atomic`` / ``metadata`` key that
+    actually appears in ``cs2_schema.json``.  Auto-derived so it tracks
+    upstream additions automatically.
     """
     schema_dir = out_dir / "downstream-codegen-schemas"
     schema_dir.mkdir(parents=True, exist_ok=True)
@@ -1943,6 +2261,34 @@ def generate_codegen_schemas_readme(
         date = source_info.get("version_date")
         if rev and date:
             rev_line = f"\n_Last regenerated against CS2 build `{rev}` ({date})._\n"
+
+    vocab_block = ""
+    size_only_count: int | None = None
+    if entities is not None:
+        vocab = _collect_type_vocabulary(entities)
+        size_only_count = vocab["size_only_classes"]
+        vocab_block = "\n".join([
+            "",
+            "## Type vocabulary observed in this build",
+            "",
+            "Auto-derived from the actual content of `cs2_schema.json` so",
+            "the documented vocabulary tracks upstream additions.",
+            "",
+            _format_vocab_section("Field `type.category` values", vocab["categories"]),
+            _format_vocab_section("`builtin` type names", vocab["builtins"]),
+            _format_vocab_section("`atomic` type names", vocab["atomics"]),
+            _format_vocab_section(
+                "Metadata keys (class / field / enum / member)",
+                vocab["metadata_keys"],
+                wrap=False,
+            ),
+        ])
+
+    size_only_phrase = (
+        f"{size_only_count} classes"
+        if size_only_count is not None
+        else "Some classes"
+    )
 
     body = f"""# Downstream codegen schemas
 
@@ -1966,14 +2312,60 @@ already targets those sources works unchanged.
   `properties` / `fields` from the upstream KV1 source.  Same
   `annotations` enrichment pattern as `cs2_schema.json`.
 
+- **`convars_schema.json`** — structured projection of
+  `DumpSource2/convars.txt`.  Top-level: `convars` list; each entry has
+  `name` / `default` / `flags` / `description`.  Codegen-friendly
+  counterpart to `convars.md`.
+
+- **`commands_schema.json`** — structured projection of
+  `DumpSource2/commands.txt`.  Top-level: `commands` list; each entry
+  has `name` / `flags` / `description`.
+
+- **`well_known_constants.json`** — community-curated reference tables
+  for integer / enum values that downstream tooling needs but that
+  DumpSource2 doesn't expose as named enum types (team numbers,
+  `m_gamePhase`, `CSWeaponState_t`, …).  Top-level: `constants` list;
+  each entry has `name` / `comment` / `members[]` with the same
+  `annotations` pattern as the schema files.
+
+All five files share a single top-level `schema_format_version` string
+that is bumped as a family.  Bump the major when a field is removed or
+renamed in any of the five; bump the minor when a field is added.
+Additive `annotations` blocks do not require a bump.
+
+## Class records with `size > 0` and no fields
+
+{size_only_phrase} in `cs2_schema.json` report a non-zero `size` but
+expose zero fields — `CNmGraphInstance` (992 B),
+`CBasePulseGraphInstance`, `CPulseExecCursor`, `CNavVolume`, `CBtNode`,
+etc.  These are internal Source 2 runtime classes that the schema
+reflection system knows the binary size of but never registers
+field-level reflection for.  Downstream codegen consumers can safely
+emit them as empty classes; field-level layout is not recoverable from
+the dump.
+
+## Why some upstream fields are absent
+
+The mirror only emits what the upstream `cs2.json.gz` carries.  Several
+fields that *were* present in older SchemaExplorer dumps no longer
+appear and so are absent here too: per-class `abstract`, per-enum
+`flags`, per-atomic `handle_kind`, per-enum `storage_size`.  These are
+recoverable from the runtime but are not currently projected by
+DumpSource2 — file upstream at `ValveResourceFormat/SchemaExplorer` if
+you need them restored.
+
 ## Why this shape (and not JSON Schema 2020-12)
 
-Both files used to be JSON Schema 2020-12 documents.  Standard codegens
-(quicktype, NJsonSchema, json-schema-to-typescript) couldn't handle the
-layered `allOf` / `$ref` inheritance and the synthetic defs needed to
-model native CS2 types (`CHandle<X>`, `CUtlVector<T>`, `Vector`, …).
-Mirroring the upstream structured shape lets each consumer apply its
-own type-mapping policy without fighting JSON Schema's vocabulary.
+`cs2_schema.json` and `gameevents_schema.json` were originally JSON
+Schema 2020-12 documents.  Standard codegens (quicktype, NJsonSchema,
+json-schema-to-typescript) couldn't handle the layered `allOf` /
+`$ref` inheritance and the synthetic defs needed to model native CS2
+types (`CHandle<X>`, `CUtlVector<T>`, `Vector`, …).  Mirroring the
+upstream structured shape lets each consumer apply its own
+type-mapping policy without fighting JSON Schema's vocabulary.  The
+three companion files (`convars_schema.json`, `commands_schema.json`,
+`well_known_constants.json`) follow the same shape-pragmatic pattern:
+plain JSON objects with conventional field names, no schema header.
 
 ## Format reference
 
@@ -1988,6 +2380,7 @@ These files are regenerated every 4 hours from upstream by
 To change the generated output, edit the generator
 (`docs/generate_docs.py`) or the community overlays under
 `docs/overlays/` instead.
+{vocab_block}
 {rev_line}"""
     (schema_dir / "README.md").write_text(body, encoding="utf-8")
 
@@ -2032,8 +2425,10 @@ def generate_index_md(
     lines.append("- [Protobufs](generated/protobufs.md) – Network message and game event definitions")
     if gameevents is not None:
         lines.append("- [Game Events](generated/gameevents.md) – Game event definitions with field schemas ([codegen schema](generated/downstream-codegen-schemas/gameevents_schema.json))")
-    lines.append("- [ConVars](generated/convars.md) – Console variable reference with flags and defaults")
-    lines.append("- [Commands](generated/commands.md) – Console command reference")
+    lines.append("- [ConVars](generated/convars.md) – Console variable reference with flags and defaults ([codegen schema](generated/downstream-codegen-schemas/convars_schema.json))")
+    lines.append("- [Commands](generated/commands.md) – Console command reference ([codegen schema](generated/downstream-codegen-schemas/commands_schema.json))")
+    lines.append("- [Well-Known Constants](generated/downstream-codegen-schemas/well_known_constants.json) – Curated tables for team numbers, game phase, weapon state, etc.")
+    lines.append("- [Codegen schemas index](generated/downstream-codegen-schemas/README.md) – Format reference, type vocabulary, and version policy for all five JSON schemas above")
     lines.append("- [Entity Hierarchy Diagram](generated/diagrams/server_hierarchy.md) – UML inheritance diagram for server & client entities")
     lines.append("")
     lines.append("## Schema Modules\n")
@@ -2195,6 +2590,15 @@ def main(argv: list[str] | None = None) -> int:
     generate_convars_md_page(convars, generated_dir)
     generate_commands_md_page(commands, generated_dir)
 
+    print("Generating convars_schema.json and commands_schema.json…")
+    generate_convars_schema(convars, generated_dir, source_info=schema_source_info)
+    generate_commands_schema(commands, generated_dir, source_info=schema_source_info)
+
+    print("Generating well_known_constants.json…")
+    generate_well_known_constants_schema(
+        overlays_dir, generated_dir, source_info=schema_source_info
+    )
+
     print("Generating game events documentation…")
     generate_gameevents_md_page(gameevents, overlays, generated_dir)
     generate_gameevents_schema(gameevents, overlays, generated_dir)
@@ -2206,7 +2610,9 @@ def main(argv: list[str] | None = None) -> int:
     schema_kb = cs2_schema_path.stat().st_size // 1024
     print(f"  Wrote {cs2_schema_path.name} ({schema_kb} KiB).")
 
-    generate_codegen_schemas_readme(generated_dir, source_info=schema_source_info)
+    generate_codegen_schemas_readme(
+        generated_dir, source_info=schema_source_info, entities=entities
+    )
 
     print("Generating Markdown home page…")
     generate_index_md(entities, protos, convars, commands, out_dir, gameevents=gameevents)

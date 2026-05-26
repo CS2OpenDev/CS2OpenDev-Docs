@@ -1,0 +1,70 @@
+# Well-known CS2 constants — community-curated reference tables.
+#
+# These are integer/enum values that downstream tooling needs but that
+# DumpSource2 / SchemaExplorer don't expose as named enum types.  They're
+# the source of truth for `docs/generated/downstream-codegen-schemas/
+# well_known_constants.json` (which the codegen consumers pull) and they
+# also appear in human-readable form in the "Important enums" section of
+# AGENTS.md.  Keep both in sync when editing this file.
+#
+# Per-table shape:
+#   name:        Constant group name (PascalCase).
+#   comment:     Where the values appear in the schema or runtime.
+#   description: Optional longer-form note (rendered as `annotations.description`).
+#   notes:       Optional caveats (rendered as `annotations.notes`).
+#   warning:     Optional amber-box callout (rendered as `annotations.warning`).
+#   members:     [{ name, value, description?, notes?, warning? }, ...]
+#
+# Per-member `description` / `notes` / `warning` keys are projected into
+# the JSON output as a nested `annotations` block, matching the pattern
+# used by cs2_schema.json and gameevents_schema.json.
+
+constants:
+  - name: Team
+    comment: "CCSPlayerController.m_iTeamNum / CBaseEntity.m_iTeamNum values."
+    description: >
+      CS2 team assignment.  Spectator is a real team slot, not just an
+      absence of one.
+    members:
+      - name: Unassigned
+        value: 0
+      - name: Spectator
+        value: 1
+      - name: Terrorist
+        value: 2
+      - name: CounterTerrorist
+        value: 3
+
+  - name: GamePhase
+    comment: "CCSGameRules.m_gamePhase values."
+    description: >
+      Match-level phase indicator.  Pre-overtime is the half-time between
+      regulation and OT periods, not the buy phase of an OT round.
+    members:
+      - name: FirstHalf
+        value: 1
+      - name: SecondHalf
+        value: 2
+      - name: PreOvertime
+        value: 3
+        description: "Half-time of overtime (between regulation and OT)."
+      - name: Overtime
+        value: 4
+      - name: GameOver
+        value: 5
+
+  - name: CSWeaponState
+    comment: "CCSWeaponBase.m_iState values (CSWeaponState_t)."
+    description: >
+      Tracks where a weapon currently lives — on the ground, in someone's
+      inventory, or actively held.
+    members:
+      - name: NotCarried
+        value: 0
+        notes: "Source symbol: WEAPON_NOT_CARRIED.  On the ground."
+      - name: CarriedByPlayer
+        value: 1
+        notes: "Source symbol: WEAPON_IS_CARRIED_BY_PLAYER.  In a player's inventory but not active."
+      - name: Active
+        value: 2
+        notes: "Source symbol: WEAPON_IS_ACTIVE.  Currently held / drawn."

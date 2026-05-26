@@ -33,13 +33,13 @@ SteamDatabase/GameTracking-CS2 (upstream)         ValveResourceFormat/SchemaExpl
 ```
 
 Inputs the generator reads:
-- `upstream/schema-explorer/schemas/cs2.json.gz` — DumpSource2's structured entity dump (classes, structs, enums, fields, offsets, sizes, parents, metadata).  This is the source of truth for the schema; it replaced the old regex `.h` parser in Phase 1.1 of `TOOLING_OVERHAUL.md`.
-- `upstream/data/Protobufs/*.proto` — ~42 proto files, compiled per-file via `protoc --descriptor_set_out --include_source_info` and walked with `google.protobuf.descriptor_pb2`.  This replaced the old regex `.proto` parser in Phase 1.2.  Per-file (not one big set) to dodge cross-file enum-value collisions in the upstream dump.
+- `upstream/schema-explorer/schemas/cs2.json.gz` — DumpSource2's structured entity dump (classes, structs, enums, fields, offsets, sizes, parents, metadata).  This is the source of truth for the schema; it replaced an earlier regex `.h` parser.
+- `upstream/data/Protobufs/*.proto` — ~42 proto files, compiled per-file via `protoc --descriptor_set_out --include_source_info` and walked with `google.protobuf.descriptor_pb2`.  This replaced an earlier regex `.proto` parser.  Per-file (not one big set) to dodge cross-file enum-value collisions in the upstream dump.
 - `upstream/data/DumpSource2/convars.txt`, `upstream/data/DumpSource2/commands.txt`
 - `upstream/data/DumpSource2/module_metadata/` — per-module metadata
 - `upstream/data/game/csgo/pak01_dir/resource/*.gameevents` — Valve KeyValues1
 
-The `upstream/data/DumpSource2/schemas/<module>/*.h` files are *no longer parsed* — the generator now consumes the structured JSON instead.  Phase 2.1 of TOOLING_OVERHAUL upstreams the JSON to GameTracking-CS2 itself; once that lands, the `upstream/schema-explorer/` submodule will be retired.
+The `upstream/data/DumpSource2/schemas/<module>/*.h` files are *no longer parsed* — the generator now consumes the structured JSON instead.  If DumpSource2 ever ships the JSON directly to GameTracking-CS2 (`data_root/DumpSource2/schemas.json[.gz]`), `find_schema_json` already prefers that path and the `upstream/schema-explorer/` submodule can be retired.
 
 External tools the generator shells out to:
 - `protoc` — Protocol Buffers compiler.  Install with `brew install protobuf` (macOS) or `apt install protobuf-compiler` (Debian/Ubuntu).
@@ -53,7 +53,6 @@ Per-entity overlays at `docs/overlays/<module>.yml` (multi-entity, recommended) 
 - **Never edit `upstream/data/` or `upstream/schema-explorer/`** — both are read-only submodules pointing at upstream repos (`SteamDatabase/GameTracking-CS2` and `ValveResourceFormat/SchemaExplorer` respectively). Fresh clones need `git submodule update --init --recursive` (or `git clone --recurse-submodules`); the submodules are empty otherwise and the generator will exit with an error.
 - The submodule pointers are only advanced by the scheduled GitHub Action (`.github/workflows/generate-docs.yml`) — don't bump them locally as part of a content change unless that's specifically what you're doing.
 - `AGENTS.md` is the canonical context-for-external-AI-tools file. If schema/architecture facts change, update it there (not in CLAUDE.md, which is for *this* repo's contributors).
-- `TOOLING_OVERHAUL.md` is the living plan for the input-source migration (regex parsers → consume `cs2.json` from DumpSource2 + `protoc` descriptors). Update its checkboxes as work lands; revisit the TypeScript decision at the Phase 3 boundary.
 
 ## Common commands
 

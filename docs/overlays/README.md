@@ -52,6 +52,19 @@ Supported modules follow the directory names under `DumpSource2/schemas/`
 (e.g. `server`, `client`, `entity2`, `animgraphlib`, …) plus `protobufs`
 for Protobuf files.
 
+A few module-level files use the same physical layout but a different
+top-level shape because their downstream generator wants the file as a
+unit:
+
+- `gameevents.yml` — top-level `events:` mapping of `<event_name>:` →
+  overlay dict, applied to `gameevents_schema.json`.
+- `well_known_constants.yml` — top-level `constants:` list, projected
+  into `well_known_constants.json`.
+
+The loader treats these the same as ordinary module files but also
+keeps the raw file dict accessible under the bare module key, so the
+relevant generator can pull the whole thing in one read.
+
 ### Single-entity format *(legacy)*
 
 One file per entity, placed in a subdirectory named after the module:

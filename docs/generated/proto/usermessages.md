@@ -870,6 +870,7 @@ direction LR
     UM_ExtraUserData
     UM_NotifyResponseFound
     UM_PlayResponseConditional
+    UM_UserSentBugBug
     UM_MAX_BASE
   }
 
@@ -1003,6 +1004,7 @@ direction LR
 | `UM_ExtraUserData` | 164 |
 | `UM_NotifyResponseFound` | 165 |
 | `UM_PlayResponseConditional` | 166 |
+| `UM_UserSentBugBug` | 167 |
 | `UM_MAX_BASE` | 200 |
 
 ### `EBaseEntityMessages`
