@@ -513,6 +513,7 @@ All console variables extracted from CS2.
 | `cl_log_tick` | `false` | `developmentonly` `defensive` | Log when a tick is received |
 | `cl_log_tick_skips` | `0` | `developmentonly` `defensive` | Log when the tick delta >= this |
 | `cl_low_latency_vsync_recommendation_dont_show_again` | `false` | `clientdll` `archive` `release` | <no description> |
+| `cl_major_store_watch_list` | `""` | `clientdll` `archive` | <no description> |
 | `cl_map_preview_debug_jitter` | `false` | `developmentonly` `clientdll` `defensive` | <no description> |
 | `cl_massreport` | `false` | `developmentonly` `clientdll` `defensive` | <no description> |
 | `cl_matchlist_controlroom_aid` | `0` | `clientdll` `hidden` `release` | <no description> |
@@ -2621,6 +2622,7 @@ All console variables extracted from CS2.
 | `r_skinning_enabled` | `true` | `cheat` | <no description> |
 | `r_skip_precache_validation_check` | `false` | `developmentonly` `defensive` | <no description> |
 | `r_smooth_morph_normals` | `true` | `release` | <no description> |
+| `r_spectator_flashbang_opacity` | `0.6` | `min:` `0.2,` `max:` `1,` `clientdll` `archive` | Spectator flash opacity |
 | `r_ssao` | `true` | `developmentonly` `defensive` | Set to use screen-space ambient occlusion |
 | `r_ssao_bias` | `0.5` | `developmentonly` `defensive` | <no description> |
 | `r_ssao_blur` | `true` | `developmentonly` `defensive` | <no description> |
