@@ -7,30 +7,41 @@ nav_exclude: true
 
 # CS2 Developer Reference
 
-Auto-generated documentation from the CS2 game tracking data. Includes entity schemas, network message definitions, game events, console variables, and commands.
+Auto-generated reference for the **shipped CS2 runtime**, extracted deterministically from the game binaries by [CS2OpenDev-SchemaTracker](https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker): entity schemas, protobuf wire messages, network/demo message tables, game events, console variables & commands, and the game-content tables (items, game modes, surfaces, props, maps).
+
+{: .note }
+> Source: CS2 build **24134959** · 2026-07-09 · `windows-x86_64` · schema `0.4.0`
 
 ## Statistics
 
 | Category | Count |
 |----------|-------|
-| Schema Entities | 3974 |
-| Proto Files | 13 |
-| Proto Messages | 123 |
-| Game Events | 288 |
-| ConVars | 3867 |
-| Commands | 1128 |
+| Schema Entities | 1079 |
+| Proto Files | 32 |
+| Proto Messages | 497 |
+| Game Events | 195 |
+| ConVars | 3354 |
+| Commands | 841 |
 
 ## Quick Links
 
-- [Schema Entities](generated/schemas.md) – Classes, structs, and enums from CS2's schema dump ([codegen schema](generated/downstream-codegen-schemas/cs2_schema.json))
+- [Schema Entities](generated/schemas.md) – Classes, structs, and enums from CS2's runtime schema ([codegen schema](generated/downstream-codegen-schemas/cs2_schema.json))
 - [Protobufs](generated/protobufs.md) – Network message and game event definitions
 - [Game Events](generated/gameevents.md) – Game event definitions with field schemas ([codegen schema](generated/downstream-codegen-schemas/gameevents_schema.json))
 - [ConVars](generated/convars.md) – Console variable reference with flags and defaults ([codegen schema](generated/downstream-codegen-schemas/convars_schema.json))
 - [Commands](generated/commands.md) – Console command reference ([codegen schema](generated/downstream-codegen-schemas/commands_schema.json))
+- [Items & Economy](generated/items.md)
+- [Network Messages](generated/network.md)
+- [Game Modes](generated/gamemodes.md)
+- [Changelog](generated/changelog.md)
+- [Maps](generated/maps.md)
+- [Surface Properties](generated/surfaces.md)
+- [Prop Data](generated/props.md)
+- [Modules](generated/modules.md)
 - [Well-Known Constants](generated/downstream-codegen-schemas/well_known_constants.json) – Curated tables for team numbers, game phase, weapon state, etc.
 - [Codegen schemas index](generated/downstream-codegen-schemas/README.md) – Format reference, type vocabulary, and version policy for all five JSON schemas above
 - [Entity Hierarchy Diagram](generated/diagrams/server_hierarchy.md) – UML inheritance diagram for server & client entities
 
 ## Schema Modules
 
-[animationsystem](generated/schemas/animationsystem.md) (55)  [animdoclib](generated/schemas/animdoclib.md) (209)  [animgraphdoclib](generated/schemas/animgraphdoclib.md) (172)  [animgraphlib](generated/schemas/animgraphlib.md) (298)  [animlib](generated/schemas/animlib.md) (214)  [client](generated/schemas/client.md) (767)  [compositematerialslib](generated/schemas/compositematerialslib.md) (17)  [entity2](generated/schemas/entity2.md) (18)  [hammer](generated/schemas/hammer.md) (10)  [host](generated/schemas/host.md) (2)  [mapdoclib](generated/schemas/mapdoclib.md) (3)  [materialsystem2](generated/schemas/materialsystem2.md) (19)  [mathlib_extended](generated/schemas/mathlib_extended.md) (12)  [met](generated/schemas/met.md) (3)  [modeldoc_editor](generated/schemas/modeldoc_editor.md) (4)  [modellib](generated/schemas/modellib.md) (139)  [modtools](generated/schemas/modtools.md) (2)  [navlib](generated/schemas/navlib.md) (12)  [networksystem](generated/schemas/networksystem.md) (1)  [panorama_content](generated/schemas/panorama_content.md) (2)  [particles](generated/schemas/particles.md) (506)  [particleslib](generated/schemas/particleslib.md) (39)  [physicslib](generated/schemas/physicslib.md) (98)  [pulse_runtime_lib](generated/schemas/pulse_runtime_lib.md) (107)  [pulse_system](generated/schemas/pulse_system.md) (35)  [pulsedoc_lib](generated/schemas/pulsedoc_lib.md) (4)  [qcontrols](generated/schemas/qcontrols.md) (15)  [rendersystemdx11](generated/schemas/rendersystemdx11.md) (7)  [resourcecompiler](generated/schemas/resourcecompiler.md) (18)  [resourcefile](generated/schemas/resourcefile.md) (6)  [resourcesystem](generated/schemas/resourcesystem.md) (48)  [scenesystem](generated/schemas/scenesystem.md) (12)  [schemasystem](generated/schemas/schemasystem.md) (3)  [server](generated/schemas/server.md) (611)  [smartprops](generated/schemas/smartprops.md) (167)  [sounddoc_lib](generated/schemas/sounddoc_lib.md) (75)  [soundsystem](generated/schemas/soundsystem.md) (39)  [soundsystem_lowlevel](generated/schemas/soundsystem_lowlevel.md) (80)  [soundsystem_voicecontainers](generated/schemas/soundsystem_voicecontainers.md) (42)  [steamaudio](generated/schemas/steamaudio.md) (17)  [texturelib](generated/schemas/texturelib.md) (10)  [tier2](generated/schemas/tier2.md) (2)  [toolscene](generated/schemas/toolscene.md) (12)  [toolutils2](generated/schemas/toolutils2.md) (23)  [vphysics2](generated/schemas/vphysics2.md) (8)  [worldrenderer](generated/schemas/worldrenderer.md) (31)
+[animationsystem](generated/schemas/animationsystem.md) (4)  [animgraphlib](generated/schemas/animgraphlib.md) (1)  [client](generated/schemas/client.md) (463)  [entity2](generated/schemas/entity2.md) (4)  [particleslib](generated/schemas/particleslib.md) (2)  [pulse_runtime_lib](generated/schemas/pulse_runtime_lib.md) (66)  [server](generated/schemas/server.md) (724)

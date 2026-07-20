@@ -11,31 +11,33 @@ docs/overlays/{module}/{EntityName}.yml  (see docs/overlays/README.md).
 
 Usage:
     python3 docs/generate_docs.py [--repo-root PATH] [--output PATH]
-                                  [--data-root PATH]
+                                  [--artifacts-root PATH] [--build ID|latest]
+                                  [--platform windows-x86_64|linux-x86_64]
 
-    --repo-root  Root of the repository that contains docs/, overlays/, etc.
-                 (default: current directory)
-    --data-root  Root of the CS2OpenDev-Docs data tree that contains
-                 DumpSource2/ and Protobufs/.  Defaults to --repo-root, which
-                 is the right value when running inside this repository.  Set
-                 this to a submodule or sibling checkout path when running
-                 from a standalone documentation repository.
+    --repo-root       Root of the repository that contains docs/, overlays/,
+                      etc. (default: current directory)
+    --artifacts-root  CS2OpenDev-SchemaTracker's artifacts/ directory.
+                      Defaults to <repo-root>/upstream/schema-tracker/artifacts.
+    --build           Build id to document, or 'latest' (default).
+    --platform        Which platform's artifact set to render
+                      (default: windows-x86_64).
 
-Dependencies (all in the Python 3 stdlib except PyYAML):
-    pip install pyyaml
+The schema, protobuf, convar, command, and game-event data all come from a
+single CS2OpenDev-SchemaTracker artifact set — no upstream submodules or
+`protoc` are required.
+
+Dependencies:
+    pip install pyyaml protobuf
 """
 
 from __future__ import annotations
 
 import argparse
 import copy
-import gzip
 import json
 import re
 import shutil
-import subprocess
 import sys
-import tempfile
 from collections import defaultdict
 from pathlib import Path
 from typing import Any
@@ -48,8 +50,14 @@ except ImportError:
 
 # Version of the JSON shape emitted under docs/generated/downstream-codegen-schemas/.
 # Bump the major when a field is removed or renamed; the minor when a field is added.
-# Additive `annotations` blocks do not require a bump — they were part of 1.0.
-SCHEMA_FORMAT_VERSION = "1.1"
+# Additive `annotations` blocks do not require a bump.
+#
+# 2.0: the entity schema source moved from DumpSource2's cs2.json.gz to
+# CS2OpenDev-SchemaTracker's entity_schema.json.  cs2_schema.json now mirrors
+# SchemaTracker's *native* shape (camelCase keys, string-encoded int64 offsets/
+# sizes, UPPERCASE type categories, projectName/binary-module split) rather than
+# DumpSource2's shape — a deliberate breaking change for downstream consumers.
+SCHEMA_FORMAT_VERSION = "2.0"
 
 # ---------------------------------------------------------------------------
 # Parsers
@@ -106,75 +114,76 @@ def _metadata_friendly_text(metas: list[dict[str, Any]] | None) -> str:
 
 
 def _stringify_type(t: dict[str, Any]) -> str:
-    """Convert a structured cs2.json type node into the legacy string form
-    that the rest of the generator (`_extract_type_refs`, Mermaid
-    renderers, Markdown tables) understands.
+    """Return the display string for a SchemaTracker ``SchemaType`` node.
 
-    Mapping:
-      builtin / declared_class / declared_enum  -> name
-      atomic                                    -> name [ '<' inner [ ',' inner2 ] '>' ]
-      ptr                                       -> inner '*'
-      fixed_array                               -> inner '[' count ']'
-      bitfield                                  -> 'bitfield:' count
+    SchemaTracker already renders the fully-qualified C++ type into the
+    node's ``name`` for *every* category — ``"CAnimNetVar< int32 >"`` (ATOMIC),
+    ``"CPulse_Chunk*"`` (PTR), ``"char[128]"`` (FIXED_ARRAY),
+    ``"bitfield:1"`` (BITFIELD), and the bare name for BUILTIN /
+    DECLARED_CLASS / DECLARED_ENUM — so no recursive reconstruction is
+    needed.  The nested ``inner`` nodes are retained only for
+    ``_innermost_declared_module`` cross-reference resolution.
     """
-    cat = t.get("category")
-    if cat in ("builtin", "declared_class", "declared_enum"):
-        return t.get("name", "?")
-    if cat == "atomic":
-        name = t.get("name", "?")
-        args: list[str] = []
-        if "inner" in t:
-            args.append(_stringify_type(t["inner"]))
-        if "inner2" in t:
-            args.append(_stringify_type(t["inner2"]))
-        if "inner3" in t:
-            args.append(_stringify_type(t["inner3"]))
-        if args:
-            return f"{name}<{','.join(args)}>"
-        return name
-    if cat == "ptr":
-        inner = t.get("inner", {})
-        return _stringify_type(inner) + "*"
-    if cat == "fixed_array":
-        inner = t.get("inner", {})
-        count = t.get("count", "")
-        return f"{_stringify_type(inner)}[{count}]"
-    if cat == "bitfield":
-        return f"bitfield:{t.get('count', 0)}"
+    if not isinstance(t, dict):
+        return "?"
     return t.get("name", "?")
 
 
 def _innermost_declared_module(t: dict[str, Any]) -> str | None:
-    """Walk a structured type tree and return the module of the innermost
-    declared class or enum, or None if the type isn't ultimately a
-    reference to another entity.
+    """Walk a SchemaTracker type tree and return the binary module of the
+    innermost declared class or enum, or None if the type isn't ultimately
+    a reference to another entity.
 
-    Handles wrapper categories that nest a target (``ptr``, ``fixed_array``,
-    ``atomic`` like ``CHandle<X>`` / ``CUtlVector<X>`` / ``CUtlOrderedMap<K,V>``).
-    For multi-arg atomic templates we return the first inner's module — the
-    primary referenced type.
+    Handles wrapper categories that nest a target (``PTR``, ``FIXED_ARRAY``,
+    ``ATOMIC`` like ``CHandle<X>`` / ``CUtlVector<X>``).  For multi-arg
+    templates we return the first inner's module — the primary referenced type.
     """
     if not isinstance(t, dict):
         return None
-    cat = t.get("category")
-    if cat in ("declared_class", "declared_enum"):
+    if t.get("category") in ("DECLARED_CLASS", "DECLARED_ENUM"):
         return t.get("module")
     for inner_key in ("inner", "inner2", "inner3"):
-        if inner_key in t:
+        if t.get(inner_key):
             mod = _innermost_declared_module(t[inner_key])
             if mod:
                 return mod
     return None
 
 
-def _convert_class(cls: dict[str, Any]) -> dict[str, Any]:
-    """Convert one cs2.json class entry into the entity dict shape used by
-    the rest of the generator.
+def _grouping_module(record: dict[str, Any]) -> str:
+    """Return the module name used to bucket an entity into a schema page.
 
-    Metadata is preserved as ``[{name, value}]`` (cs2.json's native shape)
-    rather than the legacy stringified form — codegen consumers want the
-    split.  Type and parent module hints are propagated so cross-module
-    references can be disambiguated downstream.
+    SchemaTracker classes carry a ``projectName`` (``client``, ``server``,
+    ``entity2``, ``pulse_runtime_lib``, ``particleslib``, ``animgraphlib``)
+    — the closest analogue to the old DumpSource2 module axis, so we group
+    classes by it.  Enums carry no ``projectName``, only the binary
+    ``module`` they were registered in (``server.dll`` on Windows,
+    ``libserver.so`` on Linux), so we normalise that to a bare name so the
+    two axes line up on shared modules like ``client`` / ``server``.
+    """
+    pn = record.get("projectName")
+    if pn:
+        return pn
+    mod = (record.get("module", "") or "").rsplit("/", 1)[-1]
+    for suffix in (".dll", ".so"):
+        if mod.endswith(suffix):
+            mod = mod[: -len(suffix)]
+            break
+    if mod.startswith("lib"):
+        mod = mod[3:]
+    return mod or "unknown"
+
+
+def _convert_class(cls: dict[str, Any]) -> dict[str, Any]:
+    """Convert one SchemaTracker ``SchemaClass`` into the entity dict shape
+    used by the rest of the generator.
+
+    Metadata is preserved as ``[{name, value, valueParsed?}]`` (the native
+    shape) so codegen consumers get the split.  The binary ``module`` the
+    class lives in is surfaced separately from the ``projectName``-based
+    grouping module.  ``raw`` keeps the untouched SchemaTracker record so
+    ``generate_cs2_schema`` can echo its native shape with overlay
+    annotations layered on top.
     """
     fields: list[dict[str, Any]] = []
     for f in cls.get("fields", []):
@@ -185,46 +194,41 @@ def _convert_class(cls: dict[str, Any]) -> dict[str, Any]:
             "offset": f.get("offset"),
             "annotations": list(f.get("metadata", [])),
         }
-        # When the field references another declared class/enum, cs2.json
-        # tells us which module that target lives in — keep the hint so
-        # the JSON Schema can disambiguate cross-module references.  This
-        # recurses through pointers / arrays / templates so
-        # ``CHandle<CCSPlayerController>`` and ``CCSPlayerPawn*`` both get
-        # the inner target's module surfaced.
-        type_module = _innermost_declared_module(ftype)
+        # SchemaTracker gives the referenced type's binary module directly
+        # via ``typeModule``; fall back to walking the type tree.
+        type_module = f.get("typeModule") or _innermost_declared_module(ftype)
         if type_module:
             out["type_module"] = type_module
         fields.append(out)
 
     parents = cls.get("parents", [])
-    parent_modules = [p.get("module", "") for p in parents]
 
     return {
         "name": cls["name"],
         "kind": "class",
-        "module": cls.get("module", ""),
+        "module": _grouping_module(cls),
+        "binary_module": cls.get("module", ""),
         "bases": [p.get("name", "") for p in parents],
-        "base_modules": parent_modules,
+        "base_modules": [p.get("module", "") for p in parents],
         "fields": fields,
         "metadata": list(cls.get("metadata", [])),
         "enum_underlying": None,
         "size": cls.get("size"),
-        # Original upstream record preserved verbatim so the generated
-        # cs2_schema.json can echo cs2.json.gz's exact shape with overlay
-        # annotations layered on top.  See generate_cs2_schema().
+        "flags": cls.get("flags"),
+        "cpp_name": cls.get("cppName"),
         "raw": cls,
     }
 
 
 def _convert_enum(en: dict[str, Any]) -> dict[str, Any]:
-    """Convert one cs2.json enum entry into the entity dict shape used by
-    the rest of the generator.
+    """Convert one SchemaTracker ``SchemaEnum`` into the entity dict shape
+    used by the rest of the generator.
 
     Per-member metadata (``MPropertyFriendlyName``, ``MPropertyDescription``,
-    etc.) is preserved on each value's ``annotations`` list as a structured
-    ``[{name, value}]`` array — surfaced both in the Markdown enum table's
-    Description column and as ``x-cs2-enum-value-metadata`` in
-    cs2_schema.json.
+    etc.) is preserved on each value's ``annotations`` list, surfaced both in
+    the Markdown enum table's Description column and in cs2_schema.json.
+    ``enum_underlying`` carries SchemaTracker's ``alignment`` — the
+    underlying integer type name (e.g. ``uint32_t``).
     """
     fields: list[dict[str, Any]] = []
     for m in en.get("members", []):
@@ -238,13 +242,13 @@ def _convert_enum(en: dict[str, Any]) -> dict[str, Any]:
     return {
         "name": en["name"],
         "kind": "enum",
-        "module": en.get("module", ""),
+        "module": _grouping_module(en),
+        "binary_module": en.get("module", ""),
         "bases": [],
         "base_modules": [],
         "fields": fields,
         "metadata": list(en.get("metadata", [])),
         "enum_underlying": en.get("alignment"),
-        # Original upstream record preserved verbatim — see _convert_class.
         "raw": en,
     }
 
@@ -276,91 +280,109 @@ def _add_entity(entities: dict[str, dict], entity: dict[str, Any]) -> None:
     existing.setdefault("duplicates", []).append(entity)
 
 
-def _open_schema_json(path: Path):
-    """Return a text-mode file handle for *path*, transparently
-    decompressing if it is gzipped."""
-    if path.suffix == ".gz":
-        return gzip.open(path, "rt", encoding="utf-8")
-    return path.open("r", encoding="utf-8")
+def load_entity_schema(build_dir: Path) -> dict[str, dict]:
+    """Load ``entity_schema.json`` from a SchemaTracker build/platform dir.
 
-
-def load_schema_json(path: Path) -> tuple[dict[str, dict], dict[str, Any]]:
-    """Load DumpSource2's structured ``cs2.json`` (or ``cs2.json.gz``).
-
-    Returns a pair ``(entities, source_info)`` where:
-
-    * ``entities`` is the entity map keyed by name.  This is the
-      structured-JSON path that replaced an older regex walk over the
-      per-module ``.h`` files in ``DumpSource2/schemas/``; the JSON
-      carries inheritance / sizes / offsets / metadata directly, so
-      no header parsing is needed any more.
-    * ``source_info`` carries the cs2.json header — generator URL, build
-      revision, version date/time — so consumers of the generated
-      schema files can identify the game build the data corresponds to.
+    Returns the entity map keyed by name.  SchemaTracker walks the shipped
+    CS2 runtime binaries in-process, so the JSON carries inheritance,
+    sizes, offsets, metadata, and the binary module each class/enum lives
+    in — replacing DumpSource2's cs2.json.gz as the schema source.
     """
-    with _open_schema_json(path) as fh:
+    path = build_dir / "entity_schema.json"
+    with path.open("r", encoding="utf-8") as fh:
         data = json.load(fh)
 
     entities: dict[str, dict] = {}
     for cls in data.get("classes", []):
         _add_entity(entities, _convert_class(cls))
     for en in data.get("enums", []):
-        _add_entity(entities, _convert_enum(en))
+        ent = _convert_enum(en)
+        # An enum statically linked into several binaries is registered once
+        # per module (e.g. the Pulse enums appear in animationsystem.dll,
+        # particles.dll, client.dll and server.dll).  Unlike classes — whose
+        # client/server twins genuinely differ — these are the identical enum,
+        # so we keep only the first registration rather than scattering copies
+        # across per-binary module pages.
+        if ent["name"] not in entities:
+            _add_entity(entities, ent)
+    return entities
 
-    source_info: dict[str, Any] = {
-        k: data[k]
-        for k in ("generator", "revision", "version_date", "version_time")
-        if k in data
-    }
-    return entities, source_info
 
+def resolve_build_dir(
+    artifacts_root: Path, build: str | None, platform: str
+) -> Path | None:
+    """Resolve a SchemaTracker ``artifacts/<build_id>/<platform>/`` directory.
 
-def find_schema_json(data_root: Path) -> Path | None:
-    """Locate the cs2 schema JSON file.
-
-    Looks first inside ``data_root`` (the GameTracking-CS2 submodule) for a
-    cs2.json that DumpSource2 may someday write there, and falls back to a
-    sibling ``schema-explorer`` submodule tracking
-    ``ValveResourceFormat/SchemaExplorer`` (today's actual source).
-
-    The sibling layout is necessary because ``data_root`` is itself a git
-    submodule, so a *nested* ``upstream/data/SchemaExplorer`` submodule would
-    be rejected by Git's submodule-of-submodule prohibition.
-
-    Preference order:
-      1. <data-root>/DumpSource2/schemas.json[.gz]   (future: DumpSource2
-                                                      ships the JSON directly)
-      2. <data-root>/../schema-explorer/schemas/cs2.json[.gz]  (current)
+    ``build`` may be an explicit numeric build id or ``"latest"``/``None``
+    (the highest-numbered committed build carrying this platform's
+    ``entity_schema.json``).  There is no ``latest`` pointer on disk — the
+    numerically-highest ``<build_id>`` directory is the newest build.
     """
-    sibling = data_root.parent / "schema-explorer"
-    candidates = [
-        data_root / "DumpSource2" / "schemas.json.gz",
-        data_root / "DumpSource2" / "schemas.json",
-        sibling / "schemas" / "cs2.json.gz",
-        sibling / "schemas" / "cs2.json",
-    ]
-    for p in candidates:
-        if p.is_file():
-            return p
+    if not artifacts_root.is_dir():
+        return None
+    if build and build != "latest":
+        cand = artifacts_root / build / platform
+        return cand if (cand / "entity_schema.json").is_file() else None
+    build_ids = sorted(
+        (int(p.name) for p in artifacts_root.iterdir()
+         if p.is_dir() and p.name.isdigit()),
+        reverse=True,
+    )
+    for bid in build_ids:
+        cand = artifacts_root / str(bid) / platform
+        if (cand / "entity_schema.json").is_file():
+            return cand
     return None
 
 
+def build_source_info(build_dir: Path, platform: str) -> dict[str, Any]:
+    """Assemble the ``source_info`` header from a build's ``provenance.json``.
+
+    Carries the keys the downstream schema emitters echo (``generator``,
+    ``revision``, ``version_date``, ``version_time``) plus SchemaTracker
+    provenance (build id, schema version, tool version) for page footers.
+    """
+    info: dict[str, Any] = {
+        "generator": "https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker",
+        "platform": platform,
+        "build_id": build_dir.parent.name,
+    }
+    prov_path = build_dir / "provenance.json"
+    if prov_path.is_file():
+        try:
+            prov = json.loads(prov_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            return info
+        info["build_id"] = prov.get("buildId", info["build_id"])
+        info["schema_version"] = prov.get("schemaVersion", "")
+        cs2_build = prov.get("cs2Build", {}) or {}
+        info["revision"] = str(
+            cs2_build.get("schemaRevision") or info["build_id"] or ""
+        )
+        manifest_utc = (prov.get("steam", {}) or {}).get("manifestCreatedUtc", "")
+        info["version_date"] = manifest_utc.split("T")[0] if manifest_utc else ""
+        info["version_time"] = manifest_utc
+        tool = prov.get("tool", {}) or {}
+        info["tool_version"] = tool.get("semver", "")
+        info["tool_commit"] = tool.get("gitCommit", "")
+    return info
+
+
 # ---------------------------------------------------------------------------
-# Proto loader (protoc → FileDescriptorSet)
+# Proto loader (prebuilt FileDescriptorSet)
 # ---------------------------------------------------------------------------
 #
-# Proto loading uses protoc, not a regex parser: protoc emits a binary
-# FileDescriptorSet for each input file and we walk it via
-# google.protobuf.descriptor_pb2.  This gives us oneofs, services,
-# default values, source-info comments, and full type resolution for free.
+# SchemaTracker ships each build's own protobuf definitions as a prebuilt
+# ``protos.descriptorset`` — a serialized google.protobuf.FileDescriptorSet
+# of the descriptors embedded in the game binaries.  We read it directly and
+# walk it via google.protobuf.descriptor_pb2, so no ``protoc`` invocation
+# (and no external protobuf-compiler dependency) is needed any more.
 #
-# Why per-file rather than one big set: CS2's protobuf dump has cross-file
-# enum-value collisions (e.g. ``k_EMsgGCSystemMessage`` appears in both
-# ``base_gcmessages.proto`` and ``enums_clientserver.proto`` — protoc treats
-# enum values as global siblings under proto2 scoping rules).  Compiling
-# without ``--include_imports`` keeps each file isolated; the conflict never
-# materialises and downstream consumers (proto codegens) can resolve imports
-# themselves at consume time.
+# Note: these descriptors are reconstructed from the binary and carry no
+# SourceCodeInfo, so the proto pages have no field/message comments — the
+# wire-message tables (network_messages.json) provide the ID↔type mapping
+# that used to justify the comments.  We skip the bundled
+# ``google/protobuf/*`` well-known files.
 
 # Mapping from FieldDescriptorProto.Type enum to the legacy parser's type-string
 # form.  Keyed by the numeric enum value so we don't have to import the proto
@@ -542,21 +564,13 @@ def _proto_descriptor_to_dict(file_proto: Any) -> dict[str, Any]:
     return out
 
 
-def load_proto_descriptors(
-    protobufs_root: Path,
-    protoc_bin: str = "protoc",
-) -> list[dict[str, Any]]:
-    """Compile each .proto under *protobufs_root* and return summary dicts.
+def load_proto_descriptors(descriptorset_path: Path) -> list[dict[str, Any]]:
+    """Read SchemaTracker's prebuilt ``protos.descriptorset`` and return one
+    summary dict per game proto file.
 
-    Replaces the old regex-based ``parse_proto_file`` walk.  See the
-    ``Proto loader`` block comment above for the design rationale.
+    See the ``Proto loader`` block comment above for the design rationale.
+    The bundled ``google/protobuf/*`` well-known files are skipped.
     """
-    if shutil.which(protoc_bin) is None:
-        raise RuntimeError(
-            f"{protoc_bin!r} not found in PATH.  Install Protocol Buffers "
-            "compiler (`brew install protobuf` / "
-            "`apt install protobuf-compiler`) or pass --no-protos."
-        )
     try:
         from google.protobuf import descriptor_pb2
     except ImportError as exc:
@@ -564,116 +578,58 @@ def load_proto_descriptors(
             "python protobuf runtime not installed: pip install protobuf"
         ) from exc
 
-    proto_paths = sorted(protobufs_root.glob("*.proto"))
+    fds = descriptor_pb2.FileDescriptorSet.FromString(
+        descriptorset_path.read_bytes()
+    )
     results: list[dict[str, Any]] = []
-
-    with tempfile.TemporaryDirectory(prefix="cs2-protoset-") as tmp:
-        tmp_dir = Path(tmp)
-        for proto_path in proto_paths:
-            out_pb = tmp_dir / f"{proto_path.stem}.pb"
-            cmd = [
-                protoc_bin,
-                f"--proto_path={protobufs_root}",
-                f"--descriptor_set_out={out_pb}",
-                "--include_source_info",
-                str(proto_path),
-            ]
-            try:
-                subprocess.run(cmd, check=True, capture_output=True, text=True)
-            except subprocess.CalledProcessError as exc:
-                # Per-file, isolated compile.  A genuine syntax error in the
-                # upstream dump shouldn't sink the whole run — surface it
-                # and continue, matching the legacy parser's tolerance.
-                print(
-                    f"  WARNING: protoc failed on {proto_path.name}: "
-                    f"{exc.stderr.strip()}",
-                    file=sys.stderr,
-                )
-                continue
-
-            with out_pb.open("rb") as fh:
-                fds = descriptor_pb2.FileDescriptorSet.FromString(fh.read())
-
-            for fdp in fds.file:
-                # We didn't pass --include_imports so the set should contain
-                # only the file we asked for, but be paranoid.
-                if fdp.name != proto_path.name:
-                    continue
-                results.append(_proto_descriptor_to_dict(fdp))
+    for fdp in sorted(fds.file, key=lambda f: f.name):
+        if fdp.name.startswith("google/"):
+            continue
+        results.append(_proto_descriptor_to_dict(fdp))
     return results
 
 
-def parse_convars(path: Path) -> list[dict]:
-    """Parse DumpSource2/convars.txt.
+def load_convars_json(path: Path) -> list[dict]:
+    """Load SchemaTracker's ``convars.json``.
 
-    Format per entry:
-        name value (flag1 flag2 ...)
-        \\tdescription text
+    Richer than the old ``convars.txt`` regex parse: each convar also
+    carries its ``value_type`` and optional min/max bounds.
     """
-    try:
-        text = path.read_text(encoding="utf-8", errors="replace")
-    except OSError:
+    if not path.is_file():
         return []
-
+    data = json.loads(path.read_text(encoding="utf-8"))
     convars: list[dict] = []
-    lines = text.splitlines()
-    i = 0
-    while i < len(lines):
-        line = lines[i]
-        if not line or line.startswith("\t") or line.startswith(" "):
-            i += 1
-            continue
-        # Header line: name [default_value] (flags)
-        m = re.match(r"^(\S+)\s+(.*?)\s*\(([^)]*)\)\s*$", line)
-        if m:
-            name, default, flags_raw = m.group(1), m.group(2), m.group(3)
-            description = ""
-            if i + 1 < len(lines) and lines[i + 1].startswith("\t"):
-                description = lines[i + 1].strip()
-                i += 1
-            convars.append({
-                "name": name,
-                "default": default.strip(),
-                "flags": [f.strip() for f in flags_raw.split() if f.strip()],
-                "description": description,
-            })
-        i += 1
+    for cv in data.get("convars", []):
+        convars.append({
+            "name": cv.get("name", ""),
+            "default": cv.get("default", "") or "",
+            "flags": list(cv.get("flags", []) or []),
+            "description": cv.get("description", "") or "",
+            "value_type": cv.get("valueType", "") or "",
+            "has_min": bool(cv.get("hasMin", False)),
+            "min_value": cv.get("minValue", "") or "",
+            "has_max": bool(cv.get("hasMax", False)),
+            "max_value": cv.get("maxValue", "") or "",
+        })
     return convars
 
 
-def parse_commands(path: Path) -> list[dict]:
-    """Parse DumpSource2/commands.txt.
+def load_commands_json(path: Path) -> list[dict]:
+    """Load SchemaTracker's ``commands.json``.
 
-    Format per entry:
-        name (flag1 flag2 ...)
-        \\tdescription text
+    Adds ``has_completion_callback`` over the old ``commands.txt`` parse.
     """
-    try:
-        text = path.read_text(encoding="utf-8", errors="replace")
-    except OSError:
+    if not path.is_file():
         return []
-
+    data = json.loads(path.read_text(encoding="utf-8"))
     commands: list[dict] = []
-    lines = text.splitlines()
-    i = 0
-    while i < len(lines):
-        line = lines[i]
-        if not line or line.startswith("\t") or line.startswith(" "):
-            i += 1
-            continue
-        m = re.match(r"^(\S+)\s*\(([^)]*)\)\s*$", line)
-        if m:
-            name, flags_raw = m.group(1), m.group(2)
-            description = ""
-            if i + 1 < len(lines) and lines[i + 1].startswith("\t"):
-                description = lines[i + 1].strip()
-                i += 1
-            commands.append({
-                "name": name,
-                "flags": [f.strip() for f in flags_raw.split() if f.strip()],
-                "description": description,
-            })
-        i += 1
+    for cmd in data.get("commands", []):
+        commands.append({
+            "name": cmd.get("name", ""),
+            "flags": list(cmd.get("flags", []) or []),
+            "description": cmd.get("description", "") or "",
+            "has_completion_callback": bool(cmd.get("hasCompletionCallback", False)),
+        })
     return commands
 
 
@@ -699,153 +655,36 @@ _GAMEEVENTS_TYPE_MAP: dict[str, dict[str, str]] = {
     "ehandle":                    {"type": "integer", "description": "Entity handle"},
 }
 
-# These keys inside an event body are event-level metadata, not field defs.
-_GAMEEVENTS_META_KEYS = {"local", "reliable"}
+def load_gameevents_json(path: Path) -> list[dict[str, Any]]:
+    """Load SchemaTracker's ``gameevents.json`` — the structurally-parsed
+    game-event registry.
 
-
-def parse_gameevents_file(path: Path) -> list[dict[str, Any]]:
-    """Parse a Valve KeyValues1 ``.gameevents`` file.
-
-    Returns a list of event dicts, each with:
-        name        – event name
-        comment     – trailing ``//`` comment on the event name line
-        source      – basename of the originating file (e.g. ``mod.gameevents``)
-        properties  – dict of event-level metadata (``local``, ``reliable``)
-        fields      – list of ``{name, type, comment}`` dicts
+    Each event dict carries ``name``, ``comment``, ``source`` (the
+    originating ``.gameevents`` basename), ``properties`` (event-level
+    metadata like ``local`` / ``reliable``), and ``fields`` (each
+    ``{name, type, comment}``) — the same shape the old KV1 parser
+    produced, so the renderers are unchanged.
     """
-    try:
-        text = path.read_text(encoding="utf-8", errors="replace")
-    except OSError:
+    if not path.is_file():
         return []
-
-    source = path.name
+    data = json.loads(path.read_text(encoding="utf-8"))
     events: list[dict[str, Any]] = []
-    lines = text.splitlines()
-    i = 0
-    total = len(lines)
-
-    def _strip_comment(line: str) -> tuple[str, str]:
-        """Return (code_part, comment_text) splitting on the first ``//``."""
-        idx = line.find("//")
-        if idx == -1:
-            return line, ""
-        return line[:idx], line[idx + 2:].strip()
-
-    # Skip until the first top-level opening brace (root container).
-    while i < total:
-        code, _ = _strip_comment(lines[i])
-        if "{" in code:
-            i += 1
-            break
-        i += 1
-
-    # Now we're inside the root object.  Each event is:
-    #   "event_name"  // optional comment
-    #   {
-    #       "field" "type"  // optional comment
-    #       ...
-    #   }
-    depth = 0
-    pending_name: str | None = None
-    pending_comment = ""
-    # Collect comments that appear above an event name for group/section context
-    section_comments: list[str] = []
-
-    while i < total:
-        raw_line = lines[i]
-        code, comment = _strip_comment(raw_line)
-        stripped = code.strip()
-        i += 1
-
-        # Pure comment line — accumulate for section headings
-        if not stripped and comment:
-            section_comments.append(comment)
-            continue
-
-        # Blank line
-        if not stripped:
-            # Reset section comments on blank non-comment lines only if
-            # we haven't started an event yet.
-            if pending_name is None:
-                section_comments = []
-            continue
-
-        # Opening brace for an event body
-        if stripped == "{" and depth == 0 and pending_name is not None:
-            depth = 1
-            event: dict[str, Any] = {
-                "name": pending_name,
-                "comment": pending_comment,
-                "source": source,
-                "properties": {},
-                "fields": [],
-            }
-            pending_name = None
-            pending_comment = ""
-            section_comments = []
-
-            # Parse event body
-            while i < total:
-                braw = lines[i]
-                bcode, bcomment = _strip_comment(braw)
-                bstripped = bcode.strip()
-                i += 1
-
-                if bstripped == "}":
-                    depth = 0
-                    break
-                if not bstripped:
-                    continue
-
-                # Match key-value pairs: "key" "value"
-                kv_match = re.match(
-                    r'^\s*"([^"]+)"\s+"([^"]*)"', braw
-                )
-                if kv_match:
-                    key = kv_match.group(1)
-                    val = kv_match.group(2)
-                    if key in _GAMEEVENTS_META_KEYS:
-                        event["properties"][key] = val
-                    else:
-                        event["fields"].append({
-                            "name": key,
-                            "type": val,
-                            "comment": bcomment,
-                        })
-                # Standalone quoted key with no value (shouldn't normally happen)
-                # Skip it gracefully.
-            events.append(event)
-            continue
-
-        # Closing brace of the root container
-        if stripped == "}":
-            break
-
-        # Event name line: "event_name" // optional comment
-        name_match = re.match(r'^\s*"([^"]+)"', raw_line)
-        if name_match:
-            pending_name = name_match.group(1)
-            pending_comment = comment
-            continue
-
+    for ev in data.get("events", []):
+        events.append({
+            "name": ev.get("name", ""),
+            "comment": ev.get("comment", "") or "",
+            "source": ev.get("source", "") or "",
+            "properties": dict(ev.get("properties", {}) or {}),
+            "fields": [
+                {
+                    "name": f.get("name", ""),
+                    "type": f.get("type", ""),
+                    "comment": f.get("comment", "") or "",
+                }
+                for f in ev.get("fields", [])
+            ],
+        })
     return events
-
-
-def parse_all_gameevents(data_root: Path) -> list[dict[str, Any]]:
-    """Find and parse all ``.gameevents`` files under the data tree.
-
-    Searches the three known locations and any other ``.gameevents`` files.
-    Returns a flat list of event dicts.
-    """
-    all_events: list[dict[str, Any]] = []
-    seen_paths: set[str] = set()
-    for ge_file in sorted(data_root.rglob("*.gameevents")):
-        real = str(ge_file.resolve())
-        if real in seen_paths:
-            continue
-        seen_paths.add(real)
-        all_events.extend(parse_gameevents_file(ge_file))
-    return all_events
 
 
 # ---------------------------------------------------------------------------
@@ -1932,28 +1771,18 @@ def generate_cs2_schema(
     out_dir: Path,
     source_info: dict[str, Any] | None = None,
 ) -> Path:
-    """Generate ``cs2_schema.json`` — a community-enriched mirror of
-    upstream ``cs2.json.gz`` from DumpSource2.
+    """Generate ``cs2_schema.json`` — the entity schema in
+    CS2OpenDev-SchemaTracker's native shape, enriched with overlays.
 
-    Format mirrors cs2.json.gz exactly: same top-level keys (``generator``,
-    ``revision``, ``version_date``, ``version_time``, ``classes``,
-    ``enums``), same per-class and per-enum shape, same field/member
-    structure with structured ``type`` objects and ``[{name, value}]``
-    metadata.  Consumers can use any tooling that already targets the
-    DumpSource2 dump.
-
-    The single addition is an optional ``annotations`` block on classes,
-    fields, enums, and members carrying community-curated descriptions,
-    notes, and warnings from ``docs/overlays/``.  Entities with no
-    overlay match are emitted byte-for-byte as upstream.
-
-    Why not JSON Schema 2020-12: tried and abandoned.  Standard codegens
-    (quicktype, json-schema-to-typescript, NJsonSchema, etc.) couldn't
-    handle the layered ``allOf``/``$ref`` inheritance or the synthetic
-    defs we used to model native CS2 types (CHandle<X>, CUtlVector<T>,
-    Vector, ...).  Mirroring upstream's structured shape lets each
-    consumer apply its own type-mapping policy without fighting JSON
-    Schema's vocabulary.
+    Each record is SchemaTracker's own ``entity_schema.json`` class/enum
+    object emitted verbatim (camelCase keys, string-encoded int64
+    offsets/sizes, UPPERCASE type ``category`` values, the
+    ``module``/``projectName`` split), with an optional additive
+    ``annotations`` block on classes, fields, enums, and members carrying
+    community-curated descriptions / notes / warnings from
+    ``docs/overlays/``.  A class registered in more than one binary emits
+    one record per ``(module, name)``.  See ``AGENTS.md`` for the full
+    per-key format reference.
     """
     seen: set[tuple[str, str]] = set()
     classes_out: list[dict[str, Any]] = []
@@ -2173,9 +2002,9 @@ def _collect_type_vocabulary(entities: dict[str, dict]) -> dict[str, Any]:
             categories.add(cat)
             name = t.get("name")
             if isinstance(name, str):
-                if cat == "builtin":
+                if cat == "BUILTIN":
                     builtins.add(name)
-                elif cat == "atomic":
+                elif cat == "ATOMIC":
                     atomics.add(name)
         for k in ("inner", "inner2", "inner3"):
             inner = t.get(k)
@@ -2200,7 +2029,7 @@ def _collect_type_vocabulary(entities: dict[str, dict]) -> dict[str, Any]:
             walk_metadata(raw.get("metadata"))
             fields = raw.get("fields") or []
             if (entity.get("kind") != "enum"
-                    and raw.get("size", 0) > 0
+                    and int(raw.get("size", 0) or 0) > 0
                     and not fields
                     and not raw.get("parents")):
                 # Schema-unregistered runtime class: has a binary size
@@ -2293,79 +2122,65 @@ def generate_codegen_schemas_readme(
     body = f"""# Downstream codegen schemas
 
 Machine-readable schemas for CS2 entity classes, structs, enums, and game
-events — kept in shapes that mirror upstream sources so any tooling that
-already targets those sources works unchanged.
+events — projected straight from
+[CS2OpenDev-SchemaTracker](https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker)'s
+per-build artifacts so consumers get one deterministic, provenance-tracked
+source instead of a chain of third-party dumps.
 
 ## Files
 
-- **`cs2_schema.json`** — community-enriched mirror of
-  [DumpSource2's `cs2.json.gz`](https://github.com/ValveResourceFormat/SchemaExplorer/blob/main/schemas/cs2.json.gz).
-  Top-level: `generator`, `revision`, `version_date`, `version_time`,
-  `classes`, `enums` — exactly upstream's shape.  Optional
-  `annotations` blocks layer in community-curated descriptions / notes
-  / warnings.  Cross-module twins (e.g. `CCSPlayerController` in both
-  `client` and `server`) emit one record per `(module, name)`.
+- **`cs2_schema.json`** — the entity schema in SchemaTracker's **native**
+  shape (`schema_format_version` `2.0`).  Top-level: `generator`, `revision`,
+  `version_date`, `version_time`, `classes`, `enums`.  Each class carries
+  `name`, `module` (the binary it lives in), `projectName`, `cppName`,
+  `size`, `alignment`, `flags` / `flags2`, `parents[]`, `fields[]`
+  (`name`, `offset`, `type`, `typeModule`, `metadata`), and inheritance
+  depths; each enum carries `alignment` (underlying integer type) and
+  `members[]`.  Integer offsets / sizes are **string-encoded** and type
+  `category` values are **UPPERCASE** (`BUILTIN`, `ATOMIC`, `DECLARED_CLASS`,
+  `PTR`, `FIXED_ARRAY`, `BITFIELD`, …).  Optional `annotations` blocks layer
+  in community-curated descriptions / notes / warnings.  A class registered
+  in more than one binary emits one record per `(module, name)`.
 
-- **`gameevents_schema.json`** — community-enriched mirror of the
-  parsed `.gameevents` KV1 registry.  Top-level: `events` list; each
-  record preserves its parsed `name` / `comment` / `source` /
-  `properties` / `fields` from the upstream KV1 source.  Same
-  `annotations` enrichment pattern as `cs2_schema.json`.
+- **`gameevents_schema.json`** — the game-event registry.  Top-level:
+  `events` list; each record has `name` / `comment` / `source` /
+  `properties` / `fields`.  Same `annotations` enrichment pattern.
 
-- **`convars_schema.json`** — structured projection of
-  `DumpSource2/convars.txt`.  Top-level: `convars` list; each entry has
-  `name` / `default` / `flags` / `description`.  Codegen-friendly
-  counterpart to `convars.md`.
+- **`convars_schema.json`** — the console-variable table.  Top-level:
+  `convars` list; each entry has `name` / `default` / `flags` /
+  `description` (SchemaTracker additionally exposes `valueType` and min/max
+  in the source artifact).  Codegen-friendly counterpart to `convars.md`.
 
-- **`commands_schema.json`** — structured projection of
-  `DumpSource2/commands.txt`.  Top-level: `commands` list; each entry
-  has `name` / `flags` / `description`.
+- **`commands_schema.json`** — the console-command table.  Top-level:
+  `commands` list; each entry has `name` / `flags` / `description`.
 
 - **`well_known_constants.json`** — community-curated reference tables
-  for integer / enum values that downstream tooling needs but that
-  DumpSource2 doesn't expose as named enum types (team numbers,
-  `m_gamePhase`, `CSWeaponState_t`, …).  Top-level: `constants` list;
-  each entry has `name` / `comment` / `members[]` with the same
-  `annotations` pattern as the schema files.
+  for integer / enum values downstream tooling needs but that the schema
+  doesn't expose as named enum types (team numbers, `m_gamePhase`,
+  `CSWeaponState_t`, …).  Top-level: `constants` list; each entry has
+  `name` / `comment` / `members[]` with the same `annotations` pattern.
 
 All five files share a single top-level `schema_format_version` string
 that is bumped as a family.  Bump the major when a field is removed or
 renamed in any of the five; bump the minor when a field is added.
 Additive `annotations` blocks do not require a bump.
 
+## Coverage — runtime only
+
+SchemaTracker walks the **shipped CS2 runtime binaries** in-process, so
+`cs2_schema.json` covers exactly the schema those binaries register
+(`client`, `server`, `entity2`, `pulse_runtime_lib`, `particleslib`,
+`animgraphlib`).  The Source 2 editor / tooling schema (hammer, modeldoc,
+resourcecompiler, worldrenderer, …) is intentionally **not** present — it
+never ships in the game.
+
 ## Class records with `size > 0` and no fields
 
 {size_only_phrase} in `cs2_schema.json` report a non-zero `size` but
-expose zero fields — `CNmGraphInstance` (992 B),
-`CBasePulseGraphInstance`, `CPulseExecCursor`, `CNavVolume`, `CBtNode`,
-etc.  These are internal Source 2 runtime classes that the schema
-reflection system knows the binary size of but never registers
-field-level reflection for.  Downstream codegen consumers can safely
-emit them as empty classes; field-level layout is not recoverable from
-the dump.
-
-## Why some upstream fields are absent
-
-The mirror only emits what the upstream `cs2.json.gz` carries.  Several
-fields that *were* present in older SchemaExplorer dumps no longer
-appear and so are absent here too: per-class `abstract`, per-enum
-`flags`, per-atomic `handle_kind`, per-enum `storage_size`.  These are
-recoverable from the runtime but are not currently projected by
-DumpSource2 — file upstream at `ValveResourceFormat/SchemaExplorer` if
-you need them restored.
-
-## Why this shape (and not JSON Schema 2020-12)
-
-`cs2_schema.json` and `gameevents_schema.json` were originally JSON
-Schema 2020-12 documents.  Standard codegens (quicktype, NJsonSchema,
-json-schema-to-typescript) couldn't handle the layered `allOf` /
-`$ref` inheritance and the synthetic defs needed to model native CS2
-types (`CHandle<X>`, `CUtlVector<T>`, `Vector`, …).  Mirroring the
-upstream structured shape lets each consumer apply its own
-type-mapping policy without fighting JSON Schema's vocabulary.  The
-three companion files (`convars_schema.json`, `commands_schema.json`,
-`well_known_constants.json`) follow the same shape-pragmatic pattern:
-plain JSON objects with conventional field names, no schema header.
+expose zero fields.  These are internal Source 2 runtime classes that the
+schema system knows the binary size of but never registers field-level
+reflection for.  Downstream codegen consumers can safely emit them as
+empty classes; field-level layout is not recoverable from the binary.
 
 ## Format reference
 
@@ -2375,7 +2190,8 @@ at the repository root.
 
 ## Auto-generated — do not hand-edit
 
-These files are regenerated every 4 hours from upstream by
+These files are regenerated every 4 hours from the latest
+CS2OpenDev-SchemaTracker build by
 [`.github/workflows/generate-docs.yml`](https://github.com/CS2OpenDev/CS2OpenDev-Docs/blob/main/.github/workflows/generate-docs.yml).
 To change the generated output, edit the generator
 (`docs/generate_docs.py`) or the community overlays under
@@ -2392,23 +2208,37 @@ def generate_index_md(
     commands: list[dict],
     out_dir: Path,
     gameevents: list[dict[str, Any]] | None = None,
+    source_info: dict[str, Any] | None = None,
+    extra_pages: list[tuple[str, str]] | None = None,
 ) -> None:
     """Generate the Jekyll home page index.md."""
+    # Match generate_schemas_index_md's bucketing (primary + cross-module
+    # duplicate variants) so the home-page module list links every page that
+    # actually gets written.
     by_module: dict[str, list] = defaultdict(list)
     for e in entities.values():
         by_module[e["module"]].append(e)
+        for dup in e.get("duplicates", []):
+            by_module[dup["module"]].append(dup)
 
     total_entities = len(entities)
     total_proto_msgs = sum(len(p.get("messages", [])) for p in protos)
+    source_info = source_info or {}
+    extra_pages = extra_pages or []
 
     lines: list[str] = []
     lines.append(_md_front_matter(layout="home", title="CS2 Developer Reference", nav_order="1", nav_exclude="true"))
     lines.append("# CS2 Developer Reference\n")
     lines.append(
-        "Auto-generated documentation from the CS2 game tracking data. "
-        "Includes entity schemas, network message definitions, game events, "
-        "console variables, and commands.\n"
+        "Auto-generated reference for the **shipped CS2 runtime**, extracted "
+        "deterministically from the game binaries by "
+        "[CS2OpenDev-SchemaTracker](https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker): "
+        "entity schemas, protobuf wire messages, network/demo message tables, "
+        "game events, console variables & commands, and the game-content tables "
+        "(items, game modes, surfaces, props, maps).\n"
     )
+    if source_info.get("build_id"):
+        lines.append(_provenance_block(source_info))
     lines.append("## Statistics\n")
     lines.append("| Category | Count |")
     lines.append("|----------|-------|")
@@ -2421,12 +2251,14 @@ def generate_index_md(
     lines.append(f"| Commands | {len(commands)} |")
     lines.append("")
     lines.append("## Quick Links\n")
-    lines.append("- [Schema Entities](generated/schemas.md) – Classes, structs, and enums from CS2's schema dump ([codegen schema](generated/downstream-codegen-schemas/cs2_schema.json))")
+    lines.append("- [Schema Entities](generated/schemas.md) – Classes, structs, and enums from CS2's runtime schema ([codegen schema](generated/downstream-codegen-schemas/cs2_schema.json))")
     lines.append("- [Protobufs](generated/protobufs.md) – Network message and game event definitions")
     if gameevents is not None:
         lines.append("- [Game Events](generated/gameevents.md) – Game event definitions with field schemas ([codegen schema](generated/downstream-codegen-schemas/gameevents_schema.json))")
     lines.append("- [ConVars](generated/convars.md) – Console variable reference with flags and defaults ([codegen schema](generated/downstream-codegen-schemas/convars_schema.json))")
     lines.append("- [Commands](generated/commands.md) – Console command reference ([codegen schema](generated/downstream-codegen-schemas/commands_schema.json))")
+    for title, fname in extra_pages:
+        lines.append(f"- [{title}](generated/{fname})")
     lines.append("- [Well-Known Constants](generated/downstream-codegen-schemas/well_known_constants.json) – Curated tables for team numbers, game phase, weapon state, etc.")
     lines.append("- [Codegen schemas index](generated/downstream-codegen-schemas/README.md) – Format reference, type vocabulary, and version policy for all five JSON schemas above")
     lines.append("- [Entity Hierarchy Diagram](generated/diagrams/server_hierarchy.md) – UML inheritance diagram for server & client entities")
@@ -2488,6 +2320,398 @@ def generate_global_diagram_md(entities: dict[str, dict], out_dir: Path) -> None
 
 
 # ---------------------------------------------------------------------------
+# Content-artifact pages (economy, wire tables, build metadata)
+# ---------------------------------------------------------------------------
+#
+# These render SchemaTracker artifacts that have no analogue in the old
+# DumpSource2 pipeline.  Each is content-gated: a build whose content depot
+# was never acquired simply won't have the file, so every loader tolerates a
+# missing artifact by returning an empty structure and the generator skips the
+# page.
+
+
+def _load_content_json(build_dir: Path, name: str) -> dict[str, Any] | None:
+    """Load a SchemaTracker artifact JSON, or None if it isn't present."""
+    path = build_dir / name
+    if not path.is_file():
+        return None
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+
+
+def _provenance_block(source_info: dict[str, Any]) -> str:
+    """A one-line provenance callout for the top of a generated page."""
+    build = source_info.get("build_id", "?")
+    date = source_info.get("version_date", "")
+    plat = source_info.get("platform", "")
+    sv = source_info.get("schema_version", "")
+    bits = [f"CS2 build **{build}**"]
+    if date:
+        bits.append(date)
+    if plat:
+        bits.append(f"`{plat}`")
+    if sv:
+        bits.append(f"schema `{sv}`")
+    return f"{{: .note }}\n> Source: {' · '.join(bits)}\n"
+
+
+def _md_escape(text: Any) -> str:
+    return str(text or "").replace("|", "\\|").replace("\n", " ")
+
+
+def generate_items_md(data: dict[str, Any], source_info: dict[str, Any], out_dir: Path) -> None:
+    """Economy items, prefabs, paint/sticker/music kits, rarities, qualities."""
+    lines = [_md_front_matter(layout="default", title="Items & Economy", nav_order="7")]
+    lines.append("# Items & Economy\n")
+    lines.append(_provenance_block(source_info))
+    lines.append(
+        "Economy definitions extracted from the content pack's `items_game.txt`: "
+        "weapon / equipment items, their prefabs, paint kits (skins), sticker "
+        "kits, music kits, and the rarity / quality scales.  Name tokens "
+        "(`#SFUI_*`, `#PaintKit_*`, …) resolve to display strings via the "
+        "localization table.\n"
+    )
+
+    items = data.get("items", [])
+    lines.append(f"## Items ({len(items)})\n")
+    lines.append("| defIndex | Name token | Classname | Prefab | Item type |")
+    lines.append("|----------|------------|-----------|--------|-----------|")
+    for it in items:
+        lines.append(
+            f"| {it.get('defIndex','')} | `{_md_escape(it.get('nameToken'))}` "
+            f"| `{_md_escape(it.get('classname'))}` | `{_md_escape(it.get('prefab'))}` "
+            f"| {_md_escape(it.get('itemTypeName'))} |"
+        )
+    lines.append("")
+
+    paint = data.get("paintKits", [])
+    lines.append(f"## Paint Kits — skins ({len(paint)})\n")
+    lines.append("| defIndex | Name | Description tag |")
+    lines.append("|----------|------|----------------|")
+    for pk in paint:
+        lines.append(
+            f"| {pk.get('defIndex','')} | `{_md_escape(pk.get('name'))}` "
+            f"| `{_md_escape(pk.get('descriptionTag'))}` |"
+        )
+    lines.append("")
+
+    stickers = data.get("stickerKits", [])
+    lines.append(f"## Sticker Kits ({len(stickers)})\n")
+    lines.append("| defIndex | Name | Item name token | Description |")
+    lines.append("|----------|------|-----------------|-------------|")
+    for sk in stickers:
+        lines.append(
+            f"| {sk.get('defIndex','')} | `{_md_escape(sk.get('name'))}` "
+            f"| `{_md_escape(sk.get('itemName'))}` | `{_md_escape(sk.get('descriptionString'))}` |"
+        )
+    lines.append("")
+
+    music = data.get("musicDefinitions", [])
+    lines.append(f"## Music Kits ({len(music)})\n")
+    lines.append("| defIndex | Name | Loc name |")
+    lines.append("|----------|------|----------|")
+    for m in music:
+        lines.append(
+            f"| {m.get('defIndex','')} | `{_md_escape(m.get('name'))}` "
+            f"| `{_md_escape(m.get('locName'))}` |"
+        )
+    lines.append("")
+
+    prefabs = data.get("prefabs", [])
+    lines.append(f"## Prefabs ({len(prefabs)})\n")
+    lines.append("| id | Parent prefab | Classname | Item type |")
+    lines.append("|----|---------------|-----------|-----------|")
+    for pf in prefabs:
+        lines.append(
+            f"| `{_md_escape(pf.get('id'))}` | `{_md_escape(pf.get('prefab'))}` "
+            f"| `{_md_escape(pf.get('classname'))}` | {_md_escape(pf.get('itemTypeName'))} |"
+        )
+    lines.append("")
+
+    rarities = data.get("rarities", [])
+    qualities = data.get("qualities", [])
+    lines.append(f"## Rarities ({len(rarities)})\n")
+    lines.append("| id | Value | Loc key | Weapon loc key |")
+    lines.append("|----|-------|---------|----------------|")
+    for r in rarities:
+        lines.append(
+            f"| `{_md_escape(r.get('id'))}` | {r.get('value','')} "
+            f"| `{_md_escape(r.get('locKey'))}` | `{_md_escape(r.get('locKeyWeapon'))}` |"
+        )
+    lines.append("")
+    lines.append(f"## Qualities ({len(qualities)})\n")
+    lines.append("| id | Value |")
+    lines.append("|----|-------|")
+    for q in qualities:
+        lines.append(f"| `{_md_escape(q.get('id'))}` | {q.get('value','')} |")
+    lines.append("")
+
+    (out_dir / "items.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+def generate_network_md(
+    netmsgs: dict[str, Any] | None,
+    demomsgs: dict[str, Any] | None,
+    protos: list[dict],
+    source_info: dict[str, Any],
+    out_dir: Path,
+) -> None:
+    """Wire-protocol tables: message-ID → protobuf type, cross-linked to the proto pages."""
+    # Build a message-name → proto file map for cross-linking.
+    msg_to_file: dict[str, str] = {}
+
+    def _index_messages(msgs: list[dict], filename: str) -> None:
+        for m in msgs:
+            msg_to_file[m["name"]] = filename
+            _index_messages(m.get("nested", []), filename)
+
+    for p in protos:
+        stem = Path(p["filename"]).stem
+        _index_messages(p.get("messages", []), stem)
+
+    def _link(type_name: str) -> str:
+        stem = msg_to_file.get(type_name)
+        if stem:
+            return f"[`{type_name}`](proto/{stem}.md)"
+        return f"`{type_name}`"
+
+    lines = [_md_front_matter(layout="default", title="Network Messages", nav_order="8")]
+    lines.append("# Network & Demo Messages\n")
+    lines.append(_provenance_block(source_info))
+    lines.append(
+        "The wire-protocol tables: integer message IDs mapped to the protobuf "
+        "message type carried, recovered from a static RTTI scan of the shipped "
+        "binaries.  Each type links to its definition on the "
+        "[protobuf pages](protobufs.md).\n"
+    )
+
+    if netmsgs:
+        for ch in netmsgs.get("channels", []):
+            msgs = ch.get("messages", [])
+            lines.append(f"## {ch.get('name','')} ({len(msgs)})\n")
+            lines.append("| ID | Message type |")
+            lines.append("|----|--------------|")
+            for m in msgs:
+                lines.append(f"| {m.get('id','')} | {_link(m.get('protoMessageType',''))} |")
+            lines.append("")
+
+    if demomsgs:
+        msgs = demomsgs.get("messages", [])
+        lines.append(f"## Demo stream (`.dem`) messages ({len(msgs)})\n")
+        lines.append(
+            "The command-ID table for demo playback — a flat id space where a "
+            "single id can bind more than one message type.\n"
+        )
+        lines.append("| ID | Message type |")
+        lines.append("|----|--------------|")
+        for m in msgs:
+            lines.append(f"| {m.get('id','')} | {_link(m.get('protoMessageType',''))} |")
+        lines.append("")
+
+    (out_dir / "network.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+def generate_gamemodes_md(data: dict[str, Any], source_info: dict[str, Any], out_dir: Path) -> None:
+    """Game types / modes and the map-group registry."""
+    lines = [_md_front_matter(layout="default", title="Game Modes", nav_order="9")]
+    lines.append("# Game Modes & Map Groups\n")
+    lines.append(_provenance_block(source_info))
+    lines.append(
+        "Game types and their nested game modes (from `gamemodes.txt`): max "
+        "players, map groups, and per-mode convar overrides.\n"
+    )
+
+    for gt in data.get("gameTypes", []):
+        modes = gt.get("gameModes", [])
+        lines.append(f"## Game type: `{gt.get('id','')}` ({len(modes)} modes)\n")
+        for gm in modes:
+            lines.append(f"### `{gm.get('id','')}`\n")
+            lines.append(f"- **Name token:** `{_md_escape(gm.get('nameId'))}`")
+            lines.append(f"- **Max players:** {gm.get('maxPlayers','')}")
+            mgs = gm.get("mapGroupsMp", [])
+            if mgs:
+                lines.append(f"- **Map groups:** {', '.join(f'`{g}`' for g in mgs)}")
+            convars = gm.get("convars", [])
+            if convars:
+                lines.append(f"- **ConVar overrides:** {len(convars)}")
+                lines.append("")
+                lines.append("| ConVar | Value |")
+                lines.append("|--------|-------|")
+                for cv in convars:
+                    lines.append(f"| `{_md_escape(cv.get('name'))}` | `{_md_escape(cv.get('value'))}` |")
+            lines.append("")
+
+    groups = data.get("mapGroups", [])
+    lines.append(f"## Map groups ({len(groups)})\n")
+    lines.append("| id | Maps |")
+    lines.append("|----|------|")
+    for g in groups:
+        maps = ", ".join(f"`{m}`" for m in g.get("maps", []))
+        lines.append(f"| `{_md_escape(g.get('id'))}` | {maps} |")
+    lines.append("")
+
+    (out_dir / "gamemodes.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+def generate_changelog_md(data: dict[str, Any], source_info: dict[str, Any], out_dir: Path) -> None:
+    """What changed between the previous committed build and this one."""
+    lines = [_md_front_matter(layout="default", title="Changelog", nav_order="10")]
+    lines.append("# Build Changelog\n")
+    lines.append(_provenance_block(source_info))
+    lines.append(
+        f"Difference between build **{data.get('fromBuild','?')}** and "
+        f"**{data.get('toBuild','?')}** (`{data.get('platform','')}`), grouped by "
+        "data family.\n"
+    )
+
+    for fam in data.get("families", []):
+        added, removed, changed = fam.get("added", []), fam.get("removed", []), fam.get("changed", [])
+        if not (added or removed or changed):
+            continue
+        lines.append(
+            f"## {fam.get('family','')} "
+            f"(+{len(added)} / −{len(removed)} / ~{len(changed)})\n"
+        )
+        if added:
+            lines.append("**Added:** " + ", ".join(f"`{_md_escape(a)}`" for a in added[:200]))
+            if len(added) > 200:
+                lines.append(f"… and {len(added) - 200} more")
+            lines.append("")
+        if removed:
+            lines.append("**Removed:** " + ", ".join(f"`{_md_escape(r)}`" for r in removed[:200]))
+            if len(removed) > 200:
+                lines.append(f"… and {len(removed) - 200} more")
+            lines.append("")
+        if changed:
+            lines.append("| Entry | Field changes |")
+            lines.append("|-------|---------------|")
+            for ch in changed[:400]:
+                deltas = "; ".join(
+                    f"{_md_escape(fc.get('field'))}: `{_md_escape(fc.get('oldValue'))}` → "
+                    f"`{_md_escape(fc.get('newValue'))}`"
+                    for fc in ch.get("fields", [])
+                )
+                lines.append(f"| `{_md_escape(ch.get('name'))}` | {deltas} |")
+            if len(changed) > 400:
+                lines.append(f"\n… and {len(changed) - 400} more changed entries")
+            lines.append("")
+
+    (out_dir / "changelog.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+def generate_maps_md(data: dict[str, Any], source_info: dict[str, Any], out_dir: Path) -> None:
+    """Per-map radar/overview metadata + maps inventory."""
+    lines = [_md_front_matter(layout="default", title="Maps", nav_order="11")]
+    lines.append("# Maps & Radar Overviews\n")
+    lines.append(_provenance_block(source_info))
+    names = data.get("mapNames", [])
+    lines.append(f"Maps inventory ({len(names)}): "
+                 + ", ".join(f"`{n}`" for n in names) + "\n")
+    lines.append("## Radar overview metadata\n")
+    lines.append("| Map | Material | pos (x, y) | Scale | CT spawn | T spawn |")
+    lines.append("|-----|----------|-----------|-------|----------|---------|")
+    for m in data.get("maps", []):
+        lines.append(
+            f"| `{_md_escape(m.get('name'))}` | `{_md_escape(m.get('material'))}` "
+            f"| {m.get('posX','')}, {m.get('posY','')} | {m.get('scale','')} "
+            f"| {m.get('ctSpawnX','')}, {m.get('ctSpawnY','')} "
+            f"| {m.get('tSpawnX','')}, {m.get('tSpawnY','')} |"
+        )
+    lines.append("")
+    (out_dir / "maps.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+def generate_surfaces_md(data: dict[str, Any], source_info: dict[str, Any], out_dir: Path) -> None:
+    """Per-material surface physics / footstep table."""
+    lines = [_md_front_matter(layout="default", title="Surface Properties", nav_order="12")]
+    lines.append("# Surface Properties\n")
+    lines.append(_provenance_block(source_info))
+    surfaces = data.get("surfaces", [])
+    lines.append(
+        f"{len(surfaces)} surface records — footstep sounds, physics, and "
+        "bullet-penetration modifiers per material.  The same material can "
+        "appear more than once, keyed by source file / scope.\n"
+    )
+    lines.append("| Surface | Scope | Source | Properties |")
+    lines.append("|---------|-------|--------|------------|")
+    for s in surfaces:
+        props = "; ".join(
+            f"{_md_escape(p.get('name'))}=`{_md_escape(p.get('value'))}`"
+            for p in s.get("properties", [])
+        )
+        lines.append(
+            f"| `{_md_escape(s.get('name'))}` | {_md_escape(s.get('scope'))} "
+            f"| `{_md_escape(s.get('sourceFile'))}` | {props} |"
+        )
+    lines.append("")
+    (out_dir / "surfaces.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+def generate_props_md(data: dict[str, Any], source_info: dict[str, Any], out_dir: Path) -> None:
+    """Breakable-prop physics classes, gib groups, collision-group registry."""
+    lines = [_md_front_matter(layout="default", title="Prop Data", nav_order="13")]
+    lines.append("# Prop & Collision Data\n")
+    lines.append(_provenance_block(source_info))
+
+    prop_classes = data.get("propClasses", [])
+    lines.append(f"## Prop classes ({len(prop_classes)})\n")
+    lines.append("| Class | Properties |")
+    lines.append("|-------|------------|")
+    for pc in prop_classes:
+        props = "; ".join(
+            f"{_md_escape(p.get('name'))}=`{_md_escape(p.get('value'))}`"
+            for p in pc.get("properties", [])
+        )
+        lines.append(f"| `{_md_escape(pc.get('id'))}` | {props} |")
+    lines.append("")
+
+    groups = data.get("collisionGroups", [])
+    lines.append(f"## Collision groups ({len(groups)})\n")
+    lines.append("| Group | Description | Interacts as | Interacts with |")
+    lines.append("|-------|-------------|--------------|----------------|")
+    for g in groups:
+        lines.append(
+            f"| `{_md_escape(g.get('collisionGroup'))}` | {_md_escape(g.get('description'))} "
+            f"| {', '.join(f'`{x}`' for x in g.get('interactAs', []))} "
+            f"| {', '.join(f'`{x}`' for x in g.get('interactWith', []))} |"
+        )
+    lines.append("")
+
+    breakables = data.get("breakableModels", [])
+    lines.append(f"## Breakable gib groups ({len(breakables)})\n")
+    for b in breakables:
+        lines.append(f"- **`{_md_escape(b.get('id'))}`**: {len(b.get('models', []))} models")
+    lines.append("")
+    (out_dir / "props.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+def generate_modules_md(data: dict[str, Any], source_info: dict[str, Any], out_dir: Path) -> None:
+    """Per-binary inventory: hashes, sizes, and resolved interface versions."""
+    lines = [_md_front_matter(layout="default", title="Modules", nav_order="14")]
+    lines.append("# Binary Modules\n")
+    lines.append(_provenance_block(source_info))
+    modules = data.get("modules", [])
+    lines.append(
+        f"{len(modules)} binaries read for this build, each with its SHA-256, "
+        "size, export / schema-registration counts, and the engine interface "
+        "versions it resolved at load.\n"
+    )
+    lines.append("| Path | Size | Exports | Schema regs | Interfaces |")
+    lines.append("|------|------|---------|-------------|------------|")
+    for m in modules:
+        ifaces = ", ".join(f"`{i}`" for i in m.get("resolvedInterfaces", []))
+        lines.append(
+            f"| `{_md_escape(m.get('path'))}` | {m.get('fileSize','')} "
+            f"| {m.get('exportCount','')} | {m.get('schemaRegistrationCount','')} "
+            f"| {ifaces} |"
+        )
+    lines.append("")
+    (out_dir / "modules.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -2495,34 +2719,57 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Generate CS2 Jekyll/Markdown documentation.")
     parser.add_argument("--repo-root", default=".", help="Path to the repository root")
     parser.add_argument(
-        "--data-root",
+        "--artifacts-root",
         default=None,
         help=(
-            "Path to the CS2OpenDev-Docs data tree (contains DumpSource2/ and "
-            "Protobufs/).  Defaults to --repo-root.  Override when running from a "
-            "standalone documentation repository that tracks game data in a "
-            "submodule or sibling checkout."
+            "Path to CS2OpenDev-SchemaTracker's artifacts/ directory "
+            "(contains <build_id>/<platform>/ sets).  Defaults to "
+            "<repo-root>/upstream/schema-tracker/artifacts."
         ),
+    )
+    parser.add_argument(
+        "--build",
+        default="latest",
+        help=(
+            "SchemaTracker build id to document, or 'latest' (default) for the "
+            "highest-numbered committed build carrying the chosen platform."
+        ),
+    )
+    parser.add_argument(
+        "--platform",
+        default="windows-x86_64",
+        choices=["windows-x86_64", "linux-x86_64"],
+        help="Which platform's artifact set to document (default: windows-x86_64).",
     )
     parser.add_argument("--output", default="docs", help="Jekyll source directory (home page goes here; the rest goes under <output>/generated/)")
-    parser.add_argument(
-        "--schema-json",
-        default=None,
-        help=(
-            "Path to DumpSource2's cs2.json (or cs2.json.gz).  When omitted, "
-            "the generator looks under <data-root>/SchemaExplorer/schemas/ "
-            "and <data-root>/DumpSource2/.  Override for local development "
-            "(e.g. point at ~/Downloads/cs2.json)."
-        ),
-    )
     args = parser.parse_args(argv)
 
     repo_root = Path(args.repo_root).resolve()
-    data_root = Path(args.data_root).resolve() if args.data_root else repo_root
+    artifacts_root = (
+        Path(args.artifacts_root).resolve() if args.artifacts_root
+        else repo_root / "upstream" / "schema-tracker" / "artifacts"
+    )
     out_dir = Path(args.output).resolve()
     out_dir.mkdir(parents=True, exist_ok=True)
     generated_dir = out_dir / "generated"
     generated_dir.mkdir(parents=True, exist_ok=True)
+
+    # Wipe the fully-regenerated per-item subdirectories so pages for
+    # modules / protos that no longer exist in the current build (e.g. the
+    # Source 2 editor/tooling schema, which SchemaTracker doesn't cover)
+    # don't linger as stale orphans.  Flat files directly under generated/
+    # are always overwritten in place, so they need no pruning.
+    for sub in ("schemas", "proto", "diagrams"):
+        stale = generated_dir / sub
+        if stale.is_dir():
+            shutil.rmtree(stale)
+    # Content-artifact pages are content-gated (a build may not ship every
+    # table), so clear them too and let this run recreate only what exists.
+    for page in ("items.md", "network.md", "gamemodes.md", "changelog.md",
+                 "maps.md", "surfaces.md", "props.md", "modules.md"):
+        stale_page = generated_dir / page
+        if stale_page.is_file():
+            stale_page.unlink()
 
     overlays_dir = repo_root / "docs" / "overlays"
 
@@ -2533,45 +2780,38 @@ def main(argv: list[str] | None = None) -> int:
     overlays = load_overlays(overlays_dir)
     print(f"  Loaded {len(overlays)} overlay file(s).")
 
-    if args.schema_json:
-        schema_json_path: Path | None = Path(args.schema_json).resolve()
-        if not schema_json_path.is_file():
-            print(f"ERROR: --schema-json file not found: {schema_json_path}", file=sys.stderr)
-            return 2
-    else:
-        schema_json_path = find_schema_json(data_root)
-    if schema_json_path is None:
+    build_dir = resolve_build_dir(artifacts_root, args.build, args.platform)
+    if build_dir is None:
         print(
-            "ERROR: could not locate cs2.json.  Looked under "
-            f"{data_root}/DumpSource2/ and "
-            f"{data_root.parent}/schema-explorer/schemas/.  "
-            "Pass --schema-json PATH, or initialise the schema-explorer submodule "
-            "(`git submodule update --init upstream/schema-explorer`).",
+            f"ERROR: could not resolve a SchemaTracker build under {artifacts_root} "
+            f"(build={args.build!r}, platform={args.platform!r}).  Initialise the "
+            "submodule (`git submodule update --init upstream/schema-tracker`) or "
+            "pass --artifacts-root PATH.",
             file=sys.stderr,
         )
         return 2
-    print(f"Loading schema JSON from {schema_json_path}…")
-    entities, schema_source_info = load_schema_json(schema_json_path)
+    schema_source_info = build_source_info(build_dir, args.platform)
+    print(f"Loading SchemaTracker build {schema_source_info.get('build_id', '?')} "
+          f"({args.platform}) from {build_dir}…")
+    entities = load_entity_schema(build_dir)
     print(f"  Loaded {len(entities)} entities across "
           f"{len({e['module'] for e in entities.values()})} modules.")
-    if schema_source_info.get("revision"):
-        print(f"  Source revision: {schema_source_info['revision']} "
-              f"({schema_source_info.get('version_date', '?')})")
+    if schema_source_info.get("version_date"):
+        print(f"  Steam build date: {schema_source_info['version_date']} "
+              f"(schema_version {schema_source_info.get('schema_version', '?')})")
 
-    protobufs_root = data_root / "Protobufs"
-    print("Compiling proto descriptors…")
-    protos = load_proto_descriptors(protobufs_root)
+    print("Reading proto descriptor set…")
+    protos = load_proto_descriptors(build_dir / "protos.descriptorset")
     print(f"  Loaded {len(protos)} proto files.")
 
-    dump_dir = data_root / "DumpSource2"
-    print("Parsing convars and commands…")
-    convars = parse_convars(dump_dir / "convars.txt")
-    commands = parse_commands(dump_dir / "commands.txt")
+    print("Loading convars and commands…")
+    convars = load_convars_json(build_dir / "convars.json")
+    commands = load_commands_json(build_dir / "commands.json")
     print(f"  {len(convars)} convars, {len(commands)} commands.")
 
-    print("Parsing game events…")
-    gameevents = parse_all_gameevents(data_root)
-    print(f"  Parsed {len(gameevents)} game events.")
+    print("Loading game events…")
+    gameevents = load_gameevents_json(build_dir / "gameevents.json")
+    print(f"  Loaded {len(gameevents)} game events.")
 
     print("Generating Markdown UML diagram pages…")
     uml_md = generate_module_uml_md(entities, generated_dir)
@@ -2614,8 +2854,56 @@ def main(argv: list[str] | None = None) -> int:
         generated_dir, source_info=schema_source_info, entities=entities
     )
 
+    print("Generating content-artifact pages…")
+    extra_pages: list[tuple[str, str]] = []  # (title, filename) for index nav
+
+    items = _load_content_json(build_dir, "item_definitions.json")
+    if items:
+        generate_items_md(items, schema_source_info, generated_dir)
+        extra_pages.append(("Items & Economy", "items.md"))
+
+    netmsgs = _load_content_json(build_dir, "network_messages.json")
+    demomsgs = _load_content_json(build_dir, "demo_messages.json")
+    if netmsgs or demomsgs:
+        generate_network_md(netmsgs, demomsgs, protos, schema_source_info, generated_dir)
+        extra_pages.append(("Network Messages", "network.md"))
+
+    gamemodes = _load_content_json(build_dir, "game_modes.json")
+    if gamemodes:
+        generate_gamemodes_md(gamemodes, schema_source_info, generated_dir)
+        extra_pages.append(("Game Modes", "gamemodes.md"))
+
+    changelog = _load_content_json(build_dir, "changelog.json")
+    if changelog:
+        generate_changelog_md(changelog, schema_source_info, generated_dir)
+        extra_pages.append(("Changelog", "changelog.md"))
+
+    maps = _load_content_json(build_dir, "map_overviews.json")
+    if maps:
+        generate_maps_md(maps, schema_source_info, generated_dir)
+        extra_pages.append(("Maps", "maps.md"))
+
+    surfaces = _load_content_json(build_dir, "surface_properties.json")
+    if surfaces:
+        generate_surfaces_md(surfaces, schema_source_info, generated_dir)
+        extra_pages.append(("Surface Properties", "surfaces.md"))
+
+    props = _load_content_json(build_dir, "prop_data.json")
+    if props:
+        generate_props_md(props, schema_source_info, generated_dir)
+        extra_pages.append(("Prop Data", "props.md"))
+
+    modules = _load_content_json(build_dir, "modules.json")
+    if modules:
+        generate_modules_md(modules, schema_source_info, generated_dir)
+        extra_pages.append(("Modules", "modules.md"))
+    print(f"  Generated {len(extra_pages)} content-artifact page(s).")
+
     print("Generating Markdown home page…")
-    generate_index_md(entities, protos, convars, commands, out_dir, gameevents=gameevents)
+    generate_index_md(
+        entities, protos, convars, commands, out_dir,
+        gameevents=gameevents, source_info=schema_source_info, extra_pages=extra_pages,
+    )
 
     print(f"\nDone!  Home page: {out_dir}/index.md")
     print(f"        Generated content: {generated_dir}")

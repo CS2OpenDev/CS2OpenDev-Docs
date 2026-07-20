@@ -1102,7 +1102,7 @@ direction LR
 | Field | Ordinal | Type | Label | Description |
 |-------|---------|------|-------|-------------|
 | `word_id` | 1 | uint32 | optional |  |
-| `word_type` | 2 | [GC_BannedWordType](#gc_bannedwordtype) | optional | *(default: `GC_BANNED_WORD_DISABLE_WORD`)* |
+| `word_type` | 2 | [GC_BannedWordType](#gc_bannedwordtype) | optional |  |
 | `word` | 3 | string | optional |  |
 
 ### `CMsgGCBannedWordListResponse`

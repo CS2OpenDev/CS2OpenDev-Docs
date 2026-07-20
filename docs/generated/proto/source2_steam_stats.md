@@ -201,6 +201,7 @@ direction LR
     +uint32 build_id
     +int32 osversion
     +string command_logs
+    +int32 bugbug_no
   }
 
   CMsgSource2VProfLiteReport --> CMsgSource2VProfLiteReportItem : total
@@ -450,3 +451,4 @@ direction LR
 | `build_id` | 4 | uint32 | optional |  |
 | `osversion` | 5 | int32 | optional |  |
 | `command_logs` | 6 | string | optional |  |
+| `bugbug_no` | 7 | int32 | optional |  |

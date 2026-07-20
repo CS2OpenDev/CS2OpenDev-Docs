@@ -554,6 +554,7 @@ direction LR
     +uint32 reason
     +uint32 seconds
     +bool communication_cooldown
+    +uint32 cheating_penalty_level
   }
 
   class CMsgGCCStrike15_v2_ClientReportPlayer {
@@ -644,6 +645,8 @@ direction LR
     +uint32 redeemable_balance
     +uint32 expected_cost
     +int32 bid_control
+    +List~uint64~ volatile_shop
+    +uint64 souvenir_matchid
   }
 
   class CMsgGCCstrike15_v2_ClientRedeemFreeReward {
@@ -1072,6 +1075,14 @@ direction LR
     +List~uint32~ generation_time
   }
 
+  class CMsgGCCStrike15_v2_VolatileShopSubscribe {
+    +uint32 defidx
+    +uint64 psid
+    +uint32 upnext
+    +uint32 gctime
+    +bytes payload
+  }
+
   class CSOAccountKeychainRemoveToolCharges {
     +uint32 charges
   }
@@ -1109,6 +1120,7 @@ direction LR
     +bool elevated_state
     +uint32 xp_trail_timestamp_refresh
     +uint32 xp_trail_level
+    +uint32 clan_id
   }
 
   class CSOAccountRecurringMission {
@@ -1301,6 +1313,10 @@ direction LR
   class CMsgGCCStrike15_v2_ClientAccountBalance {
     +uint64 amount
     +string url
+  }
+
+  class CMsgGCCStrike15_v2_SetClanId {
+    +uint32 clan_id
   }
 
   class CMsgGCCStrike15_v2_ClientPartyJoinRelay {
@@ -1613,6 +1629,8 @@ direction LR
     k_EMsgGCCStrike15_v2_RequestRecurringMissionSchedule
     k_EMsgGCCStrike15_v2_RecurringMissionSchema
     k_EMsgGCCStrike15_v2_VolatileItemClaimReward
+    k_EMsgGCCStrike15_v2_VolatileShopSubscribe
+    k_EMsgGCCStrike15_v2_SetClanId
   }
 
   class ECsgoSteamUserStat{
@@ -1763,6 +1781,8 @@ direction LR
 | `k_EMsgGCCStrike15_v2_RequestRecurringMissionSchedule` | 9225 |
 | `k_EMsgGCCStrike15_v2_RecurringMissionSchema` | 9226 |
 | `k_EMsgGCCStrike15_v2_VolatileItemClaimReward` | 9227 |
+| `k_EMsgGCCStrike15_v2_VolatileShopSubscribe` | 9228 |
+| `k_EMsgGCCStrike15_v2_SetClanId` | 9229 |
 
 ### `ECsgoSteamUserStat`
 
@@ -2386,6 +2406,7 @@ direction LR
 | `reason` | 2 | uint32 | optional |  |
 | `seconds` | 3 | uint32 | optional |  |
 | `communication_cooldown` | 4 | bool | optional |  |
+| `cheating_penalty_level` | 5 | uint32 | optional |  |
 
 ### `CMsgGCCStrike15_v2_ClientReportPlayer`
 
@@ -2494,6 +2515,8 @@ direction LR
 | `redeemable_balance` | 3 | uint32 | optional |  |
 | `expected_cost` | 4 | uint32 | optional |  |
 | `bid_control` | 5 | int32 | optional |  |
+| `volatile_shop` | 6 | uint64 | repeated |  |
+| `souvenir_matchid` | 7 | uint64 | optional |  |
 
 ### `CMsgGCCstrike15_v2_ClientRedeemFreeReward`
 
@@ -2933,6 +2956,16 @@ direction LR
 | `reward` | 2 | uint32 | repeated |  |
 | `generation_time` | 3 | uint32 | repeated |  |
 
+### `CMsgGCCStrike15_v2_VolatileShopSubscribe`
+
+| Field | Ordinal | Type | Label | Description |
+|-------|---------|------|-------|-------------|
+| `defidx` | 1 | uint32 | optional |  |
+| `psid` | 2 | uint64 | optional |  |
+| `upnext` | 3 | uint32 | optional |  |
+| `gctime` | 4 | uint32 | optional |  |
+| `payload` | 5 | bytes | optional |  |
+
 ### `CSOAccountKeychainRemoveToolCharges`
 
 | Field | Ordinal | Type | Label | Description |
@@ -2983,6 +3016,7 @@ direction LR
 | `elevated_state` | 3 | bool | optional |  |
 | `xp_trail_timestamp_refresh` | 4 | uint32 | optional |  |
 | `xp_trail_level` | 5 | uint32 | optional |  |
+| `clan_id` | 6 | uint32 | optional |  |
 
 ### `CSOAccountRecurringMission`
 
@@ -3214,6 +3248,12 @@ direction LR
 | `amount` | 1 | uint64 | optional |  |
 | `url` | 2 | string | optional |  |
 
+### `CMsgGCCStrike15_v2_SetClanId`
+
+| Field | Ordinal | Type | Label | Description |
+|-------|---------|------|-------|-------------|
+| `clan_id` | 1 | uint32 | optional |  |
+
 ### `CMsgGCCStrike15_v2_ClientPartyJoinRelay`
 
 | Field | Ordinal | Type | Label | Description |
@@ -3309,7 +3349,7 @@ direction LR
 | `error_code1` | 5 | int32 | optional |  |
 | `error_code2` | 6 | int32 | optional |  |
 | `handle` | 7 | int64 | optional |  |
-| `einit_result` | 8 | [EInitSystemResult](#einitsystemresult) | optional | *(default: `k_EInitSystemResult_Invalid`)* |
+| `einit_result` | 8 | [EInitSystemResult](#einitsystemresult) | optional |  |
 | `aux_system1` | 9 | int32 | optional |  |
 | `aux_system2` | 10 | int32 | optional |  |
 

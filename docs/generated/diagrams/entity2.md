@@ -14,12 +14,6 @@ Class relationships (inheritance and composition) for the `entity2` module.
 ```mermaid
 classDiagram
     CEntityComponent <|-- CScriptComponent
-    CEntityIdentity --> CEntityAttributeTable
     CEntityInstance --> CEntityIdentity
     CEntityInstance --> CScriptComponent
-    EntComponentInfo_t --> CEntityComponentHelper
-    EntityIOQueuePrioritizedEvent_t *-- GameTime_t
-    EntityIOQueuePrioritizedEvent_t *-- EntityIOTargetType_t
-    EntityIOQueuePrioritizedEvent_t *-- CVariantDefaultAllocator
-    CEntityComponentHelper --> EntComponentInfo_t
 ```

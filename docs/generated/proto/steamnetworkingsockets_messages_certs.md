@@ -71,7 +71,7 @@ direction LR
 
 | Field | Ordinal | Type | Label | Description |
 |-------|---------|------|-------|-------------|
-| `key_type` | 1 | CMsgSteamDatagramCertificate.EKeyType | optional | *(default: `INVALID`)* |
+| `key_type` | 1 | CMsgSteamDatagramCertificate.EKeyType | optional |  |
 | `key_data` | 2 | bytes | optional |  |
 | `legacy_steam_id` | 4 | fixed64 | optional |  |
 | `gameserver_datacenter_ids` | 5 | fixed32 | repeated |  |

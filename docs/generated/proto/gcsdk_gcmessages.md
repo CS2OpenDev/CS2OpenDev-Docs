@@ -589,7 +589,7 @@ direction LR
 
 | Field | Ordinal | Type | Label | Description |
 |-------|---------|------|-------|-------------|
-| `status` | 1 | [GCConnectionStatus](#gcconnectionstatus) | optional | *(default: `GCConnectionStatus_HAVE_SESSION`)* |
+| `status` | 1 | [GCConnectionStatus](#gcconnectionstatus) | optional |  |
 | `client_session_need` | 2 | uint32 | optional |  |
 | `queue_position` | 3 | int32 | optional |  |
 | `queue_size` | 4 | int32 | optional |  |
