@@ -7,12 +7,14 @@ nav_exclude: true
 
 # UML: client
 
-Class relationships (inheritance and composition) for the `client` module (showing 300 of 381 relationships).
+Class relationships (inheritance and composition) for the `client` module (showing 300 of 382 relationships).
 
 **Arrow legend:** `<|--` inheritance &nbsp; `*--` composition &nbsp; `-->` association/pointer
 
 ```mermaid
 classDiagram
+    CAnimGraphControllerBase <|-- CCS2UIPawnGraphController
+    IClientAlphaProperty <|-- CClientAlphaProperty
     C_BaseModelEntity <|-- CBaseAnimGraph
     CBaseAnimGraph <|-- CBaseAnimGraphAlias_baseanimating
     CSkeletonAnimationController <|-- CBaseAnimGraphController
@@ -311,6 +313,4 @@ classDiagram
     C_BaseTrigger <|-- C_PostProcessingVolume
     C_BaseTrigger <|-- C_Precipitation
     C_BaseModelEntity <|-- C_PrecipitationBlocker
-    C_BasePropDoor <|-- C_PropDoorRotating
-    CBaseAnimGraph <|-- C_RagdollProp
 ```

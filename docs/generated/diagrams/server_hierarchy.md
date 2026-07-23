@@ -11,6 +11,47 @@ Inheritance relationships between server and client entities (capped at 300 edge
 
 ```mermaid
 classDiagram
+    DebugSnapshotBaseStructuredData_t <|-- AI_BaseNPC_DebugSnapshotData_t
+    DebugSnapshotBaseStructuredData_t <|-- AI_DefaultNPC_DebugSnapshotData_t
+    DebugSnapshotBaseStructuredData_t <|-- AI_GroundRootMotionMotor_DebugSnapshotData_t
+    CAI_Expresser <|-- CAI_ExpresserWithFollowup
+    CAnimGraphControllerBase <|-- CBaseAnimGraphDestructibleParts_GraphController
+    CNmGraphVariationUserData <|-- CBaseAnimGraphVariationUserData
+    CBtNode <|-- CBtNodeComposite
+    CBtNode <|-- CBtNodeDecorator
+    CAnimGraphControllerBase <|-- CCS2ChickenGraphController
+    CAnimGraphControllerBase <|-- CCS2UIPawnGraphController
+    CAnimGraphControllerBase <|-- CChoreo_GraphController
+    IClientAlphaProperty <|-- CClientAlphaProperty
+    CAnimGraphControllerBase <|-- CEmptyGraphController
+    IChoreoServices <|-- CGameChoreoServices
+    INavPathCostAreaFilter <|-- CMarkupSearch_PathCostAreaFilter
+    CAI_ExpresserWithFollowup <|-- CMultiplayer_Expresser
+    CNavVolumeCalculatedVector <|-- CNavVolumeBreadthFirstSearch
+    CNavVolume <|-- CNavVolumeCalculatedVector
+    CNavVolume <|-- CNavVolumeMarkupVolume
+    "CNmPassthroughNode::CDefinition" <|-- "CNmAimCSNode::CDefinition"
+    CNmPoseTask <|-- CNmAimCSTask
+    CNmEventConsumer <|-- CNmEventConsumerAttributes
+    CNmEventConsumer <|-- CNmEventConsumerLegacy
+    CNmEventConsumer <|-- CNmEventConsumerParticle
+    CNmEventConsumer <|-- CNmEventConsumerPulse
+    CNmEventConsumer <|-- CNmEventConsumerSound
+    "CNmPassthroughNode::CDefinition" <|-- "CNmSnapWeaponNode::CDefinition"
+    CNmPoseTask <|-- CNmSnapWeaponTask
+    CSimpleSimTimer <|-- CRandSimTimer
+    CStopwatchBase <|-- CRandStopwatch
+    CSAdditionalPerRoundStats_t <|-- CSAdditionalMatchStats_t
+    CSimpleSimTimer <|-- CSimTimer
+    CStopwatchBase <|-- CSimpleStopwatch
+    ISkeletonAnimationController <|-- CSkeletonAnimationController
+    CStopwatchBase <|-- CStopwatch
+    CSimpleSimTimer <|-- CStopwatchBase
+    CTestPulseIOComponent <|-- CTestPulseIOComponent_Derived
+    DebugSnapshotBaseStructuredData_t <|-- DebugDrawBoneTransforms_t
+    AmmoTypeInfo_t <|-- GameAmmoTypeInfo_t
+    Relationship_t <|-- RelationshipOverride_t
+    dynpitchvol_base_t <|-- dynpitchvol_t
     C_BaseModelEntity <|-- CBaseAnimGraph
     CBaseAnimGraph <|-- CBaseAnimGraphAlias_baseanimating
     CSkeletonAnimationController <|-- CBaseAnimGraphController
@@ -270,45 +311,4 @@ classDiagram
     C_BaseModelEntity <|-- C_LightEntity
     C_LightDirectionalEntity <|-- C_LightEnvironmentEntity
     C_LightEntity <|-- C_LightOrthoEntity
-    C_LightEntity <|-- C_LightSpotEntity
-    CBaseAnimGraph <|-- C_LocalTempEntity
-    C_ParticleSystem <|-- C_MapPreviewParticleSystem
-    C_BaseEntity <|-- C_MapVetoPickController
-    C_BaseModelEntity <|-- C_ModelPointEntity
-    C_BaseCSGrenade <|-- C_MolotovGrenade
-    C_BaseCSGrenadeProjectile <|-- C_MolotovProjectile
-    CBaseAnimGraph <|-- C_Multimeter
-    C_GameRules <|-- C_MultiplayRules
-    C_CS2WeaponModuleBase <|-- C_NametagModule
-    C_BaseCombatCharacter <|-- C_NetTestBaseCombatCharacter
-    C_BarnLight <|-- C_OmniLight
-    C_BaseModelEntity <|-- C_ParticleSystem
-    C_BaseEntity <|-- C_PathParticleRope
-    C_PathParticleRope <|-- C_PathParticleRopeAlias_path_particle_rope_clientside
-    C_Breakable <|-- C_PhysBox
-    CBaseAnimGraph <|-- C_PhysMagnet
-    C_BreakableProp <|-- C_PhysPropClientside
-    C_BreakableProp <|-- C_PhysicsProp
-    C_PhysicsProp <|-- C_PhysicsPropMultiplayer
-    CBaseAnimGraph <|-- C_PlantedC4
-    IHasAttributes <|-- C_PlantedC4
-    C_BaseEntity <|-- C_PlayerPing
-    C_ModelPointEntity <|-- C_PlayerSprayDecal
-    C_BaseEntity <|-- C_PlayerVisibility
-    C_BaseEntity <|-- C_PointCamera
-    C_PointCamera <|-- C_PointCameraVFOV
-    C_BaseClientUIEntity <|-- C_PointClientUIDialog
-    C_BaseClientUIEntity <|-- C_PointClientUIHUD
-    C_BaseClientUIEntity <|-- C_PointClientUIWorldPanel
-    C_PointClientUIWorldPanel <|-- C_PointClientUIWorldTextPanel
-    CBaseAnimGraph <|-- C_PointCommentaryNode
-    C_BaseEntity <|-- C_PointEntity
-    C_BaseEntity <|-- C_PointValueRemapper
-    C_ModelPointEntity <|-- C_PointWorldText
-    C_BaseEntity <|-- C_PortraitWorldCallbackHandler
-    C_BaseTrigger <|-- C_PostProcessingVolume
-    C_BaseTrigger <|-- C_Precipitation
-    C_BaseModelEntity <|-- C_PrecipitationBlocker
-    C_BasePropDoor <|-- C_PropDoorRotating
-    CBaseAnimGraph <|-- C_RagdollProp
 ```

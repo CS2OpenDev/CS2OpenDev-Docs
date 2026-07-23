@@ -53,13 +53,45 @@ classDiagram
     CPulse_OutflowConnection <|-- CPulse_ResumePoint
     CPulse_OutflowConnection <|-- SignatureOutflow_Continue
     CPulse_ResumePoint <|-- SignatureOutflow_Resume
+    CPulseBreakpointLocation *-- PulseDocNodeID_t
+    CPulseGraphExecutionHistory *-- PulseGraphInstanceID_t
+    CPulseGraphExecutionHistory --> PulseGraphExecutionHistoryEntry_t
+    CPulseGraphExecutionHistory --> PulseDocNodeID_t
+    CPulseGraphExecutionHistory --> PulseGraphExecutionHistoryNodeDesc_t
+    CPulseGraphExecutionHistory --> PulseCursorID_t
+    CPulseGraphExecutionHistory --> PulseGraphExecutionHistoryCursorDesc_t
+    CPulse_Chunk *-- PGDInstruction_t
+    CPulse_Chunk *-- CPulse_RegisterInfo
+    CPulse_Chunk *-- CPulse_InstructionDebug
+    CPulse_InstructionDebug *-- PulseDocNodeID_t
+    CPulse_PublicOutput *-- CPulseRuntimeMethodArg
+    CPulse_RegisterInfo *-- PulseRuntimeRegisterIndex_t
+    CPulse_Variable *-- PulseDocNodeID_t
+    PGDInstruction_t *-- PulseRuntimeVarIndex_t
+    PGDInstruction_t *-- PulseRuntimeRegisterIndex_t
+    PGDInstruction_t *-- PulseRuntimeInvokeIndex_t
+    PGDInstruction_t *-- PulseRuntimeChunkIndex_t
+    PGDInstruction_t *-- PulseRuntimeCallInfoIndex_t
+    PGDInstruction_t *-- PulseRuntimeConstantIndex_t
+    PGDInstruction_t *-- PulseRuntimeDomainValueIndex_t
+    PGDInstruction_t *-- PulseRuntimeBlackboardReferenceIndex_t
+    PulseGraphExecutionHistoryCursorDesc_t *-- PulseCursorID_t
+    PulseGraphExecutionHistoryCursorDesc_t *-- PulseDocNodeID_t
+    PulseGraphExecutionHistoryEntry_t *-- PulseCursorID_t
+    PulseGraphExecutionHistoryEntry_t *-- PulseDocNodeID_t
+    CPulseCell_Base *-- PulseDocNodeID_t
     CPulseCell_BaseLerp *-- CPulse_ResumePoint
     CPulseCell_BaseYieldingInflow *-- CPulse_ResumePoint
     CPulseCell_BooleanSwitchState *-- CPulse_OutflowConnection
     CPulseCell_FireCursors *-- CPulse_OutflowConnection
     CPulseCell_FireCursors *-- CPulse_ResumePoint
+    CPulseCell_Inflow_BaseEntrypoint *-- PulseRuntimeChunkIndex_t
+    CPulseCell_Inflow_BaseEntrypoint *-- PulseRegisterMap_t
+    CPulseCell_Inflow_Method *-- CPulseRuntimeMethodArg
+    CPulseCell_Inflow_ObservableVariableListener *-- PulseRuntimeBlackboardReferenceIndex_t
     CPulseCell_Inflow_Wait *-- CPulse_ResumePoint
     CPulseCell_Inflow_Yield *-- CPulse_ResumePoint
+    CPulseCell_InlineNodeSkipSelector *-- PulseDocNodeID_t
     CPulseCell_InlineNodeSkipSelector *-- PulseSelectorOutflowList_t
     CPulseCell_InlineNodeSkipSelector *-- CPulse_OutflowConnection
     CPulseCell_IntervalTimer *-- CPulse_ResumePoint
@@ -68,16 +100,35 @@ classDiagram
     CPulseCell_Outflow_CycleRandom *-- CPulse_OutflowConnection
     CPulseCell_Outflow_CycleShuffled *-- CPulse_OutflowConnection
     CPulseCell_PickBestOutflowSelector *-- PulseSelectorOutflowList_t
+    CPulseCell_Step_CallExternalMethod *-- PulseRuntimeBlackboardReferenceIndex_t
+    CPulseCell_Step_CallExternalMethod *-- CPulseRuntimeMethodArg
     CPulseCell_Step_CallExternalMethod *-- CPulse_ResumePoint
+    CPulseCell_Step_PublicOutput *-- PulseRuntimeOutputIndex_t
     CPulseCell_Timeline *-- CPulse_ResumePoint
     "CPulseCell_Timeline::TimelineEvent_t" *-- CPulse_OutflowConnection
     CPulseCell_WaitForCursorsWithTagBase *-- CPulse_ResumePoint
     CPulseCell_WaitForObservable *-- CPulse_ResumePoint
+    CPulseGraphDef --> CPulse_Chunk
     CPulseGraphDef --> CPulseCell_Base
+    CPulseGraphDef *-- CPulse_Variable
+    CPulseGraphDef *-- CPulse_PublicOutput
     CPulseGraphDef --> CPulse_InvokeBinding
     CPulseGraphDef --> CPulse_CallInfo
+    CPulseGraphDef *-- CPulse_Constant
+    CPulseGraphDef *-- CPulse_DomainValue
     CPulseGraphDef *-- CPulse_BlackboardReference
+    CPulseGraphDef --> CPulse_OutputConnection
+    CPulse_BlackboardReference *-- PulseDocNodeID_t
+    CPulse_CallInfo *-- PulseDocNodeID_t
+    CPulse_CallInfo *-- PulseRegisterMap_t
+    CPulse_CallInfo *-- PulseRuntimeChunkIndex_t
+    CPulse_InvokeBinding *-- PulseRegisterMap_t
+    CPulse_InvokeBinding *-- PulseRuntimeCellIndex_t
+    CPulse_InvokeBinding *-- PulseRuntimeChunkIndex_t
+    CPulse_OutflowConnection *-- PulseRuntimeChunkIndex_t
+    CPulse_OutflowConnection *-- PulseRegisterMap_t
     OutflowWithRequirements_t *-- CPulse_OutflowConnection
+    OutflowWithRequirements_t *-- PulseDocNodeID_t
     "PulseNodeDynamicOutflows_t::DynamicOutflow_t" *-- CPulse_OutflowConnection
     PulseSelectorOutflowList_t *-- OutflowWithRequirements_t
 ```

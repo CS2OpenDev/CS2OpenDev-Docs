@@ -1,8 +1,8 @@
 {
   "schema_format_version": "2.0",
   "revision": "hl2sdk-cs2/5f891c9026230cce0fc0a3fc4b5fef1c467a1385/v1/3d1200e346019c59",
-  "version_date": "2026-07-09",
-  "version_time": "2026-07-09T20:41:37Z",
+  "version_date": "2026-07-20",
+  "version_time": "2026-07-20T22:46:14Z",
   "constants": [
     {
       "name": "Team",

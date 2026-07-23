@@ -1,0 +1,1465 @@
+---
+layout: default
+title: soundsystem_lowlevel
+parent: Schemas
+nav_exclude: true
+---
+
+# Module: soundsystem_lowlevel
+
+[📊 View UML Diagram](../diagrams/soundsystem_lowlevel.md)
+
+| Name | Kind | Bases | Fields |
+|------|------|-------|--------|
+| [CVMixAdditionalOutput](#cvmixadditionaloutput) | class |  | 1 |
+| [CVMixAudioMeter](#cvmixaudiometer) | class |  | 2 |
+| [CVMixAutoFilterProcessorDesc](#cvmixautofilterprocessordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixAutomaticControlInput](#cvmixautomaticcontrolinput) | class |  | 4 |
+| [CVMixBaseProcessorDesc](#cvmixbaseprocessordesc) | class |  | 3 |
+| [CVMixBoxverb2ProcessorDesc](#cvmixboxverb2processordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixBoxverbProcessorDesc](#cvmixboxverbprocessordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixCommand](#cvmixcommand) | class |  | 8 |
+| [CVMixControlInput](#cvmixcontrolinput) | class | CVMixInputBase | 1 |
+| [CVMixControlInputArray](#cvmixcontrolinputarray) | class | CVMixInputBase | 1 |
+| [CVMixControlMeter](#cvmixcontrolmeter) | class | CVMixInputBase | 1 |
+| [CVMixControlOutput](#cvmixcontroloutput) | class | CVMixInputBase | 1 |
+| [CVMixConvolutionProcessorDesc](#cvmixconvolutionprocessordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixCurveHeader](#cvmixcurveheader) | class |  | 2 |
+| [CVMixDelayProcessorDesc](#cvmixdelayprocessordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixDiffusorProcessorDesc](#cvmixdiffusorprocessordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixDualCompressorProcessorDesc](#cvmixdualcompressorprocessordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixDynamics3BandProcessorDesc](#cvmixdynamics3bandprocessordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixDynamicsCompressorProcessorDesc](#cvmixdynamicscompressorprocessordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixDynamicsProcessorDesc](#cvmixdynamicsprocessordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixEQ8ProcessorDesc](#cvmixeq8processordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixEffectChainProcessorDesc](#cvmixeffectchainprocessordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixEnvelopeProcessorDesc](#cvmixenvelopeprocessordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixFilterProcessorDesc](#cvmixfilterprocessordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixFlangerProcessorDesc](#cvmixflangerprocessordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixFreeverbProcessorDesc](#cvmixfreeverbprocessordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixGraphDescData](#cvmixgraphdescdata) | class |  | 3 |
+| [CVMixImpulseResponseInput](#cvmiximpulseresponseinput) | class | CVMixInputBase | 0 |
+| [CVMixInputBase](#cvmixinputbase) | class |  | 1 |
+| [CVMixModDelayProcessorDesc](#cvmixmoddelayprocessordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixNameInput](#cvmixnameinput) | class | CVMixInputBase | 1 |
+| [CVMixNameInputMeter](#cvmixnameinputmeter) | class | CVMixInputBase | 1 |
+| [CVMixOscProcessorDesc](#cvmixoscprocessordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixPannerProcessorDesc](#cvmixpannerprocessordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixPitchShiftProcessorDesc](#cvmixpitchshiftprocessordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixPlateReverbProcessorDesc](#cvmixplatereverbprocessordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixPresetDSPProcessorDesc](#cvmixpresetdspprocessordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixShaperProcessorDesc](#cvmixshaperprocessordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixSteamAudioDirectProcessorDesc](#cvmixsteamaudiodirectprocessordesc) | class | CVMixBaseProcessorDesc | 0 |
+| [CVMixSteamAudioHRTFProcessorDesc](#cvmixsteamaudiohrtfprocessordesc) | class | CVMixBaseProcessorDesc | 0 |
+| [CVMixSteamAudioHybridReverbProcessorDesc](#cvmixsteamaudiohybridreverbprocessordesc) | class | CVMixBaseProcessorDesc | 0 |
+| [CVMixSteamAudioPathingProcessorDesc](#cvmixsteamaudiopathingprocessordesc) | class | CVMixBaseProcessorDesc | 0 |
+| [CVMixStereoDelayProcessorDesc](#cvmixstereodelayprocessordesc) | class | CVMixBaseProcessorDesc | 0 |
+| [CVMixSubgraphSwitchProcessorDesc](#cvmixsubgraphswitchprocessordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixUtilityProcessorDesc](#cvmixutilityprocessordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixVocoderProcessorDesc](#cvmixvocoderprocessordesc) | class | CVMixBaseProcessorDesc | 1 |
+| [CVMixVsndInput](#cvmixvsndinput) | class | CVMixInputBase | 2 |
+| [VMixAutoFilterDesc_t](#vmixautofilterdesc_t) | class |  | 8 |
+| [VMixBoxverbDesc_t](#vmixboxverbdesc_t) | class |  | 17 |
+| [VMixConvolutionDesc_t](#vmixconvolutiondesc_t) | class |  | 8 |
+| [VMixDelayDesc_t](#vmixdelaydesc_t) | class |  | 7 |
+| [VMixDiffusorDesc_t](#vmixdiffusordesc_t) | class |  | 4 |
+| [VMixDualCompressorDesc_t](#vmixdualcompressordesc_t) | class |  | 5 |
+| [VMixDynamics3BandDesc_t](#vmixdynamics3banddesc_t) | class |  | 10 |
+| [VMixDynamicsBand_t](#vmixdynamicsband_t) | class |  | 10 |
+| [VMixDynamicsCompressorDesc_t](#vmixdynamicscompressordesc_t) | class |  | 9 |
+| [VMixDynamicsDesc_t](#vmixdynamicsdesc_t) | class |  | 12 |
+| [VMixEQ8Desc_t](#vmixeq8desc_t) | class |  | 1 |
+| [VMixEffectChainDesc_t](#vmixeffectchaindesc_t) | class |  | 1 |
+| [VMixEnvelopeDesc_t](#vmixenvelopedesc_t) | class |  | 3 |
+| [VMixFilterDesc_t](#vmixfilterdesc_t) | class |  | 6 |
+| [VMixFlangerDesc_t](#vmixflangerdesc_t) | class |  | 9 |
+| [VMixFreeverbDesc_t](#vmixfreeverbdesc_t) | class |  | 4 |
+| [VMixModDelayDesc_t](#vmixmoddelaydesc_t) | class |  | 9 |
+| [VMixOscDesc_t](#vmixoscdesc_t) | class |  | 3 |
+| [VMixPannerDesc_t](#vmixpannerdesc_t) | class |  | 2 |
+| [VMixPitchShiftDesc_t](#vmixpitchshiftdesc_t) | class |  | 4 |
+| [VMixPlateverbDesc_t](#vmixplateverbdesc_t) | class |  | 7 |
+| [VMixPresetDSPDesc_t](#vmixpresetdspdesc_t) | class |  | 1 |
+| [VMixShaperDesc_t](#vmixshaperdesc_t) | class |  | 5 |
+| [VMixSubgraphSwitchDesc_t](#vmixsubgraphswitchdesc_t) | class |  | 6 |
+| [VMixUtilityDesc_t](#vmixutilitydesc_t) | class |  | 6 |
+| [VMixVocoderDesc_t](#vmixvocoderdesc_t) | class |  | 10 |
+
+---
+
+### CVMixAdditionalOutput
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_name` | CUtlString |  |
+
+### CVMixAudioMeter
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_name` | CUtlString |  |
+| `m_displayName` | CUtlString |  |
+
+### CVMixAutoFilterProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixAutoFilterProcessorDesc
+    CVMixAutoFilterProcessorDesc *-- VMixAutoFilterDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixAutoFilterDesc_t](../schemas/soundsystem_lowlevel.md#vmixautofilterdesc_t) |  |
+
+### CVMixAutomaticControlInput
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_name` | CUtlString |  |
+| `m_nControlInputIndex` | int32 |  |
+| `m_bIsTrackSend` | bool |  |
+| `m_bIsStackVar` | bool |  |
+
+### CVMixBaseProcessorDesc
+
+**Derived by:** [CVMixAutoFilterProcessorDesc](soundsystem_lowlevel.md#cvmixautofilterprocessordesc), [CVMixBoxverb2ProcessorDesc](soundsystem_lowlevel.md#cvmixboxverb2processordesc), [CVMixBoxverbProcessorDesc](soundsystem_lowlevel.md#cvmixboxverbprocessordesc), [CVMixConvolutionProcessorDesc](soundsystem_lowlevel.md#cvmixconvolutionprocessordesc), [CVMixDelayProcessorDesc](soundsystem_lowlevel.md#cvmixdelayprocessordesc), [CVMixDiffusorProcessorDesc](soundsystem_lowlevel.md#cvmixdiffusorprocessordesc), [CVMixDualCompressorProcessorDesc](soundsystem_lowlevel.md#cvmixdualcompressorprocessordesc), [CVMixDynamics3BandProcessorDesc](soundsystem_lowlevel.md#cvmixdynamics3bandprocessordesc), [CVMixDynamicsCompressorProcessorDesc](soundsystem_lowlevel.md#cvmixdynamicscompressorprocessordesc), [CVMixDynamicsProcessorDesc](soundsystem_lowlevel.md#cvmixdynamicsprocessordesc), [CVMixEQ8ProcessorDesc](soundsystem_lowlevel.md#cvmixeq8processordesc), [CVMixEffectChainProcessorDesc](soundsystem_lowlevel.md#cvmixeffectchainprocessordesc), [CVMixEnvelopeProcessorDesc](soundsystem_lowlevel.md#cvmixenvelopeprocessordesc), [CVMixFilterProcessorDesc](soundsystem_lowlevel.md#cvmixfilterprocessordesc), [CVMixFlangerProcessorDesc](soundsystem_lowlevel.md#cvmixflangerprocessordesc), [CVMixFreeverbProcessorDesc](soundsystem_lowlevel.md#cvmixfreeverbprocessordesc), [CVMixModDelayProcessorDesc](soundsystem_lowlevel.md#cvmixmoddelayprocessordesc), [CVMixOscProcessorDesc](soundsystem_lowlevel.md#cvmixoscprocessordesc), [CVMixPannerProcessorDesc](soundsystem_lowlevel.md#cvmixpannerprocessordesc), [CVMixPitchShiftProcessorDesc](soundsystem_lowlevel.md#cvmixpitchshiftprocessordesc), [CVMixPlateReverbProcessorDesc](soundsystem_lowlevel.md#cvmixplatereverbprocessordesc), [CVMixPresetDSPProcessorDesc](soundsystem_lowlevel.md#cvmixpresetdspprocessordesc), [CVMixShaperProcessorDesc](soundsystem_lowlevel.md#cvmixshaperprocessordesc), [CVMixSteamAudioDirectProcessorDesc](soundsystem_lowlevel.md#cvmixsteamaudiodirectprocessordesc), [CVMixSteamAudioHRTFProcessorDesc](soundsystem_lowlevel.md#cvmixsteamaudiohrtfprocessordesc), [CVMixSteamAudioHybridReverbProcessorDesc](soundsystem_lowlevel.md#cvmixsteamaudiohybridreverbprocessordesc), [CVMixSteamAudioPathingProcessorDesc](soundsystem_lowlevel.md#cvmixsteamaudiopathingprocessordesc), [CVMixStereoDelayProcessorDesc](soundsystem_lowlevel.md#cvmixstereodelayprocessordesc), [CVMixSubgraphSwitchProcessorDesc](soundsystem_lowlevel.md#cvmixsubgraphswitchprocessordesc), [CVMixUtilityProcessorDesc](soundsystem_lowlevel.md#cvmixutilityprocessordesc), [CVMixVocoderProcessorDesc](soundsystem_lowlevel.md#cvmixvocoderprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixAutoFilterProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixBoxverb2ProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixBoxverbProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixConvolutionProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixDelayProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixDiffusorProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixDualCompressorProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixDynamics3BandProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixDynamicsCompressorProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixDynamicsProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixEQ8ProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixEffectChainProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixEnvelopeProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixFilterProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixFlangerProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixFreeverbProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixModDelayProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixOscProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixPannerProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixPitchShiftProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixPlateReverbProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixPresetDSPProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixShaperProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixSteamAudioDirectProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixSteamAudioHRTFProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixSteamAudioHybridReverbProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixSteamAudioPathingProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixStereoDelayProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixSubgraphSwitchProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixUtilityProcessorDesc
+    CVMixBaseProcessorDesc <|-- CVMixVocoderProcessorDesc
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_name` | CUtlString |  |
+| `m_nChannels` | int32 |  |
+| `m_flxfade` | float32 |  |
+
+### CVMixBoxverb2ProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixBoxverb2ProcessorDesc
+    CVMixBoxverb2ProcessorDesc *-- VMixBoxverbDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixBoxverbDesc_t](../schemas/soundsystem_lowlevel.md#vmixboxverbdesc_t) |  |
+
+### CVMixBoxverbProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixBoxverbProcessorDesc
+    CVMixBoxverbProcessorDesc *-- VMixBoxverbDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixBoxverbDesc_t](../schemas/soundsystem_lowlevel.md#vmixboxverbdesc_t) |  |
+
+### CVMixCommand
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixCommand *-- VMixGraphCommandID_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCommand` | [VMixGraphCommandID_t](../schemas/!GlobalTypes.md#vmixgraphcommandid_t) | `MKV3TransferName command` |
+| `m_nParameterNameHash` | uint32 | `MKV3TransferName paramName` |
+| `m_nOutputSubmix` | int32 | `MKV3TransferName outputSubmix` |
+| `m_nInputSubmix0` | int32 | `MKV3TransferName inputSubmix0` |
+| `m_nInputSubmix1` | int32 | `MKV3TransferName inputSubmix1` |
+| `m_nProcessor` | int32 | `MKV3TransferName processor` |
+| `m_nInputValue0` | int32 | `MKV3TransferName inputValue0` |
+| `m_nInputValue1` | int32 | `MKV3TransferName inputValue1` |
+
+### CVMixControlInput
+
+**Inherits from:** [CVMixInputBase](soundsystem_lowlevel.md#cvmixinputbase)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixInputBase <|-- CVMixControlInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flDefaultValue` | float32 |  |
+
+### CVMixControlInputArray
+
+**Inherits from:** [CVMixInputBase](soundsystem_lowlevel.md#cvmixinputbase)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixInputBase <|-- CVMixControlInputArray
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nArrayIndex` | int32 |  |
+
+### CVMixControlMeter
+
+**Inherits from:** [CVMixInputBase](soundsystem_lowlevel.md#cvmixinputbase)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixInputBase <|-- CVMixControlMeter
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nValueIndex` | int32 |  |
+
+### CVMixControlOutput
+
+**Inherits from:** [CVMixInputBase](soundsystem_lowlevel.md#cvmixinputbase)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixInputBase <|-- CVMixControlOutput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flDefaultValue` | float32 |  |
+
+### CVMixConvolutionProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixConvolutionProcessorDesc
+    CVMixConvolutionProcessorDesc *-- VMixConvolutionDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixConvolutionDesc_t](../schemas/soundsystem_lowlevel.md#vmixconvolutiondesc_t) |  |
+
+### CVMixCurveHeader
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointCount` | uint32 |  |
+| `m_nControlPointStart` | uint32 |  |
+
+### CVMixDelayProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixDelayProcessorDesc
+    CVMixDelayProcessorDesc *-- VMixDelayDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixDelayDesc_t](../schemas/soundsystem_lowlevel.md#vmixdelaydesc_t) |  |
+
+### CVMixDiffusorProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixDiffusorProcessorDesc
+    CVMixDiffusorProcessorDesc *-- VMixDiffusorDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixDiffusorDesc_t](../schemas/soundsystem_lowlevel.md#vmixdiffusordesc_t) |  |
+
+### CVMixDualCompressorProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixDualCompressorProcessorDesc
+    CVMixDualCompressorProcessorDesc *-- VMixDualCompressorDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixDualCompressorDesc_t](../schemas/soundsystem_lowlevel.md#vmixdualcompressordesc_t) |  |
+
+### CVMixDynamics3BandProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixDynamics3BandProcessorDesc
+    CVMixDynamics3BandProcessorDesc *-- VMixDynamics3BandDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixDynamics3BandDesc_t](../schemas/soundsystem_lowlevel.md#vmixdynamics3banddesc_t) |  |
+
+### CVMixDynamicsCompressorProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixDynamicsCompressorProcessorDesc
+    CVMixDynamicsCompressorProcessorDesc *-- VMixDynamicsCompressorDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixDynamicsCompressorDesc_t](../schemas/soundsystem_lowlevel.md#vmixdynamicscompressordesc_t) |  |
+
+### CVMixDynamicsProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixDynamicsProcessorDesc
+    CVMixDynamicsProcessorDesc *-- VMixDynamicsDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixDynamicsDesc_t](../schemas/soundsystem_lowlevel.md#vmixdynamicsdesc_t) |  |
+
+### CVMixEQ8ProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixEQ8ProcessorDesc
+    CVMixEQ8ProcessorDesc *-- VMixEQ8Desc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixEQ8Desc_t](../schemas/soundsystem_lowlevel.md#vmixeq8desc_t) |  |
+
+### CVMixEffectChainProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixEffectChainProcessorDesc
+    CVMixEffectChainProcessorDesc *-- VMixEffectChainDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixEffectChainDesc_t](../schemas/soundsystem_lowlevel.md#vmixeffectchaindesc_t) |  |
+
+### CVMixEnvelopeProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixEnvelopeProcessorDesc
+    CVMixEnvelopeProcessorDesc *-- VMixEnvelopeDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixEnvelopeDesc_t](../schemas/soundsystem_lowlevel.md#vmixenvelopedesc_t) |  |
+
+### CVMixFilterProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixFilterProcessorDesc
+    CVMixFilterProcessorDesc *-- VMixFilterDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixFilterDesc_t](../schemas/soundsystem_lowlevel.md#vmixfilterdesc_t) |  |
+
+### CVMixFlangerProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixFlangerProcessorDesc
+    CVMixFlangerProcessorDesc *-- VMixFlangerDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixFlangerDesc_t](../schemas/soundsystem_lowlevel.md#vmixflangerdesc_t) |  |
+
+### CVMixFreeverbProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixFreeverbProcessorDesc
+    CVMixFreeverbProcessorDesc *-- VMixFreeverbDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixFreeverbDesc_t](../schemas/soundsystem_lowlevel.md#vmixfreeverbdesc_t) |  |
+
+### CVMixGraphDescData
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_name` | CUtlString | `MKV3TransferName Name` |
+| `m_nGraphOutputChannels` | int32 |  |
+| `m_bIsMainGraph` | bool |  |
+
+### CVMixImpulseResponseInput
+
+**Inherits from:** [CVMixInputBase](soundsystem_lowlevel.md#cvmixinputbase)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixInputBase <|-- CVMixImpulseResponseInput
+```
+
+### CVMixInputBase
+
+**Derived by:** [CVMixControlInput](soundsystem_lowlevel.md#cvmixcontrolinput), [CVMixControlInputArray](soundsystem_lowlevel.md#cvmixcontrolinputarray), [CVMixControlMeter](soundsystem_lowlevel.md#cvmixcontrolmeter), [CVMixControlOutput](soundsystem_lowlevel.md#cvmixcontroloutput), [CVMixImpulseResponseInput](soundsystem_lowlevel.md#cvmiximpulseresponseinput), [CVMixNameInput](soundsystem_lowlevel.md#cvmixnameinput), [CVMixNameInputMeter](soundsystem_lowlevel.md#cvmixnameinputmeter), [CVMixVsndInput](soundsystem_lowlevel.md#cvmixvsndinput)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixInputBase <|-- CVMixControlInput
+    CVMixInputBase <|-- CVMixControlInputArray
+    CVMixInputBase <|-- CVMixControlMeter
+    CVMixInputBase <|-- CVMixControlOutput
+    CVMixInputBase <|-- CVMixImpulseResponseInput
+    CVMixInputBase <|-- CVMixNameInput
+    CVMixInputBase <|-- CVMixNameInputMeter
+    CVMixInputBase <|-- CVMixVsndInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_name` | CUtlString |  |
+
+### CVMixModDelayProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixModDelayProcessorDesc
+    CVMixModDelayProcessorDesc *-- VMixModDelayDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixModDelayDesc_t](../schemas/soundsystem_lowlevel.md#vmixmoddelaydesc_t) |  |
+
+### CVMixNameInput
+
+**Inherits from:** [CVMixInputBase](soundsystem_lowlevel.md#cvmixinputbase)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixInputBase <|-- CVMixNameInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_defaultValue` | CUtlString |  |
+
+### CVMixNameInputMeter
+
+**Inherits from:** [CVMixInputBase](soundsystem_lowlevel.md#cvmixinputbase)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixInputBase <|-- CVMixNameInputMeter
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nValueIndex` | int32 |  |
+
+### CVMixOscProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixOscProcessorDesc
+    CVMixOscProcessorDesc *-- VMixOscDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixOscDesc_t](../schemas/soundsystem_lowlevel.md#vmixoscdesc_t) |  |
+
+### CVMixPannerProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixPannerProcessorDesc
+    CVMixPannerProcessorDesc *-- VMixPannerDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixPannerDesc_t](../schemas/soundsystem_lowlevel.md#vmixpannerdesc_t) |  |
+
+### CVMixPitchShiftProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixPitchShiftProcessorDesc
+    CVMixPitchShiftProcessorDesc *-- VMixPitchShiftDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixPitchShiftDesc_t](../schemas/soundsystem_lowlevel.md#vmixpitchshiftdesc_t) |  |
+
+### CVMixPlateReverbProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixPlateReverbProcessorDesc
+    CVMixPlateReverbProcessorDesc *-- VMixPlateverbDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixPlateverbDesc_t](../schemas/soundsystem_lowlevel.md#vmixplateverbdesc_t) |  |
+
+### CVMixPresetDSPProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixPresetDSPProcessorDesc
+    CVMixPresetDSPProcessorDesc *-- VMixPresetDSPDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixPresetDSPDesc_t](../schemas/soundsystem_lowlevel.md#vmixpresetdspdesc_t) |  |
+
+### CVMixShaperProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixShaperProcessorDesc
+    CVMixShaperProcessorDesc *-- VMixShaperDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixShaperDesc_t](../schemas/soundsystem_lowlevel.md#vmixshaperdesc_t) |  |
+
+### CVMixSteamAudioDirectProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixSteamAudioDirectProcessorDesc
+```
+
+### CVMixSteamAudioHRTFProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixSteamAudioHRTFProcessorDesc
+```
+
+### CVMixSteamAudioHybridReverbProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixSteamAudioHybridReverbProcessorDesc
+```
+
+### CVMixSteamAudioPathingProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixSteamAudioPathingProcessorDesc
+```
+
+### CVMixStereoDelayProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixStereoDelayProcessorDesc
+```
+
+### CVMixSubgraphSwitchProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixSubgraphSwitchProcessorDesc
+    CVMixSubgraphSwitchProcessorDesc *-- VMixSubgraphSwitchDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixSubgraphSwitchDesc_t](../schemas/soundsystem_lowlevel.md#vmixsubgraphswitchdesc_t) |  |
+
+### CVMixUtilityProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixUtilityProcessorDesc
+    CVMixUtilityProcessorDesc *-- VMixUtilityDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixUtilityDesc_t](../schemas/soundsystem_lowlevel.md#vmixutilitydesc_t) |  |
+
+### CVMixVocoderProcessorDesc
+
+**Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixBaseProcessorDesc <|-- CVMixVocoderProcessorDesc
+    CVMixVocoderProcessorDesc *-- VMixVocoderDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_desc` | [VMixVocoderDesc_t](../schemas/soundsystem_lowlevel.md#vmixvocoderdesc_t) |  |
+
+### CVMixVsndInput
+
+**Inherits from:** [CVMixInputBase](soundsystem_lowlevel.md#cvmixinputbase)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixInputBase <|-- CVMixVsndInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_defaultValue` | CUtlString |  |
+| `m_nProcessor` | int32 |  |
+
+### VMixAutoFilterDesc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    VMixAutoFilterDesc_t *-- VMixFilterDesc_t
+    VMixAutoFilterDesc_t *-- VMixLFOShape_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flEnvelopeAmount` | float32 |  |
+| `m_flAttackTimeMS` | float32 |  |
+| `m_flReleaseTimeMS` | float32 |  |
+| `m_filter` | [VMixFilterDesc_t](../schemas/soundsystem_lowlevel.md#vmixfilterdesc_t) |  |
+| `m_flLFOAmount` | float32 |  |
+| `m_flLFORate` | float32 |  |
+| `m_flPhase` | float32 |  |
+| `m_nLFOShape` | [VMixLFOShape_t](../schemas/!GlobalTypes.md#vmixlfoshape_t) |  |
+
+### VMixBoxverbDesc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    VMixBoxverbDesc_t *-- VMixFilterDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flSizeMax` | float32 |  |
+| `m_flSizeMin` | float32 |  |
+| `m_flComplexity` | float32 |  |
+| `m_flDiffusion` | float32 |  |
+| `m_flModDepth` | float32 |  |
+| `m_flModRate` | float32 |  |
+| `m_bParallel` | bool |  |
+| `m_filterType` | [VMixFilterDesc_t](../schemas/soundsystem_lowlevel.md#vmixfilterdesc_t) |  |
+| `m_flWidth` | float32 |  |
+| `m_flHeight` | float32 |  |
+| `m_flDepth` | float32 |  |
+| `m_flFeedbackScale` | float32 |  |
+| `m_flFeedbackWidth` | float32 |  |
+| `m_flFeedbackHeight` | float32 |  |
+| `m_flFeedbackDepth` | float32 |  |
+| `m_flOutputGain` | float32 |  |
+| `m_flTaps` | float32 |  |
+
+### VMixConvolutionDesc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_fldbGain` | float32 | `MPropertyAttributeRange -36 3` `MPropertyFriendlyName gain of wet signal (dB)` |
+| `m_flPreDelayMS` | float32 | `MPropertyFriendlyName Pre-delay (ms)` |
+| `m_flWetMix` | float32 | `MPropertyFriendlyName Dry/Wet` |
+| `m_fldbLow` | float32 | `MPropertyAttributeRange -24 24` `MPropertyFriendlyName Low EQ gain (dB)` |
+| `m_fldbMid` | float32 | `MPropertyAttributeRange -24 24` `MPropertyFriendlyName Mid EQ gain (dB)` |
+| `m_fldbHigh` | float32 | `MPropertyAttributeRange -24 24` `MPropertyFriendlyName High EQ gain (dB)` |
+| `m_flLowCutoffFreq` | float32 | `MPropertyFriendlyName Low Cutoff Freq (Hz)` |
+| `m_flHighCutoffFreq` | float32 | `MPropertyFriendlyName High Cutoff Freq (Hz)` |
+
+### VMixDelayDesc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    VMixDelayDesc_t *-- VMixFilterDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_feedbackFilter` | [VMixFilterDesc_t](../schemas/soundsystem_lowlevel.md#vmixfilterdesc_t) |  |
+| `m_bEnableFilter` | bool |  |
+| `m_flDelay` | float32 |  |
+| `m_flDirectGain` | float32 |  |
+| `m_flDelayGain` | float32 |  |
+| `m_flFeedbackGain` | float32 |  |
+| `m_flWidth` | float32 |  |
+
+### VMixDiffusorDesc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flSize` | float32 |  |
+| `m_flComplexity` | float32 |  |
+| `m_flFeedback` | float32 |  |
+| `m_flOutputGain` | float32 |  |
+
+### VMixDualCompressorDesc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    VMixDualCompressorDesc_t *-- VMixDynamicsBand_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flRMSTimeMS` | float32 |  |
+| `m_fldbKneeWidth` | float32 |  |
+| `m_flWetMix` | float32 |  |
+| `m_bPeakMode` | bool |  |
+| `m_bandDesc` | [VMixDynamicsBand_t](../schemas/soundsystem_lowlevel.md#vmixdynamicsband_t) |  |
+
+### VMixDynamics3BandDesc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    VMixDynamics3BandDesc_t *-- VMixDynamicsBand_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_fldbGainOutput` | float32 |  |
+| `m_flRMSTimeMS` | float32 |  |
+| `m_fldbKneeWidth` | float32 |  |
+| `m_flDepth` | float32 |  |
+| `m_flWetMix` | float32 |  |
+| `m_flTimeScale` | float32 |  |
+| `m_flLowCutoffFreq` | float32 |  |
+| `m_flHighCutoffFreq` | float32 |  |
+| `m_bPeakMode` | bool |  |
+| `m_bandDesc` | [VMixDynamicsBand_t](../schemas/soundsystem_lowlevel.md#vmixdynamicsband_t)[3] |  |
+
+### VMixDynamicsBand_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_fldbGainInput` | float32 | `MPropertyFriendlyName Input Gain (dB)` |
+| `m_fldbGainOutput` | float32 | `MPropertyFriendlyName Output Gain (dB)` |
+| `m_fldbThresholdBelow` | float32 | `MPropertyFriendlyName Below Threshold(dB)` |
+| `m_fldbThresholdAbove` | float32 | `MPropertyFriendlyName Above Threshold(dB)` |
+| `m_flRatioBelow` | float32 | `MPropertyFriendlyName Upward Ratio` |
+| `m_flRatioAbove` | float32 | `MPropertyFriendlyName Downward Ratio` |
+| `m_flAttackTimeMS` | float32 | `MPropertyFriendlyName Attack time (ms)` |
+| `m_flReleaseTimeMS` | float32 | `MPropertyFriendlyName Release time (ms)` |
+| `m_bEnable` | bool | `MPropertyFriendlyName Enabled` |
+| `m_bSolo` | bool | `MPropertyFriendlyName Solo` |
+
+### VMixDynamicsCompressorDesc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_fldbOutputGain` | float32 | `MPropertyFriendlyName Output Gain (dB)` |
+| `m_fldbCompressionThreshold` | float32 | `MPropertyFriendlyName Threshold (dB)` |
+| `m_fldbKneeWidth` | float32 | `MPropertyFriendlyName Knee Width (dB)` |
+| `m_flCompressionRatio` | float32 | `MPropertyFriendlyName Compression Ratio` |
+| `m_flAttackTimeMS` | float32 | `MPropertyFriendlyName Attack time (ms)` |
+| `m_flReleaseTimeMS` | float32 | `MPropertyFriendlyName Release time (ms)` |
+| `m_flRMSTimeMS` | float32 | `MPropertyFriendlyName Threshold detection time (ms)` |
+| `m_flWetMix` | float32 | `MPropertyFriendlyName Dry/Wet` |
+| `m_bPeakMode` | bool | `MPropertyFriendlyName Peak mode` |
+
+### VMixDynamicsDesc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_fldbGain` | float32 |  |
+| `m_fldbNoiseGateThreshold` | float32 |  |
+| `m_fldbCompressionThreshold` | float32 |  |
+| `m_fldbLimiterThreshold` | float32 |  |
+| `m_fldbKneeWidth` | float32 |  |
+| `m_flRatio` | float32 |  |
+| `m_flLimiterRatio` | float32 |  |
+| `m_flAttackTimeMS` | float32 |  |
+| `m_flReleaseTimeMS` | float32 |  |
+| `m_flRMSTimeMS` | float32 |  |
+| `m_flWetMix` | float32 |  |
+| `m_bPeakMode` | bool |  |
+
+### VMixEQ8Desc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    VMixEQ8Desc_t *-- VMixFilterDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_stages` | [VMixFilterDesc_t](../schemas/soundsystem_lowlevel.md#vmixfilterdesc_t)[8] |  |
+
+### VMixEffectChainDesc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_effectName` | CUtlString |  |
+
+### VMixEnvelopeDesc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flAttackTimeMS` | float32 |  |
+| `m_flHoldTimeMS` | float32 |  |
+| `m_flReleaseTimeMS` | float32 |  |
+
+### VMixFilterDesc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    VMixFilterDesc_t *-- VMixFilterType_t
+    VMixFilterDesc_t *-- VMixFilterSlope_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFilterType` | [VMixFilterType_t](../schemas/!GlobalTypes.md#vmixfiltertype_t) |  |
+| `m_nFilterSlope` | [VMixFilterSlope_t](../schemas/!GlobalTypes.md#vmixfilterslope_t) |  |
+| `m_bEnabled` | bool |  |
+| `m_fldbGain` | float32 |  |
+| `m_flCutoffFreq` | float32 |  |
+| `m_flQ` | float32 |  |
+
+### VMixFlangerDesc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bPhaseInvert` | bool |  |
+| `m_flGlideTime` | float32 |  |
+| `m_flDelay` | float32 |  |
+| `m_flOutputGain` | float32 |  |
+| `m_flFeedbackGain` | float32 |  |
+| `m_flFeedforwardGain` | float32 |  |
+| `m_flModRate` | float32 |  |
+| `m_flModDepth` | float32 |  |
+| `m_bApplyAntialiasing` | bool |  |
+
+### VMixFreeverbDesc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flRoomSize` | float32 |  |
+| `m_flDamp` | float32 |  |
+| `m_flWidth` | float32 |  |
+| `m_flLateReflections` | float32 |  |
+
+### VMixModDelayDesc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    VMixModDelayDesc_t *-- VMixFilterDesc_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_feedbackFilter` | [VMixFilterDesc_t](../schemas/soundsystem_lowlevel.md#vmixfilterdesc_t) |  |
+| `m_bPhaseInvert` | bool |  |
+| `m_flGlideTime` | float32 |  |
+| `m_flDelay` | float32 |  |
+| `m_flOutputGain` | float32 |  |
+| `m_flFeedbackGain` | float32 |  |
+| `m_flModRate` | float32 |  |
+| `m_flModDepth` | float32 |  |
+| `m_bApplyAntialiasing` | bool |  |
+
+### VMixOscDesc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    VMixOscDesc_t *-- VMixLFOShape_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `oscType` | [VMixLFOShape_t](../schemas/!GlobalTypes.md#vmixlfoshape_t) | `MPropertyFriendlyName Type` |
+| `m_freq` | float32 | `MPropertyAttributeRange 0.1 16000` `MPropertyFriendlyName Frequency (Hz)` |
+| `m_flPhase` | float32 | `MPropertyAttributeRange 0 360` `MPropertyFriendlyName Phase (degrees)` |
+
+### VMixPannerDesc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    VMixPannerDesc_t *-- VMixPannerType_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_type` | [VMixPannerType_t](../schemas/!GlobalTypes.md#vmixpannertype_t) |  |
+| `m_flStrength` | float32 |  |
+
+### VMixPitchShiftDesc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nGrainSampleCount` | int32 |  |
+| `m_flPitchShift` | float32 |  |
+| `m_nQuality` | int32 |  |
+| `m_nProcType` | int32 |  |
+
+### VMixPlateverbDesc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flPrefilter` | float32 |  |
+| `m_flInputDiffusion1` | float32 |  |
+| `m_flInputDiffusion2` | float32 |  |
+| `m_flDecay` | float32 |  |
+| `m_flDamp` | float32 |  |
+| `m_flFeedbackDiffusion1` | float32 |  |
+| `m_flFeedbackDiffusion2` | float32 |  |
+
+### VMixPresetDSPDesc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_effectName` | CUtlString |  |
+
+### VMixShaperDesc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nShape` | int32 | `MPropertyAttributeRange 0 14` `MPropertyFriendlyName Shape` |
+| `m_fldbDrive` | float32 | `MPropertyAttributeRange 0 36` `MPropertyFriendlyName Drive (dB)` |
+| `m_fldbOutputGain` | float32 | `MPropertyAttributeRange -36 0` `MPropertyFriendlyName Output Gain (dB)` |
+| `m_flWetMix` | float32 | `MPropertyFriendlyName Dry/Wet` |
+| `m_nOversampleFactor` | int32 | `MPropertyFriendlyName Oversampling` |
+
+### VMixSubgraphSwitchDesc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    VMixSubgraphSwitchDesc_t *-- VMixSubgraphSwitchInterpolationType_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_name` | CUtlString |  |
+| `m_effectName` | CUtlString |  |
+| `m_subgraphs` | CUtlVector< CUtlString > |  |
+| `m_interpolationMode` | [VMixSubgraphSwitchInterpolationType_t](../schemas/!GlobalTypes.md#vmixsubgraphswitchinterpolationtype_t) |  |
+| `m_bOnlyTailsOnFadeOut` | bool |  |
+| `m_flInterpolationTime` | float32 |  |
+
+### VMixUtilityDesc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    VMixUtilityDesc_t *-- VMixChannelOperation_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nOp` | [VMixChannelOperation_t](../schemas/!GlobalTypes.md#vmixchanneloperation_t) | `MPropertyFriendlyName Channels` |
+| `m_flInputPan` | float32 | `MPropertyAttributeRange -1 1` `MPropertyFriendlyName Input Pan` |
+| `m_flOutputBalance` | float32 | `MPropertyAttributeRange -1 1` `MPropertyFriendlyName Output Balance` |
+| `m_fldbOutputGain` | float32 | `MPropertyAttributeRange -36 0` `MPropertyFriendlyName Output Gain (dB)` |
+| `m_bBassMono` | bool |  |
+| `m_flBassFreq` | float32 |  |
+
+### VMixVocoderDesc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nBandCount` | int32 |  |
+| `m_flBandwidth` | float32 |  |
+| `m_fldBModGain` | float32 |  |
+| `m_flFreqRangeStart` | float32 |  |
+| `m_flFreqRangeEnd` | float32 |  |
+| `m_fldBUnvoicedGain` | float32 |  |
+| `m_flAttackTimeMS` | float32 |  |
+| `m_flReleaseTimeMS` | float32 |  |
+| `m_nDebugBand` | int32 |  |
+| `m_bPeakMode` | bool |  |

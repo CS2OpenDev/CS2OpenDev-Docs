@@ -11,12 +11,35 @@ nav_exclude: true
 
 | Name | Kind | Bases | Fields |
 |------|------|-------|--------|
+| [CEmptyEntityInstance](#cemptyentityinstance) | class |  | 0 |
+| [CEntityAttributeTable](#centityattributetable) | class |  | 2 |
 | [CEntityComponent](#centitycomponent) | class |  | 0 |
+| [CEntityComponentHelper](#centitycomponenthelper) | class |  | 4 |
+| [CEntityIOOutput](#centityiooutput) | class |  | 0 |
 | [CEntityIdentity](#centityidentity) | class |  | 12 |
 | [CEntityInstance](#centityinstance) | class |  | 3 |
+| [CEntityKeyValues](#centitykeyvalues) | class |  | 0 |
+| [CNetworkVarChainer](#cnetworkvarchainer) | class |  | 1 |
 | [CScriptComponent](#cscriptcomponent) | class | CEntityComponent | 1 |
+| [CVariantDefaultAllocator](#cvariantdefaultallocator) | class |  | 0 |
+| [EntComponentInfo_t](#entcomponentinfo_t) | class |  | 7 |
+| [EntInput_t](#entinput_t) | class |  | 0 |
+| [EntityIOQueuePrioritizedEvent_t](#entityioqueueprioritizedevent_t) | class |  | 8 |
+| [GameTick_t](#gametick_t) | class |  | 1 |
+| [GameTime_t](#gametime_t) | class |  | 1 |
 
 ---
+
+### CEmptyEntityInstance
+
+### CEntityAttributeTable
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Attributes` | CUtlOrderedMap< CUtlStringTokenNoRegistration, Attribute_t > |  |
+| `m_Names` | CUtlOrderedMap< CUtlStringTokenNoRegistration, CUtlString > |  |
 
 ### CEntityComponent
 
@@ -26,19 +49,47 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
+    CEntityComponent <|-- CScriptComponent
     CEntityComponent <|-- CBodyComponent
     CEntityComponent <|-- CHitboxComponent
     CEntityComponent <|-- CLightComponent
     CEntityComponent <|-- CPathQueryComponent
     CEntityComponent <|-- CPropDataComponent
     CEntityComponent <|-- CRenderComponent
-    CEntityComponent <|-- CScriptComponent
     CEntityComponent <|-- CTouchExpansionComponent
 ```
+
+### CEntityComponentHelper
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CEntityComponentHelper --> EntComponentInfo_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flags` | uint32 |  |
+| `m_pInfo` | [EntComponentInfo_t](../schemas/entity2.md#entcomponentinfo_t)* |  |
+| `m_nPriority` | int32 |  |
+| `m_pNext` | [CEntityComponentHelper](../schemas/entity2.md#centitycomponenthelper)* |  |
+
+### CEntityIOOutput
 
 ### CEntityIdentity
 
 **Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CEntityIdentity *-- ChangeAccessorFieldPathIndex_t
+    CEntityIdentity --> CEntityAttributeTable
+```
 
 **Fields:**
 
@@ -50,8 +101,8 @@ classDiagram
 | `m_flags` | uint32 | `MNotSaved` |
 | `m_worldGroupId` | WorldGroupId_t | `MNotSaved` |
 | `m_fDataObjectTypes` | uint32 | `MNotSaved` |
-| `m_PathIndex` | ChangeAccessorFieldPathIndex_t | `MNotSaved` |
-| `m_pAttributes` | CEntityAttributeTable* |  |
+| `m_PathIndex` | [ChangeAccessorFieldPathIndex_t](../schemas/networksystem.md#changeaccessorfieldpathindex_t) | `MNotSaved` |
+| `m_pAttributes` | [CEntityAttributeTable](../schemas/entity2.md#centityattributetable)* |  |
 | `m_pPrev` | [CEntityIdentity](../schemas/entity2.md#centityidentity)* | `MNotSaved` |
 | `m_pNext` | [CEntityIdentity](../schemas/entity2.md#centityidentity)* | `MNotSaved` |
 | `m_pPrevByClass` | [CEntityIdentity](../schemas/entity2.md#centityidentity)* | `MNotSaved` |
@@ -79,6 +130,23 @@ classDiagram
 | `m_pEntity` | [CEntityIdentity](../schemas/entity2.md#centityidentity)* |  |
 | `m_CScriptComponent` | [CScriptComponent](../schemas/entity2.md#cscriptcomponent)* |  |
 
+### CEntityKeyValues
+
+### CNetworkVarChainer
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CNetworkVarChainer *-- ChangeAccessorFieldPathIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_PathIndex` | [ChangeAccessorFieldPathIndex_t](../schemas/networksystem.md#changeaccessorfieldpathindex_t) |  |
+
 ### CScriptComponent
 
 **Inherits from:** [CEntityComponent](entity2.md#centitycomponent)
@@ -97,3 +165,74 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_scriptClassName` | CUtlSymbolLarge | `MNotSaved` |
+
+### CVariantDefaultAllocator
+
+### EntComponentInfo_t
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    EntComponentInfo_t --> CEntityComponentHelper
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_pName` | char* |  |
+| `m_pCPPClassname` | char* |  |
+| `m_pNetworkDataReferencedDescription` | char* |  |
+| `m_pNetworkDataReferencedPtrPropDescription` | char* |  |
+| `m_nRuntimeIndex` | int32 |  |
+| `m_nFlags` | uint32 |  |
+| `m_pBaseClassComponentHelper` | [CEntityComponentHelper](../schemas/entity2.md#centitycomponenthelper)* |  |
+
+### EntInput_t
+
+### EntityIOQueuePrioritizedEvent_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    EntityIOQueuePrioritizedEvent_t *-- GameTime_t
+    EntityIOQueuePrioritizedEvent_t *-- EntityIOTargetType_t
+    EntityIOQueuePrioritizedEvent_t *-- CVariantDefaultAllocator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flFireTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_targetType` | [EntityIOTargetType_t](../schemas/!GlobalTypes.md#entityiotargettype_t) |  |
+| `m_pTarget` | CUtlSymbolLarge |  |
+| `m_pTargetInput` | CUtlSymbolLarge |  |
+| `m_hActivator` | CEntityHandle |  |
+| `m_hCaller` | CEntityHandle |  |
+| `m_hEntTarget` | CEntityHandle |  |
+| `m_variantValue` | CVariantBase< [CVariantDefaultAllocator](../schemas/entity2.md#cvariantdefaultallocator) > | `MKV3TransferSaveOpsForField` |
+
+### GameTick_t
+
+**Metadata:** `MIsBoxedIntegerType`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Value` | int32 |  |
+
+### GameTime_t
+
+**Metadata:** `MIsBoxedFloatType`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Value` | float32 |  |

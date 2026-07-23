@@ -7,12 +7,51 @@ nav_exclude: true
 
 # UML: server
 
-Class relationships (inheritance and composition) for the `server` module (showing 300 of 606 relationships).
+Class relationships (inheritance and composition) for the `server` module (showing 300 of 644 relationships).
 
 **Arrow legend:** `<|--` inheritance &nbsp; `*--` composition &nbsp; `-->` association/pointer
 
 ```mermaid
 classDiagram
+    DebugSnapshotBaseStructuredData_t <|-- AI_BaseNPC_DebugSnapshotData_t
+    DebugSnapshotBaseStructuredData_t <|-- AI_DefaultNPC_DebugSnapshotData_t
+    DebugSnapshotBaseStructuredData_t <|-- AI_GroundRootMotionMotor_DebugSnapshotData_t
+    CAI_Expresser <|-- CAI_ExpresserWithFollowup
+    CAnimGraphControllerBase <|-- CBaseAnimGraphDestructibleParts_GraphController
+    CNmGraphVariationUserData <|-- CBaseAnimGraphVariationUserData
+    CBtNode <|-- CBtNodeComposite
+    CBtNode <|-- CBtNodeDecorator
+    CAnimGraphControllerBase <|-- CCS2ChickenGraphController
+    CAnimGraphControllerBase <|-- CChoreo_GraphController
+    CAnimGraphControllerBase <|-- CEmptyGraphController
+    IChoreoServices <|-- CGameChoreoServices
+    INavPathCostAreaFilter <|-- CMarkupSearch_PathCostAreaFilter
+    CAI_ExpresserWithFollowup <|-- CMultiplayer_Expresser
+    CNavVolumeCalculatedVector <|-- CNavVolumeBreadthFirstSearch
+    CNavVolume <|-- CNavVolumeCalculatedVector
+    CNavVolume <|-- CNavVolumeMarkupVolume
+    "CNmPassthroughNode::CDefinition" <|-- "CNmAimCSNode::CDefinition"
+    CNmPoseTask <|-- CNmAimCSTask
+    CNmEventConsumer <|-- CNmEventConsumerAttributes
+    CNmEventConsumer <|-- CNmEventConsumerLegacy
+    CNmEventConsumer <|-- CNmEventConsumerParticle
+    CNmEventConsumer <|-- CNmEventConsumerPulse
+    CNmEventConsumer <|-- CNmEventConsumerSound
+    "CNmPassthroughNode::CDefinition" <|-- "CNmSnapWeaponNode::CDefinition"
+    CNmPoseTask <|-- CNmSnapWeaponTask
+    CSimpleSimTimer <|-- CRandSimTimer
+    CStopwatchBase <|-- CRandStopwatch
+    CSAdditionalPerRoundStats_t <|-- CSAdditionalMatchStats_t
+    CSimpleSimTimer <|-- CSimTimer
+    CStopwatchBase <|-- CSimpleStopwatch
+    ISkeletonAnimationController <|-- CSkeletonAnimationController
+    CStopwatchBase <|-- CStopwatch
+    CSimpleSimTimer <|-- CStopwatchBase
+    CTestPulseIOComponent <|-- CTestPulseIOComponent_Derived
+    DebugSnapshotBaseStructuredData_t <|-- DebugDrawBoneTransforms_t
+    AmmoTypeInfo_t <|-- GameAmmoTypeInfo_t
+    Relationship_t <|-- RelationshipOverride_t
+    dynpitchvol_base_t <|-- dynpitchvol_t
     CBaseModelEntity <|-- CBaseAnimGraph
     CBaseAnimGraph <|-- CBaseAnimGraphAlias_baseanimating
     CSkeletonAnimationController <|-- CBaseAnimGraphController
@@ -274,43 +313,4 @@ classDiagram
     CBaseModelEntity <|-- CFuncMover
     CLogicalEntity <|-- CFuncMoverRouter
     CBaseModelEntity <|-- CFuncNavBlocker
-    CBaseModelEntity <|-- CFuncNavObstruction
-    CBasePlatTrain <|-- CFuncPlat
-    CFuncPlat <|-- CFuncPlatRot
-    CBaseEntity <|-- CFuncPropRespawnZone
-    CBaseModelEntity <|-- CFuncRotating
-    CBaseModelEntity <|-- CFuncRotator
-    CBaseModelEntity <|-- CFuncShatterglass
-    CFuncTrackTrain <|-- CFuncTankTrain
-    CBaseEntity <|-- CFuncTimescale
-    CFuncTrackChange <|-- CFuncTrackAuto
-    CFuncPlatRot <|-- CFuncTrackChange
-    CBaseModelEntity <|-- CFuncTrackTrain
-    CBasePlatTrain <|-- CFuncTrain
-    CBaseModelEntity <|-- CFuncTrainControls
-    CBaseModelEntity <|-- CFuncVPhysicsClip
-    CBaseModelEntity <|-- CFuncVehicleClip
-    CBaseModelEntity <|-- CFuncWall
-    CFuncWall <|-- CFuncWallToggle
-    CRulePointEntity <|-- CGameEnd
-    CBaseEntity <|-- CGameGibManager
-    CRulePointEntity <|-- CGameMoney
-    CRulePointEntity <|-- CGamePlayerEquip
-    CRuleBrushEntity <|-- CGamePlayerZone
-    CBaseEntity <|-- CGameRulesProxy
-    CRulePointEntity <|-- CGameText
-    CPhysConstraint <|-- CGenericConstraint
-    CBaseEntity <|-- CGradientFog
-    CBaseToggle <|-- CGunTarget
-    CBaseCSGrenade <|-- CHEGrenade
-    CBaseCSGrenadeProjectile <|-- CHEGrenadeProjectile
-    CBaseEntity <|-- CHandleDummy
-    CBaseEntity <|-- CHandleTest
-    CHostageExpresserShim <|-- CHostage
-    CHostage <|-- CHostageAlias_info_hostage_spawn
-    CBaseAnimGraph <|-- CHostageCarriableProp
-    CBaseCombatCharacter <|-- CHostageExpresserShim
-    CMolotovGrenade <|-- CIncendiaryGrenade
-    CBaseModelEntity <|-- CInferno
-    CPointEntity <|-- CInfoChoreoAnchor
 ```

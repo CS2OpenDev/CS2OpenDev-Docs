@@ -136,6 +136,7 @@ All console variables extracted from CS2.
 | `audio_input_test_signal` | `false` | `developmentonly` | For testing the audio input pathway with a sine tone instead of SDL3. |
 | `audio_input_use_sdl_roles` | `false` | `developmentonly` |  |
 | `autosave_fully_async` | `true` | `developmentonly` `gamedll` `defensive` | Set to 1 to have autosaves execute completely on the save thread, forces 'render only' mode while the save completes |
+| `battery_saver` | `false` | `archive` | OBSOLETE replaced by mobile_fps_* - Battery saver mode. 0=off, 1=on |
 | `bot_allow_grenades` | `true` | `gamedll` `release` | If nonzero, bots may use grenades. |
 | `bot_allow_machine_guns` | `true` | `gamedll` `release` | If nonzero, bots may use the machine gun. |
 | `bot_allow_pistols` | `true` | `gamedll` `release` | If nonzero, bots may use pistols. |
@@ -201,6 +202,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `buddha` | `false` | `gamedll` `notify` `cheat` | Player takes damage but won't die |
 | `buddha_ignore_bots` | `false` | `gamedll` `notify` `cheat` | Bots always buddha 0 |
 | `buddha_reset_hp` | `1` | `gamedll` `notify` `cheat` | HP to set when damaged below zero in Buddha Mode |
+| `bug_submitter_override` | `` | `archive` |  |
 | `buildcubemaps_renderdoc_capture` | `-1` | `developmentonly` `clientdll` | Capture a specific cubemap with RenderDoc during buildcubemaps. |
 | `c_maxdistance` | `200.000000` | `clientdll` `archive` |  |
 | `c_maxpitch` | `90.000000` | `clientdll` `archive` |  |
@@ -287,6 +289,9 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `cl_anglespeedkey` | `0.670000` | `developmentonly` `clientdll` `defensive` |  |
 | `cl_async_client_shatter` | `true` | `developmentonly` `clientdll` | spawn client glass shards asynchronously during demos or when remotely connected. |
 | `cl_async_restore_server_authoritative_state` | `false` | `developmentonly` `clientdll` |  |
+| `cl_async_usercmd_send` | `true` | `developmentonly` |  |
+| `cl_async_usercmd_send_recvmargin_min` | `1.000000` | `developmentonly` `defensive` | Min size of the recv margin queue when async usercmd send is disabled |
+| `cl_auto_cursor_scale` | `true` | `archive` | Automatic cursor size scaling. |
 | `cl_autobuy` | `` | `clientdll` `release` | The order in which autobuy will attempt to purchase items |
 | `cl_autohelp` | `true` | `clientdll` `archive` `userinfo` | Auto-help |
 | `cl_bake_bomb_damage_debug` | `0` | `clientdll` `cheat` |  |
@@ -295,20 +300,36 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `cl_borrow_music_from_player_slot` | `-1` | `clientdll` `release` |  |
 | `cl_boxmove` | `0` | `developmentonly` `clientdll` | run in a square, # represents how many usercommands to run before turning. |
 | `cl_boxmove_speed` | `1.000000` | `developmentonly` `clientdll` | how fast to run (1 to use player max run speed). |
+| `cl_buffer_incoming_net_messages` | `true` | `release` |  |
 | `cl_buymenu_ct_nextround_high` | `5000` | `clientdll` `archive` `per_user` `release` |  |
 | `cl_buymenu_ct_nextround_low` | `1400` | `clientdll` `archive` `per_user` `release` |  |
 | `cl_buymenu_t_nextround_high` | `5000` | `clientdll` `archive` `per_user` `release` |  |
 | `cl_buymenu_t_nextround_low` | `1400` | `clientdll` `archive` `per_user` `release` |  |
 | `cl_buywheel_donate_key` | `0` | `clientdll` `archive` `per_user` `release` | Set the key to use for donation in the buy menu. 0: Left Control; 1: Left Alt; 2: Left Shift. |
 | `cl_buywheel_nonumberpurchasing` | `false` | `clientdll` `archive` `per_user` `release` | Set non-zero to prevent buy wheel from purchasing via number keys |
+| `cl_cache_sendtable` | `true` | `developmentonly` `defensive` | Cache sendtables |
 | `cl_cameraoverride_fade_in_amount` | `0.000000` | `developmentonly` `clientdll` `defensive` |  |
 | `cl_cameraoverride_shadow_depth_bias` | `0.006000` | `developmentonly` `clientdll` `defensive` |  |
 | `cl_cameraoverride_shadow_end` | `0.800000` | `developmentonly` `clientdll` `defensive` |  |
 | `cl_change_callback_limit` | `0.200000` | `clientdll` `release` | change callback msec warning limit |
 | `cl_chat_active` | `0` | `developmentonly` `clientdll` `defensive` |  |
 | `cl_clanid` | `0` | `clientdll` `hidden` `archive` `userinfo` | Current clan ID for name decoration |
+| `cl_clock_buffer_ticks` | `0.000000` | `developmentonly` | Clock sync will try to maintain an additional margin of N ticks.  This is intended to smooth over packet loss, and is a replacement for cl_interp_ratio / cl_interp.  This value is simply added to cl_clock_recvmargin_desired |
+| `cl_clock_buffer_ticks_spectator` | `2.000000` | `developmentonly` | Additional margin (in ticks) to apply when spectating. |
+| `cl_clock_correction` | `true` | `cheat` | Enable/disable clock correction on the client. |
+| `cl_clock_recvmargin_adjust_limit_slowdown` | `93.000000` | `developmentonly` | Clock sync will not slow down time slower than N% |
+| `cl_clock_recvmargin_adjust_limit_speedup` | `106.000000` | `developmentonly` | Clock sync will not speed up time faster than N% |
+| `cl_clock_recvmargin_desired` | `5.000000` | `developmentonly` | Clock sync will try to maintain N ms margin between tick arrival and polling network.  The effective value is the sum of this and the time implied by cl_clock_buffer_ticks |
+| `cl_clock_recvmargin_spew_interval` | `0` | `release` |  |
+| `cl_clock_recvmargin_timeconstant_slowdown` | `0.300000` | `developmentonly` | Clock sync will remove 63.2% of the error in N seconds |
+| `cl_clock_recvmargin_timeconstant_speedup` | `0.600000` | `developmentonly` | Clock sync will remove 63.2% of the error in N seconds |
+| `cl_clock_recvmargin_window` | `4.000000` | `developmentonly` | Clock sync will use past N seconds |
+| `cl_clockdbg` | `false` | `developmentonly` `defensive` |  |
+| `cl_clockdrift_max_ticks` | `3` | `hidden` `release` | Maximum number of ticks the clock is allowed to drift before the client snaps its clock to the server's. |
 | `cl_clutch_mode` | `false` | `clientdll` `release` | Silence voice and other distracting sounds until the end of round or next death. |
 | `cl_color` | `1` | `clientdll` `archive` `userinfo` | Preferred teammate color |
+| `cl_connectionretrytime_p2p` | `20.000000` | `release` | Number of seconds over which to spread retry attempts for P2P. |
+| `cl_cq_min_queue` | `0` | `userinfo` | Used by the client to inform the server of their desired queue length.  Derived from cl_tickpacket_recvmargin_desired and cl_tickpacket_desired_queuelength |
 | `cl_crosshair_drawoutline` | `true` | `clientdll` `archive` `per_user` | Draws a black outline around the crosshair for better visibility |
 | `cl_crosshair_dynamic_maxdist_splitratio` | `1.000000` | `clientdll` `archive` `per_user` | If using cl_crosshairstyle 2, this is the ratio used to determine how long the inner and outer xhair pips will be. [inner = cl_crosshairsize*(1-cl_crosshair_dynamic_maxdist_splitratio), outer = cl_crosshairsize*cl_crosshair_dynamic_maxdist_splitratio]  [0 - 1] |
 | `cl_crosshair_dynamic_splitalpha_innermod` | `0.000000` | `clientdll` `archive` `per_user` | If using cl_crosshairstyle 2, this is the alpha modification that will be used for the INNER crosshair pips once they've split. [0 - 1] |
@@ -337,6 +358,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `cl_csgo_shoot_debugvis_show_los` | `false` | `developmentonly` `clientdll` | Show line of last shot. |
 | `cl_csgo_shoot_debugvis_show_rdp` | `false` | `developmentonly` `clientdll` |  |
 | `cl_csgo_shoot_trim_input_frames` | `true` | `developmentonly` `clientdll` |  |
+| `cl_cursor_scale` | `1.000000` | `archive` | Cursor size scaling factor. |
 | `cl_deathcam_audio_mix_phase1_fade_amount` | `0.150000` | `clientdll` `release` | Sets the amount of ducking to do on death cam fade out. When set to 1, full DeathFadeLayer is applied. |
 | `cl_deathcam_audio_mix_phase1_fade_time` | `2.000000` | `clientdll` `release` | Sets the amount of time we fade out over. |
 | `cl_deathcam_audio_mix_phase2_fade_amount` | `0.500000` | `clientdll` `release` | Sets the amount of ducking to do on death cam fade out. When set to 1, full DeathFadeLayer is applied. |
@@ -344,8 +366,10 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `cl_deathcampanel_position_dynamic` | `1` | `clientdll` `archive` | Turn on/off deathcam's kill panel dynamic Y movement |
 | `cl_deathnotices_show_numbers` | `0` | `clientdll` `release` | 0: default; 1: draw names as just numbers; 2: append number on killer and victim to the name |
 | `cl_debounce_zoom` | `true` | `clientdll` `archive` `userinfo` `per_user` | Whether or not to disable holding secondary fire to cycle zoom levels |
+| `cl_debug_build_recvmargin_min` | `2.000000` | `developmentonly` `defensive` | Min size of the recv margin queue when in tools/debug mode |
 | `cl_debug_force_push_to_talk` | `false` | `developmentonly` `clientdll` `defensive` |  |
 | `cl_debug_overlay_fullposition` | `false` | `developmentonly` `clientdll` `defensive` |  |
+| `cl_debug_overlays_broadcast` | `false` | `release` | Render debug overlays from server. |
 | `cl_debug_precipitation_surface_graph` | `false` | `clientdll` `replicated` `cheat` | When true, use the surface graph to pass in positions for rainfall.
  |
 | `cl_debug_round_stat_submission` | `false` | `developmentonly` `clientdll` |  |
@@ -361,6 +385,8 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `cl_disable_postprocessing` | `false` | `clientdll` `cheat` |  |
 | `cl_disable_ragdolls` | `false` | `clientdll` `cheat` |  |
 | `cl_disable_round_end_report` | `false` | `clientdll` `archive` `release` |  |
+| `cl_disconnect_soundevent` | `core.stop_all_soundevents` | `developmentonly` `defensive` | This soundevent is called to stop the desired soundevents when the game is disconnected. |
+| `cl_disconnect_voice_fade` | `2.000000` | `developmentonly` `defensive` | This is a fade of current voices that is called when the game is disconnected. -1.f for no fade on disconnect |
 | `cl_display_flashbang_values` | `false` | `developmentonly` `clientdll` |  |
 | `cl_display_game_events` | `false` | `clientdll` `cheat` |  |
 | `cl_display_player_visibilty` | `false` | `developmentonly` `clientdll` |  |
@@ -401,8 +427,11 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `cl_firstperson_legs` | `true` | `developmentonly` `clientdll` `defensive` |  |
 | `cl_firstperson_legs_aoproxy` | `true` | `developmentonly` `clientdll` `defensive` |  |
 | `cl_fixedcrosshairgap` | `3.000000` | `clientdll` `archive` `per_user` | For crosshair style 1: How big to make the gap between the pips in the fixed crosshair |
+| `cl_flushentitypacket` | `0` | `cheat` | For debugging. Force the engine to flush an entity packet. |
+| `cl_force_next_signon_to_reset` | `false` | `developmentonly` |  |
 | `cl_force_spec_hud_color_to_team` | `true` | `clientdll` `archive` | Spec hud color setting is always team/teammate |
 | `cl_frametime_summary_report_detailed` | `true` | `clientdll` `release` | When a perf report is dumped at the end of the session, should it be detailed? |
+| `cl_generate_postdataupdatepreserved` | `true` | `developmentonly` | Do we invoke PostDataUpdatePreserved callbacks for entities that had no changes but are still in the PVS? |
 | `cl_globallight_debug` | `false` | `developmentonly` `clientdll` `defensive` |  |
 | `cl_globallight_depth_bias` | `-999.000000` | `developmentonly` `clientdll` `defensive` |  |
 | `cl_globallight_expansion` | `200.000000` | `developmentonly` `clientdll` `defensive` |  |
@@ -457,8 +486,10 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `cl_hud_telemetry_ping_poor` | `100.000000` | `clientdll` `archive` `release` | Ping higher than this (ms) is considered 'poor'. |
 | `cl_hud_telemetry_ping_show` | `1` | `clientdll` `archive` `release` | Show ping in the HUD.  0=never, 1=only in poor conditions, 2=always |
 | `cl_hud_telemetry_serverrecvmargin_graph_show` | `0` | `clientdll` `archive` `release` | Show graph of the server recv margin in the HUD.  (How early/late user commands are arriving at the server before they are executed.)   0=never, 1=only when there are command queue problems, 2=always |
+| `cl_ignorepackets` | `false` | `cheat` | Force client to ignore packets (for debugging). |
 | `cl_import_csgo_config` | `true` | `clientdll` `archive` `release` |  |
 | `cl_inferno_bodyburn` | `true` | `developmentonly` `clientdll` |  |
+| `cl_input_enable_raw_keyboard` | `false` | `release` | Enable raw keyboard input |
 | `cl_instant_death_anim` | `false` | `developmentonly` `clientdll` |  |
 | `cl_interp_ag2_for_non_ag2_entities` | `true` | `developmentonly` `clientdll` |  |
 | `cl_interp_all` | `false` | `developmentonly` `clientdll` `defensive` | Disable interpolation list optimizations. |
@@ -469,7 +500,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `cl_interp_ratio` | `2.000000` | `clientdll` `userinfo` | Set number of client simulation interpolation ticks. |
 | `cl_interp_simulationvars` | `true` | `developmentonly` `clientdll` `defensive` | Interpolate LATCH_SIMULATION_BIT vars if interpolation interval is greater than animation interval |
 | `cl_interp_threadmodeticks` | `0` | `developmentonly` `clientdll` `defensive` | Additional interpolation ticks to use when interpolating with threaded engine mode set. |
-| `cl_interpolate` | `true` | `developmentonly` `clientdll` `userinfo` |  |
+| `cl_interpolate` | `true` | `developmentonly` `clientdll` `userinfo` | Interpolate entities on the client. |
 | `cl_interpolate_report` | `false` | `clientdll` `archive` | Enable to show interpolation profile timing
  |
 | `cl_inv_volatile_limits` | `0:0` | `clientdll` `archive` |  |
@@ -485,14 +516,19 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `cl_ironsight_min_channel_color` | `0.300000` | `developmentonly` `clientdll` | Ironsight min channel color value |
 | `cl_ironsight_usecrosshaircolor` | `false` | `clientdll` `archive` `per_user` | Should the scope dot match the user's crosshair color |
 | `cl_itemimages_dynamically_generated` | `2` | `clientdll` `archive` `release` | 2: use render-targets; 0: disk assets only |
-| `cl_jitter_bad_threshold_up` | `0.000000` | `reference` |  |
+| `cl_jitter_bad_threshold_up` | `20.000000` | `userinfo` | When upstream packet jitter in a frame exceeds this threshold (ms), the frame is considered to have 'irregular delivery'.  This is a derived value and should not be modified manually |
+| `cl_joystick_enabled` | `true` | `archive` | Enable joystick input |
 | `cl_lagcompensation_test_auto_target` | `false` | `developmentonly` `clientdll` | Auto-pick value of cl_lagcompensation_test_target. |
 | `cl_lagcompensation_test_target` | `-1` | `developmentonly` `clientdll` | Player whose head is tracked to test lag compensation. |
+| `cl_language` | `english` | `developmentonly` `defensive` | Language |
 | `cl_latch_report` | `false` | `clientdll` `archive` | Enable to output stats about latching |
 | `cl_leveloverview` | `0.000000` | `clientdll` `cheat` |  |
 | `cl_lightquery_debug` | `false` | `clientdll` `cheat` |  |
 | `cl_loadout_saved_sort` | `inv_sort_age` | `clientdll` `archive` `release` |  |
 | `cl_lock_camera` | `false` | `clientdll` `cheat` |  |
+| `cl_log_tick` | `false` | `developmentonly` `defensive` | Log when a tick is received
+ |
+| `cl_log_tick_skips` | `0` | `developmentonly` `defensive` | Log when the tick delta >= this |
 | `cl_low_latency_vsync_recommendation_dont_show_again` | `false` | `clientdll` `archive` `release` |  |
 | `cl_major_store_watch_list` | `` | `clientdll` `archive` |  |
 | `cl_map_preview_debug_jitter` | `false` | `developmentonly` `clientdll` `defensive` |  |
@@ -505,6 +541,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
  |
 | `cl_mute_enemy_team` | `false` | `clientdll` `archive` | Block all communication from players on the enemy team. |
 | `cl_mute_player_after_reporting_abuse` | `true` | `developmentonly` `clientdll` | Mute players reported for abuse automatically. |
+| `cl_names_debug` | `false` | `developmentonly` |  |
 | `cl_net_buffer_ticks` | `0` | `clientdll` `archive` `release` | Number of ticks of delay for server snapshots and user commands.  This value controls the value of cl_interp_ratio, which you should not modify directly. |
 | `cl_net_buffer_ticks_use_interp` | `false` | `clientdll` `release` | If false, we smooth over packet loss by adjusting the clock synchronization to buffer packets.  If true, we process packets immediately and use cl_interp to delay their effects |
 | `cl_net_showeventlisteners` | `false` | `developmentonly` `clientdll` `defensive` | Show listening addition/removals |
@@ -515,6 +552,8 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `cl_observed_bot_crosshair` | `2` | `clientdll` `archive` `release` | Control the crosshair shown when observing a bot. 0: Show player crosshair. 1: Show player crosshair only when bot can be taken over, otherwise show default.. 2: Always show default crosshair for bots. |
 | `cl_paintkit_override` | `` | `clientdll` `cheat` `release` |  |
 | `cl_panel_freeze_time_after_press` | `0.500000` | `developmentonly` `clientdll` `defensive` | time to freeze mouse/pointer motion after a mouse button press |
+| `cl_parallel_readpacketentities` | `true` | `developmentonly` `defensive` | Set to 1 to use threading snapshot reading (if game supports and server is sending bitcounts). |
+| `cl_parallel_readpacketentities_threshold` | `2` | `developmentonly` `defensive` | Use parallel processing of snapshot reading if above this many entries. |
 | `cl_particle_batch_mode` | `1` | `developmentonly` `defensive` |  |
 | `cl_particle_create_duplicate_work_for_profiling` | `0` | `developmentonly` | Create and destroy N particle systems for every one created normally |
 | `cl_particle_fallback_base` | `0` | `developmentonly` `defensive` | Base for falling back to cheaper effects under load. |
@@ -545,6 +584,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `cl_pitchdown` | `89.000000` | `clientdll` `cheat` |  |
 | `cl_pitchspeed` | `225.000000` | `developmentonly` `clientdll` `defensive` |  |
 | `cl_pitchup` | `89.000000` | `clientdll` `cheat` |  |
+| `cl_playback_screenshots` | `false` | `developmentonly` `defensive` | Allows the client to playback screenshot and jpeg commands in demos. |
 | `cl_player_ping_mute` | `0` | `clientdll` `archive` `release` | If 1, player pinging will make a sound, if 0, pings will be silent |
 | `cl_player_ragdolls_collide` | `false` | `clientdll` `cheat` `release` |  |
 | `cl_player_visibility_far` | `700.000000` | `developmentonly` `clientdll` | distance at which proxy scale is maximized |
@@ -556,6 +596,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `cl_player_visibility_stencil_proxy_min_dist_box` | `1.000000` | `developmentonly` `clientdll` |  |
 | `cl_player_visibility_stencil_proxy_type` | `1` | `developmentonly` `clientdll` | 0 - box, 1 - dodecahedron |
 | `cl_playerslot_in_names` | `false` | `clientdll` `cheat` `release` | prepend controller playerslot to names for debugging |
+| `cl_poll_network_early` | `true` | `release` | Enable polling for network messages every frame, instead of every tick |
 | `cl_pred_always_latch` | `false` | `clientdll` `release` |  |
 | `cl_pred_build_verbose` | `false` | `developmentonly` `clientdll` `defensive` | Verbose spew when building prediction optimized data runs. |
 | `cl_pred_checkstuck` | `false` | `developmentonly` `clientdll` | Perform the additional 'stuck' traces on the client side during prediction. |
@@ -629,6 +670,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `cl_rebuy` | `` | `clientdll` `release` | The order in which rebuy will attempt to repurchase items |
 | `cl_redemption_reset_timestamp` | `0` | `clientdll` `archive` `release` |  |
 | `cl_refresh_rate_recommendation_dont_show_again` | `false` | `clientdll` `archive` `release` |  |
+| `cl_resend` | `0.500000` | `release` | Delay in seconds before the client will resend the 'connect' attempt |
 | `cl_retire_low_priority_lights` | `false` | `developmentonly` `clientdll` `defensive` | Low priority dlights are replaced by high priority ones |
 | `cl_sanitize_muted_players` | `true` | `clientdll` `release` | Hide names and avatars of muted players. |
 | `cl_sanitize_player_names` | `false` | `clientdll` `archive` | Replace names of other players with something non-offensive. |
@@ -640,12 +682,13 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `cl_script_attach_debugger_at_startup` | `false` | `developmentonly` `clientdll` `defensive` |  |
 | `cl_script_break_in_native_debugger_on_error` | `false` | `developmentonly` `clientdll` `defensive` |  |
 | `cl_search_key_token` | `` | `clientdll` `hidden` `release` | Development search key token. |
+| `cl_sendtable_cache_filename` | `sendtables.bin` | `developmentonly` `defensive` | Send tables cache file |
 | `cl_sequence_debug` | `-1` | `developmentonly` `clientdll` `defensive` |  |
 | `cl_sequence_debug2` | `-1` | `developmentonly` `clientdll` `defensive` |  |
 | `cl_sequence_model_substring` | `` | `developmentonly` `clientdll` `defensive` |  |
 | `cl_server_graphic1_enable` | `true` | `clientdll` `release` | When enabled, 360x60 (<16kb) image file will be displayed to on-server spectators. |
 | `cl_server_graphic2_enable` | `true` | `clientdll` `release` | When enabled, 220x45 (<16kb) image file will be displayed to on-server spectators. |
-| `cl_session` | `` | `reference` |  |
+| `cl_session` | `` | `developmentonly` `hidden` `server_can_execute` |  |
 | `cl_show_bombs` | `false` | `developmentonly` `clientdll` `defensive` |  |
 | `cl_show_camera_position` | `false` | `developmentonly` `clientdll` |  |
 | `cl_show_clan_in_death_notice` | `true` | `clientdll` `archive` `release` | Is set, the clan name will show next to player names in the death notices. |
@@ -658,6 +701,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `cl_show_playernames_max_chars_console` | `false` | `developmentonly` `clientdll` | Shows all player names (including bots) as 16 W's. |
 | `cl_show_quest_info` | `false` | `developmentonly` `clientdll` |  |
 | `cl_show_splashes` | `true` | `developmentonly` `clientdll` |  |
+| `cl_showdemooverlay` | `0.000000` | `developmentonly` `defensive` | How often to flash demo recording/playback overlay (0 - disable overlay, -1 - show always) |
 | `cl_showerror` | `0` | `clientdll` `release` | Show prediction errors, 2 for above plus detailed field deltas, 3 to filter out serverside known prediction errors, -entindex for specific entity. |
 | `cl_showfps` | `0` | `clientdll` `release` | Draw fps meter at top of screen (1 = fps, 2 = smooth fps, 3 = server MS, 4 = Show FPS and Log to file ) |
 | `cl_showframenumber` | `false` | `clientdll` `release` | Show current framenumber |
@@ -694,6 +738,8 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `cl_sniper_auto_rezoom` | `true` | `clientdll` `archive` `userinfo` `per_user` | Auto-rezoom snipers after a shot |
 | `cl_sniper_delay_unscope` | `false` | `clientdll` `archive` `release` |  |
 | `cl_sniper_show_inaccuracy` | `true` | `clientdll` `archive` `release` |  |
+| `cl_spawngroup_log` | `false` | `developmentonly` | Dump the contents of the next spawngroup manifest to file. |
+| `cl_spawngroup_spewresources` | `false` | `developmentonly` | Spew all manifest add/updates. |
 | `cl_spec_show_bindings` | `true` | `clientdll` `release` `clientcmd_can_execute` | Toggle the visibility of the spectator bindings. |
 | `cl_spec_stats` | `true` | `clientdll` `release` |  |
 | `cl_spec_use_tournament_content_standards` | `false` | `clientdll` `release` |  |
@@ -717,6 +763,16 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `cl_teammate_color_4` | `230 128 42` | `developmentonly` `clientdll` `defensive` |  |
 | `cl_teammate_color_5` | `189 44 150` | `developmentonly` `clientdll` `defensive` |  |
 | `cl_teammate_colors_show` | `1` | `clientdll` `archive` `release` | In competitive, 1 = show teammates as separate colors in the radar, scoreboard, etc., 2 = show colors and letters |
+| `cl_tickpacket_desired_queuelength` | `0.000000` | `userinfo` | This value, multiplied by the tick interval, is added to cl_tickpacket_recvmargin_desired to obtain the effective desired recv margin. |
+| `cl_tickpacket_recvmargin_adjust_limit` | `5.000000` | `developmentonly` | Recvmargin-based usercommand pacing will not speed up or slow down command pacing by more than N% compared to realtime |
+| `cl_tickpacket_recvmargin_desired` | `5.000000` | `developmentonly` | Recvmargin-based usercommand pacing will try to maintain N ms margin between user command arriving at the server and the server needing that user command.  See also cl_tickpacket_desired_queuelength. |
+| `cl_tickpacket_recvmargin_minsamples` | `10` | `developmentonly` | Recvmargin-based usercommand pacing will not take action unless we have N samples |
+| `cl_tickpacket_recvmargin_spew_interval` | `0` | `release` |  |
+| `cl_tickpacket_recvmargin_timeconstant` | `0.400000` | `developmentonly` | Recvmargin-based usercommand pacing will remove 63.2% of the error in N seconds |
+| `cl_tickpacket_recvmargin_window` | `4.000000` | `developmentonly` | Recvmargin-based usercommand pacing will use past N seconds |
+| `cl_ticks_net_print_threshold` | `2.000000` | `release` | Print a message if network issues cause problems with server snapshots of user commands not being available when needed, if the percentage (0...100) exceeds this value.  A value of 0 will cause the message to always print each time it is calculated |
+| `cl_ticks_warning_level` | `0` | `release` | Print a message about problems with ticks and interpolation.  0=never, 1=warnings, 2=all, even if hidden by interpolation |
+| `cl_timeout` | `30.000000` | `archive` | After this many seconds without receiving a packet from the server, the client will disconnect itself |
 | `cl_tracer_frequency_override` | `1` | `developmentonly` `clientdll` | Override tracer frequency (-1 to disable) |
 | `cl_tracer_whiz_distance` | `72.000000` | `developmentonly` `clientdll` `defensive` |  |
 | `cl_tracer_whiz_infront_distance` | `32.000000` | `developmentonly` `clientdll` `defensive` |  |
@@ -730,7 +786,10 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `cl_use_last_selected_weapon_slot_position` | `false` | `clientdll` `archive` `release` | Use the last selected weapon slot position when switching back to a weapon slot. |
 | `cl_use_old_wearable_shoulddraw` | `false` | `developmentonly` `clientdll` `defensive` |  |
 | `cl_use_opens_buy_menu` | `false` | `clientdll` `archive` `userinfo` `per_user` | Pressing the +use key will open the buy menu if in a buy zone (just as if you pressed the 'buy' key). |
-| `cl_usercmd_showsize` | `false` | `reference` |  |
+| `cl_usercmd_dbg` | `0` | `developmentonly` | show usercmd payload sizing info for packets with more than this many usercmds |
+| `cl_usercmd_max_per_movemsg` | `4` | `release` | max number of CUserCmds to send in one client move message |
+| `cl_usercmd_showsize` | `false` | `developmentonly` |  |
+| `cl_usesocketsforloopback` | `false` | `developmentonly` `defensive` | When connecting to local listen server (for example, using the 'map' command), default to loopback=false, which connects to '127.0.0.1' instead of 'loopback'.  This uses the network stack so that fake lag/loss can be simulated. |
 | `cl_versus_intro` | `true` | `clientdll` `archive` `release` |  |
 | `cl_view_near_hud_player_eye_dist` | `20.000000` | `developmentonly` `clientdll` |  |
 | `cl_view_near_other_player_eye_dist` | `16.000000` | `developmentonly` `clientdll` |  |
@@ -750,6 +809,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `cl_workshop_map_download_timeout` | `120.000000` | `developmentonly` `clientdll` `defensive` |  |
 | `cl_yawspeed` | `210.000000` | `developmentonly` `clientdll` `defensive` |  |
 | `clear_debug_flags_on_death` | `true` | `developmentonly` `gamedll` `defensive` |  |
+| `clientport` | `0` | `release` | If non-zero, client binds port to specific address.  Usually you should leave this blank to use a different random system-assigned port for each connection. |
 | `closecaption` | `false` | `clientdll` `archive` `userinfo` | Enable close captioning. |
 | `cloth_debug_draw` | `0` | `developmentonly` `clientdll` |  |
 | `cloth_filter_transform_stateless` | `false` | `developmentonly` `defensive` | Enable the new, stateless version of FilterTransform |
@@ -776,6 +836,8 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `composite_material_use_gpu_endpoint_optimization` | `false` | `developmentonly` `clientdll` |  |
 | `composite_material_use_gpu_perceptual_error_metric` | `true` | `developmentonly` `clientdll` |  |
 | `compositematerial_showdebugwindow` | `false` | `developmentonly` `clientdll` `archive` `replicated` `cheat` `menubar_item` | Source2/Composite Material Debug |
+| `con_enable` | `false` | `archive` `per_user` | Allows the console to be activated. |
+| `con_logfile_suffix` | `` | `developmentonly` `defensive` | Suffix to append to the console log, may be changed to reopen the log |
 | `connect_lobby` | `0` | `developmentonly` `clientdll` `hidden` `defensive` | Sets the lobby ID to connect to on start. |
 | `contributionscore_assist` | `1` | `gamedll` `release` `commandline_enforced` | amount of contribution score added for an assist |
 | `contributionscore_assist_reqs` | `0` | `gamedll` `release` `commandline_enforced` | extra requirements to earn contribution score for an assist |
@@ -795,8 +857,9 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `contributionscore_participation` | `0` | `gamedll` `release` `commandline_enforced` | amount of contribution score awarded to players for active participation in the round |
 | `contributionscore_suicide` | `-2` | `gamedll` `release` `commandline_enforced` | amount of contribution score for a suicide, normally negative |
 | `contributionscore_team_kill` | `-2` | `gamedll` `release` `commandline_enforced` | amount of contribution score for a team kill, normally negative |
+| `convars_echo_toggle_changes` | `true` | `developmentonly` `defensive` | Echo to the console changes caused by toggling. |
 | `cpu_level` | `2` | `developmentonly` `clientdll` `defensive` | CPU Level - Default: High |
-| `cq_buffer_bloat_msecs_max` | `0.000000` | `reference` |  |
+| `cq_buffer_bloat_msecs_max` | `150.000000` | `replicated` `release` | Server will not allow the client to buffer up more than N ms of commands. |
 | `cq_debug` | `0` | `developmentonly` `gamedll` `replicated` `defensive` | Verbose command queue logging. |
 | `cq_dilation_percentage` | `5.000000` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | When speeding up slowing down, this is how much |
 | `cq_enable` | `true` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | Run one usercmd per server tick and maintain a buffer.  Client speeds up/slows down it's usercmd tick rate to maintain server command queue buffering. |
@@ -859,6 +922,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `csm_viewmodel_max_visible_dist` | `1000.000000` | `clientdll` `cheat` |  |
 | `csm_viewmodel_nearz` | `0.500000` | `clientdll` `cheat` |  |
 | `csm_viewmodel_shadows` | `false` | `developmentonly` `clientdll` `defensive` |  |
+| `custom_bot_difficulty` | `2` | `gamedll` `clientdll` `replicated` `release` | Bot difficulty for offline play. |
 | `cv_bot_ai_bt_debug_target` | `-1` | `gamedll` `replicated` `cheat` | Draw the behavior tree of the given bot. |
 | `cv_bot_ai_bt_hiding_spot_show` | `false` | `gamedll` `replicated` `cheat` | Draw hiding spots. |
 | `cv_bot_ai_bt_moveto_show_next_hiding_spot` | `false` | `gamedll` `replicated` `cheat` | Draw the hiding spot the bot will check next. |
@@ -874,7 +938,10 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `debug_destructible_parts_enabled` | `true` | `gamedll` `clientdll` `replicated` `cheat` | Toggle enabling/disabling the destructible parts system for debug. |
 | `debug_destructible_parts_radius_damage` | `false` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `debug_destructible_parts_ttl` | `1.000000` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | How long the debug draws stick around for, unless they're per-tick. |
+| `debug_draw_enable` | `true` | `developmentonly` `replicated` |  |
 | `debug_error_model` | `false` | `gamedll` `clientdll` `replicated` `cheat` |  |
+| `debug_font_name` | `Courier New` | `developmentonly` `defensive` | Debug font name |
+| `debug_font_size` | `14` | `developmentonly` `defensive` | Font size for the debug font |
 | `debug_hltv` | `0` | `developmentonly` `clientdll` `replicated` `clientcmd_can_execute` | Print out hltv events |
 | `debug_overlay_fullposition` | `false` | `developmentonly` `gamedll` `defensive` |  |
 | `debug_physimpact` | `false` | `developmentonly` `gamedll` `defensive` |  |
@@ -890,15 +957,22 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `debugoverlay_text_scale` | `1.000000` | `archive` `cheat` | Scale of the text used for 3d display, but see also debug_font_{size,name} |
 | `decalfrequency` | `10.000000` | `developmentonly` `gamedll` `notify` `defensive` |  |
 | `default_fov` | `90.000000` | `clientdll` `cheat` |  |
-| `demo_debug` | `0` | `reference` |  |
+| `demo_allow_game_mismatch` | `false` | `developmentonly` `defensive` | Allow playback of demo even if game directories are not matched [may crash or fail to load]. |
+| `demo_debug` | `0` | `developmentonly` | Turn on demo debug spew. |
+| `demo_flush` | `false` | `archive` | Flush writing the demo file every network update |
 | `demo_highlight_fade_duration` | `0.250000` | `clientdll` `release` | Duration of the fade in and of the fade out transitions (fade in + fade out is 2x this value). |
 | `demo_highlight_seconds_after` | `2.000000` | `clientdll` `release` | How many seconds after the actual highlight event to show when viewing highlights. |
 | `demo_highlight_seconds_before` | `6.000000` | `clientdll` `release` | How many seconds before the actual highlight event to show when viewing highlights. |
+| `demo_max_consecutive_skip_packets` | `100` | `developmentonly` `defensive` | Don't skip more than N messages in a row when skipping in a demo file. |
 | `demo_mouse_enable_binding` | `drop` | `clientdll` `archive` | Name of the binding to enable mouse on demo playback UI |
 | `demo_pause_at_end` | `true` | `clientdll` `release` | Pause demo playback when the end of the file is reached, otherwise quit to main menu. |
 | `demo_playback_override_settings` | `false` | `developmentonly` `clientdll` `defensive` |  |
+| `demo_quitafterplayback` | `false` | `release` | Quits game after demo playback. |
+| `demo_recordcommands` | `true` | `cheat` | Record commands typed at console into .dem files. |
 | `demo_skip_to_shot_seconds_before` | `2.000000` | `clientdll` `release` | How many seconds before the shot to skip to when skipping to a specific shot ID. |
 | `demo_ui_mode` | `2` | `clientdll` `release` | UI mode for demo playback. 0 = disabled, 1 = minimal, 2 = full |
+| `demo_usefastgoto` | `true` | `developmentonly` `defensive` | Use fast frame skipping when available for demo_goto commands. |
+| `demo_writefullupdate_rate` | `60` | `developmentonly` `defensive` | Interval time in seconds to write full updates to demo. |
 | `destructible_parts_destroy_parts_when_gibbing` | `true` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `dev_add_onground_on_spawn` | `false` | `gamedll` `release` | Should we mess with the ground flag when we spawn? (I don't think we should). If we don't hit the assert in CCSPlayer_MovementServices::ProcessMovement, we should remove this by Dec 2022. |
 | `dev_create_bhop_reports` | `false` | `developmentonly` `gamedll` `clientdll` `replicated` `cheat` | Whether we should create bhop reports when you jump. Reports are created for the client and server and are numbered monotonically |
@@ -916,7 +990,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `dev_cs_ragdoll_nudge_max_duration` | `1.500000` | `developmentonly` `gamedll` `clientdll` `replicated` |  |
 | `dev_cs_ragdoll_progress_check_interval` | `0.250000` | `developmentonly` `gamedll` `clientdll` `replicated` |  |
 | `dev_reportmoneychanges` | `false` | `developmentonly` `gamedll` `replicated` | Displays money account changes for players in the console |
-| `developer` | `0` | `reference` |  |
+| `developer` | `0` | `release` | Set developer message level. |
 | `devonly_chicken_activity_debug` | `false` | `developmentonly` `gamedll` | Print chicken activity info to the console |
 | `devonly_chicken_blocktimer` | `0.200000` | `developmentonly` `gamedll` | Chicken blockertimer |
 | `devonly_chicken_feeler_distance` | `30.000000` | `developmentonly` `gamedll` | Chicken feeler distance |
@@ -950,8 +1024,31 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `econ_enable_inventory_images` | `true` | `developmentonly` `clientdll` | allow inventory image rendering for use by scaleform |
 | `econ_inventory_image_pinboard` | `false` | `developmentonly` `clientdll` |  |
 | `enable_boneflex` | `true` | `clientdll` `archive` |  |
-| `engine_frametime_amnesty_debug` | `false` | `reference` |  |
-| `engine_frametime_warnings_enable` | `false` | `reference` |  |
+| `engine_accurate_input_processing_delta_time` | `false` | `developmentonly` `defensive` | When true, elapsed time given to the input processing will be the time elapsed since the last input processing. This is only relevant when input is processed multiple times per frame ( i.e. multiple ticks per frame) |
+| `engine_allow_multiple_simulates_per_frame` | `false` | `developmentonly` `defensive` | When the client is catching up in low frame rate situations, should we run client simulate more than once a frame? |
+| `engine_allow_multiple_ticks_per_frame` | `true` | `developmentonly` `defensive` | When the client is catching up in low frame rate situations, should we run tick more than once a frame? |
+| `engine_client_tick_pad_enable` | `false` | `developmentonly` `defensive` |  |
+| `engine_cpu_info_extended` | `` | `developmentonly` `defensive` | CPU the engine is running on. |
+| `engine_frametime_amnesty_debug` | `false` | `developmentonly` `defensive` | Enable logging about events that disable frame time warnings |
+| `engine_frametime_warnings_enable` | `true` | `developmentonly` `defensive` | Enable framerate-related warnings, such as sv_long_frame_ms.  Disabling warnings is useful when running in situations such a debug where a slow frame rate is expected |
+| `engine_low_latency_sleep_after_client_tick` | `false` | `release` | When r_low_latency is enabled, this moves the low latency sleep on tick frames to happen after client simulation. |
+| `engine_max_resource_system_update_time` | `5` | `developmentonly` `defensive` |  |
+| `engine_max_ticks_to_simulate` | `-1` | `developmentonly` `defensive` | Max number of ticks to simulate per frame, after which simulation will start to slow down compared to real time. |
+| `engine_no_focus_sleep` | `20` | `archive` |  |
+| `engine_no_focus_sleep_vconsole_suppress` | `true` | `developmentonly` `defensive` | When VConsole is in the foreground, don't trigger engine_no_focus_sleep behavior |
+| `engine_ostype` | `` | `developmentonly` `defensive` | OS type the engine is running on. |
+| `engine_phys_debug_limit_ticks` | `true` | `developmentonly` |  |
+| `engine_platform_name_extended` | `` | `developmentonly` `defensive` | Platform the engine is running on. |
+| `engine_relaunch_app_before_exiting` | `false` | `hidden` `release` | Use this to tell Steam to relaunch the app right after existing |
+| `engine_render_only` | `false` | `developmentonly` `defensive` |  |
+| `engine_rendersystem_init` | `` | `developmentonly` `defensive` | Rendersystem option requested (changing this does not change the rendersystem). |
+| `engine_rendersystem_shader_model` | `0` | `developmentonly` `defensive` | Rendersystem shader model in use (changing this does not change the shader model). |
+| `engine_rendersystem_used` | `` | `developmentonly` `defensive` | Rendersystem option in use (changing this does not change the rendersystem). |
+| `engine_show_frame_dispatch` | `false` | `developmentonly` | show frame dispatch names. |
+| `engine_show_frame_pacing` | `false` | `release` |  |
+| `engine_show_frame_ticks` | `false` | `developmentonly` `defensive` |  |
+| `engine_sse42` | `true` | `developmentonly` `defensive` | turn on sse4.2 optimizations in the engine |
+| `engine_update_resource_system_during_low_latency_sleep` | `true` | `developmentonly` |  |
 | `english` | `true` | `clientdll` `userinfo` | If set to 1, running the english language set of assets. |
 | `ent_actornames_font` | `Consolas` | `gamedll` `clientdll` `replicated` `cheat` | ent_actornames font name |
 | `ent_actornames_fontsize` | `24` | `gamedll` `clientdll` `replicated` `cheat` | ent_actornames font size |
@@ -982,6 +1079,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `ent_text_no_name_really_i_mean_it` | `false` | `gamedll` `cheat` |  |
 | `entity_log_load_unserialize` | `0` | `gamedll` `clientdll` `replicated` `cheat` | Output unserialization of entities on map load. 0 - off, 1 - client/server, 2 - server, 3 - client |
 | `eom_local_player_defeat_anim_enabled` | `true` | `clientdll` `archive` `release` |  |
+| `execute_command_every_frame` | `` | `cheat` |  |
 | `fade_debug_splitscreen_slot` | `-1` | `developmentonly` `clientdll` `defensive` |  |
 | `ff_damage_bullet_penetration` | `0.000000` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | If friendly fire is off, this will scale the penetration power and damage a bullet does when penetrating another friendly player |
 | `ff_damage_decoy_explosion` | `false` | `gamedll` `clientdll` `replicated` `release` | Enables or disables team damage from decoy detonation |
@@ -989,6 +1087,12 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `ff_damage_reduction_grenade` | `0.250000` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | How much to reduce damage done to teammates by a thrown grenade.  Range is from 0 - 1 (with 1 being damage equal to what is done to an enemy) |
 | `ff_damage_reduction_grenade_self` | `1.000000` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | How much to damage a player does to himself with his own grenade.  Range is from 0 - 1 (with 1 being damage equal to what is done to an enemy) |
 | `ff_damage_reduction_other` | `0.250000` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | How much to reduce damage done to teammates by things other than bullets and grenades.  Range is from 0 - 1 (with 1 being damage equal to what is done to an enemy) |
+| `filesystem_buffer_size` | `0` | `developmentonly` `defensive` | Size of per file buffers. 0 for none |
+| `filesystem_fake_latency` | `0` | `developmentonly` `defensive` |  |
+| `filesystem_max_stdio_read` | `16` | `developmentonly` `defensive` |  |
+| `filesystem_native` | `true` | `developmentonly` `defensive` | Use native FS or STDIO |
+| `filesystem_report_buffered_io` | `false` | `developmentonly` `defensive` |  |
+| `filesystem_unbuffered_io` | `true` | `developmentonly` `defensive` |  |
 | `filter_player_simulation_time` | `true` | `developmentonly` `gamedll` `clientdll` `replicated` |  |
 | `fire_use_modifier` | `false` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `fish_debug` | `false` | `clientdll` `cheat` | Show debug info for fish |
@@ -1004,9 +1108,15 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `fog_maxdensity` | `-1.000000` | `clientdll` `cheat` |  |
 | `fog_maxdensityskybox` | `-1.000000` | `clientdll` `cheat` |  |
 | `fog_override` | `0` | `clientdll` `cheat` | Overrides the map's fog settings (-1 populates fog_ vars with map's values) |
+| `fog_override_enable` | `false` | `cheat` | Use fog_override convars instead of world fog data |
+| `fog_override_end` | `3500.000000` | `cheat` |  |
+| `fog_override_exponent` | `2.000000` | `cheat` |  |
+| `fog_override_max_density` | `0.400000` | `cheat` |  |
+| `fog_override_start` | `1000.000000` | `cheat` |  |
 | `fog_start` | `-1.000000` | `clientdll` `cheat` |  |
 | `fog_startskybox` | `-1.000000` | `clientdll` `cheat` |  |
 | `fog_volume_debug` | `false` | `developmentonly` `gamedll` `defensive` | If enabled, prints diagnostic information about the current fog volume |
+| `font_show_glyph_miss` | `false` | `developmentonly` |  |
 | `footstep_audible_threshold` | `0.550000` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `footstep_debug` | `false` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `footstep_force_volume` | `-1.000000` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
@@ -1016,6 +1126,9 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `fov_cs_super_ultrawide_near_z` | `1.000000` | `developmentonly` `clientdll` `cheat` |  |
 | `fov_cs_ultrawide_near_z` | `4.000000` | `developmentonly` `clientdll` `cheat` |  |
 | `fov_desired` | `75.000000` | `clientdll` `archive` `userinfo` | Sets the base field-of-view. |
+| `fps_max` | `120.000000` | `archive` `release` | Frame rate limiter.  0=no limit.  Does not apply to dedicated server. |
+| `fps_max_tools` | `120.000000` | `archive` | Additional frame rate limit while in tools mode and a window other than the game window has focus. Note that fps_max still applies, this only allows the maximum frame rate for tools mode to be lower. 0=no tools specific limit. |
+| `fps_max_ui` | `0.000000` | `archive` | Frame rate limiter while the game UI is displayed.  0=no limit.  Does not apply to dedicated server. |
 | `frag_grenade_blip_frequency` | `1.000000` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `freecamera_accel` | `5.000000` | `developmentonly` `clientdll` `defensive` | Tweak this parameter to adjust Free Camera movement acceleration. |
 | `freecamera_fog_end` | `2500.000000` | `developmentonly` `clientdll` `defensive` | Fog end for Free Camera. |
@@ -1023,6 +1136,12 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `freecamera_max_speed` | `500.000000` | `developmentonly` `clientdll` `defensive` | Tweak this parameter to adjust Free Camera movement max speed. |
 | `freecamera_rotation_multiplier` | `10.000000` | `developmentonly` `clientdll` `defensive` | Tweak this parameter to adjust Free Camera mouse rotation. |
 | `freecamera_zfar` | `4500.000000` | `developmentonly` `clientdll` `defensive` | Fog start for Free Camera. |
+| `fs_async_threads` | `-1` | `developmentonly` `defensive` | Number of IO threads in async filesystem (-1 == auto) |
+| `fs_fake_read_delay_ms` | `0` | `release` | Add N ms of delay to every low-level read operation, to simulate a slow disk |
+| `fs_report_async_io` | `false` | `developmentonly` `defensive` |  |
+| `fs_report_long_reads` | `0` | `developmentonly` `defensive` | 0:Off, 1:All (for tracking accumulated duplicate read times), >1:Microsecond threashold |
+| `fs_report_sync_opens` | `0` | `release` | 0:Off, 1:Always, 2:Not during load |
+| `fs_warning_mode` | `0` | `developmentonly` `defensive` | 0:Off, 1:Warn main thread, 2:Warn other threads |
 | `func_break_max_pieces` | `15` | `gamedll` `archive` `replicated` |  |
 | `func_break_reduction_factor` | `0.500000` | `developmentonly` `gamedll` `defensive` |  |
 | `func_breakdmg_bullet` | `0.500000` | `developmentonly` `gamedll` `defensive` |  |
@@ -1051,11 +1170,13 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `g_ragdoll_important_maxcount` | `2` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `g_ragdoll_lvfadespeed` | `100` | `developmentonly` `clientdll` `defensive` |  |
 | `g_ragdoll_maxcount` | `5` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
-| `game_mode` | `0` | `reference` |  |
+| `game_mode` | `1` | `gamedll` `clientdll` `replicated` `release` | The current game mode (based on game type). See GameModes.txt. |
 | `game_online` | `true` | `developmentonly` `gamedll` `clientdll` `hidden` `replicated` `defensive` | The current game is online. |
 | `game_particle_manager_requeue_messages` | `true` | `developmentonly` `clientdll` `hidden` `defensive` |  |
 | `game_public` | `true` | `developmentonly` `gamedll` `clientdll` `hidden` `replicated` `defensive` | The current game is public. |
-| `game_type` | `0` | `reference` |  |
+| `game_type` | `0` | `gamedll` `clientdll` `replicated` `release` | The current game type. See GameModes.txt. |
+| `gameevents_showeventlisteners` | `false` | `developmentonly` `defensive` | Show listening addition/removals |
+| `gameevents_showevents` | `0` | `developmentonly` `defensive` | Dump game events to console. (1 = Show Signaling, 2 = Show Posting also). |
 | `gameinstructor_enable` | `false` | `clientdll` `release` | Display in game lessons that teach new players. |
 | `gameinstructor_find_errors` | `false` | `clientdll` `cheat` | Set to 1 and the game instructor will run EVERY scripted command to uncover errors. |
 | `gameinstructor_start_sound_cooldown` | `4.000000` | `developmentonly` `clientdll` `defensive` | Number of seconds forced between similar lesson start sounds. |
@@ -1081,12 +1202,18 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `healthshot_healthboost_time` | `1.000000` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` |  |
 | `hidehud` | `0` | `clientdll` `cheat` | bitmask: 1=weapon selection, 2=flashlight, 4=all, 8=health, 16=player dead, 32=needssuit, 64=misc, 128=chat, 256=crosshair, 512=vehicle crosshair, 1024=in vehicle |
 | `hinttext_displaytime` | `4.000000` | `developmentonly` `clientdll` `defensive` |  |
-| `host_timescale` | `0.000000` | `reference` |  |
+| `host_force_frametime_to_equal_tick_interval` | `false` | `developmentonly` `defensive` |  |
+| `host_force_max_frametime_to_tick_interval` | `false` | `developmentonly` `defensive` |  |
+| `host_framerate` | `0.000000` | `release` | Set to lock per-frame time elapse. |
+| `host_readconfig_ignore_userconfig` | `false` | `cheat` | Whether we should ignore the user config file for reading/writing. |
+| `host_timescale` | `1.000000` | `replicated` `cheat` | Prescale the clock by this amount. |
 | `hostage_debug` | `0` | `gamedll` `clientdll` `replicated` `cheat` | Show hostage AI debug information |
 | `hostage_drop_time` | `1.000000` | `developmentonly` `gamedll` | Time for the hostage before it fully drops to ground |
 | `hostage_is_silent` | `false` | `gamedll` `clientdll` `replicated` `cheat` | When set, the hostage won't play any code driven response rules lines |
 | `hostfile` | `host.txt` | `gamedll` `release` | The HOST file to load. |
-| `hostname` | `` | `reference` |  |
+| `hostname` | `` | `release` | Hostname for server. |
+| `hostname_in_client_status` | `false` | `release` | Show server hostname in client status. |
+| `hostport` | `27015` | `release` | Host game server port |
 | `hud_fastswitch` | `0` | `clientdll` `archive` |  |
 | `hud_scaling` | `1.000000` | `clientdll` `archive` | Scales hud elements |
 | `hud_showtargetid` | `true` | `clientdll` `archive` `per_user` | Enables display of target names |
@@ -1167,10 +1294,14 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `inferno_velocity_factor` | `0.003000` | `gamedll` `cheat` |  |
 | `inferno_velocity_factor_ct` | `0.003000` | `gamedll` `cheat` |  |
 | `inferno_velocity_normal_factor` | `0.000000` | `gamedll` `cheat` |  |
+| `input_button_code_is_scan_code_scd` | `true` | `archive` `per_user` | Bind keys based on keyboard position instead of key name |
 | `input_downimpulsevalue` | `0.700000` | `developmentonly` `clientdll` |  |
 | `input_filter_relative_analog_inputs` | `false` | `clientdll` `archive` |  |
+| `input_forceuser` | `-1` | `cheat` | Force user input to this split screen player. |
 | `input_upimpulsevalue` | `0.300000` | `developmentonly` `clientdll` |  |
 | `install_dlc_workshoptools_cvar` | `-1` | `clientdll` `release` | DLC Install Status |
+| `instant_replay` | `true` | `developmentonly` `defensive` | Enable instant replay recording. |
+| `instant_replay_history_limit` | `120` | `developmentonly` `defensive` | Maximum amount of minutes to save history (0 is unlimited). |
 | `iv_debugbone` | `` | `release` | Debug bone name for interpolation spew of CAnimationState. |
 | `iv_parallel_latch` | `true` | `developmentonly` `clientdll` `defensive` |  |
 | `iv_parallel_restore` | `false` | `developmentonly` `clientdll` `defensive` |  |
@@ -1186,6 +1317,19 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `joy_advaxisy` | `0` | `clientdll` `archive` |  |
 | `joy_advaxisz` | `0` | `clientdll` `archive` |  |
 | `joy_autosprint` | `0.000000` | `developmentonly` `clientdll` `defensive` | Automatically sprint when moving with an analog joystick |
+| `joy_axisbutton_threshold` | `0.300000` | `archive` | Analog axis range before a button press is registered. |
+| `joy_axisr_deadzone` | `0.150000` | `archive` `per_user` |  |
+| `joy_axisr_relative` | `false` | `archive` `per_user` |  |
+| `joy_axisu_deadzone` | `0.150000` | `archive` `per_user` |  |
+| `joy_axisu_relative` | `false` | `archive` `per_user` |  |
+| `joy_axisv_deadzone` | `0.150000` | `archive` `per_user` |  |
+| `joy_axisv_relative` | `false` | `archive` `per_user` |  |
+| `joy_axisx_deadzone` | `0.150000` | `archive` `per_user` |  |
+| `joy_axisx_relative` | `false` | `archive` `per_user` |  |
+| `joy_axisy_deadzone` | `0.150000` | `archive` `per_user` |  |
+| `joy_axisy_relative` | `false` | `archive` `per_user` |  |
+| `joy_axisz_deadzone` | `0.150000` | `archive` `per_user` |  |
+| `joy_axisz_relative` | `false` | `archive` `per_user` |  |
 | `joy_circle_correct_mode` | `1` | `clientdll` `archive` `per_user` |  |
 | `joy_circle_correct_mode_vehicle` | `2` | `clientdll` `archive` `per_user` |  |
 | `joy_display_input` | `false` | `clientdll` `archive` |  |
@@ -1212,6 +1356,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `joy_yaw_sensitivity` | `3.000000` | `clientdll` `archive` `per_user` |  |
 | `joy_yawsensitivity` | `-1.000000` | `clientdll` `archive` `per_user` |  |
 | `joystick` | `false` | `clientdll` `archive` | True if the joystick is enabled, false otherwise. |
+| `jpeg_quality` | `90` | `developmentonly` `defensive` | Set jpeg screenshot quality. [1..100] |
 | `key_bind_version` | `0` | `clientdll` `hidden` `archive` `release` |  |
 | `keychain_animation_reactivity` | `0.250000` | `developmentonly` `clientdll` |  |
 | `keychain_preview_limit_step` | `0.125000` | `developmentonly` `clientdll` |  |
@@ -1309,16 +1454,31 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `mapoverview_allow_client_draw` | `false` | `clientdll` `release` | Allow a client to draw on the map overview |
 | `mapoverview_icon_scale` | `1.000000` | `clientdll` `archive` `release` | Sets the icon scale multiplier for the overview map. Valid values are 0.5 to 3.0. |
 | `markup_volume_ref_cone_angle` | `135.000000` | `developmentonly` `gamedll` `defensive` |  |
+| `mat_assert_on_error_shader_use` | `false` | `developmentonly` |  |
+| `mat_cache_and_skip_commandbuffers` | `true` | `developmentonly` |  |
+| `mat_cache_renderablepasses` | `true` | `developmentonly` |  |
 | `mat_colcorrection_disableentities` | `false` | `developmentonly` `clientdll` `defensive` | Disable map color-correction entities |
 | `mat_colcorrection_editor` | `false` | `developmentonly` `clientdll` `defensive` |  |
 | `mat_colcorrection_forceentitiesclientside` | `false` | `clientdll` `cheat` | Forces color correction entities to be updated on the client |
+| `mat_colorcorrection` | `true` | `developmentonly` |  |
 | `mat_depthbias_shadowmap` | `0.000500` | `developmentonly` `clientdll` `defensive` |  |
 | `mat_disable_normal_mapping` | `false` | `clientdll` `cheat` |  |
-| `mat_fullbright` | `0` | `reference` |  |
-| `mat_lpv_luxels` | `false` | `reference` |  |
-| `mat_luxels` | `false` | `reference` |  |
-| `mat_overdraw` | `0` | `reference` |  |
-| `mat_shading_complexity` | `false` | `reference` |  |
+| `mat_execute_skipbuffers` | `true` | `developmentonly` |  |
+| `mat_fullbright` | `0` | `cheat` | Debug rendering modes |
+| `mat_hide_error_shader` | `false` | `developmentonly` |  |
+| `mat_lpv_luxels` | `false` | `cheat` |  |
+| `mat_luxels` | `false` | `cheat` |  |
+| `mat_max_lighting_complexity` | `8.000000` | `cheat` |  |
+| `mat_overdraw` | `0` | `cheat` | Visualize overdraw |
+| `mat_overdraw_color` | `0.075000 0.150000 0.300000` | `cheat` |  |
+| `mat_shader_cache` | `true` | `developmentonly` |  |
+| `mat_shading_complexity` | `false` | `cheat` | Visualize shading complexity |
+| `mat_shading_complexity_color` | `1.000000 0.500000 0.250000` | `cheat` |  |
+| `mat_shading_complexity_max_instruction_count` | `1024.000000` | `cheat` |  |
+| `mat_shading_complexity_max_register_count` | `128.000000` | `cheat` |  |
+| `mat_shadowmap_luxels` | `false` | `cheat` |  |
+| `mat_show_distance_field` | `0` | `cheat` | 0=Off, 1=Visualize trace from camera, 2=Visualize occlusion, 3=Visualize far field trace from camera |
+| `mat_skip_static_const_eval` | `true` | `developmentonly` |  |
 | `mat_slopescaledepthbias_shadowmap` | `4.000000` | `developmentonly` `clientdll` `defensive` |  |
 | `mat_tonemap_bloom_scale` | `-1.000000` | `cheat` |  |
 | `mat_tonemap_bloom_start_value` | `-1.000000` | `cheat` |  |
@@ -1336,17 +1496,63 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `mat_tonemap_force_use_alpha` | `-1` | `cheat` |  |
 | `mat_tonemap_uncap_exposure` | `0` | `cheat` |  |
 | `mat_viewportscale` | `1.000000` | `developmentonly` `clientdll` `defensive` | Scale down the main viewport (to reduce GPU impact on CPU profiling) |
-| `mat_wireframe` | `0` | `reference` |  |
+| `mat_warn_bad_modes` | `false` | `developmentonly` |  |
+| `mat_wireframe` | `0` | `cheat` | 0=Off, 1=Surface Wireframe, 2=Transparent Wireframe |
 | `mem_level` | `2` | `developmentonly` `clientdll` `defensive` | Memory Level - Default: High |
+| `mem_test_each_frame` | `false` | `developmentonly` `defensive` | Run heap check at end of every frame |
+| `mem_test_every_n_seconds` | `0` | `developmentonly` `defensive` | Run heap check at a specified interval |
+| `mem_test_quiet` | `false` | `developmentonly` `defensive` | Don't print stats when memtesting |
 | `mesh_calculate_curvature_smooth_invert` | `false` | `gamedll` `clientdll` `replicated` `cheat` |  |
 | `mesh_calculate_curvature_smooth_pass_count` | `3` | `gamedll` `clientdll` `replicated` `cheat` |  |
 | `mesh_calculate_curvature_smooth_weight` | `1.000000` | `gamedll` `clientdll` `replicated` `cheat` |  |
 | `mic_listen_while_nonfocused` | `false` | `developmentonly` `clientdll` `defensive` | Enables the ability for the mic to remain open if the window loses focus such as when a caster tabs out to adjust settings |
-| `mm_dedicated_search_maxping` | `0` | `reference` |  |
+| `mm_csgo_community_search_players_min` | `3` | `archive` `release` | When performing CSGO community matchmaking look for servers with at least so many human players |
+| `mm_debug_friend_rp` | `0` | `developmentonly` |  |
+| `mm_dedicated_allow` | `true` | `developmentonly` | 1 = allow searches for dedicated servers |
+| `mm_dedicated_fake` | `false` | `developmentonly` | 1 = pretend like search is going, but abort after some time |
+| `mm_dedicated_force_servers` | `` | `release` | Comma delimited list of ip:port of servers used to search for dedicated servers instead of searching for public servers.
+Use syntax `publicip1:port\|privateip1:port,publicip2:port\|privateip2:port` if your server is behind NAT.
+If the server is behind NAT, you can specify `0.0.0.0\|privateip:port` and if server port is in the list of `mm_server_search_lan_ports` its public address should be automatically detected. |
+| `mm_dedicated_ip` | `` | `developmentonly` | IP address of dedicated servers to consider available |
+| `mm_dedicated_search_maxping` | `150` | `archive` | Longest preferred ping to dedicated servers for games |
+| `mm_dedicated_search_maxresults` | `75` | `developmentonly` |  |
+| `mm_dedicated_timeout_request` | `20.000000` | `developmentonly` |  |
+| `mm_dlcs_mask_extras` | `0` | `developmentonly` `defensive` |  |
+| `mm_dlcs_mask_fake` | `` | `developmentonly` `defensive` |  |
+| `mm_events_listeners_validation` | `false` | `developmentonly` |  |
+| `mm_ignored_sessions_forget_pass` | `5` | `developmentonly` |  |
+| `mm_ignored_sessions_forget_time` | `600.000000` | `developmentonly` |  |
+| `mm_player_search_count` | `5` | `developmentonly` |  |
+| `mm_player_search_lan_ping_duration` | `3.500000` | `developmentonly` | Duration of LAN discovery ping phase. |
+| `mm_player_search_lan_ping_interval` | `0.500000` | `developmentonly` | Interval between LAN discovery pings. |
+| `mm_player_search_requests_limit` | `-1` | `developmentonly` | How many friend requests are displayed. |
+| `mm_player_search_update_interval` | `10.000000` | `developmentonly` | Interval between players searches. |
+| `mm_session_search_num_results` | `10` | `developmentonly` |  |
+| `mm_session_search_qos_timeout` | `15.000000` | `release` |  |
+| `mm_session_sys_connect_timeout` | `8.000000` | `developmentonly` |  |
+| `mm_session_sys_delay_create` | `0.000000` | `developmentonly` |  |
+| `mm_session_sys_delay_create_host` | `1.200000` | `developmentonly` |  |
+| `mm_session_sys_kick_ban_duration` | `180.000000` | `release` |  |
+| `mm_session_sys_pkey` | `` | `release` |  |
+| `mm_session_sys_ranking_timeout` | `12.000000` | `developmentonly` |  |
+| `mm_session_sys_slots_guaranteed` | `10` | `developmentonly` |  |
+| `mm_session_team_res_timeout` | `30.000000` | `developmentonly` |  |
+| `mm_session_voice_loading` | `false` | `developmentonly` |  |
+| `mm_sv_load_test` | `false` | `developmentonly` |  |
+| `mm_teamsearch_errortime` | `3.000000` | `developmentonly` | Time team search is in error state until it self-cancels |
+| `mm_teamsearch_nostart` | `false` | `developmentonly` | Team search will fake cancel before searching for server |
+| `mm_title_debug_version` | `0` | `developmentonly` | This matchmaking version will override .res file version for isolating matchmaking |
+| `mm_tu_string` | `00000000` | `developmentonly` `defensive` |  |
+| `mm_use_p2p_for_listen_server` | `true` | `developmentonly` `defensive` |  |
+| `mobile_fps_increase_during_charging` | `false` | `archive` | MOBILE_FPS_CONTROL: If true we increase framerate limit while charging |
+| `mobile_fps_increase_during_hfr_animations` | `true` | `developmentonly` `hidden` `defensive` | MOBILE_FPS_CONTROL: If true we increase framerate limit during HFR-tagged animations and transitions. |
+| `mobile_fps_increase_during_touch` | `true` | `archive` | MOBILE_FPS_CONTROL: If true we increase framerate limit during touch |
+| `mobile_fps_limit` | `30.000000` | `archive` | MOBILE_FPS_CONTROL: Mobile FPS limit - 15, 30, 60 |
 | `model_default_preview_sequence_name` | `` | `gamedll` `clientdll` `archive` `replicated` |  |
 | `molotov_throw_detonate_time` | `2.000000` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` |  |
 | `molotov_usethrow_direction` | `false` | `gamedll` `cheat` |  |
 | `motdfile` | `motd.txt` | `gamedll` `release` | The MOTD file to load. |
+| `mouse_disableinput` | `false` | `developmentonly` `defensive` | Set to disable mouse input |
 | `mouse_inverty` | `false` | `clientdll` `archive` `userinfo` |  |
 | `movement_stats_debug_draw` | `false` | `gamedll` `cheat` |  |
 | `movement_stats_force_calculate` | `false` | `gamedll` `cheat` |  |
@@ -1585,7 +1791,10 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `mp_weaponstay` | `false` | `developmentonly` `gamedll` `notify` `defensive` |  |
 | `mp_win_panel_display_time` | `3.000000` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | The amount of time to show the win panel between matches / halfs |
 | `mp_winlimit` | `0` | `developmentonly` `gamedll` `clientdll` `notify` `replicated` `defensive` | Max score one team can reach before server changes maps |
+| `multigpu_skip_semaphores` | `false` | `developmentonly` `defensive` |  |
+| `multigpu_skip_transfers` | `false` | `developmentonly` `defensive` |  |
 | `muzzle_flash_debug` | `false` | `developmentonly` `clientdll` |  |
+| `name` | `unnamed` | `archive` `per_user` |  |
 | `nav_approach_points_area_size_threshold` | `200.000000` | `developmentonly` `gamedll` `defensive` | Ignore nav areas with at least one side smaller than this amount during approach point calculation. |
 | `nav_attribute_obstacle_draw` | `false` | `developmentonly` `gamedll` |  |
 | `nav_attribute_obstacle_draw_attribute` | `` | `developmentonly` `gamedll` |  |
@@ -1849,6 +2058,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `navspace_draw_changes_blocks` | `0.000000` | `gamedll` `cheat` | Draw blocks when they change |
 | `navspace_draw_changes_waters` | `0.000000` | `gamedll` `cheat` | Draw water volumes when they change |
 | `navspace_path_use_water_level_locator` | `true` | `gamedll` `cheat` |  |
+| `net_async_clientconnect` | `true` | `developmentonly` `defensive` | Enable async client connect optimization |
 | `net_async_job_random_sleep` | `0.000000` | `developmentonly` `defensive` | Sleep randomly 0..net_async_job_random_sleep ms in the parallel server jobs; sleep is per job |
 | `net_client_steamdatagram_enable_override` | `0` | `clientdll` `release` | 0: Use connect method requested by GC.  >0: Always use SDR if possible.  <0: Always use direct UDP if possible |
 | `net_debug_to_file` | `false` | `developmentonly` `gamedll` `defensive` |  |
@@ -1881,27 +2091,106 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `option_duck_method` | `false` | `clientdll` `archive` `userinfo` `per_user` | Input toggle control |
 | `option_speed_method` | `false` | `clientdll` `archive` `userinfo` `per_user` | Input toggle control |
 | `opus_decode_test_signal` | `false` | `developmentonly` |  |
+| `opus_encode_test_signal` | `false` | `developmentonly` |  |
 | `opus_unittest_test_signal` | `false` | `developmentonly` |  |
+| `panorama_2d_translate_no_comp_layer` | `true` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_alignment_fixes` | `true` | `developmentonly` `hidden` `defensive` | Fix alignment issues |
+| `panorama_allow_texture_composition_layer_fast_path` | `true` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_allow_transitions` | `true` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_apply_styles_for_invisible_parents` | `false` | `developmentonly` `hidden` `defensive` | Specifies whether to short circuit applying styles when a parent is invisible. |
+| `panorama_assert_loading_panel_type` | `false` | `developmentonly` `hidden` `defensive` | Force style invalidation of the entire panel subtree when adding / removing classes. |
 | `panorama_async_compute_mipgen` | `true` | `developmentonly` `clientdll` | use asynchronous compute for mipmap generation. |
+| `panorama_box_shadow_no_comp_layer` | `true` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_cache_command_list_repaint_threshold` | `0.250000` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_cache_command_list_size_threshold` | `384` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_classes_force_invalidate` | `false` | `developmentonly` `hidden` `defensive` | Force style invalidation of the entire panel subtree when adding / removing classes. |
+| `panorama_clear_frames_on_device_restore` | `2` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_comp_layer_lru_lifetime` | `1.000000` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_composition_atlas` | `true` | `developmentonly` `hidden` `defensive` |  |
 | `panorama_console_max_autocomplete` | `100` | `developmentonly` `clientdll` `hidden` `defensive` |  |
 | `panorama_console_max_history` | `100` | `developmentonly` `clientdll` `hidden` `defensive` |  |
 | `panorama_console_max_lines` | `2000` | `developmentonly` `clientdll` `hidden` `defensive` |  |
 | `panorama_console_position_and_size` | `` | `clientdll` `hidden` `archive` |  |
+| `panorama_content_size_fixes` | `true` | `developmentonly` `hidden` `defensive` | Fix content size issues |
 | `panorama_daisy_wheel` | `ABXY` | `developmentonly` `clientdll` `hidden` `defensive` | Daisy wheel input mode: RS \| ABXY |
+| `panorama_dash_gap_ratio` | `0.500000` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_dash_len` | `20.000000` | `developmentonly` `hidden` `defensive` |  |
 | `panorama_debug_movies` | `false` | `developmentonly` `clientdll` `hidden` `defensive` |  |
-| `panorama_debug_overlay_opacity` | `0.000000` | `reference` |  |
-| `panorama_debug_overlay_opacity_max` | `0.000000` | `reference` |  |
-| `panorama_debug_overlay_opacity_min` | `0.000000` | `reference` |  |
+| `panorama_debug_overlay_opacity` | `0.250000` | `hidden` `archive` |  |
+| `panorama_debug_overlay_opacity_max` | `0.250000` | `hidden` `archive` |  |
+| `panorama_debug_overlay_opacity_min` | `0.010000` | `hidden` `archive` |  |
+| `panorama_debug_ready_for_display` | `false` | `developmentonly` `hidden` `defensive` |  |
 | `panorama_debugger_theme` | `Light` | `clientdll` `archive` |  |
+| `panorama_disable_blur` | `false` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_disable_box_shadow` | `false` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_disable_descendant_filtering` | `false` | `developmentonly` `hidden` `defensive` | Disable descendant selector filtering |
+| `panorama_disable_draw_fancy_quad` | `false` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_disable_draw_text` | `false` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_disable_draw_text_shadow` | `false` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_disable_layer_cache` | `false` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_disable_layer_clear` | `false` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_disable_render_callbacks` | `false` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_disable_render_target_cache` | `true` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_disallow_hover_styles` | `false` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_dragscroll_affordance` | `20` | `developmentonly` `hidden` `defensive` | Minimum mouse movement in pixels before a move is treated as a drag scroll |
 | `panorama_dragscroll_maxflickvelocity` | `8000.000000` | `developmentonly` `clientdll` `hidden` `defensive` | Maximum velocity for a drag scroll flick |
 | `panorama_dragscroll_minflickvelocity` | `60.000000` | `developmentonly` `clientdll` `hidden` `defensive` | Minimum velocity that the mouse must be moving as mouse up time to qualify as a drag scroll flick |
+| `panorama_dragscroll_mintime` | `0.020000` | `developmentonly` `hidden` `defensive` | Minimum time that the mouse button must be down before a move is treated as a drag scroll |
+| `panorama_dragscroll_velocitymultiplier` | `0.500000` | `developmentonly` `hidden` `defensive` | Multiplier for flick velocity off of actual measured velocity |
+| `panorama_draw_fast_path_img_shadow` | `true` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_draw_text_fast_path` | `true` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_draw_text_fast_path_text_shadow` | `true` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_enable_secondary_layout_pass` | `true` | `developmentonly` `hidden` `defensive` |  |
 | `panorama_focus_world_panels` | `false` | `clientdll` `archive` | when set request key focus when a world panel is enabled |
+| `panorama_force_active_controller_type` | `-1` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_force_desired_layout_traverse` | `false` | `developmentonly` `hidden` `defensive` | Force desired layout traverse, even if the cached values are up to date. |
+| `panorama_highlight_bad_opacity_masks` | `false` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_highlight_composition_layers` | `false` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_highlight_slow_operations` | `false` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_hsbc_through_fast_path` | `true` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_joystick_axis_repeat_curve_time` | `1.000000` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_joystick_axis_repeat_interval_end` | `0.050000` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_joystick_axis_repeat_interval_start` | `0.220000` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_joystick_button_repeat_curve_time` | `1.200000` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_joystick_button_repeat_interval_end` | `0.100000` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_joystick_button_repeat_interval_start` | `0.480000` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_joystick_enabled` | `true` | `archive` | Enable panorama joystick input |
+| `panorama_js_minidumps` | `false` | `developmentonly` `hidden` `defensive` | Enable sending minidumps on JS Exceptions. |
 | `panorama_label_draw_rects` | `0` | `developmentonly` `clientdll` `hidden` `defensive` | When labels paint, draw the rectangles for the character ranges. 0 = none, 1 = all, 2 = text only, 3 = inline objects only |
 | `panorama_label_wrap_before_shrink` | `true` | `developmentonly` `clientdll` `hidden` `defensive` | Should labels try to wrap text before using text-overflow: shrink |
+| `panorama_large_dispatch_event_queue` | `0` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_max_text_shadow_strength` | `10.000000` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_might_scroll_no_comp_layer` | `true` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_min_comp_layer_cache_cost` | `4096` | `developmentonly` `hidden` `defensive` |  |
 | `panorama_movie_async_load_size_bytes` | `20971520` | `developmentonly` `clientdll` `hidden` `defensive` |  |
 | `panorama_movie_force_not_ready_behavior` | `-1` | `developmentonly` `clientdll` `hidden` `defensive` |  |
+| `panorama_panel_occlusion` | `true` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_print_render_tree` | `` | `developmentonly` `hidden` `defensive` | Print the RenderOperation_t tree for the given root window; set to * to print all |
+| `panorama_reload_animations` | `2` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_render_target_cache_max_size` | `31457280` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_script_cache_enabled` | `true` | `developmentonly` `hidden` `defensive` | Enable script caching to speed up recompiling scripts multiple times. |
+| `panorama_show_fps` | `false` | `developmentonly` `defensive` |  |
+| `panorama_show_fps_scale` | `1.000000` | `developmentonly` `defensive` |  |
+| `panorama_simple_borders_no_comp_layer` | `true` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_skip_composition_layer_content_paint` | `true` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_skip_composition_layer_content_paint_tint` | `false` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_spew_async_event_substring` | `` | `developmentonly` `hidden` `defensive` | If non-empty, print debug info about async event queue and dispatch behavior for events containing the substring. |
+| `panorama_spew_layout_invalidates` | `false` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_stats_log_time` | `0.000000` | `developmentonly` `hidden` `defensive` |  |
 | `panorama_streaming_load_local_images` | `false` | `developmentonly` `clientdll` `defensive` |  |
-| `panorama_transition_time_factor` | `0.000000` | `reference` |  |
+| `panorama_style_flag_force_invalidate` | `false` | `developmentonly` `hidden` `defensive` | Force style invalidation of the entire panel subtree when adding / removing style flags. |
+| `panorama_suspend_animation` | `false` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_suspend_paint` | `false` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_temp_comp_layer_min_dimension` | `512.000000` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_toggledebugger_mode` | `0` | `hidden` `archive` | Toggledebugger key operation : 0 = open/inspect, 1 = open/close |
+| `panorama_track_render_commands` | `false` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_transform_parents_no_layer_for_perspective` | `false` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_transforms_no_comp_layer` | `false` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_transition_time_factor` | `1.000000` | `developmentonly` `hidden` `defensive` | A float representing a scale factor for transitions. 1.0 is normal, 2.0 would be twice as fast as normal, 0.5 half as fast |
+| `panorama_unlink_from_render_tree` | `true` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_use_backbuffer_directly` | `true` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_use_composite_cmd_for_cached_layers` | `true` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_use_new_occlusion_invalidation` | `true` | `developmentonly` `hidden` `defensive` |  |
 | `panorama_worldpanel_update_cull_distance` | `1000.000000` | `developmentonly` `clientdll` `defensive` |  |
 | `panorama_worldpanel_update_cull_size_threshold` | `5.000000` | `developmentonly` `clientdll` `defensive` |  |
 | `panorama_worldpanel_update_culling` | `false` | `developmentonly` `clientdll` `defensive` |  |
@@ -1921,6 +2210,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `particle_test_file` | `` | `gamedll` `cheat` | Name of the particle system to dynamically spawn |
 | `partybrowser_throttle_data` | `0.150000` | `developmentonly` `clientdll` |  |
 | `partybrowser_timeout` | `15.000000` | `developmentonly` `clientdll` |  |
+| `password` | `` | `archive` `dontrecord` `server_cannot_query` | Current server access password |
 | `path_closest_point_debug` | `false` | `developmentonly` `gamedll` `clientdll` `replicated` |  |
 | `path_node_evaluation_debug` | `0.000000` | `developmentonly` `gamedll` `clientdll` `replicated` |  |
 | `pawn_mimic_all` | `false` | `developmentonly` `gamedll` `clientdll` `replicated` |  |
@@ -1934,6 +2224,8 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `phys_expensive_shape_threshold` | `6` | `clientdll` `cheat` |  |
 | `phys_force_controller_debug` | `false` | `developmentonly` `gamedll` |  |
 | `phys_headshotscale` | `1.300000` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | Modifier for the headshot impulse hits on players |
+| `phys_highlight_expensive_objects` | `false` | `cheat` | Highlight expensive physics objects |
+| `phys_highlight_expensive_objects_strength` | `0.020000` | `cheat` | Highlight expensive physics objects strength |
 | `phys_impactforcescale` | `1.000000` | `developmentonly` `gamedll` `defensive` |  |
 | `phys_joint_teleport` | `true` | `gamedll` `cheat` | Teleport joint anchors if connected to world |
 | `phys_length_damping_ratio` | `2.000000` | `gamedll` `cheat` | Spring damping ratio for length constraint |
@@ -1962,6 +2254,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `phys_visualize_awake_unattached_only` | `false` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `phys_wind_force_scale` | `1.000000` | `developmentonly` `gamedll` `clientdll` `replicated` | Scale on the force wind applies to physics bodies |
 | `pickup_check_period` | `0.250000` | `developmentonly` `gamedll` `defensive` |  |
+| `player0_using_joystick` | `false` | `archive` |  |
 | `player_botdifflast_s` | `2` | `clientdll` `archive` `release` |  |
 | `player_competitive_maplist_2v2_10_0_D684D4E1` | `mg_de_inferno,mg_de_nuke,mg_de_vertigo,mg_de_debris,mg_de_poseidon,mg_de_eldorado,mg_de_overpass` | `clientdll` `archive` |  |
 | `player_competitive_maplist_8_10_0_A062AC6A` | `mg_de_dust2,mg_de_train,mg_de_ancient,mg_de_inferno,mg_de_nuke,mg_de_vertigo,mg_de_mirage,mg_cs_office,mg_cs_italy,mg_de_cache,mg_de_boulder,mg_de_anubis,mg_lobby_mapveto,mg_de_fachwerk,mg_cs_shelter,mg_de_overpass` | `clientdll` `archive` |  |
@@ -2013,7 +2306,9 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `r_RainAllowInSplitScreen` | `false` | `developmentonly` `clientdll` `defensive` | Allows rain in splitscreen |
 | `r_RainParticleDensity` | `1.000000` | `developmentonly` `clientdll` `defensive` | Density of Particle Rain 0-1 |
 | `r_add_views_in_pre_output` | `false` | `developmentonly` `clientdll` `defensive` |  |
+| `r_allow_low_gpu_memory_mode` | `true` | `release` | Allow Low GPU Memory mode (i.e. when building maps). |
 | `r_allow_onesweep_gpusort` | `true` | `developmentonly` `defensive` |  |
+| `r_always_render_all_windows` | `false` | `developmentonly` `defensive` | Always force all engine & tools to render |
 | `r_aoproxy_cull_dist` | `12.000000` | `developmentonly` `defensive` | Distance to cull the AO proxy as a factor of size |
 | `r_aoproxy_debug` | `false` | `clientdll` `cheat` |  |
 | `r_aoproxy_default_ambient_strength` | `1.000000` | `developmentonly` `defensive` |  |
@@ -2027,7 +2322,10 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `r_aoproxy_min_dist` | `3.000000` | `developmentonly` `defensive` |  |
 | `r_aoproxy_min_dist_box` | `1.000000` | `developmentonly` `defensive` |  |
 | `r_aoproxy_show` | `false` | `clientdll` `cheat` |  |
+| `r_aspectratio` | `0.000000` | `developmentonly` `defensive` |  |
+| `r_async_shader_compile_notify_frequency` | `10` | `developmentonly` |  |
 | `r_bloom_tent_filter_radius` | `3.100000` | `developmentonly` `clientdll` `cheat` | bloom mip up-sample filtering radius (using 3x3 tent filter, radius in mip level texels), 0.0 radius => box (2x2) filter with (fixed) 1.0 radius |
+| `r_cache_pool_allocations` | `true` | `developmentonly` |  |
 | `r_character_decal_monitor_draw_frustum` | `false` | `developmentonly` |  |
 | `r_character_decal_monitor_emissive` | `false` | `developmentonly` |  |
 | `r_character_decal_monitor_render_res` | `512` | `developmentonly` |  |
@@ -2163,6 +2461,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `r_cubemap_debug_colors` | `0` | `cheat` |  |
 | `r_dashboard_render_quality` | `true` | `developmentonly` `clientdll` `defensive` |  |
 | `r_debug_depth_holes` | `false` | `clientdll` `cheat` |  |
+| `r_debug_draw_safe_area_insets` | `false` | `developmentonly` | Render safe area insets as wireframe. |
 | `r_debug_particle_shadows` | `false` | `clientdll` `cheat` |  |
 | `r_debug_precipitation` | `false` | `clientdll` `cheat` | Show precipitation volumes |
 | `r_decal_hit_confirmation` | `false` | `developmentonly` `gamedll` `clientdll` `replicated` |  |
@@ -2175,25 +2474,41 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `r_decals_overlap_threshold` | `6` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `r_depth_of_field` | `1` | `developmentonly` `clientdll` | 0 = off, 1 = enabled (high quality, circular bokeh, HDR) |
 | `r_directional_lightmaps` | `true` | `developmentonly` `defensive` |  |
-| `r_directlighting` | `false` | `reference` |  |
+| `r_directlighting` | `true` | `cheat` | Set to use direct lighting |
+| `r_dlss_preset` | `5` | `developmentonly` `defensive` |  |
 | `r_dof2_maxblursize` | `5.000000` | `developmentonly` `clientdll` |  |
 | `r_dof2_radiusscale` | `0.250000` | `developmentonly` `clientdll` |  |
+| `r_dof_override` | `false` | `cheat` |  |
+| `r_dof_override_far_blurry` | `2000.000000` | `cheat` |  |
+| `r_dof_override_far_crisp` | `180.000000` | `cheat` |  |
+| `r_dof_override_near_blurry` | `-100.000000` | `cheat` |  |
+| `r_dof_override_near_crisp` | `0.000000` | `cheat` |  |
+| `r_dof_override_tilt_to_ground` | `0.500000` | `cheat` |  |
 | `r_dopixelvisibility` | `true` | `cheat` |  |
 | `r_draw3dskybox` | `true` | `developmentonly` `clientdll` `defensive` |  |
+| `r_draw_first_tri_only` | `false` | `cheat` |  |
+| `r_draw_instances` | `true` | `cheat` |  |
 | `r_draw_overlays` | `true` | `developmentonly` `defensive` |  |
 | `r_draw_particle_children_with_parents` | `-1` | `cheat` | Draw particle children with parents (-1=use gameinfo, 0=no, 1=yes) |
+| `r_drawblankworld` | `false` | `cheat` | Render blank instead of the game world |
 | `r_drawchickens` | `true` | `clientdll` `cheat` | Render chickens |
 | `r_drawcsplayers` | `true` | `clientdll` `cheat` | Render CS players |
-| `r_drawdecals` | `false` | `reference` |  |
+| `r_drawdecals` | `true` | `cheat` | Set to render decals |
 | `r_drawdevvisualizers` | `false` | `clientdll` `cheat` | Render dev visualizers |
+| `r_drawpanorama` | `true` | `cheat` | Enable the rendering of panorama UI |
 | `r_drawparticles` | `true` | `cheat` `menubar_item` | SceneSystem/Particles/Draw Particles |
 | `r_drawpixelvisibility` | `false` | `developmentonly` `defensive` | Show the occlusion proxies |
 | `r_drawropes` | `true` | `clientdll` `cheat` |  |
+| `r_drawskybox` | `true` | `cheat` | Render the 2d skybox. |
 | `r_drawtracers` | `true` | `clientdll` `cheat` |  |
 | `r_drawtracers_firstperson` | `true` | `clientdll` `archive` `release` | Toggle visibility of first person weapon tracers |
 | `r_drawviewmodel` | `true` | `clientdll` `cheat` | Render view model |
+| `r_drawworld` | `true` | `cheat` | Render the world. |
+| `r_dx11_debug_clean` | `false` | `release` | Aggressively unbind bound resources to cleanup DX11 debug warnings. |
+| `r_dx11_software_cmd_lists` | `true` | `developmentonly` `defensive` | Enable Software Command lists for DX11 (Avoid using deferred contexts) |
 | `r_enable_rigid_animation` | `false` | `developmentonly` `clientdll` |  |
-| `r_extra_render_frames` | `0` | `reference` |  |
+| `r_experimental_lag_limiter` | `false` | `developmentonly` `defensive` |  |
+| `r_extra_render_frames` | `0` | `cheat` |  |
 | `r_fallback_texture_lod_scale` | `2.000000` | `cheat` | Scale factor for requested texture size (texture streaming) - used for geo that doesn't have a precomputed UV density measure |
 | `r_farz` | `-1.000000` | `clientdll` `cheat` | Override the far clipping plane. -1 means to use the value in env_fog_controller. |
 | `r_flashlightambient` | `0.000000` | `clientdll` `cheat` |  |
@@ -2216,12 +2531,23 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `r_flashlighttracedistcutoff` | `128.000000` | `clientdll` `cheat` |  |
 | `r_flashlighttracedistwatercutoff` | `80.000000` | `clientdll` `cheat` |  |
 | `r_flashlightvisualizetrace` | `false` | `clientdll` `cheat` |  |
+| `r_force_no_present` | `false` | `cheat` | Force the render device to not present frames. |
+| `r_force_render_frame_count` | `5` | `developmentonly` | The number of frames to render when a |
 | `r_force_thick_hair` | `false` | `developmentonly` `cheat` |  |
+| `r_frame_sync_enable` | `true` | `developmentonly` `defensive` |  |
 | `r_freeze_sceneobjects` | `false` | `developmentonly` `clientdll` `defensive` |  |
 | `r_freezeparticles` | `false` | `cheat` | Pause particle simulation |
-| `r_fullscreen_gamma` | `0.000000` | `reference` |  |
+| `r_fullscreen_gamma` | `2.200000` | `archive` | Screen Gamma (only in fullscreen modes) |
 | `r_fullscreen_quad_single_triangle` | `true` | `developmentonly` |  |
 | `r_gpu_debug_draw_freeze` | `false` | `developmentonly` `clientdll` |  |
+| `r_grass_allow_flattening` | `false` | `developmentonly` `defensive` |  |
+| `r_grass_alpha_test` | `0` | `developmentonly` `defensive` |  |
+| `r_grass_density_mode` | `0` | `developmentonly` `defensive` | 0 = Density corresponds to blade existance, 1 = Density corresponds to blade height, 2 = Both 0 and 1 |
+| `r_grass_end_fade` | `3000.000000` | `developmentonly` `defensive` |  |
+| `r_grass_max_brightness_change` | `75.000000` | `developmentonly` `defensive` |  |
+| `r_grass_quality` | `2` | `developmentonly` `defensive` | 0 = Off, 1 = Low, 2 = Med, 3 = high, 4 = ultra |
+| `r_grass_start_fade` | `2000.000000` | `developmentonly` `defensive` |  |
+| `r_grass_vertex_lighting` | `0` | `developmentonly` `defensive` |  |
 | `r_hair_ao` | `true` | `developmentonly` `defensive` |  |
 | `r_hair_debug_guides` | `0` | `developmentonly` `cheat` | 1: Highlight guide hairs, 2: draw only guide hairs |
 | `r_hair_indirect_transmittance` | `true` | `developmentonly` `defensive` |  |
@@ -2253,8 +2579,9 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `r_impacts_alt_orientation` | `true` | `developmentonly` `clientdll` `defensive` |  |
 | `r_impacts_decal_grazing_incidence_cutoff` | `0.550000` | `developmentonly` `clientdll` `defensive` |  |
 | `r_impacts_decal_grazing_incidence_variance` | `0.100000` | `developmentonly` `clientdll` `defensive` |  |
-| `r_indirectlighting` | `false` | `reference` |  |
+| `r_indirectlighting` | `true` | `cheat` | Set to use indirect lighting |
 | `r_late_particle_job_sync` | `false` | `developmentonly` `clientdll` `defensive` |  |
+| `r_legacy_vsync` | `false` | `developmentonly` `hidden` `defensive` | Use legacy vsync mode -- for testing for a couple user machines. |
 | `r_light_flickering_enabled` | `true` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `r_light_probe_volume_debug_colors` | `false` | `cheat` |  |
 | `r_light_probe_volume_debug_grid` | `0` | `cheat` | Show LPV debug grid, 0: off, 1: closest only 2: closest and keep 3: all |
@@ -2264,13 +2591,22 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `r_light_probe_volume_debug_grid_prim` | `0` | `cheat` | 0: spheres, 1: cubes |
 | `r_light_probe_volume_debug_grid_roughness` | `0.500000` | `cheat` | roughness for LPV debug grid |
 | `r_light_probe_volume_debug_grid_samplesize` | `4.000000` | `cheat` | sphere radius (world) for LPV debug grid |
-| `r_lightmap_size` | `0` | `reference` |  |
+| `r_lightmap_set` | `lightmaps` | `cheat` | Lightmap set to use, only works on map load |
+| `r_lightmap_size` | `65536` | `developmentonly` `defensive` | Maximum lightmap resolution. |
+| `r_lightmap_size_directional_irradiance` | `-1` | `developmentonly` `defensive` | Maximum lightmap resolution for directional_irradiance channel. -1 = use value of r_lightmap_size |
 | `r_limit_particle_job_duration` | `false` | `developmentonly` `defensive` |  |
+| `r_low_latency` | `1` | `developmentonly` `defensive` | NVIDIA Low Latency/AMD Anti-Lag 2 (0 = off, 1 = on, 2 = NV-only, on + boost) |
+| `r_low_latency_trigger_flash` | `true` | `developmentonly` `defensive` | NVIDIA Low Latency Trigger Flash |
 | `r_mapextents` | `16384.000000` | `clientdll` `cheat` | Set the max dimension for the map.  This determines the far clipping plane |
+| `r_max_texture_pool_size` | `0` | `developmentonly` `defensive` | Upper limit on texture pool size. |
+| `r_memory_aliasing` | `true` | `developmentonly` | Allow disabling memory aliasing in the device memory pool.  This is just intended for testing/ruling out aliasing issues. |
+| `r_mipgen_compute_shader` | `true` | `developmentonly` `defensive` | Use compute shader for mipgen. |
 | `r_mixed_shadows_fade_in_time` | `0.500000` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `r_mixed_shadows_fade_out_time` | `0.500000` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `r_monitor_3dskybox` | `true` | `developmentonly` `clientdll` `defensive` |  |
 | `r_morphing_enabled` | `true` | `cheat` |  |
+| `r_multigpu_num_gpus_found` | `1` | `developmentonly` `defensive` |  |
+| `r_multigpu_num_gpus_used` | `1` | `developmentonly` `defensive` |  |
 | `r_muzzleflashbrightness` | `0.400000` | `clientdll` `replicated` `cheat` |  |
 | `r_muzzleflashlinear` | `0.050000` | `clientdll` `replicated` `cheat` |  |
 | `r_nearz` | `-1.000000` | `clientdll` `cheat` | Override the near clipping plane. -1 means use the default. |
@@ -2327,6 +2663,10 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `r_particle_warn_threshold_ms` | `0.000000` | `developmentonly` `defensive` | Threshold to warn about when rendering particles. |
 | `r_particles_memset_at_init` | `1` | `developmentonly` | 0=don't clear particle attrs at init 1=clear to zero 2=clear to 0xdb -1=clear to zero at first sim |
 | `r_physics_particle_op_spawn_scale` | `1.000000` | `developmentonly` |  |
+| `r_pipeline_stats_command_flush` | `false` | `developmentonly` `defensive` | Experimental: Set to 1 to enable full GPU pipeline flushing after each command list. |
+| `r_pipeline_stats_flush_before_sleeping` | `false` | `developmentonly` `defensive` | Experimental: Set to 1 to enable GPU pipeline flushes right before the render thread sleeps to wait for more work. |
+| `r_pipeline_stats_present_flush` | `false` | `developmentonly` `defensive` | Experimental: Set to 1 to enable full GPU pipeline flushing after each present. |
+| `r_pipeline_stats_use_flush_api` | `true` | `developmentonly` `defensive` | Experimental: Set to 1 to use the ID3D11DeviceContext11::Flush() to flush the GPU pipeline instead of queries. |
 | `r_pixelvisibility_partial` | `true` | `cheat` |  |
 | `r_pixelvisibility_spew` | `false` | `cheat` |  |
 | `r_player_fog_distance_multiplier` | `1.700000` | `developmentonly` `clientdll` `cheat` |  |
@@ -2335,10 +2675,16 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `r_player_visibility_stencil` | `true` | `developmentonly` `clientdll` `cheat` |  |
 | `r_player_visibility_strength` | `1.100000` | `developmentonly` `clientdll` `cheat` |  |
 | `r_post_bloom_debug` | `0` | `developmentonly` `clientdll` | 1 = bloom output (before thresholding), 2 = quarter res downsample, 3 = quarter res effects bloom 4 = quarter res effects raw |
+| `r_prefer_loop_unrolling` | `true` | `developmentonly` `defensive` | Prefer shader loop unrolling. |
 | `r_propsmaxdist` | `1200.000000` | `developmentonly` `clientdll` `defensive` | Maximum visible distance |
 | `r_render_hair` | `true` | `developmentonly` `cheat` |  |
 | `r_render_to_cubemap_begin_mixing_roughness` | `0.250000` | `developmentonly` `clientdll` `defensive` |  |
 | `r_render_to_cubemap_debug` | `false` | `developmentonly` `clientdll` `defensive` |  |
+| `r_render_world_node_bounds` | `false` | `cheat` | Render world node bounds |
+| `r_renderdoc_auto_shader_pdbs` | `true` | `developmentonly` `defensive` | Automatically generate shader debug info on capture |
+| `r_renderdoc_open_captures` | `true` | `developmentonly` `defensive` |  |
+| `r_renderdoc_validation_error_capture_limit` | `5` | `developmentonly` `defensive` |  |
+| `r_rendersun` | `true` | `cheat` | Render sun lighting |
 | `r_replay_post_effect` | `-1` | `clientdll` `cheat` |  |
 | `r_reset_character_decals` | `false` | `developmentonly` `defensive` |  |
 | `r_ropetranslucent` | `true` | `developmentonly` `clientdll` `defensive` |  |
@@ -2346,27 +2692,74 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `r_shadows` | `true` | `cheat` |  |
 | `r_shadowtile_waveops` | `false` | `reference` |  |
 | `r_show_build_info` | `true` | `clientdll` `archive` `release` | Build information. Leave this enabled when submitting bug screenshots and videos, please! |
+| `r_show_gpu_memory_visualizer` | `false` | `developmentonly` `cheat` `menubar_item` | SceneSystem/Vulkan GPU Memory Visualizer |
 | `r_show_time_info` | `false` | `clientdll` `release` | Show real time, large. |
-| `r_showdebugoverlays` | `false` | `reference` |  |
-| `r_showsceneobjectbounds` | `false` | `reference` |  |
-| `r_size_cull_threshold_fade` | `0.000000` | `reference` |  |
-| `r_size_cull_threshold_shadow` | `0.000000` | `reference` |  |
+| `r_showdebugoverlays` | `false` | `cheat` | Set to render debug overlays |
+| `r_showsceneobjectbounds` | `false` | `cheat` | Show scenesystem object bounding boxes |
+| `r_size_cull_threshold` | `0.800000` | `developmentonly` | Threshold of screen size percentage below which objects get culled |
+| `r_size_cull_threshold_fade` | `0.000000` | `developmentonly` | % above the screen size percentage where we will start fading out (==0 will disable fading). |
+| `r_size_cull_threshold_shadow` | `0.200000` | `cheat` | Threshold of shadow map size percentage below which objects get culled |
 | `r_skinning_enabled` | `true` | `cheat` |  |
+| `r_skip_precache_validation_check` | `false` | `developmentonly` `defensive` |  |
 | `r_smooth_morph_normals` | `true` | `release` |  |
 | `r_spectator_flashbang_opacity` | `0.600000` | `clientdll` `archive` | Spectator flash opacity |
-| `r_ssao` | `false` | `reference` |  |
+| `r_ssao` | `true` | `developmentonly` `defensive` | Set to use screen-space ambient occlusion |
 | `r_ssao_bias` | `0.500000` | `developmentonly` `defensive` |  |
 | `r_ssao_blur` | `true` | `developmentonly` `defensive` |  |
 | `r_ssao_radius` | `30.000000` | `developmentonly` `defensive` |  |
 | `r_ssao_strength` | `1.200000` | `developmentonly` `defensive` |  |
 | `r_strip_invisible_during_sceneobject_update` | `false` | `developmentonly` `clientdll` `defensive` |  |
 | `r_test1_maximum_wait_ms` | `10.000000` | `clientdll` `release` |  |
+| `r_texture_budget_dynamic` | `true` | `developmentonly` `defensive` | Dynamically adjust texture streaming budget based on GPU memory usage. |
+| `r_texture_budget_threshold` | `0.900000` | `developmentonly` `defensive` | Reduce texture memory pool size when this percentage of the budget is full. |
+| `r_texture_budget_update_period` | `0.100000` | `developmentonly` `defensive` | Time (in seconds) between updating texture memory budget. |
+| `r_texture_eager_eviction` | `false` | `developmentonly` `defensive` |  |
+| `r_texture_hookup_uses_threadpool` | `true` | `developmentonly` `defensive` | Async Texture hookup uses its own threadpool instead of the global pool. |
 | `r_texture_lod_scale` | `1.000000` | `cheat` | Scale factor for requested texture size (texture streaming) |
+| `r_texture_nonstreaming_load` | `true` | `developmentonly` `defensive` | Allow immediately loading mips of textures (when possible) when their headers are loaded, saving IO & reducing latency. |
+| `r_texture_pool_increase_rate` | `64.000000` | `developmentonly` `defensive` | Increase texture memory pool size by this many MB / s when under budget. |
+| `r_texture_pool_reduce_rate` | `256.000000` | `developmentonly` `defensive` | Reduce texture memory pool size by this many MB / s when over budget. |
+| `r_texture_pool_size` | `1600` | `developmentonly` `defensive` | Total size of the texture pool in MB |
+| `r_texture_stream_max_resolution` | `2147483647` | `developmentonly` `defensive` | Maximum resolution for top mip level in streaming textures |
+| `r_texture_stream_mip_bias` | `0` | `developmentonly` `defensive` | Biases the mip level the texture streaming system choses to stream for each texture. |
+| `r_texture_stream_resolution_bias_decrease_rate` | `0.100000` | `developmentonly` `defensive` |  |
+| `r_texture_stream_resolution_bias_increase_rate` | `0.050000` | `developmentonly` `defensive` |  |
+| `r_texture_stream_resolution_bias_min` | `1.000000` | `developmentonly` `defensive` |  |
+| `r_texture_stream_resolution_bias_update_period` | `0.500000` | `developmentonly` `defensive` |  |
+| `r_texture_stream_throttle_amount` | `10.000000` | `developmentonly` `defensive` |  |
+| `r_texture_stream_throttle_count` | `3` | `developmentonly` `defensive` |  |
+| `r_texture_stream_throttle_count_over_budget` | `1` | `developmentonly` `defensive` |  |
+| `r_texture_streaming_timesliced` | `true` | `developmentonly` `defensive` |  |
+| `r_texture_streamout_unthrottle_ms` | `0.200000` | `developmentonly` `defensive` | After hitting throttling limits for streamout, allow it to continue up to this number of milliseconds. |
+| `r_texturefilteringquality` | `1` | `developmentonly` `defensive` | 0: Bilinear, 1: Trilinear, 2: Aniso 2x, 3: Aniso 4x, 4: Aniso 8x, 5: Aniso 16x |
 | `r_threaded_particle_creation` | `true` | `developmentonly` `defensive` |  |
 | `r_threaded_particles` | `true` | `developmentonly` `defensive` |  |
 | `r_threaded_scene_object_update` | `true` | `developmentonly` `clientdll` `defensive` |  |
-| `r_ui_update_parallel_with_server` | `false` | `reference` |  |
+| `r_timestamp_query_multiplier` | `1.000000` | `developmentonly` `defensive` | Set the TIMESTAMP query cycle multiplier, for drivers that lie |
+| `r_translucent` | `true` | `cheat` | Enable rendering of translucent geometry |
+| `r_ui_update_parallel_with_server` | `false` | `developmentonly` `defensive` |  |
 | `r_update_particles_on_render_only_frames` | `false` | `developmentonly` `clientdll` `defensive` |  |
+| `r_use_memory_budget_model` | `false` | `developmentonly` `defensive` | Use a model of GPU memory use to determine budget rather than querying the OS. |
+| `r_validate_texture_streaming` | `false` | `developmentonly` `defensive` | Dumps state of texture streaming at the next frame boundary. |
+| `r_vconsole_foregroundforcerender` | `true` | `developmentonly` `defensive` | When VConsole is in the foreground, force all engine & tools to render |
+| `r_vma_defrag_algorithm` | `1` | `developmentonly` | Defrag algorithm 0=Fast 1=Balanced 2=full 3=Extensive |
+| `r_vma_defrag_enabled` | `true` | `developmentonly` |  |
+| `r_vma_defrag_max_allocation_count_per_pass` | `256` | `developmentonly` | During a VMA defrag, number of moves per pass. |
+| `r_vma_defrag_max_allocation_size_per_pass` | `32` | `developmentonly` | During a VMA defrag, number of MB in moves per pass. |
+| `r_vma_defrag_moves_per_frame` | `20` | `developmentonly` | During a VMA defrag, number of moves to process for a pass in a single frame update. |
+| `r_vma_defrag_threshold_mb` | `256` | `release` |  |
+| `r_vulkan_force_sync1` | `false` | `developmentonly` |  |
+| `r_vulkan_sw_cmd_lists` | `true` | `release` | Enable Software Command lists for Vulkan |
+| `r_vulkan_validation_filter_in` | `` | `developmentonly` | Comma delimited list of stristr filters for including validation messages.  Only messages matching filter will be included. |
+| `r_vulkan_validation_filter_out` | `` | `developmentonly` | Comma delimited list of stristr filters for excluding validation messages.  Any messages matching filter will be excluded. |
+| `r_wait_on_present` | `false` | `developmentonly` `defensive` |  |
+| `r_world_frame_load_threshold_ms` | `10.000000` | `developmentonly` `defensive` |  |
+| `r_world_wind_dir` | `0.707000 0.707000 0.000000` | `developmentonly` `defensive` |  |
+| `r_world_wind_frequency_grass` | `0.030000` | `developmentonly` `defensive` |  |
+| `r_world_wind_frequency_trees` | `0.003000` | `developmentonly` `defensive` |  |
+| `r_world_wind_offset_speed` | `0.250000 0.300000 0.200000` | `developmentonly` `defensive` |  |
+| `r_world_wind_smooth_time` | `2.000000` | `developmentonly` `defensive` |  |
+| `r_world_wind_strength` | `40.000000` | `developmentonly` `defensive` |  |
 | `radarvisdistance` | `1000.000000` | `gamedll` `cheat` | at this distance and beyond you need to be point right at someone to see them |
 | `radarvismaxdot` | `0.996000` | `gamedll` `cheat` | how closely you have to point at someone to see them beyond max distance |
 | `radarvismethod` | `1` | `gamedll` `cheat` | 0 for traditional method, 1 for more realistic method |
@@ -2394,10 +2787,17 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `ragdoll_update_from_weights` | `false` | `gamedll` `clientdll` `replicated` `cheat` |  |
 | `ragdoll_visualize_creation_skeleton` | `false` | `developmentonly` `gamedll` `replicated` `defensive` |  |
 | `ragdoll_vphysics_scale` | `0.500000` | `developmentonly` `gamedll` `replicated` `defensive` | How much we scale physics impacts against the ragdoll. |
+| `rate` | `80000` | `archive` `userinfo` | Min bytes/sec the host can receive data |
+| `rcon_address` | `` | `dontrecord` `release` `server_cannot_query` | Address of remote server if sending unconnected rcon commands (format x.x.x.x:p)  |
+| `rcon_connected_clients_allow` | `true` | `replicated` `release` | Allow clients to use rcon commands on server. |
+| `rcon_password` | `` | `dontrecord` `release` `server_cannot_query` | remote console password. |
 | `recast_mark_overhang` | `false` | `gamedll` `replicated` `cheat` | Enable/disable overhang detection |
 | `recast_partitioning` | `0` | `gamedll` `replicated` `cheat` | 0 = watershed, 1 = monotone, 2 = layers |
+| `replay_debug` | `0` | `replicated` `release` |  |
 | `report_cliententitysim` | `false` | `clientdll` `cheat` | List all clientside simulations and time - will report and turn itself off. |
 | `report_clientthinklist` | `false` | `clientdll` `cheat` | List all clientside entities thinking and time - will report and turn itself off. |
+| `report_connection_failure_percentage` | `0.000000` | `developmentonly` `defensive` |  |
+| `reset_voice_on_input_stallout` | `false` | `userinfo` | If true, resets the input device when there was a long enough hitch between callbacks. |
 | `rope_averagelight` | `true` | `developmentonly` `clientdll` `defensive` | Makes ropes use average of cubemap lighting instead of max intensity. |
 | `rope_collide` | `1` | `developmentonly` `clientdll` `defensive` | Collide rope with the world |
 | `rope_shake` | `false` | `developmentonly` `clientdll` `defensive` |  |
@@ -2414,6 +2814,8 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `rr_debugrule` | `` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | If set to the name of the rule, that rule's score will be shown whenever a concept is passed into the response rules system. |
 | `rr_followup_maxdist` | `1800.000000` | `gamedll` `cheat` | 'then ANY' or 'then ALL' response followups will be dispatched only to characters within this distance. |
 | `rr_thenany_score_slop` | `0.000000` | `gamedll` `archive` `cheat` | When computing respondents for a 'THEN ANY' rule, all rule-matching scores within this much of the best score will be considered. |
+| `rtx_allow_blas_compact` | `true` | `developmentonly` `defensive` |  |
+| `rtx_allow_blas_create` | `true` | `developmentonly` `defensive` |  |
 | `rtx_dynamic_blas` | `true` | `developmentonly` `defensive` | Allow dynamic BLAS creation for geometry going through the compute shader skinning path. |
 | `rtx_dynamic_blas_caching` | `true` | `developmentonly` `defensive` | Cache dynamic BLAS if geometry has not changed |
 | `rtx_force_default_hitgroup` | `false` | `developmentonly` `defensive` | Forces all ray traced geometry to use default hit shaders instead of specialized ones. |
@@ -2453,6 +2855,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `sc_aggregate_show_outside_vis` | `false` | `developmentonly` |  |
 | `sc_allow_dithered_lod` | `true` | `developmentonly` `defensive` | Allow use of dithered lod transitions |
 | `sc_allow_dynamic_constant_batching` | `true` | `developmentonly` `defensive` |  |
+| `sc_allow_precomputed_vismembers` | `true` | `developmentonly` `defensive` |  |
 | `sc_allow_write_depth_before_blend` | `true` | `developmentonly` `defensive` |  |
 | `sc_barnlight_enable_precomputed_vis` | `true` | `developmentonly` `defensive` | Enable use of precomputed vis membership for lights (requires map restart) |
 | `sc_batch_layer_cb_updates` | `true` | `developmentonly` `defensive` |  |
@@ -2539,6 +2942,10 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `scene_vcdautosave` | `false` | `developmentonly` `clientdll` `defensive` | Create a savegame before VCD playback |
 | `screenmessage_notifytime` | `8.000000` | `developmentonly` `gamedll` `defensive` | How long to display screen message text |
 | `screenmessage_show` | `-1` | `cheat` | Enable display of console messages on screen. 1 = Enabled, 0 = Disabled, -1 = Enabled if vgui is not present |
+| `screenshot_height` | `-1` | `developmentonly` `defensive` | Screenshot height. -1 for screen height. |
+| `screenshot_prefix` | `shot` | `developmentonly` `defensive` | Set the screenshot auto naming prefix. |
+| `screenshot_subdir` | `screenshots` | `developmentonly` `defensive` | Set the screenshot directory. |
+| `screenshot_width` | `-1` | `developmentonly` `defensive` | Screenshot width. -1 for screen width. |
 | `script_attach_debugger_at_startup` | `false` | `developmentonly` `gamedll` `defensive` |  |
 | `script_break_in_native_debugger_on_error` | `false` | `developmentonly` `gamedll` `defensive` |  |
 | `sensitivity` | `1.250000` | `clientdll` `archive` `userinfo` `per_user` | Mouse sensitivity. |
@@ -2645,6 +3052,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `snd_mixer_master_dsp` | `1.000000` | `cheat` |  |
 | `snd_mixer_master_level` | `1.000000` | `cheat` |  |
 | `snd_musicvolume` | `1.000000` | `archive` | Music volume |
+| `snd_mute_losefocus` | `true` | `archive` |  |
 | `snd_mute_mvp_music_live_players` | `false` | `clientdll` `archive` `release` | If set, MVP music is muted if players from both teams are still alive. |
 | `snd_mvp_volume` | `0.160000` | `clientdll` `archive` `release` | Volume of MVP Music |
 | `snd_new_visualize` | `false` | `gamedll` `cheat` | Displays soundevent name played at it's 3d position |
@@ -2749,6 +3157,8 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `snd_surf_volume_slide` | `0.500000` | `clientdll` `archive` `release` | The volume of sliding along surfaces when surfing. |
 | `snd_tensecondwarning_volume` | `0.040000` | `clientdll` `archive` `release` | Volume of Ten Second Warnings |
 | `snd_toolvolume` | `1.000000` | `archive` | Volume of sounds in tools (e.g. Hammer, SFM) |
+| `snd_ui_positional` | `false` | `developmentonly` `cheat` |  |
+| `snd_ui_spatialization_spread` | `1.000000` | `developmentonly` `cheat` |  |
 | `snd_use_baked_occlusion` | `0.000000` | `replicated` `cheat` `release` |  |
 | `snd_vmix_override_mix_decay_time` | `-1.000000` | `cheat` | If set > 0, overrides how long the decay time is on all mix graphs (in seconds).
  |
@@ -2771,6 +3181,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `soundscape_radius_debug` | `false` | `clientdll` `cheat` | Prints current volume of radius sounds |
 | `soundscape_update_include_bots` | `false` | `developmentonly` `gamedll` `cheat` | Enable to calculate soundscape audio params for bots. |
 | `soundsystem_device_used` | `` | `developmentonly` `defensive` | Sound device in use (changing this does not change the soundsystem). |
+| `soundsystem_update_async` | `true` | `developmentonly` `defensive` |  |
 | `sparseshadowtree_cascade_mask` | `4` | `developmentonly` | Bitfield describing which cascades to generate/use SST for. (OR'd 1UL<<cascadeIndex, default is 1UL<<2 only, i.e. just cascade 2) |
 | `sparseshadowtree_copy_to_shadow_atlas_ps` | `true` | `developmentonly` | Copy layer from CS output to shadow atlas uses PS copy (vs CopyTexture). |
 | `sparseshadowtree_cs_debug_colors` | `false` | `developmentonly` | Output debug colors for SST CS. |
@@ -2797,6 +3208,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `sparseshadowtree_unpack_direct_to_shadow_atlas` | `false` | `developmentonly` | unpack SST directly into shadow atlas cascade vs via staging texture PS copy (NOTE - rendersystem fix reqd for AMD + driver fix required for NV + VK only. |
 | `sparseshadowtree_uv_frac_offset_x` | `0.000000` | `developmentonly` | uv x offset during copy to cascade. |
 | `sparseshadowtree_uv_frac_offset_y` | `0.000000` | `developmentonly` | uv y offset during copy to cascade. |
+| `spawngroup_ignore_timeouts` | `false` | `developmentonly` `defensive` |  |
 | `speaker_config` | `-1` | `archive` |  |
 | `spec_autodirector` | `true` | `clientdll` `clientcmd_can_execute` | Auto-director chooses best view modes while spectating |
 | `spec_autodirector_cameraman` | `-1` | `developmentonly` `clientdll` |  |
@@ -2818,12 +3230,17 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `spec_replay_bot` | `false` | `gamedll` `release` | Enable Spectator Hltv Replay when killed by bot |
 | `spec_replay_cache_ragdolls` | `true` | `developmentonly` `clientdll` `defensive` | when set to 0, ragdolls will settle dynamically before and after Killer Replay |
 | `spec_replay_colorcorrection` | `0.500000` | `developmentonly` `clientdll` `defensive` | Amount of color correction in deathcam replay |
-| `spec_replay_enable` | `0` | `reference` |  |
+| `spec_replay_enable` | `0` | `replicated` `release` `commandline_enforced` | Enable Killer Replay, requires hltv server running (0:off, 1:default, 2:force) |
 | `spec_replay_fadein` | `0.750000` | `developmentonly` `clientdll` `defensive` | Amount of time in seconds it takes to visually fade into replay, or into real-time after replay |
 | `spec_replay_fadeout` | `0.750000` | `developmentonly` `clientdll` `defensive` | Amount of time in seconds it takes to visually fade out of replay, or out of real-time before replay |
-| `spec_replay_leadup_time` | `0.000000` | `reference` |  |
+| `spec_replay_fullframe` | `true` | `developmentonly` `defensive` | Send full frame on every hltv replay transition |
+| `spec_replay_leadup_time` | `5.343800` | `replicated` `release` | Replay time in seconds before the highlighted event |
+| `spec_replay_message_time` | `9.500000` | `replicated` `release` | How long to show the message about Killer Replay after death. The best setting is a bit shorter than spec_replay_autostart_delay + spec_replay_leadup_time + spec_replay_winddown_time |
+| `spec_replay_on_death` | `false` | `replicated` `release` | When > 0, sets the mode whereas players see delayed replay, and are segregated into a domain of chat and voice separate from the alive players |
 | `spec_replay_others_experimental` | `false` | `developmentonly` `clientdll` `defensive` | Replay the last death of the round, if possible. Disabled on official servers by default. Experimental. |
 | `spec_replay_outline` | `1` | `developmentonly` `clientdll` `defensive` | Enable outline selecting victim in hltv replay: 0 - none; 1 - ouline YOU; 2 - outline YOU, with red ragdoll outline; 3 - normal spectator outlines |
+| `spec_replay_rate_base` | `1.000000` | `replicated` `release` | Base time scale of Killer Replay.Experimental. |
+| `spec_replay_rate_limit` | `3.000000` | `replicated` `release` | Minimum allowable pause between replay requests in seconds |
 | `spec_replay_rate_slowdown` | `1.000000` | `developmentonly` `clientdll` `defensive` | The part of Killer Replay right before death is played at this rate |
 | `spec_replay_rate_slowdown_length` | `0.500000` | `developmentonly` `clientdll` `defensive` | The part of Killer Replay right before death is played at this rate |
 | `spec_replay_review_sound` | `true` | `developmentonly` `clientdll` `defensive` | When set to non-0, a sound effect is played during Killer Replay |
@@ -2835,8 +3252,11 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `spec_show_xray` | `1` | `clientdll` `archive` `release` | If set to 1, you can see player outlines and name IDs through walls - who you can see depends on your team and mode |
 | `spec_track` | `0` | `developmentonly` `clientdll` `defensive` | Tracks an entity in spec mode |
 | `spec_usenumberkeys_nobinds` | `true` | `clientdll` `archive` | If set to 1, map voting and spectator view use the raw number keys instead of the weapon binds (slot1, slot2, etc). |
+| `splitscreen_mode` | `0` | `archive` `cheat` |  |
 | `ss_mimic` | `0` | `developmentonly` `clientdll` `cheat` | Split screen users mimic base player's CUserCmds |
-| `stats_display` | `0` | `reference` |  |
+| `ss_voice_hearpartner` | `false` | `developmentonly` `defensive` | Route voice between splitscreen players on same system. |
+| `stats_collect_gpu` | `false` | `developmentonly` `defensive` | While doing stats_display, collect GPU perf counters. Used for stats_print_gpu. |
+| `stats_display` | `0` | `developmentonly` `defensive` | Displays perf statistics information |
 | `stats_highlight_interval` | `10.000000` | `developmentonly` `clientdll` `defensive` | Interval between hightlight screens in the transition stats panel |
 | `steam_controller_haptics` | `true` | `clientdll` `release` |  |
 | `steamworks_sessionid_client` | `0` | `clientdll` `hidden` `userinfo` | The client session ID for the new steamworks gamestats. |
@@ -2876,6 +3296,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `sv_autoexec_mapname_cfg` | `false` | `gamedll` `release` | Execute a mapname cfg file on the server automatically in custom game modes that require it. |
 | `sv_autosave` | `true` | `developmentonly` `gamedll` `replicated` `defensive` | Set to 1 to autosave game on level transition. Does not affect autosave triggers. |
 | `sv_backspeed` | `0.600000` | `developmentonly` `gamedll` `clientdll` `replicated` | How much to slow down backwards motion |
+| `sv_banid_enabled` | `true` | `release` | Whether server supports banid command |
 | `sv_bhop_time_window` | `0.007812` | `gamedll` `clientdll` `replicated` `release` | sv_legacy_jump disabled only: The time window (in seconds) around landing where a jump press is considered a bhop attempt. |
 | `sv_bot_buy_decoy_weight` | `1.000000` | `gamedll` `release` | Given a bot will buy a grenade, controls the odds of the grenade type. Proportional to all other sv_bot_buy_*_weight convars. |
 | `sv_bot_buy_flash_weight` | `1.000000` | `gamedll` `release` | Given a bot will buy a grenade, controls the odds of the grenade type. Proportional to all other sv_bot_buy_*_weight convars. |
@@ -2893,19 +3314,21 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `sv_c4_upright_constraint_enabled` | `true` | `developmentonly` `gamedll` `defensive` | Use a constraint to keep C4 pointed upright when thrown |
 | `sv_c4_upright_constraint_strength` | `0.600000` | `developmentonly` `gamedll` `defensive` | How quickly the constraint converges |
 | `sv_chat_proximity` | `-1.000000` | `gamedll` `clientdll` `replicated` `release` |  |
-| `sv_cheats` | `false` | `reference` |  |
+| `sv_cheats` | `false` | `notify` `replicated` `release` | Allow cheats on server |
 | `sv_client_max_interp_ratio` | `5.000000` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | This can be used to limit the value of cl_interp_ratio for connected clients (only while they are connected). |
 | `sv_client_min_interp_ratio` | `0.000000` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | This can be used to limit the value of cl_interp_ratio for connected clients (only while they are connected).
  |
 | `sv_clip_penetration_traces_to_players` | `true` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `sv_clockcorrection_msecs` | `30.000000` | `gamedll` `release` | The server tries to keep each player's m_nTickBase withing this many msecs of the server absolute tickcount |
+| `sv_clockdbg` | `false` | `developmentonly` | Print spew related to server clock and ticking |
 | `sv_cloth_interp_rot` | `false` | `developmentonly` `gamedll` |  |
+| `sv_cluster` | `0` | `release` | Data center cluster this server lives in. |
 | `sv_coaching_enabled` | `false` | `developmentonly` `gamedll` `clientdll` `replicated` `release` | Allows spectating and communicating with a team ( 'coach t' or 'coach ct' ) |
 | `sv_competitive_minspec` | `true` | `gamedll` `clientdll` `notify` `replicated` `release` | Enable to force certain client convars to minimum/maximum values to help prevent competitive advantages. |
 | `sv_compute_per_bot_difficulty` | `false` | `developmentonly` `gamedll` `clientdll` `replicated` | 0 = compute all bot difficulties equally, 1 = compute unique bot difficulty for each bot  |
 | `sv_condense_late_buttons` | `true` | `developmentonly` `gamedll` `defensive` | When condensing late commands. Should we compress multiple moves of button presses into the target move? |
 | `sv_cq_delta_encode_svc_usercmds` | `true` | `developmentonly` `gamedll` | Delta encode svc_UserCmds message |
-| `sv_cq_min_queue` | `0` | `reference` |  |
+| `sv_cq_min_queue` | `0` | `developmentonly` `replicated` `defensive` | Server min buffer size. |
 | `sv_cq_trim_bloat_remainder` | `1` | `gamedll` `release` | When trimming a bloated CQ, leave at least N more commands than the minimum |
 | `sv_cq_trim_bloat_space` | `0` | `gamedll` `release` | When trimming a bloated CQ, try to leave room for N more commands to be added.  0 will trim only what is needed to remove the immediate bloat, a very large value will reset the whole queue. |
 | `sv_cq_trim_catchup_remainder` | `1` | `gamedll` `release` | When trimming an overful CQ due to app 'catchup' request, leave at least N more commands than the minimum |
@@ -2924,18 +3347,29 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `sv_damage_prediction_allowed` | `true` | `gamedll` `clientdll` `replicated` `release` |  |
 | `sv_deadtalk` | `false` | `gamedll` `clientdll` `notify` `replicated` `release` `commandline_enforced` | Dead players can speak (voice, text) to the living |
 | `sv_debug_client_not_in_pvs` | `false` | `gamedll` `cheat` | If set, draw failed client PVS checks with red box |
+| `sv_debug_overlays_bandwidth` | `65536` | `release` | Broadcast server debug overlays traffic |
+| `sv_debug_overlays_broadcast` | `false` | `notify` `cheat` `release` | Broadcast server debug overlays |
 | `sv_debug_player_use` | `0` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | Visualizes +use logic. Green cross=trace success, Red cross=trace too far, Green box=radius success |
 | `sv_debugroundstats` | `false` | `developmentonly` `gamedll` |  |
+| `sv_deltaticks_enforce` | `2` | `release` | By default, player must ack delta ticks in order. How to enforce it: 2 = kick all clients, 1 = kick only TV clients, 0 = do not kick. |
+| `sv_deltaticks_log` | `2` | `release` | Whether diagnostic logging is enabled when clients ack delta ticks out of order. Policy: 2 = log all out of order acks, 1 = log only when disconnect is triggered, 0 = do not log. |
 | `sv_dev_damage_use_netvars` | `true` | `developmentonly` `gamedll` `clientdll` `replicated` | Whether we should use network vars (true) or legacy messages (false). |
+| `sv_dev_entitydeltapadding_extra_max` | `0` | `developmentonly` `defensive` | When encoding entity deltas, append on a random number of extra bytes.  This happens after sv_dev_entitydeltapadding_min_size. |
+| `sv_dev_entitydeltapadding_extra_min` | `0` | `developmentonly` `defensive` | When encoding entity deltas, append on a random number of extra bytes.  This happens after sv_dev_entitydeltapadding_min_size. |
+| `sv_dev_entitydeltapadding_min_size` | `0` | `developmentonly` `defensive` | When encoding entity deltas, if the delta size is < N bytes, then shove in N dummy bytes.  This happens before sv_dev_entitydeltapadding_extra_min/sv_dev_entitydeltapadding_extra_max |
 | `sv_disable_immunity_alpha` | `false` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | If set, clients won't slam the player model render settings each frame for immunity [mod authors use this] |
 | `sv_disable_networkable_loadouts` | `false` | `developmentonly` `gamedll` `clientdll` `hidden` `replicated` `defensive` |  |
 | `sv_disable_observer_interpolation` | `false` | `gamedll` `clientdll` `replicated` `release` | Disallow interpolating between observer targets on this server. |
 | `sv_disable_querycache` | `false` | `developmentonly` `gamedll` `clientdll` `replicated` `cheat` | debug - disable trace query cache |
 | `sv_disable_radar` | `0` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | 0: regular radar; 1: always disabled; 2: disabled in warmup |
+| `sv_disable_reliable_delta_retransmit` | `true` | `developmentonly` `defensive` | Assume that a reliable entity delta will be ack'ed and send future deltas relative to the last reliable delta. |
 | `sv_disable_teamselect_menu` | `false` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Disable teamselect menu on clients |
 | `sv_disconnected_player_data_hold_time` | `60` | `gamedll` `clientdll` `replicated` `release` | Duration, in seconds, to hold onto the data of disconnected players, for scoreboard display. |
 | `sv_disconnected_players_cleanup_delay` | `0` | `gamedll` `release` `commandline_enforced` | Delay between player disconnecting and their corpse getting cleaned up. |
 | `sv_early_network_message_processing` | `false` | `developmentonly` `gamedll` | Processes network messages on the server before entities think, instead of at the end of the tick. |
+| `sv_enable_alternate_baselines` | `1` | `release` | Allow alternate baseline system, set to 2 for debugging spew. |
+| `sv_enable_donttransmit` | `true` | `developmentonly` | When encoding entity deltas, instead of unreliably deducing explicit deletions, actually send list of existing but not networked entities (dont_transmit list) to each client. |
+| `sv_enable_removearrayelementsoutsidemetadatabounds` | `false` | `release` |  |
 | `sv_enablebunnyhopping` | `false` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Allow jump speed to exceed 1.1x max speed |
 | `sv_endmatch_item_drop_interval` | `1.000000` | `developmentonly` `gamedll` `clientdll` `replicated` | The time between drops on the end match scoreboard  |
 | `sv_endmatch_item_drop_interval_ancient` | `3.500000` | `developmentonly` `gamedll` `clientdll` `replicated` | The time between drops on the end match scoreboard for ancient items  |
@@ -2943,17 +3377,20 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `sv_endmatch_item_drop_interval_mythical` | `1.250000` | `developmentonly` `gamedll` `clientdll` `replicated` | The time between drops on the end match scoreboard for mythical items  |
 | `sv_endmatch_item_drop_interval_rare` | `1.000000` | `developmentonly` `gamedll` `clientdll` `replicated` | The time between drops on the end match scoreboard for rare items  |
 | `sv_ent_showonlyhitbox` | `-1` | `gamedll` `cheat` |  |
+| `sv_extra_client_connect_time` | `15.000000` | `developmentonly` `defensive` | Seconds after client connect during which extra frames are buffered to prevent non-delta'd update |
 | `sv_extract_ammo_from_dropped_weapons` | `false` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` |  |
 | `sv_extreme_strafe_accuracy_fishtail` | `0.000000` | `developmentonly` `gamedll` `clientdll` `replicated` | Number of degrees of aim 'fishtail' when making an extreme strafe direction change |
 | `sv_fade_player_visibility_farz` | `false` | `gamedll` `clientdll` `replicated` `release` |  |
 | `sv_falldamage_scale` | `1.000000` | `gamedll` `clientdll` `replicated` `release` |  |
 | `sv_falldamage_to_below_player_multiplier` | `1.000000` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Scale damage when distributed across two players |
 | `sv_falldamage_to_below_player_ratio` | `0.000000` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Landing on a another player's head gives them this ratio of the damage. |
+| `sv_filterban` | `1` | `developmentonly` `defensive` | Set packet filtering by IP mode |
 | `sv_flashed_amount_for_blind_kill` | `0.700000` | `gamedll` `release` | Minimum flashed alpha value for a player to be awarded a blind kill on the kill feed. |
 | `sv_footsteps` | `1.000000` | `developmentonly` `gamedll` `clientdll` `notify` `replicated` | Play footstep sound for players |
 | `sv_force_team_intro_random` | `0` | `developmentonly` `gamedll` |  |
 | `sv_force_team_intro_variant` | `0` | `developmentonly` `gamedll` |  |
 | `sv_force_transmit_ents` | `false` | `developmentonly` `gamedll` | Will transmit all entities to client, regardless of PVS conditions (will still skip based on transmit flags, however). |
+| `sv_fps_max` | `0.000000` | `developmentonly` `hidden` `defensive` | Dedicated server frame rate limiter. 0=tick rate. Only applies to the dedicated server. |
 | `sv_freeze_camera_angles` | `0.000000 0.000000 0.000000` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` |  |
 | `sv_freeze_camera_enabled` | `false` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` |  |
 | `sv_freeze_camera_min_remaining` | `3` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` |  |
@@ -2979,14 +3416,19 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `sv_health_approach_speed` | `10.000000` | `gamedll` `replicated` `release` `commandline_enforced` |  |
 | `sv_hegrenade_damage_multiplier` | `1.000000` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` |  |
 | `sv_hegrenade_radius_multiplier` | `1.000000` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` |  |
+| `sv_hibernate_postgame_delay` | `5.000000` | `release` | # of seconds to wait after final client leaves before hibernating. |
+| `sv_hibernate_when_empty` | `true` | `release` | Puts the server into extremely low CPU usage mode when no clients connected |
 | `sv_hide_ent_in_pvs` | `-1` | `developmentonly` `gamedll` |  |
 | `sv_hide_roundtime_until_seconds` | `0` | `gamedll` `clientdll` `replicated` `release` |  |
 | `sv_highlight_distance` | `500.000000` | `gamedll` `clientdll` `replicated` `release` |  |
 | `sv_highlight_duration` | `3.500000` | `gamedll` `clientdll` `replicated` `release` |  |
 | `sv_hitbox_debug` | `false` | `developmentonly` `gamedll` `defensive` |  |
+| `sv_hosting_lobby` | `false` | `developmentonly` `replicated` |  |
+| `sv_hoststate_quit_syscall` | `false` | `release` | When enabled, game server will quit immediately via syscall instead of running host states shutdown sequence |
 | `sv_human_autojoin_team` | `0` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Force human players on to a team. 0 to disable. |
 | `sv_ignoregrenaderadio` | `false` | `gamedll` `release` `commandline_enforced` | Turn off Fire in the hole messages |
 | `sv_infinite_ammo` | `0` | `gamedll` `clientdll` `replicated` `cheat` `release` `commandline_enforced` | Player's active weapon will never run out of ammo |
+| `sv_instancebaselines` | `true` | `developmentonly` | Enable instanced baselines. Saves network overhead. |
 | `sv_invites_only_mainmenu` | `false` | `gamedll` `clientdll` `replicated` `release` | If turned on, will ignore all invites when user is playing a match |
 | `sv_jump_impulse` | `301.993378` | `gamedll` `clientdll` `replicated` `release` | Initial upward velocity for player jumps; sqrt(2*gravity*height). |
 | `sv_jump_precision_enable` | `true` | `gamedll` `clientdll` `replicated` `release` | Enable jump precision. Some game modes benefit from being able to turn this off. |
@@ -3001,12 +3443,21 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
  |
 | `sv_lagcomp_filterbyviewangle` | `true` | `gamedll` `cheat` | If true, player pawn will filter lag compensation targets by their view angle. |
 | `sv_lagcompensationforcerestore` | `true` | `gamedll` `cheat` | Don't test validity of a lag comp restore, just do it. |
+| `sv_lan` | `false` | `release` | Server is a lan server ( no heartbeat, no authentication, no non-class C addresses ) |
 | `sv_late_commands_allowed` | `5` | `gamedll` `release` | Allow N late commands to run at 0 timescale prior to running an on-time command. Negative values for network round trip based calculation with a hard cap of the of absolute value |
 | `sv_legacy_jump` | `false` | `gamedll` `clientdll` `replicated` `release` | Whether or not to use the pre-2026 jump code. |
 | `sv_lightquery_debug` | `false` | `gamedll` `cheat` |  |
 | `sv_limit_buyrandom_per_life` | `true` | `gamedll` `release` | Enable to limit buyrandom command to only run once per player life |
 | `sv_log_http_record_before_any_listeners` | `false` | `gamedll` `release` |  |
+| `sv_log_onefile` | `false` | `archive` `release` | Log server information to only one file. |
 | `sv_log_roundstats` | `true` | `gamedll` `release` |  |
+| `sv_logbans` | `false` | `archive` `release` | Log server bans in the server logs. |
+| `sv_logblocks` | `false` | `release` | If true when log when a query is blocked (can cause very large log files) |
+| `sv_logecho` | `true` | `archive` `release` | Echo log information to the console. |
+| `sv_logfile` | `false` | `archive` `release` | Log server information in the log file. |
+| `sv_logflush` | `false` | `archive` `release` | Flush the log file to disk on each write (slow). |
+| `sv_logsdir` | `logs` | `archive` `release` | Folder in the game directory where server logs will be stored. |
+| `sv_long_frame_ms` | `0.000000` | `developmentonly` `defensive` | If a server frame takes longer than N ms, complain about it.  (Dedicated server only.)  See also engine_frametime_warnings_enable. |
 | `sv_mapvetopickvote_maps` | `de_cache,de_anubis,de_inferno,de_mirage,de_dust2,de_nuke,de_ancient` | `gamedll` `release` | Which maps are used for map veto pick sequence |
 | `sv_mapvetopickvote_phase_duration` | `[1:5][2:15][3:20][4:10][5:10][6:5]` | `gamedll` `release` | How many seconds each phase lasts |
 | `sv_mapvetopickvote_rnd` | `false` | `gamedll` `release` | When enabled will shuffle veto pick maps list order every time |
@@ -3016,18 +3467,32 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `sv_matchperfstats_maxclientperfsamples` | `100` | `developmentonly` `gamedll` `defensive` | Don't retain more than N perf samples for any given client |
 | `sv_max_deathmatch_respawns_per_tick` | `0` | `gamedll` `release` `commandline_enforced` |  |
 | `sv_max_distance_transmit_footsteps` | `1250.000000` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | Maximum distance to transmit footstep sound effects. |
+| `sv_max_queries_sec` | `3.000000` | `release` | Maximum queries per second to respond to from a single IP address. |
+| `sv_max_queries_sec_global` | `60.000000` | `release` | Maximum queries per second to respond to from anywhere. |
+| `sv_max_queries_window` | `30.000000` | `release` | Window over which to average queries per second averages. |
+| `sv_max_unreliable_delta_size` | `4096` | `developmentonly` `defensive` | Maximum allowable entity delta size over unreliable delivery. |
+| `sv_maxclientframes` | `128` | `developmentonly` `defensive` |  |
+| `sv_maxrate` | `0` | `replicated` `release` | Max bandwidth rate allowed on server, 0 == unlimited |
+| `sv_maxreplay` | `0.000000` | `developmentonly` `defensive` | Maximum replay time in seconds |
 | `sv_maxspeed` | `320.000000` | `gamedll` `clientdll` `notify` `replicated` `release` |  |
 | `sv_maxunlag` | `1.000000` | `gamedll` `clientdll` `replicated` `release` | Maximum lag compensation in seconds |
 | `sv_maxunlag_player` | `-1.000000` | `gamedll` `release` | If >0, maximumum lag compensation used for other human pawns. Applied after sv_maxunlag! |
 | `sv_maxuptimelimit` | `0.000000` | `gamedll` `release` | Number of hours to operate before trying sv_shutdown. |
 | `sv_maxvelocity` | `3500.000000` | `gamedll` `clientdll` `replicated` `release` | Maximum speed any ballistically moving object is allowed to attain per axis. |
+| `sv_memlimit` | `0` | `cheat` `release` | If set, whenever a game ends, if the total memory used by the server is greater than this # of megabytes, the server will exit. |
+| `sv_merge_changes_after_tick_with_calcdelta` | `1` | `release` | This fixes bugs where pure calcdelta is used due to recipient changing but it doesn't pick up a field change where the value was changed back to same value as the from snapshot even though the destination fields change list does note the change. Set to 2 to spew any changes merged in by this fix. |
 | `sv_min_jump_landing_sound` | `260.000000` | `gamedll` `clientdll` `replicated` `release` |  |
 | `sv_minimum_desired_chicken_count` | `0` | `gamedll` `replicated` `release` | Minimum number of chickens to attempt to spawn in the map |
+| `sv_minrate` | `5000` | `replicated` `release` | Min bandwidth rate allowed on server, 0 == unlimited |
+| `sv_mmqueue_reservation` | `` | `developmentonly` `dontrecord` | Server queue reservation |
+| `sv_mmqueue_reservation_extended_timeout` | `21` | `developmentonly` | Extended time in seconds before mmqueue reservation expires. |
+| `sv_mmqueue_reservation_timeout` | `21` | `developmentonly` | Time in seconds before mmqueue reservation expires. |
 | `sv_mover_maxslope` | `0.700000` | `developmentonly` `gamedll` `clientdll` `notify` `replicated` `defensive` | The maximum slope the player can overcome [-] |
 | `sv_mover_pogodampingratio` | `1.000000` | `developmentonly` `gamedll` `clientdll` `notify` `replicated` `defensive` | The capsule pogo stick damping ratio [-] |
 | `sv_mover_pogofrequency` | `10.000000` | `developmentonly` `gamedll` `clientdll` `notify` `replicated` `defensive` | The capsule pogo stick frequency [hz]. |
 | `sv_mute_players_with_social_penalties` | `true` | `developmentonly` `gamedll` `defensive` |  |
 | `sv_networkvar_log_fullchanges` | `false` | `developmentonly` `gamedll` | Log FUL_FULL_EDICT_CHANGED calls. |
+| `sv_networkvar_perfieldtracking` | `true` | `release` | Track individual field offset changes, rather than a single dirty flag for the whole entity. |
 | `sv_no_navmesh` | `false` | `developmentonly` `gamedll` `cheat` | Block loading of the navmesh. Unplayable, only used for memory sampling. |
 | `sv_noclipaccelerate` | `5.000000` | `gamedll` `clientdll` `archive` `notify` `replicated` |  |
 | `sv_noclipduringpause` | `false` | `gamedll` `clientdll` `replicated` `cheat` | If cheats are enabled, then you can noclip with the game paused (for doing screenshots, etc.). |
@@ -3039,9 +3504,18 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `sv_nowinpanel` | `false` | `developmentonly` `gamedll` `defensive` | Turn on/off win panel on server |
 | `sv_optimizedmovement` | `true` | `developmentonly` `gamedll` `clientdll` `replicated` |  |
 | `sv_outofammo_indicator` | `false` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` |  |
+| `sv_outofpvsentityupdates` | `false` | `developmentonly` |  |
 | `sv_override_max_health` | `0` | `gamedll` `release` |  |
 | `sv_parallel_checktransmit` | `0` | `gamedll` `release` | Set to 1 to use threaded checkentities for transmit/pvs on listen servers, 2 for dedicated servers. |
+| `sv_parallel_packentities` | `2` | `release` | Set to 1 to use threaded snapshot sending on listen servers, 2 for dedicated servers. |
+| `sv_parallel_prepare_client_updates` | `false` | `developmentonly` |  |
+| `sv_parallel_sendsnapshot` | `2` | `release` | 0: run all send jobs on main thread; 1: send jobs run asynchronously (except on dedicated server); 2: send jobs asynchronously; 3: send jobs run in parallel but block to not overlap the next tick; 4: main server clients' send jobs run in parallel, then HLTV server jobs; this approximately matches pre-async profile for a single HLTV server configuration |
 | `sv_party_mode` | `false` | `gamedll` `clientdll` `replicated` `release` | Party!! |
+| `sv_password` | `` | `protected` `notify` `dontrecord` `release` | Server password for entry into multiplayer games |
+| `sv_pausable` | `0` | `release` | Is the server pausable. |
+| `sv_pausable_dev` | `true` | `developmentonly` | Whether listen server is pausable when running -dev and playing solo against bots |
+| `sv_pausable_dev_ds` | `false` | `developmentonly` | Whether dedicated server is pausable when running -dev and playing solo against bots |
+| `sv_pause_on_console_open` | `false` | `archive` | 1 = Pause the game when pressing ~ to open the console. CTRL+~ opens the console without pause. |
 | `sv_pause_on_tick` | `0` | `developmentonly` `gamedll` `replicated` `cheat` | Tick count to pause on |
 | `sv_phys_animated_hierarchy` | `true` | `developmentonly` `gamedll` `defensive` |  |
 | `sv_phys_async_buoyancy_update` | `false` | `developmentonly` `gamedll` `replicated` `defensive` | If true, server buoyancy motion controllers are updated in an async job after the tick has completed. |
@@ -3066,24 +3540,37 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `sv_pushaway_player_force` | `450.000000` | `developmentonly` `gamedll` `clientdll` `replicated` `cheat` | How hard the player is pushed away from physics objects (falls off with inverse square of distance). |
 | `sv_pvs_cache_query_inflate_amount` | `0` | `developmentonly` `gamedll` |  |
 | `sv_pvs_entity` | `-1` | `developmentonly` `gamedll` `defensive` | If set, only allows this ent index to network (other than players and things that force sending). |
-| `sv_pvs_max_distance` | `0.000000` | `reference` |  |
+| `sv_pvs_max_distance` | `0.000000` | `replicated` `release` | if set, adds a maximum range to PVS/PAS checks |
 | `sv_pvs_random` | `false` | `developmentonly` `gamedll` `defensive` | If set, objects blink in/out of pvs randomly. |
 | `sv_pvs_shadows_include_env` | `false` | `gamedll` `replicated` `release` |  |
 | `sv_quantize_movement_input` | `true` | `gamedll` `clientdll` `replicated` `release` | Quantize movement input values. Enabling this restricts players from using analog input to move at fractional speeds normally impossible with digital button input. |
 | `sv_radio_throttle_window` | `10.000000` | `gamedll` `release` | The number of seconds before radio command tokens refresh. |
 | `sv_ragdoll_lru_debug` | `false` | `gamedll` `replicated` `cheat` |  |
+| `sv_rcon_banpenalty` | `0` | `developmentonly` `defensive` | Number of minutes to ban users who fail rcon authentication |
+| `sv_rcon_log` | `true` | `developmentonly` `defensive` | Enable/disable rcon logging. |
+| `sv_rcon_maxfailures` | `10` | `developmentonly` `defensive` | Max number of times a user can fail rcon authentication before being banned |
+| `sv_rcon_minfailures` | `5` | `developmentonly` `defensive` | Number of times a user can fail rcon authentication in sv_rcon_minfailuretime before being banned |
+| `sv_rcon_minfailuretime` | `30.000000` | `developmentonly` `defensive` | Number of seconds to track failed rcon authentications |
 | `sv_record_item_time_data` | `false` | `gamedll` `release` | Turn on recording of per player item time data into the server log. |
+| `sv_recvbuf_messages` | `1024` | `developmentonly` `defensive` | Max number of messages that can be queued in a netchan receive buffer for an ordinary connection from a client. |
 | `sv_regeneration_force_on` | `false` | `gamedll` `cheat` | Cheat to test regenerative health systems |
 | `sv_regeneration_wait_time` | `1.000000` | `developmentonly` `gamedll` `replicated` `defensive` |  |
+| `sv_region` | `-1` | `release` | The region of the world to report this server in. |
 | `sv_reliableavatardata` | `false` | `gamedll` `clientdll` `replicated` `release` | Use server overrides for steam avatars |
 | `sv_remapper_loopsoundfix` | `false` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `sv_remapper_range_multiplier` | `1.000000` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `sv_remove_ent_from_pvs` | `0` | `developmentonly` `gamedll` |  |
+| `sv_replay_group_id` | `0` | `release` | The replay group that this server will be uploading files to |
+| `sv_replaysdir` | `replays` | `developmentonly` `defensive` | Directory to store replays in |
+| `sv_reserve_slots_for_reconnecting_players_kick_prior` | `true` | `developmentonly` `defensive` | Kick a previously connected player with the same steamID if a replacement comes along |
 | `sv_rollangle` | `0.000000` | `developmentonly` `gamedll` `clientdll` `notify` `replicated` | Max view roll angle |
 | `sv_rollspeed` | `200.000000` | `developmentonly` `gamedll` `clientdll` `notify` `replicated` |  |
 | `sv_runcmds` | `true` | `developmentonly` `gamedll` `defensive` |  |
 | `sv_script_think_interval` | `0.100000` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
+| `sv_search_key` | `` | `release` |  |
+| `sv_search_team_key` | `public` | `release` | When initiating team search, set this key to match with known opponents team |
 | `sv_sellback_enabled` | `true` | `gamedll` `clientdll` `replicated` `release` | Determines whether players can undo purchases in the buy menu |
+| `sv_sendtables` | `1` | `developmentonly` | Force full sendtable sending path. |
 | `sv_sequence_debug` | `-1` | `developmentonly` `gamedll` `defensive` |  |
 | `sv_sequence_debug2` | `-1` | `developmentonly` `gamedll` `defensive` |  |
 | `sv_sequence_model_substring` | `` | `developmentonly` `gamedll` `defensive` |  |
@@ -3106,11 +3593,13 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
  |
 | `sv_showlagcompensation_rec` | `0.000000` | `developmentonly` `gamedll` | If > 0, show lag compensation hitboxes as they're recorded. Value is for how long. |
 | `sv_showplayerhitboxes` | `0` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | Show lag compensated hitboxes for the specified player index whenever a player fires. |
+| `sv_shutdown_immediately_on_request` | `false` | `developmentonly` `defensive` | The server will always shutdown on receiving the shutdown request, even if not hibernating |
 | `sv_skel_constraints_enable` | `false` | `replicated` `cheat` |  |
 | `sv_skip_update_animations` | `false` | `developmentonly` `gamedll` | Enable to skip game animations |
 | `sv_skirmish_id` | `0` | `gamedll` `clientdll` `replicated` `release` | Dedicated server skirmish id to run |
 | `sv_skyname` | `sky_urb01` | `gamedll` `clientdll` `archive` `replicated` | Current name of the skybox texture |
 | `sv_smoke_volume_blind_start` | `0.200000` | `developmentonly` `clientdll` |  |
+| `sv_snapshot_unlimited` | `false` | `replicated` `release` | For debugging, don't throw away old snapshots so that if you break in debugger (on remote client or server) it won't require an uncompressed update to resume.  You may run out of memory of course... |
 | `sv_sniper_tracer_innacuracy` | `0.085000` | `developmentonly` `gamedll` `clientdll` `replicated` | How inaccurate a sniper shot can be before we trip sv_sniper_tracer_mode behavior. |
 | `sv_sniper_tracer_innacuracy_length` | `200.000000` | `developmentonly` `gamedll` `clientdll` `replicated` | How far should the tracer draw if we trip sv_sniper_tracer_mode behavior. |
 | `sv_sniper_tracer_mode` | `1` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | Mode for sniper tracers. 0: legacy, 1: hide when more than sv_sniper_tracer_innacuracy inaccurate. |
@@ -3125,17 +3614,25 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `sv_staminamax` | `80.000000` | `gamedll` `clientdll` `replicated` `release` | Maximum stamina penalty |
 | `sv_staminarecoveryrate` | `60.000000` | `gamedll` `clientdll` `replicated` `release` | Rate at which stamina recovers (units/sec) |
 | `sv_standable_normal` | `0.700000` | `gamedll` `clientdll` `replicated` `cheat` `release` |  |
+| `sv_stats` | `true` | `developmentonly` `defensive` | Collect CPU usage stats |
+| `sv_steamauth_correct` | `false` | `release` | Correct behavior |
+| `sv_steamauth_enforce` | `2` | `release` | By default, player must maintain a reliable connection to Steam servers. When player Steam session drops, enforce it: 2 = instantly kick, 1 = kick at next spawn, 0 = do not kick. |
+| `sv_steamauth_ignore_localhost` | `true` | `release` | Ignore VAC and auth errors for client connected via localhost address or in-engine loopback |
+| `sv_steamgroup` | `` | `notify` `release` | The ID of the steam group that this server belongs to. You can find your group's ID on the admin profile page in the steam community. |
+| `sv_steamgroup_exclusive` | `false` | `release` | If set, only members of Steam group will be able to join the server when it's empty, public people will be able to join the server only if it has players. |
 | `sv_step_move_vel_min` | `64.000000` | `gamedll` `clientdll` `replicated` `cheat` | Min velocity for step move. |
 | `sv_stepsize` | `18.000000` | `developmentonly` `gamedll` `clientdll` `notify` `replicated` |  |
 | `sv_stopspeed` | `80.000000` | `gamedll` `clientdll` `notify` `replicated` `release` | Minimum stopping speed when on ground. |
 | `sv_strafing_inaccuracy_bias` | `0.500000` | `gamedll` `clientdll` `replicated` `cheat` `release` |  |
 | `sv_strafing_inaccuracy_enabled` | `false` | `gamedll` `clientdll` `replicated` `cheat` `release` |  |
 | `sv_strafing_inaccuracy_scale` | `0.100000` | `gamedll` `clientdll` `replicated` `cheat` `release` |  |
+| `sv_stressbots` | `false` | `release` | If set to 1, the server calculates data and fills packets to bots. Used for perf testing. |
 | `sv_strict_notarget` | `false` | `developmentonly` `gamedll` `defensive` | If set, notarget will cause entities to never think they are in the pvs |
 | `sv_subtick_movement_view_angles` | `true` | `gamedll` `clientdll` `replicated` `release` | Whether or not subtick view angles are taken into account during movement. |
 | `sv_suppress_friendlyfire_decals` | `true` | `developmentonly` `gamedll` |  |
 | `sv_suppress_viewpunch` | `false` | `developmentonly` `gamedll` `clientdll` `replicated` `cheat` |  |
 | `sv_surf_sounds` | `false` | `gamedll` `clientdll` `replicated` `release` | Should we try to play sounds for surf? |
+| `sv_tags` | `` | `notify` `release` | Server tags. Used to provide extra information to clients when they're browsing for servers. Separate tags with a comma. |
 | `sv_talk_after_dying_time` | `0.000000` | `gamedll` `clientdll` `replicated` `release` | The number of seconds a player can continue talking after dying as if they were still alive |
 | `sv_talk_enemy_dead` | `false` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Dead players can hear all dead enemy communication (voice, chat) |
 | `sv_talk_enemy_living` | `false` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Living players can hear all living enemy communication (voice, chat) |
@@ -3143,8 +3640,11 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `sv_teamid_overhead_always_prohibit` | `false` | `gamedll` `clientdll` `notify` `replicated` `release` | Determines whether cl_teamid_overhead_always is prohibited. |
 | `sv_teamid_overhead_maxdist` | `0` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | If >0, server will override cl_teamid_overhead_maxdist |
 | `sv_teamid_overhead_maxdist_spec` | `0` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | If >0, server will override cl_teamid_overhead_maxdist_spec |
-| `sv_tick_parallel_with_client` | `false` | `reference` |  |
+| `sv_temp_baseline_string_table_buffer_size` | `524288` | `developmentonly` `defensive` | Buffer size for writing string table baselines |
+| `sv_tick_parallel_with_client` | `false` | `developmentonly` | Runs the final server tick of the frame in parallel with client work |
+| `sv_tick_snapshot_sort_entities` | `true` | `developmentonly` |  |
 | `sv_timebetweenducks` | `0.400000` | `gamedll` `clientdll` `replicated` `release` | Minimum time before recognizing consecutive duck key |
+| `sv_timeout` | `20.000000` | `developmentonly` `defensive` | After this many seconds without a message from fully connected client, the client is dropped |
 | `sv_turbophysics` | `false` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | Turns on turbo physics |
 | `sv_turning_inaccuracy_angle_min` | `4.000000` | `gamedll` `clientdll` `replicated` `cheat` `release` |  |
 | `sv_turning_inaccuracy_decay` | `0.800000` | `gamedll` `clientdll` `replicated` `cheat` `release` |  |
@@ -3152,14 +3652,20 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `sv_unlag` | `true` | `developmentonly` `gamedll` | Enables player lag compensation |
 | `sv_unlag_debug` | `false` | `developmentonly` `gamedll` |  |
 | `sv_unlag_fixstuck` | `false` | `developmentonly` `gamedll` | Disallow backtracking a player for lag compensation if it will cause them to become stuck |
+| `sv_unlockedchapters` | `1` | `archive` | Highest unlocked game chapter. |
+| `sv_unpause_on_console_close` | `false` | `archive` | 1 = Unpause the game when pressing ~ to close the console. 0 = Leave the game paused. |
 | `sv_use_hi_pri_context_switch_time` | `1.000000` | `gamedll` `clientdll` `replicated` `release` | +use search behaves as though high priority items are usable for this long after they become unusable to avoid players accidentally performing a different action. |
 | `sv_use_playercache` | `true` | `gamedll` `clientdll` `replicated` `cheat` | Cache off player bounds for traces. |
 | `sv_use_pvs_cache` | `false` | `developmentonly` `gamedll` |  |
+| `sv_usenetworkvars` | `true` | `developmentonly` `defensive` | Use networkvar system. |
 | `sv_usercmd_custom_random_seed` | `false` | `gamedll` `release` | When enabled server will populate an additional random seed independent of the client |
 | `sv_usercmd_execute_warning_ms` | `5.000000` | `gamedll` `archive` | Emit a warning if we spend more than N ms executing user commands for a single player |
 | `sv_vac_webapi_auth_key` | `` | `gamedll` `release` | Key for when posting to vac related webapis. |
 | `sv_versus_screen_scene_id` | `0` | `gamedll` `release` `commandline_enforced` | Determines which scene is used for the versus screen. |
+| `sv_visiblemaxplayers` | `-1` | `release` | Overrides the max players reported to prospective clients |
 | `sv_voice_proximity` | `-1.000000` | `gamedll` `clientdll` `replicated` `release` |  |
+| `sv_voicecodec` | `vaudio_speex` | `release` | Specifies which voice codec DLL to use in a game. Set to the name of the DLL without the extension. |
+| `sv_voiceenable` | `true` | `archive` `notify` `release` |  |
 | `sv_vote_allow_in_warmup` | `false` | `gamedll` `release` | Allow voting during warmup? |
 | `sv_vote_allow_spectators` | `false` | `gamedll` `release` | Allow spectators to initiate votes? |
 | `sv_vote_command_delay` | `2.000000` | `gamedll` `release` | How long after a vote passes until the action happens |
@@ -3200,35 +3706,108 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `sv_weapon_swap_difficulty_near_hi_pri` | `2` | `gamedll` `clientdll` `replicated` `release` | 0 = Cone searches easily reach past high priority items to swap weapons. 1 = Cone searches are narrowed and require that the weapon is strictly closer. 2 = cone searches are disabled near high priority items |
 | `sv_workshop_allow_other_maps` | `true` | `gamedll` `release` | When hosting a workshop collection, users can play other workshop map on this server when it is empty and then mapcycle into this server collection. |
 | `sv_workshop_map_save_data_max_filesize_mb` | `1` | `gamedll` `release` `commandline_enforced` |  |
+| `sys_minidumpexpandedspew` | `true` | `developmentonly` `defensive` |  |
+| `sys_minidumpspewlines` | `2000` | `release` | Lines of crash dump console spew to keep. |
 | `target_scan_use_query_cache` | `true` | `developmentonly` `gamedll` `defensive` |  |
 | `teleport_trigger_debug` | `false` | `developmentonly` `gamedll` |  |
 | `testscript_debug` | `false` | `developmentonly` `defensive` | Debug test scripts. |
 | `think_limit` | `10.000000` | `gamedll` `clientdll` `replicated` `release` | Maximum think time in milliseconds, warning is printed if this is exceeded. |
+| `thread_pool_option` | `-1` | `hidden` `release` | Thread pool option |
 | `throttle_expensive_ai` | `false` | `developmentonly` `gamedll` `defensive` |  |
+| `timedemo_end` | `-1` | `release` | Ends timedemo on given tick. |
+| `timedemo_start` | `-1` | `release` | Starts timedemo on given tick. |
 | `toast_manager_override_duration` | `-1.000000` | `developmentonly` `clientdll` |  |
 | `tool_spawned_model_scales` | `1.000000 1.000000 1.000000` | `developmentonly` `gamedll` `replicated` |  |
 | `tools_stall_monitor_break_on_unknown_cause` | `false` | `developmentonly` | Break on unknown stall cause |
 | `trigger_fan_debug` | `false` | `developmentonly` `gamedll` `clientdll` `replicated` |  |
 | `trigger_fan_player_windblock_debug` | `false` | `developmentonly` `gamedll` `clientdll` `replicated` |  |
 | `trusted_launch` | `0` | `clientdll` `archive` | Trusted launch status |
-| `tv_advertise_watchable` | `false` | `reference` |  |
+| `tv_advertise_watchable` | `false` | `protected` `notify` `dontrecord` `release` | GOTV advertises the match as watchable via game UI, clients watching via UI will not need to type password |
 | `tv_allow_autorecording_index` | `-1` | `gamedll` `release` | When >=0 restricts autorecording only to the specified TV index |
 | `tv_allow_camera_man` | `true` | `developmentonly` `gamedll` `defensive` | Auto director allows spectators to become camera man |
 | `tv_allow_camera_man_steamid` | `0` | `gamedll` `release` | Allows tournament production cameraman to run csgo.exe -interactivecaster on SteamID 7650123456XXX and be the camera man. |
 | `tv_allow_camera_man_steamid2` | `0` | `gamedll` `release` | Allows tournament production tv cameraman to run csgo.exe -interactivecaster on SteamID 7650123456XXX and be the tv camera man. |
 | `tv_allow_static_shots` | `true` | `gamedll` `release` | Auto director uses fixed level cameras for shots |
+| `tv_autorecord` | `false` | `release` | Automatically records all games as SourceTV demos. |
+| `tv_autoretry` | `true` | `release` | Relay proxies retry connection after network timeout |
+| `tv_broadcast` | `false` | `release` | Automatically broadcasts all games as GOTV demos through Steam. |
+| `tv_broadcast1` | `false` | `release` | Automatically broadcasts all games as GOTV[1] demos through Steam. |
+| `tv_broadcast_drop_fragments` | `0` | `hidden` `release` | Drop every Nth fragment |
+| `tv_broadcast_keyframe_interval` | `3.000000` | `release` | The frequency, in seconds, of sending keyframes and delta fragments to the broadcast relay server |
+| `tv_broadcast_keyframe_interval1` | `3.000000` | `release` | The frequency, in seconds, of sending keyframes and delta fragments to the broadcast1 relay server |
+| `tv_broadcast_max_requests` | `20` | `release` | Max number of broadcast http requests in flight. If there is a network issue, the requests may start piling up, degrading server performance. If more than the specified number of requests are in flight, the new requests are dropped. |
+| `tv_broadcast_max_requests1` | `20` | `release` | Max number of broadcast1 http requests in flight. If there is a network issue, the requests may start piling up, degrading server performance. If more than the specified number of requests are in flight, the new requests are dropped. |
+| `tv_broadcast_origin_auth` | `gocastauth` | `hidden` `release` | X-Origin-Auth header of the broadcast POSTs |
+| `tv_broadcast_origin_auth1` | `gocastauth` | `hidden` `release` | X-Origin-Auth header of the broadcast1 POSTs |
+| `tv_broadcast_origin_delay` | `0.000000` | `hidden` `release` | Injection delay request for CDN rebroadcast frameworks, seconds |
+| `tv_broadcast_spew_threshold` | `0.100000` | `release` | The threshold, in seconds, that we'll spew about the snapshot tick |
+| `tv_broadcast_startup_resend_interval` | `10.000000` | `release` | The interval, in seconds, of re-sending startup data to the broadcast relay server (useful in case relay crashes, restarts or startup data http request fails) |
+| `tv_broadcast_terminate` | `true` | `hidden` `release` | Terminate every broadcast with a stop command |
+| `tv_broadcast_url` | `http://localhost:8080` | `release` | URL of the broadcast relay |
+| `tv_broadcast_url1` | `http://localhost:8080` | `release` | URL of the broadcast relay1 |
+| `tv_chatgroupsize` | `0` | `release` | Set the default chat group size |
+| `tv_chattimelimit` | `0.200000` | `release` | Limits spectators to chat only every n seconds |
+| `tv_debug` | `0` | `release` | SourceTV debug info. |
 | `tv_delay` | `120` | `gamedll` `release` `commandline_enforced` | SourceTV broadcast delay in seconds |
 | `tv_delay1` | `15` | `gamedll` `release` `commandline_enforced` | SourceTV[instance 1] broadcast delay in seconds |
 | `tv_delaymapchange` | `true` | `gamedll` `release` | Delays map change until broadcast is complete |
+| `tv_deltacache` | `2` | `release` | Enable delta entity bit stream cache |
+| `tv_demo_starttick` | `0` | `developmentonly` `defensive` |  |
+| `tv_dispatchmode` | `1` | `release` | Dispatch clients to relay proxies: 0=never, 1=if appropriate, 2=always |
+| `tv_enable` | `false` | `notify` `release` | Activates SourceTV on server. |
+| `tv_enable1` | `false` | `notify` `release` | Activates SourceTV[1] on server. |
+| `tv_enable_delta_frames` | `true` | `release` | Indicates whether or not the tv should use delta frames for storage of intermediate frames. This takes more CPU but significantly less memory. |
+| `tv_enable_dynamic` | `false` | `notify` `release` | When enabled, changes in tv_enable convars cause immediate startup or shutdown of hltv server |
+| `tv_extended_logging` | `false` | `developmentonly` `defensive` |  |
+| `tv_grouprelaydatareliable` | `false` | `developmentonly` `defensive` | When enabled, this will collect all information for relay sending into a single datagram to ensure that the data stays together through a potentially large number of relays |
+| `tv_grouprelaydataunreliable` | `false` | `developmentonly` `defensive` | When enabled, this will collect all information for relay sending into a single datagram to ensure that the data stays together through a potentially large number of relays |
+| `tv_grouprelaydatavoice` | `false` | `developmentonly` `defensive` | Similar to tv_grouprelaydata, but controls whether or not the voice channels should be routed into the grouped data for the relays |
 | `tv_include_usercommands` | `true` | `gamedll` `release` | HLTV streams will include player usercommands each tick |
+| `tv_instant_replay_full_frame` | `true` | `developmentonly` `defensive` | Send embedded full frames |
+| `tv_instant_replay_full_frame_build_threaded` | `false` | `developmentonly` `defensive` | Build the full frames on a seperate job thread |
+| `tv_instant_replay_full_frame_time` | `30` | `developmentonly` `defensive` | Seconds between full frame embeddeds |
 | `tv_listen_voice_indices` | `0` | `clientdll` `userinfo` | Bitfield of playerslots to listen to voice messages from when connected to SourceTV, default is none |
 | `tv_listen_voice_indices_h` | `0` | `clientdll` `userinfo` | High 32 bits of bitfield of playerslots to listen to voice messages from when connected to SourceTV, default is none |
 | `tv_log_director_events` | `false` | `developmentonly` `gamedll` `defensive` | Log game events being considered by the director |
-| `tv_nochat` | `false` | `reference` |  |
+| `tv_maxclients` | `128` | `release` | Maximum client number on SourceTV server. |
+| `tv_maxclients_relayreserved` | `0` | `release` | This number of relay client connections are reserved for SourceTV relays. |
+| `tv_maxrate` | `0` | `release` | Max SourceTV spectator bandwidth rate allowed, 0 == unlimited |
+| `tv_name` | `SourceTV` | `release` | SourceTV host name |
+| `tv_nochat` | `false` | `archive` `userinfo` | Don't receive chat messages from other SourceTV spectators |
+| `tv_overridemaster` | `false` | `release` | Overrides the SourceTV master root address. |
+| `tv_password` | `` | `protected` `notify` `dontrecord` `release` | SourceTV password for all clients of CSTV[0] |
+| `tv_password1` | `` | `protected` `notify` `dontrecord` `release` | SourceTV password for all clients of CSTV[1]. If empty, tv_password is used |
+| `tv_playcast_delay_prediction` | `true` | `release` |  |
+| `tv_playcast_delay_resync` | `0.000000` | `release` | To alleviate intermittent network connectivity problems, this is the number of seconds to wait before actually re-syncing the stream after failure |
+| `tv_playcast_fragment_cache_history_length` | `120.000000` | `release` | How far back before our current playback head in seconds to hold onto fragments. |
+| `tv_playcast_http_delta_fragment_timeout_s` | `3` | `hidden` `release` |  |
+| `tv_playcast_max_rcvage` | `15.000000` | `hidden` `release` |  |
+| `tv_playcast_max_rtdelay` | `300.000000` | `hidden` `release` |  |
+| `tv_playcast_origin_auth` | `` | `hidden` `release` | Get request X-Origin-Auth string |
+| `tv_playcast_retry_timeout` | `25.000000` | `release` | In case of intermittent network problems, how long should playcast retry fragment retrieval before resorting to resync |
+| `tv_playcast_showerrors` | `` | `hidden` `release` | Set to display headers upon error (e.g. "CF-Ray,CF-Cache-Status,Body" ) |
+| `tv_playcast_slow_playback_when_fragment_requests_fail` | `true` | `hidden` `release` | Whether or not we slow playback rate if we start running out of buffered stream fragments. |
+| `tv_port` | `27020` | `release` | Host SourceTV[0] port |
+| `tv_port1` | `27021` | `release` | Host SourceTV[1] port |
+| `tv_rate_multiplier` | `2.000000` | `developmentonly` `defensive` | Multiply requested rate by this value to adjust Dota TV send rate |
+| `tv_record_immediate` | `0` | `release` | tv_record starting the moment tv_record was executed, not tv_delay earlier |
+| `tv_relay_hard_shutdown` | `false` | `developmentonly` `defensive` |  |
+| `tv_relay_quit_after_game` | `true` | `developmentonly` `defensive` | Quit after a game has been relayed, do not hibernate |
+| `tv_relay_rate` | `500000` | `developmentonly` `defensive` | default rate for relays |
+| `tv_relay_secret_code` | `true` | `developmentonly` `defensive` | When enabled, this will use a uniquely generated server code to authenticate relay to relay connections. This code is coordinated via the GC or some external means rather than by clients directly |
+| `tv_relaypassword` | `` | `protected` `notify` `dontrecord` `release` | SourceTV password for relay proxies |
 | `tv_relayradio` | `false` | `gamedll` `release` | Relay team radio commands to TV: 0=off, 1=on |
+| `tv_relayvoice` | `true` | `release` | Relay voice data: 0=off, 1=on |
+| `tv_secret_code` | `true` | `developmentonly` `defensive` | When enabled, this will use a uniquely generated server code to authenticate relay connections. This code is coordinated via the GC or some external means rather than by clients directly |
+| `tv_secure_bypass` | `false` | `release` | Bypass secure challenge on TV port |
 | `tv_show_allchat` | `true` | `gamedll` `release` |  |
 | `tv_spectator_port_offset` | `0` | `clientdll` `release` |  |
-| `tv_transmitall` | `false` | `reference` |  |
+| `tv_threaded_merge_entity_deltas` | `true` | `developmentonly` `defensive` | Enable SourceTV threading of delta merging |
+| `tv_timeout` | `20.000000` | `release` | SourceTV connection timeout in seconds. |
+| `tv_title` | `SourceTV` | `release` | Set title for SourceTV spectator UI |
+| `tv_transmitall` | `false` | `replicated` `release` | Transmit all entities (not only director view) |
+| `tv_update_hibernation_enabled` | `true` | `developmentonly` `defensive` | Allow SourceTV to control server hibernation state. |
+| `tv_window_size` | `16.000000` | `release` | Specifies the number of seconds worth of frames that the tv replay system should keep in memory. Increasing this greatly increases the amount of memory consumed by the TV system |
 | `ui_deepstats_radio_heat_figurine` | `0` | `clientdll` `archive` `release` |  |
 | `ui_deepstats_radio_heat_tab` | `0` | `clientdll` `archive` `release` |  |
 | `ui_deepstats_radio_heat_team` | `0` | `clientdll` `archive` `release` |  |
@@ -3298,6 +3877,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `ui_vanitysetting_team` | `` | `clientdll` `archive` `release` |  |
 | `update_all_keyframed_in_spatial_partition_update` | `true` | `developmentonly` `gamedll` `clientdll` `replicated` |  |
 | `update_voices_low_priority` | `false` | `developmentonly` `defensive` |  |
+| `vconsole_rcon_server_details` | `` | `dontrecord` `release` `server_cannot_query` | when non-empty allows for easy vconsole connection to the dedicated server. |
 | `vehicle_debug_impact_damage` | `false` | `developmentonly` `gamedll` |  |
 | `videocfg_ao_detail` | `0` | `developmentonly` `clientdll` `defensive` |  |
 | `videocfg_fsr_detail` | `0` | `developmentonly` `clientdll` `defensive` |  |
@@ -3311,26 +3891,40 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `viewmodel_offset_y` | `1.000000` | `clientdll` `archive` `userinfo` `per_user` | viewmodel_offset_y |
 | `viewmodel_offset_z` | `-1.000000` | `clientdll` `archive` `userinfo` `per_user` | viewmodel_offset_z |
 | `viewmodel_presetpos` | `1` | `clientdll` `archive` | 1:"Desktop", 2:"Classic"  |
-| `violence_ablood` | `false` | `reference` |  |
-| `violence_agibs` | `false` | `reference` |  |
-| `violence_hblood` | `false` | `reference` |  |
-| `violence_hgibs` | `false` | `reference` |  |
+| `violence_ablood` | `true` | `archive` | Draw alien blood |
+| `violence_agibs` | `true` | `archive` | Show alien gib entities |
+| `violence_hblood` | `true` | `archive` | Draw human blood |
+| `violence_hgibs` | `true` | `archive` | Show human gib entities |
+| `vis_enable` | `true` | `developmentonly` `defensive` | Enable precomputed visibility when true |
 | `vis_force` | `false` | `gamedll` `cheat` |  |
+| `vis_sunlight_enable` | `true` | `developmentonly` `cheat` | Toggle whether to use sunlight PVS for sunlight views (0 = sky PVS, 1 = sunlight PVS) |
 | `vismon_poll_frequency` | `0.500000` | `gamedll` `cheat` |  |
 | `vismon_trace_limit` | `12` | `gamedll` `cheat` |  |
 | `voice_all_icons` | `false` | `developmentonly` `clientdll` `defensive` | Draw all players' voice icons |
+| `voice_always_sample_mic` | `false` | `archive` | When enabled, open the voip audio input stream when the application launches. |
+| `voice_bypass_noise_gate` | `false` | `developmentonly` |  |
 | `voice_clientdebug` | `0` | `developmentonly` `clientdll` `defensive` |  |
+| `voice_debugfeedbackfrom` | `false` | `developmentonly` `defensive` |  |
+| `voice_device_override` | `` | `archive` `release` | Default device used for voice capture. |
 | `voice_fadeouttime` | `0.005000` | `developmentonly` `defensive` |  |
+| `voice_in_process` | `false` | `developmentonly` `defensive` |  |
 | `voice_initial_buffer_ms` | `200` | `developmentonly` `defensive` |  |
+| `voice_input_stallout` | `2.000000` | `userinfo` | Time before we consider a mic stalled out and need to reset it. |
 | `voice_loopback` | `false` | `userinfo` |  |
-| `voice_loopback_no_networking` | `false` | `reference` |  |
+| `voice_loopback_no_networking` | `false` | `userinfo` |  |
 | `voice_min_buffer_ms` | `100` | `developmentonly` `defensive` |  |
 | `voice_modenable` | `true` | `clientdll` `archive` `release` `clientcmd_can_execute` | Enable/disable voice in this mod. |
+| `voice_noise_supression` | `false` | `developmentonly` `defensive` |  |
 | `voice_player_speaking_delay_threshold` | `0.500000` | `gamedll` `cheat` |  |
+| `voice_sequence_maximum_wait_time` | `0.500000` | `developmentonly` `defensive` | When receiving packets out of sequence, wait this many seconds for missing sequences to arrive |
 | `voice_serverdebug` | `false` | `developmentonly` `gamedll` `defensive` |  |
 | `voice_stall_ms` | `250.000000` | `developmentonly` `defensive` |  |
-| `voice_threshold` | `0.000000` | `reference` |  |
-| `voice_threshold_delay` | `0.000000` | `reference` |  |
+| `voice_test_log_send` | `false` | `release` |  |
+| `voice_threshold` | `-120.000000` | `clientdll` `archive` | decibel threshold for how loud the talker's input signal is before we think they are talking. |
+| `voice_threshold_attack` | `0.300000` | `developmentonly` | Amount of time we buffer outgoing audio to detect an onset. |
+| `voice_threshold_delay` | `0.700000` | `developmentonly` | Amount of time the talker is silent before we infer that they are no longer talking. |
+| `voice_threshold_hold` | `0.200000` | `developmentonly` | Amount of time after the talker starts talking we should keep listening regardless of how loud they are speaking. |
+| `voice_threshold_ramp_min_db` | `-60.000000` | `developmentonly` | A dB floor of when to stop transmitting packets, the volume between this and voice_threshold will still transmit packets to allow for volume ramping. |
 | `voice_vox` | `0` | `clientdll` `archive` `per_user` | Voice chat uses a vox-style always on |
 | `voice_vox_current_peak` | `0.000000` | `developmentonly` `clientdll` `defensive` | Current peak value (out of 64k) of the incoming voice stream |
 | `volume` | `1.000000` | `archive` | Sound volume |
@@ -3347,10 +3941,19 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `volume_fog_temporal_filter` | `true` | `developmentonly` `defensive` |  |
 | `volume_fog_temporal_weight` | `0.900000` | `developmentonly` `defensive` | Temporal filtering weight |
 | `volume_fog_width` | `240` | `developmentonly` `defensive` | Width of volume fog texture |
+| `vprof_counters` | `0` | `developmentonly` `defensive` |  |
+| `vprof_counters_show_minmax` | `false` | `developmentonly` `defensive` |  |
 | `vprof_scope_entity_clientthink` | `false` | `developmentonly` `clientdll` `hidden` `defensive` | Does nothing whatsoever. |
 | `vprof_scope_entity_thinks` | `false` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `vprof_think_limit` | `false` | `developmentonly` `gamedll` `defensive` |  |
 | `vt_sim_streaming_delay_ms` | `500.000000` | `developmentonly` `defensive` |  |
+| `vulkan_batch_size` | `500` | `developmentonly` `defensive` |  |
+| `vulkan_batch_submits` | `true` | `developmentonly` `defensive` |  |
+| `vulkan_dedicated_allocation_threshold` | `512` | `developmentonly` `defensive` | Size (in KBs) above which textures should be allocated in dedicated memory (NV-only). |
+| `vulkan_link_time_optimize_libraries` | `true` | `release` |  |
+| `vulkan_pipeline_compile_spew` | `false` | `developmentonly` `defensive` |  |
+| `vulkan_pipeline_compile_throttle_ms` | `0.000000` | `developmentonly` `defensive` |  |
+| `vulkan_unpause_workers_after_each_texture_deallocation` | `false` | `developmentonly` | If true, the main thread pauses and unpauses the Vulkan worker threads around each texture deallocation, which allows the workers to make a little bit of progress but results in main thread stalls. If false, we keep the workers paused until all deallocations are done, allowing the deallocations to complete significantly faster. |
 | `weapon_accuracy_forcespread` | `0.000000` | `gamedll` `clientdll` `replicated` `release` | Force spread to the specified value. |
 | `weapon_accuracy_logging` | `false` | `developmentonly` `gamedll` `clientdll` `archive` `replicated` |  |
 | `weapon_accuracy_nospread` | `false` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Disable weapon inaccuracy spread |

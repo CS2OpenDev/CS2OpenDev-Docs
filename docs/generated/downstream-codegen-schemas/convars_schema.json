@@ -1,8 +1,8 @@
 {
   "schema_format_version": "2.0",
   "revision": "hl2sdk-cs2/5f891c9026230cce0fc0a3fc4b5fef1c467a1385/v1/3d1200e346019c59",
-  "version_date": "2026-07-09",
-  "version_time": "2026-07-09T20:41:37Z",
+  "version_date": "2026-07-20",
+  "version_time": "2026-07-20T22:46:14Z",
   "convars": [
     {
       "name": "CS_WarnFriendlyDamageInterval",
@@ -1340,6 +1340,14 @@
       "description": "Set to 1 to have autosaves execute completely on the save thread, forces 'render only' mode while the save completes"
     },
     {
+      "name": "battery_saver",
+      "default": "false",
+      "flags": [
+        "archive"
+      ],
+      "description": "OBSOLETE replaced by mobile_fps_* - Battery saver mode. 0=off, 1=on"
+    },
+    {
       "name": "bot_allow_grenades",
       "default": "true",
       "flags": [
@@ -1905,6 +1913,14 @@
         "cheat"
       ],
       "description": "HP to set when damaged below zero in Buddha Mode"
+    },
+    {
+      "name": "bug_submitter_override",
+      "default": "",
+      "flags": [
+        "archive"
+      ],
+      "description": ""
     },
     {
       "name": "buildcubemaps_renderdoc_capture",
@@ -2821,6 +2837,31 @@
       "description": ""
     },
     {
+      "name": "cl_async_usercmd_send",
+      "default": "true",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
+      "name": "cl_async_usercmd_send_recvmargin_min",
+      "default": "1.000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Min size of the recv margin queue when async usercmd send is disabled"
+    },
+    {
+      "name": "cl_auto_cursor_scale",
+      "default": "true",
+      "flags": [
+        "archive"
+      ],
+      "description": "Automatic cursor size scaling."
+    },
+    {
       "name": "cl_autobuy",
       "default": "",
       "flags": [
@@ -2894,6 +2935,14 @@
       "description": "how fast to run (1 to use player max run speed)."
     },
     {
+      "name": "cl_buffer_incoming_net_messages",
+      "default": "true",
+      "flags": [
+        "release"
+      ],
+      "description": ""
+    },
+    {
       "name": "cl_buymenu_ct_nextround_high",
       "default": "5000",
       "flags": [
@@ -2960,6 +3009,15 @@
       "description": "Set non-zero to prevent buy wheel from purchasing via number keys"
     },
     {
+      "name": "cl_cache_sendtable",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Cache sendtables"
+    },
+    {
       "name": "cl_cameraoverride_fade_in_amount",
       "default": "0.000000",
       "flags": [
@@ -3020,6 +3078,104 @@
       "description": "Current clan ID for name decoration"
     },
     {
+      "name": "cl_clock_buffer_ticks",
+      "default": "0.000000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Clock sync will try to maintain an additional margin of N ticks.  This is intended to smooth over packet loss, and is a replacement for cl_interp_ratio / cl_interp.  This value is simply added to cl_clock_recvmargin_desired"
+    },
+    {
+      "name": "cl_clock_buffer_ticks_spectator",
+      "default": "2.000000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Additional margin (in ticks) to apply when spectating."
+    },
+    {
+      "name": "cl_clock_correction",
+      "default": "true",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Enable/disable clock correction on the client."
+    },
+    {
+      "name": "cl_clock_recvmargin_adjust_limit_slowdown",
+      "default": "93.000000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Clock sync will not slow down time slower than N%"
+    },
+    {
+      "name": "cl_clock_recvmargin_adjust_limit_speedup",
+      "default": "106.000000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Clock sync will not speed up time faster than N%"
+    },
+    {
+      "name": "cl_clock_recvmargin_desired",
+      "default": "5.000000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Clock sync will try to maintain N ms margin between tick arrival and polling network.  The effective value is the sum of this and the time implied by cl_clock_buffer_ticks"
+    },
+    {
+      "name": "cl_clock_recvmargin_spew_interval",
+      "default": "0",
+      "flags": [
+        "release"
+      ],
+      "description": ""
+    },
+    {
+      "name": "cl_clock_recvmargin_timeconstant_slowdown",
+      "default": "0.300000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Clock sync will remove 63.2% of the error in N seconds"
+    },
+    {
+      "name": "cl_clock_recvmargin_timeconstant_speedup",
+      "default": "0.600000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Clock sync will remove 63.2% of the error in N seconds"
+    },
+    {
+      "name": "cl_clock_recvmargin_window",
+      "default": "4.000000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Clock sync will use past N seconds"
+    },
+    {
+      "name": "cl_clockdbg",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "cl_clockdrift_max_ticks",
+      "default": "3",
+      "flags": [
+        "hidden",
+        "release"
+      ],
+      "description": "Maximum number of ticks the clock is allowed to drift before the client snaps its clock to the server's."
+    },
+    {
       "name": "cl_clutch_mode",
       "default": "false",
       "flags": [
@@ -3037,6 +3193,22 @@
         "userinfo"
       ],
       "description": "Preferred teammate color"
+    },
+    {
+      "name": "cl_connectionretrytime_p2p",
+      "default": "20.000000",
+      "flags": [
+        "release"
+      ],
+      "description": "Number of seconds over which to spread retry attempts for P2P."
+    },
+    {
+      "name": "cl_cq_min_queue",
+      "default": "0",
+      "flags": [
+        "userinfo"
+      ],
+      "description": "Used by the client to inform the server of their desired queue length.  Derived from cl_tickpacket_recvmargin_desired and cl_tickpacket_desired_queuelength"
     },
     {
       "name": "cl_crosshair_drawoutline",
@@ -3313,6 +3485,14 @@
       "description": ""
     },
     {
+      "name": "cl_cursor_scale",
+      "default": "1.000000",
+      "flags": [
+        "archive"
+      ],
+      "description": "Cursor size scaling factor."
+    },
+    {
       "name": "cl_deathcam_audio_mix_phase1_fade_amount",
       "default": "0.150000",
       "flags": [
@@ -3378,6 +3558,15 @@
       "description": "Whether or not to disable holding secondary fire to cycle zoom levels"
     },
     {
+      "name": "cl_debug_build_recvmargin_min",
+      "default": "2.000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Min size of the recv margin queue when in tools/debug mode"
+    },
+    {
       "name": "cl_debug_force_push_to_talk",
       "default": "false",
       "flags": [
@@ -3396,6 +3585,14 @@
         "defensive"
       ],
       "description": ""
+    },
+    {
+      "name": "cl_debug_overlays_broadcast",
+      "default": "false",
+      "flags": [
+        "release"
+      ],
+      "description": "Render debug overlays from server."
     },
     {
       "name": "cl_debug_precipitation_surface_graph",
@@ -3530,6 +3727,24 @@
         "release"
       ],
       "description": ""
+    },
+    {
+      "name": "cl_disconnect_soundevent",
+      "default": "core.stop_all_soundevents",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "This soundevent is called to stop the desired soundevents when the game is disconnected."
+    },
+    {
+      "name": "cl_disconnect_voice_fade",
+      "default": "2.000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "This is a fade of current voices that is called when the game is disconnected. -1.f for no fade on disconnect"
     },
     {
       "name": "cl_display_flashbang_values",
@@ -3910,6 +4125,22 @@
       "description": "For crosshair style 1: How big to make the gap between the pips in the fixed crosshair"
     },
     {
+      "name": "cl_flushentitypacket",
+      "default": "0",
+      "flags": [
+        "cheat"
+      ],
+      "description": "For debugging. Force the engine to flush an entity packet."
+    },
+    {
+      "name": "cl_force_next_signon_to_reset",
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
       "name": "cl_force_spec_hud_color_to_team",
       "default": "true",
       "flags": [
@@ -3926,6 +4157,14 @@
         "release"
       ],
       "description": "When a perf report is dumped at the end of the session, should it be detailed?"
+    },
+    {
+      "name": "cl_generate_postdataupdatepreserved",
+      "default": "true",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Do we invoke PostDataUpdatePreserved callbacks for entities that had no changes but are still in the PVS?"
     },
     {
       "name": "cl_globallight_debug",
@@ -4431,6 +4670,14 @@
       "description": "Show graph of the server recv margin in the HUD.  (How early/late user commands are arriving at the server before they are executed.)   0=never, 1=only when there are command queue problems, 2=always"
     },
     {
+      "name": "cl_ignorepackets",
+      "default": "false",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Force client to ignore packets (for debugging)."
+    },
+    {
       "name": "cl_import_csgo_config",
       "default": "true",
       "flags": [
@@ -4448,6 +4695,14 @@
         "clientdll"
       ],
       "description": ""
+    },
+    {
+      "name": "cl_input_enable_raw_keyboard",
+      "default": "false",
+      "flags": [
+        "release"
+      ],
+      "description": "Enable raw keyboard input"
     },
     {
       "name": "cl_instant_death_anim",
@@ -4553,7 +4808,7 @@
         "clientdll",
         "userinfo"
       ],
-      "description": ""
+      "description": "Interpolate entities on the client."
     },
     {
       "name": "cl_interpolate_report",
@@ -4692,11 +4947,19 @@
     },
     {
       "name": "cl_jitter_bad_threshold_up",
-      "default": "0.000000",
+      "default": "20.000000",
       "flags": [
-        "reference"
+        "userinfo"
       ],
-      "description": ""
+      "description": "When upstream packet jitter in a frame exceeds this threshold (ms), the frame is considered to have 'irregular delivery'.  This is a derived value and should not be modified manually"
+    },
+    {
+      "name": "cl_joystick_enabled",
+      "default": "true",
+      "flags": [
+        "archive"
+      ],
+      "description": "Enable joystick input"
     },
     {
       "name": "cl_lagcompensation_test_auto_target",
@@ -4715,6 +4978,15 @@
         "clientdll"
       ],
       "description": "Player whose head is tracked to test lag compensation."
+    },
+    {
+      "name": "cl_language",
+      "default": "english",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Language"
     },
     {
       "name": "cl_latch_report",
@@ -4761,6 +5033,24 @@
         "cheat"
       ],
       "description": ""
+    },
+    {
+      "name": "cl_log_tick",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Log when a tick is received\n"
+    },
+    {
+      "name": "cl_log_tick_skips",
+      "default": "0",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Log when the tick delta >= this"
     },
     {
       "name": "cl_low_latency_vsync_recommendation_dont_show_again",
@@ -4867,6 +5157,14 @@
       "description": "Mute players reported for abuse automatically."
     },
     {
+      "name": "cl_names_debug",
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
       "name": "cl_net_buffer_ticks",
       "default": "0",
       "flags": [
@@ -4962,6 +5260,24 @@
         "defensive"
       ],
       "description": "time to freeze mouse/pointer motion after a mouse button press"
+    },
+    {
+      "name": "cl_parallel_readpacketentities",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Set to 1 to use threading snapshot reading (if game supports and server is sending bitcounts)."
+    },
+    {
+      "name": "cl_parallel_readpacketentities_threshold",
+      "default": "2",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Use parallel processing of snapshot reading if above this many entries."
     },
     {
       "name": "cl_particle_batch_mode",
@@ -5238,6 +5554,15 @@
       "description": ""
     },
     {
+      "name": "cl_playback_screenshots",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Allows the client to playback screenshot and jpeg commands in demos."
+    },
+    {
       "name": "cl_player_ping_mute",
       "default": "0",
       "flags": [
@@ -5338,6 +5663,14 @@
         "release"
       ],
       "description": "prepend controller playerslot to names for debugging"
+    },
+    {
+      "name": "cl_poll_network_early",
+      "default": "true",
+      "flags": [
+        "release"
+      ],
+      "description": "Enable polling for network messages every frame, instead of every tick"
     },
     {
       "name": "cl_pred_always_latch",
@@ -6056,6 +6389,14 @@
       "description": ""
     },
     {
+      "name": "cl_resend",
+      "default": "0.500000",
+      "flags": [
+        "release"
+      ],
+      "description": "Delay in seconds before the client will resend the 'connect' attempt"
+    },
+    {
       "name": "cl_retire_low_priority_lights",
       "default": "false",
       "flags": [
@@ -6162,6 +6503,15 @@
       "description": "Development search key token."
     },
     {
+      "name": "cl_sendtable_cache_filename",
+      "default": "sendtables.bin",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Send tables cache file"
+    },
+    {
       "name": "cl_sequence_debug",
       "default": "-1",
       "flags": [
@@ -6213,7 +6563,9 @@
       "name": "cl_session",
       "default": "",
       "flags": [
-        "reference"
+        "developmentonly",
+        "hidden",
+        "server_can_execute"
       ],
       "description": ""
     },
@@ -6330,6 +6682,15 @@
         "clientdll"
       ],
       "description": ""
+    },
+    {
+      "name": "cl_showdemooverlay",
+      "default": "0.000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "How often to flash demo recording/playback overlay (0 - disable overlay, -1 - show always)"
     },
     {
       "name": "cl_showerror",
@@ -6683,6 +7044,22 @@
       "description": ""
     },
     {
+      "name": "cl_spawngroup_log",
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Dump the contents of the next spawngroup manifest to file."
+    },
+    {
+      "name": "cl_spawngroup_spewresources",
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Spew all manifest add/updates."
+    },
+    {
       "name": "cl_spec_show_bindings",
       "default": "true",
       "flags": [
@@ -6903,6 +7280,86 @@
       "description": "In competitive, 1 = show teammates as separate colors in the radar, scoreboard, etc., 2 = show colors and letters"
     },
     {
+      "name": "cl_tickpacket_desired_queuelength",
+      "default": "0.000000",
+      "flags": [
+        "userinfo"
+      ],
+      "description": "This value, multiplied by the tick interval, is added to cl_tickpacket_recvmargin_desired to obtain the effective desired recv margin."
+    },
+    {
+      "name": "cl_tickpacket_recvmargin_adjust_limit",
+      "default": "5.000000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Recvmargin-based usercommand pacing will not speed up or slow down command pacing by more than N% compared to realtime"
+    },
+    {
+      "name": "cl_tickpacket_recvmargin_desired",
+      "default": "5.000000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Recvmargin-based usercommand pacing will try to maintain N ms margin between user command arriving at the server and the server needing that user command.  See also cl_tickpacket_desired_queuelength."
+    },
+    {
+      "name": "cl_tickpacket_recvmargin_minsamples",
+      "default": "10",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Recvmargin-based usercommand pacing will not take action unless we have N samples"
+    },
+    {
+      "name": "cl_tickpacket_recvmargin_spew_interval",
+      "default": "0",
+      "flags": [
+        "release"
+      ],
+      "description": ""
+    },
+    {
+      "name": "cl_tickpacket_recvmargin_timeconstant",
+      "default": "0.400000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Recvmargin-based usercommand pacing will remove 63.2% of the error in N seconds"
+    },
+    {
+      "name": "cl_tickpacket_recvmargin_window",
+      "default": "4.000000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Recvmargin-based usercommand pacing will use past N seconds"
+    },
+    {
+      "name": "cl_ticks_net_print_threshold",
+      "default": "2.000000",
+      "flags": [
+        "release"
+      ],
+      "description": "Print a message if network issues cause problems with server snapshots of user commands not being available when needed, if the percentage (0...100) exceeds this value.  A value of 0 will cause the message to always print each time it is calculated"
+    },
+    {
+      "name": "cl_ticks_warning_level",
+      "default": "0",
+      "flags": [
+        "release"
+      ],
+      "description": "Print a message about problems with ticks and interpolation.  0=never, 1=warnings, 2=all, even if hidden by interpolation"
+    },
+    {
+      "name": "cl_timeout",
+      "default": "30.000000",
+      "flags": [
+        "archive"
+      ],
+      "description": "After this many seconds without receiving a packet from the server, the client will disconnect itself"
+    },
+    {
       "name": "cl_tracer_frequency_override",
       "default": "1",
       "flags": [
@@ -7027,12 +7484,37 @@
       "description": "Pressing the +use key will open the buy menu if in a buy zone (just as if you pressed the 'buy' key)."
     },
     {
+      "name": "cl_usercmd_dbg",
+      "default": "0",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "show usercmd payload sizing info for packets with more than this many usercmds"
+    },
+    {
+      "name": "cl_usercmd_max_per_movemsg",
+      "default": "4",
+      "flags": [
+        "release"
+      ],
+      "description": "max number of CUserCmds to send in one client move message"
+    },
+    {
       "name": "cl_usercmd_showsize",
       "default": "false",
       "flags": [
-        "reference"
+        "developmentonly"
       ],
       "description": ""
+    },
+    {
+      "name": "cl_usesocketsforloopback",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "When connecting to local listen server (for example, using the 'map' command), default to loopback=false, which connects to '127.0.0.1' instead of 'loopback'.  This uses the network stack so that fake lag/loss can be simulated."
     },
     {
       "name": "cl_versus_intro",
@@ -7220,6 +7702,14 @@
         "defensive"
       ],
       "description": ""
+    },
+    {
+      "name": "clientport",
+      "default": "0",
+      "flags": [
+        "release"
+      ],
+      "description": "If non-zero, client binds port to specific address.  Usually you should leave this blank to use a different random system-assigned port for each connection."
     },
     {
       "name": "closecaption",
@@ -7473,6 +7963,24 @@
       "description": "Source2/Composite Material Debug"
     },
     {
+      "name": "con_enable",
+      "default": "false",
+      "flags": [
+        "archive",
+        "per_user"
+      ],
+      "description": "Allows the console to be activated."
+    },
+    {
+      "name": "con_logfile_suffix",
+      "default": "",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Suffix to append to the console log, may be changed to reopen the log"
+    },
+    {
       "name": "connect_lobby",
       "default": "0",
       "flags": [
@@ -7664,6 +8172,15 @@
       "description": "amount of contribution score for a team kill, normally negative"
     },
     {
+      "name": "convars_echo_toggle_changes",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Echo to the console changes caused by toggling."
+    },
+    {
       "name": "cpu_level",
       "default": "2",
       "flags": [
@@ -7675,11 +8192,12 @@
     },
     {
       "name": "cq_buffer_bloat_msecs_max",
-      "default": "0.000000",
+      "default": "150.000000",
       "flags": [
-        "reference"
+        "replicated",
+        "release"
       ],
-      "description": ""
+      "description": "Server will not allow the client to buffer up more than N ms of commands."
     },
     {
       "name": "cq_debug",
@@ -8270,6 +8788,17 @@
       "description": ""
     },
     {
+      "name": "custom_bot_difficulty",
+      "default": "2",
+      "flags": [
+        "gamedll",
+        "clientdll",
+        "replicated",
+        "release"
+      ],
+      "description": "Bot difficulty for offline play."
+    },
+    {
       "name": "cv_bot_ai_bt_debug_target",
       "default": "-1",
       "flags": [
@@ -8423,6 +8952,15 @@
       "description": "How long the debug draws stick around for, unless they're per-tick."
     },
     {
+      "name": "debug_draw_enable",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "replicated"
+      ],
+      "description": ""
+    },
+    {
       "name": "debug_error_model",
       "default": "false",
       "flags": [
@@ -8432,6 +8970,24 @@
         "cheat"
       ],
       "description": ""
+    },
+    {
+      "name": "debug_font_name",
+      "default": "Courier New",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Debug font name"
+    },
+    {
+      "name": "debug_font_size",
+      "default": "14",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Font size for the debug font"
     },
     {
       "name": "debug_hltv",
@@ -8576,12 +9132,29 @@
       "description": ""
     },
     {
+      "name": "demo_allow_game_mismatch",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Allow playback of demo even if game directories are not matched [may crash or fail to load]."
+    },
+    {
       "name": "demo_debug",
       "default": "0",
       "flags": [
-        "reference"
+        "developmentonly"
       ],
-      "description": ""
+      "description": "Turn on demo debug spew."
+    },
+    {
+      "name": "demo_flush",
+      "default": "false",
+      "flags": [
+        "archive"
+      ],
+      "description": "Flush writing the demo file every network update"
     },
     {
       "name": "demo_highlight_fade_duration",
@@ -8609,6 +9182,15 @@
         "release"
       ],
       "description": "How many seconds before the actual highlight event to show when viewing highlights."
+    },
+    {
+      "name": "demo_max_consecutive_skip_packets",
+      "default": "100",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Don't skip more than N messages in a row when skipping in a demo file."
     },
     {
       "name": "demo_mouse_enable_binding",
@@ -8639,6 +9221,22 @@
       "description": ""
     },
     {
+      "name": "demo_quitafterplayback",
+      "default": "false",
+      "flags": [
+        "release"
+      ],
+      "description": "Quits game after demo playback."
+    },
+    {
+      "name": "demo_recordcommands",
+      "default": "true",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Record commands typed at console into .dem files."
+    },
+    {
       "name": "demo_skip_to_shot_seconds_before",
       "default": "2.000000",
       "flags": [
@@ -8655,6 +9253,24 @@
         "release"
       ],
       "description": "UI mode for demo playback. 0 = disabled, 1 = minimal, 2 = full"
+    },
+    {
+      "name": "demo_usefastgoto",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Use fast frame skipping when available for demo_goto commands."
+    },
+    {
+      "name": "demo_writefullupdate_rate",
+      "default": "60",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Interval time in seconds to write full updates to demo."
     },
     {
       "name": "destructible_parts_destroy_parts_when_gibbing",
@@ -8845,9 +9461,9 @@
       "name": "developer",
       "default": "0",
       "flags": [
-        "reference"
+        "release"
       ],
-      "description": ""
+      "description": "Set developer message level."
     },
     {
       "name": "devonly_chicken_activity_debug",
@@ -9155,18 +9771,221 @@
       "description": ""
     },
     {
-      "name": "engine_frametime_amnesty_debug",
+      "name": "engine_accurate_input_processing_delta_time",
       "default": "false",
       "flags": [
-        "reference"
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "When true, elapsed time given to the input processing will be the time elapsed since the last input processing. This is only relevant when input is processed multiple times per frame ( i.e. multiple ticks per frame)"
+    },
+    {
+      "name": "engine_allow_multiple_simulates_per_frame",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "When the client is catching up in low frame rate situations, should we run client simulate more than once a frame?"
+    },
+    {
+      "name": "engine_allow_multiple_ticks_per_frame",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "When the client is catching up in low frame rate situations, should we run tick more than once a frame?"
+    },
+    {
+      "name": "engine_client_tick_pad_enable",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
       ],
       "description": ""
     },
     {
-      "name": "engine_frametime_warnings_enable",
+      "name": "engine_cpu_info_extended",
+      "default": "",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "CPU the engine is running on."
+    },
+    {
+      "name": "engine_frametime_amnesty_debug",
       "default": "false",
       "flags": [
-        "reference"
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Enable logging about events that disable frame time warnings"
+    },
+    {
+      "name": "engine_frametime_warnings_enable",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Enable framerate-related warnings, such as sv_long_frame_ms.  Disabling warnings is useful when running in situations such a debug where a slow frame rate is expected"
+    },
+    {
+      "name": "engine_low_latency_sleep_after_client_tick",
+      "default": "false",
+      "flags": [
+        "release"
+      ],
+      "description": "When r_low_latency is enabled, this moves the low latency sleep on tick frames to happen after client simulation."
+    },
+    {
+      "name": "engine_max_resource_system_update_time",
+      "default": "5",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "engine_max_ticks_to_simulate",
+      "default": "-1",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Max number of ticks to simulate per frame, after which simulation will start to slow down compared to real time."
+    },
+    {
+      "name": "engine_no_focus_sleep",
+      "default": "20",
+      "flags": [
+        "archive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "engine_no_focus_sleep_vconsole_suppress",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "When VConsole is in the foreground, don't trigger engine_no_focus_sleep behavior"
+    },
+    {
+      "name": "engine_ostype",
+      "default": "",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "OS type the engine is running on."
+    },
+    {
+      "name": "engine_phys_debug_limit_ticks",
+      "default": "true",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
+      "name": "engine_platform_name_extended",
+      "default": "",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Platform the engine is running on."
+    },
+    {
+      "name": "engine_relaunch_app_before_exiting",
+      "default": "false",
+      "flags": [
+        "hidden",
+        "release"
+      ],
+      "description": "Use this to tell Steam to relaunch the app right after existing"
+    },
+    {
+      "name": "engine_render_only",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "engine_rendersystem_init",
+      "default": "",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Rendersystem option requested (changing this does not change the rendersystem)."
+    },
+    {
+      "name": "engine_rendersystem_shader_model",
+      "default": "0",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Rendersystem shader model in use (changing this does not change the shader model)."
+    },
+    {
+      "name": "engine_rendersystem_used",
+      "default": "",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Rendersystem option in use (changing this does not change the rendersystem)."
+    },
+    {
+      "name": "engine_show_frame_dispatch",
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "show frame dispatch names."
+    },
+    {
+      "name": "engine_show_frame_pacing",
+      "default": "false",
+      "flags": [
+        "release"
+      ],
+      "description": ""
+    },
+    {
+      "name": "engine_show_frame_ticks",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "engine_sse42",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "turn on sse4.2 optimizations in the engine"
+    },
+    {
+      "name": "engine_update_resource_system_during_low_latency_sleep",
+      "default": "true",
+      "flags": [
+        "developmentonly"
       ],
       "description": ""
     },
@@ -9468,6 +10287,14 @@
       "description": ""
     },
     {
+      "name": "execute_command_every_frame",
+      "default": "",
+      "flags": [
+        "cheat"
+      ],
+      "description": ""
+    },
+    {
       "name": "fade_debug_splitscreen_slot",
       "default": "-1",
       "flags": [
@@ -9547,6 +10374,60 @@
         "commandline_enforced"
       ],
       "description": "How much to reduce damage done to teammates by things other than bullets and grenades.  Range is from 0 - 1 (with 1 being damage equal to what is done to an enemy)"
+    },
+    {
+      "name": "filesystem_buffer_size",
+      "default": "0",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Size of per file buffers. 0 for none"
+    },
+    {
+      "name": "filesystem_fake_latency",
+      "default": "0",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "filesystem_max_stdio_read",
+      "default": "16",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "filesystem_native",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Use native FS or STDIO"
+    },
+    {
+      "name": "filesystem_report_buffered_io",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "filesystem_unbuffered_io",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
     },
     {
       "name": "filter_player_simulation_time",
@@ -9690,6 +10571,46 @@
       "description": "Overrides the map's fog settings (-1 populates fog_ vars with map's values)"
     },
     {
+      "name": "fog_override_enable",
+      "default": "false",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Use fog_override convars instead of world fog data"
+    },
+    {
+      "name": "fog_override_end",
+      "default": "3500.000000",
+      "flags": [
+        "cheat"
+      ],
+      "description": ""
+    },
+    {
+      "name": "fog_override_exponent",
+      "default": "2.000000",
+      "flags": [
+        "cheat"
+      ],
+      "description": ""
+    },
+    {
+      "name": "fog_override_max_density",
+      "default": "0.400000",
+      "flags": [
+        "cheat"
+      ],
+      "description": ""
+    },
+    {
+      "name": "fog_override_start",
+      "default": "1000.000000",
+      "flags": [
+        "cheat"
+      ],
+      "description": ""
+    },
+    {
       "name": "fog_start",
       "default": "-1.000000",
       "flags": [
@@ -9716,6 +10637,14 @@
         "defensive"
       ],
       "description": "If enabled, prints diagnostic information about the current fog volume"
+    },
+    {
+      "name": "font_show_glyph_miss",
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
     },
     {
       "name": "footstep_audible_threshold",
@@ -9814,6 +10743,31 @@
       "description": "Sets the base field-of-view."
     },
     {
+      "name": "fps_max",
+      "default": "120.000000",
+      "flags": [
+        "archive",
+        "release"
+      ],
+      "description": "Frame rate limiter.  0=no limit.  Does not apply to dedicated server."
+    },
+    {
+      "name": "fps_max_tools",
+      "default": "120.000000",
+      "flags": [
+        "archive"
+      ],
+      "description": "Additional frame rate limit while in tools mode and a window other than the game window has focus. Note that fps_max still applies, this only allows the maximum frame rate for tools mode to be lower. 0=no tools specific limit."
+    },
+    {
+      "name": "fps_max_ui",
+      "default": "0.000000",
+      "flags": [
+        "archive"
+      ],
+      "description": "Frame rate limiter while the game UI is displayed.  0=no limit.  Does not apply to dedicated server."
+    },
+    {
       "name": "frag_grenade_blip_frequency",
       "default": "1.000000",
       "flags": [
@@ -9884,6 +10838,58 @@
         "defensive"
       ],
       "description": "Fog start for Free Camera."
+    },
+    {
+      "name": "fs_async_threads",
+      "default": "-1",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Number of IO threads in async filesystem (-1 == auto)"
+    },
+    {
+      "name": "fs_fake_read_delay_ms",
+      "default": "0",
+      "flags": [
+        "release"
+      ],
+      "description": "Add N ms of delay to every low-level read operation, to simulate a slow disk"
+    },
+    {
+      "name": "fs_report_async_io",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "fs_report_long_reads",
+      "default": "0",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "0:Off, 1:All (for tracking accumulated duplicate read times), >1:Microsecond threashold"
+    },
+    {
+      "name": "fs_report_sync_opens",
+      "default": "0",
+      "flags": [
+        "release"
+      ],
+      "description": "0:Off, 1:Always, 2:Not during load"
+    },
+    {
+      "name": "fs_warning_mode",
+      "default": "0",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "0:Off, 1:Warn main thread, 2:Warn other threads"
     },
     {
       "name": "func_break_max_pieces",
@@ -10167,11 +11173,14 @@
     },
     {
       "name": "game_mode",
-      "default": "0",
+      "default": "1",
       "flags": [
-        "reference"
+        "gamedll",
+        "clientdll",
+        "replicated",
+        "release"
       ],
-      "description": ""
+      "description": "The current game mode (based on game type). See GameModes.txt."
     },
     {
       "name": "game_online",
@@ -10214,9 +11223,30 @@
       "name": "game_type",
       "default": "0",
       "flags": [
-        "reference"
+        "gamedll",
+        "clientdll",
+        "replicated",
+        "release"
       ],
-      "description": ""
+      "description": "The current game type. See GameModes.txt."
+    },
+    {
+      "name": "gameevents_showeventlisteners",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Show listening addition/removals"
+    },
+    {
+      "name": "gameevents_showevents",
+      "default": "0",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Dump game events to console. (1 = Show Signaling, 2 = Show Posting also)."
     },
     {
       "name": "gameinstructor_enable",
@@ -10450,12 +11480,47 @@
       "description": ""
     },
     {
-      "name": "host_timescale",
-      "default": "0.000000",
+      "name": "host_force_frametime_to_equal_tick_interval",
+      "default": "false",
       "flags": [
-        "reference"
+        "developmentonly",
+        "defensive"
       ],
       "description": ""
+    },
+    {
+      "name": "host_force_max_frametime_to_tick_interval",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "host_framerate",
+      "default": "0.000000",
+      "flags": [
+        "release"
+      ],
+      "description": "Set to lock per-frame time elapse."
+    },
+    {
+      "name": "host_readconfig_ignore_userconfig",
+      "default": "false",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Whether we should ignore the user config file for reading/writing."
+    },
+    {
+      "name": "host_timescale",
+      "default": "1.000000",
+      "flags": [
+        "replicated",
+        "cheat"
+      ],
+      "description": "Prescale the clock by this amount."
     },
     {
       "name": "hostage_debug",
@@ -10501,9 +11566,25 @@
       "name": "hostname",
       "default": "",
       "flags": [
-        "reference"
+        "release"
       ],
-      "description": ""
+      "description": "Hostname for server."
+    },
+    {
+      "name": "hostname_in_client_status",
+      "default": "false",
+      "flags": [
+        "release"
+      ],
+      "description": "Show server hostname in client status."
+    },
+    {
+      "name": "hostport",
+      "default": "27015",
+      "flags": [
+        "release"
+      ],
+      "description": "Host game server port"
     },
     {
       "name": "hud_fastswitch",
@@ -11341,6 +12422,15 @@
       "description": ""
     },
     {
+      "name": "input_button_code_is_scan_code_scd",
+      "default": "true",
+      "flags": [
+        "archive",
+        "per_user"
+      ],
+      "description": "Bind keys based on keyboard position instead of key name"
+    },
+    {
       "name": "input_downimpulsevalue",
       "default": "0.700000",
       "flags": [
@@ -11359,6 +12449,14 @@
       "description": ""
     },
     {
+      "name": "input_forceuser",
+      "default": "-1",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Force user input to this split screen player."
+    },
+    {
       "name": "input_upimpulsevalue",
       "default": "0.300000",
       "flags": [
@@ -11375,6 +12473,24 @@
         "release"
       ],
       "description": "DLC Install Status"
+    },
+    {
+      "name": "instant_replay",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Enable instant replay recording."
+    },
+    {
+      "name": "instant_replay_history_limit",
+      "default": "120",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Maximum amount of minutes to save history (0 is unlimited)."
     },
     {
       "name": "iv_debugbone",
@@ -11513,6 +12629,122 @@
         "defensive"
       ],
       "description": "Automatically sprint when moving with an analog joystick"
+    },
+    {
+      "name": "joy_axisbutton_threshold",
+      "default": "0.300000",
+      "flags": [
+        "archive"
+      ],
+      "description": "Analog axis range before a button press is registered."
+    },
+    {
+      "name": "joy_axisr_deadzone",
+      "default": "0.150000",
+      "flags": [
+        "archive",
+        "per_user"
+      ],
+      "description": ""
+    },
+    {
+      "name": "joy_axisr_relative",
+      "default": "false",
+      "flags": [
+        "archive",
+        "per_user"
+      ],
+      "description": ""
+    },
+    {
+      "name": "joy_axisu_deadzone",
+      "default": "0.150000",
+      "flags": [
+        "archive",
+        "per_user"
+      ],
+      "description": ""
+    },
+    {
+      "name": "joy_axisu_relative",
+      "default": "false",
+      "flags": [
+        "archive",
+        "per_user"
+      ],
+      "description": ""
+    },
+    {
+      "name": "joy_axisv_deadzone",
+      "default": "0.150000",
+      "flags": [
+        "archive",
+        "per_user"
+      ],
+      "description": ""
+    },
+    {
+      "name": "joy_axisv_relative",
+      "default": "false",
+      "flags": [
+        "archive",
+        "per_user"
+      ],
+      "description": ""
+    },
+    {
+      "name": "joy_axisx_deadzone",
+      "default": "0.150000",
+      "flags": [
+        "archive",
+        "per_user"
+      ],
+      "description": ""
+    },
+    {
+      "name": "joy_axisx_relative",
+      "default": "false",
+      "flags": [
+        "archive",
+        "per_user"
+      ],
+      "description": ""
+    },
+    {
+      "name": "joy_axisy_deadzone",
+      "default": "0.150000",
+      "flags": [
+        "archive",
+        "per_user"
+      ],
+      "description": ""
+    },
+    {
+      "name": "joy_axisy_relative",
+      "default": "false",
+      "flags": [
+        "archive",
+        "per_user"
+      ],
+      "description": ""
+    },
+    {
+      "name": "joy_axisz_deadzone",
+      "default": "0.150000",
+      "flags": [
+        "archive",
+        "per_user"
+      ],
+      "description": ""
+    },
+    {
+      "name": "joy_axisz_relative",
+      "default": "false",
+      "flags": [
+        "archive",
+        "per_user"
+      ],
+      "description": ""
     },
     {
       "name": "joy_circle_correct_mode",
@@ -11760,6 +12992,15 @@
         "archive"
       ],
       "description": "True if the joystick is enabled, false otherwise."
+    },
+    {
+      "name": "jpeg_quality",
+      "default": "90",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Set jpeg screenshot quality. [1..100]"
     },
     {
       "name": "key_bind_version",
@@ -12676,6 +13917,30 @@
       "description": ""
     },
     {
+      "name": "mat_assert_on_error_shader_use",
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mat_cache_and_skip_commandbuffers",
+      "default": "true",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mat_cache_renderablepasses",
+      "default": "true",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
       "name": "mat_colcorrection_disableentities",
       "default": "false",
       "flags": [
@@ -12705,6 +13970,14 @@
       "description": "Forces color correction entities to be updated on the client"
     },
     {
+      "name": "mat_colorcorrection",
+      "default": "true",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
       "name": "mat_depthbias_shadowmap",
       "default": "0.000500",
       "flags": [
@@ -12724,10 +13997,26 @@
       "description": ""
     },
     {
+      "name": "mat_execute_skipbuffers",
+      "default": "true",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
       "name": "mat_fullbright",
       "default": "0",
       "flags": [
-        "reference"
+        "cheat"
+      ],
+      "description": "Debug rendering modes"
+    },
+    {
+      "name": "mat_hide_error_shader",
+      "default": "false",
+      "flags": [
+        "developmentonly"
       ],
       "description": ""
     },
@@ -12735,7 +14024,7 @@
       "name": "mat_lpv_luxels",
       "default": "false",
       "flags": [
-        "reference"
+        "cheat"
       ],
       "description": ""
     },
@@ -12743,7 +14032,15 @@
       "name": "mat_luxels",
       "default": "false",
       "flags": [
-        "reference"
+        "cheat"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mat_max_lighting_complexity",
+      "default": "8.000000",
+      "flags": [
+        "cheat"
       ],
       "description": ""
     },
@@ -12751,7 +14048,23 @@
       "name": "mat_overdraw",
       "default": "0",
       "flags": [
-        "reference"
+        "cheat"
+      ],
+      "description": "Visualize overdraw"
+    },
+    {
+      "name": "mat_overdraw_color",
+      "default": "0.075000 0.150000 0.300000",
+      "flags": [
+        "cheat"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mat_shader_cache",
+      "default": "true",
+      "flags": [
+        "developmentonly"
       ],
       "description": ""
     },
@@ -12759,7 +14072,55 @@
       "name": "mat_shading_complexity",
       "default": "false",
       "flags": [
-        "reference"
+        "cheat"
+      ],
+      "description": "Visualize shading complexity"
+    },
+    {
+      "name": "mat_shading_complexity_color",
+      "default": "1.000000 0.500000 0.250000",
+      "flags": [
+        "cheat"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mat_shading_complexity_max_instruction_count",
+      "default": "1024.000000",
+      "flags": [
+        "cheat"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mat_shading_complexity_max_register_count",
+      "default": "128.000000",
+      "flags": [
+        "cheat"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mat_shadowmap_luxels",
+      "default": "false",
+      "flags": [
+        "cheat"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mat_show_distance_field",
+      "default": "0",
+      "flags": [
+        "cheat"
+      ],
+      "description": "0=Off, 1=Visualize trace from camera, 2=Visualize occlusion, 3=Visualize far field trace from camera"
+    },
+    {
+      "name": "mat_skip_static_const_eval",
+      "default": "true",
+      "flags": [
+        "developmentonly"
       ],
       "description": ""
     },
@@ -12905,12 +14266,20 @@
       "description": "Scale down the main viewport (to reduce GPU impact on CPU profiling)"
     },
     {
+      "name": "mat_warn_bad_modes",
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
       "name": "mat_wireframe",
       "default": "0",
       "flags": [
-        "reference"
+        "cheat"
       ],
-      "description": ""
+      "description": "0=Off, 1=Surface Wireframe, 2=Transparent Wireframe"
     },
     {
       "name": "mem_level",
@@ -12921,6 +14290,33 @@
         "defensive"
       ],
       "description": "Memory Level - Default: High"
+    },
+    {
+      "name": "mem_test_each_frame",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Run heap check at end of every frame"
+    },
+    {
+      "name": "mem_test_every_n_seconds",
+      "default": "0",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Run heap check at a specified interval"
+    },
+    {
+      "name": "mem_test_quiet",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Don't print stats when memtesting"
     },
     {
       "name": "mesh_calculate_curvature_smooth_invert",
@@ -12966,12 +14362,331 @@
       "description": "Enables the ability for the mic to remain open if the window loses focus such as when a caster tabs out to adjust settings"
     },
     {
-      "name": "mm_dedicated_search_maxping",
+      "name": "mm_csgo_community_search_players_min",
+      "default": "3",
+      "flags": [
+        "archive",
+        "release"
+      ],
+      "description": "When performing CSGO community matchmaking look for servers with at least so many human players"
+    },
+    {
+      "name": "mm_debug_friend_rp",
       "default": "0",
       "flags": [
-        "reference"
+        "developmentonly"
       ],
       "description": ""
+    },
+    {
+      "name": "mm_dedicated_allow",
+      "default": "true",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "1 = allow searches for dedicated servers"
+    },
+    {
+      "name": "mm_dedicated_fake",
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "1 = pretend like search is going, but abort after some time"
+    },
+    {
+      "name": "mm_dedicated_force_servers",
+      "default": "",
+      "flags": [
+        "release"
+      ],
+      "description": "Comma delimited list of ip:port of servers used to search for dedicated servers instead of searching for public servers.\nUse syntax `publicip1:port|privateip1:port,publicip2:port|privateip2:port` if your server is behind NAT.\nIf the server is behind NAT, you can specify `0.0.0.0|privateip:port` and if server port is in the list of `mm_server_search_lan_ports` its public address should be automatically detected."
+    },
+    {
+      "name": "mm_dedicated_ip",
+      "default": "",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "IP address of dedicated servers to consider available"
+    },
+    {
+      "name": "mm_dedicated_search_maxping",
+      "default": "150",
+      "flags": [
+        "archive"
+      ],
+      "description": "Longest preferred ping to dedicated servers for games"
+    },
+    {
+      "name": "mm_dedicated_search_maxresults",
+      "default": "75",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mm_dedicated_timeout_request",
+      "default": "20.000000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mm_dlcs_mask_extras",
+      "default": "0",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mm_dlcs_mask_fake",
+      "default": "",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mm_events_listeners_validation",
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mm_ignored_sessions_forget_pass",
+      "default": "5",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mm_ignored_sessions_forget_time",
+      "default": "600.000000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mm_player_search_count",
+      "default": "5",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mm_player_search_lan_ping_duration",
+      "default": "3.500000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Duration of LAN discovery ping phase."
+    },
+    {
+      "name": "mm_player_search_lan_ping_interval",
+      "default": "0.500000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Interval between LAN discovery pings."
+    },
+    {
+      "name": "mm_player_search_requests_limit",
+      "default": "-1",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "How many friend requests are displayed."
+    },
+    {
+      "name": "mm_player_search_update_interval",
+      "default": "10.000000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Interval between players searches."
+    },
+    {
+      "name": "mm_session_search_num_results",
+      "default": "10",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mm_session_search_qos_timeout",
+      "default": "15.000000",
+      "flags": [
+        "release"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mm_session_sys_connect_timeout",
+      "default": "8.000000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mm_session_sys_delay_create",
+      "default": "0.000000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mm_session_sys_delay_create_host",
+      "default": "1.200000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mm_session_sys_kick_ban_duration",
+      "default": "180.000000",
+      "flags": [
+        "release"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mm_session_sys_pkey",
+      "default": "",
+      "flags": [
+        "release"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mm_session_sys_ranking_timeout",
+      "default": "12.000000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mm_session_sys_slots_guaranteed",
+      "default": "10",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mm_session_team_res_timeout",
+      "default": "30.000000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mm_session_voice_loading",
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mm_sv_load_test",
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mm_teamsearch_errortime",
+      "default": "3.000000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Time team search is in error state until it self-cancels"
+    },
+    {
+      "name": "mm_teamsearch_nostart",
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Team search will fake cancel before searching for server"
+    },
+    {
+      "name": "mm_title_debug_version",
+      "default": "0",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "This matchmaking version will override .res file version for isolating matchmaking"
+    },
+    {
+      "name": "mm_tu_string",
+      "default": "00000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mm_use_p2p_for_listen_server",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "mobile_fps_increase_during_charging",
+      "default": "false",
+      "flags": [
+        "archive"
+      ],
+      "description": "MOBILE_FPS_CONTROL: If true we increase framerate limit while charging"
+    },
+    {
+      "name": "mobile_fps_increase_during_hfr_animations",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": "MOBILE_FPS_CONTROL: If true we increase framerate limit during HFR-tagged animations and transitions."
+    },
+    {
+      "name": "mobile_fps_increase_during_touch",
+      "default": "true",
+      "flags": [
+        "archive"
+      ],
+      "description": "MOBILE_FPS_CONTROL: If true we increase framerate limit during touch"
+    },
+    {
+      "name": "mobile_fps_limit",
+      "default": "30.000000",
+      "flags": [
+        "archive"
+      ],
+      "description": "MOBILE_FPS_CONTROL: Mobile FPS limit - 15, 30, 60"
     },
     {
       "name": "model_default_preview_sequence_name",
@@ -13013,6 +14728,15 @@
         "release"
       ],
       "description": "The MOTD file to load."
+    },
+    {
+      "name": "mouse_disableinput",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Set to disable mouse input"
     },
     {
       "name": "mouse_inverty",
@@ -15678,11 +17402,38 @@
       "description": "Max score one team can reach before server changes maps"
     },
     {
+      "name": "multigpu_skip_semaphores",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "multigpu_skip_transfers",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
       "name": "muzzle_flash_debug",
       "default": "false",
       "flags": [
         "developmentonly",
         "clientdll"
+      ],
+      "description": ""
+    },
+    {
+      "name": "name",
+      "default": "unnamed",
+      "flags": [
+        "archive",
+        "per_user"
       ],
       "description": ""
     },
@@ -18061,6 +19812,15 @@
       "description": ""
     },
     {
+      "name": "net_async_clientconnect",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Enable async client connect optimization"
+    },
+    {
       "name": "net_async_job_random_sleep",
       "default": "0.000000",
       "flags": [
@@ -18377,12 +20137,80 @@
       "description": ""
     },
     {
+      "name": "opus_encode_test_signal",
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
       "name": "opus_unittest_test_signal",
       "default": "false",
       "flags": [
         "developmentonly"
       ],
       "description": ""
+    },
+    {
+      "name": "panorama_2d_translate_no_comp_layer",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_alignment_fixes",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": "Fix alignment issues"
+    },
+    {
+      "name": "panorama_allow_texture_composition_layer_fast_path",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_allow_transitions",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_apply_styles_for_invisible_parents",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": "Specifies whether to short circuit applying styles when a parent is invisible."
+    },
+    {
+      "name": "panorama_assert_loading_panel_type",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": "Force style invalidation of the entire panel subtree when adding / removing classes."
     },
     {
       "name": "panorama_async_compute_mipgen",
@@ -18392,6 +20220,76 @@
         "clientdll"
       ],
       "description": "use asynchronous compute for mipmap generation."
+    },
+    {
+      "name": "panorama_box_shadow_no_comp_layer",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_cache_command_list_repaint_threshold",
+      "default": "0.250000",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_cache_command_list_size_threshold",
+      "default": "384",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_classes_force_invalidate",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": "Force style invalidation of the entire panel subtree when adding / removing classes."
+    },
+    {
+      "name": "panorama_clear_frames_on_device_restore",
+      "default": "2",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_comp_layer_lru_lifetime",
+      "default": "1.000000",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_composition_atlas",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
     },
     {
       "name": "panorama_console_max_autocomplete",
@@ -18437,6 +20335,16 @@
       "description": ""
     },
     {
+      "name": "panorama_content_size_fixes",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": "Fix content size issues"
+    },
+    {
       "name": "panorama_daisy_wheel",
       "default": "ABXY",
       "flags": [
@@ -18446,6 +20354,26 @@
         "defensive"
       ],
       "description": "Daisy wheel input mode: RS | ABXY"
+    },
+    {
+      "name": "panorama_dash_gap_ratio",
+      "default": "0.500000",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_dash_len",
+      "default": "20.000000",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
     },
     {
       "name": "panorama_debug_movies",
@@ -18460,25 +20388,38 @@
     },
     {
       "name": "panorama_debug_overlay_opacity",
-      "default": "0.000000",
+      "default": "0.250000",
       "flags": [
-        "reference"
+        "hidden",
+        "archive"
       ],
       "description": ""
     },
     {
       "name": "panorama_debug_overlay_opacity_max",
-      "default": "0.000000",
+      "default": "0.250000",
       "flags": [
-        "reference"
+        "hidden",
+        "archive"
       ],
       "description": ""
     },
     {
       "name": "panorama_debug_overlay_opacity_min",
-      "default": "0.000000",
+      "default": "0.010000",
       "flags": [
-        "reference"
+        "hidden",
+        "archive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_debug_ready_for_display",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
       ],
       "description": ""
     },
@@ -18490,6 +20431,126 @@
         "archive"
       ],
       "description": ""
+    },
+    {
+      "name": "panorama_disable_blur",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_disable_box_shadow",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_disable_descendant_filtering",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": "Disable descendant selector filtering"
+    },
+    {
+      "name": "panorama_disable_draw_fancy_quad",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_disable_draw_text",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_disable_draw_text_shadow",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_disable_layer_cache",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_disable_layer_clear",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_disable_render_callbacks",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_disable_render_target_cache",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_disallow_hover_styles",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_dragscroll_affordance",
+      "default": "20",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": "Minimum mouse movement in pixels before a move is treated as a drag scroll"
     },
     {
       "name": "panorama_dragscroll_maxflickvelocity",
@@ -18514,6 +20575,66 @@
       "description": "Minimum velocity that the mouse must be moving as mouse up time to qualify as a drag scroll flick"
     },
     {
+      "name": "panorama_dragscroll_mintime",
+      "default": "0.020000",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": "Minimum time that the mouse button must be down before a move is treated as a drag scroll"
+    },
+    {
+      "name": "panorama_dragscroll_velocitymultiplier",
+      "default": "0.500000",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": "Multiplier for flick velocity off of actual measured velocity"
+    },
+    {
+      "name": "panorama_draw_fast_path_img_shadow",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_draw_text_fast_path",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_draw_text_fast_path_text_shadow",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_enable_secondary_layout_pass",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
       "name": "panorama_focus_world_panels",
       "default": "false",
       "flags": [
@@ -18521,6 +20642,144 @@
         "archive"
       ],
       "description": "when set request key focus when a world panel is enabled"
+    },
+    {
+      "name": "panorama_force_active_controller_type",
+      "default": "-1",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_force_desired_layout_traverse",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": "Force desired layout traverse, even if the cached values are up to date."
+    },
+    {
+      "name": "panorama_highlight_bad_opacity_masks",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_highlight_composition_layers",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_highlight_slow_operations",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_hsbc_through_fast_path",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_joystick_axis_repeat_curve_time",
+      "default": "1.000000",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_joystick_axis_repeat_interval_end",
+      "default": "0.050000",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_joystick_axis_repeat_interval_start",
+      "default": "0.220000",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_joystick_button_repeat_curve_time",
+      "default": "1.200000",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_joystick_button_repeat_interval_end",
+      "default": "0.100000",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_joystick_button_repeat_interval_start",
+      "default": "0.480000",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_joystick_enabled",
+      "default": "true",
+      "flags": [
+        "archive"
+      ],
+      "description": "Enable panorama joystick input"
+    },
+    {
+      "name": "panorama_js_minidumps",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": "Enable sending minidumps on JS Exceptions."
     },
     {
       "name": "panorama_label_draw_rects",
@@ -18545,6 +20804,46 @@
       "description": "Should labels try to wrap text before using text-overflow: shrink"
     },
     {
+      "name": "panorama_large_dispatch_event_queue",
+      "default": "0",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_max_text_shadow_strength",
+      "default": "10.000000",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_might_scroll_no_comp_layer",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_min_comp_layer_cache_cost",
+      "default": "4096",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
       "name": "panorama_movie_async_load_size_bytes",
       "default": "20971520",
       "flags": [
@@ -18567,6 +20866,134 @@
       "description": ""
     },
     {
+      "name": "panorama_panel_occlusion",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_print_render_tree",
+      "default": "",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": "Print the RenderOperation_t tree for the given root window; set to * to print all"
+    },
+    {
+      "name": "panorama_reload_animations",
+      "default": "2",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_render_target_cache_max_size",
+      "default": "31457280",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_script_cache_enabled",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": "Enable script caching to speed up recompiling scripts multiple times."
+    },
+    {
+      "name": "panorama_show_fps",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_show_fps_scale",
+      "default": "1.000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_simple_borders_no_comp_layer",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_skip_composition_layer_content_paint",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_skip_composition_layer_content_paint_tint",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_spew_async_event_substring",
+      "default": "",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": "If non-empty, print debug info about async event queue and dispatch behavior for events containing the substring."
+    },
+    {
+      "name": "panorama_spew_layout_invalidates",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_stats_log_time",
+      "default": "0.000000",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
       "name": "panorama_streaming_load_local_images",
       "default": "false",
       "flags": [
@@ -18577,10 +21004,131 @@
       "description": ""
     },
     {
-      "name": "panorama_transition_time_factor",
-      "default": "0.000000",
+      "name": "panorama_style_flag_force_invalidate",
+      "default": "false",
       "flags": [
-        "reference"
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": "Force style invalidation of the entire panel subtree when adding / removing style flags."
+    },
+    {
+      "name": "panorama_suspend_animation",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_suspend_paint",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_temp_comp_layer_min_dimension",
+      "default": "512.000000",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_toggledebugger_mode",
+      "default": "0",
+      "flags": [
+        "hidden",
+        "archive"
+      ],
+      "description": "Toggledebugger key operation : 0 = open/inspect, 1 = open/close"
+    },
+    {
+      "name": "panorama_track_render_commands",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_transform_parents_no_layer_for_perspective",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_transforms_no_comp_layer",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_transition_time_factor",
+      "default": "1.000000",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": "A float representing a scale factor for transitions. 1.0 is normal, 2.0 would be twice as fast as normal, 0.5 half as fast"
+    },
+    {
+      "name": "panorama_unlink_from_render_tree",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_use_backbuffer_directly",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_use_composite_cmd_for_cached_layers",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "panorama_use_new_occlusion_invalidation",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
       ],
       "description": ""
     },
@@ -18776,6 +21324,16 @@
       "description": ""
     },
     {
+      "name": "password",
+      "default": "",
+      "flags": [
+        "archive",
+        "dontrecord",
+        "server_cannot_query"
+      ],
+      "description": "Current server access password"
+    },
+    {
       "name": "path_closest_point_debug",
       "default": "false",
       "flags": [
@@ -18910,6 +21468,22 @@
         "defensive"
       ],
       "description": "Modifier for the headshot impulse hits on players"
+    },
+    {
+      "name": "phys_highlight_expensive_objects",
+      "default": "false",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Highlight expensive physics objects"
+    },
+    {
+      "name": "phys_highlight_expensive_objects_strength",
+      "default": "0.020000",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Highlight expensive physics objects strength"
     },
     {
       "name": "phys_impactforcescale",
@@ -19208,6 +21782,14 @@
         "developmentonly",
         "gamedll",
         "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "player0_using_joystick",
+      "default": "false",
+      "flags": [
+        "archive"
       ],
       "description": ""
     },
@@ -19722,6 +22304,14 @@
       "description": ""
     },
     {
+      "name": "r_allow_low_gpu_memory_mode",
+      "default": "true",
+      "flags": [
+        "release"
+      ],
+      "description": "Allow Low GPU Memory mode (i.e. when building maps)."
+    },
+    {
       "name": "r_allow_onesweep_gpusort",
       "default": "true",
       "flags": [
@@ -19729,6 +22319,15 @@
         "defensive"
       ],
       "description": ""
+    },
+    {
+      "name": "r_always_render_all_windows",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Always force all engine & tools to render"
     },
     {
       "name": "r_aoproxy_cull_dist",
@@ -19849,6 +22448,23 @@
       "description": ""
     },
     {
+      "name": "r_aspectratio",
+      "default": "0.000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_async_shader_compile_notify_frequency",
+      "default": "10",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
       "name": "r_bloom_tent_filter_radius",
       "default": "3.100000",
       "flags": [
@@ -19857,6 +22473,14 @@
         "cheat"
       ],
       "description": "bloom mip up-sample filtering radius (using 3x3 tent filter, radius in mip level texels), 0.0 radius => box (2x2) filter with (fixed) 1.0 radius"
+    },
+    {
+      "name": "r_cache_pool_allocations",
+      "default": "true",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
     },
     {
       "name": "r_character_decal_monitor_draw_frustum",
@@ -21097,6 +23721,14 @@
       "description": ""
     },
     {
+      "name": "r_debug_draw_safe_area_insets",
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Render safe area insets as wireframe."
+    },
+    {
       "name": "r_debug_particle_shadows",
       "default": "false",
       "flags": [
@@ -21229,9 +23861,18 @@
     },
     {
       "name": "r_directlighting",
-      "default": "false",
+      "default": "true",
       "flags": [
-        "reference"
+        "cheat"
+      ],
+      "description": "Set to use direct lighting"
+    },
+    {
+      "name": "r_dlss_preset",
+      "default": "5",
+      "flags": [
+        "developmentonly",
+        "defensive"
       ],
       "description": ""
     },
@@ -21254,6 +23895,54 @@
       "description": ""
     },
     {
+      "name": "r_dof_override",
+      "default": "false",
+      "flags": [
+        "cheat"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_dof_override_far_blurry",
+      "default": "2000.000000",
+      "flags": [
+        "cheat"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_dof_override_far_crisp",
+      "default": "180.000000",
+      "flags": [
+        "cheat"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_dof_override_near_blurry",
+      "default": "-100.000000",
+      "flags": [
+        "cheat"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_dof_override_near_crisp",
+      "default": "0.000000",
+      "flags": [
+        "cheat"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_dof_override_tilt_to_ground",
+      "default": "0.500000",
+      "flags": [
+        "cheat"
+      ],
+      "description": ""
+    },
+    {
       "name": "r_dopixelvisibility",
       "default": "true",
       "flags": [
@@ -21268,6 +23957,22 @@
         "developmentonly",
         "clientdll",
         "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_draw_first_tri_only",
+      "default": "false",
+      "flags": [
+        "cheat"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_draw_instances",
+      "default": "true",
+      "flags": [
+        "cheat"
       ],
       "description": ""
     },
@@ -21289,6 +23994,14 @@
       "description": "Draw particle children with parents (-1=use gameinfo, 0=no, 1=yes)"
     },
     {
+      "name": "r_drawblankworld",
+      "default": "false",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Render blank instead of the game world"
+    },
+    {
       "name": "r_drawchickens",
       "default": "true",
       "flags": [
@@ -21308,11 +24021,11 @@
     },
     {
       "name": "r_drawdecals",
-      "default": "false",
+      "default": "true",
       "flags": [
-        "reference"
+        "cheat"
       ],
-      "description": ""
+      "description": "Set to render decals"
     },
     {
       "name": "r_drawdevvisualizers",
@@ -21322,6 +24035,14 @@
         "cheat"
       ],
       "description": "Render dev visualizers"
+    },
+    {
+      "name": "r_drawpanorama",
+      "default": "true",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Enable the rendering of panorama UI"
     },
     {
       "name": "r_drawparticles",
@@ -21349,6 +24070,14 @@
         "cheat"
       ],
       "description": ""
+    },
+    {
+      "name": "r_drawskybox",
+      "default": "true",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Render the 2d skybox."
     },
     {
       "name": "r_drawtracers",
@@ -21379,6 +24108,31 @@
       "description": "Render view model"
     },
     {
+      "name": "r_drawworld",
+      "default": "true",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Render the world."
+    },
+    {
+      "name": "r_dx11_debug_clean",
+      "default": "false",
+      "flags": [
+        "release"
+      ],
+      "description": "Aggressively unbind bound resources to cleanup DX11 debug warnings."
+    },
+    {
+      "name": "r_dx11_software_cmd_lists",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Enable Software Command lists for DX11 (Avoid using deferred contexts)"
+    },
+    {
       "name": "r_enable_rigid_animation",
       "default": "false",
       "flags": [
@@ -21388,10 +24142,19 @@
       "description": ""
     },
     {
+      "name": "r_experimental_lag_limiter",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
       "name": "r_extra_render_frames",
       "default": "0",
       "flags": [
-        "reference"
+        "cheat"
       ],
       "description": ""
     },
@@ -21603,11 +24366,36 @@
       "description": ""
     },
     {
+      "name": "r_force_no_present",
+      "default": "false",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Force the render device to not present frames."
+    },
+    {
+      "name": "r_force_render_frame_count",
+      "default": "5",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "The number of frames to render when a"
+    },
+    {
       "name": "r_force_thick_hair",
       "default": "false",
       "flags": [
         "developmentonly",
         "cheat"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_frame_sync_enable",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
       ],
       "description": ""
     },
@@ -21631,11 +24419,11 @@
     },
     {
       "name": "r_fullscreen_gamma",
-      "default": "0.000000",
+      "default": "2.200000",
       "flags": [
-        "reference"
+        "archive"
       ],
-      "description": ""
+      "description": "Screen Gamma (only in fullscreen modes)"
     },
     {
       "name": "r_fullscreen_quad_single_triangle",
@@ -21651,6 +24439,78 @@
       "flags": [
         "developmentonly",
         "clientdll"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_grass_allow_flattening",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_grass_alpha_test",
+      "default": "0",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_grass_density_mode",
+      "default": "0",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "0 = Density corresponds to blade existance, 1 = Density corresponds to blade height, 2 = Both 0 and 1"
+    },
+    {
+      "name": "r_grass_end_fade",
+      "default": "3000.000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_grass_max_brightness_change",
+      "default": "75.000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_grass_quality",
+      "default": "2",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "0 = Off, 1 = Low, 2 = Med, 3 = high, 4 = ultra"
+    },
+    {
+      "name": "r_grass_start_fade",
+      "default": "2000.000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_grass_vertex_lighting",
+      "default": "0",
+      "flags": [
+        "developmentonly",
+        "defensive"
       ],
       "description": ""
     },
@@ -21953,11 +24813,11 @@
     },
     {
       "name": "r_indirectlighting",
-      "default": "false",
+      "default": "true",
       "flags": [
-        "reference"
+        "cheat"
       ],
-      "description": ""
+      "description": "Set to use indirect lighting"
     },
     {
       "name": "r_late_particle_job_sync",
@@ -21968,6 +24828,16 @@
         "defensive"
       ],
       "description": ""
+    },
+    {
+      "name": "r_legacy_vsync",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": "Use legacy vsync mode -- for testing for a couple user machines."
     },
     {
       "name": "r_light_flickering_enabled",
@@ -22046,12 +24916,30 @@
       "description": "sphere radius (world) for LPV debug grid"
     },
     {
-      "name": "r_lightmap_size",
-      "default": "0",
+      "name": "r_lightmap_set",
+      "default": "lightmaps",
       "flags": [
-        "reference"
+        "cheat"
       ],
-      "description": ""
+      "description": "Lightmap set to use, only works on map load"
+    },
+    {
+      "name": "r_lightmap_size",
+      "default": "65536",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Maximum lightmap resolution."
+    },
+    {
+      "name": "r_lightmap_size_directional_irradiance",
+      "default": "-1",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Maximum lightmap resolution for directional_irradiance channel. -1 = use value of r_lightmap_size"
     },
     {
       "name": "r_limit_particle_job_duration",
@@ -22063,6 +24951,24 @@
       "description": ""
     },
     {
+      "name": "r_low_latency",
+      "default": "1",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "NVIDIA Low Latency/AMD Anti-Lag 2 (0 = off, 1 = on, 2 = NV-only, on + boost)"
+    },
+    {
+      "name": "r_low_latency_trigger_flash",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "NVIDIA Low Latency Trigger Flash"
+    },
+    {
       "name": "r_mapextents",
       "default": "16384.000000",
       "flags": [
@@ -22070,6 +24976,32 @@
         "cheat"
       ],
       "description": "Set the max dimension for the map.  This determines the far clipping plane"
+    },
+    {
+      "name": "r_max_texture_pool_size",
+      "default": "0",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Upper limit on texture pool size."
+    },
+    {
+      "name": "r_memory_aliasing",
+      "default": "true",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Allow disabling memory aliasing in the device memory pool.  This is just intended for testing/ruling out aliasing issues."
+    },
+    {
+      "name": "r_mipgen_compute_shader",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Use compute shader for mipgen."
     },
     {
       "name": "r_mixed_shadows_fade_in_time",
@@ -22110,6 +25042,24 @@
       "default": "true",
       "flags": [
         "cheat"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_multigpu_num_gpus_found",
+      "default": "1",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_multigpu_num_gpus_used",
+      "default": "1",
+      "flags": [
+        "developmentonly",
+        "defensive"
       ],
       "description": ""
     },
@@ -22598,6 +25548,42 @@
       "description": ""
     },
     {
+      "name": "r_pipeline_stats_command_flush",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Experimental: Set to 1 to enable full GPU pipeline flushing after each command list."
+    },
+    {
+      "name": "r_pipeline_stats_flush_before_sleeping",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Experimental: Set to 1 to enable GPU pipeline flushes right before the render thread sleeps to wait for more work."
+    },
+    {
+      "name": "r_pipeline_stats_present_flush",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Experimental: Set to 1 to enable full GPU pipeline flushing after each present."
+    },
+    {
+      "name": "r_pipeline_stats_use_flush_api",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Experimental: Set to 1 to use the ID3D11DeviceContext11::Flush() to flush the GPU pipeline instead of queries."
+    },
+    {
       "name": "r_pixelvisibility_partial",
       "default": "true",
       "flags": [
@@ -22673,6 +25659,15 @@
       "description": "1 = bloom output (before thresholding), 2 = quarter res downsample, 3 = quarter res effects bloom 4 = quarter res effects raw"
     },
     {
+      "name": "r_prefer_loop_unrolling",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Prefer shader loop unrolling."
+    },
+    {
       "name": "r_propsmaxdist",
       "default": "1200.000000",
       "flags": [
@@ -22710,6 +25705,49 @@
         "defensive"
       ],
       "description": ""
+    },
+    {
+      "name": "r_render_world_node_bounds",
+      "default": "false",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Render world node bounds"
+    },
+    {
+      "name": "r_renderdoc_auto_shader_pdbs",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Automatically generate shader debug info on capture"
+    },
+    {
+      "name": "r_renderdoc_open_captures",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_renderdoc_validation_error_capture_limit",
+      "default": "5",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_rendersun",
+      "default": "true",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Render sun lighting"
     },
     {
       "name": "r_replay_post_effect",
@@ -22776,6 +25814,16 @@
       "description": "Build information. Leave this enabled when submitting bug screenshots and videos, please!"
     },
     {
+      "name": "r_show_gpu_memory_visualizer",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "cheat",
+        "menubar_item"
+      ],
+      "description": "SceneSystem/Vulkan GPU Memory Visualizer"
+    },
+    {
       "name": "r_show_time_info",
       "default": "false",
       "flags": [
@@ -22788,39 +25836,56 @@
       "name": "r_showdebugoverlays",
       "default": "false",
       "flags": [
-        "reference"
+        "cheat"
       ],
-      "description": ""
+      "description": "Set to render debug overlays"
     },
     {
       "name": "r_showsceneobjectbounds",
       "default": "false",
       "flags": [
-        "reference"
+        "cheat"
       ],
-      "description": ""
+      "description": "Show scenesystem object bounding boxes"
+    },
+    {
+      "name": "r_size_cull_threshold",
+      "default": "0.800000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Threshold of screen size percentage below which objects get culled"
     },
     {
       "name": "r_size_cull_threshold_fade",
       "default": "0.000000",
       "flags": [
-        "reference"
+        "developmentonly"
       ],
-      "description": ""
+      "description": "% above the screen size percentage where we will start fading out (==0 will disable fading)."
     },
     {
       "name": "r_size_cull_threshold_shadow",
-      "default": "0.000000",
+      "default": "0.200000",
       "flags": [
-        "reference"
+        "cheat"
       ],
-      "description": ""
+      "description": "Threshold of shadow map size percentage below which objects get culled"
     },
     {
       "name": "r_skinning_enabled",
       "default": "true",
       "flags": [
         "cheat"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_skip_precache_validation_check",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
       ],
       "description": ""
     },
@@ -22843,11 +25908,12 @@
     },
     {
       "name": "r_ssao",
-      "default": "false",
+      "default": "true",
       "flags": [
-        "reference"
+        "developmentonly",
+        "defensive"
       ],
-      "description": ""
+      "description": "Set to use screen-space ambient occlusion"
     },
     {
       "name": "r_ssao_bias",
@@ -22905,12 +25971,201 @@
       "description": ""
     },
     {
+      "name": "r_texture_budget_dynamic",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Dynamically adjust texture streaming budget based on GPU memory usage."
+    },
+    {
+      "name": "r_texture_budget_threshold",
+      "default": "0.900000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Reduce texture memory pool size when this percentage of the budget is full."
+    },
+    {
+      "name": "r_texture_budget_update_period",
+      "default": "0.100000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Time (in seconds) between updating texture memory budget."
+    },
+    {
+      "name": "r_texture_eager_eviction",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_texture_hookup_uses_threadpool",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Async Texture hookup uses its own threadpool instead of the global pool."
+    },
+    {
       "name": "r_texture_lod_scale",
       "default": "1.000000",
       "flags": [
         "cheat"
       ],
       "description": "Scale factor for requested texture size (texture streaming)"
+    },
+    {
+      "name": "r_texture_nonstreaming_load",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Allow immediately loading mips of textures (when possible) when their headers are loaded, saving IO & reducing latency."
+    },
+    {
+      "name": "r_texture_pool_increase_rate",
+      "default": "64.000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Increase texture memory pool size by this many MB / s when under budget."
+    },
+    {
+      "name": "r_texture_pool_reduce_rate",
+      "default": "256.000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Reduce texture memory pool size by this many MB / s when over budget."
+    },
+    {
+      "name": "r_texture_pool_size",
+      "default": "1600",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Total size of the texture pool in MB"
+    },
+    {
+      "name": "r_texture_stream_max_resolution",
+      "default": "2147483647",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Maximum resolution for top mip level in streaming textures"
+    },
+    {
+      "name": "r_texture_stream_mip_bias",
+      "default": "0",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Biases the mip level the texture streaming system choses to stream for each texture."
+    },
+    {
+      "name": "r_texture_stream_resolution_bias_decrease_rate",
+      "default": "0.100000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_texture_stream_resolution_bias_increase_rate",
+      "default": "0.050000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_texture_stream_resolution_bias_min",
+      "default": "1.000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_texture_stream_resolution_bias_update_period",
+      "default": "0.500000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_texture_stream_throttle_amount",
+      "default": "10.000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_texture_stream_throttle_count",
+      "default": "3",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_texture_stream_throttle_count_over_budget",
+      "default": "1",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_texture_streaming_timesliced",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_texture_streamout_unthrottle_ms",
+      "default": "0.200000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "After hitting throttling limits for streamout, allow it to continue up to this number of milliseconds."
+    },
+    {
+      "name": "r_texturefilteringquality",
+      "default": "1",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "0: Bilinear, 1: Trilinear, 2: Aniso 2x, 3: Aniso 4x, 4: Aniso 8x, 5: Aniso 16x"
     },
     {
       "name": "r_threaded_particle_creation",
@@ -22941,10 +26196,28 @@
       "description": ""
     },
     {
+      "name": "r_timestamp_query_multiplier",
+      "default": "1.000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Set the TIMESTAMP query cycle multiplier, for drivers that lie"
+    },
+    {
+      "name": "r_translucent",
+      "default": "true",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Enable rendering of translucent geometry"
+    },
+    {
       "name": "r_ui_update_parallel_with_server",
       "default": "false",
       "flags": [
-        "reference"
+        "developmentonly",
+        "defensive"
       ],
       "description": ""
     },
@@ -22954,6 +26227,185 @@
       "flags": [
         "developmentonly",
         "clientdll",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_use_memory_budget_model",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Use a model of GPU memory use to determine budget rather than querying the OS."
+    },
+    {
+      "name": "r_validate_texture_streaming",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Dumps state of texture streaming at the next frame boundary."
+    },
+    {
+      "name": "r_vconsole_foregroundforcerender",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "When VConsole is in the foreground, force all engine & tools to render"
+    },
+    {
+      "name": "r_vma_defrag_algorithm",
+      "default": "1",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Defrag algorithm 0=Fast 1=Balanced 2=full 3=Extensive"
+    },
+    {
+      "name": "r_vma_defrag_enabled",
+      "default": "true",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_vma_defrag_max_allocation_count_per_pass",
+      "default": "256",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "During a VMA defrag, number of moves per pass."
+    },
+    {
+      "name": "r_vma_defrag_max_allocation_size_per_pass",
+      "default": "32",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "During a VMA defrag, number of MB in moves per pass."
+    },
+    {
+      "name": "r_vma_defrag_moves_per_frame",
+      "default": "20",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "During a VMA defrag, number of moves to process for a pass in a single frame update."
+    },
+    {
+      "name": "r_vma_defrag_threshold_mb",
+      "default": "256",
+      "flags": [
+        "release"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_vulkan_force_sync1",
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_vulkan_sw_cmd_lists",
+      "default": "true",
+      "flags": [
+        "release"
+      ],
+      "description": "Enable Software Command lists for Vulkan"
+    },
+    {
+      "name": "r_vulkan_validation_filter_in",
+      "default": "",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Comma delimited list of stristr filters for including validation messages.  Only messages matching filter will be included."
+    },
+    {
+      "name": "r_vulkan_validation_filter_out",
+      "default": "",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Comma delimited list of stristr filters for excluding validation messages.  Any messages matching filter will be excluded."
+    },
+    {
+      "name": "r_wait_on_present",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_world_frame_load_threshold_ms",
+      "default": "10.000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_world_wind_dir",
+      "default": "0.707000 0.707000 0.000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_world_wind_frequency_grass",
+      "default": "0.030000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_world_wind_frequency_trees",
+      "default": "0.003000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_world_wind_offset_speed",
+      "default": "0.250000 0.300000 0.200000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_world_wind_smooth_time",
+      "default": "2.000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "r_world_wind_strength",
+      "default": "40.000000",
+      "flags": [
+        "developmentonly",
         "defensive"
       ],
       "description": ""
@@ -23243,6 +26695,44 @@
       "description": "How much we scale physics impacts against the ragdoll."
     },
     {
+      "name": "rate",
+      "default": "80000",
+      "flags": [
+        "archive",
+        "userinfo"
+      ],
+      "description": "Min bytes/sec the host can receive data"
+    },
+    {
+      "name": "rcon_address",
+      "default": "",
+      "flags": [
+        "dontrecord",
+        "release",
+        "server_cannot_query"
+      ],
+      "description": "Address of remote server if sending unconnected rcon commands (format x.x.x.x:p) "
+    },
+    {
+      "name": "rcon_connected_clients_allow",
+      "default": "true",
+      "flags": [
+        "replicated",
+        "release"
+      ],
+      "description": "Allow clients to use rcon commands on server."
+    },
+    {
+      "name": "rcon_password",
+      "default": "",
+      "flags": [
+        "dontrecord",
+        "release",
+        "server_cannot_query"
+      ],
+      "description": "remote console password."
+    },
+    {
       "name": "recast_mark_overhang",
       "default": "false",
       "flags": [
@@ -23263,6 +26753,15 @@
       "description": "0 = watershed, 1 = monotone, 2 = layers"
     },
     {
+      "name": "replay_debug",
+      "default": "0",
+      "flags": [
+        "replicated",
+        "release"
+      ],
+      "description": ""
+    },
+    {
       "name": "report_cliententitysim",
       "default": "false",
       "flags": [
@@ -23279,6 +26778,23 @@
         "cheat"
       ],
       "description": "List all clientside entities thinking and time - will report and turn itself off."
+    },
+    {
+      "name": "report_connection_failure_percentage",
+      "default": "0.000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "reset_voice_on_input_stallout",
+      "default": "false",
+      "flags": [
+        "userinfo"
+      ],
+      "description": "If true, resets the input device when there was a long enough hitch between callbacks."
     },
     {
       "name": "rope_averagelight",
@@ -23446,6 +26962,24 @@
         "cheat"
       ],
       "description": "When computing respondents for a 'THEN ANY' rule, all rule-matching scores within this much of the best score will be considered."
+    },
+    {
+      "name": "rtx_allow_blas_compact",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "rtx_allow_blas_create",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
     },
     {
       "name": "rtx_dynamic_blas",
@@ -23800,6 +27334,15 @@
     },
     {
       "name": "sc_allow_dynamic_constant_batching",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "sc_allow_precomputed_vismembers",
       "default": "true",
       "flags": [
         "developmentonly",
@@ -24583,6 +28126,42 @@
         "cheat"
       ],
       "description": "Enable display of console messages on screen. 1 = Enabled, 0 = Disabled, -1 = Enabled if vgui is not present"
+    },
+    {
+      "name": "screenshot_height",
+      "default": "-1",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Screenshot height. -1 for screen height."
+    },
+    {
+      "name": "screenshot_prefix",
+      "default": "shot",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Set the screenshot auto naming prefix."
+    },
+    {
+      "name": "screenshot_subdir",
+      "default": "screenshots",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Set the screenshot directory."
+    },
+    {
+      "name": "screenshot_width",
+      "default": "-1",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Screenshot width. -1 for screen width."
     },
     {
       "name": "script_attach_debugger_at_startup",
@@ -25617,6 +29196,14 @@
       "description": "Music volume"
     },
     {
+      "name": "snd_mute_losefocus",
+      "default": "true",
+      "flags": [
+        "archive"
+      ],
+      "description": ""
+    },
+    {
       "name": "snd_mute_mvp_music_live_players",
       "default": "false",
       "flags": [
@@ -26534,6 +30121,24 @@
       "description": "Volume of sounds in tools (e.g. Hammer, SFM)"
     },
     {
+      "name": "snd_ui_positional",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "cheat"
+      ],
+      "description": ""
+    },
+    {
+      "name": "snd_ui_spatialization_spread",
+      "default": "1.000000",
+      "flags": [
+        "developmentonly",
+        "cheat"
+      ],
+      "description": ""
+    },
+    {
       "name": "snd_use_baked_occlusion",
       "default": "0.000000",
       "flags": [
@@ -26738,6 +30343,15 @@
         "defensive"
       ],
       "description": "Sound device in use (changing this does not change the soundsystem)."
+    },
+    {
+      "name": "soundsystem_update_async",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
     },
     {
       "name": "sparseshadowtree_cascade_mask",
@@ -26948,6 +30562,15 @@
       "description": "uv y offset during copy to cascade."
     },
     {
+      "name": "spawngroup_ignore_timeouts",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
       "name": "speaker_config",
       "default": "-1",
       "flags": [
@@ -27153,9 +30776,11 @@
       "name": "spec_replay_enable",
       "default": "0",
       "flags": [
-        "reference"
+        "replicated",
+        "release",
+        "commandline_enforced"
       ],
-      "description": ""
+      "description": "Enable Killer Replay, requires hltv server running (0:off, 1:default, 2:force)"
     },
     {
       "name": "spec_replay_fadein",
@@ -27178,12 +30803,40 @@
       "description": "Amount of time in seconds it takes to visually fade out of replay, or out of real-time before replay"
     },
     {
-      "name": "spec_replay_leadup_time",
-      "default": "0.000000",
+      "name": "spec_replay_fullframe",
+      "default": "true",
       "flags": [
-        "reference"
+        "developmentonly",
+        "defensive"
       ],
-      "description": ""
+      "description": "Send full frame on every hltv replay transition"
+    },
+    {
+      "name": "spec_replay_leadup_time",
+      "default": "5.343800",
+      "flags": [
+        "replicated",
+        "release"
+      ],
+      "description": "Replay time in seconds before the highlighted event"
+    },
+    {
+      "name": "spec_replay_message_time",
+      "default": "9.500000",
+      "flags": [
+        "replicated",
+        "release"
+      ],
+      "description": "How long to show the message about Killer Replay after death. The best setting is a bit shorter than spec_replay_autostart_delay + spec_replay_leadup_time + spec_replay_winddown_time"
+    },
+    {
+      "name": "spec_replay_on_death",
+      "default": "false",
+      "flags": [
+        "replicated",
+        "release"
+      ],
+      "description": "When > 0, sets the mode whereas players see delayed replay, and are segregated into a domain of chat and voice separate from the alive players"
     },
     {
       "name": "spec_replay_others_experimental",
@@ -27204,6 +30857,24 @@
         "defensive"
       ],
       "description": "Enable outline selecting victim in hltv replay: 0 - none; 1 - ouline YOU; 2 - outline YOU, with red ragdoll outline; 3 - normal spectator outlines"
+    },
+    {
+      "name": "spec_replay_rate_base",
+      "default": "1.000000",
+      "flags": [
+        "replicated",
+        "release"
+      ],
+      "description": "Base time scale of Killer Replay.Experimental."
+    },
+    {
+      "name": "spec_replay_rate_limit",
+      "default": "3.000000",
+      "flags": [
+        "replicated",
+        "release"
+      ],
+      "description": "Minimum allowable pause between replay requests in seconds"
     },
     {
       "name": "spec_replay_rate_slowdown",
@@ -27313,6 +30984,15 @@
       "description": "If set to 1, map voting and spectator view use the raw number keys instead of the weapon binds (slot1, slot2, etc)."
     },
     {
+      "name": "splitscreen_mode",
+      "default": "0",
+      "flags": [
+        "archive",
+        "cheat"
+      ],
+      "description": ""
+    },
+    {
       "name": "ss_mimic",
       "default": "0",
       "flags": [
@@ -27323,12 +31003,31 @@
       "description": "Split screen users mimic base player's CUserCmds"
     },
     {
+      "name": "ss_voice_hearpartner",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Route voice between splitscreen players on same system."
+    },
+    {
+      "name": "stats_collect_gpu",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "While doing stats_display, collect GPU perf counters. Used for stats_print_gpu."
+    },
+    {
       "name": "stats_display",
       "default": "0",
       "flags": [
-        "reference"
+        "developmentonly",
+        "defensive"
       ],
-      "description": ""
+      "description": "Displays perf statistics information"
     },
     {
       "name": "stats_highlight_interval",
@@ -27736,6 +31435,14 @@
       "description": "How much to slow down backwards motion"
     },
     {
+      "name": "sv_banid_enabled",
+      "default": "true",
+      "flags": [
+        "release"
+      ],
+      "description": "Whether server supports banid command"
+    },
+    {
       "name": "sv_bhop_time_window",
       "default": "0.007812",
       "flags": [
@@ -27911,9 +31618,11 @@
       "name": "sv_cheats",
       "default": "false",
       "flags": [
-        "reference"
+        "notify",
+        "replicated",
+        "release"
       ],
-      "description": ""
+      "description": "Allow cheats on server"
     },
     {
       "name": "sv_client_max_interp_ratio",
@@ -27961,6 +31670,14 @@
       "description": "The server tries to keep each player's m_nTickBase withing this many msecs of the server absolute tickcount"
     },
     {
+      "name": "sv_clockdbg",
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Print spew related to server clock and ticking"
+    },
+    {
       "name": "sv_cloth_interp_rot",
       "default": "false",
       "flags": [
@@ -27968,6 +31685,14 @@
         "gamedll"
       ],
       "description": ""
+    },
+    {
+      "name": "sv_cluster",
+      "default": "0",
+      "flags": [
+        "release"
+      ],
+      "description": "Data center cluster this server lives in."
     },
     {
       "name": "sv_coaching_enabled",
@@ -28027,9 +31752,11 @@
       "name": "sv_cq_min_queue",
       "default": "0",
       "flags": [
-        "reference"
+        "developmentonly",
+        "replicated",
+        "defensive"
       ],
-      "description": ""
+      "description": "Server min buffer size."
     },
     {
       "name": "sv_cq_trim_bloat_remainder",
@@ -28222,6 +31949,24 @@
       "description": "If set, draw failed client PVS checks with red box"
     },
     {
+      "name": "sv_debug_overlays_bandwidth",
+      "default": "65536",
+      "flags": [
+        "release"
+      ],
+      "description": "Broadcast server debug overlays traffic"
+    },
+    {
+      "name": "sv_debug_overlays_broadcast",
+      "default": "false",
+      "flags": [
+        "notify",
+        "cheat",
+        "release"
+      ],
+      "description": "Broadcast server debug overlays"
+    },
+    {
       "name": "sv_debug_player_use",
       "default": "0",
       "flags": [
@@ -28243,6 +31988,22 @@
       "description": ""
     },
     {
+      "name": "sv_deltaticks_enforce",
+      "default": "2",
+      "flags": [
+        "release"
+      ],
+      "description": "By default, player must ack delta ticks in order. How to enforce it: 2 = kick all clients, 1 = kick only TV clients, 0 = do not kick."
+    },
+    {
+      "name": "sv_deltaticks_log",
+      "default": "2",
+      "flags": [
+        "release"
+      ],
+      "description": "Whether diagnostic logging is enabled when clients ack delta ticks out of order. Policy: 2 = log all out of order acks, 1 = log only when disconnect is triggered, 0 = do not log."
+    },
+    {
       "name": "sv_dev_damage_use_netvars",
       "default": "true",
       "flags": [
@@ -28252,6 +32013,33 @@
         "replicated"
       ],
       "description": "Whether we should use network vars (true) or legacy messages (false)."
+    },
+    {
+      "name": "sv_dev_entitydeltapadding_extra_max",
+      "default": "0",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "When encoding entity deltas, append on a random number of extra bytes.  This happens after sv_dev_entitydeltapadding_min_size."
+    },
+    {
+      "name": "sv_dev_entitydeltapadding_extra_min",
+      "default": "0",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "When encoding entity deltas, append on a random number of extra bytes.  This happens after sv_dev_entitydeltapadding_min_size."
+    },
+    {
+      "name": "sv_dev_entitydeltapadding_min_size",
+      "default": "0",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "When encoding entity deltas, if the delta size is < N bytes, then shove in N dummy bytes.  This happens before sv_dev_entitydeltapadding_extra_min/sv_dev_entitydeltapadding_extra_max"
     },
     {
       "name": "sv_disable_immunity_alpha",
@@ -28314,6 +32102,15 @@
       "description": "0: regular radar; 1: always disabled; 2: disabled in warmup"
     },
     {
+      "name": "sv_disable_reliable_delta_retransmit",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Assume that a reliable entity delta will be ack'ed and send future deltas relative to the last reliable delta."
+    },
+    {
       "name": "sv_disable_teamselect_menu",
       "default": "false",
       "flags": [
@@ -28354,6 +32151,30 @@
         "gamedll"
       ],
       "description": "Processes network messages on the server before entities think, instead of at the end of the tick."
+    },
+    {
+      "name": "sv_enable_alternate_baselines",
+      "default": "1",
+      "flags": [
+        "release"
+      ],
+      "description": "Allow alternate baseline system, set to 2 for debugging spew."
+    },
+    {
+      "name": "sv_enable_donttransmit",
+      "default": "true",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "When encoding entity deltas, instead of unreliably deducing explicit deletions, actually send list of existing but not networked entities (dont_transmit list) to each client."
+    },
+    {
+      "name": "sv_enable_removearrayelementsoutsidemetadatabounds",
+      "default": "false",
+      "flags": [
+        "release"
+      ],
+      "description": ""
     },
     {
       "name": "sv_enablebunnyhopping",
@@ -28432,6 +32253,15 @@
       "description": ""
     },
     {
+      "name": "sv_extra_client_connect_time",
+      "default": "15.000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Seconds after client connect during which extra frames are buffered to prevent non-delta'd update"
+    },
+    {
       "name": "sv_extract_ammo_from_dropped_weapons",
       "default": "false",
       "flags": [
@@ -28501,6 +32331,15 @@
       "description": "Landing on a another player's head gives them this ratio of the damage."
     },
     {
+      "name": "sv_filterban",
+      "default": "1",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Set packet filtering by IP mode"
+    },
+    {
       "name": "sv_flashed_amount_for_blind_kill",
       "default": "0.700000",
       "flags": [
@@ -28547,6 +32386,16 @@
         "gamedll"
       ],
       "description": "Will transmit all entities to client, regardless of PVS conditions (will still skip based on transmit flags, however)."
+    },
+    {
+      "name": "sv_fps_max",
+      "default": "0.000000",
+      "flags": [
+        "developmentonly",
+        "hidden",
+        "defensive"
+      ],
+      "description": "Dedicated server frame rate limiter. 0=tick rate. Only applies to the dedicated server."
     },
     {
       "name": "sv_freeze_camera_angles",
@@ -28829,6 +32678,22 @@
       "description": ""
     },
     {
+      "name": "sv_hibernate_postgame_delay",
+      "default": "5.000000",
+      "flags": [
+        "release"
+      ],
+      "description": "# of seconds to wait after final client leaves before hibernating."
+    },
+    {
+      "name": "sv_hibernate_when_empty",
+      "default": "true",
+      "flags": [
+        "release"
+      ],
+      "description": "Puts the server into extremely low CPU usage mode when no clients connected"
+    },
+    {
       "name": "sv_hide_ent_in_pvs",
       "default": "-1",
       "flags": [
@@ -28881,6 +32746,23 @@
       "description": ""
     },
     {
+      "name": "sv_hosting_lobby",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "replicated"
+      ],
+      "description": ""
+    },
+    {
+      "name": "sv_hoststate_quit_syscall",
+      "default": "false",
+      "flags": [
+        "release"
+      ],
+      "description": "When enabled, game server will quit immediately via syscall instead of running host states shutdown sequence"
+    },
+    {
       "name": "sv_human_autojoin_team",
       "default": "0",
       "flags": [
@@ -28914,6 +32796,14 @@
         "commandline_enforced"
       ],
       "description": "Player's active weapon will never run out of ammo"
+    },
+    {
+      "name": "sv_instancebaselines",
+      "default": "true",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Enable instanced baselines. Saves network overhead."
     },
     {
       "name": "sv_invites_only_mainmenu",
@@ -29055,6 +32945,14 @@
       "description": "Don't test validity of a lag comp restore, just do it."
     },
     {
+      "name": "sv_lan",
+      "default": "false",
+      "flags": [
+        "release"
+      ],
+      "description": "Server is a lan server ( no heartbeat, no authentication, no non-class C addresses )"
+    },
+    {
       "name": "sv_late_commands_allowed",
       "default": "5",
       "flags": [
@@ -29102,6 +33000,15 @@
       "description": ""
     },
     {
+      "name": "sv_log_onefile",
+      "default": "false",
+      "flags": [
+        "archive",
+        "release"
+      ],
+      "description": "Log server information to only one file."
+    },
+    {
       "name": "sv_log_roundstats",
       "default": "true",
       "flags": [
@@ -29109,6 +33016,68 @@
         "release"
       ],
       "description": ""
+    },
+    {
+      "name": "sv_logbans",
+      "default": "false",
+      "flags": [
+        "archive",
+        "release"
+      ],
+      "description": "Log server bans in the server logs."
+    },
+    {
+      "name": "sv_logblocks",
+      "default": "false",
+      "flags": [
+        "release"
+      ],
+      "description": "If true when log when a query is blocked (can cause very large log files)"
+    },
+    {
+      "name": "sv_logecho",
+      "default": "true",
+      "flags": [
+        "archive",
+        "release"
+      ],
+      "description": "Echo log information to the console."
+    },
+    {
+      "name": "sv_logfile",
+      "default": "false",
+      "flags": [
+        "archive",
+        "release"
+      ],
+      "description": "Log server information in the log file."
+    },
+    {
+      "name": "sv_logflush",
+      "default": "false",
+      "flags": [
+        "archive",
+        "release"
+      ],
+      "description": "Flush the log file to disk on each write (slow)."
+    },
+    {
+      "name": "sv_logsdir",
+      "default": "logs",
+      "flags": [
+        "archive",
+        "release"
+      ],
+      "description": "Folder in the game directory where server logs will be stored."
+    },
+    {
+      "name": "sv_long_frame_ms",
+      "default": "0.000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "If a server frame takes longer than N ms, complain about it.  (Dedicated server only.)  See also engine_frametime_warnings_enable."
     },
     {
       "name": "sv_mapvetopickvote_maps",
@@ -29200,6 +33169,66 @@
       "description": "Maximum distance to transmit footstep sound effects."
     },
     {
+      "name": "sv_max_queries_sec",
+      "default": "3.000000",
+      "flags": [
+        "release"
+      ],
+      "description": "Maximum queries per second to respond to from a single IP address."
+    },
+    {
+      "name": "sv_max_queries_sec_global",
+      "default": "60.000000",
+      "flags": [
+        "release"
+      ],
+      "description": "Maximum queries per second to respond to from anywhere."
+    },
+    {
+      "name": "sv_max_queries_window",
+      "default": "30.000000",
+      "flags": [
+        "release"
+      ],
+      "description": "Window over which to average queries per second averages."
+    },
+    {
+      "name": "sv_max_unreliable_delta_size",
+      "default": "4096",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Maximum allowable entity delta size over unreliable delivery."
+    },
+    {
+      "name": "sv_maxclientframes",
+      "default": "128",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "sv_maxrate",
+      "default": "0",
+      "flags": [
+        "replicated",
+        "release"
+      ],
+      "description": "Max bandwidth rate allowed on server, 0 == unlimited"
+    },
+    {
+      "name": "sv_maxreplay",
+      "default": "0.000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Maximum replay time in seconds"
+    },
+    {
       "name": "sv_maxspeed",
       "default": "320.000000",
       "flags": [
@@ -29252,6 +33281,23 @@
       "description": "Maximum speed any ballistically moving object is allowed to attain per axis."
     },
     {
+      "name": "sv_memlimit",
+      "default": "0",
+      "flags": [
+        "cheat",
+        "release"
+      ],
+      "description": "If set, whenever a game ends, if the total memory used by the server is greater than this # of megabytes, the server will exit."
+    },
+    {
+      "name": "sv_merge_changes_after_tick_with_calcdelta",
+      "default": "1",
+      "flags": [
+        "release"
+      ],
+      "description": "This fixes bugs where pure calcdelta is used due to recipient changing but it doesn't pick up a field change where the value was changed back to same value as the from snapshot even though the destination fields change list does note the change. Set to 2 to spew any changes merged in by this fix."
+    },
+    {
       "name": "sv_min_jump_landing_sound",
       "default": "260.000000",
       "flags": [
@@ -29271,6 +33317,40 @@
         "release"
       ],
       "description": "Minimum number of chickens to attempt to spawn in the map"
+    },
+    {
+      "name": "sv_minrate",
+      "default": "5000",
+      "flags": [
+        "replicated",
+        "release"
+      ],
+      "description": "Min bandwidth rate allowed on server, 0 == unlimited"
+    },
+    {
+      "name": "sv_mmqueue_reservation",
+      "default": "",
+      "flags": [
+        "developmentonly",
+        "dontrecord"
+      ],
+      "description": "Server queue reservation"
+    },
+    {
+      "name": "sv_mmqueue_reservation_extended_timeout",
+      "default": "21",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Extended time in seconds before mmqueue reservation expires."
+    },
+    {
+      "name": "sv_mmqueue_reservation_timeout",
+      "default": "21",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Time in seconds before mmqueue reservation expires."
     },
     {
       "name": "sv_mover_maxslope",
@@ -29329,6 +33409,14 @@
         "gamedll"
       ],
       "description": "Log FUL_FULL_EDICT_CHANGED calls."
+    },
+    {
+      "name": "sv_networkvar_perfieldtracking",
+      "default": "true",
+      "flags": [
+        "release"
+      ],
+      "description": "Track individual field offset changes, rather than a single dirty flag for the whole entity."
     },
     {
       "name": "sv_no_navmesh",
@@ -29453,6 +33541,14 @@
       "description": ""
     },
     {
+      "name": "sv_outofpvsentityupdates",
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
       "name": "sv_override_max_health",
       "default": "0",
       "flags": [
@@ -29471,6 +33567,30 @@
       "description": "Set to 1 to use threaded checkentities for transmit/pvs on listen servers, 2 for dedicated servers."
     },
     {
+      "name": "sv_parallel_packentities",
+      "default": "2",
+      "flags": [
+        "release"
+      ],
+      "description": "Set to 1 to use threaded snapshot sending on listen servers, 2 for dedicated servers."
+    },
+    {
+      "name": "sv_parallel_prepare_client_updates",
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
+      "name": "sv_parallel_sendsnapshot",
+      "default": "2",
+      "flags": [
+        "release"
+      ],
+      "description": "0: run all send jobs on main thread; 1: send jobs run asynchronously (except on dedicated server); 2: send jobs asynchronously; 3: send jobs run in parallel but block to not overlap the next tick; 4: main server clients' send jobs run in parallel, then HLTV server jobs; this approximately matches pre-async profile for a single HLTV server configuration"
+    },
+    {
       "name": "sv_party_mode",
       "default": "false",
       "flags": [
@@ -29480,6 +33600,49 @@
         "release"
       ],
       "description": "Party!!"
+    },
+    {
+      "name": "sv_password",
+      "default": "",
+      "flags": [
+        "protected",
+        "notify",
+        "dontrecord",
+        "release"
+      ],
+      "description": "Server password for entry into multiplayer games"
+    },
+    {
+      "name": "sv_pausable",
+      "default": "0",
+      "flags": [
+        "release"
+      ],
+      "description": "Is the server pausable."
+    },
+    {
+      "name": "sv_pausable_dev",
+      "default": "true",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Whether listen server is pausable when running -dev and playing solo against bots"
+    },
+    {
+      "name": "sv_pausable_dev_ds",
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Whether dedicated server is pausable when running -dev and playing solo against bots"
+    },
+    {
+      "name": "sv_pause_on_console_open",
+      "default": "false",
+      "flags": [
+        "archive"
+      ],
+      "description": "1 = Pause the game when pressing ~ to open the console. CTRL+~ opens the console without pause."
     },
     {
       "name": "sv_pause_on_tick",
@@ -29729,9 +33892,10 @@
       "name": "sv_pvs_max_distance",
       "default": "0.000000",
       "flags": [
-        "reference"
+        "replicated",
+        "release"
       ],
-      "description": ""
+      "description": "if set, adds a maximum range to PVS/PAS checks"
     },
     {
       "name": "sv_pvs_random",
@@ -29784,6 +33948,51 @@
       "description": ""
     },
     {
+      "name": "sv_rcon_banpenalty",
+      "default": "0",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Number of minutes to ban users who fail rcon authentication"
+    },
+    {
+      "name": "sv_rcon_log",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Enable/disable rcon logging."
+    },
+    {
+      "name": "sv_rcon_maxfailures",
+      "default": "10",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Max number of times a user can fail rcon authentication before being banned"
+    },
+    {
+      "name": "sv_rcon_minfailures",
+      "default": "5",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Number of times a user can fail rcon authentication in sv_rcon_minfailuretime before being banned"
+    },
+    {
+      "name": "sv_rcon_minfailuretime",
+      "default": "30.000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Number of seconds to track failed rcon authentications"
+    },
+    {
       "name": "sv_record_item_time_data",
       "default": "false",
       "flags": [
@@ -29791,6 +34000,15 @@
         "release"
       ],
       "description": "Turn on recording of per player item time data into the server log."
+    },
+    {
+      "name": "sv_recvbuf_messages",
+      "default": "1024",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Max number of messages that can be queued in a netchan receive buffer for an ordinary connection from a client."
     },
     {
       "name": "sv_regeneration_force_on",
@@ -29811,6 +34029,14 @@
         "defensive"
       ],
       "description": ""
+    },
+    {
+      "name": "sv_region",
+      "default": "-1",
+      "flags": [
+        "release"
+      ],
+      "description": "The region of the world to report this server in."
     },
     {
       "name": "sv_reliableavatardata",
@@ -29855,6 +34081,32 @@
         "gamedll"
       ],
       "description": ""
+    },
+    {
+      "name": "sv_replay_group_id",
+      "default": "0",
+      "flags": [
+        "release"
+      ],
+      "description": "The replay group that this server will be uploading files to"
+    },
+    {
+      "name": "sv_replaysdir",
+      "default": "replays",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Directory to store replays in"
+    },
+    {
+      "name": "sv_reserve_slots_for_reconnecting_players_kick_prior",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Kick a previously connected player with the same steamID if a replacement comes along"
     },
     {
       "name": "sv_rollangle",
@@ -29903,6 +34155,22 @@
       "description": ""
     },
     {
+      "name": "sv_search_key",
+      "default": "",
+      "flags": [
+        "release"
+      ],
+      "description": ""
+    },
+    {
+      "name": "sv_search_team_key",
+      "default": "public",
+      "flags": [
+        "release"
+      ],
+      "description": "When initiating team search, set this key to match with known opponents team"
+    },
+    {
       "name": "sv_sellback_enabled",
       "default": "true",
       "flags": [
@@ -29912,6 +34180,14 @@
         "release"
       ],
       "description": "Determines whether players can undo purchases in the buy menu"
+    },
+    {
+      "name": "sv_sendtables",
+      "default": "1",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Force full sendtable sending path."
     },
     {
       "name": "sv_sequence_debug",
@@ -30139,6 +34415,15 @@
       "description": "Show lag compensated hitboxes for the specified player index whenever a player fires."
     },
     {
+      "name": "sv_shutdown_immediately_on_request",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "The server will always shutdown on receiving the shutdown request, even if not hibernating"
+    },
+    {
       "name": "sv_skel_constraints_enable",
       "default": "false",
       "flags": [
@@ -30186,6 +34471,15 @@
         "clientdll"
       ],
       "description": ""
+    },
+    {
+      "name": "sv_snapshot_unlimited",
+      "default": "false",
+      "flags": [
+        "replicated",
+        "release"
+      ],
+      "description": "For debugging, don't throw away old snapshots so that if you break in debugger (on remote client or server) it won't require an uncompressed update to resume.  You may run out of memory of course..."
     },
     {
       "name": "sv_sniper_tracer_innacuracy",
@@ -30349,6 +34643,56 @@
       "description": ""
     },
     {
+      "name": "sv_stats",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Collect CPU usage stats"
+    },
+    {
+      "name": "sv_steamauth_correct",
+      "default": "false",
+      "flags": [
+        "release"
+      ],
+      "description": "Correct behavior"
+    },
+    {
+      "name": "sv_steamauth_enforce",
+      "default": "2",
+      "flags": [
+        "release"
+      ],
+      "description": "By default, player must maintain a reliable connection to Steam servers. When player Steam session drops, enforce it: 2 = instantly kick, 1 = kick at next spawn, 0 = do not kick."
+    },
+    {
+      "name": "sv_steamauth_ignore_localhost",
+      "default": "true",
+      "flags": [
+        "release"
+      ],
+      "description": "Ignore VAC and auth errors for client connected via localhost address or in-engine loopback"
+    },
+    {
+      "name": "sv_steamgroup",
+      "default": "",
+      "flags": [
+        "notify",
+        "release"
+      ],
+      "description": "The ID of the steam group that this server belongs to. You can find your group's ID on the admin profile page in the steam community."
+    },
+    {
+      "name": "sv_steamgroup_exclusive",
+      "default": "false",
+      "flags": [
+        "release"
+      ],
+      "description": "If set, only members of Steam group will be able to join the server when it's empty, public people will be able to join the server only if it has players."
+    },
+    {
       "name": "sv_step_move_vel_min",
       "default": "64.000000",
       "flags": [
@@ -30420,6 +34764,14 @@
       "description": ""
     },
     {
+      "name": "sv_stressbots",
+      "default": "false",
+      "flags": [
+        "release"
+      ],
+      "description": "If set to 1, the server calculates data and fills packets to bots. Used for perf testing."
+    },
+    {
       "name": "sv_strict_notarget",
       "default": "false",
       "flags": [
@@ -30471,6 +34823,15 @@
         "release"
       ],
       "description": "Should we try to play sounds for surf?"
+    },
+    {
+      "name": "sv_tags",
+      "default": "",
+      "flags": [
+        "notify",
+        "release"
+      ],
+      "description": "Server tags. Used to provide extra information to clients when they're browsing for servers. Separate tags with a comma."
     },
     {
       "name": "sv_talk_after_dying_time",
@@ -30556,10 +34917,27 @@
       "description": "If >0, server will override cl_teamid_overhead_maxdist_spec"
     },
     {
+      "name": "sv_temp_baseline_string_table_buffer_size",
+      "default": "524288",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Buffer size for writing string table baselines"
+    },
+    {
       "name": "sv_tick_parallel_with_client",
       "default": "false",
       "flags": [
-        "reference"
+        "developmentonly"
+      ],
+      "description": "Runs the final server tick of the frame in parallel with client work"
+    },
+    {
+      "name": "sv_tick_snapshot_sort_entities",
+      "default": "true",
+      "flags": [
+        "developmentonly"
       ],
       "description": ""
     },
@@ -30573,6 +34951,15 @@
         "release"
       ],
       "description": "Minimum time before recognizing consecutive duck key"
+    },
+    {
+      "name": "sv_timeout",
+      "default": "20.000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "After this many seconds without a message from fully connected client, the client is dropped"
     },
     {
       "name": "sv_turbophysics",
@@ -30650,6 +35037,22 @@
       "description": "Disallow backtracking a player for lag compensation if it will cause them to become stuck"
     },
     {
+      "name": "sv_unlockedchapters",
+      "default": "1",
+      "flags": [
+        "archive"
+      ],
+      "description": "Highest unlocked game chapter."
+    },
+    {
+      "name": "sv_unpause_on_console_close",
+      "default": "false",
+      "flags": [
+        "archive"
+      ],
+      "description": "1 = Unpause the game when pressing ~ to close the console. 0 = Leave the game paused."
+    },
+    {
       "name": "sv_use_hi_pri_context_switch_time",
       "default": "1.000000",
       "flags": [
@@ -30679,6 +35082,15 @@
         "gamedll"
       ],
       "description": ""
+    },
+    {
+      "name": "sv_usenetworkvars",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Use networkvar system."
     },
     {
       "name": "sv_usercmd_custom_random_seed",
@@ -30718,12 +35130,38 @@
       "description": "Determines which scene is used for the versus screen."
     },
     {
+      "name": "sv_visiblemaxplayers",
+      "default": "-1",
+      "flags": [
+        "release"
+      ],
+      "description": "Overrides the max players reported to prospective clients"
+    },
+    {
       "name": "sv_voice_proximity",
       "default": "-1.000000",
       "flags": [
         "gamedll",
         "clientdll",
         "replicated",
+        "release"
+      ],
+      "description": ""
+    },
+    {
+      "name": "sv_voicecodec",
+      "default": "vaudio_speex",
+      "flags": [
+        "release"
+      ],
+      "description": "Specifies which voice codec DLL to use in a game. Set to the name of the DLL without the extension."
+    },
+    {
+      "name": "sv_voiceenable",
+      "default": "true",
+      "flags": [
+        "archive",
+        "notify",
         "release"
       ],
       "description": ""
@@ -31133,6 +35571,23 @@
       "description": ""
     },
     {
+      "name": "sys_minidumpexpandedspew",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "sys_minidumpspewlines",
+      "default": "2000",
+      "flags": [
+        "release"
+      ],
+      "description": "Lines of crash dump console spew to keep."
+    },
+    {
       "name": "target_scan_use_query_cache",
       "default": "true",
       "flags": [
@@ -31172,6 +35627,15 @@
       "description": "Maximum think time in milliseconds, warning is printed if this is exceeded."
     },
     {
+      "name": "thread_pool_option",
+      "default": "-1",
+      "flags": [
+        "hidden",
+        "release"
+      ],
+      "description": "Thread pool option"
+    },
+    {
       "name": "throttle_expensive_ai",
       "default": "false",
       "flags": [
@@ -31180,6 +35644,22 @@
         "defensive"
       ],
       "description": ""
+    },
+    {
+      "name": "timedemo_end",
+      "default": "-1",
+      "flags": [
+        "release"
+      ],
+      "description": "Ends timedemo on given tick."
+    },
+    {
+      "name": "timedemo_start",
+      "default": "-1",
+      "flags": [
+        "release"
+      ],
+      "description": "Starts timedemo on given tick."
     },
     {
       "name": "toast_manager_override_duration",
@@ -31243,9 +35723,12 @@
       "name": "tv_advertise_watchable",
       "default": "false",
       "flags": [
-        "reference"
+        "protected",
+        "notify",
+        "dontrecord",
+        "release"
       ],
-      "description": ""
+      "description": "GOTV advertises the match as watchable via game UI, clients watching via UI will not need to type password"
     },
     {
       "name": "tv_allow_autorecording_index",
@@ -31294,6 +35777,171 @@
       "description": "Auto director uses fixed level cameras for shots"
     },
     {
+      "name": "tv_autorecord",
+      "default": "false",
+      "flags": [
+        "release"
+      ],
+      "description": "Automatically records all games as SourceTV demos."
+    },
+    {
+      "name": "tv_autoretry",
+      "default": "true",
+      "flags": [
+        "release"
+      ],
+      "description": "Relay proxies retry connection after network timeout"
+    },
+    {
+      "name": "tv_broadcast",
+      "default": "false",
+      "flags": [
+        "release"
+      ],
+      "description": "Automatically broadcasts all games as GOTV demos through Steam."
+    },
+    {
+      "name": "tv_broadcast1",
+      "default": "false",
+      "flags": [
+        "release"
+      ],
+      "description": "Automatically broadcasts all games as GOTV[1] demos through Steam."
+    },
+    {
+      "name": "tv_broadcast_drop_fragments",
+      "default": "0",
+      "flags": [
+        "hidden",
+        "release"
+      ],
+      "description": "Drop every Nth fragment"
+    },
+    {
+      "name": "tv_broadcast_keyframe_interval",
+      "default": "3.000000",
+      "flags": [
+        "release"
+      ],
+      "description": "The frequency, in seconds, of sending keyframes and delta fragments to the broadcast relay server"
+    },
+    {
+      "name": "tv_broadcast_keyframe_interval1",
+      "default": "3.000000",
+      "flags": [
+        "release"
+      ],
+      "description": "The frequency, in seconds, of sending keyframes and delta fragments to the broadcast1 relay server"
+    },
+    {
+      "name": "tv_broadcast_max_requests",
+      "default": "20",
+      "flags": [
+        "release"
+      ],
+      "description": "Max number of broadcast http requests in flight. If there is a network issue, the requests may start piling up, degrading server performance. If more than the specified number of requests are in flight, the new requests are dropped."
+    },
+    {
+      "name": "tv_broadcast_max_requests1",
+      "default": "20",
+      "flags": [
+        "release"
+      ],
+      "description": "Max number of broadcast1 http requests in flight. If there is a network issue, the requests may start piling up, degrading server performance. If more than the specified number of requests are in flight, the new requests are dropped."
+    },
+    {
+      "name": "tv_broadcast_origin_auth",
+      "default": "gocastauth",
+      "flags": [
+        "hidden",
+        "release"
+      ],
+      "description": "X-Origin-Auth header of the broadcast POSTs"
+    },
+    {
+      "name": "tv_broadcast_origin_auth1",
+      "default": "gocastauth",
+      "flags": [
+        "hidden",
+        "release"
+      ],
+      "description": "X-Origin-Auth header of the broadcast1 POSTs"
+    },
+    {
+      "name": "tv_broadcast_origin_delay",
+      "default": "0.000000",
+      "flags": [
+        "hidden",
+        "release"
+      ],
+      "description": "Injection delay request for CDN rebroadcast frameworks, seconds"
+    },
+    {
+      "name": "tv_broadcast_spew_threshold",
+      "default": "0.100000",
+      "flags": [
+        "release"
+      ],
+      "description": "The threshold, in seconds, that we'll spew about the snapshot tick"
+    },
+    {
+      "name": "tv_broadcast_startup_resend_interval",
+      "default": "10.000000",
+      "flags": [
+        "release"
+      ],
+      "description": "The interval, in seconds, of re-sending startup data to the broadcast relay server (useful in case relay crashes, restarts or startup data http request fails)"
+    },
+    {
+      "name": "tv_broadcast_terminate",
+      "default": "true",
+      "flags": [
+        "hidden",
+        "release"
+      ],
+      "description": "Terminate every broadcast with a stop command"
+    },
+    {
+      "name": "tv_broadcast_url",
+      "default": "http://localhost:8080",
+      "flags": [
+        "release"
+      ],
+      "description": "URL of the broadcast relay"
+    },
+    {
+      "name": "tv_broadcast_url1",
+      "default": "http://localhost:8080",
+      "flags": [
+        "release"
+      ],
+      "description": "URL of the broadcast relay1"
+    },
+    {
+      "name": "tv_chatgroupsize",
+      "default": "0",
+      "flags": [
+        "release"
+      ],
+      "description": "Set the default chat group size"
+    },
+    {
+      "name": "tv_chattimelimit",
+      "default": "0.200000",
+      "flags": [
+        "release"
+      ],
+      "description": "Limits spectators to chat only every n seconds"
+    },
+    {
+      "name": "tv_debug",
+      "default": "0",
+      "flags": [
+        "release"
+      ],
+      "description": "SourceTV debug info."
+    },
+    {
       "name": "tv_delay",
       "default": "120",
       "flags": [
@@ -31323,6 +35971,102 @@
       "description": "Delays map change until broadcast is complete"
     },
     {
+      "name": "tv_deltacache",
+      "default": "2",
+      "flags": [
+        "release"
+      ],
+      "description": "Enable delta entity bit stream cache"
+    },
+    {
+      "name": "tv_demo_starttick",
+      "default": "0",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "tv_dispatchmode",
+      "default": "1",
+      "flags": [
+        "release"
+      ],
+      "description": "Dispatch clients to relay proxies: 0=never, 1=if appropriate, 2=always"
+    },
+    {
+      "name": "tv_enable",
+      "default": "false",
+      "flags": [
+        "notify",
+        "release"
+      ],
+      "description": "Activates SourceTV on server."
+    },
+    {
+      "name": "tv_enable1",
+      "default": "false",
+      "flags": [
+        "notify",
+        "release"
+      ],
+      "description": "Activates SourceTV[1] on server."
+    },
+    {
+      "name": "tv_enable_delta_frames",
+      "default": "true",
+      "flags": [
+        "release"
+      ],
+      "description": "Indicates whether or not the tv should use delta frames for storage of intermediate frames. This takes more CPU but significantly less memory."
+    },
+    {
+      "name": "tv_enable_dynamic",
+      "default": "false",
+      "flags": [
+        "notify",
+        "release"
+      ],
+      "description": "When enabled, changes in tv_enable convars cause immediate startup or shutdown of hltv server"
+    },
+    {
+      "name": "tv_extended_logging",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "tv_grouprelaydatareliable",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "When enabled, this will collect all information for relay sending into a single datagram to ensure that the data stays together through a potentially large number of relays"
+    },
+    {
+      "name": "tv_grouprelaydataunreliable",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "When enabled, this will collect all information for relay sending into a single datagram to ensure that the data stays together through a potentially large number of relays"
+    },
+    {
+      "name": "tv_grouprelaydatavoice",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Similar to tv_grouprelaydata, but controls whether or not the voice channels should be routed into the grouped data for the relays"
+    },
+    {
       "name": "tv_include_usercommands",
       "default": "true",
       "flags": [
@@ -31330,6 +36074,33 @@
         "release"
       ],
       "description": "HLTV streams will include player usercommands each tick"
+    },
+    {
+      "name": "tv_instant_replay_full_frame",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Send embedded full frames"
+    },
+    {
+      "name": "tv_instant_replay_full_frame_build_threaded",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Build the full frames on a seperate job thread"
+    },
+    {
+      "name": "tv_instant_replay_full_frame_time",
+      "default": "30",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Seconds between full frame embeddeds"
     },
     {
       "name": "tv_listen_voice_indices",
@@ -31360,12 +36131,241 @@
       "description": "Log game events being considered by the director"
     },
     {
+      "name": "tv_maxclients",
+      "default": "128",
+      "flags": [
+        "release"
+      ],
+      "description": "Maximum client number on SourceTV server."
+    },
+    {
+      "name": "tv_maxclients_relayreserved",
+      "default": "0",
+      "flags": [
+        "release"
+      ],
+      "description": "This number of relay client connections are reserved for SourceTV relays."
+    },
+    {
+      "name": "tv_maxrate",
+      "default": "0",
+      "flags": [
+        "release"
+      ],
+      "description": "Max SourceTV spectator bandwidth rate allowed, 0 == unlimited"
+    },
+    {
+      "name": "tv_name",
+      "default": "SourceTV",
+      "flags": [
+        "release"
+      ],
+      "description": "SourceTV host name"
+    },
+    {
       "name": "tv_nochat",
       "default": "false",
       "flags": [
-        "reference"
+        "archive",
+        "userinfo"
+      ],
+      "description": "Don't receive chat messages from other SourceTV spectators"
+    },
+    {
+      "name": "tv_overridemaster",
+      "default": "false",
+      "flags": [
+        "release"
+      ],
+      "description": "Overrides the SourceTV master root address."
+    },
+    {
+      "name": "tv_password",
+      "default": "",
+      "flags": [
+        "protected",
+        "notify",
+        "dontrecord",
+        "release"
+      ],
+      "description": "SourceTV password for all clients of CSTV[0]"
+    },
+    {
+      "name": "tv_password1",
+      "default": "",
+      "flags": [
+        "protected",
+        "notify",
+        "dontrecord",
+        "release"
+      ],
+      "description": "SourceTV password for all clients of CSTV[1]. If empty, tv_password is used"
+    },
+    {
+      "name": "tv_playcast_delay_prediction",
+      "default": "true",
+      "flags": [
+        "release"
       ],
       "description": ""
+    },
+    {
+      "name": "tv_playcast_delay_resync",
+      "default": "0.000000",
+      "flags": [
+        "release"
+      ],
+      "description": "To alleviate intermittent network connectivity problems, this is the number of seconds to wait before actually re-syncing the stream after failure"
+    },
+    {
+      "name": "tv_playcast_fragment_cache_history_length",
+      "default": "120.000000",
+      "flags": [
+        "release"
+      ],
+      "description": "How far back before our current playback head in seconds to hold onto fragments."
+    },
+    {
+      "name": "tv_playcast_http_delta_fragment_timeout_s",
+      "default": "3",
+      "flags": [
+        "hidden",
+        "release"
+      ],
+      "description": ""
+    },
+    {
+      "name": "tv_playcast_max_rcvage",
+      "default": "15.000000",
+      "flags": [
+        "hidden",
+        "release"
+      ],
+      "description": ""
+    },
+    {
+      "name": "tv_playcast_max_rtdelay",
+      "default": "300.000000",
+      "flags": [
+        "hidden",
+        "release"
+      ],
+      "description": ""
+    },
+    {
+      "name": "tv_playcast_origin_auth",
+      "default": "",
+      "flags": [
+        "hidden",
+        "release"
+      ],
+      "description": "Get request X-Origin-Auth string"
+    },
+    {
+      "name": "tv_playcast_retry_timeout",
+      "default": "25.000000",
+      "flags": [
+        "release"
+      ],
+      "description": "In case of intermittent network problems, how long should playcast retry fragment retrieval before resorting to resync"
+    },
+    {
+      "name": "tv_playcast_showerrors",
+      "default": "",
+      "flags": [
+        "hidden",
+        "release"
+      ],
+      "description": "Set to display headers upon error (e.g. \"CF-Ray,CF-Cache-Status,Body\" )"
+    },
+    {
+      "name": "tv_playcast_slow_playback_when_fragment_requests_fail",
+      "default": "true",
+      "flags": [
+        "hidden",
+        "release"
+      ],
+      "description": "Whether or not we slow playback rate if we start running out of buffered stream fragments."
+    },
+    {
+      "name": "tv_port",
+      "default": "27020",
+      "flags": [
+        "release"
+      ],
+      "description": "Host SourceTV[0] port"
+    },
+    {
+      "name": "tv_port1",
+      "default": "27021",
+      "flags": [
+        "release"
+      ],
+      "description": "Host SourceTV[1] port"
+    },
+    {
+      "name": "tv_rate_multiplier",
+      "default": "2.000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Multiply requested rate by this value to adjust Dota TV send rate"
+    },
+    {
+      "name": "tv_record_immediate",
+      "default": "0",
+      "flags": [
+        "release"
+      ],
+      "description": "tv_record starting the moment tv_record was executed, not tv_delay earlier"
+    },
+    {
+      "name": "tv_relay_hard_shutdown",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "tv_relay_quit_after_game",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Quit after a game has been relayed, do not hibernate"
+    },
+    {
+      "name": "tv_relay_rate",
+      "default": "500000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "default rate for relays"
+    },
+    {
+      "name": "tv_relay_secret_code",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "When enabled, this will use a uniquely generated server code to authenticate relay to relay connections. This code is coordinated via the GC or some external means rather than by clients directly"
+    },
+    {
+      "name": "tv_relaypassword",
+      "default": "",
+      "flags": [
+        "protected",
+        "notify",
+        "dontrecord",
+        "release"
+      ],
+      "description": "SourceTV password for relay proxies"
     },
     {
       "name": "tv_relayradio",
@@ -31375,6 +36375,31 @@
         "release"
       ],
       "description": "Relay team radio commands to TV: 0=off, 1=on"
+    },
+    {
+      "name": "tv_relayvoice",
+      "default": "true",
+      "flags": [
+        "release"
+      ],
+      "description": "Relay voice data: 0=off, 1=on"
+    },
+    {
+      "name": "tv_secret_code",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "When enabled, this will use a uniquely generated server code to authenticate relay connections. This code is coordinated via the GC or some external means rather than by clients directly"
+    },
+    {
+      "name": "tv_secure_bypass",
+      "default": "false",
+      "flags": [
+        "release"
+      ],
+      "description": "Bypass secure challenge on TV port"
     },
     {
       "name": "tv_show_allchat",
@@ -31395,12 +36420,55 @@
       "description": ""
     },
     {
+      "name": "tv_threaded_merge_entity_deltas",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Enable SourceTV threading of delta merging"
+    },
+    {
+      "name": "tv_timeout",
+      "default": "20.000000",
+      "flags": [
+        "release"
+      ],
+      "description": "SourceTV connection timeout in seconds."
+    },
+    {
+      "name": "tv_title",
+      "default": "SourceTV",
+      "flags": [
+        "release"
+      ],
+      "description": "Set title for SourceTV spectator UI"
+    },
+    {
       "name": "tv_transmitall",
       "default": "false",
       "flags": [
-        "reference"
+        "replicated",
+        "release"
       ],
-      "description": ""
+      "description": "Transmit all entities (not only director view)"
+    },
+    {
+      "name": "tv_update_hibernation_enabled",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Allow SourceTV to control server hibernation state."
+    },
+    {
+      "name": "tv_window_size",
+      "default": "16.000000",
+      "flags": [
+        "release"
+      ],
+      "description": "Specifies the number of seconds worth of frames that the tv replay system should keep in memory. Increasing this greatly increases the amount of memory consumed by the TV system"
     },
     {
       "name": "ui_deepstats_radio_heat_figurine",
@@ -32085,6 +37153,16 @@
       "description": ""
     },
     {
+      "name": "vconsole_rcon_server_details",
+      "default": "",
+      "flags": [
+        "dontrecord",
+        "release",
+        "server_cannot_query"
+      ],
+      "description": "when non-empty allows for easy vconsole connection to the dedicated server."
+    },
+    {
       "name": "vehicle_debug_impact_damage",
       "default": "false",
       "flags": [
@@ -32220,35 +37298,44 @@
     },
     {
       "name": "violence_ablood",
-      "default": "false",
+      "default": "true",
       "flags": [
-        "reference"
+        "archive"
       ],
-      "description": ""
+      "description": "Draw alien blood"
     },
     {
       "name": "violence_agibs",
-      "default": "false",
+      "default": "true",
       "flags": [
-        "reference"
+        "archive"
       ],
-      "description": ""
+      "description": "Show alien gib entities"
     },
     {
       "name": "violence_hblood",
-      "default": "false",
+      "default": "true",
       "flags": [
-        "reference"
+        "archive"
       ],
-      "description": ""
+      "description": "Draw human blood"
     },
     {
       "name": "violence_hgibs",
-      "default": "false",
+      "default": "true",
       "flags": [
-        "reference"
+        "archive"
       ],
-      "description": ""
+      "description": "Show human gib entities"
+    },
+    {
+      "name": "vis_enable",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Enable precomputed visibility when true"
     },
     {
       "name": "vis_force",
@@ -32258,6 +37345,15 @@
         "cheat"
       ],
       "description": ""
+    },
+    {
+      "name": "vis_sunlight_enable",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "cheat"
+      ],
+      "description": "Toggle whether to use sunlight PVS for sunlight views (0 = sky PVS, 1 = sunlight PVS)"
     },
     {
       "name": "vismon_poll_frequency",
@@ -32288,6 +37384,22 @@
       "description": "Draw all players' voice icons"
     },
     {
+      "name": "voice_always_sample_mic",
+      "default": "false",
+      "flags": [
+        "archive"
+      ],
+      "description": "When enabled, open the voip audio input stream when the application launches."
+    },
+    {
+      "name": "voice_bypass_noise_gate",
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
+    },
+    {
       "name": "voice_clientdebug",
       "default": "0",
       "flags": [
@@ -32298,8 +37410,35 @@
       "description": ""
     },
     {
+      "name": "voice_debugfeedbackfrom",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "voice_device_override",
+      "default": "",
+      "flags": [
+        "archive",
+        "release"
+      ],
+      "description": "Default device used for voice capture."
+    },
+    {
       "name": "voice_fadeouttime",
       "default": "0.005000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "voice_in_process",
+      "default": "false",
       "flags": [
         "developmentonly",
         "defensive"
@@ -32316,6 +37455,14 @@
       "description": ""
     },
     {
+      "name": "voice_input_stallout",
+      "default": "2.000000",
+      "flags": [
+        "userinfo"
+      ],
+      "description": "Time before we consider a mic stalled out and need to reset it."
+    },
+    {
       "name": "voice_loopback",
       "default": "false",
       "flags": [
@@ -32327,7 +37474,7 @@
       "name": "voice_loopback_no_networking",
       "default": "false",
       "flags": [
-        "reference"
+        "userinfo"
       ],
       "description": ""
     },
@@ -32352,6 +37499,15 @@
       "description": "Enable/disable voice in this mod."
     },
     {
+      "name": "voice_noise_supression",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
       "name": "voice_player_speaking_delay_threshold",
       "default": "0.500000",
       "flags": [
@@ -32359,6 +37515,15 @@
         "cheat"
       ],
       "description": ""
+    },
+    {
+      "name": "voice_sequence_maximum_wait_time",
+      "default": "0.500000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "When receiving packets out of sequence, wait this many seconds for missing sequences to arrive"
     },
     {
       "name": "voice_serverdebug",
@@ -32380,20 +37545,53 @@
       "description": ""
     },
     {
-      "name": "voice_threshold",
-      "default": "0.000000",
+      "name": "voice_test_log_send",
+      "default": "false",
       "flags": [
-        "reference"
+        "release"
       ],
       "description": ""
     },
     {
-      "name": "voice_threshold_delay",
-      "default": "0.000000",
+      "name": "voice_threshold",
+      "default": "-120.000000",
       "flags": [
-        "reference"
+        "clientdll",
+        "archive"
       ],
-      "description": ""
+      "description": "decibel threshold for how loud the talker's input signal is before we think they are talking."
+    },
+    {
+      "name": "voice_threshold_attack",
+      "default": "0.300000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Amount of time we buffer outgoing audio to detect an onset."
+    },
+    {
+      "name": "voice_threshold_delay",
+      "default": "0.700000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Amount of time the talker is silent before we infer that they are no longer talking."
+    },
+    {
+      "name": "voice_threshold_hold",
+      "default": "0.200000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Amount of time after the talker starts talking we should keep listening regardless of how loud they are speaking."
+    },
+    {
+      "name": "voice_threshold_ramp_min_db",
+      "default": "-60.000000",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "A dB floor of when to stop transmitting packets, the volume between this and voice_threshold will still transmit packets to allow for volume ramping."
     },
     {
       "name": "voice_vox",
@@ -32538,6 +37736,24 @@
       "description": "Width of volume fog texture"
     },
     {
+      "name": "vprof_counters",
+      "default": "0",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "vprof_counters_show_minmax",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
       "name": "vprof_scope_entity_clientthink",
       "default": "false",
       "flags": [
@@ -32578,6 +37794,67 @@
         "defensive"
       ],
       "description": ""
+    },
+    {
+      "name": "vulkan_batch_size",
+      "default": "500",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "vulkan_batch_submits",
+      "default": "true",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "vulkan_dedicated_allocation_threshold",
+      "default": "512",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Size (in KBs) above which textures should be allocated in dedicated memory (NV-only)."
+    },
+    {
+      "name": "vulkan_link_time_optimize_libraries",
+      "default": "true",
+      "flags": [
+        "release"
+      ],
+      "description": ""
+    },
+    {
+      "name": "vulkan_pipeline_compile_spew",
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "vulkan_pipeline_compile_throttle_ms",
+      "default": "0.000000",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "vulkan_unpause_workers_after_each_texture_deallocation",
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "If true, the main thread pauses and unpauses the Vulkan worker threads around each texture deallocation, which allows the workers to make a little bit of progress but results in main thread stalls. If false, we keep the workers paused until all deallocations are done, allowing the deallocations to complete significantly faster."
     },
     {
       "name": "weapon_accuracy_forcespread",

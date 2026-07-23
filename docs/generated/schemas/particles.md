@@ -1,0 +1,12420 @@
+---
+layout: default
+title: particles
+parent: Schemas
+nav_exclude: true
+---
+
+# Module: particles
+
+[📊 View UML Diagram](../diagrams/particles.md)
+
+| Name | Kind | Bases | Fields |
+|------|------|-------|--------|
+| [CBaseRendererSource2](#cbaserenderersource2) | class | CParticleFunctionRenderer | 65 |
+| [CBaseTrailRenderer](#cbasetrailrenderer) | class | CBaseRendererSource2 | 8 |
+| [CGeneralRandomRotation](#cgeneralrandomrotation) | class | CParticleFunctionInitializer | 6 |
+| [CGeneralSpin](#cgeneralspin) | class | CParticleFunctionOperator | 3 |
+| [CPAssignment_t](#cpassignment_t) | class |  | 3 |
+| [CParticleFunction](#cparticlefunction) | class |  | 17 |
+| [CParticleFunctionConstraint](#cparticlefunctionconstraint) | class | CParticleFunction | 0 |
+| [CParticleFunctionEmitter](#cparticlefunctionemitter) | class | CParticleFunction | 1 |
+| [CParticleFunctionForce](#cparticlefunctionforce) | class | CParticleFunction | 0 |
+| [CParticleFunctionInitializer](#cparticlefunctioninitializer) | class | CParticleFunction | 1 |
+| [CParticleFunctionOperator](#cparticlefunctionoperator) | class | CParticleFunction | 0 |
+| [CParticleFunctionPreEmission](#cparticlefunctionpreemission) | class | CParticleFunctionOperator | 1 |
+| [CParticleFunctionRenderer](#cparticlefunctionrenderer) | class | CParticleFunction | 3 |
+| [CParticleMassCalculationParameters](#cparticlemasscalculationparameters) | class |  | 4 |
+| [CParticleSystemDefinition](#cparticlesystemdefinition) | class | IParticleSystemDefinition | 66 |
+| [CParticleVisibilityInputs](#cparticlevisibilityinputs) | class |  | 19 |
+| [CPathParameters](#cpathparameters) | class |  | 8 |
+| [CRandomNumberGeneratorParameters](#crandomnumbergeneratorparameters) | class |  | 2 |
+| [CReplicationParameters](#creplicationparameters) | class |  | 7 |
+| [CSpinUpdateBase](#cspinupdatebase) | class | CParticleFunctionOperator | 0 |
+| [C_INIT_AddVectorToVector](#c_init_addvectortovector) | class | CParticleFunctionInitializer | 6 |
+| [C_INIT_AgeNoise](#c_init_agenoise) | class | CParticleFunctionInitializer | 8 |
+| [C_INIT_ChaoticAttractor](#c_init_chaoticattractor) | class | CParticleFunctionInitializer | 9 |
+| [C_INIT_CheckParticleForWater](#c_init_checkparticleforwater) | class | CParticleFunctionInitializer | 4 |
+| [C_INIT_ColorLitPerParticle](#c_init_colorlitperparticle) | class | CParticleFunctionInitializer | 7 |
+| [C_INIT_CreateAlongPath](#c_init_createalongpath) | class | CParticleFunctionInitializer | 5 |
+| [C_INIT_CreateFromCPs](#c_init_createfromcps) | class | CParticleFunctionInitializer | 4 |
+| [C_INIT_CreateFromParentParticles](#c_init_createfromparentparticles) | class | CParticleFunctionInitializer | 6 |
+| [C_INIT_CreateFromPlaneCache](#c_init_createfromplanecache) | class | CParticleFunctionInitializer | 3 |
+| [C_INIT_CreateInEpitrochoid](#c_init_createinepitrochoid) | class | CParticleFunctionInitializer | 10 |
+| [C_INIT_CreateOnGrid](#c_init_createongrid) | class | CParticleFunctionInitializer | 10 |
+| [C_INIT_CreateOnModel](#c_init_createonmodel) | class | CParticleFunctionInitializer | 16 |
+| [C_INIT_CreateOnModelAtHeight](#c_init_createonmodelatheight) | class | CParticleFunctionInitializer | 14 |
+| [C_INIT_CreateParticleImpulse](#c_init_createparticleimpulse) | class | CParticleFunctionInitializer | 5 |
+| [C_INIT_CreatePhyllotaxis](#c_init_createphyllotaxis) | class | CParticleFunctionInitializer | 14 |
+| [C_INIT_CreateSequentialPath](#c_init_createsequentialpath) | class | CParticleFunctionInitializer | 6 |
+| [C_INIT_CreateSequentialPathV2](#c_init_createsequentialpathv2) | class | CParticleFunctionInitializer | 6 |
+| [C_INIT_CreateSpiralSphere](#c_init_createspiralsphere) | class | CParticleFunctionInitializer | 6 |
+| [C_INIT_CreateWithinBox](#c_init_createwithinbox) | class | CParticleFunctionInitializer | 6 |
+| [C_INIT_CreateWithinCapsuleTransform](#c_init_createwithincapsuletransform) | class | CParticleFunctionInitializer | 11 |
+| [C_INIT_CreateWithinSphereTransform](#c_init_createwithinspheretransform) | class | CParticleFunctionInitializer | 13 |
+| [C_INIT_CreationNoise](#c_init_creationnoise) | class | CParticleFunctionInitializer | 10 |
+| [C_INIT_DistanceCull](#c_init_distancecull) | class | CParticleFunctionInitializer | 3 |
+| [C_INIT_DistanceToCPInit](#c_init_distancetocpinit) | class | CParticleFunctionInitializer | 15 |
+| [C_INIT_DistanceToNeighborCull](#c_init_distancetoneighborcull) | class | CParticleFunctionInitializer | 7 |
+| [C_INIT_GlobalScale](#c_init_globalscale) | class | CParticleFunctionInitializer | 6 |
+| [C_INIT_InheritFromParentParticles](#c_init_inheritfromparentparticles) | class | CParticleFunctionInitializer | 5 |
+| [C_INIT_InheritVelocity](#c_init_inheritvelocity) | class | CParticleFunctionInitializer | 2 |
+| [C_INIT_InitFloat](#c_init_initfloat) | class | CParticleFunctionInitializer | 4 |
+| [C_INIT_InitFloatCollection](#c_init_initfloatcollection) | class | CParticleFunctionInitializer | 2 |
+| [C_INIT_InitFromCPSnapshot](#c_init_initfromcpsnapshot) | class | CParticleFunctionInitializer | 11 |
+| [C_INIT_InitFromParentKilled](#c_init_initfromparentkilled) | class | CParticleFunctionInitializer | 2 |
+| [C_INIT_InitFromVectorFieldSnapshot](#c_init_initfromvectorfieldsnapshot) | class | CParticleFunctionInitializer | 5 |
+| [C_INIT_InitSkinnedPositionFromCPSnapshot](#c_init_initskinnedpositionfromcpsnapshot) | class | CParticleFunctionInitializer | 19 |
+| [C_INIT_InitVec](#c_init_initvec) | class | CParticleFunctionInitializer | 5 |
+| [C_INIT_InitVecCollection](#c_init_initveccollection) | class | CParticleFunctionInitializer | 2 |
+| [C_INIT_InitialRepulsionVelocity](#c_init_initialrepulsionvelocity) | class | CParticleFunctionInitializer | 13 |
+| [C_INIT_InitialSequenceFromModel](#c_init_initialsequencefrommodel) | class | CParticleFunctionInitializer | 8 |
+| [C_INIT_InitialVelocityFromHitbox](#c_init_initialvelocityfromhitbox) | class | CParticleFunctionInitializer | 5 |
+| [C_INIT_InitialVelocityNoise](#c_init_initialvelocitynoise) | class | CParticleFunctionInitializer | 10 |
+| [C_INIT_LifespanFromVelocity](#c_init_lifespanfromvelocity) | class | CParticleFunctionInitializer | 8 |
+| [C_INIT_ModelCull](#c_init_modelcull) | class | CParticleFunctionInitializer | 5 |
+| [C_INIT_MoveBetweenPoints](#c_init_movebetweenpoints) | class | CParticleFunctionInitializer | 7 |
+| [C_INIT_NormalAlignToCP](#c_init_normalaligntocp) | class | CParticleFunctionInitializer | 2 |
+| [C_INIT_NormalOffset](#c_init_normaloffset) | class | CParticleFunctionInitializer | 5 |
+| [C_INIT_OffsetVectorToVector](#c_init_offsetvectortovector) | class | CParticleFunctionInitializer | 5 |
+| [C_INIT_Orient2DRelToCP](#c_init_orient2dreltocp) | class | CParticleFunctionInitializer | 3 |
+| [C_INIT_PlaneCull](#c_init_planecull) | class | CParticleFunctionInitializer | 3 |
+| [C_INIT_PointList](#c_init_pointlist) | class | CParticleFunctionInitializer | 5 |
+| [C_INIT_PositionOffset](#c_init_positionoffset) | class | CParticleFunctionInitializer | 6 |
+| [C_INIT_PositionOffsetToCP](#c_init_positionoffsettocp) | class | CParticleFunctionInitializer | 3 |
+| [C_INIT_PositionPlaceOnGround](#c_init_positionplaceonground) | class | CParticleFunctionInitializer | 15 |
+| [C_INIT_PositionWarp](#c_init_positionwarp) | class | CParticleFunctionInitializer | 10 |
+| [C_INIT_PositionWarpScalar](#c_init_positionwarpscalar) | class | CParticleFunctionInitializer | 6 |
+| [C_INIT_QuantizeFloat](#c_init_quantizefloat) | class | CParticleFunctionInitializer | 2 |
+| [C_INIT_RadiusFromCPObject](#c_init_radiusfromcpobject) | class | CParticleFunctionInitializer | 1 |
+| [C_INIT_RandomAlpha](#c_init_randomalpha) | class | CParticleFunctionInitializer | 4 |
+| [C_INIT_RandomAlphaWindowThreshold](#c_init_randomalphawindowthreshold) | class | CParticleFunctionInitializer | 3 |
+| [C_INIT_RandomColor](#c_init_randomcolor) | class | CParticleFunctionInitializer | 10 |
+| [C_INIT_RandomLifeTime](#c_init_randomlifetime) | class | CParticleFunctionInitializer | 3 |
+| [C_INIT_RandomModelSequence](#c_init_randommodelsequence) | class | CParticleFunctionInitializer | 3 |
+| [C_INIT_RandomNamedModelBodyPart](#c_init_randomnamedmodelbodypart) | class | C_INIT_RandomNamedModelElement | 0 |
+| [C_INIT_RandomNamedModelElement](#c_init_randomnamedmodelelement) | class | CParticleFunctionInitializer | 6 |
+| [C_INIT_RandomNamedModelMeshGroup](#c_init_randomnamedmodelmeshgroup) | class | C_INIT_RandomNamedModelElement | 0 |
+| [C_INIT_RandomNamedModelSequence](#c_init_randomnamedmodelsequence) | class | C_INIT_RandomNamedModelElement | 0 |
+| [C_INIT_RandomRadius](#c_init_randomradius) | class | CParticleFunctionInitializer | 3 |
+| [C_INIT_RandomRotation](#c_init_randomrotation) | class | CGeneralRandomRotation | 0 |
+| [C_INIT_RandomRotationSpeed](#c_init_randomrotationspeed) | class | CGeneralRandomRotation | 0 |
+| [C_INIT_RandomScalar](#c_init_randomscalar) | class | CParticleFunctionInitializer | 4 |
+| [C_INIT_RandomSecondSequence](#c_init_randomsecondsequence) | class | CParticleFunctionInitializer | 2 |
+| [C_INIT_RandomSequence](#c_init_randomsequence) | class | CParticleFunctionInitializer | 5 |
+| [C_INIT_RandomTrailLength](#c_init_randomtraillength) | class | CParticleFunctionInitializer | 3 |
+| [C_INIT_RandomVector](#c_init_randomvector) | class | CParticleFunctionInitializer | 4 |
+| [C_INIT_RandomVectorComponent](#c_init_randomvectorcomponent) | class | CParticleFunctionInitializer | 4 |
+| [C_INIT_RandomYaw](#c_init_randomyaw) | class | CGeneralRandomRotation | 0 |
+| [C_INIT_RandomYawFlip](#c_init_randomyawflip) | class | CParticleFunctionInitializer | 1 |
+| [C_INIT_RemapInitialDirectionToTransformToVector](#c_init_remapinitialdirectiontotransformtovector) | class | CParticleFunctionInitializer | 6 |
+| [C_INIT_RemapInitialTransformDirectionToRotation](#c_init_remapinitialtransformdirectiontorotation) | class | CParticleFunctionInitializer | 4 |
+| [C_INIT_RemapInitialVisibilityScalar](#c_init_remapinitialvisibilityscalar) | class | CParticleFunctionInitializer | 5 |
+| [C_INIT_RemapNamedModelBodyPartToScalar](#c_init_remapnamedmodelbodyparttoscalar) | class | C_INIT_RemapNamedModelElementToScalar | 0 |
+| [C_INIT_RemapNamedModelElementToScalar](#c_init_remapnamedmodelelementtoscalar) | class | CParticleFunctionInitializer | 7 |
+| [C_INIT_RemapNamedModelMeshGroupToScalar](#c_init_remapnamedmodelmeshgrouptoscalar) | class | C_INIT_RemapNamedModelElementToScalar | 0 |
+| [C_INIT_RemapNamedModelSequenceToScalar](#c_init_remapnamedmodelsequencetoscalar) | class | C_INIT_RemapNamedModelElementToScalar | 0 |
+| [C_INIT_RemapParticleCountToNamedModelBodyPartScalar](#c_init_remapparticlecounttonamedmodelbodypartscalar) | class | C_INIT_RemapParticleCountToNamedModelElementScalar | 0 |
+| [C_INIT_RemapParticleCountToNamedModelElementScalar](#c_init_remapparticlecounttonamedmodelelementscalar) | class | C_INIT_RemapParticleCountToScalar | 4 |
+| [C_INIT_RemapParticleCountToNamedModelMeshGroupScalar](#c_init_remapparticlecounttonamedmodelmeshgroupscalar) | class | C_INIT_RemapParticleCountToNamedModelElementScalar | 0 |
+| [C_INIT_RemapParticleCountToNamedModelSequenceScalar](#c_init_remapparticlecounttonamedmodelsequencescalar) | class | C_INIT_RemapParticleCountToNamedModelElementScalar | 0 |
+| [C_INIT_RemapParticleCountToScalar](#c_init_remapparticlecounttoscalar) | class | CParticleFunctionInitializer | 12 |
+| [C_INIT_RemapQAnglesToRotation](#c_init_remapqanglestorotation) | class | CParticleFunctionInitializer | 1 |
+| [C_INIT_RemapScalarToVector](#c_init_remapscalartovector) | class | CParticleFunctionInitializer | 12 |
+| [C_INIT_RemapTransformOrientationToRotations](#c_init_remaptransformorientationtorotations) | class | CParticleFunctionInitializer | 4 |
+| [C_INIT_RemapTransformToVector](#c_init_remaptransformtovector) | class | CParticleFunctionInitializer | 13 |
+| [C_INIT_RingWave](#c_init_ringwave) | class | CParticleFunctionInitializer | 11 |
+| [C_INIT_RtEnvCull](#c_init_rtenvcull) | class | CParticleFunctionInitializer | 8 |
+| [C_INIT_ScaleVelocity](#c_init_scalevelocity) | class | CParticleFunctionInitializer | 1 |
+| [C_INIT_ScreenSpacePositionOfTarget](#c_init_screenspacepositionoftarget) | class | CParticleFunctionInitializer | 4 |
+| [C_INIT_SequenceFromCP](#c_init_sequencefromcp) | class | CParticleFunctionInitializer | 4 |
+| [C_INIT_SequenceLifeTime](#c_init_sequencelifetime) | class | CParticleFunctionInitializer | 1 |
+| [C_INIT_SetAttributeToScalarExpression](#c_init_setattributetoscalarexpression) | class | CParticleFunctionInitializer | 6 |
+| [C_INIT_SetFloatAttributeToVectorExpression](#c_init_setfloatattributetovectorexpression) | class | CParticleFunctionInitializer | 6 |
+| [C_INIT_SetHitboxToClosest](#c_init_sethitboxtoclosest) | class | CParticleFunctionInitializer | 9 |
+| [C_INIT_SetHitboxToModel](#c_init_sethitboxtomodel) | class | CParticleFunctionInitializer | 10 |
+| [C_INIT_SetRigidAttachment](#c_init_setrigidattachment) | class | CParticleFunctionInitializer | 4 |
+| [C_INIT_SetVectorAttributeToVectorExpression](#c_init_setvectorattributetovectorexpression) | class | CParticleFunctionInitializer | 7 |
+| [C_INIT_SkyVisCull](#c_init_skyviscull) | class | CParticleFunctionInitializer | 3 |
+| [C_INIT_StatusEffect](#c_init_statuseffect) | class | CParticleFunctionInitializer | 18 |
+| [C_INIT_StatusEffectCitadel](#c_init_statuseffectcitadel) | class | CParticleFunctionInitializer | 19 |
+| [C_INIT_VelocityFromCP](#c_init_velocityfromcp) | class | CParticleFunctionInitializer | 4 |
+| [C_INIT_VelocityFromNormal](#c_init_velocityfromnormal) | class | CParticleFunctionInitializer | 3 |
+| [C_INIT_VelocityRadialRandom](#c_init_velocityradialrandom) | class | CParticleFunctionInitializer | 8 |
+| [C_INIT_VelocityRandom](#c_init_velocityrandom) | class | CParticleFunctionInitializer | 7 |
+| [C_OP_AlphaDecay](#c_op_alphadecay) | class | CParticleFunctionOperator | 1 |
+| [C_OP_AttractToControlPoint](#c_op_attracttocontrolpoint) | class | CParticleFunctionForce | 7 |
+| [C_OP_BasicMovement](#c_op_basicmovement) | class | CParticleFunctionOperator | 5 |
+| [C_OP_BoxConstraint](#c_op_boxconstraint) | class | CParticleFunctionConstraint | 5 |
+| [C_OP_CPOffsetToPercentageBetweenCPs](#c_op_cpoffsettopercentagebetweencps) | class | CParticleFunctionOperator | 11 |
+| [C_OP_CPVelocityForce](#c_op_cpvelocityforce) | class | CParticleFunctionForce | 2 |
+| [C_OP_CalculateVectorAttribute](#c_op_calculatevectorattribute) | class | CParticleFunctionOperator | 11 |
+| [C_OP_Callback](#c_op_callback) | class | CParticleFunctionRenderer | 0 |
+| [C_OP_ChladniWave](#c_op_chladniwave) | class | CParticleFunctionOperator | 10 |
+| [C_OP_ChooseRandomChildrenInGroup](#c_op_chooserandomchildreningroup) | class | CParticleFunctionPreEmission | 2 |
+| [C_OP_ClampScalar](#c_op_clampscalar) | class | CParticleFunctionOperator | 3 |
+| [C_OP_ClampVector](#c_op_clampvector) | class | CParticleFunctionOperator | 3 |
+| [C_OP_ClientPhysics](#c_op_clientphysics) | class | CParticleFunctionRenderer | 15 |
+| [C_OP_CollideWithParentParticles](#c_op_collidewithparentparticles) | class | CParticleFunctionConstraint | 2 |
+| [C_OP_CollideWithSelf](#c_op_collidewithself) | class | CParticleFunctionConstraint | 2 |
+| [C_OP_ColorAdjustHSL](#c_op_coloradjusthsl) | class | CParticleFunctionOperator | 3 |
+| [C_OP_ColorInterpolate](#c_op_colorinterpolate) | class | CParticleFunctionOperator | 5 |
+| [C_OP_ColorInterpolateRandom](#c_op_colorinterpolaterandom) | class | CParticleFunctionOperator | 6 |
+| [C_OP_ConnectParentParticleToNearest](#c_op_connectparentparticletonearest) | class | CParticleFunctionOperator | 5 |
+| [C_OP_ConstrainDistance](#c_op_constraindistance) | class | CParticleFunctionConstraint | 5 |
+| [C_OP_ConstrainDistanceToPath](#c_op_constraindistancetopath) | class | CParticleFunctionConstraint | 8 |
+| [C_OP_ConstrainDistanceToUserSpecifiedPath](#c_op_constraindistancetouserspecifiedpath) | class | CParticleFunctionConstraint | 5 |
+| [C_OP_ConstrainLineLength](#c_op_constrainlinelength) | class | CParticleFunctionConstraint | 2 |
+| [C_OP_ContinuousEmitter](#c_op_continuousemitter) | class | CParticleFunctionEmitter | 12 |
+| [C_OP_ControlPointToRadialScreenSpace](#c_op_controlpointtoradialscreenspace) | class | CParticleFunctionPreEmission | 5 |
+| [C_OP_ControlpointLight](#c_op_controlpointlight) | class | CParticleFunctionOperator | 33 |
+| [C_OP_CreateParticleSystemRenderer](#c_op_createparticlesystemrenderer) | class | CParticleFunctionRenderer | 5 |
+| [C_OP_Cull](#c_op_cull) | class | CParticleFunctionOperator | 4 |
+| [C_OP_CurlNoiseForce](#c_op_curlnoiseforce) | class | CParticleFunctionForce | 7 |
+| [C_OP_CycleScalar](#c_op_cyclescalar) | class | CParticleFunctionOperator | 10 |
+| [C_OP_CylindricalDistanceToTransform](#c_op_cylindricaldistancetotransform) | class | CParticleFunctionOperator | 11 |
+| [C_OP_DampenToCP](#c_op_dampentocp) | class | CParticleFunctionOperator | 3 |
+| [C_OP_Decay](#c_op_decay) | class | CParticleFunctionOperator | 2 |
+| [C_OP_DecayClampCount](#c_op_decayclampcount) | class | CParticleFunctionOperator | 1 |
+| [C_OP_DecayMaintainCount](#c_op_decaymaintaincount) | class | CParticleFunctionOperator | 7 |
+| [C_OP_DecayOffscreen](#c_op_decayoffscreen) | class | CParticleFunctionOperator | 1 |
+| [C_OP_DensityForce](#c_op_densityforce) | class | CParticleFunctionForce | 3 |
+| [C_OP_DifferencePreviousParticle](#c_op_differencepreviousparticle) | class | CParticleFunctionOperator | 9 |
+| [C_OP_Diffusion](#c_op_diffusion) | class | CParticleFunctionOperator | 3 |
+| [C_OP_DirectionBetweenVecsToVec](#c_op_directionbetweenvecstovec) | class | CParticleFunctionOperator | 3 |
+| [C_OP_DistanceBetweenCPsToCP](#c_op_distancebetweencpstocp) | class | CParticleFunctionPreEmission | 15 |
+| [C_OP_DistanceBetweenTransforms](#c_op_distancebetweentransforms) | class | CParticleFunctionOperator | 13 |
+| [C_OP_DistanceBetweenVecs](#c_op_distancebetweenvecs) | class | CParticleFunctionOperator | 9 |
+| [C_OP_DistanceCull](#c_op_distancecull) | class | CParticleFunctionOperator | 5 |
+| [C_OP_DistanceToTransform](#c_op_distancetotransform) | class | CParticleFunctionOperator | 15 |
+| [C_OP_DragRelativeToPlane](#c_op_dragrelativetoplane) | class | CParticleFunctionOperator | 5 |
+| [C_OP_DriveCPFromGlobalSoundFloat](#c_op_drivecpfromglobalsoundfloat) | class | CParticleFunctionPreEmission | 9 |
+| [C_OP_EnableChildrenFromParentParticleCount](#c_op_enablechildrenfromparentparticlecount) | class | CParticleFunctionPreEmission | 6 |
+| [C_OP_EndCapDecay](#c_op_endcapdecay) | class | CParticleFunctionOperator | 0 |
+| [C_OP_EndCapTimedDecay](#c_op_endcaptimeddecay) | class | CParticleFunctionOperator | 1 |
+| [C_OP_EndCapTimedFreeze](#c_op_endcaptimedfreeze) | class | CParticleFunctionOperator | 1 |
+| [C_OP_ExternalGameImpulseForce](#c_op_externalgameimpulseforce) | class | CParticleFunctionForce | 5 |
+| [C_OP_ExternalWindForce](#c_op_externalwindforce) | class | CParticleFunctionForce | 11 |
+| [C_OP_FadeAndKill](#c_op_fadeandkill) | class | CParticleFunctionOperator | 7 |
+| [C_OP_FadeAndKillForTracers](#c_op_fadeandkillfortracers) | class | CParticleFunctionOperator | 6 |
+| [C_OP_FadeIn](#c_op_fadein) | class | CParticleFunctionOperator | 4 |
+| [C_OP_FadeInSimple](#c_op_fadeinsimple) | class | CParticleFunctionOperator | 2 |
+| [C_OP_FadeOut](#c_op_fadeout) | class | CParticleFunctionOperator | 6 |
+| [C_OP_FadeOutSimple](#c_op_fadeoutsimple) | class | CParticleFunctionOperator | 2 |
+| [C_OP_ForceBasedOnDistanceToPlane](#c_op_forcebasedondistancetoplane) | class | CParticleFunctionForce | 7 |
+| [C_OP_ForceControlPointStub](#c_op_forcecontrolpointstub) | class | CParticleFunctionPreEmission | 1 |
+| [C_OP_GameDecalRenderer](#c_op_gamedecalrenderer) | class | CParticleFunctionRenderer | 16 |
+| [C_OP_GameLiquidSpill](#c_op_gameliquidspill) | class | CParticleFunctionRenderer | 5 |
+| [C_OP_GlobalLight](#c_op_globallight) | class | CParticleFunctionOperator | 3 |
+| [C_OP_HSVShiftToCP](#c_op_hsvshifttocp) | class | CParticleFunctionPreEmission | 4 |
+| [C_OP_InheritFromParentParticles](#c_op_inheritfromparentparticles) | class | CParticleFunctionOperator | 4 |
+| [C_OP_InheritFromParentParticlesV2](#c_op_inheritfromparentparticlesv2) | class | CParticleFunctionOperator | 8 |
+| [C_OP_InheritFromPeerSystem](#c_op_inheritfrompeersystem) | class | CParticleFunctionOperator | 4 |
+| [C_OP_InstantaneousEmitter](#c_op_instantaneousemitter) | class | CParticleFunctionEmitter | 8 |
+| [C_OP_InterpolateRadius](#c_op_interpolateradius) | class | CParticleFunctionOperator | 6 |
+| [C_OP_IntraParticleForce](#c_op_intraparticleforce) | class | CParticleFunctionForce | 7 |
+| [C_OP_LagCompensation](#c_op_lagcompensation) | class | CParticleFunctionOperator | 4 |
+| [C_OP_LazyCullCompareFloat](#c_op_lazycullcomparefloat) | class | CParticleFunctionOperator | 3 |
+| [C_OP_LerpEndCapScalar](#c_op_lerpendcapscalar) | class | CParticleFunctionOperator | 3 |
+| [C_OP_LerpEndCapVector](#c_op_lerpendcapvector) | class | CParticleFunctionOperator | 3 |
+| [C_OP_LerpScalar](#c_op_lerpscalar) | class | CParticleFunctionOperator | 4 |
+| [C_OP_LerpToInitialPosition](#c_op_lerptoinitialposition) | class | CParticleFunctionOperator | 5 |
+| [C_OP_LerpToOtherAttribute](#c_op_lerptootherattribute) | class | CParticleFunctionOperator | 4 |
+| [C_OP_LerpVector](#c_op_lerpvector) | class | CParticleFunctionOperator | 5 |
+| [C_OP_LightningSnapshotGenerator](#c_op_lightningsnapshotgenerator) | class | CParticleFunctionPreEmission | 20 |
+| [C_OP_LocalAccelerationForce](#c_op_localaccelerationforce) | class | CParticleFunctionForce | 3 |
+| [C_OP_LockPoints](#c_op_lockpoints) | class | CParticleFunctionOperator | 6 |
+| [C_OP_LockToBone](#c_op_locktobone) | class | CParticleFunctionOperator | 15 |
+| [C_OP_LockToPointList](#c_op_locktopointlist) | class | CParticleFunctionOperator | 5 |
+| [C_OP_LockToSavedSequentialPath](#c_op_locktosavedsequentialpath) | class | CParticleFunctionOperator | 4 |
+| [C_OP_LockToSavedSequentialPathV2](#c_op_locktosavedsequentialpathv2) | class | CParticleFunctionOperator | 4 |
+| [C_OP_MaintainEmitter](#c_op_maintainemitter) | class | CParticleFunctionEmitter | 9 |
+| [C_OP_MaintainSequentialPath](#c_op_maintainsequentialpath) | class | CParticleFunctionOperator | 7 |
+| [C_OP_MaxVelocity](#c_op_maxvelocity) | class | CParticleFunctionOperator | 2 |
+| [C_OP_ModelCull](#c_op_modelcull) | class | CParticleFunctionOperator | 5 |
+| [C_OP_ModelDampenMovement](#c_op_modeldampenmovement) | class | CParticleFunctionOperator | 7 |
+| [C_OP_ModelSurfaceSnapshotGenerator](#c_op_modelsurfacesnapshotgenerator) | class | CParticleFunctionPreEmission | 10 |
+| [C_OP_MoveToHitbox](#c_op_movetohitbox) | class | CParticleFunctionOperator | 9 |
+| [C_OP_MovementLoopInsideSphere](#c_op_movementloopinsidesphere) | class | CParticleFunctionOperator | 4 |
+| [C_OP_MovementMaintainOffset](#c_op_movementmaintainoffset) | class | CParticleFunctionOperator | 3 |
+| [C_OP_MovementMoveAlongSkinnedCPSnapshot](#c_op_movementmovealongskinnedcpsnapshot) | class | CParticleFunctionOperator | 6 |
+| [C_OP_MovementPlaceOnGround](#c_op_movementplaceonground) | class | CParticleFunctionOperator | 18 |
+| [C_OP_MovementRigidAttachToCP](#c_op_movementrigidattachtocp) | class | CParticleFunctionOperator | 6 |
+| [C_OP_MovementRotateParticleAroundAxis](#c_op_movementrotateparticlearoundaxis) | class | CParticleFunctionOperator | 4 |
+| [C_OP_MovementSkinnedPositionFromCPSnapshot](#c_op_movementskinnedpositionfromcpsnapshot) | class | CParticleFunctionOperator | 12 |
+| [C_OP_MultiSegmentDisplaySnapshotGenerator](#c_op_multisegmentdisplaysnapshotgenerator) | class | CParticleFunctionPreEmission | 15 |
+| [C_OP_Noise](#c_op_noise) | class | CParticleFunctionOperator | 6 |
+| [C_OP_NoiseEmitter](#c_op_noiseemitter) | class | CParticleFunctionEmitter | 15 |
+| [C_OP_NormalLock](#c_op_normallock) | class | CParticleFunctionOperator | 1 |
+| [C_OP_NormalizeVector](#c_op_normalizevector) | class | CParticleFunctionOperator | 2 |
+| [C_OP_Orient2DRelToCP](#c_op_orient2dreltocp) | class | CParticleFunctionOperator | 4 |
+| [C_OP_OrientTo2dDirection](#c_op_orientto2ddirection) | class | CParticleFunctionOperator | 4 |
+| [C_OP_OscillateScalar](#c_op_oscillatescalar) | class | CParticleFunctionOperator | 13 |
+| [C_OP_OscillateScalarSimple](#c_op_oscillatescalarsimple) | class | CParticleFunctionOperator | 5 |
+| [C_OP_OscillateVector](#c_op_oscillatevector) | class | CParticleFunctionOperator | 15 |
+| [C_OP_OscillateVectorSimple](#c_op_oscillatevectorsimple) | class | CParticleFunctionOperator | 6 |
+| [C_OP_ParentVortices](#c_op_parentvortices) | class | CParticleFunctionForce | 3 |
+| [C_OP_PerParticleForce](#c_op_perparticleforce) | class | CParticleFunctionForce | 3 |
+| [C_OP_PercentageBetweenTransformLerpCPs](#c_op_percentagebetweentransformlerpcps) | class | CParticleFunctionOperator | 12 |
+| [C_OP_PercentageBetweenTransforms](#c_op_percentagebetweentransforms) | class | CParticleFunctionOperator | 10 |
+| [C_OP_PercentageBetweenTransformsVector](#c_op_percentagebetweentransformsvector) | class | CParticleFunctionOperator | 10 |
+| [C_OP_PinParticleToCP](#c_op_pinparticletocp) | class | CParticleFunctionOperator | 14 |
+| [C_OP_PinRopeSegmentParticleToParent](#c_op_pinropesegmentparticletoparent) | class | CParticleFunctionOperator | 3 |
+| [C_OP_PlanarConstraint](#c_op_planarconstraint) | class | CParticleFunctionConstraint | 8 |
+| [C_OP_PlaneCull](#c_op_planecull) | class | CParticleFunctionOperator | 4 |
+| [C_OP_PlayEndCapWhenFinished](#c_op_playendcapwhenfinished) | class | CParticleFunctionPreEmission | 2 |
+| [C_OP_PointVectorAtNextParticle](#c_op_pointvectoratnextparticle) | class | CParticleFunctionOperator | 3 |
+| [C_OP_PositionLock](#c_op_positionlock) | class | CParticleFunctionOperator | 15 |
+| [C_OP_QuantizeCPComponent](#c_op_quantizecpcomponent) | class | CParticleFunctionPreEmission | 4 |
+| [C_OP_QuantizeFloat](#c_op_quantizefloat) | class | CParticleFunctionOperator | 2 |
+| [C_OP_RadiusDecay](#c_op_radiusdecay) | class | CParticleFunctionOperator | 1 |
+| [C_OP_RampCPLinearRandom](#c_op_rampcplinearrandom) | class | CParticleFunctionPreEmission | 3 |
+| [C_OP_RampScalarLinear](#c_op_rampscalarlinear) | class | CParticleFunctionOperator | 8 |
+| [C_OP_RampScalarLinearSimple](#c_op_rampscalarlinearsimple) | class | CParticleFunctionOperator | 4 |
+| [C_OP_RampScalarSpline](#c_op_rampscalarspline) | class | CParticleFunctionOperator | 10 |
+| [C_OP_RampScalarSplineSimple](#c_op_rampscalarsplinesimple) | class | CParticleFunctionOperator | 5 |
+| [C_OP_RandomForce](#c_op_randomforce) | class | CParticleFunctionForce | 2 |
+| [C_OP_ReadFromNeighboringParticle](#c_op_readfromneighboringparticle) | class | CParticleFunctionOperator | 5 |
+| [C_OP_ReinitializeScalarEndCap](#c_op_reinitializescalarendcap) | class | CParticleFunctionOperator | 3 |
+| [C_OP_RemapAverageHitboxSpeedtoCP](#c_op_remapaveragehitboxspeedtocp) | class | CParticleFunctionPreEmission | 11 |
+| [C_OP_RemapAverageScalarValuetoCP](#c_op_remapaveragescalarvaluetocp) | class | CParticleFunctionPreEmission | 6 |
+| [C_OP_RemapBoundingVolumetoCP](#c_op_remapboundingvolumetocp) | class | CParticleFunctionPreEmission | 5 |
+| [C_OP_RemapCPVelocityToVector](#c_op_remapcpvelocitytovector) | class | CParticleFunctionOperator | 4 |
+| [C_OP_RemapCPtoCP](#c_op_remapcptocp) | class | CParticleFunctionPreEmission | 10 |
+| [C_OP_RemapCPtoScalar](#c_op_remapcptoscalar) | class | CParticleFunctionOperator | 11 |
+| [C_OP_RemapCPtoVector](#c_op_remapcptovector) | class | CParticleFunctionOperator | 13 |
+| [C_OP_RemapControlPointDirectionToVector](#c_op_remapcontrolpointdirectiontovector) | class | CParticleFunctionOperator | 3 |
+| [C_OP_RemapControlPointOrientationToRotation](#c_op_remapcontrolpointorientationtorotation) | class | CParticleFunctionOperator | 4 |
+| [C_OP_RemapCrossProductOfTwoVectorsToVector](#c_op_remapcrossproductoftwovectorstovector) | class | CParticleFunctionOperator | 4 |
+| [C_OP_RemapDensityGradientToVectorAttribute](#c_op_remapdensitygradienttovectorattribute) | class | CParticleFunctionOperator | 2 |
+| [C_OP_RemapDensityToVector](#c_op_remapdensitytovector) | class | CParticleFunctionOperator | 8 |
+| [C_OP_RemapDirectionToCPToVector](#c_op_remapdirectiontocptovector) | class | CParticleFunctionOperator | 7 |
+| [C_OP_RemapDistanceToLineSegmentBase](#c_op_remapdistancetolinesegmentbase) | class | CParticleFunctionOperator | 5 |
+| [C_OP_RemapDistanceToLineSegmentToScalar](#c_op_remapdistancetolinesegmenttoscalar) | class | C_OP_RemapDistanceToLineSegmentBase | 3 |
+| [C_OP_RemapDistanceToLineSegmentToVector](#c_op_remapdistancetolinesegmenttovector) | class | C_OP_RemapDistanceToLineSegmentBase | 3 |
+| [C_OP_RemapDotProductToCP](#c_op_remapdotproducttocp) | class | CParticleFunctionPreEmission | 8 |
+| [C_OP_RemapDotProductToScalar](#c_op_remapdotproducttoscalar) | class | CParticleFunctionOperator | 11 |
+| [C_OP_RemapExternalWindToCP](#c_op_remapexternalwindtocp) | class | CParticleFunctionPreEmission | 5 |
+| [C_OP_RemapGravityToVector](#c_op_remapgravitytovector) | class | CParticleFunctionOperator | 4 |
+| [C_OP_RemapModelVolumetoCP](#c_op_remapmodelvolumetocp) | class | CParticleFunctionPreEmission | 11 |
+| [C_OP_RemapNamedModelBodyPartEndCap](#c_op_remapnamedmodelbodypartendcap) | class | C_OP_RemapNamedModelElementEndCap | 0 |
+| [C_OP_RemapNamedModelBodyPartOnceTimed](#c_op_remapnamedmodelbodypartoncetimed) | class | C_OP_RemapNamedModelElementOnceTimed | 0 |
+| [C_OP_RemapNamedModelElementEndCap](#c_op_remapnamedmodelelementendcap) | class | CParticleFunctionOperator | 7 |
+| [C_OP_RemapNamedModelElementOnceTimed](#c_op_remapnamedmodelelementoncetimed) | class | CParticleFunctionOperator | 9 |
+| [C_OP_RemapNamedModelMeshGroupEndCap](#c_op_remapnamedmodelmeshgroupendcap) | class | C_OP_RemapNamedModelElementEndCap | 0 |
+| [C_OP_RemapNamedModelMeshGroupOnceTimed](#c_op_remapnamedmodelmeshgrouponcetimed) | class | C_OP_RemapNamedModelElementOnceTimed | 0 |
+| [C_OP_RemapNamedModelSequenceEndCap](#c_op_remapnamedmodelsequenceendcap) | class | C_OP_RemapNamedModelElementEndCap | 0 |
+| [C_OP_RemapNamedModelSequenceOnceTimed](#c_op_remapnamedmodelsequenceoncetimed) | class | C_OP_RemapNamedModelElementOnceTimed | 0 |
+| [C_OP_RemapParticleCountOnScalarEndCap](#c_op_remapparticlecountonscalarendcap) | class | CParticleFunctionOperator | 7 |
+| [C_OP_RemapParticleCountToScalar](#c_op_remapparticlecounttoscalar) | class | CParticleFunctionOperator | 7 |
+| [C_OP_RemapScalar](#c_op_remapscalar) | class | CParticleFunctionOperator | 7 |
+| [C_OP_RemapScalarEndCap](#c_op_remapscalarendcap) | class | CParticleFunctionOperator | 6 |
+| [C_OP_RemapScalarOnceTimed](#c_op_remapscalaroncetimed) | class | CParticleFunctionOperator | 8 |
+| [C_OP_RemapSpeed](#c_op_remapspeed) | class | CParticleFunctionOperator | 7 |
+| [C_OP_RemapSpeedtoCP](#c_op_remapspeedtocp) | class | CParticleFunctionPreEmission | 8 |
+| [C_OP_RemapTransformOrientationToRotations](#c_op_remaptransformorientationtorotations) | class | CParticleFunctionOperator | 4 |
+| [C_OP_RemapTransformOrientationToYaw](#c_op_remaptransformorientationtoyaw) | class | CParticleFunctionOperator | 4 |
+| [C_OP_RemapTransformToVelocity](#c_op_remaptransformtovelocity) | class | CParticleFunctionOperator | 1 |
+| [C_OP_RemapTransformVisibilityToScalar](#c_op_remaptransformvisibilitytoscalar) | class | CParticleFunctionOperator | 8 |
+| [C_OP_RemapTransformVisibilityToVector](#c_op_remaptransformvisibilitytovector) | class | CParticleFunctionOperator | 8 |
+| [C_OP_RemapVectorComponentToScalar](#c_op_remapvectorcomponenttoscalar) | class | CParticleFunctionOperator | 3 |
+| [C_OP_RemapVectorToRotations](#c_op_remapvectortorotations) | class | CParticleFunctionOperator | 2 |
+| [C_OP_RemapVectortoCP](#c_op_remapvectortocp) | class | CParticleFunctionOperator | 3 |
+| [C_OP_RemapVelocityToVector](#c_op_remapvelocitytovector) | class | CParticleFunctionOperator | 3 |
+| [C_OP_RemapVisibilityScalar](#c_op_remapvisibilityscalar) | class | CParticleFunctionOperator | 7 |
+| [C_OP_RenderAsModels](#c_op_renderasmodels) | class | CParticleFunctionRenderer | 8 |
+| [C_OP_RenderBlobs](#c_op_renderblobs) | class | CParticleFunctionRenderer | 8 |
+| [C_OP_RenderCables](#c_op_rendercables) | class | CParticleFunctionRenderer | 24 |
+| [C_OP_RenderClientPhysicsImpulse](#c_op_renderclientphysicsimpulse) | class | CParticleFunctionRenderer | 3 |
+| [C_OP_RenderClothForce](#c_op_renderclothforce) | class | CParticleFunctionRenderer | 0 |
+| [C_OP_RenderDeferredLight](#c_op_renderdeferredlight) | class | CParticleFunctionRenderer | 16 |
+| [C_OP_RenderFlattenGrass](#c_op_renderflattengrass) | class | CParticleFunctionRenderer | 3 |
+| [C_OP_RenderGpuImplicit](#c_op_rendergpuimplicit) | class | CParticleFunctionRenderer | 8 |
+| [C_OP_RenderLightBeam](#c_op_renderlightbeam) | class | CParticleFunctionRenderer | 20 |
+| [C_OP_RenderLights](#c_op_renderlights) | class | C_OP_RenderPoints | 7 |
+| [C_OP_RenderMaterialProxy](#c_op_rendermaterialproxy) | class | CParticleFunctionRenderer | 8 |
+| [C_OP_RenderModels](#c_op_rendermodels) | class | CParticleFunctionRenderer | 58 |
+| [C_OP_RenderOmni2Light](#c_op_renderomni2light) | class | CParticleFunctionRenderer | 21 |
+| [C_OP_RenderPoints](#c_op_renderpoints) | class | CParticleFunctionRenderer | 1 |
+| [C_OP_RenderPostProcessing](#c_op_renderpostprocessing) | class | CParticleFunctionRenderer | 3 |
+| [C_OP_RenderProjected](#c_op_renderprojected) | class | CParticleFunctionRenderer | 18 |
+| [C_OP_RenderRopes](#c_op_renderropes) | class | CBaseRendererSource2 | 33 |
+| [C_OP_RenderScreenShake](#c_op_renderscreenshake) | class | CParticleFunctionRenderer | 9 |
+| [C_OP_RenderScreenVelocityRotate](#c_op_renderscreenvelocityrotate) | class | CParticleFunctionRenderer | 2 |
+| [C_OP_RenderSimpleModelCollection](#c_op_rendersimplemodelcollection) | class | CParticleFunctionRenderer | 9 |
+| [C_OP_RenderSound](#c_op_rendersound) | class | CParticleFunctionRenderer | 12 |
+| [C_OP_RenderSprites](#c_op_rendersprites) | class | CBaseRendererSource2 | 30 |
+| [C_OP_RenderStandardLight](#c_op_renderstandardlight) | class | CParticleFunctionRenderer | 34 |
+| [C_OP_RenderStatusEffect](#c_op_renderstatuseffect) | class | CParticleFunctionRenderer | 7 |
+| [C_OP_RenderStatusEffectCitadel](#c_op_renderstatuseffectcitadel) | class | CParticleFunctionRenderer | 6 |
+| [C_OP_RenderText](#c_op_rendertext) | class | CParticleFunctionRenderer | 2 |
+| [C_OP_RenderTrails](#c_op_rendertrails) | class | CBaseTrailRenderer | 20 |
+| [C_OP_RenderTreeShake](#c_op_rendertreeshake) | class | CParticleFunctionRenderer | 10 |
+| [C_OP_RenderVRHapticEvent](#c_op_rendervrhapticevent) | class | CParticleFunctionRenderer | 4 |
+| [C_OP_RenderVolumetricEmitter](#c_op_rendervolumetricemitter) | class | CParticleFunctionRenderer | 15 |
+| [C_OP_RepeatedTriggerChildGroup](#c_op_repeatedtriggerchildgroup) | class | CParticleFunctionPreEmission | 5 |
+| [C_OP_RestartAfterDuration](#c_op_restartafterduration) | class | CParticleFunctionOperator | 6 |
+| [C_OP_RopeSpringConstraint](#c_op_ropespringconstraint) | class | CParticleFunctionConstraint | 5 |
+| [C_OP_RotateVector](#c_op_rotatevector) | class | CParticleFunctionOperator | 7 |
+| [C_OP_RtEnvCull](#c_op_rtenvcull) | class | CParticleFunctionOperator | 7 |
+| [C_OP_ScreenSpaceDistanceToEdge](#c_op_screenspacedistancetoedge) | class | CParticleFunctionOperator | 4 |
+| [C_OP_ScreenSpacePositionOfTarget](#c_op_screenspacepositionoftarget) | class | CParticleFunctionOperator | 5 |
+| [C_OP_ScreenSpaceRotateTowardTarget](#c_op_screenspacerotatetowardtarget) | class | CParticleFunctionOperator | 4 |
+| [C_OP_SelectivelyEnableChildren](#c_op_selectivelyenablechildren) | class | CParticleFunctionPreEmission | 5 |
+| [C_OP_SequenceFromModel](#c_op_sequencefrommodel) | class | CParticleFunctionOperator | 8 |
+| [C_OP_SetAttributeToScalarExpression](#c_op_setattributetoscalarexpression) | class | CParticleFunctionOperator | 6 |
+| [C_OP_SetCPOrientationToDirection](#c_op_setcporientationtodirection) | class | CParticleFunctionOperator | 2 |
+| [C_OP_SetCPOrientationToGroundNormal](#c_op_setcporientationtogroundnormal) | class | CParticleFunctionOperator | 9 |
+| [C_OP_SetCPOrientationToPointAtCP](#c_op_setcporientationtopointatcp) | class | CParticleFunctionPreEmission | 6 |
+| [C_OP_SetCPtoVector](#c_op_setcptovector) | class | CParticleFunctionOperator | 2 |
+| [C_OP_SetChildControlPoints](#c_op_setchildcontrolpoints) | class | CParticleFunctionOperator | 7 |
+| [C_OP_SetControlPointFieldFromVectorExpression](#c_op_setcontrolpointfieldfromvectorexpression) | class | CParticleFunctionPreEmission | 7 |
+| [C_OP_SetControlPointFieldToScalarExpression](#c_op_setcontrolpointfieldtoscalarexpression) | class | CParticleFunctionPreEmission | 7 |
+| [C_OP_SetControlPointFieldToWater](#c_op_setcontrolpointfieldtowater) | class | CParticleFunctionPreEmission | 3 |
+| [C_OP_SetControlPointFromObjectScale](#c_op_setcontrolpointfromobjectscale) | class | CParticleFunctionPreEmission | 2 |
+| [C_OP_SetControlPointOrientation](#c_op_setcontrolpointorientation) | class | CParticleFunctionPreEmission | 8 |
+| [C_OP_SetControlPointOrientationToCPVelocity](#c_op_setcontrolpointorientationtocpvelocity) | class | CParticleFunctionPreEmission | 2 |
+| [C_OP_SetControlPointPositionToRandomActiveCP](#c_op_setcontrolpointpositiontorandomactivecp) | class | CParticleFunctionPreEmission | 4 |
+| [C_OP_SetControlPointPositionToTimeOfDayValue](#c_op_setcontrolpointpositiontotimeofdayvalue) | class | CParticleFunctionPreEmission | 3 |
+| [C_OP_SetControlPointPositions](#c_op_setcontrolpointpositions) | class | CParticleFunctionPreEmission | 12 |
+| [C_OP_SetControlPointRotation](#c_op_setcontrolpointrotation) | class | CParticleFunctionPreEmission | 4 |
+| [C_OP_SetControlPointToCPVelocity](#c_op_setcontrolpointtocpvelocity) | class | CParticleFunctionPreEmission | 6 |
+| [C_OP_SetControlPointToCenter](#c_op_setcontrolpointtocenter) | class | CParticleFunctionPreEmission | 4 |
+| [C_OP_SetControlPointToHMD](#c_op_setcontrolpointtohmd) | class | CParticleFunctionPreEmission | 3 |
+| [C_OP_SetControlPointToHand](#c_op_setcontrolpointtohand) | class | CParticleFunctionPreEmission | 4 |
+| [C_OP_SetControlPointToImpactPoint](#c_op_setcontrolpointtoimpactpoint) | class | CParticleFunctionPreEmission | 12 |
+| [C_OP_SetControlPointToPlayer](#c_op_setcontrolpointtoplayer) | class | CParticleFunctionPreEmission | 6 |
+| [C_OP_SetControlPointToVectorExpression](#c_op_setcontrolpointtovectorexpression) | class | CParticleFunctionPreEmission | 6 |
+| [C_OP_SetControlPointToWaterSurface](#c_op_setcontrolpointtowatersurface) | class | CParticleFunctionPreEmission | 7 |
+| [C_OP_SetControlPointsToModelParticles](#c_op_setcontrolpointstomodelparticles) | class | CParticleFunctionOperator | 7 |
+| [C_OP_SetControlPointsToParticle](#c_op_setcontrolpointstoparticle) | class | CParticleFunctionOperator | 8 |
+| [C_OP_SetFloat](#c_op_setfloat) | class | CParticleFunctionOperator | 4 |
+| [C_OP_SetFloatAttributeToVectorExpression](#c_op_setfloatattributetovectorexpression) | class | CParticleFunctionOperator | 6 |
+| [C_OP_SetFloatCollection](#c_op_setfloatcollection) | class | CParticleFunctionOperator | 4 |
+| [C_OP_SetFromCPSnapshot](#c_op_setfromcpsnapshot) | class | CParticleFunctionOperator | 13 |
+| [C_OP_SetGravityToCP](#c_op_setgravitytocp) | class | CParticleFunctionPreEmission | 6 |
+| [C_OP_SetParentControlPointsToChildCP](#c_op_setparentcontrolpointstochildcp) | class | CParticleFunctionPreEmission | 5 |
+| [C_OP_SetPerChildControlPoint](#c_op_setperchildcontrolpoint) | class | CParticleFunctionOperator | 8 |
+| [C_OP_SetPerChildControlPointFromAttribute](#c_op_setperchildcontrolpointfromattribute) | class | CParticleFunctionOperator | 8 |
+| [C_OP_SetRandomControlPointPosition](#c_op_setrandomcontrolpointposition) | class | CParticleFunctionPreEmission | 8 |
+| [C_OP_SetSimulationRate](#c_op_setsimulationrate) | class | CParticleFunctionPreEmission | 1 |
+| [C_OP_SetSingleControlPointPosition](#c_op_setsinglecontrolpointposition) | class | CParticleFunctionPreEmission | 4 |
+| [C_OP_SetToCP](#c_op_settocp) | class | CParticleFunctionOperator | 3 |
+| [C_OP_SetUserEvent](#c_op_setuserevent) | class | CParticleFunctionOperator | 5 |
+| [C_OP_SetVariable](#c_op_setvariable) | class | CParticleFunctionPreEmission | 6 |
+| [C_OP_SetVec](#c_op_setvec) | class | CParticleFunctionOperator | 5 |
+| [C_OP_SetVectorAttributeToVectorExpression](#c_op_setvectorattributetovectorexpression) | class | CParticleFunctionOperator | 7 |
+| [C_OP_ShapeMatchingConstraint](#c_op_shapematchingconstraint) | class | CParticleFunctionConstraint | 1 |
+| [C_OP_SnapshotRigidSkinToBones](#c_op_snapshotrigidskintobones) | class | CParticleFunctionOperator | 3 |
+| [C_OP_SnapshotSkinToBones](#c_op_snapshotskintobones) | class | CParticleFunctionOperator | 7 |
+| [C_OP_Spin](#c_op_spin) | class | CGeneralSpin | 0 |
+| [C_OP_SpinUpdate](#c_op_spinupdate) | class | CSpinUpdateBase | 0 |
+| [C_OP_SpinYaw](#c_op_spinyaw) | class | CGeneralSpin | 0 |
+| [C_OP_SpringToVectorConstraint](#c_op_springtovectorconstraint) | class | CParticleFunctionConstraint | 5 |
+| [C_OP_StopAfterCPDuration](#c_op_stopaftercpduration) | class | CParticleFunctionPreEmission | 3 |
+| [C_OP_TeleportBeam](#c_op_teleportbeam) | class | CParticleFunctionOperator | 11 |
+| [C_OP_TimeVaryingForce](#c_op_timevaryingforce) | class | CParticleFunctionForce | 4 |
+| [C_OP_TurbulenceForce](#c_op_turbulenceforce) | class | CParticleFunctionForce | 8 |
+| [C_OP_TwistAroundAxis](#c_op_twistaroundaxis) | class | CParticleFunctionForce | 4 |
+| [C_OP_UpdateLightSource](#c_op_updatelightsource) | class | CParticleFunctionOperator | 6 |
+| [C_OP_VectorFieldSnapshot](#c_op_vectorfieldsnapshot) | class | CParticleFunctionOperator | 9 |
+| [C_OP_VectorNoise](#c_op_vectornoise) | class | CParticleFunctionOperator | 7 |
+| [C_OP_VelocityDecay](#c_op_velocitydecay) | class | CParticleFunctionOperator | 1 |
+| [C_OP_VelocityMatchingForce](#c_op_velocitymatchingforce) | class | CParticleFunctionOperator | 6 |
+| [C_OP_WaterImpulseRenderer](#c_op_waterimpulserenderer) | class | CParticleFunctionRenderer | 8 |
+| [C_OP_WindForce](#c_op_windforce) | class | CParticleFunctionForce | 1 |
+| [C_OP_WorldCollideConstraint](#c_op_worldcollideconstraint) | class | CParticleFunctionConstraint | 0 |
+| [C_OP_WorldTraceConstraint](#c_op_worldtraceconstraint) | class | CParticleFunctionConstraint | 27 |
+| [CollisionGroupContext_t](#collisiongroupcontext_t) | class |  | 1 |
+| [ControlPointReference_t](#controlpointreference_t) | class |  | 3 |
+| [FloatInputMaterialVariable_t](#floatinputmaterialvariable_t) | class |  | 2 |
+| [IParticleCollection](#iparticlecollection) | class |  | 0 |
+| [IParticleSystemDefinition](#iparticlesystemdefinition) | class |  | 0 |
+| [MaterialVariable_t](#materialvariable_t) | class |  | 3 |
+| [ModelReference_t](#modelreference_t) | class |  | 2 |
+| [ParticleAttributeIndex_t](#particleattributeindex_t) | class |  | 1 |
+| [ParticleChildrenInfo_t](#particlechildreninfo_t) | class |  | 5 |
+| [ParticleControlPointConfiguration_t](#particlecontrolpointconfiguration_t) | class |  | 3 |
+| [ParticleControlPointDriver_t](#particlecontrolpointdriver_t) | class |  | 6 |
+| [ParticlePreviewBodyGroup_t](#particlepreviewbodygroup_t) | class |  | 2 |
+| [ParticlePreviewState_t](#particlepreviewstate_t) | class |  | 18 |
+| [PointDefinitionWithTimeValues_t](#pointdefinitionwithtimevalues_t) | class | PointDefinition_t | 1 |
+| [PointDefinition_t](#pointdefinition_t) | class |  | 3 |
+| [RenderProjectedMaterial_t](#renderprojectedmaterial_t) | class |  | 1 |
+| [SequenceWeightedList_t](#sequenceweightedlist_t) | class |  | 2 |
+| [TextureControls_t](#texturecontrols_t) | class |  | 16 |
+| [TextureGroup_t](#texturegroup_t) | class |  | 9 |
+| [VecInputMaterialVariable_t](#vecinputmaterialvariable_t) | class |  | 2 |
+
+---
+
+### CBaseRendererSource2
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Derived by:** [CBaseTrailRenderer](particles.md#cbasetrailrenderer), [C_OP_RenderRopes](particles.md#c_op_renderropes), [C_OP_RenderSprites](particles.md#c_op_rendersprites)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- CBaseRendererSource2
+    CParticleFunction <|-- CParticleFunctionRenderer
+    CBaseRendererSource2 <|-- CBaseTrailRenderer
+    CBaseRendererSource2 <|-- C_OP_RenderRopes
+    CBaseRendererSource2 <|-- C_OP_RenderSprites
+    CBaseRendererSource2 *-- CParticleCollectionRendererFloatInput
+    CBaseRendererSource2 *-- ParticleAttributeIndex_t
+    CBaseRendererSource2 *-- CParticleCollectionRendererVecInput
+    CBaseRendererSource2 *-- ParticleColorBlendType_t
+    CBaseRendererSource2 *-- SpriteCardShaderType_t
+    CBaseRendererSource2 *-- ParticleSequenceCropOverride_t
+    CBaseRendererSource2 *-- TextureGroup_t
+    CBaseRendererSource2 *-- AnimationType_t
+    CBaseRendererSource2 *-- ParticleOutputBlendMode_t
+    CBaseRendererSource2 *-- ParticleFogType_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flRadiusScale` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName radius scale` `MPropertySortPriority` `MPropertyStartGroup +Renderer Modifiers` |
+| `m_flAlphaScale` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName alpha scale` `MPropertySortPriority` |
+| `m_flRollScale` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName rotation roll scale` `MPropertySortPriority` |
+| `m_nAlpha2Field` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName per-particle alpha scale attribute` `MPropertySortPriority` |
+| `m_vecColorScale` | [CParticleCollectionRendererVecInput](../schemas/particleslib.md#cparticlecollectionrenderervecinput) | `MPropertyFriendlyName color blend` `MPropertySortPriority` |
+| `m_nColorBlendType` | [ParticleColorBlendType_t](../schemas/!GlobalTypes.md#particlecolorblendtype_t) | `MPropertyFriendlyName color blend type` `MPropertySortPriority` |
+| `m_nShaderType` | [SpriteCardShaderType_t](../schemas/!GlobalTypes.md#spritecardshadertype_t) | `MPropertyFriendlyName Shader` `MPropertySortPriority` `MPropertyStartGroup +Material` |
+| `m_strShaderOverride` | CUtlString | `MPropertyFriendlyName Custom Shader` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_flCenterXOffset` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName X offset of center point` `MPropertySortPriority` |
+| `m_flCenterYOffset` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName Y offset of center point` `MPropertySortPriority` |
+| `m_flBumpStrength` | float32 | `MPropertyFriendlyName Bump Strength` `MPropertySortPriority` |
+| `m_nCropTextureOverride` | [ParticleSequenceCropOverride_t](../schemas/!GlobalTypes.md#particlesequencecropoverride_t) | `MPropertyFriendlyName Sheet Crop Behavior` `MPropertySortPriority` |
+| `m_vecTexturesInput` | CUtlLeanVector< [TextureGroup_t](../schemas/particles.md#texturegroup_t) > | `MParticleRequireDefaultArrayEntry` `MPropertyAutoExpandSelf` `MPropertyFriendlyName Textures` `MPropertySortPriority` |
+| `m_flAnimationRate` | float32 | `MPropertyAttributeRange 0 5` `MPropertyFriendlyName animation rate` `MPropertySortPriority` `MPropertyStartGroup Animation` |
+| `m_nAnimationType` | [AnimationType_t](../schemas/!GlobalTypes.md#animationtype_t) | `MPropertyFriendlyName animation type` `MPropertySortPriority` |
+| `m_bAnimateInFPS` | bool | `MPropertyFriendlyName set animation value in FPS` `MPropertySortPriority` |
+| `m_flMotionVectorScaleU` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName motion vector scale U` `MPropertySortPriority` |
+| `m_flMotionVectorScaleV` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName motion vector scale V` `MPropertySortPriority` |
+| `m_flSelfIllumAmount` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyAttributeRange 0 2` `MPropertyFriendlyName self illum amount` `MPropertySortPriority` `MPropertyStartGroup Lighting and Shadows` |
+| `m_flDiffuseAmount` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName diffuse lighting amount` `MPropertySortPriority` |
+| `m_flDiffuseClamp` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName diffuse max contribution clamp` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_nLightingControlPoint` | int32 | `MPropertyFriendlyName diffuse lighting origin Control Point` `MPropertySortPriority` |
+| `m_nOutputBlendMode` | [ParticleOutputBlendMode_t](../schemas/!GlobalTypes.md#particleoutputblendmode_t) | `MPropertyFriendlyName output blend mode` `MPropertySortPriority` `MPropertyStartGroup +Color and alpha adjustments` |
+| `m_bGammaCorrectVertexColors` | bool | `MPropertyFriendlyName Gamma-correct vertex colors` `MPropertySortPriority` |
+| `m_bSaturateColorPreAlphaBlend` | bool | `MPropertyFriendlyName Saturate color pre alphablend` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_flAddSelfAmount` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName add self amount over alphablend` `MPropertySortPriority` |
+| `m_flDesaturation` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName desaturation amount` `MPropertySortPriority` |
+| `m_flOverbrightFactor` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName overbright factor` `MPropertySortPriority` |
+| `m_nHSVShiftControlPoint` | int32 | `MPropertyFriendlyName HSV Shift Control Point` `MPropertySortPriority` |
+| `m_nFogType` | [ParticleFogType_t](../schemas/!GlobalTypes.md#particlefogtype_t) | `MPropertyFriendlyName Apply fog to particle` `MPropertySortPriority` |
+| `m_flFogAmount` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName Fog Scale` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_bTintByFOW` | bool | `MPropertyFriendlyName Apply fog of war to color` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_bTintByGlobalLight` | bool | `MPropertyFriendlyName Apply global light to color` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_nPerParticleAlphaReference` | [SpriteCardPerParticleScale_t](../schemas/!GlobalTypes.md#spritecardperparticlescale_t) | `MPropertyFriendlyName alpha reference` `MPropertySortPriority` `MPropertyStartGroup Color and alpha adjustments/Alpha Reference` |
+| `m_nPerParticleAlphaRefWindow` | [SpriteCardPerParticleScale_t](../schemas/!GlobalTypes.md#spritecardperparticlescale_t) | `MPropertyFriendlyName alpha reference window size` `MPropertySortPriority` |
+| `m_nAlphaReferenceType` | [ParticleAlphaReferenceType_t](../schemas/!GlobalTypes.md#particlealphareferencetype_t) | `MPropertyFriendlyName alpha reference type` `MPropertySortPriority` |
+| `m_flAlphaReferenceSoftness` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName alpha reference softness` `MPropertySortPriority` |
+| `m_flSourceAlphaValueToMapToZero` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName source alpha value to map to alpha of zero` `MPropertySortPriority` |
+| `m_flSourceAlphaValueToMapToOne` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName source alpha value to map to alpha of 1` `MPropertySortPriority` |
+| `m_bRefract` | bool | `MPropertyFriendlyName refract background` `MPropertySortPriority` `MPropertyStartGroup Refraction` |
+| `m_bRefractSolid` | bool | `MPropertyFriendlyName refract draws opaque - alpha scales refraction` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_bRefract2Passes` | bool | `MPropertyFriendlyName refract in 2 passes - can refract particles behind, requires (MBOIT!)` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_flRefractAmount` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyAttributeRange -2 2` `MPropertyFriendlyName refract amount` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_nRefractBlurRadius` | int32 | `MPropertyFriendlyName refract blur radius` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_nRefractBlurType` | [BlurFilterType_t](../schemas/!GlobalTypes.md#blurfiltertype_t) | `MPropertyFriendlyName refract blur type` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_bOnlyRenderInEffectsBloomPass` | bool | `MPropertyFriendlyName Only Render in effects bloom pass` `MPropertySortPriority` `MPropertyStartGroup` |
+| `m_bOnlyRenderInEffectsWaterPass` | bool | `MPropertyFriendlyName Only Render in effects water pass` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_bUseMixedResolutionRendering` | bool | `MPropertyFriendlyName Use Mixed Resolution Rendering` `MPropertySortPriority` |
+| `m_bOnlyRenderInEffecsGameOverlay` | bool | `MPropertyFriendlyName Only Render in effects game overlay pass` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_stencilTestID` | char[128] | `MPropertyFriendlyName stencil test ID` `MPropertySortPriority` `MPropertyStartGroup Stencil` |
+| `m_bStencilTestExclude` | bool | `MPropertyFriendlyName only write where stencil is NOT stencil test ID` `MPropertySortPriority` |
+| `m_stencilWriteID` | char[128] | `MPropertyFriendlyName stencil write ID` `MPropertySortPriority` |
+| `m_bWriteStencilOnDepthPass` | bool | `MPropertyFriendlyName write stencil on z-buffer test success` `MPropertySortPriority` |
+| `m_bWriteStencilOnDepthFail` | bool | `MPropertyFriendlyName write stencil on z-buffer test failure` `MPropertySortPriority` |
+| `m_bReverseZBuffering` | bool | `MPropertyFriendlyName reverse z-buffer test` `MPropertySortPriority` `MPropertyStartGroup Depth buffer control and effects` |
+| `m_bDisableZBuffering` | bool | `MPropertyFriendlyName disable z-buffer test` `MPropertySortPriority` |
+| `m_nFeatheringMode` | [ParticleDepthFeatheringMode_t](../schemas/!GlobalTypes.md#particledepthfeatheringmode_t) | `MPropertyFriendlyName Depth feathering mode` `MPropertySortPriority` |
+| `m_flFeatheringMinDist` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName particle feathering closest distance to surface` `MPropertySortPriority` |
+| `m_flFeatheringMaxDist` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName particle feathering farthest distance to surface` `MPropertySortPriority` |
+| `m_flFeatheringFilter` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName particle feathering alpha filter` `MPropertySortPriority` |
+| `m_flFeatheringDepthMapFilter` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName particle feathering depthmap layer filter` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_flDepthBias` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName depth comparison bias` `MPropertySortPriority` |
+| `m_nSortMethod` | [ParticleSortingChoiceList_t](../schemas/!GlobalTypes.md#particlesortingchoicelist_t) | `MPropertyFriendlyName Sort Method` `MPropertySortPriority` |
+| `m_bBlendFramesSeq0` | bool | `MPropertyFriendlyName blend sequence animation frames` `MPropertySortPriority` `MPropertyStartGroup Animation` |
+| `m_bMaxLuminanceBlendingSequence0` | bool | `MPropertyFriendlyName use max-luminance blending for sequence` `MPropertySortPriority` `MPropertySuppressExpr` |
+
+### CBaseTrailRenderer
+
+**Inherits from:** [CBaseRendererSource2](particles.md#cbaserenderersource2)
+
+**Derived by:** [C_OP_RenderTrails](particles.md#c_op_rendertrails)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CBaseRendererSource2 <|-- CBaseTrailRenderer
+    CParticleFunctionRenderer <|-- CBaseRendererSource2
+    CParticleFunction <|-- CParticleFunctionRenderer
+    CBaseTrailRenderer <|-- C_OP_RenderTrails
+    CBaseTrailRenderer *-- ParticleOrientationChoiceList_t
+    CBaseTrailRenderer *-- CParticleCollectionRendererFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nOrientationType` | [ParticleOrientationChoiceList_t](../schemas/!GlobalTypes.md#particleorientationchoicelist_t) | `MPropertyFriendlyName orientation type` `MPropertySortPriority` `MPropertyStartGroup Orientation` |
+| `m_nOrientationControlPoint` | int32 | `MPropertyFriendlyName orientation control point` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_flMinSize` | float32 | `MPropertyFriendlyName minimum visual screen-size` `MPropertySortPriority` `MPropertyStartGroup Screenspace Fading and culling` |
+| `m_flMaxSize` | float32 | `MPropertyFriendlyName maximum visual screen-size` `MPropertySortPriority` |
+| `m_flStartFadeSize` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName start fade screen-size` `MPropertySortPriority` |
+| `m_flEndFadeSize` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName end fade and cull screen-size` `MPropertySortPriority` |
+| `m_flSubPixelAAScale` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName sub-pixel AA scale` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_bClampV` | bool | `MPropertyFriendlyName Clamp Non-Sheet texture V coords` `MPropertySortPriority` `MPropertyStartGroup Trail UV Controls` |
+
+### CGeneralRandomRotation
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Derived by:** [C_INIT_RandomRotation](particles.md#c_init_randomrotation), [C_INIT_RandomRotationSpeed](particles.md#c_init_randomrotationspeed), [C_INIT_RandomYaw](particles.md#c_init_randomyaw)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- CGeneralRandomRotation
+    CParticleFunction <|-- CParticleFunctionInitializer
+    CGeneralRandomRotation <|-- C_INIT_RandomRotation
+    CGeneralRandomRotation <|-- C_INIT_RandomRotationSpeed
+    CGeneralRandomRotation <|-- C_INIT_RandomYaw
+    CGeneralRandomRotation *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_rotation` `MPropertyFriendlyName rotation field` |
+| `m_flDegrees` | float32 | `MPropertyFriendlyName rotation initial` |
+| `m_flDegreesMin` | float32 | `MPropertyFriendlyName rotation offset from initial min` |
+| `m_flDegreesMax` | float32 | `MPropertyFriendlyName rotation offset from initial max` |
+| `m_flRotationRandExponent` | float32 | `MPropertyFriendlyName rotation offset exponent` |
+| `m_bRandomlyFlipDirection` | bool | `MPropertyFriendlyName randomly flip direction` |
+
+### CGeneralSpin
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Derived by:** [C_OP_Spin](particles.md#c_op_spin), [C_OP_SpinYaw](particles.md#c_op_spinyaw)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- CGeneralSpin
+    CParticleFunction <|-- CParticleFunctionOperator
+    CGeneralSpin <|-- C_OP_Spin
+    CGeneralSpin <|-- C_OP_SpinYaw
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nSpinRateDegrees` | int32 | `MPropertyFriendlyName spin rate degrees` |
+| `m_nSpinRateMinDegrees` | int32 | `MPropertyFriendlyName spin rate min` |
+| `m_fSpinRateStopTime` | float32 | `MPropertyFriendlyName spin stop time` |
+
+### CPAssignment_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CPAssignment_t *-- CPerParticleVecInput
+    CPAssignment_t *-- ParticleOrientationSetMode_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCPNumber` | int32 | `MPropertyFriendlyName Control Point Number` |
+| `m_Pos` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName CP Position` |
+| `m_nOrientationMode` | [ParticleOrientationSetMode_t](../schemas/!GlobalTypes.md#particleorientationsetmode_t) | `MPropertyFriendlyName CP Orientation Type` |
+
+### CParticleFunction
+
+**Derived by:** [CParticleFunctionConstraint](particles.md#cparticlefunctionconstraint), [CParticleFunctionEmitter](particles.md#cparticlefunctionemitter), [CParticleFunctionForce](particles.md#cparticlefunctionforce), [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer), [CParticleFunctionOperator](particles.md#cparticlefunctionoperator), [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunction <|-- CParticleFunctionConstraint
+    CParticleFunction <|-- CParticleFunctionEmitter
+    CParticleFunction <|-- CParticleFunctionForce
+    CParticleFunction <|-- CParticleFunctionInitializer
+    CParticleFunction <|-- CParticleFunctionOperator
+    CParticleFunction <|-- CParticleFunctionRenderer
+    CParticleFunction *-- CParticleCollectionFloatInput
+    CParticleFunction *-- ParticleEndcapMode_t
+    CParticleFunction *-- ParticleToolsState_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flOpStrength` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName operator strength` `MPropertySortPriority` |
+| `m_nOpEndCapState` | [ParticleEndcapMode_t](../schemas/!GlobalTypes.md#particleendcapmode_t) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority` |
+| `m_nToolsState` | [ParticleToolsState_t](../schemas/!GlobalTypes.md#particletoolsstate_t) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority` |
+| `m_flOpStartFadeInTime` | float32 | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority` `MPropertyStartGroup Operator Fade` |
+| `m_flOpEndFadeInTime` | float32 | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority` |
+| `m_flOpStartFadeOutTime` | float32 | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority` |
+| `m_flOpEndFadeOutTime` | float32 | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadeout` `MPropertySortPriority` |
+| `m_flOpFadeOscillatePeriod` | float32 | `MParticleAdvancedField` `MPropertyFriendlyName operator fade oscillate` `MPropertySortPriority` |
+| `m_bNormalizeToStopTime` | bool | `MParticleAdvancedField` `MPropertyFriendlyName normalize fade times to endcap` `MPropertySortPriority` |
+| `m_flOpTimeOffsetMin` | float32 | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset min` `MPropertySortPriority` `MPropertyStartGroup Operator Fade Time Offset` |
+| `m_flOpTimeOffsetMax` | float32 | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset max` `MPropertySortPriority` |
+| `m_nOpTimeOffsetSeed` | int32 | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset seed` `MPropertySortPriority` |
+| `m_nOpTimeScaleSeed` | int32 | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale seed` `MPropertySortPriority` `MPropertyStartGroup Operator Fade Timescale Modifiers` |
+| `m_flOpTimeScaleMin` | float32 | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale min` `MPropertySortPriority` |
+| `m_flOpTimeScaleMax` | float32 | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale max` `MPropertySortPriority` |
+| `m_bDisableOperator` | bool | `MPropertyStartGroup` `MPropertySuppressField` |
+| `m_Notes` | CUtlString | `MParticleHelpField` `MPropertyFriendlyName operator help and notes` `MPropertySortPriority` |
+
+### CParticleFunctionConstraint
+
+**Inherits from:** [CParticleFunction](particles.md#cparticlefunction)
+
+**Derived by:** [C_OP_BoxConstraint](particles.md#c_op_boxconstraint), [C_OP_CollideWithParentParticles](particles.md#c_op_collidewithparentparticles), [C_OP_CollideWithSelf](particles.md#c_op_collidewithself), [C_OP_ConstrainDistance](particles.md#c_op_constraindistance), [C_OP_ConstrainDistanceToPath](particles.md#c_op_constraindistancetopath), [C_OP_ConstrainDistanceToUserSpecifiedPath](particles.md#c_op_constraindistancetouserspecifiedpath), [C_OP_ConstrainLineLength](particles.md#c_op_constrainlinelength), [C_OP_PlanarConstraint](particles.md#c_op_planarconstraint), [C_OP_RopeSpringConstraint](particles.md#c_op_ropespringconstraint), [C_OP_ShapeMatchingConstraint](particles.md#c_op_shapematchingconstraint), [C_OP_SpringToVectorConstraint](particles.md#c_op_springtovectorconstraint), [C_OP_WorldCollideConstraint](particles.md#c_op_worldcollideconstraint), [C_OP_WorldTraceConstraint](particles.md#c_op_worldtraceconstraint)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunction <|-- CParticleFunctionConstraint
+    CParticleFunctionConstraint <|-- C_OP_BoxConstraint
+    CParticleFunctionConstraint <|-- C_OP_CollideWithParentParticles
+    CParticleFunctionConstraint <|-- C_OP_CollideWithSelf
+    CParticleFunctionConstraint <|-- C_OP_ConstrainDistance
+    CParticleFunctionConstraint <|-- C_OP_ConstrainDistanceToPath
+    CParticleFunctionConstraint <|-- C_OP_ConstrainDistanceToUserSpecifiedPath
+    CParticleFunctionConstraint <|-- C_OP_ConstrainLineLength
+    CParticleFunctionConstraint <|-- C_OP_PlanarConstraint
+    CParticleFunctionConstraint <|-- C_OP_RopeSpringConstraint
+    CParticleFunctionConstraint <|-- C_OP_ShapeMatchingConstraint
+    CParticleFunctionConstraint <|-- C_OP_SpringToVectorConstraint
+    CParticleFunctionConstraint <|-- C_OP_WorldCollideConstraint
+    CParticleFunctionConstraint <|-- C_OP_WorldTraceConstraint
+```
+
+### CParticleFunctionEmitter
+
+**Inherits from:** [CParticleFunction](particles.md#cparticlefunction)
+
+**Derived by:** [C_OP_ContinuousEmitter](particles.md#c_op_continuousemitter), [C_OP_InstantaneousEmitter](particles.md#c_op_instantaneousemitter), [C_OP_MaintainEmitter](particles.md#c_op_maintainemitter), [C_OP_NoiseEmitter](particles.md#c_op_noiseemitter)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunction <|-- CParticleFunctionEmitter
+    CParticleFunctionEmitter <|-- C_OP_ContinuousEmitter
+    CParticleFunctionEmitter <|-- C_OP_InstantaneousEmitter
+    CParticleFunctionEmitter <|-- C_OP_MaintainEmitter
+    CParticleFunctionEmitter <|-- C_OP_NoiseEmitter
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nEmitterIndex` | int32 | `MPropertyFriendlyName Emitter Index` |
+
+### CParticleFunctionForce
+
+**Inherits from:** [CParticleFunction](particles.md#cparticlefunction)
+
+**Derived by:** [C_OP_AttractToControlPoint](particles.md#c_op_attracttocontrolpoint), [C_OP_CPVelocityForce](particles.md#c_op_cpvelocityforce), [C_OP_CurlNoiseForce](particles.md#c_op_curlnoiseforce), [C_OP_DensityForce](particles.md#c_op_densityforce), [C_OP_ExternalGameImpulseForce](particles.md#c_op_externalgameimpulseforce), [C_OP_ExternalWindForce](particles.md#c_op_externalwindforce), [C_OP_ForceBasedOnDistanceToPlane](particles.md#c_op_forcebasedondistancetoplane), [C_OP_IntraParticleForce](particles.md#c_op_intraparticleforce), [C_OP_LocalAccelerationForce](particles.md#c_op_localaccelerationforce), [C_OP_ParentVortices](particles.md#c_op_parentvortices), [C_OP_PerParticleForce](particles.md#c_op_perparticleforce), [C_OP_RandomForce](particles.md#c_op_randomforce), [C_OP_TimeVaryingForce](particles.md#c_op_timevaryingforce), [C_OP_TurbulenceForce](particles.md#c_op_turbulenceforce), [C_OP_TwistAroundAxis](particles.md#c_op_twistaroundaxis), [C_OP_WindForce](particles.md#c_op_windforce)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunction <|-- CParticleFunctionForce
+    CParticleFunctionForce <|-- C_OP_AttractToControlPoint
+    CParticleFunctionForce <|-- C_OP_CPVelocityForce
+    CParticleFunctionForce <|-- C_OP_CurlNoiseForce
+    CParticleFunctionForce <|-- C_OP_DensityForce
+    CParticleFunctionForce <|-- C_OP_ExternalGameImpulseForce
+    CParticleFunctionForce <|-- C_OP_ExternalWindForce
+    CParticleFunctionForce <|-- C_OP_ForceBasedOnDistanceToPlane
+    CParticleFunctionForce <|-- C_OP_IntraParticleForce
+    CParticleFunctionForce <|-- C_OP_LocalAccelerationForce
+    CParticleFunctionForce <|-- C_OP_ParentVortices
+    CParticleFunctionForce <|-- C_OP_PerParticleForce
+    CParticleFunctionForce <|-- C_OP_RandomForce
+    CParticleFunctionForce <|-- C_OP_TimeVaryingForce
+    CParticleFunctionForce <|-- C_OP_TurbulenceForce
+    CParticleFunctionForce <|-- C_OP_TwistAroundAxis
+    CParticleFunctionForce <|-- C_OP_WindForce
+```
+
+### CParticleFunctionInitializer
+
+**Inherits from:** [CParticleFunction](particles.md#cparticlefunction)
+
+**Derived by:** [CGeneralRandomRotation](particles.md#cgeneralrandomrotation), [C_INIT_AddVectorToVector](particles.md#c_init_addvectortovector), [C_INIT_AgeNoise](particles.md#c_init_agenoise), [C_INIT_ChaoticAttractor](particles.md#c_init_chaoticattractor), [C_INIT_CheckParticleForWater](particles.md#c_init_checkparticleforwater), [C_INIT_ColorLitPerParticle](particles.md#c_init_colorlitperparticle), [C_INIT_CreateAlongPath](particles.md#c_init_createalongpath), [C_INIT_CreateFromCPs](particles.md#c_init_createfromcps), [C_INIT_CreateFromParentParticles](particles.md#c_init_createfromparentparticles), [C_INIT_CreateFromPlaneCache](particles.md#c_init_createfromplanecache), [C_INIT_CreateInEpitrochoid](particles.md#c_init_createinepitrochoid), [C_INIT_CreateOnGrid](particles.md#c_init_createongrid), [C_INIT_CreateOnModel](particles.md#c_init_createonmodel), [C_INIT_CreateOnModelAtHeight](particles.md#c_init_createonmodelatheight), [C_INIT_CreateParticleImpulse](particles.md#c_init_createparticleimpulse), [C_INIT_CreatePhyllotaxis](particles.md#c_init_createphyllotaxis), [C_INIT_CreateSequentialPath](particles.md#c_init_createsequentialpath), [C_INIT_CreateSequentialPathV2](particles.md#c_init_createsequentialpathv2), [C_INIT_CreateSpiralSphere](particles.md#c_init_createspiralsphere), [C_INIT_CreateWithinBox](particles.md#c_init_createwithinbox), [C_INIT_CreateWithinCapsuleTransform](particles.md#c_init_createwithincapsuletransform), [C_INIT_CreateWithinSphereTransform](particles.md#c_init_createwithinspheretransform), [C_INIT_CreationNoise](particles.md#c_init_creationnoise), [C_INIT_DistanceCull](particles.md#c_init_distancecull), [C_INIT_DistanceToCPInit](particles.md#c_init_distancetocpinit), [C_INIT_DistanceToNeighborCull](particles.md#c_init_distancetoneighborcull), [C_INIT_GlobalScale](particles.md#c_init_globalscale), [C_INIT_InheritFromParentParticles](particles.md#c_init_inheritfromparentparticles), [C_INIT_InheritVelocity](particles.md#c_init_inheritvelocity), [C_INIT_InitFloat](particles.md#c_init_initfloat), [C_INIT_InitFloatCollection](particles.md#c_init_initfloatcollection), [C_INIT_InitFromCPSnapshot](particles.md#c_init_initfromcpsnapshot), [C_INIT_InitFromParentKilled](particles.md#c_init_initfromparentkilled), [C_INIT_InitFromVectorFieldSnapshot](particles.md#c_init_initfromvectorfieldsnapshot), [C_INIT_InitSkinnedPositionFromCPSnapshot](particles.md#c_init_initskinnedpositionfromcpsnapshot), [C_INIT_InitVec](particles.md#c_init_initvec), [C_INIT_InitVecCollection](particles.md#c_init_initveccollection), [C_INIT_InitialRepulsionVelocity](particles.md#c_init_initialrepulsionvelocity), [C_INIT_InitialSequenceFromModel](particles.md#c_init_initialsequencefrommodel), [C_INIT_InitialVelocityFromHitbox](particles.md#c_init_initialvelocityfromhitbox), [C_INIT_InitialVelocityNoise](particles.md#c_init_initialvelocitynoise), [C_INIT_LifespanFromVelocity](particles.md#c_init_lifespanfromvelocity), [C_INIT_ModelCull](particles.md#c_init_modelcull), [C_INIT_MoveBetweenPoints](particles.md#c_init_movebetweenpoints), [C_INIT_NormalAlignToCP](particles.md#c_init_normalaligntocp), [C_INIT_NormalOffset](particles.md#c_init_normaloffset), [C_INIT_OffsetVectorToVector](particles.md#c_init_offsetvectortovector), [C_INIT_Orient2DRelToCP](particles.md#c_init_orient2dreltocp), [C_INIT_PlaneCull](particles.md#c_init_planecull), [C_INIT_PointList](particles.md#c_init_pointlist), [C_INIT_PositionOffset](particles.md#c_init_positionoffset), [C_INIT_PositionOffsetToCP](particles.md#c_init_positionoffsettocp), [C_INIT_PositionPlaceOnGround](particles.md#c_init_positionplaceonground), [C_INIT_PositionWarp](particles.md#c_init_positionwarp), [C_INIT_PositionWarpScalar](particles.md#c_init_positionwarpscalar), [C_INIT_QuantizeFloat](particles.md#c_init_quantizefloat), [C_INIT_RadiusFromCPObject](particles.md#c_init_radiusfromcpobject), [C_INIT_RandomAlpha](particles.md#c_init_randomalpha), [C_INIT_RandomAlphaWindowThreshold](particles.md#c_init_randomalphawindowthreshold), [C_INIT_RandomColor](particles.md#c_init_randomcolor), [C_INIT_RandomLifeTime](particles.md#c_init_randomlifetime), [C_INIT_RandomModelSequence](particles.md#c_init_randommodelsequence), [C_INIT_RandomNamedModelElement](particles.md#c_init_randomnamedmodelelement), [C_INIT_RandomRadius](particles.md#c_init_randomradius), [C_INIT_RandomScalar](particles.md#c_init_randomscalar), [C_INIT_RandomSecondSequence](particles.md#c_init_randomsecondsequence), [C_INIT_RandomSequence](particles.md#c_init_randomsequence), [C_INIT_RandomTrailLength](particles.md#c_init_randomtraillength), [C_INIT_RandomVector](particles.md#c_init_randomvector), [C_INIT_RandomVectorComponent](particles.md#c_init_randomvectorcomponent), [C_INIT_RandomYawFlip](particles.md#c_init_randomyawflip), [C_INIT_RemapInitialDirectionToTransformToVector](particles.md#c_init_remapinitialdirectiontotransformtovector), [C_INIT_RemapInitialTransformDirectionToRotation](particles.md#c_init_remapinitialtransformdirectiontorotation), [C_INIT_RemapInitialVisibilityScalar](particles.md#c_init_remapinitialvisibilityscalar), [C_INIT_RemapNamedModelElementToScalar](particles.md#c_init_remapnamedmodelelementtoscalar), [C_INIT_RemapParticleCountToScalar](particles.md#c_init_remapparticlecounttoscalar), [C_INIT_RemapQAnglesToRotation](particles.md#c_init_remapqanglestorotation), [C_INIT_RemapScalarToVector](particles.md#c_init_remapscalartovector), [C_INIT_RemapTransformOrientationToRotations](particles.md#c_init_remaptransformorientationtorotations), [C_INIT_RemapTransformToVector](particles.md#c_init_remaptransformtovector), [C_INIT_RingWave](particles.md#c_init_ringwave), [C_INIT_RtEnvCull](particles.md#c_init_rtenvcull), [C_INIT_ScaleVelocity](particles.md#c_init_scalevelocity), [C_INIT_ScreenSpacePositionOfTarget](particles.md#c_init_screenspacepositionoftarget), [C_INIT_SequenceFromCP](particles.md#c_init_sequencefromcp), [C_INIT_SequenceLifeTime](particles.md#c_init_sequencelifetime), [C_INIT_SetAttributeToScalarExpression](particles.md#c_init_setattributetoscalarexpression), [C_INIT_SetFloatAttributeToVectorExpression](particles.md#c_init_setfloatattributetovectorexpression), [C_INIT_SetHitboxToClosest](particles.md#c_init_sethitboxtoclosest), [C_INIT_SetHitboxToModel](particles.md#c_init_sethitboxtomodel), [C_INIT_SetRigidAttachment](particles.md#c_init_setrigidattachment), [C_INIT_SetVectorAttributeToVectorExpression](particles.md#c_init_setvectorattributetovectorexpression), [C_INIT_SkyVisCull](particles.md#c_init_skyviscull), [C_INIT_StatusEffect](particles.md#c_init_statuseffect), [C_INIT_StatusEffectCitadel](particles.md#c_init_statuseffectcitadel), [C_INIT_VelocityFromCP](particles.md#c_init_velocityfromcp), [C_INIT_VelocityFromNormal](particles.md#c_init_velocityfromnormal), [C_INIT_VelocityRadialRandom](particles.md#c_init_velocityradialrandom), [C_INIT_VelocityRandom](particles.md#c_init_velocityrandom)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunction <|-- CParticleFunctionInitializer
+    CParticleFunctionInitializer <|-- CGeneralRandomRotation
+    CParticleFunctionInitializer <|-- C_INIT_AddVectorToVector
+    CParticleFunctionInitializer <|-- C_INIT_AgeNoise
+    CParticleFunctionInitializer <|-- C_INIT_ChaoticAttractor
+    CParticleFunctionInitializer <|-- C_INIT_CheckParticleForWater
+    CParticleFunctionInitializer <|-- C_INIT_ColorLitPerParticle
+    CParticleFunctionInitializer <|-- C_INIT_CreateAlongPath
+    CParticleFunctionInitializer <|-- C_INIT_CreateFromCPs
+    CParticleFunctionInitializer <|-- C_INIT_CreateFromParentParticles
+    CParticleFunctionInitializer <|-- C_INIT_CreateFromPlaneCache
+    CParticleFunctionInitializer <|-- C_INIT_CreateInEpitrochoid
+    CParticleFunctionInitializer <|-- C_INIT_CreateOnGrid
+    CParticleFunctionInitializer <|-- C_INIT_CreateOnModel
+    CParticleFunctionInitializer <|-- C_INIT_CreateOnModelAtHeight
+    CParticleFunctionInitializer <|-- C_INIT_CreateParticleImpulse
+    CParticleFunctionInitializer <|-- C_INIT_CreatePhyllotaxis
+    CParticleFunctionInitializer <|-- C_INIT_CreateSequentialPath
+    CParticleFunctionInitializer <|-- C_INIT_CreateSequentialPathV2
+    CParticleFunctionInitializer <|-- C_INIT_CreateSpiralSphere
+    CParticleFunctionInitializer <|-- C_INIT_CreateWithinBox
+    CParticleFunctionInitializer <|-- C_INIT_CreateWithinCapsuleTransform
+    CParticleFunctionInitializer <|-- C_INIT_CreateWithinSphereTransform
+    CParticleFunctionInitializer <|-- C_INIT_CreationNoise
+    CParticleFunctionInitializer <|-- C_INIT_DistanceCull
+    CParticleFunctionInitializer <|-- C_INIT_DistanceToCPInit
+    CParticleFunctionInitializer <|-- C_INIT_DistanceToNeighborCull
+    CParticleFunctionInitializer <|-- C_INIT_GlobalScale
+    CParticleFunctionInitializer <|-- C_INIT_InheritFromParentParticles
+    CParticleFunctionInitializer <|-- C_INIT_InheritVelocity
+    CParticleFunctionInitializer <|-- C_INIT_InitFloat
+    CParticleFunctionInitializer <|-- C_INIT_InitFloatCollection
+    CParticleFunctionInitializer <|-- C_INIT_InitFromCPSnapshot
+    CParticleFunctionInitializer <|-- C_INIT_InitFromParentKilled
+    CParticleFunctionInitializer <|-- C_INIT_InitFromVectorFieldSnapshot
+    CParticleFunctionInitializer <|-- C_INIT_InitSkinnedPositionFromCPSnapshot
+    CParticleFunctionInitializer <|-- C_INIT_InitVec
+    CParticleFunctionInitializer <|-- C_INIT_InitVecCollection
+    CParticleFunctionInitializer <|-- C_INIT_InitialRepulsionVelocity
+    CParticleFunctionInitializer <|-- C_INIT_InitialSequenceFromModel
+    CParticleFunctionInitializer <|-- C_INIT_InitialVelocityFromHitbox
+    CParticleFunctionInitializer <|-- C_INIT_InitialVelocityNoise
+    CParticleFunctionInitializer <|-- C_INIT_LifespanFromVelocity
+    CParticleFunctionInitializer <|-- C_INIT_ModelCull
+    CParticleFunctionInitializer <|-- C_INIT_MoveBetweenPoints
+    CParticleFunctionInitializer <|-- C_INIT_NormalAlignToCP
+    CParticleFunctionInitializer <|-- C_INIT_NormalOffset
+    CParticleFunctionInitializer <|-- C_INIT_OffsetVectorToVector
+    CParticleFunctionInitializer <|-- C_INIT_Orient2DRelToCP
+    CParticleFunctionInitializer <|-- C_INIT_PlaneCull
+    CParticleFunctionInitializer <|-- C_INIT_PointList
+    CParticleFunctionInitializer <|-- C_INIT_PositionOffset
+    CParticleFunctionInitializer <|-- C_INIT_PositionOffsetToCP
+    CParticleFunctionInitializer <|-- C_INIT_PositionPlaceOnGround
+    CParticleFunctionInitializer <|-- C_INIT_PositionWarp
+    CParticleFunctionInitializer <|-- C_INIT_PositionWarpScalar
+    CParticleFunctionInitializer <|-- C_INIT_QuantizeFloat
+    CParticleFunctionInitializer <|-- C_INIT_RadiusFromCPObject
+    CParticleFunctionInitializer <|-- C_INIT_RandomAlpha
+    CParticleFunctionInitializer <|-- C_INIT_RandomAlphaWindowThreshold
+    CParticleFunctionInitializer <|-- C_INIT_RandomColor
+    CParticleFunctionInitializer <|-- C_INIT_RandomLifeTime
+    CParticleFunctionInitializer <|-- C_INIT_RandomModelSequence
+    CParticleFunctionInitializer <|-- C_INIT_RandomNamedModelElement
+    CParticleFunctionInitializer <|-- C_INIT_RandomRadius
+    CParticleFunctionInitializer <|-- C_INIT_RandomScalar
+    CParticleFunctionInitializer <|-- C_INIT_RandomSecondSequence
+    CParticleFunctionInitializer <|-- C_INIT_RandomSequence
+    CParticleFunctionInitializer <|-- C_INIT_RandomTrailLength
+    CParticleFunctionInitializer <|-- C_INIT_RandomVector
+    CParticleFunctionInitializer <|-- C_INIT_RandomVectorComponent
+    CParticleFunctionInitializer <|-- C_INIT_RandomYawFlip
+    CParticleFunctionInitializer <|-- C_INIT_RemapInitialDirectionToTransformToVector
+    CParticleFunctionInitializer <|-- C_INIT_RemapInitialTransformDirectionToRotation
+    CParticleFunctionInitializer <|-- C_INIT_RemapInitialVisibilityScalar
+    CParticleFunctionInitializer <|-- C_INIT_RemapNamedModelElementToScalar
+    CParticleFunctionInitializer <|-- C_INIT_RemapParticleCountToScalar
+    CParticleFunctionInitializer <|-- C_INIT_RemapQAnglesToRotation
+    CParticleFunctionInitializer <|-- C_INIT_RemapScalarToVector
+    CParticleFunctionInitializer <|-- C_INIT_RemapTransformOrientationToRotations
+    CParticleFunctionInitializer <|-- C_INIT_RemapTransformToVector
+    CParticleFunctionInitializer <|-- C_INIT_RingWave
+    CParticleFunctionInitializer <|-- C_INIT_RtEnvCull
+    CParticleFunctionInitializer <|-- C_INIT_ScaleVelocity
+    CParticleFunctionInitializer <|-- C_INIT_ScreenSpacePositionOfTarget
+    CParticleFunctionInitializer <|-- C_INIT_SequenceFromCP
+    CParticleFunctionInitializer <|-- C_INIT_SequenceLifeTime
+    CParticleFunctionInitializer <|-- C_INIT_SetAttributeToScalarExpression
+    CParticleFunctionInitializer <|-- C_INIT_SetFloatAttributeToVectorExpression
+    CParticleFunctionInitializer <|-- C_INIT_SetHitboxToClosest
+    CParticleFunctionInitializer <|-- C_INIT_SetHitboxToModel
+    CParticleFunctionInitializer <|-- C_INIT_SetRigidAttachment
+    CParticleFunctionInitializer <|-- C_INIT_SetVectorAttributeToVectorExpression
+    CParticleFunctionInitializer <|-- C_INIT_SkyVisCull
+    CParticleFunctionInitializer <|-- C_INIT_StatusEffect
+    CParticleFunctionInitializer <|-- C_INIT_StatusEffectCitadel
+    CParticleFunctionInitializer <|-- C_INIT_VelocityFromCP
+    CParticleFunctionInitializer <|-- C_INIT_VelocityFromNormal
+    CParticleFunctionInitializer <|-- C_INIT_VelocityRadialRandom
+    CParticleFunctionInitializer <|-- C_INIT_VelocityRandom
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nAssociatedEmitterIndex` | int32 | `MPropertyFriendlyName Associated emitter Index` |
+
+### CParticleFunctionOperator
+
+**Inherits from:** [CParticleFunction](particles.md#cparticlefunction)
+
+**Derived by:** [CGeneralSpin](particles.md#cgeneralspin), [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission), [CSpinUpdateBase](particles.md#cspinupdatebase), [C_OP_AlphaDecay](particles.md#c_op_alphadecay), [C_OP_BasicMovement](particles.md#c_op_basicmovement), [C_OP_CPOffsetToPercentageBetweenCPs](particles.md#c_op_cpoffsettopercentagebetweencps), [C_OP_CalculateVectorAttribute](particles.md#c_op_calculatevectorattribute), [C_OP_ChladniWave](particles.md#c_op_chladniwave), [C_OP_ClampScalar](particles.md#c_op_clampscalar), [C_OP_ClampVector](particles.md#c_op_clampvector), [C_OP_ColorAdjustHSL](particles.md#c_op_coloradjusthsl), [C_OP_ColorInterpolate](particles.md#c_op_colorinterpolate), [C_OP_ColorInterpolateRandom](particles.md#c_op_colorinterpolaterandom), [C_OP_ConnectParentParticleToNearest](particles.md#c_op_connectparentparticletonearest), [C_OP_ControlpointLight](particles.md#c_op_controlpointlight), [C_OP_Cull](particles.md#c_op_cull), [C_OP_CycleScalar](particles.md#c_op_cyclescalar), [C_OP_CylindricalDistanceToTransform](particles.md#c_op_cylindricaldistancetotransform), [C_OP_DampenToCP](particles.md#c_op_dampentocp), [C_OP_Decay](particles.md#c_op_decay), [C_OP_DecayClampCount](particles.md#c_op_decayclampcount), [C_OP_DecayMaintainCount](particles.md#c_op_decaymaintaincount), [C_OP_DecayOffscreen](particles.md#c_op_decayoffscreen), [C_OP_DifferencePreviousParticle](particles.md#c_op_differencepreviousparticle), [C_OP_Diffusion](particles.md#c_op_diffusion), [C_OP_DirectionBetweenVecsToVec](particles.md#c_op_directionbetweenvecstovec), [C_OP_DistanceBetweenTransforms](particles.md#c_op_distancebetweentransforms), [C_OP_DistanceBetweenVecs](particles.md#c_op_distancebetweenvecs), [C_OP_DistanceCull](particles.md#c_op_distancecull), [C_OP_DistanceToTransform](particles.md#c_op_distancetotransform), [C_OP_DragRelativeToPlane](particles.md#c_op_dragrelativetoplane), [C_OP_EndCapDecay](particles.md#c_op_endcapdecay), [C_OP_EndCapTimedDecay](particles.md#c_op_endcaptimeddecay), [C_OP_EndCapTimedFreeze](particles.md#c_op_endcaptimedfreeze), [C_OP_FadeAndKill](particles.md#c_op_fadeandkill), [C_OP_FadeAndKillForTracers](particles.md#c_op_fadeandkillfortracers), [C_OP_FadeIn](particles.md#c_op_fadein), [C_OP_FadeInSimple](particles.md#c_op_fadeinsimple), [C_OP_FadeOut](particles.md#c_op_fadeout), [C_OP_FadeOutSimple](particles.md#c_op_fadeoutsimple), [C_OP_GlobalLight](particles.md#c_op_globallight), [C_OP_InheritFromParentParticles](particles.md#c_op_inheritfromparentparticles), [C_OP_InheritFromParentParticlesV2](particles.md#c_op_inheritfromparentparticlesv2), [C_OP_InheritFromPeerSystem](particles.md#c_op_inheritfrompeersystem), [C_OP_InterpolateRadius](particles.md#c_op_interpolateradius), [C_OP_LagCompensation](particles.md#c_op_lagcompensation), [C_OP_LazyCullCompareFloat](particles.md#c_op_lazycullcomparefloat), [C_OP_LerpEndCapScalar](particles.md#c_op_lerpendcapscalar), [C_OP_LerpEndCapVector](particles.md#c_op_lerpendcapvector), [C_OP_LerpScalar](particles.md#c_op_lerpscalar), [C_OP_LerpToInitialPosition](particles.md#c_op_lerptoinitialposition), [C_OP_LerpToOtherAttribute](particles.md#c_op_lerptootherattribute), [C_OP_LerpVector](particles.md#c_op_lerpvector), [C_OP_LockPoints](particles.md#c_op_lockpoints), [C_OP_LockToBone](particles.md#c_op_locktobone), [C_OP_LockToPointList](particles.md#c_op_locktopointlist), [C_OP_LockToSavedSequentialPath](particles.md#c_op_locktosavedsequentialpath), [C_OP_LockToSavedSequentialPathV2](particles.md#c_op_locktosavedsequentialpathv2), [C_OP_MaintainSequentialPath](particles.md#c_op_maintainsequentialpath), [C_OP_MaxVelocity](particles.md#c_op_maxvelocity), [C_OP_ModelCull](particles.md#c_op_modelcull), [C_OP_ModelDampenMovement](particles.md#c_op_modeldampenmovement), [C_OP_MoveToHitbox](particles.md#c_op_movetohitbox), [C_OP_MovementLoopInsideSphere](particles.md#c_op_movementloopinsidesphere), [C_OP_MovementMaintainOffset](particles.md#c_op_movementmaintainoffset), [C_OP_MovementMoveAlongSkinnedCPSnapshot](particles.md#c_op_movementmovealongskinnedcpsnapshot), [C_OP_MovementPlaceOnGround](particles.md#c_op_movementplaceonground), [C_OP_MovementRigidAttachToCP](particles.md#c_op_movementrigidattachtocp), [C_OP_MovementRotateParticleAroundAxis](particles.md#c_op_movementrotateparticlearoundaxis), [C_OP_MovementSkinnedPositionFromCPSnapshot](particles.md#c_op_movementskinnedpositionfromcpsnapshot), [C_OP_Noise](particles.md#c_op_noise), [C_OP_NormalLock](particles.md#c_op_normallock), [C_OP_NormalizeVector](particles.md#c_op_normalizevector), [C_OP_Orient2DRelToCP](particles.md#c_op_orient2dreltocp), [C_OP_OrientTo2dDirection](particles.md#c_op_orientto2ddirection), [C_OP_OscillateScalar](particles.md#c_op_oscillatescalar), [C_OP_OscillateScalarSimple](particles.md#c_op_oscillatescalarsimple), [C_OP_OscillateVector](particles.md#c_op_oscillatevector), [C_OP_OscillateVectorSimple](particles.md#c_op_oscillatevectorsimple), [C_OP_PercentageBetweenTransformLerpCPs](particles.md#c_op_percentagebetweentransformlerpcps), [C_OP_PercentageBetweenTransforms](particles.md#c_op_percentagebetweentransforms), [C_OP_PercentageBetweenTransformsVector](particles.md#c_op_percentagebetweentransformsvector), [C_OP_PinParticleToCP](particles.md#c_op_pinparticletocp), [C_OP_PinRopeSegmentParticleToParent](particles.md#c_op_pinropesegmentparticletoparent), [C_OP_PlaneCull](particles.md#c_op_planecull), [C_OP_PointVectorAtNextParticle](particles.md#c_op_pointvectoratnextparticle), [C_OP_PositionLock](particles.md#c_op_positionlock), [C_OP_QuantizeFloat](particles.md#c_op_quantizefloat), [C_OP_RadiusDecay](particles.md#c_op_radiusdecay), [C_OP_RampScalarLinear](particles.md#c_op_rampscalarlinear), [C_OP_RampScalarLinearSimple](particles.md#c_op_rampscalarlinearsimple), [C_OP_RampScalarSpline](particles.md#c_op_rampscalarspline), [C_OP_RampScalarSplineSimple](particles.md#c_op_rampscalarsplinesimple), [C_OP_ReadFromNeighboringParticle](particles.md#c_op_readfromneighboringparticle), [C_OP_ReinitializeScalarEndCap](particles.md#c_op_reinitializescalarendcap), [C_OP_RemapCPVelocityToVector](particles.md#c_op_remapcpvelocitytovector), [C_OP_RemapCPtoScalar](particles.md#c_op_remapcptoscalar), [C_OP_RemapCPtoVector](particles.md#c_op_remapcptovector), [C_OP_RemapControlPointDirectionToVector](particles.md#c_op_remapcontrolpointdirectiontovector), [C_OP_RemapControlPointOrientationToRotation](particles.md#c_op_remapcontrolpointorientationtorotation), [C_OP_RemapCrossProductOfTwoVectorsToVector](particles.md#c_op_remapcrossproductoftwovectorstovector), [C_OP_RemapDensityGradientToVectorAttribute](particles.md#c_op_remapdensitygradienttovectorattribute), [C_OP_RemapDensityToVector](particles.md#c_op_remapdensitytovector), [C_OP_RemapDirectionToCPToVector](particles.md#c_op_remapdirectiontocptovector), [C_OP_RemapDistanceToLineSegmentBase](particles.md#c_op_remapdistancetolinesegmentbase), [C_OP_RemapDotProductToScalar](particles.md#c_op_remapdotproducttoscalar), [C_OP_RemapGravityToVector](particles.md#c_op_remapgravitytovector), [C_OP_RemapNamedModelElementEndCap](particles.md#c_op_remapnamedmodelelementendcap), [C_OP_RemapNamedModelElementOnceTimed](particles.md#c_op_remapnamedmodelelementoncetimed), [C_OP_RemapParticleCountOnScalarEndCap](particles.md#c_op_remapparticlecountonscalarendcap), [C_OP_RemapParticleCountToScalar](particles.md#c_op_remapparticlecounttoscalar), [C_OP_RemapScalar](particles.md#c_op_remapscalar), [C_OP_RemapScalarEndCap](particles.md#c_op_remapscalarendcap), [C_OP_RemapScalarOnceTimed](particles.md#c_op_remapscalaroncetimed), [C_OP_RemapSpeed](particles.md#c_op_remapspeed), [C_OP_RemapTransformOrientationToRotations](particles.md#c_op_remaptransformorientationtorotations), [C_OP_RemapTransformOrientationToYaw](particles.md#c_op_remaptransformorientationtoyaw), [C_OP_RemapTransformToVelocity](particles.md#c_op_remaptransformtovelocity), [C_OP_RemapTransformVisibilityToScalar](particles.md#c_op_remaptransformvisibilitytoscalar), [C_OP_RemapTransformVisibilityToVector](particles.md#c_op_remaptransformvisibilitytovector), [C_OP_RemapVectorComponentToScalar](particles.md#c_op_remapvectorcomponenttoscalar), [C_OP_RemapVectorToRotations](particles.md#c_op_remapvectortorotations), [C_OP_RemapVectortoCP](particles.md#c_op_remapvectortocp), [C_OP_RemapVelocityToVector](particles.md#c_op_remapvelocitytovector), [C_OP_RemapVisibilityScalar](particles.md#c_op_remapvisibilityscalar), [C_OP_RestartAfterDuration](particles.md#c_op_restartafterduration), [C_OP_RotateVector](particles.md#c_op_rotatevector), [C_OP_RtEnvCull](particles.md#c_op_rtenvcull), [C_OP_ScreenSpaceDistanceToEdge](particles.md#c_op_screenspacedistancetoedge), [C_OP_ScreenSpacePositionOfTarget](particles.md#c_op_screenspacepositionoftarget), [C_OP_ScreenSpaceRotateTowardTarget](particles.md#c_op_screenspacerotatetowardtarget), [C_OP_SequenceFromModel](particles.md#c_op_sequencefrommodel), [C_OP_SetAttributeToScalarExpression](particles.md#c_op_setattributetoscalarexpression), [C_OP_SetCPOrientationToDirection](particles.md#c_op_setcporientationtodirection), [C_OP_SetCPOrientationToGroundNormal](particles.md#c_op_setcporientationtogroundnormal), [C_OP_SetCPtoVector](particles.md#c_op_setcptovector), [C_OP_SetChildControlPoints](particles.md#c_op_setchildcontrolpoints), [C_OP_SetControlPointsToModelParticles](particles.md#c_op_setcontrolpointstomodelparticles), [C_OP_SetControlPointsToParticle](particles.md#c_op_setcontrolpointstoparticle), [C_OP_SetFloat](particles.md#c_op_setfloat), [C_OP_SetFloatAttributeToVectorExpression](particles.md#c_op_setfloatattributetovectorexpression), [C_OP_SetFloatCollection](particles.md#c_op_setfloatcollection), [C_OP_SetFromCPSnapshot](particles.md#c_op_setfromcpsnapshot), [C_OP_SetPerChildControlPoint](particles.md#c_op_setperchildcontrolpoint), [C_OP_SetPerChildControlPointFromAttribute](particles.md#c_op_setperchildcontrolpointfromattribute), [C_OP_SetToCP](particles.md#c_op_settocp), [C_OP_SetUserEvent](particles.md#c_op_setuserevent), [C_OP_SetVec](particles.md#c_op_setvec), [C_OP_SetVectorAttributeToVectorExpression](particles.md#c_op_setvectorattributetovectorexpression), [C_OP_SnapshotRigidSkinToBones](particles.md#c_op_snapshotrigidskintobones), [C_OP_SnapshotSkinToBones](particles.md#c_op_snapshotskintobones), [C_OP_TeleportBeam](particles.md#c_op_teleportbeam), [C_OP_UpdateLightSource](particles.md#c_op_updatelightsource), [C_OP_VectorFieldSnapshot](particles.md#c_op_vectorfieldsnapshot), [C_OP_VectorNoise](particles.md#c_op_vectornoise), [C_OP_VelocityDecay](particles.md#c_op_velocitydecay), [C_OP_VelocityMatchingForce](particles.md#c_op_velocitymatchingforce)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunction <|-- CParticleFunctionOperator
+    CParticleFunctionOperator <|-- CGeneralSpin
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunctionOperator <|-- CSpinUpdateBase
+    CParticleFunctionOperator <|-- C_OP_AlphaDecay
+    CParticleFunctionOperator <|-- C_OP_BasicMovement
+    CParticleFunctionOperator <|-- C_OP_CPOffsetToPercentageBetweenCPs
+    CParticleFunctionOperator <|-- C_OP_CalculateVectorAttribute
+    CParticleFunctionOperator <|-- C_OP_ChladniWave
+    CParticleFunctionOperator <|-- C_OP_ClampScalar
+    CParticleFunctionOperator <|-- C_OP_ClampVector
+    CParticleFunctionOperator <|-- C_OP_ColorAdjustHSL
+    CParticleFunctionOperator <|-- C_OP_ColorInterpolate
+    CParticleFunctionOperator <|-- C_OP_ColorInterpolateRandom
+    CParticleFunctionOperator <|-- C_OP_ConnectParentParticleToNearest
+    CParticleFunctionOperator <|-- C_OP_ControlpointLight
+    CParticleFunctionOperator <|-- C_OP_Cull
+    CParticleFunctionOperator <|-- C_OP_CycleScalar
+    CParticleFunctionOperator <|-- C_OP_CylindricalDistanceToTransform
+    CParticleFunctionOperator <|-- C_OP_DampenToCP
+    CParticleFunctionOperator <|-- C_OP_Decay
+    CParticleFunctionOperator <|-- C_OP_DecayClampCount
+    CParticleFunctionOperator <|-- C_OP_DecayMaintainCount
+    CParticleFunctionOperator <|-- C_OP_DecayOffscreen
+    CParticleFunctionOperator <|-- C_OP_DifferencePreviousParticle
+    CParticleFunctionOperator <|-- C_OP_Diffusion
+    CParticleFunctionOperator <|-- C_OP_DirectionBetweenVecsToVec
+    CParticleFunctionOperator <|-- C_OP_DistanceBetweenTransforms
+    CParticleFunctionOperator <|-- C_OP_DistanceBetweenVecs
+    CParticleFunctionOperator <|-- C_OP_DistanceCull
+    CParticleFunctionOperator <|-- C_OP_DistanceToTransform
+    CParticleFunctionOperator <|-- C_OP_DragRelativeToPlane
+    CParticleFunctionOperator <|-- C_OP_EndCapDecay
+    CParticleFunctionOperator <|-- C_OP_EndCapTimedDecay
+    CParticleFunctionOperator <|-- C_OP_EndCapTimedFreeze
+    CParticleFunctionOperator <|-- C_OP_FadeAndKill
+    CParticleFunctionOperator <|-- C_OP_FadeAndKillForTracers
+    CParticleFunctionOperator <|-- C_OP_FadeIn
+    CParticleFunctionOperator <|-- C_OP_FadeInSimple
+    CParticleFunctionOperator <|-- C_OP_FadeOut
+    CParticleFunctionOperator <|-- C_OP_FadeOutSimple
+    CParticleFunctionOperator <|-- C_OP_GlobalLight
+    CParticleFunctionOperator <|-- C_OP_InheritFromParentParticles
+    CParticleFunctionOperator <|-- C_OP_InheritFromParentParticlesV2
+    CParticleFunctionOperator <|-- C_OP_InheritFromPeerSystem
+    CParticleFunctionOperator <|-- C_OP_InterpolateRadius
+    CParticleFunctionOperator <|-- C_OP_LagCompensation
+    CParticleFunctionOperator <|-- C_OP_LazyCullCompareFloat
+    CParticleFunctionOperator <|-- C_OP_LerpEndCapScalar
+    CParticleFunctionOperator <|-- C_OP_LerpEndCapVector
+    CParticleFunctionOperator <|-- C_OP_LerpScalar
+    CParticleFunctionOperator <|-- C_OP_LerpToInitialPosition
+    CParticleFunctionOperator <|-- C_OP_LerpToOtherAttribute
+    CParticleFunctionOperator <|-- C_OP_LerpVector
+    CParticleFunctionOperator <|-- C_OP_LockPoints
+    CParticleFunctionOperator <|-- C_OP_LockToBone
+    CParticleFunctionOperator <|-- C_OP_LockToPointList
+    CParticleFunctionOperator <|-- C_OP_LockToSavedSequentialPath
+    CParticleFunctionOperator <|-- C_OP_LockToSavedSequentialPathV2
+    CParticleFunctionOperator <|-- C_OP_MaintainSequentialPath
+    CParticleFunctionOperator <|-- C_OP_MaxVelocity
+    CParticleFunctionOperator <|-- C_OP_ModelCull
+    CParticleFunctionOperator <|-- C_OP_ModelDampenMovement
+    CParticleFunctionOperator <|-- C_OP_MoveToHitbox
+    CParticleFunctionOperator <|-- C_OP_MovementLoopInsideSphere
+    CParticleFunctionOperator <|-- C_OP_MovementMaintainOffset
+    CParticleFunctionOperator <|-- C_OP_MovementMoveAlongSkinnedCPSnapshot
+    CParticleFunctionOperator <|-- C_OP_MovementPlaceOnGround
+    CParticleFunctionOperator <|-- C_OP_MovementRigidAttachToCP
+    CParticleFunctionOperator <|-- C_OP_MovementRotateParticleAroundAxis
+    CParticleFunctionOperator <|-- C_OP_MovementSkinnedPositionFromCPSnapshot
+    CParticleFunctionOperator <|-- C_OP_Noise
+    CParticleFunctionOperator <|-- C_OP_NormalLock
+    CParticleFunctionOperator <|-- C_OP_NormalizeVector
+    CParticleFunctionOperator <|-- C_OP_Orient2DRelToCP
+    CParticleFunctionOperator <|-- C_OP_OrientTo2dDirection
+    CParticleFunctionOperator <|-- C_OP_OscillateScalar
+    CParticleFunctionOperator <|-- C_OP_OscillateScalarSimple
+    CParticleFunctionOperator <|-- C_OP_OscillateVector
+    CParticleFunctionOperator <|-- C_OP_OscillateVectorSimple
+    CParticleFunctionOperator <|-- C_OP_PercentageBetweenTransformLerpCPs
+    CParticleFunctionOperator <|-- C_OP_PercentageBetweenTransforms
+    CParticleFunctionOperator <|-- C_OP_PercentageBetweenTransformsVector
+    CParticleFunctionOperator <|-- C_OP_PinParticleToCP
+    CParticleFunctionOperator <|-- C_OP_PinRopeSegmentParticleToParent
+    CParticleFunctionOperator <|-- C_OP_PlaneCull
+    CParticleFunctionOperator <|-- C_OP_PointVectorAtNextParticle
+    CParticleFunctionOperator <|-- C_OP_PositionLock
+    CParticleFunctionOperator <|-- C_OP_QuantizeFloat
+    CParticleFunctionOperator <|-- C_OP_RadiusDecay
+    CParticleFunctionOperator <|-- C_OP_RampScalarLinear
+    CParticleFunctionOperator <|-- C_OP_RampScalarLinearSimple
+    CParticleFunctionOperator <|-- C_OP_RampScalarSpline
+    CParticleFunctionOperator <|-- C_OP_RampScalarSplineSimple
+    CParticleFunctionOperator <|-- C_OP_ReadFromNeighboringParticle
+    CParticleFunctionOperator <|-- C_OP_ReinitializeScalarEndCap
+    CParticleFunctionOperator <|-- C_OP_RemapCPVelocityToVector
+    CParticleFunctionOperator <|-- C_OP_RemapCPtoScalar
+    CParticleFunctionOperator <|-- C_OP_RemapCPtoVector
+    CParticleFunctionOperator <|-- C_OP_RemapControlPointDirectionToVector
+    CParticleFunctionOperator <|-- C_OP_RemapControlPointOrientationToRotation
+    CParticleFunctionOperator <|-- C_OP_RemapCrossProductOfTwoVectorsToVector
+    CParticleFunctionOperator <|-- C_OP_RemapDensityGradientToVectorAttribute
+    CParticleFunctionOperator <|-- C_OP_RemapDensityToVector
+    CParticleFunctionOperator <|-- C_OP_RemapDirectionToCPToVector
+    CParticleFunctionOperator <|-- C_OP_RemapDistanceToLineSegmentBase
+    CParticleFunctionOperator <|-- C_OP_RemapDotProductToScalar
+    CParticleFunctionOperator <|-- C_OP_RemapGravityToVector
+    CParticleFunctionOperator <|-- C_OP_RemapNamedModelElementEndCap
+    CParticleFunctionOperator <|-- C_OP_RemapNamedModelElementOnceTimed
+    CParticleFunctionOperator <|-- C_OP_RemapParticleCountOnScalarEndCap
+    CParticleFunctionOperator <|-- C_OP_RemapParticleCountToScalar
+    CParticleFunctionOperator <|-- C_OP_RemapScalar
+    CParticleFunctionOperator <|-- C_OP_RemapScalarEndCap
+    CParticleFunctionOperator <|-- C_OP_RemapScalarOnceTimed
+    CParticleFunctionOperator <|-- C_OP_RemapSpeed
+    CParticleFunctionOperator <|-- C_OP_RemapTransformOrientationToRotations
+    CParticleFunctionOperator <|-- C_OP_RemapTransformOrientationToYaw
+    CParticleFunctionOperator <|-- C_OP_RemapTransformToVelocity
+    CParticleFunctionOperator <|-- C_OP_RemapTransformVisibilityToScalar
+    CParticleFunctionOperator <|-- C_OP_RemapTransformVisibilityToVector
+    CParticleFunctionOperator <|-- C_OP_RemapVectorComponentToScalar
+    CParticleFunctionOperator <|-- C_OP_RemapVectorToRotations
+    CParticleFunctionOperator <|-- C_OP_RemapVectortoCP
+    CParticleFunctionOperator <|-- C_OP_RemapVelocityToVector
+    CParticleFunctionOperator <|-- C_OP_RemapVisibilityScalar
+    CParticleFunctionOperator <|-- C_OP_RestartAfterDuration
+    CParticleFunctionOperator <|-- C_OP_RotateVector
+    CParticleFunctionOperator <|-- C_OP_RtEnvCull
+    CParticleFunctionOperator <|-- C_OP_ScreenSpaceDistanceToEdge
+    CParticleFunctionOperator <|-- C_OP_ScreenSpacePositionOfTarget
+    CParticleFunctionOperator <|-- C_OP_ScreenSpaceRotateTowardTarget
+    CParticleFunctionOperator <|-- C_OP_SequenceFromModel
+    CParticleFunctionOperator <|-- C_OP_SetAttributeToScalarExpression
+    CParticleFunctionOperator <|-- C_OP_SetCPOrientationToDirection
+    CParticleFunctionOperator <|-- C_OP_SetCPOrientationToGroundNormal
+    CParticleFunctionOperator <|-- C_OP_SetCPtoVector
+    CParticleFunctionOperator <|-- C_OP_SetChildControlPoints
+    CParticleFunctionOperator <|-- C_OP_SetControlPointsToModelParticles
+    CParticleFunctionOperator <|-- C_OP_SetControlPointsToParticle
+    CParticleFunctionOperator <|-- C_OP_SetFloat
+    CParticleFunctionOperator <|-- C_OP_SetFloatAttributeToVectorExpression
+    CParticleFunctionOperator <|-- C_OP_SetFloatCollection
+    CParticleFunctionOperator <|-- C_OP_SetFromCPSnapshot
+    CParticleFunctionOperator <|-- C_OP_SetPerChildControlPoint
+    CParticleFunctionOperator <|-- C_OP_SetPerChildControlPointFromAttribute
+    CParticleFunctionOperator <|-- C_OP_SetToCP
+    CParticleFunctionOperator <|-- C_OP_SetUserEvent
+    CParticleFunctionOperator <|-- C_OP_SetVec
+    CParticleFunctionOperator <|-- C_OP_SetVectorAttributeToVectorExpression
+    CParticleFunctionOperator <|-- C_OP_SnapshotRigidSkinToBones
+    CParticleFunctionOperator <|-- C_OP_SnapshotSkinToBones
+    CParticleFunctionOperator <|-- C_OP_TeleportBeam
+    CParticleFunctionOperator <|-- C_OP_UpdateLightSource
+    CParticleFunctionOperator <|-- C_OP_VectorFieldSnapshot
+    CParticleFunctionOperator <|-- C_OP_VectorNoise
+    CParticleFunctionOperator <|-- C_OP_VelocityDecay
+    CParticleFunctionOperator <|-- C_OP_VelocityMatchingForce
+```
+
+### CParticleFunctionPreEmission
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Derived by:** [C_OP_ChooseRandomChildrenInGroup](particles.md#c_op_chooserandomchildreningroup), [C_OP_ControlPointToRadialScreenSpace](particles.md#c_op_controlpointtoradialscreenspace), [C_OP_DistanceBetweenCPsToCP](particles.md#c_op_distancebetweencpstocp), [C_OP_DriveCPFromGlobalSoundFloat](particles.md#c_op_drivecpfromglobalsoundfloat), [C_OP_EnableChildrenFromParentParticleCount](particles.md#c_op_enablechildrenfromparentparticlecount), [C_OP_ForceControlPointStub](particles.md#c_op_forcecontrolpointstub), [C_OP_HSVShiftToCP](particles.md#c_op_hsvshifttocp), [C_OP_LightningSnapshotGenerator](particles.md#c_op_lightningsnapshotgenerator), [C_OP_ModelSurfaceSnapshotGenerator](particles.md#c_op_modelsurfacesnapshotgenerator), [C_OP_MultiSegmentDisplaySnapshotGenerator](particles.md#c_op_multisegmentdisplaysnapshotgenerator), [C_OP_PlayEndCapWhenFinished](particles.md#c_op_playendcapwhenfinished), [C_OP_QuantizeCPComponent](particles.md#c_op_quantizecpcomponent), [C_OP_RampCPLinearRandom](particles.md#c_op_rampcplinearrandom), [C_OP_RemapAverageHitboxSpeedtoCP](particles.md#c_op_remapaveragehitboxspeedtocp), [C_OP_RemapAverageScalarValuetoCP](particles.md#c_op_remapaveragescalarvaluetocp), [C_OP_RemapBoundingVolumetoCP](particles.md#c_op_remapboundingvolumetocp), [C_OP_RemapCPtoCP](particles.md#c_op_remapcptocp), [C_OP_RemapDotProductToCP](particles.md#c_op_remapdotproducttocp), [C_OP_RemapExternalWindToCP](particles.md#c_op_remapexternalwindtocp), [C_OP_RemapModelVolumetoCP](particles.md#c_op_remapmodelvolumetocp), [C_OP_RemapSpeedtoCP](particles.md#c_op_remapspeedtocp), [C_OP_RepeatedTriggerChildGroup](particles.md#c_op_repeatedtriggerchildgroup), [C_OP_SelectivelyEnableChildren](particles.md#c_op_selectivelyenablechildren), [C_OP_SetCPOrientationToPointAtCP](particles.md#c_op_setcporientationtopointatcp), [C_OP_SetControlPointFieldFromVectorExpression](particles.md#c_op_setcontrolpointfieldfromvectorexpression), [C_OP_SetControlPointFieldToScalarExpression](particles.md#c_op_setcontrolpointfieldtoscalarexpression), [C_OP_SetControlPointFieldToWater](particles.md#c_op_setcontrolpointfieldtowater), [C_OP_SetControlPointFromObjectScale](particles.md#c_op_setcontrolpointfromobjectscale), [C_OP_SetControlPointOrientation](particles.md#c_op_setcontrolpointorientation), [C_OP_SetControlPointOrientationToCPVelocity](particles.md#c_op_setcontrolpointorientationtocpvelocity), [C_OP_SetControlPointPositionToRandomActiveCP](particles.md#c_op_setcontrolpointpositiontorandomactivecp), [C_OP_SetControlPointPositionToTimeOfDayValue](particles.md#c_op_setcontrolpointpositiontotimeofdayvalue), [C_OP_SetControlPointPositions](particles.md#c_op_setcontrolpointpositions), [C_OP_SetControlPointRotation](particles.md#c_op_setcontrolpointrotation), [C_OP_SetControlPointToCPVelocity](particles.md#c_op_setcontrolpointtocpvelocity), [C_OP_SetControlPointToCenter](particles.md#c_op_setcontrolpointtocenter), [C_OP_SetControlPointToHMD](particles.md#c_op_setcontrolpointtohmd), [C_OP_SetControlPointToHand](particles.md#c_op_setcontrolpointtohand), [C_OP_SetControlPointToImpactPoint](particles.md#c_op_setcontrolpointtoimpactpoint), [C_OP_SetControlPointToPlayer](particles.md#c_op_setcontrolpointtoplayer), [C_OP_SetControlPointToVectorExpression](particles.md#c_op_setcontrolpointtovectorexpression), [C_OP_SetControlPointToWaterSurface](particles.md#c_op_setcontrolpointtowatersurface), [C_OP_SetGravityToCP](particles.md#c_op_setgravitytocp), [C_OP_SetParentControlPointsToChildCP](particles.md#c_op_setparentcontrolpointstochildcp), [C_OP_SetRandomControlPointPosition](particles.md#c_op_setrandomcontrolpointposition), [C_OP_SetSimulationRate](particles.md#c_op_setsimulationrate), [C_OP_SetSingleControlPointPosition](particles.md#c_op_setsinglecontrolpointposition), [C_OP_SetVariable](particles.md#c_op_setvariable), [C_OP_StopAfterCPDuration](particles.md#c_op_stopaftercpduration)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    CParticleFunctionPreEmission <|-- C_OP_ChooseRandomChildrenInGroup
+    CParticleFunctionPreEmission <|-- C_OP_ControlPointToRadialScreenSpace
+    CParticleFunctionPreEmission <|-- C_OP_DistanceBetweenCPsToCP
+    CParticleFunctionPreEmission <|-- C_OP_DriveCPFromGlobalSoundFloat
+    CParticleFunctionPreEmission <|-- C_OP_EnableChildrenFromParentParticleCount
+    CParticleFunctionPreEmission <|-- C_OP_ForceControlPointStub
+    CParticleFunctionPreEmission <|-- C_OP_HSVShiftToCP
+    CParticleFunctionPreEmission <|-- C_OP_LightningSnapshotGenerator
+    CParticleFunctionPreEmission <|-- C_OP_ModelSurfaceSnapshotGenerator
+    CParticleFunctionPreEmission <|-- C_OP_MultiSegmentDisplaySnapshotGenerator
+    CParticleFunctionPreEmission <|-- C_OP_PlayEndCapWhenFinished
+    CParticleFunctionPreEmission <|-- C_OP_QuantizeCPComponent
+    CParticleFunctionPreEmission <|-- C_OP_RampCPLinearRandom
+    CParticleFunctionPreEmission <|-- C_OP_RemapAverageHitboxSpeedtoCP
+    CParticleFunctionPreEmission <|-- C_OP_RemapAverageScalarValuetoCP
+    CParticleFunctionPreEmission <|-- C_OP_RemapBoundingVolumetoCP
+    CParticleFunctionPreEmission <|-- C_OP_RemapCPtoCP
+    CParticleFunctionPreEmission <|-- C_OP_RemapDotProductToCP
+    CParticleFunctionPreEmission <|-- C_OP_RemapExternalWindToCP
+    CParticleFunctionPreEmission <|-- C_OP_RemapModelVolumetoCP
+    CParticleFunctionPreEmission <|-- C_OP_RemapSpeedtoCP
+    CParticleFunctionPreEmission <|-- C_OP_RepeatedTriggerChildGroup
+    CParticleFunctionPreEmission <|-- C_OP_SelectivelyEnableChildren
+    CParticleFunctionPreEmission <|-- C_OP_SetCPOrientationToPointAtCP
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointFieldFromVectorExpression
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointFieldToScalarExpression
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointFieldToWater
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointFromObjectScale
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointOrientation
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointOrientationToCPVelocity
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointPositionToRandomActiveCP
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointPositionToTimeOfDayValue
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointPositions
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointRotation
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointToCPVelocity
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointToCenter
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointToHMD
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointToHand
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointToImpactPoint
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointToPlayer
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointToVectorExpression
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointToWaterSurface
+    CParticleFunctionPreEmission <|-- C_OP_SetGravityToCP
+    CParticleFunctionPreEmission <|-- C_OP_SetParentControlPointsToChildCP
+    CParticleFunctionPreEmission <|-- C_OP_SetRandomControlPointPosition
+    CParticleFunctionPreEmission <|-- C_OP_SetSimulationRate
+    CParticleFunctionPreEmission <|-- C_OP_SetSingleControlPointPosition
+    CParticleFunctionPreEmission <|-- C_OP_SetVariable
+    CParticleFunctionPreEmission <|-- C_OP_StopAfterCPDuration
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bRunOnce` | bool | `MPropertyFriendlyName Run Only Once` |
+
+### CParticleFunctionRenderer
+
+**Inherits from:** [CParticleFunction](particles.md#cparticlefunction)
+
+**Derived by:** [CBaseRendererSource2](particles.md#cbaserenderersource2), [C_OP_Callback](particles.md#c_op_callback), [C_OP_ClientPhysics](particles.md#c_op_clientphysics), [C_OP_CreateParticleSystemRenderer](particles.md#c_op_createparticlesystemrenderer), [C_OP_GameDecalRenderer](particles.md#c_op_gamedecalrenderer), [C_OP_GameLiquidSpill](particles.md#c_op_gameliquidspill), [C_OP_RenderAsModels](particles.md#c_op_renderasmodels), [C_OP_RenderBlobs](particles.md#c_op_renderblobs), [C_OP_RenderCables](particles.md#c_op_rendercables), [C_OP_RenderClientPhysicsImpulse](particles.md#c_op_renderclientphysicsimpulse), [C_OP_RenderClothForce](particles.md#c_op_renderclothforce), [C_OP_RenderDeferredLight](particles.md#c_op_renderdeferredlight), [C_OP_RenderFlattenGrass](particles.md#c_op_renderflattengrass), [C_OP_RenderGpuImplicit](particles.md#c_op_rendergpuimplicit), [C_OP_RenderLightBeam](particles.md#c_op_renderlightbeam), [C_OP_RenderMaterialProxy](particles.md#c_op_rendermaterialproxy), [C_OP_RenderModels](particles.md#c_op_rendermodels), [C_OP_RenderOmni2Light](particles.md#c_op_renderomni2light), [C_OP_RenderPoints](particles.md#c_op_renderpoints), [C_OP_RenderPostProcessing](particles.md#c_op_renderpostprocessing), [C_OP_RenderProjected](particles.md#c_op_renderprojected), [C_OP_RenderScreenShake](particles.md#c_op_renderscreenshake), [C_OP_RenderScreenVelocityRotate](particles.md#c_op_renderscreenvelocityrotate), [C_OP_RenderSimpleModelCollection](particles.md#c_op_rendersimplemodelcollection), [C_OP_RenderSound](particles.md#c_op_rendersound), [C_OP_RenderStandardLight](particles.md#c_op_renderstandardlight), [C_OP_RenderStatusEffect](particles.md#c_op_renderstatuseffect), [C_OP_RenderStatusEffectCitadel](particles.md#c_op_renderstatuseffectcitadel), [C_OP_RenderText](particles.md#c_op_rendertext), [C_OP_RenderTreeShake](particles.md#c_op_rendertreeshake), [C_OP_RenderVRHapticEvent](particles.md#c_op_rendervrhapticevent), [C_OP_RenderVolumetricEmitter](particles.md#c_op_rendervolumetricemitter), [C_OP_WaterImpulseRenderer](particles.md#c_op_waterimpulserenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunction <|-- CParticleFunctionRenderer
+    CParticleFunctionRenderer <|-- CBaseRendererSource2
+    CParticleFunctionRenderer <|-- C_OP_Callback
+    CParticleFunctionRenderer <|-- C_OP_ClientPhysics
+    CParticleFunctionRenderer <|-- C_OP_CreateParticleSystemRenderer
+    CParticleFunctionRenderer <|-- C_OP_GameDecalRenderer
+    CParticleFunctionRenderer <|-- C_OP_GameLiquidSpill
+    CParticleFunctionRenderer <|-- C_OP_RenderAsModels
+    CParticleFunctionRenderer <|-- C_OP_RenderBlobs
+    CParticleFunctionRenderer <|-- C_OP_RenderCables
+    CParticleFunctionRenderer <|-- C_OP_RenderClientPhysicsImpulse
+    CParticleFunctionRenderer <|-- C_OP_RenderClothForce
+    CParticleFunctionRenderer <|-- C_OP_RenderDeferredLight
+    CParticleFunctionRenderer <|-- C_OP_RenderFlattenGrass
+    CParticleFunctionRenderer <|-- C_OP_RenderGpuImplicit
+    CParticleFunctionRenderer <|-- C_OP_RenderLightBeam
+    CParticleFunctionRenderer <|-- C_OP_RenderMaterialProxy
+    CParticleFunctionRenderer <|-- C_OP_RenderModels
+    CParticleFunctionRenderer <|-- C_OP_RenderOmni2Light
+    CParticleFunctionRenderer <|-- C_OP_RenderPoints
+    CParticleFunctionRenderer <|-- C_OP_RenderPostProcessing
+    CParticleFunctionRenderer <|-- C_OP_RenderProjected
+    CParticleFunctionRenderer <|-- C_OP_RenderScreenShake
+    CParticleFunctionRenderer <|-- C_OP_RenderScreenVelocityRotate
+    CParticleFunctionRenderer <|-- C_OP_RenderSimpleModelCollection
+    CParticleFunctionRenderer <|-- C_OP_RenderSound
+    CParticleFunctionRenderer <|-- C_OP_RenderStandardLight
+    CParticleFunctionRenderer <|-- C_OP_RenderStatusEffect
+    CParticleFunctionRenderer <|-- C_OP_RenderStatusEffectCitadel
+    CParticleFunctionRenderer <|-- C_OP_RenderText
+    CParticleFunctionRenderer <|-- C_OP_RenderTreeShake
+    CParticleFunctionRenderer <|-- C_OP_RenderVRHapticEvent
+    CParticleFunctionRenderer <|-- C_OP_RenderVolumetricEmitter
+    CParticleFunctionRenderer <|-- C_OP_WaterImpulseRenderer
+    CParticleFunctionRenderer *-- CParticleVisibilityInputs
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `VisibilityInputs` | [CParticleVisibilityInputs](../schemas/particles.md#cparticlevisibilityinputs) | `MPropertySortPriority` |
+| `m_bCannotBeRefracted` | bool | `MPropertyFriendlyName I cannot be refracted through refracting objects like water` `MPropertySortPriority` `MPropertyStartGroup Rendering filter` |
+| `m_bSkipRenderingOnMobile` | bool | `MPropertyFriendlyName Skip rendering on mobile` `MPropertySortPriority` |
+
+### CParticleMassCalculationParameters
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleMassCalculationParameters *-- ParticleMassMode_t
+    CParticleMassCalculationParameters *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nMassMode` | [ParticleMassMode_t](../schemas/!GlobalTypes.md#particlemassmode_t) | `MPropertyFriendlyName Radius calculation mode` |
+| `m_flRadius` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Radius input` |
+| `m_flNominalRadius` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Nominal radius value` |
+| `m_flScale` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Scale to apply to result` |
+
+### CParticleSystemDefinition
+
+**Inherits from:** [IParticleSystemDefinition](particles.md#iparticlesystemdefinition)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    IParticleSystemDefinition <|-- CParticleSystemDefinition
+    CParticleSystemDefinition --> CParticleFunctionPreEmission
+    CParticleSystemDefinition --> CParticleFunctionEmitter
+    CParticleSystemDefinition --> CParticleFunctionInitializer
+    CParticleSystemDefinition --> CParticleFunctionOperator
+    CParticleSystemDefinition --> CParticleFunctionForce
+    CParticleSystemDefinition --> CParticleFunctionConstraint
+    CParticleSystemDefinition --> CParticleFunctionRenderer
+    CParticleSystemDefinition *-- ParticleChildrenInfo_t
+    CParticleSystemDefinition --> ParticleNamedValueSource_t
+    CParticleSystemDefinition *-- InfoForResourceTypeIParticleSnapshot
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nBehaviorVersion` | int32 | `MPropertyFriendlyName version` `MPropertySuppressField` |
+| `m_PreEmissionOperators` | CUtlVector< [CParticleFunctionPreEmission](../schemas/particles.md#cparticlefunctionpreemission)* > | `MPropertySuppressField` |
+| `m_Emitters` | CUtlVector< [CParticleFunctionEmitter](../schemas/particles.md#cparticlefunctionemitter)* > | `MPropertySuppressField` |
+| `m_Initializers` | CUtlVector< [CParticleFunctionInitializer](../schemas/particles.md#cparticlefunctioninitializer)* > | `MPropertySuppressField` |
+| `m_Operators` | CUtlVector< [CParticleFunctionOperator](../schemas/particles.md#cparticlefunctionoperator)* > | `MPropertySuppressField` |
+| `m_ForceGenerators` | CUtlVector< [CParticleFunctionForce](../schemas/particles.md#cparticlefunctionforce)* > | `MPropertySuppressField` |
+| `m_Constraints` | CUtlVector< [CParticleFunctionConstraint](../schemas/particles.md#cparticlefunctionconstraint)* > | `MPropertySuppressField` |
+| `m_Renderers` | CUtlVector< [CParticleFunctionRenderer](../schemas/particles.md#cparticlefunctionrenderer)* > | `MPropertySuppressField` |
+| `m_Children` | CUtlVector< [ParticleChildrenInfo_t](../schemas/particles.md#particlechildreninfo_t) > | `MPropertySuppressField` |
+| `m_nFirstMultipleOverride_BackwardCompat` | int32 | `MPropertySuppressField` |
+| `m_nInitialParticles` | int32 | `MPropertyFriendlyName initial particles` `MPropertyStartGroup +Collection Options` |
+| `m_nMaxParticles` | int32 | `MPropertyFriendlyName max particles` |
+| `m_nGroupID` | int32 | `MPropertyFriendlyName group id` |
+| `m_BoundingBoxMin` | Vector | `MPropertyFriendlyName bounding box bloat min` `MPropertyStartGroup Bounding Box` `MVectorIsCoordinate` |
+| `m_BoundingBoxMax` | Vector | `MPropertyFriendlyName bounding box bloat max` `MVectorIsCoordinate` |
+| `m_flDepthSortBias` | float32 | `MPropertyFriendlyName bounding box depth sort bias` |
+| `m_nSortOverridePositionCP` | int32 | `MPropertyFriendlyName sort override position CP` |
+| `m_bInfiniteBounds` | bool | `MPropertyFriendlyName infinite bounds - don't cull` |
+| `m_bEnableNamedValues` | bool | `MPropertyFriendlyName Enable Named Values (EXPERIMENTAL)` `MPropertyStartGroup Named Values` |
+| `m_NamedValueDomain` | CUtlString | `MPropertyAttributeChoiceName particlefield_domain` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Domain Class` `MPropertySuppressExpr` |
+| `m_NamedValueLocals` | CUtlVector< [ParticleNamedValueSource_t](../schemas/particleslib.md#particlenamedvaluesource_t)* > | `MPropertySuppressField` |
+| `m_ConstantColor` | Color | `MPropertyColorPlusAlpha` `MPropertyFriendlyName color` `MPropertyStartGroup +Base Properties` |
+| `m_ConstantNormal` | Vector | `MPropertyFriendlyName normal` `MVectorIsCoordinate` |
+| `m_flConstantRadius` | float32 | `MPropertyAttributeRange biased 0 500` `MPropertyFriendlyName radius` |
+| `m_flConstantRotation` | float32 | `MPropertyFriendlyName rotation` |
+| `m_flConstantRotationSpeed` | float32 | `MPropertyFriendlyName rotation speed` |
+| `m_flConstantLifespan` | float32 | `MPropertyFriendlyName lifetime` |
+| `m_nConstantSequenceNumber` | int32 | `MPropertyAttributeEditor SequencePicker( 1 )` `MPropertyFriendlyName sequence number` |
+| `m_nConstantSequenceNumber1` | int32 | `MPropertyAttributeEditor SequencePicker( 2 )` `MPropertyFriendlyName sequence number 1` |
+| `m_nSnapshotControlPoint` | int32 | `MPropertyStartGroup Snapshot Options` |
+| `m_hSnapshot` | CStrongHandle< [InfoForResourceTypeIParticleSnapshot](../schemas/resourcesystem.md#infoforresourcetypeiparticlesnapshot) > |  |
+| `m_pszCullReplacementName` | CStrongHandle< [InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition) > | `MPropertyFriendlyName cull replacement definition` `MPropertyStartGroup Replacement Options` |
+| `m_flCullRadius` | float32 | `MPropertyFriendlyName cull radius` |
+| `m_flCullFillCost` | float32 | `MPropertyFriendlyName cull cost` |
+| `m_nCullControlPoint` | int32 | `MPropertyFriendlyName cull control point` |
+| `m_hFallback` | CStrongHandle< [InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition) > | `MPropertyFriendlyName fallback replacement definition` |
+| `m_nFallbackMaxCount` | int32 | `MPropertyFriendlyName fallback max count` |
+| `m_hLowViolenceDef` | CStrongHandle< [InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition) > | `MPropertyFriendlyName low violence definition` |
+| `m_hReferenceReplacement` | CStrongHandle< [InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition) > | `MPropertyFriendlyName reference replacement definition` |
+| `m_flPreSimulationTime` | float32 | `MPropertyFriendlyName pre-simulation time` `MPropertyStartGroup Simulation Options` |
+| `m_flStopSimulationAfterTime` | float32 | `MPropertyFriendlyName freeze simulation after time` |
+| `m_flMaximumTimeStep` | float32 | `MPropertyFriendlyName maximum time step` |
+| `m_flMaximumSimTime` | float32 | `MPropertyFriendlyName maximum sim tick rate` |
+| `m_flMinimumSimTime` | float32 | `MPropertyFriendlyName minimum sim tick rate` |
+| `m_flMinimumTimeStep` | float32 | `MPropertyFriendlyName minimum simulation time step` |
+| `m_nMinimumFrames` | int32 | `MPropertyFriendlyName minimum required rendered frames` |
+| `m_bIsGPUParticleSystem` | bool | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName simulated on the GPU` `MPropertySuppressExpr` |
+| `m_nMinCPULevel` | int32 | `MPropertyFriendlyName minimum CPU level` `MPropertyStartGroup Performance Options` |
+| `m_nMinGPULevel` | int32 | `MPropertyFriendlyName minimum GPU level` |
+| `m_flNoDrawTimeToGoToSleep` | float32 | `MPropertyFriendlyName time to sleep when not drawn` |
+| `m_flMaxDrawDistance` | float32 | `MPropertyFriendlyName maximum draw distance` |
+| `m_flStartFadeDistance` | float32 | `MPropertyFriendlyName start fade distance` |
+| `m_flMaxCreationDistance` | float32 | `MPropertyFriendlyName maximum creation distance` |
+| `m_nAggregationMinAvailableParticles` | int32 | `MPropertyFriendlyName minimum free particles to aggregate` |
+| `m_flAggregateRadius` | float32 | `MPropertyFriendlyName aggregation radius` |
+| `m_bShouldBatch` | bool | `MParticleAdvancedField` `MPropertyFriendlyName batch particle systems (DO NOT USE)` |
+| `m_bShouldHitboxesFallbackToRenderBounds` | bool | `MPropertyFriendlyName Hitboxes fall back to render bounds` |
+| `m_bShouldHitboxesFallbackToSnapshot` | bool | `MPropertyFriendlyName Hitboxes fall back to snapshot` |
+| `m_bShouldHitboxesFallbackToCollisionHulls` | bool | `MPropertyFriendlyName Hitboxes fall back to collision hulls` |
+| `m_nViewModelEffect` | [InheritableBoolType_t](../schemas/!GlobalTypes.md#inheritablebooltype_t) | `MPropertyFriendlyName view model effect` `MPropertyStartGroup Rendering Options` `MPropertySuppressExpr` |
+| `m_bScreenSpaceEffect` | bool | `MPropertyFriendlyName screen space effect` `MPropertySuppressExpr` |
+| `m_pszTargetLayerID` | CUtlSymbolLarge | `MPropertyFriendlyName target layer ID for rendering` |
+| `m_nSkipRenderControlPoint` | int32 | `MPropertyFriendlyName control point to disable rendering if it is the camera` |
+| `m_nAllowRenderControlPoint` | int32 | `MPropertyFriendlyName control point to only enable rendering if it is the camera` |
+| `m_bShouldSort` | bool | `MParticleAdvancedField` `MPropertyFriendlyName sort particles (DEPRECATED - USE RENDERER OPTION)` |
+| `m_controlPointConfigurations` | CUtlVector< [ParticleControlPointConfiguration_t](../schemas/particles.md#particlecontrolpointconfiguration_t) > | `MPropertySuppressField` |
+
+### CParticleVisibilityInputs
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flCameraBias` | float32 | `MPropertyFriendlyName camera depth bias` |
+| `m_nCPin` | int32 | `MPropertyFriendlyName input control point number` |
+| `m_flProxyRadius` | float32 | `MPropertyFriendlyName input proxy radius` `MPropertySuppressExpr` |
+| `m_flInputMin` | float32 | `MPropertyFriendlyName input proxy pixel visibility minimum` `MPropertySuppressExpr` |
+| `m_flInputMax` | float32 | `MPropertyFriendlyName input proxy pixel visibility maximum` `MPropertySuppressExpr` |
+| `m_flInputPixelVisFade` | float32 | `MPropertyFriendlyName input proxy pixel visibility fade out time` `MPropertySuppressExpr` |
+| `m_flNoPixelVisibilityFallback` | float32 | `MPropertyFriendlyName input proxy unsupported hardware fallback value` `MPropertySuppressExpr` |
+| `m_flDistanceInputMin` | float32 | `MPropertyFriendlyName input distance minimum` `MPropertySuppressExpr` |
+| `m_flDistanceInputMax` | float32 | `MPropertyFriendlyName input distance maximum` `MPropertySuppressExpr` |
+| `m_flDotInputMin` | float32 | `MPropertyFriendlyName input dot minimum` `MPropertySuppressExpr` |
+| `m_flDotInputMax` | float32 | `MPropertyFriendlyName input dot maximum` `MPropertySuppressExpr` |
+| `m_bDotCPAngles` | bool | `MPropertyFriendlyName input dot use CP angles` `MPropertySuppressExpr` |
+| `m_bDotCameraAngles` | bool | `MPropertyFriendlyName input dot use Camera angles` `MPropertySuppressExpr` |
+| `m_flAlphaScaleMin` | float32 | `MPropertyFriendlyName output alpha scale minimum` `MPropertySuppressExpr` |
+| `m_flAlphaScaleMax` | float32 | `MPropertyFriendlyName output alpha scale maximum` `MPropertySuppressExpr` |
+| `m_flRadiusScaleMin` | float32 | `MPropertyFriendlyName output radius scale minimum` `MPropertySuppressExpr` |
+| `m_flRadiusScaleMax` | float32 | `MPropertyFriendlyName output radius scale maximum` `MPropertySuppressExpr` |
+| `m_flRadiusScaleFOVBase` | float32 | `MPropertyFriendlyName output radius FOV scale base` `MPropertySuppressExpr` |
+| `m_bRightEye` | bool | `MParticleAdvancedField` `MPropertyFriendlyName vr camera right eye` |
+
+### CPathParameters
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nStartControlPointNumber` | int32 | `MPropertyFriendlyName start control point number` |
+| `m_nEndControlPointNumber` | int32 | `MPropertyFriendlyName end control point number` |
+| `m_nBulgeControl` | int32 | `MPropertyFriendlyName bulge control 0=random 1=orientation of start pnt 2=orientation of end point` |
+| `m_flBulge` | float32 | `MPropertyFriendlyName random bulge` |
+| `m_flMidPoint` | float32 | `MPropertyFriendlyName mid point position` |
+| `m_vStartPointOffset` | Vector | `MPropertyFriendlyName Offset from curve start point for path start` `MVectorIsCoordinate` |
+| `m_vMidPointOffset` | Vector | `MPropertyFriendlyName Offset from curve midpoint for curve center` `MVectorIsCoordinate` |
+| `m_vEndOffset` | Vector | `MPropertyFriendlyName Offset from control point for path end` `MVectorIsCoordinate` |
+
+### CRandomNumberGeneratorParameters
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bDistributeEvenly` | bool | `MPropertyFriendlyName Distribute evenly` |
+| `m_nSeed` | int32 | `MPropertyFriendlyName Seed (negative values=randomize)` `MPropertySuppressExpr` |
+
+### CReplicationParameters
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CReplicationParameters *-- ParticleReplicationMode_t
+    CReplicationParameters *-- CParticleCollectionFloatInput
+    CReplicationParameters *-- CParticleCollectionVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nReplicationMode` | [ParticleReplicationMode_t](../schemas/!GlobalTypes.md#particlereplicationmode_t) | `MPropertyFriendlyName Replication mode` |
+| `m_bScaleChildParticleRadii` | bool | `MPropertyFriendlyName Scale child particle radius based on parent radius` |
+| `m_flMinRandomRadiusScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Minimum random scale for radius` |
+| `m_flMaxRandomRadiusScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Maximum random scale for radius` |
+| `m_vMinRandomDisplacement` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName min random displacement for child particles` |
+| `m_vMaxRandomDisplacement` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName max random displacement for child particles` |
+| `m_flModellingScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Modelling scale` |
+
+### CSpinUpdateBase
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Derived by:** [C_OP_SpinUpdate](particles.md#c_op_spinupdate)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- CSpinUpdateBase
+    CParticleFunction <|-- CParticleFunctionOperator
+    CSpinUpdateBase <|-- C_OP_SpinUpdate
+```
+
+### C_INIT_AddVectorToVector
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_AddVectorToVector
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_AddVectorToVector *-- ParticleAttributeIndex_t
+    C_INIT_AddVectorToVector *-- CRandomNumberGeneratorParameters
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecScale` | Vector | `MPropertyFriendlyName component scale factor` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_nFieldInput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName input field` |
+| `m_vOffsetMin` | Vector | `MPropertyFriendlyName random offset min` |
+| `m_vOffsetMax` | Vector | `MPropertyFriendlyName random offset max` |
+| `m_randomnessParameters` | [CRandomNumberGeneratorParameters](../schemas/particles.md#crandomnumbergeneratorparameters) | `MPropertyFriendlyName Random number generator controls` |
+
+### C_INIT_AgeNoise
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_AgeNoise
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bAbsVal` | bool | `MPropertyFriendlyName absolute value` |
+| `m_bAbsValInv` | bool | `MPropertyFriendlyName invert absolute value` |
+| `m_flOffset` | float32 | `MPropertyFriendlyName time coordinate offset` |
+| `m_flAgeMin` | float32 | `MPropertyFriendlyName start age minimum` |
+| `m_flAgeMax` | float32 | `MPropertyFriendlyName start age maximum` |
+| `m_flNoiseScale` | float32 | `MPropertyFriendlyName time noise coordinate scale` |
+| `m_flNoiseScaleLoc` | float32 | `MPropertyFriendlyName spatial noise coordinate scale` |
+| `m_vecOffsetLoc` | Vector | `MPropertyFriendlyName spatial coordinate offset` `MVectorIsCoordinate` |
+
+### C_INIT_ChaoticAttractor
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_ChaoticAttractor
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flAParm` | float32 | `MPropertyFriendlyName pickover A parameter` |
+| `m_flBParm` | float32 | `MPropertyFriendlyName pickover B parameter` |
+| `m_flCParm` | float32 | `MPropertyFriendlyName pickover C parameter` |
+| `m_flDParm` | float32 | `MPropertyFriendlyName pickover D parameter` |
+| `m_flScale` | float32 | `MPropertyFriendlyName scale` |
+| `m_flSpeedMin` | float32 | `MPropertyFriendlyName speed min` |
+| `m_flSpeedMax` | float32 | `MPropertyFriendlyName speed max` |
+| `m_nBaseCP` | int32 | `MPropertyFriendlyName relative control point number` |
+| `m_bUniformSpeed` | bool | `MPropertyFriendlyName uniform speed` |
+
+### C_INIT_CheckParticleForWater
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_CheckParticleForWater
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_CheckParticleForWater *-- CPerParticleFloatInput
+    C_INIT_CheckParticleForWater *-- ParticleAttributeIndex_t
+    C_INIT_CheckParticleForWater *-- CParticleRemapFloatInput
+    C_INIT_CheckParticleForWater *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flRadius` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName radius` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output attribute` |
+| `m_flOutputRemap` | [CParticleRemapFloatInput](../schemas/particleslib.md#cparticleremapfloatinput) | `MPropertyFriendlyName output` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+
+### C_INIT_ColorLitPerParticle
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_ColorLitPerParticle
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_ColorLitPerParticle *-- ParticleColorBlendMode_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_ColorMin` | Color | `MPropertyFriendlyName color1` |
+| `m_ColorMax` | Color | `MPropertyFriendlyName color2` |
+| `m_TintMin` | Color | `MPropertyFriendlyName tint clamp min` |
+| `m_TintMax` | Color | `MPropertyFriendlyName tint clamp max` |
+| `m_flTintPerc` | float32 | `MPropertyFriendlyName light bias` |
+| `m_nTintBlendMode` | [ParticleColorBlendMode_t](../schemas/!GlobalTypes.md#particlecolorblendmode_t) | `MPropertyFriendlyName tint blend mode` |
+| `m_flLightAmplification` | float32 | `MPropertyFriendlyName light amplification amount` |
+
+### C_INIT_CreateAlongPath
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_CreateAlongPath
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_CreateAlongPath *-- CPathParameters
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_fMaxDistance` | float32 | `MPropertyFriendlyName maximum distance` |
+| `m_PathParams` | [CPathParameters](../schemas/particles.md#cpathparameters) |  |
+| `m_bUseRandomCPs` | bool | `MPropertyFriendlyName randomly select sequential CP pairs between start and end points` |
+| `m_vEndOffset` | Vector | `MPropertyFriendlyName Offset from control point for path end` `MVectorIsCoordinate` |
+| `m_bSaveOffset` | bool | `MPropertyFriendlyName save offset` |
+
+### C_INIT_CreateFromCPs
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_CreateFromCPs
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_CreateFromCPs *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nIncrement` | int32 | `MPropertyFriendlyName control point increment amount` |
+| `m_nMinCP` | int32 | `MPropertyFriendlyName starting control point` |
+| `m_nMaxCP` | int32 | `MParticleMinVersion` `MPropertyFriendlyName ending control point` |
+| `m_nDynamicCPCount` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName dynamic control point count` |
+
+### C_INIT_CreateFromParentParticles
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_CreateFromParentParticles
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flVelocityScale` | float32 | `MPropertyFriendlyName inherited velocity scale` |
+| `m_flIncrement` | float32 | `MPropertyFriendlyName particle increment amount` |
+| `m_bRandomDistribution` | bool | `MPropertyFriendlyName random parent particle distribution` |
+| `m_nRandomSeed` | int32 | `MPropertyFriendlyName random seed` |
+| `m_bSubFrame` | bool | `MPropertyFriendlyName sub frame interpolation` |
+| `m_bSetRopeSegmentID` | bool | `MPropertyFriendlyName set rope segment id` |
+
+### C_INIT_CreateFromPlaneCache
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_CreateFromPlaneCache
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecOffsetMin` | Vector | `MPropertyFriendlyName local offset min` `MVectorIsCoordinate` |
+| `m_vecOffsetMax` | Vector | `MPropertyFriendlyName local offset max` `MVectorIsCoordinate` |
+| `m_bUseNormal` | bool | `MPropertyFriendlyName set normal` |
+
+### C_INIT_CreateInEpitrochoid
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_CreateInEpitrochoid
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_CreateInEpitrochoid *-- CParticleTransformInput
+    C_INIT_CreateInEpitrochoid *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nComponent1` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName first dimension 0-2 (-1 disables)` |
+| `m_nComponent2` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName second dimension 0-2 (-1 disables)` |
+| `m_TransformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName input transform` |
+| `m_flParticleDensity` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName particle density` |
+| `m_flOffset` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName point offset` |
+| `m_flRadius1` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName radius 1` |
+| `m_flRadius2` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName radius 2` |
+| `m_bUseCount` | bool | `MPropertyFriendlyName use particle count instead of creation time` |
+| `m_bUseLocalCoords` | bool | `MPropertyFriendlyName local space` |
+| `m_bOffsetExistingPos` | bool | `MPropertyFriendlyName offset from existing position` |
+
+### C_INIT_CreateOnGrid
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_CreateOnGrid
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_CreateOnGrid *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nXCount` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName X Dimension Count` |
+| `m_nYCount` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Y Dimension Count` |
+| `m_nZCount` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Z Dimension Count` |
+| `m_nXSpacing` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName X Dimension Spacing` |
+| `m_nYSpacing` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Y Dimension Spacing` |
+| `m_nZSpacing` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Z Dimension Spacing` |
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_bLocalSpace` | bool | `MPropertyFriendlyName use local space` |
+| `m_bCenter` | bool | `MPropertyFriendlyName center around control point` |
+| `m_bHollow` | bool | `MPropertyFriendlyName hollow` |
+
+### C_INIT_CreateOnModel
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_CreateOnModel
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_CreateOnModel *-- CParticleModelInput
+    C_INIT_CreateOnModel *-- CParticleTransformInput
+    C_INIT_CreateOnModel *-- CParticleCollectionFloatInput
+    C_INIT_CreateOnModel *-- CParticleCollectionVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_modelInput` | [CParticleModelInput](../schemas/particleslib.md#cparticlemodelinput) | `MPropertyFriendlyName input model` |
+| `m_transformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MParticleInputOptional` `MPropertyFriendlyName input transform for transforming local space bias vector` |
+| `m_nForceInModel` | int32 | `MPropertyFriendlyName force to be inside model` `MPropertySuppressExpr` |
+| `m_bScaleToVolume` | bool | `MPropertyFriendlyName bias box distribution by volume` |
+| `m_bEvenDistribution` | bool | `MPropertyFriendlyName even distribution within boxes` |
+| `m_nDesiredHitbox` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName desired hitbox` |
+| `m_nHitboxValueFromControlPointIndex` | int32 | `MPropertyFriendlyName Control Point Providing Hitbox index` |
+| `m_vecHitBoxScale` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName hitbox scale` |
+| `m_flBoneVelocity` | float32 | `MPropertyFriendlyName inherited velocity scale` |
+| `m_flMaxBoneVelocity` | float32 | `MPropertyFriendlyName maximum inherited velocity` |
+| `m_vecDirectionBias` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName direction bias` `MPropertySuppressExpr` `MVectorIsCoordinate` |
+| `m_HitboxSetName` | char[128] | `MPropertyFriendlyName hitbox set` |
+| `m_bLocalCoords` | bool | `MPropertyFriendlyName bias in local space` |
+| `m_bUseBones` | bool | `MPropertyFriendlyName use bones instead of hitboxes` `MPropertySuppressExpr` |
+| `m_bUseMesh` | bool | `MPropertyFriendlyName Use renderable meshes instead of hitboxes` `MPropertySuppressExpr` |
+| `m_flShellSize` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName hitbox shell thickness` `MPropertySuppressExpr` |
+
+### C_INIT_CreateOnModelAtHeight
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_CreateOnModelAtHeight
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_CreateOnModelAtHeight *-- CParticleCollectionFloatInput
+    C_INIT_CreateOnModelAtHeight *-- CParticleCollectionVecInput
+    C_INIT_CreateOnModelAtHeight *-- ParticleHitboxBiasType_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bUseBones` | bool | `MPropertyFriendlyName use bones instead of hitboxes` |
+| `m_bForceZ` | bool | `MPropertyFriendlyName force creation height to desired height` |
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_nHeightCP` | int32 | `MPropertyFriendlyName height override control point number` |
+| `m_bUseWaterHeight` | bool | `MPropertyFriendlyName desired height is relative to water` |
+| `m_flDesiredHeight` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName relative desired height` |
+| `m_vecHitBoxScale` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName model hitbox scale` |
+| `m_vecDirectionBias` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName direction bias` `MVectorIsCoordinate` |
+| `m_nBiasType` | [ParticleHitboxBiasType_t](../schemas/!GlobalTypes.md#particlehitboxbiastype_t) | `MPropertyFriendlyName bias type` |
+| `m_bLocalCoords` | bool | `MPropertyFriendlyName bias in local space` |
+| `m_bPreferMovingBoxes` | bool | `MPropertyFriendlyName bias prefers moving hitboxes` |
+| `m_HitboxSetName` | char[128] | `MPropertyFriendlyName hitbox set` |
+| `m_flHitboxVelocityScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName hitbox velocity inherited scale` |
+| `m_flMaxBoneVelocity` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName max hitbox velocity` |
+
+### C_INIT_CreateParticleImpulse
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_CreateParticleImpulse
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_CreateParticleImpulse *-- CPerParticleFloatInput
+    C_INIT_CreateParticleImpulse *-- ParticleFalloffFunction_t
+    C_INIT_CreateParticleImpulse *-- ParticleImpulseType_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_InputRadius` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName radius` |
+| `m_InputMagnitude` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName magnitude` |
+| `m_nFalloffFunction` | [ParticleFalloffFunction_t](../schemas/!GlobalTypes.md#particlefallofffunction_t) | `MPropertyFriendlyName force falloff function` |
+| `m_InputFalloffExp` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName exponential falloff exponent` |
+| `m_nImpulseType` | [ParticleImpulseType_t](../schemas/!GlobalTypes.md#particleimpulsetype_t) | `MPropertyFriendlyName impulse type` |
+
+### C_INIT_CreatePhyllotaxis
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_CreatePhyllotaxis
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_nScaleCP` | int32 | `MPropertyFriendlyName scale size multiplier from CP` |
+| `m_nComponent` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName scale CP component 0/1/2 X/Y/Z` |
+| `m_fRadCentCore` | float32 | `MPropertyFriendlyName center core radius` |
+| `m_fRadPerPoint` | float32 | `MPropertyFriendlyName radius multiplier` |
+| `m_fRadPerPointTo` | float32 | `MPropertyFriendlyName radius max (-1 procedural growth)` |
+| `m_fpointAngle` | float32 | `MPropertyFriendlyName golden angle (is 137.508)` |
+| `m_fsizeOverall` | float32 | `MPropertyFriendlyName overall size multiplier (-1 count based distribution)` |
+| `m_fRadBias` | float32 | `MPropertyFriendlyName radius bias` |
+| `m_fMinRad` | float32 | `MPropertyFriendlyName radius min ` |
+| `m_fDistBias` | float32 | `MPropertyFriendlyName distribution bias` |
+| `m_bUseLocalCoords` | bool | `MPropertyFriendlyName local space` |
+| `m_bUseWithContEmit` | bool | `MPropertyFriendlyName use continuous emission` |
+| `m_bUseOrigRadius` | bool | `MPropertyFriendlyName scale radius from initial value` |
+
+### C_INIT_CreateSequentialPath
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`, `MParticleMaxVersion`, `MParticleReplacementOp`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_CreateSequentialPath
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_CreateSequentialPath *-- CPathParameters
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_fMaxDistance` | float32 | `MPropertyFriendlyName maximum distance` |
+| `m_flNumToAssign` | float32 | `MPropertyFriendlyName particles to map from start to end` |
+| `m_bLoop` | bool | `MPropertyFriendlyName restart behavior (0 = bounce, 1 = loop )` |
+| `m_bCPPairs` | bool | `MPropertyFriendlyName use sequential CP pairs between start and end point` |
+| `m_bSaveOffset` | bool | `MPropertyFriendlyName save offset` |
+| `m_PathParams` | [CPathParameters](../schemas/particles.md#cpathparameters) |  |
+
+### C_INIT_CreateSequentialPathV2
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`, `MParticleMinVersion`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_CreateSequentialPathV2
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_CreateSequentialPathV2 *-- CPerParticleFloatInput
+    C_INIT_CreateSequentialPathV2 *-- CParticleCollectionFloatInput
+    C_INIT_CreateSequentialPathV2 *-- CPathParameters
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_fMaxDistance` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName maximum distance` |
+| `m_flNumToAssign` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName particles to map from start to end` |
+| `m_bLoop` | bool | `MPropertyFriendlyName restart behavior (0 = bounce, 1 = loop )` |
+| `m_bCPPairs` | bool | `MPropertyFriendlyName use sequential CP pairs between start and end point` |
+| `m_bSaveOffset` | bool | `MPropertyFriendlyName save offset` |
+| `m_PathParams` | [CPathParameters](../schemas/particles.md#cpathparameters) |  |
+
+### C_INIT_CreateSpiralSphere
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_CreateSpiralSphere
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_CreateSpiralSphere *-- CParticleTransformInput
+    C_INIT_CreateSpiralSphere *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_TransformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName input position transform` |
+| `m_flDensity` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName density` |
+| `m_flInitialRadius` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName initial radius` |
+| `m_flInitialSpeedMin` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName min initial speed` |
+| `m_flInitialSpeedMax` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName max initial speed` |
+| `m_bUseParticleCount` | bool | `MPropertyFriendlyName use particle count as density scale` |
+
+### C_INIT_CreateWithinBox
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_CreateWithinBox
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_CreateWithinBox *-- CPerParticleVecInput
+    C_INIT_CreateWithinBox *-- CRandomNumberGeneratorParameters
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecMin` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName min` `MVectorIsCoordinate` |
+| `m_vecMax` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName max` `MVectorIsCoordinate` |
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_bLocalSpace` | bool | `MPropertyFriendlyName use local space` |
+| `m_randomnessParameters` | [CRandomNumberGeneratorParameters](../schemas/particles.md#crandomnumbergeneratorparameters) | `MPropertyFriendlyName Random number generator controls` |
+| `m_bUseNewCode` | bool | `MPropertyFriendlyName use new code` |
+
+### C_INIT_CreateWithinCapsuleTransform
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_CreateWithinCapsuleTransform
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_CreateWithinCapsuleTransform *-- CPerParticleFloatInput
+    C_INIT_CreateWithinCapsuleTransform *-- CParticleTransformInput
+    C_INIT_CreateWithinCapsuleTransform *-- CPerParticleVecInput
+    C_INIT_CreateWithinCapsuleTransform *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_fRadiusMin` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName distance min` |
+| `m_fRadiusMax` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName distance max` |
+| `m_fHeight` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName capsule height` |
+| `m_TransformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName input position transform` |
+| `m_fSpeedMin` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName speed min` |
+| `m_fSpeedMax` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName speed max` |
+| `m_fSpeedRandExp` | float32 | `MPropertyFriendlyName speed random exponent` |
+| `m_LocalCoordinateSystemSpeedMin` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName speed in local coordinate system min` `MVectorIsCoordinate` |
+| `m_LocalCoordinateSystemSpeedMax` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName speed in local coordinate system max` `MVectorIsCoordinate` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Output vector` |
+| `m_nFieldVelocity` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Velocity vector` |
+
+### C_INIT_CreateWithinSphereTransform
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_CreateWithinSphereTransform
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_CreateWithinSphereTransform *-- CPerParticleFloatInput
+    C_INIT_CreateWithinSphereTransform *-- CPerParticleVecInput
+    C_INIT_CreateWithinSphereTransform *-- CParticleTransformInput
+    C_INIT_CreateWithinSphereTransform *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_fRadiusMin` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName distance min` |
+| `m_fRadiusMax` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName distance max` |
+| `m_vecDistanceBias` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName distance bias` `MVectorIsCoordinate` |
+| `m_vecDistanceBiasAbs` | Vector | `MPropertyFriendlyName distance bias absolute value` `MVectorIsCoordinate` |
+| `m_TransformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName input position transform` |
+| `m_fSpeedMin` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName speed min` |
+| `m_fSpeedMax` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName speed max` |
+| `m_fSpeedRandExp` | float32 | `MPropertyFriendlyName speed random exponent` |
+| `m_bLocalCoords` | bool | `MPropertyFriendlyName bias in local system` |
+| `m_LocalCoordinateSystemSpeedMin` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName speed in local coordinate system min` `MVectorIsCoordinate` |
+| `m_LocalCoordinateSystemSpeedMax` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName speed in local coordinate system max` `MVectorIsCoordinate` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Output vector` |
+| `m_nFieldVelocity` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Velocity vector` |
+
+### C_INIT_CreationNoise
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_CreationNoise
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_CreationNoise *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_bAbsVal` | bool | `MPropertyFriendlyName absolute value` |
+| `m_bAbsValInv` | bool | `MPropertyFriendlyName invert absolute value` |
+| `m_flOffset` | float32 | `MPropertyFriendlyName time coordinate offset` |
+| `m_flOutputMin` | float32 | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | float32 | `MPropertyFriendlyName output maximum` |
+| `m_flNoiseScale` | float32 | `MPropertyFriendlyName time noise coordinate scale` |
+| `m_flNoiseScaleLoc` | float32 | `MPropertyFriendlyName spatial noise coordinate scale` |
+| `m_vecOffsetLoc` | Vector | `MPropertyFriendlyName spatial coordinate offset` `MVectorIsCoordinate` |
+| `m_flWorldTimeScale` | float32 | `MPropertyFriendlyName world time noise coordinate scale` |
+
+### C_INIT_DistanceCull
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_DistanceCull
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_DistanceCull *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPoint` | int32 | `MPropertyFriendlyName control point` |
+| `m_flDistance` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName cull distance` |
+| `m_bCullInside` | bool | `MPropertyFriendlyName cull inside instead of outside` |
+
+### C_INIT_DistanceToCPInit
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_DistanceToCPInit
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_DistanceToCPInit *-- ParticleAttributeIndex_t
+    C_INIT_DistanceToCPInit *-- CPerParticleFloatInput
+    C_INIT_DistanceToCPInit *-- ParticleTraceSet_t
+    C_INIT_DistanceToCPInit *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_flInputMin` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName distance minimum` |
+| `m_flInputMax` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName distance maximum` |
+| `m_flOutputMin` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName output maximum` |
+| `m_nStartCP` | int32 | `MPropertyFriendlyName control point` |
+| `m_bLOS` | bool | `MPropertyFriendlyName ensure line of sight` |
+| `m_CollisionGroupName` | char[128] | `MPropertyFriendlyName LOS collision group` |
+| `m_nTraceSet` | [ParticleTraceSet_t](../schemas/!GlobalTypes.md#particletraceset_t) | `MPropertyFriendlyName Trace Set` |
+| `m_flMaxTraceLength` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Maximum Trace Length` |
+| `m_flLOSScale` | float32 | `MPropertyFriendlyName LOS Failure Scalar` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_bActiveRange` | bool | `MPropertyFriendlyName only active within specified distance` |
+| `m_vecDistanceScale` | Vector | `MPropertyFriendlyName distance component scale` |
+| `m_flRemapBias` | float32 | `MPropertyFriendlyName remap bias` |
+
+### C_INIT_DistanceToNeighborCull
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_DistanceToNeighborCull
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_DistanceToNeighborCull *-- CPerParticleFloatInput
+    C_INIT_DistanceToNeighborCull *-- ParticleAttributeIndex_t
+    C_INIT_DistanceToNeighborCull *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flDistance` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName cull distance` |
+| `m_bIncludeRadii` | bool | `MPropertyFriendlyName include particle radius` |
+| `m_flLifespanOverlap` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName lifespan overlap percentage` |
+| `m_nFieldModify` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName attribute to modify` |
+| `m_flModify` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName modify amount` `MPropertySuppressExpr` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` `MPropertySuppressExpr` |
+| `m_bUseNeighbor` | bool | `MPropertyFriendlyName use neighbor value for modify base` `MPropertySuppressExpr` |
+
+### C_INIT_GlobalScale
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_GlobalScale
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flScale` | float32 | `MPropertyFriendlyName scale amount` |
+| `m_nScaleControlPointNumber` | int32 | `MPropertyFriendlyName scale control point number` |
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_bScaleRadius` | bool | `MPropertyFriendlyName scale radius` |
+| `m_bScalePosition` | bool | `MPropertyFriendlyName scale position` |
+| `m_bScaleVelocity` | bool | `MPropertyFriendlyName scale velocity` |
+
+### C_INIT_InheritFromParentParticles
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_InheritFromParentParticles
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_InheritFromParentParticles *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flScale` | float32 | `MPropertyFriendlyName scale` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield` `MPropertyFriendlyName inherited field` |
+| `m_nIncrement` | int32 | `MPropertyFriendlyName particle increment amount` |
+| `m_bRandomDistribution` | bool | `MPropertyFriendlyName random parent particle distribution` |
+| `m_nRandomSeed` | int32 | `MPropertyFriendlyName random seed` |
+
+### C_INIT_InheritVelocity
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_InheritVelocity
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_flVelocityScale` | float32 | `MPropertyFriendlyName velocity scale` |
+
+### C_INIT_InitFloat
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_InitFloat
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_InitFloat *-- CPerParticleFloatInput
+    C_INIT_InitFloat *-- ParticleAttributeIndex_t
+    C_INIT_InitFloat *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_InputValue` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName value` |
+| `m_nOutputField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_InputStrength` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName per-particle strength` |
+
+### C_INIT_InitFloatCollection
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_InitFloatCollection
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_InitFloatCollection *-- CParticleCollectionFloatInput
+    C_INIT_InitFloatCollection *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_InputValue` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName value` |
+| `m_nOutputField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+
+### C_INIT_InitFromCPSnapshot
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_InitFromCPSnapshot
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_InitFromCPSnapshot *-- ParticleAttributeIndex_t
+    C_INIT_InitFromCPSnapshot *-- CParticleCollectionFloatInput
+    C_INIT_InitFromCPSnapshot *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName snapshot control point number` |
+| `m_strSnapshotSubset` | CUtlString | `MPropertyFriendlyName snapshot subset` `MPropertySuppressExpr` |
+| `m_nAttributeToRead` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield` `MPropertyFriendlyName field to read` |
+| `m_nAttributeToWrite` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield` `MPropertyFriendlyName field to write` |
+| `m_nLocalSpaceCP` | int32 | `MPropertyFriendlyName local space control point number` |
+| `m_bRandom` | bool | `MPropertyFriendlyName random order` |
+| `m_bReverse` | bool | `MPropertyFriendlyName reverse order` `MPropertySuppressExpr` |
+| `m_nSnapShotIncrement` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Snapshot increment amount` `MPropertySuppressExpr` |
+| `m_nManualSnapshotIndex` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Manual Snapshot Index` `MPropertySuppressExpr` |
+| `m_nRandomSeed` | int32 | `MPropertyFriendlyName random seed` `MPropertySuppressExpr` |
+| `m_bLocalSpaceAngles` | bool | `MPropertyFriendlyName local space angles` |
+
+### C_INIT_InitFromParentKilled
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_InitFromParentKilled
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_InitFromParentKilled *-- ParticleAttributeIndex_t
+    C_INIT_InitFromParentKilled *-- EventTypeSelection_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nAttributeToCopy` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield` `MPropertyFriendlyName field to init` |
+| `m_nEventType` | [EventTypeSelection_t](../schemas/!GlobalTypes.md#eventtypeselection_t) | `MPropertyFriendlyName event type` |
+
+### C_INIT_InitFromVectorFieldSnapshot
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_InitFromVectorFieldSnapshot
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_InitFromVectorFieldSnapshot *-- CPerParticleVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName snapshot control point number` |
+| `m_nLocalSpaceCP` | int32 | `MPropertyFriendlyName local space control point number` |
+| `m_nWeightUpdateCP` | int32 | `MPropertyFriendlyName weight update control point` |
+| `m_bUseVerticalVelocity` | bool | `MPropertyFriendlyName use vertical velocity for weighting` |
+| `m_vecScale` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName Component Scale` |
+
+### C_INIT_InitSkinnedPositionFromCPSnapshot
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_InitSkinnedPositionFromCPSnapshot
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_InitSkinnedPositionFromCPSnapshot *-- SnapshotIndexType_t
+    C_INIT_InitSkinnedPositionFromCPSnapshot *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nSnapshotControlPointNumber` | int32 | `MPropertyFriendlyName snapshot control point number` |
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_bRandom` | bool | `MPropertyFriendlyName random order` `MPropertySuppressExpr` |
+| `m_nRandomSeed` | int32 | `MPropertyFriendlyName random seed` `MPropertySuppressExpr` |
+| `m_bRigid` | bool | `MPropertyFriendlyName prepare for rigid lock` |
+| `m_bSetNormal` | bool | `MPropertyFriendlyName set normal` |
+| `m_bIgnoreDt` | bool | `MPropertyFriendlyName normal velocity ignore delta time` |
+| `m_flMinNormalVelocity` | float32 | `MPropertyFriendlyName normal velocity min` |
+| `m_flMaxNormalVelocity` | float32 | `MPropertyFriendlyName normal velocity max` |
+| `m_nIndexType` | [SnapshotIndexType_t](../schemas/!GlobalTypes.md#snapshotindextype_t) | `MPropertyFriendlyName Snapshot Read Type` |
+| `m_flReadIndex` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Snapshot Index` `MPropertySuppressExpr` |
+| `m_flIncrement` | float32 | `MPropertyFriendlyName particle increment amount` `MPropertySuppressExpr` |
+| `m_nFullLoopIncrement` | int32 | `MPropertyFriendlyName Full Loop Increment Amount` `MPropertySuppressExpr` |
+| `m_nSnapShotStartPoint` | int32 | `MPropertyFriendlyName Snapshot start point` `MPropertySuppressExpr` |
+| `m_flBoneVelocity` | float32 | `MPropertyFriendlyName inherited bone velocity` |
+| `m_flBoneVelocityMax` | float32 | `MPropertyFriendlyName max inherited bone velocity` |
+| `m_bCopyColor` | bool | `MPropertyFriendlyName Set Color` |
+| `m_bCopyAlpha` | bool | `MPropertyFriendlyName Set Alpha` |
+| `m_bSetRadius` | bool | `MPropertyFriendlyName Set Radius` |
+
+### C_INIT_InitVec
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_InitVec
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_InitVec *-- CPerParticleVecInput
+    C_INIT_InitVec *-- ParticleAttributeIndex_t
+    C_INIT_InitVec *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_InputValue` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName value` |
+| `m_nOutputField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_bNormalizedOutput` | bool | `MPropertyFriendlyName normalize result` |
+| `m_bWritePreviousPosition` | bool | `MPropertyFriendlyName set previous position` `MPropertySuppressExpr` |
+
+### C_INIT_InitVecCollection
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_InitVecCollection
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_InitVecCollection *-- CParticleCollectionVecInput
+    C_INIT_InitVecCollection *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_InputValue` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName value` |
+| `m_nOutputField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+
+### C_INIT_InitialRepulsionVelocity
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_InitialRepulsionVelocity
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_InitialRepulsionVelocity *-- ParticleTraceSet_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_CollisionGroupName` | char[128] | `MPropertyFriendlyName collision group` |
+| `m_nTraceSet` | [ParticleTraceSet_t](../schemas/!GlobalTypes.md#particletraceset_t) | `MPropertyFriendlyName Trace Set` |
+| `m_vecOutputMin` | Vector | `MPropertyFriendlyName minimum velocity` `MVectorIsCoordinate` |
+| `m_vecOutputMax` | Vector | `MPropertyFriendlyName maximum velocity` `MVectorIsCoordinate` |
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_bPerParticle` | bool | `MPropertyFriendlyName per particle world collision tests` |
+| `m_bTranslate` | bool | `MPropertyFriendlyName offset instead of accelerate` |
+| `m_bProportional` | bool | `MPropertyFriendlyName offset proportional to radius 0/1` |
+| `m_flTraceLength` | float32 | `MPropertyFriendlyName trace length` |
+| `m_bPerParticleTR` | bool | `MPropertyFriendlyName use radius for per particle trace length` |
+| `m_bInherit` | bool | `MPropertyFriendlyName inherit from parent` |
+| `m_nChildCP` | int32 | `MPropertyFriendlyName control points to broadcast to children (n + 1)` |
+| `m_nChildGroupID` | int32 | `MPropertyFriendlyName child group ID to affect` |
+
+### C_INIT_InitialSequenceFromModel
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_InitialSequenceFromModel
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_InitialSequenceFromModel *-- ParticleAttributeIndex_t
+    C_INIT_InitialSequenceFromModel *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_nFieldOutputAnim` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName current anim time output field` |
+| `m_flInputMin` | float32 | `MPropertyFriendlyName input minimum` |
+| `m_flInputMax` | float32 | `MPropertyFriendlyName input maximum` |
+| `m_flOutputMin` | float32 | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | float32 | `MPropertyFriendlyName output maximum` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+
+### C_INIT_InitialVelocityFromHitbox
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_InitialVelocityFromHitbox
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flVelocityMin` | float32 | `MPropertyFriendlyName velocity minimum` |
+| `m_flVelocityMax` | float32 | `MPropertyFriendlyName velocity maximum` |
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_HitboxSetName` | char[128] | `MPropertyFriendlyName hitbox set` |
+| `m_bUseBones` | bool | `MPropertyFriendlyName use bones instead of hitboxes` |
+
+### C_INIT_InitialVelocityNoise
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_InitialVelocityNoise
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_InitialVelocityNoise *-- CPerParticleVecInput
+    C_INIT_InitialVelocityNoise *-- CPerParticleFloatInput
+    C_INIT_InitialVelocityNoise *-- CParticleTransformInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecAbsVal` | Vector | `MPropertyFriendlyName absolute value` `MVectorIsCoordinate` |
+| `m_vecAbsValInv` | Vector | `MPropertyFriendlyName invert abs value` `MVectorIsCoordinate` |
+| `m_vecOffsetLoc` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName spatial coordinate offset` `MVectorIsCoordinate` |
+| `m_flOffset` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName time coordinate offset` |
+| `m_vecOutputMin` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName output minimum` |
+| `m_vecOutputMax` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName output maximum` |
+| `m_flNoiseScale` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName time noise coordinate scale` |
+| `m_flNoiseScaleLoc` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName spatial noise coordinate scale` |
+| `m_TransformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MParticleInputOptional` `MPropertyFriendlyName input local space velocity (optional)` |
+| `m_bIgnoreDt` | bool | `MPropertyFriendlyName ignore delta time` |
+
+### C_INIT_LifespanFromVelocity
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_LifespanFromVelocity
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_LifespanFromVelocity *-- ParticleTraceSet_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecComponentScale` | Vector | `MPropertyFriendlyName bias distance` `MVectorIsCoordinate` |
+| `m_flTraceOffset` | float32 | `MPropertyFriendlyName trace offset` |
+| `m_flMaxTraceLength` | float32 | `MPropertyFriendlyName maximum trace length` |
+| `m_flTraceTolerance` | float32 | `MPropertyFriendlyName trace recycle tolerance` |
+| `m_nMaxPlanes` | int32 | `MPropertyFriendlyName maximum points to cache` |
+| `m_CollisionGroupName` | char[128] | `MPropertyFriendlyName trace collision group` |
+| `m_nTraceSet` | [ParticleTraceSet_t](../schemas/!GlobalTypes.md#particletraceset_t) | `MPropertyFriendlyName Trace Set` |
+| `m_bIncludeWater` | bool | `MPropertyFriendlyName collide with water` |
+
+### C_INIT_ModelCull
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_ModelCull
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_bBoundBox` | bool | `MPropertyFriendlyName use only bounding box` |
+| `m_bCullOutside` | bool | `MPropertyFriendlyName cull outside instead of inside` |
+| `m_bUseBones` | bool | `MPropertyFriendlyName use bones instead of hitboxes` |
+| `m_HitboxSetName` | char[128] | `MPropertyFriendlyName hitbox set` |
+
+### C_INIT_MoveBetweenPoints
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_MoveBetweenPoints
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_MoveBetweenPoints *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flSpeedMin` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName minimum speed` |
+| `m_flSpeedMax` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName maximum speed` |
+| `m_flEndSpread` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName end spread` |
+| `m_flStartOffset` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName start offset` |
+| `m_flEndOffset` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName end offset` |
+| `m_nEndControlPointNumber` | int32 | `MPropertyFriendlyName end control point` |
+| `m_bTrailBias` | bool | `MPropertyFriendlyName bias lifetime by trail length` |
+
+### C_INIT_NormalAlignToCP
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_NormalAlignToCP
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_NormalAlignToCP *-- CParticleTransformInput
+    C_INIT_NormalAlignToCP *-- ParticleControlPointAxis_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_transformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName input` |
+| `m_nControlPointAxis` | [ParticleControlPointAxis_t](../schemas/!GlobalTypes.md#particlecontrolpointaxis_t) | `MPropertyFriendlyName control point axis` |
+
+### C_INIT_NormalOffset
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_NormalOffset
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_OffsetMin` | Vector | `MPropertyFriendlyName offset min` `MVectorIsCoordinate` |
+| `m_OffsetMax` | Vector | `MPropertyFriendlyName offset max` `MVectorIsCoordinate` |
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_bLocalCoords` | bool | `MPropertyFriendlyName offset in local space 0/1` |
+| `m_bNormalize` | bool | `MPropertyFriendlyName normalize output 0/1` |
+
+### C_INIT_OffsetVectorToVector
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_OffsetVectorToVector
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_OffsetVectorToVector *-- ParticleAttributeIndex_t
+    C_INIT_OffsetVectorToVector *-- CRandomNumberGeneratorParameters
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldInput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName input field` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_vecOutputMin` | Vector | `MPropertyFriendlyName output offset minimum` `MVectorIsSometimesCoordinate` |
+| `m_vecOutputMax` | Vector | `MPropertyFriendlyName output offset maximum` `MVectorIsSometimesCoordinate` |
+| `m_randomnessParameters` | [CRandomNumberGeneratorParameters](../schemas/particles.md#crandomnumbergeneratorparameters) | `MPropertyFriendlyName Random number generator controls` |
+
+### C_INIT_Orient2DRelToCP
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_Orient2DRelToCP
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_Orient2DRelToCP *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCP` | int32 | `MPropertyFriendlyName control point` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_rotation` `MPropertyFriendlyName rotation field` |
+| `m_flRotOffset` | float32 | `MPropertyFriendlyName rotation offset` |
+
+### C_INIT_PlaneCull
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_PlaneCull
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_PlaneCull *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPoint` | int32 | `MPropertyFriendlyName control point of plane` |
+| `m_flDistance` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName cull offset` |
+| `m_bCullInside` | bool | `MPropertyFriendlyName flip cull normal` |
+
+### C_INIT_PointList
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_PointList
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_PointList *-- ParticleAttributeIndex_t
+    C_INIT_PointList *-- PointDefinition_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_pointList` | CUtlVector< [PointDefinition_t](../schemas/particles.md#pointdefinition_t) > | `MPropertyFriendlyName point list` |
+| `m_bPlaceAlongPath` | bool | `MPropertyFriendlyName space points along path` |
+| `m_bClosedLoop` | bool | `MPropertyFriendlyName Treat path as a loop` |
+| `m_nNumPointsAlongPath` | int32 | `MPropertyFriendlyName Numer of points along path` |
+
+### C_INIT_PositionOffset
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_PositionOffset
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_PositionOffset *-- CPerParticleVecInput
+    C_INIT_PositionOffset *-- CParticleTransformInput
+    C_INIT_PositionOffset *-- CRandomNumberGeneratorParameters
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_OffsetMin` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName offset min` `MVectorIsCoordinate` |
+| `m_OffsetMax` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName offset max` `MVectorIsCoordinate` |
+| `m_TransformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName transform input` |
+| `m_bLocalCoords` | bool | `MPropertyFriendlyName offset in local space 0/1` |
+| `m_bProportional` | bool | `MPropertyFriendlyName offset proportional to radius 0/1` |
+| `m_randomnessParameters` | [CRandomNumberGeneratorParameters](../schemas/particles.md#crandomnumbergeneratorparameters) | `MPropertyFriendlyName Random number generator controls` |
+
+### C_INIT_PositionOffsetToCP
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_PositionOffsetToCP
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointNumberStart` | int32 | `MPropertyFriendlyName creation control point number` |
+| `m_nControlPointNumberEnd` | int32 | `MPropertyFriendlyName offset control point number` |
+| `m_bLocalCoords` | bool | `MPropertyFriendlyName offset in local space 0/1` |
+
+### C_INIT_PositionPlaceOnGround
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_PositionPlaceOnGround
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_PositionPlaceOnGround *-- CPerParticleFloatInput
+    C_INIT_PositionPlaceOnGround *-- CPerParticleVecInput
+    C_INIT_PositionPlaceOnGround *-- ParticleTraceSet_t
+    C_INIT_PositionPlaceOnGround *-- ParticleTraceMissBehavior_t
+    C_INIT_PositionPlaceOnGround *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flOffset` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName offset` |
+| `m_flMaxTraceLength` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName max trace length` |
+| `m_vecTraceDir` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName trace direction` |
+| `m_CollisionGroupName` | char[128] | `MPropertyFriendlyName collision group` `MPropertySuppressExpr` |
+| `m_nTraceSet` | [ParticleTraceSet_t](../schemas/!GlobalTypes.md#particletraceset_t) | `MPropertyFriendlyName Trace Set` |
+| `m_nTraceMissBehavior` | [ParticleTraceMissBehavior_t](../schemas/!GlobalTypes.md#particletracemissbehavior_t) | `MPropertyFriendlyName No Collision Behavior` |
+| `m_bIncludeWater` | bool | `MPropertyFriendlyName include water` `MPropertySuppressExpr` |
+| `m_nAttribute` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Attribute to Set` |
+| `m_bSetPXYZOnly` | bool | `MPropertyFriendlyName set Previous XYZ only` `MPropertySuppressExpr` |
+| `m_bSetNormal` | bool | `MPropertyFriendlyName set attribute from ground normal` |
+| `m_nGroundNormalAttribute` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Attribute to Set to Ground Normal` `MPropertySuppressExpr` |
+| `m_bOffsetonColOnly` | bool | `MPropertyFriendlyName Offset only if trace hit` `MPropertySuppressExpr` |
+| `m_flOffsetByRadiusFactor` | float32 | `MPropertyFriendlyName offset final position by this fraction of the particle radius` `MPropertySuppressExpr` |
+| `m_nPreserveOffsetCP` | int32 | `MPropertyFriendlyName preserve initial Z-offset relative to cp` `MPropertySuppressExpr` |
+| `m_nIgnoreCP` | int32 | `MPropertyFriendlyName CP Entity to Ignore for Collisions` `MPropertySuppressExpr` |
+
+### C_INIT_PositionWarp
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_PositionWarp
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_PositionWarp *-- CParticleCollectionVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecWarpMin` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName warp min` `MVectorIsCoordinate` |
+| `m_vecWarpMax` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName warp max` `MVectorIsCoordinate` |
+| `m_nScaleControlPointNumber` | int32 | `MPropertyFriendlyName warp scale control point number` |
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_nRadiusComponent` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName radius scale component` |
+| `m_flWarpTime` | float32 | `MPropertyFriendlyName warp transition time (treats min/max as start/end sizes)` |
+| `m_flWarpStartTime` | float32 | `MPropertyFriendlyName warp transition start time` |
+| `m_flPrevPosScale` | float32 | `MPropertyFriendlyName previous position sacale` |
+| `m_bInvertWarp` | bool | `MPropertyFriendlyName reverse warp (0/1)` |
+| `m_bUseCount` | bool | `MPropertyFriendlyName use particle count instead of time` |
+
+### C_INIT_PositionWarpScalar
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_PositionWarpScalar
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_PositionWarpScalar *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecWarpMin` | Vector | `MPropertyFriendlyName warp min` `MVectorIsCoordinate` |
+| `m_vecWarpMax` | Vector | `MPropertyFriendlyName warp max` `MVectorIsCoordinate` |
+| `m_InputValue` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName warp amount` |
+| `m_flPrevPosScale` | float32 | `MPropertyFriendlyName previous position scale` |
+| `m_nScaleControlPointNumber` | int32 | `MPropertyFriendlyName warp scale control point number` |
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+
+### C_INIT_QuantizeFloat
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_QuantizeFloat
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_QuantizeFloat *-- CPerParticleFloatInput
+    C_INIT_QuantizeFloat *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_InputValue` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName interval to snap to` |
+| `m_nOutputField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+
+### C_INIT_RadiusFromCPObject
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RadiusFromCPObject
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPoint` | int32 | `MPropertyFriendlyName control point` |
+
+### C_INIT_RandomAlpha
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RandomAlpha
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_RandomAlpha *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_alpha` `MPropertyFriendlyName alpha field` |
+| `m_nAlphaMin` | int32 | `MPropertyAttributeRange 0 255` `MPropertyFriendlyName alpha min` |
+| `m_nAlphaMax` | int32 | `MPropertyAttributeRange 0 255` `MPropertyFriendlyName alpha max` |
+| `m_flAlphaRandExponent` | float32 | `MPropertyFriendlyName alpha random exponent` |
+
+### C_INIT_RandomAlphaWindowThreshold
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RandomAlphaWindowThreshold
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flMin` | float32 | `MPropertyFriendlyName min` |
+| `m_flMax` | float32 | `MPropertyFriendlyName max` |
+| `m_flExponent` | float32 | `MPropertyFriendlyName exponent` |
+
+### C_INIT_RandomColor
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RandomColor
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_RandomColor *-- ParticleAttributeIndex_t
+    C_INIT_RandomColor *-- ParticleColorBlendMode_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_ColorMin` | Color | `MPropertyFriendlyName color1` |
+| `m_ColorMax` | Color | `MPropertyFriendlyName color2` |
+| `m_TintMin` | Color | `MPropertyFriendlyName tint clamp min` |
+| `m_TintMax` | Color | `MPropertyFriendlyName tint clamp max` |
+| `m_flTintPerc` | float32 | `MPropertyFriendlyName tint perc` |
+| `m_flUpdateThreshold` | float32 | `MPropertyFriendlyName tint update movement threshold` |
+| `m_nTintCP` | int32 | `MPropertyFriendlyName tint control point` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_nTintBlendMode` | [ParticleColorBlendMode_t](../schemas/!GlobalTypes.md#particlecolorblendmode_t) | `MPropertyFriendlyName tint blend mode` |
+| `m_flLightAmplification` | float32 | `MPropertyFriendlyName light amplification amount` |
+
+### C_INIT_RandomLifeTime
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RandomLifeTime
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_fLifetimeMin` | float32 | `MPropertyAttributeRange 0 20` `MPropertyFriendlyName lifetime min` |
+| `m_fLifetimeMax` | float32 | `MPropertyAttributeRange 0 20` `MPropertyFriendlyName lifetime max` |
+| `m_fLifetimeRandExponent` | float32 | `MPropertyFriendlyName lifetime random exponent` |
+
+### C_INIT_RandomModelSequence
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RandomModelSequence
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_RandomModelSequence *-- InfoForResourceTypeCModel
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_ActivityName` | char[256] | `MPropertyFriendlyName activity` `MPropertySuppressExpr` |
+| `m_SequenceName` | char[256] | `MPropertyFriendlyName sequence` `MPropertySuppressExpr` |
+| `m_hModel` | CStrongHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > | `MPropertyFriendlyName model` |
+
+### C_INIT_RandomNamedModelBodyPart
+
+**Inherits from:** [C_INIT_RandomNamedModelElement](particles.md#c_init_randomnamedmodelelement)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    C_INIT_RandomNamedModelElement <|-- C_INIT_RandomNamedModelBodyPart
+    CParticleFunctionInitializer <|-- C_INIT_RandomNamedModelElement
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+### C_INIT_RandomNamedModelElement
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Derived by:** [C_INIT_RandomNamedModelBodyPart](particles.md#c_init_randomnamedmodelbodypart), [C_INIT_RandomNamedModelMeshGroup](particles.md#c_init_randomnamedmodelmeshgroup), [C_INIT_RandomNamedModelSequence](particles.md#c_init_randomnamedmodelsequence)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RandomNamedModelElement
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_RandomNamedModelElement <|-- C_INIT_RandomNamedModelBodyPart
+    C_INIT_RandomNamedModelElement <|-- C_INIT_RandomNamedModelMeshGroup
+    C_INIT_RandomNamedModelElement <|-- C_INIT_RandomNamedModelSequence
+    C_INIT_RandomNamedModelElement *-- InfoForResourceTypeCModel
+    C_INIT_RandomNamedModelElement *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_hModel` | CStrongHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > |  |
+| `m_names` | CUtlVector< CUtlString > | `MPropertyFriendlyName names` |
+| `m_bShuffle` | bool | `MPropertyFriendlyName shuffle` |
+| `m_bLinear` | bool | `MPropertyFriendlyName linear` |
+| `m_bModelFromRenderer` | bool | `MPropertyFriendlyName model from renderer` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+
+### C_INIT_RandomNamedModelMeshGroup
+
+**Inherits from:** [C_INIT_RandomNamedModelElement](particles.md#c_init_randomnamedmodelelement)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    C_INIT_RandomNamedModelElement <|-- C_INIT_RandomNamedModelMeshGroup
+    CParticleFunctionInitializer <|-- C_INIT_RandomNamedModelElement
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+### C_INIT_RandomNamedModelSequence
+
+**Inherits from:** [C_INIT_RandomNamedModelElement](particles.md#c_init_randomnamedmodelelement)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    C_INIT_RandomNamedModelElement <|-- C_INIT_RandomNamedModelSequence
+    CParticleFunctionInitializer <|-- C_INIT_RandomNamedModelElement
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+### C_INIT_RandomRadius
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RandomRadius
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flRadiusMin` | float32 | `MPropertyAttributeRange biased 0 500` `MPropertyFriendlyName radius min` |
+| `m_flRadiusMax` | float32 | `MPropertyAttributeRange biased 0 500` `MPropertyFriendlyName radius max` |
+| `m_flRadiusRandExponent` | float32 | `MPropertyAttributeRange -2 2` `MPropertyFriendlyName radius random exponent` |
+
+### C_INIT_RandomRotation
+
+**Inherits from:** [CGeneralRandomRotation](particles.md#cgeneralrandomrotation)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CGeneralRandomRotation <|-- C_INIT_RandomRotation
+    CParticleFunctionInitializer <|-- CGeneralRandomRotation
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+### C_INIT_RandomRotationSpeed
+
+**Inherits from:** [CGeneralRandomRotation](particles.md#cgeneralrandomrotation)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CGeneralRandomRotation <|-- C_INIT_RandomRotationSpeed
+    CParticleFunctionInitializer <|-- CGeneralRandomRotation
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+### C_INIT_RandomScalar
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RandomScalar
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_RandomScalar *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flMin` | float32 | `MPropertyFriendlyName min` |
+| `m_flMax` | float32 | `MPropertyFriendlyName max` |
+| `m_flExponent` | float32 | `MPropertyFriendlyName exponent` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+
+### C_INIT_RandomSecondSequence
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RandomSecondSequence
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nSequenceMin` | int32 | `MPropertyAttributeEditor SequencePicker( 2 )` `MPropertyFriendlyName sequence min` |
+| `m_nSequenceMax` | int32 | `MPropertyAttributeEditor SequencePicker( 2 )` `MPropertyFriendlyName sequence max` |
+
+### C_INIT_RandomSequence
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RandomSequence
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_RandomSequence *-- SequenceWeightedList_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nSequenceMin` | int32 | `MPropertyAttributeEditor SequencePicker( 1 )` `MPropertyFriendlyName sequence min` |
+| `m_nSequenceMax` | int32 | `MPropertyAttributeEditor SequencePicker( 1 )` `MPropertyFriendlyName sequence max` |
+| `m_bShuffle` | bool | `MPropertyFriendlyName shuffle` |
+| `m_bLinear` | bool | `MPropertyFriendlyName linear` |
+| `m_WeightedList` | CUtlVector< [SequenceWeightedList_t](../schemas/particles.md#sequenceweightedlist_t) > | `MPropertyFriendlyName weighted list` |
+
+### C_INIT_RandomTrailLength
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RandomTrailLength
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flMinLength` | float32 | `MPropertyFriendlyName length min` |
+| `m_flMaxLength` | float32 | `MPropertyFriendlyName length max` |
+| `m_flLengthRandExponent` | float32 | `MPropertyFriendlyName length random exponent` |
+
+### C_INIT_RandomVector
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RandomVector
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_RandomVector *-- ParticleAttributeIndex_t
+    C_INIT_RandomVector *-- CRandomNumberGeneratorParameters
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecMin` | Vector | `MPropertyFriendlyName min` `MVectorIsSometimesCoordinate` |
+| `m_vecMax` | Vector | `MPropertyFriendlyName max` `MVectorIsSometimesCoordinate` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_randomnessParameters` | [CRandomNumberGeneratorParameters](../schemas/particles.md#crandomnumbergeneratorparameters) | `MPropertyFriendlyName Random number generator controls` |
+
+### C_INIT_RandomVectorComponent
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RandomVectorComponent
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_RandomVectorComponent *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flMin` | float32 | `MPropertyFriendlyName min` |
+| `m_flMax` | float32 | `MPropertyFriendlyName max` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_nComponent` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName component 0/1/2 X/Y/Z` `MVectorIsSometimesCoordinate` |
+
+### C_INIT_RandomYaw
+
+**Inherits from:** [CGeneralRandomRotation](particles.md#cgeneralrandomrotation)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CGeneralRandomRotation <|-- C_INIT_RandomYaw
+    CParticleFunctionInitializer <|-- CGeneralRandomRotation
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+### C_INIT_RandomYawFlip
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RandomYawFlip
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flPercent` | float32 | `MPropertyFriendlyName flip percentage` |
+
+### C_INIT_RemapInitialDirectionToTransformToVector
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RemapInitialDirectionToTransformToVector
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_RemapInitialDirectionToTransformToVector *-- CParticleTransformInput
+    C_INIT_RemapInitialDirectionToTransformToVector *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_TransformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName transform input` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_flScale` | float32 | `MPropertyFriendlyName scale factor` |
+| `m_flOffsetRot` | float32 | `MPropertyFriendlyName offset rotation` |
+| `m_vecOffsetAxis` | Vector | `MPropertyFriendlyName offset axis` `MVectorIsCoordinate` |
+| `m_bNormalize` | bool | `MPropertyFriendlyName normalize` |
+
+### C_INIT_RemapInitialTransformDirectionToRotation
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RemapInitialTransformDirectionToRotation
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_RemapInitialTransformDirectionToRotation *-- CParticleTransformInput
+    C_INIT_RemapInitialTransformDirectionToRotation *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_TransformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName transform input` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_rotation` `MPropertyFriendlyName rotation field` |
+| `m_flOffsetRot` | float32 | `MPropertyFriendlyName offset rotation` |
+| `m_nComponent` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName control point axis` `MVectorIsSometimesCoordinate` |
+
+### C_INIT_RemapInitialVisibilityScalar
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RemapInitialVisibilityScalar
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_RemapInitialVisibilityScalar *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_flInputMin` | float32 | `MPropertyFriendlyName visibility minimum` |
+| `m_flInputMax` | float32 | `MPropertyFriendlyName visibility maximum` |
+| `m_flOutputMin` | float32 | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | float32 | `MPropertyFriendlyName output maximum` |
+
+### C_INIT_RemapNamedModelBodyPartToScalar
+
+**Inherits from:** [C_INIT_RemapNamedModelElementToScalar](particles.md#c_init_remapnamedmodelelementtoscalar)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    C_INIT_RemapNamedModelElementToScalar <|-- C_INIT_RemapNamedModelBodyPartToScalar
+    CParticleFunctionInitializer <|-- C_INIT_RemapNamedModelElementToScalar
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+### C_INIT_RemapNamedModelElementToScalar
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Derived by:** [C_INIT_RemapNamedModelBodyPartToScalar](particles.md#c_init_remapnamedmodelbodyparttoscalar), [C_INIT_RemapNamedModelMeshGroupToScalar](particles.md#c_init_remapnamedmodelmeshgrouptoscalar), [C_INIT_RemapNamedModelSequenceToScalar](particles.md#c_init_remapnamedmodelsequencetoscalar)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RemapNamedModelElementToScalar
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_RemapNamedModelElementToScalar <|-- C_INIT_RemapNamedModelBodyPartToScalar
+    C_INIT_RemapNamedModelElementToScalar <|-- C_INIT_RemapNamedModelMeshGroupToScalar
+    C_INIT_RemapNamedModelElementToScalar <|-- C_INIT_RemapNamedModelSequenceToScalar
+    C_INIT_RemapNamedModelElementToScalar *-- InfoForResourceTypeCModel
+    C_INIT_RemapNamedModelElementToScalar *-- ParticleAttributeIndex_t
+    C_INIT_RemapNamedModelElementToScalar *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_hModel` | CStrongHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > |  |
+| `m_names` | CUtlVector< CUtlString > | `MPropertyFriendlyName names` |
+| `m_values` | CUtlVector< float32 > | `MPropertyFriendlyName remap values for names` |
+| `m_nFieldInput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName input field` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_bModelFromRenderer` | bool | `MPropertyFriendlyName model from renderer` |
+
+### C_INIT_RemapNamedModelMeshGroupToScalar
+
+**Inherits from:** [C_INIT_RemapNamedModelElementToScalar](particles.md#c_init_remapnamedmodelelementtoscalar)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    C_INIT_RemapNamedModelElementToScalar <|-- C_INIT_RemapNamedModelMeshGroupToScalar
+    CParticleFunctionInitializer <|-- C_INIT_RemapNamedModelElementToScalar
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+### C_INIT_RemapNamedModelSequenceToScalar
+
+**Inherits from:** [C_INIT_RemapNamedModelElementToScalar](particles.md#c_init_remapnamedmodelelementtoscalar)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    C_INIT_RemapNamedModelElementToScalar <|-- C_INIT_RemapNamedModelSequenceToScalar
+    CParticleFunctionInitializer <|-- C_INIT_RemapNamedModelElementToScalar
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+### C_INIT_RemapParticleCountToNamedModelBodyPartScalar
+
+**Inherits from:** [C_INIT_RemapParticleCountToNamedModelElementScalar](particles.md#c_init_remapparticlecounttonamedmodelelementscalar)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    C_INIT_RemapParticleCountToNamedModelElementScalar <|-- C_INIT_RemapParticleCountToNamedModelBodyPartScalar
+    C_INIT_RemapParticleCountToScalar <|-- C_INIT_RemapParticleCountToNamedModelElementScalar
+    CParticleFunctionInitializer <|-- C_INIT_RemapParticleCountToScalar
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+### C_INIT_RemapParticleCountToNamedModelElementScalar
+
+**Inherits from:** [C_INIT_RemapParticleCountToScalar](particles.md#c_init_remapparticlecounttoscalar)
+
+**Derived by:** [C_INIT_RemapParticleCountToNamedModelBodyPartScalar](particles.md#c_init_remapparticlecounttonamedmodelbodypartscalar), [C_INIT_RemapParticleCountToNamedModelMeshGroupScalar](particles.md#c_init_remapparticlecounttonamedmodelmeshgroupscalar), [C_INIT_RemapParticleCountToNamedModelSequenceScalar](particles.md#c_init_remapparticlecounttonamedmodelsequencescalar)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    C_INIT_RemapParticleCountToScalar <|-- C_INIT_RemapParticleCountToNamedModelElementScalar
+    CParticleFunctionInitializer <|-- C_INIT_RemapParticleCountToScalar
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_RemapParticleCountToNamedModelElementScalar <|-- C_INIT_RemapParticleCountToNamedModelBodyPartScalar
+    C_INIT_RemapParticleCountToNamedModelElementScalar <|-- C_INIT_RemapParticleCountToNamedModelMeshGroupScalar
+    C_INIT_RemapParticleCountToNamedModelElementScalar <|-- C_INIT_RemapParticleCountToNamedModelSequenceScalar
+    C_INIT_RemapParticleCountToNamedModelElementScalar *-- InfoForResourceTypeCModel
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_hModel` | CStrongHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > |  |
+| `m_outputMinName` | CUtlString | `MPropertyFriendlyName output min name` |
+| `m_outputMaxName` | CUtlString | `MPropertyFriendlyName output max name` |
+| `m_bModelFromRenderer` | bool |  |
+
+### C_INIT_RemapParticleCountToNamedModelMeshGroupScalar
+
+**Inherits from:** [C_INIT_RemapParticleCountToNamedModelElementScalar](particles.md#c_init_remapparticlecounttonamedmodelelementscalar)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    C_INIT_RemapParticleCountToNamedModelElementScalar <|-- C_INIT_RemapParticleCountToNamedModelMeshGroupScalar
+    C_INIT_RemapParticleCountToScalar <|-- C_INIT_RemapParticleCountToNamedModelElementScalar
+    CParticleFunctionInitializer <|-- C_INIT_RemapParticleCountToScalar
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+### C_INIT_RemapParticleCountToNamedModelSequenceScalar
+
+**Inherits from:** [C_INIT_RemapParticleCountToNamedModelElementScalar](particles.md#c_init_remapparticlecounttonamedmodelelementscalar)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    C_INIT_RemapParticleCountToNamedModelElementScalar <|-- C_INIT_RemapParticleCountToNamedModelSequenceScalar
+    C_INIT_RemapParticleCountToScalar <|-- C_INIT_RemapParticleCountToNamedModelElementScalar
+    CParticleFunctionInitializer <|-- C_INIT_RemapParticleCountToScalar
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+### C_INIT_RemapParticleCountToScalar
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Derived by:** [C_INIT_RemapParticleCountToNamedModelElementScalar](particles.md#c_init_remapparticlecounttonamedmodelelementscalar)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RemapParticleCountToScalar
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_RemapParticleCountToScalar <|-- C_INIT_RemapParticleCountToNamedModelElementScalar
+    C_INIT_RemapParticleCountToScalar *-- ParticleAttributeIndex_t
+    C_INIT_RemapParticleCountToScalar *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_nInputMin` | int32 | `MPropertyFriendlyName input minimum` |
+| `m_nInputMax` | int32 | `MPropertyFriendlyName input maximum` |
+| `m_nScaleControlPoint` | int32 | `MPropertyFriendlyName input scale control point` |
+| `m_nScaleControlPointField` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName input scale control point field` |
+| `m_flOutputMin` | float32 | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | float32 | `MPropertyFriendlyName output maximum` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_bActiveRange` | bool | `MPropertyFriendlyName only active within specified input range` |
+| `m_bInvert` | bool | `MPropertyFriendlyName invert input from total particle count` |
+| `m_bWrap` | bool | `MPropertyFriendlyName wrap input` |
+| `m_flRemapBias` | float32 | `MPropertyFriendlyName remap bias` |
+
+### C_INIT_RemapQAnglesToRotation
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RemapQAnglesToRotation
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_RemapQAnglesToRotation *-- CParticleTransformInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_TransformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName transform input` |
+
+### C_INIT_RemapScalarToVector
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RemapScalarToVector
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_RemapScalarToVector *-- ParticleAttributeIndex_t
+    C_INIT_RemapScalarToVector *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldInput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName input field` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_flInputMin` | float32 | `MPropertyFriendlyName input minimum` |
+| `m_flInputMax` | float32 | `MPropertyFriendlyName input maximum` |
+| `m_vecOutputMin` | Vector | `MPropertyFriendlyName output minimum` `MVectorIsSometimesCoordinate` |
+| `m_vecOutputMax` | Vector | `MPropertyFriendlyName output maximum` `MVectorIsSometimesCoordinate` |
+| `m_flStartTime` | float32 | `MPropertyFriendlyName emitter lifetime start time (seconds)` |
+| `m_flEndTime` | float32 | `MPropertyFriendlyName emitter lifetime end time (seconds)` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_bLocalCoords` | bool | `MPropertyFriendlyName use local system` |
+| `m_flRemapBias` | float32 | `MPropertyFriendlyName remap bias` |
+
+### C_INIT_RemapTransformOrientationToRotations
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RemapTransformOrientationToRotations
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_RemapTransformOrientationToRotations *-- CParticleTransformInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_TransformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName transform input` |
+| `m_vecRotation` | Vector | `MPropertyFriendlyName offset pitch/yaw/roll` |
+| `m_bUseQuat` | bool | `MPropertyFriendlyName Use Quaternians Internally` |
+| `m_bWriteNormal` | bool | `MPropertyFriendlyName Write normal instead of rotation` |
+
+### C_INIT_RemapTransformToVector
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RemapTransformToVector
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_RemapTransformToVector *-- ParticleAttributeIndex_t
+    C_INIT_RemapTransformToVector *-- CParticleTransformInput
+    C_INIT_RemapTransformToVector *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_vInputMin` | Vector | `MPropertyFriendlyName input minimum` `MVectorIsSometimesCoordinate` |
+| `m_vInputMax` | Vector | `MPropertyFriendlyName input maximum` `MVectorIsSometimesCoordinate` |
+| `m_vOutputMin` | Vector | `MPropertyFriendlyName output minimum` `MVectorIsSometimesCoordinate` |
+| `m_vOutputMax` | Vector | `MPropertyFriendlyName output maximum` `MVectorIsSometimesCoordinate` |
+| `m_TransformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName transform input` |
+| `m_LocalSpaceTransform` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MParticleInputOptional` `MPropertyFriendlyName local space transform` |
+| `m_flStartTime` | float32 | `MPropertyFriendlyName emitter lifetime start time (seconds)` |
+| `m_flEndTime` | float32 | `MPropertyFriendlyName emitter lifetime end time (seconds)` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_bOffset` | bool | `MPropertyFriendlyName offset position` |
+| `m_bAccelerate` | bool | `MPropertyFriendlyName accelerate position` |
+| `m_flRemapBias` | float32 | `MPropertyFriendlyName remap bias` |
+
+### C_INIT_RingWave
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RingWave
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_RingWave *-- CParticleTransformInput
+    C_INIT_RingWave *-- CParticleCollectionFloatInput
+    C_INIT_RingWave *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_TransformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName input transform` |
+| `m_flParticlesPerOrbit` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName even distribution count` |
+| `m_flInitialRadius` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName initial radius` |
+| `m_flThickness` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName thickness` |
+| `m_flInitialSpeedMin` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName min initial speed` |
+| `m_flInitialSpeedMax` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName max initial speed` |
+| `m_flRoll` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName roll` |
+| `m_flPitch` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName pitch` |
+| `m_flYaw` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName yaw` |
+| `m_bEvenDistribution` | bool | `MPropertyFriendlyName even distribution` |
+| `m_bXYVelocityOnly` | bool | `MPropertyFriendlyName XY velocity only` |
+
+### C_INIT_RtEnvCull
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_RtEnvCull
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecTestDir` | Vector | `MPropertyFriendlyName test direction` `MVectorIsCoordinate` |
+| `m_vecTestNormal` | Vector | `MPropertyFriendlyName cull normal` `MVectorIsCoordinate` |
+| `m_bUseVelocity` | bool | `MPropertyFriendlyName use velocity for test direction` |
+| `m_bCullOnMiss` | bool | `MPropertyFriendlyName cull on miss` |
+| `m_bLifeAdjust` | bool | `MPropertyFriendlyName velocity test adjust lifespan` |
+| `m_RtEnvName` | char[128] | `MPropertyFriendlyName ray trace environment name` |
+| `m_nRTEnvCP` | int32 | `MPropertyFriendlyName ray trace environment cp` |
+| `m_nComponent` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName rt env control point component` |
+
+### C_INIT_ScaleVelocity
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_ScaleVelocity
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_ScaleVelocity *-- CParticleCollectionVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecScale` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName velocity scale` `MVectorIsCoordinate` |
+
+### C_INIT_ScreenSpacePositionOfTarget
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_ScreenSpacePositionOfTarget
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_ScreenSpacePositionOfTarget *-- CPerParticleVecInput
+    C_INIT_ScreenSpacePositionOfTarget *-- ParticleAttributeIndex_t
+    C_INIT_ScreenSpacePositionOfTarget *-- CParticleRemapFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecTargetPosition` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName target position` `MVectorIsCoordinate` |
+| `m_bOututBehindness` | bool | `MPropertyFriendlyName output behindness` |
+| `m_nBehindFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName behindness output field` `MPropertySuppressExpr` |
+| `m_flBehindOutputRemap` | [CParticleRemapFloatInput](../schemas/particleslib.md#cparticleremapfloatinput) | `MPropertyFriendlyName behindness output remap` `MPropertySuppressExpr` |
+
+### C_INIT_SequenceFromCP
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_SequenceFromCP
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bKillUnused` | bool | `MPropertyFriendlyName kill unused` |
+| `m_bRadiusScale` | bool | `MPropertyFriendlyName offset propotional to radius` |
+| `m_nCP` | int32 | `MPropertyFriendlyName control point` |
+| `m_vecOffset` | Vector | `MPropertyFriendlyName per particle spatial offset` `MVectorIsCoordinate` |
+
+### C_INIT_SequenceLifeTime
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_SequenceLifeTime
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flFramerate` | float32 | `MPropertyFriendlyName frames per second` |
+
+### C_INIT_SetAttributeToScalarExpression
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_SetAttributeToScalarExpression
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_SetAttributeToScalarExpression *-- ScalarExpressionType_t
+    C_INIT_SetAttributeToScalarExpression *-- CPerParticleFloatInput
+    C_INIT_SetAttributeToScalarExpression *-- CParticleRemapFloatInput
+    C_INIT_SetAttributeToScalarExpression *-- ParticleAttributeIndex_t
+    C_INIT_SetAttributeToScalarExpression *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nExpression` | [ScalarExpressionType_t](../schemas/!GlobalTypes.md#scalarexpressiontype_t) | `MPropertyFriendlyName expression` |
+| `m_flInput1` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName input 1` |
+| `m_flInput2` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName input 2` |
+| `m_flOutputRemap` | [CParticleRemapFloatInput](../schemas/particleslib.md#cparticleremapfloatinput) | `MPropertyFriendlyName output` |
+| `m_nOutputField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+
+### C_INIT_SetFloatAttributeToVectorExpression
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_SetFloatAttributeToVectorExpression
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_SetFloatAttributeToVectorExpression *-- VectorFloatExpressionType_t
+    C_INIT_SetFloatAttributeToVectorExpression *-- CPerParticleVecInput
+    C_INIT_SetFloatAttributeToVectorExpression *-- CParticleRemapFloatInput
+    C_INIT_SetFloatAttributeToVectorExpression *-- ParticleAttributeIndex_t
+    C_INIT_SetFloatAttributeToVectorExpression *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nExpression` | [VectorFloatExpressionType_t](../schemas/!GlobalTypes.md#vectorfloatexpressiontype_t) | `MPropertyFriendlyName expression` |
+| `m_vInput1` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName input 1` |
+| `m_vInput2` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName input 2` |
+| `m_flOutputRemap` | [CParticleRemapFloatInput](../schemas/particleslib.md#cparticleremapfloatinput) | `MPropertyFriendlyName output` |
+| `m_nOutputField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+
+### C_INIT_SetHitboxToClosest
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_SetHitboxToClosest
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_SetHitboxToClosest *-- CParticleCollectionVecInput
+    C_INIT_SetHitboxToClosest *-- ClosestPointTestType_t
+    C_INIT_SetHitboxToClosest *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_nDesiredHitbox` | int32 | `MPropertyFriendlyName desired hitbox` |
+| `m_vecHitBoxScale` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName model hitbox scale` |
+| `m_HitboxSetName` | char[128] | `MPropertyFriendlyName hitbox set` |
+| `m_bUseBones` | bool | `MPropertyFriendlyName use bones instead of hitboxes` |
+| `m_bUseClosestPointOnHitbox` | bool | `MPropertyFriendlyName get closest point on closest hitbox` |
+| `m_nTestType` | [ClosestPointTestType_t](../schemas/!GlobalTypes.md#closestpointtesttype_t) | `MPropertyFriendlyName closest point test type` |
+| `m_flHybridRatio` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName hybrid ratio` |
+| `m_bUpdatePosition` | bool | `MPropertyFriendlyName set initial position` |
+
+### C_INIT_SetHitboxToModel
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_SetHitboxToModel
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_SetHitboxToModel *-- CParticleCollectionVecInput
+    C_INIT_SetHitboxToModel *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_nForceInModel` | int32 | `MPropertyFriendlyName force to be inside model` |
+| `m_bEvenDistribution` | bool | `MPropertyFriendlyName even distribution` |
+| `m_nDesiredHitbox` | int32 | `MPropertyFriendlyName desired hitbox` |
+| `m_vecHitBoxScale` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName model hitbox scale` |
+| `m_vecDirectionBias` | Vector | `MPropertyFriendlyName direction bias` `MVectorIsCoordinate` |
+| `m_bMaintainHitbox` | bool | `MPropertyFriendlyName maintain existing hitbox` |
+| `m_bUseBones` | bool | `MPropertyFriendlyName use bones instead of hitboxes` |
+| `m_HitboxSetName` | char[128] | `MPropertyFriendlyName hitbox set` |
+| `m_flShellSize` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName hitbox shell thickness` |
+
+### C_INIT_SetRigidAttachment
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_SetRigidAttachment
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_SetRigidAttachment *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_nFieldInput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName attribute to read from` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName attribute to cache to` |
+| `m_bLocalSpace` | bool | `MPropertyFriendlyName local space` |
+
+### C_INIT_SetVectorAttributeToVectorExpression
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_SetVectorAttributeToVectorExpression
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_SetVectorAttributeToVectorExpression *-- VectorExpressionType_t
+    C_INIT_SetVectorAttributeToVectorExpression *-- CPerParticleVecInput
+    C_INIT_SetVectorAttributeToVectorExpression *-- CPerParticleFloatInput
+    C_INIT_SetVectorAttributeToVectorExpression *-- ParticleAttributeIndex_t
+    C_INIT_SetVectorAttributeToVectorExpression *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nExpression` | [VectorExpressionType_t](../schemas/!GlobalTypes.md#vectorexpressiontype_t) | `MPropertyFriendlyName expression` |
+| `m_vInput1` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName input 1` |
+| `m_vInput2` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName input 2` |
+| `m_flLerp` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName lerp value` `MPropertySuppressExpr` |
+| `m_nOutputField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_bNormalizedOutput` | bool | `MPropertyFriendlyName normalize result` |
+
+### C_INIT_SkyVisCull
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_SkyVisCull
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_SkyVisCull *-- CParticleCollectionVecInput
+    C_INIT_SkyVisCull *-- ParticleTraceSet_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecTestDir` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName test direction` `MVectorIsCoordinate` |
+| `m_nTraceSet` | [ParticleTraceSet_t](../schemas/!GlobalTypes.md#particletraceset_t) | `MPropertyFriendlyName Trace Set` `MPropertySuppressExpr` |
+| `m_bCullOnSky` | bool | `MPropertyFriendlyName cull on sky` |
+
+### C_INIT_StatusEffect
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_StatusEffect
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_StatusEffect *-- Detail2Combo_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nDetail2Combo` | [Detail2Combo_t](../schemas/!GlobalTypes.md#detail2combo_t) | `MPropertyFriendlyName D_DETAIL_2` |
+| `m_flDetail2Rotation` | float32 | `MPropertyFriendlyName $DETAIL2ROTATION` |
+| `m_flDetail2Scale` | float32 | `MPropertyFriendlyName $DETAIL2SCALE` |
+| `m_flDetail2BlendFactor` | float32 | `MPropertyFriendlyName $DETAIL2BLENDFACTOR` |
+| `m_flColorWarpIntensity` | float32 | `MPropertyFriendlyName $COLORWARPINTENSITY` |
+| `m_flDiffuseWarpBlendToFull` | float32 | `MPropertyFriendlyName $DIFFUSEWARPBLENDTOFULL` |
+| `m_flEnvMapIntensity` | float32 | `MPropertyFriendlyName $ENVMAPINTENSITY` |
+| `m_flAmbientScale` | float32 | `MPropertyFriendlyName $AMBIENTSCALE` |
+| `m_specularColor` | Color | `MPropertyFriendlyName $SPECULARCOLOR` |
+| `m_flSpecularScale` | float32 | `MPropertyFriendlyName $SPECULARSCALE` |
+| `m_flSpecularExponent` | float32 | `MPropertyFriendlyName $SPECULAREXPONENT` |
+| `m_flSpecularExponentBlendToFull` | float32 | `MPropertyFriendlyName $SPECULAREXPONENTBLENDTOFULL` |
+| `m_flSpecularBlendToFull` | float32 | `MPropertyFriendlyName $SPECULARBLENDTOFULL` |
+| `m_rimLightColor` | Color | `MPropertyFriendlyName $RIMLIGHTCOLOR` |
+| `m_flRimLightScale` | float32 | `MPropertyFriendlyName $RIMLIGHTSCALE` |
+| `m_flReflectionsTintByBaseBlendToNone` | float32 | `MPropertyFriendlyName $REFLECTIONSTINTBYBASEBLENDTONONE` |
+| `m_flMetalnessBlendToFull` | float32 | `MPropertyFriendlyName $METALNESSBLENDTOFULL` |
+| `m_flSelfIllumBlendToFull` | float32 | `MPropertyFriendlyName $SELFILLUMBLENDTOFULL` |
+
+### C_INIT_StatusEffectCitadel
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_StatusEffectCitadel
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_StatusEffectCitadel *-- DetailCombo_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flSFXColorWarpAmount` | float32 | `MPropertyFriendlyName $SFXColorWarpAmount` |
+| `m_flSFXNormalAmount` | float32 | `MPropertyFriendlyName $SFXNormalAmount` |
+| `m_flSFXMetalnessAmount` | float32 | `MPropertyFriendlyName $SFXMetalnessAmount` |
+| `m_flSFXRoughnessAmount` | float32 | `MPropertyFriendlyName $SFXRoughnessAmount` |
+| `m_flSFXSelfIllumAmount` | float32 | `MPropertyFriendlyName $SFXSelfIllumAmount` |
+| `m_flSFXSScale` | float32 | `MPropertyFriendlyName $SFXTextureScale` |
+| `m_flSFXSScrollX` | float32 | `MPropertyFriendlyName $SFXTextureScrollX` |
+| `m_flSFXSScrollY` | float32 | `MPropertyFriendlyName $SFXTextureScrollY` |
+| `m_flSFXSScrollZ` | float32 | `MPropertyFriendlyName $SFXTextureScrollZ` |
+| `m_flSFXSOffsetX` | float32 | `MPropertyFriendlyName $SFXTextureOffsetX` |
+| `m_flSFXSOffsetY` | float32 | `MPropertyFriendlyName $SFXTextureOffsetY` |
+| `m_flSFXSOffsetZ` | float32 | `MPropertyFriendlyName $SFXTextureOffsetZ` |
+| `m_nDetailCombo` | [DetailCombo_t](../schemas/!GlobalTypes.md#detailcombo_t) | `MPropertyFriendlyName D_DETAIL` |
+| `m_flSFXSDetailAmount` | float32 | `MPropertyFriendlyName $SFXDetailAmount` |
+| `m_flSFXSDetailScale` | float32 | `MPropertyFriendlyName $SFXDetailTextureScale` |
+| `m_flSFXSDetailScrollX` | float32 | `MPropertyFriendlyName $SFXDetailTextureScrollX` |
+| `m_flSFXSDetailScrollY` | float32 | `MPropertyFriendlyName $SFXDetailTextureScrollY` |
+| `m_flSFXSDetailScrollZ` | float32 | `MPropertyFriendlyName $SFXDetailTextureScrollZ` |
+| `m_flSFXSUseModelUVs` | float32 | `MPropertyFriendlyName $SFXUseModelUVs` |
+
+### C_INIT_VelocityFromCP
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_VelocityFromCP
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_VelocityFromCP *-- CParticleCollectionVecInput
+    C_INIT_VelocityFromCP *-- CParticleTransformInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_velocityInput` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName velocity` |
+| `m_transformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MParticleInputOptional` `MPropertyFriendlyName local space` |
+| `m_flVelocityScale` | float32 | `MPropertyFriendlyName velocity scale` |
+| `m_bDirectionOnly` | bool | `MPropertyFriendlyName direction only` |
+
+### C_INIT_VelocityFromNormal
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_VelocityFromNormal
+    CParticleFunction <|-- CParticleFunctionInitializer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_fSpeedMin` | float32 | `MPropertyFriendlyName random speed min` |
+| `m_fSpeedMax` | float32 | `MPropertyFriendlyName random speed max` |
+| `m_bIgnoreDt` | bool | `MPropertyFriendlyName ignore delta time` |
+
+### C_INIT_VelocityRadialRandom
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_VelocityRadialRandom
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_VelocityRadialRandom *-- CPerParticleVecInput
+    C_INIT_VelocityRadialRandom *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bPerParticleCenter` | bool | `MPropertyFriendlyName per-particle center point` |
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` `MPropertySuppressExpr` |
+| `m_vecPosition` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName radial center point` `MPropertySuppressExpr` |
+| `m_vecFwd` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName radial center forward` `MPropertySuppressExpr` |
+| `m_fSpeedMin` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName random speed min` |
+| `m_fSpeedMax` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName random speed max` |
+| `m_vecLocalCoordinateSystemSpeedScale` | Vector | `MPropertyFriendlyName local space scale` |
+| `m_bIgnoreDelta` | bool | `MPropertyFriendlyName ignore delta time` |
+
+### C_INIT_VelocityRandom
+
+**Inherits from:** [CParticleFunctionInitializer](particles.md#cparticlefunctioninitializer)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionInitializer <|-- C_INIT_VelocityRandom
+    CParticleFunction <|-- CParticleFunctionInitializer
+    C_INIT_VelocityRandom *-- CPerParticleFloatInput
+    C_INIT_VelocityRandom *-- CPerParticleVecInput
+    C_INIT_VelocityRandom *-- CRandomNumberGeneratorParameters
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_fSpeedMin` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName random speed min` |
+| `m_fSpeedMax` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName random speed max` |
+| `m_LocalCoordinateSystemSpeedMin` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName speed in local coordinate system min` `MVectorIsCoordinate` |
+| `m_LocalCoordinateSystemSpeedMax` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName speed in local coordinate system max` `MVectorIsCoordinate` |
+| `m_bIgnoreDT` | bool | `MPropertyFriendlyName Ignore delta time (RenderTrails)` |
+| `m_randomnessParameters` | [CRandomNumberGeneratorParameters](../schemas/particles.md#crandomnumbergeneratorparameters) | `MPropertyFriendlyName Random number generator controls` |
+
+### C_OP_AlphaDecay
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_AlphaDecay
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flMinAlpha` | float32 | `MPropertyFriendlyName minimum alpha` |
+
+### C_OP_AttractToControlPoint
+
+**Inherits from:** [CParticleFunctionForce](particles.md#cparticlefunctionforce)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionForce <|-- C_OP_AttractToControlPoint
+    CParticleFunction <|-- CParticleFunctionForce
+    C_OP_AttractToControlPoint *-- CPerParticleFloatInput
+    C_OP_AttractToControlPoint *-- CParticleTransformInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecComponentScale` | Vector | `MPropertyFriendlyName component scale` `MVectorIsCoordinate` |
+| `m_fForceAmount` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName amount of force (or Max Force)` |
+| `m_fMinimumDistance` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName event horizon threshold distance for max force` |
+| `m_fFalloffPower` | float32 | `MPropertyFriendlyName falloff power` |
+| `m_TransformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName input position transform` |
+| `m_fForceAmountMin` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Min Pullforce` |
+| `m_bApplyMinForce` | bool | `MPropertyFriendlyName Apply Min Pullforce` |
+
+### C_OP_BasicMovement
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_BasicMovement
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_BasicMovement *-- CParticleCollectionVecInput
+    C_OP_BasicMovement *-- CParticleCollectionFloatInput
+    C_OP_BasicMovement *-- CParticleMassCalculationParameters
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Gravity` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName gravity` `MVectorIsCoordinate` |
+| `m_fDrag` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyAttributeRange -1 1` `MPropertyFriendlyName drag` |
+| `m_massControls` | [CParticleMassCalculationParameters](../schemas/particles.md#cparticlemasscalculationparameters) | `MPropertyFriendlyName Mass controls` |
+| `m_nMaxConstraintPasses` | int32 | `MPropertyFriendlyName max constraint passes` |
+| `m_bUseNewCode` | bool | `MPropertyFriendlyName use new code` |
+
+### C_OP_BoxConstraint
+
+**Inherits from:** [CParticleFunctionConstraint](particles.md#cparticlefunctionconstraint)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionConstraint <|-- C_OP_BoxConstraint
+    CParticleFunction <|-- CParticleFunctionConstraint
+    C_OP_BoxConstraint *-- CParticleCollectionVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecMin` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName min coords` |
+| `m_vecMax` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName max coords` |
+| `m_nCP` | int32 | `MPropertyFriendlyName control point` |
+| `m_bLocalSpace` | bool | `MPropertyFriendlyName use local space` |
+| `m_bAccountForRadius` | bool | `MPropertyFriendlyName Take radius into account` |
+
+### C_OP_CPOffsetToPercentageBetweenCPs
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_CPOffsetToPercentageBetweenCPs
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flInputMin` | float32 | `MPropertyFriendlyName percentage minimum` |
+| `m_flInputMax` | float32 | `MPropertyFriendlyName percentage maximum` |
+| `m_flInputBias` | float32 | `MPropertyFriendlyName percentage bias` |
+| `m_nStartCP` | int32 | `MPropertyFriendlyName starting control point` |
+| `m_nEndCP` | int32 | `MPropertyFriendlyName ending control point` |
+| `m_nOffsetCP` | int32 | `MPropertyFriendlyName offset control point` |
+| `m_nOuputCP` | int32 | `MPropertyFriendlyName output control point` |
+| `m_nInputCP` | int32 | `MPropertyFriendlyName input control point` |
+| `m_bRadialCheck` | bool | `MPropertyFriendlyName treat distance between points as radius` |
+| `m_bScaleOffset` | bool | `MPropertyFriendlyName treat offset as scale of total distance` |
+| `m_vecOffset` | Vector | `MPropertyFriendlyName offset amount` `MVectorIsCoordinate` |
+
+### C_OP_CPVelocityForce
+
+**Inherits from:** [CParticleFunctionForce](particles.md#cparticlefunctionforce)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionForce <|-- C_OP_CPVelocityForce
+    CParticleFunction <|-- CParticleFunctionForce
+    C_OP_CPVelocityForce *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point` |
+| `m_flScale` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName velocity scale` |
+
+### C_OP_CalculateVectorAttribute
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_CalculateVectorAttribute
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_CalculateVectorAttribute *-- ParticleAttributeIndex_t
+    C_OP_CalculateVectorAttribute *-- ControlPointReference_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vStartValue` | Vector | `MPropertyFriendlyName start value` |
+| `m_nFieldInput1` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName input field 1` |
+| `m_flInputScale1` | float32 | `MPropertyFriendlyName input scale 1` |
+| `m_nFieldInput2` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName input field 2` |
+| `m_flInputScale2` | float32 | `MPropertyFriendlyName input scale 2` |
+| `m_nControlPointInput1` | [ControlPointReference_t](../schemas/particles.md#controlpointreference_t) | `MPropertyFriendlyName control point input 1` |
+| `m_flControlPointScale1` | float32 | `MPropertyFriendlyName control point scale 1` |
+| `m_nControlPointInput2` | [ControlPointReference_t](../schemas/particles.md#controlpointreference_t) | `MPropertyFriendlyName control point input 2` |
+| `m_flControlPointScale2` | float32 | `MPropertyFriendlyName control point scale 2` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_vFinalOutputScale` | Vector | `MPropertyFriendlyName final per component scale` |
+
+### C_OP_Callback
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_Callback
+    CParticleFunction <|-- CParticleFunctionRenderer
+```
+
+### C_OP_ChladniWave
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_ChladniWave
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_ChladniWave *-- ParticleAttributeIndex_t
+    C_OP_ChladniWave *-- CPerParticleFloatInput
+    C_OP_ChladniWave *-- CPerParticleVecInput
+    C_OP_ChladniWave *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_flInputMin` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName wave minimum` |
+| `m_flInputMax` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName wave maximum` |
+| `m_flOutputMin` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName output maximum` |
+| `m_vecWaveLength` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName wave length` |
+| `m_vecHarmonics` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName harmonics` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_nLocalSpaceControlPoint` | int32 | `MPropertyFriendlyName local space control point` |
+| `m_b3D` | bool | `MPropertyFriendlyName 3D` |
+
+### C_OP_ChooseRandomChildrenInGroup
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_ChooseRandomChildrenInGroup
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_ChooseRandomChildrenInGroup *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nChildGroupID` | int32 | `MPropertyFriendlyName group ID to affect` |
+| `m_flNumberOfChildren` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Number of Children to Use` |
+
+### C_OP_ClampScalar
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_ClampScalar
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_ClampScalar *-- ParticleAttributeIndex_t
+    C_OP_ClampScalar *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_flOutputMin` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName output maximum` |
+
+### C_OP_ClampVector
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_ClampVector
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_ClampVector *-- ParticleAttributeIndex_t
+    C_OP_ClampVector *-- CPerParticleVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_vecOutputMin` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName output minimum` `MVectorIsSometimesCoordinate` |
+| `m_vecOutputMax` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName output maximum` `MVectorIsSometimesCoordinate` |
+
+### C_OP_ClientPhysics
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_ClientPhysics
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_ClientPhysics *-- CParticleCollectionFloatInput
+    C_OP_ClientPhysics *-- ParticleColorBlendType_t
+    C_OP_ClientPhysics *-- ParticleAttrBoxFlags_t
+    C_OP_ClientPhysics *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_strPhysicsType` | CUtlString | `MPropertyAttributeEditor VDataChoice( scripts/misc.vdata!generic_physics_particle_spawner )` `MPropertyFriendlyName client physics type` |
+| `m_bStartAsleep` | bool | `MPropertyFriendlyName start all physics asleep` |
+| `m_flPlayerWakeRadius` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Player Wake Radius` |
+| `m_flVehicleWakeRadius` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Vehicle Wake Radius` |
+| `m_bUseHighQualitySimulation` | bool | `MPropertyFriendlyName use high quality simulation` |
+| `m_nMaxParticleCount` | int32 | `MPropertyFriendlyName max particle count` |
+| `m_bRespectExclusionVolumes` | bool | `MPropertyFriendlyName prevent spawning in exclusion volumes` `MPropertySuppressExpr` |
+| `m_bKillParticles` | bool | `MPropertyFriendlyName kill physics particles` |
+| `m_bDeleteSim` | bool | `MPropertyFriendlyName delete physics sim when stopped` `MPropertySuppressExpr` |
+| `m_nControlPoint` | int32 | `MPropertyFriendlyName control point (for finding nearest sim)` `MPropertySuppressExpr` |
+| `m_nForcedSimId` | int32 | `MPropertyFriendlyName specific sim id` `MPropertySuppressExpr` |
+| `m_nColorBlendType` | [ParticleColorBlendType_t](../schemas/!GlobalTypes.md#particlecolorblendtype_t) | `MPropertyFriendlyName tint blend (color vs prop group gradient)` |
+| `m_nForcedStatusEffects` | [ParticleAttrBoxFlags_t](../schemas/!GlobalTypes.md#particleattrboxflags_t) | `MPropertyFriendlyName forced status effect flags` |
+| `m_nNoCollisionAttribute` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName Disable Non-Static Collision Duration` `MPropertySuppressExpr` |
+| `m_nZeroGravityAttribute` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName Zero Gravity Duration` `MPropertySuppressExpr` |
+
+### C_OP_CollideWithParentParticles
+
+**Inherits from:** [CParticleFunctionConstraint](particles.md#cparticlefunctionconstraint)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionConstraint <|-- C_OP_CollideWithParentParticles
+    CParticleFunction <|-- CParticleFunctionConstraint
+    C_OP_CollideWithParentParticles *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flParentRadiusScale` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName parent particle radius scale` |
+| `m_flRadiusScale` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName particle radius scale` |
+
+### C_OP_CollideWithSelf
+
+**Inherits from:** [CParticleFunctionConstraint](particles.md#cparticlefunctionconstraint)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionConstraint <|-- C_OP_CollideWithSelf
+    CParticleFunction <|-- CParticleFunctionConstraint
+    C_OP_CollideWithSelf *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flRadiusScale` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName particle radius scale` |
+| `m_flMinimumSpeed` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName minimum speed for check` |
+
+### C_OP_ColorAdjustHSL
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_ColorAdjustHSL
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_ColorAdjustHSL *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flHueAdjust` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName hue adjust` |
+| `m_flSaturationAdjust` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName saturation adjust` |
+| `m_flLightnessAdjust` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName lightness adjust` |
+
+### C_OP_ColorInterpolate
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_ColorInterpolate
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_ColorInterpolate *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_ColorFade` | Color | `MPropertyFriendlyName color fade` |
+| `m_flFadeStartTime` | float32 | `MPropertyFriendlyName fade start time` |
+| `m_flFadeEndTime` | float32 | `MPropertyFriendlyName fade end time` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_bEaseInOut` | bool | `MPropertyFriendlyName ease in and out` |
+
+### C_OP_ColorInterpolateRandom
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_ColorInterpolateRandom
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_ColorInterpolateRandom *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_ColorFadeMin` | Color | `MPropertyFriendlyName color fade min` |
+| `m_ColorFadeMax` | Color | `MPropertyFriendlyName color fade max` |
+| `m_flFadeStartTime` | float32 | `MPropertyFriendlyName fade start time` |
+| `m_flFadeEndTime` | float32 | `MPropertyFriendlyName fade end time` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_bEaseInOut` | bool | `MPropertyFriendlyName ease in and out` |
+
+### C_OP_ConnectParentParticleToNearest
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_ConnectParentParticleToNearest
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_ConnectParentParticleToNearest *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFirstControlPoint` | int32 | `MPropertyFriendlyName control point to set` |
+| `m_nSecondControlPoint` | int32 | `MPropertyFriendlyName Second Control point to set` |
+| `m_bUseRadius` | bool | `MPropertyFriendlyName Take radius into account for distance` |
+| `m_flRadiusScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Radius scale for distance calc` `MPropertySuppressExpr` |
+| `m_flParentRadiusScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Parent radius scale for distance calc` `MPropertySuppressExpr` |
+
+### C_OP_ConstrainDistance
+
+**Inherits from:** [CParticleFunctionConstraint](particles.md#cparticlefunctionconstraint)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionConstraint <|-- C_OP_ConstrainDistance
+    CParticleFunction <|-- CParticleFunctionConstraint
+    C_OP_ConstrainDistance *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_fMinDistance` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName minimum distance` |
+| `m_fMaxDistance` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName maximum distance` |
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_CenterOffset` | Vector | `MPropertyFriendlyName offset of center` `MVectorIsCoordinate` |
+| `m_bGlobalCenter` | bool | `MPropertyFriendlyName global center point` |
+
+### C_OP_ConstrainDistanceToPath
+
+**Inherits from:** [CParticleFunctionConstraint](particles.md#cparticlefunctionconstraint)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionConstraint <|-- C_OP_ConstrainDistanceToPath
+    CParticleFunction <|-- CParticleFunctionConstraint
+    C_OP_ConstrainDistanceToPath *-- CPathParameters
+    C_OP_ConstrainDistanceToPath *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_fMinDistance` | float32 | `MPropertyFriendlyName minimum distance` |
+| `m_flMaxDistance0` | float32 | `MPropertyFriendlyName maximum distance` |
+| `m_flMaxDistanceMid` | float32 | `MPropertyFriendlyName maximum distance middle` |
+| `m_flMaxDistance1` | float32 | `MPropertyFriendlyName maximum distance end` |
+| `m_PathParameters` | [CPathParameters](../schemas/particles.md#cpathparameters) |  |
+| `m_flTravelTime` | float32 | `MPropertyFriendlyName travel time` |
+| `m_nFieldScale` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName travel time scale field` |
+| `m_nManualTField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName manual time placement field` |
+
+### C_OP_ConstrainDistanceToUserSpecifiedPath
+
+**Inherits from:** [CParticleFunctionConstraint](particles.md#cparticlefunctionconstraint)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionConstraint <|-- C_OP_ConstrainDistanceToUserSpecifiedPath
+    CParticleFunction <|-- CParticleFunctionConstraint
+    C_OP_ConstrainDistanceToUserSpecifiedPath *-- PointDefinitionWithTimeValues_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_fMinDistance` | float32 | `MPropertyFriendlyName minimum distance` |
+| `m_flMaxDistance` | float32 | `MPropertyFriendlyName maximum distance` |
+| `m_flTimeScale` | float32 | `MPropertyFriendlyName Time scale` |
+| `m_bLoopedPath` | bool | `MPropertyFriendlyName Treat path as a loop` |
+| `m_pointList` | CUtlVector< [PointDefinitionWithTimeValues_t](../schemas/particles.md#pointdefinitionwithtimevalues_t) > | `MPropertyFriendlyName path points` |
+
+### C_OP_ConstrainLineLength
+
+**Inherits from:** [CParticleFunctionConstraint](particles.md#cparticlefunctionconstraint)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionConstraint <|-- C_OP_ConstrainLineLength
+    CParticleFunction <|-- CParticleFunctionConstraint
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flMinDistance` | float32 | `MPropertyFriendlyName minimum length` |
+| `m_flMaxDistance` | float32 | `MPropertyFriendlyName maximum length` |
+
+### C_OP_ContinuousEmitter
+
+**Inherits from:** [CParticleFunctionEmitter](particles.md#cparticlefunctionemitter)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionEmitter <|-- C_OP_ContinuousEmitter
+    CParticleFunction <|-- CParticleFunctionEmitter
+    C_OP_ContinuousEmitter *-- CParticleCollectionFloatInput
+    C_OP_ContinuousEmitter *-- EventTypeSelection_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flEmissionDuration` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName emission duration` |
+| `m_flStartTime` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName emission start time` |
+| `m_flEmitRate` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName emission rate` |
+| `m_flEmissionScale` | float32 | `MParticleMaxVersion` `MPropertyFriendlyName scale emission to used control points` |
+| `m_flScalePerParentParticle` | float32 | `MPropertyFriendlyName scale emission by parent particle count` |
+| `m_bInitFromKilledParentParticles` | bool | `MPropertyFriendlyName emit particles for parent particle events` |
+| `m_nEventType` | [EventTypeSelection_t](../schemas/!GlobalTypes.md#eventtypeselection_t) | `MPropertyFriendlyName emission parent particle event type` `MPropertySuppressExpr` |
+| `m_nSnapshotControlPoint` | int32 | `MPropertyFriendlyName control point with snapshot data` |
+| `m_strSnapshotSubset` | CUtlString | `MPropertyFriendlyName snapshot subset` `MPropertySuppressExpr` |
+| `m_nLimitPerUpdate` | int32 | `MPropertyFriendlyName limit per update` |
+| `m_bForceEmitOnFirstUpdate` | bool | `MPropertyFriendlyName force emit on first update` |
+| `m_bForceEmitOnLastUpdate` | bool | `MPropertyFriendlyName force emit on last update` |
+
+### C_OP_ControlPointToRadialScreenSpace
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_ControlPointToRadialScreenSpace
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCPIn` | int32 | `MPropertyFriendlyName source Control Point in World` |
+| `m_vecCP1Pos` | Vector | `MPropertyFriendlyName Source Control Point offset` `MVectorIsCoordinate` |
+| `m_nCPOut` | int32 | `MPropertyFriendlyName Set control point number` |
+| `m_nCPOutField` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName Output field 0-2 X/Y/Z` |
+| `m_nCPSSPosOut` | int32 | `MPropertyFriendlyName Ss Pos and Dot OUT CP` |
+
+### C_OP_ControlpointLight
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_ControlpointLight
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flScale` | float32 | `MPropertyFriendlyName initial color bias` |
+| `m_nControlPoint1` | int32 | `MPropertyFriendlyName light 1 control point` |
+| `m_nControlPoint2` | int32 | `MPropertyFriendlyName light 2 control point` |
+| `m_nControlPoint3` | int32 | `MPropertyFriendlyName light 3 control point` |
+| `m_nControlPoint4` | int32 | `MPropertyFriendlyName light 4 control point` |
+| `m_vecCPOffset1` | Vector | `MPropertyFriendlyName light 1 control point offset` |
+| `m_vecCPOffset2` | Vector | `MPropertyFriendlyName light 2 control point offset` |
+| `m_vecCPOffset3` | Vector | `MPropertyFriendlyName light 3 control point offset` |
+| `m_vecCPOffset4` | Vector | `MPropertyFriendlyName light 4 control point offset` |
+| `m_LightFiftyDist1` | float32 | `MPropertyFriendlyName light 1 50% distance` |
+| `m_LightZeroDist1` | float32 | `MPropertyFriendlyName light 1 0% distance` |
+| `m_LightFiftyDist2` | float32 | `MPropertyFriendlyName light 2 50% distance` |
+| `m_LightZeroDist2` | float32 | `MPropertyFriendlyName light 2 0% distance` |
+| `m_LightFiftyDist3` | float32 | `MPropertyFriendlyName light 3 50% distance` |
+| `m_LightZeroDist3` | float32 | `MPropertyFriendlyName light 3 0% distance` |
+| `m_LightFiftyDist4` | float32 | `MPropertyFriendlyName light 4 50% distance` |
+| `m_LightZeroDist4` | float32 | `MPropertyFriendlyName light 4 0% distance` |
+| `m_LightColor1` | Color | `MPropertyFriendlyName light 1 color` |
+| `m_LightColor2` | Color | `MPropertyFriendlyName light 2 color` |
+| `m_LightColor3` | Color | `MPropertyFriendlyName light 3 color` |
+| `m_LightColor4` | Color | `MPropertyFriendlyName light 4 color` |
+| `m_bLightType1` | bool | `MPropertyFriendlyName light 1 type 0=point 1=spot` |
+| `m_bLightType2` | bool | `MPropertyFriendlyName light 2 type 0=point 1=spot` |
+| `m_bLightType3` | bool | `MPropertyFriendlyName light 3 type 0=point 1=spot` |
+| `m_bLightType4` | bool | `MPropertyFriendlyName light 4 type 0=point 1=spot` |
+| `m_bLightDynamic1` | bool | `MPropertyFriendlyName light 1 dynamic light` |
+| `m_bLightDynamic2` | bool | `MPropertyFriendlyName light 2 dynamic light` |
+| `m_bLightDynamic3` | bool | `MPropertyFriendlyName light 3 dynamic light` |
+| `m_bLightDynamic4` | bool | `MPropertyFriendlyName light 4 dynamic light` |
+| `m_bUseNormal` | bool | `MPropertyFriendlyName compute normals from control points` |
+| `m_bUseHLambert` | bool | `MPropertyFriendlyName half-lambert normals` |
+| `m_bClampLowerRange` | bool | `MPropertyFriendlyName clamp minimum light value to initial color` |
+| `m_bClampUpperRange` | bool | `MPropertyFriendlyName clamp maximum light value to initial color` |
+
+### C_OP_CreateParticleSystemRenderer
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_CreateParticleSystemRenderer
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_CreateParticleSystemRenderer *-- InfoForResourceTypeIParticleSystemDefinition
+    C_OP_CreateParticleSystemRenderer *-- EventTypeSelection_t
+    C_OP_CreateParticleSystemRenderer *-- CPAssignment_t
+    C_OP_CreateParticleSystemRenderer *-- CPerParticleVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_hEffect` | CStrongHandle< [InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition) > | `MPropertyFriendlyName effect` |
+| `m_nEventType` | [EventTypeSelection_t](../schemas/!GlobalTypes.md#eventtypeselection_t) | `MPropertyFriendlyName event type` |
+| `m_vecCPs` | CUtlLeanVector< [CPAssignment_t](../schemas/particles.md#cpassignment_t) > | `MPropertyFriendlyName Control Points` |
+| `m_szParticleConfig` | CUtlString | `MPropertyAttributeEditor ParticleConfigName()` `MPropertyDescription Effect Config` `MPropertyEditContextOverrideKey` `MPropertyFriendlyName Particle Config` |
+| `m_AggregationPos` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName Aggregation Position` |
+
+### C_OP_Cull
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_Cull
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flCullPerc` | float32 | `MPropertyFriendlyName cull percentage` |
+| `m_flCullStart` | float32 | `MPropertyFriendlyName cull start time` |
+| `m_flCullEnd` | float32 | `MPropertyFriendlyName cull end time` |
+| `m_flCullExp` | float32 | `MPropertyFriendlyName cull time exponent` |
+
+### C_OP_CurlNoiseForce
+
+**Inherits from:** [CParticleFunctionForce](particles.md#cparticlefunctionforce)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionForce <|-- C_OP_CurlNoiseForce
+    CParticleFunction <|-- CParticleFunctionForce
+    C_OP_CurlNoiseForce *-- ParticleDirectionNoiseType_t
+    C_OP_CurlNoiseForce *-- CPerParticleVecInput
+    C_OP_CurlNoiseForce *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nNoiseType` | [ParticleDirectionNoiseType_t](../schemas/!GlobalTypes.md#particledirectionnoisetype_t) | `MPropertyFriendlyName noise type` |
+| `m_vecNoiseFreq` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName noise frequency` `MVectorIsCoordinate` |
+| `m_vecNoiseScale` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName noise amplitude` `MVectorIsCoordinate` |
+| `m_vecOffset` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName offset` `MVectorIsCoordinate` |
+| `m_vecOffsetRate` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName offset rate` `MVectorIsCoordinate` |
+| `m_flWorleySeed` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName worley seed` |
+| `m_flWorleyJitter` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName worley jitter` |
+
+### C_OP_CycleScalar
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_CycleScalar
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_CycleScalar *-- ParticleAttributeIndex_t
+    C_OP_CycleScalar *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nDestField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName destination scalar field` |
+| `m_flStartValue` | float32 | `MPropertyFriendlyName Value at start of cycle` |
+| `m_flEndValue` | float32 | `MPropertyFriendlyName Value at end of cycle` |
+| `m_flCycleTime` | float32 | `MPropertyFriendlyName Cycle time` |
+| `m_bDoNotRepeatCycle` | bool | `MPropertyFriendlyName Do not repeat cycle` |
+| `m_bSynchronizeParticles` | bool | `MPropertyFriendlyName Synchronize particles` |
+| `m_nCPScale` | int32 | `MPropertyFriendlyName Scale Start/End Control Point` |
+| `m_nCPFieldMin` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName start scale control point field` |
+| `m_nCPFieldMax` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName end scale control point field` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+
+### C_OP_CylindricalDistanceToTransform
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_CylindricalDistanceToTransform
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_CylindricalDistanceToTransform *-- ParticleAttributeIndex_t
+    C_OP_CylindricalDistanceToTransform *-- CPerParticleFloatInput
+    C_OP_CylindricalDistanceToTransform *-- CParticleTransformInput
+    C_OP_CylindricalDistanceToTransform *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_flInputMin` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName cylinder inner radius` |
+| `m_flInputMax` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName cylinder outer radius` |
+| `m_flOutputMin` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName cylinder inner output` |
+| `m_flOutputMax` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName cylinder outer output` |
+| `m_TransformStart` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName cylindrical top transform` |
+| `m_TransformEnd` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName cylindrical bottom transform` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_bActiveRange` | bool | `MPropertyFriendlyName only active within specified distance` |
+| `m_bAdditive` | bool | `MPropertyFriendlyName output is additive` |
+| `m_bCapsule` | bool | `MPropertyFriendlyName apply radius to ends (capsule)` |
+
+### C_OP_DampenToCP
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_DampenToCP
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_flRange` | float32 | `MPropertyFriendlyName falloff range` |
+| `m_flScale` | float32 | `MPropertyFriendlyName dampen scale` |
+
+### C_OP_Decay
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_Decay
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bRopeDecay` | bool | `MPropertyFriendlyName Reduce rope popping on decay` |
+| `m_bForcePreserveParticleOrder` | bool | `MPropertyFriendlyName force preserving particle order` |
+
+### C_OP_DecayClampCount
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_DecayClampCount
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_DecayClampCount *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCount` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Maximum Count` |
+
+### C_OP_DecayMaintainCount
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_DecayMaintainCount
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_DecayMaintainCount *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nParticlesToMaintain` | int32 | `MPropertyFriendlyName count to maintain` |
+| `m_flDecayDelay` | float32 | `MPropertyFriendlyName decay delay` |
+| `m_nSnapshotControlPoint` | int32 | `MPropertyFriendlyName snapshot control point for count` |
+| `m_strSnapshotSubset` | CUtlString | `MPropertyFriendlyName snapshot subset` `MPropertySuppressExpr` |
+| `m_bLifespanDecay` | bool | `MPropertyFriendlyName decay on lifespan` |
+| `m_flScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName total count scale` |
+| `m_bKillNewest` | bool | `MPropertyFriendlyName kill newest instead of oldest` |
+
+### C_OP_DecayOffscreen
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_DecayOffscreen
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_DecayOffscreen *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flOffscreenTime` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Offscreen Time Before Decay` |
+
+### C_OP_DensityForce
+
+**Inherits from:** [CParticleFunctionForce](particles.md#cparticlefunctionforce)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionForce <|-- C_OP_DensityForce
+    CParticleFunction <|-- CParticleFunctionForce
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flRadiusScale` | float32 | `MPropertyFriendlyName Radius scale for particle influence` |
+| `m_flForceScale` | float32 | `MPropertyFriendlyName Scale of force` |
+| `m_flTargetDensity` | float32 | `MPropertyFriendlyName Target density` |
+
+### C_OP_DifferencePreviousParticle
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_DifferencePreviousParticle
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_DifferencePreviousParticle *-- ParticleAttributeIndex_t
+    C_OP_DifferencePreviousParticle *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldInput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName input field` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_flInputMin` | float32 | `MPropertyFriendlyName difference minimum` |
+| `m_flInputMax` | float32 | `MPropertyFriendlyName difference maximum` |
+| `m_flOutputMin` | float32 | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | float32 | `MPropertyFriendlyName output maximum` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_bActiveRange` | bool | `MPropertyFriendlyName only active within specified difference` |
+| `m_bSetPreviousParticle` | bool | `MPropertyFriendlyName also set ouput to previous particle` |
+
+### C_OP_Diffusion
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_Diffusion
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_Diffusion *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flRadiusScale` | float32 | `MPropertyFriendlyName Radius scale for particle influence` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Output field` |
+| `m_nVoxelGridResolution` | int32 | `MPropertyFriendlyName Resolution to use for creating a voxel grid` |
+
+### C_OP_DirectionBetweenVecsToVec
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_DirectionBetweenVecsToVec
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_DirectionBetweenVecsToVec *-- ParticleAttributeIndex_t
+    C_OP_DirectionBetweenVecsToVec *-- CPerParticleVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_vecPoint1` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName first vector` |
+| `m_vecPoint2` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName second vector` |
+
+### C_OP_DistanceBetweenCPsToCP
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_DistanceBetweenCPsToCP
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_DistanceBetweenCPsToCP *-- ParticleTraceSet_t
+    C_OP_DistanceBetweenCPsToCP *-- ParticleParentSetMode_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nStartCP` | int32 | `MPropertyFriendlyName starting control point` |
+| `m_nEndCP` | int32 | `MPropertyFriendlyName ending control point` |
+| `m_nOutputCP` | int32 | `MPropertyFriendlyName output control point` |
+| `m_nOutputCPField` | int32 | `MPropertyFriendlyName output control point field` |
+| `m_bSetOnce` | bool | `MPropertyFriendlyName only set distance once` |
+| `m_flInputMin` | float32 | `MPropertyFriendlyName distance minimum` |
+| `m_flInputMax` | float32 | `MPropertyFriendlyName distance maximum` |
+| `m_flOutputMin` | float32 | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | float32 | `MPropertyFriendlyName output maximum` |
+| `m_flMaxTraceLength` | float32 | `MPropertyFriendlyName maximum trace length` |
+| `m_flLOSScale` | float32 | `MPropertyFriendlyName LOS Failure Scale` |
+| `m_bLOS` | bool | `MPropertyFriendlyName ensure line of sight` |
+| `m_CollisionGroupName` | char[128] | `MPropertyFriendlyName LOS collision group` |
+| `m_nTraceSet` | [ParticleTraceSet_t](../schemas/!GlobalTypes.md#particletraceset_t) | `MPropertyFriendlyName Trace Set` |
+| `m_nSetParent` | [ParticleParentSetMode_t](../schemas/!GlobalTypes.md#particleparentsetmode_t) | `MPropertyFriendlyName set parent` |
+
+### C_OP_DistanceBetweenTransforms
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_DistanceBetweenTransforms
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_DistanceBetweenTransforms *-- ParticleAttributeIndex_t
+    C_OP_DistanceBetweenTransforms *-- CParticleTransformInput
+    C_OP_DistanceBetweenTransforms *-- CPerParticleFloatInput
+    C_OP_DistanceBetweenTransforms *-- ParticleTraceSet_t
+    C_OP_DistanceBetweenTransforms *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_TransformStart` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName strarting transform` |
+| `m_TransformEnd` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName end transform` |
+| `m_flInputMin` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName distance minimum` |
+| `m_flInputMax` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName distance maximum` |
+| `m_flOutputMin` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName output maximum` |
+| `m_flMaxTraceLength` | float32 | `MPropertyFriendlyName maximum trace length` |
+| `m_flLOSScale` | float32 | `MPropertyFriendlyName LOS Failure Scalar` |
+| `m_CollisionGroupName` | char[128] | `MPropertyFriendlyName LOS collision group` |
+| `m_nTraceSet` | [ParticleTraceSet_t](../schemas/!GlobalTypes.md#particletraceset_t) | `MPropertyFriendlyName Trace Set` |
+| `m_bLOS` | bool | `MPropertyFriendlyName ensure line of sight` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+
+### C_OP_DistanceBetweenVecs
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_DistanceBetweenVecs
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_DistanceBetweenVecs *-- ParticleAttributeIndex_t
+    C_OP_DistanceBetweenVecs *-- CPerParticleVecInput
+    C_OP_DistanceBetweenVecs *-- CPerParticleFloatInput
+    C_OP_DistanceBetweenVecs *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_vecPoint1` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName first vector` |
+| `m_vecPoint2` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName second vector` |
+| `m_flInputMin` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName distance minimum` |
+| `m_flInputMax` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName distance maximum` |
+| `m_flOutputMin` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName output maximum` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_bDeltaTime` | bool | `MPropertyFriendlyName divide by deltatime (for comparing motion since last simulation)` |
+
+### C_OP_DistanceCull
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_DistanceCull
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_DistanceCull *-- CParticleCollectionFloatInput
+    C_OP_DistanceCull *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPoint` | int32 | `MPropertyFriendlyName control point` |
+| `m_vecPointOffset` | Vector | `MPropertyFriendlyName control point offset` `MVectorIsCoordinate` |
+| `m_flDistance` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName cull distance` |
+| `m_bCullInside` | bool | `MPropertyFriendlyName cull inside instead of outside` |
+| `m_nAttribute` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Attribute to Test` |
+
+### C_OP_DistanceToTransform
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_DistanceToTransform
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_DistanceToTransform *-- ParticleAttributeIndex_t
+    C_OP_DistanceToTransform *-- CPerParticleFloatInput
+    C_OP_DistanceToTransform *-- CParticleTransformInput
+    C_OP_DistanceToTransform *-- ParticleTraceSet_t
+    C_OP_DistanceToTransform *-- ParticleSetMethod_t
+    C_OP_DistanceToTransform *-- CPerParticleVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_flInputMin` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName distance minimum` |
+| `m_flInputMax` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName distance maximum` |
+| `m_flOutputMin` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName output maximum` |
+| `m_TransformStart` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName transform input` |
+| `m_bLOS` | bool | `MPropertyFriendlyName ensure line of sight` |
+| `m_CollisionGroupName` | char[128] | `MPropertyFriendlyName LOS collision group` |
+| `m_nTraceSet` | [ParticleTraceSet_t](../schemas/!GlobalTypes.md#particletraceset_t) | `MPropertyFriendlyName Trace Set` |
+| `m_flMaxTraceLength` | float32 | `MPropertyFriendlyName maximum trace length` |
+| `m_flLOSScale` | float32 | `MPropertyFriendlyName LOS Failure Scalar` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_bActiveRange` | bool | `MPropertyFriendlyName only active within specified distance` |
+| `m_bAdditive` | bool | `MPropertyFriendlyName output is additive` |
+| `m_vecComponentScale` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName component scale` |
+
+### C_OP_DragRelativeToPlane
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_DragRelativeToPlane
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_DragRelativeToPlane *-- CParticleCollectionFloatInput
+    C_OP_DragRelativeToPlane *-- CParticleCollectionVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flDragAtPlane` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName dampening` |
+| `m_flFalloff` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName falloff` |
+| `m_bDirectional` | bool | `MPropertyFriendlyName dampen on only one side of plane` |
+| `m_vecPlaneNormal` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName plane normal` `MVectorIsCoordinate` |
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+
+### C_OP_DriveCPFromGlobalSoundFloat
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_DriveCPFromGlobalSoundFloat
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nOutputControlPoint` | int32 | `MPropertyFriendlyName output control point` |
+| `m_nOutputField` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName output field` |
+| `m_flInputMin` | float32 | `MPropertyFriendlyName input minimum` |
+| `m_flInputMax` | float32 | `MPropertyFriendlyName input maximum` |
+| `m_flOutputMin` | float32 | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | float32 | `MPropertyFriendlyName output maximum` |
+| `m_StackName` | CUtlString | `MPropertyFriendlyName sound stack name` |
+| `m_OperatorName` | CUtlString | `MPropertyFriendlyName sound operator name` |
+| `m_FieldName` | CUtlString | `MPropertyFriendlyName sound field name` |
+
+### C_OP_EnableChildrenFromParentParticleCount
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_EnableChildrenFromParentParticleCount
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_EnableChildrenFromParentParticleCount *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nChildGroupID` | int32 | `MPropertyFriendlyName group ID to affect` |
+| `m_nFirstChild` | int32 | `MPropertyFriendlyName first child to enable` |
+| `m_nNumChildrenToEnable` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName max # of children to enable (-1 for max particle count)` |
+| `m_bDisableChildren` | bool | `MPropertyFriendlyName remove children when particle count lowers` |
+| `m_bPlayEndcapOnStop` | bool | `MPropertyFriendlyName play endcap when children are removed` `MPropertySuppressExpr` |
+| `m_bDestroyImmediately` | bool | `MPropertyFriendlyName destroy particles immediately when child is removed` `MPropertySuppressExpr` |
+
+### C_OP_EndCapDecay
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_EndCapDecay
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+### C_OP_EndCapTimedDecay
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_EndCapTimedDecay
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flDecayTime` | float32 | `MPropertyFriendlyName decay time` |
+
+### C_OP_EndCapTimedFreeze
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_EndCapTimedFreeze
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_EndCapTimedFreeze *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flFreezeTime` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName freeze time` |
+
+### C_OP_ExternalGameImpulseForce
+
+**Inherits from:** [CParticleFunctionForce](particles.md#cparticlefunctionforce)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionForce <|-- C_OP_ExternalGameImpulseForce
+    CParticleFunction <|-- CParticleFunctionForce
+    C_OP_ExternalGameImpulseForce *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flForceScale` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName force scale` |
+| `m_bRopes` | bool | `MPropertyFriendlyName rope shake` |
+| `m_bRopesZOnly` | bool | `MPropertyFriendlyName limit rope impulses to Z` |
+| `m_bExplosions` | bool | `MPropertyFriendlyName explosions` |
+| `m_bParticles` | bool | `MPropertyFriendlyName particle systems` |
+
+### C_OP_ExternalWindForce
+
+**Inherits from:** [CParticleFunctionForce](particles.md#cparticlefunctionforce)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionForce <|-- C_OP_ExternalWindForce
+    CParticleFunction <|-- CParticleFunctionForce
+    C_OP_ExternalWindForce *-- CPerParticleVecInput
+    C_OP_ExternalWindForce *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecSamplePosition` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName sample position` |
+| `m_vecScale` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName force scale` |
+| `m_bSampleWind` | bool | `MPropertyFriendlyName sample wind` |
+| `m_bSampleWater` | bool | `MPropertyFriendlyName sample water current` |
+| `m_bDampenNearWaterPlane` | bool | `MPropertyFriendlyName dampen gravity/buoyancy near water plane` `MPropertySuppressExpr` |
+| `m_bSampleGravity` | bool | `MPropertyFriendlyName sample local gravity` |
+| `m_vecGravityForce` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName gravity force` `MPropertySuppressExpr` |
+| `m_bUseBasicMovementGravity` | bool | `MPropertyFriendlyName use Movement Basic for Local Gravity & Buoyancy Scale` `MPropertySuppressExpr` |
+| `m_flLocalGravityScale` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName local gravity scale` `MPropertySuppressExpr` |
+| `m_flLocalBuoyancyScale` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName local gravity buoyancy scale` `MPropertySuppressExpr` |
+| `m_vecBuoyancyForce` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName buoyancy force` `MPropertySuppressExpr` |
+
+### C_OP_FadeAndKill
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_FadeAndKill
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flStartFadeInTime` | float32 | `MPropertyFriendlyName start fade in time` |
+| `m_flEndFadeInTime` | float32 | `MPropertyFriendlyName end fade in time` |
+| `m_flStartFadeOutTime` | float32 | `MPropertyFriendlyName start fade out time` |
+| `m_flEndFadeOutTime` | float32 | `MPropertyFriendlyName end fade out time` |
+| `m_flStartAlpha` | float32 | `MPropertyFriendlyName start alpha` |
+| `m_flEndAlpha` | float32 | `MPropertyFriendlyName end alpha` |
+| `m_bForcePreserveParticleOrder` | bool | `MPropertyFriendlyName force preserving particle order` |
+
+### C_OP_FadeAndKillForTracers
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_FadeAndKillForTracers
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flStartFadeInTime` | float32 | `MPropertyFriendlyName start fade in time` |
+| `m_flEndFadeInTime` | float32 | `MPropertyFriendlyName end fade in time` |
+| `m_flStartFadeOutTime` | float32 | `MPropertyFriendlyName start fade out time` |
+| `m_flEndFadeOutTime` | float32 | `MPropertyFriendlyName end fade out time` |
+| `m_flStartAlpha` | float32 | `MPropertyFriendlyName start alpha` |
+| `m_flEndAlpha` | float32 | `MPropertyFriendlyName end alpha` |
+
+### C_OP_FadeIn
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_FadeIn
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flFadeInTimeMin` | float32 | `MPropertyFriendlyName fade in time min` |
+| `m_flFadeInTimeMax` | float32 | `MPropertyFriendlyName fade in time max` |
+| `m_flFadeInTimeExp` | float32 | `MPropertyFriendlyName fade in time exponent` |
+| `m_bProportional` | bool | `MPropertyFriendlyName proportional 0/1` |
+
+### C_OP_FadeInSimple
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_FadeInSimple
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_FadeInSimple *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flFadeInTime` | float32 | `MPropertyFriendlyName proportional fade in time` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_alpha` `MPropertyFriendlyName alpha field` |
+
+### C_OP_FadeOut
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_FadeOut
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flFadeOutTimeMin` | float32 | `MPropertyFriendlyName fade out time min` |
+| `m_flFadeOutTimeMax` | float32 | `MPropertyFriendlyName fade out time max` |
+| `m_flFadeOutTimeExp` | float32 | `MPropertyFriendlyName fade out time exponent` |
+| `m_flFadeBias` | float32 | `MPropertyFriendlyName fade bias` |
+| `m_bProportional` | bool | `MPropertyFriendlyName proportional 0/1` |
+| `m_bEaseInAndOut` | bool | `MPropertyFriendlyName ease in and out` |
+
+### C_OP_FadeOutSimple
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_FadeOutSimple
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_FadeOutSimple *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flFadeOutTime` | float32 | `MPropertyFriendlyName proportional fade out time` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_alpha` `MPropertyFriendlyName alpha field` |
+
+### C_OP_ForceBasedOnDistanceToPlane
+
+**Inherits from:** [CParticleFunctionForce](particles.md#cparticlefunctionforce)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionForce <|-- C_OP_ForceBasedOnDistanceToPlane
+    CParticleFunction <|-- CParticleFunctionForce
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flMinDist` | float32 | `MPropertyFriendlyName min distance from plane` |
+| `m_vecForceAtMinDist` | Vector | `MPropertyFriendlyName force at min distance` `MVectorIsCoordinate` |
+| `m_flMaxDist` | float32 | `MPropertyFriendlyName max distance from plane` |
+| `m_vecForceAtMaxDist` | Vector | `MPropertyFriendlyName force at max distance` `MVectorIsCoordinate` |
+| `m_vecPlaneNormal` | Vector | `MPropertyFriendlyName plane normal` `MVectorIsCoordinate` |
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_flExponent` | float32 | `MPropertyFriendlyName exponent` |
+
+### C_OP_ForceControlPointStub
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_ForceControlPointStub
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_ControlPoint` | int32 | `MPropertyFriendlyName control point` |
+
+### C_OP_GameDecalRenderer
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_GameDecalRenderer
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_GameDecalRenderer *-- EventTypeSelection_t
+    C_OP_GameDecalRenderer *-- ParticleCollisionMask_t
+    C_OP_GameDecalRenderer *-- ParticleCollisionGroup_t
+    C_OP_GameDecalRenderer *-- CPerParticleVecInput
+    C_OP_GameDecalRenderer *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_sDecalGroupName` | CGlobalSymbol | `MPropertyAttributeEditor VDataChoice( scripts/decalgroups.vdata )` `MPropertyFriendlyName decal name` |
+| `m_nEventType` | [EventTypeSelection_t](../schemas/!GlobalTypes.md#eventtypeselection_t) | `MPropertyFriendlyName event type` |
+| `m_nInteractionMask` | [ParticleCollisionMask_t](../schemas/!GlobalTypes.md#particlecollisionmask_t) | `MPropertyFriendlyName Collision Interaction Mask` |
+| `m_nCollisionGroup` | [ParticleCollisionGroup_t](../schemas/!GlobalTypes.md#particlecollisiongroup_t) | `MPropertyFriendlyName Collision Group` |
+| `m_vecStartPos` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName Trace Start Position` |
+| `m_vecEndPos` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName Trace End Position` |
+| `m_flTraceBloat` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Trace Bloat Radius Scale` |
+| `m_flDecalSize` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Decal Size` `MPropertySuppressExpr` |
+| `m_nDecalGroupIndex` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Decal Group Choice Index` `MPropertySuppressExpr` |
+| `m_flDecalRotation` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Decal Rotation` `MPropertySuppressExpr` |
+| `m_vModulationColor` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName Decal Modulation Color` |
+| `m_bUseGameDefaultDecalSize` | bool | `MPropertyFriendlyName Use Game's Default Decal Size` |
+| `m_bRandomDecalRotation` | bool | `MPropertyFriendlyName Randomly Rotate Decal` |
+| `m_bRandomlySelectDecalInGroup` | bool | `MPropertyFriendlyName Randomly Select Decal in Decal Group` |
+| `m_bNoDecalsOnOwner` | bool | `MPropertyFriendlyName Dont Apply Decals to Owner` |
+| `m_bVisualizeTraces` | bool | `MPropertyFriendlyName Debug Traces` |
+
+### C_OP_GameLiquidSpill
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_GameLiquidSpill
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_GameLiquidSpill *-- CParticleCollectionFloatInput
+    C_OP_GameLiquidSpill *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flLiquidContentsField` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Liquid Contents ( negative for water, positive for oil, zero for noop )` |
+| `m_flExpirationTime` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Expiration Time (seconds)` |
+| `m_flRadius` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Radius` |
+| `m_bCheckExposedToSky` | bool | `MPropertyFriendlyName Radially splashed points require exposure to sky` |
+| `m_nAmountAttribute` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName Attribute for Contribution Amount` |
+
+### C_OP_GlobalLight
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_GlobalLight
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flScale` | float32 | `MPropertyFriendlyName initial color bias` |
+| `m_bClampLowerRange` | bool | `MPropertyFriendlyName clamp minimum light value to initial color` |
+| `m_bClampUpperRange` | bool | `MPropertyFriendlyName clamp maximum light value to initial color` |
+
+### C_OP_HSVShiftToCP
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_HSVShiftToCP
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nColorCP` | int32 | `MPropertyFriendlyName Target color control point number` |
+| `m_nColorGemEnableCP` | int32 | `MPropertyFriendlyName Color Gem Enable control point number` |
+| `m_nOutputCP` | int32 | `MPropertyFriendlyName output control point number` |
+| `m_DefaultHSVColor` | Color | `MPropertyFriendlyName Default HSV Color` |
+
+### C_OP_InheritFromParentParticles
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`, `MParticleMaxVersion`, `MParticleReplacementOp`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_InheritFromParentParticles
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_InheritFromParentParticles *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flScale` | float32 | `MPropertyFriendlyName scale` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield` `MPropertyFriendlyName inherited field` |
+| `m_nIncrement` | int32 | `MPropertyFriendlyName particle increment amount` |
+| `m_bRandomDistribution` | bool | `MPropertyFriendlyName random parent particle distribution` |
+
+### C_OP_InheritFromParentParticlesV2
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`, `MParticleMinVersion`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_InheritFromParentParticlesV2
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_InheritFromParentParticlesV2 *-- CPerParticleFloatInput
+    C_OP_InheritFromParentParticlesV2 *-- ParticleAttributeIndex_t
+    C_OP_InheritFromParentParticlesV2 *-- MissingParentInheritBehavior_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flScale` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName scale` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield` `MPropertyFriendlyName inherited field` |
+| `m_nIncrement` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName particle increment amount` |
+| `m_bSubSample` | bool | `MPropertyFriendlyName sub-sample parent particles` |
+| `m_bRandomDistribution` | bool | `MPropertyFriendlyName random parent particle distribution` |
+| `m_bReverse` | bool | `MPropertyFriendlyName start at last parent particle in reverse` |
+| `m_nMissingParentBehavior` | [MissingParentInheritBehavior_t](../schemas/!GlobalTypes.md#missingparentinheritbehavior_t) | `MPropertyFriendlyName behavior if parent particle dies` |
+| `m_flInterpolation` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Interpolation` |
+
+### C_OP_InheritFromPeerSystem
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_InheritFromPeerSystem
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_InheritFromPeerSystem *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield` `MPropertyFriendlyName read field` |
+| `m_nFieldInput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield` `MPropertyFriendlyName written field` |
+| `m_nIncrement` | int32 | `MPropertyFriendlyName particle neighbor increment amount` |
+| `m_nGroupID` | int32 | `MPropertyFriendlyName group id` |
+
+### C_OP_InstantaneousEmitter
+
+**Inherits from:** [CParticleFunctionEmitter](particles.md#cparticlefunctionemitter)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionEmitter <|-- C_OP_InstantaneousEmitter
+    CParticleFunction <|-- CParticleFunctionEmitter
+    C_OP_InstantaneousEmitter *-- CParticleCollectionFloatInput
+    C_OP_InstantaneousEmitter *-- EventTypeSelection_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nParticlesToEmit` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyAttributeRange 1 1000` `MPropertyFriendlyName num to emit` |
+| `m_flStartTime` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName emission start time` |
+| `m_flInitFromKilledParentParticles` | float32 | `MPropertyFriendlyName emission scale from parent particle events` |
+| `m_nEventType` | [EventTypeSelection_t](../schemas/!GlobalTypes.md#eventtypeselection_t) | `MPropertyFriendlyName emission parent particle event type` `MPropertySuppressExpr` |
+| `m_flParentParticleScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName emission scale from parent particle count` |
+| `m_nMaxEmittedPerFrame` | int32 | `MPropertyFriendlyName maximum emission per frame` |
+| `m_nSnapshotControlPoint` | int32 | `MPropertyFriendlyName control point with snapshot data` |
+| `m_strSnapshotSubset` | CUtlString | `MPropertyFriendlyName snapshot subset` `MPropertySuppressExpr` |
+
+### C_OP_InterpolateRadius
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_InterpolateRadius
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flStartTime` | float32 | `MPropertyFriendlyName start time` |
+| `m_flEndTime` | float32 | `MPropertyFriendlyName end time` |
+| `m_flStartScale` | float32 | `MPropertyFriendlyName radius start scale` |
+| `m_flEndScale` | float32 | `MPropertyFriendlyName radius end scale` |
+| `m_bEaseInAndOut` | bool | `MPropertyFriendlyName ease in and out` |
+| `m_flBias` | float32 | `MPropertyFriendlyName scale bias` |
+
+### C_OP_IntraParticleForce
+
+**Inherits from:** [CParticleFunctionForce](particles.md#cparticlefunctionforce)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionForce <|-- C_OP_IntraParticleForce
+    CParticleFunction <|-- CParticleFunctionForce
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flAttractionMinDistance` | float32 | `MPropertyFriendlyName min attraction distance` |
+| `m_flAttractionMaxDistance` | float32 | `MPropertyFriendlyName max attraction distance` |
+| `m_flAttractionMaxStrength` | float32 | `MPropertyFriendlyName max attraction force` |
+| `m_flRepulsionMinDistance` | float32 | `MPropertyFriendlyName min repulsion distance` |
+| `m_flRepulsionMaxDistance` | float32 | `MPropertyFriendlyName max repulsion distance` |
+| `m_flRepulsionMaxStrength` | float32 | `MPropertyFriendlyName max repulsion force` |
+| `m_bUseAABB` | bool | `MPropertyFriendlyName use aabbtree` |
+
+### C_OP_LagCompensation
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_LagCompensation
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nDesiredVelocityCP` | int32 | `MPropertyFriendlyName desired velocity CP` |
+| `m_nLatencyCP` | int32 | `MPropertyFriendlyName latency CP` |
+| `m_nLatencyCPField` | int32 | `MPropertyFriendlyName latency CP field` |
+| `m_nDesiredVelocityCPField` | int32 | `MPropertyFriendlyName desired velocity CP field override(for speed only)` |
+
+### C_OP_LazyCullCompareFloat
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_LazyCullCompareFloat
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_LazyCullCompareFloat *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flComparsion1` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Comparison Value 1` |
+| `m_flComparsion2` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Comparison Value 2` |
+| `m_flCullTime` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Cull Lifetime` |
+
+### C_OP_LerpEndCapScalar
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_LerpEndCapScalar
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_LerpEndCapScalar *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_flOutput` | float32 | `MPropertyFriendlyName value to lerp to` |
+| `m_flLerpTime` | float32 | `MPropertyFriendlyName lerp time` |
+
+### C_OP_LerpEndCapVector
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_LerpEndCapVector
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_LerpEndCapVector *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_vecOutput` | Vector | `MPropertyFriendlyName value to lerp to` `MVectorIsSometimesCoordinate` |
+| `m_flLerpTime` | float32 | `MPropertyFriendlyName lerp time` |
+
+### C_OP_LerpScalar
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_LerpScalar
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_LerpScalar *-- ParticleAttributeIndex_t
+    C_OP_LerpScalar *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_flOutput` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName value to lerp to` |
+| `m_flStartTime` | float32 | `MPropertyFriendlyName start time` |
+| `m_flEndTime` | float32 | `MPropertyFriendlyName end time` |
+
+### C_OP_LerpToInitialPosition
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_LerpToInitialPosition
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_LerpToInitialPosition *-- CPerParticleFloatInput
+    C_OP_LerpToInitialPosition *-- ParticleAttributeIndex_t
+    C_OP_LerpToInitialPosition *-- CParticleCollectionFloatInput
+    C_OP_LerpToInitialPosition *-- CParticleCollectionVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_flInterpolation` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Interpolation` |
+| `m_nCacheField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName position cache attribute` |
+| `m_flScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName scale` |
+| `m_vecScale` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName component scale` |
+
+### C_OP_LerpToOtherAttribute
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_LerpToOtherAttribute
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_LerpToOtherAttribute *-- CPerParticleFloatInput
+    C_OP_LerpToOtherAttribute *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flInterpolation` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Interpolation` |
+| `m_nFieldInputFrom` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield` `MPropertyFriendlyName input attribute from` |
+| `m_nFieldInput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield` `MPropertyFriendlyName input attribute to` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield` `MPropertyFriendlyName output attribute` |
+
+### C_OP_LerpVector
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_LerpVector
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_LerpVector *-- ParticleAttributeIndex_t
+    C_OP_LerpVector *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_vecOutput` | Vector | `MPropertyFriendlyName value to lerp to` `MVectorIsSometimesCoordinate` |
+| `m_flStartTime` | float32 | `MPropertyFriendlyName start time` |
+| `m_flEndTime` | float32 | `MPropertyFriendlyName end time` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+
+### C_OP_LightningSnapshotGenerator
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_LightningSnapshotGenerator
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_LightningSnapshotGenerator *-- CParticleCollectionFloatInput
+    C_OP_LightningSnapshotGenerator *-- ParticleLightnintBranchBehavior_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCPSnapshot` | int32 | `MPropertyFriendlyName snapshot control point number` |
+| `m_nCPStartPnt` | int32 | `MPropertyFriendlyName start control point number` |
+| `m_nCPEndPnt` | int32 | `MPropertyFriendlyName end control point number` |
+| `m_flSegments` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Recursion Depth` |
+| `m_flOffset` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Offset` |
+| `m_flOffsetDecay` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Offset Decay` |
+| `m_flRecalcRate` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Recalculation Rate` |
+| `m_flUVScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName UV Scale` |
+| `m_flUVOffset` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName UV Offset` |
+| `m_flSplitRate` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Branch Split Rate` |
+| `m_flRecursionSplitScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Recursion Branch Split Scale` |
+| `m_bScaleBranchDistance` | bool | `MPropertyFriendlyName Scale Branch Distance From Recursion Depth` |
+| `m_flBranchDistanceScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Branch Recursion Distance Scale Factor` `MPropertySuppressExpr` |
+| `m_bScaleBranchOffset` | bool | `MPropertyFriendlyName Scale Branch Offset/Twist From Recursion Depth` |
+| `m_flBranchOffsetScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Branch Recursion Offset/Twist Scale Factor` `MPropertySuppressExpr` |
+| `m_flBranchTwist` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Branch Twist` |
+| `m_nBranchBehavior` | [ParticleLightnintBranchBehavior_t](../schemas/!GlobalTypes.md#particlelightnintbranchbehavior_t) | `MPropertyFriendlyName Branch Behavior` |
+| `m_flRadiusStart` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Start Radius` |
+| `m_flRadiusEnd` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName End Radius` |
+| `m_flDedicatedPool` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Dedicated Particle Pool Count` |
+
+### C_OP_LocalAccelerationForce
+
+**Inherits from:** [CParticleFunctionForce](particles.md#cparticlefunctionforce)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionForce <|-- C_OP_LocalAccelerationForce
+    CParticleFunction <|-- CParticleFunctionForce
+    C_OP_LocalAccelerationForce *-- CParticleCollectionVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCP` | int32 | `MPropertyFriendlyName local space control point` |
+| `m_nScaleCP` | int32 | `MPropertyFriendlyName scale control point` |
+| `m_vecAccel` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName local space acceleration` |
+
+### C_OP_LockPoints
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_LockPoints
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nMinCol` | int32 | `MPropertyFriendlyName min column/particle index to affect` |
+| `m_nMaxCol` | int32 | `MPropertyFriendlyName max column/particle index to affect` |
+| `m_nMinRow` | int32 | `MPropertyFriendlyName min row/particle index to affect` |
+| `m_nMaxRow` | int32 | `MPropertyFriendlyName max row/particle index to affect` |
+| `m_nControlPoint` | int32 | `MPropertyFriendlyName control point to lock to` |
+| `m_flBlendValue` | float32 | `MPropertyFriendlyName amount of current position to preserve` |
+
+### C_OP_LockToBone
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_LockToBone
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_LockToBone *-- CParticleModelInput
+    C_OP_LockToBone *-- CParticleTransformInput
+    C_OP_LockToBone *-- ParticleAttributeIndex_t
+    C_OP_LockToBone *-- ParticleRotationLockType_t
+    C_OP_LockToBone *-- CPerParticleVecInput
+    C_OP_LockToBone *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_modelInput` | [CParticleModelInput](../schemas/particleslib.md#cparticlemodelinput) | `MPropertyFriendlyName model input` |
+| `m_transformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName transform input` |
+| `m_flLifeTimeFadeStart` | float32 | `MPropertyFriendlyName lifetime fade start` |
+| `m_flLifeTimeFadeEnd` | float32 | `MPropertyFriendlyName lifetime fade end` |
+| `m_flJumpThreshold` | float32 | `MPropertyFriendlyName instant jump threshold` |
+| `m_flPrevPosScale` | float32 | `MPropertyFriendlyName previous position scale` |
+| `m_HitboxSetName` | char[128] | `MPropertyFriendlyName hitbox set` |
+| `m_bRigid` | bool | `MPropertyFriendlyName rigid lock` |
+| `m_bUseBones` | bool | `MPropertyFriendlyName use bones instead of hitboxes` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_nFieldOutputPrev` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field prev` |
+| `m_nRotationSetType` | [ParticleRotationLockType_t](../schemas/!GlobalTypes.md#particlerotationlocktype_t) | `MPropertyFriendlyName lock rotations to bone orientation` `MPropertyStartGroup Set Rotations to Bones` |
+| `m_bRigidRotationLock` | bool | `MPropertyFriendlyName rigid set rotation from bones` |
+| `m_vecRotation` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName rigid rotation offset pitch/yaw/roll` |
+| `m_flRotLerp` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName rigid rotation interpolation` |
+
+### C_OP_LockToPointList
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_LockToPointList
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_LockToPointList *-- ParticleAttributeIndex_t
+    C_OP_LockToPointList *-- PointDefinition_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_pointList` | CUtlVector< [PointDefinition_t](../schemas/particles.md#pointdefinition_t) > | `MPropertyFriendlyName point list` |
+| `m_bPlaceAlongPath` | bool | `MPropertyFriendlyName space points along path` |
+| `m_bClosedLoop` | bool | `MPropertyFriendlyName Treat path as a loop` |
+| `m_nNumPointsAlongPath` | int32 | `MPropertyFriendlyName Numer of points along path` |
+
+### C_OP_LockToSavedSequentialPath
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`, `MParticleMaxVersion`, `MParticleReplacementOp`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_LockToSavedSequentialPath
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_LockToSavedSequentialPath *-- CPathParameters
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flFadeStart` | float32 | `MPropertyFriendlyName start fade time` |
+| `m_flFadeEnd` | float32 | `MPropertyFriendlyName end fade time` |
+| `m_bCPPairs` | bool | `MPropertyFriendlyName Use sequential CP pairs between start and end point` |
+| `m_PathParams` | [CPathParameters](../schemas/particles.md#cpathparameters) |  |
+
+### C_OP_LockToSavedSequentialPathV2
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`, `MParticleMinVersion`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_LockToSavedSequentialPathV2
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_LockToSavedSequentialPathV2 *-- CPathParameters
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flFadeStart` | float32 | `MPropertyFriendlyName start fade time` |
+| `m_flFadeEnd` | float32 | `MPropertyFriendlyName end fade time` |
+| `m_bCPPairs` | bool | `MPropertyFriendlyName Use sequential CP pairs between start and end point` |
+| `m_PathParams` | [CPathParameters](../schemas/particles.md#cpathparameters) |  |
+
+### C_OP_MaintainEmitter
+
+**Inherits from:** [CParticleFunctionEmitter](particles.md#cparticlefunctionemitter)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionEmitter <|-- C_OP_MaintainEmitter
+    CParticleFunction <|-- CParticleFunctionEmitter
+    C_OP_MaintainEmitter *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nParticlesToMaintain` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName count to maintain` |
+| `m_flStartTime` | float32 | `MPropertyFriendlyName emission start time` |
+| `m_flEmissionDuration` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName emission duration` |
+| `m_flEmissionRate` | float32 | `MPropertyFriendlyName emission rate` |
+| `m_nSnapshotControlPoint` | int32 | `MPropertyFriendlyName control point with snapshot data` |
+| `m_strSnapshotSubset` | CUtlString | `MPropertyFriendlyName snapshot subset` `MPropertySuppressExpr` |
+| `m_bEmitInstantaneously` | bool | `MPropertyFriendlyName group emission times for new particles` |
+| `m_bFinalEmitOnStop` | bool | `MPropertyFriendlyName perform final emit on stop` |
+| `m_flScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName total count scale` |
+
+### C_OP_MaintainSequentialPath
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_MaintainSequentialPath
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_MaintainSequentialPath *-- CPathParameters
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_fMaxDistance` | float32 | `MPropertyFriendlyName maximum distance` |
+| `m_flNumToAssign` | float32 | `MPropertyFriendlyName particles to map from start to end` |
+| `m_flCohesionStrength` | float32 | `MPropertyFriendlyName cohesion strength` |
+| `m_flTolerance` | float32 | `MPropertyFriendlyName control point movement tolerance` |
+| `m_bLoop` | bool | `MPropertyFriendlyName restart behavior (0 = bounce, 1 = loop )` |
+| `m_bUseParticleCount` | bool | `MPropertyFriendlyName use existing particle count` |
+| `m_PathParams` | [CPathParameters](../schemas/particles.md#cpathparameters) |  |
+
+### C_OP_MaxVelocity
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_MaxVelocity
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_MaxVelocity *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flMaxVelocity` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName maximum velocity` |
+| `m_flMinVelocity` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName minimum velocity` |
+
+### C_OP_ModelCull
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_ModelCull
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_bBoundBox` | bool | `MPropertyFriendlyName use only bounding box` |
+| `m_bCullOutside` | bool | `MPropertyFriendlyName cull outside instead of inside` |
+| `m_bUseBones` | bool | `MPropertyFriendlyName use bones instead of hitboxes` |
+| `m_HitboxSetName` | char[128] | `MPropertyFriendlyName hitbox set` |
+
+### C_OP_ModelDampenMovement
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_ModelDampenMovement
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_ModelDampenMovement *-- CPerParticleVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_bBoundBox` | bool | `MPropertyFriendlyName use only bounding box` |
+| `m_bOutside` | bool | `MPropertyFriendlyName dampen outside instead of inside` |
+| `m_bUseBones` | bool | `MPropertyFriendlyName use bones instead of hitboxes` |
+| `m_HitboxSetName` | char[128] | `MPropertyFriendlyName hitbox set` |
+| `m_vecPosOffset` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName test position offset` `MVectorIsCoordinate` |
+| `m_fDrag` | float32 | `MPropertyAttributeRange -1 1` `MPropertyFriendlyName drag` |
+
+### C_OP_ModelSurfaceSnapshotGenerator
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_ModelSurfaceSnapshotGenerator
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_ModelSurfaceSnapshotGenerator *-- CParticleModelInput
+    C_OP_ModelSurfaceSnapshotGenerator *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCPSnapshot` | int32 | `MPropertyFriendlyName snapshot control point number` |
+| `m_modelInput` | [CParticleModelInput](../schemas/particleslib.md#cparticlemodelinput) | `MPropertyFriendlyName input model` |
+| `m_flRecalcRate` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Recalculation Rate` |
+| `m_flUSpacing` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName U Spacing` |
+| `m_flVSpacing` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName V Spacing` |
+| `m_flSurfaceOffset` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Surface Offset` |
+| `m_bSetNormal` | bool | `MPropertyFriendlyName Set Normal` |
+| `m_bSetUp` | bool | `MPropertyFriendlyName Set UV Up Direction (To Box Angles)` |
+| `m_bSetGravity` | bool | `MPropertyFriendlyName Set Gravity Direction (To Prev Position)` |
+| `m_bSetUV` | bool | `MPropertyFriendlyName Set UV (To Hitbox Offset)` |
+
+### C_OP_MoveToHitbox
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_MoveToHitbox
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_MoveToHitbox *-- CParticleModelInput
+    C_OP_MoveToHitbox *-- CParticleTransformInput
+    C_OP_MoveToHitbox *-- HitboxLerpType_t
+    C_OP_MoveToHitbox *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_modelInput` | [CParticleModelInput](../schemas/particleslib.md#cparticlemodelinput) | `MPropertyFriendlyName model input` |
+| `m_transformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName transform input` |
+| `m_flLifeTimeLerpStart` | float32 | `MPropertyFriendlyName lifetime lerp start` |
+| `m_flLifeTimeLerpEnd` | float32 | `MPropertyFriendlyName lifetime lerp end` |
+| `m_flPrevPosScale` | float32 | `MPropertyFriendlyName previous position scale` |
+| `m_HitboxSetName` | char[128] | `MPropertyFriendlyName hitbox set` |
+| `m_bUseBones` | bool | `MPropertyFriendlyName use bones instead of hitboxes` |
+| `m_nLerpType` | [HitboxLerpType_t](../schemas/!GlobalTypes.md#hitboxlerptype_t) | `MPropertyFriendlyName lerp type` |
+| `m_flInterpolation` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Constant Interpolation` |
+
+### C_OP_MovementLoopInsideSphere
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_MovementLoopInsideSphere
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_MovementLoopInsideSphere *-- CParticleCollectionFloatInput
+    C_OP_MovementLoopInsideSphere *-- CParticleCollectionVecInput
+    C_OP_MovementLoopInsideSphere *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCP` | int32 | `MPropertyFriendlyName control point` |
+| `m_flDistance` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName distance maximum` |
+| `m_vecScale` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName component scale` |
+| `m_nDistSqrAttr` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName distance squared output attribute` |
+
+### C_OP_MovementMaintainOffset
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_MovementMaintainOffset
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecOffset` | Vector | `MPropertyFriendlyName desired offset` `MVectorIsCoordinate` |
+| `m_nCP` | int32 | `MPropertyFriendlyName local space CP` |
+| `m_bRadiusScale` | bool | `MPropertyFriendlyName scale by radius` |
+
+### C_OP_MovementMoveAlongSkinnedCPSnapshot
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_MovementMoveAlongSkinnedCPSnapshot
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_MovementMoveAlongSkinnedCPSnapshot *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_nSnapshotControlPointNumber` | int32 | `MPropertyFriendlyName snapshot control point number` |
+| `m_bSetNormal` | bool | `MPropertyFriendlyName set normal` |
+| `m_bSetRadius` | bool | `MPropertyFriendlyName set radius` |
+| `m_flInterpolation` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Interpolation` |
+| `m_flTValue` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Snapshot Index T Value` |
+
+### C_OP_MovementPlaceOnGround
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_MovementPlaceOnGround
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_MovementPlaceOnGround *-- CPerParticleFloatInput
+    C_OP_MovementPlaceOnGround *-- CPerParticleVecInput
+    C_OP_MovementPlaceOnGround *-- ParticleTraceSet_t
+    C_OP_MovementPlaceOnGround *-- ParticleTraceMissBehavior_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flOffset` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName offset` |
+| `m_flMaxTraceLength` | float32 | `MPropertyFriendlyName max trace length` |
+| `m_flTolerance` | float32 | `MPropertyFriendlyName CP movement tolerance` |
+| `m_vecTraceDir` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName trace direction` |
+| `m_flTraceOffset` | float32 | `MPropertyFriendlyName trace offset` |
+| `m_flLerpRate` | float32 | `MPropertyFriendlyName interpolation rate` |
+| `m_CollisionGroupName` | char[128] | `MPropertyFriendlyName collision group` |
+| `m_nTraceSet` | [ParticleTraceSet_t](../schemas/!GlobalTypes.md#particletraceset_t) | `MPropertyFriendlyName Trace Set` |
+| `m_nRefCP1` | int32 | `MPropertyFriendlyName reference CP 1` |
+| `m_nRefCP2` | int32 | `MPropertyFriendlyName reference CP 2` |
+| `m_nLerpCP` | int32 | `MPropertyFriendlyName interploation distance tolerance cp` |
+| `m_nTraceMissBehavior` | [ParticleTraceMissBehavior_t](../schemas/!GlobalTypes.md#particletracemissbehavior_t) | `MPropertyFriendlyName No Collision Behavior` |
+| `m_bIncludeShotHull` | bool | `MPropertyFriendlyName include default contents trace hulls` |
+| `m_bIncludeWater` | bool | `MPropertyFriendlyName include water` |
+| `m_bSetNormal` | bool | `MPropertyFriendlyName set normal` |
+| `m_bScaleOffset` | bool | `MPropertyFriendlyName treat offset as scalar of particle radius` |
+| `m_nPreserveOffsetCP` | int32 | `MPropertyFriendlyName preserve initial Z-offset relative to cp` |
+| `m_nIgnoreCP` | int32 | `MPropertyFriendlyName CP Entity to Ignore for Collisions` |
+
+### C_OP_MovementRigidAttachToCP
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_MovementRigidAttachToCP
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_MovementRigidAttachToCP *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_nScaleControlPoint` | int32 | `MPropertyFriendlyName scale control point number` |
+| `m_nScaleCPField` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName scale control point field` |
+| `m_nFieldInput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName cache attribute to read from` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName attribute to write to` |
+| `m_bOffsetLocal` | bool | `MPropertyFriendlyName local space` |
+
+### C_OP_MovementRotateParticleAroundAxis
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_MovementRotateParticleAroundAxis
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_MovementRotateParticleAroundAxis *-- CParticleCollectionVecInput
+    C_OP_MovementRotateParticleAroundAxis *-- CParticleCollectionFloatInput
+    C_OP_MovementRotateParticleAroundAxis *-- CParticleTransformInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecRotAxis` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName rotation axis` `MVectorIsCoordinate` |
+| `m_flRotRate` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName rotation rate` |
+| `m_TransformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName transform input` |
+| `m_bLocalSpace` | bool | `MPropertyFriendlyName use local space` |
+
+### C_OP_MovementSkinnedPositionFromCPSnapshot
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_MovementSkinnedPositionFromCPSnapshot
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_MovementSkinnedPositionFromCPSnapshot *-- SnapshotIndexType_t
+    C_OP_MovementSkinnedPositionFromCPSnapshot *-- CPerParticleFloatInput
+    C_OP_MovementSkinnedPositionFromCPSnapshot *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nSnapshotControlPointNumber` | int32 | `MPropertyFriendlyName snapshot control point number` |
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_bRandom` | bool | `MPropertyFriendlyName random order` |
+| `m_nRandomSeed` | int32 | `MPropertyFriendlyName random seed` |
+| `m_bSetNormal` | bool | `MPropertyFriendlyName set normal` |
+| `m_bSetRadius` | bool | `MPropertyFriendlyName set radius` |
+| `m_nIndexType` | [SnapshotIndexType_t](../schemas/!GlobalTypes.md#snapshotindextype_t) | `MPropertyFriendlyName Snapshot Read Type` |
+| `m_flReadIndex` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Snapshot Index` `MPropertySuppressExpr` |
+| `m_flIncrement` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName particle increment amount` `MPropertySuppressExpr` |
+| `m_nFullLoopIncrement` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Full Loop Increment Amount` `MPropertySuppressExpr` |
+| `m_nSnapShotStartPoint` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Snapshot start point` `MPropertySuppressExpr` |
+| `m_flInterpolation` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Interpolation` |
+
+### C_OP_MultiSegmentDisplaySnapshotGenerator
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_MultiSegmentDisplaySnapshotGenerator
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_MultiSegmentDisplaySnapshotGenerator *-- ParticleMultiSegmentCountSelection_t
+    C_OP_MultiSegmentDisplaySnapshotGenerator *-- ParticleMultiSegmentInputSelection_t
+    C_OP_MultiSegmentDisplaySnapshotGenerator *-- CParticleCollectionFloatInput
+    C_OP_MultiSegmentDisplaySnapshotGenerator *-- ParticleMultiSegmentSpecialCharacter_t
+    C_OP_MultiSegmentDisplaySnapshotGenerator *-- CParticleCollectionVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCPSnapshot` | int32 | `MPropertyFriendlyName snapshot control point number` |
+| `m_nSegCount` | [ParticleMultiSegmentCountSelection_t](../schemas/!GlobalTypes.md#particlemultisegmentcountselection_t) | `MPropertyFriendlyName Segment Count` |
+| `m_nInputType` | [ParticleMultiSegmentInputSelection_t](../schemas/!GlobalTypes.md#particlemultisegmentinputselection_t) | `MPropertyFriendlyName Input Type` |
+| `m_strDefaultString` | CUtlString | `MPropertyFriendlyName Default String` `MPropertySuppressExpr` |
+| `m_flValue` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Float Value` `MPropertySuppressExpr` |
+| `m_flScollOffset` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Scroll Offset` |
+| `m_SpecialCharList` | CUtlVector< [ParticleMultiSegmentSpecialCharacter_t](../schemas/!GlobalTypes.md#particlemultisegmentspecialcharacter_t) > | `MPropertyFriendlyName Segment Special Character` |
+| `m_vecColorUnlit` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName unlit segment color` |
+| `m_vecColorLit` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName lit segment color` |
+| `m_flRadius` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Radius` |
+| `m_flSpacing` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Spacing Scale` |
+| `m_flMinCount` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Minimum Digits Count` |
+| `m_flMaxCount` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Maximum Digits Count` |
+| `m_bPrependEmpty` | bool | `MPropertyFriendlyName Prepend Empty Digits` |
+| `m_flDigitsAfterDecimal` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Digits After Decimal` `MPropertySuppressExpr` |
+
+### C_OP_Noise
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_Noise
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_Noise *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_flOutputMin` | float32 | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | float32 | `MPropertyFriendlyName output maximum` |
+| `m_fl4NoiseScale` | float32 | `MPropertyFriendlyName noise coordinate scale` |
+| `m_bAdditive` | bool | `MPropertyFriendlyName additive` |
+| `m_flNoiseAnimationTimeScale` | float32 | `MPropertyFriendlyName Noise animation time scale` |
+
+### C_OP_NoiseEmitter
+
+**Inherits from:** [CParticleFunctionEmitter](particles.md#cparticlefunctionemitter)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionEmitter <|-- C_OP_NoiseEmitter
+    CParticleFunction <|-- CParticleFunctionEmitter
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flEmissionDuration` | float32 | `MPropertyFriendlyName emission duration` |
+| `m_flStartTime` | float32 | `MPropertyFriendlyName emission start time` |
+| `m_flEmissionScale` | float32 | `MParticleMaxVersion` `MPropertyFriendlyName scale emission to used control points` |
+| `m_nScaleControlPoint` | int32 | `MPropertyFriendlyName emission count scale control point` |
+| `m_nScaleControlPointField` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName emission count scale control point field` |
+| `m_nWorldNoisePoint` | int32 | `MPropertyFriendlyName world noise scale control point` |
+| `m_bAbsVal` | bool | `MPropertyFriendlyName absolute value` |
+| `m_bAbsValInv` | bool | `MPropertyFriendlyName invert absolute value` |
+| `m_flOffset` | float32 | `MPropertyFriendlyName time coordinate offset` |
+| `m_flOutputMin` | float32 | `MPropertyFriendlyName emission minimum` |
+| `m_flOutputMax` | float32 | `MPropertyFriendlyName emission maximum` |
+| `m_flNoiseScale` | float32 | `MPropertyFriendlyName time noise coordinate scale` |
+| `m_flWorldNoiseScale` | float32 | `MPropertyFriendlyName world spatial noise coordinate scale` |
+| `m_vecOffsetLoc` | Vector | `MPropertyFriendlyName spatial coordinate offset` `MVectorIsCoordinate` |
+| `m_flWorldTimeScale` | float32 | `MPropertyFriendlyName world time noise coordinate scale` |
+
+### C_OP_NormalLock
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_NormalLock
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+
+### C_OP_NormalizeVector
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_NormalizeVector
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_NormalizeVector *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_flScale` | float32 | `MPropertyFriendlyName scale factor` |
+
+### C_OP_Orient2DRelToCP
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_Orient2DRelToCP
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_Orient2DRelToCP *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flRotOffset` | float32 | `MPropertyFriendlyName rotation offset` |
+| `m_flSpinStrength` | float32 | `MPropertyFriendlyName spin strength` |
+| `m_nCP` | int32 | `MPropertyFriendlyName control point` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_rotation` `MPropertyFriendlyName rotation field` |
+
+### C_OP_OrientTo2dDirection
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_OrientTo2dDirection
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_OrientTo2dDirection *-- CPerParticleVecInput
+    C_OP_OrientTo2dDirection *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecInput` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName direction input` `MVectorIsCoordinate` |
+| `m_flRotOffset` | float32 | `MPropertyFriendlyName rotation offset` |
+| `m_flSpinStrength` | float32 | `MPropertyFriendlyName spin strength` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_rotation` `MPropertyFriendlyName rotation field` |
+
+### C_OP_OscillateScalar
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_OscillateScalar
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_OscillateScalar *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_RateMin` | float32 | `MPropertyFriendlyName oscillation rate min` |
+| `m_RateMax` | float32 | `MPropertyFriendlyName oscillation rate max` |
+| `m_FrequencyMin` | float32 | `MPropertyFriendlyName oscillation frequency min` |
+| `m_FrequencyMax` | float32 | `MPropertyFriendlyName oscillation frequency max` |
+| `m_nField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName oscillation field` |
+| `m_bProportional` | bool | `MPropertyFriendlyName proportional 0/1` |
+| `m_bProportionalOp` | bool | `MPropertyFriendlyName start/end proportional` |
+| `m_flStartTime_min` | float32 | `MPropertyFriendlyName start time min` |
+| `m_flStartTime_max` | float32 | `MPropertyFriendlyName start time max` |
+| `m_flEndTime_min` | float32 | `MPropertyFriendlyName end time min` |
+| `m_flEndTime_max` | float32 | `MPropertyFriendlyName end time max` |
+| `m_flOscMult` | float32 | `MPropertyFriendlyName oscillation multiplier` |
+| `m_flOscAdd` | float32 | `MPropertyFriendlyName oscillation start phase` |
+
+### C_OP_OscillateScalarSimple
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_OscillateScalarSimple
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_OscillateScalarSimple *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Rate` | float32 | `MPropertyFriendlyName oscillation rate` |
+| `m_Frequency` | float32 | `MPropertyFriendlyName oscillation frequency` |
+| `m_nField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName oscillation field` |
+| `m_flOscMult` | float32 | `MPropertyFriendlyName oscillation multiplier` |
+| `m_flOscAdd` | float32 | `MPropertyFriendlyName oscillation start phase` |
+
+### C_OP_OscillateVector
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_OscillateVector
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_OscillateVector *-- ParticleAttributeIndex_t
+    C_OP_OscillateVector *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_RateMin` | Vector | `MPropertyFriendlyName oscillation rate min` `MVectorIsSometimesCoordinate` |
+| `m_RateMax` | Vector | `MPropertyFriendlyName oscillation rate max` `MVectorIsSometimesCoordinate` |
+| `m_FrequencyMin` | Vector | `MPropertyFriendlyName oscillation frequency min` `MVectorIsSometimesCoordinate` |
+| `m_FrequencyMax` | Vector | `MPropertyFriendlyName oscillation frequency max` `MVectorIsSometimesCoordinate` |
+| `m_nField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName oscillation field` |
+| `m_bProportional` | bool | `MPropertyFriendlyName proportional 0/1` |
+| `m_bProportionalOp` | bool | `MPropertyFriendlyName start/end proportional` |
+| `m_bOffset` | bool | `MPropertyFriendlyName offset instead of accelerate position` |
+| `m_flStartTime_min` | float32 | `MPropertyFriendlyName start time min` |
+| `m_flStartTime_max` | float32 | `MPropertyFriendlyName start time max` |
+| `m_flEndTime_min` | float32 | `MPropertyFriendlyName end time min` |
+| `m_flEndTime_max` | float32 | `MPropertyFriendlyName end time max` |
+| `m_flOscMult` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName oscillation multiplier` |
+| `m_flOscAdd` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName oscillation start phase` |
+| `m_flRateScale` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName rate scale` |
+
+### C_OP_OscillateVectorSimple
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_OscillateVectorSimple
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_OscillateVectorSimple *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Rate` | Vector | `MPropertyFriendlyName oscillation rate` `MVectorIsSometimesCoordinate` |
+| `m_Frequency` | Vector | `MPropertyFriendlyName oscillation frequency` |
+| `m_nField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName oscillation field` |
+| `m_flOscMult` | float32 | `MPropertyFriendlyName oscillation multiplier` |
+| `m_flOscAdd` | float32 | `MPropertyFriendlyName oscillation start phase` |
+| `m_bOffset` | bool | `MPropertyFriendlyName offset instead of accelerate position` |
+
+### C_OP_ParentVortices
+
+**Inherits from:** [CParticleFunctionForce](particles.md#cparticlefunctionforce)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionForce <|-- C_OP_ParentVortices
+    CParticleFunction <|-- CParticleFunctionForce
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flForceScale` | float32 | `MPropertyFriendlyName amount of force` |
+| `m_vecTwistAxis` | Vector | `MPropertyFriendlyName twist axis` `MVectorIsCoordinate` |
+| `m_bFlipBasedOnYaw` | bool | `MPropertyFriendlyName flip twist axis with yaw` |
+
+### C_OP_PerParticleForce
+
+**Inherits from:** [CParticleFunctionForce](particles.md#cparticlefunctionforce)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionForce <|-- C_OP_PerParticleForce
+    CParticleFunction <|-- CParticleFunctionForce
+    C_OP_PerParticleForce *-- CPerParticleFloatInput
+    C_OP_PerParticleForce *-- CPerParticleVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flForceScale` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName force scale` |
+| `m_vForce` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName force to apply` `MVectorIsCoordinate` |
+| `m_nCP` | int32 | `MPropertyFriendlyName local space control point` |
+
+### C_OP_PercentageBetweenTransformLerpCPs
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_PercentageBetweenTransformLerpCPs
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_PercentageBetweenTransformLerpCPs *-- ParticleAttributeIndex_t
+    C_OP_PercentageBetweenTransformLerpCPs *-- CParticleTransformInput
+    C_OP_PercentageBetweenTransformLerpCPs *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_flInputMin` | float32 | `MPropertyFriendlyName percentage minimum` |
+| `m_flInputMax` | float32 | `MPropertyFriendlyName percentage maximum` |
+| `m_TransformStart` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName strarting transform` |
+| `m_TransformEnd` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName end transform` |
+| `m_nOutputStartCP` | int32 | `MPropertyFriendlyName output starting control point number` |
+| `m_nOutputStartField` | int32 | `MPropertyFriendlyName output starting control point field 0-2 X/Y/Z` |
+| `m_nOutputEndCP` | int32 | `MPropertyFriendlyName output ending control point number` |
+| `m_nOutputEndField` | int32 | `MPropertyFriendlyName output ending control point field 0-2 X/Y/Z` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_bActiveRange` | bool | `MPropertyFriendlyName only active within input range` |
+| `m_bRadialCheck` | bool | `MPropertyFriendlyName treat distance between points as radius` |
+
+### C_OP_PercentageBetweenTransforms
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_PercentageBetweenTransforms
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_PercentageBetweenTransforms *-- ParticleAttributeIndex_t
+    C_OP_PercentageBetweenTransforms *-- CParticleTransformInput
+    C_OP_PercentageBetweenTransforms *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_flInputMin` | float32 | `MPropertyFriendlyName percentage minimum` |
+| `m_flInputMax` | float32 | `MPropertyFriendlyName percentage maximum` |
+| `m_flOutputMin` | float32 | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | float32 | `MPropertyFriendlyName output maximum` |
+| `m_TransformStart` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName strarting transform` |
+| `m_TransformEnd` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName end transform` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_bActiveRange` | bool | `MPropertyFriendlyName only active within input range` |
+| `m_bRadialCheck` | bool | `MPropertyFriendlyName treat distance between points as radius` |
+
+### C_OP_PercentageBetweenTransformsVector
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_PercentageBetweenTransformsVector
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_PercentageBetweenTransformsVector *-- ParticleAttributeIndex_t
+    C_OP_PercentageBetweenTransformsVector *-- CParticleTransformInput
+    C_OP_PercentageBetweenTransformsVector *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_flInputMin` | float32 | `MPropertyFriendlyName percentage minimum` |
+| `m_flInputMax` | float32 | `MPropertyFriendlyName percentage maximum` |
+| `m_vecOutputMin` | Vector | `MPropertyFriendlyName output minimum` `MVectorIsSometimesCoordinate` |
+| `m_vecOutputMax` | Vector | `MPropertyFriendlyName output maximum` `MVectorIsSometimesCoordinate` |
+| `m_TransformStart` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName strarting transform` |
+| `m_TransformEnd` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName end transform` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_bActiveRange` | bool | `MPropertyFriendlyName only active within input range` |
+| `m_bRadialCheck` | bool | `MPropertyFriendlyName treat distance between points as radius` |
+
+### C_OP_PinParticleToCP
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_PinParticleToCP
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_PinParticleToCP *-- CParticleCollectionVecInput
+    C_OP_PinParticleToCP *-- ParticleSelection_t
+    C_OP_PinParticleToCP *-- CParticleCollectionFloatInput
+    C_OP_PinParticleToCP *-- ParticlePinDistance_t
+    C_OP_PinParticleToCP *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_vecOffset` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName offset` |
+| `m_bOffsetLocal` | bool | `MPropertyFriendlyName offset in local space` |
+| `m_nParticleSelection` | [ParticleSelection_t](../schemas/!GlobalTypes.md#particleselection_t) | `MPropertyFriendlyName particle to use` |
+| `m_nParticleNumber` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName particle number/offset` |
+| `m_nPinBreakType` | [ParticlePinDistance_t](../schemas/!GlobalTypes.md#particlepindistance_t) | `MPropertyFriendlyName pin break type` |
+| `m_flBreakDistance` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName break length %` |
+| `m_flBreakSpeed` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName break speed` |
+| `m_flAge` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName break age` |
+| `m_nBreakControlPointNumber` | int32 | `MPropertyFriendlyName break comparison control point 1` |
+| `m_nBreakControlPointNumber2` | int32 | `MPropertyFriendlyName break comparison control point 2` |
+| `m_flBreakValue` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName break value` |
+| `m_flInterpolation` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Interpolation` |
+| `m_bRetainInitialVelocity` | bool | `MPropertyFriendlyName Retain Initial Velocity ` `MPropertySuppressExpr` |
+
+### C_OP_PinRopeSegmentParticleToParent
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_PinRopeSegmentParticleToParent
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_PinRopeSegmentParticleToParent *-- ParticleSelection_t
+    C_OP_PinRopeSegmentParticleToParent *-- CParticleCollectionFloatInput
+    C_OP_PinRopeSegmentParticleToParent *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nParticleSelection` | [ParticleSelection_t](../schemas/!GlobalTypes.md#particleselection_t) | `MPropertyFriendlyName particle to use` |
+| `m_nParticleNumber` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName particle number/offset` |
+| `m_flInterpolation` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Interpolation` |
+
+### C_OP_PlanarConstraint
+
+**Inherits from:** [CParticleFunctionConstraint](particles.md#cparticlefunctionconstraint)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionConstraint <|-- C_OP_PlanarConstraint
+    CParticleFunction <|-- CParticleFunctionConstraint
+    C_OP_PlanarConstraint *-- CPerParticleFloatInput
+    C_OP_PlanarConstraint *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_PointOnPlane` | Vector | `MPropertyFriendlyName plane point` `MVectorIsCoordinate` |
+| `m_PlaneNormal` | Vector | `MPropertyFriendlyName plane normal` |
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_bGlobalOrigin` | bool | `MPropertyFriendlyName global origin` |
+| `m_bGlobalNormal` | bool | `MPropertyFriendlyName global normal` |
+| `m_flRadiusScale` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName radius scale` |
+| `m_flMaximumDistanceToCP` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName falloff distance from control point` |
+| `m_bUseOldCode` | bool | `MPropertyFriendlyName use old code` |
+
+### C_OP_PlaneCull
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_PlaneCull
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_PlaneCull *-- CParticleCollectionVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nPlaneControlPoint` | int32 | `MPropertyFriendlyName control point for point on plane` |
+| `m_vecPlaneDirection` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName plane normal` |
+| `m_bLocalSpace` | bool | `MPropertyFriendlyName use local space` |
+| `m_flPlaneOffset` | float32 | `MPropertyFriendlyName cull plane offset` |
+
+### C_OP_PlayEndCapWhenFinished
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_PlayEndCapWhenFinished
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bFireOnEmissionEnd` | bool | `MPropertyFriendlyName play when emission ends` |
+| `m_bIncludeChildren` | bool | `MPropertyFriendlyName wait for children to finish` |
+
+### C_OP_PointVectorAtNextParticle
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_PointVectorAtNextParticle
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_PointVectorAtNextParticle *-- ParticleAttributeIndex_t
+    C_OP_PointVectorAtNextParticle *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_flInterpolation` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Interpolation` |
+| `m_bPrevious` | bool | `MPropertyFriendlyName Point at Previous instead of next` |
+
+### C_OP_PositionLock
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_PositionLock
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_PositionLock *-- CParticleTransformInput
+    C_OP_PositionLock *-- CParticleCollectionFloatInput
+    C_OP_PositionLock *-- CParticleCollectionVecInput
+    C_OP_PositionLock *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_TransformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName transform input` |
+| `m_flStartTime_min` | float32 | `MPropertyFriendlyName start fadeout min` |
+| `m_flStartTime_max` | float32 | `MPropertyFriendlyName start fadeout max` |
+| `m_flStartTime_exp` | float32 | `MPropertyFriendlyName start fadeout exponent` `MPropertySuppressExpr` |
+| `m_flEndTime_min` | float32 | `MPropertyFriendlyName end fadeout min` |
+| `m_flEndTime_max` | float32 | `MPropertyFriendlyName end fadeout max` |
+| `m_flEndTime_exp` | float32 | `MPropertyFriendlyName end fadeout exponent` `MPropertySuppressExpr` |
+| `m_flRange` | float32 | `MPropertyFriendlyName distance fade range` `MPropertySuppressExpr` |
+| `m_flRangeBias` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName distance fade bias` `MPropertySuppressExpr` |
+| `m_flJumpThreshold` | float32 | `MPropertyFriendlyName instant jump threshold` |
+| `m_flPrevPosScale` | float32 | `MPropertyFriendlyName previous position scale` `MPropertySuppressExpr` |
+| `m_bLockRot` | bool | `MPropertyFriendlyName lock rotation` |
+| `m_vecScale` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName component scale` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_nFieldOutputPrev` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field prev` |
+
+### C_OP_QuantizeCPComponent
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_QuantizeCPComponent
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_QuantizeCPComponent *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flInputValue` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName input` |
+| `m_nCPOutput` | int32 | `MPropertyFriendlyName output control point` |
+| `m_nOutVectorField` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName output component` |
+| `m_flQuantizeValue` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName interval to snap to` |
+
+### C_OP_QuantizeFloat
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_QuantizeFloat
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_QuantizeFloat *-- CPerParticleFloatInput
+    C_OP_QuantizeFloat *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_InputValue` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName value` |
+| `m_nOutputField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+
+### C_OP_RadiusDecay
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RadiusDecay
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flMinRadius` | float32 | `MPropertyFriendlyName minimum radius` |
+
+### C_OP_RampCPLinearRandom
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_RampCPLinearRandom
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nOutControlPointNumber` | int32 | `MPropertyFriendlyName output control point` |
+| `m_vecRateMin` | Vector | `MPropertyFriendlyName ramp rate min` |
+| `m_vecRateMax` | Vector | `MPropertyFriendlyName ramp rate max` |
+
+### C_OP_RampScalarLinear
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RampScalarLinear
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RampScalarLinear *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_RateMin` | float32 | `MPropertyFriendlyName ramp rate min` |
+| `m_RateMax` | float32 | `MPropertyFriendlyName ramp rate max` |
+| `m_flStartTime_min` | float32 | `MPropertyFriendlyName start time min` |
+| `m_flStartTime_max` | float32 | `MPropertyFriendlyName start time max` |
+| `m_flEndTime_min` | float32 | `MPropertyFriendlyName end time min` |
+| `m_flEndTime_max` | float32 | `MPropertyFriendlyName end time max` |
+| `m_nField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName ramp field` |
+| `m_bProportionalOp` | bool | `MPropertyFriendlyName start/end proportional` |
+
+### C_OP_RampScalarLinearSimple
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RampScalarLinearSimple
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RampScalarLinearSimple *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Rate` | float32 | `MPropertyFriendlyName ramp rate` |
+| `m_flStartTime` | float32 | `MPropertyFriendlyName start time` |
+| `m_flEndTime` | float32 | `MPropertyFriendlyName end time` |
+| `m_nField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName ramp field` |
+
+### C_OP_RampScalarSpline
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RampScalarSpline
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RampScalarSpline *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_RateMin` | float32 | `MPropertyFriendlyName ramp rate min` |
+| `m_RateMax` | float32 | `MPropertyFriendlyName ramp rate max` |
+| `m_flStartTime_min` | float32 | `MPropertyFriendlyName start time min` |
+| `m_flStartTime_max` | float32 | `MPropertyFriendlyName start time max` |
+| `m_flEndTime_min` | float32 | `MPropertyFriendlyName end time min` |
+| `m_flEndTime_max` | float32 | `MPropertyFriendlyName end time max` |
+| `m_flBias` | float32 | `MPropertyFriendlyName bias` |
+| `m_nField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName ramp field` |
+| `m_bProportionalOp` | bool | `MPropertyFriendlyName start/end proportional` |
+| `m_bEaseOut` | bool | `MPropertyFriendlyName ease out` |
+
+### C_OP_RampScalarSplineSimple
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RampScalarSplineSimple
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RampScalarSplineSimple *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Rate` | float32 | `MPropertyFriendlyName ramp rate` |
+| `m_flStartTime` | float32 | `MPropertyFriendlyName start time` |
+| `m_flEndTime` | float32 | `MPropertyFriendlyName end time` |
+| `m_nField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName ramp field` |
+| `m_bEaseOut` | bool | `MPropertyFriendlyName ease out` |
+
+### C_OP_RandomForce
+
+**Inherits from:** [CParticleFunctionForce](particles.md#cparticlefunctionforce)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionForce <|-- C_OP_RandomForce
+    CParticleFunction <|-- CParticleFunctionForce
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_MinForce` | Vector | `MPropertyFriendlyName min force` `MVectorIsCoordinate` |
+| `m_MaxForce` | Vector | `MPropertyFriendlyName max force` `MVectorIsCoordinate` |
+
+### C_OP_ReadFromNeighboringParticle
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_ReadFromNeighboringParticle
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_ReadFromNeighboringParticle *-- ParticleAttributeIndex_t
+    C_OP_ReadFromNeighboringParticle *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldInput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield` `MPropertyFriendlyName read field` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield` `MPropertyFriendlyName written field` |
+| `m_nIncrement` | int32 | `MPropertyFriendlyName particle increment amount` |
+| `m_DistanceCheck` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName maximum distance` |
+| `m_flInterpolation` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Interpolation` |
+
+### C_OP_ReinitializeScalarEndCap
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_ReinitializeScalarEndCap
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_ReinitializeScalarEndCap *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_flOutputMin` | float32 | `MPropertyFriendlyName minimum` |
+| `m_flOutputMax` | float32 | `MPropertyFriendlyName maximum` |
+
+### C_OP_RemapAverageHitboxSpeedtoCP
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_RemapAverageHitboxSpeedtoCP
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapAverageHitboxSpeedtoCP *-- ParticleHitboxDataSelection_t
+    C_OP_RemapAverageHitboxSpeedtoCP *-- CParticleCollectionFloatInput
+    C_OP_RemapAverageHitboxSpeedtoCP *-- CParticleCollectionVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nInControlPointNumber` | int32 | `MPropertyFriendlyName input control point` |
+| `m_nOutControlPointNumber` | int32 | `MPropertyFriendlyName output control point` |
+| `m_nField` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName Output component` |
+| `m_nHitboxDataType` | [ParticleHitboxDataSelection_t](../schemas/!GlobalTypes.md#particlehitboxdataselection_t) | `MPropertyFriendlyName hitbox data` |
+| `m_flInputMin` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName input minimum` |
+| `m_flInputMax` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName input maximum` |
+| `m_flOutputMin` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName output maximum` |
+| `m_nHeightControlPointNumber` | int32 | `MPropertyFriendlyName intersection height CP` `MPropertySuppressExpr` |
+| `m_vecComparisonVelocity` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName comparison velocity` `MPropertySuppressExpr` |
+| `m_HitboxSetName` | char[128] | `MPropertyFriendlyName hitbox set` |
+
+### C_OP_RemapAverageScalarValuetoCP
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_RemapAverageScalarValuetoCP
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapAverageScalarValuetoCP *-- SetStatisticExpressionType_t
+    C_OP_RemapAverageScalarValuetoCP *-- CParticleCollectionFloatInput
+    C_OP_RemapAverageScalarValuetoCP *-- ParticleAttributeIndex_t
+    C_OP_RemapAverageScalarValuetoCP *-- CParticleRemapFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nExpression` | [SetStatisticExpressionType_t](../schemas/!GlobalTypes.md#setstatisticexpressiontype_t) | `MPropertyFriendlyName expression type` |
+| `m_flDecimalPlaces` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName mode # of decimal places` `MPropertySuppressExpr` |
+| `m_nOutControlPointNumber` | int32 | `MPropertyFriendlyName output control point` |
+| `m_nOutVectorField` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName output field` |
+| `m_nField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName input attribute to evaluate` |
+| `m_flOutputRemap` | [CParticleRemapFloatInput](../schemas/particleslib.md#cparticleremapfloatinput) | `MPropertyFriendlyName output` |
+
+### C_OP_RemapBoundingVolumetoCP
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_RemapBoundingVolumetoCP
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nOutControlPointNumber` | int32 | `MPropertyFriendlyName output control point` |
+| `m_flInputMin` | float32 | `MPropertyFriendlyName input volume minimum in cubic units` |
+| `m_flInputMax` | float32 | `MPropertyFriendlyName input volume maximum in cubic units` |
+| `m_flOutputMin` | float32 | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | float32 | `MPropertyFriendlyName output maximum` |
+
+### C_OP_RemapCPVelocityToVector
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapCPVelocityToVector
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapCPVelocityToVector *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPoint` | int32 | `MPropertyFriendlyName control point` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_flScale` | float32 | `MPropertyFriendlyName scale factor` |
+| `m_bNormalize` | bool | `MPropertyFriendlyName normalize` |
+
+### C_OP_RemapCPtoCP
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_RemapCPtoCP
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nInputControlPoint` | int32 | `MPropertyFriendlyName input control point number` |
+| `m_nOutputControlPoint` | int32 | `MPropertyFriendlyName output control point number` |
+| `m_nInputField` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName input field` |
+| `m_nOutputField` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName output field` |
+| `m_flInputMin` | float32 | `MPropertyFriendlyName input minimum` |
+| `m_flInputMax` | float32 | `MPropertyFriendlyName input maximum` |
+| `m_flOutputMin` | float32 | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | float32 | `MPropertyFriendlyName output maximum` |
+| `m_bDerivative` | bool | `MPropertyFriendlyName use the derivative` |
+| `m_flInterpRate` | float32 | `MPropertyFriendlyName interpolation` |
+
+### C_OP_RemapCPtoScalar
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapCPtoScalar
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapCPtoScalar *-- ParticleAttributeIndex_t
+    C_OP_RemapCPtoScalar *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCPInput` | int32 | `MPropertyFriendlyName input control point number` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_nField` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName input field 0-2 X/Y/Z` |
+| `m_flInputMin` | float32 | `MPropertyFriendlyName input minimum` |
+| `m_flInputMax` | float32 | `MPropertyFriendlyName input maximum` |
+| `m_flOutputMin` | float32 | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | float32 | `MPropertyFriendlyName output maximum` |
+| `m_flStartTime` | float32 | `MPropertyFriendlyName emitter lifetime start time (seconds)` |
+| `m_flEndTime` | float32 | `MPropertyFriendlyName emitter lifetime end time (seconds)` |
+| `m_flInterpRate` | float32 | `MPropertyFriendlyName interpolation scale` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+
+### C_OP_RemapCPtoVector
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapCPtoVector
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapCPtoVector *-- ParticleAttributeIndex_t
+    C_OP_RemapCPtoVector *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCPInput` | int32 | `MPropertyFriendlyName input control point number` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_nLocalSpaceCP` | int32 | `MPropertyFriendlyName local space CP` |
+| `m_vInputMin` | Vector | `MPropertyFriendlyName input minimum` `MVectorIsSometimesCoordinate` |
+| `m_vInputMax` | Vector | `MPropertyFriendlyName input maximum` `MVectorIsSometimesCoordinate` |
+| `m_vOutputMin` | Vector | `MPropertyFriendlyName output minimum` `MVectorIsSometimesCoordinate` |
+| `m_vOutputMax` | Vector | `MPropertyFriendlyName output maximum` `MVectorIsSometimesCoordinate` |
+| `m_flStartTime` | float32 | `MPropertyFriendlyName emitter lifetime start time (seconds)` |
+| `m_flEndTime` | float32 | `MPropertyFriendlyName emitter lifetime end time (seconds)` |
+| `m_flInterpRate` | float32 | `MPropertyFriendlyName interpolation scale` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_bOffset` | bool | `MPropertyFriendlyName offset position` |
+| `m_bAccelerate` | bool | `MPropertyFriendlyName accelerate position` |
+
+### C_OP_RemapControlPointDirectionToVector
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapControlPointDirectionToVector
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapControlPointDirectionToVector *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_flScale` | float32 | `MPropertyFriendlyName scale factor` |
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+
+### C_OP_RemapControlPointOrientationToRotation
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapControlPointOrientationToRotation
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapControlPointOrientationToRotation *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCP` | int32 | `MPropertyFriendlyName control point` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_rotation` `MPropertyFriendlyName rotation field` |
+| `m_flOffsetRot` | float32 | `MPropertyFriendlyName offset rotation` |
+| `m_nComponent` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName control point axis` `MVectorIsSometimesCoordinate` |
+
+### C_OP_RemapCrossProductOfTwoVectorsToVector
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapCrossProductOfTwoVectorsToVector
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapCrossProductOfTwoVectorsToVector *-- CPerParticleVecInput
+    C_OP_RemapCrossProductOfTwoVectorsToVector *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_InputVec1` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName input vector 1` |
+| `m_InputVec2` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName input vector 2` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_bNormalize` | bool | `MPropertyFriendlyName normalize output` |
+
+### C_OP_RemapDensityGradientToVectorAttribute
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapDensityGradientToVectorAttribute
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapDensityGradientToVectorAttribute *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flRadiusScale` | float32 | `MPropertyFriendlyName Radius scale for particle influence` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+
+### C_OP_RemapDensityToVector
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapDensityToVector
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapDensityToVector *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flRadiusScale` | float32 | `MPropertyFriendlyName Radius scale for particle influence` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Output field` |
+| `m_flDensityMin` | float32 | `MPropertyFriendlyName Density value to map to min value` |
+| `m_flDensityMax` | float32 | `MPropertyFriendlyName Density value to map to max value` |
+| `m_vecOutputMin` | Vector | `MPropertyFriendlyName Output minimum` |
+| `m_vecOutputMax` | Vector | `MPropertyFriendlyName Output maximum` |
+| `m_bUseParentDensity` | bool | `MPropertyFriendlyName Use parent density instead of ours` |
+| `m_nVoxelGridResolution` | int32 | `MPropertyFriendlyName Resolution to use for creating a voxel grid` |
+
+### C_OP_RemapDirectionToCPToVector
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapDirectionToCPToVector
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapDirectionToCPToVector *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCP` | int32 | `MPropertyFriendlyName control point` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_flScale` | float32 | `MPropertyFriendlyName scale factor` |
+| `m_flOffsetRot` | float32 | `MPropertyFriendlyName offset rotation` |
+| `m_vecOffsetAxis` | Vector | `MPropertyFriendlyName offset axis` `MVectorIsCoordinate` |
+| `m_bNormalize` | bool | `MPropertyFriendlyName normalize` |
+| `m_nFieldStrength` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName strength field` |
+
+### C_OP_RemapDistanceToLineSegmentBase
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Derived by:** [C_OP_RemapDistanceToLineSegmentToScalar](particles.md#c_op_remapdistancetolinesegmenttoscalar), [C_OP_RemapDistanceToLineSegmentToVector](particles.md#c_op_remapdistancetolinesegmenttovector)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapDistanceToLineSegmentBase
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapDistanceToLineSegmentBase <|-- C_OP_RemapDistanceToLineSegmentToScalar
+    C_OP_RemapDistanceToLineSegmentBase <|-- C_OP_RemapDistanceToLineSegmentToVector
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCP0` | int32 | `MPropertyFriendlyName control point 0` |
+| `m_nCP1` | int32 | `MPropertyFriendlyName control point 1` |
+| `m_flMinInputValue` | float32 | `MPropertyFriendlyName min distance value` |
+| `m_flMaxInputValue` | float32 | `MPropertyFriendlyName max distance value` |
+| `m_bInfiniteLine` | bool | `MPropertyFriendlyName use distance to an infinite line instead of a finite line segment` |
+
+### C_OP_RemapDistanceToLineSegmentToScalar
+
+**Inherits from:** [C_OP_RemapDistanceToLineSegmentBase](particles.md#c_op_remapdistancetolinesegmentbase)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    C_OP_RemapDistanceToLineSegmentBase <|-- C_OP_RemapDistanceToLineSegmentToScalar
+    CParticleFunctionOperator <|-- C_OP_RemapDistanceToLineSegmentBase
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapDistanceToLineSegmentToScalar *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_flMinOutputValue` | float32 | `MPropertyFriendlyName output value at min distance` |
+| `m_flMaxOutputValue` | float32 | `MPropertyFriendlyName output value at max distance` |
+
+### C_OP_RemapDistanceToLineSegmentToVector
+
+**Inherits from:** [C_OP_RemapDistanceToLineSegmentBase](particles.md#c_op_remapdistancetolinesegmentbase)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    C_OP_RemapDistanceToLineSegmentBase <|-- C_OP_RemapDistanceToLineSegmentToVector
+    CParticleFunctionOperator <|-- C_OP_RemapDistanceToLineSegmentBase
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapDistanceToLineSegmentToVector *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_vMinOutputValue` | Vector | `MPropertyFriendlyName output value at min distance` |
+| `m_vMaxOutputValue` | Vector | `MPropertyFriendlyName output value at max distance` |
+
+### C_OP_RemapDotProductToCP
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_RemapDotProductToCP
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapDotProductToCP *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nInputCP1` | int32 | `MPropertyFriendlyName first input control point` |
+| `m_nInputCP2` | int32 | `MPropertyFriendlyName second input control point` |
+| `m_nOutputCP` | int32 | `MPropertyFriendlyName output control point` |
+| `m_nOutVectorField` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName output component` |
+| `m_flInputMin` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName input minimum (-1 to 1)` |
+| `m_flInputMax` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName input maximum (-1 to 1)` |
+| `m_flOutputMin` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName output maximum` |
+
+### C_OP_RemapDotProductToScalar
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapDotProductToScalar
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapDotProductToScalar *-- ParticleAttributeIndex_t
+    C_OP_RemapDotProductToScalar *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nInputCP1` | int32 | `MPropertyFriendlyName first input control point` |
+| `m_nInputCP2` | int32 | `MPropertyFriendlyName second input control point` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_flInputMin` | float32 | `MPropertyFriendlyName input minimum (-1 to 1)` |
+| `m_flInputMax` | float32 | `MPropertyFriendlyName input maximum (-1 to 1)` |
+| `m_flOutputMin` | float32 | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | float32 | `MPropertyFriendlyName output maximum` |
+| `m_bUseParticleVelocity` | bool | `MPropertyFriendlyName use particle velocity for first input` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_bActiveRange` | bool | `MPropertyFriendlyName only active within specified input range` |
+| `m_bUseParticleNormal` | bool | `MPropertyFriendlyName use particle normal for first input` |
+
+### C_OP_RemapExternalWindToCP
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_RemapExternalWindToCP
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapExternalWindToCP *-- CParticleCollectionVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCP` | int32 | `MPropertyFriendlyName control point to sample wind` |
+| `m_nCPOutput` | int32 | `MPropertyFriendlyName output control point` |
+| `m_vecScale` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName wind scale` |
+| `m_bSetMagnitude` | bool | `MPropertyFriendlyName set magnitude instead of vector` |
+| `m_nOutVectorField` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName magnitude output component` `MPropertySuppressExpr` |
+
+### C_OP_RemapGravityToVector
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapGravityToVector
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapGravityToVector *-- CPerParticleVecInput
+    C_OP_RemapGravityToVector *-- ParticleAttributeIndex_t
+    C_OP_RemapGravityToVector *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vInput1` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName position input` |
+| `m_nOutputField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_bNormalizedOutput` | bool | `MPropertyFriendlyName normalize result` |
+
+### C_OP_RemapModelVolumetoCP
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_RemapModelVolumetoCP
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapModelVolumetoCP *-- BBoxVolumeType_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nBBoxType` | [BBoxVolumeType_t](../schemas/!GlobalTypes.md#bboxvolumetype_t) | `MPropertyFriendlyName output BBox Type` |
+| `m_nInControlPointNumber` | int32 | `MPropertyFriendlyName input control point` |
+| `m_nOutControlPointNumber` | int32 | `MPropertyFriendlyName output control point` |
+| `m_nOutControlPointMaxNumber` | int32 | `MPropertyFriendlyName output max control point` `MPropertySuppressExpr` |
+| `m_nField` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName output CP component` `MPropertySuppressExpr` |
+| `m_flInputMin` | float32 | `MPropertyFriendlyName input volume minimum` `MPropertySuppressExpr` |
+| `m_flInputMax` | float32 | `MPropertyFriendlyName input volume maximum` `MPropertySuppressExpr` |
+| `m_flOutputMin` | float32 | `MPropertyFriendlyName output minimum` `MPropertySuppressExpr` |
+| `m_flOutputMax` | float32 | `MPropertyFriendlyName output maximum` `MPropertySuppressExpr` |
+| `m_bBBoxOnly` | bool | `MPropertyFriendlyName check full bbox only` `MPropertySuppressExpr` |
+| `m_bCubeRoot` | bool | `MPropertyFriendlyName cube root of volume` `MPropertySuppressExpr` |
+
+### C_OP_RemapNamedModelBodyPartEndCap
+
+**Inherits from:** [C_OP_RemapNamedModelElementEndCap](particles.md#c_op_remapnamedmodelelementendcap)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    C_OP_RemapNamedModelElementEndCap <|-- C_OP_RemapNamedModelBodyPartEndCap
+    CParticleFunctionOperator <|-- C_OP_RemapNamedModelElementEndCap
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+### C_OP_RemapNamedModelBodyPartOnceTimed
+
+**Inherits from:** [C_OP_RemapNamedModelElementOnceTimed](particles.md#c_op_remapnamedmodelelementoncetimed)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    C_OP_RemapNamedModelElementOnceTimed <|-- C_OP_RemapNamedModelBodyPartOnceTimed
+    CParticleFunctionOperator <|-- C_OP_RemapNamedModelElementOnceTimed
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+### C_OP_RemapNamedModelElementEndCap
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Derived by:** [C_OP_RemapNamedModelBodyPartEndCap](particles.md#c_op_remapnamedmodelbodypartendcap), [C_OP_RemapNamedModelMeshGroupEndCap](particles.md#c_op_remapnamedmodelmeshgroupendcap), [C_OP_RemapNamedModelSequenceEndCap](particles.md#c_op_remapnamedmodelsequenceendcap)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapNamedModelElementEndCap
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapNamedModelElementEndCap <|-- C_OP_RemapNamedModelBodyPartEndCap
+    C_OP_RemapNamedModelElementEndCap <|-- C_OP_RemapNamedModelMeshGroupEndCap
+    C_OP_RemapNamedModelElementEndCap <|-- C_OP_RemapNamedModelSequenceEndCap
+    C_OP_RemapNamedModelElementEndCap *-- InfoForResourceTypeCModel
+    C_OP_RemapNamedModelElementEndCap *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_hModel` | CStrongHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > |  |
+| `m_inNames` | CUtlVector< CUtlString > | `MPropertyFriendlyName input names` |
+| `m_outNames` | CUtlVector< CUtlString > | `MPropertyFriendlyName output names` |
+| `m_fallbackNames` | CUtlVector< CUtlString > | `MPropertyFriendlyName fallback names when the input doesn't match` |
+| `m_bModelFromRenderer` | bool | `MPropertyFriendlyName model from renderer` |
+| `m_nFieldInput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName input field` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+
+### C_OP_RemapNamedModelElementOnceTimed
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Derived by:** [C_OP_RemapNamedModelBodyPartOnceTimed](particles.md#c_op_remapnamedmodelbodypartoncetimed), [C_OP_RemapNamedModelMeshGroupOnceTimed](particles.md#c_op_remapnamedmodelmeshgrouponcetimed), [C_OP_RemapNamedModelSequenceOnceTimed](particles.md#c_op_remapnamedmodelsequenceoncetimed)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapNamedModelElementOnceTimed
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapNamedModelElementOnceTimed <|-- C_OP_RemapNamedModelBodyPartOnceTimed
+    C_OP_RemapNamedModelElementOnceTimed <|-- C_OP_RemapNamedModelMeshGroupOnceTimed
+    C_OP_RemapNamedModelElementOnceTimed <|-- C_OP_RemapNamedModelSequenceOnceTimed
+    C_OP_RemapNamedModelElementOnceTimed *-- InfoForResourceTypeCModel
+    C_OP_RemapNamedModelElementOnceTimed *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_hModel` | CStrongHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > |  |
+| `m_inNames` | CUtlVector< CUtlString > | `MPropertyFriendlyName input names` |
+| `m_outNames` | CUtlVector< CUtlString > | `MPropertyFriendlyName output names` |
+| `m_fallbackNames` | CUtlVector< CUtlString > | `MPropertyFriendlyName fallback names when the input doesn't match` |
+| `m_bModelFromRenderer` | bool | `MPropertyFriendlyName model from renderer` |
+| `m_bProportional` | bool | `MPropertyFriendlyName remap time proportional` |
+| `m_nFieldInput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName input field` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_flRemapTime` | float32 | `MPropertyFriendlyName remap time` |
+
+### C_OP_RemapNamedModelMeshGroupEndCap
+
+**Inherits from:** [C_OP_RemapNamedModelElementEndCap](particles.md#c_op_remapnamedmodelelementendcap)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    C_OP_RemapNamedModelElementEndCap <|-- C_OP_RemapNamedModelMeshGroupEndCap
+    CParticleFunctionOperator <|-- C_OP_RemapNamedModelElementEndCap
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+### C_OP_RemapNamedModelMeshGroupOnceTimed
+
+**Inherits from:** [C_OP_RemapNamedModelElementOnceTimed](particles.md#c_op_remapnamedmodelelementoncetimed)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    C_OP_RemapNamedModelElementOnceTimed <|-- C_OP_RemapNamedModelMeshGroupOnceTimed
+    CParticleFunctionOperator <|-- C_OP_RemapNamedModelElementOnceTimed
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+### C_OP_RemapNamedModelSequenceEndCap
+
+**Inherits from:** [C_OP_RemapNamedModelElementEndCap](particles.md#c_op_remapnamedmodelelementendcap)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    C_OP_RemapNamedModelElementEndCap <|-- C_OP_RemapNamedModelSequenceEndCap
+    CParticleFunctionOperator <|-- C_OP_RemapNamedModelElementEndCap
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+### C_OP_RemapNamedModelSequenceOnceTimed
+
+**Inherits from:** [C_OP_RemapNamedModelElementOnceTimed](particles.md#c_op_remapnamedmodelelementoncetimed)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    C_OP_RemapNamedModelElementOnceTimed <|-- C_OP_RemapNamedModelSequenceOnceTimed
+    CParticleFunctionOperator <|-- C_OP_RemapNamedModelElementOnceTimed
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+### C_OP_RemapParticleCountOnScalarEndCap
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapParticleCountOnScalarEndCap
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapParticleCountOnScalarEndCap *-- ParticleAttributeIndex_t
+    C_OP_RemapParticleCountOnScalarEndCap *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_nInputMin` | int32 | `MPropertyFriendlyName input minimum` |
+| `m_nInputMax` | int32 | `MPropertyFriendlyName input maximum` |
+| `m_flOutputMin` | float32 | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | float32 | `MPropertyFriendlyName output maximum` |
+| `m_bBackwards` | bool | `MPropertyFriendlyName count back from last particle` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+
+### C_OP_RemapParticleCountToScalar
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapParticleCountToScalar
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapParticleCountToScalar *-- ParticleAttributeIndex_t
+    C_OP_RemapParticleCountToScalar *-- CParticleCollectionFloatInput
+    C_OP_RemapParticleCountToScalar *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_nInputMin` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName input minimum` |
+| `m_nInputMax` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName input maximum` |
+| `m_flOutputMin` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName output maximum` |
+| `m_bActiveRange` | bool | `MPropertyFriendlyName` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+
+### C_OP_RemapScalar
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapScalar
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapScalar *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldInput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName input field` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_flInputMin` | float32 | `MPropertyFriendlyName input minimum` |
+| `m_flInputMax` | float32 | `MPropertyFriendlyName input maximum` |
+| `m_flOutputMin` | float32 | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | float32 | `MPropertyFriendlyName output maximum` |
+| `m_bOldCode` | bool | `MPropertyFriendlyName use old code` |
+
+### C_OP_RemapScalarEndCap
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapScalarEndCap
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapScalarEndCap *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldInput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName input field` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_flInputMin` | float32 | `MPropertyFriendlyName input minimum` |
+| `m_flInputMax` | float32 | `MPropertyFriendlyName input maximum` |
+| `m_flOutputMin` | float32 | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | float32 | `MPropertyFriendlyName output maximum` |
+
+### C_OP_RemapScalarOnceTimed
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapScalarOnceTimed
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapScalarOnceTimed *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bProportional` | bool | `MPropertyFriendlyName remap time proportional` |
+| `m_nFieldInput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName input field` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_flInputMin` | float32 | `MPropertyFriendlyName input minimum` |
+| `m_flInputMax` | float32 | `MPropertyFriendlyName input maximum` |
+| `m_flOutputMin` | float32 | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | float32 | `MPropertyFriendlyName output maximum` |
+| `m_flRemapTime` | float32 | `MPropertyFriendlyName remap time` |
+
+### C_OP_RemapSpeed
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapSpeed
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapSpeed *-- ParticleAttributeIndex_t
+    C_OP_RemapSpeed *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_flInputMin` | float32 | `MPropertyFriendlyName input minimum` |
+| `m_flInputMax` | float32 | `MPropertyFriendlyName input maximum` |
+| `m_flOutputMin` | float32 | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | float32 | `MPropertyFriendlyName output maximum` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_bIgnoreDelta` | bool | `MPropertyFriendlyName ignore delta time` |
+
+### C_OP_RemapSpeedtoCP
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_RemapSpeedtoCP
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nInControlPointNumber` | int32 | `MPropertyFriendlyName input control point` |
+| `m_nOutControlPointNumber` | int32 | `MPropertyFriendlyName output control point` |
+| `m_nField` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName Output field 0-2 X/Y/Z` |
+| `m_flInputMin` | float32 | `MPropertyFriendlyName input minimum` |
+| `m_flInputMax` | float32 | `MPropertyFriendlyName input maximum` |
+| `m_flOutputMin` | float32 | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | float32 | `MPropertyFriendlyName output maximum` |
+| `m_bUseDeltaV` | bool | `MPropertyFriendlyName use delta of velocity instead of constant speed` |
+
+### C_OP_RemapTransformOrientationToRotations
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapTransformOrientationToRotations
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapTransformOrientationToRotations *-- CParticleTransformInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_TransformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName transform input` |
+| `m_vecRotation` | Vector | `MPropertyFriendlyName offset pitch/yaw/roll` |
+| `m_bUseQuat` | bool | `MPropertyFriendlyName Use Quaternians Internally` |
+| `m_bWriteNormal` | bool | `MPropertyFriendlyName Write normal instead of rotation` |
+
+### C_OP_RemapTransformOrientationToYaw
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapTransformOrientationToYaw
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapTransformOrientationToYaw *-- CParticleTransformInput
+    C_OP_RemapTransformOrientationToYaw *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_TransformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName transform input` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_rotation` `MPropertyFriendlyName rotation field` |
+| `m_flRotOffset` | float32 | `MPropertyFriendlyName rotation offset` |
+| `m_flSpinStrength` | float32 | `MPropertyFriendlyName spin strength` |
+
+### C_OP_RemapTransformToVelocity
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapTransformToVelocity
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapTransformToVelocity *-- CParticleTransformInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_TransformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName transform input` |
+
+### C_OP_RemapTransformVisibilityToScalar
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapTransformVisibilityToScalar
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapTransformVisibilityToScalar *-- ParticleSetMethod_t
+    C_OP_RemapTransformVisibilityToScalar *-- CParticleTransformInput
+    C_OP_RemapTransformVisibilityToScalar *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_TransformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName transform input` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_flInputMin` | float32 | `MPropertyFriendlyName CP visibility minimum` |
+| `m_flInputMax` | float32 | `MPropertyFriendlyName CP visibility maximum` |
+| `m_flOutputMin` | float32 | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | float32 | `MPropertyFriendlyName output maximum` |
+| `m_flRadius` | float32 | `MPropertyFriendlyName visibility radius` |
+
+### C_OP_RemapTransformVisibilityToVector
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapTransformVisibilityToVector
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapTransformVisibilityToVector *-- ParticleSetMethod_t
+    C_OP_RemapTransformVisibilityToVector *-- CParticleTransformInput
+    C_OP_RemapTransformVisibilityToVector *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_TransformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName transform input` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_flInputMin` | float32 | `MPropertyFriendlyName CP visibility minimum` |
+| `m_flInputMax` | float32 | `MPropertyFriendlyName CP visibility maximum` |
+| `m_vecOutputMin` | Vector | `MPropertyFriendlyName output minimum` |
+| `m_vecOutputMax` | Vector | `MPropertyFriendlyName output maximum` |
+| `m_flRadius` | float32 | `MPropertyFriendlyName visibility radius` |
+
+### C_OP_RemapVectorComponentToScalar
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapVectorComponentToScalar
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapVectorComponentToScalar *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldInput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Input Vector` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName Output Scalar` |
+| `m_nComponent` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName Vector Component` |
+
+### C_OP_RemapVectorToRotations
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapVectorToRotations
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapVectorToRotations *-- CPerParticleVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecInput` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName vector input` |
+| `m_vecRotation` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName offset pitch/yaw/roll` |
+
+### C_OP_RemapVectortoCP
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapVectortoCP
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapVectortoCP *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nOutControlPointNumber` | int32 | `MPropertyFriendlyName output control point` |
+| `m_nFieldInput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName input field` |
+| `m_nParticleNumber` | int32 | `MPropertyFriendlyName particle number to read` |
+
+### C_OP_RemapVelocityToVector
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapVelocityToVector
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapVelocityToVector *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_flScale` | float32 | `MPropertyFriendlyName scale factor` |
+| `m_bNormalize` | bool | `MPropertyFriendlyName normalize` |
+
+### C_OP_RemapVisibilityScalar
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RemapVisibilityScalar
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RemapVisibilityScalar *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldInput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName input field` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_flInputMin` | float32 | `MPropertyFriendlyName visibility minimum` |
+| `m_flInputMax` | float32 | `MPropertyFriendlyName visibility maximum` |
+| `m_flOutputMin` | float32 | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | float32 | `MPropertyFriendlyName output maximum` |
+| `m_flRadiusScale` | float32 | `MPropertyFriendlyName radius scale` |
+
+### C_OP_RenderAsModels
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderAsModels
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderAsModels *-- ModelReference_t
+    C_OP_RenderAsModels *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_ModelList` | CUtlVector< [ModelReference_t](../schemas/particles.md#modelreference_t) > | `MParticleRequireDefaultArrayEntry` `MPropertyFriendlyName models` |
+| `m_flModelScale` | float32 | `MPropertyFriendlyName scale factor for radius` |
+| `m_bFitToModelSize` | bool | `MPropertyFriendlyName scale model to match particle size` |
+| `m_bNonUniformScaling` | bool | `MPropertyFriendlyName non-uniform scaling` |
+| `m_nXAxisScalingAttribute` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName X axis scaling scalar field` |
+| `m_nYAxisScalingAttribute` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName Y axis scaling scalar field` |
+| `m_nZAxisScalingAttribute` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName Z axis scaling scalar field` |
+| `m_nSizeCullBloat` | int32 | `MPropertyAttributeChoiceName particlefield_size_cull_bloat` `MPropertyFriendlyName model size cull bloat` |
+
+### C_OP_RenderBlobs
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderBlobs
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderBlobs *-- CParticleCollectionRendererFloatInput
+    C_OP_RenderBlobs *-- MaterialVariable_t
+    C_OP_RenderBlobs *-- InfoForResourceTypeIMaterial2
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_cubeWidth` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName cube width` |
+| `m_cutoffRadius` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName cutoff radius` |
+| `m_renderRadius` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName render radius` |
+| `m_nVertexCountKb` | uint32 | `MPropertyAttributeRange 0 1024` `MPropertyFriendlyName (optional) vertex buffer size (k)` |
+| `m_nIndexCountKb` | uint32 | `MPropertyAttributeRange 0 1024` `MPropertyFriendlyName (optional) index buffer size (k)` |
+| `m_nScaleCP` | int32 | `MPropertyFriendlyName scale CP (cube width/cutoff/render = x/y/z)` |
+| `m_MaterialVars` | CUtlVector< [MaterialVariable_t](../schemas/particles.md#materialvariable_t) > | `MPropertyAutoExpandSelf` `MPropertyFriendlyName material variables` `MPropertySortPriority` |
+| `m_hMaterial` | CStrongHandle< [InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2) > |  |
+
+### C_OP_RenderCables
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderCables
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderCables *-- CParticleCollectionFloatInput
+    C_OP_RenderCables *-- CParticleCollectionVecInput
+    C_OP_RenderCables *-- ParticleColorBlendType_t
+    C_OP_RenderCables *-- InfoForResourceTypeIMaterial2
+    C_OP_RenderCables *-- TextureRepetitionMode_t
+    C_OP_RenderCables *-- CParticleTransformInput
+    C_OP_RenderCables *-- FloatInputMaterialVariable_t
+    C_OP_RenderCables *-- VecInputMaterialVariable_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flRadiusScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Radius Scale` `MPropertySortPriority` `MPropertyStartGroup Renderer Modifiers` |
+| `m_flAlphaScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName alpha scale` `MPropertySortPriority` |
+| `m_vecColorScale` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName color blend` `MPropertySortPriority` |
+| `m_nColorBlendType` | [ParticleColorBlendType_t](../schemas/!GlobalTypes.md#particlecolorblendtype_t) | `MPropertyFriendlyName color blend type` `MPropertySortPriority` |
+| `m_hMaterial` | CStrongHandle< [InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2) > | `MPropertyAttributeEditor AssetBrowse( vmat, *extraFilterString=(shader=cables.vfx) )` `MPropertyFriendlyName cable material` `MPropertyStartGroup` |
+| `m_nTextureRepetitionMode` | [TextureRepetitionMode_t](../schemas/!GlobalTypes.md#texturerepetitionmode_t) | `MPropertyFriendlyName texture repetition mode` |
+| `m_flTextureRepeatsPerSegment` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName texture repetitions` |
+| `m_flTextureRepeatsCircumference` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName texture repetitions around cable` |
+| `m_flColorMapOffsetV` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName color map offset along path` |
+| `m_flColorMapOffsetU` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName color map offset around cable` |
+| `m_flNormalMapOffsetV` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName normal map offset along path` |
+| `m_flNormalMapOffsetU` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName normal map offset around cable` |
+| `m_bDrawCableCaps` | bool | `MPropertyFriendlyName draw caps at each end of the cable` |
+| `m_flCapRoundness` | float32 | `MPropertyAttributeRange 0 2` `MPropertyFriendlyName cable end cap shape factor` |
+| `m_flCapOffsetAmount` | float32 | `MPropertyAttributeRange 0 2` `MPropertyFriendlyName cable end cap offset amount` |
+| `m_flTessScale` | float32 | `MPropertyFriendlyName tessellation scale factor` |
+| `m_nMinTesselation` | int32 | `MPropertyFriendlyName minimum steps between particles` |
+| `m_nMaxTesselation` | int32 | `MPropertyFriendlyName maximum steps between particles` |
+| `m_nRoundness` | int32 | `MPropertyAttributeRange 0 3` `MPropertyFriendlyName roundness factor` |
+| `m_nForceRoundnessFixed` | bool | `MPropertyFriendlyName force roundness factor fixed` |
+| `m_bOnlyRenderInEffectsBloomPass` | bool | `MPropertyFriendlyName Only Render in effects bloom pass` `MPropertySortPriority` |
+| `m_LightingTransform` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MParticleInputOptional` `MPropertyFriendlyName diffuse lighting origin` |
+| `m_MaterialFloatVars` | CUtlLeanVector< [FloatInputMaterialVariable_t](../schemas/particles.md#floatinputmaterialvariable_t) > | `MPropertyFriendlyName material float variables` |
+| `m_MaterialVecVars` | CUtlLeanVector< [VecInputMaterialVariable_t](../schemas/particles.md#vecinputmaterialvariable_t) > | `MPropertyFriendlyName material vector variables` |
+
+### C_OP_RenderClientPhysicsImpulse
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderClientPhysicsImpulse
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderClientPhysicsImpulse *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flRadius` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName radius` |
+| `m_flMagnitude` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName magnitude` |
+| `m_nSimIdFilter` | int32 | `MPropertyFriendlyName filter explosion to single simulation id` |
+
+### C_OP_RenderClothForce
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`, `MObsoleteParticleFunction`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderClothForce
+    CParticleFunction <|-- CParticleFunctionRenderer
+```
+
+### C_OP_RenderDeferredLight
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderDeferredLight
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderDeferredLight *-- ParticleAttributeIndex_t
+    C_OP_RenderDeferredLight *-- CParticleCollectionVecInput
+    C_OP_RenderDeferredLight *-- ParticleColorBlendType_t
+    C_OP_RenderDeferredLight *-- InfoForResourceTypeCTextureBase
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bUseAlphaTestWindow` | bool | `MPropertyFriendlyName projected texture use alpha test window` `MPropertySuppressExpr` |
+| `m_bUseTexture` | bool | `MPropertyFriendlyName projected texture light` |
+| `m_flRadiusScale` | float32 | `MPropertyFriendlyName radius scale` `MPropertySortPriority` `MPropertyStartGroup +Renderer Modifiers` |
+| `m_flAlphaScale` | float32 | `MPropertyFriendlyName alpha scale` `MPropertySortPriority` |
+| `m_nAlpha2Field` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName per-particle alpha scale attribute` `MPropertySortPriority` |
+| `m_vecColorScale` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName color blend` `MPropertySortPriority` |
+| `m_nColorBlendType` | [ParticleColorBlendType_t](../schemas/!GlobalTypes.md#particlecolorblendtype_t) | `MPropertyFriendlyName color blend type` `MPropertySortPriority` |
+| `m_flLightDistance` | float32 | `MPropertyFriendlyName spotlight distance` `MPropertyStartGroup` |
+| `m_flStartFalloff` | float32 | `MPropertyFriendlyName light start falloff` |
+| `m_flDistanceFalloff` | float32 | `MPropertyFriendlyName spotlight distance falloff` |
+| `m_flSpotFoV` | float32 | `MPropertyFriendlyName spotlight FoV` |
+| `m_nAlphaTestPointField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName projected texture alpha test point scale field` `MPropertySuppressExpr` |
+| `m_nAlphaTestRangeField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName projected texture alpha test range scale field` `MPropertySuppressExpr` |
+| `m_nAlphaTestSharpnessField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName projected texture alpha test sharpness scale field` `MPropertySuppressExpr` |
+| `m_hTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > | `MPropertyFriendlyName texture` `MPropertySuppressExpr` |
+| `m_nHSVShiftControlPoint` | int32 | `MPropertyFriendlyName HSV Shift Control Point` |
+
+### C_OP_RenderFlattenGrass
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderFlattenGrass
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderFlattenGrass *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flFlattenStrength` | float32 | `MPropertyFriendlyName flattening strength` |
+| `m_nStrengthFieldOverride` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName strength field override` |
+| `m_flRadiusScale` | float32 | `MPropertyFriendlyName radius scale` |
+
+### C_OP_RenderGpuImplicit
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderGpuImplicit
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderGpuImplicit *-- CParticleCollectionRendererFloatInput
+    C_OP_RenderGpuImplicit *-- InfoForResourceTypeIMaterial2
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bUsePerParticleRadius` | bool | `MPropertyDescription Honors the per-particle radius (multiplied by radius scale) but is more expensive to render.  Some particles with large radii can make things much costlier` `MPropertySortPriority` |
+| `m_nVertexCountKb` | uint32 | `MPropertyAttributeRange 0 1024` `MPropertyFriendlyName (optional) vertex buffer size (k)` |
+| `m_nIndexCountKb` | uint32 | `MPropertyAttributeRange 0 2048` `MPropertyFriendlyName (optional) index buffer size (k)` |
+| `m_fGridSize` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) |  |
+| `m_fRadiusScale` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) |  |
+| `m_fIsosurfaceThreshold` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyAttributeRange .1 .95` |
+| `m_nScaleCP` | int32 | `MPropertyFriendlyName scale CP (grid size/particle radius/threshold = x/y/z)` |
+| `m_hMaterial` | CStrongHandle< [InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2) > |  |
+
+### C_OP_RenderLightBeam
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderLightBeam
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderLightBeam *-- CParticleCollectionVecInput
+    C_OP_RenderLightBeam *-- ParticleColorBlendType_t
+    C_OP_RenderLightBeam *-- CPerParticleFloatInput
+    C_OP_RenderLightBeam *-- CParticleCollectionFloatInput
+    C_OP_RenderLightBeam *-- ParticleLightFogLightingMode_t
+    C_OP_RenderLightBeam *-- CParticleCollectionRendererFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nMaxAllowed` | uint16 | `MPropertyAttributeRange 1 512` `MPropertyFriendlyName maximum light count` |
+| `m_vColorBlend` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName Color Blend` |
+| `m_nColorBlendType` | [ParticleColorBlendType_t](../schemas/!GlobalTypes.md#particlecolorblendtype_t) | `MPropertyFriendlyName Color Blend Type` `MPropertySortPriority` |
+| `m_strLightStyle` | CUtlString | `MPropertyAttributeEditor VDataChoice( scripts/light_styles.vdata )` `MPropertyFriendlyName light style` |
+| `m_flLightStyleTime` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName light style time` `MPropertySuppressExpr` |
+| `m_flBrightnessLumensPerMeter` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Lumens Per Meter` |
+| `m_flNumberOfLightsToCreate` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Number Of Lights To Create` |
+| `m_bCastShadows` | bool | `MPropertyFriendlyName Shadows` `MPropertySuppressExpr` |
+| `m_bDynamicBounce` | bool | `MPropertyFriendlyName Dynamic Bounce (RTGI)` `MPropertySuppressExpr` |
+| `m_flBounceScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Bounce Scale` `MPropertySuppressExpr` |
+| `m_flSkirt` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Skirt` |
+| `m_flRange` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Range` |
+| `m_flThickness` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Thickness` |
+| `m_flInnerConeAngle` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Inner Cone Angle` |
+| `m_flOuterConeAngle` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Outer Cone Angle` |
+| `m_vecConeRotationOffset` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName Cone Angle Offset` `MVectorIsCoordinate` |
+| `m_nFogLightingMode` | [ParticleLightFogLightingMode_t](../schemas/!GlobalTypes.md#particlelightfoglightingmode_t) | `MPropertyFriendlyName fog lighting mode` `MPropertySuppressExpr` |
+| `m_flFogContribution` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName fog contribution` `MPropertySuppressExpr` |
+| `m_flRenderFilter` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName render filter` |
+| `m_bDebugOrientation` | bool | `MPropertyFriendlyName debug orientation` |
+
+### C_OP_RenderLights
+
+**Inherits from:** [C_OP_RenderPoints](particles.md#c_op_renderpoints)
+
+**Metadata:** `MGetKV3ClassDefaults`, `MObsoleteParticleFunction`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    C_OP_RenderPoints <|-- C_OP_RenderLights
+    CParticleFunctionRenderer <|-- C_OP_RenderPoints
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderLights *-- AnimationType_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flAnimationRate` | float32 | `MPropertyFriendlyName animation rate` |
+| `m_nAnimationType` | [AnimationType_t](../schemas/!GlobalTypes.md#animationtype_t) | `MPropertyFriendlyName animation type` |
+| `m_bAnimateInFPS` | bool | `MPropertyFriendlyName set animation value in FPS` |
+| `m_flMinSize` | float32 | `MPropertyFriendlyName minimum visual size` |
+| `m_flMaxSize` | float32 | `MPropertyFriendlyName maximum visual size` |
+| `m_flStartFadeSize` | float32 | `MPropertyFriendlyName size at which to start fading` |
+| `m_flEndFadeSize` | float32 | `MPropertyFriendlyName size at which to fade away` |
+
+### C_OP_RenderMaterialProxy
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderMaterialProxy
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderMaterialProxy *-- MaterialProxyType_t
+    C_OP_RenderMaterialProxy *-- MaterialVariable_t
+    C_OP_RenderMaterialProxy *-- InfoForResourceTypeIMaterial2
+    C_OP_RenderMaterialProxy *-- CParticleCollectionFloatInput
+    C_OP_RenderMaterialProxy *-- CParticleCollectionVecInput
+    C_OP_RenderMaterialProxy *-- CPerParticleFloatInput
+    C_OP_RenderMaterialProxy *-- ParticleColorBlendType_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nMaterialControlPoint` | int32 | `MPropertyFriendlyName Control Point for Model` |
+| `m_nProxyType` | [MaterialProxyType_t](../schemas/!GlobalTypes.md#materialproxytype_t) | `MPropertyFriendlyName proxy type` |
+| `m_MaterialVars` | CUtlVector< [MaterialVariable_t](../schemas/particles.md#materialvariable_t) > | `MPropertyAutoExpandSelf` `MPropertyFriendlyName material variables` |
+| `m_hOverrideMaterial` | CStrongHandle< [InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2) > | `MPropertyFriendlyName material override` |
+| `m_flMaterialOverrideEnabled` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName material override enable` |
+| `m_vecColorScale` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName model tint` |
+| `m_flAlpha` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName model alpha` |
+| `m_nColorBlendType` | [ParticleColorBlendType_t](../schemas/!GlobalTypes.md#particlecolorblendtype_t) | `MPropertyFriendlyName model tint blend type` |
+
+### C_OP_RenderModels
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderModels
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderModels *-- ModelReference_t
+    C_OP_RenderModels *-- ParticleAttributeIndex_t
+    C_OP_RenderModels *-- CPerParticleVecInput
+    C_OP_RenderModels *-- CPerParticleFloatInput
+    C_OP_RenderModels *-- InfoForResourceTypeIMaterial2
+    C_OP_RenderModels *-- MaterialVariable_t
+    C_OP_RenderModels *-- CParticleModelInput
+    C_OP_RenderModels *-- RenderModelSubModelFieldType_t
+    C_OP_RenderModels *-- CParticleCollectionFloatInput
+    C_OP_RenderModels *-- CParticleCollectionVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bOnlyRenderInEffectsBloomPass` | bool | `MPropertyFriendlyName Only Render in effects bloom pass` `MPropertySortPriority` |
+| `m_bOnlyRenderInEffectsWaterPass` | bool | `MPropertyFriendlyName Only Render in effects water pass` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_bUseMixedResolutionRendering` | bool | `MPropertyFriendlyName Use Mixed Resolution Rendering` `MPropertySortPriority` |
+| `m_bOnlyRenderInEffecsGameOverlay` | bool | `MPropertyFriendlyName Only Render in effects game overlay pass` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_ModelList` | CUtlVector< [ModelReference_t](../schemas/particles.md#modelreference_t) > | `MParticleRequireDefaultArrayEntry` `MPropertyAutoExpandSelf` `MPropertyFriendlyName models` `MPropertySortPriority` |
+| `m_nBodyGroupField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName bodygroup field` |
+| `m_nSubModelField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName submodel field` |
+| `m_bIgnoreNormal` | bool | `MPropertyFriendlyName ignore normal` `MPropertySortPriority` `MPropertyStartGroup Orientation` |
+| `m_bOrientZ` | bool | `MPropertyFriendlyName orient model z to normal` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_bCenterOffset` | bool | `MPropertyFriendlyName center mesh` `MPropertySortPriority` |
+| `m_vecLocalOffset` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName model local offset` `MPropertySortPriority` |
+| `m_vecLocalRotation` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName model local rotation (pitch/yaw/roll)` `MPropertySortPriority` |
+| `m_bIgnoreRadius` | bool | `MPropertyFriendlyName ignore radius` `MPropertySortPriority` `MPropertyStartGroup Model Scale` |
+| `m_nModelScaleCP` | int32 | `MPropertyFriendlyName model scale CP` `MPropertySortPriority` |
+| `m_vecComponentScale` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName model component scale` `MPropertySortPriority` |
+| `m_bLocalScale` | bool | `MPropertyFriendlyName apply scales in local model space` `MPropertySortPriority` |
+| `m_nSizeCullBloat` | int32 | `MPropertyAttributeChoiceName particlefield_size_cull_bloat` `MPropertyFriendlyName model size cull bloat` |
+| `m_bAnimated` | bool | `MPropertyFriendlyName animated` `MPropertySortPriority` `MPropertyStartGroup Animation` |
+| `m_flAnimationRate` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName animation rate` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_bScaleAnimationRate` | bool | `MPropertyFriendlyName scale animation rate` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_bForceLoopingAnimation` | bool | `MPropertyFriendlyName force looping animations` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_bResetAnimOnStop` | bool | `MPropertyFriendlyName reset animation frame on stop` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_bManualAnimFrame` | bool | `MPropertyFriendlyName set animation frame manually` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_nAnimationScaleField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName animation rate scale field` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_nAnimationField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName animation sequence field` `MPropertySortPriority` `MPropertyStartGroup Animation` |
+| `m_nManualFrameField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName manual animation frame field` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_ActivityName` | char[256] | `MPropertyFriendlyName activity override` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_SequenceName` | char[256] | `MPropertyFriendlyName sequence override` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_bEnableClothSimulation` | bool | `MPropertyFriendlyName Enable Cloth Simulation` |
+| `m_bDisableClothGroundCollision` | bool | `MPropertyFriendlyName Disable Cloth Ground Collision` |
+| `m_ClothEffectName` | char[64] | `MPropertyFriendlyName With Cloth Effect` `MPropertySortPriority` |
+| `m_hOverrideMaterial` | CStrongHandle< [InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2) > | `MPropertyFriendlyName material override` `MPropertySortPriority` `MPropertyStartGroup Material` |
+| `m_bOverrideTranslucentMaterials` | bool | `MPropertyFriendlyName override translucent materials` `MPropertySortPriority` |
+| `m_nSkin` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName skin number` `MPropertySortPriority` |
+| `m_MaterialVars` | CUtlVector< [MaterialVariable_t](../schemas/particles.md#materialvariable_t) > | `MPropertyAutoExpandSelf` `MPropertyFriendlyName material variables` `MPropertySortPriority` |
+| `m_flRenderFilter` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName render filter` `MPropertyStartGroup Model Overrides` |
+| `m_flManualModelSelection` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName model list selection override` |
+| `m_modelInput` | [CParticleModelInput](../schemas/particleslib.md#cparticlemodelinput) | `MParticleInputOptional` `MPropertyFriendlyName input model` |
+| `m_nLOD` | int32 | `MPropertyFriendlyName model LOD` |
+| `m_EconSlotName` | char[256] | `MPropertyFriendlyName model override economy loadout slot type` |
+| `m_bOriginalModel` | bool | `MPropertyFriendlyName model override original model only (ignore shapeshift/hex/etc)` |
+| `m_bSuppressTint` | bool | `MPropertyFriendlyName suppress tinting of the model` |
+| `m_nSubModelFieldType` | [RenderModelSubModelFieldType_t](../schemas/!GlobalTypes.md#rendermodelsubmodelfieldtype_t) | `MPropertyFriendlyName SubModel Field Type` |
+| `m_bDisableShadows` | bool | `MPropertyFriendlyName disable shadows` |
+| `m_bDisableDepthPrepass` | bool | `MPropertyFriendlyName disable depth prepass` |
+| `m_bAcceptsDecals` | bool | `MPropertyFriendlyName accept decals` |
+| `m_bForceDrawInterlevedWithSiblings` | bool | `MPropertyFriendlyName forcedrawinterlevedwithsiblings` |
+| `m_bDoNotDrawInParticlePass` | bool | `MPropertyFriendlyName do not draw in particle pass` |
+| `m_bAllowApproximateTransforms` | bool | `MPropertyFriendlyName allow approximate transforms (cpu optimizaiton)` |
+| `m_szRenderAttribute` | char[260] | `MPropertyFriendlyName render attribute` |
+| `m_flRadiusScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Radius Scale` `MPropertySortPriority` `MPropertyStartGroup +Renderer Modifiers` |
+| `m_flAlphaScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName alpha scale` `MPropertySortPriority` |
+| `m_flRollScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName rotation roll scale` `MPropertySortPriority` |
+| `m_nAlpha2Field` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName per-particle alpha scale attribute` `MPropertySortPriority` |
+| `m_vecColorScale` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName color blend` `MPropertySortPriority` |
+| `m_nColorBlendType` | [ParticleColorBlendType_t](../schemas/!GlobalTypes.md#particlecolorblendtype_t) | `MPropertyFriendlyName color blend type` `MPropertySortPriority` |
+| `m_strLightStyle` | CUtlString | `MPropertyAttributeEditor VDataChoice( scripts/light_styles.vdata )` `MPropertyFriendlyName light style` `MPropertySortPriority` |
+| `m_flLightStyleTime` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName light style time` `MPropertySortPriority` `MPropertySuppressExpr` |
+
+### C_OP_RenderOmni2Light
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderOmni2Light
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderOmni2Light *-- ParticleOmni2LightTypeChoiceList_t
+    C_OP_RenderOmni2Light *-- CParticleCollectionVecInput
+    C_OP_RenderOmni2Light *-- ParticleColorBlendType_t
+    C_OP_RenderOmni2Light *-- CPerParticleFloatInput
+    C_OP_RenderOmni2Light *-- ParticleLightUnitChoiceList_t
+    C_OP_RenderOmni2Light *-- CParticleCollectionFloatInput
+    C_OP_RenderOmni2Light *-- InfoForResourceTypeCTextureBase
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nLightType` | [ParticleOmni2LightTypeChoiceList_t](../schemas/!GlobalTypes.md#particleomni2lighttypechoicelist_t) | `MPropertyFriendlyName Type` |
+| `m_nMaxAllowed` | uint16 | `MPropertyAttributeRange 1 512` `MPropertyFriendlyName maximum light count` |
+| `m_vColorBlend` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName Color Blend` |
+| `m_nColorBlendType` | [ParticleColorBlendType_t](../schemas/!GlobalTypes.md#particlecolorblendtype_t) | `MPropertyFriendlyName Color Blend Type` `MPropertySortPriority` |
+| `m_strLightStyle` | CUtlString | `MPropertyAttributeEditor VDataChoice( scripts/light_styles.vdata )` `MPropertyFriendlyName light style` `MPropertySortPriority` |
+| `m_flLightStyleTime` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName light style time` `MPropertySuppressExpr` |
+| `m_nBrightnessUnit` | [ParticleLightUnitChoiceList_t](../schemas/!GlobalTypes.md#particlelightunitchoicelist_t) |  |
+| `m_flBrightnessLumens` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Lumens` `MPropertySuppressExpr` |
+| `m_flBrightnessCandelas` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Candelas` `MPropertySuppressExpr` |
+| `m_bCastShadows` | bool | `MPropertyFriendlyName Shadows` `MPropertySuppressExpr` |
+| `m_bDynamicBounce` | bool | `MPropertyFriendlyName Dynamic Bounce (RTGI)` `MPropertySuppressExpr` |
+| `m_flBounceScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName bounce scale` `MPropertySuppressExpr` |
+| `m_bFog` | bool | `MPropertyFriendlyName Fog` |
+| `m_flFogScale` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Fog Scale` `MPropertySuppressExpr` |
+| `m_flLuminaireRadius` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Light Radius` |
+| `m_flSkirt` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Skirt` |
+| `m_flRange` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Range` |
+| `m_flInnerConeAngle` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Inner Cone Angle` |
+| `m_flOuterConeAngle` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Outer Cone Angle` |
+| `m_hLightCookie` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > | `MPropertyFriendlyName Cookie` |
+| `m_bSphericalCookie` | bool | `MPropertyFriendlyName Cookie is Spherically Mapped` |
+
+### C_OP_RenderPoints
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Derived by:** [C_OP_RenderLights](particles.md#c_op_renderlights)
+
+**Metadata:** `MGetKV3ClassDefaults`, `MObsoleteParticleFunction`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderPoints
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderPoints <|-- C_OP_RenderLights
+    C_OP_RenderPoints *-- InfoForResourceTypeIMaterial2
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_hMaterial` | CStrongHandle< [InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2) > |  |
+
+### C_OP_RenderPostProcessing
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderPostProcessing
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderPostProcessing *-- CPerParticleFloatInput
+    C_OP_RenderPostProcessing *-- InfoForResourceTypeCPostProcessingResource
+    C_OP_RenderPostProcessing *-- ParticlePostProcessPriorityGroup_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flPostProcessStrength` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Post Processing Strength` |
+| `m_hPostTexture` | CStrongHandle< [InfoForResourceTypeCPostProcessingResource](../schemas/resourcesystem.md#infoforresourcetypecpostprocessingresource) > | `MPropertyAttributeEditor AssetBrowse( vpost, *showassetpreview )` `MPropertyFriendlyName Post Processing File` |
+| `m_nPriority` | [ParticlePostProcessPriorityGroup_t](../schemas/!GlobalTypes.md#particlepostprocessprioritygroup_t) | `MPropertyFriendlyName Post Processing Priority Group` |
+
+### C_OP_RenderProjected
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderProjected
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderProjected *-- RenderProjectedMaterial_t
+    C_OP_RenderProjected *-- CPerParticleFloatInput
+    C_OP_RenderProjected *-- MaterialVariable_t
+    C_OP_RenderProjected *-- CParticleCollectionFloatInput
+    C_OP_RenderProjected *-- ParticleAttributeIndex_t
+    C_OP_RenderProjected *-- CParticleCollectionVecInput
+    C_OP_RenderProjected *-- ParticleColorBlendType_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bProjectCharacter` | bool | `MPropertyFriendlyName project on characters` `MPropertySuppressExpr` |
+| `m_bProjectWorld` | bool | `MPropertyFriendlyName project on world` `MPropertySuppressExpr` |
+| `m_bProjectWater` | bool | `MPropertyFriendlyName project on water` `MPropertySuppressExpr` |
+| `m_bFlipHorizontal` | bool | `MPropertyFriendlyName flip horizontal` |
+| `m_bEnableProjectedDepthControls` | bool | `MPropertyFriendlyName enable projected depth controls` |
+| `m_flMinProjectionDepth` | float32 | `MPropertyFriendlyName min projection depth` `MPropertySuppressExpr` |
+| `m_flMaxProjectionDepth` | float32 | `MPropertyFriendlyName max projection depth` `MPropertySuppressExpr` |
+| `m_vecProjectedMaterials` | CUtlVector< [RenderProjectedMaterial_t](../schemas/particles.md#renderprojectedmaterial_t) > | `MParticleRequireDefaultArrayEntry` `MPropertyAutoExpandSelf` `MPropertyFriendlyName materials` |
+| `m_flMaterialSelection` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName material selection` |
+| `m_flAnimationTimeScale` | float32 | `MPropertyFriendlyName sheet animation time scale` |
+| `m_bOrientToNormal` | bool | `MPropertyFriendlyName orient to normal` |
+| `m_MaterialVars` | CUtlVector< [MaterialVariable_t](../schemas/particles.md#materialvariable_t) > | `MPropertyAutoExpandSelf` `MPropertyFriendlyName material variables` |
+| `m_flRadiusScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Radius Scale` `MPropertySortPriority` `MPropertyStartGroup +Renderer Modifiers` |
+| `m_flAlphaScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName alpha scale` `MPropertySortPriority` |
+| `m_flRollScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName rotation roll scale` `MPropertySortPriority` |
+| `m_nAlpha2Field` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName per-particle alpha scale attribute` `MPropertySortPriority` |
+| `m_vecColorScale` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName color blend` `MPropertySortPriority` |
+| `m_nColorBlendType` | [ParticleColorBlendType_t](../schemas/!GlobalTypes.md#particlecolorblendtype_t) | `MPropertyFriendlyName color blend type` `MPropertySortPriority` |
+
+### C_OP_RenderRopes
+
+**Inherits from:** [CBaseRendererSource2](particles.md#cbaserenderersource2)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CBaseRendererSource2 <|-- C_OP_RenderRopes
+    CParticleFunctionRenderer <|-- CBaseRendererSource2
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderRopes *-- CParticleCollectionRendererFloatInput
+    C_OP_RenderRopes *-- ParticleAttributeIndex_t
+    C_OP_RenderRopes *-- ParticleOrientationChoiceList_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bEnableFadingAndClamping` | bool | `MPropertyFriendlyName enable fading and clamping` `MPropertySortPriority` `MPropertyStartGroup Screenspace Fading and culling` |
+| `m_flMinSize` | float32 | `MPropertyFriendlyName minimum visual screen-size` `MPropertySuppressExpr` |
+| `m_flMaxSize` | float32 | `MPropertyFriendlyName maximum visual screen-size` `MPropertySuppressExpr` |
+| `m_flStartFadeSize` | float32 | `MPropertyFriendlyName start fade screen-size` `MPropertySuppressExpr` |
+| `m_flEndFadeSize` | float32 | `MPropertyFriendlyName end fade and cull screen-size` `MPropertySuppressExpr` |
+| `m_flStartFadeDot` | float32 | `MPropertyFriendlyName start fade dot product of normal vs view` `MPropertySortPriority` |
+| `m_flEndFadeDot` | float32 | `MPropertyFriendlyName end fade dot product of normal vs view` `MPropertySortPriority` |
+| `m_flSubPixelAAScale` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName sub-pixel AA scale` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_flRadiusTaper` | float32 | `MPropertyFriendlyName amount to taper the width of the trail end by` `MPropertyStartGroup Rope Tesselation` |
+| `m_nMinTesselation` | int32 | `MPropertyFriendlyName minium number of quads per render segment` `MPropertySortPriority` |
+| `m_nMaxTesselation` | int32 | `MPropertyFriendlyName maximum number of quads per render segment` |
+| `m_flTessScale` | float32 | `MPropertyFriendlyName tesselation resolution scale factor` |
+| `m_flTextureVWorldSize` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName global texture V World Size` `MPropertySortPriority` `MPropertyStartGroup +Rope Global UV Controls` |
+| `m_flTextureVScrollRate` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName global texture V Scroll Rate` |
+| `m_flTextureVOffset` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName global texture V Offset` |
+| `m_nTextureVParamsCP` | int32 | `MPropertyFriendlyName global texture V Params CP` |
+| `m_bClampV` | bool | `MPropertyFriendlyName Clamp Non-Sheet texture V coords` |
+| `m_nScaleCP1` | int32 | `MPropertyFriendlyName scale CP start` `MPropertyStartGroup Rope Global UV Controls/CP Scaling` |
+| `m_nScaleCP2` | int32 | `MPropertyFriendlyName scale CP end` |
+| `m_flScaleVSizeByControlPointDistance` | float32 | `MPropertyFriendlyName scale V world size by CP distance` |
+| `m_flScaleVScrollByControlPointDistance` | float32 | `MPropertyFriendlyName scale V scroll rate by CP distance` |
+| `m_flScaleVOffsetByControlPointDistance` | float32 | `MPropertyFriendlyName scale V offset by CP distance` |
+| `m_bUseScalarForTextureCoordinate` | bool | `MPropertyFriendlyName Use scalar attribute for texture coordinate` `MPropertyStartGroup Rope Global UV Controls` |
+| `m_nScalarFieldForTextureCoordinate` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName scalar to use for texture coordinate` `MPropertySuppressExpr` |
+| `m_flScalarAttributeTextureCoordScale` | float32 | `MPropertyFriendlyName scale value to map attribute to texture coordinate` `MPropertySuppressExpr` |
+| `m_bReverseOrder` | bool | `MPropertyFriendlyName reverse point order` `MPropertySortPriority` `MPropertyStartGroup Rope Order Controls` |
+| `m_bClosedLoop` | bool | `MPropertyFriendlyName Closed loop` |
+| `m_nSplitField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName attribute to use for rope segment id` |
+| `m_bSortBySegmentID` | bool | `MPropertyFriendlyName sort by rope segment id` `MPropertySuppressExpr` |
+| `m_nOrientationType` | [ParticleOrientationChoiceList_t](../schemas/!GlobalTypes.md#particleorientationchoicelist_t) | `MPropertyFriendlyName orientation_type` `MPropertySortPriority` `MPropertyStartGroup Orientation` |
+| `m_nVectorFieldForOrientation` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName attribute to use for normal` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_bDrawAsOpaque` | bool | `MPropertyFriendlyName draw as opaque` `MPropertyStartGroup Material` |
+| `m_bGenerateNormals` | bool | `MPropertyFriendlyName generate normals for cylinder` `MPropertyStartGroup Orientation` |
+
+### C_OP_RenderScreenShake
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderScreenShake
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderScreenShake *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flDurationScale` | float32 | `MPropertyFriendlyName duration scale` |
+| `m_flRadiusScale` | float32 | `MPropertyFriendlyName radius scale` |
+| `m_flFrequencyScale` | float32 | `MPropertyFriendlyName frequence scale` |
+| `m_flAmplitudeScale` | float32 | `MPropertyFriendlyName amplitude scale` |
+| `m_nRadiusField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName radius field` |
+| `m_nDurationField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName duration field` |
+| `m_nFrequencyField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName frequency field` |
+| `m_nAmplitudeField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName amplitude field` |
+| `m_nFilterCP` | int32 | `MPropertyFriendlyName control point of shake recipient (-1 = global)` |
+
+### C_OP_RenderScreenVelocityRotate
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`, `MObsoleteParticleFunction`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderScreenVelocityRotate
+    CParticleFunction <|-- CParticleFunctionRenderer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flRotateRateDegrees` | float32 | `MPropertyFriendlyName rotate rate(dps)` |
+| `m_flForwardDegrees` | float32 | `MPropertyFriendlyName forward angle` |
+
+### C_OP_RenderSimpleModelCollection
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderSimpleModelCollection
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderSimpleModelCollection *-- InfoForResourceTypeCModel
+    C_OP_RenderSimpleModelCollection *-- CParticleModelInput
+    C_OP_RenderSimpleModelCollection *-- CParticleCollectionFloatInput
+    C_OP_RenderSimpleModelCollection *-- CPerParticleFloatInput
+    C_OP_RenderSimpleModelCollection *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bCenterOffset` | bool | `MPropertyFriendlyName center mesh` `MPropertySortPriority` `MPropertyStartGroup Orientation` |
+| `m_hModel` | CStrongHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > | `MPropertyFriendlyName model` `MPropertyStartGroup Model` |
+| `m_modelInput` | [CParticleModelInput](../schemas/particleslib.md#cparticlemodelinput) | `MPropertyFriendlyName input model override` |
+| `m_fSizeCullScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName size cull scale` `MPropertyStartGroup Rendering` |
+| `m_bDisableShadows` | bool | `MPropertyFriendlyName disable shadows` |
+| `m_bDisableMotionBlur` | bool | `MPropertyFriendlyName disable motion blur` |
+| `m_bAcceptsDecals` | bool | `MPropertyFriendlyName accept decals` |
+| `m_fDrawFilter` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName render filter` |
+| `m_nAngularVelocityField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName angular velocity attribute (improves motion blur)` |
+
+### C_OP_RenderSound
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderSound
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderSound *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flDurationScale` | float32 | `MPropertyFriendlyName duration scale` |
+| `m_flSndLvlScale` | float32 | `MPropertyFriendlyName decibel level scale` |
+| `m_flPitchScale` | float32 | `MPropertyFriendlyName pitch scale` |
+| `m_flVolumeScale` | float32 | `MPropertyFriendlyName volume scale` |
+| `m_nSndLvlField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName decibel level field` |
+| `m_nDurationField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName duration field` |
+| `m_nPitchField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName pitch field` |
+| `m_nVolumeField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName volume field` |
+| `m_nChannel` | int32 | `MPropertyAttributeChoiceName sound_channel` `MPropertyFriendlyName sound channel` |
+| `m_nCPReference` | int32 | `MPropertyFriendlyName sound control point number` |
+| `m_pszSoundName` | char[256] | `MPropertyAttributeEditor SoundPicker()` `MPropertyFriendlyName sound` |
+| `m_bSuppressStopSoundEvent` | bool | `MPropertyFriendlyName suppress stop event` |
+
+### C_OP_RenderSprites
+
+**Inherits from:** [CBaseRendererSource2](particles.md#cbaserenderersource2)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CBaseRendererSource2 <|-- C_OP_RenderSprites
+    CParticleFunctionRenderer <|-- CBaseRendererSource2
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderSprites *-- CParticleCollectionRendererFloatInput
+    C_OP_RenderSprites *-- ParticleOrientationChoiceList_t
+    C_OP_RenderSprites *-- ParticleLightingQuality_t
+    C_OP_RenderSprites *-- CParticleCollectionRendererVecInput
+    C_OP_RenderSprites *-- CReplicationParameters
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nSequenceOverride` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName sequence id override` `MPropertySortPriority` `MPropertyStartGroup Animation` |
+| `m_bSequenceNumbersAreRawSequenceIndices` | bool | `MParticleAdvancedField` `MPropertyFriendlyName Sequence Numbers Are Indices (Tools Particles Only)` |
+| `m_nOrientationType` | [ParticleOrientationChoiceList_t](../schemas/!GlobalTypes.md#particleorientationchoicelist_t) | `MPropertyFriendlyName orientation type` `MPropertySortPriority` `MPropertyStartGroup Orientation` |
+| `m_nOrientationControlPoint` | int32 | `MPropertyFriendlyName orientation control point` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_bUseYawWithNormalAligned` | bool | `MPropertyFriendlyName enable yaw for particles aligned to normals` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_flMinSize` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName minimum visual screen size` `MPropertySortPriority` `MPropertyStartGroup Fading and culling` |
+| `m_flMaxSize` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName maximum visual screen size` `MPropertySortPriority` |
+| `m_flSubPixelAAScale` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName sub-pixel AA scale` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_flStartFadeSize` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName screen size to start fading` `MPropertySortPriority` |
+| `m_flEndFadeSize` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName screen size to fade away` `MPropertySortPriority` |
+| `m_flStartFadeDot` | float32 | `MPropertyFriendlyName start fade dot product of normal vs view` `MPropertySortPriority` |
+| `m_flEndFadeDot` | float32 | `MPropertyFriendlyName end fade dot product of normal vs view` `MPropertySortPriority` |
+| `m_bDistanceAlpha` | bool | `MPropertyFriendlyName distance alpha` `MPropertySortPriority` `MPropertyStartGroup Distance to alpha coding` |
+| `m_bSoftEdges` | bool | `MPropertyFriendlyName use soft edges for distance alpha` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_flEdgeSoftnessStart` | float32 | `MPropertyFriendlyName start value for soft edges for distance alpha` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_flEdgeSoftnessEnd` | float32 | `MPropertyFriendlyName end value for soft edges for distance alpha` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_bOutline` | bool | `MPropertyFriendlyName enable particle outlining` `MPropertySortPriority` `MPropertyStartGroup Outlining` |
+| `m_OutlineColor` | Color | `MPropertyFriendlyName outline color` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_nOutlineAlpha` | int32 | `MPropertyAttributeRange 0 255` `MPropertyFriendlyName outline alpha` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_flOutlineStart0` | float32 | `MPropertyFriendlyName outline start 0` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_flOutlineStart1` | float32 | `MPropertyFriendlyName outline start 1` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_flOutlineEnd0` | float32 | `MPropertyFriendlyName outline end 0` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_flOutlineEnd1` | float32 | `MPropertyFriendlyName outline end 1` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_nLightingMode` | [ParticleLightingQuality_t](../schemas/!GlobalTypes.md#particlelightingquality_t) | `MPropertyFriendlyName lighting mode` `MPropertySortPriority` `MPropertyStartGroup Lighting and Shadows` `MPropertySuppressExpr` |
+| `m_vecLightingOverride` | [CParticleCollectionRendererVecInput](../schemas/particleslib.md#cparticlecollectionrenderervecinput) | `MPropertyFriendlyName lighting override` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_flLightingTessellation` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyAttributeRange 0 5` `MPropertyFriendlyName vertex lighting tessellation (0-5)` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_flLightingDirectionality` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName lighting directionality` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_bParticleShadows` | bool | `MPropertyFriendlyName Particle Shadows` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_flShadowDensity` | float32 | `MPropertyFriendlyName Shadow Density` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_replicationParameters` | [CReplicationParameters](../schemas/particles.md#creplicationparameters) | `MPropertyFriendlyName Replication settings` `MPropertyStartGroup Replication` |
+
+### C_OP_RenderStandardLight
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderStandardLight
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderStandardLight *-- ParticleLightTypeChoiceList_t
+    C_OP_RenderStandardLight *-- CParticleCollectionVecInput
+    C_OP_RenderStandardLight *-- ParticleColorBlendType_t
+    C_OP_RenderStandardLight *-- CPerParticleFloatInput
+    C_OP_RenderStandardLight *-- CParticleCollectionFloatInput
+    C_OP_RenderStandardLight *-- StandardLightingAttenuationStyle_t
+    C_OP_RenderStandardLight *-- ParticleLightFogLightingMode_t
+    C_OP_RenderStandardLight *-- CParticleCollectionRendererFloatInput
+    C_OP_RenderStandardLight *-- ParticleLightBehaviorChoiceList_t
+    C_OP_RenderStandardLight *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nLightType` | [ParticleLightTypeChoiceList_t](../schemas/!GlobalTypes.md#particlelighttypechoicelist_t) | `MPropertyFriendlyName light type` |
+| `m_nMaxAllowed` | uint16 | `MPropertyAttributeRange 1 512` `MPropertyFriendlyName maximum light count` |
+| `m_vecColorScale` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName color blend` |
+| `m_nColorBlendType` | [ParticleColorBlendType_t](../schemas/!GlobalTypes.md#particlecolorblendtype_t) | `MPropertyFriendlyName color blend type` |
+| `m_strLightStyle` | CUtlString | `MPropertyAttributeEditor VDataChoice( scripts/light_styles.vdata )` `MPropertyFriendlyName light style` |
+| `m_flLightStyleTime` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName light style time` `MPropertySuppressExpr` |
+| `m_flIntensity` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName intensity` |
+| `m_bCastShadows` | bool | `MPropertyFriendlyName cast shadows` `MPropertySuppressExpr` |
+| `m_bDynamicBounce` | bool | `MPropertyFriendlyName dynamic bounce (RTGI)` `MPropertySuppressExpr` |
+| `m_flBounceScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName bounce scale` `MPropertySuppressExpr` |
+| `m_flTheta` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName inner cone angle` `MPropertySuppressExpr` |
+| `m_flPhi` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName outer cone angle` `MPropertySuppressExpr` |
+| `m_flRadiusMultiplier` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName light radius multiplier` |
+| `m_nAttenuationStyle` | [StandardLightingAttenuationStyle_t](../schemas/!GlobalTypes.md#standardlightingattenuationstyle_t) | `MPropertyFriendlyName attenuation type` |
+| `m_flFalloffLinearity` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName falloff linearity` `MPropertySuppressExpr` |
+| `m_flFiftyPercentFalloff` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName falloff fifty percent` `MPropertySuppressExpr` |
+| `m_flZeroPercentFalloff` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName falloff zero percent` `MPropertySuppressExpr` |
+| `m_bRenderDiffuse` | bool | `MPropertyFriendlyName render diffuse` `MPropertySuppressExpr` |
+| `m_bRenderSpecular` | bool | `MPropertyFriendlyName render specular` `MPropertySuppressExpr` |
+| `m_lightCookie` | CUtlString | `MPropertyFriendlyName light cookie string` |
+| `m_nPriority` | int32 | `MPropertyFriendlyName light priority` |
+| `m_nFogLightingMode` | [ParticleLightFogLightingMode_t](../schemas/!GlobalTypes.md#particlelightfoglightingmode_t) | `MPropertyFriendlyName fog lighting mode` `MPropertySuppressExpr` |
+| `m_flFogContribution` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName fog contribution` `MPropertySuppressExpr` |
+| `m_nCapsuleLightBehavior` | [ParticleLightBehaviorChoiceList_t](../schemas/!GlobalTypes.md#particlelightbehaviorchoicelist_t) | `MPropertyFriendlyName capsule behavior` |
+| `m_flCapsuleLength` | float32 | `MPropertyFriendlyName capsule length` `MPropertyStartGroup Capsule Light Controls` `MPropertySuppressExpr` |
+| `m_bReverseOrder` | bool | `MPropertyFriendlyName reverse point order` `MPropertySuppressExpr` |
+| `m_bClosedLoop` | bool | `MPropertyFriendlyName Closed loop` `MPropertySuppressExpr` |
+| `m_nPrevPntSource` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Anchor point source` `MPropertySuppressExpr` |
+| `m_flMaxLength` | float32 | `MPropertyFriendlyName max length` `MPropertySuppressExpr` |
+| `m_flMinLength` | float32 | `MPropertyFriendlyName min length` `MPropertySuppressExpr` |
+| `m_bIgnoreDT` | bool | `MPropertyFriendlyName ignore delta time` `MPropertySuppressExpr` |
+| `m_flConstrainRadiusToLengthRatio` | float32 | `MPropertyFriendlyName constrain radius to no more than this times the length` `MPropertySuppressExpr` |
+| `m_flLengthScale` | float32 | `MPropertyFriendlyName amount to scale trail length by` `MPropertySuppressExpr` |
+| `m_flLengthFadeInTime` | float32 | `MPropertyFriendlyName how long before a trail grows to its full length` `MPropertySuppressExpr` |
+
+### C_OP_RenderStatusEffect
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderStatusEffect
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderStatusEffect *-- InfoForResourceTypeCTextureBase
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_pTextureColorWarp` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > | `MPropertyAttributeEditor AssetBrowse( vtex, *showassetpreview )` `MPropertyFriendlyName color warp texture (3d)` |
+| `m_pTextureDetail2` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > | `MPropertyAttributeEditor AssetBrowse( vtex, *showassetpreview )` `MPropertyFriendlyName detail 2 texture` |
+| `m_pTextureDiffuseWarp` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > | `MPropertyAttributeEditor AssetBrowse( vtex, *showassetpreview )` `MPropertyFriendlyName diffuse warp texture (3d)` |
+| `m_pTextureFresnelColorWarp` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > | `MPropertyAttributeEditor AssetBrowse( vtex, *showassetpreview )` `MPropertyFriendlyName fresnel color warp texture (3d)` |
+| `m_pTextureFresnelWarp` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > | `MPropertyAttributeEditor AssetBrowse( vtex, *showassetpreview )` `MPropertyFriendlyName fresnel warp texture` |
+| `m_pTextureSpecularWarp` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > | `MPropertyAttributeEditor AssetBrowse( vtex, *showassetpreview )` `MPropertyFriendlyName specular warp texture` |
+| `m_pTextureEnvMap` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > | `MPropertyAttributeEditor AssetBrowse( vtex, *showassetpreview )` `MPropertyFriendlyName environment map texture` |
+
+### C_OP_RenderStatusEffectCitadel
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderStatusEffectCitadel
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderStatusEffectCitadel *-- InfoForResourceTypeCTextureBase
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_pTextureColorWarp` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > | `MPropertyAttributeEditor AssetBrowse( vtex, *showassetpreview )` `MPropertyFriendlyName color warp texture (3d)` |
+| `m_pTextureNormal` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > | `MPropertyAttributeEditor AssetBrowse( vtex, *showassetpreview )` `MPropertyFriendlyName normal texture` |
+| `m_pTextureMetalness` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > | `MPropertyAttributeEditor AssetBrowse( vtex, *showassetpreview )` `MPropertyFriendlyName metalness texture` |
+| `m_pTextureRoughness` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > | `MPropertyAttributeEditor AssetBrowse( vtex, *showassetpreview )` `MPropertyFriendlyName roughness texture` |
+| `m_pTextureSelfIllum` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > | `MPropertyAttributeEditor AssetBrowse( vtex, *showassetpreview )` `MPropertyFriendlyName self illum texture` |
+| `m_pTextureDetail` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > | `MPropertyAttributeEditor AssetBrowse( vtex, *showassetpreview )` `MPropertyFriendlyName detail texture` |
+
+### C_OP_RenderText
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderText
+    CParticleFunction <|-- CParticleFunctionRenderer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_OutlineColor` | Color | `MPropertyFriendlyName outline color` |
+| `m_DefaultText` | CUtlString | `MPropertyFriendlyName default text` |
+
+### C_OP_RenderTrails
+
+**Inherits from:** [CBaseTrailRenderer](particles.md#cbasetrailrenderer)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CBaseTrailRenderer <|-- C_OP_RenderTrails
+    CBaseRendererSource2 <|-- CBaseTrailRenderer
+    CParticleFunctionRenderer <|-- CBaseRendererSource2
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderTrails *-- ParticleAttributeIndex_t
+    C_OP_RenderTrails *-- CPerParticleFloatInput
+    C_OP_RenderTrails *-- CParticleCollectionVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bEnableFadingAndClamping` | bool | `MPropertyFriendlyName enable fading and clamping` `MPropertySortPriority` `MPropertyStartGroup Screenspace Fading and culling` |
+| `m_flStartFadeDot` | float32 | `MPropertyFriendlyName start fade dot product of normal vs view` `MPropertySortPriority` |
+| `m_flEndFadeDot` | float32 | `MPropertyFriendlyName end fade dot product of normal vs view` `MPropertySortPriority` |
+| `m_nPrevPntSource` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Anchor point source` `MPropertySortPriority` `MPropertyStartGroup +Trail Length` |
+| `m_flMaxLength` | float32 | `MPropertyFriendlyName max length` `MPropertySortPriority` |
+| `m_flMinLength` | float32 | `MPropertyFriendlyName min length` `MPropertySortPriority` |
+| `m_bIgnoreDT` | bool | `MPropertyFriendlyName ignore delta time` `MPropertySortPriority` |
+| `m_flConstrainRadiusToLengthRatio` | float32 | `MPropertyFriendlyName constrain radius to no more than this times the length` `MPropertySortPriority` |
+| `m_flLengthScale` | float32 | `MPropertyFriendlyName amount to scale trail length by` |
+| `m_flLengthFadeInTime` | float32 | `MPropertyFriendlyName how long before a trail grows to its full length` |
+| `m_flRadiusHeadTaper` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName head taper scale` `MPropertySortPriority` `MPropertyStartGroup Trail Head & Tail` |
+| `m_vecHeadColorScale` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName head color scale` |
+| `m_flHeadAlphaScale` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName head alpha scale` |
+| `m_flRadiusTaper` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName tail taper scale` |
+| `m_vecTailColorScale` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName tail color scale` |
+| `m_flTailAlphaScale` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName tail alpha scale` |
+| `m_nHorizCropField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName texture UV horizontal Scale field` `MPropertySortPriority` `MPropertyStartGroup Trail UV Controls` |
+| `m_nVertCropField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName texture UV vertical Scale field` |
+| `m_flForwardShift` | float32 | `MPropertyFriendlyName Trail forward shift (fraction)` |
+| `m_bFlipUVBasedOnPitchYaw` | bool | `MPropertyFriendlyName Flip U or V texcoords if pitch or yaw go over PI` |
+
+### C_OP_RenderTreeShake
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderTreeShake
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderTreeShake *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flPeakStrength` | float32 | `MPropertyFriendlyName peak strength` |
+| `m_nPeakStrengthFieldOverride` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName peak strength field override` |
+| `m_flRadius` | float32 | `MPropertyFriendlyName radius` |
+| `m_nRadiusFieldOverride` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName strength field override` |
+| `m_flShakeDuration` | float32 | `MPropertyFriendlyName shake duration after end` |
+| `m_flTransitionTime` | float32 | `MPropertyFriendlyName amount of time taken to smooth between different shake parameters` |
+| `m_flTwistAmount` | float32 | `MPropertyFriendlyName Twist amount (-1..1)` |
+| `m_flRadialAmount` | float32 | `MPropertyFriendlyName Radial Amount (-1..1)` |
+| `m_flControlPointOrientationAmount` | float32 | `MPropertyFriendlyName Control Point Orientation Amount (-1..1)` |
+| `m_nControlPointForLinearDirection` | int32 | `MPropertyFriendlyName Control Point for Orientation Amount` |
+
+### C_OP_RenderVRHapticEvent
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderVRHapticEvent
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderVRHapticEvent *-- ParticleVRHandChoiceList_t
+    C_OP_RenderVRHapticEvent *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nHand` | [ParticleVRHandChoiceList_t](../schemas/!GlobalTypes.md#particlevrhandchoicelist_t) | `MPropertyFriendlyName haptic hand` |
+| `m_nOutputHandCP` | int32 | `MPropertyFriendlyName hand control point number` |
+| `m_nOutputField` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName cp field` |
+| `m_flAmplitude` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName amplitude` |
+
+### C_OP_RenderVolumetricEmitter
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_RenderVolumetricEmitter
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_RenderVolumetricEmitter *-- ParticleVolumetricSmokeType_t
+    C_OP_RenderVolumetricEmitter *-- ParticleVolumetricSmokeCreationType_t
+    C_OP_RenderVolumetricEmitter *-- EventTypeSelection_t
+    C_OP_RenderVolumetricEmitter *-- CPerParticleVecInput
+    C_OP_RenderVolumetricEmitter *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_strChannelType` | CUtlString | `MPropertyAttributeEditor VDataChoice( scripts/volumetric_channels.vdata )` `MPropertyFriendlyName channel type` |
+| `m_nType` | [ParticleVolumetricSmokeType_t](../schemas/!GlobalTypes.md#particlevolumetricsmoketype_t) | `MPropertyFriendlyName interaction type` |
+| `m_nCreationType` | [ParticleVolumetricSmokeCreationType_t](../schemas/!GlobalTypes.md#particlevolumetricsmokecreationtype_t) | `MPropertyFriendlyName creation type` |
+| `m_nEventType` | [EventTypeSelection_t](../schemas/!GlobalTypes.md#eventtypeselection_t) | `MPropertyFriendlyName event type` `MPropertySuppressExpr` |
+| `m_vecPos` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName position` |
+| `m_vecVelocity` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName velocity` `MPropertySuppressExpr` |
+| `m_vPrevPosition` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName prev position` `MPropertySuppressExpr` |
+| `m_flSpeed` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName speed` `MPropertySuppressExpr` |
+| `m_flRadius` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName radius` |
+| `m_flDensity` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName density` `MPropertySuppressExpr` |
+| `m_flTemperature` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName temperature` `MPropertySuppressExpr` |
+| `m_flMagnitude` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName magnitude` `MPropertySuppressExpr` |
+| `m_flKillRadius` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName kill radius` `MPropertySuppressExpr` |
+| `m_flKillDensityScale` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName kill density scale` `MPropertySuppressExpr` |
+| `m_flFalloff` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName falloff` `MPropertySuppressExpr` |
+
+### C_OP_RepeatedTriggerChildGroup
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_RepeatedTriggerChildGroup
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RepeatedTriggerChildGroup *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nChildGroupID` | int32 | `MPropertyFriendlyName group ID to affect` |
+| `m_flClusterRefireTime` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Within-Cluster Refire Time` |
+| `m_flClusterSize` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Within-Cluster Fire Count Before Cooldown` |
+| `m_flClusterCooldown` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Cluster Cooldown Time` |
+| `m_bLimitChildCount` | bool | `MPropertyFriendlyName limit active children to parent particle count` |
+
+### C_OP_RestartAfterDuration
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RestartAfterDuration
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flDurationMin` | float32 | `MPropertyFriendlyName minimum restart time` |
+| `m_flDurationMax` | float32 | `MPropertyFriendlyName maximum restart time` |
+| `m_nCP` | int32 | `MPropertyFriendlyName control point to scale duration` |
+| `m_nCPField` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName control point field X/Y/Z` |
+| `m_nChildGroupID` | int32 | `MPropertyFriendlyName child group ID` |
+| `m_bOnlyChildren` | bool | `MPropertyFriendlyName only restart children` |
+
+### C_OP_RopeSpringConstraint
+
+**Inherits from:** [CParticleFunctionConstraint](particles.md#cparticlefunctionconstraint)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionConstraint <|-- C_OP_RopeSpringConstraint
+    CParticleFunction <|-- CParticleFunctionConstraint
+    C_OP_RopeSpringConstraint *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flRestLength` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName slack` |
+| `m_flMinDistance` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName minimum segment length %` |
+| `m_flMaxDistance` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName maximum segment length %` |
+| `m_flAdjustmentScale` | float32 | `MPropertyFriendlyName scale factor for spring correction` |
+| `m_flInitialRestingLength` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName manual resting spacing` |
+
+### C_OP_RotateVector
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RotateVector
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_RotateVector *-- ParticleAttributeIndex_t
+    C_OP_RotateVector *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_vecRotAxisMin` | Vector | `MPropertyFriendlyName rotation axis min` `MVectorIsCoordinate` |
+| `m_vecRotAxisMax` | Vector | `MPropertyFriendlyName rotation axis max` `MVectorIsCoordinate` |
+| `m_flRotRateMin` | float32 | `MPropertyFriendlyName rotation rate min` |
+| `m_flRotRateMax` | float32 | `MPropertyFriendlyName rotation rate max` |
+| `m_bNormalize` | bool | `MPropertyFriendlyName normalize output` |
+| `m_flScale` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName per particle scale` |
+
+### C_OP_RtEnvCull
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_RtEnvCull
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecTestDir` | Vector | `MPropertyFriendlyName test direction` `MVectorIsCoordinate` |
+| `m_vecTestNormal` | Vector | `MPropertyFriendlyName cull normal` `MVectorIsCoordinate` |
+| `m_bCullOnMiss` | bool | `MPropertyFriendlyName cull on miss` |
+| `m_bStickInsteadOfCull` | bool | `MPropertyFriendlyName stick instead of cull` |
+| `m_RtEnvName` | char[128] | `MPropertyFriendlyName ray trace environment name` |
+| `m_nRTEnvCP` | int32 | `MPropertyFriendlyName ray trace environment cp` |
+| `m_nComponent` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName rt env control point component` |
+
+### C_OP_ScreenSpaceDistanceToEdge
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_ScreenSpaceDistanceToEdge
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_ScreenSpaceDistanceToEdge *-- ParticleAttributeIndex_t
+    C_OP_ScreenSpaceDistanceToEdge *-- CPerParticleFloatInput
+    C_OP_ScreenSpaceDistanceToEdge *-- CParticleRemapFloatInput
+    C_OP_ScreenSpaceDistanceToEdge *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_flMaxDistFromEdge` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName max distance from edge` |
+| `m_flOutputRemap` | [CParticleRemapFloatInput](../schemas/particleslib.md#cparticleremapfloatinput) | `MPropertyFriendlyName output` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+
+### C_OP_ScreenSpacePositionOfTarget
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_ScreenSpacePositionOfTarget
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_ScreenSpacePositionOfTarget *-- CPerParticleVecInput
+    C_OP_ScreenSpacePositionOfTarget *-- ParticleAttributeIndex_t
+    C_OP_ScreenSpacePositionOfTarget *-- CParticleRemapFloatInput
+    C_OP_ScreenSpacePositionOfTarget *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecTargetPosition` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName target position` `MVectorIsCoordinate` |
+| `m_bOututBehindness` | bool | `MPropertyFriendlyName output behindness` |
+| `m_nBehindFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName behindness output field` `MPropertySuppressExpr` |
+| `m_flBehindOutputRemap` | [CParticleRemapFloatInput](../schemas/particleslib.md#cparticleremapfloatinput) | `MPropertyFriendlyName behindness output remap` `MPropertySuppressExpr` |
+| `m_nBehindSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName behindness set value method` `MPropertySuppressExpr` |
+
+### C_OP_ScreenSpaceRotateTowardTarget
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_ScreenSpaceRotateTowardTarget
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_ScreenSpaceRotateTowardTarget *-- CPerParticleVecInput
+    C_OP_ScreenSpaceRotateTowardTarget *-- CParticleRemapFloatInput
+    C_OP_ScreenSpaceRotateTowardTarget *-- ParticleSetMethod_t
+    C_OP_ScreenSpaceRotateTowardTarget *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecTargetPosition` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName target position` `MVectorIsCoordinate` |
+| `m_flOutputRemap` | [CParticleRemapFloatInput](../schemas/particleslib.md#cparticleremapfloatinput) | `MPropertyFriendlyName output` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_flScreenEdgeAlignmentDistance` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName screen edge alignment distance` |
+
+### C_OP_SelectivelyEnableChildren
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SelectivelyEnableChildren
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SelectivelyEnableChildren *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nChildGroupID` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName group ID to affect` |
+| `m_nFirstChild` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName first child to enable` |
+| `m_nNumChildrenToEnable` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName # of children to enable` |
+| `m_bPlayEndcapOnStop` | bool | `MPropertyFriendlyName play endcap when children are removed` |
+| `m_bDestroyImmediately` | bool | `MPropertyFriendlyName destroy particles immediately when child is removed` |
+
+### C_OP_SequenceFromModel
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_SequenceFromModel
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SequenceFromModel *-- ParticleAttributeIndex_t
+    C_OP_SequenceFromModel *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_nFieldOutputAnim` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName current anim time output field` |
+| `m_flInputMin` | float32 | `MPropertyFriendlyName input minimum` |
+| `m_flInputMax` | float32 | `MPropertyFriendlyName input maximum` |
+| `m_flOutputMin` | float32 | `MPropertyFriendlyName output minimum` |
+| `m_flOutputMax` | float32 | `MPropertyFriendlyName output maximum` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+
+### C_OP_SetAttributeToScalarExpression
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_SetAttributeToScalarExpression
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetAttributeToScalarExpression *-- ScalarExpressionType_t
+    C_OP_SetAttributeToScalarExpression *-- CPerParticleFloatInput
+    C_OP_SetAttributeToScalarExpression *-- CParticleRemapFloatInput
+    C_OP_SetAttributeToScalarExpression *-- ParticleAttributeIndex_t
+    C_OP_SetAttributeToScalarExpression *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nExpression` | [ScalarExpressionType_t](../schemas/!GlobalTypes.md#scalarexpressiontype_t) | `MPropertyFriendlyName expression` |
+| `m_flInput1` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName input 1` |
+| `m_flInput2` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName input 2` |
+| `m_flOutputRemap` | [CParticleRemapFloatInput](../schemas/particleslib.md#cparticleremapfloatinput) | `MPropertyFriendlyName output` |
+| `m_nOutputField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+
+### C_OP_SetCPOrientationToDirection
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_SetCPOrientationToDirection
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nInputControlPoint` | int32 | `MPropertyFriendlyName input control point` |
+| `m_nOutputControlPoint` | int32 | `MPropertyFriendlyName output control point` |
+
+### C_OP_SetCPOrientationToGroundNormal
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_SetCPOrientationToGroundNormal
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetCPOrientationToGroundNormal *-- ParticleTraceSet_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flInterpRate` | float32 | `MPropertyFriendlyName interpolation rate` |
+| `m_flMaxTraceLength` | float32 | `MPropertyFriendlyName max trace length` |
+| `m_flTolerance` | float32 | `MPropertyFriendlyName CP movement tolerance` |
+| `m_flTraceOffset` | float32 | `MPropertyFriendlyName trace offset` |
+| `m_CollisionGroupName` | char[128] | `MPropertyFriendlyName collision group` |
+| `m_nTraceSet` | [ParticleTraceSet_t](../schemas/!GlobalTypes.md#particletraceset_t) | `MPropertyFriendlyName Trace Set` |
+| `m_nInputCP` | int32 | `MPropertyFriendlyName CP to trace from` |
+| `m_nOutputCP` | int32 | `MPropertyFriendlyName CP to set` |
+| `m_bIncludeWater` | bool | `MPropertyFriendlyName include water` |
+
+### C_OP_SetCPOrientationToPointAtCP
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SetCPOrientationToPointAtCP
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetCPOrientationToPointAtCP *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nInputCP` | int32 | `MPropertyFriendlyName CP to point towards` |
+| `m_nOutputCP` | int32 | `MPropertyFriendlyName CP to set` |
+| `m_flInterpolation` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Interpolation` |
+| `m_b2DOrientation` | bool | `MPropertyFriendlyName 2D Orient` |
+| `m_bAvoidSingularity` | bool | `MPropertyFriendlyName Avoid Vertical Axis Singularity` |
+| `m_bPointAway` | bool | `MPropertyFriendlyName Point Away` |
+
+### C_OP_SetCPtoVector
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_SetCPtoVector
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetCPtoVector *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCPInput` | int32 | `MPropertyFriendlyName input control point number` |
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+
+### C_OP_SetChildControlPoints
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_SetChildControlPoints
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetChildControlPoints *-- CParticleCollectionFloatInput
+    C_OP_SetChildControlPoints *-- ParticleOrientationType_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nChildGroupID` | int32 | `MPropertyFriendlyName group ID to affect` |
+| `m_nFirstControlPoint` | int32 | `MPropertyFriendlyName first control point to set` |
+| `m_nNumControlPoints` | int32 | `MPropertyFriendlyName # of control points to set` |
+| `m_nFirstSourcePoint` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName first particle to copy` |
+| `m_bReverse` | bool | `MPropertyFriendlyName start as last particle` |
+| `m_bSetOrientation` | bool | `MPropertyFriendlyName set orientation` |
+| `m_nOrientation` | [ParticleOrientationType_t](../schemas/!GlobalTypes.md#particleorientationtype_t) | `MPropertyFriendlyName orientation set method` `MPropertySuppressExpr` |
+
+### C_OP_SetControlPointFieldFromVectorExpression
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointFieldFromVectorExpression
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetControlPointFieldFromVectorExpression *-- VectorFloatExpressionType_t
+    C_OP_SetControlPointFieldFromVectorExpression *-- CParticleCollectionVecInput
+    C_OP_SetControlPointFieldFromVectorExpression *-- CPerParticleFloatInput
+    C_OP_SetControlPointFieldFromVectorExpression *-- CParticleRemapFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nExpression` | [VectorFloatExpressionType_t](../schemas/!GlobalTypes.md#vectorfloatexpressiontype_t) | `MPropertyFriendlyName expression` |
+| `m_vecInput1` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName input 1` |
+| `m_vecInput2` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName input 2` |
+| `m_flLerp` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName lerp value` `MPropertySuppressExpr` |
+| `m_flOutputRemap` | [CParticleRemapFloatInput](../schemas/particleslib.md#cparticleremapfloatinput) | `MPropertyFriendlyName output` |
+| `m_nOutputCP` | int32 | `MPropertyFriendlyName output control point` |
+| `m_nOutVectorField` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName output component` |
+
+### C_OP_SetControlPointFieldToScalarExpression
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointFieldToScalarExpression
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetControlPointFieldToScalarExpression *-- ScalarExpressionType_t
+    C_OP_SetControlPointFieldToScalarExpression *-- CParticleCollectionFloatInput
+    C_OP_SetControlPointFieldToScalarExpression *-- CParticleRemapFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nExpression` | [ScalarExpressionType_t](../schemas/!GlobalTypes.md#scalarexpressiontype_t) | `MPropertyFriendlyName expression` |
+| `m_flInput1` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName input 1` |
+| `m_flInput2` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName input 2` |
+| `m_flOutputRemap` | [CParticleRemapFloatInput](../schemas/particleslib.md#cparticleremapfloatinput) | `MPropertyFriendlyName output` |
+| `m_nOutputCP` | int32 | `MPropertyFriendlyName output control point` |
+| `m_nOutVectorField` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName output component` |
+| `m_flInterpolation` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Interpolation` |
+
+### C_OP_SetControlPointFieldToWater
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointFieldToWater
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nSourceCP` | int32 | `MPropertyFriendlyName source CP` |
+| `m_nDestCP` | int32 | `MPropertyFriendlyName dest CP` |
+| `m_nCPField` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName dest control point component` |
+
+### C_OP_SetControlPointFromObjectScale
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointFromObjectScale
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCPInput` | int32 | `MPropertyFriendlyName input control point number` |
+| `m_nCPOutput` | int32 | `MPropertyFriendlyName output control point number` |
+
+### C_OP_SetControlPointOrientation
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointOrientation
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetControlPointOrientation *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bUseWorldLocation` | bool | `MPropertyFriendlyName set orientation in world space` |
+| `m_bRandomize` | bool | `MPropertyFriendlyName randomize` |
+| `m_bSetOnce` | bool | `MPropertyFriendlyName only set orientation once` |
+| `m_nCP` | int32 | `MPropertyFriendlyName control point number` |
+| `m_nHeadLocation` | int32 | `MPropertyFriendlyName control point to offset orientation from` |
+| `m_vecRotation` | QAngle | `MPropertyFriendlyName pitch yaw roll` |
+| `m_vecRotationB` | QAngle | `MPropertyFriendlyName pitch yaw roll max` |
+| `m_flInterpolation` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName interpolation` |
+
+### C_OP_SetControlPointOrientationToCPVelocity
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointOrientationToCPVelocity
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCPInput` | int32 | `MPropertyFriendlyName control point input for velocity` |
+| `m_nCPOutput` | int32 | `MPropertyFriendlyName control point output for orientation` |
+
+### C_OP_SetControlPointPositionToRandomActiveCP
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointPositionToRandomActiveCP
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetControlPointPositionToRandomActiveCP *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCP1` | int32 | `MPropertyFriendlyName control point number` |
+| `m_nHeadLocationMin` | int32 | `MPropertyFriendlyName min active CP` |
+| `m_nHeadLocationMax` | int32 | `MPropertyFriendlyName max active CP` |
+| `m_flResetRate` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName reset rate` |
+
+### C_OP_SetControlPointPositionToTimeOfDayValue
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointPositionToTimeOfDayValue
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_pszTimeOfDayParameter` | char[128] | `MPropertyFriendlyName time-of-day parameter` |
+| `m_vecDefaultValue` | Vector | `MPropertyFriendlyName default value` |
+
+### C_OP_SetControlPointPositions
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointPositions
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bUseWorldLocation` | bool | `MPropertyFriendlyName set positions in world space` |
+| `m_bOrient` | bool | `MPropertyFriendlyName inherit CP orientation` |
+| `m_bSetOnce` | bool | `MPropertyFriendlyName only set position once` |
+| `m_nCP1` | int32 | `MPropertyFriendlyName first control point number` |
+| `m_nCP2` | int32 | `MPropertyFriendlyName second control point number` |
+| `m_nCP3` | int32 | `MPropertyFriendlyName third control point number` |
+| `m_nCP4` | int32 | `MPropertyFriendlyName fourth control point number` |
+| `m_vecCP1Pos` | Vector | `MPropertyFriendlyName first control point location` `MVectorIsCoordinate` |
+| `m_vecCP2Pos` | Vector | `MPropertyFriendlyName second control point location` `MVectorIsCoordinate` |
+| `m_vecCP3Pos` | Vector | `MPropertyFriendlyName third control point location` `MVectorIsCoordinate` |
+| `m_vecCP4Pos` | Vector | `MPropertyFriendlyName fourth control point location` `MVectorIsCoordinate` |
+| `m_nHeadLocation` | int32 | `MPropertyFriendlyName control point to offset positions from` |
+
+### C_OP_SetControlPointRotation
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointRotation
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetControlPointRotation *-- CParticleCollectionVecInput
+    C_OP_SetControlPointRotation *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecRotAxis` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName rotation axis` `MVectorIsCoordinate` |
+| `m_flRotRate` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName rotation rate` |
+| `m_nCP` | int32 | `MPropertyFriendlyName control point` |
+| `m_nLocalCP` | int32 | `MPropertyFriendlyName local space control point` |
+
+### C_OP_SetControlPointToCPVelocity
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointToCPVelocity
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetControlPointToCPVelocity *-- CParticleCollectionVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCPInput` | int32 | `MPropertyFriendlyName control point input` |
+| `m_nCPOutputVel` | int32 | `MPropertyFriendlyName control point number to set velocity` |
+| `m_bNormalize` | bool | `MPropertyFriendlyName normalize output` |
+| `m_nCPOutputMag` | int32 | `MPropertyFriendlyName control point number to set magnitude` |
+| `m_nCPField` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName control point field for magnitude` |
+| `m_vecComparisonVelocity` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName comparison velocity` |
+
+### C_OP_SetControlPointToCenter
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointToCenter
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetControlPointToCenter *-- ParticleParentSetMode_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCP1` | int32 | `MPropertyFriendlyName control point number to set` |
+| `m_vecCP1Pos` | Vector | `MPropertyFriendlyName center offset` `MVectorIsCoordinate` |
+| `m_bUseAvgParticlePos` | bool | `MPropertyFriendlyName use average particle position` `MVectorIsCoordinate` |
+| `m_nSetParent` | [ParticleParentSetMode_t](../schemas/!GlobalTypes.md#particleparentsetmode_t) | `MPropertyFriendlyName set parent` |
+
+### C_OP_SetControlPointToHMD
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointToHMD
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCP1` | int32 | `MPropertyFriendlyName control point number` |
+| `m_vecCP1Pos` | Vector | `MPropertyFriendlyName control point offset` `MVectorIsCoordinate` |
+| `m_bOrientToHMD` | bool | `MPropertyFriendlyName use hmd orientation` |
+
+### C_OP_SetControlPointToHand
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointToHand
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCP1` | int32 | `MPropertyFriendlyName control point number` |
+| `m_nHand` | int32 | `MPropertyFriendlyName hand` |
+| `m_vecCP1Pos` | Vector | `MPropertyFriendlyName control point offset` `MVectorIsCoordinate` |
+| `m_bOrientToHand` | bool | `MPropertyFriendlyName use hand orientation` |
+
+### C_OP_SetControlPointToImpactPoint
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointToImpactPoint
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetControlPointToImpactPoint *-- CParticleCollectionFloatInput
+    C_OP_SetControlPointToImpactPoint *-- ParticleTraceSet_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCPOut` | int32 | `MPropertyFriendlyName control point to set` |
+| `m_nCPIn` | int32 | `MPropertyFriendlyName control point to trace from` |
+| `m_flUpdateRate` | float32 | `MPropertyFriendlyName trace update rate` |
+| `m_flTraceLength` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName max trace length` |
+| `m_flStartOffset` | float32 | `MPropertyFriendlyName offset start point amount` |
+| `m_flOffset` | float32 | `MPropertyFriendlyName offset end point amount` |
+| `m_vecTraceDir` | Vector | `MPropertyFriendlyName trace direction override` `MVectorIsCoordinate` |
+| `m_CollisionGroupName` | char[128] | `MPropertyFriendlyName trace collision group` |
+| `m_nTraceSet` | [ParticleTraceSet_t](../schemas/!GlobalTypes.md#particletraceset_t) | `MPropertyFriendlyName Trace Set` |
+| `m_bSetToEndpoint` | bool | `MPropertyFriendlyName set to trace endpoint if no collision` |
+| `m_bTraceToClosestSurface` | bool | `MPropertyFriendlyName trace to closest surface along all cardinal directions` |
+| `m_bIncludeWater` | bool | `MPropertyFriendlyName include water` |
+
+### C_OP_SetControlPointToPlayer
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointToPlayer
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetControlPointToPlayer *-- ParticleEntityPos_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCP1` | int32 | `MPropertyFriendlyName control point number` |
+| `m_vecCP1Pos` | Vector | `MPropertyFriendlyName control point offset` `MVectorIsCoordinate` |
+| `m_bOrientToEyes` | bool | `MPropertyFriendlyName use eye orientation` |
+| `m_nPosition` | [ParticleEntityPos_t](../schemas/!GlobalTypes.md#particleentitypos_t) | `MPropertyFriendlyName position to get` |
+| `m_nRadiusCP` | int32 | `MPropertyFriendlyName flashlight radius CP` `MPropertySuppressExpr` |
+| `m_nRadiusCPField` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName flashlight radius control point component` `MPropertySuppressExpr` |
+
+### C_OP_SetControlPointToVectorExpression
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointToVectorExpression
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetControlPointToVectorExpression *-- VectorExpressionType_t
+    C_OP_SetControlPointToVectorExpression *-- CParticleCollectionVecInput
+    C_OP_SetControlPointToVectorExpression *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nExpression` | [VectorExpressionType_t](../schemas/!GlobalTypes.md#vectorexpressiontype_t) | `MPropertyFriendlyName expression` |
+| `m_nOutputCP` | int32 | `MPropertyFriendlyName output control point` |
+| `m_vInput1` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName input 1` |
+| `m_vInput2` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName input 2` |
+| `m_flLerp` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName lerp value` `MPropertySuppressExpr` |
+| `m_bNormalizedOutput` | bool | `MPropertyFriendlyName normalize result` |
+
+### C_OP_SetControlPointToWaterSurface
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SetControlPointToWaterSurface
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetControlPointToWaterSurface *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nSourceCP` | int32 | `MPropertyFriendlyName source CP` |
+| `m_nDestCP` | int32 | `MPropertyFriendlyName CP to set to surface` |
+| `m_nFlowCP` | int32 | `MPropertyFriendlyName CP to set to surface current flow velocity` `MPropertySuppressExpr` |
+| `m_nActiveCP` | int32 | `MPropertyFriendlyName CP to set component of if water` |
+| `m_nActiveCPField` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName CP component` |
+| `m_flRetestRate` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName retest rate` |
+| `m_bAdaptiveThreshold` | bool | `MPropertyFriendlyName adaptive retest on moving surface` |
+
+### C_OP_SetControlPointsToModelParticles
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_SetControlPointsToModelParticles
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_HitboxSetName` | char[128] | `MPropertyFriendlyName hitbox set` |
+| `m_AttachmentName` | char[128] | `MPropertyFriendlyName attachment to follow` |
+| `m_nFirstControlPoint` | int32 | `MPropertyFriendlyName First control point to set` |
+| `m_nNumControlPoints` | int32 | `MPropertyFriendlyName # of control points to set` |
+| `m_nFirstSourcePoint` | int32 | `MPropertyFriendlyName first particle to copy` |
+| `m_bSkin` | bool | `MPropertyFriendlyName use skinning instead of hitboxes` |
+| `m_bAttachment` | bool | `MPropertyFriendlyName follow attachment` |
+
+### C_OP_SetControlPointsToParticle
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_SetControlPointsToParticle
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetControlPointsToParticle *-- ParticleOrientationSetMode_t
+    C_OP_SetControlPointsToParticle *-- ParticleParentSetMode_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nChildGroupID` | int32 | `MPropertyFriendlyName group ID to affect` |
+| `m_nFirstControlPoint` | int32 | `MPropertyFriendlyName first control point to set` |
+| `m_nNumControlPoints` | int32 | `MPropertyFriendlyName # of control points to set` |
+| `m_nFirstSourcePoint` | int32 | `MPropertyFriendlyName first particle to copy` |
+| `m_bReverse` | bool | `MPropertyFriendlyName reverse order` |
+| `m_bSetOrientation` | bool | `MPropertyFriendlyName set orientation` |
+| `m_nOrientationMode` | [ParticleOrientationSetMode_t](../schemas/!GlobalTypes.md#particleorientationsetmode_t) | `MPropertyFriendlyName orientation style` |
+| `m_nSetParent` | [ParticleParentSetMode_t](../schemas/!GlobalTypes.md#particleparentsetmode_t) | `MPropertyFriendlyName set parent` |
+
+### C_OP_SetFloat
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_SetFloat
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetFloat *-- CPerParticleFloatInput
+    C_OP_SetFloat *-- ParticleAttributeIndex_t
+    C_OP_SetFloat *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_InputValue` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName value` |
+| `m_nOutputField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_Lerp` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName interpolation` |
+
+### C_OP_SetFloatAttributeToVectorExpression
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_SetFloatAttributeToVectorExpression
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetFloatAttributeToVectorExpression *-- VectorFloatExpressionType_t
+    C_OP_SetFloatAttributeToVectorExpression *-- CPerParticleVecInput
+    C_OP_SetFloatAttributeToVectorExpression *-- CParticleRemapFloatInput
+    C_OP_SetFloatAttributeToVectorExpression *-- ParticleAttributeIndex_t
+    C_OP_SetFloatAttributeToVectorExpression *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nExpression` | [VectorFloatExpressionType_t](../schemas/!GlobalTypes.md#vectorfloatexpressiontype_t) | `MPropertyFriendlyName expression` |
+| `m_vInput1` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName input 1` |
+| `m_vInput2` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName input 2` |
+| `m_flOutputRemap` | [CParticleRemapFloatInput](../schemas/particleslib.md#cparticleremapfloatinput) | `MPropertyFriendlyName output` |
+| `m_nOutputField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+
+### C_OP_SetFloatCollection
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_SetFloatCollection
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetFloatCollection *-- CParticleCollectionFloatInput
+    C_OP_SetFloatCollection *-- ParticleAttributeIndex_t
+    C_OP_SetFloatCollection *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_InputValue` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName value` |
+| `m_nOutputField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName output field` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_Lerp` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName interpolation` |
+
+### C_OP_SetFromCPSnapshot
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_SetFromCPSnapshot
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetFromCPSnapshot *-- ParticleAttributeIndex_t
+    C_OP_SetFromCPSnapshot *-- CParticleCollectionFloatInput
+    C_OP_SetFromCPSnapshot *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName snapshot control point number` |
+| `m_strSnapshotSubset` | CUtlString | `MPropertyFriendlyName snapshot subset` `MPropertySuppressExpr` |
+| `m_nAttributeToRead` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield` `MPropertyFriendlyName field to read` |
+| `m_nAttributeToWrite` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield` `MPropertyFriendlyName field to write` |
+| `m_nLocalSpaceCP` | int32 | `MPropertyFriendlyName local space control point number` |
+| `m_bRandom` | bool | `MPropertyFriendlyName random order` |
+| `m_bReverse` | bool | `MPropertyFriendlyName reverse order` |
+| `m_nRandomSeed` | int32 | `MPropertyFriendlyName random seed` |
+| `m_nSnapShotStartPoint` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Snapshot start point` |
+| `m_nSnapShotIncrement` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Snapshot increment amount` |
+| `m_flInterpolation` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Interpolation` |
+| `m_bSubSample` | bool | `MPropertyFriendlyName Sub-Sample Between Input Points` |
+| `m_bPrev` | bool | `MPropertyFriendlyName Position also sets Previous Position` |
+
+### C_OP_SetGravityToCP
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SetGravityToCP
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetGravityToCP *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCPInput` | int32 | `MPropertyFriendlyName control point to sample gravity` |
+| `m_nCPOutput` | int32 | `MPropertyFriendlyName output control point` |
+| `m_flScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName gravity scale` |
+| `m_bSetPosition` | bool | `MPropertyFriendlyName set position to gravity vector` |
+| `m_bSetOrientation` | bool | `MPropertyFriendlyName set orientation` |
+| `m_bSetZDown` | bool | `MPropertyFriendlyName set gravity orientation to Z Down (instead of X)` `MPropertySuppressExpr` |
+
+### C_OP_SetParentControlPointsToChildCP
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SetParentControlPointsToChildCP
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nChildGroupID` | int32 | `MPropertyFriendlyName group ID to affect` |
+| `m_nChildControlPoint` | int32 | `MPropertyFriendlyName control point to set` |
+| `m_nNumControlPoints` | int32 | `MPropertyFriendlyName # of children to set` |
+| `m_nFirstSourcePoint` | int32 | `MPropertyFriendlyName first parent control point to set from` |
+| `m_bSetOrientation` | bool | `MPropertyFriendlyName set orientation` |
+
+### C_OP_SetPerChildControlPoint
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_SetPerChildControlPoint
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetPerChildControlPoint *-- CParticleCollectionFloatInput
+    C_OP_SetPerChildControlPoint *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nChildGroupID` | int32 | `MPropertyFriendlyName group ID to affect` |
+| `m_nFirstControlPoint` | int32 | `MPropertyFriendlyName control point to set` |
+| `m_nNumControlPoints` | int32 | `MPropertyFriendlyName # of children to set` |
+| `m_nParticleIncrement` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName particle increment amount` |
+| `m_nFirstSourcePoint` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName first particle to copy` |
+| `m_bSetOrientation` | bool | `MPropertyFriendlyName set orientation from velocity` |
+| `m_nOrientationField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName orientation vector` |
+| `m_bNumBasedOnParticleCount` | bool | `MPropertyFriendlyName set number of children based on particle count` |
+
+### C_OP_SetPerChildControlPointFromAttribute
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_SetPerChildControlPointFromAttribute
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetPerChildControlPointFromAttribute *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nChildGroupID` | int32 | `MPropertyFriendlyName group ID to affect` |
+| `m_nFirstControlPoint` | int32 | `MPropertyFriendlyName control point to set` |
+| `m_nNumControlPoints` | int32 | `MPropertyFriendlyName # of children to set` |
+| `m_nParticleIncrement` | int32 | `MPropertyFriendlyName particle increment amount` |
+| `m_nFirstSourcePoint` | int32 | `MPropertyFriendlyName first particle to copy` |
+| `m_bNumBasedOnParticleCount` | bool | `MPropertyFriendlyName set number of children based on particle count` |
+| `m_nAttributeToRead` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield` `MPropertyFriendlyName field to read` |
+| `m_nCPField` | int32 | `MPropertyAttributeChoiceName vector_component` `MPropertyFriendlyName control point field for scalars` |
+
+### C_OP_SetRandomControlPointPosition
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SetRandomControlPointPosition
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetRandomControlPointPosition *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bUseWorldLocation` | bool | `MPropertyFriendlyName set positions in world space` |
+| `m_bOrient` | bool | `MPropertyFriendlyName inherit CP orientation` |
+| `m_nCP1` | int32 | `MPropertyFriendlyName control point number` |
+| `m_nHeadLocation` | int32 | `MPropertyFriendlyName control point to offset positions from` |
+| `m_flReRandomRate` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName re-randomize rate (-1 for once only)` |
+| `m_vecCPMinPos` | Vector | `MPropertyFriendlyName control point min` |
+| `m_vecCPMaxPos` | Vector | `MPropertyFriendlyName control point max` |
+| `m_flInterpolation` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Interpolation` |
+
+### C_OP_SetSimulationRate
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SetSimulationRate
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetSimulationRate *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flSimulationScale` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName simulation timescale` |
+
+### C_OP_SetSingleControlPointPosition
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SetSingleControlPointPosition
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetSingleControlPointPosition *-- CParticleCollectionVecInput
+    C_OP_SetSingleControlPointPosition *-- CParticleTransformInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bSetOnce` | bool | `MPropertyFriendlyName only set position once` |
+| `m_nCP1` | int32 | `MPropertyFriendlyName control point number` |
+| `m_vecCP1Pos` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName control point location` |
+| `m_transformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MParticleInputOptional` `MPropertyFriendlyName transform to offset positions from` |
+
+### C_OP_SetToCP
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_SetToCP
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_vecOffset` | Vector | `MPropertyFriendlyName offset` |
+| `m_bOffsetLocal` | bool | `MPropertyFriendlyName offset in local space` |
+
+### C_OP_SetUserEvent
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_SetUserEvent
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetUserEvent *-- CPerParticleFloatInput
+    C_OP_SetUserEvent *-- EventTypeSelection_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flInput` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName input value` |
+| `m_flRisingEdge` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName rising edge value` |
+| `m_nRisingEventType` | [EventTypeSelection_t](../schemas/!GlobalTypes.md#eventtypeselection_t) | `MPropertyFriendlyName rising edge event type` |
+| `m_flFallingEdge` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName falling edge value` |
+| `m_nFallingEventType` | [EventTypeSelection_t](../schemas/!GlobalTypes.md#eventtypeselection_t) | `MPropertyFriendlyName falling edge event type` |
+
+### C_OP_SetVariable
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_SetVariable
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetVariable *-- CParticleVariableRef
+    C_OP_SetVariable *-- CParticleTransformInput
+    C_OP_SetVariable *-- CParticleCollectionVecInput
+    C_OP_SetVariable *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_variableReference` | [CParticleVariableRef](../schemas/particleslib.md#cparticlevariableref) | `MPropertyFriendlyName Variable` |
+| `m_transformInput` | [CParticleTransformInput](../schemas/particleslib.md#cparticletransforminput) | `MPropertyFriendlyName Value` `MPropertySuppressExpr` |
+| `m_positionOffset` | Vector | `MPropertyFriendlyName Position Offset` `MPropertySuppressExpr` |
+| `m_rotationOffset` | QAngle | `MPropertyFriendlyName Rotation Offset` `MPropertySuppressExpr` |
+| `m_vecInput` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName Value` `MPropertySuppressExpr` |
+| `m_floatInput` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName Value` `MPropertySuppressExpr` |
+
+### C_OP_SetVec
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_SetVec
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetVec *-- CPerParticleVecInput
+    C_OP_SetVec *-- ParticleAttributeIndex_t
+    C_OP_SetVec *-- ParticleSetMethod_t
+    C_OP_SetVec *-- CPerParticleFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_InputValue` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName value` |
+| `m_nOutputField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_Lerp` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName interpolation` |
+| `m_bNormalizedOutput` | bool | `MPropertyFriendlyName normalize result` |
+
+### C_OP_SetVectorAttributeToVectorExpression
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_SetVectorAttributeToVectorExpression
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_SetVectorAttributeToVectorExpression *-- VectorExpressionType_t
+    C_OP_SetVectorAttributeToVectorExpression *-- CPerParticleVecInput
+    C_OP_SetVectorAttributeToVectorExpression *-- CPerParticleFloatInput
+    C_OP_SetVectorAttributeToVectorExpression *-- ParticleAttributeIndex_t
+    C_OP_SetVectorAttributeToVectorExpression *-- ParticleSetMethod_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nExpression` | [VectorExpressionType_t](../schemas/!GlobalTypes.md#vectorexpressiontype_t) | `MPropertyFriendlyName expression` |
+| `m_vInput1` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName input 1` |
+| `m_vInput2` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName input 2` |
+| `m_flLerp` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName lerp value` `MPropertySuppressExpr` |
+| `m_nOutputField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_nSetMethod` | [ParticleSetMethod_t](../schemas/!GlobalTypes.md#particlesetmethod_t) | `MPropertyFriendlyName set value method` |
+| `m_bNormalizedOutput` | bool | `MPropertyFriendlyName normalize result` |
+
+### C_OP_ShapeMatchingConstraint
+
+**Inherits from:** [CParticleFunctionConstraint](particles.md#cparticlefunctionconstraint)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionConstraint <|-- C_OP_ShapeMatchingConstraint
+    CParticleFunction <|-- CParticleFunctionConstraint
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flShapeRestorationTime` | float32 | `MPropertyFriendlyName shape restoration time` |
+
+### C_OP_SnapshotRigidSkinToBones
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_SnapshotRigidSkinToBones
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bTransformNormals` | bool | `MPropertyFriendlyName rotate normals` |
+| `m_bTransformRadii` | bool | `MPropertyFriendlyName scale radii` |
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+
+### C_OP_SnapshotSkinToBones
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_SnapshotSkinToBones
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bTransformNormals` | bool | `MPropertyFriendlyName rotate normals` |
+| `m_bTransformRadii` | bool | `MPropertyFriendlyName scale radii` |
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point number` |
+| `m_flLifeTimeFadeStart` | float32 | `MPropertyFriendlyName lifetime fade start` |
+| `m_flLifeTimeFadeEnd` | float32 | `MPropertyFriendlyName lifetime fade end` |
+| `m_flJumpThreshold` | float32 | `MPropertyFriendlyName instant jump threshold` |
+| `m_flPrevPosScale` | float32 | `MPropertyFriendlyName previous position scale` |
+
+### C_OP_Spin
+
+**Inherits from:** [CGeneralSpin](particles.md#cgeneralspin)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CGeneralSpin <|-- C_OP_Spin
+    CParticleFunctionOperator <|-- CGeneralSpin
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+### C_OP_SpinUpdate
+
+**Inherits from:** [CSpinUpdateBase](particles.md#cspinupdatebase)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CSpinUpdateBase <|-- C_OP_SpinUpdate
+    CParticleFunctionOperator <|-- CSpinUpdateBase
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+### C_OP_SpinYaw
+
+**Inherits from:** [CGeneralSpin](particles.md#cgeneralspin)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CGeneralSpin <|-- C_OP_SpinYaw
+    CParticleFunctionOperator <|-- CGeneralSpin
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+### C_OP_SpringToVectorConstraint
+
+**Inherits from:** [CParticleFunctionConstraint](particles.md#cparticlefunctionconstraint)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionConstraint <|-- C_OP_SpringToVectorConstraint
+    CParticleFunction <|-- CParticleFunctionConstraint
+    C_OP_SpringToVectorConstraint *-- CPerParticleFloatInput
+    C_OP_SpringToVectorConstraint *-- CPerParticleVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flRestLength` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName slack` |
+| `m_flMinDistance` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName minimum segment length %` |
+| `m_flMaxDistance` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName maximum segment length %` |
+| `m_flRestingLength` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName resting spacing` |
+| `m_vecAnchorVector` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName anchor vector` |
+
+### C_OP_StopAfterCPDuration
+
+**Inherits from:** [CParticleFunctionPreEmission](particles.md#cparticlefunctionpreemission)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionPreEmission <|-- C_OP_StopAfterCPDuration
+    CParticleFunctionOperator <|-- CParticleFunctionPreEmission
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_StopAfterCPDuration *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flDuration` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName duration at which to stop` |
+| `m_bDestroyImmediately` | bool | `MPropertyFriendlyName destroy all particles immediately` |
+| `m_bPlayEndCap` | bool | `MPropertyFriendlyName play end cap effect` |
+
+### C_OP_TeleportBeam
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_TeleportBeam
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCPPosition` | int32 | `MPropertyFriendlyName Position Control Point` |
+| `m_nCPVelocity` | int32 | `MPropertyFriendlyName Velocity Control Point` |
+| `m_nCPMisc` | int32 | `MPropertyFriendlyName Misc Control Point` |
+| `m_nCPColor` | int32 | `MPropertyFriendlyName Color Control Point` |
+| `m_nCPInvalidColor` | int32 | `MPropertyFriendlyName Invalid Color Control Point` |
+| `m_nCPExtraArcData` | int32 | `MPropertyFriendlyName Extra Arc Data Point` |
+| `m_vGravity` | Vector | `MPropertyFriendlyName Gravity` |
+| `m_flArcMaxDuration` | float32 | `MPropertyFriendlyName Arc Duration Maximum` |
+| `m_flSegmentBreak` | float32 | `MPropertyFriendlyName Segment Break` |
+| `m_flArcSpeed` | float32 | `MPropertyFriendlyName Arc Speed` |
+| `m_flAlpha` | float32 | `MPropertyFriendlyName Alpha` |
+
+### C_OP_TimeVaryingForce
+
+**Inherits from:** [CParticleFunctionForce](particles.md#cparticlefunctionforce)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionForce <|-- C_OP_TimeVaryingForce
+    CParticleFunction <|-- CParticleFunctionForce
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flStartLerpTime` | float32 | `MPropertyFriendlyName time to start transition` |
+| `m_StartingForce` | Vector | `MPropertyFriendlyName starting force` `MVectorIsCoordinate` |
+| `m_flEndLerpTime` | float32 | `MPropertyFriendlyName time to end transition` |
+| `m_EndingForce` | Vector | `MPropertyFriendlyName ending force` `MVectorIsCoordinate` |
+
+### C_OP_TurbulenceForce
+
+**Inherits from:** [CParticleFunctionForce](particles.md#cparticlefunctionforce)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionForce <|-- C_OP_TurbulenceForce
+    CParticleFunction <|-- CParticleFunctionForce
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flNoiseCoordScale0` | float32 | `MPropertyFriendlyName noise scale 0` |
+| `m_flNoiseCoordScale1` | float32 | `MPropertyFriendlyName noise scale 1` |
+| `m_flNoiseCoordScale2` | float32 | `MPropertyFriendlyName noise scale 2` |
+| `m_flNoiseCoordScale3` | float32 | `MPropertyFriendlyName noise scale 3` |
+| `m_vecNoiseAmount0` | Vector | `MPropertyFriendlyName noise amount 0` `MVectorIsCoordinate` |
+| `m_vecNoiseAmount1` | Vector | `MPropertyFriendlyName noise amount 1` `MVectorIsCoordinate` |
+| `m_vecNoiseAmount2` | Vector | `MPropertyFriendlyName noise amount 2` `MVectorIsCoordinate` |
+| `m_vecNoiseAmount3` | Vector | `MPropertyFriendlyName noise amount 3` `MVectorIsCoordinate` |
+
+### C_OP_TwistAroundAxis
+
+**Inherits from:** [CParticleFunctionForce](particles.md#cparticlefunctionforce)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionForce <|-- C_OP_TwistAroundAxis
+    CParticleFunction <|-- CParticleFunctionForce
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_fForceAmount` | float32 | `MPropertyFriendlyName amount of force` |
+| `m_TwistAxis` | Vector | `MPropertyFriendlyName twist axis` `MVectorIsCoordinate` |
+| `m_bLocalSpace` | bool | `MPropertyFriendlyName object local space axis 0/1` |
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName control point` |
+
+### C_OP_UpdateLightSource
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_UpdateLightSource
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vColorTint` | Color | `MPropertyFriendlyName color tint` |
+| `m_flBrightnessScale` | float32 | `MPropertyFriendlyName amount to multiply light brightness by` |
+| `m_flRadiusScale` | float32 | `MPropertyFriendlyName amount to multiply particle system radius by to get light radius` |
+| `m_flMinimumLightingRadius` | float32 | `MPropertyFriendlyName minimum radius for created lights` |
+| `m_flMaximumLightingRadius` | float32 | `MPropertyFriendlyName maximum radius for created lights` |
+| `m_flPositionDampingConstant` | float32 | `MPropertyFriendlyName amount of damping of changes` |
+
+### C_OP_VectorFieldSnapshot
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_VectorFieldSnapshot
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_VectorFieldSnapshot *-- ParticleAttributeIndex_t
+    C_OP_VectorFieldSnapshot *-- CPerParticleFloatInput
+    C_OP_VectorFieldSnapshot *-- CPerParticleVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPointNumber` | int32 | `MPropertyFriendlyName snapshot control point number` |
+| `m_nAttributeToWrite` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield` `MPropertyFriendlyName extra velocity field to write` |
+| `m_nLocalSpaceCP` | int32 | `MPropertyFriendlyName local space control point number` |
+| `m_flInterpolation` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Interpolation` |
+| `m_vecScale` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName Component Scale` |
+| `m_flBoundaryDampening` | float32 | `MPropertyFriendlyName Boundary Dampening` |
+| `m_bSetVelocity` | bool | `MPropertyFriendlyName Set Velocity` |
+| `m_bLockToSurface` | bool | `MPropertyFriendlyName Lock to Surface` |
+| `m_flGridSpacing` | float32 | `MPropertyFriendlyName Vector Field Grid Spacing Override` |
+
+### C_OP_VectorNoise
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_VectorNoise
+    CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_VectorNoise *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFieldOutput` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName output field` |
+| `m_vecOutputMin` | Vector | `MPropertyFriendlyName output minimum` `MVectorIsSometimesCoordinate` |
+| `m_vecOutputMax` | Vector | `MPropertyFriendlyName output maximum` `MVectorIsSometimesCoordinate` |
+| `m_fl4NoiseScale` | float32 | `MPropertyFriendlyName noise coordinate scale` |
+| `m_bAdditive` | bool | `MPropertyFriendlyName additive` |
+| `m_bOffset` | bool | `MPropertyFriendlyName offset instead of accelerate position` |
+| `m_flNoiseAnimationTimeScale` | float32 | `MPropertyFriendlyName Noise animation time scale` |
+
+### C_OP_VelocityDecay
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_VelocityDecay
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flMinVelocity` | float32 | `MPropertyFriendlyName minimum velocity` |
+
+### C_OP_VelocityMatchingForce
+
+**Inherits from:** [CParticleFunctionOperator](particles.md#cparticlefunctionoperator)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionOperator <|-- C_OP_VelocityMatchingForce
+    CParticleFunction <|-- CParticleFunctionOperator
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flDirScale` | float32 | `MPropertyFriendlyName direction matching strength` |
+| `m_flSpdScale` | float32 | `MPropertyFriendlyName speed matching strength` |
+| `m_flNeighborDistance` | float32 | `MPropertyFriendlyName neighbor distance` |
+| `m_flFacingStrength` | float32 | `MPropertyFriendlyName facing strength falloff` |
+| `m_bUseAABB` | bool | `MPropertyFriendlyName use AABB` `MPropertySuppressExpr` |
+| `m_nCPBroadcast` | int32 | `MPropertyFriendlyName control point to broadcast speed and direction to` |
+
+### C_OP_WaterImpulseRenderer
+
+**Inherits from:** [CParticleFunctionRenderer](particles.md#cparticlefunctionrenderer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionRenderer <|-- C_OP_WaterImpulseRenderer
+    CParticleFunction <|-- CParticleFunctionRenderer
+    C_OP_WaterImpulseRenderer *-- CPerParticleVecInput
+    C_OP_WaterImpulseRenderer *-- CPerParticleFloatInput
+    C_OP_WaterImpulseRenderer *-- EventTypeSelection_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecPos` | [CPerParticleVecInput](../schemas/particleslib.md#cperparticlevecinput) | `MPropertyFriendlyName impulse position` |
+| `m_flRadius` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName impulse radius` |
+| `m_flMagnitude` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName impulse magnitude` |
+| `m_flShape` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName impulse wave roundness` |
+| `m_flWindSpeed` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName impulse wind speed (when wind is true)` |
+| `m_flWobble` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName impulse wobble radius` |
+| `m_bIsRadialWind` | bool | `MPropertyFriendlyName impulse is wind` |
+| `m_nEventType` | [EventTypeSelection_t](../schemas/!GlobalTypes.md#eventtypeselection_t) | `MPropertyFriendlyName event type` |
+
+### C_OP_WindForce
+
+**Inherits from:** [CParticleFunctionForce](particles.md#cparticlefunctionforce)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionForce <|-- C_OP_WindForce
+    CParticleFunction <|-- CParticleFunctionForce
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vForce` | Vector | `MPropertyFriendlyName force to apply` `MVectorIsCoordinate` |
+
+### C_OP_WorldCollideConstraint
+
+**Inherits from:** [CParticleFunctionConstraint](particles.md#cparticlefunctionconstraint)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionConstraint <|-- C_OP_WorldCollideConstraint
+    CParticleFunction <|-- CParticleFunctionConstraint
+```
+
+### C_OP_WorldTraceConstraint
+
+**Inherits from:** [CParticleFunctionConstraint](particles.md#cparticlefunctionconstraint)
+
+**Metadata:** `MGPUParticleFunction`, `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CParticleFunctionConstraint <|-- C_OP_WorldTraceConstraint
+    CParticleFunction <|-- CParticleFunctionConstraint
+    C_OP_WorldTraceConstraint *-- ParticleCollisionMode_t
+    C_OP_WorldTraceConstraint *-- ParticleTraceSet_t
+    C_OP_WorldTraceConstraint *-- CPerParticleFloatInput
+    C_OP_WorldTraceConstraint *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCP` | int32 | `MPropertyFriendlyName control point for fast collision tests` |
+| `m_vecCpOffset` | Vector | `MPropertyFriendlyName control point offset for fast collisions` `MVectorIsCoordinate` |
+| `m_nCollisionMode` | [ParticleCollisionMode_t](../schemas/!GlobalTypes.md#particlecollisionmode_t) | `MPropertyFriendlyName collision mode` |
+| `m_nCollisionModeMin` | [ParticleCollisionMode_t](../schemas/!GlobalTypes.md#particlecollisionmode_t) | `MPropertyFriendlyName minimum detail collision mode` |
+| `m_nTraceSet` | [ParticleTraceSet_t](../schemas/!GlobalTypes.md#particletraceset_t) | `MPropertyFriendlyName Trace Set` `MPropertyStartGroup Collision Options` |
+| `m_CollisionGroupName` | char[128] | `MPropertyFriendlyName collision group` |
+| `m_bWorldOnly` | bool | `MPropertyFriendlyName World Only` |
+| `m_bBrushOnly` | bool | `MPropertyFriendlyName brush only` |
+| `m_bIncludeWater` | bool | `MPropertyFriendlyName include water` `MPropertySuppressExpr` |
+| `m_nIgnoreCP` | int32 | `MPropertyFriendlyName CP Entity to Ignore for Collisions` `MPropertySuppressExpr` |
+| `m_flCpMovementTolerance` | float32 | `MPropertyFriendlyName control point movement distance tolerance` `MPropertySuppressExpr` |
+| `m_flRetestRate` | float32 | `MPropertyFriendlyName plane cache retest rate` `MPropertySuppressExpr` |
+| `m_flTraceTolerance` | float32 | `MPropertyFriendlyName trace accuracy tolerance` `MPropertySuppressExpr` |
+| `m_flCollisionConfirmationSpeed` | float32 | `MPropertyFriendlyName Confirm Collision Speed Threshold` `MPropertySuppressExpr` |
+| `m_nMaxTracesPerFrame` | float32 | `MPropertyFriendlyName Max Confirmation Traces Per Fame` `MPropertySuppressExpr` |
+| `m_flRadiusScale` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName radius scale` `MPropertyStartGroup Impact Options` |
+| `m_flBounceAmount` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName amount of bounce` |
+| `m_flSlideAmount` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName amount of slide` |
+| `m_flRandomDirScale` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Random Direction scale` |
+| `m_bDecayBounce` | bool | `MPropertyFriendlyName Add Decay to Bounce` |
+| `m_bKillonContact` | bool | `MPropertyFriendlyName kill particle on collision` |
+| `m_flMinSpeed` | float32 | `MPropertyFriendlyName minimum speed to kill on collision` |
+| `m_bSetNormal` | bool | `MPropertyFriendlyName Set Normal` |
+| `m_nStickOnCollisionField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Stick On Collision Cache Field` |
+| `m_flStopSpeed` | [CPerParticleFloatInput](../schemas/particleslib.md#cperparticlefloatinput) | `MPropertyFriendlyName Speed to stop when sticking` |
+| `m_nEntityStickDataField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Entity Hitbox Cache Field (Requires Stick on Collision)` |
+| `m_nEntityStickNormalField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Entity Normal Cache Field (Requires Stick on Collision)` |
+
+### CollisionGroupContext_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCollisionGroupNumber` | int32 |  |
+
+### ControlPointReference_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_controlPointNameString` | int32 | `MPropertyFriendlyName Control point` |
+| `m_vOffsetFromControlPoint` | Vector | `MPropertyFriendlyName Offset from control point` |
+| `m_bOffsetInLocalSpace` | bool | `MPropertyFriendlyName Use local space offset` |
+
+### FloatInputMaterialVariable_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    FloatInputMaterialVariable_t *-- CParticleCollectionFloatInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_strVariable` | CUtlString | `MPropertyFriendlyName material variable` |
+| `m_flInput` | [CParticleCollectionFloatInput](../schemas/particleslib.md#cparticlecollectionfloatinput) | `MPropertyFriendlyName input` |
+
+### IParticleCollection
+
+### IParticleSystemDefinition
+
+**Derived by:** [CParticleSystemDefinition](particles.md#cparticlesystemdefinition)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    IParticleSystemDefinition <|-- CParticleSystemDefinition
+```
+
+### MaterialVariable_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    MaterialVariable_t *-- ParticleAttributeIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_strVariable` | CUtlString | `MPropertyFriendlyName material variable` |
+| `m_nVariableField` | [ParticleAttributeIndex_t](../schemas/particles.md#particleattributeindex_t) | `MPropertyAttributeChoiceName particlefield` `MPropertyFriendlyName particle field` |
+| `m_flScale` | float32 | `MPropertyFriendlyName scale` |
+
+### ModelReference_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    ModelReference_t *-- InfoForResourceTypeCModel
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_model` | CStrongHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > | `MPropertyFriendlyName model` |
+| `m_flRelativeProbabilityOfSpawn` | float32 | `MPropertyFriendlyName Relative probability` |
+
+### ParticleAttributeIndex_t
+
+**Metadata:** `MIsBoxedIntegerType`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Value` | int32 |  |
+
+### ParticleChildrenInfo_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    ParticleChildrenInfo_t *-- InfoForResourceTypeIParticleSystemDefinition
+    ParticleChildrenInfo_t *-- ParticleDetailLevel_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_ChildRef` | CStrongHandle< [InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition) > | `MPropertySuppressField` |
+| `m_flDelay` | float32 | `MPropertyFriendlyName delay` |
+| `m_bEndCap` | bool | `MPropertyFriendlyName end cap effect` |
+| `m_bDisableChild` | bool | `MPropertySuppressField` |
+| `m_nDetailLevel` | [ParticleDetailLevel_t](../schemas/!GlobalTypes.md#particledetaillevel_t) | `MPropertyFriendlyName disable at detail levels below` |
+
+### ParticleControlPointConfiguration_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    ParticleControlPointConfiguration_t *-- ParticleControlPointDriver_t
+    ParticleControlPointConfiguration_t *-- ParticlePreviewState_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_name` | CUtlString |  |
+| `m_drivers` | CUtlVector< [ParticleControlPointDriver_t](../schemas/particles.md#particlecontrolpointdriver_t) > |  |
+| `m_previewState` | [ParticlePreviewState_t](../schemas/particles.md#particlepreviewstate_t) |  |
+
+### ParticleControlPointDriver_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    ParticleControlPointDriver_t *-- ParticleAttachment_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_iControlPoint` | ParticleParamID_t |  |
+| `m_iAttachType` | [ParticleAttachment_t](../schemas/!GlobalTypes.md#particleattachment_t) |  |
+| `m_attachmentName` | CUtlString |  |
+| `m_vecOffset` | Vector |  |
+| `m_angOffset` | QAngle |  |
+| `m_entityName` | CUtlString |  |
+
+### ParticlePreviewBodyGroup_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bodyGroupName` | CUtlString |  |
+| `m_nValue` | int32 |  |
+
+### ParticlePreviewState_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    ParticlePreviewState_t *-- PetGroundType_t
+    ParticlePreviewState_t *-- ParticlePreviewBodyGroup_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_previewModel` | CUtlString |  |
+| `m_nModSpecificData` | uint32 |  |
+| `m_groundType` | [PetGroundType_t](../schemas/!GlobalTypes.md#petgroundtype_t) |  |
+| `m_sequenceName` | CUtlString |  |
+| `m_nFireParticleOnSequenceFrame` | int32 |  |
+| `m_hitboxSetName` | CUtlString |  |
+| `m_materialGroupName` | CUtlString |  |
+| `m_vecBodyGroups` | CUtlVector< [ParticlePreviewBodyGroup_t](../schemas/particles.md#particlepreviewbodygroup_t) > |  |
+| `m_flPlaybackSpeed` | float32 |  |
+| `m_flParticleSimulationRate` | float32 |  |
+| `m_bShouldDrawHitboxes` | bool |  |
+| `m_bShouldDrawAttachments` | bool |  |
+| `m_bShouldDrawAttachmentNames` | bool |  |
+| `m_bShouldDrawControlPointAxes` | bool |  |
+| `m_bAnimationNonLooping` | bool |  |
+| `m_bSequenceNameIsAnimClipPath` | bool |  |
+| `m_vecPreviewGravity` | Vector |  |
+| `m_vecPreviewWind` | Vector |  |
+
+### PointDefinitionWithTimeValues_t
+
+**Inherits from:** [PointDefinition_t](particles.md#pointdefinition_t)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    PointDefinition_t <|-- PointDefinitionWithTimeValues_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flTimeDuration` | float32 | `MPropertyFriendlyName Duration value for path point` |
+
+### PointDefinition_t
+
+**Derived by:** [PointDefinitionWithTimeValues_t](particles.md#pointdefinitionwithtimevalues_t)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    PointDefinition_t <|-- PointDefinitionWithTimeValues_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nControlPoint` | int32 | `MPropertyFriendlyName Control point` |
+| `m_bLocalCoords` | bool | `MPropertyFriendlyName Use local coordinates for offset` |
+| `m_vOffset` | Vector | `MPropertyFriendlyName Offset from control point` |
+
+### RenderProjectedMaterial_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    RenderProjectedMaterial_t *-- InfoForResourceTypeIMaterial2
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_hMaterial` | CStrongHandle< [InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2) > | `MPropertyFriendlyName Material` |
+
+### SequenceWeightedList_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nSequence` | int32 | `MPropertyAttributeEditor SequencePicker( 1 )` `MPropertyFriendlyName sequence` |
+| `m_flRelativeWeight` | float32 | `MPropertyFriendlyName weight` |
+
+### TextureControls_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    TextureControls_t *-- CParticleCollectionRendererFloatInput
+    TextureControls_t *-- SpriteCardPerParticleScale_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flFinalTextureScaleU` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName horizontal texture scale` |
+| `m_flFinalTextureScaleV` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName vertical texture scale` |
+| `m_flFinalTextureOffsetU` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName horizontal texture offset` |
+| `m_flFinalTextureOffsetV` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName vertical texture offset` |
+| `m_flFinalTextureUVRotation` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName texture rotation / animation rate scale` |
+| `m_flZoomScale` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName Infinite Zoom Scale` |
+| `m_flDistortion` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName Distortion Amount` |
+| `m_bRandomizeOffsets` | bool | `MPropertyFriendlyName Randomize Initial Offset` |
+| `m_bClampUVs` | bool | `MPropertyFriendlyName Clamp UVs` |
+| `m_nPerParticleBlend` | [SpriteCardPerParticleScale_t](../schemas/!GlobalTypes.md#spritecardperparticlescale_t) | `MPropertyFriendlyName per-particle scalar for blend` |
+| `m_nPerParticleScale` | [SpriteCardPerParticleScale_t](../schemas/!GlobalTypes.md#spritecardperparticlescale_t) | `MPropertyFriendlyName per-particle scalar for scale` |
+| `m_nPerParticleOffsetU` | [SpriteCardPerParticleScale_t](../schemas/!GlobalTypes.md#spritecardperparticlescale_t) | `MPropertyFriendlyName per-particle scalar for horizontal offset` |
+| `m_nPerParticleOffsetV` | [SpriteCardPerParticleScale_t](../schemas/!GlobalTypes.md#spritecardperparticlescale_t) | `MPropertyFriendlyName per-particle scalar for vertical offset` |
+| `m_nPerParticleRotation` | [SpriteCardPerParticleScale_t](../schemas/!GlobalTypes.md#spritecardperparticlescale_t) | `MPropertyFriendlyName per-particle scalar for rotation` |
+| `m_nPerParticleZoom` | [SpriteCardPerParticleScale_t](../schemas/!GlobalTypes.md#spritecardperparticlescale_t) | `MPropertyFriendlyName per-particle scalar for zoom` |
+| `m_nPerParticleDistortion` | [SpriteCardPerParticleScale_t](../schemas/!GlobalTypes.md#spritecardperparticlescale_t) | `MPropertyFriendlyName per-particle scalar for distortion` |
+
+### TextureGroup_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    TextureGroup_t *-- InfoForResourceTypeCTextureBase
+    TextureGroup_t *-- SpriteCardTextureType_t
+    TextureGroup_t *-- SpriteCardTextureChannel_t
+    TextureGroup_t *-- ParticleTextureLayerBlendType_t
+    TextureGroup_t *-- CParticleCollectionRendererFloatInput
+    TextureGroup_t *-- TextureControls_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bEnabled` | bool | `MPropertyFriendlyName Enabled` |
+| `m_bReplaceTextureWithGradient` | bool | `MPropertyFriendlyName Author Texture As Gradient` `MPropertySuppressExpr` |
+| `m_hTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > | `MPropertyAttributeEditor AssetBrowse( vtex, *showassetpreview )` `MPropertyFriendlyName Texture` `MPropertySuppressExpr` |
+| `m_Gradient` | CColorGradient | `MPropertyFriendlyName Gradient` `MPropertySuppressExpr` |
+| `m_nTextureType` | [SpriteCardTextureType_t](../schemas/!GlobalTypes.md#spritecardtexturetype_t) | `MPropertyFriendlyName Texture Type` |
+| `m_nTextureChannels` | [SpriteCardTextureChannel_t](../schemas/!GlobalTypes.md#spritecardtexturechannel_t) | `MPropertyFriendlyName Channel Mix` `MPropertySuppressExpr` |
+| `m_nTextureBlendMode` | [ParticleTextureLayerBlendType_t](../schemas/!GlobalTypes.md#particletexturelayerblendtype_t) | `MPropertyFriendlyName Mix Blend Mode` `MPropertySuppressExpr` |
+| `m_flTextureBlend` | [CParticleCollectionRendererFloatInput](../schemas/particleslib.md#cparticlecollectionrendererfloatinput) | `MPropertyFriendlyName Blend Amount` `MPropertySuppressExpr` |
+| `m_TextureControls` | [TextureControls_t](../schemas/particles.md#texturecontrols_t) | `MPropertyFriendlyName Texture Controls` `MPropertySuppressExpr` |
+
+### VecInputMaterialVariable_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    VecInputMaterialVariable_t *-- CParticleCollectionVecInput
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_strVariable` | CUtlString | `MPropertyFriendlyName material variable` |
+| `m_vecInput` | [CParticleCollectionVecInput](../schemas/particleslib.md#cparticlecollectionvecinput) | `MPropertyFriendlyName input` |

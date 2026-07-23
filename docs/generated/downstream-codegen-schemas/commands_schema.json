@@ -1,9 +1,18 @@
 {
   "schema_format_version": "2.0",
   "revision": "hl2sdk-cs2/5f891c9026230cce0fc0a3fc4b5fef1c467a1385/v1/3d1200e346019c59",
-  "version_date": "2026-07-09",
-  "version_time": "2026-07-09T20:41:37Z",
+  "version_date": "2026-07-20",
+  "version_time": "2026-07-20T22:46:14Z",
   "commands": [
+    {
+      "name": "+bugvoice",
+      "flags": [
+        "developmentonly",
+        "dontrecord",
+        "defensive"
+      ],
+      "description": "Start recording bug voice attachment."
+    },
     {
       "name": "+camdistance",
       "flags": [
@@ -102,6 +111,15 @@
         "release"
       ],
       "description": ""
+    },
+    {
+      "name": "-bugvoice",
+      "flags": [
+        "developmentonly",
+        "dontrecord",
+        "defensive"
+      ],
+      "description": "Finish recording bug voice attachment."
     },
     {
       "name": "-camdistance",
@@ -211,6 +229,13 @@
       "description": "Prints out the game stats session ID's (developer convar must be set to non-zero)."
     },
     {
+      "name": "StackStats_Dump",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Dump a named stackstats structure to disk. Usage: stackstats_dump \"structname\" [\"filename\"]"
+    },
+    {
       "name": "Test_Checkpoint",
       "flags": [
         "developmentonly",
@@ -298,6 +323,15 @@
       "description": "Start a test script running.."
     },
     {
+      "name": "_record",
+      "flags": [
+        "cheat",
+        "dontrecord",
+        "release"
+      ],
+      "description": "Record a demo incrementally."
+    },
+    {
       "name": "_resetgamestats",
       "flags": [
         "developmentonly",
@@ -305,6 +339,22 @@
         "defensive"
       ],
       "description": "Erases current game stats and writes out a blank stats file"
+    },
+    {
+      "name": "addip",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Add an IP address to the ban list."
+    },
+    {
+      "name": "addons",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "list current addon info."
     },
     {
       "name": "adjacent_levels",
@@ -321,6 +371,13 @@
         "gamedll"
       ],
       "description": "Preload adjacennt level data - will override regular changelevel code -- PROTOTYPE/WIP"
+    },
+    {
+      "name": "alias",
+      "flags": [
+        "release"
+      ],
+      "description": "Alias a command."
     },
     {
       "name": "anim_eval_stats",
@@ -420,6 +477,15 @@
       "description": "Apply a crosshair code to the current crosshair settings."
     },
     {
+      "name": "auto_bug",
+      "flags": [
+        "developmentonly",
+        "dontrecord",
+        "defensive"
+      ],
+      "description": "auto_bug : create non-interactive bug report."
+    },
+    {
       "name": "autobuy",
       "flags": [
         "clientdll",
@@ -469,6 +535,67 @@
         "cheat"
       ],
       "description": ""
+    },
+    {
+      "name": "banid",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Add a user ID to the ban list."
+    },
+    {
+      "name": "banip",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Add an IP address to the ban list."
+    },
+    {
+      "name": "benchframe",
+      "flags": [
+        "release"
+      ],
+      "description": "Takes a snapshot of a particular frame in a time demo."
+    },
+    {
+      "name": "bind",
+      "flags": [
+        "release"
+      ],
+      "description": "Bind a key."
+    },
+    {
+      "name": "binddefaults",
+      "flags": [
+        "release"
+      ],
+      "description": "Bind all keys to their default values."
+    },
+    {
+      "name": "bindss",
+      "flags": [
+        "release"
+      ],
+      "description": "Bind a key for a particular splitscreen player."
+    },
+    {
+      "name": "bindtoggle",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Performs a bind <key> \"increment var <cvar> 0 1 1\"."
+    },
+    {
+      "name": "blink",
+      "flags": [
+        "developmentonly",
+        "dontrecord",
+        "defensive"
+      ],
+      "description": "Blink specified convar value between two values at the specified duration."
     },
     {
       "name": "bot_add",
@@ -600,12 +727,39 @@
       "description": "Force a breakable to break"
     },
     {
+      "name": "bug",
+      "flags": [
+        "developmentonly",
+        "dontrecord",
+        "defensive"
+      ],
+      "description": "bug [auto_fill_tokens] [-title <text>] [-noscreenshot] : Activate the bug reporter."
+    },
+    {
       "name": "bugbug",
       "flags": [
         "clientdll",
         "release"
       ],
       "description": "bugbug"
+    },
+    {
+      "name": "bugvoice_clear",
+      "flags": [
+        "developmentonly",
+        "dontrecord",
+        "defensive"
+      ],
+      "description": "Clear voice attachment data."
+    },
+    {
+      "name": "bugvoice_save",
+      "flags": [
+        "developmentonly",
+        "dontrecord",
+        "defensive"
+      ],
+      "description": "Write buffered voice attachment data to file."
     },
     {
       "name": "buildcubemaps",
@@ -624,6 +778,13 @@
         "hidden"
       ],
       "description": "Build Sparse Shadow Tree"
+    },
+    {
+      "name": "button_info",
+      "flags": [
+        "release"
+      ],
+      "description": "Display information about the specified key or button."
     },
     {
       "name": "buymenu",
@@ -848,6 +1009,13 @@
       "description": "Emits a closed caption"
     },
     {
+      "name": "changelevel",
+      "flags": [
+        "release"
+      ],
+      "description": "changelevel <mapname> :Multiplayer change level."
+    },
+    {
       "name": "check_nofilefd",
       "flags": [
         "developmentonly",
@@ -904,6 +1072,20 @@
         "cheat"
       ],
       "description": "Draw a bbox\n\tArguments:  minx miny miny maxx maxy maxz <lifetime = 10.0> <r g b a>\n"
+    },
+    {
+      "name": "cl_break_on_missing_resource",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Break in debugger when missing resource match is found.\nFormat: cl_break_on_missing_resource <substring> /(empty to break on all) / 0 to turn off.\n"
+    },
+    {
+      "name": "cl_checkdeclareclasses",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Check game code serializers"
     },
     {
       "name": "cl_cs_dump_econ_item_stringtable",
@@ -1389,6 +1571,13 @@
       "description": "List client entities, sorted by spawn group"
     },
     {
+      "name": "cl_fullupdate",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Force uncompressed update"
+    },
+    {
       "name": "cl_game_mode_convars",
       "flags": [
         "developmentonly",
@@ -1464,6 +1653,14 @@
         "defensive"
       ],
       "description": "cl_matchstats_print_own_data RANGENAME"
+    },
+    {
+      "name": "cl_net_printsummary",
+      "flags": [
+        "dontrecord",
+        "release"
+      ],
+      "description": "Print a summary report of Source2 engine networking statistics.  (Ticks, netchan messages, etc.)"
     },
     {
       "name": "cl_particles_dump_effects",
@@ -1581,6 +1778,14 @@
         "clientdll"
       ],
       "description": "Lists all active physics objects\n  -more : extra info\n"
+    },
+    {
+      "name": "cl_precacheinfo",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Show precache info (client)."
     },
     {
       "name": "cl_pred_track",
@@ -1948,6 +2153,20 @@
       "description": "print soundscapes"
     },
     {
+      "name": "cl_spewserializers",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Spew serializers"
+    },
+    {
+      "name": "cl_spewworldgroups",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Spew world groups (client)"
+    },
+    {
       "name": "cl_ss_origin",
       "flags": [
         "developmentonly",
@@ -1965,6 +2184,14 @@
       "description": "test-list entities"
     },
     {
+      "name": "cl_ticktiming",
+      "flags": [
+        "dontrecord",
+        "release"
+      ],
+      "description": "{print|<interval>} [summary|detail]  Print timing stats now, or set report interval"
+    },
+    {
       "name": "cl_updatevisibility",
       "flags": [
         "developmentonly",
@@ -1974,12 +2201,28 @@
       "description": "Updates visibility bits."
     },
     {
+      "name": "clear",
+      "flags": [
+        "dontrecord",
+        "release"
+      ],
+      "description": "Clear console output."
+    },
+    {
       "name": "clear_bombs",
       "flags": [
         "gamedll",
         "cheat"
       ],
       "description": ""
+    },
+    {
+      "name": "clearall",
+      "flags": [
+        "dontrecord",
+        "release"
+      ],
+      "description": "Clear console output from all views."
     },
     {
       "name": "cli_ent_attachments",
@@ -2030,6 +2273,14 @@
       "description": "Toggle clutch mode convar"
     },
     {
+      "name": "cmd",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Forward command to server."
+    },
+    {
       "name": "collect_entity_model_name",
       "flags": [
         "gamedll",
@@ -2053,6 +2304,13 @@
         "client_can_execute"
       ],
       "description": ""
+    },
+    {
+      "name": "condump",
+      "flags": [
+        "release"
+      ],
+      "description": "dump the text currently in the console to condumpXX.log"
     },
     {
       "name": "confirm_abandon_match",
@@ -2109,6 +2367,35 @@
       "description": "Confirm that we wish to watch a friend session, destroying a previous session"
     },
     {
+      "name": "connect",
+      "flags": [
+        "release"
+      ],
+      "description": "Connect to a remote server."
+    },
+    {
+      "name": "connect_hltv",
+      "flags": [
+        "release"
+      ],
+      "description": "Connect to a remote HLTV server."
+    },
+    {
+      "name": "console_test",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Output text to test console"
+    },
+    {
+      "name": "consoletool",
+      "flags": [
+        "dontrecord",
+        "release"
+      ],
+      "description": "Open a VConsole subtool."
+    },
+    {
       "name": "convert_steamid",
       "flags": [
         "developmentonly",
@@ -2116,6 +2403,56 @@
         "defensive"
       ],
       "description": "Convert SteamID into multiple formats"
+    },
+    {
+      "name": "cpuinfo",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Print CPU configuration information"
+    },
+    {
+      "name": "crash",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Crash the client. Optional parameter -- type of crash:\n 0: read from NULL\n 1: write to NULL\n 2: force an Assert\n 3: infinite loop\n 4: stack buffer overrun\n 5: multiple asserts across multiple threads. Optional number of threads (default 5)\n 6: looping memory leak until we're out of memory. Optional allocation size in bytes (default 1048576/1MB)"
+    },
+    {
+      "name": "crash_error",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Cause the engine to crash by Plat_FatalError on main thread (Debug!!)"
+    },
+    {
+      "name": "crash_error_job",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Cause the engine to crash by Plat_FatalError on job thread (Debug!!)"
+    },
+    {
+      "name": "crash_error_thread",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Cause the engine to crash by Plat_FatalError on non-main thread (Debug!!)"
+    },
+    {
+      "name": "crash_job",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Cause the engine to crash in a job thread (Debug!!)"
+    },
+    {
+      "name": "crash_thread",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Cause the engine to crash in a brand new non-main thread (Debug!!)"
     },
     {
       "name": "create_radius_damage",
@@ -2176,6 +2513,14 @@
         "release"
       ],
       "description": "Show the list of convars/concommands."
+    },
+    {
+      "name": "cyclevar",
+      "flags": [
+        "dontrecord",
+        "release"
+      ],
+      "description": "Cycle through specified convar values."
     },
     {
       "name": "dbghist_addline",
@@ -2245,6 +2590,99 @@
       "description": "Toggles visibility of the debug overlay system."
     },
     {
+      "name": "demo_goto",
+      "flags": [
+        "release"
+      ],
+      "description": "Skips to location in demo."
+    },
+    {
+      "name": "demo_gotomark",
+      "flags": [
+        "release"
+      ],
+      "description": "Skips the current demo playback to the marked tick"
+    },
+    {
+      "name": "demo_gototick",
+      "flags": [
+        "release"
+      ],
+      "description": "Skips to a tick in demo."
+    },
+    {
+      "name": "demo_info",
+      "flags": [
+        "release"
+      ],
+      "description": "Print information about currently playing demo."
+    },
+    {
+      "name": "demo_marktick",
+      "flags": [
+        "release"
+      ],
+      "description": "Marks the current demo playback tick for later use"
+    },
+    {
+      "name": "demo_pause",
+      "flags": [
+        "release"
+      ],
+      "description": "Pauses demo playback."
+    },
+    {
+      "name": "demo_pauseatservertick",
+      "flags": [
+        "release"
+      ],
+      "description": "Pauses when the 'render time' reaches the specified tick."
+    },
+    {
+      "name": "demo_resume",
+      "flags": [
+        "release"
+      ],
+      "description": "Resumes demo playback."
+    },
+    {
+      "name": "demo_step_tick",
+      "flags": [
+        "release"
+      ],
+      "description": "Play for N ticks (default=1) and then pause."
+    },
+    {
+      "name": "demo_timescale",
+      "flags": [
+        "release"
+      ],
+      "description": "Sets demo replay speed."
+    },
+    {
+      "name": "demo_togglepause",
+      "flags": [
+        "release"
+      ],
+      "description": "Toggles demo playback."
+    },
+    {
+      "name": "demo_writemetafile",
+      "flags": [
+        "developmentonly",
+        "dontrecord",
+        "defensive"
+      ],
+      "description": "save current meta file demo_<version>.meta file for use in demo upconversion."
+    },
+    {
+      "name": "demolist",
+      "flags": [
+        "release"
+      ],
+      "description": "Print demo sequence list."
+    },
+    {
       "name": "demoui",
       "flags": [
         "clientdll",
@@ -2285,6 +2723,21 @@
         "release"
       ],
       "description": "Show all convars which are not at their default values (optional restricted to specific flags)."
+    },
+    {
+      "name": "disable_priority_boost",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Disable focus based priority boost"
+    },
+    {
+      "name": "disconnect",
+      "flags": [
+        "release"
+      ],
+      "description": "Disconnect from server"
     },
     {
       "name": "dlight_debug",
@@ -2389,6 +2842,28 @@
       "description": "Dump all global entities/states"
     },
     {
+      "name": "dump_panorama_css_properties",
+      "flags": [
+        "release"
+      ],
+      "description": "Prints out all valid panorama CSS properties and their documentation"
+    },
+    {
+      "name": "dump_panorama_events",
+      "flags": [
+        "release"
+      ],
+      "description": "print panorama event types and their documentation"
+    },
+    {
+      "name": "dump_panorama_render_command_stats",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
       "name": "dump_portrait_world_info_with_debug_name_containing",
       "flags": [
         "developmentonly",
@@ -2422,6 +2897,28 @@
       "description": "Print out information on existing particle systems"
     },
     {
+      "name": "dumpstringtable",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Usage:  dumpstringtable <tablename |all> <sv | cl> <verbose | simple> <element>      Print string tables to console, verbose to dump data, simple to show name and count only, can specifiy a single numeric element index to restrict spew."
+    },
+    {
+      "name": "echo",
+      "flags": [
+        "server_can_execute"
+      ],
+      "description": "Echo text to console."
+    },
+    {
+      "name": "echoln",
+      "flags": [
+        "release"
+      ],
+      "description": "Echo the command arguments on the console"
+    },
+    {
       "name": "econ_build_pinboard_images_from_collection_name",
       "flags": [
         "developmentonly",
@@ -2449,6 +2946,14 @@
       "description": "Lists the item definitions that have a specified tag."
     },
     {
+      "name": "enable_priority_boost",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Disable focus based priority boost"
+    },
+    {
       "name": "endmatch_votenextmap",
       "flags": [
         "clientdll",
@@ -2457,12 +2962,29 @@
       "description": "Votes for the next map at the end of the match"
     },
     {
+      "name": "endmovie",
+      "flags": [
+        "developmentonly",
+        "dontrecord",
+        "defensive"
+      ],
+      "description": "Stop recording movie frames."
+    },
+    {
       "name": "endround",
       "flags": [
         "gamedll",
         "cheat"
       ],
       "description": "End the current round."
+    },
+    {
+      "name": "engine_frametime_print_report",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Print a performance report from the current data in the vprof 'lite' profiler"
     },
     {
       "name": "ent_absbox",
@@ -2996,6 +3518,22 @@
       "description": "Displays visibility traces for the given entity\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
+      "name": "entity_lump_list",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "List all known entity lumps"
+    },
+    {
+      "name": "entity_lump_spew",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Dump the contents of an entity lump"
+    },
+    {
       "name": "ents",
       "flags": [
         "developmentonly",
@@ -3030,6 +3568,38 @@
         "clientcmd_can_execute"
       ],
       "description": "Take user to Steam support article"
+    },
+    {
+      "name": "escape",
+      "flags": [
+        "release",
+        "clientcmd_can_execute"
+      ],
+      "description": "Escape key pressed."
+    },
+    {
+      "name": "exec",
+      "flags": [
+        "dontrecord",
+        "release"
+      ],
+      "description": "Execute a cfg file"
+    },
+    {
+      "name": "exec_async",
+      "flags": [
+        "cheat",
+        "dontrecord"
+      ],
+      "description": "Execute a cfg file over time"
+    },
+    {
+      "name": "execifexists",
+      "flags": [
+        "dontrecord",
+        "release"
+      ],
+      "description": "Execute a cfg file if file exists"
     },
     {
       "name": "explode",
@@ -3097,6 +3667,57 @@
       "description": "Switch to firstperson camera."
     },
     {
+      "name": "fog_override_color",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Sets the fog color override"
+    },
+    {
+      "name": "force_assert",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Fire an assertion failure"
+    },
+    {
+      "name": "force_fatal_error",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Fire a fatal error"
+    },
+    {
+      "name": "force_floating_point_exceptions",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Enable floating point exceptions to find bugs"
+    },
+    {
+      "name": "force_hibernate",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Force toggle hibernation state"
+    },
+    {
+      "name": "fs_clear_open_duplicate_times",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Clear the list of files that have been opened."
+    },
+    {
+      "name": "fs_dump_open_duplicate_times",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Set fs_report_long_reads 1 before loading to use this. Prints a list of files that were opened more than once and ~how long was spent reading from them."
+    },
+    {
       "name": "func_mover_count",
       "flags": [
         "gamedll",
@@ -3111,6 +3732,13 @@
         "cheat"
       ],
       "description": ""
+    },
+    {
+      "name": "game_alias",
+      "flags": [
+        "release"
+      ],
+      "description": "Set the configuration of game type and mode based on game alias like \"deathmatch\"."
     },
     {
       "name": "game_particle_manager_dump_requeue",
@@ -3187,6 +3815,53 @@
       "description": "Force a specific lesson to be triggered"
     },
     {
+      "name": "gameui_activate",
+      "flags": [
+        "hidden",
+        "release"
+      ],
+      "description": "Shows the game UI"
+    },
+    {
+      "name": "gameui_allowescape",
+      "flags": [
+        "hidden",
+        "release"
+      ],
+      "description": "Escape key allowed to hide game UI"
+    },
+    {
+      "name": "gameui_allowescapetoshow",
+      "flags": [
+        "hidden",
+        "release"
+      ],
+      "description": "Escape key allowed to show game UI"
+    },
+    {
+      "name": "gameui_hide",
+      "flags": [
+        "release"
+      ],
+      "description": "Hides the game UI"
+    },
+    {
+      "name": "gameui_preventescape",
+      "flags": [
+        "hidden",
+        "release"
+      ],
+      "description": "Escape key doesn't hide game UI"
+    },
+    {
+      "name": "gameui_preventescapetoshow",
+      "flags": [
+        "hidden",
+        "release"
+      ],
+      "description": "Escape key doesn't show game UI"
+    },
+    {
       "name": "gcmd",
       "flags": [
         "clientdll",
@@ -3194,6 +3869,13 @@
         "clientcmd_can_execute"
       ],
       "description": "Generate a command"
+    },
+    {
+      "name": "generate_minidump_comment",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Generate a minidump comment and spew the results to the console"
     },
     {
       "name": "generate_null_container",
@@ -3297,6 +3979,13 @@
       "description": "Print all anim graph parameters for the specified entity.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
+      "name": "grep",
+      "flags": [
+        "release"
+      ],
+      "description": "grep line for pattern, print out matching lines only"
+    },
+    {
       "name": "groundlist",
       "flags": [
         "developmentonly",
@@ -3322,6 +4011,14 @@
       "description": "Find help about a convar/concommand."
     },
     {
+      "name": "hideconsole",
+      "flags": [
+        "dontrecord",
+        "release"
+      ],
+      "description": "Hide the console."
+    },
+    {
       "name": "hideoverviewmap",
       "flags": [
         "developmentonly",
@@ -3340,6 +4037,20 @@
       "description": "Hides HUD radar"
     },
     {
+      "name": "host_timescale_dec",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Decrement the timescale by one step"
+    },
+    {
+      "name": "host_timescale_inc",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Increment the timescale by one step"
+    },
+    {
       "name": "host_workshop_collection",
       "flags": [
         "gamedll",
@@ -3354,6 +4065,13 @@
         "release"
       ],
       "description": "Get the latest version of the map and host it on this server."
+    },
+    {
+      "name": "host_writeconfig",
+      "flags": [
+        "release"
+      ],
+      "description": "Saves out the user config values."
     },
     {
       "name": "host_writeconfig_with_prompt",
@@ -3486,6 +4204,93 @@
       "description": "Forces a button to be a particular state -- WHEN SAMPLING INPUT"
     },
     {
+      "name": "incrementvar",
+      "flags": [
+        "dontrecord",
+        "release"
+      ],
+      "description": "Increment specified convar value."
+    },
+    {
+      "name": "input_state",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "input_state"
+    },
+    {
+      "name": "instant_replay_goto_tick",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Goto a direct timestamp of the replay"
+    },
+    {
+      "name": "instant_replay_goto_tick_relative",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Goto a direct timestamp of the replay"
+    },
+    {
+      "name": "instant_replay_live",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "If in replay, jumps back to live"
+    },
+    {
+      "name": "instant_replay_pause",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Pauses instant replay."
+    },
+    {
+      "name": "instant_replay_resume",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Resumes instant replay."
+    },
+    {
+      "name": "instant_replay_skip",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Number of seconds to skip back to instant replay from current position"
+    },
+    {
+      "name": "instant_replay_skip_live",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Number of seconds to skip back to instant replay from live"
+    },
+    {
+      "name": "instant_replay_timescale",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Sets instant replay speed."
+    },
+    {
+      "name": "instant_replay_togglepause",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Toggles instant replay."
+    },
+    {
       "name": "invnext",
       "flags": [
         "clientdll",
@@ -3552,6 +4357,60 @@
         "defensive"
       ],
       "description": "Spew both interpolated var debug info and history for entity."
+    },
+    {
+      "name": "jpeg_screenshot",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Take a jpeg screenshot: jpeg_screenshot [filename] [quality 1-100]."
+    },
+    {
+      "name": "key_findbinding",
+      "flags": [
+        "release"
+      ],
+      "description": "Find key bound to specified command string."
+    },
+    {
+      "name": "key_listboundkeys",
+      "flags": [
+        "release"
+      ],
+      "description": "List bound keys with bindings."
+    },
+    {
+      "name": "key_updatelayout",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Updates game keyboard layout to current windows keyboard setting."
+    },
+    {
+      "name": "kick",
+      "flags": [
+        "dontrecord",
+        "release"
+      ],
+      "description": "Kick a player by name."
+    },
+    {
+      "name": "kickid",
+      "flags": [
+        "dontrecord",
+        "release"
+      ],
+      "description": "Kick a player by userid or uniqueid, with a message."
+    },
+    {
+      "name": "kickid_hltv",
+      "flags": [
+        "dontrecord",
+        "release"
+      ],
+      "description": "Kick a player by userid or uniqueid, with a message."
     },
     {
       "name": "kill",
@@ -3632,12 +4491,45 @@
       "description": "Displays a list of the last 5 lines of speech from NPCs."
     },
     {
+      "name": "listdemo",
+      "flags": [
+        "release"
+      ],
+      "description": "List demo file contents."
+    },
+    {
+      "name": "listid",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Lists banned users."
+    },
+    {
+      "name": "listip",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "List IP addresses on the ban list."
+    },
+    {
       "name": "listissues",
       "flags": [
         "gamedll",
         "client_can_execute"
       ],
       "description": "List all the issues that can be voted on."
+    },
+    {
+      "name": "load",
+      "flags": [
+        "developmentonly",
+        "dontrecord",
+        "vconsole_fuzzy_matching",
+        "defensive"
+      ],
+      "description": "Usage:\n   load [save file name]\n"
     },
     {
       "name": "localization_quest_item_string_printout",
@@ -3647,6 +4539,13 @@
         "defensive"
       ],
       "description": "localization_quest_item_string_printout"
+    },
+    {
+      "name": "log",
+      "flags": [
+        "release"
+      ],
+      "description": "Enables logging to file, console, and udp < on | off >."
     },
     {
       "name": "log_color",
@@ -3734,6 +4633,14 @@
       "description": "List all URIs currently receiving server logs"
     },
     {
+      "name": "loop_dump",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Print the listeners of the current loop mode"
+    },
+    {
       "name": "lrucache_flush",
       "flags": [
         "developmentonly",
@@ -3764,6 +4671,15 @@
         "defensive"
       ],
       "description": "Spews information about all CUtlLRUCaches"
+    },
+    {
+      "name": "map",
+      "flags": [
+        "release",
+        "vconsole_fuzzy_matching",
+        "vconsole_set_focus"
+      ],
+      "description": "map <mapname> :Load a new map."
     },
     {
       "name": "map_enable_portrait_worlds",
@@ -3818,6 +4734,13 @@
       "description": "Specify a map group"
     },
     {
+      "name": "maps",
+      "flags": [
+        "release"
+      ],
+      "description": "Displays list of maps."
+    },
+    {
       "name": "markup_group_ent_bbox",
       "flags": [
         "gamedll",
@@ -3842,6 +4765,21 @@
       "description": "Spew all current markup groups and their members"
     },
     {
+      "name": "mat_assert_on_shader_use",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Assert on shader used based on substring of shader name"
+    },
+    {
+      "name": "mat_clearshadercache",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Clears the shader cache used for dynamic shader compile."
+    },
+    {
       "name": "mat_debug",
       "flags": [
         "developmentonly",
@@ -3849,6 +4787,166 @@
         "defensive"
       ],
       "description": "Sets a mat_fullbright debug visualization mode"
+    },
+    {
+      "name": "mat_disable_dynamic_shader_compile",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Reloads all shaders from vcs files until the next time mat_reloadshaders is called"
+    },
+    {
+      "name": "mat_forcereloadshaders",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Force reloads all shaders (skips MD5 check). Takes optional substrings of shader names to recompile as arguments."
+    },
+    {
+      "name": "mat_print_dead_materials",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Print loaded materials that have no valid layers due to not supporting any of the modes in gameinfo.gi."
+    },
+    {
+      "name": "mat_print_error_materials",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Print loaded materials that are using the error shader or material."
+    },
+    {
+      "name": "mat_print_expensive_materials",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Print materials sorted by cost heuristic"
+    },
+    {
+      "name": "mat_print_material_info",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Print info about a specific material"
+    },
+    {
+      "name": "mat_print_materials",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Print loaded materials. Takes an optional substring as an argument."
+    },
+    {
+      "name": "mat_print_materials_last_frame",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Print materials used last frame"
+    },
+    {
+      "name": "mat_print_materials_unused",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Print materials that have never been used"
+    },
+    {
+      "name": "mat_print_modes",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Print supported rendering modes."
+    },
+    {
+      "name": "mat_print_shader_info",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Print detailed info about a single shader. Takes a shader name (hero.vfx) as an argument."
+    },
+    {
+      "name": "mat_print_shader_quality",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Print current shader quality setting"
+    },
+    {
+      "name": "mat_print_shaders",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Print loaded shaders. Takes a substring as an argument."
+    },
+    {
+      "name": "mat_print_textures",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Print loaded textures in alphabetical order. Takes an optional substring as an argument."
+    },
+    {
+      "name": "mat_print_textures_size",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Print loaded textures in ascending size order. Takes an optional substring as an argument."
+    },
+    {
+      "name": "mat_print_textures_size_in_memory",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Print loaded textures in ascending size order as they are in memory. Takes an optional substring as an argument."
+    },
+    {
+      "name": "mat_reinitmaterials",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Reinitializes all loaded materials, reloading their shaders."
+    },
+    {
+      "name": "mat_reloadshaders",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Reloads all shaders. Takes optional substrings of shader names to recompile as arguments."
+    },
+    {
+      "name": "mat_reset_material_costs",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Reset material cost heuristic"
+    },
+    {
+      "name": "mat_set_shader_quality",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Force shader quality setting (valid values are 0 or 1)"
     },
     {
       "name": "matchdraft_debug_sendlog",
@@ -3860,6 +4958,45 @@
         "clientcmd_can_execute"
       ],
       "description": "Print debug draft into HTTP log"
+    },
+    {
+      "name": "mem_compact",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Compacts the heap"
+    },
+    {
+      "name": "mem_dump",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Dump memory stats to text file or <stdout>."
+    },
+    {
+      "name": "mem_test",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "memory",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Print memory stats."
+    },
+    {
+      "name": "memory_check_limit",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Assert if peak memory use is over the limit."
     },
     {
       "name": "menuselect",
@@ -3876,6 +5013,21 @@
         "cheat"
       ],
       "description": "Does a bunch of work to create a minimap"
+    },
+    {
+      "name": "mm_debugprint",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Show debug information about current matchmaking session"
+    },
+    {
+      "name": "mm_ignored_sessions_reset",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Reset ignored sessions"
     },
     {
       "name": "mm_queue_draft_show",
@@ -4018,6 +5170,14 @@
         "release"
       ],
       "description": "Start warmup."
+    },
+    {
+      "name": "multvar",
+      "flags": [
+        "dontrecord",
+        "release"
+      ],
+      "description": "Multiply specified convar value."
     },
     {
       "name": "nav_add_to_selected_set",
@@ -4357,6 +5517,21 @@
       "description": "Reload the game events"
     },
     {
+      "name": "net_stats_json",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Output server networking statistics in json format"
+    },
+    {
+      "name": "nextdemo",
+      "flags": [
+        "release"
+      ],
+      "description": "Play next demo in sequence."
+    },
+    {
       "name": "noclip",
       "flags": [
         "gamedll",
@@ -4373,6 +5548,37 @@
         "client_can_execute"
       ],
       "description": "Toggle. Player becomes hidden to NPCs."
+    },
+    {
+      "name": "open_asset",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Opens an asset in it's primary editor of choice. Specify the full path to the asset from the mod directory."
+    },
+    {
+      "name": "open_current_map_in_hammer",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "opens the current map in hammer."
+    },
+    {
+      "name": "open_current_map_pulse_in_tool",
+      "flags": [
+        "developmentonly",
+        "vconsole_fuzzy_matching"
+      ],
+      "description": "Opens the specified pulse used in this map in the editor.\n\tArguments: <pulse_file>"
+    },
+    {
+      "name": "p2p_listpeers",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "List currently known peers."
     },
     {
       "name": "p2p_ping",
@@ -4393,6 +5599,45 @@
         "defensive"
       ],
       "description": "Resets the panorama console to its default size and position"
+    },
+    {
+      "name": "panorama_dispatch_event",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Dispatch the event defined by the argument string. No creating panel is specified."
+    },
+    {
+      "name": "panorama_dump_symbols",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "<ESymbolType> Dump all of the symbols in the Panorama symbol table"
+    },
+    {
+      "name": "panorama_generate_layout_xsd",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Generate the Layout XML Schema Definition for the current run-time (types are dependent on which game DLL is running)."
+    },
+    {
+      "name": "panorama_print_cache_status",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Print internal panorama refcounts for every file"
+    },
+    {
+      "name": "panorama_print_svg_stats",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": ""
     },
     {
       "name": "particle_profile",
@@ -4475,6 +5720,21 @@
         "cheat"
       ],
       "description": "Stops all particle systems on the selected entities.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
+    },
+    {
+      "name": "path",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Show the filesystem path."
+    },
+    {
+      "name": "pause",
+      "flags": [
+        "release"
+      ],
+      "description": "Toggle the server pause state."
     },
     {
       "name": "perfectworld_replenish_funds",
@@ -4621,12 +5881,34 @@
       "description": "Play a sound."
     },
     {
+      "name": "playcast",
+      "flags": [
+        "release"
+      ],
+      "description": "Play a broadcast"
+    },
+    {
+      "name": "playdemo",
+      "flags": [
+        "release"
+      ],
+      "description": "Play a recorded demo file (.dem )."
+    },
+    {
       "name": "player_ping",
       "flags": [
         "gamedll",
         "client_can_execute"
       ],
       "description": "Creates a ping notification where the player is looking."
+    },
+    {
+      "name": "playsound",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "playsound <soundname>"
     },
     {
       "name": "playsoundscape",
@@ -4645,6 +5927,29 @@
       "description": "Play a sound at a specified volume."
     },
     {
+      "name": "png_screenshot",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Take a .png screenshot: png_screenshot [filename]"
+    },
+    {
+      "name": "pop_var_values",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Restore previously pushed convars and config values"
+    },
+    {
+      "name": "print_changed_convars",
+      "flags": [
+        "release"
+      ],
+      "description": "Prints all convars that have changed from their default value"
+    },
+    {
       "name": "print_mapgroup",
       "flags": [
         "clientdll",
@@ -4659,6 +5964,14 @@
         "release"
       ],
       "description": "Prints the current mapgroup and the contained maps"
+    },
+    {
+      "name": "progress_enable",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
     },
     {
       "name": "prop_debug",
@@ -4694,12 +6007,154 @@
       "description": "Opens a graph referencing the selected entity. If it is referenced by more than 1 graph, list all the active pulse graph instances referring to that entity so you can pick which one you want."
     },
     {
+      "name": "pulse_debug_print",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Usage: pulse_debug_print <vpulse_resource>"
+    },
+    {
       "name": "pulse_list_game_blackboards",
       "flags": [
         "gamedll",
         "cheat"
       ],
       "description": "List all the active pulse graph instances"
+    },
+    {
+      "name": "pulse_list_graphs",
+      "flags": [
+        "cheat"
+      ],
+      "description": "List all the active pulse graph instances"
+    },
+    {
+      "name": "pulse_open_graph_id",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Open a specific graph instance by id"
+    },
+    {
+      "name": "pulse_print_graph_execution_history",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Prints the execution history of a graph by filename or instanceid"
+    },
+    {
+      "name": "push_var_values",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Save convars and config values"
+    },
+    {
+      "name": "quit",
+      "flags": [
+        "release",
+        "vconsole_set_focus"
+      ],
+      "description": "Quit the game"
+    },
+    {
+      "name": "r_dx11_report_live_objects",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Prints out live D3D11 objects (requires -dx11debug)"
+    },
+    {
+      "name": "r_force_engine_render_frame",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Force a single render of the engine viewport."
+    },
+    {
+      "name": "r_gpu_mem_stats",
+      "flags": [
+        "linked_concommand",
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Display GPU memory usage."
+    },
+    {
+      "name": "r_print_buffers",
+      "flags": [
+        "linked_concommand",
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Print Vertex/Index/GPU buffers."
+    },
+    {
+      "name": "r_print_texture_stats",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Texture stats"
+    },
+    {
+      "name": "r_render_coordination_state",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Prints out the current render coordination state."
+    },
+    {
+      "name": "r_renderdoc_capture_frame",
+      "flags": [
+        "linked_concommand",
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Triggers a RenderDoc capture"
+    },
+    {
+      "name": "r_renderdoc_capture_window_dx11",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Triggers a RenderDoc capture of a specific Window"
+    },
+    {
+      "name": "r_renderdoc_capture_window_vulkan",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Triggers a RenderDoc capture of a specific Window"
+    },
+    {
+      "name": "r_textures_evict_all",
+      "flags": [
+        "linked_concommand",
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Evict all resident texture."
+    },
+    {
+      "name": "r_toggleviewportsize",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Toggles viewport size between small + full window."
+    },
+    {
+      "name": "r_viewport",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Slams viewport size to a specified value."
     },
     {
       "name": "radio",
@@ -4769,12 +6224,45 @@
       "description": "Load the rays and run the benchmark"
     },
     {
+      "name": "rcon",
+      "flags": [
+        "dontrecord",
+        "release"
+      ],
+      "description": "Issue an rcon command."
+    },
+    {
       "name": "rebuy",
       "flags": [
         "clientdll",
         "clientcmd_can_execute"
       ],
       "description": "Attempt to repurchase items with the order listed in cl_rebuy"
+    },
+    {
+      "name": "record",
+      "flags": [
+        "cheat",
+        "dontrecord",
+        "release"
+      ],
+      "description": "Record a demo."
+    },
+    {
+      "name": "redirectend",
+      "flags": [
+        "hidden",
+        "release"
+      ],
+      "description": "Redirect server console output"
+    },
+    {
+      "name": "redirectstart",
+      "flags": [
+        "hidden",
+        "release"
+      ],
+      "description": "Redirect server console output"
     },
     {
       "name": "regenerate_weapon_skins",
@@ -4794,6 +6282,14 @@
       "description": ""
     },
     {
+      "name": "reloadgame",
+      "flags": [
+        "cheat",
+        "vconsole_set_focus"
+      ],
+      "description": "Reload the most recent saved game."
+    },
+    {
       "name": "remove_weapon",
       "flags": [
         "gamedll",
@@ -4801,6 +6297,29 @@
         "client_can_execute"
       ],
       "description": "Remove a weapon held by the player.\n\tArguments: <weapon subclass name>"
+    },
+    {
+      "name": "removeid",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Remove a user ID from the ban list."
+    },
+    {
+      "name": "removeip",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Remove an IP address from the ban list."
+    },
+    {
+      "name": "repeat_last_console_command",
+      "flags": [
+        "release"
+      ],
+      "description": "Repeat last console command."
     },
     {
       "name": "replant_bomb",
@@ -4862,12 +6381,75 @@
       "description": "reports sound patch count"
     },
     {
+      "name": "reset_gameconvars",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Reset game convars to default values"
+    },
+    {
+      "name": "resource_leaks",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "resource_leaks <resource_name>: Show resource leaks for the named resource"
+    },
+    {
+      "name": "resource_list",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "List loaded resources matching a substring"
+    },
+    {
+      "name": "resource_log_allocate_timing",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Log time spent in Allocate for all resource types"
+    },
+    {
+      "name": "resource_manifest_validate_modules",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Scan all of the loaded modules and validate any resource manifests found"
+    },
+    {
+      "name": "resource_repeated_reload",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "resource_repeated_reload <count> <resource_name> (<resource name> ...): Load and unload the specified resource(s)"
+    },
+    {
+      "name": "resource_reset_allocate_timing",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Reset tracked time spent in Allocate (see resource_log_allocate_timing)"
+    },
+    {
       "name": "respawn_player",
       "flags": [
         "gamedll",
         "cheat"
       ],
       "description": "Respawns the player from death!\n"
+    },
+    {
+      "name": "restart",
+      "flags": [
+        "cheat",
+        "vconsole_set_focus"
+      ],
+      "description": "Poor man's restart: reload the current map from disk."
     },
     {
       "name": "restart_in_insecure",
@@ -4944,6 +6526,21 @@
         "cheat"
       ],
       "description": "fire a response concept directly at a given character.\nUSAGE: rr_forceconcept <target name or index> <concept> \"criteria1:value1,criteria2:value2,...\"\ncriteria values are optional.\n"
+    },
+    {
+      "name": "rs_dump_stats",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "rs_dump_stats - Dump resourcesystem stats."
+    },
+    {
+      "name": "run_perftest",
+      "flags": [
+        "cheat",
+        "dontrecord"
+      ],
+      "description": "Execute perftest.cfg"
     },
     {
       "name": "save",
@@ -5077,6 +6674,14 @@
         "cheat"
       ],
       "description": "Play the given VCD as an instanced scripted scene."
+    },
+    {
+      "name": "screenshot",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Take a screenshot: screenshot [filename]"
     },
     {
       "name": "script_add_debug_filter",
@@ -5350,12 +6955,26 @@
       "description": "Snap player eyes and orientation to specified pitch yaw <roll:optional> (must have sv_cheats)."
     },
     {
+      "name": "setinfo",
+      "flags": [
+        "clientcmd_can_execute"
+      ],
+      "description": "Adds a new user info value"
+    },
+    {
       "name": "setmodel",
       "flags": [
         "gamedll",
         "cheat"
       ],
       "description": "Changes's player's model"
+    },
+    {
+      "name": "setpause",
+      "flags": [
+        "release"
+      ],
+      "description": "Set the pause state of the server."
     },
     {
       "name": "setpos",
@@ -5440,6 +7059,14 @@
         "clientcmd_can_execute"
       ],
       "description": "Show untrusted warning again"
+    },
+    {
+      "name": "showconsole",
+      "flags": [
+        "dontrecord",
+        "release"
+      ],
+      "description": "Show the console."
     },
     {
       "name": "showents",
@@ -6371,6 +7998,38 @@
       "description": "Spectate previous player"
     },
     {
+      "name": "spew_fonts",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Spew information about font manager fonts"
+    },
+    {
+      "name": "splitscreen_testreadconfigconflict",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": ""
+    },
+    {
+      "name": "ss_add",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Adds a splitscreen user."
+    },
+    {
+      "name": "ss_remove",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Removes a splitscreen user."
+    },
+    {
       "name": "ss_teleport",
       "flags": [
         "developmentonly",
@@ -6389,6 +8048,60 @@
       "description": "Start recording to a desired wav."
     },
     {
+      "name": "startdemos",
+      "flags": [
+        "release"
+      ],
+      "description": "Play demos in demo sequence."
+    },
+    {
+      "name": "startmovie",
+      "flags": [
+        "developmentonly",
+        "dontrecord",
+        "defensive"
+      ],
+      "description": "Start recording movie frames."
+    },
+    {
+      "name": "stats",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Prints server performance variables"
+    },
+    {
+      "name": "stats_print",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Prints out perf statistics to the console, clears perf history"
+    },
+    {
+      "name": "stats_print_gpu",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Prints out GPU perf statistics to the console.  Requires stats_display > 0, and stats_collect_gpu = true.  Optional argument of CSV filename"
+    },
+    {
+      "name": "status",
+      "flags": [
+        "release"
+      ],
+      "description": "Print connection status"
+    },
+    {
+      "name": "status_json",
+      "flags": [
+        "release"
+      ],
+      "description": "Print status in JSON format"
+    },
+    {
       "name": "steamvrevent_quit",
       "flags": [
         "developmentonly",
@@ -6397,6 +8110,13 @@
         "defensive"
       ],
       "description": "steamvrevent_quit"
+    },
+    {
+      "name": "stop",
+      "flags": [
+        "release"
+      ],
+      "description": "Finish recording demo."
     },
     {
       "name": "stop_rec_mic",
@@ -6415,6 +8135,13 @@
         "defensive"
       ],
       "description": "Stop recording all mic streams."
+    },
+    {
+      "name": "stopdemos",
+      "flags": [
+        "release"
+      ],
+      "description": "Stop looping demos (current demo will complete)."
     },
     {
       "name": "stopsound",
@@ -6485,6 +8212,14 @@
       "description": "Remove weapon given by annotation"
     },
     {
+      "name": "sv_clientrates",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Show client rates."
+    },
+    {
       "name": "sv_cs_dump_econ_item_stringtable",
       "flags": [
         "developmentonly",
@@ -6521,6 +8256,14 @@
       "description": "explodes smoke grenade at crosshair location"
     },
     {
+      "name": "sv_fullupdate",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Force a full update for all clients."
+    },
+    {
       "name": "sv_game_mode_convars",
       "flags": [
         "developmentonly",
@@ -6528,6 +8271,14 @@
         "defensive"
       ],
       "description": "Display the values of the convars for the current game_mode."
+    },
+    {
+      "name": "sv_histogram",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "var change info histogram\n"
     },
     {
       "name": "sv_kill_smokegrenade",
@@ -6555,6 +8306,20 @@
       "description": "Loads a file containing random name words for clients"
     },
     {
+      "name": "sv_metaduplication",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Check serializer meta for duplication, add verbose to command for full spew"
+    },
+    {
+      "name": "sv_packstats",
+      "flags": [
+        "release"
+      ],
+      "description": "Show entity packing stats, pass 'clear' as argument to reset counts."
+    },
+    {
       "name": "sv_querycache_stats",
       "flags": [
         "developmentonly",
@@ -6572,12 +8337,48 @@
       "description": "Emit the last grenade thrown on the server."
     },
     {
+      "name": "sv_setsteamaccount",
+      "flags": [
+        "release"
+      ],
+      "description": "token\nSet game server account token to use for logging in to a persistent game server account"
+    },
+    {
+      "name": "sv_showtags",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Describe current gametags."
+    },
+    {
+      "name": "sv_shutdown",
+      "flags": [
+        "release"
+      ],
+      "description": "Sets the server to shutdown when all games have completed"
+    },
+    {
       "name": "sv_soundscape_printdebuginfo",
       "flags": [
         "gamedll",
         "cheat"
       ],
       "description": "print soundscapes"
+    },
+    {
+      "name": "sv_spewmeta",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Spew serializer meta"
+    },
+    {
+      "name": "sv_spewworldgroups",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Spew world groups (server)"
     },
     {
       "name": "sv_throw_decoygrenade",
@@ -6649,6 +8450,13 @@
       "description": ""
     },
     {
+      "name": "sys_info",
+      "flags": [
+        "release"
+      ],
+      "description": "Print system information to the console"
+    },
+    {
       "name": "teammenu",
       "flags": [
         "clientdll",
@@ -6697,6 +8505,13 @@
       "description": "test-list entities"
     },
     {
+      "name": "test_shipping_assert",
+      "flags": [
+        "release"
+      ],
+      "description": "Generate an assert to test shipping assertion code"
+    },
+    {
       "name": "test_voice_container_nesting",
       "flags": [
         "linked_concommand",
@@ -6741,6 +8556,20 @@
       "description": "Switch to thirdperson-shoulder camera."
     },
     {
+      "name": "timedemo",
+      "flags": [
+        "release"
+      ],
+      "description": "Play a demo and report performance info."
+    },
+    {
+      "name": "timedemoquit",
+      "flags": [
+        "release"
+      ],
+      "description": "Play a demo, report performance info, and then exit"
+    },
+    {
       "name": "timeleft",
       "flags": [
         "gamedll",
@@ -6765,12 +8594,28 @@
       "description": ""
     },
     {
+      "name": "toggle",
+      "flags": [
+        "dontrecord",
+        "release"
+      ],
+      "description": "Toggles specified convar value on and off."
+    },
+    {
       "name": "toggleRdrOpt",
       "flags": [
         "developmentonly",
         "clientdll"
       ],
       "description": ""
+    },
+    {
+      "name": "toggleconsole",
+      "flags": [
+        "dontrecord",
+        "release"
+      ],
+      "description": "Show/hide the console."
     },
     {
       "name": "toggleradarscale",
@@ -6790,6 +8635,35 @@
       "description": "traceattack damage hitgroup"
     },
     {
+      "name": "tv_broadcast_resend",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "resend broadcast data to broadcast relay"
+    },
+    {
+      "name": "tv_broadcast_status",
+      "flags": [
+        "release"
+      ],
+      "description": "Print out broadcast status"
+    },
+    {
+      "name": "tv_clients",
+      "flags": [
+        "release"
+      ],
+      "description": "Shows list of connected SourceTV clients."
+    },
+    {
+      "name": "tv_mem",
+      "flags": [
+        "release"
+      ],
+      "description": "hltv memory statistics. Use with \"ent 10\" (dump entity 10 memory usage) or \"top 8\" (dump top 8 memory users) or \"class\" CWorld (dump CWorld class)"
+    },
+    {
       "name": "tv_msg",
       "flags": [
         "developmentonly",
@@ -6799,6 +8673,69 @@
       "description": "Send a screen message to all clients."
     },
     {
+      "name": "tv_record",
+      "flags": [
+        "release"
+      ],
+      "description": "Starts SourceTV demo recording."
+    },
+    {
+      "name": "tv_relay",
+      "flags": [
+        "release"
+      ],
+      "description": "Connect to SourceTV server and relay broadcast."
+    },
+    {
+      "name": "tv_retry",
+      "flags": [
+        "release"
+      ],
+      "description": "Reconnects the SourceTV relay proxy."
+    },
+    {
+      "name": "tv_status",
+      "flags": [
+        "release"
+      ],
+      "description": "Show SourceTV server status."
+    },
+    {
+      "name": "tv_stop",
+      "flags": [
+        "release"
+      ],
+      "description": "Stops the SourceTV broadcast."
+    },
+    {
+      "name": "tv_stoprecord",
+      "flags": [
+        "release"
+      ],
+      "description": "Stops SourceTV demo recording."
+    },
+    {
+      "name": "unbind",
+      "flags": [
+        "release"
+      ],
+      "description": "Unbind a key."
+    },
+    {
+      "name": "unbindall",
+      "flags": [
+        "release"
+      ],
+      "description": "Unbind all keys."
+    },
+    {
+      "name": "unpause",
+      "flags": [
+        "release"
+      ],
+      "description": "Clear the pause state of the server."
+    },
+    {
       "name": "url_execute",
       "flags": [
         "developmentonly",
@@ -6806,6 +8743,102 @@
         "defensive"
       ],
       "description": "Executes url-based commands, used for incoming commands from url-based launches when the game's already running."
+    },
+    {
+      "name": "users",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Show user info for players on server."
+    },
+    {
+      "name": "vis_debug_currentcluster",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Show the current cluster number"
+    },
+    {
+      "name": "vis_debug_drawcluster",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Add cluster # to visualization, (-1) to clear"
+    },
+    {
+      "name": "vis_debug_dumpvisibleclusters",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Show the list of visible clusters"
+    },
+    {
+      "name": "vis_debug_find_los",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Find or clear the vis LOS to here"
+    },
+    {
+      "name": "vis_debug_lock",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Lock vis LOS origin to current"
+    },
+    {
+      "name": "vis_debug_record_start",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Record a path to debug vis"
+    },
+    {
+      "name": "vis_debug_record_stop",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Record a path to debug vis"
+    },
+    {
+      "name": "vis_debug_show",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Show/hide the vis debug visualization"
+    },
+    {
+      "name": "vis_debug_sunclusters",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Showing clusters for sun/csm rendering. Red (full sun csm & lighting), Orange (no viewmodel sun or csm), Green (no sun at all)"
+    },
+    {
+      "name": "vis_debug_tracelos",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Trace rays and check vis from the current camera"
+    },
+    {
+      "name": "vmem_dump",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Dump memory stats to log."
     },
     {
       "name": "vmix_debug_list",
@@ -6872,6 +8905,166 @@
       "description": "Toggles between open-mic and push-to-talk"
     },
     {
+      "name": "vprof_dump_counters",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Dump vprof counters to the console"
+    },
+    {
+      "name": "vprof_generate_report",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Generate a report to the console."
+    },
+    {
+      "name": "vprof_generate_report_budget",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Generate a report to the console based on budget group."
+    },
+    {
+      "name": "vprof_generate_report_hierarchy",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Generate a report to the console."
+    },
+    {
+      "name": "vprof_loadhitstore_scale",
+      "flags": [
+        "developmentonly",
+        "hidden"
+      ],
+      "description": "Scale used when displaying load-hit-stores (0 = use default)"
+    },
+    {
+      "name": "vprof_off",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Disable vprof"
+    },
+    {
+      "name": "vprof_on",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Enable vprof"
+    },
+    {
+      "name": "vprof_remote_start",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Request a VProf data stream from the remote server (requires authentication)"
+    },
+    {
+      "name": "vprof_remote_stop",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Stop an existing remote VProf data request"
+    },
+    {
+      "name": "vprof_reset",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Reset the stats in VProf profiler"
+    },
+    {
+      "name": "vprof_reset_peaks",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Reset just the peak time in VProf profiler"
+    },
+    {
+      "name": "vprof_time_scale",
+      "flags": [
+        "developmentonly",
+        "hidden"
+      ],
+      "description": "Scale used when displaying time (0 = use default)"
+    },
+    {
+      "name": "vtune",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Controls VTune's sampling."
+    },
+    {
+      "name": "vulkan_framebuffermgr_print",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Prints out stats for the Vulkan Framebuffer manager"
+    },
+    {
+      "name": "vulkan_memgr_fragmentation_print",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Prints out detailed memory fragmentation stats for the Vulkan memory manager"
+    },
+    {
+      "name": "vulkan_memgr_print",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Prints out stats for the Vulkan memory manager"
+    },
+    {
+      "name": "vulkan_pipelinemgr_print",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Prints out stats for the Vulkan Pipeline manager"
+    },
+    {
+      "name": "vulkan_shader_table_print",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Prints out stats for the Vulkan shader table"
+    },
+    {
+      "name": "vulkan_vma_defrag",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Force defragmenting memory with VMA"
+    },
+    {
+      "name": "vulkan_vma_gpu_mem_dump",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Dump .json file for use by GpuMemDumpVis.py"
+    },
+    {
       "name": "weapon_switch",
       "flags": [
         "developmentonly",
@@ -6922,6 +9115,53 @@
         "release"
       ],
       "description": ""
+    },
+    {
+      "name": "world_dump_loaded_worlds",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Dump all of the worlds that we know about"
+    },
+    {
+      "name": "world_layer_list",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "List all world layers"
+    },
+    {
+      "name": "world_layer_set_visible",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Show or hide the specified world layer"
+    },
+    {
+      "name": "writeid",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Writes a list of permanently-banned user IDs to file."
+    },
+    {
+      "name": "writeip",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Save the ban list to file."
+    },
+    {
+      "name": "writekeybindings",
+      "flags": [
+        "release"
+      ],
+      "description": "Saves current key bindings to disk."
     }
   ]
 }

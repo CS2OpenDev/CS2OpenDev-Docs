@@ -11,11 +11,32 @@ nav_exclude: true
 
 | Name | Kind | Bases | Fields |
 |------|------|-------|--------|
+| [AI_BaseNPCAnimGraph_DebugSnapshotData_t](#ai_basenpcanimgraph_debugsnapshotdata_t) | class |  | 8 |
+| [AI_BaseNPC_DebugSnapshotData_t](#ai_basenpc_debugsnapshotdata_t) | class | DebugSnapshotBaseStructuredData_t | 13 |
+| [AI_DefaultNPC_DebugSnapshotData_t](#ai_defaultnpc_debugsnapshotdata_t) | class | DebugSnapshotBaseStructuredData_t | 6 |
+| [AI_DefaultNPC_DebugSnapshotData_t::PathQuery_t](#ai_defaultnpc_debugsnapshotdata_tpathquery_t) | class |  | 5 |
+| [AI_FacingServices_DebugSnapshotData_t](#ai_facingservices_debugsnapshotdata_t) | class |  | 7 |
+| [AI_GroundRootMotionMotor_DebugSnapshotData_t](#ai_groundrootmotionmotor_debugsnapshotdata_t) | class | DebugSnapshotBaseStructuredData_t | 18 |
+| [AI_GroundRootMotionMotor_DebugSnapshotData_t::Event_t](#ai_groundrootmotionmotor_debugsnapshotdata_tevent_t) | class |  | 2 |
+| [AI_MotorServices_DebugSnapshotData_t](#ai_motorservices_debugsnapshotdata_t) | class |  | 4 |
+| [AI_MotorServices_DebugSnapshotData_t::MotorPathWaypoint_t](#ai_motorservices_debugsnapshotdata_tmotorpathwaypoint_t) | class |  | 3 |
+| [AI_Navigator_DebugSnapshotData_t](#ai_navigator_debugsnapshotdata_t) | class |  | 7 |
+| [AI_Navigator_DebugSnapshotData_t::Waypoint_t](#ai_navigator_debugsnapshotdata_twaypoint_t) | class |  | 4 |
 | [ActiveModelConfig_t](#activemodelconfig_t) | class |  | 4 |
+| [ActorMapping_t](#actormapping_t) | class |  | 2 |
+| [AmmoIndex_t](#ammoindex_t) | class |  | 1 |
+| [AmmoTypeInfo_t](#ammotypeinfo_t) | class |  | 5 |
 | [AnimGraph2SerializedPoseRecipeSlot_t](#animgraph2serializedposerecipeslot_t) | class |  | 1 |
+| [AutoRoomDoorwayPairs_t](#autoroomdoorwaypairs_t) | class |  | 2 |
 | [CAI_ChangeHintGroup](#cai_changehintgroup) | class | CBaseEntity | 4 |
+| [CAI_Expresser](#cai_expresser) | class |  | 13 |
+| [CAI_ExpresserWithFollowup](#cai_expresserwithfollowup) | class | CAI_Expresser | 0 |
 | [CAK47](#cak47) | class | CCSWeaponBaseGun | 0 |
 | [CAmbientGeneric](#cambientgeneric) | class | CPointEntity | 10 |
+| [CAnimGraph2InstancePtr](#canimgraph2instanceptr) | class |  | 0 |
+| [CAnimGraphControllerBase](#canimgraphcontrollerbase) | class |  | 1 |
+| [CAnimGraphControllerManager](#canimgraphcontrollermanager) | class |  | 2 |
+| [CAnimGraphControllerPtr](#canimgraphcontrollerptr) | class |  | 1 |
 | [CAttributeContainer](#cattributecontainer) | class | CAttributeManager | 1 |
 | [CAttributeList](#cattributelist) | class |  | 2 |
 | [CAttributeManager](#cattributemanager) | class |  | 6 |
@@ -26,6 +47,8 @@ nav_exclude: true
 | [CBaseAnimGraphAPI](#cbaseanimgraphapi) | class |  | 0 |
 | [CBaseAnimGraphAlias_baseanimating](#cbaseanimgraphalias_baseanimating) | class | CBaseAnimGraph | 0 |
 | [CBaseAnimGraphController](#cbaseanimgraphcontroller) | class | CSkeletonAnimationController | 31 |
+| [CBaseAnimGraphDestructibleParts_GraphController](#cbaseanimgraphdestructibleparts_graphcontroller) | class | CAnimGraphControllerBase | 0 |
+| [CBaseAnimGraphVariationUserData](#cbaseanimgraphvariationuserdata) | class | CNmGraphVariationUserData | 0 |
 | [CBaseButton](#cbasebutton) | class | CBaseToggle | 26 |
 | [CBaseCSGrenade](#cbasecsgrenade) | class | CCSWeaponBase | 13 |
 | [CBaseCSGrenadeProjectile](#cbasecsgrenadeprojectile) | class | CBaseGrenade | 16 |
@@ -39,6 +62,7 @@ nav_exclude: true
 | [CBaseFilter](#cbasefilter) | class | CLogicalEntity | 3 |
 | [CBaseGrenade](#cbasegrenade) | class | CBaseAnimGraph | 15 |
 | [CBaseGrenade_API](#cbasegrenade_api) | class |  | 0 |
+| [CBaseIssue](#cbaseissue) | class |  | 6 |
 | [CBaseModelEntity](#cbasemodelentity) | class | CBaseEntity | 40 |
 | [CBaseModelEntity::OnDamageLevelChangedArgs_t](#cbasemodelentityondamagelevelchangedargs_t) | class |  | 4 |
 | [CBaseModelEntityAPI](#cbasemodelentityapi) | class |  | 0 |
@@ -66,16 +90,21 @@ nav_exclude: true
 | [CBot](#cbot) | class |  | 13 |
 | [CBreakable](#cbreakable) | class | CBaseModelEntity | 16 |
 | [CBreakableProp](#cbreakableprop) | class | CBaseProp | 33 |
+| [CBreakableStageHelper](#cbreakablestagehelper) | class |  | 2 |
 | [CBtActionAim](#cbtactionaim) | class | CBtNode | 12 |
 | [CBtActionCombatPositioning](#cbtactioncombatpositioning) | class | CBtNode | 4 |
 | [CBtActionMoveTo](#cbtactionmoveto) | class | CBtNode | 14 |
 | [CBtActionParachutePositioning](#cbtactionparachutepositioning) | class | CBtNode | 1 |
+| [CBtNode](#cbtnode) | class |  | 0 |
+| [CBtNodeComposite](#cbtnodecomposite) | class | CBtNode | 0 |
 | [CBtNodeCondition](#cbtnodecondition) | class | CBtNodeDecorator | 1 |
 | [CBtNodeConditionInactive](#cbtnodeconditioninactive) | class | CBtNodeCondition | 3 |
+| [CBtNodeDecorator](#cbtnodedecorator) | class | CBtNode | 0 |
 | [CBuoyancyHelper](#cbuoyancyhelper) | class |  | 11 |
 | [CBuyZone](#cbuyzone) | class | CBaseTrigger | 1 |
 | [CBuyZone_API](#cbuyzone_api) | class |  | 0 |
 | [CC4](#cc4) | class | CCSWeaponBase | 11 |
+| [CCS2ChickenGraphController](#ccs2chickengraphcontroller) | class | CAnimGraphControllerBase | 9 |
 | [CCS2PawnGraphController](#ccs2pawngraphcontroller) | class | CCS2WeaponGraphController | 28 |
 | [CCS2WeaponGraphController](#ccs2weapongraphcontroller) | class | CAnimGraphControllerBase | 20 |
 | [CCSBot](#ccsbot) | class | CBot | 140 |
@@ -109,6 +138,7 @@ nav_exclude: true
 | [CCSPetPlacement](#ccspetplacement) | class | CBaseEntity | 0 |
 | [CCSPlace](#ccsplace) | class | CServerOnlyModelEntity | 1 |
 | [CCSPlace_API](#ccsplace_api) | class |  | 0 |
+| [CCSPlayerAnimationState](#ccsplayeranimationstate) | class |  | 16 |
 | [CCSPlayerBase_CameraServices](#ccsplayerbase_cameraservices) | class | CPlayer_CameraServices | 7 |
 | [CCSPlayerController](#ccsplayercontroller) | class | CBasePlayerController | 92 |
 | [CCSPlayerController_API](#ccsplayercontroller_api) | class |  | 0 |
@@ -154,20 +184,31 @@ nav_exclude: true
 | [CChicken_API](#cchicken_api) | class |  | 0 |
 | [CChoreoComponent](#cchoreocomponent) | class |  | 6 |
 | [CChoreoInfoTarget](#cchoreoinfotarget) | class | CPointEntity | 0 |
+| [CChoreo_GraphController](#cchoreo_graphcontroller) | class | CAnimGraphControllerBase | 3 |
 | [CCitadelSoundOpvarSetOBB](#ccitadelsoundopvarsetobb) | class | CBaseEntity | 8 |
 | [CCollisionProperty](#ccollisionproperty) | class |  | 17 |
 | [CColorCorrection](#ccolorcorrection) | class | CBaseEntity | 17 |
 | [CColorCorrectionVolume](#ccolorcorrectionvolume) | class | CBaseTrigger | 8 |
 | [CCommentaryAuto](#ccommentaryauto) | class | CBaseEntity | 3 |
+| [CCommentarySystem](#ccommentarysystem) | class |  | 10 |
 | [CCommentaryViewPosition](#ccommentaryviewposition) | class | CSprite | 0 |
+| [CConstantForceController](#cconstantforcecontroller) | class |  | 4 |
 | [CConstraintAnchor](#cconstraintanchor) | class | CBaseAnimGraph | 1 |
+| [CCopyRecipientFilter](#ccopyrecipientfilter) | class |  | 3 |
 | [CCredits](#ccredits) | class | CPointEntity | 3 |
 | [CDEagle](#cdeagle) | class | CCSWeaponBaseGun | 0 |
 | [CDamageRecord](#cdamagerecord) | class |  | 15 |
+| [CDebugDrawHistoryData](#cdebugdrawhistorydata) | class |  | 9 |
 | [CDebugHistory](#cdebughistory) | class | CBaseEntity | 1 |
+| [CDebugSnapshotData_t](#cdebugsnapshotdata_t) | class |  | 14 |
+| [CDecalGroupVData](#cdecalgroupvdata) | class |  | 2 |
+| [CDecalInstance](#cdecalinstance) | class |  | 27 |
 | [CDecoyGrenade](#cdecoygrenade) | class | CBaseCSGrenade | 0 |
 | [CDecoyProjectile](#cdecoyprojectile) | class | CBaseCSGrenadeProjectile | 4 |
+| [CDestructiblePart](#cdestructiblepart) | class |  | 7 |
+| [CDestructiblePart_DamageLevel](#cdestructiblepart_damagelevel) | class |  | 10 |
 | [CDestructiblePartsComponent](#cdestructiblepartscomponent) | class |  | 4 |
+| [CDestructiblePartsSystemData](#cdestructiblepartssystemdata) | class |  | 2 |
 | [CDynamicLight](#cdynamiclight) | class | CBaseModelEntity | 9 |
 | [CDynamicNavConnectionsVolume](#cdynamicnavconnectionsvolume) | class | CTriggerMultiple | 7 |
 | [CDynamicProp](#cdynamicprop) | class | CBreakableProp | 23 |
@@ -179,10 +220,12 @@ nav_exclude: true
 | [CEconItemView](#ceconitemview) | class | IEconItemInterface | 13 |
 | [CEconWearable](#ceconwearable) | class | CEconEntity | 2 |
 | [CEffectData](#ceffectdata) | class |  | 20 |
+| [CEmptyGraphController](#cemptygraphcontroller) | class | CAnimGraphControllerBase | 0 |
 | [CEnableMotionFixup](#cenablemotionfixup) | class | CBaseEntity | 0 |
 | [CEntityBlocker](#centityblocker) | class | CBaseModelEntity | 0 |
 | [CEntityDissolve](#centitydissolve) | class | CBaseModelEntity | 10 |
 | [CEntityFlame](#centityflame) | class | CBaseEntity | 10 |
+| [CEntitySubclassVDataBase](#centitysubclassvdatabase) | class |  | 0 |
 | [CEnvBeam](#cenvbeam) | class | CBeam | 19 |
 | [CEnvBeverage](#cenvbeverage) | class | CBaseEntity | 2 |
 | [CEnvCombinedLightProbeVolume](#cenvcombinedlightprobevolume) | class | CBaseEntity | 29 |
@@ -229,6 +272,7 @@ nav_exclude: true
 | [CEnvWindSharedAPI](#cenvwindsharedapi) | class |  | 0 |
 | [CEnvWindVolume](#cenvwindvolume) | class | CBaseEntity | 9 |
 | [CExplosionTypeData](#cexplosiontypedata) | class |  | 5 |
+| [CExternalAnimGraphList](#cexternalanimgraphlist) | class |  | 0 |
 | [CFilterAttributeInt](#cfilterattributeint) | class | CBaseFilter | 1 |
 | [CFilterClass](#cfilterclass) | class | CBaseFilter | 1 |
 | [CFilterContext](#cfiltercontext) | class | CBaseFilter | 1 |
@@ -242,16 +286,21 @@ nav_exclude: true
 | [CFilterProximity](#cfilterproximity) | class | CBaseFilter | 1 |
 | [CFilterTeam](#cfilterteam) | class | CBaseFilter | 1 |
 | [CFireCrackerBlast](#cfirecrackerblast) | class | CInferno | 0 |
+| [CFiringModeFloat](#cfiringmodefloat) | class |  | 1 |
+| [CFiringModeInt](#cfiringmodeint) | class |  | 1 |
 | [CFish](#cfish) | class | CBaseAnimGraph | 24 |
 | [CFishPool](#cfishpool) | class | CBaseEntity | 7 |
 | [CFlashbang](#cflashbang) | class | CBaseCSGrenade | 0 |
 | [CFlashbangProjectile](#cflashbangprojectile) | class | CBaseCSGrenadeProjectile | 3 |
 | [CFlashbangProjectile_API](#cflashbangprojectile_api) | class |  | 0 |
+| [CFloatExponentialMovingAverage](#cfloatexponentialmovingaverage) | class |  | 0 |
+| [CFloatMovingAverage](#cfloatmovingaverage) | class |  | 0 |
 | [CFogController](#cfogcontroller) | class | CBaseEntity | 3 |
 | [CFogTrigger](#cfogtrigger) | class | CBaseTrigger | 1 |
 | [CFogVolume](#cfogvolume) | class | CServerOnlyModelEntity | 5 |
 | [CFootstepControl](#cfootstepcontrol) | class | CBaseTrigger | 2 |
 | [CFootstepControl_API](#cfootstepcontrol_api) | class |  | 0 |
+| [CFootstepTableHandle](#cfootsteptablehandle) | class |  | 0 |
 | [CFuncBrush](#cfuncbrush) | class | CBaseModelEntity | 6 |
 | [CFuncConveyor](#cfuncconveyor) | class | CBaseModelEntity | 10 |
 | [CFuncConveyor_API](#cfuncconveyor_api) | class |  | 0 |
@@ -295,6 +344,7 @@ nav_exclude: true
 | [CFuncWall](#cfuncwall) | class | CBaseModelEntity | 1 |
 | [CFuncWallToggle](#cfuncwalltoggle) | class | CFuncWall | 0 |
 | [CFuncWater](#cfuncwater) | class | CBaseModelEntity | 1 |
+| [CGameChoreoServices](#cgamechoreoservices) | class | IChoreoServices | 5 |
 | [CGameEnd](#cgameend) | class | CRulePointEntity | 0 |
 | [CGameGibManager](#cgamegibmanager) | class | CBaseEntity | 4 |
 | [CGameMoney](#cgamemoney) | class | CRulePointEntity | 4 |
@@ -305,6 +355,8 @@ nav_exclude: true
 | [CGameRulesProxy](#cgamerulesproxy) | class | CBaseEntity | 0 |
 | [CGameSceneNode](#cgamescenenode) | class |  | 31 |
 | [CGameSceneNodeHandle](#cgamescenenodehandle) | class |  | 2 |
+| [CGameScriptedMoveData](#cgamescriptedmovedata) | class |  | 18 |
+| [CGameScriptedMoveDef_t](#cgamescriptedmovedef_t) | class |  | 9 |
 | [CGameStateReportAPI](#cgamestatereportapi) | class |  | 0 |
 | [CGameText](#cgametext) | class | CRulePointEntity | 2 |
 | [CGenericConstraint](#cgenericconstraint) | class | CPhysConstraint | 49 |
@@ -315,6 +367,8 @@ nav_exclude: true
 | [CHEGrenadeProjectile](#chegrenadeprojectile) | class | CBaseCSGrenadeProjectile | 0 |
 | [CHandleDummy](#chandledummy) | class | CBaseEntity | 0 |
 | [CHandleTest](#chandletest) | class | CBaseEntity | 2 |
+| [CHintMessage](#chintmessage) | class |  | 3 |
+| [CHintMessageQueue](#chintmessagequeue) | class |  | 3 |
 | [CHitboxComponent](#chitboxcomponent) | class | CEntityComponent | 1 |
 | [CHostage](#chostage) | class | CHostageExpresserShim | 39 |
 | [CHostageAlias_info_hostage_spawn](#chostagealias_info_hostage_spawn) | class | CHostage | 0 |
@@ -323,9 +377,11 @@ nav_exclude: true
 | [CHostageRescueZone](#chostagerescuezone) | class | CHostageRescueZoneShim | 0 |
 | [CHostageRescueZoneShim](#chostagerescuezoneshim) | class | CBaseTrigger | 0 |
 | [CHostage_API](#chostage_api) | class |  | 0 |
+| [CInButtonState](#cinbuttonstate) | class |  | 1 |
 | [CIncendiaryGrenade](#cincendiarygrenade) | class | CMolotovGrenade | 0 |
 | [CInferno](#cinferno) | class | CBaseModelEntity | 24 |
 | [CInfoChoreoAnchor](#cinfochoreoanchor) | class | CPointEntity | 2 |
+| [CInfoChoreoAnchorPosition](#cinfochoreoanchorposition) | class |  | 8 |
 | [CInfoData](#cinfodata) | class | CServerOnlyEntity | 0 |
 | [CInfoDeathmatchSpawn](#cinfodeathmatchspawn) | class | SpawnPoint | 0 |
 | [CInfoDynamicShadowHint](#cinfodynamicshadowhint) | class | CPointEntity | 5 |
@@ -352,6 +408,7 @@ nav_exclude: true
 | [CInfoWorldLayer](#cinfoworldlayer) | class | CBaseEntity | 7 |
 | [CInstancedSceneEntity](#cinstancedsceneentity) | class | CSceneEntity | 7 |
 | [CInstructorEventEntity](#cinstructorevententity) | class | CPointEntity | 3 |
+| [CIronSightController](#cironsightcontroller) | class |  | 4 |
 | [CItem](#citem) | class | CBaseAnimGraph | 8 |
 | [CItemAssaultSuit](#citemassaultsuit) | class | CItem | 0 |
 | [CItemDefuser](#citemdefuser) | class | CItem | 2 |
@@ -406,6 +463,8 @@ nav_exclude: true
 | [CMapSharedEnvironment](#cmapsharedenvironment) | class | CLogicalEntity | 1 |
 | [CMapVetoPickController](#cmapvetopickcontroller) | class | CBaseEntity | 24 |
 | [CMapVetoPickController_API](#cmapvetopickcontroller_api) | class |  | 0 |
+| [CMarkupSearchHelper](#cmarkupsearchhelper) | class |  | 7 |
+| [CMarkupSearch_PathCostAreaFilter](#cmarkupsearch_pathcostareafilter) | class | INavPathCostAreaFilter | 1 |
 | [CMarkupVolume](#cmarkupvolume) | class | CBaseModelEntity | 1 |
 | [CMarkupVolumeTagged](#cmarkupvolumetagged) | class | CMarkupVolume | 7 |
 | [CMarkupVolumeTagged_Nav](#cmarkupvolumetagged_nav) | class | CMarkupVolumeTagged | 1 |
@@ -421,13 +480,37 @@ nav_exclude: true
 | [CMolotovGrenade](#cmolotovgrenade) | class | CBaseCSGrenade | 0 |
 | [CMolotovProjectile](#cmolotovprojectile) | class | CBaseCSGrenadeProjectile | 3 |
 | [CMomentaryRotButton](#cmomentaryrotbutton) | class | CRotButton | 14 |
+| [CMotorController](#cmotorcontroller) | class |  | 4 |
+| [CMovementStatsProperty](#cmovementstatsproperty) | class |  | 2 |
 | [CMoverPathNode](#cmoverpathnode) | class | CPathNode | 5 |
 | [CMultiLightProxy](#cmultilightproxy) | class | CLogicalEntity | 8 |
 | [CMultiSource](#cmultisource) | class | CLogicalEntity | 5 |
 | [CMultiplayRules](#cmultiplayrules) | class | CGameRules | 0 |
+| [CMultiplayer_Expresser](#cmultiplayer_expresser) | class | CAI_ExpresserWithFollowup | 1 |
+| [CNMEventPulseState_t](#cnmeventpulsestate_t) | class |  | 1 |
 | [CNavSpaceInfo](#cnavspaceinfo) | class | CPointEntity | 0 |
+| [CNavVolumeBreadthFirstSearch](#cnavvolumebreadthfirstsearch) | class | CNavVolumeCalculatedVector | 2 |
+| [CNavVolumeCalculatedVector](#cnavvolumecalculatedvector) | class | CNavVolume | 0 |
+| [CNavVolumeMarkupVolume](#cnavvolumemarkupvolume) | class | CNavVolume | 0 |
 | [CNavWalkable](#cnavwalkable) | class | CPointEntity | 0 |
+| [CNetworkOriginCellCoordQuantizedVector](#cnetworkorigincellcoordquantizedvector) | class |  | 7 |
+| [CNetworkOriginCellCoordQuantizedVectorWS](#cnetworkorigincellcoordquantizedvectorws) | class |  | 7 |
+| [CNetworkOriginQuantizedVector](#cnetworkoriginquantizedvector) | class |  | 3 |
+| [CNetworkOriginQuantizedVectorWS](#cnetworkoriginquantizedvectorws) | class |  | 3 |
+| [CNetworkTransmitComponent](#cnetworktransmitcomponent) | class |  | 1 |
+| [CNetworkVelocityVector](#cnetworkvelocityvector) | class |  | 3 |
+| [CNetworkViewOffsetVector](#cnetworkviewoffsetvector) | class |  | 3 |
 | [CNetworkedSequenceOperation](#cnetworkedsequenceoperation) | class |  | 8 |
+| [CNmAimCSNode::CDefinition](#cnmaimcsnodecdefinition) | class | CNmPassthroughNode::CDefinition | 11 |
+| [CNmAimCSTask](#cnmaimcstask) | class | CNmPoseTask | 0 |
+| [CNmEventConsumer](#cnmeventconsumer) | class |  | 0 |
+| [CNmEventConsumerAttributes](#cnmeventconsumerattributes) | class | CNmEventConsumer | 0 |
+| [CNmEventConsumerLegacy](#cnmeventconsumerlegacy) | class | CNmEventConsumer | 0 |
+| [CNmEventConsumerParticle](#cnmeventconsumerparticle) | class | CNmEventConsumer | 0 |
+| [CNmEventConsumerPulse](#cnmeventconsumerpulse) | class | CNmEventConsumer | 0 |
+| [CNmEventConsumerSound](#cnmeventconsumersound) | class | CNmEventConsumer | 0 |
+| [CNmSnapWeaponNode::CDefinition](#cnmsnapweaponnodecdefinition) | class | CNmPassthroughNode::CDefinition | 3 |
+| [CNmSnapWeaponTask](#cnmsnapweapontask) | class | CNmPoseTask | 0 |
 | [CNullEntity](#cnullentity) | class | CBaseEntity | 0 |
 | [COmniLight](#comnilight) | class | CBarnLight | 3 |
 | [COrnamentProp](#cornamentprop) | class | CDynamicProp | 1 |
@@ -442,6 +525,7 @@ nav_exclude: true
 | [CPathParticleRope](#cpathparticlerope) | class | CBaseEntity | 16 |
 | [CPathParticleRopeAlias_path_particle_rope_clientside](#cpathparticleropealias_path_particle_rope_clientside) | class | CPathParticleRope | 0 |
 | [CPathQueryComponent](#cpathquerycomponent) | class | CEntityComponent, CPathQueryUtil | 0 |
+| [CPathQueryUtil](#cpathqueryutil) | class |  | 5 |
 | [CPathSimple](#cpathsimple) | class | CBaseEntity | 3 |
 | [CPathSimpleAPI](#cpathsimpleapi) | class |  | 0 |
 | [CPathTrack](#cpathtrack) | class | CPointEntity | 10 |
@@ -465,17 +549,22 @@ nav_exclude: true
 | [CPhysTorque](#cphystorque) | class | CPhysForce | 1 |
 | [CPhysWheelConstraint](#cphyswheelconstraint) | class | CPhysConstraint | 12 |
 | [CPhysicalButton](#cphysicalbutton) | class | CBaseButton | 0 |
+| [CPhysicsBodyGameMarkup](#cphysicsbodygamemarkup) | class |  | 2 |
+| [CPhysicsBodyGameMarkupData](#cphysicsbodygamemarkupdata) | class |  | 1 |
 | [CPhysicsEntitySolver](#cphysicsentitysolver) | class | CLogicalEntity | 4 |
 | [CPhysicsProp](#cphysicsprop) | class | CBreakableProp | 42 |
 | [CPhysicsProp::CrateType_t](#cphysicspropcratetype_t) | enum |  | 2 |
 | [CPhysicsPropMultiplayer](#cphysicspropmultiplayer) | class | CPhysicsProp | 0 |
 | [CPhysicsPropOverride](#cphysicspropoverride) | class | CPhysicsProp | 0 |
 | [CPhysicsPropRespawnable](#cphysicsproprespawnable) | class | CPhysicsProp | 5 |
+| [CPhysicsShake](#cphysicsshake) | class |  | 1 |
 | [CPhysicsSpring](#cphysicsspring) | class | CBaseEntity | 9 |
 | [CPhysicsWire](#cphysicswire) | class | CBaseEntity | 1 |
 | [CPlantedC4](#cplantedc4) | class | CBaseAnimGraph, IHasAttributes | 27 |
 | [CPlantedC4_API](#cplantedc4_api) | class |  | 0 |
 | [CPlatTrigger](#cplattrigger) | class | CBaseModelEntity | 1 |
+| [CPlayerControllerComponent](#cplayercontrollercomponent) | class |  | 1 |
+| [CPlayerPawnComponent](#cplayerpawncomponent) | class |  | 2 |
 | [CPlayerPing](#cplayerping) | class | CBaseEntity | 5 |
 | [CPlayerSprayDecal](#cplayerspraydecal) | class | CModelPointEntity | 15 |
 | [CPlayerVisibility](#cplayervisibility) | class | CBaseEntity | 6 |
@@ -559,28 +648,40 @@ nav_exclude: true
 | [CPulseServerFuncs](#cpulseserverfuncs) | class |  | 0 |
 | [CPulseServerFuncs_Sounds](#cpulseserverfuncs_sounds) | class |  | 0 |
 | [CPushable](#cpushable) | class | CBreakable | 0 |
+| [CRR_Response](#crr_response) | class |  | 10 |
 | [CRagdollConstraint](#cragdollconstraint) | class | CPhysConstraint | 9 |
 | [CRagdollMagnet](#cragdollmagnet) | class | CPointEntity | 4 |
 | [CRagdollManager](#cragdollmanager) | class | CBaseEntity | 4 |
 | [CRagdollProp](#cragdollprop) | class | CBaseAnimGraph | 34 |
 | [CRagdollPropAlias_physics_prop_ragdoll](#cragdollpropalias_physics_prop_ragdoll) | class | CRagdollProp | 0 |
 | [CRagdollPropAttached](#cragdollpropattached) | class | CRagdollProp | 6 |
+| [CRandSimTimer](#crandsimtimer) | class | CSimpleSimTimer | 2 |
+| [CRandStopwatch](#crandstopwatch) | class | CStopwatchBase | 2 |
 | [CRectLight](#crectlight) | class | CBarnLight | 1 |
+| [CRelativeLocation](#crelativelocation) | class |  | 4 |
+| [CRelativeTransform](#crelativetransform) | class |  | 4 |
+| [CRemapFloat](#cremapfloat) | class |  | 1 |
 | [CRenderComponent](#crendercomponent) | class | CEntityComponent | 5 |
+| [CResponseCriteriaSet](#cresponsecriteriaset) | class |  | 2 |
+| [CResponseQueue](#cresponsequeue) | class |  | 1 |
 | [CRetakeGameRules](#cretakegamerules) | class |  | 6 |
 | [CRevertSaved](#crevertsaved) | class | CModelPointEntity | 3 |
 | [CRopeKeyframe](#cropekeyframe) | class | CBaseModelEntity | 21 |
 | [CRopeKeyframeAlias_move_rope](#cropekeyframealias_move_rope) | class | CRopeKeyframe | 0 |
+| [CRopeOverlapHit](#cropeoverlaphit) | class |  | 2 |
 | [CRotButton](#crotbutton) | class | CBaseButton | 0 |
 | [CRotDoor](#crotdoor) | class | CBaseDoor | 1 |
 | [CRotatorTarget](#crotatortarget) | class | CPointEntity | 2 |
 | [CRuleBrushEntity](#crulebrushentity) | class | CRuleEntity | 0 |
 | [CRuleEntity](#cruleentity) | class | CBaseModelEntity | 1 |
 | [CRulePointEntity](#crulepointentity) | class | CRuleEntity | 1 |
+| [CSAdditionalMatchStats_t](#csadditionalmatchstats_t) | class | CSAdditionalPerRoundStats_t | 12 |
+| [CSAdditionalPerRoundStats_t](#csadditionalperroundstats_t) | class |  | 12 |
 | [CSMatchStats_t](#csmatchstats_t) | class | CSPerRoundStats_t | 21 |
 | [CSPerRoundStats_t](#csperroundstats_t) | class |  | 13 |
 | [CSceneEntity](#csceneentity) | class | CPointEntity | 65 |
 | [CSceneEntityAlias_logic_choreographed_scene](#csceneentityalias_logic_choreographed_scene) | class | CSceneEntity | 0 |
+| [CSceneEventInfo](#csceneeventinfo) | class |  | 20 |
 | [CSceneListManager](#cscenelistmanager) | class | CLogicalEntity | 3 |
 | [CScriptItem](#cscriptitem) | class | CItem | 1 |
 | [CScriptNavBlocker](#cscriptnavblocker) | class | CFuncNavBlocker | 1 |
@@ -588,23 +689,34 @@ nav_exclude: true
 | [CScriptTriggerMultiple](#cscripttriggermultiple) | class | CTriggerMultiple | 1 |
 | [CScriptTriggerOnce](#cscripttriggeronce) | class | CTriggerOnce | 1 |
 | [CScriptTriggerPush](#cscripttriggerpush) | class | CTriggerPush | 1 |
+| [CScriptUniformRandomStream](#cscriptuniformrandomstream) | class |  | 2 |
 | [CScriptedSequence](#cscriptedsequence) | class | CBaseEntity | 77 |
 | [CServerOnlyEntity](#cserveronlyentity) | class | CBaseEntity | 0 |
 | [CServerOnlyModelEntity](#cserveronlymodelentity) | class | CBaseModelEntity | 0 |
 | [CServerOnlyPointEntity](#cserveronlypointentity) | class | CServerOnlyEntity | 0 |
 | [CServerRagdollTrigger](#cserverragdolltrigger) | class | CBaseTrigger | 0 |
+| [CShatterGlassShard](#cshatterglassshard) | class |  | 28 |
 | [CShatterGlassShardPhysics](#cshatterglassshardphysics) | class | CBaseModelEntity | 4 |
 | [CShower](#cshower) | class | CModelPointEntity | 1 |
+| [CSimTimer](#csimtimer) | class | CSimpleSimTimer | 1 |
 | [CSimpleMarkupVolumeTagged](#csimplemarkupvolumetagged) | class | CMarkupVolumeTagged | 0 |
+| [CSimpleSimTimer](#csimplesimtimer) | class |  | 2 |
+| [CSimpleStopwatch](#csimplestopwatch) | class | CStopwatchBase | 0 |
 | [CSingleplayRules](#csingleplayrules) | class | CGameRules | 1 |
+| [CSkeletonAnimationController](#cskeletonanimationcontroller) | class | ISkeletonAnimationController | 1 |
 | [CSkeletonInstance](#cskeletoninstance) | class | CGameSceneNode | 8 |
+| [CSkillDamage](#cskilldamage) | class |  | 3 |
+| [CSkillFloat](#cskillfloat) | class |  | 1 |
+| [CSkillInt](#cskillint) | class |  | 1 |
 | [CSkyCamera](#cskycamera) | class | CBaseEntity | 4 |
 | [CSkyboxReference](#cskyboxreference) | class | CBaseEntity | 2 |
 | [CSmokeGrenade](#csmokegrenade) | class | CBaseCSGrenade | 0 |
 | [CSmokeGrenadeProjectile](#csmokegrenadeprojectile) | class | CBaseCSGrenadeProjectile | 12 |
+| [CSmoothFunc](#csmoothfunc) | class |  | 5 |
 | [CSoundAreaEntityBase](#csoundareaentitybase) | class | CBaseEntity | 3 |
 | [CSoundAreaEntityOrientedBox](#csoundareaentityorientedbox) | class | CSoundAreaEntityBase | 2 |
 | [CSoundAreaEntitySphere](#csoundareaentitysphere) | class | CSoundAreaEntityBase | 1 |
+| [CSoundEnvelope](#csoundenvelope) | class |  | 4 |
 | [CSoundEventAABBEntity](#csoundeventaabbentity) | class | CSoundEventEntity | 2 |
 | [CSoundEventConeEntity](#csoundeventconeentity) | class | CSoundEventEntity | 5 |
 | [CSoundEventEntity](#csoundevententity) | class | CBaseEntity | 14 |
@@ -622,13 +734,19 @@ nav_exclude: true
 | [CSoundOpvarSetPathCornerEntity](#csoundopvarsetpathcornerentity) | class | CSoundOpvarSetPointEntity | 4 |
 | [CSoundOpvarSetPointBase](#csoundopvarsetpointbase) | class | CBaseEntity | 11 |
 | [CSoundOpvarSetPointEntity](#csoundopvarsetpointentity) | class | CSoundOpvarSetPointBase | 24 |
+| [CSoundPatch](#csoundpatch) | class |  | 13 |
 | [CSoundStackSave](#csoundstacksave) | class | CLogicalEntity | 1 |
 | [CSplineConstraint](#csplineconstraint) | class | CPhysConstraint | 15 |
 | [CSpotlightEnd](#cspotlightend) | class | CBaseModelEntity | 4 |
 | [CSprite](#csprite) | class | CBaseModelEntity | 24 |
 | [CSpriteAlias_env_glow](#cspritealias_env_glow) | class | CSprite | 0 |
 | [CSpriteOriented](#cspriteoriented) | class | CSprite | 0 |
+| [CStopwatch](#cstopwatch) | class | CStopwatchBase | 1 |
+| [CStopwatchBase](#cstopwatchbase) | class | CSimpleSimTimer | 1 |
+| [CTakeDamageInfo](#ctakedamageinfo) | class |  | 22 |
+| [CTakeDamageResult](#ctakedamageresult) | class |  | 15 |
 | [CTakeDamageResultAPI](#ctakedamageresultapi) | class |  | 0 |
+| [CTakeDamageSummaryScopeGuard](#ctakedamagesummaryscopeguard) | class |  | 1 |
 | [CTankTargetChange](#ctanktargetchange) | class | CPointEntity | 2 |
 | [CTankTrainAI](#ctanktrainai) | class | CPointEntity | 7 |
 | [CTeam](#cteam) | class | CBaseEntity | 4 |
@@ -640,7 +758,9 @@ nav_exclude: true
 | [CTestPulseIO::FloatStringArgs_t](#ctestpulseiofloatstringargs_t) | class |  | 2 |
 | [CTestPulseIO::ThreeStringArgs_t](#ctestpulseiothreestringargs_t) | class |  | 3 |
 | [CTestPulseIOAPI](#ctestpulseioapi) | class |  | 0 |
+| [CTestPulseIOComponent](#ctestpulseiocomponent) | class |  | 2 |
 | [CTestPulseIOComponent_API](#ctestpulseiocomponent_api) | class |  | 0 |
+| [CTestPulseIOComponent_Derived](#ctestpulseiocomponent_derived) | class | CTestPulseIOComponent | 0 |
 | [CTestPulseIOComponent_DerivedAPI](#ctestpulseiocomponent_derivedapi) | class |  | 0 |
 | [CTextureBasedAnimatable](#ctexturebasedanimatable) | class | CBaseModelEntity | 8 |
 | [CTimeline](#ctimeline) | class | IntervalTimer | 7 |
@@ -675,6 +795,8 @@ nav_exclude: true
 | [CTriggerSoundscape](#ctriggersoundscape) | class | CBaseTrigger | 3 |
 | [CTriggerTeleport](#ctriggerteleport) | class | CBaseTrigger | 4 |
 | [CTriggerVolume](#ctriggervolume) | class | CBaseModelEntity | 2 |
+| [CVectorExponentialMovingAverage](#cvectorexponentialmovingaverage) | class |  | 0 |
+| [CVectorMovingAverage](#cvectormovingaverage) | class |  | 0 |
 | [CVoteController](#cvotecontroller) | class | CBaseEntity | 14 |
 | [CWaterBullet](#cwaterbullet) | class | CBaseAnimGraph | 0 |
 | [CWeaponAWP](#cweaponawp) | class | CCSWeaponBaseGun | 0 |
@@ -712,31 +834,307 @@ nav_exclude: true
 | [CWeaponUSPSilencer](#cweaponuspsilencer) | class | CCSWeaponBaseGun | 0 |
 | [CWeaponXM1014](#cweaponxm1014) | class | CCSWeaponBaseShotgun | 0 |
 | [CWorld](#cworld) | class | CBaseModelEntity | 0 |
+| [CWorldCompositionChunkReferenceElement_t](#cworldcompositionchunkreferenceelement_t) | class |  | 2 |
+| [CodeGenAABB_t](#codegenaabb_t) | class |  | 2 |
+| [ConstraintSoundInfo](#constraintsoundinfo) | class |  | 10 |
 | [CountdownTimer](#countdowntimer) | class |  | 4 |
+| [DebugDrawBoneTransforms_t](#debugdrawbonetransforms_t) | class | DebugSnapshotBaseStructuredData_t | 1 |
+| [DebugSnapshotBaseStructuredData_t](#debugsnapshotbasestructureddata_t) | class |  | 0 |
+| [DecalGroupOption_t](#decalgroupoption_t) | class |  | 6 |
 | [DestructiblePartDamageRequestAPI](#destructiblepartdamagerequestapi) | class |  | 0 |
+| [DestructiblePartDamageRequest_t](#destructiblepartdamagerequest_t) | class |  | 10 |
+| [DynamicVolumeDef_t](#dynamicvolumedef_t) | class |  | 8 |
 | [EngineCountdownTimer](#enginecountdowntimer) | class |  | 3 |
 | [EntityRenderAttribute_t](#entityrenderattribute_t) | class |  | 2 |
 | [EntitySpottedState_t](#entityspottedstate_t) | class |  | 2 |
+| [ExternalAnimGraphHandle_t](#externalanimgraphhandle_t) | class |  | 1 |
 | [FilterDamageType](#filterdamagetype) | class | CBaseFilter | 1 |
 | [FilterHealth](#filterhealth) | class | CBaseFilter | 3 |
+| [FuncMoverMovementSummary_t](#funcmovermovementsummary_t) | class |  | 8 |
+| [FuncRotatorRotationSummary_t](#funcrotatorrotationsummary_t) | class |  | 2 |
+| [GAME_HEADER](#game_header) | class |  | 4 |
+| [GameAmmoTypeInfo_t](#gameammotypeinfo_t) | class | AmmoTypeInfo_t | 2 |
+| [HullFlags_t](#hullflags_t) | class |  | 10 |
+| [IChoreoServices](#ichoreoservices) | class |  | 0 |
+| [IEconItemInterface](#ieconiteminterface) | class |  | 0 |
+| [IHasAttributes](#ihasattributes) | class |  | 0 |
+| [INavObstacle](#inavobstacle) | class |  | 1 |
+| [INavPathCostAreaFilter](#inavpathcostareafilter) | class |  | 0 |
+| [IRagdoll](#iragdoll) | class |  | 0 |
+| [ISkeletonAnimationController](#iskeletonanimationcontroller) | class |  | 0 |
 | [IntervalTimer](#intervaltimer) | class |  | 2 |
+| [ModelConfigHandle_t](#modelconfighandle_t) | class |  | 1 |
+| [ParticleIndex_t](#particleindex_t) | class |  | 1 |
+| [ParticleNode_t](#particlenode_t) | class |  | 7 |
+| [PathMoverEntitySpawn](#pathmoverentityspawn) | class |  | 2 |
+| [PhysBlockHeader_t](#physblockheader_t) | class |  | 2 |
+| [PhysObjectHeader_t](#physobjectheader_t) | class |  | 8 |
 | [PhysicsRagdollPose_t](#physicsragdollpose_t) | class |  | 3 |
+| [PointCameraSettings_t](#pointcamerasettings_t) | class |  | 4 |
+| [PrecipitationFilter_t](#precipitationfilter_t) | class |  | 1 |
+| [PulseScriptedSequenceData_t](#pulsescriptedsequencedata_t) | class |  | 12 |
+| [QuestProgress](#questprogress) | class |  | 0 |
+| [RagdollCreationParams_t](#ragdollcreationparams_t) | class |  | 5 |
+| [RelationshipOverride_t](#relationshipoverride_t) | class | Relationship_t | 2 |
+| [Relationship_t](#relationship_t) | class |  | 2 |
+| [ResponseContext_t](#responsecontext_t) | class |  | 3 |
+| [ResponseFollowup](#responsefollowup) | class |  | 8 |
+| [ResponseParams](#responseparams) | class |  | 3 |
+| [RotatorHistoryEntry_t](#rotatorhistoryentry_t) | class |  | 2 |
+| [RotatorQueueEntry_t](#rotatorqueueentry_t) | class |  | 2 |
+| [SAVE_HEADER](#save_header) | class |  | 7 |
+| [SPAWNGROUP_HEADER](#spawngroup_header) | class |  | 5 |
+| [SceneEventId_t](#sceneeventid_t) | class |  | 1 |
 | [SellbackPurchaseEntry_t](#sellbackpurchaseentry_t) | class |  | 5 |
 | [SequenceHistory_t](#sequencehistory_t) | class |  | 6 |
 | [ServerAuthoritativeWeaponSlot_t](#serverauthoritativeweaponslot_t) | class |  | 3 |
+| [SimpleConstraintSoundProfile](#simpleconstraintsoundprofile) | class |  | 5 |
+| [SoundCommand_t](#soundcommand_t) | class |  | 4 |
+| [SoundOpvarTraceResult_t](#soundopvartraceresult_t) | class |  | 3 |
+| [SoundeventPathCornerPairNetworked_t](#soundeventpathcornerpairnetworked_t) | class |  | 5 |
 | [SpawnPoint](#spawnpoint) | class | CServerOnlyPointEntity | 3 |
 | [SpawnPoint_API](#spawnpoint_api) | class |  | 0 |
+| [SummaryTakeDamageInfo_t](#summarytakedamageinfo_t) | class |  | 4 |
 | [VPhysicsCollisionAttribute_t](#vphysicscollisionattribute_t) | class |  | 11 |
+| [VelocitySampler](#velocitysampler) | class |  | 3 |
 | [ViewAngleServerChange_t](#viewangleserverchange_t) | class |  | 3 |
+| [WaterWheelDrag_t](#waterwheeldrag_t) | class |  | 2 |
+| [WaterWheelFrictionScale_t](#waterwheelfrictionscale_t) | class |  | 2 |
 | [WeaponPurchaseCount_t](#weaponpurchasecount_t) | class |  | 2 |
 | [WeaponPurchaseTracker_t](#weaponpurchasetracker_t) | class |  | 1 |
+| [WrappedPhysicsJoint_t](#wrappedphysicsjoint_t) | class |  | 1 |
 | [audioparams_t](#audioparams_t) | class |  | 5 |
+| [dynpitchvol_base_t](#dynpitchvol_base_t) | class |  | 25 |
+| [dynpitchvol_t](#dynpitchvol_t) | class | dynpitchvol_base_t | 0 |
+| [entitytable_t](#entitytable_t) | class |  | 10 |
 | [fogparams_t](#fogparams_t) | class |  | 25 |
 | [fogplayerparams_t](#fogplayerparams_t) | class |  | 14 |
+| [globalentity_t](#globalentity_t) | class |  | 4 |
+| [globalentitydatabase_t](#globalentitydatabase_t) | class |  | 1 |
+| [hudtextparms_t](#hudtextparms_t) | class |  | 6 |
+| [lerpdata_t](#lerpdata_t) | class |  | 6 |
+| [levellist_t](#levellist_t) | class |  | 5 |
+| [locksound_t](#locksound_t) | class |  | 3 |
+| [magnetted_objects_t](#magnetted_objects_t) | class |  | 1 |
+| [modifiedconvars_t](#modifiedconvars_t) | class |  | 3 |
+| [physics_save_sphere_t](#physics_save_sphere_t) | class |  | 1 |
+| [ragdoll_t](#ragdoll_t) | class |  | 5 |
+| [ragdollelement_t](#ragdollelement_t) | class |  | 4 |
+| [ragdollhierarchyjoint_t](#ragdollhierarchyjoint_t) | class |  | 2 |
 | [shard_model_desc_t](#shard_model_desc_t) | class |  | 13 |
 | [sky3dparams_t](#sky3dparams_t) | class |  | 6 |
+| [sndopvarlatchdata_t](#sndopvarlatchdata_t) | class |  | 5 |
+| [thinkfunc_t](#thinkfunc_t) | class |  | 5 |
 
 ---
+
+### AI_BaseNPCAnimGraph_DebugSnapshotData_t
+
+**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName AnimGraph`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `e_action_desired` | CGlobalSymbol |  |
+| `e_action_handshake_restart` | CGlobalSymbol |  |
+| `e_action_handshake_body_authority_current` | CGlobalSymbol |  |
+| `e_action_handshake_body_authority_desired` | CGlobalSymbol |  |
+| `e_movement_type_desired` | CGlobalSymbol |  |
+| `e_movement_handshake_restart` | CGlobalSymbol |  |
+| `e_movement_handshake_body_authority_current` | CGlobalSymbol |  |
+| `e_movement_handshake_body_authority_desired` | CGlobalSymbol |  |
+
+### AI_BaseNPC_DebugSnapshotData_t
+
+**Inherits from:** [DebugSnapshotBaseStructuredData_t](server.md#debugsnapshotbasestructureddata_t)
+
+**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Base NPC`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    DebugSnapshotBaseStructuredData_t <|-- AI_BaseNPC_DebugSnapshotData_t
+    AI_BaseNPC_DebugSnapshotData_t --> CBaseEntity
+    AI_BaseNPC_DebugSnapshotData_t *-- AI_BaseNPCAnimGraph_DebugSnapshotData_t
+    AI_BaseNPC_DebugSnapshotData_t *-- AI_Navigator_DebugSnapshotData_t
+    AI_BaseNPC_DebugSnapshotData_t *-- AI_MotorServices_DebugSnapshotData_t
+    AI_BaseNPC_DebugSnapshotData_t *-- AI_FacingServices_DebugSnapshotData_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `npc_state` | CGlobalSymbol |  |
+| `current_enemy` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+| `s_current_schedule` | CUtlString |  |
+| `s_current_task` | CGlobalSymbol |  |
+| `s_prev_schedule` | CUtlString |  |
+| `s_npc_current_movement` | CUtlString |  |
+| `s_last_task_end_location` | CUtlString |  |
+| `conditions` | CUtlVector< CGlobalSymbol > |  |
+| `anim_events` | CUtlVector< CGlobalSymbol > |  |
+| `animgraph` | [AI_BaseNPCAnimGraph_DebugSnapshotData_t](../schemas/server.md#ai_basenpcanimgraph_debugsnapshotdata_t) |  |
+| `navigator` | [AI_Navigator_DebugSnapshotData_t](../schemas/server.md#ai_navigator_debugsnapshotdata_t) |  |
+| `motorServices` | [AI_MotorServices_DebugSnapshotData_t](../schemas/server.md#ai_motorservices_debugsnapshotdata_t) |  |
+| `facingServices` | [AI_FacingServices_DebugSnapshotData_t](../schemas/server.md#ai_facingservices_debugsnapshotdata_t) |  |
+
+### AI_DefaultNPC_DebugSnapshotData_t
+
+**Inherits from:** [DebugSnapshotBaseStructuredData_t](server.md#debugsnapshotbasestructureddata_t)
+
+**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Default NPC`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    DebugSnapshotBaseStructuredData_t <|-- AI_DefaultNPC_DebugSnapshotData_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `s_npc_current_ability` | CGlobalSymbol |  |
+| `s_npc_tactic_current` | CGlobalSymbol |  |
+| `s_npc_tactic_phase` | CGlobalSymbol |  |
+| `tactic_interrupt_conditions` | CUtlVector< CGlobalSymbol > |  |
+| `path_query` | [AI_DefaultNPC_DebugSnapshotData_t](../schemas/server.md#ai_defaultnpc_debugsnapshotdata_t)::PathQuery_t |  |
+| `path_queries_speculative` | CUtlVector< [AI_DefaultNPC_DebugSnapshotData_t](../schemas/server.md#ai_defaultnpc_debugsnapshotdata_t)::PathQuery_t > |  |
+
+### AI_DefaultNPC_DebugSnapshotData_t::PathQuery_t
+
+**Metadata:** `MDebugSnapshotDataSummaryFn`, `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nInitialMovementId` | CGlobalSymbol |  |
+| `m_nCurrentMovementId` | CGlobalSymbol |  |
+| `m_nMode` | CGlobalSymbol |  |
+| `m_nType` | CGlobalSymbol |  |
+| `m_nState` | CGlobalSymbol |  |
+
+### AI_FacingServices_DebugSnapshotData_t
+
+**Metadata:** `MDebugSnapshotDataRenderFn`, `MGetKV3ClassDefaults`, `MPropertyFriendlyName Facing Services`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `npc_position` | VectorWS |  |
+| `facing_target_source` | CGlobalSymbol |  |
+| `facing_target` | VectorWS |  |
+| `schedule_facing_priority` | CGlobalSymbol |  |
+| `strafing_source` | CGlobalSymbol |  |
+| `strafing_enabled` | bool |  |
+| `movement_id` | CGlobalSymbol |  |
+
+### AI_GroundRootMotionMotor_DebugSnapshotData_t
+
+**Inherits from:** [DebugSnapshotBaseStructuredData_t](server.md#debugsnapshotbasestructureddata_t)
+
+**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Ground Root Motion Motor`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    DebugSnapshotBaseStructuredData_t <|-- AI_GroundRootMotionMotor_DebugSnapshotData_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `desired_movement_gait_set` | CGlobalSymbol |  |
+| `desired_movement_gait` | CGlobalSymbol |  |
+| `current_movement_gait_set` | CGlobalSymbol |  |
+| `current_movement_gait` | CGlobalSymbol |  |
+| `movement_setting_id` | CGlobalSymbol |  |
+| `gait_switch_blocked_reason` | CGlobalSymbol |  |
+| `b_goal_completion_allowed` | bool |  |
+| `state` | CGlobalSymbol |  |
+| `n_state_active_tick_count` | int32 |  |
+| `b_has_path` | bool |  |
+| `f_remaining_ground_path_length` | float32 |  |
+| `f_current_speed` | float32 |  |
+| `move_type` | CGlobalSymbol |  |
+| `f_forward_strafing_angle_actual` | float32 |  |
+| `f_forward_strafing_angle_desired` | float32 |  |
+| `f_current_lean` | float32 |  |
+| `f_target_lean` | float32 |  |
+| `vec_events` | CUtlVector< [AI_GroundRootMotionMotor_DebugSnapshotData_t](../schemas/server.md#ai_groundrootmotionmotor_debugsnapshotdata_t)::Event_t > |  |
+
+### AI_GroundRootMotionMotor_DebugSnapshotData_t::Event_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `description` | CUtlString |  |
+| `location` | VectorWS |  |
+
+### AI_MotorServices_DebugSnapshotData_t
+
+**Metadata:** `MDebugSnapshotDataRenderFn`, `MGetKV3ClassDefaults`, `MPropertyFriendlyName Motor Services`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `active_motor` | CGlobalSymbol |  |
+| `desired_speed` | float32 |  |
+| `motor_velocity` | Vector |  |
+| `motor_path` | CUtlVector< [AI_MotorServices_DebugSnapshotData_t](../schemas/server.md#ai_motorservices_debugsnapshotdata_t)::MotorPathWaypoint_t > |  |
+
+### AI_MotorServices_DebugSnapshotData_t::MotorPathWaypoint_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `position` | VectorWS |  |
+| `nav_type` | uint32 |  |
+| `flags` | uint32 |  |
+
+### AI_Navigator_DebugSnapshotData_t
+
+**Metadata:** `MDebugSnapshotDataRenderFn`, `MGetKV3ClassDefaults`, `MPropertyFriendlyName Navigator`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `s_movement_id` | CGlobalSymbol |  |
+| `s_movement_serial_number` | uint32 |  |
+| `s_goal_source_location` | CUtlString |  |
+| `last_waypoint_pos` | VectorWS |  |
+| `goal_location` | VectorWS |  |
+| `waypoints` | CUtlVector< [AI_Navigator_DebugSnapshotData_t](../schemas/server.md#ai_navigator_debugsnapshotdata_t)::Waypoint_t > |  |
+| `s_arrival_movement_gait_set` | CGlobalSymbol |  |
+
+### AI_Navigator_DebugSnapshotData_t::Waypoint_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `position` | VectorWS |  |
+| `nav_type` | uint32 |  |
+| `flags` | uint32 |  |
+| `is_pathcorner` | bool |  |
 
 ### ActiveModelConfig_t
 
@@ -746,6 +1144,7 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
+    ActiveModelConfig_t *-- ModelConfigHandle_t
     ActiveModelConfig_t --> CBaseModelEntity
 ```
 
@@ -753,10 +1152,64 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_Handle` | ModelConfigHandle_t |  |
+| `m_Handle` | [ModelConfigHandle_t](../schemas/server.md#modelconfighandle_t) |  |
 | `m_Name` | CUtlSymbolLarge |  |
 | `m_AssociatedEntities` | CNetworkUtlVectorBase< CHandle< [CBaseModelEntity](../schemas/server.md#cbasemodelentity) > > |  |
 | `m_AssociatedEntityNames` | CNetworkUtlVectorBase< CUtlSymbolLarge > |  |
+
+### ActorMapping_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    ActorMapping_t --> CBaseEntity
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_sActorName` | CUtlString |  |
+| `m_hEntity` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+
+### AmmoIndex_t
+
+**Metadata:** `MIsBoxedIntegerType`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Value` | int8 |  |
+
+### AmmoTypeInfo_t
+
+**Derived by:** [GameAmmoTypeInfo_t](server.md#gameammotypeinfo_t)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    AmmoTypeInfo_t <|-- GameAmmoTypeInfo_t
+    AmmoTypeInfo_t *-- CRangeInt
+    AmmoTypeInfo_t *-- AmmoFlags_t
+    AmmoTypeInfo_t *-- CRangeFloat
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nMaxCarry` | int32 |  |
+| `m_nSplashSize` | [CRangeInt](../schemas/tier2.md#crangeint) |  |
+| `m_nFlags` | [AmmoFlags_t](../schemas/!GlobalTypes.md#ammoflags_t) |  |
+| `m_flMass` | float32 |  |
+| `m_flSpeed` | [CRangeFloat](../schemas/tier2.md#crangefloat) |  |
 
 ### AnimGraph2SerializedPoseRecipeSlot_t
 
@@ -765,6 +1218,17 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_topology` | CUtlBinaryBlock | `MNotSaved` |
+
+### AutoRoomDoorwayPairs_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `vP1` | VectorWS |  |
+| `vP2` | VectorWS |  |
 
 ### CAI_ChangeHintGroup
 
@@ -786,6 +1250,53 @@ classDiagram
 | `m_strSearchName` | CUtlSymbolLarge |  |
 | `m_strNewHintGroup` | CUtlSymbolLarge |  |
 | `m_flRadius` | float32 |  |
+
+### CAI_Expresser
+
+**Derived by:** [CAI_ExpresserWithFollowup](server.md#cai_expresserwithfollowup)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CAI_Expresser <|-- CAI_ExpresserWithFollowup
+    CAI_Expresser *-- GameTime_t
+    CAI_Expresser --> CBaseModelEntity
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_conceptCooldowns` | CUtlDict< [GameTime_t](../schemas/entity2.md#gametime_t) > |  |
+| `m_ruleCooldowns` | CUtlDict< [GameTime_t](../schemas/entity2.md#gametime_t) > |  |
+| `m_flStopTalkTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_flStopTalkTimeWithoutDelay` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_flQueuedSpeechTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_flBlockedTalkTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_voicePitch` | int32 |  |
+| `m_flLastTimeAcceptedSpeak` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_bAllowSpeakingInterrupts` | bool |  |
+| `m_bConsiderSceneInvolvementAsSpeech` | bool |  |
+| `m_bSceneEntityDisabled` | bool |  |
+| `m_nLastSpokenPriority` | int32 |  |
+| `m_pOuter` | [CBaseModelEntity](../schemas/server.md#cbasemodelentity)* | `MNotSaved` |
+
+### CAI_ExpresserWithFollowup
+
+**Inherits from:** [CAI_Expresser](server.md#cai_expresser)
+
+**Derived by:** [CMultiplayer_Expresser](server.md#cmultiplayer_expresser)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CAI_Expresser <|-- CAI_ExpresserWithFollowup
+    CAI_ExpresserWithFollowup <|-- CMultiplayer_Expresser
+```
 
 ### CAK47
 
@@ -830,6 +1341,64 @@ classDiagram
 | `m_sSourceEntName` | CUtlSymbolLarge |  |
 | `m_hSoundSource` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > | `MNotSaved` |
 | `m_nSoundSourceEntIndex` | CEntityIndex | `MNotSaved` |
+
+### CAnimGraph2InstancePtr
+
+### CAnimGraphControllerBase
+
+**Derived by:** [CBaseAnimGraphDestructibleParts_GraphController](server.md#cbaseanimgraphdestructibleparts_graphcontroller), [CCS2ChickenGraphController](server.md#ccs2chickengraphcontroller), [CCS2UIPawnGraphController](client.md#ccs2uipawngraphcontroller), [CCS2WeaponGraphController](client.md#ccs2weapongraphcontroller), [CChoreo_GraphController](server.md#cchoreo_graphcontroller), [CEmptyGraphController](server.md#cemptygraphcontroller)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CAnimGraphControllerBase <|-- CBaseAnimGraphDestructibleParts_GraphController
+    CAnimGraphControllerBase <|-- CCS2ChickenGraphController
+    CAnimGraphControllerBase <|-- CCS2UIPawnGraphController
+    CAnimGraphControllerBase <|-- CChoreo_GraphController
+    CAnimGraphControllerBase <|-- CEmptyGraphController
+    CAnimGraphControllerBase <|-- CCS2WeaponGraphController
+    CAnimGraphControllerBase *-- ExternalAnimGraphHandle_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_hExternalGraph` | [ExternalAnimGraphHandle_t](../schemas/server.md#externalanimgraphhandle_t) |  |
+
+### CAnimGraphControllerManager
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CAnimGraphControllerManager --> CAnimGraphControllerBase
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_controllers` | CUtlVector< [CAnimGraphControllerBase](../schemas/server.md#canimgraphcontrollerbase)* > |  |
+| `m_bGraphBindingsCreated` | bool |  |
+
+### CAnimGraphControllerPtr
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CAnimGraphControllerPtr --> CAnimGraphControllerBase
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_pController` | [CAnimGraphControllerBase](../schemas/server.md#canimgraphcontrollerbase)* |  |
 
 ### CAttributeContainer
 
@@ -917,7 +1486,10 @@ classDiagram
     CEntityInstance <|-- CBaseEntity
     CBarnLight <|-- COmniLight
     CBarnLight <|-- CRectLight
+    CBarnLight *-- GameTime_t
     CBarnLight --> CBaseModelEntity
+    CBarnLight *-- CEntityIOOutput
+    CBarnLight *-- InfoForResourceTypeCTextureBase
 ```
 
 **Fields:**
@@ -938,12 +1510,12 @@ classDiagram
 | `m_flLuminaireSize` | float32 |  |
 | `m_flLuminaireAnisotropy` | float32 |  |
 | `m_LightStyleString` | CUtlString |  |
-| `m_flLightStyleStartTime` | GameTime_t |  |
+| `m_flLightStyleStartTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_QueuedLightStyleStrings` | CNetworkUtlVectorBase< CUtlString > |  |
 | `m_LightStyleEvents` | CNetworkUtlVectorBase< CUtlString > |  |
 | `m_LightStyleTargets` | CNetworkUtlVectorBase< CHandle< [CBaseModelEntity](../schemas/server.md#cbasemodelentity) > > |  |
-| `m_StyleEvent` | CEntityIOOutput[4] |  |
-| `m_hLightCookie` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
+| `m_StyleEvent` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput)[4] |  |
+| `m_hLightCookie` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
 | `m_flShape` | float32 |  |
 | `m_flSoftX` | float32 |  |
 | `m_flSoftY` | float32 |  |
@@ -1050,6 +1622,11 @@ classDiagram
     CBaseAnimGraph <|-- CPointCommentaryNode
     CBaseAnimGraph <|-- CRagdollProp
     CBaseAnimGraph <|-- CWaterBullet
+    CBaseAnimGraph *-- CAnimGraphControllerManager
+    CBaseAnimGraph *-- CAnimGraphControllerPtr
+    CBaseAnimGraph *-- CEntityIOOutput
+    CBaseAnimGraph --> IChoreoServices
+    CBaseAnimGraph --> IPhysicsRagdollControl
     CBaseAnimGraph *-- PhysicsRagdollPose_t
 ```
 
@@ -1057,17 +1634,17 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_graphControllerManager` | CAnimGraphControllerManager |  |
-| `m_pMainGraphController` | CAnimGraphControllerPtr |  |
+| `m_graphControllerManager` | [CAnimGraphControllerManager](../schemas/server.md#canimgraphcontrollermanager) |  |
+| `m_pMainGraphController` | [CAnimGraphControllerPtr](../schemas/server.md#canimgraphcontrollerptr) |  |
 | `m_bInitiallyPopulateInterpHistory` | bool |  |
 | `m_OnLayerCycleUpdated` | CEntityOutputTemplate< float32 > |  |
-| `m_OnExternalChoreoGraphChanged` | CEntityIOOutput |  |
-| `m_pChoreoServices` | IChoreoServices* | `MKV3TransferSaveOpsForField` |
+| `m_OnExternalChoreoGraphChanged` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_pChoreoServices` | [IChoreoServices](../schemas/server.md#ichoreoservices)* | `MKV3TransferSaveOpsForField` |
 | `m_bAnimGraphUpdateEnabled` | bool |  |
 | `m_bAnimationUpdateScheduled` | bool | `MNotSaved` |
 | `m_vecForce` | Vector | `MNotSaved` |
 | `m_nForceBone` | int32 | `MNotSaved` |
-| `m_pRagdollControl` | IPhysicsRagdollControl* | `MPhysPtr` |
+| `m_pRagdollControl` | [IPhysicsRagdollControl](../schemas/vphysics2.md#iphysicsragdollcontrol)* | `MPhysPtr` |
 | `m_RagdollPose` | [PhysicsRagdollPose_t](../schemas/server.md#physicsragdollpose_t) |  |
 | `m_bRagdollEnabled` | bool |  |
 | `m_bRagdollClientSide` | bool | `MNotSaved` |
@@ -1091,7 +1668,7 @@ classDiagram
 
 ### CBaseAnimGraphController
 
-**Inherits from:** CSkeletonAnimationController
+**Inherits from:** [CSkeletonAnimationController](server.md#cskeletonanimationcontroller)
 
 **Metadata:** `MGetKV3ClassDefaults`
 
@@ -1100,7 +1677,16 @@ classDiagram
 ```mermaid
 classDiagram
     CSkeletonAnimationController <|-- CBaseAnimGraphController
+    ISkeletonAnimationController <|-- CSkeletonAnimationController
+    CBaseAnimGraphController *-- AnimationAlgorithm_t
+    CBaseAnimGraphController *-- ExternalAnimGraphHandle_t
     CBaseAnimGraphController --> CBaseAnimGraph
+    CBaseAnimGraphController *-- HSequence
+    CBaseAnimGraphController *-- GameTime_t
+    CBaseAnimGraphController *-- AnimLoopMode_t
+    CBaseAnimGraphController *-- SequenceFinishNotifyState_t
+    CBaseAnimGraphController *-- GameTick_t
+    CBaseAnimGraphController *-- InfoForResourceTypeCNmGraphDefinition
     CBaseAnimGraphController *-- AnimGraph2SerializedPoseRecipeSlot_t
 ```
 
@@ -1108,37 +1694,63 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_nAnimationAlgorithm` | AnimationAlgorithm_t |  |
-| `m_nNextExternalGraphHandle` | ExternalAnimGraphHandle_t |  |
+| `m_nAnimationAlgorithm` | [AnimationAlgorithm_t](../schemas/!GlobalTypes.md#animationalgorithm_t) |  |
+| `m_nNextExternalGraphHandle` | [ExternalAnimGraphHandle_t](../schemas/server.md#externalanimgraphhandle_t) |  |
 | `m_vecSecondarySkeletonSlotIDs` | CNetworkUtlVectorBase< CGlobalSymbol > |  |
 | `m_vecSecondarySkeletons` | CNetworkUtlVectorBase< CHandle< [CBaseAnimGraph](../schemas/server.md#cbaseanimgraph) > > |  |
 | `m_nSecondarySkeletonMasterCount` | int32 |  |
 | `m_flSoundSyncTime` | float32 |  |
 | `m_nActiveIKChainMask` | uint32 |  |
-| `m_hSequence` | HSequence |  |
-| `m_flSeqStartTime` | GameTime_t |  |
+| `m_hSequence` | [HSequence](../schemas/animationsystem.md#hsequence) |  |
+| `m_flSeqStartTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flSeqFixedCycle` | float32 |  |
-| `m_nAnimLoopMode` | AnimLoopMode_t |  |
+| `m_nAnimLoopMode` | [AnimLoopMode_t](../schemas/!GlobalTypes.md#animloopmode_t) |  |
 | `m_flPlaybackRate` | CNetworkedQuantizedFloat |  |
-| `m_nNotifyState` | SequenceFinishNotifyState_t |  |
+| `m_nNotifyState` | [SequenceFinishNotifyState_t](../schemas/!GlobalTypes.md#sequencefinishnotifystate_t) |  |
 | `m_bNetworkedAnimationInputsChanged` | bool |  |
 | `m_bNetworkedSequenceChanged` | bool |  |
 | `m_bLastUpdateSkipped` | bool |  |
 | `m_bSequenceFinished` | bool |  |
-| `m_nPrevAnimUpdateTick` | GameTick_t |  |
-| `m_hGraphDefinitionAG2` | CStrongHandle< InfoForResourceTypeCNmGraphDefinition > |  |
+| `m_nPrevAnimUpdateTick` | [GameTick_t](../schemas/entity2.md#gametick_t) |  |
+| `m_hGraphDefinitionAG2` | CStrongHandle< [InfoForResourceTypeCNmGraphDefinition](../schemas/resourcesystem.md#infoforresourcetypecnmgraphdefinition) > |  |
 | `m_SerializePoseRecipeAG2Slots` | CUtlVectorEmbeddedNetworkVar< [AnimGraph2SerializedPoseRecipeSlot_t](../schemas/server.md#animgraph2serializedposerecipeslot_t) > | `MNotSaved` |
 | `m_SerializePoseRecipeAG2Dynamic` | CNetworkUtlVectorBase< uint8 > | `MNotSaved` |
 | `m_nSerializePoseRecipeAG2ActiveSlot` | uint32 | `MNotSaved` |
 | `m_nSerializePoseRecipeVersionAG2` | int32 | `MNotSaved` |
 | `m_nServerGraphInstanceIteration` | int32 |  |
 | `m_nServerSerializationContextIteration` | int32 |  |
-| `m_primaryGraphId` | ResourceId_t |  |
-| `m_vecExternalGraphIds` | CNetworkUtlVectorBase< ResourceId_t > |  |
-| `m_vecExternalClipIds` | CNetworkUtlVectorBase< ResourceId_t > |  |
+| `m_primaryGraphId` | [ResourceId_t](../schemas/resourcefile.md#resourceid_t) |  |
+| `m_vecExternalGraphIds` | CNetworkUtlVectorBase< [ResourceId_t](../schemas/resourcefile.md#resourceid_t) > |  |
+| `m_vecExternalClipIds` | CNetworkUtlVectorBase< [ResourceId_t](../schemas/resourcefile.md#resourceid_t) > |  |
 | `m_sAnimGraph2Identifier` | CGlobalSymbol |  |
-| `m_pGraphInstanceAG2` | CAnimGraph2InstancePtr |  |
-| `m_vecExternalGraphs` | CExternalAnimGraphList |  |
+| `m_pGraphInstanceAG2` | [CAnimGraph2InstancePtr](../schemas/server.md#canimgraph2instanceptr) |  |
+| `m_vecExternalGraphs` | [CExternalAnimGraphList](../schemas/server.md#cexternalanimgraphlist) |  |
+
+### CBaseAnimGraphDestructibleParts_GraphController
+
+**Inherits from:** [CAnimGraphControllerBase](server.md#canimgraphcontrollerbase)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CAnimGraphControllerBase <|-- CBaseAnimGraphDestructibleParts_GraphController
+```
+
+### CBaseAnimGraphVariationUserData
+
+**Inherits from:** [CNmGraphVariationUserData](animlib.md#cnmgraphvariationuserdata)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CNmGraphVariationUserData <|-- CBaseAnimGraphVariationUserData
+```
 
 ### CBaseButton
 
@@ -1156,6 +1768,8 @@ classDiagram
     CEntityInstance <|-- CBaseEntity
     CBaseButton <|-- CPhysicalButton
     CBaseButton <|-- CRotButton
+    CBaseButton *-- GameTime_t
+    CBaseButton *-- CEntityIOOutput
     CBaseButton --> CBaseModelEntity
 ```
 
@@ -1174,13 +1788,13 @@ classDiagram
 | `m_bLocked` | bool |  |
 | `m_bDisabled` | bool |  |
 | `m_flSpeed` | float32 |  |
-| `m_flUseLockedTime` | GameTime_t |  |
+| `m_flUseLockedTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_bSolidBsp` | bool |  |
-| `m_OnDamaged` | CEntityIOOutput |  |
-| `m_OnPressed` | CEntityIOOutput |  |
-| `m_OnUseLocked` | CEntityIOOutput |  |
-| `m_OnIn` | CEntityIOOutput |  |
-| `m_OnOut` | CEntityIOOutput |  |
+| `m_OnDamaged` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnPressed` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnUseLocked` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnIn` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnOut` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_nState` | int32 | `MNotSaved` |
 | `m_hConstraint` | CEntityHandle |  |
 | `m_hConstraintParent` | CEntityHandle |  |
@@ -1210,6 +1824,8 @@ classDiagram
     CBaseCSGrenade <|-- CHEGrenade
     CBaseCSGrenade <|-- CMolotovGrenade
     CBaseCSGrenade <|-- CSmokeGrenade
+    CBaseCSGrenade *-- GameTime_t
+    CBaseCSGrenade *-- GameTick_t
     CBaseCSGrenade --> CCSWeaponBase
 ```
 
@@ -1222,12 +1838,12 @@ classDiagram
 | `m_bPinPulled` | bool |  |
 | `m_bJumpThrow` | bool |  |
 | `m_bThrowAnimating` | bool |  |
-| `m_fThrowTime` | GameTime_t |  |
+| `m_fThrowTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flThrowStrength` | float32 |  |
-| `m_fDropTime` | GameTime_t |  |
-| `m_fPinPullTime` | GameTime_t |  |
+| `m_fDropTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_fPinPullTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_bJustPulledPin` | bool |  |
-| `m_nNextHoldTick` | GameTick_t |  |
+| `m_nNextHoldTick` | [GameTick_t](../schemas/entity2.md#gametick_t) |  |
 | `m_flNextHoldFrac` | float32 |  |
 | `m_hSwitchToWeaponAfterThrow` | CHandle< [CCSWeaponBase](../schemas/server.md#ccsweaponbase) > |  |
 
@@ -1254,6 +1870,8 @@ classDiagram
     CBaseCSGrenadeProjectile <|-- CHEGrenadeProjectile
     CBaseCSGrenadeProjectile <|-- CMolotovProjectile
     CBaseCSGrenadeProjectile <|-- CSmokeGrenadeProjectile
+    CBaseCSGrenadeProjectile *-- InfoForResourceTypeIParticleSystemDefinition
+    CBaseCSGrenadeProjectile *-- GameTime_t
 ```
 
 **Fields:**
@@ -1263,15 +1881,15 @@ classDiagram
 | `m_vInitialPosition` | VectorWS | World-space position from which the grenade was thrown. |
 | `m_vInitialVelocity` | Vector | Initial velocity vector (world units per second) at the moment of throw. |
 | `m_nBounces` | int32 | Number of times the grenade has bounced off a surface so far. |
-| `m_nExplodeEffectIndex` | CStrongHandle< InfoForResourceTypeIParticleSystemDefinition > | Particle system definition handle for the detonation effect. |
+| `m_nExplodeEffectIndex` | CStrongHandle< [InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition) > | Particle system definition handle for the detonation effect. |
 | `m_nExplodeEffectTickBegin` | int32 | Server tick at which the explosion particle effect started. |
 | `m_vecExplodeEffectOrigin` | VectorWS | World-space position of the explosion centre. |
-| `m_flSpawnTime` | GameTime_t |  |
+| `m_flSpawnTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_unOGSExtraFlags` | uint8 |  |
 | `m_bDetonationRecorded` | bool |  |
 | `m_nItemIndex` | uint16 |  |
 | `m_vecOriginalSpawnLocation` | VectorWS |  |
-| `m_flLastBounceSoundTime` | GameTime_t |  |
+| `m_flLastBounceSoundTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_vecGrenadeSpin` | RotationVector |  |
 | `m_vecLastHitSurfaceNormal` | Vector |  |
 | `m_nTicksAtZeroVelocity` | int32 |  |
@@ -1330,6 +1948,9 @@ classDiagram
     CBaseCombatCharacter <|-- CBasePlayerPawn
     CBaseCombatCharacter <|-- CHostageExpresserShim
     CBaseCombatCharacter --> CEconWearable
+    CBaseCombatCharacter *-- RelationshipOverride_t
+    CBaseCombatCharacter *-- Hull_t
+    CBaseCombatCharacter *-- CMovementStatsProperty
 ```
 
 **Fields:**
@@ -1341,11 +1962,11 @@ classDiagram
 | `m_impactEnergyScale` | float32 |  |
 | `m_bApplyStressDamage` | bool |  |
 | `m_bDeathEventsDispatched` | bool |  |
-| `m_vecRelationships` | CUtlVector< RelationshipOverride_t > |  |
+| `m_vecRelationships` | CUtlVector< [RelationshipOverride_t](../schemas/server.md#relationshipoverride_t) > |  |
 | `m_strRelationships` | CUtlSymbolLarge |  |
-| `m_eHull` | Hull_t |  |
+| `m_eHull` | [Hull_t](../schemas/!GlobalTypes.md#hull_t) |  |
 | `m_nNavHullIdx` | uint32 |  |
-| `m_movementStats` | CMovementStatsProperty |  |
+| `m_movementStats` | [CMovementStatsProperty](../schemas/server.md#cmovementstatsproperty) |  |
 
 ### CBaseDMStart
 
@@ -1381,6 +2002,8 @@ classDiagram
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
     CBaseDoor <|-- CRotDoor
+    CBaseDoor *-- FuncDoorSpawnPos_t
+    CBaseDoor *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -1395,22 +2018,22 @@ classDiagram
 | `m_bLocked` | bool |  |
 | `m_bIgnoreDebris` | bool |  |
 | `m_bNoNPCs` | bool |  |
-| `m_eSpawnPosition` | FuncDoorSpawnPos_t |  |
+| `m_eSpawnPosition` | [FuncDoorSpawnPos_t](../schemas/!GlobalTypes.md#funcdoorspawnpos_t) |  |
 | `m_flBlockDamage` | float32 |  |
 | `m_NoiseMoving` | CGameSoundEventName |  |
 | `m_NoiseArrived` | CGameSoundEventName |  |
 | `m_NoiseMovingClosed` | CGameSoundEventName |  |
 | `m_NoiseArrivedClosed` | CGameSoundEventName |  |
 | `m_ChainTarget` | CUtlSymbolLarge |  |
-| `m_OnBlockedClosing` | CEntityIOOutput |  |
-| `m_OnBlockedOpening` | CEntityIOOutput |  |
-| `m_OnUnblockedClosing` | CEntityIOOutput |  |
-| `m_OnUnblockedOpening` | CEntityIOOutput |  |
-| `m_OnFullyClosed` | CEntityIOOutput |  |
-| `m_OnFullyOpen` | CEntityIOOutput |  |
-| `m_OnClose` | CEntityIOOutput |  |
-| `m_OnOpen` | CEntityIOOutput |  |
-| `m_OnLockedUse` | CEntityIOOutput |  |
+| `m_OnBlockedClosing` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnBlockedOpening` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnUnblockedClosing` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnUnblockedOpening` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnFullyClosed` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnFullyOpen` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnClose` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnOpen` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnLockedUse` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_bLoopMoveSound` | bool |  |
 | `m_bCreateNavObstacle` | bool |  |
 | `m_flSpeed` | float32 |  |
@@ -1495,9 +2118,15 @@ classDiagram
     CBaseEntity <|-- CTonemapController2
     CBaseEntity <|-- CVoteController
     CBaseEntity --> CBodyComponent
+    CBaseEntity *-- CNetworkTransmitComponent
+    CBaseEntity *-- GameTick_t
+    CBaseEntity *-- ResponseContext_t
+    CBaseEntity *-- TakeDamageFlags_t
+    CBaseEntity *-- EntityPlatformTypes_t
+    CBaseEntity *-- MoveCollide_t
+    CBaseEntity *-- MoveType_t
     CBaseEntity --> CBaseFilter
-    CBaseEntity --> CCollisionProperty
-    CBaseEntity --> CPulseGraphInstance_ServerEntity
+    CBaseEntity *-- GameTime_t
 ```
 
 **Fields:**
@@ -1505,15 +2134,15 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_CBodyComponent` | [CBodyComponent](../schemas/server.md#cbodycomponent)* |  |
-| `m_NetworkTransmitComponent` | CNetworkTransmitComponent |  |
+| `m_NetworkTransmitComponent` | [CNetworkTransmitComponent](../schemas/server.md#cnetworktransmitcomponent) |  |
 | `m_aThinkFunctions` | CUtlVector< thinkfunc_t > |  |
 | `m_iCurrentThinkContext` | int32 | `MNotSaved` |
-| `m_nLastThinkTick` | GameTick_t |  |
+| `m_nLastThinkTick` | [GameTick_t](../schemas/entity2.md#gametick_t) |  |
 | `m_bDisabledContextThinks` | bool |  |
 | `m_isSteadyState` | CTypedBitVec< 64 > | `MNotSaved` |
 | `m_lastNetworkChange` | float32 | `MNotSaved` |
 | `m_think` | BASEPTR |  |
-| `m_ResponseContexts` | CUtlVector< ResponseContext_t > |  |
+| `m_ResponseContexts` | CUtlVector< [ResponseContext_t](../schemas/server.md#responsecontext_t) > |  |
 | `m_iszResponseContext` | CUtlSymbolLarge |  |
 | `m_pfnTouch` | ENTITYFUNCPTR |  |
 | `m_pfnUse` | USEPTR |  |
@@ -1524,12 +2153,12 @@ classDiagram
 | `m_lifeState` | uint8 | LIFE_STATE enum: 0 = Alive, 1 = Dying, 2 = Dead, 3 = Respawnable, 4 = Discardbody. |
 | `m_flDamageAccumulator` | float32 |  |
 | `m_bTakesDamage` | bool |  |
-| `m_nTakeDamageFlags` | TakeDamageFlags_t |  |
-| `m_nPlatformType` | EntityPlatformTypes_t |  |
-| `m_MoveCollide` | MoveCollide_t |  |
-| `m_MoveType` | MoveType_t |  |
-| `m_nPreviouslySetMoveType` | MoveType_t |  |
-| `m_nActualMoveType` | MoveType_t |  |
+| `m_nTakeDamageFlags` | [TakeDamageFlags_t](../schemas/!GlobalTypes.md#takedamageflags_t) |  |
+| `m_nPlatformType` | [EntityPlatformTypes_t](../schemas/!GlobalTypes.md#entityplatformtypes_t) |  |
+| `m_MoveCollide` | [MoveCollide_t](../schemas/!GlobalTypes.md#movecollide_t) |  |
+| `m_MoveType` | [MoveType_t](../schemas/!GlobalTypes.md#movetype_t) |  |
+| `m_nPreviouslySetMoveType` | [MoveType_t](../schemas/!GlobalTypes.md#movetype_t) |  |
+| `m_nActualMoveType` | [MoveType_t](../schemas/!GlobalTypes.md#movetype_t) |  |
 | `m_nWaterTouch` | uint8 | `MNotSaved` |
 | `m_nSlimeTouch` | uint8 | `MNotSaved` |
 | `m_bRestoreInHierarchy` | bool |  |
@@ -1540,7 +2169,7 @@ classDiagram
 | `m_nSubclassID` | CUtlStringToken |  |
 | `m_flAnimTime` | float32 | Floating-point timestamp of the most-recent animation update; used by the client for animation interpolation. `MKV3TransferSaveOpsForField` |
 | `m_flSimulationTime` | float32 | Floating-point timestamp of the most-recent physics simulation step; used by the client for position interpolation. `MKV3TransferSaveOpsForField` |
-| `m_flCreateTime` | GameTime_t |  |
+| `m_flCreateTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_bClientSideRagdoll` | bool |  |
 | `m_ubInterpolationFrame` | uint8 |  |
 | `m_vPrevVPhysicsUpdatePos` | VectorWS |  |
@@ -1549,12 +2178,12 @@ classDiagram
 | `m_iSentToClients` | int32 | `MNotSaved` |
 | `m_sUniqueHammerID` | CUtlString |  |
 | `m_spawnflags` | uint32 |  |
-| `m_nNextThinkTick` | GameTick_t | Server tick on which the entity's Think() function will next execute (-1 = never). |
+| `m_nNextThinkTick` | [GameTick_t](../schemas/entity2.md#gametick_t) | Server tick on which the entity's Think() function will next execute (-1 = never). |
 | `m_nSimulationTick` | int32 | `MKV3TransferSaveOpsForField` |
-| `m_OnKilled` | CEntityIOOutput |  |
+| `m_OnKilled` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_fFlags` | uint32 | Entity flags bitmask (FL_ONGROUND = 1, FL_DUCKING = 4, FL_INWATER = 8, FL_FROZEN = 0x200, etc.). |
 | `m_vecAbsVelocity` | Vector |  |
-| `m_vecVelocity` | CNetworkVelocityVector | Current world-space velocity vector of the entity. |
+| `m_vecVelocity` | [CNetworkVelocityVector](../schemas/server.md#cnetworkvelocityvector) | Current world-space velocity vector of the entity. |
 | `m_vecBaseVelocity` | Vector | Additional world-space velocity contributed by moving platforms, conveyor belts, etc. |
 | `m_nPushEnumCount` | int32 | `MNotSaved` |
 | `m_pCollision` | [CCollisionProperty](../schemas/server.md#ccollisionproperty)* | `MNotSaved` |
@@ -1575,19 +2204,19 @@ classDiagram
 | `m_bDisableLowViolence` | bool |  |
 | `m_nWaterType` | uint8 |  |
 | `m_iEFlags` | int32 |  |
-| `m_OnUser1` | CEntityIOOutput |  |
-| `m_OnUser2` | CEntityIOOutput |  |
-| `m_OnUser3` | CEntityIOOutput |  |
-| `m_OnUser4` | CEntityIOOutput |  |
+| `m_OnUser1` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnUser2` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnUser3` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnUser4` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_iInitialTeamNum` | int32 |  |
-| `m_flNavIgnoreUntilTime` | GameTime_t |  |
+| `m_flNavIgnoreUntilTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_vecAngVelocity` | QAngle |  |
 | `m_bNetworkQuantizeOriginAndAngles` | bool |  |
 | `m_bLagCompensate` | bool |  |
 | `m_pBlocker` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
 | `m_flLocalTime` | float32 |  |
 | `m_flVPhysicsUpdateLocalTime` | float32 |  |
-| `m_nBloodType` | BloodType |  |
+| `m_nBloodType` | [BloodType](../schemas/!GlobalTypes.md#bloodtype) |  |
 | `m_pPulseGraphInstance` | [CPulseGraphInstance_ServerEntity](../schemas/server.md#cpulsegraphinstance_serverentity)* | `MKV3TransferSaveOpsForField` |
 
 ### CBaseEntityAPI
@@ -1620,6 +2249,7 @@ classDiagram
     CBaseFilter <|-- FilterHealth
     CBaseFilter <|-- CFilterContext
     CBaseFilter <|-- CFilterEnemy
+    CBaseFilter *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -1627,8 +2257,8 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_bNegated` | bool |  |
-| `m_OnPass` | CEntityIOOutput |  |
-| `m_OnFail` | CEntityIOOutput |  |
+| `m_OnPass` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnFail` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CBaseGrenade
 
@@ -1645,6 +2275,8 @@ classDiagram
     C_BaseEntity <|-- C_BaseModelEntity
     CEntityInstance <|-- C_BaseEntity
     CBaseGrenade <|-- CBaseCSGrenadeProjectile
+    CBaseGrenade *-- CEntityIOOutput
+    CBaseGrenade *-- GameTime_t
     CBaseGrenade --> CCSPlayerPawn
 ```
 
@@ -1653,22 +2285,42 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_bDamageDetonating` | bool |  |
-| `m_OnPlayerPickup` | CEntityIOOutput |  |
-| `m_OnExplode` | CEntityIOOutput |  |
+| `m_OnPlayerPickup` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnExplode` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_bHasWarnedAI` | bool |  |
 | `m_bIsSmokeGrenade` | bool |  |
 | `m_bIsLive` | bool |  |
 | `m_DmgRadius` | float32 |  |
-| `m_flDetonateTime` | GameTime_t |  |
+| `m_flDetonateTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flWarnAITime` | float32 |  |
 | `m_flDamage` | float32 |  |
 | `m_iszBounceSound` | CUtlSymbolLarge |  |
 | `m_ExplosionSound` | CUtlString |  |
 | `m_hThrower` | CHandle< [CCSPlayerPawn](../schemas/server.md#ccsplayerpawn) > |  |
-| `m_flNextAttack` | GameTime_t |  |
+| `m_flNextAttack` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_hOriginalThrower` | CHandle< [CCSPlayerPawn](../schemas/server.md#ccsplayerpawn) > |  |
 
 ### CBaseGrenade_API
+
+### CBaseIssue
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CBaseIssue --> CVoteController
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_szTypeString` | char[64] |  |
+| `m_szDetailsString` | char[260] |  |
+| `m_iNumYesVotes` | int32 |  |
+| `m_iNumNoVotes` | int32 |  |
+| `m_iNumPotentialVotes` | int32 |  |
+| `m_pVoteController` | [CVoteController](../schemas/server.md#cvotecontroller)* |  |
 
 ### CBaseModelEntity
 
@@ -1731,10 +2383,13 @@ classDiagram
     CBaseModelEntity --> CRenderComponent
     CBaseModelEntity *-- CHitboxComponent
     CBaseModelEntity --> CChoreoComponent
+    CBaseModelEntity *-- HitGroup_t
     CBaseModelEntity --> CDestructiblePartsComponent
+    CBaseModelEntity *-- GameTime_t
+    CBaseModelEntity *-- CEntityIOOutput
+    CBaseModelEntity *-- RenderMode_t
+    CBaseModelEntity *-- RenderFx_t
     CBaseModelEntity *-- EntityRenderAttribute_t
-    CBaseModelEntity *-- CCollisionProperty
-    CBaseModelEntity *-- CGlowProperty
 ```
 
 **Fields:**
@@ -1744,11 +2399,11 @@ classDiagram
 | `m_CRenderComponent` | [CRenderComponent](../schemas/server.md#crendercomponent)* | `MNotSaved` |
 | `m_CHitboxComponent` | [CHitboxComponent](../schemas/server.md#chitboxcomponent) |  |
 | `m_pChoreoComponent` | [CChoreoComponent](../schemas/server.md#cchoreocomponent)* |  |
-| `m_nDestructiblePartInitialStateDestructed0` | HitGroup_t |  |
-| `m_nDestructiblePartInitialStateDestructed1` | HitGroup_t |  |
-| `m_nDestructiblePartInitialStateDestructed2` | HitGroup_t |  |
-| `m_nDestructiblePartInitialStateDestructed3` | HitGroup_t |  |
-| `m_nDestructiblePartInitialStateDestructed4` | HitGroup_t |  |
+| `m_nDestructiblePartInitialStateDestructed0` | [HitGroup_t](../schemas/!GlobalTypes.md#hitgroup_t) |  |
+| `m_nDestructiblePartInitialStateDestructed1` | [HitGroup_t](../schemas/!GlobalTypes.md#hitgroup_t) |  |
+| `m_nDestructiblePartInitialStateDestructed2` | [HitGroup_t](../schemas/!GlobalTypes.md#hitgroup_t) |  |
+| `m_nDestructiblePartInitialStateDestructed3` | [HitGroup_t](../schemas/!GlobalTypes.md#hitgroup_t) |  |
+| `m_nDestructiblePartInitialStateDestructed4` | [HitGroup_t](../schemas/!GlobalTypes.md#hitgroup_t) |  |
 | `m_nDestructiblePartInitialStateDestructed0_PartIndex` | int32 |  |
 | `m_nDestructiblePartInitialStateDestructed1_PartIndex` | int32 |  |
 | `m_nDestructiblePartInitialStateDestructed2_PartIndex` | int32 |  |
@@ -1761,10 +2416,10 @@ classDiagram
 | `m_bDestructiblePartInitialStateDestructed4_GenerateBreakpieces` | bool |  |
 | `m_pDestructiblePartsSystemComponent` | [CDestructiblePartsComponent](../schemas/server.md#cdestructiblepartscomponent)* |  |
 | `m_OnDestructibleHitGroupDamageLevelChanged` | CEntityOutputTemplate< [CBaseModelEntity](../schemas/server.md#cbasemodelentity)::OnDamageLevelChangedArgs_t > |  |
-| `m_flDissolveStartTime` | GameTime_t |  |
-| `m_OnIgnite` | CEntityIOOutput |  |
-| `m_nRenderMode` | RenderMode_t | RenderMode_t enum controlling transparency and rendering method (0 = Normal, 5 = Translucent, etc.). |
-| `m_nRenderFX` | RenderFx_t | RenderFx_t enum for special rendering effects (pulsing, fading, hologram, etc.). |
+| `m_flDissolveStartTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_OnIgnite` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_nRenderMode` | [RenderMode_t](../schemas/!GlobalTypes.md#rendermode_t) | RenderMode_t enum controlling transparency and rendering method (0 = Normal, 5 = Translucent, etc.). |
+| `m_nRenderFX` | [RenderFx_t](../schemas/!GlobalTypes.md#renderfx_t) | RenderFx_t enum for special rendering effects (pulsing, fading, hologram, etc.). |
 | `m_bAllowFadeInView` | bool |  |
 | `m_clrRender` | Color | RGBA tint colour multiplied onto the entity's diffuse texture. |
 | `m_vecRenderAttributes` | CUtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../schemas/server.md#entityrenderattribute_t) > |  |
@@ -1779,18 +2434,25 @@ classDiagram
 | `m_flShadowStrength` | float32 | Opacity of this entity's cast shadow (0 = no shadow, 1 = full shadow). |
 | `m_nObjectCulling` | uint8 |  |
 | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > |  |
-| `m_vecViewOffset` | CNetworkViewOffsetVector | Offset from the entity origin to the player's view position (eye height). |
+| `m_vecViewOffset` | [CNetworkViewOffsetVector](../schemas/server.md#cnetworkviewoffsetvector) | Offset from the entity origin to the player's view position (eye height). |
 | `m_bvDisabledHitGroups` | uint32[1] | `MKV3TransferSaveOpsForField` |
 
 ### CBaseModelEntity::OnDamageLevelChangedArgs_t
 
 **Metadata:** `MGetKV3ClassDefaults`
 
+**Relationships:**
+
+```mermaid
+classDiagram
+    "CBaseModelEntity::OnDamageLevelChangedArgs_t" *-- HitGroup_t
+```
+
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `nHitGroup` | HitGroup_t |  |
+| `nHitGroup` | [HitGroup_t](../schemas/!GlobalTypes.md#hitgroup_t) |  |
 | `nDamageLevel` | int32 |  |
 | `nDamageLevelsRemaining` | int32 |  |
 | `nPrevDamageLevel` | int32 |  |
@@ -1873,6 +2535,8 @@ classDiagram
     CEntityInstance <|-- CBaseEntity
     CBasePlayerController <|-- CCSPlayerController
     CBasePlayerController --> CBasePlayerPawn
+    CBasePlayerController *-- PlayerConnectedState
+    CBasePlayerController *-- ChatIgnoreType_t
 ```
 
 **Fields:**
@@ -1887,8 +2551,8 @@ classDiagram
 | `m_hSplitOwner` | CHandle< [CBasePlayerController](../schemas/server.md#cbaseplayercontroller) > | `MNotSaved` |
 | `m_hSplitScreenPlayers` | CUtlVector< CHandle< [CBasePlayerController](../schemas/server.md#cbaseplayercontroller) > > | `MNotSaved` |
 | `m_bIsHLTV` | bool |  |
-| `m_iConnected` | PlayerConnectedState | PlayerConnectedState enum – 0 = Disconnected, 1 = Connected, 2 = Connecting. `MNotSaved` |
-| `m_iMostConnected` | PlayerConnectedState | `MNotSaved` |
+| `m_iConnected` | [PlayerConnectedState](../schemas/!GlobalTypes.md#playerconnectedstate) | PlayerConnectedState enum – 0 = Disconnected, 1 = Connected, 2 = Connecting. `MNotSaved` |
+| `m_iMostConnected` | [PlayerConnectedState](../schemas/!GlobalTypes.md#playerconnectedstate) | `MNotSaved` |
 | `m_iszPlayerName` | char[128] | Display name of the player, as reported by Steam (up to 128 bytes, UTF-8). `MNotSaved` |
 | `m_szNetworkIDString` | CUtlString | `MNotSaved` |
 | `m_fLerpTime` | float32 | `MNotSaved` |
@@ -1896,7 +2560,7 @@ classDiagram
 | `m_bPredict` | bool | `MNotSaved` |
 | `m_bIsLowViolence` | bool | `MNotSaved` |
 | `m_bGamePaused` | bool | `MNotSaved` |
-| `m_iIgnoreGlobalChat` | ChatIgnoreType_t | `MNotSaved` |
+| `m_iIgnoreGlobalChat` | [ChatIgnoreType_t](../schemas/!GlobalTypes.md#chatignoretype_t) | `MNotSaved` |
 | `m_flLastPlayerTalkTime` | float32 | `MKV3TransferSaveOpsForField` |
 | `m_flLastEntitySteadyState` | float32 | `MNotSaved` |
 | `m_nAvailableEntitySteadyState` | int32 | `MNotSaved` |
@@ -1953,11 +2617,11 @@ classDiagram
 | `v_anglePrevious` | QAngle |  |
 | `m_iHideHUD` | uint32 |  |
 | `m_skybox3d` | sky3dparams_t |  |
-| `m_fTimeLastHurt` | GameTime_t |  |
-| `m_flDeathTime` | GameTime_t |  |
-| `m_fNextSuicideTime` | GameTime_t | `MNotSaved` |
+| `m_fTimeLastHurt` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_flDeathTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_fNextSuicideTime` | [GameTime_t](../schemas/entity2.md#gametime_t) | `MNotSaved` |
 | `m_fInitHUD` | bool |  |
-| `m_pExpresser` | CAI_Expresser* |  |
+| `m_pExpresser` | [CAI_Expresser](../schemas/server.md#cai_expresser)* |  |
 | `m_hController` | CHandle< [CBasePlayerController](../schemas/server.md#cbaseplayercontroller) > |  |
 | `m_hDefaultController` | CHandle< [CBasePlayerController](../schemas/server.md#cbaseplayercontroller) > |  |
 | `m_fHltvReplayDelay` | float32 | `MNotSaved` |
@@ -1967,7 +2631,7 @@ classDiagram
 
 ### CBasePlayerVData
 
-**Inherits from:** CEntitySubclassVDataBase
+**Inherits from:** [CEntitySubclassVDataBase](server.md#centitysubclassvdatabase)
 
 **Metadata:** `MGetKV3ClassDefaults`
 
@@ -1976,19 +2640,21 @@ classDiagram
 ```mermaid
 classDiagram
     CEntitySubclassVDataBase <|-- CBasePlayerVData
+    CBasePlayerVData *-- InfoForResourceTypeCModel
+    CBasePlayerVData *-- CSkillFloat
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sModelName` | CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > > | `MPropertyProvidesEditContextString` |
-| `m_sModelNameAg2Override` | CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > > | `MPropertyProvidesEditContextString` |
-| `m_flHeadDamageMultiplier` | CSkillFloat |  |
-| `m_flChestDamageMultiplier` | CSkillFloat |  |
-| `m_flStomachDamageMultiplier` | CSkillFloat |  |
-| `m_flArmDamageMultiplier` | CSkillFloat |  |
-| `m_flLegDamageMultiplier` | CSkillFloat |  |
+| `m_sModelName` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > > | `MPropertyProvidesEditContextString` |
+| `m_sModelNameAg2Override` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > > | `MPropertyProvidesEditContextString` |
+| `m_flHeadDamageMultiplier` | [CSkillFloat](../schemas/server.md#cskillfloat) |  |
+| `m_flChestDamageMultiplier` | [CSkillFloat](../schemas/server.md#cskillfloat) |  |
+| `m_flStomachDamageMultiplier` | [CSkillFloat](../schemas/server.md#cskillfloat) |  |
+| `m_flArmDamageMultiplier` | [CSkillFloat](../schemas/server.md#cskillfloat) |  |
+| `m_flLegDamageMultiplier` | [CSkillFloat](../schemas/server.md#cskillfloat) |  |
 | `m_flHoldBreathTime` | float32 | `MPropertyGroupName Water` |
 | `m_flDrowningDamageInterval` | float32 | `MPropertyDescription Seconds between drowning ticks` `MPropertyGroupName Water` |
 | `m_nDrowningDamageInitial` | int32 | `MPropertyDescription Amount of damage done on the first drowning tick (+1 each subsequent interval)` `MPropertyGroupName Water` |
@@ -2017,24 +2683,26 @@ classDiagram
     C_BaseEntity <|-- C_BaseModelEntity
     CEntityInstance <|-- C_BaseEntity
     CBasePlayerWeapon <|-- CCSWeaponBase
+    CBasePlayerWeapon *-- GameTick_t
+    CBasePlayerWeapon *-- CEntityIOOutput
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_nNextPrimaryAttackTick` | GameTick_t | Server game-tick after which the next primary fire is permitted. *Only sent to the owning player (LocalWeaponExclusive). Pair with m_flNextPrimaryAttackTickRatio for sub-tick precision.* |
+| `m_nNextPrimaryAttackTick` | [GameTick_t](../schemas/entity2.md#gametick_t) | Server game-tick after which the next primary fire is permitted. *Only sent to the owning player (LocalWeaponExclusive). Pair with m_flNextPrimaryAttackTickRatio for sub-tick precision.* |
 | `m_flNextPrimaryAttackTickRatio` | float32 | Fractional sub-tick ratio for m_nNextPrimaryAttackTick; together they encode the exact fire-rate timing. |
-| `m_nNextSecondaryAttackTick` | GameTick_t | Server game-tick after which the next secondary fire is permitted. *Only sent to the owning player (LocalWeaponExclusive).* |
+| `m_nNextSecondaryAttackTick` | [GameTick_t](../schemas/entity2.md#gametick_t) | Server game-tick after which the next secondary fire is permitted. *Only sent to the owning player (LocalWeaponExclusive).* |
 | `m_flNextSecondaryAttackTickRatio` | float32 | Fractional sub-tick ratio for m_nNextSecondaryAttackTick. |
 | `m_iClip1` | int32 | Current ammunition in the primary clip/magazine. *Serialized with the 'minusone' encoder so -1 means 'use weapon max-clip'. Sent to all clients.* |
 | `m_iClip2` | int32 | Current ammunition in the secondary clip (unused by most weapons; grenade count for grenade weapons). *Only sent to the owning player (LocalWeaponExclusive).* |
 | `m_pReserveAmmo` | int32[2] | Array of 2 reserve-ammo counts; index 0 = primary ammo type, index 1 = secondary ammo type. *Only sent to the owning player (LocalWeaponExclusive).* |
-| `m_OnPlayerUse` | CEntityIOOutput |  |
+| `m_OnPlayerUse` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CBasePlayerWeaponVData
 
-**Inherits from:** CEntitySubclassVDataBase
+**Inherits from:** [CEntitySubclassVDataBase](server.md#centitysubclassvdatabase)
 
 **Derived by:** [CCSWeaponBaseVData](client.md#ccsweaponbasevdata)
 
@@ -2046,32 +2714,38 @@ classDiagram
 classDiagram
     CEntitySubclassVDataBase <|-- CBasePlayerWeaponVData
     CBasePlayerWeaponVData <|-- CCSWeaponBaseVData
+    CBasePlayerWeaponVData *-- InfoForResourceTypeCModel
+    CBasePlayerWeaponVData *-- InfoForResourceTypeIParticleSystemDefinition
+    CBasePlayerWeaponVData *-- ItemFlagTypes_t
+    CBasePlayerWeaponVData *-- AmmoIndex_t
+    CBasePlayerWeaponVData *-- RumbleEffect_t
+    CBasePlayerWeaponVData *-- WeaponSound_t
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_szWorldModel` | CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > > | `MPropertyDescription Model used on the ground or held by an entity` `MPropertyProvidesEditContextString` `MPropertyStartGroup Visuals` |
-| `m_szWorldModelAg2Override` | CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > > | `MPropertyDescription Model used on the ground or held by an entity` `MPropertyProvidesEditContextString` |
-| `m_sToolsOnlyOwnerModelName` | CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > > | `MPropertyDescription Model used by the tools only to populate comboboxes for things like animgraph parameter pickers` |
+| `m_szWorldModel` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > > | `MPropertyDescription Model used on the ground or held by an entity` `MPropertyProvidesEditContextString` `MPropertyStartGroup Visuals` |
+| `m_szWorldModelAg2Override` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > > | `MPropertyDescription Model used on the ground or held by an entity` `MPropertyProvidesEditContextString` |
+| `m_sToolsOnlyOwnerModelName` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > > | `MPropertyDescription Model used by the tools only to populate comboboxes for things like animgraph parameter pickers` |
 | `m_bBuiltRightHanded` | bool | `MPropertyDescription Was the weapon was built right-handed?` |
 | `m_bAllowFlipping` | bool | `MPropertyDescription Allows flipping the model, regardless of whether it is built left or right handed` |
 | `m_sMuzzleAttachment` | CAttachmentNameSymbolWithStorage | `MPropertyDescription Attachment to fire bullets from` |
-| `m_szMuzzleFlashParticle` | CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > | `MPropertyDescription Effect when firing this weapon` |
+| `m_szMuzzleFlashParticle` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition) > > | `MPropertyDescription Effect when firing this weapon` |
 | `m_szMuzzleFlashParticleConfig` | CUtlString | `MPropertyAttributeEditor ParticleConfigName()` `MPropertyDescription Effect Config for Muzzle Flash - if set, will use this config specified in the particle effect, using whatever CP configuration is specified there, vdata muzzleflash attachment will be ignored` `MPropertyEditContextOverrideKey` |
-| `m_szBarrelSmokeParticle` | CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > | `MPropertyDescription Barrel smoke after firing this weapon` |
+| `m_szBarrelSmokeParticle` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition) > > | `MPropertyDescription Barrel smoke after firing this weapon` |
 | `m_nMuzzleSmokeShotThreshold` | uint8 | `MPropertyDescription Barrel smoke shot threshold to create smoke` |
 | `m_flMuzzleSmokeTimeout` | float32 | `MPropertyDescription Barrel smoke shot timeout` |
 | `m_flMuzzleSmokeDecrementRate` | float32 | `MPropertyDescription Barrel smoke decrement rate when not firing` |
 | `m_bGenerateMuzzleLight` | bool |  |
 | `m_bLinkedCooldowns` | bool | `MPropertyDescription Should both primary and secondary attacks be cooled down together (so cooling down primary attack would cooldown both primary + secondary attacks)?` `MPropertyStartGroup Behavior` |
-| `m_iFlags` | ItemFlagTypes_t |  |
+| `m_iFlags` | [ItemFlagTypes_t](../schemas/!GlobalTypes.md#itemflagtypes_t) |  |
 | `m_iWeight` | int32 | `MPropertyDescription This value used to determine this weapon's importance in autoselection` |
 | `m_bAutoSwitchTo` | bool | `MPropertyDescription Whether this weapon is safe to automatically switch to (should be false for eg. explosives that can the player may accidentally hurt themselves with)` `MPropertyFriendlyName Safe To Auto-Switch To` |
 | `m_bAutoSwitchFrom` | bool | `MPropertyFriendlyName Safe To Auto-Switch Away From` |
-| `m_nPrimaryAmmoType` | AmmoIndex_t | `MPropertyAttributeEditor VDataChoice( scripts/ammo.vdata )` `MPropertyCustomFGDType string` `MPropertyStartGroup Ammo` |
-| `m_nSecondaryAmmoType` | AmmoIndex_t | `MPropertyAttributeEditor VDataChoice( scripts/ammo.vdata )` `MPropertyCustomFGDType string` |
+| `m_nPrimaryAmmoType` | [AmmoIndex_t](../schemas/server.md#ammoindex_t) | `MPropertyAttributeEditor VDataChoice( scripts/ammo.vdata )` `MPropertyCustomFGDType string` `MPropertyStartGroup Ammo` |
+| `m_nSecondaryAmmoType` | [AmmoIndex_t](../schemas/server.md#ammoindex_t) | `MPropertyAttributeEditor VDataChoice( scripts/ammo.vdata )` `MPropertyCustomFGDType string` |
 | `m_iMaxClip1` | int32 | `MPropertyAttributeRange 0 255` `MPropertyDescription How many bullets this gun can fire before it reloads (0 if no clip)` `MPropertyFriendlyName Primary Clip Size` |
 | `m_iMaxClip2` | int32 | `MPropertyAttributeRange 0 255` `MPropertyDescription How many secondary bullets this gun can fire before it reloads (0 if no clip)` `MPropertyFriendlyName Secondary Clip Size` |
 | `m_iDefaultClip1` | int32 | `MPropertyAttributeRange -1 255` `MPropertyDescription Primary Initial Clip (-1 means use clip size)` |
@@ -2079,11 +2753,11 @@ classDiagram
 | `m_bReserveAmmoAsClips` | bool | `MPropertyDescription Indicates whether to treat reserve ammo as clips (reloads) instead of raw bullets` |
 | `m_bTreatAsSingleClip` | bool | `MPropertyDescription Regardless of ammo position, we'll always use clip1 as where our bullets come from` |
 | `m_bKeepLoadedAmmo` | bool | `MPropertyDescription Indicates whether to keep any loaded ammo in the weapon on reload` |
-| `m_iRumbleEffect` | RumbleEffect_t | `MPropertyStartGroup UI` |
+| `m_iRumbleEffect` | [RumbleEffect_t](../schemas/!GlobalTypes.md#rumbleeffect_t) | `MPropertyStartGroup UI` |
 | `m_flDropSpeed` | float32 |  |
 | `m_iSlot` | int32 | `MPropertyDescription Which 'column' to display this weapon in the HUD` `MPropertyFriendlyName HUD Bucket` |
 | `m_iPosition` | int32 | `MPropertyDescription Which 'row' to display this weapon in the HUD` `MPropertyFriendlyName HUD Bucket Position` |
-| `m_aShootSounds` | CUtlOrderedMap< WeaponSound_t, CSoundEventName > | `MPropertyStartGroup Sounds` |
+| `m_aShootSounds` | CUtlOrderedMap< [WeaponSound_t](../schemas/!GlobalTypes.md#weaponsound_t), CSoundEventName > | `MPropertyStartGroup Sounds` |
 
 ### CBaseProp
 
@@ -2128,7 +2802,9 @@ classDiagram
     CBaseAnimGraph <|-- CBaseProp
     C_BaseModelEntity <|-- CBaseAnimGraph
     CBasePropDoor <|-- CPropDoorRotating
+    CBasePropDoor *-- DoorState_t
     CBasePropDoor --> CBaseEntity
+    CBasePropDoor *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -2139,7 +2815,7 @@ classDiagram
 | `m_hDoorList` | CUtlVector< CHandle< [CBasePropDoor](../schemas/server.md#cbasepropdoor) > > | `MNotSaved` |
 | `m_nHardwareType` | int32 |  |
 | `m_bNeedsHardware` | bool |  |
-| `m_eDoorState` | DoorState_t |  |
+| `m_eDoorState` | [DoorState_t](../schemas/!GlobalTypes.md#doorstate_t) |  |
 | `m_bLocked` | bool |  |
 | `m_bNoNPCs` | bool |  |
 | `m_closedPosition` | VectorWS |  |
@@ -2164,16 +2840,16 @@ classDiagram
 | `m_nPhysicsMaterial` | CUtlStringToken | `MNotSaved` |
 | `m_SlaveName` | CUtlSymbolLarge |  |
 | `m_hMaster` | CHandle< [CBasePropDoor](../schemas/server.md#cbasepropdoor) > |  |
-| `m_OnBlockedClosing` | CEntityIOOutput |  |
-| `m_OnBlockedOpening` | CEntityIOOutput |  |
-| `m_OnUnblockedClosing` | CEntityIOOutput |  |
-| `m_OnUnblockedOpening` | CEntityIOOutput |  |
-| `m_OnFullyClosed` | CEntityIOOutput |  |
-| `m_OnFullyOpen` | CEntityIOOutput |  |
-| `m_OnClose` | CEntityIOOutput |  |
-| `m_OnOpen` | CEntityIOOutput |  |
-| `m_OnLockedUse` | CEntityIOOutput |  |
-| `m_OnAjarOpen` | CEntityIOOutput |  |
+| `m_OnBlockedClosing` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnBlockedOpening` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnUnblockedClosing` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnUnblockedOpening` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnFullyClosed` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnFullyOpen` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnClose` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnOpen` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnLockedUse` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnAjarOpen` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CBaseToggle
 
@@ -2194,6 +2870,7 @@ classDiagram
     CBaseToggle <|-- CBaseTrigger
     CBaseToggle <|-- CFuncMoveLinear
     CBaseToggle <|-- CGunTarget
+    CBaseToggle *-- TOGGLE_STATE
     CBaseToggle --> CBaseEntity
 ```
 
@@ -2201,7 +2878,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_toggle_state` | TOGGLE_STATE |  |
+| `m_toggle_state` | [TOGGLE_STATE](../schemas/!GlobalTypes.md#toggle_state) |  |
 | `m_flMoveDistance` | float32 |  |
 | `m_flWait` | float32 |  |
 | `m_flLip` | float32 |  |
@@ -2261,6 +2938,7 @@ classDiagram
     CBaseTrigger <|-- CTriggerSndSosOpvar
     CBaseTrigger <|-- CTriggerSoundscape
     CBaseTrigger <|-- CTriggerTeleport
+    CBaseTrigger *-- CEntityIOOutput
     CBaseTrigger --> CBaseEntity
     CBaseTrigger --> CBaseFilter
 ```
@@ -2269,14 +2947,14 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnStartTouch` | CEntityIOOutput |  |
-| `m_OnStartTouchAll` | CEntityIOOutput |  |
-| `m_OnEndTouch` | CEntityIOOutput |  |
-| `m_OnEndTouchAll` | CEntityIOOutput |  |
-| `m_OnTouching` | CEntityIOOutput |  |
-| `m_OnTouchingEachEntity` | CEntityIOOutput |  |
-| `m_OnNotTouching` | CEntityIOOutput |  |
-| `m_OnTouchingChanged` | CEntityIOOutput |  |
+| `m_OnStartTouch` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnStartTouchAll` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnEndTouch` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnEndTouchAll` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnTouching` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnTouchingEachEntity` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnNotTouching` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnTouchingChanged` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_hTouchingEntities` | CUtlVector< CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > > |  |
 | `m_iFilterName` | CUtlSymbolLarge |  |
 | `m_hFilter` | CHandle< [CBaseFilter](../schemas/server.md#cbasefilter) > |  |
@@ -2300,7 +2978,11 @@ classDiagram
     CEntityInstance <|-- CBaseEntity
     CBeam <|-- CEnvBeam
     CBeam <|-- CEnvLaser
+    CBeam *-- GameTime_t
+    CBeam *-- InfoForResourceTypeIMaterial2
+    CBeam *-- BeamType_t
     CBeam --> CBaseEntity
+    CBeam *-- AttachmentHandle_t
 ```
 
 **Fields:**
@@ -2309,15 +2991,15 @@ classDiagram
 |------|------|-------------|
 | `m_flFrameRate` | float32 |  |
 | `m_flHDRColorScale` | float32 |  |
-| `m_flFireTime` | GameTime_t |  |
+| `m_flFireTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flDamage` | float32 |  |
 | `m_nNumBeamEnts` | uint8 |  |
-| `m_hBaseMaterial` | CStrongHandle< InfoForResourceTypeIMaterial2 > |  |
-| `m_nHaloIndex` | CStrongHandle< InfoForResourceTypeIMaterial2 > |  |
-| `m_nBeamType` | BeamType_t |  |
+| `m_hBaseMaterial` | CStrongHandle< [InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2) > |  |
+| `m_nHaloIndex` | CStrongHandle< [InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2) > |  |
+| `m_nBeamType` | [BeamType_t](../schemas/!GlobalTypes.md#beamtype_t) |  |
 | `m_nBeamFlags` | uint32 |  |
 | `m_hAttachEntity` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) >[10] |  |
-| `m_nAttachIndex` | AttachmentHandle_t[10] |  |
+| `m_nAttachIndex` | [AttachmentHandle_t](../schemas/modellib.md#attachmenthandle_t)[10] |  |
 | `m_fWidth` | float32 |  |
 | `m_fEndWidth` | float32 |  |
 | `m_fFadeLength` | float32 |  |
@@ -2342,6 +3024,7 @@ classDiagram
     CPointEntity <|-- CBlood
     CBaseEntity <|-- CPointEntity
     CEntityInstance <|-- CBaseEntity
+    CBlood *-- BloodType
 ```
 
 **Fields:**
@@ -2351,7 +3034,7 @@ classDiagram
 | `m_vecSprayAngles` | QAngle |  |
 | `m_vecSprayDir` | Vector |  |
 | `m_flAmount` | float32 |  |
-| `m_Color` | BloodType |  |
+| `m_Color` | [BloodType](../schemas/!GlobalTypes.md#bloodtype) |  |
 
 ### CBodyComponent
 
@@ -2369,6 +3052,7 @@ classDiagram
     CBodyComponent <|-- CBodyComponentPoint
     CBodyComponent <|-- CBodyComponentSkeletonInstance
     CBodyComponent --> CGameSceneNode
+    CBodyComponent *-- CNetworkVarChainer
 ```
 
 **Fields:**
@@ -2376,7 +3060,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_pSceneNode` | [CGameSceneNode](../schemas/server.md#cgamescenenode)* | `MNotSaved` |
-| `__m_pChainEntity` | CNetworkVarChainer | `MNotSaved` |
+| `__m_pChainEntity` | [CNetworkVarChainer](../schemas/entity2.md#cnetworkvarchainer) | `MNotSaved` |
 
 ### CBodyComponentBaseAnimGraph
 
@@ -2472,6 +3156,7 @@ classDiagram
     CBaseModelEntity <|-- CBaseToggle
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CBombTarget *-- CEntityIOOutput
     CBombTarget --> CBaseEntity
 ```
 
@@ -2479,9 +3164,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnBombExplode` | CEntityIOOutput |  |
-| `m_OnBombPlanted` | CEntityIOOutput |  |
-| `m_OnBombDefused` | CEntityIOOutput |  |
+| `m_OnBombExplode` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnBombPlanted` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnBombDefused` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_bIsBombSiteB` | bool |  |
 | `m_bIsHeistBombTarget` | bool |  |
 | `m_bBombPlantedHere` | bool |  |
@@ -2536,8 +3221,14 @@ classDiagram
     CBreakable <|-- CPhysBox
     CBreakable <|-- CPushable
     CBreakable *-- CPropDataComponent
+    CBreakable *-- Materials
     CBreakable --> CBaseEntity
+    CBreakable *-- Explosions
+    CBreakable *-- EOverrideBlockLOS_t
+    CBreakable *-- CEntityIOOutput
+    CBreakable *-- PerformanceMode_t
     CBreakable --> CBasePlayerPawn
+    CBreakable *-- GameTime_t
 ```
 
 **Fields:**
@@ -2545,21 +3236,21 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_CPropDataComponent` | [CPropDataComponent](../schemas/server.md#cpropdatacomponent) |  |
-| `m_Material` | Materials |  |
+| `m_Material` | [Materials](../schemas/!GlobalTypes.md#materials) |  |
 | `m_hBreaker` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
-| `m_Explosion` | Explosions |  |
+| `m_Explosion` | [Explosions](../schemas/!GlobalTypes.md#explosions) |  |
 | `m_iszSpawnObject` | CUtlSymbolLarge |  |
 | `m_flPressureDelay` | float32 |  |
 | `m_iMinHealthDmg` | int32 |  |
 | `m_iszPropData` | CUtlSymbolLarge |  |
 | `m_impactEnergyScale` | float32 |  |
-| `m_nOverrideBlockLOS` | EOverrideBlockLOS_t |  |
-| `m_OnStartDeath` | CEntityIOOutput |  |
-| `m_OnBreak` | CEntityIOOutput |  |
+| `m_nOverrideBlockLOS` | [EOverrideBlockLOS_t](../schemas/!GlobalTypes.md#eoverrideblocklos_t) |  |
+| `m_OnStartDeath` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnBreak` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_OnHealthChanged` | CEntityOutputTemplate< float32 > |  |
-| `m_PerformanceMode` | PerformanceMode_t |  |
+| `m_PerformanceMode` | [PerformanceMode_t](../schemas/!GlobalTypes.md#performancemode_t) |  |
 | `m_hPhysicsAttacker` | CHandle< [CBasePlayerPawn](../schemas/server.md#cbaseplayerpawn) > |  |
-| `m_flLastPhysicsInfluenceTime` | GameTime_t |  |
+| `m_flLastPhysicsInfluenceTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 
 ### CBreakableProp
 
@@ -2579,7 +3270,11 @@ classDiagram
     CBreakableProp <|-- CDynamicProp
     CBreakableProp <|-- CPhysicsProp
     CBreakableProp *-- CPropDataComponent
+    CBreakableProp *-- CEntityIOOutput
     CBreakableProp --> CBaseEntity
+    CBreakableProp *-- PerformanceMode_t
+    CBreakableProp *-- GameTime_t
+    CBreakableProp *-- BreakableContentsType_t
     CBreakableProp --> CBasePlayerPawn
 ```
 
@@ -2588,10 +3283,10 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_CPropDataComponent` | [CPropDataComponent](../schemas/server.md#cpropdatacomponent) |  |
-| `m_OnStartDeath` | CEntityIOOutput |  |
-| `m_OnBreak` | CEntityIOOutput |  |
+| `m_OnStartDeath` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnBreak` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_OnHealthChanged` | CEntityOutputTemplate< float32 > |  |
-| `m_OnTakeDamage` | CEntityIOOutput |  |
+| `m_OnTakeDamage` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_impactEnergyScale` | float32 |  |
 | `m_iMinHealthDmg` | int32 |  |
 | `m_preferredCarryAngles` | QAngle |  |
@@ -2599,9 +3294,9 @@ classDiagram
 | `m_flDefBurstScale` | float32 |  |
 | `m_vDefBurstOffset` | Vector |  |
 | `m_hBreaker` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
-| `m_PerformanceMode` | PerformanceMode_t |  |
-| `m_flPreventDamageBeforeTime` | GameTime_t |  |
-| `m_BreakableContentsType` | BreakableContentsType_t |  |
+| `m_PerformanceMode` | [PerformanceMode_t](../schemas/!GlobalTypes.md#performancemode_t) |  |
+| `m_flPreventDamageBeforeTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_BreakableContentsType` | [BreakableContentsType_t](../schemas/!GlobalTypes.md#breakablecontentstype_t) |  |
 | `m_strBreakableContentsPropGroupOverride` | CUtlString |  |
 | `m_strBreakableContentsParticleOverride` | CUtlString |  |
 | `m_bHasBreakPiecesOrCommands` | bool |  |
@@ -2614,16 +3309,27 @@ classDiagram
 | `m_explosionCustomSound` | CUtlSymbolLarge |  |
 | `m_explosionModifier` | CUtlSymbolLarge |  |
 | `m_hPhysicsAttacker` | CHandle< [CBasePlayerPawn](../schemas/server.md#cbaseplayerpawn) > |  |
-| `m_flLastPhysicsInfluenceTime` | GameTime_t |  |
+| `m_flLastPhysicsInfluenceTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flDefaultFadeScale` | float32 |  |
 | `m_hLastAttacker` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
 | `m_iszPuntSound` | CUtlSymbolLarge |  |
 | `m_bUsePuntSound` | bool |  |
 | `m_bOriginalBlockLOS` | bool |  |
 
+### CBreakableStageHelper
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nCurrentStage` | int32 |  |
+| `m_nStageCount` | int32 | `MNotSaved` |
+
 ### CBtActionAim
 
-**Inherits from:** CBtNode
+**Inherits from:** [CBtNode](server.md#cbtnode)
 
 **Relationships:**
 
@@ -2652,7 +3358,7 @@ classDiagram
 
 ### CBtActionCombatPositioning
 
-**Inherits from:** CBtNode
+**Inherits from:** [CBtNode](server.md#cbtnode)
 
 **Relationships:**
 
@@ -2673,7 +3379,7 @@ classDiagram
 
 ### CBtActionMoveTo
 
-**Inherits from:** CBtNode
+**Inherits from:** [CBtNode](server.md#cbtnode)
 
 **Relationships:**
 
@@ -2704,7 +3410,7 @@ classDiagram
 
 ### CBtActionParachutePositioning
 
-**Inherits from:** CBtNode
+**Inherits from:** [CBtNode](server.md#cbtnode)
 
 **Relationships:**
 
@@ -2720,9 +3426,36 @@ classDiagram
 |------|------|-------------|
 | `m_ActionTimer` | [CountdownTimer](../schemas/server.md#countdowntimer) |  |
 
+### CBtNode
+
+**Derived by:** [CBtActionAim](server.md#cbtactionaim), [CBtActionCombatPositioning](server.md#cbtactioncombatpositioning), [CBtActionMoveTo](server.md#cbtactionmoveto), [CBtActionParachutePositioning](server.md#cbtactionparachutepositioning), [CBtNodeComposite](server.md#cbtnodecomposite), [CBtNodeDecorator](server.md#cbtnodedecorator)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CBtNode <|-- CBtNodeComposite
+    CBtNode <|-- CBtNodeDecorator
+    CBtNode <|-- CBtActionAim
+    CBtNode <|-- CBtActionCombatPositioning
+    CBtNode <|-- CBtActionMoveTo
+    CBtNode <|-- CBtActionParachutePositioning
+```
+
+### CBtNodeComposite
+
+**Inherits from:** [CBtNode](server.md#cbtnode)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CBtNode <|-- CBtNodeComposite
+```
+
 ### CBtNodeCondition
 
-**Inherits from:** CBtNodeDecorator
+**Inherits from:** [CBtNodeDecorator](server.md#cbtnodedecorator)
 
 **Derived by:** [CBtNodeConditionInactive](server.md#cbtnodeconditioninactive)
 
@@ -2731,6 +3464,7 @@ classDiagram
 ```mermaid
 classDiagram
     CBtNodeDecorator <|-- CBtNodeCondition
+    CBtNode <|-- CBtNodeDecorator
     CBtNodeCondition <|-- CBtNodeConditionInactive
 ```
 
@@ -2750,6 +3484,7 @@ classDiagram
 classDiagram
     CBtNodeCondition <|-- CBtNodeConditionInactive
     CBtNodeDecorator <|-- CBtNodeCondition
+    CBtNode <|-- CBtNodeDecorator
     CBtNodeConditionInactive *-- CountdownTimer
 ```
 
@@ -2761,15 +3496,36 @@ classDiagram
 | `m_flSensorInactivityThresholdSeconds` | float32 |  |
 | `m_SensorInactivityTimer` | [CountdownTimer](../schemas/server.md#countdowntimer) |  |
 
+### CBtNodeDecorator
+
+**Inherits from:** [CBtNode](server.md#cbtnode)
+
+**Derived by:** [CBtNodeCondition](server.md#cbtnodecondition)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CBtNode <|-- CBtNodeDecorator
+    CBtNodeDecorator <|-- CBtNodeCondition
+```
+
 ### CBuoyancyHelper
 
 **Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CBuoyancyHelper --> IPhysicsMotionController
+```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_pController` | IPhysicsMotionController* | `MPhysPtr` |
+| `m_pController` | [IPhysicsMotionController](../schemas/vphysics2.md#iphysicsmotioncontroller)* | `MPhysPtr` |
 | `m_nFluidType` | CUtlStringToken |  |
 | `m_flFluidDensity` | float32 |  |
 | `m_flNeutrallyBuoyantGravity` | float32 |  |
@@ -2817,6 +3573,7 @@ classDiagram
     CEconEntity <|-- CBasePlayerWeapon
     CBaseAnimGraph <|-- CEconEntity
     C_BaseModelEntity <|-- CBaseAnimGraph
+    CC4 *-- GameTime_t
     CC4 *-- EntitySpottedState_t
 ```
 
@@ -2828,13 +3585,40 @@ classDiagram
 | `m_vecLastValidDroppedPosition` | VectorWS |  |
 | `m_bDoValidDroppedPositionCheck` | bool |  |
 | `m_bStartedArming` | bool |  |
-| `m_fArmedTime` | GameTime_t |  |
+| `m_fArmedTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_bBombPlacedAnimation` | bool |  |
 | `m_bIsPlantingViaUse` | bool |  |
 | `m_entitySpottedState` | [EntitySpottedState_t](../schemas/server.md#entityspottedstate_t) |  |
 | `m_nSpotRules` | int32 |  |
 | `m_bPlayedArmingBeeps` | bool[7] |  |
 | `m_bBombPlanted` | bool |  |
+
+### CCS2ChickenGraphController
+
+**Inherits from:** [CAnimGraphControllerBase](server.md#canimgraphcontrollerbase)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CAnimGraphControllerBase <|-- CCS2ChickenGraphController
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_action` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |
+| `m_bActionReset` | CAnimGraph2ParamAutoResetOptionalRef |  |
+| `m_idleVariation` | CAnimGraph2ParamOptionalRef< float32 > |  |
+| `m_runVariation` | CAnimGraph2ParamOptionalRef< float32 > |  |
+| `m_panicVariation` | CAnimGraph2ParamOptionalRef< float32 > |  |
+| `m_squatVariation` | CAnimGraph2ParamOptionalRef< float32 > |  |
+| `m_bInWater` | CAnimGraph2ParamOptionalRef< bool > |  |
+| `m_bHasActionCompletedEvent` | bool |  |
+| `m_bWaitingForCompletedEvent` | bool |  |
 
 ### CCS2PawnGraphController
 
@@ -2848,6 +3632,7 @@ classDiagram
 classDiagram
     CCS2WeaponGraphController <|-- CCS2PawnGraphController
     CAnimGraphControllerBase <|-- CCS2WeaponGraphController
+    CCS2PawnGraphController *-- CNmTarget
 ```
 
 **Fields:**
@@ -2872,8 +3657,8 @@ classDiagram
 | `m_flLadderYawBackwards` | CAnimGraph2ParamOptionalRef< float32 > |  |
 | `m_airAction` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |
 | `m_flAirHeightAboveGround` | CAnimGraph2ParamOptionalRef< float32 > |  |
-| `m_leftFootTarget` | CAnimGraph2ParamOptionalRef< CNmTarget > |  |
-| `m_rightFootTarget` | CAnimGraph2ParamOptionalRef< CNmTarget > |  |
+| `m_leftFootTarget` | CAnimGraph2ParamOptionalRef< [CNmTarget](../schemas/animlib.md#cnmtarget) > |  |
+| `m_rightFootTarget` | CAnimGraph2ParamOptionalRef< [CNmTarget](../schemas/animlib.md#cnmtarget) > |  |
 | `m_flFlashedAmount` | CAnimGraph2ParamOptionalRef< float32 > |  |
 | `m_flAimPitchAngle` | CAnimGraph2ParamOptionalRef< float32 > |  |
 | `m_flAimYawAngle` | CAnimGraph2ParamOptionalRef< float32 > |  |
@@ -2885,7 +3670,7 @@ classDiagram
 
 ### CCS2WeaponGraphController
 
-**Inherits from:** CAnimGraphControllerBase
+**Inherits from:** [CAnimGraphControllerBase](server.md#canimgraphcontrollerbase)
 
 **Derived by:** [CCS2PawnGraphController](client.md#ccs2pawngraphcontroller)
 
@@ -2937,6 +3722,7 @@ classDiagram
     CCSBot --> CCSPlayerPawn
     CCSBot --> CBaseEntity
     CCSBot *-- IntervalTimer
+    CCSBot *-- GameTime_t
 ```
 
 **Fields:**
@@ -2975,7 +3761,7 @@ classDiagram
 | `m_stillTimer` | [IntervalTimer](../schemas/server.md#intervaltimer) |  |
 | `m_bEyeAnglesUnderPathFinderControl` | bool |  |
 | `m_pathIndex` | int32 |  |
-| `m_areaEnteredTimestamp` | GameTime_t |  |
+| `m_areaEnteredTimestamp` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_repathTimer` | [CountdownTimer](../schemas/server.md#countdowntimer) |  |
 | `m_avoidFriendTimer` | [CountdownTimer](../schemas/server.md#countdowntimer) |  |
 | `m_isFriendInTheWay` | bool |  |
@@ -3030,10 +3816,10 @@ classDiagram
 | `m_targetSpotPredicted` | VectorWS |  |
 | `m_aimError` | QAngle |  |
 | `m_aimGoal` | QAngle |  |
-| `m_targetSpotTime` | GameTime_t |  |
+| `m_targetSpotTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_aimFocus` | float32 |  |
 | `m_aimFocusInterval` | float32 |  |
-| `m_aimFocusNextUpdate` | GameTime_t |  |
+| `m_aimFocusNextUpdate` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_ignoreEnemiesTimer` | [CountdownTimer](../schemas/server.md#countdowntimer) |  |
 | `m_enemy` | CHandle< [CCSPlayerPawn](../schemas/server.md#ccsplayerpawn) > |  |
 | `m_isEnemyVisible` | bool |  |
@@ -3059,7 +3845,7 @@ classDiagram
 | `m_isRapidFiring` | bool |  |
 | `m_equipTimer` | [IntervalTimer](../schemas/server.md#intervaltimer) |  |
 | `m_zoomTimer` | [CountdownTimer](../schemas/server.md#countdowntimer) |  |
-| `m_fireWeaponTimestamp` | GameTime_t |  |
+| `m_fireWeaponTimestamp` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_lookForWeaponsOnGroundTimer` | [CountdownTimer](../schemas/server.md#countdowntimer) |  |
 | `m_bIsSleeping` | bool |  |
 | `m_isEnemySniperVisible` | bool |  |
@@ -3068,11 +3854,11 @@ classDiagram
 | `m_enemyQueueCount` | uint8 |  |
 | `m_enemyQueueAttendIndex` | uint8 |  |
 | `m_isStuck` | bool |  |
-| `m_stuckTimestamp` | GameTime_t |  |
+| `m_stuckTimestamp` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_stuckSpot` | VectorWS |  |
 | `m_wiggleTimer` | [CountdownTimer](../schemas/server.md#countdowntimer) |  |
 | `m_stuckJumpTimer` | [CountdownTimer](../schemas/server.md#countdowntimer) |  |
-| `m_nextCleanupCheckTimestamp` | GameTime_t |  |
+| `m_nextCleanupCheckTimestamp` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_avgVel` | float32[10] |  |
 | `m_avgVelIndex` | int32 |  |
 | `m_avgVelCount` | int32 |  |
@@ -3306,13 +4092,14 @@ classDiagram
     CCSGameModeRules <|-- CCSGameModeRules_ArmsRace
     CCSGameModeRules <|-- CCSGameModeRules_Deathmatch
     CCSGameModeRules <|-- CCSGameModeRules_Noop
+    CCSGameModeRules *-- CNetworkVarChainer
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `__m_pChainEntity` | CNetworkVarChainer | `MNotSaved` |
+| `__m_pChainEntity` | [CNetworkVarChainer](../schemas/entity2.md#cnetworkvarchainer) | `MNotSaved` |
 
 ### CCSGameModeRules_ArmsRace
 
@@ -3340,13 +4127,14 @@ classDiagram
 ```mermaid
 classDiagram
     CCSGameModeRules <|-- CCSGameModeRules_Deathmatch
+    CCSGameModeRules_Deathmatch *-- GameTime_t
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_flDMBonusStartTime` | GameTime_t |  |
+| `m_flDMBonusStartTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flDMBonusTimeLength` | float32 |  |
 | `m_sDMBonusWeapon` | CUtlString |  |
 
@@ -3378,6 +4166,7 @@ classDiagram
     CTeamplayRules <|-- CCSGameRules
     CMultiplayRules <|-- CTeamplayRules
     CGameRules <|-- CMultiplayRules
+    CCSGameRules *-- GameTime_t
     CCSGameRules --> SpawnPoint
     CCSGameRules --> CCSGameModeRules
     CCSGameRules --> CBaseEntity
@@ -3390,8 +4179,8 @@ classDiagram
 |------|------|-------------|
 | `m_bFreezePeriod` | bool | True during the buy phase (freeze time) at the start of each round. *Players cannot move while this is true; buy menus open automatically.* |
 | `m_bWarmupPeriod` | bool | True while the pre-match warmup is active. |
-| `m_fWarmupPeriodEnd` | GameTime_t | GameTime at which the warmup period ends and the first round begins. |
-| `m_fWarmupPeriodStart` | GameTime_t | GameTime at which the current warmup period started. |
+| `m_fWarmupPeriodEnd` | [GameTime_t](../schemas/entity2.md#gametime_t) | GameTime at which the warmup period ends and the first round begins. |
+| `m_fWarmupPeriodStart` | [GameTime_t](../schemas/entity2.md#gametime_t) | GameTime at which the current warmup period started. |
 | `m_bTerroristTimeOutActive` | bool | True while the Terrorist team's tactical time-out is in progress. |
 | `m_bCTTimeOutActive` | bool | True while the Counter-Terrorist team's tactical time-out is in progress. |
 | `m_flTerroristTimeOutRemaining` | float32 | Seconds remaining in the active Terrorist time-out. |
@@ -3403,8 +4192,8 @@ classDiagram
 | `m_iFreezeTime` | int32 | Freeze-time duration in seconds (mirrors mp_freezetime convar value). |
 | `m_iRoundTime` | int32 | Round time limit in seconds (mirrors mp_roundtime_* convar value). |
 | `m_fMatchStartTime` | float32 | Unix-epoch float of when the match (not the round) began. |
-| `m_fRoundStartTime` | GameTime_t | GameTime at which the current round's freeze time ended and play started. |
-| `m_flRestartRoundTime` | GameTime_t | GameTime at which the current round will be force-restarted by the server (0 = no pending restart). |
+| `m_fRoundStartTime` | [GameTime_t](../schemas/entity2.md#gametime_t) | GameTime at which the current round's freeze time ended and play started. |
+| `m_flRestartRoundTime` | [GameTime_t](../schemas/entity2.md#gametime_t) | GameTime at which the current round will be force-restarted by the server (0 = no pending restart). |
 | `m_bGameRestart` | bool | True in the brief window between a restart being triggered and the new round spawning. |
 | `m_flGameStartTime` | float32 | GameTime at which the first live round of the match started (after all warmup/knife rounds). |
 | `m_timeUntilNextPhaseStarts` | float32 | Countdown in seconds until the next phase (round, half, overtime) begins; drives the on-screen timer. |
@@ -3431,8 +4220,8 @@ classDiagram
 | `m_szMatchStatTxt` | char[512] | Match-stats summary text displayed in the scoreboard (tournament use). |
 | `m_szTournamentPredictionsTxt` | char[512] |  |
 | `m_nTournamentPredictionsPct` | int32 |  |
-| `m_flCMMItemDropRevealStartTime` | GameTime_t | GameTime at which the post-match item-drop reveal animation begins. |
-| `m_flCMMItemDropRevealEndTime` | GameTime_t | GameTime at which the post-match item-drop reveal animation ends. |
+| `m_flCMMItemDropRevealStartTime` | [GameTime_t](../schemas/entity2.md#gametime_t) | GameTime at which the post-match item-drop reveal animation begins. |
+| `m_flCMMItemDropRevealEndTime` | [GameTime_t](../schemas/entity2.md#gametime_t) | GameTime at which the post-match item-drop reveal animation ends. |
 | `m_bIsDroppingItems` | bool | True while the post-match item-drop animation is playing. |
 | `m_bIsQuestEligible` | bool | True when the current match is eligible for operation mission progress. |
 | `m_bIsHltvActive` | bool | True when at least one GOTV/HLTV spectator slot is connected. |
@@ -3450,7 +4239,7 @@ classDiagram
 | `m_iMatchStats_PlayersAlive_CT` | int32[30] | Array of 30 values – number of CT players alive at the end of each round. |
 | `m_iMatchStats_PlayersAlive_T` | int32[30] | Array of 30 values – number of T players alive at the end of each round. |
 | `m_TeamRespawnWaveTimes` | float32[32] |  |
-| `m_flNextRespawnWave` | GameTime_t[32] |  |
+| `m_flNextRespawnWave` | [GameTime_t](../schemas/entity2.md#gametime_t)[32] |  |
 | `m_vMinimapMins` | VectorWS | World-space minimum corner of the minimap bounding box. |
 | `m_vMinimapMaxs` | VectorWS | World-space maximum corner of the minimap bounding box. |
 | `m_MinimapVerticalSectionHeights` | float32[8] | Array of 8 height values dividing the map into vertical sections for the radar's floor-switching feature. |
@@ -3461,8 +4250,8 @@ classDiagram
 | `m_iNumConsecutiveCTLoses` | int32 | Number of consecutive rounds the CT side has lost; drives the loss-bonus economy. |
 | `m_iNumConsecutiveTerroristLoses` | int32 | Number of consecutive rounds the T side has lost; drives the loss-bonus economy. |
 | `m_bHasHostageBeenTouched` | bool |  |
-| `m_flIntermissionStartTime` | GameTime_t |  |
-| `m_flIntermissionEndTime` | GameTime_t |  |
+| `m_flIntermissionStartTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_flIntermissionEndTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_bLevelInitialized` | bool |  |
 | `m_iTotalRoundsPlayed` | int32 |  |
 | `m_iUnBalancedRounds` | int32 |  |
@@ -3540,9 +4329,9 @@ classDiagram
 | `m_fAutobalanceDisplayTime` | float32 |  |
 | `m_bAllowWeaponSwitch` | bool |  |
 | `m_bRoundTimeWarningTriggered` | bool |  |
-| `m_phaseChangeAnnouncementTime` | GameTime_t |  |
+| `m_phaseChangeAnnouncementTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_fNextUpdateTeamClanNamesTime` | float32 |  |
-| `m_flLastThinkTime` | GameTime_t |  |
+| `m_flLastThinkTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_fAccumulatedRoundOffDamage` | float32 |  |
 | `m_nShorthandedBonusLastEvalRound` | int32 |  |
 | `m_nMatchAbortedEarlyReason` | int32 | Reason code for an early match abort (0 = not aborted, non-zero codes map to abandonment reasons). |
@@ -3558,7 +4347,7 @@ classDiagram
 | `m_nTTeamIntroVariant` | int32 | Variant index for the Terrorist team intro cinematic sequence. |
 | `m_nCTTeamIntroVariant` | int32 | Variant index for the CT team intro cinematic sequence. |
 | `m_bTeamIntroPeriod` | bool | True while the pre-round team-intro cinematic is playing. |
-| `m_fTeamIntroPeriodEnd` | GameTime_t |  |
+| `m_fTeamIntroPeriodEnd` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_bPlayedTeamIntroVO` | bool |  |
 | `m_iRoundEndWinnerTeam` | int32 | Team number of the team that won the most-recently ended round. |
 | `m_eRoundEndReason` | int32 | RoundEndReason_t enum describing how the round ended (bomb exploded, time ran out, all enemies eliminated, etc.). |
@@ -3713,6 +4502,37 @@ classDiagram
 
 ### CCSPlace_API
 
+### CCSPlayerAnimationState
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CCSPlayerAnimationState *-- MoveType_t
+    CCSPlayerAnimationState *-- GameTick_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_currentMoveType` | [CCSPlayerAnimationState](../schemas/server.md#ccsplayeranimationstate)::[MoveType_t](../schemas/!GlobalTypes.md#movetype_t) |  |
+| `m_groundMoveState` | [CCSPlayerAnimationState](../schemas/server.md#ccsplayeranimationstate)::GroundMoveState_t |  |
+| `m_groundActionDirection` | [CCSPlayerAnimationState](../schemas/server.md#ccsplayeranimationstate)::Direction_t |  |
+| `m_airAction` | [CCSPlayerAnimationState](../schemas/server.md#ccsplayeranimationstate)::AirAction_t |  |
+| `m_bWasOnGroundLastUpdate` | bool |  |
+| `m_bWasStationaryLastUpdate` | bool |  |
+| `m_actionStartTick` | [GameTick_t](../schemas/entity2.md#gametick_t) |  |
+| `m_staticAimTimerStartTick` | [GameTick_t](../schemas/entity2.md#gametick_t) |  |
+| `m_plantAndTurnStartTick` | [GameTick_t](../schemas/entity2.md#gametick_t) |  |
+| `m_flTurnOnSpotAngle` | float32 |  |
+| `m_flPreviousAimYaw` | float32 |  |
+| `m_flPreviousHorizontalSpeed` | float32 |  |
+| `m_flFootIKOffsetLeft` | float32 |  |
+| `m_flFootIKOffsetRight` | float32 |  |
+| `m_flWeaponDropPercentageDueToMovement` | float32 |  |
+| `m_flWeaponDropSmoothDampVelocity` | float32 |  |
+
 ### CCSPlayerBase_CameraServices
 
 **Inherits from:** [CPlayer_CameraServices](server.md#cplayer_cameraservices)
@@ -3727,6 +4547,7 @@ classDiagram
     CPlayerPawnComponent <|-- CPlayer_CameraServices
     CCSPlayerBase_CameraServices <|-- CCSObserver_CameraServices
     CCSPlayerBase_CameraServices <|-- CCSPlayer_CameraServices
+    CCSPlayerBase_CameraServices *-- GameTime_t
     CCSPlayerBase_CameraServices --> CBaseEntity
 ```
 
@@ -3736,7 +4557,7 @@ classDiagram
 |------|------|-------------|
 | `m_iFOV` | uint32 |  |
 | `m_iFOVStart` | uint32 |  |
-| `m_flFOVTime` | GameTime_t |  |
+| `m_flFOVTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flFOVRate` | float32 |  |
 | `m_hZoomOwner` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
 | `m_hTriggerFogList` | CUtlVector< CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > > |  |
@@ -3763,6 +4584,8 @@ classDiagram
     CCSPlayerController --> CCSPlayerController_InventoryServices
     CCSPlayerController --> CCSPlayerController_ActionTrackingServices
     CCSPlayerController --> CCSPlayerController_DamageServices
+    CCSPlayerController *-- GameTime_t
+    CCSPlayerController *-- QuestProgress
     CCSPlayerController --> CCSPlayerPawn
     CCSPlayerController --> CCSObserverPawn
     CCSPlayerController *-- IntervalTimer
@@ -3781,7 +4604,7 @@ classDiagram
 | `m_uiCommunicationMuteFlags` | uint32 |  |
 | `m_szCrosshairCodes` | CUtlSymbolLarge | Encoded crosshair configuration string (same format as the cl_crosshair_reticle_* convars share-code). |
 | `m_iPendingTeamNum` | uint8 | Team number the player will be moved to at the next team-change opportunity. |
-| `m_flForceTeamTime` | GameTime_t | GameTime after which team-forcing is no longer applied. |
+| `m_flForceTeamTime` | [GameTime_t](../schemas/entity2.md#gametime_t) | GameTime after which team-forcing is no longer applied. |
 | `m_iCompTeammateColor` | int32 |  |
 | `m_bEverPlayedOnTeam` | bool | True once this player has played at least one round as a non-spectator. |
 | `m_bAttemptedToGetColor` | bool |  |
@@ -3792,7 +4615,7 @@ classDiagram
 | `m_bJustBecameSpectator` | bool |  |
 | `m_bSwitchTeamsOnNextRoundReset` | bool |  |
 | `m_bRemoveAllItemsOnNextRoundReset` | bool |  |
-| `m_flLastJoinTeamTime` | GameTime_t |  |
+| `m_flLastJoinTeamTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_szClan` | CUtlSymbolLarge | Player's clan tag string, displayed next to the name in the scoreboard. |
 | `m_iCoachingTeam` | int32 | Team number this player is coaching (0 if not coaching). |
 | `m_nPlayerDominated` | uint64 | 64-bit bitmask; bit N set means this player is dominating player-slot N. |
@@ -3807,7 +4630,7 @@ classDiagram
 | `m_nEndMatchNextMapVote` | int32 | Index of the map this player has voted for in the end-of-match map vote. |
 | `m_unActiveQuestId` | uint16 | Active operation mission ID for this player (0 if none active). |
 | `m_rtActiveMissionPeriod` | uint32 |  |
-| `m_nQuestProgressReason` | QuestProgress::Reason | Reason code for the last quest-progress update sent to this player. |
+| `m_nQuestProgressReason` | [QuestProgress](../schemas/server.md#questprogress)::Reason | Reason code for the last quest-progress update sent to this player. |
 | `m_unPlayerTvControlFlags` | uint32 |  |
 | `m_iDraftIndex` | int32 |  |
 | `m_msQueuedModeDisconnectionTimestamp` | uint32 |  |
@@ -3862,8 +4685,8 @@ classDiagram
 | `m_bGaveTeamDamageWarning` | bool |  |
 | `m_bGaveTeamDamageWarningThisRound` | bool |  |
 | `m_dblLastReceivedPacketPlatFloatTime` | float64 |  |
-| `m_LastTeamDamageWarningTime` | GameTime_t |  |
-| `m_LastTimePlayerWasDisconnectedForPawnsRemove` | GameTime_t |  |
+| `m_LastTeamDamageWarningTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_LastTimePlayerWasDisconnectedForPawnsRemove` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_nSuspiciousHitCount` | uint32 |  |
 | `m_nNonSuspiciousHitStreak` | uint32 |  |
 | `m_bFireBulletsSeedSynchronized` | bool | True once the client's bullet-fire PRNG seed has been synchronised with the server. *Only sent to the owning player (LocalPlayerExclusive).* |
@@ -3872,7 +4695,7 @@ classDiagram
 
 ### CCSPlayerController_ActionTrackingServices
 
-**Inherits from:** CPlayerControllerComponent
+**Inherits from:** [CPlayerControllerComponent](server.md#cplayercontrollercomponent)
 
 **Relationships:**
 
@@ -3895,7 +4718,7 @@ classDiagram
 
 ### CCSPlayerController_DamageServices
 
-**Inherits from:** CPlayerControllerComponent
+**Inherits from:** [CPlayerControllerComponent](server.md#cplayercontrollercomponent)
 
 **Relationships:**
 
@@ -3914,7 +4737,7 @@ classDiagram
 
 ### CCSPlayerController_InGameMoneyServices
 
-**Inherits from:** CPlayerControllerComponent
+**Inherits from:** [CPlayerControllerComponent](server.md#cplayercontrollercomponent)
 
 **Relationships:**
 
@@ -3936,13 +4759,14 @@ classDiagram
 
 ### CCSPlayerController_InventoryServices
 
-**Inherits from:** CPlayerControllerComponent
+**Inherits from:** [CPlayerControllerComponent](server.md#cplayercontrollercomponent)
 
 **Relationships:**
 
 ```mermaid
 classDiagram
     CPlayerControllerComponent <|-- CCSPlayerController_InventoryServices
+    CCSPlayerController_InventoryServices *-- MedalRank_t
     CCSPlayerController_InventoryServices *-- ServerAuthoritativeWeaponSlot_t
 ```
 
@@ -3951,7 +4775,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_unMusicID` | uint16 |  |
-| `m_rank` | MedalRank_t[6] |  |
+| `m_rank` | [MedalRank_t](../schemas/!GlobalTypes.md#medalrank_t)[6] |  |
 | `m_nPersonaDataPublicLevel` | int32 |  |
 | `m_nPersonaDataPublicCommendsLeader` | int32 |  |
 | `m_nPersonaDataPublicCommendsTeacher` | int32 |  |
@@ -3989,15 +4813,22 @@ classDiagram
 
 ### CCSPlayerModernJump
 
+**Relationships:**
+
+```mermaid
+classDiagram
+    CCSPlayerModernJump *-- GameTick_t
+```
+
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_nLastActualJumpPressTick` | GameTick_t |  |
+| `m_nLastActualJumpPressTick` | [GameTick_t](../schemas/entity2.md#gametick_t) |  |
 | `m_flLastActualJumpPressFrac` | float32 |  |
-| `m_nLastUsableJumpPressTick` | GameTick_t |  |
+| `m_nLastUsableJumpPressTick` | [GameTick_t](../schemas/entity2.md#gametick_t) |  |
 | `m_flLastUsableJumpPressFrac` | float32 |  |
-| `m_nLastLandedTick` | GameTick_t |  |
+| `m_nLastLandedTick` | [GameTick_t](../schemas/entity2.md#gametick_t) |  |
 | `m_flLastLandedFrac` | float32 |  |
 | `m_flLastLandedVelocityX` | float32 |  |
 | `m_flLastLandedVelocityY` | float32 |  |
@@ -4030,8 +4861,8 @@ classDiagram
     CCSPlayerPawn --> CCSPlayer_RadioServices
     CCSPlayerPawn --> CCSPlayer_DamageReactServices
     CCSPlayerPawn --> CBaseEntity
+    CCSPlayerPawn *-- GameTime_t
     CCSPlayerPawn *-- CEconItemView
-    CCSPlayerPawn *-- EntitySpottedState_t
 ```
 
 **Fields:**
@@ -4062,14 +4893,14 @@ classDiagram
 | `m_bRetakesMVPLastRound` | bool | True if this player earned the retakes MVP award in the previous round. |
 | `m_iRetakesMVPBoostItem` | int32 | Item definition index of the bonus item awarded to the retakes MVP. |
 | `m_RetakesMVPBoostExtraUtility` | loadout_slot_t |  |
-| `m_flHealthShotBoostExpirationTime` | GameTime_t | GameTime at which the health-shot (medshot) movement speed boost expires. |
+| `m_flHealthShotBoostExpirationTime` | [GameTime_t](../schemas/entity2.md#gametime_t) | GameTime at which the health-shot (medshot) movement speed boost expires. |
 | `m_flLandingTimeSeconds` | float32 |  |
 | `m_bIsBuyMenuOpen` | bool | True while the player's buy menu is open. |
-| `m_lastLandTime` | GameTime_t |  |
+| `m_lastLandTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_bOnGroundLastTick` | bool |  |
 | `m_iPlayerLocked` | int32 |  |
-| `m_flTimeOfLastInjury` | GameTime_t | GameTime of the most-recent damage event that reduced this player's health. |
-| `m_flNextSprayDecalTime` | GameTime_t |  |
+| `m_flTimeOfLastInjury` | [GameTime_t](../schemas/entity2.md#gametime_t) | GameTime of the most-recent damage event that reduced this player's health. |
+| `m_flNextSprayDecalTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_bNextSprayDecalTimeExpedited` | bool |  |
 | `m_nRagdollDamageBone` | int32 | Bone index of the last hit that caused a ragdoll impulse. |
 | `m_vRagdollDamageForce` | Vector | World-space impulse vector applied to the ragdoll bone on death. |
@@ -4080,7 +4911,7 @@ classDiagram
 | `m_nEconGlovesChanged` | uint8 | Incremented each time the glove loadout changes, so the client can refresh the glove model. |
 | `m_qDeathEyeAngles` | QAngle | Eye angles at the moment of death, used to pose the ragdoll's head correctly. |
 | `m_bLeftHanded` | bool | True when the player has switched the weapon to the left hand (cl_lefthand 1). |
-| `m_fSwitchedHandednessTime` | GameTime_t | GameTime at which the player last toggled handedness (prevents rapid toggling). |
+| `m_fSwitchedHandednessTime` | [GameTime_t](../schemas/entity2.md#gametime_t) | GameTime at which the player last toggled handedness (prevents rapid toggling). |
 | `m_flViewmodelOffsetX` | float32 | Custom viewmodel X offset in world units (cl_viewmodel_offset_x). |
 | `m_flViewmodelOffsetY` | float32 | Custom viewmodel Y offset in world units (cl_viewmodel_offset_y). |
 | `m_flViewmodelOffsetZ` | float32 | Custom viewmodel Z offset in world units (cl_viewmodel_offset_z). |
@@ -4091,7 +4922,7 @@ classDiagram
 | `m_flDealtDamageToEnemyMostRecentTimestamp` | float32 |  |
 | `m_iDisplayHistoryBits` | uint32 |  |
 | `m_flLastAttackedTeammate` | float32 |  |
-| `m_allowAutoFollowTime` | GameTime_t |  |
+| `m_allowAutoFollowTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_bResetArmorNextSpawn` | bool |  |
 | `m_nLastKillerIndex` | CEntityIndex | Entity index of the player or entity that last killed this pawn. |
 | `m_entitySpottedState` | [EntitySpottedState_t](../schemas/server.md#entityspottedstate_t) | EntitySpottedState_t struct tracking which players have spotted (ESP-radar dot) this entity. *See also m_bSpotted and the spotted bitmask used by the minimap.* |
@@ -4100,8 +4931,8 @@ classDiagram
 | `m_bResumeZoom` | bool | True when the scope should be re-engaged automatically after the next shot (AWP/SSG 08 bolt-action mechanic). |
 | `m_bIsDefusing` | bool | True while the player is actively defusing the planted bomb. |
 | `m_bIsGrabbingHostage` | bool | True while the player is picking up a hostage entity. |
-| `m_iBlockingUseActionInProgress` | CSPlayerBlockingUseAction_t | CSPlayerBlockingUseAction_t enum indicating a use-action in progress that blocks other actions (e.g. defuse, hostage grab). |
-| `m_flEmitSoundTime` | GameTime_t | GameTime of the next footstep sound emission; controls footstep sound spacing. |
+| `m_iBlockingUseActionInProgress` | [CSPlayerBlockingUseAction_t](../schemas/!GlobalTypes.md#csplayerblockinguseaction_t) | CSPlayerBlockingUseAction_t enum indicating a use-action in progress that blocks other actions (e.g. defuse, hostage grab). |
+| `m_flEmitSoundTime` | [GameTime_t](../schemas/entity2.md#gametime_t) | GameTime of the next footstep sound emission; controls footstep sound spacing. |
 | `m_bInNoDefuseArea` | bool | True when the player is in a location where defusing is not permitted. |
 | `m_iBombSiteIndex` | CEntityIndex |  |
 | `m_nWhichBombZone` | int32 | Indicates which bomb site the player is currently inside (0 = none, 1 = A, 2 = B). |
@@ -4131,14 +4962,14 @@ classDiagram
 | `m_vecDeathInfoOrigin` | VectorWS |  |
 | `m_vecPlayerPatchEconIndices` | uint32[5] | Array of 5 item-definition indices for the agent patch slots (team patches worn on the uniform). |
 | `m_GunGameImmunityColor` | Color | Color applied to the player model while gun-game immunity is active. |
-| `m_grenadeParameterStashTime` | GameTime_t |  |
+| `m_grenadeParameterStashTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_bGrenadeParametersStashed` | bool |  |
 | `m_angStashedShootAngles` | QAngle |  |
 | `m_vecStashedGrenadeThrowPosition` | VectorWS |  |
 | `m_vecStashedVelocity` | Vector |  |
 | `m_bCommittingSuicideOnTeamChange` | bool |  |
 | `m_wasNotKilledNaturally` | bool |  |
-| `m_fImmuneToGunGameDamageTime` | GameTime_t | GameTime until which the player is immune to damage in Gun Game / Arms Race mode. |
+| `m_fImmuneToGunGameDamageTime` | [GameTime_t](../schemas/entity2.md#gametime_t) | GameTime until which the player is immune to damage in Gun Game / Arms Race mode. |
 | `m_bGunGameImmunity` | bool | True while the player has gun-game spawn immunity (brief invincibility after spawning in Arms Race mode). |
 | `m_fMolotovDamageTime` | float32 | GameTime at which molotov/incendiary damage will next be applied to this player. |
 | `m_angEyeAngles` | QAngle | Server-authoritative eye angles (pitch, yaw, roll) used for hit-box calculation and third-person rendering. *Encoded at full qangle_precise precision. The definitive source for a player's look direction.* |
@@ -4165,6 +4996,8 @@ classDiagram
     CCSPlayerPawnBase <|-- CCSPlayerPawn
     CCSPlayerPawnBase *-- CTouchExpansionComponent
     CCSPlayerPawnBase --> CCSPlayer_PingServices
+    CCSPlayerPawnBase *-- GameTime_t
+    CCSPlayerPawnBase *-- CSPlayerState
     CCSPlayerPawnBase --> CCSPlayerController
 ```
 
@@ -4174,9 +5007,9 @@ classDiagram
 |------|------|-------------|
 | `m_CTouchExpansionComponent` | [CTouchExpansionComponent](../schemas/server.md#ctouchexpansioncomponent) |  |
 | `m_pPingServices` | [CCSPlayer_PingServices](../schemas/server.md#ccsplayer_pingservices)* | Pointer to CCSPlayer_PingServices managing the in-game map-ping system. |
-| `m_blindUntilTime` | GameTime_t |  |
-| `m_blindStartTime` | GameTime_t |  |
-| `m_iPlayerState` | CSPlayerState | CSPlayerState enum: STATE_ACTIVE = 0 (alive), STATE_WELCOME = 1, STATE_PICKINGTEAM = 2, STATE_PICKINGCLASS = 3, STATE_DEATH_ANIM = 4, STATE_DEATH_WAIT_FOR_KEY = 5, STATE_OBSERVER_MODE = 6. |
+| `m_blindUntilTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_blindStartTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_iPlayerState` | [CSPlayerState](../schemas/!GlobalTypes.md#csplayerstate) | CSPlayerState enum: STATE_ACTIVE = 0 (alive), STATE_WELCOME = 1, STATE_PICKINGTEAM = 2, STATE_PICKINGCLASS = 3, STATE_DEATH_ANIM = 4, STATE_DEATH_WAIT_FOR_KEY = 5, STATE_OBSERVER_MODE = 6. |
 | `m_bRespawning` | bool |  |
 | `m_bHasMovedSinceSpawn` | bool | True once the player moves after spawning; prevents accidental movement-triggered events. |
 | `m_iNumSpawns` | int32 |  |
@@ -4224,7 +5057,7 @@ classDiagram
 Component tracking scoring-relevant actions: weapon purchases and hostage rescue status.
 
 
-**Inherits from:** CPlayerPawnComponent
+**Inherits from:** [CPlayerPawnComponent](server.md#cplayerpawncomponent)
 
 **Relationships:**
 
@@ -4246,24 +5079,25 @@ classDiagram
 
 ### CCSPlayer_AimPunchServices
 
-**Inherits from:** CPlayerPawnComponent
+**Inherits from:** [CPlayerPawnComponent](server.md#cplayerpawncomponent)
 
 **Relationships:**
 
 ```mermaid
 classDiagram
     CPlayerPawnComponent <|-- CCSPlayer_AimPunchServices
+    CCSPlayer_AimPunchServices *-- GameTick_t
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_predictableBaseTick` | GameTick_t |  |
+| `m_predictableBaseTick` | [GameTick_t](../schemas/entity2.md#gametick_t) |  |
 | `m_predictableBaseTickInterpAmount` | float32 |  |
 | `m_predictableBaseAngle` | QAngle |  |
 | `m_predictableBaseAngleVel` | QAngle |  |
-| `m_unpredictableBaseTick` | GameTick_t |  |
+| `m_unpredictableBaseTick` | [GameTick_t](../schemas/entity2.md#gametick_t) |  |
 | `m_unpredictableBaseAngle` | QAngle |  |
 
 ### CCSPlayer_BulletServices
@@ -4271,7 +5105,7 @@ classDiagram
 Component tracking bullet-hit statistics registered on the server side.
 
 
-**Inherits from:** CPlayerPawnComponent
+**Inherits from:** [CPlayerPawnComponent](server.md#cplayerpawncomponent)
 
 **Relationships:**
 
@@ -4291,7 +5125,7 @@ classDiagram
 Component that records the player's sellback-eligible purchases for the current round.
 
 
-**Inherits from:** CPlayerPawnComponent
+**Inherits from:** [CPlayerPawnComponent](server.md#cplayerpawncomponent)
 
 **Relationships:**
 
@@ -4322,7 +5156,7 @@ classDiagram
 
 ### CCSPlayer_DamageReactServices
 
-**Inherits from:** CPlayerPawnComponent
+**Inherits from:** [CPlayerPawnComponent](server.md#cplayerpawncomponent)
 
 **Relationships:**
 
@@ -4336,7 +5170,7 @@ classDiagram
 Component tracking whether this player is currently carrying a hostage.
 
 
-**Inherits from:** CPlayerPawnComponent
+**Inherits from:** [CPlayerPawnComponent](server.md#cplayerpawncomponent)
 
 **Relationships:**
 
@@ -4383,15 +5217,18 @@ classDiagram
     CPlayer_MovementServices_Humanoid <|-- CCSPlayer_MovementServices
     CPlayer_MovementServices <|-- CPlayer_MovementServices_Humanoid
     CPlayerPawnComponent <|-- CPlayer_MovementServices
+    CCSPlayer_MovementServices *-- CCSPlayerAnimationState
+    CCSPlayer_MovementServices *-- GameTime_t
     CCSPlayer_MovementServices *-- CCSPlayerLegacyJump
     CCSPlayer_MovementServices *-- CCSPlayerModernJump
+    CCSPlayer_MovementServices *-- GameTick_t
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_AnimationState` | CCSPlayerAnimationState |  |
+| `m_AnimationState` | [CCSPlayerAnimationState](../schemas/server.md#ccsplayeranimationstate) |  |
 | `m_bUsingGroundTopologyOffset` | bool |  |
 | `m_flUsingGroundTopologyOffsetTransitionSmoothing` | float32 |  |
 | `m_vecLadderNormal` | Vector |  |
@@ -4421,7 +5258,7 @@ classDiagram
 | `m_nGameCodeHasMovedPlayerAfterCommand` | int32 |  |
 | `m_bMadeFootstepNoise` | bool |  |
 | `m_iFootsteps` | int32 |  |
-| `m_fStashGrenadeParameterWhen` | GameTime_t |  |
+| `m_fStashGrenadeParameterWhen` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_bUseFrictionStashedSpeed` | bool |  |
 | `m_flUseFrictionStashedSpeedUntilFrac` | float32 |  |
 | `m_flFrictionStashedSpeed` | float32 |  |
@@ -4434,7 +5271,7 @@ classDiagram
 | `m_flAccumulatedJumpError` | float32 |  |
 | `m_LegacyJump` | [CCSPlayerLegacyJump](../schemas/server.md#ccsplayerlegacyjump) |  |
 | `m_ModernJump` | [CCSPlayerModernJump](../schemas/server.md#ccsplayermodernjump) |  |
-| `m_nLastJumpTick` | GameTick_t |  |
+| `m_nLastJumpTick` | [GameTick_t](../schemas/entity2.md#gametick_t) |  |
 | `m_flLastJumpFrac` | float32 |  |
 | `m_flLastJumpVelocityZ` | float32 |  |
 | `m_bJumpApexPending` | bool |  |
@@ -4444,13 +5281,14 @@ classDiagram
 
 ### CCSPlayer_PingServices
 
-**Inherits from:** CPlayerPawnComponent
+**Inherits from:** [CPlayerPawnComponent](server.md#cplayerpawncomponent)
 
 **Relationships:**
 
 ```mermaid
 classDiagram
     CPlayerPawnComponent <|-- CCSPlayer_PingServices
+    CCSPlayer_PingServices *-- GameTime_t
     CCSPlayer_PingServices --> CPlayerPing
 ```
 
@@ -4458,28 +5296,29 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_flPlayerPingTokens` | GameTime_t[5] |  |
+| `m_flPlayerPingTokens` | [GameTime_t](../schemas/entity2.md#gametime_t)[5] |  |
 | `m_hPlayerPing` | CHandle< [CPlayerPing](../schemas/server.md#cplayerping) > |  |
 
 ### CCSPlayer_RadioServices
 
-**Inherits from:** CPlayerPawnComponent
+**Inherits from:** [CPlayerPawnComponent](server.md#cplayerpawncomponent)
 
 **Relationships:**
 
 ```mermaid
 classDiagram
     CPlayerPawnComponent <|-- CCSPlayer_RadioServices
+    CCSPlayer_RadioServices *-- GameTime_t
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_flGotHostageTalkTimer` | GameTime_t |  |
-| `m_flDefusingTalkTimer` | GameTime_t |  |
-| `m_flC4PlantTalkTimer` | GameTime_t |  |
-| `m_flRadioTokenSlots` | GameTime_t[3] |  |
+| `m_flGotHostageTalkTimer` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_flDefusingTalkTimer` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_flC4PlantTalkTimer` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_flRadioTokenSlots` | [GameTime_t](../schemas/entity2.md#gametime_t)[3] |  |
 | `m_bIgnoreRadio` | bool |  |
 
 ### CCSPlayer_UseServices
@@ -4493,6 +5332,7 @@ classDiagram
     CPlayer_UseServices <|-- CCSPlayer_UseServices
     CPlayerPawnComponent <|-- CPlayer_UseServices
     CCSPlayer_UseServices --> CBaseEntity
+    CCSPlayer_UseServices *-- GameTime_t
 ```
 
 **Fields:**
@@ -4500,8 +5340,8 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_hLastKnownUseEntity` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
-| `m_flLastUseTimeStamp` | GameTime_t |  |
-| `m_flTimeLastUsedWindow` | GameTime_t |  |
+| `m_flLastUseTimeStamp` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_flTimeLastUsedWindow` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 
 ### CCSPlayer_WaterServices
 
@@ -4513,15 +5353,16 @@ classDiagram
 classDiagram
     CPlayer_WaterServices <|-- CCSPlayer_WaterServices
     CPlayerPawnComponent <|-- CPlayer_WaterServices
+    CCSPlayer_WaterServices *-- GameTime_t
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_NextDrownDamageTime` | GameTime_t |  |
+| `m_NextDrownDamageTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_nDrownDmgRate` | int32 |  |
-| `m_AirFinishedTime` | GameTime_t |  |
+| `m_AirFinishedTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flWaterJumpTime` | float32 |  |
 | `m_vecWaterJumpVel` | Vector |  |
 | `m_flSwimSoundTime` | float32 |  |
@@ -4539,6 +5380,7 @@ Component attached to CCSPlayerPawn that manages the active weapon and weapon-sw
 classDiagram
     CPlayer_WeaponServices <|-- CCSPlayer_WeaponServices
     CPlayerPawnComponent <|-- CPlayer_WeaponServices
+    CCSPlayer_WeaponServices *-- GameTime_t
     CCSPlayer_WeaponServices --> CBasePlayerWeapon
 ```
 
@@ -4546,7 +5388,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_flNextAttack` | GameTime_t | GameTime before which no weapon switch is permitted (e.g. after throwing a grenade). *Only sent to the owning player (LocalPlayerExclusive).* |
+| `m_flNextAttack` | [GameTime_t](../schemas/entity2.md#gametime_t) | GameTime before which no weapon switch is permitted (e.g. after throwing a grenade). *Only sent to the owning player (LocalPlayerExclusive).* |
 | `m_hSavedWeapon` | CHandle< [CBasePlayerWeapon](../schemas/server.md#cbaseplayerweapon) > |  |
 | `m_nTimeToMelee` | int32 |  |
 | `m_nTimeToSecondary` | int32 |  |
@@ -4649,7 +5491,13 @@ classDiagram
     CCSWeaponBase <|-- CCSWeaponBaseShotgun
     CCSWeaponBase <|-- CKnife
     CCSWeaponBase <|-- CWeaponBaseItem
+    CCSWeaponBase *-- WeaponGameplayAnimState
+    CCSWeaponBase *-- GameTime_t
+    CCSWeaponBase *-- CEntityIOOutput
+    CCSWeaponBase *-- CSWeaponMode
+    CCSWeaponBase *-- GameTick_t
     CCSWeaponBase --> CCSPlayerPawn
+    CCSWeaponBase *-- CIronSightController
 ```
 
 **Fields:**
@@ -4659,32 +5507,32 @@ classDiagram
 | `m_bRemoveable` | bool |  |
 | `m_bPlayerAmmoStockOnPickup` | bool |  |
 | `m_bRequireUseToTouch` | bool |  |
-| `m_iWeaponGameplayAnimState` | WeaponGameplayAnimState | WeaponGameplayAnimState enum controlling the weapon's anim-graph state (idle, firing, reloading, inspecting, etc.). |
-| `m_flWeaponGameplayAnimStateTimestamp` | GameTime_t |  |
-| `m_flInspectCancelCompleteTime` | GameTime_t | GameTime at which an in-progress inspect cancel animation will finish. |
+| `m_iWeaponGameplayAnimState` | [WeaponGameplayAnimState](../schemas/!GlobalTypes.md#weapongameplayanimstate) | WeaponGameplayAnimState enum controlling the weapon's anim-graph state (idle, firing, reloading, inspecting, etc.). |
+| `m_flWeaponGameplayAnimStateTimestamp` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_flInspectCancelCompleteTime` | [GameTime_t](../schemas/entity2.md#gametime_t) | GameTime at which an in-progress inspect cancel animation will finish. |
 | `m_bInspectPending` | bool | True when an inspect animation has been queued but not yet started. |
 | `m_bInspectShouldLoop` | bool | True when the inspect animation should loop (held-inspect mode). |
 | `m_nLastEmptySoundCmdNum` | int32 |  |
 | `m_bFireOnEmpty` | bool |  |
-| `m_OnPlayerPickup` | CEntityIOOutput |  |
-| `m_weaponMode` | CSWeaponMode | CSWeaponMode enum: Primary_Mode = 0, Secondary_Mode = 1. Governs which attack function runs on fire. |
+| `m_OnPlayerPickup` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_weaponMode` | [CSWeaponMode](../schemas/!GlobalTypes.md#csweaponmode) | CSWeaponMode enum: Primary_Mode = 0, Secondary_Mode = 1. Governs which attack function runs on fire. |
 | `m_flTurningInaccuracyDelta` | float32 |  |
 | `m_vecTurningInaccuracyEyeDirLast` | Vector |  |
 | `m_flTurningInaccuracy` | float32 |  |
 | `m_fAccuracyPenalty` | float32 | Additive inaccuracy penalty accumulated by recent shots; decays over time. Feeds into the cone-spread calculation. |
-| `m_flLastAccuracyUpdateTime` | GameTime_t |  |
+| `m_flLastAccuracyUpdateTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_fAccuracySmoothedForZoom` | float32 |  |
 | `m_iRecoilIndex` | int32 | Integer index into the weapon's recoil table; incremented with each shot, decays when not firing. |
 | `m_flRecoilIndex` | float32 | Fractional recoil index for sub-step interpolation of the recoil pattern table. *Demo parsers often use this to reproduce exact spray patterns.* |
 | `m_bBurstMode` | bool | True when the weapon is in burst-fire mode (e.g. Famas burst, Glock18 burst). |
-| `m_nPostponeFireReadyTicks` | GameTick_t | Tick after which a postponed shot will fire (used for the tick-aligned fire mechanism in sub-tick shooting). |
+| `m_nPostponeFireReadyTicks` | [GameTick_t](../schemas/entity2.md#gametick_t) | Tick after which a postponed shot will fire (used for the tick-aligned fire mechanism in sub-tick shooting). |
 | `m_flPostponeFireReadyFrac` | float32 | Fractional tick ratio for m_nPostponeFireReadyTicks. |
 | `m_bInReload` | bool | True while the weapon is performing its reload animation. |
-| `m_nDeployTick` | GameTick_t |  |
-| `m_flDroppedAtTime` | GameTime_t | GameTime at which this weapon was dropped onto the ground. |
+| `m_nDeployTick` | [GameTick_t](../schemas/entity2.md#gametick_t) |  |
+| `m_flDroppedAtTime` | [GameTime_t](../schemas/entity2.md#gametime_t) | GameTime at which this weapon was dropped onto the ground. |
 | `m_bIsHauledBack` | bool | True while the player is winding up to throw a grenade (held throw). |
 | `m_bSilencerOn` | bool | True when the suppressor is attached (M4A1-S / USP-S). |
-| `m_flTimeSilencerSwitchComplete` | GameTime_t | GameTime at which the suppressor attach/detach animation completes. |
+| `m_flTimeSilencerSwitchComplete` | [GameTime_t](../schemas/entity2.md#gametime_t) | GameTime at which the suppressor attach/detach animation completes. |
 | `m_flWeaponActionPlaybackRate` | float32 |  |
 | `m_iOriginalTeamNumber` | int32 | Team that originally spawned this weapon; buy-zone weapon pools are filtered by this. |
 | `m_iMostRecentTeamNumber` | int32 | Team of the player most recently holding this weapon. |
@@ -4692,22 +5540,22 @@ classDiagram
 | `m_flNextAttackRenderTimeOffset` | float32 |  |
 | `m_bCanBePickedUp` | bool |  |
 | `m_bUseCanOverrideNextOwnerTouchTime` | bool |  |
-| `m_nextOwnerTouchTime` | GameTime_t |  |
-| `m_nextPrevOwnerTouchTime` | GameTime_t |  |
-| `m_nextPrevOwnerUseTime` | GameTime_t | GameTime before which the previous owner cannot pick this weapon back up (prevents instant re-pickup after dropping). |
+| `m_nextOwnerTouchTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_nextPrevOwnerTouchTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_nextPrevOwnerUseTime` | [GameTime_t](../schemas/entity2.md#gametime_t) | GameTime before which the previous owner cannot pick this weapon back up (prevents instant re-pickup after dropping). |
 | `m_hPrevOwner` | CHandle< [CCSPlayerPawn](../schemas/server.md#ccsplayerpawn) > | CHandle to the CCSPlayerPawn that most recently owned this weapon before it was dropped. |
-| `m_nDropTick` | GameTick_t | Server tick on which the weapon was most recently dropped. |
+| `m_nDropTick` | [GameTick_t](../schemas/entity2.md#gametick_t) | Server tick on which the weapon was most recently dropped. |
 | `m_bWasActiveWeaponWhenDropped` | bool | True if the weapon was the active weapon at the moment it was dropped. |
 | `m_donated` | bool |  |
-| `m_fLastShotTime` | GameTime_t | GameTime of the most recent shot fired from this weapon. |
+| `m_fLastShotTime` | [GameTime_t](../schemas/entity2.md#gametime_t) | GameTime of the most recent shot fired from this weapon. |
 | `m_bWasOwnedByCT` | bool |  |
 | `m_bWasOwnedByTerrorist` | bool |  |
 | `m_numRemoveUnownedWeaponThink` | int32 |  |
-| `m_IronSightController` | CIronSightController |  |
+| `m_IronSightController` | [CIronSightController](../schemas/server.md#cironsightcontroller) |  |
 | `m_iIronSightMode` | int32 | Iron-sight zoom state (0 = none, 1 = iron-sighted). |
-| `m_flLastLOSTraceFailureTime` | GameTime_t |  |
+| `m_flLastLOSTraceFailureTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flWatTickOffset` | float32 |  |
-| `m_flLastShakeTime` | GameTime_t |  |
+| `m_flLastShakeTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 
 ### CCSWeaponBaseGun
 
@@ -4805,18 +5653,25 @@ classDiagram
 classDiagram
     CBasePlayerWeaponVData <|-- CCSWeaponBaseVData
     CEntitySubclassVDataBase <|-- CBasePlayerWeaponVData
+    CCSWeaponBaseVData *-- CSWeaponType
+    CCSWeaponBaseVData *-- CSWeaponCategory
+    CCSWeaponBaseVData *-- InfoForResourceTypeCNmSkeleton
+    CCSWeaponBaseVData *-- InfoForResourceTypeIParticleSystemDefinition
+    CCSWeaponBaseVData *-- CSWeaponSilencerType
+    CCSWeaponBaseVData *-- CFiringModeFloat
+    CCSWeaponBaseVData *-- CFiringModeInt
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_WeaponType` | CSWeaponType |  |
-| `m_WeaponCategory` | CSWeaponCategory |  |
-| `m_szAnimSkeleton` | CResourceNameTyped< CWeakHandle< InfoForResourceTypeCNmSkeleton > > | `MPropertyStartGroup Visuals` |
+| `m_WeaponType` | [CSWeaponType](../schemas/!GlobalTypes.md#csweapontype) |  |
+| `m_WeaponCategory` | [CSWeaponCategory](../schemas/!GlobalTypes.md#csweaponcategory) |  |
+| `m_szAnimSkeleton` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCNmSkeleton](../schemas/resourcesystem.md#infoforresourcetypecnmskeleton) > > | `MPropertyStartGroup Visuals` |
 | `m_vecMuzzlePos0` | Vector |  |
 | `m_vecMuzzlePos1` | Vector |  |
-| `m_szTracerParticle` | CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > | `MPropertyDescription Effect to actually fire into the world from this weapon` |
+| `m_szTracerParticle` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition) > > | `MPropertyDescription Effect to actually fire into the world from this weapon` |
 | `m_GearSlot` | gear_slot_t | `MPropertyDescription Which 'column' to display this weapon in the HUD` `MPropertyFriendlyName HUD Bucket` `MPropertyStartGroup HUD Positions` |
 | `m_GearSlotPosition` | int32 |  |
 | `m_DefaultLoadoutSlot` | loadout_slot_t | `MPropertyDescription Default team (non Terrorist or Counter-Terrorist) 'row' to display this weapon in the HUD.` `MPropertyFriendlyName HUD Bucket Position` |
@@ -4829,29 +5684,29 @@ classDiagram
 | `m_bIsRevolver` | bool |  |
 | `m_bCannotShootUnderwater` | bool |  |
 | `m_szName` | CGlobalSymbol | `MPropertyFriendlyName In-Code weapon name` |
-| `m_eSilencerType` | CSWeaponSilencerType |  |
+| `m_eSilencerType` | [CSWeaponSilencerType](../schemas/!GlobalTypes.md#csweaponsilencertype) |  |
 | `m_nCrosshairMinDistance` | int32 |  |
 | `m_nCrosshairDeltaDistance` | int32 |  |
 | `m_bIsFullAuto` | bool |  |
 | `m_nNumBullets` | int32 |  |
 | `m_bReloadsSingleShells` | bool |  |
-| `m_flCycleTime` | CFiringModeFloat | `MPropertyStartGroup Firing Mode Data` |
+| `m_flCycleTime` | [CFiringModeFloat](../schemas/server.md#cfiringmodefloat) | `MPropertyStartGroup Firing Mode Data` |
 | `m_flCycleTimeWhenInBurstMode` | float32 |  |
 | `m_flTimeBetweenBurstShots` | float32 |  |
-| `m_flMaxSpeed` | CFiringModeFloat |  |
-| `m_flSpread` | CFiringModeFloat |  |
-| `m_flInaccuracyCrouch` | CFiringModeFloat |  |
-| `m_flInaccuracyStand` | CFiringModeFloat |  |
-| `m_flInaccuracyJump` | CFiringModeFloat |  |
-| `m_flInaccuracyLand` | CFiringModeFloat |  |
-| `m_flInaccuracyLadder` | CFiringModeFloat |  |
-| `m_flInaccuracyFire` | CFiringModeFloat |  |
-| `m_flInaccuracyMove` | CFiringModeFloat |  |
-| `m_flRecoilAngle` | CFiringModeFloat |  |
-| `m_flRecoilAngleVariance` | CFiringModeFloat |  |
-| `m_flRecoilMagnitude` | CFiringModeFloat |  |
-| `m_flRecoilMagnitudeVariance` | CFiringModeFloat |  |
-| `m_nTracerFrequency` | CFiringModeInt |  |
+| `m_flMaxSpeed` | [CFiringModeFloat](../schemas/server.md#cfiringmodefloat) |  |
+| `m_flSpread` | [CFiringModeFloat](../schemas/server.md#cfiringmodefloat) |  |
+| `m_flInaccuracyCrouch` | [CFiringModeFloat](../schemas/server.md#cfiringmodefloat) |  |
+| `m_flInaccuracyStand` | [CFiringModeFloat](../schemas/server.md#cfiringmodefloat) |  |
+| `m_flInaccuracyJump` | [CFiringModeFloat](../schemas/server.md#cfiringmodefloat) |  |
+| `m_flInaccuracyLand` | [CFiringModeFloat](../schemas/server.md#cfiringmodefloat) |  |
+| `m_flInaccuracyLadder` | [CFiringModeFloat](../schemas/server.md#cfiringmodefloat) |  |
+| `m_flInaccuracyFire` | [CFiringModeFloat](../schemas/server.md#cfiringmodefloat) |  |
+| `m_flInaccuracyMove` | [CFiringModeFloat](../schemas/server.md#cfiringmodefloat) |  |
+| `m_flRecoilAngle` | [CFiringModeFloat](../schemas/server.md#cfiringmodefloat) |  |
+| `m_flRecoilAngleVariance` | [CFiringModeFloat](../schemas/server.md#cfiringmodefloat) |  |
+| `m_flRecoilMagnitude` | [CFiringModeFloat](../schemas/server.md#cfiringmodefloat) |  |
+| `m_flRecoilMagnitudeVariance` | [CFiringModeFloat](../schemas/server.md#cfiringmodefloat) |  |
+| `m_nTracerFrequency` | [CFiringModeInt](../schemas/server.md#cfiringmodeint) |  |
 | `m_flInaccuracyJumpInitial` | float32 |  |
 | `m_flInaccuracyJumpApex` | float32 |  |
 | `m_flInaccuracyReload` | float32 |  |
@@ -4930,6 +5785,7 @@ classDiagram
     CBaseModelEntity <|-- CBaseToggle
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CChangeLevel *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -4938,7 +5794,7 @@ classDiagram
 |------|------|-------------|
 | `m_sMapName` | CUtlString |  |
 | `m_sLandmarkName` | CUtlString |  |
-| `m_OnChangeLevel` | CEntityIOOutput |  |
+| `m_OnChangeLevel` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_bTouched` | bool |  |
 | `m_bNoTouch` | bool |  |
 | `m_bNewChapter` | bool |  |
@@ -4946,7 +5802,7 @@ classDiagram
 
 ### CChicken
 
-**Inherits from:** [CDynamicProp](server.md#cdynamicprop), IHasAttributes
+**Inherits from:** [CDynamicProp](server.md#cdynamicprop), [IHasAttributes](server.md#ihasattributes)
 
 **Relationships:**
 
@@ -4959,8 +5815,10 @@ classDiagram
     C_BaseModelEntity <|-- CBaseAnimGraph
     CChicken *-- CAttributeContainer
     CChicken *-- CountdownTimer
+    CChicken *-- EChickenActivity
     CChicken --> CBaseEntity
     CChicken --> CCSPlayerPawn
+    CChicken *-- GameTime_t
 ```
 
 **Fields:**
@@ -4973,8 +5831,8 @@ classDiagram
 | `m_collisionStuckTimer` | [CountdownTimer](../schemas/server.md#countdowntimer) |  |
 | `m_isOnGround` | bool |  |
 | `m_vFallVelocity` | Vector |  |
-| `m_desiredActivity` | EChickenActivity |  |
-| `m_currentActivity` | EChickenActivity |  |
+| `m_desiredActivity` | [EChickenActivity](../schemas/!GlobalTypes.md#echickenactivity) |  |
+| `m_currentActivity` | [EChickenActivity](../schemas/!GlobalTypes.md#echickenactivity) |  |
 | `m_activityTimer` | [CountdownTimer](../schemas/server.md#countdowntimer) |  |
 | `m_turnRate` | float32 |  |
 | `m_fleeFrom` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
@@ -4987,7 +5845,7 @@ classDiagram
 | `m_flLastJumpTime` | float32 |  |
 | `m_repathTimer` | [CountdownTimer](../schemas/server.md#countdowntimer) |  |
 | `m_vecPathGoal` | VectorWS |  |
-| `m_flActiveFollowStartTime` | GameTime_t |  |
+| `m_flActiveFollowStartTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_followMinuteTimer` | [CountdownTimer](../schemas/server.md#countdowntimer) |  |
 | `m_BlockDirectionTimer` | [CountdownTimer](../schemas/server.md#countdowntimer) |  |
 
@@ -5001,19 +5859,22 @@ classDiagram
 
 ```mermaid
 classDiagram
+    CChoreoComponent *-- CNetworkVarChainer
     CChoreoComponent --> CBaseModelEntity
+    CChoreoComponent *-- SceneEventId_t
+    CChoreoComponent *-- GameTime_t
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `__m_pChainEntity` | CNetworkVarChainer | `MNotSaved` |
+| `__m_pChainEntity` | [CNetworkVarChainer](../schemas/entity2.md#cnetworkvarchainer) | `MNotSaved` |
 | `m_hOwner` | CHandle< [CBaseModelEntity](../schemas/server.md#cbasemodelentity) > |  |
 | `m_nExernalChoreoGraphCount` | int32 |  |
 | `m_sActiveExternalChoreoGraphSlotID` | CGlobalSymbol |  |
-| `m_nNextSceneEventId` | SceneEventId_t |  |
-| `m_flAllowResponsesEndTime` | GameTime_t |  |
+| `m_nNextSceneEventId` | [SceneEventId_t](../schemas/server.md#sceneeventid_t) |  |
+| `m_flAllowResponsesEndTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 
 ### CChoreoInfoTarget
 
@@ -5027,6 +5888,27 @@ classDiagram
     CBaseEntity <|-- CPointEntity
     CEntityInstance <|-- CBaseEntity
 ```
+
+### CChoreo_GraphController
+
+**Inherits from:** [CAnimGraphControllerBase](server.md#canimgraphcontrollerbase)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CAnimGraphControllerBase <|-- CChoreo_GraphController
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_eChoreoState` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |
+| `m_tChoreoTargetWarp` | CAnimGraph2ParamOptionalRef< CTransform > |  |
+| `m_tChoreoExitWarp` | CAnimGraph2ParamOptionalRef< CTransform > |  |
 
 ### CCitadelSoundOpvarSetOBB
 
@@ -5062,6 +5944,8 @@ classDiagram
 ```mermaid
 classDiagram
     CCollisionProperty *-- VPhysicsCollisionAttribute_t
+    CCollisionProperty *-- SolidType_t
+    CCollisionProperty *-- SurroundingBoundsType_t
 ```
 
 **Fields:**
@@ -5072,9 +5956,9 @@ classDiagram
 | `m_vecMins` | Vector | `MSaveBehavior` |
 | `m_vecMaxs` | Vector | `MSaveBehavior` |
 | `m_usSolidFlags` | uint8 |  |
-| `m_nSolidType` | SolidType_t |  |
+| `m_nSolidType` | [SolidType_t](../schemas/!GlobalTypes.md#solidtype_t) |  |
 | `m_triggerBloat` | uint8 |  |
-| `m_nSurroundType` | SurroundingBoundsType_t |  |
+| `m_nSurroundType` | [SurroundingBoundsType_t](../schemas/!GlobalTypes.md#surroundingboundstype_t) |  |
 | `m_CollisionGroup` | uint8 |  |
 | `m_nEnablePhysics` | uint8 |  |
 | `m_flBoundingRadius` | float32 |  |
@@ -5096,6 +5980,7 @@ classDiagram
 classDiagram
     CBaseEntity <|-- CColorCorrection
     CEntityInstance <|-- CBaseEntity
+    CColorCorrection *-- GameTime_t
 ```
 
 **Fields:**
@@ -5106,8 +5991,8 @@ classDiagram
 | `m_flFadeOutDuration` | float32 |  |
 | `m_flStartFadeInWeight` | float32 |  |
 | `m_flStartFadeOutWeight` | float32 |  |
-| `m_flTimeStartFadeIn` | GameTime_t |  |
-| `m_flTimeStartFadeOut` | GameTime_t |  |
+| `m_flTimeStartFadeIn` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_flTimeStartFadeOut` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flMaxWeight` | float32 |  |
 | `m_bStartDisabled` | bool |  |
 | `m_bEnabled` | bool |  |
@@ -5133,6 +6018,7 @@ classDiagram
     CBaseModelEntity <|-- CBaseToggle
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CColorCorrectionVolume *-- GameTime_t
 ```
 
 **Fields:**
@@ -5144,9 +6030,9 @@ classDiagram
 | `m_Weight` | float32 |  |
 | `m_lookupFilename` | char[512] |  |
 | `m_LastEnterWeight` | float32 |  |
-| `m_LastEnterTime` | GameTime_t |  |
+| `m_LastEnterTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_LastExitWeight` | float32 |  |
-| `m_LastExitTime` | GameTime_t |  |
+| `m_LastExitTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 
 ### CCommentaryAuto
 
@@ -5158,15 +6044,43 @@ classDiagram
 classDiagram
     CBaseEntity <|-- CCommentaryAuto
     CEntityInstance <|-- CBaseEntity
+    CCommentaryAuto *-- CEntityIOOutput
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnCommentaryNewGame` | CEntityIOOutput |  |
-| `m_OnCommentaryMidGame` | CEntityIOOutput |  |
-| `m_OnCommentaryMultiplayerSpawn` | CEntityIOOutput |  |
+| `m_OnCommentaryNewGame` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnCommentaryMidGame` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnCommentaryMultiplayerSpawn` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+
+### CCommentarySystem
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CCommentarySystem *-- GameTime_t
+    CCommentarySystem --> CPointCommentaryNode
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bCommentaryEnabledMidGame` | bool |  |
+| `m_flNextTeleportTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_iTeleportStage` | int32 |  |
+| `m_bCheatState` | bool |  |
+| `m_bIsFirstSpawnGroupToLoad` | bool |  |
+| `m_ModifiedConvars` | CUtlVector< modifiedconvars_t > |  |
+| `m_hCurrentNode` | CHandle< [CPointCommentaryNode](../schemas/server.md#cpointcommentarynode) > |  |
+| `m_hActiveCommentaryNode` | CHandle< [CPointCommentaryNode](../schemas/server.md#cpointcommentarynode) > |  |
+| `m_hLastCommentaryNode` | CHandle< [CPointCommentaryNode](../schemas/server.md#cpointcommentarynode) > |  |
+| `m_vecNodes` | CUtlVector< CHandle< [CPointCommentaryNode](../schemas/server.md#cpointcommentarynode) > > |  |
 
 ### CCommentaryViewPosition
 
@@ -5181,6 +6095,19 @@ classDiagram
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
 ```
+
+### CConstantForceController
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_linear` | Vector |  |
+| `m_angular` | RotationVector |  |
+| `m_linearSave` | Vector |  |
+| `m_angularSave` | RotationVector |  |
 
 ### CConstraintAnchor
 
@@ -5202,6 +6129,18 @@ classDiagram
 |------|------|-------------|
 | `m_massScale` | float32 |  |
 
+### CCopyRecipientFilter
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Flags` | int32 |  |
+| `m_Recipients` | CUtlVector< CPlayerSlot > |  |
+| `m_slotPlayerExcludedDueToPrediction` | CPlayerSlot |  |
+
 ### CCredits
 
 **Inherits from:** [CPointEntity](server.md#cpointentity)
@@ -5213,13 +6152,14 @@ classDiagram
     CPointEntity <|-- CCredits
     CBaseEntity <|-- CPointEntity
     CEntityInstance <|-- CBaseEntity
+    CCredits *-- CEntityIOOutput
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnCreditsDone` | CEntityIOOutput |  |
+| `m_OnCreditsDone` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_bRolledOutroCredits` | bool |  |
 | `m_flLogoLength` | float32 |  |
 
@@ -5246,6 +6186,7 @@ classDiagram
 classDiagram
     CDamageRecord --> CCSPlayerPawn
     CDamageRecord --> CCSPlayerController
+    CDamageRecord *-- EKillTypes_t
 ```
 
 **Fields:**
@@ -5266,7 +6207,33 @@ classDiagram
 | `m_iNumHits` | int32 |  |
 | `m_iLastBulletUpdate` | int32 |  |
 | `m_bIsOtherEnemy` | bool |  |
-| `m_killType` | EKillTypes_t |  |
+| `m_killType` | [EKillTypes_t](../schemas/!GlobalTypes.md#ekilltypes_t) |  |
+
+### CDebugDrawHistoryData
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CDebugDrawHistoryData --> CBaseEntity
+    CDebugDrawHistoryData *-- ESceneViewDebugOverlaysListenerDataType_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_hEntity` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+| `m_etype` | [ESceneViewDebugOverlaysListenerDataType_t](../schemas/!GlobalTypes.md#esceneviewdebugoverlayslistenerdatatype_t) |  |
+| `m_vectors` | CUtlLeanVector< Vector4D > |  |
+| `m_colors` | CUtlLeanVector< Color > |  |
+| `m_dimensions` | CUtlLeanVector< float32 > |  |
+| `m_times` | CUtlLeanVector< float64 > |  |
+| `m_uint64s` | CUtlLeanVector< uint64 > |  |
+| `m_bools` | CUtlLeanVector< bool > |  |
+| `m_strings` | CUtlLeanVector< CUtlString > |  |
 
 ### CDebugHistory
 
@@ -5285,6 +6252,103 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_nNpcEvents` | int32 | `MNotSaved` |
+
+### CDebugSnapshotData_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CDebugSnapshotData_t *-- CGenericShapeProxy
+    CDebugSnapshotData_t --> CDebugDrawHistoryData
+    CDebugSnapshotData_t --> DebugSnapshotBaseStructuredData_t
+    CDebugSnapshotData_t --> CBaseEntity
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_text` | CUtlString |  |
+| `m_dataType` | uint32 |  |
+| `m_userFlags` | uint32 |  |
+| `m_userData` | uint32 |  |
+| `m_userVector` | VectorWS |  |
+| `m_userTransform` | CTransformWS |  |
+| `m_userShape` | [CGenericShapeProxy](../schemas/physicslib.md#cgenericshapeproxy) |  |
+| `m_drawColor` | Color |  |
+| `m_vecDebugOverlayData` | CUtlVector< [CDebugDrawHistoryData](../schemas/server.md#cdebugdrawhistorydata)* > |  |
+| `m_pStructuredData` | [DebugSnapshotBaseStructuredData_t](../schemas/server.md#debugsnapshotbasestructureddata_t)* |  |
+| `m_hEntity` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+| `m_sEntityName` | CUtlString |  |
+| `m_nEntityIndex` | CEntityIndex |  |
+| `m_children` | CUtlLeanVector< [CDebugSnapshotData_t](../schemas/server.md#cdebugsnapshotdata_t) > |  |
+
+### CDecalGroupVData
+
+**Metadata:** `MGetKV3ClassDefaults`, `MVDataRoot`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CDecalGroupVData *-- DecalGroupOption_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecOptions` | CUtlVector< [DecalGroupOption_t](../schemas/server.md#decalgroupoption_t) > |  |
+| `m_flTotalProbability` | float32 | `MPropertySuppressField` |
+
+### CDecalInstance
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CDecalInstance *-- InfoForResourceTypeIMaterial2
+    CDecalInstance --> CBaseEntity
+    CDecalInstance *-- DecalFlags_t
+    CDecalInstance *-- GameTime_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_sDecalGroup` | CGlobalSymbol |  |
+| `m_hMaterial` | CStrongHandle< [InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2) > |  |
+| `m_sSequenceName` | CUtlStringToken |  |
+| `m_hEntity` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+| `m_nBoneIndex` | int32 |  |
+| `m_nTriangleIndex` | int32 |  |
+| `m_vPositionLS` | Vector |  |
+| `m_vPositionOS` | Vector |  |
+| `m_vNormalLS` | Vector |  |
+| `m_vNormalOS` | Vector |  |
+| `m_vSAxisLS` | Vector |  |
+| `m_nFlags` | [DecalFlags_t](../schemas/!GlobalTypes.md#decalflags_t) |  |
+| `m_Color` | Color |  |
+| `m_flWidth` | float32 |  |
+| `m_flHeight` | float32 |  |
+| `m_flDepth` | float32 |  |
+| `m_transform` | CTransformWS |  |
+| `m_flAnimationScale` | float32 |  |
+| `m_flAnimationStartTime` | float32 |  |
+| `m_flPlaceTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_flFadeStartTime` | float32 |  |
+| `m_flFadeDuration` | float32 |  |
+| `m_flLightingOriginOffset` | float32 |  |
+| `m_flBoundingRadiusSqr` | float32 |  |
+| `m_nSequenceIndex` | int16 | `MNotSaved` |
+| `m_bIsAdjacent` | bool | `MNotSaved` |
+| `m_bDoDecalLightmapping` | bool |  |
 
 ### CDecoyGrenade
 
@@ -5314,6 +6378,7 @@ classDiagram
     CBaseAnimGraph <|-- CBaseGrenade
     C_BaseModelEntity <|-- CBaseAnimGraph
     C_BaseEntity <|-- C_BaseModelEntity
+    CDecoyProjectile *-- GameTime_t
 ```
 
 **Fields:**
@@ -5322,8 +6387,61 @@ classDiagram
 |------|------|-------------|
 | `m_nDecoyShotTick` | int32 |  |
 | `m_shotsRemaining` | int32 |  |
-| `m_fExpireTime` | GameTime_t |  |
+| `m_fExpireTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_decoyWeaponDefIndex` | uint16 |  |
+
+### CDestructiblePart
+
+**Metadata:** `MFgdHelper`, `MGetKV3ClassDefaults`, `MModelGameData`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CDestructiblePart *-- HitGroup_t
+    CDestructiblePart *-- CDestructiblePart_DamageLevel
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_DebugName` | CGlobalSymbol | `MPropertySuppressField` |
+| `m_nHitGroup` | [HitGroup_t](../schemas/!GlobalTypes.md#hitgroup_t) | `MPropertyDescription The hitgroup this is related to.` `MPropertyStartGroup +Hitgroup` |
+| `m_bDisableHitGroupWhenDestroyed` | bool | `MPropertyDescription Do we disable the hitgroup and physics bodies tagged with said hitgroup when all damage levels are destroyed?` `MPropertyFriendlyName Disable Hit Group & Remove Tagged Physics Bodies When Destroyed` |
+| `m_nOtherHitgroupsToDestroyWhenFullyDestructed` | CUtlVector< [HitGroup_t](../schemas/!GlobalTypes.md#hitgroup_t) > | `MPropertyDescription Other hitgroups to destroy when this one is fully destroyed.  Useful for chaining destructibles like blowing up the lower arm when the upper arm dies.` |
+| `m_bOnlyDestroyWhenGibbing` | bool | `MPropertyDescription Only allow this part to be destroyed when gibbing.  Useful for special case gibbing breakables like torsos.` `MPropertyStartGroup +Gibbing` |
+| `m_sBodyGroupName` | CGlobalSymbol | `MPropertyAttributeEditor ModelDocPicker( MODELDOC_PICK_TYPE_BODY_GROUP )` `MPropertyDescription Body group to set when this damage level is broken.` `MPropertyStartGroup +Model Setup/+Body Group` |
+| `m_DamageLevels` | CUtlVector< [CDestructiblePart_DamageLevel](../schemas/server.md#cdestructiblepart_damagelevel) > | `MPropertyAutoExpandSelf` `MPropertyDescription The various damage levels for this hitgroup.` `MPropertyFriendlyName Damage Levels` `MPropertyStartGroup` |
+
+### CDestructiblePart_DamageLevel
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CDestructiblePart_DamageLevel *-- CSkillInt
+    CDestructiblePart_DamageLevel *-- EDestructiblePartDamagePassThroughType
+    CDestructiblePart_DamageLevel *-- DestructiblePartDestructionDeathBehavior_t
+    CDestructiblePart_DamageLevel *-- CRangeFloat
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_sName` | CUtlString | `MPropertyDescription Name for this damage level.  Presently only used for debugging/display - one day may be used in code to allow destroying by name.` |
+| `m_sBreakablePieceName` | CGlobalSymbol | `MPropertyAttributeEditor ModelDocPicker( MODELDOC_PICK_TYPE_BREAKPIECE )` `MPropertyDescription Name of the breakable to trigger breaking on when health reaches zero.` `MPropertyStartGroup +Model Setup` |
+| `m_nBodyGroupValue` | int32 | `MPropertyDescription Value to set for the body group when the damage level is broken.` |
+| `m_nHealth` | [CSkillInt](../schemas/server.md#cskillint) | `MPropertyDescription Total health of this damage level. When it reaches 0, the damage level is 'broken' using the breakable prop system.` `MPropertyStartGroup +Damage` `MPropertySuppressExpr` |
+| `m_flCriticalDamagePercent` | float32 | `MPropertyDescription % chance (0-1) of dealing 'critical' damage, which destroys this damage level, regardless of damage pass through type.` |
+| `m_nDamagePassthroughType` | [EDestructiblePartDamagePassThroughType](../schemas/!GlobalTypes.md#edestructiblepartdamagepassthroughtype) | `MPropertyDescription How damage to this damage level is handled.` |
+| `m_nDestructionDeathBehavior` | [DestructiblePartDestructionDeathBehavior_t](../schemas/!GlobalTypes.md#destructiblepartdestructiondeathbehavior_t) | `MPropertyDescription Should the entity die when this damage level is destroyed?` `MPropertyStartGroup +Death` |
+| `m_sCustomDeathHandshake` | CGlobalSymbol | `MPropertyDescription Custom death handshake to set when this damage level is destroyed.` `MPropertySuppressExpr` |
+| `m_bShouldDestroyOnDeath` | bool | `MPropertyDescription Whether the damage level should be destroyed when the entity dies.` |
+| `m_flDeathDestroyTime` | [CRangeFloat](../schemas/tier2.md#crangefloat) | `MPropertyDescription Time after death the damage level should be destroyed` `MPropertySuppressExpr` |
 
 ### CDestructiblePartsComponent
 
@@ -5333,17 +6451,39 @@ classDiagram
 
 ```mermaid
 classDiagram
+    CDestructiblePartsComponent *-- CNetworkVarChainer
     CDestructiblePartsComponent --> CBaseModelEntity
+    CDestructiblePartsComponent *-- CAnimGraphControllerPtr
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `__m_pChainEntity` | CNetworkVarChainer | `MNotSaved` |
+| `__m_pChainEntity` | [CNetworkVarChainer](../schemas/entity2.md#cnetworkvarchainer) | `MNotSaved` |
 | `m_vecDamageTakenByHitGroup` | CUtlVector< uint16 > |  |
 | `m_hOwner` | CHandle< [CBaseModelEntity](../schemas/server.md#cbasemodelentity) > |  |
-| `m_pAnimGraphDestructibleGraphController` | CAnimGraphControllerPtr |  |
+| `m_pAnimGraphDestructibleGraphController` | [CAnimGraphControllerPtr](../schemas/server.md#canimgraphcontrollerptr) |  |
+
+### CDestructiblePartsSystemData
+
+**Metadata:** `MGetKV3ClassDefaults`, `MModelGameData`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CDestructiblePartsSystemData *-- HitGroup_t
+    CDestructiblePartsSystemData *-- CDestructiblePart
+    CDestructiblePartsSystemData *-- CRangeInt
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_PartsDataByHitGroup` | CUtlOrderedMap< [HitGroup_t](../schemas/!GlobalTypes.md#hitgroup_t), [CDestructiblePart](../schemas/server.md#cdestructiblepart) > | `MPropertyDescription Destructible Parts` |
+| `m_nMinMaxNumberHitGroupsToDestroyWhenGibbing` | [CRangeInt](../schemas/tier2.md#crangeint) | `MPropertyDescription Min/Max number parts to destroy when gibbing` |
 
 ### CDynamicLight
 
@@ -5385,6 +6525,7 @@ classDiagram
     CBaseToggle <|-- CBaseTrigger
     CBaseModelEntity <|-- CBaseToggle
     CBaseEntity <|-- CBaseModelEntity
+    CDynamicNavConnectionsVolume *-- DynamicVolumeDef_t
 ```
 
 **Fields:**
@@ -5392,7 +6533,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_iszConnectionTarget` | CUtlSymbolLarge |  |
-| `m_vecConnections` | CUtlVector< DynamicVolumeDef_t > |  |
+| `m_vecConnections` | CUtlVector< [DynamicVolumeDef_t](../schemas/server.md#dynamicvolumedef_t) > |  |
 | `m_sTransitionType` | CGlobalSymbol |  |
 | `m_bConnectionsEnabled` | bool |  |
 | `m_flTargetAreaSearchRadius` | float32 |  |
@@ -5422,6 +6563,8 @@ classDiagram
     CDynamicProp <|-- CDynamicPropAlias_dynamic_prop
     CDynamicProp <|-- CDynamicPropAlias_prop_dynamic_override
     CDynamicProp <|-- COrnamentProp
+    CDynamicProp *-- CEntityIOOutput
+    CDynamicProp *-- AnimLoopMode_t
 ```
 
 **Fields:**
@@ -5432,13 +6575,13 @@ classDiagram
 | `m_bNavObstacleUpdatesOverridden` | bool |  |
 | `m_bUseHitboxesForRenderBox` | bool |  |
 | `m_bUseAnimGraph` | bool |  |
-| `m_pOutputAnimBegun` | CEntityIOOutput |  |
-| `m_pOutputAnimOver` | CEntityIOOutput |  |
-| `m_pOutputAnimLoopCycleOver` | CEntityIOOutput |  |
-| `m_OnAnimReachedStart` | CEntityIOOutput |  |
-| `m_OnAnimReachedEnd` | CEntityIOOutput |  |
+| `m_pOutputAnimBegun` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_pOutputAnimOver` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_pOutputAnimLoopCycleOver` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnAnimReachedStart` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnAnimReachedEnd` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_iszIdleAnim` | CUtlSymbolLarge |  |
-| `m_nIdleAnimLoopMode` | AnimLoopMode_t |  |
+| `m_nIdleAnimLoopMode` | [AnimLoopMode_t](../schemas/!GlobalTypes.md#animloopmode_t) |  |
 | `m_bRandomizeCycle` | bool |  |
 | `m_bStartDisabled` | bool |  |
 | `m_bFiredStartEndOutput` | bool |  |
@@ -5499,7 +6642,7 @@ classDiagram
 
 ### CEconEntity
 
-**Inherits from:** [CBaseAnimGraph](server.md#cbaseanimgraph), IHasAttributes
+**Inherits from:** [CBaseAnimGraph](server.md#cbaseanimgraph), [IHasAttributes](server.md#ihasattributes)
 
 **Derived by:** [CBasePlayerWeapon](server.md#cbaseplayerweapon), [CEconWearable](server.md#ceconwearable)
 
@@ -5545,7 +6688,7 @@ classDiagram
 
 ### CEconItemView
 
-**Inherits from:** IEconItemInterface
+**Inherits from:** [IEconItemInterface](server.md#ieconiteminterface)
 
 **Relationships:**
 
@@ -5597,6 +6740,14 @@ classDiagram
 
 ### CEffectData
 
+**Relationships:**
+
+```mermaid
+classDiagram
+    CEffectData *-- InfoForResourceTypeIParticleSystemDefinition
+    CEffectData *-- AttachmentHandle_t
+```
+
 **Fields:**
 
 | Name | Type | Annotations |
@@ -5611,16 +6762,29 @@ classDiagram
 | `m_flMagnitude` | float32 |  |
 | `m_flRadius` | float32 |  |
 | `m_nSurfaceProp` | CUtlStringToken |  |
-| `m_nEffectIndex` | CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > |  |
+| `m_nEffectIndex` | CWeakHandle< [InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition) > |  |
 | `m_nDamageType` | uint32 |  |
 | `m_nPenetrate` | uint8 |  |
 | `m_nMaterial` | uint16 |  |
 | `m_nHitBox` | int16 |  |
 | `m_nColor` | uint8 |  |
 | `m_fFlags` | uint8 |  |
-| `m_nAttachmentIndex` | AttachmentHandle_t |  |
+| `m_nAttachmentIndex` | [AttachmentHandle_t](../schemas/modellib.md#attachmenthandle_t) |  |
 | `m_nAttachmentName` | CUtlStringToken |  |
 | `m_iEffectName` | uint16 |  |
+
+### CEmptyGraphController
+
+**Inherits from:** [CAnimGraphControllerBase](server.md#canimgraphcontrollerbase)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CAnimGraphControllerBase <|-- CEmptyGraphController
+```
 
 ### CEnableMotionFixup
 
@@ -5658,6 +6822,8 @@ classDiagram
     CBaseModelEntity <|-- CEntityDissolve
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CEntityDissolve *-- GameTime_t
+    CEntityDissolve *-- EntityDissolveType_t
 ```
 
 **Fields:**
@@ -5670,8 +6836,8 @@ classDiagram
 | `m_flFadeOutModelLength` | float32 |  |
 | `m_flFadeOutStart` | float32 |  |
 | `m_flFadeOutLength` | float32 |  |
-| `m_flStartTime` | GameTime_t |  |
-| `m_nDissolveType` | EntityDissolveType_t |  |
+| `m_flStartTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_nDissolveType` | [EntityDissolveType_t](../schemas/!GlobalTypes.md#entitydissolvetype_t) |  |
 | `m_vDissolverOrigin` | VectorWS |  |
 | `m_nMagnitude` | uint32 |  |
 
@@ -5686,6 +6852,7 @@ classDiagram
     CBaseEntity <|-- CEntityFlame
     CEntityInstance <|-- CBaseEntity
     CEntityFlame --> CBaseEntity
+    CEntityFlame *-- GameTime_t
 ```
 
 **Fields:**
@@ -5698,10 +6865,25 @@ classDiagram
 | `m_bUseHitboxes` | bool | `MNotSaved` |
 | `m_iNumHitboxFires` | int32 | `MNotSaved` |
 | `m_flHitboxFireScale` | float32 | `MNotSaved` |
-| `m_flLifetime` | GameTime_t |  |
+| `m_flLifetime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_hAttacker` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > | `MNotSaved` |
 | `m_flDirectDamagePerSecond` | float32 | `MNotSaved` |
 | `m_iCustomDamageType` | int32 | `MNotSaved` |
+
+### CEntitySubclassVDataBase
+
+**Derived by:** [CBasePlayerVData](client.md#cbaseplayervdata), [CBasePlayerWeaponVData](client.md#cbaseplayerweaponvdata), [CPrecipitationVData](client.md#cprecipitationvdata)
+
+**Metadata:** `MGetKV3ClassDefaults`, `MVDataNodeType 1`, `MVDataOverlayType 1`, `MVDataRoot`, `MVDataUseLinkedEntityClasses`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CEntitySubclassVDataBase <|-- CBasePlayerVData
+    CEntitySubclassVDataBase <|-- CBasePlayerWeaponVData
+    CEntitySubclassVDataBase <|-- CPrecipitationVData
+```
 
 ### CEnvBeam
 
@@ -5715,7 +6897,10 @@ classDiagram
     CBaseModelEntity <|-- CBeam
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CEnvBeam *-- InfoForResourceTypeIMaterial2
+    CEnvBeam *-- Touch_t
     CEnvBeam --> CBaseEntity
+    CEnvBeam *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -5723,7 +6908,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_active` | int32 |  |
-| `m_spriteTexture` | CStrongHandle< InfoForResourceTypeIMaterial2 > |  |
+| `m_spriteTexture` | CStrongHandle< [InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2) > |  |
 | `m_iszStartEntity` | CUtlSymbolLarge |  |
 | `m_iszEndEntity` | CUtlSymbolLarge |  |
 | `m_life` | float32 |  |
@@ -5736,11 +6921,11 @@ classDiagram
 | `m_vEndPointWorld` | VectorWS |  |
 | `m_vEndPointRelative` | Vector | `MNotSaved` |
 | `m_radius` | float32 |  |
-| `m_TouchType` | Touch_t |  |
+| `m_TouchType` | [Touch_t](../schemas/!GlobalTypes.md#touch_t) |  |
 | `m_iFilterName` | CUtlSymbolLarge |  |
 | `m_hFilter` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
 | `m_iszDecal` | CUtlSymbolLarge |  |
-| `m_OnTouchedByEntity` | CEntityIOOutput |  |
+| `m_OnTouchedByEntity` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CEnvBeverage
 
@@ -5776,6 +6961,7 @@ classDiagram
     CBaseEntity <|-- CEnvCombinedLightProbeVolume
     CEntityInstance <|-- CBaseEntity
     CEnvCombinedLightProbeVolume <|-- CEnvCombinedLightProbeVolumeAlias_func_combined_light_probe_volume
+    CEnvCombinedLightProbeVolume *-- InfoForResourceTypeCTextureBase
 ```
 
 **Fields:**
@@ -5784,17 +6970,17 @@ classDiagram
 |------|------|-------------|
 | `m_Entity_Color` | Color |  |
 | `m_Entity_flBrightness` | float32 |  |
-| `m_Entity_hCubemapTexture` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
+| `m_Entity_hCubemapTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
 | `m_Entity_bCustomCubemapTexture` | bool |  |
-| `m_Entity_hLightProbeTexture_AmbientCube` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
-| `m_Entity_hLightProbeTexture_SDF` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
-| `m_Entity_hLightProbeTexture_SH2_DC` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
-| `m_Entity_hLightProbeTexture_SH2_R` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
-| `m_Entity_hLightProbeTexture_SH2_G` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
-| `m_Entity_hLightProbeTexture_SH2_B` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
-| `m_Entity_hLightProbeDirectLightIndicesTexture` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
-| `m_Entity_hLightProbeDirectLightScalarsTexture` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
-| `m_Entity_hLightProbeDirectLightShadowsTexture` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
+| `m_Entity_hLightProbeTexture_AmbientCube` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
+| `m_Entity_hLightProbeTexture_SDF` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
+| `m_Entity_hLightProbeTexture_SH2_DC` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
+| `m_Entity_hLightProbeTexture_SH2_R` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
+| `m_Entity_hLightProbeTexture_SH2_G` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
+| `m_Entity_hLightProbeTexture_SH2_B` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
+| `m_Entity_hLightProbeDirectLightIndicesTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
+| `m_Entity_hLightProbeDirectLightScalarsTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
+| `m_Entity_hLightProbeDirectLightShadowsTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
 | `m_Entity_vBoxMins` | Vector |  |
 | `m_Entity_vBoxMaxs` | Vector |  |
 | `m_Entity_bMoveable` | bool |  |
@@ -5842,13 +7028,14 @@ classDiagram
     CBaseEntity <|-- CEnvCubemap
     CEntityInstance <|-- CBaseEntity
     CEnvCubemap <|-- CEnvCubemapBox
+    CEnvCubemap *-- InfoForResourceTypeCTextureBase
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_Entity_hCubemapTexture` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
+| `m_Entity_hCubemapTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
 | `m_Entity_bCustomCubemapTexture` | bool |  |
 | `m_Entity_flInfluenceRadius` | float32 |  |
 | `m_Entity_vBoxProjectMins` | Vector |  |
@@ -5892,6 +7079,8 @@ classDiagram
 classDiagram
     CBaseEntity <|-- CEnvCubemapFog
     CEntityInstance <|-- CBaseEntity
+    CEnvCubemapFog *-- InfoForResourceTypeIMaterial2
+    CEnvCubemapFog *-- InfoForResourceTypeCTextureBase
 ```
 
 **Fields:**
@@ -5911,7 +7100,7 @@ classDiagram
 | `m_bStartDisabled` | bool |  |
 | `m_flFogMaxOpacity` | float32 |  |
 | `m_nCubemapSourceType` | int32 |  |
-| `m_hSkyMaterial` | CStrongHandle< InfoForResourceTypeIMaterial2 > |  |
+| `m_hSkyMaterial` | CStrongHandle< [InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2) > |  |
 | `m_iszSkyEntity` | CUtlSymbolLarge |  |
 | `m_nHeightFogType` | int32 |  |
 | `m_nFogHeightBlendMode` | int32 |  |
@@ -5919,7 +7108,7 @@ classDiagram
 | `m_nDistanceFogType` | int32 |  |
 | `m_DistanceFogCurveString` | CUtlSymbolLarge |  |
 | `m_HeightFogCurveString` | CUtlSymbolLarge |  |
-| `m_hFogCubemapTexture` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
+| `m_hFogCubemapTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
 | `m_bHasHeightFogEnd` | bool |  |
 | `m_bFirstTime` | bool |  |
 
@@ -5936,13 +7125,14 @@ classDiagram
     CBaseModelEntity <|-- CEnvDecal
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CEnvDecal *-- InfoForResourceTypeIMaterial2
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_hDecalMaterial` | CStrongHandle< InfoForResourceTypeIMaterial2 > |  |
+| `m_hDecalMaterial` | CStrongHandle< [InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2) > |  |
 | `m_flWidth` | float32 |  |
 | `m_flHeight` | float32 |  |
 | `m_flDepth` | float32 |  |
@@ -6001,6 +7191,7 @@ classDiagram
     CBaseEntity <|-- CPointEntity
     CEntityInstance <|-- CBaseEntity
     CEnvEntityMaker --> CBaseEntity
+    CEnvEntityMaker *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -6017,8 +7208,8 @@ classDiagram
 | `m_flPostSpawnSpeed` | float32 |  |
 | `m_bPostSpawnUseAngles` | bool |  |
 | `m_iszTemplate` | CUtlSymbolLarge |  |
-| `m_pOutputOnSpawned` | CEntityIOOutput |  |
-| `m_pOutputOnFailedSpawn` | CEntityIOOutput |  |
+| `m_pOutputOnSpawned` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_pOutputOnFailedSpawn` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CEnvExplosion
 
@@ -6033,6 +7224,8 @@ classDiagram
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
     CEnvExplosion --> CBaseEntity
+    CEnvExplosion *-- DamageTypes_t
+    CEnvExplosion *-- Class_T
 ```
 
 **Fields:**
@@ -6045,13 +7238,13 @@ classDiagram
 | `m_flInnerRadius` | float32 |  |
 | `m_flDamageForce` | float32 |  |
 | `m_hInflictor` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
-| `m_iCustomDamageType` | DamageTypes_t |  |
+| `m_iCustomDamageType` | [DamageTypes_t](../schemas/!GlobalTypes.md#damagetypes_t) |  |
 | `m_bCreateDebris` | bool |  |
 | `m_iszCustomEffectName` | CUtlSymbolLarge |  |
 | `m_iszCustomSoundName` | CUtlSymbolLarge |  |
 | `m_bSuppressParticleImpulse` | bool |  |
-| `m_iClassIgnore` | Class_T |  |
-| `m_iClassIgnore2` | Class_T |  |
+| `m_iClassIgnore` | [Class_T](../schemas/!GlobalTypes.md#class_t) |  |
+| `m_iClassIgnore2` | [Class_T](../schemas/!GlobalTypes.md#class_t) |  |
 | `m_iszEntityIgnoreName` | CUtlSymbolLarge |  |
 | `m_hEntityIgnore` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
 
@@ -6066,6 +7259,7 @@ classDiagram
     CLogicalEntity <|-- CEnvFade
     C_BaseEntity <|-- CLogicalEntity
     CEntityInstance <|-- C_BaseEntity
+    CEnvFade *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -6075,7 +7269,7 @@ classDiagram
 | `m_fadeColor` | Color |  |
 | `m_Duration` | float32 |  |
 | `m_HoldDuration` | float32 |  |
-| `m_OnBeginFade` | CEntityIOOutput |  |
+| `m_OnBeginFade` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CEnvGlobal
 
@@ -6225,21 +7419,22 @@ classDiagram
 classDiagram
     CBaseEntity <|-- CEnvLightProbeVolume
     CEntityInstance <|-- CBaseEntity
+    CEnvLightProbeVolume *-- InfoForResourceTypeCTextureBase
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_Entity_hLightProbeTexture_AmbientCube` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
-| `m_Entity_hLightProbeTexture_SDF` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
-| `m_Entity_hLightProbeTexture_SH2_DC` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
-| `m_Entity_hLightProbeTexture_SH2_R` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
-| `m_Entity_hLightProbeTexture_SH2_G` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
-| `m_Entity_hLightProbeTexture_SH2_B` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
-| `m_Entity_hLightProbeDirectLightIndicesTexture` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
-| `m_Entity_hLightProbeDirectLightScalarsTexture` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
-| `m_Entity_hLightProbeDirectLightShadowsTexture` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
+| `m_Entity_hLightProbeTexture_AmbientCube` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
+| `m_Entity_hLightProbeTexture_SDF` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
+| `m_Entity_hLightProbeTexture_SH2_DC` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
+| `m_Entity_hLightProbeTexture_SH2_R` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
+| `m_Entity_hLightProbeTexture_SH2_G` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
+| `m_Entity_hLightProbeTexture_SH2_B` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
+| `m_Entity_hLightProbeDirectLightIndicesTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
+| `m_Entity_hLightProbeDirectLightScalarsTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
+| `m_Entity_hLightProbeDirectLightShadowsTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
 | `m_Entity_vBoxMins` | Vector |  |
 | `m_Entity_vBoxMaxs` | Vector |  |
 | `m_Entity_bMoveable` | bool |  |
@@ -6288,6 +7483,7 @@ classDiagram
     CBaseModelEntity <|-- CParticleSystem
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CEnvParticleGlow *-- InfoForResourceTypeCTextureBase
 ```
 
 **Fields:**
@@ -6298,7 +7494,7 @@ classDiagram
 | `m_flRadiusScale` | float32 |  |
 | `m_flSelfIllumScale` | float32 |  |
 | `m_ColorTint` | Color |  |
-| `m_hTextureOverride` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
+| `m_hTextureOverride` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
 
 ### CEnvShake
 
@@ -6311,6 +7507,9 @@ classDiagram
     CPointEntity <|-- CEnvShake
     CBaseEntity <|-- CPointEntity
     CEntityInstance <|-- CBaseEntity
+    CEnvShake *-- GameTime_t
+    CEnvShake --> IPhysicsMotionController
+    CEnvShake *-- CPhysicsShake
 ```
 
 **Fields:**
@@ -6322,12 +7521,12 @@ classDiagram
 | `m_Frequency` | float32 |  |
 | `m_Duration` | float32 |  |
 | `m_Radius` | float32 |  |
-| `m_stopTime` | GameTime_t |  |
-| `m_nextShake` | GameTime_t |  |
+| `m_stopTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_nextShake` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_currentAmp` | float32 |  |
 | `m_maxForce` | Vector |  |
-| `m_pShakeController` | IPhysicsMotionController* | `MPhysPtr` |
-| `m_shakeCallback` | CPhysicsShake |  |
+| `m_pShakeController` | [IPhysicsMotionController](../schemas/vphysics2.md#iphysicsmotioncontroller)* | `MPhysPtr` |
+| `m_shakeCallback` | [CPhysicsShake](../schemas/server.md#cphysicsshake) |  |
 
 ### CEnvSky
 
@@ -6342,14 +7541,15 @@ classDiagram
     CBaseModelEntity <|-- CEnvSky
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CEnvSky *-- InfoForResourceTypeIMaterial2
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_hSkyMaterial` | CStrongHandle< InfoForResourceTypeIMaterial2 > |  |
-| `m_hSkyMaterialLightingOnly` | CStrongHandle< InfoForResourceTypeIMaterial2 > |  |
+| `m_hSkyMaterial` | CStrongHandle< [InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2) > |  |
+| `m_hSkyMaterialLightingOnly` | CStrongHandle< [InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2) > |  |
 | `m_bStartDisabled` | bool |  |
 | `m_vTintColor` | Color |  |
 | `m_vTintColorLightingOnly` | Color |  |
@@ -6378,13 +7578,14 @@ classDiagram
     CEnvSoundscape <|-- CEnvSoundscapeAlias_snd_soundscape
     CEnvSoundscape <|-- CEnvSoundscapeProxy
     CEnvSoundscape <|-- CEnvSoundscapeTriggerable
+    CEnvSoundscape *-- CEntityIOOutput
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnPlay` | CEntityIOOutput |  |
+| `m_OnPlay` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_flRadius` | float32 |  |
 | `m_soundEventName` | CGameSoundEventName |  |
 | `m_bOverrideWithEvent` | bool |  |
@@ -6486,6 +7687,7 @@ classDiagram
     CPointEntity <|-- CEnvSpark
     CBaseEntity <|-- CPointEntity
     CEntityInstance <|-- CBaseEntity
+    CEnvSpark *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -6496,7 +7698,7 @@ classDiagram
 | `m_nMagnitude` | int32 |  |
 | `m_nTrailLength` | int32 |  |
 | `m_nType` | int32 |  |
-| `m_OnSpark` | CEntityIOOutput |  |
+| `m_OnSpark` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CEnvSplash
 
@@ -6528,6 +7730,7 @@ classDiagram
     CPointEntity <|-- CEnvTilt
     CBaseEntity <|-- CPointEntity
     CEntityInstance <|-- CBaseEntity
+    CEnvTilt *-- GameTime_t
 ```
 
 **Fields:**
@@ -6537,7 +7740,7 @@ classDiagram
 | `m_Duration` | float32 |  |
 | `m_Radius` | float32 |  |
 | `m_TiltTime` | float32 |  |
-| `m_stopTime` | GameTime_t |  |
+| `m_stopTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 
 ### CEnvViewPunch
 
@@ -6571,6 +7774,8 @@ classDiagram
 classDiagram
     CBaseEntity <|-- CEnvVolumetricFogController
     CEntityInstance <|-- CBaseEntity
+    CEnvVolumetricFogController *-- GameTime_t
+    CEnvVolumetricFogController *-- InfoForResourceTypeCTextureBase
 ```
 
 **Fields:**
@@ -6593,9 +7798,9 @@ classDiagram
 | `m_vBoxMins` | Vector |  |
 | `m_vBoxMaxs` | Vector |  |
 | `m_bActive` | bool |  |
-| `m_flStartAnisoTime` | GameTime_t |  |
-| `m_flStartScatterTime` | GameTime_t |  |
-| `m_flStartDrawDistanceTime` | GameTime_t |  |
+| `m_flStartAnisoTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_flStartScatterTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_flStartDrawDistanceTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flStartAnisotropy` | float32 |  |
 | `m_flStartScattering` | float32 |  |
 | `m_flStartDrawDistance` | float32 |  |
@@ -6605,7 +7810,7 @@ classDiagram
 | `m_bStartDisabled` | bool |  |
 | `m_bEnableIndirect` | bool |  |
 | `m_bIsMaster` | bool |  |
-| `m_hFogIndirectTexture` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
+| `m_hFogIndirectTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
 | `m_nForceRefreshCount` | int32 |  |
 | `m_fNoiseSpeed` | float32 |  |
 | `m_fNoiseStrength` | float32 |  |
@@ -6707,6 +7912,8 @@ classDiagram
 
 ```mermaid
 classDiagram
+    CEnvWindShared *-- GameTime_t
+    CEnvWindShared *-- CEntityIOOutput
     CEnvWindShared --> CBaseEntity
 ```
 
@@ -6714,7 +7921,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_flStartTime` | GameTime_t | `MNotSaved` |
+| `m_flStartTime` | [GameTime_t](../schemas/entity2.md#gametime_t) | `MNotSaved` |
 | `m_iWindSeed` | uint32 | `MNotSaved` |
 | `m_iMinWind` | uint16 |  |
 | `m_iMaxWind` | uint16 |  |
@@ -6728,8 +7935,8 @@ classDiagram
 | `m_iInitialWindDir` | uint16 | `MNotSaved` |
 | `m_flInitialWindSpeed` | float32 | `MNotSaved` |
 | `m_location` | VectorWS | `MNotSaved` |
-| `m_OnGustStart` | CEntityIOOutput |  |
-| `m_OnGustEnd` | CEntityIOOutput |  |
+| `m_OnGustStart` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnGustEnd` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_hEntOwner` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > | `MNotSaved` |
 
 ### CEnvWindSharedAPI
@@ -6766,15 +7973,24 @@ classDiagram
 
 **Metadata:** `MGetKV3ClassDefaults`, `MVDataAssociatedFile`, `MVDataOverlayType 1`, `MVDataRoot`
 
+**Relationships:**
+
+```mermaid
+classDiagram
+    CExplosionTypeData *-- InfoForResourceTypeIParticleSystemDefinition
+```
+
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_SoundName` | CSoundEventName |  |
-| `m_ParticleEffect` | CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > |  |
+| `m_ParticleEffect` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition) > > |  |
 | `m_bIsIncindiary` | bool | `MPropertyDescription Whether this explosion relates to fire` |
 | `m_bHasForces` | bool | `MPropertyDescription Whether this explosion has explosive forces` |
 | `m_DecalType` | CGlobalSymbol | `MPropertyDescription Decal to use when this explosion occurs` |
+
+### CExternalAnimGraphList
 
 ### CFilterAttributeInt
 
@@ -7013,6 +8229,26 @@ classDiagram
     CEntityInstance <|-- CBaseEntity
 ```
 
+### CFiringModeFloat
+
+**Metadata:** `MPropertyCustomEditor multi_float(2)`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flValues` | float32[2] |  |
+
+### CFiringModeInt
+
+**Metadata:** `MPropertyCustomEditor multi_int(2)`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nValues` | int32[2] |  |
+
 ### CFish
 
 **Inherits from:** [CBaseAnimGraph](server.md#cbaseanimgraph)
@@ -7124,6 +8360,10 @@ classDiagram
 
 ### CFlashbangProjectile_API
 
+### CFloatExponentialMovingAverage
+
+### CFloatMovingAverage
+
 ### CFogController
 
 **Inherits from:** [CBaseEntity](server.md#cbaseentity)
@@ -7215,6 +8455,10 @@ classDiagram
 
 ### CFootstepControl_API
 
+### CFootstepTableHandle
+
+**Metadata:** `MPropertyCustomFGDType string`
+
 ### CFuncBrush
 
 **Inherits from:** [CBaseModelEntity](server.md#cbasemodelentity)
@@ -7230,13 +8474,14 @@ classDiagram
     CEntityInstance <|-- CBaseEntity
     CFuncBrush <|-- CFuncElectrifiedVolume
     CFuncBrush <|-- CFuncMonitor
+    CFuncBrush *-- BrushSolidities_e
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_iSolidity` | BrushSolidities_e |  |
+| `m_iSolidity` | [BrushSolidities_e](../schemas/!GlobalTypes.md#brushsolidities_e) |  |
 | `m_iDisabled` | int32 |  |
 | `m_bSolidBsp` | bool |  |
 | `m_iszExcludedClass` | CUtlSymbolLarge |  |
@@ -7254,6 +8499,7 @@ classDiagram
     CBaseModelEntity <|-- CFuncConveyor
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CFuncConveyor *-- GameTick_t
     CFuncConveyor --> CBaseEntity
 ```
 
@@ -7267,7 +8513,7 @@ classDiagram
 | `m_angMoveEntitySpace` | QAngle |  |
 | `m_vecMoveDirEntitySpace` | Vector |  |
 | `m_flTargetSpeed` | float32 |  |
-| `m_nTransitionStartTick` | GameTick_t |  |
+| `m_nTransitionStartTick` | [GameTick_t](../schemas/entity2.md#gametick_t) |  |
 | `m_nTransitionDurationTicks` | int32 |  |
 | `m_flTransitionStartSpeed` | float32 |  |
 | `m_hConveyorModels` | CNetworkUtlVectorBase< CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > > |  |
@@ -7346,6 +8592,7 @@ classDiagram
     CEntityInstance <|-- CBaseEntity
     CFuncLadder <|-- CFuncLadderAlias_func_useableladder
     CFuncLadder --> CInfoLadderDismount
+    CFuncLadder *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -7362,8 +8609,8 @@ classDiagram
 | `m_bFakeLadder` | bool |  |
 | `m_bHasSlack` | bool |  |
 | `m_surfacePropName` | CUtlSymbolLarge |  |
-| `m_OnPlayerGotOnLadder` | CEntityIOOutput |  |
-| `m_OnPlayerGotOffLadder` | CEntityIOOutput |  |
+| `m_OnPlayerGotOnLadder` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnPlayerGotOffLadder` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CFuncLadderAlias_func_useableladder
 
@@ -7423,13 +8670,15 @@ classDiagram
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
     CFuncMoveLinear <|-- CFuncMoveLinearAlias_momentary_door
+    CFuncMoveLinear *-- MoveLinearAuthoredPos_t
+    CFuncMoveLinear *-- CEntityIOOutput
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_authoredPosition` | MoveLinearAuthoredPos_t |  |
+| `m_authoredPosition` | [MoveLinearAuthoredPos_t](../schemas/!GlobalTypes.md#movelinearauthoredpos_t) |  |
 | `m_angMoveEntitySpace` | QAngle |  |
 | `m_vecMoveDirParentSpace` | Vector |  |
 | `m_soundStart` | CGameSoundEventName |  |
@@ -7437,8 +8686,8 @@ classDiagram
 | `m_currentSound` | CUtlSymbolLarge |  |
 | `m_flBlockDamage` | float32 |  |
 | `m_flStartPosition` | float32 |  |
-| `m_OnFullyOpen` | CEntityIOOutput |  |
-| `m_OnFullyClosed` | CEntityIOOutput |  |
+| `m_OnFullyOpen` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnFullyClosed` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_flSpeed` | float32 |  |
 | `m_bCreateMovableNavMesh` | bool |  |
 | `m_bAllowMovableNavMeshDockingOnEntireEntity` | bool |  |
@@ -7471,8 +8720,13 @@ classDiagram
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
     CFuncMover --> CPathMover
+    CFuncMover *-- SolidType_t
+    CFuncMover *-- GameTime_t
     CFuncMover --> CMoverPathNode
+    CFuncMover *-- CEntityIOOutput
     CFuncMover --> CBaseEntity
+    CFuncMover *-- GameTick_t
+    CFuncMover *-- FuncMoverMovementSummary_t
 ```
 
 **Fields:**
@@ -7492,7 +8746,7 @@ classDiagram
 | `m_flT` | float32 |  |
 | `m_nCurrentNodeIndex` | int32 |  |
 | `m_nPreviousNodeIndex` | int32 |  |
-| `m_eSolidType` | SolidType_t |  |
+| `m_eSolidType` | [SolidType_t](../schemas/!GlobalTypes.md#solidtype_t) |  |
 | `m_bIsMoving` | bool |  |
 | `m_flTimeToReachMaxSpeed` | float32 |  |
 | `m_flDistanceToReachMaxSpeed` | float32 |  |
@@ -7502,8 +8756,8 @@ classDiagram
 | `m_flStartCurveScale` | float32 |  |
 | `m_flStopCurveScale` | float32 |  |
 | `m_flDistanceToReachZeroSpeed` | float32 |  |
-| `m_flTimeMovementStart` | GameTime_t |  |
-| `m_flTimeMovementStop` | GameTime_t |  |
+| `m_flTimeMovementStart` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_flTimeMovementStop` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_hStopAtNode` | CHandle< [CMoverPathNode](../schemas/server.md#cmoverpathnode) > |  |
 | `m_flPathLocationToBeginStop` | float32 |  |
 | `m_flPathLocationStart` | float32 |  |
@@ -7515,12 +8769,12 @@ classDiagram
 | `m_iszLoopReverseSound` | CGameSoundEventName |  |
 | `m_iszStopReverseSound` | CGameSoundEventName |  |
 | `m_iszArriveAtDestinationSound` | CGameSoundEventName |  |
-| `m_OnMovementEnd` | CEntityIOOutput |  |
+| `m_OnMovementEnd` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_bStartAtClosestPoint` | bool |  |
 | `m_bStartAtEnd` | bool |  |
 | `m_bStartFollowingClosestMover` | bool |  |
 | `m_eOrientationUpdate` | [CFuncMover](../schemas/server.md#cfuncmover)::OrientationUpdate_t |  |
-| `m_flTimeStartOrientationChange` | GameTime_t |  |
+| `m_flTimeStartOrientationChange` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flTimeToBlendToNewOrientation` | float32 |  |
 | `m_flDurationBlendToNewOrientationRan` | float32 |  |
 | `m_bCreateMovableNavMesh` | bool |  |
@@ -7534,7 +8788,7 @@ classDiagram
 | `m_vLerpToNewPosEndInPathEntitySpace` | Vector |  |
 | `m_flLerpToPositionT` | float32 |  |
 | `m_flLerpToPositionDeltaT` | float32 |  |
-| `m_OnLerpToPositionComplete` | CEntityIOOutput |  |
+| `m_OnLerpToPositionComplete` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_bIsPaused` | bool |  |
 | `m_eTransitionedToPathNodeAction` | [CFuncMover](../schemas/server.md#cfuncmover)::TransitionToPathNodeAction_t |  |
 | `m_qTransitionSourceOrientation` | Quaternion |  |
@@ -7549,11 +8803,11 @@ classDiagram
 | `m_flCurFollowSpeed` | float32 |  |
 | `m_strOrientationFaceEntityName` | CUtlSymbolLarge |  |
 | `m_hOrientationFaceEntity` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
-| `m_OnStart` | CEntityIOOutput |  |
-| `m_OnStartForward` | CEntityIOOutput |  |
-| `m_OnStartReverse` | CEntityIOOutput |  |
-| `m_OnStop` | CEntityIOOutput |  |
-| `m_OnStopped` | CEntityIOOutput |  |
+| `m_OnStart` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnStartForward` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnStartReverse` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnStop` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnStopped` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_bNextNodeReturnsCurrent` | bool |  |
 | `m_bStartedMoving` | bool |  |
 | `m_eFollowEntityDirection` | [CFuncMover](../schemas/server.md#cfuncmover)::FollowEntityDirection_t |  |
@@ -7570,8 +8824,8 @@ classDiagram
 | `m_eFollowConstraint` | [CFuncMover](../schemas/server.md#cfuncmover)::FollowConstraint_t |  |
 | `m_flFollowMoverSpeed` | float32 |  |
 | `m_flFollowMoverVelocity` | float32 |  |
-| `m_nTickMovementRan` | GameTick_t |  |
-| `m_movementSummary` | FuncMoverMovementSummary_t |  |
+| `m_nTickMovementRan` | [GameTick_t](../schemas/entity2.md#gametick_t) |  |
+| `m_movementSummary` | [FuncMoverMovementSummary_t](../schemas/server.md#funcmovermovementsummary_t) |  |
 | `m_bStopFromBeginStopTarget` | bool |  |
 | `m_bQueueStop` | bool |  |
 | `m_bQueueStopMoving` | bool |  |
@@ -7802,15 +9056,16 @@ classDiagram
     CBaseModelEntity <|-- CFuncRotating
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CFuncRotating *-- CEntityIOOutput
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnStopped` | CEntityIOOutput |  |
-| `m_OnStarted` | CEntityIOOutput |  |
-| `m_OnReachedStart` | CEntityIOOutput |  |
+| `m_OnStopped` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnStarted` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnReachedStart` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_localRotationVector` | RotationVector |  |
 | `m_flSpeed` | float32 |  |
 | `m_flFanFriction` | float32 |  |
@@ -7839,7 +9094,12 @@ classDiagram
     CBaseModelEntity <|-- CFuncRotator
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CFuncRotator *-- SolidType_t
     CFuncRotator --> CBaseEntity
+    CFuncRotator *-- CEntityIOOutput
+    CFuncRotator *-- GameTick_t
+    CFuncRotator *-- FuncRotatorRotationSummary_t
+    CFuncRotator *-- GameTime_t
 ```
 
 **Fields:**
@@ -7848,26 +9108,26 @@ classDiagram
 |------|------|-------------|
 | `m_eRotateType` | [CFuncRotator](../schemas/server.md#cfuncrotator)::Rotate_t |  |
 | `m_bIsRotating` | bool |  |
-| `m_eSolidType` | SolidType_t |  |
+| `m_eSolidType` | [SolidType_t](../schemas/!GlobalTypes.md#solidtype_t) |  |
 | `m_flSpeed` | float32 |  |
 | `m_flTimeToCompleteRotation` | float32 |  |
 | `m_hRotatorTarget` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
 | `m_strRotatorTarget` | CUtlSymbolLarge |  |
 | `m_vecLocalRotationHistory` | CUtlVector< Quaternion > |  |
-| `m_OnRotationStarted` | CEntityIOOutput |  |
-| `m_OnRotationCompleted` | CEntityIOOutput |  |
-| `m_OnOscillate` | CEntityIOOutput |  |
-| `m_OnOscillateStartArrive` | CEntityIOOutput |  |
-| `m_OnOscillateStartDepart` | CEntityIOOutput |  |
-| `m_OnOscillateEndArrive` | CEntityIOOutput |  |
-| `m_OnOscillateEndDepart` | CEntityIOOutput |  |
-| `m_nTickRotateRan` | GameTick_t |  |
+| `m_OnRotationStarted` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnRotationCompleted` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnOscillate` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnOscillateStartArrive` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnOscillateStartDepart` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnOscillateEndArrive` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnOscillateEndDepart` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_nTickRotateRan` | [GameTick_t](../schemas/entity2.md#gametick_t) |  |
 | `m_bStartedRotating` | bool |  |
-| `m_rotationSummary` | FuncRotatorRotationSummary_t |  |
+| `m_rotationSummary` | [FuncRotatorRotationSummary_t](../schemas/server.md#funcrotatorrotationsummary_t) |  |
 | `m_flTimeToReachMaxSpeed` | float32 |  |
 | `m_flTimeToReachZeroSpeed` | float32 |  |
-| `m_flTimeRotationStart` | GameTime_t |  |
-| `m_flTimeRotationStop` | GameTime_t |  |
+| `m_flTimeRotationStart` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_flTimeRotationStop` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flStartSpeed` | float32 |  |
 | `m_qSpawnOrientation` | Quaternion |  |
 | `m_bRecordHistory` | bool |  |
@@ -7921,6 +9181,9 @@ classDiagram
     CBaseModelEntity <|-- CFuncShatterglass
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CFuncShatterglass *-- GameTime_t
+    CFuncShatterglass *-- CEntityIOOutput
+    CFuncShatterglass *-- InfoForResourceTypeIMaterial2
 ```
 
 **Fields:**
@@ -7931,9 +9194,9 @@ classDiagram
 | `m_matPanelTransformWsTemp` | matrix3x4_t |  |
 | `m_vecShatterGlassShards` | CUtlVector< uint32 > |  |
 | `m_PanelSize` | Vector2D |  |
-| `m_flLastShatterSoundEmitTime` | GameTime_t |  |
-| `m_flLastCleanupTime` | GameTime_t |  |
-| `m_flInitAtTime` | GameTime_t |  |
+| `m_flLastShatterSoundEmitTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_flLastCleanupTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_flInitAtTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flGlassThickness` | float32 |  |
 | `m_flSpawnInvulnerability` | float32 |  |
 | `m_bBreakSilent` | bool |  |
@@ -7950,9 +9213,9 @@ classDiagram
 | `m_vInitialDamagePositions` | CUtlVector< VectorWS > |  |
 | `m_vExtraDamagePositions` | CUtlVector< VectorWS > |  |
 | `m_vInitialPanelVertices` | CUtlVector< Vector4D > |  |
-| `m_OnBroken` | CEntityIOOutput |  |
+| `m_OnBroken` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_iSurfaceType` | uint8 |  |
-| `m_hMaterialDamageBase` | CStrongHandle< InfoForResourceTypeIMaterial2 > |  |
+| `m_hMaterialDamageBase` | CStrongHandle< [InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2) > |  |
 
 ### CFuncTankTrain
 
@@ -7966,13 +9229,14 @@ classDiagram
     CBaseModelEntity <|-- CFuncTrackTrain
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CFuncTankTrain *-- CEntityIOOutput
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnDeath` | CEntityIOOutput |  |
+| `m_OnDeath` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CFuncTimescale
 
@@ -8029,6 +9293,7 @@ classDiagram
     CFuncTrackChange <|-- CFuncTrackAuto
     CFuncTrackChange --> CPathTrack
     CFuncTrackChange --> CFuncTrackTrain
+    CFuncTrackChange *-- TRAIN_CODE
 ```
 
 **Fields:**
@@ -8041,7 +9306,7 @@ classDiagram
 | `m_trackTopName` | CUtlSymbolLarge | `MSaveBehavior` |
 | `m_trackBottomName` | CUtlSymbolLarge | `MSaveBehavior` |
 | `m_trainName` | CUtlSymbolLarge | `MSaveBehavior` |
-| `m_code` | TRAIN_CODE |  |
+| `m_code` | [TRAIN_CODE](../schemas/!GlobalTypes.md#train_code) |  |
 | `m_targetState` | int32 |  |
 | `m_use` | int32 |  |
 
@@ -8060,6 +9325,10 @@ classDiagram
     CEntityInstance <|-- CBaseEntity
     CFuncTrackTrain <|-- CFuncTankTrain
     CFuncTrackTrain --> CPathTrack
+    CFuncTrackTrain *-- GameTime_t
+    CFuncTrackTrain *-- TrainOrientationType_t
+    CFuncTrackTrain *-- TrainVelocityType_t
+    CFuncTrackTrain *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -8089,21 +9358,21 @@ classDiagram
 | `m_strPathTarget` | CGameSoundEventName |  |
 | `m_flMoveSoundMinDuration` | float32 |  |
 | `m_flMoveSoundMaxDuration` | float32 |  |
-| `m_flNextMoveSoundTime` | GameTime_t |  |
+| `m_flNextMoveSoundTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flMoveSoundMinPitch` | float32 |  |
 | `m_flMoveSoundMaxPitch` | float32 |  |
-| `m_eOrientationType` | TrainOrientationType_t |  |
-| `m_eVelocityType` | TrainVelocityType_t |  |
-| `m_OnStart` | CEntityIOOutput |  |
-| `m_OnNext` | CEntityIOOutput |  |
-| `m_OnArrivedAtDestinationNode` | CEntityIOOutput |  |
+| `m_eOrientationType` | [TrainOrientationType_t](../schemas/!GlobalTypes.md#trainorientationtype_t) |  |
+| `m_eVelocityType` | [TrainVelocityType_t](../schemas/!GlobalTypes.md#trainvelocitytype_t) |  |
+| `m_OnStart` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnNext` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnArrivedAtDestinationNode` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_bManualSpeedChanges` | bool |  |
 | `m_flDesiredSpeed` | float32 | `MNotSaved` |
-| `m_flSpeedChangeTime` | GameTime_t | `MNotSaved` |
+| `m_flSpeedChangeTime` | [GameTime_t](../schemas/entity2.md#gametime_t) | `MNotSaved` |
 | `m_flAccelSpeed` | float32 |  |
 | `m_flDecelSpeed` | float32 |  |
 | `m_bAccelToSpeed` | bool | `MNotSaved` |
-| `m_flNextMPSoundTime` | GameTime_t | `MNotSaved` |
+| `m_flNextMPSoundTime` | [GameTime_t](../schemas/entity2.md#gametime_t) | `MNotSaved` |
 
 ### CFuncTrain
 
@@ -8119,6 +9388,7 @@ classDiagram
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
     CFuncTrain --> CBaseEntity
+    CFuncTrain *-- GameTime_t
 ```
 
 **Fields:**
@@ -8129,7 +9399,7 @@ classDiagram
 | `m_activated` | bool |  |
 | `m_hEnemy` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
 | `m_flBlockDamage` | float32 |  |
-| `m_flNextBlockTime` | GameTime_t |  |
+| `m_flNextBlockTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_iszLastTarget` | CUtlSymbolLarge |  |
 | `m_flSpeed` | float32 |  |
 
@@ -8234,6 +9504,33 @@ classDiagram
 |------|------|-------------|
 | `m_BuoyancyHelper` | [CBuoyancyHelper](../schemas/server.md#cbuoyancyhelper) |  |
 
+### CGameChoreoServices
+
+**Inherits from:** [IChoreoServices](server.md#ichoreoservices)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    IChoreoServices <|-- CGameChoreoServices
+    CGameChoreoServices --> CBaseModelEntity
+    CGameChoreoServices --> CScriptedSequence
+    CGameChoreoServices *-- IChoreoServices
+    CGameChoreoServices *-- GameTime_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_hOwner` | CHandle< [CBaseModelEntity](../schemas/server.md#cbasemodelentity) > |  |
+| `m_hScriptedSequence` | CHandle< [CScriptedSequence](../schemas/server.md#cscriptedsequence) > |  |
+| `m_scriptState` | [IChoreoServices](../schemas/server.md#ichoreoservices)::ScriptState_t |  |
+| `m_choreoState` | [IChoreoServices](../schemas/server.md#ichoreoservices)::ChoreoState_t |  |
+| `m_flTimeStartedState` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+
 ### CGameEnd
 
 **Inherits from:** [CRulePointEntity](server.md#crulepointentity)
@@ -8283,14 +9580,15 @@ classDiagram
     CBaseModelEntity <|-- CRuleEntity
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CGameMoney *-- CEntityIOOutput
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnMoneySpent` | CEntityIOOutput |  |
-| `m_OnMoneySpentFail` | CEntityIOOutput |  |
+| `m_OnMoneySpent` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnMoneySpentFail` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_nMoney` | int32 |  |
 | `m_strAwardText` | CUtlString |  |
 
@@ -8324,14 +9622,15 @@ classDiagram
     CBaseModelEntity <|-- CRuleEntity
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CGamePlayerZone *-- CEntityIOOutput
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnPlayerInZone` | CEntityIOOutput |  |
-| `m_OnPlayerOutZone` | CEntityIOOutput |  |
+| `m_OnPlayerInZone` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnPlayerOutZone` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_PlayersInCount` | CEntityOutputTemplate< int32 > |  |
 | `m_PlayersOutCount` | CEntityOutputTemplate< int32 > |  |
 
@@ -8345,13 +9644,14 @@ classDiagram
 classDiagram
     CGameRules <|-- CMultiplayRules
     CGameRules <|-- CSingleplayRules
+    CGameRules *-- CNetworkVarChainer
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `__m_pChainEntity` | CNetworkVarChainer | `MNotSaved` |
+| `__m_pChainEntity` | [CNetworkVarChainer](../schemas/entity2.md#cnetworkvarchainer) | `MNotSaved` |
 | `m_szQuestName` | char[128] |  |
 | `m_nQuestPhase` | int32 |  |
 | `m_nLastMatchTime` | uint32 |  |
@@ -8388,6 +9688,7 @@ classDiagram
     CGameSceneNode <|-- CSkeletonInstance
     CGameSceneNode --> CEntityInstance
     CGameSceneNode *-- CGameSceneNodeHandle
+    CGameSceneNode *-- CNetworkOriginCellCoordQuantizedVector
 ```
 
 **Fields:**
@@ -8409,7 +9710,7 @@ classDiagram
 | `m_pChild` | [CGameSceneNode](../schemas/server.md#cgamescenenode)* | `MNotSaved` |
 | `m_pNextSibling` | [CGameSceneNode](../schemas/server.md#cgamescenenode)* | `MNotSaved` |
 | `m_hParent` | [CGameSceneNodeHandle](../schemas/server.md#cgamescenenodehandle) |  |
-| `m_vecOrigin` | CNetworkOriginCellCoordQuantizedVector |  |
+| `m_vecOrigin` | [CNetworkOriginCellCoordQuantizedVector](../schemas/server.md#cnetworkorigincellcoordquantizedvector) |  |
 | `m_angRotation` | QAngle |  |
 | `m_flScale` | float32 |  |
 | `m_vecAbsOrigin` | VectorWS |  |
@@ -8436,6 +9737,66 @@ classDiagram
 |------|------|-------------|
 | `m_hOwner` | CEntityHandle |  |
 | `m_name` | CUtlStringToken |  |
+
+### CGameScriptedMoveData
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CGameScriptedMoveData *-- GameTime_t
+    CGameScriptedMoveData *-- ForcedCrouchState_t
+    CGameScriptedMoveData --> CBaseEntity
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vAccumulatedRootMotion` | Vector |  |
+| `m_angAccumulatedRootMotionRotation` | QAngle |  |
+| `m_vSrc` | VectorWS |  |
+| `m_angSrc` | QAngle |  |
+| `m_angCurrent` | QAngle |  |
+| `m_flLockedSpeed` | float32 |  |
+| `m_flAngRate` | float32 |  |
+| `m_flDuration` | float32 |  |
+| `m_flStartTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_bActive` | bool |  |
+| `m_bTeleportOnEnd` | bool |  |
+| `m_bIgnoreRotation` | bool |  |
+| `m_bSuccess` | bool |  |
+| `m_nForcedCrouchState` | [ForcedCrouchState_t](../schemas/!GlobalTypes.md#forcedcrouchstate_t) |  |
+| `m_bIgnoreCollisions` | bool |  |
+| `m_vDest` | Vector |  |
+| `m_angDst` | QAngle |  |
+| `m_hDestEntity` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+
+### CGameScriptedMoveDef_t
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CGameScriptedMoveDef_t --> CBaseEntity
+    CGameScriptedMoveDef_t *-- ForcedCrouchState_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vDestOffset` | Vector |  |
+| `m_hDestEntity` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+| `m_angDest` | QAngle |  |
+| `m_flDuration` | float32 |  |
+| `m_flAngRate` | float32 |  |
+| `m_flMoveSpeed` | float32 |  |
+| `m_bAimDisabled` | bool |  |
+| `m_bIgnoreRotation` | bool |  |
+| `m_nForcedCrouchState` | [ForcedCrouchState_t](../schemas/!GlobalTypes.md#forcedcrouchstate_t) |  |
 
 ### CGameStateReportAPI
 
@@ -8473,6 +9834,9 @@ classDiagram
     CLogicalEntity <|-- CPhysConstraint
     C_BaseEntity <|-- CLogicalEntity
     CEntityInstance <|-- C_BaseEntity
+    CGenericConstraint *-- JointMotion_t
+    CGenericConstraint *-- GameTime_t
+    CGenericConstraint *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -8480,9 +9844,9 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_bPlaceAnchorsAtConstraintTransform` | bool |  |
-| `m_nLinearMotionX` | JointMotion_t |  |
-| `m_nLinearMotionY` | JointMotion_t |  |
-| `m_nLinearMotionZ` | JointMotion_t |  |
+| `m_nLinearMotionX` | [JointMotion_t](../schemas/!GlobalTypes.md#jointmotion_t) |  |
+| `m_nLinearMotionY` | [JointMotion_t](../schemas/!GlobalTypes.md#jointmotion_t) |  |
+| `m_nLinearMotionZ` | [JointMotion_t](../schemas/!GlobalTypes.md#jointmotion_t) |  |
 | `m_flLinearFrequencyX` | float32 |  |
 | `m_flLinearFrequencyY` | float32 |  |
 | `m_flLinearFrequencyZ` | float32 |  |
@@ -8495,9 +9859,9 @@ classDiagram
 | `m_flBreakAfterTimeX` | float32 |  |
 | `m_flBreakAfterTimeY` | float32 |  |
 | `m_flBreakAfterTimeZ` | float32 |  |
-| `m_flBreakAfterTimeStartTimeX` | GameTime_t |  |
-| `m_flBreakAfterTimeStartTimeY` | GameTime_t |  |
-| `m_flBreakAfterTimeStartTimeZ` | GameTime_t |  |
+| `m_flBreakAfterTimeStartTimeX` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_flBreakAfterTimeStartTimeY` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_flBreakAfterTimeStartTimeZ` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flBreakAfterTimeThresholdX` | float32 |  |
 | `m_flBreakAfterTimeThresholdY` | float32 |  |
 | `m_flBreakAfterTimeThresholdZ` | float32 |  |
@@ -8507,15 +9871,15 @@ classDiagram
 | `m_flNotifyForceMinTimeX` | float32 |  |
 | `m_flNotifyForceMinTimeY` | float32 |  |
 | `m_flNotifyForceMinTimeZ` | float32 |  |
-| `m_flNotifyForceLastTimeX` | GameTime_t |  |
-| `m_flNotifyForceLastTimeY` | GameTime_t |  |
-| `m_flNotifyForceLastTimeZ` | GameTime_t |  |
+| `m_flNotifyForceLastTimeX` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_flNotifyForceLastTimeY` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_flNotifyForceLastTimeZ` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_bAxisNotifiedX` | bool |  |
 | `m_bAxisNotifiedY` | bool |  |
 | `m_bAxisNotifiedZ` | bool |  |
-| `m_nAngularMotionX` | JointMotion_t |  |
-| `m_nAngularMotionY` | JointMotion_t |  |
-| `m_nAngularMotionZ` | JointMotion_t |  |
+| `m_nAngularMotionX` | [JointMotion_t](../schemas/!GlobalTypes.md#jointmotion_t) |  |
+| `m_nAngularMotionY` | [JointMotion_t](../schemas/!GlobalTypes.md#jointmotion_t) |  |
+| `m_nAngularMotionZ` | [JointMotion_t](../schemas/!GlobalTypes.md#jointmotion_t) |  |
 | `m_flAngularFrequencyX` | float32 |  |
 | `m_flAngularFrequencyY` | float32 |  |
 | `m_flAngularFrequencyZ` | float32 |  |
@@ -8525,9 +9889,9 @@ classDiagram
 | `m_flMaxAngularImpulseX` | float32 |  |
 | `m_flMaxAngularImpulseY` | float32 |  |
 | `m_flMaxAngularImpulseZ` | float32 |  |
-| `m_NotifyForceReachedX` | CEntityIOOutput |  |
-| `m_NotifyForceReachedY` | CEntityIOOutput |  |
-| `m_NotifyForceReachedZ` | CEntityIOOutput |  |
+| `m_NotifyForceReachedX` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_NotifyForceReachedY` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_NotifyForceReachedZ` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CGlowProperty
 
@@ -8559,13 +9923,14 @@ classDiagram
 classDiagram
     CBaseEntity <|-- CGradientFog
     CEntityInstance <|-- CBaseEntity
+    CGradientFog *-- InfoForResourceTypeCTextureBase
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_hGradientFogTexture` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
+| `m_hGradientFogTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
 | `m_flFogStartDistance` | float32 |  |
 | `m_flFogEndDistance` | float32 |  |
 | `m_bHeightFogEnabled` | bool |  |
@@ -8595,6 +9960,7 @@ classDiagram
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
     CGunTarget --> CBaseEntity
+    CGunTarget *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -8604,7 +9970,7 @@ classDiagram
 | `m_flSpeed` | float32 |  |
 | `m_on` | bool |  |
 | `m_hTargetEnt` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
-| `m_OnDeath` | CEntityIOOutput |  |
+| `m_OnDeath` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CHEGrenade
 
@@ -8668,6 +10034,34 @@ classDiagram
 | `m_Handle` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
 | `m_bSendHandle` | bool |  |
 
+### CHintMessage
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_hintString` | char* |  |
+| `m_args` | CUtlVector< char* > |  |
+| `m_duration` | float32 |  |
+
+### CHintMessageQueue
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CHintMessageQueue --> CHintMessage
+    CHintMessageQueue --> CBasePlayerController
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_tmMessageEnd` | float32 |  |
+| `m_messages` | CUtlVector< [CHintMessage](../schemas/server.md#chintmessage)* > |  |
+| `m_pPlayerController` | [CBasePlayerController](../schemas/server.md#cbaseplayercontroller)* |  |
+
 ### CHitboxComponent
 
 **Inherits from:** [CEntityComponent](entity2.md#centitycomponent)
@@ -8706,21 +10100,23 @@ classDiagram
     C_BaseModelEntity <|-- CBaseAnimGraph
     C_BaseEntity <|-- C_BaseModelEntity
     CHostage <|-- CHostageAlias_info_hostage_spawn
+    CHostage *-- CEntityIOOutput
     CHostage *-- EntitySpottedState_t
     CHostage --> CBaseEntity
     CHostage --> CCSPlayerPawnBase
     CHostage *-- CountdownTimer
     CHostage --> CCSPlayerPawn
+    CHostage *-- GameTime_t
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnHostageBeginGrab` | CEntityIOOutput |  |
-| `m_OnFirstPickedUp` | CEntityIOOutput |  |
-| `m_OnDroppedNotRescued` | CEntityIOOutput |  |
-| `m_OnRescued` | CEntityIOOutput |  |
+| `m_OnHostageBeginGrab` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnFirstPickedUp` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnDroppedNotRescued` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnRescued` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_entitySpottedState` | [EntitySpottedState_t](../schemas/server.md#entityspottedstate_t) | EntitySpottedState_t tracking which players have spotted (radar dot) this hostage. |
 | `m_nSpotRules` | int32 |  |
 | `m_uiHostageSpawnExclusionGroupMask` | uint32 |  |
@@ -8746,12 +10142,12 @@ classDiagram
 | `m_isAdjusted` | bool |  |
 | `m_bHandsHaveBeenCut` | bool | True once a CT has interacted with this hostage to free it (deprecated mechanic from CS:GO; retained for compatibility). |
 | `m_hHostageGrabber` | CHandle< [CCSPlayerPawn](../schemas/server.md#ccsplayerpawn) > | CHandle to the CCSPlayerPawn currently grabbing/carrying this hostage. |
-| `m_fLastGrabTime` | GameTime_t |  |
+| `m_fLastGrabTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_vecPositionWhenStartedDroppingToGround` | VectorWS |  |
 | `m_vecGrabbedPos` | VectorWS |  |
-| `m_flRescueStartTime` | GameTime_t | GameTime at which the current rescue attempt began. |
-| `m_flGrabSuccessTime` | GameTime_t | GameTime at which the grab interaction successfully completed and carrying began. |
-| `m_flDropStartTime` | GameTime_t | GameTime at which the carrier started dropping the hostage. |
+| `m_flRescueStartTime` | [GameTime_t](../schemas/entity2.md#gametime_t) | GameTime at which the current rescue attempt began. |
+| `m_flGrabSuccessTime` | [GameTime_t](../schemas/entity2.md#gametime_t) | GameTime at which the grab interaction successfully completed and carrying began. |
+| `m_flDropStartTime` | [GameTime_t](../schemas/entity2.md#gametime_t) | GameTime at which the carrier started dropping the hostage. |
 | `m_nApproachRewardPayouts` | int32 |  |
 | `m_nPickupEventCount` | int32 |  |
 | `m_vecSpawnGroundPos` | VectorWS |  |
@@ -8802,13 +10198,14 @@ classDiagram
     C_BaseEntity <|-- C_BaseModelEntity
     CEntityInstance <|-- C_BaseEntity
     CHostageExpresserShim <|-- CHostage
+    CHostageExpresserShim --> CAI_Expresser
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_pExpresser` | CAI_Expresser* |  |
+| `m_pExpresser` | [CAI_Expresser](../schemas/server.md#cai_expresser)* |  |
 
 ### CHostageRescueZone
 
@@ -8845,6 +10242,14 @@ classDiagram
 
 ### CHostage_API
 
+### CInButtonState
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_pButtonStates` | uint64[3] |  |
+
 ### CIncendiaryGrenade
 
 **Inherits from:** [CMolotovGrenade](server.md#cmolotovgrenade)
@@ -8877,6 +10282,7 @@ classDiagram
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
     CInferno <|-- CFireCrackerBlast
+    CInferno *-- Extent
     CInferno *-- CountdownTimer
     CInferno *-- IntervalTimer
 ```
@@ -8895,7 +10301,7 @@ classDiagram
 | `m_nFireLifetime` | float32 | Total lifetime of the inferno entity in seconds. |
 | `m_bInPostEffectTime` | bool | True during the brief post-fire period after all flames have died but before the entity is removed (allows smoke and heat-shimmer to linger). |
 | `m_bWasCreatedInSmoke` | bool |  |
-| `m_extent` | Extent |  |
+| `m_extent` | [Extent](../schemas/navlib.md#extent) |  |
 | `m_damageTimer` | [CountdownTimer](../schemas/server.md#countdowntimer) |  |
 | `m_damageRampTimer` | [CountdownTimer](../schemas/server.md#countdowntimer) |  |
 | `m_splashVelocity` | Vector |  |
@@ -8921,14 +10327,40 @@ classDiagram
     CPointEntity <|-- CInfoChoreoAnchor
     CBaseEntity <|-- CPointEntity
     CEntityInstance <|-- CBaseEntity
+    CInfoChoreoAnchor *-- CInfoChoreoAnchorPosition
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_vecTargetEntries` | CUtlVector< CInfoChoreoAnchorPosition > |  |
-| `m_vecTargetWarps` | CUtlVector< CInfoChoreoAnchorPosition > |  |
+| `m_vecTargetEntries` | CUtlVector< [CInfoChoreoAnchorPosition](../schemas/server.md#cinfochoreoanchorposition) > |  |
+| `m_vecTargetWarps` | CUtlVector< [CInfoChoreoAnchorPosition](../schemas/server.md#cinfochoreoanchorposition) > |  |
+
+### CInfoChoreoAnchorPosition
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CInfoChoreoAnchorPosition --> CBaseEntity
+    CInfoChoreoAnchorPosition *-- CInfoChoreoLocatorShapeType_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vOriginLS` | Vector |  |
+| `m_qAnglesLS` | Quaternion |  |
+| `m_vExtentsMin` | Vector |  |
+| `m_vExtentsMax` | Vector |  |
+| `m_flRadius` | float32 |  |
+| `m_bOnlyWarpPosition` | bool |  |
+| `m_hParent` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+| `m_nShapeType` | [CInfoChoreoLocatorShapeType_t](../schemas/!GlobalTypes.md#cinfochoreolocatorshapetype_t) |  |
 
 ### CInfoData
 
@@ -9247,16 +10679,17 @@ classDiagram
     CLogicalEntity <|-- CInfoSpawnGroupLoadUnload
     C_BaseEntity <|-- CLogicalEntity
     CEntityInstance <|-- C_BaseEntity
+    CInfoSpawnGroupLoadUnload *-- CEntityIOOutput
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnSpawnGroupLoadStarted` | CEntityIOOutput |  |
-| `m_OnSpawnGroupLoadFinished` | CEntityIOOutput |  |
-| `m_OnSpawnGroupUnloadStarted` | CEntityIOOutput |  |
-| `m_OnSpawnGroupUnloadFinished` | CEntityIOOutput |  |
+| `m_OnSpawnGroupLoadStarted` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnSpawnGroupLoadFinished` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnSpawnGroupUnloadStarted` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnSpawnGroupUnloadFinished` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_iszSpawnGroupName` | CUtlSymbolLarge |  |
 | `m_iszSpawnGroupFilterName` | CUtlSymbolLarge |  |
 | `m_iszLandmarkName` | CUtlSymbolLarge |  |
@@ -9339,13 +10772,14 @@ classDiagram
 classDiagram
     CBaseEntity <|-- CInfoWorldLayer
     CEntityInstance <|-- CBaseEntity
+    CInfoWorldLayer *-- CEntityIOOutput
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_pOutputOnEntitiesSpawned` | CEntityIOOutput |  |
+| `m_pOutputOnEntitiesSpawned` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_worldName` | CUtlSymbolLarge | `MNotSaved` |
 | `m_layerName` | CUtlSymbolLarge | `MNotSaved` |
 | `m_bWorldLayerVisible` | bool |  |
@@ -9402,6 +10836,17 @@ classDiagram
 | `m_iszHintTargetEntity` | CUtlSymbolLarge |  |
 | `m_hTargetPlayer` | CHandle< [CBasePlayerPawn](../schemas/server.md#cbaseplayerpawn) > |  |
 
+### CIronSightController
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bIronSightAvailable` | bool |  |
+| `m_flIronSightAmount` | float32 |  |
+| `m_flIronSightAmountGained` | float32 |  |
+| `m_flIronSightAmountBiased` | float32 |  |
+
 ### CItem
 
 **Inherits from:** [CBaseAnimGraph](server.md#cbaseanimgraph)
@@ -9422,17 +10867,18 @@ classDiagram
     CItem <|-- CItemGeneric
     CItem <|-- CItemKevlar
     CItem <|-- CScriptItem
+    CItem *-- CEntityIOOutput
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnPlayerTouch` | CEntityIOOutput |  |
-| `m_OnPlayerPickup` | CEntityIOOutput |  |
+| `m_OnPlayerTouch` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnPlayerPickup` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_bActivateWhenAtRest` | bool |  |
-| `m_OnCacheInteraction` | CEntityIOOutput |  |
-| `m_OnGlovePulled` | CEntityIOOutput |  |
+| `m_OnCacheInteraction` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnGlovePulled` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_vOriginalSpawnOrigin` | VectorWS |  |
 | `m_vOriginalSpawnAngles` | QAngle |  |
 | `m_bPhysStartAsleep` | bool | `MNotSaved` |
@@ -9529,7 +10975,10 @@ classDiagram
     C_BaseModelEntity <|-- CBaseAnimGraph
     C_BaseEntity <|-- C_BaseModelEntity
     CEntityInstance <|-- C_BaseEntity
+    CItemGeneric *-- GameTime_t
+    CItemGeneric *-- InfoForResourceTypeIParticleSystemDefinition
     CItemGeneric --> CBaseFilter
+    CItemGeneric *-- CEntityIOOutput
     CItemGeneric --> CItemGenericTriggerHelper
 ```
 
@@ -9541,26 +10990,26 @@ classDiagram
 | `m_bHasPickupRadius` | bool | `MNotSaved` |
 | `m_flPickupRadiusSqr` | float32 | `MNotSaved` |
 | `m_flTriggerRadiusSqr` | float32 | `MNotSaved` |
-| `m_flLastPickupCheck` | GameTime_t | `MNotSaved` |
+| `m_flLastPickupCheck` | [GameTime_t](../schemas/entity2.md#gametime_t) | `MNotSaved` |
 | `m_bPlayerCounterListenerAdded` | bool | `MNotSaved` |
 | `m_bPlayerInTriggerRadius` | bool | `MNotSaved` |
-| `m_hSpawnParticleEffect` | CStrongHandle< InfoForResourceTypeIParticleSystemDefinition > | `MNotSaved` |
+| `m_hSpawnParticleEffect` | CStrongHandle< [InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition) > | `MNotSaved` |
 | `m_pAmbientSoundEffect` | CUtlSymbolLarge | `MNotSaved` |
 | `m_bAutoStartAmbientSound` | bool | `MNotSaved` |
 | `m_pSpawnScriptFunction` | CUtlSymbolLarge | `MNotSaved` |
-| `m_hPickupParticleEffect` | CStrongHandle< InfoForResourceTypeIParticleSystemDefinition > | `MNotSaved` |
+| `m_hPickupParticleEffect` | CStrongHandle< [InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition) > | `MNotSaved` |
 | `m_pPickupSoundEffect` | CUtlSymbolLarge | `MNotSaved` |
 | `m_pPickupScriptFunction` | CUtlSymbolLarge | `MNotSaved` |
-| `m_hTimeoutParticleEffect` | CStrongHandle< InfoForResourceTypeIParticleSystemDefinition > | `MNotSaved` |
+| `m_hTimeoutParticleEffect` | CStrongHandle< [InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition) > | `MNotSaved` |
 | `m_pTimeoutSoundEffect` | CUtlSymbolLarge | `MNotSaved` |
 | `m_pTimeoutScriptFunction` | CUtlSymbolLarge | `MNotSaved` |
 | `m_pPickupFilterName` | CUtlSymbolLarge | `MNotSaved` |
 | `m_hPickupFilter` | CHandle< [CBaseFilter](../schemas/server.md#cbasefilter) > | `MNotSaved` |
-| `m_OnPickup` | CEntityIOOutput |  |
-| `m_OnTimeout` | CEntityIOOutput |  |
-| `m_OnTriggerStartTouch` | CEntityIOOutput |  |
-| `m_OnTriggerTouch` | CEntityIOOutput |  |
-| `m_OnTriggerEndTouch` | CEntityIOOutput |  |
+| `m_OnPickup` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnTimeout` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnTriggerStartTouch` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnTriggerTouch` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnTriggerEndTouch` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_pAllowPickupScriptFunction` | CUtlSymbolLarge | `MNotSaved` |
 | `m_flPickupRadius` | float32 | `MNotSaved` |
 | `m_flTriggerRadius` | float32 | `MNotSaved` |
@@ -9645,6 +11094,7 @@ classDiagram
     CPointEntity <|-- CKeepUpright
     CBaseEntity <|-- CPointEntity
     CEntityInstance <|-- CBaseEntity
+    CKeepUpright --> IPhysicsMotionController
     CKeepUpright --> CBaseEntity
 ```
 
@@ -9654,7 +11104,7 @@ classDiagram
 |------|------|-------------|
 | `m_worldGoalAxis` | Vector |  |
 | `m_localTestAxis` | Vector |  |
-| `m_pController` | IPhysicsMotionController* | `MPhysPtr` |
+| `m_pController` | [IPhysicsMotionController](../schemas/vphysics2.md#iphysicsmotioncontroller)* | `MPhysPtr` |
 | `m_nameAttach` | CUtlSymbolLarge |  |
 | `m_attachedObject` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
 | `m_angularLimit` | float32 |  |
@@ -9693,13 +11143,16 @@ classDiagram
 ```mermaid
 classDiagram
     CEntityComponent <|-- CLightComponent
+    CLightComponent *-- CNetworkVarChainer
+    CLightComponent *-- InfoForResourceTypeCTextureBase
+    CLightComponent *-- GameTime_t
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `__m_pChainEntity` | CNetworkVarChainer | `MNotSaved` |
+| `__m_pChainEntity` | [CNetworkVarChainer](../schemas/entity2.md#cnetworkvarchainer) | `MNotSaved` |
 | `m_Color` | Color |  |
 | `m_SecondaryColor` | Color |  |
 | `m_flBrightness` | float32 |  |
@@ -9712,7 +11165,7 @@ classDiagram
 | `m_flAttenuation2` | float32 |  |
 | `m_flTheta` | float32 |  |
 | `m_flPhi` | float32 |  |
-| `m_hLightCookie` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
+| `m_hLightCookie` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
 | `m_nCascades` | int32 |  |
 | `m_nCastShadows` | int32 |  |
 | `m_nShadowWidth` | int32 |  |
@@ -9766,7 +11219,7 @@ classDiagram
 | `m_SkyAmbientBounce` | Color |  |
 | `m_bUseSecondaryColor` | bool |  |
 | `m_bMixedShadows` | bool | `MNotSaved` |
-| `m_flLightStyleStartTime` | GameTime_t |  |
+| `m_flLightStyleStartTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flCapsuleLength` | float32 |  |
 | `m_flMinRoughness` | float32 |  |
 | `m_bPvsModifyEntity` | bool |  |
@@ -9871,6 +11324,7 @@ classDiagram
     CLogicalEntity <|-- CLogicAchievement
     C_BaseEntity <|-- CLogicalEntity
     CEntityInstance <|-- C_BaseEntity
+    CLogicAchievement *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -9879,7 +11333,7 @@ classDiagram
 |------|------|-------------|
 | `m_bDisabled` | bool |  |
 | `m_iszAchievementEventID` | CUtlSymbolLarge |  |
-| `m_OnFired` | CEntityIOOutput |  |
+| `m_OnFired` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CLogicActiveAutosave
 
@@ -9893,6 +11347,7 @@ classDiagram
     CLogicalEntity <|-- CLogicAutosave
     C_BaseEntity <|-- CLogicalEntity
     CEntityInstance <|-- C_BaseEntity
+    CLogicActiveAutosave *-- GameTime_t
 ```
 
 **Fields:**
@@ -9901,7 +11356,7 @@ classDiagram
 |------|------|-------------|
 | `m_TriggerHitPoints` | int32 |  |
 | `m_flTimeToTrigger` | float32 |  |
-| `m_flStartTime` | GameTime_t |  |
+| `m_flStartTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flDangerousTime` | float32 |  |
 
 ### CLogicActivityEvent
@@ -9936,22 +11391,23 @@ classDiagram
 classDiagram
     CBaseEntity <|-- CLogicAuto
     CEntityInstance <|-- CBaseEntity
+    CLogicAuto *-- CEntityIOOutput
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnMapSpawn` | CEntityIOOutput |  |
-| `m_OnDemoMapSpawn` | CEntityIOOutput |  |
-| `m_OnNewGame` | CEntityIOOutput |  |
-| `m_OnLoadGame` | CEntityIOOutput |  |
-| `m_OnMapTransition` | CEntityIOOutput |  |
-| `m_OnBackgroundMap` | CEntityIOOutput |  |
-| `m_OnMultiNewMap` | CEntityIOOutput |  |
-| `m_OnMultiNewRound` | CEntityIOOutput |  |
-| `m_OnVREnabled` | CEntityIOOutput |  |
-| `m_OnVRNotEnabled` | CEntityIOOutput |  |
+| `m_OnMapSpawn` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnDemoMapSpawn` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnNewGame` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnLoadGame` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnMapTransition` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnBackgroundMap` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnMultiNewMap` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnMultiNewRound` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnVREnabled` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnVRNotEnabled` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_globalstate` | CUtlSymbolLarge |  |
 
 ### CLogicAutosave
@@ -9990,6 +11446,7 @@ classDiagram
     C_BaseEntity <|-- CLogicalEntity
     CEntityInstance <|-- C_BaseEntity
     CLogicBranch --> CBaseEntity
+    CLogicBranch *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -9998,8 +11455,8 @@ classDiagram
 |------|------|-------------|
 | `m_bInValue` | bool |  |
 | `m_Listeners` | CUtlVector< CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > > |  |
-| `m_OnTrue` | CEntityIOOutput |  |
-| `m_OnFalse` | CEntityIOOutput |  |
+| `m_OnTrue` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnFalse` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CLogicBranchList
 
@@ -10013,6 +11470,7 @@ classDiagram
     C_BaseEntity <|-- CLogicalEntity
     CEntityInstance <|-- C_BaseEntity
     CLogicBranchList --> CBaseEntity
+    CLogicBranchList *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -10022,9 +11480,9 @@ classDiagram
 | `m_nLogicBranchNames` | CUtlSymbolLarge[16] |  |
 | `m_LogicBranchList` | CUtlVector< CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > > |  |
 | `m_eLastState` | [CLogicBranchList](../schemas/server.md#clogicbranchlist)::LogicBranchListenerLastState_t |  |
-| `m_OnAllTrue` | CEntityIOOutput |  |
-| `m_OnAllFalse` | CEntityIOOutput |  |
-| `m_OnMixed` | CEntityIOOutput |  |
+| `m_OnAllTrue` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnAllFalse` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnMixed` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CLogicBranchList::LogicBranchListenerLastState_t
 
@@ -10048,6 +11506,7 @@ classDiagram
     CLogicalEntity <|-- CLogicCase
     C_BaseEntity <|-- CLogicalEntity
     CEntityInstance <|-- C_BaseEntity
+    CLogicCase *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -10058,7 +11517,7 @@ classDiagram
 | `m_nShuffleCases` | int32 |  |
 | `m_nLastShuffleCase` | int32 |  |
 | `m_uchShuffleCaseMap` | uint8[32] |  |
-| `m_OnCase` | CEntityIOOutput[32] |  |
+| `m_OnCase` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput)[32] |  |
 | `m_OnDefault` | CEntityOutputTemplate< CUtlString > |  |
 
 ### CLogicCollisionPair
@@ -10145,6 +11604,7 @@ classDiagram
     CLogicalEntity <|-- CLogicDistanceCheck
     C_BaseEntity <|-- CLogicalEntity
     CEntityInstance <|-- C_BaseEntity
+    CLogicDistanceCheck *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -10155,9 +11615,9 @@ classDiagram
 | `m_iszEntityB` | CUtlSymbolLarge |  |
 | `m_flZone1Distance` | float32 |  |
 | `m_flZone2Distance` | float32 |  |
-| `m_InZone1` | CEntityIOOutput |  |
-| `m_InZone2` | CEntityIOOutput |  |
-| `m_InZone3` | CEntityIOOutput |  |
+| `m_InZone1` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_InZone2` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_InZone3` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CLogicEventListener
 
@@ -10213,13 +11673,14 @@ classDiagram
     CLogicalEntity <|-- CLogicGameEventListener
     C_BaseEntity <|-- CLogicalEntity
     CEntityInstance <|-- C_BaseEntity
+    CLogicGameEventListener *-- CEntityIOOutput
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnEventFired` | CEntityIOOutput |  |
+| `m_OnEventFired` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_iszGameEventName` | CUtlSymbolLarge |  |
 | `m_iszGameEventItem` | CUtlSymbolLarge |  |
 | `m_bEnabled` | bool |  |
@@ -10307,26 +11768,27 @@ classDiagram
     CBaseEntity <|-- CLogicNPCCounter
     CEntityInstance <|-- CBaseEntity
     CLogicNPCCounter <|-- CLogicNPCCounterAABB
+    CLogicNPCCounter *-- CEntityIOOutput
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnMinCountAll` | CEntityIOOutput |  |
-| `m_OnMaxCountAll` | CEntityIOOutput |  |
+| `m_OnMinCountAll` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnMaxCountAll` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_OnFactorAll` | CEntityOutputTemplate< float32 > |  |
 | `m_OnMinPlayerDistAll` | CEntityOutputTemplate< float32 > |  |
-| `m_OnMinCount_1` | CEntityIOOutput |  |
-| `m_OnMaxCount_1` | CEntityIOOutput |  |
+| `m_OnMinCount_1` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnMaxCount_1` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_OnFactor_1` | CEntityOutputTemplate< float32 > |  |
 | `m_OnMinPlayerDist_1` | CEntityOutputTemplate< float32 > |  |
-| `m_OnMinCount_2` | CEntityIOOutput |  |
-| `m_OnMaxCount_2` | CEntityIOOutput |  |
+| `m_OnMinCount_2` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnMaxCount_2` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_OnFactor_2` | CEntityOutputTemplate< float32 > |  |
 | `m_OnMinPlayerDist_2` | CEntityOutputTemplate< float32 > |  |
-| `m_OnMinCount_3` | CEntityIOOutput |  |
-| `m_OnMaxCount_3` | CEntityIOOutput |  |
+| `m_OnMinCount_3` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnMaxCount_3` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_OnFactor_3` | CEntityOutputTemplate< float32 > |  |
 | `m_OnMinPlayerDist_3` | CEntityOutputTemplate< float32 > |  |
 | `m_hSource` | CEntityHandle |  |
@@ -10432,6 +11894,7 @@ classDiagram
     CLogicalEntity <|-- CLogicPlayerProxy
     C_BaseEntity <|-- CLogicalEntity
     CEntityInstance <|-- C_BaseEntity
+    CLogicPlayerProxy *-- CEntityIOOutput
     CLogicPlayerProxy --> CBaseEntity
 ```
 
@@ -10439,9 +11902,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_PlayerHasAmmo` | CEntityIOOutput |  |
-| `m_PlayerHasNoAmmo` | CEntityIOOutput |  |
-| `m_PlayerDied` | CEntityIOOutput |  |
+| `m_PlayerHasAmmo` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_PlayerHasNoAmmo` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_PlayerDied` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_RequestedPlayerHealth` | CEntityOutputTemplate< int32 > |  |
 | `m_hPlayer` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
 
@@ -10469,14 +11932,15 @@ classDiagram
     CLogicalEntity <|-- CLogicRelay
     C_BaseEntity <|-- CLogicalEntity
     CEntityInstance <|-- C_BaseEntity
+    CLogicRelay *-- CEntityIOOutput
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnSpawn` | CEntityIOOutput |  |
-| `m_OnTrigger` | CEntityIOOutput |  |
+| `m_OnSpawn` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnTrigger` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_bDisabled` | bool |  |
 | `m_bWaitForRefire` | bool |  |
 | `m_bTriggerOnce` | bool |  |
@@ -10649,6 +12113,49 @@ classDiagram
 
 ### CMapVetoPickController_API
 
+### CMarkupSearchHelper
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CMarkupSearchHelper *-- NavHull_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_navHull` | [NavHull_t](../schemas/navlib.md#navhull_t) |  |
+| `m_tagString` | CUtlString |  |
+| `m_nameString` | CUtlString |  |
+| `m_vRefPos` | VectorWS |  |
+| `m_bRefPosSet` | bool |  |
+| `m_bUseStepHeight` | bool |  |
+| `m_bActive` | bool |  |
+
+### CMarkupSearch_PathCostAreaFilter
+
+**Inherits from:** [INavPathCostAreaFilter](server.md#inavpathcostareafilter)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    INavPathCostAreaFilter <|-- CMarkupSearch_PathCostAreaFilter
+    CMarkupSearch_PathCostAreaFilter *-- CMarkupSearchHelper
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_searchHelper` | [CMarkupSearchHelper](../schemas/server.md#cmarkupsearchhelper) |  |
+
 ### CMarkupVolume
 
 **Inherits from:** [CBaseModelEntity](server.md#cbasemodelentity)
@@ -10715,13 +12222,14 @@ classDiagram
     CBaseModelEntity <|-- CMarkupVolume
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CMarkupVolumeTagged_Nav *-- NavScopeFlags_t
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_nScopes` | NavScopeFlags_t |  |
+| `m_nScopes` | [NavScopeFlags_t](../schemas/!GlobalTypes.md#navscopeflags_t) |  |
 
 ### CMarkupVolumeTagged_NavGame
 
@@ -10736,13 +12244,14 @@ classDiagram
     CMarkupVolume <|-- CMarkupVolumeTagged
     CBaseModelEntity <|-- CMarkupVolume
     CBaseEntity <|-- CBaseModelEntity
+    CMarkupVolumeTagged_NavGame *-- NavScopeFlags_t
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_nScopes` | NavScopeFlags_t |  |
+| `m_nScopes` | [NavScopeFlags_t](../schemas/!GlobalTypes.md#navscopeflags_t) |  |
 | `m_bFloodFillAttribute` | bool |  |
 | `m_bSplitNavSpace` | bool |  |
 
@@ -10807,6 +12316,7 @@ classDiagram
     CLogicalEntity <|-- CMathCounter
     C_BaseEntity <|-- CLogicalEntity
     CEntityInstance <|-- C_BaseEntity
+    CMathCounter *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -10820,10 +12330,10 @@ classDiagram
 | `m_bDisabled` | bool |  |
 | `m_OutValue` | CEntityOutputTemplate< float32 > |  |
 | `m_OnGetValue` | CEntityOutputTemplate< float32 > |  |
-| `m_OnHitMin` | CEntityIOOutput |  |
-| `m_OnHitMax` | CEntityIOOutput |  |
-| `m_OnChangedFromMin` | CEntityIOOutput |  |
-| `m_OnChangedFromMax` | CEntityIOOutput |  |
+| `m_OnHitMin` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnHitMax` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnChangedFromMin` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnChangedFromMax` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CMathRemap
 
@@ -10836,6 +12346,7 @@ classDiagram
     CLogicalEntity <|-- CMathRemap
     C_BaseEntity <|-- CLogicalEntity
     CEntityInstance <|-- C_BaseEntity
+    CMathRemap *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -10849,10 +12360,10 @@ classDiagram
 | `m_flOldInValue` | float32 |  |
 | `m_bEnabled` | bool |  |
 | `m_OutValue` | CEntityOutputTemplate< float32 > |  |
-| `m_OnRoseAboveMin` | CEntityIOOutput |  |
-| `m_OnRoseAboveMax` | CEntityIOOutput |  |
-| `m_OnFellBelowMin` | CEntityIOOutput |  |
-| `m_OnFellBelowMax` | CEntityIOOutput |  |
+| `m_OnRoseAboveMin` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnRoseAboveMax` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnFellBelowMin` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnFellBelowMax` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CMessage
 
@@ -10865,6 +12376,7 @@ classDiagram
     CPointEntity <|-- CMessage
     CBaseEntity <|-- CPointEntity
     CEntityInstance <|-- CBaseEntity
+    CMessage *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -10876,7 +12388,7 @@ classDiagram
 | `m_MessageAttenuation` | int32 |  |
 | `m_Radius` | float32 |  |
 | `m_sNoise` | CGameSoundEventName |  |
-| `m_OnShowMessage` | CEntityIOOutput |  |
+| `m_OnShowMessage` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CMessageEntity
 
@@ -10925,13 +12437,21 @@ classDiagram
 
 **Metadata:** `MGetKV3ClassDefaults`
 
+**Relationships:**
+
+```mermaid
+classDiagram
+    CModelState *-- InfoForResourceTypeCModel
+    CModelState --> IPhysAggregateInstance
+```
+
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_hModel` | CStrongHandle< InfoForResourceTypeCModel > |  |
+| `m_hModel` | CStrongHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > |  |
 | `m_ModelName` | CUtlSymbolLarge |  |
-| `m_pVPhysicsAggregate` | IPhysAggregateInstance* | `MPhysPtr` |
+| `m_pVPhysicsAggregate` | [IPhysAggregateInstance](../schemas/vphysics2.md#iphysaggregateinstance)* | `MPhysPtr` |
 | `m_flRootBoneOffset_x` | float32 |  |
 | `m_flRootBoneOffset_y` | float32 |  |
 | `m_flRootBoneOffset_z` | float32 |  |
@@ -10999,6 +12519,7 @@ classDiagram
     CBaseToggle <|-- CBaseButton
     CBaseModelEntity <|-- CBaseToggle
     CBaseEntity <|-- CBaseModelEntity
+    CMomentaryRotButton *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -11006,10 +12527,10 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_Position` | CEntityOutputTemplate< float32 > |  |
-| `m_OnUnpressed` | CEntityIOOutput |  |
-| `m_OnFullyOpen` | CEntityIOOutput |  |
-| `m_OnFullyClosed` | CEntityIOOutput |  |
-| `m_OnReachedPosition` | CEntityIOOutput |  |
+| `m_OnUnpressed` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnFullyOpen` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnFullyClosed` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnReachedPosition` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_lastUsed` | int32 |  |
 | `m_start` | QAngle |  |
 | `m_end` | QAngle |  |
@@ -11019,6 +12540,37 @@ classDiagram
 | `m_direction` | int32 |  |
 | `m_returnSpeed` | float32 |  |
 | `m_flStartPosition` | float32 |  |
+
+### CMotorController
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_speed` | float32 |  |
+| `m_maxTorque` | float32 |  |
+| `m_axis` | Vector |  |
+| `m_inertiaFactor` | float32 |  |
+
+### CMovementStatsProperty
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CMovementStatsProperty *-- CVectorExponentialMovingAverage
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nUseCounter` | int32 |  |
+| `m_emaMovementDirection` | [CVectorExponentialMovingAverage](../schemas/server.md#cvectorexponentialmovingaverage) |  |
 
 ### CMoverPathNode
 
@@ -11083,6 +12635,7 @@ classDiagram
     C_BaseEntity <|-- CLogicalEntity
     CEntityInstance <|-- C_BaseEntity
     CMultiSource --> CBaseEntity
+    CMultiSource *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -11091,7 +12644,7 @@ classDiagram
 |------|------|-------------|
 | `m_rgEntities` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) >[32] |  |
 | `m_rgTriggered` | int32[32] |  |
-| `m_OnTrigger` | CEntityIOOutput |  |
+| `m_OnTrigger` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_iTotal` | int32 |  |
 | `m_globalstate` | CUtlSymbolLarge |  |
 
@@ -11109,6 +12662,34 @@ classDiagram
     CMultiplayRules <|-- CTeamplayRules
 ```
 
+### CMultiplayer_Expresser
+
+**Inherits from:** [CAI_ExpresserWithFollowup](server.md#cai_expresserwithfollowup)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CAI_ExpresserWithFollowup <|-- CMultiplayer_Expresser
+    CAI_Expresser <|-- CAI_ExpresserWithFollowup
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bAllowMultipleScenes` | bool |  |
+
+### CNMEventPulseState_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_eventID` | CGlobalSymbol |  |
+
 ### CNavSpaceInfo
 
 **Inherits from:** [CPointEntity](server.md#cpointentity)
@@ -11120,6 +12701,50 @@ classDiagram
     CPointEntity <|-- CNavSpaceInfo
     CBaseEntity <|-- CPointEntity
     CEntityInstance <|-- CBaseEntity
+```
+
+### CNavVolumeBreadthFirstSearch
+
+**Inherits from:** [CNavVolumeCalculatedVector](server.md#cnavvolumecalculatedvector)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CNavVolumeCalculatedVector <|-- CNavVolumeBreadthFirstSearch
+    CNavVolume <|-- CNavVolumeCalculatedVector
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vStartPos` | VectorWS |  |
+| `m_flSearchDist` | float32 |  |
+
+### CNavVolumeCalculatedVector
+
+**Inherits from:** [CNavVolume](navlib.md#cnavvolume)
+
+**Derived by:** [CNavVolumeBreadthFirstSearch](server.md#cnavvolumebreadthfirstsearch)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CNavVolume <|-- CNavVolumeCalculatedVector
+    CNavVolumeCalculatedVector <|-- CNavVolumeBreadthFirstSearch
+```
+
+### CNavVolumeMarkupVolume
+
+**Inherits from:** [CNavVolume](navlib.md#cnavvolume)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CNavVolume <|-- CNavVolumeMarkupVolume
 ```
 
 ### CNavWalkable
@@ -11135,7 +12760,55 @@ classDiagram
     CEntityInstance <|-- CBaseEntity
 ```
 
-### CNetworkedSequenceOperation
+### CNetworkOriginCellCoordQuantizedVector
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_cellX` | uint16 |  |
+| `m_cellY` | uint16 |  |
+| `m_cellZ` | uint16 |  |
+| `m_nOutsideWorld` | uint16 |  |
+| `m_vecX` | CNetworkedQuantizedFloat |  |
+| `m_vecY` | CNetworkedQuantizedFloat |  |
+| `m_vecZ` | CNetworkedQuantizedFloat |  |
+
+### CNetworkOriginCellCoordQuantizedVectorWS
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_cellX` | uint16 |  |
+| `m_cellY` | uint16 |  |
+| `m_cellZ` | uint16 |  |
+| `m_nOutsideWorld` | uint16 |  |
+| `m_vecX` | CNetworkedQuantizedFloat |  |
+| `m_vecY` | CNetworkedQuantizedFloat |  |
+| `m_vecZ` | CNetworkedQuantizedFloat |  |
+
+### CNetworkOriginQuantizedVector
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecX` | CNetworkedQuantizedFloat |  |
+| `m_vecY` | CNetworkedQuantizedFloat |  |
+| `m_vecZ` | CNetworkedQuantizedFloat |  |
+
+### CNetworkOriginQuantizedVectorWS
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecX` | CNetworkedQuantizedFloat |  |
+| `m_vecY` | CNetworkedQuantizedFloat |  |
+| `m_vecZ` | CNetworkedQuantizedFloat |  |
+
+### CNetworkTransmitComponent
 
 **Metadata:** `MGetKV3ClassDefaults`
 
@@ -11143,7 +12816,44 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_hSequence` | HSequence |  |
+| `m_nTransmitStateOwnedCounter` | uint8 |  |
+
+### CNetworkVelocityVector
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecX` | CNetworkedQuantizedFloat |  |
+| `m_vecY` | CNetworkedQuantizedFloat |  |
+| `m_vecZ` | CNetworkedQuantizedFloat |  |
+
+### CNetworkViewOffsetVector
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecX` | CNetworkedQuantizedFloat |  |
+| `m_vecY` | CNetworkedQuantizedFloat |  |
+| `m_vecZ` | CNetworkedQuantizedFloat |  |
+
+### CNetworkedSequenceOperation
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CNetworkedSequenceOperation *-- HSequence
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_hSequence` | [HSequence](../schemas/animationsystem.md#hsequence) |  |
 | `m_flPrevCycle` | float32 |  |
 | `m_flCycle` | float32 |  |
 | `m_flWeight` | CNetworkedQuantizedFloat |  |
@@ -11151,6 +12861,164 @@ classDiagram
 | `m_bDiscontinuity` | bool |  |
 | `m_flPrevCycleFromDiscontinuity` | float32 |  |
 | `m_flPrevCycleForAnimEventDetection` | float32 |  |
+
+### CNmAimCSNode::CDefinition
+
+**Inherits from:** [CNmPassthroughNode::CDefinition](animlib.md#cnmpassthroughnodecdefinition)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    "CNmPassthroughNode::CDefinition" <|-- "CNmAimCSNode::CDefinition"
+    "CNmPoseNode::CDefinition" <|-- "CNmPassthroughNode::CDefinition"
+    "CNmGraphNode::CDefinition" <|-- "CNmPoseNode::CDefinition"
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nVerticalAngleNodeIdx` | int16 |  |
+| `m_nHorizontalAngleNodeIdx` | int16 |  |
+| `m_nWeaponCategoryNodeIdx` | int16 |  |
+| `m_nWeaponTypeNodeIdx` | int16 |  |
+| `m_nWeaponActionNodeIdx` | int16 |  |
+| `m_nWeaponDropNodeIdx` | int16 |  |
+| `m_nIsDefusingNodeIdx` | int16 |  |
+| `m_nCrouchWeightNodeIdx` | int16 |  |
+| `m_flHandIKBlendInTimeSeconds` | float32 |  |
+| `m_flActionBlendTimeSeconds` | float32 |  |
+| `m_flPlantingBlendTimeSeconds` | float32 |  |
+
+### CNmAimCSTask
+
+**Inherits from:** [CNmPoseTask](animlib.md#cnmposetask)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CNmPoseTask <|-- CNmAimCSTask
+```
+
+### CNmEventConsumer
+
+**Derived by:** [CNmEventConsumerAttributes](server.md#cnmeventconsumerattributes), [CNmEventConsumerLegacy](server.md#cnmeventconsumerlegacy), [CNmEventConsumerParticle](server.md#cnmeventconsumerparticle), [CNmEventConsumerPulse](server.md#cnmeventconsumerpulse), [CNmEventConsumerSound](server.md#cnmeventconsumersound)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CNmEventConsumer <|-- CNmEventConsumerAttributes
+    CNmEventConsumer <|-- CNmEventConsumerLegacy
+    CNmEventConsumer <|-- CNmEventConsumerParticle
+    CNmEventConsumer <|-- CNmEventConsumerPulse
+    CNmEventConsumer <|-- CNmEventConsumerSound
+```
+
+### CNmEventConsumerAttributes
+
+**Inherits from:** [CNmEventConsumer](server.md#cnmeventconsumer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CNmEventConsumer <|-- CNmEventConsumerAttributes
+```
+
+### CNmEventConsumerLegacy
+
+**Inherits from:** [CNmEventConsumer](server.md#cnmeventconsumer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CNmEventConsumer <|-- CNmEventConsumerLegacy
+```
+
+### CNmEventConsumerParticle
+
+**Inherits from:** [CNmEventConsumer](server.md#cnmeventconsumer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CNmEventConsumer <|-- CNmEventConsumerParticle
+```
+
+### CNmEventConsumerPulse
+
+**Inherits from:** [CNmEventConsumer](server.md#cnmeventconsumer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CNmEventConsumer <|-- CNmEventConsumerPulse
+```
+
+### CNmEventConsumerSound
+
+**Inherits from:** [CNmEventConsumer](server.md#cnmeventconsumer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CNmEventConsumer <|-- CNmEventConsumerSound
+```
+
+### CNmSnapWeaponNode::CDefinition
+
+**Inherits from:** [CNmPassthroughNode::CDefinition](animlib.md#cnmpassthroughnodecdefinition)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    "CNmPassthroughNode::CDefinition" <|-- "CNmSnapWeaponNode::CDefinition"
+    "CNmPoseNode::CDefinition" <|-- "CNmPassthroughNode::CDefinition"
+    "CNmGraphNode::CDefinition" <|-- "CNmPoseNode::CDefinition"
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nFlashedAmountNodeIdx` | int16 |  |
+| `m_nWeaponCategoryNodeIdx` | int16 |  |
+| `m_nWeaponTypeNodeIdx` | int16 |  |
+
+### CNmSnapWeaponTask
+
+**Inherits from:** [CNmPoseTask](animlib.md#cnmposetask)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CNmPoseTask <|-- CNmSnapWeaponTask
+```
 
 ### CNullEntity
 
@@ -11223,6 +13091,8 @@ classDiagram
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
     CParticleSystem <|-- CEnvParticleGlow
+    CParticleSystem *-- InfoForResourceTypeIParticleSystemDefinition
+    CParticleSystem *-- GameTime_t
     CParticleSystem --> CBaseEntity
 ```
 
@@ -11236,8 +13106,8 @@ classDiagram
 | `m_flFreezeTransitionDuration` | float32 |  |
 | `m_nStopType` | int32 | `MNotSaved` |
 | `m_bAnimateDuringGameplayPause` | bool |  |
-| `m_iEffectIndex` | CStrongHandle< InfoForResourceTypeIParticleSystemDefinition > | `MNotSaved` |
-| `m_flStartTime` | GameTime_t |  |
+| `m_iEffectIndex` | CStrongHandle< [InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition) > | `MNotSaved` |
+| `m_flStartTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flPreSimTime` | float32 |  |
 | `m_vServerControlPoints` | Vector[4] |  |
 | `m_iServerControlPointAssignments` | uint8[4] |  |
@@ -11271,6 +13141,7 @@ classDiagram
     CBaseEntity <|-- CPointEntity
     CEntityInstance <|-- CBaseEntity
     CPathCorner <|-- CPathCornerCrash
+    CPathCorner *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -11280,7 +13151,7 @@ classDiagram
 | `m_flSpeed` | float32 |  |
 | `m_flWait` | float32 |  |
 | `m_flRadius` | float32 |  |
-| `m_OnPass` | CEntityIOOutput |  |
+| `m_OnPass` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CPathCornerCrash
 
@@ -11366,6 +13237,9 @@ classDiagram
     CEntityInstance <|-- C_BaseEntity
     CPathMoverEntitySpawner --> CPathMover
     CPathMoverEntitySpawner --> CFuncMover
+    CPathMoverEntitySpawner --> PathMoverEntitySpawn
+    CPathMoverEntitySpawner *-- GameTime_t
+    CPathMoverEntitySpawner *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -11377,15 +13251,15 @@ classDiagram
 | `m_hPathMover` | CHandle< [CPathMover](../schemas/server.md#cpathmover) > |  |
 | `m_flSpawnFrequencySeconds` | float32 |  |
 | `m_flSpawnFrequencyDistToNearestMover` | float32 |  |
-| `m_mapSpawnedMoverTemplates` | CUtlHashtable< CHandle< [CFuncMover](../schemas/server.md#cfuncmover) >, PathMoverEntitySpawn > |  |
+| `m_mapSpawnedMoverTemplates` | CUtlHashtable< CHandle< [CFuncMover](../schemas/server.md#cfuncmover) >, [PathMoverEntitySpawn](../schemas/server.md#pathmoverentityspawn) > |  |
 | `m_nMaxActive` | int32 |  |
 | `m_nSpawnNum` | int32 |  |
-| `m_flLastSpawnTime` | GameTime_t |  |
+| `m_flLastSpawnTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_bEnabled` | bool |  |
 | `m_bDestroyMoverOnArrivedAtEnd` | bool |  |
 | `m_vecQueuedRemovals` | CUtlVector< CHandle< [CFuncMover](../schemas/server.md#cfuncmover) > > |  |
-| `m_OnTemplateSpawned` | CEntityIOOutput |  |
-| `m_OnTemplateGroupSpawned` | CEntityIOOutput |  |
+| `m_OnTemplateSpawned` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnTemplateGroupSpawned` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_iszPathMoverName` | CUtlSymbolLarge |  |
 | `m_bPrepopulateOnSpawn` | bool |  |
 
@@ -11430,6 +13304,7 @@ classDiagram
     CBaseEntity <|-- CPathParticleRope
     CEntityInstance <|-- CBaseEntity
     CPathParticleRope <|-- CPathParticleRopeAlias_path_particle_rope_clientside
+    CPathParticleRope *-- InfoForResourceTypeIParticleSystemDefinition
 ```
 
 **Fields:**
@@ -11445,7 +13320,7 @@ classDiagram
 | `m_flRadius` | float32 |  |
 | `m_ColorTint` | Color |  |
 | `m_nEffectState` | int32 |  |
-| `m_iEffectIndex` | CStrongHandle< InfoForResourceTypeIParticleSystemDefinition > | `MNotSaved` |
+| `m_iEffectIndex` | CStrongHandle< [InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition) > | `MNotSaved` |
 | `m_PathNodes_Position` | CNetworkUtlVectorBase< Vector > |  |
 | `m_PathNodes_TangentIn` | CNetworkUtlVectorBase< Vector > |  |
 | `m_PathNodes_TangentOut` | CNetworkUtlVectorBase< Vector > |  |
@@ -11468,7 +13343,7 @@ classDiagram
 
 ### CPathQueryComponent
 
-**Inherits from:** [CEntityComponent](entity2.md#centitycomponent), CPathQueryUtil
+**Inherits from:** [CEntityComponent](entity2.md#centitycomponent), [CPathQueryUtil](server.md#cpathqueryutil)
 
 **Metadata:** `MGetKV3ClassDefaults`
 
@@ -11478,6 +13353,29 @@ classDiagram
 classDiagram
     CEntityComponent <|-- CPathQueryComponent
 ```
+
+### CPathQueryUtil
+
+**Derived by:** [CPathQueryComponent](client.md#cpathquerycomponent)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CPathQueryUtil <|-- CPathQueryComponent
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_PathToEntityTransform` | CTransform |  |
+| `m_vecPathSamplePositions` | CUtlVector< Vector > |  |
+| `m_vecPathSampleParameters` | CUtlVector< float32 > |  |
+| `m_vecPathSampleDistances` | CUtlVector< float32 > |  |
+| `m_bIsClosedLoop` | bool |  |
 
 ### CPathSimple
 
@@ -11518,6 +13416,8 @@ classDiagram
     CPointEntity <|-- CPathTrack
     CBaseEntity <|-- CPointEntity
     CEntityInstance <|-- CBaseEntity
+    CPathTrack *-- TrackOrientationType_t
+    CPathTrack *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -11532,8 +13432,8 @@ classDiagram
 | `m_length` | float32 |  |
 | `m_altName` | CUtlSymbolLarge |  |
 | `m_nIterVal` | int32 | `MNotSaved` |
-| `m_eOrientationType` | TrackOrientationType_t |  |
-| `m_OnPass` | CEntityIOOutput |  |
+| `m_eOrientationType` | [TrackOrientationType_t](../schemas/!GlobalTypes.md#trackorientationtype_t) |  |
+| `m_OnPass` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CPathWithDynamicNodes
 
@@ -11596,6 +13496,8 @@ classDiagram
     CBaseModelEntity <|-- CBreakable
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CPhysBox *-- HoverPoseFlags_t
+    CPhysBox *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -11609,17 +13511,17 @@ classDiagram
 | `m_angHoverPoseAngles` | QAngle |  |
 | `m_bNotSolidToWorld` | bool |  |
 | `m_bEnableUseOutput` | bool |  |
-| `m_nHoverPoseFlags` | HoverPoseFlags_t |  |
+| `m_nHoverPoseFlags` | [HoverPoseFlags_t](../schemas/!GlobalTypes.md#hoverposeflags_t) |  |
 | `m_flTouchOutputPerEntityDelay` | float32 |  |
 | `m_iszCollisionGroup` | CUtlSymbolLarge |  |
 | `m_iszInteractsAs` | CUtlSymbolLarge |  |
 | `m_iszInteractsWith` | CUtlSymbolLarge |  |
 | `m_iszInteractsExclude` | CUtlSymbolLarge |  |
-| `m_OnDamaged` | CEntityIOOutput |  |
-| `m_OnAwakened` | CEntityIOOutput |  |
-| `m_OnMotionEnabled` | CEntityIOOutput |  |
-| `m_OnPlayerUse` | CEntityIOOutput |  |
-| `m_OnStartTouch` | CEntityIOOutput |  |
+| `m_OnDamaged` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnAwakened` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnMotionEnabled` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnPlayerUse` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnStartTouch` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CPhysConstraint
 
@@ -11644,14 +13546,16 @@ classDiagram
     CPhysConstraint <|-- CPhysWheelConstraint
     CPhysConstraint <|-- CRagdollConstraint
     CPhysConstraint <|-- CSplineConstraint
+    CPhysConstraint --> IPhysicsJoint
     CPhysConstraint --> CBaseEntity
+    CPhysConstraint *-- CEntityIOOutput
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_hJoint` | IPhysicsJoint* | `MPhysPtr` |
+| `m_hJoint` | [IPhysicsJoint](../schemas/vphysics2.md#iphysicsjoint)* | `MPhysPtr` |
 | `m_nameAttach1` | CUtlSymbolLarge |  |
 | `m_nameAttach2` | CUtlSymbolLarge |  |
 | `m_hAttach1` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
@@ -11664,7 +13568,7 @@ classDiagram
 | `m_minTeleportDistance` | float32 |  |
 | `m_bSnapObjectPositions` | bool |  |
 | `m_bTreatEntity1AsInfiniteMass` | bool |  |
-| `m_OnBreak` | CEntityIOOutput |  |
+| `m_OnBreak` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CPhysExplosion
 
@@ -11677,6 +13581,7 @@ classDiagram
     CPointEntity <|-- CPhysExplosion
     CBaseEntity <|-- CPointEntity
     CEntityInstance <|-- CBaseEntity
+    CPhysExplosion *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -11693,7 +13598,7 @@ classDiagram
 | `m_bConvertToDebrisWhenPossible` | bool |  |
 | `m_bAffectInvulnerableEnts` | bool |  |
 | `m_bDisablePushClamp` | bool |  |
-| `m_OnPushedPlayer` | CEntityIOOutput |  |
+| `m_OnPushedPlayer` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CPhysFixed
 
@@ -11737,20 +13642,22 @@ classDiagram
     CEntityInstance <|-- CBaseEntity
     CPhysForce <|-- CPhysThruster
     CPhysForce <|-- CPhysTorque
+    CPhysForce --> IPhysicsMotionController
     CPhysForce --> CBaseEntity
+    CPhysForce *-- CConstantForceController
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_pController` | IPhysicsMotionController* | `MPhysPtr` |
+| `m_pController` | [IPhysicsMotionController](../schemas/vphysics2.md#iphysicsmotioncontroller)* | `MPhysPtr` |
 | `m_nameAttach` | CUtlSymbolLarge |  |
 | `m_force` | float32 |  |
 | `m_forceTime` | float32 |  |
 | `m_attachedObject` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
 | `m_wasRestored` | bool | `MNotSaved` |
-| `m_integrator` | CConstantForceController |  |
+| `m_integrator` | [CConstantForceController](../schemas/server.md#cconstantforcecontroller) |  |
 
 ### CPhysHinge
 
@@ -11767,15 +13674,17 @@ classDiagram
     C_BaseEntity <|-- CLogicalEntity
     CEntityInstance <|-- C_BaseEntity
     CPhysHinge <|-- CPhysHingeAlias_phys_hinge_local
+    CPhysHinge *-- ConstraintSoundInfo
+    CPhysHinge *-- CEntityIOOutput
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_soundInfo` | ConstraintSoundInfo | `MNotSaved` |
-| `m_NotifyMinLimitReached` | CEntityIOOutput |  |
-| `m_NotifyMaxLimitReached` | CEntityIOOutput |  |
+| `m_soundInfo` | [ConstraintSoundInfo](../schemas/server.md#constraintsoundinfo) | `MNotSaved` |
+| `m_NotifyMinLimitReached` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_NotifyMaxLimitReached` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_bAtMinLimit` | bool |  |
 | `m_bAtMaxLimit` | bool |  |
 | `m_hinge` | constraint_hingeparams_t |  |
@@ -11790,8 +13699,8 @@ classDiagram
 | `m_flAngleSpeed` | float32 |  |
 | `m_flAngleSpeedThreshold` | float32 |  |
 | `m_flLimitsDebugVisRotation` | float32 |  |
-| `m_OnStartMoving` | CEntityIOOutput |  |
-| `m_OnStopMoving` | CEntityIOOutput |  |
+| `m_OnStartMoving` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnStopMoving` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CPhysHingeAlias_phys_hinge_local
 
@@ -11865,14 +13774,16 @@ classDiagram
     C_BaseModelEntity <|-- CBaseAnimGraph
     C_BaseEntity <|-- C_BaseModelEntity
     CEntityInstance <|-- C_BaseEntity
+    CPhysMagnet *-- CEntityIOOutput
+    CPhysMagnet *-- GameTime_t
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnMagnetAttach` | CEntityIOOutput |  |
-| `m_OnMagnetDetach` | CEntityIOOutput |  |
+| `m_OnMagnetAttach` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnMagnetDetach` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_massScale` | float32 |  |
 | `m_forceLimit` | float32 |  |
 | `m_torqueLimit` | float32 |  |
@@ -11881,7 +13792,7 @@ classDiagram
 | `m_bHasHitSomething` | bool |  |
 | `m_flTotalMass` | float32 |  |
 | `m_flRadius` | float32 |  |
-| `m_flNextSuckTime` | GameTime_t |  |
+| `m_flNextSuckTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_iMaxObjectsAttached` | int32 |  |
 
 ### CPhysMotor
@@ -11896,6 +13807,9 @@ classDiagram
     C_BaseEntity <|-- CLogicalEntity
     CEntityInstance <|-- C_BaseEntity
     CPhysMotor --> CBaseEntity
+    CPhysMotor --> IPhysicsBody
+    CPhysMotor --> IPhysicsJoint
+    CPhysMotor *-- CMotorController
 ```
 
 **Fields:**
@@ -11914,9 +13828,9 @@ classDiagram
 | `m_flTorqueScale` | float32 |  |
 | `m_flTargetSpeed` | float32 |  |
 | `m_flSpeedWhenSpinUpOrSpinDownStarted` | float32 |  |
-| `m_pFixedWorldBody` | IPhysicsBody* | `MPhysPtr` |
-| `m_pMotorJoint` | IPhysicsJoint* | `MPhysPtr` |
-| `m_motor` | CMotorController |  |
+| `m_pFixedWorldBody` | [IPhysicsBody](../schemas/vphysics2.md#iphysicsbody)* | `MPhysPtr` |
+| `m_pMotorJoint` | [IPhysicsJoint](../schemas/vphysics2.md#iphysicsjoint)* | `MPhysPtr` |
+| `m_motor` | [CMotorController](../schemas/server.md#cmotorcontroller) |  |
 
 ### CPhysMotorAPI
 
@@ -11955,6 +13869,7 @@ classDiagram
     CLogicalEntity <|-- CPhysConstraint
     C_BaseEntity <|-- CLogicalEntity
     CEntityInstance <|-- C_BaseEntity
+    CPhysSlideConstraint *-- ConstraintSoundInfo
 ```
 
 **Fields:**
@@ -11970,7 +13885,7 @@ classDiagram
 | `m_flMotorFrequency` | float32 |  |
 | `m_flMotorDampingRatio` | float32 |  |
 | `m_bUseEntityPivot` | bool |  |
-| `m_soundInfo` | ConstraintSoundInfo | `MNotSaved` |
+| `m_soundInfo` | [ConstraintSoundInfo](../schemas/server.md#constraintsoundinfo) | `MNotSaved` |
 
 ### CPhysThruster
 
@@ -12059,6 +13974,34 @@ classDiagram
     CEntityInstance <|-- CBaseEntity
 ```
 
+### CPhysicsBodyGameMarkup
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_TargetBody` | CUtlString | `MPropertyDescription The name for the body (bone) that we're targeting.` |
+| `m_Tag` | CGlobalSymbol | `MPropertyDescription An identifier for this physics body.` |
+
+### CPhysicsBodyGameMarkupData
+
+**Metadata:** `MGetKV3ClassDefaults`, `MModelGameData`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CPhysicsBodyGameMarkupData *-- CPhysicsBodyGameMarkup
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_PhysicsBodyMarkupByBoneName` | CUtlDict< [CPhysicsBodyGameMarkup](../schemas/server.md#cphysicsbodygamemarkup) > | `MPropertyDescription Physics Body Data By Bone Name` |
+
 ### CPhysicsEntitySolver
 
 **Inherits from:** [CLogicalEntity](server.md#clogicalentity)
@@ -12071,6 +14014,7 @@ classDiagram
     C_BaseEntity <|-- CLogicalEntity
     CEntityInstance <|-- C_BaseEntity
     CPhysicsEntitySolver --> CBaseEntity
+    CPhysicsEntitySolver *-- GameTime_t
 ```
 
 **Fields:**
@@ -12080,7 +14024,7 @@ classDiagram
 | `m_hMovingEntity` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
 | `m_hPhysicsBlocker` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
 | `m_separationDuration` | float32 |  |
-| `m_cancelTime` | GameTime_t |  |
+| `m_cancelTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 
 ### CPhysicsProp
 
@@ -12100,19 +14044,23 @@ classDiagram
     CPhysicsProp <|-- CPhysicsPropMultiplayer
     CPhysicsProp <|-- CPhysicsPropOverride
     CPhysicsProp <|-- CPhysicsPropRespawnable
+    CPhysicsProp *-- CEntityIOOutput
+    CPhysicsProp *-- GameTime_t
+    CPhysicsProp *-- DynamicContinuousContactBehavior_t
+    CPhysicsProp *-- INavObstacle
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_MotionEnabled` | CEntityIOOutput |  |
-| `m_OnAwakened` | CEntityIOOutput |  |
-| `m_OnAwake` | CEntityIOOutput |  |
-| `m_OnAsleep` | CEntityIOOutput |  |
-| `m_OnPlayerUse` | CEntityIOOutput |  |
-| `m_OnOutOfWorld` | CEntityIOOutput |  |
-| `m_OnPlayerPickup` | CEntityIOOutput |  |
+| `m_MotionEnabled` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnAwakened` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnAwake` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnAsleep` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnPlayerUse` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnOutOfWorld` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnPlayerPickup` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_bForceNavIgnore` | bool |  |
 | `m_bNoNavmeshBlocker` | bool |  |
 | `m_bForceNpcExclude` | bool |  |
@@ -12127,16 +14075,16 @@ classDiagram
 | `m_bFirstCollisionAfterLaunch` | bool |  |
 | `m_bHasBeenAwakened` | bool | `MNotSaved` |
 | `m_bIsOverrideProp` | bool | `MNotSaved` |
-| `m_flLastBurn` | GameTime_t |  |
-| `m_nDynamicContinuousContactBehavior` | DynamicContinuousContactBehavior_t |  |
-| `m_fNextCheckDisableMotionContactsTime` | GameTime_t | `MNotSaved` |
+| `m_flLastBurn` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_nDynamicContinuousContactBehavior` | [DynamicContinuousContactBehavior_t](../schemas/!GlobalTypes.md#dynamiccontinuouscontactbehavior_t) |  |
+| `m_fNextCheckDisableMotionContactsTime` | [GameTime_t](../schemas/entity2.md#gametime_t) | `MNotSaved` |
 | `m_iInitialGlowState` | int32 |  |
 | `m_nGlowRange` | int32 |  |
 | `m_nGlowRangeMin` | int32 |  |
 | `m_glowColor` | Color |  |
 | `m_bShouldAutoConvertBackFromDebris` | bool |  |
 | `m_bMuteImpactEffects` | bool |  |
-| `m_nNavObstacleType` | INavObstacle::NavObstacleType_t |  |
+| `m_nNavObstacleType` | [INavObstacle](../schemas/server.md#inavobstacle)::NavObstacleType_t |  |
 | `m_bUpdateNavWhenMoving` | bool |  |
 | `m_bForceNavObstacleCut` | bool |  |
 | `m_bAllowObstacleConvexHullMerging` | bool |  |
@@ -12213,6 +14161,16 @@ classDiagram
 | `m_vOriginalMaxs` | Vector |  |
 | `m_flRespawnDuration` | float32 |  |
 
+### CPhysicsShake
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_force` | Vector |  |
+
 ### CPhysicsSpring
 
 **Inherits from:** [CBaseEntity](server.md#cbaseentity)
@@ -12223,13 +14181,14 @@ classDiagram
 classDiagram
     CBaseEntity <|-- CPhysicsSpring
     CEntityInstance <|-- CBaseEntity
+    CPhysicsSpring --> IPhysicsJoint
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_pSpringJoint` | IPhysicsJoint* | `MPhysPtr` |
+| `m_pSpringJoint` | [IPhysicsJoint](../schemas/vphysics2.md#iphysicsjoint)* | `MPhysPtr` |
 | `m_flFrequency` | float32 |  |
 | `m_flDampingRatio` | float32 |  |
 | `m_flRestLength` | float32 |  |
@@ -12262,7 +14221,7 @@ classDiagram
 Entity created when a Terrorist player successfully plants the bomb. Contains all state needed to track detonation, defuse progress, and whose responsibility it is.
 
 
-**Inherits from:** [CBaseAnimGraph](server.md#cbaseanimgraph), IHasAttributes
+**Inherits from:** [CBaseAnimGraph](server.md#cbaseanimgraph), [IHasAttributes](server.md#ihasattributes)
 
 **Relationships:**
 
@@ -12272,7 +14231,9 @@ classDiagram
     C_BaseModelEntity <|-- CBaseAnimGraph
     C_BaseEntity <|-- C_BaseModelEntity
     CEntityInstance <|-- C_BaseEntity
+    CPlantedC4 *-- GameTime_t
     CPlantedC4 *-- CAttributeContainer
+    CPlantedC4 *-- CEntityIOOutput
     CPlantedC4 *-- EntitySpottedState_t
     CPlantedC4 --> CCSPlayerPawn
 ```
@@ -12282,14 +14243,14 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_bBombTicking` | bool | True once the bomb has been armed and the countdown has started. |
-| `m_flC4Blow` | GameTime_t | GameTime at which the bomb will detonate if not defused. *Compute remaining time as: m_flC4Blow - current_game_time.* |
+| `m_flC4Blow` | [GameTime_t](../schemas/entity2.md#gametime_t) | GameTime at which the bomb will detonate if not defused. *Compute remaining time as: m_flC4Blow - current_game_time.* |
 | `m_nBombSite` | int32 | Which bombsite the bomb was planted on (0 = site A, 1 = site B; matches the bombsite trigger index). |
 | `m_nSourceSoundscapeHash` | int32 | Hash of the soundscape entity to activate when players are near the planted bomb. |
 | `m_bAbortDetonationBecauseWorldIsFrozen` | bool |  |
 | `m_AttributeManager` | [CAttributeContainer](../schemas/server.md#cattributecontainer) |  |
-| `m_OnBombDefused` | CEntityIOOutput |  |
-| `m_OnBombBeginDefuse` | CEntityIOOutput |  |
-| `m_OnBombDefuseAborted` | CEntityIOOutput |  |
+| `m_OnBombDefused` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnBombBeginDefuse` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnBombDefuseAborted` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_bCannotBeDefused` | bool | True when the bomb is in a state where it physically cannot be defused (e.g. during some special game modes). |
 | `m_entitySpottedState` | [EntitySpottedState_t](../schemas/server.md#entityspottedstate_t) | EntitySpottedState_t tracking which players have spotted (radar dot) the planted bomb. |
 | `m_nSpotRules` | int32 |  |
@@ -12298,16 +14259,16 @@ classDiagram
 | `m_bTrainingPlacedByPlayer` | bool |  |
 | `m_flTimerLength` | float32 | Total bomb-timer duration in seconds (mirrors mp_c4timer value at plant time). |
 | `m_bBeingDefused` | bool | True while a CT player is actively pressing the defuse key on the bomb. |
-| `m_fLastDefuseTime` | GameTime_t |  |
+| `m_fLastDefuseTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flDefuseLength` | float32 | Total defuse time in seconds: 5 s with kit, 10 s without. |
-| `m_flDefuseCountDown` | GameTime_t | GameTime at which the defuse will complete if uninterrupted. *Remaining defuse time = m_flDefuseCountDown - current_game_time.* |
+| `m_flDefuseCountDown` | [GameTime_t](../schemas/entity2.md#gametime_t) | GameTime at which the defuse will complete if uninterrupted. *Remaining defuse time = m_flDefuseCountDown - current_game_time.* |
 | `m_hBombDefuser` | CHandle< [CCSPlayerPawn](../schemas/server.md#ccsplayerpawn) > | CHandle to the CCSPlayerPawn currently defusing the bomb (INVALID_EHANDLE if not being defused). |
 | `m_iProgressBarTime` | int32 |  |
 | `m_bVoiceAlertFired` | bool |  |
 | `m_bVoiceAlertPlayed` | bool[4] |  |
-| `m_flNextBotBeepTime` | GameTime_t |  |
+| `m_flNextBotBeepTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_angCatchUpToPlayerEye` | QAngle |  |
-| `m_flLastSpinDetectionTime` | GameTime_t |  |
+| `m_flLastSpinDetectionTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 
 ### CPlantedC4_API
 
@@ -12330,6 +14291,66 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_pPlatform` | CHandle< [CFuncPlat](../schemas/server.md#cfuncplat) > |  |
+
+### CPlayerControllerComponent
+
+**Derived by:** [CCSPlayerController_ActionTrackingServices](client.md#ccsplayercontroller_actiontrackingservices), [CCSPlayerController_DamageServices](client.md#ccsplayercontroller_damageservices), [CCSPlayerController_InGameMoneyServices](client.md#ccsplayercontroller_ingamemoneyservices), [CCSPlayerController_InventoryServices](client.md#ccsplayercontroller_inventoryservices)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CPlayerControllerComponent <|-- CCSPlayerController_ActionTrackingServices
+    CPlayerControllerComponent <|-- CCSPlayerController_DamageServices
+    CPlayerControllerComponent <|-- CCSPlayerController_InGameMoneyServices
+    CPlayerControllerComponent <|-- CCSPlayerController_InventoryServices
+    CPlayerControllerComponent *-- CNetworkVarChainer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `__m_pChainEntity` | [CNetworkVarChainer](../schemas/entity2.md#cnetworkvarchainer) | `MNotSaved` |
+
+### CPlayerPawnComponent
+
+**Derived by:** [CCSPlayer_ActionTrackingServices](client.md#ccsplayer_actiontrackingservices), [CCSPlayer_AimPunchServices](client.md#ccsplayer_aimpunchservices), [CCSPlayer_BulletServices](client.md#ccsplayer_bulletservices), [CCSPlayer_BuyServices](client.md#ccsplayer_buyservices), [CCSPlayer_DamageReactServices](client.md#ccsplayer_damagereactservices), [CCSPlayer_GlowServices](client.md#ccsplayer_glowservices), [CCSPlayer_HostageServices](client.md#ccsplayer_hostageservices), [CCSPlayer_PingServices](client.md#ccsplayer_pingservices), [CCSPlayer_RadioServices](server.md#ccsplayer_radioservices), [CPlayer_AutoaimServices](client.md#cplayer_autoaimservices), [CPlayer_CameraServices](client.md#cplayer_cameraservices), [CPlayer_FlashlightServices](client.md#cplayer_flashlightservices), [CPlayer_ItemServices](client.md#cplayer_itemservices), [CPlayer_MovementServices](client.md#cplayer_movementservices), [CPlayer_ObserverServices](client.md#cplayer_observerservices), [CPlayer_UseServices](client.md#cplayer_useservices), [CPlayer_WaterServices](client.md#cplayer_waterservices), [CPlayer_WeaponServices](client.md#cplayer_weaponservices)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CPlayerPawnComponent <|-- CCSPlayer_ActionTrackingServices
+    CPlayerPawnComponent <|-- CCSPlayer_AimPunchServices
+    CPlayerPawnComponent <|-- CCSPlayer_BulletServices
+    CPlayerPawnComponent <|-- CCSPlayer_BuyServices
+    CPlayerPawnComponent <|-- CCSPlayer_DamageReactServices
+    CPlayerPawnComponent <|-- CCSPlayer_GlowServices
+    CPlayerPawnComponent <|-- CCSPlayer_HostageServices
+    CPlayerPawnComponent <|-- CCSPlayer_PingServices
+    CPlayerPawnComponent <|-- CPlayer_AutoaimServices
+    CPlayerPawnComponent <|-- CPlayer_CameraServices
+    CPlayerPawnComponent <|-- CPlayer_FlashlightServices
+    CPlayerPawnComponent <|-- CPlayer_ItemServices
+    CPlayerPawnComponent <|-- CPlayer_MovementServices
+    CPlayerPawnComponent <|-- CPlayer_ObserverServices
+    CPlayerPawnComponent <|-- CPlayer_UseServices
+    CPlayerPawnComponent <|-- CPlayer_WaterServices
+    CPlayerPawnComponent <|-- CPlayer_WeaponServices
+    CPlayerPawnComponent <|-- CCSPlayer_RadioServices
+    CPlayerPawnComponent *-- CNetworkVarChainer
+    CPlayerPawnComponent *-- CAnimGraphControllerPtr
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `__m_pChainEntity` | [CNetworkVarChainer](../schemas/entity2.md#cnetworkvarchainer) | `MNotSaved` |
+| `m_pComponentGraphController` | [CAnimGraphControllerPtr](../schemas/server.md#canimgraphcontrollerptr) |  |
 
 ### CPlayerPing
 
@@ -12414,7 +14435,7 @@ classDiagram
 
 ### CPlayer_AutoaimServices
 
-**Inherits from:** CPlayerPawnComponent
+**Inherits from:** [CPlayerPawnComponent](server.md#cplayerpawncomponent)
 
 **Relationships:**
 
@@ -12425,7 +14446,7 @@ classDiagram
 
 ### CPlayer_CameraServices
 
-**Inherits from:** CPlayerPawnComponent
+**Inherits from:** [CPlayerPawnComponent](server.md#cplayerpawncomponent)
 
 **Derived by:** [CCSPlayerBase_CameraServices](client.md#ccsplayerbase_cameraservices)
 
@@ -12435,6 +14456,7 @@ classDiagram
 classDiagram
     CPlayerPawnComponent <|-- CPlayer_CameraServices
     CPlayer_CameraServices <|-- CCSPlayerBase_CameraServices
+    CPlayer_CameraServices *-- GameTick_t
     CPlayer_CameraServices --> CColorCorrection
     CPlayer_CameraServices --> CBaseEntity
     CPlayer_CameraServices --> CTonemapController2
@@ -12447,7 +14469,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_vecCsViewPunchAngle` | QAngle |  |
-| `m_nCsViewPunchAngleTick` | GameTick_t |  |
+| `m_nCsViewPunchAngleTick` | [GameTick_t](../schemas/entity2.md#gametick_t) |  |
 | `m_flCsViewPunchAngleTickRatio` | float32 |  |
 | `m_PlayerFog` | fogplayerparams_t |  |
 | `m_hColorCorrectionCtrl` | CHandle< [CColorCorrection](../schemas/server.md#ccolorcorrection) > |  |
@@ -12461,7 +14483,7 @@ classDiagram
 
 ### CPlayer_FlashlightServices
 
-**Inherits from:** CPlayerPawnComponent
+**Inherits from:** [CPlayerPawnComponent](server.md#cplayerpawncomponent)
 
 **Relationships:**
 
@@ -12472,7 +14494,7 @@ classDiagram
 
 ### CPlayer_ItemServices
 
-**Inherits from:** CPlayerPawnComponent
+**Inherits from:** [CPlayerPawnComponent](server.md#cplayerpawncomponent)
 
 **Derived by:** [CCSPlayer_ItemServices](client.md#ccsplayer_itemservices)
 
@@ -12486,7 +14508,7 @@ classDiagram
 
 ### CPlayer_MovementServices
 
-**Inherits from:** CPlayerPawnComponent
+**Inherits from:** [CPlayerPawnComponent](server.md#cplayerpawncomponent)
 
 **Derived by:** [CCSObserver_MovementServices](client.md#ccsobserver_movementservices), [CPlayer_MovementServices_Humanoid](client.md#cplayer_movementservices_humanoid)
 
@@ -12497,6 +14519,7 @@ classDiagram
     CPlayerPawnComponent <|-- CPlayer_MovementServices
     CPlayer_MovementServices <|-- CCSObserver_MovementServices
     CPlayer_MovementServices <|-- CPlayer_MovementServices_Humanoid
+    CPlayer_MovementServices *-- CInButtonState
 ```
 
 **Fields:**
@@ -12504,7 +14527,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_nImpulse` | int32 |  |
-| `m_nButtons` | CInButtonState | `MNotSaved` |
+| `m_nButtons` | [CInButtonState](../schemas/server.md#cinbuttonstate) | `MNotSaved` |
 | `m_nQueuedButtonDownMask` | uint64 |  |
 | `m_nQueuedButtonChangeMask` | uint64 |  |
 | `m_nButtonDoublePressed` | uint64 |  |
@@ -12551,7 +14574,7 @@ classDiagram
 
 ### CPlayer_ObserverServices
 
-**Inherits from:** CPlayerPawnComponent
+**Inherits from:** [CPlayerPawnComponent](server.md#cplayerpawncomponent)
 
 **Derived by:** [CCSObserver_ObserverServices](client.md#ccsobserver_observerservices)
 
@@ -12562,6 +14585,7 @@ classDiagram
     CPlayerPawnComponent <|-- CPlayer_ObserverServices
     CPlayer_ObserverServices <|-- CCSObserver_ObserverServices
     CPlayer_ObserverServices --> CBaseEntity
+    CPlayer_ObserverServices *-- ObserverMode_t
 ```
 
 **Fields:**
@@ -12570,12 +14594,12 @@ classDiagram
 |------|------|-------------|
 | `m_iObserverMode` | uint8 |  |
 | `m_hObserverTarget` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
-| `m_iObserverLastMode` | ObserverMode_t |  |
+| `m_iObserverLastMode` | [ObserverMode_t](../schemas/!GlobalTypes.md#observermode_t) |  |
 | `m_bForcedObserverMode` | bool |  |
 
 ### CPlayer_UseServices
 
-**Inherits from:** CPlayerPawnComponent
+**Inherits from:** [CPlayerPawnComponent](server.md#cplayerpawncomponent)
 
 **Derived by:** [CCSObserver_UseServices](client.md#ccsobserver_useservices), [CCSPlayer_UseServices](client.md#ccsplayer_useservices)
 
@@ -12590,7 +14614,7 @@ classDiagram
 
 ### CPlayer_WaterServices
 
-**Inherits from:** CPlayerPawnComponent
+**Inherits from:** [CPlayerPawnComponent](server.md#cplayerpawncomponent)
 
 **Derived by:** [CCSPlayer_WaterServices](client.md#ccsplayer_waterservices)
 
@@ -12604,7 +14628,7 @@ classDiagram
 
 ### CPlayer_WeaponServices
 
-**Inherits from:** CPlayerPawnComponent
+**Inherits from:** [CPlayerPawnComponent](server.md#cplayerpawncomponent)
 
 **Derived by:** [CCSPlayer_WeaponServices](client.md#ccsplayer_weaponservices)
 
@@ -12639,6 +14663,8 @@ classDiagram
     CBaseEntity <|-- CPointEntity
     CEntityInstance <|-- CBaseEntity
     CPointAngleSensor --> CBaseEntity
+    CPointAngleSensor *-- GameTime_t
+    CPointAngleSensor *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -12651,10 +14677,10 @@ classDiagram
 | `m_hLookAtEntity` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
 | `m_flDuration` | float32 |  |
 | `m_flDotTolerance` | float32 |  |
-| `m_flFacingTime` | GameTime_t |  |
+| `m_flFacingTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_bFired` | bool |  |
-| `m_OnFacingLookat` | CEntityIOOutput |  |
-| `m_OnNotFacingLookat` | CEntityIOOutput |  |
+| `m_OnFacingLookat` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnNotFacingLookat` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_TargetDir` | CEntityOutputTemplate< Vector > |  |
 | `m_FacingPercentage` | CEntityOutputTemplate< float32 > |  |
 
@@ -12670,6 +14696,8 @@ classDiagram
     CBaseEntity <|-- CPointEntity
     CEntityInstance <|-- CBaseEntity
     CPointAngularVelocitySensor --> CBaseEntity
+    CPointAngularVelocitySensor *-- GameTime_t
+    CPointAngularVelocitySensor *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -12680,18 +14708,18 @@ classDiagram
 | `m_flThreshold` | float32 |  |
 | `m_nLastCompareResult` | int32 |  |
 | `m_nLastFireResult` | int32 |  |
-| `m_flFireTime` | GameTime_t |  |
+| `m_flFireTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flFireInterval` | float32 |  |
 | `m_flLastAngVelocity` | float32 |  |
 | `m_lastOrientation` | QAngle |  |
 | `m_vecAxis` | VectorWS |  |
 | `m_bUseHelper` | bool |  |
 | `m_AngularVelocity` | CEntityOutputTemplate< float32 > |  |
-| `m_OnLessThan` | CEntityIOOutput |  |
-| `m_OnLessThanOrEqualTo` | CEntityIOOutput |  |
-| `m_OnGreaterThan` | CEntityIOOutput |  |
-| `m_OnGreaterThanOrEqualTo` | CEntityIOOutput |  |
-| `m_OnEqualTo` | CEntityIOOutput |  |
+| `m_OnLessThan` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnLessThanOrEqualTo` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnGreaterThan` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnGreaterThanOrEqualTo` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnEqualTo` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CPointBroadcastClientCommand
 
@@ -12910,6 +14938,8 @@ classDiagram
     C_BaseEntity <|-- C_BaseModelEntity
     CEntityInstance <|-- C_BaseEntity
     CPointCommentaryNode --> CBaseEntity
+    CPointCommentaryNode *-- GameTime_t
+    CPointCommentaryNode *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -12928,18 +14958,18 @@ classDiagram
 | `m_bPreventMovement` | bool |  |
 | `m_bUnderCrosshair` | bool |  |
 | `m_bUnstoppable` | bool |  |
-| `m_flFinishedTime` | GameTime_t |  |
+| `m_flFinishedTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_vecFinishOrigin` | VectorWS |  |
 | `m_vecOriginalAngles` | QAngle |  |
 | `m_vecFinishAngles` | QAngle |  |
 | `m_bPreventChangesWhileMoving` | bool |  |
 | `m_bDisabled` | bool |  |
 | `m_vecTeleportOrigin` | VectorWS |  |
-| `m_flAbortedPlaybackAt` | GameTime_t |  |
-| `m_pOnCommentaryStarted` | CEntityIOOutput |  |
-| `m_pOnCommentaryStopped` | CEntityIOOutput |  |
+| `m_flAbortedPlaybackAt` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_pOnCommentaryStarted` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_pOnCommentaryStopped` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_bActive` | bool |  |
-| `m_flStartTime` | GameTime_t |  |
+| `m_flStartTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flStartTimeInCommentary` | float32 |  |
 | `m_iszTitle` | CUtlSymbolLarge |  |
 | `m_iszSpeakers` | CUtlSymbolLarge |  |
@@ -13026,6 +15056,8 @@ classDiagram
     CEntityInstance <|-- CBaseEntity
     CPointEntityFinder --> CBaseEntity
     CPointEntityFinder --> CBaseFilter
+    CPointEntityFinder *-- EntFinderMethod_t
+    CPointEntityFinder *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -13037,8 +15069,8 @@ classDiagram
 | `m_hFilter` | CHandle< [CBaseFilter](../schemas/server.md#cbasefilter) > |  |
 | `m_iRefName` | CUtlSymbolLarge |  |
 | `m_hReference` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
-| `m_FindMethod` | EntFinderMethod_t |  |
-| `m_OnFoundEntity` | CEntityIOOutput |  |
+| `m_FindMethod` | [EntFinderMethod_t](../schemas/!GlobalTypes.md#entfindermethod_t) |  |
+| `m_OnFoundEntity` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CPointGamestatsCounter
 
@@ -13093,6 +15125,7 @@ classDiagram
     CPointEntity <|-- CPointHurt
     CBaseEntity <|-- CPointEntity
     CEntityInstance <|-- CBaseEntity
+    CPointHurt *-- DamageTypes_t
     CPointHurt --> CBaseEntity
 ```
 
@@ -13101,7 +15134,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_nDamage` | int32 |  |
-| `m_bitsDamageType` | DamageTypes_t |  |
+| `m_bitsDamageType` | [DamageTypes_t](../schemas/!GlobalTypes.md#damagetypes_t) |  |
 | `m_flRadius` | float32 |  |
 | `m_flDelay` | float32 |  |
 | `m_strTarget` | CUtlSymbolLarge |  |
@@ -13120,6 +15153,9 @@ classDiagram
     CBaseEntity <|-- CPointOrient
     CEntityInstance <|-- CBaseEntity
     CPointOrient --> CBaseEntity
+    CPointOrient *-- PointOrientGoalDirectionType_t
+    CPointOrient *-- PointOrientConstraint_t
+    CPointOrient *-- GameTime_t
 ```
 
 **Fields:**
@@ -13129,10 +15165,10 @@ classDiagram
 | `m_iszSpawnTargetName` | CUtlSymbolLarge |  |
 | `m_hTarget` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
 | `m_bActive` | bool |  |
-| `m_nGoalDirection` | PointOrientGoalDirectionType_t |  |
-| `m_nConstraint` | PointOrientConstraint_t |  |
+| `m_nGoalDirection` | [PointOrientGoalDirectionType_t](../schemas/!GlobalTypes.md#pointorientgoaldirectiontype_t) |  |
+| `m_nConstraint` | [PointOrientConstraint_t](../schemas/!GlobalTypes.md#pointorientconstraint_t) |  |
 | `m_flMaxTurnRate` | float32 |  |
-| `m_flLastGameTime` | GameTime_t |  |
+| `m_flLastGameTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 
 ### CPointPrefab
 
@@ -13272,6 +15308,8 @@ classDiagram
     CLogicalEntity <|-- CPointTemplate
     C_BaseEntity <|-- CLogicalEntity
     CEntityInstance <|-- C_BaseEntity
+    CPointTemplate *-- PointTemplateClientOnlyEntityBehavior_t
+    CPointTemplate *-- PointTemplateOwnerSpawnGroupType_t
 ```
 
 **Fields:**
@@ -13283,8 +15321,8 @@ classDiagram
 | `m_iszEntityFilterName` | CUtlSymbolLarge |  |
 | `m_flTimeoutInterval` | float32 |  |
 | `m_bAsynchronouslySpawnEntities` | bool |  |
-| `m_clientOnlyEntityBehavior` | PointTemplateClientOnlyEntityBehavior_t | `MNotSaved` |
-| `m_ownerSpawnGroupType` | PointTemplateOwnerSpawnGroupType_t | `MNotSaved` |
+| `m_clientOnlyEntityBehavior` | [PointTemplateClientOnlyEntityBehavior_t](../schemas/!GlobalTypes.md#pointtemplateclientonlyentitybehavior_t) | `MNotSaved` |
+| `m_ownerSpawnGroupType` | [PointTemplateOwnerSpawnGroupType_t](../schemas/!GlobalTypes.md#pointtemplateownerspawngrouptype_t) | `MNotSaved` |
 | `m_createdSpawnGroupHandles` | CUtlVector< uint32 > |  |
 | `m_SpawnedEntityHandles` | CUtlVector< CEntityHandle > |  |
 | `m_ScriptSpawnCallback` | HSCRIPT | `MNotSaved` |
@@ -13303,8 +15341,15 @@ classDiagram
 classDiagram
     CBaseEntity <|-- CPointValueRemapper
     CEntityInstance <|-- CBaseEntity
+    CPointValueRemapper *-- ValueRemapperInputType_t
     CPointValueRemapper --> CBaseEntity
+    CPointValueRemapper *-- ValueRemapperOutputType_t
+    CPointValueRemapper *-- ValueRemapperHapticsType_t
+    CPointValueRemapper *-- ValueRemapperMomentumType_t
+    CPointValueRemapper *-- ValueRemapperRatchetType_t
+    CPointValueRemapper *-- GameTime_t
     CPointValueRemapper --> CBasePlayerPawn
+    CPointValueRemapper *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -13313,7 +15358,7 @@ classDiagram
 |------|------|-------------|
 | `m_bDisabled` | bool |  |
 | `m_bUpdateOnClient` | bool |  |
-| `m_nInputType` | ValueRemapperInputType_t |  |
+| `m_nInputType` | [ValueRemapperInputType_t](../schemas/!GlobalTypes.md#valueremapperinputtype_t) |  |
 | `m_iszRemapLineStartName` | CUtlSymbolLarge |  |
 | `m_iszRemapLineEndName` | CUtlSymbolLarge |  |
 | `m_hRemapLineStart` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
@@ -13322,24 +15367,24 @@ classDiagram
 | `m_flDisengageDistance` | float32 |  |
 | `m_flEngageDistance` | float32 |  |
 | `m_bRequiresUseKey` | bool |  |
-| `m_nOutputType` | ValueRemapperOutputType_t |  |
+| `m_nOutputType` | [ValueRemapperOutputType_t](../schemas/!GlobalTypes.md#valueremapperoutputtype_t) |  |
 | `m_iszOutputEntityName` | CUtlSymbolLarge |  |
 | `m_iszOutputEntity2Name` | CUtlSymbolLarge |  |
 | `m_iszOutputEntity3Name` | CUtlSymbolLarge |  |
 | `m_iszOutputEntity4Name` | CUtlSymbolLarge |  |
 | `m_hOutputEntities` | CNetworkUtlVectorBase< CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > > | `MNotSaved` |
-| `m_nHapticsType` | ValueRemapperHapticsType_t |  |
-| `m_nMomentumType` | ValueRemapperMomentumType_t |  |
+| `m_nHapticsType` | [ValueRemapperHapticsType_t](../schemas/!GlobalTypes.md#valueremapperhapticstype_t) |  |
+| `m_nMomentumType` | [ValueRemapperMomentumType_t](../schemas/!GlobalTypes.md#valueremappermomentumtype_t) |  |
 | `m_flMomentumModifier` | float32 |  |
 | `m_flSnapValue` | float32 |  |
 | `m_flCurrentMomentum` | float32 |  |
-| `m_nRatchetType` | ValueRemapperRatchetType_t |  |
+| `m_nRatchetType` | [ValueRemapperRatchetType_t](../schemas/!GlobalTypes.md#valueremapperratchettype_t) |  |
 | `m_flRatchetOffset` | float32 |  |
 | `m_flInputOffset` | float32 |  |
 | `m_bEngaged` | bool |  |
 | `m_bFirstUpdate` | bool |  |
 | `m_flPreviousValue` | float32 |  |
-| `m_flPreviousUpdateTickTime` | GameTime_t |  |
+| `m_flPreviousUpdateTickTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_vecPreviousTestPoint` | VectorWS |  |
 | `m_hUsingPlayer` | CHandle< [CBasePlayerPawn](../schemas/server.md#cbaseplayerpawn) > |  |
 | `m_flCustomOutputValue` | float32 |  |
@@ -13350,11 +15395,11 @@ classDiagram
 | `m_iszSoundMovingLoop` | CUtlSymbolLarge |  |
 | `m_Position` | CEntityOutputTemplate< float32 > |  |
 | `m_PositionDelta` | CEntityOutputTemplate< float32 > |  |
-| `m_OnReachedValueZero` | CEntityIOOutput |  |
-| `m_OnReachedValueOne` | CEntityIOOutput |  |
-| `m_OnReachedValueCustom` | CEntityIOOutput |  |
-| `m_OnEngage` | CEntityIOOutput |  |
-| `m_OnDisengage` | CEntityIOOutput |  |
+| `m_OnReachedValueZero` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnReachedValueOne` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnReachedValueCustom` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnEngage` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnDisengage` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CPointValueRemapperAPI
 
@@ -13395,6 +15440,9 @@ classDiagram
     CBaseModelEntity <|-- CModelPointEntity
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CPointWorldText *-- PointWorldTextJustifyHorizontal_t
+    CPointWorldText *-- PointWorldTextJustifyVertical_t
+    CPointWorldText *-- PointWorldTextReorientMode_t
 ```
 
 **Fields:**
@@ -13414,9 +15462,9 @@ classDiagram
 | `m_flBackgroundBorderHeight` | float32 | `MNotSaved` |
 | `m_flBackgroundWorldToUV` | float32 | `MNotSaved` |
 | `m_Color` | Color | `MNotSaved` |
-| `m_nJustifyHorizontal` | PointWorldTextJustifyHorizontal_t | `MNotSaved` |
-| `m_nJustifyVertical` | PointWorldTextJustifyVertical_t | `MNotSaved` |
-| `m_nReorientMode` | PointWorldTextReorientMode_t | `MNotSaved` |
+| `m_nJustifyHorizontal` | [PointWorldTextJustifyHorizontal_t](../schemas/!GlobalTypes.md#pointworldtextjustifyhorizontal_t) | `MNotSaved` |
+| `m_nJustifyVertical` | [PointWorldTextJustifyVertical_t](../schemas/!GlobalTypes.md#pointworldtextjustifyvertical_t) | `MNotSaved` |
+| `m_nReorientMode` | [PointWorldTextReorientMode_t](../schemas/!GlobalTypes.md#pointworldtextreorientmode_t) | `MNotSaved` |
 
 ### CPostProcessingVolume
 
@@ -13433,13 +15481,14 @@ classDiagram
     CBaseModelEntity <|-- CBaseToggle
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CPostProcessingVolume *-- InfoForResourceTypeCPostProcessingResource
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_hPostSettings` | CStrongHandle< InfoForResourceTypeCPostProcessingResource > |  |
+| `m_hPostSettings` | CStrongHandle< [InfoForResourceTypeCPostProcessingResource](../schemas/resourcesystem.md#infoforresourcetypecpostprocessingresource) > |  |
 | `m_flFadeDuration` | float32 |  |
 | `m_flMinLogExposure` | float32 |  |
 | `m_flMaxLogExposure` | float32 |  |
@@ -13482,7 +15531,7 @@ classDiagram
 
 ### CPrecipitationVData
 
-**Inherits from:** CEntitySubclassVDataBase
+**Inherits from:** [CEntitySubclassVDataBase](server.md#centitysubclassvdatabase)
 
 **Metadata:** `MGetKV3ClassDefaults`
 
@@ -13491,23 +15540,26 @@ classDiagram
 ```mermaid
 classDiagram
     CEntitySubclassVDataBase <|-- CPrecipitationVData
+    CPrecipitationVData *-- InfoForResourceTypeIParticleSystemDefinition
+    CPrecipitationVData *-- ParticleAttachment_t
+    CPrecipitationVData *-- PrecipitationFilter_t
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_szParticlePrecipitationEffect` | CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > |  |
-| `m_szParticlePrecipitationPuddleEffect` | CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > |  |
-| `m_szParticlePrecipitationPostEffect` | CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > |  |
+| `m_szParticlePrecipitationEffect` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition) > > |  |
+| `m_szParticlePrecipitationPuddleEffect` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition) > > |  |
+| `m_szParticlePrecipitationPostEffect` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition) > > |  |
 | `m_flInnerDistance` | float32 |  |
-| `m_nAttachType` | ParticleAttachment_t |  |
+| `m_nAttachType` | [ParticleAttachment_t](../schemas/!GlobalTypes.md#particleattachment_t) |  |
 | `m_bBatchSameVolumeType` | bool |  |
 | `m_nRTEnvCP` | int32 |  |
 | `m_nRTEnvCPComponent` | int32 |  |
 | `m_szModifier` | CUtlString |  |
 | `m_nUseSnapshotFromSurfaceGraph` | int32 | `MPropertyDescription If set, we will populate a snapshot from the surface graph` |
-| `m_snapshotFilter` | PrecipitationFilter_t |  |
+| `m_snapshotFilter` | [PrecipitationFilter_t](../schemas/server.md#precipitationfilter_t) |  |
 
 ### CPropDataComponent
 
@@ -13553,6 +15605,8 @@ classDiagram
     CBaseProp <|-- CBreakableProp
     CBaseAnimGraph <|-- CBaseProp
     CPropDoorRotating <|-- CPropDoorRotatingBreakable
+    CPropDoorRotating *-- PropDoorRotatingSpawnPos_t
+    CPropDoorRotating *-- PropDoorRotatingOpenDirection_e
     CPropDoorRotating --> CEntityBlocker
 ```
 
@@ -13562,9 +15616,9 @@ classDiagram
 |------|------|-------------|
 | `m_vecAxis` | Vector |  |
 | `m_flDistance` | float32 |  |
-| `m_eSpawnPosition` | PropDoorRotatingSpawnPos_t |  |
-| `m_eOpenDirection` | PropDoorRotatingOpenDirection_e |  |
-| `m_eCurrentOpenDirection` | PropDoorRotatingOpenDirection_e | `MNotSaved` |
+| `m_eSpawnPosition` | [PropDoorRotatingSpawnPos_t](../schemas/!GlobalTypes.md#propdoorrotatingspawnpos_t) |  |
+| `m_eOpenDirection` | [PropDoorRotatingOpenDirection_e](../schemas/!GlobalTypes.md#propdoorrotatingopendirection_e) |  |
+| `m_eCurrentOpenDirection` | [PropDoorRotatingOpenDirection_e](../schemas/!GlobalTypes.md#propdoorrotatingopendirection_e) | `MNotSaved` |
 | `m_eDefaultCheckDirection` | doorCheck_e | `MNotSaved` |
 | `m_flAjarAngle` | float32 |  |
 | `m_angRotationAjarDeprecated` | QAngle |  |
@@ -13617,6 +15671,7 @@ classDiagram
     CPulseCell_BaseYieldingInflow <|-- CPulseCell_BaseLerp
     CPulseCell_BaseFlow <|-- CPulseCell_BaseYieldingInflow
     CPulseCell_Base <|-- CPulseCell_BaseFlow
+    CPulseCell_LerpCameraSettings *-- PointCameraSettings_t
 ```
 
 **Fields:**
@@ -13624,8 +15679,8 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_flSeconds` | float32 |  |
-| `m_Start` | PointCameraSettings_t |  |
-| `m_End` | PointCameraSettings_t |  |
+| `m_Start` | [PointCameraSettings_t](../schemas/server.md#pointcamerasettings_t) |  |
+| `m_End` | [PointCameraSettings_t](../schemas/server.md#pointcamerasettings_t) |  |
 
 ### CPulseCell_LerpCameraSettings::CursorState_t
 
@@ -13639,6 +15694,7 @@ classDiagram
 classDiagram
     "CPulseCell_BaseLerp::CursorState_t" <|-- "CPulseCell_LerpCameraSettings::CursorState_t"
     "CPulseCell_LerpCameraSettings::CursorState_t" --> CPointCamera
+    "CPulseCell_LerpCameraSettings::CursorState_t" *-- PointCameraSettings_t
 ```
 
 **Fields:**
@@ -13646,8 +15702,8 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_hCamera` | CHandle< [CPointCamera](../schemas/server.md#cpointcamera) > |  |
-| `m_OverlaidStart` | PointCameraSettings_t |  |
-| `m_OverlaidEnd` | PointCameraSettings_t |  |
+| `m_OverlaidStart` | [PointCameraSettings_t](../schemas/server.md#pointcamerasettings_t) |  |
+| `m_OverlaidEnd` | [PointCameraSettings_t](../schemas/server.md#pointcamerasettings_t) |  |
 
 ### CPulseCell_Outflow_ListenForAnimgraphTag
 
@@ -13769,6 +15825,7 @@ classDiagram
 ```mermaid
 classDiagram
     "CPulseCell_Outflow_PlaySceneBase::CursorState_t" --> CBaseEntity
+    "CPulseCell_Outflow_PlaySceneBase::CursorState_t" *-- PulseCursorID_t
 ```
 
 **Fields:**
@@ -13777,7 +15834,7 @@ classDiagram
 |------|------|-------------|
 | `m_sceneInstance` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
 | `m_mainActor` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
-| `m_cursorIDToEventID` | CUtlHashtable< PulseCursorID_t, int32 > |  |
+| `m_cursorIDToEventID` | CUtlHashtable< [PulseCursorID_t](../schemas/pulse_runtime_lib.md#pulsecursorid_t), int32 > |  |
 
 ### CPulseCell_Outflow_PlaySequence
 
@@ -13816,6 +15873,7 @@ classDiagram
     CPulseCell_BaseYieldingInflow <|-- CPulseCell_Outflow_PlaySceneBase
     CPulseCell_BaseFlow <|-- CPulseCell_BaseYieldingInflow
     CPulseCell_Base <|-- CPulseCell_BaseFlow
+    CPulseCell_Outflow_PlayVCD *-- InfoForResourceTypeCChoreoSceneResource
     CPulseCell_Outflow_PlayVCD *-- CPulse_OutflowConnection
 ```
 
@@ -13823,7 +15881,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_hChoreoScene` | CStrongHandle< InfoForResourceTypeCChoreoSceneResource > |  |
+| `m_hChoreoScene` | CStrongHandle< [InfoForResourceTypeCChoreoSceneResource](../schemas/resourcesystem.md#infoforresourcetypecchoreosceneresource) > |  |
 | `m_OnPaused` | [CPulse_OutflowConnection](../schemas/pulse_runtime_lib.md#cpulse_outflowconnection) |  |
 | `m_OnResumed` | [CPulse_OutflowConnection](../schemas/pulse_runtime_lib.md#cpulse_outflowconnection) |  |
 | `m_OutRequirements` | CUtlVector< [CPulseCell_Outflow_PlayVCD](../schemas/server.md#cpulsecell_outflow_playvcd)::VCDRequirementInfo_t > |  |
@@ -13918,6 +15976,7 @@ classDiagram
     CPulseCell_BaseYieldingInflow <|-- CPulseCell_Outflow_ScriptedSequence
     CPulseCell_BaseFlow <|-- CPulseCell_BaseYieldingInflow
     CPulseCell_Base <|-- CPulseCell_BaseFlow
+    CPulseCell_Outflow_ScriptedSequence *-- PulseScriptedSequenceData_t
     CPulseCell_Outflow_ScriptedSequence *-- CPulse_ResumePoint
     CPulseCell_Outflow_ScriptedSequence *-- CPulse_OutflowConnection
 ```
@@ -13931,8 +15990,8 @@ classDiagram
 | `m_bEnsureOnNavmeshOnFinish` | bool |  |
 | `m_bDontTeleportAtEnd` | bool |  |
 | `m_bDisallowInterrupts` | bool |  |
-| `m_scriptedSequenceDataMain` | PulseScriptedSequenceData_t |  |
-| `m_vecAdditionalActors` | CUtlVector< PulseScriptedSequenceData_t > |  |
+| `m_scriptedSequenceDataMain` | [PulseScriptedSequenceData_t](../schemas/server.md#pulsescriptedsequencedata_t) |  |
+| `m_vecAdditionalActors` | CUtlVector< [PulseScriptedSequenceData_t](../schemas/server.md#pulsescriptedsequencedata_t) > |  |
 | `m_OnFinished` | [CPulse_ResumePoint](../schemas/pulse_runtime_lib.md#cpulse_resumepoint) |  |
 | `m_Triggers` | CUtlVector< [CPulse_OutflowConnection](../schemas/pulse_runtime_lib.md#cpulse_outflowconnection) > |  |
 
@@ -14007,13 +16066,14 @@ classDiagram
 classDiagram
     CPulseCell_BaseFlow <|-- CPulseCell_SoundEventStart
     CPulseCell_Base <|-- CPulseCell_BaseFlow
+    CPulseCell_SoundEventStart *-- SoundEventStartType_t
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_Type` | SoundEventStartType_t |  |
+| `m_Type` | [SoundEventStartType_t](../schemas/!GlobalTypes.md#soundeventstarttype_t) |  |
 
 ### CPulseCell_Step_EntFire
 
@@ -14182,6 +16242,33 @@ classDiagram
     CEntityInstance <|-- CBaseEntity
 ```
 
+### CRR_Response
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CRR_Response *-- ResponseParams
+    CRR_Response *-- ResponseFollowup
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Type` | uint8 |  |
+| `m_szResponseName` | char[192] |  |
+| `m_szMatchingRule` | char[128] | `MNotSaved` |
+| `m_Params` | [ResponseParams](../schemas/server.md#responseparams) |  |
+| `m_fMatchScore` | float32 | `MNotSaved` |
+| `m_bAnyMatchingRulesInCooldown` | bool | `MNotSaved` |
+| `m_szSpeakerContext` | char* | `MNotSaved` |
+| `m_szWorldContext` | char* | `MNotSaved` |
+| `m_Followup` | [ResponseFollowup](../schemas/server.md#responsefollowup) | `MNotSaved` |
+| `m_recipientFilter` | CUtlSymbol | `MNotSaved` |
+
 ### CRagdollConstraint
 
 **Inherits from:** [CPhysConstraint](server.md#cphysconstraint)
@@ -14270,8 +16357,10 @@ classDiagram
     CRagdollProp <|-- CRagdollPropAlias_physics_prop_ragdoll
     CRagdollProp <|-- CRagdollPropAttached
     CRagdollProp *-- CPropDataComponent
+    CRagdollProp *-- INavObstacle
     CRagdollProp --> CBaseEntity
     CRagdollProp --> CBasePlayerPawn
+    CRagdollProp *-- GameTime_t
 ```
 
 **Fields:**
@@ -14289,19 +16378,19 @@ classDiagram
 | `m_lastUpdateTickCount` | uint32 |  |
 | `m_allAsleep` | bool |  |
 | `m_bFirstCollisionAfterLaunch` | bool |  |
-| `m_nNavObstacleType` | INavObstacle::NavObstacleType_t |  |
+| `m_nNavObstacleType` | [INavObstacle](../schemas/server.md#inavobstacle)::NavObstacleType_t |  |
 | `m_bUpdateNavWhenMoving` | bool |  |
 | `m_bForceNavObstacleCut` | bool |  |
 | `m_bAttachedToReferenceFrame` | bool |  |
 | `m_hDamageEntity` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
 | `m_hKiller` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
 | `m_hPhysicsAttacker` | CHandle< [CBasePlayerPawn](../schemas/server.md#cbaseplayerpawn) > |  |
-| `m_flLastPhysicsInfluenceTime` | GameTime_t |  |
-| `m_flFadeOutStartTime` | GameTime_t |  |
+| `m_flLastPhysicsInfluenceTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_flFadeOutStartTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flFadeTime` | float32 |  |
 | `m_vecLastOrigin` | VectorWS |  |
-| `m_flAwakeTime` | GameTime_t |  |
-| `m_flLastOriginChangeTime` | GameTime_t |  |
+| `m_flAwakeTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_flLastOriginChangeTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_strOriginClassName` | CUtlSymbolLarge |  |
 | `m_strSourceClassName` | CUtlSymbolLarge |  |
 | `m_bHasBeenPhysgunned` | bool |  |
@@ -14311,7 +16400,7 @@ classDiagram
 | `m_ragdollMins` | CUtlVector< Vector > | `MNotSaved` |
 | `m_ragdollMaxs` | CUtlVector< Vector > | `MNotSaved` |
 | `m_bShouldDeleteActivationRecord` | bool | `MNotSaved` |
-| `m_vecNavObstacles` | CUtlVector< INavObstacle* > | `MNotSaved` |
+| `m_vecNavObstacles` | CUtlVector< [INavObstacle](../schemas/server.md#inavobstacle)* > | `MNotSaved` |
 
 ### CRagdollPropAlias_physics_prop_ragdoll
 
@@ -14354,6 +16443,47 @@ classDiagram
 | `m_bShouldDetach` | bool |  |
 | `m_bShouldDeleteAttachedActivationRecord` | bool | `MNotSaved` |
 
+### CRandSimTimer
+
+**Inherits from:** [CSimpleSimTimer](server.md#csimplesimtimer)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CSimpleSimTimer <|-- CRandSimTimer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flMinInterval` | float32 |  |
+| `m_flMaxInterval` | float32 |  |
+
+### CRandStopwatch
+
+**Inherits from:** [CStopwatchBase](server.md#cstopwatchbase)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CStopwatchBase <|-- CRandStopwatch
+    CSimpleSimTimer <|-- CStopwatchBase
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flMinInterval` | float32 |  |
+| `m_flMaxInterval` | float32 |  |
+
 ### CRectLight
 
 **Inherits from:** [CBarnLight](server.md#cbarnlight)
@@ -14374,6 +16504,57 @@ classDiagram
 |------|------|-------------|
 | `m_bShowLight` | bool |  |
 
+### CRelativeLocation
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CRelativeLocation *-- RelativeLocationType_t
+    CRelativeLocation --> CBaseEntity
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Type` | [RelativeLocationType_t](../schemas/!GlobalTypes.md#relativelocationtype_t) |  |
+| `m_vRelativeOffset` | Vector |  |
+| `m_vWorldSpacePos` | VectorWS |  |
+| `m_hEntity` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+
+### CRelativeTransform
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CRelativeTransform --> CBaseEntity
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bTransformIsWorldSpace` | bool |  |
+| `m_transform` | CTransform |  |
+| `m_transformWS` | CTransformWS |  |
+| `m_hEntity` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+
+### CRemapFloat
+
+**Metadata:** `MPropertyCustomEditor multi_float( 4 )`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_pValue` | float32[4] |  |
+
 ### CRenderComponent
 
 **Inherits from:** [CEntityComponent](entity2.md#centitycomponent)
@@ -14385,17 +16566,42 @@ classDiagram
 ```mermaid
 classDiagram
     CEntityComponent <|-- CRenderComponent
+    CRenderComponent *-- CNetworkVarChainer
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `__m_pChainEntity` | CNetworkVarChainer | `MNotSaved` |
+| `__m_pChainEntity` | [CNetworkVarChainer](../schemas/entity2.md#cnetworkvarchainer) | `MNotSaved` |
 | `m_bIsRenderingWithViewModels` | bool | `MNotSaved` |
 | `m_nSplitscreenFlags` | uint32 | `MNotSaved` |
 | `m_bEnableRendering` | bool | `MNotSaved` |
 | `m_bInterpolationReadyToDraw` | bool | `MNotSaved` |
+
+### CResponseCriteriaSet
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nNumPrefixedContexts` | int32 |  |
+| `m_bOverrideOnAppend` | bool |  |
+
+### CResponseQueue
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CResponseQueue --> CAI_Expresser
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_ExpresserTargets` | CUtlVector< [CAI_Expresser](../schemas/server.md#cai_expresser)* > |  |
 
 ### CRetakeGameRules
 
@@ -14453,7 +16659,9 @@ classDiagram
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
     CRopeKeyframe <|-- CRopeKeyframeAlias_move_rope
+    CRopeKeyframe *-- InfoForResourceTypeIMaterial2
     CRopeKeyframe --> CBaseEntity
+    CRopeKeyframe *-- AttachmentHandle_t
 ```
 
 **Fields:**
@@ -14468,7 +16676,7 @@ classDiagram
 | `m_nSegments` | uint8 |  |
 | `m_bConstrainBetweenEndpoints` | bool |  |
 | `m_strRopeMaterialModel` | CUtlSymbolLarge |  |
-| `m_iRopeMaterialModelIndex` | CStrongHandle< InfoForResourceTypeIMaterial2 > |  |
+| `m_iRopeMaterialModelIndex` | CStrongHandle< [InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2) > |  |
 | `m_Subdiv` | uint8 |  |
 | `m_nChangeCount` | uint8 | `MNotSaved` |
 | `m_RopeLength` | int16 |  |
@@ -14479,8 +16687,8 @@ classDiagram
 | `m_bEndPointValid` | bool |  |
 | `m_hStartPoint` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
 | `m_hEndPoint` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
-| `m_iStartAttachment` | AttachmentHandle_t |  |
-| `m_iEndAttachment` | AttachmentHandle_t |  |
+| `m_iStartAttachment` | [AttachmentHandle_t](../schemas/modellib.md#attachmenthandle_t) |  |
+| `m_iEndAttachment` | [AttachmentHandle_t](../schemas/modellib.md#attachmenthandle_t) |  |
 
 ### CRopeKeyframeAlias_move_rope
 
@@ -14495,6 +16703,24 @@ classDiagram
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
 ```
+
+### CRopeOverlapHit
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CRopeOverlapHit --> CBaseEntity
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_hEntity` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+| `m_vecOverlappingLinks` | CUtlVector< int32 > |  |
 
 ### CRotButton
 
@@ -14546,14 +16772,16 @@ classDiagram
     CPointEntity <|-- CRotatorTarget
     CBaseEntity <|-- CPointEntity
     CEntityInstance <|-- CBaseEntity
+    CRotatorTarget *-- CEntityIOOutput
+    CRotatorTarget *-- RotatorTargetSpace_t
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnArrivedAt` | CEntityIOOutput |  |
-| `m_eSpace` | RotatorTargetSpace_t |  |
+| `m_OnArrivedAt` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_eSpace` | [RotatorTargetSpace_t](../schemas/!GlobalTypes.md#rotatortargetspace_t) |  |
 
 ### CRuleBrushEntity
 
@@ -14620,6 +16848,62 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_Score` | int32 |  |
+
+### CSAdditionalMatchStats_t
+
+**Inherits from:** [CSAdditionalPerRoundStats_t](server.md#csadditionalperroundstats_t)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CSAdditionalPerRoundStats_t <|-- CSAdditionalMatchStats_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_numRoundsSurvivedStreak` | int32 |  |
+| `m_maxNumRoundsSurvivedStreak` | int32 |  |
+| `m_numRoundsSurvivedTotal` | int32 |  |
+| `m_iRoundsWonWithoutPurchase` | int32 |  |
+| `m_iRoundsWonWithoutPurchaseTotal` | int32 |  |
+| `m_numFirstKills` | int32 |  |
+| `m_numClutchKills` | int32 |  |
+| `m_numPistolKills` | int32 |  |
+| `m_numSniperKills` | int32 |  |
+| `m_iNumSuicides` | int32 |  |
+| `m_iNumTeamKills` | int32 |  |
+| `m_flTeamDamage` | float32 |  |
+
+### CSAdditionalPerRoundStats_t
+
+**Derived by:** [CSAdditionalMatchStats_t](server.md#csadditionalmatchstats_t)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CSAdditionalPerRoundStats_t <|-- CSAdditionalMatchStats_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_numChickensKilled` | int32 |  |
+| `m_killsWhileBlind` | int32 |  |
+| `m_bombCarrierkills` | int32 |  |
+| `m_flBurnDamageInflicted` | float32 |  |
+| `m_flBlastDamageInflicted` | float32 |  |
+| `m_iDinks` | int32 |  |
+| `m_bFreshStartThisRound` | bool |  |
+| `m_bBombPlantedAndAlive` | bool |  |
+| `m_nDefuseStarts` | int32 |  |
+| `m_nHostagePickUps` | int32 |  |
+| `m_numTeammatesFlashed` | int32 |  |
+| `m_strAnnotationsWorkshopId` | CUtlString |  |
 
 ### CSMatchStats_t
 
@@ -14704,7 +16988,10 @@ classDiagram
     CSceneEntity <|-- CSceneEntityAlias_logic_choreographed_scene
     CSceneEntity --> CBaseEntity
     CSceneEntity --> CBaseModelEntity
+    CSceneEntity *-- CEntityIOOutput
+    CSceneEntity *-- ActorMapping_t
     CSceneEntity --> CSceneListManager
+    CSceneEntity *-- SceneOnPlayerDeath_t
 ```
 
 **Fields:**
@@ -14754,13 +17041,13 @@ classDiagram
 | `m_hActorList` | CNetworkUtlVectorBase< CHandle< [CBaseModelEntity](../schemas/server.md#cbasemodelentity) > > |  |
 | `m_hRemoveActorList` | CUtlVector< CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > > |  |
 | `m_nSceneStringIndex` | uint16 | `MNotSaved` |
-| `m_OnStart` | CEntityIOOutput |  |
-| `m_OnCompletion` | CEntityIOOutput |  |
-| `m_OnCanceled` | CEntityIOOutput |  |
-| `m_OnPaused` | CEntityIOOutput |  |
-| `m_OnResumed` | CEntityIOOutput |  |
-| `m_OnPulseRequirement` | CEntityIOOutput |  |
-| `m_ActorMap` | CUtlVector< ActorMapping_t > |  |
+| `m_OnStart` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnCompletion` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnCanceled` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnPaused` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnResumed` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnPulseRequirement` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_ActorMap` | CUtlVector< [ActorMapping_t](../schemas/server.md#actormapping_t) > |  |
 | `m_hInterruptScene` | CHandle< [CSceneEntity](../schemas/server.md#csceneentity) > |  |
 | `m_nInterruptCount` | int32 |  |
 | `m_bSceneMissing` | bool | `MNotSaved` |
@@ -14775,7 +17062,7 @@ classDiagram
 | `m_hActor` | CHandle< [CBaseModelEntity](../schemas/server.md#cbasemodelentity) > |  |
 | `m_hActivator` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
 | `m_BusyActor` | int32 |  |
-| `m_iPlayerDeathBehavior` | SceneOnPlayerDeath_t |  |
+| `m_iPlayerDeathBehavior` | [SceneOnPlayerDeath_t](../schemas/!GlobalTypes.md#sceneonplayerdeath_t) |  |
 
 ### CSceneEntityAlias_logic_choreographed_scene
 
@@ -14790,6 +17077,44 @@ classDiagram
     CBaseEntity <|-- CPointEntity
     CEntityInstance <|-- CBaseEntity
 ```
+
+### CSceneEventInfo
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CSceneEventInfo *-- HSequence
+    CSceneEventInfo *-- InfoForResourceTypeCNmClip
+    CSceneEventInfo *-- GameTime_t
+    CSceneEventInfo --> CBaseEntity
+    CSceneEventInfo *-- SceneEventId_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_iLayer` | int32 |  |
+| `m_iPriority` | int32 |  |
+| `m_hSequence` | [HSequence](../schemas/animationsystem.md#hsequence) |  |
+| `m_flWeight` | float32 |  |
+| `m_flLastAccumulatedTime` | float32 |  |
+| `m_flLastJumpFromTime` | float32 |  |
+| `m_flLastJumpToTime` | float32 |  |
+| `m_flLastCycle` | float32 |  |
+| `m_hAnimClip` | CStrongHandle< [InfoForResourceTypeCNmClip](../schemas/resourcesystem.md#infoforresourcetypecnmclip) > |  |
+| `m_sAnimClipSlot` | CGlobalSymbol |  |
+| `m_sAnimClipSlotWeight` | CGlobalSymbol |  |
+| `m_bHasArrived` | bool |  |
+| `m_nType` | int32 |  |
+| `m_flNext` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_bIsGesture` | bool |  |
+| `m_bShouldRemove` | bool |  |
+| `m_hTarget` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+| `m_nSceneEventId` | [SceneEventId_t](../schemas/server.md#sceneeventid_t) |  |
+| `m_bClientSide` | bool |  |
+| `m_bStarted` | bool |  |
 
 ### CSceneListManager
 
@@ -14826,13 +17151,14 @@ classDiagram
     C_BaseModelEntity <|-- CBaseAnimGraph
     C_BaseEntity <|-- C_BaseModelEntity
     CEntityInstance <|-- C_BaseEntity
+    CScriptItem *-- MoveType_t
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_MoveTypeOverride` | MoveType_t | `MNotSaved` |
+| `m_MoveTypeOverride` | [MoveType_t](../schemas/!GlobalTypes.md#movetype_t) | `MNotSaved` |
 
 ### CScriptNavBlocker
 
@@ -14938,6 +17264,15 @@ classDiagram
 |------|------|-------------|
 | `m_vExtent` | Vector |  |
 
+### CScriptUniformRandomStream
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_hScriptScope` | HSCRIPT |  |
+| `m_nInitialSeed` | int32 |  |
+
 ### CScriptedSequence
 
 **Inherits from:** [CBaseEntity](server.md#cbaseentity)
@@ -14948,8 +17283,16 @@ classDiagram
 classDiagram
     CBaseEntity <|-- CScriptedSequence
     CEntityInstance <|-- CBaseEntity
+    CScriptedSequence *-- ScriptedMoveTo_t
+    CScriptedSequence *-- SharedMovementGait_t
+    CScriptedSequence *-- ScriptedHeldWeaponBehavior_t
+    CScriptedSequence *-- ForcedCrouchState_t
+    CScriptedSequence *-- GameTime_t
     CScriptedSequence --> CBaseEntity
     CScriptedSequence --> CBaseAnimGraph
+    CScriptedSequence *-- ScriptedOnDeath_t
+    CScriptedSequence *-- ScriptedConflictResponse_t
+    CScriptedSequence *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -14964,10 +17307,10 @@ classDiagram
 | `m_iszNextScript` | CUtlSymbolLarge |  |
 | `m_iszEntity` | CUtlSymbolLarge |  |
 | `m_iszSyncGroup` | CUtlSymbolLarge |  |
-| `m_nMoveTo` | ScriptedMoveTo_t |  |
-| `m_nMoveToGait` | SharedMovementGait_t |  |
-| `m_nHeldWeaponBehavior` | ScriptedHeldWeaponBehavior_t |  |
-| `m_nForcedCrouchState` | ForcedCrouchState_t |  |
+| `m_nMoveTo` | [ScriptedMoveTo_t](../schemas/!GlobalTypes.md#scriptedmoveto_t) |  |
+| `m_nMoveToGait` | [SharedMovementGait_t](../schemas/!GlobalTypes.md#sharedmovementgait_t) |  |
+| `m_nHeldWeaponBehavior` | [ScriptedHeldWeaponBehavior_t](../schemas/!GlobalTypes.md#scriptedheldweaponbehavior_t) |  |
+| `m_nForcedCrouchState` | [ForcedCrouchState_t](../schemas/!GlobalTypes.md#forcedcrouchstate_t) |  |
 | `m_bIsPlayingPreIdle` | bool |  |
 | `m_bIsPlayingEntry` | bool |  |
 | `m_bIsPlayingAction` | bool |  |
@@ -15001,7 +17344,7 @@ classDiagram
 | `m_flMoveSpeed` | float32 |  |
 | `m_bWaitUntilMoveCompletesToStartAnimation` | bool |  |
 | `m_nNotReadySequenceCount` | int32 |  |
-| `m_startTime` | GameTime_t |  |
+| `m_startTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_bWaitForBeginSequence` | bool |  |
 | `m_saved_effects` | int32 |  |
 | `m_savedFlags` | int32 |  |
@@ -15020,15 +17363,15 @@ classDiagram
 | `m_bForceSynch` | bool |  |
 | `m_bPreventUpdateYawOnFinish` | bool |  |
 | `m_bEnsureOnNavmeshOnFinish` | bool |  |
-| `m_onDeathBehavior` | ScriptedOnDeath_t |  |
-| `m_ConflictResponse` | ScriptedConflictResponse_t |  |
-| `m_OnBeginSequence` | CEntityIOOutput |  |
-| `m_OnActionStartOrLoop` | CEntityIOOutput |  |
-| `m_OnEndSequence` | CEntityIOOutput |  |
-| `m_OnPostIdleEndSequence` | CEntityIOOutput |  |
-| `m_OnCancelSequence` | CEntityIOOutput |  |
-| `m_OnCancelFailedSequence` | CEntityIOOutput |  |
-| `m_OnScriptEvent` | CEntityIOOutput[8] |  |
+| `m_onDeathBehavior` | [ScriptedOnDeath_t](../schemas/!GlobalTypes.md#scriptedondeath_t) |  |
+| `m_ConflictResponse` | [ScriptedConflictResponse_t](../schemas/!GlobalTypes.md#scriptedconflictresponse_t) |  |
+| `m_OnBeginSequence` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnActionStartOrLoop` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnEndSequence` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnPostIdleEndSequence` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnCancelSequence` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnCancelFailedSequence` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnScriptEvent` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput)[8] |  |
 | `m_matOtherToMain` | CTransform |  |
 | `m_hInteractionMainEntity` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
 | `m_iPlayerDeathBehavior` | int32 |  |
@@ -15101,6 +17444,56 @@ classDiagram
     CEntityInstance <|-- CBaseEntity
 ```
 
+### CShatterGlassShard
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CShatterGlassShard *-- InfoForResourceTypeCModel
+    CShatterGlassShard --> CShatterGlassShardPhysics
+    CShatterGlassShard --> CFuncShatterglass
+    CShatterGlassShard *-- ShatterGlassStressType
+    CShatterGlassShard *-- OnFrame
+    CShatterGlassShard *-- GameTime_t
+    CShatterGlassShard --> CBaseEntity
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_hShardHandle` | uint32 |  |
+| `m_vecPanelVertices` | CUtlVector< Vector2D > | `MNotSaved` |
+| `m_vLocalPanelSpaceOrigin` | Vector2D | `MNotSaved` |
+| `m_hModel` | CStrongHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > | `MNotSaved` |
+| `m_hPhysicsEntity` | CHandle< [CShatterGlassShardPhysics](../schemas/server.md#cshatterglassshardphysics) > |  |
+| `m_hParentPanel` | CHandle< [CFuncShatterglass](../schemas/server.md#cfuncshatterglass) > |  |
+| `m_hParentShard` | uint32 |  |
+| `m_ShatterStressType` | [ShatterGlassStressType](../schemas/!GlobalTypes.md#shatterglassstresstype) |  |
+| `m_vecStressVelocity` | Vector |  |
+| `m_bCreatedModel` | bool | `MNotSaved` |
+| `m_flLongestEdge` | float32 | `MNotSaved` |
+| `m_flShortestEdge` | float32 | `MNotSaved` |
+| `m_flLongestAcross` | float32 | `MNotSaved` |
+| `m_flShortestAcross` | float32 | `MNotSaved` |
+| `m_flSumOfAllEdges` | float32 | `MNotSaved` |
+| `m_flArea` | float32 | `MNotSaved` |
+| `m_nOnFrameEdge` | [OnFrame](../schemas/!GlobalTypes.md#onframe) |  |
+| `m_nSubShardGeneration` | int32 |  |
+| `m_vecAverageVertPosition` | Vector2D | `MNotSaved` |
+| `m_bAverageVertPositionIsValid` | bool | `MNotSaved` |
+| `m_vecPanelSpaceStressPositionA` | Vector2D |  |
+| `m_vecPanelSpaceStressPositionB` | Vector2D |  |
+| `m_bStressPositionAIsValid` | bool |  |
+| `m_bStressPositionBIsValid` | bool |  |
+| `m_bFlaggedForRemoval` | bool |  |
+| `m_flPhysicsEntitySpawnedAtTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_hEntityHittingMe` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+| `m_vecNeighbors` | CUtlVector< uint32 > |  |
+
 ### CShatterGlassShardPhysics
 
 **Inherits from:** [CBaseModelEntity](server.md#cbasemodelentity)
@@ -15112,6 +17505,7 @@ classDiagram
     CBaseModelEntity <|-- CShatterGlassShardPhysics
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CShatterGlassShardPhysics *-- ShatterGlassEntityPoolState_t
 ```
 
 **Fields:**
@@ -15120,7 +17514,7 @@ classDiagram
 |------|------|-------------|
 | `m_hParentShard` | uint32 |  |
 | `m_ShardDesc` | shard_model_desc_t |  |
-| `m_nPoolState` | ShatterGlassEntityPoolState_t |  |
+| `m_nPoolState` | [ShatterGlassEntityPoolState_t](../schemas/!GlobalTypes.md#shatterglassentitypoolstate_t) |  |
 | `m_bTouchedByPlayer` | bool |  |
 
 ### CShower
@@ -15143,6 +17537,23 @@ classDiagram
 |------|------|-------------|
 | `m_flSpeed` | float32 |  |
 
+### CSimTimer
+
+**Inherits from:** [CSimpleSimTimer](server.md#csimplesimtimer)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CSimpleSimTimer <|-- CSimTimer
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flInterval` | float32 |  |
+
 ### CSimpleMarkupVolumeTagged
 
 **Inherits from:** [CMarkupVolumeTagged](server.md#cmarkupvolumetagged)
@@ -15156,6 +17567,41 @@ classDiagram
     CBaseModelEntity <|-- CMarkupVolume
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+```
+
+### CSimpleSimTimer
+
+**Derived by:** [CRandSimTimer](server.md#crandsimtimer), [CSimTimer](server.md#csimtimer), [CStopwatchBase](server.md#cstopwatchbase)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CSimpleSimTimer <|-- CRandSimTimer
+    CSimpleSimTimer <|-- CSimTimer
+    CSimpleSimTimer <|-- CStopwatchBase
+    CSimpleSimTimer *-- GameTime_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flNext` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_nWorldGroupId` | WorldGroupId_t |  |
+
+### CSimpleStopwatch
+
+**Inherits from:** [CStopwatchBase](server.md#cstopwatchbase)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CStopwatchBase <|-- CSimpleStopwatch
+    CSimpleSimTimer <|-- CStopwatchBase
 ```
 
 ### CSingleplayRules
@@ -15174,6 +17620,29 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_bSinglePlayerGameEnding` | bool |  |
+
+### CSkeletonAnimationController
+
+**Inherits from:** [ISkeletonAnimationController](server.md#iskeletonanimationcontroller)
+
+**Derived by:** [CBaseAnimGraphController](client.md#cbaseanimgraphcontroller)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    ISkeletonAnimationController <|-- CSkeletonAnimationController
+    CSkeletonAnimationController <|-- CBaseAnimGraphController
+    CSkeletonAnimationController --> CSkeletonInstance
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_pSkeletonInstance` | [CSkeletonInstance](../schemas/server.md#cskeletoninstance)* | `MNotSaved` |
 
 ### CSkeletonInstance
 
@@ -15201,6 +17670,45 @@ classDiagram
 | `m_materialGroup` | CUtlStringToken |  |
 | `m_nHitboxSet` | uint8 |  |
 | `m_bForceServerConstraintsEnabled` | bool |  |
+
+### CSkillDamage
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CSkillDamage *-- CSkillFloat
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flDamage` | [CSkillFloat](../schemas/server.md#cskillfloat) | `MPropertyDescription Damage Dealt (in the case of NPC vs NPC damage, medium skill times the NPC damage scalar is used)` |
+| `m_flNPCDamageScalarVsNPC` | float32 | `MPropertyDescription Damage Scalar for NPC vs NPC cases` |
+| `m_flPhysicsForceDamage` | float32 | `MPropertyDescription If specified, the damage used to compute physics forces. Otherwise normal damage is used (and is not scaled by the NPC damage scalar.` |
+
+### CSkillFloat
+
+**Metadata:** `MPropertyCustomEditor multi_float( 4 )`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_pValue` | float32[4] |  |
+
+### CSkillInt
+
+**Metadata:** `MPropertyCustomEditor multi_int( 4 )`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_pValue` | int32[4] |  |
 
 ### CSkyCamera
 
@@ -15271,6 +17779,7 @@ classDiagram
     CBaseAnimGraph <|-- CBaseGrenade
     C_BaseModelEntity <|-- CBaseAnimGraph
     C_BaseEntity <|-- C_BaseModelEntity
+    CSmokeGrenadeProjectile *-- GameTime_t
 ```
 
 **Fields:**
@@ -15285,10 +17794,24 @@ classDiagram
 | `m_VoxelFrameData` | CNetworkUtlVectorBase< uint8 > |  |
 | `m_nVoxelFrameDataSize` | int32 |  |
 | `m_nVoxelUpdate` | int32 |  |
-| `m_flLastBounce` | GameTime_t |  |
-| `m_fllastSimulationTime` | GameTime_t |  |
+| `m_flLastBounce` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_fllastSimulationTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_bExplodeFromInferno` | bool |  |
 | `m_bDidGroundScorch` | bool |  |
+
+### CSmoothFunc
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flSmoothAmplitude` | float32 |  |
+| `m_flSmoothBias` | float32 |  |
+| `m_flSmoothDuration` | float32 |  |
+| `m_flSmoothRemainingTime` | float32 |  |
+| `m_nSmoothDir` | int32 |  |
 
 ### CSoundAreaEntityBase
 
@@ -15353,6 +17876,19 @@ classDiagram
 |------|------|-------------|
 | `m_flRadius` | float32 |  |
 
+### CSoundEnvelope
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_current` | float32 |  |
+| `m_target` | float32 |  |
+| `m_rate` | float32 |  |
+| `m_forceupdate` | bool |  |
+
 ### CSoundEventAABBEntity
 
 **Inherits from:** [CSoundEventEntity](server.md#csoundevententity)
@@ -15414,6 +17950,7 @@ classDiagram
     CSoundEventEntity <|-- CSoundEventOBBEntity
     CSoundEventEntity <|-- CSoundEventPathCornerEntity
     CSoundEventEntity <|-- CSoundEventSphereEntity
+    CSoundEventEntity *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -15429,7 +17966,7 @@ classDiagram
 | `m_iszSourceEntityName` | CUtlSymbolLarge |  |
 | `m_iszAttachmentName` | CUtlSymbolLarge |  |
 | `m_onGUIDChanged` | CEntityOutputTemplate< SndOpEventGuid_t > |  |
-| `m_onSoundFinished` | CEntityIOOutput |  |
+| `m_onSoundFinished` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_flClientCullRadius` | float32 |  |
 | `m_iszSoundName` | CUtlSymbolLarge |  |
 | `m_hSource` | CEntityHandle |  |
@@ -15498,6 +18035,7 @@ classDiagram
     CSoundEventEntity <|-- CSoundEventPathCornerEntity
     CBaseEntity <|-- CSoundEventEntity
     CEntityInstance <|-- CBaseEntity
+    CSoundEventPathCornerEntity *-- SoundeventPathCornerPairNetworked_t
 ```
 
 **Fields:**
@@ -15510,7 +18048,7 @@ classDiagram
 | `m_flDistMaxSqr` | float32 |  |
 | `m_flDotProductMax` | float32 |  |
 | `m_bPlaying` | bool |  |
-| `m_vecCornerPairsNetworked` | CNetworkUtlVectorBase< SoundeventPathCornerPairNetworked_t > | `MNotSaved` |
+| `m_vecCornerPairsNetworked` | CNetworkUtlVectorBase< [SoundeventPathCornerPairNetworked_t](../schemas/server.md#soundeventpathcornerpairnetworked_t) > | `MNotSaved` |
 
 ### CSoundEventSphereEntity
 
@@ -15561,14 +18099,16 @@ classDiagram
     CSoundOpvarSetPointBase <|-- CSoundOpvarSetPointEntity
     CBaseEntity <|-- CSoundOpvarSetPointBase
     CEntityInstance <|-- CBaseEntity
+    CSoundOpvarSetAutoRoomEntity *-- SoundOpvarTraceResult_t
+    CSoundOpvarSetAutoRoomEntity *-- AutoRoomDoorwayPairs_t
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_traceResults` | CUtlVector< SoundOpvarTraceResult_t > |  |
-| `m_doorwayPairs` | CUtlVector< AutoRoomDoorwayPairs_t > |  |
+| `m_traceResults` | CUtlVector< [SoundOpvarTraceResult_t](../schemas/server.md#soundopvartraceresult_t) > |  |
+| `m_doorwayPairs` | CUtlVector< [AutoRoomDoorwayPairs_t](../schemas/server.md#autoroomdoorwaypairs_t) > |  |
 | `m_flSize` | float32 |  |
 | `m_flHeightTolerance` | float32 |  |
 | `m_flSizeSqr` | float32 |  |
@@ -15741,14 +18281,15 @@ classDiagram
     CEntityInstance <|-- CBaseEntity
     CSoundOpvarSetPointEntity <|-- CSoundOpvarSetAutoRoomEntity
     CSoundOpvarSetPointEntity <|-- CSoundOpvarSetPathCornerEntity
+    CSoundOpvarSetPointEntity *-- CEntityIOOutput
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnEnter` | CEntityIOOutput |  |
-| `m_OnExit` | CEntityIOOutput |  |
+| `m_OnEnter` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnExit` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_bAutoDisable` | bool |  |
 | `m_flDistanceMin` | float32 |  |
 | `m_flDistanceMax` | float32 |  |
@@ -15771,6 +18312,35 @@ classDiagram
 | `m_vPathingListenerPos` | VectorWS | `MNotSaved` |
 | `m_vPathingDirection` | Vector | `MNotSaved` |
 | `m_nPathingSourceIndex` | int32 | `MNotSaved` |
+
+### CSoundPatch
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CSoundPatch *-- CSoundEnvelope
+    CSoundPatch --> CBaseEntity
+    CSoundPatch *-- CCopyRecipientFilter
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_pitch` | [CSoundEnvelope](../schemas/server.md#csoundenvelope) |  |
+| `m_volume` | [CSoundEnvelope](../schemas/server.md#csoundenvelope) |  |
+| `m_shutdownTime` | float32 |  |
+| `m_flLastTime` | float32 |  |
+| `m_iszSoundScriptName` | CUtlSymbolLarge |  |
+| `m_hEnt` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+| `m_soundEntityIndex` | CEntityIndex | `MNotSaved` |
+| `m_soundOrigin` | VectorWS | `MNotSaved` |
+| `m_isPlaying` | int32 |  |
+| `m_Filter` | [CCopyRecipientFilter](../schemas/server.md#ccopyrecipientfilter) |  |
+| `m_flCloseCaptionDuration` | float32 |  |
+| `m_bUpdatedSoundOrigin` | bool | `MNotSaved` |
+| `m_iszClassName` | CUtlSymbolLarge | `MNotSaved` |
 
 ### CSoundStackSave
 
@@ -15804,6 +18374,8 @@ classDiagram
     C_BaseEntity <|-- CLogicalEntity
     CEntityInstance <|-- C_BaseEntity
     CSplineConstraint --> CBaseEntity
+    CSplineConstraint --> IPhysicsBody
+    CSplineConstraint *-- GameTime_t
 ```
 
 **Fields:**
@@ -15812,7 +18384,7 @@ classDiagram
 |------|------|-------------|
 | `m_vAnchorOffsetRestore` | Vector |  |
 | `m_hSplineEntity` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
-| `m_pSplineBody` | IPhysicsBody* | `MPhysPtr` |
+| `m_pSplineBody` | [IPhysicsBody](../schemas/vphysics2.md#iphysicsbody)* | `MPhysPtr` |
 | `m_bEnableLateralConstraint` | bool |  |
 | `m_bEnableVerticalConstraint` | bool |  |
 | `m_bEnableAngularConstraint` | bool |  |
@@ -15823,7 +18395,7 @@ classDiagram
 | `m_flJointFriction` | float32 |  |
 | `m_flTransitionTime` | float32 |  |
 | `m_vPreSolveAnchorPos` | VectorWS | `MNotSaved` |
-| `m_StartTransitionTime` | GameTime_t |  |
+| `m_StartTransitionTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_vTangentSpaceAnchorAtTransitionStart` | Vector |  |
 
 ### CSpotlightEnd
@@ -15864,19 +18436,22 @@ classDiagram
     CSprite <|-- CCSSprite
     CSprite <|-- CCommentaryViewPosition
     CSprite <|-- CSpriteAlias_env_glow
+    CSprite *-- InfoForResourceTypeIMaterial2
     CSprite --> CBaseEntity
+    CSprite *-- AttachmentHandle_t
+    CSprite *-- GameTime_t
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_hSpriteMaterial` | CStrongHandle< InfoForResourceTypeIMaterial2 > |  |
+| `m_hSpriteMaterial` | CStrongHandle< [InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2) > |  |
 | `m_hAttachedToEntity` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
-| `m_nAttachment` | AttachmentHandle_t |  |
+| `m_nAttachment` | [AttachmentHandle_t](../schemas/modellib.md#attachmenthandle_t) |  |
 | `m_flSpriteFramerate` | float32 |  |
 | `m_flFrame` | float32 |  |
-| `m_flDieTime` | GameTime_t |  |
+| `m_flDieTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_nBrightness` | uint32 |  |
 | `m_flBrightnessDuration` | float32 |  |
 | `m_flSpriteScale` | float32 |  |
@@ -15884,14 +18459,14 @@ classDiagram
 | `m_bWorldSpaceScale` | bool |  |
 | `m_flGlowProxySize` | float32 |  |
 | `m_flHDRColorScale` | float32 |  |
-| `m_flLastTime` | GameTime_t |  |
+| `m_flLastTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flMaxFrame` | float32 |  |
 | `m_flStartScale` | float32 |  |
 | `m_flDestScale` | float32 |  |
-| `m_flScaleTimeStart` | GameTime_t |  |
+| `m_flScaleTimeStart` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_nStartBrightness` | int32 |  |
 | `m_nDestBrightness` | int32 |  |
-| `m_flBrightnessTimeStart` | GameTime_t |  |
+| `m_flBrightnessTimeStart` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_nSpriteWidth` | int32 | `MNotSaved` |
 | `m_nSpriteHeight` | int32 | `MNotSaved` |
 | `m_flSpeed` | float32 |  |
@@ -15924,7 +18499,141 @@ classDiagram
     CEntityInstance <|-- CBaseEntity
 ```
 
+### CStopwatch
+
+**Inherits from:** [CStopwatchBase](server.md#cstopwatchbase)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CStopwatchBase <|-- CStopwatch
+    CSimpleSimTimer <|-- CStopwatchBase
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flInterval` | float32 |  |
+
+### CStopwatchBase
+
+**Inherits from:** [CSimpleSimTimer](server.md#csimplesimtimer)
+
+**Derived by:** [CRandStopwatch](server.md#crandstopwatch), [CSimpleStopwatch](server.md#csimplestopwatch), [CStopwatch](server.md#cstopwatch)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CSimpleSimTimer <|-- CStopwatchBase
+    CStopwatchBase <|-- CRandStopwatch
+    CStopwatchBase <|-- CSimpleStopwatch
+    CStopwatchBase <|-- CStopwatch
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bIsRunning` | bool |  |
+
+### CTakeDamageInfo
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CTakeDamageInfo --> CBaseEntity
+    CTakeDamageInfo *-- DamageTypes_t
+    CTakeDamageInfo *-- AmmoIndex_t
+    CTakeDamageInfo *-- TakeDamageFlags_t
+    CTakeDamageInfo *-- HitGroup_t
+    CTakeDamageInfo *-- DestructiblePartDamageRequest_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecDamageForce` | Vector |  |
+| `m_vecDamagePosition` | VectorWS |  |
+| `m_vecReportedPosition` | VectorWS |  |
+| `m_vecDamageDirection` | Vector |  |
+| `m_hInflictor` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+| `m_hAttacker` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+| `m_hAbility` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+| `m_flDamage` | float32 |  |
+| `m_flTotalledDamage` | float32 |  |
+| `m_bitsDamageType` | [DamageTypes_t](../schemas/!GlobalTypes.md#damagetypes_t) |  |
+| `m_iDamageCustom` | int32 |  |
+| `m_iAmmoType` | [AmmoIndex_t](../schemas/server.md#ammoindex_t) |  |
+| `m_flOriginalDamage` | float32 |  |
+| `m_bShouldBleed` | bool |  |
+| `m_bShouldSpark` | bool |  |
+| `m_nDamageFlags` | [TakeDamageFlags_t](../schemas/!GlobalTypes.md#takedamageflags_t) |  |
+| `m_iHitGroupId` | [HitGroup_t](../schemas/!GlobalTypes.md#hitgroup_t) |  |
+| `m_nNumObjectsPenetrated` | int32 |  |
+| `m_flFriendlyFireDamageReductionRatio` | float32 |  |
+| `m_bStoppedBullet` | bool |  |
+| `m_DestructibleHitGroupRequests` | CUtlLeanVector< [DestructiblePartDamageRequest_t](../schemas/server.md#destructiblepartdamagerequest_t) > |  |
+| `m_bInTakeDamageFlow` | bool | `MNotSaved` |
+
+### CTakeDamageResult
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CTakeDamageResult --> CTakeDamageInfo
+    CTakeDamageResult *-- DestructiblePartDamageRequest_t
+    CTakeDamageResult *-- TakeDamageFlags_t
+    CTakeDamageResult *-- HitGroup_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_pOriginatingInfo` | [CTakeDamageInfo](../schemas/server.md#ctakedamageinfo)* | `MKV3TransferSaveOpsForField` |
+| `m_DestructibleHitGroupRequests` | CUtlLeanVector< [DestructiblePartDamageRequest_t](../schemas/server.md#destructiblepartdamagerequest_t) > |  |
+| `m_nHealthLost` | int32 |  |
+| `m_nHealthBefore` | int32 |  |
+| `m_flDamageDealt` | float32 |  |
+| `m_flPreModifiedDamage` | float32 |  |
+| `m_vDamagePosition` | VectorWS |  |
+| `m_nTotalledHealthLost` | int32 |  |
+| `m_flTotalledDamageDealt` | float32 |  |
+| `m_flTotalledPreModifiedDamage` | float32 |  |
+| `m_flNewDamageAccumulatorValue` | float32 |  |
+| `m_nDamageFlags` | [TakeDamageFlags_t](../schemas/!GlobalTypes.md#takedamageflags_t) |  |
+| `m_bWasDamageSuppressed` | bool |  |
+| `m_bSuppressFlinch` | bool |  |
+| `m_nOverrideFlinchHitGroup` | [HitGroup_t](../schemas/!GlobalTypes.md#hitgroup_t) |  |
+
 ### CTakeDamageResultAPI
+
+### CTakeDamageSummaryScopeGuard
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CTakeDamageSummaryScopeGuard --> SummaryTakeDamageInfo_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecSummaries` | CUtlVector< [SummaryTakeDamageInfo_t](../schemas/server.md#summarytakedamageinfo_t)* > |  |
 
 ### CTankTargetChange
 
@@ -15937,13 +18646,14 @@ classDiagram
     CPointEntity <|-- CTankTargetChange
     CBaseEntity <|-- CPointEntity
     CEntityInstance <|-- CBaseEntity
+    CTankTargetChange *-- CVariantDefaultAllocator
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_newTarget` | CVariantBase< CVariantDefaultAllocator > | `MNotSaved` |
+| `m_newTarget` | CVariantBase< [CVariantDefaultAllocator](../schemas/entity2.md#cvariantdefaultallocator) > | `MNotSaved` |
 | `m_newTargetName` | CUtlSymbolLarge |  |
 
 ### CTankTrainAI
@@ -16025,6 +18735,7 @@ classDiagram
     CBaseEntity <|-- CTestEffect
     CEntityInstance <|-- CBaseEntity
     CTestEffect --> CBeam
+    CTestEffect *-- GameTime_t
 ```
 
 **Fields:**
@@ -16034,8 +18745,8 @@ classDiagram
 | `m_iLoop` | int32 |  |
 | `m_iBeam` | int32 |  |
 | `m_pBeam` | CHandle< [CBeam](../schemas/server.md#cbeam) >[24] |  |
-| `m_flBeamTime` | GameTime_t[24] |  |
-| `m_flStartTime` | GameTime_t |  |
+| `m_flBeamTime` | [GameTime_t](../schemas/entity2.md#gametime_t)[24] |  |
+| `m_flStartTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 
 ### CTestPulseIO
 
@@ -16048,14 +18759,17 @@ classDiagram
     CLogicalEntity <|-- CTestPulseIO
     C_BaseEntity <|-- CLogicalEntity
     CEntityInstance <|-- C_BaseEntity
+    CTestPulseIO *-- CEntityIOOutput
+    CTestPulseIO *-- CTestPulseIOComponent_Derived
     CTestPulseIO --> CBaseEntity
+    CTestPulseIO *-- TestInputOutputCombinationsEnum_t
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnVariantVoid` | CEntityIOOutput |  |
+| `m_OnVariantVoid` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_OnVariantBool` | CEntityOutputTemplate< bool > |  |
 | `m_OnVariantInt` | CEntityOutputTemplate< int32 > |  |
 | `m_OnVariantFloat` | CEntityOutputTemplate< float32 > |  |
@@ -16063,8 +18777,8 @@ classDiagram
 | `m_OnVariantColor` | CEntityOutputTemplate< Color > |  |
 | `m_OnVariantVector` | CEntityOutputTemplate< Vector > |  |
 | `m_bAllowEmptyInputs` | bool |  |
-| `m_TestComponent` | CTestPulseIOComponent_Derived |  |
-| `m_OnInternalTestVoid` | CEntityIOOutput |  |
+| `m_TestComponent` | [CTestPulseIOComponent_Derived](../schemas/server.md#ctestpulseiocomponent_derived) |  |
+| `m_OnInternalTestVoid` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_OnInternalTestBool` | CEntityOutputTemplate< bool > |  |
 | `m_OnInternalTestInt` | CEntityOutputTemplate< int32 > |  |
 | `m_OnInternalTestFloat` | CEntityOutputTemplate< float32 > |  |
@@ -16073,7 +18787,7 @@ classDiagram
 | `m_OnInternalTestVector` | CEntityOutputTemplate< Vector > |  |
 | `m_OnInternalTestEntityName` | CEntityOutputTemplate< CEntityNameString > |  |
 | `m_OnInternalTestEntityHandle` | CEntityOutputTemplate< CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > > |  |
-| `m_OnInternalTestSchemaEnum` | CEntityOutputTemplate< TestInputOutputCombinationsEnum_t > |  |
+| `m_OnInternalTestSchemaEnum` | CEntityOutputTemplate< [TestInputOutputCombinationsEnum_t](../schemas/!GlobalTypes.md#testinputoutputcombinationsenum_t) > |  |
 | `m_OnInternalTestFloatString` | CEntityOutputTemplate< [CTestPulseIO](../schemas/server.md#ctestpulseio)::FloatStringArgs_t > |  |
 | `m_OnInternalTestEntityNameString` | CEntityOutputTemplate< [CTestPulseIO](../schemas/server.md#ctestpulseio)::EntityNameStringArgs_t > |  |
 | `m_OnInternalTestEntityHandleInt` | CEntityOutputTemplate< [CTestPulseIO](../schemas/server.md#ctestpulseio)::EntityHandleIntArgs_t > |  |
@@ -16126,7 +18840,40 @@ classDiagram
 
 ### CTestPulseIOAPI
 
+### CTestPulseIOComponent
+
+**Derived by:** [CTestPulseIOComponent_Derived](server.md#ctestpulseiocomponent_derived)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CTestPulseIOComponent <|-- CTestPulseIOComponent_Derived
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_ComponentData` | CUtlString |  |
+| `m_OnComponentTestFunc` | CEntityOutputTemplate< CUtlSymbolLarge > |  |
+
 ### CTestPulseIOComponent_API
+
+### CTestPulseIOComponent_Derived
+
+**Inherits from:** [CTestPulseIOComponent](server.md#ctestpulseiocomponent)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CTestPulseIOComponent <|-- CTestPulseIOComponent_Derived
+```
 
 ### CTestPulseIOComponent_DerivedAPI
 
@@ -16141,6 +18888,7 @@ classDiagram
     CBaseModelEntity <|-- CTextureBasedAnimatable
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CTextureBasedAnimatable *-- InfoForResourceTypeCTextureBase
 ```
 
 **Fields:**
@@ -16149,8 +18897,8 @@ classDiagram
 |------|------|-------------|
 | `m_bLoop` | bool |  |
 | `m_flFPS` | float32 |  |
-| `m_hPositionKeys` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
-| `m_hRotationKeys` | CStrongHandle< InfoForResourceTypeCTextureBase > |  |
+| `m_hPositionKeys` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
+| `m_hRotationKeys` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
 | `m_vAnimationBoundsMin` | Vector |  |
 | `m_vAnimationBoundsMax` | Vector |  |
 | `m_flStartTime` | float32 | `MNotSaved` |
@@ -16167,6 +18915,7 @@ classDiagram
 ```mermaid
 classDiagram
     IntervalTimer <|-- CTimeline
+    CTimeline *-- TimelineCompression_t
 ```
 
 **Fields:**
@@ -16178,7 +18927,7 @@ classDiagram
 | `m_nBucketCount` | int32 |  |
 | `m_flInterval` | float32 |  |
 | `m_flFinalValue` | float32 |  |
-| `m_nCompressionType` | TimelineCompression_t |  |
+| `m_nCompressionType` | [TimelineCompression_t](../schemas/!GlobalTypes.md#timelinecompression_t) |  |
 | `m_bStopped` | bool |  |
 
 ### CTimerEntity
@@ -16192,15 +18941,16 @@ classDiagram
     CLogicalEntity <|-- CTimerEntity
     C_BaseEntity <|-- CLogicalEntity
     CEntityInstance <|-- C_BaseEntity
+    CTimerEntity *-- CEntityIOOutput
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnTimer` | CEntityIOOutput |  |
-| `m_OnTimerHigh` | CEntityIOOutput |  |
-| `m_OnTimerLow` | CEntityIOOutput |  |
+| `m_OnTimer` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnTimerHigh` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnTimerLow` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_iDisabled` | int32 |  |
 | `m_flInitialDelay` | float32 |  |
 | `m_flRefireTime` | float32 |  |
@@ -16300,13 +19050,14 @@ classDiagram
     CBaseModelEntity <|-- CBaseToggle
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CTriggerActiveWeaponDetect *-- CEntityIOOutput
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnTouchedActiveWeapon` | CEntityIOOutput |  |
+| `m_OnTouchedActiveWeapon` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_iszWeaponClassName` | CUtlSymbolLarge |  |
 
 ### CTriggerBombReset
@@ -16335,15 +19086,16 @@ classDiagram
     CBaseModelEntity <|-- CTriggerBrush
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CTriggerBrush *-- CEntityIOOutput
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnStartTouch` | CEntityIOOutput |  |
-| `m_OnEndTouch` | CEntityIOOutput |  |
-| `m_OnUse` | CEntityIOOutput |  |
+| `m_OnStartTouch` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnEndTouch` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnUse` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_iInputFilter` | int32 |  |
 | `m_iDontMessageParent` | int32 |  |
 
@@ -16398,6 +19150,7 @@ classDiagram
     CBaseModelEntity <|-- CBaseToggle
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CTriggerDetectBulletFire *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -16405,7 +19158,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_bPlayerFireOnly` | bool |  |
-| `m_OnDetectedBulletFire` | CEntityIOOutput |  |
+| `m_OnDetectedBulletFire` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CTriggerDetectExplosion
 
@@ -16420,13 +19173,14 @@ classDiagram
     CBaseModelEntity <|-- CBaseToggle
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CTriggerDetectExplosion *-- CEntityIOOutput
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnDetectedExplosion` | CEntityIOOutput |  |
+| `m_OnDetectedExplosion` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CTriggerFan
 
@@ -16544,6 +19298,9 @@ classDiagram
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
     CTriggerHurt <|-- CScriptTriggerHurt
+    CTriggerHurt *-- GameTime_t
+    CTriggerHurt *-- DamageTypes_t
+    CTriggerHurt *-- CEntityIOOutput
     CTriggerHurt --> CBaseEntity
 ```
 
@@ -16554,16 +19311,16 @@ classDiagram
 | `m_flOriginalDamage` | float32 |  |
 | `m_flDamage` | float32 |  |
 | `m_flDamageCap` | float32 |  |
-| `m_flLastDmgTime` | GameTime_t |  |
+| `m_flLastDmgTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flForgivenessDelay` | float32 |  |
-| `m_bitsDamageInflict` | DamageTypes_t |  |
+| `m_bitsDamageInflict` | [DamageTypes_t](../schemas/!GlobalTypes.md#damagetypes_t) |  |
 | `m_damageModel` | int32 |  |
 | `m_bNoDmgForce` | bool |  |
 | `m_vDamageForce` | Vector |  |
 | `m_thinkAlways` | bool |  |
 | `m_hurtThinkPeriod` | float32 |  |
-| `m_OnHurt` | CEntityIOOutput |  |
-| `m_OnHurtPlayer` | CEntityIOOutput |  |
+| `m_OnHurt` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnHurtPlayer` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_hurtEntities` | CUtlVector< CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > > |  |
 
 ### CTriggerImpact
@@ -16604,6 +19361,8 @@ classDiagram
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
     CTriggerLerpObject --> CBaseEntity
+    CTriggerLerpObject *-- AttachmentHandle_t
+    CTriggerLerpObject *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -16613,7 +19372,7 @@ classDiagram
 | `m_iszLerpTarget` | CUtlSymbolLarge |  |
 | `m_hLerpTarget` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
 | `m_iszLerpTargetAttachment` | CUtlSymbolLarge |  |
-| `m_hLerpTargetAttachment` | AttachmentHandle_t |  |
+| `m_hLerpTargetAttachment` | [AttachmentHandle_t](../schemas/modellib.md#attachmenthandle_t) |  |
 | `m_flLerpDuration` | float32 |  |
 | `m_bAttachedEntityWasParented` | bool |  |
 | `m_bLerpRestoreMoveType` | bool |  |
@@ -16623,9 +19382,9 @@ classDiagram
 | `m_iszLerpSound` | CUtlSymbolLarge |  |
 | `m_bAttachTouchingObject` | bool |  |
 | `m_hEntityToWaitForDisconnect` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
-| `m_OnLerpStarted` | CEntityIOOutput |  |
-| `m_OnLerpFinished` | CEntityIOOutput |  |
-| `m_OnDetached` | CEntityIOOutput |  |
+| `m_OnLerpStarted` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnLerpFinished` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnDetached` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CTriggerLook
 
@@ -16641,6 +19400,8 @@ classDiagram
     CBaseToggle <|-- CBaseTrigger
     CBaseModelEntity <|-- CBaseToggle
     CTriggerLook --> CBaseEntity
+    CTriggerLook *-- GameTime_t
+    CTriggerLook *-- CEntityIOOutput
 ```
 
 **Fields:**
@@ -16651,7 +19412,7 @@ classDiagram
 | `m_flFieldOfView` | float32 |  |
 | `m_flLookTime` | float32 |  |
 | `m_flLookTimeTotal` | float32 |  |
-| `m_flLookTimeLast` | GameTime_t |  |
+| `m_flLookTimeLast` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flTimeoutDuration` | float32 |  |
 | `m_bTimeoutFired` | bool |  |
 | `m_bIsLooking` | bool |  |
@@ -16659,9 +19420,9 @@ classDiagram
 | `m_bUseVelocity` | bool |  |
 | `m_bTestOcclusion` | bool |  |
 | `m_bTestAllVisibleOcclusion` | bool |  |
-| `m_OnTimeout` | CEntityIOOutput |  |
-| `m_OnStartLook` | CEntityIOOutput |  |
-| `m_OnEndLook` | CEntityIOOutput |  |
+| `m_OnTimeout` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnStartLook` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
+| `m_OnEndLook` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CTriggerMultiple
 
@@ -16682,13 +19443,14 @@ classDiagram
     CTriggerMultiple <|-- CScriptTriggerMultiple
     CTriggerMultiple <|-- CTriggerImpact
     CTriggerMultiple <|-- CTriggerOnce
+    CTriggerMultiple *-- CEntityIOOutput
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnTrigger` | CEntityIOOutput |  |
+| `m_OnTrigger` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CTriggerOnce
 
@@ -16722,13 +19484,14 @@ classDiagram
     CBaseModelEntity <|-- CBaseToggle
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CTriggerPhysics --> IPhysicsMotionController
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_pController` | IPhysicsMotionController* | `MPhysPtr` |
+| `m_pController` | [IPhysicsMotionController](../schemas/vphysics2.md#iphysicsmotioncontroller)* | `MPhysPtr` |
 | `m_gravityScale` | float32 |  |
 | `m_linearLimit` | float32 |  |
 | `m_linearDamping` | float32 |  |
@@ -16814,13 +19577,14 @@ classDiagram
     CBaseModelEntity <|-- CBaseToggle
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
+    CTriggerRemove *-- CEntityIOOutput
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OnRemove` | CEntityIOOutput |  |
+| `m_OnRemove` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 
 ### CTriggerSave
 
@@ -16951,6 +19715,10 @@ classDiagram
 | `m_iFilterName` | CUtlSymbolLarge |  |
 | `m_hFilter` | CHandle< [CBaseFilter](../schemas/server.md#cbasefilter) > |  |
 
+### CVectorExponentialMovingAverage
+
+### CVectorMovingAverage
+
 ### CVoteController
 
 **Inherits from:** [CBaseEntity](server.md#cbaseentity)
@@ -16962,6 +19730,7 @@ classDiagram
     CBaseEntity <|-- CVoteController
     CEntityInstance <|-- CBaseEntity
     CVoteController *-- CountdownTimer
+    CVoteController --> CBaseIssue
 ```
 
 **Fields:**
@@ -16980,7 +19749,7 @@ classDiagram
 | `m_playerHoldingVote` | CPlayerSlot |  |
 | `m_playerOverrideForVote` | CPlayerSlot |  |
 | `m_nHighestCountIndex` | int32 |  |
-| `m_potentialIssues` | CUtlVector< CBaseIssue* > |  |
+| `m_potentialIssues` | CUtlVector< [CBaseIssue](../schemas/server.md#cbaseissue)* > |  |
 | `m_VoteOptions` | CUtlVector< char* > |  |
 
 ### CWaterBullet
@@ -17461,13 +20230,14 @@ classDiagram
     CBasePlayerWeapon <|-- CCSWeaponBase
     CEconEntity <|-- CBasePlayerWeapon
     CBaseAnimGraph <|-- CEconEntity
+    CWeaponTaser *-- GameTime_t
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_fFireTime` | GameTime_t |  |
+| `m_fFireTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_nLastAttackTick` | int32 |  |
 
 ### CWeaponTec9
@@ -17543,7 +20313,7 @@ classDiagram
     CEntityInstance <|-- CBaseEntity
 ```
 
-### CountdownTimer
+### CWorldCompositionChunkReferenceElement_t
 
 **Metadata:** `MGetKV3ClassDefaults`
 
@@ -17551,12 +20321,176 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
+| `m_strMapToLoad` | CUtlString |  |
+| `m_strLandmarkName` | CUtlString |  |
+
+### CodeGenAABB_t
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vMinBounds` | Vector |  |
+| `m_vMaxBounds` | Vector |  |
+
+### ConstraintSoundInfo
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    ConstraintSoundInfo *-- VelocitySampler
+    ConstraintSoundInfo *-- SimpleConstraintSoundProfile
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vSampler` | [VelocitySampler](../schemas/server.md#velocitysampler) | `MNotSaved` |
+| `m_soundProfile` | [SimpleConstraintSoundProfile](../schemas/server.md#simpleconstraintsoundprofile) |  |
+| `m_forwardAxis` | Vector | `MNotSaved` |
+| `m_iszTravelSoundFwd` | CUtlSymbolLarge |  |
+| `m_iszTravelSoundBack` | CUtlSymbolLarge |  |
+| `m_iszReversalSoundSmall` | CUtlSymbolLarge |  |
+| `m_iszReversalSoundMedium` | CUtlSymbolLarge |  |
+| `m_iszReversalSoundLarge` | CUtlSymbolLarge |  |
+| `m_bPlayTravelSound` | bool | `MNotSaved` |
+| `m_bPlayReversalSound` | bool | `MNotSaved` |
+
+### CountdownTimer
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CountdownTimer *-- GameTime_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
 | `m_duration` | float32 |  |
-| `m_timestamp` | GameTime_t |  |
+| `m_timestamp` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_timescale` | float32 |  |
 | `m_nWorldGroupId` | WorldGroupId_t |  |
 
+### DebugDrawBoneTransforms_t
+
+**Inherits from:** [DebugSnapshotBaseStructuredData_t](server.md#debugsnapshotbasestructureddata_t)
+
+**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Bone Transforms`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    DebugSnapshotBaseStructuredData_t <|-- DebugDrawBoneTransforms_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `vecBones` | CUtlVectorFixedGrowable< CTransform, 128 > |  |
+
+### DebugSnapshotBaseStructuredData_t
+
+**Derived by:** [AI_BaseNPC_DebugSnapshotData_t](server.md#ai_basenpc_debugsnapshotdata_t), [AI_DefaultNPC_DebugSnapshotData_t](server.md#ai_defaultnpc_debugsnapshotdata_t), [AI_GroundRootMotionMotor_DebugSnapshotData_t](server.md#ai_groundrootmotionmotor_debugsnapshotdata_t), [DebugDrawBoneTransforms_t](server.md#debugdrawbonetransforms_t)
+
+**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Base Structured Data`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    DebugSnapshotBaseStructuredData_t <|-- AI_BaseNPC_DebugSnapshotData_t
+    DebugSnapshotBaseStructuredData_t <|-- AI_DefaultNPC_DebugSnapshotData_t
+    DebugSnapshotBaseStructuredData_t <|-- AI_GroundRootMotionMotor_DebugSnapshotData_t
+    DebugSnapshotBaseStructuredData_t <|-- DebugDrawBoneTransforms_t
+```
+
+### DecalGroupOption_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    DecalGroupOption_t *-- InfoForResourceTypeIMaterial2
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_hMaterial` | CStrongHandleCopyable< [InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2) > |  |
+| `m_sSequenceName` | CGlobalSymbol |  |
+| `m_flProbability` | float32 |  |
+| `m_bEnableAngleBetweenNormalAndGravityRange` | bool |  |
+| `m_flMinAngleBetweenNormalAndGravity` | float32 | `MPropertySuppressExpr` |
+| `m_flMaxAngleBetweenNormalAndGravity` | float32 | `MPropertySuppressExpr` |
+
 ### DestructiblePartDamageRequestAPI
+
+### DestructiblePartDamageRequest_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    DestructiblePartDamageRequest_t *-- HitGroup_t
+    DestructiblePartDamageRequest_t *-- EDestructibleParts_DestroyParameterFlags
+    DestructiblePartDamageRequest_t *-- DamageTypes_t
+    DestructiblePartDamageRequest_t --> CBaseEntity
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nHitGroup` | [HitGroup_t](../schemas/!GlobalTypes.md#hitgroup_t) |  |
+| `m_nDamageLevel` | int32 |  |
+| `m_nDesiredHealth` | uint16 |  |
+| `m_nDestroyFlags` | [EDestructibleParts_DestroyParameterFlags](../schemas/!GlobalTypes.md#edestructibleparts_destroyparameterflags) |  |
+| `m_nDamageType` | [DamageTypes_t](../schemas/!GlobalTypes.md#damagetypes_t) |  |
+| `m_flBreakDamage` | float32 |  |
+| `m_flBreakDamageRadius` | float32 |  |
+| `m_hAttacker` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+| `m_vWsBreakDamageOrigin` | VectorWS |  |
+| `m_vWsBreakDamageForce` | Vector |  |
+
+### DynamicVolumeDef_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    DynamicVolumeDef_t --> CBaseEntity
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_source` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+| `m_target` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+| `m_nHullIdx` | int32 |  |
+| `m_vSourceAnchorPos` | VectorWS |  |
+| `m_vTargetAnchorPos` | VectorWS |  |
+| `m_nAreaSrc` | uint32 |  |
+| `m_nAreaDst` | uint32 |  |
+| `m_bAttached` | bool |  |
 
 ### EngineCountdownTimer
 
@@ -17589,6 +20523,16 @@ classDiagram
 |------|------|-------------|
 | `m_bSpotted` | bool |  |
 | `m_bSpottedByMask` | uint32[2] |  |
+
+### ExternalAnimGraphHandle_t
+
+**Metadata:** `MIsBoxedIntegerType`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Value` | uint32 |  |
 
 ### FilterDamageType
 
@@ -17632,6 +20576,176 @@ classDiagram
 | `m_iHealthMin` | int32 |  |
 | `m_iHealthMax` | int32 |  |
 
+### FuncMoverMovementSummary_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    FuncMoverMovementSummary_t *-- FuncMoverMovementSummaryFlags_t
+    FuncMoverMovementSummary_t *-- GameTick_t
+    FuncMoverMovementSummary_t --> CPathMover
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `flStartT` | float32 |  |
+| `flEndT` | float32 |  |
+| `nStartNodeIndex` | int32 |  |
+| `nStopNodeIndex` | int32 |  |
+| `nMovementMode` | int32 |  |
+| `nFlags` | [FuncMoverMovementSummaryFlags_t](../schemas/!GlobalTypes.md#funcmovermovementsummaryflags_t) |  |
+| `nTick` | [GameTick_t](../schemas/entity2.md#gametick_t) |  |
+| `hPathMover` | CHandle< [CPathMover](../schemas/server.md#cpathmover) > |  |
+
+### FuncRotatorRotationSummary_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    FuncRotatorRotationSummary_t *-- GameTick_t
+    FuncRotatorRotationSummary_t *-- FuncRotatorRotationSummaryFlags_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `nTick` | [GameTick_t](../schemas/entity2.md#gametick_t) |  |
+| `nFlags` | [FuncRotatorRotationSummaryFlags_t](../schemas/!GlobalTypes.md#funcrotatorrotationsummaryflags_t) |  |
+
+### GAME_HEADER
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_sComment` | CUtlString |  |
+| `m_nSpawnGroupCount` | int32 |  |
+| `m_sLandmark` | CUtlString |  |
+| `m_sRequiredAddons` | CUtlString |  |
+
+### GameAmmoTypeInfo_t
+
+**Inherits from:** [AmmoTypeInfo_t](server.md#ammotypeinfo_t)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    AmmoTypeInfo_t <|-- GameAmmoTypeInfo_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nBuySize` | int32 |  |
+| `m_nCost` | int32 |  |
+
+### HullFlags_t
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bHull_Human` | bool |  |
+| `m_bHull_SmallCentered` | bool |  |
+| `m_bHull_WideHuman` | bool |  |
+| `m_bHull_Tiny` | bool |  |
+| `m_bHull_Medium` | bool |  |
+| `m_bHull_TinyCentered` | bool |  |
+| `m_bHull_Large` | bool |  |
+| `m_bHull_LargeCentered` | bool |  |
+| `m_bHull_MediumTall` | bool |  |
+| `m_bHull_Small` | bool |  |
+
+### IChoreoServices
+
+**Derived by:** [CGameChoreoServices](server.md#cgamechoreoservices)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    IChoreoServices <|-- CGameChoreoServices
+```
+
+### IEconItemInterface
+
+**Derived by:** [CEconItemView](server.md#ceconitemview), [C_EconItemView](client.md#c_econitemview)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    IEconItemInterface <|-- C_EconItemView
+    IEconItemInterface <|-- CEconItemView
+```
+
+### IHasAttributes
+
+**Derived by:** [CChicken](server.md#cchicken), [CEconEntity](server.md#ceconentity), [CPlantedC4](server.md#cplantedc4), [C_Chicken](client.md#c_chicken), [C_EconEntity](client.md#c_econentity), [C_PlantedC4](client.md#c_plantedc4)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    IHasAttributes <|-- C_Chicken
+    IHasAttributes <|-- C_EconEntity
+    IHasAttributes <|-- C_PlantedC4
+    IHasAttributes <|-- CChicken
+    IHasAttributes <|-- CEconEntity
+    IHasAttributes <|-- CPlantedC4
+```
+
+### INavObstacle
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nId` | uint64 |  |
+
+### INavPathCostAreaFilter
+
+**Derived by:** [CMarkupSearch_PathCostAreaFilter](server.md#cmarkupsearch_pathcostareafilter)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    INavPathCostAreaFilter <|-- CMarkupSearch_PathCostAreaFilter
+```
+
+### IRagdoll
+
+### ISkeletonAnimationController
+
+**Derived by:** [CSkeletonAnimationController](server.md#cskeletonanimationcontroller)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    ISkeletonAnimationController <|-- CSkeletonAnimationController
+```
+
 ### IntervalTimer
 
 **Derived by:** [CTimeline](client.md#ctimeline)
@@ -17643,14 +20757,114 @@ classDiagram
 ```mermaid
 classDiagram
     IntervalTimer <|-- CTimeline
+    IntervalTimer *-- GameTime_t
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_timestamp` | GameTime_t |  |
+| `m_timestamp` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_nWorldGroupId` | WorldGroupId_t |  |
+
+### ModelConfigHandle_t
+
+**Metadata:** `MIsBoxedIntegerType`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Value` | uint32 |  |
+
+### ParticleIndex_t
+
+**Metadata:** `MIsBoxedIntegerType`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Value` | int32 |  |
+
+### ParticleNode_t
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    ParticleNode_t --> CBaseEntity
+    ParticleNode_t *-- ParticleIndex_t
+    ParticleNode_t *-- GameTime_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_hEntity` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+| `m_iIndex` | [ParticleIndex_t](../schemas/server.md#particleindex_t) |  |
+| `m_flStartTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_flGrowthDuration` | float32 |  |
+| `m_vecGrowthOrigin` | VectorWS |  |
+| `m_flEndcapTime` | float32 |  |
+| `m_bMarkedForDelete` | bool |  |
+
+### PathMoverEntitySpawn
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    PathMoverEntitySpawn --> CFuncMover
+    PathMoverEntitySpawn --> CBaseEntity
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `hMover` | CHandle< [CFuncMover](../schemas/server.md#cfuncmover) > |  |
+| `vecOtherEntities` | CUtlVector< CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > > |  |
+
+### PhysBlockHeader_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `nSaved` | int32 |  |
+| `pWorldObject` | uint64 |  |
+
+### PhysObjectHeader_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    PhysObjectHeader_t *-- PhysInterfaceId_t
+    PhysObjectHeader_t --> CBaseEntity
+    PhysObjectHeader_t *-- AABB_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `type` | [PhysInterfaceId_t](../schemas/!GlobalTypes.md#physinterfaceid_t) |  |
+| `hEntity` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+| `fieldName` | CUtlSymbolLarge |  |
+| `bSaveObject` | bool |  |
+| `modelName` | CUtlSymbolLarge |  |
+| `bbox` | [AABB_t](../schemas/mathlib_extended.md#aabb_t) |  |
+| `sphere` | physics_save_sphere_t |  |
+| `iCollide` | int32 |  |
 
 ### PhysicsRagdollPose_t
 
@@ -17671,6 +20885,247 @@ classDiagram
 | `m_hOwner` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
 | `m_bSetFromDebugHistory` | bool | `MNotSaved` |
 
+### PointCameraSettings_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flNearBlurryDistance` | float32 |  |
+| `m_flNearCrispDistance` | float32 |  |
+| `m_flFarCrispDistance` | float32 |  |
+| `m_flFarBlurryDistance` | float32 |  |
+
+### PrecipitationFilter_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flMaxRadius` | float32 |  |
+
+### PulseScriptedSequenceData_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    PulseScriptedSequenceData_t *-- ScriptedMoveTo_t
+    PulseScriptedSequenceData_t *-- SharedMovementGait_t
+    PulseScriptedSequenceData_t *-- ScriptedHeldWeaponBehavior_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nActorID` | int32 |  |
+| `m_szPreIdleSequence` | CUtlString |  |
+| `m_szEntrySequence` | CUtlString |  |
+| `m_szSequence` | CUtlString |  |
+| `m_szExitSequence` | CUtlString |  |
+| `m_nMoveTo` | [ScriptedMoveTo_t](../schemas/!GlobalTypes.md#scriptedmoveto_t) |  |
+| `m_nMoveToGait` | [SharedMovementGait_t](../schemas/!GlobalTypes.md#sharedmovementgait_t) |  |
+| `m_nHeldWeaponBehavior` | [ScriptedHeldWeaponBehavior_t](../schemas/!GlobalTypes.md#scriptedheldweaponbehavior_t) |  |
+| `m_bLoopPreIdleSequence` | bool |  |
+| `m_bLoopActionSequence` | bool |  |
+| `m_bLoopPostIdleSequence` | bool |  |
+| `m_bIgnoreLookAt` | bool |  |
+
+### QuestProgress
+
+### RagdollCreationParams_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vForce` | Vector | `MNotSaved` |
+| `m_nForceBone` | int32 | `MNotSaved` |
+| `m_bForceCurrentWorldTransform` | bool |  |
+| `m_bUseLRURetirement` | bool |  |
+| `m_nHealthToGrant` | int32 |  |
+
+### RelationshipOverride_t
+
+**Inherits from:** [Relationship_t](server.md#relationship_t)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    Relationship_t <|-- RelationshipOverride_t
+    RelationshipOverride_t --> CBaseEntity
+    RelationshipOverride_t *-- Class_T
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `entity` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+| `classType` | [Class_T](../schemas/!GlobalTypes.md#class_t) |  |
+
+### Relationship_t
+
+**Derived by:** [RelationshipOverride_t](server.md#relationshipoverride_t)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    Relationship_t <|-- RelationshipOverride_t
+    Relationship_t *-- Disposition_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `disposition` | [Disposition_t](../schemas/!GlobalTypes.md#disposition_t) |  |
+| `priority` | int32 |  |
+
+### ResponseContext_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    ResponseContext_t *-- GameTime_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_iszName` | CUtlSymbolLarge |  |
+| `m_iszValue` | CUtlSymbolLarge |  |
+| `m_fExpirationTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+
+### ResponseFollowup
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `followup_concept` | char* |  |
+| `followup_contexts` | char* |  |
+| `followup_delay` | float32 |  |
+| `followup_target` | char* |  |
+| `followup_entityiotarget` | char* |  |
+| `followup_entityioinput` | char* |  |
+| `followup_entityiodelay` | float32 |  |
+| `bFired` | bool |  |
+
+### ResponseParams
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    ResponseParams --> ResponseFollowup
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `odds` | int16 |  |
+| `flags` | int16 |  |
+| `m_pFollowup` | [ResponseFollowup](../schemas/server.md#responsefollowup)* | `MNotSaved` |
+
+### RotatorHistoryEntry_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    RotatorHistoryEntry_t *-- GameTime_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `qInvChange` | Quaternion |  |
+| `flTimeRotationStart` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+
+### RotatorQueueEntry_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    RotatorQueueEntry_t *-- RotatorTargetSpace_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `qTarget` | Quaternion |  |
+| `eSpace` | [RotatorTargetSpace_t](../schemas/!GlobalTypes.md#rotatortargetspace_t) |  |
+
+### SAVE_HEADER
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_saveId` | int32 |  |
+| `m_version` | int32 |  |
+| `m_nConnectionCount` | int32 |  |
+| `m_nMapVersion` | int32 |  |
+| `m_sSpawnGroupName` | CUtlString |  |
+| `m_vecWorldOffset` | matrix3x4a_t |  |
+| `m_flSaveTime` | float32 |  |
+
+### SPAWNGROUP_HEADER
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_sGroupName` | CUtlString |  |
+| `m_sEntityLumpName` | CUtlString |  |
+| `m_vecWorldOffset` | matrix3x4a_t |  |
+| `m_bClientSpawnGroup` | bool |  |
+| `m_bSuppressAllEntities` | bool |  |
+
+### SceneEventId_t
+
+**Metadata:** `MIsBoxedIntegerType`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Value` | uint32 |  |
+
 ### SellbackPurchaseEntry_t
 
 **Fields:**
@@ -17685,14 +21140,23 @@ classDiagram
 
 ### SequenceHistory_t
 
+**Relationships:**
+
+```mermaid
+classDiagram
+    SequenceHistory_t *-- HSequence
+    SequenceHistory_t *-- GameTime_t
+    SequenceHistory_t *-- AnimLoopMode_t
+```
+
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_hSequence` | HSequence |  |
-| `m_flSeqStartTime` | GameTime_t |  |
+| `m_hSequence` | [HSequence](../schemas/animationsystem.md#hsequence) |  |
+| `m_flSeqStartTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_flSeqFixedCycle` | float32 |  |
-| `m_nSeqLoopMode` | AnimLoopMode_t |  |
+| `m_nSeqLoopMode` | [AnimLoopMode_t](../schemas/!GlobalTypes.md#animloopmode_t) |  |
 | `m_flPlaybackRate` | float32 |  |
 | `m_flCyclesPerSecond` | float32 |  |
 
@@ -17705,6 +21169,57 @@ classDiagram
 | `unClass` | uint16 |  |
 | `unSlot` | uint16 |  |
 | `unItemDefIdx` | uint16 |  |
+
+### SimpleConstraintSoundProfile
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flKeyPointMinSoundThreshold` | float32 |  |
+| `m_flKeyPointMaxSoundThreshold` | float32 |  |
+| `m_reversalSoundThresholdSmall` | float32 |  |
+| `m_reversalSoundThresholdMedium` | float32 |  |
+| `m_reversalSoundThresholdLarge` | float32 |  |
+
+### SoundCommand_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_time` | float32 |  |
+| `m_deltaTime` | float32 |  |
+| `m_command` | soundcommands_t |  |
+| `m_value` | float32 |  |
+
+### SoundOpvarTraceResult_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `vPos` | VectorWS |  |
+| `bDidHit` | bool |  |
+| `flDistSqrToCenter` | float32 |  |
+
+### SoundeventPathCornerPairNetworked_t
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `vP1` | VectorWS |  |
+| `vP2` | VectorWS |  |
+| `flPathLengthSqr` | float32 |  |
+| `flP1Pct` | float32 |  |
+| `flP2Pct` | float32 |  |
 
 ### SpawnPoint
 
@@ -17735,6 +21250,28 @@ classDiagram
 
 ### SpawnPoint_API
 
+### SummaryTakeDamageInfo_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    SummaryTakeDamageInfo_t *-- CTakeDamageInfo
+    SummaryTakeDamageInfo_t *-- CTakeDamageResult
+    SummaryTakeDamageInfo_t --> CBaseEntity
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `nSummarisedCount` | int32 |  |
+| `info` | [CTakeDamageInfo](../schemas/server.md#ctakedamageinfo) |  |
+| `result` | [CTakeDamageResult](../schemas/server.md#ctakedamageresult) |  |
+| `hTarget` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+
 ### VPhysicsCollisionAttribute_t
 
 **Metadata:** `MGetKV3ClassDefaults`
@@ -17755,15 +21292,61 @@ classDiagram
 | `m_nCollisionGroup` | uint8 |  |
 | `m_nCollisionFunctionMask` | uint8 |  |
 
-### ViewAngleServerChange_t
+### VelocitySampler
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    VelocitySampler *-- GameTime_t
+```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `nType` | FixAngleSet_t |  |
+| `m_prevSample` | Vector |  |
+| `m_fPrevSampleTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_fIdealSampleRate` | float32 |  |
+
+### ViewAngleServerChange_t
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    ViewAngleServerChange_t *-- FixAngleSet_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `nType` | [FixAngleSet_t](../schemas/!GlobalTypes.md#fixangleset_t) |  |
 | `qAngle` | QAngle |  |
 | `nIndex` | uint32 |  |
+
+### WaterWheelDrag_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flFractionOfWheelSubmerged` | float32 |  |
+| `m_flWheelDrag` | float32 |  |
+
+### WaterWheelFrictionScale_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flFractionOfWheelSubmerged` | float32 |  |
+| `m_flFrictionScale` | float32 |  |
 
 ### WeaponPurchaseCount_t
 
@@ -17789,6 +21372,23 @@ classDiagram
 |------|------|-------------|
 | `m_weaponPurchases` | CUtlVectorEmbeddedNetworkVar< [WeaponPurchaseCount_t](../schemas/server.md#weaponpurchasecount_t) > |  |
 
+### WrappedPhysicsJoint_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    WrappedPhysicsJoint_t --> IPhysicsJoint
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_pJoint` | [IPhysicsJoint](../schemas/vphysics2.md#iphysicsjoint)* | `MPhysPtr` |
+
 ### audioparams_t
 
 **Metadata:** `MGetKV3ClassDefaults`
@@ -17803,9 +21403,99 @@ classDiagram
 | `soundscapeEntityListIndex` | int32 |  |
 | `soundEventHash` | uint32 |  |
 
+### dynpitchvol_base_t
+
+**Derived by:** [dynpitchvol_t](server.md#dynpitchvol_t)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    dynpitchvol_base_t <|-- dynpitchvol_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `preset` | int32 |  |
+| `pitchrun` | int32 |  |
+| `pitchstart` | int32 |  |
+| `spinup` | int32 |  |
+| `spindown` | int32 |  |
+| `volrun` | int32 |  |
+| `volstart` | int32 |  |
+| `fadein` | int32 |  |
+| `fadeout` | int32 |  |
+| `lfotype` | int32 |  |
+| `lforate` | int32 |  |
+| `lfomodpitch` | int32 |  |
+| `lfomodvol` | int32 |  |
+| `cspinup` | int32 |  |
+| `cspincount` | int32 |  |
+| `pitch` | int32 |  |
+| `spinupsav` | int32 |  |
+| `spindownsav` | int32 |  |
+| `pitchfrac` | int32 |  |
+| `vol` | int32 |  |
+| `fadeinsav` | int32 |  |
+| `fadeoutsav` | int32 |  |
+| `volfrac` | int32 |  |
+| `lfofrac` | int32 |  |
+| `lfomult` | int32 |  |
+
+### dynpitchvol_t
+
+**Inherits from:** [dynpitchvol_base_t](server.md#dynpitchvol_base_t)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    dynpitchvol_base_t <|-- dynpitchvol_t
+```
+
+### entitytable_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    entitytable_t *-- SaveRestoreTableFlags_t
+    entitytable_t --> CEntityKeyValues
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `id` | int32 |  |
+| `edictindex` | CEntityIndex |  |
+| `saveentityindex` | CEntityIndex |  |
+| `bWasSaved` | bool |  |
+| `flags` | [SaveRestoreTableFlags_t](../schemas/!GlobalTypes.md#saverestoretableflags_t) |  |
+| `classname` | CUtlSymbolLarge |  |
+| `globalname` | CUtlSymbolLarge |  |
+| `entityname` | CUtlSymbolLarge |  |
+| `landmarkModelSpace` | Vector |  |
+| `m_pPrecacheEntityKeys` | [CEntityKeyValues](../schemas/entity2.md#centitykeyvalues)* |  |
+
 ### fogparams_t
 
 **Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    fogparams_t *-- GameTime_t
+```
 
 **Fields:**
 
@@ -17827,7 +21517,7 @@ classDiagram
 | `startLerpTo` | float32 | `MNotSaved` |
 | `endLerpTo` | float32 | `MNotSaved` |
 | `maxdensityLerpTo` | float32 | `MNotSaved` |
-| `lerptime` | GameTime_t | `MNotSaved` |
+| `lerptime` | [GameTime_t](../schemas/entity2.md#gametime_t) | `MNotSaved` |
 | `duration` | float32 |  |
 | `blendtobackground` | float32 |  |
 | `scattering` | float32 |  |
@@ -17867,16 +21557,204 @@ classDiagram
 | `m_flNewHDRColorScale` | float32 | `MNotSaved` |
 | `m_flNewFarZ` | float32 | `MNotSaved` |
 
+### globalentity_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    globalentity_t *-- GLOBALESTATE
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `name` | CUtlSymbol | `MKV3TransferSaveOpsForField` |
+| `levelName` | CUtlSymbol | `MKV3TransferSaveOpsForField` |
+| `state` | [GLOBALESTATE](../schemas/!GlobalTypes.md#globalestate) |  |
+| `counter` | int32 |  |
+
+### globalentitydatabase_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_list` | CUtlVector< globalentity_t > |  |
+
+### hudtextparms_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `color1` | Color |  |
+| `color2` | Color |  |
+| `effect` | uint8 |  |
+| `channel` | uint8 |  |
+| `x` | float32 |  |
+| `y` | float32 |  |
+
+### lerpdata_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    lerpdata_t --> CBaseEntity
+    lerpdata_t *-- MoveType_t
+    lerpdata_t *-- GameTime_t
+    lerpdata_t *-- ParticleIndex_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_hEnt` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+| `m_MoveType` | [MoveType_t](../schemas/!GlobalTypes.md#movetype_t) |  |
+| `m_flStartTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+| `m_vecStartOrigin` | VectorWS |  |
+| `m_qStartRot` | Quaternion |  |
+| `m_nFXIndex` | [ParticleIndex_t](../schemas/server.md#particleindex_t) |  |
+
+### levellist_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_sMapName` | CUtlString |  |
+| `m_sLandmarkName` | CUtlString |  |
+| `m_hEntLandmark` | CEntityHandle |  |
+| `m_vecLandmarkOrigin` | VectorWS |  |
+| `m_vecLandmarkAngles` | QAngle |  |
+
+### locksound_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    locksound_t *-- GameTime_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `sLockedSound` | CGameSoundEventName |  |
+| `sUnlockedSound` | CGameSoundEventName |  |
+| `flwaitSound` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
+
+### magnetted_objects_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    magnetted_objects_t --> CBaseEntity
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `hEntity` | CHandle< [CBaseEntity](../schemas/server.md#cbaseentity) > |  |
+
+### modifiedconvars_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `pszConvar` | char[128] |  |
+| `pszCurrentValue` | char[128] |  |
+| `pszOrgValue` | char[128] |  |
+
+### physics_save_sphere_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `radius` | float32 |  |
+
+### ragdoll_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `list` | CUtlVector< ragdollelement_t > |  |
+| `hierarchyJoints` | CUtlVector< ragdollhierarchyjoint_t > |  |
+| `boneIndex` | CUtlVector< int32 > |  |
+| `allowStretch` | bool |  |
+| `unused` | bool |  |
+
+### ragdollelement_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `originParentSpace` | Vector |  |
+| `parentIndex` | int32 |  |
+| `m_flRadius` | float32 |  |
+| `m_nHeight` | int32 |  |
+
+### ragdollhierarchyjoint_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `parentIndex` | int32 |  |
+| `childIndex` | int32 |  |
+
 ### shard_model_desc_t
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    shard_model_desc_t *-- InfoForResourceTypeIMaterial2
+    shard_model_desc_t *-- ShardSolid_t
+```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_nModelID` | int32 |  |
-| `m_hMaterialBase` | CStrongHandle< InfoForResourceTypeIMaterial2 > |  |
-| `m_hMaterialDamageOverlay` | CStrongHandle< InfoForResourceTypeIMaterial2 > |  |
-| `m_solid` | ShardSolid_t |  |
+| `m_hMaterialBase` | CStrongHandle< [InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2) > |  |
+| `m_hMaterialDamageOverlay` | CStrongHandle< [InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2) > |  |
+| `m_solid` | [ShardSolid_t](../schemas/!GlobalTypes.md#shardsolid_t) |  |
 | `m_vecPanelSize` | Vector2D |  |
 | `m_vecStressPositionA` | Vector2D |  |
 | `m_vecStressPositionB` | Vector2D |  |
@@ -17901,3 +21779,38 @@ classDiagram
 | `flClip3DSkyBoxNearToWorldFarOffset` | float32 | `MNotSaved` |
 | `fog` | fogparams_t | `MNotSaved` |
 | `m_nWorldGroupID` | WorldGroupId_t |  |
+
+### sndopvarlatchdata_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_iszStack` | CUtlSymbolLarge |  |
+| `m_iszOperator` | CUtlSymbolLarge |  |
+| `m_iszOpvar` | CUtlSymbolLarge |  |
+| `m_flVal` | float32 |  |
+| `m_vPos` | VectorWS |  |
+
+### thinkfunc_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    thinkfunc_t *-- GameTick_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_think` | BASEPTR |  |
+| `m_hFn` | HSCRIPT | `MNotSaved` |
+| `m_nContext` | CUtlStringToken |  |
+| `m_nNextThinkTick` | [GameTick_t](../schemas/entity2.md#gametick_t) |  |
+| `m_nLastThinkTick` | [GameTick_t](../schemas/entity2.md#gametick_t) |  |

@@ -1,0 +1,495 @@
+---
+layout: default
+title: toolutils2
+parent: Schemas
+nav_exclude: true
+---
+
+# Module: toolutils2
+
+[📊 View UML Diagram](../diagrams/toolutils2.md)
+
+| Name | Kind | Bases | Fields |
+|------|------|-------|--------|
+| [AssetEngineCommand_t](#assetenginecommand_t) | class |  | 4 |
+| [AutoTagVDataCondition_t](#autotagvdatacondition_t) | class |  | 4 |
+| [CAssetTagInfo](#cassettaginfo) | class |  | 11 |
+| [CAssetTypeConfig](#cassettypeconfig) | class |  | 3 |
+| [CAssetWarning](#cassetwarning) | class |  | 3 |
+| [CAssetWarningCheck](#cassetwarningcheck) | class |  | 9 |
+| [CBaseToolInfo](#cbasetoolinfo) | class |  | 4 |
+| [CBitmapAssetTypeInfo](#cbitmapassettypeinfo) | class | CSimpleAssetTypeInfo | 0 |
+| [CDetailPropModel](#cdetailpropmodel) | class |  | 21 |
+| [CDetailPropType](#cdetailproptype) | class |  | 2 |
+| [CEngineToolInfo](#cenginetoolinfo) | class | CBaseToolInfo | 11 |
+| [CExternalToolInfo](#cexternaltoolinfo) | class | CBaseToolInfo | 8 |
+| [CManifestInfo](#cmanifestinfo) | class |  | 6 |
+| [CMapAssetTypeInfo](#cmapassettypeinfo) | class | CResourceAssetTypeInfo | 0 |
+| [CModuleManifests](#cmodulemanifests) | class |  | 1 |
+| [CResourceAssetTypeInfo](#cresourceassettypeinfo) | class | CSimpleAssetTypeInfo | 8 |
+| [CSimpleAssetTypeInfo](#csimpleassettypeinfo) | class |  | 24 |
+| [CSubassetTypeInfo](#csubassettypeinfo) | class |  | 3 |
+| [CToolsConfig](#ctoolsconfig) | class |  | 3 |
+| [CVMMDAssetTypeInfo](#cvmmdassettypeinfo) | class | CSimpleAssetTypeInfo | 0 |
+| [ResourceBlockTypeInfo_t](#resourceblocktypeinfo_t) | class |  | 4 |
+
+---
+
+### AssetEngineCommand_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Command` | CBufferString |  |
+| `m_Icon` | CBufferString |  |
+| `m_Description` | CBufferString |  |
+| `m_bBringEngineToFront` | bool |  |
+
+### AutoTagVDataCondition_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    AutoTagVDataCondition_t *-- InfoForResourceTypeCVDataResource
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_SourceFile` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCVDataResource](../schemas/resourcesystem.md#infoforresourcetypecvdataresource) > > | `MPropertyDescription The VData file to read` |
+| `m_AssetKey` | CKV3MemberNameWithStorage | `MPropertyDescription The key whose value must match the asset name (ie. something like 'm_Model' if you want to apply this tag to .vmdl assets that are referenced by the vdata file)` |
+| `m_AlternateAssetKey` | CKV3MemberNameWithStorage | `MPropertyDescription Optional second key to check` |
+| `m_Expression` | CUtlString | `MPropertyDescription This expression determines whether the tag should actually be applied to an asset
+It will be evaluated against vdata entries where the key matches the asset - if any of them evaluate to true the tag will be applied.
+Most simple expressions involving the VData keys are supported. Use 'true' to tag unconditionally.` |
+
+### CAssetTagInfo
+
+**Metadata:** `MGetKV3ClassDefaults`, `MVDataOutlinerDetailExpr`, `MVDataOutlinerIconExpr`, `MVDataRoot`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CAssetTagInfo *-- AutoTagVDataCondition_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_TagName` | CUtlString | `MPropertyDescription User-facing tag name` |
+| `m_TagDescription` | CUtlString | `MPropertyAttributeEditor TextBlock()` `MPropertyDescription User-facing description of the tag` |
+| `m_TagIcon` | CUtlString | `MPropertyAttributeEditor ToolImage( 16 )` `MPropertyDescription Icon associated with the tag` |
+| `m_TagColor` | Color | `MPropertyDescription Color for the tag badge` |
+| `m_TagAliases` | CUtlVector< CUtlString > | `MPropertyAutoExpandSelf` `MPropertyDescription Alternate strings this tag will match when searching for assets by name.` |
+| `m_ThumbnailOverlayImage` | CUtlString | `MPropertyAttributeEditor ToolImage( 64 )` `MPropertyDescription If set, draw this as an overlay image on the asset preview` |
+| `m_bTagIndicatesRejectedAsset` | bool | `MPropertyDescription If set, the presence of this tag will cause the tools to suppress or dissuade use in several ways (and draw a red X over the asset preview)` |
+| `m_bTagHidesAssetByDefault` | bool | `MPropertyDescription If set, the presence of this tag will cause the tools to hide the asset from users by default. NOTE: This means if an asset gets tagged with this it might 'dissapear' from the UI!` |
+| `m_RestrictAutoTagToAssetType` | CUtlString | `MPropertyDescription Required for any auto-tag. Restricts the auto-application of this tag to a specific asset type (string from assettypes_common.txt like 'material_asset' or 'model_asset')` `MPropertyStartGroup +Auto Tags` |
+| `m_AutoFilterTag` | CUtlString | `MPropertyAutoExpandSelf` `MPropertyDescription Set this to automatically apply this tag based on an asset filter string. (NOTE: Auto tag names MUST start with an '@' character!)` `MPropertySuppressExpr` |
+| `m_AutoDataTag` | [AutoTagVDataCondition_t](../schemas/toolutils2.md#autotagvdatacondition_t) | `MPropertyAutoExpandSelf` `MPropertyDescription Set this to automatically apply this tag to assets based on references from a VData file. (NOTE: Auto tag names MUST start with an '@' character!)` `MPropertySuppressExpr` |
+
+### CAssetTypeConfig
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CAssetTypeConfig --> CSimpleAssetTypeInfo
+    CAssetTypeConfig --> CSubassetTypeInfo
+    CAssetTypeConfig --> CAssetWarning
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_AssetTypes` | CUtlVector< [CSimpleAssetTypeInfo](../schemas/toolutils2.md#csimpleassettypeinfo)* > |  |
+| `m_SubassetTypes` | CUtlVector< [CSubassetTypeInfo](../schemas/toolutils2.md#csubassettypeinfo)* > |  |
+| `m_AssetWarnings` | CUtlVector< [CAssetWarning](../schemas/toolutils2.md#cassetwarning)* > |  |
+
+### CAssetWarning
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CAssetWarning *-- CAssetWarningCheck
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Title` | CBufferString |  |
+| `m_Message` | CBufferString |  |
+| `m_Checks` | CUtlVector< [CAssetWarningCheck](../schemas/toolutils2.md#cassetwarningcheck) > |  |
+
+### CAssetWarningCheck
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CAssetWarningCheck *-- AssetWarningFixType_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_AssetType` | CUtlString |  |
+| `m_RequireSearchableIntKey` | CBufferString |  |
+| `m_RequireSearchableIntValue` | int32 |  |
+| `m_bOnlyWarnIfGameFilePresent` | bool |  |
+| `m_bOnlyWarnIfContentFilePresent` | bool |  |
+| `m_bOnlyWarnAddons` | bool |  |
+| `m_ExcludeAddonNames` | CUtlVector< CUtlString > |  |
+| `m_FixDescription` | CUtlString |  |
+| `m_FixType` | [AssetWarningFixType_t](../schemas/!GlobalTypes.md#assetwarningfixtype_t) |  |
+
+### CBaseToolInfo
+
+**Derived by:** [CEngineToolInfo](toolutils2.md#cenginetoolinfo), [CExternalToolInfo](toolutils2.md#cexternaltoolinfo)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CBaseToolInfo <|-- CEngineToolInfo
+    CBaseToolInfo <|-- CExternalToolInfo
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Name` | CUtlString |  |
+| `m_OverrideToolShortcutName` | CUtlString |  |
+| `m_FriendlyName` | CUtlString |  |
+| `m_ToolIcon` | CUtlString |  |
+
+### CBitmapAssetTypeInfo
+
+**Inherits from:** [CSimpleAssetTypeInfo](toolutils2.md#csimpleassettypeinfo)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CSimpleAssetTypeInfo <|-- CBitmapAssetTypeInfo
+```
+
+### CDetailPropModel
+
+**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Model`, `MVDataAnonymousNode`, `MVDataOutlinerAssetNameExpr`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CDetailPropModel *-- InfoForResourceTypeCModel
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_ModelName` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > > | `MPropertyDescription Model to be displayed.` `MPropertyProvidesEditContextString` |
+| `m_MaterialGroup` | CModelMaterialGroupName | `MPropertyDescription Material group (skin) to assign to use with the model.` |
+| `m_flWeight` | float32 | `MPropertyDescription A weight determining the frequency at which this model is placed relative to other models within the detail type. The weights of all models are summed and the probability of selecting this model is its weight divided by the sum weight.` |
+| `m_flStartFadeSize` | float32 | `MPropertyAttributeRange 0.001 1.0` `MPropertyDescription Screen space size [ 0, 1 ] (where 1 is the whole screen) at which the model will begin to to fade out. Anything larger will be fully visible, anything smaller will start to fade out.` `MPropertyFriendlyName Start fade out size` |
+| `m_flEndFadeSize` | float32 | `MPropertyAttributeRange 0.001 1.0` `MPropertyDescription Screen space size [ 0, 1 ] (where 1 is the whole screen) at which the model will be completely faded out. Anything smaller than this size will not be visible, anything larger will start fading in.` `MPropertyFriendlyName Complete fade out size` |
+| `m_bWorldSpaceOrientation` | bool | `MPropertyDescription If enabled, the up direction will be evaluated in world space, such that the object orientation does not affect the surface slope filtering. Additionally if Orient To Surface is 0, then and world space up is enabled, then the object orientation will not affect the rotation of detail model.` `MPropertyFriendlyName Use World Space Up` |
+| `m_flOrientToSurface` | float32 | `MPropertyAttributeRange 0.0 1.0` `MPropertyDescription Value indicating if the model's up direction should be matched to the surface. Value should be in the [ 0, 1 ] range, where 0 means that the model up will be model (or object space) up and will ignore the surface direction, and 1 indicates that the model up will exactly match the surface normal.` |
+| `m_flMinSurfaceSlope` | float32 | `MPropertyAttributeRange 0.0 180.0` `MPropertyDescription Minimum slope on which the target will be placed. Slope is a [ 0, 180 ] value based on the surface normal where horizontal surface (floor) is 0, vertical surface (wall) is 90, and a horizontal upside down surface (ceiling) is 180.` |
+| `m_flMaxSurfaceSlope` | float32 | `MPropertyAttributeRange 0.0 180.0` `MPropertyDescription Maximum slope on which the target will be placed.` |
+| `m_flRandomVerticalOffsetMin` | float32 | `MPropertyDescription Minimum range of random offset to apply along the model's local up direction` |
+| `m_flRandomVerticalOffsetMax` | float32 | `MPropertyDescription Maximum range of random offset to apply along the model's local up direction` |
+| `m_vRandomRotationMin` | QAngle | `MPropertyDescription Minimum range of the random rotation to apply the model. Random rotation is applied in the local space of the model. Rotation values are ordered pitch, yaw, roll.` |
+| `m_vRandomRotationMax` | QAngle | `MPropertyDescription Maximum range of the random rotation to apply the model.` |
+| `m_flRandomScaleMin` | float32 | `MPropertyDescription Minimum random scale value to apply to the model.` |
+| `m_flRandomScaleMax` | float32 | `MPropertyDescription Maximum random scale value to apply to the model.` |
+| `m_flDensityMinScale` | float32 | `MPropertyAttributeRange 0.01 1.0` `MPropertyDescription Minimum scale to apply to the model based the painted detail prop density. The minimum of the detail and blend weight scale values is multiplied with the random scale value to determine the final scale.` `MPropertyFriendlyName Density Scale` |
+| `m_flBlendWeightMinScale` | float32 | `MPropertyAttributeRange 0.01 1.0` `MPropertyDescription Minimum scale to apply to the model based on the final material layer blend weight. The model will be given this scale value when the layer blend weight equals the minimum blend weight and will be 1.0 when the maximum blend weight has been reached. The minimum of the detail and blend weight scale values is multiplied with the random scale value to determine the final scale. Set this if you want the model to scale up as the material blend fades in. The smaller the value, the smaller the model will start as the material begins to fade in.` `MPropertyFriendlyName Blend Weight Scale` |
+| `m_flBlendWeightMin` | float32 | `MPropertyAttributeRange 0.01 1.0` `MPropertyDescription Minimum blend weight value for which the model will be placed. If the blend weight value is less than this value, the model will not be placed.` `MPropertyFriendlyName Min Blend Weight` |
+| `m_flBlendWeightMax` | float32 | `MPropertyAttributeRange 0.01 1.0` `MPropertyDescription Maximum blend weight value for which the model will be placed. If the blend weight value is more than this value, the model will not be placed.` `MPropertyFriendlyName Max Blend Weight` |
+| `m_flBlendWeightFullDenstity` | float32 | `MPropertyAttributeRange 0.01 1.0` `MPropertyDescription Blend weight at which the model will be at full density. Must be between the minimum and maximum blend weight values. The density of this model placement will increase with the blend weight value up to this value at which point it will be at full density.` `MPropertyFriendlyName Full Density Blend Weight` |
+| `m_bCastStaticShadows` | bool | `MPropertyDescription Should instances of this model generate shadows in the lightmap. Note that shadows in the light map will persist even after the model fades out.` |
+
+### CDetailPropType
+
+**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Detail Prop Type`, `MVDataAssociatedFile`, `MVDataOutlinerDefaultExpanded`, `MVDataRoot`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CDetailPropType *-- CDetailPropModel
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flDensity` | float32 | `MPropertyDescription Specifies the number of props placed per square foot.` |
+| `m_Models` | CUtlVector< [CDetailPropModel](../schemas/toolutils2.md#cdetailpropmodel) > | `MVDataPromoteField` |
+
+### CEngineToolInfo
+
+**Inherits from:** [CBaseToolInfo](toolutils2.md#cbasetoolinfo)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CBaseToolInfo <|-- CEngineToolInfo
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Library` | CUtlString |  |
+| `m_InterfaceName` | CUtlString |  |
+| `m_bShowInRevisionSubMenu` | bool |  |
+| `m_bIsSecondaryTool` | bool |  |
+| `m_bDoNotWarnAboutLargeAssetBatches` | bool |  |
+| `m_bIsWorkshopManagerTool` | bool |  |
+| `m_bIsWorkshopItemTool` | bool |  |
+| `m_bCanHighlightSubassets` | bool |  |
+| `m_AssetTypes` | CUtlVector< CUtlString > |  |
+| `m_LimitToMods` | CUtlVector< CUtlString > |  |
+| `m_ExcludeFromMods` | CUtlVector< CUtlString > |  |
+
+### CExternalToolInfo
+
+**Inherits from:** [CBaseToolInfo](toolutils2.md#cbasetoolinfo)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CBaseToolInfo <|-- CExternalToolInfo
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Executable` | CUtlString |  |
+| `m_Args` | CUtlString |  |
+| `m_ArgsWithLineColumn` | CUtlString |  |
+| `m_WorkingDir` | CUtlString |  |
+| `m_MatchSystemExecutable` | CUtlString |  |
+| `m_SupportedExts` | CUtlVector< CUtlString > |  |
+| `m_PriorityExts` | CUtlVector< CUtlString > |  |
+| `m_bDebugCommandline` | bool |  |
+
+### CManifestInfo
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Name` | CUtlString |  |
+| `m_Group` | CUtlString |  |
+| `m_Mod` | CUtlString |  |
+| `m_SourceFile` | CUtlString |  |
+| `m_nSourceLine` | int32 |  |
+| `m_Resources` | CUtlVector< CUtlString > |  |
+
+### CMapAssetTypeInfo
+
+**Inherits from:** [CResourceAssetTypeInfo](toolutils2.md#cresourceassettypeinfo)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CResourceAssetTypeInfo <|-- CMapAssetTypeInfo
+    CSimpleAssetTypeInfo <|-- CResourceAssetTypeInfo
+```
+
+### CModuleManifests
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CModuleManifests *-- CManifestInfo
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Manifests` | CUtlVector< [CManifestInfo](../schemas/toolutils2.md#cmanifestinfo) > |  |
+
+### CResourceAssetTypeInfo
+
+**Inherits from:** [CSimpleAssetTypeInfo](toolutils2.md#csimpleassettypeinfo)
+
+**Derived by:** [CMapAssetTypeInfo](toolutils2.md#cmapassettypeinfo)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CSimpleAssetTypeInfo <|-- CResourceAssetTypeInfo
+    CResourceAssetTypeInfo <|-- CMapAssetTypeInfo
+    CResourceAssetTypeInfo *-- ResourceBlockTypeInfo_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_CompilerIdentifier` | CUtlString |  |
+| `m_CompileDependsOnResourceTypes` | CUtlVector< CUtlString > |  |
+| `m_Blocks` | CUtlVector< [ResourceBlockTypeInfo_t](../schemas/toolutils2.md#resourceblocktypeinfo_t) > |  |
+| `m_RequiredSpecialDependency` | CUtlString |  |
+| `m_bPreventDirectCompile` | bool |  |
+| `m_bCannotBeAMultiParentChildCompile` | bool |  |
+| `m_bPrefersIconForThumbnail` | bool |  |
+| `m_bAllowedToCompileInTestMode` | bool |  |
+
+### CSimpleAssetTypeInfo
+
+**Derived by:** [CBitmapAssetTypeInfo](toolutils2.md#cbitmapassettypeinfo), [CResourceAssetTypeInfo](toolutils2.md#cresourceassettypeinfo), [CVMMDAssetTypeInfo](toolutils2.md#cvmmdassettypeinfo)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CSimpleAssetTypeInfo <|-- CBitmapAssetTypeInfo
+    CSimpleAssetTypeInfo <|-- CResourceAssetTypeInfo
+    CSimpleAssetTypeInfo <|-- CVMMDAssetTypeInfo
+    CSimpleAssetTypeInfo *-- AssetEngineCommand_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_FriendlyName` | CUtlString |  |
+| `m_Ext` | CUtlString |  |
+| `m_IconLg` | CUtlString |  |
+| `m_IconSm` | CUtlString |  |
+| `m_SuppressSubstrings` | CUtlVector< CUtlString > |  |
+| `m_AdditionalExtensions` | CUtlVector< CUtlString > |  |
+| `m_EngineCommands` | CUtlVector< [AssetEngineCommand_t](../schemas/toolutils2.md#assetenginecommand_t) > |  |
+| `m_LimitToMods` | CUtlVector< CUtlString > |  |
+| `m_ExcludeFromMods` | CUtlVector< CUtlString > |  |
+| `m_HideForRetailMods` | CUtlVector< CUtlString > |  |
+| `m_PreviewThumbnailOverlayIcon` | CUtlString |  |
+| `m_bErrorOnUnrecognizedOutboundRefs` | bool |  |
+| `m_UnrecognizedOutboundRefsErrorTypeExceptions` | CUtlVector< CUtlString > |  |
+| `m_bHideTypeByDefault` | bool |  |
+| `m_bCannotBeShown` | bool |  |
+| `m_bIsNontrivialChildAssetType` | bool |  |
+| `m_bSuppressFullFingerprintCalculation` | bool |  |
+| `m_bIgnoreCompiledState` | bool |  |
+| `m_bContentFileIsText` | bool |  |
+| `m_bPrefersLivePreview` | bool |  |
+| `m_bPresentInGameTree` | bool |  |
+| `m_bShouldCompileErrorFallbackToDisk` | bool |  |
+| `m_nAssetTypeVersion` | int32 |  |
+| `m_Test_InjectSearchable` | CUtlString |  |
+
+### CSubassetTypeInfo
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bFollowReferences` | bool |  |
+| `m_bAllowDefinitions` | bool |  |
+| `m_bAllowReferences` | bool |  |
+
+### CToolsConfig
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CToolsConfig *-- CEngineToolInfo
+    CToolsConfig *-- CExternalToolInfo
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_EngineTools` | CUtlVector< [CEngineToolInfo](../schemas/toolutils2.md#cenginetoolinfo) > |  |
+| `m_ExternalTools` | CUtlVector< [CExternalToolInfo](../schemas/toolutils2.md#cexternaltoolinfo) > |  |
+| `m_EngineModulesThatReferenceAssets` | CUtlVector< CUtlString > |  |
+
+### CVMMDAssetTypeInfo
+
+**Inherits from:** [CSimpleAssetTypeInfo](toolutils2.md#csimpleassettypeinfo)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CSimpleAssetTypeInfo <|-- CVMMDAssetTypeInfo
+```
+
+### ResourceBlockTypeInfo_t
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    ResourceBlockTypeInfo_t *-- ResourceDataEncodingType_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Encoding` | [ResourceDataEncodingType_t](../schemas/!GlobalTypes.md#resourcedataencodingtype_t) |  |
+| `m_BlockID` | CUtlString |  |
+| `m_IntrospectedRootStruct` | CUtlString |  |
+| `m_ResourceVersion` | int32 |  |

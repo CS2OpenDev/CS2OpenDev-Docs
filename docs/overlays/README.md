@@ -48,9 +48,12 @@ CBaseEntity:
   description: "Base class for all server-side entities."
 ```
 
-Supported modules follow the directory names under `DumpSource2/schemas/`
-(e.g. `server`, `client`, `entity2`, `animgraphlib`, …) plus `protobufs`
-for Protobuf files.
+Supported modules follow SchemaTracker's `projectName` grouping — the page
+names under `docs/generated/schemas/` (e.g. `server`, `client`, `entity2`,
+`particles`, `animgraphlib`, `pulse_runtime_lib`, …) plus `protobufs` for
+Protobuf files.  Entity overlays are matched by entity name, so a class that
+SchemaTracker files under a different binary module than its historical
+DumpSource2 module still resolves.
 
 A few module-level files use the same physical layout but a different
 top-level shape because their downstream generator wants the file as a

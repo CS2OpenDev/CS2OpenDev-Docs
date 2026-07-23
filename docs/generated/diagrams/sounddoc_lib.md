@@ -1,0 +1,151 @@
+---
+layout: default
+title: "UML: sounddoc_lib"
+parent: Schemas
+nav_exclude: true
+---
+
+# UML: sounddoc_lib
+
+Class relationships (inheritance and composition) for the `sounddoc_lib` module.
+
+**Arrow legend:** `<|--` inheritance &nbsp; `*--` composition &nbsp; `-->` association/pointer
+
+```mermaid
+classDiagram
+    CVNodeTypeDesc <|-- CAudioAmpNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioAutoFilterNodeDesc
+    CVNodeTypeDesc <|-- CAudioBlendDesc
+    CVAudioNodeBaseDesc <|-- CAudioBoxverb2NodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioBoxverbNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioConvolutionNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioDelayNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioDiffusorNodeDesc
+    CVNodeTypeDesc <|-- CAudioDualCompressorNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioDynamics3BandNodeDesc
+    CVNodeTypeDesc <|-- CAudioDynamicsCompressorNodeDesc
+    CVNodeTypeDesc <|-- CAudioDynamicsLimiterNodeDesc
+    CVNodeTypeDesc <|-- CAudioDynamicsNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioEQ8NodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioEffectChainNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioEnvelopeNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioFilterNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioFlangerNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioFreeverbNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioMeterNodeDesc
+    CVNodeTypeDesc <|-- CAudioMixerNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioModDelayNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioOscNodeDesc
+    CVNodeTypeDesc <|-- CAudioOutputNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioPannerNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioPitchShiftNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioPlateverbNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioProcessorNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioShaperNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioSourceNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioSplitterBlendDesc
+    CVAudioNodeBaseDesc <|-- CAudioSplitterNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioSteamAudioPathingNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioSteamAudioSourceNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioSubgraphNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioSubgraphSwitchNodeDesc
+    CVNodeTypeDesc <|-- CAudioTrackNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioUtilityNodeDesc
+    CVAudioNodeBaseDesc <|-- CAudioVocoderNodeDesc
+    CVNodeTypeDesc <|-- CBlendVsndsToImpulseResponseNodeDesc
+    CVNodeTypeDesc <|-- CControlAutomaticNodeDesc
+    CVControlNodeBaseDesc <|-- CControlCrossfadeNodeDesc
+    CVNodeTypeDesc <|-- CControlCurveNodeDesc
+    CVNodeTypeDesc <|-- CControlInputArrayNodeDesc
+    CVControlNodeBaseDesc <|-- CControlInputNodeDesc
+    CVNodeTypeDesc <|-- CControlListenerNodeDesc
+    CVControlNodeBaseDesc <|-- CControlMeterNodeDesc
+    CVControlNodeBaseDesc <|-- CControlOutputNodeDesc
+    CVNodeTypeDesc <|-- CControlRemapNodeDesc
+    CVControlNodeBaseDesc <|-- CControlStackInputNodeDesc
+    CVNodeTypeDesc <|-- CDelayImpulseResponseNodeDesc
+    CVNodeTypeDesc <|-- CEffectNameInputNodeDesc
+    CVNodeTypeDesc <|-- CImpulseResponseInputNodeDesc
+    CMixPropertyBase <|-- CMixAmp
+    CMixPropertyBase <|-- CMixAudioMeter
+    CMixPropertyBase <|-- CMixAudioSource
+    CMixPropertyBase <|-- CMixAutoFilter
+    CMixPropertyBase <|-- CMixBlendAudio
+    CMixPropertyBase <|-- CMixBlendVsndsToImpulseResponse
+    CMixPropertyBase <|-- CMixBoxverb
+    CMixPropertyBase <|-- CMixBoxverb2
+    CMixPropertyBase <|-- CMixControlAutomatic
+    CMixPropertyBase <|-- CMixControlCrossfade
+    CMixPropertyBase <|-- CMixControlCurve
+    CMixPropertyBase <|-- CMixControlInput
+    CMixPropertyBase <|-- CMixControlInputArray
+    CMixPropertyBase <|-- CMixControlListener
+    CMixPropertyBase <|-- CMixControlMax
+    CVControlNodeBaseDesc <|-- CMixControlMaxNodeDesc
+    CMixPropertyBase <|-- CMixControlMeter
+    CMixPropertyBase <|-- CMixControlOutput
+    CMixPropertyBase <|-- CMixControlRemap
+    CMixPropertyBase <|-- CMixControlStackInput
+    CMixPropertyBase <|-- CMixControlTransientInput
+    CVNodeTypeDesc <|-- CMixControlTransientInputDesc
+    CMixPropertyBase <|-- CMixConvolution
+    CMixPropertyBase <|-- CMixDelay
+    CMixPropertyBase <|-- CMixDelayImpulseResponse
+    CMixPropertyBase <|-- CMixDiffusor
+    CMixPropertyBase <|-- CMixDualCompressor
+    CMixPropertyBase <|-- CMixDynamics
+    CMixPropertyBase <|-- CMixDynamics3Band
+    CMixPropertyBase <|-- CMixDynamicsCompressor
+    CMixPropertyBase <|-- CMixEQ8
+    CMixPropertyBase <|-- CMixEffectChain
+    CMixPropertyBase <|-- CMixEffectName
+    CMixPropertyBase <|-- CMixEnvelope
+    CMixPropertyBase <|-- CMixEnvelopeTrigger
+    CVControlNodeBaseDesc <|-- CMixEvelopeTriggerDesc
+    CMixPropertyBase <|-- CMixFilter
+    CMixPropertyBase <|-- CMixFlanger
+    CMixPropertyBase <|-- CMixFreeverb
+    CMixPropertyBase <|-- CMixGroupBox
+    CVNodeTypeDesc <|-- CMixGroupBoxDesc
+    CMixPropertyBase <|-- CMixImpulseResponseInput
+    CMixPropertyBase <|-- CMixModDelay
+    CMixPropertyBase <|-- CMixOsc
+    CMixPropertyBase <|-- CMixOutput
+    CMixPropertyBase <|-- CMixPanner
+    CMixPropertyBase <|-- CMixPitchShift
+    CMixPropertyBase <|-- CMixPlateverb
+    CMixPropertyBase <|-- CMixPresetDSP
+    CMixPropertyBase <|-- CMixRemapVsndToImpulseResponse
+    CMixPropertyBase <|-- CMixShaper
+    CMixPropertyBase <|-- CMixSplitter
+    CMixPropertyBase <|-- CMixSplitterBlend
+    CMixPropertyBase <|-- CMixSteamAudioDirect
+    CMixPropertyBase <|-- CMixSteamAudioHybridReverb
+    CMixPropertyBase <|-- CMixSteamAudioPathing
+    CMixPropertyBase <|-- CMixSteamAudioSource
+    CMixPropertyBase <|-- CMixStereoDelay
+    CMixPropertyBase <|-- CMixSubgraph
+    CMixPropertyBase <|-- CMixSubgraphSwitch
+    CMixPropertyBase <|-- CMixSum
+    CMixPropertyBase <|-- CMixTrack
+    CMixPropertyBase <|-- CMixUtility
+    CMixPropertyBase <|-- CMixVocoder
+    CMixPropertyBase <|-- CMixVsndName
+    CVNodeTypeDesc <|-- CRemapVsndToImpulseResponseNodeDesc
+    CVAudioNodeBaseDesc <|-- CSteamAudioDirectNodeDesc
+    CVAudioNodeBaseDesc <|-- CSteamAudioHybridReverbNodeDesc
+    CVAudioNodeBaseDesc <|-- CStereoDelayNodeDesc
+    CVNodeTypeDesc <|-- CVAudioNodeBaseDesc
+    CVNodeTypeDesc <|-- CVControlNodeBaseDesc
+    CVNodeTypeDesc <|-- CVsndInputNodeDesc
+    CEffectsPreviewList *-- CPreviewList
+    CGraphPreviewList *-- CPreviewList
+    CMixEQ8 *-- CFilterStage
+    CMixSubgraphSwitch *-- CSelectableSubgraph
+    CPreviewList *-- CPreviewEntry
+    CVMixToolGraph *-- CVMixEditorNode
+    CVMixToolGraph *-- CVMixEditorEdge
+    CVMixToolGraphEntry *-- CVMixToolGraph
+    CVMixToolGraphEntry *-- CGraphEditorState
+    CVMixToolGraphEntry *-- CGraphPreviewList
+```
