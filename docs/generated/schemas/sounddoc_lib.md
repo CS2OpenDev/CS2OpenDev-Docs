@@ -768,7 +768,17 @@ classDiagram
 
 ### CEffectsPreviewList
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_previewGraphInput": "",
+	"m_flMix": 1.000000,
+	"m_previewList":
+	{
+		"m_sounds":
+		[
+		],
+		"m_bPreviewInGame": false
+	}
+}`
 
 **Relationships:**
 
@@ -787,7 +797,14 @@ classDiagram
 
 ### CFilterStage
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_filterType": "FILTER_LOWPASS",
+	"m_flFrequency": 11025.000000,
+	"m_flQ": 0.707000,
+	"m_fldbGain": 1.000000,
+	"m_nFilterSlope": "FILTER_SLOPE_12dB",
+	"m_bEnable": true
+}`
 
 **Relationships:**
 
@@ -809,7 +826,27 @@ classDiagram
 
 ### CGraphEditorState
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_viewConfig":
+	{
+		"XAxis":
+		{
+			"pos": 0.000000,
+			"scrollpos": 0,
+			"min": 0.000000,
+			"max": 1.000000,
+			"scale": 1.000000
+		},
+		"YAxis":
+		{
+			"pos": 0.000000,
+			"scrollpos": 0,
+			"min": 0.000000,
+			"max": 1.000000,
+			"scale": 1.000000
+		}
+	}
+}`
 
 **Fields:**
 
@@ -819,7 +856,16 @@ classDiagram
 
 ### CGraphPreviewList
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flVolume": 1.000000,
+	"m_previewList":
+	{
+		"m_sounds":
+		[
+		],
+		"m_bPreviewInGame": false
+	}
+}`
 
 **Relationships:**
 
@@ -850,7 +896,15 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Adjust the volume of an audio track.`, `MPropertyFriendlyName Mix Amp`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixAmp",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flVolume": 1.000000
+}`, `MPropertyDescription Adjust the volume of an audio track.`, `MPropertyFriendlyName Mix Amp`
 
 **Relationships:**
 
@@ -869,7 +923,18 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription This lets you meter an audio signal in vmixtool.`, `MPropertyFriendlyName VMix Audio Meter Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixAudioMeter",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": true,
+	"m_flLeftLevel": 0.000000,
+	"m_flLeftPeak": 0.000000,
+	"m_flRightLevel": 0.000000,
+	"m_flRightPeak": 0.000000
+}`, `MPropertyDescription This lets you meter an audio signal in vmixtool.`, `MPropertyFriendlyName VMix Audio Meter Node`
 
 **Relationships:**
 
@@ -891,7 +956,27 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Plays a vsnd container.`, `MPropertyFriendlyName VMix Source Audio Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixAudioSource",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_kvContainer":
+	{
+		"_class": "CVoiceContainerLoopTrigger",
+		"m_flFadeTime": 0.750000,
+		"m_flRetriggerTimeMin": 1.000000,
+		"m_flRetriggerTimeMax": 3.000000,
+		"m_bCrossFade": false,
+		"m_sound":
+		{
+			"m_bUseReference": true,
+			"m_sound": "sounds/_devonly/weapons/ak47/ak47_mech_04.vsnd"
+		}
+	}
+}`, `MPropertyDescription Plays a vsnd container.`, `MPropertyFriendlyName VMix Source Audio Node`
 
 **Relationships:**
 
@@ -910,7 +995,33 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription A continuously variable filter that can be driven by a built-in envelope follower and/or LFO.  Stereo channels can be processed differently by adjusting the phase parameter.`, `MPropertyFriendlyName VMix Auto Filter Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixAutoFilter",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_desc":
+	{
+		"m_flEnvelopeAmount": 0.000000,
+		"m_flAttackTimeMS": 5.000000,
+		"m_flReleaseTimeMS": 200.000000,
+		"m_filter":
+		{
+			"m_nFilterType": "FILTER_LOWPASS",
+			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+			"m_bEnabled": true,
+			"m_fldbGain": 0.000000,
+			"m_flCutoffFreq": 1000.000000,
+			"m_flQ": 0.707107
+		},
+		"m_flLFOAmount": 0.000000,
+		"m_flLFORate": 0.000000,
+		"m_flPhase": 0.000000,
+		"m_nLFOShape": "LFO_SHAPE_SINE"
+	}
+}`, `MPropertyDescription A continuously variable filter that can be driven by a built-in envelope follower and/or LFO.  Stereo channels can be processed differently by adjusting the phase parameter.`, `MPropertyFriendlyName VMix Auto Filter Node`
 
 **Relationships:**
 
@@ -930,7 +1041,15 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription This node will do a pairwise blend through a set of audio signals.  It will blend through as many different signals as you connect.  A blend factor of 0.0 is 100% the first signal, and a blend factor of 1.0 is 100% the last signal.`, `MPropertyFriendlyName VMix Blend Audio Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixBlendAudio",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flLockAmount": 0.000000
+}`, `MPropertyDescription This node will do a pairwise blend through a set of audio signals.  It will blend through as many different signals as you connect.  A blend factor of 0.0 is 100% the first signal, and a blend factor of 1.0 is 100% the last signal.`, `MPropertyFriendlyName VMix Blend Audio Node`
 
 **Relationships:**
 
@@ -949,7 +1068,30 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Blends up to 8 vsnds to an impulse response.`, `MPropertyFriendlyName VMix Blend VSnds to Impulse Response Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixBlendVsndsToImpulseResponse",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flWeight0": 1.000000,
+	"m_flWeight1": 1.000000,
+	"m_flWeight2": 1.000000,
+	"m_flWeight3": 1.000000,
+	"m_flWeight4": 1.000000,
+	"m_flWeight5": 1.000000,
+	"m_flWeight6": 1.000000,
+	"m_flWeight7": 1.000000,
+	"m_flPreDelayMS0": 0.000000,
+	"m_flPreDelayMS1": 0.000000,
+	"m_flPreDelayMS2": 0.000000,
+	"m_flPreDelayMS3": 0.000000,
+	"m_flPreDelayMS4": 0.000000,
+	"m_flPreDelayMS5": 0.000000,
+	"m_flPreDelayMS6": 0.000000,
+	"m_flPreDelayMS7": 0.000000
+}`, `MPropertyDescription Blends up to 8 vsnds to an impulse response.`, `MPropertyFriendlyName VMix Blend VSnds to Impulse Response Node`
 
 **Relationships:**
 
@@ -983,7 +1125,38 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription A simple reverb that approximates the reflections of a box-shaped room, copied from previous audio system.`, `MPropertyFriendlyName Legacy VMix Shoebox Reverb Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixBoxverb",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flSizeMax": 100.000000,
+	"m_flSizeMin": 0.000000,
+	"m_flComplexity": 4.000000,
+	"m_flModDepth": 0.000000,
+	"m_flModRate": 0.000000,
+	"m_bParallel": false,
+	"m_filterType":
+	{
+		"m_nFilterType": "FILTER_LOWPASS",
+		"m_nFilterSlope": "FILTER_SLOPE_12dB",
+		"m_bEnabled": true,
+		"m_fldbGain": 0.000000,
+		"m_flCutoffFreq": 1000.000000,
+		"m_flQ": 0.707107
+	},
+	"m_flWidth": 20.000000,
+	"m_flHeight": 23.000000,
+	"m_flDepth": 27.000000,
+	"m_flFeedbackScale": 0.150000,
+	"m_flFeedbackWidth": 0.000000,
+	"m_flFeedbackHeight": 0.000000,
+	"m_flFeedbackDepth": 0.000000,
+	"m_flOutputGain": 0.000000,
+	"m_flTaps": 0.000000
+}`, `MPropertyDescription A simple reverb that approximates the reflections of a box-shaped room, copied from previous audio system.`, `MPropertyFriendlyName Legacy VMix Shoebox Reverb Node`
 
 **Relationships:**
 
@@ -1018,7 +1191,39 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription A simple reverb that approximates the reflections of a box-shaped room.`, `MPropertyFriendlyName VMix Shoebox Reverb Node v2`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixBoxverb2",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flSizeMax": 100.000000,
+	"m_flSizeMin": 0.000000,
+	"m_flComplexity": 4.000000,
+	"m_flModDepth": 0.000000,
+	"m_flModRate": 0.000000,
+	"m_bParallel": false,
+	"m_filterType":
+	{
+		"m_nFilterType": "FILTER_LOWPASS",
+		"m_nFilterSlope": "FILTER_SLOPE_12dB",
+		"m_bEnabled": true,
+		"m_fldbGain": 0.000000,
+		"m_flCutoffFreq": 1000.000000,
+		"m_flQ": 0.707107
+	},
+	"m_flWidth": 20.000000,
+	"m_flHeight": 23.000000,
+	"m_flDepth": 27.000000,
+	"m_flFeedbackScale": 0.150000,
+	"m_flFeedbackWidth": 0.000000,
+	"m_flFeedbackHeight": 0.000000,
+	"m_flFeedbackDepth": 0.000000,
+	"m_flWetMix": 0.000000,
+	"m_flOutputGain": 0.000000,
+	"m_flTaps": 0.000000
+}`, `MPropertyDescription A simple reverb that approximates the reflections of a box-shaped room.`, `MPropertyFriendlyName VMix Shoebox Reverb Node v2`
 
 **Relationships:**
 
@@ -1054,7 +1259,14 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription This will automatically forward a variable from the sound event that can be used to drive graph behavior.`, `MPropertyFriendlyName VMix Automatic Control Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixControlAutomatic",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false
+}`, `MPropertyDescription This will automatically forward a variable from the sound event that can be used to drive graph behavior.`, `MPropertyFriendlyName VMix Automatic Control Node`
 
 **Relationships:**
 
@@ -1067,7 +1279,16 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Generates two control signals from a single input that can be used to drive an equal power volume crossfade.`, `MPropertyFriendlyName VMix Crossfade Control Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixControlCrossfade",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flFadeStart": 0.000000,
+	"m_flFadeEnd": 1.000000
+}`, `MPropertyDescription Generates two control signals from a single input that can be used to drive an equal power volume crossfade.`, `MPropertyFriendlyName VMix Crossfade Control Node`
 
 **Relationships:**
 
@@ -1087,7 +1308,57 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Remap a control variable through a curve that you define.`, `MPropertyFriendlyName VMix Control Curve Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixControlCurve",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flInputMin": 0.000000,
+	"m_flInputMax": 1.000000,
+	"m_flOutputMin": 0.000000,
+	"m_flOutputMax": 1.000000,
+	"m_curve":
+	{
+		"m_spline":
+		[
+			{
+				"x": 0.000000,
+				"y": 0.000000,
+				"m_flSlopeIncoming": 1.000000,
+				"m_flSlopeOutgoing": 1.000000
+			},
+			{
+				"x": 1.000000,
+				"y": 1.000000,
+				"m_flSlopeIncoming": 1.000000,
+				"m_flSlopeOutgoing": 1.000000
+			}
+		],
+		"m_tangents":
+		[
+			{
+				"m_nIncomingTangent": "CURVE_TANGENT_SPLINE",
+				"m_nOutgoingTangent": "CURVE_TANGENT_SPLINE"
+			},
+			{
+				"m_nIncomingTangent": "CURVE_TANGENT_SPLINE",
+				"m_nOutgoingTangent": "CURVE_TANGENT_SPLINE"
+			}
+		],
+		"m_vDomainMins":
+		[
+			0.000000,
+			0.000000
+		],
+		"m_vDomainMaxs":
+		[
+			0.000000,
+			0.000000
+		]
+	}
+}`, `MPropertyDescription Remap a control variable through a curve that you define.`, `MPropertyFriendlyName VMix Control Curve Node`
 
 **Relationships:**
 
@@ -1110,7 +1381,18 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Define a control variable that can be set by code or an operator stack.`, `MPropertyFriendlyName VMix Control Input Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixControlInput",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flDefaultValue": 1.000000,
+	"m_flMinRange": 0.000000,
+	"m_flMaxRange": 1.000000,
+	"m_bUseDecibels": false
+}`, `MPropertyDescription Define a control variable that can be set by code or an operator stack.`, `MPropertyFriendlyName VMix Control Input Node`
 
 **Relationships:**
 
@@ -1132,7 +1414,17 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Define a control array variable that can be set by code or an operator stack.  This can be used to control steamaudio pathing or steamaudio reverb for example.`, `MPropertyFriendlyName VMix Control Array Input Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixControlInputArray",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_vflData":
+	[
+	]
+}`, `MPropertyDescription Define a control array variable that can be set by code or an operator stack.  This can be used to control steamaudio pathing or steamaudio reverb for example.`, `MPropertyFriendlyName VMix Control Array Input Node`
 
 **Relationships:**
 
@@ -1151,7 +1443,14 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription An automatic control input that gets a value from the listener of this mix (e.g. orientation values).`, `MPropertyFriendlyName VMix Control Listener Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixControlListener",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false
+}`, `MPropertyDescription An automatic control input that gets a value from the listener of this mix (e.g. orientation values).`, `MPropertyFriendlyName VMix Control Listener Node`
 
 **Relationships:**
 
@@ -1164,7 +1463,14 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Outputs the current max of up to six control inputs.`, `MPropertyFriendlyName VMix Control Max Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixControlMax",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false
+}`, `MPropertyDescription Outputs the current max of up to six control inputs.`, `MPropertyFriendlyName VMix Control Max Node`
 
 **Relationships:**
 
@@ -1189,7 +1495,15 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Allows you to monitor a control value in real-time in vmixtool.`, `MPropertyFriendlyName VMix Control Meter Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixControlMeter",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flValue": 0.000000
+}`, `MPropertyDescription Allows you to monitor a control value in real-time in vmixtool.`, `MPropertyFriendlyName VMix Control Meter Node`
 
 **Relationships:**
 
@@ -1208,7 +1522,15 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Save the results of a control value (e.g. envelope level) so that code/stack can query it by name.`, `MPropertyFriendlyName VMix Control Output Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixControlOutput",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flDefaultValue": 1.000000
+}`, `MPropertyDescription Save the results of a control value (e.g. envelope level) so that code/stack can query it by name.`, `MPropertyFriendlyName VMix Control Output Node`
 
 **Relationships:**
 
@@ -1227,7 +1549,19 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Remap a control value using a clamped linear range or clamped power curve.  Allows you to stretch and clip a control signal.`, `MPropertyFriendlyName VMix Control Remap Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixControlRemap",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flInputMin": 0.000000,
+	"m_flInputMax": 1.000000,
+	"m_flOutputStart": 0.000000,
+	"m_flOutputEnd": 1.000000,
+	"m_flPower": 1.000000
+}`, `MPropertyDescription Remap a control value using a clamped linear range or clamped power curve.  Allows you to stretch and clip a control signal.`, `MPropertyFriendlyName VMix Control Remap Node`
 
 **Relationships:**
 
@@ -1250,7 +1584,17 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription This will copy a control value from this soundevent's operator stack.  Works with any stack/variable without modifying the stack itself.`, `MPropertyFriendlyName VMix Control Stack Input Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixControlStackInput",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flDefaultValue": 1.000000,
+	"m_flMinRange": 0.000000,
+	"m_flMaxRange": 1.000000
+}`, `MPropertyDescription This will copy a control value from this soundevent's operator stack.  Works with any stack/variable without modifying the stack itself.`, `MPropertyFriendlyName VMix Control Stack Input Node`
 
 **Relationships:**
 
@@ -1271,7 +1615,14 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Define a control variable that triggers a one-time event.`, `MPropertyFriendlyName VMix Control Input Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixControlTransientInput",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false
+}`, `MPropertyDescription Define a control variable that triggers a one-time event.`, `MPropertyFriendlyName VMix Control Input Node`
 
 **Relationships:**
 
@@ -1295,7 +1646,25 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Apply a vsnd as an impulse response (IR) to an audio signal via convolution.`, `MPropertyFriendlyName VMix Audio Convolution Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixConvolution",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_desc":
+	{
+		"m_fldbGain": -12.000000,
+		"m_flPreDelayMS": 0.000000,
+		"m_flWetMix": 1.000000,
+		"m_fldbLow": 0.000000,
+		"m_fldbMid": 0.000000,
+		"m_fldbHigh": 0.000000,
+		"m_flLowCutoffFreq": 1500.000000,
+		"m_flHighCutoffFreq": 7500.000000
+	}
+}`, `MPropertyDescription Apply a vsnd as an impulse response (IR) to an audio signal via convolution.`, `MPropertyFriendlyName VMix Audio Convolution Node`
 
 **Relationships:**
 
@@ -1315,7 +1684,25 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Stereo delay with resonant filter on feedback.`, `MPropertyFriendlyName VMix Delay Audio Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixDelay",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": true,
+	"m_nChannels": -1,
+	"m_flDelay": 500.000000,
+	"m_fldbDirectGain": 0.000000,
+	"m_fldbDelayGain": -3.000000,
+	"m_fldbFeedbackGain": -3.000000,
+	"m_flWidth": 0.000000,
+	"m_bEnableFilter": false,
+	"m_filterType": "FILTER_LOWPASS",
+	"m_flFrequency": 2000.000000,
+	"m_flQ": 0.707000,
+	"m_fldbGain": 0.000000
+}`, `MPropertyDescription Stereo delay with resonant filter on feedback.`, `MPropertyFriendlyName VMix Delay Audio Node`
 
 **Relationships:**
 
@@ -1344,7 +1731,15 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Applies a pre-delay to an impulse response.`, `MPropertyFriendlyName VMix Apply Pre-Delay to Impulse Response Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixDelayImpulseResponse",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flPreDelayMS": 0.000000
+}`, `MPropertyDescription Applies a pre-delay to an impulse response.`, `MPropertyFriendlyName VMix Apply Pre-Delay to Impulse Response Node`
 
 **Relationships:**
 
@@ -1363,7 +1758,18 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Creates a dense field of delay/feedback/reflections.  This is basically a sequence of allpass filters and short delay lines.  Can be used to create part of a reverb effect.`, `MPropertyFriendlyName VMix Diffusor Audio Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixDiffusor",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flSize": 0.500000,
+	"m_flComplexity": 2.000000,
+	"m_flFeedback": -8.000000,
+	"m_flOutputGain": 0.000000
+}`, `MPropertyDescription Creates a dense field of delay/feedback/reflections.  This is basically a sequence of allpass filters and short delay lines.  Can be used to create part of a reverb effect.`, `MPropertyFriendlyName VMix Diffusor Audio Node`
 
 **Relationships:**
 
@@ -1385,7 +1791,35 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Compress the dynamic range of both ends of a signal.`, `MPropertyFriendlyName VMix Dual Compressor Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixDualCompressor",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_nChannels": -1,
+	"m_desc":
+	{
+		"m_flRMSTimeMS": 300.000000,
+		"m_fldbKneeWidth": 0.000000,
+		"m_flWetMix": 1.000000,
+		"m_bPeakMode": false,
+		"m_bandDesc":
+		{
+			"m_fldbGainInput": 0.000000,
+			"m_fldbGainOutput": 0.000000,
+			"m_fldbThresholdBelow": -40.000000,
+			"m_fldbThresholdAbove": -30.000000,
+			"m_flRatioBelow": 12.000000,
+			"m_flRatioAbove": 4.000000,
+			"m_flAttackTimeMS": 50.000000,
+			"m_flReleaseTimeMS": 200.000000,
+			"m_bEnable": true,
+			"m_bSolo": false
+		}
+	}
+}`, `MPropertyDescription Compress the dynamic range of both ends of a signal.`, `MPropertyFriendlyName VMix Dual Compressor Node`
 
 **Relationships:**
 
@@ -1406,7 +1840,28 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription A dynamics multiprocessor.  This is a single unit that switches between being a noise gate, compressor, or limiter as the signal moves through its dynamic range.  Useful in some specific cases, e.g. gate+compress or gate+limit usually.  Other cases may be more suited to using multiple compressors in series.`, `MPropertyFriendlyName VMix Dynamics Audio Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixDynamics",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_nChannels": -1,
+	"m_fldbNoiseGateThreshold": -90.000000,
+	"m_fldbGain": 0.000000,
+	"m_fldbCompressionThreshold": -6.000000,
+	"m_fldbLimiterThreshold": 0.000000,
+	"m_fldbKneeWidth": 0.000000,
+	"m_flRatio": 2.000000,
+	"m_flLimiterRatio": 40.000000,
+	"m_flAttackTime": 100.000000,
+	"m_flReleaseTime": 200.000000,
+	"m_flRMSTime": 200.000000,
+	"m_flWetMix": 1.000000,
+	"m_bPeakMode": false,
+	"m_nUIPage": 0
+}`, `MPropertyDescription A dynamics multiprocessor.  This is a single unit that switches between being a noise gate, compressor, or limiter as the signal moves through its dynamic range.  Useful in some specific cases, e.g. gate+compress or gate+limit usually.  Other cases may be more suited to using multiple compressors in series.`, `MPropertyFriendlyName VMix Dynamics Audio Node`
 
 **Relationships:**
 
@@ -1438,7 +1893,64 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription This is a multi-band dynamics processor.  First the signal is split into low/mid/high bands, then each band is routed through two compressors providing upward and downward compression to each band.  Input & Output gain can also be adjusted.`, `MPropertyFriendlyName VMix 3 Band Dynamics Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixDynamics3Band",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_nChannels": -1,
+	"m_fldbOutputGain": 0.000000,
+	"m_flRMSTime": 500.000000,
+	"m_flDepth": 1.000000,
+	"m_flWetMix": 1.000000,
+	"m_flTimeScale": 1.000000,
+	"m_fldbKneeWidth": 5.000000,
+	"m_flLowCutoffFreq": 88.300003,
+	"m_flHighCutoffFreq": 2500.000000,
+	"m_bPeakMode": false,
+	"m_nSelectedPage": 0,
+	"m_bands":
+	[
+		{
+			"m_fldbGainInput": 5.200000,
+			"m_fldbGainOutput": 8.000000,
+			"m_fldbThresholdBelow": -40.799999,
+			"m_fldbThresholdAbove": -33.799999,
+			"m_flRatioBelow": 4.170000,
+			"m_flRatioAbove": 39.000000,
+			"m_flAttackTimeMS": 47.799999,
+			"m_flReleaseTimeMS": 282.000000,
+			"m_bEnable": true,
+			"m_bSolo": false
+		},
+		{
+			"m_fldbGainInput": 5.200000,
+			"m_fldbGainOutput": 4.420000,
+			"m_fldbThresholdBelow": -41.799999,
+			"m_fldbThresholdAbove": -30.200001,
+			"m_flRatioBelow": 4.170000,
+			"m_flRatioAbove": 39.000000,
+			"m_flAttackTimeMS": 22.400000,
+			"m_flReleaseTimeMS": 282.000000,
+			"m_bEnable": true,
+			"m_bSolo": false
+		},
+		{
+			"m_fldbGainInput": 5.200000,
+			"m_fldbGainOutput": 8.000000,
+			"m_fldbThresholdBelow": -40.799999,
+			"m_fldbThresholdAbove": -35.500000,
+			"m_flRatioBelow": 4.170000,
+			"m_flRatioAbove": 80.000000,
+			"m_flAttackTimeMS": 13.500000,
+			"m_flReleaseTimeMS": 132.000000,
+			"m_bEnable": true,
+			"m_bSolo": false
+		}
+	]
+}`, `MPropertyDescription This is a multi-band dynamics processor.  First the signal is split into low/mid/high bands, then each band is routed through two compressors providing upward and downward compression to each band.  Input & Output gain can also be adjusted.`, `MPropertyFriendlyName VMix 3 Band Dynamics Node`
 
 **Relationships:**
 
@@ -1469,7 +1981,29 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Compress the dynamic range of a signal when it is louder than some threshold.`, `MPropertyFriendlyName VMix Compressor/Limiter Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixDynamicsCompressor",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_nChannels": -1,
+	"m_desc":
+	{
+		"m_fldbOutputGain": 0.000000,
+		"m_fldbCompressionThreshold": -6.000000,
+		"m_fldbKneeWidth": 0.000000,
+		"m_flCompressionRatio": 2.000000,
+		"m_flAttackTimeMS": 100.000000,
+		"m_flReleaseTimeMS": 400.000000,
+		"m_flRMSTimeMS": 300.000000,
+		"m_flWetMix": 1.000000,
+		"m_bPeakMode": false
+	},
+	"m_nUIPage": 1,
+	"m_bIsLimiter": false
+}`, `MPropertyDescription Compress the dynamic range of a signal when it is louder than some threshold.`, `MPropertyFriendlyName VMix Compressor/Limiter Node`
 
 **Relationships:**
 
@@ -1492,7 +2026,82 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Up to 8 bands of EQ.  Boost/cut up to 8 bands with adjustable Q.  Filters can also be configured as low/high pass or low/high shelf.`, `MPropertyFriendlyName VMix EQ8 Audio Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixEQ8",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_nChannels": -1,
+	"m_stages":
+	[
+		{
+			"m_filterType": "FILTER_LOW_SHELF",
+			"m_flFrequency": 80.000000,
+			"m_flQ": 1.000000,
+			"m_fldbGain": 0.000000,
+			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+			"m_bEnable": true
+		},
+		{
+			"m_filterType": "FILTER_PEAKING_EQ",
+			"m_flFrequency": 500.000000,
+			"m_flQ": 3.000000,
+			"m_fldbGain": 0.000000,
+			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+			"m_bEnable": true
+		},
+		{
+			"m_filterType": "FILTER_PEAKING_EQ",
+			"m_flFrequency": 750.000000,
+			"m_flQ": 3.000000,
+			"m_fldbGain": 0.000000,
+			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+			"m_bEnable": false
+		},
+		{
+			"m_filterType": "FILTER_PEAKING_EQ",
+			"m_flFrequency": 1200.000000,
+			"m_flQ": 3.000000,
+			"m_fldbGain": 0.000000,
+			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+			"m_bEnable": true
+		},
+		{
+			"m_filterType": "FILTER_PEAKING_EQ",
+			"m_flFrequency": 2000.000000,
+			"m_flQ": 3.000000,
+			"m_fldbGain": 0.000000,
+			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+			"m_bEnable": false
+		},
+		{
+			"m_filterType": "FILTER_PEAKING_EQ",
+			"m_flFrequency": 3000.000000,
+			"m_flQ": 3.000000,
+			"m_fldbGain": 0.000000,
+			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+			"m_bEnable": true
+		},
+		{
+			"m_filterType": "FILTER_PEAKING_EQ",
+			"m_flFrequency": 5000.000000,
+			"m_flQ": 3.000000,
+			"m_fldbGain": 0.000000,
+			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+			"m_bEnable": false
+		},
+		{
+			"m_filterType": "FILTER_HIGH_SHELF",
+			"m_flFrequency": 12000.000000,
+			"m_flQ": 1.000000,
+			"m_fldbGain": 0.000000,
+			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+			"m_bEnable": true
+		}
+	]
+}`, `MPropertyDescription Up to 8 bands of EQ.  Boost/cut up to 8 bands with adjustable Q.  Filters can also be configured as low/high pass or low/high shelf.`, `MPropertyFriendlyName VMix EQ8 Audio Node`
 
 **Relationships:**
 
@@ -1513,7 +2122,17 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Allows you to swap between sub-graphs with a short crossfade.  Can be used to swap out processing algorithms/configurations, or to dynamically enable/disable optional processing stages.`, `MPropertyFriendlyName VMix Effect Chain Audio Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixEffectChain",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": true,
+	"m_nChannels": -1,
+	"m_effectName": "core.null",
+	"m_flXFade": 0.100000
+}`, `MPropertyDescription Allows you to swap between sub-graphs with a short crossfade.  Can be used to swap out processing algorithms/configurations, or to dynamically enable/disable optional processing stages.`, `MPropertyFriendlyName VMix Effect Chain Audio Node`
 
 **Relationships:**
 
@@ -1534,7 +2153,15 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Define an effect name variable that can be controlled by code/operator stack and used to drive processor/effectchain/subgraphswitch nodes.`, `MPropertyFriendlyName VMix Effect Name Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixEffectName",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_defaultValue": "core.null"
+}`, `MPropertyDescription Define an effect name variable that can be controlled by code/operator stack and used to drive processor/effectchain/subgraphswitch nodes.`, `MPropertyFriendlyName VMix Effect Name Node`
 
 **Relationships:**
 
@@ -1553,7 +2180,17 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Generate a control signal that represents the envelope/level of an audio track.  Think of this as behaving like a meter but driving some graph logic.`, `MPropertyFriendlyName VMix Envelope Audio Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixEnvelope",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flAttackTime": 300.000000,
+	"m_flHoldTime": 500.000000,
+	"m_flReleaseTime": 300.000000
+}`, `MPropertyDescription Generate a control signal that represents the envelope/level of an audio track.  Think of this as behaving like a meter but driving some graph logic.`, `MPropertyFriendlyName VMix Envelope Audio Node`
 
 **Relationships:**
 
@@ -1574,7 +2211,19 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Used to create reverb effects based on a model of a reverb plate.`, `MPropertyFriendlyName VMix Envelope Trigger Control Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixEnvelopeTrigger",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flBaseValue": 0.000000,
+	"m_flDestinationValue": 1.000000,
+	"m_flAttackTime": 0.400000,
+	"m_flHoldTime": 0.200000,
+	"m_flReleaseTime": 0.400000
+}`, `MPropertyDescription Used to create reverb effects based on a model of a reverb plate.`, `MPropertyFriendlyName VMix Envelope Trigger Control Node`
 
 **Relationships:**
 
@@ -1609,7 +2258,20 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Resonant filter with adjustable slope. NOTE: This is a clean filter, not an analog model with distortion.`, `MPropertyFriendlyName VMix Filter Audio Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixFilter",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_filterType": "FILTER_LOWPASS",
+	"m_nChannels": -1,
+	"m_flFrequency": 2000.000000,
+	"m_flQ": 0.707000,
+	"m_fldbGain": 0.000000,
+	"m_nFilterSlope": "FILTER_SLOPE_12dB"
+}`, `MPropertyDescription Resonant filter with adjustable slope. NOTE: This is a clean filter, not an analog model with distortion.`, `MPropertyFriendlyName VMix Filter Audio Node`
 
 **Relationships:**
 
@@ -1634,7 +2296,23 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription A short time delay with modulation for flange and chorus effects.`, `MPropertyFriendlyName VMix Short timeModulating Delay Audio Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixFlanger",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flDelay": 8.000000,
+	"m_flFeedback": -40.000000,
+	"m_flFeedfoward": 0.500000,
+	"m_flModRate": 0.500000,
+	"m_flModDepth": 0.500000,
+	"m_bPhaseInvert": false,
+	"m_flGlideTime": 150.000000,
+	"m_bAntialiasing": false,
+	"m_flGain": 0.000000
+}`, `MPropertyDescription A short time delay with modulation for flange and chorus effects.`, `MPropertyFriendlyName VMix Short timeModulating Delay Audio Node`
 
 **Relationships:**
 
@@ -1661,7 +2339,18 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Used to create reverb effects based on a symmetrical room.`, `MPropertyFriendlyName VMix Freeverb Audio Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixFreeverb",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flRoomSize": 0.500000,
+	"m_flDamp": 0.500000,
+	"m_flWidth": 0.500000,
+	"m_flLateReflections": 1.000000
+}`, `MPropertyDescription Used to create reverb effects based on a symmetrical room.`, `MPropertyFriendlyName VMix Freeverb Audio Node`
 
 **Relationships:**
 
@@ -1683,7 +2372,22 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Groups a set of nodes.  Comments/colors will get displayed in the graph and on node editors.  A group box allows the user to drag the entire group as one object.`, `MPropertyFriendlyName VMix Group Box`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixGroupBox",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_color":
+	[
+		40,
+		40,
+		70,
+		100
+	],
+	"m_bMovesNodes": true
+}`, `MPropertyDescription Groups a set of nodes.  Comments/colors will get displayed in the graph and on node editors.  A group box allows the user to drag the entire group as one object.`, `MPropertyFriendlyName VMix Group Box`
 
 **Relationships:**
 
@@ -1714,7 +2418,15 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Define a control input that outputs a dynamic impulse response, which can be used by the Steam Audio hybrid reverb processor.`, `MPropertyFriendlyName VMix Control Impulse Response Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixImpulseResponseInput",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_defaultValue": "sounds/ir/default.vsnd"
+}`, `MPropertyDescription Define a control input that outputs a dynamic impulse response, which can be used by the Steam Audio hybrid reverb processor.`, `MPropertyFriendlyName VMix Control Impulse Response Node`
 
 **Relationships:**
 
@@ -1733,7 +2445,26 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription A delay with a modulated delay time.`, `MPropertyFriendlyName VMix Modulating Delay Audio Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixModDelay",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_bPhaseInvert": false,
+	"m_flGlideTime": 150.000000,
+	"m_flDelay": 500.000000,
+	"m_flFeedback": -40.000000,
+	"m_flGain": 0.000000,
+	"m_flModRate": 0.000000,
+	"m_flModDepth": 0.000000,
+	"m_filterType": "FILTER_PASSTHROUGH",
+	"m_flFrequency": 400.000000,
+	"m_flQ": 0.700000,
+	"m_flFilterGain": 0.000000,
+	"m_bAntialiasing": true
+}`, `MPropertyDescription A delay with a modulated delay time.`, `MPropertyFriendlyName VMix Modulating Delay Audio Node`
 
 **Relationships:**
 
@@ -1764,7 +2495,20 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Generates a tone as an audio track.`, `MPropertyFriendlyName VMix Oscillator Audio Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixOsc",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_desc":
+	{
+		"oscType": "LFO_SHAPE_SINE",
+		"m_freq": 440.000000,
+		"m_flPhase": 0.000000
+	}
+}`, `MPropertyDescription Generates a tone as an audio track.`, `MPropertyFriendlyName VMix Oscillator Audio Node`
 
 **Relationships:**
 
@@ -1784,7 +2528,17 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription This is where your audio is output from the graph`, `MPropertyFriendlyName VMix Output Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixOutput",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flVolume1": 1.000000,
+	"m_flVolume2": 1.000000,
+	"m_sendTo": ""
+}`, `MPropertyDescription This is where your audio is output from the graph`, `MPropertyFriendlyName VMix Output Node`
 
 **Relationships:**
 
@@ -1806,7 +2560,16 @@ Most voice graphs have a single output, that is routed by the sound operator sta
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Adjust the stereo panning of an audio track.`, `MPropertyFriendlyName VMix Panner Audio Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixPanner",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_type": "PANNER_TYPE_EQUAL_POWER",
+	"m_flStrength": 1.000000
+}`, `MPropertyDescription Adjust the stereo panning of an audio track.`, `MPropertyFriendlyName VMix Panner Audio Node`
 
 **Relationships:**
 
@@ -1827,7 +2590,19 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Adjust the pitch of an audio track.  This happens in real-time so the timing of the track is unaffected.  Generally the time domain processor will produce better results for small shifts downward.  For shifting upward it will alias where the frequency space shifter will apply anti-aliasing.`, `MPropertyFriendlyName VMix Pitch Shift Audio Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixPitchShift",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_nChannels": -1,
+	"m_flPitchScale": 1.000000,
+	"m_flGrainMs": 100.000000,
+	"m_nProcType": 0,
+	"m_nQuality": 1
+}`, `MPropertyDescription Adjust the pitch of an audio track.  This happens in real-time so the timing of the track is unaffected.  Generally the time domain processor will produce better results for small shifts downward.  For shifting upward it will alias where the frequency space shifter will apply anti-aliasing.`, `MPropertyFriendlyName VMix Pitch Shift Audio Node`
 
 **Relationships:**
 
@@ -1850,7 +2625,21 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Used to create reverb effects based on a model of a reverb plate.`, `MPropertyFriendlyName VMix Plateverb Audio Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixPlateverb",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flPrefilter": 0.500000,
+	"m_flInputDiffusion1": 0.500000,
+	"m_flInputDiffusion2": 0.500000,
+	"m_flDecay": 0.500000,
+	"m_flDamp": 0.500000,
+	"m_flFeedbackDiffusion1": 0.500000,
+	"m_flFeedbackDiffusion2": 0.500000
+}`, `MPropertyDescription Used to create reverb effects based on a model of a reverb plate.`, `MPropertyFriendlyName VMix Plateverb Audio Node`
 
 **Relationships:**
 
@@ -1875,7 +2664,17 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Applies an effects preset from the source1 DSP system.`, `MPropertyFriendlyName VMix Preset DSP Audio Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixPresetDSP",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": true,
+	"m_nChannels": -1,
+	"m_effectName": "core.null",
+	"m_flXFade": 0.100000
+}`, `MPropertyDescription Applies an effects preset from the source1 DSP system.`, `MPropertyFriendlyName VMix Preset DSP Audio Node`
 
 **Relationships:**
 
@@ -1896,7 +2695,14 @@ classDiagram
 
 **Derived by:** [CMixAmp](sounddoc_lib.md#cmixamp), [CMixAudioMeter](sounddoc_lib.md#cmixaudiometer), [CMixAudioSource](sounddoc_lib.md#cmixaudiosource), [CMixAutoFilter](sounddoc_lib.md#cmixautofilter), [CMixBlendAudio](sounddoc_lib.md#cmixblendaudio), [CMixBlendVsndsToImpulseResponse](sounddoc_lib.md#cmixblendvsndstoimpulseresponse), [CMixBoxverb](sounddoc_lib.md#cmixboxverb), [CMixBoxverb2](sounddoc_lib.md#cmixboxverb2), [CMixControlAutomatic](sounddoc_lib.md#cmixcontrolautomatic), [CMixControlCrossfade](sounddoc_lib.md#cmixcontrolcrossfade), [CMixControlCurve](sounddoc_lib.md#cmixcontrolcurve), [CMixControlInput](sounddoc_lib.md#cmixcontrolinput), [CMixControlInputArray](sounddoc_lib.md#cmixcontrolinputarray), [CMixControlListener](sounddoc_lib.md#cmixcontrollistener), [CMixControlMax](sounddoc_lib.md#cmixcontrolmax), [CMixControlMeter](sounddoc_lib.md#cmixcontrolmeter), [CMixControlOutput](sounddoc_lib.md#cmixcontroloutput), [CMixControlRemap](sounddoc_lib.md#cmixcontrolremap), [CMixControlStackInput](sounddoc_lib.md#cmixcontrolstackinput), [CMixControlTransientInput](sounddoc_lib.md#cmixcontroltransientinput), [CMixConvolution](sounddoc_lib.md#cmixconvolution), [CMixDelay](sounddoc_lib.md#cmixdelay), [CMixDelayImpulseResponse](sounddoc_lib.md#cmixdelayimpulseresponse), [CMixDiffusor](sounddoc_lib.md#cmixdiffusor), [CMixDualCompressor](sounddoc_lib.md#cmixdualcompressor), [CMixDynamics](sounddoc_lib.md#cmixdynamics), [CMixDynamics3Band](sounddoc_lib.md#cmixdynamics3band), [CMixDynamicsCompressor](sounddoc_lib.md#cmixdynamicscompressor), [CMixEQ8](sounddoc_lib.md#cmixeq8), [CMixEffectChain](sounddoc_lib.md#cmixeffectchain), [CMixEffectName](sounddoc_lib.md#cmixeffectname), [CMixEnvelope](sounddoc_lib.md#cmixenvelope), [CMixEnvelopeTrigger](sounddoc_lib.md#cmixenvelopetrigger), [CMixFilter](sounddoc_lib.md#cmixfilter), [CMixFlanger](sounddoc_lib.md#cmixflanger), [CMixFreeverb](sounddoc_lib.md#cmixfreeverb), [CMixGroupBox](sounddoc_lib.md#cmixgroupbox), [CMixImpulseResponseInput](sounddoc_lib.md#cmiximpulseresponseinput), [CMixModDelay](sounddoc_lib.md#cmixmoddelay), [CMixOsc](sounddoc_lib.md#cmixosc), [CMixOutput](sounddoc_lib.md#cmixoutput), [CMixPanner](sounddoc_lib.md#cmixpanner), [CMixPitchShift](sounddoc_lib.md#cmixpitchshift), [CMixPlateverb](sounddoc_lib.md#cmixplateverb), [CMixPresetDSP](sounddoc_lib.md#cmixpresetdsp), [CMixRemapVsndToImpulseResponse](sounddoc_lib.md#cmixremapvsndtoimpulseresponse), [CMixShaper](sounddoc_lib.md#cmixshaper), [CMixSplitter](sounddoc_lib.md#cmixsplitter), [CMixSplitterBlend](sounddoc_lib.md#cmixsplitterblend), [CMixSteamAudioDirect](sounddoc_lib.md#cmixsteamaudiodirect), [CMixSteamAudioHybridReverb](sounddoc_lib.md#cmixsteamaudiohybridreverb), [CMixSteamAudioPathing](sounddoc_lib.md#cmixsteamaudiopathing), [CMixSteamAudioSource](sounddoc_lib.md#cmixsteamaudiosource), [CMixStereoDelay](sounddoc_lib.md#cmixstereodelay), [CMixSubgraph](sounddoc_lib.md#cmixsubgraph), [CMixSubgraphSwitch](sounddoc_lib.md#cmixsubgraphswitch), [CMixSum](sounddoc_lib.md#cmixsum), [CMixTrack](sounddoc_lib.md#cmixtrack), [CMixUtility](sounddoc_lib.md#cmixutility), [CMixVocoder](sounddoc_lib.md#cmixvocoder), [CMixVsndName](sounddoc_lib.md#cmixvsndname)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixPropertyBase",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false
+}`
 
 **Relationships:**
 
@@ -1969,17 +2775,25 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_name` | CUtlString | `MPropertyDescription Node name` `MPropertyFriendlyName Name` `MPropertySortPriority` |
-| `m_Comment` | CUtlString | `MPropertyDescription Description of how this is used  the graph for people reading the graph` `MPropertySortPriority` |
-| `m_bActive` | bool | `MPropertyHideField` `MPropertySortPriority` |
-| `m_bSolo` | bool | `MPropertyHideField` `MPropertySortPriority` |
-| `m_bEditProperties` | bool | `MPropertyHideField` `MPropertySortPriority` |
+| `m_name` | CUtlString | `MPropertyDescription Node name` `MPropertyFriendlyName Name` `MPropertySortPriority 1` |
+| `m_Comment` | CUtlString | `MPropertyDescription Description of how this is used  the graph for people reading the graph` `MPropertySortPriority -2` |
+| `m_bActive` | bool | `MPropertyHideField` `MPropertySortPriority -1` |
+| `m_bSolo` | bool | `MPropertyHideField` `MPropertySortPriority -1` |
+| `m_bEditProperties` | bool | `MPropertyHideField` `MPropertySortPriority -1` |
 
 ### CMixRemapVsndToImpulseResponse
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Remaps a vsnd to an impulse response.`, `MPropertyFriendlyName VMix Remap VSnd to Impulse Response Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixRemapVsndToImpulseResponse",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flPreDelayMS": 0.000000
+}`, `MPropertyDescription Remaps a vsnd to an impulse response.`, `MPropertyFriendlyName VMix Remap VSnd to Impulse Response Node`
 
 **Relationships:**
 
@@ -1998,7 +2812,22 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Apply waveshaping distortion to an audio track.`, `MPropertyFriendlyName VMix Shaper Audio Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixShaper",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_desc":
+	{
+		"m_nShape": 0,
+		"m_fldbDrive": 0.000000,
+		"m_fldbOutputGain": 0.000000,
+		"m_flWetMix": 1.000000,
+		"m_nOversampleFactor": 1
+	}
+}`, `MPropertyDescription Apply waveshaping distortion to an audio track.`, `MPropertyFriendlyName VMix Shaper Audio Node`
 
 **Relationships:**
 
@@ -2018,7 +2847,22 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Create multiple copies of a track at different volumes for processing or mixing separately.`, `MPropertyFriendlyName VMix Splitter Audio Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixSplitter",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flVolume1": 1.000000,
+	"m_flVolume2": 1.000000,
+	"m_flVolume3": 1.000000,
+	"m_flVolume4": 1.000000,
+	"m_flVolume5": 1.000000,
+	"m_flVolume6": 1.000000,
+	"m_flVolume7": 1.000000,
+	"m_flVolume8": 1.000000
+}`, `MPropertyDescription Create multiple copies of a track at different volumes for processing or mixing separately.`, `MPropertyFriendlyName VMix Splitter Audio Node`
 
 **Relationships:**
 
@@ -2044,7 +2888,15 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Blends a single track to multiple outputs based on a single control input.  This works similarly to the blend node, but in reverse.  It will always be blending to a contiguous set of outputs.  The control value will move the signal along the list of outputs.`, `MPropertyFriendlyName VMix Splitter Blend Audio Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixSplitterBlend",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flLockAmount": 0.000000
+}`, `MPropertyDescription Blends a single track to multiple outputs based on a single control input.  This works similarly to the blend node, but in reverse.  It will always be blending to a contiguous set of outputs.  The control value will move the signal along the list of outputs.`, `MPropertyFriendlyName VMix Splitter Blend Audio Node`
 
 **Relationships:**
 
@@ -2063,7 +2915,28 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Applies steam audio model for direct audio.  This includes modeling the loss due to transmission in air, directivity and occlusion effects.`, `MPropertyFriendlyName VMix Steam Audio Direct Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixSteamAudioDirect",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_bApplyDistanceAttenuation": false,
+	"m_bApplyAirAbsorption": false,
+	"m_bApplyDirectivity": false,
+	"m_bApplyOcclusion": false,
+	"m_bApplyTransmission": false,
+	"m_flDipoleWeight": 1.000000,
+	"m_flDipolePower": 1.000000,
+	"m_flOcclusion": 1.000000,
+	"m_flTransmissionLow": 0.000000,
+	"m_flTransmissionMid": 0.000000,
+	"m_flTransmissionHigh": 0.000000,
+	"m_vecTransmission":
+	[
+	]
+}`, `MPropertyDescription Applies steam audio model for direct audio.  This includes modeling the loss due to transmission in air, directivity and occlusion effects.`, `MPropertyFriendlyName VMix Steam Audio Direct Node`
 
 **Relationships:**
 
@@ -2093,7 +2966,20 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Applies Steam Audio Hybrid Reverb.`, `MPropertyFriendlyName VMix Steam Audio Hybrid Reverb Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixSteamAudioHybridReverb",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flReverbTimeLow": 0.100000,
+	"m_flReverbTimeMid": 0.100000,
+	"m_flReverbTimeHigh": 0.100000,
+	"m_vecReverbTime":
+	[
+	]
+}`, `MPropertyDescription Applies Steam Audio Hybrid Reverb.`, `MPropertyFriendlyName VMix Steam Audio Hybrid Reverb Node`
 
 **Relationships:**
 
@@ -2115,7 +3001,27 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Applies steam audio model for pathing audio through space.  This pans the audio based on the openings that the audio is audible through by traversing a path through space from the source to the listener.`, `MPropertyFriendlyName VMix Steam Audio Pathing Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixSteamAudioPathing",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flPathingMixLevel": 1.000000,
+	"m_vPathingEQ":
+	[
+		1.000000,
+		1.000000,
+		1.000000
+	],
+	"m_vPathingCoeffs":
+	[
+	],
+	"m_vecPathingEQ":
+	[
+	]
+}`, `MPropertyDescription Applies steam audio model for pathing audio through space.  This pans the audio based on the openings that the audio is audible through by traversing a path through space from the source to the listener.`, `MPropertyFriendlyName VMix Steam Audio Pathing Node`
 
 **Relationships:**
 
@@ -2137,7 +3043,18 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Applies steam audio model for a 3d audio source.  This includes panning and HRTF (head-related transfer function).`, `MPropertyFriendlyName VMix Steam Audio Source Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixSteamAudioSource",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_nInterpolation": "SA_HRTFINTEROP_BILINEAR",
+	"m_flDirectMixLevel": 1.000000,
+	"m_bEnablePerspectiveCorrection": false,
+	"m_bRelativePosition": false
+}`, `MPropertyDescription Applies steam audio model for a 3d audio source.  This includes panning and HRTF (head-related transfer function).`, `MPropertyFriendlyName VMix Steam Audio Source Node`
 
 **Relationships:**
 
@@ -2160,7 +3077,16 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription A simple delay with separate left & right delay times.`, `MPropertyFriendlyName VMix Stereo Delay Audio Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixStereoDelay",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flDelayLeft": 0.000000,
+	"m_flDelayRight": 0.000000
+}`, `MPropertyDescription A simple delay with separate left & right delay times.`, `MPropertyFriendlyName VMix Stereo Delay Audio Node`
 
 **Relationships:**
 
@@ -2180,7 +3106,16 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Contains a refernce to a subroutine that is authored as a separate graph.  Used to collapse common functions into single blocks.`, `MPropertyFriendlyName VMix Subgraph Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixSubgraph",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"subgraphFile": "soundstacks/subgraph_default.vmix",
+	"subgraphName": ""
+}`, `MPropertyDescription Contains a refernce to a subroutine that is authored as a separate graph.  Used to collapse common functions into single blocks.`, `MPropertyFriendlyName VMix Subgraph Node`
 
 **Relationships:**
 
@@ -2200,7 +3135,28 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Allows you to swap between sub-graphs with a short crossfade.  Can be used to swap out processing algorithms/configurations, or to dynamically enable/disable optional processing stages.  This can also expose control parameters from the subgraphs so those can be connected to the outer graph.`, `MPropertyFriendlyName VMix Subgraph Switch Audio Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixSubgraphSwitch",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"bUseDetailedPlugNames": false,
+	"defaultSubgraph":
+	{
+		"_class": "CSelectableSubgraph",
+		"file": "soundstacks/subgraph_default.vmix",
+		"subgraphName": ""
+	},
+	"interpolationMode": "SUBGRAPH_INTERPOLATION_TEMPORAL_CROSSFADE",
+	"bOnlyTailsOnFadeOut": false,
+	"flTransitionTime": 0.500000,
+	"nChannels": -1,
+	"subgraphs":
+	[
+	]
+}`, `MPropertyDescription Allows you to swap between sub-graphs with a short crossfade.  Can be used to swap out processing algorithms/configurations, or to dynamically enable/disable optional processing stages.  This can also expose control parameters from the subgraphs so those can be connected to the outer graph.`, `MPropertyFriendlyName VMix Subgraph Switch Audio Node`
 
 **Relationships:**
 
@@ -2227,7 +3183,33 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Mixes audio tracks together into a single track.  Mix levels can be automated.`, `MPropertyFriendlyName VMix Mixer Audio Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixSum",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_flVolume1": 1.000000,
+	"m_flVolume2": 1.000000,
+	"m_flVolume3": 1.000000,
+	"m_flVolume4": 1.000000,
+	"m_flVolume5": 1.000000,
+	"m_flVolume6": 1.000000,
+	"m_flVolume7": 1.000000,
+	"m_flVolume8": 1.000000,
+	"m_channelName":
+	[
+		"Vol:1",
+		"Vol:2",
+		"Vol:3",
+		"Vol:4",
+		"Vol:5",
+		"Vol:6",
+		"Vol:7",
+		"Vol:8"
+	]
+}`, `MPropertyDescription Mixes audio tracks together into a single track.  Mix levels can be automated.`, `MPropertyFriendlyName VMix Mixer Audio Node`
 
 **Relationships:**
 
@@ -2254,7 +3236,21 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription This node creates a track.Voices can be played on a track.  This is the source of audio for your graph.`, `MPropertyFriendlyName VMix Track Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixTrack",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_nChannels": -1,
+	"m_nMixDownRule": 0,
+	"m_sendOperator": "SendVoiceWithNamedSend",
+	"m_Send1": "",
+	"m_Send2": "",
+	"m_Send3": "",
+	"m_Send4": ""
+}`, `MPropertyDescription This node creates a track.Voices can be played on a track.  This is the source of audio for your graph.`, `MPropertyFriendlyName VMix Track Node`
 
 **Relationships:**
 
@@ -2279,7 +3275,23 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Adjust the stereo spread/pan/balance of a signal or convert it to mono or mid/side.`, `MPropertyFriendlyName VMix Utility Audio Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixUtility",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_desc":
+	{
+		"m_nOp": "VMIX_CHAN_STEREO",
+		"m_flInputPan": 0.000000,
+		"m_flOutputBalance": 0.000000,
+		"m_fldbOutputGain": 0.000000,
+		"m_bBassMono": false,
+		"m_flBassFreq": 120.000000
+	}
+}`, `MPropertyDescription Adjust the stereo spread/pan/balance of a signal or convert it to mono or mid/side.`, `MPropertyFriendlyName VMix Utility Audio Node`
 
 **Relationships:**
 
@@ -2299,7 +3311,24 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Applies multi-band modulation to a carrier signal, based on the multi-band envelope of a modulator signal.  Modulation bands can be configured to a certain number of bands or range of frequencies.`, `MPropertyFriendlyName VMix Vocoder Audio Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixVocoder",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_nBandCount": 6,
+	"m_flBandwidth": 1.000000,
+	"m_fldBModGain": 12.000000,
+	"m_flAttackTime": 50.000000,
+	"m_flReleaseTime": 100.000000,
+	"m_flFreqRangeStart": 100.000000,
+	"m_flFreqRangeEnd": 12000.000000,
+	"m_fldBUnvoicedGain": 0.000000,
+	"m_nDebugBand": -1,
+	"m_bPeakMode": false
+}`, `MPropertyDescription Applies multi-band modulation to a carrier signal, based on the multi-band envelope of a modulator signal.  Modulation bands can be configured to a certain number of bands or range of frequencies.`, `MPropertyFriendlyName VMix Vocoder Audio Node`
 
 **Relationships:**
 
@@ -2327,7 +3356,15 @@ classDiagram
 
 **Inherits from:** [CMixPropertyBase](sounddoc_lib.md#cmixpropertybase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Create a variable that can contain the name of a vsnd file that can be modified by code/operator stack.  This can be used to select the IR for a convolution node.`, `MPropertyFriendlyName VMix VSND Input Node`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMixVsndName",
+	"m_name": "",
+	"m_Comment": "",
+	"m_bActive": true,
+	"m_bSolo": false,
+	"m_bEditProperties": false,
+	"m_defaultValue": "sounds/ir/default.vsnd"
+}`, `MPropertyDescription Create a variable that can contain the name of a vsnd file that can be modified by code/operator stack.  This can be used to select the IR for a convolution node.`, `MPropertyFriendlyName VMix VSND Input Node`
 
 **Relationships:**
 
@@ -2344,7 +3381,11 @@ classDiagram
 
 ### CPreviewEntry
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_soundName": "",
+	"m_trackName": "",
+	"m_bIsSoundEvent": false
+}`
 
 **Fields:**
 
@@ -2356,7 +3397,12 @@ classDiagram
 
 ### CPreviewList
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_sounds":
+	[
+	],
+	"m_bPreviewInGame": false
+}`
 
 **Relationships:**
 
@@ -2385,7 +3431,11 @@ classDiagram
 
 ### CSelectableSubgraph
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSelectableSubgraph",
+	"file": "soundstacks/subgraph_default.vmix",
+	"subgraphName": ""
+}`
 
 **Fields:**
 
@@ -2498,7 +3548,10 @@ classDiagram
 
 ### CVMixEditorEdge
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"plug0": "",
+	"plug1": ""
+}`
 
 **Fields:**
 
@@ -2509,7 +3562,22 @@ classDiagram
 
 ### CVMixEditorNode
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"name": "",
+	"friendlyname": "",
+	"type": "",
+	"editor_pos":
+	[
+		0.000000,
+		0.000000
+	],
+	"editor_size":
+	[
+		0.000000,
+		0.000000
+	],
+	"properties": null
+}`
 
 **Fields:**
 
@@ -2524,7 +3592,10 @@ classDiagram
 
 ### CVMixToolEditorData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"SelectedGraph": -1,
+	"m_nSelectedEffectPreset": -1
+}`
 
 **Fields:**
 
@@ -2535,7 +3606,21 @@ classDiagram
 
 ### CVMixToolGraph
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_graphDescData":
+	{
+		"Name": "",
+		"m_nGraphOutputChannels": -1,
+		"m_bIsMainGraph": false
+	},
+	"m_editorNodes":
+	[
+	],
+	"m_editorEdges":
+	[
+	],
+	"m_nPreviewNode": 0
+}`
 
 **Relationships:**
 
@@ -2557,7 +3642,57 @@ classDiagram
 
 ### CVMixToolGraphEntry
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_graph":
+	{
+		"m_graphDescData":
+		{
+			"Name": "",
+			"m_nGraphOutputChannels": -1,
+			"m_bIsMainGraph": false
+		},
+		"m_editorNodes":
+		[
+		],
+		"m_editorEdges":
+		[
+		],
+		"m_nPreviewNode": 0
+	},
+	"m_editorState":
+	{
+		"m_viewConfig":
+		{
+			"XAxis":
+			{
+				"pos": 0.000000,
+				"scrollpos": 0,
+				"min": 0.000000,
+				"max": 1.000000,
+				"scale": 1.000000
+			},
+			"YAxis":
+			{
+				"pos": 0.000000,
+				"scrollpos": 0,
+				"min": 0.000000,
+				"max": 1.000000,
+				"scale": 1.000000
+			}
+		}
+	},
+	"m_graphPreview":
+	{
+		"m_flVolume": 1.000000,
+		"m_previewList":
+		{
+			"m_sounds":
+			[
+			],
+			"m_bPreviewInGame": false
+		}
+	}
+}`
 
 **Relationships:**
 

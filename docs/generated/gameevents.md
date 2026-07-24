@@ -29,10 +29,11 @@ Game events extracted from CS2's `.gameevents` resource files. These events are 
 
 ## Summary
 
-**Total events:** 195
+**Total events:** 289
 
 | Source | Events | Description |
 |--------|--------|-------------|
+| `core.gameevents` | 94 | Core Engine Events |
 | `game.gameevents` | 50 | Game Events |
 | `mod.gameevents` | 145 | CS2 (Counter-Strike) Events |
 
@@ -40,6 +41,107 @@ Game events extracted from CS2's `.gameevents` resource files. These events are 
 
 | Event | Source | Fields | Description |
 |-------|--------|--------|-------------|
+| [achievement_earned](#achievement_earned) | `core.gameevents` | 2 |  |
+| [achievement_event](#achievement_event) | `core.gameevents` | 3 |  |
+| [achievement_write_failed](#achievement_write_failed) | `core.gameevents` | 0 |  |
+| [bonus_updated](#bonus_updated) | `core.gameevents` | 4 |  |
+| [bot_takeover](#bot_takeover) | `core.gameevents` | 5 |  |
+| [break_breakable](#break_breakable) | `core.gameevents` | 3 |  |
+| [break_prop](#break_prop) | `core.gameevents` | 5 |  |
+| [broken_breakable](#broken_breakable) | `core.gameevents` | 3 |  |
+| [cart_updated](#cart_updated) | `core.gameevents` | 0 |  |
+| [clientside_lesson_closed](#clientside_lesson_closed) | `core.gameevents` | 1 |  |
+| [demo_skip](#demo_skip) | `core.gameevents` | 4 |  |
+| [demo_start](#demo_start) | `core.gameevents` | 3 |  |
+| [demo_stop](#demo_stop) | `core.gameevents` | 0 |  |
+| [difficulty_changed](#difficulty_changed) | `core.gameevents` | 3 |  |
+| [door_close](#door_close) | `core.gameevents` | 2 |  |
+| [drop_rate_modified](#drop_rate_modified) | `core.gameevents` | 0 |  |
+| [dynamic_shadow_light_changed](#dynamic_shadow_light_changed) | `core.gameevents` | 0 |  |
+| [entity_killed](#entity_killed) | `core.gameevents` | 4 |  |
+| [entity_visible](#entity_visible) | `core.gameevents` | 4 |  |
+| [event_ticket_modified](#event_ticket_modified) | `core.gameevents` | 0 |  |
+| [finale_start](#finale_start) | `core.gameevents` | 1 |  |
+| [flare_ignite_npc](#flare_ignite_npc) | `core.gameevents` | 1 |  |
+| [game_message](#game_message) | `core.gameevents` | 2 | a message send by game logic to everyone |
+| [game_newmap](#game_newmap) | `core.gameevents` | 2 | send when new map is completely loaded |
+| [gameinstructor_draw](#gameinstructor_draw) | `core.gameevents` | 0 |  |
+| [gameinstructor_nodraw](#gameinstructor_nodraw) | `core.gameevents` | 0 |  |
+| [gc_connected](#gc_connected) | `core.gameevents` | 0 |  |
+| [helicopter_grenade_punt_miss](#helicopter_grenade_punt_miss) | `core.gameevents` | 0 |  |
+| [hltv_cameraman](#hltv_cameraman) | `core.gameevents` | 1 | a spectator/player is a cameraman |
+| [hltv_chase](#hltv_chase) | `core.gameevents` | 7 | shot of a single entity |
+| [hltv_chat](#hltv_chat) | `core.gameevents` | 2 | a HLTV chat msg sent by spectators |
+| [hltv_fixed](#hltv_fixed) | `core.gameevents` | 8 | show from fixed view |
+| [hltv_message](#hltv_message) | `core.gameevents` | 1 | a HLTV message send by moderators |
+| [hltv_rank_camera](#hltv_rank_camera) | `core.gameevents` | 3 | a camera ranking |
+| [hltv_rank_entity](#hltv_rank_entity) | `core.gameevents` | 3 | an entity ranking |
+| [hltv_replay](#hltv_replay) | `core.gameevents` | 2 |  |
+| [hltv_replay_status](#hltv_replay_status) | `core.gameevents` | 1 |  |
+| [hltv_status](#hltv_status) | `core.gameevents` | 4 | general HLTV status |
+| [hltv_title](#hltv_title) | `core.gameevents` | 1 |  |
+| [hltv_versioninfo](#hltv_versioninfo) | `core.gameevents` | 1 |  |
+| [hostname_changed](#hostname_changed) | `core.gameevents` | 1 |  |
+| [instructor_close_lesson](#instructor_close_lesson) | `core.gameevents` | 2 |  |
+| [instructor_server_hint_create](#instructor_server_hint_create) | `core.gameevents` | 27 | create a hint using data supplied entirely by the server/map. Intended for hints to smooth playtests before content is ready to make the hint unneccessary. NOT INTENDED AS A SHIPPABLE CRUTCH |
+| [instructor_server_hint_stop](#instructor_server_hint_stop) | `core.gameevents` | 2 | destroys a server/map created hint |
+| [instructor_start_lesson](#instructor_start_lesson) | `core.gameevents` | 6 |  |
+| [inventory_updated](#inventory_updated) | `core.gameevents` | 2 |  |
+| [item_schema_initialized](#item_schema_initialized) | `core.gameevents` | 0 |  |
+| [local_player_controller_team](#local_player_controller_team) | `core.gameevents` | 0 |  |
+| [local_player_pawn_changed](#local_player_pawn_changed) | `core.gameevents` | 0 |  |
+| [local_player_team](#local_player_team) | `core.gameevents` | 0 |  |
+| [map_shutdown](#map_shutdown) | `core.gameevents` | 0 |  |
+| [map_transition](#map_transition) | `core.gameevents` | 0 |  |
+| [physgun_pickup](#physgun_pickup) | `core.gameevents` | 1 |  |
+| [player_activate](#player_activate) | `core.gameevents` | 1 |  |
+| [player_changename](#player_changename) | `core.gameevents` | 3 |  |
+| [player_chat](#player_chat) | `core.gameevents` | 4 | a public player chat |
+| [player_connect](#player_connect) | `core.gameevents` | 5 | a new client connected |
+| [player_connect_full](#player_connect_full) | `core.gameevents` | 1 | player has sent final message in the connection sequence |
+| [player_death](#player_death) | `core.gameevents` | 2 | Fired when a player dies.  Carries `userid` (the victim) and `attacker`.  Detailed kill information (weapon, headshot, assister, penetration count, no-scope flag, distance) lives on the legacy `cs_gameevents.proto` user-message `CMsgSource1LegacyGameEvent` payload — extract those keys when parsing demos.
+ |
+| [player_disconnect](#player_disconnect) | `core.gameevents` | 7 | a client was disconnected |
+| [player_footstep](#player_footstep) | `core.gameevents` | 1 |  |
+| [player_full_update](#player_full_update) | `core.gameevents` | 2 |  |
+| [player_hintmessage](#player_hintmessage) | `core.gameevents` | 1 |  |
+| [player_hurt](#player_hurt) | `core.gameevents` | 3 | Fired when a player takes damage from any source.  The pre-CS2 `weapon` / `dmg_armor` / `dmg_health` / `hitgroup` fields were removed in CS2; for those, use `bullet_damage` (firearm damage) or correlate with the relevant grenade-detonation event.
+ |
+| [player_info](#player_info) | `core.gameevents` | 4 | a player changed his name |
+| [player_spawn](#player_spawn) | `core.gameevents` | 1 | Fired when a player's pawn spawns (per-round).  The controller persists across rounds; the pawn does not, so this event marks "new pawn is alive."
+ |
+| [player_stats_updated](#player_stats_updated) | `core.gameevents` | 1 |  |
+| [player_team](#player_team) | `core.gameevents` | 7 | Fired when a player switches teams (T ↔ CT, or to/from Spectator).  `team` is the new team; `oldteam` is the previous. `disconnect=true` indicates the team change was caused by the player leaving rather than a deliberate switch.
+ |
+| [ragdoll_dissolved](#ragdoll_dissolved) | `core.gameevents` | 1 |  |
+| [round_end](#round_end) | `core.gameevents` | 4 | Fired when a round concludes.  Carries the winning team (`winner`), the reason for the win (`reason`, see RoundEndReason table below), and a human-readable `message` string.
+ |
+| [round_freeze_end](#round_freeze_end) | `core.gameevents` | 0 | Fired when the buy/freeze period ends and live play begins. Players regain movement; this is the canonical "round live" tick for demo-parsing tooling and stat trackers.
+ |
+| [round_start](#round_start) | `core.gameevents` | 3 | Fired by the game rules when a new round begins.  Marks the start of the freeze (buy) period — players have just spawned and are frozen in place.  Use this to reset per-round bookkeeping.
+ |
+| [round_start_post_nav](#round_start_post_nav) | `core.gameevents` | 0 |  |
+| [round_start_pre_entity](#round_start_pre_entity) | `core.gameevents` | 0 |  |
+| [server_cvar](#server_cvar) | `core.gameevents` | 2 | a server console var has changed |
+| [server_message](#server_message) | `core.gameevents` | 1 | a generic server message |
+| [server_pre_shutdown](#server_pre_shutdown) | `core.gameevents` | 1 | server is about to be shut down |
+| [server_shutdown](#server_shutdown) | `core.gameevents` | 1 | server shut down |
+| [server_spawn](#server_spawn) | `core.gameevents` | 10 | send once a server starts |
+| [set_instructor_group_enabled](#set_instructor_group_enabled) | `core.gameevents` | 2 |  |
+| [spec_mode_updated](#spec_mode_updated) | `core.gameevents` | 1 |  |
+| [spec_target_updated](#spec_target_updated) | `core.gameevents` | 2 |  |
+| [store_pricesheet_updated](#store_pricesheet_updated) | `core.gameevents` | 0 |  |
+| [team_info](#team_info) | `core.gameevents` | 2 | info about team |
+| [team_score](#team_score) | `core.gameevents` | 2 | team score changed |
+| [teamplay_broadcast_audio](#teamplay_broadcast_audio) | `core.gameevents` | 2 | emits a sound to everyone on a team |
+| [teamplay_round_start](#teamplay_round_start) | `core.gameevents` | 1 | round restart |
+| [user_data_downloaded](#user_data_downloaded) | `core.gameevents` | 0 | fired when achievements/stats are downloaded from Steam or XBox Live |
+| [vote_cast_no](#vote_cast_no) | `core.gameevents` | 2 |  |
+| [vote_cast_yes](#vote_cast_yes) | `core.gameevents` | 2 |  |
+| [vote_changed](#vote_changed) | `core.gameevents` | 3 |  |
+| [vote_failed](#vote_failed) | `core.gameevents` | 1 |  |
+| [vote_passed](#vote_passed) | `core.gameevents` | 3 |  |
+| [vote_started](#vote_started) | `core.gameevents` | 5 |  |
 | [add_bullet_hit_marker](#add_bullet_hit_marker) | `game.gameevents` | 12 |  |
 | [add_player_sonar_icon](#add_player_sonar_icon) | `game.gameevents` | 4 |  |
 | [begin_new_match](#begin_new_match) | `game.gameevents` | 0 |  |
@@ -264,6 +366,771 @@ Game events extracted from CS2's `.gameevents` resource files. These events are 
 | [write_profile_data](#write_profile_data) | `mod.gameevents` | 0 |  |
 
 ---
+
+## Core Engine Events
+
+*Source: `core.gameevents`*
+
+### achievement_earned
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `player` | `player_controller` | entindex of the player |
+| `achievement` | `short` | achievement ID |
+
+### achievement_event
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `achievement_name` | `string` | non-localized name of achievement |
+| `cur_val` | `short` | # of steps toward achievement |
+| `max_val` | `short` | total # of steps in achievement |
+
+### achievement_write_failed
+
+*No fields — this event carries no additional data.*
+
+### bonus_updated
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `numadvanced` | `short` |  |
+| `numbronze` | `short` |  |
+| `numsilver` | `short` |  |
+| `numgold` | `short` |  |
+
+### bot_takeover
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `userid` | `player_controller_and_pawn` |  |
+| `botid` | `player_controller` |  |
+| `p` | `float` |  |
+| `y` | `float` |  |
+| `r` | `float` |  |
+
+### break_breakable
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `entindex` | `long` |  |
+| `userid` | `player_pawn` |  |
+| `material` | `byte` | BREAK_GLASS, BREAK_WOOD, etc |
+
+### break_prop
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `entindex` | `long` |  |
+| `userid` | `player_pawn` |  |
+| `player_held` | `bool` |  |
+| `player_thrown` | `bool` |  |
+| `player_dropped` | `bool` |  |
+
+### broken_breakable
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `entindex` | `long` |  |
+| `userid` | `player_pawn` |  |
+| `material` | `byte` | BREAK_GLASS, BREAK_WOOD, etc |
+
+### cart_updated
+
+*No fields — this event carries no additional data.*
+
+### clientside_lesson_closed
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `lesson_name` | `string` |  |
+
+### demo_skip
+
+**Properties:** `local=1`
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `playback_tick` | `long` | current playback tick |
+| `skipto_tick` | `long` | tick we're going to |
+| `user_message_list` | `local` | CSVCMsgList_UserMessages |
+| `dota_hero_chase_list` | `local` | CSVCMsgList_GameEvents |
+
+### demo_start
+
+**Properties:** `local=1`
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `dota_combatlog_list` | `local` | CSVCMsgList_GameEvents that are combat log events |
+| `dota_hero_chase_list` | `local` | CSVCMsgList_GameEvents |
+| `dota_pick_hero_list` | `local` | CSVCMsgList_GameEvents |
+
+### demo_stop
+
+*No fields — this event carries no additional data.*
+
+### difficulty_changed
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `newDifficulty` | `short` |  |
+| `oldDifficulty` | `short` |  |
+| `strDifficulty` | `string` | new difficulty as string |
+
+### door_close
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `userid` | `player_pawn` | Who closed the door |
+| `checkpoint` | `bool` | Is the door a checkpoint door |
+
+### drop_rate_modified
+
+*No fields — this event carries no additional data.*
+
+### dynamic_shadow_light_changed
+
+*No fields — this event carries no additional data.*
+
+### entity_killed
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `entindex_killed` | `long` |  |
+| `entindex_attacker` | `long` |  |
+| `entindex_inflictor` | `long` |  |
+| `damagebits` | `long` |  |
+
+### entity_visible
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `userid` | `player_controller` | The player who sees the entity |
+| `subject` | `long` | Entindex of the entity they see |
+| `classname` | `string` | Classname of the entity they see |
+| `entityname` | `string` | name of the entity they see |
+
+### event_ticket_modified
+
+*No fields — this event carries no additional data.*
+
+### finale_start
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `rushes` | `short` |  |
+
+### flare_ignite_npc
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `entindex` | `long` | entity ignited |
+
+### game_message
+
+a message send by game logic to everyone
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `target` | `byte` | 0 = console, 1 = HUD |
+| `text` | `string` | the message text |
+
+### game_newmap
+
+send when new map is completely loaded
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `mapname` | `string` | map name |
+| `transition` | `bool` | true if this is a transition from one map to another |
+
+### gameinstructor_draw
+
+*No fields — this event carries no additional data.*
+
+### gameinstructor_nodraw
+
+*No fields — this event carries no additional data.*
+
+### gc_connected
+
+*No fields — this event carries no additional data.*
+
+### helicopter_grenade_punt_miss
+
+*No fields — this event carries no additional data.*
+
+### hltv_cameraman
+
+a spectator/player is a cameraman
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `userid` | `player_controller` | camera man entity index |
+
+### hltv_chase
+
+shot of a single entity
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `target1` | `player_controller` | primary traget index |
+| `target2` | `player_controller` | secondary traget index or 0 |
+| `distance` | `short` | camera distance |
+| `theta` | `short` | view angle horizontal |
+| `phi` | `short` | view angle vertical |
+| `inertia` | `byte` | camera inertia |
+| `ineye` | `byte` | diretcor suggests to show ineye |
+
+### hltv_chat
+
+a HLTV chat msg sent by spectators
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `text` | `string` |  |
+| `steamID` | `uint64` | steam id |
+
+### hltv_fixed
+
+show from fixed view
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `posx` | `long` | camera position in world |
+| `posy` | `long` |  |
+| `posz` | `long` |  |
+| `theta` | `short` | camera angles |
+| `phi` | `short` |  |
+| `offset` | `short` |  |
+| `fov` | `float` |  |
+| `target` | `player_controller` | follow this player |
+
+### hltv_message
+
+a HLTV message send by moderators
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `text` | `string` |  |
+
+### hltv_rank_camera
+
+a camera ranking
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `index` | `byte` | fixed camera index |
+| `rank` | `float` | ranking, how interesting is this camera view |
+| `target` | `player_controller` | best/closest target entity |
+
+### hltv_rank_entity
+
+an entity ranking
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `userid` | `player_controller` | player slot |
+| `rank` | `float` | ranking, how interesting is this entity to view |
+| `target` | `player_controller` | best/closest target entity |
+
+### hltv_replay
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `delay` | `long` | number of seconds in killer replay delay |
+| `reason` | `long` | reason for replay	(ReplayEventType_t) |
+
+### hltv_replay_status
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `reason` | `long` | reason for hltv replay status change () |
+
+### hltv_status
+
+general HLTV status
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `clients` | `long` | number of HLTV spectators |
+| `slots` | `long` | number of HLTV slots |
+| `proxies` | `short` | number of HLTV proxies |
+| `master` | `string` | disptach master IP:port |
+
+### hltv_title
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `text` | `string` |  |
+
+### hltv_versioninfo
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `version` | `long` |  |
+
+### hostname_changed
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `hostname` | `string` |  |
+
+### instructor_close_lesson
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `userid` | `player_controller` | The player who this lesson is intended for |
+| `hint_name` | `string` | Name of the lesson to start.  Must match instructor_lesson.txt |
+
+### instructor_server_hint_create
+
+create a hint using data supplied entirely by the server/map. Intended for hints to smooth playtests before content is ready to make the hint unneccessary. NOT INTENDED AS A SHIPPABLE CRUTCH
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `userid` | `player_controller` | user ID of the player that triggered the hint |
+| `hint_entindex` | `long` | entity id of the env_instructor_hint that fired the event |
+| `hint_name` | `string` | what to name the hint. For referencing it again later (e.g. a kill command for the hint instead of a timeout) |
+| `hint_replace_key` | `string` | type name so that messages of the same type will replace each other |
+| `hint_target` | `long` | entity id that the hint should display at |
+| `hint_activator_userid` | `player_controller` | playerslot of the activator |
+| `hint_timeout` | `short` | how long in seconds until the hint automatically times out, 0 = never |
+| `hint_icon_onscreen` | `string` | the hint icon to use when the hint is onscreen. e.g. "icon_alert_red" |
+| `hint_icon_offscreen` | `string` | the hint icon to use when the hint is offscreen. e.g. "icon_alert" |
+| `hint_caption` | `string` | the hint caption. e.g. "#ThisIsDangerous" |
+| `hint_activator_caption` | `string` | the hint caption that only the activator sees e.g. "#YouPushedItGood" |
+| `hint_color` | `string` | the hint color in "r,g,b" format where each component is 0-255 |
+| `hint_icon_offset` | `float` | how far on the z axis to offset the hint from entity origin |
+| `hint_range` | `float` | range before the hint is culled |
+| `hint_flags` | `long` | hint flags |
+| `hint_binding` | `string` | bindings to use when use_binding is the onscreen icon |
+| `hint_allow_nodraw_target` | `bool` | if false, the hint will dissappear if the target entity is invisible |
+| `hint_nooffscreen` | `bool` | if true, the hint will not show when outside the player view |
+| `hint_forcecaption` | `bool` | if true, the hint caption will show even if the hint is occluded |
+| `hint_local_player_only` | `bool` | if true, only the local player will see the hint |
+| `hint_start_sound` | `string` | Game sound to play |
+| `hint_layoutfile` | `string` | Path for Panorama layout file |
+| `hint_vr_panel_type` | `short` | Attachment type for the Panorama panel |
+| `hint_vr_height_offset` | `float` | Height offset for attached panels |
+| `hint_vr_offset_x` | `float` | offset for attached panels |
+| `hint_vr_offset_y` | `float` | offset for attached panels |
+| `hint_vr_offset_z` | `float` | offset for attached panels |
+
+### instructor_server_hint_stop
+
+destroys a server/map created hint
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `hint_name` | `string` | The hint to stop. Will stop ALL hints with this name |
+| `hint_entindex` | `long` | entity id of the env_instructor_hint that fired the event |
+
+### instructor_start_lesson
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `userid` | `player_controller` | The player who this lesson is intended for |
+| `hint_name` | `string` | Name of the lesson to start.  Must match instructor_lesson.txt |
+| `hint_target` | `long` | entity id that the hint should display at. Leave empty if controller target |
+| `vr_movement_type` | `byte` |  |
+| `vr_single_controller` | `bool` |  |
+| `vr_controller_type` | `byte` |  |
+
+### inventory_updated
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `itemdef` | `short` |  |
+| `itemid` | `long` |  |
+
+### item_schema_initialized
+
+*No fields — this event carries no additional data.*
+
+### local_player_controller_team
+
+*No fields — this event carries no additional data.*
+
+### local_player_pawn_changed
+
+*No fields — this event carries no additional data.*
+
+### local_player_team
+
+*No fields — this event carries no additional data.*
+
+### map_shutdown
+
+*No fields — this event carries no additional data.*
+
+### map_transition
+
+*No fields — this event carries no additional data.*
+
+### physgun_pickup
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `target` | `ehandle` | entity picked up |
+
+### player_activate
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `userid` | `player_controller` | user ID on server |
+
+### player_changename
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `userid` | `player_controller` | user ID on server |
+| `oldname` | `string` | players old (current) name |
+| `newname` | `string` | players new name |
+
+### player_chat
+
+a public player chat
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `teamonly` | `bool` | true if team only chat |
+| `userid` | `player_controller` | chatting player |
+| `playerid` | `short` | chatting player ID |
+| `text` | `string` | chat text |
+
+### player_connect
+
+a new client connected
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `name` | `string` | player name |
+| `userid` | `player_controller` | user ID on server (unique on server) |
+| `networkid` | `string` | player network (i.e steam) id |
+| `xuid` | `uint64` | steam id |
+| `bot` | `bool` |  |
+
+### player_connect_full
+
+player has sent final message in the connection sequence
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `userid` | `player_controller` | user ID on server (unique on server) |
+
+### player_death
+
+Fired when a player dies.  Carries `userid` (the victim) and `attacker`.  Detailed kill information (weapon, headshot, assister, penetration count, no-scope flag, distance) lives on the legacy `cs_gameevents.proto` user-message `CMsgSource1LegacyGameEvent` payload — extract those keys when parsing demos.
+
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `userid` | `player_controller_and_pawn` | user ID who died |
+| `attacker` | `player_controller_and_pawn` | user ID who killed |
+
+### player_disconnect
+
+a client was disconnected
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `userid` | `player_controller` | user ID on server |
+| `reason` | `short` | see networkdisconnect enum protobuf |
+| `name` | `string` | player name |
+| `networkid` | `string` | player network (i.e steam) id |
+| `xuid` | `uint64` | steam id |
+| `PlayerID` | `short` |  |
+| `ever_fully_connected` | `bool` | Was the player ever fully connected? |
+
+### player_footstep
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `userid` | `player_pawn` |  |
+
+### player_full_update
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `userid` | `player_controller` | user ID on server |
+| `count` | `short` | Number of this full update |
+
+### player_hintmessage
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `hintmessage` | `string` | localizable string of a hint |
+
+### player_hurt
+
+Fired when a player takes damage from any source.  The pre-CS2 `weapon` / `dmg_armor` / `dmg_health` / `hitgroup` fields were removed in CS2; for those, use `bullet_damage` (firearm damage) or correlate with the relevant grenade-detonation event.
+
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `userid` | `player_controller_and_pawn` | player who was hurt |
+| `attacker` | `player_controller_and_pawn` | player who attacked |
+| `health` | `byte` | remaining health points |
+
+### player_info
+
+a player changed his name
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `name` | `string` | player name |
+| `userid` | `player_controller` | user ID on server (unique on server) |
+| `steamid` | `uint64` | player network (i.e steam) id |
+| `bot` | `bool` | true if player is a AI bot |
+
+### player_spawn
+
+Fired when a player's pawn spawns (per-round).  The controller persists across rounds; the pawn does not, so this event marks "new pawn is alive."
+
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `userid` | `player_controller_and_pawn` |  |
+
+### player_stats_updated
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `forceupload` | `bool` |  |
+
+### player_team
+
+Fired when a player switches teams (T ↔ CT, or to/from Spectator).  `team` is the new team; `oldteam` is the previous. `disconnect=true` indicates the team change was caused by the player leaving rather than a deliberate switch.
+
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `userid` | `player_controller_and_pawn` |  |
+| `team` | `byte` | team id |
+| `oldteam` | `byte` | old team id |
+| `disconnect` | `bool` | team change because player disconnects |
+| `silent` | `bool` |  |
+| `name` | `string` |  |
+| `isbot` | `bool` |  |
+
+### ragdoll_dissolved
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `entindex` | `long` |  |
+
+### round_end
+
+Fired when a round concludes.  Carries the winning team (`winner`), the reason for the win (`reason`, see RoundEndReason table below), and a human-readable `message` string.
+
+
+> 📝 The `winner` value uses the same team-number scheme as the `Team` constant in `well_known_constants.json` (2=T, 3=CT, 0/1 for draw / unassigned).  The `reason` byte enumerates win conditions: bomb detonation, defusal, time expiry, eliminations, surrender, etc. — full mapping is in `public/cstrike15_gameconstants.h` upstream.
+
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `winner` | `byte` | winner team/user i |
+| `reason` | `byte` | reson why team won |
+| `message` | `string` | end round message |
+| `time` | `float` |  |
+
+### round_freeze_end
+
+Fired when the buy/freeze period ends and live play begins. Players regain movement; this is the canonical "round live" tick for demo-parsing tooling and stat trackers.
+
+
+*No fields — this event carries no additional data.*
+
+### round_start
+
+Fired by the game rules when a new round begins.  Marks the start of the freeze (buy) period — players have just spawned and are frozen in place.  Use this to reset per-round bookkeeping.
+
+
+> 📝 Followed by `round_freeze_end` when the freeze period ends and live play begins.
+
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `timelimit` | `long` | round time limit in seconds |
+| `fraglimit` | `long` | frag limit in seconds |
+| `objective` | `string` | round objective |
+
+### round_start_post_nav
+
+*No fields — this event carries no additional data.*
+
+### round_start_pre_entity
+
+*No fields — this event carries no additional data.*
+
+### server_cvar
+
+a server console var has changed
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `cvarname` | `string` | cvar name, eg "mp_roundtime" |
+| `cvarvalue` | `string` | new cvar value |
+
+### server_message
+
+a generic server message
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `text` | `string` | the message text |
+
+### server_pre_shutdown
+
+server is about to be shut down
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `reason` | `string` | reason why server is about to be shut down |
+
+### server_shutdown
+
+server shut down
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `reason` | `string` | reason why server was shut down |
+
+### server_spawn
+
+send once a server starts
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `hostname` | `string` | public host name |
+| `address` | `string` | hostame, IP or DNS name |
+| `port` | `short` | server port |
+| `game` | `string` | game dir |
+| `mapname` | `string` | map name |
+| `addonname` | `string` | addon name |
+| `maxplayers` | `long` | max players |
+| `os` | `string` | WIN32, LINUX |
+| `dedicated` | `bool` | true if dedicated server |
+| `password` | `bool` | true if password protected |
+
+### set_instructor_group_enabled
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `group` | `string` |  |
+| `enabled` | `short` |  |
+
+### spec_mode_updated
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `userid` | `player_controller_and_pawn` | spectating player |
+
+### spec_target_updated
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `userid` | `player_controller_and_pawn` | spectating player |
+| `target` | `ehandle` | ehandle of the target |
+
+### store_pricesheet_updated
+
+*No fields — this event carries no additional data.*
+
+### team_info
+
+info about team
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `teamid` | `byte` | unique team id |
+| `teamname` | `string` | team name eg "Team Blue" |
+
+### team_score
+
+team score changed
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `teamid` | `byte` | team id |
+| `score` | `short` | total team score |
+
+### teamplay_broadcast_audio
+
+emits a sound to everyone on a team
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `team` | `byte` | unique team id |
+| `sound` | `string` | name of the sound to emit |
+
+### teamplay_round_start
+
+round restart
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `full_reset` | `bool` | is this a full reset of the map |
+
+### user_data_downloaded
+
+fired when achievements/stats are downloaded from Steam or XBox Live
+
+*No fields — this event carries no additional data.*
+
+### vote_cast_no
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `team` | `byte` |  |
+| `entityid` | `long` | entity id of the voter |
+
+### vote_cast_yes
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `team` | `byte` |  |
+| `entityid` | `long` | entity id of the voter |
+
+### vote_changed
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `yesVotes` | `byte` |  |
+| `noVotes` | `byte` |  |
+| `potentialVotes` | `byte` |  |
+
+### vote_failed
+
+**Properties:** `reliable=1`
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `team` | `byte` |  |
+
+### vote_passed
+
+**Properties:** `reliable=1`
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `details` | `string` |  |
+| `param1` | `string` |  |
+| `team` | `byte` |  |
+
+### vote_started
+
+**Properties:** `reliable=1`
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `issue` | `string` |  |
+| `param1` | `string` |  |
+| `votedata` | `string` |  |
+| `team` | `byte` |  |
+| `initiator` | `long` | entity id of the player who initiated the vote |
 
 ## Game Events
 

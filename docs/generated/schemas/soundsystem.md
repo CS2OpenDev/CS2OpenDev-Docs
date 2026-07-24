@@ -51,7 +51,14 @@ nav_exclude: true
 
 ### CDSPMixgroupModifier
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_mixgroup": "default",
+	"m_flModifier": 1.000000,
+	"m_flModifierMin": 0.000000,
+	"m_flSourceModifier": -1.000000,
+	"m_flSourceModifierMin": -1.000000,
+	"m_flListenerReverbModifierWhenSourceReverbIsActive": 1.000000
+}`
 
 **Fields:**
 
@@ -66,7 +73,11 @@ nav_exclude: true
 
 ### CDSPPresetMixgroupModifierTable
 
-**Metadata:** `MGetKV3ClassDefaults`, `MVDataNodeType 1`, `MVDataRoot`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_table":
+	[
+	]
+}`, `MVDataNodeType 1`, `MVDataRoot`
 
 **Relationships:**
 
@@ -83,7 +94,12 @@ classDiagram
 
 ### CDspPresetModifierList
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_dspName": "default",
+	"m_modifiers":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -101,7 +117,35 @@ classDiagram
 
 ### CSndBeatPattern
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyArrayElementNameKey m_name`, `MVDataAnonymousNode`, `MVDataOutlinerNameExpr`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_launchSyncType": "eSndBeatLaunchSyncTypeReset",
+	"m_flSyncPriority": 0.000000,
+	"m_timeSignature":
+	{
+		"nNumerator": 4,
+		"nDenominator": 4
+	},
+	"m_flLength": 4.000000,
+	"m_bLooping": false,
+	"m_launchSyncEventType": "eSndBeatEventTypeBeat",
+	"m_flSyncBeatMult": 1.000000,
+	"m_playEventType": "eSndBeatEventTypeBeat",
+	"m_flPlayBeatMult": 1.000000,
+	"m_keyType": "eSndBeatPatternTypeNone",
+	"m_vecPatternKeys":
+	[
+	],
+	"m_vecPatternFloats":
+	[
+	],
+	"m_vecPatternSndEvts":
+	[
+	],
+	"m_vecPatternMidi":
+	[
+	]
+}`, `MPropertyArrayElementNameKey m_name`, `MVDataAnonymousNode`, `MVDataOutlinerNameExpr m_name`
 
 **Relationships:**
 
@@ -128,18 +172,25 @@ classDiagram
 | `m_flLength` | float32 | `MPropertyFriendlyName Length (beats)` |
 | `m_bLooping` | bool | `MPropertyFriendlyName Looping` |
 | `m_launchSyncEventType` | [SndBeatEventType_t](../schemas/!GlobalTypes.md#sndbeateventtype_t) | `MPropertyFriendlyName Launch Track Event Type` `MPropertyGroupName Launch Track` |
-| `m_flSyncBeatMult` | float32 | `MPropertyFriendlyName Launch Track Beat/Bar/Phrase/Length Multiplier` `MPropertyGroupName Launch Track` `MPropertySuppressExpr` |
+| `m_flSyncBeatMult` | float32 | `MPropertyFriendlyName Launch Track Beat/Bar/Phrase/Length Multiplier` `MPropertyGroupName Launch Track` `MPropertySuppressExpr m_launchSyncEventType == eSndBeatPatternTypeKeys` |
 | `m_playEventType` | [SndBeatEventType_t](../schemas/!GlobalTypes.md#sndbeateventtype_t) | `MPropertyFriendlyName Play Track Event Type` `MPropertyGroupName Playback Track` |
 | `m_flPlayBeatMult` | float32 | `MPropertyFriendlyName Play Track Beat/Bar/Phrase/Length Multiplier` `MPropertyGroupName Playback Track` |
 | `m_keyType` | [SndBeatKeyType_t](../schemas/!GlobalTypes.md#sndbeatkeytype_t) | `MPropertyFriendlyName Key Type` |
-| `m_vecPatternKeys` | CUtlVector< [SndBeatEventKeys_t](../schemas/soundsystem.md#sndbeateventkeys_t) > | `MPropertySuppressExpr` |
-| `m_vecPatternFloats` | CUtlVector< [SndBeatEventKeyedFloats_t](../schemas/soundsystem.md#sndbeateventkeyedfloats_t) > | `MPropertySuppressExpr` |
-| `m_vecPatternSndEvts` | CUtlVector< [SndBeatEventKeyedSndEvts_t](../schemas/soundsystem.md#sndbeateventkeyedsndevts_t) > | `MPropertySuppressExpr` |
-| `m_vecPatternMidi` | CUtlVector< [SndBeatEventKeyedMidiNotes_t](../schemas/soundsystem.md#sndbeateventkeyedmidinotes_t) > | `MPropertySuppressExpr` |
+| `m_vecPatternKeys` | CUtlVector< [SndBeatEventKeys_t](../schemas/soundsystem.md#sndbeateventkeys_t) > | `MPropertySuppressExpr m_keyType != eSndBeatPatternTypeKeys` |
+| `m_vecPatternFloats` | CUtlVector< [SndBeatEventKeyedFloats_t](../schemas/soundsystem.md#sndbeateventkeyedfloats_t) > | `MPropertySuppressExpr m_keyType != eSndBeatPatternTypeKeyedFloats` |
+| `m_vecPatternSndEvts` | CUtlVector< [SndBeatEventKeyedSndEvts_t](../schemas/soundsystem.md#sndbeateventkeyedsndevts_t) > | `MPropertySuppressExpr m_keyType != eSndBeatPatternTypeKeyedSndEvts` |
+| `m_vecPatternMidi` | CUtlVector< [SndBeatEventKeyedMidiNotes_t](../schemas/soundsystem.md#sndbeateventkeyedmidinotes_t) > | `MPropertySuppressExpr m_keyType != eSndBeatPatternTypeKeyedMidi` |
 
 ### CSndBeatPatternManager
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Beat Pattern Library`, `MVDataRoot`, `MVDataSingleton`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vecPatterns":
+	[
+	],
+	"m_vecActiveTracks":
+	[
+	]
+}`, `MPropertyFriendlyName Beat Pattern Library`, `MVDataRoot`, `MVDataSingleton`
 
 **Relationships:**
 
@@ -153,12 +204,18 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_vecPatterns` | CUtlVector< [CSndBeatPattern](../schemas/soundsystem.md#csndbeatpattern) > | `MPropertyFriendlyName Patterns` `MVDataPromoteField` |
-| `m_vecActiveTracks` | CUtlVector< [CSndBeatTrack](../schemas/soundsystem.md#csndbeattrack) > | `MPropertyFriendlyName Tracks` `MVDataPromoteField` |
+| `m_vecPatterns` | CUtlVector< [CSndBeatPattern](../schemas/soundsystem.md#csndbeatpattern) > | `MPropertyFriendlyName Patterns` `MVDataPromoteField 0` |
+| `m_vecActiveTracks` | CUtlVector< [CSndBeatTrack](../schemas/soundsystem.md#csndbeattrack) > | `MPropertyFriendlyName Tracks` `MVDataPromoteField 0` |
 
 ### CSndBeatTrack
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyArrayElementNameKey m_name`, `MVDataAnonymousNode`, `MVDataOutlinerNameExpr`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_playbackType": "eSndBeatTrackPlaybackTypeFwd",
+	"m_nTranspose": 0,
+	"m_bSyncToVoice": false,
+	"m_flBPM": 120.000000
+}`, `MPropertyArrayElementNameKey m_name`, `MVDataAnonymousNode`, `MVDataOutlinerNameExpr m_name`
 
 **Relationships:**
 
@@ -206,7 +263,25 @@ classDiagram
 
 **Inherits from:** [CSndSeqInstBaseSchema](soundsystem.md#csndseqinstbaseschema)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Midi Sampler`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSndSeqInstMidiSampler",
+	"m_nType": "eSndSeqInstMidiSampler",
+	"m_bStopCurrentEvents": false,
+	"m_flBPM": 120.000000,
+	"m_flBPMFactor": 2.000000,
+	"m_flBPMInvFactor": 0.500000,
+	"m_bIsSoundEvent": false,
+	"m_bStopPrevious": true,
+	"m_nMinNote": 0,
+	"m_nMaxNote": 0,
+	"m_flMinVelocityAtten": 0.000000,
+	"m_flMaxVelocityAtten": 0.000000,
+	"m_flAttack": 0.000000,
+	"m_flRelease": 0.000000,
+	"m_bBeatEnvelopes": true,
+	"m_nNextVoiceSlot": 0,
+	"m_hSoundEventHash": 0
+}`, `MPropertyFriendlyName Midi Sampler`
 
 **Relationships:**
 
@@ -235,7 +310,14 @@ classDiagram
 
 **Inherits from:** [CSndSeqInstBaseSchema](soundsystem.md#csndseqinstbaseschema)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName SoundEvent on Start`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSndSeqInstSndEvtSchema",
+	"m_nType": "eSndSeqInstSndEvt",
+	"m_bStopCurrentEvents": false,
+	"m_flBPM": 0.000000,
+	"m_flBPMFactor": 0.000000,
+	"m_flBPMInvFactor": 0.000000
+}`, `MPropertyFriendlyName SoundEvent on Start`
 
 **Relationships:**
 
@@ -259,7 +341,14 @@ classDiagram
 
 **Inherits from:** [CSosGroupActionSchema](soundsystem.md#csosgroupactionschema)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Limiter`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSosGroupActionLimitSchema",
+	"m_nMaxCount": -1,
+	"m_nStopType": "SOS_STOPTYPE_NONE",
+	"m_nSortType": "SOS_LIMIT_SORTTYPE_HIGHEST",
+	"m_bStopImmediate": false,
+	"m_bCountStopped": true
+}`, `MPropertyFriendlyName Limiter`
 
 **Relationships:**
 
@@ -284,7 +373,17 @@ classDiagram
 
 **Inherits from:** [CSosGroupActionSchema](soundsystem.md#csosgroupactionschema)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Count Envelope`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSosGroupActionMemberCountEnvelopeSchema",
+	"m_nBaseCount": 0,
+	"m_nTargetCount": 1,
+	"m_flBaseValue": 0.000000,
+	"m_flTargetValue": 0.000000,
+	"m_flAttack": 1.000000,
+	"m_flDecay": 1.000000,
+	"m_resultVarName": "envelope_result",
+	"m_bSaveToGroup": false
+}`, `MPropertyFriendlyName Count Envelope`
 
 **Relationships:**
 
@@ -310,7 +409,15 @@ classDiagram
 
 **Inherits from:** [CSosGroupActionSchema](soundsystem.md#csosgroupactionschema)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Occlusion Info`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSosGroupActionOcclusionSchema",
+	"m_flCalculationInterval": 0.100000,
+	"m_flRadius": 0.000000,
+	"m_flOcclusionScale": 1.000000,
+	"m_flOcclusionMin": 0.000000,
+	"m_flOcclusionMax": 1.000000,
+	"m_flTestDepth": 0.000000
+}`, `MPropertyFriendlyName Occlusion Info`
 
 **Relationships:**
 
@@ -356,7 +463,14 @@ classDiagram
 
 **Inherits from:** [CSosGroupActionSchema](soundsystem.md#csosgroupactionschema)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Set Sound Event Parameter`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSosGroupActionSetSoundeventParameterSchema",
+	"m_nMaxCount": -1,
+	"m_flMinValue": 0.000000,
+	"m_flMaxValue": 1.000000,
+	"m_opvarName": "None",
+	"m_nSortType": "SOS_SETPARAM_SORTTYPE_LOWEST"
+}`, `MPropertyFriendlyName Set Sound Event Parameter`
 
 **Relationships:**
 
@@ -380,7 +494,16 @@ classDiagram
 
 **Inherits from:** [CSosGroupActionSchema](soundsystem.md#csosgroupactionschema)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Soundevent Cluster`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSosGroupActionSoundeventClusterSchema",
+	"m_nMinNearby": 6,
+	"m_flClusterEpsilon": 36.000000,
+	"m_shouldPlayOpvar": "cluster_should_play",
+	"m_shouldPlayClusterChild": "cluster_should_play_child",
+	"m_clusterSizeOpvar": "cluster_size",
+	"m_groupBoundingBoxMinsOpvar": "cluster_group_box_mins",
+	"m_groupBoundingBoxMaxsOpvar": "cluster_group_box_maxs"
+}`, `MPropertyFriendlyName Soundevent Cluster`
 
 **Relationships:**
 
@@ -405,7 +528,11 @@ classDiagram
 
 **Inherits from:** [CSosGroupActionSchema](soundsystem.md#csosgroupactionschema)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Soundevent Count`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSosGroupActionSoundeventCountSchema",
+	"m_bExcludeStoppedSounds": true,
+	"m_strCountKeyName": "current_count"
+}`, `MPropertyFriendlyName Soundevent Count`
 
 **Relationships:**
 
@@ -425,7 +552,19 @@ classDiagram
 
 **Inherits from:** [CSosGroupActionSchema](soundsystem.md#csosgroupactionschema)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Soundevent Min/Max Values`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSosGroupActionSoundeventMinMaxValuesSchema",
+	"m_strQueryPublicFieldName": "min_max_query",
+	"m_strDelayPublicFieldName": "delay",
+	"m_bExcludeStoppedSounds": true,
+	"m_bExcludeDelayedSounds": true,
+	"m_bExcludeSoundsBelowThreshold": false,
+	"m_flExcludeSoundsMinThresholdValue": -1.000000,
+	"m_bExcludSoundsAboveThreshold": false,
+	"m_flExcludeSoundsMaxThresholdValue": -1.000000,
+	"m_strMinValueName": "min",
+	"m_strMaxValueName": "max"
+}`, `MPropertyFriendlyName Soundevent Min/Max Values`
 
 **Relationships:**
 
@@ -453,7 +592,13 @@ classDiagram
 
 **Inherits from:** [CSosGroupActionSchema](soundsystem.md#csosgroupactionschema)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Soundevent Priority`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSosGroupActionSoundeventPrioritySchema",
+	"m_priorityValue": "priority_value",
+	"m_priorityVolumeScalar": "priority_volume_scalar",
+	"m_priorityContributeButDontRead": "priority_contribute_dont_read",
+	"m_bPriorityReadButDontContribute": "priority_read_dont_contribute"
+}`, `MPropertyFriendlyName Soundevent Priority`
 
 **Relationships:**
 
@@ -475,7 +620,11 @@ classDiagram
 
 **Inherits from:** [CSosGroupActionSchema](soundsystem.md#csosgroupactionschema)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Timed Block Limiter`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSosGroupActionTimeBlockLimitSchema",
+	"m_nMaxCount": -1,
+	"m_flMaxDuration": 0.000000
+}`, `MPropertyFriendlyName Timed Block Limiter`
 
 **Relationships:**
 
@@ -495,7 +644,10 @@ classDiagram
 
 **Inherits from:** [CSosGroupActionSchema](soundsystem.md#csosgroupactionschema)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Time Limiter`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSosGroupActionTimeLimitSchema",
+	"m_flMaxDuration": -1.000000
+}`, `MPropertyFriendlyName Time Limiter`
 
 **Relationships:**
 
@@ -512,7 +664,26 @@ classDiagram
 
 ### CSosSoundEventGroupSchema
 
-**Metadata:** `MGetKV3ClassDefaults`, `MVDataRoot`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nGroupType": "SOS_GROUPTYPE_DYNAMIC",
+	"m_bBlocksEvents": false,
+	"m_nBlockMaxCount": 0,
+	"m_flMemberLifespanTime": -1.000000,
+	"m_bInvertMatch": false,
+	"m_Behavior_EventName": "kIgnore",
+	"m_matchSoundEventName": "",
+	"m_bMatchEventSubString": false,
+	"m_matchSoundEventSubString": "",
+	"m_Behavior_EntIndex": "kIgnore",
+	"m_flEntIndex": -1.000000,
+	"m_Behavior_Opvar": "kIgnore",
+	"m_flOpvar": -1.000000,
+	"m_Behavior_String": "kIgnore",
+	"m_opvarString": "",
+	"m_vActions":
+	[
+	]
+}`, `MVDataRoot`
 
 **Relationships:**
 
@@ -529,24 +700,26 @@ classDiagram
 |------|------|-------------|
 | `m_nGroupType` | [SosGroupType_t](../schemas/!GlobalTypes.md#sosgrouptype_t) | `MPropertyAttributeEditor Radio` |
 | `m_bBlocksEvents` | bool | `MPropertyStartGroup +Block Events` |
-| `m_nBlockMaxCount` | int32 | `MPropertyReadonlyExpr` |
+| `m_nBlockMaxCount` | int32 | `MPropertyReadonlyExpr !m_bBlocksEvents` |
 | `m_flMemberLifespanTime` | float32 | `MPropertyStartGroup` |
 | `m_bInvertMatch` | bool |  |
-| `m_Behavior_EventName` | [SosGroupFieldBehavior_t](../schemas/!GlobalTypes.md#sosgroupfieldbehavior_t) | `MPropertyAttributeEditor Radio` `MPropertyReadonlyExpr` `MPropertyStartGroup +Event Name` |
-| `m_matchSoundEventName` | CUtlString | `MPropertyReadonlyExpr` |
+| `m_Behavior_EventName` | [SosGroupFieldBehavior_t](../schemas/!GlobalTypes.md#sosgroupfieldbehavior_t) | `MPropertyAttributeEditor Radio` `MPropertyReadonlyExpr m_bMatchEventSubString` `MPropertyStartGroup +Event Name` |
+| `m_matchSoundEventName` | CUtlString | `MPropertyReadonlyExpr m_Behavior_EventName != kMatch || m_bMatchEventSubString` |
 | `m_bMatchEventSubString` | bool | `MPropertyStartGroup +Event SubString` |
-| `m_matchSoundEventSubString` | CUtlString | `MPropertyReadonlyExpr` |
+| `m_matchSoundEventSubString` | CUtlString | `MPropertyReadonlyExpr !m_bMatchEventSubString` |
 | `m_Behavior_EntIndex` | [SosGroupFieldBehavior_t](../schemas/!GlobalTypes.md#sosgroupfieldbehavior_t) | `MPropertyAttributeEditor Radio` `MPropertyStartGroup +Ent Index` |
-| `m_flEntIndex` | float32 | `MPropertyReadonlyExpr` |
-| `m_Behavior_Opvar` | [SosGroupFieldBehavior_t](../schemas/!GlobalTypes.md#sosgroupfieldbehavior_t) | `MPropertyAttributeEditor Radio` `MPropertyStartGroup +OpVar Float` `MPropertySuppressExpr` |
-| `m_flOpvar` | float32 | `MPropertyReadonlyExpr` `MPropertySuppressExpr` |
-| `m_Behavior_String` | [SosGroupFieldBehavior_t](../schemas/!GlobalTypes.md#sosgroupfieldbehavior_t) | `MPropertyAttributeEditor Radio` `MPropertyStartGroup +OpVar String` `MPropertySuppressExpr` |
-| `m_opvarString` | CUtlString | `MPropertyReadonlyExpr` `MPropertySuppressExpr` |
+| `m_flEntIndex` | float32 | `MPropertyReadonlyExpr m_Behavior_EntIndex != kMatch` |
+| `m_Behavior_Opvar` | [SosGroupFieldBehavior_t](../schemas/!GlobalTypes.md#sosgroupfieldbehavior_t) | `MPropertyAttributeEditor Radio` `MPropertyStartGroup +OpVar Float` `MPropertySuppressExpr m_nGroupType == SOS_GROUPTYPE_STATIC` |
+| `m_flOpvar` | float32 | `MPropertyReadonlyExpr m_Behavior_Opvar != kMatch` `MPropertySuppressExpr m_nGroupType == SOS_GROUPTYPE_STATIC` |
+| `m_Behavior_String` | [SosGroupFieldBehavior_t](../schemas/!GlobalTypes.md#sosgroupfieldbehavior_t) | `MPropertyAttributeEditor Radio` `MPropertyStartGroup +OpVar String` `MPropertySuppressExpr m_nGroupType == SOS_GROUPTYPE_STATIC` |
+| `m_opvarString` | CUtlString | `MPropertyReadonlyExpr m_Behavior_String != kMatch` `MPropertySuppressExpr m_nGroupType == SOS_GROUPTYPE_STATIC` |
 | `m_vActions` | CUtlVector< [CSosGroupActionSchema](../schemas/soundsystem.md#csosgroupactionschema)* > | `MPropertyAutoExpandSelf` `MPropertyStartGroup` |
 
 ### CSoundEventMetaData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_soundEventVMix": ""
+}`
 
 **Relationships:**
 
@@ -565,7 +738,24 @@ classDiagram
 
 **Inherits from:** [CVoiceContainerBase](soundsystem_voicecontainers.md#cvoicecontainerbase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Plays a vmix graph and its containers.`, `MPropertyFriendlyName VMixSound`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVoiceContainerVMixSnd",
+	"m_vSound":
+	{
+		"m_Sentences":
+		[
+		],
+		"m_nRate": 0,
+		"m_nFormat": "PCM16",
+		"m_nChannels": 0,
+		"m_nLoopStart": 0,
+		"m_nSampleCount": 0,
+		"m_flDuration": 0.000000,
+		"m_nStreamingSize": 0,
+		"m_nLoopEnd": 0
+	},
+	"m_pEnvelopeAnalyzer": null
+}`, `MPropertyDescription Plays a vmix graph and its containers.`, `MPropertyFriendlyName VMixSound`
 
 **Relationships:**
 
@@ -614,7 +804,11 @@ classDiagram
 
 ### SelectedEditItemInfo_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_EditItems":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -633,7 +827,11 @@ classDiagram
 
 **Inherits from:** [SndBeatEventKeys_t](soundsystem.md#sndbeateventkeys_t)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "SndBeatEventKeyedFloats_t",
+	"m_flKey": 0.000000,
+	"m_flFloat": 0.000000
+}`
 
 **Relationships:**
 
@@ -652,7 +850,13 @@ classDiagram
 
 **Inherits from:** [SndBeatEventKeys_t](soundsystem.md#sndbeateventkeys_t)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "SndBeatEventKeyedMidiNotes_t",
+	"m_flKey": 0.000000,
+	"m_nStatus": 9,
+	"m_nNote": 60,
+	"m_nVelocity": 127
+}`
 
 **Relationships:**
 
@@ -673,7 +877,11 @@ classDiagram
 
 **Inherits from:** [SndBeatEventKeys_t](soundsystem.md#sndbeateventkeys_t)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "SndBeatEventKeyedSndEvts_t",
+	"m_flKey": 0.000000,
+	"m_strSoundEventName": ""
+}`
 
 **Relationships:**
 
@@ -692,7 +900,10 @@ classDiagram
 
 **Derived by:** [SndBeatEventKeyedFloats_t](soundsystem.md#sndbeateventkeyedfloats_t), [SndBeatEventKeyedMidiNotes_t](soundsystem.md#sndbeateventkeyedmidinotes_t), [SndBeatEventKeyedSndEvts_t](soundsystem.md#sndbeateventkeyedsndevts_t)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MVDataBase`, `MVDataNodeType 1`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "SndBeatEventKeys_t",
+	"m_flKey": 0.000000
+}`, `MVDataBase`, `MVDataNodeType 1`
 
 **Relationships:**
 
@@ -711,7 +922,10 @@ classDiagram
 
 ### SndBeatTimeSignature_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"nNumerator": 4,
+	"nDenominator": 4
+}`
 
 **Fields:**
 
@@ -722,7 +936,17 @@ classDiagram
 
 ### SosEditItemInfo_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"itemType": "SOS_EDIT_ITEM_TYPE_SOUNDEVENTS",
+	"itemName": "",
+	"itemTypeName": "",
+	"itemKVString": "",
+	"itemPos":
+	[
+		0.000000,
+		0.000000
+	]
+}`
 
 **Relationships:**
 

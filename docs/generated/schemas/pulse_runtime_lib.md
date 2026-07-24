@@ -134,7 +134,11 @@ classDiagram
 
 ### CPulseBreakpointLocation
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_NodeID": -1,
+	"m_SequencePoint": "",
+	"m_PortName": ""
+}`
 
 **Relationships:**
 
@@ -155,7 +159,10 @@ classDiagram
 
 **Derived by:** [CPulseCell_BaseFlow](pulse_runtime_lib.md#cpulsecell_baseflow), [CPulseCell_BaseRequirement](pulse_runtime_lib.md#cpulsecell_baserequirement), [CPulseCell_BaseValue](pulse_runtime_lib.md#cpulsecell_basevalue), [CPulseCell_Unknown](pulse_runtime_lib.md#cpulsecell_unknown)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Base",
+	"m_nEditorNodeID": -1
+}`
 
 **Relationships:**
 
@@ -180,7 +187,10 @@ classDiagram
 
 **Derived by:** [CPulseCell_BaseYieldingInflow](pulse_runtime_lib.md#cpulsecell_baseyieldinginflow), [CPulseCell_ExampleSelector](pulse_system.md#cpulsecell_exampleselector), [CPulseCell_Inflow_BaseEntrypoint](pulse_runtime_lib.md#cpulsecell_inflow_baseentrypoint), [CPulseCell_InlineNodeSkipSelector](pulse_runtime_lib.md#cpulsecell_inlinenodeskipselector), [CPulseCell_Outflow_CycleOrdered](pulse_runtime_lib.md#cpulsecell_outflow_cycleordered), [CPulseCell_Outflow_CycleRandom](pulse_runtime_lib.md#cpulsecell_outflow_cyclerandom), [CPulseCell_Outflow_CycleShuffled](pulse_runtime_lib.md#cpulsecell_outflow_cycleshuffled), [CPulseCell_Outflow_TestExplicitYesNo](pulse_system.md#cpulsecell_outflow_testexplicityesno), [CPulseCell_Outflow_TestRandomYesNo](pulse_system.md#cpulsecell_outflow_testrandomyesno), [CPulseCell_PickBestOutflowSelector](pulse_runtime_lib.md#cpulsecell_pickbestoutflowselector), [CPulseCell_SoundEventStart](server.md#cpulsecell_soundeventstart), [CPulseCell_Step_DebugLog](pulse_runtime_lib.md#cpulsecell_step_debuglog), [CPulseCell_Step_EntFire](client.md#cpulsecell_step_entfire), [CPulseCell_Step_FollowEntity](server.md#cpulsecell_step_followentity), [CPulseCell_Step_PublicOutput](pulse_runtime_lib.md#cpulsecell_step_publicoutput), [CPulseCell_Step_SetAnimGraphParam](server.md#cpulsecell_step_setanimgraphparam), [CPulseCell_Step_TestDomainCreateFakeEntity](pulse_system.md#cpulsecell_step_testdomaincreatefakeentity), [CPulseCell_Step_TestDomainDestroyFakeEntity](pulse_system.md#cpulsecell_step_testdomaindestroyfakeentity), [CPulseCell_Step_TestDomainEntFire](pulse_system.md#cpulsecell_step_testdomainentfire), [CPulseCell_Step_TestDomainTracepoint](pulse_system.md#cpulsecell_step_testdomaintracepoint), [CPulseCell_Test_MultiInflow_NoDefault](pulse_system.md#cpulsecell_test_multiinflow_nodefault), [CPulseCell_Test_MultiInflow_WithDefault](pulse_system.md#cpulsecell_test_multiinflow_withdefault), [CPulseCell_Test_MultiOutflow_WithParams](pulse_system.md#cpulsecell_test_multioutflow_withparams), [CPulseCell_Test_NoInflow](pulse_system.md#cpulsecell_test_noinflow), [CSmartPropPulse_BaseQueryableFlow](smartprops.md#csmartproppulse_basequeryableflow), [CSmartPropPulse_CreateRotator](smartprops.md#csmartproppulse_createrotator), [CSmartPropPulse_CreateSizer](smartprops.md#csmartproppulse_createsizer), [CSmartPropPulse_FitOnLine](smartprops.md#csmartproppulse_fitonline), [CSmartPropPulse_Group](smartprops.md#csmartproppulse_group), [CSmartPropPulse_PickOneSelector](smartprops.md#csmartproppulse_pickoneselector), [CSmartPropPulse_PlaceInSphere](smartprops.md#csmartproppulse_placeinsphere), [CSmartPropPulse_SmartProp](smartprops.md#csmartproppulse_smartprop)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_BaseFlow",
+	"m_nEditorNodeID": -1
+}`
 
 **Relationships:**
 
@@ -250,7 +260,10 @@ classDiagram
 
 **Derived by:** [CPulseCell_LerpCameraSettings::CursorState_t](client.md#cpulsecell_lerpcamerasettingscursorstate_t)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_StartTime": null,
+	"m_EndTime": null
+}`
 
 **Relationships:**
 
@@ -273,7 +286,10 @@ classDiagram
 
 **Derived by:** [CPulseCell_ExampleCriteria](pulse_system.md#cpulsecell_examplecriteria), [CPulseCell_IsRequirementValid](pulse_runtime_lib.md#cpulsecell_isrequirementvalid), [CPulseCell_LimitCount](pulse_runtime_lib.md#cpulsecell_limitcount), [CSmartPropPulse_CriteriaPathPosition](smartprops.md#csmartproppulse_criteriapathposition), [CSmartPropPulse_SelectionChoiceWeight](smartprops.md#csmartproppulse_selectionchoiceweight), [CSmartPropPulse_SelectionEndCap](smartprops.md#csmartproppulse_selectionendcap), [CSmartPropPulse_SelectionLinearLength](smartprops.md#csmartproppulse_selectionlinearlength)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_BaseRequirement",
+	"m_nEditorNodeID": -1
+}`
 
 **Relationships:**
 
@@ -295,7 +311,7 @@ classDiagram
 
 **Derived by:** [CPulseCell_BooleanSwitchState](pulse_runtime_lib.md#cpulsecell_booleanswitchstate)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPulseEditorHeaderIcon`
+**Metadata:** `MGetKV3ClassDefaults`, `MPulseEditorHeaderIcon tools/images/pulse_editor/inflow_statecell.png`
 
 **Relationships:**
 
@@ -313,7 +329,10 @@ classDiagram
 
 **Derived by:** [CPulseCell_TestEnums](pulse_system.md#cpulsecell_testenums), [CPulseCell_Val_TestDomainFindEntityByName](pulse_system.md#cpulsecell_val_testdomainfindentitybyname), [CPulseCell_Val_TestDomainGetEntityName](pulse_system.md#cpulsecell_val_testdomaingetentityname), [CPulseCell_Value_Curve](pulse_runtime_lib.md#cpulsecell_value_curve), [CPulseCell_Value_Gradient](pulse_runtime_lib.md#cpulsecell_value_gradient), [CPulseCell_Value_RandomFloat](pulse_runtime_lib.md#cpulsecell_value_randomfloat), [CPulseCell_Value_RandomInt](pulse_runtime_lib.md#cpulsecell_value_randomint), [CPulseCell_Value_TestValue50](pulse_system.md#cpulsecell_value_testvalue50)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_BaseValue",
+	"m_nEditorNodeID": -1
+}`
 
 **Relationships:**
 
@@ -336,7 +355,7 @@ classDiagram
 
 **Derived by:** [CPulseCell_BaseLerp](pulse_runtime_lib.md#cpulsecell_baselerp), [CPulseCell_BaseState](pulse_runtime_lib.md#cpulsecell_basestate), [CPulseCell_FireCursors](pulse_runtime_lib.md#cpulsecell_firecursors), [CPulseCell_Inflow_Wait](pulse_runtime_lib.md#cpulsecell_inflow_wait), [CPulseCell_Inflow_Yield](pulse_runtime_lib.md#cpulsecell_inflow_yield), [CPulseCell_IntervalTimer](pulse_runtime_lib.md#cpulsecell_intervaltimer), [CPulseCell_Outflow_ListenForAnimgraphTag](server.md#cpulsecell_outflow_listenforanimgraphtag), [CPulseCell_Outflow_ListenForEntityOutput](server.md#cpulsecell_outflow_listenforentityoutput), [CPulseCell_Outflow_PlaySceneBase](server.md#cpulsecell_outflow_playscenebase), [CPulseCell_Outflow_PlayVOLine](server.md#cpulsecell_outflow_playvoline), [CPulseCell_Outflow_ScriptedSequence](server.md#cpulsecell_outflow_scriptedsequence), [CPulseCell_PlaySequence](client.md#cpulsecell_playsequence), [CPulseCell_Step_CallExternalMethod](pulse_runtime_lib.md#cpulsecell_step_callexternalmethod), [CPulseCell_TestWaitWithAutoTracepoints](pulse_system.md#cpulsecell_testwaitwithautotracepoints), [CPulseCell_TestWaitWithCursorState](pulse_system.md#cpulsecell_testwaitwithcursorstate), [CPulseCell_TestYieldForever](pulse_system.md#cpulsecell_testyieldforever), [CPulseCell_TestYieldWithObservables](pulse_system.md#cpulsecell_testyieldwithobservables), [CPulseCell_Test_MultiOutflow_WithParams_Yielding](pulse_system.md#cpulsecell_test_multioutflow_withparams_yielding), [CPulseCell_Timeline](pulse_runtime_lib.md#cpulsecell_timeline), [CPulseCell_WaitForCursorsWithTagBase](pulse_runtime_lib.md#cpulsecell_waitforcursorswithtagbase), [CPulseCell_WaitForObservable](pulse_runtime_lib.md#cpulsecell_waitforobservable)
 
-**Metadata:** `MCustomFGDMetadata`, `MGetKV3ClassDefaults`
+**Metadata:** `MCustomFGDMetadata { standard_yielding_flow = true }`, `MGetKV3ClassDefaults`
 
 **Relationships:**
 
@@ -379,7 +398,49 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseState](pulse_runtime_lib.md#cpulsecell_basestate)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription While active, manage child cursors based on the results of a boolean condition. When the observable result changes, the prior cursor will be canceled and the appropriate outflow will fire a new child cursor. Will monitor continuously until externally canceled.`, `MPropertyFriendlyName Monitor Observable`, `MPulseEditorCanvasItemSpecKV3`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_BooleanSwitchState",
+	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_Condition":
+	{
+		"m_EvaluateConnection":
+		{
+			"m_SourceOutflowName": "",
+			"m_nDestChunk": -1,
+			"m_nInstruction": -1
+		},
+		"m_DependentObservableVars":
+		[
+		],
+		"m_DependentObservableBlackboardReferences":
+		[
+		]
+	},
+	"m_WhenTrue":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_WhenFalse":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	}
+}`, `MPropertyDescription While active, manage child cursors based on the results of a boolean condition. When the observable result changes, the prior cursor will be canceled and the appropriate outflow will fire a new child cursor. Will monitor continuously until externally canceled.`, `MPropertyFriendlyName Monitor Observable`, `MPulseEditorCanvasItemSpecKV3 { className = 'IsStateNode' item_factory = 'BooleanSwitchState' }`
 
 **Relationships:**
 
@@ -404,7 +465,30 @@ classDiagram
 
 **Inherits from:** [CPulseCell_WaitForCursorsWithTagBase](pulse_runtime_lib.md#cpulsecell_waitforcursorswithtagbase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Causes each execution cursor to wait for the completion of all prior cursors that have visited this node. Use this to safely support multiple triggers to areas of the graph that take time to complete.`, `MPropertyFriendlyName Cursor Queue`, `MPulseEditorHeaderIcon`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_CursorQueue",
+	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_nCursorsAllowedToWait": -1,
+	"m_WaitComplete":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_nCursorsAllowedToRunParallel": 1
+}`, `MPropertyDescription Causes each execution cursor to wait for the completion of all prior cursors that have visited this node. Use this to safely support multiple triggers to areas of the graph that take time to complete.`, `MPropertyFriendlyName Cursor Queue`, `MPulseEditorHeaderIcon tools/images/pulse_editor/cursor_wait_zone.png`
 
 **Relationships:**
 
@@ -426,7 +510,32 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseYieldingInflow](pulse_runtime_lib.md#cpulsecell_baseyieldinginflow)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_FireCursors",
+	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_Outflows":
+	[
+	],
+	"m_bWaitForChildOutflows": true,
+	"m_OnFinished":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	}
+}`
 
 **Relationships:**
 
@@ -453,7 +562,16 @@ classDiagram
 
 **Derived by:** [CPulseCell_Inflow_EntOutputHandler](pulse_runtime_lib.md#cpulsecell_inflow_entoutputhandler), [CPulseCell_Inflow_EventHandler](pulse_runtime_lib.md#cpulsecell_inflow_eventhandler), [CPulseCell_Inflow_GraphHook](pulse_runtime_lib.md#cpulsecell_inflow_graphhook), [CPulseCell_Inflow_Method](pulse_runtime_lib.md#cpulsecell_inflow_method), [CPulseCell_Inflow_ObservableVariableListener](pulse_runtime_lib.md#cpulsecell_inflow_observablevariablelistener)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Inflow_BaseEntrypoint",
+	"m_nEditorNodeID": -1,
+	"m_EntryChunk": -1,
+	"m_RegisterMap":
+	{
+		"m_Inparams": null,
+		"m_Outparams": null
+	}
+}`
 
 **Relationships:**
 
@@ -481,7 +599,19 @@ classDiagram
 
 **Inherits from:** [CPulseCell_Inflow_BaseEntrypoint](pulse_runtime_lib.md#cpulsecell_inflow_baseentrypoint)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Inflow_EntOutputHandler",
+	"m_nEditorNodeID": -1,
+	"m_EntryChunk": -1,
+	"m_RegisterMap":
+	{
+		"m_Inparams": null,
+		"m_Outparams": null
+	},
+	"m_SourceEntity": "",
+	"m_SourceOutput": "",
+	"m_ExpectedParamType": "PVAL_VOID"
+}`
 
 **Relationships:**
 
@@ -504,7 +634,17 @@ classDiagram
 
 **Inherits from:** [CPulseCell_Inflow_BaseEntrypoint](pulse_runtime_lib.md#cpulsecell_inflow_baseentrypoint)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Inflow_EventHandler",
+	"m_nEditorNodeID": -1,
+	"m_EntryChunk": -1,
+	"m_RegisterMap":
+	{
+		"m_Inparams": null,
+		"m_Outparams": null
+	},
+	"m_EventName": ""
+}`
 
 **Relationships:**
 
@@ -525,7 +665,17 @@ classDiagram
 
 **Inherits from:** [CPulseCell_Inflow_BaseEntrypoint](pulse_runtime_lib.md#cpulsecell_inflow_baseentrypoint)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Inflow_GraphHook",
+	"m_nEditorNodeID": -1,
+	"m_EntryChunk": -1,
+	"m_RegisterMap":
+	{
+		"m_Inparams": null,
+		"m_Outparams": null
+	},
+	"m_HookName": ""
+}`
 
 **Relationships:**
 
@@ -546,7 +696,23 @@ classDiagram
 
 **Inherits from:** [CPulseCell_Inflow_BaseEntrypoint](pulse_runtime_lib.md#cpulsecell_inflow_baseentrypoint)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Inflow_Method",
+	"m_nEditorNodeID": -1,
+	"m_EntryChunk": -1,
+	"m_RegisterMap":
+	{
+		"m_Inparams": null,
+		"m_Outparams": null
+	},
+	"m_MethodName": "",
+	"m_Description": "",
+	"m_bIsPublic": false,
+	"m_ReturnType": "PVAL_VOID",
+	"m_Args":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -572,7 +738,18 @@ classDiagram
 
 **Inherits from:** [CPulseCell_Inflow_BaseEntrypoint](pulse_runtime_lib.md#cpulsecell_inflow_baseentrypoint)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Inflow_ObservableVariableListener",
+	"m_nEditorNodeID": -1,
+	"m_EntryChunk": -1,
+	"m_RegisterMap":
+	{
+		"m_Inparams": null,
+		"m_Outparams": null
+	},
+	"m_nBlackboardReference": -1,
+	"m_bSelfReference": false
+}`
 
 **Relationships:**
 
@@ -595,7 +772,28 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseYieldingInflow](pulse_runtime_lib.md#cpulsecell_baseyieldinginflow)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Causes each execution cursor to pause at this node for a fixed period of time. Each cursor will wake up and resume execution when the time expires, unless aborted or early-woken.`, `MPropertyFriendlyName Wait`, `MPulseEditorCanvasItemSpecKV3`, `MPulseEditorHeaderIcon`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Inflow_Wait",
+	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_WakeResume":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	}
+}`, `MPropertyDescription Causes each execution cursor to pause at this node for a fixed period of time. Each cursor will wake up and resume execution when the time expires, unless aborted or early-woken.`, `MPropertyFriendlyName Wait`, `MPulseEditorCanvasItemSpecKV3 { className = 'IsWaitNode IsControlFlowNode' item_factory = 'InflowWait' }`, `MPulseEditorHeaderIcon tools/images/pulse_editor/inflow_wait.png`
 
 **Relationships:**
 
@@ -617,7 +815,28 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseYieldingInflow](pulse_runtime_lib.md#cpulsecell_baseyieldinginflow)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Inflow_Yield",
+	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_UnyieldResume":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	}
+}`
 
 **Relationships:**
 
@@ -639,7 +858,24 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseFlow](pulse_runtime_lib.md#cpulsecell_baseflow)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPulseFunctionHiddenInTool`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_InlineNodeSkipSelector",
+	"m_nEditorNodeID": -1,
+	"m_nFlowNodeID": -1,
+	"m_bAnd": false,
+	"m_PassOutflow":
+	{
+		"m_Outflows":
+		[
+		]
+	},
+	"m_FailOutflow":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	}
+}`, `MPulseFunctionHiddenInTool`
 
 **Relationships:**
 
@@ -665,7 +901,34 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseYieldingInflow](pulse_runtime_lib.md#cpulsecell_baseyieldinginflow)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Wait for a duration, firing a child cursor at regular (or randomized) intervals`, `MPropertyFriendlyName Interval Timer`, `MPulseEditorCanvasItemSpecKV3`, `MPulseEditorHeaderIcon`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_IntervalTimer",
+	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_Completed":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_OnInterval":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	}
+}`, `MPropertyDescription Wait for a duration, firing a child cursor at regular (or randomized) intervals`, `MPropertyFriendlyName Interval Timer`, `MPulseEditorCanvasItemSpecKV3 { item_factory = 'IntervalTimer' }`, `MPulseEditorHeaderIcon tools/images/pulse_editor/node_timer.png`
 
 **Relationships:**
 
@@ -687,7 +950,13 @@ classDiagram
 
 ### CPulseCell_IntervalTimer::CursorState_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_StartTime": null,
+	"m_EndTime": null,
+	"m_flWaitInterval": 0.000000,
+	"m_flWaitIntervalHigh": 0.000000,
+	"m_bCompleteOnNextWake": false
+}`
 
 **Relationships:**
 
@@ -710,7 +979,10 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseRequirement](pulse_runtime_lib.md#cpulsecell_baserequirement)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_IsRequirementValid",
+	"m_nEditorNodeID": -1
+}`
 
 **Relationships:**
 
@@ -732,7 +1004,11 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseRequirement](pulse_runtime_lib.md#cpulsecell_baserequirement)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Skip this node after the limit. Check Type does not apply, the limit will always be checked.`, `MPropertyFriendlyName Limit Count`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_LimitCount",
+	"m_nEditorNodeID": -1,
+	"m_nLimitCount": 1
+}`, `MPropertyDescription Skip this node after the limit. Check Type does not apply, the limit will always be checked.`, `MPropertyFriendlyName Limit Count`
 
 **Relationships:**
 
@@ -758,7 +1034,9 @@ classDiagram
 
 ### CPulseCell_LimitCount::InstanceState_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nCurrentCount": 0
+}`
 
 **Fields:**
 
@@ -770,7 +1048,13 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseFlow](pulse_runtime_lib.md#cpulsecell_baseflow)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Outflow_CycleOrdered",
+	"m_nEditorNodeID": -1,
+	"m_Outputs":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -789,7 +1073,9 @@ classDiagram
 
 ### CPulseCell_Outflow_CycleOrdered::InstanceState_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nNextIndex": 0
+}`
 
 **Fields:**
 
@@ -801,7 +1087,13 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseFlow](pulse_runtime_lib.md#cpulsecell_baseflow)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Outflow_CycleRandom",
+	"m_nEditorNodeID": -1,
+	"m_Outputs":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -822,7 +1114,13 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseFlow](pulse_runtime_lib.md#cpulsecell_baseflow)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Outflow_CycleShuffled",
+	"m_nEditorNodeID": -1,
+	"m_Outputs":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -841,7 +1139,12 @@ classDiagram
 
 ### CPulseCell_Outflow_CycleShuffled::InstanceState_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Shuffle":
+	[
+	],
+	"m_nNextShuffle": 0
+}`
 
 **Fields:**
 
@@ -854,7 +1157,17 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseFlow](pulse_runtime_lib.md#cpulsecell_baseflow)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Evaluate the requirements of each connected node`, `MPropertyFriendlyName Select Best Exit`, `MPulseEditorCanvasItemSpecKV3`, `MPulseEditorHeaderIcon`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_PickBestOutflowSelector",
+	"m_nEditorNodeID": -1,
+	"m_nCheckType": "SORT_BY_NUMBER_OF_VALID_CRITERIA",
+	"m_OutflowList":
+	{
+		"m_Outflows":
+		[
+		]
+	}
+}`, `MPropertyDescription Evaluate the requirements of each connected node`, `MPropertyFriendlyName Select Best Exit`, `MPulseEditorCanvasItemSpecKV3 { className='IsControlFlowNode AllOutflowsInSpecialSection IsSelectorNode' create_special_outflows_section=true }`, `MPulseEditorHeaderIcon tools/images/pulse_editor/requirements.png`
 
 **Relationships:**
 
@@ -877,7 +1190,34 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseYieldingInflow](pulse_runtime_lib.md#cpulsecell_baseyieldinginflow)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Step_CallExternalMethod",
+	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_MethodName": "",
+	"m_nBlackboardIndex": -1,
+	"m_ExpectedArgs":
+	[
+	],
+	"m_nAsyncCallMode": "ASYNC_FIRE_AND_FORGET",
+	"m_OnFinished":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	}
+}`
 
 **Relationships:**
 
@@ -906,7 +1246,10 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseFlow](pulse_runtime_lib.md#cpulsecell_baseflow)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Step_DebugLog",
+	"m_nEditorNodeID": -1
+}`
 
 **Relationships:**
 
@@ -920,7 +1263,11 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseFlow](pulse_runtime_lib.md#cpulsecell_baseflow)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Step_PublicOutput",
+	"m_nEditorNodeID": -1,
+	"m_OutputIndex": -1
+}`
 
 **Relationships:**
 
@@ -941,7 +1288,32 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseYieldingInflow](pulse_runtime_lib.md#cpulsecell_baseyieldinginflow)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Timeline",
+	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_TimelineEvents":
+	[
+	],
+	"m_bWaitForChildOutflows": true,
+	"m_OnFinished":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	}
+}`
 
 **Relationships:**
 
@@ -963,7 +1335,15 @@ classDiagram
 
 ### CPulseCell_Timeline::TimelineEvent_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flTimeFromPrevious": 0.000000,
+	"m_EventOutflow":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	}
+}`
 
 **Relationships:**
 
@@ -1000,7 +1380,29 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseValue](pulse_runtime_lib.md#cpulsecell_basevalue)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Curve`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Value_Curve",
+	"m_nEditorNodeID": -1,
+	"m_Curve":
+	{
+		"m_spline":
+		[
+		],
+		"m_tangents":
+		[
+		],
+		"m_vDomainMins":
+		[
+			0.000000,
+			0.000000
+		],
+		"m_vDomainMaxs":
+		[
+			0.000000,
+			0.000000
+		]
+	}
+}`, `MPropertyFriendlyName Curve`
 
 **Relationships:**
 
@@ -1020,7 +1422,16 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseValue](pulse_runtime_lib.md#cpulsecell_basevalue)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Gradient`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Value_Gradient",
+	"m_nEditorNodeID": -1,
+	"m_Gradient":
+	{
+		"m_Stops":
+		[
+		]
+	}
+}`, `MPropertyFriendlyName Gradient`
 
 **Relationships:**
 
@@ -1040,7 +1451,10 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseValue](pulse_runtime_lib.md#cpulsecell_basevalue)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Generate a random float between min and max (inclusive)`, `MPropertyFriendlyName Random Float`, `MPulseEditorHeaderIcon`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Value_RandomFloat",
+	"m_nEditorNodeID": -1
+}`, `MPropertyDescription Generate a random float between min and max (inclusive)`, `MPropertyFriendlyName Random Float`, `MPulseEditorHeaderIcon tools/images/pulse_editor/exit_cycle_random.png`
 
 **Relationships:**
 
@@ -1054,7 +1468,10 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseValue](pulse_runtime_lib.md#cpulsecell_basevalue)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Generate a random integer between min and max (inclusive)`, `MPropertyFriendlyName Random Integer`, `MPulseEditorHeaderIcon`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Value_RandomInt",
+	"m_nEditorNodeID": -1
+}`, `MPropertyDescription Generate a random integer between min and max (inclusive)`, `MPropertyFriendlyName Random Integer`, `MPulseEditorHeaderIcon tools/images/pulse_editor/exit_cycle_random.png`
 
 **Relationships:**
 
@@ -1068,7 +1485,31 @@ classDiagram
 
 **Inherits from:** [CPulseCell_WaitForCursorsWithTagBase](pulse_runtime_lib.md#cpulsecell_waitforcursorswithtagbase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Causes this execution cursor to wait for the completion of other cursors with the given tag. Can optionally kill the tag while waiting.`, `MPropertyFriendlyName Wait For Cursors With Tag`, `MPulseEditorHeaderIcon`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_WaitForCursorsWithTag",
+	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_nCursorsAllowedToWait": -1,
+	"m_WaitComplete":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_bTagSelfWhenComplete": false,
+	"m_nDesiredKillPriority": "None"
+}`, `MPropertyDescription Causes this execution cursor to wait for the completion of other cursors with the given tag. Can optionally kill the tag while waiting.`, `MPropertyFriendlyName Wait For Cursors With Tag`, `MPulseEditorHeaderIcon tools/images/pulse_editor/cursor_tag.png`
 
 **Relationships:**
 
@@ -1094,7 +1535,29 @@ classDiagram
 
 **Derived by:** [CPulseCell_CursorQueue](pulse_runtime_lib.md#cpulsecell_cursorqueue), [CPulseCell_WaitForCursorsWithTag](pulse_runtime_lib.md#cpulsecell_waitforcursorswithtag)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPulseEditorCanvasItemSpecKV3`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_WaitForCursorsWithTagBase",
+	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_nCursorsAllowedToWait": -1,
+	"m_WaitComplete":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	}
+}`, `MPulseEditorCanvasItemSpecKV3 { className = 'IsControlFlowNode' }`
 
 **Relationships:**
 
@@ -1119,7 +1582,43 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseYieldingInflow](pulse_runtime_lib.md#cpulsecell_baseyieldinginflow)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription All values connected to this node must be 'observable'. Variables on this graph will be automatically promoted to observable. Other value nodes must take an explicit context, look for those nodes with a corresponding icon.`, `MPropertyFriendlyName Wait Until`, `MPulseEditorHeaderIcon`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_WaitForObservable",
+	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_Condition":
+	{
+		"m_EvaluateConnection":
+		{
+			"m_SourceOutflowName": "",
+			"m_nDestChunk": -1,
+			"m_nInstruction": -1
+		},
+		"m_DependentObservableVars":
+		[
+		],
+		"m_DependentObservableBlackboardReferences":
+		[
+		]
+	},
+	"m_OnTrue":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	}
+}`, `MPropertyDescription All values connected to this node must be 'observable'. Variables on this graph will be automatically promoted to observable. Other value nodes must take an explicit context, look for those nodes with a corresponding icon.`, `MPropertyFriendlyName Wait Until`, `MPulseEditorHeaderIcon tools/images/pulse_editor/observable_variable_listener.png`
 
 **Relationships:**
 
@@ -1161,7 +1660,42 @@ classDiagram
 
 ### CPulseGraphDef
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_DomainIdentifier": "",
+	"m_DomainSubType": "PVAL_VOID",
+	"m_ParentMapName": "",
+	"m_ParentXmlName": "",
+	"m_Chunks":
+	[
+	],
+	"m_Cells":
+	[
+	],
+	"m_Vars":
+	[
+	],
+	"m_PublicOutputs":
+	[
+	],
+	"m_InvokeBindings":
+	[
+	],
+	"m_CallInfos":
+	[
+	],
+	"m_Constants":
+	[
+	],
+	"m_DomainValues":
+	[
+	],
+	"m_BlackboardReferences":
+	[
+	],
+	"m_OutputConnections":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1200,7 +1734,19 @@ classDiagram
 
 ### CPulseGraphExecutionHistory
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nInstanceID": 0,
+	"m_strFileName": "",
+	"m_vecHistory":
+	[
+	],
+	"m_mapCellDesc":
+	{
+	},
+	"m_mapCursorDesc":
+	{
+	}
+}`
 
 **Relationships:**
 
@@ -1230,7 +1776,11 @@ classDiagram
 
 ### CPulseRuntimeMethodArg
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Name": "",
+	"m_Description": "",
+	"m_Type": "PVAL_VOID"
+}`
 
 **Fields:**
 
@@ -1250,7 +1800,12 @@ classDiagram
 
 ### CPulse_BlackboardReference
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_hBlackboardResource": "",
+	"m_BlackboardResource": "",
+	"m_nNodeID": -1,
+	"m_NodeName": ""
+}`
 
 **Relationships:**
 
@@ -1271,7 +1826,18 @@ classDiagram
 
 ### CPulse_CallInfo
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_PortName": "",
+	"m_nEditorNodeID": -1,
+	"m_RegisterMap":
+	{
+		"m_Inparams": null,
+		"m_Outparams": null
+	},
+	"m_CallMethodID": -1,
+	"m_nSrcChunk": -1,
+	"m_nSrcInstruction": -1
+}`
 
 **Relationships:**
 
@@ -1295,7 +1861,17 @@ classDiagram
 
 ### CPulse_Chunk
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Instructions":
+	[
+	],
+	"m_Registers":
+	[
+	],
+	"m_InstructionDebugInfos":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1316,7 +1892,10 @@ classDiagram
 
 ### CPulse_Constant
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Type": "PVAL_VOID",
+	"m_Value": null
+}`
 
 **Fields:**
 
@@ -1327,7 +1906,11 @@ classDiagram
 
 ### CPulse_DomainValue
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nType": "INVALID",
+	"m_Value": "",
+	"m_RequiredRuntimeType": "PVAL_VOID"
+}`
 
 **Relationships:**
 
@@ -1346,7 +1929,11 @@ classDiagram
 
 ### CPulse_InstructionDebug
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nFlowNodeID": -1,
+	"m_nValueNodeID": -1,
+	"m_SequencePointName": ""
+}`
 
 **Relationships:**
 
@@ -1365,7 +1952,17 @@ classDiagram
 
 ### CPulse_InvokeBinding
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_RegisterMap":
+	{
+		"m_Inparams": null,
+		"m_Outparams": null
+	},
+	"m_FuncName": "",
+	"m_nCellIndex": -1,
+	"m_nSrcChunk": -1,
+	"m_nSrcInstruction": -1
+}`
 
 **Relationships:**
 
@@ -1411,7 +2008,12 @@ classDiagram
 
 ### CPulse_OutputConnection
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_SourceOutput": "",
+	"m_TargetEntity": "",
+	"m_TargetInput": "",
+	"m_Param": ""
+}`
 
 **Fields:**
 
@@ -1424,7 +2026,13 @@ classDiagram
 
 ### CPulse_PublicOutput
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Name": "",
+	"m_Description": "",
+	"m_Args":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1443,7 +2051,13 @@ classDiagram
 
 ### CPulse_RegisterInfo
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nReg": -1,
+	"m_Type": "PVAL_VOID",
+	"m_OriginName": "",
+	"m_nWrittenByInstruction": -1,
+	"m_nLastReadByInstruction": -1
+}`
 
 **Relationships:**
 
@@ -1478,7 +2092,17 @@ classDiagram
 
 ### CPulse_Variable
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Name": "",
+	"m_Description": "",
+	"m_Type": "PVAL_VOID",
+	"m_DefaultValue": null,
+	"m_nKeysSource": "PRIVATE",
+	"m_bIsPublicBlackboardVariable": false,
+	"m_bIsObservable": false,
+	"m_nEditorNodeID": -1,
+	"m_Metadata": null
+}`
 
 **Relationships:**
 
@@ -1504,7 +2128,21 @@ classDiagram
 
 ### OutflowWithRequirements_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Connection":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_DestinationFlowNodeID": -1,
+	"m_RequirementNodeIDs":
+	[
+	],
+	"m_nCursorStateBlockIndex":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1525,7 +2163,20 @@ classDiagram
 
 ### PGDInstruction_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nCode": "INVALID",
+	"m_nVar": -1,
+	"m_nReg0": -1,
+	"m_nReg1": -1,
+	"m_nReg2": -1,
+	"m_nInvokeBindingIndex": -1,
+	"m_nChunk": -1,
+	"m_nDestInstruction": 0,
+	"m_nCallInfoIndex": -1,
+	"m_nConstIdx": -1,
+	"m_nDomainValueIdx": -1,
+	"m_nBlackboardReferenceIdx": -1
+}`
 
 **Relationships:**
 
@@ -1591,7 +2242,16 @@ classDiagram
 
 ### PulseGraphExecutionHistoryCursorDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"vecAncestorCursorIDs":
+	[
+	],
+	"nSpawnNodeID": -1,
+	"nRetiredAtNodeID": -1,
+	"flLastReferenced": 0.000000,
+	"nLastValidEntryIdx": 0,
+	"bWasAnObservableComputation": false
+}`
 
 **Relationships:**
 
@@ -1614,7 +2274,13 @@ classDiagram
 
 ### PulseGraphExecutionHistoryEntry_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"nCursorID": -1,
+	"nEditorID": -1,
+	"flExecTime": 0.000000,
+	"unFlags": 0,
+	"tagName": ""
+}`
 
 **Relationships:**
 
@@ -1636,7 +2302,10 @@ classDiagram
 
 ### PulseGraphExecutionHistoryNodeDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"strCellDesc": "",
+	"strBindingName": ""
+}`
 
 **Fields:**
 
@@ -1657,7 +2326,11 @@ classDiagram
 
 ### PulseNodeDynamicOutflows_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Outflows":
+	[
+	]
+}`
 
 **Fields:**
 
@@ -1667,7 +2340,15 @@ classDiagram
 
 ### PulseNodeDynamicOutflows_t::DynamicOutflow_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_OutflowID": "",
+	"m_Connection":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	}
+}`
 
 **Relationships:**
 
@@ -1815,7 +2496,11 @@ classDiagram
 
 ### PulseSelectorOutflowList_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Outflows":
+	[
+	]
+}`
 
 **Relationships:**
 

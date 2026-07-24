@@ -236,7 +236,15 @@ classDiagram
 
 **Inherits from:** [CSmartPropParameter](smartprops.md#csmartpropparameter)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Choice`, `MVDataAnonymousNode`, `MVDataOutlinerNameExpr`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropChoice",
+	"m_nElementID": -1,
+	"m_Name": "",
+	"m_DefaultOption": "",
+	"m_Options":
+	[
+	]
+}`, `MPropertyFriendlyName Choice`, `MVDataAnonymousNode`, `MVDataOutlinerNameExpr m_Name`
 
 **Relationships:**
 
@@ -256,7 +264,13 @@ classDiagram
 
 ### CSmartPropChoiceOption
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Name": "",
+	"m_DisplayName": "",
+	"m_VariableValues":
+	[
+	]
+}`
 
 **Fields:**
 
@@ -270,7 +284,18 @@ classDiagram
 
 **Derived by:** [CSmartPropElement_Group](smartprops.md#csmartpropelement_group), [CSmartPropElement_Model](smartprops.md#csmartpropelement_model), [CSmartPropElement_ModelEntity](smartprops.md#csmartpropelement_modelentity), [CSmartPropElement_ModifyState](smartprops.md#csmartpropelement_modifystate), [CSmartPropElement_SmartProp](smartprops.md#csmartpropelement_smartprop)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Smart Prop Element`, `MVDataAnonymousNode`, `MVDataBase`, `MVDataNodeType 1`, `MVDataOutlinerLabelExpr`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropElement",
+	"m_nElementID": -1,
+	"m_bEnabled": true,
+	"m_sLabel": "",
+	"m_SelectionCriteria":
+	[
+	],
+	"m_Modifiers":
+	[
+	]
+}`, `MPropertyFriendlyName Smart Prop Element`, `MVDataAnonymousNode`, `MVDataBase`, `MVDataNodeType 1`, `MVDataOutlinerLabelExpr m_sLabel`
 
 **Relationships:**
 
@@ -289,17 +314,53 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_nElementID` | int32 | `MPropertySuppressField` `MVDataUniqueMonotonicInt` |
-| `m_bEnabled` | CSmartPropAttributeBool | `MPropertyDescription Is this element enabled? If not enabled, this element will not be evaluted and will have no effect on the result.` `MPropertySortPriority` `MVDataEnableKey` |
+| `m_nElementID` | int32 | `MPropertySuppressField` `MVDataUniqueMonotonicInt _editor/next_element_id` |
+| `m_bEnabled` | CSmartPropAttributeBool | `MPropertyDescription Is this element enabled? If not enabled, this element will not be evaluted and will have no effect on the result.` `MPropertySortPriority 10` `MVDataEnableKey` |
 | `m_sLabel` | CUtlString | `MPropertyDescription Optional text that will appear in the outliner to help organize Smart Prop elements and communicate their purpose to other users.` `MPropertyFriendlyName Label` |
-| `m_SelectionCriteria` | CUtlVector< [CSmartPropSelectionCriteria](../schemas/smartprops.md#csmartpropselectioncriteria)* > | `MPropertyFriendlyName Selection Criteria` `MVDataPromoteField` |
-| `m_Modifiers` | CUtlVector< [CSmartPropModifier](../schemas/smartprops.md#csmartpropmodifier)* > | `MPropertyFriendlyName Modifiers` `MVDataPromoteField` |
+| `m_SelectionCriteria` | CUtlVector< [CSmartPropSelectionCriteria](../schemas/smartprops.md#csmartpropselectioncriteria)* > | `MPropertyFriendlyName Selection Criteria` `MVDataPromoteField 2` |
+| `m_Modifiers` | CUtlVector< [CSmartPropModifier](../schemas/smartprops.md#csmartpropmodifier)* > | `MPropertyFriendlyName Modifiers` `MVDataPromoteField 2` |
 
 ### CSmartPropElement_BendDeformer
 
 **Inherits from:** [CSmartPropElement_Deformer](smartprops.md#csmartpropelement_deformer)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Creates a bend deformer that is applied to child elements. The deformation bends the local space x-axis around the local space z-axis. The Angles property can be used to rotate the local axis to change the direction of deformation.`, `MPropertyFriendlyName Bend Deformer`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropElement_BendDeformer",
+	"m_nElementID": -1,
+	"m_bEnabled": true,
+	"m_sLabel": "",
+	"m_SelectionCriteria":
+	[
+	],
+	"m_Modifiers":
+	[
+	],
+	"m_Children":
+	[
+	],
+	"m_bDeformationEnabled": true,
+	"m_vOrigin":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vAngles":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vSize":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_flBendAngle": 0.000000,
+	"m_flBendPoint": 0.000000,
+	"m_flBendRadius": 0.000000
+}`, `MPropertyDescription Creates a bend deformer that is applied to child elements. The deformation bends the local space x-axis around the local space z-axis. The Angles property can be used to rotate the local axis to change the direction of deformation.`, `MPropertyFriendlyName Bend Deformer`
 
 **Relationships:**
 
@@ -343,7 +404,45 @@ classDiagram
 
 **Inherits from:** [CSmartPropElement_Group](smartprops.md#csmartpropelement_group)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription An element which fits one or more instances of a set of choices on to a line.`, `MPropertyFriendlyName Fit on Line`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropElement_FitOnLine",
+	"m_nElementID": -1,
+	"m_bEnabled": true,
+	"m_sLabel": "",
+	"m_SelectionCriteria":
+	[
+	],
+	"m_Modifiers":
+	[
+	],
+	"m_Children":
+	[
+	],
+	"m_vStart":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vEnd":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_PointSpace": "ELEMENT",
+	"m_bOrientAlongLine": false,
+	"m_vUpDirection":
+	[
+		0.000000,
+		0.000000,
+		1.000000
+	],
+	"m_UpDirectionSpace": "ELEMENT",
+	"m_bPrioritizeUp": false,
+	"m_nScaleMode": "NONE",
+	"m_nPickMode": "LARGEST_FIRST"
+}`, `MPropertyDescription An element which fits one or more instances of a set of choices on to a line.`, `MPropertyFriendlyName Fit on Line`
 
 **Relationships:**
 
@@ -376,7 +475,21 @@ classDiagram
 
 **Derived by:** [CSmartPropElement_Deformer](smartprops.md#csmartpropelement_deformer), [CSmartPropElement_FitOnLine](smartprops.md#csmartpropelement_fitonline), [CSmartPropElement_Layout2DGrid](smartprops.md#csmartpropelement_layout2dgrid), [CSmartPropElement_PickOne](smartprops.md#csmartpropelement_pickone), [CSmartPropElement_PlaceInSphere](smartprops.md#csmartpropelement_placeinsphere), [CSmartPropElement_PlaceMultiple](smartprops.md#csmartpropelement_placemultiple), [CSmartPropElement_PlaceOnPath](smartprops.md#csmartpropelement_placeonpath)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription A group of elements that will all be evaulated.`, `MPropertyFriendlyName Group`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropElement_Group",
+	"m_nElementID": -1,
+	"m_bEnabled": true,
+	"m_sLabel": "",
+	"m_SelectionCriteria":
+	[
+	],
+	"m_Modifiers":
+	[
+	],
+	"m_Children":
+	[
+	]
+}`, `MPropertyDescription A group of elements that will all be evaulated.`, `MPropertyFriendlyName Group`
 
 **Relationships:**
 
@@ -397,13 +510,39 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_Children` | CUtlVector< [CSmartPropElement](../schemas/smartprops.md#csmartpropelement)* > | `MPropertyDescription List of child elements which will appear if this element appears` `MPropertyFriendlyName Children` `MVDataPromoteField` |
+| `m_Children` | CUtlVector< [CSmartPropElement](../schemas/smartprops.md#csmartpropelement)* > | `MPropertyDescription List of child elements which will appear if this element appears` `MPropertyFriendlyName Children` `MVDataPromoteField 1` |
 
 ### CSmartPropElement_Layout2DGrid
 
 **Inherits from:** [CSmartPropElement_Group](smartprops.md#csmartpropelement_group)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Generates set of child instances arranged in a regular grid layout.`, `MPropertyFriendlyName Layout Grid`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropElement_Layout2DGrid",
+	"m_nElementID": -1,
+	"m_bEnabled": true,
+	"m_sLabel": "",
+	"m_SelectionCriteria":
+	[
+	],
+	"m_Modifiers":
+	[
+	],
+	"m_Children":
+	[
+	],
+	"m_flWidth": 100.000000,
+	"m_flLength": 100.000000,
+	"m_bVerticalLength": false,
+	"m_GridArrangement": "SEGMENT",
+	"m_GridOriginMode": "CENTER",
+	"m_nCountW": 5,
+	"m_nCountL": 5,
+	"m_flSpacingWidth": 20.000000,
+	"m_flSpacingLength": 20.000000,
+	"m_bAlternateShift": false,
+	"m_flAlternateShiftWidth": 0.500000,
+	"m_flAlternateShiftLength": 0.000000
+}`, `MPropertyDescription Generates set of child instances arranged in a regular grid layout.`, `MPropertyFriendlyName Layout Grid`
 
 **Relationships:**
 
@@ -424,19 +563,67 @@ classDiagram
 | `m_bVerticalLength` | CSmartPropAttributeBool | `MPropertyDescription Layout length vertically (Along Z axis instead of Y).` |
 | `m_GridArrangement` | [CSmartPropAttributeGridPlacementMode](../schemas/smartprops.md#csmartpropattributegridplacementmode) | `MPropertyDescription ARRAY: Grid is a specific number of grid divisions. FILL: The boundary is filled with as many as will fit at the specified cell spacing.` |
 | `m_GridOriginMode` | [CSmartPropAttributeGridOriginMode](../schemas/smartprops.md#csmartpropattributegridoriginmode) | `MPropertyDescription Specifies the overall grid origin location. Corner origin grids default to quadrant I, but may be expressed in others using negative values for Width and/or Length.` |
-| `m_nCountW` | CSmartPropAttributeInt | `MPropertyAttributeRange 1 64` `MPropertyDescription Grid segments along width axis.` `MPropertySuppressExpr` |
-| `m_nCountL` | CSmartPropAttributeInt | `MPropertyAttributeRange 1 64` `MPropertyDescription Grid segments along Length axis.` `MPropertySuppressExpr` |
-| `m_flSpacingWidth` | CSmartPropAttributeFloat | `MPropertyAttributeRange biased 0 1024` `MPropertyDescription Minimum Width of filled grid cells.` `MPropertySuppressExpr` |
-| `m_flSpacingLength` | CSmartPropAttributeFloat | `MPropertyAttributeRange biased 0 1024` `MPropertyDescription Minimum Length of filled grid cells.` `MPropertySuppressExpr` |
-| `m_bAlternateShift` | CSmartPropAttributeBool | `MPropertyDescription Shifts every other cell row and/or column.` `MPropertySuppressExpr` |
-| `m_flAlternateShiftWidth` | CSmartPropAttributeFloat | `MPropertyAttributeRange biased 0 1024` `MPropertyDescription Vary cell shift in X.` `MPropertySuppressExpr` |
-| `m_flAlternateShiftLength` | CSmartPropAttributeFloat | `MPropertyAttributeRange biased 0 1024` `MPropertyDescription Vary cell shift in Y.` `MPropertySuppressExpr` |
+| `m_nCountW` | CSmartPropAttributeInt | `MPropertyAttributeRange 1 64` `MPropertyDescription Grid segments along width axis.` `MPropertySuppressExpr m_GridArrangement == FILL` |
+| `m_nCountL` | CSmartPropAttributeInt | `MPropertyAttributeRange 1 64` `MPropertyDescription Grid segments along Length axis.` `MPropertySuppressExpr m_GridArrangement == FILL` |
+| `m_flSpacingWidth` | CSmartPropAttributeFloat | `MPropertyAttributeRange biased 0 1024` `MPropertyDescription Minimum Width of filled grid cells.` `MPropertySuppressExpr m_GridArrangement == SEGMENT` |
+| `m_flSpacingLength` | CSmartPropAttributeFloat | `MPropertyAttributeRange biased 0 1024` `MPropertyDescription Minimum Length of filled grid cells.` `MPropertySuppressExpr m_GridArrangement == SEGMENT` |
+| `m_bAlternateShift` | CSmartPropAttributeBool | `MPropertyDescription Shifts every other cell row and/or column.` `MPropertySuppressExpr m_GridArrangement == FILL` |
+| `m_flAlternateShiftWidth` | CSmartPropAttributeFloat | `MPropertyAttributeRange biased 0 1024` `MPropertyDescription Vary cell shift in X.` `MPropertySuppressExpr m_GridArrangement == FILL || m_bAlternateShift == false` |
+| `m_flAlternateShiftLength` | CSmartPropAttributeFloat | `MPropertyAttributeRange biased 0 1024` `MPropertyDescription Vary cell shift in Y.` `MPropertySuppressExpr m_GridArrangement == FILL || m_bAlternateShift == false` |
 
 ### CSmartPropElement_MidpointDeformer
 
 **Inherits from:** [CSmartPropElement_Deformer](smartprops.md#csmartpropelement_deformer)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Soft deform the center of a volume defined by two endpoints.`, `MPropertyFriendlyName Midpoint Deformer`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropElement_MidpointDeformer",
+	"m_nElementID": -1,
+	"m_bEnabled": true,
+	"m_sLabel": "",
+	"m_SelectionCriteria":
+	[
+	],
+	"m_Modifiers":
+	[
+	],
+	"m_Children":
+	[
+	],
+	"m_bDeformationEnabled": true,
+	"m_vStart":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vEnd":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_fRadius": 64.000000,
+	"m_bContinuousSpline": false,
+	"m_vOffset":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vAngles":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vScale":
+	[
+		1.000000,
+		1.000000
+	],
+	"m_fFalloff": 1.000000,
+	"m_OutputVariable": ""
+}`, `MPropertyDescription Soft deform the center of a volume defined by two endpoints.`, `MPropertyFriendlyName Midpoint Deformer`
 
 **Relationships:**
 
@@ -466,7 +653,34 @@ classDiagram
 
 **Inherits from:** [CSmartPropElement](smartprops.md#csmartpropelement)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Places a model as the child of an element.`, `MPropertyFriendlyName Model`, `MVDataOutlinerAssetNameExpr`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropElement_Model",
+	"m_nElementID": -1,
+	"m_bEnabled": true,
+	"m_sLabel": "",
+	"m_SelectionCriteria":
+	[
+	],
+	"m_Modifiers":
+	[
+	],
+	"m_sModelName": "",
+	"m_MaterialGroupName": "",
+	"m_bDetailObject": false,
+	"m_vModelScale":
+	[
+		1.000000,
+		1.000000,
+		1.000000
+	],
+	"m_flUniformModelScale": 1.000000,
+	"m_nLodLevel": -1,
+	"m_SurfacePropertyOverride": "",
+	"m_nDetailObjectFadeLevel": "NORMAL",
+	"m_bCastShadows": true,
+	"m_bRigidDeformation": false,
+	"m_bDisableDynamicDeformable": false
+}`, `MPropertyDescription Places a model as the child of an element.`, `MPropertyFriendlyName Model`, `MVDataOutlinerAssetNameExpr`
 
 **Relationships:**
 
@@ -480,17 +694,17 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sModelName` | CSmartPropAttributeModelName | `MPropertyDescription Name of the model resource (.vmdl) to place.` `MPropertyProvidesEditContextString` |
+| `m_sModelName` | CSmartPropAttributeModelName | `MPropertyDescription Name of the model resource (.vmdl) to place.` `MPropertyProvidesEditContextString ToolEditContext_ID_VMDL` |
 | `m_MaterialGroupName` | CSmartPropAttributeMaterialGroup | `MPropertyDescription Specifies the name of the material group (skin) to use when displaying the specified model.` `MPropertyFriendlyName Material Group` |
 | `m_bDetailObject` | CSmartPropAttributeBool | `MPropertyDescription If enabled the model will be rendered as a detail object, which is faster for placing many small objects and has fade out functionality, but may have different lighting characteristics. Detail object models support only uniform scale and will use the largest component of the scale value.` |
-| `m_vModelScale` | CSmartPropAttributeVector | `MPropertyDescription Scale factor (may be non-uniform) to be applied directly to the model (in the model's local space).` `MPropertySuppressExpr` |
-| `m_flUniformModelScale` | CSmartPropAttributeFloat | `MPropertyDescription Uniform scale to be applied to the model, certain properties like detail object mean only uniform scale may be applied to the model.` `MPropertyFriendlyName Model Scale` `MPropertySuppressExpr` |
-| `m_nLodLevel` | CSmartPropAttributeInt | `MPropertyAttributeEditor SmartPropAttributeEditor( LODLevel )` `MPropertyDescription Select model LOD level. The default Auto LOD means the lod will be picked based on the size of the model on screen. If a specific level is selected, then that lod level will always be used regardless of the size of the model on screen.` `MPropertySuppressExpr` |
-| `m_SurfacePropertyOverride` | CSmartPropAttributeSurfaceProperty | `MPropertyDescription If non-empty, specifies the name of a surface property to use for all physics shapes of the specified model, overriding any surface properties specified within the model.` `MPropertyFriendlyName Override Surface Property` `MPropertySuppressExpr` |
-| `m_nDetailObjectFadeLevel` | [SmartPropDetailFadeLevel_t](../schemas/!GlobalTypes.md#smartpropdetailfadelevel_t) | `MPropertyDescription Controls the size at which a model marked as a detail object will fade out.` `MPropertyFriendlyName Fade Level` `MPropertySuppressExpr` |
+| `m_vModelScale` | CSmartPropAttributeVector | `MPropertyDescription Scale factor (may be non-uniform) to be applied directly to the model (in the model's local space).` `MPropertySuppressExpr m_bDetailObject == true` |
+| `m_flUniformModelScale` | CSmartPropAttributeFloat | `MPropertyDescription Uniform scale to be applied to the model, certain properties like detail object mean only uniform scale may be applied to the model.` `MPropertyFriendlyName Model Scale` `MPropertySuppressExpr m_bDetailObject == false` |
+| `m_nLodLevel` | CSmartPropAttributeInt | `MPropertyAttributeEditor SmartPropAttributeEditor( LODLevel )` `MPropertyDescription Select model LOD level. The default Auto LOD means the lod will be picked based on the size of the model on screen. If a specific level is selected, then that lod level will always be used regardless of the size of the model on screen.` `MPropertySuppressExpr m_bDetailObject == true` |
+| `m_SurfacePropertyOverride` | CSmartPropAttributeSurfaceProperty | `MPropertyDescription If non-empty, specifies the name of a surface property to use for all physics shapes of the specified model, overriding any surface properties specified within the model.` `MPropertyFriendlyName Override Surface Property` `MPropertySuppressExpr m_bDetailObject == true` |
+| `m_nDetailObjectFadeLevel` | [SmartPropDetailFadeLevel_t](../schemas/!GlobalTypes.md#smartpropdetailfadelevel_t) | `MPropertyDescription Controls the size at which a model marked as a detail object will fade out.` `MPropertyFriendlyName Fade Level` `MPropertySuppressExpr m_bDetailObject == false` |
 | `m_bCastShadows` | CSmartPropAttributeBool | `MPropertyDescription Should the model cast shadows.` `MPropertyFriendlyName Cast Shadows` |
-| `m_bRigidDeformation` | CSmartPropAttributeBool | `MPropertyDescription If enabled, only the transform of the model will be modified by any active deformer, the vertices of the model will not be changed by the deformer.` `MPropertyFriendlyName Rigid Deformation Only` `MPropertySuppressExpr` |
-| `m_bDisableDynamicDeformable` | CSmartPropAttributeBool | `MPropertyDescription If checked, this model will not deform in game when the smart prop is placed inside a dynamic deformable entity (such as func_deformable_brush).` `MPropertyFriendlyName Disable Dynamic Deformable` `MPropertySuppressExpr` |
+| `m_bRigidDeformation` | CSmartPropAttributeBool | `MPropertyDescription If enabled, only the transform of the model will be modified by any active deformer, the vertices of the model will not be changed by the deformer.` `MPropertyFriendlyName Rigid Deformation Only` `MPropertySuppressExpr m_bDetailObject == true` |
+| `m_bDisableDynamicDeformable` | CSmartPropAttributeBool | `MPropertyDescription If checked, this model will not deform in game when the smart prop is placed inside a dynamic deformable entity (such as func_deformable_brush).` `MPropertyFriendlyName Disable Dynamic Deformable` `MPropertySuppressExpr m_bDetailObject == true` |
 
 ### CSmartPropElement_ModelEntity
 
@@ -515,18 +729,29 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sModelName` | CSmartPropAttributeModelName | `MPropertyDescription Name of the model resource (.vmdl) to place.` `MPropertyProvidesEditContextString` |
+| `m_sModelName` | CSmartPropAttributeModelName | `MPropertyDescription Name of the model resource (.vmdl) to place.` `MPropertyProvidesEditContextString ToolEditContext_ID_VMDL` |
 | `m_MaterialGroupName` | CSmartPropAttributeMaterialGroup | `MPropertyDescription Specifies the name of the material group (skin) to use when displaying the specified model.` `MPropertyFriendlyName Material Group` |
 | `m_bCastShadows` | CSmartPropAttributeBool | `MPropertyDescription Should the entity created by this element cast shadows.` `MPropertyFriendlyName Cast Shadows` |
 | `m_bForceStatic` | CSmartPropAttributeBool | `MPropertyDescription Force this model to be placed as a static model rather then generating an entity.` `MPropertyFriendlyName Force Static` |
-| `m_nDeformableAttachmentMode` | [SmartPropDeformableAttachMode_t](../schemas/!GlobalTypes.md#smartpropdeformableattachmode_t) | `MPropertyDescription If the smart prop is child of a deformable entity, this setting specifies how the entity generated by this element will be attached to the deformable surface.` `MPropertyFriendlyName Attachment Mode` `MPropertyGroupName Deformable Entity Settings` `MPropertySortPriority` `MPropertySuppressExpr` |
-| `m_nDeformableOrientationMode` | [SmartPropDeformableOrientMode_t](../schemas/!GlobalTypes.md#smartpropdeformableorientmode_t) | `MPropertyDescription If the smart prop is child of a deformable entity, this setting specifies how the entity generated by this element will be oriented relative to the deformable surface.` `MPropertyGroupName Deformable Entity Settings` `MPropertySortPriority` `MPropertySuppressExpr` |
+| `m_nDeformableAttachmentMode` | [SmartPropDeformableAttachMode_t](../schemas/!GlobalTypes.md#smartpropdeformableattachmode_t) | `MPropertyDescription If the smart prop is child of a deformable entity, this setting specifies how the entity generated by this element will be attached to the deformable surface.` `MPropertyFriendlyName Attachment Mode` `MPropertyGroupName Deformable Entity Settings` `MPropertySortPriority -1` `MPropertySuppressExpr m_bForceStatic == true` |
+| `m_nDeformableOrientationMode` | [SmartPropDeformableOrientMode_t](../schemas/!GlobalTypes.md#smartpropdeformableorientmode_t) | `MPropertyDescription If the smart prop is child of a deformable entity, this setting specifies how the entity generated by this element will be oriented relative to the deformable surface.` `MPropertyGroupName Deformable Entity Settings` `MPropertySortPriority -1` `MPropertySuppressExpr m_bForceStatic == true` |
 
 ### CSmartPropElement_ModifyState
 
 **Inherits from:** [CSmartPropElement](smartprops.md#csmartpropelement)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription An element which is used to apply a set of modifiers to the state of its parent.`, `MPropertyFriendlyName Apply Modifiers`, `MPropertySuppressBaseClassField`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropElement_ModifyState",
+	"m_nElementID": -1,
+	"m_bEnabled": true,
+	"m_sLabel": "",
+	"m_SelectionCriteria":
+	[
+	],
+	"m_Modifiers":
+	[
+	]
+}`, `MPropertyDescription An element which is used to apply a set of modifiers to the state of its parent.`, `MPropertyFriendlyName Apply Modifiers`, `MPropertySuppressBaseClassField m_bRestoreState`
 
 **Relationships:**
 
@@ -539,7 +764,39 @@ classDiagram
 
 **Inherits from:** [CSmartPropElement_Group](smartprops.md#csmartpropelement_group)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription An element which selects a single choice from its set of child choices.`, `MPropertyFriendlyName Select Single Child`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropElement_PickOne",
+	"m_nElementID": -1,
+	"m_bEnabled": true,
+	"m_sLabel": "",
+	"m_SelectionCriteria":
+	[
+	],
+	"m_Modifiers":
+	[
+	],
+	"m_Children":
+	[
+	],
+	"m_SelectionMode": "RANDOM",
+	"m_SpecificChildIndex": 0,
+	"m_OutputChoiceVariableName": "",
+	"m_bConfigurable": true,
+	"m_vHandleOffset":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_HandleColor":
+	[
+		144,
+		144,
+		144
+	],
+	"m_HandleSize": 9,
+	"m_HandleShape": "SQUARE"
+}`, `MPropertyDescription An element which selects a single choice from its set of child choices.`, `MPropertyFriendlyName Select Single Child`
 
 **Relationships:**
 
@@ -556,19 +813,53 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_SelectionMode` | [CSmartPropAttributeChoiceSelectionMode](../schemas/smartprops.md#csmartpropattributechoiceselectionmode) | `MPropertyDescription Specifies how the initial selection of a choice should be handled.` |
-| `m_SpecificChildIndex` | CSmartPropAttributeInt | `MPropertyDescription Specifies the index of the child to pick.` `MPropertyFriendlyName Specific Child` `MPropertySuppressExpr` |
+| `m_SpecificChildIndex` | CSmartPropAttributeInt | `MPropertyDescription Specifies the index of the child to pick.` `MPropertyFriendlyName Specific Child` `MPropertySuppressExpr ( m_SelectionMode != SPECIFIC )` |
 | `m_OutputChoiceVariableName` | CUtlString | `MPropertyAttributeEditor SmartPropItemNameEditor( Variable:Integer )` `MPropertyDescription If a variable name is specified, sets the value of that variable to the index of the selected choice` `MPropertyFriendlyName Choice Output Variable` |
 | `m_bConfigurable` | CSmartPropAttributeBool | `MPropertyDescription Should a control to select the specific choice be shown when this prop is placed in Hammer.` |
-| `m_vHandleOffset` | CSmartPropAttributeVector | `MPropertyDescription Specifies an offset in the local space of the element to apply to the configuration handle.` `MPropertyGroupName Handle Settings` `MPropertyReadonlyExpr` |
-| `m_HandleColor` | CSmartPropAttributeColor | `MPropertyDescription Color to use to display the configuration handle.` `MPropertyGroupName Handle Settings` `MPropertyReadonlyExpr` |
-| `m_HandleSize` | CSmartPropAttributeInt | `MPropertyDescription Size of the configuration handle.` `MPropertyGroupName Handle Settings` `MPropertyReadonlyExpr` |
-| `m_HandleShape` | [ConfigurationHandleShape_t](../schemas/!GlobalTypes.md#configurationhandleshape_t) | `MPropertyDescription Shape of the configuration handle to display.` `MPropertyGroupName Handle Settings` `MPropertyReadonlyExpr` |
+| `m_vHandleOffset` | CSmartPropAttributeVector | `MPropertyDescription Specifies an offset in the local space of the element to apply to the configuration handle.` `MPropertyGroupName Handle Settings` `MPropertyReadonlyExpr m_bConfigurable == false` |
+| `m_HandleColor` | CSmartPropAttributeColor | `MPropertyDescription Color to use to display the configuration handle.` `MPropertyGroupName Handle Settings` `MPropertyReadonlyExpr m_bConfigurable == false` |
+| `m_HandleSize` | CSmartPropAttributeInt | `MPropertyDescription Size of the configuration handle.` `MPropertyGroupName Handle Settings` `MPropertyReadonlyExpr m_bConfigurable == false` |
+| `m_HandleShape` | [ConfigurationHandleShape_t](../schemas/!GlobalTypes.md#configurationhandleshape_t) | `MPropertyDescription Shape of the configuration handle to display.` `MPropertyGroupName Handle Settings` `MPropertyReadonlyExpr m_bConfigurable == false` |
 
 ### CSmartPropElement_PlaceInSphere
 
 **Inherits from:** [CSmartPropElement_Group](smartprops.md#csmartpropelement_group)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription An element which places multiple instances of its child elements within a radius.`, `MPropertyFriendlyName Place In Radius`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropElement_PlaceInSphere",
+	"m_nElementID": -1,
+	"m_bEnabled": true,
+	"m_sLabel": "",
+	"m_SelectionCriteria":
+	[
+	],
+	"m_Modifiers":
+	[
+	],
+	"m_Children":
+	[
+	],
+	"m_PlacementMode": "SPHERE",
+	"m_DistributionMode": "RANDOM",
+	"m_flRandomness": 0.000000,
+	"m_vPlaneUpDirection":
+	[
+		0.000000,
+		0.000000,
+		1.000000
+	],
+	"m_nCountMin": 1,
+	"m_nCountMax": 1,
+	"m_flPositionRadiusInner": 0.000000,
+	"m_flPositionRadiusOuter": 0.000000,
+	"m_bAlignOrientation": false,
+	"m_vAlignDirection":
+	[
+		0.000000,
+		0.000000,
+		1.000000
+	]
+}`, `MPropertyDescription An element which places multiple instances of its child elements within a radius.`, `MPropertyFriendlyName Place In Radius`
 
 **Relationships:**
 
@@ -586,20 +877,36 @@ classDiagram
 |------|------|-------------|
 | `m_PlacementMode` | [CSmartPropAttributeRadiusPlacementMode](../schemas/smartprops.md#csmartpropattributeradiusplacementmode) | `MPropertyDescription Specifies how the positions are computed based on the radius.` |
 | `m_DistributionMode` | [CSmartPropAttributeDistributionMode](../schemas/smartprops.md#csmartpropattributedistributionmode) | `MPropertyDescription Specifies the method to be used to distribute.` |
-| `m_flRandomness` | CSmartPropAttributeFloat | `MPropertyDescription 0 to 1 value indicating the amout of random offset that should be applied to the reguluarly spaced positions` `MPropertySuppressExpr` |
-| `m_vPlaneUpDirection` | CSmartPropAttributeVector | `MPropertyDescription Vector up direction of the plane of the circle. This in the local space of the current element.` `MPropertySuppressExpr` |
+| `m_flRandomness` | CSmartPropAttributeFloat | `MPropertyDescription 0 to 1 value indicating the amout of random offset that should be applied to the reguluarly spaced positions` `MPropertySuppressExpr m_DistributionMode == RANDOM` |
+| `m_vPlaneUpDirection` | CSmartPropAttributeVector | `MPropertyDescription Vector up direction of the plane of the circle. This in the local space of the current element.` `MPropertySuppressExpr m_PlacementMode == SPHERE` |
 | `m_nCountMin` | CSmartPropAttributeInt | `MPropertyDescription Minimum number of instances of this object and its children to be placed.` |
 | `m_nCountMax` | CSmartPropAttributeInt | `MPropertyDescription Maximum number of instances of this object and its children to be placed.` |
 | `m_flPositionRadiusInner` | CSmartPropAttributeFloat | `MPropertyDescription Inner radius from the placement position where the model can appear.` |
 | `m_flPositionRadiusOuter` | CSmartPropAttributeFloat | `MPropertyDescription Outer radius from the placement position where the model can appear.` |
 | `m_bAlignOrientation` | CSmartPropAttributeBool | `MPropertyDescription Align the initial orientation of each placed object based on it position on the sphere or circle.` |
-| `m_vAlignDirection` | CSmartPropAttributeVector | `MPropertyDescription Vector in the local space of the child element to be aligned with sphere or circle` `MPropertyReadonlyExpr` |
+| `m_vAlignDirection` | CSmartPropAttributeVector | `MPropertyDescription Vector in the local space of the child element to be aligned with sphere or circle` `MPropertyReadonlyExpr m_bAlignOrientation == false` |
 
 ### CSmartPropElement_PlaceMultiple
 
 **Inherits from:** [CSmartPropElement_Group](smartprops.md#csmartpropelement_group)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription An element which places multiple instances of its child elements.`, `MPropertyFriendlyName Place Multiple`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropElement_PlaceMultiple",
+	"m_nElementID": -1,
+	"m_bEnabled": true,
+	"m_sLabel": "",
+	"m_SelectionCriteria":
+	[
+	],
+	"m_Modifiers":
+	[
+	],
+	"m_Children":
+	[
+	],
+	"m_nCount": 1,
+	"m_Expression": ""
+}`, `MPropertyDescription An element which places multiple instances of its child elements.`, `MPropertyFriendlyName Place Multiple`
 
 **Relationships:**
 
@@ -620,7 +927,23 @@ classDiagram
 
 **Inherits from:** [CSmartPropElement_Deformer](smartprops.md#csmartpropelement_deformer)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Place Children on Mesh Components.`, `MPropertyFriendlyName Place on Mesh`, `MVDataExperimentalNodeSet`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropElement_PlaceOnMesh",
+	"m_nElementID": -1,
+	"m_bEnabled": true,
+	"m_sLabel": "",
+	"m_SelectionCriteria":
+	[
+	],
+	"m_Modifiers":
+	[
+	],
+	"m_Children":
+	[
+	],
+	"m_nPickMode": "FIRST_CLOSED_EDGE",
+	"m_MeshName": ""
+}`, `MPropertyDescription Place Children on Mesh Components.`, `MPropertyFriendlyName Place on Mesh`, `MVDataExperimentalNodeSet`
 
 **Relationships:**
 
@@ -643,7 +966,43 @@ classDiagram
 
 **Inherits from:** [CSmartPropElement_Group](smartprops.md#csmartpropelement_group)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription An element which places an instance of its child elements at a specified interval along a path.`, `MPropertyFriendlyName Place on Path`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropElement_PlaceOnPath",
+	"m_nElementID": -1,
+	"m_bEnabled": true,
+	"m_sLabel": "",
+	"m_SelectionCriteria":
+	[
+	],
+	"m_Modifiers":
+	[
+	],
+	"m_Children":
+	[
+	],
+	"m_PathName": "",
+	"m_flSpacing": 1.000000,
+	"m_flOffsetAlongPath": 0.000000,
+	"m_vPathOffset":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_PathSpace": "WORLD",
+	"m_bUseFixedUpDirection": false,
+	"m_bUseProjectedDistance": false,
+	"m_vUpDirection":
+	[
+		0.000000,
+		0.000000,
+		1.000000
+	],
+	"m_UpDirectionSpace": "WORLD",
+	"m_DefaultPathInWorldSpace": false,
+	"m_DefaultPath":
+	[
+	]
+}`, `MPropertyDescription An element which places an instance of its child elements at a specified interval along a path.`, `MPropertyFriendlyName Place on Path`
 
 **Relationships:**
 
@@ -674,7 +1033,24 @@ classDiagram
 
 **Inherits from:** [CSmartPropElement_ModelEntity](smartprops.md#csmartpropelement_modelentity)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Places a prop dynamic entity.`, `MPropertyFriendlyName Prop Dynamic`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropElement_PropDynamic",
+	"m_nElementID": -1,
+	"m_bEnabled": true,
+	"m_sLabel": "",
+	"m_SelectionCriteria":
+	[
+	],
+	"m_Modifiers":
+	[
+	],
+	"m_sModelName": "",
+	"m_MaterialGroupName": "",
+	"m_bCastShadows": true,
+	"m_bForceStatic": false,
+	"m_nDeformableAttachmentMode": "RELATIVE",
+	"m_nDeformableOrientationMode": "MAINTAIN_OFFSET"
+}`, `MPropertyDescription Places a prop dynamic entity.`, `MPropertyFriendlyName Prop Dynamic`
 
 **Relationships:**
 
@@ -688,7 +1064,25 @@ classDiagram
 
 **Inherits from:** [CSmartPropElement_ModelEntity](smartprops.md#csmartpropelement_modelentity)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Places a prop physics entity.`, `MPropertyFriendlyName Prop Physics`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropElement_PropPhysics",
+	"m_nElementID": -1,
+	"m_bEnabled": true,
+	"m_sLabel": "",
+	"m_SelectionCriteria":
+	[
+	],
+	"m_Modifiers":
+	[
+	],
+	"m_sModelName": "",
+	"m_MaterialGroupName": "",
+	"m_bCastShadows": true,
+	"m_bForceStatic": false,
+	"m_nDeformableAttachmentMode": "RELATIVE",
+	"m_nDeformableOrientationMode": "MAINTAIN_OFFSET",
+	"m_bStartAsleep": false
+}`, `MPropertyDescription Places a prop physics entity.`, `MPropertyFriendlyName Prop Physics`
 
 **Relationships:**
 
@@ -708,7 +1102,20 @@ classDiagram
 
 **Inherits from:** [CSmartPropElement](smartprops.md#csmartpropelement)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Evaluates a specified smart prop as a child of the current element.`, `MPropertyFriendlyName Smart Prop Reference`, `MVDataOutlinerAssetNameExpr`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropElement_SmartProp",
+	"m_nElementID": -1,
+	"m_bEnabled": true,
+	"m_sLabel": "",
+	"m_SelectionCriteria":
+	[
+	],
+	"m_Modifiers":
+	[
+	],
+	"m_sSmartProp": "",
+	"m_bLocalEvaluationState": true
+}`, `MPropertyDescription Evaluates a specified smart prop as a child of the current element.`, `MPropertyFriendlyName Smart Prop Reference`, `MVDataOutlinerAssetNameExpr`
 
 **Relationships:**
 
@@ -754,7 +1161,11 @@ classDiagram
 
 **Inherits from:** [CSmartPropFilter](smartprops.md#csmartpropfilter)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Evaluates the specified expression, if the result of the expression is false evaluation of the element is stopped.`, `MPropertyFriendlyName Filter: Expression`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropFilter_Expression",
+	"m_bEnabled": true,
+	"m_Expression": ""
+}`, `MPropertyDescription Evaluates the specified expression, if the result of the expression is false evaluation of the element is stopped.`, `MPropertyFriendlyName Filter: Expression`, `MVDataClassGroup Filter`
 
 **Relationships:**
 
@@ -774,7 +1185,16 @@ classDiagram
 
 **Inherits from:** [CSmartPropFilter](smartprops.md#csmartpropfilter)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Allows the parent element to be conditionally evaluated based on attributes assigned to the surface material.`, `MPropertyFriendlyName Filter: Material Attributes`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropFilter_MaterialAttributes",
+	"m_bEnabled": true,
+	"m_AllowedMaterialAttributes":
+	[
+	],
+	"m_DisallowedMaterialAttributes":
+	[
+	]
+}`, `MPropertyDescription Allows the parent element to be conditionally evaluated based on attributes assigned to the surface material.`, `MPropertyFriendlyName Filter: Material Attributes`, `MVDataClassGroup Filter`
 
 **Relationships:**
 
@@ -795,7 +1215,11 @@ classDiagram
 
 **Inherits from:** [CSmartPropFilter](smartprops.md#csmartpropfilter)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Causes the parent element to only be evaluated with a specified random probability.`, `MPropertyFriendlyName Filter: Probability`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropFilter_Probability",
+	"m_bEnabled": true,
+	"m_flProbability": 0.500000
+}`, `MPropertyDescription Causes the parent element to only be evaluated with a specified random probability.`, `MPropertyFriendlyName Filter: Probability`, `MVDataClassGroup Filter`
 
 **Relationships:**
 
@@ -815,7 +1239,12 @@ classDiagram
 
 **Inherits from:** [CSmartPropFilter](smartprops.md#csmartpropfilter)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Allows the parent element to be conditionally evaluated base on the current surface angle. The surface angle is set based on the initial placement of the smart prop object, but can also be updated by the Trace to Surface modifier.`, `MPropertyFriendlyName Filter: Surface Angles`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropFilter_SurfaceAngle",
+	"m_bEnabled": true,
+	"m_flSurfaceSlopeMin": 0.000000,
+	"m_flSurfaceSlopeMax": 180.000000
+}`, `MPropertyDescription Allows the parent element to be conditionally evaluated base on the current surface angle. The surface angle is set based on the initial placement of the smart prop object, but can also be updated by the Trace to Surface modifier.`, `MPropertyFriendlyName Filter: Surface Angles`, `MVDataClassGroup Filter`
 
 **Relationships:**
 
@@ -836,7 +1265,16 @@ classDiagram
 
 **Inherits from:** [CSmartPropFilter](smartprops.md#csmartpropfilter)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Allows the parent element to be conditionally evaluated based on surface properties.`, `MPropertyFriendlyName Filter: Surface Properties`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropFilter_SurfaceProperties",
+	"m_bEnabled": true,
+	"m_AllowedSurfaceProperties":
+	[
+	],
+	"m_DisallowedSurfaceProperties":
+	[
+	]
+}`, `MPropertyDescription Allows the parent element to be conditionally evaluated based on surface properties.`, `MPropertyFriendlyName Filter: Surface Properties`, `MVDataClassGroup Filter`
 
 **Relationships:**
 
@@ -857,7 +1295,16 @@ classDiagram
 
 **Inherits from:** [CSmartPropFilter](smartprops.md#csmartpropfilter)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Compares the current value of a variable to the specified value. If the comparison is false the element evaluation is stopped.`, `MPropertyFriendlyName Filter: Variable Value`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropFilter_VariableValue",
+	"m_bEnabled": true,
+	"m_VariableComparison":
+	{
+		"m_Name": "",
+		"m_Value": null,
+		"m_Comparison": "EQUAL"
+	}
+}`, `MPropertyDescription Compares the current value of a variable to the specified value. If the comparison is false the element evaluation is stopped.`, `MPropertyFriendlyName Filter: Variable Value`, `MVDataClassGroup Filter`
 
 **Relationships:**
 
@@ -875,7 +1322,10 @@ classDiagram
 
 ### CSmartPropMaterialReplacement
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_OriginalMaterial": "",
+	"m_ReplacementMaterial": ""
+}`
 
 **Fields:**
 
@@ -945,7 +1395,23 @@ classDiagram
 
 **Inherits from:** [CSmartPropOperation](smartprops.md#csmartpropoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Compute a dot or cross product between two 3D vectors`, `MPropertyFriendlyName Cross Product`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_ComputeCrossProduct3D",
+	"m_bEnabled": true,
+	"m_OutputVariableName": "",
+	"m_InputVectorA":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_InputVectorB":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`, `MPropertyDescription Compute a dot or cross product between two 3D vectors`, `MPropertyFriendlyName Cross Product`, `MVDataClassGroup Compute`
 
 **Relationships:**
 
@@ -967,7 +1433,26 @@ classDiagram
 
 **Inherits from:** [CSmartPropOperation](smartprops.md#csmartpropoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Compute the distance between two 3D points`, `MPropertyFriendlyName Distance`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_ComputeDistance3D",
+	"m_bEnabled": true,
+	"m_OutputVariableName": "",
+	"m_OutputCoordinateSpace": "WORLD",
+	"m_InputPositionA":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_CoordinateSpaceA": "WORLD",
+	"m_InputPositionB":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_CoordinateSpaceB": "WORLD"
+}`, `MPropertyDescription Compute the distance between two 3D points`, `MPropertyFriendlyName Distance`, `MVDataClassGroup Compute`
 
 **Relationships:**
 
@@ -993,7 +1478,23 @@ classDiagram
 
 **Inherits from:** [CSmartPropOperation](smartprops.md#csmartpropoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Compute a dot or cross product between two 3D vectors`, `MPropertyFriendlyName Dot Product`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_ComputeDotProduct3D",
+	"m_bEnabled": true,
+	"m_OutputVariableName": "",
+	"m_InputVectorA":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_InputVectorB":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`, `MPropertyDescription Compute a dot or cross product between two 3D vectors`, `MPropertyFriendlyName Dot Product`, `MVDataClassGroup Compute`
 
 **Relationships:**
 
@@ -1015,7 +1516,17 @@ classDiagram
 
 **Inherits from:** [CSmartPropOperation](smartprops.md#csmartpropoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Normalize the value of a 3d vector.`, `MPropertyFriendlyName Normalize Vector`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_ComputeNormalizedVector3D",
+	"m_bEnabled": true,
+	"m_OutputVariableName": "",
+	"m_InputVector":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`, `MPropertyDescription Normalize the value of a 3d vector.`, `MPropertyFriendlyName Normalize Vector`, `MVDataClassGroup Compute`
 
 **Relationships:**
 
@@ -1036,7 +1547,27 @@ classDiagram
 
 **Inherits from:** [CSmartPropOperation](smartprops.md#csmartpropoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Project Vector A onto Vector B`, `MPropertyFriendlyName Project Vector`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_ComputeProjectVector3D",
+	"m_bEnabled": true,
+	"m_OutputVariableName": "",
+	"m_OutputCoordinateSpace": "WORLD",
+	"m_InputVectorA":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_CoordinateSpaceA": "WORLD",
+	"m_InputVectorB":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_CoordinateSpaceB": "WORLD",
+	"m_bPlane": false
+}`, `MPropertyDescription Project Vector A onto Vector B`, `MPropertyFriendlyName Project Vector`, `MVDataClassGroup Compute`
 
 **Relationships:**
 
@@ -1063,7 +1594,27 @@ classDiagram
 
 **Inherits from:** [CSmartPropOperation](smartprops.md#csmartpropoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Compute the vector between two 3D points`, `MPropertyFriendlyName Vector Between Points`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_ComputeVectorBetweenPoints3D",
+	"m_bEnabled": true,
+	"m_OutputVariableName": "",
+	"m_OutputCoordinateSpace": "WORLD",
+	"m_bNormalized": false,
+	"m_InputPositionA":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_CoordinateSpaceA": "WORLD",
+	"m_InputPositionB":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_CoordinateSpaceB": "WORLD"
+}`, `MPropertyDescription Compute the vector between two 3D points`, `MPropertyFriendlyName Vector Between Points`, `MVDataClassGroup Compute`
 
 **Relationships:**
 
@@ -1090,7 +1641,22 @@ classDiagram
 
 **Inherits from:** [CSmartPropTransformOperation](smartprops.md#csmartproptransformoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Create a locator with the current transform. The locator may optionally be configurable, so that its transform can be modified in Hammer.`, `MPropertyFriendlyName Create Locator`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_CreateLocator",
+	"m_bEnabled": true,
+	"m_LocatorName": "",
+	"m_vOffset":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_flDisplayScale": 1.000000,
+	"m_bConfigurable": true,
+	"m_bAllowTranslation": true,
+	"m_bAllowRotation": true,
+	"m_bAllowScale": false
+}`, `MPropertyDescription Create a locator with the current transform. The locator may optionally be configurable, so that its transform can be modified in Hammer.`, `MPropertyFriendlyName Create Locator`, `MVDataClassGroup Manipulators`
 
 **Relationships:**
 
@@ -1109,15 +1675,46 @@ classDiagram
 | `m_vOffset` | CSmartPropAttributeVector | `MPropertyDescription Offset of the locator relative to the current transform. This allows the locator to be created at an offset location without applying that offset to the current transform.` |
 | `m_flDisplayScale` | CSmartPropAttributeFloat | `MPropertyDescription Scale to apply only to the locator model` |
 | `m_bConfigurable` | CSmartPropAttributeBool | `MPropertyDescription Controls whether or not the locator can be edited in a smart prop configuration. If enabled an editable locator will appear when the smart prop is placed in Hammer. Any changes to that locator will modify the current transform.` |
-| `m_bAllowTranslation` | CSmartPropAttributeBool | `MPropertyGroupName Configuration` `MPropertyReadonlyExpr` |
-| `m_bAllowRotation` | CSmartPropAttributeBool | `MPropertyGroupName Configuration` `MPropertyReadonlyExpr` |
-| `m_bAllowScale` | CSmartPropAttributeBool | `MPropertyDescription Controls whether or not the configuration of the locator can include scale. If enabled scale can be applied to the editable locator in Hammer. If disabled the scale will not be editable and the current scale will be used.` `MPropertyGroupName Configuration` `MPropertyReadonlyExpr` |
+| `m_bAllowTranslation` | CSmartPropAttributeBool | `MPropertyGroupName Configuration` `MPropertyReadonlyExpr m_bConfigurable == false` |
+| `m_bAllowRotation` | CSmartPropAttributeBool | `MPropertyGroupName Configuration` `MPropertyReadonlyExpr m_bConfigurable == false` |
+| `m_bAllowScale` | CSmartPropAttributeBool | `MPropertyDescription Controls whether or not the configuration of the locator can include scale. If enabled scale can be applied to the editable locator in Hammer. If disabled the scale will not be editable and the current scale will be used.` `MPropertyGroupName Configuration` `MPropertyReadonlyExpr m_bConfigurable == false` |
 
 ### CSmartPropOperation_CreateRotator
 
 **Inherits from:** [CSmartPropTransformOperation](smartprops.md#csmartproptransformoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Create a rotator that will be displayed at the current location, allowing the user to manipulate a rotation around an axis. The rotation value can be applied to the current transform as well as saved to a variable.`, `MPropertyFriendlyName Create Rotator`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_CreateRotator",
+	"m_bEnabled": true,
+	"m_Name": "",
+	"m_vOffset":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vRotationAxis":
+	[
+		0.000000,
+		0.000000,
+		1.000000
+	],
+	"m_CoordinateSpace": "ELEMENT",
+	"m_flDisplayRadius": 16.000000,
+	"m_DisplayColor":
+	[
+		170,
+		170,
+		110
+	],
+	"m_bApplyToCurrentTransform": true,
+	"m_flSnappingIncrement": 0.000000,
+	"m_flInitialAngle": 0.000000,
+	"m_bEnforceLimits": false,
+	"m_flMinAngle": 0.000000,
+	"m_flMaxAngle": 0.000000,
+	"m_OutputVariable": ""
+}`, `MPropertyDescription Create a rotator that will be displayed at the current location, allowing the user to manipulate a rotation around an axis. The rotation value can be applied to the current transform as well as saved to a variable.`, `MPropertyFriendlyName Create Rotator`, `MVDataClassGroup Manipulators`
 
 **Relationships:**
 
@@ -1143,15 +1740,38 @@ classDiagram
 | `m_flSnappingIncrement` | CSmartPropAttributeFloat | `MPropertyDescription Specifies the number of degrees the rotation should snap to. If set to 0, then the rotation snapping will be controlled by the rotation snapping in Hammer.` |
 | `m_flInitialAngle` | CSmartPropAttributeFloat | `MPropertyDescription Specifies the angle the rotator should be set to initially.` |
 | `m_bEnforceLimits` | CSmartPropAttributeBool | `MPropertyDescription If enabled, the minimum and maximum rotation angles will be used to limit the range of the rotation.` `MPropertyFriendlyName Enforce Limits` |
-| `m_flMinAngle` | CSmartPropAttributeFloat | `MPropertyDescription Specifies the minimum angle limit in degrees` `MPropertyFriendlyName Minimum Angle` `MPropertyReadonlyExpr` |
-| `m_flMaxAngle` | CSmartPropAttributeFloat | `MPropertyDescription Specifies the minimum angle limit in degrees` `MPropertyFriendlyName Maximum Angle` `MPropertyReadonlyExpr` |
+| `m_flMinAngle` | CSmartPropAttributeFloat | `MPropertyDescription Specifies the minimum angle limit in degrees` `MPropertyFriendlyName Minimum Angle` `MPropertyReadonlyExpr m_bEnforceLimits == false` |
+| `m_flMaxAngle` | CSmartPropAttributeFloat | `MPropertyDescription Specifies the minimum angle limit in degrees` `MPropertyFriendlyName Maximum Angle` `MPropertyReadonlyExpr m_bEnforceLimits == false` |
 | `m_OutputVariable` | CUtlString | `MPropertyAttributeEditor SmartPropItemNameEditor( Variable:Float )` `MPropertyDescription Specifies a float variable to which the rotation value should be output. The variable only receives the rotation around the axis, the axis of rotation does not affect this output.` |
 
 ### CSmartPropOperation_CreateSizer
 
 **Inherits from:** [CSmartPropTransformOperation](smartprops.md#csmartproptransformoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Create a sizer that will be displayed at the current location, allowing the user to manipulate the specified set of size values.`, `MPropertyFriendlyName Create Sizer`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_CreateSizer",
+	"m_bEnabled": true,
+	"m_Name": "",
+	"m_bDisplayModel": false,
+	"m_flInitialMinX": 0.000000,
+	"m_flInitialMaxX": 0.000000,
+	"m_flConstraintMinX": 0.000000,
+	"m_flConstraintMaxX": 0.000000,
+	"m_OutputVariableMinX": "",
+	"m_OutputVariableMaxX": "",
+	"m_flInitialMinY": 0.000000,
+	"m_flInitialMaxY": 0.000000,
+	"m_flConstraintMinY": 0.000000,
+	"m_flConstraintMaxY": 0.000000,
+	"m_OutputVariableMinY": "",
+	"m_OutputVariableMaxY": "",
+	"m_flInitialMinZ": 0.000000,
+	"m_flInitialMaxZ": 0.000000,
+	"m_flConstraintMinZ": 0.000000,
+	"m_flConstraintMaxZ": 0.000000,
+	"m_OutputVariableMinZ": "",
+	"m_OutputVariableMaxZ": ""
+}`, `MPropertyDescription Create a sizer that will be displayed at the current location, allowing the user to manipulate the specified set of size values.`, `MPropertyFriendlyName Create Sizer`, `MVDataClassGroup Manipulators`
 
 **Relationships:**
 
@@ -1191,7 +1811,14 @@ classDiagram
 
 **Inherits from:** [CSmartPropOperation](smartprops.md#csmartpropoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Specifies a table of material replacements to apply to all following models. Mapping goes from the material specified by the model (including material group selection) to the replacement material. Previous material overrides are not considered when determining the base material.`, `MPropertyFriendlyName Material Override`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_MaterialOverride",
+	"m_bEnabled": true,
+	"m_bClearCurrentOverrides": false,
+	"m_MaterialReplacements":
+	[
+	]
+}`, `MPropertyDescription Specifies a table of material replacements to apply to all following models. Mapping goes from the material specified by the model (including material group selection) to the replacement material. Previous material overrides are not considered when determining the base material.`, `MPropertyFriendlyName Material Override`, `MVDataClassGroup Material`
 
 **Relationships:**
 
@@ -1215,7 +1842,25 @@ classDiagram
 
 **Inherits from:** [CSmartPropOperation](smartprops.md#csmartpropoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Set a color tint to apply to a specific material.`, `MPropertyFriendlyName Material Color Tint`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_MaterialTint",
+	"m_bEnabled": true,
+	"m_Material": "",
+	"m_SelectionMode": "SPECIFIC_COLOR",
+	"m_Color":
+	[
+		255,
+		255,
+		255
+	],
+	"m_Gradient":
+	{
+		"m_Stops":
+		[
+		]
+	},
+	"m_ColorPosition": 0.000000
+}`, `MPropertyDescription Set a color tint to apply to a specific material.`, `MPropertyFriendlyName Material Color Tint`, `MVDataClassGroup Color`
 
 **Relationships:**
 
@@ -1232,15 +1877,27 @@ classDiagram
 |------|------|-------------|
 | `m_Material` | CSmartPropAttributeMaterialName | `MPropertyAttributeEditor SmartPropAttributeEditor(MaterialInSmartProp)` `MPropertyDescription Material to which color tint is to be applied.` `MPropertyFriendlyName Material` |
 | `m_SelectionMode` | [CSmartPropAttributeColorSelectionMode](../schemas/smartprops.md#csmartpropattributecolorselectionmode) | `MPropertyDescription Specifies how the color is to be specified.` `MPropertyFriendlyName Selection Mode` |
-| `m_Color` | CSmartPropAttributeColor | `MPropertyDescription Color to be applied if this choice is selected.` `MPropertySuppressExpr` |
-| `m_Gradient` | CColorGradient | `MPropertyDescription Defines a color gradient from which a color can be selected based on the selection mode.` `MPropertyFriendlyName Color Gradient` `MPropertySuppressExpr` |
-| `m_ColorPosition` | CSmartPropAttributeFloat | `MPropertyDescription [ 0, 1 ] Value specifying the location on the gradient to pick the color from.` `MPropertyFriendlyName Color Position` `MPropertySuppressExpr` |
+| `m_Color` | CSmartPropAttributeColor | `MPropertyDescription Color to be applied if this choice is selected.` `MPropertySuppressExpr m_SelectionMode != SPECIFIC_COLOR` |
+| `m_Gradient` | CColorGradient | `MPropertyDescription Defines a color gradient from which a color can be selected based on the selection mode.` `MPropertyFriendlyName Color Gradient` `MPropertySuppressExpr m_SelectionMode == SPECIFIC_COLOR` |
+| `m_ColorPosition` | CSmartPropAttributeFloat | `MPropertyDescription [ 0, 1 ] Value specifying the location on the gradient to pick the color from.` `MPropertyFriendlyName Color Position` `MPropertySuppressExpr m_SelectionMode != GRADIENT_LOCATION` |
 
 ### CSmartPropOperation_RandomColorTintColor
 
 **Inherits from:** [CSmartPropOperation](smartprops.md#csmartpropoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Set the color tint to a selection from within the defined gradient.`, `MPropertyFriendlyName Tint Color Gradient`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_RandomColorTintColor",
+	"m_bEnabled": true,
+	"m_SelectionMode": "RANDOM",
+	"m_ColorPosition": 0.000000,
+	"m_Mode": "MULTIPLY_OBJECT",
+	"m_Gradient":
+	{
+		"m_Stops":
+		[
+		]
+	}
+}`, `MPropertyDescription Set the color tint to a selection from within the defined gradient.`, `MPropertyFriendlyName Tint Color Gradient`, `MVDataClassGroup Color`
 
 **Relationships:**
 
@@ -1257,7 +1914,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_SelectionMode` | [CSmartPropAttributeChoiceSelectionMode](../schemas/smartprops.md#csmartpropattributechoiceselectionmode) | `MPropertyDescription Specifies how the color is to be selected from the authored set of choices` `MPropertyFriendlyName Selection Mode` |
-| `m_ColorPosition` | CSmartPropAttributeFloat | `MPropertyDescription [ 0, 1 ] Value specifying the location on the gradient to pick the color from.` `MPropertyFriendlyName Color Position` `MPropertySuppressExpr` |
+| `m_ColorPosition` | CSmartPropAttributeFloat | `MPropertyDescription [ 0, 1 ] Value specifying the location on the gradient to pick the color from.` `MPropertyFriendlyName Color Position` `MPropertySuppressExpr ( m_SelectionMode != SPECIFIC )` |
 | `m_Mode` | [ApplyColorMode_t](../schemas/!GlobalTypes.md#applycolormode_t) | `MPropertyDescription Specifies how the selected color should be applied to the current color.` `MPropertyFriendlyName Application Mode` |
 | `m_Gradient` | CColorGradient | `MPropertyDescription Defines a color gradient from which a random color will be piked.` |
 
@@ -1265,7 +1922,28 @@ classDiagram
 
 **Inherits from:** [CSmartPropTransformOperation](smartprops.md#csmartproptransformoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Apply a random position offset to the current transform.`, `MPropertyFriendlyName Transform: Random Offset`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_RandomOffset",
+	"m_bEnabled": true,
+	"m_vRandomPositionMin":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vRandomPositionMax":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vSnapIncrement":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`, `MPropertyDescription Apply a random position offset to the current transform.`, `MPropertyFriendlyName Transform: Random Offset`, `MVDataClassGroup Transform`
 
 **Relationships:**
 
@@ -1288,7 +1966,28 @@ classDiagram
 
 **Inherits from:** [CSmartPropTransformOperation](smartprops.md#csmartproptransformoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Apply a random rotation to the current transform.`, `MPropertyFriendlyName Transform: Random Rotation`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_RandomRotation",
+	"m_bEnabled": true,
+	"m_vRandomRotationMin":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vRandomRotationMax":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vSnapIncrement":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`, `MPropertyDescription Apply a random rotation to the current transform.`, `MPropertyFriendlyName Transform: Random Rotation`, `MVDataClassGroup Transform`
 
 **Relationships:**
 
@@ -1311,7 +2010,13 @@ classDiagram
 
 **Inherits from:** [CSmartPropTransformOperation](smartprops.md#csmartproptransformoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Apply a random scale to the current transform.`, `MPropertyFriendlyName Transform: Random Scale`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_RandomScale",
+	"m_bEnabled": true,
+	"m_flRandomScaleMin": 1.000000,
+	"m_flRandomScaleMax": 1.000000,
+	"m_flSnapIncrement": 0.000000
+}`, `MPropertyDescription Apply a random scale to the current transform.`, `MPropertyFriendlyName Transform: Random Scale`, `MVDataClassGroup Transform`
 
 **Relationships:**
 
@@ -1334,7 +2039,14 @@ classDiagram
 
 **Inherits from:** [CSmartPropTransformOperation](smartprops.md#csmartproptransformoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Reset the current rotation such the element only inherits the object level rotation, but does not inherit the rotation applied to its parent.`, `MPropertyFriendlyName Transform: Reset Rotation`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_ResetRotation",
+	"m_bEnabled": true,
+	"m_bIgnoreObjectRotation": false,
+	"m_bResetPitch": true,
+	"m_bResetYaw": true,
+	"m_bResetRoll": true
+}`, `MPropertyDescription Reset the current rotation such the element only inherits the object level rotation, but does not inherit the rotation applied to its parent.`, `MPropertyFriendlyName Transform: Reset Rotation`, `MVDataClassGroup Transform`
 
 **Relationships:**
 
@@ -1358,7 +2070,11 @@ classDiagram
 
 **Inherits from:** [CSmartPropTransformOperation](smartprops.md#csmartproptransformoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Reset the current scale such the element only inherits the object level scale, but does not inherit the scale applied to its parent.`, `MPropertyFriendlyName Transform: Reset Scale`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_ResetScale",
+	"m_bEnabled": true,
+	"m_bIgnoreObjectScale": false
+}`, `MPropertyDescription Reset the current scale such the element only inherits the object level scale, but does not inherit the scale applied to its parent.`, `MPropertyFriendlyName Transform: Reset Scale`, `MVDataClassGroup Transform`
 
 **Relationships:**
 
@@ -1379,7 +2095,12 @@ classDiagram
 
 **Inherits from:** [CSmartPropOperation](smartprops.md#csmartpropoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Replace the current state with a previously saved state.`, `MPropertyFriendlyName Restore State`, `MVDataClassGroup`, `MVDataNodeTintColor`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_RestoreState",
+	"m_bEnabled": true,
+	"m_StateName": "",
+	"m_bDiscardIfUknown": false
+}`, `MPropertyDescription Replace the current state with a previously saved state.`, `MPropertyFriendlyName Restore State`, `MVDataClassGroup State`, `MVDataNodeTintColor`
 
 **Relationships:**
 
@@ -1400,7 +2121,10 @@ classDiagram
 
 **Inherits from:** [CSmartPropTransformOperation](smartprops.md#csmartproptransformoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Apply the active deformer to the current transform as a rigid deformation and disable the deformer.`, `MPropertyFriendlyName Transform: Rigid Deformation`, `MVDataClassGroup`, `MVDataComponentRequiresAncestor`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_RigidDeformation",
+	"m_bEnabled": true
+}`, `MPropertyDescription Apply the active deformer to the current transform as a rigid deformation and disable the deformer.`, `MPropertyFriendlyName Transform: Rigid Deformation`, `MVDataClassGroup Transform`, `MVDataComponentRequiresAncestor`
 
 **Relationships:**
 
@@ -1415,7 +2139,16 @@ classDiagram
 
 **Inherits from:** [CSmartPropTransformOperation](smartprops.md#csmartproptransformoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Apply a rotation to the current transform.`, `MPropertyFriendlyName Transform: Rotate`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_Rotate",
+	"m_bEnabled": true,
+	"m_vRotation":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`, `MPropertyDescription Apply a rotation to the current transform.`, `MPropertyFriendlyName Transform: Rotate`, `MVDataClassGroup Transform`
 
 **Relationships:**
 
@@ -1436,7 +2169,32 @@ classDiagram
 
 **Inherits from:** [CSmartPropTransformOperation](smartprops.md#csmartproptransformoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Apply a rotation to the current transform according to the alignment of two points.`, `MPropertyFriendlyName Transform: Rotate Towards`, `MVDataClassGroup`, `MVDataExperimentalNodeSet`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_RotateTowards",
+	"m_bEnabled": true,
+	"m_vOriginPos":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vTargetPos":
+	[
+		1.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vUpPos":
+	[
+		0.000000,
+		0.000000,
+		1.000000
+	],
+	"m_flWeight": 1.000000,
+	"m_OriginSpace": "WORLD",
+	"m_TargetSpace": "WORLD",
+	"m_UpSpace": "WORLD"
+}`, `MPropertyDescription Apply a rotation to the current transform according to the alignment of two points.`, `MPropertyFriendlyName Transform: Rotate Towards`, `MVDataClassGroup Transform`, `MVDataExperimentalNodeSet`
 
 **Relationships:**
 
@@ -1464,7 +2222,11 @@ classDiagram
 
 **Inherits from:** [CSmartPropOperation](smartprops.md#csmartpropoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Save the current color tint value to a specified variable`, `MPropertyFriendlyName Save Current Color`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_SaveColor",
+	"m_bEnabled": true,
+	"m_VariableName": ""
+}`, `MPropertyDescription Save the current color tint value to a specified variable`, `MPropertyFriendlyName Save Current Color`, `MVDataClassGroup State`
 
 **Relationships:**
 
@@ -1484,7 +2246,13 @@ classDiagram
 
 **Inherits from:** [CSmartPropOperation](smartprops.md#csmartpropoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Save the specified direction vector to a specified variable, in the requested coordinate space`, `MPropertyFriendlyName Save Direction Vector`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_SaveDirection",
+	"m_bEnabled": true,
+	"m_DirectionVector": "FORWARD",
+	"m_CoordinateSpace": "WORLD",
+	"m_VariableName": ""
+}`, `MPropertyDescription Save the specified direction vector to a specified variable, in the requested coordinate space`, `MPropertyFriendlyName Save Direction Vector`, `MVDataClassGroup State`
 
 **Relationships:**
 
@@ -1508,7 +2276,12 @@ classDiagram
 
 **Inherits from:** [CSmartPropOperation](smartprops.md#csmartpropoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Save the current position to a specified variable in the requested coordinate space`, `MPropertyFriendlyName Save Current Position`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_SavePosition",
+	"m_bEnabled": true,
+	"m_CoordinateSpace": "WORLD",
+	"m_VariableName": ""
+}`, `MPropertyDescription Save the current position to a specified variable in the requested coordinate space`, `MPropertyFriendlyName Save Current Position`, `MVDataClassGroup State`
 
 **Relationships:**
 
@@ -1530,7 +2303,11 @@ classDiagram
 
 **Inherits from:** [CSmartPropOperation](smartprops.md#csmartpropoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Save the current scale factor to a specified variable.`, `MPropertyFriendlyName Save Current Scale`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_SaveScale",
+	"m_bEnabled": true,
+	"m_VariableName": ""
+}`, `MPropertyDescription Save the current scale factor to a specified variable.`, `MPropertyFriendlyName Save Current Scale`, `MVDataClassGroup State`
 
 **Relationships:**
 
@@ -1550,7 +2327,11 @@ classDiagram
 
 **Inherits from:** [CSmartPropOperation](smartprops.md#csmartpropoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Save the current state, allowing it to be restored at a later state.`, `MPropertyFriendlyName Save State`, `MVDataClassGroup`, `MVDataNodeTintColor`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_SaveState",
+	"m_bEnabled": true,
+	"m_StateName": ""
+}`, `MPropertyDescription Save the current state, allowing it to be restored at a later state.`, `MPropertyFriendlyName Save State`, `MVDataClassGroup State`, `MVDataNodeTintColor`
 
 **Relationships:**
 
@@ -1570,7 +2351,12 @@ classDiagram
 
 **Inherits from:** [CSmartPropOperation](smartprops.md#csmartpropoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Save the current surface normal to a specified variable in the requested coordinate space`, `MPropertyFriendlyName Save Current Surface Normal`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_SaveSurfaceNormal",
+	"m_bEnabled": true,
+	"m_CoordinateSpace": "WORLD",
+	"m_VariableName": ""
+}`, `MPropertyDescription Save the current surface normal to a specified variable in the requested coordinate space`, `MPropertyFriendlyName Save Current Surface Normal`, `MVDataClassGroup State`
 
 **Relationships:**
 
@@ -1592,7 +2378,11 @@ classDiagram
 
 **Inherits from:** [CSmartPropTransformOperation](smartprops.md#csmartproptransformoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Apply a scale to the current transform.`, `MPropertyFriendlyName Transform: Scale`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_Scale",
+	"m_bEnabled": true,
+	"m_flScale": 1.000000
+}`, `MPropertyDescription Apply a scale to the current transform.`, `MPropertyFriendlyName Transform: Scale`, `MVDataClassGroup Transform`
 
 **Relationships:**
 
@@ -1613,7 +2403,16 @@ classDiagram
 
 **Inherits from:** [CSmartPropOperation](smartprops.md#csmartpropoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Picks a material group from a set of choices and assigns that material group to a specified variable.`, `MPropertyFriendlyName Set Material Group Choice`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_SetMateraialGroupChoice",
+	"m_bEnabled": true,
+	"m_VariableName": "",
+	"m_SelectionMode": "RANDOM",
+	"m_ChoiceSelection": 0,
+	"m_MaterialGroupChoices":
+	[
+	]
+}`, `MPropertyDescription Picks a material group from a set of choices and assigns that material group to a specified variable.`, `MPropertyFriendlyName Set Material Group Choice`, `MVDataClassGroup Material`
 
 **Relationships:**
 
@@ -1629,16 +2428,34 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_VariableName` | CUtlString | `MPropertyAttributeEditor SmartPropItemNameEditor( Variable:MaterialGroup )` `MPropertyDescription Material group variable to set to the selected choice.` `MPropertyProvidesEditContextString` |
+| `m_VariableName` | CUtlString | `MPropertyAttributeEditor SmartPropItemNameEditor( Variable:MaterialGroup )` `MPropertyDescription Material group variable to set to the selected choice.` `MPropertyProvidesEditContextString ToolEditContext_ID_SmartProp_Variable` |
 | `m_SelectionMode` | [CSmartPropAttributeChoiceSelectionMode](../schemas/smartprops.md#csmartpropattributechoiceselectionmode) | `MPropertyDescription Specifies how the material group is to be selected from the authored set of choices` `MPropertyFriendlyName Selection Mode` |
-| `m_ChoiceSelection` | CSmartPropAttributeInt | `MPropertyDescription Specifies the index of the material group choice to pick` `MPropertyFriendlyName Choice Index` `MPropertySuppressExpr` |
+| `m_ChoiceSelection` | CSmartPropAttributeInt | `MPropertyDescription Specifies the index of the material group choice to pick` `MPropertyFriendlyName Choice Index` `MPropertySuppressExpr ( m_SelectionMode != SPECIFIC )` |
 | `m_MaterialGroupChoices` | CUtlVector< [MaterialGroupChoice_t](../schemas/smartprops.md#materialgroupchoice_t) > | `MPropertyAutoExpandSelf` |
 
 ### CSmartPropOperation_SetOrientation
 
 **Inherits from:** [CSmartPropTransformOperation](smartprops.md#csmartproptransformoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Set the current orientation from a specified forward and up vector.`, `MPropertyFriendlyName Transform: Set Orientation`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_SetOrientation",
+	"m_bEnabled": true,
+	"m_vForwardVector":
+	[
+		1.000000,
+		0.000000,
+		0.000000
+	],
+	"m_ForwardDirectionSpace": "WORLD",
+	"m_vUpVector":
+	[
+		0.000000,
+		0.000000,
+		1.000000
+	],
+	"m_UpDirectionSpace": "WORLD",
+	"m_bPrioritizeUp": false
+}`, `MPropertyDescription Set the current orientation from a specified forward and up vector.`, `MPropertyFriendlyName Transform: Set Orientation`, `MVDataClassGroup Transform`
 
 **Relationships:**
 
@@ -1664,7 +2481,17 @@ classDiagram
 
 **Inherits from:** [CSmartPropTransformOperation](smartprops.md#csmartproptransformoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Set the position of the current transform.`, `MPropertyFriendlyName Transform: Set Position`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_SetPosition",
+	"m_bEnabled": true,
+	"m_vPosition":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_CoordinateSpace": "WORLD"
+}`, `MPropertyDescription Set the position of the current transform.`, `MPropertyFriendlyName Transform: Set Position`, `MVDataClassGroup Transform`
 
 **Relationships:**
 
@@ -1687,7 +2514,16 @@ classDiagram
 
 **Inherits from:** [CSmartPropOperation](smartprops.md#csmartpropoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Set the color tint to one color out of a pre-selected set of colors.`, `MPropertyFriendlyName Tint Color Choice`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_SetTintColor",
+	"m_bEnabled": true,
+	"m_SelectionMode": "RANDOM",
+	"m_ColorSelection": 0,
+	"m_Mode": "MULTIPLY_OBJECT",
+	"m_ColorChoices":
+	[
+	]
+}`, `MPropertyDescription Set the color tint to one color out of a pre-selected set of colors.`, `MPropertyFriendlyName Tint Color Choice`, `MVDataClassGroup Color`
 
 **Relationships:**
 
@@ -1705,7 +2541,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_SelectionMode` | [CSmartPropAttributeChoiceSelectionMode](../schemas/smartprops.md#csmartpropattributechoiceselectionmode) | `MPropertyDescription Specifies how the color is to be selected from the authored set of choices` `MPropertyFriendlyName Selection Mode` |
-| `m_ColorSelection` | CSmartPropAttributeInt | `MPropertyDescription Specifies the index of the color to pick` `MPropertyFriendlyName Color Selection` `MPropertySuppressExpr` |
+| `m_ColorSelection` | CSmartPropAttributeInt | `MPropertyDescription Specifies the index of the color to pick` `MPropertyFriendlyName Color Selection` `MPropertySuppressExpr ( m_SelectionMode != SPECIFIC )` |
 | `m_Mode` | [CSmartPropAttributeApplyColorMode](../schemas/smartprops.md#csmartpropattributeapplycolormode) | `MPropertyDescription Specifies how the selected color should be applied to the current color.` `MPropertyFriendlyName Application Mode` |
 | `m_ColorChoices` | CUtlVector< [ColorChoice_t](../schemas/smartprops.md#colorchoice_t) > | `MPropertyDescription List of possible colors which may be selected` |
 
@@ -1713,7 +2549,16 @@ classDiagram
 
 **Inherits from:** [CSmartPropOperation](smartprops.md#csmartpropoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Set the value of a variable.`, `MPropertyFriendlyName Set Variable`, `MVDataClassGroup`, `MVDataOutlinerNameExpr`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_SetVariable",
+	"m_bEnabled": true,
+	"m_VariableValue":
+	{
+		"m_TargetName": "",
+		"m_DataType": "INVALID",
+		"m_Value": null
+	}
+}`, `MPropertyDescription Set the value of a variable.`, `MPropertyFriendlyName Set Variable`, `MVDataClassGroup State`, `MVDataOutlinerNameExpr m_VariableValue.m_TargetName`
 
 **Relationships:**
 
@@ -1758,21 +2603,49 @@ classDiagram
 | `m_Origin` | CSmartPropAttributeVector | `MPropertyDescription Specifies the origin point for the start of the trace. To trace from the current position, set to < 0, 0, 0 > and set the coordinate space to Element Space` `MPropertyStartGroup +Origin` |
 | `m_OriginSpace` | [CSmartPropAttributeCoordinateSpace](../schemas/smartprops.md#csmartpropattributecoordinatespace) | `MPropertyDescription Coordinate space the origin is specified in. Using Element space allows specifying a value relative to the current position. However, world space should generally be used when for variable values.` |
 | `m_flOriginOffset` | CSmartPropAttributeFloat | `MPropertyDescription Offset to apply to the specified origin along the trace direction to compute the starting point of the trace.` |
-| `m_flSurfaceUpInfluence` | CSmartPropAttributeFloat | `MPropertyDescription How much should the surface normal up direction influence the final orientation. [ 0, 1 ] where 0 = don't modify the orientation, 1 = completely re-orient to match the surface.` `MPropertySortPriority` `MPropertyStartGroup +Result` |
-| `m_nNoHitResult` | [CSmartPropAttributeTraceNoHit](../schemas/smartprops.md#csmartpropattributetracenohit) | `MPropertyDescription Specifies the behavior when the trace does not hit a surface.` `MPropertyFriendlyName If No Surface Hit` `MPropertySortPriority` |
-| `m_bIgnoreToolMaterials` | CSmartPropAttributeBool | `MPropertyDescription Do not trace against tool materials (attribute 'tools.toolsmaterial').` `MPropertySortPriority` `MPropertyStartGroup Trace filtering` |
-| `m_bIgnoreSky` | CSmartPropAttributeBool | `MPropertyDescription Do not trace against sky materials (attribute 'mapbuilder.sky').` `MPropertySortPriority` |
-| `m_bIgnoreNoDraw` | CSmartPropAttributeBool | `MPropertyDescription Do not trace against no draw materials (material attribute 'mapbuilder.nodraw').` `MPropertySortPriority` |
-| `m_bIgnoreTranslucent` | CSmartPropAttributeBool | `MPropertyDescription Do not trace against translucent materials (materials with 'alphatest' or 'translucent' attributes).` `MPropertySortPriority` |
-| `m_bIgnoreModels` | CSmartPropAttributeBool | `MPropertyDescription Do not trace against any models (only hit world geometry).` `MPropertySortPriority` |
-| `m_bIgnoreEntities` | CSmartPropAttributeBool | `MPropertyDescription Do not trace against dynamic entities which may move in game.` `MPropertySortPriority` |
-| `m_bIgnoreCables` | CSmartPropAttributeBool | `MPropertyDescription Do not trace against cable geometry.` `MPropertySortPriority` |
+| `m_flSurfaceUpInfluence` | CSmartPropAttributeFloat | `MPropertyDescription How much should the surface normal up direction influence the final orientation. [ 0, 1 ] where 0 = don't modify the orientation, 1 = completely re-orient to match the surface.` `MPropertySortPriority -1` `MPropertyStartGroup +Result` |
+| `m_nNoHitResult` | [CSmartPropAttributeTraceNoHit](../schemas/smartprops.md#csmartpropattributetracenohit) | `MPropertyDescription Specifies the behavior when the trace does not hit a surface.` `MPropertyFriendlyName If No Surface Hit` `MPropertySortPriority -1` |
+| `m_bIgnoreToolMaterials` | CSmartPropAttributeBool | `MPropertyDescription Do not trace against tool materials (attribute 'tools.toolsmaterial').` `MPropertySortPriority -2` `MPropertyStartGroup Trace filtering` |
+| `m_bIgnoreSky` | CSmartPropAttributeBool | `MPropertyDescription Do not trace against sky materials (attribute 'mapbuilder.sky').` `MPropertySortPriority -2` |
+| `m_bIgnoreNoDraw` | CSmartPropAttributeBool | `MPropertyDescription Do not trace against no draw materials (material attribute 'mapbuilder.nodraw').` `MPropertySortPriority -2` |
+| `m_bIgnoreTranslucent` | CSmartPropAttributeBool | `MPropertyDescription Do not trace against translucent materials (materials with 'alphatest' or 'translucent' attributes).` `MPropertySortPriority -2` |
+| `m_bIgnoreModels` | CSmartPropAttributeBool | `MPropertyDescription Do not trace against any models (only hit world geometry).` `MPropertySortPriority -2` |
+| `m_bIgnoreEntities` | CSmartPropAttributeBool | `MPropertyDescription Do not trace against dynamic entities which may move in game.` `MPropertySortPriority -2` |
+| `m_bIgnoreCables` | CSmartPropAttributeBool | `MPropertyDescription Do not trace against cable geometry.` `MPropertySortPriority -2` |
 
 ### CSmartPropOperation_TraceInDirection
 
 **Inherits from:** [CSmartPropOperation_Trace](smartprops.md#csmartpropoperation_trace)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Perform a trace in a direction from a specified origin and stop when a surface is hit.`, `MPropertyFriendlyName Transform: Trace In Direction`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_TraceInDirection",
+	"m_bEnabled": true,
+	"m_Origin":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_OriginSpace": "ELEMENT",
+	"m_flOriginOffset": 0.000000,
+	"m_flSurfaceUpInfluence": 0.000000,
+	"m_nNoHitResult": "NOTHING",
+	"m_bIgnoreToolMaterials": true,
+	"m_bIgnoreSky": true,
+	"m_bIgnoreNoDraw": true,
+	"m_bIgnoreTranslucent": false,
+	"m_bIgnoreModels": false,
+	"m_bIgnoreEntities": true,
+	"m_bIgnoreCables": false,
+	"m_vTraceDirection":
+	[
+		0.000000,
+		0.000000,
+		-1.000000
+	],
+	"m_DirectionSpace": "WORLD",
+	"m_flTraceLength": 1000.000000
+}`, `MPropertyDescription Perform a trace in a direction from a specified origin and stop when a surface is hit.`, `MPropertyFriendlyName Transform: Trace In Direction`, `MVDataClassGroup Transform`
 
 **Relationships:**
 
@@ -1797,7 +2670,43 @@ classDiagram
 
 **Inherits from:** [CSmartPropOperation_Trace](smartprops.md#csmartpropoperation_trace)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Perform a trace from a specified origin point to a the closest point on a line.`, `MPropertyFriendlyName Transform: Trace To Line`, `MVDataClassGroup`, `MVDataExperimentalNodeSet`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_TraceToLine",
+	"m_bEnabled": true,
+	"m_Origin":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_OriginSpace": "ELEMENT",
+	"m_flOriginOffset": 0.000000,
+	"m_flSurfaceUpInfluence": 0.000000,
+	"m_nNoHitResult": "NOTHING",
+	"m_bIgnoreToolMaterials": true,
+	"m_bIgnoreSky": true,
+	"m_bIgnoreNoDraw": true,
+	"m_bIgnoreTranslucent": false,
+	"m_bIgnoreModels": false,
+	"m_bIgnoreEntities": true,
+	"m_bIgnoreCables": false,
+	"m_EndPointA":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_EndPointSpaceA": "WORLD",
+	"m_EndPointB":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_EndPointSpaceB": "WORLD",
+	"m_bTraceAway": false,
+	"m_flTraceLength": 1000.000000
+}`, `MPropertyDescription Perform a trace from a specified origin point to a the closest point on a line.`, `MPropertyFriendlyName Transform: Trace To Line`, `MVDataClassGroup Transform`, `MVDataExperimentalNodeSet`
 
 **Relationships:**
 
@@ -1819,13 +2728,42 @@ classDiagram
 | `m_EndPointB` | CSmartPropAttributeVector | `MPropertyDescription End point of the line to trace to.` `MPropertyStartGroup +Line End Point B` |
 | `m_EndPointSpaceB` | [CSmartPropAttributeCoordinateSpace](../schemas/smartprops.md#csmartpropattributecoordinatespace) | `MPropertyDescription Coordinate space the end point is specified in.` |
 | `m_bTraceAway` | CSmartPropAttributeBool | `MPropertyDescription If enabled, instead of tracing from the origin to the line, trace away from the line for the specified distance starting at the origin.` `MPropertyFriendlyName Trace away from line` `MPropertyStartGroup +Trace Away` |
-| `m_flTraceLength` | CSmartPropAttributeFloat | `MPropertyDescription Maximum length of the trace. Surfaces beyond this distance will not be hit.` `MPropertyReadonlyExpr` |
+| `m_flTraceLength` | CSmartPropAttributeFloat | `MPropertyDescription Maximum length of the trace. Surfaces beyond this distance will not be hit.` `MPropertyReadonlyExpr m_bTraceAway == false` |
 
 ### CSmartPropOperation_TraceToPoint
 
 **Inherits from:** [CSmartPropOperation_Trace](smartprops.md#csmartpropoperation_trace)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Perform a trace between the specified origin and a specified target point.`, `MPropertyFriendlyName Transform: Trace To Point`, `MVDataClassGroup`, `MVDataExperimentalNodeSet`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_TraceToPoint",
+	"m_bEnabled": true,
+	"m_Origin":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_OriginSpace": "ELEMENT",
+	"m_flOriginOffset": 0.000000,
+	"m_flSurfaceUpInfluence": 0.000000,
+	"m_nNoHitResult": "NOTHING",
+	"m_bIgnoreToolMaterials": true,
+	"m_bIgnoreSky": true,
+	"m_bIgnoreNoDraw": true,
+	"m_bIgnoreTranslucent": false,
+	"m_bIgnoreModels": false,
+	"m_bIgnoreEntities": true,
+	"m_bIgnoreCables": false,
+	"m_TargetPoint":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_TargetPointSpace": "WORLD",
+	"m_bTraceAway": false,
+	"m_flTraceLength": 1000.000000
+}`, `MPropertyDescription Perform a trace between the specified origin and a specified target point.`, `MPropertyFriendlyName Transform: Trace To Point`, `MVDataClassGroup Transform`, `MVDataExperimentalNodeSet`
 
 **Relationships:**
 
@@ -1845,13 +2783,23 @@ classDiagram
 | `m_TargetPoint` | CSmartPropAttributeVector | `MPropertyDescription The target point to trace to from the origin.` `MPropertyStartGroup +Target Point` |
 | `m_TargetPointSpace` | [CSmartPropAttributeCoordinateSpace](../schemas/smartprops.md#csmartpropattributecoordinatespace) | `MPropertyDescription Specifies the coordinate space the target point is specified in.` |
 | `m_bTraceAway` | CSmartPropAttributeBool | `MPropertyDescription If enabled, instead of tracing from the origin to the target point, trace away from the target point for the specified distance starting at the origin.` `MPropertyFriendlyName Trace away from point` `MPropertyStartGroup +Trace Away` |
-| `m_flTraceLength` | CSmartPropAttributeFloat | `MPropertyDescription Maximum length of the trace. Surfaces beyond this distance will not be hit.` `MPropertyReadonlyExpr` |
+| `m_flTraceLength` | CSmartPropAttributeFloat | `MPropertyDescription Maximum length of the trace. Surfaces beyond this distance will not be hit.` `MPropertyReadonlyExpr m_bTraceAway == false` |
 
 ### CSmartPropOperation_Translate
 
 **Inherits from:** [CSmartPropTransformOperation](smartprops.md#csmartproptransformoperation)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Apply a position offset to the current transform.`, `MPropertyFriendlyName Transform: Translate`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropOperation_Translate",
+	"m_bEnabled": true,
+	"m_vPosition":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_CoordinateSpace": "ELEMENT"
+}`, `MPropertyDescription Apply a position offset to the current transform.`, `MPropertyFriendlyName Transform: Translate`, `MVDataClassGroup Transform`
 
 **Relationships:**
 
@@ -1888,7 +2836,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_nElementID` | int32 | `MPropertySuppressField` `MVDataUniqueMonotonicInt` |
+| `m_nElementID` | int32 | `MPropertySuppressField` `MVDataUniqueMonotonicInt _editor/next_element_id` |
 
 ### CSmartPropPulse_BaseQueryableFlow
 
@@ -1896,7 +2844,10 @@ classDiagram
 
 **Derived by:** [CSmartPropPulse_CreateLocator](smartprops.md#csmartproppulse_createlocator), [CSmartPropPulse_PlaceOnPath](smartprops.md#csmartproppulse_placeonpath)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPulseFunctionHiddenInTool`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropPulse_BaseQueryableFlow",
+	"m_nEditorNodeID": -1
+}`, `MPulseFunctionHiddenInTool`
 
 **Relationships:**
 
@@ -1912,7 +2863,11 @@ classDiagram
 
 **Inherits from:** [CSmartPropPulse_BaseQueryableFlow](smartprops.md#csmartproppulse_basequeryableflow)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Create a locator with the current transform. The locator may optionally be configurable, so that its transform can be modified in Hammer.`, `MPropertyFriendlyName Create Locator`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropPulse_CreateLocator",
+	"m_nEditorNodeID": -1,
+	"m_LocatorName": ""
+}`, `MPropertyDescription Create a locator with the current transform. The locator may optionally be configurable, so that its transform can be modified in Hammer.`, `MPropertyFriendlyName Create Locator`, `MVDataClassGroup Manipulators`
 
 **Relationships:**
 
@@ -1933,7 +2888,11 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseFlow](pulse_runtime_lib.md#cpulsecell_baseflow)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Create a rotator that will be displayed at the current location, allowing the user to manipulate a rotation around an axis. The rotation value can be applied to the current transform as well as saved to a variable.`, `MPropertyFriendlyName Create Rotator`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropPulse_CreateRotator",
+	"m_nEditorNodeID": -1,
+	"m_Name": ""
+}`, `MPropertyDescription Create a rotator that will be displayed at the current location, allowing the user to manipulate a rotation around an axis. The rotation value can be applied to the current transform as well as saved to a variable.`, `MPropertyFriendlyName Create Rotator`, `MVDataClassGroup Manipulators`
 
 **Relationships:**
 
@@ -1953,7 +2912,17 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseFlow](pulse_runtime_lib.md#cpulsecell_baseflow)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Create a sizer that will be displayed at the current location, allowing the user to manipulate the specified set of size values.`, `MPropertyFriendlyName Create Sizer`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropPulse_CreateSizer",
+	"m_nEditorNodeID": -1,
+	"m_Name": "",
+	"m_bHACK_ProvideResultMinX": false,
+	"m_bHACK_ProvideResultMaxX": false,
+	"m_bHACK_ProvideResultMinY": false,
+	"m_bHACK_ProvideResultMaxY": false,
+	"m_bHACK_ProvideResultMinZ": false,
+	"m_bHACK_ProvideResultMaxZ": false
+}`, `MPropertyDescription Create a sizer that will be displayed at the current location, allowing the user to manipulate the specified set of size values.`, `MPropertyFriendlyName Create Sizer`, `MVDataClassGroup Manipulators`
 
 **Relationships:**
 
@@ -1979,7 +2948,10 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseRequirement](pulse_runtime_lib.md#cpulsecell_baserequirement)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Valid Path Positions`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropPulse_CriteriaPathPosition",
+	"m_nEditorNodeID": -1
+}`, `MPropertyFriendlyName Valid Path Positions`
 
 **Relationships:**
 
@@ -2003,8 +2975,8 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_PlaceAtPositions` | [SmartPropPathPositions_t](../schemas/!GlobalTypes.md#smartproppathpositions_t) | `MPropertyDescription Specifies the method to use to determine which positions this element should be placed at along the path.` |
-| `m_nPlaceEveryNthPosition` | int32 | `MPropertyDescription Specifies the spacing between positions. For example, a value of 1 will place the element at very position, 2 every other position, 3 every third position` `MPropertySuppressExpr` |
-| `m_nNthPositionIndexOffset` | int32 | `MPropertyDescription Specifies an offset to use when determining the Nth position to place an element at. For example if placing at every third position with an offset of 0, an element will appear at positions 1, 4, 7, and so on. But if an offset of 2 is set instead of 0, then an element will appear at positions 3, 6, and 9 and so on.` `MPropertySuppressExpr` |
+| `m_nPlaceEveryNthPosition` | int32 | `MPropertyDescription Specifies the spacing between positions. For example, a value of 1 will place the element at very position, 2 every other position, 3 every third position` `MPropertySuppressExpr ( m_PlaceAtPositions == ALL ) || ( m_PlaceAtPositions == START_AND_END ) || ( m_PlaceAtPositions == CONTROL_POINTS )` |
+| `m_nNthPositionIndexOffset` | int32 | `MPropertyDescription Specifies an offset to use when determining the Nth position to place an element at. For example if placing at every third position with an offset of 0, an element will appear at positions 1, 4, 7, and so on. But if an offset of 2 is set instead of 0, then an element will appear at positions 3, 6, and 9 and so on.` `MPropertySuppressExpr ( m_PlaceAtPositions == ALL ) || ( m_PlaceAtPositions == START_AND_END ) || ( m_PlaceAtPositions == CONTROL_POINTS )` |
 | `m_bAllowAtStart` | bool | `MPropertyDescription Should this element be placed at the first positions on the path` |
 | `m_bAllowAtEnd` | bool | `MPropertyDescription Should this element be placed at the last positions on the path` |
 
@@ -2012,7 +2984,16 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseFlow](pulse_runtime_lib.md#cpulsecell_baseflow)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription An element which fits one or more instances of a set of choices on to a line.`, `MPropertyFriendlyName Fit on Line`, `MPulseEditorCanvasItemSpecKV3`, `MPulseEditorHeaderIcon`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropPulse_FitOnLine",
+	"m_nEditorNodeID": -1,
+	"m_OutflowList":
+	{
+		"m_Outflows":
+		[
+		]
+	}
+}`, `MPropertyDescription An element which fits one or more instances of a set of choices on to a line.`, `MPropertyFriendlyName Fit on Line`, `MPulseEditorCanvasItemSpecKV3 { className='IsControlFlowNode AllOutflowsInSpecialSection IsSelectorNode' create_special_outflows_section=true }`, `MPulseEditorHeaderIcon tools/images/pulse_editor/requirements.png`
 
 **Relationships:**
 
@@ -2033,7 +3014,16 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseFlow](pulse_runtime_lib.md#cpulsecell_baseflow)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Group`, `MPulseEditorCanvasItemSpecKV3`, `MPulseEditorHeaderIcon`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropPulse_Group",
+	"m_nEditorNodeID": -1,
+	"m_OutflowList":
+	{
+		"m_Outflows":
+		[
+		]
+	}
+}`, `MPropertyFriendlyName Group`, `MPulseEditorCanvasItemSpecKV3 { className='IsControlFlowNode AllOutflowsInSpecialSection IsSelectorNode' create_special_outflows_section=true }`, `MPulseEditorHeaderIcon tools/images/pulse_editor/requirements.png`
 
 **Relationships:**
 
@@ -2054,7 +3044,17 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseFlow](pulse_runtime_lib.md#cpulsecell_baseflow)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription An element which selects a single choice from its set of child choices.`, `MPropertyFriendlyName Select Single Child`, `MPulseEditorCanvasItemSpecKV3`, `MPulseEditorHeaderIcon`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropPulse_PickOneSelector",
+	"m_nEditorNodeID": -1,
+	"m_HandleShape": "SQUARE",
+	"m_OutflowList":
+	{
+		"m_Outflows":
+		[
+		]
+	}
+}`, `MPropertyDescription An element which selects a single choice from its set of child choices.`, `MPropertyFriendlyName Select Single Child`, `MPulseEditorCanvasItemSpecKV3 { className='IsControlFlowNode AllOutflowsInSpecialSection IsSelectorNode' create_special_outflows_section=true }`, `MPulseEditorHeaderIcon tools/images/pulse_editor/requirements.png`
 
 **Relationships:**
 
@@ -2070,14 +3070,23 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_HandleShape` | [ConfigurationHandleShape_t](../schemas/!GlobalTypes.md#configurationhandleshape_t) | `MPropertyDescription Shape of the configuration handle to display.` `MPropertyGroupName Handle Settings` `MPropertyReadonlyExpr` |
+| `m_HandleShape` | [ConfigurationHandleShape_t](../schemas/!GlobalTypes.md#configurationhandleshape_t) | `MPropertyDescription Shape of the configuration handle to display.` `MPropertyGroupName Handle Settings` `MPropertyReadonlyExpr bConfigurable == false` |
 | `m_OutflowList` | [PulseSelectorOutflowList_t](../schemas/pulse_runtime_lib.md#pulseselectoroutflowlist_t) |  |
 
 ### CSmartPropPulse_PlaceInSphere
 
 **Inherits from:** [CPulseCell_BaseFlow](pulse_runtime_lib.md#cpulsecell_baseflow)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription An element which places multiple instances of its child elements within a radius.`, `MPropertyFriendlyName Place In Radius`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropPulse_PlaceInSphere",
+	"m_nEditorNodeID": -1,
+	"m_Place":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	}
+}`, `MPropertyDescription An element which places multiple instances of its child elements within a radius.`, `MPropertyFriendlyName Place In Radius`
 
 **Relationships:**
 
@@ -2098,7 +3107,17 @@ classDiagram
 
 **Inherits from:** [CSmartPropPulse_BaseQueryableFlow](smartprops.md#csmartproppulse_basequeryableflow)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Place On Path`, `MPulseEditorCanvasItemSpecKV3`, `MPulseEditorHeaderIcon`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropPulse_PlaceOnPath",
+	"m_nEditorNodeID": -1,
+	"m_OutflowList":
+	{
+		"m_Outflows":
+		[
+		]
+	},
+	"m_PathName": ""
+}`, `MPropertyFriendlyName Place On Path`, `MPulseEditorCanvasItemSpecKV3 { className='IsControlFlowNode AllOutflowsInSpecialSection IsSelectorNode' create_special_outflows_section=true }`, `MPulseEditorHeaderIcon tools/images/pulse_editor/requirements.png`
 
 **Relationships:**
 
@@ -2121,7 +3140,10 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseRequirement](pulse_runtime_lib.md#cpulsecell_baserequirement)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Specifies a weighting value which affects that likelyhood of selecting this element which picking a choice.`, `MPropertyFriendlyName Choice Weight`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropPulse_SelectionChoiceWeight",
+	"m_nEditorNodeID": -1
+}`, `MPropertyDescription Specifies a weighting value which affects that likelyhood of selecting this element which picking a choice.`, `MPropertyFriendlyName Choice Weight`
 
 **Relationships:**
 
@@ -2143,7 +3165,10 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseRequirement](pulse_runtime_lib.md#cpulsecell_baserequirement)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Specifies that this is a special part that should be used at the start or end of the line.`, `MPropertyFriendlyName End Cap Settings`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropPulse_SelectionEndCap",
+	"m_nEditorNodeID": -1
+}`, `MPropertyDescription Specifies that this is a special part that should be used at the start or end of the line.`, `MPropertyFriendlyName End Cap Settings`
 
 **Relationships:**
 
@@ -2166,7 +3191,10 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseRequirement](pulse_runtime_lib.md#cpulsecell_baserequirement)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Specifies the length of this element, used when fitting an element on to a line.`, `MPropertyFriendlyName Linear Length`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropPulse_SelectionLinearLength",
+	"m_nEditorNodeID": -1
+}`, `MPropertyDescription Specifies the length of this element, used when fitting an element on to a line.`, `MPropertyFriendlyName Linear Length`
 
 **Relationships:**
 
@@ -2184,14 +3212,18 @@ classDiagram
 |------|------|-------------|
 | `m_flLength` | float32 | `MPropertyDescription Specifies the length of the line that will be taken up if this element is selected.` |
 | `m_bAllowScale` | bool | `MPropertyDescription Can this object be scaled. If enabled the minimum and maximum lengths must be set to specify the size range of allowable scale.` |
-| `m_flMinLength` | float32 | `MPropertyDescription Minimum allowable length for the object. Must be <= length. If length is 100 and minimum length is 20, then the object may be assigned a scale in the rage [ 0.2, 1.0 ].` `MPropertyFriendlyName Minimum length` `MPropertySuppressExpr` |
-| `m_flMaxLength` | float32 | `MPropertyDescription Maximum allowable length for the object. Must be >= length. If length is 100 and maximum length is 160, then the object may be assigned a scale in the rage [ 1.0, 1.6 ].` `MPropertyFriendlyName Maximum length` `MPropertySuppressExpr` |
+| `m_flMinLength` | float32 | `MPropertyDescription Minimum allowable length for the object. Must be <= length. If length is 100 and minimum length is 20, then the object may be assigned a scale in the rage [ 0.2, 1.0 ].` `MPropertyFriendlyName Minimum length` `MPropertySuppressExpr m_bAllowScale == false` |
+| `m_flMaxLength` | float32 | `MPropertyDescription Maximum allowable length for the object. Must be >= length. If length is 100 and maximum length is 160, then the object may be assigned a scale in the rage [ 1.0, 1.6 ].` `MPropertyFriendlyName Maximum length` `MPropertySuppressExpr m_bAllowScale == false` |
 
 ### CSmartPropPulse_SmartProp
 
 **Inherits from:** [CPulseCell_BaseFlow](pulse_runtime_lib.md#cpulsecell_baseflow)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Smart Prop Reference`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropPulse_SmartProp",
+	"m_nEditorNodeID": -1,
+	"m_hSmartProp": ""
+}`, `MPropertyFriendlyName Smart Prop Reference`
 
 **Relationships:**
 
@@ -2210,7 +3242,23 @@ classDiagram
 
 ### CSmartPropRoot
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Root of a smart prop, contains a list of elements to evaluate.`, `MPropertyFriendlyName Smart Prop Root`, `MSmartPropClassVersion`, `MVDataFileExtension`, `MVDataGroupNodeClass`, `MVDataPreviewWidget`, `MVDataRoot`, `MVDataSingleton`, `MVDataUsesComponentEditor`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nContentVersion": 0,
+	"m_nMaxDepth": 32,
+	"m_Variables":
+	[
+	],
+	"m_Choices":
+	[
+	],
+	"m_Children":
+	[
+	],
+	"m_Modifiers":
+	[
+	],
+	"m_hPulseGraph": ""
+}`, `MPropertyDescription Root of a smart prop, contains a list of elements to evaluate.`, `MPropertyFriendlyName Smart Prop Root`, `MSmartPropClassVersion 0`, `MVDataFileExtension vsmart`, `MVDataGroupNodeClass`, `MVDataPreviewWidget smart_prop`, `MVDataRoot`, `MVDataSingleton`, `MVDataUsesComponentEditor`
 
 **Relationships:**
 
@@ -2229,11 +3277,11 @@ classDiagram
 |------|------|-------------|
 | `m_nContentVersion` | int32 | `MPropertyDescription Specifies the current version of this smart prop. Any existing references to this smart prop with an older version number will not automatically update.` |
 | `m_nMaxDepth` | CSmartPropAttributeInt | `MPropertyDescription Maximum depth of smart prop evaluation stack during evaluation.` |
-| `m_Variables` | CUtlVector< [CSmartPropVariable](../schemas/smartprops.md#csmartpropvariable)* > | `MPropertyFriendlyName Variables` `MVDataPromoteField` |
-| `m_Choices` | CUtlVector< [CSmartPropChoice](../schemas/smartprops.md#csmartpropchoice)* > | `MPropertyFriendlyName Choices` `MVDataPromoteField` |
-| `m_Children` | CUtlVector< [CSmartPropElement](../schemas/smartprops.md#csmartpropelement)* > | `MPropertyDescription List of the root level elements making up the smart prop definition, each element may be an entire tree.` `MVDataPromoteField` |
-| `m_Modifiers` | CUtlVector< [CSmartPropModifier](../schemas/smartprops.md#csmartpropmodifier)* > | `MPropertyFriendlyName Modifiers` `MVDataPromoteField` |
-| `m_hPulseGraph` | CStrongHandle< [InfoForResourceTypeIPulseGraphDef](../schemas/resourcesystem.md#infoforresourcetypeipulsegraphdef) > | `MPropertySuppressExpr` |
+| `m_Variables` | CUtlVector< [CSmartPropVariable](../schemas/smartprops.md#csmartpropvariable)* > | `MPropertyFriendlyName Variables` `MVDataPromoteField 2` |
+| `m_Choices` | CUtlVector< [CSmartPropChoice](../schemas/smartprops.md#csmartpropchoice)* > | `MPropertyFriendlyName Choices` `MVDataPromoteField 2` |
+| `m_Children` | CUtlVector< [CSmartPropElement](../schemas/smartprops.md#csmartpropelement)* > | `MPropertyDescription List of the root level elements making up the smart prop definition, each element may be an entire tree.` `MVDataPromoteField 1` |
+| `m_Modifiers` | CUtlVector< [CSmartPropModifier](../schemas/smartprops.md#csmartpropmodifier)* > | `MPropertyFriendlyName Modifiers` `MVDataPromoteField 2` |
+| `m_hPulseGraph` | CStrongHandle< [InfoForResourceTypeIPulseGraphDef](../schemas/resourcesystem.md#infoforresourcetypeipulsegraphdef) > | `MPropertySuppressExpr !__IsSmartPropPulseActive` |
 
 ### CSmartPropSelectionCriteria
 
@@ -2266,7 +3314,11 @@ classDiagram
 
 **Inherits from:** [CSmartPropSelectionCriteria](smartprops.md#csmartpropselectioncriteria)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Specifies a weighting value which affects that likelyhood of selecting this element which picking a choice.`, `MPropertyFriendlyName Choice Weight`, `MVDataComponentValidGrandParents`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropSelectionCriteria_ChoiceWeight",
+	"m_bEnabled": true,
+	"m_flWeight": 1.000000
+}`, `MPropertyDescription Specifies a weighting value which affects that likelyhood of selecting this element which picking a choice.`, `MPropertyFriendlyName Choice Weight`, `MVDataComponentValidGrandParents`
 
 **Relationships:**
 
@@ -2285,7 +3337,13 @@ classDiagram
 
 **Inherits from:** [CSmartPropSelectionCriteria](smartprops.md#csmartpropselectioncriteria)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription`, `MPropertyFriendlyName Filter Edges by Angle`, `MVDataComponentValidGrandParents`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropSelectionCriteria_EdgeAngleCriteria",
+	"m_bEnabled": true,
+	"m_flMinAngle": 0.000000,
+	"m_flMaxAngle": 0.000000,
+	"m_bInvert": false
+}`, `MPropertyDescription`, `MPropertyFriendlyName Filter Edges by Angle`, `MVDataComponentValidGrandParents`
 
 **Relationships:**
 
@@ -2306,7 +3364,12 @@ classDiagram
 
 **Inherits from:** [CSmartPropSelectionCriteria](smartprops.md#csmartpropselectioncriteria)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Specifies that this is a special part that should be used at the start or end of the line.`, `MPropertyFriendlyName End Cap Settings`, `MVDataComponentValidGrandParents`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropSelectionCriteria_EndCap",
+	"m_bEnabled": true,
+	"m_bStart": true,
+	"m_bEnd": true
+}`, `MPropertyDescription Specifies that this is a special part that should be used at the start or end of the line.`, `MPropertyFriendlyName End Cap Settings`, `MVDataComponentValidGrandParents`
 
 **Relationships:**
 
@@ -2326,7 +3389,11 @@ classDiagram
 
 **Inherits from:** [CSmartPropSelectionCriteria](smartprops.md#csmartpropselectioncriteria)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Specifies if this element is currently valid choice.`, `MPropertyFriendlyName Is Valid`, `MVDataComponentValidGrandParents`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropSelectionCriteria_IsValid",
+	"m_bEnabled": true,
+	"m_Expression": ""
+}`, `MPropertyDescription Specifies if this element is currently valid choice.`, `MPropertyFriendlyName Is Valid`, `MVDataComponentValidGrandParents`
 
 **Relationships:**
 
@@ -2345,7 +3412,14 @@ classDiagram
 
 **Inherits from:** [CSmartPropSelectionCriteria](smartprops.md#csmartpropselectioncriteria)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Specifies the length of this element, used when fitting an element on to a line.`, `MPropertyFriendlyName Linear Length`, `MVDataComponentValidGrandParents`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropSelectionCriteria_LinearLength",
+	"m_bEnabled": true,
+	"m_flLength": 1.000000,
+	"m_bAllowScale": false,
+	"m_flMinLength": 1.000000,
+	"m_flMaxLength": 1.000000
+}`, `MPropertyDescription Specifies the length of this element, used when fitting an element on to a line.`, `MPropertyFriendlyName Linear Length`, `MVDataComponentValidGrandParents`
 
 **Relationships:**
 
@@ -2360,14 +3434,19 @@ classDiagram
 |------|------|-------------|
 | `m_flLength` | CSmartPropAttributeFloat | `MPropertyDescription Specifies the length of the line that will be taken up if this element is selected.` |
 | `m_bAllowScale` | CSmartPropAttributeBool | `MPropertyDescription Can this object be scaled. If enabled the minimum and maximum lengths must be set to specify the size range of allowable scale.` |
-| `m_flMinLength` | CSmartPropAttributeFloat | `MPropertyDescription Minimum allowable length for the object. Must be <= length. If length is 100 and minimum length is 20, then the object may be assigned a scale in the rage [ 0.2, 1.0 ].` `MPropertyFriendlyName Minimum length` `MPropertySuppressExpr` |
-| `m_flMaxLength` | CSmartPropAttributeFloat | `MPropertyDescription Maximum allowable length for the object. Must be >= length. If length is 100 and maximum length is 160, then the object may be assigned a scale in the rage [ 1.0, 1.6 ].` `MPropertyFriendlyName Maximum length` `MPropertySuppressExpr` |
+| `m_flMinLength` | CSmartPropAttributeFloat | `MPropertyDescription Minimum allowable length for the object. Must be <= length. If length is 100 and minimum length is 20, then the object may be assigned a scale in the rage [ 0.2, 1.0 ].` `MPropertyFriendlyName Minimum length` `MPropertySuppressExpr m_bAllowScale == false` |
+| `m_flMaxLength` | CSmartPropAttributeFloat | `MPropertyDescription Maximum allowable length for the object. Must be >= length. If length is 100 and maximum length is 160, then the object may be assigned a scale in the rage [ 1.0, 1.6 ].` `MPropertyFriendlyName Maximum length` `MPropertySuppressExpr m_bAllowScale == false` |
 
 ### CSmartPropSelectionCriteria_MaterialCriteria
 
 **Inherits from:** [CSmartPropSelectionCriteria](smartprops.md#csmartpropselectioncriteria)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription`, `MPropertyFriendlyName Filter Faces By Material`, `MVDataComponentValidGrandParents`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropSelectionCriteria_MaterialCriteria",
+	"m_bEnabled": true,
+	"m_material": "",
+	"m_bInvert": false
+}`, `MPropertyDescription`, `MPropertyFriendlyName Filter Faces By Material`, `MVDataComponentValidGrandParents`
 
 **Relationships:**
 
@@ -2387,7 +3466,15 @@ classDiagram
 
 **Inherits from:** [CSmartPropSelectionCriteria](smartprops.md#csmartpropselectioncriteria)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Specifies the path positions at which this element may appear.`, `MPropertyFriendlyName Valid Path Positions`, `MVDataComponentValidGrandParents`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropSelectionCriteria_PathPosition",
+	"m_bEnabled": true,
+	"m_PlaceAtPositions": "ALL",
+	"m_nPlaceEveryNthPosition": 2,
+	"m_nNthPositionIndexOffset": 0,
+	"m_bAllowAtStart": true,
+	"m_bAllowAtEnd": true
+}`, `MPropertyDescription Specifies the path positions at which this element may appear.`, `MPropertyFriendlyName Valid Path Positions`, `MVDataComponentValidGrandParents`
 
 **Relationships:**
 
@@ -2402,8 +3489,8 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_PlaceAtPositions` | [CSmartPropAttributePathPositions](../schemas/smartprops.md#csmartpropattributepathpositions) | `MPropertyDescription Specifies the method to use to determine which positions this element should be placed at along the path.` |
-| `m_nPlaceEveryNthPosition` | CSmartPropAttributeInt | `MPropertyDescription Specifies the spacing between positions. For example, a value of 1 will place the element at very position, 2 every other position, 3 every third position` `MPropertySuppressExpr` |
-| `m_nNthPositionIndexOffset` | CSmartPropAttributeInt | `MPropertyDescription Specifies an offset to use when determining the Nth position to place an element at. For example if placing at every third position with an offset of 0, an element will appear at positions 1, 4, 7, and so on. But if an offset of 2 is set instead of 0, then an element will appear at positions 3, 6, and 9 and so on.` `MPropertySuppressExpr` |
+| `m_nPlaceEveryNthPosition` | CSmartPropAttributeInt | `MPropertyDescription Specifies the spacing between positions. For example, a value of 1 will place the element at very position, 2 every other position, 3 every third position` `MPropertySuppressExpr ( m_PlaceAtPositions == ALL ) || ( m_PlaceAtPositions == START_AND_END ) || ( m_PlaceAtPositions == CONTROL_POINTS )` |
+| `m_nNthPositionIndexOffset` | CSmartPropAttributeInt | `MPropertyDescription Specifies an offset to use when determining the Nth position to place an element at. For example if placing at every third position with an offset of 0, an element will appear at positions 1, 4, 7, and so on. But if an offset of 2 is set instead of 0, then an element will appear at positions 3, 6, and 9 and so on.` `MPropertySuppressExpr ( m_PlaceAtPositions == ALL ) || ( m_PlaceAtPositions == START_AND_END ) || ( m_PlaceAtPositions == CONTROL_POINTS )` |
 | `m_bAllowAtStart` | CSmartPropAttributeBool | `MPropertyDescription Should this element be placed at the first positions on the path` |
 | `m_bAllowAtEnd` | CSmartPropAttributeBool | `MPropertyDescription Should this element be placed at the last positions on the path` |
 
@@ -2411,7 +3498,13 @@ classDiagram
 
 **Inherits from:** [CSmartPropSelectionCriteria](smartprops.md#csmartpropselectioncriteria)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription`, `MPropertyFriendlyName Filter Faces By Open Edges`, `MVDataComponentValidGrandParents`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropSelectionCriteria_TopoEdgeCountCriteria",
+	"m_bEnabled": true,
+	"m_nTargetOpenEdgeCount": 0,
+	"m_bInvert": false,
+	"m_bSharedVert": false
+}`, `MPropertyDescription`, `MPropertyFriendlyName Filter Faces By Open Edges`, `MVDataComponentValidGrandParents`
 
 **Relationships:**
 
@@ -2432,7 +3525,11 @@ classDiagram
 
 **Inherits from:** [CSmartPropSelectionCriteria](smartprops.md#csmartpropselectioncriteria)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription`, `MPropertyFriendlyName Filter Faces By Vertex Count`, `MVDataComponentValidGrandParents`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropSelectionCriteria_VertexCountCriteria",
+	"m_bEnabled": true,
+	"m_nTargetVertexCount": 0
+}`, `MPropertyDescription`, `MPropertyFriendlyName Filter Faces By Vertex Count`, `MVDataComponentValidGrandParents`
 
 **Relationships:**
 
@@ -2485,7 +3582,7 @@ classDiagram
 
 **Derived by:** [CSmartPropVariable_Angles](smartprops.md#csmartpropvariable_angles), [CSmartPropVariable_ApplyColorMode](smartprops.md#csmartpropvariable_applycolormode), [CSmartPropVariable_Bool](smartprops.md#csmartpropvariable_bool), [CSmartPropVariable_ChoiceSelectionMode](smartprops.md#csmartpropvariable_choiceselectionmode), [CSmartPropVariable_Color](smartprops.md#csmartpropvariable_color), [CSmartPropVariable_ColorSelectionMode](smartprops.md#csmartpropvariable_colorselectionmode), [CSmartPropVariable_CoordinateSpace](smartprops.md#csmartpropvariable_coordinatespace), [CSmartPropVariable_DirectionVector](smartprops.md#csmartpropvariable_directionvector), [CSmartPropVariable_DistributionMode](smartprops.md#csmartpropvariable_distributionmode), [CSmartPropVariable_Float](smartprops.md#csmartpropvariable_float), [CSmartPropVariable_GridOriginMode](smartprops.md#csmartpropvariable_gridoriginmode), [CSmartPropVariable_GridPlacementMode](smartprops.md#csmartpropvariable_gridplacementmode), [CSmartPropVariable_Int](smartprops.md#csmartpropvariable_int), [CSmartPropVariable_Material](smartprops.md#csmartpropvariable_material), [CSmartPropVariable_MaterialGroup](smartprops.md#csmartpropvariable_materialgroup), [CSmartPropVariable_Model](smartprops.md#csmartpropvariable_model), [CSmartPropVariable_OrientationMode](smartprops.md#csmartpropvariable_orientationmode), [CSmartPropVariable_PathPositions](smartprops.md#csmartpropvariable_pathpositions), [CSmartPropVariable_PickMode](smartprops.md#csmartpropvariable_pickmode), [CSmartPropVariable_RadiusPlacementMode](smartprops.md#csmartpropvariable_radiusplacementmode), [CSmartPropVariable_ScaleMode](smartprops.md#csmartpropvariable_scalemode), [CSmartPropVariable_String](smartprops.md#csmartpropvariable_string), [CSmartPropVariable_SurfaceProperty](smartprops.md#csmartpropvariable_surfaceproperty), [CSmartPropVariable_TraceNoHit](smartprops.md#csmartpropvariable_tracenohit), [CSmartPropVariable_Vector2D](smartprops.md#csmartpropvariable_vector2d), [CSmartPropVariable_Vector3D](smartprops.md#csmartpropvariable_vector3d), [CSmartPropVariable_Vector4D](smartprops.md#csmartpropvariable_vector4d)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MVDataAnonymousNode`, `MVDataNodeType 1`, `MVDataOutlinerNameExpr`, `MVDataRoot`
+**Metadata:** `MGetKV3ClassDefaults`, `MVDataAnonymousNode`, `MVDataNodeType 1`, `MVDataOutlinerNameExpr m_VariableName`, `MVDataRoot`
 
 **Relationships:**
 
@@ -2526,16 +3623,30 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_VariableName` | CUtlString |  |
-| `m_bExposeAsParameter` | bool | `MPropertyDescription If enabled, this value will be exposed as a parameter that can be set on the smart prop object in hammer.` `MPropertySortPriority` |
-| `m_DisplayName` | CUtlString | `MPropertyDescription Name of the parameter which will appear as a property in the Hammer object properties ui when selecting an object using this smart prop.` `MPropertyFriendlyName Parameter Display Name` `MPropertyReadonlyExpr` `MPropertySortPriority` |
-| `m_HideExpression` | CUtlString | `MPropertyDescription Expression to evaluate to determine if this parameter should be hidden. Can be used to hide this parameter based on the state of other parameters.` `MPropertyReadonlyExpr` `MPropertySortPriority` |
-| `m_ReadOnlyExpression` | CUtlString | `MPropertyDescription Expression to evaluate to detemrine if this parameter should be read-only. Can be used to make this parameter read-only based on the state of other parameters.` `MPropertyReadonlyExpr` `MPropertySortPriority` |
+| `m_bExposeAsParameter` | bool | `MPropertyDescription If enabled, this value will be exposed as a parameter that can be set on the smart prop object in hammer.` `MPropertySortPriority -1` |
+| `m_DisplayName` | CUtlString | `MPropertyDescription Name of the parameter which will appear as a property in the Hammer object properties ui when selecting an object using this smart prop.` `MPropertyFriendlyName Parameter Display Name` `MPropertyReadonlyExpr m_bExposeAsParameter == false` `MPropertySortPriority -1` |
+| `m_HideExpression` | CUtlString | `MPropertyDescription Expression to evaluate to determine if this parameter should be hidden. Can be used to hide this parameter based on the state of other parameters.` `MPropertyReadonlyExpr m_bExposeAsParameter == false` `MPropertySortPriority -1` |
+| `m_ReadOnlyExpression` | CUtlString | `MPropertyDescription Expression to evaluate to detemrine if this parameter should be read-only. Can be used to make this parameter read-only based on the state of other parameters.` `MPropertyReadonlyExpr m_bExposeAsParameter == false` `MPropertySortPriority -1` |
 
 ### CSmartPropVariable_Angles
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Angles`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_Angles",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`, `MPropertyFriendlyName Angles`
 
 **Relationships:**
 
@@ -2555,7 +3666,16 @@ classDiagram
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Specifies how a color tint value is to be applied with respect to the existing color tint`, `MPropertyFriendlyName Tint Mode`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_ApplyColorMode",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue": "MULTIPLY_OBJECT"
+}`, `MPropertyDescription Specifies how a color tint value is to be applied with respect to the existing color tint`, `MPropertyFriendlyName Tint Mode`, `MVDataClassGroup Enumerator Types`
 
 **Relationships:**
 
@@ -2576,7 +3696,16 @@ classDiagram
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Boolean`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_Bool",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue": false
+}`, `MPropertyFriendlyName Boolean`
 
 **Relationships:**
 
@@ -2596,7 +3725,16 @@ classDiagram
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Specifies the method by which a child element is selected from a list.`, `MPropertyFriendlyName Selection Mode`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_ChoiceSelectionMode",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue": "RANDOM"
+}`, `MPropertyDescription Specifies the method by which a child element is selected from a list.`, `MPropertyFriendlyName Selection Mode`, `MVDataClassGroup Enumerator Types`
 
 **Relationships:**
 
@@ -2617,7 +3755,22 @@ classDiagram
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Color`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_Color",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue":
+	[
+		0,
+		0,
+		0,
+		0
+	]
+}`, `MPropertyFriendlyName Color`
 
 **Relationships:**
 
@@ -2637,7 +3790,16 @@ classDiagram
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Specifies the method by which a color selection is to be made.`, `MPropertyFriendlyName Color Selection mode`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_ColorSelectionMode",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue": "SPECIFIC_COLOR"
+}`, `MPropertyDescription Specifies the method by which a color selection is to be made.`, `MPropertyFriendlyName Color Selection mode`, `MVDataClassGroup Enumerator Types`
 
 **Relationships:**
 
@@ -2658,7 +3820,16 @@ classDiagram
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Specifies a coordinate space in which a point or vector value is defined.`, `MPropertyFriendlyName Coordinate Space`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_CoordinateSpace",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue": "WORLD"
+}`, `MPropertyDescription Specifies a coordinate space in which a point or vector value is defined.`, `MPropertyFriendlyName Coordinate Space`, `MVDataClassGroup Enumerator Types`
 
 **Relationships:**
 
@@ -2679,7 +3850,16 @@ classDiagram
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Specifies a basis direction vector ( Forward, Left, or UP).`, `MPropertyFriendlyName Direction Vector`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_DirectionVector",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue": "FORWARD"
+}`, `MPropertyDescription Specifies a basis direction vector ( Forward, Left, or UP).`, `MPropertyFriendlyName Direction Vector`, `MVDataClassGroup Enumerator Types`
 
 **Relationships:**
 
@@ -2700,7 +3880,16 @@ classDiagram
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Specifies a distribution mode used to determine how certain elements distribute instances of their children within a space.`, `MPropertyFriendlyName Distribution Mode`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_DistributionMode",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue": "RANDOM"
+}`, `MPropertyDescription Specifies a distribution mode used to determine how certain elements distribute instances of their children within a space.`, `MPropertyFriendlyName Distribution Mode`, `MVDataClassGroup Enumerator Types`
 
 **Relationships:**
 
@@ -2721,7 +3910,18 @@ classDiagram
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Float`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_Float",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue": 0.000000,
+	"m_flParamaterMinValue": 0.000000,
+	"m_flParamaterMaxValue": 1.000000
+}`, `MPropertyFriendlyName Float`
 
 **Relationships:**
 
@@ -2736,14 +3936,23 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_DefaultValue` | float32 |  |
-| `m_flParamaterMinValue` | float32 | `MPropertyReadonlyExpr` `MPropertySortPriority` |
-| `m_flParamaterMaxValue` | float32 | `MPropertyReadonlyExpr` `MPropertySortPriority` |
+| `m_flParamaterMinValue` | float32 | `MPropertyReadonlyExpr m_bExposeAsParameter == false` `MPropertySortPriority -1` |
+| `m_flParamaterMaxValue` | float32 | `MPropertyReadonlyExpr m_bExposeAsParameter == false` `MPropertySortPriority -1` |
 
 ### CSmartPropVariable_GridOriginMode
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Specifies where the origin of a child element is placed realative to each grid cell.`, `MPropertyFriendlyName Grid Origin`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_GridOriginMode",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue": "CENTER"
+}`, `MPropertyDescription Specifies where the origin of a child element is placed realative to each grid cell.`, `MPropertyFriendlyName Grid Origin`, `MVDataClassGroup Enumerator Types`
 
 **Relationships:**
 
@@ -2764,7 +3973,16 @@ classDiagram
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Specifies how to place elements within a grid.`, `MPropertyFriendlyName Grid Placement`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_GridPlacementMode",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue": "SEGMENT"
+}`, `MPropertyDescription Specifies how to place elements within a grid.`, `MPropertyFriendlyName Grid Placement`, `MVDataClassGroup Enumerator Types`
 
 **Relationships:**
 
@@ -2785,7 +4003,18 @@ classDiagram
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Integer`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_Int",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue": 0,
+	"m_nParamaterMinValue": 0,
+	"m_nParamaterMaxValue": 1
+}`, `MPropertyFriendlyName Integer`
 
 **Relationships:**
 
@@ -2800,14 +4029,23 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_DefaultValue` | int32 |  |
-| `m_nParamaterMinValue` | int32 | `MPropertyReadonlyExpr` `MPropertySortPriority` |
-| `m_nParamaterMaxValue` | int32 | `MPropertyReadonlyExpr` `MPropertySortPriority` |
+| `m_nParamaterMinValue` | int32 | `MPropertyReadonlyExpr m_bExposeAsParameter == false` `MPropertySortPriority -1` |
+| `m_nParamaterMaxValue` | int32 | `MPropertyReadonlyExpr m_bExposeAsParameter == false` `MPropertySortPriority -1` |
 
 ### CSmartPropVariable_Material
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Material Asset Variable`, `MPropertyFriendlyName Material`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_Material",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue": ""
+}`, `MPropertyDescription Material Asset Variable`, `MPropertyFriendlyName Material`
 
 **Relationships:**
 
@@ -2828,7 +4066,17 @@ classDiagram
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Material Group`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_MaterialGroup",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_sModelName": "",
+	"m_DefaultValue": ""
+}`, `MPropertyFriendlyName Material Group`
 
 **Relationships:**
 
@@ -2843,14 +4091,23 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sModelName` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > > | `MPropertyDescription Model containing the set of material groups to select.` `MPropertyProvidesEditContextString` |
+| `m_sModelName` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > > | `MPropertyDescription Model containing the set of material groups to select.` `MPropertyProvidesEditContextString ToolEditContext_ID_VMDL` |
 | `m_DefaultValue` | CModelMaterialGroupName | `MPropertyDescription Default material group (skin) to assign to the variable value.` `MPropertyFriendlyName Default Material Group` |
 
 ### CSmartPropVariable_Model
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Model Asset Variable`, `MPropertyFriendlyName Model`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_Model",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue": ""
+}`, `MPropertyDescription Model Asset Variable`, `MPropertyFriendlyName Model`
 
 **Relationships:**
 
@@ -2871,7 +4128,16 @@ classDiagram
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Specifies how a fit on line element will pick which child elements it will place.`, `MPropertyFriendlyName Fit on Line Pick Mode`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_OrientationMode",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue": "FIRST_OPEN_EDGE"
+}`, `MPropertyDescription Specifies how a fit on line element will pick which child elements it will place.`, `MPropertyFriendlyName Fit on Line Pick Mode`, `MVDataClassGroup Enumerator Types`
 
 **Relationships:**
 
@@ -2892,7 +4158,16 @@ classDiagram
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Specifies the set of positions that are valid for path placement.`, `MPropertyFriendlyName Path Positions`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_PathPositions",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue": "ALL"
+}`, `MPropertyDescription Specifies the set of positions that are valid for path placement.`, `MPropertyFriendlyName Path Positions`, `MVDataClassGroup Enumerator Types`
 
 **Relationships:**
 
@@ -2913,7 +4188,16 @@ classDiagram
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Specifies how a fit on line element will pick which child elements it will place.`, `MPropertyFriendlyName Fit on Line Pick Mode`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_PickMode",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue": "LARGEST_FIRST"
+}`, `MPropertyDescription Specifies how a fit on line element will pick which child elements it will place.`, `MPropertyFriendlyName Fit on Line Pick Mode`, `MVDataClassGroup Enumerator Types`
 
 **Relationships:**
 
@@ -2934,7 +4218,16 @@ classDiagram
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Specifies the shape (circle, or sphere) to use with elements that place children within a radius.`, `MPropertyFriendlyName Placement Shape`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_RadiusPlacementMode",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue": "SPHERE"
+}`, `MPropertyDescription Specifies the shape (circle, or sphere) to use with elements that place children within a radius.`, `MPropertyFriendlyName Placement Shape`, `MVDataClassGroup Enumerator Types`
 
 **Relationships:**
 
@@ -2955,7 +4248,16 @@ classDiagram
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Specifies how a fit on line element will scale generate scale values for the objects it places.`, `MPropertyFriendlyName Fit on Line Scale Mode`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_ScaleMode",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue": "NONE"
+}`, `MPropertyDescription Specifies how a fit on line element will scale generate scale values for the objects it places.`, `MPropertyFriendlyName Fit on Line Scale Mode`, `MVDataClassGroup Enumerator Types`
 
 **Relationships:**
 
@@ -2976,7 +4278,16 @@ classDiagram
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName String`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_String",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue": ""
+}`, `MPropertyFriendlyName String`
 
 **Relationships:**
 
@@ -2996,7 +4307,16 @@ classDiagram
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Surface Property Variable`, `MPropertyFriendlyName Surface Property`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_SurfaceProperty",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue": ""
+}`, `MPropertyDescription Surface Property Variable`, `MPropertyFriendlyName Surface Property`
 
 **Relationships:**
 
@@ -3016,7 +4336,16 @@ classDiagram
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Specified what to do when a trace does not hit a surface.`, `MPropertyFriendlyName Trace Miss Behavior`, `MVDataClassGroup`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_TraceNoHit",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue": "NOTHING"
+}`, `MPropertyDescription Specified what to do when a trace does not hit a surface.`, `MPropertyFriendlyName Trace Miss Behavior`, `MVDataClassGroup Enumerator Types`
 
 **Relationships:**
 
@@ -3037,7 +4366,20 @@ classDiagram
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Vector 2D`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_Vector2D",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue":
+	[
+		0.000000,
+		0.000000
+	]
+}`, `MPropertyFriendlyName Vector 2D`
 
 **Relationships:**
 
@@ -3057,7 +4399,21 @@ classDiagram
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Vector 3D`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_Vector3D",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`, `MPropertyFriendlyName Vector 3D`
 
 **Relationships:**
 
@@ -3077,7 +4433,22 @@ classDiagram
 
 **Inherits from:** [CSmartPropVariable](smartprops.md#csmartpropvariable)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Vector 4D`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmartPropVariable_Vector4D",
+	"m_nElementID": -1,
+	"m_VariableName": "",
+	"m_bExposeAsParameter": false,
+	"m_DisplayName": "",
+	"m_HideExpression": "",
+	"m_ReadOnlyExpression": "",
+	"m_DefaultValue":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`, `MPropertyFriendlyName Vector 4D`
 
 **Relationships:**
 
@@ -3095,7 +4466,15 @@ classDiagram
 
 ### ColorChoice_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Color":
+	[
+		255,
+		255,
+		255
+	],
+	"m_flWeight": 1.000000
+}`
 
 **Fields:**
 
@@ -3106,7 +4485,10 @@ classDiagram
 
 ### MaterialGroupChoice_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_MaterialGroupName": "",
+	"m_flWeight": 1.000000
+}`
 
 **Fields:**
 

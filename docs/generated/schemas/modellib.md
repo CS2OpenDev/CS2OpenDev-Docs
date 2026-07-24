@@ -130,7 +130,9 @@ nav_exclude: true
 
 ### AnimComponentID
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_id": <HIDDEN FOR DIFF>,
+}`
 
 **Fields:**
 
@@ -140,7 +142,9 @@ nav_exclude: true
 
 ### AnimNodeID
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_id": <HIDDEN FOR DIFF>,
+}`
 
 **Fields:**
 
@@ -150,7 +154,9 @@ nav_exclude: true
 
 ### AnimNodeOutputID
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_id": <HIDDEN FOR DIFF>,
+}`
 
 **Fields:**
 
@@ -160,7 +166,9 @@ nav_exclude: true
 
 ### AnimParamID
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_id": <HIDDEN FOR DIFF>,
+}`
 
 **Fields:**
 
@@ -170,7 +178,9 @@ nav_exclude: true
 
 ### AnimScriptHandle
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_id": <HIDDEN FOR DIFF>,
+}`
 
 **Fields:**
 
@@ -180,7 +190,9 @@ nav_exclude: true
 
 ### AnimStateID
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_id": <HIDDEN FOR DIFF>,
+}`
 
 **Fields:**
 
@@ -190,7 +202,9 @@ nav_exclude: true
 
 ### AnimTagID
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_id": <HIDDEN FOR DIFF>,
+}`
 
 **Fields:**
 
@@ -212,7 +226,30 @@ nav_exclude: true
 
 **Inherits from:** [CBaseConstraint](modellib.md#cbaseconstraint)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAimConstraint",
+	"m_name": "",
+	"m_vUpVector":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_slaves":
+	[
+	],
+	"m_targets":
+	[
+	],
+	"m_qAimOffset":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000
+	],
+	"m_nUpType": 0
+}`
 
 **Relationships:**
 
@@ -247,7 +284,9 @@ classDiagram
 
 **Inherits from:** [CCycleBase](modellib.md#ccyclebase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flCycle": 0.000000
+}`
 
 **Relationships:**
 
@@ -258,7 +297,23 @@ classDiagram
 
 ### CAnimFoot
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_vBallOffset":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vHeelOffset":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_ankleBoneIndex": -1,
+	"m_toeBoneIndex": -1
+}`
 
 **Fields:**
 
@@ -272,7 +327,33 @@ classDiagram
 
 ### CAnimSkeleton
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimSkeleton",
+	"m_localSpaceTransforms":
+	[
+	],
+	"m_modelSpaceTransforms":
+	[
+	],
+	"m_boneNames":
+	[
+	],
+	"m_children":
+	[
+	],
+	"m_parents":
+	[
+	],
+	"m_feet":
+	[
+	],
+	"m_morphNames":
+	[
+	],
+	"m_lodBoneCounts":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -296,7 +377,68 @@ classDiagram
 
 ### CAttachment
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_influenceNames":
+	[
+		"",
+		"",
+		""
+	],
+	"m_vInfluenceRotations":
+	[
+		[
+			0.000000,
+			0.000000,
+			0.000000,
+			1.000000
+		],
+		[
+			0.000000,
+			0.000000,
+			0.000000,
+			1.000000
+		],
+		[
+			0.000000,
+			0.000000,
+			0.000000,
+			1.000000
+		]
+	],
+	"m_vInfluenceOffsets":
+	[
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		]
+	],
+	"m_influenceWeights":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_bInfluenceRootTransform":
+	[
+		false,
+		false,
+		false
+	],
+	"m_nInfluences": 0,
+	"m_bIgnoreRotation": false
+}`
 
 **Fields:**
 
@@ -365,7 +507,19 @@ classDiagram
 
 **Inherits from:** [CBoneConstraintBase](modellib.md#cboneconstraintbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CBoneConstraintDotToMorph",
+	"m_sBoneName": "",
+	"m_sTargetBoneName": "",
+	"m_sMorphChannelName": "",
+	"m_flRemap":
+	[
+		0.000000,
+		180.000000,
+		0.000000,
+		1.000000
+	]
+}`
 
 **Relationships:**
 
@@ -387,7 +541,27 @@ classDiagram
 
 **Inherits from:** [CBaseConstraint](modellib.md#cbaseconstraint)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CBoneConstraintPoseSpaceBone",
+	"m_name": "",
+	"m_vUpVector":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_slaves":
+	[
+	],
+	"m_targets":
+	[
+	],
+	"m_inputList":
+	[
+	],
+	"m_eRbfType": 0,
+	"m_flFalloff": 1.000000
+}`
 
 **Relationships:**
 
@@ -416,7 +590,20 @@ classDiagram
 
 **Inherits from:** [CBoneConstraintBase](modellib.md#cboneconstraintbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CBoneConstraintPoseSpaceMorph",
+	"m_sBoneName": "",
+	"m_sAttachmentName": "",
+	"m_outputMorph":
+	[
+	],
+	"m_inputList":
+	[
+	],
+	"m_bClamp": false,
+	"m_eRbfType": 0,
+	"m_flFalloff": 1.000000
+}`
 
 **Relationships:**
 
@@ -448,7 +635,16 @@ classDiagram
 
 **Inherits from:** [CBoneConstraintBase](modellib.md#cboneconstraintbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CBoneConstraintRbf",
+	"m_inputBones":
+	[
+	],
+	"m_outputBones":
+	[
+	],
+	"m_rbfParameters": "[BINARY BLOB]"
+}`
 
 **Relationships:**
 
@@ -466,7 +662,24 @@ classDiagram
 
 ### CConstraintSlave
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_qBaseOrientation":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000
+	],
+	"m_vBasePosition":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_nBoneHash": 0,
+	"m_flWeight": 0.000000,
+	"m_sName": ""
+}`
 
 **Fields:**
 
@@ -480,7 +693,25 @@ classDiagram
 
 ### CConstraintTarget
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_qOffset":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000
+	],
+	"m_vOffset":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_nBoneHash": 0,
+	"m_sName": "",
+	"m_flWeight": 0.000000,
+	"m_bIsAttachment": false
+}`
 
 **Fields:**
 
@@ -497,7 +728,9 @@ classDiagram
 
 **Derived by:** [CAnimCycle](modellib.md#canimcycle), [CFootCycle](modellib.md#cfootcycle)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flCycle": 0.000000
+}`
 
 **Relationships:**
 
@@ -515,7 +748,15 @@ classDiagram
 
 ### CDrawCullingData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_ConeAxis":
+	[
+		0,
+		0,
+		0
+	],
+	"m_ConeCutoff": 0
+}`
 
 **Fields:**
 
@@ -526,7 +767,12 @@ classDiagram
 
 ### CFlexController
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_szName": "",
+	"m_szType": "",
+	"min": 0.000000,
+	"max": 0.000000
+}`
 
 **Fields:**
 
@@ -539,7 +785,9 @@ classDiagram
 
 ### CFlexDesc
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_szFacs": ""
+}`
 
 **Fields:**
 
@@ -549,7 +797,10 @@ classDiagram
 
 ### CFlexOp
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_OpCode": 0,
+	"m_Data": 0
+}`
 
 **Relationships:**
 
@@ -567,7 +818,12 @@ classDiagram
 
 ### CFlexRule
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nFlex": 0,
+	"m_FlexOps":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -587,7 +843,9 @@ classDiagram
 
 **Inherits from:** [CCycleBase](modellib.md#ccyclebase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flCycle": 0.000000
+}`
 
 **Relationships:**
 
@@ -598,7 +856,47 @@ classDiagram
 
 ### CFootCycleDefinition
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vStancePositionMS":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vMidpointPositionMS":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_flStanceDirectionMS": 0.000000,
+	"m_vToStrideStartPos":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_stanceCycle":
+	{
+		"m_flCycle": 0.000000
+	},
+	"m_footLiftCycle":
+	{
+		"m_flCycle": 0.000000
+	},
+	"m_footOffCycle":
+	{
+		"m_flCycle": 0.000000
+	},
+	"m_footStrikeCycle":
+	{
+		"m_flCycle": 0.000000
+	},
+	"m_footLandCycle":
+	{
+		"m_flCycle": 0.000000
+	}
+}`
 
 **Relationships:**
 
@@ -624,7 +922,27 @@ classDiagram
 
 ### CFootDefinition
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_ankleBoneName": "",
+	"m_toeBoneName": "",
+	"m_vBallOffset":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vHeelOffset":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_flFootLength": -1.000000,
+	"m_flBindPoseDirectionMS": 0.000000,
+	"m_flTraceHeight": -1.000000,
+	"m_flTraceRadius": -1.000000
+}`
 
 **Fields:**
 
@@ -642,7 +960,13 @@ classDiagram
 
 ### CFootMotion
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_strides":
+	[
+	],
+	"m_name": "",
+	"m_bAdditive": false
+}`
 
 **Relationships:**
 
@@ -661,7 +985,56 @@ classDiagram
 
 ### CFootStride
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_definition":
+	{
+		"m_vStancePositionMS":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_vMidpointPositionMS":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_flStanceDirectionMS": 0.000000,
+		"m_vToStrideStartPos":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_stanceCycle":
+		{
+			"m_flCycle": 0.000000
+		},
+		"m_footLiftCycle":
+		{
+			"m_flCycle": 0.000000
+		},
+		"m_footOffCycle":
+		{
+			"m_flCycle": 0.000000
+		},
+		"m_footStrikeCycle":
+		{
+			"m_flCycle": 0.000000
+		},
+		"m_footLandCycle":
+		{
+			"m_flCycle": 0.000000
+		}
+	},
+	"m_trajectories":
+	{
+		"m_trajectories":
+		[
+		]
+	}
+}`
 
 **Relationships:**
 
@@ -680,7 +1053,11 @@ classDiagram
 
 ### CFootTrajectories
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_trajectories":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -697,7 +1074,16 @@ classDiagram
 
 ### CFootTrajectory
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vOffset":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_flRotationOffset": 0.000000,
+	"m_flProgression": 0.000000
+}`
 
 **Fields:**
 
@@ -709,7 +1095,36 @@ classDiagram
 
 ### CHitBox
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_sSurfaceProperty": "",
+	"m_sBoneName": "",
+	"m_vMinBounds":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vMaxBounds":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_flShapeRadius": 0.000000,
+	"m_nBoneNameHash": 0,
+	"m_nGroupId": 0,
+	"m_nShapeType": 0,
+	"m_bTranslationOnly": false,
+	"m_CRC": 0,
+	"m_cRenderColor":
+	[
+		255,
+		255,
+		255
+	],
+	"m_nHitBoxIndex": 0
+}`
 
 **Fields:**
 
@@ -731,7 +1146,14 @@ classDiagram
 
 ### CHitBoxSet
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_nNameHash": 0,
+	"m_HitBoxes":
+	[
+	],
+	"m_SourceFilename": ""
+}`
 
 **Relationships:**
 
@@ -751,7 +1173,11 @@ classDiagram
 
 ### CHitBoxSetList
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_HitBoxSets":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -768,7 +1194,46 @@ classDiagram
 
 ### CMaterialDrawDescriptor
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flUvDensity": 0.000000,
+	"m_vTintColor":
+	[
+		1.000000,
+		1.000000,
+		1.000000
+	],
+	"m_flAlpha": 1.000000,
+	"m_nNumMeshlets": 0,
+	"m_nFirstMeshlet": 0,
+	"m_nAppliedIndexOffset": 0,
+	"m_nDepthVertexBufferIndex": 255,
+	"m_nMeshletPackedIVBIndex": 255,
+	"m_rigidMeshParts":
+	[
+	],
+	"m_rootBvhNodes":
+	[
+	],
+	"m_nPrimitiveType": "RENDER_PRIM_TRIANGLES",
+	"m_nBaseVertex": 0,
+	"m_nVertexCount": 0,
+	"m_nStartIndex": 0,
+	"m_nIndexCount": 0,
+	"m_indexBuffer":
+	{
+		"m_hBuffer": 0,
+		"m_nBindOffsetBytes": 0
+	},
+	"m_meshletPackedIVB":
+	{
+		"m_hBuffer": 0,
+		"m_nBindOffsetBytes": 0
+	},
+	"m_material": "",
+	"m_vertexBuffers":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -804,7 +1269,12 @@ classDiagram
 
 ### CMaterialDrawDescriptor::RigidMeshPart_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nRigidBLASIndex": 0,
+	"m_nBoneIndex": -1,
+	"m_nStartIndexOffset": 0,
+	"m_nPrimitiveCount": 0
+}`
 
 **Fields:**
 
@@ -817,7 +1287,27 @@ classDiagram
 
 ### CMeshletDescriptor
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_PackedAABB":
+	{
+		"m_nMin": 0,
+		"m_nMax": 0
+	},
+	"m_CullingData":
+	{
+		"m_ConeAxis":
+		[
+			0,
+			0,
+			0
+		],
+		"m_ConeCutoff": 0
+	},
+	"m_nVertexOffset": 0,
+	"m_nTriangleOffset": 0,
+	"m_nVertexCount": 0,
+	"m_nTriangleCount": 0
+}`
 
 **Relationships:**
 
@@ -840,7 +1330,14 @@ classDiagram
 
 ### CModelConfig
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_ConfigName": "",
+	"m_Elements":
+	[
+	],
+	"m_bTopLevel": false,
+	"m_bActiveInEditorByDefault": false
+}`
 
 **Relationships:**
 
@@ -891,7 +1388,36 @@ classDiagram
 
 **Inherits from:** [CModelConfigElement](modellib.md#cmodelconfigelement)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CModelConfigElement_AttachedModel",
+	"m_ElementName": "",
+	"m_NestedElements":
+	[
+	],
+	"m_InstanceName": "",
+	"m_EntityClass": "",
+	"m_hModel": "",
+	"m_vOffset":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_aAngOffset":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_AttachmentName": "",
+	"m_LocalAttachmentOffsetName": "",
+	"m_AttachmentType": "MODEL_CONFIG_ATTACHMENT_ROOT_RELATIVE",
+	"m_bBoneMergeFlex": false,
+	"m_bUserSpecifiedColor": false,
+	"m_bUserSpecifiedMaterialGroup": false,
+	"m_BodygroupOnOtherModels": "",
+	"m_MaterialGroupOnOtherModels": ""
+}`
 
 **Relationships:**
 
@@ -924,7 +1450,15 @@ classDiagram
 
 **Inherits from:** [CModelConfigElement](modellib.md#cmodelconfigelement)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CModelConfigElement_Command",
+	"m_ElementName": "",
+	"m_NestedElements":
+	[
+	],
+	"m_Command": "",
+	"m_Args": null
+}`
 
 **Relationships:**
 
@@ -944,7 +1478,19 @@ classDiagram
 
 **Inherits from:** [CModelConfigElement](modellib.md#cmodelconfigelement)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CModelConfigElement_RandomColor",
+	"m_ElementName": "",
+	"m_NestedElements":
+	[
+	],
+	"m_Gradient":
+	{
+		"m_Stops":
+		[
+		]
+	}
+}`
 
 **Relationships:**
 
@@ -963,7 +1509,19 @@ classDiagram
 
 **Inherits from:** [CModelConfigElement](modellib.md#cmodelconfigelement)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CModelConfigElement_RandomPick",
+	"m_ElementName": "",
+	"m_NestedElements":
+	[
+	],
+	"m_Choices":
+	[
+	],
+	"m_ChoiceWeights":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -983,7 +1541,15 @@ classDiagram
 
 **Inherits from:** [CModelConfigElement](modellib.md#cmodelconfigelement)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CModelConfigElement_SetBodygroup",
+	"m_ElementName": "",
+	"m_NestedElements":
+	[
+	],
+	"m_GroupName": "",
+	"m_nChoice": 0
+}`
 
 **Relationships:**
 
@@ -1003,7 +1569,15 @@ classDiagram
 
 **Inherits from:** [CModelConfigElement](modellib.md#cmodelconfigelement)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CModelConfigElement_SetBodygroupOnAttachedModels",
+	"m_ElementName": "",
+	"m_NestedElements":
+	[
+	],
+	"m_GroupName": "",
+	"m_nChoice": 0
+}`
 
 **Relationships:**
 
@@ -1023,7 +1597,14 @@ classDiagram
 
 **Inherits from:** [CModelConfigElement](modellib.md#cmodelconfigelement)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CModelConfigElement_SetMaterialGroup",
+	"m_ElementName": "",
+	"m_NestedElements":
+	[
+	],
+	"m_MaterialGroupName": ""
+}`
 
 **Relationships:**
 
@@ -1042,7 +1623,14 @@ classDiagram
 
 **Inherits from:** [CModelConfigElement](modellib.md#cmodelconfigelement)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CModelConfigElement_SetMaterialGroupOnAttachedModels",
+	"m_ElementName": "",
+	"m_NestedElements":
+	[
+	],
+	"m_MaterialGroupName": ""
+}`
 
 **Relationships:**
 
@@ -1061,7 +1649,19 @@ classDiagram
 
 **Inherits from:** [CModelConfigElement](modellib.md#cmodelconfigelement)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CModelConfigElement_SetRenderColor",
+	"m_ElementName": "",
+	"m_NestedElements":
+	[
+	],
+	"m_Color":
+	[
+		255,
+		255,
+		255
+	]
+}`
 
 **Relationships:**
 
@@ -1080,7 +1680,16 @@ classDiagram
 
 **Inherits from:** [CModelConfigElement](modellib.md#cmodelconfigelement)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CModelConfigElement_UserPick",
+	"m_ElementName": "",
+	"m_NestedElements":
+	[
+	],
+	"m_Choices":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1097,7 +1706,13 @@ classDiagram
 
 ### CModelConfigList
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_bHideMaterialGroupInTools": false,
+	"m_bHideRenderColorInTools": false,
+	"m_Configs":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1116,7 +1731,16 @@ classDiagram
 
 ### CMorphBundleData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flULeftSrc": 0.000000,
+	"m_flVTopSrc": 0.000000,
+	"m_offsets":
+	[
+	],
+	"m_ranges":
+	[
+	]
+}`
 
 **Fields:**
 
@@ -1131,7 +1755,26 @@ classDiagram
 
 **Inherits from:** [CBaseConstraint](modellib.md#cbaseconstraint)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMorphConstraint",
+	"m_name": "",
+	"m_vUpVector":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_slaves":
+	[
+	],
+	"m_targets":
+	[
+	],
+	"m_sTargetMorph": "",
+	"m_nSlaveChannel": 0,
+	"m_flMin": 0.000000,
+	"m_flMax": 1.000000
+}`
 
 **Relationships:**
 
@@ -1152,7 +1795,12 @@ classDiagram
 
 ### CMorphData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_morphRectDatas":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1170,7 +1818,15 @@ classDiagram
 
 ### CMorphRectData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nXLeftDst": 0,
+	"m_nYTopDst": 0,
+	"m_flUWidthSrc": 0.000000,
+	"m_flVHeightSrc": 0.000000,
+	"m_bundleDatas":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1191,7 +1847,26 @@ classDiagram
 
 ### CMorphSetData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nWidth": 0,
+	"m_nHeight": 0,
+	"m_bundleTypes":
+	[
+	],
+	"m_morphDatas":
+	[
+	],
+	"m_pTextureAtlas": "",
+	"m_FlexDesc":
+	[
+	],
+	"m_FlexControllers":
+	[
+	],
+	"m_FlexRules":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1220,7 +1895,26 @@ classDiagram
 
 ### CNPCPhysicsHull
 
-**Metadata:** `MFgdHelper`, `MFgdHelper`, `MGetKV3ClassDefaults`, `MModelGameData`
+**Metadata:** `MFgdHelper game_data_list{ key = 'CNPCPhysicsHull' }`, `MFgdHelper npcphysicshull{}`, `MGetKV3ClassDefaults {
+	"m_sName": "",
+	"m_eType": "eInvalid",
+	"m_flCapsuleHeight": 50.000000,
+	"m_flCapsuleRadius": 11.000000,
+	"m_vCapsuleCenter1":
+	[
+		0.000000,
+		0.000000,
+		11.000000
+	],
+	"m_vCapsuleCenter2":
+	[
+		0.000000,
+		0.000000,
+		61.000000
+	],
+	"m_flGroundBoxHeight": 50.000000,
+	"m_flGroundBoxWidth": 11.000000
+}`, `MModelGameData`
 
 **Relationships:**
 
@@ -1235,18 +1929,33 @@ classDiagram
 |------|------|-------------|
 | `m_sName` | CGlobalSymbol | `MPropertyFriendlyName Name` `MPropertySuppressField` |
 | `m_eType` | [NPCPhysicsHullType_t](../schemas/!GlobalTypes.md#npcphysicshulltype_t) | `MPropertyFriendlyName Type` |
-| `m_flCapsuleHeight` | float32 | `MPropertyFriendlyName Height` `MPropertySuppressExpr` |
-| `m_flCapsuleRadius` | float32 | `MPropertyFriendlyName Radius` `MPropertySuppressExpr` |
-| `m_vCapsuleCenter1` | Vector | `MPropertyFriendlyName Center 1` `MPropertySuppressExpr` |
-| `m_vCapsuleCenter2` | Vector | `MPropertyFriendlyName Center 2` `MPropertySuppressExpr` |
-| `m_flGroundBoxHeight` | float32 | `MPropertyFriendlyName Height` `MPropertySuppressExpr` |
-| `m_flGroundBoxWidth` | float32 | `MPropertyFriendlyName Width` `MPropertySuppressExpr` |
+| `m_flCapsuleHeight` | float32 | `MPropertyFriendlyName Height` `MPropertySuppressExpr m_eType != eGroundCapsule && m_eType != eCenteredCapsule && m_eType != eCenteredCylinder && m_eType != eGroundCylinder` |
+| `m_flCapsuleRadius` | float32 | `MPropertyFriendlyName Radius` `MPropertySuppressExpr m_eType != eGroundCapsule && m_eType != eGenericCapsule && m_eType != eCenteredCapsule && m_eType != eCenteredCylinder && m_eType != eGroundCylinder` |
+| `m_vCapsuleCenter1` | Vector | `MPropertyFriendlyName Center 1` `MPropertySuppressExpr m_eType != eGenericCapsule` |
+| `m_vCapsuleCenter2` | Vector | `MPropertyFriendlyName Center 2` `MPropertySuppressExpr m_eType != eGenericCapsule` |
+| `m_flGroundBoxHeight` | float32 | `MPropertyFriendlyName Height` `MPropertySuppressExpr m_eType != eGroundBox` |
+| `m_flGroundBoxWidth` | float32 | `MPropertyFriendlyName Width` `MPropertySuppressExpr m_eType != eGroundBox` |
 
 ### COrientConstraint
 
 **Inherits from:** [CBaseConstraint](modellib.md#cbaseconstraint)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "COrientConstraint",
+	"m_name": "",
+	"m_vUpVector":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_slaves":
+	[
+	],
+	"m_targets":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1260,7 +1969,22 @@ classDiagram
 
 **Inherits from:** [CBaseConstraint](modellib.md#cbaseconstraint)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CParentConstraint",
+	"m_name": "",
+	"m_vUpVector":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_slaves":
+	[
+	],
+	"m_targets":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1272,7 +1996,53 @@ classDiagram
 
 ### CPhysSurfaceProperties
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"surfacePropertyName": "",
+	"m_nameHash": 0,
+	"m_baseNameHash": 0,
+	"hidden": false,
+	"description": "",
+	"physics":
+	{
+		"friction": 0.000000,
+		"elasticity": 0.000000,
+		"density": 0.000000,
+		"thickness": 0.100000,
+		"softcontactfrequency": 0.000000,
+		"softcontactdampingratio": 0.000000
+	},
+	"vehicleparams":
+	{
+		"wheeldrag": 0.000000,
+		"wheelfrictionscale": 1.000000
+	},
+	"audiosounds":
+	{
+		"impactsoft": "",
+		"impacthard": "",
+		"scrapesmooth": "",
+		"scraperough": "",
+		"bulletimpact": "",
+		"rolling": "",
+		"break": "",
+		"strain": "",
+		"meleeimpact": "",
+		"pushoff": "",
+		"skidstop": "",
+		"resonant": ""
+	},
+	"audioparams":
+	{
+		"audioreflectivity": 0.000000,
+		"audiohardnessfactor": 0.000000,
+		"audioroughnessfactor": 0.000000,
+		"scrapeRoughThreshold": 0.000000,
+		"impactHardThreshold": 0.000000,
+		"audioHardMinVelocity": 0.000000,
+		"staticImpactVolume": 0.000000,
+		"occlusionFactor": 0.000000
+	}
+}`
 
 **Relationships:**
 
@@ -1300,7 +2070,16 @@ classDiagram
 
 ### CPhysSurfacePropertiesAudio
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"audioreflectivity": 0.000000,
+	"audiohardnessfactor": 0.000000,
+	"audioroughnessfactor": 0.000000,
+	"scrapeRoughThreshold": 0.000000,
+	"impactHardThreshold": 0.000000,
+	"audioHardMinVelocity": 0.000000,
+	"staticImpactVolume": 0.000000,
+	"occlusionFactor": 0.000000
+}`
 
 **Fields:**
 
@@ -1317,7 +2096,14 @@ classDiagram
 
 ### CPhysSurfacePropertiesPhysics
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"friction": 0.000000,
+	"elasticity": 0.000000,
+	"density": 0.000000,
+	"thickness": 0.100000,
+	"softcontactfrequency": 0.000000,
+	"softcontactdampingratio": 0.000000
+}`
 
 **Fields:**
 
@@ -1332,7 +2118,20 @@ classDiagram
 
 ### CPhysSurfacePropertiesSoundNames
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"impactsoft": "",
+	"impacthard": "",
+	"scrapesmooth": "",
+	"scraperough": "",
+	"bulletimpact": "",
+	"rolling": "",
+	"break": "",
+	"strain": "",
+	"meleeimpact": "",
+	"pushoff": "",
+	"skidstop": "",
+	"resonant": ""
+}`
 
 **Fields:**
 
@@ -1353,7 +2152,10 @@ classDiagram
 
 ### CPhysSurfacePropertiesVehicle
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"wheeldrag": 0.000000,
+	"wheelfrictionscale": 1.000000
+}`
 
 **Fields:**
 
@@ -1366,7 +2168,22 @@ classDiagram
 
 **Inherits from:** [CBaseConstraint](modellib.md#cbaseconstraint)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPointConstraint",
+	"m_name": "",
+	"m_vUpVector":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_slaves":
+	[
+	],
+	"m_targets":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1378,7 +2195,10 @@ classDiagram
 
 ### CRenderBufferBinding
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_hBuffer": 0,
+	"m_nBindOffsetBytes": 0
+}`
 
 **Fields:**
 
@@ -1389,7 +2209,28 @@ classDiagram
 
 ### CRenderGroom
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_hairs":
+	[
+	],
+	"m_hairPositionOffsets":
+	[
+	],
+	"m_hSimParamsMat": "",
+	"m_strandSegmentCountHist":
+	[
+	],
+	"m_nMaxSegmentsPerHairStrand": 0,
+	"m_nGuideHairCount": 0,
+	"m_nHairCount": 0,
+	"m_nTotalVertexCount": 0,
+	"m_nTotalSegmentCount": 0,
+	"m_nGroomGroupID": 0,
+	"m_nAttachBoneIdx": 0,
+	"m_nAttachMeshIdx": -1,
+	"m_nAttachMeshDrawCallIdx": -1,
+	"m_bEnableSimulation": false
+}`
 
 **Relationships:**
 
@@ -1420,7 +2261,44 @@ classDiagram
 
 ### CRenderMesh
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CRenderMesh",
+	"m_sceneObjects":
+	[
+	],
+	"m_constraints":
+	[
+	],
+	"m_skeleton":
+	{
+		"m_bones":
+		[
+		],
+		"m_boneParents":
+		[
+		],
+		"m_nBoneWeightCount": 4
+	},
+	"m_bUseUV2ForCharting": false,
+	"m_bEmbeddedMapMesh": false,
+	"m_meshDeformParams":
+	{
+		"m_flTensionCompressScale": 0.000000,
+		"m_flTensionStretchScale": 0.000000,
+		"m_bRecomputeSmoothNormalsAfterAnimation": false,
+		"m_bComputeDynamicMeshTensionAfterAnimation": false,
+		"m_bSmoothNormalsAcrossUvSeams": false,
+		"m_bEnableEyeBulgeDeformation": false
+	},
+	"m_pGroomData": null,
+	"m_attachments":
+	[
+	],
+	"m_hitboxsets":
+	[
+	],
+	"m_morphSet": ""
+}`
 
 **Relationships:**
 
@@ -1447,7 +2325,15 @@ classDiagram
 
 ### CRenderSkeleton
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_bones":
+	[
+	],
+	"m_boneParents":
+	[
+	],
+	"m_nBoneWeightCount": 4
+}`
 
 **Relationships:**
 
@@ -1466,7 +2352,39 @@ classDiagram
 
 ### CSceneObjectData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vMinBounds":
+	[
+		340282346638528859811704183484516925440.000000,
+		340282346638528859811704183484516925440.000000,
+		340282346638528859811704183484516925440.000000
+	],
+	"m_vMaxBounds":
+	[
+		-340282346638528859811704183484516925440.000000,
+		-340282346638528859811704183484516925440.000000,
+		-340282346638528859811704183484516925440.000000
+	],
+	"m_drawCalls":
+	[
+	],
+	"m_drawBounds":
+	[
+	],
+	"m_meshlets":
+	[
+	],
+	"m_rtProxyDrawCalls":
+	[
+	],
+	"m_vTintColor":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`
 
 **Relationships:**
 
@@ -1491,7 +2409,75 @@ classDiagram
 
 ### CSceneObjectData::RTProxyDrawDescriptor_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_materialGroupToken": 0,
+	"m_nSrcDrawIndex": -1,
+	"m_drawDesc":
+	{
+		"m_flUvDensity": 0.000000,
+		"m_vTintColor":
+		[
+			1.000000,
+			1.000000,
+			1.000000
+		],
+		"m_flAlpha": 1.000000,
+		"m_nNumMeshlets": 0,
+		"m_nFirstMeshlet": 0,
+		"m_nAppliedIndexOffset": 0,
+		"m_nDepthVertexBufferIndex": 255,
+		"m_nMeshletPackedIVBIndex": 255,
+		"m_rigidMeshParts":
+		[
+		],
+		"m_rootBvhNodes":
+		[
+		],
+		"m_nPrimitiveType": "RENDER_PRIM_TRIANGLES",
+		"m_nBaseVertex": 0,
+		"m_nVertexCount": 0,
+		"m_nStartIndex": 0,
+		"m_nIndexCount": 0,
+		"m_indexBuffer":
+		{
+			"m_hBuffer": 0,
+			"m_nBindOffsetBytes": 0
+		},
+		"m_meshletPackedIVB":
+		{
+			"m_hBuffer": 0,
+			"m_nBindOffsetBytes": 0
+		},
+		"m_material": "",
+		"m_vertexBuffers":
+		[
+		]
+	},
+	"m_mWorldFromLocal":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_nVertexAlbedoFormat": "VERTEX_ALBEDO_NONE",
+	"m_nVertexAlbedoVB": -1,
+	"m_nVertexAlbedoOffset": 0,
+	"m_nVertexAlbedoStride": 0,
+	"m_nVertexEmissiveFormat": "VERTEX_ALBEDO_NONE",
+	"m_nVertexEmissiveVB": -1,
+	"m_nVertexEmissiveOffset": 0,
+	"m_nVertexEmissiveStride": 0,
+	"m_fEmissiveFactor": 0.000000
+}`
 
 **Relationships:**
 
@@ -1523,7 +2509,24 @@ classDiagram
 
 **Inherits from:** [CBaseConstraint](modellib.md#cbaseconstraint)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CTiltTwistConstraint",
+	"m_name": "",
+	"m_vUpVector":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_slaves":
+	[
+	],
+	"m_targets":
+	[
+	],
+	"m_nTargetAxis": 0,
+	"m_nSlaveAxis": 0
+}`
 
 **Relationships:**
 
@@ -1544,7 +2547,37 @@ classDiagram
 
 **Inherits from:** [CBaseConstraint](modellib.md#cbaseconstraint)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CTwistConstraint",
+	"m_name": "",
+	"m_vUpVector":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_slaves":
+	[
+	],
+	"m_targets":
+	[
+	],
+	"m_bInverse": false,
+	"m_qParentBindRotation":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000
+	],
+	"m_qChildBindRotation":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000
+	]
+}`
 
 **Relationships:**
 
@@ -1564,7 +2597,11 @@ classDiagram
 
 ### CVPhysXSurfacePropertiesList
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"SurfacePropertiesList":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1581,7 +2618,14 @@ classDiagram
 
 ### DynamicMeshDeformParams_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flTensionCompressScale": 0.000000,
+	"m_flTensionStretchScale": 0.000000,
+	"m_bRecomputeSmoothNormalsAfterAnimation": false,
+	"m_bComputeDynamicMeshTensionAfterAnimation": false,
+	"m_bSmoothNormalsAcrossUvSeams": false,
+	"m_bEnableEyeBulgeDeformation": false
+}`
 
 **Fields:**
 
@@ -1596,7 +2640,12 @@ classDiagram
 
 ### MaterialGroup_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_materials":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1614,7 +2663,10 @@ classDiagram
 
 ### ModelAnimGraph2Ref_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_sIdentifier": "",
+	"m_hGraph": ""
+}`
 
 **Relationships:**
 
@@ -1632,7 +2684,13 @@ classDiagram
 
 ### ModelBoneFlexDriverControl_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nBoneComponent": "MODEL_BONE_FLEX_TX",
+	"m_flexController": "",
+	"m_flexControllerToken": 0,
+	"m_flMin": 0.000000,
+	"m_flMax": 0.000000
+}`
 
 **Relationships:**
 
@@ -1653,7 +2711,13 @@ classDiagram
 
 ### ModelBoneFlexDriver_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_boneName": "",
+	"m_boneNameToken": 0,
+	"m_controls":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1672,7 +2736,23 @@ classDiagram
 
 ### ModelEmbeddedMesh_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Name": "",
+	"m_nMeshIndex": -1,
+	"m_nDataBlock": -1,
+	"m_nMorphBlock": -1,
+	"m_vertexBuffers":
+	[
+	],
+	"m_indexBuffers":
+	[
+	],
+	"m_toolsBuffers":
+	[
+	],
+	"m_nVBIBBlock": -1,
+	"m_nToolsVBBlock": -1
+}`
 
 **Relationships:**
 
@@ -1697,7 +2777,23 @@ classDiagram
 
 ### ModelMeshBufferData_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nBlockIndex": -1,
+	"m_nElementCount": 0,
+	"m_nElementSizeInBytes": 0,
+	"m_bMeshoptCompressed": false,
+	"m_bMeshoptIndexSequence": false,
+	"m_nMeshoptMeshletEncodeVersion": -1,
+	"m_bCompressedZSTD": false,
+	"m_bCreateBufferSRV": false,
+	"m_bCreateBufferUAV": false,
+	"m_bCreateRawBuffer": false,
+	"m_bCreatePooledBuffer": false,
+	"m_nBufferUsage": 0,
+	"m_inputLayoutFields":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1726,7 +2822,29 @@ classDiagram
 
 ### ModelSkeletonData_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_boneName":
+	[
+	],
+	"m_nParent":
+	[
+	],
+	"m_boneSphere":
+	[
+	],
+	"m_nFlag":
+	[
+	],
+	"m_bonePosParent":
+	[
+	],
+	"m_boneRotParent":
+	[
+	],
+	"m_boneScaleParent":
+	[
+	]
+}`
 
 **Fields:**
 
@@ -1742,7 +2860,10 @@ classDiagram
 
 ### PermModelDataAnimatedMaterialAttribute_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_AttributeName": "",
+	"m_nNumChannels": 0
+}`
 
 **Fields:**
 
@@ -1753,7 +2874,133 @@ classDiagram
 
 ### PermModelData_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_modelInfo":
+	{
+		"m_nFlags": 0,
+		"m_vHullMin":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_vHullMax":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_vViewMin":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_vViewMax":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_flMass": 0.000000,
+		"m_vEyePosition":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_flMaxEyeDeflection": 0.000000,
+		"m_sSurfaceProperty": "",
+		"m_keyValueText": ""
+	},
+	"m_ExtParts":
+	[
+	],
+	"m_refMeshes":
+	[
+	],
+	"m_refMeshGroupMasks":
+	[
+	],
+	"m_refPhysGroupMasks":
+	[
+	],
+	"m_refLODGroupMasks":
+	[
+	],
+	"m_lodGroupSwitchDistances":
+	[
+	],
+	"m_refPhysicsData":
+	[
+	],
+	"m_refPhysicsHitboxData":
+	[
+	],
+	"m_refAnimGroups":
+	[
+	],
+	"m_refSequenceGroups":
+	[
+	],
+	"m_meshGroups":
+	[
+	],
+	"m_materialGroups":
+	[
+	],
+	"m_nDefaultMeshGroupMask": 0,
+	"m_modelSkeleton":
+	{
+		"m_boneName":
+		[
+		],
+		"m_nParent":
+		[
+		],
+		"m_boneSphere":
+		[
+		],
+		"m_nFlag":
+		[
+		],
+		"m_bonePosParent":
+		[
+		],
+		"m_boneRotParent":
+		[
+		],
+		"m_boneScaleParent":
+		[
+		]
+	},
+	"m_remappingTable":
+	[
+	],
+	"m_remappingTableStarts":
+	[
+	],
+	"m_boneFlexDrivers":
+	[
+	],
+	"m_pModelConfigList": null,
+	"m_BodyGroupsHiddenInTools":
+	[
+	],
+	"m_refAnimIncludeModels":
+	[
+	],
+	"m_AnimatedMaterialAttributes":
+	[
+	],
+	"m_animGraph2Refs":
+	[
+	],
+	"m_vecNmSkeletonRefs":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1803,7 +3050,22 @@ classDiagram
 
 ### PermModelExtPart_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Transform":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_Name": "",
+	"m_nParent": 0,
+	"m_refModel": ""
+}`
 
 **Relationships:**
 
@@ -1823,7 +3085,43 @@ classDiagram
 
 ### PermModelInfo_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nFlags": 0,
+	"m_vHullMin":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vHullMax":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vViewMin":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vViewMax":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_flMass": 0.000000,
+	"m_vEyePosition":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_flMaxEyeDeflection": 0.000000,
+	"m_sSurfaceProperty": "",
+	"m_keyValueText": ""
+}`
 
 **Fields:**
 
@@ -1842,7 +3140,11 @@ classDiagram
 
 ### PhysShapeMarkup_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nBodyInAggregate": -1,
+	"m_nShapeInBody": -1,
+	"m_sHitGroup": "HITGROUP_INVALID"
+}`
 
 **Fields:**
 
@@ -1854,7 +3156,26 @@ classDiagram
 
 ### PhysSoftbodyDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_ParticleBoneHash":
+	[
+	],
+	"m_Particles":
+	[
+	],
+	"m_Springs":
+	[
+	],
+	"m_Capsules":
+	[
+	],
+	"m_InitPose":
+	[
+	],
+	"m_ParticleBoneName":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1878,7 +3199,35 @@ classDiagram
 
 ### RenderHairStrandInfo_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nGuideHairIndices_nSurfaceTriIndex":
+	[
+		0,
+		0
+	],
+	"m_vGuideBary_vBaseBary":
+	[
+		0,
+		0,
+		0,
+		0
+	],
+	"m_vRootOffset_flLengthScale":
+	[
+		0,
+		0,
+		0,
+		0
+	],
+	"m_nPackedBaseUv":
+	[
+		0,
+		0
+	],
+	"m_nPackedSurfaceNormalOs": 0,
+	"m_nPackedSurfaceTangentOs": 0,
+	"m_nDataOffset_Segments": 0
+}`
 
 **Fields:**
 
@@ -1914,7 +3263,41 @@ classDiagram
 
 ### RenderSkeletonBone_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_boneName": "",
+	"m_parentName": "",
+	"m_invBindPose":
+	[
+		1.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000,
+		0.000000
+	],
+	"m_bbox":
+	{
+		"m_vecCenter":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_vecSize":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		]
+	},
+	"m_flSphereRadius": 0.000000
+}`
 
 **Relationships:**
 
@@ -1945,7 +3328,26 @@ classDiagram
 
 ### SkeletonAnimCapture_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nEntIndex": -1,
+	"m_nEntParent": -1,
+	"m_ImportedCollision":
+	[
+	],
+	"m_ModelName": "",
+	"m_CaptureName": "",
+	"m_ModelBindPose":
+	[
+	],
+	"m_FeModelInitPose":
+	[
+	],
+	"m_nFlexControllers": 0,
+	"m_bPredicted": false,
+	"m_Frames":
+	[
+	]
+}`
 
 **Fields:**
 
@@ -1964,7 +3366,21 @@ classDiagram
 
 ### SkeletonAnimCapture_t::Bone_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Name": "",
+	"m_BindPose":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_nParent": -1
+}`
 
 **Fields:**
 
@@ -1976,7 +3392,20 @@ classDiagram
 
 ### SkeletonAnimCapture_t::Camera_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_tmCamera":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000
+	],
+	"m_flTime": 0.000000
+}`
 
 **Fields:**
 
@@ -1987,7 +3416,16 @@ classDiagram
 
 ### SkeletonAnimCapture_t::FrameStamp_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flTime": 0.000000,
+	"m_flEntitySimTime": 0.000000,
+	"m_bTeleportTick": false,
+	"m_bPredicted": false,
+	"m_flCurTime": 0.000000,
+	"m_flRealTime": 0.000000,
+	"m_nFrameCount": 0,
+	"m_nTickCount": 0
+}`
 
 **Fields:**
 
@@ -2004,7 +3442,47 @@ classDiagram
 
 ### SkeletonAnimCapture_t::Frame_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flTime": 0.000000,
+	"m_Stamp":
+	{
+		"m_flTime": 0.000000,
+		"m_flEntitySimTime": 0.000000,
+		"m_bTeleportTick": false,
+		"m_bPredicted": false,
+		"m_flCurTime": 0.000000,
+		"m_flRealTime": 0.000000,
+		"m_nFrameCount": 0,
+		"m_nTickCount": 0
+	},
+	"m_Transform":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_bTeleport": false,
+	"m_CompositeBones":
+	[
+	],
+	"m_SimStateBones":
+	[
+	],
+	"m_FeModelAnims":
+	[
+	],
+	"m_FeModelPos":
+	[
+	],
+	"m_FlexControllerWeights":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -2029,7 +3507,20 @@ classDiagram
 
 ### SkeletonBoneBounds_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vecCenter":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vecSize":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`
 
 **Fields:**
 
@@ -2040,7 +3531,15 @@ classDiagram
 
 ### SkeletonDemoDb_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_AnimCaptures":
+	[
+	],
+	"m_CameraTrack":
+	[
+	],
+	"m_flRecordingTime": 0.000000
+}`
 
 **Relationships:**
 
@@ -2059,7 +3558,51 @@ classDiagram
 
 ### VPhysXAggregateData_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nFlags": 0,
+	"m_nRefCounter": 0,
+	"m_bonesHash":
+	[
+	],
+	"m_boneNames":
+	[
+	],
+	"m_indexNames":
+	[
+	],
+	"m_indexHash":
+	[
+	],
+	"m_bindPose":
+	[
+	],
+	"m_parts":
+	[
+	],
+	"m_shapeMarkups":
+	[
+	],
+	"m_constraints2":
+	[
+	],
+	"m_joints":
+	[
+	],
+	"m_pFeModel": null,
+	"m_boneParents":
+	[
+	],
+	"m_surfacePropertyHashes":
+	[
+	],
+	"m_collisionAttributes":
+	[
+	],
+	"m_debugPartNames":
+	[
+	],
+	"m_embeddedKeyvalues": ""
+}`
 
 **Relationships:**
 
@@ -2097,7 +3640,42 @@ classDiagram
 
 ### VPhysXBodyPart_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nFlags": 0,
+	"m_flMass": 0.000000,
+	"m_rnShape":
+	{
+		"m_spheres":
+		[
+		],
+		"m_capsules":
+		[
+		],
+		"m_hulls":
+		[
+		],
+		"m_meshes":
+		[
+		],
+		"m_CollisionAttributeIndices":
+		[
+		]
+	},
+	"m_nCollisionAttributeIndex": 0,
+	"m_nReserved": 0,
+	"m_flInertiaScale": 0.000000,
+	"m_flLinearDamping": 0.000000,
+	"m_flAngularDamping": 0.000000,
+	"m_flLinearDrag": 1.000000,
+	"m_flAngularDrag": 1.000000,
+	"m_bOverrideMassCenter": false,
+	"m_vMassCenterOverride":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`
 
 **Relationships:**
 
@@ -2125,7 +3703,35 @@ classDiagram
 
 ### VPhysXCollisionAttributes_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nIncludeDetailLayerCount": 0,
+	"m_CollisionGroup": 0,
+	"m_InteractAs":
+	[
+	],
+	"m_InteractWith":
+	[
+	],
+	"m_InteractExclude":
+	[
+	],
+	"m_DetailLayers":
+	[
+	],
+	"m_CollisionGroupString": "",
+	"m_InteractAsStrings":
+	[
+	],
+	"m_InteractWithStrings":
+	[
+	],
+	"m_InteractExcludeStrings":
+	[
+	],
+	"m_DetailLayerStrings":
+	[
+	]
+}`
 
 **Fields:**
 
@@ -2145,7 +3751,102 @@ classDiagram
 
 ### VPhysXConstraint2_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nFlags": 0,
+	"m_nParent": 0,
+	"m_nChild": 0,
+	"m_params":
+	{
+		"m_nType": 0,
+		"m_nTranslateMotion": 0,
+		"m_nRotateMotion": 0,
+		"m_nFlags": 0,
+		"m_anchor":
+		[
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			]
+		],
+		"m_axes":
+		[
+			[
+				0.000000,
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			[
+				0.000000,
+				0.000000,
+				0.000000,
+				0.000000
+			]
+		],
+		"m_maxForce": 0.000000,
+		"m_maxTorque": 0.000000,
+		"m_linearLimitValue": 0.000000,
+		"m_linearLimitRestitution": 0.000000,
+		"m_linearLimitSpring": 0.000000,
+		"m_linearLimitDamping": 0.000000,
+		"m_twistLowLimitValue": 0.000000,
+		"m_twistLowLimitRestitution": 0.000000,
+		"m_twistLowLimitSpring": 0.000000,
+		"m_twistLowLimitDamping": 0.000000,
+		"m_twistHighLimitValue": 0.000000,
+		"m_twistHighLimitRestitution": 0.000000,
+		"m_twistHighLimitSpring": 0.000000,
+		"m_twistHighLimitDamping": 0.000000,
+		"m_swing1LimitValue": 0.000000,
+		"m_swing1LimitRestitution": 0.000000,
+		"m_swing1LimitSpring": 0.000000,
+		"m_swing1LimitDamping": 0.000000,
+		"m_swing2LimitValue": 0.000000,
+		"m_swing2LimitRestitution": 0.000000,
+		"m_swing2LimitSpring": 0.000000,
+		"m_swing2LimitDamping": 0.000000,
+		"m_goalPosition":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_goalOrientation":
+		[
+			0.000000,
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_goalAngularVelocity":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_driveSpringX": 0.000000,
+		"m_driveSpringY": 0.000000,
+		"m_driveSpringZ": 0.000000,
+		"m_driveDampingX": 0.000000,
+		"m_driveDampingY": 0.000000,
+		"m_driveDampingZ": 0.000000,
+		"m_driveSpringTwist": 0.000000,
+		"m_driveSpringSwing": 0.000000,
+		"m_driveSpringSlerp": 0.000000,
+		"m_driveDampingTwist": 0.000000,
+		"m_driveDampingSwing": 0.000000,
+		"m_driveDampingSlerp": 0.000000,
+		"m_solverIterationCount": 0,
+		"m_projectionLinearTolerance": 0.000000,
+		"m_projectionAngularTolerance": 0.000000
+	}
+}`
 
 **Relationships:**
 
@@ -2165,7 +3866,96 @@ classDiagram
 
 ### VPhysXConstraintParams_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nType": 0,
+	"m_nTranslateMotion": 0,
+	"m_nRotateMotion": 0,
+	"m_nFlags": 0,
+	"m_anchor":
+	[
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		]
+	],
+	"m_axes":
+	[
+		[
+			0.000000,
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		[
+			0.000000,
+			0.000000,
+			0.000000,
+			0.000000
+		]
+	],
+	"m_maxForce": 0.000000,
+	"m_maxTorque": 0.000000,
+	"m_linearLimitValue": 0.000000,
+	"m_linearLimitRestitution": 0.000000,
+	"m_linearLimitSpring": 0.000000,
+	"m_linearLimitDamping": 0.000000,
+	"m_twistLowLimitValue": 0.000000,
+	"m_twistLowLimitRestitution": 0.000000,
+	"m_twistLowLimitSpring": 0.000000,
+	"m_twistLowLimitDamping": 0.000000,
+	"m_twistHighLimitValue": 0.000000,
+	"m_twistHighLimitRestitution": 0.000000,
+	"m_twistHighLimitSpring": 0.000000,
+	"m_twistHighLimitDamping": 0.000000,
+	"m_swing1LimitValue": 0.000000,
+	"m_swing1LimitRestitution": 0.000000,
+	"m_swing1LimitSpring": 0.000000,
+	"m_swing1LimitDamping": 0.000000,
+	"m_swing2LimitValue": 0.000000,
+	"m_swing2LimitRestitution": 0.000000,
+	"m_swing2LimitSpring": 0.000000,
+	"m_swing2LimitDamping": 0.000000,
+	"m_goalPosition":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_goalOrientation":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_goalAngularVelocity":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_driveSpringX": 0.000000,
+	"m_driveSpringY": 0.000000,
+	"m_driveSpringZ": 0.000000,
+	"m_driveDampingX": 0.000000,
+	"m_driveDampingY": 0.000000,
+	"m_driveDampingZ": 0.000000,
+	"m_driveSpringTwist": 0.000000,
+	"m_driveSpringSwing": 0.000000,
+	"m_driveSpringSlerp": 0.000000,
+	"m_driveDampingTwist": 0.000000,
+	"m_driveDampingSwing": 0.000000,
+	"m_driveDampingSlerp": 0.000000,
+	"m_solverIterationCount": 0,
+	"m_projectionLinearTolerance": 0.000000,
+	"m_projectionAngularTolerance": 0.000000
+}`
 
 **Fields:**
 
@@ -2220,7 +4010,80 @@ classDiagram
 
 ### VPhysXJoint_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nType": 0,
+	"m_nBody1": 0,
+	"m_nBody2": 0,
+	"m_nFlags": 0,
+	"m_Frame1":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000
+	],
+	"m_Frame2":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000
+	],
+	"m_bEnableCollision": false,
+	"m_bIsLinearConstraintDisabled": false,
+	"m_bIsAngularConstraintDisabled": false,
+	"m_bEnableLinearLimit": false,
+	"m_LinearLimit":
+	{
+		"m_flMin": 0.000000,
+		"m_flMax": 0.000000
+	},
+	"m_bEnableLinearMotor": false,
+	"m_vLinearTargetVelocity":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_flMaxForce": 0.000000,
+	"m_bEnableSwingLimit": false,
+	"m_SwingLimit":
+	{
+		"m_flMin": 0.000000,
+		"m_flMax": 0.000000
+	},
+	"m_bEnableTwistLimit": false,
+	"m_TwistLimit":
+	{
+		"m_flMin": 0.000000,
+		"m_flMax": 0.000000
+	},
+	"m_bEnableAngularMotor": false,
+	"m_vAngularTargetVelocity":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_flMaxTorque": 0.000000,
+	"m_flLinearFrequency": 0.000000,
+	"m_flLinearDampingRatio": 0.000000,
+	"m_flAngularFrequency": 0.000000,
+	"m_flAngularDampingRatio": 0.000000,
+	"m_flFriction": 0.000000,
+	"m_flElasticity": 0.000000,
+	"m_flElasticDamping": 0.000000,
+	"m_flPlasticity": 0.000000,
+	"m_Tag": ""
+}`
 
 **Relationships:**
 
@@ -2266,7 +4129,10 @@ classDiagram
 
 ### VPhysXRange_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flMin": 0.000000,
+	"m_flMax": 0.000000
+}`
 
 **Fields:**
 
@@ -2277,7 +4143,23 @@ classDiagram
 
 ### VPhysics2ShapeDef_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_spheres":
+	[
+	],
+	"m_capsules":
+	[
+	],
+	"m_hulls":
+	[
+	],
+	"m_meshes":
+	[
+	],
+	"m_CollisionAttributeIndices":
+	[
+	]
+}`
 
 **Relationships:**
 

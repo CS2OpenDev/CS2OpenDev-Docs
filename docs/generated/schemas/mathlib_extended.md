@@ -45,7 +45,18 @@ nav_exclude: true
 
 ### CFuseProgram
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_programBuffer":
+	[
+	],
+	"m_variablesRead":
+	[
+	],
+	"m_variablesWritten":
+	[
+	],
+	"m_nMaxTempVarsUsed": 0
+}`
 
 **Relationships:**
 
@@ -65,7 +76,26 @@ classDiagram
 
 ### CFuseSymbolTable
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_constants":
+	[
+	],
+	"m_variables":
+	[
+	],
+	"m_functions":
+	[
+	],
+	"m_constantMap":
+	{
+	},
+	"m_variableMap":
+	{
+	},
+	"m_functionMap":
+	{
+	}
+}`
 
 **Relationships:**
 
@@ -89,7 +119,11 @@ classDiagram
 
 ### ConstantInfo_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_nameToken": "",
+	"m_flValue": 0.000000
+}`
 
 **Fields:**
 
@@ -112,7 +146,13 @@ classDiagram
 
 ### FunctionInfo_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_nameToken": "",
+	"m_nParamCount": 0,
+	"m_nIndex": 65535,
+	"m_bIsPure": false
+}`
 
 **Relationships:**
 
@@ -162,7 +202,14 @@ classDiagram
 
 ### VariableInfo_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_nameToken": "",
+	"m_nIndex": 65535,
+	"m_nNumComponents": 1,
+	"m_eVarType": "INVALID",
+	"m_eAccess": "WRITABLE"
+}`
 
 **Relationships:**
 

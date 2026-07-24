@@ -26,7 +26,14 @@ nav_exclude: true
 
 ### CCompositeMaterialEditorDoc
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CCompositeMaterialEditorDoc",
+	"m_nVersion": 1,
+	"m_Points":
+	[
+	],
+	"m_KVthumbnail": null
+}`
 
 **Relationships:**
 
@@ -45,7 +52,13 @@ classDiagram
 
 ### CompMatMutatorCondition_t
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyElementNameFn`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nMutatorCondition": "COMP_MAT_MUTATOR_CONDITION_INPUT_CONTAINER_EXISTS",
+	"m_strMutatorConditionContainerName": "",
+	"m_strMutatorConditionContainerVarName": "",
+	"m_strMutatorConditionContainerVarValue": "",
+	"m_bPassWhenTrue": true
+}`, `MPropertyElementNameFn`
 
 **Relationships:**
 
@@ -66,7 +79,99 @@ classDiagram
 
 ### CompMatPropertyMutator_t
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyElementNameFn`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_bEnabled": true,
+	"m_nMutatorCommandType": "COMP_MAT_PROPERTY_MUTATOR_SET_VALUE",
+	"m_strInitWith_Container": "",
+	"m_strCopyProperty_InputContainerSrc": "",
+	"m_strCopyProperty_InputContainerProperty": "",
+	"m_strCopyProperty_TargetProperty": "",
+	"m_strRandomRollInputVars_SeedInputVar": "",
+	"m_vecRandomRollInputVars_InputVarsToRoll":
+	[
+	],
+	"m_strCopyMatchingKeys_InputContainerSrc": "",
+	"m_strCopyKeysWithSuffix_InputContainerSrc": "",
+	"m_strCopyKeysWithSuffix_FindSuffix": "",
+	"m_strCopyKeysWithSuffix_ReplaceSuffix": "",
+	"m_nSetValue_Value":
+	{
+		"m_strName": "",
+		"m_bExposeExternally": false,
+		"m_strExposedFriendlyName": "",
+		"m_strExposedFriendlyGroupName": "",
+		"m_bExposedVariableIsFixedRange": false,
+		"m_strExposedVisibleWhenTrue": "",
+		"m_strExposedHiddenWhenTrue": "",
+		"m_strExposedValueList": "",
+		"m_nVariableType": "LOOSE_VARIABLE_TYPE_FLOAT1",
+		"m_bValueBoolean": false,
+		"m_nValueIntX": 0,
+		"m_nValueIntY": 0,
+		"m_nValueIntZ": 0,
+		"m_nValueIntW": 0,
+		"m_bHasFloatBounds": false,
+		"m_flValueFloatX": 0.000000,
+		"m_flValueFloatX_Min": 0.000000,
+		"m_flValueFloatX_Max": 1.000000,
+		"m_flValueFloatY": 0.000000,
+		"m_flValueFloatY_Min": 0.000000,
+		"m_flValueFloatY_Max": 1.000000,
+		"m_flValueFloatZ": 0.000000,
+		"m_flValueFloatZ_Min": 0.000000,
+		"m_flValueFloatZ_Max": 1.000000,
+		"m_flValueFloatW": 0.000000,
+		"m_flValueFloatW_Min": 0.000000,
+		"m_flValueFloatW_Max": 1.000000,
+		"m_cValueColor4":
+		[
+			0,
+			0,
+			0,
+			0
+		],
+		"m_nValueSystemVar": "COMPMATSYSVAR_COMPOSITETIME",
+		"m_strResourceMaterial": "",
+		"m_strTextureContentAssetPath": "",
+		"m_strTextureRuntimeResourcePath": "",
+		"m_strTextureCompilationVtexTemplate": "",
+		"m_nTextureType": "INPUT_TEXTURE_TYPE_DEFAULT",
+		"m_strString": "",
+		"m_strPanoramaPanelPath": "",
+		"m_nPanoramaRenderRes": 512
+	},
+	"m_strGenerateTexture_TargetParam": "",
+	"m_strGenerateTexture_InitialContainer": "",
+	"m_nResolution": 256,
+	"m_bIsScratchTarget": false,
+	"m_strCompressionFormat": "",
+	"m_bSplatDebugInfo": false,
+	"m_bCaptureInRenderDoc": false,
+	"m_vecTexGenInstructions":
+	[
+	],
+	"m_vecConditionalMutators":
+	[
+	],
+	"m_strPopInputQueue_Container": "",
+	"m_strDrawText_InputContainerSrc": "",
+	"m_strDrawText_InputContainerProperty": "",
+	"m_vecDrawText_Position":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_colDrawText_Color":
+	[
+		255,
+		255,
+		255
+	],
+	"m_strDrawText_Font": "Times New Roman",
+	"m_vecConditions":
+	[
+	]
+}`, `MPropertyElementNameFn`
 
 **Relationships:**
 
@@ -113,7 +218,20 @@ classDiagram
 
 ### CompositeMaterialAssemblyProcedure_t
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyElementNameFn`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vecCompMatIncludes":
+	[
+	],
+	"m_vecMatchFilters":
+	[
+	],
+	"m_vecCompositeInputContainers":
+	[
+	],
+	"m_vecPropertyMutators":
+	[
+	]
+}`, `MPropertyElementNameFn`
 
 **Relationships:**
 
@@ -136,7 +254,17 @@ classDiagram
 
 ### CompositeMaterialEditorPoint_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_ModelName": "",
+	"m_nSequenceIndex": 0,
+	"m_flCycle": 0.000000,
+	"m_KVModelStateChoices": null,
+	"m_bEnableChildModel": false,
+	"m_ChildModelName": "",
+	"m_vecCompositeMaterialAssemblyProcedures":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -162,7 +290,18 @@ classDiagram
 
 ### CompositeMaterialInputContainer_t
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyElementNameFn`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_bEnabled": true,
+	"m_nCompositeMaterialInputContainerSourceType": "CONTAINER_SOURCE_TYPE_TARGET_MATERIAL",
+	"m_strSpecificContainerMaterial": "",
+	"m_strAttrName": "",
+	"m_strAlias": "",
+	"m_vecLooseVariables":
+	[
+	],
+	"m_strAttrNameForVar": "",
+	"m_bExposeExternally": false
+}`, `MPropertyElementNameFn`
 
 **Relationships:**
 
@@ -188,7 +327,51 @@ classDiagram
 
 ### CompositeMaterialInputLooseVariable_t
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyElementNameFn`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_strName": "",
+	"m_bExposeExternally": false,
+	"m_strExposedFriendlyName": "",
+	"m_strExposedFriendlyGroupName": "",
+	"m_bExposedVariableIsFixedRange": false,
+	"m_strExposedVisibleWhenTrue": "",
+	"m_strExposedHiddenWhenTrue": "",
+	"m_strExposedValueList": "",
+	"m_nVariableType": "LOOSE_VARIABLE_TYPE_FLOAT1",
+	"m_bValueBoolean": false,
+	"m_nValueIntX": 0,
+	"m_nValueIntY": 0,
+	"m_nValueIntZ": 0,
+	"m_nValueIntW": 0,
+	"m_bHasFloatBounds": false,
+	"m_flValueFloatX": 0.000000,
+	"m_flValueFloatX_Min": 0.000000,
+	"m_flValueFloatX_Max": 1.000000,
+	"m_flValueFloatY": 0.000000,
+	"m_flValueFloatY_Min": 0.000000,
+	"m_flValueFloatY_Max": 1.000000,
+	"m_flValueFloatZ": 0.000000,
+	"m_flValueFloatZ_Min": 0.000000,
+	"m_flValueFloatZ_Max": 1.000000,
+	"m_flValueFloatW": 0.000000,
+	"m_flValueFloatW_Min": 0.000000,
+	"m_flValueFloatW_Max": 1.000000,
+	"m_cValueColor4":
+	[
+		0,
+		0,
+		0,
+		0
+	],
+	"m_nValueSystemVar": "COMPMATSYSVAR_COMPOSITETIME",
+	"m_strResourceMaterial": "",
+	"m_strTextureContentAssetPath": "",
+	"m_strTextureRuntimeResourcePath": "",
+	"m_strTextureCompilationVtexTemplate": "",
+	"m_nTextureType": "INPUT_TEXTURE_TYPE_DEFAULT",
+	"m_strString": "",
+	"m_strPanoramaPanelPath": "",
+	"m_nPanoramaRenderRes": 512
+}`, `MPropertyElementNameFn`
 
 **Relationships:**
 
@@ -245,7 +428,12 @@ classDiagram
 
 ### CompositeMaterialMatchFilter_t
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyElementNameFn`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nCompositeMaterialMatchFilterType": "MATCH_FILTER_MATERIAL_ATTRIBUTE_EXISTS",
+	"m_strMatchFilter": "composite_inputs",
+	"m_strMatchValue": "",
+	"m_bPassWhenTrue": true
+}`, `MPropertyElementNameFn`
 
 **Relationships:**
 

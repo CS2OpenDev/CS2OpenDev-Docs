@@ -17,9 +17,9 @@ Auto-generated reference for the **shipped CS2 runtime**, extracted deterministi
 | Category | Count |
 |----------|-------|
 | Schema Entities | 4194 |
-| Proto Files | 32 |
-| Proto Messages | 497 |
-| Game Events | 195 |
+| Proto Files | 40 |
+| Proto Messages | 762 |
+| Game Events | 289 |
 | ConVars | 3954 |
 | Commands | 1132 |
 

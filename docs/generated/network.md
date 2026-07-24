@@ -15,71 +15,71 @@ The wire-protocol tables: integer message IDs mapped to the protobuf message typ
 
 | ID | Message type |
 |----|--------------|
-| 16 | `CBidirMsg_RebroadcastGameEvent` |
-| 17 | `CBidirMsg_RebroadcastSource` |
-| 19 | `CBidirMsg_PredictionEvent` |
+| 16 | [`CBidirMsg_RebroadcastGameEvent`](proto/netmessages.md) |
+| 17 | [`CBidirMsg_RebroadcastSource`](proto/netmessages.md) |
+| 19 | [`CBidirMsg_PredictionEvent`](proto/netmessages.md) |
 
 ## ClcMessages (15)
 
 | ID | Message type |
 |----|--------------|
-| 20 | `CCLCMsg_ClientInfo` |
-| 21 | `CCLCMsg_Move` |
-| 22 | `CCLCMsg_VoiceData` |
-| 23 | `CCLCMsg_BaselineAck` |
-| 25 | `CCLCMsg_RespondCvarValue` |
-| 27 | `CCLCMsg_LoadingProgress` |
-| 28 | `CCLCMsg_SplitPlayerConnect` |
-| 30 | `CCLCMsg_SplitPlayerDisconnect` |
-| 31 | `CCLCMsg_ServerStatus` |
-| 33 | `CCLCMsg_RequestPause` |
-| 34 | `CCLCMsg_CmdKeyValues` |
-| 35 | `CCLCMsg_RconServerDetails` |
-| 36 | `CCLCMsg_HltvReplay` |
-| 37 | `CCLCMsg_Diagnostic` |
-| 75 | `CCLCMsg_HltvFixupOperatorTick` |
+| 20 | [`CCLCMsg_ClientInfo`](proto/netmessages.md) |
+| 21 | [`CCLCMsg_Move`](proto/netmessages.md) |
+| 22 | [`CCLCMsg_VoiceData`](proto/netmessages.md) |
+| 23 | [`CCLCMsg_BaselineAck`](proto/netmessages.md) |
+| 25 | [`CCLCMsg_RespondCvarValue`](proto/netmessages.md) |
+| 27 | [`CCLCMsg_LoadingProgress`](proto/netmessages.md) |
+| 28 | [`CCLCMsg_SplitPlayerConnect`](proto/netmessages.md) |
+| 30 | [`CCLCMsg_SplitPlayerDisconnect`](proto/netmessages.md) |
+| 31 | [`CCLCMsg_ServerStatus`](proto/netmessages.md) |
+| 33 | [`CCLCMsg_RequestPause`](proto/netmessages.md) |
+| 34 | [`CCLCMsg_CmdKeyValues`](proto/netmessages.md) |
+| 35 | [`CCLCMsg_RconServerDetails`](proto/netmessages.md) |
+| 36 | [`CCLCMsg_HltvReplay`](proto/netmessages.md) |
+| 37 | [`CCLCMsg_Diagnostic`](proto/netmessages.md) |
+| 75 | [`CCLCMsg_HltvFixupOperatorTick`](proto/netmessages.md) |
 
 ## ClientMessages (3)
 
 | ID | Message type |
 |----|--------------|
-| 280 | `CClientMsg_CustomGameEvent` |
-| 281 | `CClientMsg_CustomGameEventBounce` |
-| 282 | `CClientMsg_ClientUIEvent` |
+| 280 | [`CClientMsg_CustomGameEvent`](proto/clientmessages.md) |
+| 281 | [`CClientMsg_CustomGameEventBounce`](proto/clientmessages.md) |
+| 282 | [`CClientMsg_ClientUIEvent`](proto/clientmessages.md) |
 
 ## Decals (4)
 
 | ID | Message type |
 |----|--------------|
-| 201 | `CMsgPlaceDecalEvent` |
-| 202 | `CMsgClearWorldDecalsEvent` |
-| 203 | `CMsgClearEntityDecalsEvent` |
-| 204 | `CMsgClearDecalsForEntityEvent` |
+| 201 | [`CMsgPlaceDecalEvent`](proto/gameevents.md) |
+| 202 | [`CMsgClearWorldDecalsEvent`](proto/gameevents.md) |
+| 203 | [`CMsgClearEntityDecalsEvent`](proto/gameevents.md) |
+| 204 | [`CMsgClearDecalsForEntityEvent`](proto/gameevents.md) |
 
 ## GameEvents (3)
 
 | ID | Message type |
 |----|--------------|
-| 213 | `CMsgClothStiffenAnimEvent` |
-| 214 | `CMsgClothEffectAnimEvent` |
-| 453 | `CMsgPlayerBulletHit` |
+| 213 | [`CMsgClothStiffenAnimEvent`](proto/gameevents.md) |
+| 214 | [`CMsgClothEffectAnimEvent`](proto/gameevents.md) |
+| 453 | [`CMsgPlayerBulletHit`](proto/cs_gameevents.md) |
 
 ## NetMessages (12)
 
 | ID | Message type |
 |----|--------------|
-| 0 | `CNETMsg_NOP` |
-| 3 | `CNETMsg_SplitScreenUser` |
-| 4 | `CNETMsg_Tick` |
-| 5 | `CNETMsg_StringCmd` |
-| 6 | `CNETMsg_SetConVar` |
-| 7 | `CNETMsg_SignonState` |
-| 8 | `CNETMsg_SpawnGroup_Load` |
-| 9 | `CNETMsg_SpawnGroup_ManifestUpdate` |
-| 11 | `CNETMsg_SpawnGroup_SetCreationTick` |
-| 12 | `CNETMsg_SpawnGroup_Unload` |
-| 13 | `CNETMsg_SpawnGroup_LoadCompleted` |
-| 15 | `CNETMsg_DebugOverlay` |
+| 0 | [`CNETMsg_NOP`](proto/networkbasetypes.md) |
+| 3 | [`CNETMsg_SplitScreenUser`](proto/networkbasetypes.md) |
+| 4 | [`CNETMsg_Tick`](proto/networkbasetypes.md) |
+| 5 | [`CNETMsg_StringCmd`](proto/networkbasetypes.md) |
+| 6 | [`CNETMsg_SetConVar`](proto/networkbasetypes.md) |
+| 7 | [`CNETMsg_SignonState`](proto/networkbasetypes.md) |
+| 8 | [`CNETMsg_SpawnGroup_Load`](proto/networkbasetypes.md) |
+| 9 | [`CNETMsg_SpawnGroup_ManifestUpdate`](proto/networkbasetypes.md) |
+| 11 | [`CNETMsg_SpawnGroup_SetCreationTick`](proto/networkbasetypes.md) |
+| 12 | [`CNETMsg_SpawnGroup_Unload`](proto/networkbasetypes.md) |
+| 13 | [`CNETMsg_SpawnGroup_LoadCompleted`](proto/networkbasetypes.md) |
+| 15 | [`CNETMsg_DebugOverlay`](proto/networkbasetypes.md) |
 
 ## PeerToPeer (3)
 
@@ -93,175 +93,175 @@ The wire-protocol tables: integer message IDs mapped to the protobuf message typ
 
 | ID | Message type |
 |----|--------------|
-| 208 | `CMsgSosStartSoundEvent` |
-| 209 | `CMsgSosStopSoundEvent` |
-| 210 | `CMsgSosSetSoundEventParams` |
-| 211 | `CMsgSosSetLibraryStackFields` |
-| 212 | `CMsgSosStopSoundEventHash` |
+| 208 | [`CMsgSosStartSoundEvent`](proto/gameevents.md) |
+| 209 | [`CMsgSosStopSoundEvent`](proto/gameevents.md) |
+| 210 | [`CMsgSosSetSoundEventParams`](proto/gameevents.md) |
+| 211 | [`CMsgSosSetLibraryStackFields`](proto/gameevents.md) |
+| 212 | [`CMsgSosStopSoundEventHash`](proto/gameevents.md) |
 
 ## Source1Legacy (3)
 
 | ID | Message type |
 |----|--------------|
-| 205 | `CMsgSource1LegacyGameEventList` |
-| 206 | `CMsgSource1LegacyListenEvents` |
-| 207 | `CMsgSource1LegacyGameEvent` |
+| 205 | [`CMsgSource1LegacyGameEventList`](proto/gameevents.md) |
+| 206 | [`CMsgSource1LegacyListenEvents`](proto/gameevents.md) |
+| 207 | [`CMsgSource1LegacyGameEvent`](proto/gameevents.md) |
 
 ## SvcMessages (29)
 
 | ID | Message type |
 |----|--------------|
-| 40 | `CSVCMsg_ServerInfo` |
-| 41 | `CSVCMsg_FlattenedSerializer` |
-| 42 | `CSVCMsg_ClassInfo` |
-| 43 | `CSVCMsg_SetPause` |
-| 44 | `CSVCMsg_CreateStringTable` |
-| 45 | `CSVCMsg_UpdateStringTable` |
-| 46 | `CSVCMsg_VoiceInit` |
-| 47 | `CSVCMsg_VoiceData` |
-| 48 | `CSVCMsg_Print` |
-| 49 | `CSVCMsg_Sounds` |
-| 50 | `CSVCMsg_SetView` |
-| 51 | `CSVCMsg_ClearAllStringTables` |
-| 52 | `CSVCMsg_CmdKeyValues` |
-| 54 | `CSVCMsg_SplitScreen` |
-| 55 | `CSVCMsg_PacketEntities` |
-| 56 | `CSVCMsg_Prefetch` |
-| 57 | `CSVCMsg_Menu` |
-| 58 | `CSVCMsg_GetCvarValue` |
-| 59 | `CSVCMsg_StopSound` |
-| 60 | `CSVCMsg_PeerList` |
-| 61 | `CSVCMsg_PacketReliable` |
-| 62 | `CSVCMsg_HLTVStatus` |
-| 63 | `CSVCMsg_ServerSteamID` |
-| 70 | `CSVCMsg_FullFrameSplit` |
-| 71 | `CSVCMsg_RconServerDetails` |
-| 72 | `CSVCMsg_UserMessage` |
-| 74 | `CSVCMsg_HltvReplay` |
-| 76 | `CSVCMsg_UserCommands` |
-| 77 | `CSVCMsg_NextMsgPredicted` |
+| 40 | [`CSVCMsg_ServerInfo`](proto/netmessages.md) |
+| 41 | [`CSVCMsg_FlattenedSerializer`](proto/netmessages.md) |
+| 42 | [`CSVCMsg_ClassInfo`](proto/netmessages.md) |
+| 43 | [`CSVCMsg_SetPause`](proto/netmessages.md) |
+| 44 | [`CSVCMsg_CreateStringTable`](proto/netmessages.md) |
+| 45 | [`CSVCMsg_UpdateStringTable`](proto/netmessages.md) |
+| 46 | [`CSVCMsg_VoiceInit`](proto/netmessages.md) |
+| 47 | [`CSVCMsg_VoiceData`](proto/netmessages.md) |
+| 48 | [`CSVCMsg_Print`](proto/netmessages.md) |
+| 49 | [`CSVCMsg_Sounds`](proto/netmessages.md) |
+| 50 | [`CSVCMsg_SetView`](proto/netmessages.md) |
+| 51 | [`CSVCMsg_ClearAllStringTables`](proto/netmessages.md) |
+| 52 | [`CSVCMsg_CmdKeyValues`](proto/netmessages.md) |
+| 54 | [`CSVCMsg_SplitScreen`](proto/netmessages.md) |
+| 55 | [`CSVCMsg_PacketEntities`](proto/netmessages.md) |
+| 56 | [`CSVCMsg_Prefetch`](proto/netmessages.md) |
+| 57 | [`CSVCMsg_Menu`](proto/netmessages.md) |
+| 58 | [`CSVCMsg_GetCvarValue`](proto/netmessages.md) |
+| 59 | [`CSVCMsg_StopSound`](proto/netmessages.md) |
+| 60 | [`CSVCMsg_PeerList`](proto/netmessages.md) |
+| 61 | [`CSVCMsg_PacketReliable`](proto/netmessages.md) |
+| 62 | [`CSVCMsg_HLTVStatus`](proto/netmessages.md) |
+| 63 | [`CSVCMsg_ServerSteamID`](proto/netmessages.md) |
+| 70 | [`CSVCMsg_FullFrameSplit`](proto/netmessages.md) |
+| 71 | [`CSVCMsg_RconServerDetails`](proto/netmessages.md) |
+| 72 | [`CSVCMsg_UserMessage`](proto/netmessages.md) |
+| 74 | [`CSVCMsg_HltvReplay`](proto/netmessages.md) |
+| 76 | [`CSVCMsg_UserCommands`](proto/netmessages.md) |
+| 77 | [`CSVCMsg_NextMsgPredicted`](proto/netmessages.md) |
 
 ## TempEntities (23)
 
 | ID | Message type |
 |----|--------------|
-| 400 | `CMsgTEEffectDispatch` |
-| 401 | `CMsgTEArmorRicochet` |
-| 402 | `CMsgTEBeamEntPoint` |
-| 403 | `CMsgTEBeamEnts` |
-| 404 | `CMsgTEBeamPoints` |
-| 405 | `CMsgTEBeamRing` |
-| 408 | `CMsgTEBubbles` |
-| 409 | `CMsgTEBubbleTrail` |
-| 410 | `CMsgTEDecal` |
-| 411 | `CMsgTEWorldDecal` |
-| 412 | `CMsgTEEnergySplash` |
-| 413 | `CMsgTEFizz` |
-| 415 | `CMsgTEGlowSprite` |
-| 416 | `CMsgTEImpact` |
-| 417 | `CMsgTEMuzzleFlash` |
-| 418 | `CMsgTEBloodStream` |
-| 419 | `CMsgTEExplosion` |
-| 420 | `CMsgTEDust` |
-| 421 | `CMsgTELargeFunnel` |
-| 422 | `CMsgTESparks` |
-| 423 | `CMsgTEPhysicsProp` |
-| 426 | `CMsgTESmoke` |
-| 452 | `CMsgTEFireBullets` |
+| 400 | [`CMsgTEEffectDispatch`](proto/te.md) |
+| 401 | [`CMsgTEArmorRicochet`](proto/te.md) |
+| 402 | [`CMsgTEBeamEntPoint`](proto/te.md) |
+| 403 | [`CMsgTEBeamEnts`](proto/te.md) |
+| 404 | [`CMsgTEBeamPoints`](proto/te.md) |
+| 405 | [`CMsgTEBeamRing`](proto/te.md) |
+| 408 | [`CMsgTEBubbles`](proto/te.md) |
+| 409 | [`CMsgTEBubbleTrail`](proto/te.md) |
+| 410 | [`CMsgTEDecal`](proto/te.md) |
+| 411 | [`CMsgTEWorldDecal`](proto/te.md) |
+| 412 | [`CMsgTEEnergySplash`](proto/te.md) |
+| 413 | [`CMsgTEFizz`](proto/te.md) |
+| 415 | [`CMsgTEGlowSprite`](proto/te.md) |
+| 416 | [`CMsgTEImpact`](proto/te.md) |
+| 417 | [`CMsgTEMuzzleFlash`](proto/te.md) |
+| 418 | [`CMsgTEBloodStream`](proto/te.md) |
+| 419 | [`CMsgTEExplosion`](proto/te.md) |
+| 420 | [`CMsgTEDust`](proto/te.md) |
+| 421 | [`CMsgTELargeFunnel`](proto/te.md) |
+| 422 | [`CMsgTESparks`](proto/te.md) |
+| 423 | [`CMsgTEPhysicsProp`](proto/te.md) |
+| 426 | [`CMsgTESmoke`](proto/te.md) |
+| 452 | [`CMsgTEFireBullets`](proto/cs_gameevents.md) |
 
 ## UserMessages (89)
 
 | ID | Message type |
 |----|--------------|
-| 101 | `CUserMessageAchievementEvent` |
-| 104 | `CUserMessageCurrentTimescale` |
-| 105 | `CUserMessageDesiredTimescale` |
-| 106 | `CUserMessageFade` |
-| 110 | `CUserMessageHudMsg` |
-| 111 | `CUserMessageHudText` |
-| 113 | `CUserMessageColoredText` |
-| 114 | `CUserMessageRequestState` |
-| 115 | `CUserMessageResetHUD` |
-| 116 | `CUserMessageRumble` |
-| 117 | `CUserMessageSayText` |
-| 118 | `CUserMessageSayText2` |
-| 119 | `CUserMessageSayTextChannel` |
-| 120 | `CUserMessageShake` |
-| 121 | `CUserMessageShakeDir` |
-| 122 | `CUserMessageWaterShake` |
-| 124 | `CUserMessageTextMsg` |
-| 125 | `CUserMessageScreenTilt` |
-| 128 | `CUserMessageVoiceMask` |
-| 130 | `CUserMessageSendAudio` |
-| 131 | `CUserMessageItemPickup` |
-| 132 | `CUserMessageAmmoDenied` |
-| 134 | `CUserMessageShowMenu` |
-| 135 | `CUserMessageCreditsMsg` |
-| 137 | `CEntityMessageScreenOverlay` |
-| 139 | `CEntityMessagePropagateForce` |
-| 140 | `CEntityMessageDoSpark` |
-| 142 | `CUserMessageCloseCaptionPlaceholder` |
-| 143 | `CUserMessageCameraTransition` |
-| 144 | `CUserMessageAudioParameter` |
-| 145 | `CUserMsg_ParticleManager` |
-| 146 | `CUserMsg_HudError` |
-| 148 | `CUserMsg_CustomGameEvent` |
-| 150 | `CUserMessageHapticsManagerPulse` |
-| 151 | `CUserMessageHapticsManagerEffect` |
-| 153 | `CUserMessageUpdateCssClasses` |
-| 154 | `CUserMessageServerFrameTime` |
-| 155 | `CUserMessageLagCompensationError` |
-| 156 | `CUserMessageRequestDllStatus` |
-| 157 | `CUserMessageRequestUtilAction` |
-| 160 | `CUserMessageRequestInventory` |
-| 162 | `CUserMessageRequestDiagnostic` |
-| 165 | `CUserMessage_NotifyResponseFound` |
-| 166 | `CUserMessage_PlayResponseConditional` |
-| 301 | `CCSUsrMsg_VGUIMenu` |
-| 317 | `CCSUsrMsg_SendAudio` |
-| 318 | `CCSUsrMsg_RawAudio` |
-| 321 | `CCSUsrMsg_Damage` |
-| 322 | `CCSUsrMsg_RadioText` |
-| 323 | `CCSUsrMsg_HintText` |
-| 324 | `CCSUsrMsg_KeyHintText` |
-| 325 | `CCSUsrMsg_ProcessSpottedEntityUpdate` |
-| 327 | `CCSUsrMsg_AdjustMoney` |
-| 330 | `CCSUsrMsg_KillCam` |
-| 334 | `CCSUsrMsg_MatchEndConditions` |
-| 335 | `CCSUsrMsg_DisconnectToLobby` |
-| 336 | `CCSUsrMsg_PlayerStatsUpdate` |
-| 345 | `CCSUsrMsg_CallVoteFailed` |
-| 346 | `CCSUsrMsg_VoteStart` |
-| 347 | `CCSUsrMsg_VotePass` |
-| 348 | `CCSUsrMsg_VoteFailed` |
-| 349 | `CCSUsrMsg_VoteSetup` |
-| 350 | `CCSUsrMsg_ServerRankRevealAll` |
-| 351 | `CCSUsrMsg_SendLastKillerDamageToClient` |
-| 352 | `CCSUsrMsg_ServerRankUpdate` |
-| 361 | `CCSUsrMsg_SendPlayerItemDrops` |
-| 362 | `CCSUsrMsg_RoundBackupFilenames` |
-| 363 | `CCSUsrMsg_SendPlayerItemFound` |
-| 364 | `CCSUsrMsg_ReportHit` |
-| 365 | `CCSUsrMsg_XpUpdate` |
-| 366 | `CCSUsrMsg_QuestProgress` |
-| 367 | `CCSUsrMsg_ScoreLeaderboardData` |
-| 368 | `CCSUsrMsg_PlayerDecalDigitalSignature` |
-| 369 | `CCSUsrMsg_WeaponSound` |
-| 370 | `CCSUsrMsg_UpdateScreenHealthBar` |
-| 371 | `CCSUsrMsg_EntityOutlineHighlight` |
-| 372 | `CCSUsrMsg_SSUI` |
-| 373 | `CCSUsrMsg_SurvivalStats` |
-| 374 | `CCSUsrMsg_DisconnectToLobby` |
-| 375 | `CCSUsrMsg_EndOfMatchAllPlayersData` |
-| 376 | `CCSUsrMsg_PostRoundDamageReport` |
-| 379 | `CCSUsrMsg_RoundEndReportData` |
-| 380 | `CCSUsrMsg_CurrentRoundOdds` |
-| 381 | `CCSUsrMsg_DeepStats` |
-| 383 | `CCSUsrMsg_ShootInfo` |
-| 385 | `CCSUsrMsg_CounterStrafe` |
-| 387 | `CCSUsrMsg_RecurringMissionSchema` |
-| 388 | `CCSUsrMsg_SendPlayerLoadout` |
-| 389 | `CCSUsrMsg_WeaponMagDrop` |
+| 101 | [`CUserMessageAchievementEvent`](proto/usermessages.md) |
+| 104 | [`CUserMessageCurrentTimescale`](proto/usermessages.md) |
+| 105 | [`CUserMessageDesiredTimescale`](proto/usermessages.md) |
+| 106 | [`CUserMessageFade`](proto/usermessages.md) |
+| 110 | [`CUserMessageHudMsg`](proto/usermessages.md) |
+| 111 | [`CUserMessageHudText`](proto/usermessages.md) |
+| 113 | [`CUserMessageColoredText`](proto/usermessages.md) |
+| 114 | [`CUserMessageRequestState`](proto/usermessages.md) |
+| 115 | [`CUserMessageResetHUD`](proto/usermessages.md) |
+| 116 | [`CUserMessageRumble`](proto/usermessages.md) |
+| 117 | [`CUserMessageSayText`](proto/usermessages.md) |
+| 118 | [`CUserMessageSayText2`](proto/usermessages.md) |
+| 119 | [`CUserMessageSayTextChannel`](proto/usermessages.md) |
+| 120 | [`CUserMessageShake`](proto/usermessages.md) |
+| 121 | [`CUserMessageShakeDir`](proto/usermessages.md) |
+| 122 | [`CUserMessageWaterShake`](proto/usermessages.md) |
+| 124 | [`CUserMessageTextMsg`](proto/usermessages.md) |
+| 125 | [`CUserMessageScreenTilt`](proto/usermessages.md) |
+| 128 | [`CUserMessageVoiceMask`](proto/usermessages.md) |
+| 130 | [`CUserMessageSendAudio`](proto/usermessages.md) |
+| 131 | [`CUserMessageItemPickup`](proto/usermessages.md) |
+| 132 | [`CUserMessageAmmoDenied`](proto/usermessages.md) |
+| 134 | [`CUserMessageShowMenu`](proto/usermessages.md) |
+| 135 | [`CUserMessageCreditsMsg`](proto/usermessages.md) |
+| 137 | [`CEntityMessageScreenOverlay`](proto/usermessages.md) |
+| 139 | [`CEntityMessagePropagateForce`](proto/usermessages.md) |
+| 140 | [`CEntityMessageDoSpark`](proto/usermessages.md) |
+| 142 | [`CUserMessageCloseCaptionPlaceholder`](proto/usermessages.md) |
+| 143 | [`CUserMessageCameraTransition`](proto/usermessages.md) |
+| 144 | [`CUserMessageAudioParameter`](proto/usermessages.md) |
+| 145 | [`CUserMsg_ParticleManager`](proto/usermessages.md) |
+| 146 | [`CUserMsg_HudError`](proto/usermessages.md) |
+| 148 | [`CUserMsg_CustomGameEvent`](proto/usermessages.md) |
+| 150 | [`CUserMessageHapticsManagerPulse`](proto/usermessages.md) |
+| 151 | [`CUserMessageHapticsManagerEffect`](proto/usermessages.md) |
+| 153 | [`CUserMessageUpdateCssClasses`](proto/usermessages.md) |
+| 154 | [`CUserMessageServerFrameTime`](proto/usermessages.md) |
+| 155 | [`CUserMessageLagCompensationError`](proto/usermessages.md) |
+| 156 | [`CUserMessageRequestDllStatus`](proto/usermessages.md) |
+| 157 | [`CUserMessageRequestUtilAction`](proto/usermessages.md) |
+| 160 | [`CUserMessageRequestInventory`](proto/usermessages.md) |
+| 162 | [`CUserMessageRequestDiagnostic`](proto/usermessages.md) |
+| 165 | [`CUserMessage_NotifyResponseFound`](proto/usermessages.md) |
+| 166 | [`CUserMessage_PlayResponseConditional`](proto/usermessages.md) |
+| 301 | [`CCSUsrMsg_VGUIMenu`](proto/cstrike15_usermessages.md) |
+| 317 | [`CCSUsrMsg_SendAudio`](proto/cstrike15_usermessages.md) |
+| 318 | [`CCSUsrMsg_RawAudio`](proto/cstrike15_usermessages.md) |
+| 321 | [`CCSUsrMsg_Damage`](proto/cstrike15_usermessages.md) |
+| 322 | [`CCSUsrMsg_RadioText`](proto/cstrike15_usermessages.md) |
+| 323 | [`CCSUsrMsg_HintText`](proto/cstrike15_usermessages.md) |
+| 324 | [`CCSUsrMsg_KeyHintText`](proto/cstrike15_usermessages.md) |
+| 325 | [`CCSUsrMsg_ProcessSpottedEntityUpdate`](proto/cstrike15_usermessages.md) |
+| 327 | [`CCSUsrMsg_AdjustMoney`](proto/cstrike15_usermessages.md) |
+| 330 | [`CCSUsrMsg_KillCam`](proto/cstrike15_usermessages.md) |
+| 334 | [`CCSUsrMsg_MatchEndConditions`](proto/cstrike15_usermessages.md) |
+| 335 | [`CCSUsrMsg_DisconnectToLobby`](proto/cstrike15_usermessages.md) |
+| 336 | [`CCSUsrMsg_PlayerStatsUpdate`](proto/cstrike15_usermessages.md) |
+| 345 | [`CCSUsrMsg_CallVoteFailed`](proto/cstrike15_usermessages.md) |
+| 346 | [`CCSUsrMsg_VoteStart`](proto/cstrike15_usermessages.md) |
+| 347 | [`CCSUsrMsg_VotePass`](proto/cstrike15_usermessages.md) |
+| 348 | [`CCSUsrMsg_VoteFailed`](proto/cstrike15_usermessages.md) |
+| 349 | [`CCSUsrMsg_VoteSetup`](proto/cstrike15_usermessages.md) |
+| 350 | [`CCSUsrMsg_ServerRankRevealAll`](proto/cstrike15_usermessages.md) |
+| 351 | [`CCSUsrMsg_SendLastKillerDamageToClient`](proto/cstrike15_usermessages.md) |
+| 352 | [`CCSUsrMsg_ServerRankUpdate`](proto/cstrike15_usermessages.md) |
+| 361 | [`CCSUsrMsg_SendPlayerItemDrops`](proto/cstrike15_usermessages.md) |
+| 362 | [`CCSUsrMsg_RoundBackupFilenames`](proto/cstrike15_usermessages.md) |
+| 363 | [`CCSUsrMsg_SendPlayerItemFound`](proto/cstrike15_usermessages.md) |
+| 364 | [`CCSUsrMsg_ReportHit`](proto/cstrike15_usermessages.md) |
+| 365 | [`CCSUsrMsg_XpUpdate`](proto/cstrike15_usermessages.md) |
+| 366 | [`CCSUsrMsg_QuestProgress`](proto/cstrike15_usermessages.md) |
+| 367 | [`CCSUsrMsg_ScoreLeaderboardData`](proto/cstrike15_usermessages.md) |
+| 368 | [`CCSUsrMsg_PlayerDecalDigitalSignature`](proto/cstrike15_usermessages.md) |
+| 369 | [`CCSUsrMsg_WeaponSound`](proto/cstrike15_usermessages.md) |
+| 370 | [`CCSUsrMsg_UpdateScreenHealthBar`](proto/cstrike15_usermessages.md) |
+| 371 | [`CCSUsrMsg_EntityOutlineHighlight`](proto/cstrike15_usermessages.md) |
+| 372 | [`CCSUsrMsg_SSUI`](proto/cstrike15_usermessages.md) |
+| 373 | [`CCSUsrMsg_SurvivalStats`](proto/cstrike15_usermessages.md) |
+| 374 | [`CCSUsrMsg_DisconnectToLobby`](proto/cstrike15_usermessages.md) |
+| 375 | [`CCSUsrMsg_EndOfMatchAllPlayersData`](proto/cstrike15_usermessages.md) |
+| 376 | [`CCSUsrMsg_PostRoundDamageReport`](proto/cstrike15_usermessages.md) |
+| 379 | [`CCSUsrMsg_RoundEndReportData`](proto/cstrike15_usermessages.md) |
+| 380 | [`CCSUsrMsg_CurrentRoundOdds`](proto/cstrike15_usermessages.md) |
+| 381 | [`CCSUsrMsg_DeepStats`](proto/cstrike15_usermessages.md) |
+| 383 | [`CCSUsrMsg_ShootInfo`](proto/cstrike15_usermessages.md) |
+| 385 | [`CCSUsrMsg_CounterStrafe`](proto/cstrike15_usermessages.md) |
+| 387 | [`CCSUsrMsg_RecurringMissionSchema`](proto/cstrike15_usermessages.md) |
+| 388 | [`CCSUsrMsg_SendPlayerLoadout`](proto/cstrike15_usermessages.md) |
+| 389 | [`CCSUsrMsg_WeaponMagDrop`](proto/cstrike15_usermessages.md) |
 
 ## Demo stream (`.dem`) messages (19)
 

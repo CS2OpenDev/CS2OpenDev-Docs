@@ -151,7 +151,9 @@ classDiagram
 
 **Inherits from:** [CEntityComponent](entity2.md#centitycomponent)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CScriptComponent"
+}`
 
 **Relationships:**
 
@@ -193,7 +195,15 @@ classDiagram
 
 ### EntityIOQueuePrioritizedEvent_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flFireTime": null,
+	"m_targetType": 0,
+	"m_pTarget": "",
+	"m_pTargetInput": "",
+	"m_hActivator": null,
+	"m_hCaller": null,
+	"m_hEntTarget": null
+}`
 
 **Relationships:**
 
@@ -215,7 +225,7 @@ classDiagram
 | `m_hActivator` | CEntityHandle |  |
 | `m_hCaller` | CEntityHandle |  |
 | `m_hEntTarget` | CEntityHandle |  |
-| `m_variantValue` | CVariantBase< [CVariantDefaultAllocator](../schemas/entity2.md#cvariantdefaultallocator) > | `MKV3TransferSaveOpsForField` |
+| `m_variantValue` | CVariantBase< [CVariantDefaultAllocator](../schemas/entity2.md#cvariantdefaultallocator) > | `MKV3TransferSaveOpsForField GetVariantSaveDataOps` |
 
 ### GameTick_t
 

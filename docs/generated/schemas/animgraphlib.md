@@ -259,7 +259,17 @@ nav_exclude: true
 
 ### AimCameraOpFixedSettings_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nChainIndex": -1,
+	"m_nCameraJointIndex": -1,
+	"m_nPelvisJointIndex": -1,
+	"m_nClavicleLeftJointIndex": -1,
+	"m_nClavicleRightJointIndex": -1,
+	"m_nDepenetrationJointIndex": -1,
+	"m_propJoints":
+	[
+	]
+}`
 
 **Fields:**
 
@@ -275,7 +285,127 @@ nav_exclude: true
 
 ### AimMatrixOpFixedSettings_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_attachment":
+	{
+		"m_influenceRotations":
+		[
+			[
+				0.000000,
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			[
+				0.000000,
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			[
+				0.000000,
+				0.000000,
+				0.000000,
+				0.000000
+			]
+		],
+		"m_influenceOffsets":
+		[
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			]
+		],
+		"m_influenceIndices":
+		[
+			0,
+			0,
+			0
+		],
+		"m_influenceWeights":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_numInfluences": 0
+	},
+	"m_damping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	},
+	"m_poseCacheHandles":
+	[
+		{
+			"m_nIndex": 65535,
+			"m_eType": "POSETYPE_INVALID"
+		},
+		{
+			"m_nIndex": 65535,
+			"m_eType": "POSETYPE_INVALID"
+		},
+		{
+			"m_nIndex": 65535,
+			"m_eType": "POSETYPE_INVALID"
+		},
+		{
+			"m_nIndex": 65535,
+			"m_eType": "POSETYPE_INVALID"
+		},
+		{
+			"m_nIndex": 65535,
+			"m_eType": "POSETYPE_INVALID"
+		},
+		{
+			"m_nIndex": 65535,
+			"m_eType": "POSETYPE_INVALID"
+		},
+		{
+			"m_nIndex": 65535,
+			"m_eType": "POSETYPE_INVALID"
+		},
+		{
+			"m_nIndex": 65535,
+			"m_eType": "POSETYPE_INVALID"
+		},
+		{
+			"m_nIndex": 65535,
+			"m_eType": "POSETYPE_INVALID"
+		},
+		{
+			"m_nIndex": 65535,
+			"m_eType": "POSETYPE_INVALID"
+		}
+	],
+	"m_eBlendMode": "AimMatrixBlendMode_None",
+	"m_flMaxYawAngle": 45.000000,
+	"m_flMaxPitchAngle": 45.000000,
+	"m_nSequenceMaxFrame": 0,
+	"m_nBoneMaskIndex": -1,
+	"m_bTargetIsPosition": true,
+	"m_bUseBiasAndClamp": false,
+	"m_flBiasAndClampYawOffset": 1.000000,
+	"m_flBiasAndClampPitchOffset": 1.000000,
+	"m_biasAndClampBlendCurve":
+	{
+		"m_flControlPoint1": 0.000000,
+		"m_flControlPoint2": 1.000000
+	}
+}`
 
 **Relationships:**
 
@@ -308,7 +438,23 @@ classDiagram
 
 ### BlendItem_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_tags":
+	[
+	],
+	"m_pChild":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_hSequence": -1,
+	"m_vPos":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_flDuration": 0.000000,
+	"m_bUseCustomDuration": false
+}`
 
 **Relationships:**
 
@@ -332,7 +478,15 @@ classDiagram
 
 ### BoneDemoCaptureSettings_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_boneName": "",
+	"m_flErrorSplineRotationMax": 1.000000,
+	"m_flErrorSplineTranslationMax": 1.000000,
+	"m_flErrorSplineScaleMax": 1.000000,
+	"m_flErrorQuantizationRotationMax": 1.000000,
+	"m_flErrorQuantizationTranslationMax": 1.000000,
+	"m_flErrorQuantizationScaleMax": 1.000000
+}`
 
 **Fields:**
 
@@ -350,7 +504,19 @@ classDiagram
 
 **Inherits from:** [CAnimComponentUpdater](animgraphlib.md#canimcomponentupdater)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CActionComponentUpdater",
+	"m_name": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_bStartEnabled": false,
+	"m_actions":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -370,7 +536,68 @@ classDiagram
 
 **Inherits from:** [CBinaryUpdateNode](animgraphlib.md#cbinaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAddUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChild1":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_pChild2":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_timingBehavior": "UseChild1",
+	"m_flTimingBlend": 0.500000,
+	"m_bResetChild1": true,
+	"m_bResetChild2": true,
+	"m_footMotionTiming": "Child1",
+	"m_bApplyToFootMotion": true,
+	"m_bApplyChannelsSeparately": true,
+	"m_bUseModelSpace": false,
+	"m_bApplyScale": false
+}`
 
 **Relationships:**
 
@@ -395,7 +622,102 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAimCameraUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_hParameterPosition":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hParameterOrientation":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hParameterPelvisOffset":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hParameterCameraOnly":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hParameterWeaponDepenetrationDistance":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hParameterWeaponDepenetrationDelta":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hParameterCameraClearanceDistance":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_opFixedSettings":
+	{
+		"m_nChainIndex": -1,
+		"m_nCameraJointIndex": -1,
+		"m_nPelvisJointIndex": -1,
+		"m_nClavicleLeftJointIndex": -1,
+		"m_nClavicleRightJointIndex": -1,
+		"m_nDepenetrationJointIndex": -1,
+		"m_propJoints":
+		[
+		]
+	}
+}`
 
 **Relationships:**
 
@@ -424,7 +746,186 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAimMatrixUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_opFixedSettings":
+	{
+		"m_attachment":
+		{
+			"m_influenceRotations":
+			[
+				[
+					0.000000,
+					0.000000,
+					0.000000,
+					0.000000
+				],
+				[
+					0.000000,
+					0.000000,
+					0.000000,
+					0.000000
+				],
+				[
+					0.000000,
+					0.000000,
+					0.000000,
+					0.000000
+				]
+			],
+			"m_influenceOffsets":
+			[
+				[
+					0.000000,
+					0.000000,
+					0.000000
+				],
+				[
+					0.000000,
+					0.000000,
+					0.000000
+				],
+				[
+					0.000000,
+					0.000000,
+					0.000000
+				]
+			],
+			"m_influenceIndices":
+			[
+				0,
+				0,
+				0
+			],
+			"m_influenceWeights":
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			"m_numInfluences": 0
+		},
+		"m_damping":
+		{
+			"_class": "CAnimInputDamping",
+			"m_speedFunction": "NoDamping",
+			"m_fSpeedScale": 1.000000,
+			"m_fFallingSpeedScale": 1.000000
+		},
+		"m_poseCacheHandles":
+		[
+			{
+				"m_nIndex": 65535,
+				"m_eType": "POSETYPE_INVALID"
+			},
+			{
+				"m_nIndex": 65535,
+				"m_eType": "POSETYPE_INVALID"
+			},
+			{
+				"m_nIndex": 65535,
+				"m_eType": "POSETYPE_INVALID"
+			},
+			{
+				"m_nIndex": 65535,
+				"m_eType": "POSETYPE_INVALID"
+			},
+			{
+				"m_nIndex": 65535,
+				"m_eType": "POSETYPE_INVALID"
+			},
+			{
+				"m_nIndex": 65535,
+				"m_eType": "POSETYPE_INVALID"
+			},
+			{
+				"m_nIndex": 65535,
+				"m_eType": "POSETYPE_INVALID"
+			},
+			{
+				"m_nIndex": 65535,
+				"m_eType": "POSETYPE_INVALID"
+			},
+			{
+				"m_nIndex": 65535,
+				"m_eType": "POSETYPE_INVALID"
+			},
+			{
+				"m_nIndex": 65535,
+				"m_eType": "POSETYPE_INVALID"
+			}
+		],
+		"m_eBlendMode": "AimMatrixBlendMode_None",
+		"m_flMaxYawAngle": 45.000000,
+		"m_flMaxPitchAngle": 45.000000,
+		"m_nSequenceMaxFrame": 0,
+		"m_nBoneMaskIndex": -1,
+		"m_bTargetIsPosition": true,
+		"m_bUseBiasAndClamp": false,
+		"m_flBiasAndClampYawOffset": 1.000000,
+		"m_flBiasAndClampPitchOffset": 1.000000,
+		"m_biasAndClampBlendCurve":
+		{
+			"m_flControlPoint1": 0.000000,
+			"m_flControlPoint2": 1.000000
+		}
+	},
+	"m_target": "MoveDirection",
+	"m_paramIndex":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hSequence": -1,
+	"m_bResetChild": false,
+	"m_bLockWhenWaning": false
+}`
 
 **Relationships:**
 
@@ -503,7 +1004,51 @@ classDiagram
 
 ### CAnimDemoCaptureSettings
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vecErrorRangeSplineRotation":
+	[
+		0.100000,
+		0.500000
+	],
+	"m_vecErrorRangeSplineTranslation":
+	[
+		0.100000,
+		0.500000
+	],
+	"m_vecErrorRangeSplineScale":
+	[
+		0.100000,
+		0.500000
+	],
+	"m_flIkRotation_MaxSplineError": 0.030000,
+	"m_flIkTranslation_MaxSplineError": 0.300000,
+	"m_vecErrorRangeQuantizationRotation":
+	[
+		0.100000,
+		0.500000
+	],
+	"m_vecErrorRangeQuantizationTranslation":
+	[
+		0.100000,
+		0.500000
+	],
+	"m_vecErrorRangeQuantizationScale":
+	[
+		0.100000,
+		0.500000
+	],
+	"m_flIkRotation_MaxQuantizationError": 0.010000,
+	"m_flIkTranslation_MaxQuantizationError": 0.100000,
+	"m_baseSequence": "",
+	"m_nBaseSequenceFrame": 0,
+	"m_boneSelectionMode": "CaptureSelectedBones",
+	"m_bones":
+	[
+	],
+	"m_ikChains":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -536,7 +1081,6016 @@ classDiagram
 
 ### CAnimGraphDebugReplay
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDebugReplay",
+	"m_animGraphFileName": "",
+	"m_frameList":
+	[
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null
+	],
+	"m_startIndex": 0,
+	"m_writeIndex": 0,
+	"m_frameCount": 0
+}`
 
 **Relationships:**
 
@@ -557,7 +7111,11 @@ classDiagram
 
 ### CAnimGraphModelBinding
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphModelBinding",
+	"m_modelName": "",
+	"m_pSharedData": null
+}`
 
 **Relationships:**
 
@@ -577,7 +7135,10 @@ classDiagram
 
 **Inherits from:** [CAnimGraphSettingsGroup](animgraphlib.md#canimgraphsettingsgroup)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Networking`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphNetworkSettings",
+	"m_bNetworkingEnabled": true
+}`, `MPropertyFriendlyName Networking`
 
 **Relationships:**
 
@@ -596,7 +7157,9 @@ classDiagram
 
 **Derived by:** [CAnimGraphNetworkSettings](animgraphlib.md#canimgraphnetworksettings)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphSettingsGroup"
+}`
 
 **Relationships:**
 
@@ -607,7 +7170,16 @@ classDiagram
 
 ### CAnimGraphSettingsManager
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphSettingsManager",
+	"m_settingsGroups":
+	[
+		{
+			"_class": "CAnimGraphNetworkSettings",
+			"m_bNetworkingEnabled": true
+		}
+	]
+}`
 
 **Relationships:**
 
@@ -624,7 +7196,12 @@ classDiagram
 
 ### CAnimInputDamping
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Damping`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimInputDamping",
+	"m_speedFunction": "NoDamping",
+	"m_fSpeedScale": 1.000000,
+	"m_fFallingSpeedScale": 1.000000
+}`, `MPropertyFriendlyName Damping`
 
 **Relationships:**
 
@@ -664,7 +7241,45 @@ classDiagram
 
 ### CAnimNodePath
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_path":
+	[
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	],
+	"m_nCount": 0
+}`
 
 **Relationships:**
 
@@ -682,7 +7297,10 @@ classDiagram
 
 ### CAnimParamHandle
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_type": "ANIMPARAM_UNKNOWN",
+	"m_index": 255
+}`
 
 **Relationships:**
 
@@ -700,7 +7318,11 @@ classDiagram
 
 ### CAnimParamHandleMap
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_list":
+	{
+	}
+}`
 
 **Fields:**
 
@@ -727,17 +7349,37 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_name` | CGlobalSymbol | `MPropertyFriendlyName Name` `MPropertySortPriority` |
-| `m_sComment` | CUtlString | `MPropertyAttributeEditor TextBlock()` `MPropertyFriendlyName Comment` `MPropertySortPriority` |
-| `m_group` | CUtlString | `MPropertyReadOnly` `MPropertySortPriority` |
-| `m_id` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyReadOnly` `MPropertySortPriority` |
+| `m_name` | CGlobalSymbol | `MPropertyFriendlyName Name` `MPropertySortPriority 100` |
+| `m_sComment` | CUtlString | `MPropertyAttributeEditor TextBlock()` `MPropertyFriendlyName Comment` `MPropertySortPriority -100` |
+| `m_group` | CUtlString | `MPropertyReadOnly` `MPropertySortPriority -90` |
+| `m_id` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyReadOnly` `MPropertySortPriority -90` |
 | `m_componentName` | CUtlString | `MPropertyAutoRebuildOnChange` `MPropertySuppressField` |
 | `m_bNetworkingRequested` | bool | `MPropertySuppressField` |
 | `m_bIsReferenced` | bool | `MPropertySuppressField` |
 
 ### CAnimParameterManagerUpdater
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimParameterManagerUpdater",
+	"m_parameters":
+	[
+	],
+	"m_idToIndexMap":
+	[
+	],
+	"m_nameToIndexMap":
+	{
+	},
+	"m_indexToHandle":
+	[
+	],
+	"m_autoResetParams":
+	[
+	],
+	"m_autoResetMap":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -761,7 +7403,36 @@ classDiagram
 
 ### CAnimReplayFrame
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimReplayFrame",
+	"m_inputDataBlocks":
+	[
+	],
+	"m_instanceData": "[BINARY BLOB]",
+	"m_startingLocalToWorldTransform":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000
+	],
+	"m_localToWorldTransform":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000
+	],
+	"m_timeStamp": 0.000000
+}`
 
 **Fields:**
 
@@ -777,7 +7448,20 @@ classDiagram
 
 **Inherits from:** [CAnimComponentUpdater](animgraphlib.md#canimcomponentupdater)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimScriptComponentUpdater",
+	"m_name": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_bStartEnabled": false,
+	"m_hScript":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	}
+}`
 
 **Relationships:**
 
@@ -795,7 +7479,12 @@ classDiagram
 
 ### CAnimScriptManager
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimScriptManager",
+	"m_scriptInfo":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -812,7 +7501,16 @@ classDiagram
 
 ### CAnimStateMachineUpdater
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimStateMachineUpdater",
+	"m_states":
+	[
+	],
+	"m_transitions":
+	[
+	],
+	"m_startStateIndex": -1
+}`
 
 **Relationships:**
 
@@ -834,7 +7532,17 @@ classDiagram
 
 **Derived by:** [CAudioAnimTag](animgraphlib.md#caudioanimtag), [CBodyGroupAnimTag](animgraphlib.md#cbodygroupanimtag), [CClothSettingsAnimTag](animgraphlib.md#cclothsettingsanimtag), [CFootFallAnimTag](animgraphlib.md#cfootfallanimtag), [CFootstepLandedAnimTag](animgraphlib.md#cfootsteplandedanimtag), [CHandshakeAnimTagBase](animgraphlib.md#chandshakeanimtagbase), [CMaterialAttributeAnimTag](animgraphlib.md#cmaterialattributeanimtag), [CParticleAnimTag](animgraphlib.md#cparticleanimtag), [CRagdollAnimTag](animgraphlib.md#cragdollanimtag), [CSequenceFinishedAnimTag](animgraphlib.md#csequencefinishedanimtag), [CStringAnimTag](animgraphlib.md#cstringanimtag), [CTaskStatusAnimTag](animgraphlib.md#ctaskstatusanimtag), [CWarpSectionAnimTagBase](animgraphlib.md#cwarpsectionanimtagbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimTagBase",
+	"m_name": "Unnamed Tag",
+	"m_sComment": "",
+	"m_group": "",
+	"m_tagID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bIsReferenced": false
+}`
 
 **Relationships:**
 
@@ -860,15 +7568,20 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_name` | CGlobalSymbol | `MPropertyFriendlyName Name` `MPropertySortPriority` |
-| `m_sComment` | CUtlString | `MPropertyAttributeEditor TextBlock()` `MPropertyFriendlyName Comment` `MPropertySortPriority` |
+| `m_name` | CGlobalSymbol | `MPropertyFriendlyName Name` `MPropertySortPriority 100` |
+| `m_sComment` | CUtlString | `MPropertyAttributeEditor TextBlock()` `MPropertyFriendlyName Comment` `MPropertySortPriority -100` |
 | `m_group` | CGlobalSymbol | `MPropertySuppressField` |
 | `m_tagID` | [AnimTagID](../schemas/modellib.md#animtagid) | `MPropertySuppressField` |
 | `m_bIsReferenced` | bool | `MPropertySuppressField` |
 
 ### CAnimTagManagerUpdater
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimTagManagerUpdater",
+	"m_tags":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -916,7 +7629,9 @@ classDiagram
 
 ### CAnimUpdateNodeRef
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nodeIndex": -1
+}`
 
 **Fields:**
 
@@ -926,7 +7641,74 @@ classDiagram
 
 ### CAnimUpdateSharedData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimUpdateSharedData",
+	"m_nodes":
+	[
+	],
+	"m_nodeIndexMap":
+	[
+	],
+	"m_components":
+	[
+	],
+	"m_pParamListUpdater": null,
+	"m_pTagManagerUpdater": null,
+	"m_scriptManager": null,
+	"m_settings":
+	{
+		"_class": "CAnimGraphSettingsManager",
+		"m_settingsGroups":
+		[
+			{
+				"_class": "CAnimGraphNetworkSettings",
+				"m_bNetworkingEnabled": true
+			}
+		]
+	},
+	"m_pStaticPoseCache": null,
+	"m_pSkeleton": null,
+	"m_rootNodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	}
+}`
 
 **Relationships:**
 
@@ -972,7 +7754,59 @@ classDiagram
 
 **Inherits from:** [CAnimationGraphVisualizerPrimitiveBase](animgraphlib.md#canimationgraphvisualizerprimitivebase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimationGraphVisualizerAxis",
+	"m_Type": "ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Axis",
+	"m_OwningAnimNodePaths":
+	[
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	],
+	"m_nOwningAnimNodePathCount": 0,
+	"m_xWsTransform":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_flAxisSize": 0.000000
+}`
 
 **Relationships:**
 
@@ -992,7 +7826,66 @@ classDiagram
 
 **Inherits from:** [CAnimationGraphVisualizerPrimitiveBase](animgraphlib.md#canimationgraphvisualizerprimitivebase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimationGraphVisualizerLine",
+	"m_Type": "ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Line",
+	"m_OwningAnimNodePaths":
+	[
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	],
+	"m_nOwningAnimNodePathCount": 0,
+	"m_vWsPositionStart":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vWsPositionEnd":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_Color":
+	[
+		0,
+		0,
+		0,
+		0
+	]
+}`
 
 **Relationships:**
 
@@ -1013,7 +7906,72 @@ classDiagram
 
 **Inherits from:** [CAnimationGraphVisualizerPrimitiveBase](animgraphlib.md#canimationgraphvisualizerprimitivebase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimationGraphVisualizerPie",
+	"m_Type": "ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Pie",
+	"m_OwningAnimNodePaths":
+	[
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	],
+	"m_nOwningAnimNodePathCount": 0,
+	"m_vWsCenter":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vWsStart":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vWsEnd":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_Color":
+	[
+		0,
+		0,
+		0,
+		0
+	]
+}`
 
 **Relationships:**
 
@@ -1035,7 +7993,47 @@ classDiagram
 
 **Derived by:** [CAnimationGraphVisualizerAxis](animgraphlib.md#canimationgraphvisualizeraxis), [CAnimationGraphVisualizerLine](animgraphlib.md#canimationgraphvisualizerline), [CAnimationGraphVisualizerPie](animgraphlib.md#canimationgraphvisualizerpie), [CAnimationGraphVisualizerSphere](animgraphlib.md#canimationgraphvisualizersphere), [CAnimationGraphVisualizerText](animgraphlib.md#canimationgraphvisualizertext)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimationGraphVisualizerPrimitiveBase",
+	"m_Type": "ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Text",
+	"m_OwningAnimNodePaths":
+	[
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	],
+	"m_nOwningAnimNodePathCount": 0
+}`
 
 **Relationships:**
 
@@ -1062,7 +8060,61 @@ classDiagram
 
 **Inherits from:** [CAnimationGraphVisualizerPrimitiveBase](animgraphlib.md#canimationgraphvisualizerprimitivebase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimationGraphVisualizerSphere",
+	"m_Type": "ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Sphere",
+	"m_OwningAnimNodePaths":
+	[
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	],
+	"m_nOwningAnimNodePathCount": 0,
+	"m_vWsPosition":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_flRadius": -1.000000,
+	"m_Color":
+	[
+		0,
+		0,
+		0,
+		0
+	]
+}`
 
 **Relationships:**
 
@@ -1083,7 +8135,61 @@ classDiagram
 
 **Inherits from:** [CAnimationGraphVisualizerPrimitiveBase](animgraphlib.md#canimationgraphvisualizerprimitivebase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimationGraphVisualizerText",
+	"m_Type": "ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Text",
+	"m_OwningAnimNodePaths":
+	[
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	],
+	"m_nOwningAnimNodePathCount": 0,
+	"m_vWsPosition":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_Color":
+	[
+		0,
+		0,
+		0,
+		0
+	],
+	"m_Text": ""
+}`
 
 **Relationships:**
 
@@ -1102,7 +8208,19 @@ classDiagram
 
 ### CAnimationLayer
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_hSequence": 0,
+	"m_flPrevCycle": 0.000000,
+	"m_flCycle": 0.000000,
+	"m_flWeight": 0.000000,
+	"m_nOrder": 12,
+	"m_bLooping": false,
+	"m_nFlags": 0,
+	"m_bSequenceFinished": false,
+	"m_flKillRate": 100.000000,
+	"m_flKillDelay": 0.000000,
+	"m_nPriority": 0
+}`
 
 **Fields:**
 
@@ -1124,7 +8242,24 @@ classDiagram
 
 **Inherits from:** [CAnimTagBase](animgraphlib.md#canimtagbase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Audio Tag`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAudioAnimTag",
+	"m_name": "Unnamed Tag",
+	"m_sComment": "",
+	"m_group": "",
+	"m_tagID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bIsReferenced": false,
+	"m_clipName": "",
+	"m_attachmentName": "",
+	"m_flVolume": 1.000000,
+	"m_bStopWhenTagEnds": false,
+	"m_bStopWhenGraphEnds": true,
+	"m_bPlayOnServer": true,
+	"m_bPlayOnClient": true
+}`, `MPropertyFriendlyName Audio Tag`
 
 **Relationships:**
 
@@ -1180,7 +8315,51 @@ classDiagram
 
 **Inherits from:** [CLeafUpdateNode](animgraphlib.md#cleafupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CBindPoseUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": ""
+}`
 
 **Relationships:**
 
@@ -1192,7 +8371,15 @@ classDiagram
 
 ### CBlend2DInstanceData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_dampedValue":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_flCycle": 0.000000,
+	"m_flPrevCycle": 0.000000
+}`
 
 **Fields:**
 
@@ -1206,7 +8393,91 @@ classDiagram
 
 **Inherits from:** [CAnimUpdateNodeBase](animgraphlib.md#canimupdatenodebase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CBlend2DUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_items":
+	[
+	],
+	"m_tags":
+	[
+	],
+	"m_paramSpans":
+	{
+		"m_spans":
+		[
+		]
+	},
+	"m_nodeItemIndices":
+	[
+	],
+	"m_damping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	},
+	"m_blendSourceX": "MoveHeading",
+	"m_paramX":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_blendSourceY": "MoveHeading",
+	"m_paramY":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_eBlendMode": "Blend2DMode_General",
+	"m_playbackSpeed": 0.000000,
+	"m_bLoop": false,
+	"m_bLockBlendOnReset": false,
+	"m_bLockWhenWaning": false,
+	"m_bAnimEventsAndTagsOnMostWeightedOnly": false
+}`
 
 **Relationships:**
 
@@ -1244,7 +8515,10 @@ classDiagram
 
 ### CBlendCurve
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flControlPoint1": 0.000000,
+	"m_flControlPoint2": 1.000000
+}`
 
 **Fields:**
 
@@ -1255,7 +8529,15 @@ classDiagram
 
 ### CBlendNodeInstanceData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_dampedValue": 0.000000,
+	"m_flCycle": 0.000000,
+	"m_flCycleZeroTime": 0.000000,
+	"m_flPlaybackRate": 1.000000,
+	"m_flBlendValue": 0.000000,
+	"m_flDuration": 1.000000,
+	"m_resetCount": 0
+}`
 
 **Fields:**
 
@@ -1273,7 +8555,80 @@ classDiagram
 
 **Inherits from:** [CAnimUpdateNodeBase](animgraphlib.md#canimupdatenodebase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CBlendUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_children":
+	[
+	],
+	"m_sortedOrder":
+	[
+	],
+	"m_targetValues":
+	[
+	],
+	"m_blendValueSource": "MoveHeading",
+	"m_eLinearRootMotionBlendMode": "LERP",
+	"m_paramIndex":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_damping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	},
+	"m_blendKeyType": "BlendKey_UserValue",
+	"m_bLockBlendOnReset": false,
+	"m_bSyncCycles": false,
+	"m_bLoop": false,
+	"m_bLockWhenWaning": false,
+	"m_bIsAngle": false
+}`
 
 **Relationships:**
 
@@ -1323,7 +8678,21 @@ classDiagram
 
 **Inherits from:** [CAnimTagBase](animgraphlib.md#canimtagbase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Body Group Tag`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CBodyGroupAnimTag",
+	"m_name": "Unnamed Tag",
+	"m_sComment": "",
+	"m_group": "",
+	"m_tagID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bIsReferenced": false,
+	"m_nPriority": 5,
+	"m_bodyGroupSettings":
+	[
+	]
+}`, `MPropertyFriendlyName Body Group Tag`
 
 **Relationships:**
 
@@ -1342,7 +8711,10 @@ classDiagram
 
 ### CBodyGroupSetting
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyElementNameFn`, `MPropertyFriendlyName Body Group Setting`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_BodyGroupName": "",
+	"m_nBodyGroupOption": 0
+}`, `MPropertyElementNameFn`, `MPropertyFriendlyName Body Group Setting`
 
 **Fields:**
 
@@ -1355,7 +8727,74 @@ classDiagram
 
 **Inherits from:** [CBinaryUpdateNode](animgraphlib.md#cbinaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CBoneMaskUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChild1":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_pChild2":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_timingBehavior": "UseChild1",
+	"m_flTimingBlend": 0.500000,
+	"m_bResetChild1": true,
+	"m_bResetChild2": true,
+	"m_nWeightListIndex": 0,
+	"m_flRootMotionBlend": 0.000000,
+	"m_blendSpace": "BlendSpace_Parent",
+	"m_footMotionTiming": "Child1",
+	"m_bUseBlendScale": false,
+	"m_blendValueSource": "MoveHeading",
+	"m_hBlendParameter":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	}
+}`
 
 **Relationships:**
 
@@ -1385,7 +8824,18 @@ classDiagram
 
 **Inherits from:** [CMotionMetricEvaluator](animgraphlib.md#cmotionmetricevaluator)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CBonePositionMetricEvaluator",
+	"m_means":
+	[
+	],
+	"m_standardDeviations":
+	[
+	],
+	"m_flWeight": 0.000000,
+	"m_nDimensionStartIndex": -1,
+	"m_nBoneIndex": -1
+}`
 
 **Relationships:**
 
@@ -1404,7 +8854,18 @@ classDiagram
 
 **Inherits from:** [CMotionMetricEvaluator](animgraphlib.md#cmotionmetricevaluator)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CBoneVelocityMetricEvaluator",
+	"m_means":
+	[
+	],
+	"m_standardDeviations":
+	[
+	],
+	"m_flWeight": 0.000000,
+	"m_nDimensionStartIndex": -1,
+	"m_nBoneIndex": -1
+}`
 
 **Relationships:**
 
@@ -1423,7 +8884,26 @@ classDiagram
 
 **Inherits from:** [CConcreteAnimParameter](animgraphlib.md#cconcreteanimparameter)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Bool Parameter`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CBoolAnimParameter",
+	"m_name": "Unnamed Parameter",
+	"m_sComment": "",
+	"m_group": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_componentName": "",
+	"m_bNetworkingRequested": false,
+	"m_bIsReferenced": false,
+	"m_previewButton": "ANIMPARAM_BUTTON_NONE",
+	"m_eNetworkSetting": "Auto",
+	"m_bUseMostRecentValue": false,
+	"m_bAutoReset": false,
+	"m_bGameWritable": true,
+	"m_bGraphWritable": false,
+	"m_bDefaultValue": false
+}`, `MPropertyFriendlyName Bool Parameter`
 
 **Relationships:**
 
@@ -1443,7 +8923,19 @@ classDiagram
 
 **Inherits from:** [CAnimComponentUpdater](animgraphlib.md#canimcomponentupdater)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CCPPScriptComponentUpdater",
+	"m_name": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_bStartEnabled": false,
+	"m_scriptsToRun":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1460,7 +8952,17 @@ classDiagram
 
 ### CCachedPose
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CCachedPose",
+	"m_transforms":
+	[
+	],
+	"m_morphWeights":
+	[
+	],
+	"m_hSequence": -1,
+	"m_flCycle": 0.000000
+}`
 
 **Relationships:**
 
@@ -1480,7 +8982,12 @@ classDiagram
 
 ### CChoiceInstanceData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_currentChoice": -1,
+	"m_previousChoice": -1,
+	"m_flClipStartTime": 0.000000,
+	"m_choicePreviousCycle": 0.000000
+}`
 
 **Fields:**
 
@@ -1495,7 +9002,67 @@ classDiagram
 
 **Inherits from:** [CAnimUpdateNodeBase](animgraphlib.md#canimupdatenodebase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CChoiceUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_children":
+	[
+	],
+	"m_weights":
+	[
+	],
+	"m_blendTimes":
+	[
+	],
+	"m_choiceMethod": "WeightedRandom",
+	"m_choiceChangeMethod": "OnReset",
+	"m_blendMethod": "SingleBlendTime",
+	"m_blendTime": 0.000000,
+	"m_bCrossFade": false,
+	"m_bResetChosen": false,
+	"m_bDontResetSameSelection": false
+}`
 
 **Relationships:**
 
@@ -1525,7 +9092,167 @@ classDiagram
 
 ### CChoreoInstanceData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_AnimOverlay":
+	[
+		{
+			"m_hSequence": 0,
+			"m_flPrevCycle": 0.000000,
+			"m_flCycle": 0.000000,
+			"m_flWeight": 0.000000,
+			"m_nOrder": 12,
+			"m_bLooping": false,
+			"m_nFlags": 0,
+			"m_bSequenceFinished": false,
+			"m_flKillRate": 100.000000,
+			"m_flKillDelay": 0.000000,
+			"m_nPriority": 0
+		},
+		{
+			"m_hSequence": 0,
+			"m_flPrevCycle": 0.000000,
+			"m_flCycle": 0.000000,
+			"m_flWeight": 0.000000,
+			"m_nOrder": 12,
+			"m_bLooping": false,
+			"m_nFlags": 0,
+			"m_bSequenceFinished": false,
+			"m_flKillRate": 100.000000,
+			"m_flKillDelay": 0.000000,
+			"m_nPriority": 0
+		},
+		{
+			"m_hSequence": 0,
+			"m_flPrevCycle": 0.000000,
+			"m_flCycle": 0.000000,
+			"m_flWeight": 0.000000,
+			"m_nOrder": 12,
+			"m_bLooping": false,
+			"m_nFlags": 0,
+			"m_bSequenceFinished": false,
+			"m_flKillRate": 100.000000,
+			"m_flKillDelay": 0.000000,
+			"m_nPriority": 0
+		},
+		{
+			"m_hSequence": 0,
+			"m_flPrevCycle": 0.000000,
+			"m_flCycle": 0.000000,
+			"m_flWeight": 0.000000,
+			"m_nOrder": 12,
+			"m_bLooping": false,
+			"m_nFlags": 0,
+			"m_bSequenceFinished": false,
+			"m_flKillRate": 100.000000,
+			"m_flKillDelay": 0.000000,
+			"m_nPriority": 0
+		},
+		{
+			"m_hSequence": 0,
+			"m_flPrevCycle": 0.000000,
+			"m_flCycle": 0.000000,
+			"m_flWeight": 0.000000,
+			"m_nOrder": 12,
+			"m_bLooping": false,
+			"m_nFlags": 0,
+			"m_bSequenceFinished": false,
+			"m_flKillRate": 100.000000,
+			"m_flKillDelay": 0.000000,
+			"m_nPriority": 0
+		},
+		{
+			"m_hSequence": 0,
+			"m_flPrevCycle": 0.000000,
+			"m_flCycle": 0.000000,
+			"m_flWeight": 0.000000,
+			"m_nOrder": 12,
+			"m_bLooping": false,
+			"m_nFlags": 0,
+			"m_bSequenceFinished": false,
+			"m_flKillRate": 100.000000,
+			"m_flKillDelay": 0.000000,
+			"m_nPriority": 0
+		},
+		{
+			"m_hSequence": 0,
+			"m_flPrevCycle": 0.000000,
+			"m_flCycle": 0.000000,
+			"m_flWeight": 0.000000,
+			"m_nOrder": 12,
+			"m_bLooping": false,
+			"m_nFlags": 0,
+			"m_bSequenceFinished": false,
+			"m_flKillRate": 100.000000,
+			"m_flKillDelay": 0.000000,
+			"m_nPriority": 0
+		},
+		{
+			"m_hSequence": 0,
+			"m_flPrevCycle": 0.000000,
+			"m_flCycle": 0.000000,
+			"m_flWeight": 0.000000,
+			"m_nOrder": 12,
+			"m_bLooping": false,
+			"m_nFlags": 0,
+			"m_bSequenceFinished": false,
+			"m_flKillRate": 100.000000,
+			"m_flKillDelay": 0.000000,
+			"m_nPriority": 0
+		},
+		{
+			"m_hSequence": 0,
+			"m_flPrevCycle": 0.000000,
+			"m_flCycle": 0.000000,
+			"m_flWeight": 0.000000,
+			"m_nOrder": 12,
+			"m_bLooping": false,
+			"m_nFlags": 0,
+			"m_bSequenceFinished": false,
+			"m_flKillRate": 100.000000,
+			"m_flKillDelay": 0.000000,
+			"m_nPriority": 0
+		},
+		{
+			"m_hSequence": 0,
+			"m_flPrevCycle": 0.000000,
+			"m_flCycle": 0.000000,
+			"m_flWeight": 0.000000,
+			"m_nOrder": 12,
+			"m_bLooping": false,
+			"m_nFlags": 0,
+			"m_bSequenceFinished": false,
+			"m_flKillRate": 100.000000,
+			"m_flKillDelay": 0.000000,
+			"m_nPriority": 0
+		},
+		{
+			"m_hSequence": 0,
+			"m_flPrevCycle": 0.000000,
+			"m_flCycle": 0.000000,
+			"m_flWeight": 0.000000,
+			"m_nOrder": 12,
+			"m_bLooping": false,
+			"m_nFlags": 0,
+			"m_bSequenceFinished": false,
+			"m_flKillRate": 100.000000,
+			"m_flKillDelay": 0.000000,
+			"m_nPriority": 0
+		},
+		{
+			"m_hSequence": 0,
+			"m_flPrevCycle": 0.000000,
+			"m_flCycle": 0.000000,
+			"m_flWeight": 0.000000,
+			"m_nOrder": 12,
+			"m_bLooping": false,
+			"m_nFlags": 0,
+			"m_bSequenceFinished": false,
+			"m_flKillRate": 100.000000,
+			"m_flKillDelay": 0.000000,
+			"m_nPriority": 0
+		}
+	]
+}`
 
 **Relationships:**
 
@@ -1544,7 +9271,55 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CChoreoUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	}
+}`
 
 **Relationships:**
 
@@ -1558,7 +9333,21 @@ classDiagram
 
 **Inherits from:** [CAnimTagBase](animgraphlib.md#canimtagbase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Cloth Settings Tag`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CClothSettingsAnimTag",
+	"m_name": "Unnamed Tag",
+	"m_sComment": "",
+	"m_group": "",
+	"m_tagID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bIsReferenced": false,
+	"m_flStiffness": 1.000000,
+	"m_flEaseIn": 0.000000,
+	"m_flEaseOut": 0.000000,
+	"m_nVertexSet": ""
+}`, `MPropertyFriendlyName Cloth Settings Tag`
 
 **Relationships:**
 
@@ -1615,7 +9404,17 @@ classDiagram
 
 **Inherits from:** [CMotionMetricEvaluator](animgraphlib.md#cmotionmetricevaluator)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CCurrentRotationVelocityMetricEvaluator",
+	"m_means":
+	[
+	],
+	"m_standardDeviations":
+	[
+	],
+	"m_flWeight": 0.000000,
+	"m_nDimensionStartIndex": -1
+}`
 
 **Relationships:**
 
@@ -1628,7 +9427,17 @@ classDiagram
 
 **Inherits from:** [CMotionMetricEvaluator](animgraphlib.md#cmotionmetricevaluator)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CCurrentVelocityMetricEvaluator",
+	"m_means":
+	[
+	],
+	"m_standardDeviations":
+	[
+	],
+	"m_flWeight": 0.000000,
+	"m_nDimensionStartIndex": -1
+}`
 
 **Relationships:**
 
@@ -1639,7 +9448,10 @@ classDiagram
 
 ### CCycleClipInstanceData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flCycle": 0.000000,
+	"m_flPrevCycle": 0.000000
+}`
 
 **Fields:**
 
@@ -1652,7 +9464,63 @@ classDiagram
 
 **Inherits from:** [CLeafUpdateNode](animgraphlib.md#cleafupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CCycleControlClipUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_tags":
+	[
+	],
+	"m_hSequence": -1,
+	"m_duration": 0.000000,
+	"m_valueSource": "MoveHeading",
+	"m_paramIndex":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_bLockWhenWaning": false
+}`
 
 **Relationships:**
 
@@ -1681,7 +9549,62 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CCycleControlUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_valueSource": "MoveHeading",
+	"m_paramIndex":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_bLockWhenWaning": false
+}`
 
 **Relationships:**
 
@@ -1705,7 +9628,27 @@ classDiagram
 
 **Inherits from:** [CPathAnimMotorUpdaterBase](animgraphlib.md#cpathanimmotorupdaterbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CDampedPathAnimMotorUpdater",
+	"m_name": "",
+	"m_bDefault": false,
+	"m_bLockToPath": false,
+	"m_flAnticipationTime": 1.000000,
+	"m_flMinSpeedScale": 0.250000,
+	"m_hAnticipationPosParam":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hAnticipationHeadingParam":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_flSpringConstant": 10.000000,
+	"m_flMinSpringTension": 1.000000,
+	"m_flMaxSpringTension": 100.000000
+}`
 
 **Relationships:**
 
@@ -1732,7 +9675,19 @@ classDiagram
 
 **Inherits from:** [CAnimComponentUpdater](animgraphlib.md#canimcomponentupdater)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CDampedValueComponentUpdater",
+	"m_name": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_bStartEnabled": false,
+	"m_items":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1750,7 +9705,25 @@ classDiagram
 
 ### CDampedValueUpdateItem
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_damping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	},
+	"m_hParamIn":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hParamOut":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	}
+}`
 
 **Relationships:**
 
@@ -1772,7 +9745,62 @@ classDiagram
 
 **Inherits from:** [CAnimComponentUpdater](animgraphlib.md#canimcomponentupdater)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CDemoSettingsComponentUpdater",
+	"m_name": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_bStartEnabled": false,
+	"m_settings":
+	{
+		"m_vecErrorRangeSplineRotation":
+		[
+			0.100000,
+			0.500000
+		],
+		"m_vecErrorRangeSplineTranslation":
+		[
+			0.100000,
+			0.500000
+		],
+		"m_vecErrorRangeSplineScale":
+		[
+			0.100000,
+			0.500000
+		],
+		"m_flIkRotation_MaxSplineError": 0.030000,
+		"m_flIkTranslation_MaxSplineError": 0.300000,
+		"m_vecErrorRangeQuantizationRotation":
+		[
+			0.100000,
+			0.500000
+		],
+		"m_vecErrorRangeQuantizationTranslation":
+		[
+			0.100000,
+			0.500000
+		],
+		"m_vecErrorRangeQuantizationScale":
+		[
+			0.100000,
+			0.500000
+		],
+		"m_flIkRotation_MaxQuantizationError": 0.010000,
+		"m_flIkTranslation_MaxQuantizationError": 0.100000,
+		"m_baseSequence": "",
+		"m_nBaseSequenceFrame": 0,
+		"m_boneSelectionMode": "CaptureSelectedBones",
+		"m_bones":
+		[
+		],
+		"m_ikChains":
+		[
+		]
+	}
+}`
 
 **Relationships:**
 
@@ -1790,7 +9818,77 @@ classDiagram
 
 ### CDirectPlaybackInstanceData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vTargetPosition":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_flTargetFacing": 0.000000,
+	"m_flInterpEndTime": -1.000000,
+	"m_weights":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_sequences":
+	[
+		{
+			"m_hSequence": -1,
+			"m_cycle":
+			{
+				"m_flCycleUnclamped": 0.000000,
+				"m_flPrevCycleUnclamped": 0.000000,
+				"m_flCyclesPerSecond": 1.000000,
+				"m_flCycleZeroTime": 0.000000,
+				"m_resetCount": 0
+			}
+		},
+		{
+			"m_hSequence": -1,
+			"m_cycle":
+			{
+				"m_flCycleUnclamped": 0.000000,
+				"m_flPrevCycleUnclamped": 0.000000,
+				"m_flCyclesPerSecond": 1.000000,
+				"m_flCycleZeroTime": 0.000000,
+				"m_resetCount": 0
+			}
+		},
+		{
+			"m_hSequence": -1,
+			"m_cycle":
+			{
+				"m_flCycleUnclamped": 0.000000,
+				"m_flPrevCycleUnclamped": 0.000000,
+				"m_flCyclesPerSecond": 1.000000,
+				"m_flCycleZeroTime": 0.000000,
+				"m_resetCount": 0
+			}
+		},
+		{
+			"m_hSequence": -1,
+			"m_cycle":
+			{
+				"m_flCycleUnclamped": 0.000000,
+				"m_flPrevCycleUnclamped": 0.000000,
+				"m_flCyclesPerSecond": 1.000000,
+				"m_flCycleZeroTime": 0.000000,
+				"m_resetCount": 0
+			}
+		}
+	],
+	"m_currentSequenceIndex": 0,
+	"m_currentSequenceData": 0,
+	"m_flFadeInTime": 0.200000,
+	"m_flFadeOutTime": 0.200000,
+	"m_flForcedCycle": -1.000000,
+	"m_bResetPending": false,
+	"m_SequenceCycleZeroTime": 0.000000
+}`
 
 **Relationships:**
 
@@ -1818,7 +9916,12 @@ classDiagram
 
 ### CDirectPlaybackTagData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_sequenceName": "",
+	"m_tags":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1838,7 +9941,60 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CDirectPlaybackUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_bFinishEarly": false,
+	"m_bResetOnFinish": false,
+	"m_allTags":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1859,7 +10015,15 @@ classDiagram
 
 ### CDirectionalBlendInstanceData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_dampedValue": 0.000000,
+	"m_flCycle": 0.000000,
+	"m_flPrevCycle": 0.000000,
+	"m_flPlaybackRate": 1.000000,
+	"m_flCycleZeroTime": 0.000000,
+	"m_resetCycleValue": 0.000000,
+	"m_resetCount": 0.000000
+}`
 
 **Fields:**
 
@@ -1877,7 +10041,79 @@ classDiagram
 
 **Inherits from:** [CLeafUpdateNode](animgraphlib.md#cleafupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CDirectionalBlendUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_hSequences":
+	[
+		-1,
+		-1,
+		-1,
+		-1,
+		-1,
+		-1,
+		-1,
+		-1
+	],
+	"m_damping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	},
+	"m_blendValueSource": "MoveHeading",
+	"m_paramIndex":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_playbackSpeed": 0.000000,
+	"m_duration": 0.000000,
+	"m_bLoop": false,
+	"m_bLockBlendOnReset": false
+}`
 
 **Relationships:**
 
@@ -1908,7 +10144,24 @@ classDiagram
 
 **Inherits from:** [CMotionMetricEvaluator](animgraphlib.md#cmotionmetricevaluator)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CDistanceRemainingMetricEvaluator",
+	"m_means":
+	[
+	],
+	"m_standardDeviations":
+	[
+	],
+	"m_flWeight": 0.000000,
+	"m_nDimensionStartIndex": -1,
+	"m_flMaxDistance": 0.000000,
+	"m_flMinDistance": 0.000000,
+	"m_flStartGoalFilterDistance": 0.000000,
+	"m_flMaxGoalOvershootScale": 0.000000,
+	"m_bFilterFixedMinDistance": false,
+	"m_bFilterGoalDistance": false,
+	"m_bFilterGoalOvershoot": false
+}`
 
 **Relationships:**
 
@@ -1933,7 +10186,23 @@ classDiagram
 
 **Inherits from:** [CMotionGraph](animgraphlib.md#cmotiongraph)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CEditableMotionGraph",
+	"m_paramSpans":
+	{
+		"m_spans":
+		[
+		]
+	},
+	"m_tags":
+	[
+	],
+	"m_pRootNode": null,
+	"m_nParameterCount": 0,
+	"m_nConfigStartIndex": -1,
+	"m_nConfigCount": -1,
+	"m_bLoop": false
+}`
 
 **Relationships:**
 
@@ -1946,7 +10215,11 @@ classDiagram
 
 **Inherits from:** [CAnimActionUpdater](animgraphlib.md#canimactionupdater)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CEmitTagActionUpdater",
+	"m_nTagIndex": -1,
+	"m_bIsZeroDuration": false
+}`
 
 **Relationships:**
 
@@ -1966,7 +10239,32 @@ classDiagram
 
 **Inherits from:** [CConcreteAnimParameter](animgraphlib.md#cconcreteanimparameter)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Enum Parameter`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CEnumAnimParameter",
+	"m_name": "Unnamed Parameter",
+	"m_sComment": "",
+	"m_group": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_componentName": "",
+	"m_bNetworkingRequested": false,
+	"m_bIsReferenced": false,
+	"m_previewButton": "ANIMPARAM_BUTTON_NONE",
+	"m_eNetworkSetting": "Auto",
+	"m_bUseMostRecentValue": false,
+	"m_bAutoReset": false,
+	"m_bGameWritable": true,
+	"m_bGraphWritable": false,
+	"m_defaultValue": 0,
+	"m_enumOptions":
+	[
+	],
+	"m_vecEnumReferenced":
+	[
+	]
+}`, `MPropertyFriendlyName Enum Parameter`
 
 **Relationships:**
 
@@ -1988,7 +10286,19 @@ classDiagram
 
 **Inherits from:** [CAnimActionUpdater](animgraphlib.md#canimactionupdater)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CExpressionActionUpdater",
+	"m_hParam":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_eParamType": "ANIMPARAM_UNKNOWN",
+	"m_hScript":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	}
+}`
 
 **Relationships:**
 
@@ -2012,7 +10322,29 @@ classDiagram
 
 **Inherits from:** [CConcreteAnimParameter](animgraphlib.md#cconcreteanimparameter)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Float Parameter`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CFloatAnimParameter",
+	"m_name": "Unnamed Parameter",
+	"m_sComment": "",
+	"m_group": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_componentName": "",
+	"m_bNetworkingRequested": false,
+	"m_bIsReferenced": false,
+	"m_previewButton": "ANIMPARAM_BUTTON_NONE",
+	"m_eNetworkSetting": "Auto",
+	"m_bUseMostRecentValue": false,
+	"m_bAutoReset": false,
+	"m_bGameWritable": true,
+	"m_bGraphWritable": false,
+	"m_fDefaultValue": 0.000000,
+	"m_fMinValue": 0.000000,
+	"m_fMaxValue": 1.000000,
+	"m_bInterpolate": false
+}`, `MPropertyFriendlyName Float Parameter`
 
 **Relationships:**
 
@@ -2035,7 +10367,117 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CFollowAttachmentUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_opFixedData":
+	{
+		"m_attachment":
+		{
+			"m_influenceRotations":
+			[
+				[
+					0.000000,
+					0.000000,
+					0.000000,
+					0.000000
+				],
+				[
+					0.000000,
+					0.000000,
+					0.000000,
+					0.000000
+				],
+				[
+					0.000000,
+					0.000000,
+					0.000000,
+					0.000000
+				]
+			],
+			"m_influenceOffsets":
+			[
+				[
+					0.000000,
+					0.000000,
+					0.000000
+				],
+				[
+					0.000000,
+					0.000000,
+					0.000000
+				],
+				[
+					0.000000,
+					0.000000,
+					0.000000
+				]
+			],
+			"m_influenceIndices":
+			[
+				0,
+				0,
+				0
+			],
+			"m_influenceWeights":
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			"m_numInfluences": 0
+		},
+		"m_boneIndex": -1,
+		"m_attachmentHandle": 0,
+		"m_bMatchTranslation": false,
+		"m_bMatchRotation": false
+	}
+}`
 
 **Relationships:**
 
@@ -2054,7 +10496,15 @@ classDiagram
 
 ### CFollowPathInstanceData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_xLastPredictedTransformsDeltas":
+	[
+	],
+	"m_dampedTurnValue": 0.000000,
+	"m_flTurnAmount": 0.000000,
+	"m_flPredictionScale": 1.000000,
+	"m_flLastPathTime": 0.000000
+}`
 
 **Fields:**
 
@@ -2070,7 +10520,78 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CFollowPathUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_flBlendOutTime": 0.300000,
+	"m_bBlockNonPathMovement": false,
+	"m_bStopFeetAtGoal": false,
+	"m_bScaleSpeed": false,
+	"m_flScale": 0.000000,
+	"m_flMinAngle": 0.000000,
+	"m_flMaxAngle": 0.000000,
+	"m_flSpeedScaleBlending": 0.000000,
+	"m_turnDamping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	},
+	"m_facingTarget": "MoveHeading",
+	"m_hParam":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_flTurnToFaceOffset": 0.000000,
+	"m_bTurnToFace": false
+}`
 
 **Relationships:**
 
@@ -2105,7 +10626,73 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CFollowTargetUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_opFixedData":
+	{
+		"m_boneIndex": -1,
+		"m_bBoneTarget": true,
+		"m_boneTargetIndex": -1,
+		"m_bWorldCoodinateTarget": true,
+		"m_bMatchTargetOrientation": false
+	},
+	"m_hParameterPosition":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hParameterOrientation":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	}
+}`
 
 **Relationships:**
 
@@ -2127,7 +10714,11 @@ classDiagram
 
 ### CFootAdjustmentInstanceData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flStartTime": 0.000000,
+	"m_flDuration": 0.000000,
+	"m_flStartHeadingWS": 0.000000
+}`
 
 **Fields:**
 
@@ -2141,7 +10732,74 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CFootAdjustmentUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_clips":
+	[
+	],
+	"m_hBasePoseCacheHandle":
+	{
+		"m_nIndex": 65535,
+		"m_eType": "POSETYPE_INVALID"
+	},
+	"m_facingTarget":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_flTurnTimeMin": 0.000000,
+	"m_flTurnTimeMax": 0.000000,
+	"m_flStepHeightMax": 0.000000,
+	"m_flStepHeightMaxAngle": 0.000000,
+	"m_bResetChild": false,
+	"m_bAnimationDriven": false
+}`
 
 **Relationships:**
 
@@ -2172,7 +10830,20 @@ classDiagram
 
 **Inherits from:** [CMotionMetricEvaluator](animgraphlib.md#cmotionmetricevaluator)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CFootCycleMetricEvaluator",
+	"m_means":
+	[
+	],
+	"m_standardDeviations":
+	[
+	],
+	"m_flWeight": 0.000000,
+	"m_nDimensionStartIndex": -1,
+	"m_footIndices":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -2191,7 +10862,18 @@ classDiagram
 
 **Inherits from:** [CAnimTagBase](animgraphlib.md#canimtagbase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName FootFall Tag`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CFootFallAnimTag",
+	"m_name": "Unnamed Tag",
+	"m_sComment": "",
+	"m_group": "",
+	"m_tagID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bIsReferenced": false,
+	"m_foot": "FOOT1"
+}`, `MPropertyFriendlyName FootFall Tag`
 
 **Relationships:**
 
@@ -2211,7 +10893,117 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CFootLockUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_opFixedSettings":
+	{
+		"m_footInfo":
+		[
+		],
+		"m_hipDampingSettings":
+		{
+			"_class": "CAnimInputDamping",
+			"m_speedFunction": "NoDamping",
+			"m_fSpeedScale": 1.000000,
+			"m_fFallingSpeedScale": 1.000000
+		},
+		"m_nHipBoneIndex": -1,
+		"m_ikSolverType": "IKSOLVER_TwoBone",
+		"m_bApplyTilt": false,
+		"m_bApplyHipDrop": false,
+		"m_bAlwaysUseFallbackHinge": false,
+		"m_bApplyFootRotationLimits": false,
+		"m_bApplyLegTwistLimits": false,
+		"m_flMaxFootHeight": -12.000000,
+		"m_flExtensionScale": 0.700000,
+		"m_flMaxLegTwist": 180.000000,
+		"m_bEnableLockBreaking": false,
+		"m_flLockBreakTolerance": 0.200000,
+		"m_flLockBlendTime": 0.200000,
+		"m_bEnableStretching": false,
+		"m_flMaxStretchAmount": 2.000000,
+		"m_flStretchExtensionScale": 0.998000
+	},
+	"m_footSettings":
+	[
+	],
+	"m_hipShiftDamping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	},
+	"m_rootHeightDamping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	},
+	"m_flStrideCurveScale": 0.000000,
+	"m_flStrideCurveLimitScale": 0.000000,
+	"m_flStepHeightIncreaseScale": 0.000000,
+	"m_flStepHeightDecreaseScale": 0.000000,
+	"m_flHipShiftScale": 0.000000,
+	"m_flBlendTime": 0.000000,
+	"m_flMaxRootHeightOffset": 0.000000,
+	"m_flMinRootHeightOffset": 0.000000,
+	"m_flTiltPlanePitchSpringStrength": 0.000000,
+	"m_flTiltPlaneRollSpringStrength": 0.000000,
+	"m_bApplyFootRotationLimits": false,
+	"m_bApplyHipShift": false,
+	"m_bModulateStepHeight": false,
+	"m_bResetChild": false,
+	"m_bEnableVerticalCurvedPaths": false,
+	"m_bEnableRootHeightDamping": false
+}`
 
 **Relationships:**
 
@@ -2253,7 +11045,72 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CFootPinningUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_poseOpFixedData":
+	{
+		"m_footInfo":
+		[
+		],
+		"m_flBlendTime": 0.000000,
+		"m_flLockBreakDistance": 0.000000,
+		"m_flMaxLegTwist": 25.000000,
+		"m_nHipBoneIndex": -1,
+		"m_bApplyLegTwistLimits": false,
+		"m_bApplyFootRotationLimits": false
+	},
+	"m_eTimingSource": "FootMotion",
+	"m_params":
+	[
+	],
+	"m_bResetChild": false
+}`
 
 **Relationships:**
 
@@ -2279,7 +11136,21 @@ classDiagram
 
 **Inherits from:** [CMotionMetricEvaluator](animgraphlib.md#cmotionmetricevaluator)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CFootPositionMetricEvaluator",
+	"m_means":
+	[
+	],
+	"m_standardDeviations":
+	[
+	],
+	"m_flWeight": 0.000000,
+	"m_nDimensionStartIndex": -1,
+	"m_footIndices":
+	[
+	],
+	"m_bIgnoreSlope": false
+}`
 
 **Relationships:**
 
@@ -2299,7 +11170,59 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CFootStepTriggerUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_triggers":
+	[
+	],
+	"m_flTolerance": 0.000000
+}`
 
 **Relationships:**
 
@@ -2321,7 +11244,22 @@ classDiagram
 
 **Inherits from:** [CAnimTagBase](animgraphlib.md#canimtagbase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName FootstepLanded Tag`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CFootstepLandedAnimTag",
+	"m_name": "Unnamed Tag",
+	"m_sComment": "",
+	"m_group": "",
+	"m_tagID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bIsReferenced": false,
+	"m_FootstepType": "FOOTSOUND_Left",
+	"m_OverrideSoundName": "",
+	"m_DebugAnimSourceString": "",
+	"m_BoneName": "",
+	"m_footstepJumpPhase": "Unknown"
+}`, `MPropertyFriendlyName FootstepLanded Tag`
 
 **Relationships:**
 
@@ -2346,7 +11284,19 @@ classDiagram
 
 **Inherits from:** [CMotionMetricEvaluator](animgraphlib.md#cmotionmetricevaluator)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CFutureFacingMetricEvaluator",
+	"m_means":
+	[
+	],
+	"m_standardDeviations":
+	[
+	],
+	"m_flWeight": 0.000000,
+	"m_nDimensionStartIndex": -1,
+	"m_flDistance": 100.000000,
+	"m_flTime": 1.000000
+}`
 
 **Relationships:**
 
@@ -2366,7 +11316,21 @@ classDiagram
 
 **Inherits from:** [CMotionMetricEvaluator](animgraphlib.md#cmotionmetricevaluator)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CFutureVelocityMetricEvaluator",
+	"m_means":
+	[
+	],
+	"m_standardDeviations":
+	[
+	],
+	"m_flWeight": 0.000000,
+	"m_nDimensionStartIndex": -1,
+	"m_flDistance": 0.000000,
+	"m_flStoppingDistance": 0.000000,
+	"m_flTargetSpeed": 0.000000,
+	"m_eMode": "DirectionOnly"
+}`
 
 **Relationships:**
 
@@ -2391,7 +11355,18 @@ classDiagram
 
 **Derived by:** [CMovementHandshakeAnimTag](animgraphlib.md#cmovementhandshakeanimtag), [CTaskHandshakeAnimTag](animgraphlib.md#ctaskhandshakeanimtag)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CHandshakeAnimTagBase",
+	"m_name": "Unnamed Tag",
+	"m_sComment": "",
+	"m_group": "",
+	"m_tagID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bIsReferenced": false,
+	"m_bIsDisableTag": false
+}`
 
 **Relationships:**
 
@@ -2412,7 +11387,102 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CHitReactUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_opFixedSettings":
+	{
+		"m_nWeightListIndex": 0,
+		"m_nEffectedBoneCount": 0,
+		"m_flMaxImpactForce": 0.000000,
+		"m_flMinImpactForce": 0.000000,
+		"m_flWhipImpactScale": 0.000000,
+		"m_flCounterRotationScale": 0.000000,
+		"m_flDistanceFadeScale": 0.000000,
+		"m_flPropagationScale": 0.000000,
+		"m_flWhipDelay": 0.000000,
+		"m_flSpringStrength": 0.000000,
+		"m_flWhipSpringStrength": 0.000000,
+		"m_flMaxAngleRadians": 0.000000,
+		"m_nHipBoneIndex": 0,
+		"m_flHipBoneTranslationScale": 0.000000,
+		"m_flHipDipSpringStrength": 0.000000,
+		"m_flHipDipImpactScale": 0.000000,
+		"m_flHipDipDelay": 0.000000
+	},
+	"m_triggerParam":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hitBoneParam":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hitOffsetParam":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hitDirectionParam":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hitStrengthParam":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_flMinDelayBetweenHits": 0.000000,
+	"m_bResetChild": false
+}`
 
 **Relationships:**
 
@@ -2441,7 +11511,51 @@ classDiagram
 
 **Inherits from:** [CLeafUpdateNode](animgraphlib.md#cleafupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CInputStreamUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": ""
+}`
 
 **Relationships:**
 
@@ -2455,7 +11569,28 @@ classDiagram
 
 **Inherits from:** [CConcreteAnimParameter](animgraphlib.md#cconcreteanimparameter)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Int Parameter`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CIntAnimParameter",
+	"m_name": "Unnamed Parameter",
+	"m_sComment": "",
+	"m_group": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_componentName": "",
+	"m_bNetworkingRequested": false,
+	"m_bIsReferenced": false,
+	"m_previewButton": "ANIMPARAM_BUTTON_NONE",
+	"m_eNetworkSetting": "Auto",
+	"m_bUseMostRecentValue": false,
+	"m_bAutoReset": false,
+	"m_bGameWritable": true,
+	"m_bGraphWritable": false,
+	"m_defaultValue": 0,
+	"m_minValue": 0,
+	"m_maxValue": 100
+}`, `MPropertyFriendlyName Int Parameter`
 
 **Relationships:**
 
@@ -2477,7 +11612,61 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CJiggleBoneUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_opFixedData":
+	{
+		"m_boneSettings":
+		[
+		]
+	}
+}`
 
 **Relationships:**
 
@@ -2498,7 +11687,86 @@ classDiagram
 
 **Inherits from:** [CSequenceUpdateNode](animgraphlib.md#csequenceupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CJumpHelperUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_playbackSpeed": 1.000000,
+	"m_bLoop": false,
+	"m_hSequence": -1,
+	"m_duration": 0.000000,
+	"m_paramSpans":
+	{
+		"m_spans":
+		[
+		]
+	},
+	"m_tags":
+	[
+	],
+	"m_hTargetParam":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_flOriginalJumpMovement":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_flOriginalJumpDuration": 0.000000,
+	"m_flJumpStartCycle": 0.000000,
+	"m_flJumpEndCycle": 0.000000,
+	"m_eCorrectionMethod": "ScaleMotion",
+	"m_bTranslationAxis":
+	[
+		false,
+		false,
+		false
+	],
+	"m_bScaleSpeed": false
+}`
 
 **Relationships:**
 
@@ -2529,7 +11797,17 @@ classDiagram
 
 **Inherits from:** [CAnimComponentUpdater](animgraphlib.md#canimcomponentupdater)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CLODComponentUpdater",
+	"m_name": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_bStartEnabled": false,
+	"m_nServerLOD": 0
+}`
 
 **Relationships:**
 
@@ -2571,7 +11849,10 @@ classDiagram
 
 ### CLeanMatrixInstanceData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flValueY": 0.000000,
+	"m_flValueX": 0.000000
+}`
 
 **Fields:**
 
@@ -2584,7 +11865,136 @@ classDiagram
 
 **Inherits from:** [CLeafUpdateNode](animgraphlib.md#cleafupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CLeanMatrixUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_frameCorners":
+	[
+		[
+			0,
+			0,
+			0
+		],
+		[
+			0,
+			0,
+			0
+		],
+		[
+			0,
+			0,
+			0
+		]
+	],
+	"m_poses":
+	[
+		{
+			"m_nIndex": 65535,
+			"m_eType": "POSETYPE_INVALID"
+		},
+		{
+			"m_nIndex": 65535,
+			"m_eType": "POSETYPE_INVALID"
+		},
+		{
+			"m_nIndex": 65535,
+			"m_eType": "POSETYPE_INVALID"
+		},
+		{
+			"m_nIndex": 65535,
+			"m_eType": "POSETYPE_INVALID"
+		},
+		{
+			"m_nIndex": 65535,
+			"m_eType": "POSETYPE_INVALID"
+		},
+		{
+			"m_nIndex": 65535,
+			"m_eType": "POSETYPE_INVALID"
+		},
+		{
+			"m_nIndex": 65535,
+			"m_eType": "POSETYPE_INVALID"
+		},
+		{
+			"m_nIndex": 65535,
+			"m_eType": "POSETYPE_INVALID"
+		},
+		{
+			"m_nIndex": 65535,
+			"m_eType": "POSETYPE_INVALID"
+		}
+	],
+	"m_damping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	},
+	"m_blendSource": "MoveDirection",
+	"m_paramIndex":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_verticalAxis":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_horizontalAxis":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_hSequence": -1,
+	"m_flMaxValue": 0.000000,
+	"m_nSequenceMaxFrame": 0
+}`
 
 **Relationships:**
 
@@ -2618,7 +12028,144 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CLookAtUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_opFixedSettings":
+	{
+		"m_attachment":
+		{
+			"m_influenceRotations":
+			[
+				[
+					0.000000,
+					0.000000,
+					0.000000,
+					0.000000
+				],
+				[
+					0.000000,
+					0.000000,
+					0.000000,
+					0.000000
+				],
+				[
+					0.000000,
+					0.000000,
+					0.000000,
+					0.000000
+				]
+			],
+			"m_influenceOffsets":
+			[
+				[
+					0.000000,
+					0.000000,
+					0.000000
+				],
+				[
+					0.000000,
+					0.000000,
+					0.000000
+				],
+				[
+					0.000000,
+					0.000000,
+					0.000000
+				]
+			],
+			"m_influenceIndices":
+			[
+				0,
+				0,
+				0
+			],
+			"m_influenceWeights":
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			"m_numInfluences": 0
+		},
+		"m_damping":
+		{
+			"_class": "CAnimInputDamping",
+			"m_speedFunction": "NoDamping",
+			"m_fSpeedScale": 1.000000,
+			"m_fFallingSpeedScale": 1.000000
+		},
+		"m_bones":
+		[
+		],
+		"m_flYawLimit": 45.000000,
+		"m_flPitchLimit": 45.000000,
+		"m_flHysteresisInnerAngle": 1.000000,
+		"m_flHysteresisOuterAngle": 20.000000,
+		"m_bRotateYawForward": true,
+		"m_bMaintainUpDirection": false,
+		"m_bTargetIsPosition": true,
+		"m_bUseHysteresis": false
+	},
+	"m_target": "MoveDirection",
+	"m_paramIndex":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_weightParamIndex":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_bResetChild": false,
+	"m_bLockWhenWaning": false
+}`
 
 **Relationships:**
 
@@ -2646,7 +12193,57 @@ classDiagram
 
 **Inherits from:** [CAnimComponentUpdater](animgraphlib.md#canimcomponentupdater)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CLookComponentUpdater",
+	"m_name": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_bStartEnabled": false,
+	"m_hLookHeading":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hLookHeadingNormalized":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hLookHeadingVelocity":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hLookPitch":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hLookDistance":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hLookDirection":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hLookTarget":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hLookTargetWorldSpace":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_bNetworkLookTarget": true
+}`
 
 **Relationships:**
 
@@ -2674,7 +12271,26 @@ classDiagram
 
 **Inherits from:** [CAnimTagBase](animgraphlib.md#canimtagbase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Material Attribute Tag`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMaterialAttributeAnimTag",
+	"m_name": "Unnamed Tag",
+	"m_sComment": "",
+	"m_group": "",
+	"m_tagID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bIsReferenced": false,
+	"m_AttributeName": "",
+	"m_AttributeType": "MATERIAL_ATTRIBUTE_TAG_VALUE",
+	"m_flValue": 0.000000,
+	"m_Color":
+	[
+		255,
+		255,
+		255
+	]
+}`, `MPropertyFriendlyName Material Attribute Tag`
 
 **Relationships:**
 
@@ -2695,7 +12311,12 @@ classDiagram
 
 ### CMotionDataSet
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_groups":
+	[
+	],
+	"m_nDimensionCount": 0
+}`
 
 **Relationships:**
 
@@ -2715,7 +12336,23 @@ classDiagram
 
 **Derived by:** [CEditableMotionGraph](animgraphlib.md#ceditablemotiongraph)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMotionGraph",
+	"m_paramSpans":
+	{
+		"m_spans":
+		[
+		]
+	},
+	"m_tags":
+	[
+	],
+	"m_pRootNode": null,
+	"m_nParameterCount": 0,
+	"m_nConfigStartIndex": -1,
+	"m_nConfigCount": -1,
+	"m_bLoop": false
+}`
 
 **Relationships:**
 
@@ -2741,7 +12378,23 @@ classDiagram
 
 ### CMotionGraphConfig
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_paramValues":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_flDuration": 0.000000,
+	"m_nMotionIndex":
+	{
+		"m_nGroup": 65535,
+		"m_nMotion": 65535
+	},
+	"m_nSampleStart": -1,
+	"m_nSampleCount": 0
+}`
 
 **Relationships:**
 
@@ -2762,7 +12415,57 @@ classDiagram
 
 ### CMotionGraphGroup
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_searchDB":
+	{
+		"m_rootNode":
+		{
+			"m_children":
+			[
+			],
+			"m_quantizer":
+			{
+				"m_centroidVectors":
+				[
+				],
+				"m_nCentroids": 0,
+				"m_nDimensions": 0
+			},
+			"m_sampleCodes":
+			[
+			],
+			"m_sampleIndices":
+			[
+			],
+			"m_selectableSamples":
+			[
+			]
+		},
+		"m_residualQuantizer":
+		{
+			"m_subQuantizers":
+			[
+			],
+			"m_nDimensions": 0
+		},
+		"m_codeIndices":
+		[
+		]
+	},
+	"m_motionGraphs":
+	[
+	],
+	"m_motionGraphConfigs":
+	[
+	],
+	"m_sampleToConfig":
+	[
+	],
+	"m_hIsActiveScript":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	}
+}`
 
 **Relationships:**
 
@@ -2788,7 +12491,52 @@ classDiagram
 
 **Inherits from:** [CLeafUpdateNode](animgraphlib.md#cleafupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMotionGraphUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pMotionGraph": null
+}`
 
 **Relationships:**
 
@@ -2809,7 +12557,94 @@ classDiagram
 
 **Inherits from:** [CLeafUpdateNode](animgraphlib.md#cleafupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMotionMatchingUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_dataSet":
+	{
+		"m_groups":
+		[
+		],
+		"m_nDimensionCount": 0
+	},
+	"m_metrics":
+	[
+	],
+	"m_weights":
+	[
+	],
+	"m_bSearchEveryTick": false,
+	"m_flSearchInterval": 0.100000,
+	"m_bSearchWhenClipEnds": true,
+	"m_bSearchWhenGoalChanges": true,
+	"m_blendCurve":
+	{
+		"m_flControlPoint1": 0.000000,
+		"m_flControlPoint2": 1.000000
+	},
+	"m_flSampleRate": 0.100000,
+	"m_flBlendTime": 0.300000,
+	"m_bLockClipWhenWaning": false,
+	"m_flSelectionThreshold": 0.000000,
+	"m_flReselectionTimeWindow": 0.300000,
+	"m_bEnableRotationCorrection": true,
+	"m_bGoalAssist": false,
+	"m_flGoalAssistDistance": 0.000000,
+	"m_flGoalAssistTolerance": 0.000000,
+	"m_distanceScale_Damping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	},
+	"m_flDistanceScale_OuterRadius": 0.000000,
+	"m_flDistanceScale_InnerRadius": 0.000000,
+	"m_flDistanceScale_MaxScale": 0.000000,
+	"m_flDistanceScale_MinScale": 0.000000,
+	"m_bEnableDistanceScaling": false
+}`
 
 **Relationships:**
 
@@ -2911,7 +12746,18 @@ classDiagram
 
 **Inherits from:** [CMotionNode](animgraphlib.md#cmotionnode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMotionNodeBlend1D",
+	"m_name": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_blendItems":
+	[
+	],
+	"m_nParamIndex": 0
+}`
 
 **Relationships:**
 
@@ -2932,7 +12778,19 @@ classDiagram
 
 **Inherits from:** [CMotionNode](animgraphlib.md#cmotionnode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMotionNodeSequence",
+	"m_name": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_tags":
+	[
+	],
+	"m_hSequence": -1,
+	"m_flPlaybackSpeed": 1.000000
+}`
 
 **Relationships:**
 
@@ -2953,7 +12811,41 @@ classDiagram
 
 ### CMotionSearchDB
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_rootNode":
+	{
+		"m_children":
+		[
+		],
+		"m_quantizer":
+		{
+			"m_centroidVectors":
+			[
+			],
+			"m_nCentroids": 0,
+			"m_nDimensions": 0
+		},
+		"m_sampleCodes":
+		[
+		],
+		"m_sampleIndices":
+		[
+		],
+		"m_selectableSamples":
+		[
+		]
+	},
+	"m_residualQuantizer":
+	{
+		"m_subQuantizers":
+		[
+		],
+		"m_nDimensions": 0
+	},
+	"m_codeIndices":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -2974,7 +12866,28 @@ classDiagram
 
 ### CMotionSearchNode
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_children":
+	[
+	],
+	"m_quantizer":
+	{
+		"m_centroidVectors":
+		[
+		],
+		"m_nCentroids": 0,
+		"m_nDimensions": 0
+	},
+	"m_sampleCodes":
+	[
+	],
+	"m_sampleIndices":
+	[
+	],
+	"m_selectableSamples":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -2998,7 +12911,170 @@ classDiagram
 
 **Inherits from:** [CAnimComponentUpdater](animgraphlib.md#canimcomponentupdater)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMovementComponentUpdater",
+	"m_name": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_bStartEnabled": false,
+	"m_motors":
+	[
+	],
+	"m_facingDamping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	},
+	"m_nDefaultMotorIndex": 0,
+	"m_flDefaultRunSpeed": 0.000000,
+	"m_bMoveVarsDisabled": false,
+	"m_bNetworkPath": true,
+	"m_bNetworkFacing": true,
+	"m_paramHandles":
+	[
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		}
+	]
+}`
 
 **Relationships:**
 
@@ -3027,7 +13103,18 @@ classDiagram
 
 **Inherits from:** [CHandshakeAnimTagBase](animgraphlib.md#chandshakeanimtagbase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Movement Handshake Tag`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMovementHandshakeAnimTag",
+	"m_name": "Unnamed Tag",
+	"m_sComment": "",
+	"m_group": "",
+	"m_tagID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bIsReferenced": false,
+	"m_bIsDisableTag": false
+}`, `MPropertyFriendlyName Movement Handshake Tag`
 
 **Relationships:**
 
@@ -3039,7 +13126,23 @@ classDiagram
 
 ### CMoverInstanceData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flDampedValue": 0.000000,
+	"m_vMovement":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_Rotation":
+	{
+		"m_angle": 0.000000
+	},
+	"m_TargetOrientation":
+	{
+		"m_angle": 0.000000
+	}
+}`
 
 **Fields:**
 
@@ -3054,7 +13157,85 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMoverUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_damping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	},
+	"m_facingTarget": "MoveHeading",
+	"m_hMoveVecParam":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hMoveHeadingParam":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hTurnToFaceParam":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_flTurnToFaceOffset": 0.000000,
+	"m_flTurnToFaceLimit": 180.000000,
+	"m_bAdditive": false,
+	"m_bApplyMovement": false,
+	"m_bOrientMovement": false,
+	"m_bApplyRotation": false,
+	"m_bLimitOnly": false
+}`
 
 **Relationships:**
 
@@ -3086,7 +13267,13 @@ classDiagram
 
 ### CNetworkedCycle
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flCycleUnclamped": 0.000000,
+	"m_flPrevCycleUnclamped": 0.000000,
+	"m_flCyclesPerSecond": 1.000000,
+	"m_flCycleZeroTime": 0.000000,
+	"m_resetCount": 0
+}`
 
 **Fields:**
 
@@ -3102,7 +13289,90 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "COrientationWarpUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_eMode": "eInvalid",
+	"m_hTargetParam":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hTargetPositionParam":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hFallbackTargetPositionParam":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_eTargetOffsetMode": "eLiteralValue",
+	"m_flTargetOffset": 0.000000,
+	"m_hTargetOffsetParam":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_damping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	},
+	"m_eRootMotionSource": "eAnimationOrProcedural",
+	"m_flMaxRootMotionScale": 10.000000,
+	"m_bEnablePreferredRotationDirection": false,
+	"m_ePreferredRotationDirection": "FacingHeading",
+	"m_flPreferredRotationThreshold": 190.000000
+}`
 
 **Relationships:**
 
@@ -3140,7 +13410,16 @@ classDiagram
 
 **Inherits from:** [CAnimComponentUpdater](animgraphlib.md#canimcomponentupdater)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPairedSequenceComponentUpdater",
+	"m_name": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_bStartEnabled": false
+}`
 
 **Relationships:**
 
@@ -3153,7 +13432,54 @@ classDiagram
 
 **Inherits from:** [CSequenceUpdateNodeBase](animgraphlib.md#csequenceupdatenodebase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPairedSequenceUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_playbackSpeed": 1.000000,
+	"m_bLoop": false,
+	"m_sPairedSequenceRole": ""
+}`
 
 **Relationships:**
 
@@ -3172,7 +13498,11 @@ classDiagram
 
 ### CParamSpanUpdater
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_spans":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -3191,7 +13521,28 @@ classDiagram
 
 **Inherits from:** [CAnimTagBase](animgraphlib.md#canimtagbase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Particle Tag`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CParticleAnimTag",
+	"m_name": "Unnamed Tag",
+	"m_sComment": "",
+	"m_group": "",
+	"m_tagID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bIsReferenced": false,
+	"m_hParticleSystem": "",
+	"m_particleSystemName": "",
+	"m_configName": "",
+	"m_bDetachFromOwner": false,
+	"m_bAggregate": false,
+	"m_bStopWhenTagEnds": false,
+	"m_bTagEndStopIsInstant": false,
+	"m_attachmentName": "",
+	"m_attachmentType": "PATTACH_POINT_FOLLOW",
+	"m_attachmentCP1Name": "",
+	"m_attachmentCP1Type": "PATTACH_INVALID"
+}`, `MPropertyFriendlyName Particle Tag`
 
 **Relationships:**
 
@@ -3222,7 +13573,12 @@ classDiagram
 
 **Inherits from:** [CPathAnimMotorUpdaterBase](animgraphlib.md#cpathanimmotorupdaterbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPathAnimMotorUpdater",
+	"m_name": "",
+	"m_bDefault": false,
+	"m_bLockToPath": false
+}`
 
 **Relationships:**
 
@@ -3259,7 +13615,57 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPathHelperUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_flStoppingRadius": 0.000000,
+	"m_flStoppingSpeedScale": 0.000000
+}`
 
 **Relationships:**
 
@@ -3280,7 +13686,23 @@ classDiagram
 
 **Inherits from:** [CMotionMetricEvaluator](animgraphlib.md#cmotionmetricevaluator)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPathMetricEvaluator",
+	"m_means":
+	[
+	],
+	"m_standardDeviations":
+	[
+	],
+	"m_flWeight": 0.000000,
+	"m_nDimensionStartIndex": -1,
+	"m_pathTimeSamples":
+	[
+	],
+	"m_flDistance": 0.000000,
+	"m_bExtrapolateMovement": false,
+	"m_flMinExtrapolationSpeed": 0.000000
+}`
 
 **Relationships:**
 
@@ -3302,7 +13724,27 @@ classDiagram
 
 **Inherits from:** [CAnimMotorUpdaterBase](animgraphlib.md#canimmotorupdaterbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPlayerInputAnimMotorUpdater",
+	"m_name": "",
+	"m_bDefault": false,
+	"m_sampleTimes":
+	[
+	],
+	"m_flSpringConstant": 0.000000,
+	"m_flAnticipationDistance": 0.000000,
+	"m_hAnticipationPosParam":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hAnticipationHeadingParam":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_bUseAcceleration": false
+}`
 
 **Relationships:**
 
@@ -3325,7 +13767,10 @@ classDiagram
 
 ### CPoseHandle
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nIndex": 65535,
+	"m_eType": "POSETYPE_INVALID"
+}`
 
 **Relationships:**
 
@@ -3343,7 +13788,12 @@ classDiagram
 
 ### CProductQuantizer
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_subQuantizers":
+	[
+	],
+	"m_nDimensions": 0
+}`
 
 **Relationships:**
 
@@ -3363,7 +13813,33 @@ classDiagram
 
 **Inherits from:** [CConcreteAnimParameter](animgraphlib.md#cconcreteanimparameter)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Quaternion Parameter`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CQuaternionAnimParameter",
+	"m_name": "Unnamed Parameter",
+	"m_sComment": "",
+	"m_group": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_componentName": "",
+	"m_bNetworkingRequested": false,
+	"m_bIsReferenced": false,
+	"m_previewButton": "ANIMPARAM_BUTTON_NONE",
+	"m_eNetworkSetting": "Auto",
+	"m_bUseMostRecentValue": false,
+	"m_bAutoReset": false,
+	"m_bGameWritable": true,
+	"m_bGraphWritable": false,
+	"m_defaultValue":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000
+	],
+	"m_bInterpolate": false
+}`, `MPropertyFriendlyName Quaternion Parameter`
 
 **Relationships:**
 
@@ -3384,7 +13860,18 @@ classDiagram
 
 **Inherits from:** [CAnimTagBase](animgraphlib.md#canimtagbase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Ragdoll Tag`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CRagdollAnimTag",
+	"m_name": "Unnamed Tag",
+	"m_sComment": "",
+	"m_group": "",
+	"m_tagID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bIsReferenced": false,
+	"m_profileName": ""
+}`, `MPropertyFriendlyName Ragdoll Tag`
 
 **Relationships:**
 
@@ -3397,13 +13884,44 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_profileName` | CGlobalSymbol | `MPropertyFriendlyName Profile Name` `MPropertySortPriority` |
+| `m_profileName` | CGlobalSymbol | `MPropertyFriendlyName Profile Name` `MPropertySortPriority 100` |
 
 ### CRagdollComponentUpdater
 
 **Inherits from:** [CAnimComponentUpdater](animgraphlib.md#canimcomponentupdater)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CRagdollComponentUpdater",
+	"m_name": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_bStartEnabled": false,
+	"m_ragdollNodePaths":
+	[
+	],
+	"m_followAttachmentNodePaths":
+	[
+	],
+	"m_boneIndices":
+	[
+	],
+	"m_boneNames":
+	[
+	],
+	"m_weightLists":
+	[
+	],
+	"m_boneToWeightIndices":
+	[
+	],
+	"m_flSpringFrequencyMin": 0.000000,
+	"m_flSpringFrequencyMax": 15.000000,
+	"m_flMaxStretch": 56.000000,
+	"m_bSolidCollisionAtZeroWeight": false
+}`
 
 **Relationships:**
 
@@ -3433,7 +13951,57 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CRagdollUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_nWeightListIndex": -1,
+	"m_poseControlMethod": "Absolute"
+}`
 
 **Relationships:**
 
@@ -3455,7 +14023,19 @@ classDiagram
 
 **Inherits from:** [CAnimComponentUpdater](animgraphlib.md#canimcomponentupdater)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CRemapValueComponentUpdater",
+	"m_name": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_bStartEnabled": false,
+	"m_items":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -3473,7 +14053,22 @@ classDiagram
 
 ### CRemapValueUpdateItem
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_hParamIn":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hParamOut":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_flMinInputValue": 0.000000,
+	"m_flMaxInputValue": 0.000000,
+	"m_flMinOutputValue": 0.000000,
+	"m_flMaxOutputValue": 0.000000
+}`
 
 **Relationships:**
 
@@ -3495,7 +14090,33 @@ classDiagram
 
 ### CRootMotion
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_deltaTransform":
+	{
+		"m_iszName":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_iszValue":
+		{
+			"m_angle": 0.000000
+		}
+	},
+	"m_vVelocityMS":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vUpOverride":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`
 
 **Fields:**
 
@@ -3509,7 +14130,55 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CRootUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	}
+}`
 
 **Relationships:**
 
@@ -3523,7 +14192,81 @@ classDiagram
 
 **Inherits from:** [CAnimUpdateNodeBase](animgraphlib.md#canimupdatenodebase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSelectorUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_children":
+	[
+	],
+	"m_tags":
+	[
+	],
+	"m_blendCurve":
+	{
+		"m_flControlPoint1": 0.000000,
+		"m_flControlPoint2": 1.000000
+	},
+	"m_flBlendTime":
+	{
+		"m_constValue": 0.000000,
+		"m_hParam":
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		}
+	},
+	"m_hParameter":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_nTagIndex": -1,
+	"m_eTagBehavior": "SelectorTagBehavior_OnWhileCurrent",
+	"m_bResetOnChange": false,
+	"m_bLockWhenWaning": false,
+	"m_bSyncCyclesOnChange": false
+}`
 
 **Relationships:**
 
@@ -3555,7 +14298,18 @@ classDiagram
 
 **Inherits from:** [CAnimTagBase](animgraphlib.md#canimtagbase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Sequence Finished Tag`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSequenceFinishedAnimTag",
+	"m_name": "Unnamed Tag",
+	"m_sComment": "",
+	"m_group": "",
+	"m_tagID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bIsReferenced": false,
+	"m_sequenceName": ""
+}`, `MPropertyFriendlyName Sequence Finished Tag`
 
 **Relationships:**
 
@@ -3572,7 +14326,12 @@ classDiagram
 
 ### CSequenceTagSpans
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_sSequenceName": "",
+	"m_tags":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -3594,7 +14353,64 @@ classDiagram
 
 **Derived by:** [CJumpHelperUpdateNode](animgraphlib.md#cjumphelperupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSequenceUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_playbackSpeed": 1.000000,
+	"m_bLoop": false,
+	"m_hSequence": -1,
+	"m_duration": 0.000000,
+	"m_paramSpans":
+	{
+		"m_spans":
+		[
+		]
+	},
+	"m_tags":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -3647,7 +14463,18 @@ classDiagram
 
 **Inherits from:** [CAnimActionUpdater](animgraphlib.md#canimactionupdater)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSetParameterActionUpdater",
+	"m_hParam":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_value":
+	{
+		"m_nType": 0
+	}
+}`
 
 **Relationships:**
 
@@ -3668,7 +14495,61 @@ classDiagram
 
 **Inherits from:** [CLeafUpdateNode](animgraphlib.md#cleafupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSingleFrameUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_actions":
+	[
+	],
+	"m_hPoseCacheHandle":
+	{
+		"m_nIndex": 65535,
+		"m_eType": "POSETYPE_INVALID"
+	},
+	"m_hSequence": -1,
+	"m_flCycle": 0.000000
+}`
 
 **Relationships:**
 
@@ -3694,7 +14575,47 @@ classDiagram
 
 **Inherits from:** [CAnimComponentUpdater](animgraphlib.md#canimcomponentupdater)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSlopeComponentUpdater",
+	"m_name": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_bStartEnabled": false,
+	"m_flTraceDistance": 36.000000,
+	"m_hSlopeAngle":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hSlopeAngleFront":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hSlopeAngleSide":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hSlopeHeading":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hSlopeNormal":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hSlopeNormal_WorldSpace":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	}
+}`
 
 **Relationships:**
 
@@ -3720,7 +14641,56 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSlowDownOnSlopesUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_flSlowDownStrength": 1.000000
+}`
 
 **Relationships:**
 
@@ -3740,7 +14710,64 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSolveIKChainUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_targetHandles":
+	[
+	],
+	"m_opFixedData":
+	{
+		"m_ChainsToSolveData":
+		[
+		]
+	}
+}`
 
 **Relationships:**
 
@@ -3761,7 +14788,18 @@ classDiagram
 
 ### CSolveIKTargetHandle_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_positionHandle":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_orientationHandle":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	}
+}`
 
 **Relationships:**
 
@@ -3781,7 +14819,60 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSpeedScaleUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_paramIndex":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	}
+}`
 
 **Relationships:**
 
@@ -3802,7 +14893,68 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CStanceOverrideUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_footStanceInfo":
+	[
+	],
+	"m_pStanceSourceNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_hParameter":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_eMode": "Sequence"
+}`
 
 **Relationships:**
 
@@ -3829,7 +14981,60 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CStanceScaleUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_hParam":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	}
+}`
 
 **Relationships:**
 
@@ -3848,7 +15053,10 @@ classDiagram
 
 ### CStateActionUpdater
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_pAction": null,
+	"m_eBehavior": "STATETAGBEHAVIOR_ACTIVE_WHILE_CURRENT"
+}`
 
 **Relationships:**
 
@@ -3869,7 +15077,27 @@ classDiagram
 
 **Inherits from:** [CAnimComponentUpdater](animgraphlib.md#canimcomponentupdater)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CStateMachineComponentUpdater",
+	"m_name": "State Machine",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_bStartEnabled": false,
+	"m_stateMachine":
+	{
+		"_class": "CAnimStateMachineUpdater",
+		"m_states":
+		[
+		],
+		"m_transitions":
+		[
+		],
+		"m_startStateIndex": -1
+	}
+}`
 
 **Relationships:**
 
@@ -3887,7 +15115,12 @@ classDiagram
 
 ### CStateMachineInstanceData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flTimeInState": 0.000000,
+	"m_currentTransitionIndex": -1,
+	"m_prevStateIndex": -1,
+	"m_scheduledTransitionIndex": -1
+}`
 
 **Fields:**
 
@@ -3902,7 +15135,71 @@ classDiagram
 
 **Inherits from:** [CAnimUpdateNodeBase](animgraphlib.md#canimupdatenodebase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CStateMachineUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_stateMachine":
+	{
+		"_class": "CAnimStateMachineUpdater",
+		"m_states":
+		[
+		],
+		"m_transitions":
+		[
+		],
+		"m_startStateIndex": -1
+	},
+	"m_stateData":
+	[
+	],
+	"m_transitionData":
+	[
+	],
+	"m_bBlockWaningTags": false,
+	"m_bLockStateWhenWaning": false,
+	"m_bResetWhenActivated": false
+}`
 
 **Relationships:**
 
@@ -3940,7 +15237,14 @@ classDiagram
 
 ### CStateNodeStateData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_pChild":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_bExclusiveRootMotion": 0,
+	"m_bExclusiveRootMotionFirstFrame": 0
+}`
 
 **Relationships:**
 
@@ -3959,7 +15263,33 @@ classDiagram
 
 ### CStateNodeTransitionData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_curve":
+	{
+		"m_flControlPoint1": 0.000000,
+		"m_flControlPoint2": 1.000000
+	},
+	"m_blendDuration":
+	{
+		"m_constValue": 0.000000,
+		"m_hParam":
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		}
+	},
+	"m_resetCycleValue":
+	{
+		"m_constValue": 0.000000,
+		"m_hParam":
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		}
+	},
+	"m_bReset": 0,
+	"m_resetCycleOption": 0
+}`
 
 **Relationships:**
 
@@ -3980,7 +15310,28 @@ classDiagram
 
 ### CStateUpdateData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_hScript":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_transitionIndices":
+	[
+	],
+	"m_actions":
+	[
+	],
+	"m_stateID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bIsStartState": 0,
+	"m_bIsEndState": 0,
+	"m_bIsPassthrough": 0,
+	"m_bIsPassthroughRootMotion": 0,
+	"m_bPreEvaluatePassthroughTransitionPath": 0
+}`
 
 **Relationships:**
 
@@ -4010,7 +15361,14 @@ classDiagram
 
 **Derived by:** [CStaticPoseCacheBuilder](animgraphlib.md#cstaticposecachebuilder)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CStaticPoseCache",
+	"m_poses":
+	[
+	],
+	"m_nBoneCount": 0,
+	"m_nMorphCount": 0
+}`
 
 **Relationships:**
 
@@ -4032,7 +15390,14 @@ classDiagram
 
 **Inherits from:** [CStaticPoseCache](animgraphlib.md#cstaticposecache)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CStaticPoseCacheBuilder",
+	"m_poses":
+	[
+	],
+	"m_nBoneCount": 0,
+	"m_nMorphCount": 0
+}`
 
 **Relationships:**
 
@@ -4045,7 +15410,21 @@ classDiagram
 
 **Inherits from:** [CMotionMetricEvaluator](animgraphlib.md#cmotionmetricevaluator)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CStepsRemainingMetricEvaluator",
+	"m_means":
+	[
+	],
+	"m_standardDeviations":
+	[
+	],
+	"m_flWeight": 0.000000,
+	"m_nDimensionStartIndex": -1,
+	"m_footIndices":
+	[
+	],
+	"m_flMinStepsRemaining": 0.000000
+}`
 
 **Relationships:**
 
@@ -4065,7 +15444,66 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CStopAtGoalUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_flOuterRadius": 0.000000,
+	"m_flInnerRadius": 0.000000,
+	"m_flMaxScale": 0.000000,
+	"m_flMinScale": 0.000000,
+	"m_damping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	}
+}`
 
 **Relationships:**
 
@@ -4090,7 +15528,17 @@ classDiagram
 
 **Inherits from:** [CAnimTagBase](animgraphlib.md#canimtagbase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Internal Tag`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CStringAnimTag",
+	"m_name": "Unnamed Tag",
+	"m_sComment": "",
+	"m_group": "",
+	"m_tagID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bIsReferenced": false
+}`, `MPropertyFriendlyName Internal Tag`
 
 **Relationships:**
 
@@ -4103,7 +15551,67 @@ classDiagram
 
 **Inherits from:** [CBinaryUpdateNode](animgraphlib.md#cbinaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSubtractUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChild1":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_pChild2":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_timingBehavior": "UseChild1",
+	"m_flTimingBlend": 0.500000,
+	"m_bResetChild1": true,
+	"m_bResetChild2": true,
+	"m_footMotionTiming": "Child1",
+	"m_bApplyToFootMotion": true,
+	"m_bApplyChannelsSeparately": true,
+	"m_bUseModelSpace": false
+}`
 
 **Relationships:**
 
@@ -4127,7 +15635,26 @@ classDiagram
 
 **Inherits from:** [CConcreteAnimParameter](animgraphlib.md#cconcreteanimparameter)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Symbol Parameter`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSymbolAnimParameter",
+	"m_name": "Unnamed Parameter",
+	"m_sComment": "",
+	"m_group": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_componentName": "",
+	"m_bNetworkingRequested": false,
+	"m_bIsReferenced": false,
+	"m_previewButton": "ANIMPARAM_BUTTON_NONE",
+	"m_eNetworkSetting": "Auto",
+	"m_bUseMostRecentValue": false,
+	"m_bAutoReset": false,
+	"m_bGameWritable": true,
+	"m_bGraphWritable": false,
+	"m_defaultValue": ""
+}`, `MPropertyFriendlyName Symbol Parameter`
 
 **Relationships:**
 
@@ -4147,7 +15674,79 @@ classDiagram
 
 **Inherits from:** [CAnimUpdateNodeBase](animgraphlib.md#canimupdatenodebase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CTargetSelectorUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_eAngleMode": "eFacingHeading",
+	"m_children":
+	[
+	],
+	"m_hTargetPosition":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hTargetFacePositionParameter":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hMoveHeadingParameter":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hDesiredMoveHeadingParameter":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_bTargetPositionIsWorldSpace": false,
+	"m_bTargetFacePositionIsWorldSpace": false,
+	"m_bEnablePhaseMatching": false,
+	"m_flPhaseMatchingMaxRootMotionSkip": 0.400000
+}`
 
 **Relationships:**
 
@@ -4178,7 +15777,89 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CTargetWarpUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_eAngleMode": "eFacingHeading",
+	"m_hTargetPositionParameter":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hTargetUpVectorParameter":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hTargetFacePositionParameter":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hMoveHeadingParameter":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hDesiredMoveHeadingParameter":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_eCorrectionMethod": "ScaleMotion",
+	"m_eTargetWarpTimingMethod": "ReachDestinationOnRootMotionEnd",
+	"m_bTargetFacePositionIsWorldSpace": false,
+	"m_bTargetPositionIsWorldSpace": false,
+	"m_bOnlyWarpWhenTagIsFound": false,
+	"m_bWarpOrientationDuringTranslation": false,
+	"m_bWarpAroundCenter": false,
+	"m_flMaxAngle": 180.000000
+}`
 
 **Relationships:**
 
@@ -4215,7 +15896,18 @@ classDiagram
 
 **Inherits from:** [CHandshakeAnimTagBase](animgraphlib.md#chandshakeanimtagbase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Task Handshake Tag`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CTaskHandshakeAnimTag",
+	"m_name": "Unnamed Tag",
+	"m_sComment": "",
+	"m_group": "",
+	"m_tagID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bIsReferenced": false,
+	"m_bIsDisableTag": false
+}`, `MPropertyFriendlyName Task Handshake Tag`
 
 **Relationships:**
 
@@ -4229,7 +15921,17 @@ classDiagram
 
 **Inherits from:** [CAnimTagBase](animgraphlib.md#canimtagbase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Status Tag`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CTaskStatusAnimTag",
+	"m_name": "Unnamed Tag",
+	"m_sComment": "",
+	"m_group": "",
+	"m_tagID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bIsReferenced": false
+}`, `MPropertyFriendlyName Status Tag`
 
 **Relationships:**
 
@@ -4242,7 +15944,21 @@ classDiagram
 
 **Inherits from:** [CMotionMetricEvaluator](animgraphlib.md#cmotionmetricevaluator)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CTimeRemainingMetricEvaluator",
+	"m_means":
+	[
+	],
+	"m_standardDeviations":
+	[
+	],
+	"m_flWeight": 0.000000,
+	"m_nDimensionStartIndex": -1,
+	"m_bMatchByTimeRemaining": false,
+	"m_flMaxTimeRemaining": 0.000000,
+	"m_bFilterByTimeRemaining": false,
+	"m_flMinTimeRemaining": 0.000000
+}`
 
 **Relationships:**
 
@@ -4264,7 +15980,14 @@ classDiagram
 
 **Inherits from:** [CAnimActionUpdater](animgraphlib.md#canimactionupdater)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CToggleComponentActionUpdater",
+	"m_componentID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bSetEnabled": true
+}`
 
 **Relationships:**
 
@@ -4283,7 +16006,12 @@ classDiagram
 
 ### CTransitionUpdateData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_srcStateIndex": 0,
+	"m_destStateIndex": 0,
+	"m_nHandshakeMaskToDisableFirst": 0,
+	"m_bDisabled": 0
+}`
 
 **Fields:**
 
@@ -4296,7 +16024,11 @@ classDiagram
 
 ### CTurnHelperInstanceData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_turnAmount": 0.000000,
+	"m_turnStartTime": 0.000000,
+	"m_duration": 1.000000
+}`
 
 **Fields:**
 
@@ -4310,7 +16042,61 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CTurnHelperUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_facingTarget": "MoveHeading",
+	"m_turnStartTimeOffset": 0.000000,
+	"m_turnDuration": 1.000000,
+	"m_bMatchChildDuration": true,
+	"m_manualTurnOffset": 0.000000,
+	"m_bUseManualTurnOffset": false
+}`
 
 **Relationships:**
 
@@ -4336,7 +16122,194 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CTwoBoneIKUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_opFixedData":
+	{
+		"m_endEffectorType": "IkEndEffector_Bone",
+		"m_endEffectorAttachment":
+		{
+			"m_influenceRotations":
+			[
+				[
+					0.000000,
+					0.000000,
+					0.000000,
+					0.000000
+				],
+				[
+					0.000000,
+					0.000000,
+					0.000000,
+					0.000000
+				],
+				[
+					0.000000,
+					0.000000,
+					0.000000,
+					0.000000
+				]
+			],
+			"m_influenceOffsets":
+			[
+				[
+					0.000000,
+					0.000000,
+					0.000000
+				],
+				[
+					0.000000,
+					0.000000,
+					0.000000
+				],
+				[
+					0.000000,
+					0.000000,
+					0.000000
+				]
+			],
+			"m_influenceIndices":
+			[
+				0,
+				0,
+				0
+			],
+			"m_influenceWeights":
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			"m_numInfluences": 0
+		},
+		"m_targetType": "IkTarget_Bone",
+		"m_targetAttachment":
+		{
+			"m_influenceRotations":
+			[
+				[
+					0.000000,
+					0.000000,
+					0.000000,
+					0.000000
+				],
+				[
+					0.000000,
+					0.000000,
+					0.000000,
+					0.000000
+				],
+				[
+					0.000000,
+					0.000000,
+					0.000000,
+					0.000000
+				]
+			],
+			"m_influenceOffsets":
+			[
+				[
+					0.000000,
+					0.000000,
+					0.000000
+				],
+				[
+					0.000000,
+					0.000000,
+					0.000000
+				],
+				[
+					0.000000,
+					0.000000,
+					0.000000
+				]
+			],
+			"m_influenceIndices":
+			[
+				0,
+				0,
+				0
+			],
+			"m_influenceWeights":
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			"m_numInfluences": 0
+		},
+		"m_targetBoneIndex": -1,
+		"m_hPositionParam":
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		"m_hRotationParam":
+		{
+			"m_type": "ANIMPARAM_UNKNOWN",
+			"m_index": 255
+		},
+		"m_bAlwaysUseFallbackHinge": false,
+		"m_vLsFallbackHingeAxis":
+		[
+			0.000000,
+			1.000000,
+			0.000000
+		],
+		"m_nFixedBoneIndex": -1,
+		"m_nMiddleBoneIndex": -1,
+		"m_nEndBoneIndex": -1,
+		"m_bMatchTargetOrientation": false,
+		"m_bConstrainTwist": false,
+		"m_flMaxTwist": 15.000000
+	}
+}`
 
 **Relationships:**
 
@@ -4359,7 +16332,55 @@ classDiagram
 
 **Derived by:** [CAimCameraUpdateNode](animgraphlib.md#caimcameraupdatenode), [CAimMatrixUpdateNode](animgraphlib.md#caimmatrixupdatenode), [CChoreoUpdateNode](animgraphlib.md#cchoreoupdatenode), [CCycleControlUpdateNode](animgraphlib.md#ccyclecontrolupdatenode), [CDirectPlaybackUpdateNode](animgraphlib.md#cdirectplaybackupdatenode), [CFollowAttachmentUpdateNode](animgraphlib.md#cfollowattachmentupdatenode), [CFollowPathUpdateNode](animgraphlib.md#cfollowpathupdatenode), [CFollowTargetUpdateNode](animgraphlib.md#cfollowtargetupdatenode), [CFootAdjustmentUpdateNode](animgraphlib.md#cfootadjustmentupdatenode), [CFootLockUpdateNode](animgraphlib.md#cfootlockupdatenode), [CFootPinningUpdateNode](animgraphlib.md#cfootpinningupdatenode), [CFootStepTriggerUpdateNode](animgraphlib.md#cfootsteptriggerupdatenode), [CHitReactUpdateNode](animgraphlib.md#chitreactupdatenode), [CJiggleBoneUpdateNode](animgraphlib.md#cjiggleboneupdatenode), [CLookAtUpdateNode](animgraphlib.md#clookatupdatenode), [CMoverUpdateNode](animgraphlib.md#cmoverupdatenode), [COrientationWarpUpdateNode](animgraphlib.md#corientationwarpupdatenode), [CPathHelperUpdateNode](animgraphlib.md#cpathhelperupdatenode), [CRagdollUpdateNode](animgraphlib.md#cragdollupdatenode), [CRootUpdateNode](animgraphlib.md#crootupdatenode), [CSlowDownOnSlopesUpdateNode](animgraphlib.md#cslowdownonslopesupdatenode), [CSolveIKChainUpdateNode](animgraphlib.md#csolveikchainupdatenode), [CSpeedScaleUpdateNode](animgraphlib.md#cspeedscaleupdatenode), [CStanceOverrideUpdateNode](animgraphlib.md#cstanceoverrideupdatenode), [CStanceScaleUpdateNode](animgraphlib.md#cstancescaleupdatenode), [CStopAtGoalUpdateNode](animgraphlib.md#cstopatgoalupdatenode), [CTargetWarpUpdateNode](animgraphlib.md#ctargetwarpupdatenode), [CTurnHelperUpdateNode](animgraphlib.md#cturnhelperupdatenode), [CTwoBoneIKUpdateNode](animgraphlib.md#ctwoboneikupdatenode), [CWayPointHelperUpdateNode](animgraphlib.md#cwaypointhelperupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CUnaryUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	}
+}`
 
 **Relationships:**
 
@@ -4409,7 +16430,33 @@ classDiagram
 
 **Inherits from:** [CConcreteAnimParameter](animgraphlib.md#cconcreteanimparameter)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Vector Parameter`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVectorAnimParameter",
+	"m_name": "Unnamed Parameter",
+	"m_sComment": "",
+	"m_group": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_componentName": "",
+	"m_bNetworkingRequested": false,
+	"m_bIsReferenced": false,
+	"m_previewButton": "ANIMPARAM_BUTTON_NONE",
+	"m_eNetworkSetting": "Auto",
+	"m_bUseMostRecentValue": false,
+	"m_bAutoReset": false,
+	"m_bGameWritable": true,
+	"m_bGraphWritable": false,
+	"m_defaultValue":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_bInterpolate": false,
+	"m_vectorType": "ANIMPARAM_VECTOR_TYPE_NONE"
+}`, `MPropertyFriendlyName Vector Parameter`
 
 **Relationships:**
 
@@ -4430,7 +16477,13 @@ classDiagram
 
 ### CVectorQuantizer
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_centroidVectors":
+	[
+	],
+	"m_nCentroids": 0,
+	"m_nDimensions": 0
+}`
 
 **Fields:**
 
@@ -4444,7 +16497,21 @@ classDiagram
 
 **Inherits from:** [CAnimParameterBase](animgraphlib.md#canimparameterbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVirtualAnimParameter",
+	"m_name": "Unnamed Parameter",
+	"m_sComment": "",
+	"m_group": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_componentName": "",
+	"m_bNetworkingRequested": false,
+	"m_bIsReferenced": false,
+	"m_expressionString": "",
+	"m_eParamType": "ANIMPARAM_FLOAT"
+}`
 
 **Relationships:**
 
@@ -4465,7 +16532,19 @@ classDiagram
 
 **Inherits from:** [CWarpSectionAnimTagBase](animgraphlib.md#cwarpsectionanimtagbase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Warp Section Tag`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CWarpSectionAnimTag",
+	"m_name": "Unnamed Tag",
+	"m_sComment": "",
+	"m_group": "",
+	"m_tagID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bIsReferenced": false,
+	"m_bWarpPosition": true,
+	"m_bWarpOrientation": true
+}`, `MPropertyFriendlyName Warp Section Tag`
 
 **Relationships:**
 
@@ -4488,7 +16567,17 @@ classDiagram
 
 **Derived by:** [CWarpSectionAnimTag](animgraphlib.md#cwarpsectionanimtag)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CWarpSectionAnimTagBase",
+	"m_name": "Unnamed Tag",
+	"m_sComment": "",
+	"m_group": "",
+	"m_tagID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bIsReferenced": false
+}`
 
 **Relationships:**
 
@@ -4500,7 +16589,27 @@ classDiagram
 
 ### CWayPointHelperInstanceData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vMovement":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vRotation":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vWaypointPosWS":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_bStopUpdatingWaypointPos": false
+}`
 
 **Fields:**
 
@@ -4515,7 +16624,60 @@ classDiagram
 
 **Inherits from:** [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CWayPointHelperUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_pChildNode":
+	{
+		"m_nodeIndex": -1
+	},
+	"m_flStartCycle": 0.000000,
+	"m_flEndCycle": 0.000000,
+	"m_bOnlyGoals": true,
+	"m_bPreventOvershoot": true,
+	"m_bPreventUndershoot": false
+}`
 
 **Relationships:**
 
@@ -4539,7 +16701,51 @@ classDiagram
 
 **Inherits from:** [CLeafUpdateNode](animgraphlib.md#cleafupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CZeroPoseUpdateNode",
+	"m_nodePath":
+	{
+		"m_path":
+		[
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			},
+			{
+				"m_id": <HIDDEN FOR DIFF>,
+			}
+		],
+		"m_nCount": 0
+	},
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": ""
+}`
 
 **Relationships:**
 
@@ -4551,7 +16757,40 @@ classDiagram
 
 ### ChainToSolveData_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nChainIndex": -1,
+	"m_SolverSettings":
+	{
+		"m_SolverType": "IKSOLVER_TwoBone",
+		"m_nNumIterations": 6,
+		"m_EndEffectorRotationFixUpMode": "MatchTargetOrientation"
+	},
+	"m_TargetSettings":
+	{
+		"m_TargetSource": "Bone",
+		"m_Bone":
+		{
+			"m_Name": ""
+		},
+		"m_AnimgraphParameterNamePosition":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_AnimgraphParameterNameOrientation":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_TargetCoordSystem": "World Space"
+	},
+	"m_DebugSetting": "SOLVEIKCHAINANIMNODEDEBUGSETTING_None",
+	"m_flDebugNormalizedValue": 1.000000,
+	"m_vDebugOffset":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`
 
 **Relationships:**
 
@@ -4575,7 +16814,10 @@ classDiagram
 
 ### ConfigIndex
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nGroup": 65535,
+	"m_nConfig": 65535
+}`
 
 **Fields:**
 
@@ -4586,7 +16828,21 @@ classDiagram
 
 ### DampedPathMotorInstanceData_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vVelocity":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vAcceleration":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_bStopping": false
+}`
 
 **Fields:**
 
@@ -4598,7 +16854,67 @@ classDiagram
 
 ### FollowAttachmentSettings_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_attachment":
+	{
+		"m_influenceRotations":
+		[
+			[
+				0.000000,
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			[
+				0.000000,
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			[
+				0.000000,
+				0.000000,
+				0.000000,
+				0.000000
+			]
+		],
+		"m_influenceOffsets":
+		[
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			]
+		],
+		"m_influenceIndices":
+		[
+			0,
+			0,
+			0
+		],
+		"m_influenceWeights":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_numInfluences": 0
+	},
+	"m_boneIndex": -1,
+	"m_attachmentHandle": 0,
+	"m_bMatchTranslation": false,
+	"m_bMatchRotation": false
+}`
 
 **Relationships:**
 
@@ -4620,7 +16936,13 @@ classDiagram
 
 ### FollowTargetOpFixedSettings_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_boneIndex": -1,
+	"m_bBoneTarget": true,
+	"m_boneTargetIndex": -1,
+	"m_bWorldCoodinateTarget": true,
+	"m_bMatchTargetOrientation": false
+}`
 
 **Fields:**
 
@@ -4634,7 +16956,29 @@ classDiagram
 
 ### FootFixedData_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vToeOffset":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vHeelOffset":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_nTargetBoneIndex": -1,
+	"m_nAnkleBoneIndex": -1,
+	"m_nIKAnchorBoneIndex": -1,
+	"m_ikChainIndex": -1,
+	"m_flMaxIKLength": -1.000000,
+	"m_nFootIndex": -1,
+	"m_nTagIndex": -1,
+	"m_flMaxRotationLeft": 90.000000,
+	"m_flMaxRotationRight": 90.000000
+}`
 
 **Fields:**
 
@@ -4654,7 +16998,27 @@ classDiagram
 
 ### FootFixedSettings
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_traceSettings":
+	{
+		"m_flTraceHeight": 40.000000,
+		"m_flTraceRadius": 4.000000
+	},
+	"m_vFootBaseBindPosePositionMS":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_flFootBaseLength": 0.000000,
+	"m_flMaxRotationLeft": 90.000000,
+	"m_flMaxRotationRight": 90.000000,
+	"m_footstepLandedTagIndex": -1,
+	"m_bEnableTracing": true,
+	"m_flTraceAngleBlend": 0.000000,
+	"m_nDisableTagIndex": -1,
+	"m_nFootIndex": -1
+}`
 
 **Relationships:**
 
@@ -4680,7 +17044,34 @@ classDiagram
 
 ### FootLockPoseOpFixedSettings
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_footInfo":
+	[
+	],
+	"m_hipDampingSettings":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	},
+	"m_nHipBoneIndex": -1,
+	"m_ikSolverType": "IKSOLVER_TwoBone",
+	"m_bApplyTilt": false,
+	"m_bApplyHipDrop": false,
+	"m_bAlwaysUseFallbackHinge": false,
+	"m_bApplyFootRotationLimits": false,
+	"m_bApplyLegTwistLimits": false,
+	"m_flMaxFootHeight": -12.000000,
+	"m_flExtensionScale": 0.700000,
+	"m_flMaxLegTwist": 180.000000,
+	"m_bEnableLockBreaking": false,
+	"m_flLockBreakTolerance": 0.200000,
+	"m_flLockBlendTime": 0.200000,
+	"m_bEnableStretching": false,
+	"m_flMaxStretchAmount": 2.000000,
+	"m_flStretchExtensionScale": 0.998000
+}`
 
 **Relationships:**
 
@@ -4716,7 +17107,17 @@ classDiagram
 
 ### FootPinningPoseOpFixedData_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_footInfo":
+	[
+	],
+	"m_flBlendTime": 0.000000,
+	"m_flLockBreakDistance": 0.000000,
+	"m_flMaxLegTwist": 25.000000,
+	"m_nHipBoneIndex": -1,
+	"m_bApplyLegTwistLimits": false,
+	"m_bApplyFootRotationLimits": false
+}`
 
 **Relationships:**
 
@@ -4739,7 +17140,13 @@ classDiagram
 
 ### FootStepTrigger
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_tags":
+	[
+	],
+	"m_nFootIndex": -1,
+	"m_triggerPhase": "StepPhase_OnGround"
+}`
 
 **Relationships:**
 
@@ -4794,7 +17201,13 @@ classDiagram
 
 ### IKDemoCaptureSettings_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_parentBoneName": "",
+	"m_eMode": "TwoBone",
+	"m_ikChainName": "",
+	"m_oneBoneStart": "",
+	"m_oneBoneEnd": ""
+}`
 
 **Relationships:**
 
@@ -4855,7 +17268,11 @@ classDiagram
 
 ### JiggleBoneSettingsList_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_boneSettings":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -4872,7 +17289,25 @@ classDiagram
 
 ### JiggleBoneSettings_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nBoneIndex": 0,
+	"m_flSpringStrength": 0.000000,
+	"m_flMaxTimeStep": 0.000000,
+	"m_flDamping": 0.000000,
+	"m_vBoundsMaxLS":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vBoundsMinLS":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_eSimSpace": "SimSpace_Local"
+}`
 
 **Relationships:**
 
@@ -4895,7 +17330,10 @@ classDiagram
 
 ### LookAtBone_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_index": -1,
+	"m_weight": 0.000000
+}`
 
 **Fields:**
 
@@ -4906,7 +17344,81 @@ classDiagram
 
 ### LookAtOpFixedSettings_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_attachment":
+	{
+		"m_influenceRotations":
+		[
+			[
+				0.000000,
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			[
+				0.000000,
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			[
+				0.000000,
+				0.000000,
+				0.000000,
+				0.000000
+			]
+		],
+		"m_influenceOffsets":
+		[
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			]
+		],
+		"m_influenceIndices":
+		[
+			0,
+			0,
+			0
+		],
+		"m_influenceWeights":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_numInfluences": 0
+	},
+	"m_damping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	},
+	"m_bones":
+	[
+	],
+	"m_flYawLimit": 45.000000,
+	"m_flPitchLimit": 45.000000,
+	"m_flHysteresisInnerAngle": 1.000000,
+	"m_flHysteresisOuterAngle": 20.000000,
+	"m_bRotateYawForward": true,
+	"m_bMaintainUpDirection": false,
+	"m_bTargetIsPosition": true,
+	"m_bUseHysteresis": false
+}`
 
 **Relationships:**
 
@@ -4935,7 +17447,14 @@ classDiagram
 
 ### LookData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vLookTarget":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`
 
 **Fields:**
 
@@ -4945,7 +17464,10 @@ classDiagram
 
 ### MotionBlendItem
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_pChild": null,
+	"m_flKeyValue": 0.000000
+}`
 
 **Relationships:**
 
@@ -4963,7 +17485,9 @@ classDiagram
 
 ### MotionDBIndex
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nIndex": 0
+}`
 
 **Fields:**
 
@@ -4973,7 +17497,10 @@ classDiagram
 
 ### MotionIndex
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nGroup": 65535,
+	"m_nMotion": 65535
+}`
 
 **Fields:**
 
@@ -4984,7 +17511,30 @@ classDiagram
 
 ### MotionMatchingInstanceData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_currentSelection":
+	{
+		"m_nConfigIndex":
+		{
+			"m_index": 4294967295
+		},
+		"m_flCycleZeroTime": 0.000000,
+		"m_flPlaybackSpeed": 1.000000,
+		"m_flStartTime": 0.000000,
+		"m_nSample": -1
+	},
+	"m_previousSelection":
+	{
+		"m_nConfigIndex":
+		{
+			"m_index": 4294967295
+		},
+		"m_flCycleZeroTime": 0.000000,
+		"m_flPlaybackSpeed": 1.000000,
+		"m_flStartTime": 0.000000,
+		"m_nSample": -1
+	}
+}`
 
 **Relationships:**
 
@@ -5002,7 +17552,16 @@ classDiagram
 
 ### MotionSelection
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nConfigIndex":
+	{
+		"m_index": 4294967295
+	},
+	"m_flCycleZeroTime": 0.000000,
+	"m_flPlaybackSpeed": 1.000000,
+	"m_flStartTime": 0.000000,
+	"m_nSample": -1
+}`
 
 **Relationships:**
 
@@ -5023,7 +17582,56 @@ classDiagram
 
 ### MovementData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_goalWayPointPos":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vMoveDir":
+	[
+		1.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vAcceleration":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_flCurrentMoveSpeed": 0.000000,
+	"m_flTargetMoveSpeed": 0.000000,
+	"m_flGoalDistance": -1.000000,
+	"m_flBoundaryRadius": 100.000000,
+	"m_bGoalChanged": false,
+	"m_bHasPath": false,
+	"m_flFacingHeading": 0.000000,
+	"m_vManualFacingDirection":
+	[
+		1.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vManualFacingTarget": null,
+	"m_nFacingMode": 0,
+	"m_bForceFacing": false,
+	"m_nActiveMotorIndex": -1,
+	"m_bOnGround": true,
+	"m_vFacingPosition":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vPrevFacingPosition":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`
 
 **Fields:**
 
@@ -5050,7 +17658,9 @@ classDiagram
 
 ### NetVarConfigIndex
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_index": 4294967295
+}`
 
 **Fields:**
 
@@ -5060,7 +17670,51 @@ classDiagram
 
 ### PairedSequenceData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vecPairedSequences":
+	[
+		{
+			"m_sRole": "",
+			"m_sSequenceName": "",
+			"m_hSequence": 0
+		},
+		{
+			"m_sRole": "",
+			"m_sSequenceName": "",
+			"m_hSequence": 0
+		},
+		{
+			"m_sRole": "",
+			"m_sSequenceName": "",
+			"m_hSequence": 0
+		},
+		{
+			"m_sRole": "",
+			"m_sSequenceName": "",
+			"m_hSequence": 0
+		},
+		{
+			"m_sRole": "",
+			"m_sSequenceName": "",
+			"m_hSequence": 0
+		},
+		{
+			"m_sRole": "",
+			"m_sSequenceName": "",
+			"m_hSequence": 0
+		},
+		{
+			"m_sRole": "",
+			"m_sSequenceName": "",
+			"m_hSequence": 0
+		},
+		{
+			"m_sRole": "",
+			"m_sSequenceName": "",
+			"m_hSequence": 0
+		}
+	]
+}`
 
 **Relationships:**
 
@@ -5077,7 +17731,11 @@ classDiagram
 
 ### PairedSequence_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_sRole": "",
+	"m_sSequenceName": "",
+	"m_hSequence": 0
+}`
 
 **Fields:**
 
@@ -5089,7 +17747,13 @@ classDiagram
 
 ### ParamSpanSample_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_value":
+	{
+		"m_nType": 0
+	},
+	"m_flCycle": 0.000000
+}`
 
 **Fields:**
 
@@ -5100,7 +17764,19 @@ classDiagram
 
 ### ParamSpan_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_samples":
+	[
+	],
+	"m_hParam":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_eParamType": "ANIMPARAM_UNKNOWN",
+	"m_flStartCycle": 0.000000,
+	"m_flEndCycle": 0.000000
+}`
 
 **Relationships:**
 
@@ -5123,7 +17799,77 @@ classDiagram
 
 ### PerTickSettings_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_startingLocalToWorld":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000
+	],
+	"m_prevLocalToWorld":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000
+	],
+	"m_finalLocalToWorld":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000
+	],
+	"m_rootMotion":
+	{
+		"m_deltaTransform":
+		{
+			"m_iszName":
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			"m_iszValue":
+			{
+				"m_angle": 0.000000
+			}
+		},
+		"m_vVelocityMS":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_vUpOverride":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		]
+	},
+	"m_updateID": -1,
+	"m_flLastTimeStep": 0.000000,
+	"m_flPrevAnimTime": 0.000000,
+	"m_flNextAnimTime": 0.000000,
+	"m_bAwaken": false,
+	"m_bTeleported": false,
+	"m_bIsClient": false,
+	"m_bIsPredicted": false
+}`
 
 **Relationships:**
 
@@ -5151,7 +17897,26 @@ classDiagram
 
 ### PlayerInputMotorInstanceData_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vInputVectorWS":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vVelocityWS":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vAccelerationWS":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`
 
 **Fields:**
 
@@ -5163,7 +17928,9 @@ classDiagram
 
 ### SampleCode
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_subCode": "[BINARY BLOB]"
+}`
 
 **Fields:**
 
@@ -5173,7 +17940,19 @@ classDiagram
 
 ### ScriptInfo_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_code": "",
+	"m_paramsModified":
+	[
+	],
+	"m_proxyReadParams":
+	[
+	],
+	"m_proxyWriteParams":
+	[
+	],
+	"m_eScriptType": "ANIMSCRIPT_TYPE_INVALID"
+}`
 
 **Relationships:**
 
@@ -5208,7 +17987,17 @@ classDiagram
 
 ### SequenceData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_hSequence": -1,
+	"m_cycle":
+	{
+		"m_flCycleUnclamped": 0.000000,
+		"m_flPrevCycleUnclamped": 0.000000,
+		"m_flCyclesPerSecond": 1.000000,
+		"m_flCycleZeroTime": 0.000000,
+		"m_resetCount": 0
+	}
+}`
 
 **Relationships:**
 
@@ -5227,7 +18016,14 @@ classDiagram
 
 ### SlopeData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vSlopeNormal":
+	[
+		0.000000,
+		0.000000,
+		1.000000
+	]
+}`
 
 **Fields:**
 
@@ -5237,7 +18033,11 @@ classDiagram
 
 ### SolveIKChainPoseOpFixedSettings_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_ChainsToSolveData":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -5254,7 +18054,15 @@ classDiagram
 
 ### StanceInfo_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vPosition":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_flDirection": 0.000000
+}`
 
 **Fields:**
 
@@ -5265,7 +18073,11 @@ classDiagram
 
 ### TagSpan_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_tagIndex": -1,
+	"m_startCycle": 0.000000,
+	"m_endCycle": 0.000000
+}`
 
 **Fields:**
 
@@ -5277,7 +18089,10 @@ classDiagram
 
 ### TagStatus
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_TagStatus": "Inactive",
+	"m_flTagStartAnimTime": -1.000000
+}`
 
 **Relationships:**
 
@@ -5306,7 +18121,10 @@ classDiagram
 
 ### TraceSettings_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flTraceHeight": 40.000000,
+	"m_flTraceRadius": 4.000000
+}`
 
 **Fields:**
 
@@ -5317,7 +18135,144 @@ classDiagram
 
 ### TwoBoneIKSettings_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_endEffectorType": "IkEndEffector_Bone",
+	"m_endEffectorAttachment":
+	{
+		"m_influenceRotations":
+		[
+			[
+				0.000000,
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			[
+				0.000000,
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			[
+				0.000000,
+				0.000000,
+				0.000000,
+				0.000000
+			]
+		],
+		"m_influenceOffsets":
+		[
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			]
+		],
+		"m_influenceIndices":
+		[
+			0,
+			0,
+			0
+		],
+		"m_influenceWeights":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_numInfluences": 0
+	},
+	"m_targetType": "IkTarget_Bone",
+	"m_targetAttachment":
+	{
+		"m_influenceRotations":
+		[
+			[
+				0.000000,
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			[
+				0.000000,
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			[
+				0.000000,
+				0.000000,
+				0.000000,
+				0.000000
+			]
+		],
+		"m_influenceOffsets":
+		[
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			]
+		],
+		"m_influenceIndices":
+		[
+			0,
+			0,
+			0
+		],
+		"m_influenceWeights":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_numInfluences": 0
+	},
+	"m_targetBoneIndex": -1,
+	"m_hPositionParam":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_hRotationParam":
+	{
+		"m_type": "ANIMPARAM_UNKNOWN",
+		"m_index": 255
+	},
+	"m_bAlwaysUseFallbackHinge": false,
+	"m_vLsFallbackHingeAxis":
+	[
+		0.000000,
+		1.000000,
+		0.000000
+	],
+	"m_nFixedBoneIndex": -1,
+	"m_nMiddleBoneIndex": -1,
+	"m_nEndBoneIndex": -1,
+	"m_bMatchTargetOrientation": false,
+	"m_bConstrainTwist": false,
+	"m_flMaxTwist": 15.000000
+}`
 
 **Relationships:**
 
@@ -5351,7 +18306,12 @@ classDiagram
 
 ### WeightList
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_weights":
+	[
+	]
+}`
 
 **Fields:**
 

@@ -25,7 +25,10 @@ nav_exclude: true
 
 ### CSSDSEndFrameViewInfo
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nViewId": 0,
+	"m_ViewName": ""
+}`
 
 **Fields:**
 
@@ -36,7 +39,11 @@ nav_exclude: true
 
 ### CSSDSMsg_EndFrame
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Views":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -55,7 +62,17 @@ classDiagram
 
 **Derived by:** [CSSDSMsg_PostLayer](scenesystem.md#cssdsmsg_postlayer), [CSSDSMsg_PreLayer](scenesystem.md#cssdsmsg_prelayer)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_viewId":
+	{
+		"m_nViewId": 0,
+		"m_nFrameCount": 0
+	},
+	"m_ViewName": "",
+	"m_nLayerId": 0,
+	"m_LayerName": "",
+	"m_displayText": ""
+}`
 
 **Relationships:**
 
@@ -80,7 +97,17 @@ classDiagram
 
 **Inherits from:** [CSSDSMsg_LayerBase](scenesystem.md#cssdsmsg_layerbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_viewId":
+	{
+		"m_nViewId": 0,
+		"m_nFrameCount": 0
+	},
+	"m_ViewName": "",
+	"m_nLayerId": 0,
+	"m_LayerName": "",
+	"m_displayText": ""
+}`
 
 **Relationships:**
 
@@ -93,7 +120,17 @@ classDiagram
 
 **Inherits from:** [CSSDSMsg_LayerBase](scenesystem.md#cssdsmsg_layerbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_viewId":
+	{
+		"m_nViewId": 0,
+		"m_nFrameCount": 0
+	},
+	"m_ViewName": "",
+	"m_nLayerId": 0,
+	"m_LayerName": "",
+	"m_displayText": ""
+}`
 
 **Relationships:**
 
@@ -104,7 +141,14 @@ classDiagram
 
 ### CSSDSMsg_ViewRender
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_viewId":
+	{
+		"m_nViewId": 0,
+		"m_nFrameCount": 0
+	},
+	"m_ViewName": ""
+}`
 
 **Relationships:**
 
@@ -122,7 +166,18 @@ classDiagram
 
 ### CSSDSMsg_ViewTarget
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Name": "",
+	"m_TextureId": 0,
+	"m_nWidth": 0,
+	"m_nHeight": 0,
+	"m_nRequestedWidth": 0,
+	"m_nRequestedHeight": 0,
+	"m_nNumMipLevels": 0,
+	"m_nDepth": 0,
+	"m_nMultisampleNumSamples": 0,
+	"m_nFormat": 0
+}`
 
 **Fields:**
 
@@ -141,7 +196,17 @@ classDiagram
 
 ### CSSDSMsg_ViewTargetList
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_viewId":
+	{
+		"m_nViewId": 0,
+		"m_nFrameCount": 0
+	},
+	"m_ViewName": "",
+	"m_Targets":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -161,7 +226,10 @@ classDiagram
 
 ### SceneViewId_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nViewId": 4294967295,
+	"m_nFrameCount": 4294967295
+}`
 
 **Fields:**
 

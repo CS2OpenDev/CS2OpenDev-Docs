@@ -27,7 +27,16 @@ nav_exclude: true
 
 ### CLightRigBackground
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_bEnabled": false,
+	"m_Color":
+	[
+		0,
+		0,
+		0,
+		0
+	]
+}`
 
 **Fields:**
 
@@ -38,7 +47,11 @@ nav_exclude: true
 
 ### CLightRigExposure
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_bEnabled": false,
+	"m_flMinEV": -2.000000,
+	"m_flMaxEV": 2.000000
+}`
 
 **Fields:**
 
@@ -50,7 +63,16 @@ nav_exclude: true
 
 ### CLightRigGrid
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_bEnabled": true,
+	"m_Color":
+	[
+		0,
+		0,
+		0,
+		0
+	]
+}`
 
 **Fields:**
 
@@ -63,7 +85,39 @@ nav_exclude: true
 
 **Derived by:** [CLightRigPointLight](toolscene.md#clightrigpointlight), [CLightRigSpotLight](toolscene.md#clightrigspotlight), [CLightRigSunLight](toolscene.md#clightrigsunlight)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vPosition":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vDirection":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vLookAt":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_Color":
+	[
+		255,
+		255,
+		255
+	],
+	"m_flAxisScale": 1.000000,
+	"m_flRadius": 10000.000000,
+	"m_flBrightness": 1.000000,
+	"m_flLightSourceRadius": 0.000000,
+	"m_flDistance": 1.500000,
+	"m_bRelativePositioning": false,
+	"m_bParentToCamera": false
+}`
 
 **Relationships:**
 
@@ -94,7 +148,39 @@ classDiagram
 
 **Inherits from:** [CLightRigLight](toolscene.md#clightriglight)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vPosition":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vDirection":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vLookAt":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_Color":
+	[
+		255,
+		255,
+		255
+	],
+	"m_flAxisScale": 1.000000,
+	"m_flRadius": 10000.000000,
+	"m_flBrightness": 1.000000,
+	"m_flLightSourceRadius": 0.000000,
+	"m_flDistance": 1.500000,
+	"m_bRelativePositioning": false,
+	"m_bParentToCamera": false
+}`
 
 **Relationships:**
 
@@ -105,7 +191,9 @@ classDiagram
 
 ### CLightRigPostProcessing
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_hPostProcessing": ""
+}`
 
 **Relationships:**
 
@@ -122,7 +210,9 @@ classDiagram
 
 ### CLightRigSky
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_hSkyMaterial": ""
+}`
 
 **Relationships:**
 
@@ -141,7 +231,42 @@ classDiagram
 
 **Inherits from:** [CLightRigLight](toolscene.md#clightriglight)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vPosition":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vDirection":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vLookAt":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_Color":
+	[
+		255,
+		255,
+		255
+	],
+	"m_flAxisScale": 1.000000,
+	"m_flRadius": 10000.000000,
+	"m_flBrightness": 1.000000,
+	"m_flLightSourceRadius": 0.000000,
+	"m_flDistance": 1.500000,
+	"m_bRelativePositioning": false,
+	"m_bParentToCamera": false,
+	"m_flOuterConeAngle": 90.000000,
+	"m_flInnerConeAngle": 45.000000,
+	"m_bCastShadows": false
+}`
 
 **Relationships:**
 
@@ -162,7 +287,44 @@ classDiagram
 
 **Inherits from:** [CLightRigLight](toolscene.md#clightriglight)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vPosition":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vDirection":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vLookAt":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_Color":
+	[
+		255,
+		255,
+		255
+	],
+	"m_flAxisScale": 1.000000,
+	"m_flRadius": 10000.000000,
+	"m_flBrightness": 1.000000,
+	"m_flLightSourceRadius": 0.000000,
+	"m_flDistance": 1.500000,
+	"m_bRelativePositioning": false,
+	"m_bParentToCamera": false,
+	"m_flShadowCascadeDistance0": 0.000000,
+	"m_flShadowCascadeDistance1": 0.000000,
+	"m_flShadowCascadeDistance2": 0.000000,
+	"m_flShadowCascadeDistance3": 0.000000,
+	"m_bCastShadows": false
+}`
 
 **Relationships:**
 
@@ -183,7 +345,11 @@ classDiagram
 
 ### CLightRigVMap
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_MapName": "",
+	"m_bRender3DSkybox": true,
+	"m_bParticlesTraceAgainstMap": false
+}`
 
 **Relationships:**
 
@@ -202,7 +368,60 @@ classDiagram
 
 ### CToolSceneLightRig
 
-**Metadata:** `MGetKV3ClassDefaults`, `MVDataAssociatedFile`, `MVDataRoot`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nRigType": "PREVIEW",
+	"m_Suns":
+	[
+	],
+	"m_PointLights":
+	[
+	],
+	"m_SpotLights":
+	[
+	],
+	"m_Background":
+	{
+		"m_bEnabled": false,
+		"m_Color":
+		[
+			0,
+			0,
+			0,
+			0
+		]
+	},
+	"m_Grid":
+	{
+		"m_bEnabled": true,
+		"m_Color":
+		[
+			0,
+			0,
+			0,
+			0
+		]
+	},
+	"m_Exposure":
+	{
+		"m_bEnabled": false,
+		"m_flMinEV": -2.000000,
+		"m_flMaxEV": 2.000000
+	},
+	"m_PostProcessing":
+	{
+		"m_hPostProcessing": ""
+	},
+	"m_Sky":
+	{
+		"m_hSkyMaterial": ""
+	},
+	"m_BackgroundMap":
+	{
+		"m_MapName": "",
+		"m_bRender3DSkybox": true,
+		"m_bParticlesTraceAgainstMap": false
+	}
+}`, `MVDataAssociatedFile toolscenelightrigs.vdata`, `MVDataRoot`
 
 **Relationships:**
 

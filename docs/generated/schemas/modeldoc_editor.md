@@ -19,7 +19,16 @@ nav_exclude: true
 
 ### CMotionAnalysisSettings
 
-**Metadata:** `MGetKV3ClassDefaults`, `MVDataRoot`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Description": "",
+	"m_flLinearThresholdSlow": 60.000000,
+	"m_flLinearThresholdStopped": 25.000000,
+	"m_flAngularThresholdSlow": 90.000000,
+	"m_flAngularThresholdStopped": 15.000000,
+	"m_Feet":
+	{
+	}
+}`, `MVDataRoot`
 
 **Relationships:**
 
@@ -41,7 +50,22 @@ classDiagram
 
 ### CMotionAnalysisSettings_Foot
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_AnkleBoneNames":
+	[
+	],
+	"m_AttachmentNames":
+	[
+	],
+	"m_DebugColor":
+	[
+		255,
+		255,
+		255
+	],
+	"m_CreatedEventType": "AE_FOOTSTEP",
+	"m_CreatedEventFootValue": ""
+}`
 
 **Fields:**
 
@@ -55,7 +79,14 @@ classDiagram
 
 ### DuplicateAndMirrorAttachmentOpts_t
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Options for duplicating and mirroring attachments.`, `MPropertyElementNameFn`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Name": "Duplicate And Mirror Attachment Options",
+	"m_eMirrorSpace": "MIRROR_SPACE_MODEL_RELATIVE",
+	"m_bSwapLeftRightParentBones": false,
+	"m_bMirrorX": false,
+	"m_bMirrorY": true,
+	"m_bMirrorZ": false
+}`, `MPropertyDescription Options for duplicating and mirroring attachments.`, `MPropertyElementNameFn`
 
 **Relationships:**
 

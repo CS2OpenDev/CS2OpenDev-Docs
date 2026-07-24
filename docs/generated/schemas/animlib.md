@@ -210,7 +210,13 @@ classDiagram
 
 **Inherits from:** [CNmBoolValueNode::CDefinition](animlib.md#cnmboolvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmAndNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_conditionNodeIndices":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -231,7 +237,19 @@ classDiagram
 
 **Inherits from:** [CNmPoseNode::CDefinition](animlib.md#cnmposenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmAnimationPoseNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nPoseTimeValueNodeIdx": -1,
+	"m_nDataSlotIdx": -1,
+	"m_inputTimeRemapRange":
+	{
+		"m_flMin": 0.000000,
+		"m_flMax": 1.000000
+	},
+	"m_flUserSpecifiedTime": 0.000000,
+	"m_bUseFramesAsInput": false
+}`
 
 **Relationships:**
 
@@ -253,7 +271,9 @@ classDiagram
 
 ### CNmBitFlags
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flags": 0
+}`
 
 **Fields:**
 
@@ -265,7 +285,26 @@ classDiagram
 
 **Inherits from:** [CNmParameterizedBlendNode::CDefinition](animlib.md#cnmparameterizedblendnodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmBlend1DNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_sourceNodeIndices":
+	[
+	],
+	"m_nInputParameterValueNodeIdx": -1,
+	"m_bAllowLooping": true,
+	"m_parameterization":
+	{
+		"m_blendRanges":
+		[
+		],
+		"m_parameterRange":
+		{
+			"m_flMin": 340282346638528859811704183484516925440.000000,
+			"m_flMax": -340282346638528859811704183484516925440.000000
+		}
+	}
+}`
 
 **Relationships:**
 
@@ -286,7 +325,25 @@ classDiagram
 
 **Inherits from:** [CNmPoseNode::CDefinition](animlib.md#cnmposenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmBlend2DNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_sourceNodeIndices":
+	[
+	],
+	"m_values":
+	[
+	],
+	"m_indices":
+	[
+	],
+	"m_hullIndices":
+	[
+	],
+	"m_nInputParameterNodeIdx0": -1,
+	"m_nInputParameterNodeIdx1": -1,
+	"m_bAllowLooping": true
+}`
 
 **Relationships:**
 
@@ -341,7 +398,21 @@ classDiagram
 
 **Inherits from:** [CNmEvent](animlib.md#cnmevent)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmBodyGroupEvent",
+	"m_flStartTime":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_flDuration":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_syncID": "",
+	"m_target": "Self",
+	"m_groupName": "",
+	"m_nGroupValue": 0
+}`
 
 **Relationships:**
 
@@ -363,7 +434,13 @@ classDiagram
 
 **Inherits from:** [CNmBoneMaskValueNode::CDefinition](animlib.md#cnmbonemaskvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmBoneMaskBlendNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nSourceMaskNodeIdx": -1,
+	"m_nTargetMaskNodeIdx": -1,
+	"m_nBlendWeightValueNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -386,7 +463,11 @@ classDiagram
 
 **Inherits from:** [CNmBoneMaskValueNode::CDefinition](animlib.md#cnmbonemaskvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmBoneMaskNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_boneMaskID": ""
+}`
 
 **Relationships:**
 
@@ -407,7 +488,20 @@ classDiagram
 
 **Inherits from:** [CNmBoneMaskValueNode::CDefinition](animlib.md#cnmbonemaskvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmBoneMaskSelectorNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_defaultMaskNodeIdx": -1,
+	"m_parameterValueNodeIdx": -1,
+	"m_bSwitchDynamically": false,
+	"m_maskNodeIndices":
+	[
+	],
+	"m_parameterValues":
+	[
+	],
+	"m_flBlendTimeSeconds": 0.100000
+}`
 
 **Relationships:**
 
@@ -433,7 +527,15 @@ classDiagram
 
 **Inherits from:** [CNmBoneMaskValueNode::CDefinition](animlib.md#cnmbonemaskvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmBoneMaskSwitchNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nSwitchValueNodeIdx": -1,
+	"m_nTrueValueNodeIdx": -1,
+	"m_nFalseValueNodeIdx": -1,
+	"m_flBlendTimeSeconds": 0.100000,
+	"m_bSwitchDynamically": false
+}`
 
 **Relationships:**
 
@@ -476,7 +578,15 @@ classDiagram
 
 ### CNmBoneWeightList
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_skeletonName": "",
+	"m_boneIDs":
+	[
+	],
+	"m_weights":
+	[
+	]
+}`
 
 **Fields:**
 
@@ -526,7 +636,12 @@ classDiagram
 
 **Inherits from:** [CNmBoolValueNode::CDefinition](animlib.md#cnmboolvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmCachedBoolNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nInputValueNodeIdx": -1,
+	"m_mode": "OnEntry"
+}`
 
 **Relationships:**
 
@@ -549,7 +664,12 @@ classDiagram
 
 **Inherits from:** [CNmFloatValueNode::CDefinition](animlib.md#cnmfloatvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmCachedFloatNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nInputValueNodeIdx": -1,
+	"m_mode": "OnEntry"
+}`
 
 **Relationships:**
 
@@ -572,7 +692,12 @@ classDiagram
 
 **Inherits from:** [CNmIDValueNode::CDefinition](animlib.md#cnmidvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmCachedIDNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nInputValueNodeIdx": -1,
+	"m_mode": "OnEntry"
+}`
 
 **Relationships:**
 
@@ -617,7 +742,12 @@ classDiagram
 
 **Inherits from:** [CNmTargetValueNode::CDefinition](animlib.md#cnmtargetvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmCachedTargetNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nInputValueNodeIdx": -1,
+	"m_mode": "OnEntry"
+}`
 
 **Relationships:**
 
@@ -640,7 +770,12 @@ classDiagram
 
 **Inherits from:** [CNmVectorValueNode::CDefinition](animlib.md#cnmvectorvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmCachedVectorNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nInputValueNodeIdx": -1,
+	"m_mode": "OnEntry"
+}`
 
 **Relationships:**
 
@@ -663,7 +798,32 @@ classDiagram
 
 **Inherits from:** [CNmPassthroughNode::CDefinition](animlib.md#cnmpassthroughnodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmChainLookatNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nChildNodeIdx": -1,
+	"m_endEffectorBoneID": "",
+	"m_endEffectorForwardAxis":
+	[
+		1.000000,
+		0.000000,
+		0.000000
+	],
+	"m_endEffectorOffset":
+	[
+		1.000000,
+		0.000000,
+		0.000000
+	],
+	"m_nLookatTargetNodeIdx": -1,
+	"m_nEnabledNodeIdx": -1,
+	"m_flBlendTimeSeconds": 0.000000,
+	"m_chainWeights":
+	[
+	],
+	"m_nChainLength": 2,
+	"m_bIsTargetInWorldSpace": false
+}`
 
 **Relationships:**
 
@@ -701,7 +861,72 @@ classDiagram
 
 ### CNmClip
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_skeleton": "",
+	"m_nNumFrames": 0,
+	"m_flDuration": 0.000000,
+	"m_compressedPoseData": "[BINARY BLOB]",
+	"m_trackCompressionSettings":
+	[
+	],
+	"m_compressedPoseOffsets":
+	[
+	],
+	"m_secondaryAnimations":
+	[
+	],
+	"m_floatChannelData":
+	[
+	],
+	"m_syncTrack":
+	{
+		"m_syncEvents":
+		[
+			{
+				"m_ID": <HIDDEN FOR DIFF>,
+				"m_startTime":
+				{
+					"m_flValue": 0.000000
+				},
+				"m_duration":
+				{
+					"m_flValue": 1.000000
+				}
+			}
+		],
+		"m_nStartEventOffset": 0
+	},
+	"m_rootMotion":
+	{
+		"m_transforms":
+		[
+		],
+		"m_nNumFrames": 0,
+		"m_flAverageLinearVelocity": 0.000000,
+		"m_flAverageAngularVelocityRadians": 0.000000,
+		"m_totalDelta":
+		[
+			0.000000,
+			0.000000,
+			0.000000,
+			0.000000,
+			0.000000,
+			0.000000,
+			0.000000,
+			0.000000
+		]
+	},
+	"m_bIsAdditive": false,
+	"m_modelSpaceSamplingChain":
+	[
+	],
+	"m_modelSpaceBoneSamplingIndices":
+	[
+	],
+	"m_events":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -734,7 +959,11 @@ classDiagram
 
 ### CNmClip::ModelSpaceSamplingChainLink_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nBoneIdx": -1,
+	"m_nParentBoneIdx": -1,
+	"m_nParentChainLinkIdx": -1
+}`
 
 **Fields:**
 
@@ -748,7 +977,20 @@ classDiagram
 
 **Inherits from:** [CNmClipReferenceNode::CDefinition](animlib.md#cnmclipreferencenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmClipNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nPlayInReverseValueNodeIdx": -1,
+	"m_nResetTimeValueNodeIdx": -1,
+	"m_bSampleRootMotion": true,
+	"m_bAllowLooping": false,
+	"m_nDataSlotIdx": -1,
+	"m_graphEvents":
+	[
+	],
+	"m_flSpeedMultiplier": 1.000000,
+	"m_nStartSyncEventOffset": 0
+}`
 
 **Relationships:**
 
@@ -797,7 +1039,16 @@ classDiagram
 
 **Inherits from:** [CNmClipReferenceNode::CDefinition](animlib.md#cnmclipreferencenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmClipSelectorNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_optionNodeIndices":
+	[
+	],
+	"m_conditionNodeIndices":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -819,7 +1070,11 @@ classDiagram
 
 **Inherits from:** [CNmBoolValueNode::CDefinition](animlib.md#cnmboolvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmConstBoolNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_bValue": false
+}`
 
 **Relationships:**
 
@@ -840,7 +1095,11 @@ classDiagram
 
 **Inherits from:** [CNmFloatValueNode::CDefinition](animlib.md#cnmfloatvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmConstFloatNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_flValue": 0.000000
+}`
 
 **Relationships:**
 
@@ -861,7 +1120,11 @@ classDiagram
 
 **Inherits from:** [CNmIDValueNode::CDefinition](animlib.md#cnmidvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmConstIDNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_value": ""
+}`
 
 **Relationships:**
 
@@ -882,7 +1145,29 @@ classDiagram
 
 **Inherits from:** [CNmTargetValueNode::CDefinition](animlib.md#cnmtargetvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmConstTargetNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_value":
+	{
+		"m_transform":
+		[
+			0.000000,
+			0.000000,
+			0.000000,
+			1.000000,
+			0.000000,
+			0.000000,
+			0.000000,
+			1.000000
+		],
+		"m_boneID": "",
+		"m_bIsBoneTarget": false,
+		"m_bIsUsingBoneSpaceOffsets": true,
+		"m_bHasOffsets": false,
+		"m_bIsSet": false
+	}
+}`
 
 **Relationships:**
 
@@ -904,7 +1189,16 @@ classDiagram
 
 **Inherits from:** [CNmVectorValueNode::CDefinition](animlib.md#cnmvectorvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmConstVectorNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_value":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`
 
 **Relationships:**
 
@@ -925,7 +1219,10 @@ classDiagram
 
 **Inherits from:** [CNmBoolValueNode::CDefinition](animlib.md#cnmboolvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmControlParameterBoolNode::CDefinition",
+	"m_nNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -940,7 +1237,10 @@ classDiagram
 
 **Inherits from:** [CNmFloatValueNode::CDefinition](animlib.md#cnmfloatvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmControlParameterFloatNode::CDefinition",
+	"m_nNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -955,7 +1255,10 @@ classDiagram
 
 **Inherits from:** [CNmIDValueNode::CDefinition](animlib.md#cnmidvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmControlParameterIDNode::CDefinition",
+	"m_nNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -970,7 +1273,10 @@ classDiagram
 
 **Inherits from:** [CNmTargetValueNode::CDefinition](animlib.md#cnmtargetvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmControlParameterTargetNode::CDefinition",
+	"m_nNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -985,7 +1291,10 @@ classDiagram
 
 **Inherits from:** [CNmVectorValueNode::CDefinition](animlib.md#cnmvectorvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmControlParameterVectorNode::CDefinition",
+	"m_nNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -1000,7 +1309,11 @@ classDiagram
 
 **Inherits from:** [CNmIDValueNode::CDefinition](animlib.md#cnmidvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmCurrentSyncEventIDNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nSourceStateNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -1021,7 +1334,12 @@ classDiagram
 
 **Inherits from:** [CNmFloatValueNode::CDefinition](animlib.md#cnmfloatvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmCurrentSyncEventNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nSourceStateNodeIdx": -1,
+	"m_infoType": "IndexAndPercentage"
+}`
 
 **Relationships:**
 
@@ -1043,7 +1361,13 @@ classDiagram
 
 **Inherits from:** [CNmSpeedScaleBaseNode::CDefinition](animlib.md#cnmspeedscalebasenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmDurationScaleNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nChildNodeIdx": -1,
+	"m_nInputValueNodeIdx": -1,
+	"m_flDefaultInputValue": 0.000000
+}`
 
 **Relationships:**
 
@@ -1061,7 +1385,20 @@ classDiagram
 
 **Derived by:** [CNmEntityAttributeFloatEvent](animlib.md#cnmentityattributefloatevent), [CNmEntityAttributeIntEvent](animlib.md#cnmentityattributeintevent)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmEntityAttributeEventBase",
+	"m_flStartTime":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_flDuration":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_syncID": "",
+	"m_target": "Self",
+	"m_attributeName": ""
+}`
 
 **Relationships:**
 
@@ -1084,7 +1421,39 @@ classDiagram
 
 **Inherits from:** [CNmEntityAttributeEventBase](animlib.md#cnmentityattributeeventbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmEntityAttributeFloatEvent",
+	"m_flStartTime":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_flDuration":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_syncID": "",
+	"m_target": "Self",
+	"m_attributeName": "",
+	"m_FloatValue":
+	{
+		"m_spline":
+		[
+		],
+		"m_tangents":
+		[
+		],
+		"m_vDomainMins":
+		[
+			0.000000,
+			0.000000
+		],
+		"m_vDomainMaxs":
+		[
+			0.000000,
+			0.000000
+		]
+	}
+}`
 
 **Relationships:**
 
@@ -1104,7 +1473,21 @@ classDiagram
 
 **Inherits from:** [CNmEntityAttributeEventBase](animlib.md#cnmentityattributeeventbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmEntityAttributeIntEvent",
+	"m_flStartTime":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_flDuration":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_syncID": "",
+	"m_target": "Self",
+	"m_attributeName": "",
+	"m_nIntValue": 0
+}`
 
 **Relationships:**
 
@@ -1159,7 +1542,11 @@ classDiagram
 
 **Inherits from:** [CNmPoseNode::CDefinition](animlib.md#cnmposenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmExternalPoseNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_bShouldSampleRootMotion": false
+}`
 
 **Relationships:**
 
@@ -1179,7 +1566,11 @@ classDiagram
 
 **Inherits from:** [CNmBoneMaskValueNode::CDefinition](animlib.md#cnmbonemaskvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmFixedWeightBoneMaskNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_flBoneWeight": 0.000000
+}`
 
 **Relationships:**
 
@@ -1200,7 +1591,12 @@ classDiagram
 
 **Inherits from:** [CNmFloatValueNode::CDefinition](animlib.md#cnmfloatvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmFloatAngleMathNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nInputValueNodeIdx": -1,
+	"m_operation": "ClampTo180"
+}`
 
 **Relationships:**
 
@@ -1220,7 +1616,19 @@ classDiagram
 
 ### CNmFloatChannelData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_skeleton": "",
+	"m_setID": "",
+	"m_channelSettings":
+	[
+	],
+	"m_compressedData":
+	[
+	],
+	"m_compressedOffsets":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1241,7 +1649,14 @@ classDiagram
 
 ### CNmFloatChannelData::ChannelSettings_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_range":
+	{
+		"m_flRangeStart": 0.000000,
+		"m_flRangeLength": -1.000000
+	},
+	"m_bIsStatic": false
+}`
 
 **Relationships:**
 
@@ -1259,7 +1674,12 @@ classDiagram
 
 ### CNmFloatChannelSet_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_ID": <HIDDEN FOR DIFF>,
+	"m_channelIDs":
+	[
+	]
+}`
 
 **Fields:**
 
@@ -1272,7 +1692,16 @@ classDiagram
 
 **Inherits from:** [CNmFloatValueNode::CDefinition](animlib.md#cnmfloatvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmFloatClampNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nInputValueNodeIdx": -1,
+	"m_clampRange":
+	{
+		"m_flMin": 0.000000,
+		"m_flMax": 0.000000
+	}
+}`
 
 **Relationships:**
 
@@ -1294,7 +1723,15 @@ classDiagram
 
 **Inherits from:** [CNmBoolValueNode::CDefinition](animlib.md#cnmboolvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmFloatComparisonNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nInputValueNodeIdx": -1,
+	"m_nComparandValueNodeIdx": -1,
+	"m_comparison": "GreaterThanEqual",
+	"m_flEpsilon": 0.000000,
+	"m_flComparisonValue": 0.000000
+}`
 
 **Relationships:**
 
@@ -1320,7 +1757,38 @@ classDiagram
 
 **Inherits from:** [CNmEvent](animlib.md#cnmevent)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmFloatCurveEvent",
+	"m_flStartTime":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_flDuration":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_syncID": "",
+	"m_ID": <HIDDEN FOR DIFF>,
+	"m_curve":
+	{
+		"m_spline":
+		[
+		],
+		"m_tangents":
+		[
+		],
+		"m_vDomainMins":
+		[
+			0.000000,
+			0.000000
+		],
+		"m_vDomainMaxs":
+		[
+			0.000000,
+			0.000000
+		]
+	}
+}`
 
 **Relationships:**
 
@@ -1340,7 +1808,17 @@ classDiagram
 
 **Inherits from:** [CNmFloatValueNode::CDefinition](animlib.md#cnmfloatvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmFloatCurveEventNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_eventID": "",
+	"m_nDefaultNodeIdx": -1,
+	"m_flDefaultValue": 0.000000,
+	"m_eventConditionRules":
+	{
+		"m_flags": 0
+	}
+}`
 
 **Relationships:**
 
@@ -1365,7 +1843,30 @@ classDiagram
 
 **Inherits from:** [CNmFloatValueNode::CDefinition](animlib.md#cnmfloatvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmFloatCurveNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nInputValueNodeIdx": -1,
+	"m_curve":
+	{
+		"m_spline":
+		[
+		],
+		"m_tangents":
+		[
+		],
+		"m_vDomainMins":
+		[
+			0.000000,
+			0.000000
+		],
+		"m_vDomainMaxs":
+		[
+			0.000000,
+			0.000000
+		]
+	}
+}`
 
 **Relationships:**
 
@@ -1387,7 +1888,15 @@ classDiagram
 
 **Inherits from:** [CNmFloatValueNode::CDefinition](animlib.md#cnmfloatvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmFloatEaseNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_flEaseTime": 1.000000,
+	"m_flStartValue": 0.000000,
+	"m_nInputValueNodeIdx": -1,
+	"m_easingOp": "Linear",
+	"m_bUseStartValue": false
+}`
 
 **Relationships:**
 
@@ -1413,7 +1922,16 @@ classDiagram
 
 **Inherits from:** [CNmFloatValueNode::CDefinition](animlib.md#cnmfloatvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmFloatMathNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nInputValueNodeIdxA": -1,
+	"m_nInputValueNodeIdxB": -1,
+	"m_bReturnAbsoluteResult": false,
+	"m_bReturnNegatedResult": false,
+	"m_operator": "Add",
+	"m_flValueB": 0.000000
+}`
 
 **Relationships:**
 
@@ -1439,7 +1957,17 @@ classDiagram
 
 **Inherits from:** [CNmBoolValueNode::CDefinition](animlib.md#cnmboolvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmFloatRangeComparisonNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_range":
+	{
+		"m_flMin": 340282346638528859811704183484516925440.000000,
+		"m_flMax": -340282346638528859811704183484516925440.000000
+	},
+	"m_nInputValueNodeIdx": -1,
+	"m_bIsInclusiveCheck": true
+}`
 
 **Relationships:**
 
@@ -1462,7 +1990,21 @@ classDiagram
 
 **Inherits from:** [CNmFloatValueNode::CDefinition](animlib.md#cnmfloatvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmFloatRemapNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nInputValueNodeIdx": -1,
+	"m_inputRange":
+	{
+		"m_flBegin": 0.000000,
+		"m_flEnd": 0.000000
+	},
+	"m_outputRange":
+	{
+		"m_flBegin": 0.000000,
+		"m_flEnd": 0.000000
+	}
+}`
 
 **Relationships:**
 
@@ -1483,7 +2025,10 @@ classDiagram
 
 ### CNmFloatRemapNode::RemapRange_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flBegin": 0.000000,
+	"m_flEnd": 0.000000
+}`
 
 **Fields:**
 
@@ -1496,7 +2041,19 @@ classDiagram
 
 **Inherits from:** [CNmFloatValueNode::CDefinition](animlib.md#cnmfloatvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmFloatSelectorNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_conditionNodeIndices":
+	[
+	],
+	"m_values":
+	[
+	],
+	"m_flDefaultValue": 0.000000,
+	"m_flEaseTime": 0.200000,
+	"m_easingOp": "Linear"
+}`
 
 **Relationships:**
 
@@ -1522,7 +2079,15 @@ classDiagram
 
 **Inherits from:** [CNmFloatValueNode::CDefinition](animlib.md#cnmfloatvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmFloatSpringNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_flStartValue": 0.000000,
+	"m_flHertz": 4.000000,
+	"m_flDampingRatio": 0.700000,
+	"m_nInputValueNodeIdx": -1,
+	"m_bUseStartValue": false
+}`
 
 **Relationships:**
 
@@ -1547,7 +2112,15 @@ classDiagram
 
 **Inherits from:** [CNmFloatValueNode::CDefinition](animlib.md#cnmfloatvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmFloatSwitchNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nSwitchValueNodeIdx": -1,
+	"m_nTrueValueNodeIdx": -1,
+	"m_nFalseValueNodeIdx": -1,
+	"m_flFalseValue": 0.000000,
+	"m_flTrueValue": 1.000000
+}`
 
 **Relationships:**
 
@@ -1605,7 +2178,15 @@ classDiagram
 
 **Inherits from:** [CNmPassthroughNode::CDefinition](animlib.md#cnmpassthroughnodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmFollowBoneNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nChildNodeIdx": -1,
+	"m_bone": "",
+	"m_followTargetBone": "",
+	"m_nEnabledNodeIdx": -1,
+	"m_mode": "RotationAndTranslation"
+}`
 
 **Relationships:**
 
@@ -1641,7 +2222,19 @@ classDiagram
 
 **Inherits from:** [CNmEvent](animlib.md#cnmevent)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmFootEvent",
+	"m_flStartTime":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_flDuration":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_syncID": "",
+	"m_phase": "LeftFootDown"
+}`
 
 **Relationships:**
 
@@ -1661,7 +2254,16 @@ classDiagram
 
 **Inherits from:** [CNmBoolValueNode::CDefinition](animlib.md#cnmboolvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmFootEventConditionNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nSourceStateNodeIdx": -1,
+	"m_phaseCondition": "LeftFootDown",
+	"m_eventConditionRules":
+	{
+		"m_flags": 0
+	}
+}`
 
 **Relationships:**
 
@@ -1686,7 +2288,19 @@ classDiagram
 
 **Inherits from:** [CNmPassthroughNode::CDefinition](animlib.md#cnmpassthroughnodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmFootIKNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nChildNodeIdx": -1,
+	"m_leftEffectorBoneID": "",
+	"m_rightEffectorBoneID": "",
+	"m_nLeftTargetNodeIdx": -1,
+	"m_nRightTargetNodeIdx": -1,
+	"m_nEnabledNodeIdx": -1,
+	"m_flBlendTimeSeconds": 0.000000,
+	"m_blendMode": "Effector",
+	"m_bIsTargetInWorldSpace": false
+}`
 
 **Relationships:**
 
@@ -1745,7 +2359,15 @@ classDiagram
 
 **Inherits from:** [CNmIDValueNode::CDefinition](animlib.md#cnmidvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmFootstepEventIDNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nSourceStateNodeIdx": -1,
+	"m_eventConditionRules":
+	{
+		"m_flags": 0
+	}
+}`
 
 **Relationships:**
 
@@ -1768,7 +2390,16 @@ classDiagram
 
 **Inherits from:** [CNmFloatValueNode::CDefinition](animlib.md#cnmfloatvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmFootstepEventPercentageThroughNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nSourceStateNodeIdx": -1,
+	"m_phaseCondition": "LeftFootDown",
+	"m_eventConditionRules":
+	{
+		"m_flags": 0
+	}
+}`
 
 **Relationships:**
 
@@ -1793,7 +2424,19 @@ classDiagram
 
 **Inherits from:** [CNmEvent](animlib.md#cnmevent)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmFrameSnapEvent",
+	"m_flStartTime":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_flDuration":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_syncID": "",
+	"m_frameSnapMode": "Floor"
+}`
 
 **Relationships:**
 
@@ -1811,7 +2454,45 @@ classDiagram
 
 ### CNmGraphDefinition
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_variationID": "",
+	"m_skeleton": "",
+	"m_supportedSecondarySkeletons":
+	[
+	],
+	"m_pUserData": null,
+	"m_persistentNodeIndices":
+	[
+	],
+	"m_nRootNodeIdx": -1,
+	"m_controlParameterIDs":
+	[
+	],
+	"m_virtualParameterIDs":
+	[
+	],
+	"m_virtualParameterNodeIndices":
+	[
+	],
+	"m_referencedGraphSlots":
+	[
+	],
+	"m_externalGraphSlots":
+	[
+	],
+	"m_externalPoseSlots":
+	[
+	],
+	"m_nodePaths":
+	[
+	],
+	"m_resources":
+	[
+	],
+	"m_nodes":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1842,7 +2523,10 @@ classDiagram
 
 ### CNmGraphDefinition::ExternalGraphSlot_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nNodeIdx": -1,
+	"m_slotID": ""
+}`
 
 **Fields:**
 
@@ -1853,7 +2537,10 @@ classDiagram
 
 ### CNmGraphDefinition::ExternalPoseSlot_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nNodeIdx": -1,
+	"m_slotID": ""
+}`
 
 **Fields:**
 
@@ -1864,7 +2551,10 @@ classDiagram
 
 ### CNmGraphDefinition::ReferencedGraphSlot_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nNodeIdx": -1,
+	"m_dataSlotIdx": -1
+}`
 
 **Fields:**
 
@@ -1877,7 +2567,18 @@ classDiagram
 
 **Inherits from:** [CNmBoolValueNode::CDefinition](animlib.md#cnmboolvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmGraphEventConditionNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nSourceStateNodeIdx": -1,
+	"m_eventConditionRules":
+	{
+		"m_flags": 0
+	},
+	"m_conditions":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1899,7 +2600,10 @@ classDiagram
 
 ### CNmGraphEventConditionNode::Condition_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_eventID": "",
+	"m_eventTypeCondition": "Entry"
+}`
 
 **Relationships:**
 
@@ -1941,7 +2645,9 @@ classDiagram
 
 **Derived by:** [CBaseAnimGraphVariationUserData](server.md#cbaseanimgraphvariationuserdata)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmGraphVariationUserData"
+}`
 
 **Relationships:**
 
@@ -1954,7 +2660,19 @@ classDiagram
 
 **Inherits from:** [CNmClipReferenceNode::CDefinition](animlib.md#cnmclipreferencenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmIDBasedClipSelectorNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_optionNodeIndices":
+	[
+	],
+	"m_optionIDs":
+	[
+	],
+	"m_nParameterNodeIdx": -1,
+	"m_nFallbackNodeIdx": -1,
+	"m_bIgnoreInvalidOptions": false
+}`
 
 **Relationships:**
 
@@ -1979,7 +2697,19 @@ classDiagram
 
 **Inherits from:** [CNmPoseNode::CDefinition](animlib.md#cnmposenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmIDBasedSelectorNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_optionNodeIndices":
+	[
+	],
+	"m_optionIDs":
+	[
+	],
+	"m_nParameterNodeIdx": -1,
+	"m_nFallbackNodeIdx": -1,
+	"m_bIgnoreInvalidOptions": false
+}`
 
 **Relationships:**
 
@@ -2003,7 +2733,15 @@ classDiagram
 
 **Inherits from:** [CNmBoolValueNode::CDefinition](animlib.md#cnmboolvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmIDComparisonNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nInputValueNodeIdx": -1,
+	"m_comparison": "Matches",
+	"m_comparisionIDs":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -2027,7 +2765,20 @@ classDiagram
 
 **Inherits from:** [CNmEvent](animlib.md#cnmevent)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmIDEvent",
+	"m_flStartTime":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_flDuration":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_syncID": "",
+	"m_ID": <HIDDEN FOR DIFF>,
+	"m_secondaryID": ""
+}`
 
 **Relationships:**
 
@@ -2047,7 +2798,18 @@ classDiagram
 
 **Inherits from:** [CNmBoolValueNode::CDefinition](animlib.md#cnmboolvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmIDEventConditionNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nSourceStateNodeIdx": -1,
+	"m_eventConditionRules":
+	{
+		"m_flags": 0
+	},
+	"m_eventIDs":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -2071,7 +2833,16 @@ classDiagram
 
 **Inherits from:** [CNmIDValueNode::CDefinition](animlib.md#cnmidvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmIDEventNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nSourceStateNodeIdx": -1,
+	"m_eventConditionRules":
+	{
+		"m_flags": 0
+	},
+	"m_defaultValue": ""
+}`
 
 **Relationships:**
 
@@ -2095,7 +2866,16 @@ classDiagram
 
 **Inherits from:** [CNmBoolValueNode::CDefinition](animlib.md#cnmboolvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmIDEventPercentageThroughNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nSourceStateNodeIdx": -1,
+	"m_eventConditionRules":
+	{
+		"m_flags": 0
+	},
+	"m_eventID": ""
+}`
 
 **Relationships:**
 
@@ -2119,7 +2899,17 @@ classDiagram
 
 **Inherits from:** [CNmIDValueNode::CDefinition](animlib.md#cnmidvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmIDSelectorNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_conditionNodeIndices":
+	[
+	],
+	"m_values":
+	[
+	],
+	"m_defaultValue": ""
+}`
 
 **Relationships:**
 
@@ -2142,7 +2932,15 @@ classDiagram
 
 **Inherits from:** [CNmIDValueNode::CDefinition](animlib.md#cnmidvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmIDSwitchNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nSwitchValueNodeIdx": -1,
+	"m_nTrueValueNodeIdx": -1,
+	"m_nFalseValueNodeIdx": -1,
+	"m_falseValue": "",
+	"m_trueValue": ""
+}`
 
 **Relationships:**
 
@@ -2167,7 +2965,18 @@ classDiagram
 
 **Inherits from:** [CNmFloatValueNode::CDefinition](animlib.md#cnmfloatvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmIDToFloatNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nInputValueNodeIdx": -1,
+	"m_defaultValue": 0.000000,
+	"m_IDs":
+	[
+	],
+	"m_values":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -2214,7 +3023,11 @@ classDiagram
 
 **Inherits from:** [CNmBoolValueNode::CDefinition](animlib.md#cnmboolvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmIsExternalGraphSlotFilledNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nExternalGraphNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -2235,7 +3048,11 @@ classDiagram
 
 **Inherits from:** [CNmBoolValueNode::CDefinition](animlib.md#cnmboolvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmIsExternalPoseSetNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nExternalPoseNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -2256,7 +3073,10 @@ classDiagram
 
 **Inherits from:** [CNmBoolValueNode::CDefinition](animlib.md#cnmboolvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmIsInactiveBranchConditionNode::CDefinition",
+	"m_nNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -2271,7 +3091,11 @@ classDiagram
 
 **Inherits from:** [CNmBoolValueNode::CDefinition](animlib.md#cnmboolvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmIsTargetSetNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nInputValueNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -2292,7 +3116,15 @@ classDiagram
 
 **Inherits from:** [CNmPoseNode::CDefinition](animlib.md#cnmposenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmLayerBlendNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nBaseNodeIdx": -1,
+	"m_bOnlySampleBaseRootMotion": true,
+	"m_layerDefinition":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -2312,7 +3144,16 @@ classDiagram
 
 ### CNmLayerBlendNode::LayerDefinition_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nInputNodeIdx": -1,
+	"m_nWeightValueNodeIdx": -1,
+	"m_nBoneMaskValueNodeIdx": -1,
+	"m_nRootMotionWeightValueNodeIdx": -1,
+	"m_bIsSynchronized": false,
+	"m_bIgnoreEvents": false,
+	"m_bIsStateMachineLayer": false,
+	"m_blendMode": "Overlay"
+}`
 
 **Relationships:**
 
@@ -2338,7 +3179,20 @@ classDiagram
 
 **Inherits from:** [CNmEvent](animlib.md#cnmevent)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmLegacyEvent",
+	"m_flStartTime":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_flDuration":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_syncID": "",
+	"m_animEventClassName": "",
+	"m_KV": null
+}`
 
 **Relationships:**
 
@@ -2358,7 +3212,97 @@ classDiagram
 
 **Inherits from:** [CNmEvent](animlib.md#cnmevent)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmMaterialAttributeEvent",
+	"m_flStartTime":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_flDuration":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_syncID": "",
+	"m_target": "Self",
+	"m_attributeName": "",
+	"m_attributeNameToken": "",
+	"m_x":
+	{
+		"m_spline":
+		[
+		],
+		"m_tangents":
+		[
+		],
+		"m_vDomainMins":
+		[
+			0.000000,
+			0.000000
+		],
+		"m_vDomainMaxs":
+		[
+			0.000000,
+			0.000000
+		]
+	},
+	"m_y":
+	{
+		"m_spline":
+		[
+		],
+		"m_tangents":
+		[
+		],
+		"m_vDomainMins":
+		[
+			0.000000,
+			0.000000
+		],
+		"m_vDomainMaxs":
+		[
+			0.000000,
+			0.000000
+		]
+	},
+	"m_z":
+	{
+		"m_spline":
+		[
+		],
+		"m_tangents":
+		[
+		],
+		"m_vDomainMins":
+		[
+			0.000000,
+			0.000000
+		],
+		"m_vDomainMaxs":
+		[
+			0.000000,
+			0.000000
+		]
+	},
+	"m_w":
+	{
+		"m_spline":
+		[
+		],
+		"m_tangents":
+		[
+		],
+		"m_vDomainMins":
+		[
+			0.000000,
+			0.000000
+		],
+		"m_vDomainMaxs":
+		[
+			0.000000,
+			0.000000
+		]
+	}
+}`
 
 **Relationships:**
 
@@ -2396,7 +3340,11 @@ classDiagram
 
 **Inherits from:** [CNmBoolValueNode::CDefinition](animlib.md#cnmboolvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmNotNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nInputValueNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -2417,7 +3365,13 @@ classDiagram
 
 **Inherits from:** [CNmBoolValueNode::CDefinition](animlib.md#cnmboolvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmOrNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_conditionNodeIndices":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -2438,7 +3392,18 @@ classDiagram
 
 **Inherits from:** [CNmEvent](animlib.md#cnmevent)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmOrientationWarpEvent",
+	"m_flStartTime":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_flDuration":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_syncID": ""
+}`
 
 **Relationships:**
 
@@ -2451,7 +3416,16 @@ classDiagram
 
 **Inherits from:** [CNmPoseNode::CDefinition](animlib.md#cnmposenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmOrientationWarpNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nClipReferenceNodeIdx": -1,
+	"m_nTargetValueNodeIdx": -1,
+	"m_bIsOffsetNode": false,
+	"m_bIsOffsetRelativeToCharacter": true,
+	"m_bWarpTranslation": false,
+	"m_samplingMode": "WorldSpace"
+}`
 
 **Relationships:**
 
@@ -2487,7 +3461,15 @@ classDiagram
 
 ### CNmParameterizedBlendNode::BlendRange_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nInputIdx0": -1,
+	"m_nInputIdx1": -1,
+	"m_parameterValueRange":
+	{
+		"m_flMin": 0.000000,
+		"m_flMax": 0.000000
+	}
+}`
 
 **Fields:**
 
@@ -2503,7 +3485,15 @@ classDiagram
 
 **Derived by:** [CNmBlend1DNode::CDefinition](animlib.md#cnmblend1dnodecdefinition), [CNmVelocityBlendNode::CDefinition](animlib.md#cnmvelocityblendnodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmParameterizedBlendNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_sourceNodeIndices":
+	[
+	],
+	"m_nInputParameterValueNodeIdx": -1,
+	"m_bAllowLooping": true
+}`
 
 **Relationships:**
 
@@ -2525,7 +3515,16 @@ classDiagram
 
 ### CNmParameterizedBlendNode::Parameterization_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_blendRanges":
+	[
+	],
+	"m_parameterRange":
+	{
+		"m_flMin": 340282346638528859811704183484516925440.000000,
+		"m_flMax": -340282346638528859811704183484516925440.000000
+	}
+}`
 
 **Fields:**
 
@@ -2538,7 +3537,19 @@ classDiagram
 
 **Inherits from:** [CNmClipReferenceNode::CDefinition](animlib.md#cnmclipreferencenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmParameterizedClipSelectorNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_optionNodeIndices":
+	[
+	],
+	"m_optionWeights":
+	[
+	],
+	"m_parameterNodeIdx": -1,
+	"m_bIgnoreInvalidOptions": false,
+	"m_bHasWeightsSet": false
+}`
 
 **Relationships:**
 
@@ -2563,7 +3574,19 @@ classDiagram
 
 **Inherits from:** [CNmPoseNode::CDefinition](animlib.md#cnmposenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmParameterizedSelectorNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_optionNodeIndices":
+	[
+	],
+	"m_optionWeights":
+	[
+	],
+	"m_parameterNodeIdx": -1,
+	"m_bIgnoreInvalidOptions": false,
+	"m_bHasWeightsSet": false
+}`
 
 **Relationships:**
 
@@ -2587,7 +3610,32 @@ classDiagram
 
 **Inherits from:** [CNmEvent](animlib.md#cnmevent)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmParticleEvent",
+	"m_flStartTime":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_flDuration":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_syncID": "",
+	"m_relevance": "ClientAndServer",
+	"m_type": "Create",
+	"m_target": "Self",
+	"m_hParticleSystem": "",
+	"m_tags": "",
+	"m_bStopImmediately": false,
+	"m_bDetachFromOwner": false,
+	"m_bPlayEndCap": false,
+	"m_attachmentPoint0": "",
+	"m_attachmentType0": "PATTACH_ABSORIGIN",
+	"m_attachmentPoint1": "",
+	"m_attachmentType1": "PATTACH_ABSORIGIN",
+	"m_config": "preview",
+	"m_effectForConfig": ""
+}`
 
 **Relationships:**
 
@@ -2625,7 +3673,11 @@ classDiagram
 
 **Derived by:** [CNmAimCSNode::CDefinition](server.md#cnmaimcsnodecdefinition), [CNmChainLookatNode::CDefinition](animlib.md#cnmchainlookatnodecdefinition), [CNmFollowBoneNode::CDefinition](animlib.md#cnmfollowbonenodecdefinition), [CNmFootIKNode::CDefinition](animlib.md#cnmfootiknodecdefinition), [CNmRootMotionOverrideNode::CDefinition](animlib.md#cnmrootmotionoverridenodecdefinition), [CNmScaleNode::CDefinition](animlib.md#cnmscalenodecdefinition), [CNmSnapWeaponNode::CDefinition](server.md#cnmsnapweaponnodecdefinition), [CNmSpeedScaleBaseNode::CDefinition](animlib.md#cnmspeedscalebasenodecdefinition), [CNmTwoBoneIKNode::CDefinition](animlib.md#cnmtwoboneiknodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmPassthroughNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nChildNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -2708,7 +3760,10 @@ classDiagram
 
 **Inherits from:** [CNmPoseNode::CDefinition](animlib.md#cnmposenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmReferencePoseNode::CDefinition",
+	"m_nNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -2733,7 +3788,12 @@ classDiagram
 
 **Inherits from:** [CNmPoseNode::CDefinition](animlib.md#cnmposenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmReferencedGraphNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nReferencedGraphIdx": -1,
+	"m_nFallbackNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -2752,7 +3812,25 @@ classDiagram
 
 ### CNmRootMotionData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_transforms":
+	[
+	],
+	"m_nNumFrames": 0,
+	"m_flAverageLinearVelocity": 0.000000,
+	"m_flAverageAngularVelocityRadians": 0.000000,
+	"m_totalDelta":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`
 
 **Fields:**
 
@@ -2768,7 +3846,19 @@ classDiagram
 
 **Inherits from:** [CNmEvent](animlib.md#cnmevent)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmRootMotionEvent",
+	"m_flStartTime":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_flDuration":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_syncID": "",
+	"m_flBlendTimeSeconds": 0.100000
+}`
 
 **Relationships:**
 
@@ -2787,7 +3877,22 @@ classDiagram
 
 **Inherits from:** [CNmPassthroughNode::CDefinition](animlib.md#cnmpassthroughnodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmRootMotionOverrideNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nChildNodeIdx": -1,
+	"m_desiredMovingVelocityNodeIdx": -1,
+	"m_desiredFacingDirectionNodeIdx": -1,
+	"m_linearVelocityLimitNodeIdx": -1,
+	"m_angularVelocityLimitNodeIdx": -1,
+	"m_enabledNodeIdx": -1,
+	"m_maxLinearVelocity": -1.000000,
+	"m_maxAngularVelocityRadians": -1.000000,
+	"m_overrideFlags":
+	{
+		"m_flags": 1
+	}
+}`
 
 **Relationships:**
 
@@ -2827,7 +3932,13 @@ classDiagram
 
 **Inherits from:** [CNmPassthroughNode::CDefinition](animlib.md#cnmpassthroughnodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmScaleNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nChildNodeIdx": -1,
+	"m_nMaskNodeIdx": -1,
+	"m_nEnableNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -2860,7 +3971,16 @@ classDiagram
 
 **Inherits from:** [CNmPoseNode::CDefinition](animlib.md#cnmposenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmSelectorNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_optionNodeIndices":
+	[
+	],
+	"m_conditionNodeIndices":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -2879,7 +3999,32 @@ classDiagram
 
 ### CNmSkeleton
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_ID": <HIDDEN FOR DIFF>,
+	"m_boneIDs":
+	[
+	],
+	"m_parentIndices":
+	[
+	],
+	"m_parentSpaceReferencePose":
+	[
+	],
+	"m_modelSpaceReferencePose":
+	[
+	],
+	"m_numBonesToSampleAtLowLOD": 0,
+	"m_maskDefinitions":
+	[
+	],
+	"m_secondarySkeletons":
+	[
+	],
+	"m_floatChannelSets":
+	[
+	],
+	"m_bIsPropSkeleton": false
+}`
 
 **Relationships:**
 
@@ -2906,7 +4051,10 @@ classDiagram
 
 ### CNmSkeleton::SecondarySkeleton_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_attachToBoneID": "",
+	"m_skeleton": ""
+}`
 
 **Relationships:**
 
@@ -2926,7 +4074,25 @@ classDiagram
 
 **Inherits from:** [CNmEvent](animlib.md#cnmevent)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmSoundEvent",
+	"m_flStartTime":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_flDuration":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_syncID": "",
+	"m_relevance": "ClientAndServer",
+	"m_name": "",
+	"m_position": "None",
+	"m_attachmentName": "",
+	"m_tags": "",
+	"m_bContinuePlayingSoundAtDurationEnd": false,
+	"m_flDurationInterruptionThreshold": 0.900000
+}`
 
 **Relationships:**
 
@@ -2954,7 +4120,13 @@ classDiagram
 
 **Derived by:** [CNmDurationScaleNode::CDefinition](animlib.md#cnmdurationscalenodecdefinition), [CNmSpeedScaleNode::CDefinition](animlib.md#cnmspeedscalenodecdefinition), [CNmVelocityBasedSpeedScaleNode::CDefinition](animlib.md#cnmvelocitybasedspeedscalenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmSpeedScaleBaseNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nChildNodeIdx": -1,
+	"m_nInputValueNodeIdx": -1,
+	"m_flDefaultInputValue": 0.000000
+}`
 
 **Relationships:**
 
@@ -2979,7 +4151,13 @@ classDiagram
 
 **Inherits from:** [CNmSpeedScaleBaseNode::CDefinition](animlib.md#cnmspeedscalebasenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmSpeedScaleNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nChildNodeIdx": -1,
+	"m_nInputValueNodeIdx": -1,
+	"m_flDefaultInputValue": 0.000000
+}`
 
 **Relationships:**
 
@@ -2995,7 +4173,13 @@ classDiagram
 
 **Inherits from:** [CNmBoolValueNode::CDefinition](animlib.md#cnmboolvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmStateCompletedConditionNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nSourceStateNodeIdx": -1,
+	"m_nTransitionDurationOverrideNodeIdx": -1,
+	"m_flTransitionDurationSeconds": 0.000000
+}`
 
 **Relationships:**
 
@@ -3018,7 +4202,14 @@ classDiagram
 
 **Inherits from:** [CNmPoseNode::CDefinition](animlib.md#cnmposenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmStateMachineNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_stateDefinitions":
+	[
+	],
+	"m_nDefaultStateIndex": -1
+}`
 
 **Relationships:**
 
@@ -3037,7 +4228,13 @@ classDiagram
 
 ### CNmStateMachineNode::StateDefinition_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nStateNodeIdx": -1,
+	"m_nEntryConditionNodeIdx": -1,
+	"m_transitionDefinitions":
+	[
+	]
+}`
 
 **Fields:**
 
@@ -3049,7 +4246,12 @@ classDiagram
 
 ### CNmStateMachineNode::TransitionDefinition_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nTargetStateIdx": -1,
+	"m_nConditionNodeIdx": -1,
+	"m_nTransitionNodeIdx": -1,
+	"m_bCanBeForced": false
+}`
 
 **Fields:**
 
@@ -3064,7 +4266,31 @@ classDiagram
 
 **Inherits from:** [CNmPoseNode::CDefinition](animlib.md#cnmposenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmStateNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nChildNodeIdx": -1,
+	"m_entryEvents":
+	[
+	],
+	"m_executeEvents":
+	[
+	],
+	"m_exitEvents":
+	[
+	],
+	"m_timedRemainingEvents":
+	[
+	],
+	"m_timedElapsedEvents":
+	[
+	],
+	"m_nLayerWeightNodeIdx": -1,
+	"m_nLayerRootMotionWeightNodeIdx": -1,
+	"m_nLayerBoneMaskNodeIdx": -1,
+	"m_bIsOffState": false,
+	"m_bUseActualElapsedTimeInStateForTimedEvents": false
+}`
 
 **Relationships:**
 
@@ -3092,7 +4318,11 @@ classDiagram
 
 ### CNmStateNode::TimedEvent_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_ID": <HIDDEN FOR DIFF>,
+	"m_flTimeValueSeconds": 0.000000,
+	"m_comparisionOperator": "LessThanEqual"
+}`
 
 **Relationships:**
 
@@ -3113,7 +4343,13 @@ classDiagram
 
 **Inherits from:** [CNmBoolValueNode::CDefinition](animlib.md#cnmboolvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmSyncEventIndexConditionNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nSourceStateNodeIdx": -1,
+	"m_triggerMode": "ExactlyAtEventIndex",
+	"m_syncEventIdx": -1
+}`
 
 **Relationships:**
 
@@ -3134,7 +4370,23 @@ classDiagram
 
 ### CNmSyncTrack
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_syncEvents":
+	[
+		{
+			"m_ID": <HIDDEN FOR DIFF>,
+			"m_startTime":
+			{
+				"m_flValue": 0.000000
+			},
+			"m_duration":
+			{
+				"m_flValue": 1.000000
+			}
+		}
+	],
+	"m_nStartEventOffset": 0
+}`
 
 **Fields:**
 
@@ -3145,7 +4397,13 @@ classDiagram
 
 ### CNmSyncTrack::EventMarker_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_startTime":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_ID": ""
+}`
 
 **Relationships:**
 
@@ -3163,7 +4421,17 @@ classDiagram
 
 ### CNmSyncTrack::Event_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_ID": <HIDDEN FOR DIFF>,
+	"m_startTime":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_duration":
+	{
+		"m_flValue": 1.000000
+	}
+}`
 
 **Relationships:**
 
@@ -3182,7 +4450,24 @@ classDiagram
 
 ### CNmTarget
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_transform":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000
+	],
+	"m_boneID": "",
+	"m_bIsBoneTarget": false,
+	"m_bIsUsingBoneSpaceOffsets": true,
+	"m_bHasOffsets": false,
+	"m_bIsSet": false
+}`
 
 **Fields:**
 
@@ -3199,7 +4484,13 @@ classDiagram
 
 **Inherits from:** [CNmFloatValueNode::CDefinition](animlib.md#cnmfloatvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmTargetInfoNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nInputValueNodeIdx": -1,
+	"m_infoType": "Distance",
+	"m_bIsWorldSpaceTarget": true
+}`
 
 **Relationships:**
 
@@ -3222,7 +4513,25 @@ classDiagram
 
 **Inherits from:** [CNmTargetValueNode::CDefinition](animlib.md#cnmtargetvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmTargetOffsetNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nInputValueNodeIdx": -1,
+	"m_bIsBoneSpaceOffset": true,
+	"m_rotationOffset":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000
+	],
+	"m_translationOffset":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`
 
 **Relationships:**
 
@@ -3246,7 +4555,12 @@ classDiagram
 
 **Inherits from:** [CNmVectorValueNode::CDefinition](animlib.md#cnmvectorvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmTargetPointNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nInputValueNodeIdx": -1,
+	"m_bIsWorldSpaceTarget": true
+}`
 
 **Relationships:**
 
@@ -3268,7 +4582,18 @@ classDiagram
 
 **Inherits from:** [CNmClipReferenceNode::CDefinition](animlib.md#cnmclipreferencenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmTargetSelectorNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_optionNodeIndices":
+	[
+	],
+	"m_flOrientationScoreWeight": 1.000000,
+	"m_flPositionScoreWeight": 1.000000,
+	"m_parameterNodeIdx": -1,
+	"m_bIgnoreInvalidOptions": false,
+	"m_bIsWorldSpaceTarget": true
+}`
 
 **Relationships:**
 
@@ -3313,7 +4638,20 @@ classDiagram
 
 **Inherits from:** [CNmEvent](animlib.md#cnmevent)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmTargetWarpEvent",
+	"m_flStartTime":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_flDuration":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_syncID": "",
+	"m_rule": "WarpXYZ",
+	"m_algorithm": "Bezier"
+}`
 
 **Relationships:**
 
@@ -3335,7 +4673,21 @@ classDiagram
 
 **Inherits from:** [CNmPoseNode::CDefinition](animlib.md#cnmposenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmTargetWarpNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nClipReferenceNodeIdx": -1,
+	"m_nTargetValueNodeIdx": -1,
+	"m_samplingMode": "Delta",
+	"m_targetUpdateRule": "None",
+	"m_bAlignWithTargetAtLastWarpEvent": false,
+	"m_flSamplingPositionErrorThresholdSq": 0.000000,
+	"m_flMaxTangentLength": 1.250000,
+	"m_flLerpFallbackDistanceThreshold": 0.100000,
+	"m_flTargetUpdateDistanceThreshold": 0.100000,
+	"m_flTargetUpdateAngleThresholdRadians": 0.087266,
+	"m_alignmentBoneID": ""
+}`
 
 **Relationships:**
 
@@ -3366,7 +4718,15 @@ classDiagram
 
 **Inherits from:** [CNmBoolValueNode::CDefinition](animlib.md#cnmboolvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmTimeConditionNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_sourceStateNodeIdx": -1,
+	"m_nInputValueNodeIdx": -1,
+	"m_flComparand": 0.000000,
+	"m_type": "ElapsedTime",
+	"m_operator": "LessThan"
+}`
 
 **Relationships:**
 
@@ -3391,7 +4751,20 @@ classDiagram
 
 **Inherits from:** [CNmEvent](animlib.md#cnmevent)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmTransitionEvent",
+	"m_flStartTime":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_flDuration":
+	{
+		"m_flValue": 0.000000
+	},
+	"m_syncID": "",
+	"m_rule": "BlockTransition",
+	"m_ID": ""
+}`
 
 **Relationships:**
 
@@ -3412,7 +4785,17 @@ classDiagram
 
 **Inherits from:** [CNmBoolValueNode::CDefinition](animlib.md#cnmboolvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmTransitionEventConditionNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_requireRuleID": "",
+	"m_eventConditionRules":
+	{
+		"m_flags": 0
+	},
+	"m_nSourceStateNodeIdx": -1,
+	"m_ruleCondition": "AnyAllowed"
+}`
 
 **Relationships:**
 
@@ -3438,7 +4821,27 @@ classDiagram
 
 **Inherits from:** [CNmPoseNode::CDefinition](animlib.md#cnmposenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmTransitionNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nTargetStateNodeIdx": -1,
+	"m_nDurationOverrideNodeIdx": -1,
+	"m_timeOffsetOverrideNodeIdx": -1,
+	"m_startBoneMaskNodeIdx": -1,
+	"m_flDuration": 0.000000,
+	"m_boneMaskBlendInTimePercentage":
+	{
+		"m_flValue": 0.330000
+	},
+	"m_flTimeOffset": 0.000000,
+	"m_transitionOptions":
+	{
+		"m_flags": 1
+	},
+	"m_targetSyncIDNodeIdx": -1,
+	"m_blendWeightEasing": "Linear",
+	"m_rootMotionBlend": "Blend"
+}`
 
 **Relationships:**
 
@@ -3472,7 +4875,18 @@ classDiagram
 
 **Inherits from:** [CNmPassthroughNode::CDefinition](animlib.md#cnmpassthroughnodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmTwoBoneIKNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nChildNodeIdx": -1,
+	"m_effectorBoneID": "",
+	"m_nEffectorTargetNodeIdx": -1,
+	"m_nEnabledNodeIdx": -1,
+	"m_flBlendTimeSeconds": 0.000000,
+	"m_blendMode": "Effector",
+	"m_bIsTargetInWorldSpace": false,
+	"m_flChainRotationWeight": 0.000000
+}`
 
 **Relationships:**
 
@@ -3547,7 +4961,14 @@ classDiagram
 
 **Inherits from:** [CNmVectorValueNode::CDefinition](animlib.md#cnmvectorvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmVectorCreateNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_inputVectorValueNodeIdx": -1,
+	"m_inputValueXNodeIdx": -1,
+	"m_inputValueYNodeIdx": -1,
+	"m_inputValueZNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -3571,7 +4992,12 @@ classDiagram
 
 **Inherits from:** [CNmFloatValueNode::CDefinition](animlib.md#cnmfloatvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmVectorInfoNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nInputValueNodeIdx": -1,
+	"m_desiredInfo": "X"
+}`
 
 **Relationships:**
 
@@ -3593,7 +5019,11 @@ classDiagram
 
 **Inherits from:** [CNmVectorValueNode::CDefinition](animlib.md#cnmvectorvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmVectorNegateNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nInputValueNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -3635,7 +5065,13 @@ classDiagram
 
 **Inherits from:** [CNmSpeedScaleBaseNode::CDefinition](animlib.md#cnmspeedscalebasenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmVelocityBasedSpeedScaleNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nChildNodeIdx": -1,
+	"m_nInputValueNodeIdx": -1,
+	"m_flDefaultInputValue": 0.000000
+}`
 
 **Relationships:**
 
@@ -3651,7 +5087,15 @@ classDiagram
 
 **Inherits from:** [CNmParameterizedBlendNode::CDefinition](animlib.md#cnmparameterizedblendnodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmVelocityBlendNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_sourceNodeIndices":
+	[
+	],
+	"m_nInputParameterValueNodeIdx": -1,
+	"m_bAllowLooping": true
+}`
 
 **Relationships:**
 
@@ -3666,7 +5110,11 @@ classDiagram
 
 **Inherits from:** [CNmBoneMaskValueNode::CDefinition](animlib.md#cnmbonemaskvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmVirtualParameterBoneMaskNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nChildNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -3687,7 +5135,11 @@ classDiagram
 
 **Inherits from:** [CNmBoolValueNode::CDefinition](animlib.md#cnmboolvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmVirtualParameterBoolNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nChildNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -3708,7 +5160,11 @@ classDiagram
 
 **Inherits from:** [CNmFloatValueNode::CDefinition](animlib.md#cnmfloatvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmVirtualParameterFloatNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nChildNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -3729,7 +5185,11 @@ classDiagram
 
 **Inherits from:** [CNmIDValueNode::CDefinition](animlib.md#cnmidvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmVirtualParameterIDNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nChildNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -3750,7 +5210,11 @@ classDiagram
 
 **Inherits from:** [CNmTargetValueNode::CDefinition](animlib.md#cnmtargetvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmVirtualParameterTargetNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nChildNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -3771,7 +5235,11 @@ classDiagram
 
 **Inherits from:** [CNmVectorValueNode::CDefinition](animlib.md#cnmvectorvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmVirtualParameterVectorNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nChildNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -3792,7 +5260,10 @@ classDiagram
 
 **Inherits from:** [CNmPoseNode::CDefinition](animlib.md#cnmposenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmZeroPoseNode::CDefinition",
+	"m_nNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -3815,7 +5286,22 @@ classDiagram
 
 ### NmBoneMaskSetDefinition_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_ID": <HIDDEN FOR DIFF>,
+	"m_primaryWeightList":
+	{
+		"m_skeletonName": "",
+		"m_boneIDs":
+		[
+		],
+		"m_weights":
+		[
+		]
+	},
+	"m_secondaryWeightLists":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -3834,7 +5320,39 @@ classDiagram
 
 ### NmCompressionSettings_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_translationRangeX":
+	{
+		"m_flRangeStart": 0.000000,
+		"m_flRangeLength": -1.000000
+	},
+	"m_translationRangeY":
+	{
+		"m_flRangeStart": 0.000000,
+		"m_flRangeLength": -1.000000
+	},
+	"m_translationRangeZ":
+	{
+		"m_flRangeStart": 0.000000,
+		"m_flRangeLength": -1.000000
+	},
+	"m_scaleRange":
+	{
+		"m_flRangeStart": 0.000000,
+		"m_flRangeLength": -1.000000
+	},
+	"m_nTrackReadOffset": 0,
+	"m_constantRotation":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_bIsRotationStatic": false,
+	"m_bIsTranslationStatic": false,
+	"m_bIsScaleStatic": false
+}`
 
 **Fields:**
 
@@ -3852,7 +5370,10 @@ classDiagram
 
 ### NmCompressionSettings_t::QuantizationRange_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flRangeStart": 0.000000,
+	"m_flRangeLength": -1.000000
+}`
 
 **Fields:**
 
@@ -3863,7 +5384,14 @@ classDiagram
 
 ### NmFloatCurveCompressionSettings_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_range":
+	{
+		"m_flRangeStart": 0.000000,
+		"m_flRangeLength": -1.000000
+	},
+	"m_bIsStatic": false
+}`
 
 **Relationships:**
 
@@ -3881,7 +5409,9 @@ classDiagram
 
 ### NmPercent_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flValue": 0.000000
+}`
 
 **Fields:**
 
@@ -3891,7 +5421,24 @@ classDiagram
 
 ### NmSyncTrackTimeRange_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_startTime":
+	{
+		"m_nEventIdx": 0,
+		"m_percentageThrough":
+		{
+			"m_flValue": 0.000000
+		}
+	},
+	"m_endTime":
+	{
+		"m_nEventIdx": 0,
+		"m_percentageThrough":
+		{
+			"m_flValue": 0.000000
+		}
+	}
+}`
 
 **Relationships:**
 
@@ -3909,7 +5456,13 @@ classDiagram
 
 ### NmSyncTrackTime_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nEventIdx": 0,
+	"m_percentageThrough":
+	{
+		"m_flValue": 0.000000
+	}
+}`
 
 **Relationships:**
 

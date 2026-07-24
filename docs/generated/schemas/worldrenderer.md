@@ -45,7 +45,10 @@ nav_exclude: true
 
 ### AggregateInstanceStreamOnDiskData_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_DecodedSize": 0,
+	"m_BufferData": "[BINARY BLOB]"
+}`
 
 **Fields:**
 
@@ -56,7 +59,18 @@ nav_exclude: true
 
 ### AggregateLODSetup_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vLODOrigin":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_fMaxObjectScale": 1.000000,
+	"m_fSwitchDistances":
+	[
+	]
+}`
 
 **Fields:**
 
@@ -68,7 +82,27 @@ nav_exclude: true
 
 ### AggregateMeshInfo_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nVisClusterMemberOffset": 0,
+	"m_nVisClusterMemberCount": 0,
+	"m_bHasTransform": false,
+	"m_nLODGroupMask": 0,
+	"m_nDrawCallIndex": -1,
+	"m_nLODSetupIndex": -1,
+	"m_vTintColor":
+	[
+		255,
+		255,
+		255
+	],
+	"m_objectFlags": "OBJECT_TYPE_MODEL",
+	"m_nLightProbeVolumePrecomputedHandshake": 0,
+	"m_nInstanceStreamOffset": 0,
+	"m_nVertexAlbedoStreamOffset": 0,
+	"m_nVertexEmissiveStreamOffset": 0,
+	"m_instanceStreams": "AGGREGATE_INSTANCE_STREAM_NONE",
+	"m_fEmissiveFactor": 0.000000
+}`
 
 **Relationships:**
 
@@ -99,7 +133,19 @@ classDiagram
 
 ### AggregateRTProxySceneObject_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nLayer": 0,
+	"m_BLASes":
+	[
+	],
+	"m_Instances":
+	[
+	],
+	"m_VBData": "[BINARY BLOB]",
+	"m_IBData": "[BINARY BLOB]",
+	"m_InstanceAlbedoData": "[BINARY BLOB]",
+	"m_InstanceEmissiveData": "[BINARY BLOB]"
+}`
 
 **Relationships:**
 
@@ -123,7 +169,27 @@ classDiagram
 
 ### AggregateSceneObject_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_allFlags": "OBJECT_TYPE_NONE",
+	"m_anyFlags": "OBJECT_TYPE_NONE",
+	"m_nLayer": 0,
+	"m_instanceStream": -1,
+	"m_vertexAlbedoStream": -1,
+	"m_vertexEmissiveStream": -1,
+	"m_aggregateMeshes":
+	[
+	],
+	"m_lodSetups":
+	[
+	],
+	"m_visClusterMembership":
+	[
+	],
+	"m_fragmentTransforms":
+	[
+	],
+	"m_renderableModel": ""
+}`
 
 **Relationships:**
 
@@ -153,7 +219,9 @@ classDiagram
 
 ### AggregateVertexAlbedoStreamOnDiskData_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_BufferData": "[BINARY BLOB]"
+}`
 
 **Fields:**
 
@@ -163,7 +231,9 @@ classDiagram
 
 ### AggregateVertexEmissiveStreamOnDiskData_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_BufferData": "[BINARY BLOB]"
+}`
 
 **Fields:**
 
@@ -173,7 +243,27 @@ classDiagram
 
 ### BakedLightingInfo_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nLightmapVersionNumber": 0,
+	"m_nLightmapGameVersionNumber": 0,
+	"m_vLightmapUvScale":
+	[
+		1.000000,
+		1.000000
+	],
+	"m_bHasLightmaps": false,
+	"m_bBakedShadowsGamma20": false,
+	"m_bCompressionEnabled": false,
+	"m_bSHLightmaps": false,
+	"m_nChartPackIterations": 0,
+	"m_nVradQuality": 0,
+	"m_lightMaps":
+	[
+	],
+	"m_bakedShadows":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -200,7 +290,11 @@ classDiagram
 
 ### BakedLightingInfo_t::BakedShadowAssignment_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nLightHash": 0,
+	"m_nMapHash": 0,
+	"m_nShadowChannel": -1
+}`
 
 **Fields:**
 
@@ -214,7 +308,9 @@ classDiagram
 
 **Derived by:** [ExtraVertexStreamOverride_t](worldrenderer.md#extravertexstreamoverride_t), [MaterialOverride_t](worldrenderer.md#materialoverride_t)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nSceneObjectIndex": 0
+}`
 
 **Relationships:**
 
@@ -232,7 +328,55 @@ classDiagram
 
 ### CVoxelVisibility
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nBaseClusterCount": 0,
+	"m_nPVSBytesPerCluster": 0,
+	"m_vMinBounds":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vMaxBounds":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_flGridSize": 0.000000,
+	"m_nSkyVisibilityCluster": 0,
+	"m_nSunVisibilityCluster": 0,
+	"m_NodeBlock":
+	{
+		"m_nOffset": 0,
+		"m_nElementCount": 0
+	},
+	"m_RegionBlock":
+	{
+		"m_nOffset": 0,
+		"m_nElementCount": 0
+	},
+	"m_EnclosedClusterListBlock":
+	{
+		"m_nOffset": 0,
+		"m_nElementCount": 0
+	},
+	"m_EnclosedClustersBlock":
+	{
+		"m_nOffset": 0,
+		"m_nElementCount": 0
+	},
+	"m_MasksBlock":
+	{
+		"m_nOffset": 0,
+		"m_nElementCount": 0
+	},
+	"m_nVisBlocks":
+	{
+		"m_nOffset": 0,
+		"m_nElementCount": 0
+	}
+}`
 
 **Relationships:**
 
@@ -261,7 +405,44 @@ classDiagram
 
 ### ClutterSceneObject_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Bounds":
+	{
+		"m_vMinBounds":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_vMaxBounds":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		]
+	},
+	"m_flags": "OBJECT_TYPE_NONE",
+	"m_nLayer": 0,
+	"m_instancePositions":
+	[
+	],
+	"m_instanceScales":
+	[
+	],
+	"m_instanceTintSrgb":
+	[
+	],
+	"m_tiles":
+	[
+	],
+	"m_renderableModel": "",
+	"m_materialGroup": "",
+	"m_flBeginCullSize": 0.020000,
+	"m_flEndCullSize": 0.012500,
+	"m_InstanceOrientations32":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -291,7 +472,25 @@ classDiagram
 
 ### ClutterTile_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nFirstInstance": 0,
+	"m_nLastInstance": 0,
+	"m_BoundsWs":
+	{
+		"m_vMinBounds":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_vMaxBounds":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		]
+	}
+}`
 
 **Relationships:**
 
@@ -310,7 +509,16 @@ classDiagram
 
 ### EntityIOConnectionData_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_outputName": "",
+	"m_targetType": 0,
+	"m_targetName": "",
+	"m_inputName": "",
+	"m_overrideParam": "",
+	"m_flDelay": 0.000000,
+	"m_nTimesToFire": 0,
+	"m_paramMap": null
+}`
 
 **Fields:**
 
@@ -327,7 +535,12 @@ classDiagram
 
 ### EntityKeyValueData_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_connections":
+	[
+	],
+	"m_keyValuesData": "[BINARY BLOB]"
+}`
 
 **Relationships:**
 
@@ -347,7 +560,17 @@ classDiagram
 
 **Inherits from:** [BaseSceneObjectOverride_t](worldrenderer.md#basesceneobjectoverride_t)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nSceneObjectIndex": 0,
+	"m_nSubSceneObject": 0,
+	"m_nDrawCallIndex": 0,
+	"m_nAdditionalMeshDrawPrimitiveFlags": "MESH_DRAW_FLAGS_NONE",
+	"m_extraBufferBinding":
+	{
+		"m_hBuffer": 0,
+		"m_nBindOffsetBytes": 0
+	}
+}`
 
 **Relationships:**
 
@@ -369,13 +592,24 @@ classDiagram
 
 ### InfoForResourceTypeVMapResourceData_t
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vmap`
 
 ### MaterialOverride_t
 
 **Inherits from:** [BaseSceneObjectOverride_t](worldrenderer.md#basesceneobjectoverride_t)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nSceneObjectIndex": 0,
+	"m_nSubSceneObject": 0,
+	"m_nDrawCallIndex": 0,
+	"m_pMaterial": "",
+	"m_vLinearTintColor":
+	[
+		1.000000,
+		1.000000,
+		1.000000
+	]
+}`
 
 **Relationships:**
 
@@ -396,7 +630,32 @@ classDiagram
 
 ### NodeData_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nParent": 0,
+	"m_vOrigin":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vMinBounds":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vMaxBounds":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_flMinimumDistance": 0.000000,
+	"m_ChildNodeIndices":
+	[
+	],
+	"m_worldNodePrefix": ""
+}`
 
 **Fields:**
 
@@ -412,7 +671,15 @@ classDiagram
 
 ### PermEntityLumpData_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_childLumps":
+	[
+	],
+	"m_entityKeyValues":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -458,7 +725,31 @@ classDiagram
 
 ### RTProxyInstanceInfo_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nFlags": "",
+	"m_albedoFormat": "VERTEX_ALBEDO_NONE",
+	"m_emissiveFormat": "VERTEX_ALBEDO_NONE",
+	"m_nBLASCount": 0,
+	"m_nBLASIndex": 0,
+	"m_nVertexAlbedoByteOffset": 0,
+	"m_nVertexEmissiveByteOffset": 0,
+	"m_fEmissiveFactor": 0.000000,
+	"m_mWorldFromLocal":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`
 
 **Relationships:**
 
@@ -484,7 +775,53 @@ classDiagram
 
 ### SceneObject_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nObjectID": 0,
+	"m_vTransform":
+	[
+		[
+			0.000000,
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		[
+			0.000000,
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		[
+			0.000000,
+			0.000000,
+			0.000000,
+			0.000000
+		]
+	],
+	"m_flFadeStartDistance": 0.000000,
+	"m_flFadeEndDistance": 0.000000,
+	"m_vTintColor":
+	[
+		1.000000,
+		1.000000,
+		1.000000,
+		1.000000
+	],
+	"m_skin": "",
+	"m_nObjectTypeFlags": "OBJECT_TYPE_MODEL",
+	"m_vLightingOrigin":
+	[
+		340282346638528859811704183484516925440.000000,
+		340282346638528859811704183484516925440.000000,
+		340282346638528859811704183484516925440.000000
+	],
+	"m_nOverlayRenderOrder": 0,
+	"m_nLODOverride": -1,
+	"m_nCubeMapPrecomputedHandshake": 0,
+	"m_nLightProbeVolumePrecomputedHandshake": 0,
+	"m_renderableModel": "",
+	"m_renderable": ""
+}`
 
 **Relationships:**
 
@@ -518,7 +855,10 @@ classDiagram
 
 ### VoxelVisBlockOffset_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nOffset": 4294967295,
+	"m_nElementCount": 4294967295
+}`
 
 **Fields:**
 
@@ -529,7 +869,35 @@ classDiagram
 
 ### WorldBuilderParams_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flMinDrawVolumeSize": 0.000000,
+	"m_bBuildBakedLighting": false,
+	"m_bAggregateInstanceStreams": false,
+	"m_bakedLightingInfo":
+	{
+		"m_nLightmapVersionNumber": 0,
+		"m_nLightmapGameVersionNumber": 0,
+		"m_vLightmapUvScale":
+		[
+			1.000000,
+			1.000000
+		],
+		"m_bHasLightmaps": false,
+		"m_bBakedShadowsGamma20": false,
+		"m_bCompressionEnabled": false,
+		"m_bSHLightmaps": false,
+		"m_nChartPackIterations": 0,
+		"m_nVradQuality": 0,
+		"m_lightMaps":
+		[
+		],
+		"m_bakedShadows":
+		[
+		]
+	},
+	"m_nCompileTimestamp": 0,
+	"m_nCompileFingerprint": 0
+}`
 
 **Relationships:**
 
@@ -551,7 +919,16 @@ classDiagram
 
 ### WorldNodeOnDiskBufferData_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nElementCount": 0,
+	"m_nElementSizeInBytes": 0,
+	"m_inputLayoutFields":
+	[
+	],
+	"m_pData":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -571,7 +948,71 @@ classDiagram
 
 ### WorldNode_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_sceneObjects":
+	[
+	],
+	"m_visClusterMembership":
+	[
+	],
+	"m_aggregateSceneObjects":
+	[
+	],
+	"m_clutterSceneObjects":
+	[
+	],
+	"m_rtProxies":
+	[
+	],
+	"m_extraVertexStreamOverrides":
+	[
+	],
+	"m_materialOverrides":
+	[
+	],
+	"m_extraVertexStreams":
+	[
+	],
+	"m_aggregateInstanceStreams":
+	[
+	],
+	"m_vertexAlbedoStreams":
+	[
+	],
+	"m_vertexEmissiveStreams":
+	[
+	],
+	"m_layerNames":
+	[
+	],
+	"m_sceneObjectLayerIndices":
+	[
+	],
+	"m_grassFileName": "",
+	"m_nodeLightingInfo":
+	{
+		"m_nLightmapVersionNumber": 0,
+		"m_nLightmapGameVersionNumber": 0,
+		"m_vLightmapUvScale":
+		[
+			1.000000,
+			1.000000
+		],
+		"m_bHasLightmaps": false,
+		"m_bBakedShadowsGamma20": false,
+		"m_bCompressionEnabled": false,
+		"m_bSHLightmaps": false,
+		"m_nChartPackIterations": 0,
+		"m_nVradQuality": 0,
+		"m_lightMaps":
+		[
+		],
+		"m_bakedShadows":
+		[
+		]
+	},
+	"m_bHasBakedGeometryFlag": false
+}`
 
 **Relationships:**
 
@@ -612,7 +1053,66 @@ classDiagram
 
 ### World_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_builderParams":
+	{
+		"m_flMinDrawVolumeSize": 0.000000,
+		"m_bBuildBakedLighting": false,
+		"m_bAggregateInstanceStreams": false,
+		"m_bakedLightingInfo":
+		{
+			"m_nLightmapVersionNumber": 0,
+			"m_nLightmapGameVersionNumber": 0,
+			"m_vLightmapUvScale":
+			[
+				1.000000,
+				1.000000
+			],
+			"m_bHasLightmaps": false,
+			"m_bBakedShadowsGamma20": false,
+			"m_bCompressionEnabled": false,
+			"m_bSHLightmaps": false,
+			"m_nChartPackIterations": 0,
+			"m_nVradQuality": 0,
+			"m_lightMaps":
+			[
+			],
+			"m_bakedShadows":
+			[
+			]
+		},
+		"m_nCompileTimestamp": 0,
+		"m_nCompileFingerprint": 0
+	},
+	"m_worldNodes":
+	[
+	],
+	"m_worldLightingInfo":
+	{
+		"m_nLightmapVersionNumber": 0,
+		"m_nLightmapGameVersionNumber": 0,
+		"m_vLightmapUvScale":
+		[
+			1.000000,
+			1.000000
+		],
+		"m_bHasLightmaps": false,
+		"m_bBakedShadowsGamma20": false,
+		"m_bCompressionEnabled": false,
+		"m_bSHLightmaps": false,
+		"m_nChartPackIterations": 0,
+		"m_nVradQuality": 0,
+		"m_lightMaps":
+		[
+		],
+		"m_bakedShadows":
+		[
+		]
+	},
+	"m_entityLumps":
+	[
+	]
+}`
 
 **Relationships:**
 

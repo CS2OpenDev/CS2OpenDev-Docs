@@ -89,7 +89,9 @@ nav_exclude: true
 
 ### CVMixAdditionalOutput
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "output"
+}`
 
 **Fields:**
 
@@ -99,7 +101,10 @@ nav_exclude: true
 
 ### CVMixAudioMeter
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "output",
+	"m_displayName": ""
+}`
 
 **Fields:**
 
@@ -112,7 +117,31 @@ nav_exclude: true
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixAutoFilterProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"m_flEnvelopeAmount": 0.000000,
+		"m_flAttackTimeMS": 5.000000,
+		"m_flReleaseTimeMS": 200.000000,
+		"m_filter":
+		{
+			"m_nFilterType": "FILTER_UNKNOWN",
+			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+			"m_bEnabled": true,
+			"m_fldbGain": 0.000000,
+			"m_flCutoffFreq": 1000.000000,
+			"m_flQ": 0.707107
+		},
+		"m_flLFOAmount": 0.000000,
+		"m_flLFORate": 0.000000,
+		"m_flPhase": 0.000000,
+		"m_nLFOShape": "LFO_SHAPE_SINE"
+	}
+}`
 
 **Relationships:**
 
@@ -130,7 +159,12 @@ classDiagram
 
 ### CVMixAutomaticControlInput
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "play time",
+	"m_nControlInputIndex": -1,
+	"m_bIsTrackSend": false,
+	"m_bIsStackVar": false
+}`
 
 **Fields:**
 
@@ -196,7 +230,40 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixBoxverb2ProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"m_flSizeMax": 0.000000,
+		"m_flSizeMin": 0.000000,
+		"m_flComplexity": 0.000000,
+		"m_flDiffusion": 0.000000,
+		"m_flModDepth": 0.000000,
+		"m_flModRate": 0.000000,
+		"m_bParallel": false,
+		"m_filterType":
+		{
+			"m_nFilterType": "FILTER_UNKNOWN",
+			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+			"m_bEnabled": true,
+			"m_fldbGain": 0.000000,
+			"m_flCutoffFreq": 1000.000000,
+			"m_flQ": 0.707107
+		},
+		"m_flWidth": 0.000000,
+		"m_flHeight": 0.000000,
+		"m_flDepth": 0.000000,
+		"m_flFeedbackScale": 0.000000,
+		"m_flFeedbackWidth": 0.000000,
+		"m_flFeedbackHeight": 0.000000,
+		"m_flFeedbackDepth": 0.000000,
+		"m_flOutputGain": 0.000000,
+		"m_flTaps": 0.000000
+	}
+}`
 
 **Relationships:**
 
@@ -216,7 +283,40 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixBoxverbProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"m_flSizeMax": 0.000000,
+		"m_flSizeMin": 0.000000,
+		"m_flComplexity": 0.000000,
+		"m_flDiffusion": 0.000000,
+		"m_flModDepth": 0.000000,
+		"m_flModRate": 0.000000,
+		"m_bParallel": false,
+		"m_filterType":
+		{
+			"m_nFilterType": "FILTER_UNKNOWN",
+			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+			"m_bEnabled": true,
+			"m_fldbGain": 0.000000,
+			"m_flCutoffFreq": 1000.000000,
+			"m_flQ": 0.707107
+		},
+		"m_flWidth": 0.000000,
+		"m_flHeight": 0.000000,
+		"m_flDepth": 0.000000,
+		"m_flFeedbackScale": 0.000000,
+		"m_flFeedbackWidth": 0.000000,
+		"m_flFeedbackHeight": 0.000000,
+		"m_flFeedbackDepth": 0.000000,
+		"m_flOutputGain": 0.000000,
+		"m_flTaps": 0.000000
+	}
+}`
 
 **Relationships:**
 
@@ -234,7 +334,16 @@ classDiagram
 
 ### CVMixCommand
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"command": "CMD_INVALID",
+	"paramName": 0,
+	"outputSubmix": -1,
+	"inputSubmix0": -1,
+	"inputSubmix1": -1,
+	"processor": -1,
+	"inputValue0": -1,
+	"inputValue1": -1
+}`
 
 **Relationships:**
 
@@ -260,7 +369,10 @@ classDiagram
 
 **Inherits from:** [CVMixInputBase](soundsystem_lowlevel.md#cvmixinputbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "GameInput",
+	"m_flDefaultValue": 0.000000
+}`
 
 **Relationships:**
 
@@ -279,7 +391,10 @@ classDiagram
 
 **Inherits from:** [CVMixInputBase](soundsystem_lowlevel.md#cvmixinputbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "GameInput",
+	"m_nArrayIndex": -1
+}`
 
 **Relationships:**
 
@@ -298,7 +413,10 @@ classDiagram
 
 **Inherits from:** [CVMixInputBase](soundsystem_lowlevel.md#cvmixinputbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "GameInput",
+	"m_nValueIndex": 0
+}`
 
 **Relationships:**
 
@@ -317,7 +435,10 @@ classDiagram
 
 **Inherits from:** [CVMixInputBase](soundsystem_lowlevel.md#cvmixinputbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "GameInput",
+	"m_flDefaultValue": 0.000000
+}`
 
 **Relationships:**
 
@@ -336,7 +457,23 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixConvolutionProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"m_fldbGain": -12.000000,
+		"m_flPreDelayMS": 0.000000,
+		"m_flWetMix": 1.000000,
+		"m_fldbLow": 0.000000,
+		"m_fldbMid": 0.000000,
+		"m_fldbHigh": 0.000000,
+		"m_flLowCutoffFreq": 1500.000000,
+		"m_flHighCutoffFreq": 7500.000000
+	}
+}`
 
 **Relationships:**
 
@@ -354,7 +491,10 @@ classDiagram
 
 ### CVMixCurveHeader
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nControlPointCount": <HIDDEN FOR DIFF>,
+	"m_nControlPointStart": <HIDDEN FOR DIFF>,
+}`
 
 **Fields:**
 
@@ -367,7 +507,30 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixDelayProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"m_feedbackFilter":
+		{
+			"m_nFilterType": "FILTER_UNKNOWN",
+			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+			"m_bEnabled": true,
+			"m_fldbGain": 0.000000,
+			"m_flCutoffFreq": 1000.000000,
+			"m_flQ": 0.707107
+		},
+		"m_bEnableFilter": false,
+		"m_flDelay": 0.000000,
+		"m_flDirectGain": 0.000000,
+		"m_flDelayGain": 0.000000,
+		"m_flFeedbackGain": 0.000000,
+		"m_flWidth": 0.000000
+	}
+}`
 
 **Relationships:**
 
@@ -387,7 +550,19 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixDiffusorProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"m_flSize": 0.000000,
+		"m_flComplexity": 0.000000,
+		"m_flFeedback": 0.000000,
+		"m_flOutputGain": 0.000000
+	}
+}`
 
 **Relationships:**
 
@@ -407,7 +582,32 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixDualCompressorProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"m_flRMSTimeMS": 300.000000,
+		"m_fldbKneeWidth": 0.000000,
+		"m_flWetMix": 1.000000,
+		"m_bPeakMode": false,
+		"m_bandDesc":
+		{
+			"m_fldbGainInput": 0.000000,
+			"m_fldbGainOutput": 0.000000,
+			"m_fldbThresholdBelow": -40.000000,
+			"m_fldbThresholdAbove": -30.000000,
+			"m_flRatioBelow": 12.000000,
+			"m_flRatioAbove": 4.000000,
+			"m_flAttackTimeMS": 50.000000,
+			"m_flReleaseTimeMS": 200.000000,
+			"m_bEnable": false,
+			"m_bSolo": false
+		}
+	}
+}`
 
 **Relationships:**
 
@@ -427,7 +627,63 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixDynamics3BandProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"m_fldbGainOutput": 0.000000,
+		"m_flRMSTimeMS": 0.000000,
+		"m_fldbKneeWidth": 0.000000,
+		"m_flDepth": 0.000000,
+		"m_flWetMix": 0.000000,
+		"m_flTimeScale": 0.000000,
+		"m_flLowCutoffFreq": 0.000000,
+		"m_flHighCutoffFreq": 0.000000,
+		"m_bPeakMode": false,
+		"m_bandDesc":
+		[
+			{
+				"m_fldbGainInput": 0.000000,
+				"m_fldbGainOutput": 0.000000,
+				"m_fldbThresholdBelow": -40.000000,
+				"m_fldbThresholdAbove": -30.000000,
+				"m_flRatioBelow": 12.000000,
+				"m_flRatioAbove": 4.000000,
+				"m_flAttackTimeMS": 50.000000,
+				"m_flReleaseTimeMS": 200.000000,
+				"m_bEnable": false,
+				"m_bSolo": false
+			},
+			{
+				"m_fldbGainInput": 0.000000,
+				"m_fldbGainOutput": 0.000000,
+				"m_fldbThresholdBelow": -40.000000,
+				"m_fldbThresholdAbove": -30.000000,
+				"m_flRatioBelow": 12.000000,
+				"m_flRatioAbove": 4.000000,
+				"m_flAttackTimeMS": 50.000000,
+				"m_flReleaseTimeMS": 200.000000,
+				"m_bEnable": false,
+				"m_bSolo": false
+			},
+			{
+				"m_fldbGainInput": 0.000000,
+				"m_fldbGainOutput": 0.000000,
+				"m_fldbThresholdBelow": -40.000000,
+				"m_fldbThresholdAbove": -30.000000,
+				"m_flRatioBelow": 12.000000,
+				"m_flRatioAbove": 4.000000,
+				"m_flAttackTimeMS": 50.000000,
+				"m_flReleaseTimeMS": 200.000000,
+				"m_bEnable": false,
+				"m_bSolo": false
+			}
+		]
+	}
+}`
 
 **Relationships:**
 
@@ -447,7 +703,24 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixDynamicsCompressorProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"m_fldbOutputGain": 0.000000,
+		"m_fldbCompressionThreshold": -6.000000,
+		"m_fldbKneeWidth": 0.000000,
+		"m_flCompressionRatio": 2.000000,
+		"m_flAttackTimeMS": 100.000000,
+		"m_flReleaseTimeMS": 400.000000,
+		"m_flRMSTimeMS": 300.000000,
+		"m_flWetMix": 1.000000,
+		"m_bPeakMode": false
+	}
+}`
 
 **Relationships:**
 
@@ -467,7 +740,27 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixDynamicsProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"m_fldbGain": 0.000000,
+		"m_fldbNoiseGateThreshold": 0.000000,
+		"m_fldbCompressionThreshold": 0.000000,
+		"m_fldbLimiterThreshold": 0.000000,
+		"m_fldbKneeWidth": 0.000000,
+		"m_flRatio": 0.000000,
+		"m_flLimiterRatio": 0.000000,
+		"m_flAttackTimeMS": 0.000000,
+		"m_flReleaseTimeMS": 0.000000,
+		"m_flRMSTimeMS": 0.000000,
+		"m_flWetMix": 0.000000,
+		"m_bPeakMode": false
+	}
+}`
 
 **Relationships:**
 
@@ -487,7 +780,82 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixEQ8ProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"m_stages":
+		[
+			{
+				"m_nFilterType": "FILTER_UNKNOWN",
+				"m_nFilterSlope": "FILTER_SLOPE_12dB",
+				"m_bEnabled": true,
+				"m_fldbGain": 0.000000,
+				"m_flCutoffFreq": 1000.000000,
+				"m_flQ": 0.707107
+			},
+			{
+				"m_nFilterType": "FILTER_UNKNOWN",
+				"m_nFilterSlope": "FILTER_SLOPE_12dB",
+				"m_bEnabled": true,
+				"m_fldbGain": 0.000000,
+				"m_flCutoffFreq": 1000.000000,
+				"m_flQ": 0.707107
+			},
+			{
+				"m_nFilterType": "FILTER_UNKNOWN",
+				"m_nFilterSlope": "FILTER_SLOPE_12dB",
+				"m_bEnabled": true,
+				"m_fldbGain": 0.000000,
+				"m_flCutoffFreq": 1000.000000,
+				"m_flQ": 0.707107
+			},
+			{
+				"m_nFilterType": "FILTER_UNKNOWN",
+				"m_nFilterSlope": "FILTER_SLOPE_12dB",
+				"m_bEnabled": true,
+				"m_fldbGain": 0.000000,
+				"m_flCutoffFreq": 1000.000000,
+				"m_flQ": 0.707107
+			},
+			{
+				"m_nFilterType": "FILTER_UNKNOWN",
+				"m_nFilterSlope": "FILTER_SLOPE_12dB",
+				"m_bEnabled": true,
+				"m_fldbGain": 0.000000,
+				"m_flCutoffFreq": 1000.000000,
+				"m_flQ": 0.707107
+			},
+			{
+				"m_nFilterType": "FILTER_UNKNOWN",
+				"m_nFilterSlope": "FILTER_SLOPE_12dB",
+				"m_bEnabled": true,
+				"m_fldbGain": 0.000000,
+				"m_flCutoffFreq": 1000.000000,
+				"m_flQ": 0.707107
+			},
+			{
+				"m_nFilterType": "FILTER_UNKNOWN",
+				"m_nFilterSlope": "FILTER_SLOPE_12dB",
+				"m_bEnabled": true,
+				"m_fldbGain": 0.000000,
+				"m_flCutoffFreq": 1000.000000,
+				"m_flQ": 0.707107
+			},
+			{
+				"m_nFilterType": "FILTER_UNKNOWN",
+				"m_nFilterSlope": "FILTER_SLOPE_12dB",
+				"m_bEnabled": true,
+				"m_fldbGain": 0.000000,
+				"m_flCutoffFreq": 1000.000000,
+				"m_flQ": 0.707107
+			}
+		]
+	}
+}`
 
 **Relationships:**
 
@@ -507,7 +875,16 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixEffectChainProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"m_effectName": ""
+	}
+}`
 
 **Relationships:**
 
@@ -527,7 +904,18 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixEnvelopeProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"m_flAttackTimeMS": 0.000000,
+		"m_flHoldTimeMS": 0.000000,
+		"m_flReleaseTimeMS": 0.000000
+	}
+}`
 
 **Relationships:**
 
@@ -547,7 +935,21 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixFilterProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"m_nFilterType": "FILTER_UNKNOWN",
+		"m_nFilterSlope": "FILTER_SLOPE_12dB",
+		"m_bEnabled": true,
+		"m_fldbGain": 0.000000,
+		"m_flCutoffFreq": 1000.000000,
+		"m_flQ": 0.707107
+	}
+}`
 
 **Relationships:**
 
@@ -567,7 +969,24 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixFlangerProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"m_bPhaseInvert": false,
+		"m_flGlideTime": 0.000000,
+		"m_flDelay": 0.000000,
+		"m_flOutputGain": 0.000000,
+		"m_flFeedbackGain": 0.000000,
+		"m_flFeedforwardGain": 0.000000,
+		"m_flModRate": 0.000000,
+		"m_flModDepth": 0.000000,
+		"m_bApplyAntialiasing": false
+	}
+}`
 
 **Relationships:**
 
@@ -587,7 +1006,19 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixFreeverbProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"m_flRoomSize": 0.000000,
+		"m_flDamp": 0.000000,
+		"m_flWidth": 0.000000,
+		"m_flLateReflections": 0.000000
+	}
+}`
 
 **Relationships:**
 
@@ -605,7 +1036,11 @@ classDiagram
 
 ### CVMixGraphDescData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"Name": "",
+	"m_nGraphOutputChannels": -1,
+	"m_bIsMainGraph": false
+}`
 
 **Fields:**
 
@@ -619,7 +1054,9 @@ classDiagram
 
 **Inherits from:** [CVMixInputBase](soundsystem_lowlevel.md#cvmixinputbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "GameInput"
+}`
 
 **Relationships:**
 
@@ -632,7 +1069,9 @@ classDiagram
 
 **Derived by:** [CVMixControlInput](soundsystem_lowlevel.md#cvmixcontrolinput), [CVMixControlInputArray](soundsystem_lowlevel.md#cvmixcontrolinputarray), [CVMixControlMeter](soundsystem_lowlevel.md#cvmixcontrolmeter), [CVMixControlOutput](soundsystem_lowlevel.md#cvmixcontroloutput), [CVMixImpulseResponseInput](soundsystem_lowlevel.md#cvmiximpulseresponseinput), [CVMixNameInput](soundsystem_lowlevel.md#cvmixnameinput), [CVMixNameInputMeter](soundsystem_lowlevel.md#cvmixnameinputmeter), [CVMixVsndInput](soundsystem_lowlevel.md#cvmixvsndinput)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "GameInput"
+}`
 
 **Relationships:**
 
@@ -658,7 +1097,32 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixModDelayProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"m_feedbackFilter":
+		{
+			"m_nFilterType": "FILTER_UNKNOWN",
+			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+			"m_bEnabled": true,
+			"m_fldbGain": 0.000000,
+			"m_flCutoffFreq": 1000.000000,
+			"m_flQ": 0.707107
+		},
+		"m_bPhaseInvert": false,
+		"m_flGlideTime": 0.000000,
+		"m_flDelay": 0.000000,
+		"m_flOutputGain": 0.000000,
+		"m_flFeedbackGain": 0.000000,
+		"m_flModRate": 0.000000,
+		"m_flModDepth": 0.000000,
+		"m_bApplyAntialiasing": false
+	}
+}`
 
 **Relationships:**
 
@@ -678,7 +1142,10 @@ classDiagram
 
 **Inherits from:** [CVMixInputBase](soundsystem_lowlevel.md#cvmixinputbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "GameInput",
+	"m_defaultValue": ""
+}`
 
 **Relationships:**
 
@@ -697,7 +1164,10 @@ classDiagram
 
 **Inherits from:** [CVMixInputBase](soundsystem_lowlevel.md#cvmixinputbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "GameInput",
+	"m_nValueIndex": 0
+}`
 
 **Relationships:**
 
@@ -716,7 +1186,18 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixOscProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"oscType": "LFO_SHAPE_SINE",
+		"m_freq": 440.000000,
+		"m_flPhase": 0.000000
+	}
+}`
 
 **Relationships:**
 
@@ -736,7 +1217,17 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixPannerProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"m_type": "PANNER_TYPE_LINEAR",
+		"m_flStrength": 0.000000
+	}
+}`
 
 **Relationships:**
 
@@ -756,7 +1247,19 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixPitchShiftProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"m_nGrainSampleCount": 0,
+		"m_flPitchShift": 0.000000,
+		"m_nQuality": 0,
+		"m_nProcType": 0
+	}
+}`
 
 **Relationships:**
 
@@ -776,7 +1279,22 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixPlateReverbProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"m_flPrefilter": 0.000000,
+		"m_flInputDiffusion1": 0.000000,
+		"m_flInputDiffusion2": 0.000000,
+		"m_flDecay": 0.000000,
+		"m_flDamp": 0.000000,
+		"m_flFeedbackDiffusion1": 0.000000,
+		"m_flFeedbackDiffusion2": 0.000000
+	}
+}`
 
 **Relationships:**
 
@@ -796,7 +1314,16 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixPresetDSPProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"m_effectName": ""
+	}
+}`
 
 **Relationships:**
 
@@ -816,7 +1343,20 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixShaperProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"m_nShape": 0,
+		"m_fldbDrive": 0.000000,
+		"m_fldbOutputGain": 0.000000,
+		"m_flWetMix": 1.000000,
+		"m_nOversampleFactor": 1
+	}
+}`
 
 **Relationships:**
 
@@ -836,7 +1376,12 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixSteamAudioDirectProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000
+}`
 
 **Relationships:**
 
@@ -849,7 +1394,12 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixSteamAudioHRTFProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000
+}`
 
 **Relationships:**
 
@@ -862,7 +1412,12 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixSteamAudioHybridReverbProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000
+}`
 
 **Relationships:**
 
@@ -875,7 +1430,12 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixSteamAudioPathingProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000
+}`
 
 **Relationships:**
 
@@ -888,7 +1448,12 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixStereoDelayProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000
+}`
 
 **Relationships:**
 
@@ -901,7 +1466,23 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixSubgraphSwitchProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"m_name": "",
+		"m_effectName": "",
+		"m_subgraphs":
+		[
+		],
+		"m_interpolationMode": "SUBGRAPH_INTERPOLATION_TEMPORAL_CROSSFADE",
+		"m_bOnlyTailsOnFadeOut": false,
+		"m_flInterpolationTime": 0.000000
+	}
+}`
 
 **Relationships:**
 
@@ -921,7 +1502,21 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixUtilityProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"m_nOp": "VMIX_CHAN_STEREO",
+		"m_flInputPan": 0.000000,
+		"m_flOutputBalance": 0.000000,
+		"m_fldbOutputGain": 0.000000,
+		"m_bBassMono": false,
+		"m_flBassFreq": 120.000000
+	}
+}`
 
 **Relationships:**
 
@@ -941,7 +1536,25 @@ classDiagram
 
 **Inherits from:** [CVMixBaseProcessorDesc](soundsystem_lowlevel.md#cvmixbaseprocessordesc)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMixVocoderProcessorDesc",
+	"m_name": "",
+	"m_nChannels": -1,
+	"m_flxfade": 0.100000,
+	"m_desc":
+	{
+		"m_nBandCount": 0,
+		"m_flBandwidth": 0.000000,
+		"m_fldBModGain": 0.000000,
+		"m_flFreqRangeStart": 0.000000,
+		"m_flFreqRangeEnd": 0.000000,
+		"m_fldBUnvoicedGain": 0.000000,
+		"m_flAttackTimeMS": 0.000000,
+		"m_flReleaseTimeMS": 0.000000,
+		"m_nDebugBand": 0,
+		"m_bPeakMode": false
+	}
+}`
 
 **Relationships:**
 
@@ -961,7 +1574,11 @@ classDiagram
 
 **Inherits from:** [CVMixInputBase](soundsystem_lowlevel.md#cvmixinputbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "GameInput",
+	"m_defaultValue": "",
+	"m_nProcessor": -1
+}`
 
 **Relationships:**
 
@@ -979,7 +1596,24 @@ classDiagram
 
 ### VMixAutoFilterDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flEnvelopeAmount": 0.000000,
+	"m_flAttackTimeMS": 5.000000,
+	"m_flReleaseTimeMS": 200.000000,
+	"m_filter":
+	{
+		"m_nFilterType": "FILTER_UNKNOWN",
+		"m_nFilterSlope": "FILTER_SLOPE_12dB",
+		"m_bEnabled": true,
+		"m_fldbGain": 0.000000,
+		"m_flCutoffFreq": 1000.000000,
+		"m_flQ": 0.707107
+	},
+	"m_flLFOAmount": 0.000000,
+	"m_flLFORate": 0.000000,
+	"m_flPhase": 0.000000,
+	"m_nLFOShape": "LFO_SHAPE_SINE"
+}`
 
 **Relationships:**
 
@@ -1004,7 +1638,33 @@ classDiagram
 
 ### VMixBoxverbDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flSizeMax": 0.000000,
+	"m_flSizeMin": 0.000000,
+	"m_flComplexity": 0.000000,
+	"m_flDiffusion": 0.000000,
+	"m_flModDepth": 0.000000,
+	"m_flModRate": 0.000000,
+	"m_bParallel": false,
+	"m_filterType":
+	{
+		"m_nFilterType": "FILTER_UNKNOWN",
+		"m_nFilterSlope": "FILTER_SLOPE_12dB",
+		"m_bEnabled": true,
+		"m_fldbGain": 0.000000,
+		"m_flCutoffFreq": 1000.000000,
+		"m_flQ": 0.707107
+	},
+	"m_flWidth": 0.000000,
+	"m_flHeight": 0.000000,
+	"m_flDepth": 0.000000,
+	"m_flFeedbackScale": 0.000000,
+	"m_flFeedbackWidth": 0.000000,
+	"m_flFeedbackHeight": 0.000000,
+	"m_flFeedbackDepth": 0.000000,
+	"m_flOutputGain": 0.000000,
+	"m_flTaps": 0.000000
+}`
 
 **Relationships:**
 
@@ -1037,7 +1697,16 @@ classDiagram
 
 ### VMixConvolutionDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_fldbGain": -12.000000,
+	"m_flPreDelayMS": 0.000000,
+	"m_flWetMix": 1.000000,
+	"m_fldbLow": 0.000000,
+	"m_fldbMid": 0.000000,
+	"m_fldbHigh": 0.000000,
+	"m_flLowCutoffFreq": 1500.000000,
+	"m_flHighCutoffFreq": 7500.000000
+}`
 
 **Fields:**
 
@@ -1054,7 +1723,23 @@ classDiagram
 
 ### VMixDelayDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_feedbackFilter":
+	{
+		"m_nFilterType": "FILTER_UNKNOWN",
+		"m_nFilterSlope": "FILTER_SLOPE_12dB",
+		"m_bEnabled": true,
+		"m_fldbGain": 0.000000,
+		"m_flCutoffFreq": 1000.000000,
+		"m_flQ": 0.707107
+	},
+	"m_bEnableFilter": false,
+	"m_flDelay": 0.000000,
+	"m_flDirectGain": 0.000000,
+	"m_flDelayGain": 0.000000,
+	"m_flFeedbackGain": 0.000000,
+	"m_flWidth": 0.000000
+}`
 
 **Relationships:**
 
@@ -1077,7 +1762,12 @@ classDiagram
 
 ### VMixDiffusorDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flSize": 0.000000,
+	"m_flComplexity": 0.000000,
+	"m_flFeedback": 0.000000,
+	"m_flOutputGain": 0.000000
+}`
 
 **Fields:**
 
@@ -1090,7 +1780,25 @@ classDiagram
 
 ### VMixDualCompressorDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flRMSTimeMS": 300.000000,
+	"m_fldbKneeWidth": 0.000000,
+	"m_flWetMix": 1.000000,
+	"m_bPeakMode": false,
+	"m_bandDesc":
+	{
+		"m_fldbGainInput": 0.000000,
+		"m_fldbGainOutput": 0.000000,
+		"m_fldbThresholdBelow": -40.000000,
+		"m_fldbThresholdAbove": -30.000000,
+		"m_flRatioBelow": 12.000000,
+		"m_flRatioAbove": 4.000000,
+		"m_flAttackTimeMS": 50.000000,
+		"m_flReleaseTimeMS": 200.000000,
+		"m_bEnable": false,
+		"m_bSolo": false
+	}
+}`
 
 **Relationships:**
 
@@ -1111,7 +1819,56 @@ classDiagram
 
 ### VMixDynamics3BandDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_fldbGainOutput": 0.000000,
+	"m_flRMSTimeMS": 0.000000,
+	"m_fldbKneeWidth": 0.000000,
+	"m_flDepth": 0.000000,
+	"m_flWetMix": 0.000000,
+	"m_flTimeScale": 0.000000,
+	"m_flLowCutoffFreq": 0.000000,
+	"m_flHighCutoffFreq": 0.000000,
+	"m_bPeakMode": false,
+	"m_bandDesc":
+	[
+		{
+			"m_fldbGainInput": 0.000000,
+			"m_fldbGainOutput": 0.000000,
+			"m_fldbThresholdBelow": -40.000000,
+			"m_fldbThresholdAbove": -30.000000,
+			"m_flRatioBelow": 12.000000,
+			"m_flRatioAbove": 4.000000,
+			"m_flAttackTimeMS": 50.000000,
+			"m_flReleaseTimeMS": 200.000000,
+			"m_bEnable": false,
+			"m_bSolo": false
+		},
+		{
+			"m_fldbGainInput": 0.000000,
+			"m_fldbGainOutput": 0.000000,
+			"m_fldbThresholdBelow": -40.000000,
+			"m_fldbThresholdAbove": -30.000000,
+			"m_flRatioBelow": 12.000000,
+			"m_flRatioAbove": 4.000000,
+			"m_flAttackTimeMS": 50.000000,
+			"m_flReleaseTimeMS": 200.000000,
+			"m_bEnable": false,
+			"m_bSolo": false
+		},
+		{
+			"m_fldbGainInput": 0.000000,
+			"m_fldbGainOutput": 0.000000,
+			"m_fldbThresholdBelow": -40.000000,
+			"m_fldbThresholdAbove": -30.000000,
+			"m_flRatioBelow": 12.000000,
+			"m_flRatioAbove": 4.000000,
+			"m_flAttackTimeMS": 50.000000,
+			"m_flReleaseTimeMS": 200.000000,
+			"m_bEnable": false,
+			"m_bSolo": false
+		}
+	]
+}`
 
 **Relationships:**
 
@@ -1137,7 +1894,18 @@ classDiagram
 
 ### VMixDynamicsBand_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_fldbGainInput": 0.000000,
+	"m_fldbGainOutput": 0.000000,
+	"m_fldbThresholdBelow": -40.000000,
+	"m_fldbThresholdAbove": -30.000000,
+	"m_flRatioBelow": 12.000000,
+	"m_flRatioAbove": 4.000000,
+	"m_flAttackTimeMS": 50.000000,
+	"m_flReleaseTimeMS": 200.000000,
+	"m_bEnable": false,
+	"m_bSolo": false
+}`
 
 **Fields:**
 
@@ -1156,7 +1924,17 @@ classDiagram
 
 ### VMixDynamicsCompressorDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_fldbOutputGain": 0.000000,
+	"m_fldbCompressionThreshold": -6.000000,
+	"m_fldbKneeWidth": 0.000000,
+	"m_flCompressionRatio": 2.000000,
+	"m_flAttackTimeMS": 100.000000,
+	"m_flReleaseTimeMS": 400.000000,
+	"m_flRMSTimeMS": 300.000000,
+	"m_flWetMix": 1.000000,
+	"m_bPeakMode": false
+}`
 
 **Fields:**
 
@@ -1174,7 +1952,20 @@ classDiagram
 
 ### VMixDynamicsDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_fldbGain": 0.000000,
+	"m_fldbNoiseGateThreshold": 0.000000,
+	"m_fldbCompressionThreshold": 0.000000,
+	"m_fldbLimiterThreshold": 0.000000,
+	"m_fldbKneeWidth": 0.000000,
+	"m_flRatio": 0.000000,
+	"m_flLimiterRatio": 0.000000,
+	"m_flAttackTimeMS": 0.000000,
+	"m_flReleaseTimeMS": 0.000000,
+	"m_flRMSTimeMS": 0.000000,
+	"m_flWetMix": 0.000000,
+	"m_bPeakMode": false
+}`
 
 **Fields:**
 
@@ -1195,7 +1986,75 @@ classDiagram
 
 ### VMixEQ8Desc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_stages":
+	[
+		{
+			"m_nFilterType": "FILTER_UNKNOWN",
+			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+			"m_bEnabled": true,
+			"m_fldbGain": 0.000000,
+			"m_flCutoffFreq": 1000.000000,
+			"m_flQ": 0.707107
+		},
+		{
+			"m_nFilterType": "FILTER_UNKNOWN",
+			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+			"m_bEnabled": true,
+			"m_fldbGain": 0.000000,
+			"m_flCutoffFreq": 1000.000000,
+			"m_flQ": 0.707107
+		},
+		{
+			"m_nFilterType": "FILTER_UNKNOWN",
+			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+			"m_bEnabled": true,
+			"m_fldbGain": 0.000000,
+			"m_flCutoffFreq": 1000.000000,
+			"m_flQ": 0.707107
+		},
+		{
+			"m_nFilterType": "FILTER_UNKNOWN",
+			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+			"m_bEnabled": true,
+			"m_fldbGain": 0.000000,
+			"m_flCutoffFreq": 1000.000000,
+			"m_flQ": 0.707107
+		},
+		{
+			"m_nFilterType": "FILTER_UNKNOWN",
+			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+			"m_bEnabled": true,
+			"m_fldbGain": 0.000000,
+			"m_flCutoffFreq": 1000.000000,
+			"m_flQ": 0.707107
+		},
+		{
+			"m_nFilterType": "FILTER_UNKNOWN",
+			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+			"m_bEnabled": true,
+			"m_fldbGain": 0.000000,
+			"m_flCutoffFreq": 1000.000000,
+			"m_flQ": 0.707107
+		},
+		{
+			"m_nFilterType": "FILTER_UNKNOWN",
+			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+			"m_bEnabled": true,
+			"m_fldbGain": 0.000000,
+			"m_flCutoffFreq": 1000.000000,
+			"m_flQ": 0.707107
+		},
+		{
+			"m_nFilterType": "FILTER_UNKNOWN",
+			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+			"m_bEnabled": true,
+			"m_fldbGain": 0.000000,
+			"m_flCutoffFreq": 1000.000000,
+			"m_flQ": 0.707107
+		}
+	]
+}`
 
 **Relationships:**
 
@@ -1212,7 +2071,9 @@ classDiagram
 
 ### VMixEffectChainDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_effectName": ""
+}`
 
 **Fields:**
 
@@ -1222,7 +2083,11 @@ classDiagram
 
 ### VMixEnvelopeDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flAttackTimeMS": 0.000000,
+	"m_flHoldTimeMS": 0.000000,
+	"m_flReleaseTimeMS": 0.000000
+}`
 
 **Fields:**
 
@@ -1234,7 +2099,14 @@ classDiagram
 
 ### VMixFilterDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nFilterType": "FILTER_UNKNOWN",
+	"m_nFilterSlope": "FILTER_SLOPE_12dB",
+	"m_bEnabled": true,
+	"m_fldbGain": 0.000000,
+	"m_flCutoffFreq": 1000.000000,
+	"m_flQ": 0.707107
+}`
 
 **Relationships:**
 
@@ -1257,7 +2129,17 @@ classDiagram
 
 ### VMixFlangerDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_bPhaseInvert": false,
+	"m_flGlideTime": 0.000000,
+	"m_flDelay": 0.000000,
+	"m_flOutputGain": 0.000000,
+	"m_flFeedbackGain": 0.000000,
+	"m_flFeedforwardGain": 0.000000,
+	"m_flModRate": 0.000000,
+	"m_flModDepth": 0.000000,
+	"m_bApplyAntialiasing": false
+}`
 
 **Fields:**
 
@@ -1275,7 +2157,12 @@ classDiagram
 
 ### VMixFreeverbDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flRoomSize": 0.000000,
+	"m_flDamp": 0.000000,
+	"m_flWidth": 0.000000,
+	"m_flLateReflections": 0.000000
+}`
 
 **Fields:**
 
@@ -1288,7 +2175,25 @@ classDiagram
 
 ### VMixModDelayDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_feedbackFilter":
+	{
+		"m_nFilterType": "FILTER_UNKNOWN",
+		"m_nFilterSlope": "FILTER_SLOPE_12dB",
+		"m_bEnabled": true,
+		"m_fldbGain": 0.000000,
+		"m_flCutoffFreq": 1000.000000,
+		"m_flQ": 0.707107
+	},
+	"m_bPhaseInvert": false,
+	"m_flGlideTime": 0.000000,
+	"m_flDelay": 0.000000,
+	"m_flOutputGain": 0.000000,
+	"m_flFeedbackGain": 0.000000,
+	"m_flModRate": 0.000000,
+	"m_flModDepth": 0.000000,
+	"m_bApplyAntialiasing": false
+}`
 
 **Relationships:**
 
@@ -1313,7 +2218,11 @@ classDiagram
 
 ### VMixOscDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"oscType": "LFO_SHAPE_SINE",
+	"m_freq": 440.000000,
+	"m_flPhase": 0.000000
+}`
 
 **Relationships:**
 
@@ -1332,7 +2241,10 @@ classDiagram
 
 ### VMixPannerDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_type": "PANNER_TYPE_LINEAR",
+	"m_flStrength": 0.000000
+}`
 
 **Relationships:**
 
@@ -1350,7 +2262,12 @@ classDiagram
 
 ### VMixPitchShiftDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nGrainSampleCount": 0,
+	"m_flPitchShift": 0.000000,
+	"m_nQuality": 0,
+	"m_nProcType": 0
+}`
 
 **Fields:**
 
@@ -1363,7 +2280,15 @@ classDiagram
 
 ### VMixPlateverbDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flPrefilter": 0.000000,
+	"m_flInputDiffusion1": 0.000000,
+	"m_flInputDiffusion2": 0.000000,
+	"m_flDecay": 0.000000,
+	"m_flDamp": 0.000000,
+	"m_flFeedbackDiffusion1": 0.000000,
+	"m_flFeedbackDiffusion2": 0.000000
+}`
 
 **Fields:**
 
@@ -1379,7 +2304,9 @@ classDiagram
 
 ### VMixPresetDSPDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_effectName": ""
+}`
 
 **Fields:**
 
@@ -1389,7 +2316,13 @@ classDiagram
 
 ### VMixShaperDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nShape": 0,
+	"m_fldbDrive": 0.000000,
+	"m_fldbOutputGain": 0.000000,
+	"m_flWetMix": 1.000000,
+	"m_nOversampleFactor": 1
+}`
 
 **Fields:**
 
@@ -1403,7 +2336,16 @@ classDiagram
 
 ### VMixSubgraphSwitchDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_effectName": "",
+	"m_subgraphs":
+	[
+	],
+	"m_interpolationMode": "SUBGRAPH_INTERPOLATION_TEMPORAL_CROSSFADE",
+	"m_bOnlyTailsOnFadeOut": false,
+	"m_flInterpolationTime": 0.000000
+}`
 
 **Relationships:**
 
@@ -1425,7 +2367,14 @@ classDiagram
 
 ### VMixUtilityDesc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nOp": "VMIX_CHAN_STEREO",
+	"m_flInputPan": 0.000000,
+	"m_flOutputBalance": 0.000000,
+	"m_fldbOutputGain": 0.000000,
+	"m_bBassMono": false,
+	"m_flBassFreq": 120.000000
+}`
 
 **Relationships:**
 

@@ -37,7 +37,12 @@ nav_exclude: true
 
 ### AssetEngineCommand_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Command": "",
+	"m_Icon": "",
+	"m_Description": "",
+	"m_bBringEngineToFront": false
+}`
 
 **Fields:**
 
@@ -50,7 +55,12 @@ nav_exclude: true
 
 ### AutoTagVDataCondition_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_SourceFile": "",
+	"m_AssetKey": "",
+	"m_AlternateAssetKey": "",
+	"m_Expression": ""
+}`
 
 **Relationships:**
 
@@ -72,7 +82,32 @@ Most simple expressions involving the VData keys are supported. Use 'true' to ta
 
 ### CAssetTagInfo
 
-**Metadata:** `MGetKV3ClassDefaults`, `MVDataOutlinerDetailExpr`, `MVDataOutlinerIconExpr`, `MVDataRoot`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_TagName": "",
+	"m_TagDescription": "",
+	"m_TagIcon": "",
+	"m_TagColor":
+	[
+		255,
+		255,
+		255
+	],
+	"m_TagAliases":
+	[
+	],
+	"m_ThumbnailOverlayImage": "",
+	"m_bTagIndicatesRejectedAsset": false,
+	"m_bTagHidesAssetByDefault": false,
+	"m_RestrictAutoTagToAssetType": "",
+	"m_AutoFilterTag": "",
+	"m_AutoDataTag":
+	{
+		"m_SourceFile": "",
+		"m_AssetKey": "",
+		"m_AlternateAssetKey": "",
+		"m_Expression": ""
+	}
+}`, `MVDataOutlinerDetailExpr m_TagName`, `MVDataOutlinerIconExpr m_TagIcon`, `MVDataRoot`
 
 **Relationships:**
 
@@ -94,12 +129,22 @@ classDiagram
 | `m_bTagIndicatesRejectedAsset` | bool | `MPropertyDescription If set, the presence of this tag will cause the tools to suppress or dissuade use in several ways (and draw a red X over the asset preview)` |
 | `m_bTagHidesAssetByDefault` | bool | `MPropertyDescription If set, the presence of this tag will cause the tools to hide the asset from users by default. NOTE: This means if an asset gets tagged with this it might 'dissapear' from the UI!` |
 | `m_RestrictAutoTagToAssetType` | CUtlString | `MPropertyDescription Required for any auto-tag. Restricts the auto-application of this tag to a specific asset type (string from assettypes_common.txt like 'material_asset' or 'model_asset')` `MPropertyStartGroup +Auto Tags` |
-| `m_AutoFilterTag` | CUtlString | `MPropertyAutoExpandSelf` `MPropertyDescription Set this to automatically apply this tag based on an asset filter string. (NOTE: Auto tag names MUST start with an '@' character!)` `MPropertySuppressExpr` |
-| `m_AutoDataTag` | [AutoTagVDataCondition_t](../schemas/toolutils2.md#autotagvdatacondition_t) | `MPropertyAutoExpandSelf` `MPropertyDescription Set this to automatically apply this tag to assets based on references from a VData file. (NOTE: Auto tag names MUST start with an '@' character!)` `MPropertySuppressExpr` |
+| `m_AutoFilterTag` | CUtlString | `MPropertyAutoExpandSelf` `MPropertyDescription Set this to automatically apply this tag based on an asset filter string. (NOTE: Auto tag names MUST start with an '@' character!)` `MPropertySuppressExpr m_RestrictAutoTagToAssetType == ""` |
+| `m_AutoDataTag` | [AutoTagVDataCondition_t](../schemas/toolutils2.md#autotagvdatacondition_t) | `MPropertyAutoExpandSelf` `MPropertyDescription Set this to automatically apply this tag to assets based on references from a VData file. (NOTE: Auto tag names MUST start with an '@' character!)` `MPropertySuppressExpr m_RestrictAutoTagToAssetType == ""` |
 
 ### CAssetTypeConfig
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_AssetTypes":
+	[
+	],
+	"m_SubassetTypes":
+	[
+	],
+	"m_AssetWarnings":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -120,7 +165,13 @@ classDiagram
 
 ### CAssetWarning
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Title": "",
+	"m_Message": "",
+	"m_Checks":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -139,7 +190,19 @@ classDiagram
 
 ### CAssetWarningCheck
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_AssetType": "",
+	"m_RequireSearchableIntKey": "",
+	"m_RequireSearchableIntValue": -1,
+	"m_bOnlyWarnIfGameFilePresent": false,
+	"m_bOnlyWarnIfContentFilePresent": false,
+	"m_bOnlyWarnAddons": false,
+	"m_ExcludeAddonNames":
+	[
+	],
+	"m_FixDescription": "",
+	"m_FixType": "NONE"
+}`
 
 **Relationships:**
 
@@ -166,7 +229,12 @@ classDiagram
 
 **Derived by:** [CEngineToolInfo](toolutils2.md#cenginetoolinfo), [CExternalToolInfo](toolutils2.md#cexternaltoolinfo)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Name": "",
+	"m_OverrideToolShortcutName": "",
+	"m_FriendlyName": "",
+	"m_ToolIcon": ""
+}`
 
 **Relationships:**
 
@@ -189,7 +257,47 @@ classDiagram
 
 **Inherits from:** [CSimpleAssetTypeInfo](toolutils2.md#csimpleassettypeinfo)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CBitmapAssetTypeInfo",
+	"m_FriendlyName": "",
+	"m_Ext": "",
+	"m_IconLg": "game:tools/images/assettypes/generic_lg.png",
+	"m_IconSm": "game:tools/images/assettypes/generic_sm.png",
+	"m_SuppressSubstrings":
+	[
+	],
+	"m_AdditionalExtensions":
+	[
+	],
+	"m_EngineCommands":
+	[
+	],
+	"m_LimitToMods":
+	[
+	],
+	"m_ExcludeFromMods":
+	[
+	],
+	"m_HideForRetailMods":
+	[
+	],
+	"m_PreviewThumbnailOverlayIcon": "",
+	"m_bErrorOnUnrecognizedOutboundRefs": false,
+	"m_UnrecognizedOutboundRefsErrorTypeExceptions":
+	[
+	],
+	"m_bHideTypeByDefault": false,
+	"m_bCannotBeShown": false,
+	"m_bIsNontrivialChildAssetType": false,
+	"m_bSuppressFullFingerprintCalculation": false,
+	"m_bIgnoreCompiledState": false,
+	"m_bContentFileIsText": false,
+	"m_bPrefersLivePreview": false,
+	"m_bPresentInGameTree": false,
+	"m_bShouldCompileErrorFallbackToDisk": false,
+	"m_nAssetTypeVersion": 0,
+	"m_Test_InjectSearchable": ""
+}`
 
 **Relationships:**
 
@@ -200,7 +308,39 @@ classDiagram
 
 ### CDetailPropModel
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Model`, `MVDataAnonymousNode`, `MVDataOutlinerAssetNameExpr`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_ModelName": "",
+	"m_MaterialGroup": "",
+	"m_flWeight": 1.000000,
+	"m_flStartFadeSize": 0.020000,
+	"m_flEndFadeSize": 0.012500,
+	"m_bWorldSpaceOrientation": false,
+	"m_flOrientToSurface": 1.000000,
+	"m_flMinSurfaceSlope": 0.000000,
+	"m_flMaxSurfaceSlope": 180.000000,
+	"m_flRandomVerticalOffsetMin": 0.000000,
+	"m_flRandomVerticalOffsetMax": 0.000000,
+	"m_vRandomRotationMin":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vRandomRotationMax":
+	[
+		0.000000,
+		360.000000,
+		0.000000
+	],
+	"m_flRandomScaleMin": 1.000000,
+	"m_flRandomScaleMax": 1.000000,
+	"m_flDensityMinScale": 1.000000,
+	"m_flBlendWeightMinScale": 1.000000,
+	"m_flBlendWeightMin": 0.250000,
+	"m_flBlendWeightMax": 1.000000,
+	"m_flBlendWeightFullDenstity": 0.750000,
+	"m_bCastStaticShadows": false
+}`, `MPropertyFriendlyName Model`, `MVDataAnonymousNode`, `MVDataOutlinerAssetNameExpr`
 
 **Relationships:**
 
@@ -213,7 +353,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_ModelName` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > > | `MPropertyDescription Model to be displayed.` `MPropertyProvidesEditContextString` |
+| `m_ModelName` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > > | `MPropertyDescription Model to be displayed.` `MPropertyProvidesEditContextString ToolEditContext_ID_VMDL` |
 | `m_MaterialGroup` | CModelMaterialGroupName | `MPropertyDescription Material group (skin) to assign to use with the model.` |
 | `m_flWeight` | float32 | `MPropertyDescription A weight determining the frequency at which this model is placed relative to other models within the detail type. The weights of all models are summed and the probability of selecting this model is its weight divided by the sum weight.` |
 | `m_flStartFadeSize` | float32 | `MPropertyAttributeRange 0.001 1.0` `MPropertyDescription Screen space size [ 0, 1 ] (where 1 is the whole screen) at which the model will begin to to fade out. Anything larger will be fully visible, anything smaller will start to fade out.` `MPropertyFriendlyName Start fade out size` |
@@ -237,7 +377,12 @@ classDiagram
 
 ### CDetailPropType
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Detail Prop Type`, `MVDataAssociatedFile`, `MVDataOutlinerDefaultExpanded`, `MVDataRoot`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flDensity": 1.000000,
+	"m_Models":
+	[
+	]
+}`, `MPropertyFriendlyName Detail Prop Type`, `MVDataAssociatedFile scripts/detail_prop_types.vdata`, `MVDataOutlinerDefaultExpanded`, `MVDataRoot`
 
 **Relationships:**
 
@@ -251,13 +396,35 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_flDensity` | float32 | `MPropertyDescription Specifies the number of props placed per square foot.` |
-| `m_Models` | CUtlVector< [CDetailPropModel](../schemas/toolutils2.md#cdetailpropmodel) > | `MVDataPromoteField` |
+| `m_Models` | CUtlVector< [CDetailPropModel](../schemas/toolutils2.md#cdetailpropmodel) > | `MVDataPromoteField 1` |
 
 ### CEngineToolInfo
 
 **Inherits from:** [CBaseToolInfo](toolutils2.md#cbasetoolinfo)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Name": "",
+	"m_OverrideToolShortcutName": "",
+	"m_FriendlyName": "",
+	"m_ToolIcon": "",
+	"m_Library": "",
+	"m_InterfaceName": "",
+	"m_bShowInRevisionSubMenu": false,
+	"m_bIsSecondaryTool": false,
+	"m_bDoNotWarnAboutLargeAssetBatches": false,
+	"m_bIsWorkshopManagerTool": false,
+	"m_bIsWorkshopItemTool": false,
+	"m_bCanHighlightSubassets": false,
+	"m_AssetTypes":
+	[
+	],
+	"m_LimitToMods":
+	[
+	],
+	"m_ExcludeFromMods":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -286,7 +453,24 @@ classDiagram
 
 **Inherits from:** [CBaseToolInfo](toolutils2.md#cbasetoolinfo)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Name": "",
+	"m_OverrideToolShortcutName": "",
+	"m_FriendlyName": "",
+	"m_ToolIcon": "",
+	"m_Executable": "",
+	"m_Args": "",
+	"m_ArgsWithLineColumn": "",
+	"m_WorkingDir": "",
+	"m_MatchSystemExecutable": "",
+	"m_SupportedExts":
+	[
+	],
+	"m_PriorityExts":
+	[
+	],
+	"m_bDebugCommandline": false
+}`
 
 **Relationships:**
 
@@ -310,7 +494,16 @@ classDiagram
 
 ### CManifestInfo
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Name": "",
+	"m_Group": "",
+	"m_Mod": "",
+	"m_SourceFile": "",
+	"m_nSourceLine": 0,
+	"m_Resources":
+	[
+	]
+}`
 
 **Fields:**
 
@@ -327,7 +520,59 @@ classDiagram
 
 **Inherits from:** [CResourceAssetTypeInfo](toolutils2.md#cresourceassettypeinfo)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMapAssetTypeInfo",
+	"m_FriendlyName": "",
+	"m_Ext": "",
+	"m_IconLg": "game:tools/images/assettypes/generic_lg.png",
+	"m_IconSm": "game:tools/images/assettypes/generic_sm.png",
+	"m_SuppressSubstrings":
+	[
+	],
+	"m_AdditionalExtensions":
+	[
+	],
+	"m_EngineCommands":
+	[
+	],
+	"m_LimitToMods":
+	[
+	],
+	"m_ExcludeFromMods":
+	[
+	],
+	"m_HideForRetailMods":
+	[
+	],
+	"m_PreviewThumbnailOverlayIcon": "",
+	"m_bErrorOnUnrecognizedOutboundRefs": false,
+	"m_UnrecognizedOutboundRefsErrorTypeExceptions":
+	[
+	],
+	"m_bHideTypeByDefault": false,
+	"m_bCannotBeShown": false,
+	"m_bIsNontrivialChildAssetType": false,
+	"m_bSuppressFullFingerprintCalculation": false,
+	"m_bIgnoreCompiledState": false,
+	"m_bContentFileIsText": false,
+	"m_bPrefersLivePreview": false,
+	"m_bPresentInGameTree": false,
+	"m_bShouldCompileErrorFallbackToDisk": false,
+	"m_nAssetTypeVersion": 0,
+	"m_Test_InjectSearchable": "",
+	"m_CompilerIdentifier": "",
+	"m_CompileDependsOnResourceTypes":
+	[
+	],
+	"m_Blocks":
+	[
+	],
+	"m_RequiredSpecialDependency": "",
+	"m_bPreventDirectCompile": false,
+	"m_bCannotBeAMultiParentChildCompile": false,
+	"m_bPrefersIconForThumbnail": false,
+	"m_bAllowedToCompileInTestMode": false
+}`
 
 **Relationships:**
 
@@ -339,7 +584,11 @@ classDiagram
 
 ### CModuleManifests
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Manifests":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -360,7 +609,59 @@ classDiagram
 
 **Derived by:** [CMapAssetTypeInfo](toolutils2.md#cmapassettypeinfo)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CResourceAssetTypeInfo",
+	"m_FriendlyName": "",
+	"m_Ext": "",
+	"m_IconLg": "game:tools/images/assettypes/generic_lg.png",
+	"m_IconSm": "game:tools/images/assettypes/generic_sm.png",
+	"m_SuppressSubstrings":
+	[
+	],
+	"m_AdditionalExtensions":
+	[
+	],
+	"m_EngineCommands":
+	[
+	],
+	"m_LimitToMods":
+	[
+	],
+	"m_ExcludeFromMods":
+	[
+	],
+	"m_HideForRetailMods":
+	[
+	],
+	"m_PreviewThumbnailOverlayIcon": "",
+	"m_bErrorOnUnrecognizedOutboundRefs": false,
+	"m_UnrecognizedOutboundRefsErrorTypeExceptions":
+	[
+	],
+	"m_bHideTypeByDefault": false,
+	"m_bCannotBeShown": false,
+	"m_bIsNontrivialChildAssetType": false,
+	"m_bSuppressFullFingerprintCalculation": false,
+	"m_bIgnoreCompiledState": false,
+	"m_bContentFileIsText": false,
+	"m_bPrefersLivePreview": false,
+	"m_bPresentInGameTree": false,
+	"m_bShouldCompileErrorFallbackToDisk": false,
+	"m_nAssetTypeVersion": 0,
+	"m_Test_InjectSearchable": "",
+	"m_CompilerIdentifier": "",
+	"m_CompileDependsOnResourceTypes":
+	[
+	],
+	"m_Blocks":
+	[
+	],
+	"m_RequiredSpecialDependency": "",
+	"m_bPreventDirectCompile": false,
+	"m_bCannotBeAMultiParentChildCompile": false,
+	"m_bPrefersIconForThumbnail": false,
+	"m_bAllowedToCompileInTestMode": false
+}`
 
 **Relationships:**
 
@@ -388,7 +689,47 @@ classDiagram
 
 **Derived by:** [CBitmapAssetTypeInfo](toolutils2.md#cbitmapassettypeinfo), [CResourceAssetTypeInfo](toolutils2.md#cresourceassettypeinfo), [CVMMDAssetTypeInfo](toolutils2.md#cvmmdassettypeinfo)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSimpleAssetTypeInfo",
+	"m_FriendlyName": "",
+	"m_Ext": "",
+	"m_IconLg": "game:tools/images/assettypes/generic_lg.png",
+	"m_IconSm": "game:tools/images/assettypes/generic_sm.png",
+	"m_SuppressSubstrings":
+	[
+	],
+	"m_AdditionalExtensions":
+	[
+	],
+	"m_EngineCommands":
+	[
+	],
+	"m_LimitToMods":
+	[
+	],
+	"m_ExcludeFromMods":
+	[
+	],
+	"m_HideForRetailMods":
+	[
+	],
+	"m_PreviewThumbnailOverlayIcon": "",
+	"m_bErrorOnUnrecognizedOutboundRefs": false,
+	"m_UnrecognizedOutboundRefsErrorTypeExceptions":
+	[
+	],
+	"m_bHideTypeByDefault": false,
+	"m_bCannotBeShown": false,
+	"m_bIsNontrivialChildAssetType": false,
+	"m_bSuppressFullFingerprintCalculation": false,
+	"m_bIgnoreCompiledState": false,
+	"m_bContentFileIsText": false,
+	"m_bPrefersLivePreview": false,
+	"m_bPresentInGameTree": false,
+	"m_bShouldCompileErrorFallbackToDisk": false,
+	"m_nAssetTypeVersion": 0,
+	"m_Test_InjectSearchable": ""
+}`
 
 **Relationships:**
 
@@ -431,7 +772,11 @@ classDiagram
 
 ### CSubassetTypeInfo
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_bFollowReferences": false,
+	"m_bAllowDefinitions": true,
+	"m_bAllowReferences": true
+}`
 
 **Fields:**
 
@@ -443,7 +788,17 @@ classDiagram
 
 ### CToolsConfig
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_EngineTools":
+	[
+	],
+	"m_ExternalTools":
+	[
+	],
+	"m_EngineModulesThatReferenceAssets":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -465,7 +820,47 @@ classDiagram
 
 **Inherits from:** [CSimpleAssetTypeInfo](toolutils2.md#csimpleassettypeinfo)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVMMDAssetTypeInfo",
+	"m_FriendlyName": "",
+	"m_Ext": "",
+	"m_IconLg": "game:tools/images/assettypes/generic_lg.png",
+	"m_IconSm": "game:tools/images/assettypes/generic_sm.png",
+	"m_SuppressSubstrings":
+	[
+	],
+	"m_AdditionalExtensions":
+	[
+	],
+	"m_EngineCommands":
+	[
+	],
+	"m_LimitToMods":
+	[
+	],
+	"m_ExcludeFromMods":
+	[
+	],
+	"m_HideForRetailMods":
+	[
+	],
+	"m_PreviewThumbnailOverlayIcon": "",
+	"m_bErrorOnUnrecognizedOutboundRefs": false,
+	"m_UnrecognizedOutboundRefsErrorTypeExceptions":
+	[
+	],
+	"m_bHideTypeByDefault": false,
+	"m_bCannotBeShown": false,
+	"m_bIsNontrivialChildAssetType": false,
+	"m_bSuppressFullFingerprintCalculation": false,
+	"m_bIgnoreCompiledState": false,
+	"m_bContentFileIsText": false,
+	"m_bPrefersLivePreview": false,
+	"m_bPresentInGameTree": false,
+	"m_bShouldCompileErrorFallbackToDisk": false,
+	"m_nAssetTypeVersion": 0,
+	"m_Test_InjectSearchable": ""
+}`
 
 **Relationships:**
 
@@ -476,7 +871,12 @@ classDiagram
 
 ### ResourceBlockTypeInfo_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Encoding": "RESOURCE_ENCODING_INTROSPECTED",
+	"m_BlockID": "",
+	"m_IntrospectedRootStruct": "",
+	"m_ResourceVersion": -1
+}`
 
 **Relationships:**
 

@@ -22,7 +22,10 @@ nav_exclude: true
 
 ### CExampleSchemaVData_Monomorphic
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nExample1": 5,
+	"m_nExample2": 5
+}`
 
 **Fields:**
 
@@ -35,7 +38,10 @@ nav_exclude: true
 
 **Derived by:** [CExampleSchemaVData_PolymorphicDerivedA](resourcefile.md#cexampleschemavdata_polymorphicderiveda), [CExampleSchemaVData_PolymorphicDerivedB](resourcefile.md#cexampleschemavdata_polymorphicderivedb)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CExampleSchemaVData_PolymorphicBase",
+	"m_nBase": 5
+}`
 
 **Relationships:**
 
@@ -55,7 +61,11 @@ classDiagram
 
 **Inherits from:** [CExampleSchemaVData_PolymorphicBase](resourcefile.md#cexampleschemavdata_polymorphicbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CExampleSchemaVData_PolymorphicDerivedA",
+	"m_nBase": 5,
+	"m_nDerivedA": 5
+}`
 
 **Relationships:**
 
@@ -74,7 +84,11 @@ classDiagram
 
 **Inherits from:** [CExampleSchemaVData_PolymorphicBase](resourcefile.md#cexampleschemavdata_polymorphicbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CExampleSchemaVData_PolymorphicDerivedB",
+	"m_nBase": 5,
+	"m_nDerivedB": 5
+}`
 
 **Relationships:**
 
@@ -91,7 +105,7 @@ classDiagram
 
 ### InfoForResourceTypeCResourceManifestInternal
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vrman`
 
 ### ResourceId_t
 

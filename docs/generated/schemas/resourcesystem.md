@@ -64,195 +64,198 @@ nav_exclude: true
 
 ### InfoForResourceTypeCAnimData
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vanim`
 
 ### InfoForResourceTypeCAnimationGroup
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vagrp`
 
 ### InfoForResourceTypeCCSGOEconItem
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType econitem`
 
 ### InfoForResourceTypeCChoreoSceneResource
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vcd`
 
 ### InfoForResourceTypeCCompositeMaterialKit
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vcompmat`
 
 ### InfoForResourceTypeCDOTANovelsList
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vdvn`
 
 ### InfoForResourceTypeCDOTAPatchNotesList
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vdpn`
 
 ### InfoForResourceTypeCDotaItemDefinitionResource
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType item`
 
 ### InfoForResourceTypeCEntityLump
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vents`
 
 ### InfoForResourceTypeCGcExportableExternalData
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vgcxdata`
 
 ### InfoForResourceTypeCJavaScriptResource
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vjs`
 
 ### InfoForResourceTypeCModel
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vmdl`
 
 ### InfoForResourceTypeCMorphSetData
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vmorf`
 
 ### InfoForResourceTypeCNmClip
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vnmclip`
 
 ### InfoForResourceTypeCNmGraphDefinition
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vnmgraph`
 
 ### InfoForResourceTypeCNmSkeleton
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vnmskel`
 
 ### InfoForResourceTypeCPanoramaDynamicImages
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vpdi`
 
 ### InfoForResourceTypeCPanoramaLayout
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vxml`
 
 ### InfoForResourceTypeCPanoramaStyle
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vcss`
 
 ### InfoForResourceTypeCPhysAggregateData
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vphys`
 
 ### InfoForResourceTypeCPostProcessingResource
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vpost`
 
 ### InfoForResourceTypeCRenderMesh
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vmesh`
 
 ### InfoForResourceTypeCResponseRulesList
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vrr`
 
 ### InfoForResourceTypeCSequenceGroupData
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vseq`
 
 ### InfoForResourceTypeCSmartProp
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vsmart`
 
 ### InfoForResourceTypeCSurfaceGraph
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vsgraph`
 
 ### InfoForResourceTypeCTestResourceData
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vtest`
 
 ### InfoForResourceTypeCTextureBase
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vtex`
 
 ### InfoForResourceTypeCTypeScriptResource
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vts`
 
 ### InfoForResourceTypeCVDataItemDefs
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType itemdefs`
 
 ### InfoForResourceTypeCVDataResource
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vdata`
 
 ### InfoForResourceTypeCVMixListResource
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vmix`
 
 ### InfoForResourceTypeCVPhysXSurfacePropertiesList
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vsurf`
 
 ### InfoForResourceTypeCVSoundEventScriptList
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vsndevts`
 
 ### InfoForResourceTypeCVSoundStackScriptList
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vsndstck`
 
 ### InfoForResourceTypeCVoiceContainerBase
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vsnd`
 
 ### InfoForResourceTypeCVoxelVisibility
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vvis`
 
 ### InfoForResourceTypeCWorldNode
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vwnod`
 
 ### InfoForResourceTypeIAnimGraphModelBinding
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vanmgrph`
 
 ### InfoForResourceTypeIMaterial2
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vmat`
 
 ### InfoForResourceTypeIParticleSnapshot
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vsnap`
 
 ### InfoForResourceTypeIParticleSystemDefinition
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vpcf`
 
 ### InfoForResourceTypeIPulseGraphDef
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vpulse`
 
 ### InfoForResourceTypeIVectorGraphic
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vsvg`
 
 ### InfoForResourceTypeManifestTestResource_t
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vmtst`
 
 ### InfoForResourceTypeProceduralTestResource_t
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vptest`
 
 ### InfoForResourceTypeWorld_t
 
-**Metadata:** `MResourceTypeForInfoType`
+**Metadata:** `MResourceTypeForInfoType vwrld`
 
 ### ManifestTestResource_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"name": "",
+	"child": ""
+}`
 
 **Relationships:**
 

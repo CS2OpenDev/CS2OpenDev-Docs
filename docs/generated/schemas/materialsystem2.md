@@ -33,7 +33,10 @@ nav_exclude: true
 
 **Inherits from:** [MaterialParam_t](materialsystem2.md#materialparam_t)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_value": "[BINARY BLOB]"
+}`
 
 **Relationships:**
 
@@ -52,7 +55,10 @@ classDiagram
 
 **Inherits from:** [MaterialParam_t](materialsystem2.md#materialparam_t)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_flValue": 0.000000
+}`
 
 **Relationships:**
 
@@ -71,7 +77,10 @@ classDiagram
 
 **Inherits from:** [MaterialParam_t](materialsystem2.md#materialparam_t)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_nValue": 0
+}`
 
 **Relationships:**
 
@@ -90,7 +99,10 @@ classDiagram
 
 **Inherits from:** [MaterialParam_t](materialsystem2.md#materialparam_t)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_value": ""
+}`
 
 **Relationships:**
 
@@ -109,7 +121,10 @@ classDiagram
 
 **Inherits from:** [MaterialParam_t](materialsystem2.md#materialparam_t)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_pValue": ""
+}`
 
 **Relationships:**
 
@@ -129,7 +144,16 @@ classDiagram
 
 **Inherits from:** [MaterialParam_t](materialsystem2.md#materialparam_t)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_value":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`
 
 **Relationships:**
 
@@ -148,7 +172,9 @@ classDiagram
 
 **Derived by:** [MaterialParamBuffer_t](materialsystem2.md#materialparambuffer_t), [MaterialParamFloat_t](materialsystem2.md#materialparamfloat_t), [MaterialParamInt_t](materialsystem2.md#materialparamint_t), [MaterialParamString_t](materialsystem2.md#materialparamstring_t), [MaterialParamTexture_t](materialsystem2.md#materialparamtexture_t), [MaterialParamVector_t](materialsystem2.md#materialparamvector_t)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": ""
+}`
 
 **Relationships:**
 
@@ -170,7 +196,46 @@ classDiagram
 
 ### MaterialResourceData_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_materialName": "",
+	"m_shaderName": "",
+	"m_intParams":
+	[
+	],
+	"m_floatParams":
+	[
+	],
+	"m_vectorParams":
+	[
+	],
+	"m_textureParams":
+	[
+	],
+	"m_dynamicParams":
+	[
+	],
+	"m_dynamicTextureParams":
+	[
+	],
+	"m_intAttributes":
+	[
+	],
+	"m_floatAttributes":
+	[
+	],
+	"m_vectorAttributes":
+	[
+	],
+	"m_textureAttributes":
+	[
+	],
+	"m_stringAttributes":
+	[
+	],
+	"m_renderAttributesUsed":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -205,7 +270,58 @@ classDiagram
 
 ### PostProcessingBloomParameters_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_blendMode": "BLOOM_BLEND_ADD",
+	"m_flBloomStrength": 2.000000,
+	"m_flScreenBloomStrength": 1.000000,
+	"m_flBlurBloomStrength": 1.000000,
+	"m_flBloomThreshold": 0.000000,
+	"m_flBloomThresholdWidth": 1.000000,
+	"m_flSkyboxBloomStrength": 1.000000,
+	"m_flBloomStartValue": 1.000000,
+	"m_flComputeBloomStrength": 0.030000,
+	"m_flComputeBloomThreshold": 1.000000,
+	"m_flComputeBloomRadius": 0.600000,
+	"m_flComputeBloomEffectsScale": 1.000000,
+	"m_flComputeBloomLensDirtStrength": 0.000000,
+	"m_flComputeBloomLensDirtBlackLevel": 0.100000,
+	"m_flBlurWeight":
+	[
+		0.200000,
+		0.200000,
+		0.200000,
+		0.200000,
+		0.200000
+	],
+	"m_vBlurTint":
+	[
+		[
+			1.000000,
+			1.000000,
+			1.000000
+		],
+		[
+			1.000000,
+			1.000000,
+			1.000000
+		],
+		[
+			1.000000,
+			1.000000,
+			1.000000
+		],
+		[
+			1.000000,
+			1.000000,
+			1.000000
+		],
+		[
+			1.000000,
+			1.000000,
+			1.000000
+		]
+	]
+}`
 
 **Relationships:**
 
@@ -237,7 +353,16 @@ classDiagram
 
 ### PostProcessingFogScatteringParameters_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_fRadius": 0.750000,
+	"m_fScale": 0.000000,
+	"m_fCubemapScale": 1.000000,
+	"m_fVolumetricScale": 1.000000,
+	"m_fGradientScale": 1.000000,
+	"m_fWaterScale": 0.000000,
+	"m_fWaterDensity": 0.000000,
+	"m_fWaterDepthBlurRadius": 0.000000
+}`
 
 **Fields:**
 
@@ -254,7 +379,13 @@ classDiagram
 
 ### PostProcessingLocalContrastParameters_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flLocalContrastStrength": 0.000000,
+	"m_flLocalContrastEdgeStrength": 0.000000,
+	"m_flLocalContrastVignetteStart": 0.000000,
+	"m_flLocalContrastVignetteEnd": 0.000000,
+	"m_flLocalContrastVignetteBlur": 0.000000
+}`
 
 **Fields:**
 
@@ -268,7 +399,12 @@ classDiagram
 
 ### PostProcessingLocalExposureParameters_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_fShadowOffsetEV": 0.000000,
+	"m_fHighlightOffsetEV": 0.000000,
+	"m_fSigma": 0.500000,
+	"m_fBoostLocalContrast": 0.000000
+}`
 
 **Fields:**
 
@@ -281,7 +417,132 @@ classDiagram
 
 ### PostProcessingResource_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_bHasTonemapParams": false,
+	"m_toneMapParams":
+	{
+		"m_flExposureBias": 0.000000,
+		"m_flShoulderStrength": 0.000000,
+		"m_flLinearStrength": 0.000000,
+		"m_flLinearAngle": 0.000000,
+		"m_flToeStrength": 0.000000,
+		"m_flToeNum": 0.000000,
+		"m_flToeDenom": 0.000000,
+		"m_flWhitePoint": 0.000000,
+		"m_flLuminanceSource": 0.000000,
+		"m_flExposureBiasShadows": 0.000000,
+		"m_flExposureBiasHighlights": 0.000000,
+		"m_flMinShadowLum": 0.000000,
+		"m_flMaxShadowLum": 0.000000,
+		"m_flMinHighlightLum": 0.000000,
+		"m_flMaxHighlightLum": 0.000000
+	},
+	"m_bHasBloomParams": false,
+	"m_bloomParams":
+	{
+		"m_blendMode": "BLOOM_BLEND_ADD",
+		"m_flBloomStrength": 2.000000,
+		"m_flScreenBloomStrength": 1.000000,
+		"m_flBlurBloomStrength": 1.000000,
+		"m_flBloomThreshold": 0.000000,
+		"m_flBloomThresholdWidth": 1.000000,
+		"m_flSkyboxBloomStrength": 1.000000,
+		"m_flBloomStartValue": 1.000000,
+		"m_flComputeBloomStrength": 0.030000,
+		"m_flComputeBloomThreshold": 1.000000,
+		"m_flComputeBloomRadius": 0.600000,
+		"m_flComputeBloomEffectsScale": 1.000000,
+		"m_flComputeBloomLensDirtStrength": 0.000000,
+		"m_flComputeBloomLensDirtBlackLevel": 0.100000,
+		"m_flBlurWeight":
+		[
+			0.200000,
+			0.200000,
+			0.200000,
+			0.200000,
+			0.200000
+		],
+		"m_vBlurTint":
+		[
+			[
+				1.000000,
+				1.000000,
+				1.000000
+			],
+			[
+				1.000000,
+				1.000000,
+				1.000000
+			],
+			[
+				1.000000,
+				1.000000,
+				1.000000
+			],
+			[
+				1.000000,
+				1.000000,
+				1.000000
+			],
+			[
+				1.000000,
+				1.000000,
+				1.000000
+			]
+		]
+	},
+	"m_bHasVignetteParams": false,
+	"m_vignetteParams":
+	{
+		"m_flVignetteStrength": 0.000000,
+		"m_vCenter":
+		[
+			0.000000,
+			0.000000
+		],
+		"m_flRadius": 0.500000,
+		"m_flRoundness": 1.000000,
+		"m_flFeather": 0.500000,
+		"m_vColorTint":
+		[
+			1.000000,
+			1.000000,
+			1.000000
+		]
+	},
+	"m_bHasLocalContrastParams": false,
+	"m_localConstrastParams":
+	{
+		"m_flLocalContrastStrength": 0.000000,
+		"m_flLocalContrastEdgeStrength": 0.000000,
+		"m_flLocalContrastVignetteStart": 0.000000,
+		"m_flLocalContrastVignetteEnd": 0.000000,
+		"m_flLocalContrastVignetteBlur": 0.000000
+	},
+	"m_nColorCorrectionVolumeDim": 0,
+	"m_colorCorrectionVolumeData": "[BINARY BLOB]",
+	"m_bHasColorCorrection": true,
+	"m_bHasFogScatteringParams": false,
+	"m_fogScatteringParams":
+	{
+		"m_fRadius": 0.750000,
+		"m_fScale": 0.000000,
+		"m_fCubemapScale": 1.000000,
+		"m_fVolumetricScale": 1.000000,
+		"m_fGradientScale": 1.000000,
+		"m_fWaterScale": 0.000000,
+		"m_fWaterDensity": 0.000000,
+		"m_fWaterDepthBlurRadius": 0.000000
+	},
+	"m_bHasLocalExposureParams": false,
+	"m_localExposureParams":
+	{
+		"m_fShadowOffsetEV": 0.000000,
+		"m_fHighlightOffsetEV": 0.000000,
+		"m_fSigma": 0.500000,
+		"m_fBoostLocalContrast": 0.000000
+	}
+}`
 
 **Relationships:**
 
@@ -317,7 +578,23 @@ classDiagram
 
 ### PostProcessingTonemapParameters_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flExposureBias": 0.000000,
+	"m_flShoulderStrength": 0.000000,
+	"m_flLinearStrength": 0.000000,
+	"m_flLinearAngle": 0.000000,
+	"m_flToeStrength": 0.000000,
+	"m_flToeNum": 0.000000,
+	"m_flToeDenom": 0.000000,
+	"m_flWhitePoint": 0.000000,
+	"m_flLuminanceSource": 0.000000,
+	"m_flExposureBiasShadows": 0.000000,
+	"m_flExposureBiasHighlights": 0.000000,
+	"m_flMinShadowLum": 0.000000,
+	"m_flMaxShadowLum": 0.000000,
+	"m_flMinHighlightLum": 0.000000,
+	"m_flMaxHighlightLum": 0.000000
+}`
 
 **Fields:**
 
@@ -341,7 +618,23 @@ classDiagram
 
 ### PostProcessingVignetteParameters_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flVignetteStrength": 0.000000,
+	"m_vCenter":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_flRadius": 0.500000,
+	"m_flRoundness": 1.000000,
+	"m_flFeather": 0.500000,
+	"m_vColorTint":
+	[
+		1.000000,
+		1.000000,
+		1.000000
+	]
+}`
 
 **Fields:**
 

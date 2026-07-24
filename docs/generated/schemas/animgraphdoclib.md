@@ -176,7 +176,21 @@ nav_exclude: true
 
 **Inherits from:** [CAnimGraphDoc_Component](animgraphdoclib.md#canimgraphdoc_component)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CActionComponent",
+	"m_group": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bStartEnabled": true,
+	"m_nPriority": 100,
+	"m_networkMode": "ServerAuthoritative",
+	"m_actions":
+	[
+	],
+	"m_sName": "Action Component"
+}`
 
 **Relationships:**
 
@@ -191,7 +205,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_actions` | CUtlVector< CSmartPtr< [CAnimGraphDoc_Action](../schemas/animgraphdoclib.md#canimgraphdoc_action) > > |  |
-| `m_sName` | CUtlString | `MPropertyFriendlyName Name` `MPropertySortPriority` |
+| `m_sName` | CUtlString | `MPropertyFriendlyName Name` `MPropertySortPriority 100` |
 
 ### CAnimConflictBase
 
@@ -220,7 +234,12 @@ classDiagram
 
 ### CAnimConflictInfo_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_groupName": "",
+	"m_subgraphName": "",
+	"m_id": <HIDDEN FOR DIFF>,
+}`
 
 **Fields:**
 
@@ -251,7 +270,52 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Add`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_AddNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_baseInput":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_additiveInput":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_timingBehavior": "UseChild2",
+	"m_flTimingBlend": 0.500000,
+	"m_footMotionTiming": "Child1",
+	"m_bApplyToFootMotion": true,
+	"m_bResetBase": true,
+	"m_bResetAdditive": true,
+	"m_bApplyChannelsSeparately": true,
+	"m_bUseModelSpace": false,
+	"m_bApplyScale": false
+}`, `MPropertyFriendlyName Add`
 
 **Relationships:**
 
@@ -283,7 +347,69 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Aim Camera`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_AimCameraNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_ikChain": "",
+	"m_cameraJointName": "",
+	"m_pelvisJointName": "",
+	"m_clavicleLeftJointName": "",
+	"m_clavicleRightJointName": "",
+	"m_parameterNamePosition":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_parameterNameOrientation":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_parameterNamePelvisOffset":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_parameterCameraOnly":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_parameterCameraClearanceDistance":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_parameterWeaponDepenetrationDistance":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_parameterWeaponDepenetrationDelta":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_depenetrationJointName": "",
+	"m_propJoints":
+	[
+	]
+}`, `MPropertyFriendlyName Aim Camera`
 
 **Relationships:**
 
@@ -317,7 +443,10 @@ classDiagram
 
 ### CAnimGraphDoc_AimCameraNode_PropJoint
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_AimCameraNode_PropJoint",
+	"m_jointName": ""
+}`
 
 **Fields:**
 
@@ -329,7 +458,62 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Aim Matrix`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_AimMatrixNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_sequenceName": "",
+	"m_flMaxYawAngle": 45.000000,
+	"m_flMaxPitchAngle": 45.000000,
+	"m_target": "LookTarget",
+	"m_paramName": "",
+	"m_param":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bIsPosition": false,
+	"m_attachmentName": "",
+	"m_blendMode": "AimMatrixBlendMode_Additive",
+	"m_boneMaskName": "",
+	"m_bResetBase": true,
+	"m_bLockWhenWaning": true,
+	"m_bUseBiasAndClamp": false,
+	"m_flBiasAndClampYawOffset": 1.000000,
+	"m_flBiasAndClampPitchOffset": 1.000000,
+	"m_biasAndClampBlendCurve":
+	{
+		"m_flControlPoint1": 0.000000,
+		"m_flControlPoint2": 1.000000
+	},
+	"m_damping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	}
+}`, `MPropertyFriendlyName Aim Matrix`
 
 **Relationships:**
 
@@ -371,7 +555,12 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Condition](animgraphdoclib.md#canimgraphdoc_condition), [CAnimGraphDoc_ConditionContainer](animgraphdoclib.md#canimgraphdoc_conditioncontainer)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_AndCondition",
+	"m_conditions":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -384,7 +573,21 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Bind Pose`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_BindPoseNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative"
+}`, `MPropertyFriendlyName Bind Pose`
 
 **Relationships:**
 
@@ -419,7 +622,55 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Blend 2D`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_Blend2DNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_items":
+	[
+	],
+	"m_tagSpans":
+	[
+	],
+	"m_paramSpans":
+	[
+	],
+	"m_blendSourceX": "Parameter",
+	"m_paramNameX": "",
+	"m_paramX":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_blendSourceY": "Parameter",
+	"m_paramNameY": "",
+	"m_paramY":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_eBlendMode": "Blend2DMode_General",
+	"m_bLoop": true,
+	"m_bLockBlendOnReset": false,
+	"m_bLockWhenWaning": true,
+	"m_playbackSpeed": 1.000000,
+	"m_damping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	},
+	"m_bAnimEventsAndTagsOnMostWeightedOnly": false
+}`, `MPropertyFriendlyName Blend 2D`
 
 **Relationships:**
 
@@ -460,7 +711,44 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Blend 1D`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_BlendNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_children":
+	[
+	],
+	"m_blendValueSource": "Parameter",
+	"m_paramName": "",
+	"m_param":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_blendKeyType": "BlendKey_UserValue",
+	"m_bLockBlendOnReset": false,
+	"m_bSyncCycles": true,
+	"m_bLoop": true,
+	"m_bLockWhenWaning": true,
+	"m_bIsAngle": false,
+	"m_damping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	},
+	"m_eLinearRootMotionBlendMode": "LERP"
+}`, `MPropertyFriendlyName Blend 1D`
 
 **Relationships:**
 
@@ -496,7 +784,10 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_MotionMetric](animgraphdoclib.md#canimgraphdoc_motionmetric)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Block Selection Metric`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_BlockSelectionMetric",
+	"m_flWeight": 0.000000
+}`, `MPropertyFriendlyName Block Selection Metric`
 
 **Relationships:**
 
@@ -509,7 +800,58 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Bone Mask`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_BoneMaskNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_weightListName": "",
+	"m_inputConnection1":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_inputConnection2":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_blendSpace": "BlendSpace_Parent",
+	"m_bUseBlendScale": false,
+	"m_blendValueSource": "Parameter",
+	"m_blendParameterName": "",
+	"m_blendParameter":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_timingBehavior": "UseChild2",
+	"m_flTimingBlend": 0.500000,
+	"m_flRootMotionBlend": 0.000000,
+	"m_footMotionTiming": "Child1",
+	"m_bResetChild1": true,
+	"m_bResetChild2": true
+}`, `MPropertyFriendlyName Bone Mask`
 
 **Relationships:**
 
@@ -547,7 +889,11 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_MotionMetric](animgraphdoclib.md#canimgraphdoc_motionmetric)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Bone Position Metric`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_BonePositionMetric",
+	"m_flWeight": 1.000000,
+	"m_boneName": ""
+}`, `MPropertyFriendlyName Bone Position Metric`
 
 **Relationships:**
 
@@ -566,7 +912,11 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_MotionMetric](animgraphdoclib.md#canimgraphdoc_motionmetric)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Bone Velocity Metric`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_BoneVelocityMetric",
+	"m_flWeight": 1.000000,
+	"m_boneName": ""
+}`, `MPropertyFriendlyName Bone Velocity Metric`
 
 **Relationships:**
 
@@ -585,7 +935,32 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Choice`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_ChoiceNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_children":
+	[
+	],
+	"m_seed": <HIDDEN FOR DIFF>,
+	"m_choiceMethod": "WeightedRandom",
+	"m_choiceChangeMethod": "OnReset",
+	"m_blendMethod": "SingleBlendTime",
+	"m_blendTime": 0.200000,
+	"m_bCrossFade": false,
+	"m_bResetChosen": true,
+	"m_bDontResetSameSelection": false
+}`, `MPropertyFriendlyName Choice`
 
 **Relationships:**
 
@@ -616,7 +991,32 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Choreo`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_ChoreoNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	}
+}`, `MPropertyFriendlyName Choreo`
 
 **Relationships:**
 
@@ -634,7 +1034,13 @@ classDiagram
 
 ### CAnimGraphDoc_ClipData
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Clip Data`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_ClipData",
+	"m_tagSpans":
+	[
+	],
+	"m_clipName": ""
+}`, `MPropertyFriendlyName Clip Data`
 
 **Relationships:**
 
@@ -652,7 +1058,12 @@ classDiagram
 
 ### CAnimGraphDoc_ClipDataManager
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Clip Data Manager`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_ClipDataManager",
+	"m_itemTable":
+	{
+	}
+}`, `MPropertyFriendlyName Clip Data Manager`
 
 **Relationships:**
 
@@ -671,7 +1082,33 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Comment`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_CommentNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_commentText": "",
+	"m_size":
+	[
+		375.000000,
+		225.000000
+	],
+	"m_color":
+	[
+		49,
+		139,
+		146
+	]
+}`, `MPropertyFriendlyName Comment`
 
 **Relationships:**
 
@@ -727,7 +1164,12 @@ classDiagram
 
 ### CAnimGraphDoc_ComponentManager
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_ComponentManager",
+	"m_components":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -746,7 +1188,32 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_State](animgraphdoclib.md#canimgraphdoc_state)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_ComponentState",
+	"m_transitions":
+	[
+	],
+	"m_actions":
+	[
+	],
+	"m_name": "Unnamed",
+	"m_sComment": "",
+	"m_stateID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_position":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_bIsStartState": false,
+	"m_bIsEndtState": false,
+	"m_bIsInputToGraph": true,
+	"m_bIsPassthrough": false,
+	"m_bIsPassthroughRootMotion": false,
+	"m_bPreEvaluatePassthroughTransitionPath": false
+}`
 
 **Relationships:**
 
@@ -759,7 +1226,26 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_StateTransition](animgraphdoclib.md#canimgraphdoc_statetransition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_ComponentStateTransition",
+	"m_conditionList":
+	{
+		"_class": "CAnimGraphDoc_ConditionContainer",
+		"m_conditions":
+		[
+		]
+	},
+	"m_srcState":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_destState":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_sComment": "",
+	"m_bDisabled": false
+}`
 
 **Relationships:**
 
@@ -792,7 +1278,12 @@ classDiagram
 
 **Derived by:** [CAnimGraphDoc_AndCondition](animgraphdoclib.md#canimgraphdoc_andcondition), [CAnimGraphDoc_OrCondition](animgraphdoclib.md#canimgraphdoc_orcondition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_ConditionContainer",
+	"m_conditions":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -811,7 +1302,12 @@ classDiagram
 
 ### CAnimGraphDoc_ConflictManager
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_ConflictManager",
+	"m_conflicts":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -858,7 +1354,10 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_MotionMetric](animgraphdoclib.md#canimgraphdoc_motionmetric)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Current Rotation Velocity Metric`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_CurrentRotationVelocityMetric",
+	"m_flWeight": 1.000000
+}`, `MPropertyFriendlyName Current Rotation Velocity Metric`
 
 **Relationships:**
 
@@ -871,7 +1370,10 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_MotionMetric](animgraphdoclib.md#canimgraphdoc_motionmetric)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Current Velocity Metric`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_CurrentVelocityMetric",
+	"m_flWeight": 1.000000
+}`, `MPropertyFriendlyName Current Velocity Metric`
 
 **Relationships:**
 
@@ -884,7 +1386,18 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Condition](animgraphdoclib.md#canimgraphdoc_condition)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Cycle Condition`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_CycleCondition",
+	"m_comparisonOp": "COMPARISON_EQUALS",
+	"m_comparisonString": "",
+	"m_comparisonValue": 0.000000,
+	"m_comparisonValueType": "COMPARISONVALUETYPE_FIXEDVALUE",
+	"m_comparisonParamName": "",
+	"m_comparisonParamID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	}
+}`, `MPropertyFriendlyName Cycle Condition`
 
 **Relationships:**
 
@@ -911,7 +1424,32 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Cycle Control Clip`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_CycleControlClipNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_tagSpans":
+	[
+	],
+	"m_sequenceName": "",
+	"m_valueSource": "Parameter",
+	"m_paramName": "",
+	"m_param":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bLockWhenWaning": false
+}`, `MPropertyFriendlyName Cycle Control Clip`
 
 **Relationships:**
 
@@ -938,7 +1476,39 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Cycle Control`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_CycleControlNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_valueSource": "Parameter",
+	"m_paramName": "",
+	"m_param":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bLockWhenWaning": false
+}`, `MPropertyFriendlyName Cycle Control`
 
 **Relationships:**
 
@@ -964,7 +1534,27 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_PathMotorBase](animgraphdoclib.md#canimgraphdoc_pathmotorbase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Damped Path Motor`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_DampedPathMotor",
+	"m_name": "Unnamed Motor",
+	"m_bDefault": false,
+	"m_bLockToPath": true,
+	"m_flAnticipationTime": 1.000000,
+	"m_flMinSpeedScale": 0.250000,
+	"m_anticipationPosParamName": "",
+	"m_anticipationPosParam":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_anticipationHeadingParamName": "",
+	"m_anticipationHeadingParam":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_flSpringConstant": 10.000000,
+	"m_flMinSpringTension": 1.000000,
+	"m_flMaxSpringTension": 100.000000
+}`, `MPropertyFriendlyName Damped Path Motor`
 
 **Relationships:**
 
@@ -993,7 +1583,34 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Direct Playback`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_DirectPlaybackNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_bFinishEarly": false,
+	"m_bResetOnFinish": true
+}`, `MPropertyFriendlyName Direct Playback`
 
 **Relationships:**
 
@@ -1015,7 +1632,38 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Directional Blend`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_DirectionalBlendNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_animNamePrefix": "",
+	"m_blendValueSource": "Parameter",
+	"m_paramName": "",
+	"m_param":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bLoop": true,
+	"m_bLockBlendOnReset": false,
+	"m_playbackSpeed": 1.000000,
+	"m_damping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	}
+}`, `MPropertyFriendlyName Directional Blend`
 
 **Relationships:**
 
@@ -1044,7 +1692,17 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_MotionMetric](animgraphdoclib.md#canimgraphdoc_motionmetric)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Distance Remaining Metric`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_DistanceRemainingMetric",
+	"m_flWeight": 1.000000,
+	"m_flMaxDistance": 300.000000,
+	"m_bFilterFixedMinDistance": true,
+	"m_flMinDistance": 0.000000,
+	"m_bFilterGoalDistance": true,
+	"m_flStartGoalFilterDistance": 150.000000,
+	"m_bFilterGoalOvershoot": false,
+	"m_flMaxGoalOvershootScale": 2.000000
+}`, `MPropertyFriendlyName Distance Remaining Metric`
 
 **Relationships:**
 
@@ -1069,7 +1727,13 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Action](animgraphdoclib.md#canimgraphdoc_action)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_EmitTagAction",
+	"m_tag":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	}
+}`
 
 **Relationships:**
 
@@ -1089,7 +1753,15 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Action](animgraphdoclib.md#canimgraphdoc_action)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_ExpressionAction",
+	"m_paramName": "",
+	"m_param":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_expression": ""
+}`
 
 **Relationships:**
 
@@ -1111,7 +1783,11 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Condition](animgraphdoclib.md#canimgraphdoc_condition)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Finished Condition`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_FinishedCondition",
+	"m_option": "FinishedConditionOption_OnFinished",
+	"m_bIsFinished": true
+}`, `MPropertyFriendlyName Finished Condition`
 
 **Relationships:**
 
@@ -1132,7 +1808,36 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Follow Attachment`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_FollowAttachmentNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_boneName": "",
+	"m_attachmentName": "",
+	"m_bMatchTranslation": false,
+	"m_bMatchRotation": false
+}`, `MPropertyFriendlyName Follow Attachment`
 
 **Relationships:**
 
@@ -1156,7 +1861,55 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Follow Path`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_FollowPathNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_flBlendOutTime": 0.300000,
+	"m_bBlockNonPathMovement": false,
+	"m_bStopFeetAtGoal": true,
+	"m_bScaleSpeed": false,
+	"m_flScale": 0.500000,
+	"m_flMinAngle": 0.000000,
+	"m_flMaxAngle": 180.000000,
+	"m_flSpeedScaleBlending": 0.200000,
+	"m_bTurnToFace": true,
+	"m_facingTarget": "MoveHeading",
+	"m_paramName": "",
+	"m_param":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_flTurnToFaceOffset": 0.000000,
+	"m_damping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	}
+}`, `MPropertyFriendlyName Follow Path`
 
 **Relationships:**
 
@@ -1193,7 +1946,51 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Follow Target`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_FollowTargetNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_boneName": "",
+	"m_TargetSettings":
+	{
+		"m_TargetSource": "Bone",
+		"m_Bone":
+		{
+			"m_Name": ""
+		},
+		"m_AnimgraphParameterNamePosition":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_AnimgraphParameterNameOrientation":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_TargetCoordSystem": "World Space"
+	},
+	"m_bMatchTargetOrientation": false
+}`, `MPropertyFriendlyName Follow Target`
 
 **Relationships:**
 
@@ -1217,7 +2014,47 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Foot Adjustment`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_FootAdjustmentNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_facingTargetParam": "",
+	"m_facingTarget":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bResetChild": true,
+	"m_bAnimationDriven": false,
+	"m_baseClipName": "",
+	"m_clips":
+	[
+	],
+	"m_flTurnTimeMin": 1.500000,
+	"m_flTurnTimeMax": 3.000000,
+	"m_flStepHeightMax": 4.000000,
+	"m_flStepHeightMaxAngle": 90.000000
+}`, `MPropertyFriendlyName Foot Adjustment`
 
 **Relationships:**
 
@@ -1248,7 +2085,13 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_MotionMetric](animgraphdoclib.md#canimgraphdoc_motionmetric)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Foot Cycle Metric`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_FootCycleMetric",
+	"m_flWeight": 1.000000,
+	"m_feet":
+	[
+	]
+}`, `MPropertyFriendlyName Foot Cycle Metric`
 
 **Relationships:**
 
@@ -1267,7 +2110,89 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Stride Retargeting`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_FootLockNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_items":
+	[
+	],
+	"m_hipBoneName": "",
+	"m_flBlendTime": 0.200000,
+	"m_bApplyFootRotationLimits": true,
+	"m_bResetChild": true,
+	"m_ikSolverType": "IKSOLVER_TwoBone",
+	"m_bAlwaysUseFallbackHinge": true,
+	"m_bApplyLegTwistLimits": false,
+	"m_flMaxLegTwist": 45.000000,
+	"m_flStrideCurveScale": 1.000000,
+	"m_flStrideCurveLimitScale": 0.250000,
+	"m_bEnableVerticalCurvedPaths": false,
+	"m_bModulateStepHeight": true,
+	"m_flStepHeightIncreaseScale": 0.000000,
+	"m_flStepHeightDecreaseScale": 1.000000,
+	"m_bEnableHipShift": false,
+	"m_flHipShiftScale": 0.500000,
+	"m_hipShiftDamping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	},
+	"m_bApplyTilt": false,
+	"m_flTiltPlanePitchSpringStrength": 5.000000,
+	"m_flTiltPlaneRollSpringStrength": 5.000000,
+	"m_bEnableLockBreaking": true,
+	"m_flLockBreakTolerance": 0.200000,
+	"m_flLockBreakBlendTime": 0.200000,
+	"m_bEnableStretching": false,
+	"m_flMaxStretchAmount": 2.000000,
+	"m_flStretchExtensionScale": 0.998000,
+	"m_bEnableGroundTracing": false,
+	"m_flTraceAngleBlend": 0.000000,
+	"m_bApplyHipDrop": false,
+	"m_flMaxFootHeight": -12.000000,
+	"m_flExtensionScale": 0.700000,
+	"m_hipDampingSettings":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	},
+	"m_bEnableRootHeightDamping": false,
+	"m_rootHeightDamping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "Spring",
+		"m_fSpeedScale": 12.000000,
+		"m_fFallingSpeedScale": 12.000000
+	},
+	"m_flMaxRootHeightOffset": 100.000000,
+	"m_flMinRootHeightOffset": -100.000000
+}`, `MPropertyFriendlyName Stride Retargeting`
 
 **Relationships:**
 
@@ -1327,7 +2252,44 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Foot Pinning`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_FootPinningNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_items":
+	[
+	],
+	"m_eTimingSource": "FootMotion",
+	"m_flBlendTime": 0.200000,
+	"m_flLockBreakDistance": 24.000000,
+	"m_flMaxLegStraightAmount": 0.980000,
+	"m_bApplyFootRotationLimits": false,
+	"m_hipBoneName": "",
+	"m_bApplyLegTwistLimits": false,
+	"m_flMaxLegTwist": 25.000000,
+	"m_bResetChild": true
+}`, `MPropertyFriendlyName Foot Pinning`
 
 **Relationships:**
 
@@ -1359,7 +2321,14 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_MotionMetric](animgraphdoclib.md#canimgraphdoc_motionmetric)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Foot Position Metric`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_FootPositionMetric",
+	"m_flWeight": 1.000000,
+	"m_feet":
+	[
+	],
+	"m_bIgnoreSlope": true
+}`, `MPropertyFriendlyName Foot Position Metric`
 
 **Relationships:**
 
@@ -1379,7 +2348,36 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Foot Step Trigger`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_FootStepTriggerNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_flTolerance": 1.500000,
+	"m_items":
+	[
+	]
+}`, `MPropertyFriendlyName Foot Step Trigger`
 
 **Relationships:**
 
@@ -1402,7 +2400,12 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_MotionMetric](animgraphdoclib.md#canimgraphdoc_motionmetric)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Future Facing Metric`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_FutureFacingMetric",
+	"m_flWeight": 1.000000,
+	"m_flDistance": 100.000000,
+	"m_flTime": 1.000000
+}`, `MPropertyFriendlyName Future Facing Metric`
 
 **Relationships:**
 
@@ -1422,7 +2425,15 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_MotionMetric](animgraphdoclib.md#canimgraphdoc_motionmetric)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Future Velocity Metric`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_FutureVelocityMetric",
+	"m_flWeight": 1.000000,
+	"m_flDistance": 100.000000,
+	"m_flStoppingDistance": 100.000000,
+	"m_eMode": "DirectionAndMagnitude",
+	"m_bAutoTargetSpeed": true,
+	"m_flManualTargetSpeed": 150.000000
+}`, `MPropertyFriendlyName Future Velocity Metric`
 
 **Relationships:**
 
@@ -1446,7 +2457,55 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_SubGraph](animgraphdoclib.md#canimgraphdoc_subgraph)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_Graph",
+	"m_nodeManager":
+	{
+		"_class": "CAnimGraphDoc_NodeManager",
+		"m_nodes":
+		[
+		]
+	},
+	"m_componentManager":
+	{
+		"_class": "CAnimGraphDoc_ComponentManager",
+		"m_components":
+		[
+		]
+	},
+	"m_localParameters":
+	[
+	],
+	"m_localTags":
+	[
+	],
+	"m_referencedParamGroups":
+	[
+	],
+	"m_referencedTagGroups":
+	[
+	],
+	"m_pSettingsManager":
+	{
+		"_class": "CAnimGraphSettingsManager",
+		"m_settingsGroups":
+		[
+			{
+				"_class": "CAnimGraphNetworkSettings",
+				"m_bNetworkingEnabled": true
+			}
+		]
+	},
+	"m_clipDataManager":
+	{
+		"_class": "CAnimGraphDoc_ClipDataManager",
+		"m_itemTable":
+		{
+		}
+	},
+	"m_modelName": "",
+	"m_previewModelName": ""
+}`
 
 **Relationships:**
 
@@ -1470,7 +2529,34 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_MotionItem](animgraphdoclib.md#canimgraphdoc_motionitem)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Motion Graph`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_GraphMotionItem",
+	"m_paramManager":
+	{
+		"_class": "CAnimGraphDoc_MotionParameterManager",
+		"m_params":
+		[
+		]
+	},
+	"m_blockSpans":
+	[
+	],
+	"m_tagSpans":
+	[
+	],
+	"m_paramSpans":
+	[
+	],
+	"m_bLoop": false,
+	"m_name": "New Graph",
+	"m_nodeManager":
+	{
+		"_class": "CAnimGraphDoc_MotionNodeManager",
+		"m_nodes":
+		[
+		]
+	}
+}`, `MPropertyFriendlyName Motion Graph`
 
 **Relationships:**
 
@@ -1491,7 +2577,24 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_ProxyNodeBase](animgraphdoclib.md#canimgraphdoc_proxynodebase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Group Input`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_GroupInputNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_proxyItems":
+	[
+	]
+}`, `MPropertyFriendlyName Group Input`
 
 **Relationships:**
 
@@ -1526,7 +2629,24 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_ProxyNodeBase](animgraphdoclib.md#canimgraphdoc_proxynodebase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Group Output`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_GroupOutputNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_proxyItems":
+	[
+	]
+}`, `MPropertyFriendlyName Group Output`
 
 **Relationships:**
 
@@ -1540,7 +2660,75 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Procedural Hit Reacts`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_HitReactNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_flMinDelayBetweenHits": 0.000000,
+	"m_triggerParamName": "",
+	"m_hitBoneParamName": "",
+	"m_hitOffsetParamName": "",
+	"m_hitDirectionParamName": "",
+	"m_hitStrengthParamName": "",
+	"m_triggerParam":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_hitBoneParam":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_hitOffsetParam":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_hitDirectionParam":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_hitStrengthParam":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_weightListName": "",
+	"m_hipBoneName": "",
+	"m_flHipBoneTranslationScale": 1.000000,
+	"m_nEffectedBoneCount": 4,
+	"m_flMaxImpactForce": 100.000000,
+	"m_flMinImpactForce": 50.000000,
+	"m_flWhipImpactScale": 1.000000,
+	"m_flCounterRotationScale": 0.500000,
+	"m_flDistanceFadeScale": 1.000000,
+	"m_flPropagationScale": 1.000000,
+	"m_flWhipDelay": 0.050000,
+	"m_flSpringStrength": 15.000000,
+	"m_flWhipSpringStrength": 10.000000,
+	"m_flHipDipSpringStrength": 10.000000,
+	"m_flHipDipImpactScale": 1.000000,
+	"m_flHipDipDelay": 0.050000,
+	"m_bResetBase": true
+}`, `MPropertyFriendlyName Procedural Hit Reacts`
 
 **Relationships:**
 
@@ -1589,7 +2777,21 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Input Stream`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_InputStreamNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative"
+}`, `MPropertyFriendlyName Input Stream`
 
 **Relationships:**
 
@@ -1602,7 +2804,35 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Jiggle Bone`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_JiggleBoneNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_items":
+	[
+	]
+}`, `MPropertyFriendlyName Jiggle Bone`
 
 **Relationships:**
 
@@ -1624,7 +2854,42 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_SequenceNode](animgraphdoclib.md#canimgraphdoc_sequencenode)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Jump Helper`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_JumpHelperNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_tagSpans":
+	[
+	],
+	"m_paramSpans":
+	[
+	],
+	"m_sequenceName": "",
+	"m_playbackSpeed": 1.000000,
+	"m_bLoop": false,
+	"m_targetParamName": "",
+	"m_targetParamID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_flJumpStartCycle": 0.000000,
+	"m_flJumpDuration": 0.100000,
+	"m_bTranslateX": true,
+	"m_bTranslateY": true,
+	"m_bTranslateZ": true,
+	"m_bScaleSpeed": true,
+	"m_eCorrectionMethod": "ScaleMotion"
+}`, `MPropertyFriendlyName Jump Helper`
 
 **Relationships:**
 
@@ -1654,7 +2919,48 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Lean Matrix`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_LeanMatrixNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_sequenceName": "",
+	"m_flMaxValue": 1.000000,
+	"m_blendSource": "MoveDirection",
+	"m_paramName": "",
+	"m_param":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_verticalAxisDirection":
+	[
+		1.000000,
+		0.000000,
+		0.000000
+	],
+	"m_horizontalAxisDirection":
+	[
+		0.000000,
+		1.000000,
+		0.000000
+	],
+	"m_damping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	}
+}`, `MPropertyFriendlyName Lean Matrix`
 
 **Relationships:**
 
@@ -1683,7 +2989,62 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Look At`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_LookAtNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_target": "VectorParameter",
+	"m_paramName": "",
+	"m_param":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bIsPosition": false,
+	"m_weightParamName": "",
+	"m_weightParam":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_lookatChainName": "",
+	"m_attachmentName": "",
+	"m_bRotateYawForward": true,
+	"m_flYawLimit": 45.000000,
+	"m_flPitchLimit": 45.000000,
+	"m_bMaintainUpDirection": false,
+	"m_bResetBase": true,
+	"m_bLockWhenWaning": true,
+	"m_bUseHysteresis": false,
+	"m_flHysteresisInnerAngle": 1.000000,
+	"m_flHysteresisOuterAngle": 20.000000,
+	"m_damping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	}
+}`, `MPropertyFriendlyName Look At`
 
 **Relationships:**
 
@@ -1749,7 +3110,20 @@ classDiagram
 
 ### CAnimGraphDoc_MotionItemGroup
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Motion Clip Group`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_MotionItemGroup",
+	"m_motions":
+	[
+	],
+	"m_name": "Unnamed Group",
+	"m_conditions":
+	{
+		"_class": "CAnimGraphDoc_ConditionContainer",
+		"m_conditions":
+		[
+		]
+	}
+}`, `MPropertyFriendlyName Motion Clip Group`
 
 **Relationships:**
 
@@ -1771,7 +3145,58 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Motion Matching`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_MotionMatchingNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_groups":
+	[
+	],
+	"m_metrics":
+	[
+	],
+	"m_blendCurve":
+	{
+		"m_flControlPoint1": 0.000000,
+		"m_flControlPoint2": 1.000000
+	},
+	"m_nRandomSeed": <HIDDEN FOR DIFF>,
+	"m_flSampleRate": 0.100000,
+	"m_bSearchEveryTick": true,
+	"m_flSearchInterval": 0.100000,
+	"m_bSearchWhenMotionEnds": true,
+	"m_bSearchWhenGoalChanges": true,
+	"m_flBlendTime": 0.300000,
+	"m_flSelectionThreshold": 0.000000,
+	"m_flReselectionTimeWindow": 0.300000,
+	"m_bLockSelectionWhenWaning": false,
+	"m_bEnableRotationCorrection": true,
+	"m_bGoalAssist": true,
+	"m_flGoalAssistDistance": 40.000000,
+	"m_flGoalAssistTolerance": 2.000000,
+	"m_bEnableDistanceScaling": true,
+	"m_flDistanceScale_OuterRadius": 120.000000,
+	"m_flDistanceScale_InnerRadius": 40.000000,
+	"m_flDistanceScale_MaxScale": 1.500000,
+	"m_flDistanceScale_MinScale": 0.500000,
+	"m_distanceScale_Damping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	}
+}`, `MPropertyFriendlyName Motion Matching`
 
 **Relationships:**
 
@@ -1847,7 +3272,12 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_NodeManager](animgraphdoclib.md#canimgraphdoc_nodemanager)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_MotionNodeManager",
+	"m_nodes":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1858,7 +3288,17 @@ classDiagram
 
 ### CAnimGraphDoc_MotionParameter
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_MotionParameter",
+	"m_name": "Unnamed",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_flMinValue": 0.000000,
+	"m_flMaxValue": 1.000000,
+	"m_nSamples": 5
+}`
 
 **Relationships:**
 
@@ -1879,7 +3319,12 @@ classDiagram
 
 ### CAnimGraphDoc_MotionParameterManager
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_MotionParameterManager",
+	"m_params":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1912,14 +3357,69 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_name` | CUtlString | `MPropertyFriendlyName Name` `MPropertySortPriority` |
+| `m_name` | CUtlString | `MPropertyFriendlyName Name` `MPropertySortPriority 100` |
 | `m_bDefault` | bool | `MPropertyFriendlyName Is Default` |
 
 ### CAnimGraphDoc_MoverNode
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Mover`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_MoverNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_bApplyMovement": true,
+	"m_moveVectorParamName": "",
+	"m_moveVectorParam":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bOrientMovement": false,
+	"m_moveHeadingParamName": "",
+	"m_moveHeadingParam":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bAdditive": false,
+	"m_bTurnToFace": false,
+	"m_facingTarget": "Parameter",
+	"m_paramName": "",
+	"m_param":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bLimitOnly": false,
+	"m_flTurnToFaceOffset": 0.000000,
+	"m_flTurnToFaceLimit": 180.000000,
+	"m_damping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	}
+}`, `MPropertyFriendlyName Mover`
 
 **Relationships:**
 
@@ -2023,17 +3523,38 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sName` | CUtlString | `MPropertyFriendlyName Name` `MPropertySortPriority` |
-| `m_vecPosition` | Vector2D | `MPropertyGroupName Debug` `MPropertySortPriority` |
-| `m_nNodeID` | [AnimNodeID](../schemas/modellib.md#animnodeid) | `MPropertyGroupName Debug` `MPropertySortPriority` |
-| `m_bDebugThisNode` | bool | `MPropertyFriendlyName Debug This Node` `MPropertyGroupName Debug` `MPropertySortPriority` |
-| `m_networkMode` | [AnimNodeNetworkMode](../schemas/!GlobalTypes.md#animnodenetworkmode) | `MPropertyFriendlyName Network Mode` `MPropertySortPriority` |
+| `m_sName` | CUtlString | `MPropertyFriendlyName Name` `MPropertySortPriority 100` |
+| `m_vecPosition` | Vector2D | `MPropertyGroupName Debug` `MPropertySortPriority -100` |
+| `m_nNodeID` | [AnimNodeID](../schemas/modellib.md#animnodeid) | `MPropertyGroupName Debug` `MPropertySortPriority -100` |
+| `m_bDebugThisNode` | bool | `MPropertyFriendlyName Debug This Node` `MPropertyGroupName Debug` `MPropertySortPriority -100` |
+| `m_networkMode` | [AnimNodeNetworkMode](../schemas/!GlobalTypes.md#animnodenetworkmode) | `MPropertyFriendlyName Network Mode` `MPropertySortPriority -110` |
 
 ### CAnimGraphDoc_NodeBlend2DItem
 
 **Inherits from:** [CAnimGraphDoc_Blend2DItem](animgraphdoclib.md#canimgraphdoc_blend2ditem)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Node Blend Item`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_NodeBlend2DItem",
+	"m_blendValue":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_bUseCustomDuration": false,
+	"m_flCustomDuration": 0.000000,
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_name": "<Unnamed Item>"
+}`, `MPropertyFriendlyName Node Blend Item`
 
 **Relationships:**
 
@@ -2052,7 +3573,16 @@ classDiagram
 
 ### CAnimGraphDoc_NodeConnection
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_outputID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	}
+}`
 
 **Relationships:**
 
@@ -2071,7 +3601,12 @@ classDiagram
 
 ### CAnimGraphDoc_NodeList
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_NodeList",
+	"m_nodes":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -2090,7 +3625,12 @@ classDiagram
 
 **Derived by:** [CAnimGraphDoc_MotionNodeManager](animgraphdoclib.md#canimgraphdoc_motionnodemanager)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_NodeManager",
+	"m_nodes":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -2111,7 +3651,45 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_State](animgraphdoclib.md#canimgraphdoc_state)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_NodeState",
+	"m_transitions":
+	[
+	],
+	"m_actions":
+	[
+	],
+	"m_name": "Unnamed",
+	"m_sComment": "",
+	"m_stateID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_position":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_bIsStartState": false,
+	"m_bIsEndtState": false,
+	"m_bIsInputToGraph": true,
+	"m_bIsPassthrough": false,
+	"m_bIsPassthroughRootMotion": false,
+	"m_bPreEvaluatePassthroughTransitionPath": false,
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_bIsRootMotionExclusive": false,
+	"m_bIsRootMotionExclusiveFirstFrame": false
+}`
 
 **Relationships:**
 
@@ -2126,14 +3704,62 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_bIsRootMotionExclusive` | bool | `MPropertyFriendlyName Exclusive Root Motion` `MPropertySortPriority` |
-| `m_bIsRootMotionExclusiveFirstFrame` | bool | `MPropertyFriendlyName Exclusive Root Motion On First Frame` `MPropertySortPriority` |
+| `m_bIsRootMotionExclusive` | bool | `MPropertyFriendlyName Exclusive Root Motion` `MPropertySortPriority 0` |
+| `m_bIsRootMotionExclusiveFirstFrame` | bool | `MPropertyFriendlyName Exclusive Root Motion On First Frame` `MPropertySortPriority 0` |
 
 ### CAnimGraphDoc_NodeStateTransition
 
 **Inherits from:** [CAnimGraphDoc_StateTransition](animgraphdoclib.md#canimgraphdoc_statetransition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_NodeStateTransition",
+	"m_conditionList":
+	{
+		"_class": "CAnimGraphDoc_ConditionContainer",
+		"m_conditions":
+		[
+		]
+	},
+	"m_srcState":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_destState":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_sComment": "",
+	"m_bDisabled": false,
+	"m_blendDuration":
+	{
+		"_class": "CFloatAnimValue",
+		"m_flConstValue": 0.200000,
+		"m_paramName": "",
+		"m_paramID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_eSource": "Constant"
+	},
+	"m_bReset": true,
+	"m_resetCycleOption": "Beginning",
+	"m_flFixedCycleValue":
+	{
+		"_class": "CFloatAnimValue",
+		"m_flConstValue": 0.000000,
+		"m_paramName": "",
+		"m_paramID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_eSource": "Constant"
+	},
+	"m_blendCurve":
+	{
+		"m_flControlPoint1": 0.000000,
+		"m_flControlPoint2": 1.000000
+	}
+}`
 
 **Relationships:**
 
@@ -2159,7 +3785,12 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Condition](animgraphdoclib.md#canimgraphdoc_condition), [CAnimGraphDoc_ConditionContainer](animgraphdoclib.md#canimgraphdoc_conditioncontainer)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_OrCondition",
+	"m_conditions":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -2172,7 +3803,63 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Orientation Warp`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_OrientationWarpNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_eMode": "eAngle",
+	"m_targetParamID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_targetPositionParamID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_fallbackTargetPositionParamID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_eTargetOffsetMode": "eLiteralValue",
+	"m_flTargetOffset": 0.000000,
+	"m_targetOffsetParamID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_flMaxRootMotionScale": 10.000000,
+	"m_eRootMotionSource": "eAnimationOrProcedural",
+	"m_damping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	},
+	"m_bEnablePreferredRotationDirection": false,
+	"m_ePreferredRotationDirection": "FacingHeading",
+	"m_flPreferredRotationThreshold": 190.000000
+}`, `MPropertyFriendlyName Orientation Warp`
 
 **Relationships:**
 
@@ -2211,7 +3898,25 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Paired Animation Clip`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_PairedSequenceNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_sPairedRole": "",
+	"m_previewSequenceName": "",
+	"m_flPlaybackSpeed": 1.000000,
+	"m_bLoop": false
+}`, `MPropertyFriendlyName Paired Animation Clip`
 
 **Relationships:**
 
@@ -2231,7 +3936,19 @@ classDiagram
 
 ### CAnimGraphDoc_ParamSpan
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_ParamSpan",
+	"m_samples":
+	[
+	],
+	"m_paramName": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_flStartCycle": 0.000000,
+	"m_flEndCycle": 1.000000
+}`
 
 **Relationships:**
 
@@ -2253,7 +3970,13 @@ classDiagram
 
 ### CAnimGraphDoc_ParamSpanSample
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_value":
+	{
+		"m_nType": 0
+	},
+	"m_flCycle": 0.000000
+}`
 
 **Fields:**
 
@@ -2266,7 +3989,20 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Condition](animgraphdoclib.md#canimgraphdoc_condition)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Parameter Condition`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_ParameterCondition",
+	"m_paramName": "",
+	"m_paramID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_comparisonOp": "COMPARISON_EQUALS",
+	"m_comparisonValue":
+	{
+		"m_nType": 0
+	},
+	"m_comparisonString": ""
+}`, `MPropertyFriendlyName Parameter Condition`
 
 **Relationships:**
 
@@ -2289,7 +4025,12 @@ classDiagram
 
 ### CAnimGraphDoc_ParameterManager
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_ParameterManager",
+	"m_Parameters":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -2308,7 +4049,34 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Path Helper`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_PathHelperNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_flStoppingRadius": 36.000000,
+	"m_flStoppingSpeedScale": 1.000000
+}`, `MPropertyFriendlyName Path Helper`
 
 **Relationships:**
 
@@ -2330,7 +4098,16 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_MotionMetric](animgraphdoclib.md#canimgraphdoc_motionmetric)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Path Metric`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_PathMetric",
+	"m_flWeight": 1.000000,
+	"m_flDistance": 100.000000,
+	"m_pathSamples":
+	[
+	],
+	"m_bExtrapolateMovement": true,
+	"m_flMinExtrapolationSpeed": 2.000000
+}`, `MPropertyFriendlyName Path Metric`
 
 **Relationships:**
 
@@ -2352,7 +4129,12 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_PathMotorBase](animgraphdoclib.md#canimgraphdoc_pathmotorbase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Path Motor`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_PathMotor",
+	"m_name": "Unnamed Motor",
+	"m_bDefault": false,
+	"m_bLockToPath": true
+}`, `MPropertyFriendlyName Path Motor`
 
 **Relationships:**
 
@@ -2383,13 +4165,33 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_bLockToPath` | bool | `MPropertyFriendlyName Lock To Path` `MPropertySortPriority` |
+| `m_bLockToPath` | bool | `MPropertyFriendlyName Lock To Path` `MPropertySortPriority 90` |
 
 ### CAnimGraphDoc_PlayerInputMotor
 
 **Inherits from:** [CAnimGraphDoc_Motor](animgraphdoclib.md#canimgraphdoc_motor)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Player Input Motor`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_PlayerInputMotor",
+	"m_name": "Unnamed Motor",
+	"m_bDefault": false,
+	"m_sampleTimes":
+	[
+	],
+	"m_bUseAcceleration": false,
+	"m_flSpringConstant": 10.000000,
+	"m_flAnticipationDistance": 0.000000,
+	"m_anticipationPosParamName": "",
+	"m_anticipationPosParam":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_anticipationHeadingParamName": "",
+	"m_anticipationHeadingParam":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	}
+}`, `MPropertyFriendlyName Player Input Motor`
 
 **Relationships:**
 
@@ -2440,7 +4242,34 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Ragdoll`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_RagdollNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_weightListName": "",
+	"m_poseControlMethod": "Absolute",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	}
+}`, `MPropertyFriendlyName Ragdoll`
 
 **Relationships:**
 
@@ -2461,7 +4290,13 @@ classDiagram
 
 ### CAnimGraphDoc_RigidBodyWeightList
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_RigidBodyWeightList",
+	"m_name": "Unnamed",
+	"m_weights":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -2481,7 +4316,32 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Final Pose`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_RootNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	}
+}`, `MPropertyFriendlyName Final Pose`
 
 **Relationships:**
 
@@ -2501,7 +4361,73 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Selector`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_SelectorNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_children":
+	[
+	],
+	"m_fallbackChild":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_tags":
+	[
+	],
+	"m_selectionSource": "SelectionSource_Enum",
+	"m_boolParamName": "",
+	"m_boolParamID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_enumParamName": "",
+	"m_enumParamID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_tagID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_blendDuration":
+	{
+		"_class": "CFloatAnimValue",
+		"m_flConstValue": 0.200000,
+		"m_paramName": "",
+		"m_paramID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_eSource": "Constant"
+	},
+	"m_tagBehavior": "SelectorTagBehavior_OffWhenFinished",
+	"m_bResetOnChange": true,
+	"m_bSyncCyclesOnChange": false,
+	"m_bLockWhenWaning": false,
+	"m_blendCurve":
+	{
+		"m_flControlPoint1": 0.000000,
+		"m_flControlPoint2": 1.000000
+	}
+}`, `MPropertyFriendlyName Selector`
 
 **Relationships:**
 
@@ -2541,7 +4467,20 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Blend2DItem](animgraphdoclib.md#canimgraphdoc_blend2ditem)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyElementNameFn`, `MPropertyFriendlyName Sequence Blend Item`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_SequenceBlend2DItem",
+	"m_blendValue":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_bUseCustomDuration": false,
+	"m_flCustomDuration": 0.000000,
+	"m_tagSpans":
+	[
+	],
+	"m_sequenceName": ""
+}`, `MPropertyElementNameFn`, `MPropertyFriendlyName Sequence Blend Item`
 
 **Relationships:**
 
@@ -2562,7 +4501,27 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_MotionItem](animgraphdoclib.md#canimgraphdoc_motionitem)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Sequence`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_SequenceMotionItem",
+	"m_paramManager":
+	{
+		"_class": "CAnimGraphDoc_MotionParameterManager",
+		"m_params":
+		[
+		]
+	},
+	"m_blockSpans":
+	[
+	],
+	"m_tagSpans":
+	[
+	],
+	"m_paramSpans":
+	[
+	],
+	"m_bLoop": false,
+	"m_sequenceName": ""
+}`, `MPropertyFriendlyName Sequence`
 
 **Relationships:**
 
@@ -2583,7 +4542,30 @@ classDiagram
 
 **Derived by:** [CAnimGraphDoc_JumpHelperNode](animgraphdoclib.md#canimgraphdoc_jumphelpernode)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Animation Clip`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_SequenceNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_tagSpans":
+	[
+	],
+	"m_paramSpans":
+	[
+	],
+	"m_sequenceName": "",
+	"m_playbackSpeed": 1.000000,
+	"m_bLoop": false
+}`, `MPropertyFriendlyName Animation Clip`
 
 **Relationships:**
 
@@ -2609,7 +4591,18 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Action](animgraphdoclib.md#canimgraphdoc_action)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_SetParameterAction",
+	"m_paramName": "",
+	"m_param":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_value":
+	{
+		"m_nType": 0
+	}
+}`
 
 **Relationships:**
 
@@ -2631,7 +4624,27 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Single Frame`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_SingleFrameNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_sequenceName": "",
+	"m_eFrameSelection": "SpecificFrame",
+	"m_nFrameIndex": 0,
+	"m_actions":
+	[
+	]
+}`, `MPropertyFriendlyName Single Frame`
 
 **Relationships:**
 
@@ -2655,7 +4668,33 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Slow Down On Slopes`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_SlowDownOnSlopesNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_flSlowDownStrength": 1.000000
+}`, `MPropertyFriendlyName Slow Down On Slopes`
 
 **Relationships:**
 
@@ -2676,7 +4715,35 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Solve IK Chain`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_SolveIKChainNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_IkChains":
+	[
+	]
+}`, `MPropertyFriendlyName Solve IK Chain`
 
 **Relationships:**
 
@@ -2698,7 +4765,37 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Speed Scale`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_SpeedScaleNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_paramName": "",
+	"m_param":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	}
+}`, `MPropertyFriendlyName Speed Scale`
 
 **Relationships:**
 
@@ -2721,7 +4818,51 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Stance Override`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_StanceOverrideNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_stanceSourceConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_blendParamName": "",
+	"m_blendParamID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_eMode": "Sequence",
+	"m_sequenceName": "",
+	"m_nFrameIndex": 0
+}`, `MPropertyFriendlyName Stance Override`
 
 **Relationships:**
 
@@ -2749,7 +4890,37 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Stance Scale`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_StanceScaleNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_paramName": "",
+	"m_param":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	}
+}`, `MPropertyFriendlyName Stance Scale`
 
 **Relationships:**
 
@@ -2772,7 +4943,32 @@ classDiagram
 
 **Derived by:** [CAnimGraphDoc_ComponentState](animgraphdoclib.md#canimgraphdoc_componentstate), [CAnimGraphDoc_NodeState](animgraphdoclib.md#canimgraphdoc_nodestate)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Animation State`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_State",
+	"m_transitions":
+	[
+	],
+	"m_actions":
+	[
+	],
+	"m_name": "Unnamed",
+	"m_sComment": "",
+	"m_stateID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_position":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_bIsStartState": false,
+	"m_bIsEndtState": false,
+	"m_bIsInputToGraph": true,
+	"m_bIsPassthrough": false,
+	"m_bIsPassthroughRootMotion": false,
+	"m_bPreEvaluatePassthroughTransitionPath": false
+}`, `MPropertyFriendlyName Animation State`
 
 **Relationships:**
 
@@ -2791,8 +4987,8 @@ classDiagram
 |------|------|-------------|
 | `m_transitions` | CUtlVector< CSmartPtr< [CAnimGraphDoc_StateTransition](../schemas/animgraphdoclib.md#canimgraphdoc_statetransition) > > | `MPropertySuppressField` |
 | `m_actions` | CUtlVector< [CStateAction](../schemas/animgraphdoclib.md#cstateaction) > | `MPropertySuppressField` |
-| `m_name` | CUtlString | `MPropertyFriendlyName Name` `MPropertySortPriority` |
-| `m_sComment` | CUtlString | `MPropertyAttributeEditor TextBlock()` `MPropertyFriendlyName Comment` `MPropertySortPriority` |
+| `m_name` | CUtlString | `MPropertyFriendlyName Name` `MPropertySortPriority 100` |
+| `m_sComment` | CUtlString | `MPropertyAttributeEditor TextBlock()` `MPropertyFriendlyName Comment` `MPropertySortPriority -100` |
 | `m_stateID` | [AnimStateID](../schemas/modellib.md#animstateid) | `MPropertySuppressField` |
 | `m_position` | Vector2D | `MPropertySuppressField` |
 | `m_bIsStartState` | bool | `MPropertyFriendlyName Start State` |
@@ -2804,7 +5000,12 @@ classDiagram
 
 ### CAnimGraphDoc_StateList
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_StateList",
+	"m_states":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -2823,7 +5024,12 @@ classDiagram
 
 **Derived by:** [CAnimGraphDoc_StateMachineNode](animgraphdoclib.md#canimgraphdoc_statemachinenode), [CStateMachineComponent](animgraphdoclib.md#cstatemachinecomponent)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName State Machine`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_StateMachine",
+	"m_states":
+	[
+	]
+}`, `MPropertyFriendlyName State Machine`
 
 **Relationships:**
 
@@ -2844,7 +5050,27 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node), [CAnimGraphDoc_StateMachine](animgraphdoclib.md#canimgraphdoc_statemachine)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName State Machine`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_StateMachineNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_states":
+	[
+	],
+	"m_bBlockWaningTags": false,
+	"m_bLockStateWhenWaning": false,
+	"m_bResetWhenActivated": false
+}`, `MPropertyFriendlyName State Machine`
 
 **Relationships:**
 
@@ -2865,7 +5091,19 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Condition](animgraphdoclib.md#canimgraphdoc_condition)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName State Status Condition`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_StateStatusCondition",
+	"m_sourceValue": "SourceStateBlendWeight",
+	"m_comparisonValueType": "StateComparisonValue_FixedValue",
+	"m_comparisonFixedValue": 0.000000,
+	"m_comparisonStateValue": "SourceStateBlendWeight",
+	"m_comparisonParamName": "",
+	"m_comparisonParamID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_comparisonOp": "COMPARISON_EQUALS"
+}`, `MPropertyFriendlyName State Status Condition`
 
 **Relationships:**
 
@@ -2894,7 +5132,26 @@ classDiagram
 
 **Derived by:** [CAnimGraphDoc_ComponentStateTransition](animgraphdoclib.md#canimgraphdoc_componentstatetransition), [CAnimGraphDoc_NodeStateTransition](animgraphdoclib.md#canimgraphdoc_nodestatetransition)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Transition`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_StateTransition",
+	"m_conditionList":
+	{
+		"_class": "CAnimGraphDoc_ConditionContainer",
+		"m_conditions":
+		[
+		]
+	},
+	"m_srcState":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_destState":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_sComment": "",
+	"m_bDisabled": false
+}`, `MPropertyFriendlyName Transition`
 
 **Relationships:**
 
@@ -2913,14 +5170,21 @@ classDiagram
 | `m_conditionList` | [CAnimGraphDoc_ConditionContainer](../schemas/animgraphdoclib.md#canimgraphdoc_conditioncontainer) | `MPropertySuppressField` |
 | `m_srcState` | [AnimStateID](../schemas/modellib.md#animstateid) | `MPropertySuppressField` |
 | `m_destState` | [AnimStateID](../schemas/modellib.md#animstateid) | `MPropertySuppressField` |
-| `m_sComment` | CUtlString | `MPropertyAttributeEditor TextBlock()` `MPropertyFriendlyName Comment` `MPropertySortPriority` |
+| `m_sComment` | CUtlString | `MPropertyAttributeEditor TextBlock()` `MPropertyFriendlyName Comment` `MPropertySortPriority -100` |
 | `m_bDisabled` | bool | `MPropertyFriendlyName Disable` |
 
 ### CAnimGraphDoc_StepsRemainingMetric
 
 **Inherits from:** [CAnimGraphDoc_MotionMetric](animgraphdoclib.md#canimgraphdoc_motionmetric)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Steps Remaining Metric`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_StepsRemainingMetric",
+	"m_flWeight": 0.000000,
+	"m_feet":
+	[
+	],
+	"m_flMinStepsRemaining": 1.000000
+}`, `MPropertyFriendlyName Steps Remaining Metric`
 
 **Relationships:**
 
@@ -2940,7 +5204,43 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Stop At Goal`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_StopAtGoalNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_flOuterRadius": 120.000000,
+	"m_flInnerRadius": 40.000000,
+	"m_flMaxScale": 1.500000,
+	"m_flMinScale": 0.500000,
+	"m_damping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	}
+}`, `MPropertyFriendlyName Stop At Goal`
 
 **Relationships:**
 
@@ -2966,7 +5266,35 @@ classDiagram
 
 **Derived by:** [CAnimGraphDoc_Graph](animgraphdoclib.md#canimgraphdoc_graph)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_SubGraph",
+	"m_nodeManager":
+	{
+		"_class": "CAnimGraphDoc_NodeManager",
+		"m_nodes":
+		[
+		]
+	},
+	"m_componentManager":
+	{
+		"_class": "CAnimGraphDoc_ComponentManager",
+		"m_components":
+		[
+		]
+	},
+	"m_localParameters":
+	[
+	],
+	"m_localTags":
+	[
+	],
+	"m_referencedParamGroups":
+	[
+	],
+	"m_referencedTagGroups":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -2994,7 +5322,36 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_ContainerNodeBase](animgraphdoclib.md#canimgraphdoc_containernodebase)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName SubGraph`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_SubGraphNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_outputNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_inputConnectionMap":
+	[
+	],
+	"m_subGraphFilename": "",
+	"m_animNameMap":
+	{
+	}
+}`, `MPropertyFriendlyName SubGraph`
 
 **Relationships:**
 
@@ -3015,7 +5372,51 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Subtract`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_SubtractNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_baseInputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_subtractInputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_timingBehavior": "UseChild1",
+	"m_flTimingBlend": 0.500000,
+	"m_footMotionTiming": "Child1",
+	"m_bApplyToFootMotion": true,
+	"m_bResetBase": true,
+	"m_bResetSubtract": true,
+	"m_bApplyChannelsSeparately": true,
+	"m_bUseModelSpace": false
+}`, `MPropertyFriendlyName Subtract`
 
 **Relationships:**
 
@@ -3046,7 +5447,15 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Condition](animgraphdoclib.md#canimgraphdoc_condition)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Tag Condition`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_TagCondition",
+	"m_tagID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_comparisonValue": true,
+	"m_latestValue": false
+}`, `MPropertyFriendlyName Tag Condition`
 
 **Relationships:**
 
@@ -3066,7 +5475,12 @@ classDiagram
 
 ### CAnimGraphDoc_TagManager
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_TagManager",
+	"m_tags":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -3083,7 +5497,15 @@ classDiagram
 
 ### CAnimGraphDoc_TagSpan
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_TagSpan",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_fStartCycle": 0.000000,
+	"m_fDuration": 0.100000
+}`
 
 **Relationships:**
 
@@ -3104,7 +5526,46 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Target Selector`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_TargetSelectorNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_children":
+	[
+	],
+	"m_eLinearRootMotionMode": "TargetWarpLinearRootMotionMode_Default",
+	"m_eAngleMode": "eFacingHeading",
+	"m_moveHeadingParamID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_desiredMoveHeadingParamID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_targetPositionParamID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bTargetPositionIsWorldSpace": false,
+	"m_targetFacePositionParamID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bTargetFacePositionIsWorldSpace": false,
+	"m_bEnablePhaseMatching": false,
+	"m_flPhaseMatchingMaxRootMotionSkip": 0.400000
+}`, `MPropertyFriendlyName Target Selector`
 
 **Relationships:**
 
@@ -3137,7 +5598,62 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Target Warp`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_TargetWarpNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_eLinearRootMotionMode": "TargetWarpLinearRootMotionMode_Default",
+	"m_eAngleMode": "eFacingHeading",
+	"m_eCorrectionMethod": "ScaleMotion",
+	"m_eTargetWarpTimingMethod": "ReachDestinationOnRootMotionEnd",
+	"m_moveHeadingParamID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_desiredMoveHeadingParamID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_targetPositionParamID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bTargetPositionIsWorldSpace": false,
+	"m_targetFacePositionParamID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bTargetFacePositionIsWorldSpace": false,
+	"m_targetUpVectorParamID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bOnlyWarpWhenTagIsFound": false,
+	"m_bWarpOrientationDuringTranslation": false,
+	"m_flMaxAngle": 180.000000,
+	"m_bWarpAroundCenter": false
+}`, `MPropertyFriendlyName Target Warp`
 
 **Relationships:**
 
@@ -3177,7 +5693,11 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Condition](animgraphdoclib.md#canimgraphdoc_condition)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Time Condition`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_TimeCondition",
+	"m_comparisonOp": "COMPARISON_GREATER_OR_EQUAL",
+	"m_comparisonString": ""
+}`, `MPropertyFriendlyName Time Condition`
 
 **Relationships:**
 
@@ -3198,7 +5718,14 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_MotionMetric](animgraphdoclib.md#canimgraphdoc_motionmetric)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Time Remaining Metric`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_TimeRemainingMetric",
+	"m_flWeight": 1.000000,
+	"m_bMatchByTimeRemaining": false,
+	"m_flMaxTimeRemaining": 1.000000,
+	"m_bFilterByTimeRemaining": true,
+	"m_flMinTimeRemaining": 0.300000
+}`, `MPropertyFriendlyName Time Remaining Metric`
 
 **Relationships:**
 
@@ -3220,7 +5747,14 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Action](animgraphdoclib.md#canimgraphdoc_action)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_ToggleComponentAction",
+	"m_componentID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bSetEnabled": true
+}`
 
 **Relationships:**
 
@@ -3241,7 +5775,38 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Turn Helper`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_TurnHelperNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_facingTarget": "LookHeading",
+	"m_turnStartTime": 0.000000,
+	"m_turnDuration": 1.000000,
+	"m_bMatchChildDuration": true,
+	"m_bUseManualTurnOffset": false,
+	"m_manualTurnOffset": 0.000000
+}`, `MPropertyFriendlyName Turn Helper`
 
 **Relationships:**
 
@@ -3268,7 +5833,52 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Two-Bone IK`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_TwoBoneIKNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_ikChainName": "",
+	"m_bAutoDetectHingeAxis": true,
+	"m_endEffectorType": "IkEndEffector_Bone",
+	"m_endEffectorAttachmentName": "",
+	"m_targetType": "IkTarget_Attachment",
+	"m_attachmentName": "",
+	"m_targetBoneName": "",
+	"m_targetParamName": "",
+	"m_targetParam":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bMatchTargetOrientation": false,
+	"m_rotationParamName": "",
+	"m_rotationParam":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bConstrainTwist": false,
+	"m_flMaxTwist": 15.000000
+}`, `MPropertyFriendlyName Two-Bone IK`
 
 **Relationships:**
 
@@ -3305,7 +5915,37 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName WayPoint Helper`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_WayPointHelperNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_flStartCycle": 0.000000,
+	"m_flEndCycle": 0.000000,
+	"m_bOnlyGoals": true,
+	"m_bPreventOvershoot": true,
+	"m_bPreventUndershoot": false
+}`, `MPropertyFriendlyName WayPoint Helper`
 
 **Relationships:**
 
@@ -3330,7 +5970,21 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Node](animgraphdoclib.md#canimgraphdoc_node)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Zero Pose`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimGraphDoc_ZeroPoseNode",
+	"m_sName": "Unnamed",
+	"m_vecPosition":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_nNodeID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bDebugThisNode": false,
+	"m_networkMode": "ServerAuthoritative"
+}`, `MPropertyFriendlyName Zero Pose`
 
 **Relationships:**
 
@@ -3343,7 +5997,27 @@ classDiagram
 
 **Inherits from:** [CAnimConflictBase](animgraphdoclib.md#canimconflictbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimParameterConflict",
+	"m_sConflictDesc": "",
+	"m_nResolveIdx": 2,
+	"m_conflictData":
+	[
+		{
+			"m_name": "",
+			"m_groupName": "",
+			"m_subgraphName": "",
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_name": "",
+			"m_groupName": "",
+			"m_subgraphName": "",
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	],
+	"m_eConflictType": "NONE"
+}`
 
 **Relationships:**
 
@@ -3356,7 +6030,19 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Component](animgraphdoclib.md#canimgraphdoc_component)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimScriptComponent",
+	"m_group": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bStartEnabled": true,
+	"m_nPriority": 100,
+	"m_networkMode": "ServerAuthoritative",
+	"m_sName": "Unnamed",
+	"m_scriptFilename": ""
+}`
 
 **Relationships:**
 
@@ -3369,14 +6055,34 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sName` | CUtlString | `MPropertyFriendlyName Name` `MPropertySortPriority` |
+| `m_sName` | CUtlString | `MPropertyFriendlyName Name` `MPropertySortPriority 100` |
 | `m_scriptFilename` | CUtlString | `MPropertyAttributeEditor AssetBrowse( as )` `MPropertyFriendlyName Script File` |
 
 ### CAnimTagConflict
 
 **Inherits from:** [CAnimConflictBase](animgraphdoclib.md#canimconflictbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAnimTagConflict",
+	"m_sConflictDesc": "",
+	"m_nResolveIdx": 2,
+	"m_conflictData":
+	[
+		{
+			"m_name": "",
+			"m_groupName": "",
+			"m_subgraphName": "",
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_name": "",
+			"m_groupName": "",
+			"m_subgraphName": "",
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	],
+	"m_eConflictType": "NONE"
+}`
 
 **Relationships:**
 
@@ -3387,7 +6093,22 @@ classDiagram
 
 ### CBlendNodeChild
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Blend Item`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CBlendNodeChild",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_name": "Unnamed",
+	"m_blendValue": 0.000000
+}`, `MPropertyFriendlyName Blend Item`
 
 **Relationships:**
 
@@ -3408,7 +6129,20 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Component](animgraphdoclib.md#canimgraphdoc_component)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CCPPScriptComponent",
+	"m_group": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bStartEnabled": true,
+	"m_nPriority": 100,
+	"m_networkMode": "ServerAuthoritative",
+	"m_scriptsToRun":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -3425,7 +6159,22 @@ classDiagram
 
 ### CChoiceNodeChild
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyElementNameFn`, `MPropertyFriendlyName Choice Item`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	},
+	"m_name": "",
+	"m_weight": 0.000000,
+	"m_blendTime": 0.200000
+}`, `MPropertyElementNameFn`, `MPropertyFriendlyName Choice Item`
 
 **Relationships:**
 
@@ -3445,7 +6194,24 @@ classDiagram
 
 ### CConnectionProxyItem
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyElementNameFn`, `MPropertyFriendlyName Input Item`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_outputID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	}
+}`, `MPropertyElementNameFn`, `MPropertyFriendlyName Input Item`
 
 **Relationships:**
 
@@ -3467,7 +6233,21 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Component](animgraphdoclib.md#canimgraphdoc_component)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CDampedValueComponent",
+	"m_group": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bStartEnabled": true,
+	"m_nPriority": 100,
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_items":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -3486,7 +6266,36 @@ classDiagram
 
 ### CDampedValueItem
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Damped Value`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_valueType": "FloatParameter",
+	"m_floatParamNameIn": "",
+	"m_floatParamNameOut": "",
+	"m_vectorParamNameIn": "",
+	"m_vectorParamNameOut": "",
+	"m_floatParamIn":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_floatParamOut":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_vectorParamIn":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_vectorParamOut":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_damping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	}
+}`, `MPropertyFriendlyName Damped Value`
 
 **Relationships:**
 
@@ -3516,7 +6325,63 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Component](animgraphdoclib.md#canimgraphdoc_component)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CDemoSettingsComponent",
+	"m_group": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bStartEnabled": false,
+	"m_nPriority": 100,
+	"m_networkMode": "ServerAuthoritative",
+	"m_settings":
+	{
+		"m_vecErrorRangeSplineRotation":
+		[
+			0.100000,
+			0.500000
+		],
+		"m_vecErrorRangeSplineTranslation":
+		[
+			0.100000,
+			0.500000
+		],
+		"m_vecErrorRangeSplineScale":
+		[
+			0.100000,
+			0.500000
+		],
+		"m_flIkRotation_MaxSplineError": 0.030000,
+		"m_flIkTranslation_MaxSplineError": 0.300000,
+		"m_vecErrorRangeQuantizationRotation":
+		[
+			0.100000,
+			0.500000
+		],
+		"m_vecErrorRangeQuantizationTranslation":
+		[
+			0.100000,
+			0.500000
+		],
+		"m_vecErrorRangeQuantizationScale":
+		[
+			0.100000,
+			0.500000
+		],
+		"m_flIkRotation_MaxQuantizationError": 0.010000,
+		"m_flIkTranslation_MaxQuantizationError": 0.100000,
+		"m_baseSequence": "",
+		"m_nBaseSequenceFrame": 0,
+		"m_boneSelectionMode": "CaptureSelectedBones",
+		"m_bones":
+		[
+		],
+		"m_ikChains":
+		[
+		]
+	}
+}`
 
 **Relationships:**
 
@@ -3534,7 +6399,16 @@ classDiagram
 
 ### CFloatAnimValue
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CFloatAnimValue",
+	"m_flConstValue": 0.000000,
+	"m_paramName": "",
+	"m_paramID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_eSource": "Constant"
+}`
 
 **Relationships:**
 
@@ -3555,7 +6429,23 @@ classDiagram
 
 ### CFootLockItem
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyElementNameFn`, `MPropertyFriendlyName Item`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_footName": "",
+	"m_targetBoneName": "",
+	"m_ikChainName": "",
+	"m_disableTagName": "",
+	"m_disableTagID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_flMaxRotationLeft": 90.000000,
+	"m_flMaxRotationRight": 90.000000,
+	"m_footstepLandedTagName": "",
+	"m_footstepLandedTag":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	}
+}`, `MPropertyElementNameFn`, `MPropertyFriendlyName Item`
 
 **Relationships:**
 
@@ -3580,7 +6470,22 @@ classDiagram
 
 ### CFootPinningItem
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyElementNameFn`, `MPropertyFriendlyName Item`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_footName": "",
+	"m_targetBoneName": "",
+	"m_ikChainName": "",
+	"m_tag":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_paramName": "",
+	"m_param":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_flMaxRotationLeft": 90.000000,
+	"m_flMaxRotationRight": 90.000000
+}`, `MPropertyElementNameFn`, `MPropertyFriendlyName Item`
 
 **Relationships:**
 
@@ -3605,7 +6510,16 @@ classDiagram
 
 ### CFootStepTriggerItem
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyElementNameFn`, `MPropertyFriendlyName Item`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_footName": "",
+	"m_triggerPhase": "StepPhase_OnGround",
+	"m_tagNames":
+	[
+	],
+	"m_tagIDs":
+	[
+	]
+}`, `MPropertyElementNameFn`, `MPropertyFriendlyName Item`
 
 **Relationships:**
 
@@ -3626,7 +6540,25 @@ classDiagram
 
 ### CJiggleBoneItem
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyElementNameFn`, `MPropertyFriendlyName Item`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_boneName": "",
+	"m_flSpringStrength": 10.000000,
+	"m_flSimRateFPS": 90.000000,
+	"m_flDamping": 0.010000,
+	"m_eSimSpace": "SimSpace_World",
+	"m_vBoundsMaxLS":
+	[
+		10.000000,
+		10.000000,
+		10.000000
+	],
+	"m_vBoundsMinLS":
+	[
+		-10.000000,
+		-10.000000,
+		-10.000000
+	]
+}`, `MPropertyElementNameFn`, `MPropertyFriendlyName Item`
 
 **Relationships:**
 
@@ -3651,7 +6583,18 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Component](animgraphdoclib.md#canimgraphdoc_component)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CLODComponent",
+	"m_group": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bStartEnabled": true,
+	"m_nPriority": 100,
+	"m_networkMode": "ServerAuthoritative",
+	"m_nServerLOD": -1
+}`
 
 **Relationships:**
 
@@ -3670,7 +6613,50 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Component](animgraphdoclib.md#canimgraphdoc_component)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CLookComponent",
+	"m_group": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bStartEnabled": true,
+	"m_nPriority": 100,
+	"m_networkMode": "ServerAuthoritative",
+	"m_bNetworkLookTarget": true,
+	"m_lookHeadingID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_lookHeadingNormalizedID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_lookHeadingVelocityID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_lookPitchID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_lookDistanceID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_lookDirectionID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_lookTargetID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_lookTargetWorldSpaceID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	}
+}`
 
 **Relationships:**
 
@@ -3698,7 +6684,134 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Component](animgraphdoclib.md#canimgraphdoc_component)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMovementComponent",
+	"m_group": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bStartEnabled": true,
+	"m_nPriority": 100,
+	"m_networkMode": "ServerAuthoritative",
+	"m_motors":
+	[
+	],
+	"m_bNetworkPath": true,
+	"m_facingDamping":
+	{
+		"_class": "CAnimInputDamping",
+		"m_speedFunction": "NoDamping",
+		"m_fSpeedScale": 1.000000,
+		"m_fFallingSpeedScale": 1.000000
+	},
+	"m_bNetworkFacing": true,
+	"m_paramIDs":
+	[
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	]
+}`
 
 **Relationships:**
 
@@ -3724,7 +6837,17 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Component](animgraphdoclib.md#canimgraphdoc_component)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPairedSequenceComponent",
+	"m_group": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bStartEnabled": true,
+	"m_nPriority": 100,
+	"m_networkMode": "ServerAuthoritative"
+}`
 
 **Relationships:**
 
@@ -3737,7 +6860,24 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Component](animgraphdoclib.md#canimgraphdoc_component)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CRagdollComponent",
+	"m_group": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bStartEnabled": true,
+	"m_nPriority": 100,
+	"m_networkMode": "ServerAuthoritative",
+	"m_weightLists":
+	[
+	],
+	"m_flSpringFrequencyMin": 0.000000,
+	"m_flSpringFrequencyMax": 15.000000,
+	"m_flMaxStretch": 56.000000,
+	"m_bSolidCollisionAtZeroWeight": false
+}`
 
 **Relationships:**
 
@@ -3761,7 +6901,21 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Component](animgraphdoclib.md#canimgraphdoc_component)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CRemapValueComponent",
+	"m_group": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bStartEnabled": true,
+	"m_nPriority": 100,
+	"m_networkMode": "ServerAuthoritative",
+	"m_name": "",
+	"m_items":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -3780,7 +6934,33 @@ classDiagram
 
 ### CRemapValueItem
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Remap Value`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_valueType": "FloatParameter",
+	"m_floatParamNameIn": "",
+	"m_floatParamNameOut": "",
+	"m_vectorParamNameIn": "",
+	"m_vectorParamNameOut": "",
+	"m_floatParamIn":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_floatParamOut":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_vectorParamIn":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_vectorParamOut":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_flMinInputValue": 0.000000,
+	"m_flMaxInputValue": 1.000000,
+	"m_flMinOutputValue": 0.000000,
+	"m_flMaxOutputValue": 1.000000
+}`, `MPropertyFriendlyName Remap Value`
 
 **Relationships:**
 
@@ -3810,7 +6990,10 @@ classDiagram
 
 ### CRigidBodyWeight
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_flWeight": 0.000000
+}`
 
 **Fields:**
 
@@ -3823,7 +7006,42 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Component](animgraphdoclib.md#canimgraphdoc_component)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSlopeComponent",
+	"m_group": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bStartEnabled": true,
+	"m_nPriority": 100,
+	"m_networkMode": "ServerAuthoritative",
+	"m_flTraceDistance": 36.000000,
+	"m_slopeAngleID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_slopeHeadingID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_slopeAngleSideID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_slopeAngleFrontID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_slopeNormalID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_slopeNormal_WorldSpaceID":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	}
+}`
 
 **Relationships:**
 
@@ -3847,7 +7065,43 @@ classDiagram
 
 ### CSolveIKChainAnimNodeChainData
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyElementNameFn`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSolveIKChainAnimNodeChainData",
+	"m_IkChain": "",
+	"m_SolverSettingSource": "SOLVEIKCHAINANIMNODESETTINGSOURCE_Default",
+	"m_OverrideSolverSettings":
+	{
+		"m_SolverType": "IKSOLVER_TwoBone",
+		"m_nNumIterations": 6,
+		"m_EndEffectorRotationFixUpMode": "MatchTargetOrientation"
+	},
+	"m_TargetSettingSource": "SOLVEIKCHAINANIMNODESETTINGSOURCE_Default",
+	"m_OverrideTargetSettings":
+	{
+		"m_TargetSource": "Bone",
+		"m_Bone":
+		{
+			"m_Name": ""
+		},
+		"m_AnimgraphParameterNamePosition":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_AnimgraphParameterNameOrientation":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_TargetCoordSystem": "World Space"
+	},
+	"m_DebugSetting": "SOLVEIKCHAINANIMNODEDEBUGSETTING_None",
+	"m_flDebugNormalizedLength": 1.000000,
+	"m_vDebugOffset":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`, `MPropertyElementNameFn`
 
 **Relationships:**
 
@@ -3874,7 +7128,11 @@ classDiagram
 
 ### CStateAction
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CStateAction",
+	"m_pAction": null,
+	"m_eBehavior": "STATETAGBEHAVIOR_ACTIVE_WHILE_CURRENT"
+}`
 
 **Relationships:**
 
@@ -3895,7 +7153,21 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_Component](animgraphdoclib.md#canimgraphdoc_component), [CAnimGraphDoc_StateMachine](animgraphdoclib.md#canimgraphdoc_statemachine)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CStateMachineComponent",
+	"m_group": "",
+	"m_id":
+	{
+		"m_id": <HIDDEN FOR DIFF>,
+	},
+	"m_bStartEnabled": true,
+	"m_nPriority": 100,
+	"m_networkMode": "ServerAuthoritative",
+	"m_states":
+	[
+	],
+	"m_sName": "Unnamed"
+}`
 
 **Relationships:**
 
@@ -3908,11 +7180,25 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sName` | CUtlString | `MPropertyFriendlyName Name` `MPropertySortPriority` |
+| `m_sName` | CUtlString | `MPropertyFriendlyName Name` `MPropertySortPriority 100` |
 
 ### CTargetSelectorChild
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Input`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CTargetSelectorChild",
+	"m_name": "",
+	"m_inputConnection":
+	{
+		"m_nodeID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		},
+		"m_outputID":
+		{
+			"m_id": <HIDDEN FOR DIFF>,
+		}
+	}
+}`, `MPropertyFriendlyName Input`
 
 **Relationships:**
 

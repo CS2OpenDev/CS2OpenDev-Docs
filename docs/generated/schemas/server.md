@@ -930,7 +930,16 @@ nav_exclude: true
 
 ### AI_BaseNPCAnimGraph_DebugSnapshotData_t
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName AnimGraph`
+**Metadata:** `MGetKV3ClassDefaults {
+	"e_action_desired": "",
+	"e_action_handshake_restart": "",
+	"e_action_handshake_body_authority_current": "",
+	"e_action_handshake_body_authority_desired": "",
+	"e_movement_type_desired": "",
+	"e_movement_handshake_restart": "",
+	"e_movement_handshake_body_authority_current": "",
+	"e_movement_handshake_body_authority_desired": ""
+}`, `MPropertyFriendlyName AnimGraph`
 
 **Fields:**
 
@@ -949,7 +958,69 @@ nav_exclude: true
 
 **Inherits from:** [DebugSnapshotBaseStructuredData_t](server.md#debugsnapshotbasestructureddata_t)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Base NPC`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "AI_BaseNPC_DebugSnapshotData_t",
+	"npc_state": "",
+	"current_enemy": null,
+	"s_current_schedule": "",
+	"s_current_task": "",
+	"s_prev_schedule": "",
+	"s_npc_current_movement": "",
+	"s_last_task_end_location": "",
+	"conditions":
+	[
+	],
+	"anim_events":
+	[
+	],
+	"animgraph":
+	{
+		"e_action_desired": "",
+		"e_action_handshake_restart": "",
+		"e_action_handshake_body_authority_current": "",
+		"e_action_handshake_body_authority_desired": "",
+		"e_movement_type_desired": "",
+		"e_movement_handshake_restart": "",
+		"e_movement_handshake_body_authority_current": "",
+		"e_movement_handshake_body_authority_desired": ""
+	},
+	"navigator":
+	{
+		"s_movement_id": "",
+		"s_movement_serial_number": 0,
+		"s_goal_source_location": "",
+		"last_waypoint_pos": null,
+		"goal_location": null,
+		"waypoints":
+		[
+		],
+		"s_arrival_movement_gait_set": ""
+	},
+	"motorServices":
+	{
+		"active_motor": "",
+		"desired_speed": 0.000000,
+		"motor_velocity":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"motor_path":
+		[
+		]
+	},
+	"facingServices":
+	{
+		"npc_position": null,
+		"facing_target_source": "",
+		"facing_target": null,
+		"schedule_facing_priority": "",
+		"strafing_source": "",
+		"strafing_enabled": false,
+		"movement_id": ""
+	}
+}`, `MPropertyFriendlyName Base NPC`
 
 **Relationships:**
 
@@ -985,7 +1056,26 @@ classDiagram
 
 **Inherits from:** [DebugSnapshotBaseStructuredData_t](server.md#debugsnapshotbasestructureddata_t)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Default NPC`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "AI_DefaultNPC_DebugSnapshotData_t",
+	"s_npc_current_ability": "",
+	"s_npc_tactic_current": "",
+	"s_npc_tactic_phase": "",
+	"tactic_interrupt_conditions":
+	[
+	],
+	"path_query":
+	{
+		"m_nInitialMovementId": "",
+		"m_nCurrentMovementId": "",
+		"m_nMode": "",
+		"m_nType": "",
+		"m_nState": ""
+	},
+	"path_queries_speculative":
+	[
+	]
+}`, `MPropertyFriendlyName Default NPC`
 
 **Relationships:**
 
@@ -1007,7 +1097,13 @@ classDiagram
 
 ### AI_DefaultNPC_DebugSnapshotData_t::PathQuery_t
 
-**Metadata:** `MDebugSnapshotDataSummaryFn`, `MGetKV3ClassDefaults`
+**Metadata:** `MDebugSnapshotDataSummaryFn`, `MGetKV3ClassDefaults {
+	"m_nInitialMovementId": "",
+	"m_nCurrentMovementId": "",
+	"m_nMode": "",
+	"m_nType": "",
+	"m_nState": ""
+}`
 
 **Fields:**
 
@@ -1021,7 +1117,15 @@ classDiagram
 
 ### AI_FacingServices_DebugSnapshotData_t
 
-**Metadata:** `MDebugSnapshotDataRenderFn`, `MGetKV3ClassDefaults`, `MPropertyFriendlyName Facing Services`
+**Metadata:** `MDebugSnapshotDataRenderFn`, `MGetKV3ClassDefaults {
+	"npc_position": null,
+	"facing_target_source": "",
+	"facing_target": null,
+	"schedule_facing_priority": "",
+	"strafing_source": "",
+	"strafing_enabled": false,
+	"movement_id": ""
+}`, `MPropertyFriendlyName Facing Services`
 
 **Fields:**
 
@@ -1039,7 +1143,29 @@ classDiagram
 
 **Inherits from:** [DebugSnapshotBaseStructuredData_t](server.md#debugsnapshotbasestructureddata_t)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Ground Root Motion Motor`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "AI_GroundRootMotionMotor_DebugSnapshotData_t",
+	"desired_movement_gait_set": "",
+	"desired_movement_gait": "",
+	"current_movement_gait_set": "",
+	"current_movement_gait": "",
+	"movement_setting_id": "",
+	"gait_switch_blocked_reason": "",
+	"b_goal_completion_allowed": true,
+	"state": "",
+	"n_state_active_tick_count": 0,
+	"b_has_path": false,
+	"f_remaining_ground_path_length": -1.000000,
+	"f_current_speed": -1.000000,
+	"move_type": "",
+	"f_forward_strafing_angle_actual": -1.000000,
+	"f_forward_strafing_angle_desired": -1.000000,
+	"f_current_lean": 0.000000,
+	"f_target_lean": 0.000000,
+	"vec_events":
+	[
+	]
+}`, `MPropertyFriendlyName Ground Root Motion Motor`
 
 **Relationships:**
 
@@ -1073,7 +1199,10 @@ classDiagram
 
 ### AI_GroundRootMotionMotor_DebugSnapshotData_t::Event_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"description": "",
+	"location": null
+}`
 
 **Fields:**
 
@@ -1084,7 +1213,19 @@ classDiagram
 
 ### AI_MotorServices_DebugSnapshotData_t
 
-**Metadata:** `MDebugSnapshotDataRenderFn`, `MGetKV3ClassDefaults`, `MPropertyFriendlyName Motor Services`
+**Metadata:** `MDebugSnapshotDataRenderFn`, `MGetKV3ClassDefaults {
+	"active_motor": "",
+	"desired_speed": 0.000000,
+	"motor_velocity":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"motor_path":
+	[
+	]
+}`, `MPropertyFriendlyName Motor Services`
 
 **Fields:**
 
@@ -1097,7 +1238,11 @@ classDiagram
 
 ### AI_MotorServices_DebugSnapshotData_t::MotorPathWaypoint_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"position": null,
+	"nav_type": 0,
+	"flags": 0
+}`
 
 **Fields:**
 
@@ -1109,7 +1254,17 @@ classDiagram
 
 ### AI_Navigator_DebugSnapshotData_t
 
-**Metadata:** `MDebugSnapshotDataRenderFn`, `MGetKV3ClassDefaults`, `MPropertyFriendlyName Navigator`
+**Metadata:** `MDebugSnapshotDataRenderFn`, `MGetKV3ClassDefaults {
+	"s_movement_id": "",
+	"s_movement_serial_number": 0,
+	"s_goal_source_location": "",
+	"last_waypoint_pos": null,
+	"goal_location": null,
+	"waypoints":
+	[
+	],
+	"s_arrival_movement_gait_set": ""
+}`, `MPropertyFriendlyName Navigator`
 
 **Fields:**
 
@@ -1125,7 +1280,12 @@ classDiagram
 
 ### AI_Navigator_DebugSnapshotData_t::Waypoint_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"position": null,
+	"nav_type": 0,
+	"flags": 0,
+	"is_pathcorner": false
+}`
 
 **Fields:**
 
@@ -1138,7 +1298,17 @@ classDiagram
 
 ### ActiveModelConfig_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "ActiveModelConfig_t",
+	"m_Handle": 0,
+	"m_Name": "",
+	"m_AssociatedEntities":
+	[
+	],
+	"m_AssociatedEntityNames":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -1159,7 +1329,10 @@ classDiagram
 
 ### ActorMapping_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_sActorName": "",
+	"m_hEntity": null
+}`
 
 **Relationships:**
 
@@ -1189,7 +1362,14 @@ classDiagram
 
 **Derived by:** [GameAmmoTypeInfo_t](server.md#gameammotypeinfo_t)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "AmmoTypeInfo_t",
+	"m_nMaxCarry": 0,
+	"m_nSplashSize": 0,
+	"m_nFlags": "",
+	"m_flMass": 0.000000,
+	"m_flSpeed": 0.000000
+}`
 
 **Relationships:**
 
@@ -1221,7 +1401,10 @@ classDiagram
 
 ### AutoRoomDoorwayPairs_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"vP1": null,
+	"vP2": null
+}`
 
 **Fields:**
 
@@ -1255,7 +1438,25 @@ classDiagram
 
 **Derived by:** [CAI_ExpresserWithFollowup](server.md#cai_expresserwithfollowup)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CAI_Expresser",
+	"m_conceptCooldowns":
+	{
+	},
+	"m_ruleCooldowns":
+	{
+	},
+	"m_flStopTalkTime": null,
+	"m_flStopTalkTimeWithoutDelay": null,
+	"m_flQueuedSpeechTime": null,
+	"m_flBlockedTalkTime": null,
+	"m_voicePitch": 100,
+	"m_flLastTimeAcceptedSpeak": null,
+	"m_bAllowSpeakingInterrupts": false,
+	"m_bConsiderSceneInvolvementAsSpeech": false,
+	"m_bSceneEntityDisabled": false,
+	"m_nLastSpokenPriority": 0
+}`
 
 **Relationships:**
 
@@ -1639,7 +1840,7 @@ classDiagram
 | `m_bInitiallyPopulateInterpHistory` | bool |  |
 | `m_OnLayerCycleUpdated` | CEntityOutputTemplate< float32 > |  |
 | `m_OnExternalChoreoGraphChanged` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
-| `m_pChoreoServices` | [IChoreoServices](../schemas/server.md#ichoreoservices)* | `MKV3TransferSaveOpsForField` |
+| `m_pChoreoServices` | [IChoreoServices](../schemas/server.md#ichoreoservices)* | `MKV3TransferSaveOpsForField GetChoreoServicesSaveRestoreOps` |
 | `m_bAnimGraphUpdateEnabled` | bool |  |
 | `m_bAnimationUpdateScheduled` | bool | `MNotSaved` |
 | `m_vecForce` | Vector | `MNotSaved` |
@@ -1670,7 +1871,43 @@ classDiagram
 
 **Inherits from:** [CSkeletonAnimationController](server.md#cskeletonanimationcontroller)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nAnimationAlgorithm": "eInvalid",
+	"m_nNextExternalGraphHandle": 0,
+	"m_vecSecondarySkeletonSlotIDs":
+	[
+	],
+	"m_vecSecondarySkeletons":
+	[
+	],
+	"m_nSecondarySkeletonMasterCount": 0,
+	"m_flSoundSyncTime": 0.000000,
+	"m_nActiveIKChainMask": 0,
+	"m_hSequence": -1,
+	"m_flSeqStartTime": null,
+	"m_flSeqFixedCycle": 0.000000,
+	"m_nAnimLoopMode": "ANIM_LOOP_MODE_USE_SEQUENCE_SETTINGS",
+	"m_flPlaybackRate": 1.000000,
+	"m_nNotifyState": "eDoNotNotify",
+	"m_bNetworkedAnimationInputsChanged": false,
+	"m_bNetworkedSequenceChanged": false,
+	"m_bLastUpdateSkipped": false,
+	"m_bSequenceFinished": false,
+	"m_nPrevAnimUpdateTick": null,
+	"m_hGraphDefinitionAG2": "",
+	"m_nServerGraphInstanceIteration": 0,
+	"m_nServerSerializationContextIteration": 0,
+	"m_primaryGraphId": 0,
+	"m_vecExternalGraphIds":
+	[
+	],
+	"m_vecExternalClipIds":
+	[
+	],
+	"m_sAnimGraph2Identifier": "",
+	"m_pGraphInstanceAG2": null,
+	"m_vecExternalGraphs": null
+}`
 
 **Relationships:**
 
@@ -1730,7 +1967,10 @@ classDiagram
 
 **Inherits from:** [CAnimGraphControllerBase](server.md#canimgraphcontrollerbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CBaseAnimGraphDestructibleParts_GraphController",
+	"m_hExternalGraph": 4294967295
+}`
 
 **Relationships:**
 
@@ -1743,7 +1983,9 @@ classDiagram
 
 **Inherits from:** [CNmGraphVariationUserData](animlib.md#cnmgraphvariationuserdata)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CBaseAnimGraphVariationUserData"
+}`
 
 **Relationships:**
 
@@ -2167,8 +2409,8 @@ classDiagram
 | `m_iszDamageFilterName` | CUtlSymbolLarge |  |
 | `m_flMoveDoneTime` | float32 |  |
 | `m_nSubclassID` | CUtlStringToken |  |
-| `m_flAnimTime` | float32 | Floating-point timestamp of the most-recent animation update; used by the client for animation interpolation. `MKV3TransferSaveOpsForField` |
-| `m_flSimulationTime` | float32 | Floating-point timestamp of the most-recent physics simulation step; used by the client for position interpolation. `MKV3TransferSaveOpsForField` |
+| `m_flAnimTime` | float32 | Floating-point timestamp of the most-recent animation update; used by the client for animation interpolation. `MKV3TransferSaveOpsForField GetEngineTimeSaveRestoreOps` |
+| `m_flSimulationTime` | float32 | Floating-point timestamp of the most-recent physics simulation step; used by the client for position interpolation. `MKV3TransferSaveOpsForField GetEngineTimeSaveRestoreOps` |
 | `m_flCreateTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
 | `m_bClientSideRagdoll` | bool |  |
 | `m_ubInterpolationFrame` | uint8 |  |
@@ -2179,7 +2421,7 @@ classDiagram
 | `m_sUniqueHammerID` | CUtlString |  |
 | `m_spawnflags` | uint32 |  |
 | `m_nNextThinkTick` | [GameTick_t](../schemas/entity2.md#gametick_t) | Server tick on which the entity's Think() function will next execute (-1 = never). |
-| `m_nSimulationTick` | int32 | `MKV3TransferSaveOpsForField` |
+| `m_nSimulationTick` | int32 | `MKV3TransferSaveOpsForField GetEngineTickSaveRestoreOps` |
 | `m_OnKilled` | [CEntityIOOutput](../schemas/entity2.md#centityiooutput) |  |
 | `m_fFlags` | uint32 | Entity flags bitmask (FL_ONGROUND = 1, FL_DUCKING = 4, FL_INWATER = 8, FL_FROZEN = 0x200, etc.). |
 | `m_vecAbsVelocity` | Vector |  |
@@ -2217,7 +2459,7 @@ classDiagram
 | `m_flLocalTime` | float32 |  |
 | `m_flVPhysicsUpdateLocalTime` | float32 |  |
 | `m_nBloodType` | [BloodType](../schemas/!GlobalTypes.md#bloodtype) |  |
-| `m_pPulseGraphInstance` | [CPulseGraphInstance_ServerEntity](../schemas/server.md#cpulsegraphinstance_serverentity)* | `MKV3TransferSaveOpsForField` |
+| `m_pPulseGraphInstance` | [CPulseGraphInstance_ServerEntity](../schemas/server.md#cpulsegraphinstance_serverentity)* | `MKV3TransferSaveOpsForField GetPulseInstanceSaveRestoreOps` |
 
 ### CBaseEntityAPI
 
@@ -2435,11 +2677,16 @@ classDiagram
 | `m_nObjectCulling` | uint8 |  |
 | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > |  |
 | `m_vecViewOffset` | [CNetworkViewOffsetVector](../schemas/server.md#cnetworkviewoffsetvector) | Offset from the entity origin to the player's view position (eye height). |
-| `m_bvDisabledHitGroups` | uint32[1] | `MKV3TransferSaveOpsForField` |
+| `m_bvDisabledHitGroups` | uint32[1] | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
 
 ### CBaseModelEntity::OnDamageLevelChangedArgs_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"nHitGroup": "HITGROUP_GENERIC",
+	"nDamageLevel": 0,
+	"nDamageLevelsRemaining": 0,
+	"nPrevDamageLevel": 0
+}`
 
 **Relationships:**
 
@@ -2561,7 +2808,7 @@ classDiagram
 | `m_bIsLowViolence` | bool | `MNotSaved` |
 | `m_bGamePaused` | bool | `MNotSaved` |
 | `m_iIgnoreGlobalChat` | [ChatIgnoreType_t](../schemas/!GlobalTypes.md#chatignoretype_t) | `MNotSaved` |
-| `m_flLastPlayerTalkTime` | float32 | `MKV3TransferSaveOpsForField` |
+| `m_flLastPlayerTalkTime` | float32 | `MKV3TransferSaveOpsForField GetEngineTimeSaveRestoreOps` |
 | `m_flLastEntitySteadyState` | float32 | `MNotSaved` |
 | `m_nAvailableEntitySteadyState` | int32 | `MNotSaved` |
 | `m_bHasAnySteadyStateEnts` | bool | `MNotSaved` |
@@ -2633,7 +2880,24 @@ classDiagram
 
 **Inherits from:** [CEntitySubclassVDataBase](server.md#centitysubclassvdatabase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CBasePlayerVData",
+	"m_sModelName": "",
+	"m_sModelNameAg2Override": "",
+	"m_flHeadDamageMultiplier": 3.000000,
+	"m_flChestDamageMultiplier": 1.000000,
+	"m_flStomachDamageMultiplier": 1.000000,
+	"m_flArmDamageMultiplier": 1.000000,
+	"m_flLegDamageMultiplier": 1.000000,
+	"m_flHoldBreathTime": 15.000000,
+	"m_flDrowningDamageInterval": 1.000000,
+	"m_nDrowningDamageInitial": 10,
+	"m_nDrowningDamageMax": 10,
+	"m_nWaterSpeed": 100,
+	"m_flUseRange": 55.000000,
+	"m_flUseAngleTolerance": 45.000000,
+	"m_flCrouchTime": 0.400000
+}`
 
 **Relationships:**
 
@@ -2648,8 +2912,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sModelName` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > > | `MPropertyProvidesEditContextString` |
-| `m_sModelNameAg2Override` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > > | `MPropertyProvidesEditContextString` |
+| `m_sModelName` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > > | `MPropertyProvidesEditContextString ToolEditContext_ID_VMDL` |
+| `m_sModelNameAg2Override` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > > | `MPropertyProvidesEditContextString ToolEditContext_ID_VMDL` |
 | `m_flHeadDamageMultiplier` | [CSkillFloat](../schemas/server.md#cskillfloat) |  |
 | `m_flChestDamageMultiplier` | [CSkillFloat](../schemas/server.md#cskillfloat) |  |
 | `m_flStomachDamageMultiplier` | [CSkillFloat](../schemas/server.md#cskillfloat) |  |
@@ -2706,7 +2970,43 @@ classDiagram
 
 **Derived by:** [CCSWeaponBaseVData](client.md#ccsweaponbasevdata)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CBasePlayerWeaponVData",
+	"m_szWorldModel": "",
+	"m_szWorldModelAg2Override": "",
+	"m_sToolsOnlyOwnerModelName": "",
+	"m_bBuiltRightHanded": true,
+	"m_bAllowFlipping": true,
+	"m_sMuzzleAttachment": "muzzle",
+	"m_szMuzzleFlashParticle": "",
+	"m_szMuzzleFlashParticleConfig": "",
+	"m_szBarrelSmokeParticle": "",
+	"m_nMuzzleSmokeShotThreshold": 4,
+	"m_flMuzzleSmokeTimeout": 0.250000,
+	"m_flMuzzleSmokeDecrementRate": 1.000000,
+	"m_bGenerateMuzzleLight": true,
+	"m_bLinkedCooldowns": false,
+	"m_iFlags": "",
+	"m_iWeight": 0,
+	"m_bAutoSwitchTo": true,
+	"m_bAutoSwitchFrom": true,
+	"m_nPrimaryAmmoType": "",
+	"m_nSecondaryAmmoType": "",
+	"m_iMaxClip1": 0,
+	"m_iMaxClip2": 0,
+	"m_iDefaultClip1": -1,
+	"m_iDefaultClip2": -1,
+	"m_bReserveAmmoAsClips": false,
+	"m_bTreatAsSingleClip": false,
+	"m_bKeepLoadedAmmo": false,
+	"m_iRumbleEffect": "RUMBLE_INVALID",
+	"m_flDropSpeed": 300.000000,
+	"m_iSlot": 0,
+	"m_iPosition": 0,
+	"m_aShootSounds":
+	{
+	}
+}`
 
 **Relationships:**
 
@@ -2726,14 +3026,14 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_szWorldModel` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > > | `MPropertyDescription Model used on the ground or held by an entity` `MPropertyProvidesEditContextString` `MPropertyStartGroup Visuals` |
-| `m_szWorldModelAg2Override` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > > | `MPropertyDescription Model used on the ground or held by an entity` `MPropertyProvidesEditContextString` |
+| `m_szWorldModel` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > > | `MPropertyDescription Model used on the ground or held by an entity` `MPropertyProvidesEditContextString ToolEditContext_ID_VMDL` `MPropertyStartGroup Visuals` |
+| `m_szWorldModelAg2Override` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > > | `MPropertyDescription Model used on the ground or held by an entity` `MPropertyProvidesEditContextString ToolEditContext_ID_VMDL` |
 | `m_sToolsOnlyOwnerModelName` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > > | `MPropertyDescription Model used by the tools only to populate comboboxes for things like animgraph parameter pickers` |
 | `m_bBuiltRightHanded` | bool | `MPropertyDescription Was the weapon was built right-handed?` |
 | `m_bAllowFlipping` | bool | `MPropertyDescription Allows flipping the model, regardless of whether it is built left or right handed` |
 | `m_sMuzzleAttachment` | CAttachmentNameSymbolWithStorage | `MPropertyDescription Attachment to fire bullets from` |
 | `m_szMuzzleFlashParticle` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition) > > | `MPropertyDescription Effect when firing this weapon` |
-| `m_szMuzzleFlashParticleConfig` | CUtlString | `MPropertyAttributeEditor ParticleConfigName()` `MPropertyDescription Effect Config for Muzzle Flash - if set, will use this config specified in the particle effect, using whatever CP configuration is specified there, vdata muzzleflash attachment will be ignored` `MPropertyEditContextOverrideKey` |
+| `m_szMuzzleFlashParticleConfig` | CUtlString | `MPropertyAttributeEditor ParticleConfigName()` `MPropertyDescription Effect Config for Muzzle Flash - if set, will use this config specified in the particle effect, using whatever CP configuration is specified there, vdata muzzleflash attachment will be ignored` `MPropertyEditContextOverrideKey ToolEditContext_ID_VPCF` |
 | `m_szBarrelSmokeParticle` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition) > > | `MPropertyDescription Barrel smoke after firing this weapon` |
 | `m_nMuzzleSmokeShotThreshold` | uint8 | `MPropertyDescription Barrel smoke shot threshold to create smoke` |
 | `m_flMuzzleSmokeTimeout` | float32 | `MPropertyDescription Barrel smoke shot timeout` |
@@ -3042,7 +3342,8 @@ classDiagram
 
 **Derived by:** [CBodyComponentPoint](client.md#cbodycomponentpoint), [CBodyComponentSkeletonInstance](client.md#cbodycomponentskeletoninstance)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+}`
 
 **Relationships:**
 
@@ -3318,7 +3619,9 @@ classDiagram
 
 ### CBreakableStageHelper
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nCurrentStage": -1
+}`
 
 **Fields:**
 
@@ -3512,7 +3815,27 @@ classDiagram
 
 ### CBuoyancyHelper
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CBuoyancyHelper",
+	"m_nFluidType": "",
+	"m_flFluidDensity": 1.000000,
+	"m_flNeutrallyBuoyantGravity": 0.000000,
+	"m_flNeutrallyBuoyantLinearDamping": 0.000000,
+	"m_flNeutrallyBuoyantAngularDamping": 0.000000,
+	"m_bNeutrallyBuoyant": false,
+	"m_vecFractionOfWheelSubmergedForWheelFriction":
+	[
+	],
+	"m_vecWheelFrictionScales":
+	[
+	],
+	"m_vecFractionOfWheelSubmergedForWheelDrag":
+	[
+	],
+	"m_vecWheelDrag":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -3597,7 +3920,19 @@ classDiagram
 
 **Inherits from:** [CAnimGraphControllerBase](server.md#canimgraphcontrollerbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CCS2ChickenGraphController",
+	"m_hExternalGraph": 4294967295,
+	"m_action": null,
+	"m_bActionReset": null,
+	"m_idleVariation": null,
+	"m_runVariation": null,
+	"m_panicVariation": null,
+	"m_squatVariation": null,
+	"m_bInWater": null,
+	"m_bHasActionCompletedEvent": false,
+	"m_bWaitingForCompletedEvent": false
+}`
 
 **Relationships:**
 
@@ -3624,7 +3959,58 @@ classDiagram
 
 **Inherits from:** [CCS2WeaponGraphController](server.md#ccs2weapongraphcontroller)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CCS2PawnGraphController",
+	"m_hExternalGraph": 4294967295,
+	"m_action": null,
+	"m_bActionReset": null,
+	"m_flWeaponActionSpeedScale": null,
+	"m_weaponCategory": null,
+	"m_weaponType": null,
+	"m_weaponExtraInfo": null,
+	"m_flWeaponAmmo": null,
+	"m_flWeaponAmmoMax": null,
+	"m_flWeaponAmmoReserve": null,
+	"m_bWeaponIsSilenced": null,
+	"m_flWeaponIronsightAmount": null,
+	"m_bIsUsingLegacyModel": null,
+	"m_idleVariation": null,
+	"m_deployVariation": null,
+	"m_attackType": null,
+	"m_attackThrowStrength": null,
+	"m_flAttackVariation": null,
+	"m_inspectVariation": null,
+	"m_inspectExtraInfo": null,
+	"m_reloadStage": null,
+	"m_bIsDefusing": null,
+	"m_moveType": null,
+	"m_moveDirectionID": null,
+	"m_flMoveSpeedX": null,
+	"m_flMoveSpeedY": null,
+	"m_flMoveSpeedHorizontal": null,
+	"m_flPreviousMoveSpeedHorizontal": null,
+	"m_flCrouchAmount": null,
+	"m_bIsWalking": null,
+	"m_flWeaponDropAmount": null,
+	"m_groundAction": null,
+	"m_groundActionDirectionID": null,
+	"m_flGroundTurnAngleOrVelocity": null,
+	"m_flLadderCycle": null,
+	"m_flLadderYaw": null,
+	"m_flLadderYawBackwards": null,
+	"m_airAction": null,
+	"m_flAirHeightAboveGround": null,
+	"m_leftFootTarget": null,
+	"m_rightFootTarget": null,
+	"m_flFlashedAmount": null,
+	"m_flAimPitchAngle": null,
+	"m_flAimYawAngle": null,
+	"m_flinchHead": null,
+	"m_flinchHeadRestart": null,
+	"m_flinchBody": null,
+	"m_flinchBodyRestart": null,
+	"m_flinchIsOnFire": null
+}`
 
 **Relationships:**
 
@@ -3674,7 +4060,30 @@ classDiagram
 
 **Derived by:** [CCS2PawnGraphController](client.md#ccs2pawngraphcontroller)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CCS2WeaponGraphController",
+	"m_hExternalGraph": 4294967295,
+	"m_action": null,
+	"m_bActionReset": null,
+	"m_flWeaponActionSpeedScale": null,
+	"m_weaponCategory": null,
+	"m_weaponType": null,
+	"m_weaponExtraInfo": null,
+	"m_flWeaponAmmo": null,
+	"m_flWeaponAmmoMax": null,
+	"m_flWeaponAmmoReserve": null,
+	"m_bWeaponIsSilenced": null,
+	"m_flWeaponIronsightAmount": null,
+	"m_bIsUsingLegacyModel": null,
+	"m_idleVariation": null,
+	"m_deployVariation": null,
+	"m_attackType": null,
+	"m_attackThrowStrength": null,
+	"m_flAttackVariation": null,
+	"m_inspectVariation": null,
+	"m_inspectExtraInfo": null,
+	"m_reloadStage": null
+}`
 
 **Relationships:**
 
@@ -5645,7 +6054,142 @@ classDiagram
 
 **Inherits from:** [CBasePlayerWeaponVData](server.md#cbaseplayerweaponvdata)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertySuppressBaseClassField`, `MPropertySuppressBaseClassField`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CCSWeaponBaseVData",
+	"m_szWorldModel": "",
+	"m_szWorldModelAg2Override": "",
+	"m_sToolsOnlyOwnerModelName": "",
+	"m_bBuiltRightHanded": true,
+	"m_bAllowFlipping": true,
+	"m_sMuzzleAttachment": "muzzle",
+	"m_szMuzzleFlashParticle": "",
+	"m_szMuzzleFlashParticleConfig": "",
+	"m_szBarrelSmokeParticle": "",
+	"m_nMuzzleSmokeShotThreshold": 4,
+	"m_flMuzzleSmokeTimeout": 0.250000,
+	"m_flMuzzleSmokeDecrementRate": 1.000000,
+	"m_bGenerateMuzzleLight": true,
+	"m_bLinkedCooldowns": false,
+	"m_iFlags": "",
+	"m_iWeight": 0,
+	"m_bAutoSwitchTo": true,
+	"m_bAutoSwitchFrom": true,
+	"m_nPrimaryAmmoType": "",
+	"m_nSecondaryAmmoType": "",
+	"m_iMaxClip1": 0,
+	"m_iMaxClip2": 0,
+	"m_iDefaultClip1": -1,
+	"m_iDefaultClip2": -1,
+	"m_bReserveAmmoAsClips": false,
+	"m_bTreatAsSingleClip": false,
+	"m_bKeepLoadedAmmo": false,
+	"m_iRumbleEffect": "RUMBLE_INVALID",
+	"m_flDropSpeed": 300.000000,
+	"m_iSlot": 0,
+	"m_iPosition": 0,
+	"m_aShootSounds":
+	{
+	},
+	"m_WeaponType": "WEAPONTYPE_UNKNOWN",
+	"m_WeaponCategory": "WEAPONCATEGORY_OTHER",
+	"m_szAnimSkeleton": "",
+	"m_vecMuzzlePos0":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vecMuzzlePos1":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_szTracerParticle": "",
+	"m_GearSlot": "GEAR_SLOT_INVALID",
+	"m_GearSlotPosition": -1,
+	"m_DefaultLoadoutSlot": "LOADOUT_SLOT_INVALID",
+	"m_nPrice": 0,
+	"m_nKillAward": 0,
+	"m_nPrimaryReserveAmmoMax": 0,
+	"m_nSecondaryReserveAmmoMax": 0,
+	"m_bMeleeWeapon": false,
+	"m_bHasBurstMode": false,
+	"m_bIsRevolver": false,
+	"m_bCannotShootUnderwater": false,
+	"m_szName": "",
+	"m_eSilencerType": "WEAPONSILENCER_NONE",
+	"m_nCrosshairMinDistance": 0,
+	"m_nCrosshairDeltaDistance": 0,
+	"m_bIsFullAuto": false,
+	"m_nNumBullets": 0,
+	"m_bReloadsSingleShells": false,
+	"m_flCycleTime": 0.000000,
+	"m_flCycleTimeWhenInBurstMode": 0.000000,
+	"m_flTimeBetweenBurstShots": 0.000000,
+	"m_flMaxSpeed": 0.000000,
+	"m_flSpread": 0.000000,
+	"m_flInaccuracyCrouch": 0.000000,
+	"m_flInaccuracyStand": 0.000000,
+	"m_flInaccuracyJump": 0.000000,
+	"m_flInaccuracyLand": 0.000000,
+	"m_flInaccuracyLadder": 0.000000,
+	"m_flInaccuracyFire": 0.000000,
+	"m_flInaccuracyMove": 0.000000,
+	"m_flRecoilAngle": 0.000000,
+	"m_flRecoilAngleVariance": 0.000000,
+	"m_flRecoilMagnitude": 0.000000,
+	"m_flRecoilMagnitudeVariance": 0.000000,
+	"m_nTracerFrequency": 0,
+	"m_flInaccuracyJumpInitial": 0.000000,
+	"m_flInaccuracyJumpApex": 0.000000,
+	"m_flInaccuracyReload": 0.000000,
+	"m_flDeployDuration": 0.000000,
+	"m_flDisallowAttackAfterReloadStartDuration": 0.000000,
+	"m_nBurstShotCount": 2,
+	"m_bAllowBurstHolster": true,
+	"m_nRecoilSeed": 0,
+	"m_nSpreadSeed": 0,
+	"m_flAttackMovespeedFactor": 0.000000,
+	"m_flInaccuracyPitchShift": 0.000000,
+	"m_flInaccuracyAltSoundThreshold": 0.000000,
+	"m_szUseRadioSubtitle": "",
+	"m_bUnzoomsAfterShot": false,
+	"m_bHideViewModelWhenZoomed": false,
+	"m_nZoomLevels": 0,
+	"m_nZoomFOV1": 0,
+	"m_nZoomFOV2": 0,
+	"m_flZoomTime0": 0.000000,
+	"m_flZoomTime1": 0.000000,
+	"m_flZoomTime2": 0.000000,
+	"m_flIronSightPullUpSpeed": 8.000000,
+	"m_flIronSightPutDownSpeed": 4.000000,
+	"m_flIronSightFOV": 80.000000,
+	"m_flIronSightPivotForward": 10.000000,
+	"m_flIronSightLooseness": 0.500000,
+	"m_nDamage": 0,
+	"m_flHeadshotMultiplier": 0.000000,
+	"m_flArmorRatio": 0.000000,
+	"m_flPenetration": 0.000000,
+	"m_flRange": 0.000000,
+	"m_flRangeModifier": 0.000000,
+	"m_flFlinchVelocityModifierLarge": 0.000000,
+	"m_flFlinchVelocityModifierSmall": 0.000000,
+	"m_flRecoveryTimeCrouch": 0.000000,
+	"m_flRecoveryTimeStand": 0.000000,
+	"m_flRecoveryTimeCrouchFinal": 0.000000,
+	"m_flRecoveryTimeStandFinal": 0.000000,
+	"m_nRecoveryTransitionStartBullet": 0,
+	"m_nRecoveryTransitionEndBullet": 0,
+	"m_flThrowVelocity": 0.000000,
+	"m_vSmokeColor":
+	[
+		1.000000,
+		1.000000,
+		1.000000
+	],
+	"m_szAnimClass": ""
+}`, `MPropertySuppressBaseClassField m_iPosition`, `MPropertySuppressBaseClassField m_iSlot`
 
 **Relationships:**
 
@@ -5853,7 +6397,14 @@ classDiagram
 
 ### CChoreoComponent
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CChoreoComponent",
+	"m_hOwner": null,
+	"m_nExernalChoreoGraphCount": 0,
+	"m_sActiveExternalChoreoGraphSlotID": "",
+	"m_nNextSceneEventId": 0,
+	"m_flAllowResponsesEndTime": null
+}`
 
 **Relationships:**
 
@@ -5893,7 +6444,13 @@ classDiagram
 
 **Inherits from:** [CAnimGraphControllerBase](server.md#canimgraphcontrollerbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CChoreo_GraphController",
+	"m_hExternalGraph": 4294967295,
+	"m_eChoreoState": null,
+	"m_tChoreoTargetWarp": null,
+	"m_tChoreoExitWarp": null
+}`
 
 **Relationships:**
 
@@ -5937,7 +6494,79 @@ classDiagram
 
 ### CCollisionProperty
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CCollisionProperty",
+	"m_collisionAttribute":
+	{
+		"m_nInteractsAs": 131072,
+		"m_nInteractsWith": 0,
+		"m_nInteractsExclude": 0,
+		"m_nEntityId": 0,
+		"m_nOwnerId": 4294967295,
+		"m_nHierarchyId": 0,
+		"m_nDetailLayerMask": 0,
+		"m_nDetailLayerMaskType": 0,
+		"m_nTargetDetailLayer": 0,
+		"m_nCollisionGroup": 4,
+		"m_nCollisionFunctionMask": 7
+	},
+	"m_vecMins":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vecMaxs":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_usSolidFlags": 0,
+	"m_nSolidType": "SOLID_NONE",
+	"m_triggerBloat": 0,
+	"m_nSurroundType": "USE_OBB_COLLISION_BOUNDS",
+	"m_CollisionGroup": 4,
+	"m_nEnablePhysics": 1,
+	"m_flBoundingRadius": 0.000000,
+	"m_vecSpecifiedSurroundingMins":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vecSpecifiedSurroundingMaxs":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vecSurroundingMaxs":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vecSurroundingMins":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vCapsuleCenter1":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vCapsuleCenter2":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_flCapsuleRadius": 0.000000
+}`
 
 **Relationships:**
 
@@ -6057,7 +6686,23 @@ classDiagram
 
 ### CCommentarySystem
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CCommentarySystem",
+	"m_bCommentaryEnabledMidGame": false,
+	"m_flNextTeleportTime": null,
+	"m_iTeleportStage": 0,
+	"m_bCheatState": false,
+	"m_bIsFirstSpawnGroupToLoad": false,
+	"m_ModifiedConvars":
+	[
+	],
+	"m_hCurrentNode": null,
+	"m_hActiveCommentaryNode": null,
+	"m_hLastCommentaryNode": null,
+	"m_vecNodes":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -6098,7 +6743,33 @@ classDiagram
 
 ### CConstantForceController
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CConstantForceController",
+	"m_linear":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_angular":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_linearSave":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_angularSave":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`
 
 **Fields:**
 
@@ -6131,7 +6802,14 @@ classDiagram
 
 ### CCopyRecipientFilter
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CCopyRecipientFilter",
+	"m_Flags": 0,
+	"m_Recipients":
+	[
+	],
+	"m_slotPlayerExcludedDueToPrediction": -1
+}`
 
 **Fields:**
 
@@ -6211,7 +6889,31 @@ classDiagram
 
 ### CDebugDrawHistoryData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_hEntity": null,
+	"m_etype": "k_ESceneViewDebugOverlaysListenerDataType_Unknown",
+	"m_vectors":
+	[
+	],
+	"m_colors":
+	[
+	],
+	"m_dimensions":
+	[
+	],
+	"m_times":
+	[
+	],
+	"m_uint64s":
+	[
+	],
+	"m_bools":
+	[
+	],
+	"m_strings":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -6255,7 +6957,7 @@ classDiagram
 
 ### CDebugSnapshotData_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults null`
 
 **Relationships:**
 
@@ -6288,7 +6990,12 @@ classDiagram
 
 ### CDecalGroupVData
 
-**Metadata:** `MGetKV3ClassDefaults`, `MVDataRoot`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vecOptions":
+	[
+	],
+	"m_flTotalProbability": 0.000000
+}`, `MVDataRoot`
 
 **Relationships:**
 
@@ -6306,7 +7013,7 @@ classDiagram
 
 ### CDecalInstance
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults null`
 
 **Relationships:**
 
@@ -6392,7 +7099,19 @@ classDiagram
 
 ### CDestructiblePart
 
-**Metadata:** `MFgdHelper`, `MGetKV3ClassDefaults`, `MModelGameData`
+**Metadata:** `MFgdHelper game_data_list{ key = 'CDestructiblePart' }`, `MGetKV3ClassDefaults {
+	"m_DebugName": "",
+	"m_nHitGroup": "HITGROUP_GENERIC",
+	"m_bDisableHitGroupWhenDestroyed": true,
+	"m_nOtherHitgroupsToDestroyWhenFullyDestructed":
+	[
+	],
+	"m_bOnlyDestroyWhenGibbing": false,
+	"m_sBodyGroupName": "",
+	"m_DamageLevels":
+	[
+	]
+}`, `MModelGameData`
 
 **Relationships:**
 
@@ -6416,7 +7135,22 @@ classDiagram
 
 ### CDestructiblePart_DamageLevel
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_sName": "",
+	"m_sBreakablePieceName": "",
+	"m_nBodyGroupValue": -1,
+	"m_nHealth": 1,
+	"m_flCriticalDamagePercent": 0.000000,
+	"m_nDamagePassthroughType": "Normal",
+	"m_nDestructionDeathBehavior": "eDoNotKill",
+	"m_sCustomDeathHandshake": "",
+	"m_bShouldDestroyOnDeath": false,
+	"m_flDeathDestroyTime":
+	[
+		0.100000,
+		1.000000
+	]
+}`
 
 **Relationships:**
 
@@ -6435,17 +7169,23 @@ classDiagram
 | `m_sName` | CUtlString | `MPropertyDescription Name for this damage level.  Presently only used for debugging/display - one day may be used in code to allow destroying by name.` |
 | `m_sBreakablePieceName` | CGlobalSymbol | `MPropertyAttributeEditor ModelDocPicker( MODELDOC_PICK_TYPE_BREAKPIECE )` `MPropertyDescription Name of the breakable to trigger breaking on when health reaches zero.` `MPropertyStartGroup +Model Setup` |
 | `m_nBodyGroupValue` | int32 | `MPropertyDescription Value to set for the body group when the damage level is broken.` |
-| `m_nHealth` | [CSkillInt](../schemas/server.md#cskillint) | `MPropertyDescription Total health of this damage level. When it reaches 0, the damage level is 'broken' using the breakable prop system.` `MPropertyStartGroup +Damage` `MPropertySuppressExpr` |
+| `m_nHealth` | [CSkillInt](../schemas/server.md#cskillint) | `MPropertyDescription Total health of this damage level. When it reaches 0, the damage level is 'broken' using the breakable prop system.` `MPropertyStartGroup +Damage` `MPropertySuppressExpr m_nDamagePassthroughType == InvincibleAbsorb || m_nDamagePassthroughType == InvinciblePassthrough` |
 | `m_flCriticalDamagePercent` | float32 | `MPropertyDescription % chance (0-1) of dealing 'critical' damage, which destroys this damage level, regardless of damage pass through type.` |
 | `m_nDamagePassthroughType` | [EDestructiblePartDamagePassThroughType](../schemas/!GlobalTypes.md#edestructiblepartdamagepassthroughtype) | `MPropertyDescription How damage to this damage level is handled.` |
 | `m_nDestructionDeathBehavior` | [DestructiblePartDestructionDeathBehavior_t](../schemas/!GlobalTypes.md#destructiblepartdestructiondeathbehavior_t) | `MPropertyDescription Should the entity die when this damage level is destroyed?` `MPropertyStartGroup +Death` |
-| `m_sCustomDeathHandshake` | CGlobalSymbol | `MPropertyDescription Custom death handshake to set when this damage level is destroyed.` `MPropertySuppressExpr` |
+| `m_sCustomDeathHandshake` | CGlobalSymbol | `MPropertyDescription Custom death handshake to set when this damage level is destroyed.` `MPropertySuppressExpr m_nDestructionDeathBehavior == eDoNotKill` |
 | `m_bShouldDestroyOnDeath` | bool | `MPropertyDescription Whether the damage level should be destroyed when the entity dies.` |
-| `m_flDeathDestroyTime` | [CRangeFloat](../schemas/tier2.md#crangefloat) | `MPropertyDescription Time after death the damage level should be destroyed` `MPropertySuppressExpr` |
+| `m_flDeathDestroyTime` | [CRangeFloat](../schemas/tier2.md#crangefloat) | `MPropertyDescription Time after death the damage level should be destroyed` `MPropertySuppressExpr m_bShouldDestroyOnDeath == false` |
 
 ### CDestructiblePartsComponent
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vecDamageTakenByHitGroup":
+	[
+	],
+	"m_hOwner": null,
+	"m_pAnimGraphDestructibleGraphController": null
+}`
 
 **Relationships:**
 
@@ -6467,7 +7207,16 @@ classDiagram
 
 ### CDestructiblePartsSystemData
 
-**Metadata:** `MGetKV3ClassDefaults`, `MModelGameData`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_PartsDataByHitGroup":
+	{
+	},
+	"m_nMinMaxNumberHitGroupsToDestroyWhenGibbing":
+	[
+		1,
+		3
+	]
+}`, `MModelGameData`
 
 **Relationships:**
 
@@ -6777,7 +7526,10 @@ classDiagram
 
 **Inherits from:** [CAnimGraphControllerBase](server.md#canimgraphcontrollerbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CEmptyGraphController",
+	"m_hExternalGraph": 4294967295
+}`
 
 **Relationships:**
 
@@ -6874,7 +7626,9 @@ classDiagram
 
 **Derived by:** [CBasePlayerVData](client.md#cbaseplayervdata), [CBasePlayerWeaponVData](client.md#cbaseplayerweaponvdata), [CPrecipitationVData](client.md#cprecipitationvdata)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MVDataNodeType 1`, `MVDataOverlayType 1`, `MVDataRoot`, `MVDataUseLinkedEntityClasses`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CEntitySubclassVDataBase"
+}`, `MVDataNodeType 1`, `MVDataOverlayType 1`, `MVDataRoot`, `MVDataUseLinkedEntityClasses`
 
 **Relationships:**
 
@@ -7906,7 +8660,24 @@ classDiagram
 
 ### CEnvWindShared
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CEnvWindShared",
+	"m_iMinWind": 0,
+	"m_iMaxWind": 0,
+	"m_windRadius": 0,
+	"m_iMinGust": 0,
+	"m_iMaxGust": 0,
+	"m_flMinGustDelay": 0.000000,
+	"m_flMaxGustDelay": 0.000000,
+	"m_flGustDuration": 0.000000,
+	"m_iGustDirChange": 0,
+	"m_OnGustStart":
+	{
+	},
+	"m_OnGustEnd":
+	{
+	}
+}`
 
 **Relationships:**
 
@@ -7971,7 +8742,13 @@ classDiagram
 
 ### CExplosionTypeData
 
-**Metadata:** `MGetKV3ClassDefaults`, `MVDataAssociatedFile`, `MVDataOverlayType 1`, `MVDataRoot`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_SoundName": "",
+	"m_ParticleEffect": "",
+	"m_bIsIncindiary": false,
+	"m_bHasForces": false,
+	"m_DecalType": "Scorch"
+}`, `MVDataAssociatedFile scripts/explosion_types.vdata`, `MVDataOverlayType 1`, `MVDataRoot`
 
 **Relationships:**
 
@@ -9508,7 +10285,14 @@ classDiagram
 
 **Inherits from:** [IChoreoServices](server.md#ichoreoservices)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CGameChoreoServices",
+	"m_hOwner": null,
+	"m_hScriptedSequence": null,
+	"m_scriptState": "SCRIPT_PLAYING",
+	"m_choreoState": "STATE_PRE_SCRIPT",
+	"m_flTimeStartedState": null
+}`
 
 **Relationships:**
 
@@ -9729,7 +10513,11 @@ classDiagram
 
 ### CGameSceneNodeHandle
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CGameSceneNodeHandle",
+	"m_hOwner": null,
+	"m_name": ""
+}`
 
 **Fields:**
 
@@ -9740,7 +10528,56 @@ classDiagram
 
 ### CGameScriptedMoveData
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vAccumulatedRootMotion":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_angAccumulatedRootMotionRotation":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vSrc": null,
+	"m_angSrc":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_angCurrent":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_flLockedSpeed": -1.000000,
+	"m_flAngRate": 0.000000,
+	"m_flDuration": 0.000000,
+	"m_flStartTime": null,
+	"m_bActive": false,
+	"m_bTeleportOnEnd": false,
+	"m_bIgnoreRotation": false,
+	"m_bSuccess": true,
+	"m_nForcedCrouchState": "FORCEDCROUCH_NONE",
+	"m_bIgnoreCollisions": false,
+	"m_vDest":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_angDst":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_hDestEntity": null
+}`
 
 **Relationships:**
 
@@ -9895,7 +10732,11 @@ classDiagram
 
 ### CGlowProperty
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CGlowProperty",
+	"m_iGlowType": 0,
+	"m_bEligibleForScreenHighlight": false
+}`
 
 **Fields:**
 
@@ -10066,7 +10907,10 @@ classDiagram
 
 **Inherits from:** [CEntityComponent](entity2.md#centitycomponent)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CHitboxComponent",
+	"m_flBoundsExpandRadius": 0.000000
+}`
 
 **Relationships:**
 
@@ -10339,7 +11183,37 @@ classDiagram
 
 ### CInfoChoreoAnchorPosition
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vOriginLS":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_qAnglesLS":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vExtentsMin":
+	[
+		0.000000,
+		-20.000000,
+		0.000000
+	],
+	"m_vExtentsMax":
+	[
+		0.000000,
+		20.000000,
+		0.000000
+	],
+	"m_flRadius": 12.000000,
+	"m_bOnlyWarpPosition": false,
+	"m_hParent": null,
+	"m_nShapeType": "POINT"
+}`
 
 **Relationships:**
 
@@ -11136,7 +12010,127 @@ classDiagram
 
 **Inherits from:** [CEntityComponent](entity2.md#centitycomponent)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CLightComponent",
+	"m_Color":
+	[
+		0,
+		0,
+		0,
+		0
+	],
+	"m_SecondaryColor":
+	[
+		0,
+		0,
+		0,
+		0
+	],
+	"m_flBrightness": 0.000000,
+	"m_flBrightnessScale": 1.000000,
+	"m_flBrightnessMult": 1.000000,
+	"m_flRange": 0.000000,
+	"m_flFalloff": 0.000000,
+	"m_flAttenuation0": 0.000000,
+	"m_flAttenuation1": 0.000000,
+	"m_flAttenuation2": 0.000000,
+	"m_flTheta": 0.000000,
+	"m_flPhi": 0.000000,
+	"m_hLightCookie": "",
+	"m_nCascades": 0,
+	"m_nCastShadows": 0,
+	"m_nShadowWidth": 0,
+	"m_nShadowHeight": 0,
+	"m_bRenderDiffuse": true,
+	"m_nRenderSpecular": 1,
+	"m_bRenderTransmissive": true,
+	"m_flOrthoLightWidth": 0.000000,
+	"m_flOrthoLightHeight": 0.000000,
+	"m_nStyle": 0,
+	"m_Pattern": "",
+	"m_nCascadeRenderStaticObjects": -1,
+	"m_flShadowCascadeCrossFade": 0.000000,
+	"m_flShadowCascadeDistanceFade": 0.000000,
+	"m_flShadowCascadeDistance0": 0.000000,
+	"m_flShadowCascadeDistance1": 0.000000,
+	"m_flShadowCascadeDistance2": 0.000000,
+	"m_flShadowCascadeDistance3": 0.000000,
+	"m_nShadowCascadeResolution0": 0,
+	"m_nShadowCascadeResolution1": 0,
+	"m_nShadowCascadeResolution2": 0,
+	"m_nShadowCascadeResolution3": 0,
+	"m_bUsesBakedShadowing": false,
+	"m_nShadowPriority": -1,
+	"m_nBakedShadowIndex": -1,
+	"m_nLightPathUniqueId": 0,
+	"m_nLightMapUniqueId": 0,
+	"m_bRenderToCubemaps": true,
+	"m_bAllowSSTGeneration": true,
+	"m_nDirectLight": 0,
+	"m_nBounceLight": 0,
+	"m_flBounceScale": 0.000000,
+	"m_flFadeMinDist": 0.000000,
+	"m_flFadeMaxDist": 0.000000,
+	"m_flShadowFadeMinDist": 0.000000,
+	"m_flShadowFadeMaxDist": 0.000000,
+	"m_bEnabled": false,
+	"m_bFlicker": false,
+	"m_bPrecomputedFieldsValid": false,
+	"m_vPrecomputedBoundsMins":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vPrecomputedBoundsMaxs":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vPrecomputedOBBOrigin":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vPrecomputedOBBAngles":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vPrecomputedOBBExtent":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_flPrecomputedMaxRange": 0.000000,
+	"m_nFogLightingMode": 0,
+	"m_flFogContributionStength": 1.000000,
+	"m_flNearClipPlane": 1.000000,
+	"m_SkyColor":
+	[
+		0,
+		0,
+		0,
+		0
+	],
+	"m_flSkyIntensity": 0.000000,
+	"m_SkyAmbientBounce":
+	[
+		0,
+		0,
+		0,
+		0
+	],
+	"m_bUseSecondaryColor": false,
+	"m_flLightStyleStartTime": null,
+	"m_flCapsuleLength": 0.000000,
+	"m_flMinRoughness": 0.000000,
+	"m_bPvsModifyEntity": false
+}`
 
 **Relationships:**
 
@@ -12543,7 +13537,18 @@ classDiagram
 
 ### CMotorController
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMotorController",
+	"m_speed": 0.000000,
+	"m_maxTorque": 0.000000,
+	"m_axis":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_inertiaFactor": 0.000000
+}`
 
 **Fields:**
 
@@ -12556,7 +13561,33 @@ classDiagram
 
 ### CMovementStatsProperty
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CMovementStatsProperty",
+	"m_nUseCounter": 0,
+	"m_emaMovementDirection":
+	{
+		"m_nSampleCount": 0,
+		"m_nMaxSampleCount": 0,
+		"m_previousSample":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_average":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_averageDelta":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		]
+	}
+}`
 
 **Relationships:**
 
@@ -12682,7 +13713,9 @@ classDiagram
 
 ### CNMEventPulseState_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_eventID": ""
+}`
 
 **Fields:**
 
@@ -12810,7 +13843,10 @@ classDiagram
 
 ### CNetworkTransmitComponent
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNetworkTransmitComponent",
+	"m_nTransmitStateOwnedCounter": 0
+}`
 
 **Fields:**
 
@@ -12840,7 +13876,17 @@ classDiagram
 
 ### CNetworkedSequenceOperation
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNetworkedSequenceOperation",
+	"m_hSequence": -1,
+	"m_flPrevCycle": 0.000000,
+	"m_flCycle": 0.000000,
+	"m_flWeight": 1.000000,
+	"m_bSequenceChangeNetworked": false,
+	"m_bDiscontinuity": false,
+	"m_flPrevCycleFromDiscontinuity": 0.000000,
+	"m_flPrevCycleForAnimEventDetection": 0.000000
+}`
 
 **Relationships:**
 
@@ -12866,7 +13912,22 @@ classDiagram
 
 **Inherits from:** [CNmPassthroughNode::CDefinition](animlib.md#cnmpassthroughnodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmAimCSNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nChildNodeIdx": -1,
+	"m_nVerticalAngleNodeIdx": -1,
+	"m_nHorizontalAngleNodeIdx": -1,
+	"m_nWeaponCategoryNodeIdx": -1,
+	"m_nWeaponTypeNodeIdx": -1,
+	"m_nWeaponActionNodeIdx": -1,
+	"m_nWeaponDropNodeIdx": -1,
+	"m_nIsDefusingNodeIdx": -1,
+	"m_nCrouchWeightNodeIdx": -1,
+	"m_flHandIKBlendInTimeSeconds": 0.000000,
+	"m_flActionBlendTimeSeconds": 0.000000,
+	"m_flPlantingBlendTimeSeconds": 0.000000
+}`
 
 **Relationships:**
 
@@ -12925,7 +13986,9 @@ classDiagram
 
 **Inherits from:** [CNmEventConsumer](server.md#cnmeventconsumer)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmEventConsumerAttributes"
+}`
 
 **Relationships:**
 
@@ -12938,7 +14001,9 @@ classDiagram
 
 **Inherits from:** [CNmEventConsumer](server.md#cnmeventconsumer)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmEventConsumerLegacy"
+}`
 
 **Relationships:**
 
@@ -12951,7 +14016,9 @@ classDiagram
 
 **Inherits from:** [CNmEventConsumer](server.md#cnmeventconsumer)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmEventConsumerParticle"
+}`
 
 **Relationships:**
 
@@ -12964,7 +14031,9 @@ classDiagram
 
 **Inherits from:** [CNmEventConsumer](server.md#cnmeventconsumer)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmEventConsumerPulse"
+}`
 
 **Relationships:**
 
@@ -12977,7 +14046,9 @@ classDiagram
 
 **Inherits from:** [CNmEventConsumer](server.md#cnmeventconsumer)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmEventConsumerSound"
+}`
 
 **Relationships:**
 
@@ -12990,7 +14061,14 @@ classDiagram
 
 **Inherits from:** [CNmPassthroughNode::CDefinition](animlib.md#cnmpassthroughnodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CNmSnapWeaponNode::CDefinition",
+	"m_nNodeIdx": -1,
+	"m_nChildNodeIdx": -1,
+	"m_nFlashedAmountNodeIdx": -1,
+	"m_nWeaponCategoryNodeIdx": -1,
+	"m_nWeaponTypeNodeIdx": -1
+}`
 
 **Relationships:**
 
@@ -13976,7 +15054,10 @@ classDiagram
 
 ### CPhysicsBodyGameMarkup
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_TargetBody": "",
+	"m_Tag": ""
+}`
 
 **Fields:**
 
@@ -13987,7 +15068,11 @@ classDiagram
 
 ### CPhysicsBodyGameMarkupData
 
-**Metadata:** `MGetKV3ClassDefaults`, `MModelGameData`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_PhysicsBodyMarkupByBoneName":
+	{
+	}
+}`, `MModelGameData`
 
 **Relationships:**
 
@@ -14163,7 +15248,15 @@ classDiagram
 
 ### CPhysicsShake
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPhysicsShake",
+	"m_force":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`
 
 **Fields:**
 
@@ -15533,7 +16626,23 @@ classDiagram
 
 **Inherits from:** [CEntitySubclassVDataBase](server.md#centitysubclassvdatabase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPrecipitationVData",
+	"m_szParticlePrecipitationEffect": "",
+	"m_szParticlePrecipitationPuddleEffect": "",
+	"m_szParticlePrecipitationPostEffect": "",
+	"m_flInnerDistance": 32.000000,
+	"m_nAttachType": "PATTACH_ABSORIGIN_FOLLOW",
+	"m_bBatchSameVolumeType": true,
+	"m_nRTEnvCP": -1,
+	"m_nRTEnvCPComponent": 0,
+	"m_szModifier": "",
+	"m_nUseSnapshotFromSurfaceGraph": -1,
+	"m_snapshotFilter":
+	{
+		"m_flMaxRadius": 200.000000
+	}
+}`
 
 **Relationships:**
 
@@ -15565,7 +16674,19 @@ classDiagram
 
 **Inherits from:** [CEntityComponent](entity2.md#centitycomponent)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPropDataComponent",
+	"m_flDmgModBullet": 1.000000,
+	"m_flDmgModClub": 1.000000,
+	"m_flDmgModExplosive": 1.000000,
+	"m_flDmgModFire": 1.000000,
+	"m_iszPhysicsDamageTableName": "",
+	"m_iszBasePropData": "",
+	"m_nInteractions": 0,
+	"m_bSpawnMotionDisabled": false,
+	"m_nDisableTakePhysicsDamageSpawnFlag": 0,
+	"m_nMotionDisabledSpawnFlag": 0
+}`
 
 **Relationships:**
 
@@ -15661,7 +16782,43 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseLerp](pulse_runtime_lib.md#cpulsecell_baselerp)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_LerpCameraSettings",
+	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_WakeResume":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_flSeconds": 4.000000,
+	"m_Start":
+	{
+		"m_flNearBlurryDistance": -1.000000,
+		"m_flNearCrispDistance": -1.000000,
+		"m_flFarCrispDistance": -1.000000,
+		"m_flFarBlurryDistance": -1.000000
+	},
+	"m_End":
+	{
+		"m_flNearBlurryDistance": -1.000000,
+		"m_flNearCrispDistance": -1.000000,
+		"m_flFarCrispDistance": -1.000000,
+		"m_flFarBlurryDistance": -1.000000
+	}
+}`
 
 **Relationships:**
 
@@ -15686,7 +16843,25 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseLerp::CursorState_t](pulse_runtime_lib.md#cpulsecell_baselerpcursorstate_t)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_StartTime": null,
+	"m_EndTime": null,
+	"m_hCamera": null,
+	"m_OverlaidStart":
+	{
+		"m_flNearBlurryDistance": -1.000000,
+		"m_flNearCrispDistance": -1.000000,
+		"m_flFarCrispDistance": -1.000000,
+		"m_flFarBlurryDistance": -1.000000
+	},
+	"m_OverlaidEnd":
+	{
+		"m_flNearBlurryDistance": -1.000000,
+		"m_flNearCrispDistance": -1.000000,
+		"m_flFarCrispDistance": -1.000000,
+		"m_flFarBlurryDistance": -1.000000
+	}
+}`
 
 **Relationships:**
 
@@ -15709,7 +16884,35 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseYieldingInflow](pulse_runtime_lib.md#cpulsecell_baseyieldinginflow)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Creates new cursors for when an animgraph tag is handled. Will listen until canceled.`, `MPropertyFriendlyName Listen for AnimGraph Tag`, `MPulseEditorSubHeaderText`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Outflow_ListenForAnimgraphTag",
+	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_OnStart":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_OnEnd":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_TagName": ""
+}`, `MPropertyDescription Creates new cursors for when an animgraph tag is handled. Will listen until canceled.`, `MPropertyFriendlyName Listen for AnimGraph Tag`, `MPulseEditorSubHeaderText { 'TagName'='m_TagName' }`
 
 **Relationships:**
 
@@ -15733,7 +16936,31 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseYieldingInflow](pulse_runtime_lib.md#cpulsecell_baseyieldinginflow)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Waits for the entity to fire a specific output. By default, this listens once, but can be configured to listen until canceled.`, `MPropertyFriendlyName Wait for Entity Output`, `MPulseEditorHeaderIcon`, `MPulseEditorSubHeaderText`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Outflow_ListenForEntityOutput",
+	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_OnFired":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_strEntityOutput": "",
+	"m_strEntityOutputParam": "",
+	"m_bListenUntilCanceled": false
+}`, `MPropertyDescription Waits for the entity to fire a specific output. By default, this listens once, but can be configured to listen until canceled.`, `MPropertyFriendlyName Wait for Entity Output`, `MPulseEditorHeaderIcon tools/images/pulse_editor/inflow_wait.png`, `MPulseEditorSubHeaderText { 'Output'='m_strEntityOutput' 'Param'='m_strEntityOutputParam' 'Until Canceled'='m_bListenUntilCanceled' }`
 
 **Relationships:**
 
@@ -15756,7 +16983,9 @@ classDiagram
 
 ### CPulseCell_Outflow_ListenForEntityOutput::CursorState_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_entity": null
+}`
 
 **Relationships:**
 
@@ -15775,7 +17004,31 @@ classDiagram
 
 **Inherits from:** [CPulseCell_Outflow_PlayVCDBase](server.md#cpulsecell_outflow_playvcdbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Outflow_PlayDynamicVCD",
+	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_OnFinished":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_Triggers":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -15794,7 +17047,31 @@ classDiagram
 
 **Derived by:** [CPulseCell_Outflow_PlaySequence](server.md#cpulsecell_outflow_playsequence), [CPulseCell_Outflow_PlayVCDBase](server.md#cpulsecell_outflow_playvcdbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Outflow_PlaySceneBase",
+	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_OnFinished":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_Triggers":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -15818,7 +17095,13 @@ classDiagram
 
 ### CPulseCell_Outflow_PlaySceneBase::CursorState_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_sceneInstance": null,
+	"m_mainActor": null,
+	"m_cursorIDToEventID":
+	{
+	}
+}`
 
 **Relationships:**
 
@@ -15840,7 +17123,32 @@ classDiagram
 
 **Inherits from:** [CPulseCell_Outflow_PlaySceneBase](server.md#cpulsecell_outflow_playscenebase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Outflow_PlaySequence",
+	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_OnFinished":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_Triggers":
+	[
+	],
+	"m_ParamSequenceName": ""
+}`
 
 **Relationships:**
 
@@ -15862,7 +17170,47 @@ classDiagram
 
 **Inherits from:** [CPulseCell_Outflow_PlayVCDBase](server.md#cpulsecell_outflow_playvcdbase)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Outflow_PlayVCD",
+	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_OnFinished":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_Triggers":
+	[
+	],
+	"m_hChoreoScene": "",
+	"m_OnPaused":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_OnResumed":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_OutRequirements":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -15888,7 +17236,15 @@ classDiagram
 
 ### CPulseCell_Outflow_PlayVCD::VCDRequirementInfo_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nEventID": -1,
+	"m_Outflow":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	}
+}`
 
 **Relationships:**
 
@@ -15910,7 +17266,31 @@ classDiagram
 
 **Derived by:** [CPulseCell_Outflow_PlayDynamicVCD](server.md#cpulsecell_outflow_playdynamicvcd), [CPulseCell_Outflow_PlayVCD](server.md#cpulsecell_outflow_playvcd)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Outflow_PlayVCDBase",
+	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_OnFinished":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_Triggers":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -15928,7 +17308,28 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseYieldingInflow](pulse_runtime_lib.md#cpulsecell_baseyieldinginflow)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Starts a sound event on a speaker, and waits for its completion. Keywords: Voice Over, Choreo`, `MPropertyFriendlyName Play VO Line`, `MPulseEditorHeaderHelper`, `MPulseEditorHeaderIcon`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Outflow_PlayVOLine",
+	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_OnFinished":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	}
+}`, `MPropertyDescription Starts a sound event on a speaker, and waits for its completion. Keywords: Voice Over, Choreo`, `MPropertyFriendlyName Play VO Line`, `MPulseEditorHeaderHelper`, `MPulseEditorHeaderIcon tools/images/pulse_editor/sequence.png`
 
 **Relationships:**
 
@@ -15948,7 +17349,9 @@ classDiagram
 
 ### CPulseCell_Outflow_PlayVOLine::CursorState_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_sceneInstance": null
+}`
 
 **Relationships:**
 
@@ -15967,7 +17370,54 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseYieldingInflow](pulse_runtime_lib.md#cpulsecell_baseyieldinginflow)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Outflow_ScriptedSequence",
+	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_szSyncGroup": "",
+	"m_nExpectedNumSequencesInSyncGroup": 0,
+	"m_bEnsureOnNavmeshOnFinish": true,
+	"m_bDontTeleportAtEnd": true,
+	"m_bDisallowInterrupts": true,
+	"m_scriptedSequenceDataMain":
+	{
+		"m_nActorID": 0,
+		"m_szPreIdleSequence": "",
+		"m_szEntrySequence": "",
+		"m_szSequence": "",
+		"m_szExitSequence": "",
+		"m_nMoveTo": "eWaitFacing",
+		"m_nMoveToGait": "eInvalid",
+		"m_nHeldWeaponBehavior": "eInvalid",
+		"m_bLoopPreIdleSequence": false,
+		"m_bLoopActionSequence": false,
+		"m_bLoopPostIdleSequence": false,
+		"m_bIgnoreLookAt": false
+	},
+	"m_vecAdditionalActors":
+	[
+	],
+	"m_OnFinished":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_Triggers":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -15997,7 +17447,9 @@ classDiagram
 
 ### CPulseCell_Outflow_ScriptedSequence::CursorState_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_scriptedSequence": null
+}`
 
 **Relationships:**
 
@@ -16016,7 +17468,35 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseYieldingInflow](pulse_runtime_lib.md#cpulsecell_baseyieldinginflow)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Play the specified animation sequence on a NON-ANIMGRAPH entity, and wait for it to complete.`, `MPropertyFriendlyName Play Sequence`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_PlaySequence",
+	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_SequenceName": "",
+	"m_PulseAnimEvents":
+	{
+		"m_Outflows":
+		[
+		]
+	},
+	"m_OnFinished":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	}
+}`, `MPropertyDescription Play the specified animation sequence on a NON-ANIMGRAPH entity, and wait for it to complete.`, `MPropertyFriendlyName Play Sequence`
 
 **Relationships:**
 
@@ -16039,7 +17519,9 @@ classDiagram
 
 ### CPulseCell_PlaySequence::CursorState_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_hTarget": null
+}`
 
 **Relationships:**
 
@@ -16058,7 +17540,11 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseFlow](pulse_runtime_lib.md#cpulsecell_baseflow)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Starts a sound event, returns a handle that can be used to stop it. Keywords: create, sound, event, audio`, `MPropertyFriendlyName Start Sound Event`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_SoundEventStart",
+	"m_nEditorNodeID": -1,
+	"m_Type": "SOUNDEVENT_START_PLAYER"
+}`, `MPropertyDescription Starts a sound event, returns a handle that can be used to stop it. Keywords: create, sound, event, audio`, `MPropertyFriendlyName Start Sound Event`
 
 **Relationships:**
 
@@ -16079,7 +17565,11 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseFlow](pulse_runtime_lib.md#cpulsecell_baseflow)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Step_EntFire",
+	"m_nEditorNodeID": -1,
+	"m_Input": ""
+}`
 
 **Relationships:**
 
@@ -16099,7 +17589,12 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseFlow](pulse_runtime_lib.md#cpulsecell_baseflow)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Step_FollowEntity",
+	"m_nEditorNodeID": -1,
+	"m_ParamBoneOrAttachName": "",
+	"m_ParamBoneOrAttachNameChild": ""
+}`
 
 **Relationships:**
 
@@ -16120,7 +17615,11 @@ classDiagram
 
 **Inherits from:** [CPulseCell_BaseFlow](pulse_runtime_lib.md#cpulsecell_baseflow)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_Step_SetAnimGraphParam",
+	"m_nEditorNodeID": -1,
+	"m_ParamName": ""
+}`
 
 **Relationships:**
 
@@ -16244,7 +17743,15 @@ classDiagram
 
 ### CRR_Response
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Type": 0,
+	"m_szResponseName": "",
+	"m_Params":
+	{
+		"odds": 100,
+		"flags": 0
+	}
+}`
 
 **Relationships:**
 
@@ -16506,7 +18013,17 @@ classDiagram
 
 ### CRelativeLocation
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Type": "WORLD_SPACE_POSITION",
+	"m_vRelativeOffset":
+	[
+		340282346638528859811704183484516925440.000000,
+		340282346638528859811704183484516925440.000000,
+		340282346638528859811704183484516925440.000000
+	],
+	"m_vWorldSpacePos": null,
+	"m_hEntity": null
+}`
 
 **Relationships:**
 
@@ -16527,7 +18044,7 @@ classDiagram
 
 ### CRelativeTransform
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults null`
 
 **Relationships:**
 
@@ -16559,7 +18076,9 @@ classDiagram
 
 **Inherits from:** [CEntityComponent](entity2.md#centitycomponent)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CRenderComponent"
+}`
 
 **Relationships:**
 
@@ -16706,7 +18225,12 @@ classDiagram
 
 ### CRopeOverlapHit
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_hEntity": null,
+	"m_vecOverlappingLinks":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -17446,7 +18970,40 @@ classDiagram
 
 ### CShatterGlassShard
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CShatterGlassShard",
+	"m_hShardHandle": 0,
+	"m_hPhysicsEntity": null,
+	"m_hParentPanel": null,
+	"m_hParentShard": 0,
+	"m_ShatterStressType": "SHATTERGLASS_BLUNT",
+	"m_vecStressVelocity":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_nOnFrameEdge": "ONFRAME_UNKNOWN",
+	"m_nSubShardGeneration": 0,
+	"m_vecPanelSpaceStressPositionA":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_vecPanelSpaceStressPositionB":
+	[
+		0.000000,
+		0.000000
+	],
+	"m_bStressPositionAIsValid": false,
+	"m_bStressPositionBIsValid": false,
+	"m_bFlaggedForRemoval": false,
+	"m_flPhysicsEntitySpawnedAtTime": null,
+	"m_hEntityHittingMe": null,
+	"m_vecNeighbors":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -17673,7 +19230,11 @@ classDiagram
 
 ### CSkillDamage
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flDamage": 0.000000,
+	"m_flNPCDamageScalarVsNPC": 1.000000,
+	"m_flPhysicsForceDamage": 0.000000
+}`
 
 **Relationships:**
 
@@ -17801,7 +19362,14 @@ classDiagram
 
 ### CSmoothFunc
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CSmoothFunc",
+	"m_flSmoothAmplitude": 0.000000,
+	"m_flSmoothBias": 0.500000,
+	"m_flSmoothDuration": -1.000000,
+	"m_flSmoothRemainingTime": 0.000000,
+	"m_nSmoothDir": 1
+}`
 
 **Fields:**
 
@@ -17878,7 +19446,12 @@ classDiagram
 
 ### CSoundEnvelope
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_current": 0.000000,
+	"m_target": 0.000000,
+	"m_rate": 0.000000,
+	"m_forceupdate": false
+}`
 
 **Fields:**
 
@@ -18543,7 +20116,42 @@ classDiagram
 
 ### CTakeDamageInfo
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CTakeDamageInfo",
+	"m_vecDamageForce":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_vecDamagePosition": null,
+	"m_vecReportedPosition": null,
+	"m_vecDamageDirection":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_hInflictor": null,
+	"m_hAttacker": null,
+	"m_hAbility": null,
+	"m_flDamage": 0.000000,
+	"m_flTotalledDamage": 0.000000,
+	"m_bitsDamageType": "",
+	"m_iDamageCustom": 0,
+	"m_iAmmoType": "",
+	"m_flOriginalDamage": 0.000000,
+	"m_bShouldBleed": false,
+	"m_bShouldSpark": false,
+	"m_nDamageFlags": "",
+	"m_iHitGroupId": "HITGROUP_INVALID",
+	"m_nNumObjectsPenetrated": 0,
+	"m_flFriendlyFireDamageReductionRatio": 1.000000,
+	"m_bStoppedBullet": false,
+	"m_DestructibleHitGroupRequests":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -18586,7 +20194,61 @@ classDiagram
 
 ### CTakeDamageResult
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_pOriginatingInfo":
+	{
+		"_class": "CTakeDamageInfo",
+		"m_vecDamageForce":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_vecDamagePosition": null,
+		"m_vecReportedPosition": null,
+		"m_vecDamageDirection":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_hInflictor": null,
+		"m_hAttacker": null,
+		"m_hAbility": null,
+		"m_flDamage": 0.000000,
+		"m_flTotalledDamage": 0.000000,
+		"m_bitsDamageType": "",
+		"m_iDamageCustom": 0,
+		"m_iAmmoType": "",
+		"m_flOriginalDamage": 0.000000,
+		"m_bShouldBleed": false,
+		"m_bShouldSpark": false,
+		"m_nDamageFlags": "",
+		"m_iHitGroupId": "HITGROUP_INVALID",
+		"m_nNumObjectsPenetrated": 0,
+		"m_flFriendlyFireDamageReductionRatio": 1.000000,
+		"m_bStoppedBullet": false,
+		"m_DestructibleHitGroupRequests":
+		[
+		]
+	},
+	"m_DestructibleHitGroupRequests":
+	[
+	],
+	"m_nHealthLost": 0,
+	"m_nHealthBefore": 0,
+	"m_flDamageDealt": 0.000000,
+	"m_flPreModifiedDamage": 0.000000,
+	"m_vDamagePosition": null,
+	"m_nTotalledHealthLost": 0,
+	"m_flTotalledDamageDealt": 0.000000,
+	"m_flTotalledPreModifiedDamage": 0.000000,
+	"m_flNewDamageAccumulatorValue": 0.000000,
+	"m_nDamageFlags": "",
+	"m_bWasDamageSuppressed": false,
+	"m_bSuppressFlinch": false,
+	"m_nOverrideFlinchHitGroup": "HITGROUP_INVALID"
+}`
 
 **Relationships:**
 
@@ -18602,7 +20264,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_pOriginatingInfo` | [CTakeDamageInfo](../schemas/server.md#ctakedamageinfo)* | `MKV3TransferSaveOpsForField` |
+| `m_pOriginatingInfo` | [CTakeDamageInfo](../schemas/server.md#ctakedamageinfo)* | `MKV3TransferSaveOpsForField GetTakeDamageConstPtrSaveRestoreOps` |
 | `m_DestructibleHitGroupRequests` | CUtlLeanVector< [DestructiblePartDamageRequest_t](../schemas/server.md#destructiblepartdamagerequest_t) > |  |
 | `m_nHealthLost` | int32 |  |
 | `m_nHealthBefore` | int32 |  |
@@ -18795,7 +20457,10 @@ classDiagram
 
 ### CTestPulseIO::EntityHandleIntArgs_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"handleA": null,
+	"valueB": 0
+}`
 
 **Fields:**
 
@@ -18806,7 +20471,10 @@ classDiagram
 
 ### CTestPulseIO::EntityNameStringArgs_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"nameA": "",
+	"strValueB": ""
+}`
 
 **Fields:**
 
@@ -18817,7 +20485,10 @@ classDiagram
 
 ### CTestPulseIO::FloatStringArgs_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"flOutFloat": 0.000000,
+	"strOutString": ""
+}`
 
 **Fields:**
 
@@ -18828,7 +20499,11 @@ classDiagram
 
 ### CTestPulseIO::ThreeStringArgs_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"strArg1": "",
+	"strArg2": "",
+	"strArg3": ""
+}`
 
 **Fields:**
 
@@ -18844,7 +20519,14 @@ classDiagram
 
 **Derived by:** [CTestPulseIOComponent_Derived](server.md#ctestpulseiocomponent_derived)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CTestPulseIOComponent",
+	"m_ComponentData": "DefaultComponentString",
+	"m_OnComponentTestFunc":
+	{
+		"m_Value": ""
+	}
+}`
 
 **Relationships:**
 
@@ -18866,7 +20548,14 @@ classDiagram
 
 **Inherits from:** [CTestPulseIOComponent](server.md#ctestpulseiocomponent)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CTestPulseIOComponent_Derived",
+	"m_ComponentData": "DefaultComponentString",
+	"m_OnComponentTestFunc":
+	{
+		"m_Value": ""
+	}
+}`
 
 **Relationships:**
 
@@ -18908,7 +20597,7 @@ classDiagram
 
 **Inherits from:** [IntervalTimer](server.md#intervaltimer)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults null`
 
 **Relationships:**
 
@@ -19028,7 +20717,9 @@ classDiagram
 
 **Inherits from:** [CEntityComponent](entity2.md#centitycomponent)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CTouchExpansionComponent"
+}`
 
 **Relationships:**
 
@@ -20315,7 +22006,10 @@ classDiagram
 
 ### CWorldCompositionChunkReferenceElement_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_strMapToLoad": "",
+	"m_strLandmarkName": ""
+}`
 
 **Fields:**
 
@@ -20335,7 +22029,23 @@ classDiagram
 
 ### ConstraintSoundInfo
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "ConstraintSoundInfo",
+	"m_soundProfile":
+	{
+		"_class": "SimpleConstraintSoundProfile",
+		"m_flKeyPointMinSoundThreshold": 0.000000,
+		"m_flKeyPointMaxSoundThreshold": 0.000000,
+		"m_reversalSoundThresholdSmall": 0.000000,
+		"m_reversalSoundThresholdMedium": 0.000000,
+		"m_reversalSoundThresholdLarge": 0.000000
+	},
+	"m_iszTravelSoundFwd": "",
+	"m_iszTravelSoundBack": "",
+	"m_iszReversalSoundSmall": "",
+	"m_iszReversalSoundMedium": "",
+	"m_iszReversalSoundLarge": ""
+}`
 
 **Relationships:**
 
@@ -20362,7 +22072,7 @@ classDiagram
 
 ### CountdownTimer
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults null`
 
 **Relationships:**
 
@@ -20384,7 +22094,12 @@ classDiagram
 
 **Inherits from:** [DebugSnapshotBaseStructuredData_t](server.md#debugsnapshotbasestructureddata_t)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Bone Transforms`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "DebugDrawBoneTransforms_t",
+	"vecBones":
+	[
+	]
+}`, `MPropertyFriendlyName Bone Transforms`
 
 **Relationships:**
 
@@ -20403,7 +22118,9 @@ classDiagram
 
 **Derived by:** [AI_BaseNPC_DebugSnapshotData_t](server.md#ai_basenpc_debugsnapshotdata_t), [AI_DefaultNPC_DebugSnapshotData_t](server.md#ai_defaultnpc_debugsnapshotdata_t), [AI_GroundRootMotionMotor_DebugSnapshotData_t](server.md#ai_groundrootmotionmotor_debugsnapshotdata_t), [DebugDrawBoneTransforms_t](server.md#debugdrawbonetransforms_t)
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Base Structured Data`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "DebugSnapshotBaseStructuredData_t"
+}`, `MPropertyFriendlyName Base Structured Data`
 
 **Relationships:**
 
@@ -20417,7 +22134,14 @@ classDiagram
 
 ### DecalGroupOption_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_hMaterial": "",
+	"m_sSequenceName": "",
+	"m_flProbability": 1.000000,
+	"m_bEnableAngleBetweenNormalAndGravityRange": false,
+	"m_flMinAngleBetweenNormalAndGravity": 0.000000,
+	"m_flMaxAngleBetweenNormalAndGravity": 180.000000
+}`
 
 **Relationships:**
 
@@ -20434,14 +22158,30 @@ classDiagram
 | `m_sSequenceName` | CGlobalSymbol |  |
 | `m_flProbability` | float32 |  |
 | `m_bEnableAngleBetweenNormalAndGravityRange` | bool |  |
-| `m_flMinAngleBetweenNormalAndGravity` | float32 | `MPropertySuppressExpr` |
-| `m_flMaxAngleBetweenNormalAndGravity` | float32 | `MPropertySuppressExpr` |
+| `m_flMinAngleBetweenNormalAndGravity` | float32 | `MPropertySuppressExpr m_bEnableAngleBetweenNormalAndGravityRange == 0` |
+| `m_flMaxAngleBetweenNormalAndGravity` | float32 | `MPropertySuppressExpr m_bEnableAngleBetweenNormalAndGravityRange == 0` |
 
 ### DestructiblePartDamageRequestAPI
 
 ### DestructiblePartDamageRequest_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nHitGroup": "HITGROUP_INVALID",
+	"m_nDamageLevel": -1,
+	"m_nDesiredHealth": 0,
+	"m_nDestroyFlags": "GenerateBreakpieces|SetBodyGroupAndCollisionState|EnableFlinches",
+	"m_nDamageType": "DMG_BLAST",
+	"m_flBreakDamage": 0.000000,
+	"m_flBreakDamageRadius": 24.000000,
+	"m_hAttacker": null,
+	"m_vWsBreakDamageOrigin": null,
+	"m_vWsBreakDamageForce":
+	[
+		1.000000,
+		0.000000,
+		0.000000
+	]
+}`
 
 **Relationships:**
 
@@ -20470,7 +22210,16 @@ classDiagram
 
 ### DynamicVolumeDef_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_source": null,
+	"m_target": null,
+	"m_nHullIdx": -1,
+	"m_vSourceAnchorPos": null,
+	"m_vTargetAnchorPos": null,
+	"m_nAreaSrc": 4294967295,
+	"m_nAreaDst": 4294967295,
+	"m_bAttached": false
+}`
 
 **Relationships:**
 
@@ -20494,19 +22243,29 @@ classDiagram
 
 ### EngineCountdownTimer
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults null`
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_duration` | float32 |  |
-| `m_timestamp` | float32 | `MKV3TransferSaveOpsForField` |
+| `m_timestamp` | float32 | `MKV3TransferSaveOpsForField GetEngineTimeSaveRestoreOps` |
 | `m_timescale` | float32 |  |
 
 ### EntityRenderAttribute_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "EntityRenderAttribute_t",
+	"m_ID": <HIDDEN FOR DIFF>,
+	"m_Values":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`
 
 **Fields:**
 
@@ -20578,7 +22337,7 @@ classDiagram
 
 ### FuncMoverMovementSummary_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults null`
 
 **Relationships:**
 
@@ -20604,7 +22363,7 @@ classDiagram
 
 ### FuncRotatorRotationSummary_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults null`
 
 **Relationships:**
 
@@ -20623,7 +22382,12 @@ classDiagram
 
 ### GAME_HEADER
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_sComment": "",
+	"m_nSpawnGroupCount": 0,
+	"m_sLandmark": "",
+	"m_sRequiredAddons": ""
+}`
 
 **Fields:**
 
@@ -20750,7 +22514,7 @@ classDiagram
 
 **Derived by:** [CTimeline](client.md#ctimeline)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults null`
 
 **Relationships:**
 
@@ -20812,7 +22576,12 @@ classDiagram
 
 ### PathMoverEntitySpawn
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"hMover": null,
+	"vecOtherEntities":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -20831,7 +22600,10 @@ classDiagram
 
 ### PhysBlockHeader_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"nSaved": 0,
+	"pWorldObject": 0
+}`
 
 **Fields:**
 
@@ -20842,7 +22614,7 @@ classDiagram
 
 ### PhysObjectHeader_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults null`
 
 **Relationships:**
 
@@ -20868,7 +22640,13 @@ classDiagram
 
 ### PhysicsRagdollPose_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "PhysicsRagdollPose_t",
+	"m_Transforms":
+	[
+	],
+	"m_hOwner": null
+}`
 
 **Relationships:**
 
@@ -20887,7 +22665,12 @@ classDiagram
 
 ### PointCameraSettings_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flNearBlurryDistance": -1.000000,
+	"m_flNearCrispDistance": -1.000000,
+	"m_flFarCrispDistance": -1.000000,
+	"m_flFarBlurryDistance": -1.000000
+}`
 
 **Fields:**
 
@@ -20900,7 +22683,9 @@ classDiagram
 
 ### PrecipitationFilter_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flMaxRadius": 200.000000
+}`
 
 **Fields:**
 
@@ -20910,7 +22695,20 @@ classDiagram
 
 ### PulseScriptedSequenceData_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nActorID": 0,
+	"m_szPreIdleSequence": "",
+	"m_szEntrySequence": "",
+	"m_szSequence": "",
+	"m_szExitSequence": "",
+	"m_nMoveTo": "eWaitFacing",
+	"m_nMoveToGait": "eInvalid",
+	"m_nHeldWeaponBehavior": "eInvalid",
+	"m_bLoopPreIdleSequence": false,
+	"m_bLoopActionSequence": false,
+	"m_bLoopPostIdleSequence": false,
+	"m_bIgnoreLookAt": false
+}`
 
 **Relationships:**
 
@@ -20942,7 +22740,11 @@ classDiagram
 
 ### RagdollCreationParams_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_bForceCurrentWorldTransform": false,
+	"m_bUseLRURetirement": true,
+	"m_nHealthToGrant": 0
+}`
 
 **Fields:**
 
@@ -20958,7 +22760,12 @@ classDiagram
 
 **Inherits from:** [Relationship_t](server.md#relationship_t)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"disposition": "D_NU",
+	"priority": 0,
+	"entity": null,
+	"classType": "CLASS_NONE"
+}`
 
 **Relationships:**
 
@@ -20980,7 +22787,10 @@ classDiagram
 
 **Derived by:** [RelationshipOverride_t](server.md#relationshipoverride_t)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"disposition": "D_NU",
+	"priority": 0
+}`
 
 **Relationships:**
 
@@ -20999,7 +22809,11 @@ classDiagram
 
 ### ResponseContext_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_iszName": "",
+	"m_iszValue": "",
+	"m_fExpirationTime": null
+}`
 
 **Relationships:**
 
@@ -21033,7 +22847,10 @@ classDiagram
 
 ### ResponseParams
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"odds": 100,
+	"flags": 0
+}`
 
 **Relationships:**
 
@@ -21052,7 +22869,16 @@ classDiagram
 
 ### RotatorHistoryEntry_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"qInvChange":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"flTimeRotationStart": null
+}`
 
 **Relationships:**
 
@@ -21070,7 +22896,16 @@ classDiagram
 
 ### RotatorQueueEntry_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"qTarget":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"eSpace": "ROTATOR_TARGET_WORLDSPACE"
+}`
 
 **Relationships:**
 
@@ -21088,7 +22923,29 @@ classDiagram
 
 ### SAVE_HEADER
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_saveId": 0,
+	"m_version": 0,
+	"m_nConnectionCount": 0,
+	"m_nMapVersion": 0,
+	"m_sSpawnGroupName": "",
+	"m_vecWorldOffset":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_flSaveTime": 0.000000
+}`
 
 **Fields:**
 
@@ -21104,7 +22961,27 @@ classDiagram
 
 ### SPAWNGROUP_HEADER
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_sGroupName": "",
+	"m_sEntityLumpName": "",
+	"m_vecWorldOffset":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_bClientSpawnGroup": false,
+	"m_bSuppressAllEntities": false
+}`
 
 **Fields:**
 
@@ -21172,7 +23049,14 @@ classDiagram
 
 ### SimpleConstraintSoundProfile
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "SimpleConstraintSoundProfile",
+	"m_flKeyPointMinSoundThreshold": 0.000000,
+	"m_flKeyPointMaxSoundThreshold": 0.000000,
+	"m_reversalSoundThresholdSmall": 0.000000,
+	"m_reversalSoundThresholdMedium": 0.000000,
+	"m_reversalSoundThresholdLarge": 0.000000
+}`
 
 **Fields:**
 
@@ -21186,7 +23070,12 @@ classDiagram
 
 ### SoundCommand_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_time": 0.000000,
+	"m_deltaTime": 0.000000,
+	"m_command": "SOUNDCTRL_CHANGE_VOLUME",
+	"m_value": 0.000000
+}`
 
 **Fields:**
 
@@ -21199,7 +23088,11 @@ classDiagram
 
 ### SoundOpvarTraceResult_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"vPos": null,
+	"bDidHit": false,
+	"flDistSqrToCenter": 340282346638528859811704183484516925440.000000
+}`
 
 **Fields:**
 
@@ -21252,7 +23145,103 @@ classDiagram
 
 ### SummaryTakeDamageInfo_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"nSummarisedCount": 0,
+	"info":
+	{
+		"_class": "CTakeDamageInfo",
+		"m_vecDamageForce":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_vecDamagePosition": null,
+		"m_vecReportedPosition": null,
+		"m_vecDamageDirection":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_hInflictor": null,
+		"m_hAttacker": null,
+		"m_hAbility": null,
+		"m_flDamage": 0.000000,
+		"m_flTotalledDamage": 0.000000,
+		"m_bitsDamageType": "",
+		"m_iDamageCustom": 0,
+		"m_iAmmoType": "",
+		"m_flOriginalDamage": 0.000000,
+		"m_bShouldBleed": false,
+		"m_bShouldSpark": false,
+		"m_nDamageFlags": "",
+		"m_iHitGroupId": "HITGROUP_INVALID",
+		"m_nNumObjectsPenetrated": 0,
+		"m_flFriendlyFireDamageReductionRatio": 1.000000,
+		"m_bStoppedBullet": false,
+		"m_DestructibleHitGroupRequests":
+		[
+		]
+	},
+	"result":
+	{
+		"m_pOriginatingInfo":
+		{
+			"_class": "CTakeDamageInfo",
+			"m_vecDamageForce":
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			"m_vecDamagePosition": null,
+			"m_vecReportedPosition": null,
+			"m_vecDamageDirection":
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			"m_hInflictor": null,
+			"m_hAttacker": null,
+			"m_hAbility": null,
+			"m_flDamage": 0.000000,
+			"m_flTotalledDamage": 0.000000,
+			"m_bitsDamageType": "",
+			"m_iDamageCustom": 0,
+			"m_iAmmoType": "",
+			"m_flOriginalDamage": 0.000000,
+			"m_bShouldBleed": false,
+			"m_bShouldSpark": false,
+			"m_nDamageFlags": "",
+			"m_iHitGroupId": "HITGROUP_INVALID",
+			"m_nNumObjectsPenetrated": 0,
+			"m_flFriendlyFireDamageReductionRatio": 1.000000,
+			"m_bStoppedBullet": false,
+			"m_DestructibleHitGroupRequests":
+			[
+			]
+		},
+		"m_DestructibleHitGroupRequests":
+		[
+		],
+		"m_nHealthLost": 0,
+		"m_nHealthBefore": 0,
+		"m_flDamageDealt": 0.000000,
+		"m_flPreModifiedDamage": 0.000000,
+		"m_vDamagePosition": null,
+		"m_nTotalledHealthLost": 0,
+		"m_flTotalledDamageDealt": 0.000000,
+		"m_flTotalledPreModifiedDamage": 0.000000,
+		"m_flNewDamageAccumulatorValue": 0.000000,
+		"m_nDamageFlags": "",
+		"m_bWasDamageSuppressed": false,
+		"m_bSuppressFlinch": false,
+		"m_nOverrideFlinchHitGroup": "HITGROUP_INVALID"
+	},
+	"hTarget": null
+}`
 
 **Relationships:**
 
@@ -21274,7 +23263,20 @@ classDiagram
 
 ### VPhysicsCollisionAttribute_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "VPhysicsCollisionAttribute_t",
+	"m_nInteractsAs": 0,
+	"m_nInteractsWith": 0,
+	"m_nInteractsExclude": 0,
+	"m_nEntityId": 0,
+	"m_nOwnerId": 0,
+	"m_nHierarchyId": 0,
+	"m_nDetailLayerMask": 0,
+	"m_nDetailLayerMaskType": 0,
+	"m_nTargetDetailLayer": 0,
+	"m_nCollisionGroup": 0,
+	"m_nCollisionFunctionMask": 0
+}`
 
 **Fields:**
 
@@ -21328,7 +23330,10 @@ classDiagram
 
 ### WaterWheelDrag_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flFractionOfWheelSubmerged": 0.000000,
+	"m_flWheelDrag": 0.000000
+}`
 
 **Fields:**
 
@@ -21339,7 +23344,10 @@ classDiagram
 
 ### WaterWheelFrictionScale_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flFractionOfWheelSubmerged": 0.000000,
+	"m_flFrictionScale": 1.000000
+}`
 
 **Fields:**
 
@@ -21374,7 +23382,8 @@ classDiagram
 
 ### WrappedPhysicsJoint_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+}`
 
 **Relationships:**
 
@@ -21391,7 +23400,24 @@ classDiagram
 
 ### audioparams_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "audioparams_t",
+	"localSound":
+	[
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null
+	],
+	"soundscapeIndex": 0,
+	"localBits": 0,
+	"soundscapeEntityListIndex": 0,
+	"soundEventHash": 0
+}`
 
 **Fields:**
 
@@ -21407,7 +23433,33 @@ classDiagram
 
 **Derived by:** [dynpitchvol_t](server.md#dynpitchvol_t)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"preset": 0,
+	"pitchrun": 0,
+	"pitchstart": 0,
+	"spinup": 0,
+	"spindown": 0,
+	"volrun": 0,
+	"volstart": 0,
+	"fadein": 0,
+	"fadeout": 0,
+	"lfotype": 0,
+	"lforate": 0,
+	"lfomodpitch": 0,
+	"lfomodvol": 0,
+	"cspinup": 0,
+	"cspincount": 0,
+	"pitch": 0,
+	"spinupsav": 0,
+	"spindownsav": 0,
+	"pitchfrac": -1277430262,
+	"vol": 32767,
+	"fadeinsav": 0,
+	"fadeoutsav": 0,
+	"volfrac": 0,
+	"lfofrac": 0,
+	"lfomult": 0
+}`
 
 **Relationships:**
 
@@ -21450,7 +23502,33 @@ classDiagram
 
 **Inherits from:** [dynpitchvol_base_t](server.md#dynpitchvol_base_t)
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"preset": 0,
+	"pitchrun": 0,
+	"pitchstart": 0,
+	"spinup": 0,
+	"spindown": 0,
+	"volrun": 0,
+	"volstart": 0,
+	"fadein": 0,
+	"fadeout": 0,
+	"lfotype": 0,
+	"lforate": 0,
+	"lfomodpitch": 0,
+	"lfomodvol": 0,
+	"cspinup": 0,
+	"cspincount": 0,
+	"pitch": 0,
+	"spinupsav": 0,
+	"spindownsav": 0,
+	"pitchfrac": -1277430262,
+	"vol": 32767,
+	"fadeinsav": 0,
+	"fadeoutsav": 0,
+	"volfrac": 0,
+	"lfofrac": 0,
+	"lfomult": 0
+}`
 
 **Relationships:**
 
@@ -21461,7 +23539,23 @@ classDiagram
 
 ### entitytable_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"id": 0,
+	"edictindex": -1,
+	"saveentityindex": -1,
+	"bWasSaved": false,
+	"flags": "",
+	"classname": "",
+	"globalname": "",
+	"entityname": "",
+	"landmarkModelSpace":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_pPrecacheEntityKeys": null
+}`
 
 **Relationships:**
 
@@ -21488,7 +23582,41 @@ classDiagram
 
 ### fogparams_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "fogparams_t",
+	"dirPrimary":
+	[
+		1.000000,
+		0.000000,
+		0.000000
+	],
+	"colorPrimary":
+	[
+		0,
+		0,
+		0,
+		0
+	],
+	"colorSecondary":
+	[
+		0,
+		0,
+		0,
+		0
+	],
+	"start": 0.000000,
+	"end": 0.000000,
+	"farz": 0.000000,
+	"maxdensity": 0.000000,
+	"exponent": 0.000000,
+	"HDRColorScale": 0.000000,
+	"duration": 0.000000,
+	"blendtobackground": 0.000000,
+	"scattering": 0.000000,
+	"locallightscale": 1.000000,
+	"enable": false,
+	"blend": false
+}`
 
 **Relationships:**
 
@@ -21559,7 +23687,10 @@ classDiagram
 
 ### globalentity_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"state": "GLOBAL_OFF",
+	"counter": 0
+}`
 
 **Relationships:**
 
@@ -21572,14 +23703,18 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `name` | CUtlSymbol | `MKV3TransferSaveOpsForField` |
-| `levelName` | CUtlSymbol | `MKV3TransferSaveOpsForField` |
+| `name` | CUtlSymbol | `MKV3TransferSaveOpsForField GetGlobalSymbolDataOps` |
+| `levelName` | CUtlSymbol | `MKV3TransferSaveOpsForField GetGlobalSymbolDataOps` |
 | `state` | [GLOBALESTATE](../schemas/!GlobalTypes.md#globalestate) |  |
 | `counter` | int32 |  |
 
 ### globalentitydatabase_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_list":
+	[
+	]
+}`
 
 **Fields:**
 
@@ -21589,7 +23724,26 @@ classDiagram
 
 ### hudtextparms_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"color1":
+	[
+		0,
+		0,
+		0,
+		0
+	],
+	"color2":
+	[
+		0,
+		0,
+		0,
+		0
+	],
+	"effect": 0,
+	"channel": 0,
+	"x": 0.000000,
+	"y": 0.000000
+}`
 
 **Fields:**
 
@@ -21604,7 +23758,20 @@ classDiagram
 
 ### lerpdata_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_hEnt": null,
+	"m_MoveType": "MOVETYPE_NONE",
+	"m_flStartTime": null,
+	"m_vecStartOrigin": null,
+	"m_qStartRot":
+	[
+		0.000000,
+		0.000000,
+		0.000000,
+		1.000000
+	],
+	"m_nFXIndex": -1
+}`
 
 **Relationships:**
 
@@ -21629,7 +23796,18 @@ classDiagram
 
 ### levellist_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_sMapName": "",
+	"m_sLandmarkName": "",
+	"m_hEntLandmark": null,
+	"m_vecLandmarkOrigin": null,
+	"m_vecLandmarkAngles":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`
 
 **Fields:**
 
@@ -21643,7 +23821,12 @@ classDiagram
 
 ### locksound_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "locksound_t",
+	"sLockedSound": "",
+	"sUnlockedSound": "",
+	"flwaitSound": null
+}`
 
 **Relationships:**
 
@@ -21662,7 +23845,9 @@ classDiagram
 
 ### magnetted_objects_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"hEntity": null
+}`
 
 **Relationships:**
 
@@ -21679,7 +23864,11 @@ classDiagram
 
 ### modifiedconvars_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"pszConvar": "",
+	"pszCurrentValue": "",
+	"pszOrgValue": ""
+}`
 
 **Fields:**
 
@@ -21691,7 +23880,9 @@ classDiagram
 
 ### physics_save_sphere_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"radius": 0.000000
+}`
 
 **Fields:**
 
@@ -21701,7 +23892,19 @@ classDiagram
 
 ### ragdoll_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"list":
+	[
+	],
+	"hierarchyJoints":
+	[
+	],
+	"boneIndex":
+	[
+	],
+	"allowStretch": false,
+	"unused": false
+}`
 
 **Fields:**
 
@@ -21715,7 +23918,17 @@ classDiagram
 
 ### ragdollelement_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"originParentSpace":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"parentIndex": 0,
+	"m_flRadius": 0.000000,
+	"m_nHeight": 0
+}`
 
 **Fields:**
 
@@ -21728,7 +23941,10 @@ classDiagram
 
 ### ragdollhierarchyjoint_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"parentIndex": -1,
+	"childIndex": -1
+}`
 
 **Fields:**
 
@@ -21767,7 +23983,7 @@ classDiagram
 
 ### sky3dparams_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults null`
 
 **Fields:**
 
@@ -21782,7 +23998,14 @@ classDiagram
 
 ### sndopvarlatchdata_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "sndopvarlatchdata_t",
+	"m_iszStack": "",
+	"m_iszOperator": "",
+	"m_iszOpvar": "",
+	"m_flVal": 0.000000,
+	"m_vPos": null
+}`
 
 **Fields:**
 
@@ -21796,7 +24019,12 @@ classDiagram
 
 ### thinkfunc_t
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_think": "",
+	"m_nContext": "",
+	"m_nNextThinkTick": null,
+	"m_nLastThinkTick": null
+}`
 
 **Relationships:**
 

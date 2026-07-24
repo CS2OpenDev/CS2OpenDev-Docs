@@ -20,7 +20,16 @@ nav_exclude: true
 
 ### CTextureSheetDoc
 
-**Metadata:** `MGetKV3ClassDefaults`, `MVDataFileExtension`, `MVDataPreviewWidget`, `MVDataRoot`, `MVDataSingleton`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_ePackingMode": "PCKM_FLAT",
+	"m_NumMips": 2,
+	"m_bHasDecalParams": false,
+	"m_sLayoutOwnerSheet": "",
+	"m_Sequences":
+	{
+	},
+	"generic_data_type": "CTextureSheetDoc"
+}`, `MVDataFileExtension mks`, `MVDataPreviewWidget sheet_file_preview`, `MVDataRoot`, `MVDataSingleton`
 
 **Relationships:**
 
@@ -36,13 +45,21 @@ classDiagram
 |------|------|-------------|
 | `m_ePackingMode` | [PackingMode_t](../schemas/!GlobalTypes.md#packingmode_t) |  |
 | `m_NumMips` | int32 |  |
-| `m_bHasDecalParams` | bool | `MPropertySuppressExpr` |
+| `m_bHasDecalParams` | bool | `MPropertySuppressExpr m_sLayoutOwnerSheet != "" ` |
 | `m_sLayoutOwnerSheet` | CUtlString | `MPropertyAttributeEditor AssetBrowse( mks )` |
-| `m_Sequences` | CUtlStringMap< [CTextureSheetDoc_Sequence](../schemas/texturelib.md#ctexturesheetdoc_sequence)* > | `MVDataPromoteField` |
+| `m_Sequences` | CUtlStringMap< [CTextureSheetDoc_Sequence](../schemas/texturelib.md#ctexturesheetdoc_sequence)* > | `MVDataPromoteField 1` |
 
 ### CTextureSheetDoc_Frame
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyAutoExpandSelf`, `MPropertyCustomEditor SheetSequenceFrame`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_sImageName": "",
+	"m_fDisplayTime": 1.000000,
+	"m_bCropEnabled": false,
+	"m_srcCropXStart": -1,
+	"m_srcCropYStart": -1,
+	"m_srcCropXEnd": -1,
+	"m_srcCropYEnd": -1
+}`, `MPropertyAutoExpandSelf`, `MPropertyCustomEditor SheetSequenceFrame`
 
 **Fields:**
 
@@ -58,7 +75,26 @@ classDiagram
 
 ### CTextureSheetDoc_Sequence
 
-**Metadata:** `MGetKV3ClassDefaults`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_ChannelMode": "RGBA",
+	"m_LoopMode": "CLAMP",
+	"m_AlphaCropMode": "NONE",
+	"m_DecalParams":
+	{
+		"m_flScale": 1.000000,
+		"m_flDepth": 4.000000,
+		"m_flScaleVariation": 0.250000,
+		"m_flStartFadeTime": 10.000000,
+		"m_flFadeDuration": 3.000000,
+		"m_flAnimationScale": 1.000000,
+		"m_flAnimationStartTime": 0.000000,
+		"m_flAlignWithGravityFactor": 0.000000,
+		"m_nDecalRtEncoding": "kDecalInvalid"
+	},
+	"m_Frames":
+	[
+	]
+}`
 
 **Relationships:**
 
@@ -78,12 +114,22 @@ classDiagram
 | `m_ChannelMode` | [SequenceChannelMode_t](../schemas/!GlobalTypes.md#sequencechannelmode_t) | `MPropertyAutoRebuildOnChange` |
 | `m_LoopMode` | [SequenceLoopMode_t](../schemas/!GlobalTypes.md#sequenceloopmode_t) |  |
 | `m_AlphaCropMode` | [SequenceAlphaCropMode_t](../schemas/!GlobalTypes.md#sequencealphacropmode_t) |  |
-| `m_DecalParams` | [CTextureSheetDoc_SequenceDecalParams](../schemas/texturelib.md#ctexturesheetdoc_sequencedecalparams) | `MPropertySuppressExpr` |
+| `m_DecalParams` | [CTextureSheetDoc_SequenceDecalParams](../schemas/texturelib.md#ctexturesheetdoc_sequencedecalparams) | `MPropertySuppressExpr !__SheetFileHasDecalParams` |
 | `m_Frames` | CUtlVector< [CTextureSheetDoc_Frame](../schemas/texturelib.md#ctexturesheetdoc_frame) > | `MPropertyAutoExpandSelf` |
 
 ### CTextureSheetDoc_SequenceDecalParams
 
-**Metadata:** `MGetKV3ClassDefaults`, `MPropertyAutoExpandSelf`
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_flScale": 1.000000,
+	"m_flDepth": 4.000000,
+	"m_flScaleVariation": 0.250000,
+	"m_flStartFadeTime": 10.000000,
+	"m_flFadeDuration": 3.000000,
+	"m_flAnimationScale": 1.000000,
+	"m_flAnimationStartTime": 0.000000,
+	"m_flAlignWithGravityFactor": 0.000000,
+	"m_nDecalRtEncoding": "kDecalInvalid"
+}`, `MPropertyAutoExpandSelf`
 
 **Relationships:**
 
