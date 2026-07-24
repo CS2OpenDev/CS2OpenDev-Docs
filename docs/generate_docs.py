@@ -2160,9 +2160,19 @@ source instead of a chain of third-party dumps.
   `CSWeaponState_t`, …).  Top-level: `constants` list; each entry has
   `name` / `comment` / `members[]` with the same `annotations` pattern.
 
-All five files share a single top-level `schema_format_version` string
+- **`field_history.json`** — whole-history evolution of every
+  `(class, field)`, projected from SchemaTracker's cumulative
+  `schema_evolution.json` (Layer A).  Top-level: `baseline_build`,
+  `latest_build`, `transition_count`, `fields` list (each `class` /
+  `field` / `firstSeenBuild` / `lastSeenBuild` / `typeHistory`, plus an
+  overlay-supplied `confirmedRename` where the community has verified one),
+  and `enums`.  Serves alias resolution / forward-back schema migration
+  for demo parsers and SDKs.  See the [Schema History](../schema-history.html)
+  page for the human-readable break radar.
+
+All six files share a single top-level `schema_format_version` string
 that is bumped as a family.  Bump the major when a field is removed or
-renamed in any of the five; bump the minor when a field is added.
+renamed in any of them; bump the minor when a field is added.
 Additive `annotations` blocks do not require a bump.
 
 ## Coverage — runtime only
@@ -2712,6 +2722,260 @@ def generate_modules_md(data: dict[str, Any], source_info: dict[str, Any], out_d
 
 
 # ---------------------------------------------------------------------------
+# Schema history (Layer A — the schema_evolution.json artifact)
+# ---------------------------------------------------------------------------
+#
+# SchemaTracker emits one cumulative, whole-history schema_evolution.json per
+# platform at a FIXED path (artifacts/schema_evolution/<platform>.json) — NOT
+# under a build dir, because it rolls up every committed build's snapshot diff.
+# Docs is a thin consumer (see the Schema Lens design): render the mechanical
+# facts + a portable field_history view, and fold in community overlays for the
+# judgment the machine deliberately withholds (confirmed renames, semantic
+# breaks).  We never mutate the upstream artifact.
+
+# How many changed classes to render in full field-op detail per recent
+# transition (the big historical re-walks touch >1000 classes; cap the page).
+_HISTORY_DETAIL_CLASS_CAP = 60
+# How many of the most-recent non-empty transitions get a detail section.
+_HISTORY_DETAIL_TRANSITIONS = 3
+
+_FIELDOP_LABEL = {
+    "ADD": "＋field",
+    "REMOVE": "−field",
+    "TYPE_CHANGE": "~type",
+    "OFFSET_CHANGE": "~offset",
+    "META_CHANGE": "~meta",
+}
+
+
+def load_schema_evolution(artifacts_root: Path, platform: str) -> dict[str, Any] | None:
+    """Read the fixed-path cumulative evolution artifact, or None if absent.
+
+    Lives at ``artifacts/schema_evolution/<platform>.json``, outside any build
+    dir.  Content-gated like the other new artifacts: a tree that hasn't run the
+    ``evolution`` pass simply won't have it, and the page is skipped.
+    """
+    path = artifacts_root / "schema_evolution" / f"{platform}.json"
+    if not path.is_file():
+        return None
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+
+
+def _transition_counts(tr: dict[str, Any]) -> dict[str, int]:
+    """Summary op counts for one transition."""
+    changed = tr.get("classChanged", [])
+    return {
+        "class_added": len(tr.get("classAdded", [])),
+        "class_removed": len(tr.get("classRemoved", [])),
+        "class_changed": len(changed),
+        "enum_added": len(tr.get("enumAdded", [])),
+        "enum_removed": len(tr.get("enumRemoved", [])),
+        "enum_changed": len(tr.get("enumChanged", [])),
+        "field_ops": sum(len(cd.get("fieldOps", [])) for cd in changed),
+    }
+
+
+def _transition_is_empty(c: dict[str, int]) -> bool:
+    return not any(c.values())
+
+
+def _confirmed_rename_index(lens_overlay: dict[str, Any]) -> dict[tuple[str, str], dict]:
+    """Index overlay-confirmed renames by (class, from-field) and (class, to-field)."""
+    idx: dict[tuple[str, str], dict] = {}
+    for r in lens_overlay.get("confirmed_renames", []) or []:
+        cls = r.get("class", "")
+        for fld in (r.get("from"), r.get("to")):
+            if cls and fld:
+                idx[(cls, fld)] = r
+    return idx
+
+
+def generate_schema_history_md(
+    evolution: dict[str, Any],
+    lens_overlay: dict[str, Any],
+    source_info: dict[str, Any],
+    out_dir: Path,
+) -> None:
+    """The schema-evolution "break radar": whole-history summary + recent detail."""
+    transitions = evolution.get("transitions", [])
+    baseline = evolution.get("baselineBuild", "?")
+    latest = evolution.get("latestBuild", "?")
+    platform = evolution.get("platform", source_info.get("platform", ""))
+
+    summarised = [(tr, _transition_counts(tr)) for tr in transitions]
+    non_empty = [(tr, c) for tr, c in summarised if not _transition_is_empty(c)]
+
+    lines = [_md_front_matter(layout="default", title="Schema History", nav_order="15")]
+    lines.append("# Schema History\n")
+    lines.append(_provenance_block(source_info))
+
+    if lens_overlay.get("description"):
+        lines.append(str(lens_overlay["description"]).strip() + "\n")
+    else:
+        lines.append(
+            "Field-precise, build-to-build evolution of the CS2 C++ entity schema, "
+            "derived by diffing every committed `entity_schema.json` snapshot "
+            "(SchemaTracker's cumulative `schema_evolution.json`, Layer A).  Unlike "
+            "the coarse [Changelog](changelog.html) — which only reports *that* a "
+            "class changed — this reports *which field* was added, removed, retyped, "
+            "or moved.\n"
+        )
+    if lens_overlay.get("notes"):
+        lines.append("{: .note }\n> " + str(lens_overlay["notes"]).strip().replace("\n", "\n> ") + "\n")
+
+    lines.append(
+        f"- **Platform:** `{platform}` (the canonical render; `linux-x86_64` "
+        "differs only in offsets/sizes)\n"
+        f"- **Baseline build:** `{baseline}` · **Latest build:** `{latest}`\n"
+        f"- **Transitions:** {len(transitions)} total, **{len(non_empty)} with "
+        f"structural changes** ({len(transitions) - len(non_empty)} no-op builds)\n"
+        f"- **Full per-field history:** the portable "
+        "[`field_history.json`](downstream-codegen-schemas/field_history.json) "
+        "carries first/last-seen and the type history for every "
+        f"`(class, field)` across all builds.\n"
+    )
+    lines.append(
+        "To bring an instance captured under build *X* forward to build *Y*, apply "
+        "each transition in `[X, Y)` in order.  Every op carries both endpoints, so "
+        "the same chain replays backward.\n"
+    )
+
+    # --- whole-history summary table (non-empty only, most-recent first) ---
+    lines.append("## Transitions with structural changes\n")
+    lines.append("| Transition | Classes +/−/~ | Enums +/−/~ | Field ops |")
+    lines.append("|------------|---------------|-------------|-----------|")
+    for tr, c in reversed(non_empty):
+        lines.append(
+            f"| `{tr.get('fromBuild','')}` → `{tr.get('toBuild','')}` "
+            f"| {c['class_added']} / {c['class_removed']} / {c['class_changed']} "
+            f"| {c['enum_added']} / {c['enum_removed']} / {c['enum_changed']} "
+            f"| {c['field_ops']} |"
+        )
+    lines.append("")
+
+    # --- recent detail sections ---
+    rename_idx = _confirmed_rename_index(lens_overlay)
+    lines.append("## Most recent structural changes\n")
+    detail = list(reversed(non_empty))[:_HISTORY_DETAIL_TRANSITIONS]
+    if not detail:
+        lines.append("_No structural changes recorded yet._\n")
+    for tr, c in detail:
+        frm, to = tr.get("fromBuild", ""), tr.get("toBuild", "")
+        lines.append(f"### `{frm}` → `{to}`\n")
+        added = tr.get("classAdded", [])
+        removed = tr.get("classRemoved", [])
+        if added:
+            shown = ", ".join(f"`{a}`" for a in added[:40])
+            more = f" … (+{len(added) - 40} more)" if len(added) > 40 else ""
+            lines.append(f"**Classes added ({len(added)}):** {shown}{more}\n")
+        if removed:
+            shown = ", ".join(f"`{r}`" for r in removed[:40])
+            more = f" … (+{len(removed) - 40} more)" if len(removed) > 40 else ""
+            lines.append(f"**Classes removed ({len(removed)}):** {shown}{more}\n")
+
+        changed = tr.get("classChanged", [])
+        if changed:
+            lines.append(f"**Classes changed ({len(changed)}):**\n")
+            lines.append("| Class | Field ops | Layout |")
+            lines.append("|-------|-----------|--------|")
+            for cd in changed[:_HISTORY_DETAIL_CLASS_CAP]:
+                kinds: dict[str, int] = {}
+                for op in cd.get("fieldOps", []):
+                    kinds[op.get("kind", "")] = kinds.get(op.get("kind", ""), 0) + 1
+                ops_txt = ", ".join(
+                    f"{_FIELDOP_LABEL.get(k, k)}×{n}" for k, n in sorted(kinds.items())
+                ) or "—"
+                layout = []
+                if cd.get("resize"):
+                    rz = cd["resize"]
+                    layout.append(f"resize {rz.get('from','?')}→{rz.get('to','?')}")
+                if cd.get("realign"):
+                    layout.append("realign")
+                if cd.get("reparent"):
+                    layout.append("reparent")
+                if cd.get("flags"):
+                    layout.append("flags")
+                # note any overlay-confirmed rename touching this class
+                cls_name = cd.get("name", "")
+                confirmed = [
+                    r for (cn, _), r in rename_idx.items() if cn == cls_name
+                ]
+                if confirmed:
+                    layout.append(f"✎{len(set(id(r) for r in confirmed))} rename")
+                lines.append(
+                    f"| `{cls_name}` | {ops_txt} | {', '.join(layout) or '—'} |"
+                )
+            if len(changed) > _HISTORY_DETAIL_CLASS_CAP:
+                lines.append(
+                    f"| … | _{len(changed) - _HISTORY_DETAIL_CLASS_CAP} more changed "
+                    "classes — see `field_history.json`_ | |"
+                )
+            lines.append("")
+
+    (out_dir / "schema-history.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+def generate_field_history_json(
+    evolution: dict[str, Any],
+    lens_overlay: dict[str, Any],
+    source_info: dict[str, Any],
+    out_dir: Path,
+) -> Path:
+    """Portable per-(class,field) history for downstream alias resolution (DVN G3).
+
+    A straight projection of the artifact's ``fieldHistory``/``enumHistory``,
+    plus overlay-confirmed renames folded into an authoritative ``aliasChain``
+    (the two-tier field_history seam: SchemaTracker emits mechanical facts, Docs
+    publishes the confirmed version).
+    """
+    rename_idx = _confirmed_rename_index(lens_overlay)
+
+    fields = []
+    for fh in evolution.get("fieldHistory", []):
+        cls = fh.get("className", "")
+        rec = {
+            "class": cls,
+            "field": fh.get("field", ""),
+            "firstSeenBuild": fh.get("firstSeenBuild", ""),
+            "lastSeenBuild": fh.get("lastSeenBuild", ""),
+            "typeHistory": fh.get("typeHistory", []),
+        }
+        r = rename_idx.get((cls, fh.get("field", "")))
+        if r:
+            rec["confirmedRename"] = {
+                "from": r.get("from", ""),
+                "to": r.get("to", ""),
+                "note": r.get("note", ""),
+            }
+        fields.append(rec)
+
+    out = {
+        "schema_format_version": SCHEMA_FORMAT_VERSION,
+        "source": source_info,
+        "platform": evolution.get("platform", source_info.get("platform", "")),
+        "baseline_build": evolution.get("baselineBuild", ""),
+        "latest_build": evolution.get("latestBuild", ""),
+        "transition_count": len(evolution.get("transitions", [])),
+        "fields": fields,
+        "enums": [
+            {
+                "enum": eh.get("enumName", ""),
+                "firstSeenBuild": eh.get("firstSeenBuild", ""),
+                "lastSeenBuild": eh.get("lastSeenBuild", ""),
+            }
+            for eh in evolution.get("enumHistory", [])
+        ],
+    }
+    path = out_dir / "downstream-codegen-schemas" / "field_history.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(out, indent=2, sort_keys=True), encoding="utf-8")
+    return path
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -2898,6 +3162,26 @@ def main(argv: list[str] | None = None) -> int:
         generate_modules_md(modules, schema_source_info, generated_dir)
         extra_pages.append(("Modules", "modules.md"))
     print(f"  Generated {len(extra_pages)} content-artifact page(s).")
+
+    print("Generating schema history (schema_evolution.json)…")
+    evolution = load_schema_evolution(artifacts_root, args.platform)
+    if evolution:
+        lens_overlay = overlays.get("schema-lens", {}) or {}
+        generate_schema_history_md(
+            evolution, lens_overlay, schema_source_info, generated_dir
+        )
+        fh_path = generate_field_history_json(
+            evolution, lens_overlay, schema_source_info, generated_dir
+        )
+        extra_pages.append(("Schema History", "schema-history.md"))
+        n_tr = len(evolution.get("transitions", []))
+        n_fh = len(evolution.get("fieldHistory", []))
+        print(
+            f"  Rendered {n_tr} transitions; wrote {fh_path.name} "
+            f"({n_fh} field histories, {fh_path.stat().st_size // 1024} KiB)."
+        )
+    else:
+        print("  No schema_evolution.json for this platform — skipped.")
 
     print("Generating Markdown home page…")
     generate_index_md(

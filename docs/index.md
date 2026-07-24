@@ -38,6 +38,7 @@ Auto-generated reference for the **shipped CS2 runtime**, extracted deterministi
 - [Surface Properties](generated/surfaces.md)
 - [Prop Data](generated/props.md)
 - [Modules](generated/modules.md)
+- [Schema History](generated/schema-history.md)
 - [Well-Known Constants](generated/downstream-codegen-schemas/well_known_constants.json) – Curated tables for team numbers, game phase, weapon state, etc.
 - [Codegen schemas index](generated/downstream-codegen-schemas/README.md) – Format reference, type vocabulary, and version policy for all five JSON schemas above
 - [Entity Hierarchy Diagram](generated/diagrams/server_hierarchy.md) – UML inheritance diagram for server & client entities

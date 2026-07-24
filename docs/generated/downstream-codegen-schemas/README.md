@@ -39,9 +39,19 @@ source instead of a chain of third-party dumps.
   `CSWeaponState_t`, …).  Top-level: `constants` list; each entry has
   `name` / `comment` / `members[]` with the same `annotations` pattern.
 
-All five files share a single top-level `schema_format_version` string
+- **`field_history.json`** — whole-history evolution of every
+  `(class, field)`, projected from SchemaTracker's cumulative
+  `schema_evolution.json` (Layer A).  Top-level: `baseline_build`,
+  `latest_build`, `transition_count`, `fields` list (each `class` /
+  `field` / `firstSeenBuild` / `lastSeenBuild` / `typeHistory`, plus an
+  overlay-supplied `confirmedRename` where the community has verified one),
+  and `enums`.  Serves alias resolution / forward-back schema migration
+  for demo parsers and SDKs.  See the [Schema History](../schema-history.html)
+  page for the human-readable break radar.
+
+All six files share a single top-level `schema_format_version` string
 that is bumped as a family.  Bump the major when a field is removed or
-renamed in any of the five; bump the minor when a field is added.
+renamed in any of them; bump the minor when a field is added.
 Additive `annotations` blocks do not require a bump.
 
 ## Coverage — runtime only
