@@ -22,10 +22,11 @@ concurrency:
 
 jobs:
   # -------------------------------------------------------------------------
-  # 1. Materialise the latest SchemaTracker build (partial + sparse, so the
-  #    multi-GB history is never fetched), regenerate docs, then either push
-  #    directly (push event) or open/update a PR (schedule / dispatch).
-  #    The commit is diff-gated, so an unchanged latest build produces no PR.
+  # 1. Materialise the latest SchemaTracker build from its `latest` branch (a
+  #    shallow single-branch clone, so the multi-GB history is never fetched),
+  #    regenerate docs, then either push directly (push event) or open/update a
+  #    PR (schedule / dispatch).  The commit is diff-gated, so an unchanged
+  #    latest build produces no PR.
   # -------------------------------------------------------------------------
   check-and-update:
     name: Regenerate docs from latest SchemaTracker build
@@ -40,13 +41,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Partial clone (blob:none) + cone sparse-checkout of ONLY the newest
-      # committed build directory, so we download a few MB rather than the
-      # whole artifacts/ tree.  While CS2OpenDev-SchemaTracker is private a
-      # SCHEMA_TRACKER_TOKEN secret (a read PAT / fine-grained token) is
-      # required; once the repo is public the plain URL works and the token
-      # line can be dropped.
-      - name: Materialise latest SchemaTracker build (partial + sparse)
+      # Shallow single-branch clone of the SchemaTracker `latest` branch, which
+      # carries only the newest build (artifacts/<build_id>/<platform>/) plus a
+      # root LATEST.json pointer — tens of MB rather than the whole artifacts/
+      # tree.  While CS2OpenDev-SchemaTracker is private a SCHEMA_TRACKER_TOKEN
+      # secret (a read PAT / fine-grained token) is required; once the repo is
+      # public the plain URL works and the token line can be dropped.
+      - name: Materialise latest SchemaTracker build (latest branch)
         id: tracker
         env:
           TRACKER_TOKEN: ${{ secrets.SCHEMA_TRACKER_TOKEN }}
@@ -59,19 +60,31 @@ jobs:
             URL="https://${REPO}"
           fi
           rm -rf upstream/schema-tracker
-          git clone --filter=blob:none --no-checkout --depth 1 "$URL" upstream/schema-tracker
-          cd upstream/schema-tracker
-          git sparse-checkout init --cone
-          # Resolve the newest COMMITTED build without materialising blobs:
-          # list the artifacts/<build_id> tree entries and take the max.
-          LATEST=$(git ls-tree -d --name-only HEAD artifacts/ \
-                    | sed 's#artifacts/##' | grep -E '^[0-9]+$' | sort -n | tail -1)
-          echo "Latest committed build: $LATEST"
-          git sparse-checkout set "artifacts/${LATEST}"
-          git checkout HEAD
-          SHA=$(git rev-parse HEAD)
-          cd ../..
-          echo "build=$LATEST" >> "$GITHUB_OUTPUT"
+          git clone --depth 1 --single-branch --branch latest "$URL" upstream/schema-tracker
+
+          # The `latest` branch does not yet carry the cumulative
+          # artifacts/schema_evolution/<platform>.json files that the Schema
+          # History page + field_history.json consume.  If they're absent,
+          # supplement them with a targeted partial+sparse fetch of ONLY that
+          # path from the default branch.  Once upstream publishes them on
+          # `latest`, this guard skips and the extra fetch stops.
+          EVDIR="upstream/schema-tracker/artifacts/schema_evolution"
+          if [ ! -e "${EVDIR}/windows-x86_64.json" ]; then
+            echo "schema_evolution absent on latest — supplementing from default branch"
+            rm -rf /tmp/st-evo
+            git clone --filter=blob:none --no-checkout --depth 1 "$URL" /tmp/st-evo
+            git -C /tmp/st-evo sparse-checkout init --cone
+            git -C /tmp/st-evo sparse-checkout set artifacts/schema_evolution
+            git -C /tmp/st-evo checkout HEAD
+            mkdir -p "${EVDIR}"
+            cp /tmp/st-evo/artifacts/schema_evolution/*.json "${EVDIR}/"
+          fi
+
+          # Build id comes straight from the branch's LATEST.json pointer.
+          BUILD=$(python3 -c "import json;print(json.load(open('upstream/schema-tracker/LATEST.json'))['build_id'])")
+          SHA=$(git -C upstream/schema-tracker rev-parse HEAD)
+          echo "Latest build: $BUILD (branch commit $SHA)"
+          echo "build=$BUILD" >> "$GITHUB_OUTPUT"
           echo "sha=$SHA"      >> "$GITHUB_OUTPUT"
 
       - name: Set up Python

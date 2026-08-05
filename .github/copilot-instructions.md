@@ -9,7 +9,7 @@ artifact set (a read-only git submodule at `upstream/schema-tracker/`).
 
 | Path | Contents |
 |------|----------|
-| `upstream/schema-tracker/` | Git submodule – SchemaTracker artifacts (`artifacts/<build_id>/<platform>/*.json` + `protos.descriptorset`); partial+sparse, latest build only |
+| `upstream/schema-tracker/` | Git submodule – SchemaTracker artifacts (`artifacts/<build_id>/<platform>/*.json` + `protos.descriptorset`); tracks the `latest` branch (single build + root `LATEST.json`) |
 | `docs/generate_docs.py` | Python generator that produces all Markdown docs from the SchemaTracker artifacts |
 | `docs/overlays/` | YAML community-annotation files merged into the generated docs |
 | `docs/generated/schemas/` | One Markdown file per module (entity classes, structs, enums) |
@@ -39,10 +39,10 @@ artifact set (a read-only git submodule at `upstream/schema-tracker/`).
 - `networksystem_protomessages.proto` – Source 2 network-system messages
 - `steammessages.proto` – Steam platform messages
 
-> Note: some core wire protos (`netmessages`, `usermessages`,
-> `cstrike15_usermessages`, `cs_gameevents`, …) are being added upstream in
-> SchemaTracker; their overlays already exist under `docs/overlays/protobufs/`
-> and will render once those descriptors ship.
+> Note: the core wire protos (`netmessages`, `usermessages`,
+> `cstrike15_usermessages`, `cs_gameevents`, `networkbasetypes`) now ship in
+> SchemaTracker's `protos.descriptorset` and render with their overlays under
+> `docs/overlays/protobufs/`.
 
 ## Adding community annotations
 
@@ -52,8 +52,9 @@ and run the generator. See `docs/overlays/README.md` for the format.
 ## Running the generator locally
 
 ```bash
-git clone --recurse-submodules https://github.com/CS2OpenDev/CS2OpenDev-Docs.git
+git clone --recurse-submodules --shallow-submodules https://github.com/CS2OpenDev/CS2OpenDev-Docs.git
 cd CS2OpenDev-Docs
+# (existing clone: git submodule update --init --remote --depth 1 upstream/schema-tracker)
 pip install pyyaml protobuf
 python3 docs/generate_docs.py --repo-root . \
   --artifacts-root ./upstream/schema-tracker/artifacts --build latest \

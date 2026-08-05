@@ -308,27 +308,62 @@ def load_entity_schema(build_dir: Path) -> dict[str, dict]:
     return entities
 
 
+def _read_latest_pointer(artifacts_root: Path) -> int | None:
+    """Read the build id from a ``latest``-branch ``LATEST.json`` pointer.
+
+    SchemaTracker's ``latest`` branch carries exactly one build plus a root
+    ``LATEST.json`` (sibling of ``artifacts/``) naming it — e.g.
+    ``{"build_id": 24537688, "platforms": [...], "source_commit": "..."}``.
+    Preferring the pointer over a directory scan makes ``--build latest``
+    robust and side-steps a full walk of a many-build ``artifacts/`` tree.
+    Returns ``None`` when no readable pointer is present (the full-repo
+    layout), so callers fall back to the numeric-directory scan.
+    """
+    ptr = artifacts_root.parent / "LATEST.json"
+    if not ptr.is_file():
+        return None
+    try:
+        data = json.loads(ptr.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    try:
+        return int(data.get("build_id"))
+    except (TypeError, ValueError):
+        return None
+
+
 def resolve_build_dir(
     artifacts_root: Path, build: str | None, platform: str
 ) -> Path | None:
     """Resolve a SchemaTracker ``artifacts/<build_id>/<platform>/`` directory.
 
-    ``build`` may be an explicit numeric build id or ``"latest"``/``None``
-    (the highest-numbered committed build carrying this platform's
-    ``entity_schema.json``).  There is no ``latest`` pointer on disk — the
-    numerically-highest ``<build_id>`` directory is the newest build.
+    ``build`` may be an explicit numeric build id or ``"latest"``/``None``.
+    For ``latest`` we prefer a ``LATEST.json`` pointer (the ``latest`` branch
+    ships one), then fall back to the highest-numbered committed build
+    directory that carries this platform's ``entity_schema.json`` (the
+    full-repo layout, which has no pointer).
     """
     if not artifacts_root.is_dir():
         return None
     if build and build != "latest":
         cand = artifacts_root / build / platform
         return cand if (cand / "entity_schema.json").is_file() else None
-    build_ids = sorted(
-        (int(p.name) for p in artifacts_root.iterdir()
-         if p.is_dir() and p.name.isdigit()),
-        reverse=True,
+    ordered: list[int] = []
+    pointed = _read_latest_pointer(artifacts_root)
+    if pointed is not None:
+        ordered.append(pointed)
+    ordered.extend(
+        sorted(
+            (int(p.name) for p in artifacts_root.iterdir()
+             if p.is_dir() and p.name.isdigit()),
+            reverse=True,
+        )
     )
-    for bid in build_ids:
+    seen: set[int] = set()
+    for bid in ordered:
+        if bid in seen:
+            continue
+        seen.add(bid)
         cand = artifacts_root / str(bid) / platform
         if (cand / "entity_schema.json").is_file():
             return cand

@@ -11,8 +11,8 @@ Do **not** write CS2 plugin code, server-side logic, demo parsers, or game tooli
 ## Architecture
 
 ```
-CS2OpenDev/CS2OpenDev-SchemaTracker (upstream)
-    └── upstream/schema-tracker/  ← read-only git submodule (partial + sparse: latest build only)
+CS2OpenDev/CS2OpenDev-SchemaTracker (upstream, `latest` branch)
+    └── upstream/schema-tracker/  ← read-only git submodule tracking `latest` (single build + LATEST.json)
             artifacts/<build_id>/<platform>/*.json + protos.descriptorset
             │
             ▼
@@ -56,18 +56,18 @@ Per-entity overlays at `docs/overlays/<module>.yml` (multi-entity, recommended) 
 
 - **Never hand-edit anything under `docs/generated/`.** Every file there is overwritten by the next generator run. The home page (`docs/index.md`) is also generated — don't hand-edit it. To change generated content, edit either (a) the generator script or (b) an overlay YAML.
 - `docs/_config.yml`, `docs/_includes/`, and `docs/Gemfile` are **hand-maintained**. The generator does not touch them. Theme/layout customization goes here.
-- **Never edit `upstream/schema-tracker/`** — it's a read-only submodule pointing at `CS2OpenDev/CS2OpenDev-SchemaTracker`. It is declared as a *partial + sparse* submodule (the generator only needs the latest committed build), so a plain `git submodule update --init` pulls everything; prefer the sparse setup the CI workflow uses (partial clone `--filter=blob:none` + `git sparse-checkout set artifacts/<latest>`). Without it materialised, the generator exits with an error. For local dev you can bypass the submodule with `--artifacts-root <path-to-a-SchemaTracker-checkout>/artifacts`.
+- **Never edit `upstream/schema-tracker/`** — it's a read-only submodule pointing at `CS2OpenDev/CS2OpenDev-SchemaTracker`. It tracks that repo's **`latest`** branch, which carries only the newest build's artifacts plus a root `LATEST.json` pointer — so `git submodule update --init --remote --depth 1 upstream/schema-tracker` is a tens-of-MB checkout, not the multi-GB full history. Without it materialised, the generator exits with an error. For local dev you can bypass the submodule with `--artifacts-root <path-to-a-SchemaTracker-checkout>/artifacts`. Note: the `latest` branch does **not** yet carry `artifacts/schema_evolution/<platform>.json` (input to the Schema History page); CI supplements it with a targeted sparse fetch from the default branch, and a plain `latest`-only checkout renders everything *except* Schema History.
 - The submodule pointers are only advanced by the scheduled GitHub Action (`.github/workflows/generate-docs.yml`) — don't bump them locally as part of a content change unless that's specifically what you're doing.
 - `AGENTS.md` is the canonical context-for-external-AI-tools file. If schema/architecture facts change, update it there (not in CLAUDE.md, which is for *this* repo's contributors).
 
 ## Common commands
 
 ```bash
-# Materialise just the latest SchemaTracker build (partial + sparse):
-git clone --filter=blob:none --no-checkout https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker.git upstream/schema-tracker
-( cd upstream/schema-tracker && git sparse-checkout init --cone \
-  && LATEST=$(git ls-tree -d --name-only HEAD artifacts/ | sed 's#artifacts/##' | grep -E '^[0-9]+$' | sort -n | tail -1) \
-  && git sparse-checkout set "artifacts/$LATEST" && git checkout HEAD )
+# Materialise just the latest SchemaTracker build (shallow clone of `latest`):
+git clone --depth 1 --single-branch --branch latest \
+  https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker.git upstream/schema-tracker
+# (or, via the submodule declaration:)
+#   git submodule update --init --remote --depth 1 upstream/schema-tracker
 
 # Regenerate all docs (the only build step that matters):
 pip install pyyaml protobuf   # protoc is NOT needed

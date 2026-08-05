@@ -26,15 +26,16 @@ SchemaExplorer/DumpSource2 + an external `protoc`) with one source we control.
 `protoc` is no longer required — the generator reads the prebuilt
 `FileDescriptorSet` directly via `google.protobuf.descriptor_pb2`.
 
-A scheduled GitHub Actions workflow runs every **4 hours**, materialises the
-latest committed SchemaTracker build (partial clone + cone sparse-checkout, so
-only the newest build's artifacts are fetched), and regenerates documentation
-if anything changed.  The generated Markdown is committed back to this repo and
-deployed to GitHub Pages automatically.
+A scheduled GitHub Actions workflow runs every **4 hours**, checks out the
+SchemaTracker [`latest`](https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker/tree/latest)
+branch (a shallow single-branch clone carrying only the newest build plus a
+root `LATEST.json` pointer, so the multi-GB history is never fetched), and
+regenerates documentation if anything changed.  The generated Markdown is
+committed back to this repo and deployed to GitHub Pages automatically.
 
 ```
-CS2OpenDev/CS2OpenDev-SchemaTracker
-    └── upstream/schema-tracker/  ← submodule (partial + sparse: latest build only)
+CS2OpenDev/CS2OpenDev-SchemaTracker (latest branch)
+    └── upstream/schema-tracker/  ← submodule tracking `latest` (single build + LATEST.json)
             artifacts/<build_id>/<platform>/*.json + protos.descriptorset
             │
             ▼
@@ -96,12 +97,12 @@ See [`docs/overlays/README.md`](docs/overlays/README.md) for the full format and
 ### Running the generator locally
 
 ```bash
-# Clone with the submodule
-git clone --recurse-submodules https://github.com/CS2OpenDev/CS2OpenDev-Docs.git
+# Clone with the submodule (tracks SchemaTracker's `latest` branch)
+git clone --recurse-submodules --shallow-submodules https://github.com/CS2OpenDev/CS2OpenDev-Docs.git
 cd CS2OpenDev-Docs
 
-# Or initialise the submodule in an existing clone
-git submodule update --init upstream/schema-tracker
+# Or initialise the submodule in an existing clone (--remote follows `latest`)
+git submodule update --init --remote --depth 1 upstream/schema-tracker
 
 pip install pyyaml protobuf   # protoc is NOT needed
 
@@ -112,8 +113,12 @@ python3 docs/generate_docs.py \
   --output docs
 ```
 
-For local development against a full SchemaTracker checkout (skipping the
-submodule), point `--artifacts-root` at that checkout's `artifacts/` directory:
+The `latest`-branch submodule carries only the current build, not the
+cumulative `artifacts/schema_evolution/<platform>.json`, so the **Schema
+History** page and `field_history.json` are skipped in a plain submodule run
+(CI supplements them with a targeted fetch from the default branch).  For local
+development with the full history — including Schema History — point
+`--artifacts-root` at a full SchemaTracker checkout's `artifacts/` directory:
 
 ```bash
 python3 docs/generate_docs.py --repo-root . \

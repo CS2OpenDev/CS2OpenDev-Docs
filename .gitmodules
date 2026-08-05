@@ -1,9 +1,15 @@
 [submodule "schema-tracker"]
 	path = upstream/schema-tracker
 	url = https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker.git
-	# The generator only needs the single latest committed build's artifacts.
-	# CI (and local setup) materialise this submodule with a partial clone
-	# (--filter=blob:none) + cone sparse-checkout of just artifacts/<latest>,
-	# so the multi-GB history/other builds are never fetched.  A plain
-	# `git submodule update --init` still works but pulls everything.
+	branch = latest
+	# The `latest` branch carries ONLY the newest build's artifacts
+	# (artifacts/<build_id>/<platform>/) plus a root LATEST.json pointer, so a
+	# shallow single-branch checkout is tens of MB rather than the multi-GB
+	# full history.  Materialise it with:
+	#   git submodule update --init --remote --depth 1 upstream/schema-tracker
+	# CI clones the branch directly (see .github/workflows/generate-docs.yml).
+	# NOTE: the cumulative artifacts/schema_evolution/<platform>.json files
+	# (input to the Schema History page + field_history.json) are not yet on
+	# `latest`; CI supplements them with a targeted sparse fetch from the
+	# default branch until they land there.
 	shallow = true
