@@ -254,7 +254,7 @@ nav_exclude: true
 | [C_CSObserverPawn](#c_csobserverpawn) | class | C_CSPlayerPawnBase | 1 |
 | [C_CSObserverPawn_API](#c_csobserverpawn_api) | class |  | 0 |
 | [C_CSPetPlacement](#c_cspetplacement) | class | C_BaseEntity | 0 |
-| [C_CSPlayerPawn](#c_csplayerpawn) | class | C_CSPlayerPawnBase | 101 |
+| [C_CSPlayerPawn](#c_csplayerpawn) | class | C_CSPlayerPawnBase | 102 |
 | [C_CSPlayerPawnBase](#c_csplayerpawnbase) | class | C_BasePlayerPawn | 26 |
 | [C_CSPlayerPawnBase_API](#c_csplayerpawnbase_api) | class |  | 0 |
 | [C_CSPlayerPawn_API](#c_csplayerpawn_api) | class |  | 0 |
@@ -7134,6 +7134,7 @@ classDiagram
 | `m_bGrenadeParametersStashed` | bool |  |
 | `m_angStashedShootAngles` | QAngle |  |
 | `m_vecStashedGrenadeThrowPosition` | VectorWS |  |
+| `m_vecStashedGrenadeThrowPawnCenter` | VectorWS |  |
 | `m_vecStashedVelocity` | Vector |  |
 | `m_bShouldAutobuyDMWeapons` | bool |  |
 | `m_fImmuneToGunGameDamageTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |

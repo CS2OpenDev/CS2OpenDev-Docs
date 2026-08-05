@@ -2971,7 +2971,7 @@ classDiagram
 			0.000000
 		]
 	],
-	"m_flMassInv": 0.000000,
+	"m_flMassInv": <HIDDEN FOR DIFF>,
 	"m_flGameMass": 0.000000,
 	"m_flMassScaleInv": 1.000000,
 	"m_flInertiaScaleInv": 1.000000,
@@ -3693,7 +3693,7 @@ classDiagram
 ### RnSoftbodyParticle_t
 
 **Metadata:** `MGetKV3ClassDefaults {
-	"m_flMassInv": -nan
+	"m_flMassInv": <HIDDEN FOR DIFF>,
 }`
 
 **Fields:**

@@ -7,7 +7,7 @@ nav_order: 14
 # Binary Modules
 
 {: .note }
-> Source: CS2 build **24304127** · 2026-07-20 · `windows-x86_64` · schema `0.5.0`
+> Source: CS2 build **24537688** · 2026-08-03 · `windows-x86_64` · schema `0.5.0`
 
 139 binaries read for this build, each with its SHA-256, size, export / schema-registration counts, and the engine interface versions it resolved at load.
 
@@ -89,7 +89,7 @@ nav_order: 14
 | `game/bin/win64/rendersystemdx11.dll` | 4507800 | 49 | 0 | `RenderDeviceMgr001`, `RenderUtils_001` |
 | `game/bin/win64/rendersystemempty.dll` | 1746584 | 6 | 0 |  |
 | `game/bin/win64/rendersystemvulkan.dll` | 6148248 | 58 | 0 | `RenderDeviceMgr001`, `RenderUtils_001` |
-| `game/bin/win64/resourcecompiler.dll` | 56326296 | 6 | 101 |  |
+| `game/bin/win64/resourcecompiler.dll` | 56325784 | 6 | 101 |  |
 | `game/bin/win64/resourcesystem.dll` | 507544 | 6 | 0 | `ResourceSystem013` |
 | `game/bin/win64/scenefilecache.dll` | 1251480 | 6 | 0 |  |
 | `game/bin/win64/scenesystem.dll` | 7035544 | 6 | 0 | `SceneSystem_002`, `SceneUtils_001` |
@@ -111,9 +111,9 @@ nav_order: 14
 | `game/bin/win64/tbbbind_2_5.dll` | 48768 | 7 | 0 |  |
 | `game/bin/win64/tier0.dll` | 3945624 | 2575 | 0 |  |
 | `game/bin/win64/toolframework2.dll` | 13308568 | 6 | 0 |  |
-| `game/bin/win64/tools/cs2_item_editor.dll` | 6694552 | 6 | 0 |  |
+| `game/bin/win64/tools/cs2_item_editor.dll` | 6694040 | 6 | 0 |  |
 | `game/bin/win64/tools/cs2_workshop_manager.dll` | 2337944 | 6 | 0 |  |
-| `game/bin/win64/tools/hammer.dll` | 38791320 | 6 | 100 |  |
+| `game/bin/win64/tools/hammer.dll` | 38791832 | 6 | 100 |  |
 | `game/bin/win64/tools/met.dll` | 4782232 | 6 | 70 |  |
 | `game/bin/win64/tools/modeldoc_editor.dll` | 26344088 | 6 | 70 |  |
 | `game/bin/win64/tools/pet.dll` | 9031832 | 6 | 72 |  |
@@ -134,16 +134,16 @@ nav_order: 14
 | `game/bin/win64/vconcomm.dll` | 254104 | 6 | 0 |  |
 | `game/bin/win64/vfx_dx11.dll` | 1307800 | 3 | 0 |  |
 | `game/bin/win64/video64.dll` | 4610448 | 57 | 0 |  |
-| `game/bin/win64/visbuilder.dll` | 1841304 | 6 | 0 |  |
+| `game/bin/win64/visbuilder.dll` | 1852720 | 6 | 0 |  |
 | `game/bin/win64/vphysics2.dll` | 4592280 | 26 | 0 | `VPhysics2_Interface_001` |
 | `game/bin/win64/vrad3.dll` | 3146904 | 6 | 0 |  |
 | `game/bin/win64/vscript.dll` | 1347224 | 183 | 0 |  |
-| `game/bin/win64/worldrenderer.dll` | 2014512 | 6 | 4 | `WorldRendererMgr001` |
-| `game/csgo/bin/win64/client.dll` | 37424792 | 6 | 537 | `Source2Client002`, `Source2ClientConfig001`, `Source2ClientPrediction001`, `Source2ClientUI001` |
+| `game/bin/win64/worldrenderer.dll` | 2003096 | 6 | 4 | `WorldRendererMgr001` |
+| `game/csgo/bin/win64/client.dll` | 37426840 | 6 | 537 | `Source2Client002`, `Source2ClientConfig001`, `Source2ClientPrediction001`, `Source2ClientUI001` |
 | `game/csgo/bin/win64/host.dll` | 1381528 | 6 | 0 | `GameSystem2HostHook`, `Source2Host001` |
 | `game/csgo/bin/win64/matchmaking.dll` | 1882264 | 6 | 0 | `MATCHFRAMEWORK_001` |
 | `game/csgo/bin/win64/modtools.dll` | 17308824 | 6 | 0 | `Source2ModTools001` |
-| `game/csgo/bin/win64/server.dll` | 32794776 | 6 | 798 | `Source2GameClients001`, `Source2GameEntities001`, `Source2Server001`, `Source2ServerConfig001` |
+| `game/csgo/bin/win64/server.dll` | 32818840 | 6 | 798 | `Source2GameClients001`, `Source2GameEntities001`, `Source2Server001`, `Source2ServerConfig001` |
 | `game/csgo/import_scripts/bin/filesystem_stdio.dll` | 434176 | 1 | 0 | `VAsyncFileSystem2_001`, `VFileSystem017` |
 | `game/csgo/import_scripts/bin/materialsystem.dll` | 881664 | 1 | 0 |  |
 | `game/csgo/import_scripts/bin/shaderapiempty.dll` | 85504 | 1 | 0 |  |

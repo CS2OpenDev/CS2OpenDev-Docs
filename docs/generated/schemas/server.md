@@ -149,7 +149,7 @@ nav_exclude: true
 | [CCSPlayerController_InventoryServices::NetworkedLoadoutSlot_t](#ccsplayercontroller_inventoryservicesnetworkedloadoutslot_t) | class |  | 3 |
 | [CCSPlayerLegacyJump](#ccsplayerlegacyjump) | class |  | 2 |
 | [CCSPlayerModernJump](#ccsplayermodernjump) | class |  | 9 |
-| [CCSPlayerPawn](#ccsplayerpawn) | class | CCSPlayerPawnBase | 104 |
+| [CCSPlayerPawn](#ccsplayerpawn) | class | CCSPlayerPawnBase | 105 |
 | [CCSPlayerPawnBase](#ccsplayerpawnbase) | class | CBasePlayerPawn | 15 |
 | [CCSPlayerPawnBase_API](#ccsplayerpawnbase_api) | class |  | 0 |
 | [CCSPlayerPawn_API](#ccsplayerpawn_api) | class |  | 0 |
@@ -5375,6 +5375,7 @@ classDiagram
 | `m_bGrenadeParametersStashed` | bool |  |
 | `m_angStashedShootAngles` | QAngle |  |
 | `m_vecStashedGrenadeThrowPosition` | VectorWS |  |
+| `m_vecStashedGrenadeThrowPawnCenter` | VectorWS |  |
 | `m_vecStashedVelocity` | Vector |  |
 | `m_bCommittingSuicideOnTeamChange` | bool |  |
 | `m_wasNotKilledNaturally` | bool |  |
@@ -20459,7 +20460,7 @@ classDiagram
 
 **Metadata:** `MGetKV3ClassDefaults {
 	"handleA": null,
-	"valueB": 0
+	"valueB": <HIDDEN FOR DIFF>,
 }`
 
 **Fields:**
@@ -23452,7 +23453,7 @@ classDiagram
 	"pitch": 0,
 	"spinupsav": 0,
 	"spindownsav": 0,
-	"pitchfrac": -1277430262,
+	"pitchfrac": <HIDDEN FOR DIFF>,
 	"vol": 32767,
 	"fadeinsav": 0,
 	"fadeoutsav": 0,
@@ -23521,7 +23522,7 @@ classDiagram
 	"pitch": 0,
 	"spinupsav": 0,
 	"spindownsav": 0,
-	"pitchfrac": -1277430262,
+	"pitchfrac": <HIDDEN FOR DIFF>,
 	"vol": 32767,
 	"fadeinsav": 0,
 	"fadeoutsav": 0,

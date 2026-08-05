@@ -7,13 +7,13 @@ nav_order: 15
 # Schema History
 
 {: .note }
-> Source: CS2 build **24304127** · 2026-07-20 · `windows-x86_64` · schema `0.5.0`
+> Source: CS2 build **24537688** · 2026-08-03 · `windows-x86_64` · schema `0.5.0`
 
 Field-precise, build-to-build evolution of the CS2 C++ entity schema, derived by diffing every committed `entity_schema.json` snapshot (SchemaTracker's cumulative `schema_evolution.json`, Layer A).  Unlike the coarse [Changelog](changelog.html) — which only reports *that* a class changed — this reports *which field* was added, removed, retyped, or moved.
 
 - **Platform:** `windows-x86_64` (the canonical render; `linux-x86_64` differs only in offsets/sizes)
-- **Baseline build:** `10832117` · **Latest build:** `24304127`
-- **Transitions:** 377 total, **137 with structural changes** (240 no-op builds)
+- **Baseline build:** `10832117` · **Latest build:** `24537688`
+- **Transitions:** 378 total, **138 with structural changes** (240 no-op builds)
 - **Full per-field history:** the portable [`field_history.json`](downstream-codegen-schemas/field_history.json) carries first/last-seen and the type history for every `(class, field)` across all builds.
 
 To bring an instance captured under build *X* forward to build *Y*, apply each transition in `[X, Y)` in order.  Every op carries both endpoints, so the same chain replays backward.
@@ -22,6 +22,7 @@ To bring an instance captured under build *X* forward to build *Y*, apply each t
 
 | Transition | Classes +/−/~ | Enums +/−/~ | Field ops |
 |------------|---------------|-------------|-----------|
+| `24304127` → `24537688` | 0 / 0 / 6 | 0 / 0 / 1 | 99 |
 | `24248951` → `24304127` | 0 / 0 / 1 | 0 / 0 / 0 | 0 |
 | `24074625` → `24116939` | 232 / 59 / 1075 | 96 / 15 / 27 | 4785 |
 | `23773332` → `23994866` | 0 / 0 / 1 | 0 / 0 / 0 | 5 |
@@ -162,6 +163,19 @@ To bring an instance captured under build *X* forward to build *Y*, apply each t
 
 ## Most recent structural changes
 
+### `24304127` → `24537688`
+
+**Classes changed (6):**
+
+| Class | Field ops | Layout |
+|-------|-----------|--------|
+| `client.dll/C_CSGO_PreviewPlayer` | ~offset×2 | resize 13568→13584 |
+| `client.dll/C_CSGO_PreviewPlayerAlias_csgo_player_previewmodel` | — | resize 13568→13584 |
+| `client.dll/C_CSGO_TeamPreviewModel` | — | resize 13568→13584 |
+| `client.dll/C_CSPlayerPawn` | ＋field×1, ~offset×73 | resize 13408→13424 |
+| `client.dll/C_CSWeaponBase` | ~offset×15 | — |
+| `server.dll/CCSPlayerPawn` | ＋field×1, ~offset×7 | — |
+
 ### `24248951` → `24304127`
 
 **Classes changed (1):**
@@ -241,11 +255,3 @@ To bring an instance captured under build *X* forward to build *Y*, apply each t
 | `!GlobalTypes/CNmSkeleton` | ＋field×1, ~offset×1 | resize 192→208 |
 | `!GlobalTypes/CNmSkeletonDocument` | ＋field×1, ~offset×1, ~type×1 | resize 264→288 |
 | … | _1015 more changed classes — see `field_history.json`_ | |
-
-### `23773332` → `23994866`
-
-**Classes changed (1):**
-
-| Class | Field ops | Layout |
-|-------|-----------|--------|
-| `!GlobalTypes/C_OP_MaxVelocity` | ~offset×1, −field×2, ~type×2 | resize 488→1208 |

@@ -132,20 +132,6 @@ direction LR
     k_EMsgGCCasketItemAdd
     k_EMsgGCCasketItemExtract
     k_EMsgGCCasketItemLoadContents
-    k_EMsgGCTradingBase
-    k_EMsgGCTrading_InitiateTradeRequest
-    k_EMsgGCTrading_InitiateTradeResponse
-    k_EMsgGCTrading_StartSession
-    k_EMsgGCTrading_SetItem
-    k_EMsgGCTrading_RemoveItem
-    k_EMsgGCTrading_UpdateTradeInfo
-    k_EMsgGCTrading_SetReadiness
-    k_EMsgGCTrading_ReadinessResponse
-    k_EMsgGCTrading_SessionClosed
-    k_EMsgGCTrading_CancelSession
-    k_EMsgGCTrading_TradeChatMsg
-    k_EMsgGCTrading_ConfirmOffer
-    k_EMsgGCTrading_TradeTypingChatMsg
     k_EMsgGCServerBrowser_FavoriteServer
     k_EMsgGCServerBrowser_BlacklistServer
     k_EMsgGCServerRentalsBase
@@ -346,20 +332,6 @@ direction LR
 | `k_EMsgGCCasketItemAdd` | 1092 |
 | `k_EMsgGCCasketItemExtract` | 1093 |
 | `k_EMsgGCCasketItemLoadContents` | 1094 |
-| `k_EMsgGCTradingBase` | 1500 |
-| `k_EMsgGCTrading_InitiateTradeRequest` | 1501 |
-| `k_EMsgGCTrading_InitiateTradeResponse` | 1502 |
-| `k_EMsgGCTrading_StartSession` | 1503 |
-| `k_EMsgGCTrading_SetItem` | 1504 |
-| `k_EMsgGCTrading_RemoveItem` | 1505 |
-| `k_EMsgGCTrading_UpdateTradeInfo` | 1506 |
-| `k_EMsgGCTrading_SetReadiness` | 1507 |
-| `k_EMsgGCTrading_ReadinessResponse` | 1508 |
-| `k_EMsgGCTrading_SessionClosed` | 1509 |
-| `k_EMsgGCTrading_CancelSession` | 1510 |
-| `k_EMsgGCTrading_TradeChatMsg` | 1511 |
-| `k_EMsgGCTrading_ConfirmOffer` | 1512 |
-| `k_EMsgGCTrading_TradeTypingChatMsg` | 1513 |
 | `k_EMsgGCServerBrowser_FavoriteServer` | 1601 |
 | `k_EMsgGCServerBrowser_BlacklistServer` | 1602 |
 | `k_EMsgGCServerRentalsBase` | 1700 |

@@ -828,7 +828,7 @@ If 'match', the server will maintain a 1:N ratio of humans to bots, where N is b
 | `commentary` | `false` | `gamedll` `archive` | Desired commentary mode state. |
 | `commentary_available` | `false` | `developmentonly` `gamedll` `defensive` | Automatically set by the game when a commentary file is available for the current map. |
 | `commentary_node_use_viewfacing` | `false` | `developmentonly` `clientdll` `defensive` |  |
-| `composite_material_cache_count_max` | `16` | `developmentonly` `clientdll` |  |
+| `composite_material_cache_count_max` | `24` | `developmentonly` `clientdll` |  |
 | `composite_material_dump_images` | `false` | `developmentonly` `clientdll` |  |
 | `composite_material_save_to_disk` | `false` | `developmentonly` `clientdll` |  |
 | `composite_material_use_bc7` | `true` | `developmentonly` `clientdll` `defensive` |  |

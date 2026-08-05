@@ -14343,7 +14343,7 @@ classDiagram
 	"m_nFieldOutput": 3,
 	"m_nIncrement": 1,
 	"m_bRandomDistribution": false,
-	"m_nRandomSeed": 0
+	"m_nRandomSeed": <HIDDEN FOR DIFF>,
 }`
 
 **Relationships:**
@@ -136658,7 +136658,7 @@ classDiagram
 ### CollisionGroupContext_t
 
 **Metadata:** `MGetKV3ClassDefaults {
-	"m_nCollisionGroupNumber": -1
+	"m_nCollisionGroupNumber": <HIDDEN FOR DIFF>,
 }`
 
 **Fields:**

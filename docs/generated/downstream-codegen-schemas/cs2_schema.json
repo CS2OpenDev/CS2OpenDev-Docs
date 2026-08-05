@@ -2,8 +2,8 @@
   "schema_format_version": "2.0",
   "generator": "https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker",
   "revision": "hl2sdk-cs2/5f891c9026230cce0fc0a3fc4b5fef1c467a1385/v1/3d1200e346019c59",
-  "version_date": "2026-07-20",
-  "version_time": "2026-07-20T22:46:14Z",
+  "version_date": "2026-08-03",
+  "version_time": "2026-08-03T18:18:10Z",
   "classes": [
     {
       "alignment": 255,
@@ -72729,8 +72729,20 @@
         },
         {
           "metadata": [],
-          "name": "m_vecStashedVelocity",
+          "name": "m_vecStashedGrenadeThrowPawnCenter",
           "offset": "4928",
+          "type": {
+            "category": "ATOMIC",
+            "count": "0",
+            "module": "",
+            "name": "VectorWS"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_vecStashedVelocity",
+          "offset": "4940",
           "type": {
             "category": "ATOMIC",
             "count": "0",
@@ -72742,7 +72754,7 @@
         {
           "metadata": [],
           "name": "m_bCommittingSuicideOnTeamChange",
-          "offset": "4952",
+          "offset": "4960",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -72754,7 +72766,7 @@
         {
           "metadata": [],
           "name": "m_wasNotKilledNaturally",
-          "offset": "4953",
+          "offset": "4961",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -72766,7 +72778,7 @@
         {
           "metadata": [],
           "name": "m_fImmuneToGunGameDamageTime",
-          "offset": "4956",
+          "offset": "4964",
           "type": {
             "category": "DECLARED_CLASS",
             "count": "0",
@@ -72781,7 +72793,7 @@
         {
           "metadata": [],
           "name": "m_bGunGameImmunity",
-          "offset": "4960",
+          "offset": "4968",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -72796,7 +72808,7 @@
         {
           "metadata": [],
           "name": "m_fMolotovDamageTime",
-          "offset": "4964",
+          "offset": "4972",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -72811,7 +72823,7 @@
         {
           "metadata": [],
           "name": "m_angEyeAngles",
-          "offset": "4968",
+          "offset": "4976",
           "type": {
             "category": "ATOMIC",
             "count": "0",
@@ -176355,12 +176367,12 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"m_startTime\":\n\t{\n\t\t\"m_flValue\": 0.000000\n\t},\n\t\"m_ID\": \"\"\n}",
+          "value": "{\n\t\"m_startTime\":\n\t{\n\t\t\"m_flValue\": 0.000000\n\t},\n\t\"m_ID\": <HIDDEN FOR DIFF>,\n}",
           "value_parsed": {
             "m_startTime": {
               "m_flValue": 0.0
             },
-            "m_ID": ""
+            "m_ID": null
           }
         }
       ],
@@ -177281,7 +177293,7 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CNmTransitionEvent\",\n\t\"m_flStartTime\":\n\t{\n\t\t\"m_flValue\": 0.000000\n\t},\n\t\"m_flDuration\":\n\t{\n\t\t\"m_flValue\": 0.000000\n\t},\n\t\"m_syncID\": \"\",\n\t\"m_rule\": \"BlockTransition\",\n\t\"m_ID\": \"\"\n}",
+          "value": "{\n\t\"_class\": \"CNmTransitionEvent\",\n\t\"m_flStartTime\":\n\t{\n\t\t\"m_flValue\": 0.000000\n\t},\n\t\"m_flDuration\":\n\t{\n\t\t\"m_flValue\": 0.000000\n\t},\n\t\"m_syncID\": \"\",\n\t\"m_rule\": \"BlockTransition\",\n\t\"m_ID\": <HIDDEN FOR DIFF>,\n}",
           "value_parsed": {
             "_class": "CNmTransitionEvent",
             "m_flStartTime": {
@@ -177292,7 +177304,7 @@
             },
             "m_syncID": "",
             "m_rule": "BlockTransition",
-            "m_ID": ""
+            "m_ID": null
           }
         }
       ],
@@ -254325,10 +254337,10 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"handleA\": null,\n\t\"valueB\": 0\n}",
+          "value": "{\n\t\"handleA\": null,\n\t\"valueB\": <HIDDEN FOR DIFF>,\n}",
           "value_parsed": {
             "handleA": null,
-            "valueB": 0
+            "valueB": null
           }
         }
       ],
@@ -277519,7 +277531,7 @@
         {
           "metadata": [],
           "name": "m_animgraphCharacterModeString",
-          "offset": "13408",
+          "offset": "13424",
           "type": {
             "category": "ATOMIC",
             "count": "0",
@@ -277531,7 +277543,7 @@
         {
           "metadata": [],
           "name": "m_flInitialModelScale",
-          "offset": "13416",
+          "offset": "13432",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -277556,7 +277568,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 8,
-      "size": "13568",
+      "size": "13584",
       "staticFields": []
     },
     {
@@ -277578,7 +277590,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 9,
-      "size": "13568",
+      "size": "13584",
       "staticFields": []
     },
     {
@@ -277852,7 +277864,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 9,
-      "size": "13568",
+      "size": "13584",
       "staticFields": []
     },
     {
@@ -279803,7 +279815,7 @@
         {
           "metadata": [],
           "name": "m_iRetakesOffering",
-          "offset": "5744",
+          "offset": "5752",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -279815,42 +279827,6 @@
         {
           "metadata": [],
           "name": "m_iRetakesOfferingCard",
-          "offset": "5748",
-          "type": {
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "int32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_bRetakesHasDefuseKit",
-          "offset": "5752",
-          "type": {
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "bool"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_bRetakesMVPLastRound",
-          "offset": "5753",
-          "type": {
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "bool"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_iRetakesMVPBoostItem",
           "offset": "5756",
           "type": {
             "category": "BUILTIN",
@@ -279862,8 +279838,44 @@
         },
         {
           "metadata": [],
-          "name": "m_RetakesMVPBoostExtraUtility",
+          "name": "m_bRetakesHasDefuseKit",
           "offset": "5760",
+          "type": {
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "bool"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_bRetakesMVPLastRound",
+          "offset": "5761",
+          "type": {
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "bool"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_iRetakesMVPBoostItem",
+          "offset": "5764",
+          "type": {
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "int32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_RetakesMVPBoostExtraUtility",
+          "offset": "5768",
           "type": {
             "category": "DECLARED_ENUM",
             "count": "0",
@@ -279875,7 +279887,7 @@
         {
           "metadata": [],
           "name": "m_bNeedToReApplyGloves",
-          "offset": "5765",
+          "offset": "5773",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -279887,7 +279899,7 @@
         {
           "metadata": [],
           "name": "m_EconGloves",
-          "offset": "5768",
+          "offset": "5776",
           "type": {
             "category": "DECLARED_CLASS",
             "count": "0",
@@ -279899,7 +279911,7 @@
         {
           "metadata": [],
           "name": "m_nEconGlovesChanged",
-          "offset": "6904",
+          "offset": "6912",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -279911,7 +279923,7 @@
         {
           "metadata": [],
           "name": "m_bMustSyncRagdollState",
-          "offset": "6905",
+          "offset": "6913",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -279923,7 +279935,7 @@
         {
           "metadata": [],
           "name": "m_nRagdollDamageBone",
-          "offset": "6908",
+          "offset": "6916",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -279935,7 +279947,7 @@
         {
           "metadata": [],
           "name": "m_vRagdollDamageForce",
-          "offset": "6912",
+          "offset": "6920",
           "type": {
             "category": "ATOMIC",
             "count": "0",
@@ -279947,7 +279959,7 @@
         {
           "metadata": [],
           "name": "m_szRagdollDamageWeaponName",
-          "offset": "6924",
+          "offset": "6932",
           "type": {
             "category": "FIXED_ARRAY",
             "count": "64",
@@ -279965,7 +279977,7 @@
         {
           "metadata": [],
           "name": "m_bRagdollDamageHeadshot",
-          "offset": "6988",
+          "offset": "6996",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -279977,7 +279989,7 @@
         {
           "metadata": [],
           "name": "m_vRagdollServerOrigin",
-          "offset": "6992",
+          "offset": "7000",
           "type": {
             "category": "ATOMIC",
             "count": "0",
@@ -279989,7 +280001,7 @@
         {
           "metadata": [],
           "name": "m_lastLandTime",
-          "offset": "7004",
+          "offset": "7012",
           "type": {
             "category": "DECLARED_CLASS",
             "count": "0",
@@ -280001,7 +280013,7 @@
         {
           "metadata": [],
           "name": "m_bOnGroundLastTick",
-          "offset": "7008",
+          "offset": "7016",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -280013,7 +280025,7 @@
         {
           "metadata": [],
           "name": "m_hHudModelArms",
-          "offset": "7036",
+          "offset": "7044",
           "type": {
             "category": "ATOMIC",
             "count": "0",
@@ -280031,7 +280043,7 @@
         {
           "metadata": [],
           "name": "m_qDeathEyeAngles",
-          "offset": "7040",
+          "offset": "7048",
           "type": {
             "category": "ATOMIC",
             "count": "0",
@@ -280043,7 +280055,7 @@
         {
           "metadata": [],
           "name": "m_bLeftHanded",
-          "offset": "7052",
+          "offset": "7060",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -280055,7 +280067,7 @@
         {
           "metadata": [],
           "name": "m_fSwitchedHandednessTime",
-          "offset": "7056",
+          "offset": "7064",
           "type": {
             "category": "DECLARED_CLASS",
             "count": "0",
@@ -280067,30 +280079,6 @@
         {
           "metadata": [],
           "name": "m_flViewmodelOffsetX",
-          "offset": "7060",
-          "type": {
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "float32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_flViewmodelOffsetY",
-          "offset": "7064",
-          "type": {
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "float32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_flViewmodelOffsetZ",
           "offset": "7068",
           "type": {
             "category": "BUILTIN",
@@ -280102,7 +280090,7 @@
         },
         {
           "metadata": [],
-          "name": "m_flViewmodelFOV",
+          "name": "m_flViewmodelOffsetY",
           "offset": "7072",
           "type": {
             "category": "BUILTIN",
@@ -280114,8 +280102,32 @@
         },
         {
           "metadata": [],
-          "name": "m_vecPlayerPatchEconIndices",
+          "name": "m_flViewmodelOffsetZ",
           "offset": "7076",
+          "type": {
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_flViewmodelFOV",
+          "offset": "7080",
+          "type": {
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_vecPlayerPatchEconIndices",
+          "offset": "7084",
           "type": {
             "category": "FIXED_ARRAY",
             "count": "5",
@@ -280133,7 +280145,7 @@
         {
           "metadata": [],
           "name": "m_GunGameImmunityColor",
-          "offset": "7144",
+          "offset": "7152",
           "type": {
             "category": "ATOMIC",
             "count": "0",
@@ -280145,7 +280157,7 @@
         {
           "metadata": [],
           "name": "m_vecBulletHitModels",
-          "offset": "7224",
+          "offset": "7232",
           "type": {
             "category": "ATOMIC",
             "count": "0",
@@ -280169,7 +280181,7 @@
         {
           "metadata": [],
           "name": "m_bIsWalking",
-          "offset": "7248",
+          "offset": "7256",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -280181,7 +280193,7 @@
         {
           "metadata": [],
           "name": "m_entitySpottedState",
-          "offset": "7256",
+          "offset": "7264",
           "type": {
             "category": "DECLARED_CLASS",
             "count": "0",
@@ -280193,7 +280205,7 @@
         {
           "metadata": [],
           "name": "m_bIsScoped",
-          "offset": "7280",
+          "offset": "7288",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -280205,7 +280217,7 @@
         {
           "metadata": [],
           "name": "m_bResumeZoom",
-          "offset": "7281",
+          "offset": "7289",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -280217,7 +280229,7 @@
         {
           "metadata": [],
           "name": "m_bIsDefusing",
-          "offset": "7282",
+          "offset": "7290",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -280229,7 +280241,7 @@
         {
           "metadata": [],
           "name": "m_bIsGrabbingHostage",
-          "offset": "7283",
+          "offset": "7291",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -280241,7 +280253,7 @@
         {
           "metadata": [],
           "name": "m_iBlockingUseActionInProgress",
-          "offset": "7284",
+          "offset": "7292",
           "type": {
             "category": "DECLARED_ENUM",
             "count": "0",
@@ -280253,7 +280265,7 @@
         {
           "metadata": [],
           "name": "m_flEmitSoundTime",
-          "offset": "7288",
+          "offset": "7296",
           "type": {
             "category": "DECLARED_CLASS",
             "count": "0",
@@ -280265,7 +280277,7 @@
         {
           "metadata": [],
           "name": "m_bInNoDefuseArea",
-          "offset": "7292",
+          "offset": "7300",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -280277,7 +280289,7 @@
         {
           "metadata": [],
           "name": "m_nWhichBombZone",
-          "offset": "7296",
+          "offset": "7304",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -280289,7 +280301,7 @@
         {
           "metadata": [],
           "name": "m_iShotsFired",
-          "offset": "7300",
+          "offset": "7308",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -280301,7 +280313,7 @@
         {
           "metadata": [],
           "name": "m_flFlinchStack",
-          "offset": "7304",
+          "offset": "7312",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -280313,30 +280325,6 @@
         {
           "metadata": [],
           "name": "m_flVelocityModifier",
-          "offset": "7308",
-          "type": {
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "float32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_bWaitForNoAttack",
-          "offset": "7312",
-          "type": {
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "bool"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_ignoreLadderJumpTime",
           "offset": "7316",
           "type": {
             "category": "BUILTIN",
@@ -280348,8 +280336,32 @@
         },
         {
           "metadata": [],
+          "name": "m_bWaitForNoAttack",
+          "offset": "7320",
+          "type": {
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "bool"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_ignoreLadderJumpTime",
+          "offset": "7324",
+          "type": {
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
           "name": "m_bKilledByHeadshot",
-          "offset": "7321",
+          "offset": "7329",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -280361,7 +280373,7 @@
         {
           "metadata": [],
           "name": "m_ArmorValue",
-          "offset": "7324",
+          "offset": "7332",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -280373,7 +280385,7 @@
         {
           "metadata": [],
           "name": "m_unCurrentEquipmentValue",
-          "offset": "7328",
+          "offset": "7336",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -280385,7 +280397,7 @@
         {
           "metadata": [],
           "name": "m_unRoundStartEquipmentValue",
-          "offset": "7330",
+          "offset": "7338",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -280397,7 +280409,7 @@
         {
           "metadata": [],
           "name": "m_unFreezetimeEndEquipmentValue",
-          "offset": "7332",
+          "offset": "7340",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -280409,7 +280421,7 @@
         {
           "metadata": [],
           "name": "m_nLastKillerIndex",
-          "offset": "7336",
+          "offset": "7344",
           "type": {
             "category": "ATOMIC",
             "count": "0",
@@ -280421,7 +280433,7 @@
         {
           "metadata": [],
           "name": "m_bOldIsScoped",
-          "offset": "7340",
+          "offset": "7348",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -280433,7 +280445,7 @@
         {
           "metadata": [],
           "name": "m_bHasDeathInfo",
-          "offset": "7341",
+          "offset": "7349",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -280445,7 +280457,7 @@
         {
           "metadata": [],
           "name": "m_flDeathInfoTime",
-          "offset": "7344",
+          "offset": "7352",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -280457,7 +280469,7 @@
         {
           "metadata": [],
           "name": "m_vecDeathInfoOrigin",
-          "offset": "7348",
+          "offset": "7356",
           "type": {
             "category": "ATOMIC",
             "count": "0",
@@ -280469,7 +280481,7 @@
         {
           "metadata": [],
           "name": "m_grenadeParameterStashTime",
-          "offset": "7408",
+          "offset": "7416",
           "type": {
             "category": "DECLARED_CLASS",
             "count": "0",
@@ -280481,7 +280493,7 @@
         {
           "metadata": [],
           "name": "m_bGrenadeParametersStashed",
-          "offset": "7412",
+          "offset": "7420",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -280493,7 +280505,7 @@
         {
           "metadata": [],
           "name": "m_angStashedShootAngles",
-          "offset": "7416",
+          "offset": "7424",
           "type": {
             "category": "ATOMIC",
             "count": "0",
@@ -280505,7 +280517,19 @@
         {
           "metadata": [],
           "name": "m_vecStashedGrenadeThrowPosition",
-          "offset": "7428",
+          "offset": "7436",
+          "type": {
+            "category": "ATOMIC",
+            "count": "0",
+            "module": "",
+            "name": "VectorWS"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_vecStashedGrenadeThrowPawnCenter",
+          "offset": "7448",
           "type": {
             "category": "ATOMIC",
             "count": "0",
@@ -280517,7 +280541,7 @@
         {
           "metadata": [],
           "name": "m_vecStashedVelocity",
-          "offset": "7440",
+          "offset": "7460",
           "type": {
             "category": "ATOMIC",
             "count": "0",
@@ -280529,7 +280553,7 @@
         {
           "metadata": [],
           "name": "m_bShouldAutobuyDMWeapons",
-          "offset": "12880",
+          "offset": "12896",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -280541,7 +280565,7 @@
         {
           "metadata": [],
           "name": "m_fImmuneToGunGameDamageTime",
-          "offset": "12884",
+          "offset": "12900",
           "type": {
             "category": "DECLARED_CLASS",
             "count": "0",
@@ -280553,7 +280577,7 @@
         {
           "metadata": [],
           "name": "m_bGunGameImmunity",
-          "offset": "12888",
+          "offset": "12904",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -280565,7 +280589,7 @@
         {
           "metadata": [],
           "name": "m_fImmuneToGunGameDamageTimeLast",
-          "offset": "12892",
+          "offset": "12908",
           "type": {
             "category": "DECLARED_CLASS",
             "count": "0",
@@ -280577,7 +280601,7 @@
         {
           "metadata": [],
           "name": "m_fMolotovDamageTime",
-          "offset": "12896",
+          "offset": "12912",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -280589,7 +280613,7 @@
         {
           "metadata": [],
           "name": "m_nPlayerInfernoBodyFx",
-          "offset": "13004",
+          "offset": "13020",
           "type": {
             "category": "DECLARED_CLASS",
             "count": "0",
@@ -280601,7 +280625,7 @@
         {
           "metadata": [],
           "name": "m_angEyeAngles",
-          "offset": "13120",
+          "offset": "13136",
           "type": {
             "category": "ATOMIC",
             "count": "0",
@@ -280613,7 +280637,7 @@
         {
           "metadata": [],
           "name": "m_arrOldEyeAnglesTimes",
-          "offset": "13264",
+          "offset": "13280",
           "type": {
             "category": "FIXED_ARRAY",
             "count": "4",
@@ -280631,7 +280655,7 @@
         {
           "metadata": [],
           "name": "m_arrOldEyeAngles",
-          "offset": "13280",
+          "offset": "13296",
           "type": {
             "category": "FIXED_ARRAY",
             "count": "4",
@@ -280649,7 +280673,7 @@
         {
           "metadata": [],
           "name": "m_angEyeAnglesVelocity",
-          "offset": "13328",
+          "offset": "13344",
           "type": {
             "category": "ATOMIC",
             "count": "0",
@@ -280661,7 +280685,7 @@
         {
           "metadata": [],
           "name": "m_iIDEntIndex",
-          "offset": "13340",
+          "offset": "13356",
           "type": {
             "category": "ATOMIC",
             "count": "0",
@@ -280673,7 +280697,7 @@
         {
           "metadata": [],
           "name": "m_delayTargetIDTimer",
-          "offset": "13344",
+          "offset": "13360",
           "type": {
             "category": "DECLARED_CLASS",
             "count": "0",
@@ -280685,7 +280709,7 @@
         {
           "metadata": [],
           "name": "m_iTargetItemEntIdx",
-          "offset": "13368",
+          "offset": "13384",
           "type": {
             "category": "ATOMIC",
             "count": "0",
@@ -280697,7 +280721,7 @@
         {
           "metadata": [],
           "name": "m_iOldIDEntIndex",
-          "offset": "13372",
+          "offset": "13388",
           "type": {
             "category": "ATOMIC",
             "count": "0",
@@ -280709,7 +280733,7 @@
         {
           "metadata": [],
           "name": "m_holdTargetIDTimer",
-          "offset": "13376",
+          "offset": "13392",
           "type": {
             "category": "DECLARED_CLASS",
             "count": "0",
@@ -280734,7 +280758,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 7,
-      "size": "13408",
+      "size": "13424",
       "staticFields": []
     },
     {
@@ -281877,7 +281901,7 @@
         {
           "metadata": [],
           "name": "m_bClearWeaponIdentifyingUGC",
-          "offset": "6368",
+          "offset": "6376",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -281889,7 +281913,7 @@
         {
           "metadata": [],
           "name": "m_bVisualsDataSet",
-          "offset": "6369",
+          "offset": "6377",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -281901,7 +281925,7 @@
         {
           "metadata": [],
           "name": "m_bUIWeapon",
-          "offset": "6370",
+          "offset": "6378",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -281913,7 +281937,7 @@
         {
           "metadata": [],
           "name": "m_nCustomEconReloadEventId",
-          "offset": "6372",
+          "offset": "6380",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -281925,7 +281949,7 @@
         {
           "metadata": [],
           "name": "m_bCanBePickedUp",
-          "offset": "6384",
+          "offset": "6392",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -281937,7 +281961,7 @@
         {
           "metadata": [],
           "name": "m_nextPrevOwnerUseTime",
-          "offset": "6388",
+          "offset": "6396",
           "type": {
             "category": "DECLARED_CLASS",
             "count": "0",
@@ -281949,7 +281973,7 @@
         {
           "metadata": [],
           "name": "m_hPrevOwner",
-          "offset": "6392",
+          "offset": "6400",
           "type": {
             "category": "ATOMIC",
             "count": "0",
@@ -281967,7 +281991,7 @@
         {
           "metadata": [],
           "name": "m_nDropTick",
-          "offset": "6396",
+          "offset": "6404",
           "type": {
             "category": "DECLARED_CLASS",
             "count": "0",
@@ -281979,7 +282003,7 @@
         {
           "metadata": [],
           "name": "m_bWasActiveWeaponWhenDropped",
-          "offset": "6400",
+          "offset": "6408",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -281991,30 +282015,6 @@
         {
           "metadata": [],
           "name": "m_donated",
-          "offset": "6436",
-          "type": {
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "bool"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_fLastShotTime",
-          "offset": "6440",
-          "type": {
-            "category": "DECLARED_CLASS",
-            "count": "0",
-            "module": "!GlobalTypes",
-            "name": "GameTime_t"
-          },
-          "typeModule": "!GlobalTypes"
-        },
-        {
-          "metadata": [],
-          "name": "m_bWasOwnedByCT",
           "offset": "6444",
           "type": {
             "category": "BUILTIN",
@@ -282026,8 +282026,32 @@
         },
         {
           "metadata": [],
+          "name": "m_fLastShotTime",
+          "offset": "6448",
+          "type": {
+            "category": "DECLARED_CLASS",
+            "count": "0",
+            "module": "!GlobalTypes",
+            "name": "GameTime_t"
+          },
+          "typeModule": "!GlobalTypes"
+        },
+        {
+          "metadata": [],
+          "name": "m_bWasOwnedByCT",
+          "offset": "6452",
+          "type": {
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "bool"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
           "name": "m_bWasOwnedByTerrorist",
-          "offset": "6445",
+          "offset": "6453",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -282039,7 +282063,7 @@
         {
           "metadata": [],
           "name": "m_flNextClientFireBulletTime",
-          "offset": "6448",
+          "offset": "6456",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -282051,7 +282075,7 @@
         {
           "metadata": [],
           "name": "m_flNextClientFireBulletTime_Repredict",
-          "offset": "6452",
+          "offset": "6460",
           "type": {
             "category": "BUILTIN",
             "count": "0",
@@ -303904,7 +303928,7 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"C_INIT_InheritFromParentParticles\",\n\t\"m_flOpStrength\":\n\t{\n\t\t\"m_nType\": \"PF_TYPE_LITERAL\",\n\t\t\"m_nMapType\": \"PF_MAP_TYPE_DIRECT\",\n\t\t\"m_flLiteralValue\": 1.000000,\n\t\t\"m_NamedValue\": \"\",\n\t\t\"m_nControlPoint\": 0,\n\t\t\"m_nScalarAttribute\": 3,\n\t\t\"m_nVectorAttribute\": 6,\n\t\t\"m_nVectorComponent\": 0,\n\t\t\"m_bReverseOrder\": false,\n\t\t\"m_flRandomMin\": 0.000000,\n\t\t\"m_flRandomMax\": 1.000000,\n\t\t\"m_bHasRandomSignFlip\": false,\n\t\t\"m_nRandomSeed\": <HIDDEN FOR DIFF>,\n\t\t\"m_nRandomMode\": \"PF_RANDOM_MODE_CONSTANT\",\n\t\t\"m_strSnapshotSubset\": \"\",\n\t\t\"m_flLOD0\": 0.000000,\n\t\t\"m_flLOD1\": 0.000000,\n\t\t\"m_flLOD2\": 0.000000,\n\t\t\"m_flLOD3\": 0.000000,\n\t\t\"m_nNoiseInputVectorAttribute\": 0,\n\t\t\"m_flNoiseOutputMin\": 0.000000,\n\t\t\"m_flNoiseOutputMax\": 1.000000,\n\t\t\"m_flNoiseScale\": 0.100000,\n\t\t\"m_vecNoiseOffsetRate\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t],\n\t\t\"m_flNoiseOffset\": 0.000000,\n\t\t\"m_nNoiseOctaves\": 1,\n\t\t\"m_nNoiseTurbulence\": \"PF_NOISE_TURB_NONE\",\n\t\t\"m_nNoiseType\": \"PF_NOISE_TYPE_PERLIN\",\n\t\t\"m_nNoiseModifier\": \"PF_NOISE_MODIFIER_NONE\",\n\t\t\"m_flNoiseTurbulenceScale\": 1.000000,\n\t\t\"m_flNoiseTurbulenceMix\": 0.500000,\n\t\t\"m_flNoiseImgPreviewScale\": 1.000000,\n\t\t\"m_bNoiseImgPreviewLive\": true,\n\t\t\"m_flNoCameraFallback\": 0.000000,\n\t\t\"m_bUseBoundsCenter\": false,\n\t\t\"m_nInputMode\": \"PF_INPUT_MODE_CLAMPED\",\n\t\t\"m_flMultFactor\": 1.000000,\n\t\t\"m_flInput0\": 0.000000,\n\t\t\"m_flInput1\": 1.000000,\n\t\t\"m_flOutput0\": 0.000000,\n\t\t\"m_flOutput1\": 1.000000,\n\t\t\"m_flNotchedRangeMin\": 0.000000,\n\t\t\"m_flNotchedRangeMax\": 1.000000,\n\t\t\"m_flNotchedOutputOutside\": 0.000000,\n\t\t\"m_flNotchedOutputInside\": 1.000000,\n\t\t\"m_nRoundType\": \"PF_ROUND_TYPE_NEAREST\",\n\t\t\"m_nBiasType\": \"PF_BIAS_TYPE_STANDARD\",\n\t\t\"m_flBiasParameter\": 0.000000,\n\t\t\"m_Curve\":\n\t\t{\n\t\t\t\"m_spline\":\n\t\t\t[\n\t\t\t],\n\t\t\t\"m_tangents\":\n\t\t\t[\n\t\t\t],\n\t\t\t\"m_vDomainMins\":\n\t\t\t[\n\t\t\t\t0.000000,\n\t\t\t\t0.000000\n\t\t\t],\n\t\t\t\"m_vDomainMaxs\":\n\t\t\t[\n\t\t\t\t0.000000,\n\t\t\t\t0.000000\n\t\t\t]\n\t\t}\n\t},\n\t\"m_nOpEndCapState\": \"PARTICLE_ENDCAP_ALWAYS_ON\",\n\t\"m_nToolsState\": \"PARTICLE_TOOLS_STATE_ALWAYS_ON\",\n\t\"m_flOpStartFadeInTime\": 0.000000,\n\t\"m_flOpEndFadeInTime\": 0.000000,\n\t\"m_flOpStartFadeOutTime\": 0.000000,\n\t\"m_flOpEndFadeOutTime\": 0.000000,\n\t\"m_flOpFadeOscillatePeriod\": 0.000000,\n\t\"m_bNormalizeToStopTime\": false,\n\t\"m_flOpTimeOffsetMin\": 0.000000,\n\t\"m_flOpTimeOffsetMax\": 0.000000,\n\t\"m_nOpTimeOffsetSeed\": 0,\n\t\"m_nOpTimeScaleSeed\": 0,\n\t\"m_flOpTimeScaleMin\": 1.000000,\n\t\"m_flOpTimeScaleMax\": 1.000000,\n\t\"m_bDisableOperator\": false,\n\t\"m_Notes\": \"\",\n\t\"m_nAssociatedEmitterIndex\": -1,\n\t\"m_flScale\": 1.000000,\n\t\"m_nFieldOutput\": 3,\n\t\"m_nIncrement\": 1,\n\t\"m_bRandomDistribution\": false,\n\t\"m_nRandomSeed\": 0\n}",
+          "value": "{\n\t\"_class\": \"C_INIT_InheritFromParentParticles\",\n\t\"m_flOpStrength\":\n\t{\n\t\t\"m_nType\": \"PF_TYPE_LITERAL\",\n\t\t\"m_nMapType\": \"PF_MAP_TYPE_DIRECT\",\n\t\t\"m_flLiteralValue\": 1.000000,\n\t\t\"m_NamedValue\": \"\",\n\t\t\"m_nControlPoint\": 0,\n\t\t\"m_nScalarAttribute\": 3,\n\t\t\"m_nVectorAttribute\": 6,\n\t\t\"m_nVectorComponent\": 0,\n\t\t\"m_bReverseOrder\": false,\n\t\t\"m_flRandomMin\": 0.000000,\n\t\t\"m_flRandomMax\": 1.000000,\n\t\t\"m_bHasRandomSignFlip\": false,\n\t\t\"m_nRandomSeed\": <HIDDEN FOR DIFF>,\n\t\t\"m_nRandomMode\": \"PF_RANDOM_MODE_CONSTANT\",\n\t\t\"m_strSnapshotSubset\": \"\",\n\t\t\"m_flLOD0\": 0.000000,\n\t\t\"m_flLOD1\": 0.000000,\n\t\t\"m_flLOD2\": 0.000000,\n\t\t\"m_flLOD3\": 0.000000,\n\t\t\"m_nNoiseInputVectorAttribute\": 0,\n\t\t\"m_flNoiseOutputMin\": 0.000000,\n\t\t\"m_flNoiseOutputMax\": 1.000000,\n\t\t\"m_flNoiseScale\": 0.100000,\n\t\t\"m_vecNoiseOffsetRate\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t],\n\t\t\"m_flNoiseOffset\": 0.000000,\n\t\t\"m_nNoiseOctaves\": 1,\n\t\t\"m_nNoiseTurbulence\": \"PF_NOISE_TURB_NONE\",\n\t\t\"m_nNoiseType\": \"PF_NOISE_TYPE_PERLIN\",\n\t\t\"m_nNoiseModifier\": \"PF_NOISE_MODIFIER_NONE\",\n\t\t\"m_flNoiseTurbulenceScale\": 1.000000,\n\t\t\"m_flNoiseTurbulenceMix\": 0.500000,\n\t\t\"m_flNoiseImgPreviewScale\": 1.000000,\n\t\t\"m_bNoiseImgPreviewLive\": true,\n\t\t\"m_flNoCameraFallback\": 0.000000,\n\t\t\"m_bUseBoundsCenter\": false,\n\t\t\"m_nInputMode\": \"PF_INPUT_MODE_CLAMPED\",\n\t\t\"m_flMultFactor\": 1.000000,\n\t\t\"m_flInput0\": 0.000000,\n\t\t\"m_flInput1\": 1.000000,\n\t\t\"m_flOutput0\": 0.000000,\n\t\t\"m_flOutput1\": 1.000000,\n\t\t\"m_flNotchedRangeMin\": 0.000000,\n\t\t\"m_flNotchedRangeMax\": 1.000000,\n\t\t\"m_flNotchedOutputOutside\": 0.000000,\n\t\t\"m_flNotchedOutputInside\": 1.000000,\n\t\t\"m_nRoundType\": \"PF_ROUND_TYPE_NEAREST\",\n\t\t\"m_nBiasType\": \"PF_BIAS_TYPE_STANDARD\",\n\t\t\"m_flBiasParameter\": 0.000000,\n\t\t\"m_Curve\":\n\t\t{\n\t\t\t\"m_spline\":\n\t\t\t[\n\t\t\t],\n\t\t\t\"m_tangents\":\n\t\t\t[\n\t\t\t],\n\t\t\t\"m_vDomainMins\":\n\t\t\t[\n\t\t\t\t0.000000,\n\t\t\t\t0.000000\n\t\t\t],\n\t\t\t\"m_vDomainMaxs\":\n\t\t\t[\n\t\t\t\t0.000000,\n\t\t\t\t0.000000\n\t\t\t]\n\t\t}\n\t},\n\t\"m_nOpEndCapState\": \"PARTICLE_ENDCAP_ALWAYS_ON\",\n\t\"m_nToolsState\": \"PARTICLE_TOOLS_STATE_ALWAYS_ON\",\n\t\"m_flOpStartFadeInTime\": 0.000000,\n\t\"m_flOpEndFadeInTime\": 0.000000,\n\t\"m_flOpStartFadeOutTime\": 0.000000,\n\t\"m_flOpEndFadeOutTime\": 0.000000,\n\t\"m_flOpFadeOscillatePeriod\": 0.000000,\n\t\"m_bNormalizeToStopTime\": false,\n\t\"m_flOpTimeOffsetMin\": 0.000000,\n\t\"m_flOpTimeOffsetMax\": 0.000000,\n\t\"m_nOpTimeOffsetSeed\": 0,\n\t\"m_nOpTimeScaleSeed\": 0,\n\t\"m_flOpTimeScaleMin\": 1.000000,\n\t\"m_flOpTimeScaleMax\": 1.000000,\n\t\"m_bDisableOperator\": false,\n\t\"m_Notes\": \"\",\n\t\"m_nAssociatedEmitterIndex\": -1,\n\t\"m_flScale\": 1.000000,\n\t\"m_nFieldOutput\": 3,\n\t\"m_nIncrement\": 1,\n\t\"m_bRandomDistribution\": false,\n\t\"m_nRandomSeed\": <HIDDEN FOR DIFF>,\n}",
           "value_parsed": {
             "_class": "C_INIT_InheritFromParentParticles",
             "m_flOpStrength": {
@@ -303994,7 +304018,7 @@
             "m_nFieldOutput": 3,
             "m_nIncrement": 1,
             "m_bRandomDistribution": false,
-            "m_nRandomSeed": 0
+            "m_nRandomSeed": null
           }
         }
       ],
@@ -470845,9 +470869,9 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"m_nCollisionGroupNumber\": -1\n}",
+          "value": "{\n\t\"m_nCollisionGroupNumber\": <HIDDEN FOR DIFF>,\n}",
           "value_parsed": {
-            "m_nCollisionGroupNumber": -1
+            "m_nCollisionGroupNumber": null
           }
         }
       ],
@@ -503669,7 +503693,7 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"m_sDebugName\": \"\",\n\t\"m_vPosition\": null,\n\t\"m_qOrientation\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000,\n\t\t1.000000\n\t],\n\t\"m_vLinearVelocity\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_vAngularVelocity\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_vLocalMassCenter\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_LocalInertiaInv\":\n\t[\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t],\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t],\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t]\n\t],\n\t\"m_flMassInv\": 0.000000,\n\t\"m_flGameMass\": 0.000000,\n\t\"m_flMassScaleInv\": 1.000000,\n\t\"m_flInertiaScaleInv\": 1.000000,\n\t\"m_flLinearDamping\": 0.000000,\n\t\"m_flAngularDamping\": 0.000000,\n\t\"m_flLinearDragScale\": 1.000000,\n\t\"m_flAngularDragScale\": 1.000000,\n\t\"m_flLinearFluidDragScale\": 1.000000,\n\t\"m_flAngularFluidDragScale\": 1.000000,\n\t\"m_vLastAwakeForceAccum\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_vLastAwakeTorqueAccum\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_flBuoyancyScale\": 1.000000,\n\t\"m_flGravityScale\": 1.000000,\n\t\"m_flTimeScale\": 1.000000,\n\t\"m_nBodyType\": 0,\n\t\"m_nGameIndex\": 0,\n\t\"m_nGameFlags\": 0,\n\t\"m_nMinVelocityIterations\": 1,\n\t\"m_nMinPositionIterations\": 0,\n\t\"m_nMassPriority\": 0,\n\t\"m_bEnabled\": true,\n\t\"m_bSleeping\": false,\n\t\"m_bIsContinuousEnabled\": true,\n\t\"m_bDragEnabled\": true,\n\t\"m_vGravity\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_bSpeculativeEnabled\": true,\n\t\"m_bHasShadowController\": false,\n\t\"m_nDynamicContinuousContactBehavior\": \"DYNAMIC_CONTINUOUS_ALLOW_IF_REQUESTED_BY_OTHER_BODY\"\n}",
+          "value": "{\n\t\"m_sDebugName\": \"\",\n\t\"m_vPosition\": null,\n\t\"m_qOrientation\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000,\n\t\t1.000000\n\t],\n\t\"m_vLinearVelocity\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_vAngularVelocity\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_vLocalMassCenter\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_LocalInertiaInv\":\n\t[\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t],\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t],\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t]\n\t],\n\t\"m_flMassInv\": <HIDDEN FOR DIFF>,\n\t\"m_flGameMass\": 0.000000,\n\t\"m_flMassScaleInv\": 1.000000,\n\t\"m_flInertiaScaleInv\": 1.000000,\n\t\"m_flLinearDamping\": 0.000000,\n\t\"m_flAngularDamping\": 0.000000,\n\t\"m_flLinearDragScale\": 1.000000,\n\t\"m_flAngularDragScale\": 1.000000,\n\t\"m_flLinearFluidDragScale\": 1.000000,\n\t\"m_flAngularFluidDragScale\": 1.000000,\n\t\"m_vLastAwakeForceAccum\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_vLastAwakeTorqueAccum\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_flBuoyancyScale\": 1.000000,\n\t\"m_flGravityScale\": 1.000000,\n\t\"m_flTimeScale\": 1.000000,\n\t\"m_nBodyType\": 0,\n\t\"m_nGameIndex\": 0,\n\t\"m_nGameFlags\": 0,\n\t\"m_nMinVelocityIterations\": 1,\n\t\"m_nMinPositionIterations\": 0,\n\t\"m_nMassPriority\": 0,\n\t\"m_bEnabled\": true,\n\t\"m_bSleeping\": false,\n\t\"m_bIsContinuousEnabled\": true,\n\t\"m_bDragEnabled\": true,\n\t\"m_vGravity\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_bSpeculativeEnabled\": true,\n\t\"m_bHasShadowController\": false,\n\t\"m_nDynamicContinuousContactBehavior\": \"DYNAMIC_CONTINUOUS_ALLOW_IF_REQUESTED_BY_OTHER_BODY\"\n}",
           "value_parsed": {
             "m_sDebugName": "",
             "m_vPosition": null,
@@ -503711,7 +503735,7 @@
                 0.0
               ]
             ],
-            "m_flMassInv": 0.0,
+            "m_flMassInv": null,
             "m_flGameMass": 0.0,
             "m_flMassScaleInv": 1.0,
             "m_flInertiaScaleInv": 1.0,
@@ -505246,7 +505270,10 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"m_flMassInv\": -nan\n}"
+          "value": "{\n\t\"m_flMassInv\": <HIDDEN FOR DIFF>,\n}",
+          "value_parsed": {
+            "m_flMassInv": null
+          }
         }
       ],
       "module": "!GlobalTypes",
@@ -521245,7 +521272,7 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"preset\": 0,\n\t\"pitchrun\": 0,\n\t\"pitchstart\": 0,\n\t\"spinup\": 0,\n\t\"spindown\": 0,\n\t\"volrun\": 0,\n\t\"volstart\": 0,\n\t\"fadein\": 0,\n\t\"fadeout\": 0,\n\t\"lfotype\": 0,\n\t\"lforate\": 0,\n\t\"lfomodpitch\": 0,\n\t\"lfomodvol\": 0,\n\t\"cspinup\": 0,\n\t\"cspincount\": 0,\n\t\"pitch\": 0,\n\t\"spinupsav\": 0,\n\t\"spindownsav\": 0,\n\t\"pitchfrac\": -1277430262,\n\t\"vol\": 32767,\n\t\"fadeinsav\": 0,\n\t\"fadeoutsav\": 0,\n\t\"volfrac\": 0,\n\t\"lfofrac\": 0,\n\t\"lfomult\": 0\n}",
+          "value": "{\n\t\"preset\": 0,\n\t\"pitchrun\": 0,\n\t\"pitchstart\": 0,\n\t\"spinup\": 0,\n\t\"spindown\": 0,\n\t\"volrun\": 0,\n\t\"volstart\": 0,\n\t\"fadein\": 0,\n\t\"fadeout\": 0,\n\t\"lfotype\": 0,\n\t\"lforate\": 0,\n\t\"lfomodpitch\": 0,\n\t\"lfomodvol\": 0,\n\t\"cspinup\": 0,\n\t\"cspincount\": 0,\n\t\"pitch\": 0,\n\t\"spinupsav\": 0,\n\t\"spindownsav\": 0,\n\t\"pitchfrac\": <HIDDEN FOR DIFF>,\n\t\"vol\": 32767,\n\t\"fadeinsav\": 0,\n\t\"fadeoutsav\": 0,\n\t\"volfrac\": 0,\n\t\"lfofrac\": 0,\n\t\"lfomult\": 0\n}",
           "value_parsed": {
             "preset": 0,
             "pitchrun": 0,
@@ -521265,7 +521292,7 @@
             "pitch": 0,
             "spinupsav": 0,
             "spindownsav": 0,
-            "pitchfrac": -1277430262,
+            "pitchfrac": null,
             "vol": 32767,
             "fadeinsav": 0,
             "fadeoutsav": 0,
@@ -521293,7 +521320,7 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"preset\": 0,\n\t\"pitchrun\": 0,\n\t\"pitchstart\": 0,\n\t\"spinup\": 0,\n\t\"spindown\": 0,\n\t\"volrun\": 0,\n\t\"volstart\": 0,\n\t\"fadein\": 0,\n\t\"fadeout\": 0,\n\t\"lfotype\": 0,\n\t\"lforate\": 0,\n\t\"lfomodpitch\": 0,\n\t\"lfomodvol\": 0,\n\t\"cspinup\": 0,\n\t\"cspincount\": 0,\n\t\"pitch\": 0,\n\t\"spinupsav\": 0,\n\t\"spindownsav\": 0,\n\t\"pitchfrac\": -1277430262,\n\t\"vol\": 32767,\n\t\"fadeinsav\": 0,\n\t\"fadeoutsav\": 0,\n\t\"volfrac\": 0,\n\t\"lfofrac\": 0,\n\t\"lfomult\": 0\n}",
+          "value": "{\n\t\"preset\": 0,\n\t\"pitchrun\": 0,\n\t\"pitchstart\": 0,\n\t\"spinup\": 0,\n\t\"spindown\": 0,\n\t\"volrun\": 0,\n\t\"volstart\": 0,\n\t\"fadein\": 0,\n\t\"fadeout\": 0,\n\t\"lfotype\": 0,\n\t\"lforate\": 0,\n\t\"lfomodpitch\": 0,\n\t\"lfomodvol\": 0,\n\t\"cspinup\": 0,\n\t\"cspincount\": 0,\n\t\"pitch\": 0,\n\t\"spinupsav\": 0,\n\t\"spindownsav\": 0,\n\t\"pitchfrac\": <HIDDEN FOR DIFF>,\n\t\"vol\": 32767,\n\t\"fadeinsav\": 0,\n\t\"fadeoutsav\": 0,\n\t\"volfrac\": 0,\n\t\"lfofrac\": 0,\n\t\"lfomult\": 0\n}",
           "value_parsed": {
             "preset": 0,
             "pitchrun": 0,
@@ -521313,7 +521340,7 @@
             "pitch": 0,
             "spinupsav": 0,
             "spindownsav": 0,
-            "pitchfrac": -1277430262,
+            "pitchfrac": null,
             "vol": 32767,
             "fadeinsav": 0,
             "fadeoutsav": 0,
@@ -525588,7 +525615,7 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"m_sDebugName\": \"\",\n\t\"m_vPosition\": null,\n\t\"m_qOrientation\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000,\n\t\t1.000000\n\t],\n\t\"m_vLinearVelocity\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_vAngularVelocity\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_vLocalMassCenter\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_LocalInertiaInv\":\n\t[\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t],\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t],\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t]\n\t],\n\t\"m_flMassInv\": 0.000000,\n\t\"m_flGameMass\": 0.000000,\n\t\"m_flMassScaleInv\": 1.000000,\n\t\"m_flInertiaScaleInv\": 1.000000,\n\t\"m_flLinearDamping\": 0.000000,\n\t\"m_flAngularDamping\": 0.000000,\n\t\"m_flLinearDragScale\": 1.000000,\n\t\"m_flAngularDragScale\": 1.000000,\n\t\"m_flLinearFluidDragScale\": 1.000000,\n\t\"m_flAngularFluidDragScale\": 1.000000,\n\t\"m_vLastAwakeForceAccum\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_vLastAwakeTorqueAccum\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_flBuoyancyScale\": 1.000000,\n\t\"m_flGravityScale\": 1.000000,\n\t\"m_flTimeScale\": 1.000000,\n\t\"m_nBodyType\": 0,\n\t\"m_nGameIndex\": 0,\n\t\"m_nGameFlags\": 0,\n\t\"m_nMinVelocityIterations\": 1,\n\t\"m_nMinPositionIterations\": 0,\n\t\"m_nMassPriority\": 0,\n\t\"m_bEnabled\": true,\n\t\"m_bSleeping\": false,\n\t\"m_bIsContinuousEnabled\": true,\n\t\"m_bDragEnabled\": true,\n\t\"m_vGravity\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_bSpeculativeEnabled\": true,\n\t\"m_bHasShadowController\": false,\n\t\"m_nDynamicContinuousContactBehavior\": \"DYNAMIC_CONTINUOUS_ALLOW_IF_REQUESTED_BY_OTHER_BODY\",\n\t\"m_nOldPointer\": 0\n}",
+          "value": "{\n\t\"m_sDebugName\": \"\",\n\t\"m_vPosition\": null,\n\t\"m_qOrientation\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000,\n\t\t1.000000\n\t],\n\t\"m_vLinearVelocity\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_vAngularVelocity\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_vLocalMassCenter\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_LocalInertiaInv\":\n\t[\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t],\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t],\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t]\n\t],\n\t\"m_flMassInv\": <HIDDEN FOR DIFF>,\n\t\"m_flGameMass\": 0.000000,\n\t\"m_flMassScaleInv\": 1.000000,\n\t\"m_flInertiaScaleInv\": 1.000000,\n\t\"m_flLinearDamping\": 0.000000,\n\t\"m_flAngularDamping\": 0.000000,\n\t\"m_flLinearDragScale\": 1.000000,\n\t\"m_flAngularDragScale\": 1.000000,\n\t\"m_flLinearFluidDragScale\": 1.000000,\n\t\"m_flAngularFluidDragScale\": 1.000000,\n\t\"m_vLastAwakeForceAccum\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_vLastAwakeTorqueAccum\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_flBuoyancyScale\": 1.000000,\n\t\"m_flGravityScale\": 1.000000,\n\t\"m_flTimeScale\": 1.000000,\n\t\"m_nBodyType\": 0,\n\t\"m_nGameIndex\": 0,\n\t\"m_nGameFlags\": 0,\n\t\"m_nMinVelocityIterations\": 1,\n\t\"m_nMinPositionIterations\": 0,\n\t\"m_nMassPriority\": 0,\n\t\"m_bEnabled\": true,\n\t\"m_bSleeping\": false,\n\t\"m_bIsContinuousEnabled\": true,\n\t\"m_bDragEnabled\": true,\n\t\"m_vGravity\":\n\t[\n\t\t0.000000,\n\t\t0.000000,\n\t\t0.000000\n\t],\n\t\"m_bSpeculativeEnabled\": true,\n\t\"m_bHasShadowController\": false,\n\t\"m_nDynamicContinuousContactBehavior\": \"DYNAMIC_CONTINUOUS_ALLOW_IF_REQUESTED_BY_OTHER_BODY\",\n\t\"m_nOldPointer\": 0\n}",
           "value_parsed": {
             "m_sDebugName": "",
             "m_vPosition": null,
@@ -525630,7 +525657,7 @@
                 0.0
               ]
             ],
-            "m_flMassInv": 0.0,
+            "m_flMassInv": null,
             "m_flGameMass": 0.0,
             "m_flMassScaleInv": 1.0,
             "m_flInertiaScaleInv": 1.0,
@@ -535381,76 +535408,6 @@
           "metadata": [],
           "name": "k_EMsgGCCasketItemLoadContents",
           "value": "1094"
-        },
-        {
-          "metadata": [],
-          "name": "k_EMsgGCTradingBase",
-          "value": "1500"
-        },
-        {
-          "metadata": [],
-          "name": "k_EMsgGCTrading_InitiateTradeRequest",
-          "value": "1501"
-        },
-        {
-          "metadata": [],
-          "name": "k_EMsgGCTrading_InitiateTradeResponse",
-          "value": "1502"
-        },
-        {
-          "metadata": [],
-          "name": "k_EMsgGCTrading_StartSession",
-          "value": "1503"
-        },
-        {
-          "metadata": [],
-          "name": "k_EMsgGCTrading_SetItem",
-          "value": "1504"
-        },
-        {
-          "metadata": [],
-          "name": "k_EMsgGCTrading_RemoveItem",
-          "value": "1505"
-        },
-        {
-          "metadata": [],
-          "name": "k_EMsgGCTrading_UpdateTradeInfo",
-          "value": "1506"
-        },
-        {
-          "metadata": [],
-          "name": "k_EMsgGCTrading_SetReadiness",
-          "value": "1507"
-        },
-        {
-          "metadata": [],
-          "name": "k_EMsgGCTrading_ReadinessResponse",
-          "value": "1508"
-        },
-        {
-          "metadata": [],
-          "name": "k_EMsgGCTrading_SessionClosed",
-          "value": "1509"
-        },
-        {
-          "metadata": [],
-          "name": "k_EMsgGCTrading_CancelSession",
-          "value": "1510"
-        },
-        {
-          "metadata": [],
-          "name": "k_EMsgGCTrading_TradeChatMsg",
-          "value": "1511"
-        },
-        {
-          "metadata": [],
-          "name": "k_EMsgGCTrading_ConfirmOffer",
-          "value": "1512"
-        },
-        {
-          "metadata": [],
-          "name": "k_EMsgGCTrading_TradeTypingChatMsg",
-          "value": "1513"
         },
         {
           "metadata": [],

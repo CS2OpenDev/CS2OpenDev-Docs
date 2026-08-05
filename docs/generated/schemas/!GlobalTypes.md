@@ -158,7 +158,7 @@ nav_exclude: true
 | [EGCBaseMsg](#egcbasemsg) | enum |  | 15 |
 | [EGCBaseProtoObjectTypes](#egcbaseprotoobjecttypes) | enum |  | 2 |
 | [EGCItemCustomizationNotification](#egcitemcustomizationnotification) | enum |  | 28 |
-| [EGCItemMsg](#egcitemmsg) | enum |  | 147 |
+| [EGCItemMsg](#egcitemmsg) | enum |  | 133 |
 | [EGCMsgResponse](#egcmsgresponse) | enum |  | 11 |
 | [EGCSystemMsg](#egcsystemmsg) | enum |  | 92 |
 | [EGCToGCMsg](#egctogcmsg) | enum |  | 8 |
@@ -2905,20 +2905,6 @@ nav_exclude: true
 | `k_EMsgGCCasketItemAdd` | 1092 |  |
 | `k_EMsgGCCasketItemExtract` | 1093 |  |
 | `k_EMsgGCCasketItemLoadContents` | 1094 |  |
-| `k_EMsgGCTradingBase` | 1500 |  |
-| `k_EMsgGCTrading_InitiateTradeRequest` | 1501 |  |
-| `k_EMsgGCTrading_InitiateTradeResponse` | 1502 |  |
-| `k_EMsgGCTrading_StartSession` | 1503 |  |
-| `k_EMsgGCTrading_SetItem` | 1504 |  |
-| `k_EMsgGCTrading_RemoveItem` | 1505 |  |
-| `k_EMsgGCTrading_UpdateTradeInfo` | 1506 |  |
-| `k_EMsgGCTrading_SetReadiness` | 1507 |  |
-| `k_EMsgGCTrading_ReadinessResponse` | 1508 |  |
-| `k_EMsgGCTrading_SessionClosed` | 1509 |  |
-| `k_EMsgGCTrading_CancelSession` | 1510 |  |
-| `k_EMsgGCTrading_TradeChatMsg` | 1511 |  |
-| `k_EMsgGCTrading_ConfirmOffer` | 1512 |  |
-| `k_EMsgGCTrading_TradeTypingChatMsg` | 1513 |  |
 | `k_EMsgGCServerBrowser_FavoriteServer` | 1601 |  |
 | `k_EMsgGCServerBrowser_BlacklistServer` | 1602 |  |
 | `k_EMsgGCServerRentalsBase` | 1700 |  |

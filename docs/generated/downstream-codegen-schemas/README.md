@@ -208,4 +208,4 @@ the documented vocabulary tracks upstream additions.
 - `MVectorIsSometimesCoordinate`
 
 
-_Last regenerated against CS2 build `hl2sdk-cs2/5f891c9026230cce0fc0a3fc4b5fef1c467a1385/v1/3d1200e346019c59` (2026-07-20)._
+_Last regenerated against CS2 build `hl2sdk-cs2/5f891c9026230cce0fc0a3fc4b5fef1c467a1385/v1/3d1200e346019c59` (2026-08-03)._
