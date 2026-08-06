@@ -21,9 +21,17 @@ direction LR
     +float friendly_fire_damage_reduction_ratio
   }
 
+  class CCSPredictionEvent_PlayerTeleport {
+    +bool relative
+    +CMsgVector origin
+    +CMsgQAngle angles
+    +CMsgVector velocity
+  }
+
   class ECSPredictionEvents{
     <<enumeration>>
     CSPE_DamageTag
+    CSPE_PlayerTeleport
   }
 
 ```
@@ -35,6 +43,7 @@ direction LR
 | Name | Value |
 |------|-------|
 | `CSPE_DamageTag` | 1 |
+| `CSPE_PlayerTeleport` | 3 |
 
 ## Messages
 
@@ -45,3 +54,12 @@ direction LR
 | `flinch_mod_small` | 1 | float | optional |  |
 | `flinch_mod_large` | 2 | float | optional |  |
 | `friendly_fire_damage_reduction_ratio` | 3 | float | optional |  |
+
+### `CCSPredictionEvent_PlayerTeleport`
+
+| Field | Ordinal | Type | Label | Description |
+|-------|---------|------|-------|-------------|
+| `relative` | 1 | bool | optional |  |
+| `origin` | 2 | CMsgVector | optional |  |
+| `angles` | 3 | CMsgQAngle | optional |  |
+| `velocity` | 4 | CMsgVector | optional |  |

@@ -13,53 +13,54 @@ Class relationships (inheritance and composition) for the `soundsystem_voicecont
 
 ```mermaid
 classDiagram
-    CVoiceContainerGenerator <|-- CVoiceContainerDecayingSineWave
-    CVoiceContainerBase <|-- CVoiceContainerLoopTrigger
-    CVoiceContainerBase <|-- CVoiceContainerEnum
-    CVoiceContainerBase <|-- CVoiceContainerSwitch
-    CVoiceContainerBase <|-- CVoiceContainerSelector
-    CVoiceContainerBase <|-- CVoiceContainerMultiBlender
-    CVoiceContainerDefault <|-- CVoiceContainerEnvelope
     CVoiceContainerDecayingSineWave <|-- CVoiceContainerAmpedDecayingSineWave
-    CVoiceContainerBase <|-- CVoiceContainerParameterBlender
-    CVoiceContainerAsyncGenerator <|-- CVoiceContainerTapePlayer
     CVoiceContainerGenerator <|-- CVoiceContainerAsyncGenerator
-    CVoiceContainerBase <|-- CVoiceContainerSet
-    CVoiceContainerBase <|-- CVoiceContainerGenerator
+    CVoiceContainerBase <|-- CVoiceContainerBlender
+    CVoiceContainerGenerator <|-- CVoiceContainerDecayingSineWave
+    CVoiceContainerBase <|-- CVoiceContainerDefault
+    CVoiceContainerBase <|-- CVoiceContainerEnum
     CVoiceContainerAnalysisBase <|-- CVoiceContainerEnvelopeAnalyzer
-    CVoiceContainerBase <|-- CVoiceContainerLoopXFade
+    CVoiceContainerBase <|-- CVoiceContainerGenerator
     CVoiceContainerAsyncGenerator <|-- CVoiceContainerGranulator
+    CVoiceContainerBase <|-- CVoiceContainerLoopTrigger
+    CVoiceContainerLoopTrigger <|-- CVoiceContainerLoopTriggerWithRandomPanner
+    CVoiceContainerBase <|-- CVoiceContainerLoopXFade
+    CVoiceContainerBase <|-- CVoiceContainerMultiBlender
+    CVoiceContainerGenerator <|-- CVoiceContainerNull
+    CVoiceContainerBase <|-- CVoiceContainerParameterBlender
+    CVoiceContainerAsyncGenerator <|-- CVoiceContainerRandomSampler
+    CVoiceContainerGenerator <|-- CVoiceContainerRealtimeFMSineWave
+    CVoiceContainerBase <|-- CVoiceContainerSelector
+    CVoiceContainerBase <|-- CVoiceContainerSet
     CVoiceContainerGenerator <|-- CVoiceContainerShapedNoise
     CVoiceContainerAsyncGenerator <|-- CVoiceContainerStaticAdditiveSynth
-    CVoiceContainerGenerator <|-- CVoiceContainerRealtimeFMSineWave
-    CVoiceContainerGenerator <|-- CVoiceContainerNull
-    CVoiceContainerBase <|-- CVoiceContainerDefault
-    CVoiceContainerAsyncGenerator <|-- CVoiceContainerRandomSampler
-    CVoiceContainerBase <|-- CVoiceContainerBlender
-    CVoiceContainerLoopTrigger *-- CSoundContainerReference
-    CVoiceContainerEnum *-- CSoundContainerReferenceArray
-    CVoiceContainerSwitch *-- CSoundContainerReference
-    CVoiceContainerSelector *-- PlayBackMode_t
-    CVoiceContainerSelector *-- CSoundContainerReferenceArray
-    CVoiceContainerMultiBlender *-- CSoundContainerReferenceArray
-    CVoiceContainerEnvelope --> CVoiceContainerAnalysisBase
-    CVoiceContainerParameterBlender *-- CSoundContainerReference
+    CVoiceContainerBase <|-- CVoiceContainerSwitch
+    CVoiceContainerAsyncGenerator <|-- CVoiceContainerTapePlayer
+    CVoiceContainerBase <|-- CVoiceContainerVsndRadioButton
+    CVoiceContainerBase <|-- CVoiceContainerVsndTrigger
     CAudioSentence *-- CAudioPhonemeTag
     CAudioSentence *-- CAudioEmphasisSample
     CAudioSentence *-- CAudioMorphData
+    CSoundContainerReference --> CVoiceContainerBase
     CSoundContainerReferenceArray --> CVoiceContainerBase
-    CVoiceContainerSetElement *-- CSoundContainerReference
-    CVoiceContainerSet *-- CVoiceContainerSetElement
-    CVoiceContainerEnvelopeAnalyzer *-- EMode_t
-    CVoiceContainerLoopXFade *-- CSoundContainerReference
+    CVSound *-- CAudioSentence
     CVoiceContainerBase *-- CVSound
     CVoiceContainerBase --> CVoiceContainerAnalysisBase
-    CSoundContainerReference --> CVoiceContainerBase
-    CVSound *-- CVSoundFormat_t
-    CVSound *-- CAudioSentence
-    "CVoiceContainerStaticAdditiveSynth::CTone" *-- CVoiceContainerStaticAdditiveSynth
-    "CVoiceContainerStaticAdditiveSynth::CHarmonic" *-- EWaveform
-    "CVoiceContainerStaticAdditiveSynth::CHarmonic" *-- EMidiNote
-    "CVoiceContainerStaticAdditiveSynth::CHarmonic" *-- CVoiceContainerStaticAdditiveSynth
     CVoiceContainerBlender *-- CSoundContainerReference
+    CVoiceContainerEnum *-- CSoundContainerReferenceArray
+    CVoiceContainerLoopTrigger *-- CSoundContainerReference
+    CVoiceContainerLoopTriggerWithRandomPanner *-- CRandomPannerControls
+    CVoiceContainerLoopXFade *-- CSoundContainerReference
+    CVoiceContainerMultiBlender *-- CSoundContainerReferenceArray
+    CVoiceContainerParameterBlender *-- CSoundContainerReference
+    CVoiceContainerSelector *-- CSoundContainerReferenceArray
+    CVoiceContainerSet *-- CVoiceContainerSetElement
+    CVoiceContainerSetElement *-- CSoundContainerReference
+    "CVoiceContainerStaticAdditiveSynth::CHarmonic" *-- CVoiceContainerStaticAdditiveSynth
+    "CVoiceContainerStaticAdditiveSynth::CTone" *-- CVoiceContainerStaticAdditiveSynth
+    CVoiceContainerSwitch *-- CSoundContainerReference
+    CVoiceContainerVsndRadioButton *-- CVsndRadioButtonSlot
+    CVoiceContainerVsndTrigger *-- CVsndTriggerSlot
+    CVsndRadioButtonSlot *-- CSoundContainerReference
+    CVsndTriggerSlot *-- CSoundContainerReference
 ```

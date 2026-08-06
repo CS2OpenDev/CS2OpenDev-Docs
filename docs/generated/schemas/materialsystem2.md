@@ -11,9 +11,6 @@ nav_exclude: true
 
 | Name | Kind | Bases | Fields |
 |------|------|-------|--------|
-| [BloomBlendMode_t](#bloomblendmode_t) | enum |  | 3 |
-| [HorizJustification_e](#horizjustification_e) | enum |  | 4 |
-| [LayoutPositionType_e](#layoutpositiontype_e) | enum |  | 3 |
 | [MaterialParamBuffer_t](#materialparambuffer_t) | class | MaterialParam_t | 1 |
 | [MaterialParamFloat_t](#materialparamfloat_t) | class | MaterialParam_t | 1 |
 | [MaterialParamInt_t](#materialparamint_t) | class | MaterialParam_t | 1 |
@@ -23,46 +20,14 @@ nav_exclude: true
 | [MaterialParam_t](#materialparam_t) | class |  | 1 |
 | [MaterialResourceData_t](#materialresourcedata_t) | class |  | 14 |
 | [PostProcessingBloomParameters_t](#postprocessingbloomparameters_t) | class |  | 16 |
-| [PostProcessingFogScatteringParameters_t](#postprocessingfogscatteringparameters_t) | class |  | 5 |
+| [PostProcessingFogScatteringParameters_t](#postprocessingfogscatteringparameters_t) | class |  | 8 |
 | [PostProcessingLocalContrastParameters_t](#postprocessinglocalcontrastparameters_t) | class |  | 5 |
-| [PostProcessingResource_t](#postprocessingresource_t) | class |  | 13 |
+| [PostProcessingLocalExposureParameters_t](#postprocessinglocalexposureparameters_t) | class |  | 4 |
+| [PostProcessingResource_t](#postprocessingresource_t) | class |  | 15 |
 | [PostProcessingTonemapParameters_t](#postprocessingtonemapparameters_t) | class |  | 15 |
 | [PostProcessingVignetteParameters_t](#postprocessingvignetteparameters_t) | class |  | 6 |
-| [VertJustification_e](#vertjustification_e) | enum |  | 4 |
-| [ViewFadeMode_t](#viewfademode_t) | enum |  | 3 |
 
 ---
-
-### BloomBlendMode_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `BLOOM_BLEND_ADD` | 0 |  |
-| `BLOOM_BLEND_SCREEN` | 1 |  |
-| `BLOOM_BLEND_BLUR` | 2 |  |
-
-### HorizJustification_e
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `HORIZ_JUSTIFICATION_LEFT` | 0 |  |
-| `HORIZ_JUSTIFICATION_CENTER` | 1 |  |
-| `HORIZ_JUSTIFICATION_RIGHT` | 2 |  |
-| `HORIZ_JUSTIFICATION_NONE` | 3 |  |
-
-### LayoutPositionType_e
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `LAYOUTPOSITIONTYPE_VIEWPORT_RELATIVE` | 0 |  |
-| `LAYOUTPOSITIONTYPE_FRACTIONAL` | 1 |  |
-| `LAYOUTPOSITIONTYPE_NONE` | 2 |  |
 
 ### MaterialParamBuffer_t
 
@@ -173,7 +138,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_pValue` | CStrongHandle<[InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase)> |  |
+| `m_pValue` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
 
 ### MaterialParamVector_t
 
@@ -215,11 +180,11 @@ classDiagram
 
 ```mermaid
 classDiagram
-    MaterialParam_t <|-- MaterialParamTexture_t
-    MaterialParam_t <|-- MaterialParamFloat_t
     MaterialParam_t <|-- MaterialParamBuffer_t
+    MaterialParam_t <|-- MaterialParamFloat_t
     MaterialParam_t <|-- MaterialParamInt_t
     MaterialParam_t <|-- MaterialParamString_t
+    MaterialParam_t <|-- MaterialParamTexture_t
     MaterialParam_t <|-- MaterialParamVector_t
 ```
 
@@ -290,18 +255,18 @@ classDiagram
 |------|------|-------------|
 | `m_materialName` | CUtlString |  |
 | `m_shaderName` | CUtlString |  |
-| `m_intParams` | CUtlVector<[MaterialParamInt_t](../schemas/materialsystem2.md#materialparamint_t)> |  |
-| `m_floatParams` | CUtlVector<[MaterialParamFloat_t](../schemas/materialsystem2.md#materialparamfloat_t)> |  |
-| `m_vectorParams` | CUtlVector<[MaterialParamVector_t](../schemas/materialsystem2.md#materialparamvector_t)> |  |
-| `m_textureParams` | CUtlVector<[MaterialParamTexture_t](../schemas/materialsystem2.md#materialparamtexture_t)> |  |
-| `m_dynamicParams` | CUtlVector<[MaterialParamBuffer_t](../schemas/materialsystem2.md#materialparambuffer_t)> |  |
-| `m_dynamicTextureParams` | CUtlVector<[MaterialParamBuffer_t](../schemas/materialsystem2.md#materialparambuffer_t)> |  |
-| `m_intAttributes` | CUtlVector<[MaterialParamInt_t](../schemas/materialsystem2.md#materialparamint_t)> |  |
-| `m_floatAttributes` | CUtlVector<[MaterialParamFloat_t](../schemas/materialsystem2.md#materialparamfloat_t)> |  |
-| `m_vectorAttributes` | CUtlVector<[MaterialParamVector_t](../schemas/materialsystem2.md#materialparamvector_t)> |  |
-| `m_textureAttributes` | CUtlVector<[MaterialParamTexture_t](../schemas/materialsystem2.md#materialparamtexture_t)> |  |
-| `m_stringAttributes` | CUtlVector<[MaterialParamString_t](../schemas/materialsystem2.md#materialparamstring_t)> |  |
-| `m_renderAttributesUsed` | CUtlVector<CUtlString> |  |
+| `m_intParams` | CUtlVector< [MaterialParamInt_t](../schemas/materialsystem2.md#materialparamint_t) > |  |
+| `m_floatParams` | CUtlVector< [MaterialParamFloat_t](../schemas/materialsystem2.md#materialparamfloat_t) > |  |
+| `m_vectorParams` | CUtlVector< [MaterialParamVector_t](../schemas/materialsystem2.md#materialparamvector_t) > |  |
+| `m_textureParams` | CUtlVector< [MaterialParamTexture_t](../schemas/materialsystem2.md#materialparamtexture_t) > |  |
+| `m_dynamicParams` | CUtlVector< [MaterialParamBuffer_t](../schemas/materialsystem2.md#materialparambuffer_t) > |  |
+| `m_dynamicTextureParams` | CUtlVector< [MaterialParamBuffer_t](../schemas/materialsystem2.md#materialparambuffer_t) > |  |
+| `m_intAttributes` | CUtlVector< [MaterialParamInt_t](../schemas/materialsystem2.md#materialparamint_t) > |  |
+| `m_floatAttributes` | CUtlVector< [MaterialParamFloat_t](../schemas/materialsystem2.md#materialparamfloat_t) > |  |
+| `m_vectorAttributes` | CUtlVector< [MaterialParamVector_t](../schemas/materialsystem2.md#materialparamvector_t) > |  |
+| `m_textureAttributes` | CUtlVector< [MaterialParamTexture_t](../schemas/materialsystem2.md#materialparamtexture_t) > |  |
+| `m_stringAttributes` | CUtlVector< [MaterialParamString_t](../schemas/materialsystem2.md#materialparamstring_t) > |  |
+| `m_renderAttributesUsed` | CUtlVector< CUtlString > |  |
 
 ### PostProcessingBloomParameters_t
 
@@ -369,7 +334,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_blendMode` | [BloomBlendMode_t](../schemas/materialsystem2.md#bloomblendmode_t) |  |
+| `m_blendMode` | [BloomBlendMode_t](../schemas/!GlobalTypes.md#bloomblendmode_t) |  |
 | `m_flBloomStrength` | float32 |  |
 | `m_flScreenBloomStrength` | float32 |  |
 | `m_flBlurBloomStrength` | float32 |  |
@@ -393,7 +358,10 @@ classDiagram
 	"m_fScale": 0.000000,
 	"m_fCubemapScale": 1.000000,
 	"m_fVolumetricScale": 1.000000,
-	"m_fGradientScale": 1.000000
+	"m_fGradientScale": 1.000000,
+	"m_fWaterScale": 0.000000,
+	"m_fWaterDensity": 0.000000,
+	"m_fWaterDepthBlurRadius": 0.000000
 }`
 
 **Fields:**
@@ -405,6 +373,9 @@ classDiagram
 | `m_fCubemapScale` | float32 |  |
 | `m_fVolumetricScale` | float32 |  |
 | `m_fGradientScale` | float32 |  |
+| `m_fWaterScale` | float32 |  |
+| `m_fWaterDensity` | float32 |  |
+| `m_fWaterDepthBlurRadius` | float32 |  |
 
 ### PostProcessingLocalContrastParameters_t
 
@@ -425,6 +396,24 @@ classDiagram
 | `m_flLocalContrastVignetteStart` | float32 |  |
 | `m_flLocalContrastVignetteEnd` | float32 |  |
 | `m_flLocalContrastVignetteBlur` | float32 |  |
+
+### PostProcessingLocalExposureParameters_t
+
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_fShadowOffsetEV": 0.000000,
+	"m_fHighlightOffsetEV": 0.000000,
+	"m_fSigma": 0.500000,
+	"m_fBoostLocalContrast": 0.000000
+}`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_fShadowOffsetEV` | float32 |  |
+| `m_fHighlightOffsetEV` | float32 |  |
+| `m_fSigma` | float32 |  |
+| `m_fBoostLocalContrast` | float32 |  |
 
 ### PostProcessingResource_t
 
@@ -540,7 +529,18 @@ classDiagram
 		"m_fScale": 0.000000,
 		"m_fCubemapScale": 1.000000,
 		"m_fVolumetricScale": 1.000000,
-		"m_fGradientScale": 1.000000
+		"m_fGradientScale": 1.000000,
+		"m_fWaterScale": 0.000000,
+		"m_fWaterDensity": 0.000000,
+		"m_fWaterDepthBlurRadius": 0.000000
+	},
+	"m_bHasLocalExposureParams": false,
+	"m_localExposureParams":
+	{
+		"m_fShadowOffsetEV": 0.000000,
+		"m_fHighlightOffsetEV": 0.000000,
+		"m_fSigma": 0.500000,
+		"m_fBoostLocalContrast": 0.000000
 	}
 }`
 
@@ -553,6 +553,7 @@ classDiagram
     PostProcessingResource_t *-- PostProcessingVignetteParameters_t
     PostProcessingResource_t *-- PostProcessingLocalContrastParameters_t
     PostProcessingResource_t *-- PostProcessingFogScatteringParameters_t
+    PostProcessingResource_t *-- PostProcessingLocalExposureParameters_t
 ```
 
 **Fields:**
@@ -572,6 +573,8 @@ classDiagram
 | `m_bHasColorCorrection` | bool |  |
 | `m_bHasFogScatteringParams` | bool |  |
 | `m_fogScatteringParams` | [PostProcessingFogScatteringParameters_t](../schemas/materialsystem2.md#postprocessingfogscatteringparameters_t) |  |
+| `m_bHasLocalExposureParams` | bool |  |
+| `m_localExposureParams` | [PostProcessingLocalExposureParameters_t](../schemas/materialsystem2.md#postprocessinglocalexposureparameters_t) |  |
 
 ### PostProcessingTonemapParameters_t
 
@@ -643,24 +646,3 @@ classDiagram
 | `m_flRoundness` | float32 |  |
 | `m_flFeather` | float32 |  |
 | `m_vColorTint` | Vector |  |
-
-### VertJustification_e
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `VERT_JUSTIFICATION_TOP` | 0 |  |
-| `VERT_JUSTIFICATION_CENTER` | 1 |  |
-| `VERT_JUSTIFICATION_BOTTOM` | 2 |  |
-| `VERT_JUSTIFICATION_NONE` | 3 |  |
-
-### ViewFadeMode_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `VIEW_FADE_CONSTANT_COLOR` | 0 |  |
-| `VIEW_FADE_MODULATE` | 1 |  |
-| `VIEW_FADE_MOD2X` | 2 |  |

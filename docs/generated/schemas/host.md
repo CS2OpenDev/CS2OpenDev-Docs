@@ -48,4 +48,4 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_hTest` | CAnimScriptParam<float32> |  |
+| `m_hTest` | CAnimScriptParam< float32 > |  |

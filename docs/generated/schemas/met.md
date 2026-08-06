@@ -38,8 +38,8 @@ nav_exclude: true
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_VariableNames` | CUtlVector<CUtlString> |  |
-| `m_HiddenVariableUiNames` | CUtlVector<std::pair<CUtlString,CUtlString>> |  |
+| `m_VariableNames` | CUtlVector< CUtlString > |  |
+| `m_HiddenVariableUiNames` | CUtlVector< std::pair< CUtlString, CUtlString > > |  |
 | `m_ReferenceVariableIndex` | int32 |  |
 | `m_RefType` | CUtlString |  |
 | `m_RefFileEnding` | CUtlString |  |
@@ -158,5 +158,5 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_bIsLayeredShader` | bool |  |
-| `m_Variables` | CUtlVector<[EMaterialVariable_t](../schemas/met.md#ematerialvariable_t)> |  |
-| `m_Layers` | CUtlVector<[EMaterialLayer_t](../schemas/met.md#emateriallayer_t)> |  |
+| `m_Variables` | CUtlVector< [EMaterialVariable_t](../schemas/met.md#ematerialvariable_t) > |  |
+| `m_Layers` | CUtlVector< [EMaterialLayer_t](../schemas/met.md#emateriallayer_t) > |  |

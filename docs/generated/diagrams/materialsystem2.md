@@ -13,13 +13,12 @@ Class relationships (inheritance and composition) for the `materialsystem2` modu
 
 ```mermaid
 classDiagram
-    MaterialParam_t <|-- MaterialParamTexture_t
-    MaterialParam_t <|-- MaterialParamFloat_t
     MaterialParam_t <|-- MaterialParamBuffer_t
+    MaterialParam_t <|-- MaterialParamFloat_t
     MaterialParam_t <|-- MaterialParamInt_t
     MaterialParam_t <|-- MaterialParamString_t
+    MaterialParam_t <|-- MaterialParamTexture_t
     MaterialParam_t <|-- MaterialParamVector_t
-    PostProcessingBloomParameters_t *-- BloomBlendMode_t
     MaterialResourceData_t *-- MaterialParamInt_t
     MaterialResourceData_t *-- MaterialParamFloat_t
     MaterialResourceData_t *-- MaterialParamVector_t
@@ -31,4 +30,5 @@ classDiagram
     PostProcessingResource_t *-- PostProcessingVignetteParameters_t
     PostProcessingResource_t *-- PostProcessingLocalContrastParameters_t
     PostProcessingResource_t *-- PostProcessingFogScatteringParameters_t
+    PostProcessingResource_t *-- PostProcessingLocalExposureParameters_t
 ```

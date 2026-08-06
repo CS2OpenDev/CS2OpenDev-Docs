@@ -47,8 +47,8 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    CExampleSchemaVData_PolymorphicBase <|-- CExampleSchemaVData_PolymorphicDerivedB
     CExampleSchemaVData_PolymorphicBase <|-- CExampleSchemaVData_PolymorphicDerivedA
+    CExampleSchemaVData_PolymorphicBase <|-- CExampleSchemaVData_PolymorphicDerivedB
 ```
 
 **Fields:**
@@ -105,7 +105,7 @@ classDiagram
 
 ### InfoForResourceTypeCResourceManifestInternal
 
-**Metadata:** `MResourceTypeForInfoType "vrman"`
+**Metadata:** `MResourceTypeForInfoType vrman`
 
 ### ResourceId_t
 

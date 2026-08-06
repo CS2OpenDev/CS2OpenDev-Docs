@@ -22,7 +22,6 @@ nav_exclude: true
 | [CLightRigSunLight](#clightrigsunlight) | class | CLightRigLight | 5 |
 | [CLightRigVMap](#clightrigvmap) | class |  | 3 |
 | [CToolSceneLightRig](#ctoolscenelightrig) | class |  | 10 |
-| [LightRigType_t](#lightrigtype_t) | enum |  | 4 |
 
 ---
 
@@ -125,8 +124,8 @@ nav_exclude: true
 ```mermaid
 classDiagram
     CLightRigLight <|-- CLightRigPointLight
-    CLightRigLight <|-- CLightRigSunLight
     CLightRigLight <|-- CLightRigSpotLight
+    CLightRigLight <|-- CLightRigSunLight
 ```
 
 **Fields:**
@@ -207,7 +206,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_hPostProcessing` | CStrongHandle<[InfoForResourceTypeCPostProcessingResource](../schemas/resourcesystem.md#infoforresourcetypecpostprocessingresource)> |  |
+| `m_hPostProcessing` | CStrongHandle< [InfoForResourceTypeCPostProcessingResource](../schemas/resourcesystem.md#infoforresourcetypecpostprocessingresource) > |  |
 
 ### CLightRigSky
 
@@ -226,7 +225,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_hSkyMaterial` | CStrongHandle<[InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2)> |  |
+| `m_hSkyMaterial` | CStrongHandle< [InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2) > |  |
 
 ### CLightRigSpotLight
 
@@ -363,7 +362,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_MapName` | CResourceNameTyped<CWeakHandle<[InfoForResourceTypeVMapResourceData_t](../schemas/worldrenderer.md#infoforresourcetypevmapresourcedata_t)>> |  |
+| `m_MapName` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeVMapResourceData_t](../schemas/worldrenderer.md#infoforresourcetypevmapresourcedata_t) > > |  |
 | `m_bRender3DSkybox` | bool |  |
 | `m_bParticlesTraceAgainstMap` | bool |  |
 
@@ -422,7 +421,7 @@ classDiagram
 		"m_bRender3DSkybox": true,
 		"m_bParticlesTraceAgainstMap": false
 	}
-}`, `MVDataRoot`, `MVDataAssociatedFile "toolscenelightrigs.vdata"`
+}`, `MVDataAssociatedFile toolscenelightrigs.vdata`, `MVDataRoot`
 
 **Relationships:**
 
@@ -444,24 +443,13 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_nRigType` | [LightRigType_t](../schemas/toolscene.md#lightrigtype_t) |  |
-| `m_Suns` | CUtlVector<[CLightRigSunLight](../schemas/toolscene.md#clightrigsunlight)> |  |
-| `m_PointLights` | CUtlVector<[CLightRigPointLight](../schemas/toolscene.md#clightrigpointlight)> |  |
-| `m_SpotLights` | CUtlVector<[CLightRigSpotLight](../schemas/toolscene.md#clightrigspotlight)> |  |
+| `m_nRigType` | [LightRigType_t](../schemas/!GlobalTypes.md#lightrigtype_t) |  |
+| `m_Suns` | CUtlVector< [CLightRigSunLight](../schemas/toolscene.md#clightrigsunlight) > |  |
+| `m_PointLights` | CUtlVector< [CLightRigPointLight](../schemas/toolscene.md#clightrigpointlight) > |  |
+| `m_SpotLights` | CUtlVector< [CLightRigSpotLight](../schemas/toolscene.md#clightrigspotlight) > |  |
 | `m_Background` | [CLightRigBackground](../schemas/toolscene.md#clightrigbackground) |  |
 | `m_Grid` | [CLightRigGrid](../schemas/toolscene.md#clightriggrid) |  |
 | `m_Exposure` | [CLightRigExposure](../schemas/toolscene.md#clightrigexposure) |  |
 | `m_PostProcessing` | [CLightRigPostProcessing](../schemas/toolscene.md#clightrigpostprocessing) |  |
 | `m_Sky` | [CLightRigSky](../schemas/toolscene.md#clightrigsky) |  |
 | `m_BackgroundMap` | [CLightRigVMap](../schemas/toolscene.md#clightrigvmap) |  |
-
-### LightRigType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `PREVIEW` | 0 |  |
-| `THUMBNAIL` | 1 |  |
-| `MATERIAL_THUMBNAIL` | 2 |  |
-| `NUM_TYPES` | 3 |  |

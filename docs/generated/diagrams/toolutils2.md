@@ -13,23 +13,21 @@ Class relationships (inheritance and composition) for the `toolutils2` module.
 
 ```mermaid
 classDiagram
-    CSimpleAssetTypeInfo <|-- CVMMDAssetTypeInfo
-    CSimpleAssetTypeInfo <|-- CResourceAssetTypeInfo
     CSimpleAssetTypeInfo <|-- CBitmapAssetTypeInfo
-    CResourceAssetTypeInfo <|-- CMapAssetTypeInfo
     CBaseToolInfo <|-- CEngineToolInfo
     CBaseToolInfo <|-- CExternalToolInfo
-    CAssetWarningCheck *-- AssetWarningFixType_t
-    CResourceAssetTypeInfo *-- ResourceBlockTypeInfo_t
-    CToolsConfig *-- CEngineToolInfo
-    CToolsConfig *-- CExternalToolInfo
-    ResourceBlockTypeInfo_t *-- ResourceDataEncodingType_t
+    CResourceAssetTypeInfo <|-- CMapAssetTypeInfo
+    CSimpleAssetTypeInfo <|-- CResourceAssetTypeInfo
+    CSimpleAssetTypeInfo <|-- CVMMDAssetTypeInfo
     CAssetTagInfo *-- AutoTagVDataCondition_t
     CAssetTypeConfig --> CSimpleAssetTypeInfo
     CAssetTypeConfig --> CSubassetTypeInfo
     CAssetTypeConfig --> CAssetWarning
+    CAssetWarning *-- CAssetWarningCheck
     CDetailPropType *-- CDetailPropModel
     CModuleManifests *-- CManifestInfo
+    CResourceAssetTypeInfo *-- ResourceBlockTypeInfo_t
     CSimpleAssetTypeInfo *-- AssetEngineCommand_t
-    CAssetWarning *-- CAssetWarningCheck
+    CToolsConfig *-- CEngineToolInfo
+    CToolsConfig *-- CExternalToolInfo
 ```

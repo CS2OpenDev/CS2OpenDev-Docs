@@ -34,9 +34,9 @@ nav_exclude: true
 | [CNmCachedPoseWriteTask](#cnmcachedposewritetask) | class | CNmPoseTask | 0 |
 | [CNmCachedTargetNode::CDefinition](#cnmcachedtargetnodecdefinition) | class | CNmTargetValueNode::CDefinition | 2 |
 | [CNmCachedVectorNode::CDefinition](#cnmcachedvectornodecdefinition) | class | CNmVectorValueNode::CDefinition | 2 |
-| [CNmChainLookatNode::CDefinition](#cnmchainlookatnodecdefinition) | class | CNmPassthroughNode::CDefinition | 7 |
-| [CNmChainLookatTask](#cnmchainlookattask) | class | CNmPoseTask | 11 |
-| [CNmClip](#cnmclip) | class |  | 16 |
+| [CNmChainLookatNode::CDefinition](#cnmchainlookatnodecdefinition) | class | CNmPassthroughNode::CDefinition | 9 |
+| [CNmChainLookatTask](#cnmchainlookattask) | class | CNmPoseTask | 0 |
+| [CNmClip](#cnmclip) | class |  | 13 |
 | [CNmClip::ModelSpaceSamplingChainLink_t](#cnmclipmodelspacesamplingchainlink_t) | class |  | 3 |
 | [CNmClipNode::CDefinition](#cnmclipnodecdefinition) | class | CNmClipReferenceNode::CDefinition | 8 |
 | [CNmClipReferenceNode::CDefinition](#cnmclipreferencenodecdefinition) | class | CNmPoseNode::CDefinition | 0 |
@@ -53,27 +53,24 @@ nav_exclude: true
 | [CNmControlParameterVectorNode::CDefinition](#cnmcontrolparametervectornodecdefinition) | class | CNmVectorValueNode::CDefinition | 0 |
 | [CNmCurrentSyncEventIDNode::CDefinition](#cnmcurrentsynceventidnodecdefinition) | class | CNmIDValueNode::CDefinition | 1 |
 | [CNmCurrentSyncEventNode::CDefinition](#cnmcurrentsynceventnodecdefinition) | class | CNmFloatValueNode::CDefinition | 2 |
-| [CNmCurrentSyncEventNode::InfoType_t](#cnmcurrentsynceventnodeinfotype_t) | enum |  | 3 |
 | [CNmDurationScaleNode::CDefinition](#cnmdurationscalenodecdefinition) | class | CNmSpeedScaleBaseNode::CDefinition | 0 |
 | [CNmEntityAttributeEventBase](#cnmentityattributeeventbase) | class | CNmEvent | 2 |
 | [CNmEntityAttributeFloatEvent](#cnmentityattributefloatevent) | class | CNmEntityAttributeEventBase | 1 |
 | [CNmEntityAttributeIntEvent](#cnmentityattributeintevent) | class | CNmEntityAttributeEventBase | 1 |
 | [CNmEvent](#cnmevent) | class |  | 3 |
-| [CNmEventRelevance_t](#cnmeventrelevance_t) | enum |  | 3 |
-| [CNmEventTargetEntity_t](#cnmeventtargetentity_t) | enum |  | 4 |
 | [CNmExternalPoseNode::CDefinition](#cnmexternalposenodecdefinition) | class | CNmPoseNode::CDefinition | 1 |
 | [CNmFixedWeightBoneMaskNode::CDefinition](#cnmfixedweightbonemasknodecdefinition) | class | CNmBoneMaskValueNode::CDefinition | 1 |
 | [CNmFloatAngleMathNode::CDefinition](#cnmfloatanglemathnodecdefinition) | class | CNmFloatValueNode::CDefinition | 2 |
-| [CNmFloatAngleMathNode::Operation_t](#cnmfloatanglemathnodeoperation_t) | enum |  | 4 |
+| [CNmFloatChannelData](#cnmfloatchanneldata) | class |  | 5 |
+| [CNmFloatChannelData::ChannelSettings_t](#cnmfloatchanneldatachannelsettings_t) | class |  | 2 |
+| [CNmFloatChannelSet_t](#cnmfloatchannelset_t) | class |  | 2 |
 | [CNmFloatClampNode::CDefinition](#cnmfloatclampnodecdefinition) | class | CNmFloatValueNode::CDefinition | 2 |
 | [CNmFloatComparisonNode::CDefinition](#cnmfloatcomparisonnodecdefinition) | class | CNmBoolValueNode::CDefinition | 5 |
-| [CNmFloatComparisonNode::Comparison_t](#cnmfloatcomparisonnodecomparison_t) | enum |  | 5 |
 | [CNmFloatCurveEvent](#cnmfloatcurveevent) | class | CNmEvent | 2 |
 | [CNmFloatCurveEventNode::CDefinition](#cnmfloatcurveeventnodecdefinition) | class | CNmFloatValueNode::CDefinition | 4 |
 | [CNmFloatCurveNode::CDefinition](#cnmfloatcurvenodecdefinition) | class | CNmFloatValueNode::CDefinition | 2 |
 | [CNmFloatEaseNode::CDefinition](#cnmfloateasenodecdefinition) | class | CNmFloatValueNode::CDefinition | 5 |
 | [CNmFloatMathNode::CDefinition](#cnmfloatmathnodecdefinition) | class | CNmFloatValueNode::CDefinition | 6 |
-| [CNmFloatMathNode::Operator_t](#cnmfloatmathnodeoperator_t) | enum |  | 12 |
 | [CNmFloatRangeComparisonNode::CDefinition](#cnmfloatrangecomparisonnodecdefinition) | class | CNmBoolValueNode::CDefinition | 3 |
 | [CNmFloatRemapNode::CDefinition](#cnmfloatremapnodecdefinition) | class | CNmFloatValueNode::CDefinition | 3 |
 | [CNmFloatRemapNode::RemapRange_t](#cnmfloatremapnoderemaprange_t) | class |  | 2 |
@@ -102,7 +99,6 @@ nav_exclude: true
 | [CNmIDBasedClipSelectorNode::CDefinition](#cnmidbasedclipselectornodecdefinition) | class | CNmClipReferenceNode::CDefinition | 5 |
 | [CNmIDBasedSelectorNode::CDefinition](#cnmidbasedselectornodecdefinition) | class | CNmPoseNode::CDefinition | 5 |
 | [CNmIDComparisonNode::CDefinition](#cnmidcomparisonnodecdefinition) | class | CNmBoolValueNode::CDefinition | 3 |
-| [CNmIDComparisonNode::Comparison_t](#cnmidcomparisonnodecomparison_t) | enum |  | 2 |
 | [CNmIDEvent](#cnmidevent) | class | CNmEvent | 2 |
 | [CNmIDEventConditionNode::CDefinition](#cnmideventconditionnodecdefinition) | class | CNmBoolValueNode::CDefinition | 3 |
 | [CNmIDEventNode::CDefinition](#cnmideventnodecdefinition) | class | CNmIDValueNode::CDefinition | 3 |
@@ -131,7 +127,6 @@ nav_exclude: true
 | [CNmParameterizedClipSelectorNode::CDefinition](#cnmparameterizedclipselectornodecdefinition) | class | CNmClipReferenceNode::CDefinition | 5 |
 | [CNmParameterizedSelectorNode::CDefinition](#cnmparameterizedselectornodecdefinition) | class | CNmPoseNode::CDefinition | 5 |
 | [CNmParticleEvent](#cnmparticleevent) | class | CNmEvent | 14 |
-| [CNmParticleEvent::Type_t](#cnmparticleeventtype_t) | enum |  | 2 |
 | [CNmPassthroughNode::CDefinition](#cnmpassthroughnodecdefinition) | class | CNmPoseNode::CDefinition | 1 |
 | [CNmPoseNode::CDefinition](#cnmposenodecdefinition) | class | CNmGraphNode::CDefinition | 0 |
 | [CNmPoseTask](#cnmposetask) | class |  | 0 |
@@ -139,18 +134,15 @@ nav_exclude: true
 | [CNmReferencePoseTask](#cnmreferenceposetask) | class | CNmPoseTask | 0 |
 | [CNmReferencedGraphNode::CDefinition](#cnmreferencedgraphnodecdefinition) | class | CNmPoseNode::CDefinition | 2 |
 | [CNmRootMotionData](#cnmrootmotiondata) | class |  | 5 |
-| [CNmRootMotionData::SamplingMode_t](#cnmrootmotiondatasamplingmode_t) | enum |  | 2 |
 | [CNmRootMotionEvent](#cnmrootmotionevent) | class | CNmEvent | 1 |
-| [CNmRootMotionOverrideNode::CDefinition](#cnmrootmotionoverridenodecdefinition) | class | CNmPassthroughNode::CDefinition | 7 |
-| [CNmRootMotionOverrideNode::OverrideFlags_t](#cnmrootmotionoverridenodeoverrideflags_t) | enum |  | 5 |
+| [CNmRootMotionOverrideNode::CDefinition](#cnmrootmotionoverridenodecdefinition) | class | CNmPassthroughNode::CDefinition | 8 |
 | [CNmSampleTask](#cnmsampletask) | class | CNmPoseTask | 0 |
 | [CNmScaleNode::CDefinition](#cnmscalenodecdefinition) | class | CNmPassthroughNode::CDefinition | 2 |
 | [CNmScaleTask](#cnmscaletask) | class | CNmPoseTask | 0 |
 | [CNmSelectorNode::CDefinition](#cnmselectornodecdefinition) | class | CNmPoseNode::CDefinition | 2 |
-| [CNmSkeleton](#cnmskeleton) | class |  | 9 |
+| [CNmSkeleton](#cnmskeleton) | class |  | 10 |
 | [CNmSkeleton::SecondarySkeleton_t](#cnmskeletonsecondaryskeleton_t) | class |  | 2 |
 | [CNmSoundEvent](#cnmsoundevent) | class | CNmEvent | 7 |
-| [CNmSoundEvent::Position_t](#cnmsoundeventposition_t) | enum |  | 5 |
 | [CNmSpeedScaleBaseNode::CDefinition](#cnmspeedscalebasenodecdefinition) | class | CNmPassthroughNode::CDefinition | 2 |
 | [CNmSpeedScaleNode::CDefinition](#cnmspeedscalenodecdefinition) | class | CNmSpeedScaleBaseNode::CDefinition | 0 |
 | [CNmStateCompletedConditionNode::CDefinition](#cnmstatecompletedconditionnodecdefinition) | class | CNmBoolValueNode::CDefinition | 3 |
@@ -159,35 +151,27 @@ nav_exclude: true
 | [CNmStateMachineNode::TransitionDefinition_t](#cnmstatemachinenodetransitiondefinition_t) | class |  | 4 |
 | [CNmStateNode::CDefinition](#cnmstatenodecdefinition) | class | CNmPoseNode::CDefinition | 11 |
 | [CNmStateNode::TimedEvent_t](#cnmstatenodetimedevent_t) | class |  | 3 |
-| [CNmStateNode::TimedEvent_t::Comparison_t](#cnmstatenodetimedevent_tcomparison_t) | enum |  | 2 |
 | [CNmSyncEventIndexConditionNode::CDefinition](#cnmsynceventindexconditionnodecdefinition) | class | CNmBoolValueNode::CDefinition | 3 |
-| [CNmSyncEventIndexConditionNode::TriggerMode_t](#cnmsynceventindexconditionnodetriggermode_t) | enum |  | 2 |
 | [CNmSyncTrack](#cnmsynctrack) | class |  | 2 |
 | [CNmSyncTrack::EventMarker_t](#cnmsynctrackeventmarker_t) | class |  | 2 |
 | [CNmSyncTrack::Event_t](#cnmsynctrackevent_t) | class |  | 3 |
 | [CNmTarget](#cnmtarget) | class |  | 6 |
 | [CNmTargetInfoNode::CDefinition](#cnmtargetinfonodecdefinition) | class | CNmFloatValueNode::CDefinition | 3 |
-| [CNmTargetInfoNode::Info_t](#cnmtargetinfonodeinfo_t) | enum |  | 8 |
 | [CNmTargetOffsetNode::CDefinition](#cnmtargetoffsetnodecdefinition) | class | CNmTargetValueNode::CDefinition | 4 |
 | [CNmTargetPointNode::CDefinition](#cnmtargetpointnodecdefinition) | class | CNmVectorValueNode::CDefinition | 2 |
 | [CNmTargetSelectorNode::CDefinition](#cnmtargetselectornodecdefinition) | class | CNmClipReferenceNode::CDefinition | 6 |
 | [CNmTargetValueNode::CDefinition](#cnmtargetvaluenodecdefinition) | class | CNmValueNode::CDefinition | 0 |
 | [CNmTargetWarpEvent](#cnmtargetwarpevent) | class | CNmEvent | 2 |
 | [CNmTargetWarpNode::CDefinition](#cnmtargetwarpnodecdefinition) | class | CNmPoseNode::CDefinition | 11 |
-| [CNmTargetWarpNode::TargetUpdateRule_t](#cnmtargetwarpnodetargetupdaterule_t) | enum |  | 4 |
 | [CNmTimeConditionNode::CDefinition](#cnmtimeconditionnodecdefinition) | class | CNmBoolValueNode::CDefinition | 5 |
-| [CNmTimeConditionNode::ComparisonType_t](#cnmtimeconditionnodecomparisontype_t) | enum |  | 3 |
-| [CNmTimeConditionNode::Operator_t](#cnmtimeconditionnodeoperator_t) | enum |  | 4 |
 | [CNmTransitionEvent](#cnmtransitionevent) | class | CNmEvent | 2 |
 | [CNmTransitionEventConditionNode::CDefinition](#cnmtransitioneventconditionnodecdefinition) | class | CNmBoolValueNode::CDefinition | 4 |
 | [CNmTransitionNode::CDefinition](#cnmtransitionnodecdefinition) | class | CNmPoseNode::CDefinition | 11 |
-| [CNmTransitionNode::TransitionOptions_t](#cnmtransitionnodetransitionoptions_t) | enum |  | 10 |
 | [CNmTwoBoneIKNode::CDefinition](#cnmtwoboneiknodecdefinition) | class | CNmPassthroughNode::CDefinition | 7 |
 | [CNmTwoBoneIKTask](#cnmtwoboneiktask) | class | CNmPoseTask | 10 |
 | [CNmValueNode::CDefinition](#cnmvaluenodecdefinition) | class | CNmGraphNode::CDefinition | 0 |
 | [CNmVectorCreateNode::CDefinition](#cnmvectorcreatenodecdefinition) | class | CNmVectorValueNode::CDefinition | 4 |
 | [CNmVectorInfoNode::CDefinition](#cnmvectorinfonodecdefinition) | class | CNmFloatValueNode::CDefinition | 2 |
-| [CNmVectorInfoNode::Info_t](#cnmvectorinfonodeinfo_t) | enum |  | 6 |
 | [CNmVectorNegateNode::CDefinition](#cnmvectornegatenodecdefinition) | class | CNmVectorValueNode::CDefinition | 1 |
 | [CNmVectorValueNode::CDefinition](#cnmvectorvaluenodecdefinition) | class | CNmValueNode::CDefinition | 0 |
 | [CNmVelocityBasedSpeedScaleNode::CDefinition](#cnmvelocitybasedspeedscalenodecdefinition) | class | CNmSpeedScaleBaseNode::CDefinition | 0 |
@@ -201,30 +185,12 @@ nav_exclude: true
 | [CNmZeroPoseNode::CDefinition](#cnmzeroposenodecdefinition) | class | CNmPoseNode::CDefinition | 0 |
 | [CNmZeroPoseTask](#cnmzeroposetask) | class | CNmPoseTask | 0 |
 | [NmBoneMaskSetDefinition_t](#nmbonemasksetdefinition_t) | class |  | 3 |
-| [NmCachedValueMode_t](#nmcachedvaluemode_t) | enum |  | 2 |
 | [NmCompressionSettings_t](#nmcompressionsettings_t) | class |  | 9 |
 | [NmCompressionSettings_t::QuantizationRange_t](#nmcompressionsettings_tquantizationrange_t) | class |  | 2 |
-| [NmEasingFunction_t](#nmeasingfunction_t) | enum |  | 9 |
-| [NmEasingOperation_t](#nmeasingoperation_t) | enum |  | 23 |
-| [NmEventConditionRules_t](#nmeventconditionrules_t) | enum |  | 9 |
 | [NmFloatCurveCompressionSettings_t](#nmfloatcurvecompressionsettings_t) | class |  | 2 |
-| [NmFollowBoneMode_t](#nmfollowbonemode_t) | enum |  | 3 |
-| [NmFootPhaseCondition_t](#nmfootphasecondition_t) | enum |  | 7 |
-| [NmFootPhase_t](#nmfootphase_t) | enum |  | 5 |
-| [NmFrameSnapEventMode_t](#nmframesnapeventmode_t) | enum |  | 2 |
-| [NmGraphDebugMode_t](#nmgraphdebugmode_t) | enum |  | 2 |
-| [NmGraphEventTypeCondition_t](#nmgrapheventtypecondition_t) | enum |  | 6 |
-| [NmGraphValueType_t](#nmgraphvaluetype_t) | enum |  | 9 |
-| [NmIKBlendMode_t](#nmikblendmode_t) | enum |  | 2 |
 | [NmPercent_t](#nmpercent_t) | class |  | 1 |
-| [NmPoseBlendMode_t](#nmposeblendmode_t) | enum |  | 3 |
-| [NmRootMotionBlendMode_t](#nmrootmotionblendmode_t) | enum |  | 4 |
 | [NmSyncTrackTimeRange_t](#nmsynctracktimerange_t) | class |  | 2 |
 | [NmSyncTrackTime_t](#nmsynctracktime_t) | class |  | 2 |
-| [NmTargetWarpAlgorithm_t](#nmtargetwarpalgorithm_t) | enum |  | 4 |
-| [NmTargetWarpRule_t](#nmtargetwarprule_t) | enum |  | 5 |
-| [NmTransitionRuleCondition_t](#nmtransitionrulecondition_t) | enum |  | 4 |
-| [NmTransitionRule_t](#nmtransitionrule_t) | enum |  | 3 |
 
 ---
 
@@ -265,7 +231,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_conditionNodeIndices` | CUtlLeanVectorFixedGrowable<int16> |  |
+| `m_conditionNodeIndices` | CUtlLeanVectorFixedGrowable< int16, 4 > |  |
 
 ### CNmAnimationPoseNode::CDefinition
 
@@ -391,10 +357,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sourceNodeIndices` | CUtlLeanVectorFixedGrowable<int16> |  |
-| `m_values` | CUtlLeanVectorFixedGrowable<Vector2D> |  |
-| `m_indices` | CUtlLeanVectorFixedGrowable<uint8> |  |
-| `m_hullIndices` | CUtlLeanVectorFixedGrowable<uint8> |  |
+| `m_sourceNodeIndices` | CUtlLeanVectorFixedGrowable< int16, 5 > |  |
+| `m_values` | CUtlLeanVectorFixedGrowable< Vector2D, 10 > |  |
+| `m_indices` | CUtlLeanVectorFixedGrowable< uint8, 30 > |  |
+| `m_hullIndices` | CUtlLeanVectorFixedGrowable< uint8, 10 > |  |
 | `m_nInputParameterNodeIdx0` | int16 |  |
 | `m_nInputParameterNodeIdx1` | int16 |  |
 | `m_bAllowLooping` | bool |  |
@@ -423,9 +389,9 @@ classDiagram
 classDiagram
     CNmPoseTask <|-- CNmBlendTaskBase
     CNmBlendTaskBase <|-- CNmAdditiveBlendTask
+    CNmBlendTaskBase <|-- CNmBlendTask
     CNmBlendTaskBase <|-- CNmModelSpaceBlendTask
     CNmBlendTaskBase <|-- CNmOverlayBlendTask
-    CNmBlendTaskBase <|-- CNmBlendTask
 ```
 
 ### CNmBodyGroupEvent
@@ -460,7 +426,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_target` | [CNmEventTargetEntity_t](../schemas/animlib.md#cnmeventtargetentity_t) |  |
+| `m_target` | [CNmEventTargetEntity_t](../schemas/!GlobalTypes.md#cnmeventtargetentity_t) |  |
 | `m_groupName` | CUtlString |  |
 | `m_nGroupValue` | int32 |  |
 
@@ -553,8 +519,8 @@ classDiagram
 | `m_defaultMaskNodeIdx` | int16 |  |
 | `m_parameterValueNodeIdx` | int16 |  |
 | `m_bSwitchDynamically` | bool |  |
-| `m_maskNodeIndices` | CUtlLeanVectorFixedGrowable<int16> |  |
-| `m_parameterValues` | CUtlLeanVectorFixedGrowable<CGlobalSymbol> |  |
+| `m_maskNodeIndices` | CUtlLeanVectorFixedGrowable< int16, 8 > |  |
+| `m_parameterValues` | CUtlLeanVectorFixedGrowable< CGlobalSymbol, 7 > |  |
 | `m_flBlendTimeSeconds` | float32 |  |
 
 ### CNmBoneMaskSwitchNode::CDefinition
@@ -602,12 +568,12 @@ classDiagram
 classDiagram
     "CNmValueNode::CDefinition" <|-- "CNmBoneMaskValueNode::CDefinition"
     "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
-    "CNmBoneMaskValueNode::CDefinition" <|-- "CNmBoneMaskNode::CDefinition"
-    "CNmBoneMaskValueNode::CDefinition" <|-- "CNmFixedWeightBoneMaskNode::CDefinition"
-    "CNmBoneMaskValueNode::CDefinition" <|-- "CNmBoneMaskSelectorNode::CDefinition"
-    "CNmBoneMaskValueNode::CDefinition" <|-- "CNmVirtualParameterBoneMaskNode::CDefinition"
-    "CNmBoneMaskValueNode::CDefinition" <|-- "CNmBoneMaskSwitchNode::CDefinition"
     "CNmBoneMaskValueNode::CDefinition" <|-- "CNmBoneMaskBlendNode::CDefinition"
+    "CNmBoneMaskValueNode::CDefinition" <|-- "CNmBoneMaskNode::CDefinition"
+    "CNmBoneMaskValueNode::CDefinition" <|-- "CNmBoneMaskSelectorNode::CDefinition"
+    "CNmBoneMaskValueNode::CDefinition" <|-- "CNmBoneMaskSwitchNode::CDefinition"
+    "CNmBoneMaskValueNode::CDefinition" <|-- "CNmFixedWeightBoneMaskNode::CDefinition"
+    "CNmBoneMaskValueNode::CDefinition" <|-- "CNmVirtualParameterBoneMaskNode::CDefinition"
 ```
 
 ### CNmBoneWeightList
@@ -627,8 +593,8 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_skeletonName` | CResourceName |  |
-| `m_boneIDs` | CUtlVector<CGlobalSymbol> |  |
-| `m_weights` | CUtlVector<float32> |  |
+| `m_boneIDs` | CUtlVector< CGlobalSymbol > |  |
+| `m_weights` | CUtlVector< float32 > |  |
 
 ### CNmBoolValueNode::CDefinition
 
@@ -642,28 +608,28 @@ classDiagram
 classDiagram
     "CNmValueNode::CDefinition" <|-- "CNmBoolValueNode::CDefinition"
     "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmVirtualParameterBoolNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmFootEventConditionNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmIDComparisonNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmOrNode::CDefinition"
+    "CNmBoolValueNode::CDefinition" <|-- "CNmAndNode::CDefinition"
+    "CNmBoolValueNode::CDefinition" <|-- "CNmCachedBoolNode::CDefinition"
+    "CNmBoolValueNode::CDefinition" <|-- "CNmConstBoolNode::CDefinition"
+    "CNmBoolValueNode::CDefinition" <|-- "CNmControlParameterBoolNode::CDefinition"
     "CNmBoolValueNode::CDefinition" <|-- "CNmFloatComparisonNode::CDefinition"
     "CNmBoolValueNode::CDefinition" <|-- "CNmFloatRangeComparisonNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmAndNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmNotNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmConstBoolNode::CDefinition"
+    "CNmBoolValueNode::CDefinition" <|-- "CNmFootEventConditionNode::CDefinition"
     "CNmBoolValueNode::CDefinition" <|-- "CNmGraphEventConditionNode::CDefinition"
+    "CNmBoolValueNode::CDefinition" <|-- "CNmIDComparisonNode::CDefinition"
+    "CNmBoolValueNode::CDefinition" <|-- "CNmIDEventConditionNode::CDefinition"
+    "CNmBoolValueNode::CDefinition" <|-- "CNmIDEventPercentageThroughNode::CDefinition"
+    "CNmBoolValueNode::CDefinition" <|-- "CNmIsExternalGraphSlotFilledNode::CDefinition"
+    "CNmBoolValueNode::CDefinition" <|-- "CNmIsExternalPoseSetNode::CDefinition"
+    "CNmBoolValueNode::CDefinition" <|-- "CNmIsInactiveBranchConditionNode::CDefinition"
     "CNmBoolValueNode::CDefinition" <|-- "CNmIsTargetSetNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmControlParameterBoolNode::CDefinition"
+    "CNmBoolValueNode::CDefinition" <|-- "CNmNotNode::CDefinition"
+    "CNmBoolValueNode::CDefinition" <|-- "CNmOrNode::CDefinition"
+    "CNmBoolValueNode::CDefinition" <|-- "CNmStateCompletedConditionNode::CDefinition"
     "CNmBoolValueNode::CDefinition" <|-- "CNmSyncEventIndexConditionNode::CDefinition"
     "CNmBoolValueNode::CDefinition" <|-- "CNmTimeConditionNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmStateCompletedConditionNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmIsInactiveBranchConditionNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmIsExternalGraphSlotFilledNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmCachedBoolNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmIDEventPercentageThroughNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmIDEventConditionNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmIsExternalPoseSetNode::CDefinition"
     "CNmBoolValueNode::CDefinition" <|-- "CNmTransitionEventConditionNode::CDefinition"
+    "CNmBoolValueNode::CDefinition" <|-- "CNmVirtualParameterBoolNode::CDefinition"
 ```
 
 ### CNmCachedBoolNode::CDefinition
@@ -692,7 +658,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_nInputValueNodeIdx` | int16 |  |
-| `m_mode` | [NmCachedValueMode_t](../schemas/animlib.md#nmcachedvaluemode_t) |  |
+| `m_mode` | [NmCachedValueMode_t](../schemas/!GlobalTypes.md#nmcachedvaluemode_t) |  |
 
 ### CNmCachedFloatNode::CDefinition
 
@@ -720,7 +686,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_nInputValueNodeIdx` | int16 |  |
-| `m_mode` | [NmCachedValueMode_t](../schemas/animlib.md#nmcachedvaluemode_t) |  |
+| `m_mode` | [NmCachedValueMode_t](../schemas/!GlobalTypes.md#nmcachedvaluemode_t) |  |
 
 ### CNmCachedIDNode::CDefinition
 
@@ -748,7 +714,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_nInputValueNodeIdx` | int16 |  |
-| `m_mode` | [NmCachedValueMode_t](../schemas/animlib.md#nmcachedvaluemode_t) |  |
+| `m_mode` | [NmCachedValueMode_t](../schemas/!GlobalTypes.md#nmcachedvaluemode_t) |  |
 
 ### CNmCachedPoseReadTask
 
@@ -798,7 +764,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_nInputValueNodeIdx` | int16 |  |
-| `m_mode` | [NmCachedValueMode_t](../schemas/animlib.md#nmcachedvaluemode_t) |  |
+| `m_mode` | [NmCachedValueMode_t](../schemas/!GlobalTypes.md#nmcachedvaluemode_t) |  |
 
 ### CNmCachedVectorNode::CDefinition
 
@@ -826,7 +792,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_nInputValueNodeIdx` | int16 |  |
-| `m_mode` | [NmCachedValueMode_t](../schemas/animlib.md#nmcachedvaluemode_t) |  |
+| `m_mode` | [NmCachedValueMode_t](../schemas/!GlobalTypes.md#nmcachedvaluemode_t) |  |
 
 ### CNmChainLookatNode::CDefinition
 
@@ -836,18 +802,27 @@ classDiagram
 	"_class": "CNmChainLookatNode::CDefinition",
 	"m_nNodeIdx": -1,
 	"m_nChildNodeIdx": -1,
-	"m_chainEndBoneID": "",
-	"m_nLookatTargetNodeIdx": -1,
-	"m_nEnabledNodeIdx": -1,
-	"m_flBlendTimeSeconds": 0.000000,
-	"m_nChainLength": 2,
-	"m_bIsTargetInWorldSpace": false,
-	"m_chainForwardDir":
+	"m_endEffectorBoneID": "",
+	"m_endEffectorForwardAxis":
 	[
 		1.000000,
 		0.000000,
 		0.000000
-	]
+	],
+	"m_endEffectorOffset":
+	[
+		1.000000,
+		0.000000,
+		0.000000
+	],
+	"m_nLookatTargetNodeIdx": -1,
+	"m_nEnabledNodeIdx": -1,
+	"m_flBlendTimeSeconds": 0.000000,
+	"m_chainWeights":
+	[
+	],
+	"m_nChainLength": 2,
+	"m_bIsTargetInWorldSpace": false
 }`
 
 **Relationships:**
@@ -863,13 +838,15 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_chainEndBoneID` | CGlobalSymbol |  |
+| `m_endEffectorBoneID` | CGlobalSymbol |  |
+| `m_endEffectorForwardAxis` | Vector |  |
+| `m_endEffectorOffset` | Vector |  |
 | `m_nLookatTargetNodeIdx` | int16 |  |
 | `m_nEnabledNodeIdx` | int16 |  |
 | `m_flBlendTimeSeconds` | float32 |  |
+| `m_chainWeights` | CUtlVectorFixedGrowable< float32, 5 > |  |
 | `m_nChainLength` | uint8 |  |
 | `m_bIsTargetInWorldSpace` | bool |  |
-| `m_chainForwardDir` | Vector |  |
 
 ### CNmChainLookatTask
 
@@ -881,22 +858,6 @@ classDiagram
 classDiagram
     CNmPoseTask <|-- CNmChainLookatTask
 ```
-
-**Fields:**
-
-| Name | Type | Annotations |
-|------|------|-------------|
-| `m_nChainEndBoneIdx` | int32 |  |
-| `m_nNumBonesInChain` | int32 |  |
-| `m_chainForwardDir` | Vector |  |
-| `m_flBlendWeight` | float32 |  |
-| `m_flHorizontalAngleLimitDegrees` | float32 |  |
-| `m_flVerticalAngleLimitDegrees` | float32 |  |
-| `m_lookatTarget` | Vector |  |
-| `m_bIsTargetInWorldSpace` | bool |  |
-| `m_bIsRunningFromDeserializedData` | bool |  |
-| `m_flHorizontalAngleDegrees` | float32 |  |
-| `m_flVerticalAngleDegrees` | float32 |  |
 
 ### CNmClip
 
@@ -911,19 +872,10 @@ classDiagram
 	"m_compressedPoseOffsets":
 	[
 	],
-	"m_floatCurveIDs":
-	[
-	],
-	"m_floatCurveDefs":
-	[
-	],
-	"m_compressedFloatCurveData":
-	[
-	],
-	"m_compressedFloatCurveOffsets":
-	[
-	],
 	"m_secondaryAnimations":
+	[
+	],
+	"m_floatChannelData":
 	[
 	],
 	"m_syncTrack":
@@ -982,7 +934,7 @@ classDiagram
 classDiagram
     CNmClip *-- InfoForResourceTypeCNmSkeleton
     CNmClip *-- NmCompressionSettings_t
-    CNmClip *-- NmFloatCurveCompressionSettings_t
+    CNmClip --> CNmFloatChannelData
     CNmClip *-- CNmSyncTrack
     CNmClip *-- CNmRootMotionData
 ```
@@ -991,22 +943,19 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_skeleton` | CStrongHandle<[InfoForResourceTypeCNmSkeleton](../schemas/resourcesystem.md#infoforresourcetypecnmskeleton)> |  |
+| `m_skeleton` | CStrongHandle< [InfoForResourceTypeCNmSkeleton](../schemas/resourcesystem.md#infoforresourcetypecnmskeleton) > |  |
 | `m_nNumFrames` | uint32 |  |
 | `m_flDuration` | float32 |  |
 | `m_compressedPoseData` | CUtlBinaryBlock |  |
-| `m_trackCompressionSettings` | CUtlVector<[NmCompressionSettings_t](../schemas/animlib.md#nmcompressionsettings_t)> |  |
-| `m_compressedPoseOffsets` | CUtlVector<uint32> |  |
-| `m_floatCurveIDs` | CUtlVector<CGlobalSymbol> |  |
-| `m_floatCurveDefs` | CUtlVector<[NmFloatCurveCompressionSettings_t](../schemas/animlib.md#nmfloatcurvecompressionsettings_t)> |  |
-| `m_compressedFloatCurveData` | CUtlVector<uint16> |  |
-| `m_compressedFloatCurveOffsets` | CUtlVector<uint32> |  |
-| `m_secondaryAnimations` | CUtlVectorFixedGrowable<[CNmClip](../schemas/animlib.md#cnmclip)*> |  |
+| `m_trackCompressionSettings` | CUtlVector< [NmCompressionSettings_t](../schemas/animlib.md#nmcompressionsettings_t) > |  |
+| `m_compressedPoseOffsets` | CUtlVector< uint32 > |  |
+| `m_secondaryAnimations` | CUtlVectorFixedGrowable< [CNmClip](../schemas/animlib.md#cnmclip)*, 1 > |  |
+| `m_floatChannelData` | CUtlVectorFixedGrowable< [CNmFloatChannelData](../schemas/animlib.md#cnmfloatchanneldata)*, 2 > |  |
 | `m_syncTrack` | [CNmSyncTrack](../schemas/animlib.md#cnmsynctrack) |  |
 | `m_rootMotion` | [CNmRootMotionData](../schemas/animlib.md#cnmrootmotiondata) |  |
 | `m_bIsAdditive` | bool |  |
-| `m_modelSpaceSamplingChain` | CUtlVector<[CNmClip](../schemas/animlib.md#cnmclip)::ModelSpaceSamplingChainLink_t> |  |
-| `m_modelSpaceBoneSamplingIndices` | CUtlVector<int32> |  |
+| `m_modelSpaceSamplingChain` | CUtlVector< [CNmClip](../schemas/animlib.md#cnmclip)::ModelSpaceSamplingChainLink_t > |  |
+| `m_modelSpaceBoneSamplingIndices` | CUtlVector< int32 > |  |
 
 ### CNmClip::ModelSpaceSamplingChainLink_t
 
@@ -1061,7 +1010,7 @@ classDiagram
 | `m_bSampleRootMotion` | bool |  |
 | `m_bAllowLooping` | bool |  |
 | `m_nDataSlotIdx` | int16 |  |
-| `m_graphEvents` | CUtlVectorFixedGrowable<CGlobalSymbol> |  |
+| `m_graphEvents` | CUtlVectorFixedGrowable< CGlobalSymbol, 2 > |  |
 | `m_flSpeedMultiplier` | float32 |  |
 | `m_nStartSyncEventOffset` | int32 |  |
 
@@ -1071,7 +1020,7 @@ classDiagram
 
 **Derived by:** [CNmClipNode::CDefinition](animlib.md#cnmclipnodecdefinition), [CNmClipSelectorNode::CDefinition](animlib.md#cnmclipselectornodecdefinition), [CNmIDBasedClipSelectorNode::CDefinition](animlib.md#cnmidbasedclipselectornodecdefinition), [CNmParameterizedClipSelectorNode::CDefinition](animlib.md#cnmparameterizedclipselectornodecdefinition), [CNmTargetSelectorNode::CDefinition](animlib.md#cnmtargetselectornodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
@@ -1079,11 +1028,11 @@ classDiagram
 classDiagram
     "CNmPoseNode::CDefinition" <|-- "CNmClipReferenceNode::CDefinition"
     "CNmGraphNode::CDefinition" <|-- "CNmPoseNode::CDefinition"
-    "CNmClipReferenceNode::CDefinition" <|-- "CNmTargetSelectorNode::CDefinition"
-    "CNmClipReferenceNode::CDefinition" <|-- "CNmParameterizedClipSelectorNode::CDefinition"
-    "CNmClipReferenceNode::CDefinition" <|-- "CNmIDBasedClipSelectorNode::CDefinition"
     "CNmClipReferenceNode::CDefinition" <|-- "CNmClipNode::CDefinition"
     "CNmClipReferenceNode::CDefinition" <|-- "CNmClipSelectorNode::CDefinition"
+    "CNmClipReferenceNode::CDefinition" <|-- "CNmIDBasedClipSelectorNode::CDefinition"
+    "CNmClipReferenceNode::CDefinition" <|-- "CNmParameterizedClipSelectorNode::CDefinition"
+    "CNmClipReferenceNode::CDefinition" <|-- "CNmTargetSelectorNode::CDefinition"
 ```
 
 ### CNmClipSelectorNode::CDefinition
@@ -1114,8 +1063,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_optionNodeIndices` | CUtlLeanVectorFixedGrowable<int16> |  |
-| `m_conditionNodeIndices` | CUtlLeanVectorFixedGrowable<int16> |  |
+| `m_optionNodeIndices` | CUtlLeanVectorFixedGrowable< int16, 8 > |  |
+| `m_conditionNodeIndices` | CUtlLeanVectorFixedGrowable< int16, 8 > |  |
 
 ### CNmConstBoolNode::CDefinition
 
@@ -1408,16 +1357,6 @@ classDiagram
 | `m_nSourceStateNodeIdx` | int16 |  |
 | `m_infoType` | CNmCurrentSyncEventNode::InfoType_t |  |
 
-### CNmCurrentSyncEventNode::InfoType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `IndexAndPercentage` | 0 |  |
-| `IndexOnly` | 1 |  |
-| `PercentageOnly` | 2 |  |
-
 ### CNmDurationScaleNode::CDefinition
 
 **Inherits from:** [CNmSpeedScaleBaseNode::CDefinition](animlib.md#cnmspeedscalebasenodecdefinition)
@@ -1475,7 +1414,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_target` | [CNmEventTargetEntity_t](../schemas/animlib.md#cnmeventtargetentity_t) |  |
+| `m_target` | [CNmEventTargetEntity_t](../schemas/!GlobalTypes.md#cnmeventtargetentity_t) |  |
 | `m_attributeName` | CUtlString |  |
 
 ### CNmEntityAttributeFloatEvent
@@ -1568,26 +1507,26 @@ classDiagram
 
 **Derived by:** [CNmBodyGroupEvent](animlib.md#cnmbodygroupevent), [CNmEntityAttributeEventBase](animlib.md#cnmentityattributeeventbase), [CNmFloatCurveEvent](animlib.md#cnmfloatcurveevent), [CNmFootEvent](animlib.md#cnmfootevent), [CNmFrameSnapEvent](animlib.md#cnmframesnapevent), [CNmIDEvent](animlib.md#cnmidevent), [CNmLegacyEvent](animlib.md#cnmlegacyevent), [CNmMaterialAttributeEvent](animlib.md#cnmmaterialattributeevent), [CNmOrientationWarpEvent](animlib.md#cnmorientationwarpevent), [CNmParticleEvent](animlib.md#cnmparticleevent), [CNmRootMotionEvent](animlib.md#cnmrootmotionevent), [CNmSoundEvent](animlib.md#cnmsoundevent), [CNmTargetWarpEvent](animlib.md#cnmtargetwarpevent), [CNmTransitionEvent](animlib.md#cnmtransitionevent)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
     CNmEvent <|-- CNmBodyGroupEvent
+    CNmEvent <|-- CNmEntityAttributeEventBase
+    CNmEvent <|-- CNmFloatCurveEvent
     CNmEvent <|-- CNmFootEvent
-    CNmEvent <|-- CNmSoundEvent
+    CNmEvent <|-- CNmFrameSnapEvent
     CNmEvent <|-- CNmIDEvent
     CNmEvent <|-- CNmLegacyEvent
-    CNmEvent <|-- CNmFloatCurveEvent
-    CNmEvent <|-- CNmTransitionEvent
-    CNmEvent <|-- CNmParticleEvent
-    CNmEvent <|-- CNmOrientationWarpEvent
-    CNmEvent <|-- CNmRootMotionEvent
-    CNmEvent <|-- CNmTargetWarpEvent
     CNmEvent <|-- CNmMaterialAttributeEvent
-    CNmEvent <|-- CNmEntityAttributeEventBase
-    CNmEvent <|-- CNmFrameSnapEvent
+    CNmEvent <|-- CNmOrientationWarpEvent
+    CNmEvent <|-- CNmParticleEvent
+    CNmEvent <|-- CNmRootMotionEvent
+    CNmEvent <|-- CNmSoundEvent
+    CNmEvent <|-- CNmTargetWarpEvent
+    CNmEvent <|-- CNmTransitionEvent
     CNmEvent *-- NmPercent_t
 ```
 
@@ -1598,27 +1537,6 @@ classDiagram
 | `m_flStartTime` | [NmPercent_t](../schemas/animlib.md#nmpercent_t) |  |
 | `m_flDuration` | [NmPercent_t](../schemas/animlib.md#nmpercent_t) |  |
 | `m_syncID` | CGlobalSymbol |  |
-
-### CNmEventRelevance_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `ClientOnly` | 0 |  |
-| `ServerOnly` | 1 |  |
-| `ClientAndServer` | 2 |  |
-
-### CNmEventTargetEntity_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Self` | 0 |  |
-| `Weapon` | 1 |  |
-| `HeldItem` | 2 |  |
-| `Custom` | 3 |  |
 
 ### CNmExternalPoseNode::CDefinition
 
@@ -1696,16 +1614,79 @@ classDiagram
 | `m_nInputValueNodeIdx` | int16 |  |
 | `m_operation` | CNmFloatAngleMathNode::Operation_t |  |
 
-### CNmFloatAngleMathNode::Operation_t
+### CNmFloatChannelData
 
-**Values:**
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_skeleton": "",
+	"m_setID": "",
+	"m_channelSettings":
+	[
+	],
+	"m_compressedData":
+	[
+	],
+	"m_compressedOffsets":
+	[
+	]
+}`
 
-| Name | Value | Description |
-|------|-------|-------------|
-| `ClampTo180` | 0 |  |
-| `ClampTo360` | 1 |  |
-| `FlipHemisphere` | 2 |  |
-| `FlipHemisphereNegate` | 3 |  |
+**Relationships:**
+
+```mermaid
+classDiagram
+    CNmFloatChannelData *-- InfoForResourceTypeCNmSkeleton
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_skeleton` | CStrongHandle< [InfoForResourceTypeCNmSkeleton](../schemas/resourcesystem.md#infoforresourcetypecnmskeleton) > |  |
+| `m_setID` | CGlobalSymbol |  |
+| `m_channelSettings` | CUtlVector< [CNmFloatChannelData](../schemas/animlib.md#cnmfloatchanneldata)::ChannelSettings_t > |  |
+| `m_compressedData` | CUtlVector< uint16 > |  |
+| `m_compressedOffsets` | CUtlVector< uint32 > |  |
+
+### CNmFloatChannelData::ChannelSettings_t
+
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_range":
+	{
+		"m_flRangeStart": 0.000000,
+		"m_flRangeLength": -1.000000
+	},
+	"m_bIsStatic": false
+}`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    "CNmFloatChannelData::ChannelSettings_t" *-- NmCompressionSettings_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_range` | [NmCompressionSettings_t](../schemas/animlib.md#nmcompressionsettings_t)::QuantizationRange_t |  |
+| `m_bIsStatic` | bool |  |
+
+### CNmFloatChannelSet_t
+
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_ID": <HIDDEN FOR DIFF>,
+	"m_channelIDs":
+	[
+	]
+}`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_ID` | CGlobalSymbol |  |
+| `m_channelIDs` | CUtlLeanVector< CGlobalSymbol > |  |
 
 ### CNmFloatClampNode::CDefinition
 
@@ -1768,21 +1749,9 @@ classDiagram
 |------|------|-------------|
 | `m_nInputValueNodeIdx` | int16 |  |
 | `m_nComparandValueNodeIdx` | int16 |  |
-| `m_comparison` | CNmFloatComparisonNode::[Comparison_t](../schemas/animgraphdoclib.md#comparison_t) |  |
+| `m_comparison` | CNmFloatComparisonNode::[Comparison_t](../schemas/!GlobalTypes.md#comparison_t) |  |
 | `m_flEpsilon` | float32 |  |
 | `m_flComparisonValue` | float32 |  |
-
-### CNmFloatComparisonNode::Comparison_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `GreaterThanEqual` | 0 |  |
-| `LessThanEqual` | 1 |  |
-| `NearEqual` | 2 |  |
-| `GreaterThan` | 3 |  |
-| `LessThan` | 4 |  |
 
 ### CNmFloatCurveEvent
 
@@ -1946,7 +1915,7 @@ classDiagram
 | `m_flEaseTime` | float32 |  |
 | `m_flStartValue` | float32 |  |
 | `m_nInputValueNodeIdx` | int16 |  |
-| `m_easingOp` | [NmEasingOperation_t](../schemas/animlib.md#nmeasingoperation_t) |  |
+| `m_easingOp` | [NmEasingOperation_t](../schemas/!GlobalTypes.md#nmeasingoperation_t) |  |
 | `m_bUseStartValue` | bool |  |
 
 ### CNmFloatMathNode::CDefinition
@@ -1983,25 +1952,6 @@ classDiagram
 | `m_bReturnNegatedResult` | bool |  |
 | `m_operator` | CNmFloatMathNode::Operator_t |  |
 | `m_flValueB` | float32 |  |
-
-### CNmFloatMathNode::Operator_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Add` | 0 |  |
-| `Sub` | 1 |  |
-| `Mul` | 2 |  |
-| `Div` | 3 |  |
-| `Mod` | 4 |  |
-| `Abs` | 5 |  |
-| `Negate` | 6 |  |
-| `Floor` | 7 |  |
-| `Ceiling` | 8 |  |
-| `IntegerPart` | 9 |  |
-| `FractionalPart` | 10 |  |
-| `InverseFractionalPart` | 11 |  |
 
 ### CNmFloatRangeComparisonNode::CDefinition
 
@@ -2119,11 +2069,11 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_conditionNodeIndices` | CUtlLeanVectorFixedGrowable<int16> |  |
-| `m_values` | CUtlLeanVectorFixedGrowable<float32> |  |
+| `m_conditionNodeIndices` | CUtlLeanVectorFixedGrowable< int16, 5 > |  |
+| `m_values` | CUtlLeanVectorFixedGrowable< float32, 5 > |  |
 | `m_flDefaultValue` | float32 |  |
 | `m_flEaseTime` | float32 |  |
-| `m_easingOp` | [NmEasingOperation_t](../schemas/animlib.md#nmeasingoperation_t) |  |
+| `m_easingOp` | [NmEasingOperation_t](../schemas/!GlobalTypes.md#nmeasingoperation_t) |  |
 
 ### CNmFloatSpringNode::CDefinition
 
@@ -2203,25 +2153,25 @@ classDiagram
 classDiagram
     "CNmValueNode::CDefinition" <|-- "CNmFloatValueNode::CDefinition"
     "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmCurrentSyncEventNode::CDefinition"
+    "CNmFloatValueNode::CDefinition" <|-- "CNmCachedFloatNode::CDefinition"
     "CNmFloatValueNode::CDefinition" <|-- "CNmConstFloatNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatRemapNode::CDefinition"
+    "CNmFloatValueNode::CDefinition" <|-- "CNmControlParameterFloatNode::CDefinition"
+    "CNmFloatValueNode::CDefinition" <|-- "CNmCurrentSyncEventNode::CDefinition"
+    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatAngleMathNode::CDefinition"
     "CNmFloatValueNode::CDefinition" <|-- "CNmFloatClampNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatSpringNode::CDefinition"
+    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatCurveEventNode::CDefinition"
     "CNmFloatValueNode::CDefinition" <|-- "CNmFloatCurveNode::CDefinition"
+    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatEaseNode::CDefinition"
+    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatMathNode::CDefinition"
+    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatRemapNode::CDefinition"
+    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatSelectorNode::CDefinition"
+    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatSpringNode::CDefinition"
+    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatSwitchNode::CDefinition"
     "CNmFloatValueNode::CDefinition" <|-- "CNmFootstepEventPercentageThroughNode::CDefinition"
     "CNmFloatValueNode::CDefinition" <|-- "CNmIDToFloatNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatSelectorNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatCurveEventNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmControlParameterFloatNode::CDefinition"
     "CNmFloatValueNode::CDefinition" <|-- "CNmTargetInfoNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatMathNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatSwitchNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmCachedFloatNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmVirtualParameterFloatNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatAngleMathNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatEaseNode::CDefinition"
     "CNmFloatValueNode::CDefinition" <|-- "CNmVectorInfoNode::CDefinition"
+    "CNmFloatValueNode::CDefinition" <|-- "CNmVirtualParameterFloatNode::CDefinition"
 ```
 
 ### CNmFollowBoneNode::CDefinition
@@ -2255,7 +2205,7 @@ classDiagram
 | `m_bone` | CGlobalSymbol |  |
 | `m_followTargetBone` | CGlobalSymbol |  |
 | `m_nEnabledNodeIdx` | int16 |  |
-| `m_mode` | [NmFollowBoneMode_t](../schemas/animlib.md#nmfollowbonemode_t) |  |
+| `m_mode` | [NmFollowBoneMode_t](../schemas/!GlobalTypes.md#nmfollowbonemode_t) |  |
 
 ### CNmFollowBoneTask
 
@@ -2298,7 +2248,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_phase` | [NmFootPhase_t](../schemas/animlib.md#nmfootphase_t) |  |
+| `m_phase` | [NmFootPhase_t](../schemas/!GlobalTypes.md#nmfootphase_t) |  |
 
 ### CNmFootEventConditionNode::CDefinition
 
@@ -2331,7 +2281,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_nSourceStateNodeIdx` | int16 |  |
-| `m_phaseCondition` | [NmFootPhaseCondition_t](../schemas/animlib.md#nmfootphasecondition_t) |  |
+| `m_phaseCondition` | [NmFootPhaseCondition_t](../schemas/!GlobalTypes.md#nmfootphasecondition_t) |  |
 | `m_eventConditionRules` | [CNmBitFlags](../schemas/animlib.md#cnmbitflags) |  |
 
 ### CNmFootIKNode::CDefinition
@@ -2372,7 +2322,7 @@ classDiagram
 | `m_nRightTargetNodeIdx` | int16 |  |
 | `m_nEnabledNodeIdx` | int16 |  |
 | `m_flBlendTimeSeconds` | float32 |  |
-| `m_blendMode` | [NmIKBlendMode_t](../schemas/animlib.md#nmikblendmode_t) |  |
+| `m_blendMode` | [NmIKBlendMode_t](../schemas/!GlobalTypes.md#nmikblendmode_t) |  |
 | `m_bIsTargetInWorldSpace` | bool |  |
 
 ### CNmFootIKTask
@@ -2400,7 +2350,7 @@ classDiagram
 | `m_nRightTargetBoneIdx` | int32 |  |
 | `m_leftTarget` | [CNmTarget](../schemas/animlib.md#cnmtarget) |  |
 | `m_rightTarget` | [CNmTarget](../schemas/animlib.md#cnmtarget) |  |
-| `m_blendMode` | [NmIKBlendMode_t](../schemas/animlib.md#nmikblendmode_t) |  |
+| `m_blendMode` | [NmIKBlendMode_t](../schemas/!GlobalTypes.md#nmikblendmode_t) |  |
 | `m_flBlendWeight` | float32 |  |
 | `m_bIsTargetInWorldSpace` | bool |  |
 | `m_bIsRunningFromDeserializedData` | bool |  |
@@ -2467,7 +2417,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_nSourceStateNodeIdx` | int16 |  |
-| `m_phaseCondition` | [NmFootPhaseCondition_t](../schemas/animlib.md#nmfootphasecondition_t) |  |
+| `m_phaseCondition` | [NmFootPhaseCondition_t](../schemas/!GlobalTypes.md#nmfootphasecondition_t) |  |
 | `m_eventConditionRules` | [CNmBitFlags](../schemas/animlib.md#cnmbitflags) |  |
 
 ### CNmFrameSnapEvent
@@ -2500,7 +2450,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_frameSnapMode` | [NmFrameSnapEventMode_t](../schemas/animlib.md#nmframesnapeventmode_t) |  |
+| `m_frameSnapMode` | [NmFrameSnapEventMode_t](../schemas/!GlobalTypes.md#nmframesnapeventmode_t) |  |
 
 ### CNmGraphDefinition
 
@@ -2557,19 +2507,19 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_variationID` | CGlobalSymbol |  |
-| `m_skeleton` | CStrongHandle<[InfoForResourceTypeCNmSkeleton](../schemas/resourcesystem.md#infoforresourcetypecnmskeleton)> |  |
-| `m_supportedSecondarySkeletons` | CUtlVector<CStrongHandle<[InfoForResourceTypeCNmSkeleton](../schemas/resourcesystem.md#infoforresourcetypecnmskeleton)>> |  |
+| `m_skeleton` | CStrongHandle< [InfoForResourceTypeCNmSkeleton](../schemas/resourcesystem.md#infoforresourcetypecnmskeleton) > |  |
+| `m_supportedSecondarySkeletons` | CUtlVector< CStrongHandle< [InfoForResourceTypeCNmSkeleton](../schemas/resourcesystem.md#infoforresourcetypecnmskeleton) > > |  |
 | `m_pUserData` | [CNmGraphVariationUserData](../schemas/animlib.md#cnmgraphvariationuserdata)* |  |
-| `m_persistentNodeIndices` | CUtlVector<int16> |  |
+| `m_persistentNodeIndices` | CUtlVector< int16 > |  |
 | `m_nRootNodeIdx` | int16 |  |
-| `m_controlParameterIDs` | CUtlVector<CGlobalSymbol> |  |
-| `m_virtualParameterIDs` | CUtlVector<CGlobalSymbol> |  |
-| `m_virtualParameterNodeIndices` | CUtlVector<int16> |  |
-| `m_referencedGraphSlots` | CUtlVector<[CNmGraphDefinition](../schemas/animlib.md#cnmgraphdefinition)::ReferencedGraphSlot_t> |  |
-| `m_externalGraphSlots` | CUtlVector<[CNmGraphDefinition](../schemas/animlib.md#cnmgraphdefinition)::ExternalGraphSlot_t> |  |
-| `m_externalPoseSlots` | CUtlVector<[CNmGraphDefinition](../schemas/animlib.md#cnmgraphdefinition)::ExternalPoseSlot_t> |  |
-| `m_nodePaths` | CUtlVector<CUtlString> |  |
-| `m_resources` | CUtlVector<CStrongHandleVoid> |  |
+| `m_controlParameterIDs` | CUtlVector< CGlobalSymbol > |  |
+| `m_virtualParameterIDs` | CUtlVector< CGlobalSymbol > |  |
+| `m_virtualParameterNodeIndices` | CUtlVector< int16 > |  |
+| `m_referencedGraphSlots` | CUtlVector< [CNmGraphDefinition](../schemas/animlib.md#cnmgraphdefinition)::ReferencedGraphSlot_t > |  |
+| `m_externalGraphSlots` | CUtlVector< [CNmGraphDefinition](../schemas/animlib.md#cnmgraphdefinition)::ExternalGraphSlot_t > |  |
+| `m_externalPoseSlots` | CUtlVector< [CNmGraphDefinition](../schemas/animlib.md#cnmgraphdefinition)::ExternalPoseSlot_t > |  |
+| `m_nodePaths` | CUtlVector< CUtlString > |  |
+| `m_resources` | CUtlVector< CStrongHandleVoid > |  |
 
 ### CNmGraphDefinition::ExternalGraphSlot_t
 
@@ -2646,7 +2596,7 @@ classDiagram
 |------|------|-------------|
 | `m_nSourceStateNodeIdx` | int16 |  |
 | `m_eventConditionRules` | [CNmBitFlags](../schemas/animlib.md#cnmbitflags) |  |
-| `m_conditions` | CUtlVectorFixedGrowable<CNmGraphEventConditionNode::Condition_t> |  |
+| `m_conditions` | CUtlVectorFixedGrowable< CNmGraphEventConditionNode::Condition_t, 5 > |  |
 
 ### CNmGraphEventConditionNode::Condition_t
 
@@ -2667,7 +2617,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_eventID` | CGlobalSymbol |  |
-| `m_eventTypeCondition` | [NmGraphEventTypeCondition_t](../schemas/animlib.md#nmgrapheventtypecondition_t) |  |
+| `m_eventTypeCondition` | [NmGraphEventTypeCondition_t](../schemas/!GlobalTypes.md#nmgrapheventtypecondition_t) |  |
 
 ### CNmGraphInstance
 
@@ -2675,14 +2625,14 @@ classDiagram
 
 **Derived by:** [CNmPoseNode::CDefinition](animlib.md#cnmposenodecdefinition), [CNmValueNode::CDefinition](animlib.md#cnmvaluenodecdefinition)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
     "CNmGraphNode::CDefinition" <|-- "CNmPoseNode::CDefinition"
+    "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
 ```
 
 **Fields:**
@@ -2693,7 +2643,7 @@ classDiagram
 
 ### CNmGraphVariationUserData
 
-**Derived by:** [CBaseAnimGraphVariationUserData](client.md#cbaseanimgraphvariationuserdata)
+**Derived by:** [CBaseAnimGraphVariationUserData](server.md#cbaseanimgraphvariationuserdata)
 
 **Metadata:** `MGetKV3ClassDefaults {
 	"_class": "CNmGraphVariationUserData"
@@ -2737,8 +2687,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_optionNodeIndices` | CUtlLeanVectorFixedGrowable<int16> |  |
-| `m_optionIDs` | CUtlLeanVectorFixedGrowable<CGlobalSymbol> |  |
+| `m_optionNodeIndices` | CUtlLeanVectorFixedGrowable< int16, 5 > |  |
+| `m_optionIDs` | CUtlLeanVectorFixedGrowable< CGlobalSymbol, 5 > |  |
 | `m_nParameterNodeIdx` | int16 |  |
 | `m_nFallbackNodeIdx` | int16 |  |
 | `m_bIgnoreInvalidOptions` | bool |  |
@@ -2773,8 +2723,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_optionNodeIndices` | CUtlLeanVectorFixedGrowable<int16> |  |
-| `m_optionIDs` | CUtlLeanVectorFixedGrowable<CGlobalSymbol> |  |
+| `m_optionNodeIndices` | CUtlLeanVectorFixedGrowable< int16, 5 > |  |
+| `m_optionIDs` | CUtlLeanVectorFixedGrowable< CGlobalSymbol, 5 > |  |
 | `m_nParameterNodeIdx` | int16 |  |
 | `m_nFallbackNodeIdx` | int16 |  |
 | `m_bIgnoreInvalidOptions` | bool |  |
@@ -2808,17 +2758,8 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_nInputValueNodeIdx` | int16 |  |
-| `m_comparison` | CNmIDComparisonNode::[Comparison_t](../schemas/animgraphdoclib.md#comparison_t) |  |
-| `m_comparisionIDs` | CUtlLeanVectorFixedGrowable<CGlobalSymbol> |  |
-
-### CNmIDComparisonNode::Comparison_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Matches` | 0 |  |
-| `DoesntMatch` | 1 |  |
+| `m_comparison` | CNmIDComparisonNode::[Comparison_t](../schemas/!GlobalTypes.md#comparison_t) |  |
+| `m_comparisionIDs` | CUtlLeanVectorFixedGrowable< CGlobalSymbol, 4 > |  |
 
 ### CNmIDEvent
 
@@ -2886,7 +2827,7 @@ classDiagram
 |------|------|-------------|
 | `m_nSourceStateNodeIdx` | int16 |  |
 | `m_eventConditionRules` | [CNmBitFlags](../schemas/animlib.md#cnmbitflags) |  |
-| `m_eventIDs` | CUtlVectorFixedGrowable<CGlobalSymbol> |  |
+| `m_eventIDs` | CUtlVectorFixedGrowable< CGlobalSymbol, 5 > |  |
 
 ### CNmIDEventNode::CDefinition
 
@@ -2983,8 +2924,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_conditionNodeIndices` | CUtlLeanVectorFixedGrowable<int16> |  |
-| `m_values` | CUtlLeanVectorFixedGrowable<CGlobalSymbol> |  |
+| `m_conditionNodeIndices` | CUtlLeanVectorFixedGrowable< int16, 5 > |  |
+| `m_values` | CUtlLeanVectorFixedGrowable< CGlobalSymbol, 5 > |  |
 | `m_defaultValue` | CGlobalSymbol |  |
 
 ### CNmIDSwitchNode::CDefinition
@@ -3052,8 +2993,8 @@ classDiagram
 |------|------|-------------|
 | `m_nInputValueNodeIdx` | int16 |  |
 | `m_defaultValue` | float32 |  |
-| `m_IDs` | CUtlLeanVectorFixedGrowable<CGlobalSymbol> |  |
-| `m_values` | CUtlLeanVectorFixedGrowable<float32> |  |
+| `m_IDs` | CUtlLeanVectorFixedGrowable< CGlobalSymbol, 5 > |  |
+| `m_values` | CUtlLeanVectorFixedGrowable< float32, 5 > |  |
 
 ### CNmIDValueNode::CDefinition
 
@@ -3067,15 +3008,15 @@ classDiagram
 classDiagram
     "CNmValueNode::CDefinition" <|-- "CNmIDValueNode::CDefinition"
     "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
-    "CNmIDValueNode::CDefinition" <|-- "CNmControlParameterIDNode::CDefinition"
-    "CNmIDValueNode::CDefinition" <|-- "CNmVirtualParameterIDNode::CDefinition"
-    "CNmIDValueNode::CDefinition" <|-- "CNmIDSelectorNode::CDefinition"
-    "CNmIDValueNode::CDefinition" <|-- "CNmFootstepEventIDNode::CDefinition"
-    "CNmIDValueNode::CDefinition" <|-- "CNmIDSwitchNode::CDefinition"
-    "CNmIDValueNode::CDefinition" <|-- "CNmCurrentSyncEventIDNode::CDefinition"
     "CNmIDValueNode::CDefinition" <|-- "CNmCachedIDNode::CDefinition"
     "CNmIDValueNode::CDefinition" <|-- "CNmConstIDNode::CDefinition"
+    "CNmIDValueNode::CDefinition" <|-- "CNmControlParameterIDNode::CDefinition"
+    "CNmIDValueNode::CDefinition" <|-- "CNmCurrentSyncEventIDNode::CDefinition"
+    "CNmIDValueNode::CDefinition" <|-- "CNmFootstepEventIDNode::CDefinition"
     "CNmIDValueNode::CDefinition" <|-- "CNmIDEventNode::CDefinition"
+    "CNmIDValueNode::CDefinition" <|-- "CNmIDSelectorNode::CDefinition"
+    "CNmIDValueNode::CDefinition" <|-- "CNmIDSwitchNode::CDefinition"
+    "CNmIDValueNode::CDefinition" <|-- "CNmVirtualParameterIDNode::CDefinition"
 ```
 
 ### CNmIsExternalGraphSlotFilledNode::CDefinition
@@ -3199,7 +3140,7 @@ classDiagram
 |------|------|-------------|
 | `m_nBaseNodeIdx` | int16 |  |
 | `m_bOnlySampleBaseRootMotion` | bool |  |
-| `m_layerDefinition` | CUtlLeanVectorFixedGrowable<CNmLayerBlendNode::LayerDefinition_t> |  |
+| `m_layerDefinition` | CUtlLeanVectorFixedGrowable< CNmLayerBlendNode::LayerDefinition_t, 3 > |  |
 
 ### CNmLayerBlendNode::LayerDefinition_t
 
@@ -3232,7 +3173,7 @@ classDiagram
 | `m_bIsSynchronized` | bool |  |
 | `m_bIgnoreEvents` | bool |  |
 | `m_bIsStateMachineLayer` | bool |  |
-| `m_blendMode` | [NmPoseBlendMode_t](../schemas/animlib.md#nmposeblendmode_t) |  |
+| `m_blendMode` | [NmPoseBlendMode_t](../schemas/!GlobalTypes.md#nmposeblendmode_t) |  |
 
 ### CNmLegacyEvent
 
@@ -3375,7 +3316,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_target` | [CNmEventTargetEntity_t](../schemas/animlib.md#cnmeventtargetentity_t) |  |
+| `m_target` | [CNmEventTargetEntity_t](../schemas/!GlobalTypes.md#cnmeventtargetentity_t) |  |
 | `m_attributeName` | CUtlString |  |
 | `m_attributeNameToken` | CUtlStringToken |  |
 | `m_x` | CPiecewiseCurve |  |
@@ -3445,7 +3386,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_conditionNodeIndices` | CUtlLeanVectorFixedGrowable<int16> |  |
+| `m_conditionNodeIndices` | CUtlLeanVectorFixedGrowable< int16, 4 > |  |
 
 ### CNmOrientationWarpEvent
 
@@ -3568,7 +3509,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sourceNodeIndices` | CUtlLeanVectorFixedGrowable<int16> |  |
+| `m_sourceNodeIndices` | CUtlLeanVectorFixedGrowable< int16, 5 > |  |
 | `m_nInputParameterValueNodeIdx` | int16 |  |
 | `m_bAllowLooping` | bool |  |
 
@@ -3589,7 +3530,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_blendRanges` | CUtlLeanVectorFixedGrowable<CNmParameterizedBlendNode::BlendRange_t> |  |
+| `m_blendRanges` | CUtlLeanVectorFixedGrowable< CNmParameterizedBlendNode::BlendRange_t, 5 > |  |
 | `m_parameterRange` | Range_t |  |
 
 ### CNmParameterizedClipSelectorNode::CDefinition
@@ -3623,8 +3564,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_optionNodeIndices` | CUtlLeanVectorFixedGrowable<int16> |  |
-| `m_optionWeights` | CUtlLeanVectorFixedGrowable<uint8> |  |
+| `m_optionNodeIndices` | CUtlLeanVectorFixedGrowable< int16, 8 > |  |
+| `m_optionWeights` | CUtlLeanVectorFixedGrowable< uint8, 8 > |  |
 | `m_parameterNodeIdx` | int16 |  |
 | `m_bIgnoreInvalidOptions` | bool |  |
 | `m_bHasWeightsSet` | bool |  |
@@ -3659,8 +3600,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_optionNodeIndices` | CUtlLeanVectorFixedGrowable<int16> |  |
-| `m_optionWeights` | CUtlLeanVectorFixedGrowable<uint8> |  |
+| `m_optionNodeIndices` | CUtlLeanVectorFixedGrowable< int16, 8 > |  |
+| `m_optionWeights` | CUtlLeanVectorFixedGrowable< uint8, 8 > |  |
 | `m_parameterNodeIdx` | int16 |  |
 | `m_bIgnoreInvalidOptions` | bool |  |
 | `m_bHasWeightsSet` | bool |  |
@@ -3711,35 +3652,26 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_relevance` | [CNmEventRelevance_t](../schemas/animlib.md#cnmeventrelevance_t) |  |
+| `m_relevance` | [CNmEventRelevance_t](../schemas/!GlobalTypes.md#cnmeventrelevance_t) |  |
 | `m_type` | [CNmParticleEvent](../schemas/animlib.md#cnmparticleevent)::Type_t |  |
-| `m_target` | [CNmEventTargetEntity_t](../schemas/animlib.md#cnmeventtargetentity_t) |  |
-| `m_hParticleSystem` | CStrongHandle<[InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition)> |  |
+| `m_target` | [CNmEventTargetEntity_t](../schemas/!GlobalTypes.md#cnmeventtargetentity_t) |  |
+| `m_hParticleSystem` | CStrongHandle< [InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition) > |  |
 | `m_tags` | CUtlString |  |
 | `m_bStopImmediately` | bool |  |
 | `m_bDetachFromOwner` | bool |  |
 | `m_bPlayEndCap` | bool |  |
 | `m_attachmentPoint0` | CUtlString |  |
-| `m_attachmentType0` | [ParticleAttachment_t](../schemas/animationsystem.md#particleattachment_t) |  |
+| `m_attachmentType0` | [ParticleAttachment_t](../schemas/!GlobalTypes.md#particleattachment_t) |  |
 | `m_attachmentPoint1` | CUtlString |  |
-| `m_attachmentType1` | [ParticleAttachment_t](../schemas/animationsystem.md#particleattachment_t) |  |
+| `m_attachmentType1` | [ParticleAttachment_t](../schemas/!GlobalTypes.md#particleattachment_t) |  |
 | `m_config` | CUtlString |  |
 | `m_effectForConfig` | CUtlString |  |
-
-### CNmParticleEvent::Type_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Create` | 0 |  |
-| `Create_CFG` | 1 |  |
 
 ### CNmPassthroughNode::CDefinition
 
 **Inherits from:** [CNmPoseNode::CDefinition](animlib.md#cnmposenodecdefinition)
 
-**Derived by:** [CNmAimCSNode::CDefinition](client.md#cnmaimcsnodecdefinition), [CNmChainLookatNode::CDefinition](animlib.md#cnmchainlookatnodecdefinition), [CNmFollowBoneNode::CDefinition](animlib.md#cnmfollowbonenodecdefinition), [CNmFootIKNode::CDefinition](animlib.md#cnmfootiknodecdefinition), [CNmRootMotionOverrideNode::CDefinition](animlib.md#cnmrootmotionoverridenodecdefinition), [CNmScaleNode::CDefinition](animlib.md#cnmscalenodecdefinition), [CNmSnapWeaponNode::CDefinition](client.md#cnmsnapweaponnodecdefinition), [CNmSpeedScaleBaseNode::CDefinition](animlib.md#cnmspeedscalebasenodecdefinition), [CNmTwoBoneIKNode::CDefinition](animlib.md#cnmtwoboneiknodecdefinition)
+**Derived by:** [CNmAimCSNode::CDefinition](server.md#cnmaimcsnodecdefinition), [CNmChainLookatNode::CDefinition](animlib.md#cnmchainlookatnodecdefinition), [CNmFollowBoneNode::CDefinition](animlib.md#cnmfollowbonenodecdefinition), [CNmFootIKNode::CDefinition](animlib.md#cnmfootiknodecdefinition), [CNmRootMotionOverrideNode::CDefinition](animlib.md#cnmrootmotionoverridenodecdefinition), [CNmScaleNode::CDefinition](animlib.md#cnmscalenodecdefinition), [CNmSnapWeaponNode::CDefinition](server.md#cnmsnapweaponnodecdefinition), [CNmSpeedScaleBaseNode::CDefinition](animlib.md#cnmspeedscalebasenodecdefinition), [CNmTwoBoneIKNode::CDefinition](animlib.md#cnmtwoboneiknodecdefinition)
 
 **Metadata:** `MGetKV3ClassDefaults {
 	"_class": "CNmPassthroughNode::CDefinition",
@@ -3753,15 +3685,15 @@ classDiagram
 classDiagram
     "CNmPoseNode::CDefinition" <|-- "CNmPassthroughNode::CDefinition"
     "CNmGraphNode::CDefinition" <|-- "CNmPoseNode::CDefinition"
-    "CNmPassthroughNode::CDefinition" <|-- "CNmSnapWeaponNode::CDefinition"
+    "CNmPassthroughNode::CDefinition" <|-- "CNmAimCSNode::CDefinition"
+    "CNmPassthroughNode::CDefinition" <|-- "CNmChainLookatNode::CDefinition"
+    "CNmPassthroughNode::CDefinition" <|-- "CNmFollowBoneNode::CDefinition"
     "CNmPassthroughNode::CDefinition" <|-- "CNmFootIKNode::CDefinition"
     "CNmPassthroughNode::CDefinition" <|-- "CNmRootMotionOverrideNode::CDefinition"
-    "CNmPassthroughNode::CDefinition" <|-- "CNmAimCSNode::CDefinition"
-    "CNmPassthroughNode::CDefinition" <|-- "CNmTwoBoneIKNode::CDefinition"
-    "CNmPassthroughNode::CDefinition" <|-- "CNmSpeedScaleBaseNode::CDefinition"
     "CNmPassthroughNode::CDefinition" <|-- "CNmScaleNode::CDefinition"
-    "CNmPassthroughNode::CDefinition" <|-- "CNmFollowBoneNode::CDefinition"
-    "CNmPassthroughNode::CDefinition" <|-- "CNmChainLookatNode::CDefinition"
+    "CNmPassthroughNode::CDefinition" <|-- "CNmSnapWeaponNode::CDefinition"
+    "CNmPassthroughNode::CDefinition" <|-- "CNmSpeedScaleBaseNode::CDefinition"
+    "CNmPassthroughNode::CDefinition" <|-- "CNmTwoBoneIKNode::CDefinition"
 ```
 
 **Fields:**
@@ -3782,46 +3714,46 @@ classDiagram
 classDiagram
     "CNmGraphNode::CDefinition" <|-- "CNmPoseNode::CDefinition"
     "CNmPoseNode::CDefinition" <|-- "CNmAnimationPoseNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmOrientationWarpNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmZeroPoseNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmStateMachineNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmLayerBlendNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmTargetWarpNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmExternalPoseNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmReferencePoseNode::CDefinition"
     "CNmPoseNode::CDefinition" <|-- "CNmBlend2DNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmIDBasedSelectorNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmParameterizedSelectorNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmStateNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmSelectorNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmReferencedGraphNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmTransitionNode::CDefinition"
     "CNmPoseNode::CDefinition" <|-- "CNmClipReferenceNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmPassthroughNode::CDefinition"
+    "CNmPoseNode::CDefinition" <|-- "CNmExternalPoseNode::CDefinition"
+    "CNmPoseNode::CDefinition" <|-- "CNmIDBasedSelectorNode::CDefinition"
+    "CNmPoseNode::CDefinition" <|-- "CNmLayerBlendNode::CDefinition"
+    "CNmPoseNode::CDefinition" <|-- "CNmOrientationWarpNode::CDefinition"
     "CNmPoseNode::CDefinition" <|-- "CNmParameterizedBlendNode::CDefinition"
+    "CNmPoseNode::CDefinition" <|-- "CNmParameterizedSelectorNode::CDefinition"
+    "CNmPoseNode::CDefinition" <|-- "CNmPassthroughNode::CDefinition"
+    "CNmPoseNode::CDefinition" <|-- "CNmReferencePoseNode::CDefinition"
+    "CNmPoseNode::CDefinition" <|-- "CNmReferencedGraphNode::CDefinition"
+    "CNmPoseNode::CDefinition" <|-- "CNmSelectorNode::CDefinition"
+    "CNmPoseNode::CDefinition" <|-- "CNmStateMachineNode::CDefinition"
+    "CNmPoseNode::CDefinition" <|-- "CNmStateNode::CDefinition"
+    "CNmPoseNode::CDefinition" <|-- "CNmTargetWarpNode::CDefinition"
+    "CNmPoseNode::CDefinition" <|-- "CNmTransitionNode::CDefinition"
+    "CNmPoseNode::CDefinition" <|-- "CNmZeroPoseNode::CDefinition"
 ```
 
 ### CNmPoseTask
 
-**Derived by:** [CNmAimCSTask](client.md#cnmaimcstask), [CNmBlendTaskBase](animlib.md#cnmblendtaskbase), [CNmCachedPoseReadTask](animlib.md#cnmcachedposereadtask), [CNmCachedPoseWriteTask](animlib.md#cnmcachedposewritetask), [CNmChainLookatTask](animlib.md#cnmchainlookattask), [CNmFollowBoneTask](animlib.md#cnmfollowbonetask), [CNmFootIKTask](animlib.md#cnmfootiktask), [CNmReferencePoseTask](animlib.md#cnmreferenceposetask), [CNmSampleTask](animlib.md#cnmsampletask), [CNmScaleTask](animlib.md#cnmscaletask), [CNmSnapWeaponTask](client.md#cnmsnapweapontask), [CNmTwoBoneIKTask](animlib.md#cnmtwoboneiktask), [CNmZeroPoseTask](animlib.md#cnmzeroposetask)
+**Derived by:** [CNmAimCSTask](server.md#cnmaimcstask), [CNmBlendTaskBase](animlib.md#cnmblendtaskbase), [CNmCachedPoseReadTask](animlib.md#cnmcachedposereadtask), [CNmCachedPoseWriteTask](animlib.md#cnmcachedposewritetask), [CNmChainLookatTask](animlib.md#cnmchainlookattask), [CNmFollowBoneTask](animlib.md#cnmfollowbonetask), [CNmFootIKTask](animlib.md#cnmfootiktask), [CNmReferencePoseTask](animlib.md#cnmreferenceposetask), [CNmSampleTask](animlib.md#cnmsampletask), [CNmScaleTask](animlib.md#cnmscaletask), [CNmSnapWeaponTask](server.md#cnmsnapweapontask), [CNmTwoBoneIKTask](animlib.md#cnmtwoboneiktask), [CNmZeroPoseTask](animlib.md#cnmzeroposetask)
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CNmPoseTask <|-- CNmCachedPoseWriteTask
     CNmPoseTask <|-- CNmAimCSTask
-    CNmPoseTask <|-- CNmFollowBoneTask
-    CNmPoseTask <|-- CNmTwoBoneIKTask
-    CNmPoseTask <|-- CNmSampleTask
-    CNmPoseTask <|-- CNmChainLookatTask
-    CNmPoseTask <|-- CNmReferencePoseTask
     CNmPoseTask <|-- CNmBlendTaskBase
-    CNmPoseTask <|-- CNmZeroPoseTask
     CNmPoseTask <|-- CNmCachedPoseReadTask
-    CNmPoseTask <|-- CNmSnapWeaponTask
-    CNmPoseTask <|-- CNmScaleTask
+    CNmPoseTask <|-- CNmCachedPoseWriteTask
+    CNmPoseTask <|-- CNmChainLookatTask
+    CNmPoseTask <|-- CNmFollowBoneTask
     CNmPoseTask <|-- CNmFootIKTask
+    CNmPoseTask <|-- CNmReferencePoseTask
+    CNmPoseTask <|-- CNmSampleTask
+    CNmPoseTask <|-- CNmScaleTask
+    CNmPoseTask <|-- CNmSnapWeaponTask
+    CNmPoseTask <|-- CNmTwoBoneIKTask
+    CNmPoseTask <|-- CNmZeroPoseTask
 ```
 
 ### CNmReferencePoseNode::CDefinition
@@ -3904,20 +3836,11 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_transforms` | CUtlVector<CTransform> |  |
+| `m_transforms` | CUtlVector< CTransform > |  |
 | `m_nNumFrames` | int32 |  |
 | `m_flAverageLinearVelocity` | float32 |  |
 | `m_flAverageAngularVelocityRadians` | float32 |  |
 | `m_totalDelta` | CTransform |  |
-
-### CNmRootMotionData::SamplingMode_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Delta` | 0 |  |
-| `WorldSpace` | 1 |  |
 
 ### CNmRootMotionEvent
 
@@ -3962,6 +3885,7 @@ classDiagram
 	"m_desiredFacingDirectionNodeIdx": -1,
 	"m_linearVelocityLimitNodeIdx": -1,
 	"m_angularVelocityLimitNodeIdx": -1,
+	"m_enabledNodeIdx": -1,
 	"m_maxLinearVelocity": -1.000000,
 	"m_maxAngularVelocityRadians": -1.000000,
 	"m_overrideFlags":
@@ -3988,21 +3912,10 @@ classDiagram
 | `m_desiredFacingDirectionNodeIdx` | int16 |  |
 | `m_linearVelocityLimitNodeIdx` | int16 |  |
 | `m_angularVelocityLimitNodeIdx` | int16 |  |
+| `m_enabledNodeIdx` | int16 |  |
 | `m_maxLinearVelocity` | float32 |  |
 | `m_maxAngularVelocityRadians` | float32 |  |
 | `m_overrideFlags` | [CNmBitFlags](../schemas/animlib.md#cnmbitflags) |  |
-
-### CNmRootMotionOverrideNode::OverrideFlags_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `AllowMoveX` | 0 |  |
-| `AllowMoveY` | 1 |  |
-| `AllowMoveZ` | 2 |  |
-| `AllowFacingPitch` | 3 |  |
-| `ListenForEvents` | 4 |  |
 
 ### CNmSampleTask
 
@@ -4081,8 +3994,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_optionNodeIndices` | CUtlLeanVectorFixedGrowable<int16> |  |
-| `m_conditionNodeIndices` | CUtlLeanVectorFixedGrowable<int16> |  |
+| `m_optionNodeIndices` | CUtlLeanVectorFixedGrowable< int16, 8 > |  |
+| `m_conditionNodeIndices` | CUtlLeanVectorFixedGrowable< int16, 8 > |  |
 
 ### CNmSkeleton
 
@@ -4107,6 +4020,9 @@ classDiagram
 	"m_secondarySkeletons":
 	[
 	],
+	"m_floatChannelSets":
+	[
+	],
 	"m_bIsPropSkeleton": false
 }`
 
@@ -4115,6 +4031,7 @@ classDiagram
 ```mermaid
 classDiagram
     CNmSkeleton *-- NmBoneMaskSetDefinition_t
+    CNmSkeleton *-- CNmFloatChannelSet_t
 ```
 
 **Fields:**
@@ -4122,13 +4039,14 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_ID` | CGlobalSymbol |  |
-| `m_boneIDs` | CUtlLeanVector<CGlobalSymbol> |  |
-| `m_parentIndices` | CUtlVector<int32> |  |
-| `m_parentSpaceReferencePose` | CUtlVector<CTransform> |  |
-| `m_modelSpaceReferencePose` | CUtlVector<CTransform> |  |
+| `m_boneIDs` | CUtlLeanVector< CGlobalSymbol > |  |
+| `m_parentIndices` | CUtlVector< int32 > |  |
+| `m_parentSpaceReferencePose` | CUtlVector< CTransform > |  |
+| `m_modelSpaceReferencePose` | CUtlVector< CTransform > |  |
 | `m_numBonesToSampleAtLowLOD` | int32 |  |
-| `m_maskDefinitions` | CUtlLeanVector<[NmBoneMaskSetDefinition_t](../schemas/animlib.md#nmbonemasksetdefinition_t)> |  |
-| `m_secondarySkeletons` | CUtlLeanVector<[CNmSkeleton](../schemas/animlib.md#cnmskeleton)::SecondarySkeleton_t> |  |
+| `m_maskDefinitions` | CUtlLeanVector< [NmBoneMaskSetDefinition_t](../schemas/animlib.md#nmbonemasksetdefinition_t) > |  |
+| `m_secondarySkeletons` | CUtlLeanVector< [CNmSkeleton](../schemas/animlib.md#cnmskeleton)::SecondarySkeleton_t > |  |
+| `m_floatChannelSets` | CUtlLeanVector< [CNmFloatChannelSet_t](../schemas/animlib.md#cnmfloatchannelset_t) > |  |
 | `m_bIsPropSkeleton` | bool |  |
 
 ### CNmSkeleton::SecondarySkeleton_t
@@ -4150,7 +4068,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_attachToBoneID` | CGlobalSymbol |  |
-| `m_skeleton` | CStrongHandle<[InfoForResourceTypeCNmSkeleton](../schemas/resourcesystem.md#infoforresourcetypecnmskeleton)> |  |
+| `m_skeleton` | CStrongHandle< [InfoForResourceTypeCNmSkeleton](../schemas/resourcesystem.md#infoforresourcetypecnmskeleton) > |  |
 
 ### CNmSoundEvent
 
@@ -4188,25 +4106,13 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_relevance` | [CNmEventRelevance_t](../schemas/animlib.md#cnmeventrelevance_t) |  |
+| `m_relevance` | [CNmEventRelevance_t](../schemas/!GlobalTypes.md#cnmeventrelevance_t) |  |
 | `m_name` | CUtlString |  |
 | `m_position` | [CNmSoundEvent](../schemas/animlib.md#cnmsoundevent)::Position_t |  |
 | `m_attachmentName` | CUtlString |  |
 | `m_tags` | CUtlString |  |
 | `m_bContinuePlayingSoundAtDurationEnd` | bool |  |
 | `m_flDurationInterruptionThreshold` | float32 |  |
-
-### CNmSoundEvent::Position_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `None` | 0 |  |
-| `World` | 1 |  |
-| `EntityPos` | 2 |  |
-| `EntityEyePos` | 3 |  |
-| `EntityAttachment` | 4 |  |
 
 ### CNmSpeedScaleBaseNode::CDefinition
 
@@ -4229,8 +4135,8 @@ classDiagram
     "CNmPassthroughNode::CDefinition" <|-- "CNmSpeedScaleBaseNode::CDefinition"
     "CNmPoseNode::CDefinition" <|-- "CNmPassthroughNode::CDefinition"
     "CNmGraphNode::CDefinition" <|-- "CNmPoseNode::CDefinition"
-    "CNmSpeedScaleBaseNode::CDefinition" <|-- "CNmSpeedScaleNode::CDefinition"
     "CNmSpeedScaleBaseNode::CDefinition" <|-- "CNmDurationScaleNode::CDefinition"
+    "CNmSpeedScaleBaseNode::CDefinition" <|-- "CNmSpeedScaleNode::CDefinition"
     "CNmSpeedScaleBaseNode::CDefinition" <|-- "CNmVelocityBasedSpeedScaleNode::CDefinition"
 ```
 
@@ -4317,7 +4223,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_stateDefinitions` | CUtlLeanVectorFixedGrowable<CNmStateMachineNode::StateDefinition_t> |  |
+| `m_stateDefinitions` | CUtlLeanVectorFixedGrowable< CNmStateMachineNode::StateDefinition_t, 5 > |  |
 | `m_nDefaultStateIndex` | int16 |  |
 
 ### CNmStateMachineNode::StateDefinition_t
@@ -4336,7 +4242,7 @@ classDiagram
 |------|------|-------------|
 | `m_nStateNodeIdx` | int16 |  |
 | `m_nEntryConditionNodeIdx` | int16 |  |
-| `m_transitionDefinitions` | CUtlLeanVectorFixedGrowable<CNmStateMachineNode::TransitionDefinition_t> |  |
+| `m_transitionDefinitions` | CUtlLeanVectorFixedGrowable< CNmStateMachineNode::TransitionDefinition_t, 5 > |  |
 
 ### CNmStateMachineNode::TransitionDefinition_t
 
@@ -4399,11 +4305,11 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_nChildNodeIdx` | int16 |  |
-| `m_entryEvents` | CUtlLeanVectorFixedGrowable<CGlobalSymbol> |  |
-| `m_executeEvents` | CUtlLeanVectorFixedGrowable<CGlobalSymbol> |  |
-| `m_exitEvents` | CUtlLeanVectorFixedGrowable<CGlobalSymbol> |  |
-| `m_timedRemainingEvents` | CUtlLeanVectorFixedGrowable<CNmStateNode::TimedEvent_t> |  |
-| `m_timedElapsedEvents` | CUtlLeanVectorFixedGrowable<CNmStateNode::TimedEvent_t> |  |
+| `m_entryEvents` | CUtlLeanVectorFixedGrowable< CGlobalSymbol, 3 > |  |
+| `m_executeEvents` | CUtlLeanVectorFixedGrowable< CGlobalSymbol, 3 > |  |
+| `m_exitEvents` | CUtlLeanVectorFixedGrowable< CGlobalSymbol, 3 > |  |
+| `m_timedRemainingEvents` | CUtlLeanVectorFixedGrowable< CNmStateNode::TimedEvent_t, 1 > |  |
+| `m_timedElapsedEvents` | CUtlLeanVectorFixedGrowable< CNmStateNode::TimedEvent_t, 1 > |  |
 | `m_nLayerWeightNodeIdx` | int16 |  |
 | `m_nLayerRootMotionWeightNodeIdx` | int16 |  |
 | `m_nLayerBoneMaskNodeIdx` | int16 |  |
@@ -4431,16 +4337,7 @@ classDiagram
 |------|------|-------------|
 | `m_ID` | CGlobalSymbol |  |
 | `m_flTimeValueSeconds` | float32 |  |
-| `m_comparisionOperator` | CNmStateNode::TimedEvent_t::[Comparison_t](../schemas/animgraphdoclib.md#comparison_t) |  |
-
-### CNmStateNode::TimedEvent_t::Comparison_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `LessThanEqual` | 0 |  |
-| `GreaterThanEqual` | 1 |  |
+| `m_comparisionOperator` | CNmStateNode::TimedEvent_t::[Comparison_t](../schemas/!GlobalTypes.md#comparison_t) |  |
 
 ### CNmSyncEventIndexConditionNode::CDefinition
 
@@ -4471,15 +4368,6 @@ classDiagram
 | `m_triggerMode` | CNmSyncEventIndexConditionNode::TriggerMode_t |  |
 | `m_syncEventIdx` | int32 |  |
 
-### CNmSyncEventIndexConditionNode::TriggerMode_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `ExactlyAtEventIndex` | 0 |  |
-| `GreaterThanEqualToEventIndex` | 1 |  |
-
 ### CNmSyncTrack
 
 **Metadata:** `MGetKV3ClassDefaults {
@@ -4504,7 +4392,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_syncEvents` | CUtlLeanVectorFixedGrowable<[CNmSyncTrack](../schemas/animlib.md#cnmsynctrack)::Event_t> |  |
+| `m_syncEvents` | CUtlLeanVectorFixedGrowable< [CNmSyncTrack](../schemas/animlib.md#cnmsynctrack)::Event_t, 10 > |  |
 | `m_nStartEventOffset` | int32 |  |
 
 ### CNmSyncTrack::EventMarker_t
@@ -4514,7 +4402,7 @@ classDiagram
 	{
 		"m_flValue": 0.000000
 	},
-	"m_ID": ""
+	"m_ID": <HIDDEN FOR DIFF>,
 }`
 
 **Relationships:**
@@ -4621,21 +4509,6 @@ classDiagram
 | `m_infoType` | CNmTargetInfoNode::Info_t |  |
 | `m_bIsWorldSpaceTarget` | bool |  |
 
-### CNmTargetInfoNode::Info_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `AngleHorizontal` | 0 |  |
-| `AngleVertical` | 1 |  |
-| `Distance` | 2 |  |
-| `DistanceHorizontalOnly` | 3 |  |
-| `DistanceVerticalOnly` | 4 |  |
-| `DeltaOrientationX` | 5 |  |
-| `DeltaOrientationY` | 6 |  |
-| `DeltaOrientationZ` | 7 |  |
-
 ### CNmTargetOffsetNode::CDefinition
 
 **Inherits from:** [CNmTargetValueNode::CDefinition](animlib.md#cnmtargetvaluenodecdefinition)
@@ -4735,7 +4608,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_optionNodeIndices` | CUtlLeanVectorFixedGrowable<int16> |  |
+| `m_optionNodeIndices` | CUtlLeanVectorFixedGrowable< int16, 8 > |  |
 | `m_flOrientationScoreWeight` | float32 |  |
 | `m_flPositionScoreWeight` | float32 |  |
 | `m_parameterNodeIdx` | int16 |  |
@@ -4754,9 +4627,9 @@ classDiagram
 classDiagram
     "CNmValueNode::CDefinition" <|-- "CNmTargetValueNode::CDefinition"
     "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
-    "CNmTargetValueNode::CDefinition" <|-- "CNmControlParameterTargetNode::CDefinition"
     "CNmTargetValueNode::CDefinition" <|-- "CNmCachedTargetNode::CDefinition"
     "CNmTargetValueNode::CDefinition" <|-- "CNmConstTargetNode::CDefinition"
+    "CNmTargetValueNode::CDefinition" <|-- "CNmControlParameterTargetNode::CDefinition"
     "CNmTargetValueNode::CDefinition" <|-- "CNmTargetOffsetNode::CDefinition"
     "CNmTargetValueNode::CDefinition" <|-- "CNmVirtualParameterTargetNode::CDefinition"
 ```
@@ -4793,8 +4666,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_rule` | [NmTargetWarpRule_t](../schemas/animlib.md#nmtargetwarprule_t) |  |
-| `m_algorithm` | [NmTargetWarpAlgorithm_t](../schemas/animlib.md#nmtargetwarpalgorithm_t) |  |
+| `m_rule` | [NmTargetWarpRule_t](../schemas/!GlobalTypes.md#nmtargetwarprule_t) |  |
+| `m_algorithm` | [NmTargetWarpAlgorithm_t](../schemas/!GlobalTypes.md#nmtargetwarpalgorithm_t) |  |
 
 ### CNmTargetWarpNode::CDefinition
 
@@ -4841,17 +4714,6 @@ classDiagram
 | `m_flTargetUpdateAngleThresholdRadians` | float32 |  |
 | `m_alignmentBoneID` | CGlobalSymbol |  |
 
-### CNmTargetWarpNode::TargetUpdateRule_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `None` | 0 |  |
-| `Recalculate` | 1 | Recalculate Warped Root Motion |
-| `Offset` | 2 | Offset Warped Root Motion |
-| `RecalculateOrOffset` | 3 | Recalculate Or Offset Warped Root Motion — Will offset the warped root motion if we are pass warp events |
-
 ### CNmTimeConditionNode::CDefinition
 
 **Inherits from:** [CNmBoolValueNode::CDefinition](animlib.md#cnmboolvaluenodecdefinition)
@@ -4885,27 +4747,6 @@ classDiagram
 | `m_type` | CNmTimeConditionNode::ComparisonType_t |  |
 | `m_operator` | CNmTimeConditionNode::Operator_t |  |
 
-### CNmTimeConditionNode::ComparisonType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `PercentageThroughState` | 0 |  |
-| `PercentageThroughSyncEvent` | 1 |  |
-| `ElapsedTime` | 2 |  |
-
-### CNmTimeConditionNode::Operator_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `LessThan` | 0 |  |
-| `LessThanEqual` | 1 |  |
-| `GreaterThan` | 2 |  |
-| `GreaterThanEqual` | 3 |  |
-
 ### CNmTransitionEvent
 
 **Inherits from:** [CNmEvent](animlib.md#cnmevent)
@@ -4922,7 +4763,7 @@ classDiagram
 	},
 	"m_syncID": "",
 	"m_rule": "BlockTransition",
-	"m_ID": ""
+	"m_ID": <HIDDEN FOR DIFF>,
 }`
 
 **Relationships:**
@@ -4937,7 +4778,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_rule` | [NmTransitionRule_t](../schemas/animlib.md#nmtransitionrule_t) |  |
+| `m_rule` | [NmTransitionRule_t](../schemas/!GlobalTypes.md#nmtransitionrule_t) |  |
 | `m_ID` | CGlobalSymbol |  |
 
 ### CNmTransitionEventConditionNode::CDefinition
@@ -4974,7 +4815,7 @@ classDiagram
 | `m_requireRuleID` | CGlobalSymbol |  |
 | `m_eventConditionRules` | [CNmBitFlags](../schemas/animlib.md#cnmbitflags) |  |
 | `m_nSourceStateNodeIdx` | int16 |  |
-| `m_ruleCondition` | [NmTransitionRuleCondition_t](../schemas/animlib.md#nmtransitionrulecondition_t) |  |
+| `m_ruleCondition` | [NmTransitionRuleCondition_t](../schemas/!GlobalTypes.md#nmtransitionrulecondition_t) |  |
 
 ### CNmTransitionNode::CDefinition
 
@@ -5027,25 +4868,8 @@ classDiagram
 | `m_flTimeOffset` | float32 |  |
 | `m_transitionOptions` | [CNmBitFlags](../schemas/animlib.md#cnmbitflags) |  |
 | `m_targetSyncIDNodeIdx` | int16 |  |
-| `m_blendWeightEasing` | [NmEasingOperation_t](../schemas/animlib.md#nmeasingoperation_t) |  |
-| `m_rootMotionBlend` | [NmRootMotionBlendMode_t](../schemas/animlib.md#nmrootmotionblendmode_t) |  |
-
-### CNmTransitionNode::TransitionOptions_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `None` | 0 |  |
-| `ClampDuration` | 1 |  |
-| `Synchronized` | 2 |  |
-| `MatchSourceTime` | 3 |  |
-| `MatchSyncEventIndex` | 4 |  |
-| `MatchSyncEventID` | 5 |  |
-| `MatchSyncEventPercentage` | 6 |  |
-| `PreferClosestSyncEventID` | 7 |  |
-| `MatchTimeInSeconds` | 8 |  |
-| `OffsetTimeInSeconds` | 9 |  |
+| `m_blendWeightEasing` | [NmEasingOperation_t](../schemas/!GlobalTypes.md#nmeasingoperation_t) |  |
+| `m_rootMotionBlend` | [NmRootMotionBlendMode_t](../schemas/!GlobalTypes.md#nmrootmotionblendmode_t) |  |
 
 ### CNmTwoBoneIKNode::CDefinition
 
@@ -5082,7 +4906,7 @@ classDiagram
 | `m_nEffectorTargetNodeIdx` | int16 |  |
 | `m_nEnabledNodeIdx` | int16 |  |
 | `m_flBlendTimeSeconds` | float32 |  |
-| `m_blendMode` | [NmIKBlendMode_t](../schemas/animlib.md#nmikblendmode_t) |  |
+| `m_blendMode` | [NmIKBlendMode_t](../schemas/!GlobalTypes.md#nmikblendmode_t) |  |
 | `m_bIsTargetInWorldSpace` | bool |  |
 | `m_flChainRotationWeight` | float32 |  |
 
@@ -5107,7 +4931,7 @@ classDiagram
 | `m_nEffectorTargetBoneIdx` | int32 |  |
 | `m_targetTransform` | CTransform |  |
 | `m_effectorTarget` | [CNmTarget](../schemas/animlib.md#cnmtarget) |  |
-| `m_blendMode` | [NmIKBlendMode_t](../schemas/animlib.md#nmikblendmode_t) |  |
+| `m_blendMode` | [NmIKBlendMode_t](../schemas/!GlobalTypes.md#nmikblendmode_t) |  |
 | `m_flBlendWeight` | float32 |  |
 | `m_bIsTargetInWorldSpace` | bool |  |
 | `m_bIsRunningFromDeserializedData` | bool |  |
@@ -5125,11 +4949,11 @@ classDiagram
 ```mermaid
 classDiagram
     "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
-    "CNmValueNode::CDefinition" <|-- "CNmTargetValueNode::CDefinition"
-    "CNmValueNode::CDefinition" <|-- "CNmFloatValueNode::CDefinition"
-    "CNmValueNode::CDefinition" <|-- "CNmBoolValueNode::CDefinition"
-    "CNmValueNode::CDefinition" <|-- "CNmIDValueNode::CDefinition"
     "CNmValueNode::CDefinition" <|-- "CNmBoneMaskValueNode::CDefinition"
+    "CNmValueNode::CDefinition" <|-- "CNmBoolValueNode::CDefinition"
+    "CNmValueNode::CDefinition" <|-- "CNmFloatValueNode::CDefinition"
+    "CNmValueNode::CDefinition" <|-- "CNmIDValueNode::CDefinition"
+    "CNmValueNode::CDefinition" <|-- "CNmTargetValueNode::CDefinition"
     "CNmValueNode::CDefinition" <|-- "CNmVectorValueNode::CDefinition"
 ```
 
@@ -5191,19 +5015,6 @@ classDiagram
 | `m_nInputValueNodeIdx` | int16 |  |
 | `m_desiredInfo` | CNmVectorInfoNode::Info_t |  |
 
-### CNmVectorInfoNode::Info_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `X` | 0 |  |
-| `Y` | 1 |  |
-| `Z` | 2 |  |
-| `Length` | 3 |  |
-| `AngleHorizontal` | 4 |  |
-| `AngleVertical` | 5 |  |
-
 ### CNmVectorNegateNode::CDefinition
 
 **Inherits from:** [CNmVectorValueNode::CDefinition](animlib.md#cnmvectorvaluenodecdefinition)
@@ -5241,13 +5052,13 @@ classDiagram
 classDiagram
     "CNmValueNode::CDefinition" <|-- "CNmVectorValueNode::CDefinition"
     "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
-    "CNmVectorValueNode::CDefinition" <|-- "CNmVectorNegateNode::CDefinition"
-    "CNmVectorValueNode::CDefinition" <|-- "CNmTargetPointNode::CDefinition"
     "CNmVectorValueNode::CDefinition" <|-- "CNmCachedVectorNode::CDefinition"
     "CNmVectorValueNode::CDefinition" <|-- "CNmConstVectorNode::CDefinition"
-    "CNmVectorValueNode::CDefinition" <|-- "CNmVirtualParameterVectorNode::CDefinition"
-    "CNmVectorValueNode::CDefinition" <|-- "CNmVectorCreateNode::CDefinition"
     "CNmVectorValueNode::CDefinition" <|-- "CNmControlParameterVectorNode::CDefinition"
+    "CNmVectorValueNode::CDefinition" <|-- "CNmTargetPointNode::CDefinition"
+    "CNmVectorValueNode::CDefinition" <|-- "CNmVectorCreateNode::CDefinition"
+    "CNmVectorValueNode::CDefinition" <|-- "CNmVectorNegateNode::CDefinition"
+    "CNmVectorValueNode::CDefinition" <|-- "CNmVirtualParameterVectorNode::CDefinition"
 ```
 
 ### CNmVelocityBasedSpeedScaleNode::CDefinition
@@ -5505,16 +5316,7 @@ classDiagram
 |------|------|-------------|
 | `m_ID` | CGlobalSymbol |  |
 | `m_primaryWeightList` | [CNmBoneWeightList](../schemas/animlib.md#cnmboneweightlist) |  |
-| `m_secondaryWeightLists` | CUtlLeanVector<[CNmBoneWeightList](../schemas/animlib.md#cnmboneweightlist)> |  |
-
-### NmCachedValueMode_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `OnEntry` | 0 |  |
-| `OnExit` | 1 |  |
+| `m_secondaryWeightLists` | CUtlLeanVector< [CNmBoneWeightList](../schemas/animlib.md#cnmboneweightlist) > |  |
 
 ### NmCompressionSettings_t
 
@@ -5580,68 +5382,6 @@ classDiagram
 | `m_flRangeStart` | float32 |  |
 | `m_flRangeLength` | float32 |  |
 
-### NmEasingFunction_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Linear` | 0 |  |
-| `Quad` | 1 |  |
-| `Cubic` | 2 |  |
-| `Quart` | 3 |  |
-| `Quint` | 4 |  |
-| `Sine` | 5 |  |
-| `Expo` | 6 |  |
-| `Circ` | 7 |  |
-| `Back` | 8 |  |
-
-### NmEasingOperation_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Linear` | 0 |  |
-| `InQuad` | 1 |  |
-| `OutQuad` | 2 |  |
-| `InOutQuad` | 3 |  |
-| `InCubic` | 4 |  |
-| `OutCubic` | 5 |  |
-| `InOutCubic` | 6 |  |
-| `InQuart` | 7 |  |
-| `OutQuart` | 8 |  |
-| `InOutQuart` | 9 |  |
-| `InQuint` | 10 |  |
-| `OutQuint` | 11 |  |
-| `InOutQuint` | 12 |  |
-| `InSine` | 13 |  |
-| `OutSine` | 14 |  |
-| `InOutSine` | 15 |  |
-| `InExpo` | 16 |  |
-| `OutExpo` | 17 |  |
-| `InOutExpo` | 18 |  |
-| `InCirc` | 19 |  |
-| `OutCirc` | 20 |  |
-| `InOutCirc` | 21 |  |
-| `None` | 22 |  |
-
-### NmEventConditionRules_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `LimitSearchToSourceState` | 0 |  |
-| `IgnoreInactiveEvents` | 1 |  |
-| `PreferHighestWeight` | 2 |  |
-| `PreferHighestProgress` | 3 |  |
-| `OperatorOr` | 4 |  |
-| `OperatorAnd` | 5 |  |
-| `SearchOnlyGraphEvents` | 6 |  |
-| `SearchOnlyAnimEvents` | 7 |  |
-| `SearchBothGraphAndAnimEvents` | 8 |  |
-
 ### NmFloatCurveCompressionSettings_t
 
 **Metadata:** `MGetKV3ClassDefaults {
@@ -5667,98 +5407,6 @@ classDiagram
 | `m_range` | [NmCompressionSettings_t](../schemas/animlib.md#nmcompressionsettings_t)::QuantizationRange_t |  |
 | `m_bIsStatic` | bool |  |
 
-### NmFollowBoneMode_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `RotationAndTranslation` | 0 |  |
-| `RotationOnly` | 1 |  |
-| `TranslationOnly` | 2 |  |
-
-### NmFootPhaseCondition_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `LeftFootDown` | 0 |  |
-| `LeftFootPassing` | 1 |  |
-| `LeftPhase` | 4 |  |
-| `RightFootDown` | 2 |  |
-| `RightFootPassing` | 3 |  |
-| `RightPhase` | 5 |  |
-| `None` | 6 |  |
-
-### NmFootPhase_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `LeftFootDown` | 0 |  |
-| `RightFootPassing` | 1 |  |
-| `RightFootDown` | 2 |  |
-| `LeftFootPassing` | 3 |  |
-| `None` | 4 |  |
-
-### NmFrameSnapEventMode_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Floor` | 0 |  |
-| `Round` | 1 |  |
-
-### NmGraphDebugMode_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Off` | 0 |  |
-| `On` | 1 |  |
-
-### NmGraphEventTypeCondition_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Entry` | 0 |  |
-| `FullyInState` | 1 |  |
-| `Exit` | 2 |  |
-| `Timed` | 3 |  |
-| `Generic` | 4 |  |
-| `Any` | 5 |  |
-
-### NmGraphValueType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Unknown` | 0 |  |
-| `Bool` | 1 |  |
-| `ID` | 2 |  |
-| `Float` | 3 |  |
-| `Vector` | 4 |  |
-| `Target` | 5 |  |
-| `BoneMask` | 6 |  |
-| `Pose` | 7 |  |
-| `Special` | 8 |  |
-
-### NmIKBlendMode_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Effector` | 0 |  |
-| `Pose` | 1 |  |
-
 ### NmPercent_t
 
 **Metadata:** `MGetKV3ClassDefaults {
@@ -5770,27 +5418,6 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_flValue` | float32 |  |
-
-### NmPoseBlendMode_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Overlay` | 0 |  |
-| `Additive` | 1 |  |
-| `ModelSpace` | 2 |  |
-
-### NmRootMotionBlendMode_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Blend` | 0 |  |
-| `Additive` | 1 |  |
-| `IgnoreSource` | 2 |  |
-| `IgnoreTarget` | 3 |  |
 
 ### NmSyncTrackTimeRange_t
 
@@ -5850,47 +5477,3 @@ classDiagram
 |------|------|-------------|
 | `m_nEventIdx` | int32 |  |
 | `m_percentageThrough` | [NmPercent_t](../schemas/animlib.md#nmpercent_t) |  |
-
-### NmTargetWarpAlgorithm_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Lerp` | 0 |  |
-| `Hermite` | 1 |  |
-| `HermiteFeaturePreserving` | 2 |  |
-| `Bezier` | 3 |  |
-
-### NmTargetWarpRule_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `WarpXY` | 0 |  |
-| `WarpZ` | 1 |  |
-| `WarpXYZ` | 2 |  |
-| `RotationOnly` | 3 |  |
-| `FixedSection` | 4 |  |
-
-### NmTransitionRuleCondition_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `AnyAllowed` | 0 | Any Allowed |
-| `FullyAllowed` | 1 | Fully Allowed |
-| `ConditionallyAllowed` | 2 | Conditionally Allowed |
-| `Blocked` | 3 | Blocked |
-
-### NmTransitionRule_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `AllowTransition` | 0 | Fully Allowed |
-| `ConditionallyAllowTransition` | 1 | Conditionally Allowed |
-| `BlockTransition` | 2 | Blocked |

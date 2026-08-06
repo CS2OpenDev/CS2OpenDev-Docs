@@ -13,64 +13,69 @@ Class relationships (inheritance and composition) for the `modellib` module.
 
 ```mermaid
 classDiagram
-    CModelConfigElement <|-- CModelConfigElement_AttachedModel
-    CModelConfigElement <|-- CModelConfigElement_SetRenderColor
-    CBaseConstraint <|-- COrientConstraint
-    CBaseConstraint <|-- CPointConstraint
-    CBoneConstraintBase <|-- CBoneConstraintDotToMorph
-    CBoneConstraintBase <|-- CBoneConstraintPoseSpaceMorph
-    CBaseConstraint <|-- CBoneConstraintPoseSpaceBone
-    CBaseConstraint <|-- CTiltTwistConstraint
-    CBoneConstraintBase <|-- CBoneConstraintRbf
-    CBaseConstraint <|-- CTwistConstraint
-    CBaseConstraint <|-- CMorphConstraint
-    CModelConfigElement <|-- CModelConfigElement_SetMaterialGroup
-    CModelConfigElement <|-- CModelConfigElement_SetBodygroupOnAttachedModels
-    CModelConfigElement <|-- CModelConfigElement_Command
-    CBaseConstraint <|-- CParentConstraint
-    CModelConfigElement <|-- CModelConfigElement_RandomColor
-    CModelConfigElement <|-- CModelConfigElement_SetBodygroup
-    CModelConfigElement <|-- CModelConfigElement_RandomPick
-    CBoneConstraintBase <|-- CBaseConstraint
     CBaseConstraint <|-- CAimConstraint
-    CModelConfigElement <|-- CModelConfigElement_UserPick
-    CModelConfigElement <|-- CModelConfigElement_SetMaterialGroupOnAttachedModels
     CCycleBase <|-- CAnimCycle
+    CBoneConstraintBase <|-- CBaseConstraint
+    CBoneConstraintBase <|-- CBoneConstraintDotToMorph
+    CBaseConstraint <|-- CBoneConstraintPoseSpaceBone
+    CBoneConstraintBase <|-- CBoneConstraintPoseSpaceMorph
+    CBoneConstraintBase <|-- CBoneConstraintRbf
     CCycleBase <|-- CFootCycle
-    CModelConfigElement_AttachedModel *-- ModelConfigAttachmentType_t
-    ModelEmbeddedMesh_t *-- ModelMeshBufferData_t
-    RenderInputLayoutField_t *-- RenderSlotType_t
-    VPhysXBodyPart_t *-- VPhysics2ShapeDef_t
-    CFootTrajectories *-- CFootTrajectory
-    VsInputSignature_t *-- VsInputSignatureElement_t
-    CRenderSkeleton *-- RenderSkeletonBone_t
-    CVPhysXSurfacePropertiesList --> CPhysSurfaceProperties
-    CRenderGroom *-- RenderHairStrandInfo_t
-    CFlexRule *-- CFlexOp
-    RenderSkeletonBone_t *-- SkeletonBoneBounds_t
-    ModelBoneFlexDriverControl_t *-- ModelBoneFlexComponent_t
+    CModelConfigElement <|-- CModelConfigElement_AttachedModel
+    CModelConfigElement <|-- CModelConfigElement_Command
+    CModelConfigElement <|-- CModelConfigElement_RandomColor
+    CModelConfigElement <|-- CModelConfigElement_RandomPick
+    CModelConfigElement <|-- CModelConfigElement_SetBodygroup
+    CModelConfigElement <|-- CModelConfigElement_SetBodygroupOnAttachedModels
+    CModelConfigElement <|-- CModelConfigElement_SetMaterialGroup
+    CModelConfigElement <|-- CModelConfigElement_SetMaterialGroupOnAttachedModels
+    CModelConfigElement <|-- CModelConfigElement_SetRenderColor
+    CModelConfigElement <|-- CModelConfigElement_UserPick
+    CBaseConstraint <|-- CMorphConstraint
+    CBaseConstraint <|-- COrientConstraint
+    CBaseConstraint <|-- CParentConstraint
+    CBaseConstraint <|-- CPointConstraint
+    CBaseConstraint <|-- CTiltTwistConstraint
+    CBaseConstraint <|-- CTwistConstraint
     CAnimSkeleton *-- CAnimFoot
+    CBaseConstraint *-- CConstraintSlave
+    CBaseConstraint *-- CConstraintTarget
+    CFlexRule *-- CFlexOp
+    CFootCycleDefinition *-- CAnimCycle
+    CFootCycleDefinition *-- CFootCycle
+    CFootMotion *-- CFootStride
+    CFootStride *-- CFootCycleDefinition
+    CFootStride *-- CFootTrajectories
+    CFootTrajectories *-- CFootTrajectory
+    CHitBoxSet *-- CHitBox
+    CHitBoxSetList *-- CHitBoxSet
+    CMaterialDrawDescriptor *-- CRenderBufferBinding
+    CMeshletDescriptor *-- CDrawCullingData
+    CModelConfig --> CModelConfigElement
+    CModelConfigList --> CModelConfig
+    CMorphData *-- CMorphRectData
+    CMorphRectData *-- CMorphBundleData
+    CMorphSetData *-- CMorphData
+    CMorphSetData *-- CFlexDesc
+    CMorphSetData *-- CFlexController
+    CMorphSetData *-- CFlexRule
+    CPhysSurfaceProperties *-- CPhysSurfacePropertiesPhysics
+    CPhysSurfaceProperties *-- CPhysSurfacePropertiesVehicle
+    CPhysSurfaceProperties *-- CPhysSurfacePropertiesSoundNames
+    CPhysSurfaceProperties *-- CPhysSurfacePropertiesAudio
+    CRenderGroom *-- RenderHairStrandInfo_t
     CRenderMesh *-- CSceneObjectData
     CRenderMesh --> CBaseConstraint
     CRenderMesh *-- CRenderSkeleton
     CRenderMesh *-- DynamicMeshDeformParams_t
     CRenderMesh --> CRenderGroom
-    SkeletonDemoDb_t --> SkeletonAnimCapture_t
-    CMorphSetData *-- MorphBundleType_t
-    CMorphSetData *-- CMorphData
-    CMorphSetData *-- CFlexDesc
-    CMorphSetData *-- CFlexController
-    CMorphSetData *-- CFlexRule
-    CMeshletDescriptor *-- CDrawCullingData
-    CFootCycleDefinition *-- CAnimCycle
-    CFootCycleDefinition *-- CFootCycle
-    CHitBoxSet *-- CHitBox
+    CRenderSkeleton *-- RenderSkeletonBone_t
+    CSceneObjectData *-- CMaterialDrawDescriptor
+    CSceneObjectData *-- CMeshletDescriptor
     "CSceneObjectData::RTProxyDrawDescriptor_t" *-- CMaterialDrawDescriptor
-    "CSceneObjectData::RTProxyDrawDescriptor_t" *-- VertexAlbedoFormat_t
-    CFootStride *-- CFootCycleDefinition
-    CFootStride *-- CFootTrajectories
-    CFlexOp *-- FlexOpCode_t
-    "SkeletonAnimCapture_t::Frame_t" *-- SkeletonAnimCapture_t
+    CVPhysXSurfacePropertiesList --> CPhysSurfaceProperties
+    ModelBoneFlexDriver_t *-- ModelBoneFlexDriverControl_t
+    ModelEmbeddedMesh_t *-- ModelMeshBufferData_t
     ModelMeshBufferData_t *-- RenderInputLayoutField_t
     PermModelData_t *-- PermModelInfo_t
     PermModelData_t *-- PermModelExtPart_t
@@ -80,29 +85,16 @@ classDiagram
     PermModelData_t --> CModelConfigList
     PermModelData_t *-- PermModelDataAnimatedMaterialAttribute_t
     PermModelData_t *-- ModelAnimGraph2Ref_t
-    CMorphRectData *-- CMorphBundleData
-    CFootMotion *-- CFootStride
-    CPhysSurfaceProperties *-- CPhysSurfacePropertiesPhysics
-    CPhysSurfaceProperties *-- CPhysSurfacePropertiesVehicle
-    CPhysSurfaceProperties *-- CPhysSurfacePropertiesSoundNames
-    CPhysSurfaceProperties *-- CPhysSurfacePropertiesAudio
-    CHitBoxSetList *-- CHitBoxSet
-    CNPCPhysicsHull *-- NPCPhysicsHullType_t
-    VPhysXConstraint2_t *-- VPhysXConstraintParams_t
-    CBaseConstraint *-- CConstraintSlave
-    CBaseConstraint *-- CConstraintTarget
-    CMaterialDrawDescriptor *-- RenderPrimitiveType_t
-    CMaterialDrawDescriptor *-- CRenderBufferBinding
+    RenderSkeletonBone_t *-- SkeletonBoneBounds_t
+    "SkeletonAnimCapture_t::Frame_t" *-- SkeletonAnimCapture_t
+    SkeletonDemoDb_t --> SkeletonAnimCapture_t
     VPhysXAggregateData_t *-- VPhysXBodyPart_t
     VPhysXAggregateData_t *-- PhysShapeMarkup_t
     VPhysXAggregateData_t *-- VPhysXConstraint2_t
     VPhysXAggregateData_t *-- VPhysXJoint_t
     VPhysXAggregateData_t *-- VPhysXCollisionAttributes_t
-    CModelConfig --> CModelConfigElement
+    VPhysXBodyPart_t *-- VPhysics2ShapeDef_t
+    VPhysXConstraint2_t *-- VPhysXConstraintParams_t
     VPhysXJoint_t *-- VPhysXRange_t
-    CMorphData *-- CMorphRectData
-    ModelBoneFlexDriver_t *-- ModelBoneFlexDriverControl_t
-    CModelConfigList --> CModelConfig
-    CSceneObjectData *-- CMaterialDrawDescriptor
-    CSceneObjectData *-- CMeshletDescriptor
+    VsInputSignature_t *-- VsInputSignatureElement_t
 ```

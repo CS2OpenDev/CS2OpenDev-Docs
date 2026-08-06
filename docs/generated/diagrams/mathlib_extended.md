@@ -13,12 +13,10 @@ Class relationships (inheritance and composition) for the `mathlib_extended` mod
 
 ```mermaid
 classDiagram
-    FunctionInfo_t *-- FuseFunctionIndex_t
     CFuseProgram *-- FuseVariableIndex_t
-    VariableInfo_t *-- FuseVariableIndex_t
-    VariableInfo_t *-- FuseVariableType_t
-    VariableInfo_t *-- FuseVariableAccess_t
     CFuseSymbolTable *-- ConstantInfo_t
     CFuseSymbolTable *-- VariableInfo_t
     CFuseSymbolTable *-- FunctionInfo_t
+    FunctionInfo_t *-- FuseFunctionIndex_t
+    VariableInfo_t *-- FuseVariableIndex_t
 ```

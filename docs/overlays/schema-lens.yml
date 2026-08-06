@@ -1,0 +1,37 @@
+# docs/overlays/schema-lens.yml
+#
+# Community overlay for the Schema History page (Layer A / schema_evolution.json).
+#
+# SchemaTracker emits the *mechanical* facts only — structural field/class/enum
+# deltas, plus neutral rename SIGNALS (pairedEvidence: offsetExact ∧ typeMatch).
+# It deliberately does NOT assert a rename, a safety verdict, or an alias chain.
+# This file is where the community supplies the judgment the machine withholds.
+# The generator reads it; it never writes back into schema_evolution.json.
+#
+# See docs/overlays/README.md and the Schema History page for context.
+
+# Optional page-level intro / callout (override the generated defaults).
+# description: >
+#   ...
+# notes: >
+#   ...
+
+# Confirmed renames — promote a mechanical remove+add (or a pairedEvidence
+# pairing) to an authoritative rename.  Folded into field_history.json's
+# aliasChain and flagged on the Schema History page.
+#   NOTE: a rename is not provable from the schema alone; only assert one you
+#   have independently verified (HL2SDK diff, wire capture, changelog, etc.).
+confirmed_renames: []
+#   - class: "client.dll/C_BaseEntity"   # "<module>/<ClassName>" as in the artifact
+#     from: m_oldName
+#     to:   m_newName
+#     note: "Verified against hl2sdk commit <sha>."
+
+# Community-flagged semantic breaks the machine can't detect (unit change,
+# redefinition at the same name+offset, field split).  Rendered as warnings.
+breaking: []
+#   - class: "server.dll/CCSPlayerPawn"
+#     field: m_angEyeAngles
+#     build: "12345678->12346789"
+#     note: "Units changed radians→degrees; guard before reuse."
+#     guard: exposeRaw     # dropField | defaultFill | freezeLastKnown | exposeRaw

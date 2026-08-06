@@ -13,6 +13,6 @@ Class relationships (inheritance and composition) for the `resourcefile` module.
 
 ```mermaid
 classDiagram
-    CExampleSchemaVData_PolymorphicBase <|-- CExampleSchemaVData_PolymorphicDerivedB
     CExampleSchemaVData_PolymorphicBase <|-- CExampleSchemaVData_PolymorphicDerivedA
+    CExampleSchemaVData_PolymorphicBase <|-- CExampleSchemaVData_PolymorphicDerivedB
 ```

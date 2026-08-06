@@ -13,30 +13,33 @@ Class relationships (inheritance and composition) for the `soundsystem` module.
 
 ```mermaid
 classDiagram
-    CSosGroupActionSchema <|-- CSosGroupActionTimeLimitSchema
-    CSosGroupActionSchema <|-- CSosGroupActionMemberCountEnvelopeSchema
-    CSosGroupActionSchema <|-- CSosGroupActionTimeBlockLimitSchema
-    CSosGroupActionSchema <|-- CSosGroupActionLimitSchema
-    CSosGroupActionSchema <|-- CSosGroupActionSoundeventCountSchema
     CSndSeqInstBaseSchema <|-- CSndSeqInstMidiSampler
-    ISndSeqInstruments <|-- CSndSeqInstruments
     CSndSeqInstBaseSchema <|-- CSndSeqInstSndEvtSchema
-    CSosGroupActionSchema <|-- CSosGroupActionSoundeventPrioritySchema
-    CSosGroupActionSchema <|-- CSosGroupActionSoundeventMinMaxValuesSchema
+    ISndSeqInstruments <|-- CSndSeqInstruments
+    CSosGroupActionSchema <|-- CSosGroupActionLimitSchema
+    CSosGroupActionSchema <|-- CSosGroupActionMemberCountEnvelopeSchema
+    CSosGroupActionSchema <|-- CSosGroupActionOcclusionSchema
     CSosGroupActionSchema <|-- CSosGroupActionSetSoundeventParameterSchema
     CSosGroupActionSchema <|-- CSosGroupActionSoundeventClusterSchema
-    CSosGroupActionSchema <|-- CSosGroupActionOcclusionSchema
-    CSosGroupActionLimitSchema *-- SosActionStopType_t
-    CSosGroupActionLimitSchema *-- SosActionLimitSortType_t
-    KeyGroup_t --> VelocityZone_t
-    SosEditItemInfo_t *-- SosEditItemType_t
-    CDspPresetModifierList *-- CDSPMixgroupModifier
-    CSndSeqInstBaseSchema *-- SndSeqInstrumentType_t
-    CSndSeqInstBaseSchema *-- SndSeqPlayerType_t
-    CSosSoundEventGroupSchema *-- SosGroupType_t
-    CSosSoundEventGroupSchema *-- SosGroupFieldBehavior_t
-    CSosSoundEventGroupSchema --> CSosGroupActionSchema
-    SelectedEditItemInfo_t *-- SosEditItemInfo_t
-    CSosGroupActionSetSoundeventParameterSchema *-- SosActionSetParamSortType_t
+    CSosGroupActionSchema <|-- CSosGroupActionSoundeventCountSchema
+    CSosGroupActionSchema <|-- CSosGroupActionSoundeventMinMaxValuesSchema
+    CSosGroupActionSchema <|-- CSosGroupActionSoundeventPrioritySchema
+    CSosGroupActionSchema <|-- CSosGroupActionTimeBlockLimitSchema
+    CSosGroupActionSchema <|-- CSosGroupActionTimeLimitSchema
+    CVoiceContainerBase <|-- CVoiceContainerVMixSnd
+    SndBeatEventKeys_t <|-- SndBeatEventKeyedFloats_t
+    SndBeatEventKeys_t <|-- SndBeatEventKeyedMidiNotes_t
+    SndBeatEventKeys_t <|-- SndBeatEventKeyedSndEvts_t
     CDSPPresetMixgroupModifierTable *-- CDspPresetModifierList
+    CDspPresetModifierList *-- CDSPMixgroupModifier
+    CSndBeatPattern *-- SndBeatTimeSignature_t
+    CSndBeatPattern *-- SndBeatEventKeys_t
+    CSndBeatPattern *-- SndBeatEventKeyedFloats_t
+    CSndBeatPattern *-- SndBeatEventKeyedSndEvts_t
+    CSndBeatPattern *-- SndBeatEventKeyedMidiNotes_t
+    CSndBeatPatternManager *-- CSndBeatPattern
+    CSndBeatPatternManager *-- CSndBeatTrack
+    CSosSoundEventGroupSchema --> CSosGroupActionSchema
+    KeyGroup_t --> VelocityZone_t
+    SelectedEditItemInfo_t *-- SosEditItemInfo_t
 ```

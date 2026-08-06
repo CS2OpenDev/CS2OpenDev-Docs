@@ -18,61 +18,79 @@ https://raw.githubusercontent.com/CS2OpenDev/CS2OpenDev-Docs/main/AGENTS.md
 ## What this documentation covers
 
 This repository contains auto-generated, structured documentation for
-Counter-Strike 2, extracted from two upstream sources and updated
+Counter-Strike 2, extracted from a single upstream source and updated
 automatically every 4 hours:
 
-- [`SteamDatabase/GameTracking-CS2`](https://github.com/SteamDatabase/GameTracking-CS2)
-  — Protobufs, `.gameevents`, ConVars, commands.
-- [`ValveResourceFormat/SchemaExplorer`](https://github.com/ValveResourceFormat/SchemaExplorer)
-  — DumpSource2's structured `cs2.json.gz` (entity classes/structs/enums with
-  fields, **memory offsets**, **type sizes**, parent chains, and metadata).
+- [`CS2OpenDev/CS2OpenDev-SchemaTracker`](https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker)
+  — a deterministic, provenance-tracked extraction that walks the shipped
+  CS2 **runtime binaries** in-process and emits, per game build, one
+  internally consistent set of JSON + protobuf artifacts: entity
+  classes/structs/enums (with **memory offsets**, **type sizes**, parent
+  chains, binary module, and metadata), the build's protobuf descriptors,
+  network/demo message tables, ConVars, commands, game events, and the
+  game-content tables (items, game modes, surfaces, props, maps).
+
+Because SchemaTracker reads only the game binaries, coverage is
+**runtime-only**: the schema spans the modules those binaries register
+(`client`, `server`, `entity2`, `pulse_runtime_lib`, `particleslib`,
+`animgraphlib`) — roughly 1,500 types.  The Source 2 editor / tooling
+schema (hammer, modeldoc, resourcecompiler, worldrenderer, …) never ships
+in the game and is intentionally **absent**.
 
 The documentation covers:
 
 | Section | Contents | Browse URL |
 |---------|----------|------------|
-| **Schema entities** | All C++ entity classes, structs, and enums from CS2's DumpSource2 dump (~3 970 types across 46 engine modules), each with field offsets and class sizes | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas |
-| **Protobufs** | All `.proto` message definitions — game events, network messages, GC messages, demo format (42 files, ~777 messages).  Compiled via `protoc` and walked as `FileDescriptorProto`s, so source-info comments and default values are preserved verbatim. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/protobufs |
-| **ConVars** | Every console variable with default value, flags, and description (~3 800 entries) | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/convars |
-| **Commands** | Every console command with flags and description (~1 130 entries) | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/commands |
+| **Schema entities** | All C++ entity classes, structs, and enums the CS2 runtime binaries register (~1,500 types across 6 modules), each with field offsets, class sizes, flags, and the binary module it lives in | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas |
+| **Protobufs** | The build's `.proto` message definitions — game events, network messages, GC messages, demo format (~32 files, ~500 messages), read from SchemaTracker's prebuilt `FileDescriptorSet`.  These are reconstructed from the binaries, so they carry **no source comments** (see the network-message tables below for the ID↔type mapping). | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/protobufs |
+| **Network & demo messages** | Wire-protocol tables: integer message ID → protobuf message type, per channel, cross-linked to the protobuf pages | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/network |
+| **ConVars** | Every console variable with default value, flags, value type, and description (~3,350 entries) | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/convars |
+| **Commands** | Every console command with flags and description (~840 entries) | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/commands |
+| **Items & economy** | Items, prefabs, paint kits (skins), sticker kits, music kits, rarities, qualities | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/items |
+| **Game modes / maps / surfaces / props** | Game types & modes, map groups, radar overviews, surface physics, breakable-prop data | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/gamemodes |
+| **Changelog** | Per-build diff (added / removed / changed) against the previous build | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/changelog |
 | **UML diagrams** | Mermaid class-hierarchy diagrams for every schema module | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/server_hierarchy |
-| **Entity schema** | `downstream-codegen-schemas/cs2_schema.json` — community-enriched mirror of upstream `cs2.json.gz` from DumpSource2.  Mirrors upstream's exact shape (top-level `generator` / `revision` / `version_date` / `version_time` / `classes` / `enums`) so any tooling that targets the DumpSource2 dump works unchanged.  Optional `annotations` blocks layer in community-curated descriptions, notes, and warnings.  See the [format reference](#cs2_schemajson-format) below. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/cs2_schema.json |
-| **Game events schema** | `downstream-codegen-schemas/gameevents_schema.json` — community-enriched mirror of the parsed `.gameevents` KV1 registry.  Top-level `events` list; each event preserves its `name` / `comment` / `source` / `properties` / `fields` from the upstream KV1 source.  Same `annotations` enrichment pattern as `cs2_schema.json`. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/gameevents_schema.json |
-| **ConVars schema** | `downstream-codegen-schemas/convars_schema.json` — structured projection of `DumpSource2/convars.txt`.  Top-level `convars` list, each `{ name, default, flags, description }`. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/convars_schema.json |
-| **Commands schema** | `downstream-codegen-schemas/commands_schema.json` — structured projection of `DumpSource2/commands.txt`.  Top-level `commands` list, each `{ name, flags, description }`. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/commands_schema.json |
-| **Well-known constants** | `downstream-codegen-schemas/well_known_constants.json` — integer / enum values downstream tooling needs but that DumpSource2 doesn't expose as named enum types (team numbers, `m_gamePhase`, `CSWeaponState_t`, …).  Source of truth is `docs/overlays/well_known_constants.yml`. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/well_known_constants.json |
+| **Entity schema** | `downstream-codegen-schemas/cs2_schema.json` — the entity schema in SchemaTracker's **native** shape (top-level `generator` / `revision` / `version_date` / `version_time` / `classes` / `enums`), enriched with optional community `annotations`.  See the [format reference](#cs2_schemajson-format) below. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/cs2_schema.json |
+| **Game events schema** | `downstream-codegen-schemas/gameevents_schema.json` — the game-event registry.  Top-level `events` list; each event has `name` / `comment` / `source` / `properties` / `fields`.  Same `annotations` enrichment pattern as `cs2_schema.json`. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/gameevents_schema.json |
+| **ConVars schema** | `downstream-codegen-schemas/convars_schema.json` — top-level `convars` list, each `{ name, default, flags, description }`. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/convars_schema.json |
+| **Commands schema** | `downstream-codegen-schemas/commands_schema.json` — top-level `commands` list, each `{ name, flags, description }`. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/commands_schema.json |
+| **Well-known constants** | `downstream-codegen-schemas/well_known_constants.json` — integer / enum values downstream tooling needs but that the schema doesn't expose as named enum types (team numbers, `m_gamePhase`, `CSWeaponState_t`, …).  Source of truth is `docs/overlays/well_known_constants.yml`. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/well_known_constants.json |
 
 ### `cs2_schema.json` format
 
-The file is a community-enriched mirror of upstream SchemaExplorer's `schemas/cs2.json.gz`.
-It is **not** JSON Schema — that approach was tried and abandoned because
-standard codegens (quicktype, NJsonSchema, json-schema-to-typescript, …)
-couldn't handle the layered `allOf`/`$ref` inheritance and synthetic
-defs needed to model native CS2 types.  Mirroring upstream's structured
-shape lets each consumer apply its own type-mapping policy.
+The file is the entity schema in **CS2OpenDev-SchemaTracker's native shape**
+(proto3-canonical JSON), with optional community `annotations` layered on.
+It is **not** JSON Schema.  Two mechanical conventions matter to consumers:
+integer `offset` / `size` / `count` values are **string-encoded**
+(`"offset": "8"`), and type `category` values are **UPPERCASE**
+(`BUILTIN`, `ATOMIC`, `DECLARED_CLASS`, `DECLARED_ENUM`, `PTR`,
+`FIXED_ARRAY`, `BITFIELD`).
 
 **Top-level**
 
 ```json
 {
-  "schema_format_version": "1.1",
-  "generator": "https://github.com/ValveResourceFormat/DumpSource2",
-  "revision": 10627055,
-  "version_date": "Apr 30 2026",
-  "version_time": "15:09:15",
+  "schema_format_version": "2.0",
+  "generator": "https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker",
+  "revision": "hl2sdk-cs2/…",
+  "version_date": "2026-07-09",
+  "version_time": "2026-07-09T20:41:37Z",
   "classes": [...],
   "enums":   [...]
 }
 ```
 
-`generator` / `revision` / `version_date` / `version_time` come straight
-from upstream's header and identify the CS2 build the schema describes.
+`generator` / `revision` / `version_date` / `version_time` identify the CS2
+build (Steam build id + date) the schema describes.
 `schema_format_version` describes the JSON shape itself — major bumps on
 field removal / rename, minor bumps on field addition.  Additive
-`annotations` blocks do not require a bump.  All four codegen schemas
+`annotations` blocks do not require a bump.  All five codegen schemas
 (`cs2_schema.json`, `gameevents_schema.json`, `convars_schema.json`,
 `commands_schema.json`, `well_known_constants.json`) carry the same
-`schema_format_version` value.
+`schema_format_version` value.  **`2.0` is a breaking change from the
+DumpSource2-mirror `1.x`** — the source moved to SchemaTracker and the
+class/enum shape is native (camelCase keys, string ints, UPPERCASE
+categories, a `module`/`projectName` split).
 
 **Per-class entry** (one per `(module, name)` — cross-module twins like
 `CCSPlayerController` emit one record each):
@@ -80,11 +98,17 @@ field removal / rename, minor bumps on field addition.  Additive
 | Key | What it carries |
 |---|---|
 | `name` | C++ class / struct name. |
-| `module` | The CS2 engine module the entity lives in (`client`, `server`, `animationsystem`, …). |
-| `size` | Class instance size in bytes (the C++ `sizeof`). |
-| `parents` | Inheritance list as `[{module, name}]`.  Empty when the class has no base. |
+| `module` | The **binary** the class is registered in (`client.dll` / `server.dll` / `engine2.dll` / `animationsystem.dll` / `!GlobalTypes`; `.so` names on Linux). |
+| `projectName` | The source module / project (`client`, `server`, `entity2`, `pulse_runtime_lib`, `particleslib`, `animgraphlib`) — the axis the doc pages group by. |
+| `cppName` | The class's C++ symbol name. |
+| `size` | Class instance size in bytes (the C++ `sizeof`), **string-encoded**. |
+| `alignment` | Byte alignment (`1`/`2`/`4`/`8`/`16`). |
+| `flags`, `flags2` | Raw schema class-flag bitmasks. |
+| `singleInheritanceDepth`, `multipleInheritanceDepth` | Inheritance-chain depths. |
+| `parents` | Inheritance list as `[{module, name, offset}]`.  Empty when the class has no base. |
 | `fields` | List of field records (see below). |
-| `metadata` | Class-level metadata as `[{name, value?}]`.  Preserves runtime reflection tags like `MGetKV3ClassDefaults`, `MNetworkVarNames`, etc.  Pass through to codegen consumers as needed. |
+| `staticFields` | Static field records (often empty). |
+| `metadata` | Class-level metadata as `[{name, value?, valueParsed?}]`.  Preserves runtime reflection tags like `MGetKV3ClassDefaults`, `MNetworkVarNames`, etc. |
 | `annotations` *(optional)* | Community enrichment: `{description?, notes?, warning?}`.  Only present when an overlay matches the entity. |
 
 **Per-field entry** (under a class's `fields` list):
@@ -92,34 +116,42 @@ field removal / rename, minor bumps on field addition.  Additive
 | Key | What it carries |
 |---|---|
 | `name` | Field identifier (e.g. `m_hPawn`). |
-| `offset` | Byte offset within the containing class. |
+| `offset` | Byte offset within the containing class, **string-encoded**. |
 | `type` | Structured type record (see below). |
-| `metadata` | Field-level metadata as `[{name, value?}]` — `MNetworkVarTypeOverride`, `MPropertyFriendlyName`, `MPropertyDescription`, etc.  ~4700 fields carry value-bearing metadata. |
+| `typeModule` | Binary module of the referenced declared type, or `""`. |
+| `metadata` | Field-level metadata as `[{name, value?, valueParsed?}]` — `MNetworkVar`, `MNetworkChangeCallback`, `MPropertyFriendlyName`, `MPropertyDescription`, etc. |
 | `annotations` *(optional)* | Community enrichment: `{description?, notes?, warning?}`.  Only present when an overlay matches the field. |
 
-**Field `type` shapes** (`category` discriminates the variant):
+**Field `type` shapes.**  `category` (UPPERCASE) discriminates the variant,
+and — importantly — `name` already carries the **fully-rendered** C++ type
+string for every category, so the simplest consumers can read `name`
+directly and ignore `inner`.  `count` is string-encoded.
 
-| `category` | Other keys | Example |
+| `category` | Other keys | Example `name` |
 |---|---|---|
-| `builtin` | `name` | `{"category": "builtin", "name": "int32"}` |
-| `declared_class` | `name`, `module` | `{"category": "declared_class", "module": "server", "name": "CCSPlayerPawn"}` |
-| `declared_enum` | `name`, `module` | `{"category": "declared_enum", "module": "client", "name": "AmmoIndex_t"}` |
-| `atomic` | `name`, `inner` (sometimes `inner2`, `inner3`) | `{"category": "atomic", "name": "CHandle", "inner": {...}}` |
-| `ptr` | `inner` | `{"category": "ptr", "inner": {...}}` |
-| `fixed_array` | `inner`, `count` | `{"category": "fixed_array", "count": 16, "inner": {...}}` |
-| `bitfield` | `count` (bits) | `{"category": "bitfield", "count": 3}` |
+| `BUILTIN` | `name` | `"int32"` |
+| `DECLARED_CLASS` | `name`, `module` | `"CCSPlayerPawn"` |
+| `DECLARED_ENUM` | `name`, `module` | `"AmmoIndex_t"` |
+| `ATOMIC` | `name`, `inner` (sometimes `inner2`, `inner3`) | `"CHandle< CCSPlayerPawn >"` |
+| `PTR` | `name`, `inner` | `"CPulse_Chunk*"` |
+| `FIXED_ARRAY` | `name`, `inner`, `count` | `"char[128]"` |
+| `BITFIELD` | `name`, `count` (bits) | `"bitfield:1"` |
 
-`inner` is itself a type record — recurse to resolve `CHandle<CCSPlayerPawn>*[16]` and friends.  When the innermost type is a `declared_class` or `declared_enum`, its `module` field disambiguates which class lives where.
+`inner` is itself a type record — recurse when you need the element type of
+a template / pointer / array.  When the innermost type is a
+`DECLARED_CLASS` or `DECLARED_ENUM`, its `module` field disambiguates which
+class lives where.
 
 **Per-enum entry**:
 
 | Key | What it carries |
 |---|---|
 | `name` | Enum name. |
-| `module` | Engine module. |
-| `alignment` | Underlying integer type (`uint32_t`, `int8_t`, …). |
-| `members` | List of `{name, value, metadata}` member records.  ~1017 members across all enums carry metadata (`MPropertyFriendlyName`, `MPropertyDescription`). |
-| `metadata` | Enum-level metadata. |
+| `module` | The binary the enum is registered in. |
+| `alignment` | Underlying integer type name (`uint32_t`, `int8_t`, …). |
+| `size` | Underlying byte width. |
+| `flags` | Raw enum-flag bitmask. |
+| `members` | List of `{name, value, metadata}` member records; `value` is **string-encoded** and may be negative.  Many members carry `MPropertyFriendlyName` / `MPropertyDescription`. |
 | `annotations` *(optional)* | Community enrichment, same shape as on classes. |
 
 **Per-enum-member entry**:
@@ -131,7 +163,7 @@ field removal / rename, minor bumps on field addition.  Additive
 | `metadata` | Member-level metadata as `[{name, value?}]`. |
 | `annotations` *(optional)* | Community enrichment when the overlay supplies a per-member description. |
 
-A consumer that has never heard of `annotations` ignores the key and gets exactly upstream's shape.  A consumer that reads `annotations` gets the curated descriptions / notes / warnings on top.
+A consumer that has never heard of `annotations` ignores the key and gets SchemaTracker's native record unchanged.  A consumer that reads `annotations` gets the curated descriptions / notes / warnings on top.
 
 **Parsed KV3 defaults.**  Class- and field-level `metadata` entries
 named `MGetKV3ClassDefaults` carry the entity's KV3-encoded default
@@ -151,22 +183,12 @@ binary size of but never registers field-level reflection for.
 Downstream consumers can emit them as empty (sized) classes; field
 layout is not recoverable from the dump.
 
-**Fields that older dumps carried but the current dump does not.**
-The mirror passes through exactly what upstream `cs2.json.gz` emits.
-Several fields that were present in older SchemaExplorer revisions
-(`abstract` on classes, `flags` on enums, `handle_kind` on `CHandle` /
-`CStrongHandle` / `CWeakHandle` atomics, `storage_size` on enums) are
-not present in the current upstream output and so are absent from this
-mirror as well.  File requests upstream at
-`ValveResourceFormat/SchemaExplorer` if you need them restored.
-
 #### Deriving handle kind from atomic name
 
-Until upstream restores the `handle_kind` discriminator, downstream
-codegen can recover it from the atomic `name` directly — every handle
-atomic name in the current schema derives from `CBaseHandle` and the
-name carries the distinction.  Observed in the current build (counts
-are field occurrences across all classes):
+There is no dedicated `handle_kind` discriminator — recover it from the
+atomic `name` directly.  Every handle atomic name derives from
+`CBaseHandle` and the name carries the distinction (the counts below are
+field occurrences and may drift build to build):
 
 | Atomic name | Kind | Notes |
 |---|---|---|

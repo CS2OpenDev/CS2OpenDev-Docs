@@ -13,8 +13,11 @@ Class relationships (inheritance and composition) for the `navlib` module.
 
 ```mermaid
 classDiagram
-    CNavVolume <|-- CNavVolumeSphere
+    CNavFlags <|-- CNavAttribute
+    INavPathCost <|-- CNavPathCost
     CNavVolumeVector <|-- CNavVolumeAll
-    CNavVolume <|-- CNavVolumeVector
+    CNavVolume <|-- CNavVolumeSphere
     CNavVolumeSphere <|-- CNavVolumeSphericalShell
+    CNavVolume <|-- CNavVolumeVector
+    INavPathCost *-- NavHull_t
 ```

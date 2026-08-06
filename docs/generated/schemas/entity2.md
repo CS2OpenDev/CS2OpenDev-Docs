@@ -24,9 +24,7 @@ nav_exclude: true
 | [CVariantDefaultAllocator](#cvariantdefaultallocator) | class |  | 0 |
 | [EntComponentInfo_t](#entcomponentinfo_t) | class |  | 7 |
 | [EntInput_t](#entinput_t) | class |  | 0 |
-| [EntityDormancyType_t](#entitydormancytype_t) | enum |  | 3 |
-| [EntityIOQueuePrioritizedEvent_t](#entityioqueueprioritizedevent_t) | class |  | 9 |
-| [EntityIOTargetType_t](#entityiotargettype_t) | enum |  | 4 |
+| [EntityIOQueuePrioritizedEvent_t](#entityioqueueprioritizedevent_t) | class |  | 8 |
 | [GameTick_t](#gametick_t) | class |  | 1 |
 | [GameTime_t](#gametime_t) | class |  | 1 |
 
@@ -40,8 +38,8 @@ nav_exclude: true
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_Attributes` | CUtlOrderedMap<CUtlStringToken,Attribute_t> |  |
-| `m_Names` | CUtlOrderedMap<CUtlStringToken,CUtlString> |  |
+| `m_Attributes` | CUtlOrderedMap< CUtlStringTokenNoRegistration, Attribute_t > |  |
+| `m_Names` | CUtlOrderedMap< CUtlStringTokenNoRegistration, CUtlString > |  |
 
 ### CEntityComponent
 
@@ -51,13 +49,13 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    CEntityComponent <|-- CLightComponent
-    CEntityComponent <|-- CHitboxComponent
-    CEntityComponent <|-- CRenderComponent
-    CEntityComponent <|-- CPropDataComponent
-    CEntityComponent <|-- CBodyComponent
     CEntityComponent <|-- CScriptComponent
+    CEntityComponent <|-- CBodyComponent
+    CEntityComponent <|-- CHitboxComponent
+    CEntityComponent <|-- CLightComponent
     CEntityComponent <|-- CPathQueryComponent
+    CEntityComponent <|-- CPropDataComponent
+    CEntityComponent <|-- CRenderComponent
     CEntityComponent <|-- CTouchExpansionComponent
 ```
 
@@ -82,6 +80,8 @@ classDiagram
 ### CEntityIOOutput
 
 ### CEntityIdentity
+
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
@@ -151,6 +151,10 @@ classDiagram
 
 **Inherits from:** [CEntityComponent](entity2.md#centitycomponent)
 
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CScriptComponent"
+}`
+
 **Relationships:**
 
 ```mermaid
@@ -189,16 +193,6 @@ classDiagram
 
 ### EntInput_t
 
-### EntityDormancyType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `ENTITY_NOT_DORMANT` | 0 |  |
-| `ENTITY_DORMANT` | 1 |  |
-| `ENTITY_SUSPENDED` | 2 |  |
-
 ### EntityIOQueuePrioritizedEvent_t
 
 **Metadata:** `MGetKV3ClassDefaults {
@@ -208,7 +202,6 @@ classDiagram
 	"m_pTargetInput": "",
 	"m_hActivator": null,
 	"m_hCaller": null,
-	"m_nOutputID": 0,
 	"m_hEntTarget": null
 }`
 
@@ -226,25 +219,13 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_flFireTime` | [GameTime_t](../schemas/entity2.md#gametime_t) |  |
-| `m_targetType` | [EntityIOTargetType_t](../schemas/entity2.md#entityiotargettype_t) |  |
+| `m_targetType` | [EntityIOTargetType_t](../schemas/!GlobalTypes.md#entityiotargettype_t) |  |
 | `m_pTarget` | CUtlSymbolLarge |  |
 | `m_pTargetInput` | CUtlSymbolLarge |  |
 | `m_hActivator` | CEntityHandle |  |
 | `m_hCaller` | CEntityHandle |  |
-| `m_nOutputID` | int32 |  |
 | `m_hEntTarget` | CEntityHandle |  |
-| `m_variantValue` | CVariantBase<[CVariantDefaultAllocator](../schemas/entity2.md#cvariantdefaultallocator)> | `MSaveOpsForField "GetVariantSaveDataOps"` |
-
-### EntityIOTargetType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `ENTITY_IO_TARGET_INVALID` | -1 |  |
-| `ENTITY_IO_TARGET_ENTITYNAME` | 2 |  |
-| `ENTITY_IO_TARGET_EHANDLE` | 6 |  |
-| `ENTITY_IO_TARGET_ENTITYNAME_OR_CLASSNAME` | 7 |  |
+| `m_variantValue` | CVariantBase< [CVariantDefaultAllocator](../schemas/entity2.md#cvariantdefaultallocator) > | `MKV3TransferSaveOpsForField GetVariantSaveDataOps` |
 
 ### GameTick_t
 

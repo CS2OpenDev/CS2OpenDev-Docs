@@ -23,12 +23,11 @@ nav_exclude: true
 | [CLayerMask](#clayermask) | class |  | 4 |
 | [CLevelsColorCorrectionLayer](#clevelscolorcorrectionlayer) | class | CColorCorrectionLayer | 20 |
 | [CLocalContrastLayer](#clocalcontrastlayer) | class | CColorCorrectionLayer | 1 |
+| [CLocalExposureLayer](#clocalexposurelayer) | class | CColorCorrectionLayer | 1 |
 | [CPostProcessData](#cpostprocessdata) | class |  | 1 |
 | [CToneMappingLayer](#ctonemappinglayer) | class | CColorCorrectionLayer | 1 |
 | [CVibranceColorCorrectionLayer](#cvibrancecolorcorrectionlayer) | class | CColorCorrectionLayer | 2 |
 | [CVignetteLayer](#cvignettelayer) | class | CColorCorrectionLayer | 1 |
-| [LayerMaskType_t](#layermasktype_t) | enum |  | 2 |
-| [LayerType_t](#layertype_t) | enum |  | 14 |
 
 ---
 
@@ -185,27 +184,28 @@ classDiagram
 
 ### CColorCorrectionLayer
 
-**Derived by:** [CBloomLayer](resourcecompiler.md#cbloomlayer), [CBrightnessContrastColorCorrectionLayer](resourcecompiler.md#cbrightnesscontrastcolorcorrectionlayer), [CColorBalanceColorCorrectionLayer](resourcecompiler.md#ccolorbalancecolorcorrectionlayer), [CColorLookupColorCorrectionLayer](resourcecompiler.md#ccolorlookupcolorcorrectionlayer), [CColorTintColorCorrectionLayer](resourcecompiler.md#ccolortintcolorcorrectionlayer), [CCurvesColorCorrectionLayer](resourcecompiler.md#ccurvescolorcorrectionlayer), [CFogScatteringLayer](resourcecompiler.md#cfogscatteringlayer), [CHueSaturationColorCorrectionLayer](resourcecompiler.md#chuesaturationcolorcorrectionlayer), [CLevelsColorCorrectionLayer](resourcecompiler.md#clevelscolorcorrectionlayer), [CLocalContrastLayer](resourcecompiler.md#clocalcontrastlayer), [CToneMappingLayer](resourcecompiler.md#ctonemappinglayer), [CVibranceColorCorrectionLayer](resourcecompiler.md#cvibrancecolorcorrectionlayer), [CVignetteLayer](resourcecompiler.md#cvignettelayer)
+**Derived by:** [CBloomLayer](resourcecompiler.md#cbloomlayer), [CBrightnessContrastColorCorrectionLayer](resourcecompiler.md#cbrightnesscontrastcolorcorrectionlayer), [CColorBalanceColorCorrectionLayer](resourcecompiler.md#ccolorbalancecolorcorrectionlayer), [CColorLookupColorCorrectionLayer](resourcecompiler.md#ccolorlookupcolorcorrectionlayer), [CColorTintColorCorrectionLayer](resourcecompiler.md#ccolortintcolorcorrectionlayer), [CCurvesColorCorrectionLayer](resourcecompiler.md#ccurvescolorcorrectionlayer), [CFogScatteringLayer](resourcecompiler.md#cfogscatteringlayer), [CHueSaturationColorCorrectionLayer](resourcecompiler.md#chuesaturationcolorcorrectionlayer), [CLevelsColorCorrectionLayer](resourcecompiler.md#clevelscolorcorrectionlayer), [CLocalContrastLayer](resourcecompiler.md#clocalcontrastlayer), [CLocalExposureLayer](resourcecompiler.md#clocalexposurelayer), [CToneMappingLayer](resourcecompiler.md#ctonemappinglayer), [CVibranceColorCorrectionLayer](resourcecompiler.md#cvibrancecolorcorrectionlayer), [CVignetteLayer](resourcecompiler.md#cvignettelayer)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
     CColorCorrectionLayer <|-- CBloomLayer
-    CColorCorrectionLayer <|-- CFogScatteringLayer
-    CColorCorrectionLayer <|-- CColorBalanceColorCorrectionLayer
-    CColorCorrectionLayer <|-- CVignetteLayer
-    CColorCorrectionLayer <|-- CHueSaturationColorCorrectionLayer
-    CColorCorrectionLayer <|-- CColorTintColorCorrectionLayer
-    CColorCorrectionLayer <|-- CLevelsColorCorrectionLayer
-    CColorCorrectionLayer <|-- CToneMappingLayer
-    CColorCorrectionLayer <|-- CColorLookupColorCorrectionLayer
-    CColorCorrectionLayer <|-- CCurvesColorCorrectionLayer
     CColorCorrectionLayer <|-- CBrightnessContrastColorCorrectionLayer
+    CColorCorrectionLayer <|-- CColorBalanceColorCorrectionLayer
+    CColorCorrectionLayer <|-- CColorLookupColorCorrectionLayer
+    CColorCorrectionLayer <|-- CColorTintColorCorrectionLayer
+    CColorCorrectionLayer <|-- CCurvesColorCorrectionLayer
+    CColorCorrectionLayer <|-- CFogScatteringLayer
+    CColorCorrectionLayer <|-- CHueSaturationColorCorrectionLayer
+    CColorCorrectionLayer <|-- CLevelsColorCorrectionLayer
     CColorCorrectionLayer <|-- CLocalContrastLayer
+    CColorCorrectionLayer <|-- CLocalExposureLayer
+    CColorCorrectionLayer <|-- CToneMappingLayer
     CColorCorrectionLayer <|-- CVibranceColorCorrectionLayer
+    CColorCorrectionLayer <|-- CVignetteLayer
     CColorCorrectionLayer --> CLayerMask
 ```
 
@@ -247,7 +247,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_fileName` | CUtlString |  |
-| `m_lut` | CUtlVector<float32> |  |
+| `m_lut` | CUtlVector< float32 > |  |
 | `m_nDim` | int32 |  |
 
 ### CColorTintColorCorrectionLayer
@@ -351,10 +351,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_curvePointsRGB` | CUtlVector<Vector2D> |  |
-| `m_curvePointsR` | CUtlVector<Vector2D> |  |
-| `m_curvePointsG` | CUtlVector<Vector2D> |  |
-| `m_curvePointsB` | CUtlVector<Vector2D> |  |
+| `m_curvePointsRGB` | CUtlVector< Vector2D > |  |
+| `m_curvePointsR` | CUtlVector< Vector2D > |  |
+| `m_curvePointsG` | CUtlVector< Vector2D > |  |
+| `m_curvePointsB` | CUtlVector< Vector2D > |  |
 
 ### CFogScatteringLayer
 
@@ -372,7 +372,10 @@ classDiagram
 		"m_fScale": 0.000000,
 		"m_fCubemapScale": 1.000000,
 		"m_fVolumetricScale": 1.000000,
-		"m_fGradientScale": 1.000000
+		"m_fGradientScale": 1.000000,
+		"m_fWaterScale": 0.000000,
+		"m_fWaterDensity": 0.000000,
+		"m_fWaterDepthBlurRadius": 0.000000
 	}
 }`
 
@@ -573,6 +576,39 @@ classDiagram
 |------|------|-------------|
 | `m_params` | [PostProcessingLocalContrastParameters_t](../schemas/materialsystem2.md#postprocessinglocalcontrastparameters_t) |  |
 
+### CLocalExposureLayer
+
+**Inherits from:** [CColorCorrectionLayer](resourcecompiler.md#ccolorcorrectionlayer)
+
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CLocalExposureLayer",
+	"m_name": "Local Exposure 1",
+	"m_nOpacityPercent": 100,
+	"m_bVisible": true,
+	"m_pLayerMask": null,
+	"m_params":
+	{
+		"m_fShadowOffsetEV": 0.000000,
+		"m_fHighlightOffsetEV": 0.000000,
+		"m_fSigma": 0.500000,
+		"m_fBoostLocalContrast": 0.000000
+	}
+}`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CColorCorrectionLayer <|-- CLocalExposureLayer
+    CLocalExposureLayer *-- PostProcessingLocalExposureParameters_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_params` | [PostProcessingLocalExposureParameters_t](../schemas/materialsystem2.md#postprocessinglocalexposureparameters_t) |  |
+
 ### CPostProcessData
 
 **Metadata:** `MGetKV3ClassDefaults {
@@ -593,37 +629,13 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_layers` | CUtlVector<[CColorCorrectionLayer](../schemas/resourcecompiler.md#ccolorcorrectionlayer)*> |  |
+| `m_layers` | CUtlVector< [CColorCorrectionLayer](../schemas/resourcecompiler.md#ccolorcorrectionlayer)* > |  |
 
 ### CToneMappingLayer
 
 **Inherits from:** [CColorCorrectionLayer](resourcecompiler.md#ccolorcorrectionlayer)
 
-**Metadata:** `MGetKV3ClassDefaults {
-	"_class": "CToneMappingLayer",
-	"m_name": "Tone Mapping 1",
-	"m_nOpacityPercent": 100,
-	"m_bVisible": true,
-	"m_pLayerMask": null,
-	"m_params":
-	{
-		"m_flExposureBias": 0.000000,
-		"m_flShoulderStrength": 0.150000,
-		"m_flLinearStrength": 0.500000,
-		"m_flLinearAngle": 0.100000,
-		"m_flToeStrength": 0.200000,
-		"m_flToeNum": 0.020000,
-		"m_flToeDenom": 0.300000,
-		"m_flWhitePoint": 4.000000,
-		"m_flLuminanceSource": 0.000000,
-		"m_flExposureBiasShadows": 0.000000,
-		"m_flExposureBiasHighlights": 0.000000,
-		"m_flMinShadowLum": 0.000000,
-		"m_flMaxShadowLum": 0.500000,
-		"m_flMinHighlightLum": 2.000000,
-		"m_flMaxHighlightLum": 8.000000
-	}
-}`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
@@ -710,33 +722,3 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_params` | [PostProcessingVignetteParameters_t](../schemas/materialsystem2.md#postprocessingvignetteparameters_t) |  |
-
-### LayerMaskType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `LAYER_MASK_LUMINOSITY` | 0 |  |
-| `LAYER_MASK_COLOR_RANGE` | 1 |  |
-
-### LayerType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `LAYER_TYPE_LEVELS` | 0 |  |
-| `LAYER_TYPE_VIBRANCE` | 1 |  |
-| `LAYER_TYPE_BRIGHTNESS_CONTRAST` | 2 |  |
-| `LAYER_TYPE_LUT` | 3 |  |
-| `LAYER_TYPE_COLOR_BALANCE` | 4 |  |
-| `LAYER_TYPE_COLOR_TINT` | 5 |  |
-| `LAYER_TYPE_HUE_SATURATION` | 6 |  |
-| `LAYER_TYPE_CURVES` | 7 |  |
-| `LAYER_TYPE_TONEMAPPING` | 8 |  |
-| `LAYER_TYPE_BLOOM` | 9 |  |
-| `LAYER_TYPE_VIGNETTE` | 10 |  |
-| `LAYER_TYPE_LOCAL_CONTRAST` | 11 |  |
-| `LAYER_TYPE_FOG_SCATTERING` | 12 |  |
-| `MAX_LAYER_TYPES` | 13 |  |

@@ -7,7 +7,7 @@ nav_exclude: true
 
 # `networkbasetypes.proto`
 
-**Imports:** `google/protobuf/descriptor.proto`, `network_connection.proto`
+**Imports:** `valveextensions.proto`, `google/protobuf/descriptor.proto`, `network_connection.proto`
 
 Foundational proto-type definitions shared across all CS2 network and game-event messages.  Provides compact vector, angle, quaternion, colour, and player-info structs used as fields in higher-level messages.
 

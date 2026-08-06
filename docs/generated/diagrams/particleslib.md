@@ -13,34 +13,22 @@ Class relationships (inheritance and composition) for the `particleslib` module.
 
 ```mermaid
 classDiagram
-    CBasePulseGraphInstance <|-- CParticleCollectionBindingInstance
-    CParticleCollectionBindingInstance <|-- CParticleBindingRealPulse
-    CParticleCollectionVecInput <|-- CParticleCollectionRendererVecInput
-    CParticleInput <|-- CParticleFloatInput
+    IParticleEffect <|-- CNewParticleEffect
     CParticleFloatInput <|-- CParticleCollectionFloatInput
     CParticleCollectionFloatInput <|-- CParticleCollectionRendererFloatInput
-    CParticleFloatInput <|-- CPerParticleFloatInput
-    CParticleInput <|-- CParticleTransformInput
-    CParticleFloatInput <|-- CParticleRemapFloatInput
+    CParticleCollectionVecInput <|-- CParticleCollectionRendererVecInput
     CParticleVecInput <|-- CParticleCollectionVecInput
-    IParticleEffect <|-- CNewParticleEffect
-    CParticleInput <|-- CParticleVecInput
-    CParticleVecInput <|-- CPerParticleVecInput
+    CParticleInput <|-- CParticleFloatInput
     CParticleInput <|-- CParticleModelInput
-    CParticleFloatInput *-- ParticleFloatType_t
-    CParticleFloatInput *-- ParticleFloatMapType_t
-    CParticleFloatInput *-- ParticleFloatRandomMode_t
-    CParticleFloatInput *-- PFNoiseTurbulence_t
-    CParticleFloatInput *-- PFNoiseType_t
-    CParticleFloatInput *-- PFNoiseModifier_t
-    CParticleFloatInput *-- ParticleFloatInputMode_t
-    CParticleFloatInput *-- ParticleFloatRoundType_t
-    CParticleFloatInput *-- ParticleFloatBiasType_t
-    CParticleTransformInput *-- ParticleTransformType_t
-    ParticleNamedValueSource_t *-- ParticleNamedValueConfiguration_t
+    CParticleFloatInput <|-- CParticleRemapFloatInput
+    CParticleInput <|-- CParticleTransformInput
+    CParticleInput <|-- CParticleVecInput
+    CParticleFloatInput <|-- CPerParticleFloatInput
+    CParticleVecInput <|-- CPerParticleVecInput
+    CParticleCollectionBindingInstance <|-- CParticleBindingRealPulse
+    CBasePulseGraphInstance <|-- CParticleCollectionBindingInstance
     CNewParticleEffect --> PARTICLE_EHANDLE__
     CNewParticleEffect --> CParticleProperty
-    CParticleVecInput *-- ParticleVecType_t
     CParticleVecInput *-- CParticleFloatInput
-    CParticleModelInput *-- ParticleModelType_t
+    ParticleNamedValueSource_t *-- ParticleNamedValueConfiguration_t
 ```

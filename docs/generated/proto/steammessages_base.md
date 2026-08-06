@@ -35,6 +35,8 @@ direction LR
     +int32 seq_num
     +int32 eresult
     +string error_message
+    +uint32 ip
+    +bytes ip_v6
     +uint32 auth_account_flags
     +uint32 token_source
     +bool admin_spoofing_user
@@ -51,8 +53,6 @@ direction LR
     +uint32 realm
     +int32 timeout_ms
     +string debug_source
-    +uint32 ip
-    +bytes ip_v6
   }
 
   class CMsgMulti {
@@ -553,7 +553,7 @@ direction LR
 | `event_gid` | 13 | fixed64 | optional |  |
 | `voteupcount` | 14 | int32 | optional |  |
 | `votedowncount` | 15 | int32 | optional |  |
-| `ban_check_result` | 16 | [EBanContentCheckResult](#ebancontentcheckresult) | optional | *(default: `k_EBanContentCheckResult_NotScanned`)* |
+| `ban_check_result` | 16 | [EBanContentCheckResult](#ebancontentcheckresult) | optional |  |
 
 ### `CClanEventData`
 
@@ -562,7 +562,7 @@ direction LR
 | `gid` | 1 | fixed64 | optional |  |
 | `clan_steamid` | 2 | fixed64 | optional |  |
 | `event_name` | 3 | string | optional |  |
-| `event_type` | 4 | [EProtoClanEventType](#eprotoclaneventtype) | optional | *(default: `k_EClanOtherEvent`)* |
+| `event_type` | 4 | [EProtoClanEventType](#eprotoclaneventtype) | optional |  |
 | `appid` | 5 | uint32 | optional |  |
 | `server_address` | 6 | string | optional |  |
 | `server_password` | 7 | string | optional |  |

@@ -11,7 +11,6 @@ nav_exclude: true
 
 | Name | Kind | Bases | Fields |
 |------|------|-------|--------|
-| [AnimConflictType_t](#animconflicttype_t) | enum |  | 3 |
 | [CActionComponent](#cactioncomponent) | class | CAnimGraphDoc_Component | 2 |
 | [CAnimConflictBase](#canimconflictbase) | class |  | 4 |
 | [CAnimConflictInfo_t](#canimconflictinfo_t) | class |  | 4 |
@@ -170,31 +169,8 @@ nav_exclude: true
 | [CStateAction](#cstateaction) | class |  | 2 |
 | [CStateMachineComponent](#cstatemachinecomponent) | class | CAnimGraphDoc_Component, CAnimGraphDoc_StateMachine | 1 |
 | [CTargetSelectorChild](#ctargetselectorchild) | class |  | 2 |
-| [ComparisonValueType](#comparisonvaluetype) | enum |  | 2 |
-| [Comparison_t](#comparison_t) | enum |  | 7 |
-| [DampedValueType](#dampedvaluetype) | enum |  | 2 |
-| [EAnimConflictIndex_t](#eanimconflictindex_t) | enum |  | 4 |
-| [EAnimValueSource](#eanimvaluesource) | enum |  | 2 |
-| [FinishedConditionOption](#finishedconditionoption) | enum |  | 2 |
-| [RemapValueType](#remapvaluetype) | enum |  | 2 |
-| [SelectionSource_t](#selectionsource_t) | enum |  | 3 |
-| [SingleFrameSelection](#singleframeselection) | enum |  | 3 |
-| [SolveIKChainAnimNodeSettingSource](#solveikchainanimnodesettingsource) | enum |  | 2 |
-| [StateComparisonValueType](#statecomparisonvaluetype) | enum |  | 3 |
-| [StateValue](#statevalue) | enum |  | 5 |
-| [TargetWarpLinearRootMotionMode](#targetwarplinearrootmotionmode) | enum |  | 2 |
 
 ---
-
-### AnimConflictType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `NONE` | 0 |  |
-| `ID` | 1 |  |
-| `NAME` | 2 |  |
 
 ### CActionComponent
 
@@ -228,21 +204,21 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_actions` | CUtlVector<CSmartPtr<[CAnimGraphDoc_Action](../schemas/animgraphdoclib.md#canimgraphdoc_action)>> |  |
-| `m_sName` | CUtlString | `MPropertyFriendlyName "Name"` `MPropertySortPriority 100` |
+| `m_actions` | CUtlVector< CSmartPtr< [CAnimGraphDoc_Action](../schemas/animgraphdoclib.md#canimgraphdoc_action) > > |  |
+| `m_sName` | CUtlString | `MPropertyFriendlyName Name` `MPropertySortPriority 100` |
 
 ### CAnimConflictBase
 
 **Derived by:** [CAnimParameterConflict](animgraphdoclib.md#canimparameterconflict), [CAnimTagConflict](animgraphdoclib.md#canimtagconflict)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CAnimConflictBase <|-- CAnimTagConflict
     CAnimConflictBase <|-- CAnimParameterConflict
+    CAnimConflictBase <|-- CAnimTagConflict
     CAnimConflictBase *-- CAnimConflictInfo_t
     CAnimConflictBase *-- AnimConflictType_t
 ```
@@ -254,7 +230,7 @@ classDiagram
 | `m_sConflictDesc` | CUtlString |  |
 | `m_nResolveIdx` | int32 |  |
 | `m_conflictData` | [CAnimConflictInfo_t](../schemas/animgraphdoclib.md#canimconflictinfo_t)[2] |  |
-| `m_eConflictType` | [AnimConflictType_t](../schemas/animgraphdoclib.md#animconflicttype_t) |  |
+| `m_eConflictType` | [AnimConflictType_t](../schemas/!GlobalTypes.md#animconflicttype_t) |  |
 
 ### CAnimConflictInfo_t
 
@@ -278,16 +254,16 @@ classDiagram
 
 **Derived by:** [CAnimGraphDoc_EmitTagAction](animgraphdoclib.md#canimgraphdoc_emittagaction), [CAnimGraphDoc_ExpressionAction](animgraphdoclib.md#canimgraphdoc_expressionaction), [CAnimGraphDoc_SetParameterAction](animgraphdoclib.md#canimgraphdoc_setparameteraction), [CAnimGraphDoc_ToggleComponentAction](animgraphdoclib.md#canimgraphdoc_togglecomponentaction)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CAnimGraphDoc_Action <|-- CAnimGraphDoc_ToggleComponentAction
-    CAnimGraphDoc_Action <|-- CAnimGraphDoc_SetParameterAction
-    CAnimGraphDoc_Action <|-- CAnimGraphDoc_ExpressionAction
     CAnimGraphDoc_Action <|-- CAnimGraphDoc_EmitTagAction
+    CAnimGraphDoc_Action <|-- CAnimGraphDoc_ExpressionAction
+    CAnimGraphDoc_Action <|-- CAnimGraphDoc_SetParameterAction
+    CAnimGraphDoc_Action <|-- CAnimGraphDoc_ToggleComponentAction
 ```
 
 ### CAnimGraphDoc_AddNode
@@ -339,7 +315,7 @@ classDiagram
 	"m_bApplyChannelsSeparately": true,
 	"m_bUseModelSpace": false,
 	"m_bApplyScale": false
-}`, `MPropertyFriendlyName "Add"`
+}`, `MPropertyFriendlyName Add`
 
 **Relationships:**
 
@@ -357,15 +333,15 @@ classDiagram
 |------|------|-------------|
 | `m_baseInput` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
 | `m_additiveInput` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_timingBehavior` | [BinaryNodeTiming](../schemas/animgraphlib.md#binarynodetiming) | `MPropertyFriendlyName "Timing Control"` `MPropertyAutoRebuildOnChange` |
-| `m_flTimingBlend` | float32 | `MPropertyFriendlyName "Timing Blend"` `MPropertyAttributeRange "0 1"` `MPropertyAttrStateCallback` |
-| `m_footMotionTiming` | [BinaryNodeChildOption](../schemas/animgraphlib.md#binarynodechildoption) | `MPropertyFriendlyName "Foot Motion Timing"` |
-| `m_bApplyToFootMotion` | bool | `MPropertyFriendlyName "Add Foot Motion"` |
-| `m_bResetBase` | bool | `MPropertyFriendlyName "Reset Base Child"` |
-| `m_bResetAdditive` | bool | `MPropertyFriendlyName "Reset Additive Child"` |
-| `m_bApplyChannelsSeparately` | bool | `MPropertyFriendlyName "Treat Translation Separately"` |
-| `m_bUseModelSpace` | bool | `MPropertyFriendlyName "Use Model Space"` |
-| `m_bApplyScale` | bool | `MPropertyFriendlyName "Apply Scale"` `MPropertyDescription "Apply Scale Channels During Add.  Requires Treat Translation Separately."` |
+| `m_timingBehavior` | [BinaryNodeTiming](../schemas/!GlobalTypes.md#binarynodetiming) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Timing Control` |
+| `m_flTimingBlend` | float32 | `MPropertyAttrStateCallback` `MPropertyAttributeRange 0 1` `MPropertyFriendlyName Timing Blend` |
+| `m_footMotionTiming` | [BinaryNodeChildOption](../schemas/!GlobalTypes.md#binarynodechildoption) | `MPropertyFriendlyName Foot Motion Timing` |
+| `m_bApplyToFootMotion` | bool | `MPropertyFriendlyName Add Foot Motion` |
+| `m_bResetBase` | bool | `MPropertyFriendlyName Reset Base Child` |
+| `m_bResetAdditive` | bool | `MPropertyFriendlyName Reset Additive Child` |
+| `m_bApplyChannelsSeparately` | bool | `MPropertyFriendlyName Treat Translation Separately` |
+| `m_bUseModelSpace` | bool | `MPropertyFriendlyName Use Model Space` |
+| `m_bApplyScale` | bool | `MPropertyDescription Apply Scale Channels During Add.  Requires Treat Translation Separately.` `MPropertyFriendlyName Apply Scale` |
 
 ### CAnimGraphDoc_AimCameraNode
 
@@ -433,7 +409,7 @@ classDiagram
 	"m_propJoints":
 	[
 	]
-}`, `MPropertyFriendlyName "Aim Camera"`
+}`, `MPropertyFriendlyName Aim Camera`
 
 **Relationships:**
 
@@ -450,20 +426,20 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_ikChain` | CUtlString | `MPropertyFriendlyName "Spine IK Chain"` `MPropertyAttributeChoiceName "IKChain"` |
-| `m_cameraJointName` | CUtlString | `MPropertyFriendlyName "Camera Joint"` `MPropertyAttributeChoiceName "Bone"` |
-| `m_pelvisJointName` | CUtlString | `MPropertyFriendlyName "Pelvis Joint"` `MPropertyAttributeChoiceName "Bone"` |
-| `m_clavicleLeftJointName` | CUtlString | `MPropertyFriendlyName "Clavicle Left Joint"` `MPropertyAttributeChoiceName "Bone"` |
-| `m_clavicleRightJointName` | CUtlString | `MPropertyFriendlyName "Clavicle Right Joint"` `MPropertyAttributeChoiceName "Bone"` |
-| `m_parameterNamePosition` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Animgraph Position Parameter"` `MPropertyAttributeChoiceName "VectorParameter"` |
-| `m_parameterNameOrientation` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Orientation Parameter"` `MPropertyAttributeChoiceName "QuaternionParameter"` |
-| `m_parameterNamePelvisOffset` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Pelvis Offset Parameter"` `MPropertyAttributeChoiceName "FloatParameter"` |
-| `m_parameterCameraOnly` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Camera Only Parameter"` `MPropertyAttributeChoiceName "BoolParameter"` |
-| `m_parameterCameraClearanceDistance` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Clearance Distance"` `MPropertyAttributeChoiceName "FloatParameter"` |
-| `m_parameterWeaponDepenetrationDistance` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Weapon De-Penetration Distance"` `MPropertyAttributeChoiceName "FloatParameter"` |
-| `m_parameterWeaponDepenetrationDelta` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Weapon De-Penetration Delta"` `MPropertyAttributeChoiceName "VectorParameter"` |
-| `m_depenetrationJointName` | CUtlString | `MPropertyFriendlyName "Depenetration Joint"` `MPropertyAttributeChoiceName "Bone"` |
-| `m_propJoints` | CUtlVector<[CAnimGraphDoc_AimCameraNode_PropJoint](../schemas/animgraphdoclib.md#canimgraphdoc_aimcameranode_propjoint)> | `MPropertyFriendlyName "Prop Joints"` `MPropertyDescription "These joints will maintain their offset relative to the camera joint."` |
+| `m_ikChain` | CUtlString | `MPropertyAttributeChoiceName IKChain` `MPropertyFriendlyName Spine IK Chain` |
+| `m_cameraJointName` | CUtlString | `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName Camera Joint` |
+| `m_pelvisJointName` | CUtlString | `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName Pelvis Joint` |
+| `m_clavicleLeftJointName` | CUtlString | `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName Clavicle Left Joint` |
+| `m_clavicleRightJointName` | CUtlString | `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName Clavicle Right Joint` |
+| `m_parameterNamePosition` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName VectorParameter` `MPropertyFriendlyName Animgraph Position Parameter` |
+| `m_parameterNameOrientation` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName QuaternionParameter` `MPropertyFriendlyName Orientation Parameter` |
+| `m_parameterNamePelvisOffset` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Pelvis Offset Parameter` |
+| `m_parameterCameraOnly` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName BoolParameter` `MPropertyFriendlyName Camera Only Parameter` |
+| `m_parameterCameraClearanceDistance` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Clearance Distance` |
+| `m_parameterWeaponDepenetrationDistance` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Weapon De-Penetration Distance` |
+| `m_parameterWeaponDepenetrationDelta` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName VectorParameter` `MPropertyFriendlyName Weapon De-Penetration Delta` |
+| `m_depenetrationJointName` | CUtlString | `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName Depenetration Joint` |
+| `m_propJoints` | CUtlVector< [CAnimGraphDoc_AimCameraNode_PropJoint](../schemas/animgraphdoclib.md#canimgraphdoc_aimcameranode_propjoint) > | `MPropertyDescription These joints will maintain their offset relative to the camera joint.` `MPropertyFriendlyName Prop Joints` |
 
 ### CAnimGraphDoc_AimCameraNode_PropJoint
 
@@ -476,7 +452,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_jointName` | CUtlString | `MPropertyFriendlyName "Joint"` `MPropertyAttributeChoiceName "Bone"` |
+| `m_jointName` | CUtlString | `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName Joint` |
 
 ### CAnimGraphDoc_AimMatrixNode
 
@@ -537,7 +513,7 @@ classDiagram
 		"m_fSpeedScale": 1.000000,
 		"m_fFallingSpeedScale": 1.000000
 	}
-}`, `MPropertyFriendlyName "Aim Matrix"`
+}`, `MPropertyFriendlyName Aim Matrix`
 
 **Relationships:**
 
@@ -557,23 +533,23 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_sequenceName` | CUtlString | `MPropertyFriendlyName "Sequence"` `MPropertyAttributeChoiceName "Sequence"` |
-| `m_flMaxYawAngle` | float32 | `MPropertyFriendlyName "Max Yaw Angle"` |
-| `m_flMaxPitchAngle` | float32 | `MPropertyFriendlyName "Max Pitch Angle"` |
-| `m_target` | [AnimVectorSource](../schemas/animgraphlib.md#animvectorsource) | `MPropertyFriendlyName "Target"` `MPropertyAutoRebuildOnChange` |
+| `m_sequenceName` | CUtlString | `MPropertyAttributeChoiceName Sequence` `MPropertyFriendlyName Sequence` |
+| `m_flMaxYawAngle` | float32 | `MPropertyFriendlyName Max Yaw Angle` |
+| `m_flMaxPitchAngle` | float32 | `MPropertyFriendlyName Max Pitch Angle` |
+| `m_target` | [AnimVectorSource](../schemas/!GlobalTypes.md#animvectorsource) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Target` |
 | `m_paramName` | CUtlString | `MPropertySuppressField` |
-| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Parameter"` `MPropertyAttributeChoiceName "VectorParameter"` `MPropertyAttrStateCallback` |
-| `m_bIsPosition` | bool | `MPropertyFriendlyName "Parameter is a Position"` `MPropertyAttrStateCallback` |
-| `m_attachmentName` | CUtlString | `MPropertyFriendlyName "Aim Attachment"` `MPropertyAttributeChoiceName "Attachment"` |
-| `m_blendMode` | [AimMatrixBlendMode](../schemas/animgraphlib.md#aimmatrixblendmode) | `MPropertyFriendlyName "Blend Mode"` `MPropertyAutoRebuildOnChange` |
-| `m_boneMaskName` | CUtlString | `MPropertyFriendlyName "Bone Mask"` `MPropertyAttributeChoiceName "BoneMask"` `MPropertyAttrStateCallback` |
-| `m_bResetBase` | bool | `MPropertyFriendlyName "Reset Child"` |
-| `m_bLockWhenWaning` | bool | `MPropertyFriendlyName "Lock Blend When Waning"` |
-| `m_bUseBiasAndClamp` | bool | `MPropertyFriendlyName "Use Bias + Clamp"` `MPropertyAutoRebuildOnChange` |
-| `m_flBiasAndClampYawOffset` | float32 | `MPropertyFriendlyName "Yaw Offset Angle"` `MPropertyAttrStateCallback` |
-| `m_flBiasAndClampPitchOffset` | float32 | `MPropertyFriendlyName "Pitch Offset Angle"` `MPropertyAttrStateCallback` |
-| `m_biasAndClampBlendCurve` | [CBlendCurve](../schemas/animgraphlib.md#cblendcurve) | `MPropertyFriendlyName "Clamp Blend Curve"` `MPropertyAttributeEditor "AnimGraphBlendCurve()"` `MPropertyAttrStateCallback` |
-| `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyFriendlyName "Damping"` |
+| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName VectorParameter` `MPropertyFriendlyName Parameter` |
+| `m_bIsPosition` | bool | `MPropertyAttrStateCallback` `MPropertyFriendlyName Parameter is a Position` |
+| `m_attachmentName` | CUtlString | `MPropertyAttributeChoiceName Attachment` `MPropertyFriendlyName Aim Attachment` |
+| `m_blendMode` | [AimMatrixBlendMode](../schemas/!GlobalTypes.md#aimmatrixblendmode) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Blend Mode` |
+| `m_boneMaskName` | CUtlString | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName BoneMask` `MPropertyFriendlyName Bone Mask` |
+| `m_bResetBase` | bool | `MPropertyFriendlyName Reset Child` |
+| `m_bLockWhenWaning` | bool | `MPropertyFriendlyName Lock Blend When Waning` |
+| `m_bUseBiasAndClamp` | bool | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Use Bias + Clamp` |
+| `m_flBiasAndClampYawOffset` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Yaw Offset Angle` |
+| `m_flBiasAndClampPitchOffset` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Pitch Offset Angle` |
+| `m_biasAndClampBlendCurve` | [CBlendCurve](../schemas/animgraphlib.md#cblendcurve) | `MPropertyAttrStateCallback` `MPropertyAttributeEditor AnimGraphBlendCurve()` `MPropertyFriendlyName Clamp Blend Curve` |
+| `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyFriendlyName Damping` |
 
 ### CAnimGraphDoc_AndCondition
 
@@ -611,7 +587,7 @@ classDiagram
 	},
 	"m_bDebugThisNode": false,
 	"m_networkMode": "ServerAuthoritative"
-}`, `MPropertyFriendlyName "Bind Pose"`
+}`, `MPropertyFriendlyName Bind Pose`
 
 **Relationships:**
 
@@ -624,23 +600,23 @@ classDiagram
 
 **Derived by:** [CAnimGraphDoc_NodeBlend2DItem](animgraphdoclib.md#canimgraphdoc_nodeblend2ditem), [CAnimGraphDoc_SequenceBlend2DItem](animgraphdoclib.md#canimgraphdoc_sequenceblend2ditem)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`, `MPropertyFriendlyName "Blend Item"`
+**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Blend Item`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CAnimGraphDoc_Blend2DItem <|-- CAnimGraphDoc_SequenceBlend2DItem
     CAnimGraphDoc_Blend2DItem <|-- CAnimGraphDoc_NodeBlend2DItem
+    CAnimGraphDoc_Blend2DItem <|-- CAnimGraphDoc_SequenceBlend2DItem
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_blendValue` | Vector2D | `MPropertyFriendlyName "Blend Value"` |
-| `m_bUseCustomDuration` | bool | `MPropertyGroupName "+Duration Override"` `MPropertyFriendlyName "Use Custom Duration"` `MPropertyAutoRebuildOnChange` |
-| `m_flCustomDuration` | float32 | `MPropertyGroupName "+Duration Override"` `MPropertyFriendlyName "Custom Duration"` `MPropertyAttrStateCallback` |
+| `m_blendValue` | Vector2D | `MPropertyFriendlyName Blend Value` |
+| `m_bUseCustomDuration` | bool | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Use Custom Duration` `MPropertyGroupName +Duration Override` |
+| `m_flCustomDuration` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Custom Duration` `MPropertyGroupName +Duration Override` |
 
 ### CAnimGraphDoc_Blend2DNode
 
@@ -694,7 +670,7 @@ classDiagram
 		"m_fFallingSpeedScale": 1.000000
 	},
 	"m_bAnimEventsAndTagsOnMostWeightedOnly": false
-}`, `MPropertyFriendlyName "Blend 2D"`
+}`, `MPropertyFriendlyName Blend 2D`
 
 **Relationships:**
 
@@ -714,22 +690,22 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_items` | CUtlVector<CSmartPtr<[CAnimGraphDoc_Blend2DItem](../schemas/animgraphdoclib.md#canimgraphdoc_blend2ditem)>> | `MPropertySuppressField` |
-| `m_tagSpans` | CUtlVector<CSmartPtr<[CAnimGraphDoc_TagSpan](../schemas/animgraphdoclib.md#canimgraphdoc_tagspan)>> | `MPropertySuppressField` |
-| `m_paramSpans` | CUtlVector<CSmartPtr<[CAnimGraphDoc_ParamSpan](../schemas/animgraphdoclib.md#canimgraphdoc_paramspan)>> | `MPropertySuppressField` |
-| `m_blendSourceX` | [AnimValueSource](../schemas/animgraphlib.md#animvaluesource) | `MPropertyFriendlyName "Horizontal Axis"` `MPropertyAutoRebuildOnChange` `MPropertyAttrStateCallback` |
+| `m_items` | CUtlVector< CSmartPtr< [CAnimGraphDoc_Blend2DItem](../schemas/animgraphdoclib.md#canimgraphdoc_blend2ditem) > > | `MPropertySuppressField` |
+| `m_tagSpans` | CUtlVector< CSmartPtr< [CAnimGraphDoc_TagSpan](../schemas/animgraphdoclib.md#canimgraphdoc_tagspan) > > | `MPropertySuppressField` |
+| `m_paramSpans` | CUtlVector< CSmartPtr< [CAnimGraphDoc_ParamSpan](../schemas/animgraphdoclib.md#canimgraphdoc_paramspan) > > | `MPropertySuppressField` |
+| `m_blendSourceX` | [AnimValueSource](../schemas/!GlobalTypes.md#animvaluesource) | `MPropertyAttrStateCallback` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Horizontal Axis` |
 | `m_paramNameX` | CUtlString | `MPropertySuppressField` |
-| `m_paramX` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Horizontal Parameter"` `MPropertyAttributeChoiceName "FloatParameter"` |
-| `m_blendSourceY` | [AnimValueSource](../schemas/animgraphlib.md#animvaluesource) | `MPropertyFriendlyName "Vertical Axis"` `MPropertyAutoRebuildOnChange` `MPropertyAttrStateCallback` |
+| `m_paramX` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Horizontal Parameter` |
+| `m_blendSourceY` | [AnimValueSource](../schemas/!GlobalTypes.md#animvaluesource) | `MPropertyAttrStateCallback` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Vertical Axis` |
 | `m_paramNameY` | CUtlString | `MPropertySuppressField` |
-| `m_paramY` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Vertical Parameter"` `MPropertyAttributeChoiceName "FloatParameter"` |
-| `m_eBlendMode` | [Blend2DMode](../schemas/animgraphlib.md#blend2dmode) | `MPropertyFriendlyName "Blend Mode"` |
-| `m_bLoop` | bool | `MPropertyFriendlyName "Loop"` |
-| `m_bLockBlendOnReset` | bool | `MPropertyFriendlyName "Lock Blend on Reset"` |
-| `m_bLockWhenWaning` | bool | `MPropertyFriendlyName "Lock Blend When Waning"` |
-| `m_playbackSpeed` | float32 | `MPropertyFriendlyName "Playback Speed"` |
-| `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyFriendlyName "Damping"` |
-| `m_bAnimEventsAndTagsOnMostWeightedOnly` | bool | `MPropertyFriendlyName "AnimEvents and Tags Exclusive To Most Weighted"` |
+| `m_paramY` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Vertical Parameter` |
+| `m_eBlendMode` | [Blend2DMode](../schemas/!GlobalTypes.md#blend2dmode) | `MPropertyFriendlyName Blend Mode` |
+| `m_bLoop` | bool | `MPropertyFriendlyName Loop` |
+| `m_bLockBlendOnReset` | bool | `MPropertyFriendlyName Lock Blend on Reset` |
+| `m_bLockWhenWaning` | bool | `MPropertyFriendlyName Lock Blend When Waning` |
+| `m_playbackSpeed` | float32 | `MPropertyFriendlyName Playback Speed` |
+| `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyFriendlyName Damping` |
+| `m_bAnimEventsAndTagsOnMostWeightedOnly` | bool | `MPropertyFriendlyName AnimEvents and Tags Exclusive To Most Weighted` |
 
 ### CAnimGraphDoc_BlendNode
 
@@ -772,7 +748,7 @@ classDiagram
 		"m_fFallingSpeedScale": 1.000000
 	},
 	"m_eLinearRootMotionBlendMode": "LERP"
-}`, `MPropertyFriendlyName "Blend 1D"`
+}`, `MPropertyFriendlyName Blend 1D`
 
 **Relationships:**
 
@@ -791,18 +767,18 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_children` | CUtlVector<[CBlendNodeChild](../schemas/animgraphdoclib.md#cblendnodechild)> | `MPropertyFriendlyName "Blend Items"` `MPropertyAutoExpandSelf` |
-| `m_blendValueSource` | [AnimValueSource](../schemas/animgraphlib.md#animvaluesource) | `MPropertyFriendlyName "Blend Source"` `MPropertyAttrStateCallback` |
+| `m_children` | CUtlVector< [CBlendNodeChild](../schemas/animgraphdoclib.md#cblendnodechild) > | `MPropertyAutoExpandSelf` `MPropertyFriendlyName Blend Items` |
+| `m_blendValueSource` | [AnimValueSource](../schemas/!GlobalTypes.md#animvaluesource) | `MPropertyAttrStateCallback` `MPropertyFriendlyName Blend Source` |
 | `m_paramName` | CUtlString | `MPropertySuppressField` |
-| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Parameter"` `MPropertyAttributeChoiceName "FloatParameter"` |
-| `m_blendKeyType` | [BlendKeyType](../schemas/animgraphlib.md#blendkeytype) | `MPropertyFriendlyName "Blend Key Values"` |
-| `m_bLockBlendOnReset` | bool | `MPropertyFriendlyName "Lock Blend on Reset"` |
-| `m_bSyncCycles` | bool | `MPropertyFriendlyName "Sync Cycles"` |
-| `m_bLoop` | bool | `MPropertyFriendlyName "Loop"` |
-| `m_bLockWhenWaning` | bool | `MPropertyFriendlyName "Lock Blend When Waning"` |
-| `m_bIsAngle` | bool | `MPropertyFriendlyName "Is Angle"` |
-| `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyFriendlyName "Damping"` |
-| `m_eLinearRootMotionBlendMode` | [LinearRootMotionBlendMode_t](../schemas/animgraphlib.md#linearrootmotionblendmode_t) | `MPropertyFriendlyName "Linear Root Motion Blend Mode"` |
+| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Parameter` |
+| `m_blendKeyType` | [BlendKeyType](../schemas/!GlobalTypes.md#blendkeytype) | `MPropertyFriendlyName Blend Key Values` |
+| `m_bLockBlendOnReset` | bool | `MPropertyFriendlyName Lock Blend on Reset` |
+| `m_bSyncCycles` | bool | `MPropertyFriendlyName Sync Cycles` |
+| `m_bLoop` | bool | `MPropertyFriendlyName Loop` |
+| `m_bLockWhenWaning` | bool | `MPropertyFriendlyName Lock Blend When Waning` |
+| `m_bIsAngle` | bool | `MPropertyFriendlyName Is Angle` |
+| `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyFriendlyName Damping` |
+| `m_eLinearRootMotionBlendMode` | [LinearRootMotionBlendMode_t](../schemas/!GlobalTypes.md#linearrootmotionblendmode_t) | `MPropertyFriendlyName Linear Root Motion Blend Mode` |
 
 ### CAnimGraphDoc_BlockSelectionMetric
 
@@ -811,7 +787,7 @@ classDiagram
 **Metadata:** `MGetKV3ClassDefaults {
 	"_class": "CAnimGraphDoc_BlockSelectionMetric",
 	"m_flWeight": 0.000000
-}`, `MPropertyFriendlyName "Block Selection Metric"`
+}`, `MPropertyFriendlyName Block Selection Metric`
 
 **Relationships:**
 
@@ -875,7 +851,7 @@ classDiagram
 	"m_footMotionTiming": "Child1",
 	"m_bResetChild1": true,
 	"m_bResetChild2": true
-}`, `MPropertyFriendlyName "Bone Mask"`
+}`, `MPropertyFriendlyName Bone Mask`
 
 **Relationships:**
 
@@ -894,20 +870,20 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_weightListName` | CUtlString | `MPropertyFriendlyName "Bone Mask"` `MPropertyAttributeChoiceName "BoneMask"` |
+| `m_weightListName` | CUtlString | `MPropertyAttributeChoiceName BoneMask` `MPropertyFriendlyName Bone Mask` |
 | `m_inputConnection1` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
 | `m_inputConnection2` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_blendSpace` | [BoneMaskBlendSpace](../schemas/animgraphlib.md#bonemaskblendspace) | `MPropertyFriendlyName "Blend Space"` |
-| `m_bUseBlendScale` | bool | `MPropertyFriendlyName "Use Blend Source"` `MPropertyAutoRebuildOnChange` |
-| `m_blendValueSource` | [AnimValueSource](../schemas/animgraphlib.md#animvaluesource) | `MPropertyFriendlyName "Blend Source"` `MPropertyAutoRebuildOnChange` `MPropertyAttrStateCallback` |
+| `m_blendSpace` | [BoneMaskBlendSpace](../schemas/!GlobalTypes.md#bonemaskblendspace) | `MPropertyFriendlyName Blend Space` |
+| `m_bUseBlendScale` | bool | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Use Blend Source` |
+| `m_blendValueSource` | [AnimValueSource](../schemas/!GlobalTypes.md#animvaluesource) | `MPropertyAttrStateCallback` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Blend Source` |
 | `m_blendParameterName` | CUtlString | `MPropertySuppressField` |
-| `m_blendParameter` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Blend Parameter"` `MPropertyAttributeChoiceName "FloatParameter"` `MPropertyAttrStateCallback` |
-| `m_timingBehavior` | [BinaryNodeTiming](../schemas/animgraphlib.md#binarynodetiming) | `MPropertyFriendlyName "Timing Control"` `MPropertyAutoRebuildOnChange` |
-| `m_flTimingBlend` | float32 | `MPropertyFriendlyName "Timing Blend"` `MPropertyAttributeRange "0 1"` `MPropertyAttrStateCallback` |
-| `m_flRootMotionBlend` | float32 | `MPropertyFriendlyName "Root Motion Blend"` `MPropertyAttributeRange "0 1"` |
-| `m_footMotionTiming` | [BinaryNodeChildOption](../schemas/animgraphlib.md#binarynodechildoption) | `MPropertyFriendlyName "Foot Motion Timing"` |
-| `m_bResetChild1` | bool | `MPropertyFriendlyName "Reset Child1"` |
-| `m_bResetChild2` | bool | `MPropertyFriendlyName "Reset Child2"` |
+| `m_blendParameter` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Blend Parameter` |
+| `m_timingBehavior` | [BinaryNodeTiming](../schemas/!GlobalTypes.md#binarynodetiming) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Timing Control` |
+| `m_flTimingBlend` | float32 | `MPropertyAttrStateCallback` `MPropertyAttributeRange 0 1` `MPropertyFriendlyName Timing Blend` |
+| `m_flRootMotionBlend` | float32 | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName Root Motion Blend` |
+| `m_footMotionTiming` | [BinaryNodeChildOption](../schemas/!GlobalTypes.md#binarynodechildoption) | `MPropertyFriendlyName Foot Motion Timing` |
+| `m_bResetChild1` | bool | `MPropertyFriendlyName Reset Child1` |
+| `m_bResetChild2` | bool | `MPropertyFriendlyName Reset Child2` |
 
 ### CAnimGraphDoc_BonePositionMetric
 
@@ -917,7 +893,7 @@ classDiagram
 	"_class": "CAnimGraphDoc_BonePositionMetric",
 	"m_flWeight": 1.000000,
 	"m_boneName": ""
-}`, `MPropertyFriendlyName "Bone Position Metric"`
+}`, `MPropertyFriendlyName Bone Position Metric`
 
 **Relationships:**
 
@@ -930,7 +906,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_boneName` | CUtlString | `MPropertyFriendlyName "Bone"` `MPropertyAttributeChoiceName "Bone"` |
+| `m_boneName` | CUtlString | `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName Bone` |
 
 ### CAnimGraphDoc_BoneVelocityMetric
 
@@ -940,7 +916,7 @@ classDiagram
 	"_class": "CAnimGraphDoc_BoneVelocityMetric",
 	"m_flWeight": 1.000000,
 	"m_boneName": ""
-}`, `MPropertyFriendlyName "Bone Velocity Metric"`
+}`, `MPropertyFriendlyName Bone Velocity Metric`
 
 **Relationships:**
 
@@ -953,7 +929,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_boneName` | CUtlString | `MPropertyFriendlyName "Bone"` `MPropertyAttributeChoiceName "Bone"` |
+| `m_boneName` | CUtlString | `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName Bone` |
 
 ### CAnimGraphDoc_ChoiceNode
 
@@ -984,7 +960,7 @@ classDiagram
 	"m_bCrossFade": false,
 	"m_bResetChosen": true,
 	"m_bDontResetSameSelection": false
-}`, `MPropertyFriendlyName "Choice"`
+}`, `MPropertyFriendlyName Choice`
 
 **Relationships:**
 
@@ -1001,15 +977,15 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_children` | CUtlVector<[CChoiceNodeChild](../schemas/animgraphdoclib.md#cchoicenodechild)> | `MPropertyFriendlyName "Options"` `MPropertyAutoExpandSelf` |
+| `m_children` | CUtlVector< [CChoiceNodeChild](../schemas/animgraphdoclib.md#cchoicenodechild) > | `MPropertyAutoExpandSelf` `MPropertyFriendlyName Options` |
 | `m_seed` | int32 | `MPropertySuppressField` |
-| `m_choiceMethod` | [ChoiceMethod](../schemas/animgraphlib.md#choicemethod) | `MPropertyFriendlyName "Method"` |
-| `m_choiceChangeMethod` | [ChoiceChangeMethod](../schemas/animgraphlib.md#choicechangemethod) | `MPropertyFriendlyName "Change Selection"` |
-| `m_blendMethod` | [ChoiceBlendMethod](../schemas/animgraphlib.md#choiceblendmethod) | `MPropertyGroupName "Blending"` `MPropertyFriendlyName "Blend Method"` `MPropertyAutoRebuildOnChange` |
-| `m_blendTime` | float32 | `MPropertyGroupName "Blending"` `MPropertyFriendlyName "Blend Duration"` `MPropertyAttrStateCallback` |
-| `m_bCrossFade` | bool | `MPropertyGroupName "Blending"` `MPropertyFriendlyName "Cross Fade"` |
-| `m_bResetChosen` | bool | `MPropertyFriendlyName "Reset On Selection"` `MPropertyAutoRebuildOnChange` |
-| `m_bDontResetSameSelection` | bool | `MPropertyFriendlyName "Don't Reset Same Selection"` `MPropertyAttrStateCallback` |
+| `m_choiceMethod` | [ChoiceMethod](../schemas/!GlobalTypes.md#choicemethod) | `MPropertyFriendlyName Method` |
+| `m_choiceChangeMethod` | [ChoiceChangeMethod](../schemas/!GlobalTypes.md#choicechangemethod) | `MPropertyFriendlyName Change Selection` |
+| `m_blendMethod` | [ChoiceBlendMethod](../schemas/!GlobalTypes.md#choiceblendmethod) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Blend Method` `MPropertyGroupName Blending` |
+| `m_blendTime` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Blend Duration` `MPropertyGroupName Blending` |
+| `m_bCrossFade` | bool | `MPropertyFriendlyName Cross Fade` `MPropertyGroupName Blending` |
+| `m_bResetChosen` | bool | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Reset On Selection` |
+| `m_bDontResetSameSelection` | bool | `MPropertyAttrStateCallback` `MPropertyFriendlyName Don't Reset Same Selection` |
 
 ### CAnimGraphDoc_ChoreoNode
 
@@ -1040,7 +1016,7 @@ classDiagram
 			"m_id": <HIDDEN FOR DIFF>,
 		}
 	}
-}`, `MPropertyFriendlyName "Choreo"`
+}`, `MPropertyFriendlyName Choreo`
 
 **Relationships:**
 
@@ -1064,7 +1040,7 @@ classDiagram
 	[
 	],
 	"m_clipName": ""
-}`, `MPropertyFriendlyName "Clip Data"`
+}`, `MPropertyFriendlyName Clip Data`
 
 **Relationships:**
 
@@ -1077,8 +1053,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_tagSpans` | CUtlVector<CSmartPtr<[CAnimGraphDoc_TagSpan](../schemas/animgraphdoclib.md#canimgraphdoc_tagspan)>> | `MPropertySuppressField` |
-| `m_clipName` | CUtlString | `MPropertyFriendlyName "Sequence"` `MPropertyAttributeChoiceName "Sequence"` |
+| `m_tagSpans` | CUtlVector< CSmartPtr< [CAnimGraphDoc_TagSpan](../schemas/animgraphdoclib.md#canimgraphdoc_tagspan) > > | `MPropertySuppressField` |
+| `m_clipName` | CUtlString | `MPropertyAttributeChoiceName Sequence` `MPropertyFriendlyName Sequence` |
 
 ### CAnimGraphDoc_ClipDataManager
 
@@ -1087,7 +1063,7 @@ classDiagram
 	"m_itemTable":
 	{
 	}
-}`, `MPropertyFriendlyName "Clip Data Manager"`
+}`, `MPropertyFriendlyName Clip Data Manager`
 
 **Relationships:**
 
@@ -1100,7 +1076,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_itemTable` | CUtlHashtable<CUtlString,CSmartPtr<[CAnimGraphDoc_ClipData](../schemas/animgraphdoclib.md#canimgraphdoc_clipdata)>> |  |
+| `m_itemTable` | CUtlHashtable< CUtlString, CSmartPtr< [CAnimGraphDoc_ClipData](../schemas/animgraphdoclib.md#canimgraphdoc_clipdata) > > |  |
 
 ### CAnimGraphDoc_CommentNode
 
@@ -1132,7 +1108,7 @@ classDiagram
 		139,
 		146
 	]
-}`, `MPropertyFriendlyName "Comment"`
+}`, `MPropertyFriendlyName Comment`
 
 **Relationships:**
 
@@ -1147,31 +1123,31 @@ classDiagram
 |------|------|-------------|
 | `m_commentText` | CUtlString | `MPropertySuppressField` |
 | `m_size` | Vector2D | `MPropertySuppressField` |
-| `m_color` | Color | `MPropertyFriendlyName "Color"` |
+| `m_color` | Color | `MPropertyFriendlyName Color` |
 
 ### CAnimGraphDoc_Component
 
 **Derived by:** [CActionComponent](animgraphdoclib.md#cactioncomponent), [CAnimScriptComponent](animgraphdoclib.md#canimscriptcomponent), [CCPPScriptComponent](animgraphdoclib.md#ccppscriptcomponent), [CDampedValueComponent](animgraphdoclib.md#cdampedvaluecomponent), [CDemoSettingsComponent](animgraphdoclib.md#cdemosettingscomponent), [CLODComponent](animgraphdoclib.md#clodcomponent), [CLookComponent](animgraphdoclib.md#clookcomponent), [CMovementComponent](animgraphdoclib.md#cmovementcomponent), [CPairedSequenceComponent](animgraphdoclib.md#cpairedsequencecomponent), [CRagdollComponent](animgraphdoclib.md#cragdollcomponent), [CRemapValueComponent](animgraphdoclib.md#cremapvaluecomponent), [CSlopeComponent](animgraphdoclib.md#cslopecomponent), [CStateMachineComponent](animgraphdoclib.md#cstatemachinecomponent)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CAnimGraphDoc_Component <|-- CCPPScriptComponent
-    CAnimGraphDoc_Component <|-- CMovementComponent
     CAnimGraphDoc_Component <|-- CActionComponent
-    CAnimGraphDoc_Component <|-- CPairedSequenceComponent
-    CAnimGraphDoc_Component <|-- CStateMachineComponent
-    CAnimGraphDoc_Component <|-- CLODComponent
-    CAnimGraphDoc_Component <|-- CDemoSettingsComponent
-    CAnimGraphDoc_Component <|-- CRagdollComponent
-    CAnimGraphDoc_Component <|-- CSlopeComponent
-    CAnimGraphDoc_Component <|-- CLookComponent
-    CAnimGraphDoc_Component <|-- CRemapValueComponent
-    CAnimGraphDoc_Component <|-- CDampedValueComponent
     CAnimGraphDoc_Component <|-- CAnimScriptComponent
+    CAnimGraphDoc_Component <|-- CCPPScriptComponent
+    CAnimGraphDoc_Component <|-- CDampedValueComponent
+    CAnimGraphDoc_Component <|-- CDemoSettingsComponent
+    CAnimGraphDoc_Component <|-- CLODComponent
+    CAnimGraphDoc_Component <|-- CLookComponent
+    CAnimGraphDoc_Component <|-- CMovementComponent
+    CAnimGraphDoc_Component <|-- CPairedSequenceComponent
+    CAnimGraphDoc_Component <|-- CRagdollComponent
+    CAnimGraphDoc_Component <|-- CRemapValueComponent
+    CAnimGraphDoc_Component <|-- CSlopeComponent
+    CAnimGraphDoc_Component <|-- CStateMachineComponent
     CAnimGraphDoc_Component *-- AnimComponentID
     CAnimGraphDoc_Component *-- AnimNodeNetworkMode
 ```
@@ -1182,9 +1158,9 @@ classDiagram
 |------|------|-------------|
 | `m_group` | CUtlString | `MPropertySuppressField` |
 | `m_id` | [AnimComponentID](../schemas/modellib.md#animcomponentid) | `MPropertySuppressField` |
-| `m_bStartEnabled` | bool | `MPropertyFriendlyName "Start Enabled"` |
-| `m_nPriority` | int32 | `MPropertyFriendlyName "Priority"` |
-| `m_networkMode` | [AnimNodeNetworkMode](../schemas/animgraphlib.md#animnodenetworkmode) | `MPropertyFriendlyName "Network Mode"` |
+| `m_bStartEnabled` | bool | `MPropertyFriendlyName Start Enabled` |
+| `m_nPriority` | int32 | `MPropertyFriendlyName Priority` |
+| `m_networkMode` | [AnimNodeNetworkMode](../schemas/!GlobalTypes.md#animnodenetworkmode) | `MPropertyFriendlyName Network Mode` |
 
 ### CAnimGraphDoc_ComponentManager
 
@@ -1206,7 +1182,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_components` | CUtlVector<CSmartPtr<[CAnimGraphDoc_Component](../schemas/animgraphdoclib.md#canimgraphdoc_component)>> |  |
+| `m_components` | CUtlVector< CSmartPtr< [CAnimGraphDoc_Component](../schemas/animgraphdoclib.md#canimgraphdoc_component) > > |  |
 
 ### CAnimGraphDoc_ComponentState
 
@@ -1282,20 +1258,20 @@ classDiagram
 
 **Derived by:** [CAnimGraphDoc_AndCondition](animgraphdoclib.md#canimgraphdoc_andcondition), [CAnimGraphDoc_CycleCondition](animgraphdoclib.md#canimgraphdoc_cyclecondition), [CAnimGraphDoc_FinishedCondition](animgraphdoclib.md#canimgraphdoc_finishedcondition), [CAnimGraphDoc_OrCondition](animgraphdoclib.md#canimgraphdoc_orcondition), [CAnimGraphDoc_ParameterCondition](animgraphdoclib.md#canimgraphdoc_parametercondition), [CAnimGraphDoc_StateStatusCondition](animgraphdoclib.md#canimgraphdoc_statestatuscondition), [CAnimGraphDoc_TagCondition](animgraphdoclib.md#canimgraphdoc_tagcondition), [CAnimGraphDoc_TimeCondition](animgraphdoclib.md#canimgraphdoc_timecondition)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
+    CAnimGraphDoc_Condition <|-- CAnimGraphDoc_AndCondition
     CAnimGraphDoc_Condition <|-- CAnimGraphDoc_CycleCondition
     CAnimGraphDoc_Condition <|-- CAnimGraphDoc_FinishedCondition
-    CAnimGraphDoc_Condition <|-- CAnimGraphDoc_AndCondition
     CAnimGraphDoc_Condition <|-- CAnimGraphDoc_OrCondition
-    CAnimGraphDoc_Condition <|-- CAnimGraphDoc_StateStatusCondition
-    CAnimGraphDoc_Condition <|-- CAnimGraphDoc_TimeCondition
-    CAnimGraphDoc_Condition <|-- CAnimGraphDoc_TagCondition
     CAnimGraphDoc_Condition <|-- CAnimGraphDoc_ParameterCondition
+    CAnimGraphDoc_Condition <|-- CAnimGraphDoc_StateStatusCondition
+    CAnimGraphDoc_Condition <|-- CAnimGraphDoc_TagCondition
+    CAnimGraphDoc_Condition <|-- CAnimGraphDoc_TimeCondition
 ```
 
 ### CAnimGraphDoc_ConditionContainer
@@ -1322,7 +1298,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_conditions` | CUtlVector<CSmartPtr<[CAnimGraphDoc_Condition](../schemas/animgraphdoclib.md#canimgraphdoc_condition)>> | `MPropertySuppressField` |
+| `m_conditions` | CUtlVector< CSmartPtr< [CAnimGraphDoc_Condition](../schemas/animgraphdoclib.md#canimgraphdoc_condition) > > | `MPropertySuppressField` |
 
 ### CAnimGraphDoc_ConflictManager
 
@@ -1344,7 +1320,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_conflicts` | CUtlVector<CSmartPtr<[CAnimConflictBase](../schemas/animgraphdoclib.md#canimconflictbase)>> |  |
+| `m_conflicts` | CUtlVector< CSmartPtr< [CAnimConflictBase](../schemas/animgraphdoclib.md#canimconflictbase) > > |  |
 
 ### CAnimGraphDoc_ContainerNodeBase
 
@@ -1352,15 +1328,15 @@ classDiagram
 
 **Derived by:** [CAnimGraphDoc_GroupNode](animgraphdoclib.md#canimgraphdoc_groupnode), [CAnimGraphDoc_SubGraphNode](animgraphdoclib.md#canimgraphdoc_subgraphnode)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
     CAnimGraphDoc_Node <|-- CAnimGraphDoc_ContainerNodeBase
-    CAnimGraphDoc_ContainerNodeBase <|-- CAnimGraphDoc_SubGraphNode
     CAnimGraphDoc_ContainerNodeBase <|-- CAnimGraphDoc_GroupNode
+    CAnimGraphDoc_ContainerNodeBase <|-- CAnimGraphDoc_SubGraphNode
     CAnimGraphDoc_ContainerNodeBase *-- AnimNodeID
     CAnimGraphDoc_ContainerNodeBase *-- AnimNodeOutputID
     CAnimGraphDoc_ContainerNodeBase *-- CAnimGraphDoc_NodeConnection
@@ -1372,7 +1348,7 @@ classDiagram
 |------|------|-------------|
 | `m_inputNodeID` | [AnimNodeID](../schemas/modellib.md#animnodeid) | `MPropertySuppressField` |
 | `m_outputNodeID` | [AnimNodeID](../schemas/modellib.md#animnodeid) | `MPropertySuppressField` |
-| `m_inputConnectionMap` | CUtlHashtable<[AnimNodeOutputID](../schemas/modellib.md#animnodeoutputid),[CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection)> | `MPropertySuppressField` |
+| `m_inputConnectionMap` | CUtlHashtable< [AnimNodeOutputID](../schemas/modellib.md#animnodeoutputid), [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) > | `MPropertySuppressField` |
 
 ### CAnimGraphDoc_CurrentRotationVelocityMetric
 
@@ -1381,7 +1357,7 @@ classDiagram
 **Metadata:** `MGetKV3ClassDefaults {
 	"_class": "CAnimGraphDoc_CurrentRotationVelocityMetric",
 	"m_flWeight": 1.000000
-}`, `MPropertyFriendlyName "Current Rotation Velocity Metric"`
+}`, `MPropertyFriendlyName Current Rotation Velocity Metric`
 
 **Relationships:**
 
@@ -1397,7 +1373,7 @@ classDiagram
 **Metadata:** `MGetKV3ClassDefaults {
 	"_class": "CAnimGraphDoc_CurrentVelocityMetric",
 	"m_flWeight": 1.000000
-}`, `MPropertyFriendlyName "Current Velocity Metric"`
+}`, `MPropertyFriendlyName Current Velocity Metric`
 
 **Relationships:**
 
@@ -1421,7 +1397,7 @@ classDiagram
 	{
 		"m_id": <HIDDEN FOR DIFF>,
 	}
-}`, `MPropertyFriendlyName "Cycle Condition"`
+}`, `MPropertyFriendlyName Cycle Condition`
 
 **Relationships:**
 
@@ -1437,10 +1413,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_comparisonOp` | [Comparison_t](../schemas/animgraphdoclib.md#comparison_t) |  |
+| `m_comparisonOp` | [Comparison_t](../schemas/!GlobalTypes.md#comparison_t) |  |
 | `m_comparisonString` | CUtlString |  |
 | `m_comparisonValue` | float32 |  |
-| `m_comparisonValueType` | [ComparisonValueType](../schemas/animgraphdoclib.md#comparisonvaluetype) |  |
+| `m_comparisonValueType` | [ComparisonValueType](../schemas/!GlobalTypes.md#comparisonvaluetype) |  |
 | `m_comparisonParamName` | CUtlString |  |
 | `m_comparisonParamID` | [AnimParamID](../schemas/modellib.md#animparamid) |  |
 
@@ -1473,7 +1449,7 @@ classDiagram
 		"m_id": <HIDDEN FOR DIFF>,
 	},
 	"m_bLockWhenWaning": false
-}`, `MPropertyFriendlyName "Cycle Control Clip"`
+}`, `MPropertyFriendlyName Cycle Control Clip`
 
 **Relationships:**
 
@@ -1489,12 +1465,12 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_tagSpans` | CUtlVector<CSmartPtr<[CAnimGraphDoc_TagSpan](../schemas/animgraphdoclib.md#canimgraphdoc_tagspan)>> | `MPropertySuppressField` |
-| `m_sequenceName` | CUtlString | `MPropertyFriendlyName "Sequence"` `MPropertyAttributeChoiceName "Sequence"` |
-| `m_valueSource` | [AnimValueSource](../schemas/animgraphlib.md#animvaluesource) | `MPropertyFriendlyName "Blend Source"` `MPropertyAutoRebuildOnChange` `MPropertyAttrStateCallback` |
+| `m_tagSpans` | CUtlVector< CSmartPtr< [CAnimGraphDoc_TagSpan](../schemas/animgraphdoclib.md#canimgraphdoc_tagspan) > > | `MPropertySuppressField` |
+| `m_sequenceName` | CUtlString | `MPropertyAttributeChoiceName Sequence` `MPropertyFriendlyName Sequence` |
+| `m_valueSource` | [AnimValueSource](../schemas/!GlobalTypes.md#animvaluesource) | `MPropertyAttrStateCallback` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Blend Source` |
 | `m_paramName` | CUtlString | `MPropertySuppressField` |
-| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Parameter"` `MPropertyAttributeChoiceName "FloatParameter"` |
-| `m_bLockWhenWaning` | bool | `MPropertyFriendlyName "Lock When Waning"` |
+| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Parameter` |
+| `m_bLockWhenWaning` | bool | `MPropertyFriendlyName Lock When Waning` |
 
 ### CAnimGraphDoc_CycleControlNode
 
@@ -1532,7 +1508,7 @@ classDiagram
 		"m_id": <HIDDEN FOR DIFF>,
 	},
 	"m_bLockWhenWaning": false
-}`, `MPropertyFriendlyName "Cycle Control"`
+}`, `MPropertyFriendlyName Cycle Control`
 
 **Relationships:**
 
@@ -1549,10 +1525,10 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_valueSource` | [AnimValueSource](../schemas/animgraphlib.md#animvaluesource) | `MPropertyFriendlyName "Blend Source"` `MPropertyAutoRebuildOnChange` `MPropertyAttrStateCallback` |
+| `m_valueSource` | [AnimValueSource](../schemas/!GlobalTypes.md#animvaluesource) | `MPropertyAttrStateCallback` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Blend Source` |
 | `m_paramName` | CUtlString | `MPropertySuppressField` |
-| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Parameter"` `MPropertyAttributeChoiceName "FloatParameter"` |
-| `m_bLockWhenWaning` | bool | `MPropertyFriendlyName "Lock When Waning"` |
+| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Parameter` |
+| `m_bLockWhenWaning` | bool | `MPropertyFriendlyName Lock When Waning` |
 
 ### CAnimGraphDoc_DampedPathMotor
 
@@ -1578,7 +1554,7 @@ classDiagram
 	"m_flSpringConstant": 10.000000,
 	"m_flMinSpringTension": 1.000000,
 	"m_flMaxSpringTension": 100.000000
-}`, `MPropertyFriendlyName "Damped Path Motor"`
+}`, `MPropertyFriendlyName Damped Path Motor`
 
 **Relationships:**
 
@@ -1593,15 +1569,15 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_flAnticipationTime` | float32 | `MPropertyFriendlyName "Anticipation Time"` |
-| `m_flMinSpeedScale` | float32 | `MPropertyFriendlyName "Minimum Speed Percentage"` |
+| `m_flAnticipationTime` | float32 | `MPropertyFriendlyName Anticipation Time` |
+| `m_flMinSpeedScale` | float32 | `MPropertyFriendlyName Minimum Speed Percentage` |
 | `m_anticipationPosParamName` | CUtlString | `MPropertySuppressField` |
-| `m_anticipationPosParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Anticipation Position Parameter"` `MPropertyAttributeChoiceName "VectorParameter"` |
+| `m_anticipationPosParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName VectorParameter` `MPropertyFriendlyName Anticipation Position Parameter` |
 | `m_anticipationHeadingParamName` | CUtlString | `MPropertySuppressField` |
-| `m_anticipationHeadingParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Anticipation Heading Parameter"` `MPropertyAttributeChoiceName "FloatParameter"` |
-| `m_flSpringConstant` | float32 | `MPropertyFriendlyName "Spring Constant"` `MPropertyGroupName "+Stopping:Arrival Damping"` |
-| `m_flMinSpringTension` | float32 | `MPropertyFriendlyName "Min Tension"` `MPropertyGroupName "+Stopping:Arrival Damping"` |
-| `m_flMaxSpringTension` | float32 | `MPropertyFriendlyName "Max Tension"` `MPropertyGroupName "+Stopping:Arrival Damping"` |
+| `m_anticipationHeadingParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Anticipation Heading Parameter` |
+| `m_flSpringConstant` | float32 | `MPropertyFriendlyName Spring Constant` `MPropertyGroupName +Stopping:Arrival Damping` |
+| `m_flMinSpringTension` | float32 | `MPropertyFriendlyName Min Tension` `MPropertyGroupName +Stopping:Arrival Damping` |
+| `m_flMaxSpringTension` | float32 | `MPropertyFriendlyName Max Tension` `MPropertyGroupName +Stopping:Arrival Damping` |
 
 ### CAnimGraphDoc_DirectPlaybackNode
 
@@ -1634,7 +1610,7 @@ classDiagram
 	},
 	"m_bFinishEarly": false,
 	"m_bResetOnFinish": true
-}`, `MPropertyFriendlyName "Direct Playback"`
+}`, `MPropertyFriendlyName Direct Playback`
 
 **Relationships:**
 
@@ -1649,8 +1625,8 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_bFinishEarly` | bool | `MPropertyFriendlyName "Finish Early"` |
-| `m_bResetOnFinish` | bool | `MPropertyFriendlyName "Reset Child On Finish"` |
+| `m_bFinishEarly` | bool | `MPropertyFriendlyName Finish Early` |
+| `m_bResetOnFinish` | bool | `MPropertyFriendlyName Reset Child On Finish` |
 
 ### CAnimGraphDoc_DirectionalBlendNode
 
@@ -1687,7 +1663,7 @@ classDiagram
 		"m_fSpeedScale": 1.000000,
 		"m_fFallingSpeedScale": 1.000000
 	}
-}`, `MPropertyFriendlyName "Directional Blend"`
+}`, `MPropertyFriendlyName Directional Blend`
 
 **Relationships:**
 
@@ -1703,14 +1679,14 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_animNamePrefix` | CUtlString | `MPropertyFriendlyName "Sequence Names Prefix"` |
-| `m_blendValueSource` | [AnimValueSource](../schemas/animgraphlib.md#animvaluesource) | `MPropertyFriendlyName "Blend Source"` `MPropertyAutoRebuildOnChange` `MPropertyAttrStateCallback` |
+| `m_animNamePrefix` | CUtlString | `MPropertyFriendlyName Sequence Names Prefix` |
+| `m_blendValueSource` | [AnimValueSource](../schemas/!GlobalTypes.md#animvaluesource) | `MPropertyAttrStateCallback` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Blend Source` |
 | `m_paramName` | CUtlString | `MPropertySuppressField` |
-| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Parameter"` `MPropertyAttributeChoiceName "FloatParameter"` |
-| `m_bLoop` | bool | `MPropertyFriendlyName "Loop"` |
-| `m_bLockBlendOnReset` | bool | `MPropertyFriendlyName "Lock Blend on Reset"` |
-| `m_playbackSpeed` | float32 | `MPropertyFriendlyName "Playback Speed"` |
-| `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyFriendlyName "Damping"` |
+| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Parameter` |
+| `m_bLoop` | bool | `MPropertyFriendlyName Loop` |
+| `m_bLockBlendOnReset` | bool | `MPropertyFriendlyName Lock Blend on Reset` |
+| `m_playbackSpeed` | float32 | `MPropertyFriendlyName Playback Speed` |
+| `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyFriendlyName Damping` |
 
 ### CAnimGraphDoc_DistanceRemainingMetric
 
@@ -1726,7 +1702,7 @@ classDiagram
 	"m_flStartGoalFilterDistance": 150.000000,
 	"m_bFilterGoalOvershoot": false,
 	"m_flMaxGoalOvershootScale": 2.000000
-}`, `MPropertyFriendlyName "Distance Remaining Metric"`
+}`, `MPropertyFriendlyName Distance Remaining Metric`
 
 **Relationships:**
 
@@ -1739,13 +1715,13 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_flMaxDistance` | float32 | `MPropertyFriendlyName "Maximum Tracked Distance"` |
-| `m_bFilterFixedMinDistance` | bool | `MPropertyFriendlyName "Filter By Fixed Distance"` `MPropertyAutoRebuildOnChange` |
-| `m_flMinDistance` | float32 | `MPropertyFriendlyName "Min Distance"` `MPropertyAttrStateCallback` |
-| `m_bFilterGoalDistance` | bool | `MPropertyFriendlyName "Filter By Goal Distance"` `MPropertyAutoRebuildOnChange` |
-| `m_flStartGoalFilterDistance` | float32 | `MPropertyFriendlyName "Goal Filter Start Distance"` `MPropertyAttrStateCallback` |
-| `m_bFilterGoalOvershoot` | bool | `MPropertyFriendlyName "Filter By Goal Overshoot"` `MPropertyAutoRebuildOnChange` `MPropertyAttrStateCallback` |
-| `m_flMaxGoalOvershootScale` | float32 | `MPropertyFriendlyName "Max Goal Overshoot Scale"` `MPropertyAttrStateCallback` |
+| `m_flMaxDistance` | float32 | `MPropertyFriendlyName Maximum Tracked Distance` |
+| `m_bFilterFixedMinDistance` | bool | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Filter By Fixed Distance` |
+| `m_flMinDistance` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Min Distance` |
+| `m_bFilterGoalDistance` | bool | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Filter By Goal Distance` |
+| `m_flStartGoalFilterDistance` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Goal Filter Start Distance` |
+| `m_bFilterGoalOvershoot` | bool | `MPropertyAttrStateCallback` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Filter By Goal Overshoot` |
+| `m_flMaxGoalOvershootScale` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Max Goal Overshoot Scale` |
 
 ### CAnimGraphDoc_EmitTagAction
 
@@ -1771,7 +1747,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_tag` | [AnimTagID](../schemas/modellib.md#animtagid) | `MPropertyFriendlyName "Tag"` `MPropertyAttributeChoiceName "Tag"` |
+| `m_tag` | [AnimTagID](../schemas/modellib.md#animtagid) | `MPropertyAttributeChoiceName Tag` `MPropertyFriendlyName Tag` |
 
 ### CAnimGraphDoc_ExpressionAction
 
@@ -1811,7 +1787,7 @@ classDiagram
 	"_class": "CAnimGraphDoc_FinishedCondition",
 	"m_option": "FinishedConditionOption_OnFinished",
 	"m_bIsFinished": true
-}`, `MPropertyFriendlyName "Finished Condition"`
+}`, `MPropertyFriendlyName Finished Condition`
 
 **Relationships:**
 
@@ -1825,7 +1801,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_option` | [FinishedConditionOption](../schemas/animgraphdoclib.md#finishedconditionoption) |  |
+| `m_option` | [FinishedConditionOption](../schemas/!GlobalTypes.md#finishedconditionoption) |  |
 | `m_bIsFinished` | bool |  |
 
 ### CAnimGraphDoc_FollowAttachmentNode
@@ -1861,7 +1837,7 @@ classDiagram
 	"m_attachmentName": "",
 	"m_bMatchTranslation": false,
 	"m_bMatchRotation": false
-}`, `MPropertyFriendlyName "Follow Attachment"`
+}`, `MPropertyFriendlyName Follow Attachment`
 
 **Relationships:**
 
@@ -1876,10 +1852,10 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_boneName` | CUtlString | `MPropertyFriendlyName "Bone"` `MPropertyAttributeChoiceName "Bone"` |
-| `m_attachmentName` | CUtlString | `MPropertyFriendlyName "Target Attachment"` `MPropertyAttributeChoiceName "Attachment"` |
-| `m_bMatchTranslation` | bool | `MPropertyFriendlyName "Match Translation"` |
-| `m_bMatchRotation` | bool | `MPropertyFriendlyName "Match Rotation"` |
+| `m_boneName` | CUtlString | `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName Bone` |
+| `m_attachmentName` | CUtlString | `MPropertyAttributeChoiceName Attachment` `MPropertyFriendlyName Target Attachment` |
+| `m_bMatchTranslation` | bool | `MPropertyFriendlyName Match Translation` |
+| `m_bMatchRotation` | bool | `MPropertyFriendlyName Match Rotation` |
 
 ### CAnimGraphDoc_FollowPathNode
 
@@ -1933,7 +1909,7 @@ classDiagram
 		"m_fSpeedScale": 1.000000,
 		"m_fFallingSpeedScale": 1.000000
 	}
-}`, `MPropertyFriendlyName "Follow Path"`
+}`, `MPropertyFriendlyName Follow Path`
 
 **Relationships:**
 
@@ -1951,20 +1927,20 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_flBlendOutTime` | float32 | `MPropertyFriendlyName "Blend Out Time"` |
-| `m_bBlockNonPathMovement` | bool | `MPropertyFriendlyName "Block Non-Path Movement"` |
-| `m_bStopFeetAtGoal` | bool | `MPropertyFriendlyName "Stop Feet at Goal"` |
-| `m_bScaleSpeed` | bool | `MPropertyFriendlyName "Enable Speed Scaling"` `MPropertyGroupName "Speed Scaling"` `MPropertyAutoRebuildOnChange` |
-| `m_flScale` | float32 | `MPropertyFriendlyName "Scale"` `MPropertyGroupName "Speed Scaling"` `MPropertyAttributeRange "0 1"` `MPropertyAttrStateCallback` |
-| `m_flMinAngle` | float32 | `MPropertyFriendlyName "Min Angle"` `MPropertyGroupName "Speed Scaling"` `MPropertyAttributeRange "0 180"` `MPropertyAttrStateCallback` |
-| `m_flMaxAngle` | float32 | `MPropertyFriendlyName "Max Angle"` `MPropertyGroupName "Speed Scaling"` `MPropertyAttributeRange "0 180"` `MPropertyAttrStateCallback` |
-| `m_flSpeedScaleBlending` | float32 | `MPropertyFriendlyName "Blend Time"` `MPropertyGroupName "Speed Scaling"` `MPropertyAttrStateCallback` |
-| `m_bTurnToFace` | bool | `MPropertyFriendlyName "Enable Turn to Face"` `MPropertyGroupName "Turn to Face"` `MPropertyAutoRebuildOnChange` |
-| `m_facingTarget` | [AnimValueSource](../schemas/animgraphlib.md#animvaluesource) | `MPropertyFriendlyName "Target"` `MPropertyGroupName "Turn to Face"` `MPropertyAutoRebuildOnChange` `MPropertyAttrStateCallback` |
+| `m_flBlendOutTime` | float32 | `MPropertyFriendlyName Blend Out Time` |
+| `m_bBlockNonPathMovement` | bool | `MPropertyFriendlyName Block Non-Path Movement` |
+| `m_bStopFeetAtGoal` | bool | `MPropertyFriendlyName Stop Feet at Goal` |
+| `m_bScaleSpeed` | bool | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Enable Speed Scaling` `MPropertyGroupName Speed Scaling` |
+| `m_flScale` | float32 | `MPropertyAttrStateCallback` `MPropertyAttributeRange 0 1` `MPropertyFriendlyName Scale` `MPropertyGroupName Speed Scaling` |
+| `m_flMinAngle` | float32 | `MPropertyAttrStateCallback` `MPropertyAttributeRange 0 180` `MPropertyFriendlyName Min Angle` `MPropertyGroupName Speed Scaling` |
+| `m_flMaxAngle` | float32 | `MPropertyAttrStateCallback` `MPropertyAttributeRange 0 180` `MPropertyFriendlyName Max Angle` `MPropertyGroupName Speed Scaling` |
+| `m_flSpeedScaleBlending` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Blend Time` `MPropertyGroupName Speed Scaling` |
+| `m_bTurnToFace` | bool | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Enable Turn to Face` `MPropertyGroupName Turn to Face` |
+| `m_facingTarget` | [AnimValueSource](../schemas/!GlobalTypes.md#animvaluesource) | `MPropertyAttrStateCallback` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Target` `MPropertyGroupName Turn to Face` |
 | `m_paramName` | CUtlString | `MPropertySuppressField` |
-| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Parameter"` `MPropertyGroupName "Turn to Face"` `MPropertyAttributeChoiceName "FloatParameter"` `MPropertyAttrStateCallback` |
-| `m_flTurnToFaceOffset` | float32 | `MPropertyFriendlyName "Offset"` `MPropertyGroupName "Turn to Face"` `MPropertyAttributeRange "-180 180"` `MPropertyAttrStateCallback` |
-| `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyFriendlyName "Damping"` `MPropertyGroupName "Turn to Face"` `MPropertyAttrStateCallback` |
+| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Parameter` `MPropertyGroupName Turn to Face` |
+| `m_flTurnToFaceOffset` | float32 | `MPropertyAttrStateCallback` `MPropertyAttributeRange -180 180` `MPropertyFriendlyName Offset` `MPropertyGroupName Turn to Face` |
+| `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyAttrStateCallback` `MPropertyFriendlyName Damping` `MPropertyGroupName Turn to Face` |
 
 ### CAnimGraphDoc_FollowTargetNode
 
@@ -2014,7 +1990,7 @@ classDiagram
 		"m_TargetCoordSystem": "World Space"
 	},
 	"m_bMatchTargetOrientation": false
-}`, `MPropertyFriendlyName "Follow Target"`
+}`, `MPropertyFriendlyName Follow Target`
 
 **Relationships:**
 
@@ -2030,9 +2006,9 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_boneName` | CUtlString | `MPropertyFriendlyName "Bone"` `MPropertyAttributeChoiceName "Bone"` |
-| `m_TargetSettings` | [IKTargetSettings_t](../schemas/animgraphlib.md#iktargetsettings_t) | `MPropertyFriendlyName "Target Settings"` `MPropertyAutoExpandSelf` |
-| `m_bMatchTargetOrientation` | bool | `MPropertyFriendlyName "Match Target Orientation"` `MPropertyAutoRebuildOnChange` |
+| `m_boneName` | CUtlString | `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName Bone` |
+| `m_TargetSettings` | [IKTargetSettings_t](../schemas/animgraphlib.md#iktargetsettings_t) | `MPropertyAutoExpandSelf` `MPropertyFriendlyName Target Settings` |
+| `m_bMatchTargetOrientation` | bool | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Match Target Orientation` |
 
 ### CAnimGraphDoc_FootAdjustmentNode
 
@@ -2078,7 +2054,7 @@ classDiagram
 	"m_flTurnTimeMax": 3.000000,
 	"m_flStepHeightMax": 4.000000,
 	"m_flStepHeightMaxAngle": 90.000000
-}`, `MPropertyFriendlyName "Foot Adjustment"`
+}`, `MPropertyFriendlyName Foot Adjustment`
 
 **Relationships:**
 
@@ -2095,15 +2071,15 @@ classDiagram
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
 | `m_facingTargetParam` | CUtlString | `MPropertySuppressField` |
-| `m_facingTarget` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Turn to Face"` `MPropertyAttributeChoiceName "FloatParameter"` |
-| `m_bResetChild` | bool | `MPropertyFriendlyName "Reset Child"` |
-| `m_bAnimationDriven` | bool | `MPropertyFriendlyName "Animation Driven"` `MPropertyAutoRebuildOnChange` |
-| `m_baseClipName` | CUtlString | `MPropertyFriendlyName "Base Anim Clips"` `MPropertyGroupName "Anim Driven Settings"` `MPropertyAttributeChoiceName "Sequence"` `MPropertyAttrStateCallback` |
-| `m_clips` | CUtlVector<CUtlString> | `MPropertyFriendlyName "Clips"` `MPropertyGroupName "Anim Driven Settings"` `MPropertyAttributeChoiceName "Sequence"` `MPropertyAttrStateCallback` |
-| `m_flTurnTimeMin` | float32 | `MPropertyFriendlyName "Turn Time Min"` `MPropertyGroupName "Procedural Settings"` `MPropertyAttrStateCallback` |
-| `m_flTurnTimeMax` | float32 | `MPropertyFriendlyName "Turn Time Max"` `MPropertyGroupName "Procedural Settings"` `MPropertyAttrStateCallback` |
-| `m_flStepHeightMax` | float32 | `MPropertyFriendlyName "Step Height Max"` `MPropertyGroupName "Procedural Settings"` `MPropertyAttrStateCallback` |
-| `m_flStepHeightMaxAngle` | float32 | `MPropertyFriendlyName "Step Height Max Angle"` `MPropertyGroupName "Procedural Settings"` `MPropertyAttrStateCallback` |
+| `m_facingTarget` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Turn to Face` |
+| `m_bResetChild` | bool | `MPropertyFriendlyName Reset Child` |
+| `m_bAnimationDriven` | bool | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Animation Driven` |
+| `m_baseClipName` | CUtlString | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName Sequence` `MPropertyFriendlyName Base Anim Clips` `MPropertyGroupName Anim Driven Settings` |
+| `m_clips` | CUtlVector< CUtlString > | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName Sequence` `MPropertyFriendlyName Clips` `MPropertyGroupName Anim Driven Settings` |
+| `m_flTurnTimeMin` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Turn Time Min` `MPropertyGroupName Procedural Settings` |
+| `m_flTurnTimeMax` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Turn Time Max` `MPropertyGroupName Procedural Settings` |
+| `m_flStepHeightMax` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Step Height Max` `MPropertyGroupName Procedural Settings` |
+| `m_flStepHeightMaxAngle` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Step Height Max Angle` `MPropertyGroupName Procedural Settings` |
 
 ### CAnimGraphDoc_FootCycleMetric
 
@@ -2115,7 +2091,7 @@ classDiagram
 	"m_feet":
 	[
 	]
-}`, `MPropertyFriendlyName "Foot Cycle Metric"`
+}`, `MPropertyFriendlyName Foot Cycle Metric`
 
 **Relationships:**
 
@@ -2128,7 +2104,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_feet` | CUtlVector<CUtlString> | `MPropertyFriendlyName "Foot"` `MPropertyAttributeChoiceName "Foot"` `MPropertyAutoExpandSelf` |
+| `m_feet` | CUtlVector< CUtlString > | `MPropertyAttributeChoiceName Foot` `MPropertyAutoExpandSelf` `MPropertyFriendlyName Foot` |
 
 ### CAnimGraphDoc_FootLockNode
 
@@ -2216,7 +2192,7 @@ classDiagram
 	},
 	"m_flMaxRootHeightOffset": 100.000000,
 	"m_flMinRootHeightOffset": -100.000000
-}`, `MPropertyFriendlyName "Stride Retargeting"`
+}`, `MPropertyFriendlyName Stride Retargeting`
 
 **Relationships:**
 
@@ -2234,43 +2210,43 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_items` | CUtlVector<[CFootLockItem](../schemas/animgraphdoclib.md#cfootlockitem)> | `MPropertyFriendlyName "Feet"` `MPropertyAutoExpandSelf` |
-| `m_hipBoneName` | CUtlString | `MPropertyFriendlyName "Hip Bone"` `MPropertyAttributeChoiceName "Bone"` |
-| `m_flBlendTime` | float32 | `MPropertyFriendlyName "Blend Time"` |
-| `m_bApplyFootRotationLimits` | bool | `MPropertyFriendlyName "Apply Foot Rotation Limits"` |
-| `m_bResetChild` | bool | `MPropertyFriendlyName "Reset Child"` |
-| `m_ikSolverType` | [IKSolverType](../schemas/animgraphlib.md#iksolvertype) | `MPropertyFriendlyName "IK Solver Type"` `MPropertyGroupName "IK"` `MPropertyAutoRebuildOnChange` |
-| `m_bAlwaysUseFallbackHinge` | bool | `MPropertyFriendlyName "Always use fallback hinge"` `MPropertyGroupName "IK"` `MPropertyAttrStateCallback` |
-| `m_bApplyLegTwistLimits` | bool | `MPropertyFriendlyName "Limit Leg Twist"` `MPropertyGroupName "IK"` `MPropertyAttrStateCallback` |
-| `m_flMaxLegTwist` | float32 | `MPropertyFriendlyName "Max Leg Twist Angle"` `MPropertyGroupName "IK"` `MPropertyAttrStateCallback` |
-| `m_flStrideCurveScale` | float32 | `MPropertyFriendlyName "Curve Foot Paths"` `MPropertyGroupName "Curve Paths"` `MPropertyAttributeRange "0 1"` |
-| `m_flStrideCurveLimitScale` | float32 | `MPropertyFriendlyName "Curve Paths Limit"` `MPropertyGroupName "Curve Paths"` `MPropertyAttributeRange "0 1"` |
-| `m_bEnableVerticalCurvedPaths` | bool | `MPropertyFriendlyName "Enable Vertical Curved Paths"` `MPropertyGroupName "Curve Paths"` |
-| `m_bModulateStepHeight` | bool | `MPropertyFriendlyName "Modulate Step Height"` `MPropertyGroupName "Step Height"` `MPropertyAutoRebuildOnChange` |
-| `m_flStepHeightIncreaseScale` | float32 | `MPropertyFriendlyName "Height Increase Scale"` `MPropertyGroupName "Step Height"` `MPropertyAttrStateCallback` |
-| `m_flStepHeightDecreaseScale` | float32 | `MPropertyFriendlyName "Height Decrease Scale"` `MPropertyGroupName "Step Height"` `MPropertyAttrStateCallback` |
-| `m_bEnableHipShift` | bool | `MPropertyFriendlyName "Enable Hip Shift"` `MPropertyGroupName "Hip Shift"` |
-| `m_flHipShiftScale` | float32 | `MPropertyFriendlyName "Hip Shift Scale"` `MPropertyGroupName "Hip Shift"` `MPropertyAttributeRange "0 1"` |
-| `m_hipShiftDamping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyFriendlyName "Damping"` `MPropertyGroupName "Hip Shift"` |
-| `m_bApplyTilt` | bool | `MPropertyFriendlyName "Apply Tilt"` `MPropertyGroupName "Tilt"` |
-| `m_flTiltPlanePitchSpringStrength` | float32 | `MPropertyFriendlyName "Tilt Plane Pitch Spring Strength"` `MPropertyGroupName "Tilt"` |
-| `m_flTiltPlaneRollSpringStrength` | float32 | `MPropertyFriendlyName "Tilt Plane Roll Spring Strength"` `MPropertyGroupName "Tilt"` |
-| `m_bEnableLockBreaking` | bool | `MPropertyFriendlyName "Enable Lock Breaking"` `MPropertyGroupName "Lock Breaking"` |
-| `m_flLockBreakTolerance` | float32 | `MPropertyFriendlyName "Tolerance"` `MPropertyGroupName "Lock Breaking"` |
-| `m_flLockBreakBlendTime` | float32 | `MPropertyFriendlyName "Blend Time"` `MPropertyGroupName "Lock Breaking"` |
-| `m_bEnableStretching` | bool | `MPropertyFriendlyName "Enable Stretching"` `MPropertyGroupName "Stretch"` |
-| `m_flMaxStretchAmount` | float32 | `MPropertyFriendlyName "Max Stretch Amount"` `MPropertyGroupName "Stretch"` |
-| `m_flStretchExtensionScale` | float32 | `MPropertyFriendlyName "Extension Scale"` `MPropertyGroupName "Stretch"` `MPropertyAttributeRange "0 1"` |
-| `m_bEnableGroundTracing` | bool | `MPropertyFriendlyName "Enable Ground Tracing"` `MPropertyGroupName "Ground IK"` `MPropertyAutoRebuildOnChange` |
-| `m_flTraceAngleBlend` | float32 | `MPropertyFriendlyName "Angle Traces with Slope"` `MPropertyGroupName "Ground IK"` `MPropertyAttributeRange "0 1"` `MPropertyAttrStateCallback` |
-| `m_bApplyHipDrop` | bool | `MPropertyFriendlyName "Apply Hip Drop"` `MPropertyGroupName "Ground IK"` `MPropertyAutoRebuildOnChange` `MPropertyAttrStateCallback` |
-| `m_flMaxFootHeight` | float32 | `MPropertyFriendlyName "Max Foot Lift"` `MPropertyGroupName "Ground IK"` `MPropertyAttrStateCallback` |
-| `m_flExtensionScale` | float32 | `MPropertyFriendlyName "Leg Extension Scale"` `MPropertyGroupName "Ground IK"` `MPropertyAttrStateCallback` |
-| `m_hipDampingSettings` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyFriendlyName "Hip Damping"` `MPropertyGroupName "Ground IK"` `MPropertyAttrStateCallback` |
-| `m_bEnableRootHeightDamping` | bool | `MPropertyFriendlyName "Enable Root Height Damping"` `MPropertyGroupName "Root Height Damping"` `MPropertyAutoRebuildOnChange` |
-| `m_rootHeightDamping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyFriendlyName "Damping Settings"` `MPropertyGroupName "Root Height Damping"` `MPropertyAttrStateCallback` |
-| `m_flMaxRootHeightOffset` | float32 | `MPropertyFriendlyName "Max Offset"` `MPropertyGroupName "Root Height Damping"` `MPropertyAttrStateCallback` |
-| `m_flMinRootHeightOffset` | float32 | `MPropertyFriendlyName "Min Offset"` `MPropertyGroupName "Root Height Damping"` `MPropertyAttrStateCallback` |
+| `m_items` | CUtlVector< [CFootLockItem](../schemas/animgraphdoclib.md#cfootlockitem) > | `MPropertyAutoExpandSelf` `MPropertyFriendlyName Feet` |
+| `m_hipBoneName` | CUtlString | `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName Hip Bone` |
+| `m_flBlendTime` | float32 | `MPropertyFriendlyName Blend Time` |
+| `m_bApplyFootRotationLimits` | bool | `MPropertyFriendlyName Apply Foot Rotation Limits` |
+| `m_bResetChild` | bool | `MPropertyFriendlyName Reset Child` |
+| `m_ikSolverType` | [IKSolverType](../schemas/!GlobalTypes.md#iksolvertype) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName IK Solver Type` `MPropertyGroupName IK` |
+| `m_bAlwaysUseFallbackHinge` | bool | `MPropertyAttrStateCallback` `MPropertyFriendlyName Always use fallback hinge` `MPropertyGroupName IK` |
+| `m_bApplyLegTwistLimits` | bool | `MPropertyAttrStateCallback` `MPropertyFriendlyName Limit Leg Twist` `MPropertyGroupName IK` |
+| `m_flMaxLegTwist` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Max Leg Twist Angle` `MPropertyGroupName IK` |
+| `m_flStrideCurveScale` | float32 | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName Curve Foot Paths` `MPropertyGroupName Curve Paths` |
+| `m_flStrideCurveLimitScale` | float32 | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName Curve Paths Limit` `MPropertyGroupName Curve Paths` |
+| `m_bEnableVerticalCurvedPaths` | bool | `MPropertyFriendlyName Enable Vertical Curved Paths` `MPropertyGroupName Curve Paths` |
+| `m_bModulateStepHeight` | bool | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Modulate Step Height` `MPropertyGroupName Step Height` |
+| `m_flStepHeightIncreaseScale` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Height Increase Scale` `MPropertyGroupName Step Height` |
+| `m_flStepHeightDecreaseScale` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Height Decrease Scale` `MPropertyGroupName Step Height` |
+| `m_bEnableHipShift` | bool | `MPropertyFriendlyName Enable Hip Shift` `MPropertyGroupName Hip Shift` |
+| `m_flHipShiftScale` | float32 | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName Hip Shift Scale` `MPropertyGroupName Hip Shift` |
+| `m_hipShiftDamping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyFriendlyName Damping` `MPropertyGroupName Hip Shift` |
+| `m_bApplyTilt` | bool | `MPropertyFriendlyName Apply Tilt` `MPropertyGroupName Tilt` |
+| `m_flTiltPlanePitchSpringStrength` | float32 | `MPropertyFriendlyName Tilt Plane Pitch Spring Strength` `MPropertyGroupName Tilt` |
+| `m_flTiltPlaneRollSpringStrength` | float32 | `MPropertyFriendlyName Tilt Plane Roll Spring Strength` `MPropertyGroupName Tilt` |
+| `m_bEnableLockBreaking` | bool | `MPropertyFriendlyName Enable Lock Breaking` `MPropertyGroupName Lock Breaking` |
+| `m_flLockBreakTolerance` | float32 | `MPropertyFriendlyName Tolerance` `MPropertyGroupName Lock Breaking` |
+| `m_flLockBreakBlendTime` | float32 | `MPropertyFriendlyName Blend Time` `MPropertyGroupName Lock Breaking` |
+| `m_bEnableStretching` | bool | `MPropertyFriendlyName Enable Stretching` `MPropertyGroupName Stretch` |
+| `m_flMaxStretchAmount` | float32 | `MPropertyFriendlyName Max Stretch Amount` `MPropertyGroupName Stretch` |
+| `m_flStretchExtensionScale` | float32 | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName Extension Scale` `MPropertyGroupName Stretch` |
+| `m_bEnableGroundTracing` | bool | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Enable Ground Tracing` `MPropertyGroupName Ground IK` |
+| `m_flTraceAngleBlend` | float32 | `MPropertyAttrStateCallback` `MPropertyAttributeRange 0 1` `MPropertyFriendlyName Angle Traces with Slope` `MPropertyGroupName Ground IK` |
+| `m_bApplyHipDrop` | bool | `MPropertyAttrStateCallback` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Apply Hip Drop` `MPropertyGroupName Ground IK` |
+| `m_flMaxFootHeight` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Max Foot Lift` `MPropertyGroupName Ground IK` |
+| `m_flExtensionScale` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Leg Extension Scale` `MPropertyGroupName Ground IK` |
+| `m_hipDampingSettings` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyAttrStateCallback` `MPropertyFriendlyName Hip Damping` `MPropertyGroupName Ground IK` |
+| `m_bEnableRootHeightDamping` | bool | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Enable Root Height Damping` `MPropertyGroupName Root Height Damping` |
+| `m_rootHeightDamping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyAttrStateCallback` `MPropertyFriendlyName Damping Settings` `MPropertyGroupName Root Height Damping` |
+| `m_flMaxRootHeightOffset` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Max Offset` `MPropertyGroupName Root Height Damping` |
+| `m_flMinRootHeightOffset` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Min Offset` `MPropertyGroupName Root Height Damping` |
 
 ### CAnimGraphDoc_FootPinningNode
 
@@ -2313,7 +2289,7 @@ classDiagram
 	"m_bApplyLegTwistLimits": false,
 	"m_flMaxLegTwist": 25.000000,
 	"m_bResetChild": true
-}`, `MPropertyFriendlyName "Foot Pinning"`
+}`, `MPropertyFriendlyName Foot Pinning`
 
 **Relationships:**
 
@@ -2330,16 +2306,16 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_items` | CUtlVector<[CFootPinningItem](../schemas/animgraphdoclib.md#cfootpinningitem)> | `MPropertyFriendlyName "Feet"` `MPropertyAutoExpandSelf` |
-| `m_eTimingSource` | [FootPinningTimingSource](../schemas/animgraphlib.md#footpinningtimingsource) | `MPropertyFriendlyName "Lock Timing Source"` |
-| `m_flBlendTime` | float32 | `MPropertyFriendlyName "Blend Time"` |
-| `m_flLockBreakDistance` | float32 | `MPropertyFriendlyName "Lock Break Distance"` |
-| `m_flMaxLegStraightAmount` | float32 | `MPropertyFriendlyName "Max Leg Straight Amount"` `MPropertyAttributeRange "0 1"` |
-| `m_bApplyFootRotationLimits` | bool | `MPropertyFriendlyName "Limit Foot Rotation"` `MPropertyGroupName "Foot Rotation Limits"` |
-| `m_hipBoneName` | CUtlString | `MPropertyFriendlyName "Hip Bone"` `MPropertyAttributeChoiceName "Bone"` `MPropertyGroupName "Foot Rotation Limits"` |
-| `m_bApplyLegTwistLimits` | bool | `MPropertyFriendlyName "Limit Leg Twist"` `MPropertyGroupName "Knee Twist Limits"` |
-| `m_flMaxLegTwist` | float32 | `MPropertyFriendlyName "Max Leg Twist Angle"` `MPropertyGroupName "Knee Twist Limits"` |
-| `m_bResetChild` | bool | `MPropertyFriendlyName "Reset Child"` |
+| `m_items` | CUtlVector< [CFootPinningItem](../schemas/animgraphdoclib.md#cfootpinningitem) > | `MPropertyAutoExpandSelf` `MPropertyFriendlyName Feet` |
+| `m_eTimingSource` | [FootPinningTimingSource](../schemas/!GlobalTypes.md#footpinningtimingsource) | `MPropertyFriendlyName Lock Timing Source` |
+| `m_flBlendTime` | float32 | `MPropertyFriendlyName Blend Time` |
+| `m_flLockBreakDistance` | float32 | `MPropertyFriendlyName Lock Break Distance` |
+| `m_flMaxLegStraightAmount` | float32 | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName Max Leg Straight Amount` |
+| `m_bApplyFootRotationLimits` | bool | `MPropertyFriendlyName Limit Foot Rotation` `MPropertyGroupName Foot Rotation Limits` |
+| `m_hipBoneName` | CUtlString | `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName Hip Bone` `MPropertyGroupName Foot Rotation Limits` |
+| `m_bApplyLegTwistLimits` | bool | `MPropertyFriendlyName Limit Leg Twist` `MPropertyGroupName Knee Twist Limits` |
+| `m_flMaxLegTwist` | float32 | `MPropertyFriendlyName Max Leg Twist Angle` `MPropertyGroupName Knee Twist Limits` |
+| `m_bResetChild` | bool | `MPropertyFriendlyName Reset Child` |
 
 ### CAnimGraphDoc_FootPositionMetric
 
@@ -2352,7 +2328,7 @@ classDiagram
 	[
 	],
 	"m_bIgnoreSlope": true
-}`, `MPropertyFriendlyName "Foot Position Metric"`
+}`, `MPropertyFriendlyName Foot Position Metric`
 
 **Relationships:**
 
@@ -2365,8 +2341,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_feet` | CUtlVector<CUtlString> | `MPropertyFriendlyName "Foot"` `MPropertyAttributeChoiceName "Foot"` `MPropertyAutoExpandSelf` |
-| `m_bIgnoreSlope` | bool | `MPropertyFriendlyName "Ignore Slope"` |
+| `m_feet` | CUtlVector< CUtlString > | `MPropertyAttributeChoiceName Foot` `MPropertyAutoExpandSelf` `MPropertyFriendlyName Foot` |
+| `m_bIgnoreSlope` | bool | `MPropertyFriendlyName Ignore Slope` |
 
 ### CAnimGraphDoc_FootStepTriggerNode
 
@@ -2401,7 +2377,7 @@ classDiagram
 	"m_items":
 	[
 	]
-}`, `MPropertyFriendlyName "Foot Step Trigger"`
+}`, `MPropertyFriendlyName Foot Step Trigger`
 
 **Relationships:**
 
@@ -2417,8 +2393,8 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_flTolerance` | float32 | `MPropertyFriendlyName "Tolerance"` |
-| `m_items` | CUtlVector<[CFootStepTriggerItem](../schemas/animgraphdoclib.md#cfootsteptriggeritem)> | `MPropertyFriendlyName "Feet"` `MPropertyAutoExpandSelf` |
+| `m_flTolerance` | float32 | `MPropertyFriendlyName Tolerance` |
+| `m_items` | CUtlVector< [CFootStepTriggerItem](../schemas/animgraphdoclib.md#cfootsteptriggeritem) > | `MPropertyAutoExpandSelf` `MPropertyFriendlyName Feet` |
 
 ### CAnimGraphDoc_FutureFacingMetric
 
@@ -2429,7 +2405,7 @@ classDiagram
 	"m_flWeight": 1.000000,
 	"m_flDistance": 100.000000,
 	"m_flTime": 1.000000
-}`, `MPropertyFriendlyName "Future Facing Metric"`
+}`, `MPropertyFriendlyName Future Facing Metric`
 
 **Relationships:**
 
@@ -2442,8 +2418,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_flDistance` | float32 | `MPropertyFriendlyName "Distance"` |
-| `m_flTime` | float32 | `MPropertyFriendlyName "Time"` |
+| `m_flDistance` | float32 | `MPropertyFriendlyName Distance` |
+| `m_flTime` | float32 | `MPropertyFriendlyName Time` |
 
 ### CAnimGraphDoc_FutureVelocityMetric
 
@@ -2457,7 +2433,7 @@ classDiagram
 	"m_eMode": "DirectionAndMagnitude",
 	"m_bAutoTargetSpeed": true,
 	"m_flManualTargetSpeed": 150.000000
-}`, `MPropertyFriendlyName "Future Velocity Metric"`
+}`, `MPropertyFriendlyName Future Velocity Metric`
 
 **Relationships:**
 
@@ -2471,11 +2447,11 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_flDistance` | float32 | `MPropertyFriendlyName "Distance"` |
-| `m_flStoppingDistance` | float32 | `MPropertyFriendlyName "Stopping Distance"` |
-| `m_eMode` | [VelocityMetricMode](../schemas/animgraphlib.md#velocitymetricmode) | `MPropertyFriendlyName "Mode"` `MPropertyAutoRebuildOnChange` |
-| `m_bAutoTargetSpeed` | bool | `MPropertyFriendlyName "Auto-Calculate target speed"` `MPropertyAutoRebuildOnChange` `MPropertyAttrStateCallback` |
-| `m_flManualTargetSpeed` | float32 | `MPropertyFriendlyName "Target Speed"` `MPropertyAttrStateCallback` |
+| `m_flDistance` | float32 | `MPropertyFriendlyName Distance` |
+| `m_flStoppingDistance` | float32 | `MPropertyFriendlyName Stopping Distance` |
+| `m_eMode` | [VelocityMetricMode](../schemas/!GlobalTypes.md#velocitymetricmode) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Mode` |
+| `m_bAutoTargetSpeed` | bool | `MPropertyAttrStateCallback` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Auto-Calculate target speed` |
+| `m_flManualTargetSpeed` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Target Speed` |
 
 ### CAnimGraphDoc_Graph
 
@@ -2544,7 +2520,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_pSettingsManager` | CSmartPtr<[CAnimGraphSettingsManager](../schemas/animgraphlib.md#canimgraphsettingsmanager)> |  |
+| `m_pSettingsManager` | CSmartPtr< [CAnimGraphSettingsManager](../schemas/animgraphlib.md#canimgraphsettingsmanager) > |  |
 | `m_clipDataManager` | [CAnimGraphDoc_ClipDataManager](../schemas/animgraphdoclib.md#canimgraphdoc_clipdatamanager) |  |
 | `m_modelName` | CUtlString |  |
 | `m_previewModelName` | CUtlString |  |
@@ -2580,7 +2556,7 @@ classDiagram
 		[
 		]
 	}
-}`, `MPropertyFriendlyName "Motion Graph"`
+}`, `MPropertyFriendlyName Motion Graph`
 
 **Relationships:**
 
@@ -2594,7 +2570,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_name` | CUtlString | `MPropertyFriendlyName "Name"` |
+| `m_name` | CUtlString | `MPropertyFriendlyName Name` |
 | `m_nodeManager` | [CAnimGraphDoc_MotionNodeManager](../schemas/animgraphdoclib.md#canimgraphdoc_motionnodemanager) | `MPropertySuppressField` |
 
 ### CAnimGraphDoc_GroupInputNode
@@ -2618,7 +2594,7 @@ classDiagram
 	"m_proxyItems":
 	[
 	]
-}`, `MPropertyFriendlyName "Group Input"`
+}`, `MPropertyFriendlyName Group Input`
 
 **Relationships:**
 
@@ -2632,7 +2608,7 @@ classDiagram
 
 **Inherits from:** [CAnimGraphDoc_ContainerNodeBase](animgraphdoclib.md#canimgraphdoc_containernodebase)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`, `MPropertyFriendlyName "Group"`
+**Metadata:** `MGetKV3ClassDefaults`, `MPropertyFriendlyName Group`
 
 **Relationships:**
 
@@ -2670,7 +2646,7 @@ classDiagram
 	"m_proxyItems":
 	[
 	]
-}`, `MPropertyFriendlyName "Group Output"`
+}`, `MPropertyFriendlyName Group Output`
 
 **Relationships:**
 
@@ -2752,7 +2728,7 @@ classDiagram
 	"m_flHipDipImpactScale": 1.000000,
 	"m_flHipDipDelay": 0.050000,
 	"m_bResetBase": true
-}`, `MPropertyFriendlyName "Procedural Hit Reacts"`
+}`, `MPropertyFriendlyName Procedural Hit Reacts`
 
 **Relationships:**
 
@@ -2768,34 +2744,34 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_flMinDelayBetweenHits` | float32 | `MPropertyFriendlyName "Minimum Delay Between Hits"` |
+| `m_flMinDelayBetweenHits` | float32 | `MPropertyFriendlyName Minimum Delay Between Hits` |
 | `m_triggerParamName` | CUtlString | `MPropertySuppressField` |
 | `m_hitBoneParamName` | CUtlString | `MPropertySuppressField` |
 | `m_hitOffsetParamName` | CUtlString | `MPropertySuppressField` |
 | `m_hitDirectionParamName` | CUtlString | `MPropertySuppressField` |
 | `m_hitStrengthParamName` | CUtlString | `MPropertySuppressField` |
-| `m_triggerParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Trigger Parameter"` `MPropertyAttributeChoiceName "BoolParameter"` |
-| `m_hitBoneParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Hit Bone Parameter"` `MPropertyAttributeChoiceName "IntParameter"` |
-| `m_hitOffsetParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Hit Offset Parameter"` `MPropertyAttributeChoiceName "VectorParameter"` |
-| `m_hitDirectionParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Hit Direction Parameter"` `MPropertyAttributeChoiceName "VectorParameter"` |
-| `m_hitStrengthParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Hit Strength Parameter"` `MPropertyAttributeChoiceName "FloatParameter"` |
-| `m_weightListName` | CUtlString | `MPropertyFriendlyName "Bone Weights"` `MPropertyAttributeChoiceName "BoneMask"` |
-| `m_hipBoneName` | CUtlString | `MPropertyFriendlyName "Hip Bone"` `MPropertyAttributeChoiceName "Bone"` |
-| `m_flHipBoneTranslationScale` | float32 | `MPropertyFriendlyName "Hip Translation Scale"` |
-| `m_nEffectedBoneCount` | int32 | `MPropertyFriendlyName "Number of bone effected"` |
-| `m_flMaxImpactForce` | float32 | `MPropertyFriendlyName "Max Impact Force"` |
-| `m_flMinImpactForce` | float32 | `MPropertyFriendlyName "Min Impact Force"` |
-| `m_flWhipImpactScale` | float32 | `MPropertyFriendlyName "Whip Impact Scale"` |
-| `m_flCounterRotationScale` | float32 | `MPropertyFriendlyName "Counter Rotation Scale"` |
-| `m_flDistanceFadeScale` | float32 | `MPropertyFriendlyName "Distance Fade Scale"` |
-| `m_flPropagationScale` | float32 | `MPropertyFriendlyName "Propagation Scale"` |
-| `m_flWhipDelay` | float32 | `MPropertyFriendlyName "Whip Delay Time"` |
-| `m_flSpringStrength` | float32 | `MPropertyFriendlyName "Spring Strength"` |
-| `m_flWhipSpringStrength` | float32 | `MPropertyFriendlyName "Whip Spring Strength"` |
-| `m_flHipDipSpringStrength` | float32 | `MPropertyFriendlyName "Hip Dip Spring Strength"` |
-| `m_flHipDipImpactScale` | float32 | `MPropertyFriendlyName "Hip Dip Scale"` |
-| `m_flHipDipDelay` | float32 | `MPropertyFriendlyName "Hip Dip Delay Time"` |
-| `m_bResetBase` | bool | `MPropertyFriendlyName "Reset Child"` |
+| `m_triggerParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName BoolParameter` `MPropertyFriendlyName Trigger Parameter` |
+| `m_hitBoneParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName IntParameter` `MPropertyFriendlyName Hit Bone Parameter` |
+| `m_hitOffsetParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName VectorParameter` `MPropertyFriendlyName Hit Offset Parameter` |
+| `m_hitDirectionParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName VectorParameter` `MPropertyFriendlyName Hit Direction Parameter` |
+| `m_hitStrengthParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Hit Strength Parameter` |
+| `m_weightListName` | CUtlString | `MPropertyAttributeChoiceName BoneMask` `MPropertyFriendlyName Bone Weights` |
+| `m_hipBoneName` | CUtlString | `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName Hip Bone` |
+| `m_flHipBoneTranslationScale` | float32 | `MPropertyFriendlyName Hip Translation Scale` |
+| `m_nEffectedBoneCount` | int32 | `MPropertyFriendlyName Number of bone effected` |
+| `m_flMaxImpactForce` | float32 | `MPropertyFriendlyName Max Impact Force` |
+| `m_flMinImpactForce` | float32 | `MPropertyFriendlyName Min Impact Force` |
+| `m_flWhipImpactScale` | float32 | `MPropertyFriendlyName Whip Impact Scale` |
+| `m_flCounterRotationScale` | float32 | `MPropertyFriendlyName Counter Rotation Scale` |
+| `m_flDistanceFadeScale` | float32 | `MPropertyFriendlyName Distance Fade Scale` |
+| `m_flPropagationScale` | float32 | `MPropertyFriendlyName Propagation Scale` |
+| `m_flWhipDelay` | float32 | `MPropertyFriendlyName Whip Delay Time` |
+| `m_flSpringStrength` | float32 | `MPropertyFriendlyName Spring Strength` |
+| `m_flWhipSpringStrength` | float32 | `MPropertyFriendlyName Whip Spring Strength` |
+| `m_flHipDipSpringStrength` | float32 | `MPropertyFriendlyName Hip Dip Spring Strength` |
+| `m_flHipDipImpactScale` | float32 | `MPropertyFriendlyName Hip Dip Scale` |
+| `m_flHipDipDelay` | float32 | `MPropertyFriendlyName Hip Dip Delay Time` |
+| `m_bResetBase` | bool | `MPropertyFriendlyName Reset Child` |
 
 ### CAnimGraphDoc_InputStreamNode
 
@@ -2815,7 +2791,7 @@ classDiagram
 	},
 	"m_bDebugThisNode": false,
 	"m_networkMode": "ServerAuthoritative"
-}`, `MPropertyFriendlyName "Input Stream"`
+}`, `MPropertyFriendlyName Input Stream`
 
 **Relationships:**
 
@@ -2856,7 +2832,7 @@ classDiagram
 	"m_items":
 	[
 	]
-}`, `MPropertyFriendlyName "Jiggle Bone"`
+}`, `MPropertyFriendlyName Jiggle Bone`
 
 **Relationships:**
 
@@ -2872,7 +2848,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_items` | CUtlVector<[CJiggleBoneItem](../schemas/animgraphdoclib.md#cjiggleboneitem)> | `MPropertyFriendlyName "Jiggle Bones"` `MPropertyAutoExpandSelf` |
+| `m_items` | CUtlVector< [CJiggleBoneItem](../schemas/animgraphdoclib.md#cjiggleboneitem) > | `MPropertyAutoExpandSelf` `MPropertyFriendlyName Jiggle Bones` |
 
 ### CAnimGraphDoc_JumpHelperNode
 
@@ -2913,7 +2889,7 @@ classDiagram
 	"m_bTranslateZ": true,
 	"m_bScaleSpeed": true,
 	"m_eCorrectionMethod": "ScaleMotion"
-}`, `MPropertyFriendlyName "Jump Helper"`
+}`, `MPropertyFriendlyName Jump Helper`
 
 **Relationships:**
 
@@ -2930,14 +2906,14 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_targetParamName` | CUtlString | `MPropertySuppressField` |
-| `m_targetParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Target Parameter"` `MPropertyAttributeChoiceName "VectorParameter"` |
+| `m_targetParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName VectorParameter` `MPropertyFriendlyName Target Parameter` |
 | `m_flJumpStartCycle` | float32 | `MPropertySuppressField` |
 | `m_flJumpDuration` | float32 | `MPropertySuppressField` |
-| `m_bTranslateX` | bool | `MPropertyFriendlyName "Translate X"` |
-| `m_bTranslateY` | bool | `MPropertyFriendlyName "Translate Y"` |
-| `m_bTranslateZ` | bool | `MPropertyFriendlyName "Translate Z"` |
-| `m_bScaleSpeed` | bool | `MPropertyFriendlyName "Apply Speed Scale"` |
-| `m_eCorrectionMethod` | [JumpCorrectionMethod](../schemas/animgraphlib.md#jumpcorrectionmethod) | `MPropertyFriendlyName "Correction Method"` |
+| `m_bTranslateX` | bool | `MPropertyFriendlyName Translate X` |
+| `m_bTranslateY` | bool | `MPropertyFriendlyName Translate Y` |
+| `m_bTranslateZ` | bool | `MPropertyFriendlyName Translate Z` |
+| `m_bScaleSpeed` | bool | `MPropertyFriendlyName Apply Speed Scale` |
+| `m_eCorrectionMethod` | [JumpCorrectionMethod](../schemas/!GlobalTypes.md#jumpcorrectionmethod) | `MPropertyFriendlyName Correction Method` |
 
 ### CAnimGraphDoc_LeanMatrixNode
 
@@ -2984,7 +2960,7 @@ classDiagram
 		"m_fSpeedScale": 1.000000,
 		"m_fFallingSpeedScale": 1.000000
 	}
-}`, `MPropertyFriendlyName "Lean Matrix"`
+}`, `MPropertyFriendlyName Lean Matrix`
 
 **Relationships:**
 
@@ -3000,14 +2976,14 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sequenceName` | CUtlString | `MPropertyFriendlyName "Sequence"` `MPropertyAttributeChoiceName "Sequence"` |
-| `m_flMaxValue` | float32 | `MPropertyFriendlyName "Max Value"` |
-| `m_blendSource` | [AnimVectorSource](../schemas/animgraphlib.md#animvectorsource) | `MPropertyFriendlyName "Blend Source"` |
+| `m_sequenceName` | CUtlString | `MPropertyAttributeChoiceName Sequence` `MPropertyFriendlyName Sequence` |
+| `m_flMaxValue` | float32 | `MPropertyFriendlyName Max Value` |
+| `m_blendSource` | [AnimVectorSource](../schemas/!GlobalTypes.md#animvectorsource) | `MPropertyFriendlyName Blend Source` |
 | `m_paramName` | CUtlString | `MPropertySuppressField` |
-| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Parameter"` `MPropertyAttributeChoiceName "VectorParameter"` |
-| `m_verticalAxisDirection` | Vector | `MPropertyFriendlyName "Vertical Axis"` |
-| `m_horizontalAxisDirection` | Vector | `MPropertyFriendlyName "Horizontal Axis"` |
-| `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyFriendlyName "Damping"` |
+| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName VectorParameter` `MPropertyFriendlyName Parameter` |
+| `m_verticalAxisDirection` | Vector | `MPropertyFriendlyName Vertical Axis` |
+| `m_horizontalAxisDirection` | Vector | `MPropertyFriendlyName Horizontal Axis` |
+| `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyFriendlyName Damping` |
 
 ### CAnimGraphDoc_LookAtNode
 
@@ -3068,7 +3044,7 @@ classDiagram
 		"m_fSpeedScale": 1.000000,
 		"m_fFallingSpeedScale": 1.000000
 	}
-}`, `MPropertyFriendlyName "Look At"`
+}`, `MPropertyFriendlyName Look At`
 
 **Relationships:**
 
@@ -3086,37 +3062,37 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_target` | [AnimVectorSource](../schemas/animgraphlib.md#animvectorsource) | `MPropertyFriendlyName "Target"` `MPropertyAutoRebuildOnChange` |
+| `m_target` | [AnimVectorSource](../schemas/!GlobalTypes.md#animvectorsource) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Target` |
 | `m_paramName` | CUtlString | `MPropertySuppressField` |
-| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Target Parameter"` `MPropertyAttributeChoiceName "VectorParameter"` `MPropertyAttrStateCallback` |
-| `m_bIsPosition` | bool | `MPropertyFriendlyName "Parameter is a Position"` `MPropertyAttrStateCallback` |
+| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName VectorParameter` `MPropertyFriendlyName Target Parameter` |
+| `m_bIsPosition` | bool | `MPropertyAttrStateCallback` `MPropertyFriendlyName Parameter is a Position` |
 | `m_weightParamName` | CUtlString | `MPropertySuppressField` |
-| `m_weightParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Weight Parameter"` `MPropertyAttributeChoiceName "FloatParameter"` |
-| `m_lookatChainName` | CUtlString | `MPropertyFriendlyName "LookAt Chain"` `MPropertyAttributeChoiceName "LookAtChain"` |
-| `m_attachmentName` | CUtlString | `MPropertyFriendlyName "Aim Attachment"` `MPropertyAttributeChoiceName "Attachment"` |
-| `m_bRotateYawForward` | bool | `MPropertyFriendlyName "Rotate Through Forward"` `MPropertyGroupName "Rotation Limits"` `MPropertyAutoRebuildOnChange` |
-| `m_flYawLimit` | float32 | `MPropertyFriendlyName "Yaw Limit"` `MPropertyAttributeRange "0 180"` `MPropertyGroupName "Rotation Limits"` `MPropertyAttrStateCallback` |
-| `m_flPitchLimit` | float32 | `MPropertyFriendlyName "Pitch Limit"` `MPropertyAttributeRange "0 90"` `MPropertyGroupName "Rotation Limits"` |
-| `m_bMaintainUpDirection` | bool | `MPropertyFriendlyName "Maintain Up Direction"` |
-| `m_bResetBase` | bool | `MPropertyFriendlyName "Reset Child"` |
-| `m_bLockWhenWaning` | bool | `MPropertyFriendlyName "Lock Blend When Waning"` |
-| `m_bUseHysteresis` | bool | `MPropertyFriendlyName "Use Hysteresis"` `MPropertyGroupName "Hysteresis"` |
-| `m_flHysteresisInnerAngle` | float32 | `MPropertyFriendlyName "Inner Angle"` `MPropertyGroupName "Hysteresis"` |
-| `m_flHysteresisOuterAngle` | float32 | `MPropertyFriendlyName "Outer Angle"` `MPropertyGroupName "Hysteresis"` |
-| `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyFriendlyName "Damping"` |
+| `m_weightParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Weight Parameter` |
+| `m_lookatChainName` | CUtlString | `MPropertyAttributeChoiceName LookAtChain` `MPropertyFriendlyName LookAt Chain` |
+| `m_attachmentName` | CUtlString | `MPropertyAttributeChoiceName Attachment` `MPropertyFriendlyName Aim Attachment` |
+| `m_bRotateYawForward` | bool | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Rotate Through Forward` `MPropertyGroupName Rotation Limits` |
+| `m_flYawLimit` | float32 | `MPropertyAttrStateCallback` `MPropertyAttributeRange 0 180` `MPropertyFriendlyName Yaw Limit` `MPropertyGroupName Rotation Limits` |
+| `m_flPitchLimit` | float32 | `MPropertyAttributeRange 0 90` `MPropertyFriendlyName Pitch Limit` `MPropertyGroupName Rotation Limits` |
+| `m_bMaintainUpDirection` | bool | `MPropertyFriendlyName Maintain Up Direction` |
+| `m_bResetBase` | bool | `MPropertyFriendlyName Reset Child` |
+| `m_bLockWhenWaning` | bool | `MPropertyFriendlyName Lock Blend When Waning` |
+| `m_bUseHysteresis` | bool | `MPropertyFriendlyName Use Hysteresis` `MPropertyGroupName Hysteresis` |
+| `m_flHysteresisInnerAngle` | float32 | `MPropertyFriendlyName Inner Angle` `MPropertyGroupName Hysteresis` |
+| `m_flHysteresisOuterAngle` | float32 | `MPropertyFriendlyName Outer Angle` `MPropertyGroupName Hysteresis` |
+| `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyFriendlyName Damping` |
 
 ### CAnimGraphDoc_MotionItem
 
 **Derived by:** [CAnimGraphDoc_GraphMotionItem](animgraphdoclib.md#canimgraphdoc_graphmotionitem), [CAnimGraphDoc_SequenceMotionItem](animgraphdoclib.md#canimgraphdoc_sequencemotionitem)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CAnimGraphDoc_MotionItem <|-- CAnimGraphDoc_SequenceMotionItem
     CAnimGraphDoc_MotionItem <|-- CAnimGraphDoc_GraphMotionItem
+    CAnimGraphDoc_MotionItem <|-- CAnimGraphDoc_SequenceMotionItem
     CAnimGraphDoc_MotionItem *-- CAnimGraphDoc_MotionParameterManager
     CAnimGraphDoc_MotionItem *-- CAnimGraphDoc_TagSpan
     CAnimGraphDoc_MotionItem *-- CAnimGraphDoc_ParamSpan
@@ -3127,10 +3103,10 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_paramManager` | [CAnimGraphDoc_MotionParameterManager](../schemas/animgraphdoclib.md#canimgraphdoc_motionparametermanager) | `MPropertySuppressField` |
-| `m_blockSpans` | CUtlVector<CSmartPtr<[CAnimGraphDoc_TagSpan](../schemas/animgraphdoclib.md#canimgraphdoc_tagspan)>> | `MPropertySuppressField` |
-| `m_tagSpans` | CUtlVector<CSmartPtr<[CAnimGraphDoc_TagSpan](../schemas/animgraphdoclib.md#canimgraphdoc_tagspan)>> | `MPropertySuppressField` |
-| `m_paramSpans` | CUtlVector<CSmartPtr<[CAnimGraphDoc_ParamSpan](../schemas/animgraphdoclib.md#canimgraphdoc_paramspan)>> | `MPropertySuppressField` |
-| `m_bLoop` | bool | `MPropertyFriendlyName "Loop"` |
+| `m_blockSpans` | CUtlVector< CSmartPtr< [CAnimGraphDoc_TagSpan](../schemas/animgraphdoclib.md#canimgraphdoc_tagspan) > > | `MPropertySuppressField` |
+| `m_tagSpans` | CUtlVector< CSmartPtr< [CAnimGraphDoc_TagSpan](../schemas/animgraphdoclib.md#canimgraphdoc_tagspan) > > | `MPropertySuppressField` |
+| `m_paramSpans` | CUtlVector< CSmartPtr< [CAnimGraphDoc_ParamSpan](../schemas/animgraphdoclib.md#canimgraphdoc_paramspan) > > | `MPropertySuppressField` |
+| `m_bLoop` | bool | `MPropertyFriendlyName Loop` |
 
 ### CAnimGraphDoc_MotionItemGroup
 
@@ -3147,7 +3123,7 @@ classDiagram
 		[
 		]
 	}
-}`, `MPropertyFriendlyName "Motion Clip Group"`
+}`, `MPropertyFriendlyName Motion Clip Group`
 
 **Relationships:**
 
@@ -3161,8 +3137,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_motions` | CUtlVector<CSmartPtr<[CAnimGraphDoc_MotionItem](../schemas/animgraphdoclib.md#canimgraphdoc_motionitem)>> | `MPropertySuppressField` |
-| `m_name` | CUtlString | `MPropertyFriendlyName "Name"` |
+| `m_motions` | CUtlVector< CSmartPtr< [CAnimGraphDoc_MotionItem](../schemas/animgraphdoclib.md#canimgraphdoc_motionitem) > > | `MPropertySuppressField` |
+| `m_name` | CUtlString | `MPropertyFriendlyName Name` |
 | `m_conditions` | [CAnimGraphDoc_ConditionContainer](../schemas/animgraphdoclib.md#canimgraphdoc_conditioncontainer) |  |
 
 ### CAnimGraphDoc_MotionMatchingNode
@@ -3220,7 +3196,7 @@ classDiagram
 		"m_fSpeedScale": 1.000000,
 		"m_fFallingSpeedScale": 1.000000
 	}
-}`, `MPropertyFriendlyName "Motion Matching"`
+}`, `MPropertyFriendlyName Motion Matching`
 
 **Relationships:**
 
@@ -3237,53 +3213,53 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_groups` | CUtlVector<CSmartPtr<[CAnimGraphDoc_MotionItemGroup](../schemas/animgraphdoclib.md#canimgraphdoc_motionitemgroup)>> | `MPropertySuppressField` |
-| `m_metrics` | CUtlVector<CSmartPtr<[CAnimGraphDoc_MotionMetric](../schemas/animgraphdoclib.md#canimgraphdoc_motionmetric)>> | `MPropertySuppressField` |
+| `m_groups` | CUtlVector< CSmartPtr< [CAnimGraphDoc_MotionItemGroup](../schemas/animgraphdoclib.md#canimgraphdoc_motionitemgroup) > > | `MPropertySuppressField` |
+| `m_metrics` | CUtlVector< CSmartPtr< [CAnimGraphDoc_MotionMetric](../schemas/animgraphdoclib.md#canimgraphdoc_motionmetric) > > | `MPropertySuppressField` |
 | `m_blendCurve` | [CBlendCurve](../schemas/animgraphlib.md#cblendcurve) | `MPropertySuppressField` |
 | `m_nRandomSeed` | int32 | `MPropertySuppressField` |
-| `m_flSampleRate` | float32 | `MPropertyFriendlyName "Sample Rate"` `MPropertyAttributeRange "0.01 0.2"` |
-| `m_bSearchEveryTick` | bool | `MPropertyFriendlyName "Search Every Update"` `MPropertyGroupName "Search Frequency"` `MPropertyAutoRebuildOnChange` |
-| `m_flSearchInterval` | float32 | `MPropertyFriendlyName "Search Interval"` `MPropertyGroupName "Search Frequency"` `MPropertyAttrStateCallback` |
-| `m_bSearchWhenMotionEnds` | bool | `MPropertyFriendlyName "Search when motion ends"` `MPropertyGroupName "Search Frequency"` `MPropertyAttrStateCallback` |
-| `m_bSearchWhenGoalChanges` | bool | `MPropertyFriendlyName "Search when goal changes"` `MPropertyGroupName "Search Frequency"` `MPropertyAttrStateCallback` |
-| `m_flBlendTime` | float32 | `MPropertyFriendlyName "Blend Time"` |
-| `m_flSelectionThreshold` | float32 | `MPropertyFriendlyName "Selection Threshold"` |
-| `m_flReselectionTimeWindow` | float32 | `MPropertyFriendlyName "Re-Selection Time Window"` |
-| `m_bLockSelectionWhenWaning` | bool | `MPropertyFriendlyName "Lock Selection When Waning"` |
-| `m_bEnableRotationCorrection` | bool | `MPropertyFriendlyName "Enable Rotation Correction"` |
-| `m_bGoalAssist` | bool | `MPropertyFriendlyName "Enable Goal Assist"` `MPropertyGroupName "Goal Assist"` `MPropertyAutoRebuildOnChange` |
-| `m_flGoalAssistDistance` | float32 | `MPropertyFriendlyName "Goal Assist Distance"` `MPropertyGroupName "Goal Assist"` `MPropertyAttrStateCallback` |
-| `m_flGoalAssistTolerance` | float32 | `MPropertyFriendlyName "Goal Assist Tolerance"` `MPropertyGroupName "Goal Assist"` `MPropertyAttrStateCallback` |
-| `m_bEnableDistanceScaling` | bool | `MPropertyFriendlyName "Enable Distance Scaling"` `MPropertyGroupName "Distance Scaling"` `MPropertyAutoRebuildOnChange` |
-| `m_flDistanceScale_OuterRadius` | float32 | `MPropertyFriendlyName "Outer Stopping Radius"` `MPropertyGroupName "Distance Scaling"` `MPropertyAttrStateCallback` |
-| `m_flDistanceScale_InnerRadius` | float32 | `MPropertyFriendlyName "Inner Stopping Radius"` `MPropertyGroupName "Distance Scaling"` `MPropertyAttrStateCallback` |
-| `m_flDistanceScale_MaxScale` | float32 | `MPropertyFriendlyName "Maximum Speed Scale"` `MPropertyGroupName "Distance Scaling"` `MPropertyAttrStateCallback` |
-| `m_flDistanceScale_MinScale` | float32 | `MPropertyFriendlyName "Minimum Speed Scale"` `MPropertyGroupName "Distance Scaling"` `MPropertyAttrStateCallback` |
-| `m_distanceScale_Damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyFriendlyName "Damping"` `MPropertyGroupName "Distance Scaling"` `MPropertyAttrStateCallback` |
+| `m_flSampleRate` | float32 | `MPropertyAttributeRange 0.01 0.2` `MPropertyFriendlyName Sample Rate` |
+| `m_bSearchEveryTick` | bool | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Search Every Update` `MPropertyGroupName Search Frequency` |
+| `m_flSearchInterval` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Search Interval` `MPropertyGroupName Search Frequency` |
+| `m_bSearchWhenMotionEnds` | bool | `MPropertyAttrStateCallback` `MPropertyFriendlyName Search when motion ends` `MPropertyGroupName Search Frequency` |
+| `m_bSearchWhenGoalChanges` | bool | `MPropertyAttrStateCallback` `MPropertyFriendlyName Search when goal changes` `MPropertyGroupName Search Frequency` |
+| `m_flBlendTime` | float32 | `MPropertyFriendlyName Blend Time` |
+| `m_flSelectionThreshold` | float32 | `MPropertyFriendlyName Selection Threshold` |
+| `m_flReselectionTimeWindow` | float32 | `MPropertyFriendlyName Re-Selection Time Window` |
+| `m_bLockSelectionWhenWaning` | bool | `MPropertyFriendlyName Lock Selection When Waning` |
+| `m_bEnableRotationCorrection` | bool | `MPropertyFriendlyName Enable Rotation Correction` |
+| `m_bGoalAssist` | bool | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Enable Goal Assist` `MPropertyGroupName Goal Assist` |
+| `m_flGoalAssistDistance` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Goal Assist Distance` `MPropertyGroupName Goal Assist` |
+| `m_flGoalAssistTolerance` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Goal Assist Tolerance` `MPropertyGroupName Goal Assist` |
+| `m_bEnableDistanceScaling` | bool | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Enable Distance Scaling` `MPropertyGroupName Distance Scaling` |
+| `m_flDistanceScale_OuterRadius` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Outer Stopping Radius` `MPropertyGroupName Distance Scaling` |
+| `m_flDistanceScale_InnerRadius` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Inner Stopping Radius` `MPropertyGroupName Distance Scaling` |
+| `m_flDistanceScale_MaxScale` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Maximum Speed Scale` `MPropertyGroupName Distance Scaling` |
+| `m_flDistanceScale_MinScale` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Minimum Speed Scale` `MPropertyGroupName Distance Scaling` |
+| `m_distanceScale_Damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyAttrStateCallback` `MPropertyFriendlyName Damping` `MPropertyGroupName Distance Scaling` |
 
 ### CAnimGraphDoc_MotionMetric
 
 **Derived by:** [CAnimGraphDoc_BlockSelectionMetric](animgraphdoclib.md#canimgraphdoc_blockselectionmetric), [CAnimGraphDoc_BonePositionMetric](animgraphdoclib.md#canimgraphdoc_bonepositionmetric), [CAnimGraphDoc_BoneVelocityMetric](animgraphdoclib.md#canimgraphdoc_bonevelocitymetric), [CAnimGraphDoc_CurrentRotationVelocityMetric](animgraphdoclib.md#canimgraphdoc_currentrotationvelocitymetric), [CAnimGraphDoc_CurrentVelocityMetric](animgraphdoclib.md#canimgraphdoc_currentvelocitymetric), [CAnimGraphDoc_DistanceRemainingMetric](animgraphdoclib.md#canimgraphdoc_distanceremainingmetric), [CAnimGraphDoc_FootCycleMetric](animgraphdoclib.md#canimgraphdoc_footcyclemetric), [CAnimGraphDoc_FootPositionMetric](animgraphdoclib.md#canimgraphdoc_footpositionmetric), [CAnimGraphDoc_FutureFacingMetric](animgraphdoclib.md#canimgraphdoc_futurefacingmetric), [CAnimGraphDoc_FutureVelocityMetric](animgraphdoclib.md#canimgraphdoc_futurevelocitymetric), [CAnimGraphDoc_PathMetric](animgraphdoclib.md#canimgraphdoc_pathmetric), [CAnimGraphDoc_StepsRemainingMetric](animgraphdoclib.md#canimgraphdoc_stepsremainingmetric), [CAnimGraphDoc_TimeRemainingMetric](animgraphdoclib.md#canimgraphdoc_timeremainingmetric)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CAnimGraphDoc_MotionMetric <|-- CAnimGraphDoc_CurrentRotationVelocityMetric
-    CAnimGraphDoc_MotionMetric <|-- CAnimGraphDoc_FutureVelocityMetric
-    CAnimGraphDoc_MotionMetric <|-- CAnimGraphDoc_TimeRemainingMetric
-    CAnimGraphDoc_MotionMetric <|-- CAnimGraphDoc_StepsRemainingMetric
-    CAnimGraphDoc_MotionMetric <|-- CAnimGraphDoc_PathMetric
-    CAnimGraphDoc_MotionMetric <|-- CAnimGraphDoc_CurrentVelocityMetric
     CAnimGraphDoc_MotionMetric <|-- CAnimGraphDoc_BlockSelectionMetric
-    CAnimGraphDoc_MotionMetric <|-- CAnimGraphDoc_DistanceRemainingMetric
     CAnimGraphDoc_MotionMetric <|-- CAnimGraphDoc_BonePositionMetric
     CAnimGraphDoc_MotionMetric <|-- CAnimGraphDoc_BoneVelocityMetric
-    CAnimGraphDoc_MotionMetric <|-- CAnimGraphDoc_FutureFacingMetric
-    CAnimGraphDoc_MotionMetric <|-- CAnimGraphDoc_FootPositionMetric
+    CAnimGraphDoc_MotionMetric <|-- CAnimGraphDoc_CurrentRotationVelocityMetric
+    CAnimGraphDoc_MotionMetric <|-- CAnimGraphDoc_CurrentVelocityMetric
+    CAnimGraphDoc_MotionMetric <|-- CAnimGraphDoc_DistanceRemainingMetric
     CAnimGraphDoc_MotionMetric <|-- CAnimGraphDoc_FootCycleMetric
+    CAnimGraphDoc_MotionMetric <|-- CAnimGraphDoc_FootPositionMetric
+    CAnimGraphDoc_MotionMetric <|-- CAnimGraphDoc_FutureFacingMetric
+    CAnimGraphDoc_MotionMetric <|-- CAnimGraphDoc_FutureVelocityMetric
+    CAnimGraphDoc_MotionMetric <|-- CAnimGraphDoc_PathMetric
+    CAnimGraphDoc_MotionMetric <|-- CAnimGraphDoc_StepsRemainingMetric
+    CAnimGraphDoc_MotionMetric <|-- CAnimGraphDoc_TimeRemainingMetric
 ```
 
 **Fields:**
@@ -3361,28 +3337,28 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_params` | CUtlVector<CSmartPtr<[CAnimGraphDoc_MotionParameter](../schemas/animgraphdoclib.md#canimgraphdoc_motionparameter)>> |  |
+| `m_params` | CUtlVector< CSmartPtr< [CAnimGraphDoc_MotionParameter](../schemas/animgraphdoclib.md#canimgraphdoc_motionparameter) > > |  |
 
 ### CAnimGraphDoc_Motor
 
 **Derived by:** [CAnimGraphDoc_PathMotorBase](animgraphdoclib.md#canimgraphdoc_pathmotorbase), [CAnimGraphDoc_PlayerInputMotor](animgraphdoclib.md#canimgraphdoc_playerinputmotor)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CAnimGraphDoc_Motor <|-- CAnimGraphDoc_PlayerInputMotor
     CAnimGraphDoc_Motor <|-- CAnimGraphDoc_PathMotorBase
+    CAnimGraphDoc_Motor <|-- CAnimGraphDoc_PlayerInputMotor
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_name` | CUtlString | `MPropertyFriendlyName "Name"` `MPropertySortPriority 100` |
-| `m_bDefault` | bool | `MPropertyFriendlyName "Is Default"` |
+| `m_name` | CUtlString | `MPropertyFriendlyName Name` `MPropertySortPriority 100` |
+| `m_bDefault` | bool | `MPropertyFriendlyName Is Default` |
 
 ### CAnimGraphDoc_MoverNode
 
@@ -3443,7 +3419,7 @@ classDiagram
 		"m_fSpeedScale": 1.000000,
 		"m_fFallingSpeedScale": 1.000000
 	}
-}`, `MPropertyFriendlyName "Mover"`
+}`, `MPropertyFriendlyName Mover`
 
 **Relationships:**
 
@@ -3461,84 +3437,84 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_bApplyMovement` | bool | `MPropertyFriendlyName "Generate Movement"` `MPropertyGroupName "Generate Movement"` `MPropertyAutoRebuildOnChange` |
+| `m_bApplyMovement` | bool | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Generate Movement` `MPropertyGroupName Generate Movement` |
 | `m_moveVectorParamName` | CUtlString | `MPropertySuppressField` |
-| `m_moveVectorParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Movement Velocity Parameter"` `MPropertyGroupName "Generate Movement"` `MPropertyAttributeChoiceName "VectorParameter"` `MPropertyAttrStateCallback` |
-| `m_bOrientMovement` | bool | `MPropertyFriendlyName "Orient Movement"` `MPropertyGroupName "Orient Movement"` `MPropertyAutoRebuildOnChange` |
+| `m_moveVectorParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName VectorParameter` `MPropertyFriendlyName Movement Velocity Parameter` `MPropertyGroupName Generate Movement` |
+| `m_bOrientMovement` | bool | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Orient Movement` `MPropertyGroupName Orient Movement` |
 | `m_moveHeadingParamName` | CUtlString | `MPropertySuppressField` |
-| `m_moveHeadingParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Movement Heading Parameter"` `MPropertyGroupName "Orient Movement"` `MPropertyAttributeChoiceName "FloatParameter"` `MPropertyAttrStateCallback` |
-| `m_bAdditive` | bool | `MPropertyFriendlyName "Additive"` |
-| `m_bTurnToFace` | bool | `MPropertyFriendlyName "Turn to Face"` `MPropertyGroupName "Turn to Face"` `MPropertyAutoRebuildOnChange` |
-| `m_facingTarget` | [AnimValueSource](../schemas/animgraphlib.md#animvaluesource) | `MPropertyFriendlyName "Face Direction"` `MPropertyGroupName "Turn to Face"` `MPropertyAutoRebuildOnChange` `MPropertyAttrStateCallback` |
+| `m_moveHeadingParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Movement Heading Parameter` `MPropertyGroupName Orient Movement` |
+| `m_bAdditive` | bool | `MPropertyFriendlyName Additive` |
+| `m_bTurnToFace` | bool | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Turn to Face` `MPropertyGroupName Turn to Face` |
+| `m_facingTarget` | [AnimValueSource](../schemas/!GlobalTypes.md#animvaluesource) | `MPropertyAttrStateCallback` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Face Direction` `MPropertyGroupName Turn to Face` |
 | `m_paramName` | CUtlString | `MPropertySuppressField` |
-| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Facing Parameter"` `MPropertyGroupName "Turn to Face"` `MPropertyAttributeChoiceName "FloatParameter"` `MPropertyAttrStateCallback` |
-| `m_bLimitOnly` | bool | `MPropertyFriendlyName "Turn Limit Only"` `MPropertyGroupName "Turn to Face"` `MPropertyAttrStateCallback` `MPropertyAutoRebuildOnChange` |
-| `m_flTurnToFaceOffset` | float32 | `MPropertyFriendlyName "Turn to Face Offset"` `MPropertyAttributeRange "-180 180"` `MPropertyGroupName "Turn to Face"` `MPropertyAttrStateCallback` |
-| `m_flTurnToFaceLimit` | float32 | `MPropertyFriendlyName "Turn to Face Limit"` `MPropertyAttributeRange "0 180"` `MPropertyGroupName "Turn to Face"` `MPropertyAttrStateCallback` |
-| `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyFriendlyName "Damping"` `MPropertyGroupName "Turn to Face"` `MPropertyAttrStateCallback` |
+| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Facing Parameter` `MPropertyGroupName Turn to Face` |
+| `m_bLimitOnly` | bool | `MPropertyAttrStateCallback` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Turn Limit Only` `MPropertyGroupName Turn to Face` |
+| `m_flTurnToFaceOffset` | float32 | `MPropertyAttrStateCallback` `MPropertyAttributeRange -180 180` `MPropertyFriendlyName Turn to Face Offset` `MPropertyGroupName Turn to Face` |
+| `m_flTurnToFaceLimit` | float32 | `MPropertyAttrStateCallback` `MPropertyAttributeRange 0 180` `MPropertyFriendlyName Turn to Face Limit` `MPropertyGroupName Turn to Face` |
+| `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyAttrStateCallback` `MPropertyFriendlyName Damping` `MPropertyGroupName Turn to Face` |
 
 ### CAnimGraphDoc_Node
 
 **Derived by:** [CAnimGraphDoc_AddNode](animgraphdoclib.md#canimgraphdoc_addnode), [CAnimGraphDoc_AimCameraNode](animgraphdoclib.md#canimgraphdoc_aimcameranode), [CAnimGraphDoc_AimMatrixNode](animgraphdoclib.md#canimgraphdoc_aimmatrixnode), [CAnimGraphDoc_BindPoseNode](animgraphdoclib.md#canimgraphdoc_bindposenode), [CAnimGraphDoc_Blend2DNode](animgraphdoclib.md#canimgraphdoc_blend2dnode), [CAnimGraphDoc_BlendNode](animgraphdoclib.md#canimgraphdoc_blendnode), [CAnimGraphDoc_BoneMaskNode](animgraphdoclib.md#canimgraphdoc_bonemasknode), [CAnimGraphDoc_ChoiceNode](animgraphdoclib.md#canimgraphdoc_choicenode), [CAnimGraphDoc_ChoreoNode](animgraphdoclib.md#canimgraphdoc_choreonode), [CAnimGraphDoc_CommentNode](animgraphdoclib.md#canimgraphdoc_commentnode), [CAnimGraphDoc_ContainerNodeBase](animgraphdoclib.md#canimgraphdoc_containernodebase), [CAnimGraphDoc_CycleControlClipNode](animgraphdoclib.md#canimgraphdoc_cyclecontrolclipnode), [CAnimGraphDoc_CycleControlNode](animgraphdoclib.md#canimgraphdoc_cyclecontrolnode), [CAnimGraphDoc_DirectPlaybackNode](animgraphdoclib.md#canimgraphdoc_directplaybacknode), [CAnimGraphDoc_DirectionalBlendNode](animgraphdoclib.md#canimgraphdoc_directionalblendnode), [CAnimGraphDoc_FollowAttachmentNode](animgraphdoclib.md#canimgraphdoc_followattachmentnode), [CAnimGraphDoc_FollowPathNode](animgraphdoclib.md#canimgraphdoc_followpathnode), [CAnimGraphDoc_FollowTargetNode](animgraphdoclib.md#canimgraphdoc_followtargetnode), [CAnimGraphDoc_FootAdjustmentNode](animgraphdoclib.md#canimgraphdoc_footadjustmentnode), [CAnimGraphDoc_FootLockNode](animgraphdoclib.md#canimgraphdoc_footlocknode), [CAnimGraphDoc_FootPinningNode](animgraphdoclib.md#canimgraphdoc_footpinningnode), [CAnimGraphDoc_FootStepTriggerNode](animgraphdoclib.md#canimgraphdoc_footsteptriggernode), [CAnimGraphDoc_HitReactNode](animgraphdoclib.md#canimgraphdoc_hitreactnode), [CAnimGraphDoc_InputStreamNode](animgraphdoclib.md#canimgraphdoc_inputstreamnode), [CAnimGraphDoc_JiggleBoneNode](animgraphdoclib.md#canimgraphdoc_jigglebonenode), [CAnimGraphDoc_LeanMatrixNode](animgraphdoclib.md#canimgraphdoc_leanmatrixnode), [CAnimGraphDoc_LookAtNode](animgraphdoclib.md#canimgraphdoc_lookatnode), [CAnimGraphDoc_MotionMatchingNode](animgraphdoclib.md#canimgraphdoc_motionmatchingnode), [CAnimGraphDoc_MoverNode](animgraphdoclib.md#canimgraphdoc_movernode), [CAnimGraphDoc_OrientationWarpNode](animgraphdoclib.md#canimgraphdoc_orientationwarpnode), [CAnimGraphDoc_PairedSequenceNode](animgraphdoclib.md#canimgraphdoc_pairedsequencenode), [CAnimGraphDoc_PathHelperNode](animgraphdoclib.md#canimgraphdoc_pathhelpernode), [CAnimGraphDoc_ProxyNodeBase](animgraphdoclib.md#canimgraphdoc_proxynodebase), [CAnimGraphDoc_RagdollNode](animgraphdoclib.md#canimgraphdoc_ragdollnode), [CAnimGraphDoc_RootNode](animgraphdoclib.md#canimgraphdoc_rootnode), [CAnimGraphDoc_SelectorNode](animgraphdoclib.md#canimgraphdoc_selectornode), [CAnimGraphDoc_SequenceNode](animgraphdoclib.md#canimgraphdoc_sequencenode), [CAnimGraphDoc_SingleFrameNode](animgraphdoclib.md#canimgraphdoc_singleframenode), [CAnimGraphDoc_SlowDownOnSlopesNode](animgraphdoclib.md#canimgraphdoc_slowdownonslopesnode), [CAnimGraphDoc_SolveIKChainNode](animgraphdoclib.md#canimgraphdoc_solveikchainnode), [CAnimGraphDoc_SpeedScaleNode](animgraphdoclib.md#canimgraphdoc_speedscalenode), [CAnimGraphDoc_StanceOverrideNode](animgraphdoclib.md#canimgraphdoc_stanceoverridenode), [CAnimGraphDoc_StanceScaleNode](animgraphdoclib.md#canimgraphdoc_stancescalenode), [CAnimGraphDoc_StateMachineNode](animgraphdoclib.md#canimgraphdoc_statemachinenode), [CAnimGraphDoc_StopAtGoalNode](animgraphdoclib.md#canimgraphdoc_stopatgoalnode), [CAnimGraphDoc_SubtractNode](animgraphdoclib.md#canimgraphdoc_subtractnode), [CAnimGraphDoc_TargetSelectorNode](animgraphdoclib.md#canimgraphdoc_targetselectornode), [CAnimGraphDoc_TargetWarpNode](animgraphdoclib.md#canimgraphdoc_targetwarpnode), [CAnimGraphDoc_TurnHelperNode](animgraphdoclib.md#canimgraphdoc_turnhelpernode), [CAnimGraphDoc_TwoBoneIKNode](animgraphdoclib.md#canimgraphdoc_twoboneiknode), [CAnimGraphDoc_WayPointHelperNode](animgraphdoclib.md#canimgraphdoc_waypointhelpernode), [CAnimGraphDoc_ZeroPoseNode](animgraphdoclib.md#canimgraphdoc_zeroposenode)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_PairedSequenceNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_TargetSelectorNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_HitReactNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_SingleFrameNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_BoneMaskNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_Blend2DNode
     CAnimGraphDoc_Node <|-- CAnimGraphDoc_AddNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_SubtractNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_WayPointHelperNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_BindPoseNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_SelectorNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_TurnHelperNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_AimMatrixNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_FollowPathNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_RagdollNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_LookAtNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_OrientationWarpNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_DirectionalBlendNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_ZeroPoseNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_StanceOverrideNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_TargetWarpNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_CycleControlNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_MotionMatchingNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_ChoiceNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_FootStepTriggerNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_ProxyNodeBase
     CAnimGraphDoc_Node <|-- CAnimGraphDoc_AimCameraNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_SpeedScaleNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_CycleControlClipNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_CommentNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_StateMachineNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_FootAdjustmentNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_RootNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_ChoreoNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_InputStreamNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_TwoBoneIKNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_FootLockNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_LeanMatrixNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_JiggleBoneNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_AimMatrixNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_BindPoseNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_Blend2DNode
     CAnimGraphDoc_Node <|-- CAnimGraphDoc_BlendNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_MoverNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_SlowDownOnSlopesNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_PathHelperNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_FollowTargetNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_SolveIKChainNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_FollowAttachmentNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_FootPinningNode
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_DirectPlaybackNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_BoneMaskNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_ChoiceNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_ChoreoNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_CommentNode
     CAnimGraphDoc_Node <|-- CAnimGraphDoc_ContainerNodeBase
-    CAnimGraphDoc_Node <|-- CAnimGraphDoc_StanceScaleNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_CycleControlClipNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_CycleControlNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_DirectPlaybackNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_DirectionalBlendNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_FollowAttachmentNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_FollowPathNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_FollowTargetNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_FootAdjustmentNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_FootLockNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_FootPinningNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_FootStepTriggerNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_HitReactNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_InputStreamNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_JiggleBoneNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_LeanMatrixNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_LookAtNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_MotionMatchingNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_MoverNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_OrientationWarpNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_PairedSequenceNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_PathHelperNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_ProxyNodeBase
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_RagdollNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_RootNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_SelectorNode
     CAnimGraphDoc_Node <|-- CAnimGraphDoc_SequenceNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_SingleFrameNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_SlowDownOnSlopesNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_SolveIKChainNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_SpeedScaleNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_StanceOverrideNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_StanceScaleNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_StateMachineNode
     CAnimGraphDoc_Node <|-- CAnimGraphDoc_StopAtGoalNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_SubtractNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_TargetSelectorNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_TargetWarpNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_TurnHelperNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_TwoBoneIKNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_WayPointHelperNode
+    CAnimGraphDoc_Node <|-- CAnimGraphDoc_ZeroPoseNode
     CAnimGraphDoc_Node *-- AnimNodeID
     CAnimGraphDoc_Node *-- AnimNodeNetworkMode
 ```
@@ -3547,11 +3523,11 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sName` | CUtlString | `MPropertyFriendlyName "Name"` `MPropertySortPriority 100` |
-| `m_vecPosition` | Vector2D | `MPropertyGroupName "Debug"` `MPropertySortPriority -100` |
-| `m_nNodeID` | [AnimNodeID](../schemas/modellib.md#animnodeid) | `MPropertyGroupName "Debug"` `MPropertySortPriority -100` |
-| `m_bDebugThisNode` | bool | `MPropertyGroupName "Debug"` `MPropertyFriendlyName "Debug This Node"` `MPropertySortPriority -100` |
-| `m_networkMode` | [AnimNodeNetworkMode](../schemas/animgraphlib.md#animnodenetworkmode) | `MPropertyFriendlyName "Network Mode"` `MPropertySortPriority -110` |
+| `m_sName` | CUtlString | `MPropertyFriendlyName Name` `MPropertySortPriority 100` |
+| `m_vecPosition` | Vector2D | `MPropertyGroupName Debug` `MPropertySortPriority -100` |
+| `m_nNodeID` | [AnimNodeID](../schemas/modellib.md#animnodeid) | `MPropertyGroupName Debug` `MPropertySortPriority -100` |
+| `m_bDebugThisNode` | bool | `MPropertyFriendlyName Debug This Node` `MPropertyGroupName Debug` `MPropertySortPriority -100` |
+| `m_networkMode` | [AnimNodeNetworkMode](../schemas/!GlobalTypes.md#animnodenetworkmode) | `MPropertyFriendlyName Network Mode` `MPropertySortPriority -110` |
 
 ### CAnimGraphDoc_NodeBlend2DItem
 
@@ -3578,7 +3554,7 @@ classDiagram
 		}
 	},
 	"m_name": "<Unnamed Item>"
-}`, `MPropertyFriendlyName "Node Blend Item"`
+}`, `MPropertyFriendlyName Node Blend Item`
 
 **Relationships:**
 
@@ -3593,7 +3569,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_name` | CUtlString | `MPropertyFriendlyName "Name"` |
+| `m_name` | CUtlString | `MPropertyFriendlyName Name` |
 
 ### CAnimGraphDoc_NodeConnection
 
@@ -3643,7 +3619,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_nodes` | CUtlVector<[CAnimGraphDoc_Node](../schemas/animgraphdoclib.md#canimgraphdoc_node)*> |  |
+| `m_nodes` | CUtlVector< [CAnimGraphDoc_Node](../schemas/animgraphdoclib.md#canimgraphdoc_node)* > |  |
 
 ### CAnimGraphDoc_NodeManager
 
@@ -3669,7 +3645,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_nodes` | CUtlHashtable<[AnimNodeID](../schemas/modellib.md#animnodeid),CSmartPtr<[CAnimGraphDoc_Node](../schemas/animgraphdoclib.md#canimgraphdoc_node)>> | `MPropertySuppressField` |
+| `m_nodes` | CUtlHashtable< [AnimNodeID](../schemas/modellib.md#animnodeid), CSmartPtr< [CAnimGraphDoc_Node](../schemas/animgraphdoclib.md#canimgraphdoc_node) > > | `MPropertySuppressField` |
 
 ### CAnimGraphDoc_NodeState
 
@@ -3728,8 +3704,8 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_bIsRootMotionExclusive` | bool | `MPropertyFriendlyName "Exclusive Root Motion"` `MPropertySortPriority 0` |
-| `m_bIsRootMotionExclusiveFirstFrame` | bool | `MPropertyFriendlyName "Exclusive Root Motion On First Frame"` `MPropertySortPriority 0` |
+| `m_bIsRootMotionExclusive` | bool | `MPropertyFriendlyName Exclusive Root Motion` `MPropertySortPriority 0` |
+| `m_bIsRootMotionExclusiveFirstFrame` | bool | `MPropertyFriendlyName Exclusive Root Motion On First Frame` `MPropertySortPriority 0` |
 
 ### CAnimGraphDoc_NodeStateTransition
 
@@ -3799,10 +3775,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_blendDuration` | [CFloatAnimValue](../schemas/animgraphdoclib.md#cfloatanimvalue) | `MPropertyFriendlyName "Blend Duration"` |
-| `m_bReset` | bool | `MPropertyFriendlyName "Reset Destination"` |
-| `m_resetCycleOption` | [ResetCycleOption](../schemas/animgraphlib.md#resetcycleoption) | `MPropertyFriendlyName "Start Cycle At"` |
-| `m_flFixedCycleValue` | [CFloatAnimValue](../schemas/animgraphdoclib.md#cfloatanimvalue) | `MPropertyFriendlyName "Fixed Start Cycle Value"` |
+| `m_blendDuration` | [CFloatAnimValue](../schemas/animgraphdoclib.md#cfloatanimvalue) | `MPropertyFriendlyName Blend Duration` |
+| `m_bReset` | bool | `MPropertyFriendlyName Reset Destination` |
+| `m_resetCycleOption` | [ResetCycleOption](../schemas/!GlobalTypes.md#resetcycleoption) | `MPropertyFriendlyName Start Cycle At` |
+| `m_flFixedCycleValue` | [CFloatAnimValue](../schemas/animgraphdoclib.md#cfloatanimvalue) | `MPropertyFriendlyName Fixed Start Cycle Value` |
 | `m_blendCurve` | [CBlendCurve](../schemas/animgraphlib.md#cblendcurve) | `MPropertySuppressField` |
 
 ### CAnimGraphDoc_OrCondition
@@ -3883,7 +3859,7 @@ classDiagram
 	"m_bEnablePreferredRotationDirection": false,
 	"m_ePreferredRotationDirection": "FacingHeading",
 	"m_flPreferredRotationThreshold": 190.000000
-}`, `MPropertyFriendlyName "Orientation Warp"`
+}`, `MPropertyFriendlyName Orientation Warp`
 
 **Relationships:**
 
@@ -3904,19 +3880,19 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_eMode` | [OrientationWarpMode_t](../schemas/animgraphlib.md#orientationwarpmode_t) | `MPropertyFriendlyName "Orient To"` `MPropertyAutoRebuildOnChange` |
-| `m_targetParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Angle Parameter"` `MPropertyAttributeChoiceName "FloatParameter"` `MPropertyAttrStateCallback` |
-| `m_targetPositionParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "World Position"` `MPropertyAttributeChoiceName "VectorParameter"` `MPropertyAttrStateCallback` |
-| `m_fallbackTargetPositionParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Fallback World Position"` `MPropertyAttributeChoiceName "VectorParameter"` `MPropertyAttrStateCallback` |
-| `m_eTargetOffsetMode` | [OrientationWarpTargetOffsetMode_t](../schemas/animgraphlib.md#orientationwarptargetoffsetmode_t) | `MPropertyFriendlyName "Offset Mode"` `MPropertyAutoRebuildOnChange` |
-| `m_flTargetOffset` | float32 | `MPropertyFriendlyName "Offset"` `MPropertyAttrStateCallback` |
-| `m_targetOffsetParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Offset Parameter"` `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName "FloatParameter"` |
-| `m_flMaxRootMotionScale` | float32 | `MPropertyFriendlyName "Max Root Motion Scale"` |
-| `m_eRootMotionSource` | [OrientationWarpRootMotionSource_t](../schemas/animgraphlib.md#orientationwarprootmotionsource_t) | `MPropertyFriendlyName "Root Motion Source"` |
-| `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyFriendlyName "Damping"` `MPropertyAttrStateCallback` |
-| `m_bEnablePreferredRotationDirection` | bool | `MPropertyFriendlyName "Enable Preferred Rotation Direction"` `MPropertyAutoRebuildOnChange` `MPropertyDescription "Normally the orientation warp will take the shortest arc to align entity's forward vector with the target. With this option enabled it will rotate in the direction that includes passing through the preferred rotation direction parameter unless the resulting rotion is larger than the threshold specified."` |
-| `m_ePreferredRotationDirection` | [AnimValueSource](../schemas/animgraphlib.md#animvaluesource) | `MPropertyFriendlyName "Preferred Rotation Direction"` `MPropertyAttrStateCallback` `MPropertyDescription "An angle relative to the entity's forward. ( Facing Heading, Look Heading ... )"` |
-| `m_flPreferredRotationThreshold` | float32 | `MPropertyFriendlyName "Preferred Rotation Threshold"` `MPropertyAttrStateCallback` `MPropertyDescription "Orientation warp will never rotate angle larger than this even if it means not passing through the preferred rotation direction"` |
+| `m_eMode` | [OrientationWarpMode_t](../schemas/!GlobalTypes.md#orientationwarpmode_t) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Orient To` |
+| `m_targetParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Angle Parameter` |
+| `m_targetPositionParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName VectorParameter` `MPropertyFriendlyName World Position` |
+| `m_fallbackTargetPositionParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName VectorParameter` `MPropertyFriendlyName Fallback World Position` |
+| `m_eTargetOffsetMode` | [OrientationWarpTargetOffsetMode_t](../schemas/!GlobalTypes.md#orientationwarptargetoffsetmode_t) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Offset Mode` |
+| `m_flTargetOffset` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Offset` |
+| `m_targetOffsetParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Offset Parameter` |
+| `m_flMaxRootMotionScale` | float32 | `MPropertyFriendlyName Max Root Motion Scale` |
+| `m_eRootMotionSource` | [OrientationWarpRootMotionSource_t](../schemas/!GlobalTypes.md#orientationwarprootmotionsource_t) | `MPropertyFriendlyName Root Motion Source` |
+| `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyAttrStateCallback` `MPropertyFriendlyName Damping` |
+| `m_bEnablePreferredRotationDirection` | bool | `MPropertyAutoRebuildOnChange` `MPropertyDescription Normally the orientation warp will take the shortest arc to align entity's forward vector with the target. With this option enabled it will rotate in the direction that includes passing through the preferred rotation direction parameter unless the resulting rotion is larger than the threshold specified.` `MPropertyFriendlyName Enable Preferred Rotation Direction` |
+| `m_ePreferredRotationDirection` | [AnimValueSource](../schemas/!GlobalTypes.md#animvaluesource) | `MPropertyAttrStateCallback` `MPropertyDescription An angle relative to the entity's forward. ( Facing Heading, Look Heading ... )` `MPropertyFriendlyName Preferred Rotation Direction` |
+| `m_flPreferredRotationThreshold` | float32 | `MPropertyAttrStateCallback` `MPropertyDescription Orientation warp will never rotate angle larger than this even if it means not passing through the preferred rotation direction` `MPropertyFriendlyName Preferred Rotation Threshold` |
 
 ### CAnimGraphDoc_PairedSequenceNode
 
@@ -3940,7 +3916,7 @@ classDiagram
 	"m_previewSequenceName": "",
 	"m_flPlaybackSpeed": 1.000000,
 	"m_bLoop": false
-}`, `MPropertyFriendlyName "Paired Animation Clip"`
+}`, `MPropertyFriendlyName Paired Animation Clip`
 
 **Relationships:**
 
@@ -3953,10 +3929,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sPairedRole` | CGlobalSymbol | `MPropertyFriendlyName "Paired Role"` |
-| `m_previewSequenceName` | CUtlString | `MPropertyFriendlyName "Preview Sequence"` `MPropertyAttributeChoiceName "Sequence"` |
-| `m_flPlaybackSpeed` | float32 | `MPropertyFriendlyName "Playback Speed"` |
-| `m_bLoop` | bool | `MPropertyFriendlyName "Loop"` |
+| `m_sPairedRole` | CGlobalSymbol | `MPropertyFriendlyName Paired Role` |
+| `m_previewSequenceName` | CUtlString | `MPropertyAttributeChoiceName Sequence` `MPropertyFriendlyName Preview Sequence` |
+| `m_flPlaybackSpeed` | float32 | `MPropertyFriendlyName Playback Speed` |
+| `m_bLoop` | bool | `MPropertyFriendlyName Loop` |
 
 ### CAnimGraphDoc_ParamSpan
 
@@ -3986,7 +3962,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_samples` | CUtlVector<[CAnimGraphDoc_ParamSpanSample](../schemas/animgraphdoclib.md#canimgraphdoc_paramspansample)> |  |
+| `m_samples` | CUtlVector< [CAnimGraphDoc_ParamSpanSample](../schemas/animgraphdoclib.md#canimgraphdoc_paramspansample) > |  |
 | `m_paramName` | CUtlString | `MPropertyHideField` |
 | `m_id` | [AnimParamID](../schemas/modellib.md#animparamid) |  |
 | `m_flStartCycle` | float32 |  |
@@ -4026,7 +4002,7 @@ classDiagram
 		"m_nType": 0
 	},
 	"m_comparisonString": ""
-}`, `MPropertyFriendlyName "Parameter Condition"`
+}`, `MPropertyFriendlyName Parameter Condition`
 
 **Relationships:**
 
@@ -4043,7 +4019,7 @@ classDiagram
 |------|------|-------------|
 | `m_paramName` | CUtlString |  |
 | `m_paramID` | [AnimParamID](../schemas/modellib.md#animparamid) |  |
-| `m_comparisonOp` | [Comparison_t](../schemas/animgraphdoclib.md#comparison_t) |  |
+| `m_comparisonOp` | [Comparison_t](../schemas/!GlobalTypes.md#comparison_t) |  |
 | `m_comparisonValue` | CAnimVariant |  |
 | `m_comparisonString` | CUtlString |  |
 
@@ -4067,7 +4043,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_Parameters` | CUtlVector<CSmartPtr<[CAnimParameterBase](../schemas/animgraphlib.md#canimparameterbase)>> |  |
+| `m_Parameters` | CUtlVector< CSmartPtr< [CAnimParameterBase](../schemas/animgraphlib.md#canimparameterbase) > > |  |
 
 ### CAnimGraphDoc_PathHelperNode
 
@@ -4100,7 +4076,7 @@ classDiagram
 	},
 	"m_flStoppingRadius": 36.000000,
 	"m_flStoppingSpeedScale": 1.000000
-}`, `MPropertyFriendlyName "Path Helper"`
+}`, `MPropertyFriendlyName Path Helper`
 
 **Relationships:**
 
@@ -4115,8 +4091,8 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_flStoppingRadius` | float32 | `MPropertyFriendlyName "Stopping Radius"` |
-| `m_flStoppingSpeedScale` | float32 | `MPropertyFriendlyName "Stopping Min Speed Scale"` |
+| `m_flStoppingRadius` | float32 | `MPropertyFriendlyName Stopping Radius` |
+| `m_flStoppingSpeedScale` | float32 | `MPropertyFriendlyName Stopping Min Speed Scale` |
 
 ### CAnimGraphDoc_PathMetric
 
@@ -4131,7 +4107,7 @@ classDiagram
 	],
 	"m_bExtrapolateMovement": true,
 	"m_flMinExtrapolationSpeed": 2.000000
-}`, `MPropertyFriendlyName "Path Metric"`
+}`, `MPropertyFriendlyName Path Metric`
 
 **Relationships:**
 
@@ -4144,10 +4120,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_flDistance` | float32 | `MPropertyFriendlyName "Distance"` |
-| `m_pathSamples` | CUtlVector<float32> | `MPropertyFriendlyName "Samples Times"` |
-| `m_bExtrapolateMovement` | bool | `MPropertyFriendlyName "Extrapolate Movement"` `MPropertyAutoRebuildOnChange` |
-| `m_flMinExtrapolationSpeed` | float32 | `MPropertyFriendlyName "Min Extrapolation Speed"` `MPropertyAttrStateCallback` |
+| `m_flDistance` | float32 | `MPropertyFriendlyName Distance` |
+| `m_pathSamples` | CUtlVector< float32 > | `MPropertyFriendlyName Samples Times` |
+| `m_bExtrapolateMovement` | bool | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Extrapolate Movement` |
+| `m_flMinExtrapolationSpeed` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Min Extrapolation Speed` |
 
 ### CAnimGraphDoc_PathMotor
 
@@ -4158,7 +4134,7 @@ classDiagram
 	"m_name": "Unnamed Motor",
 	"m_bDefault": false,
 	"m_bLockToPath": true
-}`, `MPropertyFriendlyName "Path Motor"`
+}`, `MPropertyFriendlyName Path Motor`
 
 **Relationships:**
 
@@ -4174,7 +4150,7 @@ classDiagram
 
 **Derived by:** [CAnimGraphDoc_DampedPathMotor](animgraphdoclib.md#canimgraphdoc_dampedpathmotor), [CAnimGraphDoc_PathMotor](animgraphdoclib.md#canimgraphdoc_pathmotor)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
@@ -4189,7 +4165,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_bLockToPath` | bool | `MPropertyFriendlyName "Lock To Path"` `MPropertySortPriority 90` |
+| `m_bLockToPath` | bool | `MPropertyFriendlyName Lock To Path` `MPropertySortPriority 90` |
 
 ### CAnimGraphDoc_PlayerInputMotor
 
@@ -4215,7 +4191,7 @@ classDiagram
 	{
 		"m_id": <HIDDEN FOR DIFF>,
 	}
-}`, `MPropertyFriendlyName "Player Input Motor"`
+}`, `MPropertyFriendlyName Player Input Motor`
 
 **Relationships:**
 
@@ -4229,14 +4205,14 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sampleTimes` | CUtlVector<float32> | `MPropertyFriendlyName "Sample Times"` |
-| `m_bUseAcceleration` | bool | `MPropertyFriendlyName "Use Acceleration"` |
-| `m_flSpringConstant` | float32 | `MPropertyFriendlyName "Spring Constant"` |
-| `m_flAnticipationDistance` | float32 | `MPropertyFriendlyName "Anticipation Distance"` |
+| `m_sampleTimes` | CUtlVector< float32 > | `MPropertyFriendlyName Sample Times` |
+| `m_bUseAcceleration` | bool | `MPropertyFriendlyName Use Acceleration` |
+| `m_flSpringConstant` | float32 | `MPropertyFriendlyName Spring Constant` |
+| `m_flAnticipationDistance` | float32 | `MPropertyFriendlyName Anticipation Distance` |
 | `m_anticipationPosParamName` | CUtlString | `MPropertySuppressField` |
-| `m_anticipationPosParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Anticipation Position Parameter"` `MPropertyAttributeChoiceName "VectorParameter"` |
+| `m_anticipationPosParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName VectorParameter` `MPropertyFriendlyName Anticipation Position Parameter` |
 | `m_anticipationHeadingParamName` | CUtlString | `MPropertySuppressField` |
-| `m_anticipationHeadingParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Anticipation Heading Parameter"` `MPropertyAttributeChoiceName "FloatParameter"` |
+| `m_anticipationHeadingParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Anticipation Heading Parameter` |
 
 ### CAnimGraphDoc_ProxyNodeBase
 
@@ -4244,15 +4220,15 @@ classDiagram
 
 **Derived by:** [CAnimGraphDoc_GroupInputNode](animgraphdoclib.md#canimgraphdoc_groupinputnode), [CAnimGraphDoc_GroupOutputNode](animgraphdoclib.md#canimgraphdoc_groupoutputnode)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
     CAnimGraphDoc_Node <|-- CAnimGraphDoc_ProxyNodeBase
-    CAnimGraphDoc_ProxyNodeBase <|-- CAnimGraphDoc_GroupOutputNode
     CAnimGraphDoc_ProxyNodeBase <|-- CAnimGraphDoc_GroupInputNode
+    CAnimGraphDoc_ProxyNodeBase <|-- CAnimGraphDoc_GroupOutputNode
     CAnimGraphDoc_ProxyNodeBase *-- CConnectionProxyItem
 ```
 
@@ -4260,7 +4236,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_proxyItems` | CUtlVector<[CConnectionProxyItem](../schemas/animgraphdoclib.md#cconnectionproxyitem)> | `MPropertyFriendlyName "External Connections"` `MPropertyAutoExpandSelf` |
+| `m_proxyItems` | CUtlVector< [CConnectionProxyItem](../schemas/animgraphdoclib.md#cconnectionproxyitem) > | `MPropertyAutoExpandSelf` `MPropertyFriendlyName External Connections` |
 
 ### CAnimGraphDoc_RagdollNode
 
@@ -4293,7 +4269,7 @@ classDiagram
 			"m_id": <HIDDEN FOR DIFF>,
 		}
 	}
-}`, `MPropertyFriendlyName "Ragdoll"`
+}`, `MPropertyFriendlyName Ragdoll`
 
 **Relationships:**
 
@@ -4309,7 +4285,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_weightListName` | CUtlString |  |
-| `m_poseControlMethod` | [RagdollPoseControl](../schemas/animgraphlib.md#ragdollposecontrol) |  |
+| `m_poseControlMethod` | [RagdollPoseControl](../schemas/!GlobalTypes.md#ragdollposecontrol) |  |
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
 
 ### CAnimGraphDoc_RigidBodyWeightList
@@ -4334,7 +4310,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_name` | CUtlString |  |
-| `m_weights` | CUtlVector<[CRigidBodyWeight](../schemas/animgraphdoclib.md#crigidbodyweight)> |  |
+| `m_weights` | CUtlVector< [CRigidBodyWeight](../schemas/animgraphdoclib.md#crigidbodyweight) > |  |
 
 ### CAnimGraphDoc_RootNode
 
@@ -4365,7 +4341,7 @@ classDiagram
 			"m_id": <HIDDEN FOR DIFF>,
 		}
 	}
-}`, `MPropertyFriendlyName "Final Pose"`
+}`, `MPropertyFriendlyName Final Pose`
 
 **Relationships:**
 
@@ -4451,7 +4427,7 @@ classDiagram
 		"m_flControlPoint1": 0.000000,
 		"m_flControlPoint2": 1.000000
 	}
-}`, `MPropertyFriendlyName "Selector"`
+}`, `MPropertyFriendlyName Selector`
 
 **Relationships:**
 
@@ -4471,20 +4447,20 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_children` | CUtlVector<[CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection)> | `MPropertySuppressField` |
+| `m_children` | CUtlVector< [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) > | `MPropertySuppressField` |
 | `m_fallbackChild` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_tags` | CUtlVector<[AnimTagID](../schemas/modellib.md#animtagid)> | `MPropertySuppressField` |
-| `m_selectionSource` | [SelectionSource_t](../schemas/animgraphdoclib.md#selectionsource_t) | `MPropertyFriendlyName "Selection Source"` `MPropertyAutoRebuildOnChange` |
+| `m_tags` | CUtlVector< [AnimTagID](../schemas/modellib.md#animtagid) > | `MPropertySuppressField` |
+| `m_selectionSource` | [SelectionSource_t](../schemas/!GlobalTypes.md#selectionsource_t) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Selection Source` |
 | `m_boolParamName` | CUtlString | `MPropertySuppressField` |
-| `m_boolParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Bool Parameter"` `MPropertyAttributeChoiceName "BoolParameter"` `MPropertyAutoRebuildOnChange` `MPropertyAttrStateCallback` |
+| `m_boolParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName BoolParameter` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Bool Parameter` |
 | `m_enumParamName` | CUtlString | `MPropertySuppressField` |
-| `m_enumParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Enum Parameter"` `MPropertyAttributeChoiceName "EnumParameter"` `MPropertyAutoRebuildOnChange` `MPropertyAttrStateCallback` |
-| `m_tagID` | [AnimTagID](../schemas/modellib.md#animtagid) | `MPropertyFriendlyName "Tag Parameter"` `MPropertyAttributeChoiceName "Tag"` `MPropertyAutoRebuildOnChange` `MPropertyAttrStateCallback` |
-| `m_blendDuration` | [CFloatAnimValue](../schemas/animgraphdoclib.md#cfloatanimvalue) | `MPropertyFriendlyName "Blend Duration"` |
-| `m_tagBehavior` | [SelectorTagBehavior_t](../schemas/animgraphlib.md#selectortagbehavior_t) | `MPropertyFriendlyName "Tag Behavior"` |
-| `m_bResetOnChange` | bool | `MPropertyFriendlyName "Reset On Change"` |
-| `m_bSyncCyclesOnChange` | bool | `MPropertyFriendlyName "Start new option at same cycle"` |
-| `m_bLockWhenWaning` | bool | `MPropertyFriendlyName "Lock Selection When Waning"` |
+| `m_enumParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName EnumParameter` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Enum Parameter` |
+| `m_tagID` | [AnimTagID](../schemas/modellib.md#animtagid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName Tag` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Tag Parameter` |
+| `m_blendDuration` | [CFloatAnimValue](../schemas/animgraphdoclib.md#cfloatanimvalue) | `MPropertyFriendlyName Blend Duration` |
+| `m_tagBehavior` | [SelectorTagBehavior_t](../schemas/!GlobalTypes.md#selectortagbehavior_t) | `MPropertyFriendlyName Tag Behavior` |
+| `m_bResetOnChange` | bool | `MPropertyFriendlyName Reset On Change` |
+| `m_bSyncCyclesOnChange` | bool | `MPropertyFriendlyName Start new option at same cycle` |
+| `m_bLockWhenWaning` | bool | `MPropertyFriendlyName Lock Selection When Waning` |
 | `m_blendCurve` | [CBlendCurve](../schemas/animgraphlib.md#cblendcurve) | `MPropertySuppressField` |
 
 ### CAnimGraphDoc_SequenceBlend2DItem
@@ -4504,7 +4480,7 @@ classDiagram
 	[
 	],
 	"m_sequenceName": ""
-}`, `MPropertyFriendlyName "Sequence Blend Item"`, `MPropertyElementNameFn`
+}`, `MPropertyElementNameFn`, `MPropertyFriendlyName Sequence Blend Item`
 
 **Relationships:**
 
@@ -4518,8 +4494,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_tagSpans` | CUtlVector<CSmartPtr<[CAnimGraphDoc_TagSpan](../schemas/animgraphdoclib.md#canimgraphdoc_tagspan)>> | `MPropertySuppressField` |
-| `m_sequenceName` | CUtlString | `MPropertyFriendlyName "Sequence"` `MPropertyAttributeChoiceName "Sequence"` |
+| `m_tagSpans` | CUtlVector< CSmartPtr< [CAnimGraphDoc_TagSpan](../schemas/animgraphdoclib.md#canimgraphdoc_tagspan) > > | `MPropertySuppressField` |
+| `m_sequenceName` | CUtlString | `MPropertyAttributeChoiceName Sequence` `MPropertyFriendlyName Sequence` |
 
 ### CAnimGraphDoc_SequenceMotionItem
 
@@ -4545,7 +4521,7 @@ classDiagram
 	],
 	"m_bLoop": false,
 	"m_sequenceName": ""
-}`, `MPropertyFriendlyName "Sequence"`
+}`, `MPropertyFriendlyName Sequence`
 
 **Relationships:**
 
@@ -4558,7 +4534,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sequenceName` | CUtlString | `MPropertyFriendlyName "Sequence"` `MPropertyAttributeChoiceName "Sequence"` |
+| `m_sequenceName` | CUtlString | `MPropertyAttributeChoiceName Sequence` `MPropertyFriendlyName Sequence` |
 
 ### CAnimGraphDoc_SequenceNode
 
@@ -4589,7 +4565,7 @@ classDiagram
 	"m_sequenceName": "",
 	"m_playbackSpeed": 1.000000,
 	"m_bLoop": false
-}`, `MPropertyFriendlyName "Animation Clip"`
+}`, `MPropertyFriendlyName Animation Clip`
 
 **Relationships:**
 
@@ -4605,11 +4581,11 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_tagSpans` | CUtlVector<CSmartPtr<[CAnimGraphDoc_TagSpan](../schemas/animgraphdoclib.md#canimgraphdoc_tagspan)>> | `MPropertySuppressField` |
-| `m_paramSpans` | CUtlVector<CSmartPtr<[CAnimGraphDoc_ParamSpan](../schemas/animgraphdoclib.md#canimgraphdoc_paramspan)>> | `MPropertySuppressField` |
-| `m_sequenceName` | CUtlString | `MPropertyFriendlyName "Sequence"` `MPropertyAttributeChoiceName "Sequence"` |
-| `m_playbackSpeed` | float32 | `MPropertyFriendlyName "Playback Speed"` |
-| `m_bLoop` | bool | `MPropertyFriendlyName "Loop"` |
+| `m_tagSpans` | CUtlVector< CSmartPtr< [CAnimGraphDoc_TagSpan](../schemas/animgraphdoclib.md#canimgraphdoc_tagspan) > > | `MPropertySuppressField` |
+| `m_paramSpans` | CUtlVector< CSmartPtr< [CAnimGraphDoc_ParamSpan](../schemas/animgraphdoclib.md#canimgraphdoc_paramspan) > > | `MPropertySuppressField` |
+| `m_sequenceName` | CUtlString | `MPropertyAttributeChoiceName Sequence` `MPropertyFriendlyName Sequence` |
+| `m_playbackSpeed` | float32 | `MPropertyFriendlyName Playback Speed` |
+| `m_bLoop` | bool | `MPropertyFriendlyName Loop` |
 
 ### CAnimGraphDoc_SetParameterAction
 
@@ -4641,8 +4617,8 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_paramName` | CUtlString | `MPropertyHideField` |
-| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Parameter"` `MPropertyAttributeChoiceName "Parameter"` |
-| `m_value` | CAnimVariant | `MPropertyFriendlyName "Value"` |
+| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName Parameter` `MPropertyFriendlyName Parameter` |
+| `m_value` | CAnimVariant | `MPropertyFriendlyName Value` |
 
 ### CAnimGraphDoc_SingleFrameNode
 
@@ -4668,7 +4644,7 @@ classDiagram
 	"m_actions":
 	[
 	]
-}`, `MPropertyFriendlyName "Single Frame"`
+}`, `MPropertyFriendlyName Single Frame`
 
 **Relationships:**
 
@@ -4683,10 +4659,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sequenceName` | CUtlString | `MPropertyFriendlyName "Sequence"` `MPropertyAttributeChoiceName "Sequence"` |
-| `m_eFrameSelection` | [SingleFrameSelection](../schemas/animgraphdoclib.md#singleframeselection) | `MPropertyFriendlyName "Frame Selection"` `MPropertyAutoRebuildOnChange` |
-| `m_nFrameIndex` | int32 | `MPropertyFriendlyName "Frame Index"` `MPropertyAttrStateCallback` |
-| `m_actions` | CUtlVector<CSmartPtr<[CAnimGraphDoc_Action](../schemas/animgraphdoclib.md#canimgraphdoc_action)>> |  |
+| `m_sequenceName` | CUtlString | `MPropertyAttributeChoiceName Sequence` `MPropertyFriendlyName Sequence` |
+| `m_eFrameSelection` | [SingleFrameSelection](../schemas/!GlobalTypes.md#singleframeselection) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Frame Selection` |
+| `m_nFrameIndex` | int32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Frame Index` |
+| `m_actions` | CUtlVector< CSmartPtr< [CAnimGraphDoc_Action](../schemas/animgraphdoclib.md#canimgraphdoc_action) > > |  |
 
 ### CAnimGraphDoc_SlowDownOnSlopesNode
 
@@ -4718,7 +4694,7 @@ classDiagram
 		}
 	},
 	"m_flSlowDownStrength": 1.000000
-}`, `MPropertyFriendlyName "Slow Down On Slopes"`
+}`, `MPropertyFriendlyName Slow Down On Slopes`
 
 **Relationships:**
 
@@ -4733,7 +4709,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_flSlowDownStrength` | float32 | `MPropertyFriendlyName "Slow Down Strength"` `MPropertyAttributeRange "0.1 2"` |
+| `m_flSlowDownStrength` | float32 | `MPropertyAttributeRange 0.1 2` `MPropertyFriendlyName Slow Down Strength` |
 
 ### CAnimGraphDoc_SolveIKChainNode
 
@@ -4767,7 +4743,7 @@ classDiagram
 	"m_IkChains":
 	[
 	]
-}`, `MPropertyFriendlyName "Solve IK Chain"`
+}`, `MPropertyFriendlyName Solve IK Chain`
 
 **Relationships:**
 
@@ -4783,7 +4759,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_IkChains` | CUtlVector<[CSolveIKChainAnimNodeChainData](../schemas/animgraphdoclib.md#csolveikchainanimnodechaindata)> | `MPropertyFriendlyName "IK Chains"` `MPropertyAutoExpandSelf` |
+| `m_IkChains` | CUtlVector< [CSolveIKChainAnimNodeChainData](../schemas/animgraphdoclib.md#csolveikchainanimnodechaindata) > | `MPropertyAutoExpandSelf` `MPropertyFriendlyName IK Chains` |
 
 ### CAnimGraphDoc_SpeedScaleNode
 
@@ -4819,7 +4795,7 @@ classDiagram
 	{
 		"m_id": <HIDDEN FOR DIFF>,
 	}
-}`, `MPropertyFriendlyName "Speed Scale"`
+}`, `MPropertyFriendlyName Speed Scale`
 
 **Relationships:**
 
@@ -4836,7 +4812,7 @@ classDiagram
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
 | `m_paramName` | CUtlString | `MPropertySuppressField` |
-| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Parameter"` `MPropertyAttributeChoiceName "FloatParameter"` |
+| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Parameter` |
 
 ### CAnimGraphDoc_StanceOverrideNode
 
@@ -4886,7 +4862,7 @@ classDiagram
 	"m_eMode": "Sequence",
 	"m_sequenceName": "",
 	"m_nFrameIndex": 0
-}`, `MPropertyFriendlyName "Stance Override"`
+}`, `MPropertyFriendlyName Stance Override`
 
 **Relationships:**
 
@@ -4905,10 +4881,10 @@ classDiagram
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
 | `m_stanceSourceConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
 | `m_blendParamName` | CUtlString | `MPropertySuppressField` |
-| `m_blendParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Blend Parameter (optional)"` `MPropertyAttributeChoiceName "FloatParameter"` |
-| `m_eMode` | [StanceOverrideMode](../schemas/animgraphlib.md#stanceoverridemode) | `MPropertyFriendlyName "Stance Source"` `MPropertyAutoRebuildOnChange` |
-| `m_sequenceName` | CUtlString | `MPropertyFriendlyName "Sequence"` `MPropertyAttributeChoiceName "Sequence"` `MPropertyAttrStateCallback` |
-| `m_nFrameIndex` | int32 | `MPropertyFriendlyName "Frame"` `MPropertyAttrStateCallback` |
+| `m_blendParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Blend Parameter (optional)` |
+| `m_eMode` | [StanceOverrideMode](../schemas/!GlobalTypes.md#stanceoverridemode) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Stance Source` |
+| `m_sequenceName` | CUtlString | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName Sequence` `MPropertyFriendlyName Sequence` |
+| `m_nFrameIndex` | int32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Frame` |
 
 ### CAnimGraphDoc_StanceScaleNode
 
@@ -4944,7 +4920,7 @@ classDiagram
 	{
 		"m_id": <HIDDEN FOR DIFF>,
 	}
-}`, `MPropertyFriendlyName "Stance Scale"`
+}`, `MPropertyFriendlyName Stance Scale`
 
 **Relationships:**
 
@@ -4961,7 +4937,7 @@ classDiagram
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
 | `m_paramName` | CUtlString | `MPropertySuppressField` |
-| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Parameter"` `MPropertyAttributeChoiceName "FloatParameter"` |
+| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Parameter` |
 
 ### CAnimGraphDoc_State
 
@@ -4992,14 +4968,14 @@ classDiagram
 	"m_bIsPassthrough": false,
 	"m_bIsPassthroughRootMotion": false,
 	"m_bPreEvaluatePassthroughTransitionPath": false
-}`, `MPropertyFriendlyName "Animation State"`
+}`, `MPropertyFriendlyName Animation State`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CAnimGraphDoc_State <|-- CAnimGraphDoc_NodeState
     CAnimGraphDoc_State <|-- CAnimGraphDoc_ComponentState
+    CAnimGraphDoc_State <|-- CAnimGraphDoc_NodeState
     CAnimGraphDoc_State *-- CAnimGraphDoc_StateTransition
     CAnimGraphDoc_State *-- CStateAction
     CAnimGraphDoc_State *-- AnimStateID
@@ -5009,18 +4985,18 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_transitions` | CUtlVector<CSmartPtr<[CAnimGraphDoc_StateTransition](../schemas/animgraphdoclib.md#canimgraphdoc_statetransition)>> | `MPropertySuppressField` |
-| `m_actions` | CUtlVector<[CStateAction](../schemas/animgraphdoclib.md#cstateaction)> | `MPropertySuppressField` |
-| `m_name` | CUtlString | `MPropertyFriendlyName "Name"` `MPropertySortPriority 100` |
-| `m_sComment` | CUtlString | `MPropertyFriendlyName "Comment"` `MPropertyAttributeEditor "TextBlock()"` `MPropertySortPriority -100` |
+| `m_transitions` | CUtlVector< CSmartPtr< [CAnimGraphDoc_StateTransition](../schemas/animgraphdoclib.md#canimgraphdoc_statetransition) > > | `MPropertySuppressField` |
+| `m_actions` | CUtlVector< [CStateAction](../schemas/animgraphdoclib.md#cstateaction) > | `MPropertySuppressField` |
+| `m_name` | CUtlString | `MPropertyFriendlyName Name` `MPropertySortPriority 100` |
+| `m_sComment` | CUtlString | `MPropertyAttributeEditor TextBlock()` `MPropertyFriendlyName Comment` `MPropertySortPriority -100` |
 | `m_stateID` | [AnimStateID](../schemas/modellib.md#animstateid) | `MPropertySuppressField` |
 | `m_position` | Vector2D | `MPropertySuppressField` |
-| `m_bIsStartState` | bool | `MPropertyFriendlyName "Start State"` |
-| `m_bIsEndtState` | bool | `MPropertyFriendlyName "End State"` |
-| `m_bIsInputToGraph` | bool | `MPropertyFriendlyName "Show Input To Graph"` |
-| `m_bIsPassthrough` | bool | `MPropertyFriendlyName "Passthrough"` |
-| `m_bIsPassthroughRootMotion` | bool | `MPropertyFriendlyName "Passthrough Root Motion"` |
-| `m_bPreEvaluatePassthroughTransitionPath` | bool | `MPropertyFriendlyName "Pre Evaluate Passthrough Transition Path"` |
+| `m_bIsStartState` | bool | `MPropertyFriendlyName Start State` |
+| `m_bIsEndtState` | bool | `MPropertyFriendlyName End State` |
+| `m_bIsInputToGraph` | bool | `MPropertyFriendlyName Show Input To Graph` |
+| `m_bIsPassthrough` | bool | `MPropertyFriendlyName Passthrough` |
+| `m_bIsPassthroughRootMotion` | bool | `MPropertyFriendlyName Passthrough Root Motion` |
+| `m_bPreEvaluatePassthroughTransitionPath` | bool | `MPropertyFriendlyName Pre Evaluate Passthrough Transition Path` |
 
 ### CAnimGraphDoc_StateList
 
@@ -5042,7 +5018,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_states` | CUtlVector<[CAnimGraphDoc_State](../schemas/animgraphdoclib.md#canimgraphdoc_state)*> |  |
+| `m_states` | CUtlVector< [CAnimGraphDoc_State](../schemas/animgraphdoclib.md#canimgraphdoc_state)* > |  |
 
 ### CAnimGraphDoc_StateMachine
 
@@ -5053,14 +5029,14 @@ classDiagram
 	"m_states":
 	[
 	]
-}`, `MPropertyFriendlyName "State Machine"`
+}`, `MPropertyFriendlyName State Machine`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CAnimGraphDoc_StateMachine <|-- CStateMachineComponent
     CAnimGraphDoc_StateMachine <|-- CAnimGraphDoc_StateMachineNode
+    CAnimGraphDoc_StateMachine <|-- CStateMachineComponent
     CAnimGraphDoc_StateMachine *-- CAnimGraphDoc_State
 ```
 
@@ -5068,7 +5044,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_states` | CUtlVector<CSmartPtr<[CAnimGraphDoc_State](../schemas/animgraphdoclib.md#canimgraphdoc_state)>> | `MPropertyHideField` |
+| `m_states` | CUtlVector< CSmartPtr< [CAnimGraphDoc_State](../schemas/animgraphdoclib.md#canimgraphdoc_state) > > | `MPropertyHideField` |
 
 ### CAnimGraphDoc_StateMachineNode
 
@@ -5094,7 +5070,7 @@ classDiagram
 	"m_bBlockWaningTags": false,
 	"m_bLockStateWhenWaning": false,
 	"m_bResetWhenActivated": false
-}`, `MPropertyFriendlyName "State Machine"`
+}`, `MPropertyFriendlyName State Machine`
 
 **Relationships:**
 
@@ -5107,9 +5083,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_bBlockWaningTags` | bool | `MPropertyFriendlyName "Block Tags from Waning States"` |
-| `m_bLockStateWhenWaning` | bool | `MPropertyFriendlyName "Lock When Waning"` |
-| `m_bResetWhenActivated` | bool | `MPropertyFriendlyName "Reset When Activated"` |
+| `m_bBlockWaningTags` | bool | `MPropertyFriendlyName Block Tags from Waning States` |
+| `m_bLockStateWhenWaning` | bool | `MPropertyFriendlyName Lock When Waning` |
+| `m_bResetWhenActivated` | bool | `MPropertyFriendlyName Reset When Activated` |
 
 ### CAnimGraphDoc_StateStatusCondition
 
@@ -5127,7 +5103,7 @@ classDiagram
 		"m_id": <HIDDEN FOR DIFF>,
 	},
 	"m_comparisonOp": "COMPARISON_EQUALS"
-}`, `MPropertyFriendlyName "State Status Condition"`
+}`, `MPropertyFriendlyName State Status Condition`
 
 **Relationships:**
 
@@ -5144,13 +5120,13 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sourceValue` | [StateValue](../schemas/animgraphdoclib.md#statevalue) |  |
-| `m_comparisonValueType` | [StateComparisonValueType](../schemas/animgraphdoclib.md#statecomparisonvaluetype) |  |
+| `m_sourceValue` | [StateValue](../schemas/!GlobalTypes.md#statevalue) |  |
+| `m_comparisonValueType` | [StateComparisonValueType](../schemas/!GlobalTypes.md#statecomparisonvaluetype) |  |
 | `m_comparisonFixedValue` | float32 |  |
-| `m_comparisonStateValue` | [StateValue](../schemas/animgraphdoclib.md#statevalue) |  |
+| `m_comparisonStateValue` | [StateValue](../schemas/!GlobalTypes.md#statevalue) |  |
 | `m_comparisonParamName` | CUtlString |  |
 | `m_comparisonParamID` | [AnimParamID](../schemas/modellib.md#animparamid) |  |
-| `m_comparisonOp` | [Comparison_t](../schemas/animgraphdoclib.md#comparison_t) |  |
+| `m_comparisonOp` | [Comparison_t](../schemas/!GlobalTypes.md#comparison_t) |  |
 
 ### CAnimGraphDoc_StateTransition
 
@@ -5175,14 +5151,14 @@ classDiagram
 	},
 	"m_sComment": "",
 	"m_bDisabled": false
-}`, `MPropertyFriendlyName "Transition"`
+}`, `MPropertyFriendlyName Transition`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CAnimGraphDoc_StateTransition <|-- CAnimGraphDoc_NodeStateTransition
     CAnimGraphDoc_StateTransition <|-- CAnimGraphDoc_ComponentStateTransition
+    CAnimGraphDoc_StateTransition <|-- CAnimGraphDoc_NodeStateTransition
     CAnimGraphDoc_StateTransition *-- CAnimGraphDoc_ConditionContainer
     CAnimGraphDoc_StateTransition *-- AnimStateID
 ```
@@ -5194,8 +5170,8 @@ classDiagram
 | `m_conditionList` | [CAnimGraphDoc_ConditionContainer](../schemas/animgraphdoclib.md#canimgraphdoc_conditioncontainer) | `MPropertySuppressField` |
 | `m_srcState` | [AnimStateID](../schemas/modellib.md#animstateid) | `MPropertySuppressField` |
 | `m_destState` | [AnimStateID](../schemas/modellib.md#animstateid) | `MPropertySuppressField` |
-| `m_sComment` | CUtlString | `MPropertyFriendlyName "Comment"` `MPropertyAttributeEditor "TextBlock()"` `MPropertySortPriority -100` |
-| `m_bDisabled` | bool | `MPropertyFriendlyName "Disable"` |
+| `m_sComment` | CUtlString | `MPropertyAttributeEditor TextBlock()` `MPropertyFriendlyName Comment` `MPropertySortPriority -100` |
+| `m_bDisabled` | bool | `MPropertyFriendlyName Disable` |
 
 ### CAnimGraphDoc_StepsRemainingMetric
 
@@ -5208,7 +5184,7 @@ classDiagram
 	[
 	],
 	"m_flMinStepsRemaining": 1.000000
-}`, `MPropertyFriendlyName "Steps Remaining Metric"`
+}`, `MPropertyFriendlyName Steps Remaining Metric`
 
 **Relationships:**
 
@@ -5221,8 +5197,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_feet` | CUtlVector<CUtlString> | `MPropertyFriendlyName "Feet"` `MPropertyAttributeChoiceName "Foot"` `MPropertyAutoExpandSelf` |
-| `m_flMinStepsRemaining` | float32 | `MPropertyFriendlyName "Min Steps Remaining"` |
+| `m_feet` | CUtlVector< CUtlString > | `MPropertyAttributeChoiceName Foot` `MPropertyAutoExpandSelf` `MPropertyFriendlyName Feet` |
+| `m_flMinStepsRemaining` | float32 | `MPropertyFriendlyName Min Steps Remaining` |
 
 ### CAnimGraphDoc_StopAtGoalNode
 
@@ -5264,7 +5240,7 @@ classDiagram
 		"m_fSpeedScale": 1.000000,
 		"m_fFallingSpeedScale": 1.000000
 	}
-}`, `MPropertyFriendlyName "Stop At Goal"`
+}`, `MPropertyFriendlyName Stop At Goal`
 
 **Relationships:**
 
@@ -5280,11 +5256,11 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_flOuterRadius` | float32 | `MPropertyFriendlyName "Outer Stopping Radius"` |
-| `m_flInnerRadius` | float32 | `MPropertyFriendlyName "Inner Stopping Radius"` |
-| `m_flMaxScale` | float32 | `MPropertyFriendlyName "Maximum Speed Scale"` |
-| `m_flMinScale` | float32 | `MPropertyFriendlyName "Minimum Speed Scale"` |
-| `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyFriendlyName "Damping"` |
+| `m_flOuterRadius` | float32 | `MPropertyFriendlyName Outer Stopping Radius` |
+| `m_flInnerRadius` | float32 | `MPropertyFriendlyName Inner Stopping Radius` |
+| `m_flMaxScale` | float32 | `MPropertyFriendlyName Maximum Speed Scale` |
+| `m_flMinScale` | float32 | `MPropertyFriendlyName Minimum Speed Scale` |
+| `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyFriendlyName Damping` |
 
 ### CAnimGraphDoc_SubGraph
 
@@ -5337,10 +5313,10 @@ classDiagram
 |------|------|-------------|
 | `m_nodeManager` | [CAnimGraphDoc_NodeManager](../schemas/animgraphdoclib.md#canimgraphdoc_nodemanager) |  |
 | `m_componentManager` | [CAnimGraphDoc_ComponentManager](../schemas/animgraphdoclib.md#canimgraphdoc_componentmanager) |  |
-| `m_localParameters` | CUtlVector<CSmartPtr<[CAnimParameterBase](../schemas/animgraphlib.md#canimparameterbase)>> |  |
-| `m_localTags` | CUtlVector<CSmartPtr<[CAnimTagBase](../schemas/animgraphlib.md#canimtagbase)>> |  |
-| `m_referencedParamGroups` | CUtlVector<CUtlString> |  |
-| `m_referencedTagGroups` | CUtlVector<CUtlString> |  |
+| `m_localParameters` | CUtlVector< CSmartPtr< [CAnimParameterBase](../schemas/animgraphlib.md#canimparameterbase) > > |  |
+| `m_localTags` | CUtlVector< CSmartPtr< [CAnimTagBase](../schemas/animgraphlib.md#canimtagbase) > > |  |
+| `m_referencedParamGroups` | CUtlVector< CUtlString > |  |
+| `m_referencedTagGroups` | CUtlVector< CUtlString > |  |
 
 ### CAnimGraphDoc_SubGraphNode
 
@@ -5375,7 +5351,7 @@ classDiagram
 	"m_animNameMap":
 	{
 	}
-}`, `MPropertyFriendlyName "SubGraph"`
+}`, `MPropertyFriendlyName SubGraph`
 
 **Relationships:**
 
@@ -5389,8 +5365,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_subGraphFilename` | CUtlString | `MPropertyFriendlyName "SubGraph File"` `MPropertyAttributeEditor "AssetBrowse( vsubgrph, *requiredoubleclick  )"` |
-| `m_animNameMap` | CUtlHashtable<CUtlString,CUtlString> | `MPropertySuppressField` |
+| `m_subGraphFilename` | CUtlString | `MPropertyAttributeEditor AssetBrowse( vsubgrph, *requiredoubleclick  )` `MPropertyFriendlyName SubGraph File` |
+| `m_animNameMap` | CUtlHashtable< CUtlString, CUtlString > | `MPropertySuppressField` |
 
 ### CAnimGraphDoc_SubtractNode
 
@@ -5440,7 +5416,7 @@ classDiagram
 	"m_bResetSubtract": true,
 	"m_bApplyChannelsSeparately": true,
 	"m_bUseModelSpace": false
-}`, `MPropertyFriendlyName "Subtract"`
+}`, `MPropertyFriendlyName Subtract`
 
 **Relationships:**
 
@@ -5458,14 +5434,14 @@ classDiagram
 |------|------|-------------|
 | `m_baseInputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
 | `m_subtractInputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_timingBehavior` | [BinaryNodeTiming](../schemas/animgraphlib.md#binarynodetiming) | `MPropertyFriendlyName "Timing Control"` `MPropertyAutoRebuildOnChange` |
-| `m_flTimingBlend` | float32 | `MPropertyFriendlyName "Timing Blend"` `MPropertyAttributeRange "0 1"` `MPropertyAttrStateCallback` |
-| `m_footMotionTiming` | [BinaryNodeChildOption](../schemas/animgraphlib.md#binarynodechildoption) | `MPropertyFriendlyName "Foot Motion Timing"` |
-| `m_bApplyToFootMotion` | bool | `MPropertyFriendlyName "Subtract Foot Motion"` |
-| `m_bResetBase` | bool | `MPropertyFriendlyName "Reset Base Child"` |
-| `m_bResetSubtract` | bool | `MPropertyFriendlyName "Reset Subtracted Child"` |
-| `m_bApplyChannelsSeparately` | bool | `MPropertyFriendlyName "Treat Translation Separately"` |
-| `m_bUseModelSpace` | bool | `MPropertyFriendlyName "Use Model Space"` |
+| `m_timingBehavior` | [BinaryNodeTiming](../schemas/!GlobalTypes.md#binarynodetiming) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Timing Control` |
+| `m_flTimingBlend` | float32 | `MPropertyAttrStateCallback` `MPropertyAttributeRange 0 1` `MPropertyFriendlyName Timing Blend` |
+| `m_footMotionTiming` | [BinaryNodeChildOption](../schemas/!GlobalTypes.md#binarynodechildoption) | `MPropertyFriendlyName Foot Motion Timing` |
+| `m_bApplyToFootMotion` | bool | `MPropertyFriendlyName Subtract Foot Motion` |
+| `m_bResetBase` | bool | `MPropertyFriendlyName Reset Base Child` |
+| `m_bResetSubtract` | bool | `MPropertyFriendlyName Reset Subtracted Child` |
+| `m_bApplyChannelsSeparately` | bool | `MPropertyFriendlyName Treat Translation Separately` |
+| `m_bUseModelSpace` | bool | `MPropertyFriendlyName Use Model Space` |
 
 ### CAnimGraphDoc_TagCondition
 
@@ -5479,7 +5455,7 @@ classDiagram
 	},
 	"m_comparisonValue": true,
 	"m_latestValue": false
-}`, `MPropertyFriendlyName "Tag Condition"`
+}`, `MPropertyFriendlyName Tag Condition`
 
 **Relationships:**
 
@@ -5493,9 +5469,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_tagID` | [AnimTagID](../schemas/modellib.md#animtagid) | `MPropertyFriendlyName "Tag"` `MPropertyAttributeChoiceName "Tag"` |
-| `m_comparisonValue` | bool | `MPropertyFriendlyName "Value"` |
-| `m_latestValue` | bool | `MPropertyFriendlyName "Lastest Value"` |
+| `m_tagID` | [AnimTagID](../schemas/modellib.md#animtagid) | `MPropertyAttributeChoiceName Tag` `MPropertyFriendlyName Tag` |
+| `m_comparisonValue` | bool | `MPropertyFriendlyName Value` |
+| `m_latestValue` | bool | `MPropertyFriendlyName Lastest Value` |
 
 ### CAnimGraphDoc_TagManager
 
@@ -5517,7 +5493,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_tags` | CUtlVector<CSmartPtr<[CAnimTagBase](../schemas/animgraphlib.md#canimtagbase)>> |  |
+| `m_tags` | CUtlVector< CSmartPtr< [CAnimTagBase](../schemas/animgraphlib.md#canimtagbase) > > |  |
 
 ### CAnimGraphDoc_TagSpan
 
@@ -5589,7 +5565,7 @@ classDiagram
 	"m_bTargetFacePositionIsWorldSpace": false,
 	"m_bEnablePhaseMatching": false,
 	"m_flPhaseMatchingMaxRootMotionSkip": 0.400000
-}`, `MPropertyFriendlyName "Target Selector"`
+}`, `MPropertyFriendlyName Target Selector`
 
 **Relationships:**
 
@@ -5606,15 +5582,15 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_children` | CUtlVector<[CTargetSelectorChild](../schemas/animgraphdoclib.md#ctargetselectorchild)> |  |
-| `m_eLinearRootMotionMode` | [TargetWarpLinearRootMotionMode](../schemas/animgraphdoclib.md#targetwarplinearrootmotionmode) | `MPropertyFriendlyName "Linear Root Motion Mode"` `MPropertyAutoRebuildOnChange` |
-| `m_eAngleMode` | [TargetSelectorAngleMode_t](../schemas/animgraphlib.md#targetselectoranglemode_t) | `MPropertyFriendlyName "Angle Mode"` |
-| `m_moveHeadingParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Move Heading"` `MPropertyAttributeChoiceName "FloatParameter"` |
-| `m_desiredMoveHeadingParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Desired Move Heading"` `MPropertyAttributeChoiceName "FloatParameter"` |
-| `m_targetPositionParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Target Position"` `MPropertyAttributeChoiceName "VectorParameter"` `MPropertyAttrStateCallback` |
-| `m_bTargetPositionIsWorldSpace` | bool | `MPropertyFriendlyName "Target Position Is World Space"` `MPropertyAttrStateCallback` |
-| `m_targetFacePositionParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Target Face Position"` `MPropertyAttributeChoiceName "VectorParameter"` |
-| `m_bTargetFacePositionIsWorldSpace` | bool | `MPropertyFriendlyName "Target Face Position Is World Space"` |
+| `m_children` | CUtlVector< [CTargetSelectorChild](../schemas/animgraphdoclib.md#ctargetselectorchild) > |  |
+| `m_eLinearRootMotionMode` | [TargetWarpLinearRootMotionMode](../schemas/!GlobalTypes.md#targetwarplinearrootmotionmode) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Linear Root Motion Mode` |
+| `m_eAngleMode` | [TargetSelectorAngleMode_t](../schemas/!GlobalTypes.md#targetselectoranglemode_t) | `MPropertyFriendlyName Angle Mode` |
+| `m_moveHeadingParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Move Heading` |
+| `m_desiredMoveHeadingParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Desired Move Heading` |
+| `m_targetPositionParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName VectorParameter` `MPropertyFriendlyName Target Position` |
+| `m_bTargetPositionIsWorldSpace` | bool | `MPropertyAttrStateCallback` `MPropertyFriendlyName Target Position Is World Space` |
+| `m_targetFacePositionParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName VectorParameter` `MPropertyFriendlyName Target Face Position` |
+| `m_bTargetFacePositionIsWorldSpace` | bool | `MPropertyFriendlyName Target Face Position Is World Space` |
 | `m_bEnablePhaseMatching` | bool |  |
 | `m_flPhaseMatchingMaxRootMotionSkip` | float32 |  |
 
@@ -5677,7 +5653,7 @@ classDiagram
 	"m_bWarpOrientationDuringTranslation": false,
 	"m_flMaxAngle": 180.000000,
 	"m_bWarpAroundCenter": false
-}`, `MPropertyFriendlyName "Target Warp"`
+}`, `MPropertyFriendlyName Target Warp`
 
 **Relationships:**
 
@@ -5697,21 +5673,21 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_eLinearRootMotionMode` | [TargetWarpLinearRootMotionMode](../schemas/animgraphdoclib.md#targetwarplinearrootmotionmode) | `MPropertyFriendlyName "Linear Root Motion Mode"` `MPropertyAutoRebuildOnChange` |
-| `m_eAngleMode` | [TargetWarpAngleMode_t](../schemas/animgraphlib.md#targetwarpanglemode_t) | `MPropertyFriendlyName "Angle Mode"` |
-| `m_eCorrectionMethod` | [TargetWarpCorrectionMethod](../schemas/animgraphlib.md#targetwarpcorrectionmethod) | `MPropertyFriendlyName "Correction Method"` |
-| `m_eTargetWarpTimingMethod` | [TargetWarpTimingMethod](../schemas/animgraphlib.md#targetwarptimingmethod) | `MPropertyFriendlyName "Timing Method"` |
-| `m_moveHeadingParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Move Heading"` `MPropertyAttributeChoiceName "FloatParameter"` |
-| `m_desiredMoveHeadingParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Desired Move Heading"` `MPropertyAttributeChoiceName "FloatParameter"` |
-| `m_targetPositionParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Target Position"` `MPropertyAttributeChoiceName "VectorParameter"` `MPropertyAttrStateCallback` |
-| `m_bTargetPositionIsWorldSpace` | bool | `MPropertyFriendlyName "Target Position Is World Space"` `MPropertyAttrStateCallback` |
-| `m_targetFacePositionParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Target Face Position"` `MPropertyAttributeChoiceName "VectorParameter"` |
-| `m_bTargetFacePositionIsWorldSpace` | bool | `MPropertyFriendlyName "Target Face Position Is World Space"` |
-| `m_targetUpVectorParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Target Up Vector (World Space)"` `MPropertyAttributeChoiceName "VectorParameter"` |
-| `m_bOnlyWarpWhenTagIsFound` | bool | `MPropertyFriendlyName "Require warp tag"` `MPropertyDescription "Only warp if there is a warp tag active. Otherwise this node will warp whenever it's active"` |
-| `m_bWarpOrientationDuringTranslation` | bool | `MPropertyFriendlyName "Warp orientation during translation"` `MPropertyDescription "If the source animation has no rotation root motion and there is no tag present that specifies rotation warp section, rotation will be introduced only during linear root motion."` |
-| `m_flMaxAngle` | float32 | `MPropertyFriendlyName "Max Angle"` `MPropertyDescription "If the angle delta between the current face direction and the target face direction is more than this angle, no warping will occur."` |
-| `m_bWarpAroundCenter` | bool | `MPropertyFriendlyName "Warp orientation around center"` `MPropertyDescription "If set, orientation warp pivots around the model center instead of abs origin."` |
+| `m_eLinearRootMotionMode` | [TargetWarpLinearRootMotionMode](../schemas/!GlobalTypes.md#targetwarplinearrootmotionmode) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Linear Root Motion Mode` |
+| `m_eAngleMode` | [TargetWarpAngleMode_t](../schemas/!GlobalTypes.md#targetwarpanglemode_t) | `MPropertyFriendlyName Angle Mode` |
+| `m_eCorrectionMethod` | [TargetWarpCorrectionMethod](../schemas/!GlobalTypes.md#targetwarpcorrectionmethod) | `MPropertyFriendlyName Correction Method` |
+| `m_eTargetWarpTimingMethod` | [TargetWarpTimingMethod](../schemas/!GlobalTypes.md#targetwarptimingmethod) | `MPropertyFriendlyName Timing Method` |
+| `m_moveHeadingParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Move Heading` |
+| `m_desiredMoveHeadingParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Desired Move Heading` |
+| `m_targetPositionParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName VectorParameter` `MPropertyFriendlyName Target Position` |
+| `m_bTargetPositionIsWorldSpace` | bool | `MPropertyAttrStateCallback` `MPropertyFriendlyName Target Position Is World Space` |
+| `m_targetFacePositionParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName VectorParameter` `MPropertyFriendlyName Target Face Position` |
+| `m_bTargetFacePositionIsWorldSpace` | bool | `MPropertyFriendlyName Target Face Position Is World Space` |
+| `m_targetUpVectorParamID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName VectorParameter` `MPropertyFriendlyName Target Up Vector (World Space)` |
+| `m_bOnlyWarpWhenTagIsFound` | bool | `MPropertyDescription Only warp if there is a warp tag active. Otherwise this node will warp whenever it's active` `MPropertyFriendlyName Require warp tag` |
+| `m_bWarpOrientationDuringTranslation` | bool | `MPropertyDescription If the source animation has no rotation root motion and there is no tag present that specifies rotation warp section, rotation will be introduced only during linear root motion.` `MPropertyFriendlyName Warp orientation during translation` |
+| `m_flMaxAngle` | float32 | `MPropertyDescription If the angle delta between the current face direction and the target face direction is more than this angle, no warping will occur.` `MPropertyFriendlyName Max Angle` |
+| `m_bWarpAroundCenter` | bool | `MPropertyDescription If set, orientation warp pivots around the model center instead of abs origin.` `MPropertyFriendlyName Warp orientation around center` |
 
 ### CAnimGraphDoc_TimeCondition
 
@@ -5721,7 +5697,7 @@ classDiagram
 	"_class": "CAnimGraphDoc_TimeCondition",
 	"m_comparisonOp": "COMPARISON_GREATER_OR_EQUAL",
 	"m_comparisonString": ""
-}`, `MPropertyFriendlyName "Time Condition"`
+}`, `MPropertyFriendlyName Time Condition`
 
 **Relationships:**
 
@@ -5735,7 +5711,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_comparisonOp` | [Comparison_t](../schemas/animgraphdoclib.md#comparison_t) |  |
+| `m_comparisonOp` | [Comparison_t](../schemas/!GlobalTypes.md#comparison_t) |  |
 | `m_comparisonString` | CUtlString |  |
 
 ### CAnimGraphDoc_TimeRemainingMetric
@@ -5749,7 +5725,7 @@ classDiagram
 	"m_flMaxTimeRemaining": 1.000000,
 	"m_bFilterByTimeRemaining": true,
 	"m_flMinTimeRemaining": 0.300000
-}`, `MPropertyFriendlyName "Time Remaining Metric"`
+}`, `MPropertyFriendlyName Time Remaining Metric`
 
 **Relationships:**
 
@@ -5762,10 +5738,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_bMatchByTimeRemaining` | bool | `MPropertyFriendlyName "Match Time Remaining"` `MPropertyGroupName ""` `MPropertyAutoRebuildOnChange` |
-| `m_flMaxTimeRemaining` | float32 | `MPropertyFriendlyName "Max Time Remaining"` `MPropertyAttrStateCallback` |
-| `m_bFilterByTimeRemaining` | bool | `MPropertyFriendlyName "Filter By Time Remaining"` `MPropertyAutoRebuildOnChange` |
-| `m_flMinTimeRemaining` | float32 | `MPropertyFriendlyName "Min Time Remaining"` `MPropertyAttrStateCallback` |
+| `m_bMatchByTimeRemaining` | bool | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Match Time Remaining` `MPropertyGroupName` |
+| `m_flMaxTimeRemaining` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Max Time Remaining` |
+| `m_bFilterByTimeRemaining` | bool | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Filter By Time Remaining` |
+| `m_flMinTimeRemaining` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Min Time Remaining` |
 
 ### CAnimGraphDoc_ToggleComponentAction
 
@@ -5792,8 +5768,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_componentID` | [AnimComponentID](../schemas/modellib.md#animcomponentid) | `MPropertyFriendlyName "Component"` `MPropertyAttributeChoiceName "Component"` |
-| `m_bSetEnabled` | bool | `MPropertyFriendlyName "Set Enabled"` |
+| `m_componentID` | [AnimComponentID](../schemas/modellib.md#animcomponentid) | `MPropertyAttributeChoiceName Component` `MPropertyFriendlyName Component` |
+| `m_bSetEnabled` | bool | `MPropertyFriendlyName Set Enabled` |
 
 ### CAnimGraphDoc_TurnHelperNode
 
@@ -5830,7 +5806,7 @@ classDiagram
 	"m_bMatchChildDuration": true,
 	"m_bUseManualTurnOffset": false,
 	"m_manualTurnOffset": 0.000000
-}`, `MPropertyFriendlyName "Turn Helper"`
+}`, `MPropertyFriendlyName Turn Helper`
 
 **Relationships:**
 
@@ -5846,12 +5822,12 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_facingTarget` | [AnimValueSource](../schemas/animgraphlib.md#animvaluesource) | `MPropertyFriendlyName "Turn to Face"` |
-| `m_turnStartTime` | float32 | `MPropertyFriendlyName "Turn Start Time"` |
-| `m_turnDuration` | float32 | `MPropertyFriendlyName "Turn Duration"` |
-| `m_bMatchChildDuration` | bool | `MPropertyFriendlyName "Match Child Duration"` |
-| `m_bUseManualTurnOffset` | bool | `MPropertyFriendlyName "Use Manual Turn Offset"` |
-| `m_manualTurnOffset` | float32 | `MPropertyFriendlyName "Manual Turn Offset"` |
+| `m_facingTarget` | [AnimValueSource](../schemas/!GlobalTypes.md#animvaluesource) | `MPropertyFriendlyName Turn to Face` |
+| `m_turnStartTime` | float32 | `MPropertyFriendlyName Turn Start Time` |
+| `m_turnDuration` | float32 | `MPropertyFriendlyName Turn Duration` |
+| `m_bMatchChildDuration` | bool | `MPropertyFriendlyName Match Child Duration` |
+| `m_bUseManualTurnOffset` | bool | `MPropertyFriendlyName Use Manual Turn Offset` |
+| `m_manualTurnOffset` | float32 | `MPropertyFriendlyName Manual Turn Offset` |
 
 ### CAnimGraphDoc_TwoBoneIKNode
 
@@ -5902,7 +5878,7 @@ classDiagram
 	},
 	"m_bConstrainTwist": false,
 	"m_flMaxTwist": 15.000000
-}`, `MPropertyFriendlyName "Two-Bone IK"`
+}`, `MPropertyFriendlyName Two-Bone IK`
 
 **Relationships:**
 
@@ -5920,20 +5896,20 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_ikChainName` | CUtlString | `MPropertyFriendlyName "IK Chain"` `MPropertyAttributeChoiceName "IKChain"` |
-| `m_bAutoDetectHingeAxis` | bool | `MPropertyFriendlyName "Auto-Detect Hinge Axis"` |
-| `m_endEffectorType` | [IkEndEffectorType](../schemas/animgraphlib.md#ikendeffectortype) | `MPropertyGroupName "End Effector"` `MPropertyFriendlyName "End Effector Type"` `MPropertyAutoRebuildOnChange` |
-| `m_endEffectorAttachmentName` | CUtlString | `MPropertyGroupName "End Effector"` `MPropertyFriendlyName "Attachment"` `MPropertyAttributeChoiceName "Attachment"` `MPropertyAttrStateCallback` |
-| `m_targetType` | [IkTargetType](../schemas/animgraphlib.md#iktargettype) | `MPropertyGroupName "Target"` `MPropertyFriendlyName "Target Type"` `MPropertyAutoRebuildOnChange` |
-| `m_attachmentName` | CUtlString | `MPropertyGroupName "Target"` `MPropertyFriendlyName "Attachment"` `MPropertyAttributeChoiceName "Attachment"` `MPropertyAttrStateCallback` |
-| `m_targetBoneName` | CUtlString | `MPropertyGroupName "Target"` `MPropertyFriendlyName "Bone"` `MPropertyAttributeChoiceName "Bone"` `MPropertyAttrStateCallback` |
+| `m_ikChainName` | CUtlString | `MPropertyAttributeChoiceName IKChain` `MPropertyFriendlyName IK Chain` |
+| `m_bAutoDetectHingeAxis` | bool | `MPropertyFriendlyName Auto-Detect Hinge Axis` |
+| `m_endEffectorType` | [IkEndEffectorType](../schemas/!GlobalTypes.md#ikendeffectortype) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName End Effector Type` `MPropertyGroupName End Effector` |
+| `m_endEffectorAttachmentName` | CUtlString | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName Attachment` `MPropertyFriendlyName Attachment` `MPropertyGroupName End Effector` |
+| `m_targetType` | [IkTargetType](../schemas/!GlobalTypes.md#iktargettype) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Target Type` `MPropertyGroupName Target` |
+| `m_attachmentName` | CUtlString | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName Attachment` `MPropertyFriendlyName Attachment` `MPropertyGroupName Target` |
+| `m_targetBoneName` | CUtlString | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName Bone` `MPropertyGroupName Target` |
 | `m_targetParamName` | CUtlString | `MPropertySuppressField` |
-| `m_targetParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyGroupName "Target"` `MPropertyFriendlyName "Position Parameter"` `MPropertyAttributeChoiceName "VectorParameter"` `MPropertyAttrStateCallback` |
-| `m_bMatchTargetOrientation` | bool | `MPropertyGroupName "Target"` `MPropertyFriendlyName "Match Target Orientation"` `MPropertyAutoRebuildOnChange` |
+| `m_targetParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName VectorParameter` `MPropertyFriendlyName Position Parameter` `MPropertyGroupName Target` |
+| `m_bMatchTargetOrientation` | bool | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Match Target Orientation` `MPropertyGroupName Target` |
 | `m_rotationParamName` | CUtlString | `MPropertySuppressField` |
-| `m_rotationParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyGroupName "Target"` `MPropertyFriendlyName "Rotation Parameter"` `MPropertyAttributeChoiceName "QuaternionParameter"` `MPropertyAttrStateCallback` |
-| `m_bConstrainTwist` | bool | `MPropertyGroupName "Target"` `MPropertyFriendlyName "Constrain Twist"` `MPropertyAttrStateCallback` |
-| `m_flMaxTwist` | float32 | `MPropertyGroupName "Target"` `MPropertyFriendlyName "Max Twist"` `MPropertyAttrStateCallback` |
+| `m_rotationParam` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName QuaternionParameter` `MPropertyFriendlyName Rotation Parameter` `MPropertyGroupName Target` |
+| `m_bConstrainTwist` | bool | `MPropertyAttrStateCallback` `MPropertyFriendlyName Constrain Twist` `MPropertyGroupName Target` |
+| `m_flMaxTwist` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Max Twist` `MPropertyGroupName Target` |
 
 ### CAnimGraphDoc_WayPointHelperNode
 
@@ -5969,7 +5945,7 @@ classDiagram
 	"m_bOnlyGoals": true,
 	"m_bPreventOvershoot": true,
 	"m_bPreventUndershoot": false
-}`, `MPropertyFriendlyName "WayPoint Helper"`
+}`, `MPropertyFriendlyName WayPoint Helper`
 
 **Relationships:**
 
@@ -5984,11 +5960,11 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_flStartCycle` | float32 | `MPropertyFriendlyName "Start Cycle"` `MPropertyAttributeRange "0 1"` |
-| `m_flEndCycle` | float32 | `MPropertyFriendlyName "End Cycle"` `MPropertyAttributeRange "0 1"` |
-| `m_bOnlyGoals` | bool | `MPropertyFriendlyName "Only align to Goals"` |
-| `m_bPreventOvershoot` | bool | `MPropertyFriendlyName "Prevent Overshoot"` |
-| `m_bPreventUndershoot` | bool | `MPropertyFriendlyName "Prevent Undershoot"` |
+| `m_flStartCycle` | float32 | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName Start Cycle` |
+| `m_flEndCycle` | float32 | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName End Cycle` |
+| `m_bOnlyGoals` | bool | `MPropertyFriendlyName Only align to Goals` |
+| `m_bPreventOvershoot` | bool | `MPropertyFriendlyName Prevent Overshoot` |
+| `m_bPreventUndershoot` | bool | `MPropertyFriendlyName Prevent Undershoot` |
 
 ### CAnimGraphDoc_ZeroPoseNode
 
@@ -6008,7 +5984,7 @@ classDiagram
 	},
 	"m_bDebugThisNode": false,
 	"m_networkMode": "ServerAuthoritative"
-}`, `MPropertyFriendlyName "Zero Pose"`
+}`, `MPropertyFriendlyName Zero Pose`
 
 **Relationships:**
 
@@ -6079,8 +6055,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sName` | CUtlString | `MPropertyFriendlyName "Name"` `MPropertySortPriority 100` |
-| `m_scriptFilename` | CUtlString | `MPropertyFriendlyName "Script File"` `MPropertyAttributeEditor "AssetBrowse( as )"` |
+| `m_sName` | CUtlString | `MPropertyFriendlyName Name` `MPropertySortPriority 100` |
+| `m_scriptFilename` | CUtlString | `MPropertyAttributeEditor AssetBrowse( as )` `MPropertyFriendlyName Script File` |
 
 ### CAnimTagConflict
 
@@ -6132,7 +6108,7 @@ classDiagram
 	},
 	"m_name": "Unnamed",
 	"m_blendValue": 0.000000
-}`, `MPropertyFriendlyName "Blend Item"`
+}`, `MPropertyFriendlyName Blend Item`
 
 **Relationships:**
 
@@ -6146,8 +6122,8 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_name` | CUtlString | `MPropertyFriendlyName "Name"` |
-| `m_blendValue` | float32 | `MPropertyFriendlyName "Blend Value"` |
+| `m_name` | CUtlString | `MPropertyFriendlyName Name` |
+| `m_blendValue` | float32 | `MPropertyFriendlyName Blend Value` |
 
 ### CCPPScriptComponent
 
@@ -6179,7 +6155,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_scriptsToRun` | CUtlVector<CUtlString> | `MPropertyFriendlyName "Scripts"` |
+| `m_scriptsToRun` | CUtlVector< CUtlString > | `MPropertyFriendlyName Scripts` |
 
 ### CChoiceNodeChild
 
@@ -6198,7 +6174,7 @@ classDiagram
 	"m_name": "",
 	"m_weight": 0.000000,
 	"m_blendTime": 0.200000
-}`, `MPropertyFriendlyName "Choice Item"`, `MPropertyElementNameFn`
+}`, `MPropertyElementNameFn`, `MPropertyFriendlyName Choice Item`
 
 **Relationships:**
 
@@ -6212,9 +6188,9 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-| `m_name` | CUtlString | `MPropertyFriendlyName "Name"` |
-| `m_weight` | float32 | `MPropertyFriendlyName "Weight"` |
-| `m_blendTime` | float32 | `MPropertyFriendlyName "Blend Time"` |
+| `m_name` | CUtlString | `MPropertyFriendlyName Name` |
+| `m_weight` | float32 | `MPropertyFriendlyName Weight` |
+| `m_blendTime` | float32 | `MPropertyFriendlyName Blend Time` |
 
 ### CConnectionProxyItem
 
@@ -6235,7 +6211,7 @@ classDiagram
 			"m_id": <HIDDEN FOR DIFF>,
 		}
 	}
-}`, `MPropertyFriendlyName "Input Item"`, `MPropertyElementNameFn`
+}`, `MPropertyElementNameFn`, `MPropertyFriendlyName Input Item`
 
 **Relationships:**
 
@@ -6249,7 +6225,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_name` | CUtlString | `MPropertyFriendlyName "Name"` |
+| `m_name` | CUtlString | `MPropertyFriendlyName Name` |
 | `m_outputID` | [AnimNodeOutputID](../schemas/modellib.md#animnodeoutputid) | `MPropertySuppressField` |
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
 
@@ -6285,8 +6261,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_name` | CUtlString | `MPropertyFriendlyName "Name"` |
-| `m_items` | CUtlVector<[CDampedValueItem](../schemas/animgraphdoclib.md#cdampedvalueitem)> | `MPropertyFriendlyName "Items"` `MPropertyAutoExpandSelf` |
+| `m_name` | CUtlString | `MPropertyFriendlyName Name` |
+| `m_items` | CUtlVector< [CDampedValueItem](../schemas/animgraphdoclib.md#cdampedvalueitem) > | `MPropertyAutoExpandSelf` `MPropertyFriendlyName Items` |
 
 ### CDampedValueItem
 
@@ -6319,7 +6295,7 @@ classDiagram
 		"m_fSpeedScale": 1.000000,
 		"m_fFallingSpeedScale": 1.000000
 	}
-}`, `MPropertyFriendlyName "Damped Value"`
+}`, `MPropertyFriendlyName Damped Value`
 
 **Relationships:**
 
@@ -6334,16 +6310,16 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_valueType` | [DampedValueType](../schemas/animgraphdoclib.md#dampedvaluetype) | `MPropertyFriendlyName "Value Type"` `MPropertyAutoRebuildOnChange` |
+| `m_valueType` | [DampedValueType](../schemas/!GlobalTypes.md#dampedvaluetype) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Value Type` |
 | `m_floatParamNameIn` | CUtlString | `MPropertySuppressField` |
 | `m_floatParamNameOut` | CUtlString | `MPropertySuppressField` |
 | `m_vectorParamNameIn` | CUtlString | `MPropertySuppressField` |
 | `m_vectorParamNameOut` | CUtlString | `MPropertySuppressField` |
-| `m_floatParamIn` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Parameter In"` `MPropertyAttributeChoiceName "FloatParameter"` `MPropertyAttrStateCallback` |
-| `m_floatParamOut` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Parameter Out"` `MPropertyAttributeChoiceName "PrivateFloatParameter"` `MPropertyAttrStateCallback` |
-| `m_vectorParamIn` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Parameter In"` `MPropertyAttributeChoiceName "VectorParameter"` `MPropertyAttrStateCallback` |
-| `m_vectorParamOut` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Parameter Out"` `MPropertyAttributeChoiceName "PrivateVectorParameter"` `MPropertyAttrStateCallback` |
-| `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyFriendlyName "Damping"` |
+| `m_floatParamIn` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Parameter In` |
+| `m_floatParamOut` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName PrivateFloatParameter` `MPropertyFriendlyName Parameter Out` |
+| `m_vectorParamIn` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName VectorParameter` `MPropertyFriendlyName Parameter In` |
+| `m_vectorParamOut` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName PrivateVectorParameter` `MPropertyFriendlyName Parameter Out` |
+| `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyFriendlyName Damping` |
 
 ### CDemoSettingsComponent
 
@@ -6419,7 +6395,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_settings` | [CAnimDemoCaptureSettings](../schemas/animgraphlib.md#canimdemocapturesettings) | `MPropertyFriendlyName "Settings"` `MPropertyAutoExpandSelf` |
+| `m_settings` | [CAnimDemoCaptureSettings](../schemas/animgraphlib.md#canimdemocapturesettings) | `MPropertyAutoExpandSelf` `MPropertyFriendlyName Settings` |
 
 ### CFloatAnimValue
 
@@ -6449,7 +6425,7 @@ classDiagram
 | `m_flConstValue` | float32 | `MPropertySuppressField` |
 | `m_paramName` | CUtlString | `MPropertySuppressField` |
 | `m_paramID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertySuppressField` |
-| `m_eSource` | [EAnimValueSource](../schemas/animgraphdoclib.md#eanimvaluesource) | `MPropertySuppressField` |
+| `m_eSource` | [EAnimValueSource](../schemas/!GlobalTypes.md#eanimvaluesource) | `MPropertySuppressField` |
 
 ### CFootLockItem
 
@@ -6469,7 +6445,7 @@ classDiagram
 	{
 		"m_id": <HIDDEN FOR DIFF>,
 	}
-}`, `MPropertyFriendlyName "Item"`, `MPropertyElementNameFn`
+}`, `MPropertyElementNameFn`, `MPropertyFriendlyName Item`
 
 **Relationships:**
 
@@ -6482,15 +6458,15 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_footName` | CUtlString | `MPropertyFriendlyName "Foot"` `MPropertyAttributeChoiceName "Foot"` |
-| `m_targetBoneName` | CUtlString | `MPropertyFriendlyName "Target Bone"` `MPropertyAttributeChoiceName "Bone"` |
-| `m_ikChainName` | CUtlString | `MPropertyFriendlyName "IK Chain"` `MPropertyAttributeChoiceName "IKChain"` |
+| `m_footName` | CUtlString | `MPropertyAttributeChoiceName Foot` `MPropertyFriendlyName Foot` |
+| `m_targetBoneName` | CUtlString | `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName Target Bone` |
+| `m_ikChainName` | CUtlString | `MPropertyAttributeChoiceName IKChain` `MPropertyFriendlyName IK Chain` |
 | `m_disableTagName` | CGlobalSymbol | `MPropertySuppressField` |
-| `m_disableTagID` | [AnimTagID](../schemas/modellib.md#animtagid) | `MPropertyFriendlyName "Disable Tag"` `MPropertyAttributeChoiceName "Tag"` |
-| `m_flMaxRotationLeft` | float32 | `MPropertyFriendlyName "Max Left Rotation"` `MPropertyAttributeRange "0 180"` |
-| `m_flMaxRotationRight` | float32 | `MPropertyFriendlyName "Max Right Rotation"` `MPropertyAttributeRange "0 180"` |
+| `m_disableTagID` | [AnimTagID](../schemas/modellib.md#animtagid) | `MPropertyAttributeChoiceName Tag` `MPropertyFriendlyName Disable Tag` |
+| `m_flMaxRotationLeft` | float32 | `MPropertyAttributeRange 0 180` `MPropertyFriendlyName Max Left Rotation` |
+| `m_flMaxRotationRight` | float32 | `MPropertyAttributeRange 0 180` `MPropertyFriendlyName Max Right Rotation` |
 | `m_footstepLandedTagName` | CGlobalSymbol | `MPropertySuppressField` |
-| `m_footstepLandedTag` | [AnimTagID](../schemas/modellib.md#animtagid) | `MPropertyFriendlyName "Footstep Landed Tag"` `MPropertyAttributeChoiceName "Tag"` |
+| `m_footstepLandedTag` | [AnimTagID](../schemas/modellib.md#animtagid) | `MPropertyAttributeChoiceName Tag` `MPropertyFriendlyName Footstep Landed Tag` |
 
 ### CFootPinningItem
 
@@ -6509,7 +6485,7 @@ classDiagram
 	},
 	"m_flMaxRotationLeft": 90.000000,
 	"m_flMaxRotationRight": 90.000000
-}`, `MPropertyFriendlyName "Item"`, `MPropertyElementNameFn`
+}`, `MPropertyElementNameFn`, `MPropertyFriendlyName Item`
 
 **Relationships:**
 
@@ -6523,14 +6499,14 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_footName` | CUtlString | `MPropertyFriendlyName "Foot"` `MPropertyAttributeChoiceName "Foot"` |
-| `m_targetBoneName` | CUtlString | `MPropertyFriendlyName "Target Bone"` `MPropertyAttributeChoiceName "Bone"` |
-| `m_ikChainName` | CUtlString | `MPropertyFriendlyName "IK Chain"` `MPropertyAttributeChoiceName "IKChain"` |
-| `m_tag` | [AnimTagID](../schemas/modellib.md#animtagid) | `MPropertyFriendlyName "Tag"` `MPropertyAttributeChoiceName "Tag"` |
+| `m_footName` | CUtlString | `MPropertyAttributeChoiceName Foot` `MPropertyFriendlyName Foot` |
+| `m_targetBoneName` | CUtlString | `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName Target Bone` |
+| `m_ikChainName` | CUtlString | `MPropertyAttributeChoiceName IKChain` `MPropertyFriendlyName IK Chain` |
+| `m_tag` | [AnimTagID](../schemas/modellib.md#animtagid) | `MPropertyAttributeChoiceName Tag` `MPropertyFriendlyName Tag` |
 | `m_paramName` | CUtlString | `MPropertySuppressField` |
-| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Parameter"` `MPropertyAttributeChoiceName "BoolParameter"` |
-| `m_flMaxRotationLeft` | float32 | `MPropertyFriendlyName "Max Left Rotation"` `MPropertyAttributeRange "0 180"` |
-| `m_flMaxRotationRight` | float32 | `MPropertyFriendlyName "Max Right Rotation"` `MPropertyAttributeRange "0 180"` |
+| `m_param` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttributeChoiceName BoolParameter` `MPropertyFriendlyName Parameter` |
+| `m_flMaxRotationLeft` | float32 | `MPropertyAttributeRange 0 180` `MPropertyFriendlyName Max Left Rotation` |
+| `m_flMaxRotationRight` | float32 | `MPropertyAttributeRange 0 180` `MPropertyFriendlyName Max Right Rotation` |
 
 ### CFootStepTriggerItem
 
@@ -6543,7 +6519,7 @@ classDiagram
 	"m_tagIDs":
 	[
 	]
-}`, `MPropertyFriendlyName "Item"`, `MPropertyElementNameFn`
+}`, `MPropertyElementNameFn`, `MPropertyFriendlyName Item`
 
 **Relationships:**
 
@@ -6557,10 +6533,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_footName` | CUtlString | `MPropertyFriendlyName "Foot"` `MPropertyAttributeChoiceName "Foot"` |
-| `m_triggerPhase` | [StepPhase](../schemas/animgraphlib.md#stepphase) | `MPropertyFriendlyName "Trigger Phase"` |
-| `m_tagNames` | CUtlVector<CGlobalSymbol> | `MPropertySuppressField` |
-| `m_tagIDs` | CUtlVector<[AnimTagID](../schemas/modellib.md#animtagid)> | `MPropertyFriendlyName "Tags"` `MPropertyAttributeChoiceName "Tag"` |
+| `m_footName` | CUtlString | `MPropertyAttributeChoiceName Foot` `MPropertyFriendlyName Foot` |
+| `m_triggerPhase` | [StepPhase](../schemas/!GlobalTypes.md#stepphase) | `MPropertyFriendlyName Trigger Phase` |
+| `m_tagNames` | CUtlVector< CGlobalSymbol > | `MPropertySuppressField` |
+| `m_tagIDs` | CUtlVector< [AnimTagID](../schemas/modellib.md#animtagid) > | `MPropertyAttributeChoiceName Tag` `MPropertyFriendlyName Tags` |
 
 ### CJiggleBoneItem
 
@@ -6582,7 +6558,7 @@ classDiagram
 		-10.000000,
 		-10.000000
 	]
-}`, `MPropertyFriendlyName "Item"`, `MPropertyElementNameFn`
+}`, `MPropertyElementNameFn`, `MPropertyFriendlyName Item`
 
 **Relationships:**
 
@@ -6595,13 +6571,13 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_boneName` | CUtlString | `MPropertyFriendlyName "Bone"` `MPropertyAttributeChoiceName "Bone"` |
-| `m_flSpringStrength` | float32 | `MPropertyFriendlyName "Spring Strength"` |
-| `m_flSimRateFPS` | float32 | `MPropertyFriendlyName "Sim Rate (FPS)"` |
-| `m_flDamping` | float32 | `MPropertyFriendlyName "Damping"` `MPropertyAttributeRange "0 1"` |
-| `m_eSimSpace` | [JiggleBoneSimSpace](../schemas/animgraphlib.md#jigglebonesimspace) | `MPropertyFriendlyName "Sim Space"` |
-| `m_vBoundsMaxLS` | Vector | `MPropertyFriendlyName "Max"` `MPropertyGroupName "Movement Limits"` |
-| `m_vBoundsMinLS` | Vector | `MPropertyFriendlyName "Min"` `MPropertyGroupName "Movement Limits"` |
+| `m_boneName` | CUtlString | `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName Bone` |
+| `m_flSpringStrength` | float32 | `MPropertyFriendlyName Spring Strength` |
+| `m_flSimRateFPS` | float32 | `MPropertyFriendlyName Sim Rate (FPS)` |
+| `m_flDamping` | float32 | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName Damping` |
+| `m_eSimSpace` | [JiggleBoneSimSpace](../schemas/!GlobalTypes.md#jigglebonesimspace) | `MPropertyFriendlyName Sim Space` |
+| `m_vBoundsMaxLS` | Vector | `MPropertyFriendlyName Max` `MPropertyGroupName Movement Limits` |
+| `m_vBoundsMinLS` | Vector | `MPropertyFriendlyName Min` `MPropertyGroupName Movement Limits` |
 
 ### CLODComponent
 
@@ -6694,7 +6670,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_bNetworkLookTarget` | bool | `MPropertyFriendlyName "Network Look Target"` |
+| `m_bNetworkLookTarget` | bool | `MPropertyFriendlyName Network Look Target` |
 | `m_lookHeadingID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertySuppressField` |
 | `m_lookHeadingNormalizedID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertySuppressField` |
 | `m_lookHeadingVelocityID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertySuppressField` |
@@ -6851,10 +6827,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_motors` | CUtlVector<CSmartPtr<[CAnimGraphDoc_Motor](../schemas/animgraphdoclib.md#canimgraphdoc_motor)>> | `MPropertySuppressField` |
-| `m_bNetworkPath` | bool | `MPropertyFriendlyName "Network Path"` |
-| `m_facingDamping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyGroupName "+Facing"` `MPropertyFriendlyName "Damping"` |
-| `m_bNetworkFacing` | bool | `MPropertyGroupName "+Facing"` `MPropertyFriendlyName "Network Facing"` |
+| `m_motors` | CUtlVector< CSmartPtr< [CAnimGraphDoc_Motor](../schemas/animgraphdoclib.md#canimgraphdoc_motor) > > | `MPropertySuppressField` |
+| `m_bNetworkPath` | bool | `MPropertyFriendlyName Network Path` |
+| `m_facingDamping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) | `MPropertyFriendlyName Damping` `MPropertyGroupName +Facing` |
+| `m_bNetworkFacing` | bool | `MPropertyFriendlyName Network Facing` `MPropertyGroupName +Facing` |
 | `m_paramIDs` | [AnimParamID](../schemas/modellib.md#animparamid)[34] | `MPropertySuppressField` |
 
 ### CPairedSequenceComponent
@@ -6915,7 +6891,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_weightLists` | CUtlVector<[CAnimGraphDoc_RigidBodyWeightList](../schemas/animgraphdoclib.md#canimgraphdoc_rigidbodyweightlist)> |  |
+| `m_weightLists` | CUtlVector< [CAnimGraphDoc_RigidBodyWeightList](../schemas/animgraphdoclib.md#canimgraphdoc_rigidbodyweightlist) > |  |
 | `m_flSpringFrequencyMin` | float32 |  |
 | `m_flSpringFrequencyMax` | float32 |  |
 | `m_flMaxStretch` | float32 |  |
@@ -6953,8 +6929,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_name` | CUtlString | `MPropertyFriendlyName "Name"` |
-| `m_items` | CUtlVector<[CRemapValueItem](../schemas/animgraphdoclib.md#cremapvalueitem)> | `MPropertyFriendlyName "Items"` `MPropertyAutoExpandSelf` |
+| `m_name` | CUtlString | `MPropertyFriendlyName Name` |
+| `m_items` | CUtlVector< [CRemapValueItem](../schemas/animgraphdoclib.md#cremapvalueitem) > | `MPropertyAutoExpandSelf` `MPropertyFriendlyName Items` |
 
 ### CRemapValueItem
 
@@ -6984,7 +6960,7 @@ classDiagram
 	"m_flMaxInputValue": 1.000000,
 	"m_flMinOutputValue": 0.000000,
 	"m_flMaxOutputValue": 1.000000
-}`, `MPropertyFriendlyName "Remap Value"`
+}`, `MPropertyFriendlyName Remap Value`
 
 **Relationships:**
 
@@ -6998,19 +6974,19 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_valueType` | [RemapValueType](../schemas/animgraphdoclib.md#remapvaluetype) | `MPropertyFriendlyName "Value Type"` `MPropertyAutoRebuildOnChange` |
+| `m_valueType` | [RemapValueType](../schemas/!GlobalTypes.md#remapvaluetype) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Value Type` |
 | `m_floatParamNameIn` | CUtlString | `MPropertySuppressField` |
 | `m_floatParamNameOut` | CUtlString | `MPropertySuppressField` |
 | `m_vectorParamNameIn` | CUtlString | `MPropertySuppressField` |
 | `m_vectorParamNameOut` | CUtlString | `MPropertySuppressField` |
-| `m_floatParamIn` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Parameter In"` `MPropertyAttributeChoiceName "FloatParameter"` `MPropertyAttrStateCallback` |
-| `m_floatParamOut` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Parameter Out"` `MPropertyAttributeChoiceName "PrivateFloatParameter"` `MPropertyAttrStateCallback` |
-| `m_vectorParamIn` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Parameter In"` `MPropertyAttributeChoiceName "VectorParameter"` `MPropertyAttrStateCallback` |
-| `m_vectorParamOut` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Parameter Out"` `MPropertyAttributeChoiceName "PrivateVectorParameter"` `MPropertyAttrStateCallback` |
-| `m_flMinInputValue` | float32 | `MPropertyFriendlyName "Min Input Value"` |
-| `m_flMaxInputValue` | float32 | `MPropertyFriendlyName "Max Input Value"` |
-| `m_flMinOutputValue` | float32 | `MPropertyFriendlyName "Min Output Value"` |
-| `m_flMaxOutputValue` | float32 | `MPropertyFriendlyName "Max Output Value"` |
+| `m_floatParamIn` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Parameter In` |
+| `m_floatParamOut` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName PrivateFloatParameter` `MPropertyFriendlyName Parameter Out` |
+| `m_vectorParamIn` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName VectorParameter` `MPropertyFriendlyName Parameter In` |
+| `m_vectorParamOut` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName PrivateVectorParameter` `MPropertyFriendlyName Parameter Out` |
+| `m_flMinInputValue` | float32 | `MPropertyFriendlyName Min Input Value` |
+| `m_flMaxInputValue` | float32 | `MPropertyFriendlyName Max Input Value` |
+| `m_flMinOutputValue` | float32 | `MPropertyFriendlyName Min Output Value` |
+| `m_flMaxOutputValue` | float32 | `MPropertyFriendlyName Max Output Value` |
 
 ### CRigidBodyWeight
 
@@ -7079,7 +7055,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_flTraceDistance` | float32 | `MPropertyFriendlyName "Trace Distance"` |
+| `m_flTraceDistance` | float32 | `MPropertyFriendlyName Trace Distance` |
 | `m_slopeAngleID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertySuppressField` |
 | `m_slopeHeadingID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertySuppressField` |
 | `m_slopeAngleSideID` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertySuppressField` |
@@ -7141,14 +7117,14 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_IkChain` | CUtlString | `MPropertyFriendlyName "IK Chain"` `MPropertyAttributeChoiceName "IKChain"` |
-| `m_SolverSettingSource` | [SolveIKChainAnimNodeSettingSource](../schemas/animgraphdoclib.md#solveikchainanimnodesettingsource) | `MPropertyFriendlyName "Solver Setting Source"` `MPropertyAutoRebuildOnChange` |
-| `m_OverrideSolverSettings` | [IKSolverSettings_t](../schemas/animgraphlib.md#iksolversettings_t) | `MPropertyFriendlyName "Override Solver Settings"` `MPropertyAutoExpandSelf` `MPropertyAttrStateCallback` |
-| `m_TargetSettingSource` | [SolveIKChainAnimNodeSettingSource](../schemas/animgraphdoclib.md#solveikchainanimnodesettingsource) | `MPropertyFriendlyName "Target Setting Source"` `MPropertyAutoRebuildOnChange` |
-| `m_OverrideTargetSettings` | [IKTargetSettings_t](../schemas/animgraphlib.md#iktargetsettings_t) | `MPropertyFriendlyName "Override Target Settings"` `MPropertyAutoExpandSelf` `MPropertyAttrStateCallback` |
-| `m_DebugSetting` | [SolveIKChainAnimNodeDebugSetting](../schemas/animgraphlib.md#solveikchainanimnodedebugsetting) | `MPropertyFriendlyName "Debug Setting"` `MPropertyGroupName "Debug"` |
-| `m_flDebugNormalizedLength` | float32 | `MPropertyFriendlyName "Debug Normalized Length"` `MPropertyGroupName "Debug"` |
-| `m_vDebugOffset` | Vector | `MPropertyFriendlyName "Debug Offset"` `MPropertyGroupName "Debug"` |
+| `m_IkChain` | CUtlString | `MPropertyAttributeChoiceName IKChain` `MPropertyFriendlyName IK Chain` |
+| `m_SolverSettingSource` | [SolveIKChainAnimNodeSettingSource](../schemas/!GlobalTypes.md#solveikchainanimnodesettingsource) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Solver Setting Source` |
+| `m_OverrideSolverSettings` | [IKSolverSettings_t](../schemas/animgraphlib.md#iksolversettings_t) | `MPropertyAttrStateCallback` `MPropertyAutoExpandSelf` `MPropertyFriendlyName Override Solver Settings` |
+| `m_TargetSettingSource` | [SolveIKChainAnimNodeSettingSource](../schemas/!GlobalTypes.md#solveikchainanimnodesettingsource) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Target Setting Source` |
+| `m_OverrideTargetSettings` | [IKTargetSettings_t](../schemas/animgraphlib.md#iktargetsettings_t) | `MPropertyAttrStateCallback` `MPropertyAutoExpandSelf` `MPropertyFriendlyName Override Target Settings` |
+| `m_DebugSetting` | [SolveIKChainAnimNodeDebugSetting](../schemas/!GlobalTypes.md#solveikchainanimnodedebugsetting) | `MPropertyFriendlyName Debug Setting` `MPropertyGroupName Debug` |
+| `m_flDebugNormalizedLength` | float32 | `MPropertyFriendlyName Debug Normalized Length` `MPropertyGroupName Debug` |
+| `m_vDebugOffset` | Vector | `MPropertyFriendlyName Debug Offset` `MPropertyGroupName Debug` |
 
 ### CStateAction
 
@@ -7170,8 +7146,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_pAction` | CSmartPtr<[CAnimGraphDoc_Action](../schemas/animgraphdoclib.md#canimgraphdoc_action)> |  |
-| `m_eBehavior` | [StateActionBehavior](../schemas/animgraphlib.md#stateactionbehavior) |  |
+| `m_pAction` | CSmartPtr< [CAnimGraphDoc_Action](../schemas/animgraphdoclib.md#canimgraphdoc_action) > |  |
+| `m_eBehavior` | [StateActionBehavior](../schemas/!GlobalTypes.md#stateactionbehavior) |  |
 
 ### CStateMachineComponent
 
@@ -7204,7 +7180,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sName` | CUtlString | `MPropertyFriendlyName "Name"` `MPropertySortPriority 100` |
+| `m_sName` | CUtlString | `MPropertyFriendlyName Name` `MPropertySortPriority 100` |
 
 ### CTargetSelectorChild
 
@@ -7222,7 +7198,7 @@ classDiagram
 			"m_id": <HIDDEN FOR DIFF>,
 		}
 	}
-}`, `MPropertyFriendlyName "Input"`
+}`, `MPropertyFriendlyName Input`
 
 **Relationships:**
 
@@ -7235,135 +7211,5 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_name` | CUtlString | `MPropertyFriendlyName "Name"` |
+| `m_name` | CUtlString | `MPropertyFriendlyName Name` |
 | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../schemas/animgraphdoclib.md#canimgraphdoc_nodeconnection) | `MPropertySuppressField` |
-
-### ComparisonValueType
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `COMPARISONVALUETYPE_FIXEDVALUE` | 0 |  |
-| `COMPARISONVALUETYPE_PARAMETER` | 1 |  |
-
-### Comparison_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `COMPARISON_EQUALS` | 0 |  |
-| `COMPARISON_NOT_EQUALS` | 1 |  |
-| `COMPARISON_GREATER` | 2 |  |
-| `COMPARISON_GREATER_OR_EQUAL` | 3 |  |
-| `COMPARISON_LESS` | 4 |  |
-| `COMPARISON_LESS_OR_EQUAL` | 5 |  |
-| `COMPARISON_COUNT` | 6 |  |
-
-### DampedValueType
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `FloatParameter` | 0 | Float |
-| `VectorParameter` | 1 | Vector |
-
-### EAnimConflictIndex_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `EAC_FIRST` | 0 |  |
-| `EAC_SECOND` | 1 |  |
-| `EAC_COUNT` | 2 |  |
-| `EAC_NONE` | 2 |  |
-
-### EAnimValueSource
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Constant` | 0 |  |
-| `Parameter` | 1 |  |
-
-### FinishedConditionOption
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `FinishedConditionOption_OnFinished` | 0 | On Finished |
-| `FinishedConditionOption_OnAlmostFinished` | 1 | On Almost Finished |
-
-### RemapValueType
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `FloatParameter` | 0 | Float |
-| `VectorParameter` | 1 | Vector |
-
-### SelectionSource_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `SelectionSource_Bool` | 0 | Bool |
-| `SelectionSource_Enum` | 1 | Enum |
-| `SelectionSource_Tag` | 2 | Tag |
-
-### SingleFrameSelection
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `FirstFrame` | 0 | First Frame |
-| `LastFrame` | 1 | Last Frame |
-| `SpecificFrame` | 2 | Specific Frame |
-
-### SolveIKChainAnimNodeSettingSource
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `SOLVEIKCHAINANIMNODESETTINGSOURCE_Default` | 0 | Default |
-| `SOLVEIKCHAINANIMNODESETTINGSOURCE_Override` | 1 | Override |
-
-### StateComparisonValueType
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `StateComparisonValue_FixedValue` | 0 |  |
-| `StateComparisonValue_StateValue` | 1 |  |
-| `StateComparisonValue_Parameter` | 2 |  |
-
-### StateValue
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `TotalTranslation_SourceState` | 0 | Total Translation (Source State) |
-| `TotalTranslation_TargetState` | 1 | Total Translation (Target State) |
-| `SourceStateBlendWeight` | 2 | Source State Blend Weight |
-| `TargetStateBlendWeight` | 3 | Target State Blend Weight |
-| `Count` | 4 |  |
-
-### TargetWarpLinearRootMotionMode
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `TargetWarpLinearRootMotionMode_Default` | 0 | Default |
-| `TargetWarpLinearRootMotionMode_FollowPath` | 1 | Follow Path |

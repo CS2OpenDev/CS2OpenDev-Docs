@@ -15,24 +15,24 @@ nav_exclude: true
 | [CAudioMorphData](#caudiomorphdata) | class |  | 6 |
 | [CAudioPhonemeTag](#caudiophonemetag) | class |  | 3 |
 | [CAudioSentence](#caudiosentence) | class |  | 4 |
+| [CRandomPannerControls](#crandompannercontrols) | class |  | 5 |
 | [CSoundContainerReference](#csoundcontainerreference) | class |  | 4 |
 | [CSoundContainerReferenceArray](#csoundcontainerreferencearray) | class |  | 3 |
 | [CSoundInfoHeader](#csoundinfoheader) | class |  | 0 |
-| [CVSound](#cvsound) | class |  | 11 |
-| [CVSoundFormat_t](#cvsoundformat_t) | enum |  | 4 |
+| [CVSound](#cvsound) | class |  | 9 |
 | [CVoiceContainerAmpedDecayingSineWave](#cvoicecontainerampeddecayingsinewave) | class | CVoiceContainerDecayingSineWave | 1 |
-| [CVoiceContainerAnalysisBase](#cvoicecontaineranalysisbase) | class |  | 2 |
+| [CVoiceContainerAnalysisBase](#cvoicecontaineranalysisbase) | class |  | 1 |
 | [CVoiceContainerAsyncGenerator](#cvoicecontainerasyncgenerator) | class | CVoiceContainerGenerator | 0 |
 | [CVoiceContainerBase](#cvoicecontainerbase) | class |  | 2 |
 | [CVoiceContainerBlender](#cvoicecontainerblender) | class | CVoiceContainerBase | 3 |
 | [CVoiceContainerDecayingSineWave](#cvoicecontainerdecayingsinewave) | class | CVoiceContainerGenerator | 2 |
 | [CVoiceContainerDefault](#cvoicecontainerdefault) | class | CVoiceContainerBase | 0 |
 | [CVoiceContainerEnum](#cvoicecontainerenum) | class | CVoiceContainerBase | 3 |
-| [CVoiceContainerEnvelope](#cvoicecontainerenvelope) | class | CVoiceContainerDefault | 2 |
 | [CVoiceContainerEnvelopeAnalyzer](#cvoicecontainerenvelopeanalyzer) | class | CVoiceContainerAnalysisBase | 3 |
 | [CVoiceContainerGenerator](#cvoicecontainergenerator) | class | CVoiceContainerBase | 0 |
 | [CVoiceContainerGranulator](#cvoicecontainergranulator) | class | CVoiceContainerAsyncGenerator | 6 |
 | [CVoiceContainerLoopTrigger](#cvoicecontainerlooptrigger) | class | CVoiceContainerBase | 5 |
+| [CVoiceContainerLoopTriggerWithRandomPanner](#cvoicecontainerlooptriggerwithrandompanner) | class | CVoiceContainerLoopTrigger | 1 |
 | [CVoiceContainerLoopXFade](#cvoicecontainerloopxfade) | class | CVoiceContainerBase | 8 |
 | [CVoiceContainerMultiBlender](#cvoicecontainermultiblender) | class | CVoiceContainerBase | 3 |
 | [CVoiceContainerNull](#cvoicecontainernull) | class | CVoiceContainerGenerator | 0 |
@@ -49,10 +49,10 @@ nav_exclude: true
 | [CVoiceContainerStaticAdditiveSynth::CTone](#cvoicecontainerstaticadditivesynthctone) | class |  | 3 |
 | [CVoiceContainerSwitch](#cvoicecontainerswitch) | class | CVoiceContainerBase | 1 |
 | [CVoiceContainerTapePlayer](#cvoicecontainertapeplayer) | class | CVoiceContainerAsyncGenerator | 4 |
-| [EMidiNote](#emidinote) | enum |  | 13 |
-| [EMode_t](#emode_t) | enum |  | 2 |
-| [EWaveform](#ewaveform) | enum |  | 5 |
-| [PlayBackMode_t](#playbackmode_t) | enum |  | 5 |
+| [CVoiceContainerVsndRadioButton](#cvoicecontainervsndradiobutton) | class | CVoiceContainerBase | 17 |
+| [CVoiceContainerVsndTrigger](#cvoicecontainervsndtrigger) | class | CVoiceContainerBase | 17 |
+| [CVsndRadioButtonSlot](#cvsndradiobuttonslot) | class |  | 10 |
+| [CVsndTriggerSlot](#cvsndtriggerslot) | class |  | 9 |
 
 ---
 
@@ -93,10 +93,10 @@ nav_exclude: true
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_times` | CUtlVector<float32> |  |
-| `m_nameHashCodes` | CUtlVector<uint32> |  |
-| `m_nameStrings` | CUtlVector<CUtlString> |  |
-| `m_samples` | CUtlVector<CUtlVector<float32>> |  |
+| `m_times` | CUtlVector< float32 > |  |
+| `m_nameHashCodes` | CUtlVector< uint32 > |  |
+| `m_nameStrings` | CUtlVector< CUtlString > |  |
+| `m_samples` | CUtlVector< CUtlVector< float32 > > |  |
 | `m_flEaseIn` | float32 |  |
 | `m_flEaseOut` | float32 |  |
 
@@ -159,9 +159,29 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_bShouldVoiceDuck` | bool |  |
-| `m_RunTimePhonemes` | CUtlVector<[CAudioPhonemeTag](../schemas/soundsystem_voicecontainers.md#caudiophonemetag)> |  |
-| `m_EmphasisSamples` | CUtlVector<[CAudioEmphasisSample](../schemas/soundsystem_voicecontainers.md#caudioemphasissample)> |  |
+| `m_RunTimePhonemes` | CUtlVector< [CAudioPhonemeTag](../schemas/soundsystem_voicecontainers.md#caudiophonemetag) > |  |
+| `m_EmphasisSamples` | CUtlVector< [CAudioEmphasisSample](../schemas/soundsystem_voicecontainers.md#caudioemphasissample) > |  |
 | `m_morphData` | [CAudioMorphData](../schemas/soundsystem_voicecontainers.md#caudiomorphdata) |  |
+
+### CRandomPannerControls
+
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_panningControlInputName": "random_pan",
+	"m_volumeControlInputName": "random_volume",
+	"m_flMinVolume": -12.000000,
+	"m_flMaxVolume": 0.000000,
+	"m_strVectorStackParam": "ListenerForwardVector"
+}`, `MPropertyDescription Sets a control input every time it's instantiated`, `MPropertyFriendlyName Random Panner Control`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_panningControlInputName` | CUtlString | `MPropertyFriendlyName Panning Control Input Name` |
+| `m_volumeControlInputName` | CUtlString | `MPropertyFriendlyName Volume Control Input Name` |
+| `m_flMinVolume` | float32 | `MPropertyFriendlyName Minimum Random Volume DB` |
+| `m_flMaxVolume` | float32 | `MPropertyFriendlyName Maximum Random Volume DB` |
+| `m_strVectorStackParam` | CUtlString | `MPropertyFriendlyName Forward Vector Stack Parameter Name` |
 
 ### CSoundContainerReference
 
@@ -170,7 +190,7 @@ classDiagram
 	"m_bUseReference": true,
 	"m_sound": "",
 	"m_pSound": null
-}`, `MPropertyFriendlyName "Sound"`, `MPropertyDescription "Reference to a vsnd file or another container."`
+}`, `MPropertyDescription Reference to a vsnd file or another container.`, `MPropertyFriendlyName Sound`
 
 **Relationships:**
 
@@ -185,9 +205,9 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_namespace` | CUtlString |  |
-| `m_bUseReference` | bool | `MPropertyFriendlyName "Use Vsnd File"` |
-| `m_sound` | CStrongHandle<[InfoForResourceTypeCVoiceContainerBase](../schemas/resourcesystem.md#infoforresourcetypecvoicecontainerbase)> | `MPropertySuppressExpr "m_bUseReference == 0"` `MPropertyFriendlyName "Vsnd File"` |
-| `m_pSound` | [CVoiceContainerBase](../schemas/soundsystem_voicecontainers.md#cvoicecontainerbase)* | `MPropertySuppressExpr "m_bUseReference == 1"` `MPropertyFriendlyName "Vsnd Container"` |
+| `m_bUseReference` | bool | `MPropertyFriendlyName Use Vsnd File` |
+| `m_sound` | CStrongHandle< [InfoForResourceTypeCVoiceContainerBase](../schemas/resourcesystem.md#infoforresourcetypecvoicecontainerbase) > | `MPropertyFriendlyName Vsnd File` `MPropertySuppressExpr m_bUseReference == 0` |
+| `m_pSound` | [CVoiceContainerBase](../schemas/soundsystem_voicecontainers.md#cvoicecontainerbase)* | `MPropertyFriendlyName Vsnd Container` `MPropertySuppressExpr m_bUseReference == 1` |
 
 ### CSoundContainerReferenceArray
 
@@ -199,7 +219,7 @@ classDiagram
 	"m_pSounds":
 	[
 	]
-}`, `MPropertyFriendlyName "Sound Array "`, `MPropertyDescription "Reference to list of vsnd files or other containers."`
+}`, `MPropertyDescription Reference to list of vsnd files or other containers.`, `MPropertyFriendlyName Sound Array `
 
 **Relationships:**
 
@@ -213,9 +233,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_bUseReference` | bool | `MPropertyFriendlyName "Use Vsnd File"` |
-| `m_sounds` | CUtlVector<CStrongHandle<[InfoForResourceTypeCVoiceContainerBase](../schemas/resourcesystem.md#infoforresourcetypecvoicecontainerbase)>> | `MPropertySuppressExpr "m_bUseReference == 0"` `MPropertyFriendlyName "Vsnd File"` |
-| `m_pSounds` | CUtlVector<[CVoiceContainerBase](../schemas/soundsystem_voicecontainers.md#cvoicecontainerbase)*> | `MPropertySuppressExpr "m_bUseReference == 1"` `MPropertyFriendlyName "Vsnd Container"` |
+| `m_bUseReference` | bool | `MPropertyFriendlyName Use Vsnd File` |
+| `m_sounds` | CUtlVector< CStrongHandle< [InfoForResourceTypeCVoiceContainerBase](../schemas/resourcesystem.md#infoforresourcetypecvoicecontainerbase) > > | `MPropertyFriendlyName Vsnd File` `MPropertySuppressExpr m_bUseReference == 0` |
+| `m_pSounds` | CUtlVector< [CVoiceContainerBase](../schemas/soundsystem_voicecontainers.md#cvoicecontainerbase)* > | `MPropertyFriendlyName Vsnd Container` `MPropertySuppressExpr m_bUseReference == 1` |
 
 ### CSoundInfoHeader
 
@@ -225,57 +245,40 @@ classDiagram
 ### CVSound
 
 **Metadata:** `MGetKV3ClassDefaults {
+	"m_Sentences":
+	[
+	],
 	"m_nRate": 0,
 	"m_nFormat": "PCM16",
 	"m_nChannels": 0,
 	"m_nLoopStart": 0,
 	"m_nSampleCount": 0,
 	"m_flDuration": 0.000000,
-	"m_Sentences":
-	[
-	],
 	"m_nStreamingSize": 0,
-	"m_nSeekTable":
-	[
-	],
-	"m_nLoopEnd": 0,
-	"m_encodedHeader": "[BINARY BLOB]"
+	"m_nLoopEnd": 0
 }`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CVSound *-- CVSoundFormat_t
     CVSound *-- CAudioSentence
+    CVSound *-- CVSoundFormat_t
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
+| `m_Sentences` | CUtlLeanVector< [CAudioSentence](../schemas/soundsystem_voicecontainers.md#caudiosentence) > |  |
 | `m_nRate` | int32 |  |
-| `m_nFormat` | [CVSoundFormat_t](../schemas/soundsystem_voicecontainers.md#cvsoundformat_t) |  |
+| `m_nFormat` | [CVSoundFormat_t](../schemas/!GlobalTypes.md#cvsoundformat_t) |  |
 | `m_nChannels` | uint32 |  |
 | `m_nLoopStart` | int32 |  |
 | `m_nSampleCount` | uint32 |  |
 | `m_flDuration` | float32 |  |
-| `m_Sentences` | CUtlVector<[CAudioSentence](../schemas/soundsystem_voicecontainers.md#caudiosentence)> |  |
 | `m_nStreamingSize` | uint32 |  |
-| `m_nSeekTable` | CUtlVector<int32> |  |
 | `m_nLoopEnd` | int32 |  |
-| `m_encodedHeader` | CUtlBinaryBlock | `MFgdFromSchemaCompletelySkipField` |
-
-### CVSoundFormat_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `PCM16` | 0 |  |
-| `PCM8` | 1 |  |
-| `MP3` | 2 |  |
-| `ADPCM` | 3 |  |
 
 ### CVoiceContainerAmpedDecayingSineWave
 
@@ -285,27 +288,23 @@ classDiagram
 	"_class": "CVoiceContainerAmpedDecayingSineWave",
 	"m_vSound":
 	{
+		"m_Sentences":
+		[
+		],
 		"m_nRate": 0,
 		"m_nFormat": "PCM16",
 		"m_nChannels": 0,
 		"m_nLoopStart": 0,
 		"m_nSampleCount": 0,
 		"m_flDuration": 0.000000,
-		"m_Sentences":
-		[
-		],
 		"m_nStreamingSize": 0,
-		"m_nSeekTable":
-		[
-		],
-		"m_nLoopEnd": 0,
-		"m_encodedHeader": "[BINARY BLOB]"
+		"m_nLoopEnd": 0
 	},
 	"m_pEnvelopeAnalyzer": null,
 	"m_flFrequency": 0.000000,
 	"m_flDecayTime": 0.000000,
 	"m_flGainAmount": 0.000000
-}`, `MPropertyFriendlyName "TESTBED: Amped Decaying Sine Wave Container"`, `MPropertyDescription "Bytecode instruction"`
+}`, `MPropertyDescription Bytecode instruction`, `MPropertyFriendlyName TESTBED: Amped Decaying Sine Wave Container`
 
 **Relationships:**
 
@@ -320,7 +319,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_flGainAmount` | float32 | `MPropertyFriendlyName "Attenuation Amount (dB)"` `MPropertyDescription "The amount of attenuation ."` |
+| `m_flGainAmount` | float32 | `MPropertyDescription The amount of attenuation .` `MPropertyFriendlyName Attenuation Amount (dB)` |
 
 ### CVoiceContainerAnalysisBase
 
@@ -328,7 +327,6 @@ classDiagram
 
 **Metadata:** `MGetKV3ClassDefaults {
 	"_class": "CVoiceContainerAnalysisBase",
-	"m_bRegenerateCurveOnCompile": false,
 	"m_curve":
 	{
 		"m_spline":
@@ -348,7 +346,7 @@ classDiagram
 			0.000000
 		]
 	}
-}`, `MVDataNodeType 1`, `MPropertyPolymorphicClass`, `MPropertyFriendlyName "Analysis Container"`, `MPropertyDescription "Does Not Play Sound, member of CVoiceContainerDefaultDefault"`
+}`, `MPropertyDescription Does Not Play Sound, member of CVoiceContainerDefaultDefault`, `MPropertyFriendlyName Analysis Container`, `MPropertyPolymorphicClass`, `MVDataNodeType 1`
 
 **Relationships:**
 
@@ -361,8 +359,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_bRegenerateCurveOnCompile` | bool | `MPropertyFriendlyName "Regenerate curve on compile"` |
-| `m_curve` | CPiecewiseCurve | `MPropertyFriendlyName "Envelope Curve"` |
+| `m_curve` | CPiecewiseCurve | `MPropertyFriendlyName Envelope Curve` |
 
 ### CVoiceContainerAsyncGenerator
 
@@ -370,7 +367,7 @@ classDiagram
 
 **Derived by:** [CVoiceContainerGranulator](soundsystem_voicecontainers.md#cvoicecontainergranulator), [CVoiceContainerRandomSampler](soundsystem_voicecontainers.md#cvoicecontainerrandomsampler), [CVoiceContainerStaticAdditiveSynth](soundsystem_voicecontainers.md#cvoicecontainerstaticadditivesynth), [CVoiceContainerTapePlayer](soundsystem_voicecontainers.md#cvoicecontainertapeplayer)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
@@ -378,33 +375,36 @@ classDiagram
 classDiagram
     CVoiceContainerGenerator <|-- CVoiceContainerAsyncGenerator
     CVoiceContainerBase <|-- CVoiceContainerGenerator
-    CVoiceContainerAsyncGenerator <|-- CVoiceContainerTapePlayer
     CVoiceContainerAsyncGenerator <|-- CVoiceContainerGranulator
-    CVoiceContainerAsyncGenerator <|-- CVoiceContainerStaticAdditiveSynth
     CVoiceContainerAsyncGenerator <|-- CVoiceContainerRandomSampler
+    CVoiceContainerAsyncGenerator <|-- CVoiceContainerStaticAdditiveSynth
+    CVoiceContainerAsyncGenerator <|-- CVoiceContainerTapePlayer
 ```
 
 ### CVoiceContainerBase
 
-**Derived by:** [CVoiceContainerBlender](soundsystem_voicecontainers.md#cvoicecontainerblender), [CVoiceContainerDefault](soundsystem_voicecontainers.md#cvoicecontainerdefault), [CVoiceContainerEnum](soundsystem_voicecontainers.md#cvoicecontainerenum), [CVoiceContainerGenerator](soundsystem_voicecontainers.md#cvoicecontainergenerator), [CVoiceContainerLoopTrigger](soundsystem_voicecontainers.md#cvoicecontainerlooptrigger), [CVoiceContainerLoopXFade](soundsystem_voicecontainers.md#cvoicecontainerloopxfade), [CVoiceContainerMultiBlender](soundsystem_voicecontainers.md#cvoicecontainermultiblender), [CVoiceContainerParameterBlender](soundsystem_voicecontainers.md#cvoicecontainerparameterblender), [CVoiceContainerSelector](soundsystem_voicecontainers.md#cvoicecontainerselector), [CVoiceContainerSet](soundsystem_voicecontainers.md#cvoicecontainerset), [CVoiceContainerSwitch](soundsystem_voicecontainers.md#cvoicecontainerswitch)
+**Derived by:** [CVoiceContainerBlender](soundsystem_voicecontainers.md#cvoicecontainerblender), [CVoiceContainerDefault](soundsystem_voicecontainers.md#cvoicecontainerdefault), [CVoiceContainerEnum](soundsystem_voicecontainers.md#cvoicecontainerenum), [CVoiceContainerGenerator](soundsystem_voicecontainers.md#cvoicecontainergenerator), [CVoiceContainerLoopTrigger](soundsystem_voicecontainers.md#cvoicecontainerlooptrigger), [CVoiceContainerLoopXFade](soundsystem_voicecontainers.md#cvoicecontainerloopxfade), [CVoiceContainerMultiBlender](soundsystem_voicecontainers.md#cvoicecontainermultiblender), [CVoiceContainerParameterBlender](soundsystem_voicecontainers.md#cvoicecontainerparameterblender), [CVoiceContainerSelector](soundsystem_voicecontainers.md#cvoicecontainerselector), [CVoiceContainerSet](soundsystem_voicecontainers.md#cvoicecontainerset), [CVoiceContainerSwitch](soundsystem_voicecontainers.md#cvoicecontainerswitch), [CVoiceContainerVMixSnd](soundsystem.md#cvoicecontainervmixsnd), [CVoiceContainerVsndRadioButton](soundsystem_voicecontainers.md#cvoicecontainervsndradiobutton), [CVoiceContainerVsndTrigger](soundsystem_voicecontainers.md#cvoicecontainervsndtrigger)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`, `MVDataRoot`, `MVDataNodeType 1`, `MPropertyPolymorphicClass`, `MVDataFileExtension "vsnd"`, `MPropertyFriendlyName "VSND Container"`, `MPropertyDescription "Voice Container Base"`
+**Metadata:** `MGetKV3ClassDefaults`, `MPropertyDescription Voice Container Base`, `MPropertyFriendlyName VSND Container`, `MPropertyPolymorphicClass`, `MVDataFileExtension vsnd`, `MVDataNodeType 1`, `MVDataRoot`, `MVDataSingleton`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CVoiceContainerBase <|-- CVoiceContainerLoopTrigger
+    CVoiceContainerBase <|-- CVoiceContainerBlender
+    CVoiceContainerBase <|-- CVoiceContainerDefault
     CVoiceContainerBase <|-- CVoiceContainerEnum
-    CVoiceContainerBase <|-- CVoiceContainerSwitch
-    CVoiceContainerBase <|-- CVoiceContainerSelector
+    CVoiceContainerBase <|-- CVoiceContainerGenerator
+    CVoiceContainerBase <|-- CVoiceContainerLoopTrigger
+    CVoiceContainerBase <|-- CVoiceContainerLoopXFade
     CVoiceContainerBase <|-- CVoiceContainerMultiBlender
     CVoiceContainerBase <|-- CVoiceContainerParameterBlender
+    CVoiceContainerBase <|-- CVoiceContainerSelector
     CVoiceContainerBase <|-- CVoiceContainerSet
-    CVoiceContainerBase <|-- CVoiceContainerGenerator
-    CVoiceContainerBase <|-- CVoiceContainerLoopXFade
-    CVoiceContainerBase <|-- CVoiceContainerDefault
-    CVoiceContainerBase <|-- CVoiceContainerBlender
+    CVoiceContainerBase <|-- CVoiceContainerSwitch
+    CVoiceContainerBase <|-- CVoiceContainerVMixSnd
+    CVoiceContainerBase <|-- CVoiceContainerVsndRadioButton
+    CVoiceContainerBase <|-- CVoiceContainerVsndTrigger
     CVoiceContainerBase *-- CVSound
     CVoiceContainerBase --> CVoiceContainerAnalysisBase
 ```
@@ -414,7 +414,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_vSound` | [CVSound](../schemas/soundsystem_voicecontainers.md#cvsound) | `MPropertySuppressField` |
-| `m_pEnvelopeAnalyzer` | [CVoiceContainerAnalysisBase](../schemas/soundsystem_voicecontainers.md#cvoicecontaineranalysisbase)* | `MPropertySuppressExpr "true"` |
+| `m_pEnvelopeAnalyzer` | [CVoiceContainerAnalysisBase](../schemas/soundsystem_voicecontainers.md#cvoicecontaineranalysisbase)* | `MPropertySuppressExpr true` |
 
 ### CVoiceContainerBlender
 
@@ -424,21 +424,17 @@ classDiagram
 	"_class": "CVoiceContainerBlender",
 	"m_vSound":
 	{
+		"m_Sentences":
+		[
+		],
 		"m_nRate": 0,
 		"m_nFormat": "PCM16",
 		"m_nChannels": 0,
 		"m_nLoopStart": 0,
 		"m_nSampleCount": 0,
 		"m_flDuration": 0.000000,
-		"m_Sentences":
-		[
-		],
 		"m_nStreamingSize": 0,
-		"m_nSeekTable":
-		[
-		],
-		"m_nLoopEnd": 0,
-		"m_encodedHeader": "[BINARY BLOB]"
+		"m_nLoopEnd": 0
 	},
 	"m_pEnvelopeAnalyzer": null,
 	"m_firstSound":
@@ -456,7 +452,7 @@ classDiagram
 		"m_pSound": null
 	},
 	"m_flBlendFactor": 0.000000
-}`, `MPropertyFriendlyName "Blender"`, `MPropertyDescription "Blends two containers."`
+}`, `MPropertyDescription Blends two containers.`, `MPropertyFriendlyName Blender`
 
 **Relationships:**
 
@@ -484,26 +480,22 @@ classDiagram
 	"_class": "CVoiceContainerDecayingSineWave",
 	"m_vSound":
 	{
+		"m_Sentences":
+		[
+		],
 		"m_nRate": 0,
 		"m_nFormat": "PCM16",
 		"m_nChannels": 0,
 		"m_nLoopStart": 0,
 		"m_nSampleCount": 0,
 		"m_flDuration": 0.000000,
-		"m_Sentences":
-		[
-		],
 		"m_nStreamingSize": 0,
-		"m_nSeekTable":
-		[
-		],
-		"m_nLoopEnd": 0,
-		"m_encodedHeader": "[BINARY BLOB]"
+		"m_nLoopEnd": 0
 	},
 	"m_pEnvelopeAnalyzer": null,
 	"m_flFrequency": 0.000000,
 	"m_flDecayTime": 0.000000
-}`, `MPropertyFriendlyName "TESTBED: Decaying Sine Wave Container"`, `MPropertyDescription "Only text params, renders in real time"`
+}`, `MPropertyDescription Only text params, renders in real time`, `MPropertyFriendlyName TESTBED: Decaying Sine Wave Container`
 
 **Relationships:**
 
@@ -518,44 +510,37 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_flFrequency` | float32 | `MPropertyFriendlyName "Frequency (Hz)"` `MPropertyDescription "The frequency of this sine tone."` |
-| `m_flDecayTime` | float32 | `MPropertyFriendlyName "Decay Time (Seconds)"` `MPropertyDescription "The frequency of this sine tone."` |
+| `m_flFrequency` | float32 | `MPropertyDescription The frequency of this sine tone.` `MPropertyFriendlyName Frequency (Hz)` |
+| `m_flDecayTime` | float32 | `MPropertyDescription The frequency of this sine tone.` `MPropertyFriendlyName Decay Time (Seconds)` |
 
 ### CVoiceContainerDefault
 
 **Inherits from:** [CVoiceContainerBase](soundsystem_voicecontainers.md#cvoicecontainerbase)
 
-**Derived by:** [CVoiceContainerEnvelope](soundsystem_voicecontainers.md#cvoicecontainerenvelope)
-
 **Metadata:** `MGetKV3ClassDefaults {
 	"_class": "CVoiceContainerDefault",
 	"m_vSound":
 	{
+		"m_Sentences":
+		[
+		],
 		"m_nRate": 0,
 		"m_nFormat": "PCM16",
 		"m_nChannels": 0,
 		"m_nLoopStart": 0,
 		"m_nSampleCount": 0,
 		"m_flDuration": 0.000000,
-		"m_Sentences":
-		[
-		],
 		"m_nStreamingSize": 0,
-		"m_nSeekTable":
-		[
-		],
-		"m_nLoopEnd": 0,
-		"m_encodedHeader": "[BINARY BLOB]"
+		"m_nLoopEnd": 0
 	},
 	"m_pEnvelopeAnalyzer": null
-}`, `MPropertyFriendlyName "Default Container"`, `MPropertyDescription "Voice Container Default"`
+}`, `MPropertyDescription Voice Container Default`, `MPropertyFriendlyName Default Container`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
     CVoiceContainerBase <|-- CVoiceContainerDefault
-    CVoiceContainerDefault <|-- CVoiceContainerEnvelope
 ```
 
 ### CVoiceContainerEnum
@@ -566,21 +551,17 @@ classDiagram
 	"_class": "CVoiceContainerEnum",
 	"m_vSound":
 	{
+		"m_Sentences":
+		[
+		],
 		"m_nRate": 0,
 		"m_nFormat": "PCM16",
 		"m_nChannels": 0,
 		"m_nLoopStart": 0,
 		"m_nSampleCount": 0,
 		"m_flDuration": 0.000000,
-		"m_Sentences":
-		[
-		],
 		"m_nStreamingSize": 0,
-		"m_nSeekTable":
-		[
-		],
-		"m_nLoopEnd": 0,
-		"m_encodedHeader": "[BINARY BLOB]"
+		"m_nLoopEnd": 0
 	},
 	"m_pEnvelopeAnalyzer": null,
 	"m_soundsToPlay":
@@ -595,7 +576,7 @@ classDiagram
 	},
 	"m_iSelection": 0,
 	"m_flCrossfadeTime": 0.100000
-}`, `MPropertyFriendlyName "VSND Enum"`, `MPropertyDescription "Switches between a selection of vsnds based on a provided index."`
+}`, `MPropertyDescription Switches between a selection of vsnds based on a provided index.`, `MPropertyFriendlyName VSND Enum`
 
 **Relationships:**
 
@@ -609,55 +590,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_soundsToPlay` | [CSoundContainerReferenceArray](../schemas/soundsystem_voicecontainers.md#csoundcontainerreferencearray) | `MPropertyFriendlyName "Sounds To Play"` |
-| `m_iSelection` | int32 | `MPropertyFriendlyName "Index"` |
-| `m_flCrossfadeTime` | float32 | `MPropertyFriendlyName "Crossfade Time"` |
-
-### CVoiceContainerEnvelope
-
-**Inherits from:** [CVoiceContainerDefault](soundsystem_voicecontainers.md#cvoicecontainerdefault)
-
-**Metadata:** `MGetKV3ClassDefaults {
-	"_class": "CVoiceContainerEnvelope",
-	"m_vSound":
-	{
-		"m_nRate": 0,
-		"m_nFormat": "PCM16",
-		"m_nChannels": 0,
-		"m_nLoopStart": 0,
-		"m_nSampleCount": 0,
-		"m_flDuration": 0.000000,
-		"m_Sentences":
-		[
-		],
-		"m_nStreamingSize": 0,
-		"m_nSeekTable":
-		[
-		],
-		"m_nLoopEnd": 0,
-		"m_encodedHeader": "[BINARY BLOB]"
-	},
-	"m_pEnvelopeAnalyzer": null,
-	"m_sound": "",
-	"m_analysisContainer": null
-}`, `MPropertyFriendlyName "Envelope VSND"`, `MPropertyDescription "Plays sound with envelope."`
-
-**Relationships:**
-
-```mermaid
-classDiagram
-    CVoiceContainerDefault <|-- CVoiceContainerEnvelope
-    CVoiceContainerBase <|-- CVoiceContainerDefault
-    CVoiceContainerEnvelope *-- InfoForResourceTypeCVoiceContainerBase
-    CVoiceContainerEnvelope --> CVoiceContainerAnalysisBase
-```
-
-**Fields:**
-
-| Name | Type | Annotations |
-|------|------|-------------|
-| `m_sound` | CStrongHandle<[InfoForResourceTypeCVoiceContainerBase](../schemas/resourcesystem.md#infoforresourcetypecvoicecontainerbase)> | `MPropertyFriendlyName "Vsnd File"` |
-| `m_analysisContainer` | [CVoiceContainerAnalysisBase](../schemas/soundsystem_voicecontainers.md#cvoicecontaineranalysisbase)* | `MPropertyFriendlyName "Container Analyzers"` |
+| `m_soundsToPlay` | [CSoundContainerReferenceArray](../schemas/soundsystem_voicecontainers.md#csoundcontainerreferencearray) | `MPropertyFriendlyName Sounds To Play` |
+| `m_iSelection` | int32 | `MPropertyFriendlyName Index` |
+| `m_flCrossfadeTime` | float32 | `MPropertyFriendlyName Crossfade Time` |
 
 ### CVoiceContainerEnvelopeAnalyzer
 
@@ -665,7 +600,6 @@ classDiagram
 
 **Metadata:** `MGetKV3ClassDefaults {
 	"_class": "CVoiceContainerEnvelopeAnalyzer",
-	"m_bRegenerateCurveOnCompile": false,
 	"m_curve":
 	{
 		"m_spline":
@@ -688,7 +622,7 @@ classDiagram
 	"m_mode": "Peak",
 	"m_fAnalysisWindowMs": 200.000000,
 	"m_flThreshold": 0.000000
-}`, `MPropertyFriendlyName "Envelope Analyzer"`, `MPropertyDescription "Generates an Envelope Curve on compile"`
+}`, `MPropertyDescription Generates an Envelope Curve on compile`, `MPropertyFriendlyName Envelope Analyzer`
 
 **Relationships:**
 
@@ -702,9 +636,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_mode` | [EMode_t](../schemas/soundsystem_voicecontainers.md#emode_t) | `MPropertyFriendlyName "Envelope Mode"` |
-| `m_fAnalysisWindowMs` | float32 | `MPropertyFriendlyName "Analysis Window"` |
-| `m_flThreshold` | float32 | `MPropertyFriendlyName "Threshold"` |
+| `m_mode` | [EMode_t](../schemas/!GlobalTypes.md#emode_t) | `MPropertyFriendlyName Envelope Mode` |
+| `m_fAnalysisWindowMs` | float32 | `MPropertyFriendlyName Analysis Window` |
+| `m_flThreshold` | float32 | `MPropertyFriendlyName Threshold` |
 
 ### CVoiceContainerGenerator
 
@@ -712,18 +646,18 @@ classDiagram
 
 **Derived by:** [CVoiceContainerAsyncGenerator](soundsystem_voicecontainers.md#cvoicecontainerasyncgenerator), [CVoiceContainerDecayingSineWave](soundsystem_voicecontainers.md#cvoicecontainerdecayingsinewave), [CVoiceContainerNull](soundsystem_voicecontainers.md#cvoicecontainernull), [CVoiceContainerRealtimeFMSineWave](soundsystem_voicecontainers.md#cvoicecontainerrealtimefmsinewave), [CVoiceContainerShapedNoise](soundsystem_voicecontainers.md#cvoicecontainershapednoise)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
     CVoiceContainerBase <|-- CVoiceContainerGenerator
-    CVoiceContainerGenerator <|-- CVoiceContainerDecayingSineWave
     CVoiceContainerGenerator <|-- CVoiceContainerAsyncGenerator
-    CVoiceContainerGenerator <|-- CVoiceContainerShapedNoise
-    CVoiceContainerGenerator <|-- CVoiceContainerRealtimeFMSineWave
+    CVoiceContainerGenerator <|-- CVoiceContainerDecayingSineWave
     CVoiceContainerGenerator <|-- CVoiceContainerNull
+    CVoiceContainerGenerator <|-- CVoiceContainerRealtimeFMSineWave
+    CVoiceContainerGenerator <|-- CVoiceContainerShapedNoise
 ```
 
 ### CVoiceContainerGranulator
@@ -734,21 +668,17 @@ classDiagram
 	"_class": "CVoiceContainerGranulator",
 	"m_vSound":
 	{
+		"m_Sentences":
+		[
+		],
 		"m_nRate": 0,
 		"m_nFormat": "PCM16",
 		"m_nChannels": 0,
 		"m_nLoopStart": 0,
 		"m_nSampleCount": 0,
 		"m_flDuration": 0.000000,
-		"m_Sentences":
-		[
-		],
 		"m_nStreamingSize": 0,
-		"m_nSeekTable":
-		[
-		],
-		"m_nLoopEnd": 0,
-		"m_encodedHeader": "[BINARY BLOB]"
+		"m_nLoopEnd": 0
 	},
 	"m_pEnvelopeAnalyzer": null,
 	"m_flGrainLength": 0.100000,
@@ -757,7 +687,7 @@ classDiagram
 	"m_flPlaybackJitter": 0.000000,
 	"m_bShouldWraparound": false,
 	"m_sourceAudio": ""
-}`, `MPropertyFriendlyName "Granulator Container"`
+}`, `MPropertyFriendlyName Granulator Container`
 
 **Relationships:**
 
@@ -778,51 +708,50 @@ classDiagram
 | `m_flStartJitter` | float32 |  |
 | `m_flPlaybackJitter` | float32 |  |
 | `m_bShouldWraparound` | bool |  |
-| `m_sourceAudio` | CStrongHandle<[InfoForResourceTypeCVoiceContainerBase](../schemas/resourcesystem.md#infoforresourcetypecvoicecontainerbase)> |  |
+| `m_sourceAudio` | CStrongHandle< [InfoForResourceTypeCVoiceContainerBase](../schemas/resourcesystem.md#infoforresourcetypecvoicecontainerbase) > |  |
 
 ### CVoiceContainerLoopTrigger
 
 **Inherits from:** [CVoiceContainerBase](soundsystem_voicecontainers.md#cvoicecontainerbase)
 
+**Derived by:** [CVoiceContainerLoopTriggerWithRandomPanner](soundsystem_voicecontainers.md#cvoicecontainerlooptriggerwithrandompanner)
+
 **Metadata:** `MGetKV3ClassDefaults {
 	"_class": "CVoiceContainerLoopTrigger",
 	"m_vSound":
 	{
+		"m_Sentences":
+		[
+		],
 		"m_nRate": 0,
 		"m_nFormat": "PCM16",
 		"m_nChannels": 0,
 		"m_nLoopStart": 0,
 		"m_nSampleCount": 0,
 		"m_flDuration": 0.000000,
-		"m_Sentences":
-		[
-		],
 		"m_nStreamingSize": 0,
-		"m_nSeekTable":
-		[
-		],
-		"m_nLoopEnd": 0,
-		"m_encodedHeader": "[BINARY BLOB]"
+		"m_nLoopEnd": 0
 	},
 	"m_pEnvelopeAnalyzer": null,
+	"m_flRetriggerTimeMin": 1.000000,
+	"m_flRetriggerTimeMax": 1.000000,
+	"m_flFadeTime": 0.500000,
+	"m_bCrossFade": false,
 	"m_sound":
 	{
 		"m_namespace": "",
 		"m_bUseReference": true,
 		"m_sound": "",
 		"m_pSound": null
-	},
-	"m_flRetriggerTimeMin": 1.000000,
-	"m_flRetriggerTimeMax": 1.000000,
-	"m_flFadeTime": 0.500000,
-	"m_bCrossFade": false
-}`, `MPropertyFriendlyName "LoopTrigger"`, `MPropertyDescription "Continuously retriggers a sound and optionally fades to the new instance."`
+	}
+}`, `MPropertyDescription Continuously retriggers a sound and optionally fades to the new instance.`, `MPropertyFriendlyName LoopTrigger`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
     CVoiceContainerBase <|-- CVoiceContainerLoopTrigger
+    CVoiceContainerLoopTrigger <|-- CVoiceContainerLoopTriggerWithRandomPanner
     CVoiceContainerLoopTrigger *-- CSoundContainerReference
 ```
 
@@ -830,11 +759,68 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sound` | [CSoundContainerReference](../schemas/soundsystem_voicecontainers.md#csoundcontainerreference) | `MPropertyFriendlyName "Vsnd Reference"` |
 | `m_flRetriggerTimeMin` | float32 |  |
 | `m_flRetriggerTimeMax` | float32 |  |
 | `m_flFadeTime` | float32 |  |
 | `m_bCrossFade` | bool |  |
+| `m_sound` | [CSoundContainerReference](../schemas/soundsystem_voicecontainers.md#csoundcontainerreference) | `MPropertyFriendlyName Vsnd Reference` |
+
+### CVoiceContainerLoopTriggerWithRandomPanner
+
+**Inherits from:** [CVoiceContainerLoopTrigger](soundsystem_voicecontainers.md#cvoicecontainerlooptrigger)
+
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVoiceContainerLoopTriggerWithRandomPanner",
+	"m_vSound":
+	{
+		"m_Sentences":
+		[
+		],
+		"m_nRate": 0,
+		"m_nFormat": "PCM16",
+		"m_nChannels": 0,
+		"m_nLoopStart": 0,
+		"m_nSampleCount": 0,
+		"m_flDuration": 0.000000,
+		"m_nStreamingSize": 0,
+		"m_nLoopEnd": 0
+	},
+	"m_pEnvelopeAnalyzer": null,
+	"m_flRetriggerTimeMin": 1.000000,
+	"m_flRetriggerTimeMax": 1.000000,
+	"m_flFadeTime": 0.500000,
+	"m_bCrossFade": false,
+	"m_sound":
+	{
+		"m_namespace": "",
+		"m_bUseReference": true,
+		"m_sound": "",
+		"m_pSound": null
+	},
+	"m_randomPannerControls":
+	{
+		"m_panningControlInputName": "random_pan",
+		"m_volumeControlInputName": "random_volume",
+		"m_flMinVolume": -12.000000,
+		"m_flMaxVolume": 0.000000,
+		"m_strVectorStackParam": "ListenerForwardVector"
+	}
+}`, `MPropertyDescription Continuously retriggers a sound and optionally fades to the new instance. Sends a new Random panning value to a control input on each retrigger`, `MPropertyFriendlyName LoopTriggerWithRandomPanner`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVoiceContainerLoopTrigger <|-- CVoiceContainerLoopTriggerWithRandomPanner
+    CVoiceContainerBase <|-- CVoiceContainerLoopTrigger
+    CVoiceContainerLoopTriggerWithRandomPanner *-- CRandomPannerControls
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_randomPannerControls` | [CRandomPannerControls](../schemas/soundsystem_voicecontainers.md#crandompannercontrols) | `MPropertyFriendlyName Random Panner Control` |
 
 ### CVoiceContainerLoopXFade
 
@@ -844,21 +830,17 @@ classDiagram
 	"_class": "CVoiceContainerLoopXFade",
 	"m_vSound":
 	{
+		"m_Sentences":
+		[
+		],
 		"m_nRate": 0,
 		"m_nFormat": "PCM16",
 		"m_nChannels": 0,
 		"m_nLoopStart": 0,
 		"m_nSampleCount": 0,
 		"m_flDuration": 0.000000,
-		"m_Sentences":
-		[
-		],
 		"m_nStreamingSize": 0,
-		"m_nSeekTable":
-		[
-		],
-		"m_nLoopEnd": 0,
-		"m_encodedHeader": "[BINARY BLOB]"
+		"m_nLoopEnd": 0
 	},
 	"m_pEnvelopeAnalyzer": null,
 	"m_sound":
@@ -875,7 +857,7 @@ classDiagram
 	"m_bPlayHead": false,
 	"m_bPlayTail": false,
 	"m_bEqualPow": false
-}`, `MPropertyFriendlyName "Loop XFade"`, `MPropertyDescription "Sample accurate looping with xfade capabilities."`
+}`, `MPropertyDescription Sample accurate looping with xfade capabilities.`, `MPropertyFriendlyName Loop XFade`
 
 **Relationships:**
 
@@ -889,7 +871,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sound` | [CSoundContainerReference](../schemas/soundsystem_voicecontainers.md#csoundcontainerreference) | `MPropertyFriendlyName "Vsnd Reference"` |
+| `m_sound` | [CSoundContainerReference](../schemas/soundsystem_voicecontainers.md#csoundcontainerreference) | `MPropertyFriendlyName Vsnd Reference` |
 | `m_flLoopEnd` | float32 |  |
 | `m_flLoopStart` | float32 |  |
 | `m_flFadeOut` | float32 |  |
@@ -906,21 +888,17 @@ classDiagram
 	"_class": "CVoiceContainerMultiBlender",
 	"m_vSound":
 	{
+		"m_Sentences":
+		[
+		],
 		"m_nRate": 0,
 		"m_nFormat": "PCM16",
 		"m_nChannels": 0,
 		"m_nLoopStart": 0,
 		"m_nSampleCount": 0,
 		"m_flDuration": 0.000000,
-		"m_Sentences":
-		[
-		],
 		"m_nStreamingSize": 0,
-		"m_nSeekTable":
-		[
-		],
-		"m_nLoopEnd": 0,
-		"m_encodedHeader": "[BINARY BLOB]"
+		"m_nLoopEnd": 0
 	},
 	"m_pEnvelopeAnalyzer": null,
 	"m_soundsToPlay":
@@ -935,7 +913,7 @@ classDiagram
 	},
 	"m_flBlendFactor": 0.000000,
 	"m_flCrossover": 1.000000
-}`, `MPropertyFriendlyName "Multi Blender"`, `MPropertyDescription "Blends any number of containers"`
+}`, `MPropertyDescription Blends any number of containers`, `MPropertyFriendlyName Multi Blender`
 
 **Relationships:**
 
@@ -949,9 +927,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_soundsToPlay` | [CSoundContainerReferenceArray](../schemas/soundsystem_voicecontainers.md#csoundcontainerreferencearray) | `MPropertyFriendlyName "Sounds To Blend"` |
-| `m_flBlendFactor` | float32 | `MPropertyFriendlyName "Blend Amount (0.0 = 100% first sound, 1.0 = 100% last sound)"` |
-| `m_flCrossover` | float32 | `MPropertyFriendlyName "Crossfade Amount (0.0 = no crossfade, 1.0 = constant crossfading)"` |
+| `m_soundsToPlay` | [CSoundContainerReferenceArray](../schemas/soundsystem_voicecontainers.md#csoundcontainerreferencearray) | `MPropertyFriendlyName Sounds To Blend` |
+| `m_flBlendFactor` | float32 | `MPropertyFriendlyName Blend Amount (0.0 = 100% first sound, 1.0 = 100% last sound)` |
+| `m_flCrossover` | float32 | `MPropertyFriendlyName Crossfade Amount (0.0 = no crossfade, 1.0 = constant crossfading)` |
 
 ### CVoiceContainerNull
 
@@ -961,24 +939,20 @@ classDiagram
 	"_class": "CVoiceContainerNull",
 	"m_vSound":
 	{
+		"m_Sentences":
+		[
+		],
 		"m_nRate": 0,
 		"m_nFormat": "PCM16",
 		"m_nChannels": 0,
 		"m_nLoopStart": 0,
 		"m_nSampleCount": 0,
 		"m_flDuration": 0.000000,
-		"m_Sentences":
-		[
-		],
 		"m_nStreamingSize": 0,
-		"m_nSeekTable":
-		[
-		],
-		"m_nLoopEnd": 0,
-		"m_encodedHeader": "[BINARY BLOB]"
+		"m_nLoopEnd": 0
 	},
 	"m_pEnvelopeAnalyzer": null
-}`, `MPropertyFriendlyName "Null Container"`, `MPropertyDescription "Plays a single channel of silence."`
+}`, `MPropertyDescription Plays a single channel of silence.`, `MPropertyFriendlyName Null Container`
 
 **Relationships:**
 
@@ -996,21 +970,17 @@ classDiagram
 	"_class": "CVoiceContainerParameterBlender",
 	"m_vSound":
 	{
+		"m_Sentences":
+		[
+		],
 		"m_nRate": 0,
 		"m_nFormat": "PCM16",
 		"m_nChannels": 0,
 		"m_nLoopStart": 0,
 		"m_nSampleCount": 0,
 		"m_flDuration": 0.000000,
-		"m_Sentences":
-		[
-		],
 		"m_nStreamingSize": 0,
-		"m_nSeekTable":
-		[
-		],
-		"m_nLoopEnd": 0,
-		"m_encodedHeader": "[BINARY BLOB]"
+		"m_nLoopEnd": 0
 	},
 	"m_pEnvelopeAnalyzer": null,
 	"m_firstSound":
@@ -1105,7 +1075,7 @@ classDiagram
 			0.000000
 		]
 	}
-}`, `MPropertyFriendlyName "Parameter Blender"`, `MPropertyDescription "Blends two containers according to parameter curves."`
+}`, `MPropertyDescription Blends two containers according to parameter curves.`, `MPropertyFriendlyName Parameter Blender`
 
 **Relationships:**
 
@@ -1119,14 +1089,14 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_firstSound` | [CSoundContainerReference](../schemas/soundsystem_voicecontainers.md#csoundcontainerreference) | `MPropertyFriendlyName "First Sound"` |
-| `m_secondSound` | [CSoundContainerReference](../schemas/soundsystem_voicecontainers.md#csoundcontainerreference) | `MPropertyFriendlyName "Second Sound"` |
-| `m_bEnableOcclusionBlend` | bool | `MPropertyStartGroup "Occlusion"` `MPropertyFriendlyName "Enable Occlusion Blend"` |
-| `m_curve1` | CPiecewiseCurve | `MPropertySuppressExpr "m_bEnableOcclusionBlend == false"` `MPropertyFriendlyName "First Curve"` |
-| `m_curve2` | CPiecewiseCurve | `MPropertySuppressExpr "m_bEnableOcclusionBlend == false"` `MPropertyFriendlyName "Second Curve"` |
-| `m_bEnableDistanceBlend` | bool | `MPropertyStartGroup "Distance"` `MPropertyFriendlyName "Enable Distance Blend"` |
-| `m_curve3` | CPiecewiseCurve | `MPropertySuppressExpr "m_bEnableDistanceBlend == false"` `MPropertyFriendlyName "First Curve"` |
-| `m_curve4` | CPiecewiseCurve | `MPropertySuppressExpr "m_bEnableDistanceBlend == false"` `MPropertyFriendlyName "Second Curve"` |
+| `m_firstSound` | [CSoundContainerReference](../schemas/soundsystem_voicecontainers.md#csoundcontainerreference) | `MPropertyFriendlyName First Sound` |
+| `m_secondSound` | [CSoundContainerReference](../schemas/soundsystem_voicecontainers.md#csoundcontainerreference) | `MPropertyFriendlyName Second Sound` |
+| `m_bEnableOcclusionBlend` | bool | `MPropertyFriendlyName Enable Occlusion Blend` `MPropertyStartGroup Occlusion` |
+| `m_curve1` | CPiecewiseCurve | `MPropertyFriendlyName First Curve` `MPropertySuppressExpr m_bEnableOcclusionBlend == false` |
+| `m_curve2` | CPiecewiseCurve | `MPropertyFriendlyName Second Curve` `MPropertySuppressExpr m_bEnableOcclusionBlend == false` |
+| `m_bEnableDistanceBlend` | bool | `MPropertyFriendlyName Enable Distance Blend` `MPropertyStartGroup Distance` |
+| `m_curve3` | CPiecewiseCurve | `MPropertyFriendlyName First Curve` `MPropertySuppressExpr m_bEnableDistanceBlend == false` |
+| `m_curve4` | CPiecewiseCurve | `MPropertyFriendlyName Second Curve` `MPropertySuppressExpr m_bEnableDistanceBlend == false` |
 
 ### CVoiceContainerRandomSampler
 
@@ -1136,21 +1106,17 @@ classDiagram
 	"_class": "CVoiceContainerRandomSampler",
 	"m_vSound":
 	{
+		"m_Sentences":
+		[
+		],
 		"m_nRate": 0,
 		"m_nFormat": "PCM16",
 		"m_nChannels": 0,
 		"m_nLoopStart": 0,
 		"m_nSampleCount": 0,
 		"m_flDuration": 0.000000,
-		"m_Sentences":
-		[
-		],
 		"m_nStreamingSize": 0,
-		"m_nSeekTable":
-		[
-		],
-		"m_nLoopEnd": 0,
-		"m_encodedHeader": "[BINARY BLOB]"
+		"m_nLoopEnd": 0
 	},
 	"m_pEnvelopeAnalyzer": null,
 	"m_flAmplitude": 0.800000,
@@ -1161,7 +1127,7 @@ classDiagram
 	"m_grainResources":
 	[
 	]
-}`, `MPropertyFriendlyName "Random Smapler Container"`, `MPropertyDescription "Trash Synth"`
+}`, `MPropertyDescription Trash Synth`, `MPropertyFriendlyName Random Sampler Container`
 
 **Relationships:**
 
@@ -1182,7 +1148,7 @@ classDiagram
 | `m_flTimeJitter` | float32 |  |
 | `m_flMaxLength` | float32 |  |
 | `m_nNumDelayVariations` | int32 |  |
-| `m_grainResources` | CUtlVector<CStrongHandle<[InfoForResourceTypeCVoiceContainerBase](../schemas/resourcesystem.md#infoforresourcetypecvoicecontainerbase)>> |  |
+| `m_grainResources` | CUtlVector< CStrongHandle< [InfoForResourceTypeCVoiceContainerBase](../schemas/resourcesystem.md#infoforresourcetypecvoicecontainerbase) > > |  |
 
 ### CVoiceContainerRealtimeFMSineWave
 
@@ -1192,27 +1158,23 @@ classDiagram
 	"_class": "CVoiceContainerRealtimeFMSineWave",
 	"m_vSound":
 	{
+		"m_Sentences":
+		[
+		],
 		"m_nRate": 0,
 		"m_nFormat": "PCM16",
 		"m_nChannels": 0,
 		"m_nLoopStart": 0,
 		"m_nSampleCount": 0,
 		"m_flDuration": 0.000000,
-		"m_Sentences":
-		[
-		],
 		"m_nStreamingSize": 0,
-		"m_nSeekTable":
-		[
-		],
-		"m_nLoopEnd": 0,
-		"m_encodedHeader": "[BINARY BLOB]"
+		"m_nLoopEnd": 0
 	},
 	"m_pEnvelopeAnalyzer": null,
 	"m_flCarrierFrequency": 0.000000,
 	"m_flModulatorFrequency": 0.000000,
 	"m_flModulatorAmount": 0.000000
-}`, `MPropertyFriendlyName "TESTBED: FM Synth Container"`, `MPropertyDescription "Real time FM Synthesis"`
+}`, `MPropertyDescription Real time FM Synthesis`, `MPropertyFriendlyName TESTBED: FM Synth Container`
 
 **Relationships:**
 
@@ -1226,9 +1188,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_flCarrierFrequency` | float32 | `MPropertyFriendlyName "Frequency (Hz)"` `MPropertyDescription "The frequency of this sine tone."` |
-| `m_flModulatorFrequency` | float32 | `MPropertyFriendlyName "Mod Frequency (Hz)"` `MPropertyDescription "The frequency of the sine tone modulating this sine tone."` |
-| `m_flModulatorAmount` | float32 | `MPropertyFriendlyName "Mod Amount (Hz)"` `MPropertyDescription "The amount the modulating sine tone modulates this sine tone."` |
+| `m_flCarrierFrequency` | float32 | `MPropertyDescription The frequency of this sine tone.` `MPropertyFriendlyName Frequency (Hz)` |
+| `m_flModulatorFrequency` | float32 | `MPropertyDescription The frequency of the sine tone modulating this sine tone.` `MPropertyFriendlyName Mod Frequency (Hz)` |
+| `m_flModulatorAmount` | float32 | `MPropertyDescription The amount the modulating sine tone modulates this sine tone.` `MPropertyFriendlyName Mod Amount (Hz)` |
 
 ### CVoiceContainerSelector
 
@@ -1238,21 +1200,17 @@ classDiagram
 	"_class": "CVoiceContainerSelector",
 	"m_vSound":
 	{
+		"m_Sentences":
+		[
+		],
 		"m_nRate": 0,
 		"m_nFormat": "PCM16",
 		"m_nChannels": 0,
 		"m_nLoopStart": 0,
 		"m_nSampleCount": 0,
 		"m_flDuration": 0.000000,
-		"m_Sentences":
-		[
-		],
 		"m_nStreamingSize": 0,
-		"m_nSeekTable":
-		[
-		],
-		"m_nLoopEnd": 0,
-		"m_encodedHeader": "[BINARY BLOB]"
+		"m_nLoopEnd": 0
 	},
 	"m_pEnvelopeAnalyzer": null,
 	"m_mode": "Random",
@@ -1269,7 +1227,7 @@ classDiagram
 	"m_fProbabilityWeights":
 	[
 	]
-}`, `MPropertyFriendlyName "Selector"`, `MPropertyDescription "Plays a selected vsnd on playback."`
+}`, `MPropertyDescription Plays a selected vsnd on playback.`, `MPropertyFriendlyName Selector`
 
 **Relationships:**
 
@@ -1284,9 +1242,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_mode` | [PlayBackMode_t](../schemas/soundsystem_voicecontainers.md#playbackmode_t) | `MPropertyFriendlyName "Playback Mode"` |
-| `m_soundsToPlay` | [CSoundContainerReferenceArray](../schemas/soundsystem_voicecontainers.md#csoundcontainerreferencearray) | `MPropertyFriendlyName "Sounds To play"` |
-| `m_fProbabilityWeights` | CUtlVector<float32> | `MPropertyFriendlyName "Relative Weights"` |
+| `m_mode` | [PlayBackMode_t](../schemas/!GlobalTypes.md#playbackmode_t) | `MPropertyFriendlyName Playback Mode` |
+| `m_soundsToPlay` | [CSoundContainerReferenceArray](../schemas/soundsystem_voicecontainers.md#csoundcontainerreferencearray) | `MPropertyFriendlyName Sounds To play` |
+| `m_fProbabilityWeights` | CUtlVector< float32 > | `MPropertyFriendlyName Relative Weights` |
 
 ### CVoiceContainerSet
 
@@ -1296,27 +1254,23 @@ classDiagram
 	"_class": "CVoiceContainerSet",
 	"m_vSound":
 	{
+		"m_Sentences":
+		[
+		],
 		"m_nRate": 0,
 		"m_nFormat": "PCM16",
 		"m_nChannels": 0,
 		"m_nLoopStart": 0,
 		"m_nSampleCount": 0,
 		"m_flDuration": 0.000000,
-		"m_Sentences":
-		[
-		],
 		"m_nStreamingSize": 0,
-		"m_nSeekTable":
-		[
-		],
-		"m_nLoopEnd": 0,
-		"m_encodedHeader": "[BINARY BLOB]"
+		"m_nLoopEnd": 0
 	},
 	"m_pEnvelopeAnalyzer": null,
 	"m_soundsToPlay":
 	[
 	]
-}`, `MPropertyFriendlyName "Container Set"`, `MPropertyDescription "An array of containers that are played all at once."`
+}`, `MPropertyDescription An array of containers that are played all at once.`, `MPropertyFriendlyName Container Set`
 
 **Relationships:**
 
@@ -1330,7 +1284,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_soundsToPlay` | CUtlVector<[CVoiceContainerSetElement](../schemas/soundsystem_voicecontainers.md#cvoicecontainersetelement)> | `MPropertyFriendlyName "Container List"` |
+| `m_soundsToPlay` | CUtlVector< [CVoiceContainerSetElement](../schemas/soundsystem_voicecontainers.md#cvoicecontainersetelement) > | `MPropertyFriendlyName Container List` |
 
 ### CVoiceContainerSetElement
 
@@ -1357,7 +1311,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_sound` | [CSoundContainerReference](../schemas/soundsystem_voicecontainers.md#csoundcontainerreference) |  |
-| `m_flVolumeDB` | float32 | `MPropertyFriendlyName "Volume (in Decibels)"` |
+| `m_flVolumeDB` | float32 | `MPropertyFriendlyName Volume (in Decibels)` |
 
 ### CVoiceContainerShapedNoise
 
@@ -1367,21 +1321,17 @@ classDiagram
 	"_class": "CVoiceContainerShapedNoise",
 	"m_vSound":
 	{
+		"m_Sentences":
+		[
+		],
 		"m_nRate": 0,
 		"m_nFormat": "PCM16",
 		"m_nChannels": 0,
 		"m_nLoopStart": 0,
 		"m_nSampleCount": 0,
 		"m_flDuration": 0.000000,
-		"m_Sentences":
-		[
-		],
 		"m_nStreamingSize": 0,
-		"m_nSeekTable":
-		[
-		],
-		"m_nLoopEnd": 0,
-		"m_encodedHeader": "[BINARY BLOB]"
+		"m_nLoopEnd": 0
 	},
 	"m_pEnvelopeAnalyzer": null,
 	"m_bUseCurveForFrequency": false,
@@ -1447,7 +1397,7 @@ classDiagram
 			0.000000
 		]
 	}
-}`, `MPropertyFriendlyName "Wind Generator Container"`, `MPropertyDescription "This is a synth meant to generate whoosh noises."`
+}`, `MPropertyDescription This is a synth meant to generate whoosh noises.`, `MPropertyFriendlyName Wind Generator Container`
 
 **Relationships:**
 
@@ -1462,14 +1412,14 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_bUseCurveForFrequency` | bool |  |
-| `m_flFrequency` | float32 | `MPropertySuppressExpr "m_bUseCurveForFrequency == 1"` |
-| `m_frequencySweep` | CPiecewiseCurve | `MPropertySuppressExpr "m_bUseCurveForFrequency == 0"` `MPropertyFriendlyName "Frequency Sweep"` |
+| `m_flFrequency` | float32 | `MPropertySuppressExpr m_bUseCurveForFrequency == 1` |
+| `m_frequencySweep` | CPiecewiseCurve | `MPropertyFriendlyName Frequency Sweep` `MPropertySuppressExpr m_bUseCurveForFrequency == 0` |
 | `m_bUseCurveForResonance` | bool |  |
-| `m_flResonance` | float32 | `MPropertySuppressExpr "m_bUseCurveForResonance == 1"` |
-| `m_resonanceSweep` | CPiecewiseCurve | `MPropertySuppressExpr "m_bUseCurveForResonance == 0"` `MPropertyFriendlyName "Resonance Sweep"` |
+| `m_flResonance` | float32 | `MPropertySuppressExpr m_bUseCurveForResonance == 1` |
+| `m_resonanceSweep` | CPiecewiseCurve | `MPropertyFriendlyName Resonance Sweep` `MPropertySuppressExpr m_bUseCurveForResonance == 0` |
 | `m_bUseCurveForAmplitude` | bool |  |
-| `m_flGainInDecibels` | float32 | `MPropertySuppressExpr "m_bUseCurveForAmplitude == 1"` |
-| `m_gainSweep` | CPiecewiseCurve | `MPropertySuppressExpr "m_bUseCurveForAmplitude == 0"` `MPropertyFriendlyName "Gain Sweep (in Decibels)"` |
+| `m_flGainInDecibels` | float32 | `MPropertySuppressExpr m_bUseCurveForAmplitude == 1` |
+| `m_gainSweep` | CPiecewiseCurve | `MPropertyFriendlyName Gain Sweep (in Decibels)` `MPropertySuppressExpr m_bUseCurveForAmplitude == 0` |
 
 ### CVoiceContainerStaticAdditiveSynth
 
@@ -1479,27 +1429,23 @@ classDiagram
 	"_class": "CVoiceContainerStaticAdditiveSynth",
 	"m_vSound":
 	{
+		"m_Sentences":
+		[
+		],
 		"m_nRate": 0,
 		"m_nFormat": "PCM16",
 		"m_nChannels": 0,
 		"m_nLoopStart": 0,
 		"m_nSampleCount": 0,
 		"m_flDuration": 0.000000,
-		"m_Sentences":
-		[
-		],
 		"m_nStreamingSize": 0,
-		"m_nSeekTable":
-		[
-		],
-		"m_nLoopEnd": 0,
-		"m_encodedHeader": "[BINARY BLOB]"
+		"m_nLoopEnd": 0
 	},
 	"m_pEnvelopeAnalyzer": null,
 	"m_tones":
 	[
 	]
-}`, `MPropertyFriendlyName "Additive Synth Container"`, `MPropertyDescription "This is a static additive synth that can scale components of the synth based on how many instances are running."`
+}`, `MPropertyDescription This is a static additive synth that can scale components of the synth based on how many instances are running.`, `MPropertyFriendlyName Additive Synth Container`
 
 **Relationships:**
 
@@ -1514,7 +1460,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_tones` | CUtlVector<[CVoiceContainerStaticAdditiveSynth](../schemas/soundsystem_voicecontainers.md#cvoicecontainerstaticadditivesynth)::CTone> |  |
+| `m_tones` | CUtlVector< [CVoiceContainerStaticAdditiveSynth](../schemas/soundsystem_voicecontainers.md#cvoicecontainerstaticadditivesynth)::CTone > |  |
 
 ### CVoiceContainerStaticAdditiveSynth::CGainScalePerInstance
 
@@ -1529,10 +1475,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_flMinVolume` | float32 | `MPropertyFriendlyName "Quietest Volume"` |
-| `m_nInstancesAtMinVolume` | int32 | `MPropertyFriendlyName "# Instances Playing Until We Get Louder Than Quietest Volume"` |
-| `m_flMaxVolume` | float32 | `MPropertyFriendlyName "Loudest Volume"` |
-| `m_nInstancesAtMaxVolume` | int32 | `MPropertyFriendlyName "# Instances Playing Required To Reach Loudest Volume"` |
+| `m_flMinVolume` | float32 | `MPropertyFriendlyName Quietest Volume` |
+| `m_nInstancesAtMinVolume` | int32 | `MPropertyFriendlyName # Instances Playing Until We Get Louder Than Quietest Volume` |
+| `m_flMaxVolume` | float32 | `MPropertyFriendlyName Loudest Volume` |
+| `m_nInstancesAtMaxVolume` | int32 | `MPropertyFriendlyName # Instances Playing Required To Reach Loudest Volume` |
 
 ### CVoiceContainerStaticAdditiveSynth::CHarmonic
 
@@ -1583,12 +1529,12 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_nWaveform` | [EWaveform](../schemas/soundsystem_voicecontainers.md#ewaveform) | `MPropertyFriendlyName "Waveform"` |
-| `m_nFundamental` | [EMidiNote](../schemas/soundsystem_voicecontainers.md#emidinote) | `MPropertyFriendlyName "Note"` |
-| `m_nOctave` | int32 | `MPropertyFriendlyName "Octave"` |
-| `m_flCents` | float32 | `MPropertyFriendlyName "Cents To Detune ( -100:100 )"` |
-| `m_flPhase` | float32 | `MPropertyFriendlyName "Phase ( 0 - 1 )"` |
-| `m_curve` | CPiecewiseCurve | `MPropertyFriendlyName "Envelope (Relative to Tone Envelope)"` |
+| `m_nWaveform` | [EWaveform](../schemas/!GlobalTypes.md#ewaveform) | `MPropertyFriendlyName Waveform` |
+| `m_nFundamental` | [EMidiNote](../schemas/!GlobalTypes.md#emidinote) | `MPropertyFriendlyName Note` |
+| `m_nOctave` | int32 | `MPropertyFriendlyName Octave` |
+| `m_flCents` | float32 | `MPropertyFriendlyName Cents To Detune ( -100:100 )` |
+| `m_flPhase` | float32 | `MPropertyFriendlyName Phase ( 0 - 1 )` |
+| `m_curve` | CPiecewiseCurve | `MPropertyFriendlyName Envelope (Relative to Tone Envelope)` |
 | `m_volumeScaling` | [CVoiceContainerStaticAdditiveSynth](../schemas/soundsystem_voicecontainers.md#cvoicecontainerstaticadditivesynth)::CGainScalePerInstance |  |
 
 ### CVoiceContainerStaticAdditiveSynth::CTone
@@ -1630,9 +1576,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_harmonics` | CUtlVector<[CVoiceContainerStaticAdditiveSynth](../schemas/soundsystem_voicecontainers.md#cvoicecontainerstaticadditivesynth)::CHarmonic> | `MPropertyFriendlyName "Harmonics"` |
-| `m_curve` | CPiecewiseCurve | `MPropertyFriendlyName "Envelope"` |
-| `m_bSyncInstances` | bool | `MPropertyFriendlyName "Play All Instances In Sync"` |
+| `m_harmonics` | CUtlVector< [CVoiceContainerStaticAdditiveSynth](../schemas/soundsystem_voicecontainers.md#cvoicecontainerstaticadditivesynth)::CHarmonic > | `MPropertyFriendlyName Harmonics` |
+| `m_curve` | CPiecewiseCurve | `MPropertyFriendlyName Envelope` |
+| `m_bSyncInstances` | bool | `MPropertyFriendlyName Play All Instances In Sync` |
 
 ### CVoiceContainerSwitch
 
@@ -1642,27 +1588,23 @@ classDiagram
 	"_class": "CVoiceContainerSwitch",
 	"m_vSound":
 	{
+		"m_Sentences":
+		[
+		],
 		"m_nRate": 0,
 		"m_nFormat": "PCM16",
 		"m_nChannels": 0,
 		"m_nLoopStart": 0,
 		"m_nSampleCount": 0,
 		"m_flDuration": 0.000000,
-		"m_Sentences":
-		[
-		],
 		"m_nStreamingSize": 0,
-		"m_nSeekTable":
-		[
-		],
-		"m_nLoopEnd": 0,
-		"m_encodedHeader": "[BINARY BLOB]"
+		"m_nLoopEnd": 0
 	},
 	"m_pEnvelopeAnalyzer": null,
 	"m_soundsToPlay":
 	[
 	]
-}`, `MPropertyFriendlyName "Container Switch"`, `MPropertyDescription "An array of containers"`
+}`, `MPropertyDescription An array of containers`, `MPropertyFriendlyName Container Switch`
 
 **Relationships:**
 
@@ -1676,7 +1618,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_soundsToPlay` | CUtlVector<[CSoundContainerReference](../schemas/soundsystem_voicecontainers.md#csoundcontainerreference)> | `MPropertyFriendlyName "Container List"` |
+| `m_soundsToPlay` | CUtlVector< [CSoundContainerReference](../schemas/soundsystem_voicecontainers.md#csoundcontainerreference) > | `MPropertyFriendlyName Container List` |
 
 ### CVoiceContainerTapePlayer
 
@@ -1686,28 +1628,24 @@ classDiagram
 	"_class": "CVoiceContainerTapePlayer",
 	"m_vSound":
 	{
+		"m_Sentences":
+		[
+		],
 		"m_nRate": 0,
 		"m_nFormat": "PCM16",
 		"m_nChannels": 0,
 		"m_nLoopStart": 0,
 		"m_nSampleCount": 0,
 		"m_flDuration": 0.000000,
-		"m_Sentences":
-		[
-		],
 		"m_nStreamingSize": 0,
-		"m_nSeekTable":
-		[
-		],
-		"m_nLoopEnd": 0,
-		"m_encodedHeader": "[BINARY BLOB]"
+		"m_nLoopEnd": 0
 	},
 	"m_pEnvelopeAnalyzer": null,
 	"m_bShouldWraparound": false,
 	"m_sourceAudio": "",
 	"m_flTapeSpeedAttackTime": 0.300000,
 	"m_flTapeSpeedReleaseTime": 0.700000
-}`, `MPropertyFriendlyName "Tape Player"`
+}`, `MPropertyFriendlyName Tape Player`
 
 **Relationships:**
 
@@ -1724,59 +1662,1200 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_bShouldWraparound` | bool |  |
-| `m_sourceAudio` | CStrongHandle<[InfoForResourceTypeCVoiceContainerBase](../schemas/resourcesystem.md#infoforresourcetypecvoicecontainerbase)> |  |
+| `m_sourceAudio` | CStrongHandle< [InfoForResourceTypeCVoiceContainerBase](../schemas/resourcesystem.md#infoforresourcetypecvoicecontainerbase) > |  |
 | `m_flTapeSpeedAttackTime` | float32 |  |
 | `m_flTapeSpeedReleaseTime` | float32 |  |
 
-### EMidiNote
+### CVoiceContainerVsndRadioButton
 
-**Values:**
+**Inherits from:** [CVoiceContainerBase](soundsystem_voicecontainers.md#cvoicecontainerbase)
 
-| Name | Value | Description |
-|------|-------|-------------|
-| `C` | 0 |  |
-| `C_Sharp` | 1 |  |
-| `D` | 2 |  |
-| `D_Sharp` | 3 |  |
-| `E` | 4 |  |
-| `F` | 5 |  |
-| `F_Sharp` | 6 |  |
-| `G` | 7 |  |
-| `G_Sharp` | 8 |  |
-| `A` | 9 |  |
-| `A_Sharp` | 10 |  |
-| `B` | 11 |  |
-| `Count` | 12 |  |
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVoiceContainerVsndRadioButton",
+	"m_vSound":
+	{
+		"m_Sentences":
+		[
+		],
+		"m_nRate": 0,
+		"m_nFormat": "PCM16",
+		"m_nChannels": 0,
+		"m_nLoopStart": 0,
+		"m_nSampleCount": 0,
+		"m_flDuration": 0.000000,
+		"m_nStreamingSize": 0,
+		"m_nLoopEnd": 0
+	},
+	"m_pEnvelopeAnalyzer": null,
+	"m_namespace": "",
+	"m_slot1":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_group": 1,
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot2":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_group": 1,
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot3":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_group": 1,
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot4":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_group": 1,
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot5":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_group": 1,
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot6":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_group": 1,
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot7":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_group": 1,
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot8":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_group": 1,
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot9":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_group": 1,
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot10":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_group": 1,
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot11":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_group": 1,
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot12":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_group": 1,
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot13":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_group": 1,
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot14":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_group": 1,
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot15":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_group": 1,
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot16":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_group": 1,
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	}
+}`, `MPropertyDescription Plays vsnds based on membership in a numbered index.`, `MPropertyFriendlyName Vsnd Radio Button`
 
-### EMode_t
+**Relationships:**
 
-**Values:**
+```mermaid
+classDiagram
+    CVoiceContainerBase <|-- CVoiceContainerVsndRadioButton
+    CVoiceContainerVsndRadioButton *-- CVsndRadioButtonSlot
+```
 
-| Name | Value | Description |
-|------|-------|-------------|
-| `Peak` | 0 | Peak |
-| `RMS` | 1 | RMS |
+**Fields:**
 
-### EWaveform
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_namespace` | CUtlString | `MPropertyFriendlyName Namespace` |
+| `m_slot1` | [CVsndRadioButtonSlot](../schemas/soundsystem_voicecontainers.md#cvsndradiobuttonslot) | `MPropertyFriendlyName Vsnd 01` |
+| `m_slot2` | [CVsndRadioButtonSlot](../schemas/soundsystem_voicecontainers.md#cvsndradiobuttonslot) | `MPropertyFriendlyName Vsnd 02` |
+| `m_slot3` | [CVsndRadioButtonSlot](../schemas/soundsystem_voicecontainers.md#cvsndradiobuttonslot) | `MPropertyFriendlyName Vsnd 03` |
+| `m_slot4` | [CVsndRadioButtonSlot](../schemas/soundsystem_voicecontainers.md#cvsndradiobuttonslot) | `MPropertyFriendlyName Vsnd 04` |
+| `m_slot5` | [CVsndRadioButtonSlot](../schemas/soundsystem_voicecontainers.md#cvsndradiobuttonslot) | `MPropertyFriendlyName Vsnd 05` |
+| `m_slot6` | [CVsndRadioButtonSlot](../schemas/soundsystem_voicecontainers.md#cvsndradiobuttonslot) | `MPropertyFriendlyName Vsnd 06` |
+| `m_slot7` | [CVsndRadioButtonSlot](../schemas/soundsystem_voicecontainers.md#cvsndradiobuttonslot) | `MPropertyFriendlyName Vsnd 07` |
+| `m_slot8` | [CVsndRadioButtonSlot](../schemas/soundsystem_voicecontainers.md#cvsndradiobuttonslot) | `MPropertyFriendlyName Vsnd 08` |
+| `m_slot9` | [CVsndRadioButtonSlot](../schemas/soundsystem_voicecontainers.md#cvsndradiobuttonslot) | `MPropertyFriendlyName Vsnd 09` |
+| `m_slot10` | [CVsndRadioButtonSlot](../schemas/soundsystem_voicecontainers.md#cvsndradiobuttonslot) | `MPropertyFriendlyName Vsnd 10` |
+| `m_slot11` | [CVsndRadioButtonSlot](../schemas/soundsystem_voicecontainers.md#cvsndradiobuttonslot) | `MPropertyFriendlyName Vsnd 11` |
+| `m_slot12` | [CVsndRadioButtonSlot](../schemas/soundsystem_voicecontainers.md#cvsndradiobuttonslot) | `MPropertyFriendlyName Vsnd 12` |
+| `m_slot13` | [CVsndRadioButtonSlot](../schemas/soundsystem_voicecontainers.md#cvsndradiobuttonslot) | `MPropertyFriendlyName Vsnd 13` |
+| `m_slot14` | [CVsndRadioButtonSlot](../schemas/soundsystem_voicecontainers.md#cvsndradiobuttonslot) | `MPropertyFriendlyName Vsnd 14` |
+| `m_slot15` | [CVsndRadioButtonSlot](../schemas/soundsystem_voicecontainers.md#cvsndradiobuttonslot) | `MPropertyFriendlyName Vsnd 15` |
+| `m_slot16` | [CVsndRadioButtonSlot](../schemas/soundsystem_voicecontainers.md#cvsndradiobuttonslot) | `MPropertyFriendlyName Vsnd 16` |
 
-**Values:**
+### CVoiceContainerVsndTrigger
 
-| Name | Value | Description |
-|------|-------|-------------|
-| `Sine` | 0 |  |
-| `Square` | 1 |  |
-| `Saw` | 2 |  |
-| `Triangle` | 3 |  |
-| `Noise` | 4 |  |
+**Inherits from:** [CVoiceContainerBase](soundsystem_voicecontainers.md#cvoicecontainerbase)
 
-### PlayBackMode_t
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVoiceContainerVsndTrigger",
+	"m_vSound":
+	{
+		"m_Sentences":
+		[
+		],
+		"m_nRate": 0,
+		"m_nFormat": "PCM16",
+		"m_nChannels": 0,
+		"m_nLoopStart": 0,
+		"m_nSampleCount": 0,
+		"m_flDuration": 0.000000,
+		"m_nStreamingSize": 0,
+		"m_nLoopEnd": 0
+	},
+	"m_pEnvelopeAnalyzer": null,
+	"m_namespace": "",
+	"m_slot1":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot2":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot3":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot4":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot5":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot6":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot7":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot8":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot9":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot10":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot11":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot12":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot13":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot14":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot15":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	},
+	"m_slot16":
+	{
+		"m_bEnableVsnd": true,
+		"m_vsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableEndcap": false,
+		"m_endcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_bEnableLoopcap": false,
+		"m_loopcapVsnd":
+		{
+			"m_namespace": "",
+			"m_bUseReference": true,
+			"m_sound": "",
+			"m_pSound": null
+		},
+		"m_volume": 1.000000,
+		"m_fadeOut": 0.000000,
+		"m_mode": "Trigger"
+	}
+}`, `MPropertyDescription Plays vsnds based on trigger parameter changes.`, `MPropertyFriendlyName Vsnd Trigger`
 
-**Values:**
+**Relationships:**
 
-| Name | Value | Description |
-|------|-------|-------------|
-| `Random` | 0 | Random |
-| `RandomNoRepeats` | 1 | Random No Repeats |
-| `RandomAvoidLast` | 2 | Random Avoid Last |
-| `Sequential` | 3 | Sequential |
-| `RandomWeights` | 4 | Random With Weights |
+```mermaid
+classDiagram
+    CVoiceContainerBase <|-- CVoiceContainerVsndTrigger
+    CVoiceContainerVsndTrigger *-- CVsndTriggerSlot
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_namespace` | CUtlString | `MPropertyFriendlyName Namespace` |
+| `m_slot1` | [CVsndTriggerSlot](../schemas/soundsystem_voicecontainers.md#cvsndtriggerslot) | `MPropertyFriendlyName Vsnd 01` |
+| `m_slot2` | [CVsndTriggerSlot](../schemas/soundsystem_voicecontainers.md#cvsndtriggerslot) | `MPropertyFriendlyName Vsnd 02` |
+| `m_slot3` | [CVsndTriggerSlot](../schemas/soundsystem_voicecontainers.md#cvsndtriggerslot) | `MPropertyFriendlyName Vsnd 03` |
+| `m_slot4` | [CVsndTriggerSlot](../schemas/soundsystem_voicecontainers.md#cvsndtriggerslot) | `MPropertyFriendlyName Vsnd 04` |
+| `m_slot5` | [CVsndTriggerSlot](../schemas/soundsystem_voicecontainers.md#cvsndtriggerslot) | `MPropertyFriendlyName Vsnd 05` |
+| `m_slot6` | [CVsndTriggerSlot](../schemas/soundsystem_voicecontainers.md#cvsndtriggerslot) | `MPropertyFriendlyName Vsnd 06` |
+| `m_slot7` | [CVsndTriggerSlot](../schemas/soundsystem_voicecontainers.md#cvsndtriggerslot) | `MPropertyFriendlyName Vsnd 07` |
+| `m_slot8` | [CVsndTriggerSlot](../schemas/soundsystem_voicecontainers.md#cvsndtriggerslot) | `MPropertyFriendlyName Vsnd 08` |
+| `m_slot9` | [CVsndTriggerSlot](../schemas/soundsystem_voicecontainers.md#cvsndtriggerslot) | `MPropertyFriendlyName Vsnd 09` |
+| `m_slot10` | [CVsndTriggerSlot](../schemas/soundsystem_voicecontainers.md#cvsndtriggerslot) | `MPropertyFriendlyName Vsnd 10` |
+| `m_slot11` | [CVsndTriggerSlot](../schemas/soundsystem_voicecontainers.md#cvsndtriggerslot) | `MPropertyFriendlyName Vsnd 11` |
+| `m_slot12` | [CVsndTriggerSlot](../schemas/soundsystem_voicecontainers.md#cvsndtriggerslot) | `MPropertyFriendlyName Vsnd 12` |
+| `m_slot13` | [CVsndTriggerSlot](../schemas/soundsystem_voicecontainers.md#cvsndtriggerslot) | `MPropertyFriendlyName Vsnd 13` |
+| `m_slot14` | [CVsndTriggerSlot](../schemas/soundsystem_voicecontainers.md#cvsndtriggerslot) | `MPropertyFriendlyName Vsnd 14` |
+| `m_slot15` | [CVsndTriggerSlot](../schemas/soundsystem_voicecontainers.md#cvsndtriggerslot) | `MPropertyFriendlyName Vsnd 15` |
+| `m_slot16` | [CVsndTriggerSlot](../schemas/soundsystem_voicecontainers.md#cvsndtriggerslot) | `MPropertyFriendlyName Vsnd 16` |
+
+### CVsndRadioButtonSlot
+
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_bEnableVsnd": true,
+	"m_vsnd":
+	{
+		"m_namespace": "",
+		"m_bUseReference": true,
+		"m_sound": "",
+		"m_pSound": null
+	},
+	"m_bEnableEndcap": false,
+	"m_endcapVsnd":
+	{
+		"m_namespace": "",
+		"m_bUseReference": true,
+		"m_sound": "",
+		"m_pSound": null
+	},
+	"m_bEnableLoopcap": false,
+	"m_loopcapVsnd":
+	{
+		"m_namespace": "",
+		"m_bUseReference": true,
+		"m_sound": "",
+		"m_pSound": null
+	},
+	"m_group": 1,
+	"m_volume": 1.000000,
+	"m_fadeOut": 0.000000,
+	"m_mode": "Trigger"
+}`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVsndRadioButtonSlot *-- CSoundContainerReference
+    CVsndRadioButtonSlot *-- EVsndPlaybackMode
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bEnableVsnd` | bool | `MPropertyFriendlyName Enable Vsnd` `MPropertyGroupName Vsnd` |
+| `m_vsnd` | [CSoundContainerReference](../schemas/soundsystem_voicecontainers.md#csoundcontainerreference) | `MPropertyFriendlyName Vsnd File` `MPropertyGroupName Vsnd` |
+| `m_bEnableEndcap` | bool | `MPropertyFriendlyName Enable Endcap` `MPropertyGroupName Endcap` |
+| `m_endcapVsnd` | [CSoundContainerReference](../schemas/soundsystem_voicecontainers.md#csoundcontainerreference) | `MPropertyFriendlyName Endcap Vsnd (Stop)` `MPropertyGroupName Endcap` |
+| `m_bEnableLoopcap` | bool | `MPropertyFriendlyName Enable Loopcap` `MPropertyGroupName Loopcap` |
+| `m_loopcapVsnd` | [CSoundContainerReference](../schemas/soundsystem_voicecontainers.md#csoundcontainerreference) | `MPropertyFriendlyName Loopcap Vsnd (Loop)` `MPropertyGroupName Loopcap` |
+| `m_group` | int32 | `MPropertyFriendlyName Group` |
+| `m_volume` | float32 | `MPropertyFriendlyName Volume` |
+| `m_fadeOut` | float32 | `MPropertyFriendlyName Fade Out (sec)` |
+| `m_mode` | [EVsndPlaybackMode](../schemas/!GlobalTypes.md#evsndplaybackmode) | `MPropertyFriendlyName Mode` |
+
+### CVsndTriggerSlot
+
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_bEnableVsnd": true,
+	"m_vsnd":
+	{
+		"m_namespace": "",
+		"m_bUseReference": true,
+		"m_sound": "",
+		"m_pSound": null
+	},
+	"m_bEnableEndcap": false,
+	"m_endcapVsnd":
+	{
+		"m_namespace": "",
+		"m_bUseReference": true,
+		"m_sound": "",
+		"m_pSound": null
+	},
+	"m_bEnableLoopcap": false,
+	"m_loopcapVsnd":
+	{
+		"m_namespace": "",
+		"m_bUseReference": true,
+		"m_sound": "",
+		"m_pSound": null
+	},
+	"m_volume": 1.000000,
+	"m_fadeOut": 0.000000,
+	"m_mode": "Trigger"
+}`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVsndTriggerSlot *-- CSoundContainerReference
+    CVsndTriggerSlot *-- EVsndTriggerMode
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bEnableVsnd` | bool | `MPropertyFriendlyName Enable Vsnd` `MPropertyGroupName Vsnd` |
+| `m_vsnd` | [CSoundContainerReference](../schemas/soundsystem_voicecontainers.md#csoundcontainerreference) | `MPropertyFriendlyName Vsnd File` `MPropertyGroupName Vsnd` |
+| `m_bEnableEndcap` | bool | `MPropertyFriendlyName Enable Endcap` `MPropertyGroupName Endcap` |
+| `m_endcapVsnd` | [CSoundContainerReference](../schemas/soundsystem_voicecontainers.md#csoundcontainerreference) | `MPropertyFriendlyName Endcap Vsnd (Stop)` `MPropertyGroupName Endcap` |
+| `m_bEnableLoopcap` | bool | `MPropertyFriendlyName Enable Loopcap` `MPropertyGroupName Loopcap` |
+| `m_loopcapVsnd` | [CSoundContainerReference](../schemas/soundsystem_voicecontainers.md#csoundcontainerreference) | `MPropertyFriendlyName Loopcap Vsnd (Loop)` `MPropertyGroupName Loopcap` |
+| `m_volume` | float32 | `MPropertyFriendlyName Volume` |
+| `m_fadeOut` | float32 | `MPropertyFriendlyName Fade Out (sec)` |
+| `m_mode` | [EVsndTriggerMode](../schemas/!GlobalTypes.md#evsndtriggermode) | `MPropertyFriendlyName Mode` |

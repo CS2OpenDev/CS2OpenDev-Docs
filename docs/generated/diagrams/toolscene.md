@@ -14,9 +14,8 @@ Class relationships (inheritance and composition) for the `toolscene` module.
 ```mermaid
 classDiagram
     CLightRigLight <|-- CLightRigPointLight
-    CLightRigLight <|-- CLightRigSunLight
     CLightRigLight <|-- CLightRigSpotLight
-    CToolSceneLightRig *-- LightRigType_t
+    CLightRigLight <|-- CLightRigSunLight
     CToolSceneLightRig *-- CLightRigSunLight
     CToolSceneLightRig *-- CLightRigPointLight
     CToolSceneLightRig *-- CLightRigSpotLight

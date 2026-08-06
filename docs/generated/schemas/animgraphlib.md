@@ -12,23 +12,9 @@ nav_exclude: true
 | Name | Kind | Bases | Fields |
 |------|------|-------|--------|
 | [AimCameraOpFixedSettings_t](#aimcameraopfixedsettings_t) | class |  | 7 |
-| [AimMatrixBlendMode](#aimmatrixblendmode) | enum |  | 4 |
 | [AimMatrixOpFixedSettings_t](#aimmatrixopfixedsettings_t) | class |  | 13 |
-| [AnimNodeNetworkMode](#animnodenetworkmode) | enum |  | 2 |
-| [AnimParamButton_t](#animparambutton_t) | enum |  | 13 |
-| [AnimParamNetworkSetting](#animparamnetworksetting) | enum |  | 3 |
-| [AnimParamType_t](#animparamtype_t) | enum |  | 9 |
-| [AnimParamVectorType_t](#animparamvectortype_t) | enum |  | 5 |
-| [AnimScriptType](#animscripttype) | enum |  | 3 |
-| [AnimValueSource](#animvaluesource) | enum |  | 37 |
-| [AnimVectorSource](#animvectorsource) | enum |  | 14 |
-| [BinaryNodeChildOption](#binarynodechildoption) | enum |  | 2 |
-| [BinaryNodeTiming](#binarynodetiming) | enum |  | 3 |
-| [Blend2DMode](#blend2dmode) | enum |  | 2 |
 | [BlendItem_t](#blenditem_t) | class |  | 6 |
-| [BlendKeyType](#blendkeytype) | enum |  | 4 |
 | [BoneDemoCaptureSettings_t](#bonedemocapturesettings_t) | class |  | 7 |
-| [BoneMaskBlendSpace](#bonemaskblendspace) | enum |  | 4 |
 | [CActionComponentUpdater](#cactioncomponentupdater) | class | CAnimComponentUpdater | 1 |
 | [CAddUpdateNode](#caddupdatenode) | class | CBinaryUpdateNode | 5 |
 | [CAimCameraUpdateNode](#caimcameraupdatenode) | class | CUnaryUpdateNode | 8 |
@@ -62,7 +48,6 @@ nav_exclude: true
 | [CAnimationGraphVisualizerLine](#canimationgraphvisualizerline) | class | CAnimationGraphVisualizerPrimitiveBase | 3 |
 | [CAnimationGraphVisualizerPie](#canimationgraphvisualizerpie) | class | CAnimationGraphVisualizerPrimitiveBase | 4 |
 | [CAnimationGraphVisualizerPrimitiveBase](#canimationgraphvisualizerprimitivebase) | class |  | 3 |
-| [CAnimationGraphVisualizerPrimitiveType](#canimationgraphvisualizerprimitivetype) | enum |  | 5 |
 | [CAnimationGraphVisualizerSphere](#canimationgraphvisualizersphere) | class | CAnimationGraphVisualizerPrimitiveBase | 3 |
 | [CAnimationGraphVisualizerText](#canimationgraphvisualizertext) | class | CAnimationGraphVisualizerPrimitiveBase | 3 |
 | [CAnimationLayer](#canimationlayer) | class |  | 11 |
@@ -223,51 +208,26 @@ nav_exclude: true
 | [CWayPointHelperUpdateNode](#cwaypointhelperupdatenode) | class | CUnaryUpdateNode | 5 |
 | [CZeroPoseUpdateNode](#czeroposeupdatenode) | class | CLeafUpdateNode | 0 |
 | [ChainToSolveData_t](#chaintosolvedata_t) | class |  | 6 |
-| [ChoiceBlendMethod](#choiceblendmethod) | enum |  | 2 |
-| [ChoiceChangeMethod](#choicechangemethod) | enum |  | 3 |
-| [ChoiceMethod](#choicemethod) | enum |  | 4 |
 | [ConfigIndex](#configindex) | class |  | 2 |
 | [DampedPathMotorInstanceData_t](#dampedpathmotorinstancedata_t) | class |  | 3 |
-| [DampingSpeedFunction](#dampingspeedfunction) | enum |  | 4 |
-| [EDemoBoneSelectionMode](#edemoboneselectionmode) | enum |  | 2 |
-| [EIKEndEffectorRotationFixUpMode](#eikendeffectorrotationfixupmode) | enum |  | 5 |
-| [FacingMode](#facingmode) | enum |  | 5 |
-| [FieldNetworkOption](#fieldnetworkoption) | enum |  | 3 |
 | [FollowAttachmentSettings_t](#followattachmentsettings_t) | class |  | 5 |
 | [FollowTargetOpFixedSettings_t](#followtargetopfixedsettings_t) | class |  | 5 |
-| [FootFallTagFoot_t](#footfalltagfoot_t) | enum |  | 8 |
 | [FootFixedData_t](#footfixeddata_t) | class |  | 11 |
 | [FootFixedSettings](#footfixedsettings) | class |  | 10 |
 | [FootLockPoseOpFixedSettings](#footlockposeopfixedsettings) | class |  | 18 |
-| [FootLockSubVisualization](#footlocksubvisualization) | enum |  | 2 |
 | [FootPinningPoseOpFixedData_t](#footpinningposeopfixeddata_t) | class |  | 7 |
-| [FootPinningTimingSource](#footpinningtimingsource) | enum |  | 3 |
 | [FootStepTrigger](#footsteptrigger) | class |  | 3 |
-| [FootstepJumpPhase_t](#footstepjumpphase_t) | enum |  | 4 |
-| [FootstepLandedFootSoundType_t](#footsteplandedfootsoundtype_t) | enum |  | 3 |
-| [HandshakeTagState_t](#handshaketagstate_t) | enum |  | 3 |
-| [HandshakeTagType_t](#handshaketagtype_t) | enum |  | 4 |
 | [HitReactFixedSettings_t](#hitreactfixedsettings_t) | class |  | 17 |
 | [IAnimationGraphInstance](#ianimationgraphinstance) | class |  | 0 |
 | [IKBoneNameAndIndex_t](#ikbonenameandindex_t) | class |  | 1 |
-| [IKChannelMode](#ikchannelmode) | enum |  | 4 |
 | [IKDemoCaptureSettings_t](#ikdemocapturesettings_t) | class |  | 5 |
 | [IKSolverSettings_t](#iksolversettings_t) | class |  | 3 |
-| [IKSolverType](#iksolvertype) | enum |  | 6 |
-| [IKTargetCoordinateSystem](#iktargetcoordinatesystem) | enum |  | 3 |
 | [IKTargetSettings_t](#iktargetsettings_t) | class |  | 5 |
-| [IKTargetSource](#iktargetsource) | enum |  | 3 |
-| [IkEndEffectorType](#ikendeffectortype) | enum |  | 2 |
-| [IkTargetType](#iktargettype) | enum |  | 4 |
 | [JiggleBoneSettingsList_t](#jigglebonesettingslist_t) | class |  | 1 |
 | [JiggleBoneSettings_t](#jigglebonesettings_t) | class |  | 7 |
-| [JiggleBoneSimSpace](#jigglebonesimspace) | enum |  | 3 |
-| [JumpCorrectionMethod](#jumpcorrectionmethod) | enum |  | 2 |
-| [LinearRootMotionBlendMode_t](#linearrootmotionblendmode_t) | enum |  | 3 |
 | [LookAtBone_t](#lookatbone_t) | class |  | 2 |
 | [LookAtOpFixedSettings_t](#lookatopfixedsettings_t) | class |  | 11 |
 | [LookData](#lookdata) | class |  | 1 |
-| [MatterialAttributeTagType_t](#matterialattributetagtype_t) | enum |  | 2 |
 | [MotionBlendItem](#motionblenditem) | class |  | 2 |
 | [MotionDBIndex](#motiondbindex) | class |  | 1 |
 | [MotionIndex](#motionindex) | class |  | 2 |
@@ -275,39 +235,24 @@ nav_exclude: true
 | [MotionSelection](#motionselection) | class |  | 5 |
 | [MovementData](#movementdata) | class |  | 18 |
 | [NetVarConfigIndex](#netvarconfigindex) | class |  | 1 |
-| [OrientationWarpMode_t](#orientationwarpmode_t) | enum |  | 3 |
-| [OrientationWarpRootMotionSource_t](#orientationwarprootmotionsource_t) | enum |  | 3 |
-| [OrientationWarpTargetOffsetMode_t](#orientationwarptargetoffsetmode_t) | enum |  | 4 |
 | [PairedSequenceData](#pairedsequencedata) | class |  | 1 |
 | [PairedSequence_t](#pairedsequence_t) | class |  | 3 |
 | [ParamSpanSample_t](#paramspansample_t) | class |  | 2 |
 | [ParamSpan_t](#paramspan_t) | class |  | 5 |
 | [PerTickSettings_t](#perticksettings_t) | class |  | 12 |
 | [PlayerInputMotorInstanceData_t](#playerinputmotorinstancedata_t) | class |  | 3 |
-| [PoseType_t](#posetype_t) | enum |  | 3 |
-| [RagdollPoseControl](#ragdollposecontrol) | enum |  | 1 |
-| [ResetCycleOption](#resetcycleoption) | enum |  | 5 |
 | [SampleCode](#samplecode) | class |  | 1 |
 | [ScriptInfo_t](#scriptinfo_t) | class |  | 5 |
 | [SelectorInstanceData_t](#selectorinstancedata_t) | class |  | 4 |
-| [SelectorTagBehavior_t](#selectortagbehavior_t) | enum |  | 3 |
 | [SequenceData](#sequencedata) | class |  | 2 |
 | [SlopeData](#slopedata) | class |  | 1 |
-| [SolveIKChainAnimNodeDebugSetting](#solveikchainanimnodedebugsetting) | enum |  | 7 |
 | [SolveIKChainPoseOpFixedSettings_t](#solveikchainposeopfixedsettings_t) | class |  | 1 |
 | [StanceInfo_t](#stanceinfo_t) | class |  | 2 |
-| [StanceOverrideMode](#stanceoverridemode) | enum |  | 2 |
-| [StateActionBehavior](#stateactionbehavior) | enum |  | 5 |
-| [StepPhase](#stepphase) | enum |  | 2 |
 | [TagSpan_t](#tagspan_t) | class |  | 3 |
-| [TargetSelectorAngleMode_t](#targetselectoranglemode_t) | enum |  | 2 |
+| [TagStatus](#tagstatus) | class |  | 2 |
 | [TargetSelectorInstanceData_t](#targetselectorinstancedata_t) | class |  | 2 |
-| [TargetWarpAngleMode_t](#targetwarpanglemode_t) | enum |  | 2 |
-| [TargetWarpCorrectionMethod](#targetwarpcorrectionmethod) | enum |  | 2 |
-| [TargetWarpTimingMethod](#targetwarptimingmethod) | enum |  | 2 |
 | [TraceSettings_t](#tracesettings_t) | class |  | 2 |
 | [TwoBoneIKSettings_t](#twoboneiksettings_t) | class |  | 15 |
-| [VelocityMetricMode](#velocitymetricmode) | enum |  | 3 |
 | [WeightList](#weightlist) | class |  | 2 |
 
 ---
@@ -336,18 +281,7 @@ nav_exclude: true
 | `m_nClavicleLeftJointIndex` | int32 |  |
 | `m_nClavicleRightJointIndex` | int32 |  |
 | `m_nDepenetrationJointIndex` | int32 |  |
-| `m_propJoints` | CUtlVector<int32> |  |
-
-### AimMatrixBlendMode
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `AimMatrixBlendMode_None` | 0 | None |
-| `AimMatrixBlendMode_Additive` | 1 | Additive |
-| `AimMatrixBlendMode_ModelSpaceAdditive` | 2 | Model-Space Additive |
-| `AimMatrixBlendMode_BoneMask` | 3 | Bone Mask |
+| `m_propJoints` | CUtlVector< int32 > |  |
 
 ### AimMatrixOpFixedSettings_t
 
@@ -491,7 +425,7 @@ classDiagram
 | `m_attachment` | [CAnimAttachment](../schemas/modellib.md#canimattachment) |  |
 | `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) |  |
 | `m_poseCacheHandles` | [CPoseHandle](../schemas/animgraphlib.md#cposehandle)[10] |  |
-| `m_eBlendMode` | [AimMatrixBlendMode](../schemas/animgraphlib.md#aimmatrixblendmode) |  |
+| `m_eBlendMode` | [AimMatrixBlendMode](../schemas/!GlobalTypes.md#aimmatrixblendmode) |  |
 | `m_flMaxYawAngle` | float32 |  |
 | `m_flMaxPitchAngle` | float32 |  |
 | `m_nSequenceMaxFrame` | int32 |  |
@@ -501,176 +435,6 @@ classDiagram
 | `m_flBiasAndClampYawOffset` | float32 |  |
 | `m_flBiasAndClampPitchOffset` | float32 |  |
 | `m_biasAndClampBlendCurve` | [CBlendCurve](../schemas/animgraphlib.md#cblendcurve) |  |
-
-### AnimNodeNetworkMode
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `ServerAuthoritative` | 0 | Server Authoritative |
-| `ClientSimulate` | 1 | Client Simulate |
-
-### AnimParamButton_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `ANIMPARAM_BUTTON_NONE` | 0 | None |
-| `ANIMPARAM_BUTTON_DPAD_UP` | 1 | Dpad Up |
-| `ANIMPARAM_BUTTON_DPAD_RIGHT` | 2 | Dpad Right |
-| `ANIMPARAM_BUTTON_DPAD_DOWN` | 3 | Dpad Down |
-| `ANIMPARAM_BUTTON_DPAD_LEFT` | 4 | Dpad Left |
-| `ANIMPARAM_BUTTON_A` | 5 | A |
-| `ANIMPARAM_BUTTON_B` | 6 | B |
-| `ANIMPARAM_BUTTON_X` | 7 | X |
-| `ANIMPARAM_BUTTON_Y` | 8 | Y |
-| `ANIMPARAM_BUTTON_LEFT_SHOULDER` | 9 | Left Shoulder |
-| `ANIMPARAM_BUTTON_RIGHT_SHOULDER` | 10 | Right Shoulder |
-| `ANIMPARAM_BUTTON_LTRIGGER` | 11 | Left Trigger |
-| `ANIMPARAM_BUTTON_RTRIGGER` | 12 | Right Trigger |
-
-### AnimParamNetworkSetting
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Auto` | 0 | Auto |
-| `AlwaysNetwork` | 1 | Always Network |
-| `NeverNetwork` | 2 | Never Network |
-
-### AnimParamType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `ANIMPARAM_UNKNOWN` | 0 |  |
-| `ANIMPARAM_BOOL` | 1 |  |
-| `ANIMPARAM_ENUM` | 2 |  |
-| `ANIMPARAM_INT` | 3 |  |
-| `ANIMPARAM_FLOAT` | 4 |  |
-| `ANIMPARAM_VECTOR` | 5 |  |
-| `ANIMPARAM_QUATERNION` | 6 |  |
-| `ANIMPARAM_GLOBALSYMBOL` | 7 |  |
-| `ANIMPARAM_COUNT` | 8 |  |
-
-### AnimParamVectorType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `ANIMPARAM_VECTOR_TYPE_NONE` | 0 | None Specified |
-| `ANIMPARAM_VECTOR_TYPE_POSITION_WS` | 1 | World Space Position |
-| `ANIMPARAM_VECTOR_TYPE_POSITION_LS` | 2 | Model Space Position |
-| `ANIMPARAM_VECTOR_TYPE_DIRECTION_WS` | 3 | World Space Direction |
-| `ANIMPARAM_VECTOR_TYPE_DIRECTION_LS` | 4 | Model Space Direction |
-
-### AnimScriptType
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `ANIMSCRIPT_TYPE_INVALID` | -1 |  |
-| `ANIMSCRIPT_FUSE_GENERAL` | 0 |  |
-| `ANIMSCRIPT_FUSE_STATEMACHINE` | 1 |  |
-
-### AnimValueSource
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `MoveHeading` | 0 | Move Heading |
-| `MoveSpeed` | 1 | Move Speed |
-| `ForwardSpeed` | 2 | Forward Speed |
-| `StrafeSpeed` | 3 | Strafe Speed |
-| `FacingHeading` | 4 | Facing Heading |
-| `LookHeading` | 5 | Look Heading |
-| `LookHeadingNormalized` | 6 | Look Heading Normalized |
-| `LookPitch` | 7 | Look Pitch |
-| `LookDistance` | 8 | Look Distance |
-| `Parameter` | 9 | Parameter |
-| `WayPointHeading` | 10 | Waypoint Heading |
-| `WayPointDistance` | 11 | Waypoint Distance |
-| `BoundaryRadius` | 12 | Boundary Radius |
-| `TargetMoveHeading` | 13 | Target Move Heading |
-| `TargetMoveSpeed` | 14 | Target Move Speed |
-| `AccelerationHeading` | 15 | Acceleration Heading |
-| `AccelerationSpeed` | 16 | Acceleration Speed |
-| `SlopeHeading` | 17 | Slope Heading |
-| `SlopeAngle` | 18 | Slope Angle |
-| `SlopePitch` | 19 | Slope Pitch |
-| `SlopeYaw` | 20 | Slope Yaw |
-| `GoalDistance` | 21 | Goal Distance |
-| `AccelerationLeftRight` | 22 | Acceleration Left-Right |
-| `AccelerationFrontBack` | 23 | Acceleration Forward-Back |
-| `RootMotionSpeed` | 24 | Root Motion Speed |
-| `RootMotionTurnSpeed` | 25 | Root Motion Turn Speed |
-| `MoveHeadingRelativeToLookHeading` | 26 | Move Heading Relative to Look Heading |
-| `MaxMoveSpeed` | 27 | Max Move Speed |
-| `FingerCurl_Thumb` | 28 | Finger Curl - Thumb |
-| `FingerCurl_Index` | 29 | Finger Curl - Index |
-| `FingerCurl_Middle` | 30 | Finger Curl - Middle |
-| `FingerCurl_Ring` | 31 | Finger Curl - Ring |
-| `FingerCurl_Pinky` | 32 | Finger Curl - Pinky |
-| `FingerSplay_Thumb_Index` | 33 | Finger Splay - Thumb:Index |
-| `FingerSplay_Index_Middle` | 34 | Finger Splay - Index:Middle |
-| `FingerSplay_Middle_Ring` | 35 | Finger Splay - Middle:Ring |
-| `FingerSplay_Ring_Pinky` | 36 | Finger Splay - Ring:Pinky |
-
-### AnimVectorSource
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `MoveDirection` | 0 | Move Direction |
-| `FacingPosition` | 1 | Facing Position |
-| `LookDirection` | 2 | Look Direction |
-| `VectorParameter` | 3 | Parameter |
-| `WayPointDirection` | 4 | Waypoint Direction |
-| `Acceleration` | 5 | Acceleration |
-| `SlopeNormal` | 6 | Slope Normal |
-| `SlopeNormal_WorldSpace` | 7 | Slope Normal World Space |
-| `LookTarget` | 8 | Look Target |
-| `LookTarget_WorldSpace` | 9 | Look Target World Space |
-| `WayPointPosition` | 10 | Waypoint Position |
-| `GoalPosition` | 11 | Goal Position |
-| `RootMotionVelocity` | 12 | Root Motion Velocity |
-| `ManualTarget_WorldSpace` | 13 | Manual Target World Space |
-
-### BinaryNodeChildOption
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Child1` | 0 | Child 1 |
-| `Child2` | 1 | Child 2 |
-
-### BinaryNodeTiming
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `UseChild1` | 0 | Use Child1 |
-| `UseChild2` | 1 | Use Child2 |
-| `SyncChildren` | 2 | Synchronize Children |
-
-### Blend2DMode
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Blend2DMode_General` | 0 | General |
-| `Blend2DMode_Directional` | 1 | Directional |
 
 ### BlendItem_t
 
@@ -705,23 +469,12 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_tags` | CUtlVector<[TagSpan_t](../schemas/animgraphlib.md#tagspan_t)> |  |
+| `m_tags` | CUtlVector< [TagSpan_t](../schemas/animgraphlib.md#tagspan_t) > |  |
 | `m_pChild` | [CAnimUpdateNodeRef](../schemas/animgraphlib.md#canimupdatenoderef) |  |
 | `m_hSequence` | [HSequence](../schemas/animationsystem.md#hsequence) |  |
 | `m_vPos` | Vector2D |  |
 | `m_flDuration` | float32 |  |
 | `m_bUseCustomDuration` | bool |  |
-
-### BlendKeyType
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `BlendKey_UserValue` | 0 | User Defined Values |
-| `BlendKey_Velocity` | 1 | Velocity |
-| `BlendKey_Distance` | 2 | Distance |
-| `BlendKey_RemainingDistance` | 3 | Remaining Distance |
 
 ### BoneDemoCaptureSettings_t
 
@@ -739,24 +492,13 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_boneName` | CUtlString | `MPropertyFriendlyName "Bone"` `MPropertyAttributeChoiceName "Bone"` |
+| `m_boneName` | CUtlString | `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName Bone` |
 | `m_flErrorSplineRotationMax` | float32 | `MPropertySuppressField` |
 | `m_flErrorSplineTranslationMax` | float32 | `MPropertySuppressField` |
 | `m_flErrorSplineScaleMax` | float32 | `MPropertySuppressField` |
 | `m_flErrorQuantizationRotationMax` | float32 | `MPropertySuppressField` |
 | `m_flErrorQuantizationTranslationMax` | float32 | `MPropertySuppressField` |
 | `m_flErrorQuantizationScaleMax` | float32 | `MPropertySuppressField` |
-
-### BoneMaskBlendSpace
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `BlendSpace_Parent` | 0 | Parent Space |
-| `BlendSpace_Model` | 1 | Model Space |
-| `BlendSpace_Model_RotationOnly` | 2 | Model Space, Rotation Only |
-| `BlendSpace_Model_TranslationOnly` | 3 | Model Space, Translation Only |
 
 ### CActionComponentUpdater
 
@@ -788,7 +530,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_actions` | CUtlVector<CSmartPtr<[CAnimActionUpdater](../schemas/animgraphlib.md#canimactionupdater)>> |  |
+| `m_actions` | CUtlVector< CSmartPtr< [CAnimActionUpdater](../schemas/animgraphlib.md#canimactionupdater) > > |  |
 
 ### CAddUpdateNode
 
@@ -870,7 +612,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_footMotionTiming` | [BinaryNodeChildOption](../schemas/animgraphlib.md#binarynodechildoption) |  |
+| `m_footMotionTiming` | [BinaryNodeChildOption](../schemas/!GlobalTypes.md#binarynodechildoption) |  |
 | `m_bApplyToFootMotion` | bool |  |
 | `m_bApplyChannelsSeparately` | bool |  |
 | `m_bUseModelSpace` | bool |  |
@@ -1202,7 +944,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_opFixedSettings` | [AimMatrixOpFixedSettings_t](../schemas/animgraphlib.md#aimmatrixopfixedsettings_t) |  |
-| `m_target` | [AnimVectorSource](../schemas/animgraphlib.md#animvectorsource) |  |
+| `m_target` | [AnimVectorSource](../schemas/!GlobalTypes.md#animvectorsource) |  |
 | `m_paramIndex` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
 | `m_hSequence` | [HSequence](../schemas/animationsystem.md#hsequence) |  |
 | `m_bResetChild` | bool |  |
@@ -1212,41 +954,41 @@ classDiagram
 
 **Derived by:** [CEmitTagActionUpdater](animgraphlib.md#cemittagactionupdater), [CExpressionActionUpdater](animgraphlib.md#cexpressionactionupdater), [CSetParameterActionUpdater](animgraphlib.md#csetparameteractionupdater), [CToggleComponentActionUpdater](animgraphlib.md#ctogglecomponentactionupdater)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CAnimActionUpdater <|-- CToggleComponentActionUpdater
-    CAnimActionUpdater <|-- CSetParameterActionUpdater
     CAnimActionUpdater <|-- CEmitTagActionUpdater
     CAnimActionUpdater <|-- CExpressionActionUpdater
+    CAnimActionUpdater <|-- CSetParameterActionUpdater
+    CAnimActionUpdater <|-- CToggleComponentActionUpdater
 ```
 
 ### CAnimComponentUpdater
 
 **Derived by:** [CActionComponentUpdater](animgraphlib.md#cactioncomponentupdater), [CAnimScriptComponentUpdater](animgraphlib.md#canimscriptcomponentupdater), [CCPPScriptComponentUpdater](animgraphlib.md#ccppscriptcomponentupdater), [CDampedValueComponentUpdater](animgraphlib.md#cdampedvaluecomponentupdater), [CDemoSettingsComponentUpdater](animgraphlib.md#cdemosettingscomponentupdater), [CLODComponentUpdater](animgraphlib.md#clodcomponentupdater), [CLookComponentUpdater](animgraphlib.md#clookcomponentupdater), [CMovementComponentUpdater](animgraphlib.md#cmovementcomponentupdater), [CPairedSequenceComponentUpdater](animgraphlib.md#cpairedsequencecomponentupdater), [CRagdollComponentUpdater](animgraphlib.md#cragdollcomponentupdater), [CRemapValueComponentUpdater](animgraphlib.md#cremapvaluecomponentupdater), [CSlopeComponentUpdater](animgraphlib.md#cslopecomponentupdater), [CStateMachineComponentUpdater](animgraphlib.md#cstatemachinecomponentupdater)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CAnimComponentUpdater <|-- CCPPScriptComponentUpdater
+    CAnimComponentUpdater <|-- CActionComponentUpdater
     CAnimComponentUpdater <|-- CAnimScriptComponentUpdater
-    CAnimComponentUpdater <|-- CSlopeComponentUpdater
+    CAnimComponentUpdater <|-- CCPPScriptComponentUpdater
+    CAnimComponentUpdater <|-- CDampedValueComponentUpdater
     CAnimComponentUpdater <|-- CDemoSettingsComponentUpdater
+    CAnimComponentUpdater <|-- CLODComponentUpdater
+    CAnimComponentUpdater <|-- CLookComponentUpdater
     CAnimComponentUpdater <|-- CMovementComponentUpdater
     CAnimComponentUpdater <|-- CPairedSequenceComponentUpdater
-    CAnimComponentUpdater <|-- CLODComponentUpdater
-    CAnimComponentUpdater <|-- CStateMachineComponentUpdater
     CAnimComponentUpdater <|-- CRagdollComponentUpdater
-    CAnimComponentUpdater <|-- CDampedValueComponentUpdater
-    CAnimComponentUpdater <|-- CActionComponentUpdater
     CAnimComponentUpdater <|-- CRemapValueComponentUpdater
-    CAnimComponentUpdater <|-- CLookComponentUpdater
+    CAnimComponentUpdater <|-- CSlopeComponentUpdater
+    CAnimComponentUpdater <|-- CStateMachineComponentUpdater
     CAnimComponentUpdater *-- AnimComponentID
     CAnimComponentUpdater *-- AnimNodeNetworkMode
 ```
@@ -1257,7 +999,7 @@ classDiagram
 |------|------|-------------|
 | `m_name` | CUtlString |  |
 | `m_id` | [AnimComponentID](../schemas/modellib.md#animcomponentid) |  |
-| `m_networkMode` | [AnimNodeNetworkMode](../schemas/animgraphlib.md#animnodenetworkmode) |  |
+| `m_networkMode` | [AnimNodeNetworkMode](../schemas/!GlobalTypes.md#animnodenetworkmode) |  |
 | `m_bStartEnabled` | bool |  |
 
 ### CAnimDemoCaptureSettings
@@ -1321,21 +1063,21 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_vecErrorRangeSplineRotation` | Vector2D | `MPropertyFriendlyName "Rotation Error Range"` `MPropertyGroupName "+Spline Settings"` |
-| `m_vecErrorRangeSplineTranslation` | Vector2D | `MPropertyFriendlyName "Translation Error Range"` `MPropertyGroupName "+Spline Settings"` |
-| `m_vecErrorRangeSplineScale` | Vector2D | `MPropertyFriendlyName "Scale Error Range"` `MPropertyGroupName "+Spline Settings"` |
-| `m_flIkRotation_MaxSplineError` | float32 | `MPropertyFriendlyName "Max IK Rotation Error"` `MPropertyGroupName "+Spline Settings"` |
-| `m_flIkTranslation_MaxSplineError` | float32 | `MPropertyFriendlyName "Max IK Translation Error"` `MPropertyGroupName "+Spline Settings"` |
-| `m_vecErrorRangeQuantizationRotation` | Vector2D | `MPropertyFriendlyName "Rotation Error Range"` `MPropertyGroupName "+Quantization Settings"` |
-| `m_vecErrorRangeQuantizationTranslation` | Vector2D | `MPropertyFriendlyName "Translation Error Range"` `MPropertyGroupName "+Quantization Settings"` |
-| `m_vecErrorRangeQuantizationScale` | Vector2D | `MPropertyFriendlyName "Scale Error Range"` `MPropertyGroupName "+Quantization Settings"` |
-| `m_flIkRotation_MaxQuantizationError` | float32 | `MPropertyFriendlyName "Max IK Rotation Error"` `MPropertyGroupName "+Quantization Settings"` |
-| `m_flIkTranslation_MaxQuantizationError` | float32 | `MPropertyFriendlyName "Max IK Translation Error"` `MPropertyGroupName "+Quantization Settings"` |
-| `m_baseSequence` | CUtlString | `MPropertyFriendlyName "Base Sequence"` `MPropertyGroupName "+Base Pose"` `MPropertyAttributeChoiceName "Sequence"` |
-| `m_nBaseSequenceFrame` | int32 | `MPropertyFriendlyName "Base Sequence Frame"` `MPropertyGroupName "+Base Pose"` |
-| `m_boneSelectionMode` | [EDemoBoneSelectionMode](../schemas/animgraphlib.md#edemoboneselectionmode) | `MPropertyFriendlyName "Bone Selection Mode"` `MPropertyGroupName "+Bones"` `MPropertyAutoRebuildOnChange` |
-| `m_bones` | CUtlVector<[BoneDemoCaptureSettings_t](../schemas/animgraphlib.md#bonedemocapturesettings_t)> | `MPropertyFriendlyName "Bones"` `MPropertyGroupName "+Bones"` `MPropertyAttrStateCallback` |
-| `m_ikChains` | CUtlVector<[IKDemoCaptureSettings_t](../schemas/animgraphlib.md#ikdemocapturesettings_t)> | `MPropertyFriendlyName "IK Chains"` |
+| `m_vecErrorRangeSplineRotation` | Vector2D | `MPropertyFriendlyName Rotation Error Range` `MPropertyGroupName +Spline Settings` |
+| `m_vecErrorRangeSplineTranslation` | Vector2D | `MPropertyFriendlyName Translation Error Range` `MPropertyGroupName +Spline Settings` |
+| `m_vecErrorRangeSplineScale` | Vector2D | `MPropertyFriendlyName Scale Error Range` `MPropertyGroupName +Spline Settings` |
+| `m_flIkRotation_MaxSplineError` | float32 | `MPropertyFriendlyName Max IK Rotation Error` `MPropertyGroupName +Spline Settings` |
+| `m_flIkTranslation_MaxSplineError` | float32 | `MPropertyFriendlyName Max IK Translation Error` `MPropertyGroupName +Spline Settings` |
+| `m_vecErrorRangeQuantizationRotation` | Vector2D | `MPropertyFriendlyName Rotation Error Range` `MPropertyGroupName +Quantization Settings` |
+| `m_vecErrorRangeQuantizationTranslation` | Vector2D | `MPropertyFriendlyName Translation Error Range` `MPropertyGroupName +Quantization Settings` |
+| `m_vecErrorRangeQuantizationScale` | Vector2D | `MPropertyFriendlyName Scale Error Range` `MPropertyGroupName +Quantization Settings` |
+| `m_flIkRotation_MaxQuantizationError` | float32 | `MPropertyFriendlyName Max IK Rotation Error` `MPropertyGroupName +Quantization Settings` |
+| `m_flIkTranslation_MaxQuantizationError` | float32 | `MPropertyFriendlyName Max IK Translation Error` `MPropertyGroupName +Quantization Settings` |
+| `m_baseSequence` | CUtlString | `MPropertyAttributeChoiceName Sequence` `MPropertyFriendlyName Base Sequence` `MPropertyGroupName +Base Pose` |
+| `m_nBaseSequenceFrame` | int32 | `MPropertyFriendlyName Base Sequence Frame` `MPropertyGroupName +Base Pose` |
+| `m_boneSelectionMode` | [EDemoBoneSelectionMode](../schemas/!GlobalTypes.md#edemoboneselectionmode) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Bone Selection Mode` `MPropertyGroupName +Bones` |
+| `m_bones` | CUtlVector< [BoneDemoCaptureSettings_t](../schemas/animgraphlib.md#bonedemocapturesettings_t) > | `MPropertyAttrStateCallback` `MPropertyFriendlyName Bones` `MPropertyGroupName +Bones` |
+| `m_ikChains` | CUtlVector< [IKDemoCaptureSettings_t](../schemas/animgraphlib.md#ikdemocapturesettings_t) > | `MPropertyFriendlyName IK Chains` |
 
 ### CAnimGraphDebugReplay
 
@@ -7362,7 +7104,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_animGraphFileName` | CUtlString |  |
-| `m_frameList` | CUtlVector<CSmartPtr<[CAnimReplayFrame](../schemas/animgraphlib.md#canimreplayframe)>> |  |
+| `m_frameList` | CUtlVector< CSmartPtr< [CAnimReplayFrame](../schemas/animgraphlib.md#canimreplayframe) > > |  |
 | `m_startIndex` | int32 |  |
 | `m_writeIndex` | int32 |  |
 | `m_frameCount` | int32 |  |
@@ -7387,7 +7129,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_modelName` | CUtlString |  |
-| `m_pSharedData` | CSmartPtr<[CAnimUpdateSharedData](../schemas/animgraphlib.md#canimupdateshareddata)> |  |
+| `m_pSharedData` | CSmartPtr< [CAnimUpdateSharedData](../schemas/animgraphlib.md#canimupdateshareddata) > |  |
 
 ### CAnimGraphNetworkSettings
 
@@ -7396,7 +7138,7 @@ classDiagram
 **Metadata:** `MGetKV3ClassDefaults {
 	"_class": "CAnimGraphNetworkSettings",
 	"m_bNetworkingEnabled": true
-}`, `MPropertyFriendlyName "Networking"`
+}`, `MPropertyFriendlyName Networking`
 
 **Relationships:**
 
@@ -7409,7 +7151,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_bNetworkingEnabled` | bool | `MPropertyFriendlyName "Enable Networking"` |
+| `m_bNetworkingEnabled` | bool | `MPropertyFriendlyName Enable Networking` |
 
 ### CAnimGraphSettingsGroup
 
@@ -7450,7 +7192,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_settingsGroups` | CUtlVector<CSmartPtr<[CAnimGraphSettingsGroup](../schemas/animgraphlib.md#canimgraphsettingsgroup)>> |  |
+| `m_settingsGroups` | CUtlVector< CSmartPtr< [CAnimGraphSettingsGroup](../schemas/animgraphlib.md#canimgraphsettingsgroup) > > |  |
 
 ### CAnimInputDamping
 
@@ -7459,7 +7201,7 @@ classDiagram
 	"m_speedFunction": "NoDamping",
 	"m_fSpeedScale": 1.000000,
 	"m_fFallingSpeedScale": 1.000000
-}`, `MPropertyFriendlyName "Damping"`
+}`, `MPropertyFriendlyName Damping`
 
 **Relationships:**
 
@@ -7472,22 +7214,22 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_speedFunction` | [DampingSpeedFunction](../schemas/animgraphlib.md#dampingspeedfunction) | `MPropertyFriendlyName "Speed Function"` |
-| `m_fSpeedScale` | float32 | `MPropertyFriendlyName "Speed Scale"` |
-| `m_fFallingSpeedScale` | float32 | `MPropertyFriendlyName "Falling Speed Scale"` |
+| `m_speedFunction` | [DampingSpeedFunction](../schemas/!GlobalTypes.md#dampingspeedfunction) | `MPropertyFriendlyName Speed Function` |
+| `m_fSpeedScale` | float32 | `MPropertyFriendlyName Speed Scale` |
+| `m_fFallingSpeedScale` | float32 | `MPropertyFriendlyName Falling Speed Scale` |
 
 ### CAnimMotorUpdaterBase
 
 **Derived by:** [CPathAnimMotorUpdaterBase](animgraphlib.md#cpathanimmotorupdaterbase), [CPlayerInputAnimMotorUpdater](animgraphlib.md#cplayerinputanimmotorupdater)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CAnimMotorUpdaterBase <|-- CPlayerInputAnimMotorUpdater
     CAnimMotorUpdaterBase <|-- CPathAnimMotorUpdaterBase
+    CAnimMotorUpdaterBase <|-- CPlayerInputAnimMotorUpdater
 ```
 
 **Fields:**
@@ -7571,7 +7313,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_type` | [AnimParamType_t](../schemas/animgraphlib.md#animparamtype_t) |  |
+| `m_type` | [AnimParamType_t](../schemas/!GlobalTypes.md#animparamtype_t) |  |
 | `m_index` | uint8 |  |
 
 ### CAnimParamHandleMap
@@ -7586,20 +7328,20 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_list` | CUtlHashtable<uint16,int16> |  |
+| `m_list` | CUtlHashtable< uint16, int16 > |  |
 
 ### CAnimParameterBase
 
 **Derived by:** [CConcreteAnimParameter](animgraphlib.md#cconcreteanimparameter), [CVirtualAnimParameter](animgraphlib.md#cvirtualanimparameter)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CAnimParameterBase <|-- CVirtualAnimParameter
     CAnimParameterBase <|-- CConcreteAnimParameter
+    CAnimParameterBase <|-- CVirtualAnimParameter
     CAnimParameterBase *-- AnimParamID
 ```
 
@@ -7607,11 +7349,11 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_name` | CGlobalSymbol | `MPropertyFriendlyName "Name"` `MPropertySortPriority 100` |
-| `m_sComment` | CUtlString | `MPropertyFriendlyName "Comment"` `MPropertyAttributeEditor "TextBlock()"` `MPropertySortPriority -100` |
+| `m_name` | CGlobalSymbol | `MPropertyFriendlyName Name` `MPropertySortPriority 100` |
+| `m_sComment` | CUtlString | `MPropertyAttributeEditor TextBlock()` `MPropertyFriendlyName Comment` `MPropertySortPriority -100` |
 | `m_group` | CUtlString | `MPropertyReadOnly` `MPropertySortPriority -90` |
 | `m_id` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyReadOnly` `MPropertySortPriority -90` |
-| `m_componentName` | CUtlString | `MPropertySuppressField` `MPropertyAutoRebuildOnChange` |
+| `m_componentName` | CUtlString | `MPropertyAutoRebuildOnChange` `MPropertySuppressField` |
 | `m_bNetworkingRequested` | bool | `MPropertySuppressField` |
 | `m_bIsReferenced` | bool | `MPropertySuppressField` |
 
@@ -7652,12 +7394,12 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_parameters` | CUtlVector<CSmartPtr<[CAnimParameterBase](../schemas/animgraphlib.md#canimparameterbase)>> |  |
-| `m_idToIndexMap` | CUtlHashtable<[AnimParamID](../schemas/modellib.md#animparamid),int32> |  |
-| `m_nameToIndexMap` | CUtlHashtable<CUtlString,int32> |  |
-| `m_indexToHandle` | CUtlVector<[CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle)> |  |
-| `m_autoResetParams` | CUtlVector<std::pair<[CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle),CAnimVariant>> |  |
-| `m_autoResetMap` | CUtlHashtable<[CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle),int16> |  |
+| `m_parameters` | CUtlVector< CSmartPtr< [CAnimParameterBase](../schemas/animgraphlib.md#canimparameterbase) > > |  |
+| `m_idToIndexMap` | CUtlHashtable< [AnimParamID](../schemas/modellib.md#animparamid), int32 > |  |
+| `m_nameToIndexMap` | CUtlHashtable< CUtlString, int32 > |  |
+| `m_indexToHandle` | CUtlVector< [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) > |  |
+| `m_autoResetParams` | CUtlVector< std::pair< [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle), CAnimVariant > > |  |
+| `m_autoResetMap` | CUtlHashtable< [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle), int16 > |  |
 
 ### CAnimReplayFrame
 
@@ -7696,7 +7438,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_inputDataBlocks` | CUtlVector<CUtlBinaryBlock> |  |
+| `m_inputDataBlocks` | CUtlVector< CUtlBinaryBlock > |  |
 | `m_instanceData` | CUtlBinaryBlock |  |
 | `m_startingLocalToWorldTransform` | CTransform |  |
 | `m_localToWorldTransform` | CTransform |  |
@@ -7755,7 +7497,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_scriptInfo` | CUtlVector<[ScriptInfo_t](../schemas/animgraphlib.md#scriptinfo_t)> |  |
+| `m_scriptInfo` | CUtlVector< [ScriptInfo_t](../schemas/animgraphlib.md#scriptinfo_t) > |  |
 
 ### CAnimStateMachineUpdater
 
@@ -7782,8 +7524,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_states` | CUtlVector<[CStateUpdateData](../schemas/animgraphlib.md#cstateupdatedata)> |  |
-| `m_transitions` | CUtlVector<[CTransitionUpdateData](../schemas/animgraphlib.md#ctransitionupdatedata)> |  |
+| `m_states` | CUtlVector< [CStateUpdateData](../schemas/animgraphlib.md#cstateupdatedata) > |  |
+| `m_transitions` | CUtlVector< [CTransitionUpdateData](../schemas/animgraphlib.md#ctransitionupdatedata) > |  |
 | `m_startStateIndex` | int32 |  |
 
 ### CAnimTagBase
@@ -7806,19 +7548,19 @@ classDiagram
 
 ```mermaid
 classDiagram
-    CAnimTagBase <|-- CMaterialAttributeAnimTag
-    CAnimTagBase <|-- CBodyGroupAnimTag
-    CAnimTagBase <|-- CRagdollAnimTag
-    CAnimTagBase <|-- CStringAnimTag
-    CAnimTagBase <|-- CWarpSectionAnimTagBase
     CAnimTagBase <|-- CAudioAnimTag
+    CAnimTagBase <|-- CBodyGroupAnimTag
     CAnimTagBase <|-- CClothSettingsAnimTag
-    CAnimTagBase <|-- CHandshakeAnimTagBase
-    CAnimTagBase <|-- CFootstepLandedAnimTag
-    CAnimTagBase <|-- CParticleAnimTag
     CAnimTagBase <|-- CFootFallAnimTag
-    CAnimTagBase <|-- CTaskStatusAnimTag
+    CAnimTagBase <|-- CFootstepLandedAnimTag
+    CAnimTagBase <|-- CHandshakeAnimTagBase
+    CAnimTagBase <|-- CMaterialAttributeAnimTag
+    CAnimTagBase <|-- CParticleAnimTag
+    CAnimTagBase <|-- CRagdollAnimTag
     CAnimTagBase <|-- CSequenceFinishedAnimTag
+    CAnimTagBase <|-- CStringAnimTag
+    CAnimTagBase <|-- CTaskStatusAnimTag
+    CAnimTagBase <|-- CWarpSectionAnimTagBase
     CAnimTagBase *-- AnimTagID
 ```
 
@@ -7826,8 +7568,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_name` | CGlobalSymbol | `MPropertyFriendlyName "Name"` `MPropertySortPriority 100` |
-| `m_sComment` | CUtlString | `MPropertyFriendlyName "Comment"` `MPropertyAttributeEditor "TextBlock()"` `MPropertySortPriority -100` |
+| `m_name` | CGlobalSymbol | `MPropertyFriendlyName Name` `MPropertySortPriority 100` |
+| `m_sComment` | CUtlString | `MPropertyAttributeEditor TextBlock()` `MPropertyFriendlyName Comment` `MPropertySortPriority -100` |
 | `m_group` | CGlobalSymbol | `MPropertySuppressField` |
 | `m_tagID` | [AnimTagID](../schemas/modellib.md#animtagid) | `MPropertySuppressField` |
 | `m_bIsReferenced` | bool | `MPropertySuppressField` |
@@ -7852,27 +7594,27 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_tags` | CUtlVector<CSmartPtr<[CAnimTagBase](../schemas/animgraphlib.md#canimtagbase)>> |  |
+| `m_tags` | CUtlVector< CSmartPtr< [CAnimTagBase](../schemas/animgraphlib.md#canimtagbase) > > |  |
 
 ### CAnimUpdateNodeBase
 
 **Derived by:** [CBinaryUpdateNode](animgraphlib.md#cbinaryupdatenode), [CBlend2DUpdateNode](animgraphlib.md#cblend2dupdatenode), [CBlendUpdateNode](animgraphlib.md#cblendupdatenode), [CChoiceUpdateNode](animgraphlib.md#cchoiceupdatenode), [CLeafUpdateNode](animgraphlib.md#cleafupdatenode), [CSelectorUpdateNode](animgraphlib.md#cselectorupdatenode), [CStateMachineUpdateNode](animgraphlib.md#cstatemachineupdatenode), [CTargetSelectorUpdateNode](animgraphlib.md#ctargetselectorupdatenode), [CUnaryUpdateNode](animgraphlib.md#cunaryupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
     CAnimUpdateNodeBase <|-- CBinaryUpdateNode
-    CAnimUpdateNodeBase <|-- CLeafUpdateNode
-    CAnimUpdateNodeBase <|-- CStateMachineUpdateNode
-    CAnimUpdateNodeBase <|-- CBlendUpdateNode
-    CAnimUpdateNodeBase <|-- CSelectorUpdateNode
-    CAnimUpdateNodeBase <|-- CUnaryUpdateNode
-    CAnimUpdateNodeBase <|-- CTargetSelectorUpdateNode
     CAnimUpdateNodeBase <|-- CBlend2DUpdateNode
+    CAnimUpdateNodeBase <|-- CBlendUpdateNode
     CAnimUpdateNodeBase <|-- CChoiceUpdateNode
+    CAnimUpdateNodeBase <|-- CLeafUpdateNode
+    CAnimUpdateNodeBase <|-- CSelectorUpdateNode
+    CAnimUpdateNodeBase <|-- CStateMachineUpdateNode
+    CAnimUpdateNodeBase <|-- CTargetSelectorUpdateNode
+    CAnimUpdateNodeBase <|-- CUnaryUpdateNode
     CAnimUpdateNodeBase *-- CAnimNodePath
     CAnimUpdateNodeBase *-- AnimNodeNetworkMode
 ```
@@ -7882,7 +7624,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_nodePath` | [CAnimNodePath](../schemas/animgraphlib.md#canimnodepath) |  |
-| `m_networkMode` | [AnimNodeNetworkMode](../schemas/animgraphlib.md#animnodenetworkmode) |  |
+| `m_networkMode` | [AnimNodeNetworkMode](../schemas/!GlobalTypes.md#animnodenetworkmode) |  |
 | `m_name` | CUtlString |  |
 
 ### CAnimUpdateNodeRef
@@ -7987,20 +7729,20 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_nodes` | CUtlVector<CSmartPtr<[CAnimUpdateNodeBase](../schemas/animgraphlib.md#canimupdatenodebase)>> |  |
-| `m_nodeIndexMap` | CUtlHashtable<[CAnimNodePath](../schemas/animgraphlib.md#canimnodepath),int32> |  |
-| `m_components` | CUtlVector<CSmartPtr<[CAnimComponentUpdater](../schemas/animgraphlib.md#canimcomponentupdater)>> |  |
-| `m_pParamListUpdater` | CSmartPtr<[CAnimParameterManagerUpdater](../schemas/animgraphlib.md#canimparametermanagerupdater)> |  |
-| `m_pTagManagerUpdater` | CSmartPtr<[CAnimTagManagerUpdater](../schemas/animgraphlib.md#canimtagmanagerupdater)> |  |
-| `m_scriptManager` | CSmartPtr<[CAnimScriptManager](../schemas/animgraphlib.md#canimscriptmanager)> |  |
+| `m_nodes` | CUtlVector< CSmartPtr< [CAnimUpdateNodeBase](../schemas/animgraphlib.md#canimupdatenodebase) > > |  |
+| `m_nodeIndexMap` | CUtlHashtable< [CAnimNodePath](../schemas/animgraphlib.md#canimnodepath), int32 > |  |
+| `m_components` | CUtlVector< CSmartPtr< [CAnimComponentUpdater](../schemas/animgraphlib.md#canimcomponentupdater) > > |  |
+| `m_pParamListUpdater` | CSmartPtr< [CAnimParameterManagerUpdater](../schemas/animgraphlib.md#canimparametermanagerupdater) > |  |
+| `m_pTagManagerUpdater` | CSmartPtr< [CAnimTagManagerUpdater](../schemas/animgraphlib.md#canimtagmanagerupdater) > |  |
+| `m_scriptManager` | CSmartPtr< [CAnimScriptManager](../schemas/animgraphlib.md#canimscriptmanager) > |  |
 | `m_settings` | [CAnimGraphSettingsManager](../schemas/animgraphlib.md#canimgraphsettingsmanager) |  |
-| `m_pStaticPoseCache` | CSmartPtr<[CStaticPoseCacheBuilder](../schemas/animgraphlib.md#cstaticposecachebuilder)> |  |
-| `m_pSkeleton` | CSmartPtr<[CAnimSkeleton](../schemas/modellib.md#canimskeleton)> |  |
+| `m_pStaticPoseCache` | CSmartPtr< [CStaticPoseCacheBuilder](../schemas/animgraphlib.md#cstaticposecachebuilder) > |  |
+| `m_pSkeleton` | CSmartPtr< [CAnimSkeleton](../schemas/modellib.md#canimskeleton) > |  |
 | `m_rootNodePath` | [CAnimNodePath](../schemas/animgraphlib.md#canimnodepath) |  |
 
 ### CAnimationGraphInstance
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Fields:**
 
@@ -8297,11 +8039,11 @@ classDiagram
 
 ```mermaid
 classDiagram
-    CAnimationGraphVisualizerPrimitiveBase <|-- CAnimationGraphVisualizerPie
     CAnimationGraphVisualizerPrimitiveBase <|-- CAnimationGraphVisualizerAxis
-    CAnimationGraphVisualizerPrimitiveBase <|-- CAnimationGraphVisualizerText
-    CAnimationGraphVisualizerPrimitiveBase <|-- CAnimationGraphVisualizerSphere
     CAnimationGraphVisualizerPrimitiveBase <|-- CAnimationGraphVisualizerLine
+    CAnimationGraphVisualizerPrimitiveBase <|-- CAnimationGraphVisualizerPie
+    CAnimationGraphVisualizerPrimitiveBase <|-- CAnimationGraphVisualizerSphere
+    CAnimationGraphVisualizerPrimitiveBase <|-- CAnimationGraphVisualizerText
     CAnimationGraphVisualizerPrimitiveBase *-- CAnimationGraphVisualizerPrimitiveType
     CAnimationGraphVisualizerPrimitiveBase *-- AnimNodeID
 ```
@@ -8310,21 +8052,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_Type` | [CAnimationGraphVisualizerPrimitiveType](../schemas/animgraphlib.md#canimationgraphvisualizerprimitivetype) |  |
+| `m_Type` | [CAnimationGraphVisualizerPrimitiveType](../schemas/!GlobalTypes.md#canimationgraphvisualizerprimitivetype) |  |
 | `m_OwningAnimNodePaths` | [AnimNodeID](../schemas/modellib.md#animnodeid)[11] |  |
 | `m_nOwningAnimNodePathCount` | int32 |  |
-
-### CAnimationGraphVisualizerPrimitiveType
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Text` | 0 |  |
-| `ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Sphere` | 1 |  |
-| `ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Line` | 2 |  |
-| `ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Pie` | 3 |  |
-| `ANIMATIONGRAPHVISUALIZERPRIMITIVETYPE_Axis` | 4 |  |
 
 ### CAnimationGraphVisualizerSphere
 
@@ -8496,11 +8226,11 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_hSequence` | CAnimNetVar<int32> |  |
+| `m_hSequence` | CAnimNetVar< int32 > |  |
 | `m_flPrevCycle` | float32 |  |
-| `m_flCycle` | CAnimNetVar<float32> |  |
-| `m_flWeight` | CAnimNetVar<float32> |  |
-| `m_nOrder` | CAnimNetVar<int32> |  |
+| `m_flCycle` | CAnimNetVar< float32 > |  |
+| `m_flWeight` | CAnimNetVar< float32 > |  |
+| `m_nOrder` | CAnimNetVar< int32 > |  |
 | `m_bLooping` | bool |  |
 | `m_nFlags` | int32 |  |
 | `m_bSequenceFinished` | bool |  |
@@ -8529,7 +8259,7 @@ classDiagram
 	"m_bStopWhenGraphEnds": true,
 	"m_bPlayOnServer": true,
 	"m_bPlayOnClient": true
-}`, `MPropertyFriendlyName "Audio Tag"`
+}`, `MPropertyFriendlyName Audio Tag`
 
 **Relationships:**
 
@@ -8542,13 +8272,13 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_clipName` | CUtlString | `MPropertyFriendlyName "Sound Event"` `MPropertyAttributeEditor "SoundPicker()"` |
-| `m_attachmentName` | CUtlString | `MPropertyFriendlyName "Attachment"` `MPropertyAttributeChoiceName "Attachment"` |
-| `m_flVolume` | float32 | `MPropertyFriendlyName "Volume"` `MPropertyAttributeRange "0 1"` |
-| `m_bStopWhenTagEnds` | bool | `MPropertyFriendlyName "Stop on Tag End"` |
-| `m_bStopWhenGraphEnds` | bool | `MPropertyFriendlyName "Stop When Graph Destroyed"` |
-| `m_bPlayOnServer` | bool | `MPropertyFriendlyName "Play on Server"` |
-| `m_bPlayOnClient` | bool | `MPropertyFriendlyName "Play on Client"` |
+| `m_clipName` | CUtlString | `MPropertyAttributeEditor SoundPicker()` `MPropertyFriendlyName Sound Event` |
+| `m_attachmentName` | CUtlString | `MPropertyAttributeChoiceName Attachment` `MPropertyFriendlyName Attachment` |
+| `m_flVolume` | float32 | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName Volume` |
+| `m_bStopWhenTagEnds` | bool | `MPropertyFriendlyName Stop on Tag End` |
+| `m_bStopWhenGraphEnds` | bool | `MPropertyFriendlyName Stop When Graph Destroyed` |
+| `m_bPlayOnServer` | bool | `MPropertyFriendlyName Play on Server` |
+| `m_bPlayOnClient` | bool | `MPropertyFriendlyName Play on Client` |
 
 ### CBinaryUpdateNode
 
@@ -8556,16 +8286,16 @@ classDiagram
 
 **Derived by:** [CAddUpdateNode](animgraphlib.md#caddupdatenode), [CBoneMaskUpdateNode](animgraphlib.md#cbonemaskupdatenode), [CSubtractUpdateNode](animgraphlib.md#csubtractupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
     CAnimUpdateNodeBase <|-- CBinaryUpdateNode
+    CBinaryUpdateNode <|-- CAddUpdateNode
     CBinaryUpdateNode <|-- CBoneMaskUpdateNode
     CBinaryUpdateNode <|-- CSubtractUpdateNode
-    CBinaryUpdateNode <|-- CAddUpdateNode
     CBinaryUpdateNode *-- CAnimUpdateNodeRef
     CBinaryUpdateNode *-- BinaryNodeTiming
 ```
@@ -8576,7 +8306,7 @@ classDiagram
 |------|------|-------------|
 | `m_pChild1` | [CAnimUpdateNodeRef](../schemas/animgraphlib.md#canimupdatenoderef) |  |
 | `m_pChild2` | [CAnimUpdateNodeRef](../schemas/animgraphlib.md#canimupdatenoderef) |  |
-| `m_timingBehavior` | [BinaryNodeTiming](../schemas/animgraphlib.md#binarynodetiming) |  |
+| `m_timingBehavior` | [BinaryNodeTiming](../schemas/!GlobalTypes.md#binarynodetiming) |  |
 | `m_flTimingBlend` | float32 |  |
 | `m_bResetChild1` | bool |  |
 | `m_bResetChild2` | bool |  |
@@ -8767,16 +8497,16 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_items` | CUtlVector<[BlendItem_t](../schemas/animgraphlib.md#blenditem_t)> |  |
-| `m_tags` | CUtlVector<[TagSpan_t](../schemas/animgraphlib.md#tagspan_t)> |  |
+| `m_items` | CUtlVector< [BlendItem_t](../schemas/animgraphlib.md#blenditem_t) > |  |
+| `m_tags` | CUtlVector< [TagSpan_t](../schemas/animgraphlib.md#tagspan_t) > |  |
 | `m_paramSpans` | [CParamSpanUpdater](../schemas/animgraphlib.md#cparamspanupdater) |  |
-| `m_nodeItemIndices` | CUtlVector<int32> |  |
+| `m_nodeItemIndices` | CUtlVector< int32 > |  |
 | `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) |  |
-| `m_blendSourceX` | [AnimValueSource](../schemas/animgraphlib.md#animvaluesource) |  |
+| `m_blendSourceX` | [AnimValueSource](../schemas/!GlobalTypes.md#animvaluesource) |  |
 | `m_paramX` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
-| `m_blendSourceY` | [AnimValueSource](../schemas/animgraphlib.md#animvaluesource) |  |
+| `m_blendSourceY` | [AnimValueSource](../schemas/!GlobalTypes.md#animvaluesource) |  |
 | `m_paramY` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
-| `m_eBlendMode` | [Blend2DMode](../schemas/animgraphlib.md#blend2dmode) |  |
+| `m_eBlendMode` | [Blend2DMode](../schemas/!GlobalTypes.md#blend2dmode) |  |
 | `m_playbackSpeed` | float32 |  |
 | `m_bLoop` | bool |  |
 | `m_bLockBlendOnReset` | bool |  |
@@ -8817,9 +8547,9 @@ classDiagram
 | `m_flCycle` | float32 |  |
 | `m_flCycleZeroTime` | float32 |  |
 | `m_flPlaybackRate` | float32 |  |
-| `m_flBlendValue` | CAnimNetVar<float32> |  |
+| `m_flBlendValue` | CAnimNetVar< float32 > |  |
 | `m_flDuration` | float32 |  |
-| `m_resetCount` | CAnimNetVar<uint8> |  |
+| `m_resetCount` | CAnimNetVar< uint8 > |  |
 
 ### CBlendUpdateNode
 
@@ -8917,14 +8647,14 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_children` | CUtlVector<[CAnimUpdateNodeRef](../schemas/animgraphlib.md#canimupdatenoderef)> |  |
-| `m_sortedOrder` | CUtlVector<uint8> |  |
-| `m_targetValues` | CUtlVector<float32> |  |
-| `m_blendValueSource` | [AnimValueSource](../schemas/animgraphlib.md#animvaluesource) |  |
-| `m_eLinearRootMotionBlendMode` | [LinearRootMotionBlendMode_t](../schemas/animgraphlib.md#linearrootmotionblendmode_t) |  |
+| `m_children` | CUtlVector< [CAnimUpdateNodeRef](../schemas/animgraphlib.md#canimupdatenoderef) > |  |
+| `m_sortedOrder` | CUtlVector< uint8 > |  |
+| `m_targetValues` | CUtlVector< float32 > |  |
+| `m_blendValueSource` | [AnimValueSource](../schemas/!GlobalTypes.md#animvaluesource) |  |
+| `m_eLinearRootMotionBlendMode` | [LinearRootMotionBlendMode_t](../schemas/!GlobalTypes.md#linearrootmotionblendmode_t) |  |
 | `m_paramIndex` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
 | `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) |  |
-| `m_blendKeyType` | [BlendKeyType](../schemas/animgraphlib.md#blendkeytype) |  |
+| `m_blendKeyType` | [BlendKeyType](../schemas/!GlobalTypes.md#blendkeytype) |  |
 | `m_bLockBlendOnReset` | bool |  |
 | `m_bSyncCycles` | bool |  |
 | `m_bLoop` | bool |  |
@@ -8935,7 +8665,7 @@ classDiagram
 
 **Inherits from:** [CMotionMetricEvaluator](animgraphlib.md#cmotionmetricevaluator)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
@@ -8962,7 +8692,7 @@ classDiagram
 	"m_bodyGroupSettings":
 	[
 	]
-}`, `MPropertyFriendlyName "Body Group Tag"`
+}`, `MPropertyFriendlyName Body Group Tag`
 
 **Relationships:**
 
@@ -8976,22 +8706,22 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_nPriority` | int32 | `MPropertyFriendlyName "Priority"` |
-| `m_bodyGroupSettings` | CUtlVector<[CBodyGroupSetting](../schemas/animgraphlib.md#cbodygroupsetting)> | `MPropertyFriendlyName "Body Group Settings"` |
+| `m_nPriority` | int32 | `MPropertyFriendlyName Priority` |
+| `m_bodyGroupSettings` | CUtlVector< [CBodyGroupSetting](../schemas/animgraphlib.md#cbodygroupsetting) > | `MPropertyFriendlyName Body Group Settings` |
 
 ### CBodyGroupSetting
 
 **Metadata:** `MGetKV3ClassDefaults {
 	"m_BodyGroupName": "",
 	"m_nBodyGroupOption": 0
-}`, `MPropertyFriendlyName "Body Group Setting"`, `MPropertyElementNameFn`
+}`, `MPropertyElementNameFn`, `MPropertyFriendlyName Body Group Setting`
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_BodyGroupName` | CUtlString | `MPropertyFriendlyName "BodyGroup"` `MPropertyAttributeChoiceName "BodyGroup"` `MPropertyAutoRebuildOnChange` |
-| `m_nBodyGroupOption` | int32 | `MPropertyFriendlyName "BodyGroup Option"` `MPropertyAttributeChoiceName "BodyGroupOption"` |
+| `m_BodyGroupName` | CUtlString | `MPropertyAttributeChoiceName BodyGroup` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName BodyGroup` |
+| `m_nBodyGroupOption` | int32 | `MPropertyAttributeChoiceName BodyGroupOption` `MPropertyFriendlyName BodyGroup Option` |
 
 ### CBoneMaskUpdateNode
 
@@ -9084,10 +8814,10 @@ classDiagram
 |------|------|-------------|
 | `m_nWeightListIndex` | int32 |  |
 | `m_flRootMotionBlend` | float32 |  |
-| `m_blendSpace` | [BoneMaskBlendSpace](../schemas/animgraphlib.md#bonemaskblendspace) |  |
-| `m_footMotionTiming` | [BinaryNodeChildOption](../schemas/animgraphlib.md#binarynodechildoption) |  |
+| `m_blendSpace` | [BoneMaskBlendSpace](../schemas/!GlobalTypes.md#bonemaskblendspace) |  |
+| `m_footMotionTiming` | [BinaryNodeChildOption](../schemas/!GlobalTypes.md#binarynodechildoption) |  |
 | `m_bUseBlendScale` | bool |  |
-| `m_blendValueSource` | [AnimValueSource](../schemas/animgraphlib.md#animvaluesource) |  |
+| `m_blendValueSource` | [AnimValueSource](../schemas/!GlobalTypes.md#animvaluesource) |  |
 | `m_hBlendParameter` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
 
 ### CBonePositionMetricEvaluator
@@ -9173,7 +8903,7 @@ classDiagram
 	"m_bGameWritable": true,
 	"m_bGraphWritable": false,
 	"m_bDefaultValue": false
-}`, `MPropertyFriendlyName "Bool Parameter"`
+}`, `MPropertyFriendlyName Bool Parameter`
 
 **Relationships:**
 
@@ -9187,7 +8917,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_bDefaultValue` | bool | `MPropertyFriendlyName "Default Value"` |
+| `m_bDefaultValue` | bool | `MPropertyFriendlyName Default Value` |
 
 ### CCPPScriptComponentUpdater
 
@@ -9218,7 +8948,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_scriptsToRun` | CUtlVector<CGlobalSymbol> | `MPropertyFriendlyName "Scripts"` |
+| `m_scriptsToRun` | CUtlVector< CGlobalSymbol > | `MPropertyFriendlyName Scripts` |
 
 ### CCachedPose
 
@@ -9245,8 +8975,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_transforms` | CUtlVector<CTransform> |  |
-| `m_morphWeights` | CUtlVector<float32> |  |
+| `m_transforms` | CUtlVector< CTransform > |  |
+| `m_morphWeights` | CUtlVector< float32 > |  |
 | `m_hSequence` | [HSequence](../schemas/animationsystem.md#hsequence) |  |
 | `m_flCycle` | float32 |  |
 
@@ -9263,9 +8993,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_currentChoice` | CAnimNetVar<int32> |  |
+| `m_currentChoice` | CAnimNetVar< int32 > |  |
 | `m_previousChoice` | int32 |  |
-| `m_flClipStartTime` | CAnimNetVar<float32> |  |
+| `m_flClipStartTime` | CAnimNetVar< float32 > |  |
 | `m_choicePreviousCycle` | float32 |  |
 
 ### CChoiceUpdateNode
@@ -9349,12 +9079,12 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_children` | CUtlVector<[CAnimUpdateNodeRef](../schemas/animgraphlib.md#canimupdatenoderef)> |  |
-| `m_weights` | CUtlVector<float32> |  |
-| `m_blendTimes` | CUtlVector<float32> |  |
-| `m_choiceMethod` | [ChoiceMethod](../schemas/animgraphlib.md#choicemethod) |  |
-| `m_choiceChangeMethod` | [ChoiceChangeMethod](../schemas/animgraphlib.md#choicechangemethod) |  |
-| `m_blendMethod` | [ChoiceBlendMethod](../schemas/animgraphlib.md#choiceblendmethod) |  |
+| `m_children` | CUtlVector< [CAnimUpdateNodeRef](../schemas/animgraphlib.md#canimupdatenoderef) > |  |
+| `m_weights` | CUtlVector< float32 > |  |
+| `m_blendTimes` | CUtlVector< float32 > |  |
+| `m_choiceMethod` | [ChoiceMethod](../schemas/!GlobalTypes.md#choicemethod) |  |
+| `m_choiceChangeMethod` | [ChoiceChangeMethod](../schemas/!GlobalTypes.md#choicechangemethod) |  |
+| `m_blendMethod` | [ChoiceBlendMethod](../schemas/!GlobalTypes.md#choiceblendmethod) |  |
 | `m_blendTime` | float32 |  |
 | `m_bCrossFade` | bool |  |
 | `m_bResetChosen` | bool |  |
@@ -9617,7 +9347,7 @@ classDiagram
 	"m_flEaseIn": 0.000000,
 	"m_flEaseOut": 0.000000,
 	"m_nVertexSet": ""
-}`, `MPropertyFriendlyName "Cloth Settings Tag"`
+}`, `MPropertyFriendlyName Cloth Settings Tag`
 
 **Relationships:**
 
@@ -9630,10 +9360,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_flStiffness` | float32 | `MPropertyFriendlyName "Stiffness"` `MPropertyAttributeRange "0 1"` |
-| `m_flEaseIn` | float32 | `MPropertyFriendlyName "EaseIn"` `MPropertyAttributeRange "0 1"` |
-| `m_flEaseOut` | float32 | `MPropertyFriendlyName "EaseOut"` `MPropertyAttributeRange "0 1"` |
-| `m_nVertexSet` | CUtlString | `MPropertyFriendlyName "VertexSet"` |
+| `m_flStiffness` | float32 | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName Stiffness` |
+| `m_flEaseIn` | float32 | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName EaseIn` |
+| `m_flEaseOut` | float32 | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName EaseOut` |
+| `m_nVertexSet` | CUtlString | `MPropertyFriendlyName VertexSet` |
 
 ### CConcreteAnimParameter
 
@@ -9641,7 +9371,7 @@ classDiagram
 
 **Derived by:** [CBoolAnimParameter](animgraphlib.md#cboolanimparameter), [CEnumAnimParameter](animgraphlib.md#cenumanimparameter), [CFloatAnimParameter](animgraphlib.md#cfloatanimparameter), [CIntAnimParameter](animgraphlib.md#cintanimparameter), [CQuaternionAnimParameter](animgraphlib.md#cquaternionanimparameter), [CSymbolAnimParameter](animgraphlib.md#csymbolanimparameter), [CVectorAnimParameter](animgraphlib.md#cvectoranimparameter)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
@@ -9649,12 +9379,12 @@ classDiagram
 classDiagram
     CAnimParameterBase <|-- CConcreteAnimParameter
     CConcreteAnimParameter <|-- CBoolAnimParameter
-    CConcreteAnimParameter <|-- CFloatAnimParameter
     CConcreteAnimParameter <|-- CEnumAnimParameter
+    CConcreteAnimParameter <|-- CFloatAnimParameter
+    CConcreteAnimParameter <|-- CIntAnimParameter
     CConcreteAnimParameter <|-- CQuaternionAnimParameter
     CConcreteAnimParameter <|-- CSymbolAnimParameter
     CConcreteAnimParameter <|-- CVectorAnimParameter
-    CConcreteAnimParameter <|-- CIntAnimParameter
     CConcreteAnimParameter *-- AnimParamButton_t
     CConcreteAnimParameter *-- AnimParamNetworkSetting
 ```
@@ -9663,12 +9393,12 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_previewButton` | [AnimParamButton_t](../schemas/animgraphlib.md#animparambutton_t) | `MPropertyFriendlyName "Preview Button"` |
-| `m_eNetworkSetting` | [AnimParamNetworkSetting](../schemas/animgraphlib.md#animparamnetworksetting) | `MPropertyFriendlyName "Network"` |
-| `m_bUseMostRecentValue` | bool | `MPropertyFriendlyName "Force Latest Value"` |
-| `m_bAutoReset` | bool | `MPropertyFriendlyName "Auto Reset"` |
-| `m_bGameWritable` | bool | `MPropertyFriendlyName "Game Writable"` `MPropertyGroupName "+Permissions"` `MPropertyAttrStateCallback` |
-| `m_bGraphWritable` | bool | `MPropertyFriendlyName "Graph Writable"` `MPropertyGroupName "+Permissions"` `MPropertyAttrStateCallback` |
+| `m_previewButton` | [AnimParamButton_t](../schemas/!GlobalTypes.md#animparambutton_t) | `MPropertyFriendlyName Preview Button` |
+| `m_eNetworkSetting` | [AnimParamNetworkSetting](../schemas/!GlobalTypes.md#animparamnetworksetting) | `MPropertyFriendlyName Network` |
+| `m_bUseMostRecentValue` | bool | `MPropertyFriendlyName Force Latest Value` |
+| `m_bAutoReset` | bool | `MPropertyFriendlyName Auto Reset` |
+| `m_bGameWritable` | bool | `MPropertyAttrStateCallback` `MPropertyFriendlyName Game Writable` `MPropertyGroupName +Permissions` |
+| `m_bGraphWritable` | bool | `MPropertyAttrStateCallback` `MPropertyFriendlyName Graph Writable` `MPropertyGroupName +Permissions` |
 
 ### CCurrentRotationVelocityMetricEvaluator
 
@@ -9727,8 +9457,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_flCycle` | CAnimNetVar<float32> |  |
-| `m_flPrevCycle` | CAnimNetVar<float32> |  |
+| `m_flCycle` | CAnimNetVar< float32 > |  |
+| `m_flPrevCycle` | CAnimNetVar< float32 > |  |
 
 ### CCycleControlClipUpdateNode
 
@@ -9808,10 +9538,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_tags` | CUtlVector<[TagSpan_t](../schemas/animgraphlib.md#tagspan_t)> |  |
+| `m_tags` | CUtlVector< [TagSpan_t](../schemas/animgraphlib.md#tagspan_t) > |  |
 | `m_hSequence` | [HSequence](../schemas/animationsystem.md#hsequence) |  |
 | `m_duration` | float32 |  |
-| `m_valueSource` | [AnimValueSource](../schemas/animgraphlib.md#animvaluesource) |  |
+| `m_valueSource` | [AnimValueSource](../schemas/!GlobalTypes.md#animvaluesource) |  |
 | `m_paramIndex` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
 | `m_bLockWhenWaning` | bool |  |
 
@@ -9890,7 +9620,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_valueSource` | [AnimValueSource](../schemas/animgraphlib.md#animvaluesource) |  |
+| `m_valueSource` | [AnimValueSource](../schemas/!GlobalTypes.md#animvaluesource) |  |
 | `m_paramIndex` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
 | `m_bLockWhenWaning` | bool |  |
 
@@ -9971,7 +9701,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_items` | CUtlVector<[CDampedValueUpdateItem](../schemas/animgraphlib.md#cdampedvalueupdateitem)> |  |
+| `m_items` | CUtlVector< [CDampedValueUpdateItem](../schemas/animgraphlib.md#cdampedvalueupdateitem) > |  |
 
 ### CDampedValueUpdateItem
 
@@ -10177,12 +9907,12 @@ classDiagram
 | `m_weights` | float32[4] |  |
 | `m_sequences` | [SequenceData](../schemas/animgraphlib.md#sequencedata)[4] |  |
 | `m_currentSequenceIndex` | uint32 |  |
-| `m_currentSequenceData` | CAnimNetVar<uint64> |  |
+| `m_currentSequenceData` | CAnimNetVar< uint64 > |  |
 | `m_flFadeInTime` | float32 |  |
 | `m_flFadeOutTime` | float32 |  |
-| `m_flForcedCycle` | CAnimNetVar<float32> |  |
+| `m_flForcedCycle` | CAnimNetVar< float32 > |  |
 | `m_bResetPending` | bool |  |
-| `m_SequenceCycleZeroTime` | CAnimNetVar<float32> |  |
+| `m_SequenceCycleZeroTime` | CAnimNetVar< float32 > |  |
 
 ### CDirectPlaybackTagData
 
@@ -10205,7 +9935,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_sequenceName` | CUtlString |  |
-| `m_tags` | CUtlVector<[TagSpan_t](../schemas/animgraphlib.md#tagspan_t)> |  |
+| `m_tags` | CUtlVector< [TagSpan_t](../schemas/animgraphlib.md#tagspan_t) > |  |
 
 ### CDirectPlaybackUpdateNode
 
@@ -10281,7 +10011,7 @@ classDiagram
 |------|------|-------------|
 | `m_bFinishEarly` | bool |  |
 | `m_bResetOnFinish` | bool |  |
-| `m_allTags` | CUtlVector<[CDirectPlaybackTagData](../schemas/animgraphlib.md#cdirectplaybacktagdata)> |  |
+| `m_allTags` | CUtlVector< [CDirectPlaybackTagData](../schemas/animgraphlib.md#cdirectplaybacktagdata) > |  |
 
 ### CDirectionalBlendInstanceData
 
@@ -10302,10 +10032,10 @@ classDiagram
 | `m_dampedValue` | float32 |  |
 | `m_flCycle` | float32 |  |
 | `m_flPrevCycle` | float32 |  |
-| `m_flPlaybackRate` | CAnimNetVar<float32> |  |
-| `m_flCycleZeroTime` | CAnimNetVar<float32> |  |
-| `m_resetCycleValue` | CAnimNetVar<float32> |  |
-| `m_resetCount` | CAnimNetVar<float32> |  |
+| `m_flPlaybackRate` | CAnimNetVar< float32 > |  |
+| `m_flCycleZeroTime` | CAnimNetVar< float32 > |  |
+| `m_resetCycleValue` | CAnimNetVar< float32 > |  |
+| `m_resetCount` | CAnimNetVar< float32 > |  |
 
 ### CDirectionalBlendUpdateNode
 
@@ -10403,7 +10133,7 @@ classDiagram
 |------|------|-------------|
 | `m_hSequences` | [HSequence](../schemas/animationsystem.md#hsequence)[8] |  |
 | `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) |  |
-| `m_blendValueSource` | [AnimValueSource](../schemas/animgraphlib.md#animvaluesource) |  |
+| `m_blendValueSource` | [AnimValueSource](../schemas/!GlobalTypes.md#animvaluesource) |  |
 | `m_paramIndex` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
 | `m_playbackSpeed` | float32 |  |
 | `m_duration` | float32 |  |
@@ -10534,7 +10264,7 @@ classDiagram
 	"m_vecEnumReferenced":
 	[
 	]
-}`, `MPropertyFriendlyName "Enum Parameter"`
+}`, `MPropertyFriendlyName Enum Parameter`
 
 **Relationships:**
 
@@ -10548,9 +10278,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_defaultValue` | uint8 | `MPropertyFriendlyName "Default Value"` |
-| `m_enumOptions` | CUtlVector<CUtlString> | `MPropertyFriendlyName "Values"` |
-| `m_vecEnumReferenced` | CUtlVector<uint64> | `MPropertySuppressField` |
+| `m_defaultValue` | uint8 | `MPropertyFriendlyName Default Value` |
+| `m_enumOptions` | CUtlVector< CUtlString > | `MPropertyFriendlyName Values` |
+| `m_vecEnumReferenced` | CUtlVector< uint64 > | `MPropertySuppressField` |
 
 ### CExpressionActionUpdater
 
@@ -10585,7 +10315,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_hParam` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
-| `m_eParamType` | [AnimParamType_t](../schemas/animgraphlib.md#animparamtype_t) |  |
+| `m_eParamType` | [AnimParamType_t](../schemas/!GlobalTypes.md#animparamtype_t) |  |
 | `m_hScript` | [AnimScriptHandle](../schemas/modellib.md#animscripthandle) |  |
 
 ### CFloatAnimParameter
@@ -10614,7 +10344,7 @@ classDiagram
 	"m_fMinValue": 0.000000,
 	"m_fMaxValue": 1.000000,
 	"m_bInterpolate": false
-}`, `MPropertyFriendlyName "Float Parameter"`
+}`, `MPropertyFriendlyName Float Parameter`
 
 **Relationships:**
 
@@ -10628,10 +10358,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_fDefaultValue` | float32 | `MPropertyFriendlyName "Default Value"` |
-| `m_fMinValue` | float32 | `MPropertyFriendlyName "Min Value"` |
-| `m_fMaxValue` | float32 | `MPropertyFriendlyName "Max Value"` |
-| `m_bInterpolate` | bool | `MPropertyFriendlyName "Interpolate"` |
+| `m_fDefaultValue` | float32 | `MPropertyFriendlyName Default Value` |
+| `m_fMinValue` | float32 | `MPropertyFriendlyName Min Value` |
+| `m_fMaxValue` | float32 | `MPropertyFriendlyName Max Value` |
+| `m_bInterpolate` | bool | `MPropertyFriendlyName Interpolate` |
 
 ### CFollowAttachmentUpdateNode
 
@@ -10780,10 +10510,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_xLastPredictedTransformsDeltas` | CRelativeArray<CMotionTransform> |  |
+| `m_xLastPredictedTransformsDeltas` | CRelativeArray< CMotionTransform > |  |
 | `m_dampedTurnValue` | float32 |  |
 | `m_flTurnAmount` | float32 |  |
-| `m_flPredictionScale` | CAnimNetVar<float32> |  |
+| `m_flPredictionScale` | CAnimNetVar< float32 > |  |
 | `m_flLastPathTime` | float32 |  |
 
 ### CFollowPathUpdateNode
@@ -10887,7 +10617,7 @@ classDiagram
 | `m_flMaxAngle` | float32 |  |
 | `m_flSpeedScaleBlending` | float32 |  |
 | `m_turnDamping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) |  |
-| `m_facingTarget` | [AnimValueSource](../schemas/animgraphlib.md#animvaluesource) |  |
+| `m_facingTarget` | [AnimValueSource](../schemas/!GlobalTypes.md#animvaluesource) |  |
 | `m_hParam` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
 | `m_flTurnToFaceOffset` | float32 |  |
 | `m_bTurnToFace` | bool |  |
@@ -10994,8 +10724,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_flStartTime` | CAnimNetVar<float32> |  |
-| `m_flDuration` | CAnimNetVar<float32> |  |
+| `m_flStartTime` | CAnimNetVar< float32 > |  |
+| `m_flDuration` | CAnimNetVar< float32 > |  |
 | `m_flStartHeadingWS` | float32 |  |
 
 ### CFootAdjustmentUpdateNode
@@ -11086,7 +10816,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_clips` | CUtlVector<[HSequence](../schemas/animationsystem.md#hsequence)> |  |
+| `m_clips` | CUtlVector< [HSequence](../schemas/animationsystem.md#hsequence) > |  |
 | `m_hBasePoseCacheHandle` | [CPoseHandle](../schemas/animgraphlib.md#cposehandle) |  |
 | `m_facingTarget` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
 | `m_flTurnTimeMin` | float32 |  |
@@ -11126,7 +10856,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_footIndices` | CUtlVector<int32> |  |
+| `m_footIndices` | CUtlVector< int32 > |  |
 
 ### CFootFallAnimTag
 
@@ -11143,7 +10873,7 @@ classDiagram
 	},
 	"m_bIsReferenced": false,
 	"m_foot": "FOOT1"
-}`, `MPropertyFriendlyName "FootFall Tag"`
+}`, `MPropertyFriendlyName FootFall Tag`
 
 **Relationships:**
 
@@ -11157,7 +10887,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_foot` | [FootFallTagFoot_t](../schemas/animgraphlib.md#footfalltagfoot_t) | `MPropertyFriendlyName "Foot"` |
+| `m_foot` | [FootFallTagFoot_t](../schemas/!GlobalTypes.md#footfalltagfoot_t) | `MPropertyFriendlyName Foot` |
 
 ### CFootLockUpdateNode
 
@@ -11291,7 +11021,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_opFixedSettings` | [FootLockPoseOpFixedSettings](../schemas/animgraphlib.md#footlockposeopfixedsettings) |  |
-| `m_footSettings` | CUtlVector<[FootFixedSettings](../schemas/animgraphlib.md#footfixedsettings)> |  |
+| `m_footSettings` | CUtlVector< [FootFixedSettings](../schemas/animgraphlib.md#footfixedsettings) > |  |
 | `m_hipShiftDamping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) |  |
 | `m_rootHeightDamping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) |  |
 | `m_flStrideCurveScale` | float32 |  |
@@ -11398,8 +11128,8 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_poseOpFixedData` | [FootPinningPoseOpFixedData_t](../schemas/animgraphlib.md#footpinningposeopfixeddata_t) |  |
-| `m_eTimingSource` | [FootPinningTimingSource](../schemas/animgraphlib.md#footpinningtimingsource) |  |
-| `m_params` | CUtlVector<[CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle)> |  |
+| `m_eTimingSource` | [FootPinningTimingSource](../schemas/!GlobalTypes.md#footpinningtimingsource) |  |
+| `m_params` | CUtlVector< [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) > |  |
 | `m_bResetChild` | bool |  |
 
 ### CFootPositionMetricEvaluator
@@ -11433,7 +11163,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_footIndices` | CUtlVector<int32> |  |
+| `m_footIndices` | CUtlVector< int32 > |  |
 | `m_bIgnoreSlope` | bool |  |
 
 ### CFootStepTriggerUpdateNode
@@ -11507,7 +11237,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_triggers` | CUtlVector<[FootStepTrigger](../schemas/animgraphlib.md#footsteptrigger)> |  |
+| `m_triggers` | CUtlVector< [FootStepTrigger](../schemas/animgraphlib.md#footsteptrigger) > |  |
 | `m_flTolerance` | float32 |  |
 
 ### CFootstepLandedAnimTag
@@ -11529,7 +11259,7 @@ classDiagram
 	"m_DebugAnimSourceString": "",
 	"m_BoneName": "",
 	"m_footstepJumpPhase": "Unknown"
-}`, `MPropertyFriendlyName "FootstepLanded Tag"`
+}`, `MPropertyFriendlyName FootstepLanded Tag`
 
 **Relationships:**
 
@@ -11544,11 +11274,11 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_FootstepType` | [FootstepLandedFootSoundType_t](../schemas/animgraphlib.md#footsteplandedfootsoundtype_t) | `MPropertyFriendlyName "Footstep Type"` |
-| `m_OverrideSoundName` | CUtlString | `MPropertyFriendlyName "Override Sound"` `MPropertyAttributeChoiceName "Sound"` |
-| `m_DebugAnimSourceString` | CUtlString | `MPropertyFriendlyName "Debug Name"` |
-| `m_BoneName` | CUtlString | `MPropertyFriendlyName "Bone Name"` `MPropertyAttributeChoiceName "Bone"` |
-| `m_footstepJumpPhase` | [FootstepJumpPhase_t](../schemas/animgraphlib.md#footstepjumpphase_t) | `MPropertyFriendlyName "Jump Phase"` |
+| `m_FootstepType` | [FootstepLandedFootSoundType_t](../schemas/!GlobalTypes.md#footsteplandedfootsoundtype_t) | `MPropertyFriendlyName Footstep Type` |
+| `m_OverrideSoundName` | CUtlString | `MPropertyAttributeChoiceName Sound` `MPropertyFriendlyName Override Sound` |
+| `m_DebugAnimSourceString` | CUtlString | `MPropertyFriendlyName Debug Name` |
+| `m_BoneName` | CUtlString | `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName Bone Name` |
+| `m_footstepJumpPhase` | [FootstepJumpPhase_t](../schemas/!GlobalTypes.md#footstepjumpphase_t) | `MPropertyFriendlyName Jump Phase` |
 
 ### CFutureFacingMetricEvaluator
 
@@ -11617,7 +11347,7 @@ classDiagram
 | `m_flDistance` | float32 |  |
 | `m_flStoppingDistance` | float32 |  |
 | `m_flTargetSpeed` | float32 |  |
-| `m_eMode` | [VelocityMetricMode](../schemas/animgraphlib.md#velocitymetricmode) |  |
+| `m_eMode` | [VelocityMetricMode](../schemas/!GlobalTypes.md#velocitymetricmode) |  |
 
 ### CHandshakeAnimTagBase
 
@@ -11643,15 +11373,15 @@ classDiagram
 ```mermaid
 classDiagram
     CAnimTagBase <|-- CHandshakeAnimTagBase
-    CHandshakeAnimTagBase <|-- CTaskHandshakeAnimTag
     CHandshakeAnimTagBase <|-- CMovementHandshakeAnimTag
+    CHandshakeAnimTagBase <|-- CTaskHandshakeAnimTag
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_bIsDisableTag` | bool | `MPropertyFriendlyName "Disables Handshake"` |
+| `m_bIsDisableTag` | bool | `MPropertyFriendlyName Disables Handshake` |
 
 ### CHitReactUpdateNode
 
@@ -11860,7 +11590,7 @@ classDiagram
 	"m_defaultValue": 0,
 	"m_minValue": 0,
 	"m_maxValue": 100
-}`, `MPropertyFriendlyName "Int Parameter"`
+}`, `MPropertyFriendlyName Int Parameter`
 
 **Relationships:**
 
@@ -11874,9 +11604,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_defaultValue` | int32 | `MPropertyFriendlyName "Default Value"` |
-| `m_minValue` | int32 | `MPropertyFriendlyName "Min Value"` |
-| `m_maxValue` | int32 | `MPropertyFriendlyName "Max Value"` |
+| `m_defaultValue` | int32 | `MPropertyFriendlyName Default Value` |
+| `m_minValue` | int32 | `MPropertyFriendlyName Min Value` |
+| `m_maxValue` | int32 | `MPropertyFriendlyName Max Value` |
 
 ### CJiggleBoneUpdateNode
 
@@ -12059,7 +11789,7 @@ classDiagram
 | `m_flOriginalJumpDuration` | float32 |  |
 | `m_flJumpStartCycle` | float32 |  |
 | `m_flJumpEndCycle` | float32 |  |
-| `m_eCorrectionMethod` | [JumpCorrectionMethod](../schemas/animgraphlib.md#jumpcorrectionmethod) |  |
+| `m_eCorrectionMethod` | [JumpCorrectionMethod](../schemas/!GlobalTypes.md#jumpcorrectionmethod) |  |
 | `m_bTranslationAxis` | bool[3] |  |
 | `m_bScaleSpeed` | bool |  |
 
@@ -12098,22 +11828,22 @@ classDiagram
 
 **Derived by:** [CBindPoseUpdateNode](animgraphlib.md#cbindposeupdatenode), [CCycleControlClipUpdateNode](animgraphlib.md#ccyclecontrolclipupdatenode), [CDirectionalBlendUpdateNode](animgraphlib.md#cdirectionalblendupdatenode), [CInputStreamUpdateNode](animgraphlib.md#cinputstreamupdatenode), [CLeanMatrixUpdateNode](animgraphlib.md#cleanmatrixupdatenode), [CMotionGraphUpdateNode](animgraphlib.md#cmotiongraphupdatenode), [CMotionMatchingUpdateNode](animgraphlib.md#cmotionmatchingupdatenode), [CSequenceUpdateNodeBase](animgraphlib.md#csequenceupdatenodebase), [CSingleFrameUpdateNode](animgraphlib.md#csingleframeupdatenode), [CZeroPoseUpdateNode](animgraphlib.md#czeroposeupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
     CAnimUpdateNodeBase <|-- CLeafUpdateNode
-    CLeafUpdateNode <|-- CDirectionalBlendUpdateNode
-    CLeafUpdateNode <|-- CCycleControlClipUpdateNode
-    CLeafUpdateNode <|-- CMotionMatchingUpdateNode
     CLeafUpdateNode <|-- CBindPoseUpdateNode
+    CLeafUpdateNode <|-- CCycleControlClipUpdateNode
+    CLeafUpdateNode <|-- CDirectionalBlendUpdateNode
+    CLeafUpdateNode <|-- CInputStreamUpdateNode
     CLeafUpdateNode <|-- CLeanMatrixUpdateNode
+    CLeafUpdateNode <|-- CMotionGraphUpdateNode
+    CLeafUpdateNode <|-- CMotionMatchingUpdateNode
     CLeafUpdateNode <|-- CSequenceUpdateNodeBase
     CLeafUpdateNode <|-- CSingleFrameUpdateNode
-    CLeafUpdateNode <|-- CMotionGraphUpdateNode
-    CLeafUpdateNode <|-- CInputStreamUpdateNode
     CLeafUpdateNode <|-- CZeroPoseUpdateNode
 ```
 
@@ -12286,7 +12016,7 @@ classDiagram
 | `m_frameCorners` | int32[3][3] |  |
 | `m_poses` | [CPoseHandle](../schemas/animgraphlib.md#cposehandle)[9] |  |
 | `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) |  |
-| `m_blendSource` | [AnimVectorSource](../schemas/animgraphlib.md#animvectorsource) |  |
+| `m_blendSource` | [AnimVectorSource](../schemas/!GlobalTypes.md#animvectorsource) |  |
 | `m_paramIndex` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
 | `m_verticalAxis` | Vector |  |
 | `m_horizontalAxis` | Vector |  |
@@ -12453,7 +12183,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_opFixedSettings` | [LookAtOpFixedSettings_t](../schemas/animgraphlib.md#lookatopfixedsettings_t) |  |
-| `m_target` | [AnimVectorSource](../schemas/animgraphlib.md#animvectorsource) |  |
+| `m_target` | [AnimVectorSource](../schemas/!GlobalTypes.md#animvectorsource) |  |
 | `m_paramIndex` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
 | `m_weightParamIndex` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
 | `m_bResetChild` | bool |  |
@@ -12560,7 +12290,7 @@ classDiagram
 		255,
 		255
 	]
-}`, `MPropertyFriendlyName "Material Attribute Tag"`
+}`, `MPropertyFriendlyName Material Attribute Tag`
 
 **Relationships:**
 
@@ -12574,10 +12304,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_AttributeName` | CUtlString | `MPropertyFriendlyName "Attribute Name"` |
-| `m_AttributeType` | [MatterialAttributeTagType_t](../schemas/animgraphlib.md#matterialattributetagtype_t) | `MPropertyFriendlyName "Attribute Type"` `MPropertyAutoRebuildOnChange` |
-| `m_flValue` | float32 | `MPropertyFriendlyName "Value"` `MPropertyAttrStateCallback` |
-| `m_Color` | Color | `MPropertyFriendlyName "Color"` `MPropertyAttrStateCallback` |
+| `m_AttributeName` | CUtlString | `MPropertyFriendlyName Attribute Name` |
+| `m_AttributeType` | [MatterialAttributeTagType_t](../schemas/!GlobalTypes.md#matterialattributetagtype_t) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Attribute Type` |
+| `m_flValue` | float32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Value` |
+| `m_Color` | Color | `MPropertyAttrStateCallback` `MPropertyFriendlyName Color` |
 
 ### CMotionDataSet
 
@@ -12599,7 +12329,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_groups` | CUtlVector<[CMotionGraphGroup](../schemas/animgraphlib.md#cmotiongraphgroup)> |  |
+| `m_groups` | CUtlVector< [CMotionGraphGroup](../schemas/animgraphlib.md#cmotiongraphgroup) > |  |
 | `m_nDimensionCount` | int32 |  |
 
 ### CMotionGraph
@@ -12639,8 +12369,8 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_paramSpans` | [CParamSpanUpdater](../schemas/animgraphlib.md#cparamspanupdater) |  |
-| `m_tags` | CUtlVector<[TagSpan_t](../schemas/animgraphlib.md#tagspan_t)> |  |
-| `m_pRootNode` | CSmartPtr<[CMotionNode](../schemas/animgraphlib.md#cmotionnode)> |  |
+| `m_tags` | CUtlVector< [TagSpan_t](../schemas/animgraphlib.md#tagspan_t) > |  |
+| `m_pRootNode` | CSmartPtr< [CMotionNode](../schemas/animgraphlib.md#cmotionnode) > |  |
 | `m_nParameterCount` | int32 |  |
 | `m_nConfigStartIndex` | int32 |  |
 | `m_nConfigCount` | int32 |  |
@@ -12752,9 +12482,9 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_searchDB` | [CMotionSearchDB](../schemas/animgraphlib.md#cmotionsearchdb) |  |
-| `m_motionGraphs` | CUtlVector<CSmartPtr<[CMotionGraph](../schemas/animgraphlib.md#cmotiongraph)>> |  |
-| `m_motionGraphConfigs` | CUtlVector<[CMotionGraphConfig](../schemas/animgraphlib.md#cmotiongraphconfig)> |  |
-| `m_sampleToConfig` | CUtlVector<int32> |  |
+| `m_motionGraphs` | CUtlVector< CSmartPtr< [CMotionGraph](../schemas/animgraphlib.md#cmotiongraph) > > |  |
+| `m_motionGraphConfigs` | CUtlVector< [CMotionGraphConfig](../schemas/animgraphlib.md#cmotiongraphconfig) > |  |
+| `m_sampleToConfig` | CUtlVector< int32 > |  |
 | `m_hIsActiveScript` | [AnimScriptHandle](../schemas/modellib.md#animscripthandle) |  |
 
 ### CMotionGraphUpdateNode
@@ -12821,7 +12551,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_pMotionGraph` | CSmartPtr<[CMotionGraph](../schemas/animgraphlib.md#cmotiongraph)> |  |
+| `m_pMotionGraph` | CSmartPtr< [CMotionGraph](../schemas/animgraphlib.md#cmotiongraph) > |  |
 
 ### CMotionMatchingUpdateNode
 
@@ -12933,8 +12663,8 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_dataSet` | [CMotionDataSet](../schemas/animgraphlib.md#cmotiondataset) |  |
-| `m_metrics` | CUtlVector<CSmartPtr<[CMotionMetricEvaluator](../schemas/animgraphlib.md#cmotionmetricevaluator)>> |  |
-| `m_weights` | CUtlVector<float32> |  |
+| `m_metrics` | CUtlVector< CSmartPtr< [CMotionMetricEvaluator](../schemas/animgraphlib.md#cmotionmetricevaluator) > > |  |
+| `m_weights` | CUtlVector< float32 > |  |
 | `m_bSearchEveryTick` | bool |  |
 | `m_flSearchInterval` | float32 |  |
 | `m_bSearchWhenClipEnds` | bool |  |
@@ -12960,33 +12690,33 @@ classDiagram
 
 **Derived by:** [CBlockSelectionMetricEvaluator](animgraphlib.md#cblockselectionmetricevaluator), [CBonePositionMetricEvaluator](animgraphlib.md#cbonepositionmetricevaluator), [CBoneVelocityMetricEvaluator](animgraphlib.md#cbonevelocitymetricevaluator), [CCurrentRotationVelocityMetricEvaluator](animgraphlib.md#ccurrentrotationvelocitymetricevaluator), [CCurrentVelocityMetricEvaluator](animgraphlib.md#ccurrentvelocitymetricevaluator), [CDistanceRemainingMetricEvaluator](animgraphlib.md#cdistanceremainingmetricevaluator), [CFootCycleMetricEvaluator](animgraphlib.md#cfootcyclemetricevaluator), [CFootPositionMetricEvaluator](animgraphlib.md#cfootpositionmetricevaluator), [CFutureFacingMetricEvaluator](animgraphlib.md#cfuturefacingmetricevaluator), [CFutureVelocityMetricEvaluator](animgraphlib.md#cfuturevelocitymetricevaluator), [CPathMetricEvaluator](animgraphlib.md#cpathmetricevaluator), [CStepsRemainingMetricEvaluator](animgraphlib.md#cstepsremainingmetricevaluator), [CTimeRemainingMetricEvaluator](animgraphlib.md#ctimeremainingmetricevaluator)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CMotionMetricEvaluator <|-- CCurrentRotationVelocityMetricEvaluator
-    CMotionMetricEvaluator <|-- CDistanceRemainingMetricEvaluator
+    CMotionMetricEvaluator <|-- CBlockSelectionMetricEvaluator
     CMotionMetricEvaluator <|-- CBonePositionMetricEvaluator
-    CMotionMetricEvaluator <|-- CFutureVelocityMetricEvaluator
-    CMotionMetricEvaluator <|-- CFutureFacingMetricEvaluator
-    CMotionMetricEvaluator <|-- CCurrentVelocityMetricEvaluator
-    CMotionMetricEvaluator <|-- CFootPositionMetricEvaluator
     CMotionMetricEvaluator <|-- CBoneVelocityMetricEvaluator
-    CMotionMetricEvaluator <|-- CPathMetricEvaluator
+    CMotionMetricEvaluator <|-- CCurrentRotationVelocityMetricEvaluator
+    CMotionMetricEvaluator <|-- CCurrentVelocityMetricEvaluator
+    CMotionMetricEvaluator <|-- CDistanceRemainingMetricEvaluator
     CMotionMetricEvaluator <|-- CFootCycleMetricEvaluator
+    CMotionMetricEvaluator <|-- CFootPositionMetricEvaluator
+    CMotionMetricEvaluator <|-- CFutureFacingMetricEvaluator
+    CMotionMetricEvaluator <|-- CFutureVelocityMetricEvaluator
+    CMotionMetricEvaluator <|-- CPathMetricEvaluator
     CMotionMetricEvaluator <|-- CStepsRemainingMetricEvaluator
     CMotionMetricEvaluator <|-- CTimeRemainingMetricEvaluator
-    CMotionMetricEvaluator <|-- CBlockSelectionMetricEvaluator
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_means` | CUtlVector<float32> |  |
-| `m_standardDeviations` | CUtlVector<float32> |  |
+| `m_means` | CUtlVector< float32 > |  |
+| `m_standardDeviations` | CUtlVector< float32 > |  |
 | `m_flWeight` | float32 |  |
 | `m_nDimensionStartIndex` | int32 |  |
 
@@ -12994,7 +12724,7 @@ classDiagram
 
 **Derived by:** [CMotionNodeBlend1D](animgraphlib.md#cmotionnodeblend1d), [CMotionNodeSequence](animgraphlib.md#cmotionnodesequence)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
@@ -13041,7 +12771,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_blendItems` | CUtlVector<[MotionBlendItem](../schemas/animgraphlib.md#motionblenditem)> |  |
+| `m_blendItems` | CUtlVector< [MotionBlendItem](../schemas/animgraphlib.md#motionblenditem) > |  |
 | `m_nParamIndex` | int32 |  |
 
 ### CMotionNodeSequence
@@ -13075,7 +12805,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_tags` | CUtlVector<[TagSpan_t](../schemas/animgraphlib.md#tagspan_t)> |  |
+| `m_tags` | CUtlVector< [TagSpan_t](../schemas/animgraphlib.md#tagspan_t) > |  |
 | `m_hSequence` | [HSequence](../schemas/animationsystem.md#hsequence) |  |
 | `m_flPlaybackSpeed` | float32 |  |
 
@@ -13132,7 +12862,7 @@ classDiagram
 |------|------|-------------|
 | `m_rootNode` | [CMotionSearchNode](../schemas/animgraphlib.md#cmotionsearchnode) |  |
 | `m_residualQuantizer` | [CProductQuantizer](../schemas/animgraphlib.md#cproductquantizer) |  |
-| `m_codeIndices` | CUtlVector<[MotionDBIndex](../schemas/animgraphlib.md#motiondbindex)> |  |
+| `m_codeIndices` | CUtlVector< [MotionDBIndex](../schemas/animgraphlib.md#motiondbindex) > |  |
 
 ### CMotionSearchNode
 
@@ -13171,11 +12901,11 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_children` | CUtlVector<[CMotionSearchNode](../schemas/animgraphlib.md#cmotionsearchnode)*> |  |
+| `m_children` | CUtlVector< [CMotionSearchNode](../schemas/animgraphlib.md#cmotionsearchnode)* > |  |
 | `m_quantizer` | [CVectorQuantizer](../schemas/animgraphlib.md#cvectorquantizer) |  |
-| `m_sampleCodes` | CUtlVector<CUtlVector<[SampleCode](../schemas/animgraphlib.md#samplecode)>> |  |
-| `m_sampleIndices` | CUtlVector<CUtlVector<int32>> |  |
-| `m_selectableSamples` | CUtlVector<int32> |  |
+| `m_sampleCodes` | CUtlVector< CUtlVector< [SampleCode](../schemas/animgraphlib.md#samplecode) > > |  |
+| `m_sampleIndices` | CUtlVector< CUtlVector< int32 > > |  |
+| `m_selectableSamples` | CUtlVector< int32 > |  |
 
 ### CMovementComponentUpdater
 
@@ -13360,7 +13090,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_motors` | CUtlVector<CSmartPtr<[CAnimMotorUpdaterBase](../schemas/animgraphlib.md#canimmotorupdaterbase)>> |  |
+| `m_motors` | CUtlVector< CSmartPtr< [CAnimMotorUpdaterBase](../schemas/animgraphlib.md#canimmotorupdaterbase) > > |  |
 | `m_facingDamping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) |  |
 | `m_nDefaultMotorIndex` | int32 |  |
 | `m_flDefaultRunSpeed` | float32 |  |
@@ -13384,7 +13114,7 @@ classDiagram
 	},
 	"m_bIsReferenced": false,
 	"m_bIsDisableTag": false
-}`, `MPropertyFriendlyName "Movement Handshake Tag"`
+}`, `MPropertyFriendlyName Movement Handshake Tag`
 
 **Relationships:**
 
@@ -13523,7 +13253,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) |  |
-| `m_facingTarget` | [AnimValueSource](../schemas/animgraphlib.md#animvaluesource) |  |
+| `m_facingTarget` | [AnimValueSource](../schemas/!GlobalTypes.md#animvaluesource) |  |
 | `m_hMoveVecParam` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
 | `m_hMoveHeadingParam` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
 | `m_hTurnToFaceParam` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
@@ -13551,9 +13281,9 @@ classDiagram
 |------|------|-------------|
 | `m_flCycleUnclamped` | float32 |  |
 | `m_flPrevCycleUnclamped` | float32 |  |
-| `m_flCyclesPerSecond` | CAnimNetVar<float32> |  |
-| `m_flCycleZeroTime` | CAnimNetVar<float32> |  |
-| `m_resetCount` | CAnimNetVar<uint8> |  |
+| `m_flCyclesPerSecond` | CAnimNetVar< float32 > |  |
+| `m_flCycleZeroTime` | CAnimNetVar< float32 > |  |
+| `m_resetCount` | CAnimNetVar< uint8 > |  |
 
 ### COrientationWarpUpdateNode
 
@@ -13662,18 +13392,18 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_eMode` | [OrientationWarpMode_t](../schemas/animgraphlib.md#orientationwarpmode_t) |  |
+| `m_eMode` | [OrientationWarpMode_t](../schemas/!GlobalTypes.md#orientationwarpmode_t) |  |
 | `m_hTargetParam` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
 | `m_hTargetPositionParam` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
 | `m_hFallbackTargetPositionParam` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
-| `m_eTargetOffsetMode` | [OrientationWarpTargetOffsetMode_t](../schemas/animgraphlib.md#orientationwarptargetoffsetmode_t) |  |
+| `m_eTargetOffsetMode` | [OrientationWarpTargetOffsetMode_t](../schemas/!GlobalTypes.md#orientationwarptargetoffsetmode_t) |  |
 | `m_flTargetOffset` | float32 |  |
 | `m_hTargetOffsetParam` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
 | `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) |  |
-| `m_eRootMotionSource` | [OrientationWarpRootMotionSource_t](../schemas/animgraphlib.md#orientationwarprootmotionsource_t) |  |
+| `m_eRootMotionSource` | [OrientationWarpRootMotionSource_t](../schemas/!GlobalTypes.md#orientationwarprootmotionsource_t) |  |
 | `m_flMaxRootMotionScale` | float32 |  |
 | `m_bEnablePreferredRotationDirection` | bool |  |
-| `m_ePreferredRotationDirection` | [AnimValueSource](../schemas/animgraphlib.md#animvaluesource) |  |
+| `m_ePreferredRotationDirection` | [AnimValueSource](../schemas/!GlobalTypes.md#animvaluesource) |  |
 | `m_flPreferredRotationThreshold` | float32 |  |
 
 ### CPairedSequenceComponentUpdater
@@ -13785,7 +13515,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_spans` | CUtlVector<[ParamSpan_t](../schemas/animgraphlib.md#paramspan_t)> |  |
+| `m_spans` | CUtlVector< [ParamSpan_t](../schemas/animgraphlib.md#paramspan_t) > |  |
 
 ### CParticleAnimTag
 
@@ -13812,7 +13542,7 @@ classDiagram
 	"m_attachmentType": "PATTACH_POINT_FOLLOW",
 	"m_attachmentCP1Name": "",
 	"m_attachmentCP1Type": "PATTACH_INVALID"
-}`, `MPropertyFriendlyName "Particle Tag"`
+}`, `MPropertyFriendlyName Particle Tag`
 
 **Relationships:**
 
@@ -13827,17 +13557,17 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_hParticleSystem` | CStrongHandle<[InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition)> | `MPropertySuppressField` |
-| `m_particleSystemName` | CUtlString | `MPropertyAttributeEditor "AssetBrowse( vpcf )"` `MPropertyFriendlyName "Particle System"` |
-| `m_configName` | CUtlString | `MPropertyFriendlyName "Configuration"` |
-| `m_bDetachFromOwner` | bool | `MPropertyFriendlyName "Detach From Owner"` |
-| `m_bAggregate` | bool | `MPropertyFriendlyName "Attempt to Aggregate"` |
-| `m_bStopWhenTagEnds` | bool | `MPropertyFriendlyName "Stop on Tag End"` `MPropertyGroupName "Ending"` |
-| `m_bTagEndStopIsInstant` | bool | `MPropertyFriendlyName "Tag End Stop is Instant"` `MPropertyGroupName "Ending"` |
-| `m_attachmentName` | CUtlString | `MPropertyFriendlyName "Attachment"` `MPropertyGroupName "Attachments"` `MPropertyAttributeChoiceName "Attachment"` |
-| `m_attachmentType` | [ParticleAttachment_t](../schemas/animationsystem.md#particleattachment_t) | `MPropertyFriendlyName "Attachment Type"` `MPropertyGroupName "Attachments"` |
-| `m_attachmentCP1Name` | CUtlString | `MPropertyFriendlyName "Attachment (Control Point 1)"` `MPropertyGroupName "Attachments"` `MPropertyAttributeChoiceName "Attachment"` |
-| `m_attachmentCP1Type` | [ParticleAttachment_t](../schemas/animationsystem.md#particleattachment_t) | `MPropertyFriendlyName "Attachment Type (Control Point 1)"` `MPropertyGroupName "Attachments"` |
+| `m_hParticleSystem` | CStrongHandle< [InfoForResourceTypeIParticleSystemDefinition](../schemas/resourcesystem.md#infoforresourcetypeiparticlesystemdefinition) > | `MPropertySuppressField` |
+| `m_particleSystemName` | CUtlString | `MPropertyAttributeEditor AssetBrowse( vpcf )` `MPropertyFriendlyName Particle System` |
+| `m_configName` | CUtlString | `MPropertyFriendlyName Configuration` |
+| `m_bDetachFromOwner` | bool | `MPropertyFriendlyName Detach From Owner` |
+| `m_bAggregate` | bool | `MPropertyFriendlyName Attempt to Aggregate` |
+| `m_bStopWhenTagEnds` | bool | `MPropertyFriendlyName Stop on Tag End` `MPropertyGroupName Ending` |
+| `m_bTagEndStopIsInstant` | bool | `MPropertyFriendlyName Tag End Stop is Instant` `MPropertyGroupName Ending` |
+| `m_attachmentName` | CUtlString | `MPropertyAttributeChoiceName Attachment` `MPropertyFriendlyName Attachment` `MPropertyGroupName Attachments` |
+| `m_attachmentType` | [ParticleAttachment_t](../schemas/!GlobalTypes.md#particleattachment_t) | `MPropertyFriendlyName Attachment Type` `MPropertyGroupName Attachments` |
+| `m_attachmentCP1Name` | CUtlString | `MPropertyAttributeChoiceName Attachment` `MPropertyFriendlyName Attachment (Control Point 1)` `MPropertyGroupName Attachments` |
+| `m_attachmentCP1Type` | [ParticleAttachment_t](../schemas/!GlobalTypes.md#particleattachment_t) | `MPropertyFriendlyName Attachment Type (Control Point 1)` `MPropertyGroupName Attachments` |
 
 ### CPathAnimMotorUpdater
 
@@ -13864,15 +13594,15 @@ classDiagram
 
 **Derived by:** [CDampedPathAnimMotorUpdater](animgraphlib.md#cdampedpathanimmotorupdater), [CPathAnimMotorUpdater](animgraphlib.md#cpathanimmotorupdater)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
     CAnimMotorUpdaterBase <|-- CPathAnimMotorUpdaterBase
-    CPathAnimMotorUpdaterBase <|-- CPathAnimMotorUpdater
     CPathAnimMotorUpdaterBase <|-- CDampedPathAnimMotorUpdater
+    CPathAnimMotorUpdaterBase <|-- CPathAnimMotorUpdater
 ```
 
 **Fields:**
@@ -13985,7 +13715,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_pathTimeSamples` | CUtlVector<float32> |  |
+| `m_pathTimeSamples` | CUtlVector< float32 > |  |
 | `m_flDistance` | float32 |  |
 | `m_bExtrapolateMovement` | bool |  |
 | `m_flMinExtrapolationSpeed` | float32 |  |
@@ -14028,7 +13758,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sampleTimes` | CUtlVector<float32> |  |
+| `m_sampleTimes` | CUtlVector< float32 > |  |
 | `m_flSpringConstant` | float32 |  |
 | `m_flAnticipationDistance` | float32 |  |
 | `m_hAnticipationPosParam` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
@@ -14054,7 +13784,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_nIndex` | uint16 |  |
-| `m_eType` | [PoseType_t](../schemas/animgraphlib.md#posetype_t) |  |
+| `m_eType` | [PoseType_t](../schemas/!GlobalTypes.md#posetype_t) |  |
 
 ### CProductQuantizer
 
@@ -14076,7 +13806,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_subQuantizers` | CUtlVector<[CVectorQuantizer](../schemas/animgraphlib.md#cvectorquantizer)> |  |
+| `m_subQuantizers` | CUtlVector< [CVectorQuantizer](../schemas/animgraphlib.md#cvectorquantizer) > |  |
 | `m_nDimensions` | int32 |  |
 
 ### CQuaternionAnimParameter
@@ -14109,7 +13839,7 @@ classDiagram
 		1.000000
 	],
 	"m_bInterpolate": false
-}`, `MPropertyFriendlyName "Quaternion Parameter"`
+}`, `MPropertyFriendlyName Quaternion Parameter`
 
 **Relationships:**
 
@@ -14124,7 +13854,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_defaultValue` | Quaternion | `MPropertySuppressField` |
-| `m_bInterpolate` | bool | `MPropertyFriendlyName "Interpolate"` |
+| `m_bInterpolate` | bool | `MPropertyFriendlyName Interpolate` |
 
 ### CRagdollAnimTag
 
@@ -14141,7 +13871,7 @@ classDiagram
 	},
 	"m_bIsReferenced": false,
 	"m_profileName": ""
-}`, `MPropertyFriendlyName "Ragdoll Tag"`
+}`, `MPropertyFriendlyName Ragdoll Tag`
 
 **Relationships:**
 
@@ -14154,7 +13884,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_profileName` | CGlobalSymbol | `MPropertyFriendlyName "Profile Name"` `MPropertySortPriority 100` |
+| `m_profileName` | CGlobalSymbol | `MPropertyFriendlyName Profile Name` `MPropertySortPriority 100` |
 
 ### CRagdollComponentUpdater
 
@@ -14206,12 +13936,12 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_ragdollNodePaths` | CUtlVector<[CAnimNodePath](../schemas/animgraphlib.md#canimnodepath)> |  |
-| `m_followAttachmentNodePaths` | CUtlVector<[CAnimNodePath](../schemas/animgraphlib.md#canimnodepath)> |  |
-| `m_boneIndices` | CUtlVector<int32> |  |
-| `m_boneNames` | CUtlVector<CUtlString> |  |
-| `m_weightLists` | CUtlVector<[WeightList](../schemas/animgraphlib.md#weightlist)> |  |
-| `m_boneToWeightIndices` | CUtlVector<int32> |  |
+| `m_ragdollNodePaths` | CUtlVector< [CAnimNodePath](../schemas/animgraphlib.md#canimnodepath) > |  |
+| `m_followAttachmentNodePaths` | CUtlVector< [CAnimNodePath](../schemas/animgraphlib.md#canimnodepath) > |  |
+| `m_boneIndices` | CUtlVector< int32 > |  |
+| `m_boneNames` | CUtlVector< CUtlString > |  |
+| `m_weightLists` | CUtlVector< [WeightList](../schemas/animgraphlib.md#weightlist) > |  |
+| `m_boneToWeightIndices` | CUtlVector< int32 > |  |
 | `m_flSpringFrequencyMin` | float32 |  |
 | `m_flSpringFrequencyMax` | float32 |  |
 | `m_flMaxStretch` | float32 |  |
@@ -14287,7 +14017,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_nWeightListIndex` | int32 |  |
-| `m_poseControlMethod` | [RagdollPoseControl](../schemas/animgraphlib.md#ragdollposecontrol) |  |
+| `m_poseControlMethod` | [RagdollPoseControl](../schemas/!GlobalTypes.md#ragdollposecontrol) |  |
 
 ### CRemapValueComponentUpdater
 
@@ -14319,7 +14049,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_items` | CUtlVector<[CRemapValueUpdateItem](../schemas/animgraphlib.md#cremapvalueupdateitem)> |  |
+| `m_items` | CUtlVector< [CRemapValueUpdateItem](../schemas/animgraphlib.md#cremapvalueupdateitem) > |  |
 
 ### CRemapValueUpdateItem
 
@@ -14553,13 +14283,13 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_children` | CUtlVector<[CAnimUpdateNodeRef](../schemas/animgraphlib.md#canimupdatenoderef)> |  |
-| `m_tags` | CUtlVector<int8> |  |
+| `m_children` | CUtlVector< [CAnimUpdateNodeRef](../schemas/animgraphlib.md#canimupdatenoderef) > |  |
+| `m_tags` | CUtlVector< int8 > |  |
 | `m_blendCurve` | [CBlendCurve](../schemas/animgraphlib.md#cblendcurve) |  |
-| `m_flBlendTime` | CAnimValue<float32> |  |
+| `m_flBlendTime` | CAnimValue< float32 > |  |
 | `m_hParameter` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
 | `m_nTagIndex` | int32 |  |
-| `m_eTagBehavior` | [SelectorTagBehavior_t](../schemas/animgraphlib.md#selectortagbehavior_t) |  |
+| `m_eTagBehavior` | [SelectorTagBehavior_t](../schemas/!GlobalTypes.md#selectortagbehavior_t) |  |
 | `m_bResetOnChange` | bool |  |
 | `m_bLockWhenWaning` | bool |  |
 | `m_bSyncCyclesOnChange` | bool |  |
@@ -14579,7 +14309,7 @@ classDiagram
 	},
 	"m_bIsReferenced": false,
 	"m_sequenceName": ""
-}`, `MPropertyFriendlyName "Sequence Finished Tag"`
+}`, `MPropertyFriendlyName Sequence Finished Tag`
 
 **Relationships:**
 
@@ -14592,7 +14322,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sequenceName` | CUtlString | `MPropertyFriendlyName "Sequence"` `MPropertyAttributeChoiceName "Sequence"` |
+| `m_sequenceName` | CUtlString | `MPropertyAttributeChoiceName Sequence` `MPropertyFriendlyName Sequence` |
 
 ### CSequenceTagSpans
 
@@ -14615,7 +14345,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_sSequenceName` | CGlobalSymbol |  |
-| `m_tags` | CUtlVector<[TagSpan_t](../schemas/animgraphlib.md#tagspan_t)> |  |
+| `m_tags` | CUtlVector< [TagSpan_t](../schemas/animgraphlib.md#tagspan_t) > |  |
 
 ### CSequenceUpdateNode
 
@@ -14702,7 +14432,7 @@ classDiagram
 | `m_hSequence` | [HSequence](../schemas/animationsystem.md#hsequence) |  |
 | `m_duration` | float32 |  |
 | `m_paramSpans` | [CParamSpanUpdater](../schemas/animgraphlib.md#cparamspanupdater) |  |
-| `m_tags` | CUtlVector<[TagSpan_t](../schemas/animgraphlib.md#tagspan_t)> |  |
+| `m_tags` | CUtlVector< [TagSpan_t](../schemas/animgraphlib.md#tagspan_t) > |  |
 
 ### CSequenceUpdateNodeBase
 
@@ -14710,7 +14440,7 @@ classDiagram
 
 **Derived by:** [CPairedSequenceUpdateNode](animgraphlib.md#cpairedsequenceupdatenode), [CSequenceUpdateNode](animgraphlib.md#csequenceupdatenode)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
@@ -14836,7 +14566,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_actions` | CUtlVector<CSmartPtr<[CAnimActionUpdater](../schemas/animgraphlib.md#canimactionupdater)>> |  |
+| `m_actions` | CUtlVector< CSmartPtr< [CAnimActionUpdater](../schemas/animgraphlib.md#canimactionupdater) > > |  |
 | `m_hPoseCacheHandle` | [CPoseHandle](../schemas/animgraphlib.md#cposehandle) |  |
 | `m_hSequence` | [HSequence](../schemas/animationsystem.md#hsequence) |  |
 | `m_flCycle` | float32 |  |
@@ -15053,7 +14783,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_targetHandles` | CUtlVector<[CSolveIKTargetHandle_t](../schemas/animgraphlib.md#csolveiktargethandle_t)> |  |
+| `m_targetHandles` | CUtlVector< [CSolveIKTargetHandle_t](../schemas/animgraphlib.md#csolveiktargethandle_t) > |  |
 | `m_opFixedData` | [SolveIKChainPoseOpFixedSettings_t](../schemas/animgraphlib.md#solveikchainposeopfixedsettings_t) |  |
 
 ### CSolveIKTargetHandle_t
@@ -15242,10 +14972,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_footStanceInfo` | CUtlVector<[StanceInfo_t](../schemas/animgraphlib.md#stanceinfo_t)> |  |
+| `m_footStanceInfo` | CUtlVector< [StanceInfo_t](../schemas/animgraphlib.md#stanceinfo_t) > |  |
 | `m_pStanceSourceNode` | [CAnimUpdateNodeRef](../schemas/animgraphlib.md#canimupdatenoderef) |  |
 | `m_hParameter` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
-| `m_eMode` | [StanceOverrideMode](../schemas/animgraphlib.md#stanceoverridemode) |  |
+| `m_eMode` | [StanceOverrideMode](../schemas/!GlobalTypes.md#stanceoverridemode) |  |
 
 ### CStanceScaleUpdateNode
 
@@ -15340,8 +15070,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_pAction` | CSmartPtr<[CAnimActionUpdater](../schemas/animgraphlib.md#canimactionupdater)> |  |
-| `m_eBehavior` | [StateActionBehavior](../schemas/animgraphlib.md#stateactionbehavior) |  |
+| `m_pAction` | CSmartPtr< [CAnimActionUpdater](../schemas/animgraphlib.md#canimactionupdater) > |  |
+| `m_eBehavior` | [StateActionBehavior](../schemas/!GlobalTypes.md#stateactionbehavior) |  |
 
 ### CStateMachineComponentUpdater
 
@@ -15397,7 +15127,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_flTimeInState` | float32 |  |
-| `m_currentTransitionIndex` | CAnimNetVar<int32> |  |
+| `m_currentTransitionIndex` | CAnimNetVar< int32 > |  |
 | `m_prevStateIndex` | int32 |  |
 | `m_scheduledTransitionIndex` | int32 |  |
 
@@ -15486,24 +15216,24 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_stateMachine` | [CAnimStateMachineUpdater](../schemas/animgraphlib.md#canimstatemachineupdater) |  |
-| `m_stateData` | CUtlVector<[CStateNodeStateData](../schemas/animgraphlib.md#cstatenodestatedata)> |  |
-| `m_transitionData` | CUtlVector<[CStateNodeTransitionData](../schemas/animgraphlib.md#cstatenodetransitiondata)> |  |
+| `m_stateData` | CUtlVector< [CStateNodeStateData](../schemas/animgraphlib.md#cstatenodestatedata) > |  |
+| `m_transitionData` | CUtlVector< [CStateNodeTransitionData](../schemas/animgraphlib.md#cstatenodetransitiondata) > |  |
 | `m_bBlockWaningTags` | bool |  |
 | `m_bLockStateWhenWaning` | bool |  |
 | `m_bResetWhenActivated` | bool |  |
 
 ### CStateNodeInstanceData
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_stateWeights` | CRelativeArray<float32> |  |
+| `m_stateWeights` | CRelativeArray< float32 > |  |
 | `m_vTransitionVelocityDeltaWS` | Vector |  |
-| `m_currentStateStartTime` | CAnimNetVar<float32> |  |
-| `m_resetCount` | CAnimNetVar<uint8> |  |
+| `m_currentStateStartTime` | CAnimNetVar< float32 > |  |
+| `m_resetCount` | CAnimNetVar< uint8 > |  |
 
 ### CStateNodeStateData
 
@@ -15527,9 +15257,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_pChild` | [CAnimUpdateNodeRef](../schemas/animgraphlib.md#canimupdatenoderef) |  |
 | `m_bExclusiveRootMotion` | bitfield:1 |  |
 | `m_bExclusiveRootMotionFirstFrame` | bitfield:1 |  |
+| `m_pChild` | [CAnimUpdateNodeRef](../schemas/animgraphlib.md#canimupdatenoderef) |  |
 
 ### CStateNodeTransitionData
 
@@ -15572,11 +15302,11 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_curve` | [CBlendCurve](../schemas/animgraphlib.md#cblendcurve) |  |
-| `m_blendDuration` | CAnimValue<float32> |  |
-| `m_resetCycleValue` | CAnimValue<float32> |  |
 | `m_bReset` | bitfield:1 |  |
+| `m_curve` | [CBlendCurve](../schemas/animgraphlib.md#cblendcurve) |  |
 | `m_resetCycleOption` | bitfield:3 |  |
+| `m_blendDuration` | CAnimValue< float32 > |  |
+| `m_resetCycleValue` | CAnimValue< float32 > |  |
 
 ### CStateUpdateData
 
@@ -15616,16 +15346,16 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_name` | CUtlString |  |
-| `m_hScript` | [AnimScriptHandle](../schemas/modellib.md#animscripthandle) |  |
-| `m_transitionIndices` | CUtlVector<int32> |  |
-| `m_actions` | CUtlVector<[CStateActionUpdater](../schemas/animgraphlib.md#cstateactionupdater)> |  |
-| `m_stateID` | [AnimStateID](../schemas/modellib.md#animstateid) |  |
-| `m_bIsStartState` | bitfield:1 |  |
 | `m_bIsEndState` | bitfield:1 |  |
 | `m_bIsPassthrough` | bitfield:1 |  |
 | `m_bIsPassthroughRootMotion` | bitfield:1 |  |
+| `m_bIsStartState` | bitfield:1 |  |
 | `m_bPreEvaluatePassthroughTransitionPath` | bitfield:1 |  |
+| `m_name` | CUtlString |  |
+| `m_hScript` | [AnimScriptHandle](../schemas/modellib.md#animscripthandle) |  |
+| `m_transitionIndices` | CUtlVector< int32 > |  |
+| `m_actions` | CUtlVector< [CStateActionUpdater](../schemas/animgraphlib.md#cstateactionupdater) > |  |
+| `m_stateID` | [AnimStateID](../schemas/modellib.md#animstateid) |  |
 
 ### CStaticPoseCache
 
@@ -15652,7 +15382,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_poses` | CUtlVector<[CCachedPose](../schemas/animgraphlib.md#ccachedpose)> |  |
+| `m_poses` | CUtlVector< [CCachedPose](../schemas/animgraphlib.md#ccachedpose) > |  |
 | `m_nBoneCount` | int32 |  |
 | `m_nMorphCount` | int32 |  |
 
@@ -15707,7 +15437,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_footIndices` | CUtlVector<int32> |  |
+| `m_footIndices` | CUtlVector< int32 > |  |
 | `m_flMinStepsRemaining` | float32 |  |
 
 ### CStopAtGoalUpdateNode
@@ -15808,7 +15538,7 @@ classDiagram
 		"m_id": <HIDDEN FOR DIFF>,
 	},
 	"m_bIsReferenced": false
-}`, `MPropertyFriendlyName "Internal Tag"`
+}`, `MPropertyFriendlyName Internal Tag`
 
 **Relationships:**
 
@@ -15896,7 +15626,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_footMotionTiming` | [BinaryNodeChildOption](../schemas/animgraphlib.md#binarynodechildoption) |  |
+| `m_footMotionTiming` | [BinaryNodeChildOption](../schemas/!GlobalTypes.md#binarynodechildoption) |  |
 | `m_bApplyToFootMotion` | bool |  |
 | `m_bApplyChannelsSeparately` | bool |  |
 | `m_bUseModelSpace` | bool |  |
@@ -15924,7 +15654,7 @@ classDiagram
 	"m_bGameWritable": true,
 	"m_bGraphWritable": false,
 	"m_defaultValue": ""
-}`, `MPropertyFriendlyName "Symbol Parameter"`
+}`, `MPropertyFriendlyName Symbol Parameter`
 
 **Relationships:**
 
@@ -15938,7 +15668,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_defaultValue` | CGlobalSymbol | `MPropertyFriendlyName "Default Value"` |
+| `m_defaultValue` | CGlobalSymbol | `MPropertyFriendlyName Default Value` |
 
 ### CTargetSelectorUpdateNode
 
@@ -16032,8 +15762,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_eAngleMode` | [TargetSelectorAngleMode_t](../schemas/animgraphlib.md#targetselectoranglemode_t) |  |
-| `m_children` | CUtlVector<[CAnimUpdateNodeRef](../schemas/animgraphlib.md#canimupdatenoderef)> |  |
+| `m_eAngleMode` | [TargetSelectorAngleMode_t](../schemas/!GlobalTypes.md#targetselectoranglemode_t) |  |
+| `m_children` | CUtlVector< [CAnimUpdateNodeRef](../schemas/animgraphlib.md#canimupdatenoderef) > |  |
 | `m_hTargetPosition` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
 | `m_hTargetFacePositionParameter` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
 | `m_hMoveHeadingParameter` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
@@ -16147,14 +15877,14 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_eAngleMode` | [TargetWarpAngleMode_t](../schemas/animgraphlib.md#targetwarpanglemode_t) |  |
+| `m_eAngleMode` | [TargetWarpAngleMode_t](../schemas/!GlobalTypes.md#targetwarpanglemode_t) |  |
 | `m_hTargetPositionParameter` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
 | `m_hTargetUpVectorParameter` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
 | `m_hTargetFacePositionParameter` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
 | `m_hMoveHeadingParameter` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
 | `m_hDesiredMoveHeadingParameter` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
-| `m_eCorrectionMethod` | [TargetWarpCorrectionMethod](../schemas/animgraphlib.md#targetwarpcorrectionmethod) |  |
-| `m_eTargetWarpTimingMethod` | [TargetWarpTimingMethod](../schemas/animgraphlib.md#targetwarptimingmethod) |  |
+| `m_eCorrectionMethod` | [TargetWarpCorrectionMethod](../schemas/!GlobalTypes.md#targetwarpcorrectionmethod) |  |
+| `m_eTargetWarpTimingMethod` | [TargetWarpTimingMethod](../schemas/!GlobalTypes.md#targetwarptimingmethod) |  |
 | `m_bTargetFacePositionIsWorldSpace` | bool |  |
 | `m_bTargetPositionIsWorldSpace` | bool |  |
 | `m_bOnlyWarpWhenTagIsFound` | bool |  |
@@ -16177,7 +15907,7 @@ classDiagram
 	},
 	"m_bIsReferenced": false,
 	"m_bIsDisableTag": false
-}`, `MPropertyFriendlyName "Task Handshake Tag"`
+}`, `MPropertyFriendlyName Task Handshake Tag`
 
 **Relationships:**
 
@@ -16201,7 +15931,7 @@ classDiagram
 		"m_id": <HIDDEN FOR DIFF>,
 	},
 	"m_bIsReferenced": false
-}`, `MPropertyFriendlyName "Status Tag"`
+}`, `MPropertyFriendlyName Status Tag`
 
 **Relationships:**
 
@@ -16287,10 +16017,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
+| `m_bDisabled` | bitfield:1 |  |
+| `m_nHandshakeMaskToDisableFirst` | bitfield:7 |  |
 | `m_srcStateIndex` | uint8 |  |
 | `m_destStateIndex` | uint8 |  |
-| `m_nHandshakeMaskToDisableFirst` | bitfield:7 |  |
-| `m_bDisabled` | bitfield:1 |  |
 
 ### CTurnHelperInstanceData
 
@@ -16381,7 +16111,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_facingTarget` | [AnimValueSource](../schemas/animgraphlib.md#animvaluesource) |  |
+| `m_facingTarget` | [AnimValueSource](../schemas/!GlobalTypes.md#animvaluesource) |  |
 | `m_turnStartTimeOffset` | float32 |  |
 | `m_turnDuration` | float32 |  |
 | `m_bMatchChildDuration` | bool |  |
@@ -16657,36 +16387,36 @@ classDiagram
 ```mermaid
 classDiagram
     CAnimUpdateNodeBase <|-- CUnaryUpdateNode
-    CUnaryUpdateNode <|-- CWayPointHelperUpdateNode
-    CUnaryUpdateNode <|-- CFollowTargetUpdateNode
-    CUnaryUpdateNode <|-- CTargetWarpUpdateNode
-    CUnaryUpdateNode <|-- CRagdollUpdateNode
-    CUnaryUpdateNode <|-- CFollowPathUpdateNode
-    CUnaryUpdateNode <|-- CTwoBoneIKUpdateNode
-    CUnaryUpdateNode <|-- CFootStepTriggerUpdateNode
-    CUnaryUpdateNode <|-- CSolveIKChainUpdateNode
-    CUnaryUpdateNode <|-- CMoverUpdateNode
-    CUnaryUpdateNode <|-- CDirectPlaybackUpdateNode
-    CUnaryUpdateNode <|-- CTurnHelperUpdateNode
-    CUnaryUpdateNode <|-- CFollowAttachmentUpdateNode
-    CUnaryUpdateNode <|-- CSpeedScaleUpdateNode
-    CUnaryUpdateNode <|-- CLookAtUpdateNode
-    CUnaryUpdateNode <|-- CHitReactUpdateNode
+    CUnaryUpdateNode <|-- CAimCameraUpdateNode
     CUnaryUpdateNode <|-- CAimMatrixUpdateNode
-    CUnaryUpdateNode <|-- CJiggleBoneUpdateNode
-    CUnaryUpdateNode <|-- CFootLockUpdateNode
-    CUnaryUpdateNode <|-- CCycleControlUpdateNode
     CUnaryUpdateNode <|-- CChoreoUpdateNode
+    CUnaryUpdateNode <|-- CCycleControlUpdateNode
+    CUnaryUpdateNode <|-- CDirectPlaybackUpdateNode
+    CUnaryUpdateNode <|-- CFollowAttachmentUpdateNode
+    CUnaryUpdateNode <|-- CFollowPathUpdateNode
+    CUnaryUpdateNode <|-- CFollowTargetUpdateNode
     CUnaryUpdateNode <|-- CFootAdjustmentUpdateNode
-    CUnaryUpdateNode <|-- CPathHelperUpdateNode
-    CUnaryUpdateNode <|-- CStopAtGoalUpdateNode
+    CUnaryUpdateNode <|-- CFootLockUpdateNode
     CUnaryUpdateNode <|-- CFootPinningUpdateNode
+    CUnaryUpdateNode <|-- CFootStepTriggerUpdateNode
+    CUnaryUpdateNode <|-- CHitReactUpdateNode
+    CUnaryUpdateNode <|-- CJiggleBoneUpdateNode
+    CUnaryUpdateNode <|-- CLookAtUpdateNode
+    CUnaryUpdateNode <|-- CMoverUpdateNode
+    CUnaryUpdateNode <|-- COrientationWarpUpdateNode
+    CUnaryUpdateNode <|-- CPathHelperUpdateNode
+    CUnaryUpdateNode <|-- CRagdollUpdateNode
     CUnaryUpdateNode <|-- CRootUpdateNode
+    CUnaryUpdateNode <|-- CSlowDownOnSlopesUpdateNode
+    CUnaryUpdateNode <|-- CSolveIKChainUpdateNode
+    CUnaryUpdateNode <|-- CSpeedScaleUpdateNode
     CUnaryUpdateNode <|-- CStanceOverrideUpdateNode
     CUnaryUpdateNode <|-- CStanceScaleUpdateNode
-    CUnaryUpdateNode <|-- CAimCameraUpdateNode
-    CUnaryUpdateNode <|-- COrientationWarpUpdateNode
-    CUnaryUpdateNode <|-- CSlowDownOnSlopesUpdateNode
+    CUnaryUpdateNode <|-- CStopAtGoalUpdateNode
+    CUnaryUpdateNode <|-- CTargetWarpUpdateNode
+    CUnaryUpdateNode <|-- CTurnHelperUpdateNode
+    CUnaryUpdateNode <|-- CTwoBoneIKUpdateNode
+    CUnaryUpdateNode <|-- CWayPointHelperUpdateNode
     CUnaryUpdateNode *-- CAnimUpdateNodeRef
 ```
 
@@ -16726,7 +16456,7 @@ classDiagram
 	],
 	"m_bInterpolate": false,
 	"m_vectorType": "ANIMPARAM_VECTOR_TYPE_NONE"
-}`, `MPropertyFriendlyName "Vector Parameter"`
+}`, `MPropertyFriendlyName Vector Parameter`
 
 **Relationships:**
 
@@ -16741,9 +16471,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_defaultValue` | Vector | `MPropertyFriendlyName "Default Value"` |
-| `m_bInterpolate` | bool | `MPropertyFriendlyName "Interpolate"` |
-| `m_vectorType` | [AnimParamVectorType_t](../schemas/animgraphlib.md#animparamvectortype_t) | `MPropertyFriendlyName "Vector Type"` |
+| `m_defaultValue` | Vector | `MPropertyFriendlyName Default Value` |
+| `m_bInterpolate` | bool | `MPropertyFriendlyName Interpolate` |
+| `m_vectorType` | [AnimParamVectorType_t](../schemas/!GlobalTypes.md#animparamvectortype_t) | `MPropertyFriendlyName Vector Type` |
 
 ### CVectorQuantizer
 
@@ -16759,7 +16489,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_centroidVectors` | CUtlVector<float32> |  |
+| `m_centroidVectors` | CUtlVector< float32 > |  |
 | `m_nCentroids` | int32 |  |
 | `m_nDimensions` | int32 |  |
 
@@ -16796,7 +16526,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_expressionString` | CUtlString |  |
-| `m_eParamType` | [AnimParamType_t](../schemas/animgraphlib.md#animparamtype_t) |  |
+| `m_eParamType` | [AnimParamType_t](../schemas/!GlobalTypes.md#animparamtype_t) |  |
 
 ### CWarpSectionAnimTag
 
@@ -16814,7 +16544,7 @@ classDiagram
 	"m_bIsReferenced": false,
 	"m_bWarpPosition": true,
 	"m_bWarpOrientation": true
-}`, `MPropertyFriendlyName "Warp Section Tag"`
+}`, `MPropertyFriendlyName Warp Section Tag`
 
 **Relationships:**
 
@@ -16828,8 +16558,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_bWarpPosition` | bool | `MPropertyFriendlyName "Warp Position"` |
-| `m_bWarpOrientation` | bool | `MPropertyFriendlyName "Warp Orientation"` |
+| `m_bWarpPosition` | bool | `MPropertyFriendlyName Warp Position` |
+| `m_bWarpOrientation` | bool | `MPropertyFriendlyName Warp Orientation` |
 
 ### CWarpSectionAnimTagBase
 
@@ -17078,39 +16808,9 @@ classDiagram
 | `m_nChainIndex` | int32 |  |
 | `m_SolverSettings` | [IKSolverSettings_t](../schemas/animgraphlib.md#iksolversettings_t) |  |
 | `m_TargetSettings` | [IKTargetSettings_t](../schemas/animgraphlib.md#iktargetsettings_t) |  |
-| `m_DebugSetting` | [SolveIKChainAnimNodeDebugSetting](../schemas/animgraphlib.md#solveikchainanimnodedebugsetting) |  |
+| `m_DebugSetting` | [SolveIKChainAnimNodeDebugSetting](../schemas/!GlobalTypes.md#solveikchainanimnodedebugsetting) |  |
 | `m_flDebugNormalizedValue` | float32 |  |
 | `m_vDebugOffset` | VectorAligned |  |
-
-### ChoiceBlendMethod
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `SingleBlendTime` | 0 | Single Blend Time |
-| `PerChoiceBlendTimes` | 1 | Per-Choice Blend Times |
-
-### ChoiceChangeMethod
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `OnReset` | 0 |  |
-| `OnCycleEnd` | 1 |  |
-| `OnResetOrCycleEnd` | 2 |  |
-
-### ChoiceMethod
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `WeightedRandom` | 0 |  |
-| `WeightedRandomNoRepeat` | 1 |  |
-| `Iterate` | 2 |  |
-| `IterateRandom` | 3 |  |
 
 ### ConfigIndex
 
@@ -17151,60 +16851,6 @@ classDiagram
 | `m_vVelocity` | Vector |  |
 | `m_vAcceleration` | Vector |  |
 | `m_bStopping` | bool |  |
-
-### DampingSpeedFunction
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `NoDamping` | 0 |  |
-| `Constant` | 1 |  |
-| `Spring` | 2 |  |
-| `AsymmetricSpring` | 3 |  |
-
-### EDemoBoneSelectionMode
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `CaptureAllBones` | 0 | Capture All Bones |
-| `CaptureSelectedBones` | 1 | Capture Selected Bones |
-
-### EIKEndEffectorRotationFixUpMode
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `None` | 0 | None — However the end effector ends up after the solve, it's rotation will remain unchanged. |
-| `MatchTargetOrientation` | 1 | Match Target Orientation — The targets orientation will be stamped onto the end effector. |
-| `LookAtTargetForward` | 2 | Look At Target Forward — The targets forward vector will be used to build a look orientation while preserving the rotation of the end effector after the solve as much as possible. |
-| `MaintainParentOrientation` | 3 | Maintain Parent Orientation — Use the parent bone's orientation as the end effector's orientation. |
-| `Count` | 4 |  |
-
-### FacingMode
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `FacingMode_Invalid` | 0 | None |
-| `FacingMode_Manual` | 1 | Manual Direction |
-| `FacingMode_Path` | 2 | Path |
-| `FacingMode_LookTarget` | 3 | Look Target |
-| `FacingMode_ManualPosition` | 4 | Manual Position |
-
-### FieldNetworkOption
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Auto` | 0 | Auto |
-| `ForceEnable` | 1 | Enable Replication |
-| `ForceDisable` | 2 | Disable Replication |
 
 ### FollowAttachmentSettings_t
 
@@ -17307,21 +16953,6 @@ classDiagram
 | `m_boneTargetIndex` | int32 |  |
 | `m_bWorldCoodinateTarget` | bool |  |
 | `m_bMatchTargetOrientation` | bool |  |
-
-### FootFallTagFoot_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `FOOT1` | 0 | Left |
-| `FOOT2` | 1 | Right |
-| `FOOT3` | 2 | Foot 3 |
-| `FOOT4` | 3 | Foot 4 |
-| `FOOT5` | 4 | Foot 5 |
-| `FOOT6` | 5 | Foot 6 |
-| `FOOT7` | 6 | Foot 7 |
-| `FOOT8` | 7 | Foot 8 |
 
 ### FootFixedData_t
 
@@ -17455,10 +17086,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_footInfo` | CUtlVector<[FootFixedData_t](../schemas/animgraphlib.md#footfixeddata_t)> |  |
+| `m_footInfo` | CUtlVector< [FootFixedData_t](../schemas/animgraphlib.md#footfixeddata_t) > |  |
 | `m_hipDampingSettings` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) |  |
 | `m_nHipBoneIndex` | int32 |  |
-| `m_ikSolverType` | [IKSolverType](../schemas/animgraphlib.md#iksolvertype) |  |
+| `m_ikSolverType` | [IKSolverType](../schemas/!GlobalTypes.md#iksolvertype) |  |
 | `m_bApplyTilt` | bool |  |
 | `m_bApplyHipDrop` | bool |  |
 | `m_bAlwaysUseFallbackHinge` | bool |  |
@@ -17473,15 +17104,6 @@ classDiagram
 | `m_bEnableStretching` | bool |  |
 | `m_flMaxStretchAmount` | float32 |  |
 | `m_flStretchExtensionScale` | float32 |  |
-
-### FootLockSubVisualization
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `FOOTLOCKSUBVISUALIZATION_ReachabilityAnalysis` | 0 | Reachability Analysis |
-| `FOOTLOCKSUBVISUALIZATION_IKSolve` | 1 | IK Solve |
 
 ### FootPinningPoseOpFixedData_t
 
@@ -17508,23 +17130,13 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_footInfo` | CUtlVector<[FootFixedData_t](../schemas/animgraphlib.md#footfixeddata_t)> |  |
+| `m_footInfo` | CUtlVector< [FootFixedData_t](../schemas/animgraphlib.md#footfixeddata_t) > |  |
 | `m_flBlendTime` | float32 |  |
 | `m_flLockBreakDistance` | float32 |  |
 | `m_flMaxLegTwist` | float32 |  |
 | `m_nHipBoneIndex` | int32 |  |
 | `m_bApplyLegTwistLimits` | bool |  |
 | `m_bApplyFootRotationLimits` | bool |  |
-
-### FootPinningTimingSource
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `FootMotion` | 0 |  |
-| `Tag` | 1 |  |
-| `Parameter` | 2 |  |
 
 ### FootStepTrigger
 
@@ -17547,55 +17159,13 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_tags` | CUtlVector<int32> |  |
+| `m_tags` | CUtlVector< int32 > |  |
 | `m_nFootIndex` | int32 |  |
-| `m_triggerPhase` | [StepPhase](../schemas/animgraphlib.md#stepphase) |  |
-
-### FootstepJumpPhase_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Unknown` | 0 |  |
-| `NotJumping` | 1 |  |
-| `Jumping` | 2 |  |
-| `Landing` | 4 |  |
-
-### FootstepLandedFootSoundType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `FOOTSOUND_Left` | 0 |  |
-| `FOOTSOUND_Right` | 1 |  |
-| `FOOTSOUND_UseOverrideSound` | 2 |  |
-
-### HandshakeTagState_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `eInactive` | 0 |  |
-| `eActive` | 1 |  |
-| `eMomentarilyInactive` | 2 |  |
-
-### HandshakeTagType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `eInvalid` | -1 |  |
-| `eTask` | 0 |  |
-| `eMovement` | 1 |  |
-| `eCount` | 2 |  |
+| `m_triggerPhase` | [StepPhase](../schemas/!GlobalTypes.md#stepphase) |  |
 
 ### HitReactFixedSettings_t
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Fields:**
 
@@ -17627,18 +17197,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_Name` | CUtlString | `MPropertyAttributeChoiceName "Bone"` |
-
-### IKChannelMode
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `TwoBone` | 0 | Two Bone |
-| `TwoBone_Translate` | 1 | Two Bone + Translate |
-| `OneBone` | 2 | One Bone |
-| `OneBone_Translate` | 3 | One Bone + Translate |
+| `m_Name` | CUtlString | `MPropertyAttributeChoiceName Bone` |
 
 ### IKDemoCaptureSettings_t
 
@@ -17661,11 +17220,11 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_parentBoneName` | CUtlString | `MPropertyFriendlyName "Target Parent"` `MPropertyAttributeChoiceName "Bone"` |
-| `m_eMode` | [IKChannelMode](../schemas/animgraphlib.md#ikchannelmode) | `MPropertyFriendlyName "Solver Mode"` `MPropertyAutoRebuildOnChange` |
-| `m_ikChainName` | CUtlString | `MPropertyFriendlyName "IK Chain"` `MPropertyAttributeChoiceName "IKChain"` `MPropertyAttrStateCallback` |
-| `m_oneBoneStart` | CUtlString | `MPropertyFriendlyName "Start Bone"` `MPropertyAttributeChoiceName "Bone"` `MPropertyAttrStateCallback` |
-| `m_oneBoneEnd` | CUtlString | `MPropertyFriendlyName "End Bone"` `MPropertyAttributeChoiceName "Bone"` `MPropertyAttrStateCallback` |
+| `m_parentBoneName` | CUtlString | `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName Target Parent` |
+| `m_eMode` | [IKChannelMode](../schemas/!GlobalTypes.md#ikchannelmode) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Solver Mode` |
+| `m_ikChainName` | CUtlString | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName IKChain` `MPropertyFriendlyName IK Chain` |
+| `m_oneBoneStart` | CUtlString | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName Start Bone` |
+| `m_oneBoneEnd` | CUtlString | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName End Bone` |
 
 ### IKSolverSettings_t
 
@@ -17681,32 +17240,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_SolverType` | [IKSolverType](../schemas/animgraphlib.md#iksolvertype) | `MPropertyFriendlyName "Solver Type"` `MPropertyAutoRebuildOnChange` |
-| `m_nNumIterations` | int32 | `MPropertyFriendlyName "Num Iterations "` `MPropertyAttrStateCallback` |
-| `m_EndEffectorRotationFixUpMode` | [EIKEndEffectorRotationFixUpMode](../schemas/animgraphlib.md#eikendeffectorrotationfixupmode) | `MPropertyFriendlyName "End Effector Rotation Behaviour"` |
-
-### IKSolverType
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `IKSOLVER_Perlin` | 0 | Perlin — Classic perlin 2-bone solver |
-| `IKSOLVER_TwoBone` | 1 | Two Bone — 2-bone solver that does not have singularities that Perlin does, and should be used as a default starting point for 2 bone solves. |
-| `IKSOLVER_Fabrik` | 2 | FABRIK — Forward And Backward Reaching Inverse Kinematics" solver - A solver that can handle any number of bones and works by iteratively solving for the position of each bone in the chain. |
-| `IKSOLVER_DogLeg3Bone` | 3 | Dog Leg (3-Bone) — A 3-bone solver that uses two 2-bone solves under the hood to emulate a dog leg. |
-| `IKSOLVER_CCD` | 4 | CCD — Cyclic Coordinate Descent solver - A solver that can handle any number of bones and works by iteratively solving for the rotation of each bone in the chain. |
-| `IKSOLVER_COUNT` | 5 |  |
-
-### IKTargetCoordinateSystem
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `IKTARGETCOORDINATESYSTEM_WorldSpace` | 0 | World Space |
-| `IKTARGETCOORDINATESYSTEM_ModelSpace` | 1 | Model Space |
-| `IKTARGETCOORDINATESYSTEM_COUNT` | 2 |  |
+| `m_SolverType` | [IKSolverType](../schemas/!GlobalTypes.md#iksolvertype) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Solver Type` |
+| `m_nNumIterations` | int32 | `MPropertyAttrStateCallback` `MPropertyFriendlyName Num Iterations ` |
+| `m_EndEffectorRotationFixUpMode` | [EIKEndEffectorRotationFixUpMode](../schemas/!GlobalTypes.md#eikendeffectorrotationfixupmode) | `MPropertyFriendlyName End Effector Rotation Behaviour` |
 
 ### IKTargetSettings_t
 
@@ -17724,41 +17260,11 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_TargetSource` | [IKTargetSource](../schemas/animgraphlib.md#iktargetsource) | `MPropertyFriendlyName "Target Source"` `MPropertyAutoRebuildOnChange` |
-| `m_Bone` | [IKBoneNameAndIndex_t](../schemas/animgraphlib.md#ikbonenameandindex_t) | `MPropertyFriendlyName "Bone"` `MPropertyAttrStateCallback` |
-| `m_AnimgraphParameterNamePosition` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Animgraph Position Parameter"` `MPropertyAttributeChoiceName "VectorParameter"` `MPropertyAttrStateCallback` |
-| `m_AnimgraphParameterNameOrientation` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyFriendlyName "Animgraph Orientation Parameter"` `MPropertyAttributeChoiceName "QuaternionParameter"` `MPropertyAttrStateCallback` |
-| `m_TargetCoordSystem` | [IKTargetCoordinateSystem](../schemas/animgraphlib.md#iktargetcoordinatesystem) | `MPropertyFriendlyName "Target Coords"` `MPropertyAttrStateCallback` |
-
-### IKTargetSource
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `IKTARGETSOURCE_Bone` | 0 | Bone |
-| `IKTARGETSOURCE_AnimgraphParameter` | 1 | Animgraph Parameter |
-| `IKTARGETSOURCE_COUNT` | 2 |  |
-
-### IkEndEffectorType
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `IkEndEffector_Attachment` | 0 | Attachment |
-| `IkEndEffector_Bone` | 1 | Last Bone in Chain |
-
-### IkTargetType
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `IkTarget_Attachment` | 0 | Attachment |
-| `IkTarget_Bone` | 1 | Bone |
-| `IkTarget_Parameter_ModelSpace` | 2 | Parameter (Model Space) |
-| `IkTarget_Parameter_WorldSpace` | 3 | Parameter (World Space) |
+| `m_TargetSource` | [IKTargetSource](../schemas/!GlobalTypes.md#iktargetsource) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Target Source` |
+| `m_Bone` | [IKBoneNameAndIndex_t](../schemas/animgraphlib.md#ikbonenameandindex_t) | `MPropertyAttrStateCallback` `MPropertyFriendlyName Bone` |
+| `m_AnimgraphParameterNamePosition` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName VectorParameter` `MPropertyFriendlyName Animgraph Position Parameter` |
+| `m_AnimgraphParameterNameOrientation` | [AnimParamID](../schemas/modellib.md#animparamid) | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName QuaternionParameter` `MPropertyFriendlyName Animgraph Orientation Parameter` |
+| `m_TargetCoordSystem` | [IKTargetCoordinateSystem](../schemas/!GlobalTypes.md#iktargetcoordinatesystem) | `MPropertyAttrStateCallback` `MPropertyFriendlyName Target Coords` |
 
 ### JiggleBoneSettingsList_t
 
@@ -17779,7 +17285,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_boneSettings` | CUtlVector<[JiggleBoneSettings_t](../schemas/animgraphlib.md#jigglebonesettings_t)> |  |
+| `m_boneSettings` | CUtlVector< [JiggleBoneSettings_t](../schemas/animgraphlib.md#jigglebonesettings_t) > |  |
 
 ### JiggleBoneSettings_t
 
@@ -17820,36 +17326,7 @@ classDiagram
 | `m_flDamping` | float32 |  |
 | `m_vBoundsMaxLS` | Vector |  |
 | `m_vBoundsMinLS` | Vector |  |
-| `m_eSimSpace` | [JiggleBoneSimSpace](../schemas/animgraphlib.md#jigglebonesimspace) |  |
-
-### JiggleBoneSimSpace
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `SimSpace_Local` | 0 | Local Space |
-| `SimSpace_Model` | 1 | Model Space |
-| `SimSpace_World` | 2 | World Space |
-
-### JumpCorrectionMethod
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `ScaleMotion` | 0 | Scale Animation Motion |
-| `AddCorrectionDelta` | 1 | Add Correction Delta |
-
-### LinearRootMotionBlendMode_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `LERP` | 0 | LERP |
-| `NLERP` | 1 | NLERP |
-| `SLERP` | 2 | SLERP |
+| `m_eSimSpace` | [JiggleBoneSimSpace](../schemas/!GlobalTypes.md#jigglebonesimspace) |  |
 
 ### LookAtBone_t
 
@@ -17958,7 +17435,7 @@ classDiagram
 |------|------|-------------|
 | `m_attachment` | [CAnimAttachment](../schemas/modellib.md#canimattachment) |  |
 | `m_damping` | [CAnimInputDamping](../schemas/animgraphlib.md#caniminputdamping) |  |
-| `m_bones` | CUtlVector<[LookAtBone_t](../schemas/animgraphlib.md#lookatbone_t)> |  |
+| `m_bones` | CUtlVector< [LookAtBone_t](../schemas/animgraphlib.md#lookatbone_t) > |  |
 | `m_flYawLimit` | float32 |  |
 | `m_flPitchLimit` | float32 |  |
 | `m_flHysteresisInnerAngle` | float32 |  |
@@ -17983,16 +17460,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_vLookTarget` | CAnimNetVar<Vector> |  |
-
-### MatterialAttributeTagType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `MATERIAL_ATTRIBUTE_TAG_VALUE` | 0 | Value |
-| `MATERIAL_ATTRIBUTE_TAG_COLOR` | 1 | Color |
+| `m_vLookTarget` | CAnimNetVar< Vector > |  |
 
 ### MotionBlendItem
 
@@ -18012,7 +17480,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_pChild` | CSmartPtr<[CMotionNode](../schemas/animgraphlib.md#cmotionnode)> |  |
+| `m_pChild` | CSmartPtr< [CMotionNode](../schemas/animgraphlib.md#cmotionnode) > |  |
 | `m_flKeyValue` | float32 |  |
 
 ### MotionDBIndex
@@ -18107,9 +17575,9 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_nConfigIndex` | [NetVarConfigIndex](../schemas/animgraphlib.md#netvarconfigindex) |  |
-| `m_flCycleZeroTime` | CAnimNetVar<float32> |  |
-| `m_flPlaybackSpeed` | CAnimNetVar<float32> |  |
-| `m_flStartTime` | CAnimNetVar<float32> |  |
+| `m_flCycleZeroTime` | CAnimNetVar< float32 > |  |
+| `m_flPlaybackSpeed` | CAnimNetVar< float32 > |  |
+| `m_flStartTime` | CAnimNetVar< float32 > |  |
 | `m_nSample` | int32 |  |
 
 ### MovementData
@@ -18170,22 +17638,22 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_goalWayPointPos` | Vector |  |
-| `m_vMoveDir` | CAnimNetVar<Vector> |  |
-| `m_vAcceleration` | CAnimNetVar<Vector> |  |
-| `m_flCurrentMoveSpeed` | CAnimNetVar<float32> |  |
-| `m_flTargetMoveSpeed` | CAnimNetVar<float32> |  |
-| `m_flGoalDistance` | CAnimNetVar<float32> |  |
-| `m_flBoundaryRadius` | CAnimNetVar<float32> |  |
+| `m_vMoveDir` | CAnimNetVar< Vector > |  |
+| `m_vAcceleration` | CAnimNetVar< Vector > |  |
+| `m_flCurrentMoveSpeed` | CAnimNetVar< float32 > |  |
+| `m_flTargetMoveSpeed` | CAnimNetVar< float32 > |  |
+| `m_flGoalDistance` | CAnimNetVar< float32 > |  |
+| `m_flBoundaryRadius` | CAnimNetVar< float32 > |  |
 | `m_bGoalChanged` | bool |  |
-| `m_bHasPath` | CAnimNetVar<bool> |  |
-| `m_flFacingHeading` | CAnimNetVar<float32> |  |
+| `m_bHasPath` | CAnimNetVar< bool > |  |
+| `m_flFacingHeading` | CAnimNetVar< float32 > |  |
 | `m_vManualFacingDirection` | Vector |  |
 | `m_vManualFacingTarget` | VectorWS |  |
-| `m_nFacingMode` | CAnimNetVar<uint8> |  |
-| `m_bForceFacing` | CAnimNetVar<bool> |  |
-| `m_nActiveMotorIndex` | CAnimNetVar<int32> |  |
-| `m_bOnGround` | CAnimNetVar<bool> |  |
-| `m_vFacingPosition` | CAnimNetVar<Vector> |  |
+| `m_nFacingMode` | CAnimNetVar< uint8 > |  |
+| `m_bForceFacing` | CAnimNetVar< bool > |  |
+| `m_nActiveMotorIndex` | CAnimNetVar< int32 > |  |
+| `m_bOnGround` | CAnimNetVar< bool > |  |
+| `m_vFacingPosition` | CAnimNetVar< Vector > |  |
 | `m_vPrevFacingPosition` | Vector |  |
 
 ### NetVarConfigIndex
@@ -18198,38 +17666,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_index` | CAnimNetVar<uint32> |  |
-
-### OrientationWarpMode_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `eInvalid` | 0 |  |
-| `eAngle` | 1 | Angle |
-| `eWorldPosition` | 2 | World Position |
-
-### OrientationWarpRootMotionSource_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `eAnimationOrProcedural` | 0 | Animation Or Procedural |
-| `eAnimationOnly` | 1 | Animation Only |
-| `eProceduralOnly` | 2 | Procedural Only |
-
-### OrientationWarpTargetOffsetMode_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `eLiteralValue` | 0 | Literal Value |
-| `eParameter` | 1 | Parameter |
-| `eAnimationMovementHeading` | 2 | Animation Movement Heading |
-| `eAnimationMovementHeadingAtEnd` | 3 | Animation Movement Heading At End |
+| `m_index` | CAnimNetVar< uint32 > |  |
 
 ### PairedSequenceData
 
@@ -18306,7 +17743,7 @@ classDiagram
 |------|------|-------------|
 | `m_sRole` | CGlobalSymbol |  |
 | `m_sSequenceName` | CGlobalSymbol |  |
-| `m_hSequence` | CAnimNetVar<uint32> |  |
+| `m_hSequence` | CAnimNetVar< uint32 > |  |
 
 ### ParamSpanSample_t
 
@@ -18354,9 +17791,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_samples` | CUtlVector<[ParamSpanSample_t](../schemas/animgraphlib.md#paramspansample_t)> |  |
+| `m_samples` | CUtlVector< [ParamSpanSample_t](../schemas/animgraphlib.md#paramspansample_t) > |  |
 | `m_hParam` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
-| `m_eParamType` | [AnimParamType_t](../schemas/animgraphlib.md#animparamtype_t) |  |
+| `m_eParamType` | [AnimParamType_t](../schemas/!GlobalTypes.md#animparamtype_t) |  |
 | `m_flStartCycle` | float32 |  |
 | `m_flEndCycle` | float32 |  |
 
@@ -18489,36 +17926,6 @@ classDiagram
 | `m_vVelocityWS` | Vector |  |
 | `m_vAccelerationWS` | Vector |  |
 
-### PoseType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `POSETYPE_STATIC` | 0 |  |
-| `POSETYPE_DYNAMIC` | 1 |  |
-| `POSETYPE_INVALID` | 255 |  |
-
-### RagdollPoseControl
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Absolute` | 0 |  |
-
-### ResetCycleOption
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Beginning` | 0 |  |
-| `SameCycleAsSource` | 1 |  |
-| `InverseSourceCycle` | 2 |  |
-| `FixedValue` | 3 |  |
-| `SameTimeAsSource` | 4 |  |
-
 ### SampleCode
 
 **Metadata:** `MGetKV3ClassDefaults {
@@ -18560,33 +17967,23 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_code` | CUtlString |  |
-| `m_paramsModified` | CUtlVector<[CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle)> |  |
-| `m_proxyReadParams` | CUtlVector<int32> |  |
-| `m_proxyWriteParams` | CUtlVector<int32> |  |
-| `m_eScriptType` | [AnimScriptType](../schemas/animgraphlib.md#animscripttype) |  |
+| `m_paramsModified` | CUtlVector< [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) > |  |
+| `m_proxyReadParams` | CUtlVector< int32 > |  |
+| `m_proxyWriteParams` | CUtlVector< int32 > |  |
+| `m_eScriptType` | [AnimScriptType](../schemas/!GlobalTypes.md#animscripttype) |  |
 
 ### SelectorInstanceData_t
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_weights` | CRelativeArray<float32> |  |
-| `m_currentIndexStartTime` | CAnimNetVar<float32> |  |
+| `m_weights` | CRelativeArray< float32 > |  |
+| `m_currentIndexStartTime` | CAnimNetVar< float32 > |  |
 | `m_currentIndex` | int32 |  |
 | `m_previousIndex` | int32 |  |
-
-### SelectorTagBehavior_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `SelectorTagBehavior_OnWhileCurrent` | 0 | Active While Current |
-| `SelectorTagBehavior_OffWhenFinished` | 1 | Off When Finished |
-| `SelectorTagBehavior_OffBeforeFinished` | 2 | Off Before Finished |
 
 ### SequenceData
 
@@ -18634,20 +18031,6 @@ classDiagram
 |------|------|-------------|
 | `m_vSlopeNormal` | Vector |  |
 
-### SolveIKChainAnimNodeDebugSetting
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `SOLVEIKCHAINANIMNODEDEBUGSETTING_None` | 0 | None |
-| `SOLVEIKCHAINANIMNODEDEBUGSETTING_X_Axis_Circle` | 1 | Debug X Axis Circle |
-| `SOLVEIKCHAINANIMNODEDEBUGSETTING_Y_Axis_Circle` | 2 | Debug Y Axis Circle |
-| `SOLVEIKCHAINANIMNODEDEBUGSETTING_Z_Axis_Circle` | 3 | Debug Z Axis Circle |
-| `SOLVEIKCHAINANIMNODEDEBUGSETTING_Forward` | 4 | Debug Hold Forward |
-| `SOLVEIKCHAINANIMNODEDEBUGSETTING_Up` | 5 | Debug Hold Up |
-| `SOLVEIKCHAINANIMNODEDEBUGSETTING_Left` | 6 | Debug Hold Left |
-
 ### SolveIKChainPoseOpFixedSettings_t
 
 **Metadata:** `MGetKV3ClassDefaults {
@@ -18667,7 +18050,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_ChainsToSolveData` | CUtlVector<[ChainToSolveData_t](../schemas/animgraphlib.md#chaintosolvedata_t)> |  |
+| `m_ChainsToSolveData` | CUtlVector< [ChainToSolveData_t](../schemas/animgraphlib.md#chaintosolvedata_t) > |  |
 
 ### StanceInfo_t
 
@@ -18688,36 +18071,6 @@ classDiagram
 | `m_vPosition` | Vector |  |
 | `m_flDirection` | float32 |  |
 
-### StanceOverrideMode
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Sequence` | 0 |  |
-| `Node` | 1 |  |
-
-### StateActionBehavior
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `STATETAGBEHAVIOR_ACTIVE_WHILE_CURRENT` | 0 |  |
-| `STATETAGBEHAVIOR_FIRE_ON_ENTER` | 1 |  |
-| `STATETAGBEHAVIOR_FIRE_ON_EXIT` | 2 |  |
-| `STATETAGBEHAVIOR_FIRE_ON_ENTER_AND_EXIT` | 3 |  |
-| `STATETAGBEHAVIOR_ACTIVE_WHILE_FULLY_BLENDED` | 4 |  |
-
-### StepPhase
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `StepPhase_OnGround` | 0 | On Ground |
-| `StepPhase_InAir` | 1 | In the Air |
-
 ### TagSpan_t
 
 **Metadata:** `MGetKV3ClassDefaults {
@@ -18734,52 +18087,37 @@ classDiagram
 | `m_startCycle` | float32 |  |
 | `m_endCycle` | float32 |  |
 
-### TargetSelectorAngleMode_t
+### TagStatus
 
-**Values:**
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_TagStatus": "Inactive",
+	"m_flTagStartAnimTime": -1.000000
+}`
 
-| Name | Value | Description |
-|------|-------|-------------|
-| `eFacingHeading` | 0 | Facing Heading |
-| `eMoveHeading` | 1 | Move Heading |
+**Relationships:**
 
-### TargetSelectorInstanceData_t
-
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+```mermaid
+classDiagram
+    TagStatus *-- TagActionStatus
+```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_currentIndex` | CAnimNetVar<int32> |  |
-| `m_vMSRootMotionAnlyzerTarget` | CAnimNetVar<Vector> |  |
+| `m_TagStatus` | [TagActionStatus](../schemas/!GlobalTypes.md#tagactionstatus) |  |
+| `m_flTagStartAnimTime` | float32 |  |
 
-### TargetWarpAngleMode_t
+### TargetSelectorInstanceData_t
 
-**Values:**
+**Metadata:** `MGetKV3ClassDefaults`
 
-| Name | Value | Description |
-|------|-------|-------------|
-| `eFacingHeading` | 0 | Facing Heading |
-| `eMoveHeading` | 1 | Move Heading |
+**Fields:**
 
-### TargetWarpCorrectionMethod
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `ScaleMotion` | 0 | Scale Animation Motion |
-| `AddCorrectionDelta` | 1 | Add Correction Delta |
-
-### TargetWarpTimingMethod
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `ReachDestinationOnRootMotionEnd` | 0 | Reach destination when root motion ends |
-| `ReachDestinationOnWarpTagEnd` | 1 | Reach destination when warp tag ends |
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_currentIndex` | CAnimNetVar< int32 > |  |
+| `m_vMSRootMotionAnlyzerTarget` | CAnimNetVar< Vector > |  |
 
 ### TraceSettings_t
 
@@ -18950,9 +18288,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_endEffectorType` | [IkEndEffectorType](../schemas/animgraphlib.md#ikendeffectortype) |  |
+| `m_endEffectorType` | [IkEndEffectorType](../schemas/!GlobalTypes.md#ikendeffectortype) |  |
 | `m_endEffectorAttachment` | [CAnimAttachment](../schemas/modellib.md#canimattachment) |  |
-| `m_targetType` | [IkTargetType](../schemas/animgraphlib.md#iktargettype) |  |
+| `m_targetType` | [IkTargetType](../schemas/!GlobalTypes.md#iktargettype) |  |
 | `m_targetAttachment` | [CAnimAttachment](../schemas/modellib.md#canimattachment) |  |
 | `m_targetBoneIndex` | int32 |  |
 | `m_hPositionParam` | [CAnimParamHandle](../schemas/animgraphlib.md#canimparamhandle) |  |
@@ -18965,16 +18303,6 @@ classDiagram
 | `m_bMatchTargetOrientation` | bool |  |
 | `m_bConstrainTwist` | bool |  |
 | `m_flMaxTwist` | float32 |  |
-
-### VelocityMetricMode
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `DirectionOnly` | 0 | Direction Only |
-| `MagnitudeOnly` | 1 | Magnitude Only |
-| `DirectionAndMagnitude` | 2 | Direction and Magnitude |
 
 ### WeightList
 
@@ -18990,4 +18318,4 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_name` | CUtlString |  |
-| `m_weights` | CUtlVector<float32> |  |
+| `m_weights` | CUtlVector< float32 > |  |

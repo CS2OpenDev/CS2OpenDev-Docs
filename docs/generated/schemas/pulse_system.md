@@ -20,8 +20,13 @@ nav_exclude: true
 | [CPulseCell_Step_TestDomainDestroyFakeEntity](#cpulsecell_step_testdomaindestroyfakeentity) | class | CPulseCell_BaseFlow | 0 |
 | [CPulseCell_Step_TestDomainEntFire](#cpulsecell_step_testdomainentfire) | class | CPulseCell_BaseFlow | 1 |
 | [CPulseCell_Step_TestDomainTracepoint](#cpulsecell_step_testdomaintracepoint) | class | CPulseCell_BaseFlow | 0 |
-| [CPulseCell_TestWaitWithCursorState](#cpulsecell_testwaitwithcursorstate) | class | CPulseCell_BaseYieldingInflow | 3 |
-| [CPulseCell_TestWaitWithCursorState::CursorState_t](#cpulsecell_testwaitwithcursorstatecursorstate_t) | class |  | 2 |
+| [CPulseCell_TestEnums](#cpulsecell_testenums) | class | CPulseCell_BaseValue | 2 |
+| [CPulseCell_TestWaitWithAutoTracepoints](#cpulsecell_testwaitwithautotracepoints) | class | CPulseCell_BaseYieldingInflow | 2 |
+| [CPulseCell_TestWaitWithCursorState](#cpulsecell_testwaitwithcursorstate) | class | CPulseCell_BaseYieldingInflow | 2 |
+| [CPulseCell_TestWaitWithCursorState::CursorState_t](#cpulsecell_testwaitwithcursorstatecursorstate_t) | class |  | 5 |
+| [CPulseCell_TestWaitWithCursorState::InstanceState_t](#cpulsecell_testwaitwithcursorstateinstancestate_t) | class |  | 1 |
+| [CPulseCell_TestYieldForever](#cpulsecell_testyieldforever) | class | CPulseCell_BaseYieldingInflow | 0 |
+| [CPulseCell_TestYieldWithObservables](#cpulsecell_testyieldwithobservables) | class | CPulseCell_BaseYieldingInflow | 5 |
 | [CPulseCell_Test_MultiInflow_NoDefault](#cpulsecell_test_multiinflow_nodefault) | class | CPulseCell_BaseFlow | 0 |
 | [CPulseCell_Test_MultiInflow_WithDefault](#cpulsecell_test_multiinflow_withdefault) | class | CPulseCell_BaseFlow | 0 |
 | [CPulseCell_Test_MultiOutflow_WithParams](#cpulsecell_test_multioutflow_withparams) | class | CPulseCell_BaseFlow | 2 |
@@ -43,6 +48,8 @@ nav_exclude: true
 | [FakeEntityDerivedB_tAPI](#fakeentityderivedb_tapi) | class |  | 0 |
 | [FakeEntity_tAPI](#fakeentity_tapi) | class |  | 0 |
 | [PulseTestEnumColor_t](#pulsetestenumcolor_t) | enum |  | 5 |
+| [PulseTestEnumFlagsAlt_t](#pulsetestenumflagsalt_t) | enum |  | 2 |
+| [PulseTestEnumFlags_t](#pulsetestenumflags_t) | enum |  | 4 |
 | [PulseTestEnumShape_t](#pulsetestenumshape_t) | enum |  | 3 |
 | [TestComponent_t](#testcomponent_t) | class |  | 1 |
 | [TestComponent_tAPI](#testcomponent_tapi) | class |  | 0 |
@@ -56,7 +63,7 @@ nav_exclude: true
 **Metadata:** `MGetKV3ClassDefaults {
 	"_class": "CPulseCell_ExampleCriteria",
 	"m_nEditorNodeID": -1
-}`, `MPropertyFriendlyName "Example Criteria"`, `MPropertyDescription "An example of requirement data with ports"`
+}`, `MPropertyDescription An example of requirement data with ports`, `MPropertyFriendlyName Example Criteria`
 
 **Relationships:**
 
@@ -89,7 +96,7 @@ classDiagram
 		[
 		]
 	}
-}`, `MPropertyFriendlyName "Select Example Criteria"`, `MPropertyDescription "Evaluate the requirements of each connected node"`, `MPulseEditorHeaderIcon "tools/images/pulse_editor/requirements.png"`, `MPulseEditorCanvasItemSpecKV3 "{ className='IsControlFlowNode AllOutflowsInSpecialSection IsSelectorNode' create_special_outflows_section=true }"`
+}`, `MPropertyDescription Evaluate the requirements of each connected node`, `MPropertyFriendlyName Select Example Criteria`, `MPulseEditorCanvasItemSpecKV3 { className='IsControlFlowNode AllOutflowsInSpecialSection IsSelectorNode' create_special_outflows_section=true }`, `MPulseEditorHeaderIcon tools/images/pulse_editor/requirements.png`
 
 **Relationships:**
 
@@ -125,7 +132,7 @@ classDiagram
 		"m_nDestChunk": -1,
 		"m_nInstruction": -1
 	}
-}`, `MPropertyFriendlyName "[Test] Explicit Yes/No Outflow"`, `MPropertyDescription "Test node that picks between two outflows as specified in the test domain."`
+}`, `MPropertyDescription Test node that picks between two outflows as specified in the test domain.`, `MPropertyFriendlyName [Test] Explicit Yes/No Outflow`
 
 **Relationships:**
 
@@ -140,8 +147,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_Yes` | [CPulse_OutflowConnection](../schemas/pulse_runtime_lib.md#cpulse_outflowconnection) | `MPropertyFriendlyName "Yes"` |
-| `m_No` | [CPulse_OutflowConnection](../schemas/pulse_runtime_lib.md#cpulse_outflowconnection) | `MPropertyFriendlyName "No"` |
+| `m_Yes` | [CPulse_OutflowConnection](../schemas/pulse_runtime_lib.md#cpulse_outflowconnection) | `MPropertyFriendlyName Yes` |
+| `m_No` | [CPulse_OutflowConnection](../schemas/pulse_runtime_lib.md#cpulse_outflowconnection) | `MPropertyFriendlyName No` |
 
 ### CPulseCell_Outflow_TestRandomYesNo
 
@@ -162,7 +169,7 @@ classDiagram
 		"m_nDestChunk": -1,
 		"m_nInstruction": -1
 	}
-}`, `MPropertyFriendlyName "[Test] Random Yes/No Outflow"`, `MPropertyDescription "Test node that randomly picks between two outflows."`
+}`, `MPropertyDescription Test node that randomly picks between two outflows.`, `MPropertyFriendlyName [Test] Random Yes/No Outflow`
 
 **Relationships:**
 
@@ -177,8 +184,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_Yes` | [CPulse_OutflowConnection](../schemas/pulse_runtime_lib.md#cpulse_outflowconnection) | `MPropertyFriendlyName "Yes"` `MPropertyDescription "Randomly taken half of the time"` |
-| `m_No` | [CPulse_OutflowConnection](../schemas/pulse_runtime_lib.md#cpulse_outflowconnection) | `MPropertyFriendlyName "No"` `MPropertyDescription "Randomly taken half of the time"` |
+| `m_Yes` | [CPulse_OutflowConnection](../schemas/pulse_runtime_lib.md#cpulse_outflowconnection) | `MPropertyDescription Randomly taken half of the time` `MPropertyFriendlyName Yes` |
+| `m_No` | [CPulse_OutflowConnection](../schemas/pulse_runtime_lib.md#cpulse_outflowconnection) | `MPropertyDescription Randomly taken half of the time` `MPropertyFriendlyName No` |
 
 ### CPulseCell_Step_TestDomainCreateFakeEntity
 
@@ -187,7 +194,7 @@ classDiagram
 **Metadata:** `MGetKV3ClassDefaults {
 	"_class": "CPulseCell_Step_TestDomainCreateFakeEntity",
 	"m_nEditorNodeID": -1
-}`, `MPropertyFriendlyName "Spawn Fake Entity"`
+}`, `MPropertyFriendlyName Spawn Fake Entity`
 
 **Relationships:**
 
@@ -204,7 +211,7 @@ classDiagram
 **Metadata:** `MGetKV3ClassDefaults {
 	"_class": "CPulseCell_Step_TestDomainDestroyFakeEntity",
 	"m_nEditorNodeID": -1
-}`, `MPropertyFriendlyName "Destroy Fake Entity"`
+}`, `MPropertyFriendlyName Destroy Fake Entity`
 
 **Relationships:**
 
@@ -222,7 +229,7 @@ classDiagram
 	"_class": "CPulseCell_Step_TestDomainEntFire",
 	"m_nEditorNodeID": -1,
 	"m_Input": ""
-}`, `MPropertyFriendlyName "Fake Ent-Fire"`, `MPulseEditorHeaderText "Fire input {m_Input}"`
+}`, `MPropertyFriendlyName Fake Ent-Fire`, `MPulseEditorHeaderText Fire input {m_Input}`
 
 **Relationships:**
 
@@ -245,7 +252,7 @@ classDiagram
 **Metadata:** `MGetKV3ClassDefaults {
 	"_class": "CPulseCell_Step_TestDomainTracepoint",
 	"m_nEditorNodeID": -1
-}`, `MPropertyFriendlyName "Tracepoint"`
+}`, `MPropertyFriendlyName Tracepoint`
 
 **Relationships:**
 
@@ -255,6 +262,79 @@ classDiagram
     CPulseCell_Base <|-- CPulseCell_BaseFlow
 ```
 
+### CPulseCell_TestEnums
+
+**Inherits from:** [CPulseCell_BaseValue](pulse_runtime_lib.md#cpulsecell_basevalue)
+
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_TestEnums",
+	"m_nEditorNodeID": -1,
+	"m_nReferenceColor": "BLACK",
+	"m_nReferenceFlags": ""
+}`, `MPropertyFriendlyName Test Enums`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CPulseCell_BaseValue <|-- CPulseCell_TestEnums
+    CPulseCell_Base <|-- CPulseCell_BaseValue
+    CPulseCell_TestEnums *-- PulseTestEnumColor_t
+    CPulseCell_TestEnums *-- PulseTestEnumFlags_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nReferenceColor` | [PulseTestEnumColor_t](../schemas/pulse_system.md#pulsetestenumcolor_t) |  |
+| `m_nReferenceFlags` | [PulseTestEnumFlags_t](../schemas/pulse_system.md#pulsetestenumflags_t) |  |
+
+### CPulseCell_TestWaitWithAutoTracepoints
+
+**Inherits from:** [CPulseCell_BaseYieldingInflow](pulse_runtime_lib.md#cpulsecell_baseyieldinginflow)
+
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_TestWaitWithAutoTracepoints",
+	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_TracePrefix": "",
+	"m_WakeResume":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	}
+}`, `MPropertyFriendlyName Wait and Trace`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CPulseCell_BaseYieldingInflow <|-- CPulseCell_TestWaitWithAutoTracepoints
+    CPulseCell_BaseFlow <|-- CPulseCell_BaseYieldingInflow
+    CPulseCell_Base <|-- CPulseCell_BaseFlow
+    CPulseCell_TestWaitWithAutoTracepoints *-- CPulse_ResumePoint
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_TracePrefix` | CUtlString |  |
+| `m_WakeResume` | [CPulse_ResumePoint](../schemas/pulse_runtime_lib.md#cpulse_resumepoint) |  |
+
 ### CPulseCell_TestWaitWithCursorState
 
 **Inherits from:** [CPulseCell_BaseYieldingInflow](pulse_runtime_lib.md#cpulsecell_baseyieldinginflow)
@@ -262,13 +342,19 @@ classDiagram
 **Metadata:** `MGetKV3ClassDefaults {
 	"_class": "CPulseCell_TestWaitWithCursorState",
 	"m_nEditorNodeID": -1,
-	"m_WakeResume":
+	"m_BaseFlow_OnAfterCancel":
 	{
 		"m_SourceOutflowName": "",
 		"m_nDestChunk": -1,
 		"m_nInstruction": -1
 	},
-	"m_WakeCancel":
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_WakeResume":
 	{
 		"m_SourceOutflowName": "",
 		"m_nDestChunk": -1,
@@ -297,22 +383,177 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_WakeResume` | [CPulse_ResumePoint](../schemas/pulse_runtime_lib.md#cpulse_resumepoint) |  |
-| `m_WakeCancel` | [CPulse_ResumePoint](../schemas/pulse_runtime_lib.md#cpulse_resumepoint) |  |
 | `m_WakeFail` | [CPulse_ResumePoint](../schemas/pulse_runtime_lib.md#cpulse_resumepoint) |  |
 
 ### CPulseCell_TestWaitWithCursorState::CursorState_t
 
 **Metadata:** `MGetKV3ClassDefaults {
 	"flWaitValue": 0.000000,
-	"bFailOnCancel": false
+	"bFail": false,
+	"m_hSelfCursor":
+	{
+		"m_hGraph":
+		{
+			"m_nGraphID": 0
+		},
+		"m_nCursorID": -1,
+		"m_nYieldToken": -1
+	},
+	"m_hSelfCellInstanceUntyped":
+	{
+		"m_hGraph":
+		{
+			"m_nGraphID": 0
+		},
+		"m_nCellID": -1
+	},
+	"m_hSelfCellInstance":
+	{
+		"m_hGraph":
+		{
+			"m_nGraphID": 0
+		},
+		"m_nCellID": -1
+	}
 }`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    "CPulseCell_TestWaitWithCursorState::CursorState_t" *-- CPulseCell_TestWaitWithCursorState
+```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
 | `flWaitValue` | float32 |  |
-| `bFailOnCancel` | bool |  |
+| `bFail` | bool |  |
+| `m_hSelfCursor` | HYieldedCursor |  |
+| `m_hSelfCellInstanceUntyped` | HPulseCellBase |  |
+| `m_hSelfCellInstance` | HPulseCell< [CPulseCell_TestWaitWithCursorState](../schemas/pulse_system.md#cpulsecell_testwaitwithcursorstate) > |  |
+
+### CPulseCell_TestWaitWithCursorState::InstanceState_t
+
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nDummy": 1
+}`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nDummy` | int32 |  |
+
+### CPulseCell_TestYieldForever
+
+**Inherits from:** [CPulseCell_BaseYieldingInflow](pulse_runtime_lib.md#cpulsecell_baseyieldinginflow)
+
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_TestYieldForever",
+	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	}
+}`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CPulseCell_BaseYieldingInflow <|-- CPulseCell_TestYieldForever
+    CPulseCell_BaseFlow <|-- CPulseCell_BaseYieldingInflow
+    CPulseCell_Base <|-- CPulseCell_BaseFlow
+```
+
+### CPulseCell_TestYieldWithObservables
+
+**Inherits from:** [CPulseCell_BaseYieldingInflow](pulse_runtime_lib.md#cpulsecell_baseyieldinginflow)
+
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CPulseCell_TestYieldWithObservables",
+	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_flWatchForFloatValue": 0.000000,
+	"m_LiveFloatValue":
+	{
+		"m_EvaluateConnection":
+		{
+			"m_SourceOutflowName": "",
+			"m_nDestChunk": -1,
+			"m_nInstruction": -1
+		},
+		"m_DependentObservableVars":
+		[
+		],
+		"m_DependentObservableBlackboardReferences":
+		[
+		]
+	},
+	"m_WatchForStringValue": "",
+	"m_LiveStringValue":
+	{
+		"m_EvaluateConnection":
+		{
+			"m_SourceOutflowName": "",
+			"m_nDestChunk": -1,
+			"m_nInstruction": -1
+		},
+		"m_DependentObservableVars":
+		[
+		],
+		"m_DependentObservableBlackboardReferences":
+		[
+		]
+	},
+	"m_WakeResume":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	}
+}`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CPulseCell_BaseYieldingInflow <|-- CPulseCell_TestYieldWithObservables
+    CPulseCell_BaseFlow <|-- CPulseCell_BaseYieldingInflow
+    CPulseCell_Base <|-- CPulseCell_BaseFlow
+    CPulseCell_TestYieldWithObservables *-- CPulse_ResumePoint
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flWatchForFloatValue` | float32 |  |
+| `m_LiveFloatValue` | CPulseObservableExpression< float32 > |  |
+| `m_WatchForStringValue` | CUtlString |  |
+| `m_LiveStringValue` | CPulseObservableExpression< CUtlString > |  |
+| `m_WakeResume` | [CPulse_ResumePoint](../schemas/pulse_runtime_lib.md#cpulse_resumepoint) |  |
 
 ### CPulseCell_Test_MultiInflow_NoDefault
 
@@ -392,6 +633,18 @@ classDiagram
 **Metadata:** `MGetKV3ClassDefaults {
 	"_class": "CPulseCell_Test_MultiOutflow_WithParams_Yielding",
 	"m_nEditorNodeID": -1,
+	"m_BaseFlow_OnAfterCancel":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
+	"m_BaseFlow_WhileActive":
+	{
+		"m_SourceOutflowName": "",
+		"m_nDestChunk": -1,
+		"m_nInstruction": -1
+	},
 	"m_Out1":
 	{
 		"m_SourceOutflowName": "",
@@ -481,7 +734,7 @@ classDiagram
 **Metadata:** `MGetKV3ClassDefaults {
 	"_class": "CPulseCell_Val_TestDomainFindEntityByName",
 	"m_nEditorNodeID": -1
-}`, `MPropertyFriendlyName "Find Fake Entity"`
+}`, `MPropertyFriendlyName Find Fake Entity`
 
 **Relationships:**
 
@@ -498,7 +751,7 @@ classDiagram
 **Metadata:** `MGetKV3ClassDefaults {
 	"_class": "CPulseCell_Val_TestDomainGetEntityName",
 	"m_nEditorNodeID": -1
-}`, `MPropertyFriendlyName "Get Fake Entity Name"`
+}`, `MPropertyFriendlyName Get Fake Entity Name`
 
 **Relationships:**
 
@@ -515,7 +768,7 @@ classDiagram
 **Metadata:** `MGetKV3ClassDefaults {
 	"_class": "CPulseCell_Value_TestValue50",
 	"m_nEditorNodeID": -1
-}`, `MPropertyFriendlyName "[Test] Int Value 50"`, `MPropertyDescription "Test node that just generates the integer 50. Nothing to see here!"`
+}`, `MPropertyDescription Test node that just generates the integer 50. Nothing to see here!`, `MPropertyFriendlyName [Test] Int Value 50`
 
 **Relationships:**
 
@@ -551,7 +804,7 @@ classDiagram
 | `m_bExpectingCursorTerminatedDueToMaxInstructions` | bool |  |
 | `m_nCursorsTerminatedDueToMaxInstructions` | int32 |  |
 | `m_nNextValidateIndex` | int32 |  |
-| `m_Tracepoints` | CUtlVector<CUtlString> |  |
+| `m_Tracepoints` | CUtlVector< CUtlString > |  |
 | `m_bTestYesOrNoPath` | bool |  |
 
 ### CPulseGraphInstance_TestDomain_Derived
@@ -608,7 +861,7 @@ classDiagram
 
 ### CPulseTestFuncs_LibraryA
 
-**Metadata:** `MPropertyDescription "Library for interacting with a few global test values."`
+**Metadata:** `MPropertyDescription Library for interacting with a few global test values.`
 
 ### CPulseTurtleGraphicsCursor
 
@@ -665,6 +918,26 @@ classDiagram
 | `RED` | 2 | Red |
 | `GREEN` | 3 | Green |
 | `BLUE` | 4 | Blue |
+
+### PulseTestEnumFlagsAlt_t
+
+**Values:**
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `NONE` | 0 |  |
+| `FIRST` | 1 |  |
+
+### PulseTestEnumFlags_t
+
+**Values:**
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `NONE` | 0 | None |
+| `FIRST` | 1 | First |
+| `SECOND` | 2 | Second |
+| `THIRD` | 4 | Third |
 
 ### PulseTestEnumShape_t
 

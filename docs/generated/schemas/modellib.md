@@ -51,7 +51,7 @@ nav_exclude: true
 | [CHitBox](#chitbox) | class |  | 13 |
 | [CHitBoxSet](#chitboxset) | class |  | 4 |
 | [CHitBoxSetList](#chitboxsetlist) | class |  | 1 |
-| [CMaterialDrawDescriptor](#cmaterialdrawdescriptor) | class |  | 17 |
+| [CMaterialDrawDescriptor](#cmaterialdrawdescriptor) | class |  | 18 |
 | [CMaterialDrawDescriptor::RigidMeshPart_t](#cmaterialdrawdescriptorrigidmeshpart_t) | class |  | 4 |
 | [CMeshletDescriptor](#cmeshletdescriptor) | class |  | 6 |
 | [CModelConfig](#cmodelconfig) | class |  | 4 |
@@ -86,47 +86,27 @@ nav_exclude: true
 | [CRenderMesh](#crendermesh) | class |  | 7 |
 | [CRenderSkeleton](#crenderskeleton) | class |  | 3 |
 | [CSceneObjectData](#csceneobjectdata) | class |  | 7 |
-| [CSceneObjectData::RTProxyDrawDescriptor_t](#csceneobjectdatartproxydrawdescriptor_t) | class |  | 6 |
+| [CSceneObjectData::RTProxyDrawDescriptor_t](#csceneobjectdatartproxydrawdescriptor_t) | class |  | 13 |
 | [CTiltTwistConstraint](#ctilttwistconstraint) | class | CBaseConstraint | 2 |
 | [CTwistConstraint](#ctwistconstraint) | class | CBaseConstraint | 3 |
 | [CVPhysXSurfacePropertiesList](#cvphysxsurfacepropertieslist) | class |  | 1 |
 | [DynamicMeshDeformParams_t](#dynamicmeshdeformparams_t) | class |  | 6 |
-| [FlexOpCode_t](#flexopcode_t) | enum |  | 26 |
-| [InputLayoutVariation_t](#inputlayoutvariation_t) | enum |  | 4 |
 | [MaterialGroup_t](#materialgroup_t) | class |  | 2 |
-| [MeshDrawPrimitiveFlags_t](#meshdrawprimitiveflags_t) | enum |  | 8 |
 | [ModelAnimGraph2Ref_t](#modelanimgraph2ref_t) | class |  | 2 |
-| [ModelBoneFlexComponent_t](#modelboneflexcomponent_t) | enum |  | 4 |
 | [ModelBoneFlexDriverControl_t](#modelboneflexdrivercontrol_t) | class |  | 5 |
 | [ModelBoneFlexDriver_t](#modelboneflexdriver_t) | class |  | 3 |
-| [ModelConfigAttachmentType_t](#modelconfigattachmenttype_t) | enum |  | 5 |
 | [ModelEmbeddedMesh_t](#modelembeddedmesh_t) | class |  | 9 |
 | [ModelMeshBufferData_t](#modelmeshbufferdata_t) | class |  | 13 |
-| [ModelMeshBufferUsage_t](#modelmeshbufferusage_t) | enum |  | 7 |
 | [ModelSkeletonData_t](#modelskeletondata_t) | class |  | 7 |
-| [ModelSkeletonData_t::BoneFlags_t](#modelskeletondata_tboneflags_t) | enum |  | 22 |
-| [MorphBundleType_t](#morphbundletype_t) | enum |  | 4 |
-| [MorphFlexControllerRemapType_t](#morphflexcontrollerremaptype_t) | enum |  | 4 |
-| [MovementCapability_t](#movementcapability_t) | enum |  | 10 |
-| [NPCPhysicsHullType_t](#npcphysicshulltype_t) | enum |  | 5 |
 | [PermModelDataAnimatedMaterialAttribute_t](#permmodeldataanimatedmaterialattribute_t) | class |  | 2 |
 | [PermModelData_t](#permmodeldata_t) | class |  | 25 |
 | [PermModelExtPart_t](#permmodelextpart_t) | class |  | 4 |
 | [PermModelInfo_t](#permmodelinfo_t) | class |  | 10 |
-| [PermModelInfo_t::FlagEnum](#permmodelinfo_tflagenum) | enum |  | 15 |
 | [PhysShapeMarkup_t](#physshapemarkup_t) | class |  | 3 |
 | [PhysSoftbodyDesc_t](#physsoftbodydesc_t) | class |  | 6 |
-| [RenderBufferFlags_t](#renderbufferflags_t) | enum |  | 13 |
 | [RenderHairStrandInfo_t](#renderhairstrandinfo_t) | class |  | 7 |
 | [RenderInputLayoutField_t](#renderinputlayoutfield_t) | class |  | 6 |
-| [RenderMeshSlotType_t](#rendermeshslottype_t) | enum |  | 3 |
-| [RenderMultisampleType_t](#rendermultisampletype_t) | enum |  | 8 |
-| [RenderPrimitiveType_t](#renderprimitivetype_t) | enum |  | 14 |
 | [RenderSkeletonBone_t](#renderskeletonbone_t) | class |  | 5 |
-| [RenderSlotType_t](#renderslottype_t) | enum |  | 3 |
-| [ScriptedHeldWeaponBehavior_t](#scriptedheldweaponbehavior_t) | enum |  | 4 |
-| [ScriptedMoveTo_t](#scriptedmoveto_t) | enum |  | 6 |
-| [SharedMovementGait_t](#sharedmovementgait_t) | enum |  | 6 |
 | [SheetSequenceIntegerId_t](#sheetsequenceintegerid_t) | class |  | 1 |
 | [SkeletonAnimCapture_t](#skeletonanimcapture_t) | class |  | 10 |
 | [SkeletonAnimCapture_t::Bone_t](#skeletonanimcapture_tbone_t) | class |  | 3 |
@@ -136,18 +116,13 @@ nav_exclude: true
 | [SkeletonBoneBounds_t](#skeletonbonebounds_t) | class |  | 2 |
 | [SkeletonDemoDb_t](#skeletondemodb_t) | class |  | 3 |
 | [VPhysXAggregateData_t](#vphysxaggregatedata_t) | class |  | 17 |
-| [VPhysXAggregateData_t::VPhysXFlagEnum_t](#vphysxaggregatedata_tvphysxflagenum_t) | enum |  | 3 |
 | [VPhysXBodyPart_t](#vphysxbodypart_t) | class |  | 12 |
-| [VPhysXBodyPart_t::VPhysXFlagEnum_t](#vphysxbodypart_tvphysxflagenum_t) | enum |  | 6 |
 | [VPhysXCollisionAttributes_t](#vphysxcollisionattributes_t) | class |  | 11 |
 | [VPhysXConstraint2_t](#vphysxconstraint2_t) | class |  | 4 |
 | [VPhysXConstraintParams_t](#vphysxconstraintparams_t) | class |  | 46 |
-| [VPhysXConstraintParams_t::EnumFlags0_t](#vphysxconstraintparams_tenumflags0_t) | enum |  | 4 |
 | [VPhysXJoint_t](#vphysxjoint_t) | class |  | 30 |
-| [VPhysXJoint_t::Flags_t](#vphysxjoint_tflags_t) | enum |  | 3 |
 | [VPhysXRange_t](#vphysxrange_t) | class |  | 2 |
 | [VPhysics2ShapeDef_t](#vphysics2shapedef_t) | class |  | 5 |
-| [VertexAlbedoFormat_t](#vertexalbedoformat_t) | enum |  | 3 |
 | [VsInputSignatureElement_t](#vsinputsignatureelement_t) | class |  | 4 |
 | [VsInputSignature_t](#vsinputsignature_t) | class |  | 2 |
 
@@ -293,7 +268,7 @@ classDiagram
 
 ### CAnimAttachment
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Fields:**
 
@@ -391,14 +366,14 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_localSpaceTransforms` | CUtlVector<CTransform> |  |
-| `m_modelSpaceTransforms` | CUtlVector<CTransform> |  |
-| `m_boneNames` | CUtlVector<CUtlString> |  |
-| `m_children` | CUtlVector<CUtlVector<int32>> |  |
-| `m_parents` | CUtlVector<int32> |  |
-| `m_feet` | CUtlVector<[CAnimFoot](../schemas/modellib.md#canimfoot)> |  |
-| `m_morphNames` | CUtlVector<CUtlString> |  |
-| `m_lodBoneCounts` | CUtlVector<int32> |  |
+| `m_localSpaceTransforms` | CUtlVector< CTransform > |  |
+| `m_modelSpaceTransforms` | CUtlVector< CTransform > |  |
+| `m_boneNames` | CUtlVector< CUtlString > |  |
+| `m_children` | CUtlVector< CUtlVector< int32 > > |  |
+| `m_parents` | CUtlVector< int32 > |  |
+| `m_feet` | CUtlVector< [CAnimFoot](../schemas/modellib.md#canimfoot) > |  |
+| `m_morphNames` | CUtlVector< CUtlString > |  |
+| `m_lodBoneCounts` | CUtlVector< int32 > |  |
 
 ### CAttachment
 
@@ -484,21 +459,21 @@ classDiagram
 
 **Derived by:** [CAimConstraint](modellib.md#caimconstraint), [CBoneConstraintPoseSpaceBone](modellib.md#cboneconstraintposespacebone), [CMorphConstraint](modellib.md#cmorphconstraint), [COrientConstraint](modellib.md#corientconstraint), [CParentConstraint](modellib.md#cparentconstraint), [CPointConstraint](modellib.md#cpointconstraint), [CTiltTwistConstraint](modellib.md#ctilttwistconstraint), [CTwistConstraint](modellib.md#ctwistconstraint)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
     CBoneConstraintBase <|-- CBaseConstraint
-    CBaseConstraint <|-- COrientConstraint
-    CBaseConstraint <|-- CPointConstraint
+    CBaseConstraint <|-- CAimConstraint
     CBaseConstraint <|-- CBoneConstraintPoseSpaceBone
+    CBaseConstraint <|-- CMorphConstraint
+    CBaseConstraint <|-- COrientConstraint
+    CBaseConstraint <|-- CParentConstraint
+    CBaseConstraint <|-- CPointConstraint
     CBaseConstraint <|-- CTiltTwistConstraint
     CBaseConstraint <|-- CTwistConstraint
-    CBaseConstraint <|-- CMorphConstraint
-    CBaseConstraint <|-- CParentConstraint
-    CBaseConstraint <|-- CAimConstraint
     CBaseConstraint *-- CConstraintSlave
     CBaseConstraint *-- CConstraintTarget
 ```
@@ -509,23 +484,23 @@ classDiagram
 |------|------|-------------|
 | `m_name` | CUtlString |  |
 | `m_vUpVector` | Vector |  |
-| `m_slaves` | CUtlLeanVector<[CConstraintSlave](../schemas/modellib.md#cconstraintslave)> |  |
-| `m_targets` | CUtlVector<[CConstraintTarget](../schemas/modellib.md#cconstrainttarget)> |  |
+| `m_slaves` | CUtlLeanVector< [CConstraintSlave](../schemas/modellib.md#cconstraintslave) > |  |
+| `m_targets` | CUtlVector< [CConstraintTarget](../schemas/modellib.md#cconstrainttarget) > |  |
 
 ### CBoneConstraintBase
 
 **Derived by:** [CBaseConstraint](modellib.md#cbaseconstraint), [CBoneConstraintDotToMorph](modellib.md#cboneconstraintdottomorph), [CBoneConstraintPoseSpaceMorph](modellib.md#cboneconstraintposespacemorph), [CBoneConstraintRbf](modellib.md#cboneconstraintrbf)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
+    CBoneConstraintBase <|-- CBaseConstraint
     CBoneConstraintBase <|-- CBoneConstraintDotToMorph
     CBoneConstraintBase <|-- CBoneConstraintPoseSpaceMorph
     CBoneConstraintBase <|-- CBoneConstraintRbf
-    CBoneConstraintBase <|-- CBaseConstraint
 ```
 
 ### CBoneConstraintDotToMorph
@@ -600,7 +575,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_inputList` | CUtlVector<[CBoneConstraintPoseSpaceBone](../schemas/modellib.md#cboneconstraintposespacebone)::Input_t> |  |
+| `m_inputList` | CUtlVector< [CBoneConstraintPoseSpaceBone](../schemas/modellib.md#cboneconstraintposespacebone)::Input_t > |  |
 
 ### CBoneConstraintPoseSpaceBone::Input_t
 
@@ -609,7 +584,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputValue` | Vector |  |
-| `m_outputTransformList` | CUtlVector<CTransform> |  |
+| `m_outputTransformList` | CUtlVector< CTransform > |  |
 
 ### CBoneConstraintPoseSpaceMorph
 
@@ -643,8 +618,8 @@ classDiagram
 |------|------|-------------|
 | `m_sBoneName` | CUtlString |  |
 | `m_sAttachmentName` | CUtlString |  |
-| `m_outputMorph` | CUtlVector<CUtlString> |  |
-| `m_inputList` | CUtlVector<[CBoneConstraintPoseSpaceMorph](../schemas/modellib.md#cboneconstraintposespacemorph)::Input_t> |  |
+| `m_outputMorph` | CUtlVector< CUtlString > |  |
+| `m_inputList` | CUtlVector< [CBoneConstraintPoseSpaceMorph](../schemas/modellib.md#cboneconstraintposespacemorph)::Input_t > |  |
 | `m_bClamp` | bool |  |
 
 ### CBoneConstraintPoseSpaceMorph::Input_t
@@ -654,7 +629,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_inputValue` | Vector |  |
-| `m_outputWeightList` | CUtlVector<float32> |  |
+| `m_outputWeightList` | CUtlVector< float32 > |  |
 
 ### CBoneConstraintRbf
 
@@ -682,8 +657,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_inputBones` | CUtlVector<std::pair<CUtlString,uint32>> |  |
-| `m_outputBones` | CUtlVector<std::pair<CUtlString,uint32>> |  |
+| `m_inputBones` | CUtlVector< std::pair< CUtlString, uint32 > > |  |
+| `m_outputBones` | CUtlVector< std::pair< CUtlString, uint32 > > |  |
 
 ### CConstraintSlave
 
@@ -838,7 +813,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_OpCode` | [FlexOpCode_t](../schemas/modellib.md#flexopcode_t) |  |
+| `m_OpCode` | [FlexOpCode_t](../schemas/!GlobalTypes.md#flexopcode_t) |  |
 | `m_Data` | int32 |  |
 
 ### CFlexRule
@@ -862,7 +837,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_nFlex` | int32 |  |
-| `m_FlexOps` | CUtlVector<[CFlexOp](../schemas/modellib.md#cflexop)> |  |
+| `m_FlexOps` | CUtlVector< [CFlexOp](../schemas/modellib.md#cflexop) > |  |
 
 ### CFootCycle
 
@@ -1004,7 +979,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_strides` | CUtlVector<[CFootStride](../schemas/modellib.md#cfootstride)> |  |
+| `m_strides` | CUtlVector< [CFootStride](../schemas/modellib.md#cfootstride) > |  |
 | `m_name` | CUtlString |  |
 | `m_bAdditive` | bool |  |
 
@@ -1095,7 +1070,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_trajectories` | CUtlVector<[CFootTrajectory](../schemas/modellib.md#cfoottrajectory)> |  |
+| `m_trajectories` | CUtlVector< [CFootTrajectory](../schemas/modellib.md#cfoottrajectory) > |  |
 
 ### CFootTrajectory
 
@@ -1193,7 +1168,7 @@ classDiagram
 |------|------|-------------|
 | `m_name` | CUtlString |  |
 | `m_nNameHash` | uint32 |  |
-| `m_HitBoxes` | CUtlVector<[CHitBox](../schemas/modellib.md#chitbox)> |  |
+| `m_HitBoxes` | CUtlVector< [CHitBox](../schemas/modellib.md#chitbox) > |  |
 | `m_SourceFilename` | CUtlString |  |
 
 ### CHitBoxSetList
@@ -1215,7 +1190,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_HitBoxSets` | CUtlVector<[CHitBoxSet](../schemas/modellib.md#chitboxset)> |  |
+| `m_HitBoxSets` | CUtlVector< [CHitBoxSet](../schemas/modellib.md#chitboxset) > |  |
 
 ### CMaterialDrawDescriptor
 
@@ -1234,6 +1209,9 @@ classDiagram
 	"m_nDepthVertexBufferIndex": 255,
 	"m_nMeshletPackedIVBIndex": 255,
 	"m_rigidMeshParts":
+	[
+	],
+	"m_rootBvhNodes":
 	[
 	],
 	"m_nPrimitiveType": "RENDER_PRIM_TRIANGLES",
@@ -1278,15 +1256,16 @@ classDiagram
 | `m_nAppliedIndexOffset` | uint32 |  |
 | `m_nDepthVertexBufferIndex` | uint8 |  |
 | `m_nMeshletPackedIVBIndex` | uint8 |  |
-| `m_rigidMeshParts` | CUtlLeanVector<[CMaterialDrawDescriptor](../schemas/modellib.md#cmaterialdrawdescriptor)::RigidMeshPart_t> |  |
-| `m_nPrimitiveType` | [RenderPrimitiveType_t](../schemas/modellib.md#renderprimitivetype_t) |  |
+| `m_rigidMeshParts` | CUtlLeanVector< [CMaterialDrawDescriptor](../schemas/modellib.md#cmaterialdrawdescriptor)::RigidMeshPart_t > |  |
+| `m_rootBvhNodes` | CUtlLeanVector< uint16 > |  |
+| `m_nPrimitiveType` | [RenderPrimitiveType_t](../schemas/!GlobalTypes.md#renderprimitivetype_t) |  |
 | `m_nBaseVertex` | int32 |  |
 | `m_nVertexCount` | int32 |  |
 | `m_nStartIndex` | int32 |  |
 | `m_nIndexCount` | int32 |  |
 | `m_indexBuffer` | [CRenderBufferBinding](../schemas/modellib.md#crenderbufferbinding) |  |
 | `m_meshletPackedIVB` | [CRenderBufferBinding](../schemas/modellib.md#crenderbufferbinding) |  |
-| `m_material` | CStrongHandle<[InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2)> |  |
+| `m_material` | CStrongHandle< [InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2) > |  |
 
 ### CMaterialDrawDescriptor::RigidMeshPart_t
 
@@ -1372,7 +1351,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_ConfigName` | CUtlString |  |
-| `m_Elements` | CUtlVector<[CModelConfigElement](../schemas/modellib.md#cmodelconfigelement)*> |  |
+| `m_Elements` | CUtlVector< [CModelConfigElement](../schemas/modellib.md#cmodelconfigelement)* > |  |
 | `m_bTopLevel` | bool |  |
 | `m_bActiveInEditorByDefault` | bool |  |
 
@@ -1380,22 +1359,22 @@ classDiagram
 
 **Derived by:** [CModelConfigElement_AttachedModel](modellib.md#cmodelconfigelement_attachedmodel), [CModelConfigElement_Command](modellib.md#cmodelconfigelement_command), [CModelConfigElement_RandomColor](modellib.md#cmodelconfigelement_randomcolor), [CModelConfigElement_RandomPick](modellib.md#cmodelconfigelement_randompick), [CModelConfigElement_SetBodygroup](modellib.md#cmodelconfigelement_setbodygroup), [CModelConfigElement_SetBodygroupOnAttachedModels](modellib.md#cmodelconfigelement_setbodygrouponattachedmodels), [CModelConfigElement_SetMaterialGroup](modellib.md#cmodelconfigelement_setmaterialgroup), [CModelConfigElement_SetMaterialGroupOnAttachedModels](modellib.md#cmodelconfigelement_setmaterialgrouponattachedmodels), [CModelConfigElement_SetRenderColor](modellib.md#cmodelconfigelement_setrendercolor), [CModelConfigElement_UserPick](modellib.md#cmodelconfigelement_userpick)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
     CModelConfigElement <|-- CModelConfigElement_AttachedModel
-    CModelConfigElement <|-- CModelConfigElement_SetRenderColor
-    CModelConfigElement <|-- CModelConfigElement_SetMaterialGroup
-    CModelConfigElement <|-- CModelConfigElement_SetBodygroupOnAttachedModels
     CModelConfigElement <|-- CModelConfigElement_Command
     CModelConfigElement <|-- CModelConfigElement_RandomColor
-    CModelConfigElement <|-- CModelConfigElement_SetBodygroup
     CModelConfigElement <|-- CModelConfigElement_RandomPick
-    CModelConfigElement <|-- CModelConfigElement_UserPick
+    CModelConfigElement <|-- CModelConfigElement_SetBodygroup
+    CModelConfigElement <|-- CModelConfigElement_SetBodygroupOnAttachedModels
+    CModelConfigElement <|-- CModelConfigElement_SetMaterialGroup
     CModelConfigElement <|-- CModelConfigElement_SetMaterialGroupOnAttachedModels
+    CModelConfigElement <|-- CModelConfigElement_SetRenderColor
+    CModelConfigElement <|-- CModelConfigElement_UserPick
 ```
 
 **Fields:**
@@ -1403,7 +1382,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_ElementName` | CUtlString |  |
-| `m_NestedElements` | CUtlVector<[CModelConfigElement](../schemas/modellib.md#cmodelconfigelement)*> |  |
+| `m_NestedElements` | CUtlVector< [CModelConfigElement](../schemas/modellib.md#cmodelconfigelement)* > |  |
 
 ### CModelConfigElement_AttachedModel
 
@@ -1455,12 +1434,12 @@ classDiagram
 |------|------|-------------|
 | `m_InstanceName` | CUtlString |  |
 | `m_EntityClass` | CUtlString |  |
-| `m_hModel` | CStrongHandle<[InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel)> |  |
+| `m_hModel` | CStrongHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > |  |
 | `m_vOffset` | Vector |  |
 | `m_aAngOffset` | QAngle |  |
 | `m_AttachmentName` | CUtlString |  |
 | `m_LocalAttachmentOffsetName` | CUtlString |  |
-| `m_AttachmentType` | [ModelConfigAttachmentType_t](../schemas/modellib.md#modelconfigattachmenttype_t) |  |
+| `m_AttachmentType` | [ModelConfigAttachmentType_t](../schemas/!GlobalTypes.md#modelconfigattachmenttype_t) |  |
 | `m_bBoneMergeFlex` | bool |  |
 | `m_bUserSpecifiedColor` | bool |  |
 | `m_bUserSpecifiedMaterialGroup` | bool |  |
@@ -1555,8 +1534,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_Choices` | CUtlVector<CUtlString> |  |
-| `m_ChoiceWeights` | CUtlVector<float32> |  |
+| `m_Choices` | CUtlVector< CUtlString > |  |
+| `m_ChoiceWeights` | CUtlVector< float32 > |  |
 
 ### CModelConfigElement_SetBodygroup
 
@@ -1723,7 +1702,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_Choices` | CUtlVector<CUtlString> |  |
+| `m_Choices` | CUtlVector< CUtlString > |  |
 
 ### CModelConfigList
 
@@ -1748,7 +1727,7 @@ classDiagram
 |------|------|-------------|
 | `m_bHideMaterialGroupInTools` | bool |  |
 | `m_bHideRenderColorInTools` | bool |  |
-| `m_Configs` | CUtlVector<[CModelConfig](../schemas/modellib.md#cmodelconfig)*> |  |
+| `m_Configs` | CUtlVector< [CModelConfig](../schemas/modellib.md#cmodelconfig)* > |  |
 
 ### CMorphBundleData
 
@@ -1769,8 +1748,8 @@ classDiagram
 |------|------|-------------|
 | `m_flULeftSrc` | float32 |  |
 | `m_flVTopSrc` | float32 |  |
-| `m_offsets` | CUtlVector<float32> |  |
-| `m_ranges` | CUtlVector<float32> |  |
+| `m_offsets` | CUtlVector< float32 > |  |
+| `m_ranges` | CUtlVector< float32 > |  |
 
 ### CMorphConstraint
 
@@ -1835,7 +1814,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_name` | CUtlString |  |
-| `m_morphRectDatas` | CUtlVector<[CMorphRectData](../schemas/modellib.md#cmorphrectdata)> |  |
+| `m_morphRectDatas` | CUtlVector< [CMorphRectData](../schemas/modellib.md#cmorphrectdata) > |  |
 
 ### CMorphRectData
 
@@ -1864,7 +1843,7 @@ classDiagram
 | `m_nYTopDst` | int16 |  |
 | `m_flUWidthSrc` | float32 |  |
 | `m_flVHeightSrc` | float32 |  |
-| `m_bundleDatas` | CUtlVector<[CMorphBundleData](../schemas/modellib.md#cmorphbundledata)> |  |
+| `m_bundleDatas` | CUtlVector< [CMorphBundleData](../schemas/modellib.md#cmorphbundledata) > |  |
 
 ### CMorphSetData
 
@@ -1907,16 +1886,16 @@ classDiagram
 |------|------|-------------|
 | `m_nWidth` | int32 |  |
 | `m_nHeight` | int32 |  |
-| `m_bundleTypes` | CUtlVector<[MorphBundleType_t](../schemas/modellib.md#morphbundletype_t)> |  |
-| `m_morphDatas` | CUtlVector<[CMorphData](../schemas/modellib.md#cmorphdata)> |  |
-| `m_pTextureAtlas` | CStrongHandle<[InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase)> |  |
-| `m_FlexDesc` | CUtlVector<[CFlexDesc](../schemas/modellib.md#cflexdesc)> |  |
-| `m_FlexControllers` | CUtlVector<[CFlexController](../schemas/modellib.md#cflexcontroller)> |  |
-| `m_FlexRules` | CUtlVector<[CFlexRule](../schemas/modellib.md#cflexrule)> |  |
+| `m_bundleTypes` | CUtlVector< [MorphBundleType_t](../schemas/!GlobalTypes.md#morphbundletype_t) > |  |
+| `m_morphDatas` | CUtlVector< [CMorphData](../schemas/modellib.md#cmorphdata) > |  |
+| `m_pTextureAtlas` | CStrongHandle< [InfoForResourceTypeCTextureBase](../schemas/resourcesystem.md#infoforresourcetypectexturebase) > |  |
+| `m_FlexDesc` | CUtlVector< [CFlexDesc](../schemas/modellib.md#cflexdesc) > |  |
+| `m_FlexControllers` | CUtlVector< [CFlexController](../schemas/modellib.md#cflexcontroller) > |  |
+| `m_FlexRules` | CUtlVector< [CFlexRule](../schemas/modellib.md#cflexrule) > |  |
 
 ### CNPCPhysicsHull
 
-**Metadata:** `MGetKV3ClassDefaults {
+**Metadata:** `MFgdHelper game_data_list{ key = 'CNPCPhysicsHull' }`, `MFgdHelper npcphysicshull{}`, `MGetKV3ClassDefaults {
 	"m_sName": "",
 	"m_eType": "eInvalid",
 	"m_flCapsuleHeight": 50.000000,
@@ -1935,7 +1914,7 @@ classDiagram
 	],
 	"m_flGroundBoxHeight": 50.000000,
 	"m_flGroundBoxWidth": 11.000000
-}`, `MModelGameData`, `MFgdHelper "game_data_list{ key = 'CNPCPhysicsHull' }"`, `MFgdHelper "npcphysicshull{}"`
+}`, `MModelGameData`
 
 **Relationships:**
 
@@ -1948,14 +1927,14 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sName` | CGlobalSymbol | `MPropertyFriendlyName "Name"` `MPropertySuppressField` |
-| `m_eType` | [NPCPhysicsHullType_t](../schemas/modellib.md#npcphysicshulltype_t) | `MPropertyFriendlyName "Type"` |
-| `m_flCapsuleHeight` | float32 | `MPropertySuppressExpr "m_eType != eGroundCapsule && m_eType != eCenteredCapsule"` `MPropertyFriendlyName "Height"` |
-| `m_flCapsuleRadius` | float32 | `MPropertySuppressExpr "m_eType != eGroundCapsule && m_eType != eGenericCapsule && m_eType != eCenteredCapsule"` `MPropertyFriendlyName "Radius"` |
-| `m_vCapsuleCenter1` | Vector | `MPropertySuppressExpr "m_eType != eGenericCapsule"` `MPropertyFriendlyName "Center 1"` |
-| `m_vCapsuleCenter2` | Vector | `MPropertySuppressExpr "m_eType != eGenericCapsule"` `MPropertyFriendlyName "Center 2"` |
-| `m_flGroundBoxHeight` | float32 | `MPropertySuppressExpr "m_eType != eGroundBox"` `MPropertyFriendlyName "Height"` |
-| `m_flGroundBoxWidth` | float32 | `MPropertySuppressExpr "m_eType != eGroundBox"` `MPropertyFriendlyName "Width"` |
+| `m_sName` | CGlobalSymbol | `MPropertyFriendlyName Name` `MPropertySuppressField` |
+| `m_eType` | [NPCPhysicsHullType_t](../schemas/!GlobalTypes.md#npcphysicshulltype_t) | `MPropertyFriendlyName Type` |
+| `m_flCapsuleHeight` | float32 | `MPropertyFriendlyName Height` `MPropertySuppressExpr m_eType != eGroundCapsule && m_eType != eCenteredCapsule && m_eType != eCenteredCylinder && m_eType != eGroundCylinder` |
+| `m_flCapsuleRadius` | float32 | `MPropertyFriendlyName Radius` `MPropertySuppressExpr m_eType != eGroundCapsule && m_eType != eGenericCapsule && m_eType != eCenteredCapsule && m_eType != eCenteredCylinder && m_eType != eGroundCylinder` |
+| `m_vCapsuleCenter1` | Vector | `MPropertyFriendlyName Center 1` `MPropertySuppressExpr m_eType != eGenericCapsule` |
+| `m_vCapsuleCenter2` | Vector | `MPropertyFriendlyName Center 2` `MPropertySuppressExpr m_eType != eGenericCapsule` |
+| `m_flGroundBoxHeight` | float32 | `MPropertyFriendlyName Height` `MPropertySuppressExpr m_eType != eGroundBox` |
+| `m_flGroundBoxWidth` | float32 | `MPropertyFriendlyName Width` `MPropertySuppressExpr m_eType != eGroundBox` |
 
 ### COrientConstraint
 
@@ -2079,15 +2058,15 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_name` | CUtlString | `MKV3TransferName "surfacePropertyName"` |
+| `m_name` | CUtlString | `MKV3TransferName surfacePropertyName` |
 | `m_nameHash` | uint32 |  |
 | `m_baseNameHash` | uint32 |  |
-| `m_bHidden` | bool | `MKV3TransferName "hidden"` |
-| `m_description` | CUtlString | `MKV3TransferName "description"` |
-| `m_physics` | [CPhysSurfacePropertiesPhysics](../schemas/modellib.md#cphyssurfacepropertiesphysics) | `MKV3TransferName "physics"` |
-| `m_vehicleParams` | [CPhysSurfacePropertiesVehicle](../schemas/modellib.md#cphyssurfacepropertiesvehicle) | `MKV3TransferName "vehicleparams"` |
-| `m_audioSounds` | [CPhysSurfacePropertiesSoundNames](../schemas/modellib.md#cphyssurfacepropertiessoundnames) | `MKV3TransferName "audiosounds"` |
-| `m_audioParams` | [CPhysSurfacePropertiesAudio](../schemas/modellib.md#cphyssurfacepropertiesaudio) | `MKV3TransferName "audioparams"` |
+| `m_bHidden` | bool | `MKV3TransferName hidden` |
+| `m_description` | CUtlString | `MKV3TransferName description` |
+| `m_physics` | [CPhysSurfacePropertiesPhysics](../schemas/modellib.md#cphyssurfacepropertiesphysics) | `MKV3TransferName physics` |
+| `m_vehicleParams` | [CPhysSurfacePropertiesVehicle](../schemas/modellib.md#cphyssurfacepropertiesvehicle) | `MKV3TransferName vehicleparams` |
+| `m_audioSounds` | [CPhysSurfacePropertiesSoundNames](../schemas/modellib.md#cphyssurfacepropertiessoundnames) | `MKV3TransferName audiosounds` |
+| `m_audioParams` | [CPhysSurfacePropertiesAudio](../schemas/modellib.md#cphyssurfacepropertiesaudio) | `MKV3TransferName audioparams` |
 
 ### CPhysSurfacePropertiesAudio
 
@@ -2106,14 +2085,14 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_reflectivity` | float32 | `MKV3TransferName "audioreflectivity"` |
-| `m_hardnessFactor` | float32 | `MKV3TransferName "audiohardnessfactor"` |
-| `m_roughnessFactor` | float32 | `MKV3TransferName "audioroughnessfactor"` |
-| `m_roughThreshold` | float32 | `MKV3TransferName "scrapeRoughThreshold"` |
-| `m_hardThreshold` | float32 | `MKV3TransferName "impactHardThreshold"` |
-| `m_hardVelocityThreshold` | float32 | `MKV3TransferName "audioHardMinVelocity"` |
-| `m_flStaticImpactVolume` | float32 | `MKV3TransferName "staticImpactVolume"` |
-| `m_flOcclusionFactor` | float32 | `MKV3TransferName "occlusionFactor"` |
+| `m_reflectivity` | float32 | `MKV3TransferName audioreflectivity` |
+| `m_hardnessFactor` | float32 | `MKV3TransferName audiohardnessfactor` |
+| `m_roughnessFactor` | float32 | `MKV3TransferName audioroughnessfactor` |
+| `m_roughThreshold` | float32 | `MKV3TransferName scrapeRoughThreshold` |
+| `m_hardThreshold` | float32 | `MKV3TransferName impactHardThreshold` |
+| `m_hardVelocityThreshold` | float32 | `MKV3TransferName audioHardMinVelocity` |
+| `m_flStaticImpactVolume` | float32 | `MKV3TransferName staticImpactVolume` |
+| `m_flOcclusionFactor` | float32 | `MKV3TransferName occlusionFactor` |
 
 ### CPhysSurfacePropertiesPhysics
 
@@ -2130,12 +2109,12 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_friction` | float32 | `MKV3TransferName "friction"` |
-| `m_elasticity` | float32 | `MKV3TransferName "elasticity"` |
-| `m_density` | float32 | `MKV3TransferName "density"` |
-| `m_thickness` | float32 | `MKV3TransferName "thickness"` |
-| `m_softContactFrequency` | float32 | `MKV3TransferName "softcontactfrequency"` |
-| `m_softContactDampingRatio` | float32 | `MKV3TransferName "softcontactdampingratio"` |
+| `m_friction` | float32 | `MKV3TransferName friction` |
+| `m_elasticity` | float32 | `MKV3TransferName elasticity` |
+| `m_density` | float32 | `MKV3TransferName density` |
+| `m_thickness` | float32 | `MKV3TransferName thickness` |
+| `m_softContactFrequency` | float32 | `MKV3TransferName softcontactfrequency` |
+| `m_softContactDampingRatio` | float32 | `MKV3TransferName softcontactdampingratio` |
 
 ### CPhysSurfacePropertiesSoundNames
 
@@ -2158,18 +2137,18 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_impactSoft` | CUtlString | `MKV3TransferName "impactsoft"` |
-| `m_impactHard` | CUtlString | `MKV3TransferName "impacthard"` |
-| `m_scrapeSmooth` | CUtlString | `MKV3TransferName "scrapesmooth"` |
-| `m_scrapeRough` | CUtlString | `MKV3TransferName "scraperough"` |
-| `m_bulletImpact` | CUtlString | `MKV3TransferName "bulletimpact"` |
-| `m_rolling` | CUtlString | `MKV3TransferName "rolling"` |
-| `m_break` | CUtlString | `MKV3TransferName "break"` |
-| `m_strain` | CUtlString | `MKV3TransferName "strain"` |
-| `m_meleeImpact` | CUtlString | `MKV3TransferName "meleeimpact"` |
-| `m_pushOff` | CUtlString | `MKV3TransferName "pushoff"` |
-| `m_skidStop` | CUtlString | `MKV3TransferName "skidstop"` |
-| `m_resonant` | CUtlString | `MKV3TransferName "resonant"` |
+| `m_impactSoft` | CUtlString | `MKV3TransferName impactsoft` |
+| `m_impactHard` | CUtlString | `MKV3TransferName impacthard` |
+| `m_scrapeSmooth` | CUtlString | `MKV3TransferName scrapesmooth` |
+| `m_scrapeRough` | CUtlString | `MKV3TransferName scraperough` |
+| `m_bulletImpact` | CUtlString | `MKV3TransferName bulletimpact` |
+| `m_rolling` | CUtlString | `MKV3TransferName rolling` |
+| `m_break` | CUtlString | `MKV3TransferName break` |
+| `m_strain` | CUtlString | `MKV3TransferName strain` |
+| `m_meleeImpact` | CUtlString | `MKV3TransferName meleeimpact` |
+| `m_pushOff` | CUtlString | `MKV3TransferName pushoff` |
+| `m_skidStop` | CUtlString | `MKV3TransferName skidstop` |
+| `m_resonant` | CUtlString | `MKV3TransferName resonant` |
 
 ### CPhysSurfacePropertiesVehicle
 
@@ -2182,8 +2161,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_wheelDrag` | float32 | `MKV3TransferName "wheeldrag"` |
-| `m_wheelFrictionScale` | float32 | `MKV3TransferName "wheelfrictionscale"` |
+| `m_wheelDrag` | float32 | `MKV3TransferName wheeldrag` |
+| `m_wheelFrictionScale` | float32 | `MKV3TransferName wheelfrictionscale` |
 
 ### CPointConstraint
 
@@ -2265,10 +2244,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_hairs` | CUtlVector<[RenderHairStrandInfo_t](../schemas/modellib.md#renderhairstrandinfo_t)> |  |
-| `m_hairPositionOffsets` | CUtlVector<uint32> |  |
-| `m_hSimParamsMat` | CStrongHandleCopyable<[InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2)> |  |
-| `m_strandSegmentCountHist` | CUtlVector<int32> |  |
+| `m_hairs` | CUtlVector< [RenderHairStrandInfo_t](../schemas/modellib.md#renderhairstrandinfo_t) > |  |
+| `m_hairPositionOffsets` | CUtlVector< uint32 > |  |
+| `m_hSimParamsMat` | CStrongHandleCopyable< [InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2) > |  |
+| `m_strandSegmentCountHist` | CUtlVector< int32 > |  |
 | `m_nMaxSegmentsPerHairStrand` | int32 |  |
 | `m_nGuideHairCount` | int32 |  |
 | `m_nHairCount` | int32 |  |
@@ -2336,8 +2315,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sceneObjects` | CUtlLeanVectorFixedGrowable<[CSceneObjectData](../schemas/modellib.md#csceneobjectdata)> |  |
-| `m_constraints` | CUtlLeanVector<[CBaseConstraint](../schemas/modellib.md#cbaseconstraint)*> |  |
+| `m_sceneObjects` | CUtlLeanVectorFixedGrowable< [CSceneObjectData](../schemas/modellib.md#csceneobjectdata), 1 > |  |
+| `m_constraints` | CUtlLeanVector< [CBaseConstraint](../schemas/modellib.md#cbaseconstraint)* > |  |
 | `m_skeleton` | [CRenderSkeleton](../schemas/modellib.md#crenderskeleton) |  |
 | `m_bUseUV2ForCharting` | bool |  |
 | `m_bEmbeddedMapMesh` | bool |  |
@@ -2367,8 +2346,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_bones` | CUtlVector<[RenderSkeletonBone_t](../schemas/modellib.md#renderskeletonbone_t)> |  |
-| `m_boneParents` | CUtlVector<int32> |  |
+| `m_bones` | CUtlVector< [RenderSkeletonBone_t](../schemas/modellib.md#renderskeletonbone_t) > |  |
+| `m_boneParents` | CUtlVector< int32 > |  |
 | `m_nBoneWeightCount` | int32 |  |
 
 ### CSceneObjectData
@@ -2422,15 +2401,17 @@ classDiagram
 |------|------|-------------|
 | `m_vMinBounds` | Vector |  |
 | `m_vMaxBounds` | Vector |  |
-| `m_drawCalls` | CUtlLeanVector<[CMaterialDrawDescriptor](../schemas/modellib.md#cmaterialdrawdescriptor)> |  |
-| `m_drawBounds` | CUtlLeanVector<[AABB_t](../schemas/mathlib_extended.md#aabb_t)> |  |
-| `m_meshlets` | CUtlLeanVector<[CMeshletDescriptor](../schemas/modellib.md#cmeshletdescriptor)> |  |
-| `m_rtProxyDrawCalls` | CUtlLeanVector<[CSceneObjectData](../schemas/modellib.md#csceneobjectdata)::RTProxyDrawDescriptor_t> |  |
+| `m_drawCalls` | CUtlLeanVector< [CMaterialDrawDescriptor](../schemas/modellib.md#cmaterialdrawdescriptor) > |  |
+| `m_drawBounds` | CUtlLeanVector< [AABB_t](../schemas/mathlib_extended.md#aabb_t) > |  |
+| `m_meshlets` | CUtlLeanVector< [CMeshletDescriptor](../schemas/modellib.md#cmeshletdescriptor) > |  |
+| `m_rtProxyDrawCalls` | CUtlLeanVector< [CSceneObjectData](../schemas/modellib.md#csceneobjectdata)::RTProxyDrawDescriptor_t > |  |
 | `m_vTintColor` | Vector4D |  |
 
 ### CSceneObjectData::RTProxyDrawDescriptor_t
 
 **Metadata:** `MGetKV3ClassDefaults {
+	"m_materialGroupToken": 0,
+	"m_nSrcDrawIndex": -1,
 	"m_drawDesc":
 	{
 		"m_flUvDensity": 0.000000,
@@ -2447,6 +2428,9 @@ classDiagram
 		"m_nDepthVertexBufferIndex": 255,
 		"m_nMeshletPackedIVBIndex": 255,
 		"m_rigidMeshParts":
+		[
+		],
+		"m_rootBvhNodes":
 		[
 		],
 		"m_nPrimitiveType": "RENDER_PRIM_TRIANGLES",
@@ -2487,7 +2471,12 @@ classDiagram
 	"m_nVertexAlbedoFormat": "VERTEX_ALBEDO_NONE",
 	"m_nVertexAlbedoVB": -1,
 	"m_nVertexAlbedoOffset": 0,
-	"m_nVertexAlbedoStride": 0
+	"m_nVertexAlbedoStride": 0,
+	"m_nVertexEmissiveFormat": "VERTEX_ALBEDO_NONE",
+	"m_nVertexEmissiveVB": -1,
+	"m_nVertexEmissiveOffset": 0,
+	"m_nVertexEmissiveStride": 0,
+	"m_fEmissiveFactor": 0.000000
 }`
 
 **Relationships:**
@@ -2502,12 +2491,19 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
+| `m_materialGroupToken` | uint32 |  |
+| `m_nSrcDrawIndex` | int32 |  |
 | `m_drawDesc` | [CMaterialDrawDescriptor](../schemas/modellib.md#cmaterialdrawdescriptor) |  |
 | `m_mWorldFromLocal` | matrix3x4_t |  |
-| `m_nVertexAlbedoFormat` | [VertexAlbedoFormat_t](../schemas/modellib.md#vertexalbedoformat_t) |  |
+| `m_nVertexAlbedoFormat` | [VertexAlbedoFormat_t](../schemas/!GlobalTypes.md#vertexalbedoformat_t) |  |
 | `m_nVertexAlbedoVB` | int8 |  |
 | `m_nVertexAlbedoOffset` | uint16 |  |
 | `m_nVertexAlbedoStride` | uint16 |  |
+| `m_nVertexEmissiveFormat` | [VertexAlbedoFormat_t](../schemas/!GlobalTypes.md#vertexalbedoformat_t) |  |
+| `m_nVertexEmissiveVB` | int8 |  |
+| `m_nVertexEmissiveOffset` | uint16 |  |
+| `m_nVertexEmissiveStride` | uint16 |  |
+| `m_fEmissiveFactor` | float32 |  |
 
 ### CTiltTwistConstraint
 
@@ -2618,7 +2614,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_surfacePropertiesList` | CUtlVector<[CPhysSurfaceProperties](../schemas/modellib.md#cphyssurfaceproperties)*> | `MKV3TransferName "SurfacePropertiesList"` |
+| `m_surfacePropertiesList` | CUtlVector< [CPhysSurfaceProperties](../schemas/modellib.md#cphyssurfaceproperties)* > | `MKV3TransferName SurfacePropertiesList` |
 
 ### DynamicMeshDeformParams_t
 
@@ -2642,50 +2638,6 @@ classDiagram
 | `m_bSmoothNormalsAcrossUvSeams` | bool |  |
 | `m_bEnableEyeBulgeDeformation` | bool |  |
 
-### FlexOpCode_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `FLEX_OP_CONST` | 1 |  |
-| `FLEX_OP_FETCH1` | 2 |  |
-| `FLEX_OP_FETCH2` | 3 |  |
-| `FLEX_OP_ADD` | 4 |  |
-| `FLEX_OP_SUB` | 5 |  |
-| `FLEX_OP_MUL` | 6 |  |
-| `FLEX_OP_DIV` | 7 |  |
-| `FLEX_OP_NEG` | 8 |  |
-| `FLEX_OP_EXP` | 9 |  |
-| `FLEX_OP_OPEN` | 10 |  |
-| `FLEX_OP_CLOSE` | 11 |  |
-| `FLEX_OP_COMMA` | 12 |  |
-| `FLEX_OP_MAX` | 13 |  |
-| `FLEX_OP_MIN` | 14 |  |
-| `FLEX_OP_2WAY_0` | 15 |  |
-| `FLEX_OP_2WAY_1` | 16 |  |
-| `FLEX_OP_NWAY` | 17 |  |
-| `FLEX_OP_COMBO` | 18 |  |
-| `FLEX_OP_DOMINATE` | 19 |  |
-| `FLEX_OP_DME_LOWER_EYELID` | 20 |  |
-| `FLEX_OP_DME_UPPER_EYELID` | 21 |  |
-| `FLEX_OP_SQRT` | 22 |  |
-| `FLEX_OP_REMAPVALCLAMPED` | 23 |  |
-| `FLEX_OP_SIN` | 24 |  |
-| `FLEX_OP_COS` | 25 |  |
-| `FLEX_OP_ABS` | 26 |  |
-
-### InputLayoutVariation_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `INPUT_LAYOUT_VARIATION_DEFAULT` | 0 |  |
-| `INPUT_LAYOUT_VARIATION_STREAM1_INSTANCEID` | 1 |  |
-| `INPUT_LAYOUT_VARIATION_STREAM1_INSTANCEID_MORPH_VERT_ID` | 2 |  |
-| `INPUT_LAYOUT_VARIATION_MAX` | 3 |  |
-
 ### MaterialGroup_t
 
 **Metadata:** `MGetKV3ClassDefaults {
@@ -2707,22 +2659,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_name` | CUtlString |  |
-| `m_materials` | CUtlVector<CStrongHandle<[InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2)>> |  |
-
-### MeshDrawPrimitiveFlags_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `MESH_DRAW_FLAGS_NONE` | 0 |  |
-| `MESH_DRAW_FLAGS_USE_SHADOW_FAST_PATH` | 1 |  |
-| `MESH_DRAW_FLAGS_USE_COMPRESSED_NORMAL_TANGENT` | 2 |  |
-| `MESH_DRAW_INPUT_LAYOUT_IS_NOT_MATCHED_TO_MATERIAL` | 8 |  |
-| `MESH_DRAW_FLAGS_USE_COMPRESSED_PER_VERTEX_LIGHTING` | 16 |  |
-| `MESH_DRAW_FLAGS_USE_UNCOMPRESSED_PER_VERTEX_LIGHTING` | 32 |  |
-| `MESH_DRAW_FLAGS_CAN_BATCH_WITH_DYNAMIC_SHADER_CONSTANTS` | 64 |  |
-| `MESH_DRAW_FLAGS_DRAW_LAST` | 128 |  |
+| `m_materials` | CUtlVector< CStrongHandle< [InfoForResourceTypeIMaterial2](../schemas/resourcesystem.md#infoforresourcetypeimaterial2) > > |  |
 
 ### ModelAnimGraph2Ref_t
 
@@ -2743,18 +2680,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_sIdentifier` | CUtlString |  |
-| `m_hGraph` | CStrongHandle<[InfoForResourceTypeCNmGraphDefinition](../schemas/resourcesystem.md#infoforresourcetypecnmgraphdefinition)> |  |
-
-### ModelBoneFlexComponent_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `MODEL_BONE_FLEX_INVALID` | -1 |  |
-| `MODEL_BONE_FLEX_TX` | 0 |  |
-| `MODEL_BONE_FLEX_TY` | 1 |  |
-| `MODEL_BONE_FLEX_TZ` | 2 |  |
+| `m_hGraph` | CStrongHandle< [InfoForResourceTypeCNmGraphDefinition](../schemas/resourcesystem.md#infoforresourcetypecnmgraphdefinition) > |  |
 
 ### ModelBoneFlexDriverControl_t
 
@@ -2777,7 +2703,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_nBoneComponent` | [ModelBoneFlexComponent_t](../schemas/modellib.md#modelboneflexcomponent_t) |  |
+| `m_nBoneComponent` | [ModelBoneFlexComponent_t](../schemas/!GlobalTypes.md#modelboneflexcomponent_t) |  |
 | `m_flexController` | CUtlString |  |
 | `m_flexControllerToken` | uint32 |  |
 | `m_flMin` | float32 |  |
@@ -2806,19 +2732,7 @@ classDiagram
 |------|------|-------------|
 | `m_boneName` | CUtlString |  |
 | `m_boneNameToken` | uint32 |  |
-| `m_controls` | CUtlVector<[ModelBoneFlexDriverControl_t](../schemas/modellib.md#modelboneflexdrivercontrol_t)> |  |
-
-### ModelConfigAttachmentType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `MODEL_CONFIG_ATTACHMENT_INVALID` | -1 |  |
-| `MODEL_CONFIG_ATTACHMENT_BONE_OR_ATTACHMENT` | 0 |  |
-| `MODEL_CONFIG_ATTACHMENT_ROOT_RELATIVE` | 1 |  |
-| `MODEL_CONFIG_ATTACHMENT_BONEMERGE` | 2 |  |
-| `MODEL_CONFIG_ATTACHMENT_COUNT` | 3 |  |
+| `m_controls` | CUtlVector< [ModelBoneFlexDriverControl_t](../schemas/modellib.md#modelboneflexdrivercontrol_t) > |  |
 
 ### ModelEmbeddedMesh_t
 
@@ -2855,9 +2769,9 @@ classDiagram
 | `m_nMeshIndex` | int32 |  |
 | `m_nDataBlock` | int32 |  |
 | `m_nMorphBlock` | int32 |  |
-| `m_vertexBuffers` | CUtlVector<[ModelMeshBufferData_t](../schemas/modellib.md#modelmeshbufferdata_t)> |  |
-| `m_indexBuffers` | CUtlVector<[ModelMeshBufferData_t](../schemas/modellib.md#modelmeshbufferdata_t)> |  |
-| `m_toolsBuffers` | CUtlVector<[ModelMeshBufferData_t](../schemas/modellib.md#modelmeshbufferdata_t)> |  |
+| `m_vertexBuffers` | CUtlVector< [ModelMeshBufferData_t](../schemas/modellib.md#modelmeshbufferdata_t) > |  |
+| `m_indexBuffers` | CUtlVector< [ModelMeshBufferData_t](../schemas/modellib.md#modelmeshbufferdata_t) > |  |
+| `m_toolsBuffers` | CUtlVector< [ModelMeshBufferData_t](../schemas/modellib.md#modelmeshbufferdata_t) > |  |
 | `m_nVBIBBlock` | int32 |  |
 | `m_nToolsVBBlock` | int32 |  |
 
@@ -2904,21 +2818,7 @@ classDiagram
 | `m_bCreateRawBuffer` | bool |  |
 | `m_bCreatePooledBuffer` | bool |  |
 | `m_nBufferUsage` | uint8 |  |
-| `m_inputLayoutFields` | CUtlVector<[RenderInputLayoutField_t](../schemas/modellib.md#renderinputlayoutfield_t)> |  |
-
-### ModelMeshBufferUsage_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `MESH_BUFFER_USAGE_NONE` | 0 |  |
-| `MESH_BUFFER_USAGE_VB` | 1 |  |
-| `MESH_BUFFER_USAGE_IB` | 2 |  |
-| `MESH_BUFFER_USAGE_ADJACENCY` | 4 |  |
-| `MESH_BUFFER_USAGE_MESHLET_TRIS` | 8 |  |
-| `MESH_BUFFER_USAGE_RT_PROXY` | 16 |  |
-| `MESH_BUFFER_USAGE_VERTEX_ALBEDO` | 32 |  |
+| `m_inputLayoutFields` | CUtlVector< [RenderInputLayoutField_t](../schemas/modellib.md#renderinputlayoutfield_t) > |  |
 
 ### ModelSkeletonData_t
 
@@ -2950,93 +2850,13 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_boneName` | CUtlVector<CUtlString> |  |
-| `m_nParent` | CUtlVector<int16> |  |
-| `m_boneSphere` | CUtlVector<float32> |  |
-| `m_nFlag` | CUtlVector<uint32> |  |
-| `m_bonePosParent` | CUtlVector<Vector> |  |
-| `m_boneRotParent` | CUtlVector<QuaternionStorage> |  |
-| `m_boneScaleParent` | CUtlVector<float32> |  |
-
-### ModelSkeletonData_t::BoneFlags_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `FLAG_NO_BONE_FLAGS` | 0 |  |
-| `FLAG_BONEFLEXDRIVER` | 4 |  |
-| `FLAG_CLOTH` | 8 |  |
-| `FLAG_PHYSICS` | 16 |  |
-| `FLAG_ATTACHMENT` | 32 |  |
-| `FLAG_ANIMATION` | 64 |  |
-| `FLAG_MESH` | 128 |  |
-| `FLAG_HITBOX` | 256 |  |
-| `FLAG_BONE_USED_BY_VERTEX_LOD0` | 1024 |  |
-| `FLAG_BONE_USED_BY_VERTEX_LOD1` | 2048 |  |
-| `FLAG_BONE_USED_BY_VERTEX_LOD2` | 4096 |  |
-| `FLAG_BONE_USED_BY_VERTEX_LOD3` | 8192 |  |
-| `FLAG_BONE_USED_BY_VERTEX_LOD4` | 16384 |  |
-| `FLAG_BONE_USED_BY_VERTEX_LOD5` | 32768 |  |
-| `FLAG_BONE_USED_BY_VERTEX_LOD6` | 65536 |  |
-| `FLAG_BONE_USED_BY_VERTEX_LOD7` | 131072 |  |
-| `FLAG_BONE_MERGE_READ` | 262144 |  |
-| `FLAG_BONE_MERGE_WRITE` | 524288 |  |
-| `FLAG_ALL_BONE_FLAGS` | 1048575 |  |
-| `BLEND_PREALIGNED` | 1048576 |  |
-| `FLAG_RIGIDLENGTH` | 2097152 |  |
-| `FLAG_PROCEDURAL` | 4194304 |  |
-
-### MorphBundleType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `MORPH_BUNDLE_TYPE_NONE` | 0 |  |
-| `MORPH_BUNDLE_TYPE_POSITION_SPEED` | 1 |  |
-| `MORPH_BUNDLE_TYPE_NORMAL_WRINKLE` | 2 |  |
-| `MORPH_BUNDLE_TYPE_COUNT` | 3 |  |
-
-### MorphFlexControllerRemapType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `MORPH_FLEXCONTROLLER_REMAP_PASSTHRU` | 0 |  |
-| `MORPH_FLEXCONTROLLER_REMAP_2WAY` | 1 |  |
-| `MORPH_FLEXCONTROLLER_REMAP_NWAY` | 2 |  |
-| `MORPH_FLEXCONTROLLER_REMAP_EYELID` | 3 |  |
-
-### MovementCapability_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `eStrafe` | 0 | Strafe |
-| `eIdleTurn` | 1 | Turn |
-| `eStart` | 2 | Start |
-| `eStop` | 3 | Stop |
-| `eInstantStop` | 4 | Instant Stop |
-| `eShuffle` | 5 | Shuffle |
-| `ePlantedTurn` | 6 | Planted Turn |
-| `eUseStartAsPlantedTurn` | 7 | Stop/Start Planted Turn |
-| `eLean` | 8 | Lean |
-| `eCount` | 9 |  |
-
-### NPCPhysicsHullType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `eInvalid` | 0 | None |
-| `eGroundCapsule` | 1 | Capsule - Ground |
-| `eCenteredCapsule` | 2 | Capsule - Centered |
-| `eGenericCapsule` | 3 | Capsule - Generic |
-| `eGroundBox` | 4 | Box - Ground |
+| `m_boneName` | CUtlVector< CUtlString > |  |
+| `m_nParent` | CUtlVector< int16 > |  |
+| `m_boneSphere` | CUtlVector< float32 > |  |
+| `m_nFlag` | CUtlVector< uint32 > |  |
+| `m_bonePosParent` | CUtlVector< Vector > |  |
+| `m_boneRotParent` | CUtlVector< QuaternionStorage > |  |
+| `m_boneScaleParent` | CUtlVector< float32 > |  |
 
 ### PermModelDataAnimatedMaterialAttribute_t
 
@@ -3204,29 +3024,29 @@ classDiagram
 |------|------|-------------|
 | `m_name` | CUtlString |  |
 | `m_modelInfo` | [PermModelInfo_t](../schemas/modellib.md#permmodelinfo_t) |  |
-| `m_ExtParts` | CUtlVector<[PermModelExtPart_t](../schemas/modellib.md#permmodelextpart_t)> |  |
-| `m_refMeshes` | CUtlVector<CStrongHandle<[InfoForResourceTypeCRenderMesh](../schemas/resourcesystem.md#infoforresourcetypecrendermesh)>> |  |
-| `m_refMeshGroupMasks` | CUtlVector<uint64> |  |
-| `m_refPhysGroupMasks` | CUtlVector<uint64> |  |
-| `m_refLODGroupMasks` | CUtlVector<uint8> |  |
-| `m_lodGroupSwitchDistances` | CUtlVector<float32> |  |
-| `m_refPhysicsData` | CUtlVector<CStrongHandle<[InfoForResourceTypeCPhysAggregateData](../schemas/resourcesystem.md#infoforresourcetypecphysaggregatedata)>> |  |
-| `m_refPhysicsHitboxData` | CUtlVector<CStrongHandle<[InfoForResourceTypeCPhysAggregateData](../schemas/resourcesystem.md#infoforresourcetypecphysaggregatedata)>> |  |
-| `m_refAnimGroups` | CUtlVector<CStrongHandle<[InfoForResourceTypeCAnimationGroup](../schemas/resourcesystem.md#infoforresourcetypecanimationgroup)>> |  |
-| `m_refSequenceGroups` | CUtlVector<CStrongHandle<[InfoForResourceTypeCSequenceGroupData](../schemas/resourcesystem.md#infoforresourcetypecsequencegroupdata)>> |  |
-| `m_meshGroups` | CUtlVector<CUtlString> |  |
-| `m_materialGroups` | CUtlVector<[MaterialGroup_t](../schemas/modellib.md#materialgroup_t)> |  |
+| `m_ExtParts` | CUtlVector< [PermModelExtPart_t](../schemas/modellib.md#permmodelextpart_t) > |  |
+| `m_refMeshes` | CUtlVector< CStrongHandle< [InfoForResourceTypeCRenderMesh](../schemas/resourcesystem.md#infoforresourcetypecrendermesh) > > |  |
+| `m_refMeshGroupMasks` | CUtlVector< uint64 > |  |
+| `m_refPhysGroupMasks` | CUtlVector< uint64 > |  |
+| `m_refLODGroupMasks` | CUtlVector< uint8 > |  |
+| `m_lodGroupSwitchDistances` | CUtlVector< float32 > |  |
+| `m_refPhysicsData` | CUtlVector< CStrongHandle< [InfoForResourceTypeCPhysAggregateData](../schemas/resourcesystem.md#infoforresourcetypecphysaggregatedata) > > |  |
+| `m_refPhysicsHitboxData` | CUtlVector< CStrongHandle< [InfoForResourceTypeCPhysAggregateData](../schemas/resourcesystem.md#infoforresourcetypecphysaggregatedata) > > |  |
+| `m_refAnimGroups` | CUtlVector< CStrongHandle< [InfoForResourceTypeCAnimationGroup](../schemas/resourcesystem.md#infoforresourcetypecanimationgroup) > > |  |
+| `m_refSequenceGroups` | CUtlVector< CStrongHandle< [InfoForResourceTypeCSequenceGroupData](../schemas/resourcesystem.md#infoforresourcetypecsequencegroupdata) > > |  |
+| `m_meshGroups` | CUtlVector< CUtlString > |  |
+| `m_materialGroups` | CUtlVector< [MaterialGroup_t](../schemas/modellib.md#materialgroup_t) > |  |
 | `m_nDefaultMeshGroupMask` | uint64 |  |
 | `m_modelSkeleton` | [ModelSkeletonData_t](../schemas/modellib.md#modelskeletondata_t) |  |
-| `m_remappingTable` | CUtlVector<int16> |  |
-| `m_remappingTableStarts` | CUtlVector<uint16> |  |
-| `m_boneFlexDrivers` | CUtlVector<[ModelBoneFlexDriver_t](../schemas/modellib.md#modelboneflexdriver_t)> |  |
+| `m_remappingTable` | CUtlVector< int16 > |  |
+| `m_remappingTableStarts` | CUtlVector< uint16 > |  |
+| `m_boneFlexDrivers` | CUtlVector< [ModelBoneFlexDriver_t](../schemas/modellib.md#modelboneflexdriver_t) > |  |
 | `m_pModelConfigList` | [CModelConfigList](../schemas/modellib.md#cmodelconfiglist)* |  |
-| `m_BodyGroupsHiddenInTools` | CUtlVector<CUtlString> |  |
-| `m_refAnimIncludeModels` | CUtlVector<CStrongHandle<[InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel)>> |  |
-| `m_AnimatedMaterialAttributes` | CUtlVector<[PermModelDataAnimatedMaterialAttribute_t](../schemas/modellib.md#permmodeldataanimatedmaterialattribute_t)> |  |
-| `m_animGraph2Refs` | CUtlVector<[ModelAnimGraph2Ref_t](../schemas/modellib.md#modelanimgraph2ref_t)> |  |
-| `m_vecNmSkeletonRefs` | CUtlVector<CStrongHandle<[InfoForResourceTypeCNmSkeleton](../schemas/resourcesystem.md#infoforresourcetypecnmskeleton)>> |  |
+| `m_BodyGroupsHiddenInTools` | CUtlVector< CUtlString > |  |
+| `m_refAnimIncludeModels` | CUtlVector< CStrongHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > > |  |
+| `m_AnimatedMaterialAttributes` | CUtlVector< [PermModelDataAnimatedMaterialAttribute_t](../schemas/modellib.md#permmodeldataanimatedmaterialattribute_t) > |  |
+| `m_animGraph2Refs` | CUtlVector< [ModelAnimGraph2Ref_t](../schemas/modellib.md#modelanimgraph2ref_t) > |  |
+| `m_vecNmSkeletonRefs` | CUtlVector< CStrongHandle< [InfoForResourceTypeCNmSkeleton](../schemas/resourcesystem.md#infoforresourcetypecnmskeleton) > > |  |
 
 ### PermModelExtPart_t
 
@@ -3261,7 +3081,7 @@ classDiagram
 | `m_Transform` | CTransform |  |
 | `m_Name` | CUtlString |  |
 | `m_nParent` | int32 |  |
-| `m_refModel` | CStrongHandle<[InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel)> |  |
+| `m_refModel` | CStrongHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > |  |
 
 ### PermModelInfo_t
 
@@ -3318,28 +3138,6 @@ classDiagram
 | `m_sSurfaceProperty` | CUtlString |  |
 | `m_keyValueText` | CUtlString |  |
 
-### PermModelInfo_t::FlagEnum
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `FLAG_TRANSLUCENT` | 1 |  |
-| `FLAG_TRANSLUCENT_TWO_PASS` | 2 |  |
-| `FLAG_MODEL_IS_RUNTIME_COMBINED` | 4 |  |
-| `FLAG_SOURCE1_IMPORT` | 8 |  |
-| `FLAG_MODEL_PART_CHILD` | 16 |  |
-| `FLAG_NAV_GEN_NONE` | 32 |  |
-| `FLAG_NAV_GEN_HULL` | 64 |  |
-| `FLAG_NO_FORCED_FADE` | 2048 |  |
-| `FLAG_HAS_SKINNED_MESHES` | 1024 |  |
-| `FLAG_DO_NOT_CAST_SHADOWS` | 131072 |  |
-| `FLAG_FORCE_PHONEME_CROSSFADE` | 4096 |  |
-| `FLAG_NO_ANIM_EVENTS` | 1048576 |  |
-| `FLAG_ANIMATION_DRIVEN_FLEXES` | 2097152 |  |
-| `FLAG_IMPLICIT_BIND_POSE_SEQUENCE` | 4194304 |  |
-| `FLAG_MODEL_DOC` | 8388608 |  |
-
 ### PhysShapeMarkup_t
 
 **Metadata:** `MGetKV3ClassDefaults {
@@ -3392,32 +3190,12 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_ParticleBoneHash` | CUtlVector<uint32> |  |
-| `m_Particles` | CUtlVector<[RnSoftbodyParticle_t](../schemas/physicslib.md#rnsoftbodyparticle_t)> |  |
-| `m_Springs` | CUtlVector<[RnSoftbodySpring_t](../schemas/physicslib.md#rnsoftbodyspring_t)> |  |
-| `m_Capsules` | CUtlVector<[RnSoftbodyCapsule_t](../schemas/physicslib.md#rnsoftbodycapsule_t)> |  |
-| `m_InitPose` | CUtlVector<CTransform> |  |
-| `m_ParticleBoneName` | CUtlVector<CUtlString> |  |
-
-### RenderBufferFlags_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `RENDER_BUFFER_USAGE_NONE` | 0 |  |
-| `RENDER_BUFFER_USAGE_VERTEX_BUFFER` | 1 |  |
-| `RENDER_BUFFER_USAGE_INDEX_BUFFER` | 2 |  |
-| `RENDER_BUFFER_USAGE_SHADER_RESOURCE` | 4 |  |
-| `RENDER_BUFFER_USAGE_UNORDERED_ACCESS` | 8 |  |
-| `RENDER_BUFFER_BYTEADDRESS_BUFFER` | 16 |  |
-| `RENDER_BUFFER_STRUCTURED_BUFFER` | 32 |  |
-| `RENDER_BUFFER_UAV_DRAW_INDIRECT_ARGS` | 256 |  |
-| `RENDER_BUFFER_ACCELERATION_STRUCTURE` | 512 |  |
-| `RENDER_BUFFER_SHADER_BINDING_TABLE` | 1024 |  |
-| `RENDER_BUFFER_POOL_ALLOCATED` | 2048 |  |
-| `RENDER_BUFFER_USAGE_CONDITIONAL_RENDERING` | 4096 |  |
-| `RENDER_BUFFER_IMMOVABLE_ALLOCATION` | 8192 |  |
+| `m_ParticleBoneHash` | CUtlVector< uint32 > |  |
+| `m_Particles` | CUtlVector< [RnSoftbodyParticle_t](../schemas/physicslib.md#rnsoftbodyparticle_t) > |  |
+| `m_Springs` | CUtlVector< [RnSoftbodySpring_t](../schemas/physicslib.md#rnsoftbodyspring_t) > |  |
+| `m_Capsules` | CUtlVector< [RnSoftbodyCapsule_t](../schemas/physicslib.md#rnsoftbodycapsule_t) > |  |
+| `m_InitPose` | CUtlVector< CTransform > |  |
+| `m_ParticleBoneName` | CUtlVector< CUtlString > |  |
 
 ### RenderHairStrandInfo_t
 
@@ -3480,54 +3258,8 @@ classDiagram
 | `m_nSemanticIndex` | int8 |  |
 | `m_nOffset` | int16 |  |
 | `m_nSlot` | int8 |  |
-| `m_nSlotType` | [RenderSlotType_t](../schemas/modellib.md#renderslottype_t) |  |
+| `m_nSlotType` | [RenderSlotType_t](../schemas/!GlobalTypes.md#renderslottype_t) |  |
 | `m_szShaderSemantic` | char[32] |  |
-
-### RenderMeshSlotType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `RENDERMESH_SLOT_INVALID` | -1 |  |
-| `RENDERMESH_SLOT_PER_VERTEX` | 0 |  |
-| `RENDERMESH_SLOT_PER_INSTANCE` | 1 |  |
-
-### RenderMultisampleType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `RENDER_MULTISAMPLE_INVALID` | -1 |  |
-| `RENDER_MULTISAMPLE_NONE` | 0 |  |
-| `RENDER_MULTISAMPLE_2X` | 1 |  |
-| `RENDER_MULTISAMPLE_4X` | 2 |  |
-| `RENDER_MULTISAMPLE_6X` | 3 |  |
-| `RENDER_MULTISAMPLE_8X` | 4 |  |
-| `RENDER_MULTISAMPLE_16X` | 5 |  |
-| `RENDER_MULTISAMPLE_TYPE_COUNT` | 6 |  |
-
-### RenderPrimitiveType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `RENDER_PRIM_POINTS` | 0 |  |
-| `RENDER_PRIM_LINES` | 1 |  |
-| `RENDER_PRIM_LINES_WITH_ADJACENCY` | 2 |  |
-| `RENDER_PRIM_LINE_STRIP` | 3 |  |
-| `RENDER_PRIM_LINE_STRIP_WITH_ADJACENCY` | 4 |  |
-| `RENDER_PRIM_TRIANGLES` | 5 |  |
-| `RENDER_PRIM_TRIANGLES_WITH_ADJACENCY` | 6 |  |
-| `RENDER_PRIM_TRIANGLE_STRIP` | 7 |  |
-| `RENDER_PRIM_TRIANGLE_STRIP_WITH_ADJACENCY` | 8 |  |
-| `RENDER_PRIM_INSTANCED_QUADS` | 9 |  |
-| `RENDER_PRIM_HETEROGENOUS` | 10 |  |
-| `RENDER_PRIM_COMPUTE_SHADER` | 11 |  |
-| `RENDER_PRIM_MESH_SHADER` | 12 |  |
-| `RENDER_PRIM_TYPE_COUNT` | 13 |  |
 
 ### RenderSkeletonBone_t
 
@@ -3584,53 +3316,6 @@ classDiagram
 | `m_bbox` | [SkeletonBoneBounds_t](../schemas/modellib.md#skeletonbonebounds_t) |  |
 | `m_flSphereRadius` | float32 |  |
 
-### RenderSlotType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `RENDER_SLOT_INVALID` | -1 |  |
-| `RENDER_SLOT_PER_VERTEX` | 0 |  |
-| `RENDER_SLOT_PER_INSTANCE` | 1 |  |
-
-### ScriptedHeldWeaponBehavior_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `eInvalid` | -1 |  |
-| `eHolster` | 0 |  |
-| `eDeploy` | 1 |  |
-| `eDrop` | 2 |  |
-
-### ScriptedMoveTo_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `eWait` | 0 |  |
-| `eMoveWithGait` | 3 |  |
-| `eTeleport` | 4 |  |
-| `eWaitFacing` | 5 |  |
-| `eObsoleteBackCompat1` | 1 |  |
-| `eObsoleteBackCompat2` | 2 |  |
-
-### SharedMovementGait_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `eInvalid` | -1 | None |
-| `eSlow` | 0 | Slow |
-| `eMedium` | 1 | Medium |
-| `eFast` | 2 | Fast |
-| `eVeryFast` | 3 | VeryFast |
-| `eCount` | 4 |  |
-
 ### SheetSequenceIntegerId_t
 
 **Metadata:** `MIsBoxedIntegerType`
@@ -3670,14 +3355,14 @@ classDiagram
 |------|------|-------------|
 | `m_nEntIndex` | CEntityIndex |  |
 | `m_nEntParent` | CEntityIndex |  |
-| `m_ImportedCollision` | CUtlVector<CEntityIndex> |  |
+| `m_ImportedCollision` | CUtlVector< CEntityIndex > |  |
 | `m_ModelName` | CUtlString |  |
 | `m_CaptureName` | CUtlString |  |
-| `m_ModelBindPose` | CUtlVector<[SkeletonAnimCapture_t](../schemas/modellib.md#skeletonanimcapture_t)::Bone_t> |  |
-| `m_FeModelInitPose` | CUtlVector<[SkeletonAnimCapture_t](../schemas/modellib.md#skeletonanimcapture_t)::Bone_t> |  |
+| `m_ModelBindPose` | CUtlVector< [SkeletonAnimCapture_t](../schemas/modellib.md#skeletonanimcapture_t)::Bone_t > |  |
+| `m_FeModelInitPose` | CUtlVector< [SkeletonAnimCapture_t](../schemas/modellib.md#skeletonanimcapture_t)::Bone_t > |  |
 | `m_nFlexControllers` | int32 |  |
 | `m_bPredicted` | bool |  |
-| `m_Frames` | CUtlVector<[SkeletonAnimCapture_t](../schemas/modellib.md#skeletonanimcapture_t)::Frame_t> |  |
+| `m_Frames` | CUtlVector< [SkeletonAnimCapture_t](../schemas/modellib.md#skeletonanimcapture_t)::Frame_t > |  |
 
 ### SkeletonAnimCapture_t::Bone_t
 
@@ -3814,11 +3499,11 @@ classDiagram
 | `m_Stamp` | [SkeletonAnimCapture_t](../schemas/modellib.md#skeletonanimcapture_t)::FrameStamp_t |  |
 | `m_Transform` | CTransform |  |
 | `m_bTeleport` | bool |  |
-| `m_CompositeBones` | CUtlVector<CTransform> |  |
-| `m_SimStateBones` | CUtlVector<CTransform> |  |
-| `m_FeModelAnims` | CUtlVector<CTransform> |  |
-| `m_FeModelPos` | CUtlVector<VectorAligned> |  |
-| `m_FlexControllerWeights` | CUtlVector<float32> |  |
+| `m_CompositeBones` | CUtlVector< CTransform > |  |
+| `m_SimStateBones` | CUtlVector< CTransform > |  |
+| `m_FeModelAnims` | CUtlVector< CTransform > |  |
+| `m_FeModelPos` | CUtlVector< VectorAligned > |  |
+| `m_FlexControllerWeights` | CUtlVector< float32 > |  |
 
 ### SkeletonBoneBounds_t
 
@@ -3867,8 +3552,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_AnimCaptures` | CUtlVector<[SkeletonAnimCapture_t](../schemas/modellib.md#skeletonanimcapture_t)*> |  |
-| `m_CameraTrack` | CUtlVector<[SkeletonAnimCapture_t](../schemas/modellib.md#skeletonanimcapture_t)::Camera_t> |  |
+| `m_AnimCaptures` | CUtlVector< [SkeletonAnimCapture_t](../schemas/modellib.md#skeletonanimcapture_t)* > |  |
+| `m_CameraTrack` | CUtlVector< [SkeletonAnimCapture_t](../schemas/modellib.md#skeletonanimcapture_t)::Camera_t > |  |
 | `m_flRecordingTime` | float32 |  |
 
 ### VPhysXAggregateData_t
@@ -3937,31 +3622,21 @@ classDiagram
 |------|------|-------------|
 | `m_nFlags` | uint16 |  |
 | `m_nRefCounter` | uint16 |  |
-| `m_bonesHash` | CUtlVector<uint32> |  |
-| `m_boneNames` | CUtlVector<CUtlString> |  |
-| `m_indexNames` | CUtlVector<uint16> |  |
-| `m_indexHash` | CUtlVector<uint16> |  |
-| `m_bindPose` | CUtlVector<matrix3x4a_t> |  |
-| `m_parts` | CUtlVector<[VPhysXBodyPart_t](../schemas/modellib.md#vphysxbodypart_t)> |  |
-| `m_shapeMarkups` | CUtlVector<[PhysShapeMarkup_t](../schemas/modellib.md#physshapemarkup_t)> |  |
-| `m_constraints2` | CUtlVector<[VPhysXConstraint2_t](../schemas/modellib.md#vphysxconstraint2_t)> |  |
-| `m_joints` | CUtlVector<[VPhysXJoint_t](../schemas/modellib.md#vphysxjoint_t)> |  |
+| `m_bonesHash` | CUtlVector< uint32 > |  |
+| `m_boneNames` | CUtlVector< CUtlString > |  |
+| `m_indexNames` | CUtlVector< uint16 > |  |
+| `m_indexHash` | CUtlVector< uint16 > |  |
+| `m_bindPose` | CUtlVector< matrix3x4a_t > |  |
+| `m_parts` | CUtlVector< [VPhysXBodyPart_t](../schemas/modellib.md#vphysxbodypart_t) > |  |
+| `m_shapeMarkups` | CUtlVector< [PhysShapeMarkup_t](../schemas/modellib.md#physshapemarkup_t) > |  |
+| `m_constraints2` | CUtlVector< [VPhysXConstraint2_t](../schemas/modellib.md#vphysxconstraint2_t) > |  |
+| `m_joints` | CUtlVector< [VPhysXJoint_t](../schemas/modellib.md#vphysxjoint_t) > |  |
 | `m_pFeModel` | [PhysFeModelDesc_t](../schemas/physicslib.md#physfemodeldesc_t)* |  |
-| `m_boneParents` | CUtlVector<uint16> |  |
-| `m_surfacePropertyHashes` | CUtlVector<uint32> |  |
-| `m_collisionAttributes` | CUtlVector<[VPhysXCollisionAttributes_t](../schemas/modellib.md#vphysxcollisionattributes_t)> |  |
-| `m_debugPartNames` | CUtlVector<CUtlString> |  |
+| `m_boneParents` | CUtlVector< uint16 > |  |
+| `m_surfacePropertyHashes` | CUtlVector< uint32 > |  |
+| `m_collisionAttributes` | CUtlVector< [VPhysXCollisionAttributes_t](../schemas/modellib.md#vphysxcollisionattributes_t) > |  |
+| `m_debugPartNames` | CUtlVector< CUtlString > |  |
 | `m_embeddedKeyvalues` | CUtlString |  |
-
-### VPhysXAggregateData_t::VPhysXFlagEnum_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `FLAG_IS_POLYSOUP_GEOMETRY` | 1 |  |
-| `FLAG_LEVEL_COLLISION` | 16 |  |
-| `FLAG_IGNORE_SCALE_OBSOLETE_DO_NOT_USE` | 32 |  |
 
 ### VPhysXBodyPart_t
 
@@ -4026,19 +3701,6 @@ classDiagram
 | `m_bOverrideMassCenter` | bool |  |
 | `m_vMassCenterOverride` | Vector |  |
 
-### VPhysXBodyPart_t::VPhysXFlagEnum_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `FLAG_STATIC` | 1 |  |
-| `FLAG_KINEMATIC` | 2 |  |
-| `FLAG_JOINT` | 4 |  |
-| `FLAG_MASS` | 8 |  |
-| `FLAG_ALWAYS_DYNAMIC_ON_CLIENT` | 16 |  |
-| `FLAG_DISABLE_CCD` | 32 |  |
-
 ### VPhysXCollisionAttributes_t
 
 **Metadata:** `MGetKV3ClassDefaults {
@@ -4077,15 +3739,15 @@ classDiagram
 |------|------|-------------|
 | `m_nIncludeDetailLayerCount` | int32 |  |
 | `m_CollisionGroup` | uint32 |  |
-| `m_InteractAs` | CUtlVector<uint32> |  |
-| `m_InteractWith` | CUtlVector<uint32> |  |
-| `m_InteractExclude` | CUtlVector<uint32> |  |
-| `m_DetailLayers` | CUtlVector<uint32> |  |
+| `m_InteractAs` | CUtlVector< uint32 > |  |
+| `m_InteractWith` | CUtlVector< uint32 > |  |
+| `m_InteractExclude` | CUtlVector< uint32 > |  |
+| `m_DetailLayers` | CUtlVector< uint32 > |  |
 | `m_CollisionGroupString` | CUtlString |  |
-| `m_InteractAsStrings` | CUtlVector<CUtlString> |  |
-| `m_InteractWithStrings` | CUtlVector<CUtlString> |  |
-| `m_InteractExcludeStrings` | CUtlVector<CUtlString> |  |
-| `m_DetailLayerStrings` | CUtlVector<CUtlString> |  |
+| `m_InteractAsStrings` | CUtlVector< CUtlString > |  |
+| `m_InteractWithStrings` | CUtlVector< CUtlString > |  |
+| `m_InteractExcludeStrings` | CUtlVector< CUtlString > |  |
+| `m_DetailLayerStrings` | CUtlVector< CUtlString > |  |
 
 ### VPhysXConstraint2_t
 
@@ -4346,17 +4008,6 @@ classDiagram
 | `m_projectionLinearTolerance` | float32 |  |
 | `m_projectionAngularTolerance` | float32 |  |
 
-### VPhysXConstraintParams_t::EnumFlags0_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `FLAG0_SHIFT_INTERPENETRATE` | 0 |  |
-| `FLAG0_SHIFT_CONSTRAIN` | 1 |  |
-| `FLAG0_SHIFT_BREAKABLE_FORCE` | 2 |  |
-| `FLAG0_SHIFT_BREAKABLE_TORQUE` | 3 |  |
-
 ### VPhysXJoint_t
 
 **Metadata:** `MGetKV3ClassDefaults {
@@ -4476,16 +4127,6 @@ classDiagram
 | `m_flPlasticity` | float32 |  |
 | `m_Tag` | CUtlString |  |
 
-### VPhysXJoint_t::Flags_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `JOINT_FLAGS_NONE` | 0 |  |
-| `JOINT_FLAGS_BODY1_FIXED` | 1 |  |
-| `JOINT_FLAGS_USE_BLOCK_SOLVER` | 2 |  |
-
 ### VPhysXRange_t
 
 **Metadata:** `MGetKV3ClassDefaults {
@@ -4534,21 +4175,11 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_spheres` | CUtlVector<[RnSphereDesc_t](../schemas/physicslib.md#rnspheredesc_t)> |  |
-| `m_capsules` | CUtlVector<[RnCapsuleDesc_t](../schemas/physicslib.md#rncapsuledesc_t)> |  |
-| `m_hulls` | CUtlVector<[RnHullDesc_t](../schemas/physicslib.md#rnhulldesc_t)> |  |
-| `m_meshes` | CUtlVector<[RnMeshDesc_t](../schemas/physicslib.md#rnmeshdesc_t)> |  |
-| `m_CollisionAttributeIndices` | CUtlVector<uint16> |  |
-
-### VertexAlbedoFormat_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `VERTEX_ALBEDO_NONE` | 0 |  |
-| `VERTEX_ALBEDO_8888` | 1 |  |
-| `VERTEX_ALBEDO_565` | 2 |  |
+| `m_spheres` | CUtlVector< [RnSphereDesc_t](../schemas/physicslib.md#rnspheredesc_t) > |  |
+| `m_capsules` | CUtlVector< [RnCapsuleDesc_t](../schemas/physicslib.md#rncapsuledesc_t) > |  |
+| `m_hulls` | CUtlVector< [RnHullDesc_t](../schemas/physicslib.md#rnhulldesc_t) > |  |
+| `m_meshes` | CUtlVector< [RnMeshDesc_t](../schemas/physicslib.md#rnmeshdesc_t) > |  |
+| `m_CollisionAttributeIndices` | CUtlVector< uint16 > |  |
 
 ### VsInputSignatureElement_t
 
@@ -4574,5 +4205,5 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_elems` | CUtlVector<[VsInputSignatureElement_t](../schemas/modellib.md#vsinputsignatureelement_t)> |  |
-| `m_depth_elems` | CUtlVector<[VsInputSignatureElement_t](../schemas/modellib.md#vsinputsignatureelement_t)> |  |
+| `m_elems` | CUtlVector< [VsInputSignatureElement_t](../schemas/modellib.md#vsinputsignatureelement_t) > |  |
+| `m_depth_elems` | CUtlVector< [VsInputSignatureElement_t](../schemas/modellib.md#vsinputsignatureelement_t) > |  |

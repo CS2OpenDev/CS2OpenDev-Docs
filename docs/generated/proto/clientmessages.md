@@ -46,10 +46,6 @@ direction LR
     +float angle
   }
 
-  class CClientMsg_ListenForResponseFound {
-    +int32 player_slot
-  }
-
   CClientMsg_ClientUIEvent --> EClientUIEvent : event
 
   class EBaseClientMessages{
@@ -60,7 +56,6 @@ direction LR
     CM_DevPaletteVisibilityChanged
     CM_WorldUIControllerHasPanelChanged
     CM_RotateAnchor
-    CM_ListenForResponseFound
     CM_MAX_BASE
   }
 
@@ -85,7 +80,6 @@ direction LR
 | `CM_DevPaletteVisibilityChanged` | 283 |
 | `CM_WorldUIControllerHasPanelChanged` | 284 |
 | `CM_RotateAnchor` | 285 |
-| `CM_ListenForResponseFound` | 286 |
 | `CM_MAX_BASE` | 300 |
 
 ### `EClientUIEvent`
@@ -142,9 +136,3 @@ direction LR
 | Field | Ordinal | Type | Label | Description |
 |-------|---------|------|-------|-------------|
 | `angle` | 1 | float | optional |  |
-
-### `CClientMsg_ListenForResponseFound`
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `player_slot` | 1 | int32 | optional | *(default: `-1`)* |

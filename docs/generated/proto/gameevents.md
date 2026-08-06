@@ -38,6 +38,7 @@ direction LR
     +uint64 material_id
     +uint32 sequence_name
     +CMsgVector position_objectspace
+    +CMsgVector normal_objectspace
   }
 
   class CMsgClearWorldDecalsEvent {
@@ -120,6 +121,24 @@ direction LR
     +bytes packed_fields
   }
 
+  class CMsgClothStiffenAnimEvent {
+    +int32 source_entity_index
+    +int32 vertex_set_hash
+    +float intensity
+    +float length
+    +float speed_in
+    +float speed_out
+  }
+
+  class CMsgClothEffectAnimEvent {
+    +int32 source_entity_index
+    +int32 effect_name_hash
+    +int32 operation
+    +int32 flags
+    +string tags
+    +CMsgVector pte
+  }
+
   CMsgSource1LegacyGameEventList --> descriptor_t : descriptors[]
   descriptor_t --> key_t : keys[]
   CMsgSource1LegacyGameEvent --> key_t : keys[]
@@ -139,6 +158,8 @@ direction LR
     GE_SosSetSoundEventParams
     GE_SosSetLibraryStackFields
     GE_SosStopSoundEventHash
+    GE_ClothStiffenAnimEvent
+    GE_ClothEffectAnimEvent
   }
 
 ```
@@ -162,6 +183,8 @@ direction LR
 | `GE_SosSetSoundEventParams` | 210 |
 | `GE_SosSetLibraryStackFields` | 211 |
 | `GE_SosStopSoundEventHash` | 212 |
+| `GE_ClothStiffenAnimEvent` | 213 |
+| `GE_ClothEffectAnimEvent` | 214 |
 
 ## Messages
 
@@ -196,6 +219,7 @@ Instructs clients to paint a decal (bullet hole, blood splatter, spray) onto a s
 | `sequence_name` | 12 | uint32 | optional | Hash of the decal sequence name for animated decals. |
 | `triangleindex` | 13 | int32 | optional | Mesh triangle index for precise placement on complex geometry. |
 | `position_objectspace` | 14 | CMsgVector | optional |  |
+| `normal_objectspace` | 15 | CMsgVector | optional |  |
 
 ### `CMsgClearWorldDecalsEvent`
 
@@ -315,3 +339,25 @@ Modifies fields in a named sound library stack (a group of sound layers), allowi
 |-------|---------|------|-------|-------------|
 | `stack_hash` | 1 | fixed32 | optional | CRC32 hash of the sound library stack name to modify. |
 | `packed_fields` | 5 | bytes | optional | Packed binary field values to apply to the stack. |
+
+### `CMsgClothStiffenAnimEvent`
+
+| Field | Ordinal | Type | Label | Description |
+|-------|---------|------|-------|-------------|
+| `source_entity_index` | 1 | int32 | optional | *(default: `-1`)* |
+| `vertex_set_hash` | 2 | int32 | optional |  |
+| `intensity` | 3 | float | optional |  |
+| `length` | 4 | float | optional |  |
+| `speed_in` | 5 | float | optional |  |
+| `speed_out` | 6 | float | optional |  |
+
+### `CMsgClothEffectAnimEvent`
+
+| Field | Ordinal | Type | Label | Description |
+|-------|---------|------|-------|-------------|
+| `source_entity_index` | 1 | int32 | optional | *(default: `-1`)* |
+| `effect_name_hash` | 2 | int32 | optional |  |
+| `operation` | 3 | int32 | optional |  |
+| `flags` | 4 | int32 | optional |  |
+| `tags` | 5 | string | optional |  |
+| `pte` | 6 | CMsgVector | optional |  |

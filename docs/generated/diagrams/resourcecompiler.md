@@ -14,18 +14,19 @@ Class relationships (inheritance and composition) for the `resourcecompiler` mod
 ```mermaid
 classDiagram
     CColorCorrectionLayer <|-- CBloomLayer
-    CColorCorrectionLayer <|-- CFogScatteringLayer
-    CColorCorrectionLayer <|-- CColorBalanceColorCorrectionLayer
-    CColorCorrectionLayer <|-- CVignetteLayer
-    CColorCorrectionLayer <|-- CHueSaturationColorCorrectionLayer
-    CColorCorrectionLayer <|-- CColorTintColorCorrectionLayer
-    CColorCorrectionLayer <|-- CLevelsColorCorrectionLayer
-    CColorCorrectionLayer <|-- CToneMappingLayer
-    CColorCorrectionLayer <|-- CColorLookupColorCorrectionLayer
-    CColorCorrectionLayer <|-- CCurvesColorCorrectionLayer
     CColorCorrectionLayer <|-- CBrightnessContrastColorCorrectionLayer
+    CColorCorrectionLayer <|-- CColorBalanceColorCorrectionLayer
+    CColorCorrectionLayer <|-- CColorLookupColorCorrectionLayer
+    CColorCorrectionLayer <|-- CColorTintColorCorrectionLayer
+    CColorCorrectionLayer <|-- CCurvesColorCorrectionLayer
+    CColorCorrectionLayer <|-- CFogScatteringLayer
+    CColorCorrectionLayer <|-- CHueSaturationColorCorrectionLayer
+    CColorCorrectionLayer <|-- CLevelsColorCorrectionLayer
     CColorCorrectionLayer <|-- CLocalContrastLayer
+    CColorCorrectionLayer <|-- CLocalExposureLayer
+    CColorCorrectionLayer <|-- CToneMappingLayer
     CColorCorrectionLayer <|-- CVibranceColorCorrectionLayer
-    CPostProcessData --> CColorCorrectionLayer
+    CColorCorrectionLayer <|-- CVignetteLayer
     CColorCorrectionLayer --> CLayerMask
+    CPostProcessData --> CColorCorrectionLayer
 ```

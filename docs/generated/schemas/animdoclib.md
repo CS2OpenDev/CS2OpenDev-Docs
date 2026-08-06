@@ -17,10 +17,8 @@ nav_exclude: true
 | [CNmBlendSpace2D](#cnmblendspace2d) | class |  | 4 |
 | [CNmClipDocEvent](#cnmclipdocevent) | class |  | 2 |
 | [CNmClipDocEventTrack](#cnmclipdoceventtrack) | class |  | 5 |
-| [CNmClipDocEventTrack::Type_t](#cnmclipdoceventtracktype_t) | enum |  | 3 |
 | [CNmClipDocEvent_BodyGroup](#cnmclipdocevent_bodygroup) | class | CNmClipDocEvent | 3 |
 | [CNmClipDocEvent_EntityAttribute](#cnmclipdocevent_entityattribute) | class | CNmClipDocEvent | 5 |
-| [CNmClipDocEvent_EntityAttribute_Type_t](#cnmclipdocevent_entityattribute_type_t) | enum |  | 2 |
 | [CNmClipDocEvent_FloatCurve](#cnmclipdocevent_floatcurve) | class | CNmClipDocEvent | 2 |
 | [CNmClipDocEvent_Foot](#cnmclipdocevent_foot) | class | CNmClipDocEvent | 1 |
 | [CNmClipDocEvent_FrameSnap](#cnmclipdocevent_framesnap) | class | CNmClipDocEvent | 1 |
@@ -34,15 +32,13 @@ nav_exclude: true
 | [CNmClipDocEvent_TargetWarp](#cnmclipdocevent_targetwarp) | class | CNmClipDocEvent | 2 |
 | [CNmClipDocEvent_Transition](#cnmclipdocevent_transition) | class | CNmClipDocEvent | 2 |
 | [CNmClipDocument](#cnmclipdocument) | class | CNmAnimDocument | 13 |
-| [CNmClipDocument::AdditiveBaseFrame_t](#cnmclipdocumentadditivebaseframe_t) | enum |  | 3 |
-| [CNmClipDocument::AdditiveType_t](#cnmclipdocumentadditivetype_t) | enum |  | 5 |
 | [CNmGraphDocAndNode](#cnmgraphdocandnode) | class | CNmGraphDocFlowNode | 0 |
 | [CNmGraphDocAnimationPoseNode](#cnmgraphdocanimationposenode) | class | CNmGraphDocVariationDataNode | 3 |
 | [CNmGraphDocAnimationPoseNode::CData](#cnmgraphdocanimationposenodecdata) | class | CNmGraphDocVariationDataNode::CData | 2 |
 | [CNmGraphDocBlend1DNode](#cnmgraphdocblend1dnode) | class | CNmGraphDocFlowNode | 2 |
 | [CNmGraphDocBlend2DNode](#cnmgraphdocblend2dnode) | class | CNmGraphDocFlowNode | 2 |
 | [CNmGraphDocBoneMaskBlendNode](#cnmgraphdocbonemaskblendnode) | class | CNmGraphDocFlowNode | 0 |
-| [CNmGraphDocBoneMaskNode](#cnmgraphdocbonemasknode) | class | CNmGraphDocVariationDataNode | 1 |
+| [CNmGraphDocBoneMaskNode](#cnmgraphdocbonemasknode) | class | CNmGraphDocVariationDataNode | 2 |
 | [CNmGraphDocBoneMaskNode::CData](#cnmgraphdocbonemasknodecdata) | class | CNmGraphDocVariationDataNode::CData | 1 |
 | [CNmGraphDocBoneMaskParameterReferenceNode](#cnmgraphdocbonemaskparameterreferencenode) | class | CNmGraphDocParameterReferenceNode | 0 |
 | [CNmGraphDocBoneMaskResultNode](#cnmgraphdocbonemaskresultnode) | class | CNmGraphDocResultNode | 0 |
@@ -109,7 +105,6 @@ nav_exclude: true
 | [CNmGraphDocIDComparisonNode](#cnmgraphdocidcomparisonnode) | class | CNmGraphDocFlowNode | 2 |
 | [CNmGraphDocIDControlParameterNode](#cnmgraphdocidcontrolparameternode) | class | CNmGraphDocControlParameterNode | 2 |
 | [CNmGraphDocIDEventConditionNode](#cnmgraphdocideventconditionnode) | class | CNmGraphDocFlowNode | 5 |
-| [CNmGraphDocIDEventConditionNode::SearchRule_t](#cnmgraphdocideventconditionnodesearchrule_t) | enum |  | 3 |
 | [CNmGraphDocIDEventNode](#cnmgraphdocideventnode) | class | CNmGraphDocFlowNode | 4 |
 | [CNmGraphDocIDEventPercentageThroughNode](#cnmgraphdocideventpercentagethroughnode) | class | CNmGraphDocFlowNode | 4 |
 | [CNmGraphDocIDParameterReferenceNode](#cnmgraphdocidparameterreferencenode) | class | CNmGraphDocParameterReferenceNode | 0 |
@@ -130,7 +125,6 @@ nav_exclude: true
 | [CNmGraphDocNotNode](#cnmgraphdocnotnode) | class | CNmGraphDocFlowNode | 0 |
 | [CNmGraphDocOrNode](#cnmgraphdocornode) | class | CNmGraphDocFlowNode | 0 |
 | [CNmGraphDocOrientationWarpNode](#cnmgraphdocorientationwarpnode) | class | CNmGraphDocFlowNode | 3 |
-| [CNmGraphDocOrientationWarpNode::OffsetType_t](#cnmgraphdocorientationwarpnodeoffsettype_t) | enum |  | 2 |
 | [CNmGraphDocParameterBaseNode](#cnmgraphdocparameterbasenode) | class | CNmGraphDocFlowNode | 1 |
 | [CNmGraphDocParameterReferenceNode](#cnmgraphdocparameterreferencenode) | class | CNmGraphDocFlowNode | 4 |
 | [CNmGraphDocParameterizedClipSelectorNode](#cnmgraphdocparameterizedclipselectornode) | class | CNmGraphDocVariationDataNode | 2 |
@@ -155,8 +149,6 @@ nav_exclude: true
 | [CNmGraphDocStateMachineNode](#cnmgraphdocstatemachinenode) | class | CNmGraphDocFlowNode | 0 |
 | [CNmGraphDocStateNode](#cnmgraphdocstatenode) | class | CNmGraphDocStateMachineGraphNode | 11 |
 | [CNmGraphDocStateNode::StateEvent_t](#cnmgraphdocstatenodestateevent_t) | class |  | 4 |
-| [CNmGraphDocStateNode::StateType_t](#cnmgraphdocstatenodestatetype_t) | enum |  | 4 |
-| [CNmGraphDocStateNode::TimedStateEventType_t](#cnmgraphdocstatenodetimedstateeventtype_t) | enum |  | 2 |
 | [CNmGraphDocStateNode::TimedStateEvent_t](#cnmgraphdocstatenodetimedstateevent_t) | class |  | 4 |
 | [CNmGraphDocSyncEventIndexConditionNode](#cnmgraphdocsynceventindexconditionnode) | class | CNmGraphDocFlowNode | 2 |
 | [CNmGraphDocTargetControlParameterNode](#cnmgraphdoctargetcontrolparameternode) | class | CNmGraphDocControlParameterNode | 5 |
@@ -173,7 +165,6 @@ nav_exclude: true
 | [CNmGraphDocTransitionConduitNode](#cnmgraphdoctransitionconduitnode) | class | CNmGraphDocStateMachineGraphNode | 2 |
 | [CNmGraphDocTransitionEventConditionNode](#cnmgraphdoctransitioneventconditionnode) | class | CNmGraphDocFlowNode | 5 |
 | [CNmGraphDocTransitionNode](#cnmgraphdoctransitionnode) | class | CNmGraphDocResultNode | 8 |
-| [CNmGraphDocTransitionNode::TimeMatchMode_t](#cnmgraphdoctransitionnodetimematchmode_t) | enum |  | 11 |
 | [CNmGraphDocVariationDataNode](#cnmgraphdocvariationdatanode) | class | CNmGraphDocFlowNode | 3 |
 | [CNmGraphDocVariationDataNode::CData](#cnmgraphdocvariationdatanodecdata) | class |  | 0 |
 | [CNmGraphDocVariationDataNode::OverrideValue_t](#cnmgraphdocvariationdatanodeoverridevalue_t) | class |  | 2 |
@@ -193,11 +184,11 @@ nav_exclude: true
 | [CNmGraphDocument::DebugParameterSet_t](#cnmgraphdocumentdebugparameterset_t) | class |  | 6 |
 | [CNmPreviewArchetype](#cnmpreviewarchetype) | class |  | 4 |
 | [CNmPreviewArchetype::SecondarySkeleton_t](#cnmpreviewarchetypesecondaryskeleton_t) | class |  | 4 |
-| [CNmSkeletonDocument](#cnmskeletondocument) | class | CNmAnimDocument | 10 |
+| [CNmSkeletonDocument](#cnmskeletondocument) | class | CNmAnimDocument | 11 |
 | [CNmSkeletonDocument::SecondarySkeleton_t](#cnmskeletondocumentsecondaryskeleton_t) | class |  | 2 |
 | [CNmVariationHierarchy](#cnmvariationhierarchy) | class |  | 1 |
 | [CnmGraphDocChainLookatNode](#cnmgraphdocchainlookatnode) | class | CNmGraphDocVariationDataNode | 1 |
-| [CnmGraphDocChainLookatNode::CData](#cnmgraphdocchainlookatnodecdata) | class | CNmGraphDocVariationDataNode::CData | 4 |
+| [CnmGraphDocChainLookatNode::CData](#cnmgraphdocchainlookatnodecdata) | class | CNmGraphDocVariationDataNode::CData | 6 |
 | [CnmGraphDocConstBoneTargetNode](#cnmgraphdocconstbonetargetnode) | class | CNmGraphDocFlowNode | 1 |
 | [CnmGraphDocConstBoolNode](#cnmgraphdocconstboolnode) | class | CNmGraphDocFlowNode | 1 |
 | [CnmGraphDocConstFloatNode](#cnmgraphdocconstfloatnode) | class | CNmGraphDocFlowNode | 1 |
@@ -215,9 +206,6 @@ nav_exclude: true
 | [CnmGraphDocVariationConstFloatNode](#cnmgraphdocvariationconstfloatnode) | class | CNmGraphDocVariationDataNode | 0 |
 | [CnmGraphDocVariationConstFloatNode::CData](#cnmgraphdocvariationconstfloatnodecdata) | class | CNmGraphDocVariationDataNode::CData | 1 |
 | [CnmGraphDocVelocityBasedSpeedScaleNode](#cnmgraphdocvelocitybasedspeedscalenode) | class | CNmGraphDocFlowNode | 1 |
-| [NmEventConditionOperator_t](#nmeventconditionoperator_t) | enum |  | 2 |
-| [NmEventPriorityRule_t](#nmeventpriorityrule_t) | enum |  | 2 |
-| [NmGraphDocGraphType_t](#nmgraphdocgraphtype_t) | enum |  | 8 |
 | [NmGraphDocPin_t](#nmgraphdocpin_t) | class |  | 5 |
 | [NmVariation_t](#nmvariation_t) | class |  | 4 |
 
@@ -227,15 +215,15 @@ nav_exclude: true
 
 **Derived by:** [CNmClipDocument](animdoclib.md#cnmclipdocument), [CNmGraphDocument](animdoclib.md#cnmgraphdocument), [CNmSkeletonDocument](animdoclib.md#cnmskeletondocument)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CNmAnimDocument <|-- CNmSkeletonDocument
     CNmAnimDocument <|-- CNmClipDocument
     CNmAnimDocument <|-- CNmGraphDocument
+    CNmAnimDocument <|-- CNmSkeletonDocument
 ```
 
 **Fields:**
@@ -256,7 +244,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_points` | CUtlVector<[CNmBlendSpace1D](../schemas/animdoclib.md#cnmblendspace1d)::Point_t> | `MPropertyAutoExpandSelf` `MPropertyResizable` |
+| `m_points` | CUtlVector< [CNmBlendSpace1D](../schemas/animdoclib.md#cnmblendspace1d)::Point_t > | `MPropertyAutoExpandSelf` `MPropertyResizable` |
 
 ### CNmBlendSpace1D::Point_t
 
@@ -295,10 +283,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_pointNames` | CUtlVector<CUtlString> | `MPropertyAutoExpandSelf` `MPropertyResizable` |
-| `m_points` | CUtlVector<Vector2D> | `MPropertyAutoExpandSelf` `MPropertyResizable` |
-| `m_indices` | CUtlVector<uint8> | `MPropertySuppressField` |
-| `m_hullIndices` | CUtlVector<uint8> | `MPropertySuppressField` |
+| `m_pointNames` | CUtlVector< CUtlString > | `MPropertyAutoExpandSelf` `MPropertyResizable` |
+| `m_points` | CUtlVector< Vector2D > | `MPropertyAutoExpandSelf` `MPropertyResizable` |
+| `m_indices` | CUtlVector< uint8 > | `MPropertySuppressField` |
+| `m_hullIndices` | CUtlVector< uint8 > | `MPropertySuppressField` |
 
 ### CNmClipDocEvent
 
@@ -314,20 +302,20 @@ classDiagram
 
 ```mermaid
 classDiagram
-    CNmClipDocEvent <|-- CNmClipDocEvent_MaterialAttribute
-    CNmClipDocEvent <|-- CNmClipDocEvent_EntityAttribute
-    CNmClipDocEvent <|-- CNmClipDocEvent_RootMotion
-    CNmClipDocEvent <|-- CNmClipDocEvent_Legacy
-    CNmClipDocEvent <|-- CNmClipDocEvent_FrameSnap
-    CNmClipDocEvent <|-- CNmClipDocEvent_FloatCurve
     CNmClipDocEvent <|-- CNmClipDocEvent_BodyGroup
-    CNmClipDocEvent <|-- CNmClipDocEvent_TargetWarp
+    CNmClipDocEvent <|-- CNmClipDocEvent_EntityAttribute
+    CNmClipDocEvent <|-- CNmClipDocEvent_FloatCurve
     CNmClipDocEvent <|-- CNmClipDocEvent_Foot
-    CNmClipDocEvent <|-- CNmClipDocEvent_Particle
+    CNmClipDocEvent <|-- CNmClipDocEvent_FrameSnap
     CNmClipDocEvent <|-- CNmClipDocEvent_ID
-    CNmClipDocEvent <|-- CNmClipDocEvent_Transition
+    CNmClipDocEvent <|-- CNmClipDocEvent_Legacy
+    CNmClipDocEvent <|-- CNmClipDocEvent_MaterialAttribute
     CNmClipDocEvent <|-- CNmClipDocEvent_OrientationWarp
+    CNmClipDocEvent <|-- CNmClipDocEvent_Particle
+    CNmClipDocEvent <|-- CNmClipDocEvent_RootMotion
     CNmClipDocEvent <|-- CNmClipDocEvent_Sound
+    CNmClipDocEvent <|-- CNmClipDocEvent_TargetWarp
+    CNmClipDocEvent <|-- CNmClipDocEvent_Transition
 ```
 
 **Fields:**
@@ -360,21 +348,11 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_events` | CUtlVector<[CNmClipDocEvent](../schemas/animdoclib.md#cnmclipdocevent)*> |  |
+| `m_events` | CUtlVector< [CNmClipDocEvent](../schemas/animdoclib.md#cnmclipdocevent)* > |  |
 | `m_eventClassName` | CUtlString |  |
 | `m_type` | [CNmClipDocEventTrack](../schemas/animdoclib.md#cnmclipdoceventtrack)::Type_t |  |
 | `m_bIsSyncTrack` | bool |  |
 | `m_bIsDisabled` | bool |  |
-
-### CNmClipDocEventTrack::Type_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Immediate` | 0 |  |
-| `Duration` | 1 |  |
-| `Num` | 2 |  |
 
 ### CNmClipDocEvent_BodyGroup
 
@@ -401,9 +379,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_target` | [CNmEventTargetEntity_t](../schemas/animlib.md#cnmeventtargetentity_t) |  |
-| `bodygroup` | CUtlString | `MPropertyFriendlyName "Body Group"` |
-| `value` | int32 | `MPropertyFriendlyName "Value"` |
+| `m_target` | [CNmEventTargetEntity_t](../schemas/!GlobalTypes.md#cnmeventtargetentity_t) |  |
+| `bodygroup` | CUtlString | `MPropertyFriendlyName Body Group` |
+| `value` | int32 | `MPropertyFriendlyName Value` |
 
 ### CNmClipDocEvent_EntityAttribute
 
@@ -451,20 +429,11 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_target` | [CNmEventTargetEntity_t](../schemas/animlib.md#cnmeventtargetentity_t) |  |
+| `m_target` | [CNmEventTargetEntity_t](../schemas/!GlobalTypes.md#cnmeventtargetentity_t) |  |
 | `m_attributeName` | CUtlString |  |
-| `m_nValueType` | [CNmClipDocEvent_EntityAttribute_Type_t](../schemas/animdoclib.md#cnmclipdocevent_entityattribute_type_t) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName "Type"` |
+| `m_nValueType` | [CNmClipDocEvent_EntityAttribute_Type_t](../schemas/!GlobalTypes.md#cnmclipdocevent_entityattribute_type_t) | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Type` |
 | `m_nIntValue` | int32 | `MPropertyAttrStateCallback` |
 | `m_FloatValue` | CPiecewiseCurve | `MPropertyAttrStateCallback` |
-
-### CNmClipDocEvent_EntityAttribute_Type_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `EVENT_ENTITY_ATTR_TYPE_INT` | 0 | Integer |
-| `EVENT_ENTITY_ATTR_TYPE_FLOAT` | 1 | Float |
 
 ### CNmClipDocEvent_FloatCurve
 
@@ -479,9 +448,29 @@ classDiagram
 	{
 		"m_spline":
 		[
+			{
+				"x": 0.000000,
+				"y": 0.000000,
+				"m_flSlopeIncoming": 1.000000,
+				"m_flSlopeOutgoing": 1.000000
+			},
+			{
+				"x": 1.000000,
+				"y": 1.000000,
+				"m_flSlopeIncoming": 1.000000,
+				"m_flSlopeOutgoing": 1.000000
+			}
 		],
 		"m_tangents":
 		[
+			{
+				"m_nIncomingTangent": "CURVE_TANGENT_SPLINE",
+				"m_nOutgoingTangent": "CURVE_TANGENT_SPLINE"
+			},
+			{
+				"m_nIncomingTangent": "CURVE_TANGENT_SPLINE",
+				"m_nOutgoingTangent": "CURVE_TANGENT_SPLINE"
+			}
 		],
 		"m_vDomainMins":
 		[
@@ -490,8 +479,8 @@ classDiagram
 		],
 		"m_vDomainMaxs":
 		[
-			0.000000,
-			0.000000
+			1.000000,
+			1.000000
 		]
 	}
 }`
@@ -533,7 +522,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_phase` | [NmFootPhase_t](../schemas/animlib.md#nmfootphase_t) |  |
+| `m_phase` | [NmFootPhase_t](../schemas/!GlobalTypes.md#nmfootphase_t) |  |
 
 ### CNmClipDocEvent_FrameSnap
 
@@ -558,7 +547,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_frameSnapMode` | [NmFrameSnapEventMode_t](../schemas/animlib.md#nmframesnapeventmode_t) |  |
+| `m_frameSnapMode` | [NmFrameSnapEventMode_t](../schemas/!GlobalTypes.md#nmframesnapeventmode_t) |  |
 
 ### CNmClipDocEvent_ID
 
@@ -584,7 +573,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_ID` | CGlobalSymbol |  |
-| `m_secondaryID` | CGlobalSymbol | `MPropertyGroupName "+Optional"` |
+| `m_secondaryID` | CGlobalSymbol | `MPropertyGroupName +Optional` |
 
 ### CNmClipDocEvent_Legacy
 
@@ -712,7 +701,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_target` | [CNmEventTargetEntity_t](../schemas/animlib.md#cnmeventtargetentity_t) |  |
+| `m_target` | [CNmEventTargetEntity_t](../schemas/!GlobalTypes.md#cnmeventtargetentity_t) |  |
 | `m_attributeName` | CUtlString |  |
 | `m_x` | CPiecewiseCurve |  |
 | `m_y` | CPiecewiseCurve |  |
@@ -775,20 +764,20 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_relevance` | [CNmEventRelevance_t](../schemas/animlib.md#cnmeventrelevance_t) |  |
+| `m_relevance` | [CNmEventRelevance_t](../schemas/!GlobalTypes.md#cnmeventrelevance_t) |  |
 | `m_type` | [CNmParticleEvent](../schemas/animlib.md#cnmparticleevent)::Type_t |  |
-| `m_target` | [CNmEventTargetEntity_t](../schemas/animlib.md#cnmeventtargetentity_t) |  |
-| `m_particleSystem` | CUtlString | `MPropertyStartGroup "+Particle"` `MPropertyAttributeEditor "AssetBrowse( vpcf, *requiredoubleclick )"` |
+| `m_target` | [CNmEventTargetEntity_t](../schemas/!GlobalTypes.md#cnmeventtargetentity_t) |  |
+| `m_particleSystem` | CUtlString | `MPropertyAttributeEditor AssetBrowse( vpcf, *requiredoubleclick )` `MPropertyStartGroup +Particle` |
 | `m_bDetachFromOwner` | bool |  |
 | `m_bStopImmediately` | bool |  |
 | `m_bPlayEndCap` | bool |  |
-| `m_attachmentPoint0` | CUtlString | `MPropertyStartGroup "+Attachment"` `MPropertyAttrStateCallback` |
-| `m_attachmentType0` | [ParticleAttachment_t](../schemas/animationsystem.md#particleattachment_t) | `MPropertyAttrStateCallback` |
+| `m_attachmentPoint0` | CUtlString | `MPropertyAttrStateCallback` `MPropertyStartGroup +Attachment` |
+| `m_attachmentType0` | [ParticleAttachment_t](../schemas/!GlobalTypes.md#particleattachment_t) | `MPropertyAttrStateCallback` |
 | `m_attachmentPoint1` | CUtlString | `MPropertyAttrStateCallback` |
-| `m_attachmentType1` | [ParticleAttachment_t](../schemas/animationsystem.md#particleattachment_t) | `MPropertyAttrStateCallback` |
-| `m_config` | CUtlString | `MPropertyStartGroup "+Config"` `MPropertyAttrStateCallback` |
+| `m_attachmentType1` | [ParticleAttachment_t](../schemas/!GlobalTypes.md#particleattachment_t) | `MPropertyAttrStateCallback` |
+| `m_config` | CUtlString | `MPropertyAttrStateCallback` `MPropertyStartGroup +Config` |
 | `m_effectForConfig` | CUtlString | `MPropertyAttrStateCallback` |
-| `m_tags` | CUtlString | `MPropertyStartGroup "+Metadata"` |
+| `m_tags` | CUtlString | `MPropertyStartGroup +Metadata` |
 
 ### CNmClipDocEvent_RootMotion
 
@@ -844,13 +833,13 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_relevance` | [CNmEventRelevance_t](../schemas/animlib.md#cnmeventrelevance_t) |  |
+| `m_relevance` | [CNmEventRelevance_t](../schemas/!GlobalTypes.md#cnmeventrelevance_t) |  |
 | `m_bContinuePlayingSoundAtDurationEnd` | bool | `MPropertyAttrStateCallback` |
 | `m_flDurationInterruptionThreshold` | float32 | `MPropertyAttrStateCallback` |
-| `m_name` | CUtlString | `MPropertyStartGroup "+Sound"` `MPropertyAttributeEditor "SoundPicker()"` |
-| `m_position` | [CNmSoundEvent](../schemas/animlib.md#cnmsoundevent)::Position_t | `MPropertyStartGroup "+Position"` |
+| `m_name` | CUtlString | `MPropertyAttributeEditor SoundPicker()` `MPropertyStartGroup +Sound` |
+| `m_position` | [CNmSoundEvent](../schemas/animlib.md#cnmsoundevent)::Position_t | `MPropertyStartGroup +Position` |
 | `m_attachmentName` | CUtlString |  |
-| `m_tags` | CUtlString | `MPropertyStartGroup "+Metadata"` |
+| `m_tags` | CUtlString | `MPropertyStartGroup +Metadata` |
 
 ### CNmClipDocEvent_TargetWarp
 
@@ -877,8 +866,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_rule` | [NmTargetWarpRule_t](../schemas/animlib.md#nmtargetwarprule_t) |  |
-| `m_algorithm` | [NmTargetWarpAlgorithm_t](../schemas/animlib.md#nmtargetwarpalgorithm_t) |  |
+| `m_rule` | [NmTargetWarpRule_t](../schemas/!GlobalTypes.md#nmtargetwarprule_t) |  |
+| `m_algorithm` | [NmTargetWarpAlgorithm_t](../schemas/!GlobalTypes.md#nmtargetwarpalgorithm_t) |  |
 
 ### CNmClipDocEvent_Transition
 
@@ -904,7 +893,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_rule` | [NmTransitionRule_t](../schemas/animlib.md#nmtransitionrule_t) |  |
+| `m_rule` | [NmTransitionRule_t](../schemas/!GlobalTypes.md#nmtransitionrule_t) |  |
 | `m_optionalID` | CUtlString |  |
 
 ### CNmClipDocument
@@ -947,41 +936,19 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sourceFilename` | CUtlString | `MPropertyAttributeEditor "ModelDocAssetBrowse( dmx, fbx, smd, *requiredoubleclick, *ShowRelatedFile )"` |
-| `m_animationSkeletonName` | CUtlString | `MPropertyAttributeEditor "AssetBrowse( vnmskel, *requiredoubleclick )"` |
-| `m_secondaryAnimationSkeletonNames` | CUtlVector<CUtlString> | `MPropertyAttributeEditor "AssetBrowse( vnmskel, *requiredoubleclick )"` `MPropertyAutoExpandSelf` |
-| `m_eventTracks` | CUtlLeanVector<[CNmClipDocEventTrack](../schemas/animdoclib.md#cnmclipdoceventtrack)> | `MPropertySuppressField` |
-| `m_nStartFrame` | int32 | `MPropertyGroupName "+Import Options"` `MPropertyDescription "Specify the import start frame (0 or a negative value means use the first frame in the authored animation)"` |
-| `m_nEndFrame` | int32 | `MPropertyGroupName "+Import Options"` `MPropertyDescription "Specify the import end frame (0 or a negative value means use the last frame in the authored animation)"` |
-| `m_flDurationOverrideSeconds` | float32 | `MPropertyGroupName "+Import Options"` `MPropertyDescription "Override the final duration of this clip in seconds (0 or a negative value means use the authored duration)"` |
-| `m_additiveType` | [CNmClipDocument](../schemas/animdoclib.md#cnmclipdocument)::AdditiveType_t | `MPropertyGroupName "+Additive"` |
-| `m_additiveBaseFilename` | CUtlString | `MPropertyGroupName "+Additive"` `MPropertyAttributeEditor "AssetBrowse( dmx, fbx, *requiredoubleclick )"` `MPropertyDescription "The source file to use as the base of the additive"` `MPropertyAttrStateCallback` |
-| `m_additiveBaseFrame` | [CNmClipDocument](../schemas/animdoclib.md#cnmclipdocument)::AdditiveBaseFrame_t | `MPropertyGroupName "+Additive"` `MPropertyDescription "The frame to use when generating an additive, if you are generating relative to another animation and this is set to -1, we will extract each frame from it's corresponding frame in the base anim"` `MPropertyAttrStateCallback` |
-| `m_nAdditiveBaseFrameIdx` | int32 | `MPropertyGroupName "+Additive"` `MPropertyDescription "The frame to use when generating an additive, only valid for 'RelativeToFrame' and 'RelativeToAnimationFrame' "` `MPropertyAttrStateCallback` |
-| `m_bUseReferencePoseForSecondaryAnimAdditives` | bool | `MPropertyGroupName "+Additive"` `MPropertyDescription "Should we calculate the additives for the secondary weapons from their reference pose or try to look up a pose in the specified animation"` `MPropertyAttrStateCallback` |
-| `m_bonesToSampleInModelSpace` | CUtlVector<CUtlString> | `MPropertyGroupName "Advanced"` `MPropertyAutoExpandSelf` `MPropertyDescription "List the set of bones that need to be sampled in model space for sub-frames. Warning! This can be REALLY expensive so be careful with this!"` |
-
-### CNmClipDocument::AdditiveBaseFrame_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `FirstFrame` | 0 |  |
-| `LastFrame` | 1 |  |
-| `UserSpecifiedFrame` | 2 |  |
-
-### CNmClipDocument::AdditiveType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `None` | 0 |  |
-| `RelativeToSkeleton` | 1 |  |
-| `RelativeToFrame` | 2 |  |
-| `RelativeToAnimation` | 3 |  |
-| `RelativeToAnimationFrame` | 4 |  |
+| `m_sourceFilename` | CUtlString | `MPropertyAttributeEditor ModelDocAssetBrowse( dmx, fbx, smd, *requiredoubleclick, *ShowRelatedFile )` |
+| `m_animationSkeletonName` | CUtlString | `MPropertyAttributeEditor AssetBrowse( vnmskel, *requiredoubleclick )` |
+| `m_secondaryAnimationSkeletonNames` | CUtlVector< CUtlString > | `MPropertyAttributeEditor AssetBrowse( vnmskel, *requiredoubleclick )` `MPropertyAutoExpandSelf` |
+| `m_eventTracks` | CUtlLeanVector< [CNmClipDocEventTrack](../schemas/animdoclib.md#cnmclipdoceventtrack) > | `MPropertySuppressField` |
+| `m_nStartFrame` | int32 | `MPropertyDescription Specify the import start frame (0 or a negative value means use the first frame in the authored animation)` `MPropertyGroupName +Import Options` |
+| `m_nEndFrame` | int32 | `MPropertyDescription Specify the import end frame (0 or a negative value means use the last frame in the authored animation)` `MPropertyGroupName +Import Options` |
+| `m_flDurationOverrideSeconds` | float32 | `MPropertyDescription Override the final duration of this clip in seconds (0 or a negative value means use the authored duration)` `MPropertyGroupName +Import Options` |
+| `m_additiveType` | [CNmClipDocument](../schemas/animdoclib.md#cnmclipdocument)::AdditiveType_t | `MPropertyGroupName +Additive` |
+| `m_additiveBaseFilename` | CUtlString | `MPropertyAttrStateCallback` `MPropertyAttributeEditor AssetBrowse( dmx, fbx, *requiredoubleclick )` `MPropertyDescription The source file to use as the base of the additive` `MPropertyGroupName +Additive` |
+| `m_additiveBaseFrame` | [CNmClipDocument](../schemas/animdoclib.md#cnmclipdocument)::AdditiveBaseFrame_t | `MPropertyAttrStateCallback` `MPropertyDescription The frame to use when generating an additive, if you are generating relative to another animation and this is set to -1, we will extract each frame from it's corresponding frame in the base anim` `MPropertyGroupName +Additive` |
+| `m_nAdditiveBaseFrameIdx` | int32 | `MPropertyAttrStateCallback` `MPropertyDescription The frame to use when generating an additive, only valid for 'RelativeToFrame' and 'RelativeToAnimationFrame' ` `MPropertyGroupName +Additive` |
+| `m_bUseReferencePoseForSecondaryAnimAdditives` | bool | `MPropertyAttrStateCallback` `MPropertyDescription Should we calculate the additives for the secondary weapons from their reference pose or try to look up a pose in the specified animation` `MPropertyGroupName +Additive` |
+| `m_bonesToSampleInModelSpace` | CUtlVector< CUtlString > | `MPropertyAutoExpandSelf` `MPropertyDescription List the set of bones that need to be sampled in model space for sub-frames. Warning! This can be REALLY expensive so be careful with this!` `MPropertyGroupName Advanced` |
 
 ### CNmGraphDocAndNode
 
@@ -1104,7 +1071,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_inputTimeRemapRange` | Range_t | `MPropertyAttributeEditor "RangeEditor()"` |
+| `m_inputTimeRemapRange` | Range_t | `MPropertyAttributeEditor RangeEditor()` |
 | `m_fixedTimeValue` | float32 |  |
 | `m_useFramesAsInput` | bool |  |
 
@@ -1129,7 +1096,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_clip` | CUtlString | `MPropertyAttributeEditor "AssetBrowse( vnmclip, *requiredoubleclick )"` |
+| `m_clip` | CUtlString | `MPropertyAttributeEditor AssetBrowse( vnmclip, *requiredoubleclick )` |
 | `m_variationTimeValue` | float32 |  |
 
 ### CNmGraphDocBlend1DNode
@@ -1214,8 +1181,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_blendSpace` | [CNmBlendSpace1D](../schemas/animdoclib.md#cnmblendspace1d) | `MPropertyAttributeEditor "BlendSpace1D()"` |
-| `m_bAllowLooping` | bool | `MPropertyDescription "When not being driven by a sync time, control looping behavior "` |
+| `m_blendSpace` | [CNmBlendSpace1D](../schemas/animdoclib.md#cnmblendspace1d) | `MPropertyAttributeEditor BlendSpace1D()` |
+| `m_bAllowLooping` | bool | `MPropertyDescription When not being driven by a sync time, control looping behavior ` |
 
 ### CNmGraphDocBlend2DNode
 
@@ -1334,7 +1301,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_blendSpace` | [CNmBlendSpace2D](../schemas/animdoclib.md#cnmblendspace2d) | `MPropertyAttributeEditor "BlendSpace2D()"` |
+| `m_blendSpace` | [CNmBlendSpace2D](../schemas/animdoclib.md#cnmblendspace2d) | `MPropertyAttributeEditor BlendSpace2D()` |
 | `m_bAllowLooping` | bool |  |
 
 ### CNmGraphDocBoneMaskBlendNode
@@ -1435,7 +1402,8 @@ classDiagram
 	[
 	],
 	"m_defaultResourceName": "",
-	"m_maskID": ""
+	"m_maskID": "",
+	"m_bIsOptionalMask": false
 }`
 
 **Relationships:**
@@ -1451,7 +1419,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_maskID` | CGlobalSymbol | `MPropertyAttributeEditor "BoneMaskID()"` |
+| `m_maskID` | CGlobalSymbol | `MPropertyAttributeEditor BoneMaskID()` |
+| `m_bIsOptionalMask` | bool | `MPropertyDescription Should we check at compile time that this is an optional mask?` |
 
 ### CNmGraphDocBoneMaskNode::CData
 
@@ -1473,7 +1442,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_overrideMaskID` | CGlobalSymbol | `MPropertyAttributeEditor "BoneMaskID()"` |
+| `m_overrideMaskID` | CGlobalSymbol | `MPropertyAttributeEditor BoneMaskID()` |
 
 ### CNmGraphDocBoneMaskParameterReferenceNode
 
@@ -1631,7 +1600,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_switchDynamically` | bool |  |
-| `m_options` | CUtlVector<CGlobalSymbol> | `MPropertyAutoExpandSelf` `MPropertyResizable` |
+| `m_options` | CUtlVector< CGlobalSymbol > | `MPropertyAutoExpandSelf` `MPropertyResizable` |
 | `m_flBlendTimeSeconds` | float32 |  |
 
 ### CNmGraphDocBoneMaskSwitchNode
@@ -2062,7 +2031,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_mode` | [NmCachedValueMode_t](../schemas/animlib.md#nmcachedvaluemode_t) |  |
+| `m_mode` | [NmCachedValueMode_t](../schemas/!GlobalTypes.md#nmcachedvaluemode_t) |  |
 
 ### CNmGraphDocCachedFloatNode
 
@@ -2116,7 +2085,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_mode` | [NmCachedValueMode_t](../schemas/animlib.md#nmcachedvaluemode_t) |  |
+| `m_mode` | [NmCachedValueMode_t](../schemas/!GlobalTypes.md#nmcachedvaluemode_t) |  |
 
 ### CNmGraphDocCachedIDNode
 
@@ -2170,7 +2139,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_mode` | [NmCachedValueMode_t](../schemas/animlib.md#nmcachedvaluemode_t) |  |
+| `m_mode` | [NmCachedValueMode_t](../schemas/!GlobalTypes.md#nmcachedvaluemode_t) |  |
 
 ### CNmGraphDocCachedTargetNode
 
@@ -2224,7 +2193,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_mode` | [NmCachedValueMode_t](../schemas/animlib.md#nmcachedvaluemode_t) |  |
+| `m_mode` | [NmCachedValueMode_t](../schemas/!GlobalTypes.md#nmcachedvaluemode_t) |  |
 
 ### CNmGraphDocCachedVectorNode
 
@@ -2278,7 +2247,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_mode` | [NmCachedValueMode_t](../schemas/animlib.md#nmcachedvaluemode_t) |  |
+| `m_mode` | [NmCachedValueMode_t](../schemas/!GlobalTypes.md#nmcachedvaluemode_t) |  |
 
 ### CNmGraphDocClipNode
 
@@ -2356,7 +2325,7 @@ classDiagram
 |------|------|-------------|
 | `m_bSampleRootMotion` | bool |  |
 | `m_bAllowLooping` | bool |  |
-| `m_graphEvents` | CUtlVector<CGlobalSymbol> | `MPropertyGroupName "Advanced"` `MPropertyAttributeEditor "AnimGraphID()"` `MPropertyAutoExpandSelf` |
+| `m_graphEvents` | CUtlVector< CGlobalSymbol > | `MPropertyAttributeEditor AnimGraphID()` `MPropertyAutoExpandSelf` `MPropertyGroupName Advanced` |
 
 ### CNmGraphDocClipNode::CData
 
@@ -2380,8 +2349,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_clip` | CUtlString | `MPropertyAttributeEditor "AssetBrowse( vnmclip, *requiredoubleclick )"` |
-| `m_flSpeedMultiplier` | float32 | `MPropertyAttributeRange "0.01 5.0"` |
+| `m_clip` | CUtlString | `MPropertyAttributeEditor AssetBrowse( vnmclip, *requiredoubleclick )` |
+| `m_flSpeedMultiplier` | float32 | `MPropertyAttributeRange 0.01 5.0` |
 | `m_nStartSyncEventOffset` | int32 |  |
 
 ### CNmGraphDocClipSelectorNode
@@ -2575,10 +2544,10 @@ classDiagram
     CNmGraphDocParameterBaseNode <|-- CNmGraphDocControlParameterNode
     CNmGraphDocFlowNode <|-- CNmGraphDocParameterBaseNode
     CNmGraphDocNode <|-- CNmGraphDocFlowNode
-    CNmGraphDocControlParameterNode <|-- CNmGraphDocIDControlParameterNode
     CNmGraphDocControlParameterNode <|-- CNmGraphDocBoolControlParameterNode
-    CNmGraphDocControlParameterNode <|-- CNmGraphDocTargetControlParameterNode
     CNmGraphDocControlParameterNode <|-- CNmGraphDocFloatControlParameterNode
+    CNmGraphDocControlParameterNode <|-- CNmGraphDocIDControlParameterNode
+    CNmGraphDocControlParameterNode <|-- CNmGraphDocTargetControlParameterNode
     CNmGraphDocControlParameterNode <|-- CNmGraphDocVectorControlParameterNode
 ```
 
@@ -2688,8 +2657,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_parameterSets` | CUtlVector<[CNmGraphDocDataDictionary](../schemas/animdoclib.md#cnmgraphdocdatadictionary)::ParameterSet_t> | `MPropertyAutoExpandSelf` |
-| `m_IDSets` | CUtlVector<[CNmGraphDocDataDictionary](../schemas/animdoclib.md#cnmgraphdocdatadictionary)::IDSet_t> | `MPropertyAutoExpandSelf` |
+| `m_parameterSets` | CUtlVector< [CNmGraphDocDataDictionary](../schemas/animdoclib.md#cnmgraphdocdatadictionary)::ParameterSet_t > | `MPropertyAutoExpandSelf` |
+| `m_IDSets` | CUtlVector< [CNmGraphDocDataDictionary](../schemas/animdoclib.md#cnmgraphdocdatadictionary)::IDSet_t > | `MPropertyAutoExpandSelf` |
 
 ### CNmGraphDocDataDictionary::IDSet_t
 
@@ -2706,8 +2675,8 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_ID` | V_uuid_t | `MPropertySuppressField` |
-| `m_name` | CUtlString |  |
-| `m_graphIDs` | CUtlVector<CGlobalSymbol> | `MPropertyAutoExpandSelf` |
+| `m_name` | CUtlString | `MPropertyFlattenIntoParentRow` |
+| `m_graphIDs` | CUtlVector< CGlobalSymbol > | `MPropertyAutoExpandSelf` `MPropertyFriendlyName Graph IDs` |
 
 ### CNmGraphDocDataDictionary::ParameterSet_t
 
@@ -2729,8 +2698,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_name` | CUtlString |  |
-| `m_parameters` | CUtlVector<[CNmGraphDocDataDictionary](../schemas/animdoclib.md#cnmgraphdocdatadictionary)::Parameter_t> | `MPropertyAutoExpandSelf` |
+| `m_name` | CUtlString | `MPropertyFlattenIntoParentRow` |
+| `m_parameters` | CUtlVector< [CNmGraphDocDataDictionary](../schemas/animdoclib.md#cnmgraphdocdatadictionary)::Parameter_t > | `MPropertyAutoExpandSelf` |
 
 ### CNmGraphDocDataDictionary::Parameter_t
 
@@ -2756,10 +2725,10 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_ID` | V_uuid_t | `MPropertySuppressField` |
-| `m_name` | CUtlString |  |
+| `m_name` | CUtlString | `MPropertyFlattenIntoParentRow` |
 | `m_groupName` | CUtlString |  |
-| `m_valueType` | [NmGraphValueType_t](../schemas/animlib.md#nmgraphvaluetype_t) |  |
-| `m_expectedValues` | CUtlVector<CGlobalSymbol> | `MPropertyAutoExpandSelf` `MPropertyAttrStateCallback` |
+| `m_valueType` | [NmGraphValueType_t](../schemas/!GlobalTypes.md#nmgraphvaluetype_t) |  |
+| `m_expectedValues` | CUtlVector< CGlobalSymbol > | `MPropertyAttrStateCallback` `MPropertyAutoExpandSelf` |
 
 ### CNmGraphDocEntryOverrideNode
 
@@ -2850,7 +2819,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_pinToStateMapping` | CUtlVector<V_uuid_t> | `MPropertySuppressField` |
+| `m_pinToStateMapping` | CUtlVector< V_uuid_t > | `MPropertySuppressField` |
 
 ### CNmGraphDocEntryStateOverrideConduitNode
 
@@ -3227,7 +3196,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_comparison` | CNmFloatComparisonNode::[Comparison_t](../schemas/animgraphdoclib.md#comparison_t) |  |
+| `m_comparison` | CNmFloatComparisonNode::[Comparison_t](../schemas/!GlobalTypes.md#comparison_t) |  |
 | `m_flComparisonValue` | float32 |  |
 | `m_flEpsilon` | float32 |  |
 
@@ -3343,9 +3312,9 @@ classDiagram
 |------|------|-------------|
 | `m_matchID` | CGlobalSymbol |  |
 | `m_flDefaultValue` | float32 |  |
-| `m_priorityRule` | [NmEventPriorityRule_t](../schemas/animdoclib.md#nmeventpriorityrule_t) | `MPropertyGroupName "+Advanced Search Rules"` |
-| `m_bLimitSearchToSourceState` | bool | `MPropertyGroupName "+Advanced Search Rules"` |
-| `m_bIgnoreInactiveBranchEvents` | bool | `MPropertyGroupName "+Advanced Search Rules"` |
+| `m_priorityRule` | [NmEventPriorityRule_t](../schemas/!GlobalTypes.md#nmeventpriorityrule_t) | `MPropertyGroupName +Advanced Search Rules` |
+| `m_bLimitSearchToSourceState` | bool | `MPropertyGroupName +Advanced Search Rules` |
+| `m_bIgnoreInactiveBranchEvents` | bool | `MPropertyGroupName +Advanced Search Rules` |
 
 ### CNmGraphDocFloatCurveNode
 
@@ -3416,7 +3385,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_curve` | CPiecewiseCurve | `MPropertyAttributeEditor "CurveEditor()"` |
+| `m_curve` | CPiecewiseCurve | `MPropertyAttributeEditor CurveEditor()` |
 
 ### CNmGraphDocFloatEaseNode
 
@@ -3473,7 +3442,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_easing` | [NmEasingOperation_t](../schemas/animlib.md#nmeasingoperation_t) |  |
+| `m_easing` | [NmEasingOperation_t](../schemas/!GlobalTypes.md#nmeasingoperation_t) |  |
 | `m_flEaseTime` | float32 |  |
 | `m_bUseStartValue` | bool |  |
 | `m_flStartValue` | float32 |  |
@@ -3539,8 +3508,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_bReturnAbsoluteResult` | bool | `MPropertyDescription "Should we apply an abs to the result (is performed before we take into account the negate option)"` |
-| `m_bReturnNegatedResult` | bool | `MPropertyDescription "Should we negate the result (absolute value will be performed before negation)"` |
+| `m_bReturnAbsoluteResult` | bool | `MPropertyDescription Should we apply an abs to the result (is performed before we take into account the negate option)` |
+| `m_bReturnNegatedResult` | bool | `MPropertyDescription Should we negate the result (absolute value will be performed before negation)` |
 | `m_operator` | CNmFloatMathNode::Operator_t |  |
 | `m_flValueB` | float32 |  |
 
@@ -3837,10 +3806,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_options` | CUtlVector<[CNmGraphDocFloatSelectorNode](../schemas/animdoclib.md#cnmgraphdocfloatselectornode)::Option_t> | `MPropertyAutoExpandSelf` `MPropertyResizable` |
+| `m_options` | CUtlVector< [CNmGraphDocFloatSelectorNode](../schemas/animdoclib.md#cnmgraphdocfloatselectornode)::Option_t > | `MPropertyAutoExpandSelf` `MPropertyResizable` |
 | `m_flDefaultValue` | float32 |  |
-| `m_easing` | [NmEasingOperation_t](../schemas/animlib.md#nmeasingoperation_t) | `MPropertyGroupName "+Easing"` |
-| `m_easeTime` | float32 | `MPropertyGroupName "+Easing"` |
+| `m_easing` | [NmEasingOperation_t](../schemas/!GlobalTypes.md#nmeasingoperation_t) | `MPropertyGroupName +Easing` |
+| `m_easeTime` | float32 | `MPropertyGroupName +Easing` |
 
 ### CNmGraphDocFloatSelectorNode::Option_t
 
@@ -3910,10 +3879,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_flHertz` | float32 | `MPropertyDescription "Valid Range [0.1 : 30]"` |
-| `m_flDampingRatio` | float32 | `MPropertyDescription "Valid Range [0 : 10], 1 = Critically Damped"` |
-| `m_bUseStartValue` | bool | `MPropertyDescription "Should we initialize this node to the input value or to the specified start value"` |
-| `m_flStartValue` | float32 | `MPropertyDescription "Optional initialization value for this node"` |
+| `m_flHertz` | float32 | `MPropertyDescription Valid Range [0.1 : 30]` |
+| `m_flDampingRatio` | float32 | `MPropertyDescription Valid Range [0 : 10], 1 = Critically Damped` |
+| `m_bUseStartValue` | bool | `MPropertyDescription Should we initialize this node to the input value or to the specified start value` |
+| `m_flStartValue` | float32 | `MPropertyDescription Optional initialization value for this node` |
 
 ### CNmGraphDocFloatSwitchNode
 
@@ -4103,7 +4072,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_connections` | CUtlVector<[CNmGraphDocFlowGraph](../schemas/animdoclib.md#cnmgraphdocflowgraph)::Connection_t> |  |
+| `m_connections` | CUtlVector< [CNmGraphDocFlowGraph](../schemas/animdoclib.md#cnmgraphdocflowgraph)::Connection_t > |  |
 
 ### CNmGraphDocFlowGraph::Connection_t
 
@@ -4131,96 +4100,96 @@ classDiagram
 
 **Derived by:** [CNmGraphDocAimCSNode](modtools.md#cnmgraphdocaimcsnode), [CNmGraphDocAndNode](animdoclib.md#cnmgraphdocandnode), [CNmGraphDocBlend1DNode](animdoclib.md#cnmgraphdocblend1dnode), [CNmGraphDocBlend2DNode](animdoclib.md#cnmgraphdocblend2dnode), [CNmGraphDocBoneMaskBlendNode](animdoclib.md#cnmgraphdocbonemaskblendnode), [CNmGraphDocBoneMaskSelectorNode](animdoclib.md#cnmgraphdocbonemaskselectornode), [CNmGraphDocBoneMaskSwitchNode](animdoclib.md#cnmgraphdocbonemaskswitchnode), [CNmGraphDocCachedBoolNode](animdoclib.md#cnmgraphdoccachedboolnode), [CNmGraphDocCachedFloatNode](animdoclib.md#cnmgraphdoccachedfloatnode), [CNmGraphDocCachedIDNode](animdoclib.md#cnmgraphdoccachedidnode), [CNmGraphDocCachedTargetNode](animdoclib.md#cnmgraphdoccachedtargetnode), [CNmGraphDocCachedVectorNode](animdoclib.md#cnmgraphdoccachedvectornode), [CNmGraphDocCurrentSyncEventIDNode](animdoclib.md#cnmgraphdoccurrentsynceventidnode), [CNmGraphDocCurrentSyncEventNode](animdoclib.md#cnmgraphdoccurrentsynceventnode), [CNmGraphDocExternalGraphNode](animdoclib.md#cnmgraphdocexternalgraphnode), [CNmGraphDocExternalPoseNode](animdoclib.md#cnmgraphdocexternalposenode), [CNmGraphDocFixedWeightBoneMaskNode](animdoclib.md#cnmgraphdocfixedweightbonemasknode), [CNmGraphDocFloatAngleMathNode](animdoclib.md#cnmgraphdocfloatanglemathnode), [CNmGraphDocFloatClampNode](animdoclib.md#cnmgraphdocfloatclampnode), [CNmGraphDocFloatComparisonNode](animdoclib.md#cnmgraphdocfloatcomparisonnode), [CNmGraphDocFloatCurveEventNode](animdoclib.md#cnmgraphdocfloatcurveeventnode), [CNmGraphDocFloatCurveNode](animdoclib.md#cnmgraphdocfloatcurvenode), [CNmGraphDocFloatEaseNode](animdoclib.md#cnmgraphdocfloateasenode), [CNmGraphDocFloatMathNode](animdoclib.md#cnmgraphdocfloatmathnode), [CNmGraphDocFloatRangeComparisonNode](animdoclib.md#cnmgraphdocfloatrangecomparisonnode), [CNmGraphDocFloatRemapNode](animdoclib.md#cnmgraphdocfloatremapnode), [CNmGraphDocFloatSelectorNode](animdoclib.md#cnmgraphdocfloatselectornode), [CNmGraphDocFloatSpringNode](animdoclib.md#cnmgraphdocfloatspringnode), [CNmGraphDocFloatSwitchNode](animdoclib.md#cnmgraphdocfloatswitchnode), [CNmGraphDocFootEventConditionNode](animdoclib.md#cnmgraphdocfooteventconditionnode), [CNmGraphDocFootstepEventIDNode](animdoclib.md#cnmgraphdocfootstepeventidnode), [CNmGraphDocFootstepEventPercentageThroughNode](animdoclib.md#cnmgraphdocfootstepeventpercentagethroughnode), [CNmGraphDocGraphEventConditionNode](animdoclib.md#cnmgraphdocgrapheventconditionnode), [CNmGraphDocIDBasedClipSelectorNode](animdoclib.md#cnmgraphdocidbasedclipselectornode), [CNmGraphDocIDBasedSelectorNode](animdoclib.md#cnmgraphdocidbasedselectornode), [CNmGraphDocIDComparisonNode](animdoclib.md#cnmgraphdocidcomparisonnode), [CNmGraphDocIDEventConditionNode](animdoclib.md#cnmgraphdocideventconditionnode), [CNmGraphDocIDEventNode](animdoclib.md#cnmgraphdocideventnode), [CNmGraphDocIDEventPercentageThroughNode](animdoclib.md#cnmgraphdocideventpercentagethroughnode), [CNmGraphDocIDSelectorNode](animdoclib.md#cnmgraphdocidselectornode), [CNmGraphDocIDSwitchNode](animdoclib.md#cnmgraphdocidswitchnode), [CNmGraphDocIDToFloatNode](animdoclib.md#cnmgraphdocidtofloatnode), [CNmGraphDocIsExternalGraphSlotFilledNode](animdoclib.md#cnmgraphdocisexternalgraphslotfillednode), [CNmGraphDocIsExternalPoseSetNode](animdoclib.md#cnmgraphdocisexternalposesetnode), [CNmGraphDocIsInactiveBranchConditionNode](animdoclib.md#cnmgraphdocisinactivebranchconditionnode), [CNmGraphDocIsTargetSetNode](animdoclib.md#cnmgraphdocistargetsetnode), [CNmGraphDocLayerBaseNode](animdoclib.md#cnmgraphdoclayerbasenode), [CNmGraphDocLayerBlendNode](animdoclib.md#cnmgraphdoclayerblendnode), [CNmGraphDocNotNode](animdoclib.md#cnmgraphdocnotnode), [CNmGraphDocOrNode](animdoclib.md#cnmgraphdocornode), [CNmGraphDocOrientationWarpNode](animdoclib.md#cnmgraphdocorientationwarpnode), [CNmGraphDocParameterBaseNode](animdoclib.md#cnmgraphdocparameterbasenode), [CNmGraphDocParameterReferenceNode](animdoclib.md#cnmgraphdocparameterreferencenode), [CNmGraphDocReferencePoseNode](animdoclib.md#cnmgraphdocreferenceposenode), [CNmGraphDocResultNode](animdoclib.md#cnmgraphdocresultnode), [CNmGraphDocRootMotionOverrideNode](animdoclib.md#cnmgraphdocrootmotionoverridenode), [CNmGraphDocScaleNode](animdoclib.md#cnmgraphdocscalenode), [CNmGraphDocSelectorBaseNode](animdoclib.md#cnmgraphdocselectorbasenode), [CNmGraphDocStateCompletedConditionNode](animdoclib.md#cnmgraphdocstatecompletedconditionnode), [CNmGraphDocStateMachineNode](animdoclib.md#cnmgraphdocstatemachinenode), [CNmGraphDocSyncEventIndexConditionNode](animdoclib.md#cnmgraphdocsynceventindexconditionnode), [CNmGraphDocTargetInfoNode](animdoclib.md#cnmgraphdoctargetinfonode), [CNmGraphDocTargetOffsetNode](animdoclib.md#cnmgraphdoctargetoffsetnode), [CNmGraphDocTargetPointNode](animdoclib.md#cnmgraphdoctargetpointnode), [CNmGraphDocTargetSelectorNode](animdoclib.md#cnmgraphdoctargetselectornode), [CNmGraphDocTimeConditionNode](animdoclib.md#cnmgraphdoctimeconditionnode), [CNmGraphDocTransitionEventConditionNode](animdoclib.md#cnmgraphdoctransitioneventconditionnode), [CNmGraphDocVariationDataNode](animdoclib.md#cnmgraphdocvariationdatanode), [CNmGraphDocVectorCreateNode](animdoclib.md#cnmgraphdocvectorcreatenode), [CNmGraphDocVectorInfoNode](animdoclib.md#cnmgraphdocvectorinfonode), [CNmGraphDocVectorNegateNode](animdoclib.md#cnmgraphdocvectornegatenode), [CNmGraphDocVelocityBlendNode](animdoclib.md#cnmgraphdocvelocityblendnode), [CNmGraphDocZeroPoseNode](animdoclib.md#cnmgraphdoczeroposenode), [CnmGraphDocConstBoneTargetNode](animdoclib.md#cnmgraphdocconstbonetargetnode), [CnmGraphDocConstBoolNode](animdoclib.md#cnmgraphdocconstboolnode), [CnmGraphDocConstFloatNode](animdoclib.md#cnmgraphdocconstfloatnode), [CnmGraphDocConstIDNode](animdoclib.md#cnmgraphdocconstidnode), [CnmGraphDocConstTargetNode](animdoclib.md#cnmgraphdocconsttargetnode), [CnmGraphDocConstVectorNode](animdoclib.md#cnmgraphdocconstvectornode), [CnmGraphDocDurationScaleNode](animdoclib.md#cnmgraphdocdurationscalenode), [CnmGraphDocSnapWeaponNode](modtools.md#cnmgraphdocsnapweaponnode), [CnmGraphDocSpeedScaleNode](animdoclib.md#cnmgraphdocspeedscalenode), [CnmGraphDocVelocityBasedSpeedScaleNode](animdoclib.md#cnmgraphdocvelocitybasedspeedscalenode)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
     CNmGraphDocNode <|-- CNmGraphDocFlowNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocFloatRangeComparisonNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocStateMachineNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocTargetOffsetNode
-    CNmGraphDocFlowNode <|-- CnmGraphDocConstFloatNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocCachedIDNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocTargetPointNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocIsExternalGraphSlotFilledNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocExternalGraphNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocIDEventPercentageThroughNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocBoneMaskSelectorNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocOrientationWarpNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocExternalPoseNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocVelocityBlendNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocBlend1DNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocCurrentSyncEventIDNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocFloatAngleMathNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocVectorInfoNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocAndNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocIDEventNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocBoneMaskBlendNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocFloatCurveNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocIDToFloatNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocIDEventConditionNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocVectorNegateNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocParameterBaseNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocIsExternalPoseSetNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocFootstepEventPercentageThroughNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocCachedFloatNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocFloatComparisonNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocFloatEaseNode
-    CNmGraphDocFlowNode <|-- CnmGraphDocConstIDNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocBlend2DNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocFootEventConditionNode
-    CNmGraphDocFlowNode <|-- CnmGraphDocConstBoneTargetNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocIDBasedSelectorNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocBoneMaskSwitchNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocCurrentSyncEventNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocFloatSelectorNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocIDSwitchNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocLayerBaseNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocIsInactiveBranchConditionNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocSyncEventIndexConditionNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocLayerBlendNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocRootMotionOverrideNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocFloatCurveEventNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocTransitionEventConditionNode
-    CNmGraphDocFlowNode <|-- CnmGraphDocSnapWeaponNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocOrNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocFixedWeightBoneMaskNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocIsTargetSetNode
     CNmGraphDocFlowNode <|-- CNmGraphDocAimCSNode
-    CNmGraphDocFlowNode <|-- CnmGraphDocDurationScaleNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocParameterReferenceNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocFloatRemapNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocScaleNode
-    CNmGraphDocFlowNode <|-- CnmGraphDocSpeedScaleNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocIDComparisonNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocTimeConditionNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocTargetInfoNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocResultNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocFloatMathNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocVectorCreateNode
-    CNmGraphDocFlowNode <|-- CnmGraphDocVelocityBasedSpeedScaleNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocGraphEventConditionNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocStateCompletedConditionNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocIDBasedClipSelectorNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocSelectorBaseNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocTargetSelectorNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocZeroPoseNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocFloatSpringNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocFootstepEventIDNode
-    CNmGraphDocFlowNode <|-- CnmGraphDocConstVectorNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocReferencePoseNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocVariationDataNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocFloatSwitchNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocFloatClampNode
-    CNmGraphDocFlowNode <|-- CnmGraphDocConstTargetNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocAndNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocBlend1DNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocBlend2DNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocBoneMaskBlendNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocBoneMaskSelectorNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocBoneMaskSwitchNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocCachedBoolNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocCachedFloatNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocCachedIDNode
     CNmGraphDocFlowNode <|-- CNmGraphDocCachedTargetNode
     CNmGraphDocFlowNode <|-- CNmGraphDocCachedVectorNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocCurrentSyncEventIDNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocCurrentSyncEventNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocExternalGraphNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocExternalPoseNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocFixedWeightBoneMaskNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocFloatAngleMathNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocFloatClampNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocFloatComparisonNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocFloatCurveEventNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocFloatCurveNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocFloatEaseNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocFloatMathNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocFloatRangeComparisonNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocFloatRemapNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocFloatSelectorNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocFloatSpringNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocFloatSwitchNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocFootEventConditionNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocFootstepEventIDNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocFootstepEventPercentageThroughNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocGraphEventConditionNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocIDBasedClipSelectorNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocIDBasedSelectorNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocIDComparisonNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocIDEventConditionNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocIDEventNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocIDEventPercentageThroughNode
     CNmGraphDocFlowNode <|-- CNmGraphDocIDSelectorNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocIDSwitchNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocIDToFloatNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocIsExternalGraphSlotFilledNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocIsExternalPoseSetNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocIsInactiveBranchConditionNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocIsTargetSetNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocLayerBaseNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocLayerBlendNode
     CNmGraphDocFlowNode <|-- CNmGraphDocNotNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocOrNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocOrientationWarpNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocParameterBaseNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocParameterReferenceNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocReferencePoseNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocResultNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocRootMotionOverrideNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocScaleNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocSelectorBaseNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocStateCompletedConditionNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocStateMachineNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocSyncEventIndexConditionNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocTargetInfoNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocTargetOffsetNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocTargetPointNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocTargetSelectorNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocTimeConditionNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocTransitionEventConditionNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocVariationDataNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocVectorCreateNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocVectorInfoNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocVectorNegateNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocVelocityBlendNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocZeroPoseNode
+    CNmGraphDocFlowNode <|-- CnmGraphDocConstBoneTargetNode
     CNmGraphDocFlowNode <|-- CnmGraphDocConstBoolNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocCachedBoolNode
+    CNmGraphDocFlowNode <|-- CnmGraphDocConstFloatNode
+    CNmGraphDocFlowNode <|-- CnmGraphDocConstIDNode
+    CNmGraphDocFlowNode <|-- CnmGraphDocConstTargetNode
+    CNmGraphDocFlowNode <|-- CnmGraphDocConstVectorNode
+    CNmGraphDocFlowNode <|-- CnmGraphDocDurationScaleNode
+    CNmGraphDocFlowNode <|-- CnmGraphDocSnapWeaponNode
+    CNmGraphDocFlowNode <|-- CnmGraphDocSpeedScaleNode
+    CNmGraphDocFlowNode <|-- CnmGraphDocVelocityBasedSpeedScaleNode
     CNmGraphDocFlowNode *-- NmGraphDocPin_t
 ```
 
@@ -4228,8 +4197,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_inputPins` | CUtlLeanVectorFixedGrowable<[NmGraphDocPin_t](../schemas/animdoclib.md#nmgraphdocpin_t)> |  |
-| `m_outputPins` | CUtlLeanVectorFixedGrowable<[NmGraphDocPin_t](../schemas/animdoclib.md#nmgraphdocpin_t)> |  |
+| `m_inputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../schemas/animdoclib.md#nmgraphdocpin_t), 4 > |  |
+| `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../schemas/animdoclib.md#nmgraphdocpin_t), 1 > |  |
 
 ### CNmGraphDocFootEventConditionNode
 
@@ -4278,9 +4247,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_phaseCondition` | [NmFootPhaseCondition_t](../schemas/animlib.md#nmfootphasecondition_t) |  |
-| `m_bLimitSearchToSourceState` | bool | `MPropertyGroupName "+Advanced Search Rules"` |
-| `m_bIgnoreInactiveBranchEvents` | bool | `MPropertyGroupName "+Advanced Search Rules"` |
+| `m_phaseCondition` | [NmFootPhaseCondition_t](../schemas/!GlobalTypes.md#nmfootphasecondition_t) |  |
+| `m_bLimitSearchToSourceState` | bool | `MPropertyGroupName +Advanced Search Rules` |
+| `m_bIgnoreInactiveBranchEvents` | bool | `MPropertyGroupName +Advanced Search Rules` |
 
 ### CNmGraphDocFootstepEventIDNode
 
@@ -4329,9 +4298,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_priorityRule` | [NmEventPriorityRule_t](../schemas/animdoclib.md#nmeventpriorityrule_t) | `MPropertyGroupName "+Advanced Search Rules"` |
-| `m_bLimitSearchToSourceState` | bool | `MPropertyGroupName "+Advanced Search Rules"` |
-| `m_bIgnoreInactiveBranchEvents` | bool | `MPropertyGroupName "+Advanced Search Rules"` |
+| `m_priorityRule` | [NmEventPriorityRule_t](../schemas/!GlobalTypes.md#nmeventpriorityrule_t) | `MPropertyGroupName +Advanced Search Rules` |
+| `m_bLimitSearchToSourceState` | bool | `MPropertyGroupName +Advanced Search Rules` |
+| `m_bIgnoreInactiveBranchEvents` | bool | `MPropertyGroupName +Advanced Search Rules` |
 
 ### CNmGraphDocFootstepEventPercentageThroughNode
 
@@ -4382,10 +4351,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_phaseCondition` | [NmFootPhaseCondition_t](../schemas/animlib.md#nmfootphasecondition_t) |  |
-| `m_priorityRule` | [NmEventPriorityRule_t](../schemas/animdoclib.md#nmeventpriorityrule_t) | `MPropertyGroupName "+Advanced Search Rules"` |
-| `m_bLimitSearchToSourceState` | bool | `MPropertyGroupName "+Advanced Search Rules"` |
-| `m_bIgnoreInactiveBranchEvents` | bool | `MPropertyGroupName "+Advanced Search Rules"` |
+| `m_phaseCondition` | [NmFootPhaseCondition_t](../schemas/!GlobalTypes.md#nmfootphasecondition_t) |  |
+| `m_priorityRule` | [NmEventPriorityRule_t](../schemas/!GlobalTypes.md#nmeventpriorityrule_t) | `MPropertyGroupName +Advanced Search Rules` |
+| `m_bLimitSearchToSourceState` | bool | `MPropertyGroupName +Advanced Search Rules` |
+| `m_bIgnoreInactiveBranchEvents` | bool | `MPropertyGroupName +Advanced Search Rules` |
 
 ### CNmGraphDocGlobalTransitionConduitNode
 
@@ -4549,8 +4518,8 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_ID` | V_uuid_t |  |
-| `m_nodes` | CUtlVector<[CNmGraphDocNode](../schemas/animdoclib.md#cnmgraphdocnode)*> |  |
-| `m_graphType` | [NmGraphDocGraphType_t](../schemas/animdoclib.md#nmgraphdocgraphtype_t) |  |
+| `m_nodes` | CUtlVector< [CNmGraphDocNode](../schemas/animdoclib.md#cnmgraphdocnode)* > |  |
+| `m_graphType` | [NmGraphDocGraphType_t](../schemas/!GlobalTypes.md#nmgraphdocgraphtype_t) |  |
 | `m_viewOffset` | Vector2D |  |
 | `m_flViewZoom` | float32 |  |
 
@@ -4608,10 +4577,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_operator` | [NmEventConditionOperator_t](../schemas/animdoclib.md#nmeventconditionoperator_t) |  |
-| `m_bLimitSearchToSourceState` | bool | `MPropertyGroupName "+Advanced Search Rules"` |
-| `m_bIgnoreInactiveBranchEvents` | bool | `MPropertyGroupName "+Advanced Search Rules"` |
-| `m_conditions` | CUtlVector<[CNmGraphDocGraphEventConditionNode](../schemas/animdoclib.md#cnmgraphdocgrapheventconditionnode)::Condition_t> | `MPropertyGroupName "+Conditions"` `MPropertyAutoExpandSelf` |
+| `m_operator` | [NmEventConditionOperator_t](../schemas/!GlobalTypes.md#nmeventconditionoperator_t) |  |
+| `m_bLimitSearchToSourceState` | bool | `MPropertyGroupName +Advanced Search Rules` |
+| `m_bIgnoreInactiveBranchEvents` | bool | `MPropertyGroupName +Advanced Search Rules` |
+| `m_conditions` | CUtlVector< [CNmGraphDocGraphEventConditionNode](../schemas/animdoclib.md#cnmgraphdocgrapheventconditionnode)::Condition_t > | `MPropertyAutoExpandSelf` `MPropertyGroupName +Conditions` |
 
 ### CNmGraphDocGraphEventConditionNode::Condition_t
 
@@ -4631,8 +4600,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_eventID` | CGlobalSymbol | `MPropertyAttributeEditor "AnimGraphID()"` |
-| `m_type` | [NmGraphEventTypeCondition_t](../schemas/animlib.md#nmgrapheventtypecondition_t) |  |
+| `m_eventID` | CGlobalSymbol | `MPropertyAttributeEditor AnimGraphID()` |
+| `m_type` | [NmGraphEventTypeCondition_t](../schemas/!GlobalTypes.md#nmgrapheventtypecondition_t) |  |
 
 ### CNmGraphDocIDBasedClipSelectorNode
 
@@ -4711,8 +4680,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_optionLabels` | CUtlVector<CUtlString> | `MPropertyAutoExpandSelf` `MPropertyResizable` |
-| `m_bIgnoreInvalidOptions` | bool | `MPropertyGroupName "Advanced"` `MPropertyDescription "Should we ignore any invalid option and remove them from the selection. This is useful if different variations has different sets of options filled"` |
+| `m_optionLabels` | CUtlVector< CUtlString > | `MPropertyAutoExpandSelf` `MPropertyResizable` |
+| `m_bIgnoreInvalidOptions` | bool | `MPropertyDescription Should we ignore any invalid option and remove them from the selection. This is useful if different variations has different sets of options filled` `MPropertyGroupName Advanced` |
 
 ### CNmGraphDocIDBasedSelectorNode
 
@@ -4791,8 +4760,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_optionLabels` | CUtlVector<CUtlString> | `MPropertyAutoExpandSelf` `MPropertyResizable` |
-| `m_bIgnoreInvalidOptions` | bool | `MPropertyGroupName "Advanced"` `MPropertyDescription "Should we ignore any invalid option and remove them from the selection. This is useful if different variations has different sets of options filled"` |
+| `m_optionLabels` | CUtlVector< CUtlString > | `MPropertyAutoExpandSelf` `MPropertyResizable` |
+| `m_bIgnoreInvalidOptions` | bool | `MPropertyDescription Should we ignore any invalid option and remove them from the selection. This is useful if different variations has different sets of options filled` `MPropertyGroupName Advanced` |
 
 ### CNmGraphDocIDComparisonNode
 
@@ -4850,8 +4819,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_comparison` | CNmIDComparisonNode::[Comparison_t](../schemas/animgraphdoclib.md#comparison_t) |  |
-| `m_values` | CUtlVector<CGlobalSymbol> | `MPropertyAttributeEditor "AnimGraphID()"` `MPropertyAutoExpandSelf` |
+| `m_comparison` | CNmIDComparisonNode::[Comparison_t](../schemas/!GlobalTypes.md#comparison_t) |  |
+| `m_values` | CUtlVector< CGlobalSymbol > | `MPropertyAttributeEditor AnimGraphID()` `MPropertyAutoExpandSelf` |
 
 ### CNmGraphDocIDControlParameterNode
 
@@ -4904,8 +4873,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_previewStartValue` | CGlobalSymbol | `MPropertyAttributeEditor "AnimGraphID()"` |
-| `m_expectedValues` | CUtlVector<CGlobalSymbol> | `MPropertyAttributeEditor "AnimGraphID()"` `MPropertyAutoExpandSelf` `MPropertyFriendlyName "Local graph expected values"` |
+| `m_previewStartValue` | CGlobalSymbol | `MPropertyAttributeEditor AnimGraphID()` |
+| `m_expectedValues` | CUtlVector< CGlobalSymbol > | `MPropertyAttributeEditor AnimGraphID()` `MPropertyAutoExpandSelf` `MPropertyFriendlyName Local graph expected values` |
 
 ### CNmGraphDocIDEventConditionNode
 
@@ -4958,21 +4927,11 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_operator` | [NmEventConditionOperator_t](../schemas/animdoclib.md#nmeventconditionoperator_t) |  |
+| `m_operator` | [NmEventConditionOperator_t](../schemas/!GlobalTypes.md#nmeventconditionoperator_t) |  |
 | `m_searchRule` | [CNmGraphDocIDEventConditionNode](../schemas/animdoclib.md#cnmgraphdocideventconditionnode)::SearchRule_t |  |
-| `m_bLimitSearchToSourceState` | bool | `MPropertyGroupName "+Advanced Search Rules"` |
-| `m_bIgnoreInactiveBranchEvents` | bool | `MPropertyGroupName "+Advanced Search Rules"` |
-| `m_eventIDs` | CUtlVector<CGlobalSymbol> | `MPropertyGroupName "+Conditions"` `MPropertyAttributeEditor "AnimGraphID()"` `MPropertyAutoExpandSelf` |
-
-### CNmGraphDocIDEventConditionNode::SearchRule_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `SearchAll` | 0 |  |
-| `OnlySearchGraphEvents` | 1 |  |
-| `OnlySearchAnimEvents` | 2 |  |
+| `m_bLimitSearchToSourceState` | bool | `MPropertyGroupName +Advanced Search Rules` |
+| `m_bIgnoreInactiveBranchEvents` | bool | `MPropertyGroupName +Advanced Search Rules` |
+| `m_eventIDs` | CUtlVector< CGlobalSymbol > | `MPropertyAttributeEditor AnimGraphID()` `MPropertyAutoExpandSelf` `MPropertyGroupName +Conditions` |
 
 ### CNmGraphDocIDEventNode
 
@@ -5023,9 +4982,9 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_defaultValue` | CGlobalSymbol |  |
-| `m_bLimitSearchToSourceState` | bool | `MPropertyGroupName "+Advanced Search Rules"` |
-| `m_priorityRule` | [NmEventPriorityRule_t](../schemas/animdoclib.md#nmeventpriorityrule_t) | `MPropertyGroupName "+Advanced Search Rules"` |
-| `m_bIgnoreInactiveBranchEvents` | bool | `MPropertyGroupName "+Advanced Search Rules"` |
+| `m_bLimitSearchToSourceState` | bool | `MPropertyGroupName +Advanced Search Rules` |
+| `m_priorityRule` | [NmEventPriorityRule_t](../schemas/!GlobalTypes.md#nmeventpriorityrule_t) | `MPropertyGroupName +Advanced Search Rules` |
+| `m_bIgnoreInactiveBranchEvents` | bool | `MPropertyGroupName +Advanced Search Rules` |
 
 ### CNmGraphDocIDEventPercentageThroughNode
 
@@ -5075,10 +5034,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_priorityRule` | [NmEventPriorityRule_t](../schemas/animdoclib.md#nmeventpriorityrule_t) | `MPropertyGroupName "+Advanced Search Rules"` |
-| `m_bLimitSearchToSourceState` | bool | `MPropertyGroupName "+Advanced Search Rules"` |
-| `m_bIgnoreInactiveBranchEvents` | bool | `MPropertyGroupName "+Advanced Search Rules"` |
-| `m_eventID` | CGlobalSymbol | `MPropertyAttributeEditor "AnimGraphID()"` |
+| `m_priorityRule` | [NmEventPriorityRule_t](../schemas/!GlobalTypes.md#nmeventpriorityrule_t) | `MPropertyGroupName +Advanced Search Rules` |
+| `m_bLimitSearchToSourceState` | bool | `MPropertyGroupName +Advanced Search Rules` |
+| `m_bIgnoreInactiveBranchEvents` | bool | `MPropertyGroupName +Advanced Search Rules` |
+| `m_eventID` | CGlobalSymbol | `MPropertyAttributeEditor AnimGraphID()` |
 
 ### CNmGraphDocIDParameterReferenceNode
 
@@ -5228,8 +5187,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_options` | CUtlVector<CGlobalSymbol> | `MPropertyAutoExpandSelf` `MPropertyResizable` `MPropertyAttributeEditor "AnimGraphID()"` |
-| `m_defaultID` | CGlobalSymbol | `MPropertyAttributeEditor "AnimGraphID()"` |
+| `m_options` | CUtlVector< CGlobalSymbol > | `MPropertyAttributeEditor AnimGraphID()` `MPropertyAutoExpandSelf` `MPropertyResizable` |
+| `m_defaultID` | CGlobalSymbol | `MPropertyAttributeEditor AnimGraphID()` |
 
 ### CNmGraphDocIDSwitchNode
 
@@ -5355,7 +5314,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_defaultValue` | float32 |  |
-| `m_mappings` | CUtlVector<[CNmGraphDocIDToFloatNode](../schemas/animdoclib.md#cnmgraphdocidtofloatnode)::Mapping_t> | `MPropertyAutoExpandSelf` |
+| `m_mappings` | CUtlVector< [CNmGraphDocIDToFloatNode](../schemas/animdoclib.md#cnmgraphdocidtofloatnode)::Mapping_t > | `MPropertyAutoExpandSelf` |
 
 ### CNmGraphDocIDToFloatNode::Mapping_t
 
@@ -5368,7 +5327,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_ID` | CGlobalSymbol | `MPropertyAttributeEditor "AnimGraphID()"` |
+| `m_ID` | CGlobalSymbol | `MPropertyAttributeEditor AnimGraphID()` |
 | `m_value` | float32 |  |
 
 ### CNmGraphDocIDVirtualParameterNode
@@ -5640,7 +5599,7 @@ classDiagram
 
 **Derived by:** [CNmGraphDocLocalLayerNode](animdoclib.md#cnmgraphdoclocallayernode), [CNmGraphDocStateMachineLayerNode](animdoclib.md#cnmgraphdocstatemachinelayernode)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
@@ -5648,8 +5607,8 @@ classDiagram
 classDiagram
     CNmGraphDocFlowNode <|-- CNmGraphDocLayerBaseNode
     CNmGraphDocNode <|-- CNmGraphDocFlowNode
-    CNmGraphDocLayerBaseNode <|-- CNmGraphDocStateMachineLayerNode
     CNmGraphDocLayerBaseNode <|-- CNmGraphDocLocalLayerNode
+    CNmGraphDocLayerBaseNode <|-- CNmGraphDocStateMachineLayerNode
     CNmGraphDocLayerBaseNode *-- NmPoseBlendMode_t
 ```
 
@@ -5659,7 +5618,7 @@ classDiagram
 |------|------|-------------|
 | `m_isSynchronized` | bool |  |
 | `m_ignoreEvents` | bool |  |
-| `m_blendMode` | [NmPoseBlendMode_t](../schemas/animlib.md#nmposeblendmode_t) |  |
+| `m_blendMode` | [NmPoseBlendMode_t](../schemas/!GlobalTypes.md#nmposeblendmode_t) |  |
 
 ### CNmGraphDocLayerBlendNode
 
@@ -5796,15 +5755,15 @@ classDiagram
 
 **Derived by:** [CNmGraphDocCommentNode](animdoclib.md#cnmgraphdoccommentnode), [CNmGraphDocFlowNode](animdoclib.md#cnmgraphdocflownode), [CNmGraphDocStateMachineGraphNode](animdoclib.md#cnmgraphdocstatemachinegraphnode)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CNmGraphDocNode <|-- CNmGraphDocStateMachineGraphNode
     CNmGraphDocNode <|-- CNmGraphDocCommentNode
     CNmGraphDocNode <|-- CNmGraphDocFlowNode
+    CNmGraphDocNode <|-- CNmGraphDocStateMachineGraphNode
     CNmGraphDocNode --> CNmGraphDocGraph
 ```
 
@@ -5814,7 +5773,7 @@ classDiagram
 |------|------|-------------|
 | `m_ID` | V_uuid_t | `MPropertySuppressField` |
 | `m_name` | CUtlString | `MPropertyHideField` |
-| `m_floatingComment` | CUtlString | `MPropertyAttributeEditor "TextBlock()"` |
+| `m_floatingComment` | CUtlString | `MPropertyAttributeEditor TextBlock()` |
 | `m_position` | Vector2D | `MPropertySuppressField` |
 | `m_pChildGraph` | [CNmGraphDocGraph](../schemas/animdoclib.md#cnmgraphdocgraph)* | `MPropertySuppressField` |
 | `m_pSecondaryGraph` | [CNmGraphDocGraph](../schemas/animdoclib.md#cnmgraphdocgraph)* | `MPropertySuppressField` |
@@ -5988,16 +5947,7 @@ classDiagram
 |------|------|-------------|
 | `m_offsetType` | [CNmGraphDocOrientationWarpNode](../schemas/animdoclib.md#cnmgraphdocorientationwarpnode)::OffsetType_t |  |
 | `m_samplingMode` | [CNmRootMotionData](../schemas/animlib.md#cnmrootmotiondata)::SamplingMode_t |  |
-| `m_bWarpTranslation` | bool | `MPropertyGroupName "Experimental"` `MPropertyDescription "Should the translation curve change as the orientation is being warped?"` |
-
-### CNmGraphDocOrientationWarpNode::OffsetType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `RelativeToCharacter` | 0 |  |
-| `RelativeToOriginalRootMotion` | 1 |  |
+| `m_bWarpTranslation` | bool | `MPropertyDescription Should the translation curve change as the orientation is being warped?` `MPropertyGroupName Experimental` |
 
 ### CNmGraphDocParameterBaseNode
 
@@ -6005,7 +5955,7 @@ classDiagram
 
 **Derived by:** [CNmGraphDocControlParameterNode](animdoclib.md#cnmgraphdoccontrolparameternode), [CNmGraphDocVirtualParameterNode](animdoclib.md#cnmgraphdocvirtualparameternode)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
@@ -6059,12 +6009,12 @@ classDiagram
 classDiagram
     CNmGraphDocFlowNode <|-- CNmGraphDocParameterReferenceNode
     CNmGraphDocNode <|-- CNmGraphDocFlowNode
-    CNmGraphDocParameterReferenceNode <|-- CNmGraphDocIDParameterReferenceNode
+    CNmGraphDocParameterReferenceNode <|-- CNmGraphDocBoneMaskParameterReferenceNode
+    CNmGraphDocParameterReferenceNode <|-- CNmGraphDocBoolParameterReferenceNode
     CNmGraphDocParameterReferenceNode <|-- CNmGraphDocFloatParameterReferenceNode
+    CNmGraphDocParameterReferenceNode <|-- CNmGraphDocIDParameterReferenceNode
     CNmGraphDocParameterReferenceNode <|-- CNmGraphDocTargetParameterReferenceNode
     CNmGraphDocParameterReferenceNode <|-- CNmGraphDocVectorParameterReferenceNode
-    CNmGraphDocParameterReferenceNode <|-- CNmGraphDocBoolParameterReferenceNode
-    CNmGraphDocParameterReferenceNode <|-- CNmGraphDocBoneMaskParameterReferenceNode
     CNmGraphDocParameterReferenceNode *-- NmGraphValueType_t
 ```
 
@@ -6073,7 +6023,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_parameterUUID` | V_uuid_t |  |
-| `m_parameterValueType` | [NmGraphValueType_t](../schemas/animlib.md#nmgraphvaluetype_t) |  |
+| `m_parameterValueType` | [NmGraphValueType_t](../schemas/!GlobalTypes.md#nmgraphvaluetype_t) |  |
 | `m_parameterName` | CUtlString |  |
 | `m_parameterGroupName` | CUtlString |  |
 
@@ -6161,8 +6111,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_optionLabels` | CUtlVector<CUtlString> | `MPropertyAutoExpandSelf` `MPropertyResizable` |
-| `m_bIgnoreInvalidOptions` | bool | `MPropertyGroupName "Advanced"` `MPropertyDescription "Should we ignore any invalid option and remove them from the selection. This is useful if different variations has different sets of options filled"` |
+| `m_optionLabels` | CUtlVector< CUtlString > | `MPropertyAutoExpandSelf` `MPropertyResizable` |
+| `m_bIgnoreInvalidOptions` | bool | `MPropertyDescription Should we ignore any invalid option and remove them from the selection. This is useful if different variations has different sets of options filled` `MPropertyGroupName Advanced` |
 
 ### CNmGraphDocParameterizedClipSelectorNode::CData
 
@@ -6186,7 +6136,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_optionWeights` | CUtlVector<uint8> | `MPropertyGroupName "Advanced"` `MPropertyAutoExpandSelf` `MPropertyResizable` |
+| `m_optionWeights` | CUtlVector< uint8 > | `MPropertyAutoExpandSelf` `MPropertyGroupName Advanced` `MPropertyResizable` |
 
 ### CNmGraphDocParameterizedSelectorNode
 
@@ -6272,8 +6222,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_optionLabels` | CUtlVector<CUtlString> | `MPropertyAutoExpandSelf` `MPropertyResizable` |
-| `m_bIgnoreInvalidOptions` | bool | `MPropertyGroupName "Advanced"` `MPropertyDescription "Should we ignore any invalid option and remove them from the selection. This is useful if different variations has different sets of options filled"` |
+| `m_optionLabels` | CUtlVector< CUtlString > | `MPropertyAutoExpandSelf` `MPropertyResizable` |
+| `m_bIgnoreInvalidOptions` | bool | `MPropertyDescription Should we ignore any invalid option and remove them from the selection. This is useful if different variations has different sets of options filled` `MPropertyGroupName Advanced` |
 
 ### CNmGraphDocParameterizedSelectorNode::CData
 
@@ -6297,7 +6247,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_optionWeights` | CUtlVector<uint8> | `MPropertyGroupName "Advanced"` `MPropertyAutoExpandSelf` `MPropertyResizable` |
+| `m_optionWeights` | CUtlVector< uint8 > | `MPropertyAutoExpandSelf` `MPropertyGroupName Advanced` `MPropertyResizable` |
 
 ### CNmGraphDocPoseResultNode
 
@@ -6455,7 +6405,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_variation` | CUtlString | `MPropertyAttributeEditor "AssetBrowse( vnmgraph, *requiredoubleclick )"` |
+| `m_variation` | CUtlString | `MPropertyAttributeEditor AssetBrowse( vnmgraph, *requiredoubleclick )` |
 
 ### CNmGraphDocResultNode
 
@@ -6490,18 +6440,18 @@ classDiagram
 classDiagram
     CNmGraphDocFlowNode <|-- CNmGraphDocResultNode
     CNmGraphDocNode <|-- CNmGraphDocFlowNode
-    CNmGraphDocResultNode <|-- CNmGraphDocBoolResultNode
-    CNmGraphDocResultNode <|-- CNmGraphDocStateLayerDataNode
-    CNmGraphDocResultNode <|-- CNmGraphDocEntryStateOverrideConditionsNode
-    CNmGraphDocResultNode <|-- CNmGraphDocTargetResultNode
-    CNmGraphDocResultNode <|-- CNmGraphDocEntryOverrideNode
-    CNmGraphDocResultNode <|-- CNmGraphDocFloatResultNode
-    CNmGraphDocResultNode <|-- CNmGraphDocVectorResultNode
-    CNmGraphDocResultNode <|-- CNmGraphDocSelectorConditionNode
-    CNmGraphDocResultNode <|-- CNmGraphDocIDResultNode
     CNmGraphDocResultNode <|-- CNmGraphDocBoneMaskResultNode
-    CNmGraphDocResultNode <|-- CNmGraphDocTransitionNode
+    CNmGraphDocResultNode <|-- CNmGraphDocBoolResultNode
+    CNmGraphDocResultNode <|-- CNmGraphDocEntryOverrideNode
+    CNmGraphDocResultNode <|-- CNmGraphDocEntryStateOverrideConditionsNode
+    CNmGraphDocResultNode <|-- CNmGraphDocFloatResultNode
+    CNmGraphDocResultNode <|-- CNmGraphDocIDResultNode
     CNmGraphDocResultNode <|-- CNmGraphDocPoseResultNode
+    CNmGraphDocResultNode <|-- CNmGraphDocSelectorConditionNode
+    CNmGraphDocResultNode <|-- CNmGraphDocStateLayerDataNode
+    CNmGraphDocResultNode <|-- CNmGraphDocTargetResultNode
+    CNmGraphDocResultNode <|-- CNmGraphDocTransitionNode
+    CNmGraphDocResultNode <|-- CNmGraphDocVectorResultNode
     CNmGraphDocResultNode *-- NmGraphValueType_t
 ```
 
@@ -6509,7 +6459,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_resultType` | [NmGraphValueType_t](../schemas/animlib.md#nmgraphvaluetype_t) |  |
+| `m_resultType` | [NmGraphValueType_t](../schemas/!GlobalTypes.md#nmgraphvaluetype_t) |  |
 
 ### CNmGraphDocRootMotionOverrideNode
 
@@ -6561,6 +6511,13 @@ classDiagram
 			"m_ID": <HIDDEN FOR DIFF>,
 			"m_name": "Angular Velocity Limit (Optional)",
 			"m_type": "Float",
+			"m_bIsDynamicPin": false,
+			"m_bAllowMultipleOutConnections": false
+		},
+		{
+			"m_ID": <HIDDEN FOR DIFF>,
+			"m_name": "Enabled",
+			"m_type": "Bool",
 			"m_bIsDynamicPin": false,
 			"m_bAllowMultipleOutConnections": false
 		}
@@ -6670,7 +6627,7 @@ classDiagram
 
 **Derived by:** [CNmGraphDocClipSelectorNode](animdoclib.md#cnmgraphdocclipselectornode), [CNmGraphDocSelectorNode](animdoclib.md#cnmgraphdocselectornode)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
@@ -6678,15 +6635,15 @@ classDiagram
 classDiagram
     CNmGraphDocFlowNode <|-- CNmGraphDocSelectorBaseNode
     CNmGraphDocNode <|-- CNmGraphDocFlowNode
-    CNmGraphDocSelectorBaseNode <|-- CNmGraphDocSelectorNode
     CNmGraphDocSelectorBaseNode <|-- CNmGraphDocClipSelectorNode
+    CNmGraphDocSelectorBaseNode <|-- CNmGraphDocSelectorNode
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_optionLabels` | CUtlVector<CUtlString> | `MPropertyAutoExpandSelf` `MPropertyResizable` |
+| `m_optionLabels` | CUtlVector< CUtlString > | `MPropertyAutoExpandSelf` `MPropertyResizable` |
 
 ### CNmGraphDocSelectorConditionNode
 
@@ -6965,7 +6922,7 @@ classDiagram
 
 **Derived by:** [CNmGraphDocEntryStateOverrideConduitNode](animdoclib.md#cnmgraphdocentrystateoverrideconduitnode), [CNmGraphDocGlobalTransitionConduitNode](animdoclib.md#cnmgraphdocglobaltransitionconduitnode), [CNmGraphDocStateNode](animdoclib.md#cnmgraphdocstatenode), [CNmGraphDocTransitionConduitNode](animdoclib.md#cnmgraphdoctransitionconduitnode)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
@@ -7560,15 +7517,15 @@ classDiagram
 |------|------|-------------|
 | `m_type` | [CNmGraphDocStateNode](../schemas/animdoclib.md#cnmgraphdocstatenode)::StateType_t | `MPropertyHideField` |
 | `m_cloneSourceStateID` | V_uuid_t | `MPropertySuppressField` |
-| `m_stateEvents` | CUtlVector<[CNmGraphDocStateNode](../schemas/animdoclib.md#cnmgraphdocstatenode)::StateEvent_t> | `MPropertyAutoExpandSelf` |
-| `m_timedStateEvents` | CUtlVector<[CNmGraphDocStateNode](../schemas/animdoclib.md#cnmgraphdocstatenode)::TimedStateEvent_t> | `MPropertyAutoExpandSelf` |
-| `m_events` | CUtlVector<CGlobalSymbol> | `MPropertySuppressField` |
-| `m_entryEvents` | CUtlVector<CGlobalSymbol> | `MPropertySuppressField` |
-| `m_executeEvents` | CUtlVector<CGlobalSymbol> | `MPropertySuppressField` |
-| `m_exitEvents` | CUtlVector<CGlobalSymbol> | `MPropertySuppressField` |
-| `m_timeRemainingEvents` | CUtlVector<[CNmGraphDocStateNode](../schemas/animdoclib.md#cnmgraphdocstatenode)::TimedStateEvent_t> | `MPropertySuppressField` |
-| `m_timeElapsedEvents` | CUtlVector<[CNmGraphDocStateNode](../schemas/animdoclib.md#cnmgraphdocstatenode)::TimedStateEvent_t> | `MPropertySuppressField` |
-| `m_bUseActualElapsedTimeInStateForTimedEvents` | bool | `MPropertyGroupName "Advanced"` |
+| `m_stateEvents` | CUtlVector< [CNmGraphDocStateNode](../schemas/animdoclib.md#cnmgraphdocstatenode)::StateEvent_t > | `MPropertyAutoExpandSelf` |
+| `m_timedStateEvents` | CUtlVector< [CNmGraphDocStateNode](../schemas/animdoclib.md#cnmgraphdocstatenode)::TimedStateEvent_t > | `MPropertyAutoExpandSelf` |
+| `m_events` | CUtlVector< CGlobalSymbol > | `MPropertySuppressField` |
+| `m_entryEvents` | CUtlVector< CGlobalSymbol > | `MPropertySuppressField` |
+| `m_executeEvents` | CUtlVector< CGlobalSymbol > | `MPropertySuppressField` |
+| `m_exitEvents` | CUtlVector< CGlobalSymbol > | `MPropertySuppressField` |
+| `m_timeRemainingEvents` | CUtlVector< [CNmGraphDocStateNode](../schemas/animdoclib.md#cnmgraphdocstatenode)::TimedStateEvent_t > | `MPropertySuppressField` |
+| `m_timeElapsedEvents` | CUtlVector< [CNmGraphDocStateNode](../schemas/animdoclib.md#cnmgraphdocstatenode)::TimedStateEvent_t > | `MPropertySuppressField` |
+| `m_bUseActualElapsedTimeInStateForTimedEvents` | bool | `MPropertyGroupName Advanced` |
 
 ### CNmGraphDocStateNode::StateEvent_t
 
@@ -7583,30 +7540,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_ID` | CGlobalSymbol | `MPropertyAttributeEditor "AnimGraphID()"` |
+| `m_ID` | CGlobalSymbol | `MPropertyAttributeEditor AnimGraphID()` |
 | `m_bIsEntry` | bool |  |
 | `m_bIsFullyInState` | bool |  |
 | `m_bIsExit` | bool |  |
-
-### CNmGraphDocStateNode::StateType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `OffState` | 0 |  |
-| `BlendTreeState` | 1 |  |
-| `StateMachineState` | 2 |  |
-| `Clone` | 3 |  |
-
-### CNmGraphDocStateNode::TimedStateEventType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `TimeElapsed` | 0 |  |
-| `TimeRemaining` | 1 |  |
 
 ### CNmGraphDocStateNode::TimedStateEvent_t
 
@@ -7629,9 +7566,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_ID` | CGlobalSymbol | `MPropertyAttributeEditor "AnimGraphID()"` |
+| `m_ID` | CGlobalSymbol | `MPropertyAttributeEditor AnimGraphID()` |
 | `m_type` | [CNmGraphDocStateNode](../schemas/animdoclib.md#cnmgraphdocstatenode)::TimedStateEventType_t |  |
-| `m_comparisonOperator` | CNmStateNode::TimedEvent_t::[Comparison_t](../schemas/animgraphdoclib.md#comparison_t) |  |
+| `m_comparisonOperator` | CNmStateNode::TimedEvent_t::[Comparison_t](../schemas/!GlobalTypes.md#comparison_t) |  |
 | `m_flTimeValueSeconds` | float32 |  |
 
 ### CNmGraphDocSyncEventIndexConditionNode
@@ -8083,11 +8020,11 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_optionLabels` | CUtlVector<CUtlString> | `MPropertyAutoExpandSelf` `MPropertyResizable` |
+| `m_optionLabels` | CUtlVector< CUtlString > | `MPropertyAutoExpandSelf` `MPropertyResizable` |
 | `m_flOrientationScoreWeight` | float32 |  |
 | `m_flPositionScoreWeight` | float32 |  |
 | `m_bIsWorldSpaceTarget` | bool |  |
-| `m_bIgnoreInvalidOptions` | bool | `MPropertyGroupName "Advanced"` `MPropertyDescription "Should we ignore any invalid option and remove them from the selection. This is useful if different variations has different sets of options filled"` |
+| `m_bIgnoreInvalidOptions` | bool | `MPropertyDescription Should we ignore any invalid option and remove them from the selection. This is useful if different variations has different sets of options filled` `MPropertyGroupName Advanced` |
 
 ### CNmGraphDocTargetVirtualParameterNode
 
@@ -8442,11 +8379,11 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_ruleCondition` | [NmTransitionRuleCondition_t](../schemas/animlib.md#nmtransitionrulecondition_t) |  |
+| `m_ruleCondition` | [NmTransitionRuleCondition_t](../schemas/!GlobalTypes.md#nmtransitionrulecondition_t) |  |
 | `m_bMatchOnlySpecificMarkerID` | bool |  |
-| `m_markerIDToMatch` | CGlobalSymbol | `MPropertyAttributeEditor "AnimGraphID()"` |
-| `m_bLimitSearchToSourceState` | bool | `MPropertyGroupName "+Advanced Search Rules"` |
-| `m_bIgnoreInactiveBranchEvents` | bool | `MPropertyGroupName "+Advanced Search Rules"` |
+| `m_markerIDToMatch` | CGlobalSymbol | `MPropertyAttributeEditor AnimGraphID()` |
+| `m_bLimitSearchToSourceState` | bool | `MPropertyGroupName +Advanced Search Rules` |
+| `m_bIgnoreInactiveBranchEvents` | bool | `MPropertyGroupName +Advanced Search Rules` |
 
 ### CNmGraphDocTransitionNode
 
@@ -8534,32 +8471,14 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_flDurationSeconds` | float32 | `MPropertyGroupName "+Transition"` |
-| `m_bClampDurationToSource` | bool | `MPropertyGroupName "+Transition"` |
-| `m_rootMotionBlend` | [NmRootMotionBlendMode_t](../schemas/animlib.md#nmrootmotionblendmode_t) | `MPropertyGroupName "+Transition"` |
-| `m_blendWeightEasing` | [NmEasingOperation_t](../schemas/animlib.md#nmeasingoperation_t) | `MPropertyGroupName "+Transition"` |
-| `m_flBoneMaskBlendInTimePercentage` | float32 | `MPropertyGroupName "+Transition"` |
-| `m_timeMatchMode` | [CNmGraphDocTransitionNode](../schemas/animdoclib.md#cnmgraphdoctransitionnode)::TimeMatchMode_t | `MPropertyGroupName "+Target Time"` |
-| `m_flTimeOffset` | float32 | `MPropertyGroupName "+Target Time"` |
-| `m_bCanBeForced` | bool | `MPropertyGroupName "Advanced"` |
-
-### CNmGraphDocTransitionNode::TimeMatchMode_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `None` | 0 |  |
-| `Synchronized` | 1 |  |
-| `MatchSourceSyncEventIndex` | 2 |  |
-| `MatchSourceSyncEventPercentage` | 3 |  |
-| `MatchSourceSyncEventIndexAndPercentage` | 4 |  |
-| `MatchSyncEventID` | 5 |  |
-| `MatchClosestSyncEventID` | 6 |  |
-| `MatchSyncEventIDAndPercentage` | 7 |  |
-| `MatchClosestSyncEventIDAndPercentage` | 8 |  |
-| `MatchTimeInSeconds` | 9 |  |
-| `OffsetTimeInSeconds` | 10 |  |
+| `m_flDurationSeconds` | float32 | `MPropertyGroupName +Transition` |
+| `m_bClampDurationToSource` | bool | `MPropertyGroupName +Transition` |
+| `m_rootMotionBlend` | [NmRootMotionBlendMode_t](../schemas/!GlobalTypes.md#nmrootmotionblendmode_t) | `MPropertyGroupName +Transition` |
+| `m_blendWeightEasing` | [NmEasingOperation_t](../schemas/!GlobalTypes.md#nmeasingoperation_t) | `MPropertyGroupName +Transition` |
+| `m_flBoneMaskBlendInTimePercentage` | float32 | `MPropertyGroupName +Transition` |
+| `m_timeMatchMode` | [CNmGraphDocTransitionNode](../schemas/animdoclib.md#cnmgraphdoctransitionnode)::TimeMatchMode_t | `MPropertyGroupName +Target Time` |
+| `m_flTimeOffset` | float32 | `MPropertyGroupName +Target Time` |
+| `m_bCanBeForced` | bool | `MPropertyGroupName Advanced` |
 
 ### CNmGraphDocVariationDataNode
 
@@ -8567,7 +8486,7 @@ classDiagram
 
 **Derived by:** [CNmGraphDocAnimationPoseNode](animdoclib.md#cnmgraphdocanimationposenode), [CNmGraphDocBoneMaskNode](animdoclib.md#cnmgraphdocbonemasknode), [CNmGraphDocClipNode](animdoclib.md#cnmgraphdocclipnode), [CNmGraphDocParameterizedClipSelectorNode](animdoclib.md#cnmgraphdocparameterizedclipselectornode), [CNmGraphDocParameterizedSelectorNode](animdoclib.md#cnmgraphdocparameterizedselectornode), [CNmGraphDocReferencedGraphNode](animdoclib.md#cnmgraphdocreferencedgraphnode), [CNmGraphDocTargetWarpNode](animdoclib.md#cnmgraphdoctargetwarpnode), [CNmGraphDocVariationIDComparisonNode](animdoclib.md#cnmgraphdocvariationidcomparisonnode), [CnmGraphDocChainLookatNode](animdoclib.md#cnmgraphdocchainlookatnode), [CnmGraphDocFollowBoneNode](animdoclib.md#cnmgraphdocfollowbonenode), [CnmGraphDocFootIKNode](animdoclib.md#cnmgraphdocfootiknode), [CnmGraphDocTwoBoneIKNode](animdoclib.md#cnmgraphdoctwoboneiknode), [CnmGraphDocVariationConstFloatNode](animdoclib.md#cnmgraphdocvariationconstfloatnode)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Relationships:**
 
@@ -8575,19 +8494,19 @@ classDiagram
 classDiagram
     CNmGraphDocFlowNode <|-- CNmGraphDocVariationDataNode
     CNmGraphDocNode <|-- CNmGraphDocFlowNode
-    CNmGraphDocVariationDataNode <|-- CNmGraphDocReferencedGraphNode
-    CNmGraphDocVariationDataNode <|-- CnmGraphDocVariationConstFloatNode
-    CNmGraphDocVariationDataNode <|-- CNmGraphDocTargetWarpNode
-    CNmGraphDocVariationDataNode <|-- CNmGraphDocClipNode
-    CNmGraphDocVariationDataNode <|-- CNmGraphDocParameterizedSelectorNode
-    CNmGraphDocVariationDataNode <|-- CnmGraphDocTwoBoneIKNode
+    CNmGraphDocVariationDataNode <|-- CNmGraphDocAnimationPoseNode
     CNmGraphDocVariationDataNode <|-- CNmGraphDocBoneMaskNode
+    CNmGraphDocVariationDataNode <|-- CNmGraphDocClipNode
+    CNmGraphDocVariationDataNode <|-- CNmGraphDocParameterizedClipSelectorNode
+    CNmGraphDocVariationDataNode <|-- CNmGraphDocParameterizedSelectorNode
+    CNmGraphDocVariationDataNode <|-- CNmGraphDocReferencedGraphNode
+    CNmGraphDocVariationDataNode <|-- CNmGraphDocTargetWarpNode
+    CNmGraphDocVariationDataNode <|-- CNmGraphDocVariationIDComparisonNode
+    CNmGraphDocVariationDataNode <|-- CnmGraphDocChainLookatNode
     CNmGraphDocVariationDataNode <|-- CnmGraphDocFollowBoneNode
     CNmGraphDocVariationDataNode <|-- CnmGraphDocFootIKNode
-    CNmGraphDocVariationDataNode <|-- CNmGraphDocAnimationPoseNode
-    CNmGraphDocVariationDataNode <|-- CNmGraphDocVariationIDComparisonNode
-    CNmGraphDocVariationDataNode <|-- CNmGraphDocParameterizedClipSelectorNode
-    CNmGraphDocVariationDataNode <|-- CnmGraphDocChainLookatNode
+    CNmGraphDocVariationDataNode <|-- CnmGraphDocTwoBoneIKNode
+    CNmGraphDocVariationDataNode <|-- CnmGraphDocVariationConstFloatNode
 ```
 
 **Fields:**
@@ -8595,7 +8514,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_pDefaultVariationData` | [CNmGraphDocVariationDataNode](../schemas/animdoclib.md#cnmgraphdocvariationdatanode)::CData* | `MPropertySuppressField` |
-| `m_overrides` | CUtlVector<[CNmGraphDocVariationDataNode](../schemas/animdoclib.md#cnmgraphdocvariationdatanode)::OverrideValue_t> | `MPropertySuppressField` |
+| `m_overrides` | CUtlVector< [CNmGraphDocVariationDataNode](../schemas/animdoclib.md#cnmgraphdocvariationdatanode)::OverrideValue_t > | `MPropertySuppressField` |
 | `m_defaultResourceName` | CResourceName | `MPropertySuppressField` |
 
 ### CNmGraphDocVariationDataNode::CData
@@ -8610,19 +8529,19 @@ classDiagram
 
 ```mermaid
 classDiagram
-    "CNmGraphDocVariationDataNode::CData" <|-- "CnmGraphDocFootIKNode::CData"
-    "CNmGraphDocVariationDataNode::CData" <|-- "CNmGraphDocReferencedGraphNode::CData"
-    "CNmGraphDocVariationDataNode::CData" <|-- "CnmGraphDocVariationConstFloatNode::CData"
-    "CNmGraphDocVariationDataNode::CData" <|-- "CNmGraphDocParameterizedSelectorNode::CData"
     "CNmGraphDocVariationDataNode::CData" <|-- "CNmGraphDocAnimationPoseNode::CData"
-    "CNmGraphDocVariationDataNode::CData" <|-- "CnmGraphDocFollowBoneNode::CData"
-    "CNmGraphDocVariationDataNode::CData" <|-- "CNmGraphDocVariationIDComparisonNode::CData"
-    "CNmGraphDocVariationDataNode::CData" <|-- "CNmGraphDocTargetWarpNode::CData"
-    "CNmGraphDocVariationDataNode::CData" <|-- "CnmGraphDocChainLookatNode::CData"
     "CNmGraphDocVariationDataNode::CData" <|-- "CNmGraphDocBoneMaskNode::CData"
-    "CNmGraphDocVariationDataNode::CData" <|-- "CnmGraphDocTwoBoneIKNode::CData"
     "CNmGraphDocVariationDataNode::CData" <|-- "CNmGraphDocClipNode::CData"
     "CNmGraphDocVariationDataNode::CData" <|-- "CNmGraphDocParameterizedClipSelectorNode::CData"
+    "CNmGraphDocVariationDataNode::CData" <|-- "CNmGraphDocParameterizedSelectorNode::CData"
+    "CNmGraphDocVariationDataNode::CData" <|-- "CNmGraphDocReferencedGraphNode::CData"
+    "CNmGraphDocVariationDataNode::CData" <|-- "CNmGraphDocTargetWarpNode::CData"
+    "CNmGraphDocVariationDataNode::CData" <|-- "CNmGraphDocVariationIDComparisonNode::CData"
+    "CNmGraphDocVariationDataNode::CData" <|-- "CnmGraphDocChainLookatNode::CData"
+    "CNmGraphDocVariationDataNode::CData" <|-- "CnmGraphDocFollowBoneNode::CData"
+    "CNmGraphDocVariationDataNode::CData" <|-- "CnmGraphDocFootIKNode::CData"
+    "CNmGraphDocVariationDataNode::CData" <|-- "CnmGraphDocTwoBoneIKNode::CData"
+    "CNmGraphDocVariationDataNode::CData" <|-- "CnmGraphDocVariationConstFloatNode::CData"
 ```
 
 ### CNmGraphDocVariationDataNode::OverrideValue_t
@@ -8711,7 +8630,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_comparison` | CNmIDComparisonNode::[Comparison_t](../schemas/animgraphdoclib.md#comparison_t) |  |
+| `m_comparison` | CNmIDComparisonNode::[Comparison_t](../schemas/!GlobalTypes.md#comparison_t) |  |
 
 ### CNmGraphDocVariationIDComparisonNode::CData
 
@@ -8735,7 +8654,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_values` | CUtlVector<CGlobalSymbol> | `MPropertyAttributeEditor "AnimGraphID()"` `MPropertyAutoExpandSelf` |
+| `m_values` | CUtlVector< CGlobalSymbol > | `MPropertyAttributeEditor AnimGraphID()` `MPropertyAutoExpandSelf` |
 
 ### CNmGraphDocVectorControlParameterNode
 
@@ -9194,7 +9113,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_bAllowLooping` | bool | `MPropertyDescription "When not being driven by a sync time, control looping behavior "` |
+| `m_bAllowLooping` | bool | `MPropertyDescription When not being driven by a sync time, control looping behavior ` |
 
 ### CNmGraphDocVirtualParameterNode
 
@@ -9248,11 +9167,11 @@ classDiagram
     CNmGraphDocFlowNode <|-- CNmGraphDocParameterBaseNode
     CNmGraphDocNode <|-- CNmGraphDocFlowNode
     CNmGraphDocVirtualParameterNode <|-- CNmGraphDocBoneMaskVirtualParameterNode
+    CNmGraphDocVirtualParameterNode <|-- CNmGraphDocBoolVirtualParameterNode
     CNmGraphDocVirtualParameterNode <|-- CNmGraphDocFloatVirtualParameterNode
+    CNmGraphDocVirtualParameterNode <|-- CNmGraphDocIDVirtualParameterNode
     CNmGraphDocVirtualParameterNode <|-- CNmGraphDocTargetVirtualParameterNode
     CNmGraphDocVirtualParameterNode <|-- CNmGraphDocVectorVirtualParameterNode
-    CNmGraphDocVirtualParameterNode <|-- CNmGraphDocIDVirtualParameterNode
-    CNmGraphDocVirtualParameterNode <|-- CNmGraphDocBoolVirtualParameterNode
 ```
 
 ### CNmGraphDocZeroPoseNode
@@ -9337,8 +9256,8 @@ classDiagram
 |------|------|-------------|
 | `m_pRootGraph` | [CNmGraphDocFlowGraph](../schemas/animdoclib.md#cnmgraphdocflowgraph)* |  |
 | `m_variationHierarchy` | [CNmVariationHierarchy](../schemas/animdoclib.md#cnmvariationhierarchy) |  |
-| `m_debugParameterSets` | CUtlLeanVector<[CNmGraphDocument](../schemas/animdoclib.md#cnmgraphdocument)::DebugParameterSet_t> |  |
-| `m_dictionaryIDSetIDs` | CUtlVector<V_uuid_t> |  |
+| `m_debugParameterSets` | CUtlLeanVector< [CNmGraphDocument](../schemas/animdoclib.md#cnmgraphdocument)::DebugParameterSet_t > |  |
+| `m_dictionaryIDSetIDs` | CUtlVector< V_uuid_t > |  |
 
 ### CNmGraphDocument::DebugParameterSet_t
 
@@ -9373,11 +9292,11 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_ID` | CGlobalSymbol |  |
-| `m_boolValues` | CUtlLeanVector<std::pair<CGlobalSymbol,bool>> |  |
-| `m_floatValues` | CUtlLeanVector<std::pair<CGlobalSymbol,float32>> |  |
-| `m_IDValues` | CUtlLeanVector<std::pair<CGlobalSymbol,CGlobalSymbol>> |  |
-| `m_vectorValues` | CUtlLeanVector<std::pair<CGlobalSymbol,Vector>> |  |
-| `m_targetValues` | CUtlLeanVector<std::pair<CGlobalSymbol,[CNmTarget](../schemas/animlib.md#cnmtarget)>> |  |
+| `m_boolValues` | CUtlLeanVector< std::pair< CGlobalSymbol, bool > > |  |
+| `m_floatValues` | CUtlLeanVector< std::pair< CGlobalSymbol, float32 > > |  |
+| `m_IDValues` | CUtlLeanVector< std::pair< CGlobalSymbol, CGlobalSymbol > > |  |
+| `m_vectorValues` | CUtlLeanVector< std::pair< CGlobalSymbol, Vector > > |  |
+| `m_targetValues` | CUtlLeanVector< std::pair< CGlobalSymbol, [CNmTarget](../schemas/animlib.md#cnmtarget) > > |  |
 
 ### CNmPreviewArchetype
 
@@ -9388,16 +9307,16 @@ classDiagram
 	"m_secondarySkeletonSettings":
 	[
 	]
-}`, `MVDataRoot`, `MVDataOverlayType 1`
+}`, `MVDataOverlayType 1`, `MVDataRoot`
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_primarySkeleton` | CUtlString | `MPropertyAttributeEditor "AssetBrowse( vnmskel, *requiredoubleclick )"` `MPropertyGroupName "+Primary Skeleton"` `MPropertyAutoExpandSelf` |
-| `m_previewModel` | CUtlString | `MPropertyAttributeEditor "AssetBrowse( vmdl, *requiredoubleclick )"` `MPropertyGroupName "+Primary Skeleton"` `MPropertyAutoExpandSelf` |
-| `m_bodyPartChoiceName` | CUtlString | `MPropertyGroupName "+Primary Skeleton"` `MPropertyAutoExpandSelf` |
-| `m_secondarySkeletonSettings` | CUtlVector<[CNmPreviewArchetype](../schemas/animdoclib.md#cnmpreviewarchetype)::SecondarySkeleton_t> | `MPropertyGroupName "+Secondary Skeletons"` `MPropertyAutoExpandSelf` |
+| `m_primarySkeleton` | CUtlString | `MPropertyAttributeEditor AssetBrowse( vnmskel, *requiredoubleclick )` `MPropertyAutoExpandSelf` `MPropertyGroupName +Primary Skeleton` |
+| `m_previewModel` | CUtlString | `MPropertyAttributeEditor AssetBrowse( vmdl, *requiredoubleclick )` `MPropertyAutoExpandSelf` `MPropertyGroupName +Primary Skeleton` |
+| `m_bodyPartChoiceName` | CUtlString | `MPropertyAutoExpandSelf` `MPropertyGroupName +Primary Skeleton` |
+| `m_secondarySkeletonSettings` | CUtlVector< [CNmPreviewArchetype](../schemas/animdoclib.md#cnmpreviewarchetype)::SecondarySkeleton_t > | `MPropertyAutoExpandSelf` `MPropertyGroupName +Secondary Skeletons` |
 
 ### CNmPreviewArchetype::SecondarySkeleton_t
 
@@ -9412,8 +9331,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_skeleton` | CUtlString | `MPropertyAttributeEditor "AssetBrowse( vnmskel, *requiredoubleclick )"` |
-| `m_previewModel` | CUtlString | `MPropertyAttributeEditor "AssetBrowse( vmdl, *requiredoubleclick )"` |
+| `m_skeleton` | CUtlString | `MPropertyAttributeEditor AssetBrowse( vnmskel, *requiredoubleclick )` |
+| `m_previewModel` | CUtlString | `MPropertyAttributeEditor AssetBrowse( vmdl, *requiredoubleclick )` |
 | `m_bodyPartChoiceName` | CUtlString |  |
 | `m_attachToBoneName` | CUtlString |  |
 
@@ -9441,6 +9360,9 @@ classDiagram
 	"m_boneMaskSetDefinitions":
 	[
 	],
+	"m_floatChannelSets":
+	[
+	],
 	"m_previewModelName": ""
 }`
 
@@ -9450,22 +9372,24 @@ classDiagram
 classDiagram
     CNmAnimDocument <|-- CNmSkeletonDocument
     CNmSkeletonDocument *-- NmBoneMaskSetDefinition_t
+    CNmSkeletonDocument *-- CNmFloatChannelSet_t
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sourceFilename` | CUtlString | `MPropertyAttributeEditor "ModelDocAssetBrowse( dmx, fbx, smd, *requiredoubleclick, *ShowRelatedFile )"` |
+| `m_sourceFilename` | CUtlString | `MPropertyAttributeEditor ModelDocAssetBrowse( dmx, fbx, smd, *requiredoubleclick, *ShowRelatedFile )` |
 | `m_rootBoneName` | CUtlString |  |
 | `m_flGlobalScale` | float32 |  |
 | `m_bIsAttachableProp` | bool |  |
 | `m_bIsCS_HACK` | bool |  |
-| `m_secondarySkeletons` | CUtlVector<[CNmSkeletonDocument](../schemas/animdoclib.md#cnmskeletondocument)::SecondarySkeleton_t> | `MPropertyFriendlyName "Expected secondary skeletons"` `MPropertyAutoExpandSelf` |
-| `m_gameplayRelevantBones` | CUtlVector<CGlobalSymbol> | `MPropertyDescription "The set of bones that need to be converted at import to match the S2 coordinate system (Z-up, X-forward)"` |
-| `m_highLODBones` | CUtlVector<CUtlString> | `MPropertySuppressField` |
-| `m_boneMaskSetDefinitions` | CUtlVector<[NmBoneMaskSetDefinition_t](../schemas/animlib.md#nmbonemasksetdefinition_t)> | `MPropertySuppressField` |
-| `m_previewModelName` | CUtlString | `MPropertyGroupName "+Preview"` `MPropertyAttributeEditor "AssetBrowse( vmdl, *requiredoubleclick )"` |
+| `m_secondarySkeletons` | CUtlVector< [CNmSkeletonDocument](../schemas/animdoclib.md#cnmskeletondocument)::SecondarySkeleton_t > | `MPropertyAutoExpandSelf` `MPropertyFriendlyName Expected secondary skeletons` |
+| `m_gameplayRelevantBones` | CUtlVector< CGlobalSymbol > | `MPropertyDescription The set of bones that need to be converted at import to match the S2 coordinate system (Z-up, X-forward)` |
+| `m_highLODBones` | CUtlVector< CGlobalSymbol > | `MPropertySuppressField` |
+| `m_boneMaskSetDefinitions` | CUtlVector< [NmBoneMaskSetDefinition_t](../schemas/animlib.md#nmbonemasksetdefinition_t) > | `MPropertySuppressField` |
+| `m_floatChannelSets` | CUtlVector< [CNmFloatChannelSet_t](../schemas/animlib.md#cnmfloatchannelset_t) > | `MPropertySuppressField` |
+| `m_previewModelName` | CUtlString | `MPropertyAttributeEditor AssetBrowse( vmdl, *requiredoubleclick )` `MPropertyGroupName +Preview` |
 
 ### CNmSkeletonDocument::SecondarySkeleton_t
 
@@ -9478,8 +9402,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_skeleton` | CUtlString | `MPropertyAttributeEditor "AssetBrowse( vnmskel, *requiredoubleclick )"` |
-| `m_attachToBoneID` | CGlobalSymbol | `MPropertyDescription "The bone that we expect this skeleton to be attached to in the parent"` |
+| `m_skeleton` | CUtlString | `MPropertyAttributeEditor AssetBrowse( vnmskel, *requiredoubleclick )` |
+| `m_attachToBoneID` | CGlobalSymbol | `MPropertyDescription The bone that we expect this skeleton to be attached to in the parent` |
 
 ### CNmVariationHierarchy
 
@@ -9506,7 +9430,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_variations` | CUtlVector<[NmVariation_t](../schemas/animdoclib.md#nmvariation_t)> |  |
+| `m_variations` | CUtlVector< [NmVariation_t](../schemas/animdoclib.md#nmvariation_t) > |  |
 
 ### CnmGraphDocChainLookatNode
 
@@ -9561,15 +9485,26 @@ classDiagram
 	"m_pDefaultVariationData":
 	{
 		"_class": "CnmGraphDocChainLookatNode::CData",
-		"m_chainEndBoneName": "",
-		"m_chainForwardDir":
+		"m_endEffectorBoneName": "",
+		"m_endEffectorForwardAxis":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_endEffectorOffset":
 		[
 			0.000000,
 			0.000000,
 			0.000000
 		],
 		"m_nChainLength": 2,
-		"m_flBlendTimeSeconds": 0.000000
+		"m_flBlendTimeSeconds": 0.000000,
+		"m_chainWeights":
+		[
+			1.000000,
+			1.000000
+		]
 	},
 	"m_overrides":
 	[
@@ -9599,15 +9534,24 @@ classDiagram
 
 **Metadata:** `MGetKV3ClassDefaults {
 	"_class": "CnmGraphDocChainLookatNode::CData",
-	"m_chainEndBoneName": "",
-	"m_chainForwardDir":
+	"m_endEffectorBoneName": "",
+	"m_endEffectorForwardAxis":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_endEffectorOffset":
 	[
 		0.000000,
 		0.000000,
 		0.000000
 	],
 	"m_nChainLength": 2,
-	"m_flBlendTimeSeconds": 0.000000
+	"m_flBlendTimeSeconds": 0.000000,
+	"m_chainWeights":
+	[
+	]
 }`
 
 **Relationships:**
@@ -9621,10 +9565,12 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_chainEndBoneName` | CUtlString |  |
-| `m_chainForwardDir` | Vector |  |
-| `m_nChainLength` | uint8 |  |
-| `m_flBlendTimeSeconds` | float32 |  |
+| `m_endEffectorBoneName` | CUtlString |  |
+| `m_endEffectorForwardAxis` | Vector | `MPropertyDescription The axis that you want to point at the target` |
+| `m_endEffectorOffset` | Vector | `MPropertyDescription Add an additional local space offset to the end effector to use for aiming the lookat` |
+| `m_nChainLength` | uint8 | `MPropertyAttributeRange 2 7` `MPropertyDescription The length of the IK chain` |
+| `m_flBlendTimeSeconds` | float32 | `MPropertyDescription How long should the blend in/out take` |
+| `m_chainWeights` | CUtlVector< float32 > | `MPropertyAutoExpandSelf` `MPropertyDescription The weights from the tip of the chain to the base. 0 is the effector/tip of the chain weight, N is the base of the chain.` |
 
 ### CnmGraphDocConstBoneTargetNode
 
@@ -9808,7 +9754,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_value` | CGlobalSymbol | `MPropertyAttributeEditor "AnimGraphID()"` |
+| `m_value` | CGlobalSymbol | `MPropertyAttributeEditor AnimGraphID()` |
 
 ### CnmGraphDocConstTargetNode
 
@@ -10049,7 +9995,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_mode` | [NmFollowBoneMode_t](../schemas/animlib.md#nmfollowbonemode_t) |  |
+| `m_mode` | [NmFollowBoneMode_t](../schemas/!GlobalTypes.md#nmfollowbonemode_t) |  |
 
 ### CnmGraphDocFollowBoneNode::CData
 
@@ -10162,7 +10108,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_bIsTargetInWorldSpace` | bool |  |
-| `m_blendMode` | [NmIKBlendMode_t](../schemas/animlib.md#nmikblendmode_t) |  |
+| `m_blendMode` | [NmIKBlendMode_t](../schemas/!GlobalTypes.md#nmikblendmode_t) |  |
 
 ### CnmGraphDocFootIKNode::CData
 
@@ -10330,8 +10276,8 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_bIsTargetInWorldSpace` | bool |  |
-| `m_blendMode` | [NmIKBlendMode_t](../schemas/animlib.md#nmikblendmode_t) |  |
-| `m_flChainRotationWeight` | float32 | `MPropertyDescription "ChainRotationWeight - this controls how we solve for effector rotations, 0.0f will try to fully rotate the effector, 1.0f will try to solve the rotation by rotating the IK chain"` |
+| `m_blendMode` | [NmIKBlendMode_t](../schemas/!GlobalTypes.md#nmikblendmode_t) |  |
+| `m_flChainRotationWeight` | float32 | `MPropertyDescription ChainRotationWeight - this controls how we solve for effector rotations, 0.0f will try to fully rotate the effector, 1.0f will try to solve the rotation by rotating the IK chain` |
 
 ### CnmGraphDocTwoBoneIKNode::CData
 
@@ -10488,39 +10434,6 @@ classDiagram
 |------|------|-------------|
 | `m_flDesiredVelocity` | float32 |  |
 
-### NmEventConditionOperator_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Or` | 0 |  |
-| `And` | 1 |  |
-
-### NmEventPriorityRule_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `HighestWeight` | 0 |  |
-| `HighestPercentageThrough` | 1 |  |
-
-### NmGraphDocGraphType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `Invalid` | 0 |  |
-| `BlendTree` | 1 |  |
-| `ValueTree` | 2 |  |
-| `StateMachine` | 3 |  |
-| `EntryOverrideTree` | 4 |  |
-| `TransitionConduit` | 5 |  |
-| `GlobalTransitionConduit` | 6 |  |
-| `VirtualParameterValueTree` | 7 |  |
-
 ### NmGraphDocPin_t
 
 **Metadata:** `MGetKV3ClassDefaults {
@@ -10544,7 +10457,7 @@ classDiagram
 |------|------|-------------|
 | `m_ID` | V_uuid_t |  |
 | `m_name` | CUtlString |  |
-| `m_type` | [NmGraphValueType_t](../schemas/animlib.md#nmgraphvaluetype_t) |  |
+| `m_type` | [NmGraphValueType_t](../schemas/!GlobalTypes.md#nmgraphvaluetype_t) |  |
 | `m_bIsDynamicPin` | bool |  |
 | `m_bAllowMultipleOutConnections` | bool |  |
 

@@ -171,6 +171,7 @@ direction LR
     +string sound
     +float game_timestamp
     +fixed32 source_soundscapeid
+    +bool stealth
   }
 
   class CCSUsrMsg_WeaponMagDrop {
@@ -992,6 +993,7 @@ Plays a weapon sound at a specific world position; used for sounds that must be 
 | `sound` | 5 | string | optional | Sound event name to play. |
 | `game_timestamp` | 6 | float | optional | Server game-time at which the sound originated (used for latency-compensated audio sync). |
 | `source_soundscapeid` | 7 | fixed32 | optional | Hash of the soundscape that was active when the sound was emitted. |
+| `stealth` | 8 | bool | optional |  |
 
 ### `CCSUsrMsg_WeaponMagDrop`
 

@@ -13,11 +13,8 @@ nav_exclude: true
 |------|------|-------|--------|
 | [AnimationDecodeDebugDumpElement_t](#animationdecodedebugdumpelement_t) | class |  | 6 |
 | [AnimationDecodeDebugDump_t](#animationdecodedebugdump_t) | class |  | 2 |
-| [AnimationProcessingType_t](#animationprocessingtype_t) | enum |  | 6 |
 | [AnimationSnapshotBase_t](#animationsnapshotbase_t) | class |  | 9 |
-| [AnimationSnapshotType_t](#animationsnapshottype_t) | enum |  | 7 |
 | [AnimationSnapshot_t](#animationsnapshot_t) | class | AnimationSnapshotBase_t | 2 |
-| [BoneTransformSpace_t](#bonetransformspace_t) | enum |  | 4 |
 | [CAnimActivity](#canimactivity) | class |  | 4 |
 | [CAnimBone](#canimbone) | class |  | 7 |
 | [CAnimBoneDifference](#canimbonedifference) | class |  | 5 |
@@ -40,7 +37,6 @@ nav_exclude: true
 | [CAnimUser](#canimuser) | class |  | 2 |
 | [CAnimUserDifference](#canimuserdifference) | class |  | 2 |
 | [CAnimationGroup](#canimationgroup) | class |  | 8 |
-| [CCompressorGroup](#ccompressorgroup) | class |  | 17 |
 | [CMoodVData](#cmoodvdata) | class |  | 3 |
 | [CSeqAutoLayer](#cseqautolayer) | class |  | 7 |
 | [CSeqAutoLayerFlag](#cseqautolayerflag) | class |  | 8 |
@@ -62,10 +58,10 @@ nav_exclude: true
 | [HSequence](#hsequence) | class |  | 1 |
 | [MoodAnimationLayer_t](#moodanimationlayer_t) | class |  | 12 |
 | [MoodAnimation_t](#moodanimation_t) | class |  | 2 |
-| [MoodType_t](#moodtype_t) | enum |  | 2 |
-| [ParticleAttachment_t](#particleattachment_t) | enum |  | 18 |
-| [SeqCmd_t](#seqcmd_t) | enum |  | 17 |
-| [SeqPoseSetting_t](#seqposesetting_t) | enum |  | 4 |
+| [PulseBestOutflowRules_t](#pulsebestoutflowrules_t) | enum |  | 2 |
+| [PulseCursorCancelPriority_t](#pulsecursorcancelpriority_t) | enum |  | 4 |
+| [PulseCursorWakePriority_t](#pulsecursorwakepriority_t) | enum |  | 2 |
+| [PulseMethodCallMode_t](#pulsemethodcallmode_t) | enum |  | 2 |
 
 ---
 
@@ -94,10 +90,10 @@ nav_exclude: true
 |------|------|-------------|
 | `m_nEntityIndex` | int32 |  |
 | `m_modelName` | CUtlString |  |
-| `m_poseParams` | CUtlVector<CUtlString> |  |
-| `m_decodeOps` | CUtlVector<CUtlString> |  |
-| `m_internalOps` | CUtlVector<CUtlString> |  |
-| `m_decodedAnims` | CUtlVector<CUtlString> |  |
+| `m_poseParams` | CUtlVector< CUtlString > |  |
+| `m_decodeOps` | CUtlVector< CUtlString > |  |
+| `m_internalOps` | CUtlVector< CUtlString > |  |
+| `m_decodedAnims` | CUtlVector< CUtlString > |  |
 
 ### AnimationDecodeDebugDump_t
 
@@ -120,21 +116,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_processingType` | [AnimationProcessingType_t](../schemas/animationsystem.md#animationprocessingtype_t) |  |
-| `m_elems` | CUtlVector<[AnimationDecodeDebugDumpElement_t](../schemas/animationsystem.md#animationdecodedebugdumpelement_t)> |  |
-
-### AnimationProcessingType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `ANIMATION_PROCESSING_SERVER_SIMULATION` | 0 |  |
-| `ANIMATION_PROCESSING_CLIENT_SIMULATION` | 1 |  |
-| `ANIMATION_PROCESSING_CLIENT_PREDICTION` | 2 |  |
-| `ANIMATION_PROCESSING_CLIENT_INTERPOLATION` | 3 |  |
-| `ANIMATION_PROCESSING_CLIENT_RENDER` | 4 |  |
-| `ANIMATION_PROCESSING_MAX` | 5 |  |
+| `m_processingType` | [AnimationProcessingType_t](../schemas/!GlobalTypes.md#animationprocessingtype_t) |  |
+| `m_elems` | CUtlVector< [AnimationDecodeDebugDumpElement_t](../schemas/animationsystem.md#animationdecodedebugdumpelement_t) > |  |
 
 ### AnimationSnapshotBase_t
 
@@ -204,26 +187,12 @@ classDiagram
 | `m_flRealTime` | float32 |  |
 | `m_rootToWorld` | matrix3x4a_t |  |
 | `m_bBonesInWorldSpace` | bool |  |
-| `m_boneSetupMask` | CUtlVector<uint32> |  |
-| `m_boneTransforms` | CUtlVector<matrix3x4a_t> |  |
-| `m_flexControllers` | CUtlVector<float32> |  |
-| `m_SnapshotType` | [AnimationSnapshotType_t](../schemas/animationsystem.md#animationsnapshottype_t) |  |
+| `m_boneSetupMask` | CUtlVector< uint32 > |  |
+| `m_boneTransforms` | CUtlVector< matrix3x4a_t > |  |
+| `m_flexControllers` | CUtlVector< float32 > |  |
+| `m_SnapshotType` | [AnimationSnapshotType_t](../schemas/!GlobalTypes.md#animationsnapshottype_t) |  |
 | `m_bHasDecodeDump` | bool |  |
 | `m_DecodeDump` | [AnimationDecodeDebugDumpElement_t](../schemas/animationsystem.md#animationdecodedebugdumpelement_t) |  |
-
-### AnimationSnapshotType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `ANIMATION_SNAPSHOT_SERVER_SIMULATION` | 0 |  |
-| `ANIMATION_SNAPSHOT_CLIENT_SIMULATION` | 1 |  |
-| `ANIMATION_SNAPSHOT_CLIENT_PREDICTION` | 2 |  |
-| `ANIMATION_SNAPSHOT_CLIENT_INTERPOLATION` | 3 |  |
-| `ANIMATION_SNAPSHOT_CLIENT_RENDER` | 4 |  |
-| `ANIMATION_SNAPSHOT_FINAL_COMPOSITE` | 5 |  |
-| `ANIMATION_SNAPSHOT_MAX` | 6 |  |
 
 ### AnimationSnapshot_t
 
@@ -292,17 +261,6 @@ classDiagram
 |------|------|-------------|
 | `m_nEntIndex` | int32 |  |
 | `m_modelName` | CUtlString |  |
-
-### BoneTransformSpace_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `BoneTransformSpace_Invalid` | -1 | Invalid |
-| `BoneTransformSpace_Parent` | 0 | Parent Space |
-| `BoneTransformSpace_Model` | 1 | Model Space |
-| `BoneTransformSpace_World` | 2 | World Space |
 
 ### CAnimActivity
 
@@ -418,10 +376,10 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_name` | CBufferString |  |
-| `m_animArray` | CUtlVector<[CAnimDesc](../schemas/animationsystem.md#canimdesc)> |  |
-| `m_decoderArray` | CUtlVector<[CAnimDecoder](../schemas/animationsystem.md#canimdecoder)> |  |
+| `m_animArray` | CUtlVector< [CAnimDesc](../schemas/animationsystem.md#canimdesc) > |  |
+| `m_decoderArray` | CUtlVector< [CAnimDecoder](../schemas/animationsystem.md#canimdecoder) > |  |
 | `m_nMaxUniqueFrameIndex` | int32 |  |
-| `m_segmentArray` | CUtlVector<[CAnimFrameSegment](../schemas/animationsystem.md#canimframesegment)> |  |
+| `m_segmentArray` | CUtlVector< [CAnimFrameSegment](../schemas/animationsystem.md#canimframesegment) > |  |
 
 ### CAnimDataChannelDesc
 
@@ -453,9 +411,9 @@ classDiagram
 | `m_nType` | int32 |  |
 | `m_szGrouping` | CBufferString |  |
 | `m_szDescription` | CBufferString |  |
-| `m_szElementNameArray` | CUtlVector<CBufferString> |  |
-| `m_nElementIndexArray` | CUtlVector<int32> |  |
-| `m_nElementMaskArray` | CUtlVector<uint32> |  |
+| `m_szElementNameArray` | CUtlVector< CBufferString > |  |
+| `m_nElementIndexArray` | CUtlVector< int32 > |  |
+| `m_nElementMaskArray` | CUtlVector< uint32 > |  |
 
 ### CAnimDecoder
 
@@ -591,17 +549,17 @@ classDiagram
 | `m_name` | CBufferString |  |
 | `m_flags` | [CAnimDesc_Flag](../schemas/animationsystem.md#canimdesc_flag) |  |
 | `fps` | float32 |  |
-| `m_Data` | [CAnimEncodedFrames](../schemas/animationsystem.md#canimencodedframes) | `MKV3TransferName "m_pData"` |
-| `m_movementArray` | CUtlVector<[CAnimMovement](../schemas/animationsystem.md#canimmovement)> |  |
+| `m_Data` | [CAnimEncodedFrames](../schemas/animationsystem.md#canimencodedframes) | `MKV3TransferName m_pData` |
+| `m_movementArray` | CUtlVector< [CAnimMovement](../schemas/animationsystem.md#canimmovement) > |  |
 | `m_xInitialOffset` | CTransform |  |
-| `m_eventArray` | CUtlVector<[CAnimEventDefinition](../schemas/animationsystem.md#canimeventdefinition)> |  |
-| `m_activityArray` | CUtlVector<[CAnimActivity](../schemas/animationsystem.md#canimactivity)> |  |
-| `m_hierarchyArray` | CUtlVector<[CAnimLocalHierarchy](../schemas/animationsystem.md#canimlocalhierarchy)> |  |
+| `m_eventArray` | CUtlVector< [CAnimEventDefinition](../schemas/animationsystem.md#canimeventdefinition) > |  |
+| `m_activityArray` | CUtlVector< [CAnimActivity](../schemas/animationsystem.md#canimactivity) > |  |
+| `m_hierarchyArray` | CUtlVector< [CAnimLocalHierarchy](../schemas/animationsystem.md#canimlocalhierarchy) > |  |
 | `framestalltime` | float32 |  |
 | `m_vecRootMin` | Vector |  |
 | `m_vecRootMax` | Vector |  |
-| `m_vecBoneWorldMin` | CUtlVector<Vector> |  |
-| `m_vecBoneWorldMax` | CUtlVector<Vector> |  |
+| `m_vecBoneWorldMin` | CUtlVector< Vector > |  |
+| `m_vecBoneWorldMax` | CUtlVector< Vector > |  |
 | `m_sequenceParams` | [CAnimSequenceParams](../schemas/animationsystem.md#canimsequenceparams) |  |
 
 ### CAnimDesc_Flag
@@ -669,13 +627,13 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_boneArray` | CUtlVector<[CAnimBoneDifference](../schemas/animationsystem.md#canimbonedifference)> |  |
-| `m_morphArray` | CUtlVector<[CAnimMorphDifference](../schemas/animationsystem.md#canimmorphdifference)> |  |
-| `m_userArray` | CUtlVector<[CAnimUserDifference](../schemas/animationsystem.md#canimuserdifference)> |  |
-| `m_bHasRotationBitArray` | CUtlVector<uint8> |  |
-| `m_bHasMovementBitArray` | CUtlVector<uint8> |  |
-| `m_bHasMorphBitArray` | CUtlVector<uint8> |  |
-| `m_bHasUserBitArray` | CUtlVector<uint8> |  |
+| `m_boneArray` | CUtlVector< [CAnimBoneDifference](../schemas/animationsystem.md#canimbonedifference) > |  |
+| `m_morphArray` | CUtlVector< [CAnimMorphDifference](../schemas/animationsystem.md#canimmorphdifference) > |  |
+| `m_userArray` | CUtlVector< [CAnimUserDifference](../schemas/animationsystem.md#canimuserdifference) > |  |
+| `m_bHasRotationBitArray` | CUtlVector< uint8 > |  |
+| `m_bHasMovementBitArray` | CUtlVector< uint8 > |  |
+| `m_bHasMorphBitArray` | CUtlVector< uint8 > |  |
+| `m_bHasUserBitArray` | CUtlVector< uint8 > |  |
 
 ### CAnimEncodedFrames
 
@@ -727,7 +685,7 @@ classDiagram
 | `m_fileName` | CBufferString |  |
 | `m_nFrames` | int32 |  |
 | `m_nFramesPerBlock` | int32 |  |
-| `m_frameblockArray` | CUtlVector<[CAnimFrameBlockAnim](../schemas/animationsystem.md#canimframeblockanim)> |  |
+| `m_frameblockArray` | CUtlVector< [CAnimFrameBlockAnim](../schemas/animationsystem.md#canimframeblockanim) > |  |
 | `m_usageDifferences` | [CAnimEncodeDifference](../schemas/animationsystem.md#canimencodedifference) |  |
 
 ### CAnimEnum
@@ -759,7 +717,7 @@ classDiagram
 | `m_flCycle` | float32 |  |
 | `m_flDuration` | float32 |  |
 | `m_EventData` | KeyValues3 |  |
-| `m_sLegacyOptions` | CBufferString | `MKV3TransferName "m_sOptions"` |
+| `m_sLegacyOptions` | CBufferString | `MKV3TransferName m_sOptions` |
 | `m_sEventName` | CGlobalSymbol |  |
 
 ### CAnimFrameBlockAnim
@@ -778,7 +736,7 @@ classDiagram
 |------|------|-------------|
 | `m_nStartFrame` | int32 |  |
 | `m_nEndFrame` | int32 |  |
-| `m_segmentIndexArray` | CUtlVector<int32> |  |
+| `m_segmentIndexArray` | CUtlVector< int32 > |  |
 
 ### CAnimFrameSegment
 
@@ -831,11 +789,11 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_name` | CBufferString |  |
-| `m_boneArray` | CUtlVector<[CAnimBone](../schemas/animationsystem.md#canimbone)> |  |
-| `m_userArray` | CUtlVector<[CAnimUser](../schemas/animationsystem.md#canimuser)> |  |
-| `m_morphArray` | CUtlVector<CBufferString> |  |
+| `m_boneArray` | CUtlVector< [CAnimBone](../schemas/animationsystem.md#canimbone) > |  |
+| `m_userArray` | CUtlVector< [CAnimUser](../schemas/animationsystem.md#canimuser) > |  |
+| `m_morphArray` | CUtlVector< CBufferString > |  |
 | `m_nChannelElements` | int32 |  |
-| `m_dataChannelArray` | CUtlVector<[CAnimDataChannelDesc](../schemas/animationsystem.md#canimdatachanneldesc)> |  |
+| `m_dataChannelArray` | CUtlVector< [CAnimDataChannelDesc](../schemas/animationsystem.md#canimdatachanneldesc) > |  |
 
 ### CAnimLocalHierarchy
 
@@ -1000,36 +958,12 @@ classDiagram
 |------|------|-------------|
 | `m_nFlags` | uint32 |  |
 | `m_name` | CBufferString |  |
-| `m_localHAnimArray_Handle` | CUtlVector<CStrongHandle<[InfoForResourceTypeCAnimData](../schemas/resourcesystem.md#infoforresourcetypecanimdata)>> | `MKV3TransferName "m_localHAnimArray"` |
-| `m_includedGroupArray_Handle` | CUtlVector<CStrongHandle<[InfoForResourceTypeCAnimationGroup](../schemas/resourcesystem.md#infoforresourcetypecanimationgroup)>> | `MKV3TransferName "m_includedGroupArray"` |
-| `m_directHSeqGroup_Handle` | CStrongHandle<[InfoForResourceTypeCSequenceGroupData](../schemas/resourcesystem.md#infoforresourcetypecsequencegroupdata)> | `MKV3TransferName "m_directHSeqGroup"` |
+| `m_localHAnimArray_Handle` | CUtlVector< CStrongHandle< [InfoForResourceTypeCAnimData](../schemas/resourcesystem.md#infoforresourcetypecanimdata) > > | `MKV3TransferName m_localHAnimArray` |
+| `m_includedGroupArray_Handle` | CUtlVector< CStrongHandle< [InfoForResourceTypeCAnimationGroup](../schemas/resourcesystem.md#infoforresourcetypecanimationgroup) > > | `MKV3TransferName m_includedGroupArray` |
+| `m_directHSeqGroup_Handle` | CStrongHandle< [InfoForResourceTypeCSequenceGroupData](../schemas/resourcesystem.md#infoforresourcetypecsequencegroupdata) > | `MKV3TransferName m_directHSeqGroup` |
 | `m_decodeKey` | [CAnimKeyData](../schemas/animationsystem.md#canimkeydata) |  |
-| `m_szScripts` | CUtlVector<CBufferString> |  |
-| `m_AdditionalExtRefs` | CUtlVector<CStrongHandleVoid> |  |
-
-### CCompressorGroup
-
-**Fields:**
-
-| Name | Type | Annotations |
-|------|------|-------------|
-| `m_nTotalElementCount` | int32 |  |
-| `m_szChannelClass` | CUtlVector<char*> |  |
-| `m_szVariableName` | CUtlVector<char*> |  |
-| `m_nType` | CUtlVector<fieldtype_t> |  |
-| `m_nFlags` | CUtlVector<int32> |  |
-| `m_szGrouping` | CUtlVector<CUtlString> |  |
-| `m_nCompressorIndex` | CUtlVector<int32> |  |
-| `m_szElementNames` | CUtlVector<CUtlVector<char*>> |  |
-| `m_nElementUniqueID` | CUtlVector<CUtlVector<int32>> |  |
-| `m_nElementMask` | CUtlVector<uint32> |  |
-| `m_vectorCompressor` | CUtlVector<CCompressor<Vector>*> |  |
-| `m_quaternionCompressor` | CUtlVector<CCompressor<QuaternionStorage>*> |  |
-| `m_intCompressor` | CUtlVector<CCompressor<int32>*> |  |
-| `m_boolCompressor` | CUtlVector<CCompressor<bool>*> |  |
-| `m_colorCompressor` | CUtlVector<CCompressor<Color>*> |  |
-| `m_vector2DCompressor` | CUtlVector<CCompressor<Vector2D>*> |  |
-| `m_vector4DCompressor` | CUtlVector<CCompressor<Vector4D>*> |  |
+| `m_szScripts` | CUtlVector< CBufferString > |  |
+| `m_AdditionalExtRefs` | CUtlVector< CStrongHandleVoid > |  |
 
 ### CMoodVData
 
@@ -1039,7 +973,7 @@ classDiagram
 	"m_animationLayers":
 	[
 	]
-}`, `MVDataRoot`, `MVDataOverlayType 1`
+}`, `MVDataOverlayType 1`, `MVDataRoot`
 
 **Relationships:**
 
@@ -1054,9 +988,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sModelName` | CResourceNameTyped<CWeakHandle<[InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel)>> | `MPropertyDescription "Model to get the animation list from"` `MPropertyProvidesEditContextString "ToolEditContext_ID_VMDL"` |
-| `m_nMoodType` | [MoodType_t](../schemas/animationsystem.md#moodtype_t) | `MPropertyDescription "Type of mood"` |
-| `m_animationLayers` | CUtlVector<[MoodAnimationLayer_t](../schemas/animationsystem.md#moodanimationlayer_t)> | `MPropertyDescription "Layers for this mood"` |
+| `m_sModelName` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCModel](../schemas/resourcesystem.md#infoforresourcetypecmodel) > > | `MPropertyDescription Model to get the animation list from` `MPropertyProvidesEditContextString ToolEditContext_ID_VMDL` |
+| `m_nMoodType` | [MoodType_t](../schemas/!GlobalTypes.md#moodtype_t) | `MPropertyDescription Type of mood` |
+| `m_animationLayers` | CUtlVector< [MoodAnimationLayer_t](../schemas/animationsystem.md#moodanimationlayer_t) > | `MPropertyDescription Layers for this mood` |
 
 ### CSeqAutoLayer
 
@@ -1146,10 +1080,10 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_sName` | CBufferString |  |
-| `m_nLocalBoneArray` | CUtlVector<int16> |  |
-| `m_flBoneWeightArray` | CUtlVector<float32> |  |
+| `m_nLocalBoneArray` | CUtlVector< int16 > |  |
+| `m_flBoneWeightArray` | CUtlVector< float32 > |  |
 | `m_flDefaultMorphCtrlWeight` | float32 |  |
-| `m_morphCtrlWeightArray` | CUtlVector<std::pair<CBufferString,float32>> |  |
+| `m_morphCtrlWeightArray` | CUtlVector< std::pair< CBufferString, float32 > > |  |
 
 ### CSeqCmdLayer
 
@@ -1245,10 +1179,10 @@ classDiagram
 | `m_flFPS` | float32 |  |
 | `m_nSubCycles` | int16 |  |
 | `m_numLocalResults` | int16 |  |
-| `m_cmdLayerArray` | CUtlVector<[CSeqCmdLayer](../schemas/animationsystem.md#cseqcmdlayer)> |  |
-| `m_eventArray` | CUtlVector<[CAnimEventDefinition](../schemas/animationsystem.md#canimeventdefinition)> |  |
-| `m_activityArray` | CUtlVector<[CAnimActivity](../schemas/animationsystem.md#canimactivity)> |  |
-| `m_poseSettingArray` | CUtlVector<[CSeqPoseSetting](../schemas/animationsystem.md#cseqposesetting)> |  |
+| `m_cmdLayerArray` | CUtlVector< [CSeqCmdLayer](../schemas/animationsystem.md#cseqcmdlayer) > |  |
+| `m_eventArray` | CUtlVector< [CAnimEventDefinition](../schemas/animationsystem.md#canimeventdefinition) > |  |
+| `m_activityArray` | CUtlVector< [CAnimActivity](../schemas/animationsystem.md#canimactivity) > |  |
+| `m_poseSettingArray` | CUtlVector< [CSeqPoseSetting](../schemas/animationsystem.md#cseqposesetting) > |  |
 
 ### CSeqIKLock
 
@@ -1321,11 +1255,11 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_flags` | [CSeqMultiFetchFlag](../schemas/animationsystem.md#cseqmultifetchflag) |  |
-| `m_localReferenceArray` | CUtlVector<int16> |  |
+| `m_localReferenceArray` | CUtlVector< int16 > |  |
 | `m_nGroupSize` | int32[2] |  |
 | `m_nLocalPose` | int32[2] |  |
-| `m_poseKeyArray0` | CUtlVector<float32> |  |
-| `m_poseKeyArray1` | CUtlVector<float32> |  |
+| `m_poseKeyArray0` | CUtlVector< float32 > |  |
+| `m_poseKeyArray1` | CUtlVector< float32 > |  |
 | `m_nLocalCyclePoseParameter` | int32 |  |
 | `m_bCalculatePoseParameters` | bool |  |
 | `m_bFixedBlendWeight` | bool |  |
@@ -1499,13 +1433,13 @@ classDiagram
 | `m_flags` | [CSeqSeqDescFlag](../schemas/animationsystem.md#cseqseqdescflag) |  |
 | `m_fetch` | [CSeqMultiFetch](../schemas/animationsystem.md#cseqmultifetch) |  |
 | `m_nLocalWeightlist` | int32 |  |
-| `m_autoLayerArray` | CUtlVector<[CSeqAutoLayer](../schemas/animationsystem.md#cseqautolayer)> |  |
-| `m_IKLockArray` | CUtlVector<[CSeqIKLock](../schemas/animationsystem.md#cseqiklock)> |  |
+| `m_autoLayerArray` | CUtlVector< [CSeqAutoLayer](../schemas/animationsystem.md#cseqautolayer) > |  |
+| `m_IKLockArray` | CUtlVector< [CSeqIKLock](../schemas/animationsystem.md#cseqiklock) > |  |
 | `m_transition` | [CSeqTransition](../schemas/animationsystem.md#cseqtransition) |  |
 | `m_SequenceKeys` | KeyValues3 |  |
-| `m_LegacyKeyValueText` | CBufferString | `MKV3TransferName "m_keyValueText"` |
-| `m_activityArray` | CUtlVector<[CAnimActivity](../schemas/animationsystem.md#canimactivity)> |  |
-| `m_footMotion` | CUtlVector<[CFootMotion](../schemas/modellib.md#cfootmotion)> |  |
+| `m_LegacyKeyValueText` | CBufferString | `MKV3TransferName m_keyValueText` |
+| `m_activityArray` | CUtlVector< [CAnimActivity](../schemas/animationsystem.md#canimactivity) > |  |
+| `m_footMotion` | CUtlVector< [CFootMotion](../schemas/modellib.md#cfootmotion) > |  |
 
 ### CSeqScaleSet
 
@@ -1533,8 +1467,8 @@ classDiagram
 | `m_sName` | CBufferString |  |
 | `m_bRootOffset` | bool |  |
 | `m_vRootOffset` | Vector |  |
-| `m_nLocalBoneArray` | CUtlVector<int16> |  |
-| `m_flBoneScaleArray` | CUtlVector<float32> |  |
+| `m_nLocalBoneArray` | CUtlVector< int16 > |  |
+| `m_flBoneScaleArray` | CUtlVector< float32 > |  |
 
 ### CSeqSeqDescFlag
 
@@ -1616,7 +1550,7 @@ classDiagram
 | `m_transition` | [CSeqTransition](../schemas/animationsystem.md#cseqtransition) |  |
 | `m_nLocalBaseReference` | int16 |  |
 | `m_nLocalBoneMask` | int16 |  |
-| `m_activityArray` | CUtlVector<[CAnimActivity](../schemas/animationsystem.md#canimactivity)> |  |
+| `m_activityArray` | CUtlVector< [CAnimActivity](../schemas/animationsystem.md#canimactivity) > |  |
 
 ### CSeqTransition
 
@@ -1690,23 +1624,23 @@ classDiagram
 |------|------|-------------|
 | `m_sName` | CBufferString |  |
 | `m_nFlags` | uint32 |  |
-| `m_localSequenceNameArray` | CUtlVector<CBufferString> |  |
-| `m_localS1SeqDescArray` | CUtlVector<[CSeqS1SeqDesc](../schemas/animationsystem.md#cseqs1seqdesc)> |  |
-| `m_localMultiSeqDescArray` | CUtlVector<[CSeqS1SeqDesc](../schemas/animationsystem.md#cseqs1seqdesc)> |  |
-| `m_localSynthAnimDescArray` | CUtlVector<[CSeqSynthAnimDesc](../schemas/animationsystem.md#cseqsynthanimdesc)> |  |
-| `m_localCmdSeqDescArray` | CUtlVector<[CSeqCmdSeqDesc](../schemas/animationsystem.md#cseqcmdseqdesc)> |  |
-| `m_localBoneMaskArray` | CUtlVector<[CSeqBoneMaskList](../schemas/animationsystem.md#cseqbonemasklist)> |  |
-| `m_localScaleSetArray` | CUtlVector<[CSeqScaleSet](../schemas/animationsystem.md#cseqscaleset)> |  |
-| `m_localBoneNameArray` | CUtlVector<CBufferString> |  |
+| `m_localSequenceNameArray` | CUtlVector< CBufferString > |  |
+| `m_localS1SeqDescArray` | CUtlVector< [CSeqS1SeqDesc](../schemas/animationsystem.md#cseqs1seqdesc) > |  |
+| `m_localMultiSeqDescArray` | CUtlVector< [CSeqS1SeqDesc](../schemas/animationsystem.md#cseqs1seqdesc) > |  |
+| `m_localSynthAnimDescArray` | CUtlVector< [CSeqSynthAnimDesc](../schemas/animationsystem.md#cseqsynthanimdesc) > |  |
+| `m_localCmdSeqDescArray` | CUtlVector< [CSeqCmdSeqDesc](../schemas/animationsystem.md#cseqcmdseqdesc) > |  |
+| `m_localBoneMaskArray` | CUtlVector< [CSeqBoneMaskList](../schemas/animationsystem.md#cseqbonemasklist) > |  |
+| `m_localScaleSetArray` | CUtlVector< [CSeqScaleSet](../schemas/animationsystem.md#cseqscaleset) > |  |
+| `m_localBoneNameArray` | CUtlVector< CBufferString > |  |
 | `m_localNodeName` | CBufferString |  |
-| `m_localPoseParamArray` | CUtlVector<[CSeqPoseParamDesc](../schemas/animationsystem.md#cseqposeparamdesc)> |  |
+| `m_localPoseParamArray` | CUtlVector< [CSeqPoseParamDesc](../schemas/animationsystem.md#cseqposeparamdesc) > |  |
 | `m_keyValues` | KeyValues3 |  |
-| `m_localIKAutoplayLockArray` | CUtlVector<[CSeqIKLock](../schemas/animationsystem.md#cseqiklock)> |  |
+| `m_localIKAutoplayLockArray` | CUtlVector< [CSeqIKLock](../schemas/animationsystem.md#cseqiklock) > |  |
 
 ### FollowAttachmentData
 
 **Metadata:** `MGetKV3ClassDefaults {
-	"m_boneIndex": 5,
+	"m_boneIndex": 0,
 	"m_attachmentHandle": 0
 }`
 
@@ -1751,7 +1685,7 @@ classDiagram
 	"m_flEndOffset": 0.000000,
 	"m_flFadeIn": 0.200000,
 	"m_flFadeOut": 0.200000
-}`, `MPropertyArrayElementNameKey "m_sName"`
+}`, `MPropertyArrayElementNameKey m_sName`
 
 **Relationships:**
 
@@ -1765,98 +1699,67 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sName` | CUtlString | `MPropertyFriendlyName "Name"` `MPropertyDescription "Name of the layer"` |
-| `m_bActiveListening` | bool | `MPropertyFriendlyName "Active When Listening"` `MPropertyDescription "Sets the mood's animation buckets to be active when the character is listening"` |
-| `m_bActiveTalking` | bool | `MPropertyFriendlyName "Active When Talking"` `MPropertyDescription "Sets the mood's animation buckets to be active when the character is talking"` |
-| `m_layerAnimations` | CUtlVector<[MoodAnimation_t](../schemas/animationsystem.md#moodanimation_t)> | `MPropertyDescription "List of animations to choose from"` |
-| `m_flIntensity` | [CRangeFloat](../schemas/tier2.md#crangefloat) | `MPropertyDescription "Intensity of the animation"` `MPropertyAttributeRange "0 1"` |
-| `m_flDurationScale` | [CRangeFloat](../schemas/tier2.md#crangefloat) | `MPropertyDescription "Multiplier of the animation duration"` |
-| `m_bScaleWithInts` | bool | `MPropertyDescription "When scaling an animation, grab the scale value as in int. Used for gestures/postures to control number of looping sections"` |
-| `m_flNextStart` | [CRangeFloat](../schemas/tier2.md#crangefloat) | `MPropertyDescription "Time before the next animation can start"` |
-| `m_flStartOffset` | [CRangeFloat](../schemas/tier2.md#crangefloat) | `MPropertyDescription "Time from the start of the mood before an animation can start"` |
-| `m_flEndOffset` | [CRangeFloat](../schemas/tier2.md#crangefloat) | `MPropertyDescription "Time from the end of the mood when an animation cannot play"` |
-| `m_flFadeIn` | float32 | `MPropertyDescription "Fade in time of the animation"` |
-| `m_flFadeOut` | float32 | `MPropertyDescription "Fade out time of the animation"` |
+| `m_sName` | CUtlString | `MPropertyDescription Name of the layer` `MPropertyFriendlyName Name` |
+| `m_bActiveListening` | bool | `MPropertyDescription Sets the mood's animation buckets to be active when the character is listening` `MPropertyFriendlyName Active When Listening` |
+| `m_bActiveTalking` | bool | `MPropertyDescription Sets the mood's animation buckets to be active when the character is talking` `MPropertyFriendlyName Active When Talking` |
+| `m_layerAnimations` | CUtlVector< [MoodAnimation_t](../schemas/animationsystem.md#moodanimation_t) > | `MPropertyDescription List of animations to choose from` |
+| `m_flIntensity` | [CRangeFloat](../schemas/tier2.md#crangefloat) | `MPropertyAttributeRange 0 1` `MPropertyDescription Intensity of the animation` |
+| `m_flDurationScale` | [CRangeFloat](../schemas/tier2.md#crangefloat) | `MPropertyDescription Multiplier of the animation duration` |
+| `m_bScaleWithInts` | bool | `MPropertyDescription When scaling an animation, grab the scale value as in int. Used for gestures/postures to control number of looping sections` |
+| `m_flNextStart` | [CRangeFloat](../schemas/tier2.md#crangefloat) | `MPropertyDescription Time before the next animation can start` |
+| `m_flStartOffset` | [CRangeFloat](../schemas/tier2.md#crangefloat) | `MPropertyDescription Time from the start of the mood before an animation can start` |
+| `m_flEndOffset` | [CRangeFloat](../schemas/tier2.md#crangefloat) | `MPropertyDescription Time from the end of the mood when an animation cannot play` |
+| `m_flFadeIn` | float32 | `MPropertyDescription Fade in time of the animation` |
+| `m_flFadeOut` | float32 | `MPropertyDescription Fade out time of the animation` |
 
 ### MoodAnimation_t
 
 **Metadata:** `MGetKV3ClassDefaults {
 	"m_sName": "",
 	"m_flWeight": 1.000000
-}`, `MPropertyArrayElementNameKey "m_sName"`
+}`, `MPropertyArrayElementNameKey m_sName`
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sName` | CModelAnimNameWithDeltas | `MPropertyDescription "Name of the animation"` |
-| `m_flWeight` | float32 | `MPropertyDescription "Weight of the animation, higher numbers get picked more"` |
+| `m_sName` | CModelAnimNameWithDeltas | `MPropertyDescription Name of the animation` |
+| `m_flWeight` | float32 | `MPropertyDescription Weight of the animation, higher numbers get picked more` |
 
-### MoodType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `eMoodType_Head` | 0 | Head |
-| `eMoodType_Body` | 1 | Body |
-
-### ParticleAttachment_t
+### PulseBestOutflowRules_t
 
 **Values:**
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `PATTACH_INVALID` | -1 |  |
-| `PATTACH_ABSORIGIN` | 0 |  |
-| `PATTACH_ABSORIGIN_FOLLOW` | 1 |  |
-| `PATTACH_CUSTOMORIGIN` | 2 |  |
-| `PATTACH_CUSTOMORIGIN_FOLLOW` | 3 |  |
-| `PATTACH_POINT` | 4 |  |
-| `PATTACH_POINT_FOLLOW` | 5 |  |
-| `PATTACH_EYES_FOLLOW` | 6 |  |
-| `PATTACH_OVERHEAD_FOLLOW` | 7 |  |
-| `PATTACH_WORLDORIGIN` | 8 |  |
-| `PATTACH_ROOTBONE_FOLLOW` | 9 |  |
-| `PATTACH_RENDERORIGIN_FOLLOW` | 10 |  |
-| `PATTACH_MAIN_VIEW` | 11 |  |
-| `PATTACH_WATERWAKE` | 12 |  |
-| `PATTACH_CENTER_FOLLOW` | 13 |  |
-| `PATTACH_CUSTOM_GAME_STATE_1` | 14 |  |
-| `PATTACH_HEALTHBAR` | 15 |  |
-| `MAX_PATTACH_TYPES` | 16 |  |
+| `SORT_BY_NUMBER_OF_VALID_CRITERIA` | 0 | Choose Best — Choose the best outflow with all rules passing, as determined by number of passing rules (specificity). |
+| `SORT_BY_OUTFLOW_INDEX` | 1 | Choose First — Choose the first outflow with all rules passing, from left to right |
 
-### SeqCmd_t
+### PulseCursorCancelPriority_t
 
 **Values:**
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `SeqCmd_Nop` | 0 |  |
-| `SeqCmd_LinearDelta` | 1 |  |
-| `SeqCmd_FetchFrameRange` | 2 |  |
-| `SeqCmd_Slerp` | 3 |  |
-| `SeqCmd_Add` | 4 |  |
-| `SeqCmd_Subtract` | 5 |  |
-| `SeqCmd_Scale` | 6 |  |
-| `SeqCmd_Copy` | 7 |  |
-| `SeqCmd_Blend` | 8 |  |
-| `SeqCmd_Worldspace` | 9 |  |
-| `SeqCmd_Sequence` | 10 |  |
-| `SeqCmd_FetchCycle` | 11 |  |
-| `SeqCmd_FetchFrame` | 12 |  |
-| `SeqCmd_IKLockInPlace` | 13 |  |
-| `SeqCmd_IKRestoreAll` | 14 |  |
-| `SeqCmd_ReverseSequence` | 15 |  |
-| `SeqCmd_Transform` | 16 |  |
+| `None` | 0 | Keep running normally. |
+| `CancelOnSucceeded` | 1 | Kill After. — Do not stop the current yielding node, but do not continue to the next node afterwards. |
+| `SoftCancel` | 2 | Kill Elegantly. — Request elegant wind-down of any associated work (e.g. vcd interrupt). |
+| `HardCancel` | 3 | Kill Immediately. — Stop without any wind-down. |
 
-### SeqPoseSetting_t
+### PulseCursorWakePriority_t
 
 **Values:**
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `SEQ_POSE_SETTING_CONSTANT` | 0 |  |
-| `SEQ_POSE_SETTING_ROTATION` | 1 |  |
-| `SEQ_POSE_SETTING_POSITION` | 2 |  |
-| `SEQ_POSE_SETTING_VELOCITY` | 3 |  |
+| `WakeElegantly` | 0 | Proceed Elegantly. — Request elegant wind-down of any associated work (e.g. vcd interrupt), then proceed afterwards. |
+| `WakeImmediate` | 1 | Proceed Immediately. — Stop the node action without any wind-down, then proceed afterwards. |
+
+### PulseMethodCallMode_t
+
+**Values:**
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `SYNC_WAIT_FOR_COMPLETION` | 0 | Wait For Completion — Synchronous - Wait for this node to fully complete before proceeding. |
+| `ASYNC_FIRE_AND_FORGET` | 1 | Proceed Immediately — Asynchronous - This node executes independently using a new Cursor. Formerly 'Fire and Forget'. Equivalent to scheduling using an additional 'Fire Child Cursors' node. |

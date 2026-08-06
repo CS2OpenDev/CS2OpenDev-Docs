@@ -43,7 +43,7 @@ nav_exclude: true
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_field` | CUtlVector<float32> |  |
+| `m_field` | CUtlVector< float32 > |  |
 
 ### CSteamAudioBakedDimensionsData
 
@@ -103,11 +103,11 @@ classDiagram
 |------|------|-------------|
 | `m_settings` | [SteamAudioCustomDataDimensionsSettings_t](../schemas/steamaudio.md#steamaudiocustomdatadimensionssettings_t) |  |
 | `m_probes` | [CSteamAudioProbeData](../schemas/steamaudio.md#csteamaudioprobedata) |  |
-| `m_vecInOut` | CUtlVector<float32> |  |
-| `m_vecSize` | CUtlVector<float32> |  |
-| `m_vecOutsideField` | CUtlVector<[CSteamAudioAmbisonicsField](../schemas/steamaudio.md#csteamaudioambisonicsfield)> |  |
-| `m_vecInsideSmallSizeField` | CUtlVector<[CSteamAudioAmbisonicsField](../schemas/steamaudio.md#csteamaudioambisonicsfield)> |  |
-| `m_movables` | CSteamAudioMovableBakedData<[CSteamAudioBakedDimensionsData](../schemas/steamaudio.md#csteamaudiobakeddimensionsdata)> |  |
+| `m_vecInOut` | CUtlVector< float32 > |  |
+| `m_vecSize` | CUtlVector< float32 > |  |
+| `m_vecOutsideField` | CUtlVector< [CSteamAudioAmbisonicsField](../schemas/steamaudio.md#csteamaudioambisonicsfield) > |  |
+| `m_vecInsideSmallSizeField` | CUtlVector< [CSteamAudioAmbisonicsField](../schemas/steamaudio.md#csteamaudioambisonicsfield) > |  |
+| `m_movables` | CSteamAudioMovableBakedData< [CSteamAudioBakedDimensionsData](../schemas/steamaudio.md#csteamaudiobakeddimensionsdata) > |  |
 
 ### CSteamAudioBakedMaterialsData
 
@@ -135,8 +135,8 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_probes` | [CSteamAudioProbeData](../schemas/steamaudio.md#csteamaudioprobedata) |  |
-| `m_vecMaterialTokens` | CUtlVector<uint32> |  |
-| `m_vecMaterialWeights` | CUtlVector<float32> |  |
+| `m_vecMaterialTokens` | CUtlVector< uint32 > |  |
+| `m_vecMaterialWeights` | CUtlVector< float32 > |  |
 
 ### CSteamAudioBakedOcclusionData
 
@@ -157,7 +157,7 @@ classDiagram
 	"m_vecPathingDeviation":
 	[
 	],
-	"m_vecReflectionRatio":
+	"m_vecReflectionEnergy":
 	[
 	]
 }`
@@ -176,9 +176,9 @@ classDiagram
 |------|------|-------------|
 | `m_settings` | [SteamAudioCustomDataOcclusionSettings_t](../schemas/steamaudio.md#steamaudiocustomdataocclusionsettings_t) |  |
 | `m_probes` | [CSteamAudioProbeData](../schemas/steamaudio.md#csteamaudioprobedata) |  |
-| `m_vecPathingRatio` | CUtlVector<float32> |  |
-| `m_vecPathingDeviation` | CUtlVector<float32> |  |
-| `m_vecReflectionRatio` | CUtlVector<float32> |  |
+| `m_vecPathingRatio` | CUtlVector< float32 > |  |
+| `m_vecPathingDeviation` | CUtlVector< float32 > |  |
+| `m_vecReflectionEnergy` | CUtlVector< float32 > |  |
 
 ### CSteamAudioBakedPathingData
 
@@ -217,7 +217,7 @@ classDiagram
 |------|------|-------------|
 | `m_nBands` | int32 |  |
 | `m_probes` | [CSteamAudioProbeData](../schemas/steamaudio.md#csteamaudioprobedata) |  |
-| `m_movables` | CSteamAudioMovableBakedData<[CSteamAudioBakedPathingData](../schemas/steamaudio.md#csteamaudiobakedpathingdata)> |  |
+| `m_movables` | CSteamAudioMovableBakedData< [CSteamAudioBakedPathingData](../schemas/steamaudio.md#csteamaudiobakedpathingdata) > |  |
 
 ### CSteamAudioBakedReverbData
 
@@ -350,10 +350,10 @@ classDiagram
 | `m_reverbClusteringSettings` | [SteamAudioReverbClusteringSettings_t](../schemas/steamaudio.md#steamaudioreverbclusteringsettings_t) |  |
 | `m_reverbCompressionSettings` | [SteamAudioReverbCompressionSettings_t](../schemas/steamaudio.md#steamaudioreverbcompressionsettings_t) |  |
 | `m_clusteredProbes` | [CSteamAudioProbeData](../schemas/steamaudio.md#csteamaudioprobedata) |  |
-| `m_vecClusterForProbe` | CUtlVector<int16> |  |
+| `m_vecClusterForProbe` | CUtlVector< int16 > |  |
 | `m_compressedData` | [CSteamAudioCompressedReverb](../schemas/steamaudio.md#csteamaudiocompressedreverb) |  |
 | `m_compressedClusteredData` | [CSteamAudioCompressedReverb](../schemas/steamaudio.md#csteamaudiocompressedreverb) |  |
-| `m_movables` | CSteamAudioMovableBakedData<[CSteamAudioBakedReverbData](../schemas/steamaudio.md#csteamaudiobakedreverbdata)> |  |
+| `m_movables` | CSteamAudioMovableBakedData< [CSteamAudioBakedReverbData](../schemas/steamaudio.md#csteamaudiobakedreverbdata) > |  |
 
 ### CSteamAudioCompressedReverb
 
@@ -381,9 +381,9 @@ classDiagram
 | `m_nBands` | int32 |  |
 | `m_nBins` | int32 |  |
 | `m_nProbes` | int32 |  |
-| `m_vecNumSingularValues` | CUtlVector<int32> |  |
-| `m_vecDictionary` | CUtlVector<float32> |  |
-| `m_vecCompressedData` | CUtlVector<float32> |  |
+| `m_vecNumSingularValues` | CUtlVector< int32 > |  |
+| `m_vecDictionary` | CUtlVector< float32 > |  |
+| `m_vecCompressedData` | CUtlVector< float32 > |  |
 | `m_pCompressedData` | IPLCompressedEnergyFields |  |
 
 ### CSteamAudioProbeData
@@ -444,8 +444,8 @@ classDiagram
 | `m_nx` | int32 |  |
 | `m_ny` | int32 |  |
 | `m_nz` | int32 |  |
-| `m_vecLineSegments` | CUtlVector<[CSteamAudioProbeLineSegment](../schemas/steamaudio.md#csteamaudioprobelinesegment)> |  |
-| `m_vecProbes` | CUtlVector<Vector> |  |
+| `m_vecLineSegments` | CUtlVector< [CSteamAudioProbeLineSegment](../schemas/steamaudio.md#csteamaudioprobelinesegment) > |  |
+| `m_vecProbes` | CUtlVector< Vector > |  |
 
 ### CSteamAudioProbeLineSegment
 
@@ -476,8 +476,8 @@ classDiagram
 |------|------|-------------|
 | `m_vStart` | Vector |  |
 | `m_vEnd` | Vector |  |
-| `m_vecIntervals` | CUtlVector<float32> |  |
-| `m_vecProbeIndices` | CUtlVector<int32> |  |
+| `m_vecIntervals` | CUtlVector< float32 > |  |
+| `m_vecProbeIndices` | CUtlVector< int32 > |  |
 
 ### CSteamAudioSceneData
 

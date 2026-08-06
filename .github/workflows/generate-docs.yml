@@ -22,109 +22,107 @@ concurrency:
 
 jobs:
   # -------------------------------------------------------------------------
-  # 1. Update the submodule to latest upstream, regenerate docs if anything
-  #    changed, then either push directly (on a push event) or open/update a
-  #    pull request (on schedule or workflow_dispatch).
+  # 1. Materialise the latest SchemaTracker build from its `latest` branch (a
+  #    shallow single-branch clone, so the multi-GB history is never fetched),
+  #    regenerate docs, then either push directly (push event) or open/update a
+  #    PR (schedule / dispatch).  The commit is diff-gated, so an unchanged
+  #    latest build produces no PR.
   # -------------------------------------------------------------------------
   check-and-update:
-    name: Update submodule and regenerate docs
+    name: Regenerate docs from latest SchemaTracker build
     runs-on: ubuntu-latest
     permissions:
       contents: write
       pull-requests: write
 
     steps:
-      - name: Checkout repository with submodule
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          submodules: recursive
           fetch-depth: 0
 
-      - name: Update submodules to latest upstream HEAD
-        id: submodule
+      # Shallow single-branch clone of the SchemaTracker `latest` branch, which
+      # carries only the newest build (artifacts/<build_id>/<platform>/) plus a
+      # root LATEST.json pointer — tens of MB rather than the whole artifacts/
+      # tree.  While CS2OpenDev-SchemaTracker is private a SCHEMA_TRACKER_TOKEN
+      # secret (a read PAT / fine-grained token) is required; once the repo is
+      # public the plain URL works and the token line can be dropped.
+      - name: Materialise latest SchemaTracker build (latest branch)
+        id: tracker
+        env:
+          TRACKER_TOKEN: ${{ secrets.SCHEMA_TRACKER_TOKEN }}
         run: |
-          # GameTracking-CS2 — primary source for .proto, .gameevents, convars, commands.
-          BEFORE=$(git -C upstream/data rev-parse HEAD)
-          git submodule update --remote --merge upstream/data
-          AFTER=$(git -C upstream/data rev-parse HEAD)
-          echo "before=$BEFORE" >> "$GITHUB_OUTPUT"
-          echo "after=$AFTER"   >> "$GITHUB_OUTPUT"
-
-          # SchemaExplorer — DumpSource2's cs2.json.gz redistribution.  Same
-          # upstream pipeline as GameTracking-CS2, so it should advance in lockstep,
-          # but we bump it independently to be safe.  See TOOLING_OVERHAUL.md § 1.1.
-          # The submodule may not exist yet on branches that predate the pivot;
-          # tolerate its absence so old branches still build.
-          SCHEMA_BEFORE=""
-          SCHEMA_AFTER=""
-          if [ -d upstream/schema-explorer ]; then
-            SCHEMA_BEFORE=$(git -C upstream/schema-explorer rev-parse HEAD)
-            git submodule update --remote --merge upstream/schema-explorer || true
-            SCHEMA_AFTER=$(git -C upstream/schema-explorer rev-parse HEAD)
-          fi
-          echo "schema_before=$SCHEMA_BEFORE" >> "$GITHUB_OUTPUT"
-          echo "schema_after=$SCHEMA_AFTER"   >> "$GITHUB_OUTPUT"
-
-          if [ "$BEFORE" = "$AFTER" ] && [ "$SCHEMA_BEFORE" = "$SCHEMA_AFTER" ] && [ "${{ github.event_name }}" = "schedule" ]; then
-            echo "skip=true" >> "$GITHUB_OUTPUT"
-            echo "Submodules unchanged. Nothing to do."
+          set -euo pipefail
+          REPO="github.com/CS2OpenDev/CS2OpenDev-SchemaTracker.git"
+          if [ -n "${TRACKER_TOKEN}" ]; then
+            URL="https://x-access-token:${TRACKER_TOKEN}@${REPO}"
           else
-            echo "skip=false" >> "$GITHUB_OUTPUT"
-            echo "Will regenerate (data: $BEFORE → $AFTER, schema: $SCHEMA_BEFORE → $SCHEMA_AFTER, trigger: ${{ github.event_name }})."
+            URL="https://${REPO}"
           fi
+          rm -rf upstream/schema-tracker
+          git clone --depth 1 --single-branch --branch latest "$URL" upstream/schema-tracker
+
+          # The `latest` branch carries the cumulative
+          # artifacts/schema_evolution/<platform>.json files (maintained by
+          # SchemaTracker's publish-latest workflow) alongside the newest build,
+          # so the Schema History page + field_history.json render straight from
+          # this shallow clone — no supplemental fetch needed.  (SchemaTracker's
+          # default branch is a clean, artifact-free history and is NOT a source
+          # for these files.)
+
+          # Build id comes straight from the branch's LATEST.json pointer.
+          BUILD=$(python3 -c "import json;print(json.load(open('upstream/schema-tracker/LATEST.json'))['build_id'])")
+          SHA=$(git -C upstream/schema-tracker rev-parse HEAD)
+          echo "Latest build: $BUILD (branch commit $SHA)"
+          echo "build=$BUILD" >> "$GITHUB_OUTPUT"
+          echo "sha=$SHA"      >> "$GITHUB_OUTPUT"
 
       - name: Set up Python
-        if: steps.submodule.outputs.skip == 'false'
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Install protoc
-        if: steps.submodule.outputs.skip == 'false'
-        run: sudo apt-get install -y --no-install-recommends protobuf-compiler
-
       - name: Install Python dependencies
-        if: steps.submodule.outputs.skip == 'false'
         run: pip install pyyaml protobuf -q
 
       - name: Generate documentation
-        if: steps.submodule.outputs.skip == 'false'
         run: |
           python3 docs/generate_docs.py \
             --repo-root . \
-            --data-root ./upstream/data \
+            --artifacts-root ./upstream/schema-tracker/artifacts \
+            --build latest \
+            --platform windows-x86_64 \
             --output docs
 
       # On direct push events we commit straight to the current branch.
       - name: Commit and push (push event)
-        if: steps.submodule.outputs.skip == 'false' && github.event_name == 'push'
+        if: github.event_name == 'push'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add upstream/data docs/
-          if [ -d upstream/schema-explorer ]; then git add upstream/schema-explorer; fi
+          git add docs/
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "docs: regenerate for upstream ${{ steps.submodule.outputs.after }} [skip ci]"
+            git commit -m "docs: regenerate for SchemaTracker build ${{ steps.tracker.outputs.build }} [skip ci]"
             git push
           fi
 
       # On scheduled / manual runs, open (or update) a PR so changes are
       # visible and can be reviewed before landing on the default branch.
       - name: Open or update pull request (schedule / workflow_dispatch)
-        if: steps.submodule.outputs.skip == 'false' && github.event_name != 'push'
+        if: github.event_name != 'push'
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "docs: regenerate for upstream ${{ steps.submodule.outputs.after }} [skip ci]"
+          commit-message: "docs: regenerate for SchemaTracker build ${{ steps.tracker.outputs.build }} [skip ci]"
           branch: automated/docs-update
           delete-branch: true
-          title: "docs: automated update for upstream ${{ steps.submodule.outputs.after }}"
+          title: "docs: automated update for SchemaTracker build ${{ steps.tracker.outputs.build }}"
           body: |
             Automated documentation update triggered by the `${{ github.event_name }}` event.
 
-            **Upstream submodule**: `${{ steps.submodule.outputs.before }}` → `${{ steps.submodule.outputs.after }}`
+            **SchemaTracker build**: `${{ steps.tracker.outputs.build }}` (commit `${{ steps.tracker.outputs.sha }}`)
 
             This pull request was created automatically by the [Generate Documentation](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) workflow.
           labels: automated,documentation

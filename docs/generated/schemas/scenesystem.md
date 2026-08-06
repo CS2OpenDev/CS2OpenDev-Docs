@@ -19,9 +19,6 @@ nav_exclude: true
 | [CSSDSMsg_ViewRender](#cssdsmsg_viewrender) | class |  | 2 |
 | [CSSDSMsg_ViewTarget](#cssdsmsg_viewtarget) | class |  | 10 |
 | [CSSDSMsg_ViewTargetList](#cssdsmsg_viewtargetlist) | class |  | 3 |
-| [DisableShadows_t](#disableshadows_t) | enum |  | 5 |
-| [ESceneObjectVisualization](#esceneobjectvisualization) | enum |  | 6 |
-| [ESilhouetteType_t](#esilhouettetype_t) | enum |  | 4 |
 | [SceneViewId_t](#sceneviewid_t) | class |  | 2 |
 
 ---
@@ -59,7 +56,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_Views` | CUtlVector<[CSSDSEndFrameViewInfo](../schemas/scenesystem.md#cssdsendframeviewinfo)> |  |
+| `m_Views` | CUtlVector< [CSSDSEndFrameViewInfo](../schemas/scenesystem.md#cssdsendframeviewinfo) > |  |
 
 ### CSSDSMsg_LayerBase
 
@@ -81,8 +78,8 @@ classDiagram
 
 ```mermaid
 classDiagram
-    CSSDSMsg_LayerBase <|-- CSSDSMsg_PreLayer
     CSSDSMsg_LayerBase <|-- CSSDSMsg_PostLayer
+    CSSDSMsg_LayerBase <|-- CSSDSMsg_PreLayer
     CSSDSMsg_LayerBase *-- SceneViewId_t
 ```
 
@@ -225,43 +222,7 @@ classDiagram
 |------|------|-------------|
 | `m_viewId` | [SceneViewId_t](../schemas/scenesystem.md#sceneviewid_t) |  |
 | `m_ViewName` | CUtlString |  |
-| `m_Targets` | CUtlVector<[CSSDSMsg_ViewTarget](../schemas/scenesystem.md#cssdsmsg_viewtarget)> |  |
-
-### DisableShadows_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `kDisableShadows_None` | 0 |  |
-| `kDisableShadows_All` | 1 |  |
-| `kDisableShadows_Baked` | 2 |  |
-| `kDisableShadows_Realtime` | 3 |  |
-| `kDisableShadows_ReallyNone` | 4 |  |
-
-### ESceneObjectVisualization
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `SCENEOBJECT_VIS_NONE` | 0 |  |
-| `SCENEOBJECT_VIS_OBJECT` | 1 |  |
-| `SCENEOBJECT_VIS_MATERIAL` | 2 |  |
-| `SCENEOBJECT_VIS_TEXTURE_SIZE` | 3 |  |
-| `SCENEOBJECT_VIS_LOD` | 4 |  |
-| `SCENEOBJECT_VIS_INSTANCING` | 5 |  |
-
-### ESilhouetteType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `SILHOUETTE_NONE` | 0 |  |
-| `SILHOUETTE_LIGHT` | 1 |  |
-| `SILHOUETTE_ENVMAP` | 2 |  |
-| `SILHOUETTE_LPV` | 4 |  |
+| `m_Targets` | CUtlVector< [CSSDSMsg_ViewTarget](../schemas/scenesystem.md#cssdsmsg_viewtarget) > |  |
 
 ### SceneViewId_t
 

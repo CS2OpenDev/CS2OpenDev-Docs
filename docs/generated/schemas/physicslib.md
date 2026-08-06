@@ -16,19 +16,19 @@ nav_exclude: true
 | [CFeMorphLayer](#cfemorphlayer) | class |  | 7 |
 | [CFeNamedJiggleBone](#cfenamedjigglebone) | class |  | 4 |
 | [CFeVertexMapBuildArray](#cfevertexmapbuildarray) | class |  | 1 |
+| [CGenericShapeProxy](#cgenericshapeproxy) | class |  | 1 |
 | [CRegionSVM](#cregionsvm) | class |  | 2 |
-| [CastSphereSATParams_t](#castspheresatparams_t) | class |  | 6 |
 | [CollisionDetailLayerInfo_t](#collisiondetaillayerinfo_t) | class |  | 6 |
 | [CollisionDetailLayerInfo_t::Name_t](#collisiondetaillayerinfo_tname_t) | class |  | 2 |
 | [CovMatrix3](#covmatrix3) | class |  | 4 |
 | [Dop26_t](#dop26_t) | class |  | 1 |
-| [DynamicContinuousContactBehavior_t](#dynamiccontinuouscontactbehavior_t) | enum |  | 3 |
 | [FeAnimStrayRadius_t](#feanimstrayradius_t) | class |  | 3 |
 | [FeAntiTunnelGroupBuild_t](#feantitunnelgroupbuild_t) | class |  | 2 |
 | [FeAntiTunnelProbeBuild_t](#feantitunnelprobebuild_t) | class |  | 7 |
 | [FeAntiTunnelProbe_t](#feantitunnelprobe_t) | class |  | 8 |
 | [FeAxialEdgeBend_t](#feaxialedgebend_t) | class |  | 5 |
 | [FeBandBendLimit_t](#febandbendlimit_t) | class |  | 3 |
+| [FeBoneMergeLink_t](#febonemergelink_t) | class |  | 2 |
 | [FeBoxRigid_t](#feboxrigid_t) | class |  | 6 |
 | [FeBuildBoxRigid_t](#febuildboxrigid_t) | class | FeBoxRigid_t | 3 |
 | [FeBuildSDFRigid_t](#febuildsdfrigid_t) | class | FeSDFRigid_t | 3 |
@@ -83,14 +83,15 @@ nav_exclude: true
 | [FeWorldCollisionParams_t](#feworldcollisionparams_t) | class |  | 4 |
 | [FourCovMatrices3](#fourcovmatrices3) | class |  | 4 |
 | [FourVectors2D](#fourvectors2d) | class |  | 2 |
-| [JointAxis_t](#jointaxis_t) | enum |  | 4 |
-| [JointMotion_t](#jointmotion_t) | enum |  | 3 |
 | [OldFeEdge_t](#oldfeedge_t) | class |  | 12 |
-| [PhysFeModelDesc_t](#physfemodeldesc_t) | class |  | 110 |
+| [PhysFeModelDesc_t](#physfemodeldesc_t) | class |  | 111 |
+| [PhysicsParticleId_t](#physicsparticleid_t) | class |  | 1 |
 | [RnBlendVertex_t](#rnblendvertex_t) | class |  | 8 |
 | [RnBodyDesc_t](#rnbodydesc_t) | class |  | 36 |
 | [RnCapsuleDesc_t](#rncapsuledesc_t) | class | RnShapeDesc_t | 1 |
 | [RnCapsule_t](#rncapsule_t) | class |  | 2 |
+| [RnCompoundDesc_t](#rncompounddesc_t) | class | RnShapeDesc_t | 1 |
+| [RnCompound_t](#rncompound_t) | class |  | 8 |
 | [RnFace_t](#rnface_t) | class |  | 1 |
 | [RnHalfEdge_t](#rnhalfedge_t) | class |  | 4 |
 | [RnHullDesc_t](#rnhulldesc_t) | class | RnShapeDesc_t | 1 |
@@ -300,11 +301,11 @@ classDiagram
 |------|------|-------------|
 | `m_Name` | CUtlString |  |
 | `m_nNameHash` | uint32 |  |
-| `m_Nodes` | CUtlVector<uint16> |  |
-| `m_InitPos` | CUtlVector<Vector> |  |
-| `m_Gravity` | CUtlVector<float32> |  |
-| `m_GoalStrength` | CUtlVector<float32> |  |
-| `m_GoalDamping` | CUtlVector<float32> |  |
+| `m_Nodes` | CUtlVector< uint16 > |  |
+| `m_InitPos` | CUtlVector< Vector > |  |
+| `m_Gravity` | CUtlVector< float32 > |  |
+| `m_GoalStrength` | CUtlVector< float32 > |  |
+| `m_GoalDamping` | CUtlVector< float32 > |  |
 
 ### CFeNamedJiggleBone
 
@@ -407,7 +408,15 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_Array` | CUtlVector<[FeVertexMapBuild_t](../schemas/physicslib.md#fevertexmapbuild_t)*> |  |
+| `m_Array` | CUtlVector< [FeVertexMapBuild_t](../schemas/physicslib.md#fevertexmapbuild_t)* > |  |
+
+### CGenericShapeProxy
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_verts` | CUtlLeanVectorFixedGrowable< Vector, 8 > |  |
 
 ### CRegionSVM
 
@@ -427,30 +436,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_Planes` | CUtlVector<[RnPlane_t](../schemas/physicslib.md#rnplane_t)> |  |
-| `m_Nodes` | CUtlVector<uint32> |  |
-
-### CastSphereSATParams_t
-
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
-
-**Relationships:**
-
-```mermaid
-classDiagram
-    CastSphereSATParams_t --> RnHull_t
-```
-
-**Fields:**
-
-| Name | Type | Annotations |
-|------|------|-------------|
-| `m_vRayStart` | Vector |  |
-| `m_vRayDelta` | Vector |  |
-| `m_flRadius` | float32 |  |
-| `m_flMaxFraction` | float32 |  |
-| `m_flScale` | float32 |  |
-| `m_pHull` | [RnHull_t](../schemas/physicslib.md#rnhull_t)* |  |
+| `m_Planes` | CUtlVector< [RnPlane_t](../schemas/physicslib.md#rnplane_t) > |  |
+| `m_Nodes` | CUtlVector< uint32 > |  |
 
 ### CollisionDetailLayerInfo_t
 
@@ -463,17 +450,17 @@ classDiagram
 	[
 	],
 	"m_bNotPickable": false
-}`, `MVDataRoot`, `MVDataOutlinerLeafNameFn`
+}`, `MVDataOutlinerLeafNameFn`, `MVDataRoot`
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_sDescription` | CUtlString | `MPropertyFriendlyName "Description"` `MPropertyDescription "How the detail layer is meant to be used"` |
-| `m_sFriendlyName` | CUtlString | `MPropertyFriendlyName "Friendly Name"` `MPropertyDescription "How name is displayed in tools"` |
-| `m_bIsQueryOnly` | bool | `MPropertyDescription "Only query can use this layer, not collision"` |
-| `m_sParentDetailLayer` | CUtlString | `MPropertyDescription "Parent detail layers automatically include the child layer"` |
-| `m_vecSubtreeDetailLayers` | CUtlVector<[CollisionDetailLayerInfo_t](../schemas/physicslib.md#collisiondetaillayerinfo_t)::Name_t> | `MPropertySuppressField` |
+| `m_sDescription` | CUtlString | `MPropertyDescription How the detail layer is meant to be used` `MPropertyFriendlyName Description` |
+| `m_sFriendlyName` | CUtlString | `MPropertyDescription How name is displayed in tools` `MPropertyFriendlyName Friendly Name` |
+| `m_bIsQueryOnly` | bool | `MPropertyDescription Only query can use this layer, not collision` |
+| `m_sParentDetailLayer` | CUtlString | `MPropertyDescription Parent detail layers automatically include the child layer` |
+| `m_vecSubtreeDetailLayers` | CUtlVector< [CollisionDetailLayerInfo_t](../schemas/physicslib.md#collisiondetaillayerinfo_t)::Name_t > | `MPropertySuppressField` |
 | `m_bNotPickable` | bool | `MPropertySuppressField` |
 
 ### CollisionDetailLayerInfo_t::Name_t
@@ -515,23 +502,13 @@ classDiagram
 
 ### Dop26_t
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_flSupport` | float32[26] |  |
-
-### DynamicContinuousContactBehavior_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `DYNAMIC_CONTINUOUS_ALLOW_IF_REQUESTED_BY_OTHER_BODY` | 0 |  |
-| `DYNAMIC_CONTINUOUS_ALWAYS` | 1 |  |
-| `DYNAMIC_CONTINUOUS_NEVER` | 2 |  |
 
 ### FeAnimStrayRadius_t
 
@@ -591,7 +568,7 @@ classDiagram
 | `flCurvature` | float32 |  |
 | `nFlags` | uint32 |  |
 | `nProbeNode` | uint16 |  |
-| `targetNodes` | CUtlVector<uint16> |  |
+| `targetNodes` | CUtlVector< uint16 > |  |
 
 ### FeAntiTunnelProbe_t
 
@@ -676,6 +653,20 @@ classDiagram
 | `flDistMin` | float32 |  |
 | `flDistMax` | float32 |  |
 | `nNode` | uint16[6] |  |
+
+### FeBoneMergeLink_t
+
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nParentHash": 0,
+	"m_nChildNode": 0
+}`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nParentHash` | uint32 |  |
+| `m_nChildNode` | uint16 |  |
 
 ### FeBoxRigid_t
 
@@ -992,7 +983,7 @@ classDiagram
 ### FeDynKinLink_t
 
 **Metadata:** `MGetKV3ClassDefaults {
-	"m_nParent": 5,
+	"m_nParent": 0,
 	"m_nChild": 0
 }`
 
@@ -1245,7 +1236,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_Name` | CUtlString |  |
-| `m_Nodes` | CUtlVector<uint16> |  |
+| `m_Nodes` | CUtlVector< uint16 > |  |
 | `m_flParentReaction` | float32 |  |
 | `m_nFlags` | uint32 |  |
 | `m_nEndIdx` | uint32[4] |  |
@@ -1279,11 +1270,11 @@ classDiagram
 |------|------|-------------|
 | `m_Name` | CUtlString |  |
 | `m_nNameHash` | uint32 |  |
-| `m_Nodes` | CUtlVector<uint16> |  |
-| `m_InitPos` | CUtlVector<Vector> |  |
-| `m_Gravity` | CUtlVector<float32> |  |
-| `m_GoalStrength` | CUtlVector<float32> |  |
-| `m_GoalDamping` | CUtlVector<float32> |  |
+| `m_Nodes` | CUtlVector< uint16 > |  |
+| `m_InitPos` | CUtlVector< Vector > |  |
+| `m_Gravity` | CUtlVector< float32 > |  |
+| `m_GoalStrength` | CUtlVector< float32 > |  |
+| `m_GoalDamping` | CUtlVector< float32 > |  |
 | `m_nFlags` | uint32 |  |
 
 ### FeNodeBase_t
@@ -1564,7 +1555,7 @@ classDiagram
 | `nCollisionMask` | uint16 |  |
 | `nVertexMapIndex` | uint16 |  |
 | `nFlags` | uint16 |  |
-| `m_Distances` | CUtlVector<float32> |  |
+| `m_Distances` | CUtlVector< float32 > |  |
 | `m_nWidth` | int32 |  |
 | `m_nHeight` | int32 |  |
 | `m_nDepth` | int32 |  |
@@ -2345,7 +2336,7 @@ classDiagram
 | `m_Color` | Color |  |
 | `m_flVolumetricSolveStrength` | float32 |  |
 | `m_nScaleSourceNode` | int32 |  |
-| `m_Weights` | CUtlVector<float32> |  |
+| `m_Weights` | CUtlVector< float32 > |  |
 
 ### FeVertexMapDesc_t
 
@@ -2420,7 +2411,7 @@ classDiagram
 
 ### FourCovMatrices3
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Fields:**
 
@@ -2456,27 +2447,6 @@ classDiagram
 |------|------|-------------|
 | `x` | fltx4 |  |
 | `y` | fltx4 |  |
-
-### JointAxis_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `JOINT_AXIS_X` | 0 |  |
-| `JOINT_AXIS_Y` | 1 |  |
-| `JOINT_AXIS_Z` | 2 |  |
-| `JOINT_AXIS_COUNT` | 3 |  |
-
-### JointMotion_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `JOINT_MOTION_FREE` | 0 |  |
-| `JOINT_MOTION_LOCKED` | 1 |  |
-| `JOINT_MOTION_COUNT` | 2 |  |
 
 ### OldFeEdge_t
 
@@ -2595,6 +2565,9 @@ classDiagram
 	[
 	],
 	"m_DynKinLinks":
+	[
+	],
+	"m_BoneMergeLinks":
 	[
 	],
 	"m_AntiTunnelProbes":
@@ -2800,8 +2773,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_CtrlHash` | CUtlVector<uint32> |  |
-| `m_CtrlName` | CUtlVector<CUtlString> |  |
+| `m_CtrlHash` | CUtlVector< uint32 > |  |
+| `m_CtrlName` | CUtlVector< CUtlString > |  |
 | `m_nStaticNodeFlags` | uint32 |  |
 | `m_nDynamicNodeFlags` | uint32 |  |
 | `m_flLocalForce` | float32 |  |
@@ -2819,78 +2792,79 @@ classDiagram
 | `m_nTreeDepth` | uint16 |  |
 | `m_nNodeBaseJiggleboneDependsCount` | uint16 |  |
 | `m_nRopeCount` | uint16 |  |
-| `m_Ropes` | CUtlVector<uint16> |  |
-| `m_NodeBases` | CUtlVector<[FeNodeBase_t](../schemas/physicslib.md#fenodebase_t)> |  |
-| `m_SimdNodeBases` | CUtlVector<[FeSimdNodeBase_t](../schemas/physicslib.md#fesimdnodebase_t)> |  |
-| `m_Quads` | CUtlVector<[FeQuad_t](../schemas/physicslib.md#fequad_t)> |  |
-| `m_SimdQuads` | CUtlVector<[FeSimdQuad_t](../schemas/physicslib.md#fesimdquad_t)> |  |
-| `m_SimdTris` | CUtlVector<[FeSimdTri_t](../schemas/physicslib.md#fesimdtri_t)> |  |
-| `m_SimdRods` | CUtlVector<[FeSimdRodConstraint_t](../schemas/physicslib.md#fesimdrodconstraint_t)> |  |
-| `m_SimdRodsAnim` | CUtlVector<[FeSimdRodConstraintAnim_t](../schemas/physicslib.md#fesimdrodconstraintanim_t)> |  |
-| `m_InitPose` | CUtlVector<CTransform> |  |
-| `m_Rods` | CUtlVector<[FeRodConstraint_t](../schemas/physicslib.md#ferodconstraint_t)> |  |
-| `m_Twists` | CUtlVector<[FeTwistConstraint_t](../schemas/physicslib.md#fetwistconstraint_t)> |  |
-| `m_HingeLimits` | CUtlVector<[FeHingeLimit_t](../schemas/physicslib.md#fehingelimit_t)> |  |
-| `m_AntiTunnelBytecode` | CUtlVector<uint32> |  |
-| `m_DynKinLinks` | CUtlVector<[FeDynKinLink_t](../schemas/physicslib.md#fedynkinlink_t)> |  |
-| `m_AntiTunnelProbes` | CUtlVector<[FeAntiTunnelProbe_t](../schemas/physicslib.md#feantitunnelprobe_t)> |  |
-| `m_AntiTunnelTargetNodes` | CUtlVector<uint16> |  |
-| `m_NodeStrayBoxes` | CUtlVector<[FeNodeStrayBox_t](../schemas/physicslib.md#fenodestraybox_t)> |  |
-| `m_AxialEdges` | CUtlVector<[FeAxialEdgeBend_t](../schemas/physicslib.md#feaxialedgebend_t)> |  |
-| `m_NodeInvMasses` | CUtlVector<float32> |  |
-| `m_CtrlOffsets` | CUtlVector<[FeCtrlOffset_t](../schemas/physicslib.md#fectrloffset_t)> |  |
-| `m_CtrlOsOffsets` | CUtlVector<[FeCtrlOsOffset_t](../schemas/physicslib.md#fectrlosoffset_t)> |  |
-| `m_FollowNodes` | CUtlVector<[FeFollowNode_t](../schemas/physicslib.md#fefollownode_t)> |  |
-| `m_CollisionPlanes` | CUtlVector<[FeCollisionPlane_t](../schemas/physicslib.md#fecollisionplane_t)> |  |
-| `m_NodeIntegrator` | CUtlVector<[FeNodeIntegrator_t](../schemas/physicslib.md#fenodeintegrator_t)> |  |
-| `m_SpringIntegrator` | CUtlVector<[FeSpringIntegrator_t](../schemas/physicslib.md#fespringintegrator_t)> |  |
-| `m_SimdSpringIntegrator` | CUtlVector<[FeSimdSpringIntegrator_t](../schemas/physicslib.md#fesimdspringintegrator_t)> |  |
-| `m_WorldCollisionParams` | CUtlVector<[FeWorldCollisionParams_t](../schemas/physicslib.md#feworldcollisionparams_t)> |  |
-| `m_LegacyStretchForce` | CUtlVector<float32> |  |
-| `m_NodeCollisionRadii` | CUtlVector<float32> |  |
-| `m_DynNodeFriction` | CUtlVector<float32> |  |
-| `m_LocalRotation` | CUtlVector<float32> |  |
-| `m_LocalForce` | CUtlVector<float32> |  |
-| `m_TaperedCapsuleStretches` | CUtlVector<[FeTaperedCapsuleStretch_t](../schemas/physicslib.md#fetaperedcapsulestretch_t)> |  |
-| `m_TaperedCapsuleRigids` | CUtlVector<[FeTaperedCapsuleRigid_t](../schemas/physicslib.md#fetaperedcapsulerigid_t)> |  |
-| `m_SphereRigids` | CUtlVector<[FeSphereRigid_t](../schemas/physicslib.md#fesphererigid_t)> |  |
-| `m_WorldCollisionNodes` | CUtlVector<uint16> |  |
-| `m_TreeParents` | CUtlVector<uint16> |  |
-| `m_TreeCollisionMasks` | CUtlVector<uint16> |  |
-| `m_TreeChildren` | CUtlVector<[FeTreeChildren_t](../schemas/physicslib.md#fetreechildren_t)> |  |
-| `m_FreeNodes` | CUtlVector<uint16> |  |
-| `m_FitMatrices` | CUtlVector<[FeFitMatrix_t](../schemas/physicslib.md#fefitmatrix_t)> |  |
-| `m_FitWeights` | CUtlVector<[FeFitWeight_t](../schemas/physicslib.md#fefitweight_t)> |  |
-| `m_ReverseOffsets` | CUtlVector<[FeNodeReverseOffset_t](../schemas/physicslib.md#fenodereverseoffset_t)> |  |
-| `m_AnimStrayRadii` | CUtlVector<[FeAnimStrayRadius_t](../schemas/physicslib.md#feanimstrayradius_t)> |  |
-| `m_SimdAnimStrayRadii` | CUtlVector<[FeSimdAnimStrayRadius_t](../schemas/physicslib.md#fesimdanimstrayradius_t)> |  |
-| `m_KelagerBends` | CUtlVector<[FeKelagerBend2_t](../schemas/physicslib.md#fekelagerbend2_t)> |  |
-| `m_CtrlSoftOffsets` | CUtlVector<[FeCtrlSoftOffset_t](../schemas/physicslib.md#fectrlsoftoffset_t)> |  |
-| `m_JiggleBones` | CUtlVector<[CFeIndexedJiggleBone](../schemas/physicslib.md#cfeindexedjigglebone)> |  |
-| `m_SourceElems` | CUtlVector<uint16> |  |
-| `m_GoalDampedSpringIntegrators` | CUtlVector<uint32> |  |
-| `m_Tris` | CUtlVector<[FeTri_t](../schemas/physicslib.md#fetri_t)> |  |
+| `m_Ropes` | CUtlVector< uint16 > |  |
+| `m_NodeBases` | CUtlVector< [FeNodeBase_t](../schemas/physicslib.md#fenodebase_t) > |  |
+| `m_SimdNodeBases` | CUtlVector< [FeSimdNodeBase_t](../schemas/physicslib.md#fesimdnodebase_t) > |  |
+| `m_Quads` | CUtlVector< [FeQuad_t](../schemas/physicslib.md#fequad_t) > |  |
+| `m_SimdQuads` | CUtlVector< [FeSimdQuad_t](../schemas/physicslib.md#fesimdquad_t) > |  |
+| `m_SimdTris` | CUtlVector< [FeSimdTri_t](../schemas/physicslib.md#fesimdtri_t) > |  |
+| `m_SimdRods` | CUtlVector< [FeSimdRodConstraint_t](../schemas/physicslib.md#fesimdrodconstraint_t) > |  |
+| `m_SimdRodsAnim` | CUtlVector< [FeSimdRodConstraintAnim_t](../schemas/physicslib.md#fesimdrodconstraintanim_t) > |  |
+| `m_InitPose` | CUtlVector< CTransform > |  |
+| `m_Rods` | CUtlVector< [FeRodConstraint_t](../schemas/physicslib.md#ferodconstraint_t) > |  |
+| `m_Twists` | CUtlVector< [FeTwistConstraint_t](../schemas/physicslib.md#fetwistconstraint_t) > |  |
+| `m_HingeLimits` | CUtlVector< [FeHingeLimit_t](../schemas/physicslib.md#fehingelimit_t) > |  |
+| `m_AntiTunnelBytecode` | CUtlVector< uint32 > |  |
+| `m_DynKinLinks` | CUtlVector< [FeDynKinLink_t](../schemas/physicslib.md#fedynkinlink_t) > |  |
+| `m_BoneMergeLinks` | CUtlVector< [FeBoneMergeLink_t](../schemas/physicslib.md#febonemergelink_t) > |  |
+| `m_AntiTunnelProbes` | CUtlVector< [FeAntiTunnelProbe_t](../schemas/physicslib.md#feantitunnelprobe_t) > |  |
+| `m_AntiTunnelTargetNodes` | CUtlVector< uint16 > |  |
+| `m_NodeStrayBoxes` | CUtlVector< [FeNodeStrayBox_t](../schemas/physicslib.md#fenodestraybox_t) > |  |
+| `m_AxialEdges` | CUtlVector< [FeAxialEdgeBend_t](../schemas/physicslib.md#feaxialedgebend_t) > |  |
+| `m_NodeInvMasses` | CUtlVector< float32 > |  |
+| `m_CtrlOffsets` | CUtlVector< [FeCtrlOffset_t](../schemas/physicslib.md#fectrloffset_t) > |  |
+| `m_CtrlOsOffsets` | CUtlVector< [FeCtrlOsOffset_t](../schemas/physicslib.md#fectrlosoffset_t) > |  |
+| `m_FollowNodes` | CUtlVector< [FeFollowNode_t](../schemas/physicslib.md#fefollownode_t) > |  |
+| `m_CollisionPlanes` | CUtlVector< [FeCollisionPlane_t](../schemas/physicslib.md#fecollisionplane_t) > |  |
+| `m_NodeIntegrator` | CUtlVector< [FeNodeIntegrator_t](../schemas/physicslib.md#fenodeintegrator_t) > |  |
+| `m_SpringIntegrator` | CUtlVector< [FeSpringIntegrator_t](../schemas/physicslib.md#fespringintegrator_t) > |  |
+| `m_SimdSpringIntegrator` | CUtlVector< [FeSimdSpringIntegrator_t](../schemas/physicslib.md#fesimdspringintegrator_t) > |  |
+| `m_WorldCollisionParams` | CUtlVector< [FeWorldCollisionParams_t](../schemas/physicslib.md#feworldcollisionparams_t) > |  |
+| `m_LegacyStretchForce` | CUtlVector< float32 > |  |
+| `m_NodeCollisionRadii` | CUtlVector< float32 > |  |
+| `m_DynNodeFriction` | CUtlVector< float32 > |  |
+| `m_LocalRotation` | CUtlVector< float32 > |  |
+| `m_LocalForce` | CUtlVector< float32 > |  |
+| `m_TaperedCapsuleStretches` | CUtlVector< [FeTaperedCapsuleStretch_t](../schemas/physicslib.md#fetaperedcapsulestretch_t) > |  |
+| `m_TaperedCapsuleRigids` | CUtlVector< [FeTaperedCapsuleRigid_t](../schemas/physicslib.md#fetaperedcapsulerigid_t) > |  |
+| `m_SphereRigids` | CUtlVector< [FeSphereRigid_t](../schemas/physicslib.md#fesphererigid_t) > |  |
+| `m_WorldCollisionNodes` | CUtlVector< uint16 > |  |
+| `m_TreeParents` | CUtlVector< uint16 > |  |
+| `m_TreeCollisionMasks` | CUtlVector< uint16 > |  |
+| `m_TreeChildren` | CUtlVector< [FeTreeChildren_t](../schemas/physicslib.md#fetreechildren_t) > |  |
+| `m_FreeNodes` | CUtlVector< uint16 > |  |
+| `m_FitMatrices` | CUtlVector< [FeFitMatrix_t](../schemas/physicslib.md#fefitmatrix_t) > |  |
+| `m_FitWeights` | CUtlVector< [FeFitWeight_t](../schemas/physicslib.md#fefitweight_t) > |  |
+| `m_ReverseOffsets` | CUtlVector< [FeNodeReverseOffset_t](../schemas/physicslib.md#fenodereverseoffset_t) > |  |
+| `m_AnimStrayRadii` | CUtlVector< [FeAnimStrayRadius_t](../schemas/physicslib.md#feanimstrayradius_t) > |  |
+| `m_SimdAnimStrayRadii` | CUtlVector< [FeSimdAnimStrayRadius_t](../schemas/physicslib.md#fesimdanimstrayradius_t) > |  |
+| `m_KelagerBends` | CUtlVector< [FeKelagerBend2_t](../schemas/physicslib.md#fekelagerbend2_t) > |  |
+| `m_CtrlSoftOffsets` | CUtlVector< [FeCtrlSoftOffset_t](../schemas/physicslib.md#fectrlsoftoffset_t) > |  |
+| `m_JiggleBones` | CUtlVector< [CFeIndexedJiggleBone](../schemas/physicslib.md#cfeindexedjigglebone) > |  |
+| `m_SourceElems` | CUtlVector< uint16 > |  |
+| `m_GoalDampedSpringIntegrators` | CUtlVector< uint32 > |  |
+| `m_Tris` | CUtlVector< [FeTri_t](../schemas/physicslib.md#fetri_t) > |  |
 | `m_nTriCount1` | uint16 |  |
 | `m_nTriCount2` | uint16 |  |
 | `m_nReservedUint8` | uint8 |  |
 | `m_nExtraPressureIterations` | uint8 |  |
 | `m_nExtraGoalIterations` | uint8 |  |
 | `m_nExtraIterations` | uint8 |  |
-| `m_SDFRigids` | CUtlVector<[FeSDFRigid_t](../schemas/physicslib.md#fesdfrigid_t)> |  |
-| `m_BoxRigids` | CUtlVector<[FeBoxRigid_t](../schemas/physicslib.md#feboxrigid_t)> |  |
-| `m_DynNodeVertexSet` | CUtlVector<uint8> |  |
-| `m_VertexSetNames` | CUtlVector<uint32> |  |
-| `m_RigidColliderPriorities` | CUtlVector<[FeRigidColliderIndices_t](../schemas/physicslib.md#ferigidcolliderindices_t)> |  |
-| `m_MorphLayers` | CUtlVector<[FeMorphLayerDepr_t](../schemas/physicslib.md#femorphlayerdepr_t)> |  |
-| `m_MorphSetData` | CUtlVector<uint8> |  |
-| `m_VertexMaps` | CUtlVector<[FeVertexMapDesc_t](../schemas/physicslib.md#fevertexmapdesc_t)> |  |
-| `m_VertexMapValues` | CUtlVector<uint8> |  |
-| `m_Effects` | CUtlVector<[FeEffectDesc_t](../schemas/physicslib.md#feeffectdesc_t)> |  |
-| `m_LockToParent` | CUtlVector<[FeCtrlOffset_t](../schemas/physicslib.md#fectrloffset_t)> |  |
-| `m_LockToGoal` | CUtlVector<uint16> |  |
-| `m_SkelParents` | CUtlVector<int16> |  |
-| `m_DynNodeWindBases` | CUtlVector<[FeNodeWindBase_t](../schemas/physicslib.md#fenodewindbase_t)> |  |
-| `m_SelfCollisionLayers` | CUtlVector<[FeModelSelfCollisionLayer_t](../schemas/physicslib.md#femodelselfcollisionlayer_t)> |  |
+| `m_SDFRigids` | CUtlVector< [FeSDFRigid_t](../schemas/physicslib.md#fesdfrigid_t) > |  |
+| `m_BoxRigids` | CUtlVector< [FeBoxRigid_t](../schemas/physicslib.md#feboxrigid_t) > |  |
+| `m_DynNodeVertexSet` | CUtlVector< uint8 > |  |
+| `m_VertexSetNames` | CUtlVector< uint32 > |  |
+| `m_RigidColliderPriorities` | CUtlVector< [FeRigidColliderIndices_t](../schemas/physicslib.md#ferigidcolliderindices_t) > |  |
+| `m_MorphLayers` | CUtlVector< [FeMorphLayerDepr_t](../schemas/physicslib.md#femorphlayerdepr_t) > |  |
+| `m_MorphSetData` | CUtlVector< uint8 > |  |
+| `m_VertexMaps` | CUtlVector< [FeVertexMapDesc_t](../schemas/physicslib.md#fevertexmapdesc_t) > |  |
+| `m_VertexMapValues` | CUtlVector< uint8 > |  |
+| `m_Effects` | CUtlVector< [FeEffectDesc_t](../schemas/physicslib.md#feeffectdesc_t) > |  |
+| `m_LockToParent` | CUtlVector< [FeCtrlOffset_t](../schemas/physicslib.md#fectrloffset_t) > |  |
+| `m_LockToGoal` | CUtlVector< uint16 > |  |
+| `m_SkelParents` | CUtlVector< int16 > |  |
+| `m_DynNodeWindBases` | CUtlVector< [FeNodeWindBase_t](../schemas/physicslib.md#fenodewindbase_t) > |  |
+| `m_SelfCollisionLayers` | CUtlVector< [FeModelSelfCollisionLayer_t](../schemas/physicslib.md#femodelselfcollisionlayer_t) > |  |
 | `m_flInternalPressure` | float32 |  |
 | `m_flDefaultTimeDilation` | float32 |  |
 | `m_flWindage` | float32 |  |
@@ -2910,6 +2884,16 @@ classDiagram
 | `m_flLocalDrag1` | float32 |  |
 | `m_nRodVelocitySmoothIterations` | uint16 |  |
 | `m_nQuadVelocitySmoothIterations` | uint16 |  |
+
+### PhysicsParticleId_t
+
+**Metadata:** `MIsBoxedIntegerType`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Value` | uint32 |  |
 
 ### RnBlendVertex_t
 
@@ -2943,12 +2927,7 @@ classDiagram
 
 **Metadata:** `MGetKV3ClassDefaults {
 	"m_sDebugName": "",
-	"m_vPosition":
-	[
-		0.000000,
-		0.000000,
-		0.000000
-	],
+	"m_vPosition": null,
 	"m_qOrientation":
 	[
 		0.000000,
@@ -2992,7 +2971,7 @@ classDiagram
 			0.000000
 		]
 	],
-	"m_flMassInv": 0.000000,
+	"m_flMassInv": <HIDDEN FOR DIFF>,
 	"m_flGameMass": 0.000000,
 	"m_flMassScaleInv": 1.000000,
 	"m_flInertiaScaleInv": 1.000000,
@@ -3051,7 +3030,7 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_sDebugName` | CUtlString |  |
-| `m_vPosition` | Vector |  |
+| `m_vPosition` | VectorWS |  |
 | `m_qOrientation` | QuaternionStorage |  |
 | `m_vLinearVelocity` | Vector |  |
 | `m_vAngularVelocity` | Vector |  |
@@ -3085,7 +3064,7 @@ classDiagram
 | `m_vGravity` | Vector |  |
 | `m_bSpeculativeEnabled` | bool |  |
 | `m_bHasShadowController` | bool |  |
-| `m_nDynamicContinuousContactBehavior` | [DynamicContinuousContactBehavior_t](../schemas/physicslib.md#dynamiccontinuouscontactbehavior_t) |  |
+| `m_nDynamicContinuousContactBehavior` | [DynamicContinuousContactBehavior_t](../schemas/!GlobalTypes.md#dynamiccontinuouscontactbehavior_t) |  |
 
 ### RnCapsuleDesc_t
 
@@ -3157,6 +3136,134 @@ classDiagram
 | `m_vCenter` | Vector[2] |  |
 | `m_flRadius` | float32 |  |
 
+### RnCompoundDesc_t
+
+**Inherits from:** [RnShapeDesc_t](physicslib.md#rnshapedesc_t)
+
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_nCollisionAttributeIndex": 0,
+	"m_nSurfacePropertyIndex": 0,
+	"m_UserFriendlyName": "",
+	"m_bUserFriendlyNameSealed": false,
+	"m_bUserFriendlyNameLong": false,
+	"m_nToolMaterialHash": 0,
+	"m_Compound":
+	{
+		"m_Spheres":
+		[
+		],
+		"m_Capsules":
+		[
+		],
+		"m_Hulls":
+		[
+		],
+		"m_Meshes":
+		[
+		],
+		"m_Bounds":
+		{
+			"m_vMinBounds":
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			"m_vMaxBounds":
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			]
+		},
+		"m_vOrthographicAreas":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_flSurfaceArea": 0.000000,
+		"m_flVolume": 0.000000
+	}
+}`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    RnShapeDesc_t <|-- RnCompoundDesc_t
+    RnCompoundDesc_t *-- RnCompound_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Compound` | [RnCompound_t](../schemas/physicslib.md#rncompound_t) |  |
+
+### RnCompound_t
+
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Spheres":
+	[
+	],
+	"m_Capsules":
+	[
+	],
+	"m_Hulls":
+	[
+	],
+	"m_Meshes":
+	[
+	],
+	"m_Bounds":
+	{
+		"m_vMinBounds":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		"m_vMaxBounds":
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		]
+	},
+	"m_vOrthographicAreas":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_flSurfaceArea": 0.000000,
+	"m_flVolume": 0.000000
+}`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    RnCompound_t *-- RnCapsule_t
+    RnCompound_t *-- RnHull_t
+    RnCompound_t *-- RnMesh_t
+    RnCompound_t *-- AABB_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Spheres` | CUtlVector< RnSphere_t > |  |
+| `m_Capsules` | CUtlVector< [RnCapsule_t](../schemas/physicslib.md#rncapsule_t) > |  |
+| `m_Hulls` | CUtlVector< [RnHull_t](../schemas/physicslib.md#rnhull_t) > |  |
+| `m_Meshes` | CUtlVector< [RnMesh_t](../schemas/physicslib.md#rnmesh_t) > |  |
+| `m_Bounds` | [AABB_t](../schemas/mathlib_extended.md#aabb_t) |  |
+| `m_vOrthographicAreas` | Vector |  |
+| `m_flSurfaceArea` | float32 |  |
+| `m_flVolume` | float32 |  |
+
 ### RnFace_t
 
 **Metadata:** `MGetKV3ClassDefaults {
@@ -3172,7 +3279,7 @@ classDiagram
 ### RnHalfEdge_t
 
 **Metadata:** `MGetKV3ClassDefaults {
-	"m_nNext": 5,
+	"m_nNext": 0,
 	"m_nTwin": 0,
 	"m_nOrigin": 0,
 	"m_nFace": 0
@@ -3331,11 +3438,11 @@ classDiagram
 ```mermaid
 classDiagram
     RnHull_t *-- AABB_t
+    RnHull_t *-- RnPlane_t
+    RnHull_t --> CRegionSVM
     RnHull_t *-- RnVertex_t
     RnHull_t *-- RnHalfEdge_t
     RnHull_t *-- RnFace_t
-    RnHull_t *-- RnPlane_t
-    RnHull_t --> CRegionSVM
 ```
 
 **Fields:**
@@ -3349,13 +3456,13 @@ classDiagram
 | `m_MassProperties` | matrix3x4_t |  |
 | `m_flVolume` | float32 |  |
 | `m_flSurfaceArea` | float32 |  |
-| `m_Vertices` | CUtlVector<[RnVertex_t](../schemas/physicslib.md#rnvertex_t)> |  |
-| `m_VertexPositions` | CUtlVector<Vector> |  |
-| `m_Edges` | CUtlVector<[RnHalfEdge_t](../schemas/physicslib.md#rnhalfedge_t)> |  |
-| `m_Faces` | CUtlVector<[RnFace_t](../schemas/physicslib.md#rnface_t)> |  |
-| `m_FacePlanes` | CUtlVector<[RnPlane_t](../schemas/physicslib.md#rnplane_t)> |  |
+| `m_VertexPositions` | CUtlVector< Vector > |  |
+| `m_FacePlanes` | CUtlVector< [RnPlane_t](../schemas/physicslib.md#rnplane_t) > |  |
 | `m_nFlags` | uint32 |  |
 | `m_pRegionSVM` | [CRegionSVM](../schemas/physicslib.md#cregionsvm)* |  |
+| `m_Vertices` | CUtlVector< [RnVertex_t](../schemas/physicslib.md#rnvertex_t) > |  |
+| `m_Edges` | CUtlVector< [RnHalfEdge_t](../schemas/physicslib.md#rnhalfedge_t) > |  |
+| `m_Faces` | CUtlVector< [RnFace_t](../schemas/physicslib.md#rnface_t) > |  |
 
 ### RnMeshDesc_t
 
@@ -3459,12 +3566,12 @@ classDiagram
 |------|------|-------------|
 | `m_vMin` | Vector |  |
 | `m_vMax` | Vector |  |
-| `m_Nodes` | CUtlVector<[RnNode_t](../schemas/physicslib.md#rnnode_t)> |  |
+| `m_Nodes` | CUtlVector< [RnNode_t](../schemas/physicslib.md#rnnode_t) > |  |
 | `m_Vertices` | CUtlVectorSIMDPaddedVector |  |
-| `m_Triangles` | CUtlVector<[RnTriangle_t](../schemas/physicslib.md#rntriangle_t)> |  |
-| `m_Wings` | CUtlVector<[RnWing_t](../schemas/physicslib.md#rnwing_t)> |  |
-| `m_TriangleEdgeFlags` | CUtlVector<uint8> |  |
-| `m_Materials` | CUtlVector<uint8> |  |
+| `m_Triangles` | CUtlVector< [RnTriangle_t](../schemas/physicslib.md#rntriangle_t) > |  |
+| `m_Wings` | CUtlVector< [RnWing_t](../schemas/physicslib.md#rnwing_t) > |  |
+| `m_TriangleEdgeFlags` | CUtlVector< uint8 > |  |
+| `m_Materials` | CUtlVector< uint8 > |  |
 | `m_vOrthographicAreas` | Vector |  |
 | `m_nFlags` | uint32 |  |
 | `m_nDebugFlags` | uint32 |  |
@@ -3518,7 +3625,7 @@ classDiagram
 
 ### RnShapeDesc_t
 
-**Derived by:** [RnCapsuleDesc_t](physicslib.md#rncapsuledesc_t), [RnHullDesc_t](physicslib.md#rnhulldesc_t), [RnMeshDesc_t](physicslib.md#rnmeshdesc_t), [RnSphereDesc_t](physicslib.md#rnspheredesc_t)
+**Derived by:** [RnCapsuleDesc_t](physicslib.md#rncapsuledesc_t), [RnCompoundDesc_t](physicslib.md#rncompounddesc_t), [RnHullDesc_t](physicslib.md#rnhulldesc_t), [RnMeshDesc_t](physicslib.md#rnmeshdesc_t), [RnSphereDesc_t](physicslib.md#rnspheredesc_t)
 
 **Metadata:** `MGetKV3ClassDefaults {
 	"m_nCollisionAttributeIndex": 0,
@@ -3534,9 +3641,10 @@ classDiagram
 ```mermaid
 classDiagram
     RnShapeDesc_t <|-- RnCapsuleDesc_t
+    RnShapeDesc_t <|-- RnCompoundDesc_t
     RnShapeDesc_t <|-- RnHullDesc_t
-    RnShapeDesc_t <|-- RnSphereDesc_t
     RnShapeDesc_t <|-- RnMeshDesc_t
+    RnShapeDesc_t <|-- RnSphereDesc_t
 ```
 
 **Fields:**
@@ -3585,7 +3693,7 @@ classDiagram
 ### RnSoftbodyParticle_t
 
 **Metadata:** `MGetKV3ClassDefaults {
-	"m_flMassInv": -nan
+	"m_flMassInv": <HIDDEN FOR DIFF>,
 }`
 
 **Fields:**
@@ -3596,7 +3704,7 @@ classDiagram
 
 ### RnSoftbodySpring_t
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Fields:**
 
@@ -3639,7 +3747,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_Sphere` | SphereBase_t<float32> |  |
+| `m_Sphere` | RnSphere_t |  |
 
 ### RnTriangle_t
 

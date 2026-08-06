@@ -14,7 +14,10 @@ nav_exclude: true
 | [CDSPMixgroupModifier](#cdspmixgroupmodifier) | class |  | 6 |
 | [CDSPPresetMixgroupModifierTable](#cdsppresetmixgroupmodifiertable) | class |  | 1 |
 | [CDspPresetModifierList](#cdsppresetmodifierlist) | class |  | 2 |
-| [CSndSeqInstBaseSchema](#csndseqinstbaseschema) | class |  | 6 |
+| [CSndBeatPattern](#csndbeatpattern) | class |  | 15 |
+| [CSndBeatPatternManager](#csndbeatpatternmanager) | class |  | 2 |
+| [CSndBeatTrack](#csndbeattrack) | class |  | 5 |
+| [CSndSeqInstBaseSchema](#csndseqinstbaseschema) | class |  | 5 |
 | [CSndSeqInstMidiSampler](#csndseqinstmidisampler) | class | CSndSeqInstBaseSchema | 11 |
 | [CSndSeqInstSndEvtSchema](#csndseqinstsndevtschema) | class | CSndSeqInstBaseSchema | 0 |
 | [CSndSeqInstruments](#csndseqinstruments) | class | ISndSeqInstruments | 0 |
@@ -31,24 +34,17 @@ nav_exclude: true
 | [CSosGroupActionTimeLimitSchema](#csosgroupactiontimelimitschema) | class | CSosGroupActionSchema | 1 |
 | [CSosSoundEventGroupSchema](#csossoundeventgroupschema) | class |  | 16 |
 | [CSoundEventMetaData](#csoundeventmetadata) | class |  | 1 |
+| [CVoiceContainerVMixSnd](#cvoicecontainervmixsnd) | class | CVoiceContainerBase | 0 |
 | [ISndSeqInstruments](#isndseqinstruments) | class |  | 0 |
 | [KeyGroup_t](#keygroup_t) | class |  | 5 |
 | [SamplerVoice_t](#samplervoice_t) | class |  | 1 |
 | [SelectedEditItemInfo_t](#selectededititeminfo_t) | class |  | 1 |
-| [SndSeqInstrumentType_t](#sndseqinstrumenttype_t) | enum |  | 3 |
-| [SndSeqMidiStatusType_t](#sndseqmidistatustype_t) | enum |  | 7 |
-| [SndSeqPlayerType_t](#sndseqplayertype_t) | enum |  | 3 |
-| [SndSeqQuantizeType_t](#sndseqquantizetype_t) | enum |  | 7 |
-| [SndSeqRegionType_t](#sndseqregiontype_t) | enum |  | 3 |
-| [SndSeqSyncType_t](#sndseqsynctype_t) | enum |  | 3 |
-| [SndSeqTrackPlaybackType_t](#sndseqtrackplaybacktype_t) | enum |  | 2 |
-| [SosActionLimitSortType_t](#sosactionlimitsorttype_t) | enum |  | 2 |
-| [SosActionSetParamSortType_t](#sosactionsetparamsorttype_t) | enum |  | 2 |
-| [SosActionStopType_t](#sosactionstoptype_t) | enum |  | 3 |
+| [SndBeatEventKeyedFloats_t](#sndbeateventkeyedfloats_t) | class | SndBeatEventKeys_t | 1 |
+| [SndBeatEventKeyedMidiNotes_t](#sndbeateventkeyedmidinotes_t) | class | SndBeatEventKeys_t | 3 |
+| [SndBeatEventKeyedSndEvts_t](#sndbeateventkeyedsndevts_t) | class | SndBeatEventKeys_t | 1 |
+| [SndBeatEventKeys_t](#sndbeateventkeys_t) | class |  | 1 |
+| [SndBeatTimeSignature_t](#sndbeattimesignature_t) | class |  | 2 |
 | [SosEditItemInfo_t](#sosedititeminfo_t) | class |  | 5 |
-| [SosEditItemType_t](#sosedititemtype_t) | enum |  | 6 |
-| [SosGroupFieldBehavior_t](#sosgroupfieldbehavior_t) | enum |  | 3 |
-| [SosGroupType_t](#sosgrouptype_t) | enum |  | 2 |
 | [VelocityZone_t](#velocityzone_t) | class |  | 4 |
 
 ---
@@ -68,12 +64,12 @@ nav_exclude: true
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_mixgroup` | CUtlString | `MPropertyDescription "Name of the mixgroup. TODO: needs to be autopopulated with mixgroups."` `MPropertyFriendlyName "Mixgroup Name"` |
-| `m_flModifier` | float32 | `MPropertyDescription "The amount to multiply the volume of the non-spatialized reverb/dsp by when at the max reverb blend distance. 1.0 leaves the volume unchanged."` `MPropertyFriendlyName "Max reverb gain amount for listener DSP."` |
-| `m_flModifierMin` | float32 | `MPropertyDescription "The amount to multiply the volume of the non-spatialized reverb/dsp by when at the min reverb blend distance. 1.0 leaves the volume unchanged."` `MPropertyFriendlyName "Min reverb gain amount amount for listener DSP."` |
-| `m_flSourceModifier` | float32 | `MPropertyDescription "If set to >= 0, we will use this mix modifier for source-specific DSP effects. Otherwise we will use the listener DSP value."` `MPropertyFriendlyName "Max reverb gain amount for source-specific DSP."` |
-| `m_flSourceModifierMin` | float32 | `MPropertyDescription "If set to >= 0, we will use this mix modifier for source-specific DSP effects. Otherwise we will use the listener DSP value."` `MPropertyFriendlyName "Min reverb gain amount for source-specific DSP."` |
-| `m_flListenerReverbModifierWhenSourceReverbIsActive` | float32 | `MPropertyDescription "When a source has source-specific DSP, this can be used as an additional mix stage for the listener reverb amount."` `MPropertyFriendlyName "Modification amount for listener DSP when source DSP is used."` |
+| `m_mixgroup` | CUtlString | `MPropertyDescription Name of the mixgroup. TODO: needs to be autopopulated with mixgroups.` `MPropertyFriendlyName Mixgroup Name` |
+| `m_flModifier` | float32 | `MPropertyDescription The amount to multiply the volume of the non-spatialized reverb/dsp by when at the max reverb blend distance. 1.0 leaves the volume unchanged.` `MPropertyFriendlyName Max reverb gain amount for listener DSP.` |
+| `m_flModifierMin` | float32 | `MPropertyDescription The amount to multiply the volume of the non-spatialized reverb/dsp by when at the min reverb blend distance. 1.0 leaves the volume unchanged.` `MPropertyFriendlyName Min reverb gain amount amount for listener DSP.` |
+| `m_flSourceModifier` | float32 | `MPropertyDescription If set to >= 0, we will use this mix modifier for source-specific DSP effects. Otherwise we will use the listener DSP value.` `MPropertyFriendlyName Max reverb gain amount for source-specific DSP.` |
+| `m_flSourceModifierMin` | float32 | `MPropertyDescription If set to >= 0, we will use this mix modifier for source-specific DSP effects. Otherwise we will use the listener DSP value.` `MPropertyFriendlyName Min reverb gain amount for source-specific DSP.` |
+| `m_flListenerReverbModifierWhenSourceReverbIsActive` | float32 | `MPropertyDescription When a source has source-specific DSP, this can be used as an additional mix stage for the listener reverb amount.` `MPropertyFriendlyName Modification amount for listener DSP when source DSP is used.` |
 
 ### CDSPPresetMixgroupModifierTable
 
@@ -81,7 +77,7 @@ nav_exclude: true
 	"m_table":
 	[
 	]
-}`, `MVDataRoot`, `MVDataNodeType 1`
+}`, `MVDataNodeType 1`, `MVDataRoot`
 
 **Relationships:**
 
@@ -94,7 +90,7 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_table` | CUtlVector<[CDspPresetModifierList](../schemas/soundsystem.md#cdsppresetmodifierlist)> | `MPropertyDescription "Table of mixgroup modifiers for effect names."` `MPropertyFriendlyName "Modifier Table"` |
+| `m_table` | CUtlVector< [CDspPresetModifierList](../schemas/soundsystem.md#cdsppresetmodifierlist) > | `MPropertyDescription Table of mixgroup modifiers for effect names.` `MPropertyFriendlyName Modifier Table` |
 
 ### CDspPresetModifierList
 
@@ -116,14 +112,133 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_dspName` | CUtlString | `MPropertyDescription "Name of the DSP effect / subgraph used."` `MPropertyFriendlyName "DSP Effect Name"` |
-| `m_modifiers` | CUtlVector<[CDSPMixgroupModifier](../schemas/soundsystem.md#cdspmixgroupmodifier)> | `MPropertyDescription "Set of modifiers for individual mix groups"` `MPropertyFriendlyName "Mixgroup Modifiers"` |
+| `m_dspName` | CUtlString | `MPropertyDescription Name of the DSP effect / subgraph used.` `MPropertyFriendlyName DSP Effect Name` |
+| `m_modifiers` | CUtlVector< [CDSPMixgroupModifier](../schemas/soundsystem.md#cdspmixgroupmodifier) > | `MPropertyDescription Set of modifiers for individual mix groups` `MPropertyFriendlyName Mixgroup Modifiers` |
+
+### CSndBeatPattern
+
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_launchSyncType": "eSndBeatLaunchSyncTypeReset",
+	"m_flSyncPriority": 0.000000,
+	"m_timeSignature":
+	{
+		"nNumerator": 4,
+		"nDenominator": 4
+	},
+	"m_flLength": 4.000000,
+	"m_bLooping": false,
+	"m_launchSyncEventType": "eSndBeatEventTypeBeat",
+	"m_flSyncBeatMult": 1.000000,
+	"m_playEventType": "eSndBeatEventTypeBeat",
+	"m_flPlayBeatMult": 1.000000,
+	"m_keyType": "eSndBeatPatternTypeNone",
+	"m_vecPatternKeys":
+	[
+	],
+	"m_vecPatternFloats":
+	[
+	],
+	"m_vecPatternSndEvts":
+	[
+	],
+	"m_vecPatternMidi":
+	[
+	]
+}`, `MPropertyArrayElementNameKey m_name`, `MVDataAnonymousNode`, `MVDataOutlinerNameExpr m_name`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CSndBeatPattern *-- SndBeatLaunchSyncType_t
+    CSndBeatPattern *-- SndBeatTimeSignature_t
+    CSndBeatPattern *-- SndBeatEventType_t
+    CSndBeatPattern *-- SndBeatKeyType_t
+    CSndBeatPattern *-- SndBeatEventKeys_t
+    CSndBeatPattern *-- SndBeatEventKeyedFloats_t
+    CSndBeatPattern *-- SndBeatEventKeyedSndEvts_t
+    CSndBeatPattern *-- SndBeatEventKeyedMidiNotes_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_name` | CUtlString | `MPropertyFriendlyName Pattern Name` |
+| `m_launchSyncType` | [SndBeatLaunchSyncType_t](../schemas/!GlobalTypes.md#sndbeatlaunchsynctype_t) | `MPropertyFriendlyName Pattern Launch Type` |
+| `m_flSyncPriority` | float32 | `MPropertyFriendlyName Pattern Launch Priority` |
+| `m_timeSignature` | [SndBeatTimeSignature_t](../schemas/soundsystem.md#sndbeattimesignature_t) | `MPropertyFriendlyName Time Signature` |
+| `m_flLength` | float32 | `MPropertyFriendlyName Length (beats)` |
+| `m_bLooping` | bool | `MPropertyFriendlyName Looping` |
+| `m_launchSyncEventType` | [SndBeatEventType_t](../schemas/!GlobalTypes.md#sndbeateventtype_t) | `MPropertyFriendlyName Launch Track Event Type` `MPropertyGroupName Launch Track` |
+| `m_flSyncBeatMult` | float32 | `MPropertyFriendlyName Launch Track Beat/Bar/Phrase/Length Multiplier` `MPropertyGroupName Launch Track` `MPropertySuppressExpr m_launchSyncEventType == eSndBeatPatternTypeKeys` |
+| `m_playEventType` | [SndBeatEventType_t](../schemas/!GlobalTypes.md#sndbeateventtype_t) | `MPropertyFriendlyName Play Track Event Type` `MPropertyGroupName Playback Track` |
+| `m_flPlayBeatMult` | float32 | `MPropertyFriendlyName Play Track Beat/Bar/Phrase/Length Multiplier` `MPropertyGroupName Playback Track` |
+| `m_keyType` | [SndBeatKeyType_t](../schemas/!GlobalTypes.md#sndbeatkeytype_t) | `MPropertyFriendlyName Key Type` |
+| `m_vecPatternKeys` | CUtlVector< [SndBeatEventKeys_t](../schemas/soundsystem.md#sndbeateventkeys_t) > | `MPropertySuppressExpr m_keyType != eSndBeatPatternTypeKeys` |
+| `m_vecPatternFloats` | CUtlVector< [SndBeatEventKeyedFloats_t](../schemas/soundsystem.md#sndbeateventkeyedfloats_t) > | `MPropertySuppressExpr m_keyType != eSndBeatPatternTypeKeyedFloats` |
+| `m_vecPatternSndEvts` | CUtlVector< [SndBeatEventKeyedSndEvts_t](../schemas/soundsystem.md#sndbeateventkeyedsndevts_t) > | `MPropertySuppressExpr m_keyType != eSndBeatPatternTypeKeyedSndEvts` |
+| `m_vecPatternMidi` | CUtlVector< [SndBeatEventKeyedMidiNotes_t](../schemas/soundsystem.md#sndbeateventkeyedmidinotes_t) > | `MPropertySuppressExpr m_keyType != eSndBeatPatternTypeKeyedMidi` |
+
+### CSndBeatPatternManager
+
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vecPatterns":
+	[
+	],
+	"m_vecActiveTracks":
+	[
+	]
+}`, `MPropertyFriendlyName Beat Pattern Library`, `MVDataRoot`, `MVDataSingleton`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CSndBeatPatternManager *-- CSndBeatPattern
+    CSndBeatPatternManager *-- CSndBeatTrack
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecPatterns` | CUtlVector< [CSndBeatPattern](../schemas/soundsystem.md#csndbeatpattern) > | `MPropertyFriendlyName Patterns` `MVDataPromoteField 0` |
+| `m_vecActiveTracks` | CUtlVector< [CSndBeatTrack](../schemas/soundsystem.md#csndbeattrack) > | `MPropertyFriendlyName Tracks` `MVDataPromoteField 0` |
+
+### CSndBeatTrack
+
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_name": "",
+	"m_playbackType": "eSndBeatTrackPlaybackTypeFwd",
+	"m_nTranspose": 0,
+	"m_bSyncToVoice": false,
+	"m_flBPM": 120.000000
+}`, `MPropertyArrayElementNameKey m_name`, `MVDataAnonymousNode`, `MVDataOutlinerNameExpr m_name`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CSndBeatTrack *-- SndBeatTrackPlaybackType_t
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_name` | CUtlString | `MPropertyFriendlyName Track Name` |
+| `m_playbackType` | [SndBeatTrackPlaybackType_t](../schemas/!GlobalTypes.md#sndbeattrackplaybacktype_t) | `MPropertyFriendlyName Playback Mode` |
+| `m_nTranspose` | int32 | `MPropertyFriendlyName Transpose` |
+| `m_bSyncToVoice` | bool | `MPropertyFriendlyName Sync To Voice` |
+| `m_flBPM` | float32 | `MPropertyFriendlyName BPM` |
 
 ### CSndSeqInstBaseSchema
 
 **Derived by:** [CSndSeqInstMidiSampler](soundsystem.md#csndseqinstmidisampler), [CSndSeqInstSndEvtSchema](soundsystem.md#csndseqinstsndevtschema)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`, `MPropertyAutoExpandSelf`, `MPropertyPolymorphicClass`
+**Metadata:** `MGetKV3ClassDefaults`, `MPropertyAutoExpandSelf`, `MPropertyPolymorphicClass`
 
 **Relationships:**
 
@@ -132,15 +247,13 @@ classDiagram
     CSndSeqInstBaseSchema <|-- CSndSeqInstMidiSampler
     CSndSeqInstBaseSchema <|-- CSndSeqInstSndEvtSchema
     CSndSeqInstBaseSchema *-- SndSeqInstrumentType_t
-    CSndSeqInstBaseSchema *-- SndSeqPlayerType_t
 ```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_nType` | [SndSeqInstrumentType_t](../schemas/soundsystem.md#sndseqinstrumenttype_t) |  |
-| `m_nPlayerType` | [SndSeqPlayerType_t](../schemas/soundsystem.md#sndseqplayertype_t) |  |
+| `m_nType` | [SndSeqInstrumentType_t](../schemas/!GlobalTypes.md#sndseqinstrumenttype_t) |  |
 | `m_bStopCurrentEvents` | bool |  |
 | `m_flBPM` | float32 |  |
 | `m_flBPMFactor` | float32 |  |
@@ -153,7 +266,6 @@ classDiagram
 **Metadata:** `MGetKV3ClassDefaults {
 	"_class": "CSndSeqInstMidiSampler",
 	"m_nType": "eSndSeqInstMidiSampler",
-	"m_nPlayerType": "eSndSeqPlayerMidiSeq",
 	"m_bStopCurrentEvents": false,
 	"m_flBPM": 120.000000,
 	"m_flBPMFactor": 2.000000,
@@ -169,7 +281,7 @@ classDiagram
 	"m_bBeatEnvelopes": true,
 	"m_nNextVoiceSlot": 0,
 	"m_hSoundEventHash": 0
-}`, `MPropertyFriendlyName "Midi Sampler"`
+}`, `MPropertyFriendlyName Midi Sampler`
 
 **Relationships:**
 
@@ -201,12 +313,11 @@ classDiagram
 **Metadata:** `MGetKV3ClassDefaults {
 	"_class": "CSndSeqInstSndEvtSchema",
 	"m_nType": "eSndSeqInstSndEvt",
-	"m_nPlayerType": "eSndSeqPlayerSndEvt",
 	"m_bStopCurrentEvents": false,
 	"m_flBPM": 0.000000,
 	"m_flBPMFactor": 0.000000,
 	"m_flBPMInvFactor": 0.000000
-}`, `MPropertyFriendlyName "SoundEvent on Start"`
+}`, `MPropertyFriendlyName SoundEvent on Start`
 
 **Relationships:**
 
@@ -237,7 +348,7 @@ classDiagram
 	"m_nSortType": "SOS_LIMIT_SORTTYPE_HIGHEST",
 	"m_bStopImmediate": false,
 	"m_bCountStopped": true
-}`, `MPropertyFriendlyName "Limiter"`
+}`, `MPropertyFriendlyName Limiter`
 
 **Relationships:**
 
@@ -253,10 +364,10 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_nMaxCount` | int32 |  |
-| `m_nStopType` | [SosActionStopType_t](../schemas/soundsystem.md#sosactionstoptype_t) |  |
-| `m_nSortType` | [SosActionLimitSortType_t](../schemas/soundsystem.md#sosactionlimitsorttype_t) |  |
+| `m_nStopType` | [SosActionStopType_t](../schemas/!GlobalTypes.md#sosactionstoptype_t) |  |
+| `m_nSortType` | [SosActionLimitSortType_t](../schemas/!GlobalTypes.md#sosactionlimitsorttype_t) |  |
 | `m_bStopImmediate` | bool |  |
-| `m_bCountStopped` | bool | `MPropertyFriendlyName "Count Stopped Events"` |
+| `m_bCountStopped` | bool | `MPropertyFriendlyName Count Stopped Events` |
 
 ### CSosGroupActionMemberCountEnvelopeSchema
 
@@ -272,7 +383,7 @@ classDiagram
 	"m_flDecay": 1.000000,
 	"m_resultVarName": "envelope_result",
 	"m_bSaveToGroup": false
-}`, `MPropertyFriendlyName "Count Envelope"`
+}`, `MPropertyFriendlyName Count Envelope`
 
 **Relationships:**
 
@@ -285,14 +396,14 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_nBaseCount` | int32 | `MPropertyFriendlyName "Min Threshold Count"` |
-| `m_nTargetCount` | int32 | `MPropertyFriendlyName "Max Target Count"` |
-| `m_flBaseValue` | float32 | `MPropertyFriendlyName "Threshold Value"` |
-| `m_flTargetValue` | float32 | `MPropertyFriendlyName "Target Value"` |
-| `m_flAttack` | float32 | `MPropertyFriendlyName "Attack"` |
-| `m_flDecay` | float32 | `MPropertyFriendlyName "Decay"` |
-| `m_resultVarName` | CUtlString | `MPropertyFriendlyName "Result Variable Name"` |
-| `m_bSaveToGroup` | bool | `MPropertyFriendlyName "Save Result to Group"` |
+| `m_nBaseCount` | int32 | `MPropertyFriendlyName Min Threshold Count` |
+| `m_nTargetCount` | int32 | `MPropertyFriendlyName Max Target Count` |
+| `m_flBaseValue` | float32 | `MPropertyFriendlyName Threshold Value` |
+| `m_flTargetValue` | float32 | `MPropertyFriendlyName Target Value` |
+| `m_flAttack` | float32 | `MPropertyFriendlyName Attack` |
+| `m_flDecay` | float32 | `MPropertyFriendlyName Decay` |
+| `m_resultVarName` | CUtlString | `MPropertyFriendlyName Result Variable Name` |
+| `m_bSaveToGroup` | bool | `MPropertyFriendlyName Save Result to Group` |
 
 ### CSosGroupActionOcclusionSchema
 
@@ -306,7 +417,7 @@ classDiagram
 	"m_flOcclusionMin": 0.000000,
 	"m_flOcclusionMax": 1.000000,
 	"m_flTestDepth": 0.000000
-}`, `MPropertyFriendlyName "Occlusion Info"`
+}`, `MPropertyFriendlyName Occlusion Info`
 
 **Relationships:**
 
@@ -319,33 +430,33 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_flCalculationInterval` | float32 | `MPropertyFriendlyName "Calculation interval ( seconds )."` |
-| `m_flRadius` | float32 | `MPropertyFriendlyName "Occlusion radius."` |
-| `m_flOcclusionScale` | float32 | `MPropertyFriendlyName "Occlusion scale."` |
-| `m_flOcclusionMin` | float32 | `MPropertyFriendlyName "Occlusion min."` |
-| `m_flOcclusionMax` | float32 | `MPropertyFriendlyName "Occlusion max."` |
-| `m_flTestDepth` | float32 | `MPropertyFriendlyName "Test depth."` |
+| `m_flCalculationInterval` | float32 | `MPropertyFriendlyName Calculation interval ( seconds ).` |
+| `m_flRadius` | float32 | `MPropertyFriendlyName Occlusion radius.` |
+| `m_flOcclusionScale` | float32 | `MPropertyFriendlyName Occlusion scale.` |
+| `m_flOcclusionMin` | float32 | `MPropertyFriendlyName Occlusion min.` |
+| `m_flOcclusionMax` | float32 | `MPropertyFriendlyName Occlusion max.` |
+| `m_flTestDepth` | float32 | `MPropertyFriendlyName Test depth.` |
 
 ### CSosGroupActionSchema
 
 **Derived by:** [CSosGroupActionLimitSchema](soundsystem.md#csosgroupactionlimitschema), [CSosGroupActionMemberCountEnvelopeSchema](soundsystem.md#csosgroupactionmembercountenvelopeschema), [CSosGroupActionOcclusionSchema](soundsystem.md#csosgroupactionocclusionschema), [CSosGroupActionSetSoundeventParameterSchema](soundsystem.md#csosgroupactionsetsoundeventparameterschema), [CSosGroupActionSoundeventClusterSchema](soundsystem.md#csosgroupactionsoundeventclusterschema), [CSosGroupActionSoundeventCountSchema](soundsystem.md#csosgroupactionsoundeventcountschema), [CSosGroupActionSoundeventMinMaxValuesSchema](soundsystem.md#csosgroupactionsoundeventminmaxvaluesschema), [CSosGroupActionSoundeventPrioritySchema](soundsystem.md#csosgroupactionsoundeventpriorityschema), [CSosGroupActionTimeBlockLimitSchema](soundsystem.md#csosgroupactiontimeblocklimitschema), [CSosGroupActionTimeLimitSchema](soundsystem.md#csosgroupactiontimelimitschema)
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`, `MPropertyAutoExpandSelf`, `MPropertyPolymorphicClass`
+**Metadata:** `MGetKV3ClassDefaults`, `MPropertyAutoExpandSelf`, `MPropertyPolymorphicClass`
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CSosGroupActionSchema <|-- CSosGroupActionTimeLimitSchema
-    CSosGroupActionSchema <|-- CSosGroupActionMemberCountEnvelopeSchema
-    CSosGroupActionSchema <|-- CSosGroupActionTimeBlockLimitSchema
     CSosGroupActionSchema <|-- CSosGroupActionLimitSchema
-    CSosGroupActionSchema <|-- CSosGroupActionSoundeventCountSchema
-    CSosGroupActionSchema <|-- CSosGroupActionSoundeventPrioritySchema
-    CSosGroupActionSchema <|-- CSosGroupActionSoundeventMinMaxValuesSchema
+    CSosGroupActionSchema <|-- CSosGroupActionMemberCountEnvelopeSchema
+    CSosGroupActionSchema <|-- CSosGroupActionOcclusionSchema
     CSosGroupActionSchema <|-- CSosGroupActionSetSoundeventParameterSchema
     CSosGroupActionSchema <|-- CSosGroupActionSoundeventClusterSchema
-    CSosGroupActionSchema <|-- CSosGroupActionOcclusionSchema
+    CSosGroupActionSchema <|-- CSosGroupActionSoundeventCountSchema
+    CSosGroupActionSchema <|-- CSosGroupActionSoundeventMinMaxValuesSchema
+    CSosGroupActionSchema <|-- CSosGroupActionSoundeventPrioritySchema
+    CSosGroupActionSchema <|-- CSosGroupActionTimeBlockLimitSchema
+    CSosGroupActionSchema <|-- CSosGroupActionTimeLimitSchema
 ```
 
 ### CSosGroupActionSetSoundeventParameterSchema
@@ -359,7 +470,7 @@ classDiagram
 	"m_flMaxValue": 1.000000,
 	"m_opvarName": "None",
 	"m_nSortType": "SOS_SETPARAM_SORTTYPE_LOWEST"
-}`, `MPropertyFriendlyName "Set Sound Event Parameter"`
+}`, `MPropertyFriendlyName Set Sound Event Parameter`
 
 **Relationships:**
 
@@ -376,8 +487,8 @@ classDiagram
 | `m_nMaxCount` | int32 |  |
 | `m_flMinValue` | float32 |  |
 | `m_flMaxValue` | float32 |  |
-| `m_opvarName` | CUtlString | `MPropertyFriendlyName "Parameter Name"` |
-| `m_nSortType` | [SosActionSetParamSortType_t](../schemas/soundsystem.md#sosactionsetparamsorttype_t) |  |
+| `m_opvarName` | CUtlString | `MPropertyFriendlyName Parameter Name` |
+| `m_nSortType` | [SosActionSetParamSortType_t](../schemas/!GlobalTypes.md#sosactionsetparamsorttype_t) |  |
 
 ### CSosGroupActionSoundeventClusterSchema
 
@@ -392,7 +503,7 @@ classDiagram
 	"m_clusterSizeOpvar": "cluster_size",
 	"m_groupBoundingBoxMinsOpvar": "cluster_group_box_mins",
 	"m_groupBoundingBoxMaxsOpvar": "cluster_group_box_maxs"
-}`, `MPropertyFriendlyName "Soundevent Cluster"`
+}`, `MPropertyFriendlyName Soundevent Cluster`
 
 **Relationships:**
 
@@ -405,13 +516,13 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_nMinNearby` | int32 | `MPropertyFriendlyName "Minimum Nearby Soundevents"` |
-| `m_flClusterEpsilon` | float32 | `MPropertyFriendlyName "Search Radius to Cluster Soundevents"` |
-| `m_shouldPlayOpvar` | CUtlString | `MPropertyFriendlyName "'Should Play' Opvar Name"` |
-| `m_shouldPlayClusterChild` | CUtlString | `MPropertyFriendlyName "'Should Play Cluster Child' Opvar Name"` |
-| `m_clusterSizeOpvar` | CUtlString | `MPropertyFriendlyName "Cluster Size Opvar Name"` |
-| `m_groupBoundingBoxMinsOpvar` | CUtlString | `MPropertyFriendlyName "'Group Box Mins' Opvar Name"` |
-| `m_groupBoundingBoxMaxsOpvar` | CUtlString | `MPropertyFriendlyName "'Group Box Maxs' Opvar Name"` |
+| `m_nMinNearby` | int32 | `MPropertyFriendlyName Minimum Nearby Soundevents` |
+| `m_flClusterEpsilon` | float32 | `MPropertyFriendlyName Search Radius to Cluster Soundevents` |
+| `m_shouldPlayOpvar` | CUtlString | `MPropertyFriendlyName 'Should Play' Opvar Name` |
+| `m_shouldPlayClusterChild` | CUtlString | `MPropertyFriendlyName 'Should Play Cluster Child' Opvar Name` |
+| `m_clusterSizeOpvar` | CUtlString | `MPropertyFriendlyName Cluster Size Opvar Name` |
+| `m_groupBoundingBoxMinsOpvar` | CUtlString | `MPropertyFriendlyName 'Group Box Mins' Opvar Name` |
+| `m_groupBoundingBoxMaxsOpvar` | CUtlString | `MPropertyFriendlyName 'Group Box Maxs' Opvar Name` |
 
 ### CSosGroupActionSoundeventCountSchema
 
@@ -421,7 +532,7 @@ classDiagram
 	"_class": "CSosGroupActionSoundeventCountSchema",
 	"m_bExcludeStoppedSounds": true,
 	"m_strCountKeyName": "current_count"
-}`, `MPropertyFriendlyName "Soundevent Count"`
+}`, `MPropertyFriendlyName Soundevent Count`
 
 **Relationships:**
 
@@ -434,8 +545,8 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_bExcludeStoppedSounds` | bool | `MPropertyFriendlyName "Exclude Stopped Sounds from Count"` |
-| `m_strCountKeyName` | CUtlString | `MPropertyFriendlyName "Result Current Count"` |
+| `m_bExcludeStoppedSounds` | bool | `MPropertyFriendlyName Exclude Stopped Sounds from Count` |
+| `m_strCountKeyName` | CUtlString | `MPropertyFriendlyName Result Current Count` |
 
 ### CSosGroupActionSoundeventMinMaxValuesSchema
 
@@ -453,7 +564,7 @@ classDiagram
 	"m_flExcludeSoundsMaxThresholdValue": -1.000000,
 	"m_strMinValueName": "min",
 	"m_strMaxValueName": "max"
-}`, `MPropertyFriendlyName "Soundevent Min/Max Values"`
+}`, `MPropertyFriendlyName Soundevent Min/Max Values`
 
 **Relationships:**
 
@@ -466,16 +577,16 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_strQueryPublicFieldName` | CUtlString | `MPropertyFriendlyName "Public field name to query."` |
-| `m_strDelayPublicFieldName` | CUtlString | `MPropertyFriendlyName "Public field 'delay' name."` |
-| `m_bExcludeStoppedSounds` | bool | `MPropertyFriendlyName "Exclude stopped sounds from evaluation"` |
-| `m_bExcludeDelayedSounds` | bool | `MPropertyFriendlyName "Exclude delayed sounds from evaluation"` |
-| `m_bExcludeSoundsBelowThreshold` | bool | `MPropertyFriendlyName "Exclude sounds from evaluation less than or equal to a min value threshold."` |
-| `m_flExcludeSoundsMinThresholdValue` | float32 | `MPropertyFriendlyName "The minimum threshold value to exclude sounds."` |
-| `m_bExcludSoundsAboveThreshold` | bool | `MPropertyFriendlyName "Exclude sounds from evaluation greater than or equal to a max value threshold."` |
-| `m_flExcludeSoundsMaxThresholdValue` | float32 | `MPropertyFriendlyName "The maximum threshold value to exclude sounds."` |
-| `m_strMinValueName` | CUtlString | `MPropertyFriendlyName "Min value property name"` |
-| `m_strMaxValueName` | CUtlString | `MPropertyFriendlyName "Max value property name"` |
+| `m_strQueryPublicFieldName` | CUtlString | `MPropertyFriendlyName Public field name to query.` |
+| `m_strDelayPublicFieldName` | CUtlString | `MPropertyFriendlyName Public field 'delay' name.` |
+| `m_bExcludeStoppedSounds` | bool | `MPropertyFriendlyName Exclude stopped sounds from evaluation` |
+| `m_bExcludeDelayedSounds` | bool | `MPropertyFriendlyName Exclude delayed sounds from evaluation` |
+| `m_bExcludeSoundsBelowThreshold` | bool | `MPropertyFriendlyName Exclude sounds from evaluation less than or equal to a min value threshold.` |
+| `m_flExcludeSoundsMinThresholdValue` | float32 | `MPropertyFriendlyName The minimum threshold value to exclude sounds.` |
+| `m_bExcludSoundsAboveThreshold` | bool | `MPropertyFriendlyName Exclude sounds from evaluation greater than or equal to a max value threshold.` |
+| `m_flExcludeSoundsMaxThresholdValue` | float32 | `MPropertyFriendlyName The maximum threshold value to exclude sounds.` |
+| `m_strMinValueName` | CUtlString | `MPropertyFriendlyName Min value property name` |
+| `m_strMaxValueName` | CUtlString | `MPropertyFriendlyName Max value property name` |
 
 ### CSosGroupActionSoundeventPrioritySchema
 
@@ -487,7 +598,7 @@ classDiagram
 	"m_priorityVolumeScalar": "priority_volume_scalar",
 	"m_priorityContributeButDontRead": "priority_contribute_dont_read",
 	"m_bPriorityReadButDontContribute": "priority_read_dont_contribute"
-}`, `MPropertyFriendlyName "Soundevent Priority"`
+}`, `MPropertyFriendlyName Soundevent Priority`
 
 **Relationships:**
 
@@ -500,10 +611,10 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_priorityValue` | CUtlString | `MPropertyFriendlyName "Priority Value, typically 0.0 to 1.0"` |
-| `m_priorityVolumeScalar` | CUtlString | `MPropertyFriendlyName "Priority-Based Volume Multiplier, 0.0 to 1.0"` |
-| `m_priorityContributeButDontRead` | CUtlString | `MPropertyFriendlyName "Contribute to the priority system, but volume is unaffected by it (bool)"` |
-| `m_bPriorityReadButDontContribute` | CUtlString | `MPropertyFriendlyName "Don't contribute to the priority system, but volume is affected by it (bool)"` |
+| `m_priorityValue` | CUtlString | `MPropertyFriendlyName Priority Value, typically 0.0 to 1.0` |
+| `m_priorityVolumeScalar` | CUtlString | `MPropertyFriendlyName Priority-Based Volume Multiplier, 0.0 to 1.0` |
+| `m_priorityContributeButDontRead` | CUtlString | `MPropertyFriendlyName Contribute to the priority system, but volume is unaffected by it (bool)` |
+| `m_bPriorityReadButDontContribute` | CUtlString | `MPropertyFriendlyName Don't contribute to the priority system, but volume is affected by it (bool)` |
 
 ### CSosGroupActionTimeBlockLimitSchema
 
@@ -513,7 +624,7 @@ classDiagram
 	"_class": "CSosGroupActionTimeBlockLimitSchema",
 	"m_nMaxCount": -1,
 	"m_flMaxDuration": 0.000000
-}`, `MPropertyFriendlyName "Timed Block Limiter"`
+}`, `MPropertyFriendlyName Timed Block Limiter`
 
 **Relationships:**
 
@@ -536,7 +647,7 @@ classDiagram
 **Metadata:** `MGetKV3ClassDefaults {
 	"_class": "CSosGroupActionTimeLimitSchema",
 	"m_flMaxDuration": -1.000000
-}`, `MPropertyFriendlyName "Time Limiter"`
+}`, `MPropertyFriendlyName Time Limiter`
 
 **Relationships:**
 
@@ -587,22 +698,22 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_nGroupType` | [SosGroupType_t](../schemas/soundsystem.md#sosgrouptype_t) | `MPropertyAttributeEditor "Radio"` |
-| `m_bBlocksEvents` | bool | `MPropertyStartGroup "+Block Events"` |
-| `m_nBlockMaxCount` | int32 | `MPropertyReadonlyExpr "!m_bBlocksEvents"` |
-| `m_flMemberLifespanTime` | float32 | `MPropertyStartGroup ""` |
+| `m_nGroupType` | [SosGroupType_t](../schemas/!GlobalTypes.md#sosgrouptype_t) | `MPropertyAttributeEditor Radio` |
+| `m_bBlocksEvents` | bool | `MPropertyStartGroup +Block Events` |
+| `m_nBlockMaxCount` | int32 | `MPropertyReadonlyExpr !m_bBlocksEvents` |
+| `m_flMemberLifespanTime` | float32 | `MPropertyStartGroup` |
 | `m_bInvertMatch` | bool |  |
-| `m_Behavior_EventName` | [SosGroupFieldBehavior_t](../schemas/soundsystem.md#sosgroupfieldbehavior_t) | `MPropertyStartGroup "+Event Name"` `MPropertyAttributeEditor "Radio"` `MPropertyReadonlyExpr "m_bMatchEventSubString"` |
-| `m_matchSoundEventName` | CUtlString | `MPropertyReadonlyExpr "m_Behavior_EventName != kMatch || m_bMatchEventSubString"` |
-| `m_bMatchEventSubString` | bool | `MPropertyStartGroup "+Event SubString"` |
-| `m_matchSoundEventSubString` | CUtlString | `MPropertyReadonlyExpr "!m_bMatchEventSubString"` |
-| `m_Behavior_EntIndex` | [SosGroupFieldBehavior_t](../schemas/soundsystem.md#sosgroupfieldbehavior_t) | `MPropertyStartGroup "+Ent Index"` `MPropertyAttributeEditor "Radio"` |
-| `m_flEntIndex` | float32 | `MPropertyReadonlyExpr "m_Behavior_EntIndex != kMatch"` |
-| `m_Behavior_Opvar` | [SosGroupFieldBehavior_t](../schemas/soundsystem.md#sosgroupfieldbehavior_t) | `MPropertyStartGroup "+OpVar Float"` `MPropertySuppressExpr "m_nGroupType == SOS_GROUPTYPE_STATIC"` `MPropertyAttributeEditor "Radio"` |
-| `m_flOpvar` | float32 | `MPropertyReadonlyExpr "m_Behavior_Opvar != kMatch"` `MPropertySuppressExpr "m_nGroupType == SOS_GROUPTYPE_STATIC"` |
-| `m_Behavior_String` | [SosGroupFieldBehavior_t](../schemas/soundsystem.md#sosgroupfieldbehavior_t) | `MPropertyStartGroup "+OpVar String"` `MPropertySuppressExpr "m_nGroupType == SOS_GROUPTYPE_STATIC"` `MPropertyAttributeEditor "Radio"` |
-| `m_opvarString` | CUtlString | `MPropertyReadonlyExpr "m_Behavior_String != kMatch"` `MPropertySuppressExpr "m_nGroupType == SOS_GROUPTYPE_STATIC"` |
-| `m_vActions` | CUtlVector<[CSosGroupActionSchema](../schemas/soundsystem.md#csosgroupactionschema)*> | `MPropertyStartGroup ""` `MPropertyAutoExpandSelf` |
+| `m_Behavior_EventName` | [SosGroupFieldBehavior_t](../schemas/!GlobalTypes.md#sosgroupfieldbehavior_t) | `MPropertyAttributeEditor Radio` `MPropertyReadonlyExpr m_bMatchEventSubString` `MPropertyStartGroup +Event Name` |
+| `m_matchSoundEventName` | CUtlString | `MPropertyReadonlyExpr m_Behavior_EventName != kMatch || m_bMatchEventSubString` |
+| `m_bMatchEventSubString` | bool | `MPropertyStartGroup +Event SubString` |
+| `m_matchSoundEventSubString` | CUtlString | `MPropertyReadonlyExpr !m_bMatchEventSubString` |
+| `m_Behavior_EntIndex` | [SosGroupFieldBehavior_t](../schemas/!GlobalTypes.md#sosgroupfieldbehavior_t) | `MPropertyAttributeEditor Radio` `MPropertyStartGroup +Ent Index` |
+| `m_flEntIndex` | float32 | `MPropertyReadonlyExpr m_Behavior_EntIndex != kMatch` |
+| `m_Behavior_Opvar` | [SosGroupFieldBehavior_t](../schemas/!GlobalTypes.md#sosgroupfieldbehavior_t) | `MPropertyAttributeEditor Radio` `MPropertyStartGroup +OpVar Float` `MPropertySuppressExpr m_nGroupType == SOS_GROUPTYPE_STATIC` |
+| `m_flOpvar` | float32 | `MPropertyReadonlyExpr m_Behavior_Opvar != kMatch` `MPropertySuppressExpr m_nGroupType == SOS_GROUPTYPE_STATIC` |
+| `m_Behavior_String` | [SosGroupFieldBehavior_t](../schemas/!GlobalTypes.md#sosgroupfieldbehavior_t) | `MPropertyAttributeEditor Radio` `MPropertyStartGroup +OpVar String` `MPropertySuppressExpr m_nGroupType == SOS_GROUPTYPE_STATIC` |
+| `m_opvarString` | CUtlString | `MPropertyReadonlyExpr m_Behavior_String != kMatch` `MPropertySuppressExpr m_nGroupType == SOS_GROUPTYPE_STATIC` |
+| `m_vActions` | CUtlVector< [CSosGroupActionSchema](../schemas/soundsystem.md#csosgroupactionschema)* > | `MPropertyAutoExpandSelf` `MPropertyStartGroup` |
 
 ### CSoundEventMetaData
 
@@ -621,7 +732,37 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_soundEventVMix` | CStrongHandle<[InfoForResourceTypeCVMixListResource](../schemas/resourcesystem.md#infoforresourcetypecvmixlistresource)> |  |
+| `m_soundEventVMix` | CStrongHandle< [InfoForResourceTypeCVMixListResource](../schemas/resourcesystem.md#infoforresourcetypecvmixlistresource) > |  |
+
+### CVoiceContainerVMixSnd
+
+**Inherits from:** [CVoiceContainerBase](soundsystem_voicecontainers.md#cvoicecontainerbase)
+
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "CVoiceContainerVMixSnd",
+	"m_vSound":
+	{
+		"m_Sentences":
+		[
+		],
+		"m_nRate": 0,
+		"m_nFormat": "PCM16",
+		"m_nChannels": 0,
+		"m_nLoopStart": 0,
+		"m_nSampleCount": 0,
+		"m_flDuration": 0.000000,
+		"m_nStreamingSize": 0,
+		"m_nLoopEnd": 0
+	},
+	"m_pEnvelopeAnalyzer": null
+}`, `MPropertyDescription Plays a vmix graph and its containers.`, `MPropertyFriendlyName VMixSound`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVoiceContainerBase <|-- CVoiceContainerVMixSnd
+```
 
 ### ISndSeqInstruments
 
@@ -680,112 +821,118 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_EditItems` | CUtlVector<[SosEditItemInfo_t](../schemas/soundsystem.md#sosedititeminfo_t)> |  |
+| `m_EditItems` | CUtlVector< [SosEditItemInfo_t](../schemas/soundsystem.md#sosedititeminfo_t) > |  |
 
-### SndSeqInstrumentType_t
+### SndBeatEventKeyedFloats_t
 
-**Values:**
+**Inherits from:** [SndBeatEventKeys_t](soundsystem.md#sndbeateventkeys_t)
 
-| Name | Value | Description |
-|------|-------|-------------|
-| `eSndSeqInstNull` | 0 |  |
-| `eSndSeqInstSndEvt` | 1 |  |
-| `eSndSeqInstMidiSampler` | 2 |  |
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "SndBeatEventKeyedFloats_t",
+	"m_flKey": 0.000000,
+	"m_flFloat": 0.000000
+}`
 
-### SndSeqMidiStatusType_t
+**Relationships:**
 
-**Values:**
+```mermaid
+classDiagram
+    SndBeatEventKeys_t <|-- SndBeatEventKeyedFloats_t
+```
 
-| Name | Value | Description |
-|------|-------|-------------|
-| `SndSeqMidiStatusNoteOff` | 8 |  |
-| `SndSeqMidiStatusNoteOn` | 9 |  |
-| `SndSeqMidiStatusKeyPressure` | 10 |  |
-| `SndSeqMidiStatusCtrlChange` | 11 |  |
-| `SndSeqMidiStatusProgramChange` | 12 |  |
-| `SndSeqMidiStatusChannelPressure` | 13 |  |
-| `SndSeqMidiStatusPitchBend` | 14 |  |
+**Fields:**
 
-### SndSeqPlayerType_t
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flFloat` | float32 | `MPropertyFriendlyName Float` |
 
-**Values:**
+### SndBeatEventKeyedMidiNotes_t
 
-| Name | Value | Description |
-|------|-------|-------------|
-| `eSndSeqPlayerNull` | 0 |  |
-| `eSndSeqPlayerSndEvt` | 1 |  |
-| `eSndSeqPlayerMidiSeq` | 2 |  |
+**Inherits from:** [SndBeatEventKeys_t](soundsystem.md#sndbeateventkeys_t)
 
-### SndSeqQuantizeType_t
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "SndBeatEventKeyedMidiNotes_t",
+	"m_flKey": 0.000000,
+	"m_nStatus": 9,
+	"m_nNote": 60,
+	"m_nVelocity": 127
+}`
 
-**Values:**
+**Relationships:**
 
-| Name | Value | Description |
-|------|-------|-------------|
-| `eSndSeqQuantizeInvalid` | -1 |  |
-| `eSndSeqQuantizeNone` | 0 |  |
-| `eSndSeqQuantizeBeat` | 1 |  |
-| `eSndSeqQuantizeBar` | 2 |  |
-| `eSndSeqQuantizeSequence` | 3 |  |
-| `eSndSeqQuantizeSeek` | 4 |  |
-| `eSndSeqQuantizeReset` | 5 |  |
+```mermaid
+classDiagram
+    SndBeatEventKeys_t <|-- SndBeatEventKeyedMidiNotes_t
+```
 
-### SndSeqRegionType_t
+**Fields:**
 
-**Values:**
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_nStatus` | uint8 | `MPropertyFriendlyName Status` |
+| `m_nNote` | uint8 | `MPropertyFriendlyName Note` |
+| `m_nVelocity` | uint8 | `MPropertyFriendlyName Velocity` |
 
-| Name | Value | Description |
-|------|-------|-------------|
-| `eSndSeqRegionTypeNull` | 0 |  |
-| `eSndSeqRegionTypeSndEvt` | 1 |  |
-| `eSndSeqRegionTypeMidiSeq` | 2 |  |
+### SndBeatEventKeyedSndEvts_t
 
-### SndSeqSyncType_t
+**Inherits from:** [SndBeatEventKeys_t](soundsystem.md#sndbeateventkeys_t)
 
-**Values:**
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "SndBeatEventKeyedSndEvts_t",
+	"m_flKey": 0.000000,
+	"m_strSoundEventName": ""
+}`
 
-| Name | Value | Description |
-|------|-------|-------------|
-| `eSndSeqSyncTypeNone` | 0 |  |
-| `eSndSeqSyncTypeWait` | 1 |  |
-| `eSndSeqSyncTypeSeek` | 2 |  |
+**Relationships:**
 
-### SndSeqTrackPlaybackType_t
+```mermaid
+classDiagram
+    SndBeatEventKeys_t <|-- SndBeatEventKeyedSndEvts_t
+```
 
-**Values:**
+**Fields:**
 
-| Name | Value | Description |
-|------|-------|-------------|
-| `eSndSeqTrackPlaybackTypeStep` | 0 |  |
-| `eSndSeqTrackPlaybackTypeFwd` | 1 |  |
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_strSoundEventName` | CUtlString | `MPropertyFriendlyName SoundEvent Name` |
 
-### SosActionLimitSortType_t
+### SndBeatEventKeys_t
 
-**Values:**
+**Derived by:** [SndBeatEventKeyedFloats_t](soundsystem.md#sndbeateventkeyedfloats_t), [SndBeatEventKeyedMidiNotes_t](soundsystem.md#sndbeateventkeyedmidinotes_t), [SndBeatEventKeyedSndEvts_t](soundsystem.md#sndbeateventkeyedsndevts_t)
 
-| Name | Value | Description |
-|------|-------|-------------|
-| `SOS_LIMIT_SORTTYPE_HIGHEST` | 0 | Stop Highest |
-| `SOS_LIMIT_SORTTYPE_LOWEST` | 1 | Stop Lowest |
+**Metadata:** `MGetKV3ClassDefaults {
+	"_class": "SndBeatEventKeys_t",
+	"m_flKey": 0.000000
+}`, `MVDataBase`, `MVDataNodeType 1`
 
-### SosActionSetParamSortType_t
+**Relationships:**
 
-**Values:**
+```mermaid
+classDiagram
+    SndBeatEventKeys_t <|-- SndBeatEventKeyedFloats_t
+    SndBeatEventKeys_t <|-- SndBeatEventKeyedMidiNotes_t
+    SndBeatEventKeys_t <|-- SndBeatEventKeyedSndEvts_t
+```
 
-| Name | Value | Description |
-|------|-------|-------------|
-| `SOS_SETPARAM_SORTTYPE_HIGHEST` | 0 | Max = Highest |
-| `SOS_SETPARAM_SORTTYPE_LOWEST` | 1 | Max = Lowest |
+**Fields:**
 
-### SosActionStopType_t
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_flKey` | float32 | `MPropertyFriendlyName Key` |
 
-**Values:**
+### SndBeatTimeSignature_t
 
-| Name | Value | Description |
-|------|-------|-------------|
-| `SOS_STOPTYPE_NONE` | 0 | None |
-| `SOS_STOPTYPE_TIME` | 1 | Elapsed Time |
-| `SOS_STOPTYPE_OPVAR` | 2 | Opvar Float |
+**Metadata:** `MGetKV3ClassDefaults {
+	"nNumerator": 4,
+	"nDenominator": 4
+}`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `nNumerator` | uint8 | `MPropertyFriendlyName Numerator` |
+| `nDenominator` | uint8 | `MPropertyFriendlyName Denominator` |
 
 ### SosEditItemInfo_t
 
@@ -812,43 +959,11 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `itemType` | [SosEditItemType_t](../schemas/soundsystem.md#sosedititemtype_t) |  |
+| `itemType` | [SosEditItemType_t](../schemas/!GlobalTypes.md#sosedititemtype_t) |  |
 | `itemName` | CUtlString |  |
 | `itemTypeName` | CUtlString |  |
 | `itemKVString` | CUtlString |  |
 | `itemPos` | Vector2D |  |
-
-### SosEditItemType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `SOS_EDIT_ITEM_TYPE_SOUNDEVENTS` | 0 |  |
-| `SOS_EDIT_ITEM_TYPE_SOUNDEVENT` | 1 |  |
-| `SOS_EDIT_ITEM_TYPE_LIBRARYSTACKS` | 2 |  |
-| `SOS_EDIT_ITEM_TYPE_STACK` | 3 |  |
-| `SOS_EDIT_ITEM_TYPE_OPERATOR` | 4 |  |
-| `SOS_EDIT_ITEM_TYPE_FIELD` | 5 |  |
-
-### SosGroupFieldBehavior_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `kIgnore` | 0 | Ignore |
-| `kBranch` | 1 | Branch |
-| `kMatch` | 2 | Match |
-
-### SosGroupType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `SOS_GROUPTYPE_DYNAMIC` | 0 | Dynamic |
-| `SOS_GROUPTYPE_STATIC` | 1 | Static |
 
 ### VelocityZone_t
 

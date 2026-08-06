@@ -11,38 +11,68 @@ nav_exclude: true
 
 | Name | Kind | Bases | Fields |
 |------|------|-------|--------|
+| [CNavAttribute](#cnavattribute) | class | CNavFlags | 0 |
+| [CNavFlags](#cnavflags) | class |  | 1 |
 | [CNavHullPresetVData](#cnavhullpresetvdata) | class |  | 1 |
 | [CNavHullVData](#cnavhullvdata) | class |  | 15 |
+| [CNavPathCost](#cnavpathcost) | class | INavPathCost | 12 |
 | [CNavVolume](#cnavvolume) | class |  | 0 |
 | [CNavVolumeAll](#cnavvolumeall) | class | CNavVolumeVector | 0 |
 | [CNavVolumeSphere](#cnavvolumesphere) | class | CNavVolume | 2 |
 | [CNavVolumeSphericalShell](#cnavvolumesphericalshell) | class | CNavVolumeSphere | 1 |
 | [CNavVolumeVector](#cnavvolumevector) | class | CNavVolume | 1 |
 | [Extent](#extent) | class |  | 2 |
-| [NavAttributeEnum](#navattributeenum) | enum |  | 20 |
-| [NavDirType](#navdirtype) | enum |  | 5 |
+| [INavPathCost](#inavpathcost) | class |  | 1 |
 | [NavGravity_t](#navgravity_t) | class |  | 2 |
 | [NavHull_t](#navhull_t) | class |  | 1 |
 
 ---
 
-### CNavHullPresetVData
+### CNavAttribute
 
-**Metadata:** `MVDataRoot`, `MGetKV3ClassDefaults {
-	"m_vecNavHulls":
-	[
-	]
-}`
+**Inherits from:** [CNavFlags](navlib.md#cnavflags)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CNavFlags <|-- CNavAttribute
+```
+
+### CNavFlags
+
+**Derived by:** [CNavAttribute](navlib.md#cnavattribute)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CNavFlags <|-- CNavAttribute
+```
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_vecNavHulls` | CUtlVector<CUtlString> | `MPropertyFriendlyName "Nav Hulls"` `MPropertyDescription "List of nav hulls belonging to this preset."` `MPropertyAttributeEditor "VDataChoice( scripts/nav_hulls.vdata )"` |
+| `m_Flags` | uint64 |  |
+
+### CNavHullPresetVData
+
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vecNavHulls":
+	[
+	]
+}`, `MVDataRoot`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vecNavHulls` | CUtlVector< CUtlString > | `MPropertyAttributeEditor VDataChoice( scripts/nav_hulls.vdata )` `MPropertyDescription List of nav hulls belonging to this preset.` `MPropertyFriendlyName Nav Hulls` |
 
 ### CNavHullVData
 
-**Metadata:** `MVDataRoot`, `MGetKV3ClassDefaults {
+**Metadata:** `MGetKV3ClassDefaults {
 	"m_bAgentEnabled": true,
 	"m_agentRadius": 15.000000,
 	"m_agentHeight": 71.000000,
@@ -58,27 +88,57 @@ nav_exclude: true
 	"m_agentBorderErosion": -1,
 	"m_flowMapGenerationEnabled": false,
 	"m_flowMapNodeMaxRadius": 400.000000
-}`
+}`, `MVDataRoot`
 
 **Fields:**
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_bAgentEnabled` | bool | `MPropertyFriendlyName "Enabled"` `MPropertyDescription "Is this agent enabled for generation? ( will result in 0 nav areas for this agent if not )."` |
-| `m_agentRadius` | float32 | `MPropertyFriendlyName "Radius"` `MPropertyDescription "Radius of navigating agent capsule."` |
-| `m_agentHeight` | float32 | `MPropertyFriendlyName "Height"` `MPropertyDescription "Height of navigating agent capsule."` |
-| `m_agentShortHeightEnabled` | bool | `MPropertyFriendlyName "Enable Crouch Height"` `MPropertyDescription "Enable shorter navigating agent capsules ( crouch ) in addition to regular height capsules."` |
-| `m_agentShortHeight` | float32 | `MPropertyFriendlyName "Crouch height"` `MPropertyDescription "Crouch height of navigating agent capsules if enabled."` |
-| `m_agentCrawlEnabled` | bool | `MPropertyFriendlyName "Enable Crawl Height"` `MPropertyDescription "Enable even shorter navigating agent capsules ( crawl ) in addition to regular height capsules."` |
-| `m_agentCrawlHeight` | float32 | `MPropertyFriendlyName "Crawl height"` `MPropertyDescription "Crawl height of navigating agent capsules if enabled."` |
-| `m_agentMaxClimb` | float32 | `MPropertyFriendlyName "Max Climb"` `MPropertyDescription "Max vertical offset that the agent simply ignores and walks over."` |
-| `m_agentMaxSlope` | int32 | `MPropertyFriendlyName "Max Slope"` `MPropertyDescription "Max ground slope to be considered walkable."` |
-| `m_agentMaxJumpDownDist` | float32 | `MPropertyFriendlyName "Max Jump Down Distance"` `MPropertyDescription "Max vertical offset at which to create a jump connection ( possibly one-way )."` |
-| `m_agentMaxJumpHorizDistBase` | float32 | `MPropertyFriendlyName "Max Horizontal Jump Distance"` `MPropertyDescription "Max horizontal offset over which to create a jump connection ( actually a parameter into the true threshold function )."` |
-| `m_agentMaxJumpUpDist` | float32 | `MPropertyFriendlyName "Max Jump Up Distance"` `MPropertyDescription "Max vertical offset at which to make a jump connection two-way."` |
-| `m_agentBorderErosion` | int32 | `MPropertyFriendlyName "Border Erosion"` `MPropertyDescription "Border erosion in voxel units ( -1 to use default value based on agent radius )."` |
-| `m_flowMapGenerationEnabled` | bool | `MPropertyFriendlyName "Hierarchical Nav"` `MPropertyDescription "Enables super node nav information to be generated"` |
-| `m_flowMapNodeMaxRadius` | float32 | `MPropertyFriendlyName "Hierarchical Nav Max Super Node radius"` `MPropertyDescription "Maximum radius of a super node - larger means lower resolution"` |
+| `m_bAgentEnabled` | bool | `MPropertyDescription Is this agent enabled for generation? ( will result in 0 nav areas for this agent if not ).` `MPropertyFriendlyName Enabled` |
+| `m_agentRadius` | float32 | `MPropertyDescription Radius of navigating agent capsule.` `MPropertyFriendlyName Radius` |
+| `m_agentHeight` | float32 | `MPropertyDescription Height of navigating agent capsule.` `MPropertyFriendlyName Height` |
+| `m_agentShortHeightEnabled` | bool | `MPropertyDescription Enable shorter navigating agent capsules ( crouch ) in addition to regular height capsules.` `MPropertyFriendlyName Enable Crouch Height` |
+| `m_agentShortHeight` | float32 | `MPropertyDescription Crouch height of navigating agent capsules if enabled.` `MPropertyFriendlyName Crouch height` |
+| `m_agentCrawlEnabled` | bool | `MPropertyDescription Enable even shorter navigating agent capsules ( crawl ) in addition to regular height capsules.` `MPropertyFriendlyName Enable Crawl Height` |
+| `m_agentCrawlHeight` | float32 | `MPropertyDescription Crawl height of navigating agent capsules if enabled.` `MPropertyFriendlyName Crawl height` |
+| `m_agentMaxClimb` | float32 | `MPropertyDescription Max vertical offset that the agent simply ignores and walks over.` `MPropertyFriendlyName Max Climb` |
+| `m_agentMaxSlope` | int32 | `MPropertyDescription Max ground slope to be considered walkable.` `MPropertyFriendlyName Max Slope` |
+| `m_agentMaxJumpDownDist` | float32 | `MPropertyDescription Max vertical offset at which to create a jump connection ( possibly one-way ).` `MPropertyFriendlyName Max Jump Down Distance` |
+| `m_agentMaxJumpHorizDistBase` | float32 | `MPropertyDescription Max horizontal offset over which to create a jump connection ( actually a parameter into the true threshold function ).` `MPropertyFriendlyName Max Horizontal Jump Distance` |
+| `m_agentMaxJumpUpDist` | float32 | `MPropertyDescription Max vertical offset at which to make a jump connection two-way.` `MPropertyFriendlyName Max Jump Up Distance` |
+| `m_agentBorderErosion` | int32 | `MPropertyDescription Border erosion in voxel units ( -1 to use default value based on agent radius ).` `MPropertyFriendlyName Border Erosion` |
+| `m_flowMapGenerationEnabled` | bool | `MPropertyDescription Enables super node nav information to be generated` `MPropertyFriendlyName Hierarchical Nav` |
+| `m_flowMapNodeMaxRadius` | float32 | `MPropertyDescription Maximum radius of a super node - larger means lower resolution` `MPropertyFriendlyName Hierarchical Nav Max Super Node radius` |
+
+### CNavPathCost
+
+**Inherits from:** [INavPathCost](navlib.md#inavpathcost)
+
+**Metadata:** `MGetKV3ClassDefaults`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    INavPathCost <|-- CNavPathCost
+```
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_bAllowLadders` | bool |  |
+| `m_bCanFly` | bool |  |
+| `m_bCanSwim` | bool |  |
+| `m_flWaterToGroundMaxHeight` | float32 |  |
+| `m_flGroundToWaterMaxHeight` | float32 |  |
+| `m_flGroundToWaterTransitionDistance` | float32 |  |
+| `m_flWaterToGroundTransitionDistance` | float32 |  |
+| `m_flFlyingTransitionTolerance` | float32 |  |
+| `m_bOptimizeFlySpacePathfinds` | bool |  |
+| `m_bStringPullFlySpacePathfinds` | bool |  |
+| `m_bSupportsTransitions` | bool |  |
+| `m_flTransitionPenalty` | float32 |  |
 
 ### CNavVolume
 
@@ -88,10 +148,10 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    CNavVolume <|-- CNavVolumeSphere
     CNavVolume <|-- CNavVolumeCalculatedVector
-    CNavVolume <|-- CNavVolumeVector
     CNavVolume <|-- CNavVolumeMarkupVolume
+    CNavVolume <|-- CNavVolumeSphere
+    CNavVolume <|-- CNavVolumeVector
 ```
 
 ### CNavVolumeAll
@@ -174,46 +234,37 @@ classDiagram
 | `lo` | VectorWS |  |
 | `hi` | VectorWS |  |
 
-### NavAttributeEnum
+### INavPathCost
 
-**Values:**
+**Derived by:** [CNavPathCost](navlib.md#cnavpathcost)
 
-| Name | Value | Description |
-|------|-------|-------------|
-| `NAV_MESH_AVOID` | 128 |  |
-| `NAV_MESH_STAIRS` | 4096 |  |
-| `NAV_MESH_NON_ZUP` | 32768 |  |
-| `NAV_MESH_CROUCH_HEIGHT` | 65536 |  |
-| `NAV_MESH_NON_ZUP_TRANSITION` | 131072 |  |
-| `NAV_MESH_CRAWL_HEIGHT` | 262144 |  |
-| `NAV_MESH_CROUCH` | 65536 |  |
-| `NAV_MESH_JUMP` | 2 |  |
-| `NAV_MESH_NO_JUMP` | 8 |  |
-| `NAV_MESH_STOP` | 16 |  |
-| `NAV_MESH_RUN` | 32 |  |
-| `NAV_MESH_WALK` | 64 |  |
-| `NAV_MESH_TRANSIENT` | 256 |  |
-| `NAV_MESH_DONT_HIDE` | 512 |  |
-| `NAV_MESH_STAND` | 1024 |  |
-| `NAV_MESH_NO_HOSTAGES` | 2048 |  |
-| `NAV_MESH_NO_MERGE` | 8192 |  |
-| `NAV_MESH_OBSTACLE_TOP` | 16384 |  |
-| `NAV_ATTR_FIRST_GAME_INDEX` | 19 |  |
-| `NAV_ATTR_LAST_INDEX` | 63 |  |
+**Metadata:** `MGetKV3ClassDefaults`
 
-### NavDirType
+**Relationships:**
 
-**Values:**
+```mermaid
+classDiagram
+    INavPathCost <|-- CNavPathCost
+    INavPathCost *-- NavHull_t
+```
 
-| Name | Value | Description |
-|------|-------|-------------|
-| `NORTH` | 0 |  |
-| `EAST` | 1 |  |
-| `SOUTH` | 2 |  |
-| `WEST` | 3 |  |
-| `NUM_NAV_DIR_TYPE_DIRECTIONS` | 4 |  |
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_navHull` | [NavHull_t](../schemas/navlib.md#navhull_t) |  |
 
 ### NavGravity_t
+
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_vGravity":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	"m_bDefault": true
+}`
 
 **Fields:**
 
@@ -224,7 +275,7 @@ classDiagram
 
 ### NavHull_t
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Fields:**
 

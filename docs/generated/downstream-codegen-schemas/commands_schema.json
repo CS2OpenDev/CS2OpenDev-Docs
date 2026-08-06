@@ -1,8 +1,8 @@
 {
-  "schema_format_version": "1.1",
-  "revision": 10677034,
-  "version_date": "May 21 2026",
-  "version_time": "17:11:59",
+  "schema_format_version": "2.0",
+  "revision": "hl2sdk-cs2/5f891c9026230cce0fc0a3fc4b5fef1c467a1385/v1/3d1200e346019c59",
+  "version_date": "2026-08-03",
+  "version_time": "2026-08-03T18:18:10Z",
   "commands": [
     {
       "name": "+bugvoice",
@@ -20,7 +20,7 @@
         "clientdll",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "+cammousemove",
@@ -29,7 +29,7 @@
         "clientdll",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "+cl_show_team_equipment",
@@ -37,7 +37,7 @@
         "clientdll",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "+lookatweapon",
@@ -45,7 +45,7 @@
         "clientdll",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "+quickbuyradial",
@@ -53,7 +53,7 @@
         "clientdll",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "+quickgearradial",
@@ -62,7 +62,7 @@
         "clientdll",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "+quickgrenaderadial",
@@ -70,7 +70,7 @@
         "clientdll",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "+quickinv",
@@ -78,7 +78,7 @@
         "clientdll",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "+radialradio",
@@ -86,7 +86,7 @@
         "clientdll",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "+radialradio2",
@@ -94,7 +94,7 @@
         "clientdll",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "+radialradio3",
@@ -102,7 +102,7 @@
         "clientdll",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "+spray_menu",
@@ -110,7 +110,7 @@
         "clientdll",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "-bugvoice",
@@ -128,7 +128,7 @@
         "clientdll",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "-cammousemove",
@@ -137,7 +137,7 @@
         "clientdll",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "-cl_show_team_equipment",
@@ -145,7 +145,7 @@
         "clientdll",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "-lookatweapon",
@@ -153,7 +153,7 @@
         "clientdll",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "-quickbuyradial",
@@ -161,7 +161,7 @@
         "clientdll",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "-quickgearradial",
@@ -170,7 +170,7 @@
         "clientdll",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "-quickgrenaderadial",
@@ -178,7 +178,7 @@
         "clientdll",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "-quickinv",
@@ -186,7 +186,7 @@
         "clientdll",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "-radialradio",
@@ -194,7 +194,7 @@
         "clientdll",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "-radialradio2",
@@ -202,7 +202,7 @@
         "clientdll",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "-radialradio3",
@@ -210,7 +210,7 @@
         "clientdll",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "-spray_menu",
@@ -218,7 +218,7 @@
         "clientdll",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "ShowSteamStatsSessionID",
@@ -249,7 +249,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "Test_EHandle",
@@ -257,7 +257,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "Test_ExitProcess",
@@ -304,7 +304,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "Test_StartLoop",
@@ -393,7 +393,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "List all the currently registered anim events."
+      "description": "List all the currently registered anim events.\n"
     },
     {
       "name": "animgraph_dump_update_list",
@@ -518,7 +518,7 @@
         "gamedll",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "axis",
@@ -526,7 +526,15 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Draw an axis"
+      "description": "Draw an axis\n\tArguments:  x y z pitch yaw roll <lifetime = 10.0> <r g b a>\n"
+    },
+    {
+      "name": "bake_bomb_damage_render_visualization",
+      "flags": [
+        "clientdll",
+        "cheat"
+      ],
+      "description": ""
     },
     {
       "name": "banid",
@@ -643,7 +651,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "bot_kick",
@@ -707,7 +715,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Draw a bbox"
+      "description": "Draw a bbox\n\tArguments:  minx miny miny maxx maxy maxz <lifetime = 10.0> <r g b a>\n"
     },
     {
       "name": "breakable_force_break",
@@ -734,14 +742,6 @@
         "release"
       ],
       "description": "bugbug"
-    },
-    {
-      "name": "bugbug_commit",
-      "flags": [
-        "clientdll",
-        "release"
-      ],
-      "description": "bugbug_commit"
     },
     {
       "name": "bugvoice_clear",
@@ -826,7 +826,7 @@
         "hidden",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "camera_path_add",
@@ -834,7 +834,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "camera_path_clear_all",
@@ -842,7 +842,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "camera_path_delete",
@@ -850,7 +850,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "camera_path_demo",
@@ -858,7 +858,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "camera_path_load",
@@ -866,7 +866,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "camera_path_save",
@@ -874,7 +874,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "camerazoomin",
@@ -883,7 +883,7 @@
         "clientdll",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "camerazoomout",
@@ -892,7 +892,7 @@
         "clientdll",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "camortho",
@@ -908,7 +908,7 @@
         "clientdll",
         "server_can_execute"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "capturecubemap",
@@ -1009,42 +1009,6 @@
       "description": "Emits a closed caption"
     },
     {
-      "name": "cc_findsound",
-      "flags": [
-        "developmentonly",
-        "clientdll",
-        "defensive"
-      ],
-      "description": "Searches for soundname which emits specified text."
-    },
-    {
-      "name": "cc_flush",
-      "flags": [
-        "developmentonly",
-        "clientdll",
-        "defensive"
-      ],
-      "description": "Flushes async'd captions."
-    },
-    {
-      "name": "cc_random",
-      "flags": [
-        "developmentonly",
-        "clientdll",
-        "defensive"
-      ],
-      "description": "Emits a random caption"
-    },
-    {
-      "name": "cc_showblocks",
-      "flags": [
-        "developmentonly",
-        "clientdll",
-        "defensive"
-      ],
-      "description": "Toggles showing which blocks are pending/loaded async."
-    },
-    {
       "name": "changelevel",
       "flags": [
         "release"
@@ -1099,7 +1063,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Draw an axis"
+      "description": "Draw an axis\n\tArguments:  x y z pitch yaw roll <lifetime = 10.0> <r g b a>\n"
     },
     {
       "name": "cl_box",
@@ -1107,14 +1071,14 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Draw a bbox"
+      "description": "Draw a bbox\n\tArguments:  minx miny miny maxx maxy maxz <lifetime = 10.0> <r g b a>\n"
     },
     {
       "name": "cl_break_on_missing_resource",
       "flags": [
         "developmentonly"
       ],
-      "description": "Break in debugger when missing resource match is found."
+      "description": "Break in debugger when missing resource match is found.\nFormat: cl_break_on_missing_resource <substring> /(empty to break on all) / 0 to turn off.\n"
     },
     {
       "name": "cl_checkdeclareclasses",
@@ -1196,7 +1160,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Draws a cross at the given location"
+      "description": "Draws a cross at the given location\n\tArguments: x y z"
     },
     {
       "name": "cl_drawline",
@@ -1204,7 +1168,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Draws line between two 3D Points."
+      "description": "Draws line between two 3D Points.\n\tGreen if no collision\n\tRed is collides with something\n\tArguments: x1 y1 z1 x2 y2 z2"
     },
     {
       "name": "cl_dump_projected_texture_count",
@@ -1247,7 +1211,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Displays the total bounding box for the given entity(s) in green.  Some entites will also display entity specific overlays."
+      "description": "Displays the total bounding box for the given entity(s) in green.  Some entites will also display entity specific overlays.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cl_ent_actornames",
@@ -1263,7 +1227,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Opens the graph and starts live debugging the AG2 graph for a given entity"
+      "description": "Opens the graph and starts live debugging the AG2 graph for a given entity\n\tArguments: entityName\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cl_ent_animgraph2_record",
@@ -1271,7 +1235,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Starts live debugging & recording the AG2 graph for a given entity"
+      "description": "Starts live debugging & recording the AG2 graph for a given entity\n\tArguments: entityName\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cl_ent_animgraph_debug",
@@ -1279,7 +1243,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Displays debug draws about the given entity(ies) animgraph"
+      "description": "Displays debug draws about the given entity(ies) animgraph\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cl_ent_attachments",
@@ -1287,7 +1251,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Displays the attachment points on an entity."
+      "description": "Displays the attachment points on an entity.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cl_ent_bbox",
@@ -1295,7 +1259,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Displays the movement bounding box for the given entity(ies) in orange.  Some entites will also display entity specific overlays."
+      "description": "Displays the movement bounding box for the given entity(ies) in orange.  Some entites will also display entity specific overlays.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cl_ent_call",
@@ -1319,7 +1283,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Find and list all entities with classnames or targetnames that contain the specified substrings."
+      "description": "Find and list all entities with classnames or targetnames that contain the specified substrings.\nFormat: find_ent <substring>\n"
     },
     {
       "name": "cl_ent_find_index",
@@ -1327,7 +1291,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Display data for entity matching specified index."
+      "description": "Display data for entity matching specified index.\nFormat: find_ent_index <index>\n"
     },
     {
       "name": "cl_ent_grab",
@@ -1351,7 +1315,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Displays the hitboxes for the given entity(ies)."
+      "description": "Displays the hitboxes for the given entity(ies).\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cl_ent_joints",
@@ -1359,7 +1323,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Displays the joint names + axes an entity."
+      "description": "Displays the joint names + axes an entity.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cl_ent_messages",
@@ -1367,7 +1331,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Toggles input/output message display for the selected entity(ies).  The name of the entity will be displayed as well as any messages that it sends or receives."
+      "description": "Toggles input/output message display for the selected entity(ies).  The name of the entity will be displayed as well as any messages that it sends or receives.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cl_ent_name",
@@ -1383,7 +1347,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Toggles 'picker' mode.  When picker is on, the bounding box, pivot and debugging text is displayed for whatever entity the player is looking at."
+      "description": "Toggles 'picker' mode.  When picker is on, the bounding box, pivot and debugging text is displayed for whatever entity the player is looking at.\n\tArguments:\tfull - enables all debug information"
     },
     {
       "name": "cl_ent_pivot",
@@ -1391,7 +1355,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Displays the pivot for the given entity(ies)."
+      "description": "Displays the pivot for the given entity(ies).\n\t(y=up=green, z=forward=blue, x=left=red). \n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cl_ent_remove",
@@ -1399,7 +1363,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Removes the given entity(s)"
+      "description": "Removes the given entity(s)\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cl_ent_remove_all",
@@ -1407,7 +1371,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Removes all entities of the specified type"
+      "description": "Removes all entities of the specified type\n\tArguments:   \t{entity_name} / {class_name} "
     },
     {
       "name": "cl_ent_scale",
@@ -1431,7 +1395,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Dumps the names and values of this entity's script scope to the console"
+      "description": "Dumps the names and values of this entity's script scope to the console\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cl_ent_select",
@@ -1439,7 +1403,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Select or deselects the given entities(s) for later manipulation"
+      "description": "Select or deselects the given entities(s) for later manipulation\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cl_ent_setang",
@@ -1456,7 +1420,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Sets the targetname of the given entity(s)"
+      "description": "Sets the targetname of the given entity(s)\n\tArguments:   \t<new entity name> <{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}>"
     },
     {
       "name": "cl_ent_setpos",
@@ -1481,7 +1445,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Displays the skeleton for the given entity(ies)."
+      "description": "Displays the skeleton for the given entity(ies).\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cl_ent_spew_derived_classes",
@@ -1498,7 +1462,7 @@
         "cheat",
         "vconsole_fuzzy_matching"
       ],
-      "description": "Displays text debugging information about the given entity(ies) on top of the entity (See Overlay Text)"
+      "description": "Displays text debugging information about the given entity(ies) on top of the entity (See Overlay Text)\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cl_ent_text256",
@@ -1506,7 +1470,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Displays text debugging information about the given entity(ies) [within 256 units of the player] on top of the entity (See Overlay Text)"
+      "description": "Displays text debugging information about the given entity(ies) [within 256 units of the player] on top of the entity (See Overlay Text)\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cl_ent_text_clear",
@@ -1514,7 +1478,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Hide text debugging information about the given entity(ies) on top of the entity (See Overlay Text)"
+      "description": "Hide text debugging information about the given entity(ies) on top of the entity (See Overlay Text)\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cl_ent_text_filter",
@@ -1522,7 +1486,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Set which ent_text filters you want:"
+      "description": "Set which ent_text filters you want: "
     },
     {
       "name": "cl_ent_text_radius",
@@ -1530,7 +1494,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Displays text debugging information about the given entity(ies) [near the player] on top of the entity (See Overlay Text)"
+      "description": "Displays text debugging information about the given entity(ies) [near the player] on top of the entity (See Overlay Text)\n\t2 Arguments:   \t<Radius> <{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}>"
     },
     {
       "name": "cl_ent_text_sticky_add",
@@ -1538,7 +1502,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Adds to list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)"
+      "description": "Adds to list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cl_ent_text_sticky_clear",
@@ -1546,7 +1510,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Clears the list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)"
+      "description": "Clears the list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cl_ent_text_sticky_dump",
@@ -1554,7 +1518,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Spews the list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)"
+      "description": "Spews the list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cl_ent_text_sticky_remove",
@@ -1562,7 +1526,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Removes from the list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)"
+      "description": "Removes from the list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cl_ent_ungrab",
@@ -1578,7 +1542,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Displays the interpolated vcollide wireframe pm am entity."
+      "description": "Displays the interpolated vcollide wireframe pm am entity.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cl_ent_viewoffset",
@@ -1586,7 +1550,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Displays the eye position for the given entity(ies) in red."
+      "description": "Displays the eye position for the given entity(ies) in red.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cl_ent_visibility_traces",
@@ -1595,7 +1559,7 @@
         "cheat",
         "vconsole_fuzzy_matching"
       ],
-      "description": "Displays visibility traces for the given entity"
+      "description": "Displays visibility traces for the given entity\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cl_ents",
@@ -1628,7 +1592,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Shows the entity browser, focused on the entity you specify."
+      "description": "Shows the entity browser, focused on the entity you specify.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cl_imgui_set_selection",
@@ -1705,7 +1669,7 @@
         "clientdll",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "cl_particles_dumplist",
@@ -1765,7 +1729,7 @@
         "developmentonly",
         "clientdll"
       ],
-      "description": "List all physics component contents of every entity in the game;"
+      "description": "List all physics component contents of every entity in the game;\n    -stream [1|0]         initiate|terminate streaming to physics debugger\n    -allents              include non-physical entities\n    -classes              print class names\n    -sdk                  Rubikon-wide memory short status\n    -sdk -struct          Rubikon-wide memory use per struct\n    -sdk -rebuildsvms     Rubikon-wide SVM force rebuild and status\n    -world                current state of the world\n    -world -touch         list body pairs (bodies in contact)\n    -world -save <name>   save world to a file\n    -world -mem           memory dump (separately per game dll)\n    -world -snapshots     Start/Stop dumping snapshots of the world into the current directory\n    -world -agg           current aggregate data registry (loaded resources)\n"
     },
     {
       "name": "cl_phys_sleep",
@@ -1797,7 +1761,7 @@
         "developmentonly",
         "clientdll"
       ],
-      "description": "Turns on the absbox for all active physics objects."
+      "description": "Turns on the absbox for all active physics objects.\n  0 : un-highlight.\n"
     },
     {
       "name": "cl_physics_remove_test",
@@ -1813,7 +1777,7 @@
         "developmentonly",
         "clientdll"
       ],
-      "description": "Lists all active physics objects"
+      "description": "Lists all active physics objects\n  -more : extra info\n"
     },
     {
       "name": "cl_precacheinfo",
@@ -1848,7 +1812,7 @@
         "clientdll",
         "defensive"
       ],
-      "description": "Describe datamap_t for entindex"
+      "description": "Describe PredictionMap_t for entindex"
     },
     {
       "name": "cl_predictioncopy_print",
@@ -1954,14 +1918,6 @@
       "description": "Print all response rules"
     },
     {
-      "name": "cl_rr_reloadresponsesystems",
-      "flags": [
-        "clientdll",
-        "cheat"
-      ],
-      "description": "Reload all response system scripts."
-    },
-    {
       "name": "cl_script_add_debug_filter",
       "flags": [
         "clientdll",
@@ -2023,7 +1979,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Find a key in the VM"
+      "description": "Find a key in the VM "
     },
     {
       "name": "cl_script_help",
@@ -2168,7 +2124,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "cl_sos_test_set_opvar",
@@ -2176,7 +2132,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "cl_soundscape_flush",
@@ -2258,7 +2214,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "clearall",
@@ -2274,7 +2230,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Displays the interpolated attachment points on an entity."
+      "description": "Displays the interpolated attachment points on an entity.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cli_ent_hitbox",
@@ -2282,7 +2238,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Displays the skeleton for the given entity(ies)."
+      "description": "Displays the skeleton for the given entity(ies).\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cli_ent_pivot",
@@ -2290,7 +2246,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Displays the interpolated pivot for the given entity(ies)."
+      "description": "Displays the interpolated pivot for the given entity(ies).\n\t(y=up=green, z=forward=blue, x=left=red). \n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cli_ent_skeleton",
@@ -2298,7 +2254,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Displays the skeleton for the given entity(ies)."
+      "description": "Displays the skeleton for the given entity(ies).\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "cli_ent_vcollide_wireframe",
@@ -2306,7 +2262,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Displays the interpolated vcollide wireframe pm am entity."
+      "description": "Displays the interpolated vcollide wireframe pm am entity.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "clutch_mode_toggle",
@@ -2339,7 +2295,7 @@
         "gamedll",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "commentary_finishnode",
@@ -2347,7 +2303,7 @@
         "gamedll",
         "client_can_execute"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "condump",
@@ -2461,7 +2417,7 @@
       "flags": [
         "cheat"
       ],
-      "description": "Crash the client. Optional parameter -- type of crash:"
+      "description": "Crash the client. Optional parameter -- type of crash:\n 0: read from NULL\n 1: write to NULL\n 2: force an Assert\n 3: infinite loop\n 4: stack buffer overrun\n 5: multiple asserts across multiple threads. Optional number of threads (default 5)\n 6: looping memory leak until we're out of memory. Optional allocation size in bytes (default 1048576/1MB)"
     },
     {
       "name": "crash_error",
@@ -2513,7 +2469,7 @@
         "gamedll",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "cs_quit_prompt",
@@ -2549,7 +2505,7 @@
         "hidden",
         "clientcmd_can_execute"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "cvarlist",
@@ -2582,7 +2538,7 @@
         "gamedll",
         "defensive"
       ],
-      "description": "Dump the debug history to the console. Format: <category id>"
+      "description": "Dump the debug history to the console. Format: <category id>\n    Categories:\n     0: Entity I/O\n     1: AI Decisions\n     2: Scene Print\n     3: Alyx Blind\n     4: Log of damage done to player\n\t 5: Player Teleport\n\t 6: Blind Zombie Sounds\n\t 7: Player Continuous\n"
     },
     {
       "name": "debug_purchase_defidx",
@@ -2798,7 +2754,7 @@
         "gamedll",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "dm_togglerandomweapons",
@@ -2815,7 +2771,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Draws a cross at the given location"
+      "description": "Draws a cross at the given location\n\tArguments: x y z"
     },
     {
       "name": "drawline",
@@ -2823,7 +2779,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Draws line between two 3D Points."
+      "description": "Draws line between two 3D Points.\n\tGreen if no collision\n\tRed is collides with something\n\tArguments: x1 y1 z1 x2 y2 z2"
     },
     {
       "name": "drawoverviewmap",
@@ -2905,7 +2861,7 @@
         "developmentonly",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "dump_portrait_world_info_with_debug_name_containing",
@@ -2913,7 +2869,7 @@
         "developmentonly",
         "clientdll"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "dump_response_symbols",
@@ -2932,6 +2888,13 @@
         "defensive"
       ],
       "description": "Lists secondary scene worlds and ref counts"
+    },
+    {
+      "name": "dumpparticlelist",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Print out information on existing particle systems"
     },
     {
       "name": "dumpstringtable",
@@ -3029,7 +2992,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Displays the total bounding box for the given entity(s) in green.  Some entites will also display entity specific overlays."
+      "description": "Displays the total bounding box for the given entity(s) in green.  Some entites will also display entity specific overlays.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_actornames",
@@ -3045,7 +3008,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Opens the graph and starts live debugging the AG2 graph for a given entity"
+      "description": "Opens the graph and starts live debugging the AG2 graph for a given entity\n\tArguments: entityName\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_animgraph2_record",
@@ -3053,7 +3016,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Starts live debugging & recording the AG2 graph for a given entity"
+      "description": "Starts live debugging & recording the AG2 graph for a given entity\n\tArguments: entityName\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_animgraph_debug",
@@ -3061,7 +3024,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Displays debug draws about the given entity(ies) animgraph"
+      "description": "Displays debug draws about the given entity(ies) animgraph\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_attachments",
@@ -3069,7 +3032,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Displays the attachment points on an entity."
+      "description": "Displays the attachment points on an entity.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_autoaim",
@@ -3077,7 +3040,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Displays the entity's autoaim radius."
+      "description": "Displays the entity's autoaim radius.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_bbox",
@@ -3085,7 +3048,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Displays the movement bounding box for the given entity(ies) in orange.  Some entites will also display entity specific overlays."
+      "description": "Displays the movement bounding box for the given entity(ies) in orange.  Some entites will also display entity specific overlays.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_bonemergeplayer",
@@ -3161,7 +3124,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Find and list all entities with classnames or targetnames that contain the specified substrings."
+      "description": "Find and list all entities with classnames or targetnames that contain the specified substrings.\nFormat: find_ent <substring>\n"
     },
     {
       "name": "ent_find_index",
@@ -3169,7 +3132,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Display data for entity matching specified index."
+      "description": "Display data for entity matching specified index.\nFormat: find_ent_index <index>\n"
     },
     {
       "name": "ent_fire",
@@ -3178,7 +3141,7 @@
         "cheat",
         "vconsole_fuzzy_matching"
       ],
-      "description": "Usage:"
+      "description": "Usage:\n   ent_fire <target> [action] [value] [delay]\n"
     },
     {
       "name": "ent_fire_output",
@@ -3187,7 +3150,7 @@
         "cheat",
         "vconsole_fuzzy_matching"
       ],
-      "description": "Usage:"
+      "description": "Usage:\n   ent_fire_output <target> [output name] [value] [delay]\n"
     },
     {
       "name": "ent_gib",
@@ -3195,7 +3158,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Gibs the given entity(s)"
+      "description": "Gibs the given entity(s)\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_grab",
@@ -3219,7 +3182,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Displays the hitboxes for the given entity(ies)."
+      "description": "Displays the hitboxes for the given entity(ies).\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_info",
@@ -3227,7 +3190,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Usage:"
+      "description": "Usage:\n   ent_info <class name>\n"
     },
     {
       "name": "ent_joints",
@@ -3235,7 +3198,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Displays the joint names + axes an entity."
+      "description": "Displays the joint names + axes an entity.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_kill",
@@ -3243,7 +3206,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Kills the given entity(s)"
+      "description": "Kills the given entity(s)\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_list_report",
@@ -3260,7 +3223,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Toggles input/output message display for the selected entity(ies).  The name of the entity will be displayed as well as any messages that it sends or receives."
+      "description": "Toggles input/output message display for the selected entity(ies).  The name of the entity will be displayed as well as any messages that it sends or receives.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_name",
@@ -3276,7 +3239,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Orient the specified entity to match the player's angles. By default, only orients target entity's YAW. Use the 'allangles' option to orient on all axis."
+      "description": "Orient the specified entity to match the player's angles. By default, only orients target entity's YAW. Use the 'allangles' option to orient on all axis.\n\tFormat: ent_orient <entity name> <optional: allangles>"
     },
     {
       "name": "ent_picker",
@@ -3284,7 +3247,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Toggles 'picker' mode.  When picker is on, the bounding box, pivot and debugging text is displayed for whatever entity the player is looking at."
+      "description": "Toggles 'picker' mode.  When picker is on, the bounding box, pivot and debugging text is displayed for whatever entity the player is looking at.\n\tArguments:\tfull - enables all debug information"
     },
     {
       "name": "ent_pivot",
@@ -3292,7 +3255,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Displays the pivot for the given entity(ies)."
+      "description": "Displays the pivot for the given entity(ies).\n\t(y=up=green, z=forward=blue, x=left=red). \n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_rbox",
@@ -3300,7 +3263,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Displays the total bounding box for the given entity(s) in green.  Some entites will also display entity specific overlays."
+      "description": "Displays the total bounding box for the given entity(s) in green.  Some entites will also display entity specific overlays.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_remove",
@@ -3308,7 +3271,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Removes the given entity(s)"
+      "description": "Removes the given entity(s)\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_remove_all",
@@ -3316,7 +3279,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Removes all entities of the specified type"
+      "description": "Removes all entities of the specified type\n\tArguments:   \t{entity_name} / {class_name} "
     },
     {
       "name": "ent_reveal_in_hammer",
@@ -3356,7 +3319,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Dumps the names and values of this entity's script scope to the console"
+      "description": "Dumps the names and values of this entity's script scope to the console\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_select",
@@ -3364,7 +3327,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Select or deselects the given entities(s) for later manipulation"
+      "description": "Select or deselects the given entities(s) for later manipulation\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_setang",
@@ -3381,7 +3344,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Sets the targetname of the given entity(s)"
+      "description": "Sets the targetname of the given entity(s)\n\tArguments:   \t<new entity name> <{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}>"
     },
     {
       "name": "ent_setpos",
@@ -3406,7 +3369,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Print, to the console, an entity's current criteria set used to select responses."
+      "description": "Print, to the console, an entity's current criteria set used to select responses.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_skeleton",
@@ -3414,7 +3377,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Displays the skeleton for the given entity(ies)."
+      "description": "Displays the skeleton for the given entity(ies).\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_spew_derived_classes",
@@ -3430,7 +3393,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Teleport the specified entity to where the player is looking."
+      "description": "Teleport the specified entity to where the player is looking.\n\tFormat: ent_teleport <entity name>"
     },
     {
       "name": "ent_text",
@@ -3439,7 +3402,7 @@
         "cheat",
         "vconsole_fuzzy_matching"
       ],
-      "description": "Displays text debugging information about the given entity(ies) on top of the entity (See Overlay Text)"
+      "description": "Displays text debugging information about the given entity(ies) on top of the entity (See Overlay Text)\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_text256",
@@ -3447,7 +3410,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Displays text debugging information about the given entity(ies) [within 256 units of the player] on top of the entity (See Overlay Text)"
+      "description": "Displays text debugging information about the given entity(ies) [within 256 units of the player] on top of the entity (See Overlay Text)\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_text_clear",
@@ -3455,7 +3418,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Hide text debugging information about the given entity(ies) on top of the entity (See Overlay Text)"
+      "description": "Hide text debugging information about the given entity(ies) on top of the entity (See Overlay Text)\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_text_filter",
@@ -3463,7 +3426,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Set which ent_text filters you want:"
+      "description": "Set which ent_text filters you want: "
     },
     {
       "name": "ent_text_radius",
@@ -3471,7 +3434,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Displays text debugging information about the given entity(ies) [near the player] on top of the entity (See Overlay Text)"
+      "description": "Displays text debugging information about the given entity(ies) [near the player] on top of the entity (See Overlay Text)\n\t2 Arguments:   \t<Radius> <{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}>"
     },
     {
       "name": "ent_text_sticky_add",
@@ -3479,7 +3442,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Adds to list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)"
+      "description": "Adds to list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_text_sticky_clear",
@@ -3487,7 +3450,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Clears the list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)"
+      "description": "Clears the list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_text_sticky_dump",
@@ -3495,7 +3458,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Spews the list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)"
+      "description": "Spews the list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_text_sticky_remove",
@@ -3503,7 +3466,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Removes from the list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)"
+      "description": "Removes from the list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_ungrab",
@@ -3519,7 +3482,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Displays the interpolated vcollide wireframe pm am entity."
+      "description": "Displays the interpolated vcollide wireframe pm am entity.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_viewentity",
@@ -3535,7 +3498,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Displays the eye position for the given entity(ies) in red."
+      "description": "Displays the eye position for the given entity(ies) in red.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "ent_viewpunch",
@@ -3552,7 +3515,7 @@
         "cheat",
         "vconsole_fuzzy_matching"
       ],
-      "description": "Displays visibility traces for the given entity"
+      "description": "Displays visibility traces for the given entity\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "entity_lump_list",
@@ -3692,7 +3655,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "firstperson",
@@ -3760,7 +3723,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "func_mover_enable_debug_all",
@@ -3768,7 +3731,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "game_alias",
@@ -3971,7 +3934,7 @@
         "vconsole_fuzzy_matching",
         "client_can_execute"
       ],
-      "description": "Give item to player."
+      "description": "Give item to player.\n\tArguments: <item_name>"
     },
     {
       "name": "give_oriented",
@@ -3980,7 +3943,7 @@
         "vconsole_fuzzy_matching",
         "client_can_execute"
       ],
-      "description": "Give item oriented to player angles."
+      "description": "Give item oriented to player angles.\n\tArguments: <item_name>"
     },
     {
       "name": "givecurrentammo",
@@ -3988,7 +3951,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Give a supply of ammo for current weapon.."
+      "description": "Give a supply of ammo for current weapon..\n"
     },
     {
       "name": "global_set",
@@ -4013,7 +3976,7 @@
         "developmentonly",
         "gamedll"
       ],
-      "description": "Print all anim graph parameters for the specified entity."
+      "description": "Print all anim graph parameters for the specified entity.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "grep",
@@ -4038,7 +4001,7 @@
         "cheat",
         "client_can_execute"
       ],
-      "description": "Heals the player."
+      "description": "Heals the player.\n\tArguments: <health to gain>"
     },
     {
       "name": "help",
@@ -4135,7 +4098,7 @@
         "cheat",
         "client_can_execute"
       ],
-      "description": "Hurts the player."
+      "description": "Hurts the player.\n\tArguments: <health to lose>"
     },
     {
       "name": "hurtthem",
@@ -4144,7 +4107,7 @@
         "cheat",
         "client_can_execute"
       ],
-      "description": "Hurts the enemy in front of you."
+      "description": "Hurts the enemy in front of you.\n\tArguments: <health to lose>"
     },
     {
       "name": "ic",
@@ -4153,7 +4116,7 @@
         "clientdll",
         "defensive"
       ],
-      "description": "interp entity count"
+      "description": "interp entity count\n"
     },
     {
       "name": "ik_debug_fabrik_backwards_iteration_toggle",
@@ -4162,7 +4125,7 @@
         "developmentonly",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "ik_debug_fabrik_forwards_iteration_toggle",
@@ -4171,7 +4134,7 @@
         "developmentonly",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "imgui_cycle_undocked_window_focus",
@@ -4187,7 +4150,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Shows the entity browser, focused on the entity you specify."
+      "description": "Shows the entity browser, focused on the entity you specify.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "imgui_set_selection",
@@ -4333,7 +4296,7 @@
         "clientdll",
         "server_can_execute"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "invnextselect",
@@ -4341,7 +4304,7 @@
         "clientdll",
         "server_can_execute"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "invprev",
@@ -4349,7 +4312,7 @@
         "clientdll",
         "server_can_execute"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "invprevselect",
@@ -4357,7 +4320,7 @@
         "clientdll",
         "server_can_execute"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "iv_debug",
@@ -4418,6 +4381,14 @@
       "description": "List bound keys with bindings."
     },
     {
+      "name": "key_updatelayout",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Updates game keyboard layout to current windows keyboard setting."
+    },
+    {
       "name": "kick",
       "flags": [
         "dontrecord",
@@ -4465,7 +4436,7 @@
         "clientdll",
         "server_can_execute"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "launch_training_map",
@@ -4474,7 +4445,7 @@
         "clientdll",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "launch_warmup_map",
@@ -4491,7 +4462,7 @@
         "developmentonly",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "lightbinner_test_computespheresilhouette",
@@ -4499,7 +4470,7 @@
         "developmentonly",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "lightbinner_test_computesumsilhouette",
@@ -4507,7 +4478,7 @@
         "developmentonly",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "listRecentNPCSpeech",
@@ -4558,7 +4529,7 @@
         "vconsole_fuzzy_matching",
         "defensive"
       ],
-      "description": "Usage:"
+      "description": "Usage:\n   load [save file name]\n"
     },
     {
       "name": "localization_quest_item_string_printout",
@@ -5010,7 +4981,7 @@
         "developmentonly",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "memory",
@@ -5042,14 +5013,6 @@
         "cheat"
       ],
       "description": "Does a bunch of work to create a minimap"
-    },
-    {
-      "name": "mm_datacenter_debugprint",
-      "flags": [
-        "developmentonly",
-        "defensive"
-      ],
-      "description": "Shows information retrieved from data center"
     },
     {
       "name": "mm_debugprint",
@@ -5503,7 +5466,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "nav_toggle_deselecting",
@@ -5602,6 +5565,14 @@
       "description": "opens the current map in hammer."
     },
     {
+      "name": "open_current_map_pulse_in_tool",
+      "flags": [
+        "developmentonly",
+        "vconsole_fuzzy_matching"
+      ],
+      "description": "Opens the specified pulse used in this map in the editor.\n\tArguments: <pulse_file>"
+    },
+    {
       "name": "p2p_listpeers",
       "flags": [
         "developmentonly",
@@ -5666,7 +5637,57 @@
       "flags": [
         "developmentonly"
       ],
-      "description": "<no description>"
+      "description": ""
+    },
+    {
+      "name": "particle_profile",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Profile particle"
+    },
+    {
+      "name": "particle_profile_spike",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Profile particle spike"
+    },
+    {
+      "name": "particle_reset_assertions",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Causes all single-fire particle assertions to trigger once more."
+    },
+    {
+      "name": "particle_stop_all",
+      "flags": [
+        "developmentonly",
+        "clientdll",
+        "cheat"
+      ],
+      "description": "Stops all particle systems currently playing"
+    },
+    {
+      "name": "particle_stop_specified",
+      "flags": [
+        "developmentonly",
+        "clientdll",
+        "cheat"
+      ],
+      "description": "Stops all particle systems that match specified name"
+    },
+    {
+      "name": "particle_stop_unspecified",
+      "flags": [
+        "developmentonly",
+        "clientdll",
+        "cheat"
+      ],
+      "description": "Stops all particle systems that don't match specified name"
     },
     {
       "name": "particle_test_create",
@@ -5674,7 +5695,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Creates the named particle system where the player is looking."
+      "description": "Creates the named particle system where the player is looking.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "particle_test_destroy",
@@ -5682,7 +5703,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Destroys all particle systems matching the specified name."
+      "description": "Destroys all particle systems matching the specified name.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "particle_test_start",
@@ -5690,7 +5711,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Dispatches the test particle system with the parameters specified in particle_test_file,"
+      "description": "Dispatches the test particle system with the parameters specified in particle_test_file,\n particle_test_attach_mode and particle_test_attach_param on the entity the player is looking at.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "particle_test_stop",
@@ -5698,7 +5719,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Stops all particle systems on the selected entities."
+      "description": "Stops all particle systems on the selected entities.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "path",
@@ -5770,7 +5791,7 @@
         "developmentonly",
         "gamedll"
       ],
-      "description": "List all physics component contents of every entity in the game;"
+      "description": "List all physics component contents of every entity in the game;\n    -stream [1|0]         initiate|terminate streaming to physics debugger\n    -allents              include non-physical entities\n    -classes              print class names\n    -sdk                  Rubikon-wide memory short status\n    -sdk -struct          Rubikon-wide memory use per struct\n    -sdk -rebuildsvms     Rubikon-wide SVM force rebuild and status\n    -world                current state of the world\n    -world -touch         list body pairs (bodies in contact)\n    -world -save <name>   save world to a file\n    -world -mem           memory dump (separately per game dll)\n    -world -snapshots     Start/Stop dumping snapshots of the world into the current directory\n    -world -agg           current aggregate data registry (loaded resources)\n"
     },
     {
       "name": "phys_shoot",
@@ -5819,7 +5840,7 @@
         "developmentonly",
         "gamedll"
       ],
-      "description": "Turns on the absbox for all active physics objects."
+      "description": "Turns on the absbox for all active physics objects.\n  0 : un-highlight.\n"
     },
     {
       "name": "physics_remove_test",
@@ -5835,7 +5856,7 @@
         "developmentonly",
         "gamedll"
       ],
-      "description": "Lists all active physics objects"
+      "description": "Lists all active physics objects\n  -more : extra info\n"
     },
     {
       "name": "pixelvis_debug",
@@ -5950,7 +5971,7 @@
         "developmentonly",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "prop_debug",
@@ -5966,7 +5987,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Creates a dynamic prop with a specific .vmdl aimed away from where the player is looking."
+      "description": "Creates a dynamic prop with a specific .vmdl aimed away from where the player is looking.\n\tArguments: {.vmdl name}"
     },
     {
       "name": "prop_physics_create",
@@ -5974,7 +5995,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Creates a physics prop with a specific .vmdl aimed away from where the player is looking."
+      "description": "Creates a physics prop with a specific .vmdl aimed away from where the player is looking.\n\tArguments: {.vmdl name}"
     },
     {
       "name": "pulse_debug_entity",
@@ -6098,6 +6119,13 @@
     },
     {
       "name": "r_renderdoc_capture_window_dx11",
+      "flags": [
+        "developmentonly"
+      ],
+      "description": "Triggers a RenderDoc capture of a specific Window"
+    },
+    {
+      "name": "r_renderdoc_capture_window_vulkan",
       "flags": [
         "developmentonly"
       ],
@@ -6242,7 +6270,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "reload_store_config",
@@ -6251,7 +6279,7 @@
         "clientdll",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "reloadgame",
@@ -6268,7 +6296,7 @@
         "cheat",
         "client_can_execute"
       ],
-      "description": "Remove a weapon held by the player."
+      "description": "Remove a weapon held by the player.\n\tArguments: <weapon subclass name>"
     },
     {
       "name": "removeid",
@@ -6292,6 +6320,14 @@
         "release"
       ],
       "description": "Repeat last console command."
+    },
+    {
+      "name": "replant_bomb",
+      "flags": [
+        "gamedll",
+        "cheat"
+      ],
+      "description": ""
     },
     {
       "name": "replay_death",
@@ -6405,7 +6441,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Respawns the player from death!"
+      "description": "Respawns the player from death!\n"
     },
     {
       "name": "restart",
@@ -6457,7 +6493,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "retake_barrier_point",
@@ -6465,7 +6501,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "retake_barrier_spawn",
@@ -6473,7 +6509,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "rr_dump_rules",
@@ -6489,15 +6525,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "fire a response concept directly at a given character."
-    },
-    {
-      "name": "rr_reloadresponsesystems",
-      "flags": [
-        "gamedll",
-        "cheat"
-      ],
-      "description": "Reload all response system scripts."
+      "description": "fire a response concept directly at a given character.\nUSAGE: rr_forceconcept <target name or index> <concept> \"criteria1:value1,criteria2:value2,...\"\ncriteria values are optional.\n"
     },
     {
       "name": "rs_dump_stats",
@@ -6532,7 +6560,7 @@
         "replicated",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "save_finish_async",
@@ -6541,7 +6569,7 @@
         "gamedll",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "save_set_subdirectory",
@@ -6551,7 +6579,7 @@
         "replicated",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "save_showelapsedtime",
@@ -6630,23 +6658,14 @@
       "flags": [
         "cheat"
       ],
-      "description": "Low level command to set the flags byte associated with an object class. sc_SetClassFlags <classname> <value>"
+      "description": "Low level command to set the flags byte associated with an object class. sc_SetClassFlags <classname> <value>\n"
     },
     {
       "name": "sc_showclasses",
       "flags": [
         "cheat"
       ],
-      "description": "List the object class names known by scenesystem"
-    },
-    {
-      "name": "scene_coordinator_add_request",
-      "flags": [
-        "developmentonly",
-        "gamedll",
-        "defensive"
-      ],
-      "description": "Add a request to the scene coordinator"
+      "description": "List the object class names known by scenesystem\n"
     },
     {
       "name": "scene_playvcd",
@@ -6655,48 +6674,6 @@
         "cheat"
       ],
       "description": "Play the given VCD as an instanced scripted scene."
-    },
-    {
-      "name": "schema_all_list_bindings",
-      "flags": [
-        "developmentonly"
-      ],
-      "description": "schema_all_list_bindings <substring> - List all scopes registered schema bindings (classes & enums). If no substring, list them all."
-    },
-    {
-      "name": "schema_detailed_class_layout",
-      "flags": [
-        "developmentonly"
-      ],
-      "description": "schema_detailed_class_layout <class_name> - Print a detailed memory layout of the class (including inline structs)."
-    },
-    {
-      "name": "schema_dump_binding",
-      "flags": [
-        "developmentonly"
-      ],
-      "description": "schema_dump_binding <class_or_enum_name> - Print information about the named class or enum."
-    },
-    {
-      "name": "schema_list_bindings",
-      "flags": [
-        "developmentonly"
-      ],
-      "description": "schema_list_bindings <substring> - List registered global-scope schema bindings (classes & enums). If no substring, list them all."
-    },
-    {
-      "name": "schema_meta_stats",
-      "flags": [
-        "developmentonly"
-      ],
-      "description": "schema_meta_stats [<options>]- Print a summary of schemasystem metadata statistics."
-    },
-    {
-      "name": "schema_stats",
-      "flags": [
-        "developmentonly"
-      ],
-      "description": "schema_stats - Print a summary of various schemasystem statistics."
     },
     {
       "name": "screenshot",
@@ -6768,7 +6745,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Find a key in the VM"
+      "description": "Find a key in the VM "
     },
     {
       "name": "script_help",
@@ -6914,7 +6891,7 @@
         "hidden",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "server_game_time",
@@ -6931,7 +6908,15 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Casts a ray and starts a sound event where the ray hits. The sound event will retrigger periodically. Usage: snd_cast <eventname> [<retrigger time>] [<max distance>]. Arguments that are specified will become defaults for the remainder of the session."
+      "description": "Casts a ray and starts a sound event where the ray hits. The sound event will retrigger periodically. Usage: server_snd_cast <eventname> [<retrigger time>] [<max distance>]. Arguments that are specified will become defaults for the remainder of the session."
+    },
+    {
+      "name": "server_snd_pos",
+      "flags": [
+        "gamedll",
+        "cheat"
+      ],
+      "description": "Starts a sound event at a given position. The sound event will retrigger periodically. Usage: server_snd_pos <eventname> <retrigger time> <x> <y> <z>."
     },
     {
       "name": "servervoice_clear",
@@ -7032,7 +7017,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Stops all active screen shakes."
+      "description": "Stops all active screen shakes.\n"
     },
     {
       "name": "shake_testpunch",
@@ -7040,7 +7025,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Test a punch-style screen shake."
+      "description": "Test a punch-style screen shake.\n"
     },
     {
       "name": "shatterglass_break",
@@ -7048,7 +7033,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "shatterglass_restore",
@@ -7056,7 +7041,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "show_loadout_toggle",
@@ -7105,7 +7090,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Displays the movement bounding box for the triggers in orange.  Some entites will also display entity specific overlays."
+      "description": "Displays the movement bounding box for the triggers in orange.  Some entites will also display entity specific overlays.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "slot0",
@@ -7113,7 +7098,7 @@
         "clientdll",
         "server_can_execute"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "slot1",
@@ -7121,7 +7106,7 @@
         "clientdll",
         "server_can_execute"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "slot10",
@@ -7129,7 +7114,7 @@
         "clientdll",
         "server_can_execute"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "slot11",
@@ -7137,7 +7122,7 @@
         "clientdll",
         "server_can_execute"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "slot12",
@@ -7145,7 +7130,7 @@
         "clientdll",
         "server_can_execute"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "slot13",
@@ -7153,7 +7138,7 @@
         "clientdll",
         "server_can_execute"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "slot2",
@@ -7161,7 +7146,7 @@
         "clientdll",
         "server_can_execute"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "slot3",
@@ -7169,7 +7154,7 @@
         "clientdll",
         "server_can_execute"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "slot4",
@@ -7177,7 +7162,7 @@
         "clientdll",
         "server_can_execute"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "slot5",
@@ -7185,7 +7170,7 @@
         "clientdll",
         "server_can_execute"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "slot6",
@@ -7193,7 +7178,7 @@
         "clientdll",
         "server_can_execute"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "slot7",
@@ -7201,7 +7186,7 @@
         "clientdll",
         "server_can_execute"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "slot8",
@@ -7209,7 +7194,7 @@
         "clientdll",
         "server_can_execute"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "slot9",
@@ -7217,7 +7202,7 @@
         "clientdll",
         "server_can_execute"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "snapto",
@@ -7226,14 +7211,14 @@
         "clientdll",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
-      "name": "snd_arrangement_start",
+      "name": "snd__beatpattern_stop_track",
       "flags": [
         "cheat"
       ],
-      "description": "Starts the specified arrangement."
+      "description": "Stops the specified track"
     },
     {
       "name": "snd_async_flush",
@@ -7266,6 +7251,48 @@
         "defensive"
       ],
       "description": "Show brief async memory stats"
+    },
+    {
+      "name": "snd_beatpattern_flush",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Purge and reload all beat pattern data and files."
+    },
+    {
+      "name": "snd_beatpattern_print_activetracks",
+      "flags": [
+        "cheat"
+      ],
+      "description": "List all active tracks"
+    },
+    {
+      "name": "snd_beatpattern_print_patterns",
+      "flags": [
+        "cheat"
+      ],
+      "description": "List all available beat patterns"
+    },
+    {
+      "name": "snd_beatpattern_set_track_bpm",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Sets the tempo of the specified track"
+    },
+    {
+      "name": "snd_beatpattern_set_track_transpose",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Sets the transposition of the specified track"
+    },
+    {
+      "name": "snd_beatpattern_stop_all_tracks",
+      "flags": [
+        "cheat"
+      ],
+      "description": "Stops all currently playing patterns"
     },
     {
       "name": "snd_cast",
@@ -7463,62 +7490,6 @@
         "cheat"
       ],
       "description": "Stop a note from a specified sampler"
-    },
-    {
-      "name": "snd_sequencer_print_activetracks",
-      "flags": [
-        "cheat"
-      ],
-      "description": "List all active tracks"
-    },
-    {
-      "name": "snd_sequencer_print_arrangements",
-      "flags": [
-        "cheat"
-      ],
-      "description": "List all available sequence arrangments"
-    },
-    {
-      "name": "snd_sequencer_print_sequences",
-      "flags": [
-        "cheat"
-      ],
-      "description": "List all available midi sequences"
-    },
-    {
-      "name": "snd_sequencer_set_track_bpm",
-      "flags": [
-        "cheat"
-      ],
-      "description": "Sets the tempo of the specified track"
-    },
-    {
-      "name": "snd_sequencer_set_track_transpose",
-      "flags": [
-        "cheat"
-      ],
-      "description": "Sets the transposition of the specified track"
-    },
-    {
-      "name": "snd_sequencer_stop_all_tracks",
-      "flags": [
-        "cheat"
-      ],
-      "description": "Stops all currently playing sequences"
-    },
-    {
-      "name": "snd_sequencer_stop_track",
-      "flags": [
-        "cheat"
-      ],
-      "description": "Stops the specified track"
-    },
-    {
-      "name": "snd_sequencer_vmidi_flush",
-      "flags": [
-        "cheat"
-      ],
-      "description": "Purge and reload all vmidi data and files."
     },
     {
       "name": "snd_set_physics_surface_properties",
@@ -7919,7 +7890,7 @@
         "developmentonly",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "soundinfo",
@@ -7942,7 +7913,7 @@
         "clientdll",
         "cheat"
       ],
-      "description": "Dumps the client's soundscape data."
+      "description": "Dumps the client's soundscape data.\n"
     },
     {
       "name": "soundscape_flush",
@@ -7968,7 +7939,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "spec_goto",
@@ -8040,7 +8011,7 @@
         "developmentonly",
         "defensive"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "ss_add",
@@ -8066,6 +8037,15 @@
         "cheat"
       ],
       "description": "Teleport other splitscreen player to my location."
+    },
+    {
+      "name": "start_rec_mic",
+      "flags": [
+        "linked_concommand",
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Start recording to a desired wav."
     },
     {
       "name": "startdemos",
@@ -8139,6 +8119,24 @@
       "description": "Finish recording demo."
     },
     {
+      "name": "stop_rec_mic",
+      "flags": [
+        "linked_concommand",
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Stop recording to a desired wav."
+    },
+    {
+      "name": "stop_rec_mic_all",
+      "flags": [
+        "linked_concommand",
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Stop recording all mic streams."
+    },
+    {
       "name": "stopdemos",
       "flags": [
         "release"
@@ -8150,7 +8148,7 @@
       "flags": [
         "cheat"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "stopsoundscape",
@@ -8176,7 +8174,7 @@
         "cheat",
         "vconsole_fuzzy_matching"
       ],
-      "description": "Changes the subclass of the given entity."
+      "description": "Changes the subclass of the given entity.\n\tArguments:   \t<new_subclass> {entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}"
     },
     {
       "name": "subclass_create",
@@ -8280,7 +8278,7 @@
         "developmentonly",
         "defensive"
       ],
-      "description": "var change info histogram"
+      "description": "var change info histogram\n"
     },
     {
       "name": "sv_kill_smokegrenade",
@@ -8343,7 +8341,7 @@
       "flags": [
         "release"
       ],
-      "description": "token"
+      "description": "token\nSet game server account token to use for logging in to a persistent game server account"
     },
     {
       "name": "sv_showtags",
@@ -8433,7 +8431,7 @@
         "clientdll",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "switchhandsleft",
@@ -8441,7 +8439,7 @@
         "clientdll",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "switchhandsright",
@@ -8449,7 +8447,7 @@
         "clientdll",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "sys_info",
@@ -8488,7 +8486,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Test a clientside dispatch effect."
+      "description": "Test a clientside dispatch effect.\n\tUsage: test_dispatcheffect <effect name> <distance away> <flags> <magnitude> <scale>\n\tDefaults are: <distance 1024> <flags 0> <magnitude 0> <scale 0>\n"
     },
     {
       "name": "test_entity_blocker",
@@ -8585,7 +8583,7 @@
         "gamedll",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "timeout_terrorist_start",
@@ -8593,7 +8591,7 @@
         "gamedll",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "toggle",
@@ -8609,7 +8607,7 @@
         "developmentonly",
         "clientdll"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "toggleconsole",
@@ -8891,30 +8889,6 @@
       "description": "Toggle the voice_modenable convar."
     },
     {
-      "name": "voice_mute",
-      "flags": [
-        "developmentonly",
-        "defensive"
-      ],
-      "description": "Mute a specific Steam user"
-    },
-    {
-      "name": "voice_reset_mutelist",
-      "flags": [
-        "developmentonly",
-        "defensive"
-      ],
-      "description": "Reset all mute information for all players who were ever muted."
-    },
-    {
-      "name": "voice_show_mute",
-      "flags": [
-        "developmentonly",
-        "defensive"
-      ],
-      "description": "Show whether current players are muted."
-    },
-    {
       "name": "voice_status_test_toggle",
       "flags": [
         "developmentonly",
@@ -8929,14 +8903,6 @@
         "release"
       ],
       "description": "Toggles between open-mic and push-to-talk"
-    },
-    {
-      "name": "voice_unmute",
-      "flags": [
-        "developmentonly",
-        "defensive"
-      ],
-      "description": "Unmute a specific Steam user, or `all` to unmute all connected players."
     },
     {
       "name": "vprof_dump_counters",
@@ -9043,12 +9009,68 @@
       "description": "Controls VTune's sampling."
     },
     {
+      "name": "vulkan_framebuffermgr_print",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Prints out stats for the Vulkan Framebuffer manager"
+    },
+    {
+      "name": "vulkan_memgr_fragmentation_print",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Prints out detailed memory fragmentation stats for the Vulkan memory manager"
+    },
+    {
+      "name": "vulkan_memgr_print",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Prints out stats for the Vulkan memory manager"
+    },
+    {
+      "name": "vulkan_pipelinemgr_print",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Prints out stats for the Vulkan Pipeline manager"
+    },
+    {
+      "name": "vulkan_shader_table_print",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Prints out stats for the Vulkan shader table"
+    },
+    {
+      "name": "vulkan_vma_defrag",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Force defragmenting memory with VMA"
+    },
+    {
+      "name": "vulkan_vma_gpu_mem_dump",
+      "flags": [
+        "developmentonly",
+        "defensive"
+      ],
+      "description": "Dump .json file for use by GpuMemDumpVis.py"
+    },
+    {
       "name": "weapon_switch",
       "flags": [
         "developmentonly",
         "gamedll"
       ],
-      "description": "Use a particular weapon"
+      "description": "Use a particular weapon\t\nArguments: <weapon_name>"
     },
     {
       "name": "workshop_annotation_submit",
@@ -9059,13 +9081,31 @@
       "description": "Submit annotation to workshop. To update an existing submission add its ID number from the workshop URL as a second argument."
     },
     {
+      "name": "workshop_clear_cloud_save",
+      "flags": [
+        "developmentonly",
+        "gamedll",
+        "defensive"
+      ],
+      "description": "Remove a workshop save from steam cloud. Pass the published file id to delete or 0 to delete the non-workshop addon save."
+    },
+    {
+      "name": "workshop_dump_cloud_contents",
+      "flags": [
+        "developmentonly",
+        "gamedll",
+        "defensive"
+      ],
+      "description": "Spew contents of steam cloud."
+    },
+    {
       "name": "workshop_item_submit",
       "flags": [
         "clientdll",
         "hidden",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "workshop_tournament_item_submit",
@@ -9074,7 +9114,7 @@
         "hidden",
         "release"
       ],
-      "description": "<no description>"
+      "description": ""
     },
     {
       "name": "world_dump_loaded_worlds",

@@ -11,6 +11,7 @@ nav_exclude: true
 
 | Name | Kind | Bases | Fields |
 |------|------|-------|--------|
+| [AABBWS_t](#aabbws_t) | class |  | 2 |
 | [AABB_t](#aabb_t) | class |  | 2 |
 | [CFuseProgram](#cfuseprogram) | class |  | 4 |
 | [CFuseSymbolTable](#cfusesymboltable) | class |  | 6 |
@@ -18,13 +19,20 @@ nav_exclude: true
 | [FourQuaternions](#fourquaternions) | class |  | 4 |
 | [FunctionInfo_t](#functioninfo_t) | class |  | 5 |
 | [FuseFunctionIndex_t](#fusefunctionindex_t) | class |  | 1 |
-| [FuseVariableAccess_t](#fusevariableaccess_t) | enum |  | 2 |
 | [FuseVariableIndex_t](#fusevariableindex_t) | class |  | 1 |
-| [FuseVariableType_t](#fusevariabletype_t) | enum |  | 9 |
 | [PackedAABB_t](#packedaabb_t) | class |  | 2 |
 | [VariableInfo_t](#variableinfo_t) | class |  | 6 |
 
 ---
+
+### AABBWS_t
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_vMinBounds` | VectorWS |  |
+| `m_vMaxBounds` | VectorWS |  |
 
 ### AABB_t
 
@@ -61,9 +69,9 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_programBuffer` | CUtlVector<uint8> |  |
-| `m_variablesRead` | CUtlVector<[FuseVariableIndex_t](../schemas/mathlib_extended.md#fusevariableindex_t)> |  |
-| `m_variablesWritten` | CUtlVector<[FuseVariableIndex_t](../schemas/mathlib_extended.md#fusevariableindex_t)> |  |
+| `m_programBuffer` | CUtlVector< uint8 > |  |
+| `m_variablesRead` | CUtlVector< [FuseVariableIndex_t](../schemas/mathlib_extended.md#fusevariableindex_t) > |  |
+| `m_variablesWritten` | CUtlVector< [FuseVariableIndex_t](../schemas/mathlib_extended.md#fusevariableindex_t) > |  |
 | `m_nMaxTempVarsUsed` | int32 |  |
 
 ### CFuseSymbolTable
@@ -102,12 +110,12 @@ classDiagram
 
 | Name | Type | Annotations |
 |------|------|-------------|
-| `m_constants` | CUtlVector<[ConstantInfo_t](../schemas/mathlib_extended.md#constantinfo_t)> |  |
-| `m_variables` | CUtlVector<[VariableInfo_t](../schemas/mathlib_extended.md#variableinfo_t)> |  |
-| `m_functions` | CUtlVector<[FunctionInfo_t](../schemas/mathlib_extended.md#functioninfo_t)> |  |
-| `m_constantMap` | CUtlHashtable<CUtlStringToken,int32> |  |
-| `m_variableMap` | CUtlHashtable<CUtlStringToken,int32> |  |
-| `m_functionMap` | CUtlHashtable<CUtlStringToken,int32> |  |
+| `m_constants` | CUtlVector< [ConstantInfo_t](../schemas/mathlib_extended.md#constantinfo_t) > |  |
+| `m_variables` | CUtlVector< [VariableInfo_t](../schemas/mathlib_extended.md#variableinfo_t) > |  |
+| `m_functions` | CUtlVector< [FunctionInfo_t](../schemas/mathlib_extended.md#functioninfo_t) > |  |
+| `m_constantMap` | CUtlHashtable< CUtlStringToken, int32 > |  |
+| `m_variableMap` | CUtlHashtable< CUtlStringToken, int32 > |  |
+| `m_functionMap` | CUtlHashtable< CUtlStringToken, int32 > |  |
 
 ### ConstantInfo_t
 
@@ -173,15 +181,6 @@ classDiagram
 |------|------|-------------|
 | `m_Value` | uint16 |  |
 
-### FuseVariableAccess_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `WRITABLE` | 0 |  |
-| `READ_ONLY` | 1 |  |
-
 ### FuseVariableIndex_t
 
 **Metadata:** `MIsBoxedIntegerType`
@@ -191,22 +190,6 @@ classDiagram
 | Name | Type | Annotations |
 |------|------|-------------|
 | `m_Value` | uint16 |  |
-
-### FuseVariableType_t
-
-**Values:**
-
-| Name | Value | Description |
-|------|-------|-------------|
-| `INVALID` | 0 |  |
-| `BOOL` | 1 |  |
-| `INT8` | 2 |  |
-| `INT16` | 3 |  |
-| `INT32` | 4 |  |
-| `UINT8` | 5 |  |
-| `UINT16` | 6 |  |
-| `UINT32` | 7 |  |
-| `FLOAT32` | 8 |  |
 
 ### PackedAABB_t
 
@@ -245,5 +228,5 @@ classDiagram
 | `m_nameToken` | CUtlStringToken |  |
 | `m_nIndex` | [FuseVariableIndex_t](../schemas/mathlib_extended.md#fusevariableindex_t) |  |
 | `m_nNumComponents` | uint8 |  |
-| `m_eVarType` | [FuseVariableType_t](../schemas/mathlib_extended.md#fusevariabletype_t) |  |
-| `m_eAccess` | [FuseVariableAccess_t](../schemas/mathlib_extended.md#fusevariableaccess_t) |  |
+| `m_eVarType` | [FuseVariableType_t](../schemas/!GlobalTypes.md#fusevariabletype_t) |  |
+| `m_eAccess` | [FuseVariableAccess_t](../schemas/!GlobalTypes.md#fusevariableaccess_t) |  |

@@ -11,10 +11,11 @@ Do **not** write CS2 plugin code, server-side logic, demo parsers, or game tooli
 ## Architecture
 
 ```
-SteamDatabase/GameTracking-CS2 (upstream)         ValveResourceFormat/SchemaExplorer (upstream)
-    └── upstream/data/  ← read-only git submodule    └── upstream/schema-explorer/  ← read-only git submodule
-            │                                                      │
-            ▼                                                      ▼
+CS2OpenDev/CS2OpenDev-SchemaTracker (upstream, `latest` branch)
+    └── upstream/schema-tracker/  ← read-only git submodule tracking `latest` (single build + LATEST.json)
+            artifacts/<build_id>/<platform>/*.json + protos.descriptorset
+            │
+            ▼
     docs/generate_docs.py           ← the only generator
     docs/overlays/                  ← YAML community annotations (HAND-EDITED)
             │
@@ -32,17 +33,22 @@ SteamDatabase/GameTracking-CS2 (upstream)         ValveResourceFormat/SchemaExpl
     Jekyll (just-the-docs theme, hand-maintained _config.yml + _includes/) → GitHub Pages
 ```
 
-Inputs the generator reads:
-- `upstream/schema-explorer/schemas/cs2.json.gz` — DumpSource2's structured entity dump (classes, structs, enums, fields, offsets, sizes, parents, metadata).  This is the source of truth for the schema; it replaced an earlier regex `.h` parser.
-- `upstream/data/Protobufs/*.proto` — ~42 proto files, compiled per-file via `protoc --descriptor_set_out --include_source_info` and walked with `google.protobuf.descriptor_pb2`.  This replaced an earlier regex `.proto` parser.  Per-file (not one big set) to dodge cross-file enum-value collisions in the upstream dump.
-- `upstream/data/DumpSource2/convars.txt`, `upstream/data/DumpSource2/commands.txt`
-- `upstream/data/DumpSource2/module_metadata/` — per-module metadata
-- `upstream/data/game/csgo/pak01_dir/resource/*.gameevents` — Valve KeyValues1
+Everything comes from **one** CS2OpenDev-SchemaTracker artifact set —
+`artifacts/<build_id>/<platform>/` — selected by `resolve_build_dir` (highest-numbered
+committed build for the chosen platform, default `windows-x86_64`). Inputs the generator reads:
+- `entity_schema.json` — the structured entity dump (classes, structs, enums, fields, offsets, sizes, parents, metadata, binary `module` + `projectName`).  Source of truth for the schema; loaded by `load_entity_schema` and shaped by `_convert_class`/`_convert_enum`.
+- `protos.descriptorset` — a **prebuilt** `FileDescriptorSet` of the build's protobufs, read directly via `google.protobuf.descriptor_pb2` (no `protoc`).  `google/protobuf/*` well-known files are skipped.
+- `convars.json`, `commands.json` — loaded as structured JSON (richer than the old text dumps: `valueType`, min/max, completion-callback flags).
+- `gameevents.json` — structurally-parsed game-event registry.
+- `provenance.json` — build id, Steam date, schema/tool versions (page/schema headers).
 
-The `upstream/data/DumpSource2/schemas/<module>/*.h` files are *no longer parsed* — the generator now consumes the structured JSON instead.  If DumpSource2 ever ships the JSON directly to GameTracking-CS2 (`data_root/DumpSource2/schemas.json[.gz]`), `find_schema_json` already prefers that path and the `upstream/schema-explorer/` submodule can be retired.
+SchemaTracker walks the **shipped CS2 runtime binaries**, so coverage is runtime-only
+(~1,500 entities across `client`/`server`/`entity2`/`pulse_runtime_lib`/`particleslib`/`animgraphlib`);
+the Source 2 editor/tooling schema is deliberately absent. Content artifacts
+(`item_definitions.json`, `game_modes.json`, `network_messages.json`, `changelog.json`, …)
+are available for new pages but not all wired up yet.
 
-External tools the generator shells out to:
-- `protoc` — Protocol Buffers compiler.  Install with `brew install protobuf` (macOS) or `apt install protobuf-compiler` (Debian/Ubuntu).
+No external tools are shelled out — `protoc` is no longer required.
 
 Per-entity overlays at `docs/overlays/<module>.yml` (multi-entity, recommended) or `docs/overlays/<module>/<EntityName>.yml` (legacy single-file) get merged into the generated output. Format is documented in `docs/overlays/README.md`.
 
@@ -50,20 +56,28 @@ Per-entity overlays at `docs/overlays/<module>.yml` (multi-entity, recommended) 
 
 - **Never hand-edit anything under `docs/generated/`.** Every file there is overwritten by the next generator run. The home page (`docs/index.md`) is also generated — don't hand-edit it. To change generated content, edit either (a) the generator script or (b) an overlay YAML.
 - `docs/_config.yml`, `docs/_includes/`, and `docs/Gemfile` are **hand-maintained**. The generator does not touch them. Theme/layout customization goes here.
-- **Never edit `upstream/data/` or `upstream/schema-explorer/`** — both are read-only submodules pointing at upstream repos (`SteamDatabase/GameTracking-CS2` and `ValveResourceFormat/SchemaExplorer` respectively). Fresh clones need `git submodule update --init --recursive` (or `git clone --recurse-submodules`); the submodules are empty otherwise and the generator will exit with an error.
+- **Never edit `upstream/schema-tracker/`** — it's a read-only submodule pointing at `CS2OpenDev/CS2OpenDev-SchemaTracker`. It tracks that repo's **`latest`** branch, which carries only the newest build's artifacts plus a root `LATEST.json` pointer — so `git submodule update --init --remote --depth 1 upstream/schema-tracker` is a tens-of-MB checkout, not the multi-GB full history. Without it materialised, the generator exits with an error. For local dev you can bypass the submodule with `--artifacts-root <path-to-a-SchemaTracker-checkout>/artifacts`. Note: the `latest` branch does **not** yet carry `artifacts/schema_evolution/<platform>.json` (input to the Schema History page); CI supplements it with a targeted sparse fetch from the default branch, and a plain `latest`-only checkout renders everything *except* Schema History.
 - The submodule pointers are only advanced by the scheduled GitHub Action (`.github/workflows/generate-docs.yml`) — don't bump them locally as part of a content change unless that's specifically what you're doing.
 - `AGENTS.md` is the canonical context-for-external-AI-tools file. If schema/architecture facts change, update it there (not in CLAUDE.md, which is for *this* repo's contributors).
 
 ## Common commands
 
 ```bash
-# After a fresh clone without --recurse-submodules:
-git submodule update --init
+# Materialise just the latest SchemaTracker build (shallow clone of `latest`):
+git clone --depth 1 --single-branch --branch latest \
+  https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker.git upstream/schema-tracker
+# (or, via the submodule declaration:)
+#   git submodule update --init --remote --depth 1 upstream/schema-tracker
 
 # Regenerate all docs (the only build step that matters):
-pip install pyyaml jsonschema protobuf
-# (protoc itself must also be on PATH — `brew install protobuf` / `apt install protobuf-compiler`)
-python3 docs/generate_docs.py --repo-root . --data-root ./upstream/data --output docs
+pip install pyyaml protobuf   # protoc is NOT needed
+python3 docs/generate_docs.py --repo-root . \
+  --artifacts-root ./upstream/schema-tracker/artifacts --build latest \
+  --platform windows-x86_64 --output docs
+
+# Local dev against a full SchemaTracker checkout (skip the submodule):
+python3 docs/generate_docs.py --repo-root . \
+  --artifacts-root /path/to/CS2OpenDev-SchemaTracker/artifacts --output docs
 ```
 
 There is no test suite, lint config, or build step beyond the Python generator and Jekyll. Validation is "run the generator, `git status` should show changes only under `docs/generated/` (plus `docs/index.md` if entity counts changed)."

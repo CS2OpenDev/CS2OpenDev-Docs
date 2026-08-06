@@ -13,6 +13,6 @@ Class relationships (inheritance and composition) for the `modtools` module.
 
 ```mermaid
 classDiagram
-    CNmGraphDocFlowNode <|-- CnmGraphDocSnapWeaponNode
     CNmGraphDocFlowNode <|-- CNmGraphDocAimCSNode
+    CNmGraphDocFlowNode <|-- CnmGraphDocSnapWeaponNode
 ```

@@ -7,7 +7,7 @@ nav_exclude: true
 
 # `cs_usercmd.proto`
 
-**Imports:** `networkbasetypes.proto`, `usercmd.proto`
+**Imports:** `valveextensions.proto`, `networkbasetypes.proto`, `usercmd.proto`
 
 ## Diagram
 

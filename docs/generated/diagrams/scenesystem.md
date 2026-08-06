@@ -13,11 +13,11 @@ Class relationships (inheritance and composition) for the `scenesystem` module.
 
 ```mermaid
 classDiagram
-    CSSDSMsg_LayerBase <|-- CSSDSMsg_PreLayer
     CSSDSMsg_LayerBase <|-- CSSDSMsg_PostLayer
+    CSSDSMsg_LayerBase <|-- CSSDSMsg_PreLayer
     CSSDSMsg_EndFrame *-- CSSDSEndFrameViewInfo
+    CSSDSMsg_LayerBase *-- SceneViewId_t
     CSSDSMsg_ViewRender *-- SceneViewId_t
     CSSDSMsg_ViewTargetList *-- SceneViewId_t
     CSSDSMsg_ViewTargetList *-- CSSDSMsg_ViewTarget
-    CSSDSMsg_LayerBase *-- SceneViewId_t
 ```

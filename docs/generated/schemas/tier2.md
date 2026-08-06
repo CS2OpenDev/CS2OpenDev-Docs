@@ -16,7 +16,7 @@ nav_exclude: true
 
 ### CRangeFloat
 
-**Metadata:** `MPropertyCustomEditor "multi_float(2)"`
+**Metadata:** `MPropertyCustomEditor multi_float(2)`
 
 **Fields:**
 
@@ -26,7 +26,7 @@ nav_exclude: true
 
 ### CRangeInt
 
-**Metadata:** `MPropertyCustomEditor "multi_int(2)"`
+**Metadata:** `MPropertyCustomEditor multi_int(2)`
 
 **Fields:**
 

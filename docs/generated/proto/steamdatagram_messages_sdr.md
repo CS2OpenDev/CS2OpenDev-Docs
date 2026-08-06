@@ -831,7 +831,7 @@ direction LR
 |-------|---------|------|-------|-------------|
 | `legacy_gameserver_relay_session_id` | 2 | uint32 | optional |  |
 | `legacy_from_steam_id` | 3 | fixed64 | optional |  |
-| `relay_mode` | 4 | CMsgSteamDatagramConnectionClosed.ERelayMode | optional | *(default: `None`)* |
+| `relay_mode` | 4 | CMsgSteamDatagramConnectionClosed.ERelayMode | optional |  |
 | `debug` | 5 | string | optional |  |
 | `reason_code` | 6 | uint32 | optional |  |
 | `to_connection_id` | 7 | fixed32 | optional |  |

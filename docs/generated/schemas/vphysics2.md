@@ -13,10 +13,16 @@ nav_exclude: true
 |------|------|-------|--------|
 | [IPhysAggregateInstance](#iphysaggregateinstance) | class | IPhysicsBodyList | 2 |
 | [IPhysicsBody](#iphysicsbody) | class |  | 0 |
+| [IPhysicsBodyList](#iphysicsbodylist) | class |  | 0 |
 | [IPhysicsJoint](#iphysicsjoint) | class |  | 0 |
+| [IPhysicsMotionController](#iphysicsmotioncontroller) | class |  | 0 |
 | [IPhysicsParticleRope](#iphysicsparticlerope) | class |  | 0 |
 | [IPhysicsPlayerController](#iphysicsplayercontroller) | class |  | 0 |
 | [IPhysicsRagdollControl](#iphysicsragdollcontrol) | class |  | 0 |
+| [VPhysEntityId_t](#vphysentityid_t) | class |  | 1 |
+| [constraint_axislimit_t](#constraint_axislimit_t) | class |  | 4 |
+| [constraint_breakableparams_t](#constraint_breakableparams_t) | class |  | 5 |
+| [constraint_hingeparams_t](#constraint_hingeparams_t) | class |  | 4 |
 | [vphysics_save_cphysicsbody_t](#vphysics_save_cphysicsbody_t) | class | RnBodyDesc_t | 1 |
 | [vphysics_save_ragdoll_control_t](#vphysics_save_ragdoll_control_t) | class |  | 10 |
 
@@ -24,7 +30,7 @@ nav_exclude: true
 
 ### IPhysAggregateInstance
 
-**Inherits from:** [IPhysicsBodyList](client.md#iphysicsbodylist)
+**Inherits from:** [IPhysicsBodyList](vphysics2.md#iphysicsbodylist)
 
 **Relationships:**
 
@@ -42,7 +48,20 @@ classDiagram
 
 ### IPhysicsBody
 
+### IPhysicsBodyList
+
+**Derived by:** [IPhysAggregateInstance](vphysics2.md#iphysaggregateinstance)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    IPhysicsBodyList <|-- IPhysAggregateInstance
+```
+
 ### IPhysicsJoint
+
+### IPhysicsMotionController
 
 ### IPhysicsParticleRope
 
@@ -50,18 +69,69 @@ classDiagram
 
 ### IPhysicsRagdollControl
 
+### VPhysEntityId_t
+
+**Metadata:** `MGetKV3ClassDefaults {
+	"m_Id": 0
+}`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `m_Id` | uint32 |  |
+
+### constraint_axislimit_t
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `flMinRotation` | float32 |  |
+| `flMaxRotation` | float32 |  |
+| `flMotorTargetAngSpeed` | float32 |  |
+| `flMotorMaxTorque` | float32 |  |
+
+### constraint_breakableparams_t
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `strength` | float32 |  |
+| `forceLimit` | float32 |  |
+| `torqueLimit` | float32 |  |
+| `bodyMassScale` | float32[2] |  |
+| `isActive` | bool |  |
+
+### constraint_hingeparams_t
+
+**Metadata:** `MGetKV3ClassDefaults {
+	"worldPosition": null,
+	"worldAxisDirection":
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	]
+}`
+
+**Fields:**
+
+| Name | Type | Annotations |
+|------|------|-------------|
+| `worldPosition` | VectorWS |  |
+| `worldAxisDirection` | Vector |  |
+| `hingeAxis` | constraint_axislimit_t | `MNotSaved` |
+| `constraint` | constraint_breakableparams_t | `MNotSaved` |
+
 ### vphysics_save_cphysicsbody_t
 
 **Inherits from:** [RnBodyDesc_t](physicslib.md#rnbodydesc_t)
 
 **Metadata:** `MGetKV3ClassDefaults {
 	"m_sDebugName": "",
-	"m_vPosition":
-	[
-		0.000000,
-		0.000000,
-		0.000000
-	],
+	"m_vPosition": null,
 	"m_qOrientation":
 	[
 		0.000000,
@@ -105,7 +175,7 @@ classDiagram
 			0.000000
 		]
 	],
-	"m_flMassInv": 0.000000,
+	"m_flMassInv": <HIDDEN FOR DIFF>,
 	"m_flGameMass": 0.000000,
 	"m_flMassScaleInv": 1.000000,
 	"m_flInertiaScaleInv": 1.000000,
@@ -167,7 +237,7 @@ classDiagram
 
 ### vphysics_save_ragdoll_control_t
 
-**Metadata:** `MGetKV3ClassDefaults Could not parse KV3 Defaults`
+**Metadata:** `MGetKV3ClassDefaults`
 
 **Fields:**
 

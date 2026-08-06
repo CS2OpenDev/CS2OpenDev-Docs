@@ -322,12 +322,13 @@ direction LR
 
   class CSVCMsg_VoiceData {
     +CMsgVoiceAudio audio
-    +int32 client
+    +int32 client_deprecated
     +bool proximity
     +fixed64 xuid
     +int32 audible_mask
     +uint32 tick
     +int32 passthrough
+    +int32 entity
   }
 
   class CSVCMsg_PacketReliable {
@@ -529,6 +530,7 @@ direction LR
     +int32 player_slot
     +int32 server_tick_executed
     +int32 client_tick
+    +bytes delta_data
   }
 
   class CSVCMsg_UserCommands {
@@ -1200,12 +1202,13 @@ Relays a voice-audio packet from a speaking player to all listeners.
 | Field | Ordinal | Type | Label | Description |
 |-------|---------|------|-------|-------------|
 | `audio` | 1 | [CMsgVoiceAudio](#cmsgvoiceaudio) | optional | CMsgVoiceAudio containing the compressed audio data and format. |
-| `client` | 2 | int32 | optional | Player slot index of the speaker. *(default: `-1`)* |
+| `client_deprecated` | 2 | int32 | optional | *(default: `-1`)* |
 | `proximity` | 3 | bool | optional | True when the voice is 3D positional (proximity voice chat). |
 | `xuid` | 4 | fixed64 | optional |  |
 | `audible_mask` | 5 | int32 | optional | Bitmask of player slots that should hear this audio. |
 | `tick` | 6 | uint32 | optional |  |
 | `passthrough` | 7 | int32 | optional |  |
+| `entity` | 8 | int32 | optional | *(default: `-1`)* |
 
 ### `CSVCMsg_PacketReliable`
 
@@ -1437,6 +1440,7 @@ Reliable wrapper for delta packets that must be delivered in order and without l
 | `player_slot` | 3 | int32 | optional | *(default: `-1`)* |
 | `server_tick_executed` | 4 | int32 | optional |  |
 | `client_tick` | 5 | int32 | optional |  |
+| `delta_data` | 6 | bytes | optional |  |
 
 ### `CSVCMsg_UserCommands`
 

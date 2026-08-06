@@ -79,7 +79,7 @@ direction LR
 | `eresult` | 13 | int32 | optional | *(default: `2`)* |
 | `error_message` | 14 | string | optional |  |
 | `ip` | 15 | uint32 | optional |  |
-| `gc_msg_src` | 200 | [GCProtoBufMsgSrc](#gcprotobufmsgsrc) | optional | *(default: `GCProtoBufMsgSrc_Unspecified`)* |
+| `gc_msg_src` | 200 | [GCProtoBufMsgSrc](#gcprotobufmsgsrc) | optional |  |
 | `gc_dir_index_source` | 201 | uint32 | optional |  |
 
 ### `CChinaAgreementSessions_StartAgreementSessionInGame_Request`

@@ -19,20 +19,6 @@ direction LR
     +uint32 achievement
   }
 
-  class CUserMessageCloseCaption {
-    +fixed32 hash
-    +float duration
-    +bool from_player
-    +int32 ent_index
-  }
-
-  class CUserMessageCloseCaptionDirect {
-    +fixed32 hash
-    +float duration
-    +bool from_player
-    +int32 ent_index
-  }
-
   class CUserMessageCloseCaptionPlaceholder {
     +string string
     +float duration
@@ -194,11 +180,6 @@ direction LR
 
   class CEntityMessageScreenOverlay {
     +bool start_effect
-    +CEntityMsg entity_msg
-  }
-
-  class CEntityMessageRemoveAllDecals {
-    +bool remove_decals
     +CEntityMsg entity_msg
   }
 
@@ -761,6 +742,10 @@ direction LR
     +int32 mix_priority
   }
 
+  class CUserMessage_UsageReport {
+    +string usage
+  }
+
   CUserMessageShakeDir --> CUserMessageShake : shake
   CUserMessageCreditsMsg --> eRollType : rolltype
   CUserMessageCameraTransition --> Transition_DataDriven : params_data_driven
@@ -821,8 +806,6 @@ direction LR
   class EBaseUserMessages{
     <<enumeration>>
     UM_AchievementEvent
-    UM_CloseCaption
-    UM_CloseCaptionDirect
     UM_CurrentTimescale
     UM_DesiredTimescale
     UM_Fade
@@ -871,6 +854,7 @@ direction LR
     UM_NotifyResponseFound
     UM_PlayResponseConditional
     UM_UserSentBugBug
+    UM_UsageReport
     UM_MAX_BASE
   }
 
@@ -878,7 +862,6 @@ direction LR
     <<enumeration>>
     EM_PlayJingle
     EM_ScreenOverlay
-    EM_RemoveAllDecals
     EM_PropagateForce
     EM_DoSpark
     EM_FixAngle
@@ -955,8 +938,6 @@ direction LR
 | Name | Value |
 |------|-------|
 | `UM_AchievementEvent` | 101 |
-| `UM_CloseCaption` | 102 |
-| `UM_CloseCaptionDirect` | 103 |
 | `UM_CurrentTimescale` | 104 |
 | `UM_DesiredTimescale` | 105 |
 | `UM_Fade` | 106 |
@@ -1005,6 +986,7 @@ direction LR
 | `UM_NotifyResponseFound` | 165 |
 | `UM_PlayResponseConditional` | 166 |
 | `UM_UserSentBugBug` | 167 |
+| `UM_UsageReport` | 168 |
 | `UM_MAX_BASE` | 200 |
 
 ### `EBaseEntityMessages`
@@ -1013,7 +995,6 @@ direction LR
 |------|-------|
 | `EM_PlayJingle` | 136 |
 | `EM_ScreenOverlay` | 137 |
-| `EM_RemoveAllDecals` | 138 |
 | `EM_PropagateForce` | 139 |
 | `EM_DoSpark` | 140 |
 | `EM_FixAngle` | 141 |
@@ -1090,24 +1071,6 @@ direction LR
 | Field | Ordinal | Type | Label | Description |
 |-------|---------|------|-------|-------------|
 | `achievement` | 1 | uint32 | optional |  |
-
-### `CUserMessageCloseCaption`
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `hash` | 1 | fixed32 | optional |  |
-| `duration` | 2 | float | optional |  |
-| `from_player` | 3 | bool | optional |  |
-| `ent_index` | 4 | int32 | optional | *(default: `-1`)* |
-
-### `CUserMessageCloseCaptionDirect`
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `hash` | 1 | fixed32 | optional |  |
-| `duration` | 2 | float | optional |  |
-| `from_player` | 3 | bool | optional |  |
-| `ent_index` | 4 | int32 | optional | *(default: `-1`)* |
 
 ### `CUserMessageCloseCaptionPlaceholder`
 
@@ -1318,13 +1281,6 @@ direction LR
 | Field | Ordinal | Type | Label | Description |
 |-------|---------|------|-------|-------------|
 | `start_effect` | 1 | bool | optional |  |
-| `entity_msg` | 2 | CEntityMsg | optional |  |
-
-### `CEntityMessageRemoveAllDecals`
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `remove_decals` | 1 | bool | optional |  |
 | `entity_msg` | 2 | CEntityMsg | optional |  |
 
 ### `CEntityMessagePropagateForce`
@@ -1595,3 +1551,9 @@ direction LR
 | `ent_origin` | 4 | CMsgVector | optional |  |
 | `pre_delay` | 5 | float | optional |  |
 | `mix_priority` | 6 | int32 | optional |  |
+
+### `CUserMessage_UsageReport`
+
+| Field | Ordinal | Type | Label | Description |
+|-------|---------|------|-------|-------------|
+| `usage` | 1 | string | optional |  |

@@ -13,10 +13,13 @@ Class relationships (inheritance and composition) for the `steamaudio` module.
 
 ```mermaid
 classDiagram
-    CSteamAudioProbeGrid *-- CSteamAudioProbeLineSegment
     CSteamAudioBakedDimensionsData *-- SteamAudioCustomDataDimensionsSettings_t
     CSteamAudioBakedDimensionsData *-- CSteamAudioProbeData
     CSteamAudioBakedDimensionsData *-- CSteamAudioAmbisonicsField
+    CSteamAudioBakedMaterialsData *-- CSteamAudioProbeData
+    CSteamAudioBakedOcclusionData *-- SteamAudioCustomDataOcclusionSettings_t
+    CSteamAudioBakedOcclusionData *-- CSteamAudioProbeData
+    CSteamAudioBakedPathingData *-- CSteamAudioProbeData
     CSteamAudioBakedReverbData *-- CSteamAudioSceneData
     CSteamAudioBakedReverbData *-- CSteamAudioProbeData
     CSteamAudioBakedReverbData *-- CSteamAudioProbeGrid
@@ -24,8 +27,5 @@ classDiagram
     CSteamAudioBakedReverbData *-- SteamAudioReverbClusteringSettings_t
     CSteamAudioBakedReverbData *-- SteamAudioReverbCompressionSettings_t
     CSteamAudioBakedReverbData *-- CSteamAudioCompressedReverb
-    CSteamAudioBakedOcclusionData *-- SteamAudioCustomDataOcclusionSettings_t
-    CSteamAudioBakedOcclusionData *-- CSteamAudioProbeData
-    CSteamAudioBakedMaterialsData *-- CSteamAudioProbeData
-    CSteamAudioBakedPathingData *-- CSteamAudioProbeData
+    CSteamAudioProbeGrid *-- CSteamAudioProbeLineSegment
 ```

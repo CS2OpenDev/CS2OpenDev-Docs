@@ -14,23 +14,11 @@ Class relationships (inheritance and composition) for the `animationsystem` modu
 ```mermaid
 classDiagram
     AnimationSnapshotBase_t <|-- AnimationSnapshot_t
-    CMoodVData *-- MoodType_t
-    CMoodVData *-- MoodAnimationLayer_t
-    CAnimKeyData *-- CAnimBone
-    CAnimKeyData *-- CAnimUser
-    CAnimKeyData *-- CAnimDataChannelDesc
+    AnimationDecodeDebugDump_t *-- AnimationDecodeDebugDumpElement_t
+    AnimationSnapshotBase_t *-- AnimationDecodeDebugDumpElement_t
     CAnimData *-- CAnimDesc
     CAnimData *-- CAnimDecoder
     CAnimData *-- CAnimFrameSegment
-    CSeqAutoLayer *-- CSeqAutoLayerFlag
-    AnimationDecodeDebugDump_t *-- AnimationProcessingType_t
-    AnimationDecodeDebugDump_t *-- AnimationDecodeDebugDumpElement_t
-    CSeqCmdSeqDesc *-- CSeqSeqDescFlag
-    CSeqCmdSeqDesc *-- CSeqTransition
-    CSeqCmdSeqDesc *-- CSeqCmdLayer
-    CSeqCmdSeqDesc *-- CAnimEventDefinition
-    CSeqCmdSeqDesc *-- CAnimActivity
-    CSeqCmdSeqDesc *-- CSeqPoseSetting
     CAnimDesc *-- CAnimDesc_Flag
     CAnimDesc *-- CAnimEncodedFrames
     CAnimDesc *-- CAnimMovement
@@ -38,15 +26,33 @@ classDiagram
     CAnimDesc *-- CAnimActivity
     CAnimDesc *-- CAnimLocalHierarchy
     CAnimDesc *-- CAnimSequenceParams
+    CAnimEncodeDifference *-- CAnimBoneDifference
+    CAnimEncodeDifference *-- CAnimMorphDifference
+    CAnimEncodeDifference *-- CAnimUserDifference
+    CAnimEncodedFrames *-- CAnimFrameBlockAnim
+    CAnimEncodedFrames *-- CAnimEncodeDifference
+    CAnimKeyData *-- CAnimBone
+    CAnimKeyData *-- CAnimUser
+    CAnimKeyData *-- CAnimDataChannelDesc
+    CAnimationGroup *-- CAnimKeyData
+    CMoodVData *-- MoodAnimationLayer_t
+    CSeqAutoLayer *-- CSeqAutoLayerFlag
+    CSeqCmdSeqDesc *-- CSeqSeqDescFlag
+    CSeqCmdSeqDesc *-- CSeqTransition
+    CSeqCmdSeqDesc *-- CSeqCmdLayer
+    CSeqCmdSeqDesc *-- CAnimEventDefinition
+    CSeqCmdSeqDesc *-- CAnimActivity
+    CSeqCmdSeqDesc *-- CSeqPoseSetting
+    CSeqMultiFetch *-- CSeqMultiFetchFlag
     CSeqS1SeqDesc *-- CSeqSeqDescFlag
     CSeqS1SeqDesc *-- CSeqMultiFetch
     CSeqS1SeqDesc *-- CSeqAutoLayer
     CSeqS1SeqDesc *-- CSeqIKLock
     CSeqS1SeqDesc *-- CSeqTransition
     CSeqS1SeqDesc *-- CAnimActivity
-    CAnimationGroup *-- CAnimKeyData
-    CSeqMultiFetch *-- CSeqMultiFetchFlag
-    MoodAnimationLayer_t *-- MoodAnimation_t
+    CSeqSynthAnimDesc *-- CSeqSeqDescFlag
+    CSeqSynthAnimDesc *-- CSeqTransition
+    CSeqSynthAnimDesc *-- CAnimActivity
     CSequenceGroupData *-- CSeqS1SeqDesc
     CSequenceGroupData *-- CSeqSynthAnimDesc
     CSequenceGroupData *-- CSeqCmdSeqDesc
@@ -54,14 +60,5 @@ classDiagram
     CSequenceGroupData *-- CSeqScaleSet
     CSequenceGroupData *-- CSeqPoseParamDesc
     CSequenceGroupData *-- CSeqIKLock
-    AnimationSnapshotBase_t *-- AnimationSnapshotType_t
-    AnimationSnapshotBase_t *-- AnimationDecodeDebugDumpElement_t
-    CSeqSynthAnimDesc *-- CSeqSeqDescFlag
-    CSeqSynthAnimDesc *-- CSeqTransition
-    CSeqSynthAnimDesc *-- CAnimActivity
-    CAnimEncodeDifference *-- CAnimBoneDifference
-    CAnimEncodeDifference *-- CAnimMorphDifference
-    CAnimEncodeDifference *-- CAnimUserDifference
-    CAnimEncodedFrames *-- CAnimFrameBlockAnim
-    CAnimEncodedFrames *-- CAnimEncodeDifference
+    MoodAnimationLayer_t *-- MoodAnimation_t
 ```

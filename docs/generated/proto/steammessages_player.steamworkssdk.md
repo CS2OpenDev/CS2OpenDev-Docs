@@ -306,13 +306,13 @@ direction LR
 |-------|---------|------|-------|-------------|
 | `accountid` | 1 | fixed32 | optional |  |
 | `nickname` | 2 | string | optional |  |
-| `notifications_showingame` | 3 | [ENotificationSetting](#enotificationsetting) | optional | *(default: `k_ENotificationSettingNotifyUseDefault`)* |
-| `notifications_showonline` | 4 | [ENotificationSetting](#enotificationsetting) | optional | *(default: `k_ENotificationSettingNotifyUseDefault`)* |
-| `notifications_showmessages` | 5 | [ENotificationSetting](#enotificationsetting) | optional | *(default: `k_ENotificationSettingNotifyUseDefault`)* |
-| `sounds_showingame` | 6 | [ENotificationSetting](#enotificationsetting) | optional | *(default: `k_ENotificationSettingNotifyUseDefault`)* |
-| `sounds_showonline` | 7 | [ENotificationSetting](#enotificationsetting) | optional | *(default: `k_ENotificationSettingNotifyUseDefault`)* |
-| `sounds_showmessages` | 8 | [ENotificationSetting](#enotificationsetting) | optional | *(default: `k_ENotificationSettingNotifyUseDefault`)* |
-| `notifications_sendmobile` | 9 | [ENotificationSetting](#enotificationsetting) | optional | *(default: `k_ENotificationSettingNotifyUseDefault`)* |
+| `notifications_showingame` | 3 | [ENotificationSetting](#enotificationsetting) | optional |  |
+| `notifications_showonline` | 4 | [ENotificationSetting](#enotificationsetting) | optional |  |
+| `notifications_showmessages` | 5 | [ENotificationSetting](#enotificationsetting) | optional |  |
+| `sounds_showingame` | 6 | [ENotificationSetting](#enotificationsetting) | optional |  |
+| `sounds_showonline` | 7 | [ENotificationSetting](#enotificationsetting) | optional |  |
+| `sounds_showmessages` | 8 | [ENotificationSetting](#enotificationsetting) | optional |  |
+| `notifications_sendmobile` | 9 | [ENotificationSetting](#enotificationsetting) | optional |  |
 
 ### `CPlayer_GetPerFriendPreferences_Response`
 

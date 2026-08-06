@@ -52,7 +52,7 @@ classDiagram
 | `m_bConstantDensity` | bool |  |
 | `m_bOnlyHitMeshes` | bool |  |
 | `m_bRadialFalloff` | bool |  |
-| `m_elements` | CUtlVector<[CSprayedDataPresetElement](../schemas/mapdoclib.md#csprayeddatapresetelement)> |  |
+| `m_elements` | CUtlVector< [CSprayedDataPresetElement](../schemas/mapdoclib.md#csprayeddatapresetelement) > |  |
 
 ### CSprayedDataPresetElement
 

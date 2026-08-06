@@ -223,7 +223,7 @@ direction LR
 
 | Field | Ordinal | Type | Label | Description |
 |-------|---------|------|-------|-------------|
-| `key_type` | 1 | CMsgSteamDatagramSessionCryptInfo.EKeyType | optional | *(default: `INVALID`)* |
+| `key_type` | 1 | CMsgSteamDatagramSessionCryptInfo.EKeyType | optional |  |
 | `key_data` | 2 | bytes | optional |  |
 | `nonce` | 3 | fixed64 | optional |  |
 | `protocol_version` | 4 | uint32 | optional |  |
