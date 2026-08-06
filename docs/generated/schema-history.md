@@ -24,7 +24,7 @@ To bring an instance captured under build *X* forward to build *Y*, apply each t
 |------------|---------------|-------------|-----------|
 | `24304127` → `24537688` | 0 / 0 / 6 | 0 / 0 / 1 | 99 |
 | `24248951` → `24304127` | 0 / 0 / 1 | 0 / 0 / 0 | 0 |
-| `24074625` → `24116939` | 232 / 59 / 1075 | 96 / 15 / 27 | 4785 |
+| `24074625` → `24116939` | 232 / 59 / 1076 | 96 / 15 / 27 | 4792 |
 | `23773332` → `23994866` | 0 / 0 / 1 | 0 / 0 / 0 | 5 |
 | `23333587` → `23354238` | 0 / 0 / 1 | 0 / 0 / 0 | 11 |
 | `23296257` → `23333587` | 0 / 0 / 1 | 0 / 0 / 0 | 0 |
@@ -45,7 +45,7 @@ To bring an instance captured under build *X* forward to build *Y*, apply each t
 | `21626952` → `21657141` | 0 / 0 / 1 | 0 / 0 / 0 | 1 |
 | `21609678` → `21626952` | 0 / 0 / 1 | 0 / 0 / 0 | 4 |
 | `21595680` → `21609678` | 0 / 0 / 9 | 0 / 0 / 0 | 52 |
-| `21529689` → `21593048` | 437 / 16 / 1042 | 32 / 3 / 14 | 7624 |
+| `21529689` → `21593048` | 437 / 16 / 1042 | 32 / 3 / 14 | 7627 |
 | `20670159` → `20775075` | 0 / 0 / 9 | 0 / 0 / 1 | 35 |
 | `20596740` → `20670159` | 0 / 0 / 4 | 0 / 0 / 0 | 6 |
 | `20535897` → `20596740` | 2 / 2 / 30 | 0 / 0 / 0 | 95 |
@@ -68,7 +68,7 @@ To bring an instance captured under build *X* forward to build *Y*, apply each t
 | `19421827` → `19450283` | 0 / 0 / 2 | 0 / 0 / 0 | 8 |
 | `19406478` → `19421827` | 0 / 0 / 48 | 0 / 0 / 0 | 41 |
 | `19391961` → `19406478` | 0 / 0 / 50 | 0 / 0 / 0 | 75 |
-| `19251152` → `19388062` | 1442 / 204 / 1482 | 99 / 16 / 40 | 8188 |
+| `19251152` → `19388062` | 1442 / 204 / 1483 | 99 / 16 / 40 | 8194 |
 | `19222571` → `19236816` | 0 / 0 / 1 | 0 / 0 / 0 | 89 |
 | `18816418` → `19083876` | 0 / 1 / 5 | 0 / 0 / 1 | 7 |
 | `18382650` → `18394927` | 0 / 0 / 2 | 0 / 0 / 0 | 4 |
@@ -89,7 +89,7 @@ To bring an instance captured under build *X* forward to build *Y*, apply each t
 | `16071819` → `16087659` | 0 / 0 / 4 | 0 / 0 / 0 | 3 |
 | `16015437` → `16057663` | 7 / 1 / 474 | 1 / 0 / 0 | 3002 |
 | `15923186` → `15936283` | 0 / 0 / 2 | 1 / 0 / 0 | 14 |
-| `15656858` → `15908369` | 251 / 10 / 1398 | 38 / 1 / 19 | 8800 |
+| `15656858` → `15908369` | 251 / 10 / 1398 | 38 / 1 / 19 | 8801 |
 | `15582507` → `15644071` | 0 / 0 / 1 | 0 / 0 / 0 | 0 |
 | `15372392` → `15424813` | 0 / 0 / 1 | 0 / 0 / 0 | 0 |
 | `15324295` → `15372392` | 2 / 0 / 13 | 0 / 0 / 0 | 368 |
@@ -190,7 +190,7 @@ To bring an instance captured under build *X* forward to build *Y*, apply each t
 
 **Classes removed (59):** `!GlobalTypes/AI_MotorGroundAnimgraph_DebugSnapshotData_t`, `!GlobalTypes/AI_MotorGroundAnimgraph_DebugSnapshotData_t::Event_t`, `!GlobalTypes/AI_Motor_DebugSnapshotData_t`, `!GlobalTypes/CAnimEventListener`, `!GlobalTypes/CAnimEventListenerBase`, `!GlobalTypes/CAnimEventQueueListener`, `!GlobalTypes/CCompressorGroup`, `!GlobalTypes/CSceneCriteria`, `!GlobalTypes/CSceneOpportunity`, `!GlobalTypes/CSceneRequest`, `!GlobalTypes/CVoiceContainerEnvelope`, `!GlobalTypes/CastSphereSATParams_t`, `!GlobalTypes/ExternalAnimGraph_t`, `!GlobalTypes/SceneInterestTags_t`, `!GlobalTypes/SceneOpportunityActor_t`, `!GlobalTypes/SceneOpportunityHandle_t`, `!GlobalTypes/SceneRequestHandle_t`, `!GlobalTypes/SceneRequestTargetMapPair_t`, `animationsystem.dll/CPulseCell_WaitForCursorsWithTagBase::CursorState_t`, `animationsystem.dll/PulseObservableBoolExpression_t`, `assetbrowser.dll/CPulseCell_WaitForCursorsWithTagBase::CursorState_t`, `assetbrowser.dll/PulseObservableBoolExpression_t`, `assetpreview.dll/CPulseCell_WaitForCursorsWithTagBase::CursorState_t`, `assetpreview.dll/PulseObservableBoolExpression_t`, `assetrename.dll/CPulseCell_WaitForCursorsWithTagBase::CursorState_t`, `assetrename.dll/PulseObservableBoolExpression_t`, `client.dll/CInfoInteraction`, `client.dll/CPulseAnimFuncs`, `client.dll/CPulseCell_WaitForCursorsWithTagBase::CursorState_t`, `client.dll/CScenePayloadVData`, `client.dll/PulseObservableBoolExpression_t`, `hammer.dll/CPulseCell_WaitForCursorsWithTagBase::CursorState_t`, `hammer.dll/PulseObservableBoolExpression_t`, `met.dll/CPulseCell_WaitForCursorsWithTagBase::CursorState_t`, `met.dll/PulseObservableBoolExpression_t`, `modeldoc_editor.dll/CPulseCell_WaitForCursorsWithTagBase::CursorState_t`, `modeldoc_editor.dll/PulseObservableBoolExpression_t`, `modeldoc_utils.dll/CPulseCell_WaitForCursorsWithTagBase::CursorState_t`, `modeldoc_utils.dll/PulseObservableBoolExpression_t`, `particles.dll/CPulseCell_WaitForCursorsWithTagBase::CursorState_t` … (+19 more)
 
-**Classes changed (1075):**
+**Classes changed (1076):**
 
 | Class | Field ops | Layout |
 |-------|-----------|--------|
@@ -207,6 +207,7 @@ To bring an instance captured under build *X* forward to build *Y*, apply each t
 | `!GlobalTypes/CAI_Expresser` | ＋field×2 | realign, flags |
 | `!GlobalTypes/CAI_ExpresserWithFollowup` | — | realign, flags |
 | `!GlobalTypes/CAnimGraphControllerManager` | ~offset×1 | resize 176→152 |
+| `!GlobalTypes/CBaseRendererSource2` | ~meta×1 | — |
 | `!GlobalTypes/CBaseTrailRenderer` | ＋field×1, ~offset×1 | resize 12520→12888 |
 | `!GlobalTypes/CBreakableStageHelper` | — | realign, flags |
 | `!GlobalTypes/CCS2ChickenGraphController` | ~offset×8, −field×1 | resize 344→320 |
@@ -226,7 +227,7 @@ To bring an instance captured under build *X* forward to build *Y*, apply each t
 | `!GlobalTypes/CMotorController` | ~type×1 | realign, flags |
 | `!GlobalTypes/CMovementStatsProperty` | — | realign, flags |
 | `!GlobalTypes/CMultiplayer_Expresser` | — | realign, flags |
-| `!GlobalTypes/CNPCPhysicsHull` | — | resize 56→64, flags |
+| `!GlobalTypes/CNPCPhysicsHull` | ~meta×2 | resize 56→64, flags |
 | `!GlobalTypes/CNetworkTransmitComponent` | — | realign, flags |
 | `!GlobalTypes/CNmAdditiveBlendTask` | — | resize 208→256, realign |
 | `!GlobalTypes/CNmAimCSTask` | — | resize 256→304 |
@@ -253,5 +254,4 @@ To bring an instance captured under build *X* forward to build *Y*, apply each t
 | `!GlobalTypes/CNmSampleTask` | — | resize 88→128, realign |
 | `!GlobalTypes/CNmScaleTask` | — | resize 160→208, realign |
 | `!GlobalTypes/CNmSkeleton` | ＋field×1, ~offset×1 | resize 192→208 |
-| `!GlobalTypes/CNmSkeletonDocument` | ＋field×1, ~offset×1, ~type×1 | resize 264→288 |
-| … | _1015 more changed classes — see `field_history.json`_ | |
+| … | _1016 more changed classes — see `field_history.json`_ | |
