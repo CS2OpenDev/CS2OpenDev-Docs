@@ -62,23 +62,13 @@ jobs:
           rm -rf upstream/schema-tracker
           git clone --depth 1 --single-branch --branch latest "$URL" upstream/schema-tracker
 
-          # The `latest` branch does not yet carry the cumulative
-          # artifacts/schema_evolution/<platform>.json files that the Schema
-          # History page + field_history.json consume.  If they're absent,
-          # supplement them with a targeted partial+sparse fetch of ONLY that
-          # path from the default branch.  Once upstream publishes them on
-          # `latest`, this guard skips and the extra fetch stops.
-          EVDIR="upstream/schema-tracker/artifacts/schema_evolution"
-          if [ ! -e "${EVDIR}/windows-x86_64.json" ]; then
-            echo "schema_evolution absent on latest — supplementing from default branch"
-            rm -rf /tmp/st-evo
-            git clone --filter=blob:none --no-checkout --depth 1 "$URL" /tmp/st-evo
-            git -C /tmp/st-evo sparse-checkout init --cone
-            git -C /tmp/st-evo sparse-checkout set artifacts/schema_evolution
-            git -C /tmp/st-evo checkout HEAD
-            mkdir -p "${EVDIR}"
-            cp /tmp/st-evo/artifacts/schema_evolution/*.json "${EVDIR}/"
-          fi
+          # The `latest` branch carries the cumulative
+          # artifacts/schema_evolution/<platform>.json files (maintained by
+          # SchemaTracker's publish-latest workflow) alongside the newest build,
+          # so the Schema History page + field_history.json render straight from
+          # this shallow clone — no supplemental fetch needed.  (SchemaTracker's
+          # default branch is a clean, artifact-free history and is NOT a source
+          # for these files.)
 
           # Build id comes straight from the branch's LATEST.json pointer.
           BUILD=$(python3 -c "import json;print(json.load(open('upstream/schema-tracker/LATEST.json'))['build_id'])")
