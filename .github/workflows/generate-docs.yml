@@ -44,21 +44,13 @@ jobs:
       # Shallow single-branch clone of the SchemaTracker `latest` branch, which
       # carries only the newest build (artifacts/<build_id>/<platform>/) plus a
       # root LATEST.json pointer — tens of MB rather than the whole artifacts/
-      # tree.  While CS2OpenDev-SchemaTracker is private a SCHEMA_TRACKER_TOKEN
-      # secret (a read PAT / fine-grained token) is required; once the repo is
-      # public the plain URL works and the token line can be dropped.
+      # tree.  CS2OpenDev-SchemaTracker is public, so the plain HTTPS URL clones
+      # without credentials (no token needed).
       - name: Materialise latest SchemaTracker build (latest branch)
         id: tracker
-        env:
-          TRACKER_TOKEN: ${{ secrets.SCHEMA_TRACKER_TOKEN }}
         run: |
           set -euo pipefail
-          REPO="github.com/CS2OpenDev/CS2OpenDev-SchemaTracker.git"
-          if [ -n "${TRACKER_TOKEN}" ]; then
-            URL="https://x-access-token:${TRACKER_TOKEN}@${REPO}"
-          else
-            URL="https://${REPO}"
-          fi
+          URL="https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker.git"
           rm -rf upstream/schema-tracker
           git clone --depth 1 --single-branch --branch latest "$URL" upstream/schema-tracker
 
