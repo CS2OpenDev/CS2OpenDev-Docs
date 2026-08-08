@@ -2189,10 +2189,13 @@ def generate_commands_schema(
 
 
 _PROTO_SYNTAX_RE = re.compile(r'^\s*syntax\s*=\s*"[^"]*"\s*;\s*$')
+_PROTO_IMPORT_RE = re.compile(r'^\s*import\s+(?:public\s+|weak\s+)?"([^"]+)"\s*;')
 
 
-def _normalise_proto_text(text: str) -> str:
-    """Return *text* with ``option csharp_namespace`` injected (issue #21.3).
+def _normalise_proto_text(text: str, present: set[str]) -> tuple[str, list[str]]:
+    """Return ``(normalised text, dropped import targets)`` — *text* with
+    ``option csharp_namespace`` injected and any unresolvable ``import``
+    stripped (issue #21.3).
 
     SchemaTracker's decompiled ``.proto`` files carry no ``option
     csharp_namespace``, so C# codegen emits every message into the global
@@ -2205,9 +2208,31 @@ def _normalise_proto_text(text: str) -> str:
     empty package, and packaging them would break that resolution without a
     fragile rewrite of every reference.  ``csharp_namespace`` alone fixes the
     C# problem the issue describes; the proto type graph is left untouched.
+
+    ``present`` is the set of proto paths shipped in this overlay directory
+    (relative, forward-slashed, incl. the ``google/`` well-knowns).  Any
+    ``import`` naming a file outside that set is dropped: it is a dangling
+    import inherited from the decompile (the only one in the CS2 set is
+    ``cs_prediction_events.proto``'s unused ``prediction_events.proto``), and
+    leaving it in makes the file fail ``protoc`` with *File not found* before
+    any real error is reachable.
     """
+    dropped: list[str] = []
+    out_lines: list[str] = []
+    for line in text.splitlines(keepends=True):
+        m = _PROTO_IMPORT_RE.match(line)
+        if m and m.group(1) not in present:
+            dropped.append(m.group(1))
+            out_lines.append(
+                f'// Removed by CS2OpenDev-Docs (issue #21.3): unresolved import '
+                f'"{m.group(1)}" (not shipped in this set).\n'
+            )
+            continue
+        out_lines.append(line)
+    text = "".join(out_lines)
+
     if "csharp_namespace" in text:
-        return text  # already normalised upstream — leave it alone
+        return text, dropped  # already normalised upstream — leave it alone
     inject = (
         "\n// Injected by CS2OpenDev-Docs (issue #21.3): a single shared C# "
         "namespace\n// so message types don't land in the global namespace "
@@ -2218,12 +2243,46 @@ def _normalise_proto_text(text: str) -> str:
     for i, line in enumerate(lines):
         if _PROTO_SYNTAX_RE.match(line):
             lines.insert(i + 1, inject)
-            return "".join(lines)
+            return "".join(lines), dropped
     # No syntax line (proto2 default) — prepend the option at the top.
-    return inject.lstrip("\n") + text
+    return inject.lstrip("\n") + text, dropped
 
 
-def generate_proto_overlays(build_dir: Path, out_dir: Path) -> int:
+def _scan_proto_symbols(text: str) -> tuple[set[str], set[str]]:
+    """Return ``(top-level message names, global enum-value names)`` for one
+    ``.proto`` source, tracking brace depth so nested definitions are excluded.
+
+    protobuf uses C++ scoping: a top-level ``message`` name and the values of a
+    *top-level* ``enum`` are global identifiers.  A name that appears at global
+    scope in two files is a hard ``protoc`` redefinition error — that is what we
+    surface (issue #21.3 follow-up), rather than assume the directory compiles
+    as a unit.  Comments and nested scopes are stripped/skipped first.
+    """
+    text = re.sub(r"/\*.*?\*/", "", text, flags=re.S)
+    text = re.sub(r"//[^\n]*", "", text)
+    messages: set[str] = set()
+    enum_values: set[str] = set()
+    depth = 0
+    enum_open_depths: list[int] = []  # brace depth at which each open enum began
+    for tok in re.findall(r"message\s+\w+|enum\s+\w+|[{}]|\w+\s*=\s*-?\d+", text):
+        if tok == "{":
+            depth += 1
+        elif tok == "}":
+            depth -= 1
+            if enum_open_depths and depth < enum_open_depths[-1]:
+                enum_open_depths.pop()
+        elif tok.startswith("message"):
+            if depth == 0:
+                messages.add(tok.split()[1])
+        elif tok.startswith("enum"):
+            enum_open_depths.append(depth + 1)
+        else:  # NAME = number
+            if enum_open_depths and enum_open_depths[-1] == 1 and depth == 1:
+                enum_values.add(tok.split("=")[0].strip())
+    return messages, enum_values
+
+
+def generate_proto_overlays(build_dir: Path, out_dir: Path) -> dict[str, Any]:
     """Copy the build's ``.proto`` text into
     ``downstream-codegen-schemas/proto/``, normalised with a shared
     ``option csharp_namespace`` (issue #21.3).
@@ -2232,24 +2291,64 @@ def generate_proto_overlays(build_dir: Path, out_dir: Path) -> int:
     better path (``protoc --descriptor_set_in`` skips text parsing and import
     resolution).  These normalised text files are for consumers compiling the
     protos from source, who would otherwise re-inject the namespace themselves.
-    Returns the number of files written.
+
+    The whole tree is copied verbatim in structure — including the vendored
+    ``google/protobuf/*`` well-knowns — so imports resolve without relying on a
+    toolchain's bundled include path.  ``import``s of files absent from the set
+    are dropped (see :func:`_normalise_proto_text`).  Because the decompiled
+    protos share the empty package, some global symbols are defined in more than
+    one file; those cross-file collisions are detected and returned so the
+    README can name them (the directory is a per-file reference, not a set that
+    ``protoc *.proto`` compiles as a unit).
+
+    Returns ``{count, collisions, dropped_imports}`` for the README.
     """
     src_dir = build_dir / "protos"
     if not src_dir.is_dir():
-        return 0
+        return {"count": 0, "collisions": {}, "dropped_imports": []}
     dst_dir = out_dir / "downstream-codegen-schemas" / "proto"
     if dst_dir.is_dir():
         shutil.rmtree(dst_dir)  # drop overlays for protos no longer in the build
     dst_dir.mkdir(parents=True, exist_ok=True)
+
+    # Every .proto shipped in the build, as a relative forward-slashed path —
+    # the resolvable-import universe (top-level files + google/ well-knowns).
+    present: set[str] = {
+        p.relative_to(src_dir).as_posix() for p in src_dir.rglob("*.proto")
+    }
+
     written = 0
-    for src in sorted(src_dir.glob("*.proto")):
+    msg_files: dict[str, list[str]] = {}
+    eval_files: dict[str, list[str]] = {}
+    dropped: list[str] = []
+    for src in sorted(src_dir.rglob("*.proto")):
+        rel = src.relative_to(src_dir).as_posix()
         try:
             text = src.read_text(encoding="utf-8")
         except OSError:
             continue
-        (dst_dir / src.name).write_text(_normalise_proto_text(text), encoding="utf-8")
+        dst = dst_dir / src.relative_to(src_dir)
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        if rel.startswith("google/"):
+            # Vendored well-known types: copy verbatim, own package/namespace.
+            dst.write_text(text, encoding="utf-8")
+        else:
+            norm, dropped_here = _normalise_proto_text(text, present)
+            for d in dropped_here:
+                dropped.append(f"{rel}: {d}")
+            dst.write_text(norm, encoding="utf-8")
+            msgs, evals = _scan_proto_symbols(text)
+            for x in msgs:
+                msg_files.setdefault(x, []).append(rel)
+            for x in evals:
+                eval_files.setdefault(x, []).append(rel)
         written += 1
-    return written
+
+    collisions = {
+        "messages": {k: sorted(v) for k, v in sorted(msg_files.items()) if len(v) > 1},
+        "enum_values": {k: sorted(v) for k, v in sorted(eval_files.items()) if len(v) > 1},
+    }
+    return {"count": written, "collisions": collisions, "dropped_imports": sorted(dropped)}
 
 
 def _project_constant_annotations(entry: dict[str, Any]) -> dict[str, str]:
@@ -2424,6 +2523,7 @@ def generate_codegen_schemas_readme(
     out_dir: Path,
     source_info: dict[str, Any] | None = None,
     entities: dict[str, dict] | None = None,
+    proto_info: dict[str, Any] | None = None,
 ) -> None:
     """Emit ``downstream-codegen-schemas/README.md`` — a small landing
     page next to the JSON files that explains what they are and points
@@ -2517,6 +2617,49 @@ coarse-grained project axis (`client`, `server`, `entity2`,
         else "Some classes"
     )
 
+    # Issue #21.3 follow-up: the proto/ directory is a per-file reference, not a
+    # set that compiles as a unit.  Name the cross-file symbol collisions (they
+    # stem from the decompiled empty-package protos) and any dropped dangling
+    # imports so a consumer knows to pick a subset rather than run `protoc *`.
+    proto_block = ""
+    if proto_info and proto_info.get("count"):
+        cols = proto_info.get("collisions", {}) or {}
+        lines = [
+            "",
+            "## `proto/` — a per-file reference, not a compilable set",
+            "",
+            "The `.proto/` directory mirrors SchemaTracker's decompiled protobuf",
+            "sources (the vendored `google/protobuf/*` well-knowns are included so",
+            "imports resolve).  Because the decompiled files share the **empty**",
+            "package, a few global symbols are defined in more than one file, so",
+            "`protoc *.proto` over the whole directory fails on a redefinition.",
+            "Each collision below is between exactly **two** files; compile any",
+            "subset that does not include both files of a listed pair and it",
+            "resolves cleanly (the demo/engine closure used by CS2 demo parsers",
+            "is one such subset).",
+            "",
+        ]
+        msg = cols.get("messages", {})
+        ev = cols.get("enum_values", {})
+        if msg or ev:
+            lines.append("**Cross-file symbol collisions** (same global identifier "
+                         "defined in two files — a `protoc` redefinition error):")
+            lines.append("")
+            for name, files in msg.items():
+                lines.append(f"- message `{name}` — {', '.join(f'`{f}`' for f in files)}")
+            for name, files in ev.items():
+                lines.append(f"- enum value `{name}` — {', '.join(f'`{f}`' for f in files)}")
+            lines.append("")
+        dropped = proto_info.get("dropped_imports", []) or []
+        if dropped:
+            lines.append("**Dropped unresolved imports** (dangling in the decompile; "
+                         "each is marked with a comment in the file):")
+            lines.append("")
+            for d in dropped:
+                lines.append(f"- `{d}`")
+            lines.append("")
+        proto_block = "\n".join(lines)
+
     body = f"""# Downstream codegen schemas
 
 Machine-readable schemas for CS2 entity classes, structs, enums, and game
@@ -2563,13 +2706,16 @@ source instead of a chain of third-party dumps.
   `name` / `comment` / `members[]` with the same `annotations` pattern.
 
 - **`proto/*.proto`** — the build's protobuf definitions as text, copied from
-  SchemaTracker and normalised with a single shared
+  SchemaTracker (including the vendored `google/protobuf/*` well-knowns) and
+  normalised with a single shared
   `option csharp_namespace = "{PROTO_CSHARP_NAMESPACE}";` so C# codegen doesn't
   drop every message into the global namespace (a CS0433 collision hazard).
-  No `package` statement is added — the decompiled protos use hundreds of
-  root-qualified (`.Type`) cross-references that assume the empty package, so
-  packaging them would break resolution.  Most consumers should prefer
-  SchemaTracker's prebuilt `protos.descriptorset`
+  Unresolvable (dangling) imports are dropped.  No `package` statement is
+  added — the decompiled protos use hundreds of root-qualified (`.Type`)
+  cross-references that assume the empty package, so packaging them would break
+  resolution.  This is a **per-file reference, not a set that compiles as a
+  unit** — see [below](#proto--a-per-file-reference-not-a-compilable-set).
+  Most consumers should prefer SchemaTracker's prebuilt `protos.descriptorset`
   (`protoc --descriptor_set_in`, which skips text parsing and import
   resolution entirely); these files are for compiling the protos from source.
 
@@ -2610,7 +2756,7 @@ empty classes; field-level layout is not recoverable from the binary.
 Full per-key documentation lives in
 [`AGENTS.md`](https://github.com/CS2OpenDev/CS2OpenDev-Docs/blob/main/AGENTS.md#cs2_schemajson-format)
 at the repository root.
-
+{proto_block}
 ## Auto-generated — do not hand-edit
 
 These files are regenerated every 4 hours from the latest
@@ -3503,8 +3649,11 @@ def main(argv: list[str] | None = None) -> int:
     print("Generating Markdown protobuf pages…")
     generate_protobufs_md_page(protos, overlays, generated_dir)
 
-    proto_count = generate_proto_overlays(build_dir, generated_dir)
-    print(f"  Wrote {proto_count} normalised .proto overlay file(s).")
+    proto_info = generate_proto_overlays(build_dir, generated_dir)
+    _pc = len(proto_info["collisions"]["messages"]) + len(proto_info["collisions"]["enum_values"])
+    print(f"  Wrote {proto_info['count']} normalised .proto overlay file(s) "
+          f"({len(proto_info['dropped_imports'])} dangling import(s) dropped, "
+          f"{_pc} cross-file symbol collision(s) documented).")
 
     print("Generating Markdown convar and command pages…")
     generate_convars_md_page(convars, generated_dir)
@@ -3534,7 +3683,8 @@ def main(argv: list[str] | None = None) -> int:
     print(f"  Wrote {cs2_schema_path.name} ({schema_kb} KiB).")
 
     generate_codegen_schemas_readme(
-        generated_dir, source_info=schema_source_info, entities=entities
+        generated_dir, source_info=schema_source_info, entities=entities,
+        proto_info=proto_info,
     )
 
     print("Generating content-artifact pages…")

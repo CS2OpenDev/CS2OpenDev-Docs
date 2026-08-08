@@ -75,13 +75,16 @@ coarse-grained project axis (`client`, `server`, `entity2`,
   `name` / `comment` / `members[]` with the same `annotations` pattern.
 
 - **`proto/*.proto`** — the build's protobuf definitions as text, copied from
-  SchemaTracker and normalised with a single shared
+  SchemaTracker (including the vendored `google/protobuf/*` well-knowns) and
+  normalised with a single shared
   `option csharp_namespace = "CS2OpenDev.Protobuf";` so C# codegen doesn't
   drop every message into the global namespace (a CS0433 collision hazard).
-  No `package` statement is added — the decompiled protos use hundreds of
-  root-qualified (`.Type`) cross-references that assume the empty package, so
-  packaging them would break resolution.  Most consumers should prefer
-  SchemaTracker's prebuilt `protos.descriptorset`
+  Unresolvable (dangling) imports are dropped.  No `package` statement is
+  added — the decompiled protos use hundreds of root-qualified (`.Type`)
+  cross-references that assume the empty package, so packaging them would break
+  resolution.  This is a **per-file reference, not a set that compiles as a
+  unit** — see [below](#proto--a-per-file-reference-not-a-compilable-set).
+  Most consumers should prefer SchemaTracker's prebuilt `protos.descriptorset`
   (`protoc --descriptor_set_in`, which skips text parsing and import
   resolution entirely); these files are for compiling the protos from source.
 
@@ -122,6 +125,27 @@ empty classes; field-level layout is not recoverable from the binary.
 Full per-key documentation lives in
 [`AGENTS.md`](https://github.com/CS2OpenDev/CS2OpenDev-Docs/blob/main/AGENTS.md#cs2_schemajson-format)
 at the repository root.
+
+## `proto/` — a per-file reference, not a compilable set
+
+The `.proto/` directory mirrors SchemaTracker's decompiled protobuf
+sources (the vendored `google/protobuf/*` well-knowns are included so
+imports resolve).  Because the decompiled files share the **empty**
+package, a few global symbols are defined in more than one file, so
+`protoc *.proto` over the whole directory fails on a redefinition.
+Each collision below is between exactly **two** files; compile any
+subset that does not include both files of a listed pair and it
+resolves cleanly (the demo/engine closure used by CS2 demo parsers
+is one such subset).
+
+**Cross-file symbol collisions** (same global identifier defined in two files — a `protoc` redefinition error):
+
+- message `CMsgProtoBufHeader` — `steammessages.proto`, `steammessages_base.proto`
+- enum value `k_EMsgGCSystemMessage` — `base_gcmessages.proto`, `enums_clientserver.proto`
+
+**Dropped unresolved imports** (dangling in the decompile; each is marked with a comment in the file):
+
+- `cs_prediction_events.proto: prediction_events.proto`
 
 ## Auto-generated — do not hand-edit
 
