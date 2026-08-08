@@ -5,7 +5,7 @@ syntax = "proto2";
 option csharp_namespace = "CS2OpenDev.Protobuf";
 
 import "networkbasetypes.proto";
-import "prediction_events.proto";
+// Removed by CS2OpenDev-Docs (issue #21.3): unresolved import "prediction_events.proto" (not shipped in this set).
 
 enum ECSPredictionEvents {
   CSPE_DamageTag = 1;
