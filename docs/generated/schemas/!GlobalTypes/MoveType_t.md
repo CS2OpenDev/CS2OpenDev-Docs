@@ -8,6 +8,8 @@ nav_exclude: true
 
 # MoveType_t
 
+How an entity is moved and simulated each tick (m_MoveType).
+
 **Kind:** enum · **Underlying:** `uint8_t` · **Module:** !GlobalTypes
 
 ## Values

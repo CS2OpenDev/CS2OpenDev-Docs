@@ -8,6 +8,8 @@ nav_exclude: true
 
 # gear_slot_t
 
+Gear slot a weapon occupies on the player (weapon-switch wheel grouping).
+
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** !GlobalTypes
 
 ## Values

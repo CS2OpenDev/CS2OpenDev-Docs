@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CSWeaponType
 
+Broad weapon type classification (CCSWeaponBaseVData.m_WeaponType).
+
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** !GlobalTypes
 
 ## Values

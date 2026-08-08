@@ -8,6 +8,9 @@ nav_exclude: true
 
 # CBaseCSGrenade
 
+Base class for a held (in-hand) grenade weapon before it is thrown — pin/throw state.  The thrown object is a CBaseCSGrenadeProjectile.
+
+
 **Kind:** class · **Size:** 4240 bytes (`0x1090`) · **Align:** 255 · **Module:** server
 
 **Inherits from:** [CCSWeaponBase](../server/CCSWeaponBase.md)
@@ -242,13 +245,13 @@ classDiagram
 | `0x1050` | `m_bRedraw` | bool |  |  |
 | `0x1050` | `m_bInitiallyPopulateInterpHistory` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
 | `0x1051` | `m_bIsHeldByPlayer` | bool |  |  |
-| `0x1052` | `m_bPinPulled` | bool |  |  |
+| `0x1052` | `m_bPinPulled` | bool |  | True once the grenade's pin has been pulled. |
 | `0x1052` | `m_bSuppressAnimEventSounds` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x1053` | `m_bJumpThrow` | bool |  |  |
+| `0x1053` | `m_bJumpThrow` | bool |  | True when the pending throw is a jump-throw. |
 | `0x1054` | `m_bThrowAnimating` | bool |  |  |
-| `0x1058` | `m_fThrowTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0x1058` | `m_fThrowTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime at which the grenade was thrown. |
 | `0x1058` | `m_OnLayerCycleUpdated` | CEntityOutputTemplate< float32 > | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x105c` | `m_flThrowStrength` | float32 |  |  |
+| `0x105c` | `m_flThrowStrength` | float32 |  | Normalised throw strength (affects throw distance). |
 | `0x1060` | `m_fDropTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
 | `0x1064` | `m_fPinPullTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
 | `0x1068` | `m_bJustPulledPin` | bool |  |  |

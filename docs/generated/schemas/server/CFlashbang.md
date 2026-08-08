@@ -8,6 +8,9 @@ nav_exclude: true
 
 # CFlashbang
 
+The flashbang grenade weapon (held form).  Detonation blinds nearby players; the resulting blind duration is applied to the affected pawns.
+
+
 **Kind:** class · **Size:** 4240 bytes (`0x1090`) · **Align:** 16 · **Module:** server
 
 **Inherits from:** [CBaseCSGrenade](../server/CBaseCSGrenade.md)

@@ -8,6 +8,9 @@ nav_exclude: true
 
 # CDecoyProjectile
 
+The thrown decoy-grenade projectile that fires periodic fake gunshots.
+
+
 **Kind:** class · **Size:** 2720 bytes (`0xaa0`) · **Align:** 16 · **Module:** server
 
 **Inherits from:** [CBaseCSGrenadeProjectile](../server/CBaseCSGrenadeProjectile.md)
@@ -147,9 +150,9 @@ classDiagram
 | `0xa58` | `m_nTicksAtZeroVelocity` | int32 | [CBaseCSGrenadeProjectile](../server/CBaseCSGrenadeProjectile.md) |  |
 | `0xa5c` | `m_bHasEverHitEnemy` | bool | [CBaseCSGrenadeProjectile](../server/CBaseCSGrenadeProjectile.md) |  |
 | `0xa78` | `m_nDecoyShotTick` | int32 |  |  |
-| `0xa7c` | `m_shotsRemaining` | int32 |  |  |
-| `0xa80` | `m_fExpireTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0xa90` | `m_decoyWeaponDefIndex` | uint16 |  |  |
+| `0xa7c` | `m_shotsRemaining` | int32 |  | Number of decoy gunshots left to fire. |
+| `0xa80` | `m_fExpireTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime at which the decoy stops and is removed. |
+| `0xa90` | `m_decoyWeaponDefIndex` | uint16 |  | Item-definition index of the weapon whose shots are mimicked. |
 | `0xaf0` | `m_CRenderComponent` | [CRenderComponent](../server/CRenderComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
 | `0xaf8` | `m_CHitboxComponent` | [CHitboxComponent](../server/CHitboxComponent.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
 | `0xb10` | `m_pChoreoComponent` | [CChoreoComponent](../server/CChoreoComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |

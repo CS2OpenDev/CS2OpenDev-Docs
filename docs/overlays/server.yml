@@ -1273,3 +1273,319 @@ CBaseModelEntity:
 
     m_vecViewOffset:
       description: "Offset from the entity origin to the player's view position (eye height)."
+
+# ---------------------------------------------------------------------------
+# Player controller service components
+#
+# These sub-objects hang off CCSPlayerController (see AGENTS.md "Key
+# server-side entities").  Field meanings are grounded in the shipped field
+# names and the maintainer-verified tables in AGENTS.md.
+# ---------------------------------------------------------------------------
+
+CCSPlayerController_InGameMoneyServices:
+  description: >
+    Economy component of CCSPlayerController: the player's buy-menu balance
+    and cash-spend accounting.
+
+  fields:
+    m_iAccount:
+      description: "Current in-game money (buy-menu balance), in dollars."
+    m_iStartAccount:
+      description: "Money the player held at the start of the current round."
+    m_iTotalCashSpent:
+      description: "Cumulative money the player has spent across the whole match."
+    m_iCashSpentThisRound:
+      description: "Money spent so far in the current round."
+
+CCSPlayerController_InventoryServices:
+  description: >
+    Loadout and persona component of CCSPlayerController: equipped items,
+    music kit, rank, and public-profile data.
+
+  fields:
+    m_vecNetworkableLoadout:
+      description: "Networked loadout — the item/skin occupying each equipped weapon slot."
+    m_unMusicID:
+      description: "Item id of the equipped music kit."
+    m_rank:
+      description: "Competitive rank / medal ids, indexed per game mode."
+    m_nPersonaDataPublicLevel:
+      description: "Public profile (Steam persona) level."
+
+CCSPlayerController_ActionTrackingServices:
+  description: >
+    Scoreboard / stat-tracking component of CCSPlayerController: per-round and
+    per-match kill and damage statistics.
+
+  fields:
+    m_matchStats:
+      description: "Aggregated per-match statistics for this player."
+    m_perRoundStats:
+      description: "List of per-round statistics accumulated over the match."
+    m_iNumRoundKills:
+      description: "Kills this player has scored in the current round."
+    m_iNumRoundKillsHeadshots:
+      description: "Headshot kills this player has scored in the current round."
+    m_flTotalRoundDamageDealt:
+      description: "Total damage this player has dealt in the current round."
+
+CCSPlayerController_DamageServices:
+  description: >
+    Damage-log component of CCSPlayerController, backing the end-of-round
+    'damage given / taken' report.
+
+  fields:
+    m_DamageList:
+      description: "Per-opponent damage records shown on the round-end damage report."
+
+# ---------------------------------------------------------------------------
+# Player pawn service components
+# ---------------------------------------------------------------------------
+
+CCSPlayer_ItemServices:
+  description: >
+    Component tracking the utility items the player is carrying.
+
+  fields:
+    m_bHasDefuser:
+      description: "True while the player carries a defuse kit."
+    m_bHasHelmet:
+      description: "True while the player is wearing a helmet (Kevlar + Helmet)."
+
+CPlayer_MovementServices:
+  description: >
+    Base movement/input component: decoded button input and per-command move
+    intent shared by all player pawns.
+
+  fields:
+    m_nButtons:
+      description: "Bitmask of currently-pressed input buttons (IN_ATTACK, IN_JUMP, IN_DUCK, …)."
+    m_nImpulse:
+      description: "Pending impulse command number (e.g. `impulse 100` flashlight)."
+    m_flMaxspeed:
+      description: "Current maximum ground movement speed (units/second)."
+    m_flForwardMove:
+      description: "Decoded forward/back movement axis for the current user command."
+    m_flLeftMove:
+      description: "Decoded strafe (left/right) movement axis for the current user command."
+    m_flUpMove:
+      description: "Decoded vertical movement axis (swim / ladder) for the current user command."
+
+CCSPlayer_MovementServices:
+  description: >
+    CS2-specific movement state layered on CPlayer_MovementServices: crouch /
+    duck, ladder, and water state used by movement prediction.
+
+  fields:
+    m_bDucked:
+      description: "True while the player is fully crouched."
+    m_bDucking:
+      description: "True while the player is mid-transition into or out of a crouch."
+    m_flDuckAmount:
+      description: "Crouch interpolation amount, 0 (standing) to 1 (fully ducked)."
+    m_vecLadderNormal:
+      description: "Surface normal of the ladder the player is currently on."
+
+# ---------------------------------------------------------------------------
+# Weapon definition data and game-rules proxy
+# ---------------------------------------------------------------------------
+
+CCSWeaponBaseVData:
+  description: >
+    Static weapon definition (economy + ballistics) referenced by
+    CCSWeaponBase — the per-weapon-type data that does not change at runtime.
+
+  fields:
+    m_WeaponType:
+      description: "Weapon type classification (pistol, rifle, sniper, knife, grenade, …)."
+    m_WeaponCategory:
+      description: "Coarser weapon category grouping used by the buy menu."
+    m_nPrice:
+      description: "Buy-menu price of the weapon, in dollars."
+    m_nKillAward:
+      description: "Money awarded to the killer for a kill with this weapon."
+    m_nPrimaryReserveAmmoMax:
+      description: "Maximum reserve ammo carried for the primary ammo type."
+    m_nNumBullets:
+      description: "Projectiles fired per shot (greater than 1 for shotguns)."
+    m_bIsFullAuto:
+      description: "True if the weapon fires fully automatically while the trigger is held."
+
+CCSGameRulesProxy:
+  description: >
+    Networked proxy entity that carries CCSGameRules to clients.  Clients and
+    demo parsers read round state via this entity's game-rules pointer (see
+    AGENTS.md).
+
+  fields:
+    m_pGameRules:
+      description: "Pointer to the active CCSGameRules instance replicated to clients."
+
+# ---------------------------------------------------------------------------
+# Entity inheritance hierarchy (roots and pawn/weapon bases)
+#
+# These are the shared base classes referenced by the inheritance chains in
+# AGENTS.md.  Descriptions are grounded in the shipped field names and the
+# maintainer-verified AGENTS.md architecture notes.
+# ---------------------------------------------------------------------------
+
+CEntityInstance:
+  description: >
+    Root of the entity class hierarchy (server and client).  Everything that
+    has an entity handle ultimately derives from this.
+
+  fields:
+    m_pEntity:
+      description: "CEntityIdentity pointer — the entity's identity record (name, class, handle, flags)."
+    m_CScriptComponent:
+      description: "VScript component attached to the entity, when scripted."
+
+CBaseCombatCharacter:
+  description: >
+    Base class for characters that can carry weapons and take part in combat
+    (players, hostages, bots).  Adds wearables and navigation on top of the
+    animated-model base.
+
+  fields:
+    m_hMyWearables:
+      description: "Handles to the character's equipped wearable items (gloves, agent model pieces)."
+    m_impactEnergyScale:
+      description: "Scale applied to impact-damage energy for this character."
+
+CBaseAnimGraph:
+  description: >
+    Entity layer that drives the Source 2 animation graph — skeleton, ragdoll,
+    and choreo.  Base for all animated model entities, including player pawns.
+
+  fields:
+    m_pMainGraphController:
+      description: "The primary animation-graph controller instance for this entity."
+    m_bRagdollEnabled:
+      description: "True while the entity is simulated as a ragdoll rather than animated."
+
+CBasePlayerPawn:
+  description: >
+    Base class for the in-world player pawn — the physical body a controller
+    drives.  Aggregates the player service components (movement, weapons,
+    observer, camera, …).
+
+  fields:
+    m_pWeaponServices:
+      description: "Weapon-handling component (active weapon, switch timing)."
+    m_pItemServices:
+      description: "Carried-item component (defuser, helmet)."
+    m_pMovementServices:
+      description: "Movement / input component."
+    m_pObserverServices:
+      description: "Spectator component, active while the pawn is dead or observing."
+    m_pCameraServices:
+      description: "View / camera component."
+    v_angle:
+      description: "Current view (eye) angles of the pawn."
+
+CCSWeaponBaseGun:
+  description: >
+    Base class for CS2 firearms (extends CCSWeaponBase).  Adds zoom, burst and
+    revolver/bolt-action state; per-weapon-type stats live in
+    CCSWeaponBaseVData.
+
+  fields:
+    m_zoomLevel:
+      description: "Current scope zoom level (0 = unscoped)."
+    m_iBurstShotsRemaining:
+      description: "Shots left in the current burst, for burst-fire weapons."
+    m_silencedModelIndex:
+      description: "Model index used while the silencer is attached."
+
+CEconEntity:
+  description: >
+    Base class for entities carrying Steam Economy item data (weapons, knives,
+    gloves): paint kit, wear, StatTrak, and original owner.
+
+  fields:
+    m_nFallbackPaintKit:
+      description: "Paint-kit (skin) id used when full econ item data isn't attached."
+    m_flFallbackWear:
+      description: "Skin wear / float value (0 = factory new … 1 = battle-scarred)."
+    m_nFallbackStatTrak:
+      description: "StatTrak kill-counter value."
+    m_OriginalOwnerXuidLow:
+      description: "Low 32 bits of the item's original-owner SteamID."
+    m_OriginalOwnerXuidHigh:
+      description: "High 32 bits of the item's original-owner SteamID."
+
+# ---------------------------------------------------------------------------
+# Grenades and world items
+# ---------------------------------------------------------------------------
+
+CBaseCSGrenade:
+  description: >
+    Base class for a held (in-hand) grenade weapon before it is thrown —
+    pin/throw state.  The thrown object is a CBaseCSGrenadeProjectile.
+
+  fields:
+    m_bPinPulled:
+      description: "True once the grenade's pin has been pulled."
+    m_bJumpThrow:
+      description: "True when the pending throw is a jump-throw."
+    m_flThrowStrength:
+      description: "Normalised throw strength (affects throw distance)."
+    m_fThrowTime:
+      description: "GameTime at which the grenade was thrown."
+
+CSmokeGrenadeProjectile:
+  description: >
+    The thrown smoke-grenade projectile and the smoke volume it creates after
+    detonation.
+
+  fields:
+    m_vSmokeColor:
+      description: "RGB colour of the smoke cloud."
+    m_vSmokeDetonationPos:
+      description: "World position the smoke cloud is centred on."
+    m_bExplodeFromInferno:
+      description: "True if the smoke was triggered by fire (e.g. extinguishing molotov flames)."
+
+CMolotovProjectile:
+  description: >
+    The thrown molotov / incendiary-grenade projectile that spawns a CInferno
+    fire on impact.
+
+  fields:
+    m_bIsIncGrenade:
+      description: "True for the CT incendiary grenade, false for the T molotov."
+    m_bDetonated:
+      description: "Whether the projectile has already ignited."
+
+CDecoyProjectile:
+  description: >
+    The thrown decoy-grenade projectile that fires periodic fake gunshots.
+
+  fields:
+    m_shotsRemaining:
+      description: "Number of decoy gunshots left to fire."
+    m_fExpireTime:
+      description: "GameTime at which the decoy stops and is removed."
+    m_decoyWeaponDefIndex:
+      description: "Item-definition index of the weapon whose shots are mimicked."
+
+CFlashbang:
+  description: >
+    The flashbang grenade weapon (held form).  Detonation blinds nearby
+    players; the resulting blind duration is applied to the affected pawns.
+
+CHEGrenade:
+  description: >
+    The high-explosive (HE) grenade weapon (held form).  Deals area damage on
+    detonation.
+
+CItem:
+  description: >
+    Base class for world pickups a player collects by touch (dropped weapons,
+    defuse kits, and similar).
+
+  fields:
+    m_OnPlayerPickup:
+      description: "Entity I/O output fired when a player picks the item up."
+    m_bActivateWhenAtRest:
+      description: "Whether the item only becomes pickup-able once it has come to rest."

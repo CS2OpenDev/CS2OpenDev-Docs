@@ -8,6 +8,9 @@ nav_exclude: true
 
 # CCSPlayer_MovementServices
 
+CS2-specific movement state layered on CPlayer_MovementServices: crouch / duck, ladder, and water state used by movement prediction.
+
+
 **Kind:** class · **Size:** 4064 bytes (`0xfe0`) · **Align:** 255 · **Module:** client
 
 **Inherits from:** [CPlayer_MovementServices_Humanoid](../client/CPlayer_MovementServices_Humanoid.md)
@@ -61,14 +64,14 @@ classDiagram
 | `0x310` | `m_AnimationState` | [CCSPlayerAnimationState](../server/CCSPlayerAnimationState.md) |  |  |
 | `0x3f0` | `m_bUsingGroundTopologyOffset` | bool |  |  |
 | `0x3f4` | `m_flUsingGroundTopologyOffsetTransitionSmoothing` | float32 |  |  |
-| `0x3f8` | `m_vecLadderNormal` | Vector |  |  |
+| `0x3f8` | `m_vecLadderNormal` | Vector |  | Surface normal of the ladder the player is currently on. |
 | `0x404` | `m_nLadderSurfacePropIndex` | int32 |  |  |
-| `0x408` | `m_bDucked` | bool |  |  |
-| `0x40c` | `m_flDuckAmount` | float32 |  |  |
+| `0x408` | `m_bDucked` | bool |  | True while the player is fully crouched. |
+| `0x40c` | `m_flDuckAmount` | float32 |  | Crouch interpolation amount, 0 (standing) to 1 (fully ducked). |
 | `0x410` | `m_flDuckSpeed` | float32 |  |  |
 | `0x414` | `m_bDuckOverride` | bool |  |  |
 | `0x415` | `m_bDesiresDuck` | bool |  |  |
-| `0x416` | `m_bDucking` | bool |  |  |
+| `0x416` | `m_bDucking` | bool |  | True while the player is mid-transition into or out of a crouch. |
 | `0x418` | `m_flDuckRootOffset` | float32 |  |  |
 | `0x41c` | `m_flDuckViewOffset` | float32 |  |  |
 | `0x420` | `m_flLastDuckTime` | float32 |  |  |

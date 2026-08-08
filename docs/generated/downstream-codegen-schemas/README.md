@@ -6,20 +6,55 @@ events — projected straight from
 per-build artifacts so consumers get one deterministic, provenance-tracked
 source instead of a chain of third-party dumps.
 
+## Platform & provenance
+
+Every file here projects **one** `(build, platform)` artifact set:
+`windows-x86_64` (CS2 build `24537688`).  The `build_id` (the Steam CS2 game build,
+numeric and monotonic) and `platform` are stamped into each schema's header
+alongside the walker `revision` and the build timestamps — read them there
+rather than assuming.
+
+Windows is the canonical render because it is the superset: it carries the
+tool-side modules (`hammer`, `sfm`, `modeldoc_editor`, …) that have no Linux
+binaries.  A consumer that assumes Linux would get a silently wrong answer
+about which classes exist, so the platform is named explicitly in every
+header.  If both platforms are ever published, select by the header's
+`platform` field.
+
+## How duplicate class registrations are collapsed
+
+`cs2_schema.json` emits **one record per `(projectName, name)`**, not one per
+upstream `(binary-module, name)`.  `projectName` is SchemaTracker's
+coarse-grained project axis (`client`, `server`, `entity2`,
+`pulse_runtime_lib`, `particleslib`, `animgraphlib`); the finer `module` /
+`cppName` from upstream are preserved verbatim on each record.
+
+- A class registered in several binaries that all roll up to the **same**
+  `projectName` collapses to a single record.  This dominates the
+  `pulse_runtime_lib` cell classes (e.g. `CBasePulseGraphInstance`), which are
+  statically linked into many tool binaries but describe one type.
+- A name that legitimately appears under **different** `projectName`s — the
+  cross-project case such as `CCSPlayerController` in both `client` and
+  `server` — keeps one record per project.  So a name appearing more than once
+  is expected, and the discriminator is the record's `projectName`.
+
 ## Files
 
 - **`cs2_schema.json`** — the entity schema in SchemaTracker's **native**
-  shape (`schema_format_version` `2.0`).  Top-level: `generator`, `revision`,
-  `version_date`, `version_time`, `classes`, `enums`.  Each class carries
-  `name`, `module` (the binary it lives in), `projectName`, `cppName`,
-  `size`, `alignment`, `flags` / `flags2`, `parents[]`, `fields[]`
+  shape (`schema_format_version` `2.0`).  Top-level: `generator`, `build_id`,
+  `platform`, `revision`, `version_date`, `version_time`, `classes`, `enums`.
+  Each class carries `name`, `module` (the binary it lives in), `projectName`,
+  `cppName`, `size`, `alignment`, `flags` / `flags2`, `parents[]`, `fields[]`
   (`name`, `offset`, `type`, `typeModule`, `metadata`), and inheritance
   depths; each enum carries `alignment` (underlying integer type) and
   `members[]`.  Integer offsets / sizes are **string-encoded** and type
   `category` values are **UPPERCASE** (`BUILTIN`, `ATOMIC`, `DECLARED_CLASS`,
   `PTR`, `FIXED_ARRAY`, `BITFIELD`, …).  Optional `annotations` blocks layer
-  in community-curated descriptions / notes / warnings.  A class registered
-  in more than one binary emits one record per `(module, name)`.
+  in community-curated descriptions / notes / warnings, and an optional
+  `diagram_url` on a class points at its module's UML inheritance diagram.
+  Records are keyed by `(projectName, name)` — see [How duplicate class
+  registrations are collapsed](#how-duplicate-class-registrations-are-collapsed)
+  below.
 
 - **`gameevents_schema.json`** — the game-event registry.  Top-level:
   `events` list; each record has `name` / `comment` / `source` /
@@ -38,6 +73,17 @@ source instead of a chain of third-party dumps.
   doesn't expose as named enum types (team numbers, `m_gamePhase`,
   `CSWeaponState_t`, …).  Top-level: `constants` list; each entry has
   `name` / `comment` / `members[]` with the same `annotations` pattern.
+
+- **`proto/*.proto`** — the build's protobuf definitions as text, copied from
+  SchemaTracker and normalised with a single shared
+  `option csharp_namespace = "CS2OpenDev.Protobuf";` so C# codegen doesn't
+  drop every message into the global namespace (a CS0433 collision hazard).
+  No `package` statement is added — the decompiled protos use hundreds of
+  root-qualified (`.Type`) cross-references that assume the empty package, so
+  packaging them would break resolution.  Most consumers should prefer
+  SchemaTracker's prebuilt `protos.descriptorset`
+  (`protoc --descriptor_set_in`, which skips text parsing and import
+  resolution entirely); these files are for compiling the protos from source.
 
 - **`field_history.json`** — whole-history evolution of every
   `(class, field)`, projected from SchemaTracker's cumulative

@@ -8,6 +8,8 @@ nav_exclude: true
 
 # MoveCollide_t
 
+How a moving entity resolves collisions along its path (fly-movetype entities).
+
 **Kind:** enum · **Underlying:** `uint8_t` · **Module:** !GlobalTypes
 
 ## Values

@@ -8,6 +8,8 @@ nav_exclude: true
 
 # SolidType_t
 
+Collision solid type used for an entity's physics representation (m_nSolidType).
+
 **Kind:** enum · **Underlying:** `uint8_t` · **Module:** !GlobalTypes
 
 ## Values

@@ -8,6 +8,9 @@ nav_exclude: true
 
 # CCSGameRulesProxy
 
+Networked proxy entity that carries CCSGameRules to clients.  Clients and demo parsers read round state via this entity's game-rules pointer (see AGENTS.md).
+
+
 **Kind:** class · **Size:** 1200 bytes (`0x4b0`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CGameRulesProxy](../server/CGameRulesProxy.md)
@@ -116,4 +119,4 @@ classDiagram
 | `0x498` | `m_flVPhysicsUpdateLocalTime` | float32 | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x49c` | `m_nBloodType` | [BloodType](../!GlobalTypes/BloodType.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x4a0` | `m_pPulseGraphInstance` | [CPulseGraphInstance_ServerEntity](../server/CPulseGraphInstance_ServerEntity.md)* | [CBaseEntity](../server/CBaseEntity.md) | `MKV3TransferSaveOpsForField GetPulseInstanceSaveRestoreOps` |
-| `0x4a8` | `m_pGameRules` | [CCSGameRules](../server/CCSGameRules.md)* |  |  |
+| `0x4a8` | `m_pGameRules` | [CCSGameRules](../server/CCSGameRules.md)* |  | Pointer to the active CCSGameRules instance replicated to clients. |

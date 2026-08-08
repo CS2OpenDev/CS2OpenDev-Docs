@@ -8,6 +8,8 @@ nav_exclude: true
 
 # ObserverMode_t
 
+Spectator camera mode (m_iObserverMode).
+
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** !GlobalTypes
 
 ## Values

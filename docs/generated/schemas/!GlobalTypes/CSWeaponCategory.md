@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CSWeaponCategory
 
+Coarse buy-menu weapon category (CCSWeaponBaseVData.m_WeaponCategory).
+
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** !GlobalTypes
 
 ## Values

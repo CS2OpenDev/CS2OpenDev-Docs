@@ -8,6 +8,8 @@ nav_exclude: true
 
 # MedalRank_t
 
+Medal tier for profile achievements (none / bronze / silver / gold).
+
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** !GlobalTypes
 
 ## Values

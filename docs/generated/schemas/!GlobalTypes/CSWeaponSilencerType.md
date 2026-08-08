@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CSWeaponSilencerType
 
+Whether and how a weapon is silenced.
+
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** !GlobalTypes
 
 ## Values

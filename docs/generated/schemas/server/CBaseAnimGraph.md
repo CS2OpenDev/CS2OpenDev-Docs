@@ -8,6 +8,9 @@ nav_exclude: true
 
 # CBaseAnimGraph
 
+Entity layer that drives the Source 2 animation graph — skeleton, ragdoll, and choreo.  Base for all animated model entities, including player pawns.
+
+
 **Kind:** class · **Size:** 2400 bytes (`0x960`) · **Align:** 16 · **Module:** server
 
 **Inherits from:** [CBaseModelEntity](../server/CBaseModelEntity.md)
@@ -197,7 +200,7 @@ classDiagram
 | `0x738` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x768` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
 | `0x770` | `m_graphControllerManager` | [CAnimGraphControllerManager](../server/CAnimGraphControllerManager.md) |  |  |
-| `0x808` | `m_pMainGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) |  |  |
+| `0x808` | `m_pMainGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) |  | The primary animation-graph controller instance for this entity. |
 | `0x810` | `m_bInitiallyPopulateInterpHistory` | bool |  |  |
 | `0x818` | `m_OnLayerCycleUpdated` | CEntityOutputTemplate< float32 > |  |  |
 | `0x838` | `m_OnExternalChoreoGraphChanged` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
@@ -208,6 +211,6 @@ classDiagram
 | `0x868` | `m_nForceBone` | int32 |  | `MNotSaved` |
 | `0x878` | `m_pRagdollControl` | [IPhysicsRagdollControl](../vphysics2/IPhysicsRagdollControl.md)* |  | `MPhysPtr` |
 | `0x880` | `m_RagdollPose` | [PhysicsRagdollPose_t](../server/PhysicsRagdollPose_t.md) |  |  |
-| `0x8a8` | `m_bRagdollEnabled` | bool |  |  |
+| `0x8a8` | `m_bRagdollEnabled` | bool |  | True while the entity is simulated as a ragdoll rather than animated. |
 | `0x8a9` | `m_bRagdollClientSide` | bool |  | `MNotSaved` |
 | `0x8b0` | `m_xParentedRagdollRootInEntitySpace` | CTransform |  |  |

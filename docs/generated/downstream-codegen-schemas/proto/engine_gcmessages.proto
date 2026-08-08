@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+// Injected by CS2OpenDev-Docs (issue #21.3): a single shared C# namespace
+// so message types don't land in the global namespace (CS0433 hazard).
+option csharp_namespace = "CS2OpenDev.Protobuf";
+
+import "google/protobuf/descriptor.proto";
+
+message CEngineGotvSyncPacket {
+  optional uint64 match_id = 1;
+  optional uint32 instance_id = 2;
+  optional uint32 signupfragment = 3;
+  optional uint32 currentfragment = 4;
+  optional float tickrate = 5;
+  optional uint32 tick = 6;
+  optional float rtdelay = 8;
+  optional float rcvage = 9;
+  optional float keyframe_interval = 10;
+  optional uint32 cdndelay = 11;
+}

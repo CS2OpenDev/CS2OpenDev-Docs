@@ -8,6 +8,9 @@ nav_exclude: true
 
 # CEconEntity
 
+Base class for entities carrying Steam Economy item data (weapons, knives, gloves): paint kit, wear, StatTrak, and original owner.
+
+
 **Kind:** class · **Size:** 3216 bytes (`0xc90`) · **Align:** 16 · **Module:** server
 
 **Inherits from:** [CBaseAnimGraph](../server/CBaseAnimGraph.md), [IHasAttributes](../server/IHasAttributes.md)
@@ -139,18 +142,18 @@ classDiagram
 | `0xb43` | `m_bDestructiblePartInitialStateDestructed3_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
 | `0xb44` | `m_bDestructiblePartInitialStateDestructed4_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
 | `0xb48` | `m_pDestructiblePartsSystemComponent` | [CDestructiblePartsComponent](../server/CDestructiblePartsComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xc70` | `m_OriginalOwnerXuidLow` | uint32 |  |  |
+| `0xc70` | `m_OriginalOwnerXuidLow` | uint32 |  | Low 32 bits of the item's original-owner SteamID. |
 | `0xc70` | `m_bInitModelEffects` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
 | `0xc71` | `m_bDoingModelEffects` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xc74` | `m_OriginalOwnerXuidHigh` | uint32 |  |  |
+| `0xc74` | `m_OriginalOwnerXuidHigh` | uint32 |  | High 32 bits of the item's original-owner SteamID. |
 | `0xc74` | `m_iOldHealth` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xc78` | `m_nFallbackPaintKit` | int32 |  |  |
+| `0xc78` | `m_nFallbackPaintKit` | int32 |  | Paint-kit (skin) id used when full econ item data isn't attached. |
 | `0xc78` | `m_nRenderMode` | [RenderMode_t](../!GlobalTypes/RenderMode_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
 | `0xc79` | `m_nRenderFX` | [RenderFx_t](../!GlobalTypes/RenderFx_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
 | `0xc7a` | `m_bAllowFadeInView` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
 | `0xc7c` | `m_nFallbackSeed` | int32 |  |  |
-| `0xc80` | `m_flFallbackWear` | float32 |  |  |
-| `0xc84` | `m_nFallbackStatTrak` | int32 |  |  |
+| `0xc80` | `m_flFallbackWear` | float32 |  | Skin wear / float value (0 = factory new … 1 = battle-scarred). |
+| `0xc84` | `m_nFallbackStatTrak` | int32 |  | StatTrak kill-counter value. |
 | `0xc88` | `m_hOldProvidee` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
 | `0xc8c` | `m_iOldOwnerClass` | int32 |  |  |
 | `0xc98` | `m_clrRender` | Color | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
