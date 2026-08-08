@@ -1,0 +1,13 @@
+---
+layout: default
+title: InfoForResourceTypeCChoreoSceneResource
+nav_exclude: true
+---
+
+[Schemas](../../schemas.md) / [resourcesystem](../resourcesystem.md) / InfoForResourceTypeCChoreoSceneResource
+
+# InfoForResourceTypeCChoreoSceneResource
+
+**Kind:** class · **Size:** 1 bytes (`0x1`) · **Align:** 255 · **Module:** resourcesystem
+
+**Metadata:** `MResourceTypeForInfoType vcd`

@@ -12,7 +12,7 @@ artifact set (a read-only git submodule at `upstream/schema-tracker/`).
 | `upstream/schema-tracker/` | Git submodule – SchemaTracker artifacts (`artifacts/<build_id>/<platform>/*.json` + `protos.descriptorset`); tracks the `latest` branch (single build + root `LATEST.json`) |
 | `docs/generate_docs.py` | Python generator that produces all Markdown docs from the SchemaTracker artifacts |
 | `docs/overlays/` | YAML community-annotation files merged into the generated docs |
-| `docs/generated/schemas/` | One Markdown file per module (entity classes, structs, enums) |
+| `docs/generated/schemas/` | Per-module index page (`<module>.md`) plus one page per type under `<module>/<TypeName>.md`, each with the full memory layout (field offsets, class size, inherited fields) |
 | `docs/generated/proto/` | One Markdown file per `.proto` file (messages, fields, enums) |
 | `docs/generated/network.md` | Wire-protocol tables: message ID → protobuf message type, per channel |
 | `docs/generated/diagrams/` | Mermaid UML class-hierarchy diagrams per module |
@@ -27,7 +27,7 @@ artifact set (a read-only git submodule at `upstream/schema-tracker/`).
 
 ## Key entity classes (server-side)
 
-- **`CBaseEntity`** → base of all server entities (see `docs/generated/schemas/server.md`)
+- **`CBaseEntity`** → base of all server entities (see `docs/generated/schemas/server/CBaseEntity.md`; module index at `docs/generated/schemas/server.md`)
 - **`CCSPlayerController`** → CS2 player controller
 - **`CCSWeaponBase`** / **`CCSWeaponBaseGun`** → weapon hierarchy
 - **`CCSGameRules`** → game-rules singleton

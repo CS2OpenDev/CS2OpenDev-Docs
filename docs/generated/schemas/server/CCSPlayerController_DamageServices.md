@@ -1,0 +1,31 @@
+---
+layout: default
+title: CCSPlayerController_DamageServices
+nav_exclude: true
+---
+
+[Schemas](../../schemas.md) / [server](../server.md) / CCSPlayerController_DamageServices
+
+# CCSPlayerController_DamageServices
+
+**Kind:** class · **Size:** 208 bytes (`0xd0`) · **Align:** 255 · **Module:** server
+
+**Inherits from:** [CPlayerControllerComponent](../server/CPlayerControllerComponent.md)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CPlayerControllerComponent <|-- CCSPlayerController_DamageServices
+    CCSPlayerController_DamageServices *-- CDamageRecord
+```
+
+## Memory layout
+
+3 fields (2 declared here, 1 inherited). Offsets are absolute from the object base.
+
+| Offset | Field | Type | From | Annotations |
+|--------|-------|------|------|-------------|
+| `0x8` | `__m_pChainEntity` | [CNetworkVarChainer](../entity2/CNetworkVarChainer.md) | [CPlayerControllerComponent](../server/CPlayerControllerComponent.md) | `MNotSaved` |
+| `0x40` | `m_nSendUpdate` | int32 |  |  |
+| `0x48` | `m_DamageList` | CUtlVectorEmbeddedNetworkVar< [CDamageRecord](../server/CDamageRecord.md) > |  |  |

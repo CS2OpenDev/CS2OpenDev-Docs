@@ -7,16 +7,8 @@ nav_exclude: true
 
 # Module: networksystem
 
-| Name | Kind | Bases | Fields |
-|------|------|-------|--------|
-| [ChangeAccessorFieldPathIndex_t](#changeaccessorfieldpathindex_t) | class |  | 1 |
+1 types. Each links to its own page with the full field layout.
 
----
-
-### ChangeAccessorFieldPathIndex_t
-
-**Fields:**
-
-| Name | Type | Annotations |
-|------|------|-------------|
-| `m_Value` | int32 |  |
+| Type | Kind | Size | Fields | Inherits |
+|------|------|------|--------|----------|
+| [ChangeAccessorFieldPathIndex_t](networksystem/ChangeAccessorFieldPathIndex_t.md) | class | 4 | 1 |  |

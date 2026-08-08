@@ -1,0 +1,75 @@
+---
+layout: default
+title: CAnimGraphDoc_State
+nav_exclude: true
+---
+
+[Schemas](../../schemas.md) / [animgraphdoclib](../animgraphdoclib.md) / CAnimGraphDoc_State
+
+# CAnimGraphDoc_State
+
+**Kind:** class · **Size:** 128 bytes (`0x80`) · **Align:** 8 · **Module:** animgraphdoclib
+
+**Derived by:** [CAnimGraphDoc_ComponentState](../animgraphdoclib/CAnimGraphDoc_ComponentState.md), [CAnimGraphDoc_NodeState](../animgraphdoclib/CAnimGraphDoc_NodeState.md)
+
+**Metadata:** `MPropertyFriendlyName Animation State`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CAnimGraphDoc_State <|-- CAnimGraphDoc_ComponentState
+    CAnimGraphDoc_State <|-- CAnimGraphDoc_NodeState
+    CAnimGraphDoc_State *-- CAnimGraphDoc_StateTransition
+    CAnimGraphDoc_State *-- CStateAction
+    CAnimGraphDoc_State *-- AnimStateID
+```
+
+## Memory layout
+
+12 fields (12 declared here, 0 inherited). Offsets are absolute from the object base.
+
+| Offset | Field | Type | From | Annotations |
+|--------|-------|------|------|-------------|
+| `0x28` | `m_transitions` | CUtlVector< CSmartPtr< [CAnimGraphDoc_StateTransition](../animgraphdoclib/CAnimGraphDoc_StateTransition.md) > > |  | `MPropertySuppressField` |
+| `0x40` | `m_actions` | CUtlVector< [CStateAction](../animgraphdoclib/CStateAction.md) > |  | `MPropertySuppressField` |
+| `0x58` | `m_name` | CUtlString |  | `MPropertyFriendlyName Name` `MPropertySortPriority 100` |
+| `0x60` | `m_sComment` | CUtlString |  | `MPropertyAttributeEditor TextBlock()` `MPropertyFriendlyName Comment` `MPropertySortPriority -100` |
+| `0x68` | `m_stateID` | [AnimStateID](../modellib/AnimStateID.md) |  | `MPropertySuppressField` |
+| `0x6c` | `m_position` | Vector2D |  | `MPropertySuppressField` |
+| `0x74` | `m_bIsStartState` | bool |  | `MPropertyFriendlyName Start State` |
+| `0x75` | `m_bIsEndtState` | bool |  | `MPropertyFriendlyName End State` |
+| `0x76` | `m_bIsInputToGraph` | bool |  | `MPropertyFriendlyName Show Input To Graph` |
+| `0x77` | `m_bIsPassthrough` | bool |  | `MPropertyFriendlyName Passthrough` |
+| `0x78` | `m_bIsPassthroughRootMotion` | bool |  | `MPropertyFriendlyName Passthrough Root Motion` |
+| `0x79` | `m_bPreEvaluatePassthroughTransitionPath` | bool |  | `MPropertyFriendlyName Pre Evaluate Passthrough Transition Path` |
+
+<details><summary>KV3 class defaults</summary>
+
+<pre>{
+	&quot;_class&quot;: &quot;CAnimGraphDoc_State&quot;,
+	&quot;m_transitions&quot;:
+	[
+	],
+	&quot;m_actions&quot;:
+	[
+	],
+	&quot;m_name&quot;: &quot;Unnamed&quot;,
+	&quot;m_sComment&quot;: &quot;&quot;,
+	&quot;m_stateID&quot;:
+	{
+		&quot;m_id&quot;: &lt;HIDDEN FOR DIFF&gt;,
+	},
+	&quot;m_position&quot;:
+	[
+		0.000000,
+		0.000000
+	],
+	&quot;m_bIsStartState&quot;: false,
+	&quot;m_bIsEndtState&quot;: false,
+	&quot;m_bIsInputToGraph&quot;: true,
+	&quot;m_bIsPassthrough&quot;: false,
+	&quot;m_bIsPassthroughRootMotion&quot;: false,
+	&quot;m_bPreEvaluatePassthroughTransitionPath&quot;: false
+}</pre>
+</details>

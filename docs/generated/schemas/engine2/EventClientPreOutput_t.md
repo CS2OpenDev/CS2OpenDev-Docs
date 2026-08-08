@@ -1,0 +1,34 @@
+---
+layout: default
+title: EventClientPreOutput_t
+nav_exclude: true
+---
+
+[Schemas](../../schemas.md) / [engine2](../engine2.md) / EventClientPreOutput_t
+
+# EventClientPreOutput_t
+
+**Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** 255 · **Module:** engine2
+
+**Derived by:** [EventClientPreOutputParallelWithServer_t](../engine2/EventClientPreOutputParallelWithServer_t.md)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    EventClientPreOutput_t <|-- EventClientPreOutputParallelWithServer_t
+    EventClientPreOutput_t *-- EngineLoopState_t
+```
+
+## Memory layout
+
+6 fields (6 declared here, 0 inherited). Offsets are absolute from the object base.
+
+| Offset | Field | Type | From | Annotations |
+|--------|-------|------|------|-------------|
+| `0x0` | `m_LoopState` | [EngineLoopState_t](../engine2/EngineLoopState_t.md) |  |  |
+| `0x28` | `m_flRenderTime` | float64 |  |  |
+| `0x30` | `m_flRenderFrameTime` | float64 |  |  |
+| `0x38` | `m_flRenderFrameTimeUnbounded` | float64 |  |  |
+| `0x40` | `m_flRealTime` | float32 |  |  |
+| `0x44` | `m_bRenderOnly` | bool |  |  |

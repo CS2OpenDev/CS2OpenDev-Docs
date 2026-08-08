@@ -268,7 +268,7 @@ All server-side entities ultimately derive from `CEntityInstance` →
 
 ### `CBaseEntity`
 *Root entity. Every server entity derives from this.*
-Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server#cbaseentity
+Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server/CBaseEntity
 
 Key fields:
 
@@ -286,7 +286,7 @@ Key fields:
 
 ### `CCSPlayerController`
 *One per connected client, persists across rounds.*
-Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server#ccsplayercontroller
+Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server/CCSPlayerController
 
 Inheritance: `CEntityInstance` → `CBaseEntity` → `CBasePlayerController` → `CCSPlayerController`
 
@@ -314,7 +314,7 @@ Key fields:
 
 ### `CCSPlayerPawn`
 *The in-world player body; recreated each round.*
-Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server#ccsplayerpawn
+Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server/CCSPlayerPawn
 
 Inheritance: `CBaseEntity` → `CBaseModelEntity` → `CBaseFlex` → `CBaseAnimGraph` → `CBaseCombatCharacter` → `CBasePlayerPawn` → `CCSPlayerPawnBase` → `CCSPlayerPawn`
 
@@ -340,7 +340,7 @@ Key fields:
 
 ### `CCSGameRules`
 *Singleton holding all match-level state.*
-Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server#ccsgamerules
+Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server/CCSGameRules
 
 Accessed via the `CCSGameRulesProxy` entity on the client. Inheritance:
 `CGameRules` → `CMultiplayRules` → `CTeamplayRules` → `CCSGameRules`
@@ -371,7 +371,7 @@ Key fields:
 
 ### `CCSWeaponBase` / `CCSWeaponBaseGun`
 *Base weapon classes.*
-Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server#ccsweaponbase
+Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server/CCSWeaponBase
 
 Inheritance: `CBaseEntity` → `CBaseModelEntity` → `CBasePlayerWeapon` → `CCSWeaponBase` → `CCSWeaponBaseGun`
 
@@ -399,7 +399,7 @@ Full weapon list: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas
 
 ### `CPlantedC4`
 *The planted bomb entity.*
-Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server#cplantedc4
+Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server/CPlantedC4
 
 | Field | Type | Notes |
 |-------|------|-------|
@@ -523,8 +523,10 @@ content for a specific section:
 
 | Content | Raw URL |
 |---------|---------|
-| Server schema (full, ~large) | `https://raw.githubusercontent.com/CS2OpenDev/CS2OpenDev-Docs/main/docs/generated/schemas/server.md` |
-| Client schema (full, ~large) | `https://raw.githubusercontent.com/CS2OpenDev/CS2OpenDev-Docs/main/docs/generated/schemas/client.md` |
+| Server module index (lists every type → per-type pages) | `https://raw.githubusercontent.com/CS2OpenDev/CS2OpenDev-Docs/main/docs/generated/schemas/server.md` |
+| Client module index | `https://raw.githubusercontent.com/CS2OpenDev/CS2OpenDev-Docs/main/docs/generated/schemas/client.md` |
+| A single type's full memory layout (offsets + inherited fields) | `https://raw.githubusercontent.com/CS2OpenDev/CS2OpenDev-Docs/main/docs/generated/schemas/<module>/<TypeName>.md` (e.g. `.../schemas/server/CBaseEntity.md`) |
+| Entire schema, machine-readable (all types, ~large) | `https://raw.githubusercontent.com/CS2OpenDev/CS2OpenDev-Docs/main/docs/generated/downstream-codegen-schemas/cs2_schema.json` |
 | ConVars | `https://raw.githubusercontent.com/CS2OpenDev/CS2OpenDev-Docs/main/docs/generated/convars.md` |
 | Commands | `https://raw.githubusercontent.com/CS2OpenDev/CS2OpenDev-Docs/main/docs/generated/commands.md` |
 | cs_gameevents proto | `https://raw.githubusercontent.com/CS2OpenDev/CS2OpenDev-Docs/main/docs/generated/proto/cs_gameevents.md` |

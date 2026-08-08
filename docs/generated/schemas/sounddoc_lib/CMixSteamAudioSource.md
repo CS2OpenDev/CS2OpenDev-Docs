@@ -1,0 +1,55 @@
+---
+layout: default
+title: CMixSteamAudioSource
+nav_exclude: true
+---
+
+[Schemas](../../schemas.md) / [sounddoc_lib](../sounddoc_lib.md) / CMixSteamAudioSource
+
+# CMixSteamAudioSource
+
+**Kind:** class · **Size:** 48 bytes (`0x30`) · **Align:** 8 · **Module:** sounddoc_lib
+
+**Inherits from:** [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md)
+
+**Metadata:** `MPropertyDescription Applies steam audio model for a 3d audio source.  This includes panning and HRTF (head-related transfer function).`, `MPropertyFriendlyName VMix Steam Audio Source Node`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CMixPropertyBase <|-- CMixSteamAudioSource
+    CMixSteamAudioSource *-- SteamAudioHRTFInterpolationType_t
+```
+
+## Memory layout
+
+9 fields (4 declared here, 5 inherited). Offsets are absolute from the object base.
+
+| Offset | Field | Type | From | Annotations |
+|--------|-------|------|------|-------------|
+| `0x8` | `m_name` | CUtlString | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyDescription Node name` `MPropertyFriendlyName Name` `MPropertySortPriority 1` |
+| `0x10` | `m_Comment` | CUtlString | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyDescription Description of how this is used  the graph for people reading the graph` `MPropertySortPriority -2` |
+| `0x18` | `m_bActive` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
+| `0x19` | `m_bSolo` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
+| `0x1a` | `m_bEditProperties` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
+| `0x20` | `m_nInterpolation` | [SteamAudioHRTFInterpolationType_t](../!GlobalTypes/SteamAudioHRTFInterpolationType_t.md) |  | `MPropertyFriendlyName HRTF Interpolation` |
+| `0x24` | `m_flDirectMixLevel` | float32 |  | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName Direct Mix Level` |
+| `0x28` | `m_bEnablePerspectiveCorrection` | bool |  | `MPropertyDescription If checked, enables perspective correction for spatialized sound sources. When perspective correction is enabled, instead of spatializing sounds from their world - space position relative to the listener, sounds are spatialized from their on - screen position relative to the user. This can improve perceived localization accuracy in 3D non - VR applications.` `MPropertyFriendlyName Enable Perspective Correction` |
+| `0x29` | `m_bRelativePosition` | bool |  | `MPropertyDescription <b>Check</b> this if the input position is relative to the listener.<br /> <b>Don't check</b> this if the input position is aboslute world space coordinates.` `MPropertyFriendlyName Relative Input Position` |
+
+<details><summary>KV3 class defaults</summary>
+
+<pre>{
+	&quot;_class&quot;: &quot;CMixSteamAudioSource&quot;,
+	&quot;m_name&quot;: &quot;&quot;,
+	&quot;m_Comment&quot;: &quot;&quot;,
+	&quot;m_bActive&quot;: true,
+	&quot;m_bSolo&quot;: false,
+	&quot;m_bEditProperties&quot;: false,
+	&quot;m_nInterpolation&quot;: &quot;SA_HRTFINTEROP_BILINEAR&quot;,
+	&quot;m_flDirectMixLevel&quot;: 1.000000,
+	&quot;m_bEnablePerspectiveCorrection&quot;: false,
+	&quot;m_bRelativePosition&quot;: false
+}</pre>
+</details>

@@ -1,0 +1,28 @@
+---
+layout: default
+title: TraceSettings_t
+nav_exclude: true
+---
+
+[Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / TraceSettings_t
+
+# TraceSettings_t
+
+**Kind:** class · **Size:** 8 bytes (`0x8`) · **Align:** 4 · **Module:** animgraphlib
+
+## Memory layout
+
+2 fields (2 declared here, 0 inherited). Offsets are absolute from the object base.
+
+| Offset | Field | Type | From | Annotations |
+|--------|-------|------|------|-------------|
+| `0x0` | `m_flTraceHeight` | float32 |  |  |
+| `0x4` | `m_flTraceRadius` | float32 |  |  |
+
+<details><summary>KV3 class defaults</summary>
+
+<pre>{
+	&quot;m_flTraceHeight&quot;: 40.000000,
+	&quot;m_flTraceRadius&quot;: 4.000000
+}</pre>
+</details>

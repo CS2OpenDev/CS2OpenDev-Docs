@@ -1,0 +1,38 @@
+---
+layout: default
+title: NavAttributeDynamicType
+nav_exclude: true
+---
+
+[Schemas](../../schemas.md) / [!GlobalTypes](../!GlobalTypes.md) / NavAttributeDynamicType
+
+# NavAttributeDynamicType
+
+**Kind:** enum · **Underlying:** `uint32_t` · **Module:** !GlobalTypes
+
+## Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `NAV_AREA_NONE` | 0 |  |
+| `NAV_AREA_UNDER_WATER` | 1 |  |
+| `NAV_AREA_UNDER_WATER_DEEP` | 2 |  |
+| `NAV_AREA_EXTERNALLY_CREATED` | 4 |  |
+| `NAV_AREA_SHOULD_BE_DESTROYED` | 8 |  |
+| `NAV_AREA_CREATED_BY_OBSTACLE_MGR` | 16 |  |
+| `NAV_AREA_SPLIT_BY_OBSTACLE_MGR` | 32 |  |
+| `NAV_AREA_SPLIT_OBS_CONTAINED` | 64 |  |
+| `NAV_AREA_SPLIT_OBS_BASE_CONTAINED` | 128 |  |
+| `NAV_AREA_HAS_LADDERS` | 256 |  |
+| `NAV_AREA_NAV_LINK` | 512 |  |
+| `NAV_AREA_NAV_LINK_TERMINUS` | 1024 |  |
+| `NAV_AREA_CONNECTED_TO_NAV_LINK_OUT` | 2048 |  |
+| `NAV_AREA_CONNECTED_TO_NAV_LINK_IN` | 4096 |  |
+| `NAV_AREA_MOVABLE` | 8192 |  |
+| `NAV_AREA_DOCK` | 16384 |  |
+| `NAV_AREA_DOCKING_CANDIDATE` | 32768 |  |
+| `NAV_AREA_BOUNDARY` | 65536 |  |
+| `NAV_AREA_HAS_TACTICAL_SEARCH_ANNOTATIONS` | 131072 |  |
+| `NAV_AREA_DEFORMABLE` | 262144 |  |
+| `NAV_AREA_DEFORMABLE_DOCK` | 524288 |  |
+| `NAV_AREA_LINK_AUTO_ADJUST` | 1048576 |  |

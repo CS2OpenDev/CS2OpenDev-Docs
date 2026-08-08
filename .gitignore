@@ -1,6 +1,11 @@
 # Output from manual local generator runs (docs/ itself IS committed)
 docs/output/
 
+# Materialised SchemaTracker data checkout (a submodule / on-demand shallow
+# clone, tens of MB — never committed; CI re-clones the `latest` branch).
+# A real submodule gitlink, if ever initialised, is tracked regardless of this.
+upstream/schema-tracker/
+
 # Python cache
 docs/__pycache__/
 __pycache__/

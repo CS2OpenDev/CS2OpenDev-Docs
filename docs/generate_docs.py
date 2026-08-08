@@ -34,6 +34,7 @@ from __future__ import annotations
 
 import argparse
 import copy
+import html
 import json
 import re
 import shutil
@@ -62,6 +63,28 @@ SCHEMA_FORMAT_VERSION = "2.0"
 # ---------------------------------------------------------------------------
 # Parsers
 # ---------------------------------------------------------------------------
+
+def _as_int(v: Any) -> int | None:
+    """Coerce SchemaTracker's numeric-but-stringified fields to ``int``.
+
+    ``entity_schema.json`` encodes class ``size`` and field ``offset`` as
+    decimal strings (``"1192"``, ``"48"``) while ``alignment`` is already an
+    int.  Everything downstream (offset sorting, hex formatting, the layout
+    tables) wants a real int, so we normalise once at the conversion boundary
+    — the raw record echoed into ``cs2_schema.json`` is left untouched.
+    """
+    if isinstance(v, bool) or v is None:
+        return None
+    if isinstance(v, int):
+        return v
+    if isinstance(v, str):
+        s = v.strip()
+        try:
+            return int(s, 0) if s[:2].lower() == "0x" else int(s)
+        except ValueError:
+            return None
+    return None
+
 
 def _format_metadata(meta: dict[str, Any]) -> str:
     """Render one structured metadata entry as a human-readable string
@@ -191,7 +214,7 @@ def _convert_class(cls: dict[str, Any]) -> dict[str, Any]:
         out: dict[str, Any] = {
             "name": f.get("name", ""),
             "type": _stringify_type(ftype),
-            "offset": f.get("offset"),
+            "offset": _as_int(f.get("offset")),
             "annotations": list(f.get("metadata", [])),
         }
         # SchemaTracker gives the referenced type's binary module directly
@@ -213,7 +236,8 @@ def _convert_class(cls: dict[str, Any]) -> dict[str, Any]:
         "fields": fields,
         "metadata": list(cls.get("metadata", [])),
         "enum_underlying": None,
-        "size": cls.get("size"),
+        "size": _as_int(cls.get("size")),
+        "alignment": _as_int(cls.get("alignment")),
         "flags": cls.get("flags"),
         "cpp_name": cls.get("cppName"),
         "raw": cls,
@@ -815,20 +839,6 @@ def _mermaid_safe(name: str) -> str:
     return f'"{name}"'
 
 
-def _entity_anchor(name: str) -> str:
-    """Return the kramdown heading anchor for an entity name.
-
-    Mirrors kramdown's default auto-id algorithm: lowercase, drop everything
-    that isn't a word char, space, or hyphen, then turn spaces into hyphens.
-    Critical for nested-class names like ``Foo::Bar`` that the cs2.json
-    loader produces — kramdown strips the ``:`` characters from the heading
-    anchor, so the index link must do the same or it dangles.
-    """
-    slug = name.lower()
-    slug = re.sub(r"[^\w\s-]", "", slug)
-    return slug.strip().replace(" ", "-")
-
-
 # Proto primitive scalar types that do not get anchor-linked.
 _PROTO_PRIMITIVES = {
     "double", "float", "int32", "int64", "uint32", "uint64",
@@ -854,25 +864,116 @@ def _proto_link_type(ftype: str, local_names: set[str]) -> str:
     return f"[{simple}](#{_proto_anchor(simple)})"
 
 
+def _type_filename(name: str) -> str:
+    """Return the per-type page stem (no extension) for an entity *name*.
+
+    Nested-type names carry ``::`` (430+ of them, e.g. ``CNmBlend1DNode::CDefinition``);
+    ``::`` maps to ``.`` (a dot never appears in an identifier, so no collision
+    with a real ``A.B`` name is possible) and any other filesystem-unsafe
+    character collapses to ``_``.  This is the single canonical name→file
+    mapping every schema link routes through.
+    """
+    stem = name.replace("::", ".")
+    stem = re.sub(r'[<>:"/\\|?*\s]+', "_", stem)
+    return stem
+
+
+def _schema_page_href(
+    name: str, entities: dict[str, dict], from_module: str
+) -> str | None:
+    """Relative link from a per-class page in *from_module* to *name*'s page.
+
+    Per-type pages live at ``schemas/<module>/<TypeFile>.md``, so from a page
+    inside ``schemas/<from_module>/`` the target is ``../<module>/<file>.md``.
+    Prefers a same-module duplicate variant (client/server twins) so readers
+    stay in the module they came from.  Returns ``None`` for an unresolved
+    name (render it as plain text).
+    """
+    e = entities.get(name)
+    if not e:
+        return None
+    mod = e["module"]
+    if from_module and from_module != mod and any(
+        d["module"] == from_module for d in e.get("duplicates", [])
+    ):
+        mod = from_module
+    return f"../{mod}/{_type_filename(name)}.md"
+
+
+def _flatten_layout(
+    entity: dict[str, Any], entities: dict[str, dict]
+) -> tuple[list[dict[str, Any]], list[str]]:
+    """Return a class's full field layout: own fields plus fields inherited
+    along the **primary-parent spine** (``bases[0]`` recursively), each tagged
+    with its declaring class.
+
+    SchemaTracker field offsets are absolute from the object base and the
+    primary base always occupies offset 0, so base field offsets carry over
+    unchanged into the derived class — the merged list sorts correctly by
+    offset for the single-inheritance case that covers every gameplay entity.
+
+    Secondary bases (``bases[1:]`` on any class in the spine) sit at a shift we
+    can't recover from the schema alone, so their offsets would be misleading
+    if merged; we return their names separately for the caller to surface as
+    links rather than inventing absolute offsets.
+
+    Returns ``(rows, secondary_base_names)`` where each row is
+    ``{"field", "declaring", "inherited"}`` sorted by offset (fields with no
+    offset sink to the end, stable in declaration order).
+    """
+    rows: list[dict[str, Any]] = []
+    secondary: list[str] = []
+    seen_fields: set[str] = set()   # a derived field shadows a base's namesake
+    visited: set[str] = {entity["name"]}
+
+    def add_fields(e: dict[str, Any], is_self: bool) -> None:
+        for f in e.get("fields", []):
+            fn = f.get("name", "")
+            if fn in seen_fields:
+                continue
+            seen_fields.add(fn)
+            rows.append({"field": f, "declaring": e["name"], "inherited": not is_self})
+
+    def walk_bases(e: dict[str, Any]) -> None:
+        for i, b in enumerate(e.get("bases", [])):
+            if i == 0:
+                if b in visited:
+                    continue
+                visited.add(b)
+                be = entities.get(b)
+                if be:
+                    add_fields(be, False)
+                    walk_bases(be)
+            elif b not in secondary:
+                secondary.append(b)
+
+    add_fields(entity, True)   # pass entity directly so client/server dups keep their own fields
+    walk_bases(entity)
+    rows.sort(
+        key=lambda r: (0, r["field"]["offset"])
+        if isinstance(r["field"].get("offset"), int)
+        else (1, 0)
+    )
+    return rows, secondary
+
+
 def _md_link_type(
     type_str: str, entities: dict[str, dict], current_module: str = ""
 ) -> str:
-    """Wrap known entity names in a type string with Markdown links (anchor-based).
+    """Wrap known entity names in a type string with Markdown links to their
+    per-type pages.
 
-    When *current_module* is supplied and the referenced entity also exists in
-    that module (as a duplicate), the link targets the current-module page so
-    readers stay within the same schema page.
+    Emitted from a per-type page at ``schemas/<current_module>/<X>.md``, so the
+    target ``../<module>/<file>.md`` resolves whether the referenced type lives
+    in the same module or another.  Prefers a same-module duplicate variant so
+    readers stay within the module they came from.
     """
     def replace(m: re.Match) -> str:
         word = m.group(0)
         if word in entities:
-            e = entities[word]
-            mod = e["module"]
-            # Prefer a same-module link when the entity exists in current_module
-            if current_module and current_module != mod:
-                if any(d["module"] == current_module for d in e.get("duplicates", [])):
-                    mod = current_module
-            return f"[{word}](../schemas/{mod}.md#{_entity_anchor(word)})"
+            href = _schema_page_href(word, entities, current_module)
+            if href:
+                return f"[{word}]({href})"
         return word
 
     return re.sub(r"\b[A-Z_]\w+\b", replace, type_str)
@@ -882,9 +983,17 @@ def _md_front_matter(**kwargs: str) -> str:
     """Render a YAML front matter block for Jekyll."""
     lines = ["---"]
     for key, val in kwargs.items():
-        # Quote values that might confuse YAML
-        if any(c in str(val) for c in (':', '#', '[', ']', '{', '}')):
-            lines.append(f'{key}: "{val}"')
+        s = str(val)
+        # Quote values that would otherwise be mis-parsed: those containing a
+        # flow/indicator char, and those *starting* with a YAML indicator —
+        # notably ``!`` (the ``!GlobalTypes`` module), which YAML reads as a
+        # tag.  Quoted double-quoted scalars are always safe, so we escape and
+        # quote rather than try to enumerate every safe case.
+        if any(c in s for c in (':', '#', '[', ']', '{', '}')) or s[:1] in (
+            '!', '&', '*', '?', '|', '>', '@', '`', '%', '"', "'", '-', ' '
+        ):
+            esc = s.replace('\\', '\\\\').replace('"', '\\"')
+            lines.append(f'{key}: "{esc}"')
         else:
             lines.append(f"{key}: {val}")
     lines.append("---")
@@ -947,17 +1056,184 @@ def _build_md_relationship_diagram(
     return lines
 
 
+def _render_schema_type_page(
+    e: dict[str, Any],
+    mod: str,
+    entities: dict[str, dict],
+    overlays: dict[str, dict],
+) -> str:
+    """Render one class/enum's standalone Markdown page (``schemas/<mod>/<Type>.md``).
+
+    The class case carries the full **memory layout** — own fields plus fields
+    inherited along the primary-parent spine, each with its absolute offset —
+    which the old single-file-per-module rendering never produced.
+    """
+    name = e["name"]
+    kind = e["kind"]
+    overlay = get_overlay(overlays, mod, name)
+    L: list[str] = []
+    L.append(_md_front_matter(layout="default", title=name, nav_exclude="true"))
+
+    # Breadcrumb (this page lives at schemas/<mod>/<Type>.md).
+    L.append(f"[Schemas](../../schemas.md) / [{mod}](../{mod}.md) / {name}\n")
+    L.append(f"# {name}\n")
+
+    if overlay.get("description"):
+        L.append(f"{overlay['description']}\n")
+    if overlay.get("notes"):
+        L.append(f"> 📝 {overlay['notes']}\n")
+    if overlay.get("warning"):
+        L.append(f"> ⚠️ {overlay['warning']}\n")
+
+    # Stat line — kind, size/alignment (classes), underlying int (enums), module.
+    stats = [f"**Kind:** {kind}"]
+    if isinstance(e.get("size"), int):
+        stats.append(f"**Size:** {e['size']} bytes (`0x{e['size']:x}`)")
+    if isinstance(e.get("alignment"), int):
+        stats.append(f"**Align:** {e['alignment']}")
+    if kind == "enum" and e.get("enum_underlying"):
+        stats.append(f"**Underlying:** `{e['enum_underlying']}`")
+    stats.append(f"**Module:** {mod}")
+    L.append(" · ".join(stats) + "\n")
+
+    # Inherits / derived.
+    if e.get("bases"):
+        base_links = []
+        for b in e["bases"]:
+            href = _schema_page_href(b, entities, mod)
+            base_links.append(f"[{b}]({href})" if href else b)
+        L.append(f"**Inherits from:** {', '.join(base_links)}\n")
+    derived = sorted(
+        (d for d in entities.values() if name in d.get("bases", [])),
+        key=lambda x: x["name"],
+    )
+    if derived:
+        links = []
+        for d in derived:
+            href = _schema_page_href(d["name"], entities, mod)
+            links.append(f"[{d['name']}]({href})" if href else d["name"])
+        L.append(f"**Derived by:** {', '.join(links)}\n")
+
+    # Metadata tags — drop MNetworkVarNames (repeats field info) and the big
+    # MGetKV3ClassDefaults blob (rendered separately as a collapsible below).
+    if e.get("metadata"):
+        tags = [
+            f"`{_format_metadata(m)}`" for m in e["metadata"]
+            if isinstance(m, dict) and m.get("name")
+            and not m["name"].startswith("MNetworkVarNames")
+            and m["name"] != "MGetKV3ClassDefaults"
+        ]
+        if tags:
+            L.append(f"**Metadata:** {', '.join(tags)}\n")
+
+    # Relationship diagram.
+    diagram_lines = _build_md_relationship_diagram(name, e, entities)
+    if diagram_lines:
+        L.append("**Relationships:**\n")
+        L.append("```mermaid")
+        L.append("classDiagram")
+        L.extend(diagram_lines)
+        L.append("```\n")
+
+    if kind == "enum":
+        vals = e.get("fields", [])
+        if vals:
+            L.append("## Values\n")
+            L.append("| Name | Value | Description |")
+            L.append("|------|-------|-------------|")
+            for fld in vals:
+                desc = _metadata_friendly_text(fld.get("annotations")).replace("|", "\\|")
+                L.append(f"| `{fld['name']}` | {fld.get('value', '')} | {desc} |")
+            L.append("")
+    else:
+        rows, secondary = _flatten_layout(e, entities)
+        overlay_fields = overlay.get("fields", {}) or {}
+        if rows:
+            own = sum(1 for r in rows if not r["inherited"])
+            L.append("## Memory layout\n")
+            L.append(
+                f"{len(rows)} fields ({own} declared here, {len(rows) - own} "
+                "inherited). Offsets are absolute from the object base.\n"
+            )
+            L.append("| Offset | Field | Type | From | Annotations |")
+            L.append("|--------|-------|------|------|-------------|")
+            for r in rows:
+                fld = r["field"]
+                fname = fld.get("name", "")
+                off = fld.get("offset")
+                off_str = f"`0x{off:x}`" if isinstance(off, int) else "—"
+                type_linked = _md_link_type(fld.get("type", ""), entities, mod)
+                if r["inherited"]:
+                    dhref = _schema_page_href(r["declaring"], entities, mod)
+                    from_cell = (
+                        f"[{r['declaring']}]({dhref})" if dhref else r["declaring"]
+                    )
+                else:
+                    from_cell = ""
+                annot_str = " ".join(
+                    f"`{_format_metadata(a)}`"
+                    for a in fld.get("annotations", [])
+                    if isinstance(a, dict) and a.get("name")
+                )
+                desc_parts: list[str] = []
+                fover = (
+                    overlay_fields.get(fname, {})
+                    if not r["inherited"] and isinstance(overlay_fields, dict)
+                    else {}
+                )
+                if fover and isinstance(fover, dict):
+                    if fover.get("description"):
+                        desc_parts.append(str(fover["description"]))
+                    if fover.get("notes"):
+                        desc_parts.append(f"*{fover['notes']}*")
+                if annot_str:
+                    desc_parts.append(annot_str)
+                ann_cell = " ".join(desc_parts).replace("|", "\\|")
+                L.append(
+                    f"| {off_str} | `{fname}` | {type_linked} | {from_cell} | {ann_cell} |"
+                )
+            L.append("")
+        if secondary:
+            sec_links = []
+            for b in secondary:
+                href = _schema_page_href(b, entities, mod)
+                sec_links.append(f"[{b}]({href})" if href else b)
+            L.append(
+                f"**Also inherits (secondary base classes):** {', '.join(sec_links)} "
+                "— additional-base fields sit at a shifted offset the schema does "
+                "not record; see each base's own page for its layout.\n"
+            )
+
+    # MGetKV3ClassDefaults — raw KV3 default block, collapsed to keep the page
+    # scannable.  Rendered as escaped <pre> so it survives regardless of the
+    # kramdown block-HTML setting.
+    kv3 = None
+    for m in e.get("metadata", []) or []:
+        if isinstance(m, dict) and m.get("name") == "MGetKV3ClassDefaults":
+            kv3 = m.get("value")
+            break
+    if isinstance(kv3, str) and kv3.strip():
+        L.append("<details><summary>KV3 class defaults</summary>\n")
+        L.append(f"<pre>{html.escape(kv3)}</pre>")
+        L.append("</details>\n")
+
+    return "\n".join(L)
+
+
 def generate_schemas_index_md(
     entities: dict[str, dict],
     overlays: dict[str, dict],
     out_dir: Path,
     diagram_modules: set[str] | None = None,
 ) -> None:
-    """Generate schemas.md (master index) and per-module Markdown pages.
+    """Generate the schema reference: a master index, a slim per-module index
+    page, and one standalone page per class/enum.
 
-    Entity details are embedded directly in the per-module pages using
-    ``### EntityName`` headings (anchor: ``#entityname``) so no separate
-    per-entity files are needed.
+    Types are split one-file-per-type (``schemas/<module>/<Type>.md``) so pages
+    stay small and greppable and every type is deep-linkable — replacing the
+    old single-giant-file-per-module layout.  Per-type pages carry the full
+    memory layout (field offsets + inherited fields) that the old rendering
+    dropped.
     """
     by_module: dict[str, list[dict]] = defaultdict(list)
     for entity in entities.values():
@@ -970,10 +1246,15 @@ def generate_schemas_index_md(
     lines: list[str] = []
     lines.append(_md_front_matter(layout="default", title="Schemas", nav_order="2"))
     lines.append("# Schema Reference\n")
-    lines.append("All entities and types extracted from CS2's schema dump, organised by module.\n")
+    lines.append(
+        "Every class, struct, and enum extracted from CS2's runtime schema, "
+        "organised by module. Each module page lists its types; each type has "
+        "its own page carrying the full **memory layout** — field offsets, "
+        "class size, and fields inherited from base classes.\n"
+    )
     lines.append("## Modules\n")
-    lines.append("| Module | Entities | UML |")
-    lines.append("|--------|----------|-----|")
+    lines.append("| Module | Types | UML |")
+    lines.append("|--------|-------|-----|")
     for mod in sorted(by_module):
         count = len(by_module[mod])
         has_diagram = diagram_modules is None or mod in diagram_modules
@@ -984,149 +1265,63 @@ def generate_schemas_index_md(
     lines.append("")
     (out_dir / "schemas.md").write_text("\n".join(lines), encoding="utf-8")
 
-    # Per-module pages – entity details embedded with heading anchors
+    # Per-module: a slim index page (schemas/<mod>.md) linking to one page per
+    # type (schemas/<mod>/<Type>.md).
     (out_dir / "schemas").mkdir(exist_ok=True)
     for mod, ents in by_module.items():
-        sorted_ents = sorted(ents, key=lambda x: x["name"])
-        m_lines: list[str] = []
-        m_lines.append(_md_front_matter(
+        sorted_ents = sorted(ents, key=lambda x: (x["kind"], x["name"]))
+        mod_dir = out_dir / "schemas" / mod
+        mod_dir.mkdir(parents=True, exist_ok=True)
+
+        # Slim module index.
+        idx: list[str] = []
+        idx.append(_md_front_matter(
             layout="default",
             title=mod,
             parent="Schemas",
             nav_exclude="true",
         ))
-        m_lines.append(f"# Module: {mod}\n")
+        idx.append(f"# Module: {mod}\n")
         if diagram_modules is None or mod in diagram_modules:
-            m_lines.append(f"[📊 View UML Diagram](../diagrams/{mod}.md)\n")
-
-        # Quick-reference index table with anchor links
-        m_lines.append("| Name | Kind | Bases | Fields |")
-        m_lines.append("|------|------|-------|--------|")
-        for e in sorted_ents:
-            anchor = _entity_anchor(e["name"])
-            bases_str = ", ".join(e.get("bases", []))
-            field_count = len(e.get("fields", []))
-            m_lines.append(
-                f"| [{e['name']}](#{anchor}) | {e['kind']} | {bases_str} | {field_count} |"
-            )
-        m_lines.append("")
-
-        # Full entity detail sections
-        m_lines.append("---\n")
-        for e in sorted_ents:
-            name = e["name"]
-            kind = e["kind"]
-            overlay = get_overlay(overlays, mod, name)
-
-            m_lines.append(f"### {name}\n")
-
-            if overlay.get("description"):
-                m_lines.append(f"{overlay['description']}\n")
-            if overlay.get("notes"):
-                m_lines.append(f"> 📝 {overlay['notes']}\n")
-            if overlay.get("warning"):
-                m_lines.append(f"> ⚠️ {overlay['warning']}\n")
-
-            # Bases / derived
-            if e.get("bases"):
-                base_links = []
-                for b in e["bases"]:
-                    if b in entities:
-                        bmod = entities[b]["module"]
-                        # Prefer same-module link when the base also exists in this module
-                        if bmod != mod and any(
-                            d["module"] == mod for d in entities[b].get("duplicates", [])
-                        ):
-                            bmod = mod
-                        base_links.append(f"[{b}]({bmod}.md#{_entity_anchor(b)})")
-                    else:
-                        base_links.append(b)
-                m_lines.append(f"**Inherits from:** {', '.join(base_links)}\n")
-
-            derived = sorted(
-                [d for d in entities.values() if name in d.get("bases", [])],
-                key=lambda x: x["name"],
-            )
-            if derived:
-                links = [
-                    f"[{d['name']}]({d['module']}.md#{_entity_anchor(d['name'])})"
-                    for d in derived
-                ]
-                m_lines.append(f"**Derived by:** {', '.join(links)}\n")
-
-            # Metadata tags – exclude MNetworkVarNames entries because they
-            # only repeat the field name/type already in the Fields table.
-            if e.get("metadata"):
-                tags = [
-                    f"`{_format_metadata(m)}`" for m in e["metadata"]
-                    if isinstance(m, dict)
-                    and m.get("name")
-                    and not m["name"].startswith("MNetworkVarNames")
-                ]
-                if tags:
-                    m_lines.append(f"**Metadata:** {', '.join(tags)}\n")
-
-            # Relationship diagram
-            diagram_lines = _build_md_relationship_diagram(name, e, entities)
-            if diagram_lines:
-                m_lines.append("**Relationships:**\n")
-                m_lines.append("```mermaid")
-                m_lines.append("classDiagram")
-                m_lines.extend(diagram_lines)
-                m_lines.append("```\n")
-
-            # Fields / enum values
-            if kind == "enum":
-                vals = e.get("fields", [])
-                if vals:
-                    m_lines.append("**Values:**\n")
-                    # Description column surfaces upstream-supplied
-                    # MPropertyFriendlyName / MPropertyDescription on enum
-                    # members — these are the human labels DumpSource2
-                    # extracted from runtime reflection and would otherwise
-                    # disappear into the JSON (1017 enum members carry
-                    # this info).
-                    m_lines.append("| Name | Value | Description |")
-                    m_lines.append("|------|-------|-------------|")
-                    for fld in vals:
-                        desc = _metadata_friendly_text(fld.get("annotations"))
-                        desc = desc.replace("|", "\\|")
-                        m_lines.append(
-                            f"| `{fld['name']}` | {fld.get('value', '')} | {desc} |"
-                        )
-                    m_lines.append("")
-            else:
-                fields = e.get("fields", [])
-                if fields:
-                    overlay_fields: dict = overlay.get("fields", {}) or {}
-                    m_lines.append("**Fields:**\n")
-                    m_lines.append("| Name | Type | Annotations |")
-                    m_lines.append("|------|------|-------------|")
-                    for fld in fields:
-                        fname = fld.get("name", "")
-                        ftype = fld.get("type", "")
-                        annots = fld.get("annotations", [])
-                        fover = overlay_fields.get(fname, {}) if isinstance(overlay_fields, dict) else {}
-                        type_linked = _md_link_type(ftype, entities, mod)
-                        annot_str = " ".join(
-                            f"`{_format_metadata(a)}`"
-                            for a in annots
-                            if isinstance(a, dict) and a.get("name")
-                        )
-                        desc_parts = []
-                        if fover and isinstance(fover, dict):
-                            if fover.get("description"):
-                                desc_parts.append(str(fover["description"]))
-                            if fover.get("notes"):
-                                desc_parts.append(f"*{fover['notes']}*")
-                        if annot_str:
-                            desc_parts.append(annot_str)
-                        m_lines.append(f"| `{fname}` | {type_linked} | {' '.join(desc_parts)} |")
-                    m_lines.append("")
-
-        (out_dir / "schemas" / f"{mod}.md").write_text(
-            "\n".join(m_lines), encoding="utf-8"
+            idx.append(f"[📊 View UML Diagram](../diagrams/{mod}.md)\n")
+        idx.append(
+            f"{len(sorted_ents)} types. Each links to its own page with the "
+            "full field layout.\n"
         )
+        idx.append("| Type | Kind | Size | Fields | Inherits |")
+        idx.append("|------|------|------|--------|----------|")
+        for e in sorted_ents:
+            fname = _type_filename(e["name"])
+            size = e.get("size")
+            size_str = str(size) if isinstance(size, int) else "—"
+            field_count = len(e.get("fields", []))
+            base_cells = []
+            for b in e.get("bases", []):
+                be = entities.get(b)
+                if be:
+                    bmod = be["module"]
+                    if bmod != mod and any(
+                        d["module"] == mod for d in be.get("duplicates", [])
+                    ):
+                        bmod = mod
+                    base_cells.append(f"[{b}]({bmod}/{_type_filename(b)}.md)")
+                else:
+                    base_cells.append(b)
+            idx.append(
+                f"| [{e['name']}]({mod}/{fname}.md) | {e['kind']} | {size_str} "
+                f"| {field_count} | {', '.join(base_cells)} |"
+            )
+        idx.append("")
+        (out_dir / "schemas" / f"{mod}.md").write_text(
+            "\n".join(idx), encoding="utf-8"
+        )
+
+        # One standalone page per type.
+        for e in sorted_ents:
+            page = _render_schema_type_page(e, mod, entities, overlays)
+            (mod_dir / f"{_type_filename(e['name'])}.md").write_text(
+                page, encoding="utf-8"
+            )
 
 
 def generate_module_uml_md(entities: dict[str, dict], out_dir: Path) -> set[str]:
@@ -3117,10 +3312,10 @@ def main(argv: list[str] | None = None) -> int:
     generate_global_diagram_md(entities, generated_dir)
     print(f"  Generated {len(uml_md)} module UML Markdown pages.")
 
-    print("Generating Markdown schema pages (with embedded entity details)…")
+    print("Generating Markdown schema pages (per-type pages with memory layout)…")
     generate_schemas_index_md(entities, overlays, generated_dir, diagram_modules=uml_md)
-    print(f"  Generated {len({e['module'] for e in entities.values()})} module pages "
-          f"covering {len(entities)} entities.")
+    print(f"  Generated {len({e['module'] for e in entities.values()})} module index pages "
+          f"covering {len(entities)} entities (one page each).")
 
     print("Generating Markdown protobuf pages…")
     generate_protobufs_md_page(protos, overlays, generated_dir)

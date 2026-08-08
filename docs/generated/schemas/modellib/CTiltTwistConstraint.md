@@ -1,0 +1,56 @@
+---
+layout: default
+title: CTiltTwistConstraint
+nav_exclude: true
+---
+
+[Schemas](../../schemas.md) / [modellib](../modellib.md) / CTiltTwistConstraint
+
+# CTiltTwistConstraint
+
+**Kind:** class · **Size:** 144 bytes (`0x90`) · **Align:** 16 · **Module:** modellib
+
+**Inherits from:** [CBaseConstraint](../modellib/CBaseConstraint.md)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CBaseConstraint <|-- CTiltTwistConstraint
+    CBoneConstraintBase <|-- CBaseConstraint
+```
+
+## Memory layout
+
+6 fields (2 declared here, 4 inherited). Offsets are absolute from the object base.
+
+| Offset | Field | Type | From | Annotations |
+|--------|-------|------|------|-------------|
+| `0x20` | `m_name` | CUtlString | [CBaseConstraint](../modellib/CBaseConstraint.md) |  |
+| `0x28` | `m_vUpVector` | Vector | [CBaseConstraint](../modellib/CBaseConstraint.md) |  |
+| `0x38` | `m_slaves` | CUtlLeanVector< [CConstraintSlave](../modellib/CConstraintSlave.md) > | [CBaseConstraint](../modellib/CBaseConstraint.md) |  |
+| `0x48` | `m_targets` | CUtlVector< [CConstraintTarget](../modellib/CConstraintTarget.md) > | [CBaseConstraint](../modellib/CBaseConstraint.md) |  |
+| `0x60` | `m_nTargetAxis` | int32 |  |  |
+| `0x64` | `m_nSlaveAxis` | int32 |  |  |
+
+<details><summary>KV3 class defaults</summary>
+
+<pre>{
+	&quot;_class&quot;: &quot;CTiltTwistConstraint&quot;,
+	&quot;m_name&quot;: &quot;&quot;,
+	&quot;m_vUpVector&quot;:
+	[
+		0.000000,
+		0.000000,
+		0.000000
+	],
+	&quot;m_slaves&quot;:
+	[
+	],
+	&quot;m_targets&quot;:
+	[
+	],
+	&quot;m_nTargetAxis&quot;: 0,
+	&quot;m_nSlaveAxis&quot;: 0
+}</pre>
+</details>
