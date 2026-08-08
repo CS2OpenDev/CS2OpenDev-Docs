@@ -1,0 +1,21 @@
+---
+layout: default
+title: CNmModelSpaceBlendTask
+nav_exclude: true
+---
+
+[Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmModelSpaceBlendTask
+
+# CNmModelSpaceBlendTask
+
+**Kind:** class · **Size:** 256 bytes (`0x100`) · **Align:** 16 · **Module:** animlib
+
+**Inherits from:** [CNmBlendTaskBase](../animlib/CNmBlendTaskBase.md)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CNmBlendTaskBase <|-- CNmModelSpaceBlendTask
+    CNmPoseTask <|-- CNmBlendTaskBase
+```

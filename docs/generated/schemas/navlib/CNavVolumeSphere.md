@@ -1,0 +1,32 @@
+---
+layout: default
+title: CNavVolumeSphere
+nav_exclude: true
+---
+
+[Schemas](../../schemas.md) / [navlib](../navlib.md) / CNavVolumeSphere
+
+# CNavVolumeSphere
+
+**Kind:** class · **Size:** 136 bytes (`0x88`) · **Align:** 255 · **Module:** navlib
+
+**Inherits from:** [CNavVolume](../navlib/CNavVolume.md)
+
+**Derived by:** [CNavVolumeSphericalShell](../navlib/CNavVolumeSphericalShell.md)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CNavVolume <|-- CNavVolumeSphere
+    CNavVolumeSphere <|-- CNavVolumeSphericalShell
+```
+
+## Memory layout
+
+2 fields (2 declared here, 0 inherited). Offsets are absolute from the object base.
+
+| Offset | Field | Type | From | Annotations |
+|--------|-------|------|------|-------------|
+| `0x78` | `m_vCenter` | VectorWS |  |  |
+| `0x84` | `m_flRadius` | float32 |  |  |

@@ -1,0 +1,47 @@
+---
+layout: default
+title: CModelConfigElement_SetRenderColor
+nav_exclude: true
+---
+
+[Schemas](../../schemas.md) / [modellib](../modellib.md) / CModelConfigElement_SetRenderColor
+
+# CModelConfigElement_SetRenderColor
+
+**Kind:** class · **Size:** 80 bytes (`0x50`) · **Align:** 8 · **Module:** modellib
+
+**Inherits from:** [CModelConfigElement](../modellib/CModelConfigElement.md)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CModelConfigElement <|-- CModelConfigElement_SetRenderColor
+```
+
+## Memory layout
+
+3 fields (1 declared here, 2 inherited). Offsets are absolute from the object base.
+
+| Offset | Field | Type | From | Annotations |
+|--------|-------|------|------|-------------|
+| `0x8` | `m_ElementName` | CUtlString | [CModelConfigElement](../modellib/CModelConfigElement.md) |  |
+| `0x10` | `m_NestedElements` | CUtlVector< [CModelConfigElement](../modellib/CModelConfigElement.md)* > | [CModelConfigElement](../modellib/CModelConfigElement.md) |  |
+| `0x48` | `m_Color` | Color |  |  |
+
+<details><summary>KV3 class defaults</summary>
+
+<pre>{
+	&quot;_class&quot;: &quot;CModelConfigElement_SetRenderColor&quot;,
+	&quot;m_ElementName&quot;: &quot;&quot;,
+	&quot;m_NestedElements&quot;:
+	[
+	],
+	&quot;m_Color&quot;:
+	[
+		255,
+		255,
+		255
+	]
+}</pre>
+</details>

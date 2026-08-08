@@ -7,29 +7,9 @@ nav_exclude: true
 
 # Module: tier2
 
-| Name | Kind | Bases | Fields |
-|------|------|-------|--------|
-| [CRangeFloat](#crangefloat) | class |  | 1 |
-| [CRangeInt](#crangeint) | class |  | 1 |
+2 types. Each links to its own page with the full field layout.
 
----
-
-### CRangeFloat
-
-**Metadata:** `MPropertyCustomEditor multi_float(2)`
-
-**Fields:**
-
-| Name | Type | Annotations |
-|------|------|-------------|
-| `m_pValue` | float32[2] |  |
-
-### CRangeInt
-
-**Metadata:** `MPropertyCustomEditor multi_int(2)`
-
-**Fields:**
-
-| Name | Type | Annotations |
-|------|------|-------------|
-| `m_pValue` | int32[2] |  |
+| Type | Kind | Size | Fields | Inherits |
+|------|------|------|--------|----------|
+| [CRangeFloat](tier2/CRangeFloat.md) | class | 8 | 1 |  |
+| [CRangeInt](tier2/CRangeInt.md) | class | 8 | 1 |  |

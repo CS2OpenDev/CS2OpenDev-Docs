@@ -1,0 +1,37 @@
+---
+layout: default
+title: CRopeOverlapHit
+nav_exclude: true
+---
+
+[Schemas](../../schemas.md) / [server](../server.md) / CRopeOverlapHit
+
+# CRopeOverlapHit
+
+**Kind:** class · **Size:** 32 bytes (`0x20`) · **Align:** 8 · **Module:** server
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CRopeOverlapHit --> CBaseEntity
+```
+
+## Memory layout
+
+2 fields (2 declared here, 0 inherited). Offsets are absolute from the object base.
+
+| Offset | Field | Type | From | Annotations |
+|--------|-------|------|------|-------------|
+| `0x0` | `m_hEntity` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
+| `0x8` | `m_vecOverlappingLinks` | CUtlVector< int32 > |  |  |
+
+<details><summary>KV3 class defaults</summary>
+
+<pre>{
+	&quot;m_hEntity&quot;: null,
+	&quot;m_vecOverlappingLinks&quot;:
+	[
+	]
+}</pre>
+</details>

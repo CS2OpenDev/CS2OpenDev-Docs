@@ -1,0 +1,33 @@
+---
+layout: default
+title: magnetted_objects_t
+nav_exclude: true
+---
+
+[Schemas](../../schemas.md) / [server](../server.md) / magnetted_objects_t
+
+# magnetted_objects_t
+
+**Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** 8 · **Module:** server
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    magnetted_objects_t --> CBaseEntity
+```
+
+## Memory layout
+
+1 fields (1 declared here, 0 inherited). Offsets are absolute from the object base.
+
+| Offset | Field | Type | From | Annotations |
+|--------|-------|------|------|-------------|
+| `0x8` | `hEntity` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
+
+<details><summary>KV3 class defaults</summary>
+
+<pre>{
+	&quot;hEntity&quot;: null
+}</pre>
+</details>

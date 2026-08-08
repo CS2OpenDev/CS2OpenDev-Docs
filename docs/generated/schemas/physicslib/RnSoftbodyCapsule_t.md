@@ -1,0 +1,46 @@
+---
+layout: default
+title: RnSoftbodyCapsule_t
+nav_exclude: true
+---
+
+[Schemas](../../schemas.md) / [physicslib](../physicslib.md) / RnSoftbodyCapsule_t
+
+# RnSoftbodyCapsule_t
+
+**Kind:** class · **Size:** 32 bytes (`0x20`) · **Align:** 4 · **Module:** physicslib
+
+## Memory layout
+
+3 fields (3 declared here, 0 inherited). Offsets are absolute from the object base.
+
+| Offset | Field | Type | From | Annotations |
+|--------|-------|------|------|-------------|
+| `0x0` | `m_vCenter` | Vector[2] |  |  |
+| `0x18` | `m_flRadius` | float32 |  |  |
+| `0x1c` | `m_nParticle` | uint16[2] |  |  |
+
+<details><summary>KV3 class defaults</summary>
+
+<pre>{
+	&quot;m_vCenter&quot;:
+	[
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		]
+	],
+	&quot;m_flRadius&quot;: 0.000000,
+	&quot;m_nParticle&quot;:
+	[
+		0,
+		0
+	]
+}</pre>
+</details>

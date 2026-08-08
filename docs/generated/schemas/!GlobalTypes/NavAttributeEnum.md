@@ -1,0 +1,36 @@
+---
+layout: default
+title: NavAttributeEnum
+nav_exclude: true
+---
+
+[Schemas](../../schemas.md) / [!GlobalTypes](../!GlobalTypes.md) / NavAttributeEnum
+
+# NavAttributeEnum
+
+**Kind:** enum · **Underlying:** `uint64_t` · **Module:** !GlobalTypes
+
+## Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `NAV_MESH_NONE` | 0 |  |
+| `NAV_MESH_JUMP` | 2 |  |
+| `NAV_MESH_NO_JUMP` | 8 |  |
+| `NAV_MESH_STOP` | 16 |  |
+| `NAV_ATTR_FIRST_GAME_INDEX` | 19 |  |
+| `NAV_MESH_RUN` | 32 |  |
+| `NAV_ATTR_LAST_INDEX` | 63 |  |
+| `NAV_MESH_WALK` | 64 |  |
+| `NAV_MESH_AVOID` | 128 |  |
+| `NAV_MESH_TRANSIENT` | 256 |  |
+| `NAV_MESH_DONT_HIDE` | 512 |  |
+| `NAV_MESH_STAND` | 1024 |  |
+| `NAV_MESH_NO_HOSTAGES` | 2048 |  |
+| `NAV_MESH_STAIRS` | 4096 |  |
+| `NAV_MESH_NO_MERGE` | 8192 |  |
+| `NAV_MESH_OBSTACLE_TOP` | 16384 |  |
+| `NAV_MESH_NON_ZUP` | 32768 |  |
+| `NAV_MESH_CROUCH_HEIGHT` | 65536 |  |
+| `NAV_MESH_NON_ZUP_TRANSITION` | 131072 |  |
+| `NAV_MESH_CRAWL_HEIGHT` | 262144 |  |

@@ -1,0 +1,28 @@
+---
+layout: default
+title: FeCtrlOsOffset_t
+nav_exclude: true
+---
+
+[Schemas](../../schemas.md) / [physicslib](../physicslib.md) / FeCtrlOsOffset_t
+
+# FeCtrlOsOffset_t
+
+**Kind:** class · **Size:** 4 bytes (`0x4`) · **Align:** 4 · **Module:** physicslib
+
+## Memory layout
+
+2 fields (2 declared here, 0 inherited). Offsets are absolute from the object base.
+
+| Offset | Field | Type | From | Annotations |
+|--------|-------|------|------|-------------|
+| `0x0` | `nCtrlParent` | uint16 |  |  |
+| `0x2` | `nCtrlChild` | uint16 |  |  |
+
+<details><summary>KV3 class defaults</summary>
+
+<pre>{
+	&quot;nCtrlParent&quot;: 0,
+	&quot;nCtrlChild&quot;: 0
+}</pre>
+</details>

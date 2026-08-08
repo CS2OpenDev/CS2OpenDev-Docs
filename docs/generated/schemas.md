@@ -6,12 +6,12 @@ nav_order: 2
 
 # Schema Reference
 
-All entities and types extracted from CS2's schema dump, organised by module.
+Every class, struct, and enum extracted from CS2's runtime schema, organised by module. Each module page lists its types; each type has its own page carrying the full **memory layout** — field offsets, class size, and fields inherited from base classes.
 
 ## Modules
 
-| Module | Entities | UML |
-|--------|----------|-----|
+| Module | Types | UML |
+|--------|-------|-----|
 | [!GlobalTypes](schemas/!GlobalTypes.md) | 591 | — |
 | [animationsystem](schemas/animationsystem.md) | 51 | [📊 Diagram](diagrams/animationsystem.md) |
 | [animdoclib](schemas/animdoclib.md) | 197 | [📊 Diagram](diagrams/animdoclib.md) |

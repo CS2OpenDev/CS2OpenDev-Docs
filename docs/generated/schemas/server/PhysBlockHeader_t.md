@@ -1,0 +1,28 @@
+---
+layout: default
+title: PhysBlockHeader_t
+nav_exclude: true
+---
+
+[Schemas](../../schemas.md) / [server](../server.md) / PhysBlockHeader_t
+
+# PhysBlockHeader_t
+
+**Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** 8 · **Module:** server
+
+## Memory layout
+
+2 fields (2 declared here, 0 inherited). Offsets are absolute from the object base.
+
+| Offset | Field | Type | From | Annotations |
+|--------|-------|------|------|-------------|
+| `0x0` | `nSaved` | int32 |  |  |
+| `0x8` | `pWorldObject` | uint64 |  |  |
+
+<details><summary>KV3 class defaults</summary>
+
+<pre>{
+	&quot;nSaved&quot;: 0,
+	&quot;pWorldObject&quot;: 0
+}</pre>
+</details>
