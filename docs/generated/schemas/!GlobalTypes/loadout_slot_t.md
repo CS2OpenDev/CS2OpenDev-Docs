@@ -8,6 +8,9 @@ nav_exclude: true
 
 # loadout_slot_t
 
+Full per-loadout equipment-slot enumeration (weapons, grenades, and cosmetic/agent slots).  Used to index CCSPlayerController_InventoryServices loadout data.
+
+
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** !GlobalTypes
 
 ## Values

@@ -8,6 +8,8 @@ nav_exclude: true
 
 # LifeState_t
 
+Alive/dead state of a pawn (m_lifeState).
+
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** !GlobalTypes
 
 ## Values

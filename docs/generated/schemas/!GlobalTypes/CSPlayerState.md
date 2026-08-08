@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CSPlayerState
 
+Connection / spawn state machine for a CS2 player (m_iPlayerState).
+
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** !GlobalTypes
 
 ## Values

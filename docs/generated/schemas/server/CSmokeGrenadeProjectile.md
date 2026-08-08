@@ -8,6 +8,9 @@ nav_exclude: true
 
 # CSmokeGrenadeProjectile
 
+The thrown smoke-grenade projectile and the smoke volume it creates after detonation.
+
+
 **Kind:** class · **Size:** 11616 bytes (`0x2d60`) · **Align:** 16 · **Module:** server
 
 **Inherits from:** [CBaseCSGrenadeProjectile](../server/CBaseCSGrenadeProjectile.md)
@@ -149,8 +152,8 @@ classDiagram
 | `0xa88` | `m_nSmokeEffectTickBegin` | int32 |  |  |
 | `0xa8c` | `m_bDidSmokeEffect` | bool |  |  |
 | `0xa90` | `m_nRandomSeed` | int32 |  |  |
-| `0xa94` | `m_vSmokeColor` | Vector |  |  |
-| `0xaa0` | `m_vSmokeDetonationPos` | VectorWS |  |  |
+| `0xa94` | `m_vSmokeColor` | Vector |  | RGB colour of the smoke cloud. |
+| `0xaa0` | `m_vSmokeDetonationPos` | VectorWS |  | World position the smoke cloud is centred on. |
 | `0xab0` | `m_VoxelFrameData` | CNetworkUtlVectorBase< uint8 > |  |  |
 | `0xac8` | `m_nVoxelFrameDataSize` | int32 |  |  |
 | `0xacc` | `m_nVoxelUpdate` | int32 |  |  |
@@ -217,5 +220,5 @@ classDiagram
 | `0x1118` | `m_bRagdollEnabled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
 | `0x1119` | `m_bRagdollClientSide` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
 | `0x1128` | `m_bHasAnimatedMaterialAttributes` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x2d58` | `m_bExplodeFromInferno` | bool |  |  |
+| `0x2d58` | `m_bExplodeFromInferno` | bool |  | True if the smoke was triggered by fire (e.g. extinguishing molotov flames). |
 | `0x2d59` | `m_bDidGroundScorch` | bool |  |  |

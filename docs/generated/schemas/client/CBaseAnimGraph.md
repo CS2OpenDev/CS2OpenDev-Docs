@@ -8,6 +8,9 @@ nav_exclude: true
 
 # CBaseAnimGraph
 
+Entity layer that drives the Source 2 animation graph — skeleton, ragdoll, and choreo.  Base for all animated model entities, including player pawns.
+
+
 **Kind:** class · **Size:** 4480 bytes (`0x1180`) · **Align:** 8 · **Module:** client
 
 **Inherits from:** [C_BaseModelEntity](../client/C_BaseModelEntity.md)
@@ -197,7 +200,7 @@ classDiagram
 | `0xf64` | `m_bUseClientOverrideTint` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
 | `0xfa0` | `m_bvDisabledHitGroups` | uint32[1] | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
 | `0xfb0` | `m_graphControllerManager` | [CAnimGraphControllerManager](../server/CAnimGraphControllerManager.md) |  |  |
-| `0x1048` | `m_pMainGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) |  |  |
+| `0x1048` | `m_pMainGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) |  | The primary animation-graph controller instance for this entity. |
 | `0x1050` | `m_bInitiallyPopulateInterpHistory` | bool |  |  |
 | `0x1052` | `m_bSuppressAnimEventSounds` | bool |  |  |
 | `0x1058` | `m_OnLayerCycleUpdated` | CEntityOutputTemplate< float32 > |  |  |
@@ -210,6 +213,6 @@ classDiagram
 | `0x10b8` | `m_bBuiltRagdoll` | bool |  | `MNotSaved` |
 | `0x10c8` | `m_pRagdollControl` | [IPhysicsRagdollControl](../vphysics2/IPhysicsRagdollControl.md)* |  | `MPhysPtr` |
 | `0x10d0` | `m_RagdollPose` | [PhysicsRagdollPose_t](../client/PhysicsRagdollPose_t.md) |  |  |
-| `0x1118` | `m_bRagdollEnabled` | bool |  |  |
+| `0x1118` | `m_bRagdollEnabled` | bool |  | True while the entity is simulated as a ragdoll rather than animated. |
 | `0x1119` | `m_bRagdollClientSide` | bool |  | `MNotSaved` |
 | `0x1128` | `m_bHasAnimatedMaterialAttributes` | bool |  | `MNotSaved` |

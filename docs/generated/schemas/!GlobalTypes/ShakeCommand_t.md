@@ -8,6 +8,8 @@ nav_exclude: true
 
 # ShakeCommand_t
 
+Screen-shake command type sent to clients (start / stop / amplitude / frequency / duration).
+
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** !GlobalTypes
 
 ## Values

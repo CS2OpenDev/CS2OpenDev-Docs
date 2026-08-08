@@ -8,6 +8,9 @@ nav_exclude: true
 
 # CItem
 
+Base class for world pickups a player collects by touch (dropped weapons, defuse kits, and similar).
+
+
 **Kind:** class · **Size:** 2560 bytes (`0xa00`) · **Align:** 16 · **Module:** server
 
 **Inherits from:** [CBaseAnimGraph](../server/CBaseAnimGraph.md)
@@ -123,8 +126,8 @@ classDiagram
 | `0x5f0` | `m_sUniqueHammerID` | CUtlString | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
 | `0x5f8` | `m_nBloodType` | [BloodType](../!GlobalTypes/BloodType.md) | [C_BaseEntity](../client/C_BaseEntity.md) |  |
 | `0x968` | `m_OnPlayerTouch` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
-| `0x980` | `m_OnPlayerPickup` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
-| `0x998` | `m_bActivateWhenAtRest` | bool |  |  |
+| `0x980` | `m_OnPlayerPickup` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  | Entity I/O output fired when a player picks the item up. |
+| `0x998` | `m_bActivateWhenAtRest` | bool |  | Whether the item only becomes pickup-able once it has come to rest. |
 | `0x9a0` | `m_OnCacheInteraction` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
 | `0x9b8` | `m_OnGlovePulled` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
 | `0x9d0` | `m_vOriginalSpawnOrigin` | VectorWS |  |  |

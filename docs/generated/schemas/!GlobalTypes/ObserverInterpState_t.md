@@ -8,6 +8,8 @@ nav_exclude: true
 
 # ObserverInterpState_t
 
+Transition state of the spectator camera as it moves between targets.
+
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** !GlobalTypes
 
 ## Values

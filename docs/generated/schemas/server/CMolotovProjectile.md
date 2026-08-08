@@ -8,6 +8,9 @@ nav_exclude: true
 
 # CMolotovProjectile
 
+The thrown molotov / incendiary-grenade projectile that spawns a CInferno fire on impact.
+
+
 **Kind:** class · **Size:** 2912 bytes (`0xb60`) · **Align:** 16 · **Module:** server
 
 **Inherits from:** [CBaseCSGrenadeProjectile](../server/CBaseCSGrenadeProjectile.md)
@@ -146,8 +149,8 @@ classDiagram
 | `0xa4c` | `m_vecLastHitSurfaceNormal` | Vector | [CBaseCSGrenadeProjectile](../server/CBaseCSGrenadeProjectile.md) |  |
 | `0xa58` | `m_nTicksAtZeroVelocity` | int32 | [CBaseCSGrenadeProjectile](../server/CBaseCSGrenadeProjectile.md) |  |
 | `0xa5c` | `m_bHasEverHitEnemy` | bool | [CBaseCSGrenadeProjectile](../server/CBaseCSGrenadeProjectile.md) |  |
-| `0xa60` | `m_bIsIncGrenade` | bool |  |  |
-| `0xa78` | `m_bDetonated` | bool |  |  |
+| `0xa60` | `m_bIsIncGrenade` | bool |  | True for the CT incendiary grenade, false for the T molotov. |
+| `0xa78` | `m_bDetonated` | bool |  | Whether the projectile has already ignited. |
 | `0xa80` | `m_stillTimer` | [IntervalTimer](../server/IntervalTimer.md) |  |  |
 | `0xaf0` | `m_CRenderComponent` | [CRenderComponent](../server/CRenderComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
 | `0xaf8` | `m_CHitboxComponent` | [CHitboxComponent](../server/CHitboxComponent.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |

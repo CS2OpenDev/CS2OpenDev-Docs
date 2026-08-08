@@ -8,6 +8,8 @@ nav_exclude: true
 
 # RenderMode_t
 
+Transparency / rendering method for a model entity (m_nRenderMode).
+
 **Kind:** enum · **Underlying:** `uint8_t` · **Module:** !GlobalTypes
 
 ## Values

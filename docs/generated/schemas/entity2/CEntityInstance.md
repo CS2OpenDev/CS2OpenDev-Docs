@@ -8,6 +8,9 @@ nav_exclude: true
 
 # CEntityInstance
 
+Root of the entity class hierarchy (server and client).  Everything that has an entity handle ultimately derives from this.
+
+
 **Kind:** class · **Size:** 48 bytes (`0x30`) · **Align:** 255 · **Module:** entity2
 
 **Derived by:** [CBaseEntity](../server/CBaseEntity.md), [C_BaseEntity](../client/C_BaseEntity.md)
@@ -29,5 +32,5 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_iszPrivateVScripts` | CUtlSymbolLarge |  |  |
-| `0x10` | `m_pEntity` | [CEntityIdentity](../entity2/CEntityIdentity.md)* |  |  |
-| `0x28` | `m_CScriptComponent` | [CScriptComponent](../entity2/CScriptComponent.md)* |  |  |
+| `0x10` | `m_pEntity` | [CEntityIdentity](../entity2/CEntityIdentity.md)* |  | CEntityIdentity pointer — the entity's identity record (name, class, handle, flags). |
+| `0x28` | `m_CScriptComponent` | [CScriptComponent](../entity2/CScriptComponent.md)* |  | VScript component attached to the entity, when scripted. |

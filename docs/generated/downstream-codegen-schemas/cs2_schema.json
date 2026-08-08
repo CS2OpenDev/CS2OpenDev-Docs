@@ -41116,7 +41116,10 @@
             "module": "!GlobalTypes",
             "name": "CAnimGraphControllerPtr"
           },
-          "typeModule": "!GlobalTypes"
+          "typeModule": "!GlobalTypes",
+          "annotations": {
+            "description": "The primary animation-graph controller instance for this entity."
+          }
         },
         {
           "metadata": [],
@@ -41320,7 +41323,10 @@
             "module": "",
             "name": "bool"
           },
-          "typeModule": ""
+          "typeModule": "",
+          "annotations": {
+            "description": "True while the entity is simulated as a ragdoll rather than animated."
+          }
         },
         {
           "metadata": [
@@ -41374,6 +41380,9 @@
       "singleInheritanceDepth": 3,
       "size": "4480",
       "staticFields": [],
+      "annotations": {
+        "description": "Entity layer that drives the Source 2 animation graph — skeleton, ragdoll, and choreo.  Base for all animated model entities, including player pawns."
+      },
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/client"
     },
     {
@@ -41402,7 +41411,10 @@
             "module": "!GlobalTypes",
             "name": "CAnimGraphControllerPtr"
           },
-          "typeModule": "!GlobalTypes"
+          "typeModule": "!GlobalTypes",
+          "annotations": {
+            "description": "The primary animation-graph controller instance for this entity."
+          }
         },
         {
           "metadata": [],
@@ -41577,7 +41589,10 @@
             "module": "",
             "name": "bool"
           },
-          "typeModule": ""
+          "typeModule": "",
+          "annotations": {
+            "description": "True while the entity is simulated as a ragdoll rather than animated."
+          }
         },
         {
           "metadata": [
@@ -41626,6 +41641,9 @@
       "singleInheritanceDepth": 3,
       "size": "2400",
       "staticFields": [],
+      "annotations": {
+        "description": "Entity layer that drives the Source 2 animation graph — skeleton, ragdoll, and choreo.  Base for all animated model entities, including player pawns."
+      },
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/server"
     },
     {
@@ -43185,7 +43203,10 @@
             "module": "",
             "name": "bool"
           },
-          "typeModule": ""
+          "typeModule": "",
+          "annotations": {
+            "description": "True once the grenade's pin has been pulled."
+          }
         },
         {
           "metadata": [],
@@ -43197,7 +43218,10 @@
             "module": "",
             "name": "bool"
           },
-          "typeModule": ""
+          "typeModule": "",
+          "annotations": {
+            "description": "True when the pending throw is a jump-throw."
+          }
         },
         {
           "metadata": [],
@@ -43221,7 +43245,10 @@
             "module": "!GlobalTypes",
             "name": "GameTime_t"
           },
-          "typeModule": "!GlobalTypes"
+          "typeModule": "!GlobalTypes",
+          "annotations": {
+            "description": "GameTime at which the grenade was thrown."
+          }
         },
         {
           "metadata": [],
@@ -43233,7 +43260,10 @@
             "module": "",
             "name": "float32"
           },
-          "typeModule": ""
+          "typeModule": "",
+          "annotations": {
+            "description": "Normalised throw strength (affects throw distance)."
+          }
         },
         {
           "metadata": [],
@@ -43331,6 +43361,9 @@
       "singleInheritanceDepth": 7,
       "size": "4240",
       "staticFields": [],
+      "annotations": {
+        "description": "Base class for a held (in-hand) grenade weapon before it is thrown — pin/throw state.  The thrown object is a CBaseCSGrenadeProjectile."
+      },
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/server"
     },
     {
@@ -43871,7 +43904,10 @@
             "module": "",
             "name": "CNetworkUtlVectorBase< CHandle< CEconWearable > >"
           },
-          "typeModule": "server.dll"
+          "typeModule": "server.dll",
+          "annotations": {
+            "description": "Handles to the character's equipped wearable items (gloves, agent model pieces)."
+          }
         },
         {
           "metadata": [],
@@ -43883,7 +43919,10 @@
             "module": "",
             "name": "float32"
           },
-          "typeModule": ""
+          "typeModule": "",
+          "annotations": {
+            "description": "Scale applied to impact-damage energy for this character."
+          }
         },
         {
           "metadata": [],
@@ -43993,6 +44032,9 @@
       "singleInheritanceDepth": 4,
       "size": "2608",
       "staticFields": [],
+      "annotations": {
+        "description": "Base class for characters that can carry weapons and take part in combat (players, hostages, bots).  Adds wearables and navigation on top of the animated-model base."
+      },
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/server"
     },
     {
@@ -48119,7 +48161,10 @@
             "module": "",
             "name": "CPlayer_WeaponServices*"
           },
-          "typeModule": "server.dll"
+          "typeModule": "server.dll",
+          "annotations": {
+            "description": "Weapon-handling component (active weapon, switch timing)."
+          }
         },
         {
           "metadata": [],
@@ -48137,7 +48182,10 @@
             "module": "",
             "name": "CPlayer_ItemServices*"
           },
-          "typeModule": "server.dll"
+          "typeModule": "server.dll",
+          "annotations": {
+            "description": "Carried-item component (defuser, helmet)."
+          }
         },
         {
           "metadata": [],
@@ -48173,7 +48221,10 @@
             "module": "",
             "name": "CPlayer_ObserverServices*"
           },
-          "typeModule": "server.dll"
+          "typeModule": "server.dll",
+          "annotations": {
+            "description": "Spectator component, active while the pawn is dead or observing."
+          }
         },
         {
           "metadata": [],
@@ -48245,7 +48296,10 @@
             "module": "",
             "name": "CPlayer_CameraServices*"
           },
-          "typeModule": "server.dll"
+          "typeModule": "server.dll",
+          "annotations": {
+            "description": "View / camera component."
+          }
         },
         {
           "metadata": [],
@@ -48263,7 +48317,10 @@
             "module": "",
             "name": "CPlayer_MovementServices*"
           },
-          "typeModule": "server.dll"
+          "typeModule": "server.dll",
+          "annotations": {
+            "description": "Movement / input component."
+          }
         },
         {
           "metadata": [
@@ -48298,7 +48355,10 @@
             "module": "",
             "name": "QAngle"
           },
-          "typeModule": ""
+          "typeModule": "",
+          "annotations": {
+            "description": "Current view (eye) angles of the pawn."
+          }
         },
         {
           "metadata": [],
@@ -48530,6 +48590,9 @@
       "singleInheritanceDepth": 5,
       "size": "3040",
       "staticFields": [],
+      "annotations": {
+        "description": "Base class for the in-world player pawn — the physical body a controller drives.  Aggregates the player service components (movement, weapons, observer, camera, …)."
+      },
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/server"
     },
     {
@@ -77962,7 +78025,10 @@
             "module": "",
             "name": "int32"
           },
-          "typeModule": ""
+          "typeModule": "",
+          "annotations": {
+            "description": "Current scope zoom level (0 = unscoped)."
+          }
         },
         {
           "metadata": [],
@@ -77974,7 +78040,10 @@
             "module": "",
             "name": "int32"
           },
-          "typeModule": ""
+          "typeModule": "",
+          "annotations": {
+            "description": "Shots left in the current burst, for burst-fire weapons."
+          }
         },
         {
           "metadata": [],
@@ -77986,7 +78055,10 @@
             "module": "",
             "name": "int32"
           },
-          "typeModule": ""
+          "typeModule": "",
+          "annotations": {
+            "description": "Model index used while the silencer is attached."
+          }
         },
         {
           "metadata": [],
@@ -78090,6 +78162,9 @@
       "singleInheritanceDepth": 7,
       "size": "4208",
       "staticFields": [],
+      "annotations": {
+        "description": "Base class for CS2 firearms (extends CCSWeaponBase).  Adds zoom, burst and revolver/bolt-action state; per-weapon-type stats live in CCSWeaponBaseVData."
+      },
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/server"
     },
     {
@@ -88514,7 +88589,10 @@
             "module": "",
             "name": "int32"
           },
-          "typeModule": ""
+          "typeModule": "",
+          "annotations": {
+            "description": "Number of decoy gunshots left to fire."
+          }
         },
         {
           "metadata": [],
@@ -88526,7 +88604,10 @@
             "module": "!GlobalTypes",
             "name": "GameTime_t"
           },
-          "typeModule": "!GlobalTypes"
+          "typeModule": "!GlobalTypes",
+          "annotations": {
+            "description": "GameTime at which the decoy stops and is removed."
+          }
         },
         {
           "metadata": [],
@@ -88538,7 +88619,10 @@
             "module": "",
             "name": "uint16"
           },
-          "typeModule": ""
+          "typeModule": "",
+          "annotations": {
+            "description": "Item-definition index of the weapon whose shots are mimicked."
+          }
         }
       ],
       "flags": 16737,
@@ -88558,6 +88642,9 @@
       "singleInheritanceDepth": 6,
       "size": "2720",
       "staticFields": [],
+      "annotations": {
+        "description": "The thrown decoy-grenade projectile that fires periodic fake gunshots."
+      },
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/server"
     },
     {
@@ -91763,7 +91850,10 @@
             "module": "",
             "name": "uint32"
           },
-          "typeModule": ""
+          "typeModule": "",
+          "annotations": {
+            "description": "Low 32 bits of the item's original-owner SteamID."
+          }
         },
         {
           "metadata": [],
@@ -91775,7 +91865,10 @@
             "module": "",
             "name": "uint32"
           },
-          "typeModule": ""
+          "typeModule": "",
+          "annotations": {
+            "description": "High 32 bits of the item's original-owner SteamID."
+          }
         },
         {
           "metadata": [],
@@ -91787,7 +91880,10 @@
             "module": "",
             "name": "int32"
           },
-          "typeModule": ""
+          "typeModule": "",
+          "annotations": {
+            "description": "Paint-kit (skin) id used when full econ item data isn't attached."
+          }
         },
         {
           "metadata": [],
@@ -91811,7 +91907,10 @@
             "module": "",
             "name": "float32"
           },
-          "typeModule": ""
+          "typeModule": "",
+          "annotations": {
+            "description": "Skin wear / float value (0 = factory new … 1 = battle-scarred)."
+          }
         },
         {
           "metadata": [],
@@ -91823,7 +91922,10 @@
             "module": "",
             "name": "int32"
           },
-          "typeModule": ""
+          "typeModule": "",
+          "annotations": {
+            "description": "StatTrak kill-counter value."
+          }
         },
         {
           "metadata": [],
@@ -91878,6 +91980,9 @@
       "singleInheritanceDepth": 4,
       "size": "3216",
       "staticFields": [],
+      "annotations": {
+        "description": "Base class for entities carrying Steam Economy item data (weapons, knives, gloves): paint kit, wear, StatTrak, and original owner."
+      },
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/server"
     },
     {
@@ -94070,7 +94175,10 @@
             "module": "",
             "name": "CEntityIdentity*"
           },
-          "typeModule": "assetrename.dll"
+          "typeModule": "assetrename.dll",
+          "annotations": {
+            "description": "CEntityIdentity pointer — the entity's identity record (name, class, handle, flags)."
+          }
         },
         {
           "metadata": [],
@@ -94088,7 +94196,10 @@
             "module": "",
             "name": "CScriptComponent*"
           },
-          "typeModule": "assetrename.dll"
+          "typeModule": "assetrename.dll",
+          "annotations": {
+            "description": "VScript component attached to the entity, when scripted."
+          }
         }
       ],
       "flags": 131681,
@@ -94102,6 +94213,9 @@
       "singleInheritanceDepth": 0,
       "size": "48",
       "staticFields": [],
+      "annotations": {
+        "description": "Root of the entity class hierarchy (server and client).  Everything that has an entity handle ultimately derives from this."
+      },
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/entity2"
     },
     {
@@ -103464,6 +103578,9 @@
       "singleInheritanceDepth": 8,
       "size": "4240",
       "staticFields": [],
+      "annotations": {
+        "description": "The flashbang grenade weapon (held form).  Detonation blinds nearby players; the resulting blind duration is applied to the affected pawns."
+      },
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/server"
     },
     {
@@ -117451,6 +117568,9 @@
       "singleInheritanceDepth": 8,
       "size": "4240",
       "staticFields": [],
+      "annotations": {
+        "description": "The high-explosive (HE) grenade weapon (held form).  Deals area damage on detonation."
+      },
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/server"
     },
     {
@@ -122731,7 +122851,10 @@
             "module": "!GlobalTypes",
             "name": "CEntityIOOutput"
           },
-          "typeModule": "!GlobalTypes"
+          "typeModule": "!GlobalTypes",
+          "annotations": {
+            "description": "Entity I/O output fired when a player picks the item up."
+          }
         },
         {
           "metadata": [],
@@ -122743,7 +122866,10 @@
             "module": "",
             "name": "bool"
           },
-          "typeModule": ""
+          "typeModule": "",
+          "annotations": {
+            "description": "Whether the item only becomes pickup-able once it has come to rest."
+          }
         },
         {
           "metadata": [],
@@ -122828,6 +122954,9 @@
       "singleInheritanceDepth": 4,
       "size": "2560",
       "staticFields": [],
+      "annotations": {
+        "description": "Base class for world pickups a player collects by touch (dropped weapons, defuse kits, and similar)."
+      },
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/server"
     },
     {
@@ -144850,7 +144979,10 @@
             "module": "",
             "name": "bool"
           },
-          "typeModule": ""
+          "typeModule": "",
+          "annotations": {
+            "description": "True for the CT incendiary grenade, false for the T molotov."
+          }
         },
         {
           "metadata": [],
@@ -144862,7 +144994,10 @@
             "module": "",
             "name": "bool"
           },
-          "typeModule": ""
+          "typeModule": "",
+          "annotations": {
+            "description": "Whether the projectile has already ignited."
+          }
         },
         {
           "metadata": [],
@@ -144894,6 +145029,9 @@
       "singleInheritanceDepth": 6,
       "size": "2912",
       "staticFields": [],
+      "annotations": {
+        "description": "The thrown molotov / incendiary-grenade projectile that spawns a CInferno fire on impact."
+      },
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/server"
     },
     {
@@ -244601,7 +244739,10 @@
             "module": "",
             "name": "Vector"
           },
-          "typeModule": ""
+          "typeModule": "",
+          "annotations": {
+            "description": "RGB colour of the smoke cloud."
+          }
         },
         {
           "metadata": [],
@@ -244613,7 +244754,10 @@
             "module": "",
             "name": "VectorWS"
           },
-          "typeModule": ""
+          "typeModule": "",
+          "annotations": {
+            "description": "World position the smoke cloud is centred on."
+          }
         },
         {
           "metadata": [],
@@ -244691,7 +244835,10 @@
             "module": "",
             "name": "bool"
           },
-          "typeModule": ""
+          "typeModule": "",
+          "annotations": {
+            "description": "True if the smoke was triggered by fire (e.g. extinguishing molotov flames)."
+          }
         },
         {
           "metadata": [],
@@ -244723,6 +244870,9 @@
       "singleInheritanceDepth": 6,
       "size": "11616",
       "staticFields": [],
+      "annotations": {
+        "description": "The thrown smoke-grenade projectile and the smoke volume it creates after detonation."
+      },
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/server"
     },
     {
@@ -533525,17 +533675,26 @@
         {
           "metadata": [],
           "name": "STATE_ACTIVE",
-          "value": "0"
+          "value": "0",
+          "annotations": {
+            "description": "In active play, controlling a pawn."
+          }
         },
         {
           "metadata": [],
           "name": "STATE_WELCOME",
-          "value": "1"
+          "value": "1",
+          "annotations": {
+            "description": "Just connected; showing the intro / welcome screen."
+          }
         },
         {
           "metadata": [],
           "name": "STATE_PICKINGTEAM",
-          "value": "2"
+          "value": "2",
+          "annotations": {
+            "description": "Choosing a team."
+          }
         },
         {
           "metadata": [],
@@ -533545,7 +533704,10 @@
         {
           "metadata": [],
           "name": "STATE_DEATH_ANIM",
-          "value": "4"
+          "value": "4",
+          "annotations": {
+            "description": "Playing the death animation."
+          }
         },
         {
           "metadata": [],
@@ -533555,7 +533717,10 @@
         {
           "metadata": [],
           "name": "STATE_OBSERVER_MODE",
-          "value": "6"
+          "value": "6",
+          "annotations": {
+            "description": "Spectating (dead or connected as an observer)."
+          }
         },
         {
           "metadata": [],
@@ -533565,7 +533730,10 @@
         {
           "metadata": [],
           "name": "STATE_DORMANT",
-          "value": "8"
+          "value": "8",
+          "annotations": {
+            "description": "Not yet fully in the game (loading / intermission)."
+          }
         },
         {
           "metadata": [],
@@ -533575,7 +533743,10 @@
       ],
       "module": "!GlobalTypes",
       "name": "CSPlayerState",
-      "size": 4
+      "size": 4,
+      "annotations": {
+        "description": "Connection / spawn state machine for a CS2 player (m_iPlayerState)."
+      }
     },
     {
       "alignment": "uint32_t",
@@ -533619,7 +533790,10 @@
       ],
       "module": "!GlobalTypes",
       "name": "CSWeaponCategory",
-      "size": 4
+      "size": 4,
+      "annotations": {
+        "description": "Coarse buy-menu weapon category (CCSWeaponBaseVData.m_WeaponCategory)."
+      }
     },
     {
       "alignment": "uint32_t",
@@ -533628,12 +533802,18 @@
         {
           "metadata": [],
           "name": "Primary_Mode",
-          "value": "0"
+          "value": "0",
+          "annotations": {
+            "description": "Primary fire."
+          }
         },
         {
           "metadata": [],
           "name": "Secondary_Mode",
-          "value": "1"
+          "value": "1",
+          "annotations": {
+            "description": "Secondary fire (e.g. scope, burst, silencer toggle)."
+          }
         },
         {
           "metadata": [],
@@ -533643,7 +533823,10 @@
       ],
       "module": "!GlobalTypes",
       "name": "CSWeaponMode",
-      "size": 4
+      "size": 4,
+      "annotations": {
+        "description": "Weapon fire mode: primary vs secondary (right-click) fire."
+      }
     },
     {
       "alignment": "uint32_t",
@@ -533991,22 +534174,34 @@
         {
           "metadata": [],
           "name": "WEAPONSILENCER_NONE",
-          "value": "0"
+          "value": "0",
+          "annotations": {
+            "description": "No silencer."
+          }
         },
         {
           "metadata": [],
           "name": "WEAPONSILENCER_DETACHABLE",
-          "value": "1"
+          "value": "1",
+          "annotations": {
+            "description": "Detachable silencer (M4A1-S, USP-S)."
+          }
         },
         {
           "metadata": [],
           "name": "WEAPONSILENCER_INTEGRATED",
-          "value": "2"
+          "value": "2",
+          "annotations": {
+            "description": "Permanently integrated silencer."
+          }
         }
       ],
       "module": "!GlobalTypes",
       "name": "CSWeaponSilencerType",
-      "size": 4
+      "size": 4,
+      "annotations": {
+        "description": "Whether and how a weapon is silenced."
+      }
     },
     {
       "alignment": "uint32_t",
@@ -534050,22 +534245,34 @@
         {
           "metadata": [],
           "name": "WEAPONTYPE_C4",
-          "value": "7"
+          "value": "7",
+          "annotations": {
+            "description": "The bomb (C4)."
+          }
         },
         {
           "metadata": [],
           "name": "WEAPONTYPE_TASER",
-          "value": "8"
+          "value": "8",
+          "annotations": {
+            "description": "The zeus x27 taser."
+          }
         },
         {
           "metadata": [],
           "name": "WEAPONTYPE_GRENADE",
-          "value": "9"
+          "value": "9",
+          "annotations": {
+            "description": "A throwable grenade."
+          }
         },
         {
           "metadata": [],
           "name": "WEAPONTYPE_EQUIPMENT",
-          "value": "10"
+          "value": "10",
+          "annotations": {
+            "description": "Equipment (kevlar, defuse kit, and similar non-firing items)."
+          }
         },
         {
           "metadata": [],
@@ -534080,7 +534287,10 @@
       ],
       "module": "!GlobalTypes",
       "name": "CSWeaponType",
-      "size": 4
+      "size": 4,
+      "annotations": {
+        "description": "Broad weapon type classification (CCSWeaponBaseVData.m_WeaponType)."
+      }
     },
     {
       "alignment": "uint8_t",
@@ -546011,27 +546221,42 @@
         {
           "metadata": [],
           "name": "LIFE_ALIVE",
-          "value": "0"
+          "value": "0",
+          "annotations": {
+            "description": "Alive and playable."
+          }
         },
         {
           "metadata": [],
           "name": "LIFE_DYING",
-          "value": "1"
+          "value": "1",
+          "annotations": {
+            "description": "Playing the death animation; not yet fully dead."
+          }
         },
         {
           "metadata": [],
           "name": "LIFE_DEAD",
-          "value": "2"
+          "value": "2",
+          "annotations": {
+            "description": "Dead."
+          }
         },
         {
           "metadata": [],
           "name": "LIFE_RESPAWNABLE",
-          "value": "3"
+          "value": "3",
+          "annotations": {
+            "description": "Dead and eligible to respawn."
+          }
         },
         {
           "metadata": [],
           "name": "LIFE_RESPAWNING",
-          "value": "4"
+          "value": "4",
+          "annotations": {
+            "description": "In the process of respawning."
+          }
         },
         {
           "metadata": [],
@@ -546041,7 +546266,10 @@
       ],
       "module": "!GlobalTypes",
       "name": "LifeState_t",
-      "size": 4
+      "size": 4,
+      "annotations": {
+        "description": "Alive/dead state of a pawn (m_lifeState)."
+      }
     },
     {
       "alignment": "uint32_t",
@@ -546270,7 +546498,10 @@
       ],
       "module": "!GlobalTypes",
       "name": "MedalRank_t",
-      "size": 4
+      "size": 4,
+      "annotations": {
+        "description": "Medal tier for profile achievements (none / bronze / silver / gold)."
+      }
     },
     {
       "alignment": "uint32_t",
@@ -546810,7 +547041,10 @@
       ],
       "module": "!GlobalTypes",
       "name": "MoveCollide_t",
-      "size": 1
+      "size": 1,
+      "annotations": {
+        "description": "How a moving entity resolves collisions along its path (fly-movetype entities)."
+      }
     },
     {
       "alignment": "uint32_t",
@@ -546872,7 +547106,10 @@
         {
           "metadata": [],
           "name": "MOVETYPE_NONE",
-          "value": "0"
+          "value": "0",
+          "annotations": {
+            "description": "Not moved by the engine."
+          }
         },
         {
           "metadata": [],
@@ -546882,17 +547119,26 @@
         {
           "metadata": [],
           "name": "MOVETYPE_WALK",
-          "value": "2"
+          "value": "2",
+          "annotations": {
+            "description": "Player-style ground movement (walk/run/jump)."
+          }
         },
         {
           "metadata": [],
           "name": "MOVETYPE_FLY",
-          "value": "3"
+          "value": "3",
+          "annotations": {
+            "description": "Flies in a straight line, ignoring gravity."
+          }
         },
         {
           "metadata": [],
           "name": "MOVETYPE_FLYGRAVITY",
-          "value": "4"
+          "value": "4",
+          "annotations": {
+            "description": "Ballistic arc under gravity (thrown grenades, projectiles)."
+          }
         },
         {
           "metadata": [],
@@ -546902,32 +547148,50 @@
         {
           "metadata": [],
           "name": "MOVETYPE_VPHYSICS",
-          "value": "5"
+          "value": "5",
+          "annotations": {
+            "description": "Driven by the VPhysics simulation."
+          }
         },
         {
           "metadata": [],
           "name": "MOVETYPE_PUSH",
-          "value": "6"
+          "value": "6",
+          "annotations": {
+            "description": "Pushes other entities without being blocked (movers/doors)."
+          }
         },
         {
           "metadata": [],
           "name": "MOVETYPE_NOCLIP",
-          "value": "7"
+          "value": "7",
+          "annotations": {
+            "description": "Free movement with no collision (noclip)."
+          }
         },
         {
           "metadata": [],
           "name": "MOVETYPE_OBSERVER",
-          "value": "8"
+          "value": "8",
+          "annotations": {
+            "description": "Spectator free-look movement."
+          }
         },
         {
           "metadata": [],
           "name": "MOVETYPE_LADDER",
-          "value": "9"
+          "value": "9",
+          "annotations": {
+            "description": "Climbing a ladder."
+          }
         },
         {
           "metadata": [],
           "name": "MOVETYPE_CUSTOM",
-          "value": "10"
+          "value": "10",
+          "annotations": {
+            "description": "Movement handled by custom game code."
+          }
         },
         {
           "metadata": [],
@@ -546942,7 +547206,10 @@
       ],
       "module": "!GlobalTypes",
       "name": "MoveType_t",
-      "size": 1
+      "size": 1,
+      "annotations": {
+        "description": "How an entity is moved and simulated each tick (m_MoveType)."
+      }
     },
     {
       "alignment": "uint32_t",
@@ -548550,7 +548817,10 @@
       ],
       "module": "!GlobalTypes",
       "name": "ObserverInterpState_t",
-      "size": 4
+      "size": 4,
+      "annotations": {
+        "description": "Transition state of the spectator camera as it moves between targets."
+      }
     },
     {
       "alignment": "uint32_t",
@@ -548559,27 +548829,42 @@
         {
           "metadata": [],
           "name": "OBS_MODE_NONE",
-          "value": "0"
+          "value": "0",
+          "annotations": {
+            "description": "Not observing."
+          }
         },
         {
           "metadata": [],
           "name": "OBS_MODE_FIXED",
-          "value": "1"
+          "value": "1",
+          "annotations": {
+            "description": "Fixed camera position."
+          }
         },
         {
           "metadata": [],
           "name": "OBS_MODE_IN_EYE",
-          "value": "2"
+          "value": "2",
+          "annotations": {
+            "description": "First-person: sees through the observed player's eyes."
+          }
         },
         {
           "metadata": [],
           "name": "OBS_MODE_CHASE",
-          "value": "3"
+          "value": "3",
+          "annotations": {
+            "description": "Third-person chase camera behind the observed player."
+          }
         },
         {
           "metadata": [],
           "name": "OBS_MODE_ROAMING",
-          "value": "4"
+          "value": "4",
+          "annotations": {
+            "description": "Free-roaming (free-fly) camera."
+          }
         },
         {
           "metadata": [],
@@ -548589,7 +548874,10 @@
       ],
       "module": "!GlobalTypes",
       "name": "ObserverMode_t",
-      "size": 4
+      "size": 4,
+      "annotations": {
+        "description": "Spectator camera mode (m_iObserverMode)."
+      }
     },
     {
       "alignment": "uint8_t",
@@ -555582,7 +555870,10 @@
       ],
       "module": "!GlobalTypes",
       "name": "RenderFx_t",
-      "size": 1
+      "size": 1,
+      "annotations": {
+        "description": "Special render effect applied to an entity (pulse / fade / strobe / glow variants; m_nRenderFX)."
+      }
     },
     {
       "alignment": "uint8_t",
@@ -555615,17 +555906,26 @@
         {
           "metadata": [],
           "name": "kRenderNormal",
-          "value": "0"
+          "value": "0",
+          "annotations": {
+            "description": "Opaque, standard rendering."
+          }
         },
         {
           "metadata": [],
           "name": "kRenderTransAlpha",
-          "value": "1"
+          "value": "1",
+          "annotations": {
+            "description": "Alpha-blended translucency."
+          }
         },
         {
           "metadata": [],
           "name": "kRenderNone",
-          "value": "2"
+          "value": "2",
+          "annotations": {
+            "description": "Not rendered (invisible but still present)."
+          }
         },
         {
           "metadata": [],
@@ -555635,7 +555935,10 @@
       ],
       "module": "!GlobalTypes",
       "name": "RenderMode_t",
-      "size": 1
+      "size": 1,
+      "annotations": {
+        "description": "Transparency / rendering method for a model entity (m_nRenderMode)."
+      }
     },
     {
       "alignment": "uint32_t",
@@ -557426,7 +557729,10 @@
       ],
       "module": "!GlobalTypes",
       "name": "ShakeCommand_t",
-      "size": 4
+      "size": 4,
+      "annotations": {
+        "description": "Screen-shake command type sent to clients (start / stop / amplitude / frequency / duration)."
+      }
     },
     {
       "alignment": "uint8_t",
@@ -558696,7 +559002,10 @@
         {
           "metadata": [],
           "name": "SOLID_NONE",
-          "value": "0"
+          "value": "0",
+          "annotations": {
+            "description": "No collision."
+          }
         },
         {
           "metadata": [],
@@ -558706,17 +559015,26 @@
         {
           "metadata": [],
           "name": "SOLID_BBOX",
-          "value": "2"
+          "value": "2",
+          "annotations": {
+            "description": "Axis-aligned bounding box."
+          }
         },
         {
           "metadata": [],
           "name": "SOLID_OBB",
-          "value": "3"
+          "value": "3",
+          "annotations": {
+            "description": "Oriented bounding box."
+          }
         },
         {
           "metadata": [],
           "name": "SOLID_SPHERE",
-          "value": "4"
+          "value": "4",
+          "annotations": {
+            "description": "Sphere."
+          }
         },
         {
           "metadata": [],
@@ -558726,17 +559044,26 @@
         {
           "metadata": [],
           "name": "SOLID_VPHYSICS",
-          "value": "6"
+          "value": "6",
+          "annotations": {
+            "description": "Full VPhysics collision mesh."
+          }
         },
         {
           "metadata": [],
           "name": "SOLID_CAPSULE",
-          "value": "7"
+          "value": "7",
+          "annotations": {
+            "description": "Capsule (used by player/character collision)."
+          }
         },
         {
           "metadata": [],
           "name": "SOLID_CYLINDER",
-          "value": "8"
+          "value": "8",
+          "annotations": {
+            "description": "Cylinder."
+          }
         },
         {
           "metadata": [],
@@ -558746,7 +559073,10 @@
       ],
       "module": "!GlobalTypes",
       "name": "SolidType_t",
-      "size": 1
+      "size": 1,
+      "annotations": {
+        "description": "Collision solid type used for an entity's physics representation (m_nSolidType)."
+      }
     },
     {
       "alignment": "uint32_t",
@@ -562769,27 +563099,42 @@
         {
           "metadata": [],
           "name": "GEAR_SLOT_RIFLE",
-          "value": "0"
+          "value": "0",
+          "annotations": {
+            "description": "Primary weapon slot (rifles, SMGs, shotguns, LMGs)."
+          }
         },
         {
           "metadata": [],
           "name": "GEAR_SLOT_PISTOL",
-          "value": "1"
+          "value": "1",
+          "annotations": {
+            "description": "Secondary weapon slot (pistols)."
+          }
         },
         {
           "metadata": [],
           "name": "GEAR_SLOT_KNIFE",
-          "value": "2"
+          "value": "2",
+          "annotations": {
+            "description": "Melee slot (knife)."
+          }
         },
         {
           "metadata": [],
           "name": "GEAR_SLOT_GRENADES",
-          "value": "3"
+          "value": "3",
+          "annotations": {
+            "description": "Grenade slot."
+          }
         },
         {
           "metadata": [],
           "name": "GEAR_SLOT_C4",
-          "value": "4"
+          "value": "4",
+          "annotations": {
+            "description": "Bomb (C4) slot."
+          }
         },
         {
           "metadata": [],
@@ -562844,7 +563189,10 @@
       ],
       "module": "!GlobalTypes",
       "name": "gear_slot_t",
-      "size": 4
+      "size": 4,
+      "annotations": {
+        "description": "Gear slot a weapon occupies on the player (weapon-switch wheel grouping)."
+      }
     },
     {
       "alignment": "uint32_t",
@@ -563223,7 +563571,10 @@
       ],
       "module": "!GlobalTypes",
       "name": "loadout_slot_t",
-      "size": 4
+      "size": 4,
+      "annotations": {
+        "description": "Full per-loadout equipment-slot enumeration (weapons, grenades, and cosmetic/agent slots).  Used to index CCSPlayerController_InventoryServices loadout data."
+      }
     },
     {
       "alignment": "uint32_t",

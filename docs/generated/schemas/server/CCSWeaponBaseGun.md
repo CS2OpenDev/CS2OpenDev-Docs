@@ -8,6 +8,9 @@ nav_exclude: true
 
 # CCSWeaponBaseGun
 
+Base class for CS2 firearms (extends CCSWeaponBase).  Adds zoom, burst and revolver/bolt-action state; per-weapon-type stats live in CCSWeaponBaseVData.
+
+
 **Kind:** class · **Size:** 4208 bytes (`0x1070`) · **Align:** 16 · **Module:** server
 
 **Inherits from:** [CCSWeaponBase](../server/CCSWeaponBase.md)
@@ -263,12 +266,12 @@ classDiagram
 | `0xfa0` | `m_bvDisabledHitGroups` | uint32[1] | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
 | `0xfb0` | `m_graphControllerManager` | [CAnimGraphControllerManager](../server/CAnimGraphControllerManager.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
 | `0x1048` | `m_pMainGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x1050` | `m_zoomLevel` | int32 |  |  |
+| `0x1050` | `m_zoomLevel` | int32 |  | Current scope zoom level (0 = unscoped). |
 | `0x1050` | `m_bInitiallyPopulateInterpHistory` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
 | `0x1052` | `m_bSuppressAnimEventSounds` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x1054` | `m_iBurstShotsRemaining` | int32 |  |  |
+| `0x1054` | `m_iBurstShotsRemaining` | int32 |  | Shots left in the current burst, for burst-fire weapons. |
 | `0x1058` | `m_OnLayerCycleUpdated` | CEntityOutputTemplate< float32 > | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x1060` | `m_silencedModelIndex` | int32 |  |  |
+| `0x1060` | `m_silencedModelIndex` | int32 |  | Model index used while the silencer is attached. |
 | `0x1064` | `m_inPrecache` | bool |  |  |
 | `0x1065` | `m_bNeedsBoltAction` | bool |  |  |
 | `0x1068` | `m_nRevolverCylinderIdx` | int32 |  |  |

@@ -8,6 +8,9 @@ nav_exclude: true
 
 # CBaseCombatCharacter
 
+Base class for characters that can carry weapons and take part in combat (players, hostages, bots).  Adds wearables and navigation on top of the animated-model base.
+
+
 **Kind:** class · **Size:** 2608 bytes (`0xa30`) · **Align:** 16 · **Module:** server
 
 **Inherits from:** [CBaseAnimGraph](../server/CBaseAnimGraph.md)
@@ -122,8 +125,8 @@ classDiagram
 | `0x5f0` | `m_sUniqueHammerID` | CUtlString | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
 | `0x5f8` | `m_nBloodType` | [BloodType](../!GlobalTypes/BloodType.md) | [C_BaseEntity](../client/C_BaseEntity.md) |  |
 | `0x960` | `m_bForceServerRagdoll` | bool |  |  |
-| `0x968` | `m_hMyWearables` | CNetworkUtlVectorBase< CHandle< [CEconWearable](../server/CEconWearable.md) > > |  | `MNotSaved` |
-| `0x980` | `m_impactEnergyScale` | float32 |  |  |
+| `0x968` | `m_hMyWearables` | CNetworkUtlVectorBase< CHandle< [CEconWearable](../server/CEconWearable.md) > > |  | Handles to the character's equipped wearable items (gloves, agent model pieces). `MNotSaved` |
+| `0x980` | `m_impactEnergyScale` | float32 |  | Scale applied to impact-damage energy for this character. |
 | `0x984` | `m_bApplyStressDamage` | bool |  |  |
 | `0x985` | `m_bDeathEventsDispatched` | bool |  |  |
 | `0x9c8` | `m_vecRelationships` | CUtlVector< [RelationshipOverride_t](../server/RelationshipOverride_t.md) > |  |  |

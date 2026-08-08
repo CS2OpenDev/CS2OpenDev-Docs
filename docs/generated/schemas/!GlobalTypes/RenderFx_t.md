@@ -8,6 +8,8 @@ nav_exclude: true
 
 # RenderFx_t
 
+Special render effect applied to an entity (pulse / fade / strobe / glow variants; m_nRenderFX).
+
 **Kind:** enum · **Underlying:** `uint8_t` · **Module:** !GlobalTypes
 
 ## Values

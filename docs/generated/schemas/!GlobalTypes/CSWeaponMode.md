@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CSWeaponMode
 
+Weapon fire mode: primary vs secondary (right-click) fire.
+
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** !GlobalTypes
 
 ## Values

@@ -8,6 +8,9 @@ nav_exclude: true
 
 # CHEGrenade
 
+The high-explosive (HE) grenade weapon (held form).  Deals area damage on detonation.
+
+
 **Kind:** class · **Size:** 4240 bytes (`0x1090`) · **Align:** 16 · **Module:** server
 
 **Inherits from:** [CBaseCSGrenade](../server/CBaseCSGrenade.md)

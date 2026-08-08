@@ -8,6 +8,9 @@ nav_exclude: true
 
 # CBasePlayerPawn
 
+Base class for the in-world player pawn — the physical body a controller drives.  Aggregates the player service components (movement, weapons, observer, camera, …).
+
+
 **Kind:** class · **Size:** 3040 bytes (`0xbe0`) · **Align:** 16 · **Module:** server
 
 **Inherits from:** [CBaseCombatCharacter](../server/CBaseCombatCharacter.md)
@@ -137,17 +140,17 @@ classDiagram
 | `0x9e8` | `m_eHull` | [Hull_t](../!GlobalTypes/Hull_t.md) | [CBaseCombatCharacter](../server/CBaseCombatCharacter.md) |  |
 | `0x9ec` | `m_nNavHullIdx` | uint32 | [CBaseCombatCharacter](../server/CBaseCombatCharacter.md) |  |
 | `0x9f0` | `m_movementStats` | [CMovementStatsProperty](../server/CMovementStatsProperty.md) | [CBaseCombatCharacter](../server/CBaseCombatCharacter.md) |  |
-| `0xa30` | `m_pWeaponServices` | [CPlayer_WeaponServices](../server/CPlayer_WeaponServices.md)* |  |  |
-| `0xa38` | `m_pItemServices` | [CPlayer_ItemServices](../server/CPlayer_ItemServices.md)* |  |  |
+| `0xa30` | `m_pWeaponServices` | [CPlayer_WeaponServices](../server/CPlayer_WeaponServices.md)* |  | Weapon-handling component (active weapon, switch timing). |
+| `0xa38` | `m_pItemServices` | [CPlayer_ItemServices](../server/CPlayer_ItemServices.md)* |  | Carried-item component (defuser, helmet). |
 | `0xa40` | `m_pAutoaimServices` | [CPlayer_AutoaimServices](../server/CPlayer_AutoaimServices.md)* |  |  |
-| `0xa48` | `m_pObserverServices` | [CPlayer_ObserverServices](../server/CPlayer_ObserverServices.md)* |  |  |
+| `0xa48` | `m_pObserverServices` | [CPlayer_ObserverServices](../server/CPlayer_ObserverServices.md)* |  | Spectator component, active while the pawn is dead or observing. |
 | `0xa50` | `m_pWaterServices` | [CPlayer_WaterServices](../server/CPlayer_WaterServices.md)* |  |  |
 | `0xa58` | `m_pUseServices` | [CPlayer_UseServices](../server/CPlayer_UseServices.md)* |  |  |
 | `0xa60` | `m_pFlashlightServices` | [CPlayer_FlashlightServices](../server/CPlayer_FlashlightServices.md)* |  |  |
-| `0xa68` | `m_pCameraServices` | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md)* |  |  |
-| `0xa70` | `m_pMovementServices` | [CPlayer_MovementServices](../server/CPlayer_MovementServices.md)* |  |  |
+| `0xa68` | `m_pCameraServices` | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md)* |  | View / camera component. |
+| `0xa70` | `m_pMovementServices` | [CPlayer_MovementServices](../server/CPlayer_MovementServices.md)* |  | Movement / input component. |
 | `0xa80` | `m_ServerViewAngleChanges` | CUtlVectorEmbeddedNetworkVar< [ViewAngleServerChange_t](../server/ViewAngleServerChange_t.md) > |  | `MNotSaved` |
-| `0xae8` | `v_angle` | QAngle |  |  |
+| `0xae8` | `v_angle` | QAngle |  | Current view (eye) angles of the pawn. |
 | `0xaf0` | `m_CRenderComponent` | [CRenderComponent](../server/CRenderComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
 | `0xaf4` | `v_anglePrevious` | QAngle |  |  |
 | `0xaf8` | `m_CHitboxComponent` | [CHitboxComponent](../server/CHitboxComponent.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
