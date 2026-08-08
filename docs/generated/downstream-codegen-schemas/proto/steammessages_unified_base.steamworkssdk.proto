@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+// Injected by CS2OpenDev-Docs (issue #21.3): a single shared C# namespace
+// so message types don't land in the global namespace (CS0433 hazard).
+option csharp_namespace = "CS2OpenDev.Protobuf";
+
+import "google/protobuf/descriptor.proto";
+
+option cc_generic_services = false;
+option optimize_for = SPEED;
+
+enum EProtoExecutionSite {
+  k_EProtoExecutionSiteUnknown = 0;
+  k_EProtoExecutionSiteSteamClient = 3;
+}

@@ -60,6 +60,19 @@ except ImportError:
 # DumpSource2's shape — a deliberate breaking change for downstream consumers.
 SCHEMA_FORMAT_VERSION = "2.0"
 
+# Public GitHub Pages base for the generated reference, used to build
+# absolute cross-links (e.g. cs2_schema.json's diagram_url, issue #21.4) that
+# resolve for a consumer reading the JSON with no site context.  Matches the
+# URLs hand-listed in AGENTS.md.
+PAGES_GENERATED_BASE = "https://cs2opendev.github.io/CS2OpenDev-Docs/generated"
+
+# Canonical C# namespace injected into the normalised .proto overlays (issue
+# #21.3).  A single shared namespace puts every generated message type in one
+# place, removing the CS0433 collision hazard consumers hit when the decompiled
+# protos generate into the global namespace.  Org-scoped and distinct from the
+# entity SDK's ``CS2OpenDev.Sdk.*`` roots.
+PROTO_CSHARP_NAMESPACE = "CS2OpenDev.Protobuf"
+
 # ---------------------------------------------------------------------------
 # Parsers
 # ---------------------------------------------------------------------------
@@ -1785,10 +1798,59 @@ def generate_gameevents_md_page(
     (out_dir / "gameevents.md").write_text("\n".join(lines), encoding="utf-8")
 
 
+def _coerce_build_id(val: Any) -> Any:
+    """Return *val* as an ``int`` when it is an all-digits string, else the
+    value unchanged.
+
+    Issue #19: ``build_id`` is the Steam CS2 game build — a monotonic,
+    numeric provenance key.  SchemaTracker's ``provenance.json`` stores
+    ``buildId`` as a string (``"24537688"``); ``LATEST.json`` stores it as a
+    number.  Normalise to a number so the emitted header is consistent and
+    consumers can stamp it without re-parsing.
+    """
+    if isinstance(val, bool):  # bool is an int subclass — never a build id
+        return val
+    if isinstance(val, int):
+        return val
+    if isinstance(val, str) and val.isdigit():
+        return int(val)
+    return val
+
+
+def _schema_header(source_info: dict[str, Any] | None) -> dict[str, Any]:
+    """The shared provenance header echoed into every downstream schema.
+
+    Carries ``build_id`` (the Steam CS2 game build — numeric and monotonic;
+    issue #19) and ``platform`` (which OS artifact set the schema projects;
+    issue #21) alongside the walker ``revision`` and the build timestamps, so
+    a consumer can tell exactly which CS2 build and platform a schema
+    describes.  ``revision`` identifies the walker/hl2sdk pin — two different
+    game builds read by the same pinned hl2sdk share a ``revision`` but not a
+    ``build_id`` — so both keys are kept; they answer different questions.
+
+    ``generator`` is echoed when present.  Keys come out in a stable,
+    documented order (generator, build_id, platform, revision, dates).
+    """
+    hdr: dict[str, Any] = {}
+    if not source_info:
+        return hdr
+    if source_info.get("generator"):
+        hdr["generator"] = source_info["generator"]
+    if source_info.get("build_id") not in (None, ""):
+        hdr["build_id"] = _coerce_build_id(source_info["build_id"])
+    if source_info.get("platform"):
+        hdr["platform"] = source_info["platform"]
+    for k in ("revision", "version_date", "version_time"):
+        if source_info.get(k) not in (None, ""):
+            hdr[k] = source_info[k]
+    return hdr
+
+
 def generate_gameevents_schema(
     gameevents: list[dict[str, Any]],
     overlays: dict[str, dict],
     out_dir: Path,
+    source_info: dict[str, Any] | None = None,
 ) -> None:
     """Generate ``gameevents_schema.json`` — a community-enriched mirror
     of the parsed ``.gameevents`` registry.
@@ -1847,10 +1909,9 @@ def generate_gameevents_schema(
 
         events_out.append(record)
 
-    out: dict[str, Any] = {
-        "schema_format_version": SCHEMA_FORMAT_VERSION,
-        "events": events_out,
-    }
+    out: dict[str, Any] = {"schema_format_version": SCHEMA_FORMAT_VERSION}
+    out.update(_schema_header(source_info))
+    out["events"] = events_out
     schema_dir = out_dir / "downstream-codegen-schemas"
     schema_dir.mkdir(parents=True, exist_ok=True)
     (schema_dir / "gameevents_schema.json").write_text(
@@ -2000,6 +2061,7 @@ def generate_cs2_schema(
     overlays: dict[str, dict],
     out_dir: Path,
     source_info: dict[str, Any] | None = None,
+    diagram_modules: set[str] | None = None,
 ) -> Path:
     """Generate ``cs2_schema.json`` — the entity schema in
     CS2OpenDev-SchemaTracker's native shape, enriched with overlays.
@@ -2010,10 +2072,16 @@ def generate_cs2_schema(
     ``module``/``projectName`` split), with an optional additive
     ``annotations`` block on classes, fields, enums, and members carrying
     community-curated descriptions / notes / warnings from
-    ``docs/overlays/``.  A class registered in more than one binary emits
-    one record per ``(module, name)``.  See ``AGENTS.md`` for the full
-    per-key format reference.
+    ``docs/overlays/``.  A class registered under more than one
+    ``projectName`` emits one record per ``(projectName, name)``.  See
+    ``AGENTS.md`` for the full per-key format reference.
+
+    ``diagram_modules`` (issue #21.4) is the set of grouping modules that got
+    a UML page; a class in one of them gets an optional ``diagram_url`` back-
+    reference to that page so a consumer can close the loop from a type to its
+    inheritance diagram.
     """
+    diagram_modules = diagram_modules or set()
     seen: set[tuple[str, str]] = set()
     classes_out: list[dict[str, Any]] = []
     enums_out: list[dict[str, Any]] = []
@@ -2025,7 +2093,8 @@ def generate_cs2_schema(
     # held back.
     for entity in sorted(entities.values(), key=lambda e: (e["kind"], e["name"])):
         for variant in _collect_module_variants(entity):
-            key = (variant.get("module", ""), variant["name"])
+            module = variant.get("module", "")
+            key = (module, variant["name"])
             if key in seen:
                 continue
             seen.add(key)
@@ -2033,15 +2102,16 @@ def generate_cs2_schema(
             if raw is None:
                 continue  # synthetic / unsourced entity — skip
             record = _enrich_record(raw, variant, overlays)
+            # Cross-link the UML diagram for classes whose module has one.
+            if variant["kind"] != "enum" and module in diagram_modules:
+                record["diagram_url"] = f"{PAGES_GENERATED_BASE}/diagrams/{module}"
             (enums_out if variant["kind"] == "enum" else classes_out).append(record)
 
     out: dict[str, Any] = {"schema_format_version": SCHEMA_FORMAT_VERSION}
-    # Echo upstream's header keys verbatim so the file remains a drop-in
-    # peer of cs2.json.gz for build/revision tracking.
-    if source_info:
-        for k in ("generator", "revision", "version_date", "version_time"):
-            if k in source_info:
-                out[k] = source_info[k]
+    # Provenance header: build_id (numeric CS2 game build) + platform +
+    # walker revision + dates, so the file stays a self-describing, drop-in
+    # peer of cs2.json.gz.  See _schema_header (issues #19 / #21).
+    out.update(_schema_header(source_info))
     out["classes"] = classes_out
     out["enums"] = enums_out
 
@@ -2074,10 +2144,7 @@ def generate_convars_schema(
     schema_dir.mkdir(parents=True, exist_ok=True)
 
     out: dict[str, Any] = {"schema_format_version": SCHEMA_FORMAT_VERSION}
-    if source_info:
-        for k in ("revision", "version_date", "version_time"):
-            if k in source_info:
-                out[k] = source_info[k]
+    out.update(_schema_header(source_info))
     out["convars"] = [
         {
             "name": cv["name"],
@@ -2106,10 +2173,7 @@ def generate_commands_schema(
     schema_dir.mkdir(parents=True, exist_ok=True)
 
     out: dict[str, Any] = {"schema_format_version": SCHEMA_FORMAT_VERSION}
-    if source_info:
-        for k in ("revision", "version_date", "version_time"):
-            if k in source_info:
-                out[k] = source_info[k]
+    out.update(_schema_header(source_info))
     out["commands"] = [
         {
             "name": cmd["name"],
@@ -2122,6 +2186,70 @@ def generate_commands_schema(
         json.dumps(out, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
+
+
+_PROTO_SYNTAX_RE = re.compile(r'^\s*syntax\s*=\s*"[^"]*"\s*;\s*$')
+
+
+def _normalise_proto_text(text: str) -> str:
+    """Return *text* with ``option csharp_namespace`` injected (issue #21.3).
+
+    SchemaTracker's decompiled ``.proto`` files carry no ``option
+    csharp_namespace``, so C# codegen emits every message into the global
+    namespace — a CS0433 collision hazard the moment a consumer references two
+    protobuf assemblies.  We insert a single shared namespace right after the
+    ``syntax`` line.
+
+    We deliberately do **not** add a ``package`` statement: these files use
+    hundreds of root-qualified (``.Type``) cross-references that assume the
+    empty package, and packaging them would break that resolution without a
+    fragile rewrite of every reference.  ``csharp_namespace`` alone fixes the
+    C# problem the issue describes; the proto type graph is left untouched.
+    """
+    if "csharp_namespace" in text:
+        return text  # already normalised upstream — leave it alone
+    inject = (
+        "\n// Injected by CS2OpenDev-Docs (issue #21.3): a single shared C# "
+        "namespace\n// so message types don't land in the global namespace "
+        "(CS0433 hazard).\n"
+        f'option csharp_namespace = "{PROTO_CSHARP_NAMESPACE}";\n'
+    )
+    lines = text.splitlines(keepends=True)
+    for i, line in enumerate(lines):
+        if _PROTO_SYNTAX_RE.match(line):
+            lines.insert(i + 1, inject)
+            return "".join(lines)
+    # No syntax line (proto2 default) — prepend the option at the top.
+    return inject.lstrip("\n") + text
+
+
+def generate_proto_overlays(build_dir: Path, out_dir: Path) -> int:
+    """Copy the build's ``.proto`` text into
+    ``downstream-codegen-schemas/proto/``, normalised with a shared
+    ``option csharp_namespace`` (issue #21.3).
+
+    For most consumers SchemaTracker's prebuilt ``protos.descriptorset`` is the
+    better path (``protoc --descriptor_set_in`` skips text parsing and import
+    resolution).  These normalised text files are for consumers compiling the
+    protos from source, who would otherwise re-inject the namespace themselves.
+    Returns the number of files written.
+    """
+    src_dir = build_dir / "protos"
+    if not src_dir.is_dir():
+        return 0
+    dst_dir = out_dir / "downstream-codegen-schemas" / "proto"
+    if dst_dir.is_dir():
+        shutil.rmtree(dst_dir)  # drop overlays for protos no longer in the build
+    dst_dir.mkdir(parents=True, exist_ok=True)
+    written = 0
+    for src in sorted(src_dir.glob("*.proto")):
+        try:
+            text = src.read_text(encoding="utf-8")
+        except OSError:
+            continue
+        (dst_dir / src.name).write_text(_normalise_proto_text(text), encoding="utf-8")
+        written += 1
+    return written
 
 
 def _project_constant_annotations(entry: dict[str, Any]) -> dict[str, str]:
@@ -2195,10 +2323,7 @@ def generate_well_known_constants_schema(
         constants_out.append(rec)
 
     out: dict[str, Any] = {"schema_format_version": SCHEMA_FORMAT_VERSION}
-    if source_info:
-        for k in ("revision", "version_date", "version_time"):
-            if k in source_info:
-                out[k] = source_info[k]
+    out.update(_schema_header(source_info))
     out["constants"] = constants_out
 
     (schema_dir / "well_known_constants.json").write_text(
@@ -2315,11 +2440,54 @@ def generate_codegen_schemas_readme(
     schema_dir.mkdir(parents=True, exist_ok=True)
 
     rev_line = ""
+    platform = ""
+    build_id: Any = None
     if source_info:
         rev = source_info.get("revision")
         date = source_info.get("version_date")
         if rev and date:
             rev_line = f"\n_Last regenerated against CS2 build `{rev}` ({date})._\n"
+        platform = source_info.get("platform", "") or ""
+        if source_info.get("build_id") not in (None, ""):
+            build_id = _coerce_build_id(source_info["build_id"])
+
+    # Issue #21.1: state the platform these schemas project and how the
+    # per-(build, platform) artifacts are collapsed into one record set, so a
+    # consumer never has to derive it by set-comparison.
+    platform_phrase = f"`{platform}`" if platform else "a single platform"
+    build_phrase = f" (CS2 build `{build_id}`)" if build_id is not None else ""
+    platform_block = f"""## Platform & provenance
+
+Every file here projects **one** `(build, platform)` artifact set:
+{platform_phrase}{build_phrase}.  The `build_id` (the Steam CS2 game build,
+numeric and monotonic) and `platform` are stamped into each schema's header
+alongside the walker `revision` and the build timestamps — read them there
+rather than assuming.
+
+Windows is the canonical render because it is the superset: it carries the
+tool-side modules (`hammer`, `sfm`, `modeldoc_editor`, …) that have no Linux
+binaries.  A consumer that assumes Linux would get a silently wrong answer
+about which classes exist, so the platform is named explicitly in every
+header.  If both platforms are ever published, select by the header's
+`platform` field.
+
+## How duplicate class registrations are collapsed
+
+`cs2_schema.json` emits **one record per `(projectName, name)`**, not one per
+upstream `(binary-module, name)`.  `projectName` is SchemaTracker's
+coarse-grained project axis (`client`, `server`, `entity2`,
+`pulse_runtime_lib`, `particleslib`, `animgraphlib`); the finer `module` /
+`cppName` from upstream are preserved verbatim on each record.
+
+- A class registered in several binaries that all roll up to the **same**
+  `projectName` collapses to a single record.  This dominates the
+  `pulse_runtime_lib` cell classes (e.g. `CBasePulseGraphInstance`), which are
+  statically linked into many tool binaries but describe one type.
+- A name that legitimately appears under **different** `projectName`s — the
+  cross-project case such as `CCSPlayerController` in both `client` and
+  `server` — keeps one record per project.  So a name appearing more than once
+  is expected, and the discriminator is the record's `projectName`.
+"""
 
     vocab_block = ""
     size_only_count: int | None = None
@@ -2357,20 +2525,24 @@ events — projected straight from
 per-build artifacts so consumers get one deterministic, provenance-tracked
 source instead of a chain of third-party dumps.
 
+{platform_block}
 ## Files
 
 - **`cs2_schema.json`** — the entity schema in SchemaTracker's **native**
-  shape (`schema_format_version` `2.0`).  Top-level: `generator`, `revision`,
-  `version_date`, `version_time`, `classes`, `enums`.  Each class carries
-  `name`, `module` (the binary it lives in), `projectName`, `cppName`,
-  `size`, `alignment`, `flags` / `flags2`, `parents[]`, `fields[]`
+  shape (`schema_format_version` `2.0`).  Top-level: `generator`, `build_id`,
+  `platform`, `revision`, `version_date`, `version_time`, `classes`, `enums`.
+  Each class carries `name`, `module` (the binary it lives in), `projectName`,
+  `cppName`, `size`, `alignment`, `flags` / `flags2`, `parents[]`, `fields[]`
   (`name`, `offset`, `type`, `typeModule`, `metadata`), and inheritance
   depths; each enum carries `alignment` (underlying integer type) and
   `members[]`.  Integer offsets / sizes are **string-encoded** and type
   `category` values are **UPPERCASE** (`BUILTIN`, `ATOMIC`, `DECLARED_CLASS`,
   `PTR`, `FIXED_ARRAY`, `BITFIELD`, …).  Optional `annotations` blocks layer
-  in community-curated descriptions / notes / warnings.  A class registered
-  in more than one binary emits one record per `(module, name)`.
+  in community-curated descriptions / notes / warnings, and an optional
+  `diagram_url` on a class points at its module's UML inheritance diagram.
+  Records are keyed by `(projectName, name)` — see [How duplicate class
+  registrations are collapsed](#how-duplicate-class-registrations-are-collapsed)
+  below.
 
 - **`gameevents_schema.json`** — the game-event registry.  Top-level:
   `events` list; each record has `name` / `comment` / `source` /
@@ -2389,6 +2561,17 @@ source instead of a chain of third-party dumps.
   doesn't expose as named enum types (team numbers, `m_gamePhase`,
   `CSWeaponState_t`, …).  Top-level: `constants` list; each entry has
   `name` / `comment` / `members[]` with the same `annotations` pattern.
+
+- **`proto/*.proto`** — the build's protobuf definitions as text, copied from
+  SchemaTracker and normalised with a single shared
+  `option csharp_namespace = "{PROTO_CSHARP_NAMESPACE}";` so C# codegen doesn't
+  drop every message into the global namespace (a CS0433 collision hazard).
+  No `package` statement is added — the decompiled protos use hundreds of
+  root-qualified (`.Type`) cross-references that assume the empty package, so
+  packaging them would break resolution.  Most consumers should prefer
+  SchemaTracker's prebuilt `protos.descriptorset`
+  (`protoc --descriptor_set_in`, which skips text parsing and import
+  resolution entirely); these files are for compiling the protos from source.
 
 - **`field_history.json`** — whole-history evolution of every
   `(class, field)`, projected from SchemaTracker's cumulative
@@ -3320,6 +3503,9 @@ def main(argv: list[str] | None = None) -> int:
     print("Generating Markdown protobuf pages…")
     generate_protobufs_md_page(protos, overlays, generated_dir)
 
+    proto_count = generate_proto_overlays(build_dir, generated_dir)
+    print(f"  Wrote {proto_count} normalised .proto overlay file(s).")
+
     print("Generating Markdown convar and command pages…")
     generate_convars_md_page(convars, generated_dir)
     generate_commands_md_page(commands, generated_dir)
@@ -3335,11 +3521,14 @@ def main(argv: list[str] | None = None) -> int:
 
     print("Generating game events documentation…")
     generate_gameevents_md_page(gameevents, overlays, generated_dir)
-    generate_gameevents_schema(gameevents, overlays, generated_dir)
+    generate_gameevents_schema(
+        gameevents, overlays, generated_dir, source_info=schema_source_info
+    )
 
     print("Generating cs2_schema.json (community-enriched mirror of cs2.json.gz)…")
     cs2_schema_path = generate_cs2_schema(
-        entities, overlays, generated_dir, source_info=schema_source_info
+        entities, overlays, generated_dir, source_info=schema_source_info,
+        diagram_modules=uml_md,
     )
     schema_kb = cs2_schema_path.stat().st_size // 1024
     print(f"  Wrote {cs2_schema_path.name} ({schema_kb} KiB).")

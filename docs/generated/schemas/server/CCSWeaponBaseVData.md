@@ -8,6 +8,9 @@ nav_exclude: true
 
 # CCSWeaponBaseVData
 
+Static weapon definition (economy + ballistics) referenced by CCSWeaponBase — the per-weapon-type data that does not change at runtime.
+
+
 **Kind:** class · **Size:** 2216 bytes (`0x8a8`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CBasePlayerWeaponVData](../server/CBasePlayerWeaponVData.md)
@@ -67,8 +70,8 @@ classDiagram
 | `0x4ec` | `m_iSlot` | int32 | [CBasePlayerWeaponVData](../server/CBasePlayerWeaponVData.md) | `MPropertyDescription Which 'column' to display this weapon in the HUD` `MPropertyFriendlyName HUD Bucket` |
 | `0x4f0` | `m_iPosition` | int32 | [CBasePlayerWeaponVData](../server/CBasePlayerWeaponVData.md) | `MPropertyDescription Which 'row' to display this weapon in the HUD` `MPropertyFriendlyName HUD Bucket Position` |
 | `0x4f8` | `m_aShootSounds` | CUtlOrderedMap< [WeaponSound_t](../!GlobalTypes/WeaponSound_t.md), CSoundEventName > | [CBasePlayerWeaponVData](../server/CBasePlayerWeaponVData.md) | `MPropertyStartGroup Sounds` |
-| `0x520` | `m_WeaponType` | [CSWeaponType](../!GlobalTypes/CSWeaponType.md) |  |  |
-| `0x524` | `m_WeaponCategory` | [CSWeaponCategory](../!GlobalTypes/CSWeaponCategory.md) |  |  |
+| `0x520` | `m_WeaponType` | [CSWeaponType](../!GlobalTypes/CSWeaponType.md) |  | Weapon type classification (pistol, rifle, sniper, knife, grenade, …). |
+| `0x524` | `m_WeaponCategory` | [CSWeaponCategory](../!GlobalTypes/CSWeaponCategory.md) |  | Coarser weapon category grouping used by the buy menu. |
 | `0x528` | `m_szAnimSkeleton` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCNmSkeleton](../resourcesystem/InfoForResourceTypeCNmSkeleton.md) > > |  | `MPropertyStartGroup Visuals` |
 | `0x608` | `m_vecMuzzlePos0` | Vector |  |  |
 | `0x614` | `m_vecMuzzlePos1` | Vector |  |  |
@@ -76,9 +79,9 @@ classDiagram
 | `0x700` | `m_GearSlot` | gear_slot_t |  | `MPropertyDescription Which 'column' to display this weapon in the HUD` `MPropertyFriendlyName HUD Bucket` `MPropertyStartGroup HUD Positions` |
 | `0x704` | `m_GearSlotPosition` | int32 |  |  |
 | `0x708` | `m_DefaultLoadoutSlot` | loadout_slot_t |  | `MPropertyDescription Default team (non Terrorist or Counter-Terrorist) 'row' to display this weapon in the HUD.` `MPropertyFriendlyName HUD Bucket Position` |
-| `0x70c` | `m_nPrice` | int32 |  | `MPropertyStartGroup In-Game Data` |
-| `0x710` | `m_nKillAward` | int32 |  |  |
-| `0x714` | `m_nPrimaryReserveAmmoMax` | int32 |  |  |
+| `0x70c` | `m_nPrice` | int32 |  | Buy-menu price of the weapon, in dollars. `MPropertyStartGroup In-Game Data` |
+| `0x710` | `m_nKillAward` | int32 |  | Money awarded to the killer for a kill with this weapon. |
+| `0x714` | `m_nPrimaryReserveAmmoMax` | int32 |  | Maximum reserve ammo carried for the primary ammo type. |
 | `0x718` | `m_nSecondaryReserveAmmoMax` | int32 |  |  |
 | `0x71c` | `m_bMeleeWeapon` | bool |  |  |
 | `0x71d` | `m_bHasBurstMode` | bool |  |  |
@@ -88,8 +91,8 @@ classDiagram
 | `0x728` | `m_eSilencerType` | [CSWeaponSilencerType](../!GlobalTypes/CSWeaponSilencerType.md) |  |  |
 | `0x72c` | `m_nCrosshairMinDistance` | int32 |  |  |
 | `0x730` | `m_nCrosshairDeltaDistance` | int32 |  |  |
-| `0x734` | `m_bIsFullAuto` | bool |  |  |
-| `0x738` | `m_nNumBullets` | int32 |  |  |
+| `0x734` | `m_bIsFullAuto` | bool |  | True if the weapon fires fully automatically while the trigger is held. |
+| `0x738` | `m_nNumBullets` | int32 |  | Projectiles fired per shot (greater than 1 for shotguns). |
 | `0x73c` | `m_bReloadsSingleShells` | bool |  |  |
 | `0x740` | `m_flCycleTime` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  | `MPropertyStartGroup Firing Mode Data` |
 | `0x748` | `m_flCycleTimeWhenInBurstMode` | float32 |  |  |

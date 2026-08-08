@@ -8,6 +8,9 @@ nav_exclude: true
 
 # CCSPlayerController_DamageServices
 
+Damage-log component of CCSPlayerController, backing the end-of-round 'damage given / taken' report.
+
+
 **Kind:** class · **Size:** 208 bytes (`0xd0`) · **Align:** 255 · **Module:** server
 
 **Inherits from:** [CPlayerControllerComponent](../server/CPlayerControllerComponent.md)
@@ -28,4 +31,4 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `__m_pChainEntity` | [CNetworkVarChainer](../entity2/CNetworkVarChainer.md) | [CPlayerControllerComponent](../server/CPlayerControllerComponent.md) | `MNotSaved` |
 | `0x40` | `m_nSendUpdate` | int32 |  |  |
-| `0x48` | `m_DamageList` | CUtlVectorEmbeddedNetworkVar< [CDamageRecord](../server/CDamageRecord.md) > |  |  |
+| `0x48` | `m_DamageList` | CUtlVectorEmbeddedNetworkVar< [CDamageRecord](../server/CDamageRecord.md) > |  | Per-opponent damage records shown on the round-end damage report. |

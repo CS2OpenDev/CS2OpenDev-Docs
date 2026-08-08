@@ -8,6 +8,9 @@ nav_exclude: true
 
 # CPlayer_MovementServices
 
+Base movement/input component: decoded button input and per-command move intent shared by all player pawns.
+
+
 **Kind:** class · **Size:** 600 bytes (`0x258`) · **Align:** 255 · **Module:** client
 
 **Inherits from:** [CPlayerPawnComponent](../server/CPlayerPawnComponent.md)
@@ -32,8 +35,8 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `__m_pChainEntity` | [CNetworkVarChainer](../entity2/CNetworkVarChainer.md) | [CPlayerPawnComponent](../server/CPlayerPawnComponent.md) | `MNotSaved` |
 | `0x30` | `m_pComponentGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) | [CPlayerPawnComponent](../server/CPlayerPawnComponent.md) |  |
-| `0x48` | `m_nImpulse` | int32 |  |  |
-| `0x50` | `m_nButtons` | [CInButtonState](../server/CInButtonState.md) |  | `MNotSaved` |
+| `0x48` | `m_nImpulse` | int32 |  | Pending impulse command number (e.g. `impulse 100` flashlight). |
+| `0x50` | `m_nButtons` | [CInButtonState](../server/CInButtonState.md) |  | Bitmask of currently-pressed input buttons (IN_ATTACK, IN_JUMP, IN_DUCK, …). `MNotSaved` |
 | `0x70` | `m_nQueuedButtonDownMask` | uint64 |  |  |
 | `0x78` | `m_nQueuedButtonChangeMask` | uint64 |  |  |
 | `0x80` | `m_nButtonDoublePressed` | uint64 |  |  |
@@ -43,10 +46,10 @@ classDiagram
 | `0x1a0` | `m_flCmdForwardMove` | float32 |  |  |
 | `0x1a4` | `m_flCmdLeftMove` | float32 |  |  |
 | `0x1a8` | `m_flCmdUpMove` | float32 |  |  |
-| `0x1ac` | `m_flMaxspeed` | float32 |  |  |
+| `0x1ac` | `m_flMaxspeed` | float32 |  | Current maximum ground movement speed (units/second). |
 | `0x1b0` | `m_arrForceSubtickMoveWhen` | float32[4] |  |  |
-| `0x1c0` | `m_flForwardMove` | float32 |  |  |
-| `0x1c4` | `m_flLeftMove` | float32 |  |  |
-| `0x1c8` | `m_flUpMove` | float32 |  |  |
+| `0x1c0` | `m_flForwardMove` | float32 |  | Decoded forward/back movement axis for the current user command. |
+| `0x1c4` | `m_flLeftMove` | float32 |  | Decoded strafe (left/right) movement axis for the current user command. |
+| `0x1c8` | `m_flUpMove` | float32 |  | Decoded vertical movement axis (swim / ladder) for the current user command. |
 | `0x1cc` | `m_vecLastMovementImpulses` | Vector |  |  |
 | `0x240` | `m_vecOldViewAngles` | QAngle |  |  |

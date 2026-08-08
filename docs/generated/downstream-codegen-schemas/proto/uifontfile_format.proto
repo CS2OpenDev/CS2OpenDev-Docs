@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+// Injected by CS2OpenDev-Docs (issue #21.3): a single shared C# namespace
+// so message types don't land in the global namespace (CS0433 hazard).
+option csharp_namespace = "CS2OpenDev.Protobuf";
+
+message CUIFontFilePB {
+  optional string font_file_name = 1;
+  optional bytes opentype_font_data = 2;
+}
+
+message CUIFontFilePackagePB {
+  message CUIEncryptedFontFilePB {
+    optional bytes encrypted_contents = 1;
+  }
+  optional uint32 package_version = 1;
+  repeated .CUIFontFilePackagePB.CUIEncryptedFontFilePB encrypted_font_files = 2;
+}

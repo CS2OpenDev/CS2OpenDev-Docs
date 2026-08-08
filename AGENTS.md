@@ -50,7 +50,7 @@ The documentation covers:
 | **Game modes / maps / surfaces / props** | Game types & modes, map groups, radar overviews, surface physics, breakable-prop data | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/gamemodes |
 | **Changelog** | Per-build diff (added / removed / changed) against the previous build | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/changelog |
 | **UML diagrams** | Mermaid class-hierarchy diagrams for every schema module | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/server_hierarchy |
-| **Entity schema** | `downstream-codegen-schemas/cs2_schema.json` — the entity schema in SchemaTracker's **native** shape (top-level `generator` / `revision` / `version_date` / `version_time` / `classes` / `enums`), enriched with optional community `annotations`.  See the [format reference](#cs2_schemajson-format) below. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/cs2_schema.json |
+| **Entity schema** | `downstream-codegen-schemas/cs2_schema.json` — the entity schema in SchemaTracker's **native** shape (top-level `generator` / `build_id` / `platform` / `revision` / `version_date` / `version_time` / `classes` / `enums`), enriched with optional community `annotations`.  See the [format reference](#cs2_schemajson-format) below. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/cs2_schema.json |
 | **Game events schema** | `downstream-codegen-schemas/gameevents_schema.json` — the game-event registry.  Top-level `events` list; each event has `name` / `comment` / `source` / `properties` / `fields`.  Same `annotations` enrichment pattern as `cs2_schema.json`. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/gameevents_schema.json |
 | **ConVars schema** | `downstream-codegen-schemas/convars_schema.json` — top-level `convars` list, each `{ name, default, flags, description }`. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/convars_schema.json |
 | **Commands schema** | `downstream-codegen-schemas/commands_schema.json` — top-level `commands` list, each `{ name, flags, description }`. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/commands_schema.json |
@@ -72,6 +72,8 @@ integer `offset` / `size` / `count` values are **string-encoded**
 {
   "schema_format_version": "2.0",
   "generator": "https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker",
+  "build_id": 24537688,
+  "platform": "windows-x86_64",
   "revision": "hl2sdk-cs2/…",
   "version_date": "2026-07-09",
   "version_time": "2026-07-09T20:41:37Z",
@@ -80,8 +82,15 @@ integer `offset` / `size` / `count` values are **string-encoded**
 }
 ```
 
-`generator` / `revision` / `version_date` / `version_time` identify the CS2
-build (Steam build id + date) the schema describes.
+`build_id` is the **Steam CS2 game build** the schema describes — numeric,
+monotonic, and the correct key to stamp into a package version or
+`AssemblyMetadata`.  `platform` names the OS artifact set the schema projects
+(`windows-x86_64`, the superset that also carries the tool-side modules).
+`revision` identifies the **walker** (the hl2sdk pin), not the game build —
+two different CS2 builds read by the same pinned hl2sdk share a `revision`
+but not a `build_id`, so both keys are kept; they answer different questions.
+`generator` / `version_date` / `version_time` round out the provenance (date
+is ISO-8601).
 `schema_format_version` describes the JSON shape itself — major bumps on
 field removal / rename, minor bumps on field addition.  Additive
 `annotations` blocks do not require a bump.  All five codegen schemas
@@ -92,8 +101,10 @@ DumpSource2-mirror `1.x`** — the source moved to SchemaTracker and the
 class/enum shape is native (camelCase keys, string ints, UPPERCASE
 categories, a `module`/`projectName` split).
 
-**Per-class entry** (one per `(module, name)` — cross-module twins like
-`CCSPlayerController` emit one record each):
+**Per-class entry** (one per `(projectName, name)` — cross-project twins like
+`CCSPlayerController` in both `client` and `server` emit one record each;
+multiple binary registrations under a single `projectName`, common for
+`pulse_runtime_lib` cell classes, collapse to one):
 
 | Key | What it carries |
 |---|---|
@@ -110,6 +121,7 @@ categories, a `module`/`projectName` split).
 | `staticFields` | Static field records (often empty). |
 | `metadata` | Class-level metadata as `[{name, value?, valueParsed?}]`.  Preserves runtime reflection tags like `MGetKV3ClassDefaults`, `MNetworkVarNames`, etc. |
 | `annotations` *(optional)* | Community enrichment: `{description?, notes?, warning?}`.  Only present when an overlay matches the entity. |
+| `diagram_url` *(optional)* | Absolute URL of the class's module UML inheritance diagram.  Present for classes whose `projectName` has a generated diagram page. |
 
 **Per-field entry** (under a class's `fields` list):
 

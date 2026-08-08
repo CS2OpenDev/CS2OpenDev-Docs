@@ -8,6 +8,9 @@ nav_exclude: true
 
 # CCSPlayer_ItemServices
 
+Component tracking the utility items the player is carrying.
+
+
 **Kind:** class · **Size:** 80 bytes (`0x50`) · **Align:** 255 · **Module:** server
 
 **Inherits from:** [CPlayer_ItemServices](../server/CPlayer_ItemServices.md)
@@ -28,5 +31,5 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `__m_pChainEntity` | [CNetworkVarChainer](../entity2/CNetworkVarChainer.md) | [CPlayerPawnComponent](../server/CPlayerPawnComponent.md) | `MNotSaved` |
 | `0x30` | `m_pComponentGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) | [CPlayerPawnComponent](../server/CPlayerPawnComponent.md) |  |
-| `0x48` | `m_bHasDefuser` | bool |  |  |
-| `0x49` | `m_bHasHelmet` | bool |  |  |
+| `0x48` | `m_bHasDefuser` | bool |  | True while the player carries a defuse kit. |
+| `0x49` | `m_bHasHelmet` | bool |  | True while the player is wearing a helmet (Kevlar + Helmet). |

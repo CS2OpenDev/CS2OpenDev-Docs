@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+// Injected by CS2OpenDev-Docs (issue #21.3): a single shared C# namespace
+// so message types don't land in the global namespace (CS0433 hazard).
+option csharp_namespace = "CS2OpenDev.Protobuf";
+
+import "steammessages_unified_base.steamworkssdk.proto";
+
+message COAuthToken_ImplicitGrantNoPrompt_Request {
+  optional string clientid = 1;
+}
+
+message COAuthToken_ImplicitGrantNoPrompt_Response {
+  optional string access_token = 1;
+  optional string redirect_uri = 2;
+}
+
+service OAuthToken {
+  rpc ImplicitGrantNoPrompt(COAuthToken_ImplicitGrantNoPrompt_Request) returns (COAuthToken_ImplicitGrantNoPrompt_Response);
+}

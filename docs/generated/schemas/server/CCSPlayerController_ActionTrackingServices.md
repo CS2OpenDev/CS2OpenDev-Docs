@@ -8,6 +8,9 @@ nav_exclude: true
 
 # CCSPlayerController_ActionTrackingServices
 
+Scoreboard / stat-tracking component of CCSPlayerController: per-round and per-match kill and damage statistics.
+
+
 **Kind:** class · **Size:** 1072 bytes (`0x430`) · **Align:** 255 · **Module:** server
 
 **Inherits from:** [CPlayerControllerComponent](../server/CPlayerControllerComponent.md)
@@ -28,8 +31,8 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `__m_pChainEntity` | [CNetworkVarChainer](../entity2/CNetworkVarChainer.md) | [CPlayerControllerComponent](../server/CPlayerControllerComponent.md) | `MNotSaved` |
-| `0x40` | `m_perRoundStats` | CUtlVectorEmbeddedNetworkVar< [CSPerRoundStats_t](../server/CSPerRoundStats_t.md) > |  |  |
-| `0xc8` | `m_matchStats` | [CSMatchStats_t](../server/CSMatchStats_t.md) |  |  |
-| `0x188` | `m_iNumRoundKills` | int32 |  |  |
-| `0x18c` | `m_iNumRoundKillsHeadshots` | int32 |  |  |
-| `0x190` | `m_flTotalRoundDamageDealt` | float32 |  |  |
+| `0x40` | `m_perRoundStats` | CUtlVectorEmbeddedNetworkVar< [CSPerRoundStats_t](../server/CSPerRoundStats_t.md) > |  | List of per-round statistics accumulated over the match. |
+| `0xc8` | `m_matchStats` | [CSMatchStats_t](../server/CSMatchStats_t.md) |  | Aggregated per-match statistics for this player. |
+| `0x188` | `m_iNumRoundKills` | int32 |  | Kills this player has scored in the current round. |
+| `0x18c` | `m_iNumRoundKillsHeadshots` | int32 |  | Headshot kills this player has scored in the current round. |
+| `0x190` | `m_flTotalRoundDamageDealt` | float32 |  | Total damage this player has dealt in the current round. |

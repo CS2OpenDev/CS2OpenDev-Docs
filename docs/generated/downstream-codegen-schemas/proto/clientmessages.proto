@@ -1,0 +1,60 @@
+// SDK-SOURCED wire descriptor. CS2 does not embed this message family's FileDescriptorProto
+// in any shipped binary, so — unlike every other file here — it was NOT recovered from the
+// binaries but compiled from the pinned hl2sdk submodule (scripts/gen-wire-descriptors.sh)
+// and merged so network_messages.json / demo_messages.json wire-ID -> type joins resolve.
+// Reference-quality: no comments / source_code_info, same as every reconstructed descriptor.
+
+syntax = "proto2";
+
+// Injected by CS2OpenDev-Docs (issue #21.3): a single shared C# namespace
+// so message types don't land in the global namespace (CS0433 hazard).
+option csharp_namespace = "CS2OpenDev.Protobuf";
+
+enum EBaseClientMessages {
+  CM_CustomGameEvent = 280;
+  CM_CustomGameEventBounce = 281;
+  CM_ClientUIEvent = 282;
+  CM_DevPaletteVisibilityChanged = 283;
+  CM_WorldUIControllerHasPanelChanged = 284;
+  CM_RotateAnchor = 285;
+  CM_MAX_BASE = 300;
+}
+
+enum EClientUIEvent {
+  EClientUIEvent_Invalid = 0;
+  EClientUIEvent_DialogFinished = 1;
+  EClientUIEvent_FireOutput = 2;
+}
+
+message CClientMsg_CustomGameEvent {
+  optional string event_name = 1;
+  optional bytes data = 2;
+}
+
+message CClientMsg_CustomGameEventBounce {
+  optional string event_name = 1;
+  optional bytes data = 2;
+  optional int32 player_slot = 3 [default = -1];
+}
+
+message CClientMsg_ClientUIEvent {
+  optional .EClientUIEvent event = 1 [default = EClientUIEvent_Invalid];
+  optional uint32 ent_ehandle = 2;
+  optional uint32 client_ehandle = 3;
+  optional string data1 = 4;
+  optional string data2 = 5;
+}
+
+message CClientMsg_DevPaletteVisibilityChangedEvent {
+  optional bool visible = 1;
+}
+
+message CClientMsg_WorldUIControllerHasPanelChangedEvent {
+  optional bool has_panel = 1;
+  optional uint32 client_ehandle = 2;
+  optional uint32 literal_hand_type = 3;
+}
+
+message CClientMsg_RotateAnchor {
+  optional float angle = 1;
+}
