@@ -14,7 +14,9 @@ Class relationships (inheritance and composition) for the `animationsystem` modu
 ```mermaid
 classDiagram
     AnimationSnapshotBase_t <|-- AnimationSnapshot_t
+    AnimationDecodeDebugDump_t *-- AnimationProcessingType_t
     AnimationDecodeDebugDump_t *-- AnimationDecodeDebugDumpElement_t
+    AnimationSnapshotBase_t *-- AnimationSnapshotType_t
     AnimationSnapshotBase_t *-- AnimationDecodeDebugDumpElement_t
     CAnimData *-- CAnimDesc
     CAnimData *-- CAnimDecoder
@@ -35,6 +37,7 @@ classDiagram
     CAnimKeyData *-- CAnimUser
     CAnimKeyData *-- CAnimDataChannelDesc
     CAnimationGroup *-- CAnimKeyData
+    CMoodVData *-- MoodType_t
     CMoodVData *-- MoodAnimationLayer_t
     CSeqAutoLayer *-- CSeqAutoLayerFlag
     CSeqCmdSeqDesc *-- CSeqSeqDescFlag

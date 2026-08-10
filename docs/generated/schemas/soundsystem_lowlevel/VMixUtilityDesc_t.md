@@ -23,7 +23,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_nOp` | [VMixChannelOperation_t](../!GlobalTypes/VMixChannelOperation_t.md) |  | `MPropertyFriendlyName Channels` |
+| `0x0` | `m_nOp` | [VMixChannelOperation_t](../soundsystem_lowlevel/VMixChannelOperation_t.md) |  | `MPropertyFriendlyName Channels` |
 | `0x4` | `m_flInputPan` | float32 |  | `MPropertyAttributeRange -1 1` `MPropertyFriendlyName Input Pan` |
 | `0x8` | `m_flOutputBalance` | float32 |  | `MPropertyAttributeRange -1 1` `MPropertyFriendlyName Output Balance` |
 | `0xc` | `m_fldbOutputGain` | float32 |  | `MPropertyAttributeRange -36 0` `MPropertyFriendlyName Output Gain (dB)` |

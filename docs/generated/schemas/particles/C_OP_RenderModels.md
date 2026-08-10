@@ -37,8 +37,8 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flOpStrength` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator strength` `MPropertySortPriority -100` |
-| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../!GlobalTypes/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
-| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../!GlobalTypes/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
+| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
+| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
 | `0x180` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
 | `0x184` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
 | `0x188` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
@@ -98,7 +98,7 @@ classDiagram
 | `0x1f3c` | `m_EconSlotName` | char[256] |  | `MPropertyFriendlyName model override economy loadout slot type` |
 | `0x203c` | `m_bOriginalModel` | bool |  | `MPropertyFriendlyName model override original model only (ignore shapeshift/hex/etc)` |
 | `0x203d` | `m_bSuppressTint` | bool |  | `MPropertyFriendlyName suppress tinting of the model` |
-| `0x2040` | `m_nSubModelFieldType` | [RenderModelSubModelFieldType_t](../!GlobalTypes/RenderModelSubModelFieldType_t.md) |  | `MPropertyFriendlyName SubModel Field Type` |
+| `0x2040` | `m_nSubModelFieldType` | [RenderModelSubModelFieldType_t](../particles/RenderModelSubModelFieldType_t.md) |  | `MPropertyFriendlyName SubModel Field Type` |
 | `0x2044` | `m_bDisableShadows` | bool |  | `MPropertyFriendlyName disable shadows` |
 | `0x2045` | `m_bDisableDepthPrepass` | bool |  | `MPropertyFriendlyName disable depth prepass` |
 | `0x2046` | `m_bAcceptsDecals` | bool |  | `MPropertyFriendlyName accept decals` |
@@ -111,7 +111,7 @@ classDiagram
 | `0x2430` | `m_flRollScale` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName rotation roll scale` `MPropertySortPriority 700` |
 | `0x25a0` | `m_nAlpha2Field` | [ParticleAttributeIndex_t](../particles/ParticleAttributeIndex_t.md) |  | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName per-particle alpha scale attribute` `MPropertySortPriority 700` |
 | `0x25a8` | `m_vecColorScale` | [CParticleCollectionVecInput](../particleslib/CParticleCollectionVecInput.md) |  | `MPropertyFriendlyName color blend` `MPropertySortPriority 700` |
-| `0x2c60` | `m_nColorBlendType` | [ParticleColorBlendType_t](../!GlobalTypes/ParticleColorBlendType_t.md) |  | `MPropertyFriendlyName color blend type` `MPropertySortPriority 700` |
+| `0x2c60` | `m_nColorBlendType` | [ParticleColorBlendType_t](../particleslib/ParticleColorBlendType_t.md) |  | `MPropertyFriendlyName color blend type` `MPropertySortPriority 700` |
 | `0x2c68` | `m_strLightStyle` | CUtlString |  | `MPropertyAttributeEditor VDataChoice( scripts/light_styles.vdata )` `MPropertyFriendlyName light style` `MPropertySortPriority 700` |
 | `0x2c70` | `m_flLightStyleTime` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName light style time` `MPropertySortPriority 700` `MPropertySuppressExpr m_strLightStyle == ''` |
 

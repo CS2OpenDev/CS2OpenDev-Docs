@@ -25,7 +25,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x0` | `m_tags` | CUtlVector< int32 > |  |  |
 | `0x18` | `m_nFootIndex` | int32 |  |  |
-| `0x1c` | `m_triggerPhase` | [StepPhase](../!GlobalTypes/StepPhase.md) |  |  |
+| `0x1c` | `m_triggerPhase` | [StepPhase](../animgraphlib/StepPhase.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

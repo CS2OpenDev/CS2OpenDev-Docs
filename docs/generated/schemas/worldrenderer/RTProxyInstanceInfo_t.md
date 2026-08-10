@@ -24,9 +24,9 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_nFlags` | [RTProxyInstanceFlags_t](../!GlobalTypes/RTProxyInstanceFlags_t.md) |  |  |
-| `0x1` | `m_albedoFormat` | [VertexAlbedoFormat_t](../!GlobalTypes/VertexAlbedoFormat_t.md) |  |  |
-| `0x2` | `m_emissiveFormat` | [VertexAlbedoFormat_t](../!GlobalTypes/VertexAlbedoFormat_t.md) |  |  |
+| `0x0` | `m_nFlags` | [RTProxyInstanceFlags_t](../worldrenderer/RTProxyInstanceFlags_t.md) |  |  |
+| `0x1` | `m_albedoFormat` | [VertexAlbedoFormat_t](../modellib/VertexAlbedoFormat_t.md) |  |  |
+| `0x2` | `m_emissiveFormat` | [VertexAlbedoFormat_t](../modellib/VertexAlbedoFormat_t.md) |  |  |
 | `0x4` | `m_nBLASCount` | uint16 |  |  |
 | `0x8` | `m_nBLASIndex` | uint32 |  |  |
 | `0xc` | `m_nVertexAlbedoByteOffset` | uint32 |  |  |

@@ -30,14 +30,14 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x18` | `m_nodePath` | [CAnimNodePath](../animgraphlib/CAnimNodePath.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
-| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../!GlobalTypes/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
+| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../animgraphlib/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x50` | `m_name` | CUtlString | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x60` | `m_children` | CUtlVector< [CAnimUpdateNodeRef](../animgraphlib/CAnimUpdateNodeRef.md) > |  |  |
 | `0x78` | `m_weights` | CUtlVector< float32 > |  |  |
 | `0x90` | `m_blendTimes` | CUtlVector< float32 > |  |  |
-| `0xa8` | `m_choiceMethod` | [ChoiceMethod](../!GlobalTypes/ChoiceMethod.md) |  |  |
-| `0xac` | `m_choiceChangeMethod` | [ChoiceChangeMethod](../!GlobalTypes/ChoiceChangeMethod.md) |  |  |
-| `0xb0` | `m_blendMethod` | [ChoiceBlendMethod](../!GlobalTypes/ChoiceBlendMethod.md) |  |  |
+| `0xa8` | `m_choiceMethod` | [ChoiceMethod](../animgraphlib/ChoiceMethod.md) |  |  |
+| `0xac` | `m_choiceChangeMethod` | [ChoiceChangeMethod](../animgraphlib/ChoiceChangeMethod.md) |  |  |
+| `0xb0` | `m_blendMethod` | [ChoiceBlendMethod](../animgraphlib/ChoiceBlendMethod.md) |  |  |
 | `0xb4` | `m_blendTime` | float32 |  |  |
 | `0xb8` | `m_bCrossFade` | bool |  |  |
 | `0xb9` | `m_bResetChosen` | bool |  |  |

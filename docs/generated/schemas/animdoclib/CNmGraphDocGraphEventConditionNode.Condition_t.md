@@ -26,7 +26,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_eventID` | CGlobalSymbol |  | `MPropertyAttributeEditor AnimGraphID()` |
-| `0x8` | `m_type` | [NmGraphEventTypeCondition_t](../!GlobalTypes/NmGraphEventTypeCondition_t.md) |  |  |
+| `0x8` | `m_type` | [NmGraphEventTypeCondition_t](../animlib/NmGraphEventTypeCondition_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

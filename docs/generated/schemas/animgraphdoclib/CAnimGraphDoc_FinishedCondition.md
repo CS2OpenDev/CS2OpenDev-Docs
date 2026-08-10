@@ -28,7 +28,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x28` | `m_option` | [FinishedConditionOption](../!GlobalTypes/FinishedConditionOption.md) |  |  |
+| `0x28` | `m_option` | [FinishedConditionOption](../animgraphdoclib/FinishedConditionOption.md) |  |  |
 | `0x2c` | `m_bIsFinished` | bool |  |  |
 
 <details><summary>KV3 class defaults</summary>

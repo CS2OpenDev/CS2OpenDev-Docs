@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/resourcecompiler.md)
 
-17 types. Each links to its own page with the full field layout.
+19 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -30,3 +30,5 @@ nav_exclude: true
 | [CToneMappingLayer](resourcecompiler/CToneMappingLayer.md) | class | 104 | 1 | [CColorCorrectionLayer](resourcecompiler/CColorCorrectionLayer.md) |
 | [CVibranceColorCorrectionLayer](resourcecompiler/CVibranceColorCorrectionLayer.md) | class | 48 | 2 | [CColorCorrectionLayer](resourcecompiler/CColorCorrectionLayer.md) |
 | [CVignetteLayer](resourcecompiler/CVignetteLayer.md) | class | 80 | 1 | [CColorCorrectionLayer](resourcecompiler/CColorCorrectionLayer.md) |
+| [LayerMaskType_t](resourcecompiler/LayerMaskType_t.md) | enum | — | 2 |  |
+| [LayerType_t](resourcecompiler/LayerType_t.md) | enum | — | 15 |  |

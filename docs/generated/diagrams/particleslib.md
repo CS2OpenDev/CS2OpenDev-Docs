@@ -29,6 +29,18 @@ classDiagram
     CBasePulseGraphInstance <|-- CParticleCollectionBindingInstance
     CNewParticleEffect --> PARTICLE_EHANDLE__
     CNewParticleEffect --> CParticleProperty
+    CParticleFloatInput *-- ParticleFloatType_t
+    CParticleFloatInput *-- ParticleFloatMapType_t
+    CParticleFloatInput *-- ParticleFloatRandomMode_t
+    CParticleFloatInput *-- PFNoiseTurbulence_t
+    CParticleFloatInput *-- PFNoiseType_t
+    CParticleFloatInput *-- PFNoiseModifier_t
+    CParticleFloatInput *-- ParticleFloatInputMode_t
+    CParticleFloatInput *-- ParticleFloatRoundType_t
+    CParticleFloatInput *-- ParticleFloatBiasType_t
+    CParticleModelInput *-- ParticleModelType_t
+    CParticleTransformInput *-- ParticleTransformType_t
+    CParticleVecInput *-- ParticleVecType_t
     CParticleVecInput *-- CParticleFloatInput
     ParticleNamedValueSource_t *-- ParticleNamedValueConfiguration_t
 ```

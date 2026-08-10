@@ -72,6 +72,7 @@ classDiagram
     PhysFeModelDesc_t *-- FeEffectDesc_t
     PhysFeModelDesc_t *-- FeNodeWindBase_t
     PhysFeModelDesc_t *-- FeModelSelfCollisionLayer_t
+    RnBodyDesc_t *-- DynamicContinuousContactBehavior_t
     RnCapsuleDesc_t *-- RnCapsule_t
     RnCompoundDesc_t *-- RnCompound_t
     RnCompound_t *-- RnCapsule_t

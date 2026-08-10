@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/animdoclib.md)
 
-197 types. Each links to its own page with the full field layout.
+209 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -210,3 +210,15 @@ nav_exclude: true
 | [CnmGraphDocVelocityBasedSpeedScaleNode](animdoclib/CnmGraphDocVelocityBasedSpeedScaleNode.md) | class | 264 | 1 | [CNmGraphDocFlowNode](animdoclib/CNmGraphDocFlowNode.md) |
 | [NmGraphDocPin_t](animdoclib/NmGraphDocPin_t.md) | class | 32 | 5 |  |
 | [NmVariation_t](animdoclib/NmVariation_t.md) | class | 248 | 4 |  |
+| [CNmClipDocEventTrack::Type_t](animdoclib/CNmClipDocEventTrack.Type_t.md) | enum | — | 3 |  |
+| [CNmClipDocEvent_EntityAttribute_Type_t](animdoclib/CNmClipDocEvent_EntityAttribute_Type_t.md) | enum | — | 2 |  |
+| [CNmClipDocument::AdditiveBaseFrame_t](animdoclib/CNmClipDocument.AdditiveBaseFrame_t.md) | enum | — | 3 |  |
+| [CNmClipDocument::AdditiveType_t](animdoclib/CNmClipDocument.AdditiveType_t.md) | enum | — | 5 |  |
+| [CNmGraphDocIDEventConditionNode::SearchRule_t](animdoclib/CNmGraphDocIDEventConditionNode.SearchRule_t.md) | enum | — | 3 |  |
+| [CNmGraphDocOrientationWarpNode::OffsetType_t](animdoclib/CNmGraphDocOrientationWarpNode.OffsetType_t.md) | enum | — | 2 |  |
+| [CNmGraphDocStateNode::StateType_t](animdoclib/CNmGraphDocStateNode.StateType_t.md) | enum | — | 4 |  |
+| [CNmGraphDocStateNode::TimedStateEventType_t](animdoclib/CNmGraphDocStateNode.TimedStateEventType_t.md) | enum | — | 2 |  |
+| [CNmGraphDocTransitionNode::TimeMatchMode_t](animdoclib/CNmGraphDocTransitionNode.TimeMatchMode_t.md) | enum | — | 11 |  |
+| [NmEventConditionOperator_t](animdoclib/NmEventConditionOperator_t.md) | enum | — | 2 |  |
+| [NmEventPriorityRule_t](animdoclib/NmEventPriorityRule_t.md) | enum | — | 2 |  |
+| [NmGraphDocGraphType_t](animdoclib/NmGraphDocGraphType_t.md) | enum | — | 8 |  |

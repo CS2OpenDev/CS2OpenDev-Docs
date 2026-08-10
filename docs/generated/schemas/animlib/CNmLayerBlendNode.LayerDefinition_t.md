@@ -30,7 +30,7 @@ classDiagram
 | `0x8` | `m_bIsSynchronized` | bool |  |  |
 | `0x9` | `m_bIgnoreEvents` | bool |  |  |
 | `0xa` | `m_bIsStateMachineLayer` | bool |  |  |
-| `0xb` | `m_blendMode` | [NmPoseBlendMode_t](../!GlobalTypes/NmPoseBlendMode_t.md) |  |  |
+| `0xb` | `m_blendMode` | [NmPoseBlendMode_t](../animlib/NmPoseBlendMode_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

@@ -23,7 +23,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_OpCode` | [FlexOpCode_t](../!GlobalTypes/FlexOpCode_t.md) |  |  |
+| `0x0` | `m_OpCode` | [FlexOpCode_t](../modellib/FlexOpCode_t.md) |  |  |
 | `0x4` | `m_Data` | int32 |  |  |
 
 <details><summary>KV3 class defaults</summary>

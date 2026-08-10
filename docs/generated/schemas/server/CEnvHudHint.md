@@ -50,12 +50,12 @@ classDiagram
 | `0x2d8` | `m_lifeState` | uint8 | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x2dc` | `m_flDamageAccumulator` | float32 | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x2e0` | `m_bTakesDamage` | bool | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2e8` | `m_nTakeDamageFlags` | [TakeDamageFlags_t](../!GlobalTypes/TakeDamageFlags_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2f0` | `m_nPlatformType` | [EntityPlatformTypes_t](../!GlobalTypes/EntityPlatformTypes_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2f2` | `m_MoveCollide` | [MoveCollide_t](../!GlobalTypes/MoveCollide_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2f3` | `m_MoveType` | [MoveType_t](../!GlobalTypes/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2f4` | `m_nPreviouslySetMoveType` | [MoveType_t](../!GlobalTypes/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2f5` | `m_nActualMoveType` | [MoveType_t](../!GlobalTypes/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2e8` | `m_nTakeDamageFlags` | [TakeDamageFlags_t](../server/TakeDamageFlags_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2f0` | `m_nPlatformType` | [EntityPlatformTypes_t](../server/EntityPlatformTypes_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2f2` | `m_MoveCollide` | [MoveCollide_t](../server/MoveCollide_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2f3` | `m_MoveType` | [MoveType_t](../server/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2f4` | `m_nPreviouslySetMoveType` | [MoveType_t](../server/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2f5` | `m_nActualMoveType` | [MoveType_t](../server/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x2f6` | `m_nWaterTouch` | uint8 | [CBaseEntity](../server/CBaseEntity.md) | `MNotSaved` |
 | `0x2f7` | `m_nSlimeTouch` | uint8 | [CBaseEntity](../server/CBaseEntity.md) | `MNotSaved` |
 | `0x2f8` | `m_bRestoreInHierarchy` | bool | [CBaseEntity](../server/CBaseEntity.md) |  |
@@ -113,6 +113,6 @@ classDiagram
 | `0x490` | `m_pBlocker` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x494` | `m_flLocalTime` | float32 | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x498` | `m_flVPhysicsUpdateLocalTime` | float32 | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x49c` | `m_nBloodType` | [BloodType](../!GlobalTypes/BloodType.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x49c` | `m_nBloodType` | [BloodType](../server/BloodType.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x4a0` | `m_pPulseGraphInstance` | [CPulseGraphInstance_ServerEntity](../server/CPulseGraphInstance_ServerEntity.md)* | [CBaseEntity](../server/CBaseEntity.md) | `MKV3TransferSaveOpsForField GetPulseInstanceSaveRestoreOps` |
 | `0x4a8` | `m_iszMessage` | CUtlSymbolLarge |  |  |

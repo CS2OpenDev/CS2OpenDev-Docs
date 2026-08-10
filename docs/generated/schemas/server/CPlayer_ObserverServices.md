@@ -34,5 +34,5 @@ classDiagram
 | `0x30` | `m_pComponentGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) | [CPlayerPawnComponent](../server/CPlayerPawnComponent.md) |  |
 | `0x48` | `m_iObserverMode` | uint8 |  |  |
 | `0x4c` | `m_hObserverTarget` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
-| `0x50` | `m_iObserverLastMode` | [ObserverMode_t](../!GlobalTypes/ObserverMode_t.md) |  |  |
+| `0x50` | `m_iObserverLastMode` | [ObserverMode_t](../server/ObserverMode_t.md) |  |  |
 | `0x54` | `m_bForcedObserverMode` | bool |  |  |

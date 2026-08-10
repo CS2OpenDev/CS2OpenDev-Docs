@@ -32,12 +32,12 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x18` | `m_nodePath` | [CAnimNodePath](../animgraphlib/CAnimNodePath.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
-| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../!GlobalTypes/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
+| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../animgraphlib/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x50` | `m_name` | CUtlString | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x5c` | `m_frameCorners` | int32[3][3] |  |  |
 | `0x80` | `m_poses` | [CPoseHandle](../animgraphlib/CPoseHandle.md)[9] |  |  |
 | `0xa8` | `m_damping` | [CAnimInputDamping](../animgraphlib/CAnimInputDamping.md) |  |  |
-| `0xc0` | `m_blendSource` | [AnimVectorSource](../!GlobalTypes/AnimVectorSource.md) |  |  |
+| `0xc0` | `m_blendSource` | [AnimVectorSource](../animgraphlib/AnimVectorSource.md) |  |  |
 | `0xc4` | `m_paramIndex` | [CAnimParamHandle](../animgraphlib/CAnimParamHandle.md) |  |  |
 | `0xc8` | `m_verticalAxis` | Vector |  |  |
 | `0xd4` | `m_horizontalAxis` | Vector |  |  |

@@ -37,7 +37,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_pSkeletonInstance` | [CSkeletonInstance](../client/CSkeletonInstance.md)* | [CSkeletonAnimationController](../server/CSkeletonAnimationController.md) | `MNotSaved` |
-| `0x18` | `m_nAnimationAlgorithm` | [AnimationAlgorithm_t](../!GlobalTypes/AnimationAlgorithm_t.md) |  |  |
+| `0x18` | `m_nAnimationAlgorithm` | [AnimationAlgorithm_t](../server/AnimationAlgorithm_t.md) |  |  |
 | `0x1c` | `m_nNextExternalGraphHandle` | [ExternalAnimGraphHandle_t](../server/ExternalAnimGraphHandle_t.md) |  |  |
 | `0x20` | `m_vecSecondarySkeletonSlotIDs` | C_NetworkUtlVectorBase< CGlobalSymbol > |  |  |
 | `0x38` | `m_vecSecondarySkeletons` | C_NetworkUtlVectorBase< CHandle< [CBaseAnimGraph](../client/CBaseAnimGraph.md) > > |  |  |
@@ -47,9 +47,9 @@ classDiagram
 | `0xb0` | `m_hSequence` | [HSequence](../animationsystem/HSequence.md) |  |  |
 | `0xb4` | `m_flSeqStartTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
 | `0xb8` | `m_flSeqFixedCycle` | float32 |  |  |
-| `0xbc` | `m_nAnimLoopMode` | [AnimLoopMode_t](../!GlobalTypes/AnimLoopMode_t.md) |  |  |
+| `0xbc` | `m_nAnimLoopMode` | [AnimLoopMode_t](../server/AnimLoopMode_t.md) |  |  |
 | `0xc0` | `m_flPlaybackRate` | CNetworkedQuantizedFloat |  |  |
-| `0xcc` | `m_nNotifyState` | [SequenceFinishNotifyState_t](../!GlobalTypes/SequenceFinishNotifyState_t.md) |  |  |
+| `0xcc` | `m_nNotifyState` | [SequenceFinishNotifyState_t](../server/SequenceFinishNotifyState_t.md) |  |  |
 | `0xcd` | `m_bNetworkedAnimationInputsChanged` | bool |  |  |
 | `0xce` | `m_bNetworkedSequenceChanged` | bool |  |  |
 | `0xcf` | `m_bLastUpdateSkipped` | bool |  |  |
@@ -68,7 +68,7 @@ classDiagram
 | `0x440` | `m_sAnimGraph2Identifier` | CGlobalSymbol |  |  |
 | `0x448` | `m_pGraphInstanceAG2` | [CAnimGraph2InstancePtr](../server/CAnimGraph2InstancePtr.md) |  |  |
 | `0x668` | `m_vecExternalGraphs` | [CExternalAnimGraphList](../server/CExternalAnimGraphList.md) |  |  |
-| `0x699` | `m_nPrevAnimationAlgorithm` | [AnimationAlgorithm_t](../!GlobalTypes/AnimationAlgorithm_t.md) |  |  |
+| `0x699` | `m_nPrevAnimationAlgorithm` | [AnimationAlgorithm_t](../server/AnimationAlgorithm_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

@@ -37,14 +37,14 @@ classDiagram
 | `0x40` | `m_hAbility` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
 | `0x44` | `m_flDamage` | float32 |  |  |
 | `0x48` | `m_flTotalledDamage` | float32 |  |  |
-| `0x4c` | `m_bitsDamageType` | [DamageTypes_t](../!GlobalTypes/DamageTypes_t.md) |  |  |
+| `0x4c` | `m_bitsDamageType` | [DamageTypes_t](../server/DamageTypes_t.md) |  |  |
 | `0x50` | `m_iDamageCustom` | int32 |  |  |
 | `0x54` | `m_iAmmoType` | [AmmoIndex_t](../server/AmmoIndex_t.md) |  |  |
 | `0x60` | `m_flOriginalDamage` | float32 |  |  |
 | `0x64` | `m_bShouldBleed` | bool |  |  |
 | `0x65` | `m_bShouldSpark` | bool |  |  |
-| `0x70` | `m_nDamageFlags` | [TakeDamageFlags_t](../!GlobalTypes/TakeDamageFlags_t.md) |  |  |
-| `0x78` | `m_iHitGroupId` | [HitGroup_t](../!GlobalTypes/HitGroup_t.md) |  |  |
+| `0x70` | `m_nDamageFlags` | [TakeDamageFlags_t](../server/TakeDamageFlags_t.md) |  |  |
+| `0x78` | `m_iHitGroupId` | [HitGroup_t](../server/HitGroup_t.md) |  |  |
 | `0x7c` | `m_nNumObjectsPenetrated` | int32 |  |  |
 | `0x80` | `m_flFriendlyFireDamageReductionRatio` | float32 |  |  |
 | `0x84` | `m_bStoppedBullet` | bool |  |  |

@@ -33,7 +33,7 @@ classDiagram
 | `0x10` | `m_requireRuleID` | CGlobalSymbol |  |  |
 | `0x18` | `m_eventConditionRules` | [CNmBitFlags](../animlib/CNmBitFlags.md) |  |  |
 | `0x1c` | `m_nSourceStateNodeIdx` | int16 |  |  |
-| `0x1e` | `m_ruleCondition` | [NmTransitionRuleCondition_t](../!GlobalTypes/NmTransitionRuleCondition_t.md) |  |  |
+| `0x1e` | `m_ruleCondition` | [NmTransitionRuleCondition_t](../animlib/NmTransitionRuleCondition_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

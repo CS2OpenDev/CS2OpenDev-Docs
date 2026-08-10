@@ -33,7 +33,7 @@ classDiagram
 | `0x50` | `m_flDistance` | float32 |  |  |
 | `0x54` | `m_flStoppingDistance` | float32 |  |  |
 | `0x58` | `m_flTargetSpeed` | float32 |  |  |
-| `0x5c` | `m_eMode` | [VelocityMetricMode](../!GlobalTypes/VelocityMetricMode.md) |  |  |
+| `0x5c` | `m_eMode` | [VelocityMetricMode](../animgraphlib/VelocityMetricMode.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

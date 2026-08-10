@@ -34,11 +34,11 @@ classDiagram
 | `0x28` | `m_group` | CGlobalSymbol | [CAnimTagBase](../animgraphlib/CAnimTagBase.md) | `MPropertySuppressField` |
 | `0x30` | `m_tagID` | [AnimTagID](../modellib/AnimTagID.md) | [CAnimTagBase](../animgraphlib/CAnimTagBase.md) | `MPropertySuppressField` |
 | `0x48` | `m_bIsReferenced` | bool | [CAnimTagBase](../animgraphlib/CAnimTagBase.md) | `MPropertySuppressField` |
-| `0x58` | `m_FootstepType` | [FootstepLandedFootSoundType_t](../!GlobalTypes/FootstepLandedFootSoundType_t.md) |  | `MPropertyFriendlyName Footstep Type` |
+| `0x58` | `m_FootstepType` | [FootstepLandedFootSoundType_t](../animgraphlib/FootstepLandedFootSoundType_t.md) |  | `MPropertyFriendlyName Footstep Type` |
 | `0x60` | `m_OverrideSoundName` | CUtlString |  | `MPropertyAttributeChoiceName Sound` `MPropertyFriendlyName Override Sound` |
 | `0x68` | `m_DebugAnimSourceString` | CUtlString |  | `MPropertyFriendlyName Debug Name` |
 | `0x70` | `m_BoneName` | CUtlString |  | `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName Bone Name` |
-| `0x78` | `m_footstepJumpPhase` | [FootstepJumpPhase_t](../!GlobalTypes/FootstepJumpPhase_t.md) |  | `MPropertyFriendlyName Jump Phase` |
+| `0x78` | `m_footstepJumpPhase` | [FootstepJumpPhase_t](../animgraphlib/FootstepJumpPhase_t.md) |  | `MPropertyFriendlyName Jump Phase` |
 
 <details><summary>KV3 class defaults</summary>
 

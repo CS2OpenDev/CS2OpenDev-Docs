@@ -27,7 +27,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `m_ID` | V_uuid_t | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md) |  |
 | `0x20` | `m_nodes` | CUtlVector< [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md)* > | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md) |  |
-| `0x38` | `m_graphType` | [NmGraphDocGraphType_t](../!GlobalTypes/NmGraphDocGraphType_t.md) | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md) |  |
+| `0x38` | `m_graphType` | [NmGraphDocGraphType_t](../animdoclib/NmGraphDocGraphType_t.md) | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md) |  |
 | `0x3c` | `m_viewOffset` | Vector2D | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md) |  |
 | `0x44` | `m_flViewZoom` | float32 | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md) |  |
 | `0x50` | `m_entryStateID` | V_uuid_t |  |  |

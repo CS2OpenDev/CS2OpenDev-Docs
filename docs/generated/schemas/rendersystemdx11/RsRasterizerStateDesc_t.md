@@ -24,8 +24,8 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_nFillMode` | [RsFillMode_t](../!GlobalTypes/RsFillMode_t.md) |  |  |
-| `0x1` | `m_nCullMode` | [RsCullMode_t](../!GlobalTypes/RsCullMode_t.md) |  |  |
+| `0x0` | `m_nFillMode` | [RsFillMode_t](../rendersystemdx11/RsFillMode_t.md) |  |  |
+| `0x1` | `m_nCullMode` | [RsCullMode_t](../rendersystemdx11/RsCullMode_t.md) |  |  |
 | `0x2` | `m_bDepthClipEnable` | bool |  |  |
 | `0x3` | `m_bMultisampleEnable` | bool |  |  |
 | `0x4` | `m_nDepthBias` | int32 |  |  |

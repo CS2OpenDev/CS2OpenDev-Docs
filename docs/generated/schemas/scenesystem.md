@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/scenesystem.md)
 
-9 types. Each links to its own page with the full field layout.
+15 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -22,3 +22,9 @@ nav_exclude: true
 | [CSSDSMsg_ViewTarget](scenesystem/CSSDSMsg_ViewTarget.md) | class | 48 | 10 |  |
 | [CSSDSMsg_ViewTargetList](scenesystem/CSSDSMsg_ViewTargetList.md) | class | 48 | 3 |  |
 | [SceneViewId_t](scenesystem/SceneViewId_t.md) | class | 16 | 2 |  |
+| [DecalRtEncoding_t](scenesystem/DecalRtEncoding_t.md) | enum | — | 6 |  |
+| [DisableShadows_t](scenesystem/DisableShadows_t.md) | enum | — | 5 |  |
+| [ESceneObjectMeshletVisualization](scenesystem/ESceneObjectMeshletVisualization.md) | enum | — | 3 |  |
+| [ESceneObjectVisualization](scenesystem/ESceneObjectVisualization.md) | enum | — | 6 |  |
+| [ESceneViewDebugOverlaysListenerDataType_t](scenesystem/ESceneViewDebugOverlaysListenerDataType_t.md) | enum | — | 7 |  |
+| [ESilhouetteType_t](scenesystem/ESilhouetteType_t.md) | enum | — | 4 |  |

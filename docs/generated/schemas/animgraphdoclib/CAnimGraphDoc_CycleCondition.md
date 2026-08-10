@@ -30,10 +30,10 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x28` | `m_comparisonOp` | [Comparison_t](../!GlobalTypes/Comparison_t.md) |  |  |
+| `0x28` | `m_comparisonOp` | [Comparison_t](../animgraphdoclib/Comparison_t.md) |  |  |
 | `0x30` | `m_comparisonString` | CUtlString |  |  |
 | `0x38` | `m_comparisonValue` | float32 |  |  |
-| `0x3c` | `m_comparisonValueType` | [ComparisonValueType](../!GlobalTypes/ComparisonValueType.md) |  |  |
+| `0x3c` | `m_comparisonValueType` | [ComparisonValueType](../animgraphdoclib/ComparisonValueType.md) |  |  |
 | `0x40` | `m_comparisonParamName` | CUtlString |  |  |
 | `0x48` | `m_comparisonParamID` | [AnimParamID](../modellib/AnimParamID.md) |  |  |
 

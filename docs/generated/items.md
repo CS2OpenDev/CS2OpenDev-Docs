@@ -7,7 +7,7 @@ nav_order: 7
 # Items & Economy
 
 {: .note }
-> Source: CS2 build **24537688** · 2026-08-03 · `windows-x86_64` · schema `0.5.0`
+> Source: CS2 build **24537688** · 2026-08-03 · `windows-x86_64` · schema `0.5.1`
 
 Economy definitions extracted from the content pack's `items_game.txt`: weapon / equipment items, their prefabs, paint kits (skins), sticker kits, music kits, and the rarity / quality scales.  Name tokens (`#SFUI_*`, `#PaintKit_*`, …) resolve to display strings via the localization table.
 

@@ -32,7 +32,7 @@ classDiagram
 | `0x10` | `m_flEaseTime` | float32 |  |  |
 | `0x14` | `m_flStartValue` | float32 |  |  |
 | `0x18` | `m_nInputValueNodeIdx` | int16 |  |  |
-| `0x1a` | `m_easingOp` | [NmEasingOperation_t](../!GlobalTypes/NmEasingOperation_t.md) |  |  |
+| `0x1a` | `m_easingOp` | [NmEasingOperation_t](../animlib/NmEasingOperation_t.md) |  |  |
 | `0x1b` | `m_bUseStartValue` | bool |  |  |
 
 <details><summary>KV3 class defaults</summary>

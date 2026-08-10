@@ -26,7 +26,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x0` | `m_nCPNumber` | int32 |  | `MPropertyFriendlyName Control Point Number` |
 | `0x8` | `m_Pos` | [CPerParticleVecInput](../particleslib/CPerParticleVecInput.md) |  | `MPropertyFriendlyName CP Position` |
-| `0x6c0` | `m_nOrientationMode` | [ParticleOrientationSetMode_t](../!GlobalTypes/ParticleOrientationSetMode_t.md) |  | `MPropertyFriendlyName CP Orientation Type` |
+| `0x6c0` | `m_nOrientationMode` | [ParticleOrientationSetMode_t](../particles/ParticleOrientationSetMode_t.md) |  | `MPropertyFriendlyName CP Orientation Type` |
 
 <details><summary>KV3 class defaults</summary>
 

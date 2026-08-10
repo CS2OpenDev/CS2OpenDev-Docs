@@ -31,13 +31,13 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x28` | `m_sourceValue` | [StateValue](../!GlobalTypes/StateValue.md) |  |  |
-| `0x2c` | `m_comparisonValueType` | [StateComparisonValueType](../!GlobalTypes/StateComparisonValueType.md) |  |  |
+| `0x28` | `m_sourceValue` | [StateValue](../animgraphdoclib/StateValue.md) |  |  |
+| `0x2c` | `m_comparisonValueType` | [StateComparisonValueType](../animgraphdoclib/StateComparisonValueType.md) |  |  |
 | `0x30` | `m_comparisonFixedValue` | float32 |  |  |
-| `0x34` | `m_comparisonStateValue` | [StateValue](../!GlobalTypes/StateValue.md) |  |  |
+| `0x34` | `m_comparisonStateValue` | [StateValue](../animgraphdoclib/StateValue.md) |  |  |
 | `0x38` | `m_comparisonParamName` | CUtlString |  |  |
 | `0x40` | `m_comparisonParamID` | [AnimParamID](../modellib/AnimParamID.md) |  |  |
-| `0x44` | `m_comparisonOp` | [Comparison_t](../!GlobalTypes/Comparison_t.md) |  |  |
+| `0x44` | `m_comparisonOp` | [Comparison_t](../animgraphdoclib/Comparison_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

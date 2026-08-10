@@ -24,7 +24,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x18` | `m_Type` | [RelativeLocationType_t](../!GlobalTypes/RelativeLocationType_t.md) |  |  |
+| `0x18` | `m_Type` | [RelativeLocationType_t](../server/RelativeLocationType_t.md) |  |  |
 | `0x1c` | `m_vRelativeOffset` | Vector |  |  |
 | `0x28` | `m_vWorldSpacePos` | VectorWS |  |  |
 | `0x34` | `m_hEntity` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |

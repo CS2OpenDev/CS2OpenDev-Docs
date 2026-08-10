@@ -31,7 +31,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_nCode` | [PulseInstructionCode_t](../!GlobalTypes/PulseInstructionCode_t.md) |  |  |
+| `0x0` | `m_nCode` | [PulseInstructionCode_t](../pulse_runtime_lib/PulseInstructionCode_t.md) |  |  |
 | `0x4` | `m_nVar` | [PulseRuntimeVarIndex_t](../pulse_runtime_lib/PulseRuntimeVarIndex_t.md) |  |  |
 | `0x8` | `m_nReg0` | [PulseRuntimeRegisterIndex_t](../pulse_runtime_lib/PulseRuntimeRegisterIndex_t.md) |  |  |
 | `0xa` | `m_nReg1` | [PulseRuntimeRegisterIndex_t](../pulse_runtime_lib/PulseRuntimeRegisterIndex_t.md) |  |  |

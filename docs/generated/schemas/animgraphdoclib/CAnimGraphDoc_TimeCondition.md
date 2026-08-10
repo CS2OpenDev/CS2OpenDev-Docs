@@ -28,7 +28,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x28` | `m_comparisonOp` | [Comparison_t](../!GlobalTypes/Comparison_t.md) |  |  |
+| `0x28` | `m_comparisonOp` | [Comparison_t](../animgraphdoclib/Comparison_t.md) |  |  |
 | `0x30` | `m_comparisonString` | CUtlString |  |  |
 
 <details><summary>KV3 class defaults</summary>

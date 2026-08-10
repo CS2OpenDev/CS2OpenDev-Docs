@@ -30,7 +30,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `m_nNodeIdx` | int16 | [CNmGraphNode::CDefinition](../animlib/CNmGraphNode.CDefinition.md) |  |
 | `0x10` | `m_nInputValueNodeIdx` | int16 |  |  |
-| `0x14` | `m_mode` | [NmCachedValueMode_t](../!GlobalTypes/NmCachedValueMode_t.md) |  |  |
+| `0x14` | `m_mode` | [NmCachedValueMode_t](../animlib/NmCachedValueMode_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

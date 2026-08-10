@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/soundsystem_lowlevel.md)
 
-73 types. Each links to its own page with the full field layout.
+80 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -86,3 +86,10 @@ nav_exclude: true
 | [VMixSubgraphSwitchDesc_t](soundsystem_lowlevel/VMixSubgraphSwitchDesc_t.md) | class | 56 | 6 |  |
 | [VMixUtilityDesc_t](soundsystem_lowlevel/VMixUtilityDesc_t.md) | class | 24 | 6 |  |
 | [VMixVocoderDesc_t](soundsystem_lowlevel/VMixVocoderDesc_t.md) | class | 40 | 10 |  |
+| [VMixChannelOperation_t](soundsystem_lowlevel/VMixChannelOperation_t.md) | enum | — | 6 |  |
+| [VMixFilterSlope_t](soundsystem_lowlevel/VMixFilterSlope_t.md) | enum | — | 9 |  |
+| [VMixFilterType_t](soundsystem_lowlevel/VMixFilterType_t.md) | enum | — | 10 |  |
+| [VMixGraphCommandID_t](soundsystem_lowlevel/VMixGraphCommandID_t.md) | enum | — | 40 |  |
+| [VMixLFOShape_t](soundsystem_lowlevel/VMixLFOShape_t.md) | enum | — | 5 |  |
+| [VMixPannerType_t](soundsystem_lowlevel/VMixPannerType_t.md) | enum | — | 2 |  |
+| [VMixSubgraphSwitchInterpolationType_t](soundsystem_lowlevel/VMixSubgraphSwitchInterpolationType_t.md) | enum | — | 3 |  |

@@ -34,10 +34,10 @@ classDiagram
 | `0x28` | `m_vecPosition` | Vector2D | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyGroupName Debug` `MPropertySortPriority -100` |
 | `0x30` | `m_nNodeID` | [AnimNodeID](../modellib/AnimNodeID.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyGroupName Debug` `MPropertySortPriority -100` |
 | `0x34` | `m_bDebugThisNode` | bool | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Debug This Node` `MPropertyGroupName Debug` `MPropertySortPriority -100` |
-| `0x38` | `m_networkMode` | [AnimNodeNetworkMode](../!GlobalTypes/AnimNodeNetworkMode.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Network Mode` `MPropertySortPriority -110` |
+| `0x38` | `m_networkMode` | [AnimNodeNetworkMode](../animgraphlib/AnimNodeNetworkMode.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Network Mode` `MPropertySortPriority -110` |
 | `0x48` | `m_sequenceName` | CUtlString |  | `MPropertyAttributeChoiceName Sequence` `MPropertyFriendlyName Sequence` |
 | `0x50` | `m_flMaxValue` | float32 |  | `MPropertyFriendlyName Max Value` |
-| `0x54` | `m_blendSource` | [AnimVectorSource](../!GlobalTypes/AnimVectorSource.md) |  | `MPropertyFriendlyName Blend Source` |
+| `0x54` | `m_blendSource` | [AnimVectorSource](../animgraphlib/AnimVectorSource.md) |  | `MPropertyFriendlyName Blend Source` |
 | `0x58` | `m_paramName` | CUtlString |  | `MPropertySuppressField` |
 | `0x60` | `m_param` | [AnimParamID](../modellib/AnimParamID.md) |  | `MPropertyAttributeChoiceName VectorParameter` `MPropertyFriendlyName Parameter` |
 | `0x64` | `m_verticalAxisDirection` | Vector |  | `MPropertyFriendlyName Vertical Axis` |

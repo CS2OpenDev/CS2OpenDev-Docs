@@ -24,7 +24,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_processingType` | [AnimationProcessingType_t](../!GlobalTypes/AnimationProcessingType_t.md) |  |  |
+| `0x0` | `m_processingType` | [AnimationProcessingType_t](../animationsystem/AnimationProcessingType_t.md) |  |  |
 | `0x8` | `m_elems` | CUtlVector< [AnimationDecodeDebugDumpElement_t](../animationsystem/AnimationDecodeDebugDumpElement_t.md) > |  |  |
 
 <details><summary>KV3 class defaults</summary>

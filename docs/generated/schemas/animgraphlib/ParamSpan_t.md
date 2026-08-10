@@ -27,7 +27,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x0` | `m_samples` | CUtlVector< [ParamSpanSample_t](../animgraphlib/ParamSpanSample_t.md) > |  |  |
 | `0x18` | `m_hParam` | [CAnimParamHandle](../animgraphlib/CAnimParamHandle.md) |  |  |
-| `0x1a` | `m_eParamType` | [AnimParamType_t](../!GlobalTypes/AnimParamType_t.md) |  |  |
+| `0x1a` | `m_eParamType` | [AnimParamType_t](../animgraphlib/AnimParamType_t.md) |  |  |
 | `0x1c` | `m_flStartCycle` | float32 |  |  |
 | `0x20` | `m_flEndCycle` | float32 |  |  |
 

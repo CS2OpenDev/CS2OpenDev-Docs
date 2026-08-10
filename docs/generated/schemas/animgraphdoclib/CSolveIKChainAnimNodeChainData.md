@@ -29,11 +29,11 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_IkChain` | CUtlString |  | `MPropertyAttributeChoiceName IKChain` `MPropertyFriendlyName IK Chain` |
-| `0x10` | `m_SolverSettingSource` | [SolveIKChainAnimNodeSettingSource](../!GlobalTypes/SolveIKChainAnimNodeSettingSource.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Solver Setting Source` |
+| `0x10` | `m_SolverSettingSource` | [SolveIKChainAnimNodeSettingSource](../animgraphdoclib/SolveIKChainAnimNodeSettingSource.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Solver Setting Source` |
 | `0x14` | `m_OverrideSolverSettings` | [IKSolverSettings_t](../animgraphlib/IKSolverSettings_t.md) |  | `MPropertyAttrStateCallback` `MPropertyAutoExpandSelf` `MPropertyFriendlyName Override Solver Settings` |
-| `0x20` | `m_TargetSettingSource` | [SolveIKChainAnimNodeSettingSource](../!GlobalTypes/SolveIKChainAnimNodeSettingSource.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Target Setting Source` |
+| `0x20` | `m_TargetSettingSource` | [SolveIKChainAnimNodeSettingSource](../animgraphdoclib/SolveIKChainAnimNodeSettingSource.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Target Setting Source` |
 | `0x28` | `m_OverrideTargetSettings` | [IKTargetSettings_t](../animgraphlib/IKTargetSettings_t.md) |  | `MPropertyAttrStateCallback` `MPropertyAutoExpandSelf` `MPropertyFriendlyName Override Target Settings` |
-| `0x50` | `m_DebugSetting` | [SolveIKChainAnimNodeDebugSetting](../!GlobalTypes/SolveIKChainAnimNodeDebugSetting.md) |  | `MPropertyFriendlyName Debug Setting` `MPropertyGroupName Debug` |
+| `0x50` | `m_DebugSetting` | [SolveIKChainAnimNodeDebugSetting](../animgraphlib/SolveIKChainAnimNodeDebugSetting.md) |  | `MPropertyFriendlyName Debug Setting` `MPropertyGroupName Debug` |
 | `0x54` | `m_flDebugNormalizedLength` | float32 |  | `MPropertyFriendlyName Debug Normalized Length` `MPropertyGroupName Debug` |
 | `0x58` | `m_vDebugOffset` | Vector |  | `MPropertyFriendlyName Debug Offset` `MPropertyGroupName Debug` |
 

@@ -14,4 +14,5 @@ Class relationships (inheritance and composition) for the `modeldoc_editor` modu
 ```mermaid
 classDiagram
     CMotionAnalysisSettings *-- CMotionAnalysisSettings_Foot
+    DuplicateAndMirrorAttachmentOpts_t *-- MirrorSpace_t
 ```

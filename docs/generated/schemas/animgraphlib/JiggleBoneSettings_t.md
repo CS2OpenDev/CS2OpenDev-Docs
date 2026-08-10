@@ -29,7 +29,7 @@ classDiagram
 | `0xc` | `m_flDamping` | float32 |  |  |
 | `0x10` | `m_vBoundsMaxLS` | Vector |  |  |
 | `0x1c` | `m_vBoundsMinLS` | Vector |  |  |
-| `0x28` | `m_eSimSpace` | [JiggleBoneSimSpace](../!GlobalTypes/JiggleBoneSimSpace.md) |  |  |
+| `0x28` | `m_eSimSpace` | [JiggleBoneSimSpace](../animgraphlib/JiggleBoneSimSpace.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

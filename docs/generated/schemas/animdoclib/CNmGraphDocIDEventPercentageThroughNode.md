@@ -35,7 +35,7 @@ classDiagram
 | `0x48` | `m_pSecondaryGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
 | `0x50` | `m_inputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 4 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0xd8` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
-| `0x100` | `m_priorityRule` | [NmEventPriorityRule_t](../!GlobalTypes/NmEventPriorityRule_t.md) |  | `MPropertyGroupName +Advanced Search Rules` |
+| `0x100` | `m_priorityRule` | [NmEventPriorityRule_t](../animdoclib/NmEventPriorityRule_t.md) |  | `MPropertyGroupName +Advanced Search Rules` |
 | `0x101` | `m_bLimitSearchToSourceState` | bool |  | `MPropertyGroupName +Advanced Search Rules` |
 | `0x102` | `m_bIgnoreInactiveBranchEvents` | bool |  | `MPropertyGroupName +Advanced Search Rules` |
 | `0x108` | `m_eventID` | CGlobalSymbol |  | `MPropertyAttributeEditor AnimGraphID()` |

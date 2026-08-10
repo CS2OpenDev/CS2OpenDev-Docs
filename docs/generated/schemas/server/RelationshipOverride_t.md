@@ -27,10 +27,10 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `disposition` | [Disposition_t](../!GlobalTypes/Disposition_t.md) | [Relationship_t](../server/Relationship_t.md) |  |
+| `0x0` | `disposition` | [Disposition_t](../server/Disposition_t.md) | [Relationship_t](../server/Relationship_t.md) |  |
 | `0x4` | `priority` | int32 | [Relationship_t](../server/Relationship_t.md) |  |
 | `0x8` | `entity` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
-| `0xc` | `classType` | [Class_T](../!GlobalTypes/Class_T.md) |  |  |
+| `0xc` | `classType` | [Class_T](../server/Class_T.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

@@ -35,8 +35,8 @@ classDiagram
 | `0x48` | `m_componentName` | CUtlString | [CAnimParameterBase](../animgraphlib/CAnimParameterBase.md) | `MPropertyAutoRebuildOnChange` `MPropertySuppressField` |
 | `0x68` | `m_bNetworkingRequested` | bool | [CAnimParameterBase](../animgraphlib/CAnimParameterBase.md) | `MPropertySuppressField` |
 | `0x69` | `m_bIsReferenced` | bool | [CAnimParameterBase](../animgraphlib/CAnimParameterBase.md) | `MPropertySuppressField` |
-| `0x70` | `m_previewButton` | [AnimParamButton_t](../!GlobalTypes/AnimParamButton_t.md) | [CConcreteAnimParameter](../animgraphlib/CConcreteAnimParameter.md) | `MPropertyFriendlyName Preview Button` |
-| `0x74` | `m_eNetworkSetting` | [AnimParamNetworkSetting](../!GlobalTypes/AnimParamNetworkSetting.md) | [CConcreteAnimParameter](../animgraphlib/CConcreteAnimParameter.md) | `MPropertyFriendlyName Network` |
+| `0x70` | `m_previewButton` | [AnimParamButton_t](../animgraphlib/AnimParamButton_t.md) | [CConcreteAnimParameter](../animgraphlib/CConcreteAnimParameter.md) | `MPropertyFriendlyName Preview Button` |
+| `0x74` | `m_eNetworkSetting` | [AnimParamNetworkSetting](../animgraphlib/AnimParamNetworkSetting.md) | [CConcreteAnimParameter](../animgraphlib/CConcreteAnimParameter.md) | `MPropertyFriendlyName Network` |
 | `0x78` | `m_bUseMostRecentValue` | bool | [CConcreteAnimParameter](../animgraphlib/CConcreteAnimParameter.md) | `MPropertyFriendlyName Force Latest Value` |
 | `0x79` | `m_bAutoReset` | bool | [CConcreteAnimParameter](../animgraphlib/CConcreteAnimParameter.md) | `MPropertyFriendlyName Auto Reset` |
 | `0x7a` | `m_bGameWritable` | bool | [CConcreteAnimParameter](../animgraphlib/CConcreteAnimParameter.md) | `MPropertyAttrStateCallback` `MPropertyFriendlyName Game Writable` `MPropertyGroupName +Permissions` |

@@ -36,11 +36,11 @@ classDiagram
 | `0x48` | `m_pSecondaryGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
 | `0x50` | `m_inputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 4 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0xd8` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
-| `0x100` | `m_resultType` | [NmGraphValueType_t](../!GlobalTypes/NmGraphValueType_t.md) | [CNmGraphDocResultNode](../animdoclib/CNmGraphDocResultNode.md) |  |
+| `0x100` | `m_resultType` | [NmGraphValueType_t](../animlib/NmGraphValueType_t.md) | [CNmGraphDocResultNode](../animdoclib/CNmGraphDocResultNode.md) |  |
 | `0x108` | `m_flDurationSeconds` | float32 | [CNmGraphDocTransitionNode](../animdoclib/CNmGraphDocTransitionNode.md) | `MPropertyGroupName +Transition` |
 | `0x10c` | `m_bClampDurationToSource` | bool | [CNmGraphDocTransitionNode](../animdoclib/CNmGraphDocTransitionNode.md) | `MPropertyGroupName +Transition` |
-| `0x10d` | `m_rootMotionBlend` | [NmRootMotionBlendMode_t](../!GlobalTypes/NmRootMotionBlendMode_t.md) | [CNmGraphDocTransitionNode](../animdoclib/CNmGraphDocTransitionNode.md) | `MPropertyGroupName +Transition` |
-| `0x10e` | `m_blendWeightEasing` | [NmEasingOperation_t](../!GlobalTypes/NmEasingOperation_t.md) | [CNmGraphDocTransitionNode](../animdoclib/CNmGraphDocTransitionNode.md) | `MPropertyGroupName +Transition` |
+| `0x10d` | `m_rootMotionBlend` | [NmRootMotionBlendMode_t](../animlib/NmRootMotionBlendMode_t.md) | [CNmGraphDocTransitionNode](../animdoclib/CNmGraphDocTransitionNode.md) | `MPropertyGroupName +Transition` |
+| `0x10e` | `m_blendWeightEasing` | [NmEasingOperation_t](../animlib/NmEasingOperation_t.md) | [CNmGraphDocTransitionNode](../animdoclib/CNmGraphDocTransitionNode.md) | `MPropertyGroupName +Transition` |
 | `0x110` | `m_flBoneMaskBlendInTimePercentage` | float32 | [CNmGraphDocTransitionNode](../animdoclib/CNmGraphDocTransitionNode.md) | `MPropertyGroupName +Transition` |
 | `0x114` | `m_timeMatchMode` | [CNmGraphDocTransitionNode](../animdoclib/CNmGraphDocTransitionNode.md)::TimeMatchMode_t | [CNmGraphDocTransitionNode](../animdoclib/CNmGraphDocTransitionNode.md) | `MPropertyGroupName +Target Time` |
 | `0x118` | `m_flTimeOffset` | float32 | [CNmGraphDocTransitionNode](../animdoclib/CNmGraphDocTransitionNode.md) | `MPropertyGroupName +Target Time` |

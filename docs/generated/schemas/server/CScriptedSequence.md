@@ -59,12 +59,12 @@ classDiagram
 | `0x2d8` | `m_lifeState` | uint8 | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x2dc` | `m_flDamageAccumulator` | float32 | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x2e0` | `m_bTakesDamage` | bool | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2e8` | `m_nTakeDamageFlags` | [TakeDamageFlags_t](../!GlobalTypes/TakeDamageFlags_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2f0` | `m_nPlatformType` | [EntityPlatformTypes_t](../!GlobalTypes/EntityPlatformTypes_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2f2` | `m_MoveCollide` | [MoveCollide_t](../!GlobalTypes/MoveCollide_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2f3` | `m_MoveType` | [MoveType_t](../!GlobalTypes/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2f4` | `m_nPreviouslySetMoveType` | [MoveType_t](../!GlobalTypes/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2f5` | `m_nActualMoveType` | [MoveType_t](../!GlobalTypes/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2e8` | `m_nTakeDamageFlags` | [TakeDamageFlags_t](../server/TakeDamageFlags_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2f0` | `m_nPlatformType` | [EntityPlatformTypes_t](../server/EntityPlatformTypes_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2f2` | `m_MoveCollide` | [MoveCollide_t](../server/MoveCollide_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2f3` | `m_MoveType` | [MoveType_t](../server/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2f4` | `m_nPreviouslySetMoveType` | [MoveType_t](../server/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2f5` | `m_nActualMoveType` | [MoveType_t](../server/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x2f6` | `m_nWaterTouch` | uint8 | [CBaseEntity](../server/CBaseEntity.md) | `MNotSaved` |
 | `0x2f7` | `m_nSlimeTouch` | uint8 | [CBaseEntity](../server/CBaseEntity.md) | `MNotSaved` |
 | `0x2f8` | `m_bRestoreInHierarchy` | bool | [CBaseEntity](../server/CBaseEntity.md) |  |
@@ -122,7 +122,7 @@ classDiagram
 | `0x490` | `m_pBlocker` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x494` | `m_flLocalTime` | float32 | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x498` | `m_flVPhysicsUpdateLocalTime` | float32 | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x49c` | `m_nBloodType` | [BloodType](../!GlobalTypes/BloodType.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x49c` | `m_nBloodType` | [BloodType](../server/BloodType.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x4a0` | `m_pPulseGraphInstance` | [CPulseGraphInstance_ServerEntity](../server/CPulseGraphInstance_ServerEntity.md)* | [CBaseEntity](../server/CBaseEntity.md) | `MKV3TransferSaveOpsForField GetPulseInstanceSaveRestoreOps` |
 | `0x4a8` | `m_iszEntry` | CUtlSymbolLarge |  |  |
 | `0x4b0` | `m_iszPreIdle` | CUtlSymbolLarge |  |  |
@@ -132,10 +132,10 @@ classDiagram
 | `0x4d0` | `m_iszNextScript` | CUtlSymbolLarge |  |  |
 | `0x4d8` | `m_iszEntity` | CUtlSymbolLarge |  |  |
 | `0x4e0` | `m_iszSyncGroup` | CUtlSymbolLarge |  |  |
-| `0x4e8` | `m_nMoveTo` | [ScriptedMoveTo_t](../!GlobalTypes/ScriptedMoveTo_t.md) |  |  |
-| `0x4ec` | `m_nMoveToGait` | [SharedMovementGait_t](../!GlobalTypes/SharedMovementGait_t.md) |  |  |
-| `0x4f0` | `m_nHeldWeaponBehavior` | [ScriptedHeldWeaponBehavior_t](../!GlobalTypes/ScriptedHeldWeaponBehavior_t.md) |  |  |
-| `0x4f4` | `m_nForcedCrouchState` | [ForcedCrouchState_t](../!GlobalTypes/ForcedCrouchState_t.md) |  |  |
+| `0x4e8` | `m_nMoveTo` | [ScriptedMoveTo_t](../modellib/ScriptedMoveTo_t.md) |  |  |
+| `0x4ec` | `m_nMoveToGait` | [SharedMovementGait_t](../modellib/SharedMovementGait_t.md) |  |  |
+| `0x4f0` | `m_nHeldWeaponBehavior` | [ScriptedHeldWeaponBehavior_t](../modellib/ScriptedHeldWeaponBehavior_t.md) |  |  |
+| `0x4f4` | `m_nForcedCrouchState` | [ForcedCrouchState_t](../server/ForcedCrouchState_t.md) |  |  |
 | `0x4f8` | `m_bIsPlayingPreIdle` | bool |  |  |
 | `0x4f9` | `m_bIsPlayingEntry` | bool |  |  |
 | `0x4fa` | `m_bIsPlayingAction` | bool |  |  |
@@ -188,8 +188,8 @@ classDiagram
 | `0x55d` | `m_bForceSynch` | bool |  |  |
 | `0x55e` | `m_bPreventUpdateYawOnFinish` | bool |  |  |
 | `0x55f` | `m_bEnsureOnNavmeshOnFinish` | bool |  |  |
-| `0x560` | `m_onDeathBehavior` | [ScriptedOnDeath_t](../!GlobalTypes/ScriptedOnDeath_t.md) |  |  |
-| `0x564` | `m_ConflictResponse` | [ScriptedConflictResponse_t](../!GlobalTypes/ScriptedConflictResponse_t.md) |  |  |
+| `0x560` | `m_onDeathBehavior` | [ScriptedOnDeath_t](../server/ScriptedOnDeath_t.md) |  |  |
+| `0x564` | `m_ConflictResponse` | [ScriptedConflictResponse_t](../server/ScriptedConflictResponse_t.md) |  |  |
 | `0x568` | `m_OnBeginSequence` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
 | `0x580` | `m_OnActionStartOrLoop` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
 | `0x598` | `m_OnEndSequence` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |

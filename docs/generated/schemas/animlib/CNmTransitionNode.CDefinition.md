@@ -40,8 +40,8 @@ classDiagram
 | `0x20` | `m_flTimeOffset` | float32 |  |  |
 | `0x24` | `m_transitionOptions` | [CNmBitFlags](../animlib/CNmBitFlags.md) |  |  |
 | `0x28` | `m_targetSyncIDNodeIdx` | int16 |  |  |
-| `0x2a` | `m_blendWeightEasing` | [NmEasingOperation_t](../!GlobalTypes/NmEasingOperation_t.md) |  |  |
-| `0x2b` | `m_rootMotionBlend` | [NmRootMotionBlendMode_t](../!GlobalTypes/NmRootMotionBlendMode_t.md) |  |  |
+| `0x2a` | `m_blendWeightEasing` | [NmEasingOperation_t](../animlib/NmEasingOperation_t.md) |  |  |
+| `0x2b` | `m_rootMotionBlend` | [NmRootMotionBlendMode_t](../animlib/NmRootMotionBlendMode_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

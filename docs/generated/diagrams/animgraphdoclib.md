@@ -130,6 +130,7 @@ classDiagram
     CAnimGraphDoc_StateMachine <|-- CStateMachineComponent
     CActionComponent *-- CAnimGraphDoc_Action
     CAnimConflictBase *-- CAnimConflictInfo_t
+    CAnimConflictBase *-- AnimConflictType_t
     CAnimGraphDoc_AddNode *-- CAnimGraphDoc_NodeConnection
     CAnimGraphDoc_AimCameraNode *-- CAnimGraphDoc_NodeConnection
     CAnimGraphDoc_AimCameraNode *-- CAnimGraphDoc_AimCameraNode_PropJoint
@@ -147,9 +148,12 @@ classDiagram
     CAnimGraphDoc_ConditionContainer *-- CAnimGraphDoc_Condition
     CAnimGraphDoc_ConflictManager *-- CAnimConflictBase
     CAnimGraphDoc_ContainerNodeBase *-- CAnimGraphDoc_NodeConnection
+    CAnimGraphDoc_CycleCondition *-- Comparison_t
+    CAnimGraphDoc_CycleCondition *-- ComparisonValueType
     CAnimGraphDoc_CycleControlClipNode *-- CAnimGraphDoc_TagSpan
     CAnimGraphDoc_CycleControlNode *-- CAnimGraphDoc_NodeConnection
     CAnimGraphDoc_DirectPlaybackNode *-- CAnimGraphDoc_NodeConnection
+    CAnimGraphDoc_FinishedCondition *-- FinishedConditionOption
     CAnimGraphDoc_FollowAttachmentNode *-- CAnimGraphDoc_NodeConnection
     CAnimGraphDoc_FollowPathNode *-- CAnimGraphDoc_NodeConnection
     CAnimGraphDoc_FollowTargetNode *-- CAnimGraphDoc_NodeConnection
@@ -183,16 +187,19 @@ classDiagram
     CAnimGraphDoc_NodeStateTransition *-- CFloatAnimValue
     CAnimGraphDoc_OrientationWarpNode *-- CAnimGraphDoc_NodeConnection
     CAnimGraphDoc_ParamSpan *-- CAnimGraphDoc_ParamSpanSample
+    CAnimGraphDoc_ParameterCondition *-- Comparison_t
     CAnimGraphDoc_PathHelperNode *-- CAnimGraphDoc_NodeConnection
     CAnimGraphDoc_ProxyNodeBase *-- CConnectionProxyItem
     CAnimGraphDoc_RagdollNode *-- CAnimGraphDoc_NodeConnection
     CAnimGraphDoc_RigidBodyWeightList *-- CRigidBodyWeight
     CAnimGraphDoc_RootNode *-- CAnimGraphDoc_NodeConnection
     CAnimGraphDoc_SelectorNode *-- CAnimGraphDoc_NodeConnection
+    CAnimGraphDoc_SelectorNode *-- SelectionSource_t
     CAnimGraphDoc_SelectorNode *-- CFloatAnimValue
     CAnimGraphDoc_SequenceBlend2DItem *-- CAnimGraphDoc_TagSpan
     CAnimGraphDoc_SequenceNode *-- CAnimGraphDoc_TagSpan
     CAnimGraphDoc_SequenceNode *-- CAnimGraphDoc_ParamSpan
+    CAnimGraphDoc_SingleFrameNode *-- SingleFrameSelection
     CAnimGraphDoc_SingleFrameNode *-- CAnimGraphDoc_Action
     CAnimGraphDoc_SlowDownOnSlopesNode *-- CAnimGraphDoc_NodeConnection
     CAnimGraphDoc_SolveIKChainNode *-- CAnimGraphDoc_NodeConnection
@@ -204,13 +211,19 @@ classDiagram
     CAnimGraphDoc_State *-- CStateAction
     CAnimGraphDoc_StateList --> CAnimGraphDoc_State
     CAnimGraphDoc_StateMachine *-- CAnimGraphDoc_State
+    CAnimGraphDoc_StateStatusCondition *-- StateValue
+    CAnimGraphDoc_StateStatusCondition *-- StateComparisonValueType
+    CAnimGraphDoc_StateStatusCondition *-- Comparison_t
     CAnimGraphDoc_StateTransition *-- CAnimGraphDoc_ConditionContainer
     CAnimGraphDoc_StopAtGoalNode *-- CAnimGraphDoc_NodeConnection
     CAnimGraphDoc_SubGraph *-- CAnimGraphDoc_NodeManager
     CAnimGraphDoc_SubGraph *-- CAnimGraphDoc_ComponentManager
     CAnimGraphDoc_SubtractNode *-- CAnimGraphDoc_NodeConnection
     CAnimGraphDoc_TargetSelectorNode *-- CTargetSelectorChild
+    CAnimGraphDoc_TargetSelectorNode *-- TargetWarpLinearRootMotionMode
     CAnimGraphDoc_TargetWarpNode *-- CAnimGraphDoc_NodeConnection
+    CAnimGraphDoc_TargetWarpNode *-- TargetWarpLinearRootMotionMode
+    CAnimGraphDoc_TimeCondition *-- Comparison_t
     CAnimGraphDoc_TurnHelperNode *-- CAnimGraphDoc_NodeConnection
     CAnimGraphDoc_TwoBoneIKNode *-- CAnimGraphDoc_NodeConnection
     CAnimGraphDoc_WayPointHelperNode *-- CAnimGraphDoc_NodeConnection
@@ -218,9 +231,13 @@ classDiagram
     CChoiceNodeChild *-- CAnimGraphDoc_NodeConnection
     CConnectionProxyItem *-- CAnimGraphDoc_NodeConnection
     CDampedValueComponent *-- CDampedValueItem
+    CDampedValueItem *-- DampedValueType
+    CFloatAnimValue *-- EAnimValueSource
     CMovementComponent *-- CAnimGraphDoc_Motor
     CRagdollComponent *-- CAnimGraphDoc_RigidBodyWeightList
     CRemapValueComponent *-- CRemapValueItem
+    CRemapValueItem *-- RemapValueType
+    CSolveIKChainAnimNodeChainData *-- SolveIKChainAnimNodeSettingSource
     CStateAction *-- CAnimGraphDoc_Action
     CTargetSelectorChild *-- CAnimGraphDoc_NodeConnection
 ```

@@ -28,7 +28,7 @@ classDiagram
 | `0x10` | `m_Description` | CUtlString |  |  |
 | `0x18` | `m_Type` | CPulseValueFullType |  |  |
 | `0x30` | `m_DefaultValue` | KeyValues3 |  |  |
-| `0x44` | `m_nKeysSource` | [PulseVariableKeysSource_t](../!GlobalTypes/PulseVariableKeysSource_t.md) |  |  |
+| `0x44` | `m_nKeysSource` | [PulseVariableKeysSource_t](../pulse_runtime_lib/PulseVariableKeysSource_t.md) |  |  |
 | `0x48` | `m_bIsPublicBlackboardVariable` | bool |  |  |
 | `0x49` | `m_bIsObservable` | bool |  |  |
 | `0x4c` | `m_nEditorNodeID` | [PulseDocNodeID_t](../pulse_runtime_lib/PulseDocNodeID_t.md) |  |  |

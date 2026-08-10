@@ -23,7 +23,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `nHitGroup` | [HitGroup_t](../!GlobalTypes/HitGroup_t.md) |  |  |
+| `0x0` | `nHitGroup` | [HitGroup_t](../server/HitGroup_t.md) |  |  |
 | `0x4` | `nDamageLevel` | int32 |  |  |
 | `0x8` | `nDamageLevelsRemaining` | int32 |  |  |
 | `0xc` | `nPrevDamageLevel` | int32 |  |  |

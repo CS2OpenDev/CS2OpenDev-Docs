@@ -39,4 +39,4 @@ classDiagram
 | `0x6c` | `m_iNumHits` | int32 |  |  |
 | `0x70` | `m_iLastBulletUpdate` | int32 |  |  |
 | `0x74` | `m_bIsOtherEnemy` | bool |  |  |
-| `0x75` | `m_killType` | [EKillTypes_t](../!GlobalTypes/EKillTypes_t.md) |  |  |
+| `0x75` | `m_killType` | [EKillTypes_t](../server/EKillTypes_t.md) |  |  |

@@ -35,7 +35,7 @@ classDiagram
 | `0x25` | `m_nMeshletPackedIVBIndex` | uint8 |  |  |
 | `0x28` | `m_rigidMeshParts` | CUtlLeanVector< [CMaterialDrawDescriptor](../modellib/CMaterialDrawDescriptor.md)::RigidMeshPart_t > |  |  |
 | `0x38` | `m_rootBvhNodes` | CUtlLeanVector< uint16 > |  |  |
-| `0x48` | `m_nPrimitiveType` | [RenderPrimitiveType_t](../!GlobalTypes/RenderPrimitiveType_t.md) |  |  |
+| `0x48` | `m_nPrimitiveType` | [RenderPrimitiveType_t](../modellib/RenderPrimitiveType_t.md) |  |  |
 | `0x4c` | `m_nBaseVertex` | int32 |  |  |
 | `0x50` | `m_nVertexCount` | int32 |  |  |
 | `0x54` | `m_nStartIndex` | int32 |  |  |

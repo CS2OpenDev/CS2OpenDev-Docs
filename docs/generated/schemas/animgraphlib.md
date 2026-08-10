@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/animgraphlib.md)
 
-243 types. Each links to its own page with the full field layout.
+300 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -256,3 +256,60 @@ nav_exclude: true
 | [TraceSettings_t](animgraphlib/TraceSettings_t.md) | class | 8 | 2 |  |
 | [TwoBoneIKSettings_t](animgraphlib/TwoBoneIKSettings_t.md) | class | 352 | 15 |  |
 | [WeightList](animgraphlib/WeightList.md) | class | 32 | 2 |  |
+| [AimMatrixBlendMode](animgraphlib/AimMatrixBlendMode.md) | enum | — | 4 |  |
+| [AnimNodeNetworkMode](animgraphlib/AnimNodeNetworkMode.md) | enum | — | 2 |  |
+| [AnimParamButton_t](animgraphlib/AnimParamButton_t.md) | enum | — | 13 |  |
+| [AnimParamNetworkSetting](animgraphlib/AnimParamNetworkSetting.md) | enum | — | 3 |  |
+| [AnimParamType_t](animgraphlib/AnimParamType_t.md) | enum | — | 9 |  |
+| [AnimParamVectorType_t](animgraphlib/AnimParamVectorType_t.md) | enum | — | 5 |  |
+| [AnimScriptType](animgraphlib/AnimScriptType.md) | enum | — | 3 |  |
+| [AnimValueSource](animgraphlib/AnimValueSource.md) | enum | — | 37 |  |
+| [AnimVectorSource](animgraphlib/AnimVectorSource.md) | enum | — | 14 |  |
+| [BinaryNodeChildOption](animgraphlib/BinaryNodeChildOption.md) | enum | — | 2 |  |
+| [BinaryNodeTiming](animgraphlib/BinaryNodeTiming.md) | enum | — | 3 |  |
+| [Blend2DMode](animgraphlib/Blend2DMode.md) | enum | — | 2 |  |
+| [BlendKeyType](animgraphlib/BlendKeyType.md) | enum | — | 4 |  |
+| [BoneMaskBlendSpace](animgraphlib/BoneMaskBlendSpace.md) | enum | — | 4 |  |
+| [CAnimationGraphVisualizerPrimitiveType](animgraphlib/CAnimationGraphVisualizerPrimitiveType.md) | enum | — | 5 |  |
+| [ChoiceBlendMethod](animgraphlib/ChoiceBlendMethod.md) | enum | — | 2 |  |
+| [ChoiceChangeMethod](animgraphlib/ChoiceChangeMethod.md) | enum | — | 3 |  |
+| [ChoiceMethod](animgraphlib/ChoiceMethod.md) | enum | — | 4 |  |
+| [DampingSpeedFunction](animgraphlib/DampingSpeedFunction.md) | enum | — | 4 |  |
+| [EDemoBoneSelectionMode](animgraphlib/EDemoBoneSelectionMode.md) | enum | — | 2 |  |
+| [EIKEndEffectorRotationFixUpMode](animgraphlib/EIKEndEffectorRotationFixUpMode.md) | enum | — | 5 |  |
+| [FacingMode](animgraphlib/FacingMode.md) | enum | — | 5 |  |
+| [FieldNetworkOption](animgraphlib/FieldNetworkOption.md) | enum | — | 3 |  |
+| [FootFallTagFoot_t](animgraphlib/FootFallTagFoot_t.md) | enum | — | 8 |  |
+| [FootLockSubVisualization](animgraphlib/FootLockSubVisualization.md) | enum | — | 2 |  |
+| [FootPinningTimingSource](animgraphlib/FootPinningTimingSource.md) | enum | — | 3 |  |
+| [FootstepJumpPhase_t](animgraphlib/FootstepJumpPhase_t.md) | enum | — | 4 |  |
+| [FootstepLandedFootSoundType_t](animgraphlib/FootstepLandedFootSoundType_t.md) | enum | — | 3 |  |
+| [HandshakeTagState_t](animgraphlib/HandshakeTagState_t.md) | enum | — | 3 |  |
+| [HandshakeTagType_t](animgraphlib/HandshakeTagType_t.md) | enum | — | 4 |  |
+| [IKChannelMode](animgraphlib/IKChannelMode.md) | enum | — | 4 |  |
+| [IKSolverType](animgraphlib/IKSolverType.md) | enum | — | 6 |  |
+| [IKTargetCoordinateSystem](animgraphlib/IKTargetCoordinateSystem.md) | enum | — | 3 |  |
+| [IKTargetSource](animgraphlib/IKTargetSource.md) | enum | — | 3 |  |
+| [IkEndEffectorType](animgraphlib/IkEndEffectorType.md) | enum | — | 2 |  |
+| [IkTargetType](animgraphlib/IkTargetType.md) | enum | — | 4 |  |
+| [JiggleBoneSimSpace](animgraphlib/JiggleBoneSimSpace.md) | enum | — | 3 |  |
+| [JumpCorrectionMethod](animgraphlib/JumpCorrectionMethod.md) | enum | — | 2 |  |
+| [LinearRootMotionBlendMode_t](animgraphlib/LinearRootMotionBlendMode_t.md) | enum | — | 3 |  |
+| [MatterialAttributeTagType_t](animgraphlib/MatterialAttributeTagType_t.md) | enum | — | 2 |  |
+| [OrientationWarpMode_t](animgraphlib/OrientationWarpMode_t.md) | enum | — | 3 |  |
+| [OrientationWarpRootMotionSource_t](animgraphlib/OrientationWarpRootMotionSource_t.md) | enum | — | 3 |  |
+| [OrientationWarpTargetOffsetMode_t](animgraphlib/OrientationWarpTargetOffsetMode_t.md) | enum | — | 4 |  |
+| [PoseType_t](animgraphlib/PoseType_t.md) | enum | — | 3 |  |
+| [RagdollPoseControl](animgraphlib/RagdollPoseControl.md) | enum | — | 1 |  |
+| [ResetCycleOption](animgraphlib/ResetCycleOption.md) | enum | — | 5 |  |
+| [SelectorTagBehavior_t](animgraphlib/SelectorTagBehavior_t.md) | enum | — | 3 |  |
+| [SolveIKChainAnimNodeDebugSetting](animgraphlib/SolveIKChainAnimNodeDebugSetting.md) | enum | — | 7 |  |
+| [StanceOverrideMode](animgraphlib/StanceOverrideMode.md) | enum | — | 2 |  |
+| [StateActionBehavior](animgraphlib/StateActionBehavior.md) | enum | — | 5 |  |
+| [StepPhase](animgraphlib/StepPhase.md) | enum | — | 2 |  |
+| [TagActionStatus](animgraphlib/TagActionStatus.md) | enum | — | 3 |  |
+| [TargetSelectorAngleMode_t](animgraphlib/TargetSelectorAngleMode_t.md) | enum | — | 2 |  |
+| [TargetWarpAngleMode_t](animgraphlib/TargetWarpAngleMode_t.md) | enum | — | 2 |  |
+| [TargetWarpCorrectionMethod](animgraphlib/TargetWarpCorrectionMethod.md) | enum | — | 2 |  |
+| [TargetWarpTimingMethod](animgraphlib/TargetWarpTimingMethod.md) | enum | — | 2 |  |
+| [VelocityMetricMode](animgraphlib/VelocityMetricMode.md) | enum | — | 3 |  |

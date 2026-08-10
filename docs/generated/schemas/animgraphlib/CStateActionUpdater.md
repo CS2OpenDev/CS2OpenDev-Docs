@@ -25,7 +25,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_pAction` | CSmartPtr< [CAnimActionUpdater](../animgraphlib/CAnimActionUpdater.md) > |  |  |
-| `0x8` | `m_eBehavior` | [StateActionBehavior](../!GlobalTypes/StateActionBehavior.md) |  |  |
+| `0x8` | `m_eBehavior` | [StateActionBehavior](../animgraphlib/StateActionBehavior.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

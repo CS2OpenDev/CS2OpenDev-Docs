@@ -40,7 +40,7 @@ classDiagram
 | `0x30` | `m_flGain` | float32 |  | `MPropertyAttributeRange -24 24` `MPropertyFriendlyName Output Gain (dB)` |
 | `0x34` | `m_flModRate` | float32 |  | `MPropertyAttributeRange 0 20` `MPropertyFriendlyName Modulation Rate (Hz)` |
 | `0x38` | `m_flModDepth` | float32 |  | `MPropertyAttributeRange 0 1.0` `MPropertyFriendlyName Modulation Depth (linear)` |
-| `0x3c` | `m_filterType` | [VMixFilterType_t](../!GlobalTypes/VMixFilterType_t.md) |  | `MPropertyFriendlyName Filter Type` `MPropertyGroupName Filter` |
+| `0x3c` | `m_filterType` | [VMixFilterType_t](../soundsystem_lowlevel/VMixFilterType_t.md) |  | `MPropertyFriendlyName Filter Type` `MPropertyGroupName Filter` |
 | `0x40` | `m_flFrequency` | float32 |  | `MPropertyAttributeRange biased 20 22000` `MPropertyFriendlyName Center Frequency (Hz)` `MPropertyGroupName Filter` |
 | `0x44` | `m_flQ` | float32 |  | `MPropertyAttributeRange 0.1 12` `MPropertyFriendlyName Q` `MPropertyGroupName Filter` |
 | `0x48` | `m_flFilterGain` | float32 |  | `MPropertyAttributeRange -24 24` `MPropertyFriendlyName Filter Gain (dB)` `MPropertyGroupName Filter` |

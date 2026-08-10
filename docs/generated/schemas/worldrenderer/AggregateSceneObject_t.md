@@ -26,8 +26,8 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_allFlags` | [ObjectTypeFlags_t](../!GlobalTypes/ObjectTypeFlags_t.md) |  |  |
-| `0x4` | `m_anyFlags` | [ObjectTypeFlags_t](../!GlobalTypes/ObjectTypeFlags_t.md) |  |  |
+| `0x0` | `m_allFlags` | [ObjectTypeFlags_t](../worldrenderer/ObjectTypeFlags_t.md) |  |  |
+| `0x4` | `m_anyFlags` | [ObjectTypeFlags_t](../worldrenderer/ObjectTypeFlags_t.md) |  |  |
 | `0x8` | `m_nLayer` | int16 |  |  |
 | `0xa` | `m_instanceStream` | int16 |  |  |
 | `0xc` | `m_vertexAlbedoStream` | int16 |  |  |

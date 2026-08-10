@@ -30,8 +30,8 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_nMaxCount` | int32 |  |  |
-| `0xc` | `m_nStopType` | [SosActionStopType_t](../!GlobalTypes/SosActionStopType_t.md) |  |  |
-| `0x10` | `m_nSortType` | [SosActionLimitSortType_t](../!GlobalTypes/SosActionLimitSortType_t.md) |  |  |
+| `0xc` | `m_nStopType` | [SosActionStopType_t](../soundsystem/SosActionStopType_t.md) |  |  |
+| `0x10` | `m_nSortType` | [SosActionLimitSortType_t](../soundsystem/SosActionLimitSortType_t.md) |  |  |
 | `0x14` | `m_bStopImmediate` | bool |  |  |
 | `0x15` | `m_bCountStopped` | bool |  | `MPropertyFriendlyName Count Stopped Events` |
 

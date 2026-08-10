@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/soundsystem_voicecontainers.md)
 
-42 types. Each links to its own page with the full field layout.
+49 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -55,3 +55,10 @@ nav_exclude: true
 | [CVoiceContainerVsndTrigger](soundsystem_voicecontainers/CVoiceContainerVsndTrigger.md) | class | 2296 | 17 | [CVoiceContainerBase](soundsystem_voicecontainers/CVoiceContainerBase.md) |
 | [CVsndRadioButtonSlot](soundsystem_voicecontainers/CVsndRadioButtonSlot.md) | class | 136 | 10 |  |
 | [CVsndTriggerSlot](soundsystem_voicecontainers/CVsndTriggerSlot.md) | class | 136 | 9 |  |
+| [CVSoundFormat_t](soundsystem_voicecontainers/CVSoundFormat_t.md) | enum | — | 4 |  |
+| [EMidiNote](soundsystem_voicecontainers/EMidiNote.md) | enum | — | 13 |  |
+| [EMode_t](soundsystem_voicecontainers/EMode_t.md) | enum | — | 2 |  |
+| [EVsndPlaybackMode](soundsystem_voicecontainers/EVsndPlaybackMode.md) | enum | — | 2 |  |
+| [EVsndTriggerMode](soundsystem_voicecontainers/EVsndTriggerMode.md) | enum | — | 2 |  |
+| [EWaveform](soundsystem_voicecontainers/EWaveform.md) | enum | — | 5 |  |
+| [PlayBackMode_t](soundsystem_voicecontainers/PlayBackMode_t.md) | enum | — | 5 |  |

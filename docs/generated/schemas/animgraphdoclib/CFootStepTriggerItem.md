@@ -27,7 +27,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_footName` | CUtlString |  | `MPropertyAttributeChoiceName Foot` `MPropertyFriendlyName Foot` |
-| `0x8` | `m_triggerPhase` | [StepPhase](../!GlobalTypes/StepPhase.md) |  | `MPropertyFriendlyName Trigger Phase` |
+| `0x8` | `m_triggerPhase` | [StepPhase](../animgraphlib/StepPhase.md) |  | `MPropertyFriendlyName Trigger Phase` |
 | `0x10` | `m_tagNames` | CUtlVector< CGlobalSymbol > |  | `MPropertySuppressField` |
 | `0x28` | `m_tagIDs` | CUtlVector< [AnimTagID](../modellib/AnimTagID.md) > |  | `MPropertyAttributeChoiceName Tag` `MPropertyFriendlyName Tags` |
 

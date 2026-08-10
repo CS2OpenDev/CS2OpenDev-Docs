@@ -28,7 +28,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flStartTime` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
 | `0xc` | `m_flDuration` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
-| `0x10` | `m_phase` | [NmFootPhase_t](../!GlobalTypes/NmFootPhase_t.md) |  |  |
+| `0x10` | `m_phase` | [NmFootPhase_t](../animlib/NmFootPhase_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

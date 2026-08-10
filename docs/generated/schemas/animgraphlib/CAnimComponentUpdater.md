@@ -41,5 +41,5 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x18` | `m_name` | CUtlString |  |  |
 | `0x20` | `m_id` | [AnimComponentID](../modellib/AnimComponentID.md) |  |  |
-| `0x24` | `m_networkMode` | [AnimNodeNetworkMode](../!GlobalTypes/AnimNodeNetworkMode.md) |  |  |
+| `0x24` | `m_networkMode` | [AnimNodeNetworkMode](../animgraphlib/AnimNodeNetworkMode.md) |  |  |
 | `0x28` | `m_bStartEnabled` | bool |  |  |

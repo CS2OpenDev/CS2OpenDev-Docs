@@ -27,7 +27,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_PartsDataByHitGroup` | CUtlOrderedMap< [HitGroup_t](../!GlobalTypes/HitGroup_t.md), [CDestructiblePart](../server/CDestructiblePart.md) > |  | `MPropertyDescription Destructible Parts` |
+| `0x0` | `m_PartsDataByHitGroup` | CUtlOrderedMap< [HitGroup_t](../server/HitGroup_t.md), [CDestructiblePart](../server/CDestructiblePart.md) > |  | `MPropertyDescription Destructible Parts` |
 | `0x28` | `m_nMinMaxNumberHitGroupsToDestroyWhenGibbing` | [CRangeInt](../tier2/CRangeInt.md) |  | `MPropertyDescription Min/Max number parts to destroy when gibbing` |
 
 <details><summary>KV3 class defaults</summary>

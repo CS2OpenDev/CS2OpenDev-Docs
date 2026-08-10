@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/physicslib.md)
 
-99 types. Each links to its own page with the full field layout.
+103 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -112,3 +112,7 @@ nav_exclude: true
 | [RnWing_t](physicslib/RnWing_t.md) | class | 12 | 1 |  |
 | [VertexPositionColor_t](physicslib/VertexPositionColor_t.md) | class | 16 | 1 |  |
 | [VertexPositionNormal_t](physicslib/VertexPositionNormal_t.md) | class | 24 | 2 |  |
+| [DynamicContinuousContactBehavior_t](physicslib/DynamicContinuousContactBehavior_t.md) | enum | — | 3 |  |
+| [JointAxis_t](physicslib/JointAxis_t.md) | enum | — | 4 |  |
+| [JointMotion_t](physicslib/JointMotion_t.md) | enum | — | 3 |  |
+| [PhysGenericShapeType_t](physicslib/PhysGenericShapeType_t.md) | enum | — | 5 |  |

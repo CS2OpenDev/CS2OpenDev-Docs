@@ -31,7 +31,7 @@ classDiagram
 | `0x20` | `m_flWeight` | float32 | [CAnimGraphDoc_MotionMetric](../animgraphdoclib/CAnimGraphDoc_MotionMetric.md) | `MPropertySuppressField` |
 | `0x28` | `m_flDistance` | float32 |  | `MPropertyFriendlyName Distance` |
 | `0x2c` | `m_flStoppingDistance` | float32 |  | `MPropertyFriendlyName Stopping Distance` |
-| `0x30` | `m_eMode` | [VelocityMetricMode](../!GlobalTypes/VelocityMetricMode.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Mode` |
+| `0x30` | `m_eMode` | [VelocityMetricMode](../animgraphlib/VelocityMetricMode.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Mode` |
 | `0x31` | `m_bAutoTargetSpeed` | bool |  | `MPropertyAttrStateCallback` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Auto-Calculate target speed` |
 | `0x34` | `m_flManualTargetSpeed` | float32 |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Target Speed` |
 

@@ -27,7 +27,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_valueType` | [DampedValueType](../!GlobalTypes/DampedValueType.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Value Type` |
+| `0x0` | `m_valueType` | [DampedValueType](../animgraphdoclib/DampedValueType.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Value Type` |
 | `0x8` | `m_floatParamNameIn` | CUtlString |  | `MPropertySuppressField` |
 | `0x10` | `m_floatParamNameOut` | CUtlString |  | `MPropertySuppressField` |
 | `0x18` | `m_vectorParamNameIn` | CUtlString |  | `MPropertySuppressField` |

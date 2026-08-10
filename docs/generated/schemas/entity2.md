@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/entity2.md)
 
-16 types. Each links to its own page with the full field layout.
+18 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -29,3 +29,5 @@ nav_exclude: true
 | [EntityIOQueuePrioritizedEvent_t](entity2/EntityIOQueuePrioritizedEvent_t.md) | class | 112 | 8 |  |
 | [GameTick_t](entity2/GameTick_t.md) | class | 4 | 1 |  |
 | [GameTime_t](entity2/GameTime_t.md) | class | 4 | 1 |  |
+| [EntityDormancyType_t](entity2/EntityDormancyType_t.md) | enum | — | 3 |  |
+| [EntityIOTargetType_t](entity2/EntityIOTargetType_t.md) | enum | — | 4 |  |

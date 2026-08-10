@@ -35,7 +35,7 @@ classDiagram
 | `0x28` | `m_vecPosition` | Vector2D | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyGroupName Debug` `MPropertySortPriority -100` |
 | `0x30` | `m_nNodeID` | [AnimNodeID](../modellib/AnimNodeID.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyGroupName Debug` `MPropertySortPriority -100` |
 | `0x34` | `m_bDebugThisNode` | bool | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Debug This Node` `MPropertyGroupName Debug` `MPropertySortPriority -100` |
-| `0x38` | `m_networkMode` | [AnimNodeNetworkMode](../!GlobalTypes/AnimNodeNetworkMode.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Network Mode` `MPropertySortPriority -110` |
+| `0x38` | `m_networkMode` | [AnimNodeNetworkMode](../animgraphlib/AnimNodeNetworkMode.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Network Mode` `MPropertySortPriority -110` |
 | `0x40` | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../animgraphdoclib/CAnimGraphDoc_NodeConnection.md) |  | `MPropertySuppressField` |
 | `0x48` | `m_bApplyMovement` | bool |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Generate Movement` `MPropertyGroupName Generate Movement` |
 | `0x50` | `m_moveVectorParamName` | CUtlString |  | `MPropertySuppressField` |
@@ -45,7 +45,7 @@ classDiagram
 | `0x68` | `m_moveHeadingParam` | [AnimParamID](../modellib/AnimParamID.md) |  | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Movement Heading Parameter` `MPropertyGroupName Orient Movement` |
 | `0x6c` | `m_bAdditive` | bool |  | `MPropertyFriendlyName Additive` |
 | `0x6d` | `m_bTurnToFace` | bool |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Turn to Face` `MPropertyGroupName Turn to Face` |
-| `0x70` | `m_facingTarget` | [AnimValueSource](../!GlobalTypes/AnimValueSource.md) |  | `MPropertyAttrStateCallback` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Face Direction` `MPropertyGroupName Turn to Face` |
+| `0x70` | `m_facingTarget` | [AnimValueSource](../animgraphlib/AnimValueSource.md) |  | `MPropertyAttrStateCallback` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Face Direction` `MPropertyGroupName Turn to Face` |
 | `0x78` | `m_paramName` | CUtlString |  | `MPropertySuppressField` |
 | `0x80` | `m_param` | [AnimParamID](../modellib/AnimParamID.md) |  | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Facing Parameter` `MPropertyGroupName Turn to Face` |
 | `0x84` | `m_bLimitOnly` | bool |  | `MPropertyAttrStateCallback` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Turn Limit Only` `MPropertyGroupName Turn to Face` |

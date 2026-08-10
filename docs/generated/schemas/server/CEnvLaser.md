@@ -52,12 +52,12 @@ classDiagram
 | `0x2d8` | `m_lifeState` | uint8 | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x2dc` | `m_flDamageAccumulator` | float32 | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x2e0` | `m_bTakesDamage` | bool | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2e8` | `m_nTakeDamageFlags` | [TakeDamageFlags_t](../!GlobalTypes/TakeDamageFlags_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2f0` | `m_nPlatformType` | [EntityPlatformTypes_t](../!GlobalTypes/EntityPlatformTypes_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2f2` | `m_MoveCollide` | [MoveCollide_t](../!GlobalTypes/MoveCollide_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2f3` | `m_MoveType` | [MoveType_t](../!GlobalTypes/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2f4` | `m_nPreviouslySetMoveType` | [MoveType_t](../!GlobalTypes/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2f5` | `m_nActualMoveType` | [MoveType_t](../!GlobalTypes/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2e8` | `m_nTakeDamageFlags` | [TakeDamageFlags_t](../server/TakeDamageFlags_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2f0` | `m_nPlatformType` | [EntityPlatformTypes_t](../server/EntityPlatformTypes_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2f2` | `m_MoveCollide` | [MoveCollide_t](../server/MoveCollide_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2f3` | `m_MoveType` | [MoveType_t](../server/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2f4` | `m_nPreviouslySetMoveType` | [MoveType_t](../server/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2f5` | `m_nActualMoveType` | [MoveType_t](../server/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x2f6` | `m_nWaterTouch` | uint8 | [CBaseEntity](../server/CBaseEntity.md) | `MNotSaved` |
 | `0x2f7` | `m_nSlimeTouch` | uint8 | [CBaseEntity](../server/CBaseEntity.md) | `MNotSaved` |
 | `0x2f8` | `m_bRestoreInHierarchy` | bool | [CBaseEntity](../server/CBaseEntity.md) |  |
@@ -115,16 +115,16 @@ classDiagram
 | `0x490` | `m_pBlocker` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x494` | `m_flLocalTime` | float32 | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x498` | `m_flVPhysicsUpdateLocalTime` | float32 | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x49c` | `m_nBloodType` | [BloodType](../!GlobalTypes/BloodType.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x49c` | `m_nBloodType` | [BloodType](../server/BloodType.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x4a0` | `m_pPulseGraphInstance` | [CPulseGraphInstance_ServerEntity](../server/CPulseGraphInstance_ServerEntity.md)* | [CBaseEntity](../server/CBaseEntity.md) | `MKV3TransferSaveOpsForField GetPulseInstanceSaveRestoreOps` |
 | `0x4a8` | `m_CRenderComponent` | [CRenderComponent](../server/CRenderComponent.md)* | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MNotSaved` |
 | `0x4b0` | `m_CHitboxComponent` | [CHitboxComponent](../server/CHitboxComponent.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x4c8` | `m_pChoreoComponent` | [CChoreoComponent](../server/CChoreoComponent.md)* | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x4d0` | `m_nDestructiblePartInitialStateDestructed0` | [HitGroup_t](../!GlobalTypes/HitGroup_t.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x4d4` | `m_nDestructiblePartInitialStateDestructed1` | [HitGroup_t](../!GlobalTypes/HitGroup_t.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x4d8` | `m_nDestructiblePartInitialStateDestructed2` | [HitGroup_t](../!GlobalTypes/HitGroup_t.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x4dc` | `m_nDestructiblePartInitialStateDestructed3` | [HitGroup_t](../!GlobalTypes/HitGroup_t.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x4e0` | `m_nDestructiblePartInitialStateDestructed4` | [HitGroup_t](../!GlobalTypes/HitGroup_t.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x4d0` | `m_nDestructiblePartInitialStateDestructed0` | [HitGroup_t](../server/HitGroup_t.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x4d4` | `m_nDestructiblePartInitialStateDestructed1` | [HitGroup_t](../server/HitGroup_t.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x4d8` | `m_nDestructiblePartInitialStateDestructed2` | [HitGroup_t](../server/HitGroup_t.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x4dc` | `m_nDestructiblePartInitialStateDestructed3` | [HitGroup_t](../server/HitGroup_t.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x4e0` | `m_nDestructiblePartInitialStateDestructed4` | [HitGroup_t](../server/HitGroup_t.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x4e4` | `m_nDestructiblePartInitialStateDestructed0_PartIndex` | int32 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x4e8` | `m_nDestructiblePartInitialStateDestructed1_PartIndex` | int32 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x4ec` | `m_nDestructiblePartInitialStateDestructed2_PartIndex` | int32 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
@@ -139,8 +139,8 @@ classDiagram
 | `0x508` | `m_OnDestructibleHitGroupDamageLevelChanged` | CEntityOutputTemplate< [CBaseModelEntity](../server/CBaseModelEntity.md)::OnDamageLevelChangedArgs_t > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x530` | `m_flDissolveStartTime` | [GameTime_t](../entity2/GameTime_t.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x538` | `m_OnIgnite` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x550` | `m_nRenderMode` | [RenderMode_t](../!GlobalTypes/RenderMode_t.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x551` | `m_nRenderFX` | [RenderFx_t](../!GlobalTypes/RenderFx_t.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x550` | `m_nRenderMode` | [RenderMode_t](../server/RenderMode_t.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x551` | `m_nRenderFX` | [RenderFx_t](../server/RenderFx_t.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x552` | `m_bAllowFadeInView` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x570` | `m_clrRender` | Color | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x578` | `m_vecRenderAttributes` | CUtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../server/EntityRenderAttribute_t.md) > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
@@ -164,7 +164,7 @@ classDiagram
 | `0x780` | `m_nNumBeamEnts` | uint8 | [CBeam](../server/CBeam.md) |  |
 | `0x788` | `m_hBaseMaterial` | CStrongHandle< [InfoForResourceTypeIMaterial2](../resourcesystem/InfoForResourceTypeIMaterial2.md) > | [CBeam](../server/CBeam.md) |  |
 | `0x790` | `m_nHaloIndex` | CStrongHandle< [InfoForResourceTypeIMaterial2](../resourcesystem/InfoForResourceTypeIMaterial2.md) > | [CBeam](../server/CBeam.md) |  |
-| `0x798` | `m_nBeamType` | [BeamType_t](../!GlobalTypes/BeamType_t.md) | [CBeam](../server/CBeam.md) |  |
+| `0x798` | `m_nBeamType` | [BeamType_t](../server/BeamType_t.md) | [CBeam](../server/CBeam.md) |  |
 | `0x79c` | `m_nBeamFlags` | uint32 | [CBeam](../server/CBeam.md) |  |
 | `0x7a0` | `m_hAttachEntity` | CHandle< [CBaseEntity](../server/CBaseEntity.md) >[10] | [CBeam](../server/CBeam.md) |  |
 | `0x7c8` | `m_nAttachIndex` | [AttachmentHandle_t](../modellib/AttachmentHandle_t.md)[10] | [CBeam](../server/CBeam.md) |  |

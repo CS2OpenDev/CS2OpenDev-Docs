@@ -29,8 +29,8 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flOpStrength` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator strength` `MPropertySortPriority -100` |
-| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../!GlobalTypes/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
-| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../!GlobalTypes/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
+| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
+| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
 | `0x180` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
 | `0x184` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
 | `0x188` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
@@ -51,8 +51,8 @@ classDiagram
 | `0x1e4` | `m_nFirstSourcePoint` | int32 |  | `MPropertyFriendlyName first particle to copy` |
 | `0x1e8` | `m_bReverse` | bool |  | `MPropertyFriendlyName reverse order` |
 | `0x1e9` | `m_bSetOrientation` | bool |  | `MPropertyFriendlyName set orientation` |
-| `0x1ec` | `m_nOrientationMode` | [ParticleOrientationSetMode_t](../!GlobalTypes/ParticleOrientationSetMode_t.md) |  | `MPropertyFriendlyName orientation style` |
-| `0x1f0` | `m_nSetParent` | [ParticleParentSetMode_t](../!GlobalTypes/ParticleParentSetMode_t.md) |  | `MPropertyFriendlyName set parent` |
+| `0x1ec` | `m_nOrientationMode` | [ParticleOrientationSetMode_t](../particles/ParticleOrientationSetMode_t.md) |  | `MPropertyFriendlyName orientation style` |
+| `0x1f0` | `m_nSetParent` | [ParticleParentSetMode_t](../particles/ParticleParentSetMode_t.md) |  | `MPropertyFriendlyName set parent` |
 
 <details><summary>KV3 class defaults</summary>
 

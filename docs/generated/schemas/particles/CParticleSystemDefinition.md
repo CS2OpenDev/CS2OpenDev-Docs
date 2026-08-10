@@ -94,7 +94,7 @@ classDiagram
 | `0x359` | `m_bShouldHitboxesFallbackToRenderBounds` | bool |  | `MPropertyFriendlyName Hitboxes fall back to render bounds` |
 | `0x35a` | `m_bShouldHitboxesFallbackToSnapshot` | bool |  | `MPropertyFriendlyName Hitboxes fall back to snapshot` |
 | `0x35b` | `m_bShouldHitboxesFallbackToCollisionHulls` | bool |  | `MPropertyFriendlyName Hitboxes fall back to collision hulls` |
-| `0x35c` | `m_nViewModelEffect` | [InheritableBoolType_t](../!GlobalTypes/InheritableBoolType_t.md) |  | `MPropertyFriendlyName view model effect` `MPropertyStartGroup Rendering Options` `MPropertySuppressExpr m_bScreenSpaceEffect` |
+| `0x35c` | `m_nViewModelEffect` | [InheritableBoolType_t](../particles/InheritableBoolType_t.md) |  | `MPropertyFriendlyName view model effect` `MPropertyStartGroup Rendering Options` `MPropertySuppressExpr m_bScreenSpaceEffect` |
 | `0x360` | `m_bScreenSpaceEffect` | bool |  | `MPropertyFriendlyName screen space effect` `MPropertySuppressExpr m_nViewModelEffect == INHERITABLE_BOOL_TRUE` |
 | `0x368` | `m_pszTargetLayerID` | CUtlSymbolLarge |  | `MPropertyFriendlyName target layer ID for rendering` |
 | `0x370` | `m_nSkipRenderControlPoint` | int32 |  | `MPropertyFriendlyName control point to disable rendering if it is the camera` |

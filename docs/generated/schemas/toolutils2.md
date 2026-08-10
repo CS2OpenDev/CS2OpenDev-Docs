@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/toolutils2.md)
 
-21 types. Each links to its own page with the full field layout.
+23 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -34,3 +34,5 @@ nav_exclude: true
 | [CToolsConfig](toolutils2/CToolsConfig.md) | class | 72 | 3 |  |
 | [CVMMDAssetTypeInfo](toolutils2/CVMMDAssetTypeInfo.md) | class | 256 | 0 | [CSimpleAssetTypeInfo](toolutils2/CSimpleAssetTypeInfo.md) |
 | [ResourceBlockTypeInfo_t](toolutils2/ResourceBlockTypeInfo_t.md) | class | 32 | 4 |  |
+| [AssetWarningFixType_t](toolutils2/AssetWarningFixType_t.md) | enum | — | 3 |  |
+| [ResourceDataEncodingType_t](toolutils2/ResourceDataEncodingType_t.md) | enum | — | 15 |  |

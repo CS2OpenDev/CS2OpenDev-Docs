@@ -55,6 +55,7 @@ classDiagram
     CVMixAutoFilterProcessorDesc *-- VMixAutoFilterDesc_t
     CVMixBoxverb2ProcessorDesc *-- VMixBoxverbDesc_t
     CVMixBoxverbProcessorDesc *-- VMixBoxverbDesc_t
+    CVMixCommand *-- VMixGraphCommandID_t
     CVMixConvolutionProcessorDesc *-- VMixConvolutionDesc_t
     CVMixDelayProcessorDesc *-- VMixDelayDesc_t
     CVMixDiffusorProcessorDesc *-- VMixDiffusorDesc_t
@@ -79,10 +80,17 @@ classDiagram
     CVMixUtilityProcessorDesc *-- VMixUtilityDesc_t
     CVMixVocoderProcessorDesc *-- VMixVocoderDesc_t
     VMixAutoFilterDesc_t *-- VMixFilterDesc_t
+    VMixAutoFilterDesc_t *-- VMixLFOShape_t
     VMixBoxverbDesc_t *-- VMixFilterDesc_t
     VMixDelayDesc_t *-- VMixFilterDesc_t
     VMixDualCompressorDesc_t *-- VMixDynamicsBand_t
     VMixDynamics3BandDesc_t *-- VMixDynamicsBand_t
     VMixEQ8Desc_t *-- VMixFilterDesc_t
+    VMixFilterDesc_t *-- VMixFilterType_t
+    VMixFilterDesc_t *-- VMixFilterSlope_t
     VMixModDelayDesc_t *-- VMixFilterDesc_t
+    VMixOscDesc_t *-- VMixLFOShape_t
+    VMixPannerDesc_t *-- VMixPannerType_t
+    VMixSubgraphSwitchDesc_t *-- VMixSubgraphSwitchInterpolationType_t
+    VMixUtilityDesc_t *-- VMixChannelOperation_t
 ```

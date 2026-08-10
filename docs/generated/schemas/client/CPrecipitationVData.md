@@ -32,7 +32,7 @@ classDiagram
 | `0x108` | `m_szParticlePrecipitationPuddleEffect` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeIParticleSystemDefinition](../resourcesystem/InfoForResourceTypeIParticleSystemDefinition.md) > > |  |  |
 | `0x1e8` | `m_szParticlePrecipitationPostEffect` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeIParticleSystemDefinition](../resourcesystem/InfoForResourceTypeIParticleSystemDefinition.md) > > |  |  |
 | `0x2c8` | `m_flInnerDistance` | float32 |  |  |
-| `0x2cc` | `m_nAttachType` | [ParticleAttachment_t](../!GlobalTypes/ParticleAttachment_t.md) |  |  |
+| `0x2cc` | `m_nAttachType` | [ParticleAttachment_t](../animationsystem/ParticleAttachment_t.md) |  |  |
 | `0x2d0` | `m_bBatchSameVolumeType` | bool |  |  |
 | `0x2d4` | `m_nRTEnvCP` | int32 |  |  |
 | `0x2d8` | `m_nRTEnvCPComponent` | int32 |  |  |

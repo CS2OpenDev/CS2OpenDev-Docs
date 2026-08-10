@@ -30,8 +30,8 @@ classDiagram
 | `0x8` | `m_flStartTime` | [NmPercent_t](../animlib/NmPercent_t.md) | [CNmEvent](../animlib/CNmEvent.md) |  |
 | `0xc` | `m_flDuration` | [NmPercent_t](../animlib/NmPercent_t.md) | [CNmEvent](../animlib/CNmEvent.md) |  |
 | `0x10` | `m_syncID` | CGlobalSymbol | [CNmEvent](../animlib/CNmEvent.md) |  |
-| `0x18` | `m_rule` | [NmTargetWarpRule_t](../!GlobalTypes/NmTargetWarpRule_t.md) |  |  |
-| `0x19` | `m_algorithm` | [NmTargetWarpAlgorithm_t](../!GlobalTypes/NmTargetWarpAlgorithm_t.md) |  |  |
+| `0x18` | `m_rule` | [NmTargetWarpRule_t](../animlib/NmTargetWarpRule_t.md) |  |  |
+| `0x19` | `m_algorithm` | [NmTargetWarpAlgorithm_t](../animlib/NmTargetWarpAlgorithm_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

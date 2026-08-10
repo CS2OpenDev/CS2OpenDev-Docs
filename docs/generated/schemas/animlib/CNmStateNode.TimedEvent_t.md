@@ -25,7 +25,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x0` | `m_ID` | CGlobalSymbol |  |  |
 | `0x8` | `m_flTimeValueSeconds` | float32 |  |  |
-| `0xc` | `m_comparisionOperator` | CNmStateNode::TimedEvent_t::[Comparison_t](../!GlobalTypes/Comparison_t.md) |  |  |
+| `0xc` | `m_comparisionOperator` | CNmStateNode::TimedEvent_t::[Comparison_t](../animgraphdoclib/Comparison_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

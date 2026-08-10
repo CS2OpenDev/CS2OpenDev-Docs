@@ -35,7 +35,7 @@ classDiagram
 | `0x20` | `m_DisplayName` | CUtlString | [CSmartPropVariable](../smartprops/CSmartPropVariable.md) | `MPropertyDescription Name of the parameter which will appear as a property in the Hammer object properties ui when selecting an object using this smart prop.` `MPropertyFriendlyName Parameter Display Name` `MPropertyReadonlyExpr m_bExposeAsParameter == false` `MPropertySortPriority -1` |
 | `0x28` | `m_HideExpression` | CUtlString | [CSmartPropVariable](../smartprops/CSmartPropVariable.md) | `MPropertyDescription Expression to evaluate to determine if this parameter should be hidden. Can be used to hide this parameter based on the state of other parameters.` `MPropertyReadonlyExpr m_bExposeAsParameter == false` `MPropertySortPriority -1` |
 | `0x30` | `m_ReadOnlyExpression` | CUtlString | [CSmartPropVariable](../smartprops/CSmartPropVariable.md) | `MPropertyDescription Expression to evaluate to detemrine if this parameter should be read-only. Can be used to make this parameter read-only based on the state of other parameters.` `MPropertyReadonlyExpr m_bExposeAsParameter == false` `MPropertySortPriority -1` |
-| `0x38` | `m_DefaultValue` | [SmartPropGridPlacementMode_t](../!GlobalTypes/SmartPropGridPlacementMode_t.md) |  |  |
+| `0x38` | `m_DefaultValue` | [SmartPropGridPlacementMode_t](../smartprops/SmartPropGridPlacementMode_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

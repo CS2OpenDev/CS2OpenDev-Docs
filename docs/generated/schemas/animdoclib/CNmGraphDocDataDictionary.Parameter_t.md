@@ -28,7 +28,7 @@ classDiagram
 | `0x0` | `m_ID` | V_uuid_t |  | `MPropertySuppressField` |
 | `0x10` | `m_name` | CUtlString |  | `MPropertyFlattenIntoParentRow` |
 | `0x18` | `m_groupName` | CUtlString |  |  |
-| `0x20` | `m_valueType` | [NmGraphValueType_t](../!GlobalTypes/NmGraphValueType_t.md) |  |  |
+| `0x20` | `m_valueType` | [NmGraphValueType_t](../animlib/NmGraphValueType_t.md) |  |  |
 | `0x28` | `m_expectedValues` | CUtlVector< CGlobalSymbol > |  | `MPropertyAttrStateCallback` `MPropertyAutoExpandSelf` |
 
 <details><summary>KV3 class defaults</summary>

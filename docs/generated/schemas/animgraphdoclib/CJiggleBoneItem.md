@@ -29,7 +29,7 @@ classDiagram
 | `0x8` | `m_flSpringStrength` | float32 |  | `MPropertyFriendlyName Spring Strength` |
 | `0xc` | `m_flSimRateFPS` | float32 |  | `MPropertyFriendlyName Sim Rate (FPS)` |
 | `0x10` | `m_flDamping` | float32 |  | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName Damping` |
-| `0x14` | `m_eSimSpace` | [JiggleBoneSimSpace](../!GlobalTypes/JiggleBoneSimSpace.md) |  | `MPropertyFriendlyName Sim Space` |
+| `0x14` | `m_eSimSpace` | [JiggleBoneSimSpace](../animgraphlib/JiggleBoneSimSpace.md) |  | `MPropertyFriendlyName Sim Space` |
 | `0x18` | `m_vBoundsMaxLS` | Vector |  | `MPropertyFriendlyName Max` `MPropertyGroupName Movement Limits` |
 | `0x24` | `m_vBoundsMinLS` | Vector |  | `MPropertyFriendlyName Min` `MPropertyGroupName Movement Limits` |
 

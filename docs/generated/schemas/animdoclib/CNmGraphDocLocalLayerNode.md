@@ -37,7 +37,7 @@ classDiagram
 | `0xd8` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0x100` | `m_isSynchronized` | bool | [CNmGraphDocLayerBaseNode](../animdoclib/CNmGraphDocLayerBaseNode.md) |  |
 | `0x101` | `m_ignoreEvents` | bool | [CNmGraphDocLayerBaseNode](../animdoclib/CNmGraphDocLayerBaseNode.md) |  |
-| `0x102` | `m_blendMode` | [NmPoseBlendMode_t](../!GlobalTypes/NmPoseBlendMode_t.md) | [CNmGraphDocLayerBaseNode](../animdoclib/CNmGraphDocLayerBaseNode.md) |  |
+| `0x102` | `m_blendMode` | [NmPoseBlendMode_t](../animlib/NmPoseBlendMode_t.md) | [CNmGraphDocLayerBaseNode](../animdoclib/CNmGraphDocLayerBaseNode.md) |  |
 
 <details><summary>KV3 class defaults</summary>
 

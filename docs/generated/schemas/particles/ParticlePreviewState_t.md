@@ -26,7 +26,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x0` | `m_previewModel` | CUtlString |  |  |
 | `0x8` | `m_nModSpecificData` | uint32 |  |  |
-| `0xc` | `m_groundType` | [PetGroundType_t](../!GlobalTypes/PetGroundType_t.md) |  |  |
+| `0xc` | `m_groundType` | [PetGroundType_t](../particles/PetGroundType_t.md) |  |  |
 | `0x10` | `m_sequenceName` | CUtlString |  |  |
 | `0x18` | `m_nFireParticleOnSequenceFrame` | int32 |  |  |
 | `0x20` | `m_hitboxSetName` | CUtlString |  |  |

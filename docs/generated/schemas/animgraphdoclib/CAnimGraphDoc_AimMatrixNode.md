@@ -37,17 +37,17 @@ classDiagram
 | `0x28` | `m_vecPosition` | Vector2D | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyGroupName Debug` `MPropertySortPriority -100` |
 | `0x30` | `m_nNodeID` | [AnimNodeID](../modellib/AnimNodeID.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyGroupName Debug` `MPropertySortPriority -100` |
 | `0x34` | `m_bDebugThisNode` | bool | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Debug This Node` `MPropertyGroupName Debug` `MPropertySortPriority -100` |
-| `0x38` | `m_networkMode` | [AnimNodeNetworkMode](../!GlobalTypes/AnimNodeNetworkMode.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Network Mode` `MPropertySortPriority -110` |
+| `0x38` | `m_networkMode` | [AnimNodeNetworkMode](../animgraphlib/AnimNodeNetworkMode.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Network Mode` `MPropertySortPriority -110` |
 | `0x48` | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../animgraphdoclib/CAnimGraphDoc_NodeConnection.md) |  | `MPropertySuppressField` |
 | `0x50` | `m_sequenceName` | CUtlString |  | `MPropertyAttributeChoiceName Sequence` `MPropertyFriendlyName Sequence` |
 | `0x58` | `m_flMaxYawAngle` | float32 |  | `MPropertyFriendlyName Max Yaw Angle` |
 | `0x5c` | `m_flMaxPitchAngle` | float32 |  | `MPropertyFriendlyName Max Pitch Angle` |
-| `0x60` | `m_target` | [AnimVectorSource](../!GlobalTypes/AnimVectorSource.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Target` |
+| `0x60` | `m_target` | [AnimVectorSource](../animgraphlib/AnimVectorSource.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Target` |
 | `0x68` | `m_paramName` | CUtlString |  | `MPropertySuppressField` |
 | `0x70` | `m_param` | [AnimParamID](../modellib/AnimParamID.md) |  | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName VectorParameter` `MPropertyFriendlyName Parameter` |
 | `0x74` | `m_bIsPosition` | bool |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Parameter is a Position` |
 | `0x78` | `m_attachmentName` | CUtlString |  | `MPropertyAttributeChoiceName Attachment` `MPropertyFriendlyName Aim Attachment` |
-| `0x80` | `m_blendMode` | [AimMatrixBlendMode](../!GlobalTypes/AimMatrixBlendMode.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Blend Mode` |
+| `0x80` | `m_blendMode` | [AimMatrixBlendMode](../animgraphlib/AimMatrixBlendMode.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Blend Mode` |
 | `0x88` | `m_boneMaskName` | CUtlString |  | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName BoneMask` `MPropertyFriendlyName Bone Mask` |
 | `0x90` | `m_bResetBase` | bool |  | `MPropertyFriendlyName Reset Child` |
 | `0x91` | `m_bLockWhenWaning` | bool |  | `MPropertyFriendlyName Lock Blend When Waning` |

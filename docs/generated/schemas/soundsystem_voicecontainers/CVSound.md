@@ -26,7 +26,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x0` | `m_Sentences` | CUtlLeanVector< [CAudioSentence](../soundsystem_voicecontainers/CAudioSentence.md) > |  |  |
 | `0x10` | `m_nRate` | int32 |  |  |
-| `0x14` | `m_nFormat` | [CVSoundFormat_t](../!GlobalTypes/CVSoundFormat_t.md) |  |  |
+| `0x14` | `m_nFormat` | [CVSoundFormat_t](../soundsystem_voicecontainers/CVSoundFormat_t.md) |  |  |
 | `0x18` | `m_nChannels` | uint32 |  |  |
 | `0x1c` | `m_nLoopStart` | int32 |  |  |
 | `0x20` | `m_nSampleCount` | uint32 |  |  |

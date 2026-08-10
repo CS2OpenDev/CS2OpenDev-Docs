@@ -487281,11 +487281,11 @@
     "generator": "https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker",
     "platform": "windows-x86_64",
     "revision": "hl2sdk-cs2/5f891c9026230cce0fc0a3fc4b5fef1c467a1385/v1/3d1200e346019c59",
-    "schema_version": "0.5.0",
-    "tool_commit": "a75981da32889cc2e5dce4f343b257b6341ee81a",
-    "tool_version": "0.5.0",
+    "schema_version": "0.5.1",
+    "tool_commit": "4fcf64161d71110026ab885a24bff8be38103c91",
+    "tool_version": "0.5.1",
     "version_date": "2026-08-03",
     "version_time": "2026-08-03T18:18:10Z"
   },
-  "transition_count": 378
+  "transition_count": 379
 }

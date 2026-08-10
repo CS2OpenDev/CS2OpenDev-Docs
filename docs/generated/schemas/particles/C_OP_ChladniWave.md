@@ -31,8 +31,8 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flOpStrength` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator strength` `MPropertySortPriority -100` |
-| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../!GlobalTypes/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
-| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../!GlobalTypes/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
+| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
+| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
 | `0x180` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
 | `0x184` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
 | `0x188` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
@@ -54,7 +54,7 @@ classDiagram
 | `0x630` | `m_flOutputMax` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName output maximum` |
 | `0x7a0` | `m_vecWaveLength` | [CPerParticleVecInput](../particleslib/CPerParticleVecInput.md) |  | `MPropertyFriendlyName wave length` |
 | `0xe58` | `m_vecHarmonics` | [CPerParticleVecInput](../particleslib/CPerParticleVecInput.md) |  | `MPropertyFriendlyName harmonics` |
-| `0x1510` | `m_nSetMethod` | [ParticleSetMethod_t](../!GlobalTypes/ParticleSetMethod_t.md) |  | `MPropertyFriendlyName set value method` |
+| `0x1510` | `m_nSetMethod` | [ParticleSetMethod_t](../particleslib/ParticleSetMethod_t.md) |  | `MPropertyFriendlyName set value method` |
 | `0x1514` | `m_nLocalSpaceControlPoint` | int32 |  | `MPropertyFriendlyName local space control point` |
 | `0x1518` | `m_b3D` | bool |  | `MPropertyFriendlyName 3D` |
 

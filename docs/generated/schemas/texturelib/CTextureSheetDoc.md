@@ -26,7 +26,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_ePackingMode` | [PackingMode_t](../!GlobalTypes/PackingMode_t.md) |  |  |
+| `0x0` | `m_ePackingMode` | [PackingMode_t](../texturelib/PackingMode_t.md) |  |  |
 | `0x4` | `m_NumMips` | int32 |  |  |
 | `0x8` | `m_bHasDecalParams` | bool |  | `MPropertySuppressExpr m_sLayoutOwnerSheet != "" ` |
 | `0x10` | `m_sLayoutOwnerSheet` | CUtlString |  | `MPropertyAttributeEditor AssetBrowse( mks )` |

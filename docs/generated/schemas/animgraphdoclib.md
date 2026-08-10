@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/animgraphdoclib.md)
 
-158 types. Each links to its own page with the full field layout.
+172 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -171,3 +171,17 @@ nav_exclude: true
 | [CStateAction](animgraphdoclib/CStateAction.md) | class | 24 | 2 |  |
 | [CStateMachineComponent](animgraphdoclib/CStateMachineComponent.md) | class | 104 | 1 | [CAnimGraphDoc_Component](animgraphdoclib/CAnimGraphDoc_Component.md), [CAnimGraphDoc_StateMachine](animgraphdoclib/CAnimGraphDoc_StateMachine.md) |
 | [CTargetSelectorChild](animgraphdoclib/CTargetSelectorChild.md) | class | 24 | 2 |  |
+| [AnimConflictType_t](animgraphdoclib/AnimConflictType_t.md) | enum | — | 3 |  |
+| [ComparisonValueType](animgraphdoclib/ComparisonValueType.md) | enum | — | 2 |  |
+| [Comparison_t](animgraphdoclib/Comparison_t.md) | enum | — | 7 |  |
+| [DampedValueType](animgraphdoclib/DampedValueType.md) | enum | — | 2 |  |
+| [EAnimConflictIndex_t](animgraphdoclib/EAnimConflictIndex_t.md) | enum | — | 4 |  |
+| [EAnimValueSource](animgraphdoclib/EAnimValueSource.md) | enum | — | 2 |  |
+| [FinishedConditionOption](animgraphdoclib/FinishedConditionOption.md) | enum | — | 2 |  |
+| [RemapValueType](animgraphdoclib/RemapValueType.md) | enum | — | 2 |  |
+| [SelectionSource_t](animgraphdoclib/SelectionSource_t.md) | enum | — | 3 |  |
+| [SingleFrameSelection](animgraphdoclib/SingleFrameSelection.md) | enum | — | 3 |  |
+| [SolveIKChainAnimNodeSettingSource](animgraphdoclib/SolveIKChainAnimNodeSettingSource.md) | enum | — | 2 |  |
+| [StateComparisonValueType](animgraphdoclib/StateComparisonValueType.md) | enum | — | 3 |  |
+| [StateValue](animgraphdoclib/StateValue.md) | enum | — | 5 |  |
+| [TargetWarpLinearRootMotionMode](animgraphdoclib/TargetWarpLinearRootMotionMode.md) | enum | — | 2 |  |

@@ -28,7 +28,7 @@ classDiagram
 | `0x8` | `m_flDelay` | float32 |  | `MPropertyFriendlyName delay` |
 | `0xc` | `m_bEndCap` | bool |  | `MPropertyFriendlyName end cap effect` |
 | `0xd` | `m_bDisableChild` | bool |  | `MPropertySuppressField` |
-| `0x10` | `m_nDetailLevel` | [ParticleDetailLevel_t](../!GlobalTypes/ParticleDetailLevel_t.md) |  | `MPropertyFriendlyName disable at detail levels below` |
+| `0x10` | `m_nDetailLevel` | [ParticleDetailLevel_t](../particles/ParticleDetailLevel_t.md) |  | `MPropertyFriendlyName disable at detail levels below` |
 
 <details><summary>KV3 class defaults</summary>
 

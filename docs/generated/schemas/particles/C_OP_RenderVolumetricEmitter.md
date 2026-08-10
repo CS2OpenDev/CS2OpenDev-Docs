@@ -32,8 +32,8 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flOpStrength` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator strength` `MPropertySortPriority -100` |
-| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../!GlobalTypes/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
-| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../!GlobalTypes/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
+| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
+| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
 | `0x180` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
 | `0x184` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
 | `0x188` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
@@ -52,9 +52,9 @@ classDiagram
 | `0x220` | `m_bCannotBeRefracted` | bool | [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md) | `MPropertyFriendlyName I cannot be refracted through refracting objects like water` `MPropertySortPriority -1` `MPropertyStartGroup Rendering filter` |
 | `0x221` | `m_bSkipRenderingOnMobile` | bool | [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md) | `MPropertyFriendlyName Skip rendering on mobile` `MPropertySortPriority -1` |
 | `0x228` | `m_strChannelType` | CUtlString |  | `MPropertyAttributeEditor VDataChoice( scripts/volumetric_channels.vdata )` `MPropertyFriendlyName channel type` |
-| `0x230` | `m_nType` | [ParticleVolumetricSmokeType_t](../!GlobalTypes/ParticleVolumetricSmokeType_t.md) |  | `MPropertyFriendlyName interaction type` |
-| `0x234` | `m_nCreationType` | [ParticleVolumetricSmokeCreationType_t](../!GlobalTypes/ParticleVolumetricSmokeCreationType_t.md) |  | `MPropertyFriendlyName creation type` |
-| `0x238` | `m_nEventType` | [EventTypeSelection_t](../!GlobalTypes/EventTypeSelection_t.md) |  | `MPropertyFriendlyName event type` `MPropertySuppressExpr m_nCreationType == PARTICLE_VOLUMETRIC_SMOKE_TYPE_CONTINUOUS` |
+| `0x230` | `m_nType` | [ParticleVolumetricSmokeType_t](../particles/ParticleVolumetricSmokeType_t.md) |  | `MPropertyFriendlyName interaction type` |
+| `0x234` | `m_nCreationType` | [ParticleVolumetricSmokeCreationType_t](../particles/ParticleVolumetricSmokeCreationType_t.md) |  | `MPropertyFriendlyName creation type` |
+| `0x238` | `m_nEventType` | [EventTypeSelection_t](../particles/EventTypeSelection_t.md) |  | `MPropertyFriendlyName event type` `MPropertySuppressExpr m_nCreationType == PARTICLE_VOLUMETRIC_SMOKE_TYPE_CONTINUOUS` |
 | `0x240` | `m_vecPos` | [CPerParticleVecInput](../particleslib/CPerParticleVecInput.md) |  | `MPropertyFriendlyName position` |
 | `0x8f8` | `m_vecVelocity` | [CPerParticleVecInput](../particleslib/CPerParticleVecInput.md) |  | `MPropertyFriendlyName velocity` `MPropertySuppressExpr m_nType != PARTICLE_VOLUMETRIC_SMOKE_TYPE_EMISSION` |
 | `0xfb0` | `m_vPrevPosition` | [CPerParticleVecInput](../particleslib/CPerParticleVecInput.md) |  | `MPropertyFriendlyName prev position` `MPropertySuppressExpr m_nType != PARTICLE_VOLUMETRIC_SMOKE_TYPE_TRACE` |

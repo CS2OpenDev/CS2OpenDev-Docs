@@ -37,10 +37,10 @@ classDiagram
 | `0x38` | `m_flTotalledDamageDealt` | float32 |  |  |
 | `0x3c` | `m_flTotalledPreModifiedDamage` | float32 |  |  |
 | `0x40` | `m_flNewDamageAccumulatorValue` | float32 |  |  |
-| `0x48` | `m_nDamageFlags` | [TakeDamageFlags_t](../!GlobalTypes/TakeDamageFlags_t.md) |  |  |
+| `0x48` | `m_nDamageFlags` | [TakeDamageFlags_t](../server/TakeDamageFlags_t.md) |  |  |
 | `0x50` | `m_bWasDamageSuppressed` | bool |  |  |
 | `0x51` | `m_bSuppressFlinch` | bool |  |  |
-| `0x54` | `m_nOverrideFlinchHitGroup` | [HitGroup_t](../!GlobalTypes/HitGroup_t.md) |  |  |
+| `0x54` | `m_nOverrideFlinchHitGroup` | [HitGroup_t](../server/HitGroup_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

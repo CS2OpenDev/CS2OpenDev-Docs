@@ -28,7 +28,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x0` | `m_ID` | CGlobalSymbol |  | `MPropertyAttributeEditor AnimGraphID()` |
 | `0x8` | `m_type` | [CNmGraphDocStateNode](../animdoclib/CNmGraphDocStateNode.md)::TimedStateEventType_t |  |  |
-| `0xc` | `m_comparisonOperator` | CNmStateNode::TimedEvent_t::[Comparison_t](../!GlobalTypes/Comparison_t.md) |  |  |
+| `0xc` | `m_comparisonOperator` | CNmStateNode::TimedEvent_t::[Comparison_t](../animgraphdoclib/Comparison_t.md) |  |  |
 | `0x10` | `m_flTimeValueSeconds` | float32 |  |  |
 
 <details><summary>KV3 class defaults</summary>

@@ -32,4 +32,4 @@ classDiagram
 | `0x24` | `m_flMoveSpeed` | float32 |  |  |
 | `0x28` | `m_bAimDisabled` | bool |  |  |
 | `0x29` | `m_bIgnoreRotation` | bool |  |  |
-| `0x2c` | `m_nForcedCrouchState` | [ForcedCrouchState_t](../!GlobalTypes/ForcedCrouchState_t.md) |  |  |
+| `0x2c` | `m_nForcedCrouchState` | [ForcedCrouchState_t](../server/ForcedCrouchState_t.md) |  |  |

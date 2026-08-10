@@ -28,11 +28,11 @@ classDiagram
 | `0x4` | `m_nSrcDrawIndex` | int32 |  |  |
 | `0x8` | `m_drawDesc` | [CMaterialDrawDescriptor](../modellib/CMaterialDrawDescriptor.md) |  |  |
 | `0x120` | `m_mWorldFromLocal` | matrix3x4_t |  |  |
-| `0x150` | `m_nVertexAlbedoFormat` | [VertexAlbedoFormat_t](../!GlobalTypes/VertexAlbedoFormat_t.md) |  |  |
+| `0x150` | `m_nVertexAlbedoFormat` | [VertexAlbedoFormat_t](../modellib/VertexAlbedoFormat_t.md) |  |  |
 | `0x151` | `m_nVertexAlbedoVB` | int8 |  |  |
 | `0x152` | `m_nVertexAlbedoOffset` | uint16 |  |  |
 | `0x154` | `m_nVertexAlbedoStride` | uint16 |  |  |
-| `0x156` | `m_nVertexEmissiveFormat` | [VertexAlbedoFormat_t](../!GlobalTypes/VertexAlbedoFormat_t.md) |  |  |
+| `0x156` | `m_nVertexEmissiveFormat` | [VertexAlbedoFormat_t](../modellib/VertexAlbedoFormat_t.md) |  |  |
 | `0x157` | `m_nVertexEmissiveVB` | int8 |  |  |
 | `0x158` | `m_nVertexEmissiveOffset` | uint16 |  |  |
 | `0x15a` | `m_nVertexEmissiveStride` | uint16 |  |  |

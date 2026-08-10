@@ -32,8 +32,8 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flOpStrength` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator strength` `MPropertySortPriority -100` |
-| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../!GlobalTypes/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
-| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../!GlobalTypes/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
+| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
+| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
 | `0x180` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
 | `0x184` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
 | `0x188` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
@@ -52,9 +52,9 @@ classDiagram
 | `0x220` | `m_bCannotBeRefracted` | bool | [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md) | `MPropertyFriendlyName I cannot be refracted through refracting objects like water` `MPropertySortPriority -1` `MPropertyStartGroup Rendering filter` |
 | `0x221` | `m_bSkipRenderingOnMobile` | bool | [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md) | `MPropertyFriendlyName Skip rendering on mobile` `MPropertySortPriority -1` |
 | `0x228` | `m_sDecalGroupName` | CGlobalSymbol |  | `MPropertyAttributeEditor VDataChoice( scripts/decalgroups.vdata )` `MPropertyFriendlyName decal name` |
-| `0x230` | `m_nEventType` | [EventTypeSelection_t](../!GlobalTypes/EventTypeSelection_t.md) |  | `MPropertyFriendlyName event type` |
-| `0x238` | `m_nInteractionMask` | [ParticleCollisionMask_t](../!GlobalTypes/ParticleCollisionMask_t.md) |  | `MPropertyFriendlyName Collision Interaction Mask` |
-| `0x240` | `m_nCollisionGroup` | [ParticleCollisionGroup_t](../!GlobalTypes/ParticleCollisionGroup_t.md) |  | `MPropertyFriendlyName Collision Group` |
+| `0x230` | `m_nEventType` | [EventTypeSelection_t](../particles/EventTypeSelection_t.md) |  | `MPropertyFriendlyName event type` |
+| `0x238` | `m_nInteractionMask` | [ParticleCollisionMask_t](../particles/ParticleCollisionMask_t.md) |  | `MPropertyFriendlyName Collision Interaction Mask` |
+| `0x240` | `m_nCollisionGroup` | [ParticleCollisionGroup_t](../particles/ParticleCollisionGroup_t.md) |  | `MPropertyFriendlyName Collision Group` |
 | `0x248` | `m_vecStartPos` | [CPerParticleVecInput](../particleslib/CPerParticleVecInput.md) |  | `MPropertyFriendlyName Trace Start Position` |
 | `0x900` | `m_vecEndPos` | [CPerParticleVecInput](../particleslib/CPerParticleVecInput.md) |  | `MPropertyFriendlyName Trace End Position` |
 | `0xfb8` | `m_flTraceBloat` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Trace Bloat Radius Scale` |

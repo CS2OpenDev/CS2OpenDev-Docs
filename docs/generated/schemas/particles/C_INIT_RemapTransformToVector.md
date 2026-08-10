@@ -30,8 +30,8 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flOpStrength` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator strength` `MPropertySortPriority -100` |
-| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../!GlobalTypes/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
-| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../!GlobalTypes/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
+| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
+| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
 | `0x180` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
 | `0x184` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
 | `0x188` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
@@ -56,7 +56,7 @@ classDiagram
 | `0x280` | `m_LocalSpaceTransform` | [CParticleTransformInput](../particleslib/CParticleTransformInput.md) |  | `MParticleInputOptional` `MPropertyFriendlyName local space transform` |
 | `0x2e8` | `m_flStartTime` | float32 |  | `MPropertyFriendlyName emitter lifetime start time (seconds)` |
 | `0x2ec` | `m_flEndTime` | float32 |  | `MPropertyFriendlyName emitter lifetime end time (seconds)` |
-| `0x2f0` | `m_nSetMethod` | [ParticleSetMethod_t](../!GlobalTypes/ParticleSetMethod_t.md) |  | `MPropertyFriendlyName set value method` |
+| `0x2f0` | `m_nSetMethod` | [ParticleSetMethod_t](../particleslib/ParticleSetMethod_t.md) |  | `MPropertyFriendlyName set value method` |
 | `0x2f4` | `m_bOffset` | bool |  | `MPropertyFriendlyName offset position` |
 | `0x2f5` | `m_bAccelerate` | bool |  | `MPropertyFriendlyName accelerate position` |
 | `0x2f8` | `m_flRemapBias` | float32 |  | `MPropertyFriendlyName remap bias` |

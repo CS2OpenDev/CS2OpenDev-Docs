@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/modellib.md)
 
-114 types. Each links to its own page with the full field layout.
+140 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -127,3 +127,29 @@ nav_exclude: true
 | [VPhysics2ShapeDef_t](modellib/VPhysics2ShapeDef_t.md) | class | 120 | 5 |  |
 | [VsInputSignatureElement_t](modellib/VsInputSignatureElement_t.md) | class | 196 | 4 |  |
 | [VsInputSignature_t](modellib/VsInputSignature_t.md) | class | 48 | 2 |  |
+| [FlexOpCode_t](modellib/FlexOpCode_t.md) | enum | — | 26 |  |
+| [InputLayoutVariation_t](modellib/InputLayoutVariation_t.md) | enum | — | 4 |  |
+| [MeshDrawPrimitiveFlags_t](modellib/MeshDrawPrimitiveFlags_t.md) | enum | — | 8 |  |
+| [ModelBoneFlexComponent_t](modellib/ModelBoneFlexComponent_t.md) | enum | — | 4 |  |
+| [ModelConfigAttachmentType_t](modellib/ModelConfigAttachmentType_t.md) | enum | — | 5 |  |
+| [ModelMeshBufferUsage_t](modellib/ModelMeshBufferUsage_t.md) | enum | — | 8 |  |
+| [ModelSkeletonData_t::BoneFlags_t](modellib/ModelSkeletonData_t.BoneFlags_t.md) | enum | — | 22 |  |
+| [MorphBundleType_t](modellib/MorphBundleType_t.md) | enum | — | 4 |  |
+| [MorphFlexControllerRemapType_t](modellib/MorphFlexControllerRemapType_t.md) | enum | — | 4 |  |
+| [MovementCapability_t](modellib/MovementCapability_t.md) | enum | — | 10 |  |
+| [NPCPhysicsHullType_t](modellib/NPCPhysicsHullType_t.md) | enum | — | 7 |  |
+| [PermModelInfo_t::FlagEnum](modellib/PermModelInfo_t.FlagEnum.md) | enum | — | 15 |  |
+| [RenderBufferFlags_t](modellib/RenderBufferFlags_t.md) | enum | — | 14 |  |
+| [RenderMeshSlotType_t](modellib/RenderMeshSlotType_t.md) | enum | — | 3 |  |
+| [RenderMultisampleType_t](modellib/RenderMultisampleType_t.md) | enum | — | 8 |  |
+| [RenderPrimitiveType_t](modellib/RenderPrimitiveType_t.md) | enum | — | 14 |  |
+| [RenderSlotType_t](modellib/RenderSlotType_t.md) | enum | — | 3 |  |
+| [ScriptedHeldWeaponBehavior_t](modellib/ScriptedHeldWeaponBehavior_t.md) | enum | — | 4 |  |
+| [ScriptedMoveTo_t](modellib/ScriptedMoveTo_t.md) | enum | — | 6 |  |
+| [SharedMovementGait_t](modellib/SharedMovementGait_t.md) | enum | — | 6 |  |
+| [UpscalerType_t](modellib/UpscalerType_t.md) | enum | — | 6 |  |
+| [VPhysXAggregateData_t::VPhysXFlagEnum_t](modellib/VPhysXAggregateData_t.VPhysXFlagEnum_t.md) | enum | — | 3 |  |
+| [VPhysXBodyPart_t::VPhysXFlagEnum_t](modellib/VPhysXBodyPart_t.VPhysXFlagEnum_t.md) | enum | — | 6 |  |
+| [VPhysXConstraintParams_t::EnumFlags0_t](modellib/VPhysXConstraintParams_t.EnumFlags0_t.md) | enum | — | 4 |  |
+| [VPhysXJoint_t::Flags_t](modellib/VPhysXJoint_t.Flags_t.md) | enum | — | 3 |  |
+| [VertexAlbedoFormat_t](modellib/VertexAlbedoFormat_t.md) | enum | — | 3 |  |

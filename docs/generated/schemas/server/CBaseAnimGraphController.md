@@ -37,7 +37,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_pSkeletonInstance` | [CSkeletonInstance](../server/CSkeletonInstance.md)* | [CSkeletonAnimationController](../server/CSkeletonAnimationController.md) | `MNotSaved` |
-| `0x18` | `m_nAnimationAlgorithm` | [AnimationAlgorithm_t](../!GlobalTypes/AnimationAlgorithm_t.md) |  |  |
+| `0x18` | `m_nAnimationAlgorithm` | [AnimationAlgorithm_t](../server/AnimationAlgorithm_t.md) |  |  |
 | `0x1c` | `m_nNextExternalGraphHandle` | [ExternalAnimGraphHandle_t](../server/ExternalAnimGraphHandle_t.md) |  |  |
 | `0x20` | `m_vecSecondarySkeletonSlotIDs` | CNetworkUtlVectorBase< CGlobalSymbol > |  |  |
 | `0x38` | `m_vecSecondarySkeletons` | CNetworkUtlVectorBase< CHandle< [CBaseAnimGraph](../server/CBaseAnimGraph.md) > > |  |  |
@@ -47,9 +47,9 @@ classDiagram
 | `0x5c` | `m_hSequence` | [HSequence](../animationsystem/HSequence.md) |  |  |
 | `0x60` | `m_flSeqStartTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
 | `0x64` | `m_flSeqFixedCycle` | float32 |  |  |
-| `0x68` | `m_nAnimLoopMode` | [AnimLoopMode_t](../!GlobalTypes/AnimLoopMode_t.md) |  |  |
+| `0x68` | `m_nAnimLoopMode` | [AnimLoopMode_t](../server/AnimLoopMode_t.md) |  |  |
 | `0x6c` | `m_flPlaybackRate` | CNetworkedQuantizedFloat |  |  |
-| `0x78` | `m_nNotifyState` | [SequenceFinishNotifyState_t](../!GlobalTypes/SequenceFinishNotifyState_t.md) |  |  |
+| `0x78` | `m_nNotifyState` | [SequenceFinishNotifyState_t](../server/SequenceFinishNotifyState_t.md) |  |  |
 | `0x79` | `m_bNetworkedAnimationInputsChanged` | bool |  |  |
 | `0x7a` | `m_bNetworkedSequenceChanged` | bool |  |  |
 | `0x7b` | `m_bLastUpdateSkipped` | bool |  |  |

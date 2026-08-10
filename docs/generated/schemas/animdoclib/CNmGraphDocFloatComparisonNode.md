@@ -35,7 +35,7 @@ classDiagram
 | `0x48` | `m_pSecondaryGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
 | `0x50` | `m_inputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 4 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0xd8` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
-| `0x100` | `m_comparison` | CNmFloatComparisonNode::[Comparison_t](../!GlobalTypes/Comparison_t.md) |  |  |
+| `0x100` | `m_comparison` | CNmFloatComparisonNode::[Comparison_t](../animgraphdoclib/Comparison_t.md) |  |  |
 | `0x104` | `m_flComparisonValue` | float32 |  |  |
 | `0x108` | `m_flEpsilon` | float32 |  |  |
 

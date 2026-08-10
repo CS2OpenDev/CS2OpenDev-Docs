@@ -28,6 +28,6 @@ classDiagram
 | `0x0` | `m_hSequence` | [HSequence](../animationsystem/HSequence.md) |  |  |
 | `0x4` | `m_flSeqStartTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
 | `0x8` | `m_flSeqFixedCycle` | float32 |  |  |
-| `0xc` | `m_nSeqLoopMode` | [AnimLoopMode_t](../!GlobalTypes/AnimLoopMode_t.md) |  |  |
+| `0xc` | `m_nSeqLoopMode` | [AnimLoopMode_t](../server/AnimLoopMode_t.md) |  |  |
 | `0x10` | `m_flPlaybackRate` | float32 |  |  |
 | `0x14` | `m_flCyclesPerSecond` | float32 |  |  |

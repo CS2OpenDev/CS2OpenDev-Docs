@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/vphysics2.md)
 
-14 types. Each links to its own page with the full field layout.
+15 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -27,3 +27,4 @@ nav_exclude: true
 | [constraint_hingeparams_t](vphysics2/constraint_hingeparams_t.md) | class | 64 | 4 |  |
 | [vphysics_save_cphysicsbody_t](vphysics2/vphysics_save_cphysicsbody_t.md) | class | 232 | 1 | [RnBodyDesc_t](physicslib/RnBodyDesc_t.md) |
 | [vphysics_save_ragdoll_control_t](vphysics2/vphysics_save_ragdoll_control_t.md) | class | 56 | 10 |  |
+| [PhysInterfaceId_t](vphysics2/PhysInterfaceId_t.md) | enum | — | 8 |  |

@@ -25,7 +25,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `type` | [PhysInterfaceId_t](../!GlobalTypes/PhysInterfaceId_t.md) |  |  |
+| `0x0` | `type` | [PhysInterfaceId_t](../vphysics2/PhysInterfaceId_t.md) |  |  |
 | `0x4` | `hEntity` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
 | `0x8` | `fieldName` | CUtlSymbolLarge |  |  |
 | `0x10` | `bSaveObject` | bool |  |  |

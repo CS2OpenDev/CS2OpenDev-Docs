@@ -7,7 +7,7 @@ nav_exclude: true
 
 # UML: particles
 
-Class relationships (inheritance and composition) for the `particles` module (showing 300 of 410 relationships).
+Class relationships (inheritance and composition) for the `particles` module (showing 300 of 419 relationships).
 
 **Arrow legend:** `<|--` inheritance &nbsp; `*--` composition &nbsp; `-->` association/pointer
 

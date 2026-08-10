@@ -34,7 +34,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x10` | `m_nType` | [ParticleVecType_t](../!GlobalTypes/ParticleVecType_t.md) |  |  |
+| `0x10` | `m_nType` | [ParticleVecType_t](../particleslib/ParticleVecType_t.md) |  |  |
 | `0x14` | `m_vLiteralValue` | Vector |  |  |
 | `0x20` | `m_LiteralColor` | Color |  |  |
 | `0x28` | `m_NamedValue` | CParticleNamedValueRef |  |  |

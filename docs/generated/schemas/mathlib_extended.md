@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/mathlib_extended.md)
 
-11 types. Each links to its own page with the full field layout.
+13 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -24,3 +24,5 @@ nav_exclude: true
 | [FuseVariableIndex_t](mathlib_extended/FuseVariableIndex_t.md) | class | 2 | 1 |  |
 | [PackedAABB_t](mathlib_extended/PackedAABB_t.md) | class | 8 | 2 |  |
 | [VariableInfo_t](mathlib_extended/VariableInfo_t.md) | class | 24 | 6 |  |
+| [FuseVariableAccess_t](mathlib_extended/FuseVariableAccess_t.md) | enum | — | 2 |  |
+| [FuseVariableType_t](mathlib_extended/FuseVariableType_t.md) | enum | — | 9 |  |

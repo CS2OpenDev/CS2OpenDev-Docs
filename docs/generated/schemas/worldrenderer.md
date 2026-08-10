@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/worldrenderer.md)
 
-29 types. Each links to its own page with the full field layout.
+32 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -42,3 +42,6 @@ nav_exclude: true
 | [WorldNodeOnDiskBufferData_t](worldrenderer/WorldNodeOnDiskBufferData_t.md) | class | 56 | 4 |  |
 | [WorldNode_t](worldrenderer/WorldNode_t.md) | class | 400 | 16 |  |
 | [World_t](worldrenderer/World_t.md) | class | 216 | 4 |  |
+| [AggregateInstanceStream_t](worldrenderer/AggregateInstanceStream_t.md) | enum | — | 4 |  |
+| [ObjectTypeFlags_t](worldrenderer/ObjectTypeFlags_t.md) | enum | — | 16 |  |
+| [RTProxyInstanceFlags_t](worldrenderer/RTProxyInstanceFlags_t.md) | enum | — | 2 |  |

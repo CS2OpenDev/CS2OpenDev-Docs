@@ -33,7 +33,7 @@ classDiagram
 | `0x18` | `m_bone` | CGlobalSymbol |  |  |
 | `0x20` | `m_followTargetBone` | CGlobalSymbol |  |  |
 | `0x28` | `m_nEnabledNodeIdx` | int16 |  |  |
-| `0x2a` | `m_mode` | [NmFollowBoneMode_t](../!GlobalTypes/NmFollowBoneMode_t.md) |  |  |
+| `0x2a` | `m_mode` | [NmFollowBoneMode_t](../animlib/NmFollowBoneMode_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

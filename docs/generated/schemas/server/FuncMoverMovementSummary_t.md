@@ -30,7 +30,7 @@ classDiagram
 | `0x8` | `nStartNodeIndex` | int32 |  |  |
 | `0xc` | `nStopNodeIndex` | int32 |  |  |
 | `0x10` | `nMovementMode` | int32 |  |  |
-| `0x14` | `nFlags` | [FuncMoverMovementSummaryFlags_t](../!GlobalTypes/FuncMoverMovementSummaryFlags_t.md) |  |  |
+| `0x14` | `nFlags` | [FuncMoverMovementSummaryFlags_t](../server/FuncMoverMovementSummaryFlags_t.md) |  |  |
 | `0x18` | `nTick` | [GameTick_t](../entity2/GameTick_t.md) |  |  |
 | `0x1c` | `hPathMover` | CHandle< [CPathMover](../server/CPathMover.md) > |  |  |
 

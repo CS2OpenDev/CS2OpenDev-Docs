@@ -8,8 +8,8 @@
 	# full history.  Materialise it with:
 	#   git submodule update --init --remote --depth 1 upstream/schema-tracker
 	# CI clones the branch directly (see .github/workflows/generate-docs.yml).
-	# NOTE: the cumulative artifacts/schema_evolution/<platform>.json files
-	# (input to the Schema History page + field_history.json) are not yet on
-	# `latest`; CI supplements them with a targeted sparse fetch from the
-	# default branch until they land there.
+	# NOTE: the `latest` branch now also carries the cumulative
+	# artifacts/schema_evolution/<platform>.json files (input to the Schema
+	# History page + field_history.json), so a plain shallow checkout renders
+	# them directly — no supplemental fetch needed.
 	shallow = true

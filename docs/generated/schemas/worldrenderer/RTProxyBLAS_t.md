@@ -29,7 +29,7 @@ classDiagram
 | `0x8` | `m_nVBByteOffset` | uint32 |  |  |
 | `0xc` | `m_nBaseVertex` | uint32 |  |  |
 | `0x10` | `m_nVertexCount` | uint16 |  |  |
-| `0x12` | `m_albedoFormat` | [VertexAlbedoFormat_t](../!GlobalTypes/VertexAlbedoFormat_t.md) |  |  |
+| `0x12` | `m_albedoFormat` | [VertexAlbedoFormat_t](../modellib/VertexAlbedoFormat_t.md) |  |  |
 | `0x14` | `m_boundLs` | [AABB_t](../mathlib_extended/AABB_t.md) |  |  |
 | `0x2c` | `m_vVertexOriginLs` | Vector |  |  |
 | `0x38` | `m_vVertexExtentLs` | Vector |  |  |

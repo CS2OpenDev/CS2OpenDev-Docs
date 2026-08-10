@@ -28,7 +28,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flStartTime` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
 | `0xc` | `m_flDuration` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
-| `0x10` | `m_frameSnapMode` | [NmFrameSnapEventMode_t](../!GlobalTypes/NmFrameSnapEventMode_t.md) |  |  |
+| `0x10` | `m_frameSnapMode` | [NmFrameSnapEventMode_t](../animlib/NmFrameSnapEventMode_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

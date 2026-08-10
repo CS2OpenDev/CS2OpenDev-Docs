@@ -14,6 +14,8 @@ Class relationships (inheritance and composition) for the `compositematerialslib
 ```mermaid
 classDiagram
     CCompositeMaterialEditorDoc *-- CompositeMaterialEditorPoint_t
+    CompMatMutatorCondition_t *-- CompMatPropertyMutatorConditionType_t
+    CompMatPropertyMutator_t *-- CompMatPropertyMutatorType_t
     CompMatPropertyMutator_t *-- CompositeMaterialInputLooseVariable_t
     CompMatPropertyMutator_t *-- CompMatMutatorCondition_t
     CompositeMaterialAssemblyProcedure_t *-- CompositeMaterialMatchFilter_t
@@ -21,6 +23,11 @@ classDiagram
     CompositeMaterialAssemblyProcedure_t *-- CompMatPropertyMutator_t
     CompositeMaterialEditorPoint_t *-- CompositeMaterialAssemblyProcedure_t
     CompositeMaterialEditorPoint_t *-- CompositeMaterial_t
+    CompositeMaterialInputContainer_t *-- CompositeMaterialInputContainerSourceType_t
     CompositeMaterialInputContainer_t *-- CompositeMaterialInputLooseVariable_t
+    CompositeMaterialInputLooseVariable_t *-- CompositeMaterialInputLooseVariableType_t
+    CompositeMaterialInputLooseVariable_t *-- CompositeMaterialVarSystemVar_t
+    CompositeMaterialInputLooseVariable_t *-- CompositeMaterialInputTextureType_t
+    CompositeMaterialMatchFilter_t *-- CompositeMaterialMatchFilterType_t
     CompositeMaterial_t *-- GeneratedTextureHandle_t
 ```

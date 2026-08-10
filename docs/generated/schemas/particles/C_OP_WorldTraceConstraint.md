@@ -33,8 +33,8 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flOpStrength` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator strength` `MPropertySortPriority -100` |
-| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../!GlobalTypes/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
-| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../!GlobalTypes/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
+| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
+| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
 | `0x180` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
 | `0x184` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
 | `0x188` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
@@ -51,9 +51,9 @@ classDiagram
 | `0x1b8` | `m_Notes` | CUtlString | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleHelpField` `MPropertyFriendlyName operator help and notes` `MPropertySortPriority -100` |
 | `0x1d8` | `m_nCP` | int32 |  | `MPropertyFriendlyName control point for fast collision tests` |
 | `0x1dc` | `m_vecCpOffset` | Vector |  | `MPropertyFriendlyName control point offset for fast collisions` `MVectorIsCoordinate` |
-| `0x1e8` | `m_nCollisionMode` | [ParticleCollisionMode_t](../!GlobalTypes/ParticleCollisionMode_t.md) |  | `MPropertyFriendlyName collision mode` |
-| `0x1ec` | `m_nCollisionModeMin` | [ParticleCollisionMode_t](../!GlobalTypes/ParticleCollisionMode_t.md) |  | `MPropertyFriendlyName minimum detail collision mode` |
-| `0x1f0` | `m_nTraceSet` | [ParticleTraceSet_t](../!GlobalTypes/ParticleTraceSet_t.md) |  | `MPropertyFriendlyName Trace Set` `MPropertyStartGroup Collision Options` |
+| `0x1e8` | `m_nCollisionMode` | [ParticleCollisionMode_t](../particles/ParticleCollisionMode_t.md) |  | `MPropertyFriendlyName collision mode` |
+| `0x1ec` | `m_nCollisionModeMin` | [ParticleCollisionMode_t](../particles/ParticleCollisionMode_t.md) |  | `MPropertyFriendlyName minimum detail collision mode` |
+| `0x1f0` | `m_nTraceSet` | [ParticleTraceSet_t](../particles/ParticleTraceSet_t.md) |  | `MPropertyFriendlyName Trace Set` `MPropertyStartGroup Collision Options` |
 | `0x1f4` | `m_CollisionGroupName` | char[128] |  | `MPropertyFriendlyName collision group` |
 | `0x274` | `m_bWorldOnly` | bool |  | `MPropertyFriendlyName World Only` |
 | `0x275` | `m_bBrushOnly` | bool |  | `MPropertyFriendlyName brush only` |

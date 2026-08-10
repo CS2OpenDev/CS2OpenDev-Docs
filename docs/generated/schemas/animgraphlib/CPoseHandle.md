@@ -24,7 +24,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_nIndex` | uint16 |  |  |
-| `0x2` | `m_eType` | [PoseType_t](../!GlobalTypes/PoseType_t.md) |  |  |
+| `0x2` | `m_eType` | [PoseType_t](../animgraphlib/PoseType_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

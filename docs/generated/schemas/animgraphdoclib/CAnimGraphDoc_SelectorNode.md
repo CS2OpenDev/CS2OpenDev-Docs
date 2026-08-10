@@ -38,18 +38,18 @@ classDiagram
 | `0x28` | `m_vecPosition` | Vector2D | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyGroupName Debug` `MPropertySortPriority -100` |
 | `0x30` | `m_nNodeID` | [AnimNodeID](../modellib/AnimNodeID.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyGroupName Debug` `MPropertySortPriority -100` |
 | `0x34` | `m_bDebugThisNode` | bool | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Debug This Node` `MPropertyGroupName Debug` `MPropertySortPriority -100` |
-| `0x38` | `m_networkMode` | [AnimNodeNetworkMode](../!GlobalTypes/AnimNodeNetworkMode.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Network Mode` `MPropertySortPriority -110` |
+| `0x38` | `m_networkMode` | [AnimNodeNetworkMode](../animgraphlib/AnimNodeNetworkMode.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Network Mode` `MPropertySortPriority -110` |
 | `0x40` | `m_children` | CUtlVector< [CAnimGraphDoc_NodeConnection](../animgraphdoclib/CAnimGraphDoc_NodeConnection.md) > |  | `MPropertySuppressField` |
 | `0x58` | `m_fallbackChild` | [CAnimGraphDoc_NodeConnection](../animgraphdoclib/CAnimGraphDoc_NodeConnection.md) |  | `MPropertySuppressField` |
 | `0x60` | `m_tags` | CUtlVector< [AnimTagID](../modellib/AnimTagID.md) > |  | `MPropertySuppressField` |
-| `0x78` | `m_selectionSource` | [SelectionSource_t](../!GlobalTypes/SelectionSource_t.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Selection Source` |
+| `0x78` | `m_selectionSource` | [SelectionSource_t](../animgraphdoclib/SelectionSource_t.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Selection Source` |
 | `0x80` | `m_boolParamName` | CUtlString |  | `MPropertySuppressField` |
 | `0x88` | `m_boolParamID` | [AnimParamID](../modellib/AnimParamID.md) |  | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName BoolParameter` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Bool Parameter` |
 | `0x90` | `m_enumParamName` | CUtlString |  | `MPropertySuppressField` |
 | `0x98` | `m_enumParamID` | [AnimParamID](../modellib/AnimParamID.md) |  | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName EnumParameter` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Enum Parameter` |
 | `0x9c` | `m_tagID` | [AnimTagID](../modellib/AnimTagID.md) |  | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName Tag` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Tag Parameter` |
 | `0xa0` | `m_blendDuration` | [CFloatAnimValue](../animgraphdoclib/CFloatAnimValue.md) |  | `MPropertyFriendlyName Blend Duration` |
-| `0xc0` | `m_tagBehavior` | [SelectorTagBehavior_t](../!GlobalTypes/SelectorTagBehavior_t.md) |  | `MPropertyFriendlyName Tag Behavior` |
+| `0xc0` | `m_tagBehavior` | [SelectorTagBehavior_t](../animgraphlib/SelectorTagBehavior_t.md) |  | `MPropertyFriendlyName Tag Behavior` |
 | `0xc4` | `m_bResetOnChange` | bool |  | `MPropertyFriendlyName Reset On Change` |
 | `0xc5` | `m_bSyncCyclesOnChange` | bool |  | `MPropertyFriendlyName Start new option at same cycle` |
 | `0xc6` | `m_bLockWhenWaning` | bool |  | `MPropertyFriendlyName Lock Selection When Waning` |

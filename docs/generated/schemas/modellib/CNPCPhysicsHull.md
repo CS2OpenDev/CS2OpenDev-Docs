@@ -26,7 +26,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_sName` | CGlobalSymbol |  | `MPropertyFriendlyName Name` `MPropertySuppressField` |
-| `0x8` | `m_eType` | [NPCPhysicsHullType_t](../!GlobalTypes/NPCPhysicsHullType_t.md) |  | `MPropertyFriendlyName Type` |
+| `0x8` | `m_eType` | [NPCPhysicsHullType_t](../modellib/NPCPhysicsHullType_t.md) |  | `MPropertyFriendlyName Type` |
 | `0xc` | `m_flCapsuleHeight` | float32 |  | `MPropertyFriendlyName Height` `MPropertySuppressExpr m_eType != eGroundCapsule && m_eType != eCenteredCapsule && m_eType != eCenteredCylinder && m_eType != eGroundCylinder` |
 | `0x10` | `m_flCapsuleRadius` | float32 |  | `MPropertyFriendlyName Radius` `MPropertySuppressExpr m_eType != eGroundCapsule && m_eType != eGenericCapsule && m_eType != eCenteredCapsule && m_eType != eCenteredCylinder && m_eType != eGroundCylinder` |
 | `0x14` | `m_vCapsuleCenter1` | Vector |  | `MPropertyFriendlyName Center 1` `MPropertySuppressExpr m_eType != eGenericCapsule` |

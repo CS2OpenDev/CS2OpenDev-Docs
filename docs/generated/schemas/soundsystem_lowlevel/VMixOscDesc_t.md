@@ -23,7 +23,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `oscType` | [VMixLFOShape_t](../!GlobalTypes/VMixLFOShape_t.md) |  | `MPropertyFriendlyName Type` |
+| `0x0` | `oscType` | [VMixLFOShape_t](../soundsystem_lowlevel/VMixLFOShape_t.md) |  | `MPropertyFriendlyName Type` |
 | `0x4` | `m_freq` | float32 |  | `MPropertyAttributeRange 0.1 16000` `MPropertyFriendlyName Frequency (Hz)` |
 | `0x8` | `m_flPhase` | float32 |  | `MPropertyAttributeRange 0 360` `MPropertyFriendlyName Phase (degrees)` |
 

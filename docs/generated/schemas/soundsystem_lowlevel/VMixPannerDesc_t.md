@@ -23,7 +23,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_type` | [VMixPannerType_t](../!GlobalTypes/VMixPannerType_t.md) |  |  |
+| `0x0` | `m_type` | [VMixPannerType_t](../soundsystem_lowlevel/VMixPannerType_t.md) |  |  |
 | `0x4` | `m_flStrength` | float32 |  |  |
 
 <details><summary>KV3 class defaults</summary>

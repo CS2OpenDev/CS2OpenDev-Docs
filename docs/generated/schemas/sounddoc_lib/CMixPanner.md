@@ -33,7 +33,7 @@ classDiagram
 | `0x18` | `m_bActive` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x19` | `m_bSolo` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x1a` | `m_bEditProperties` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
-| `0x20` | `m_type` | [VMixPannerType_t](../!GlobalTypes/VMixPannerType_t.md) |  | `MPropertyFriendlyName Type` |
+| `0x20` | `m_type` | [VMixPannerType_t](../soundsystem_lowlevel/VMixPannerType_t.md) |  | `MPropertyFriendlyName Type` |
 | `0x24` | `m_flStrength` | float32 |  | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName Strength` |
 
 <details><summary>KV3 class defaults</summary>

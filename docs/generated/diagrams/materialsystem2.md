@@ -25,6 +25,7 @@ classDiagram
     MaterialResourceData_t *-- MaterialParamTexture_t
     MaterialResourceData_t *-- MaterialParamBuffer_t
     MaterialResourceData_t *-- MaterialParamString_t
+    PostProcessingBloomParameters_t *-- BloomBlendMode_t
     PostProcessingResource_t *-- PostProcessingTonemapParameters_t
     PostProcessingResource_t *-- PostProcessingBloomParameters_t
     PostProcessingResource_t *-- PostProcessingVignetteParameters_t

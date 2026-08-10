@@ -29,8 +29,8 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flStartTime` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
 | `0xc` | `m_flDuration` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
-| `0x10` | `m_rule` | [NmTargetWarpRule_t](../!GlobalTypes/NmTargetWarpRule_t.md) |  |  |
-| `0x11` | `m_algorithm` | [NmTargetWarpAlgorithm_t](../!GlobalTypes/NmTargetWarpAlgorithm_t.md) |  |  |
+| `0x10` | `m_rule` | [NmTargetWarpRule_t](../animlib/NmTargetWarpRule_t.md) |  |  |
+| `0x11` | `m_algorithm` | [NmTargetWarpAlgorithm_t](../animlib/NmTargetWarpAlgorithm_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

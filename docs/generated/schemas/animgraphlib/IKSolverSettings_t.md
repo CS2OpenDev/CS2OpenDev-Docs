@@ -24,6 +24,6 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_SolverType` | [IKSolverType](../!GlobalTypes/IKSolverType.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Solver Type` |
+| `0x0` | `m_SolverType` | [IKSolverType](../animgraphlib/IKSolverType.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Solver Type` |
 | `0x4` | `m_nNumIterations` | int32 |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Num Iterations ` |
-| `0x8` | `m_EndEffectorRotationFixUpMode` | [EIKEndEffectorRotationFixUpMode](../!GlobalTypes/EIKEndEffectorRotationFixUpMode.md) |  | `MPropertyFriendlyName End Effector Rotation Behaviour` |
+| `0x8` | `m_EndEffectorRotationFixUpMode` | [EIKEndEffectorRotationFixUpMode](../animgraphlib/EIKEndEffectorRotationFixUpMode.md) |  | `MPropertyFriendlyName End Effector Rotation Behaviour` |

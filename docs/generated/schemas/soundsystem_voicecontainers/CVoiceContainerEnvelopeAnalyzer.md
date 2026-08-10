@@ -29,7 +29,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_curve` | CPiecewiseCurve | [CVoiceContainerAnalysisBase](../soundsystem_voicecontainers/CVoiceContainerAnalysisBase.md) | `MPropertyFriendlyName Envelope Curve` |
-| `0x48` | `m_mode` | [EMode_t](../!GlobalTypes/EMode_t.md) |  | `MPropertyFriendlyName Envelope Mode` |
+| `0x48` | `m_mode` | [EMode_t](../soundsystem_voicecontainers/EMode_t.md) |  | `MPropertyFriendlyName Envelope Mode` |
 | `0x4c` | `m_fAnalysisWindowMs` | float32 |  | `MPropertyFriendlyName Analysis Window` |
 | `0x50` | `m_flThreshold` | float32 |  | `MPropertyFriendlyName Threshold` |
 

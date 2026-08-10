@@ -30,7 +30,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `m_ID` | V_uuid_t |  |  |
 | `0x20` | `m_nodes` | CUtlVector< [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md)* > |  |  |
-| `0x38` | `m_graphType` | [NmGraphDocGraphType_t](../!GlobalTypes/NmGraphDocGraphType_t.md) |  |  |
+| `0x38` | `m_graphType` | [NmGraphDocGraphType_t](../animdoclib/NmGraphDocGraphType_t.md) |  |  |
 | `0x3c` | `m_viewOffset` | Vector2D |  |  |
 | `0x44` | `m_flViewZoom` | float32 |  |  |
 

@@ -37,7 +37,7 @@ classDiagram
 | `0xd8` | `m_MethodName` | PulseSymbol_t |  |  |
 | `0xe8` | `m_nBlackboardIndex` | [PulseRuntimeBlackboardReferenceIndex_t](../pulse_runtime_lib/PulseRuntimeBlackboardReferenceIndex_t.md) |  |  |
 | `0xf0` | `m_ExpectedArgs` | CUtlLeanVector< [CPulseRuntimeMethodArg](../pulse_runtime_lib/CPulseRuntimeMethodArg.md) > |  |  |
-| `0x100` | `m_nAsyncCallMode` | [PulseMethodCallMode_t](../animationsystem/PulseMethodCallMode_t.md) |  |  |
+| `0x100` | `m_nAsyncCallMode` | [PulseMethodCallMode_t](../pulse_runtime_lib/PulseMethodCallMode_t.md) |  |  |
 | `0x108` | `m_OnFinished` | [CPulse_ResumePoint](../pulse_runtime_lib/CPulse_ResumePoint.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>

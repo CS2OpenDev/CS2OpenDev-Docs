@@ -42,8 +42,8 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x10` | `m_nType` | [ParticleFloatType_t](../!GlobalTypes/ParticleFloatType_t.md) |  |  |
-| `0x14` | `m_nMapType` | [ParticleFloatMapType_t](../!GlobalTypes/ParticleFloatMapType_t.md) |  |  |
+| `0x10` | `m_nType` | [ParticleFloatType_t](../particleslib/ParticleFloatType_t.md) |  |  |
+| `0x14` | `m_nMapType` | [ParticleFloatMapType_t](../particleslib/ParticleFloatMapType_t.md) |  |  |
 | `0x18` | `m_flLiteralValue` | float32 |  |  |
 | `0x20` | `m_NamedValue` | CParticleNamedValueRef |  |  |
 | `0x60` | `m_nControlPoint` | int32 |  |  |
@@ -55,7 +55,7 @@ classDiagram
 | `0x78` | `m_flRandomMax` | float32 |  |  |
 | `0x7c` | `m_bHasRandomSignFlip` | bool |  |  |
 | `0x80` | `m_nRandomSeed` | int32 |  |  |
-| `0x84` | `m_nRandomMode` | [ParticleFloatRandomMode_t](../!GlobalTypes/ParticleFloatRandomMode_t.md) |  |  |
+| `0x84` | `m_nRandomMode` | [ParticleFloatRandomMode_t](../particleslib/ParticleFloatRandomMode_t.md) |  |  |
 | `0x90` | `m_strSnapshotSubset` | CUtlString |  |  |
 | `0x98` | `m_flLOD0` | float32 |  |  |
 | `0x9c` | `m_flLOD1` | float32 |  |  |
@@ -68,16 +68,16 @@ classDiagram
 | `0xb8` | `m_vecNoiseOffsetRate` | Vector |  |  |
 | `0xc4` | `m_flNoiseOffset` | float32 |  |  |
 | `0xc8` | `m_nNoiseOctaves` | int32 |  |  |
-| `0xcc` | `m_nNoiseTurbulence` | [PFNoiseTurbulence_t](../!GlobalTypes/PFNoiseTurbulence_t.md) |  |  |
-| `0xd0` | `m_nNoiseType` | [PFNoiseType_t](../!GlobalTypes/PFNoiseType_t.md) |  |  |
-| `0xd4` | `m_nNoiseModifier` | [PFNoiseModifier_t](../!GlobalTypes/PFNoiseModifier_t.md) |  |  |
+| `0xcc` | `m_nNoiseTurbulence` | [PFNoiseTurbulence_t](../particleslib/PFNoiseTurbulence_t.md) |  |  |
+| `0xd0` | `m_nNoiseType` | [PFNoiseType_t](../particleslib/PFNoiseType_t.md) |  |  |
+| `0xd4` | `m_nNoiseModifier` | [PFNoiseModifier_t](../particleslib/PFNoiseModifier_t.md) |  |  |
 | `0xd8` | `m_flNoiseTurbulenceScale` | float32 |  |  |
 | `0xdc` | `m_flNoiseTurbulenceMix` | float32 |  |  |
 | `0xe0` | `m_flNoiseImgPreviewScale` | float32 |  |  |
 | `0xe4` | `m_bNoiseImgPreviewLive` | bool |  |  |
 | `0xf0` | `m_flNoCameraFallback` | float32 |  |  |
 | `0xf4` | `m_bUseBoundsCenter` | bool |  |  |
-| `0xf8` | `m_nInputMode` | [ParticleFloatInputMode_t](../!GlobalTypes/ParticleFloatInputMode_t.md) |  |  |
+| `0xf8` | `m_nInputMode` | [ParticleFloatInputMode_t](../particleslib/ParticleFloatInputMode_t.md) |  |  |
 | `0xfc` | `m_flMultFactor` | float32 |  |  |
 | `0x100` | `m_flInput0` | float32 |  |  |
 | `0x104` | `m_flInput1` | float32 |  |  |
@@ -87,8 +87,8 @@ classDiagram
 | `0x114` | `m_flNotchedRangeMax` | float32 |  |  |
 | `0x118` | `m_flNotchedOutputOutside` | float32 |  |  |
 | `0x11c` | `m_flNotchedOutputInside` | float32 |  |  |
-| `0x120` | `m_nRoundType` | [ParticleFloatRoundType_t](../!GlobalTypes/ParticleFloatRoundType_t.md) |  |  |
-| `0x124` | `m_nBiasType` | [ParticleFloatBiasType_t](../!GlobalTypes/ParticleFloatBiasType_t.md) |  |  |
+| `0x120` | `m_nRoundType` | [ParticleFloatRoundType_t](../particleslib/ParticleFloatRoundType_t.md) |  |  |
+| `0x124` | `m_nBiasType` | [ParticleFloatBiasType_t](../particleslib/ParticleFloatBiasType_t.md) |  |  |
 | `0x128` | `m_flBiasParameter` | float32 |  |  |
 | `0x130` | `m_Curve` | CPiecewiseCurve |  |  |
 

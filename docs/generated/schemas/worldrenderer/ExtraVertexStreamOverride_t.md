@@ -30,7 +30,7 @@ classDiagram
 | `0x0` | `m_nSceneObjectIndex` | uint32 | [BaseSceneObjectOverride_t](../worldrenderer/BaseSceneObjectOverride_t.md) |  |
 | `0x4` | `m_nSubSceneObject` | uint32 |  |  |
 | `0x8` | `m_nDrawCallIndex` | uint32 |  |  |
-| `0xc` | `m_nAdditionalMeshDrawPrimitiveFlags` | [MeshDrawPrimitiveFlags_t](../!GlobalTypes/MeshDrawPrimitiveFlags_t.md) |  |  |
+| `0xc` | `m_nAdditionalMeshDrawPrimitiveFlags` | [MeshDrawPrimitiveFlags_t](../modellib/MeshDrawPrimitiveFlags_t.md) |  |  |
 | `0x10` | `m_extraBufferBinding` | [CRenderBufferBinding](../modellib/CRenderBufferBinding.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>

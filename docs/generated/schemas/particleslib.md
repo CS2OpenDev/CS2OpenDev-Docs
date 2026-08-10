@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/particleslib.md)
 
-21 types. Each links to its own page with the full field layout.
+39 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -34,3 +34,21 @@ nav_exclude: true
 | [PARTICLE_EHANDLE__](particleslib/PARTICLE_EHANDLE__.md) | class | 4 | 1 |  |
 | [ParticleNamedValueConfiguration_t](particleslib/ParticleNamedValueConfiguration_t.md) | class | 56 | 6 |  |
 | [ParticleNamedValueSource_t](particleslib/ParticleNamedValueSource_t.md) | class | 96 | 4 |  |
+| [AnimationType_t](particleslib/AnimationType_t.md) | enum | — | 3 |  |
+| [GPUParticleCollisionMode_t](particleslib/GPUParticleCollisionMode_t.md) | enum | — | 3 |  |
+| [PFNoiseModifier_t](particleslib/PFNoiseModifier_t.md) | enum | — | 4 |  |
+| [PFNoiseTurbulence_t](particleslib/PFNoiseTurbulence_t.md) | enum | — | 6 |  |
+| [PFNoiseType_t](particleslib/PFNoiseType_t.md) | enum | — | 4 |  |
+| [ParticleColorBlendMode_t](particleslib/ParticleColorBlendMode_t.md) | enum | — | 5 |  |
+| [ParticleColorBlendType_t](particleslib/ParticleColorBlendType_t.md) | enum | — | 13 |  |
+| [ParticleDirectionNoiseType_t](particleslib/ParticleDirectionNoiseType_t.md) | enum | — | 3 |  |
+| [ParticleFloatBiasType_t](particleslib/ParticleFloatBiasType_t.md) | enum | — | 5 |  |
+| [ParticleFloatInputMode_t](particleslib/ParticleFloatInputMode_t.md) | enum | — | 4 |  |
+| [ParticleFloatMapType_t](particleslib/ParticleFloatMapType_t.md) | enum | — | 9 |  |
+| [ParticleFloatRandomMode_t](particleslib/ParticleFloatRandomMode_t.md) | enum | — | 4 |  |
+| [ParticleFloatRoundType_t](particleslib/ParticleFloatRoundType_t.md) | enum | — | 5 |  |
+| [ParticleFloatType_t](particleslib/ParticleFloatType_t.md) | enum | — | 33 |  |
+| [ParticleModelType_t](particleslib/ParticleModelType_t.md) | enum | — | 5 |  |
+| [ParticleSetMethod_t](particleslib/ParticleSetMethod_t.md) | enum | — | 6 |  |
+| [ParticleTransformType_t](particleslib/ParticleTransformType_t.md) | enum | — | 5 |  |
+| [ParticleVecType_t](particleslib/ParticleVecType_t.md) | enum | — | 21 |  |

@@ -32,18 +32,18 @@ classDiagram
 | `0x8` | `m_flStartTime` | [NmPercent_t](../animlib/NmPercent_t.md) | [CNmEvent](../animlib/CNmEvent.md) |  |
 | `0xc` | `m_flDuration` | [NmPercent_t](../animlib/NmPercent_t.md) | [CNmEvent](../animlib/CNmEvent.md) |  |
 | `0x10` | `m_syncID` | CGlobalSymbol | [CNmEvent](../animlib/CNmEvent.md) |  |
-| `0x18` | `m_relevance` | [CNmEventRelevance_t](../!GlobalTypes/CNmEventRelevance_t.md) |  |  |
+| `0x18` | `m_relevance` | [CNmEventRelevance_t](../animlib/CNmEventRelevance_t.md) |  |  |
 | `0x1c` | `m_type` | [CNmParticleEvent](../animlib/CNmParticleEvent.md)::Type_t |  |  |
-| `0x20` | `m_target` | [CNmEventTargetEntity_t](../!GlobalTypes/CNmEventTargetEntity_t.md) |  |  |
+| `0x20` | `m_target` | [CNmEventTargetEntity_t](../animlib/CNmEventTargetEntity_t.md) |  |  |
 | `0x28` | `m_hParticleSystem` | CStrongHandle< [InfoForResourceTypeIParticleSystemDefinition](../resourcesystem/InfoForResourceTypeIParticleSystemDefinition.md) > |  |  |
 | `0x30` | `m_tags` | CUtlString |  |  |
 | `0x38` | `m_bStopImmediately` | bool |  |  |
 | `0x39` | `m_bDetachFromOwner` | bool |  |  |
 | `0x3a` | `m_bPlayEndCap` | bool |  |  |
 | `0x40` | `m_attachmentPoint0` | CUtlString |  |  |
-| `0x48` | `m_attachmentType0` | [ParticleAttachment_t](../!GlobalTypes/ParticleAttachment_t.md) |  |  |
+| `0x48` | `m_attachmentType0` | [ParticleAttachment_t](../animationsystem/ParticleAttachment_t.md) |  |  |
 | `0x50` | `m_attachmentPoint1` | CUtlString |  |  |
-| `0x58` | `m_attachmentType1` | [ParticleAttachment_t](../!GlobalTypes/ParticleAttachment_t.md) |  |  |
+| `0x58` | `m_attachmentType1` | [ParticleAttachment_t](../animationsystem/ParticleAttachment_t.md) |  |  |
 | `0x60` | `m_config` | CUtlString |  |  |
 | `0x68` | `m_effectForConfig` | CUtlString |  |  |
 

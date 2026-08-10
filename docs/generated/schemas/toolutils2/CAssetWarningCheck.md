@@ -31,7 +31,7 @@ classDiagram
 | `0x1e` | `m_bOnlyWarnAddons` | bool |  |  |
 | `0x20` | `m_ExcludeAddonNames` | CUtlVector< CUtlString > |  |  |
 | `0x38` | `m_FixDescription` | CUtlString |  |  |
-| `0x40` | `m_FixType` | [AssetWarningFixType_t](../!GlobalTypes/AssetWarningFixType_t.md) |  |  |
+| `0x40` | `m_FixType` | [AssetWarningFixType_t](../toolutils2/AssetWarningFixType_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

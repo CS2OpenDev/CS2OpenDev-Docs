@@ -37,7 +37,7 @@ classDiagram
 | `0xd8` | `m_nCursorsAllowedToWait` | int32 | [CPulseCell_WaitForCursorsWithTagBase](../pulse_runtime_lib/CPulseCell_WaitForCursorsWithTagBase.md) | `MPropertyDescription Any extra waiting cursors will be terminated. -1 for infinite cursors.` |
 | `0xe0` | `m_WaitComplete` | [CPulse_ResumePoint](../pulse_runtime_lib/CPulse_ResumePoint.md) | [CPulseCell_WaitForCursorsWithTagBase](../pulse_runtime_lib/CPulseCell_WaitForCursorsWithTagBase.md) |  |
 | `0x128` | `m_bTagSelfWhenComplete` | bool |  | `MPropertyDescription Apply the same tag we're waiting on to the resulting cursor upon wait completion. Can be used to wait on our result cursor with the same tag.` |
-| `0x12c` | `m_nDesiredKillPriority` | [PulseCursorCancelPriority_t](../animationsystem/PulseCursorCancelPriority_t.md) |  | `MPropertyDescription When we start waiting, how should we handle existing cursors?` |
+| `0x12c` | `m_nDesiredKillPriority` | [PulseCursorCancelPriority_t](../pulse_runtime_lib/PulseCursorCancelPriority_t.md) |  | `MPropertyDescription When we start waiting, how should we handle existing cursors?` |
 
 <details><summary>KV3 class defaults</summary>
 

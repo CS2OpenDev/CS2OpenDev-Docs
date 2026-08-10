@@ -23,7 +23,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_nBoneComponent` | [ModelBoneFlexComponent_t](../!GlobalTypes/ModelBoneFlexComponent_t.md) |  |  |
+| `0x0` | `m_nBoneComponent` | [ModelBoneFlexComponent_t](../modellib/ModelBoneFlexComponent_t.md) |  |  |
 | `0x8` | `m_flexController` | CUtlString |  |  |
 | `0x10` | `m_flexControllerToken` | uint32 |  |  |
 | `0x14` | `m_flMin` | float32 |  |  |

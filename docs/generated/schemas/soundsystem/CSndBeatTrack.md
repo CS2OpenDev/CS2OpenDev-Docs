@@ -26,7 +26,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_name` | CUtlString |  | `MPropertyFriendlyName Track Name` |
-| `0x20` | `m_playbackType` | [SndBeatTrackPlaybackType_t](../!GlobalTypes/SndBeatTrackPlaybackType_t.md) |  | `MPropertyFriendlyName Playback Mode` |
+| `0x20` | `m_playbackType` | [SndBeatTrackPlaybackType_t](../soundsystem/SndBeatTrackPlaybackType_t.md) |  | `MPropertyFriendlyName Playback Mode` |
 | `0x24` | `m_nTranspose` | int32 |  | `MPropertyFriendlyName Transpose` |
 | `0x28` | `m_bSyncToVoice` | bool |  | `MPropertyFriendlyName Sync To Voice` |
 | `0x2c` | `m_flBPM` | float32 |  | `MPropertyFriendlyName BPM` |

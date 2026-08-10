@@ -31,12 +31,12 @@ classDiagram
 | `0x8` | `m_nDrawCallIndex` | int16 |  |  |
 | `0xa` | `m_nLODSetupIndex` | int16 |  |  |
 | `0xc` | `m_vTintColor` | Color |  |  |
-| `0x10` | `m_objectFlags` | [ObjectTypeFlags_t](../!GlobalTypes/ObjectTypeFlags_t.md) |  |  |
+| `0x10` | `m_objectFlags` | [ObjectTypeFlags_t](../worldrenderer/ObjectTypeFlags_t.md) |  |  |
 | `0x14` | `m_nLightProbeVolumePrecomputedHandshake` | int32 |  |  |
 | `0x18` | `m_nInstanceStreamOffset` | uint32 |  |  |
 | `0x1c` | `m_nVertexAlbedoStreamOffset` | uint32 |  |  |
 | `0x20` | `m_nVertexEmissiveStreamOffset` | uint32 |  |  |
-| `0x24` | `m_instanceStreams` | [AggregateInstanceStream_t](../!GlobalTypes/AggregateInstanceStream_t.md) |  |  |
+| `0x24` | `m_instanceStreams` | [AggregateInstanceStream_t](../worldrenderer/AggregateInstanceStream_t.md) |  |  |
 | `0x28` | `m_fEmissiveFactor` | float32 |  |  |
 
 <details><summary>KV3 class defaults</summary>

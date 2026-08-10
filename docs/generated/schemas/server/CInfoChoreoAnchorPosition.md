@@ -31,7 +31,7 @@ classDiagram
 | `0x38` | `m_flRadius` | float32 |  |  |
 | `0x3c` | `m_bOnlyWarpPosition` | bool |  |  |
 | `0x40` | `m_hParent` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
-| `0x44` | `m_nShapeType` | [CInfoChoreoLocatorShapeType_t](../!GlobalTypes/CInfoChoreoLocatorShapeType_t.md) |  |  |
+| `0x44` | `m_nShapeType` | [CInfoChoreoLocatorShapeType_t](../server/CInfoChoreoLocatorShapeType_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

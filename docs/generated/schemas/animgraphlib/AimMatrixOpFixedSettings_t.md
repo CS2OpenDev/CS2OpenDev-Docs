@@ -30,7 +30,7 @@ classDiagram
 | `0x0` | `m_attachment` | [CAnimAttachment](../modellib/CAnimAttachment.md) |  |  |
 | `0x80` | `m_damping` | [CAnimInputDamping](../animgraphlib/CAnimInputDamping.md) |  |  |
 | `0x98` | `m_poseCacheHandles` | [CPoseHandle](../animgraphlib/CPoseHandle.md)[10] |  |  |
-| `0xc0` | `m_eBlendMode` | [AimMatrixBlendMode](../!GlobalTypes/AimMatrixBlendMode.md) |  |  |
+| `0xc0` | `m_eBlendMode` | [AimMatrixBlendMode](../animgraphlib/AimMatrixBlendMode.md) |  |  |
 | `0xc4` | `m_flMaxYawAngle` | float32 |  |  |
 | `0xc8` | `m_flMaxPitchAngle` | float32 |  |  |
 | `0xcc` | `m_nSequenceMaxFrame` | int32 |  |  |

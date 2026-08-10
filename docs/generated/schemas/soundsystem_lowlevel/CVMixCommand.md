@@ -23,7 +23,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_nCommand` | [VMixGraphCommandID_t](../!GlobalTypes/VMixGraphCommandID_t.md) |  | `MKV3TransferName command` |
+| `0x0` | `m_nCommand` | [VMixGraphCommandID_t](../soundsystem_lowlevel/VMixGraphCommandID_t.md) |  | `MKV3TransferName command` |
 | `0x4` | `m_nParameterNameHash` | uint32 |  | `MKV3TransferName paramName` |
 | `0x8` | `m_nOutputSubmix` | int32 |  | `MKV3TransferName outputSubmix` |
 | `0xc` | `m_nInputSubmix0` | int32 |  | `MKV3TransferName inputSubmix0` |

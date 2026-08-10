@@ -23,7 +23,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `itemType` | [SosEditItemType_t](../!GlobalTypes/SosEditItemType_t.md) |  |  |
+| `0x0` | `itemType` | [SosEditItemType_t](../soundsystem/SosEditItemType_t.md) |  |  |
 | `0x8` | `itemName` | CUtlString |  |  |
 | `0x10` | `itemTypeName` | CUtlString |  |  |
 | `0x20` | `itemKVString` | CUtlString |  |  |

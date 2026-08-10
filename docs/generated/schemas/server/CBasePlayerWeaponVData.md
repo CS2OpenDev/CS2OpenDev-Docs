@@ -48,7 +48,7 @@ classDiagram
 | `0x4c0` | `m_flMuzzleSmokeDecrementRate` | float32 |  | `MPropertyDescription Barrel smoke decrement rate when not firing` |
 | `0x4c4` | `m_bGenerateMuzzleLight` | bool |  |  |
 | `0x4c5` | `m_bLinkedCooldowns` | bool |  | `MPropertyDescription Should both primary and secondary attacks be cooled down together (so cooling down primary attack would cooldown both primary + secondary attacks)?` `MPropertyStartGroup Behavior` |
-| `0x4c6` | `m_iFlags` | [ItemFlagTypes_t](../!GlobalTypes/ItemFlagTypes_t.md) |  |  |
+| `0x4c6` | `m_iFlags` | [ItemFlagTypes_t](../server/ItemFlagTypes_t.md) |  |  |
 | `0x4c8` | `m_iWeight` | int32 |  | `MPropertyDescription This value used to determine this weapon's importance in autoselection` |
 | `0x4cc` | `m_bAutoSwitchTo` | bool |  | `MPropertyDescription Whether this weapon is safe to automatically switch to (should be false for eg. explosives that can the player may accidentally hurt themselves with)` `MPropertyFriendlyName Safe To Auto-Switch To` |
 | `0x4cd` | `m_bAutoSwitchFrom` | bool |  | `MPropertyFriendlyName Safe To Auto-Switch Away From` |
@@ -61,11 +61,11 @@ classDiagram
 | `0x4e0` | `m_bReserveAmmoAsClips` | bool |  | `MPropertyDescription Indicates whether to treat reserve ammo as clips (reloads) instead of raw bullets` |
 | `0x4e1` | `m_bTreatAsSingleClip` | bool |  | `MPropertyDescription Regardless of ammo position, we'll always use clip1 as where our bullets come from` |
 | `0x4e2` | `m_bKeepLoadedAmmo` | bool |  | `MPropertyDescription Indicates whether to keep any loaded ammo in the weapon on reload` |
-| `0x4e4` | `m_iRumbleEffect` | [RumbleEffect_t](../!GlobalTypes/RumbleEffect_t.md) |  | `MPropertyStartGroup UI` |
+| `0x4e4` | `m_iRumbleEffect` | [RumbleEffect_t](../server/RumbleEffect_t.md) |  | `MPropertyStartGroup UI` |
 | `0x4e8` | `m_flDropSpeed` | float32 |  |  |
 | `0x4ec` | `m_iSlot` | int32 |  | `MPropertyDescription Which 'column' to display this weapon in the HUD` `MPropertyFriendlyName HUD Bucket` |
 | `0x4f0` | `m_iPosition` | int32 |  | `MPropertyDescription Which 'row' to display this weapon in the HUD` `MPropertyFriendlyName HUD Bucket Position` |
-| `0x4f8` | `m_aShootSounds` | CUtlOrderedMap< [WeaponSound_t](../!GlobalTypes/WeaponSound_t.md), CSoundEventName > |  | `MPropertyStartGroup Sounds` |
+| `0x4f8` | `m_aShootSounds` | CUtlOrderedMap< [WeaponSound_t](../server/WeaponSound_t.md), CSoundEventName > |  | `MPropertyStartGroup Sounds` |
 
 <details><summary>KV3 class defaults</summary>
 

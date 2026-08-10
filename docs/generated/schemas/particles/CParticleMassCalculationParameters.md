@@ -24,7 +24,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_nMassMode` | [ParticleMassMode_t](../!GlobalTypes/ParticleMassMode_t.md) |  | `MPropertyFriendlyName Radius calculation mode` |
+| `0x0` | `m_nMassMode` | [ParticleMassMode_t](../particles/ParticleMassMode_t.md) |  | `MPropertyFriendlyName Radius calculation mode` |
 | `0x8` | `m_flRadius` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Radius input` |
 | `0x178` | `m_flNominalRadius` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Nominal radius value` |
 | `0x2e8` | `m_flScale` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Scale to apply to result` |

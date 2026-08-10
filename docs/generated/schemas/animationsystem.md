@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/animationsystem.md)
 
-51 types. Each links to its own page with the full field layout.
+54 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -60,7 +60,10 @@ nav_exclude: true
 | [HSequence](animationsystem/HSequence.md) | class | 4 | 1 |  |
 | [MoodAnimationLayer_t](animationsystem/MoodAnimationLayer_t.md) | class | 96 | 12 |  |
 | [MoodAnimation_t](animationsystem/MoodAnimation_t.md) | class | 16 | 2 |  |
-| [PulseBestOutflowRules_t](animationsystem/PulseBestOutflowRules_t.md) | enum | — | 2 |  |
-| [PulseCursorCancelPriority_t](animationsystem/PulseCursorCancelPriority_t.md) | enum | — | 4 |  |
-| [PulseCursorWakePriority_t](animationsystem/PulseCursorWakePriority_t.md) | enum | — | 2 |  |
-| [PulseMethodCallMode_t](animationsystem/PulseMethodCallMode_t.md) | enum | — | 2 |  |
+| [AnimationProcessingType_t](animationsystem/AnimationProcessingType_t.md) | enum | — | 6 |  |
+| [AnimationSnapshotType_t](animationsystem/AnimationSnapshotType_t.md) | enum | — | 7 |  |
+| [BoneTransformSpace_t](animationsystem/BoneTransformSpace_t.md) | enum | — | 4 |  |
+| [MoodType_t](animationsystem/MoodType_t.md) | enum | — | 2 |  |
+| [ParticleAttachment_t](animationsystem/ParticleAttachment_t.md) | enum | — | 18 |  |
+| [SeqCmd_t](animationsystem/SeqCmd_t.md) | enum | — | 17 |  |
+| [SeqPoseSetting_t](animationsystem/SeqPoseSetting_t.md) | enum | — | 4 |  |

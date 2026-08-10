@@ -37,7 +37,7 @@ classDiagram
 | `0xd8` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0x100` | `m_options` | CUtlVector< [CNmGraphDocFloatSelectorNode](../animdoclib/CNmGraphDocFloatSelectorNode.md)::Option_t > |  | `MPropertyAutoExpandSelf` `MPropertyResizable` |
 | `0x118` | `m_flDefaultValue` | float32 |  |  |
-| `0x11c` | `m_easing` | [NmEasingOperation_t](../!GlobalTypes/NmEasingOperation_t.md) |  | `MPropertyGroupName +Easing` |
+| `0x11c` | `m_easing` | [NmEasingOperation_t](../animlib/NmEasingOperation_t.md) |  | `MPropertyGroupName +Easing` |
 | `0x120` | `m_easeTime` | float32 |  | `MPropertyGroupName +Easing` |
 
 <details><summary>KV3 class defaults</summary>

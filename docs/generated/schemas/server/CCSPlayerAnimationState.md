@@ -24,7 +24,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x18` | `m_currentMoveType` | [CCSPlayerAnimationState](../server/CCSPlayerAnimationState.md)::[MoveType_t](../!GlobalTypes/MoveType_t.md) |  |  |
+| `0x18` | `m_currentMoveType` | [CCSPlayerAnimationState](../server/CCSPlayerAnimationState.md)::[MoveType_t](../server/MoveType_t.md) |  |  |
 | `0x19` | `m_groundMoveState` | [CCSPlayerAnimationState](../server/CCSPlayerAnimationState.md)::GroundMoveState_t |  |  |
 | `0x1a` | `m_groundActionDirection` | [CCSPlayerAnimationState](../server/CCSPlayerAnimationState.md)::Direction_t |  |  |
 | `0x1b` | `m_airAction` | [CCSPlayerAnimationState](../server/CCSPlayerAnimationState.md)::AirAction_t |  |  |

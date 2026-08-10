@@ -26,7 +26,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `disposition` | [Disposition_t](../!GlobalTypes/Disposition_t.md) |  |  |
+| `0x0` | `disposition` | [Disposition_t](../server/Disposition_t.md) |  |  |
 | `0x4` | `priority` | int32 |  |  |
 
 <details><summary>KV3 class defaults</summary>

@@ -27,7 +27,7 @@ classDiagram
 | `0x8` | `m_nModelID` | int32 |  |  |
 | `0x10` | `m_hMaterialBase` | CStrongHandle< [InfoForResourceTypeIMaterial2](../resourcesystem/InfoForResourceTypeIMaterial2.md) > |  |  |
 | `0x18` | `m_hMaterialDamageOverlay` | CStrongHandle< [InfoForResourceTypeIMaterial2](../resourcesystem/InfoForResourceTypeIMaterial2.md) > |  |  |
-| `0x20` | `m_solid` | [ShardSolid_t](../!GlobalTypes/ShardSolid_t.md) |  |  |
+| `0x20` | `m_solid` | [ShardSolid_t](../server/ShardSolid_t.md) |  |  |
 | `0x24` | `m_vecPanelSize` | Vector2D |  |  |
 | `0x2c` | `m_vecStressPositionA` | Vector2D |  |  |
 | `0x34` | `m_vecStressPositionB` | Vector2D |  |  |

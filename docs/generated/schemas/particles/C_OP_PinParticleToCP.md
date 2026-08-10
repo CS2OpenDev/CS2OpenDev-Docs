@@ -32,8 +32,8 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flOpStrength` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator strength` `MPropertySortPriority -100` |
-| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../!GlobalTypes/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
-| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../!GlobalTypes/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
+| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
+| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
 | `0x180` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
 | `0x184` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
 | `0x188` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
@@ -51,9 +51,9 @@ classDiagram
 | `0x1d8` | `m_nControlPointNumber` | int32 |  | `MPropertyFriendlyName control point number` |
 | `0x1e0` | `m_vecOffset` | [CParticleCollectionVecInput](../particleslib/CParticleCollectionVecInput.md) |  | `MPropertyFriendlyName offset` |
 | `0x898` | `m_bOffsetLocal` | bool |  | `MPropertyFriendlyName offset in local space` |
-| `0x89c` | `m_nParticleSelection` | [ParticleSelection_t](../!GlobalTypes/ParticleSelection_t.md) |  | `MPropertyFriendlyName particle to use` |
+| `0x89c` | `m_nParticleSelection` | [ParticleSelection_t](../particles/ParticleSelection_t.md) |  | `MPropertyFriendlyName particle to use` |
 | `0x8a0` | `m_nParticleNumber` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName particle number/offset` |
-| `0xa10` | `m_nPinBreakType` | [ParticlePinDistance_t](../!GlobalTypes/ParticlePinDistance_t.md) |  | `MPropertyFriendlyName pin break type` |
+| `0xa10` | `m_nPinBreakType` | [ParticlePinDistance_t](../particles/ParticlePinDistance_t.md) |  | `MPropertyFriendlyName pin break type` |
 | `0xa18` | `m_flBreakDistance` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName break length %` |
 | `0xb88` | `m_flBreakSpeed` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName break speed` |
 | `0xcf8` | `m_flAge` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName break age` |

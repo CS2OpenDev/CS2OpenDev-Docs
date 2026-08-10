@@ -25,7 +25,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_hEntity` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
-| `0x4` | `m_etype` | [ESceneViewDebugOverlaysListenerDataType_t](../!GlobalTypes/ESceneViewDebugOverlaysListenerDataType_t.md) |  |  |
+| `0x4` | `m_etype` | [ESceneViewDebugOverlaysListenerDataType_t](../scenesystem/ESceneViewDebugOverlaysListenerDataType_t.md) |  |  |
 | `0x8` | `m_vectors` | CUtlLeanVector< Vector4D > |  |  |
 | `0x18` | `m_colors` | CUtlLeanVector< Color > |  |  |
 | `0x28` | `m_dimensions` | CUtlLeanVector< float32 > |  |  |

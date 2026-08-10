@@ -31,7 +31,7 @@ classDiagram
 | `0x74` | `m_nEffectorTargetBoneIdx` | int32 |  |  |
 | `0x80` | `m_targetTransform` | CTransform |  |  |
 | `0xa0` | `m_effectorTarget` | [CNmTarget](../animlib/CNmTarget.md) |  |  |
-| `0xd0` | `m_blendMode` | [NmIKBlendMode_t](../!GlobalTypes/NmIKBlendMode_t.md) |  |  |
+| `0xd0` | `m_blendMode` | [NmIKBlendMode_t](../animlib/NmIKBlendMode_t.md) |  |  |
 | `0xd4` | `m_flBlendWeight` | float32 |  |  |
 | `0xd8` | `m_bIsTargetInWorldSpace` | bool |  |  |
 | `0xd9` | `m_bIsRunningFromDeserializedData` | bool |  |  |

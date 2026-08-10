@@ -28,7 +28,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_sModelName` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCModel](../resourcesystem/InfoForResourceTypeCModel.md) > > |  | `MPropertyDescription Model to get the animation list from` `MPropertyProvidesEditContextString ToolEditContext_ID_VMDL` |
-| `0xe0` | `m_nMoodType` | [MoodType_t](../!GlobalTypes/MoodType_t.md) |  | `MPropertyDescription Type of mood` |
+| `0xe0` | `m_nMoodType` | [MoodType_t](../animationsystem/MoodType_t.md) |  | `MPropertyDescription Type of mood` |
 | `0xe8` | `m_animationLayers` | CUtlVector< [MoodAnimationLayer_t](../animationsystem/MoodAnimationLayer_t.md) > |  | `MPropertyDescription Layers for this mood` |
 
 <details><summary>KV3 class defaults</summary>

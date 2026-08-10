@@ -25,7 +25,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_nNodeType` | [InventoryNodeType_t](../!GlobalTypes/InventoryNodeType_t.md) |  | `MPropertySuppressField` |
+| `0x0` | `m_nNodeType` | [InventoryNodeType_t](../client/InventoryNodeType_t.md) |  | `MPropertySuppressField` |
 | `0x8` | `name` | CUtlString |  | `MPropertyFriendlyName Item Name` `MPropertyReadOnly` `MPropertyReadonlyExpr 1` `MPropertySuppressExpr name == ""` |
 | `0x10` | `inventory_image_data` | inv_image_data_t |  | `MPropertyAutoExpandSelf` `MPropertyFriendlyName Inventory Image Data` |
 

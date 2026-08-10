@@ -27,7 +27,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x8` | `m_nType` | [SndSeqInstrumentType_t](../!GlobalTypes/SndSeqInstrumentType_t.md) | [CSndSeqInstBaseSchema](../soundsystem/CSndSeqInstBaseSchema.md) |  |
+| `0x8` | `m_nType` | [SndSeqInstrumentType_t](../soundsystem/SndSeqInstrumentType_t.md) | [CSndSeqInstBaseSchema](../soundsystem/CSndSeqInstBaseSchema.md) |  |
 | `0xe` | `m_bStopCurrentEvents` | bool | [CSndSeqInstBaseSchema](../soundsystem/CSndSeqInstBaseSchema.md) |  |
 | `0x10` | `m_flBPM` | float32 | [CSndSeqInstBaseSchema](../soundsystem/CSndSeqInstBaseSchema.md) |  |
 | `0x14` | `m_flBPMFactor` | float32 | [CSndSeqInstBaseSchema](../soundsystem/CSndSeqInstBaseSchema.md) |  |

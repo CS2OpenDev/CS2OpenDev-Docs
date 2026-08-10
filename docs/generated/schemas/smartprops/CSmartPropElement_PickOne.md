@@ -43,7 +43,7 @@ classDiagram
 | `0x168` | `m_vHandleOffset` | CSmartPropAttributeVector |  | `MPropertyDescription Specifies an offset in the local space of the element to apply to the configuration handle.` `MPropertyGroupName Handle Settings` `MPropertyReadonlyExpr m_bConfigurable == false` |
 | `0x1a8` | `m_HandleColor` | CSmartPropAttributeColor |  | `MPropertyDescription Color to use to display the configuration handle.` `MPropertyGroupName Handle Settings` `MPropertyReadonlyExpr m_bConfigurable == false` |
 | `0x1e8` | `m_HandleSize` | CSmartPropAttributeInt |  | `MPropertyDescription Size of the configuration handle.` `MPropertyGroupName Handle Settings` `MPropertyReadonlyExpr m_bConfigurable == false` |
-| `0x228` | `m_HandleShape` | [ConfigurationHandleShape_t](../!GlobalTypes/ConfigurationHandleShape_t.md) |  | `MPropertyDescription Shape of the configuration handle to display.` `MPropertyGroupName Handle Settings` `MPropertyReadonlyExpr m_bConfigurable == false` |
+| `0x228` | `m_HandleShape` | [ConfigurationHandleShape_t](../smartprops/ConfigurationHandleShape_t.md) |  | `MPropertyDescription Shape of the configuration handle to display.` `MPropertyGroupName Handle Settings` `MPropertyReadonlyExpr m_bConfigurable == false` |
 
 <details><summary>KV3 class defaults</summary>
 

@@ -27,5 +27,5 @@ classDiagram
 | `0x20` | `m_nSemanticIndex` | int8 |  |  |
 | `0x28` | `m_nOffset` | int16 |  |  |
 | `0x2a` | `m_nSlot` | int8 |  |  |
-| `0x2b` | `m_nSlotType` | [RenderSlotType_t](../!GlobalTypes/RenderSlotType_t.md) |  |  |
+| `0x2b` | `m_nSlotType` | [RenderSlotType_t](../modellib/RenderSlotType_t.md) |  |  |
 | `0x2c` | `m_szShaderSemantic` | char[32] |  |  |

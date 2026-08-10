@@ -58,12 +58,12 @@ classDiagram
 | `0x2d8` | `m_lifeState` | uint8 | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x2dc` | `m_flDamageAccumulator` | float32 | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x2e0` | `m_bTakesDamage` | bool | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2e8` | `m_nTakeDamageFlags` | [TakeDamageFlags_t](../!GlobalTypes/TakeDamageFlags_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2f0` | `m_nPlatformType` | [EntityPlatformTypes_t](../!GlobalTypes/EntityPlatformTypes_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2f2` | `m_MoveCollide` | [MoveCollide_t](../!GlobalTypes/MoveCollide_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2f3` | `m_MoveType` | [MoveType_t](../!GlobalTypes/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2f4` | `m_nPreviouslySetMoveType` | [MoveType_t](../!GlobalTypes/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2f5` | `m_nActualMoveType` | [MoveType_t](../!GlobalTypes/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2e8` | `m_nTakeDamageFlags` | [TakeDamageFlags_t](../server/TakeDamageFlags_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2f0` | `m_nPlatformType` | [EntityPlatformTypes_t](../server/EntityPlatformTypes_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2f2` | `m_MoveCollide` | [MoveCollide_t](../server/MoveCollide_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2f3` | `m_MoveType` | [MoveType_t](../server/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2f4` | `m_nPreviouslySetMoveType` | [MoveType_t](../server/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2f5` | `m_nActualMoveType` | [MoveType_t](../server/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x2f6` | `m_nWaterTouch` | uint8 | [CBaseEntity](../server/CBaseEntity.md) | `MNotSaved` |
 | `0x2f7` | `m_nSlimeTouch` | uint8 | [CBaseEntity](../server/CBaseEntity.md) | `MNotSaved` |
 | `0x2f8` | `m_bRestoreInHierarchy` | bool | [CBaseEntity](../server/CBaseEntity.md) |  |
@@ -121,7 +121,7 @@ classDiagram
 | `0x490` | `m_pBlocker` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x494` | `m_flLocalTime` | float32 | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x498` | `m_flVPhysicsUpdateLocalTime` | float32 | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x49c` | `m_nBloodType` | [BloodType](../!GlobalTypes/BloodType.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x49c` | `m_nBloodType` | [BloodType](../server/BloodType.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x4a0` | `m_pPulseGraphInstance` | [CPulseGraphInstance_ServerEntity](../server/CPulseGraphInstance_ServerEntity.md)* | [CBaseEntity](../server/CBaseEntity.md) | `MKV3TransferSaveOpsForField GetPulseInstanceSaveRestoreOps` |
 | `0x4b0` | `m_nInButtonsWhichAreToggles` | uint64 |  | `MNotSaved` |
 | `0x4b8` | `m_nTickBase` | uint32 |  | Server tick number at the time of the most-recent usercmd from this client. *Only sent to the owning player (LocalPlayerExclusive). Used for lag compensation and prediction.* `MNotSaved` |
@@ -131,8 +131,8 @@ classDiagram
 | `0x4ec` | `m_hSplitOwner` | CHandle< [CBasePlayerController](../server/CBasePlayerController.md) > |  | `MNotSaved` |
 | `0x4f0` | `m_hSplitScreenPlayers` | CUtlVector< CHandle< [CBasePlayerController](../server/CBasePlayerController.md) > > |  | `MNotSaved` |
 | `0x508` | `m_bIsHLTV` | bool |  |  |
-| `0x50c` | `m_iConnected` | [PlayerConnectedState](../!GlobalTypes/PlayerConnectedState.md) |  | PlayerConnectedState enum – 0 = Disconnected, 1 = Connected, 2 = Connecting. `MNotSaved` |
-| `0x510` | `m_iMostConnected` | [PlayerConnectedState](../!GlobalTypes/PlayerConnectedState.md) |  | `MNotSaved` |
+| `0x50c` | `m_iConnected` | [PlayerConnectedState](../server/PlayerConnectedState.md) |  | PlayerConnectedState enum – 0 = Disconnected, 1 = Connected, 2 = Connecting. `MNotSaved` |
+| `0x510` | `m_iMostConnected` | [PlayerConnectedState](../server/PlayerConnectedState.md) |  | `MNotSaved` |
 | `0x514` | `m_iszPlayerName` | char[128] |  | Display name of the player, as reported by Steam (up to 128 bytes, UTF-8). `MNotSaved` |
 | `0x598` | `m_szNetworkIDString` | CUtlString |  | `MNotSaved` |
 | `0x5a0` | `m_fLerpTime` | float32 |  | `MNotSaved` |
@@ -140,7 +140,7 @@ classDiagram
 | `0x5a5` | `m_bPredict` | bool |  | `MNotSaved` |
 | `0x5ac` | `m_bIsLowViolence` | bool |  | `MNotSaved` |
 | `0x5ad` | `m_bGamePaused` | bool |  | `MNotSaved` |
-| `0x6e8` | `m_iIgnoreGlobalChat` | [ChatIgnoreType_t](../!GlobalTypes/ChatIgnoreType_t.md) |  | `MNotSaved` |
+| `0x6e8` | `m_iIgnoreGlobalChat` | [ChatIgnoreType_t](../server/ChatIgnoreType_t.md) |  | `MNotSaved` |
 | `0x6ec` | `m_flLastPlayerTalkTime` | float32 |  | `MKV3TransferSaveOpsForField GetEngineTimeSaveRestoreOps` |
 | `0x6f0` | `m_flLastEntitySteadyState` | float32 |  | `MNotSaved` |
 | `0x6f4` | `m_nAvailableEntitySteadyState` | int32 |  | `MNotSaved` |

@@ -1,0 +1,37 @@
+---
+layout: default
+title: ParticleVecType_t
+nav_exclude: true
+---
+
+[Schemas](../../schemas.md) / [particleslib](../particleslib.md) / ParticleVecType_t
+
+# ParticleVecType_t
+
+**Kind:** enum · **Underlying:** `uint32_t` · **Module:** particleslib
+
+## Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `PVEC_TYPE_INVALID` | -1 |  |
+| `PVEC_TYPE_LITERAL` | 0 |  |
+| `PVEC_TYPE_LITERAL_COLOR` | 1 |  |
+| `PVEC_TYPE_NAMED_VALUE` | 2 |  |
+| `PVEC_TYPE_PARTICLE_VECTOR` | 3 |  |
+| `PVEC_TYPE_PARTICLE_INITIAL_VECTOR` | 4 |  |
+| `PVEC_TYPE_PARTICLE_VELOCITY` | 5 |  |
+| `PVEC_TYPE_PARTICLE_GRAVITY` | 6 |  |
+| `PVEC_TYPE_CP_VALUE` | 7 |  |
+| `PVEC_TYPE_CP_RELATIVE_POSITION` | 8 |  |
+| `PVEC_TYPE_CP_RELATIVE_DIR` | 9 |  |
+| `PVEC_TYPE_CP_RELATIVE_RANDOM_DIR` | 10 |  |
+| `PVEC_TYPE_FLOAT_COMPONENTS` | 11 |  |
+| `PVEC_TYPE_FLOAT_INTERP_CLAMPED` | 12 |  |
+| `PVEC_TYPE_FLOAT_INTERP_OPEN` | 13 |  |
+| `PVEC_TYPE_FLOAT_INTERP_GRADIENT` | 14 |  |
+| `PVEC_TYPE_RANDOM_UNIFORM` | 15 |  |
+| `PVEC_TYPE_RANDOM_UNIFORM_OFFSET` | 16 |  |
+| `PVEC_TYPE_CP_DELTA` | 17 |  |
+| `PVEC_TYPE_CLOSEST_CAMERA_POSITION` | 18 |  |
+| `PVEC_TYPE_COUNT` | 19 |  |

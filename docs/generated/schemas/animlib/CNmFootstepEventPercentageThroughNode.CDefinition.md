@@ -31,7 +31,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `m_nNodeIdx` | int16 | [CNmGraphNode::CDefinition](../animlib/CNmGraphNode.CDefinition.md) |  |
 | `0x10` | `m_nSourceStateNodeIdx` | int16 |  |  |
-| `0x12` | `m_phaseCondition` | [NmFootPhaseCondition_t](../!GlobalTypes/NmFootPhaseCondition_t.md) |  |  |
+| `0x12` | `m_phaseCondition` | [NmFootPhaseCondition_t](../animlib/NmFootPhaseCondition_t.md) |  |  |
 | `0x14` | `m_eventConditionRules` | [CNmBitFlags](../animlib/CNmBitFlags.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>

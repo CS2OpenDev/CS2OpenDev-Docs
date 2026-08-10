@@ -141,6 +141,7 @@ classDiagram
     CEffectsPreviewList *-- CPreviewList
     CGraphPreviewList *-- CPreviewList
     CMixEQ8 *-- CFilterStage
+    CMixSteamAudioSource *-- SteamAudioHRTFInterpolationType_t
     CMixSubgraphSwitch *-- CSelectableSubgraph
     CPreviewList *-- CPreviewEntry
     CVMixToolGraph *-- CVMixEditorNode

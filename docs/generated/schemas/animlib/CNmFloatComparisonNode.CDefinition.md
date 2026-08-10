@@ -31,7 +31,7 @@ classDiagram
 | `0x8` | `m_nNodeIdx` | int16 | [CNmGraphNode::CDefinition](../animlib/CNmGraphNode.CDefinition.md) |  |
 | `0x10` | `m_nInputValueNodeIdx` | int16 |  |  |
 | `0x12` | `m_nComparandValueNodeIdx` | int16 |  |  |
-| `0x14` | `m_comparison` | CNmFloatComparisonNode::[Comparison_t](../!GlobalTypes/Comparison_t.md) |  |  |
+| `0x14` | `m_comparison` | CNmFloatComparisonNode::[Comparison_t](../animgraphdoclib/Comparison_t.md) |  |  |
 | `0x18` | `m_flEpsilon` | float32 |  |  |
 | `0x1c` | `m_flComparisonValue` | float32 |  |  |
 

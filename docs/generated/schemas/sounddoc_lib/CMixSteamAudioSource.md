@@ -33,7 +33,7 @@ classDiagram
 | `0x18` | `m_bActive` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x19` | `m_bSolo` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x1a` | `m_bEditProperties` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
-| `0x20` | `m_nInterpolation` | [SteamAudioHRTFInterpolationType_t](../!GlobalTypes/SteamAudioHRTFInterpolationType_t.md) |  | `MPropertyFriendlyName HRTF Interpolation` |
+| `0x20` | `m_nInterpolation` | [SteamAudioHRTFInterpolationType_t](../sounddoc_lib/SteamAudioHRTFInterpolationType_t.md) |  | `MPropertyFriendlyName HRTF Interpolation` |
 | `0x24` | `m_flDirectMixLevel` | float32 |  | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName Direct Mix Level` |
 | `0x28` | `m_bEnablePerspectiveCorrection` | bool |  | `MPropertyDescription If checked, enables perspective correction for spatialized sound sources. When perspective correction is enabled, instead of spatializing sounds from their world - space position relative to the listener, sounds are spatialized from their on - screen position relative to the user. This can improve perceived localization accuracy in 3D non - VR applications.` `MPropertyFriendlyName Enable Perspective Correction` |
 | `0x29` | `m_bRelativePosition` | bool |  | `MPropertyDescription <b>Check</b> this if the input position is relative to the listener.<br /> <b>Don't check</b> this if the input position is aboslute world space coordinates.` `MPropertyFriendlyName Relative Input Position` |

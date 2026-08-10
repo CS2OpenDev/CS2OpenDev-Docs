@@ -32,7 +32,7 @@ classDiagram
 | `0xc` | `m_flMinValue` | float32 |  |  |
 | `0x10` | `m_flMaxValue` | float32 |  |  |
 | `0x18` | `m_opvarName` | CUtlString |  | `MPropertyFriendlyName Parameter Name` |
-| `0x20` | `m_nSortType` | [SosActionSetParamSortType_t](../!GlobalTypes/SosActionSetParamSortType_t.md) |  |  |
+| `0x20` | `m_nSortType` | [SosActionSetParamSortType_t](../soundsystem/SosActionSetParamSortType_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

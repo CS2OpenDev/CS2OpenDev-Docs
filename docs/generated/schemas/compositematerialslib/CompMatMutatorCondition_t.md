@@ -25,7 +25,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_nMutatorCondition` | [CompMatPropertyMutatorConditionType_t](../!GlobalTypes/CompMatPropertyMutatorConditionType_t.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Condition` |
+| `0x0` | `m_nMutatorCondition` | [CompMatPropertyMutatorConditionType_t](../compositematerialslib/CompMatPropertyMutatorConditionType_t.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Condition` |
 | `0x8` | `m_strMutatorConditionContainerName` | CUtlString |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Container Name` |
 | `0x10` | `m_strMutatorConditionContainerVarName` | CUtlString |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Variable Name` |
 | `0x18` | `m_strMutatorConditionContainerVarValue` | CUtlString |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Variable Value` |

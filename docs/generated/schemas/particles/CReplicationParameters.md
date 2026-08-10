@@ -25,7 +25,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_nReplicationMode` | [ParticleReplicationMode_t](../!GlobalTypes/ParticleReplicationMode_t.md) |  | `MPropertyFriendlyName Replication mode` |
+| `0x0` | `m_nReplicationMode` | [ParticleReplicationMode_t](../particles/ParticleReplicationMode_t.md) |  | `MPropertyFriendlyName Replication mode` |
 | `0x4` | `m_bScaleChildParticleRadii` | bool |  | `MPropertyFriendlyName Scale child particle radius based on parent radius` |
 | `0x8` | `m_flMinRandomRadiusScale` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName Minimum random scale for radius` |
 | `0x178` | `m_flMaxRandomRadiusScale` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName Maximum random scale for radius` |

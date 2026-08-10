@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/materialsystem2.md)
 
-15 types. Each links to its own page with the full field layout.
+20 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -28,3 +28,8 @@ nav_exclude: true
 | [PostProcessingResource_t](materialsystem2/PostProcessingResource_t.md) | class | 344 | 15 |  |
 | [PostProcessingTonemapParameters_t](materialsystem2/PostProcessingTonemapParameters_t.md) | class | 60 | 15 |  |
 | [PostProcessingVignetteParameters_t](materialsystem2/PostProcessingVignetteParameters_t.md) | class | 36 | 6 |  |
+| [BloomBlendMode_t](materialsystem2/BloomBlendMode_t.md) | enum | — | 3 |  |
+| [HorizJustification_e](materialsystem2/HorizJustification_e.md) | enum | — | 4 |  |
+| [LayoutPositionType_e](materialsystem2/LayoutPositionType_e.md) | enum | — | 3 |  |
+| [VertJustification_e](materialsystem2/VertJustification_e.md) | enum | — | 4 |  |
+| [ViewFadeMode_t](materialsystem2/ViewFadeMode_t.md) | enum | — | 3 |  |

@@ -35,7 +35,7 @@ classDiagram
 | `0x48` | `m_pSecondaryGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
 | `0x50` | `m_inputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 4 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0xd8` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
-| `0x100` | `m_ruleCondition` | [NmTransitionRuleCondition_t](../!GlobalTypes/NmTransitionRuleCondition_t.md) |  |  |
+| `0x100` | `m_ruleCondition` | [NmTransitionRuleCondition_t](../animlib/NmTransitionRuleCondition_t.md) |  |  |
 | `0x101` | `m_bMatchOnlySpecificMarkerID` | bool |  |  |
 | `0x108` | `m_markerIDToMatch` | CGlobalSymbol |  | `MPropertyAttributeEditor AnimGraphID()` |
 | `0x110` | `m_bLimitSearchToSourceState` | bool |  | `MPropertyGroupName +Advanced Search Rules` |

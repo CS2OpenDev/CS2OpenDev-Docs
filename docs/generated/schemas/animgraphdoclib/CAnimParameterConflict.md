@@ -28,7 +28,7 @@ classDiagram
 | `0x18` | `m_sConflictDesc` | CUtlString | [CAnimConflictBase](../animgraphdoclib/CAnimConflictBase.md) |  |
 | `0x20` | `m_nResolveIdx` | int32 | [CAnimConflictBase](../animgraphdoclib/CAnimConflictBase.md) |  |
 | `0x28` | `m_conflictData` | [CAnimConflictInfo_t](../animgraphdoclib/CAnimConflictInfo_t.md)[2] | [CAnimConflictBase](../animgraphdoclib/CAnimConflictBase.md) |  |
-| `0x68` | `m_eConflictType` | [AnimConflictType_t](../!GlobalTypes/AnimConflictType_t.md) | [CAnimConflictBase](../animgraphdoclib/CAnimConflictBase.md) |  |
+| `0x68` | `m_eConflictType` | [AnimConflictType_t](../animgraphdoclib/AnimConflictType_t.md) | [CAnimConflictBase](../animgraphdoclib/CAnimConflictBase.md) |  |
 
 <details><summary>KV3 class defaults</summary>
 

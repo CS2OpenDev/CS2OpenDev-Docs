@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/particles.md)
 
-434 types. Each links to its own page with the full field layout.
+507 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -447,3 +447,76 @@ nav_exclude: true
 | [TextureControls_t](particles/TextureControls_t.md) | class | 2608 | 16 |  |
 | [TextureGroup_t](particles/TextureGroup_t.md) | class | 3032 | 9 |  |
 | [VecInputMaterialVariable_t](particles/VecInputMaterialVariable_t.md) | class | 1728 | 2 |  |
+| [BBoxVolumeType_t](particles/BBoxVolumeType_t.md) | enum | — | 4 |  |
+| [BlurFilterType_t](particles/BlurFilterType_t.md) | enum | — | 2 |  |
+| [ClosestPointTestType_t](particles/ClosestPointTestType_t.md) | enum | — | 3 |  |
+| [Detail2Combo_t](particles/Detail2Combo_t.md) | enum | — | 7 |  |
+| [DetailCombo_t](particles/DetailCombo_t.md) | enum | — | 4 |  |
+| [EventTypeSelection_t](particles/EventTypeSelection_t.md) | enum | — | 12 |  |
+| [HitboxLerpType_t](particles/HitboxLerpType_t.md) | enum | — | 2 |  |
+| [InheritableBoolType_t](particles/InheritableBoolType_t.md) | enum | — | 3 |  |
+| [MaterialProxyType_t](particles/MaterialProxyType_t.md) | enum | — | 2 |  |
+| [MissingParentInheritBehavior_t](particles/MissingParentInheritBehavior_t.md) | enum | — | 4 |  |
+| [ModelHitboxType_t](particles/ModelHitboxType_t.md) | enum | — | 4 |  |
+| [PFuncVisualizationType_t](particles/PFuncVisualizationType_t.md) | enum | — | 7 |  |
+| [ParticleAlphaReferenceType_t](particles/ParticleAlphaReferenceType_t.md) | enum | — | 4 |  |
+| [ParticleAttrBoxFlags_t](particles/ParticleAttrBoxFlags_t.md) | enum | — | 11 |  |
+| [ParticleCollisionGroup_t](particles/ParticleCollisionGroup_t.md) | enum | — | 7 |  |
+| [ParticleCollisionMask_t](particles/ParticleCollisionMask_t.md) | enum | — | 10 |  |
+| [ParticleCollisionMode_t](particles/ParticleCollisionMode_t.md) | enum | — | 5 |  |
+| [ParticleControlPointAxis_t](particles/ParticleControlPointAxis_t.md) | enum | — | 6 |  |
+| [ParticleDepthFeatheringMode_t](particles/ParticleDepthFeatheringMode_t.md) | enum | — | 3 |  |
+| [ParticleDetailLevel_t](particles/ParticleDetailLevel_t.md) | enum | — | 4 |  |
+| [ParticleEndcapMode_t](particles/ParticleEndcapMode_t.md) | enum | — | 3 |  |
+| [ParticleEntityPos_t](particles/ParticleEntityPos_t.md) | enum | — | 4 |  |
+| [ParticleFalloffFunction_t](particles/ParticleFalloffFunction_t.md) | enum | — | 3 |  |
+| [ParticleFanType_t](particles/ParticleFanType_t.md) | enum | — | 3 |  |
+| [ParticleFogType_t](particles/ParticleFogType_t.md) | enum | — | 3 |  |
+| [ParticleHitboxBiasType_t](particles/ParticleHitboxBiasType_t.md) | enum | — | 2 |  |
+| [ParticleHitboxDataSelection_t](particles/ParticleHitboxDataSelection_t.md) | enum | — | 2 |  |
+| [ParticleImpulseType_t](particles/ParticleImpulseType_t.md) | enum | — | 6 |  |
+| [ParticleLightBehaviorChoiceList_t](particles/ParticleLightBehaviorChoiceList_t.md) | enum | — | 3 |  |
+| [ParticleLightFogLightingMode_t](particles/ParticleLightFogLightingMode_t.md) | enum | — | 3 |  |
+| [ParticleLightTypeChoiceList_t](particles/ParticleLightTypeChoiceList_t.md) | enum | — | 4 |  |
+| [ParticleLightUnitChoiceList_t](particles/ParticleLightUnitChoiceList_t.md) | enum | — | 2 |  |
+| [ParticleLightingQuality_t](particles/ParticleLightingQuality_t.md) | enum | — | 6 |  |
+| [ParticleLightnintBranchBehavior_t](particles/ParticleLightnintBranchBehavior_t.md) | enum | — | 2 |  |
+| [ParticleLiquidContents_t](particles/ParticleLiquidContents_t.md) | enum | — | 3 |  |
+| [ParticleMassMode_t](particles/ParticleMassMode_t.md) | enum | — | 2 |  |
+| [ParticleMultiSegmentCountSelection_t](particles/ParticleMultiSegmentCountSelection_t.md) | enum | — | 3 |  |
+| [ParticleMultiSegmentInputSelection_t](particles/ParticleMultiSegmentInputSelection_t.md) | enum | — | 2 |  |
+| [ParticleMultiSegmentSpecialCharacter_t](particles/ParticleMultiSegmentSpecialCharacter_t.md) | enum | — | 4 |  |
+| [ParticleOmni2LightTypeChoiceList_t](particles/ParticleOmni2LightTypeChoiceList_t.md) | enum | — | 2 |  |
+| [ParticleOrientationChoiceList_t](particles/ParticleOrientationChoiceList_t.md) | enum | — | 6 |  |
+| [ParticleOrientationSetMode_t](particles/ParticleOrientationSetMode_t.md) | enum | — | 4 |  |
+| [ParticleOrientationType_t](particles/ParticleOrientationType_t.md) | enum | — | 4 |  |
+| [ParticleOutputBlendMode_t](particles/ParticleOutputBlendMode_t.md) | enum | — | 7 |  |
+| [ParticleParentSetMode_t](particles/ParticleParentSetMode_t.md) | enum | — | 3 |  |
+| [ParticlePinDistance_t](particles/ParticlePinDistance_t.md) | enum | — | 12 |  |
+| [ParticlePostProcessPriorityGroup_t](particles/ParticlePostProcessPriorityGroup_t.md) | enum | — | 6 |  |
+| [ParticleReplicationMode_t](particles/ParticleReplicationMode_t.md) | enum | — | 2 |  |
+| [ParticleRotationLockType_t](particles/ParticleRotationLockType_t.md) | enum | — | 3 |  |
+| [ParticleSelection_t](particles/ParticleSelection_t.md) | enum | — | 3 |  |
+| [ParticleSequenceCropOverride_t](particles/ParticleSequenceCropOverride_t.md) | enum | — | 3 |  |
+| [ParticleSortingChoiceList_t](particles/ParticleSortingChoiceList_t.md) | enum | — | 2 |  |
+| [ParticleTextureLayerBlendType_t](particles/ParticleTextureLayerBlendType_t.md) | enum | — | 7 |  |
+| [ParticleToolsState_t](particles/ParticleToolsState_t.md) | enum | — | 3 |  |
+| [ParticleTopology_t](particles/ParticleTopology_t.md) | enum | — | 5 |  |
+| [ParticleTraceMissBehavior_t](particles/ParticleTraceMissBehavior_t.md) | enum | — | 3 |  |
+| [ParticleTraceSet_t](particles/ParticleTraceSet_t.md) | enum | — | 4 |  |
+| [ParticleVRHandChoiceList_t](particles/ParticleVRHandChoiceList_t.md) | enum | — | 4 |  |
+| [ParticleVolumetricSmokeCreationType_t](particles/ParticleVolumetricSmokeCreationType_t.md) | enum | — | 2 |  |
+| [ParticleVolumetricSmokeType_t](particles/ParticleVolumetricSmokeType_t.md) | enum | — | 4 |  |
+| [PetGroundType_t](particles/PetGroundType_t.md) | enum | — | 3 |  |
+| [RenderModelSubModelFieldType_t](particles/RenderModelSubModelFieldType_t.md) | enum | — | 4 |  |
+| [ScalarExpressionType_t](particles/ScalarExpressionType_t.md) | enum | — | 12 |  |
+| [SetStatisticExpressionType_t](particles/SetStatisticExpressionType_t.md) | enum | — | 8 |  |
+| [SnapshotIndexType_t](particles/SnapshotIndexType_t.md) | enum | — | 2 |  |
+| [SpriteCardPerParticleScale_t](particles/SpriteCardPerParticleScale_t.md) | enum | — | 14 |  |
+| [SpriteCardShaderType_t](particles/SpriteCardShaderType_t.md) | enum | — | 2 |  |
+| [SpriteCardTextureChannel_t](particles/SpriteCardTextureChannel_t.md) | enum | — | 15 |  |
+| [SpriteCardTextureType_t](particles/SpriteCardTextureType_t.md) | enum | — | 12 |  |
+| [StandardLightingAttenuationStyle_t](particles/StandardLightingAttenuationStyle_t.md) | enum | — | 2 |  |
+| [TextureRepetitionMode_t](particles/TextureRepetitionMode_t.md) | enum | — | 2 |  |
+| [VectorExpressionType_t](particles/VectorExpressionType_t.md) | enum | — | 10 |  |
+| [VectorFloatExpressionType_t](particles/VectorFloatExpressionType_t.md) | enum | — | 7 |  |

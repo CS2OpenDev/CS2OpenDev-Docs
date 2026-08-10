@@ -29,9 +29,9 @@ classDiagram
 | `0x40` | `m_vecMins` | Vector |  | `MSaveBehavior` |
 | `0x4c` | `m_vecMaxs` | Vector |  | `MSaveBehavior` |
 | `0x5a` | `m_usSolidFlags` | uint8 |  |  |
-| `0x5b` | `m_nSolidType` | [SolidType_t](../!GlobalTypes/SolidType_t.md) |  |  |
+| `0x5b` | `m_nSolidType` | [SolidType_t](../server/SolidType_t.md) |  |  |
 | `0x5c` | `m_triggerBloat` | uint8 |  |  |
-| `0x5d` | `m_nSurroundType` | [SurroundingBoundsType_t](../!GlobalTypes/SurroundingBoundsType_t.md) |  |  |
+| `0x5d` | `m_nSurroundType` | [SurroundingBoundsType_t](../server/SurroundingBoundsType_t.md) |  |  |
 | `0x5e` | `m_CollisionGroup` | uint8 |  |  |
 | `0x5f` | `m_nEnablePhysics` | uint8 |  |  |
 | `0x60` | `m_flBoundingRadius` | float32 |  |  |

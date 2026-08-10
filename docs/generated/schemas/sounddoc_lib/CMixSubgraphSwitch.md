@@ -36,7 +36,7 @@ classDiagram
 | `0x1a` | `m_bEditProperties` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x20` | `bUseDetailedPlugNames` | bool |  | `MPropertyFriendlyName Show Detailed Plug Names` |
 | `0x28` | `defaultSubgraph` | [CSelectableSubgraph](../sounddoc_lib/CSelectableSubgraph.md) |  | `MPropertyFriendlyName Default Subgraph` |
-| `0x40` | `interpolationMode` | [VMixSubgraphSwitchInterpolationType_t](../!GlobalTypes/VMixSubgraphSwitchInterpolationType_t.md) |  | `MPropertyFriendlyName Mode` `MPropertyGroupName +Transition Behavior` |
+| `0x40` | `interpolationMode` | [VMixSubgraphSwitchInterpolationType_t](../soundsystem_lowlevel/VMixSubgraphSwitchInterpolationType_t.md) |  | `MPropertyFriendlyName Mode` `MPropertyGroupName +Transition Behavior` |
 | `0x44` | `bOnlyTailsOnFadeOut` | bool |  | `MPropertyFriendlyName Only Let Effect Ring On Fadeout` `MPropertyGroupName Transition Behavior` |
 | `0x48` | `flTransitionTime` | float32 |  | `MPropertyFriendlyName Transition time (seconds)` `MPropertyGroupName Transition Behavior` |
 | `0x4c` | `nChannels` | int32 |  | `MPropertyAttributeChoiceName processor_channels` `MPropertyFriendlyName Channels` |

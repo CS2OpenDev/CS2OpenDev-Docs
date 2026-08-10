@@ -1,0 +1,18 @@
+---
+layout: default
+title: PulseCursorWakePriority_t
+nav_exclude: true
+---
+
+[Schemas](../../schemas.md) / [pulse_runtime_lib](../pulse_runtime_lib.md) / PulseCursorWakePriority_t
+
+# PulseCursorWakePriority_t
+
+**Kind:** enum · **Underlying:** `uint32_t` · **Module:** pulse_runtime_lib
+
+## Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `WakeElegantly` | 0 | Proceed Elegantly. — Request elegant wind-down of any associated work (e.g. vcd interrupt), then proceed afterwards. |
+| `WakeImmediate` | 1 | Proceed Immediately. — Stop the node action without any wind-down, then proceed afterwards. |

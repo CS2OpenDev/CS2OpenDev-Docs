@@ -35,12 +35,12 @@ classDiagram
 | `0x28` | `m_vecPosition` | Vector2D | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyGroupName Debug` `MPropertySortPriority -100` |
 | `0x30` | `m_nNodeID` | [AnimNodeID](../modellib/AnimNodeID.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyGroupName Debug` `MPropertySortPriority -100` |
 | `0x34` | `m_bDebugThisNode` | bool | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Debug This Node` `MPropertyGroupName Debug` `MPropertySortPriority -100` |
-| `0x38` | `m_networkMode` | [AnimNodeNetworkMode](../!GlobalTypes/AnimNodeNetworkMode.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Network Mode` `MPropertySortPriority -110` |
+| `0x38` | `m_networkMode` | [AnimNodeNetworkMode](../animgraphlib/AnimNodeNetworkMode.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Network Mode` `MPropertySortPriority -110` |
 | `0x40` | `m_children` | CUtlVector< [CChoiceNodeChild](../animgraphdoclib/CChoiceNodeChild.md) > |  | `MPropertyAutoExpandSelf` `MPropertyFriendlyName Options` |
 | `0x58` | `m_seed` | int32 |  | `MPropertySuppressField` |
-| `0x5c` | `m_choiceMethod` | [ChoiceMethod](../!GlobalTypes/ChoiceMethod.md) |  | `MPropertyFriendlyName Method` |
-| `0x60` | `m_choiceChangeMethod` | [ChoiceChangeMethod](../!GlobalTypes/ChoiceChangeMethod.md) |  | `MPropertyFriendlyName Change Selection` |
-| `0x64` | `m_blendMethod` | [ChoiceBlendMethod](../!GlobalTypes/ChoiceBlendMethod.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Blend Method` `MPropertyGroupName Blending` |
+| `0x5c` | `m_choiceMethod` | [ChoiceMethod](../animgraphlib/ChoiceMethod.md) |  | `MPropertyFriendlyName Method` |
+| `0x60` | `m_choiceChangeMethod` | [ChoiceChangeMethod](../animgraphlib/ChoiceChangeMethod.md) |  | `MPropertyFriendlyName Change Selection` |
+| `0x64` | `m_blendMethod` | [ChoiceBlendMethod](../animgraphlib/ChoiceBlendMethod.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Blend Method` `MPropertyGroupName Blending` |
 | `0x68` | `m_blendTime` | float32 |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Blend Duration` `MPropertyGroupName Blending` |
 | `0x6c` | `m_bCrossFade` | bool |  | `MPropertyFriendlyName Cross Fade` `MPropertyGroupName Blending` |
 | `0x6d` | `m_bResetChosen` | bool |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Reset On Selection` |

@@ -139,7 +139,11 @@ classDiagram
     CSmartPropElement_Group --> CSmartPropElement
     CSmartPropElement_Layout2DGrid *-- CSmartPropAttributeGridPlacementMode
     CSmartPropElement_Layout2DGrid *-- CSmartPropAttributeGridOriginMode
+    CSmartPropElement_Model *-- SmartPropDetailFadeLevel_t
+    CSmartPropElement_ModelEntity *-- SmartPropDeformableAttachMode_t
+    CSmartPropElement_ModelEntity *-- SmartPropDeformableOrientMode_t
     CSmartPropElement_PickOne *-- CSmartPropAttributeChoiceSelectionMode
+    CSmartPropElement_PickOne *-- ConfigurationHandleShape_t
     CSmartPropElement_PlaceInSphere *-- CSmartPropAttributeRadiusPlacementMode
     CSmartPropElement_PlaceInSphere *-- CSmartPropAttributeDistributionMode
     CSmartPropElement_PlaceOnMesh *-- CSmartPropAttributeOrientationMode
@@ -151,6 +155,7 @@ classDiagram
     CSmartPropOperation_MaterialOverride *-- CSmartPropMaterialReplacement
     CSmartPropOperation_MaterialTint *-- CSmartPropAttributeColorSelectionMode
     CSmartPropOperation_RandomColorTintColor *-- CSmartPropAttributeChoiceSelectionMode
+    CSmartPropOperation_RandomColorTintColor *-- ApplyColorMode_t
     CSmartPropOperation_RotateTowards *-- CSmartPropAttributeCoordinateSpace
     CSmartPropOperation_SaveDirection *-- CSmartPropAttributeDirection
     CSmartPropOperation_SaveDirection *-- CSmartPropAttributeCoordinateSpace
@@ -174,4 +179,20 @@ classDiagram
     CSmartPropRoot --> CSmartPropElement
     CSmartPropRoot --> CSmartPropModifier
     CSmartPropSelectionCriteria_PathPosition *-- CSmartPropAttributePathPositions
+    CSmartPropVariable_ApplyColorMode *-- ApplyColorMode_t
+    CSmartPropVariable_ChoiceSelectionMode *-- SmartPropChoiceSelectionMode_t
+    CSmartPropVariable_ColorSelectionMode *-- SmartPropColorSelectionMode_t
+    CSmartPropVariable_CoordinateSpace *-- SmartPropSpace_t
+    CSmartPropVariable_DirectionVector *-- SmartPropDirection_t
+    CSmartPropVariable_DistributionMode *-- SmartPropDistributionMode_t
+    CSmartPropVariable_GridOriginMode *-- SmartPropGridOriginBasis_t
+    CSmartPropVariable_GridPlacementMode *-- SmartPropGridPlacementMode_t
+    CSmartPropVariable_OrientationMode *-- SmartPropPlaceMeshOrientationMode_t
+    CSmartPropVariable_PathPositions *-- SmartPropPathPositions_t
+    CSmartPropVariable_PickMode *-- PickMode_t
+    CSmartPropVariable_RadiusPlacementMode *-- SmartPropRadiusPlacementMode_t
+    CSmartPropVariable_ScaleMode *-- ScaleMode_t
+    CSmartPropVariable_TraceNoHit *-- TraceNoHitResult_t
+    "CSmartPropPulse_CriteriaPathPosition::Criteria_t" *-- SmartPropPathPositions_t
+    CSmartPropPulse_PickOneSelector *-- ConfigurationHandleShape_t
 ```

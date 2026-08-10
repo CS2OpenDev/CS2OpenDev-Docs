@@ -183,12 +183,21 @@ classDiagram
     "CNmGraphDocVariationDataNode::CData" <|-- "CnmGraphDocVariationConstFloatNode::CData"
     CNmGraphDocFlowNode <|-- CnmGraphDocVelocityBasedSpeedScaleNode
     CNmClipDocEventTrack --> CNmClipDocEvent
+    CNmClipDocEvent_EntityAttribute *-- CNmClipDocEvent_EntityAttribute_Type_t
     CNmClipDocument *-- CNmClipDocEventTrack
     CNmGraphDocBlend1DNode *-- CNmBlendSpace1D
     CNmGraphDocBlend2DNode *-- CNmBlendSpace2D
     "CNmGraphDocDataDictionary::ParameterSet_t" *-- CNmGraphDocDataDictionary
+    CNmGraphDocFloatCurveEventNode *-- NmEventPriorityRule_t
     CNmGraphDocFlowNode *-- NmGraphDocPin_t
+    CNmGraphDocFootstepEventIDNode *-- NmEventPriorityRule_t
+    CNmGraphDocFootstepEventPercentageThroughNode *-- NmEventPriorityRule_t
     CNmGraphDocGraph --> CNmGraphDocNode
+    CNmGraphDocGraph *-- NmGraphDocGraphType_t
+    CNmGraphDocGraphEventConditionNode *-- NmEventConditionOperator_t
+    CNmGraphDocIDEventConditionNode *-- NmEventConditionOperator_t
+    CNmGraphDocIDEventNode *-- NmEventPriorityRule_t
+    CNmGraphDocIDEventPercentageThroughNode *-- NmEventPriorityRule_t
     CNmGraphDocNode --> CNmGraphDocGraph
     "CNmGraphDocStateNode::TimedStateEvent_t" *-- CNmGraphDocStateNode
     "CNmGraphDocVariationDataNode::OverrideValue_t" --> CNmGraphDocVariationDataNode

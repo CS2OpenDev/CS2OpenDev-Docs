@@ -36,7 +36,7 @@ classDiagram
 | `0x6c` | `m_aAngOffset` | QAngle |  |  |
 | `0x78` | `m_AttachmentName` | CUtlString |  |  |
 | `0x80` | `m_LocalAttachmentOffsetName` | CUtlString |  |  |
-| `0x88` | `m_AttachmentType` | [ModelConfigAttachmentType_t](../!GlobalTypes/ModelConfigAttachmentType_t.md) |  |  |
+| `0x88` | `m_AttachmentType` | [ModelConfigAttachmentType_t](../modellib/ModelConfigAttachmentType_t.md) |  |  |
 | `0x8c` | `m_bBoneMergeFlex` | bool |  |  |
 | `0x8d` | `m_bUserSpecifiedColor` | bool |  |  |
 | `0x8e` | `m_bUserSpecifiedMaterialGroup` | bool |  |  |

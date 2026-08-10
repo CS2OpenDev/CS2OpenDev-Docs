@@ -30,7 +30,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_nEditorNodeID` | [PulseDocNodeID_t](../pulse_runtime_lib/PulseDocNodeID_t.md) | [CPulseCell_Base](../pulse_runtime_lib/CPulseCell_Base.md) | `MFgdFromSchemaCompletelySkipField` |
-| `0x48` | `m_Type` | [SoundEventStartType_t](../!GlobalTypes/SoundEventStartType_t.md) |  |  |
+| `0x48` | `m_Type` | [SoundEventStartType_t](../server/SoundEventStartType_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

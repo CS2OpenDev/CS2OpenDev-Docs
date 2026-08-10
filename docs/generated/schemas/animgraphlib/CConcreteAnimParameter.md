@@ -43,8 +43,8 @@ classDiagram
 | `0x48` | `m_componentName` | CUtlString | [CAnimParameterBase](../animgraphlib/CAnimParameterBase.md) | `MPropertyAutoRebuildOnChange` `MPropertySuppressField` |
 | `0x68` | `m_bNetworkingRequested` | bool | [CAnimParameterBase](../animgraphlib/CAnimParameterBase.md) | `MPropertySuppressField` |
 | `0x69` | `m_bIsReferenced` | bool | [CAnimParameterBase](../animgraphlib/CAnimParameterBase.md) | `MPropertySuppressField` |
-| `0x70` | `m_previewButton` | [AnimParamButton_t](../!GlobalTypes/AnimParamButton_t.md) |  | `MPropertyFriendlyName Preview Button` |
-| `0x74` | `m_eNetworkSetting` | [AnimParamNetworkSetting](../!GlobalTypes/AnimParamNetworkSetting.md) |  | `MPropertyFriendlyName Network` |
+| `0x70` | `m_previewButton` | [AnimParamButton_t](../animgraphlib/AnimParamButton_t.md) |  | `MPropertyFriendlyName Preview Button` |
+| `0x74` | `m_eNetworkSetting` | [AnimParamNetworkSetting](../animgraphlib/AnimParamNetworkSetting.md) |  | `MPropertyFriendlyName Network` |
 | `0x78` | `m_bUseMostRecentValue` | bool |  | `MPropertyFriendlyName Force Latest Value` |
 | `0x79` | `m_bAutoReset` | bool |  | `MPropertyFriendlyName Auto Reset` |
 | `0x7a` | `m_bGameWritable` | bool |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Game Writable` `MPropertyGroupName +Permissions` |

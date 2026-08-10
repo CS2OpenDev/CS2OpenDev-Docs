@@ -28,7 +28,7 @@ classDiagram
 | `0x8` | `m_paramsModified` | CUtlVector< [CAnimParamHandle](../animgraphlib/CAnimParamHandle.md) > |  |  |
 | `0x20` | `m_proxyReadParams` | CUtlVector< int32 > |  |  |
 | `0x38` | `m_proxyWriteParams` | CUtlVector< int32 > |  |  |
-| `0x50` | `m_eScriptType` | [AnimScriptType](../!GlobalTypes/AnimScriptType.md) |  |  |
+| `0x50` | `m_eScriptType` | [AnimScriptType](../animgraphlib/AnimScriptType.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

@@ -29,8 +29,8 @@ classDiagram
 | `0x8` | `m_nameToken` | CUtlStringToken |  |  |
 | `0xc` | `m_nIndex` | [FuseVariableIndex_t](../mathlib_extended/FuseVariableIndex_t.md) |  |  |
 | `0xe` | `m_nNumComponents` | uint8 |  |  |
-| `0xf` | `m_eVarType` | [FuseVariableType_t](../!GlobalTypes/FuseVariableType_t.md) |  |  |
-| `0x10` | `m_eAccess` | [FuseVariableAccess_t](../!GlobalTypes/FuseVariableAccess_t.md) |  |  |
+| `0xf` | `m_eVarType` | [FuseVariableType_t](../mathlib_extended/FuseVariableType_t.md) |  |  |
+| `0x10` | `m_eAccess` | [FuseVariableAccess_t](../mathlib_extended/FuseVariableAccess_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

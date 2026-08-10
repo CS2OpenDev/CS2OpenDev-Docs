@@ -33,18 +33,18 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x18` | `m_nodePath` | [CAnimNodePath](../animgraphlib/CAnimNodePath.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
-| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../!GlobalTypes/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
+| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../animgraphlib/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x50` | `m_name` | CUtlString | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x60` | `m_items` | CUtlVector< [BlendItem_t](../animgraphlib/BlendItem_t.md) > |  |  |
 | `0x78` | `m_tags` | CUtlVector< [TagSpan_t](../animgraphlib/TagSpan_t.md) > |  |  |
 | `0x90` | `m_paramSpans` | [CParamSpanUpdater](../animgraphlib/CParamSpanUpdater.md) |  |  |
 | `0xa8` | `m_nodeItemIndices` | CUtlVector< int32 > |  |  |
 | `0xc0` | `m_damping` | [CAnimInputDamping](../animgraphlib/CAnimInputDamping.md) |  |  |
-| `0xd8` | `m_blendSourceX` | [AnimValueSource](../!GlobalTypes/AnimValueSource.md) |  |  |
+| `0xd8` | `m_blendSourceX` | [AnimValueSource](../animgraphlib/AnimValueSource.md) |  |  |
 | `0xdc` | `m_paramX` | [CAnimParamHandle](../animgraphlib/CAnimParamHandle.md) |  |  |
-| `0xe0` | `m_blendSourceY` | [AnimValueSource](../!GlobalTypes/AnimValueSource.md) |  |  |
+| `0xe0` | `m_blendSourceY` | [AnimValueSource](../animgraphlib/AnimValueSource.md) |  |  |
 | `0xe4` | `m_paramY` | [CAnimParamHandle](../animgraphlib/CAnimParamHandle.md) |  |  |
-| `0xe8` | `m_eBlendMode` | [Blend2DMode](../!GlobalTypes/Blend2DMode.md) |  |  |
+| `0xe8` | `m_eBlendMode` | [Blend2DMode](../animgraphlib/Blend2DMode.md) |  |  |
 | `0xec` | `m_playbackSpeed` | float32 |  |  |
 | `0xf0` | `m_bLoop` | bool |  |  |
 | `0xf1` | `m_bLockBlendOnReset` | bool |  |  |

@@ -33,7 +33,7 @@ classDiagram
 | `0x78` | `m_group` | int32 |  | `MPropertyFriendlyName Group` |
 | `0x7c` | `m_volume` | float32 |  | `MPropertyFriendlyName Volume` |
 | `0x80` | `m_fadeOut` | float32 |  | `MPropertyFriendlyName Fade Out (sec)` |
-| `0x84` | `m_mode` | [EVsndPlaybackMode](../!GlobalTypes/EVsndPlaybackMode.md) |  | `MPropertyFriendlyName Mode` |
+| `0x84` | `m_mode` | [EVsndPlaybackMode](../soundsystem_voicecontainers/EVsndPlaybackMode.md) |  | `MPropertyFriendlyName Mode` |
 
 <details><summary>KV3 class defaults</summary>
 

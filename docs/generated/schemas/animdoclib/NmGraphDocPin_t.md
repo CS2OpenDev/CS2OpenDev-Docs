@@ -25,7 +25,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x0` | `m_ID` | V_uuid_t |  |  |
 | `0x10` | `m_name` | CUtlString |  |  |
-| `0x18` | `m_type` | [NmGraphValueType_t](../!GlobalTypes/NmGraphValueType_t.md) |  |  |
+| `0x18` | `m_type` | [NmGraphValueType_t](../animlib/NmGraphValueType_t.md) |  |  |
 | `0x19` | `m_bIsDynamicPin` | bool |  |  |
 | `0x1a` | `m_bAllowMultipleOutConnections` | bool |  |  |
 

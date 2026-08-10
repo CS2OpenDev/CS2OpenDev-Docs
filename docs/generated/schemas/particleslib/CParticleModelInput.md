@@ -28,7 +28,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x10` | `m_nType` | [ParticleModelType_t](../!GlobalTypes/ParticleModelType_t.md) |  |  |
+| `0x10` | `m_nType` | [ParticleModelType_t](../particleslib/ParticleModelType_t.md) |  |  |
 | `0x18` | `m_NamedValue` | CParticleNamedValueRef |  |  |
 | `0x58` | `m_nControlPoint` | int32 |  |  |
 

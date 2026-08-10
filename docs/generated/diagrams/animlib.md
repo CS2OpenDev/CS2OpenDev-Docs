@@ -155,34 +155,64 @@ classDiagram
     "CNmVectorValueNode::CDefinition" <|-- "CNmVirtualParameterVectorNode::CDefinition"
     "CNmPoseNode::CDefinition" <|-- "CNmZeroPoseNode::CDefinition"
     CNmPoseTask <|-- CNmZeroPoseTask
+    CNmBodyGroupEvent *-- CNmEventTargetEntity_t
+    "CNmCachedBoolNode::CDefinition" *-- NmCachedValueMode_t
+    "CNmCachedFloatNode::CDefinition" *-- NmCachedValueMode_t
+    "CNmCachedIDNode::CDefinition" *-- NmCachedValueMode_t
+    "CNmCachedTargetNode::CDefinition" *-- NmCachedValueMode_t
+    "CNmCachedVectorNode::CDefinition" *-- NmCachedValueMode_t
     CNmClip *-- NmCompressionSettings_t
     CNmClip --> CNmFloatChannelData
     CNmClip *-- CNmSyncTrack
     CNmClip *-- CNmRootMotionData
     "CNmConstTargetNode::CDefinition" *-- CNmTarget
+    CNmEntityAttributeEventBase *-- CNmEventTargetEntity_t
     CNmEvent *-- NmPercent_t
     "CNmFloatChannelData::ChannelSettings_t" *-- NmCompressionSettings_t
     "CNmFloatCurveEventNode::CDefinition" *-- CNmBitFlags
+    "CNmFloatEaseNode::CDefinition" *-- NmEasingOperation_t
+    "CNmFloatSelectorNode::CDefinition" *-- NmEasingOperation_t
+    "CNmFollowBoneNode::CDefinition" *-- NmFollowBoneMode_t
+    CNmFootEvent *-- NmFootPhase_t
+    "CNmFootEventConditionNode::CDefinition" *-- NmFootPhaseCondition_t
     "CNmFootEventConditionNode::CDefinition" *-- CNmBitFlags
+    "CNmFootIKNode::CDefinition" *-- NmIKBlendMode_t
     CNmFootIKTask *-- CNmTarget
+    CNmFootIKTask *-- NmIKBlendMode_t
     "CNmFootstepEventIDNode::CDefinition" *-- CNmBitFlags
+    "CNmFootstepEventPercentageThroughNode::CDefinition" *-- NmFootPhaseCondition_t
     "CNmFootstepEventPercentageThroughNode::CDefinition" *-- CNmBitFlags
+    CNmFrameSnapEvent *-- NmFrameSnapEventMode_t
     CNmGraphDefinition --> CNmGraphVariationUserData
     "CNmGraphEventConditionNode::CDefinition" *-- CNmBitFlags
+    "CNmGraphEventConditionNode::Condition_t" *-- NmGraphEventTypeCondition_t
     "CNmIDEventConditionNode::CDefinition" *-- CNmBitFlags
     "CNmIDEventNode::CDefinition" *-- CNmBitFlags
     "CNmIDEventPercentageThroughNode::CDefinition" *-- CNmBitFlags
+    "CNmLayerBlendNode::LayerDefinition_t" *-- NmPoseBlendMode_t
+    CNmMaterialAttributeEvent *-- CNmEventTargetEntity_t
     "CNmOrientationWarpNode::CDefinition" *-- CNmRootMotionData
+    CNmParticleEvent *-- CNmEventRelevance_t
+    CNmParticleEvent *-- CNmEventTargetEntity_t
     "CNmRootMotionOverrideNode::CDefinition" *-- CNmBitFlags
     CNmSkeleton *-- NmBoneMaskSetDefinition_t
     CNmSkeleton *-- CNmFloatChannelSet_t
+    CNmSoundEvent *-- CNmEventRelevance_t
     "CNmSyncTrack::EventMarker_t" *-- NmPercent_t
     "CNmSyncTrack::Event_t" *-- NmPercent_t
+    CNmTargetWarpEvent *-- NmTargetWarpRule_t
+    CNmTargetWarpEvent *-- NmTargetWarpAlgorithm_t
     "CNmTargetWarpNode::CDefinition" *-- CNmRootMotionData
+    CNmTransitionEvent *-- NmTransitionRule_t
     "CNmTransitionEventConditionNode::CDefinition" *-- CNmBitFlags
+    "CNmTransitionEventConditionNode::CDefinition" *-- NmTransitionRuleCondition_t
     "CNmTransitionNode::CDefinition" *-- NmPercent_t
     "CNmTransitionNode::CDefinition" *-- CNmBitFlags
+    "CNmTransitionNode::CDefinition" *-- NmEasingOperation_t
+    "CNmTransitionNode::CDefinition" *-- NmRootMotionBlendMode_t
+    "CNmTwoBoneIKNode::CDefinition" *-- NmIKBlendMode_t
     CNmTwoBoneIKTask *-- CNmTarget
+    CNmTwoBoneIKTask *-- NmIKBlendMode_t
     NmBoneMaskSetDefinition_t *-- CNmBoneWeightList
     NmFloatCurveCompressionSettings_t *-- NmCompressionSettings_t
     NmSyncTrackTimeRange_t *-- NmSyncTrackTime_t

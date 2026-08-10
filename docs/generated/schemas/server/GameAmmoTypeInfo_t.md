@@ -27,7 +27,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x10` | `m_nMaxCarry` | int32 | [AmmoTypeInfo_t](../server/AmmoTypeInfo_t.md) |  |
 | `0x1c` | `m_nSplashSize` | [CRangeInt](../tier2/CRangeInt.md) | [AmmoTypeInfo_t](../server/AmmoTypeInfo_t.md) |  |
-| `0x24` | `m_nFlags` | [AmmoFlags_t](../!GlobalTypes/AmmoFlags_t.md) | [AmmoTypeInfo_t](../server/AmmoTypeInfo_t.md) |  |
+| `0x24` | `m_nFlags` | [AmmoFlags_t](../server/AmmoFlags_t.md) | [AmmoTypeInfo_t](../server/AmmoTypeInfo_t.md) |  |
 | `0x28` | `m_flMass` | float32 | [AmmoTypeInfo_t](../server/AmmoTypeInfo_t.md) |  |
 | `0x2c` | `m_flSpeed` | [CRangeFloat](../tier2/CRangeFloat.md) | [AmmoTypeInfo_t](../server/AmmoTypeInfo_t.md) |  |
 | `0x38` | `m_nBuySize` | int32 |  |  |

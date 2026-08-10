@@ -32,7 +32,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `__m_pChainEntity` | [CNetworkVarChainer](../entity2/CNetworkVarChainer.md) | [CPlayerControllerComponent](../server/CPlayerControllerComponent.md) | `MNotSaved` |
 | `0x40` | `m_unMusicID` | uint16 |  | Item id of the equipped music kit. |
-| `0x44` | `m_rank` | [MedalRank_t](../!GlobalTypes/MedalRank_t.md)[6] |  | Competitive rank / medal ids, indexed per game mode. |
+| `0x44` | `m_rank` | [MedalRank_t](../server/MedalRank_t.md)[6] |  | Competitive rank / medal ids, indexed per game mode. |
 | `0x5c` | `m_nPersonaDataPublicLevel` | int32 |  | Public profile (Steam persona) level. |
 | `0x60` | `m_nPersonaDataPublicCommendsLeader` | int32 |  |  |
 | `0x64` | `m_nPersonaDataPublicCommendsTeacher` | int32 |  |  |

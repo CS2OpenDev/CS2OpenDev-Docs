@@ -30,7 +30,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x18` | `m_nodePath` | [CAnimNodePath](../animgraphlib/CAnimNodePath.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
-| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../!GlobalTypes/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
+| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../animgraphlib/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x50` | `m_name` | CUtlString | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x60` | `m_pChildNode` | [CAnimUpdateNodeRef](../animgraphlib/CAnimUpdateNodeRef.md) | [CUnaryUpdateNode](../animgraphlib/CUnaryUpdateNode.md) |  |
 | `0x74` | `m_flBlendOutTime` | float32 |  |  |
@@ -42,7 +42,7 @@ classDiagram
 | `0x84` | `m_flMaxAngle` | float32 |  |  |
 | `0x88` | `m_flSpeedScaleBlending` | float32 |  |  |
 | `0x90` | `m_turnDamping` | [CAnimInputDamping](../animgraphlib/CAnimInputDamping.md) |  |  |
-| `0xa8` | `m_facingTarget` | [AnimValueSource](../!GlobalTypes/AnimValueSource.md) |  |  |
+| `0xa8` | `m_facingTarget` | [AnimValueSource](../animgraphlib/AnimValueSource.md) |  |  |
 | `0xac` | `m_hParam` | [CAnimParamHandle](../animgraphlib/CAnimParamHandle.md) |  |  |
 | `0xb0` | `m_flTurnToFaceOffset` | float32 |  |  |
 | `0xb4` | `m_bTurnToFace` | bool |  |  |

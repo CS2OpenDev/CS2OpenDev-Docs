@@ -36,7 +36,7 @@ classDiagram
 | `0x50` | `m_inputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 4 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0xd8` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0x108` | `m_parameterUUID` | V_uuid_t | [CNmGraphDocParameterReferenceNode](../animdoclib/CNmGraphDocParameterReferenceNode.md) |  |
-| `0x118` | `m_parameterValueType` | [NmGraphValueType_t](../!GlobalTypes/NmGraphValueType_t.md) | [CNmGraphDocParameterReferenceNode](../animdoclib/CNmGraphDocParameterReferenceNode.md) |  |
+| `0x118` | `m_parameterValueType` | [NmGraphValueType_t](../animlib/NmGraphValueType_t.md) | [CNmGraphDocParameterReferenceNode](../animdoclib/CNmGraphDocParameterReferenceNode.md) |  |
 | `0x120` | `m_parameterName` | CUtlString | [CNmGraphDocParameterReferenceNode](../animdoclib/CNmGraphDocParameterReferenceNode.md) |  |
 | `0x128` | `m_parameterGroupName` | CUtlString | [CNmGraphDocParameterReferenceNode](../animdoclib/CNmGraphDocParameterReferenceNode.md) |  |
 

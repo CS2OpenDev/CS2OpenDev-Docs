@@ -35,7 +35,7 @@ classDiagram
 | `0x48` | `m_pSecondaryGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
 | `0x50` | `m_inputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 4 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0xd8` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
-| `0x100` | `m_operator` | [NmEventConditionOperator_t](../!GlobalTypes/NmEventConditionOperator_t.md) |  |  |
+| `0x100` | `m_operator` | [NmEventConditionOperator_t](../animdoclib/NmEventConditionOperator_t.md) |  |  |
 | `0x101` | `m_searchRule` | [CNmGraphDocIDEventConditionNode](../animdoclib/CNmGraphDocIDEventConditionNode.md)::SearchRule_t |  |  |
 | `0x102` | `m_bLimitSearchToSourceState` | bool |  | `MPropertyGroupName +Advanced Search Rules` |
 | `0x103` | `m_bIgnoreInactiveBranchEvents` | bool |  | `MPropertyGroupName +Advanced Search Rules` |

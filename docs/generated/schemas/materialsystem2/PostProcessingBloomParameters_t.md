@@ -23,7 +23,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_blendMode` | [BloomBlendMode_t](../!GlobalTypes/BloomBlendMode_t.md) |  |  |
+| `0x0` | `m_blendMode` | [BloomBlendMode_t](../materialsystem2/BloomBlendMode_t.md) |  |  |
 | `0x4` | `m_flBloomStrength` | float32 |  |  |
 | `0x8` | `m_flScreenBloomStrength` | float32 |  |  |
 | `0xc` | `m_flBlurBloomStrength` | float32 |  |  |

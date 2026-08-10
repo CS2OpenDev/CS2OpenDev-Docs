@@ -29,9 +29,9 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x18` | `m_nodePath` | [CAnimNodePath](../animgraphlib/CAnimNodePath.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
-| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../!GlobalTypes/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
+| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../animgraphlib/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x50` | `m_name` | CUtlString | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
-| `0x60` | `m_eAngleMode` | [TargetSelectorAngleMode_t](../!GlobalTypes/TargetSelectorAngleMode_t.md) |  |  |
+| `0x60` | `m_eAngleMode` | [TargetSelectorAngleMode_t](../animgraphlib/TargetSelectorAngleMode_t.md) |  |  |
 | `0x68` | `m_children` | CUtlVector< [CAnimUpdateNodeRef](../animgraphlib/CAnimUpdateNodeRef.md) > |  |  |
 | `0x84` | `m_hTargetPosition` | [CAnimParamHandle](../animgraphlib/CAnimParamHandle.md) |  |  |
 | `0x86` | `m_hTargetFacePositionParameter` | [CAnimParamHandle](../animgraphlib/CAnimParamHandle.md) |  |  |

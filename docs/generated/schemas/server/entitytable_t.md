@@ -28,7 +28,7 @@ classDiagram
 | `0x4` | `edictindex` | CEntityIndex |  |  |
 | `0x8` | `saveentityindex` | CEntityIndex |  |  |
 | `0x14` | `bWasSaved` | bool |  |  |
-| `0x18` | `flags` | [SaveRestoreTableFlags_t](../!GlobalTypes/SaveRestoreTableFlags_t.md) |  |  |
+| `0x18` | `flags` | [SaveRestoreTableFlags_t](../server/SaveRestoreTableFlags_t.md) |  |  |
 | `0x20` | `classname` | CUtlSymbolLarge |  |  |
 | `0x28` | `globalname` | CUtlSymbolLarge |  |  |
 | `0x30` | `entityname` | CUtlSymbolLarge |  |  |

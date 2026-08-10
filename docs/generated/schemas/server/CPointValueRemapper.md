@@ -58,12 +58,12 @@ classDiagram
 | `0x2d8` | `m_lifeState` | uint8 | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x2dc` | `m_flDamageAccumulator` | float32 | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x2e0` | `m_bTakesDamage` | bool | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2e8` | `m_nTakeDamageFlags` | [TakeDamageFlags_t](../!GlobalTypes/TakeDamageFlags_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2f0` | `m_nPlatformType` | [EntityPlatformTypes_t](../!GlobalTypes/EntityPlatformTypes_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2f2` | `m_MoveCollide` | [MoveCollide_t](../!GlobalTypes/MoveCollide_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2f3` | `m_MoveType` | [MoveType_t](../!GlobalTypes/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2f4` | `m_nPreviouslySetMoveType` | [MoveType_t](../!GlobalTypes/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x2f5` | `m_nActualMoveType` | [MoveType_t](../!GlobalTypes/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2e8` | `m_nTakeDamageFlags` | [TakeDamageFlags_t](../server/TakeDamageFlags_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2f0` | `m_nPlatformType` | [EntityPlatformTypes_t](../server/EntityPlatformTypes_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2f2` | `m_MoveCollide` | [MoveCollide_t](../server/MoveCollide_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2f3` | `m_MoveType` | [MoveType_t](../server/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2f4` | `m_nPreviouslySetMoveType` | [MoveType_t](../server/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x2f5` | `m_nActualMoveType` | [MoveType_t](../server/MoveType_t.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x2f6` | `m_nWaterTouch` | uint8 | [CBaseEntity](../server/CBaseEntity.md) | `MNotSaved` |
 | `0x2f7` | `m_nSlimeTouch` | uint8 | [CBaseEntity](../server/CBaseEntity.md) | `MNotSaved` |
 | `0x2f8` | `m_bRestoreInHierarchy` | bool | [CBaseEntity](../server/CBaseEntity.md) |  |
@@ -121,11 +121,11 @@ classDiagram
 | `0x490` | `m_pBlocker` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x494` | `m_flLocalTime` | float32 | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x498` | `m_flVPhysicsUpdateLocalTime` | float32 | [CBaseEntity](../server/CBaseEntity.md) |  |
-| `0x49c` | `m_nBloodType` | [BloodType](../!GlobalTypes/BloodType.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
+| `0x49c` | `m_nBloodType` | [BloodType](../server/BloodType.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x4a0` | `m_pPulseGraphInstance` | [CPulseGraphInstance_ServerEntity](../server/CPulseGraphInstance_ServerEntity.md)* | [CBaseEntity](../server/CBaseEntity.md) | `MKV3TransferSaveOpsForField GetPulseInstanceSaveRestoreOps` |
 | `0x4a8` | `m_bDisabled` | bool |  |  |
 | `0x4a9` | `m_bUpdateOnClient` | bool |  |  |
-| `0x4ac` | `m_nInputType` | [ValueRemapperInputType_t](../!GlobalTypes/ValueRemapperInputType_t.md) |  |  |
+| `0x4ac` | `m_nInputType` | [ValueRemapperInputType_t](../server/ValueRemapperInputType_t.md) |  |  |
 | `0x4b0` | `m_iszRemapLineStartName` | CUtlSymbolLarge |  |  |
 | `0x4b8` | `m_iszRemapLineEndName` | CUtlSymbolLarge |  |  |
 | `0x4c0` | `m_hRemapLineStart` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
@@ -134,18 +134,18 @@ classDiagram
 | `0x4cc` | `m_flDisengageDistance` | float32 |  |  |
 | `0x4d0` | `m_flEngageDistance` | float32 |  |  |
 | `0x4d4` | `m_bRequiresUseKey` | bool |  |  |
-| `0x4d8` | `m_nOutputType` | [ValueRemapperOutputType_t](../!GlobalTypes/ValueRemapperOutputType_t.md) |  |  |
+| `0x4d8` | `m_nOutputType` | [ValueRemapperOutputType_t](../server/ValueRemapperOutputType_t.md) |  |  |
 | `0x4e0` | `m_iszOutputEntityName` | CUtlSymbolLarge |  |  |
 | `0x4e8` | `m_iszOutputEntity2Name` | CUtlSymbolLarge |  |  |
 | `0x4f0` | `m_iszOutputEntity3Name` | CUtlSymbolLarge |  |  |
 | `0x4f8` | `m_iszOutputEntity4Name` | CUtlSymbolLarge |  |  |
 | `0x500` | `m_hOutputEntities` | CNetworkUtlVectorBase< CHandle< [CBaseEntity](../server/CBaseEntity.md) > > |  | `MNotSaved` |
-| `0x518` | `m_nHapticsType` | [ValueRemapperHapticsType_t](../!GlobalTypes/ValueRemapperHapticsType_t.md) |  |  |
-| `0x51c` | `m_nMomentumType` | [ValueRemapperMomentumType_t](../!GlobalTypes/ValueRemapperMomentumType_t.md) |  |  |
+| `0x518` | `m_nHapticsType` | [ValueRemapperHapticsType_t](../server/ValueRemapperHapticsType_t.md) |  |  |
+| `0x51c` | `m_nMomentumType` | [ValueRemapperMomentumType_t](../server/ValueRemapperMomentumType_t.md) |  |  |
 | `0x520` | `m_flMomentumModifier` | float32 |  |  |
 | `0x524` | `m_flSnapValue` | float32 |  |  |
 | `0x528` | `m_flCurrentMomentum` | float32 |  |  |
-| `0x52c` | `m_nRatchetType` | [ValueRemapperRatchetType_t](../!GlobalTypes/ValueRemapperRatchetType_t.md) |  |  |
+| `0x52c` | `m_nRatchetType` | [ValueRemapperRatchetType_t](../server/ValueRemapperRatchetType_t.md) |  |  |
 | `0x530` | `m_flRatchetOffset` | float32 |  |  |
 | `0x534` | `m_flInputOffset` | float32 |  |  |
 | `0x538` | `m_bEngaged` | bool |  |  |

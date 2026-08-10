@@ -33,8 +33,8 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flOpStrength` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator strength` `MPropertySortPriority -100` |
-| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../!GlobalTypes/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
-| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../!GlobalTypes/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
+| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
+| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
 | `0x180` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
 | `0x184` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
 | `0x188` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
@@ -51,12 +51,12 @@ classDiagram
 | `0x1b8` | `m_Notes` | CUtlString | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleHelpField` `MPropertyFriendlyName operator help and notes` `MPropertySortPriority -100` |
 | `0x1d8` | `m_bRunOnce` | bool | [CParticleFunctionPreEmission](../particles/CParticleFunctionPreEmission.md) | `MPropertyFriendlyName Run Only Once` |
 | `0x1e0` | `m_nCPSnapshot` | int32 |  | `MPropertyFriendlyName snapshot control point number` |
-| `0x1e4` | `m_nSegCount` | [ParticleMultiSegmentCountSelection_t](../!GlobalTypes/ParticleMultiSegmentCountSelection_t.md) |  | `MPropertyFriendlyName Segment Count` |
-| `0x1e8` | `m_nInputType` | [ParticleMultiSegmentInputSelection_t](../!GlobalTypes/ParticleMultiSegmentInputSelection_t.md) |  | `MPropertyFriendlyName Input Type` |
+| `0x1e4` | `m_nSegCount` | [ParticleMultiSegmentCountSelection_t](../particles/ParticleMultiSegmentCountSelection_t.md) |  | `MPropertyFriendlyName Segment Count` |
+| `0x1e8` | `m_nInputType` | [ParticleMultiSegmentInputSelection_t](../particles/ParticleMultiSegmentInputSelection_t.md) |  | `MPropertyFriendlyName Input Type` |
 | `0x1f0` | `m_strDefaultString` | CUtlString |  | `MPropertyFriendlyName Default String` `MPropertySuppressExpr m_nInputType != PARTICLE_MULTISEGMENT_SELECTION_STRING` |
 | `0x1f8` | `m_flValue` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName Float Value` `MPropertySuppressExpr m_nInputType != PARTICLE_MULTISEGMENT_SELECTION_FLOAT` |
 | `0x368` | `m_flScollOffset` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName Scroll Offset` |
-| `0x4d8` | `m_SpecialCharList` | CUtlVector< [ParticleMultiSegmentSpecialCharacter_t](../!GlobalTypes/ParticleMultiSegmentSpecialCharacter_t.md) > |  | `MPropertyFriendlyName Segment Special Character` |
+| `0x4d8` | `m_SpecialCharList` | CUtlVector< [ParticleMultiSegmentSpecialCharacter_t](../particles/ParticleMultiSegmentSpecialCharacter_t.md) > |  | `MPropertyFriendlyName Segment Special Character` |
 | `0x4f0` | `m_vecColorUnlit` | [CParticleCollectionVecInput](../particleslib/CParticleCollectionVecInput.md) |  | `MPropertyFriendlyName unlit segment color` |
 | `0xba8` | `m_vecColorLit` | [CParticleCollectionVecInput](../particleslib/CParticleCollectionVecInput.md) |  | `MPropertyFriendlyName lit segment color` |
 | `0x1260` | `m_flRadius` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName Radius` |

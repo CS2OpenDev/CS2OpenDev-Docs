@@ -33,7 +33,7 @@ classDiagram
 | `0x8` | `__m_pChainEntity` | [CNetworkVarChainer](../entity2/CNetworkVarChainer.md) | [CPlayerControllerComponent](../server/CPlayerControllerComponent.md) | `MNotSaved` |
 | `0x40` | `m_vecNetworkableLoadout` | CUtlVector< [CCSPlayerController_InventoryServices](../client/CCSPlayerController_InventoryServices.md)::NetworkedLoadoutSlot_t > |  | Networked loadout — the item/skin occupying each equipped weapon slot. |
 | `0x58` | `m_unMusicID` | uint16 |  | Item id of the equipped music kit. |
-| `0x5c` | `m_rank` | [MedalRank_t](../!GlobalTypes/MedalRank_t.md)[6] |  | Competitive rank / medal ids, indexed per game mode. |
+| `0x5c` | `m_rank` | [MedalRank_t](../server/MedalRank_t.md)[6] |  | Competitive rank / medal ids, indexed per game mode. |
 | `0x74` | `m_nPersonaDataPublicLevel` | int32 |  | Public profile (Steam persona) level. |
 | `0x78` | `m_nPersonaDataPublicCommendsLeader` | int32 |  |  |
 | `0x7c` | `m_nPersonaDataPublicCommendsTeacher` | int32 |  |  |

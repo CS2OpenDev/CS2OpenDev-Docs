@@ -23,7 +23,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_Encoding` | [ResourceDataEncodingType_t](../!GlobalTypes/ResourceDataEncodingType_t.md) |  |  |
+| `0x0` | `m_Encoding` | [ResourceDataEncodingType_t](../toolutils2/ResourceDataEncodingType_t.md) |  |  |
 | `0x8` | `m_BlockID` | CUtlString |  |  |
 | `0x10` | `m_IntrospectedRootStruct` | CUtlString |  |  |
 | `0x18` | `m_ResourceVersion` | int32 |  |  |

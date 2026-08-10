@@ -29,7 +29,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x18` | `m_hParam` | [CAnimParamHandle](../animgraphlib/CAnimParamHandle.md) |  |  |
-| `0x1a` | `m_eParamType` | [AnimParamType_t](../!GlobalTypes/AnimParamType_t.md) |  |  |
+| `0x1a` | `m_eParamType` | [AnimParamType_t](../animgraphlib/AnimParamType_t.md) |  |  |
 | `0x1c` | `m_hScript` | [AnimScriptHandle](../modellib/AnimScriptHandle.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>

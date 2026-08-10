@@ -29,7 +29,7 @@ classDiagram
 | `0x8` | `m_flStartTime` | [NmPercent_t](../animlib/NmPercent_t.md) | [CNmEvent](../animlib/CNmEvent.md) |  |
 | `0xc` | `m_flDuration` | [NmPercent_t](../animlib/NmPercent_t.md) | [CNmEvent](../animlib/CNmEvent.md) |  |
 | `0x10` | `m_syncID` | CGlobalSymbol | [CNmEvent](../animlib/CNmEvent.md) |  |
-| `0x18` | `m_target` | [CNmEventTargetEntity_t](../!GlobalTypes/CNmEventTargetEntity_t.md) | [CNmEntityAttributeEventBase](../animlib/CNmEntityAttributeEventBase.md) |  |
+| `0x18` | `m_target` | [CNmEventTargetEntity_t](../animlib/CNmEventTargetEntity_t.md) | [CNmEntityAttributeEventBase](../animlib/CNmEntityAttributeEventBase.md) |  |
 | `0x20` | `m_attributeName` | CUtlString | [CNmEntityAttributeEventBase](../animlib/CNmEntityAttributeEventBase.md) |  |
 | `0x38` | `m_FloatValue` | CPiecewiseCurve |  |  |
 

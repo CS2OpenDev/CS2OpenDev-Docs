@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/soundsystem.md)
 
-35 types. Each links to its own page with the full field layout.
+48 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -48,3 +48,16 @@ nav_exclude: true
 | [SndBeatTimeSignature_t](soundsystem/SndBeatTimeSignature_t.md) | class | 2 | 2 |  |
 | [SosEditItemInfo_t](soundsystem/SosEditItemInfo_t.md) | class | 48 | 5 |  |
 | [VelocityZone_t](soundsystem/VelocityZone_t.md) | class | 20 | 4 |  |
+| [SndBeatEventType_t](soundsystem/SndBeatEventType_t.md) | enum | — | 6 |  |
+| [SndBeatKeyType_t](soundsystem/SndBeatKeyType_t.md) | enum | — | 5 |  |
+| [SndBeatLaunchSyncType_t](soundsystem/SndBeatLaunchSyncType_t.md) | enum | — | 4 |  |
+| [SndBeatMidiStatusType_t](soundsystem/SndBeatMidiStatusType_t.md) | enum | — | 7 |  |
+| [SndBeatTrackPlaybackType_t](soundsystem/SndBeatTrackPlaybackType_t.md) | enum | — | 2 |  |
+| [SndSeqInstrumentType_t](soundsystem/SndSeqInstrumentType_t.md) | enum | — | 3 |  |
+| [SosActionLimitSortType_t](soundsystem/SosActionLimitSortType_t.md) | enum | — | 2 |  |
+| [SosActionSetParamSortType_t](soundsystem/SosActionSetParamSortType_t.md) | enum | — | 2 |  |
+| [SosActionStopType_t](soundsystem/SosActionStopType_t.md) | enum | — | 3 |  |
+| [SosEditItemType_t](soundsystem/SosEditItemType_t.md) | enum | — | 6 |  |
+| [SosGroupFieldBehavior_t](soundsystem/SosGroupFieldBehavior_t.md) | enum | — | 3 |  |
+| [SosGroupType_t](soundsystem/SosGroupType_t.md) | enum | — | 2 |  |
+| [soundlevel_t](soundsystem/soundlevel_t.md) | enum | — | 30 |  |

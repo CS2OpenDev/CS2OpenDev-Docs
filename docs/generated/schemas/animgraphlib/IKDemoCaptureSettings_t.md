@@ -24,7 +24,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_parentBoneName` | CUtlString |  | `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName Target Parent` |
-| `0x8` | `m_eMode` | [IKChannelMode](../!GlobalTypes/IKChannelMode.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Solver Mode` |
+| `0x8` | `m_eMode` | [IKChannelMode](../animgraphlib/IKChannelMode.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Solver Mode` |
 | `0x10` | `m_ikChainName` | CUtlString |  | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName IKChain` `MPropertyFriendlyName IK Chain` |
 | `0x18` | `m_oneBoneStart` | CUtlString |  | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName Start Bone` |
 | `0x20` | `m_oneBoneEnd` | CUtlString |  | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName End Bone` |

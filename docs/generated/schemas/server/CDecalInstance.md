@@ -37,7 +37,7 @@ classDiagram
 | `0x38` | `m_vNormalLS` | Vector |  |  |
 | `0x44` | `m_vNormalOS` | Vector |  |  |
 | `0x50` | `m_vSAxisLS` | Vector |  |  |
-| `0x5c` | `m_nFlags` | [DecalFlags_t](../!GlobalTypes/DecalFlags_t.md) |  |  |
+| `0x5c` | `m_nFlags` | [DecalFlags_t](../server/DecalFlags_t.md) |  |  |
 | `0x60` | `m_Color` | Color |  |  |
 | `0x64` | `m_flWidth` | float32 |  |  |
 | `0x68` | `m_flHeight` | float32 |  |  |

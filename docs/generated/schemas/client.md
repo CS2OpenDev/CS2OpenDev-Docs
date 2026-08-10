@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/client.md)
 
-484 types. Each links to its own page with the full field layout.
+486 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -497,3 +497,5 @@ nav_exclude: true
 | [shard_model_desc_t](client/shard_model_desc_t.md) | class | 128 | 13 |  |
 | [sky3dparams_t](client/sky3dparams_t.md) | class | 144 | 6 |  |
 | [C_BaseCombatCharacter::WaterWakeMode_t](client/C_BaseCombatCharacter.WaterWakeMode_t.md) | enum | — | 5 |  |
+| [InventoryNodeType_t](client/InventoryNodeType_t.md) | enum | — | 9 |  |
+| [P2P_Messages](client/P2P_Messages.md) | enum | — | 7 |  |

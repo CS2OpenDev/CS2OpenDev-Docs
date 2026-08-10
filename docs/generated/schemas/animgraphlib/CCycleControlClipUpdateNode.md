@@ -31,12 +31,12 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x18` | `m_nodePath` | [CAnimNodePath](../animgraphlib/CAnimNodePath.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
-| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../!GlobalTypes/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
+| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../animgraphlib/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x50` | `m_name` | CUtlString | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x60` | `m_tags` | CUtlVector< [TagSpan_t](../animgraphlib/TagSpan_t.md) > |  |  |
 | `0x7c` | `m_hSequence` | [HSequence](../animationsystem/HSequence.md) |  |  |
 | `0x80` | `m_duration` | float32 |  |  |
-| `0x84` | `m_valueSource` | [AnimValueSource](../!GlobalTypes/AnimValueSource.md) |  |  |
+| `0x84` | `m_valueSource` | [AnimValueSource](../animgraphlib/AnimValueSource.md) |  |  |
 | `0x88` | `m_paramIndex` | [CAnimParamHandle](../animgraphlib/CAnimParamHandle.md) |  |  |
 | `0x8a` | `m_bLockWhenWaning` | bool |  |  |
 

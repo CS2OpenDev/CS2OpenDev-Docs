@@ -28,7 +28,7 @@ classDiagram
 | `0x0` | `m_footInfo` | CUtlVector< [FootFixedData_t](../animgraphlib/FootFixedData_t.md) > |  |  |
 | `0x18` | `m_hipDampingSettings` | [CAnimInputDamping](../animgraphlib/CAnimInputDamping.md) |  |  |
 | `0x30` | `m_nHipBoneIndex` | int32 |  |  |
-| `0x34` | `m_ikSolverType` | [IKSolverType](../!GlobalTypes/IKSolverType.md) |  |  |
+| `0x34` | `m_ikSolverType` | [IKSolverType](../animgraphlib/IKSolverType.md) |  |  |
 | `0x38` | `m_bApplyTilt` | bool |  |  |
 | `0x39` | `m_bApplyHipDrop` | bool |  |  |
 | `0x3a` | `m_bAlwaysUseFallbackHinge` | bool |  |  |

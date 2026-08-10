@@ -26,9 +26,9 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_endEffectorType` | [IkEndEffectorType](../!GlobalTypes/IkEndEffectorType.md) |  |  |
+| `0x0` | `m_endEffectorType` | [IkEndEffectorType](../animgraphlib/IkEndEffectorType.md) |  |  |
 | `0x10` | `m_endEffectorAttachment` | [CAnimAttachment](../modellib/CAnimAttachment.md) |  |  |
-| `0x90` | `m_targetType` | [IkTargetType](../!GlobalTypes/IkTargetType.md) |  |  |
+| `0x90` | `m_targetType` | [IkTargetType](../animgraphlib/IkTargetType.md) |  |  |
 | `0xa0` | `m_targetAttachment` | [CAnimAttachment](../modellib/CAnimAttachment.md) |  |  |
 | `0x120` | `m_targetBoneIndex` | int32 |  |  |
 | `0x124` | `m_hPositionParam` | [CAnimParamHandle](../animgraphlib/CAnimParamHandle.md) |  |  |

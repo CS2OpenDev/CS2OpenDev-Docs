@@ -32,7 +32,7 @@ classDiagram
 | `0x58` | `m_loopcapVsnd` | [CSoundContainerReference](../soundsystem_voicecontainers/CSoundContainerReference.md) |  | `MPropertyFriendlyName Loopcap Vsnd (Loop)` `MPropertyGroupName Loopcap` |
 | `0x78` | `m_volume` | float32 |  | `MPropertyFriendlyName Volume` |
 | `0x7c` | `m_fadeOut` | float32 |  | `MPropertyFriendlyName Fade Out (sec)` |
-| `0x80` | `m_mode` | [EVsndTriggerMode](../!GlobalTypes/EVsndTriggerMode.md) |  | `MPropertyFriendlyName Mode` |
+| `0x80` | `m_mode` | [EVsndTriggerMode](../soundsystem_voicecontainers/EVsndTriggerMode.md) |  | `MPropertyFriendlyName Mode` |
 
 <details><summary>KV3 class defaults</summary>
 

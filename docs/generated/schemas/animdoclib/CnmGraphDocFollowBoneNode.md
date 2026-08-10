@@ -39,7 +39,7 @@ classDiagram
 | `0x100` | `m_pDefaultVariationData` | [CNmGraphDocVariationDataNode](../animdoclib/CNmGraphDocVariationDataNode.md)::CData* | [CNmGraphDocVariationDataNode](../animdoclib/CNmGraphDocVariationDataNode.md) | `MPropertySuppressField` |
 | `0x108` | `m_overrides` | CUtlVector< [CNmGraphDocVariationDataNode](../animdoclib/CNmGraphDocVariationDataNode.md)::OverrideValue_t > | [CNmGraphDocVariationDataNode](../animdoclib/CNmGraphDocVariationDataNode.md) | `MPropertySuppressField` |
 | `0x120` | `m_defaultResourceName` | CResourceName | [CNmGraphDocVariationDataNode](../animdoclib/CNmGraphDocVariationDataNode.md) | `MPropertySuppressField` |
-| `0x200` | `m_mode` | [NmFollowBoneMode_t](../!GlobalTypes/NmFollowBoneMode_t.md) |  |  |
+| `0x200` | `m_mode` | [NmFollowBoneMode_t](../animlib/NmFollowBoneMode_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

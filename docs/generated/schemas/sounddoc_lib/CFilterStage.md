@@ -27,7 +27,7 @@ classDiagram
 | `0x8` | `m_flFrequency` | float32 |  | `MPropertyAttributeRange biased 20 22000` `MPropertyFriendlyName Center Frequency (Hz)` |
 | `0xc` | `m_flQ` | float32 |  | `MPropertyAttributeRange 0.1 12` `MPropertyFriendlyName Q` |
 | `0x10` | `m_fldbGain` | float32 |  | `MPropertyAttributeRange -24 24` `MPropertyFriendlyName Gain (dB)` |
-| `0x14` | `m_nFilterSlope` | [VMixFilterSlope_t](../!GlobalTypes/VMixFilterSlope_t.md) |  | `MPropertyFriendlyName Slope` |
+| `0x14` | `m_nFilterSlope` | [VMixFilterSlope_t](../soundsystem_lowlevel/VMixFilterSlope_t.md) |  | `MPropertyFriendlyName Slope` |
 | `0x15` | `m_bEnable` | bool |  | `MPropertyFriendlyName Enabled` |
 
 <details><summary>KV3 class defaults</summary>

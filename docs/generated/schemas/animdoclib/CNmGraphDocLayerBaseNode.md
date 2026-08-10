@@ -41,4 +41,4 @@ classDiagram
 | `0xd8` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0x100` | `m_isSynchronized` | bool |  |  |
 | `0x101` | `m_ignoreEvents` | bool |  |  |
-| `0x102` | `m_blendMode` | [NmPoseBlendMode_t](../!GlobalTypes/NmPoseBlendMode_t.md) |  |  |
+| `0x102` | `m_blendMode` | [NmPoseBlendMode_t](../animlib/NmPoseBlendMode_t.md) |  |  |

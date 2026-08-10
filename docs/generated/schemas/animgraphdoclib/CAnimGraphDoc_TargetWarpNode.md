@@ -37,12 +37,12 @@ classDiagram
 | `0x28` | `m_vecPosition` | Vector2D | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyGroupName Debug` `MPropertySortPriority -100` |
 | `0x30` | `m_nNodeID` | [AnimNodeID](../modellib/AnimNodeID.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyGroupName Debug` `MPropertySortPriority -100` |
 | `0x34` | `m_bDebugThisNode` | bool | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Debug This Node` `MPropertyGroupName Debug` `MPropertySortPriority -100` |
-| `0x38` | `m_networkMode` | [AnimNodeNetworkMode](../!GlobalTypes/AnimNodeNetworkMode.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Network Mode` `MPropertySortPriority -110` |
+| `0x38` | `m_networkMode` | [AnimNodeNetworkMode](../animgraphlib/AnimNodeNetworkMode.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Network Mode` `MPropertySortPriority -110` |
 | `0x40` | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../animgraphdoclib/CAnimGraphDoc_NodeConnection.md) |  | `MPropertySuppressField` |
-| `0x48` | `m_eLinearRootMotionMode` | [TargetWarpLinearRootMotionMode](../!GlobalTypes/TargetWarpLinearRootMotionMode.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Linear Root Motion Mode` |
-| `0x4c` | `m_eAngleMode` | [TargetWarpAngleMode_t](../!GlobalTypes/TargetWarpAngleMode_t.md) |  | `MPropertyFriendlyName Angle Mode` |
-| `0x50` | `m_eCorrectionMethod` | [TargetWarpCorrectionMethod](../!GlobalTypes/TargetWarpCorrectionMethod.md) |  | `MPropertyFriendlyName Correction Method` |
-| `0x54` | `m_eTargetWarpTimingMethod` | [TargetWarpTimingMethod](../!GlobalTypes/TargetWarpTimingMethod.md) |  | `MPropertyFriendlyName Timing Method` |
+| `0x48` | `m_eLinearRootMotionMode` | [TargetWarpLinearRootMotionMode](../animgraphdoclib/TargetWarpLinearRootMotionMode.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Linear Root Motion Mode` |
+| `0x4c` | `m_eAngleMode` | [TargetWarpAngleMode_t](../animgraphlib/TargetWarpAngleMode_t.md) |  | `MPropertyFriendlyName Angle Mode` |
+| `0x50` | `m_eCorrectionMethod` | [TargetWarpCorrectionMethod](../animgraphlib/TargetWarpCorrectionMethod.md) |  | `MPropertyFriendlyName Correction Method` |
+| `0x54` | `m_eTargetWarpTimingMethod` | [TargetWarpTimingMethod](../animgraphlib/TargetWarpTimingMethod.md) |  | `MPropertyFriendlyName Timing Method` |
 | `0x58` | `m_moveHeadingParamID` | [AnimParamID](../modellib/AnimParamID.md) |  | `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Move Heading` |
 | `0x5c` | `m_desiredMoveHeadingParamID` | [AnimParamID](../modellib/AnimParamID.md) |  | `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Desired Move Heading` |
 | `0x60` | `m_targetPositionParamID` | [AnimParamID](../modellib/AnimParamID.md) |  | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName VectorParameter` `MPropertyFriendlyName Target Position` |

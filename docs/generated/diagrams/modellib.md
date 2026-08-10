@@ -40,6 +40,7 @@ classDiagram
     CAnimSkeleton *-- CAnimFoot
     CBaseConstraint *-- CConstraintSlave
     CBaseConstraint *-- CConstraintTarget
+    CFlexOp *-- FlexOpCode_t
     CFlexRule *-- CFlexOp
     CFootCycleDefinition *-- CAnimCycle
     CFootCycleDefinition *-- CFootCycle
@@ -49,16 +50,20 @@ classDiagram
     CFootTrajectories *-- CFootTrajectory
     CHitBoxSet *-- CHitBox
     CHitBoxSetList *-- CHitBoxSet
+    CMaterialDrawDescriptor *-- RenderPrimitiveType_t
     CMaterialDrawDescriptor *-- CRenderBufferBinding
     CMeshletDescriptor *-- CDrawCullingData
     CModelConfig --> CModelConfigElement
+    CModelConfigElement_AttachedModel *-- ModelConfigAttachmentType_t
     CModelConfigList --> CModelConfig
     CMorphData *-- CMorphRectData
     CMorphRectData *-- CMorphBundleData
+    CMorphSetData *-- MorphBundleType_t
     CMorphSetData *-- CMorphData
     CMorphSetData *-- CFlexDesc
     CMorphSetData *-- CFlexController
     CMorphSetData *-- CFlexRule
+    CNPCPhysicsHull *-- NPCPhysicsHullType_t
     CPhysSurfaceProperties *-- CPhysSurfacePropertiesPhysics
     CPhysSurfaceProperties *-- CPhysSurfacePropertiesVehicle
     CPhysSurfaceProperties *-- CPhysSurfacePropertiesSoundNames
@@ -73,7 +78,9 @@ classDiagram
     CSceneObjectData *-- CMaterialDrawDescriptor
     CSceneObjectData *-- CMeshletDescriptor
     "CSceneObjectData::RTProxyDrawDescriptor_t" *-- CMaterialDrawDescriptor
+    "CSceneObjectData::RTProxyDrawDescriptor_t" *-- VertexAlbedoFormat_t
     CVPhysXSurfacePropertiesList --> CPhysSurfaceProperties
+    ModelBoneFlexDriverControl_t *-- ModelBoneFlexComponent_t
     ModelBoneFlexDriver_t *-- ModelBoneFlexDriverControl_t
     ModelEmbeddedMesh_t *-- ModelMeshBufferData_t
     ModelMeshBufferData_t *-- RenderInputLayoutField_t
@@ -85,6 +92,7 @@ classDiagram
     PermModelData_t --> CModelConfigList
     PermModelData_t *-- PermModelDataAnimatedMaterialAttribute_t
     PermModelData_t *-- ModelAnimGraph2Ref_t
+    RenderInputLayoutField_t *-- RenderSlotType_t
     RenderSkeletonBone_t *-- SkeletonBoneBounds_t
     "SkeletonAnimCapture_t::Frame_t" *-- SkeletonAnimCapture_t
     SkeletonDemoDb_t --> SkeletonAnimCapture_t

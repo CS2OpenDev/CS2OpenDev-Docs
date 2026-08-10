@@ -63,10 +63,13 @@ classDiagram
     CPulse_Chunk *-- PGDInstruction_t
     CPulse_Chunk *-- CPulse_RegisterInfo
     CPulse_Chunk *-- CPulse_InstructionDebug
+    CPulse_DomainValue *-- PulseDomainValueType_t
     CPulse_InstructionDebug *-- PulseDocNodeID_t
     CPulse_PublicOutput *-- CPulseRuntimeMethodArg
     CPulse_RegisterInfo *-- PulseRuntimeRegisterIndex_t
+    CPulse_Variable *-- PulseVariableKeysSource_t
     CPulse_Variable *-- PulseDocNodeID_t
+    PGDInstruction_t *-- PulseInstructionCode_t
     PGDInstruction_t *-- PulseRuntimeVarIndex_t
     PGDInstruction_t *-- PulseRuntimeRegisterIndex_t
     PGDInstruction_t *-- PulseRuntimeInvokeIndex_t
@@ -99,13 +102,16 @@ classDiagram
     CPulseCell_Outflow_CycleOrdered *-- CPulse_OutflowConnection
     CPulseCell_Outflow_CycleRandom *-- CPulse_OutflowConnection
     CPulseCell_Outflow_CycleShuffled *-- CPulse_OutflowConnection
+    CPulseCell_PickBestOutflowSelector *-- PulseBestOutflowRules_t
     CPulseCell_PickBestOutflowSelector *-- PulseSelectorOutflowList_t
     CPulseCell_Step_CallExternalMethod *-- PulseRuntimeBlackboardReferenceIndex_t
     CPulseCell_Step_CallExternalMethod *-- CPulseRuntimeMethodArg
+    CPulseCell_Step_CallExternalMethod *-- PulseMethodCallMode_t
     CPulseCell_Step_CallExternalMethod *-- CPulse_ResumePoint
     CPulseCell_Step_PublicOutput *-- PulseRuntimeOutputIndex_t
     CPulseCell_Timeline *-- CPulse_ResumePoint
     "CPulseCell_Timeline::TimelineEvent_t" *-- CPulse_OutflowConnection
+    CPulseCell_WaitForCursorsWithTag *-- PulseCursorCancelPriority_t
     CPulseCell_WaitForCursorsWithTagBase *-- CPulse_ResumePoint
     CPulseCell_WaitForObservable *-- CPulse_ResumePoint
     CPulseGraphDef --> CPulse_Chunk

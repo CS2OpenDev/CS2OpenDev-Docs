@@ -28,7 +28,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_bEnabled` | bool |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Enabled` |
-| `0x4` | `m_nMutatorCommandType` | [CompMatPropertyMutatorType_t](../!GlobalTypes/CompMatPropertyMutatorType_t.md) |  | `MPropertyAttrStateCallback` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Mutator Command` |
+| `0x4` | `m_nMutatorCommandType` | [CompMatPropertyMutatorType_t](../compositematerialslib/CompMatPropertyMutatorType_t.md) |  | `MPropertyAttrStateCallback` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Mutator Command` |
 | `0x8` | `m_strInitWith_Container` | CUtlString |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Container to Init With` |
 | `0x10` | `m_strCopyProperty_InputContainerSrc` | CUtlString |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Input Container` |
 | `0x18` | `m_strCopyProperty_InputContainerProperty` | CUtlString |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Input Container Property` |

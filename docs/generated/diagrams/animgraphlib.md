@@ -7,7 +7,7 @@ nav_exclude: true
 
 # UML: animgraphlib
 
-Class relationships (inheritance and composition) for the `animgraphlib` module.
+Class relationships (inheritance and composition) for the `animgraphlib` module (showing 300 of 301 relationships).
 
 **Arrow legend:** `<|--` inheritance &nbsp; `*--` composition &nbsp; `-->` association/pointer
 
@@ -139,19 +139,26 @@ classDiagram
     CLeafUpdateNode <|-- CZeroPoseUpdateNode
     AimMatrixOpFixedSettings_t *-- CAnimInputDamping
     AimMatrixOpFixedSettings_t *-- CPoseHandle
+    AimMatrixOpFixedSettings_t *-- AimMatrixBlendMode
     AimMatrixOpFixedSettings_t *-- CBlendCurve
     BlendItem_t *-- TagSpan_t
     BlendItem_t *-- CAnimUpdateNodeRef
     CActionComponentUpdater *-- CAnimActionUpdater
+    CAddUpdateNode *-- BinaryNodeChildOption
     CAimCameraUpdateNode *-- CAnimParamHandle
     CAimCameraUpdateNode *-- AimCameraOpFixedSettings_t
     CAimMatrixUpdateNode *-- AimMatrixOpFixedSettings_t
+    CAimMatrixUpdateNode *-- AnimVectorSource
     CAimMatrixUpdateNode *-- CAnimParamHandle
+    CAnimComponentUpdater *-- AnimNodeNetworkMode
+    CAnimDemoCaptureSettings *-- EDemoBoneSelectionMode
     CAnimDemoCaptureSettings *-- BoneDemoCaptureSettings_t
     CAnimDemoCaptureSettings *-- IKDemoCaptureSettings_t
     CAnimGraphDebugReplay *-- CAnimReplayFrame
     CAnimGraphModelBinding *-- CAnimUpdateSharedData
     CAnimGraphSettingsManager *-- CAnimGraphSettingsGroup
+    CAnimInputDamping *-- DampingSpeedFunction
+    CAnimParamHandle *-- AnimParamType_t
     CAnimParameterManagerUpdater *-- CAnimParameterBase
     CAnimParameterManagerUpdater *-- CAnimParamHandle
     CAnimScriptManager *-- ScriptInfo_t
@@ -159,6 +166,7 @@ classDiagram
     CAnimStateMachineUpdater *-- CTransitionUpdateData
     CAnimTagManagerUpdater *-- CAnimTagBase
     CAnimUpdateNodeBase *-- CAnimNodePath
+    CAnimUpdateNodeBase *-- AnimNodeNetworkMode
     CAnimUpdateSharedData *-- CAnimUpdateNodeBase
     CAnimUpdateSharedData *-- CAnimNodePath
     CAnimUpdateSharedData *-- CAnimComponentUpdater
@@ -167,21 +175,38 @@ classDiagram
     CAnimUpdateSharedData *-- CAnimScriptManager
     CAnimUpdateSharedData *-- CAnimGraphSettingsManager
     CAnimUpdateSharedData *-- CStaticPoseCacheBuilder
+    CAnimationGraphVisualizerPrimitiveBase *-- CAnimationGraphVisualizerPrimitiveType
     CBinaryUpdateNode *-- CAnimUpdateNodeRef
+    CBinaryUpdateNode *-- BinaryNodeTiming
     CBlend2DUpdateNode *-- BlendItem_t
     CBlend2DUpdateNode *-- TagSpan_t
     CBlend2DUpdateNode *-- CParamSpanUpdater
     CBlend2DUpdateNode *-- CAnimInputDamping
+    CBlend2DUpdateNode *-- AnimValueSource
     CBlend2DUpdateNode *-- CAnimParamHandle
+    CBlend2DUpdateNode *-- Blend2DMode
     CBlendUpdateNode *-- CAnimUpdateNodeRef
+    CBlendUpdateNode *-- AnimValueSource
+    CBlendUpdateNode *-- LinearRootMotionBlendMode_t
     CBlendUpdateNode *-- CAnimParamHandle
     CBlendUpdateNode *-- CAnimInputDamping
+    CBlendUpdateNode *-- BlendKeyType
     CBodyGroupAnimTag *-- CBodyGroupSetting
+    CBoneMaskUpdateNode *-- BoneMaskBlendSpace
+    CBoneMaskUpdateNode *-- BinaryNodeChildOption
+    CBoneMaskUpdateNode *-- AnimValueSource
     CBoneMaskUpdateNode *-- CAnimParamHandle
     CChoiceUpdateNode *-- CAnimUpdateNodeRef
+    CChoiceUpdateNode *-- ChoiceMethod
+    CChoiceUpdateNode *-- ChoiceChangeMethod
+    CChoiceUpdateNode *-- ChoiceBlendMethod
     CChoreoInstanceData *-- CAnimationLayer
+    CConcreteAnimParameter *-- AnimParamButton_t
+    CConcreteAnimParameter *-- AnimParamNetworkSetting
     CCycleControlClipUpdateNode *-- TagSpan_t
+    CCycleControlClipUpdateNode *-- AnimValueSource
     CCycleControlClipUpdateNode *-- CAnimParamHandle
+    CCycleControlUpdateNode *-- AnimValueSource
     CCycleControlUpdateNode *-- CAnimParamHandle
     CDampedPathAnimMotorUpdater *-- CAnimParamHandle
     CDampedValueComponentUpdater *-- CDampedValueUpdateItem
@@ -192,31 +217,43 @@ classDiagram
     CDirectPlaybackTagData *-- TagSpan_t
     CDirectPlaybackUpdateNode *-- CDirectPlaybackTagData
     CDirectionalBlendUpdateNode *-- CAnimInputDamping
+    CDirectionalBlendUpdateNode *-- AnimValueSource
     CDirectionalBlendUpdateNode *-- CAnimParamHandle
     CExpressionActionUpdater *-- CAnimParamHandle
+    CExpressionActionUpdater *-- AnimParamType_t
     CFollowAttachmentUpdateNode *-- FollowAttachmentSettings_t
     CFollowPathUpdateNode *-- CAnimInputDamping
+    CFollowPathUpdateNode *-- AnimValueSource
     CFollowPathUpdateNode *-- CAnimParamHandle
     CFollowTargetUpdateNode *-- FollowTargetOpFixedSettings_t
     CFollowTargetUpdateNode *-- CAnimParamHandle
     CFootAdjustmentUpdateNode *-- CPoseHandle
     CFootAdjustmentUpdateNode *-- CAnimParamHandle
+    CFootFallAnimTag *-- FootFallTagFoot_t
     CFootLockUpdateNode *-- FootLockPoseOpFixedSettings
     CFootLockUpdateNode *-- FootFixedSettings
     CFootLockUpdateNode *-- CAnimInputDamping
     CFootPinningUpdateNode *-- FootPinningPoseOpFixedData_t
+    CFootPinningUpdateNode *-- FootPinningTimingSource
     CFootPinningUpdateNode *-- CAnimParamHandle
     CFootStepTriggerUpdateNode *-- FootStepTrigger
+    CFootstepLandedAnimTag *-- FootstepLandedFootSoundType_t
+    CFootstepLandedAnimTag *-- FootstepJumpPhase_t
+    CFutureVelocityMetricEvaluator *-- VelocityMetricMode
     CHitReactUpdateNode *-- HitReactFixedSettings_t
     CHitReactUpdateNode *-- CAnimParamHandle
     CJiggleBoneUpdateNode *-- JiggleBoneSettingsList_t
     CJumpHelperUpdateNode *-- CAnimParamHandle
+    CJumpHelperUpdateNode *-- JumpCorrectionMethod
     CLeanMatrixUpdateNode *-- CPoseHandle
     CLeanMatrixUpdateNode *-- CAnimInputDamping
+    CLeanMatrixUpdateNode *-- AnimVectorSource
     CLeanMatrixUpdateNode *-- CAnimParamHandle
     CLookAtUpdateNode *-- LookAtOpFixedSettings_t
+    CLookAtUpdateNode *-- AnimVectorSource
     CLookAtUpdateNode *-- CAnimParamHandle
     CLookComponentUpdater *-- CAnimParamHandle
+    CMaterialAttributeAnimTag *-- MatterialAttributeTagType_t
     CMotionDataSet *-- CMotionGraphGroup
     CMotionGraph *-- CParamSpanUpdater
     CMotionGraph *-- TagSpan_t
@@ -241,19 +278,27 @@ classDiagram
     CMovementComponentUpdater *-- CAnimInputDamping
     CMovementComponentUpdater *-- CAnimParamHandle
     CMoverUpdateNode *-- CAnimInputDamping
+    CMoverUpdateNode *-- AnimValueSource
     CMoverUpdateNode *-- CAnimParamHandle
+    COrientationWarpUpdateNode *-- OrientationWarpMode_t
     COrientationWarpUpdateNode *-- CAnimParamHandle
+    COrientationWarpUpdateNode *-- OrientationWarpTargetOffsetMode_t
     COrientationWarpUpdateNode *-- CAnimInputDamping
+    COrientationWarpUpdateNode *-- OrientationWarpRootMotionSource_t
+    COrientationWarpUpdateNode *-- AnimValueSource
     CParamSpanUpdater *-- ParamSpan_t
     CPlayerInputAnimMotorUpdater *-- CAnimParamHandle
+    CPoseHandle *-- PoseType_t
     CProductQuantizer *-- CVectorQuantizer
     CRagdollComponentUpdater *-- CAnimNodePath
     CRagdollComponentUpdater *-- WeightList
+    CRagdollUpdateNode *-- RagdollPoseControl
     CRemapValueComponentUpdater *-- CRemapValueUpdateItem
     CRemapValueUpdateItem *-- CAnimParamHandle
     CSelectorUpdateNode *-- CAnimUpdateNodeRef
     CSelectorUpdateNode *-- CBlendCurve
     CSelectorUpdateNode *-- CAnimParamHandle
+    CSelectorUpdateNode *-- SelectorTagBehavior_t
     CSequenceTagSpans *-- TagSpan_t
     CSequenceUpdateNode *-- CParamSpanUpdater
     CSequenceUpdateNode *-- TagSpan_t
@@ -268,41 +313,4 @@ classDiagram
     CStanceOverrideUpdateNode *-- StanceInfo_t
     CStanceOverrideUpdateNode *-- CAnimUpdateNodeRef
     CStanceOverrideUpdateNode *-- CAnimParamHandle
-    CStanceScaleUpdateNode *-- CAnimParamHandle
-    CStateActionUpdater *-- CAnimActionUpdater
-    CStateMachineComponentUpdater *-- CAnimStateMachineUpdater
-    CStateMachineUpdateNode *-- CAnimStateMachineUpdater
-    CStateMachineUpdateNode *-- CStateNodeStateData
-    CStateMachineUpdateNode *-- CStateNodeTransitionData
-    CStateNodeStateData *-- CAnimUpdateNodeRef
-    CStateNodeTransitionData *-- CBlendCurve
-    CStateUpdateData *-- CStateActionUpdater
-    CStaticPoseCache *-- CCachedPose
-    CStopAtGoalUpdateNode *-- CAnimInputDamping
-    CTargetSelectorUpdateNode *-- CAnimUpdateNodeRef
-    CTargetSelectorUpdateNode *-- CAnimParamHandle
-    CTargetWarpUpdateNode *-- CAnimParamHandle
-    CTwoBoneIKUpdateNode *-- TwoBoneIKSettings_t
-    CUnaryUpdateNode *-- CAnimUpdateNodeRef
-    ChainToSolveData_t *-- IKSolverSettings_t
-    ChainToSolveData_t *-- IKTargetSettings_t
-    FootFixedSettings *-- TraceSettings_t
-    FootLockPoseOpFixedSettings *-- FootFixedData_t
-    FootLockPoseOpFixedSettings *-- CAnimInputDamping
-    FootPinningPoseOpFixedData_t *-- FootFixedData_t
-    IKTargetSettings_t *-- IKBoneNameAndIndex_t
-    JiggleBoneSettingsList_t *-- JiggleBoneSettings_t
-    LookAtOpFixedSettings_t *-- CAnimInputDamping
-    LookAtOpFixedSettings_t *-- LookAtBone_t
-    MotionBlendItem *-- CMotionNode
-    MotionMatchingInstanceData *-- MotionSelection
-    MotionSelection *-- NetVarConfigIndex
-    PairedSequenceData *-- PairedSequence_t
-    ParamSpan_t *-- ParamSpanSample_t
-    ParamSpan_t *-- CAnimParamHandle
-    PerTickSettings_t *-- CRootMotion
-    ScriptInfo_t *-- CAnimParamHandle
-    SequenceData *-- CNetworkedCycle
-    SolveIKChainPoseOpFixedSettings_t *-- ChainToSolveData_t
-    TwoBoneIKSettings_t *-- CAnimParamHandle
 ```

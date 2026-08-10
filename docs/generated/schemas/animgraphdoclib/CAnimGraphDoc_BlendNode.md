@@ -37,19 +37,19 @@ classDiagram
 | `0x28` | `m_vecPosition` | Vector2D | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyGroupName Debug` `MPropertySortPriority -100` |
 | `0x30` | `m_nNodeID` | [AnimNodeID](../modellib/AnimNodeID.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyGroupName Debug` `MPropertySortPriority -100` |
 | `0x34` | `m_bDebugThisNode` | bool | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Debug This Node` `MPropertyGroupName Debug` `MPropertySortPriority -100` |
-| `0x38` | `m_networkMode` | [AnimNodeNetworkMode](../!GlobalTypes/AnimNodeNetworkMode.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Network Mode` `MPropertySortPriority -110` |
+| `0x38` | `m_networkMode` | [AnimNodeNetworkMode](../animgraphlib/AnimNodeNetworkMode.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Network Mode` `MPropertySortPriority -110` |
 | `0x50` | `m_children` | CUtlVector< [CBlendNodeChild](../animgraphdoclib/CBlendNodeChild.md) > |  | `MPropertyAutoExpandSelf` `MPropertyFriendlyName Blend Items` |
-| `0x68` | `m_blendValueSource` | [AnimValueSource](../!GlobalTypes/AnimValueSource.md) |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Blend Source` |
+| `0x68` | `m_blendValueSource` | [AnimValueSource](../animgraphlib/AnimValueSource.md) |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Blend Source` |
 | `0x70` | `m_paramName` | CUtlString |  | `MPropertySuppressField` |
 | `0x78` | `m_param` | [AnimParamID](../modellib/AnimParamID.md) |  | `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Parameter` |
-| `0x7c` | `m_blendKeyType` | [BlendKeyType](../!GlobalTypes/BlendKeyType.md) |  | `MPropertyFriendlyName Blend Key Values` |
+| `0x7c` | `m_blendKeyType` | [BlendKeyType](../animgraphlib/BlendKeyType.md) |  | `MPropertyFriendlyName Blend Key Values` |
 | `0x80` | `m_bLockBlendOnReset` | bool |  | `MPropertyFriendlyName Lock Blend on Reset` |
 | `0x81` | `m_bSyncCycles` | bool |  | `MPropertyFriendlyName Sync Cycles` |
 | `0x82` | `m_bLoop` | bool |  | `MPropertyFriendlyName Loop` |
 | `0x83` | `m_bLockWhenWaning` | bool |  | `MPropertyFriendlyName Lock Blend When Waning` |
 | `0x84` | `m_bIsAngle` | bool |  | `MPropertyFriendlyName Is Angle` |
 | `0x88` | `m_damping` | [CAnimInputDamping](../animgraphlib/CAnimInputDamping.md) |  | `MPropertyFriendlyName Damping` |
-| `0xa0` | `m_eLinearRootMotionBlendMode` | [LinearRootMotionBlendMode_t](../!GlobalTypes/LinearRootMotionBlendMode_t.md) |  | `MPropertyFriendlyName Linear Root Motion Blend Mode` |
+| `0xa0` | `m_eLinearRootMotionBlendMode` | [LinearRootMotionBlendMode_t](../animgraphlib/LinearRootMotionBlendMode_t.md) |  | `MPropertyFriendlyName Linear Root Motion Blend Mode` |
 
 <details><summary>KV3 class defaults</summary>
 

@@ -24,7 +24,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_iControlPoint` | ParticleParamID_t |  |  |
-| `0x10` | `m_iAttachType` | [ParticleAttachment_t](../!GlobalTypes/ParticleAttachment_t.md) |  |  |
+| `0x10` | `m_iAttachType` | [ParticleAttachment_t](../animationsystem/ParticleAttachment_t.md) |  |  |
 | `0x18` | `m_attachmentName` | CUtlString |  |  |
 | `0x20` | `m_vecOffset` | Vector |  |  |
 | `0x2c` | `m_angOffset` | QAngle |  |  |

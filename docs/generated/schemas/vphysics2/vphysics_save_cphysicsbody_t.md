@@ -60,7 +60,7 @@ classDiagram
 | `0xcc` | `m_vGravity` | Vector | [RnBodyDesc_t](../physicslib/RnBodyDesc_t.md) |  |
 | `0xd8` | `m_bSpeculativeEnabled` | bool | [RnBodyDesc_t](../physicslib/RnBodyDesc_t.md) |  |
 | `0xd9` | `m_bHasShadowController` | bool | [RnBodyDesc_t](../physicslib/RnBodyDesc_t.md) |  |
-| `0xda` | `m_nDynamicContinuousContactBehavior` | [DynamicContinuousContactBehavior_t](../!GlobalTypes/DynamicContinuousContactBehavior_t.md) | [RnBodyDesc_t](../physicslib/RnBodyDesc_t.md) |  |
+| `0xda` | `m_nDynamicContinuousContactBehavior` | [DynamicContinuousContactBehavior_t](../physicslib/DynamicContinuousContactBehavior_t.md) | [RnBodyDesc_t](../physicslib/RnBodyDesc_t.md) |  |
 | `0xe0` | `m_nOldPointer` | uint64 |  |  |
 
 <details><summary>KV3 class defaults</summary>

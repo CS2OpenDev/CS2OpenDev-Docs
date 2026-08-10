@@ -28,7 +28,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x10` | `m_nType` | [ParticleTransformType_t](../!GlobalTypes/ParticleTransformType_t.md) |  |  |
+| `0x10` | `m_nType` | [ParticleTransformType_t](../particleslib/ParticleTransformType_t.md) |  |  |
 | `0x18` | `m_NamedValue` | CParticleNamedValueRef |  |  |
 | `0x58` | `m_bFollowNamedValue` | bool |  |  |
 | `0x59` | `m_bSupportsDisabled` | bool |  |  |

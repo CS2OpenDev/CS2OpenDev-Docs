@@ -31,8 +31,8 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flOpStrength` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator strength` `MPropertySortPriority -100` |
-| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../!GlobalTypes/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
-| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../!GlobalTypes/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
+| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
+| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
 | `0x180` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
 | `0x184` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
 | `0x188` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
@@ -61,8 +61,8 @@ classDiagram
 | `0x522` | `m_bDeleteSim` | bool |  | `MPropertyFriendlyName delete physics sim when stopped` `MPropertySuppressExpr m_bKillParticles == false` |
 | `0x524` | `m_nControlPoint` | int32 |  | `MPropertyFriendlyName control point (for finding nearest sim)` `MPropertySuppressExpr m_bKillParticles == true` |
 | `0x528` | `m_nForcedSimId` | int32 |  | `MPropertyFriendlyName specific sim id` `MPropertySuppressExpr m_bKillParticles == true` |
-| `0x52c` | `m_nColorBlendType` | [ParticleColorBlendType_t](../!GlobalTypes/ParticleColorBlendType_t.md) |  | `MPropertyFriendlyName tint blend (color vs prop group gradient)` |
-| `0x530` | `m_nForcedStatusEffects` | [ParticleAttrBoxFlags_t](../!GlobalTypes/ParticleAttrBoxFlags_t.md) |  | `MPropertyFriendlyName forced status effect flags` |
+| `0x52c` | `m_nColorBlendType` | [ParticleColorBlendType_t](../particleslib/ParticleColorBlendType_t.md) |  | `MPropertyFriendlyName tint blend (color vs prop group gradient)` |
+| `0x530` | `m_nForcedStatusEffects` | [ParticleAttrBoxFlags_t](../particles/ParticleAttrBoxFlags_t.md) |  | `MPropertyFriendlyName forced status effect flags` |
 | `0x534` | `m_nNoCollisionAttribute` | [ParticleAttributeIndex_t](../particles/ParticleAttributeIndex_t.md) |  | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName Disable Non-Static Collision Duration` `MPropertySuppressExpr m_nForcedStatusEffects == 0` |
 | `0x538` | `m_nZeroGravityAttribute` | [ParticleAttributeIndex_t](../particles/ParticleAttributeIndex_t.md) |  | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName Zero Gravity Duration` `MPropertySuppressExpr m_nForcedStatusEffects == 0` |
 

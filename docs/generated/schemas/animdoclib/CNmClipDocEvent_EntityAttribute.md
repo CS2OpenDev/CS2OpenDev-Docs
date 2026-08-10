@@ -29,9 +29,9 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flStartTime` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
 | `0xc` | `m_flDuration` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
-| `0x10` | `m_target` | [CNmEventTargetEntity_t](../!GlobalTypes/CNmEventTargetEntity_t.md) |  |  |
+| `0x10` | `m_target` | [CNmEventTargetEntity_t](../animlib/CNmEventTargetEntity_t.md) |  |  |
 | `0x18` | `m_attributeName` | CUtlString |  |  |
-| `0x20` | `m_nValueType` | [CNmClipDocEvent_EntityAttribute_Type_t](../!GlobalTypes/CNmClipDocEvent_EntityAttribute_Type_t.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Type` |
+| `0x20` | `m_nValueType` | [CNmClipDocEvent_EntityAttribute_Type_t](../animdoclib/CNmClipDocEvent_EntityAttribute_Type_t.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Type` |
 | `0x24` | `m_nIntValue` | int32 |  | `MPropertyAttrStateCallback` |
 | `0x28` | `m_FloatValue` | CPiecewiseCurve |  | `MPropertyAttrStateCallback` |
 

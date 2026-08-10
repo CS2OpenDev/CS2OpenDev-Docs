@@ -37,19 +37,19 @@ classDiagram
 | `0x28` | `m_vecPosition` | Vector2D | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyGroupName Debug` `MPropertySortPriority -100` |
 | `0x30` | `m_nNodeID` | [AnimNodeID](../modellib/AnimNodeID.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyGroupName Debug` `MPropertySortPriority -100` |
 | `0x34` | `m_bDebugThisNode` | bool | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Debug This Node` `MPropertyGroupName Debug` `MPropertySortPriority -100` |
-| `0x38` | `m_networkMode` | [AnimNodeNetworkMode](../!GlobalTypes/AnimNodeNetworkMode.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Network Mode` `MPropertySortPriority -110` |
+| `0x38` | `m_networkMode` | [AnimNodeNetworkMode](../animgraphlib/AnimNodeNetworkMode.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Network Mode` `MPropertySortPriority -110` |
 | `0x40` | `m_weightListName` | CUtlString |  | `MPropertyAttributeChoiceName BoneMask` `MPropertyFriendlyName Bone Mask` |
 | `0x48` | `m_inputConnection1` | [CAnimGraphDoc_NodeConnection](../animgraphdoclib/CAnimGraphDoc_NodeConnection.md) |  | `MPropertySuppressField` |
 | `0x50` | `m_inputConnection2` | [CAnimGraphDoc_NodeConnection](../animgraphdoclib/CAnimGraphDoc_NodeConnection.md) |  | `MPropertySuppressField` |
-| `0x58` | `m_blendSpace` | [BoneMaskBlendSpace](../!GlobalTypes/BoneMaskBlendSpace.md) |  | `MPropertyFriendlyName Blend Space` |
+| `0x58` | `m_blendSpace` | [BoneMaskBlendSpace](../animgraphlib/BoneMaskBlendSpace.md) |  | `MPropertyFriendlyName Blend Space` |
 | `0x5c` | `m_bUseBlendScale` | bool |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Use Blend Source` |
-| `0x60` | `m_blendValueSource` | [AnimValueSource](../!GlobalTypes/AnimValueSource.md) |  | `MPropertyAttrStateCallback` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Blend Source` |
+| `0x60` | `m_blendValueSource` | [AnimValueSource](../animgraphlib/AnimValueSource.md) |  | `MPropertyAttrStateCallback` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Blend Source` |
 | `0x68` | `m_blendParameterName` | CUtlString |  | `MPropertySuppressField` |
 | `0x70` | `m_blendParameter` | [AnimParamID](../modellib/AnimParamID.md) |  | `MPropertyAttrStateCallback` `MPropertyAttributeChoiceName FloatParameter` `MPropertyFriendlyName Blend Parameter` |
-| `0x74` | `m_timingBehavior` | [BinaryNodeTiming](../!GlobalTypes/BinaryNodeTiming.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Timing Control` |
+| `0x74` | `m_timingBehavior` | [BinaryNodeTiming](../animgraphlib/BinaryNodeTiming.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Timing Control` |
 | `0x78` | `m_flTimingBlend` | float32 |  | `MPropertyAttrStateCallback` `MPropertyAttributeRange 0 1` `MPropertyFriendlyName Timing Blend` |
 | `0x7c` | `m_flRootMotionBlend` | float32 |  | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName Root Motion Blend` |
-| `0x80` | `m_footMotionTiming` | [BinaryNodeChildOption](../!GlobalTypes/BinaryNodeChildOption.md) |  | `MPropertyFriendlyName Foot Motion Timing` |
+| `0x80` | `m_footMotionTiming` | [BinaryNodeChildOption](../animgraphlib/BinaryNodeChildOption.md) |  | `MPropertyFriendlyName Foot Motion Timing` |
 | `0x84` | `m_bResetChild1` | bool |  | `MPropertyFriendlyName Reset Child1` |
 | `0x85` | `m_bResetChild2` | bool |  | `MPropertyFriendlyName Reset Child2` |
 

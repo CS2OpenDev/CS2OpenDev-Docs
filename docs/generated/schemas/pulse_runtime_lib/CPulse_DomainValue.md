@@ -23,7 +23,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_nType` | [PulseDomainValueType_t](../!GlobalTypes/PulseDomainValueType_t.md) |  |  |
+| `0x0` | `m_nType` | [PulseDomainValueType_t](../pulse_runtime_lib/PulseDomainValueType_t.md) |  |  |
 | `0x8` | `m_Value` | CGlobalSymbolCaseSensitive |  |  |
 | `0x10` | `m_RequiredRuntimeType` | CPulseValueFullType |  |  |
 

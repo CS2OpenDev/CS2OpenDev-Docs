@@ -31,7 +31,7 @@ classDiagram
 | `0x38` | `m_flFadeEndDistance` | float32 |  |  |
 | `0x3c` | `m_vTintColor` | Vector4D |  |  |
 | `0x50` | `m_skin` | CUtlString |  |  |
-| `0x58` | `m_nObjectTypeFlags` | [ObjectTypeFlags_t](../!GlobalTypes/ObjectTypeFlags_t.md) |  |  |
+| `0x58` | `m_nObjectTypeFlags` | [ObjectTypeFlags_t](../worldrenderer/ObjectTypeFlags_t.md) |  |  |
 | `0x5c` | `m_vLightingOrigin` | Vector |  |  |
 | `0x68` | `m_nOverlayRenderOrder` | int16 |  |  |
 | `0x6a` | `m_nLODOverride` | int16 |  |  |

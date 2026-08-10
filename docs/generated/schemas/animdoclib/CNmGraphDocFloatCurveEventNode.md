@@ -37,7 +37,7 @@ classDiagram
 | `0xd8` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0x100` | `m_matchID` | CGlobalSymbol |  |  |
 | `0x108` | `m_flDefaultValue` | float32 |  |  |
-| `0x10c` | `m_priorityRule` | [NmEventPriorityRule_t](../!GlobalTypes/NmEventPriorityRule_t.md) |  | `MPropertyGroupName +Advanced Search Rules` |
+| `0x10c` | `m_priorityRule` | [NmEventPriorityRule_t](../animdoclib/NmEventPriorityRule_t.md) |  | `MPropertyGroupName +Advanced Search Rules` |
 | `0x10d` | `m_bLimitSearchToSourceState` | bool |  | `MPropertyGroupName +Advanced Search Rules` |
 | `0x10e` | `m_bIgnoreInactiveBranchEvents` | bool |  | `MPropertyGroupName +Advanced Search Rules` |
 

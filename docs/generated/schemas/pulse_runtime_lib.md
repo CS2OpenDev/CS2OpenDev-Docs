@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/pulse_runtime_lib.md)
 
-98 types. Each links to its own page with the full field layout.
+109 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -111,3 +111,14 @@ nav_exclude: true
 | [PulseSelectorOutflowList_t](pulse_runtime_lib/PulseSelectorOutflowList_t.md) | class | 24 | 1 |  |
 | [SignatureOutflow_Continue](pulse_runtime_lib/SignatureOutflow_Continue.md) | class | 72 | 0 | [CPulse_OutflowConnection](pulse_runtime_lib/CPulse_OutflowConnection.md) |
 | [SignatureOutflow_Resume](pulse_runtime_lib/SignatureOutflow_Resume.md) | class | 72 | 0 | [CPulse_ResumePoint](pulse_runtime_lib/CPulse_ResumePoint.md) |
+| [EPulseGraphExecutionHistoryFlag](pulse_runtime_lib/EPulseGraphExecutionHistoryFlag.md) | enum | — | 6 |  |
+| [PulseApiFeature_t](pulse_runtime_lib/PulseApiFeature_t.md) | enum | — | 6 |  |
+| [PulseBestOutflowRules_t](pulse_runtime_lib/PulseBestOutflowRules_t.md) | enum | — | 2 |  |
+| [PulseCursorCancelPriority_t](pulse_runtime_lib/PulseCursorCancelPriority_t.md) | enum | — | 4 |  |
+| [PulseCursorWakePriority_t](pulse_runtime_lib/PulseCursorWakePriority_t.md) | enum | — | 2 |  |
+| [PulseDomainValueType_t](pulse_runtime_lib/PulseDomainValueType_t.md) | enum | — | 4 |  |
+| [PulseDurationStringFormat_t](pulse_runtime_lib/PulseDurationStringFormat_t.md) | enum | — | 1 |  |
+| [PulseInstructionCode_t](pulse_runtime_lib/PulseInstructionCode_t.md) | enum | — | 126 |  |
+| [PulseMethodCallMode_t](pulse_runtime_lib/PulseMethodCallMode_t.md) | enum | — | 2 |  |
+| [PulseValueType_t](pulse_runtime_lib/PulseValueType_t.md) | enum | — | 35 |  |
+| [PulseVariableKeysSource_t](pulse_runtime_lib/PulseVariableKeysSource_t.md) | enum | — | 7 |  |

@@ -26,7 +26,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x4` | `m_flFireTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0x8` | `m_targetType` | [EntityIOTargetType_t](../!GlobalTypes/EntityIOTargetType_t.md) |  |  |
+| `0x8` | `m_targetType` | [EntityIOTargetType_t](../entity2/EntityIOTargetType_t.md) |  |  |
 | `0x10` | `m_pTarget` | CUtlSymbolLarge |  |  |
 | `0x18` | `m_pTargetInput` | CUtlSymbolLarge |  |  |
 | `0x20` | `m_hActivator` | CEntityHandle |  |  |

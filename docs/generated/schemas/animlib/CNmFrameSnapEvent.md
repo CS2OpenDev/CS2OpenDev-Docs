@@ -29,7 +29,7 @@ classDiagram
 | `0x8` | `m_flStartTime` | [NmPercent_t](../animlib/NmPercent_t.md) | [CNmEvent](../animlib/CNmEvent.md) |  |
 | `0xc` | `m_flDuration` | [NmPercent_t](../animlib/NmPercent_t.md) | [CNmEvent](../animlib/CNmEvent.md) |  |
 | `0x10` | `m_syncID` | CGlobalSymbol | [CNmEvent](../animlib/CNmEvent.md) |  |
-| `0x18` | `m_frameSnapMode` | [NmFrameSnapEventMode_t](../!GlobalTypes/NmFrameSnapEventMode_t.md) |  |  |
+| `0x18` | `m_frameSnapMode` | [NmFrameSnapEventMode_t](../animlib/NmFrameSnapEventMode_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

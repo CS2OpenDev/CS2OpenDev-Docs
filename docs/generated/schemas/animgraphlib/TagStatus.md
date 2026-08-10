@@ -23,7 +23,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_TagStatus` | [TagActionStatus](../!GlobalTypes/TagActionStatus.md) |  |  |
+| `0x0` | `m_TagStatus` | [TagActionStatus](../animgraphlib/TagActionStatus.md) |  |  |
 | `0x4` | `m_flTagStartAnimTime` | float32 |  |  |
 
 <details><summary>KV3 class defaults</summary>

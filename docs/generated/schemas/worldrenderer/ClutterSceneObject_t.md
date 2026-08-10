@@ -27,7 +27,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_Bounds` | [AABB_t](../mathlib_extended/AABB_t.md) |  |  |
-| `0x18` | `m_flags` | [ObjectTypeFlags_t](../!GlobalTypes/ObjectTypeFlags_t.md) |  |  |
+| `0x18` | `m_flags` | [ObjectTypeFlags_t](../worldrenderer/ObjectTypeFlags_t.md) |  |  |
 | `0x1c` | `m_nLayer` | int16 |  |  |
 | `0x20` | `m_instancePositions` | CUtlVector< Vector > |  |  |
 | `0x50` | `m_instanceScales` | CUtlVector< float32 > |  |  |

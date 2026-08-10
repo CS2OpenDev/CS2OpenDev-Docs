@@ -25,8 +25,8 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_nWaveform` | [EWaveform](../!GlobalTypes/EWaveform.md) |  | `MPropertyFriendlyName Waveform` |
-| `0x1` | `m_nFundamental` | [EMidiNote](../!GlobalTypes/EMidiNote.md) |  | `MPropertyFriendlyName Note` |
+| `0x0` | `m_nWaveform` | [EWaveform](../soundsystem_voicecontainers/EWaveform.md) |  | `MPropertyFriendlyName Waveform` |
+| `0x1` | `m_nFundamental` | [EMidiNote](../soundsystem_voicecontainers/EMidiNote.md) |  | `MPropertyFriendlyName Note` |
 | `0x4` | `m_nOctave` | int32 |  | `MPropertyFriendlyName Octave` |
 | `0x8` | `m_flCents` | float32 |  | `MPropertyFriendlyName Cents To Detune ( -100:100 )` |
 | `0xc` | `m_flPhase` | float32 |  | `MPropertyFriendlyName Phase ( 0 - 1 )` |

@@ -24,8 +24,8 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_nFilterType` | [VMixFilterType_t](../!GlobalTypes/VMixFilterType_t.md) |  |  |
-| `0x2` | `m_nFilterSlope` | [VMixFilterSlope_t](../!GlobalTypes/VMixFilterSlope_t.md) |  |  |
+| `0x0` | `m_nFilterType` | [VMixFilterType_t](../soundsystem_lowlevel/VMixFilterType_t.md) |  |  |
+| `0x2` | `m_nFilterSlope` | [VMixFilterSlope_t](../soundsystem_lowlevel/VMixFilterSlope_t.md) |  |  |
 | `0x3` | `m_bEnabled` | bool |  |  |
 | `0x4` | `m_fldbGain` | float32 |  |  |
 | `0x8` | `m_flCutoffFreq` | float32 |  |  |

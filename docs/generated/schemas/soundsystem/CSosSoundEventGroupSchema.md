@@ -27,20 +27,20 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x8` | `m_nGroupType` | [SosGroupType_t](../!GlobalTypes/SosGroupType_t.md) |  | `MPropertyAttributeEditor Radio` |
+| `0x8` | `m_nGroupType` | [SosGroupType_t](../soundsystem/SosGroupType_t.md) |  | `MPropertyAttributeEditor Radio` |
 | `0xc` | `m_bBlocksEvents` | bool |  | `MPropertyStartGroup +Block Events` |
 | `0x10` | `m_nBlockMaxCount` | int32 |  | `MPropertyReadonlyExpr !m_bBlocksEvents` |
 | `0x14` | `m_flMemberLifespanTime` | float32 |  | `MPropertyStartGroup` |
 | `0x18` | `m_bInvertMatch` | bool |  |  |
-| `0x1c` | `m_Behavior_EventName` | [SosGroupFieldBehavior_t](../!GlobalTypes/SosGroupFieldBehavior_t.md) |  | `MPropertyAttributeEditor Radio` `MPropertyReadonlyExpr m_bMatchEventSubString` `MPropertyStartGroup +Event Name` |
+| `0x1c` | `m_Behavior_EventName` | [SosGroupFieldBehavior_t](../soundsystem/SosGroupFieldBehavior_t.md) |  | `MPropertyAttributeEditor Radio` `MPropertyReadonlyExpr m_bMatchEventSubString` `MPropertyStartGroup +Event Name` |
 | `0x20` | `m_matchSoundEventName` | CUtlString |  | `MPropertyReadonlyExpr m_Behavior_EventName != kMatch \|\| m_bMatchEventSubString` |
 | `0x28` | `m_bMatchEventSubString` | bool |  | `MPropertyStartGroup +Event SubString` |
 | `0x30` | `m_matchSoundEventSubString` | CUtlString |  | `MPropertyReadonlyExpr !m_bMatchEventSubString` |
-| `0x38` | `m_Behavior_EntIndex` | [SosGroupFieldBehavior_t](../!GlobalTypes/SosGroupFieldBehavior_t.md) |  | `MPropertyAttributeEditor Radio` `MPropertyStartGroup +Ent Index` |
+| `0x38` | `m_Behavior_EntIndex` | [SosGroupFieldBehavior_t](../soundsystem/SosGroupFieldBehavior_t.md) |  | `MPropertyAttributeEditor Radio` `MPropertyStartGroup +Ent Index` |
 | `0x3c` | `m_flEntIndex` | float32 |  | `MPropertyReadonlyExpr m_Behavior_EntIndex != kMatch` |
-| `0x40` | `m_Behavior_Opvar` | [SosGroupFieldBehavior_t](../!GlobalTypes/SosGroupFieldBehavior_t.md) |  | `MPropertyAttributeEditor Radio` `MPropertyStartGroup +OpVar Float` `MPropertySuppressExpr m_nGroupType == SOS_GROUPTYPE_STATIC` |
+| `0x40` | `m_Behavior_Opvar` | [SosGroupFieldBehavior_t](../soundsystem/SosGroupFieldBehavior_t.md) |  | `MPropertyAttributeEditor Radio` `MPropertyStartGroup +OpVar Float` `MPropertySuppressExpr m_nGroupType == SOS_GROUPTYPE_STATIC` |
 | `0x44` | `m_flOpvar` | float32 |  | `MPropertyReadonlyExpr m_Behavior_Opvar != kMatch` `MPropertySuppressExpr m_nGroupType == SOS_GROUPTYPE_STATIC` |
-| `0x48` | `m_Behavior_String` | [SosGroupFieldBehavior_t](../!GlobalTypes/SosGroupFieldBehavior_t.md) |  | `MPropertyAttributeEditor Radio` `MPropertyStartGroup +OpVar String` `MPropertySuppressExpr m_nGroupType == SOS_GROUPTYPE_STATIC` |
+| `0x48` | `m_Behavior_String` | [SosGroupFieldBehavior_t](../soundsystem/SosGroupFieldBehavior_t.md) |  | `MPropertyAttributeEditor Radio` `MPropertyStartGroup +OpVar String` `MPropertySuppressExpr m_nGroupType == SOS_GROUPTYPE_STATIC` |
 | `0x50` | `m_opvarString` | CUtlString |  | `MPropertyReadonlyExpr m_Behavior_String != kMatch` `MPropertySuppressExpr m_nGroupType == SOS_GROUPTYPE_STATIC` |
 | `0x58` | `m_vActions` | CUtlVector< [CSosGroupActionSchema](../soundsystem/CSosGroupActionSchema.md)* > |  | `MPropertyAutoExpandSelf` `MPropertyStartGroup` |
 

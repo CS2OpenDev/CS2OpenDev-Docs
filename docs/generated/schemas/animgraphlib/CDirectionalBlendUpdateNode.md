@@ -31,11 +31,11 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x18` | `m_nodePath` | [CAnimNodePath](../animgraphlib/CAnimNodePath.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
-| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../!GlobalTypes/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
+| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../animgraphlib/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x50` | `m_name` | CUtlString | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x5c` | `m_hSequences` | [HSequence](../animationsystem/HSequence.md)[8] |  |  |
 | `0x80` | `m_damping` | [CAnimInputDamping](../animgraphlib/CAnimInputDamping.md) |  |  |
-| `0x98` | `m_blendValueSource` | [AnimValueSource](../!GlobalTypes/AnimValueSource.md) |  |  |
+| `0x98` | `m_blendValueSource` | [AnimValueSource](../animgraphlib/AnimValueSource.md) |  |  |
 | `0x9c` | `m_paramIndex` | [CAnimParamHandle](../animgraphlib/CAnimParamHandle.md) |  |  |
 | `0xa0` | `m_playbackSpeed` | float32 |  |  |
 | `0xa4` | `m_duration` | float32 |  |  |

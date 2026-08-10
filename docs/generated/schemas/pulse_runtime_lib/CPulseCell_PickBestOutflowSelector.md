@@ -31,7 +31,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_nEditorNodeID` | [PulseDocNodeID_t](../pulse_runtime_lib/PulseDocNodeID_t.md) | [CPulseCell_Base](../pulse_runtime_lib/CPulseCell_Base.md) | `MFgdFromSchemaCompletelySkipField` |
-| `0x48` | `m_nCheckType` | [PulseBestOutflowRules_t](../animationsystem/PulseBestOutflowRules_t.md) |  |  |
+| `0x48` | `m_nCheckType` | [PulseBestOutflowRules_t](../pulse_runtime_lib/PulseBestOutflowRules_t.md) |  |  |
 | `0x50` | `m_OutflowList` | [PulseSelectorOutflowList_t](../pulse_runtime_lib/PulseSelectorOutflowList_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>

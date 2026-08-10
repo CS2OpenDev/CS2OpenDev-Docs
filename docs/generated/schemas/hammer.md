@@ -7,7 +7,7 @@ nav_exclude: true
 
 # Module: hammer
 
-7 types. Each links to its own page with the full field layout.
+10 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -18,3 +18,6 @@ nav_exclude: true
 | [ToolsOptionsEditableData_t](hammer/ToolsOptionsEditableData_t.md) | class | 9 | 9 |  |
 | [View2DOptionsEditableData_t](hammer/View2DOptionsEditableData_t.md) | class | 12 | 4 |  |
 | [View3DOptionsEditableData_t](hammer/View3DOptionsEditableData_t.md) | class | 88 | 21 |  |
+| [ImportExportOptionsEditableData_t::ExportDefaultFormat_t](hammer/ImportExportOptionsEditableData_t.ExportDefaultFormat_t.md) | enum | — | 3 |  |
+| [ImportExportOptionsEditableData_t::ExportEncoding_t](hammer/ImportExportOptionsEditableData_t.ExportEncoding_t.md) | enum | — | 2 |  |
+| [ImportExportOptionsEditableData_t::ExportFbxUnit_t](hammer/ImportExportOptionsEditableData_t.ExportFbxUnit_t.md) | enum | — | 2 |  |

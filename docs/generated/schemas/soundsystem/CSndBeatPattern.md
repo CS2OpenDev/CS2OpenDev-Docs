@@ -33,16 +33,16 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_name` | CUtlString |  | `MPropertyFriendlyName Pattern Name` |
-| `0xc` | `m_launchSyncType` | [SndBeatLaunchSyncType_t](../!GlobalTypes/SndBeatLaunchSyncType_t.md) |  | `MPropertyFriendlyName Pattern Launch Type` |
+| `0xc` | `m_launchSyncType` | [SndBeatLaunchSyncType_t](../soundsystem/SndBeatLaunchSyncType_t.md) |  | `MPropertyFriendlyName Pattern Launch Type` |
 | `0x10` | `m_flSyncPriority` | float32 |  | `MPropertyFriendlyName Pattern Launch Priority` |
 | `0x14` | `m_timeSignature` | [SndBeatTimeSignature_t](../soundsystem/SndBeatTimeSignature_t.md) |  | `MPropertyFriendlyName Time Signature` |
 | `0x1c` | `m_flLength` | float32 |  | `MPropertyFriendlyName Length (beats)` |
 | `0x20` | `m_bLooping` | bool |  | `MPropertyFriendlyName Looping` |
-| `0x24` | `m_launchSyncEventType` | [SndBeatEventType_t](../!GlobalTypes/SndBeatEventType_t.md) |  | `MPropertyFriendlyName Launch Track Event Type` `MPropertyGroupName Launch Track` |
+| `0x24` | `m_launchSyncEventType` | [SndBeatEventType_t](../soundsystem/SndBeatEventType_t.md) |  | `MPropertyFriendlyName Launch Track Event Type` `MPropertyGroupName Launch Track` |
 | `0x28` | `m_flSyncBeatMult` | float32 |  | `MPropertyFriendlyName Launch Track Beat/Bar/Phrase/Length Multiplier` `MPropertyGroupName Launch Track` `MPropertySuppressExpr m_launchSyncEventType == eSndBeatPatternTypeKeys` |
-| `0x2c` | `m_playEventType` | [SndBeatEventType_t](../!GlobalTypes/SndBeatEventType_t.md) |  | `MPropertyFriendlyName Play Track Event Type` `MPropertyGroupName Playback Track` |
+| `0x2c` | `m_playEventType` | [SndBeatEventType_t](../soundsystem/SndBeatEventType_t.md) |  | `MPropertyFriendlyName Play Track Event Type` `MPropertyGroupName Playback Track` |
 | `0x30` | `m_flPlayBeatMult` | float32 |  | `MPropertyFriendlyName Play Track Beat/Bar/Phrase/Length Multiplier` `MPropertyGroupName Playback Track` |
-| `0x34` | `m_keyType` | [SndBeatKeyType_t](../!GlobalTypes/SndBeatKeyType_t.md) |  | `MPropertyFriendlyName Key Type` |
+| `0x34` | `m_keyType` | [SndBeatKeyType_t](../soundsystem/SndBeatKeyType_t.md) |  | `MPropertyFriendlyName Key Type` |
 | `0x38` | `m_vecPatternKeys` | CUtlVector< [SndBeatEventKeys_t](../soundsystem/SndBeatEventKeys_t.md) > |  | `MPropertySuppressExpr m_keyType != eSndBeatPatternTypeKeys` |
 | `0x50` | `m_vecPatternFloats` | CUtlVector< [SndBeatEventKeyedFloats_t](../soundsystem/SndBeatEventKeyedFloats_t.md) > |  | `MPropertySuppressExpr m_keyType != eSndBeatPatternTypeKeyedFloats` |
 | `0x68` | `m_vecPatternSndEvts` | CUtlVector< [SndBeatEventKeyedSndEvts_t](../soundsystem/SndBeatEventKeyedSndEvts_t.md) > |  | `MPropertySuppressExpr m_keyType != eSndBeatPatternTypeKeyedSndEvts` |

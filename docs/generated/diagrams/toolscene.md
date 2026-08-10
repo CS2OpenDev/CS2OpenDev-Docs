@@ -16,6 +16,7 @@ classDiagram
     CLightRigLight <|-- CLightRigPointLight
     CLightRigLight <|-- CLightRigSpotLight
     CLightRigLight <|-- CLightRigSunLight
+    CToolSceneLightRig *-- LightRigType_t
     CToolSceneLightRig *-- CLightRigSunLight
     CToolSceneLightRig *-- CLightRigPointLight
     CToolSceneLightRig *-- CLightRigSpotLight

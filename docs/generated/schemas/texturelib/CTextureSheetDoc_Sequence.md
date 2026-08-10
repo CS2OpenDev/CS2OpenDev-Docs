@@ -27,9 +27,9 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_ChannelMode` | [SequenceChannelMode_t](../!GlobalTypes/SequenceChannelMode_t.md) |  | `MPropertyAutoRebuildOnChange` |
-| `0x4` | `m_LoopMode` | [SequenceLoopMode_t](../!GlobalTypes/SequenceLoopMode_t.md) |  |  |
-| `0x8` | `m_AlphaCropMode` | [SequenceAlphaCropMode_t](../!GlobalTypes/SequenceAlphaCropMode_t.md) |  |  |
+| `0x0` | `m_ChannelMode` | [SequenceChannelMode_t](../texturelib/SequenceChannelMode_t.md) |  | `MPropertyAutoRebuildOnChange` |
+| `0x4` | `m_LoopMode` | [SequenceLoopMode_t](../texturelib/SequenceLoopMode_t.md) |  |  |
+| `0x8` | `m_AlphaCropMode` | [SequenceAlphaCropMode_t](../texturelib/SequenceAlphaCropMode_t.md) |  |  |
 | `0xc` | `m_DecalParams` | [CTextureSheetDoc_SequenceDecalParams](../texturelib/CTextureSheetDoc_SequenceDecalParams.md) |  | `MPropertySuppressExpr !__SheetFileHasDecalParams` |
 | `0x30` | `m_Frames` | CUtlVector< [CTextureSheetDoc_Frame](../texturelib/CTextureSheetDoc_Frame.md) > |  | `MPropertyAutoExpandSelf` |
 

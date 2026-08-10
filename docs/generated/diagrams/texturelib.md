@@ -13,7 +13,11 @@ Class relationships (inheritance and composition) for the `texturelib` module.
 
 ```mermaid
 classDiagram
+    CTextureSheetDoc *-- PackingMode_t
     CTextureSheetDoc --> CTextureSheetDoc_Sequence
+    CTextureSheetDoc_Sequence *-- SequenceChannelMode_t
+    CTextureSheetDoc_Sequence *-- SequenceLoopMode_t
+    CTextureSheetDoc_Sequence *-- SequenceAlphaCropMode_t
     CTextureSheetDoc_Sequence *-- CTextureSheetDoc_SequenceDecalParams
     CTextureSheetDoc_Sequence *-- CTextureSheetDoc_Frame
 ```

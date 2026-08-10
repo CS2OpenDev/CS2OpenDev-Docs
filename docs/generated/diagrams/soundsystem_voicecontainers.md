@@ -44,23 +44,30 @@ classDiagram
     CSoundContainerReference --> CVoiceContainerBase
     CSoundContainerReferenceArray --> CVoiceContainerBase
     CVSound *-- CAudioSentence
+    CVSound *-- CVSoundFormat_t
     CVoiceContainerBase *-- CVSound
     CVoiceContainerBase --> CVoiceContainerAnalysisBase
     CVoiceContainerBlender *-- CSoundContainerReference
     CVoiceContainerEnum *-- CSoundContainerReferenceArray
+    CVoiceContainerEnvelopeAnalyzer *-- EMode_t
     CVoiceContainerLoopTrigger *-- CSoundContainerReference
     CVoiceContainerLoopTriggerWithRandomPanner *-- CRandomPannerControls
     CVoiceContainerLoopXFade *-- CSoundContainerReference
     CVoiceContainerMultiBlender *-- CSoundContainerReferenceArray
     CVoiceContainerParameterBlender *-- CSoundContainerReference
+    CVoiceContainerSelector *-- PlayBackMode_t
     CVoiceContainerSelector *-- CSoundContainerReferenceArray
     CVoiceContainerSet *-- CVoiceContainerSetElement
     CVoiceContainerSetElement *-- CSoundContainerReference
+    "CVoiceContainerStaticAdditiveSynth::CHarmonic" *-- EWaveform
+    "CVoiceContainerStaticAdditiveSynth::CHarmonic" *-- EMidiNote
     "CVoiceContainerStaticAdditiveSynth::CHarmonic" *-- CVoiceContainerStaticAdditiveSynth
     "CVoiceContainerStaticAdditiveSynth::CTone" *-- CVoiceContainerStaticAdditiveSynth
     CVoiceContainerSwitch *-- CSoundContainerReference
     CVoiceContainerVsndRadioButton *-- CVsndRadioButtonSlot
     CVoiceContainerVsndTrigger *-- CVsndTriggerSlot
     CVsndRadioButtonSlot *-- CSoundContainerReference
+    CVsndRadioButtonSlot *-- EVsndPlaybackMode
     CVsndTriggerSlot *-- CSoundContainerReference
+    CVsndTriggerSlot *-- EVsndTriggerMode
 ```

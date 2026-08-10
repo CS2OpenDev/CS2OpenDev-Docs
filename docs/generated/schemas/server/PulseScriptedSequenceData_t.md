@@ -30,9 +30,9 @@ classDiagram
 | `0x10` | `m_szEntrySequence` | CUtlString |  |  |
 | `0x18` | `m_szSequence` | CUtlString |  |  |
 | `0x20` | `m_szExitSequence` | CUtlString |  |  |
-| `0x28` | `m_nMoveTo` | [ScriptedMoveTo_t](../!GlobalTypes/ScriptedMoveTo_t.md) |  |  |
-| `0x2c` | `m_nMoveToGait` | [SharedMovementGait_t](../!GlobalTypes/SharedMovementGait_t.md) |  |  |
-| `0x30` | `m_nHeldWeaponBehavior` | [ScriptedHeldWeaponBehavior_t](../!GlobalTypes/ScriptedHeldWeaponBehavior_t.md) |  |  |
+| `0x28` | `m_nMoveTo` | [ScriptedMoveTo_t](../modellib/ScriptedMoveTo_t.md) |  |  |
+| `0x2c` | `m_nMoveToGait` | [SharedMovementGait_t](../modellib/SharedMovementGait_t.md) |  |  |
+| `0x30` | `m_nHeldWeaponBehavior` | [ScriptedHeldWeaponBehavior_t](../modellib/ScriptedHeldWeaponBehavior_t.md) |  |  |
 | `0x34` | `m_bLoopPreIdleSequence` | bool |  |  |
 | `0x35` | `m_bLoopActionSequence` | bool |  |  |
 | `0x36` | `m_bLoopPostIdleSequence` | bool |  |  |

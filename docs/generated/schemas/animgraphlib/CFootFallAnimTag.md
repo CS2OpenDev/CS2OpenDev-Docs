@@ -33,7 +33,7 @@ classDiagram
 | `0x28` | `m_group` | CGlobalSymbol | [CAnimTagBase](../animgraphlib/CAnimTagBase.md) | `MPropertySuppressField` |
 | `0x30` | `m_tagID` | [AnimTagID](../modellib/AnimTagID.md) | [CAnimTagBase](../animgraphlib/CAnimTagBase.md) | `MPropertySuppressField` |
 | `0x48` | `m_bIsReferenced` | bool | [CAnimTagBase](../animgraphlib/CAnimTagBase.md) | `MPropertySuppressField` |
-| `0x58` | `m_foot` | [FootFallTagFoot_t](../!GlobalTypes/FootFallTagFoot_t.md) |  | `MPropertyFriendlyName Foot` |
+| `0x58` | `m_foot` | [FootFallTagFoot_t](../animgraphlib/FootFallTagFoot_t.md) |  | `MPropertyFriendlyName Foot` |
 
 <details><summary>KV3 class defaults</summary>
 

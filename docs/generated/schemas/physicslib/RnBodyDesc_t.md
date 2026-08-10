@@ -61,7 +61,7 @@ classDiagram
 | `0xcc` | `m_vGravity` | Vector |  |  |
 | `0xd8` | `m_bSpeculativeEnabled` | bool |  |  |
 | `0xd9` | `m_bHasShadowController` | bool |  |  |
-| `0xda` | `m_nDynamicContinuousContactBehavior` | [DynamicContinuousContactBehavior_t](../!GlobalTypes/DynamicContinuousContactBehavior_t.md) |  |  |
+| `0xda` | `m_nDynamicContinuousContactBehavior` | [DynamicContinuousContactBehavior_t](../physicslib/DynamicContinuousContactBehavior_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

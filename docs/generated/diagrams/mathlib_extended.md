@@ -19,4 +19,6 @@ classDiagram
     CFuseSymbolTable *-- FunctionInfo_t
     FunctionInfo_t *-- FuseFunctionIndex_t
     VariableInfo_t *-- FuseVariableIndex_t
+    VariableInfo_t *-- FuseVariableType_t
+    VariableInfo_t *-- FuseVariableAccess_t
 ```

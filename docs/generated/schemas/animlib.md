@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/animlib.md)
 
-180 types. Each links to its own page with the full field layout.
+217 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -193,3 +193,40 @@ nav_exclude: true
 | [NmPercent_t](animlib/NmPercent_t.md) | class | 4 | 1 |  |
 | [NmSyncTrackTimeRange_t](animlib/NmSyncTrackTimeRange_t.md) | class | 16 | 2 |  |
 | [NmSyncTrackTime_t](animlib/NmSyncTrackTime_t.md) | class | 8 | 2 |  |
+| [CNmCurrentSyncEventNode::InfoType_t](animlib/CNmCurrentSyncEventNode.InfoType_t.md) | enum | — | 3 |  |
+| [CNmEventRelevance_t](animlib/CNmEventRelevance_t.md) | enum | — | 3 |  |
+| [CNmEventTargetEntity_t](animlib/CNmEventTargetEntity_t.md) | enum | — | 4 |  |
+| [CNmFloatAngleMathNode::Operation_t](animlib/CNmFloatAngleMathNode.Operation_t.md) | enum | — | 4 |  |
+| [CNmFloatComparisonNode::Comparison_t](animlib/CNmFloatComparisonNode.Comparison_t.md) | enum | — | 5 |  |
+| [CNmFloatMathNode::Operator_t](animlib/CNmFloatMathNode.Operator_t.md) | enum | — | 12 |  |
+| [CNmIDComparisonNode::Comparison_t](animlib/CNmIDComparisonNode.Comparison_t.md) | enum | — | 2 |  |
+| [CNmParticleEvent::Type_t](animlib/CNmParticleEvent.Type_t.md) | enum | — | 2 |  |
+| [CNmRootMotionData::SamplingMode_t](animlib/CNmRootMotionData.SamplingMode_t.md) | enum | — | 2 |  |
+| [CNmRootMotionOverrideNode::OverrideFlags_t](animlib/CNmRootMotionOverrideNode.OverrideFlags_t.md) | enum | — | 5 |  |
+| [CNmSoundEvent::Position_t](animlib/CNmSoundEvent.Position_t.md) | enum | — | 5 |  |
+| [CNmStateNode::TimedEvent_t::Comparison_t](animlib/CNmStateNode.TimedEvent_t.Comparison_t.md) | enum | — | 2 |  |
+| [CNmSyncEventIndexConditionNode::TriggerMode_t](animlib/CNmSyncEventIndexConditionNode.TriggerMode_t.md) | enum | — | 2 |  |
+| [CNmTargetInfoNode::Info_t](animlib/CNmTargetInfoNode.Info_t.md) | enum | — | 8 |  |
+| [CNmTargetWarpNode::TargetUpdateRule_t](animlib/CNmTargetWarpNode.TargetUpdateRule_t.md) | enum | — | 4 |  |
+| [CNmTimeConditionNode::ComparisonType_t](animlib/CNmTimeConditionNode.ComparisonType_t.md) | enum | — | 3 |  |
+| [CNmTimeConditionNode::Operator_t](animlib/CNmTimeConditionNode.Operator_t.md) | enum | — | 4 |  |
+| [CNmTransitionNode::TransitionOptions_t](animlib/CNmTransitionNode.TransitionOptions_t.md) | enum | — | 10 |  |
+| [CNmVectorInfoNode::Info_t](animlib/CNmVectorInfoNode.Info_t.md) | enum | — | 6 |  |
+| [NmCachedValueMode_t](animlib/NmCachedValueMode_t.md) | enum | — | 2 |  |
+| [NmEasingFunction_t](animlib/NmEasingFunction_t.md) | enum | — | 9 |  |
+| [NmEasingOperation_t](animlib/NmEasingOperation_t.md) | enum | — | 23 |  |
+| [NmEventConditionRules_t](animlib/NmEventConditionRules_t.md) | enum | — | 9 |  |
+| [NmFollowBoneMode_t](animlib/NmFollowBoneMode_t.md) | enum | — | 3 |  |
+| [NmFootPhaseCondition_t](animlib/NmFootPhaseCondition_t.md) | enum | — | 7 |  |
+| [NmFootPhase_t](animlib/NmFootPhase_t.md) | enum | — | 5 |  |
+| [NmFrameSnapEventMode_t](animlib/NmFrameSnapEventMode_t.md) | enum | — | 2 |  |
+| [NmGraphDebugMode_t](animlib/NmGraphDebugMode_t.md) | enum | — | 2 |  |
+| [NmGraphEventTypeCondition_t](animlib/NmGraphEventTypeCondition_t.md) | enum | — | 6 |  |
+| [NmGraphValueType_t](animlib/NmGraphValueType_t.md) | enum | — | 9 |  |
+| [NmIKBlendMode_t](animlib/NmIKBlendMode_t.md) | enum | — | 2 |  |
+| [NmPoseBlendMode_t](animlib/NmPoseBlendMode_t.md) | enum | — | 3 |  |
+| [NmRootMotionBlendMode_t](animlib/NmRootMotionBlendMode_t.md) | enum | — | 4 |  |
+| [NmTargetWarpAlgorithm_t](animlib/NmTargetWarpAlgorithm_t.md) | enum | — | 4 |  |
+| [NmTargetWarpRule_t](animlib/NmTargetWarpRule_t.md) | enum | — | 5 |  |
+| [NmTransitionRuleCondition_t](animlib/NmTransitionRuleCondition_t.md) | enum | — | 4 |  |
+| [NmTransitionRule_t](animlib/NmTransitionRule_t.md) | enum | — | 3 |  |

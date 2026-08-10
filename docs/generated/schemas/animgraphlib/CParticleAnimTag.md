@@ -42,9 +42,9 @@ classDiagram
 | `0x72` | `m_bStopWhenTagEnds` | bool |  | `MPropertyFriendlyName Stop on Tag End` `MPropertyGroupName Ending` |
 | `0x73` | `m_bTagEndStopIsInstant` | bool |  | `MPropertyFriendlyName Tag End Stop is Instant` `MPropertyGroupName Ending` |
 | `0x78` | `m_attachmentName` | CUtlString |  | `MPropertyAttributeChoiceName Attachment` `MPropertyFriendlyName Attachment` `MPropertyGroupName Attachments` |
-| `0x80` | `m_attachmentType` | [ParticleAttachment_t](../!GlobalTypes/ParticleAttachment_t.md) |  | `MPropertyFriendlyName Attachment Type` `MPropertyGroupName Attachments` |
+| `0x80` | `m_attachmentType` | [ParticleAttachment_t](../animationsystem/ParticleAttachment_t.md) |  | `MPropertyFriendlyName Attachment Type` `MPropertyGroupName Attachments` |
 | `0x88` | `m_attachmentCP1Name` | CUtlString |  | `MPropertyAttributeChoiceName Attachment` `MPropertyFriendlyName Attachment (Control Point 1)` `MPropertyGroupName Attachments` |
-| `0x90` | `m_attachmentCP1Type` | [ParticleAttachment_t](../!GlobalTypes/ParticleAttachment_t.md) |  | `MPropertyFriendlyName Attachment Type (Control Point 1)` `MPropertyGroupName Attachments` |
+| `0x90` | `m_attachmentCP1Type` | [ParticleAttachment_t](../animationsystem/ParticleAttachment_t.md) |  | `MPropertyFriendlyName Attachment Type (Control Point 1)` `MPropertyGroupName Attachments` |
 
 <details><summary>KV3 class defaults</summary>
 

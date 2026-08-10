@@ -31,7 +31,7 @@ classDiagram
 | `0x1c` | `m_flLFOAmount` | float32 |  |  |
 | `0x20` | `m_flLFORate` | float32 |  |  |
 | `0x24` | `m_flPhase` | float32 |  |  |
-| `0x28` | `m_nLFOShape` | [VMixLFOShape_t](../!GlobalTypes/VMixLFOShape_t.md) |  |  |
+| `0x28` | `m_nLFOShape` | [VMixLFOShape_t](../soundsystem_lowlevel/VMixLFOShape_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

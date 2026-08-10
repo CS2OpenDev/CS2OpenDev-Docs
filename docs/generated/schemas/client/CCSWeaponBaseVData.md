@@ -52,7 +52,7 @@ classDiagram
 | `0x4c0` | `m_flMuzzleSmokeDecrementRate` | float32 | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) | `MPropertyDescription Barrel smoke decrement rate when not firing` |
 | `0x4c4` | `m_bGenerateMuzzleLight` | bool | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) |  |
 | `0x4c5` | `m_bLinkedCooldowns` | bool | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) | `MPropertyDescription Should both primary and secondary attacks be cooled down together (so cooling down primary attack would cooldown both primary + secondary attacks)?` `MPropertyStartGroup Behavior` |
-| `0x4c6` | `m_iFlags` | [ItemFlagTypes_t](../!GlobalTypes/ItemFlagTypes_t.md) | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) |  |
+| `0x4c6` | `m_iFlags` | [ItemFlagTypes_t](../server/ItemFlagTypes_t.md) | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) |  |
 | `0x4c8` | `m_iWeight` | int32 | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) | `MPropertyDescription This value used to determine this weapon's importance in autoselection` |
 | `0x4cc` | `m_bAutoSwitchTo` | bool | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) | `MPropertyDescription Whether this weapon is safe to automatically switch to (should be false for eg. explosives that can the player may accidentally hurt themselves with)` `MPropertyFriendlyName Safe To Auto-Switch To` |
 | `0x4cd` | `m_bAutoSwitchFrom` | bool | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) | `MPropertyFriendlyName Safe To Auto-Switch Away From` |
@@ -65,13 +65,13 @@ classDiagram
 | `0x4e0` | `m_bReserveAmmoAsClips` | bool | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) | `MPropertyDescription Indicates whether to treat reserve ammo as clips (reloads) instead of raw bullets` |
 | `0x4e1` | `m_bTreatAsSingleClip` | bool | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) | `MPropertyDescription Regardless of ammo position, we'll always use clip1 as where our bullets come from` |
 | `0x4e2` | `m_bKeepLoadedAmmo` | bool | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) | `MPropertyDescription Indicates whether to keep any loaded ammo in the weapon on reload` |
-| `0x4e4` | `m_iRumbleEffect` | [RumbleEffect_t](../!GlobalTypes/RumbleEffect_t.md) | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) | `MPropertyStartGroup UI` |
+| `0x4e4` | `m_iRumbleEffect` | [RumbleEffect_t](../server/RumbleEffect_t.md) | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) | `MPropertyStartGroup UI` |
 | `0x4e8` | `m_flDropSpeed` | float32 | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) |  |
 | `0x4ec` | `m_iSlot` | int32 | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) | `MPropertyDescription Which 'column' to display this weapon in the HUD` `MPropertyFriendlyName HUD Bucket` |
 | `0x4f0` | `m_iPosition` | int32 | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) | `MPropertyDescription Which 'row' to display this weapon in the HUD` `MPropertyFriendlyName HUD Bucket Position` |
-| `0x4f8` | `m_aShootSounds` | CUtlOrderedMap< [WeaponSound_t](../!GlobalTypes/WeaponSound_t.md), CSoundEventName > | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) | `MPropertyStartGroup Sounds` |
-| `0x520` | `m_WeaponType` | [CSWeaponType](../!GlobalTypes/CSWeaponType.md) |  | Weapon type classification (pistol, rifle, sniper, knife, grenade, …). |
-| `0x524` | `m_WeaponCategory` | [CSWeaponCategory](../!GlobalTypes/CSWeaponCategory.md) |  | Coarser weapon category grouping used by the buy menu. |
+| `0x4f8` | `m_aShootSounds` | CUtlOrderedMap< [WeaponSound_t](../server/WeaponSound_t.md), CSoundEventName > | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) | `MPropertyStartGroup Sounds` |
+| `0x520` | `m_WeaponType` | [CSWeaponType](../server/CSWeaponType.md) |  | Weapon type classification (pistol, rifle, sniper, knife, grenade, …). |
+| `0x524` | `m_WeaponCategory` | [CSWeaponCategory](../server/CSWeaponCategory.md) |  | Coarser weapon category grouping used by the buy menu. |
 | `0x528` | `m_szAnimSkeleton` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCNmSkeleton](../resourcesystem/InfoForResourceTypeCNmSkeleton.md) > > |  | `MPropertyStartGroup Visuals` |
 | `0x608` | `m_vecMuzzlePos0` | Vector |  |  |
 | `0x614` | `m_vecMuzzlePos1` | Vector |  |  |
@@ -88,7 +88,7 @@ classDiagram
 | `0x71e` | `m_bIsRevolver` | bool |  |  |
 | `0x71f` | `m_bCannotShootUnderwater` | bool |  |  |
 | `0x720` | `m_szName` | CGlobalSymbol |  | `MPropertyFriendlyName In-Code weapon name` |
-| `0x728` | `m_eSilencerType` | [CSWeaponSilencerType](../!GlobalTypes/CSWeaponSilencerType.md) |  |  |
+| `0x728` | `m_eSilencerType` | [CSWeaponSilencerType](../server/CSWeaponSilencerType.md) |  |  |
 | `0x72c` | `m_nCrosshairMinDistance` | int32 |  |  |
 | `0x730` | `m_nCrosshairDeltaDistance` | int32 |  |  |
 | `0x734` | `m_bIsFullAuto` | bool |  | True if the weapon fires fully automatically while the trigger is held. |

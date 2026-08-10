@@ -33,7 +33,7 @@ classDiagram
 | `0x48` | `m_boneSetupMask` | CUtlVector< uint32 > |  |  |
 | `0x60` | `m_boneTransforms` | CUtlVector< matrix3x4a_t > |  |  |
 | `0x78` | `m_flexControllers` | CUtlVector< float32 > |  |  |
-| `0x90` | `m_SnapshotType` | [AnimationSnapshotType_t](../!GlobalTypes/AnimationSnapshotType_t.md) |  |  |
+| `0x90` | `m_SnapshotType` | [AnimationSnapshotType_t](../animationsystem/AnimationSnapshotType_t.md) |  |  |
 | `0x94` | `m_bHasDecodeDump` | bool |  |  |
 | `0x98` | `m_DecodeDump` | [AnimationDecodeDebugDumpElement_t](../animationsystem/AnimationDecodeDebugDumpElement_t.md) |  |  |
 

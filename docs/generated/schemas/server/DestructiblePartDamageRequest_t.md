@@ -26,11 +26,11 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_nHitGroup` | [HitGroup_t](../!GlobalTypes/HitGroup_t.md) |  |  |
+| `0x0` | `m_nHitGroup` | [HitGroup_t](../server/HitGroup_t.md) |  |  |
 | `0x4` | `m_nDamageLevel` | int32 |  |  |
 | `0x8` | `m_nDesiredHealth` | uint16 |  |  |
-| `0xc` | `m_nDestroyFlags` | [EDestructibleParts_DestroyParameterFlags](../!GlobalTypes/EDestructibleParts_DestroyParameterFlags.md) |  |  |
-| `0x10` | `m_nDamageType` | [DamageTypes_t](../!GlobalTypes/DamageTypes_t.md) |  |  |
+| `0xc` | `m_nDestroyFlags` | [EDestructibleParts_DestroyParameterFlags](../server/EDestructibleParts_DestroyParameterFlags.md) |  |  |
+| `0x10` | `m_nDamageType` | [DamageTypes_t](../server/DamageTypes_t.md) |  |  |
 | `0x14` | `m_flBreakDamage` | float32 |  |  |
 | `0x18` | `m_flBreakDamageRadius` | float32 |  |  |
 | `0x1c` | `m_hAttacker` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |

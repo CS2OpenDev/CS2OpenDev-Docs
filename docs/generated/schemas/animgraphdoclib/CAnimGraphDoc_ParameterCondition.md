@@ -31,7 +31,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x28` | `m_paramName` | CUtlString |  |  |
 | `0x30` | `m_paramID` | [AnimParamID](../modellib/AnimParamID.md) |  |  |
-| `0x34` | `m_comparisonOp` | [Comparison_t](../!GlobalTypes/Comparison_t.md) |  |  |
+| `0x34` | `m_comparisonOp` | [Comparison_t](../animgraphdoclib/Comparison_t.md) |  |  |
 | `0x38` | `m_comparisonValue` | CAnimVariant |  |  |
 | `0x50` | `m_comparisonString` | CUtlString |  |  |
 

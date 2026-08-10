@@ -33,7 +33,7 @@ classDiagram
 | `0x28` | `m_values` | CUtlLeanVectorFixedGrowable< float32, 5 > |  |  |
 | `0x48` | `m_flDefaultValue` | float32 |  |  |
 | `0x4c` | `m_flEaseTime` | float32 |  |  |
-| `0x50` | `m_easingOp` | [NmEasingOperation_t](../!GlobalTypes/NmEasingOperation_t.md) |  |  |
+| `0x50` | `m_easingOp` | [NmEasingOperation_t](../animlib/NmEasingOperation_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

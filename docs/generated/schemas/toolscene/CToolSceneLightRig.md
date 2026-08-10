@@ -34,7 +34,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x8` | `m_nRigType` | [LightRigType_t](../!GlobalTypes/LightRigType_t.md) |  |  |
+| `0x8` | `m_nRigType` | [LightRigType_t](../toolscene/LightRigType_t.md) |  |  |
 | `0x10` | `m_Suns` | CUtlVector< [CLightRigSunLight](../toolscene/CLightRigSunLight.md) > |  |  |
 | `0x28` | `m_PointLights` | CUtlVector< [CLightRigPointLight](../toolscene/CLightRigPointLight.md) > |  |  |
 | `0x40` | `m_SpotLights` | CUtlVector< [CLightRigSpotLight](../toolscene/CLightRigSpotLight.md) > |  |  |

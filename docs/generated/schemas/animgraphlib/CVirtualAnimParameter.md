@@ -34,7 +34,7 @@ classDiagram
 | `0x68` | `m_bNetworkingRequested` | bool | [CAnimParameterBase](../animgraphlib/CAnimParameterBase.md) | `MPropertySuppressField` |
 | `0x69` | `m_bIsReferenced` | bool | [CAnimParameterBase](../animgraphlib/CAnimParameterBase.md) | `MPropertySuppressField` |
 | `0x70` | `m_expressionString` | CUtlString |  |  |
-| `0x78` | `m_eParamType` | [AnimParamType_t](../!GlobalTypes/AnimParamType_t.md) |  |  |
+| `0x78` | `m_eParamType` | [AnimParamType_t](../animgraphlib/AnimParamType_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

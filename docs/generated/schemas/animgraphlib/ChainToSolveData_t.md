@@ -28,7 +28,7 @@ classDiagram
 | `0x0` | `m_nChainIndex` | int32 |  |  |
 | `0x4` | `m_SolverSettings` | [IKSolverSettings_t](../animgraphlib/IKSolverSettings_t.md) |  |  |
 | `0x10` | `m_TargetSettings` | [IKTargetSettings_t](../animgraphlib/IKTargetSettings_t.md) |  |  |
-| `0x38` | `m_DebugSetting` | [SolveIKChainAnimNodeDebugSetting](../!GlobalTypes/SolveIKChainAnimNodeDebugSetting.md) |  |  |
+| `0x38` | `m_DebugSetting` | [SolveIKChainAnimNodeDebugSetting](../animgraphlib/SolveIKChainAnimNodeDebugSetting.md) |  |  |
 | `0x3c` | `m_flDebugNormalizedValue` | float32 |  |  |
 | `0x40` | `m_vDebugOffset` | VectorAligned |  |  |
 

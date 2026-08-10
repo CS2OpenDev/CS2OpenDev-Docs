@@ -33,7 +33,7 @@ classDiagram
 | `0x14` | `m_flAnimationScale` | float32 |  |  |
 | `0x18` | `m_flAnimationStartTime` | float32 |  |  |
 | `0x1c` | `m_flAlignWithGravityFactor` | float32 |  |  |
-| `0x20` | `m_nDecalRtEncoding` | [DecalRtEncoding_t](../!GlobalTypes/DecalRtEncoding_t.md) |  |  |
+| `0x20` | `m_nDecalRtEncoding` | [DecalRtEncoding_t](../scenesystem/DecalRtEncoding_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

@@ -23,6 +23,6 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x30` | `nType` | [FixAngleSet_t](../!GlobalTypes/FixAngleSet_t.md) |  |  |
+| `0x30` | `nType` | [FixAngleSet_t](../server/FixAngleSet_t.md) |  |  |
 | `0x34` | `qAngle` | QAngle |  |  |
 | `0x40` | `nIndex` | uint32 |  |  |

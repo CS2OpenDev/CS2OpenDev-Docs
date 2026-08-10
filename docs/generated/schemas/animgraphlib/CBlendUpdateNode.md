@@ -32,16 +32,16 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x18` | `m_nodePath` | [CAnimNodePath](../animgraphlib/CAnimNodePath.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
-| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../!GlobalTypes/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
+| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../animgraphlib/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x50` | `m_name` | CUtlString | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x60` | `m_children` | CUtlVector< [CAnimUpdateNodeRef](../animgraphlib/CAnimUpdateNodeRef.md) > |  |  |
 | `0x78` | `m_sortedOrder` | CUtlVector< uint8 > |  |  |
 | `0x90` | `m_targetValues` | CUtlVector< float32 > |  |  |
-| `0xac` | `m_blendValueSource` | [AnimValueSource](../!GlobalTypes/AnimValueSource.md) |  |  |
-| `0xb0` | `m_eLinearRootMotionBlendMode` | [LinearRootMotionBlendMode_t](../!GlobalTypes/LinearRootMotionBlendMode_t.md) |  |  |
+| `0xac` | `m_blendValueSource` | [AnimValueSource](../animgraphlib/AnimValueSource.md) |  |  |
+| `0xb0` | `m_eLinearRootMotionBlendMode` | [LinearRootMotionBlendMode_t](../animgraphlib/LinearRootMotionBlendMode_t.md) |  |  |
 | `0xb4` | `m_paramIndex` | [CAnimParamHandle](../animgraphlib/CAnimParamHandle.md) |  |  |
 | `0xb8` | `m_damping` | [CAnimInputDamping](../animgraphlib/CAnimInputDamping.md) |  |  |
-| `0xd0` | `m_blendKeyType` | [BlendKeyType](../!GlobalTypes/BlendKeyType.md) |  |  |
+| `0xd0` | `m_blendKeyType` | [BlendKeyType](../animgraphlib/BlendKeyType.md) |  |  |
 | `0xd4` | `m_bLockBlendOnReset` | bool |  |  |
 | `0xd5` | `m_bSyncCycles` | bool |  |  |
 | `0xd6` | `m_bLoop` | bool |  |  |

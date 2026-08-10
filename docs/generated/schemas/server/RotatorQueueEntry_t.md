@@ -24,7 +24,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `qTarget` | Quaternion |  |  |
-| `0x10` | `eSpace` | [RotatorTargetSpace_t](../!GlobalTypes/RotatorTargetSpace_t.md) |  |  |
+| `0x10` | `eSpace` | [RotatorTargetSpace_t](../server/RotatorTargetSpace_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

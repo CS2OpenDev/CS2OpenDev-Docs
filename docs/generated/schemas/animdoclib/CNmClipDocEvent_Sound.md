@@ -29,7 +29,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flStartTime` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
 | `0xc` | `m_flDuration` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
-| `0x10` | `m_relevance` | [CNmEventRelevance_t](../!GlobalTypes/CNmEventRelevance_t.md) |  |  |
+| `0x10` | `m_relevance` | [CNmEventRelevance_t](../animlib/CNmEventRelevance_t.md) |  |  |
 | `0x14` | `m_bContinuePlayingSoundAtDurationEnd` | bool |  | `MPropertyAttrStateCallback` |
 | `0x18` | `m_flDurationInterruptionThreshold` | float32 |  | `MPropertyAttrStateCallback` |
 | `0x20` | `m_name` | CUtlString |  | `MPropertyAttributeEditor SoundPicker()` `MPropertyStartGroup +Sound` |

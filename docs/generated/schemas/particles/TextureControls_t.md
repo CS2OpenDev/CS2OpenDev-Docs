@@ -33,13 +33,13 @@ classDiagram
 | `0x8a0` | `m_flDistortion` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) |  | `MPropertyFriendlyName Distortion Amount` |
 | `0xa10` | `m_bRandomizeOffsets` | bool |  | `MPropertyFriendlyName Randomize Initial Offset` |
 | `0xa11` | `m_bClampUVs` | bool |  | `MPropertyFriendlyName Clamp UVs` |
-| `0xa14` | `m_nPerParticleBlend` | [SpriteCardPerParticleScale_t](../!GlobalTypes/SpriteCardPerParticleScale_t.md) |  | `MPropertyFriendlyName per-particle scalar for blend` |
-| `0xa18` | `m_nPerParticleScale` | [SpriteCardPerParticleScale_t](../!GlobalTypes/SpriteCardPerParticleScale_t.md) |  | `MPropertyFriendlyName per-particle scalar for scale` |
-| `0xa1c` | `m_nPerParticleOffsetU` | [SpriteCardPerParticleScale_t](../!GlobalTypes/SpriteCardPerParticleScale_t.md) |  | `MPropertyFriendlyName per-particle scalar for horizontal offset` |
-| `0xa20` | `m_nPerParticleOffsetV` | [SpriteCardPerParticleScale_t](../!GlobalTypes/SpriteCardPerParticleScale_t.md) |  | `MPropertyFriendlyName per-particle scalar for vertical offset` |
-| `0xa24` | `m_nPerParticleRotation` | [SpriteCardPerParticleScale_t](../!GlobalTypes/SpriteCardPerParticleScale_t.md) |  | `MPropertyFriendlyName per-particle scalar for rotation` |
-| `0xa28` | `m_nPerParticleZoom` | [SpriteCardPerParticleScale_t](../!GlobalTypes/SpriteCardPerParticleScale_t.md) |  | `MPropertyFriendlyName per-particle scalar for zoom` |
-| `0xa2c` | `m_nPerParticleDistortion` | [SpriteCardPerParticleScale_t](../!GlobalTypes/SpriteCardPerParticleScale_t.md) |  | `MPropertyFriendlyName per-particle scalar for distortion` |
+| `0xa14` | `m_nPerParticleBlend` | [SpriteCardPerParticleScale_t](../particles/SpriteCardPerParticleScale_t.md) |  | `MPropertyFriendlyName per-particle scalar for blend` |
+| `0xa18` | `m_nPerParticleScale` | [SpriteCardPerParticleScale_t](../particles/SpriteCardPerParticleScale_t.md) |  | `MPropertyFriendlyName per-particle scalar for scale` |
+| `0xa1c` | `m_nPerParticleOffsetU` | [SpriteCardPerParticleScale_t](../particles/SpriteCardPerParticleScale_t.md) |  | `MPropertyFriendlyName per-particle scalar for horizontal offset` |
+| `0xa20` | `m_nPerParticleOffsetV` | [SpriteCardPerParticleScale_t](../particles/SpriteCardPerParticleScale_t.md) |  | `MPropertyFriendlyName per-particle scalar for vertical offset` |
+| `0xa24` | `m_nPerParticleRotation` | [SpriteCardPerParticleScale_t](../particles/SpriteCardPerParticleScale_t.md) |  | `MPropertyFriendlyName per-particle scalar for rotation` |
+| `0xa28` | `m_nPerParticleZoom` | [SpriteCardPerParticleScale_t](../particles/SpriteCardPerParticleScale_t.md) |  | `MPropertyFriendlyName per-particle scalar for zoom` |
+| `0xa2c` | `m_nPerParticleDistortion` | [SpriteCardPerParticleScale_t](../particles/SpriteCardPerParticleScale_t.md) |  | `MPropertyFriendlyName per-particle scalar for distortion` |
 
 <details><summary>KV3 class defaults</summary>
 

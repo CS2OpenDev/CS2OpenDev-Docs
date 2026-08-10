@@ -33,7 +33,7 @@ classDiagram
 | `0x210` | `m_nBucketCount` | int32 |  |  |
 | `0x214` | `m_flInterval` | float32 |  |  |
 | `0x218` | `m_flFinalValue` | float32 |  |  |
-| `0x21c` | `m_nCompressionType` | [TimelineCompression_t](../!GlobalTypes/TimelineCompression_t.md) |  |  |
+| `0x21c` | `m_nCompressionType` | [TimelineCompression_t](../server/TimelineCompression_t.md) |  |  |
 | `0x220` | `m_bStopped` | bool |  |  |
 
 <details><summary>KV3 class defaults</summary>

@@ -28,7 +28,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_bEnabled` | bool |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Enabled` |
-| `0x4` | `m_nCompositeMaterialInputContainerSourceType` | [CompositeMaterialInputContainerSourceType_t](../!GlobalTypes/CompositeMaterialInputContainerSourceType_t.md) |  | `MPropertyAttrStateCallback` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Input Container Source` |
+| `0x4` | `m_nCompositeMaterialInputContainerSourceType` | [CompositeMaterialInputContainerSourceType_t](../compositematerialslib/CompositeMaterialInputContainerSourceType_t.md) |  | `MPropertyAttrStateCallback` `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Input Container Source` |
 | `0x8` | `m_strSpecificContainerMaterial` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeIMaterial2](../resourcesystem/InfoForResourceTypeIMaterial2.md) > > |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Specific Material` |
 | `0xe8` | `m_strAttrName` | CUtlString |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Attribute Name` |
 | `0xf0` | `m_strAlias` | CUtlString |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Alias` |

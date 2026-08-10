@@ -34,8 +34,8 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flOpStrength` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator strength` `MPropertySortPriority -100` |
-| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../!GlobalTypes/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
-| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../!GlobalTypes/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
+| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
+| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
 | `0x180` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
 | `0x184` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
 | `0x188` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
@@ -55,8 +55,8 @@ classDiagram
 | `0x350` | `m_flMaxTraceLength` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName max trace length` |
 | `0x4c0` | `m_vecTraceDir` | [CPerParticleVecInput](../particleslib/CPerParticleVecInput.md) |  | `MPropertyFriendlyName trace direction` |
 | `0xb78` | `m_CollisionGroupName` | char[128] |  | `MPropertyFriendlyName collision group` `MPropertySuppressExpr is_gpu_particle_system` |
-| `0xbf8` | `m_nTraceSet` | [ParticleTraceSet_t](../!GlobalTypes/ParticleTraceSet_t.md) |  | `MPropertyFriendlyName Trace Set` |
-| `0xc08` | `m_nTraceMissBehavior` | [ParticleTraceMissBehavior_t](../!GlobalTypes/ParticleTraceMissBehavior_t.md) |  | `MPropertyFriendlyName No Collision Behavior` |
+| `0xbf8` | `m_nTraceSet` | [ParticleTraceSet_t](../particles/ParticleTraceSet_t.md) |  | `MPropertyFriendlyName Trace Set` |
+| `0xc08` | `m_nTraceMissBehavior` | [ParticleTraceMissBehavior_t](../particles/ParticleTraceMissBehavior_t.md) |  | `MPropertyFriendlyName No Collision Behavior` |
 | `0xc0c` | `m_bIncludeWater` | bool |  | `MPropertyFriendlyName include water` `MPropertySuppressExpr m_nTraceSet == PARTICLE_TRACE_SET_STATIC` |
 | `0xc10` | `m_nAttribute` | [ParticleAttributeIndex_t](../particles/ParticleAttributeIndex_t.md) |  | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Attribute to Set` |
 | `0xc14` | `m_bSetPXYZOnly` | bool |  | `MPropertyFriendlyName set Previous XYZ only` `MPropertySuppressExpr m_nAttribute != PARTICLE_ATTRIBUTE_XYZ` |

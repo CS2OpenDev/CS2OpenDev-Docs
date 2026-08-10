@@ -27,7 +27,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_hEnt` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
-| `0x4` | `m_MoveType` | [MoveType_t](../!GlobalTypes/MoveType_t.md) |  |  |
+| `0x4` | `m_MoveType` | [MoveType_t](../server/MoveType_t.md) |  |  |
 | `0x8` | `m_flStartTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
 | `0xc` | `m_vecStartOrigin` | VectorWS |  |  |
 | `0x20` | `m_qStartRot` | Quaternion |  |  |

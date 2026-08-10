@@ -35,7 +35,7 @@ classDiagram
 | `0x48` | `m_pSecondaryGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
 | `0x50` | `m_inputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 4 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0xd8` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
-| `0x100` | `m_easing` | [NmEasingOperation_t](../!GlobalTypes/NmEasingOperation_t.md) |  |  |
+| `0x100` | `m_easing` | [NmEasingOperation_t](../animlib/NmEasingOperation_t.md) |  |  |
 | `0x104` | `m_flEaseTime` | float32 |  |  |
 | `0x108` | `m_bUseStartValue` | bool |  |  |
 | `0x10c` | `m_flStartValue` | float32 |  |  |

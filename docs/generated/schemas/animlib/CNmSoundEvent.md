@@ -29,7 +29,7 @@ classDiagram
 | `0x8` | `m_flStartTime` | [NmPercent_t](../animlib/NmPercent_t.md) | [CNmEvent](../animlib/CNmEvent.md) |  |
 | `0xc` | `m_flDuration` | [NmPercent_t](../animlib/NmPercent_t.md) | [CNmEvent](../animlib/CNmEvent.md) |  |
 | `0x10` | `m_syncID` | CGlobalSymbol | [CNmEvent](../animlib/CNmEvent.md) |  |
-| `0x18` | `m_relevance` | [CNmEventRelevance_t](../!GlobalTypes/CNmEventRelevance_t.md) |  |  |
+| `0x18` | `m_relevance` | [CNmEventRelevance_t](../animlib/CNmEventRelevance_t.md) |  |  |
 | `0x20` | `m_name` | CUtlString |  |  |
 | `0x28` | `m_position` | [CNmSoundEvent](../animlib/CNmSoundEvent.md)::Position_t |  |  |
 | `0x30` | `m_attachmentName` | CUtlString |  |  |

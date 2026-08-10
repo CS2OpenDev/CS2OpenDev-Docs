@@ -23,7 +23,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_type` | [AnimParamType_t](../!GlobalTypes/AnimParamType_t.md) |  |  |
+| `0x0` | `m_type` | [AnimParamType_t](../animgraphlib/AnimParamType_t.md) |  |  |
 | `0x1` | `m_index` | uint8 |  |  |
 
 <details><summary>KV3 class defaults</summary>

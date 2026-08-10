@@ -30,7 +30,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x10` | `m_nWidth` | int32 |  |  |
 | `0x14` | `m_nHeight` | int32 |  |  |
-| `0x18` | `m_bundleTypes` | CUtlVector< [MorphBundleType_t](../!GlobalTypes/MorphBundleType_t.md) > |  |  |
+| `0x18` | `m_bundleTypes` | CUtlVector< [MorphBundleType_t](../modellib/MorphBundleType_t.md) > |  |  |
 | `0x30` | `m_morphDatas` | CUtlVector< [CMorphData](../modellib/CMorphData.md) > |  |  |
 | `0x48` | `m_pTextureAtlas` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
 | `0x50` | `m_FlexDesc` | CUtlVector< [CFlexDesc](../modellib/CFlexDesc.md) > |  |  |

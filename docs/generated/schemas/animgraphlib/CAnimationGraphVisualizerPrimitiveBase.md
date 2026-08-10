@@ -31,7 +31,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x8` | `m_Type` | [CAnimationGraphVisualizerPrimitiveType](../!GlobalTypes/CAnimationGraphVisualizerPrimitiveType.md) |  |  |
+| `0x8` | `m_Type` | [CAnimationGraphVisualizerPrimitiveType](../animgraphlib/CAnimationGraphVisualizerPrimitiveType.md) |  |  |
 | `0xc` | `m_OwningAnimNodePaths` | [AnimNodeID](../modellib/AnimNodeID.md)[11] |  |  |
 | `0x38` | `m_nOwningAnimNodePathCount` | int32 |  |  |
 

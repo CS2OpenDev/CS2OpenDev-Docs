@@ -35,14 +35,14 @@ classDiagram
 | `0x28` | `m_vecPosition` | Vector2D | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyGroupName Debug` `MPropertySortPriority -100` |
 | `0x30` | `m_nNodeID` | [AnimNodeID](../modellib/AnimNodeID.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyGroupName Debug` `MPropertySortPriority -100` |
 | `0x34` | `m_bDebugThisNode` | bool | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Debug This Node` `MPropertyGroupName Debug` `MPropertySortPriority -100` |
-| `0x38` | `m_networkMode` | [AnimNodeNetworkMode](../!GlobalTypes/AnimNodeNetworkMode.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Network Mode` `MPropertySortPriority -110` |
+| `0x38` | `m_networkMode` | [AnimNodeNetworkMode](../animgraphlib/AnimNodeNetworkMode.md) | [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md) | `MPropertyFriendlyName Network Mode` `MPropertySortPriority -110` |
 | `0x40` | `m_inputConnection` | [CAnimGraphDoc_NodeConnection](../animgraphdoclib/CAnimGraphDoc_NodeConnection.md) |  | `MPropertySuppressField` |
 | `0x48` | `m_items` | CUtlVector< [CFootLockItem](../animgraphdoclib/CFootLockItem.md) > |  | `MPropertyAutoExpandSelf` `MPropertyFriendlyName Feet` |
 | `0x60` | `m_hipBoneName` | CUtlString |  | `MPropertyAttributeChoiceName Bone` `MPropertyFriendlyName Hip Bone` |
 | `0x68` | `m_flBlendTime` | float32 |  | `MPropertyFriendlyName Blend Time` |
 | `0x6c` | `m_bApplyFootRotationLimits` | bool |  | `MPropertyFriendlyName Apply Foot Rotation Limits` |
 | `0x6d` | `m_bResetChild` | bool |  | `MPropertyFriendlyName Reset Child` |
-| `0x70` | `m_ikSolverType` | [IKSolverType](../!GlobalTypes/IKSolverType.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName IK Solver Type` `MPropertyGroupName IK` |
+| `0x70` | `m_ikSolverType` | [IKSolverType](../animgraphlib/IKSolverType.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName IK Solver Type` `MPropertyGroupName IK` |
 | `0x74` | `m_bAlwaysUseFallbackHinge` | bool |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Always use fallback hinge` `MPropertyGroupName IK` |
 | `0x75` | `m_bApplyLegTwistLimits` | bool |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Limit Leg Twist` `MPropertyGroupName IK` |
 | `0x78` | `m_flMaxLegTwist` | float32 |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Max Leg Twist Angle` `MPropertyGroupName IK` |

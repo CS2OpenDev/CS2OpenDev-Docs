@@ -7,7 +7,7 @@ nav_order: 12
 # Surface Properties
 
 {: .note }
-> Source: CS2 build **24537688** · 2026-08-03 · `windows-x86_64` · schema `0.5.0`
+> Source: CS2 build **24537688** · 2026-08-03 · `windows-x86_64` · schema `0.5.1`
 
 303 surface records — footstep sounds, physics, and bullet-penetration modifiers per material.  The same material can appear more than once, keyed by source file / scope.
 

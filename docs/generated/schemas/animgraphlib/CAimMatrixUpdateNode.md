@@ -31,11 +31,11 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x18` | `m_nodePath` | [CAnimNodePath](../animgraphlib/CAnimNodePath.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
-| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../!GlobalTypes/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
+| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../animgraphlib/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x50` | `m_name` | CUtlString | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x60` | `m_pChildNode` | [CAnimUpdateNodeRef](../animgraphlib/CAnimUpdateNodeRef.md) | [CUnaryUpdateNode](../animgraphlib/CUnaryUpdateNode.md) |  |
 | `0x70` | `m_opFixedSettings` | [AimMatrixOpFixedSettings_t](../animgraphlib/AimMatrixOpFixedSettings_t.md) |  |  |
-| `0x168` | `m_target` | [AnimVectorSource](../!GlobalTypes/AnimVectorSource.md) |  |  |
+| `0x168` | `m_target` | [AnimVectorSource](../animgraphlib/AnimVectorSource.md) |  |  |
 | `0x16c` | `m_paramIndex` | [CAnimParamHandle](../animgraphlib/CAnimParamHandle.md) |  |  |
 | `0x170` | `m_hSequence` | [HSequence](../animationsystem/HSequence.md) |  |  |
 | `0x174` | `m_bResetChild` | bool |  |  |

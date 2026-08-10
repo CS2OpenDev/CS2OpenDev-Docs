@@ -35,7 +35,7 @@ classDiagram
 | `0x68` | `m_bDisabled` | bool | [CAnimGraphDoc_StateTransition](../animgraphdoclib/CAnimGraphDoc_StateTransition.md) | `MPropertyFriendlyName Disable` |
 | `0x70` | `m_blendDuration` | [CFloatAnimValue](../animgraphdoclib/CFloatAnimValue.md) |  | `MPropertyFriendlyName Blend Duration` |
 | `0x90` | `m_bReset` | bool |  | `MPropertyFriendlyName Reset Destination` |
-| `0x94` | `m_resetCycleOption` | [ResetCycleOption](../!GlobalTypes/ResetCycleOption.md) |  | `MPropertyFriendlyName Start Cycle At` |
+| `0x94` | `m_resetCycleOption` | [ResetCycleOption](../animgraphlib/ResetCycleOption.md) |  | `MPropertyFriendlyName Start Cycle At` |
 | `0x98` | `m_flFixedCycleValue` | [CFloatAnimValue](../animgraphdoclib/CFloatAnimValue.md) |  | `MPropertyFriendlyName Fixed Start Cycle Value` |
 | `0xb8` | `m_blendCurve` | [CBlendCurve](../animgraphlib/CBlendCurve.md) |  | `MPropertySuppressField` |
 

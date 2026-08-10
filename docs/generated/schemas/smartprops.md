@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/smartprops.md)
 
-149 types. Each links to its own page with the full field layout.
+167 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -162,3 +162,21 @@ nav_exclude: true
 | [CSmartPropVariable_Vector4D](smartprops/CSmartPropVariable_Vector4D.md) | class | 72 | 1 | [CSmartPropVariable](smartprops/CSmartPropVariable.md) |
 | [ColorChoice_t](smartprops/ColorChoice_t.md) | class | 128 | 2 |  |
 | [MaterialGroupChoice_t](smartprops/MaterialGroupChoice_t.md) | class | 128 | 2 |  |
+| [ApplyColorMode_t](smartprops/ApplyColorMode_t.md) | enum | — | 3 |  |
+| [ConfigurationHandleShape_t](smartprops/ConfigurationHandleShape_t.md) | enum | — | 4 |  |
+| [PickMode_t](smartprops/PickMode_t.md) | enum | — | 3 |  |
+| [ScaleMode_t](smartprops/ScaleMode_t.md) | enum | — | 4 |  |
+| [SmartPropChoiceSelectionMode_t](smartprops/SmartPropChoiceSelectionMode_t.md) | enum | — | 3 |  |
+| [SmartPropColorSelectionMode_t](smartprops/SmartPropColorSelectionMode_t.md) | enum | — | 4 |  |
+| [SmartPropDeformableAttachMode_t](smartprops/SmartPropDeformableAttachMode_t.md) | enum | — | 3 |  |
+| [SmartPropDeformableOrientMode_t](smartprops/SmartPropDeformableOrientMode_t.md) | enum | — | 5 |  |
+| [SmartPropDetailFadeLevel_t](smartprops/SmartPropDetailFadeLevel_t.md) | enum | — | 6 |  |
+| [SmartPropDirection_t](smartprops/SmartPropDirection_t.md) | enum | — | 3 |  |
+| [SmartPropDistributionMode_t](smartprops/SmartPropDistributionMode_t.md) | enum | — | 2 |  |
+| [SmartPropGridOriginBasis_t](smartprops/SmartPropGridOriginBasis_t.md) | enum | — | 2 |  |
+| [SmartPropGridPlacementMode_t](smartprops/SmartPropGridPlacementMode_t.md) | enum | — | 2 |  |
+| [SmartPropPathPositions_t](smartprops/SmartPropPathPositions_t.md) | enum | — | 4 |  |
+| [SmartPropPlaceMeshOrientationMode_t](smartprops/SmartPropPlaceMeshOrientationMode_t.md) | enum | — | 4 |  |
+| [SmartPropRadiusPlacementMode_t](smartprops/SmartPropRadiusPlacementMode_t.md) | enum | — | 2 |  |
+| [SmartPropSpace_t](smartprops/SmartPropSpace_t.md) | enum | — | 3 |  |
+| [TraceNoHitResult_t](smartprops/TraceNoHitResult_t.md) | enum | — | 4 |  |

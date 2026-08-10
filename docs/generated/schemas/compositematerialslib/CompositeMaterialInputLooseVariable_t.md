@@ -37,7 +37,7 @@ classDiagram
 | `0x28` | `m_strExposedVisibleWhenTrue` | CUtlString |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Exposed SetVisible When True` |
 | `0x30` | `m_strExposedHiddenWhenTrue` | CUtlString |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Exposed SetHidden When True` |
 | `0x38` | `m_strExposedValueList` | CUtlString |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Exposed Value List` |
-| `0x40` | `m_nVariableType` | [CompositeMaterialInputLooseVariableType_t](../!GlobalTypes/CompositeMaterialInputLooseVariableType_t.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Type` |
+| `0x40` | `m_nVariableType` | [CompositeMaterialInputLooseVariableType_t](../compositematerialslib/CompositeMaterialInputLooseVariableType_t.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Type` |
 | `0x44` | `m_bValueBoolean` | bool |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Value` |
 | `0x48` | `m_nValueIntX` | int32 |  | `MPropertyAttrStateCallback` `MPropertyAttributeRange 0 255` `MPropertyFriendlyName X Value` |
 | `0x4c` | `m_nValueIntY` | int32 |  | `MPropertyAttrStateCallback` `MPropertyAttributeRange 0 255` `MPropertyFriendlyName Y Value` |
@@ -57,12 +57,12 @@ classDiagram
 | `0x84` | `m_flValueFloatW_Min` | float32 |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName W Min` |
 | `0x88` | `m_flValueFloatW_Max` | float32 |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName W Max` |
 | `0x8c` | `m_cValueColor4` | Color |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Value` |
-| `0x90` | `m_nValueSystemVar` | [CompositeMaterialVarSystemVar_t](../!GlobalTypes/CompositeMaterialVarSystemVar_t.md) |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Value` |
+| `0x90` | `m_nValueSystemVar` | [CompositeMaterialVarSystemVar_t](../compositematerialslib/CompositeMaterialVarSystemVar_t.md) |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Value` |
 | `0x98` | `m_strResourceMaterial` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeIMaterial2](../resourcesystem/InfoForResourceTypeIMaterial2.md) > > |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Material` |
 | `0x178` | `m_strTextureContentAssetPath` | CUtlString |  | `MPropertyAttrStateCallback` `MPropertyAttributeEditor AssetBrowse( jpg, png, psd, tga )` `MPropertyFriendlyName Texture` |
 | `0x180` | `m_strTextureRuntimeResourcePath` | CResourceNameTyped< CWeakHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > > |  | `MPropertyHideField` |
 | `0x260` | `m_strTextureCompilationVtexTemplate` | CUtlString |  | `MPropertyHideField` |
-| `0x268` | `m_nTextureType` | [CompositeMaterialInputTextureType_t](../!GlobalTypes/CompositeMaterialInputTextureType_t.md) |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Texture Type` |
+| `0x268` | `m_nTextureType` | [CompositeMaterialInputTextureType_t](../compositematerialslib/CompositeMaterialInputTextureType_t.md) |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Texture Type` |
 | `0x270` | `m_strString` | CUtlString |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName String` |
 | `0x278` | `m_strPanoramaPanelPath` | CUtlString |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Layout XML` |
 | `0x280` | `m_nPanoramaRenderRes` | int32 |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Render Resolution` |

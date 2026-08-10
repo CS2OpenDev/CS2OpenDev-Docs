@@ -36,7 +36,7 @@ classDiagram
 | `0x2a` | `m_nRightTargetNodeIdx` | int16 |  |  |
 | `0x2c` | `m_nEnabledNodeIdx` | int16 |  |  |
 | `0x30` | `m_flBlendTimeSeconds` | float32 |  |  |
-| `0x34` | `m_blendMode` | [NmIKBlendMode_t](../!GlobalTypes/NmIKBlendMode_t.md) |  |  |
+| `0x34` | `m_blendMode` | [NmIKBlendMode_t](../animlib/NmIKBlendMode_t.md) |  |  |
 | `0x35` | `m_bIsTargetInWorldSpace` | bool |  |  |
 
 <details><summary>KV3 class defaults</summary>

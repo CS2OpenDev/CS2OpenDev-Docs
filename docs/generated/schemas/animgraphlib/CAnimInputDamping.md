@@ -25,7 +25,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x8` | `m_speedFunction` | [DampingSpeedFunction](../!GlobalTypes/DampingSpeedFunction.md) |  | `MPropertyFriendlyName Speed Function` |
+| `0x8` | `m_speedFunction` | [DampingSpeedFunction](../animgraphlib/DampingSpeedFunction.md) |  | `MPropertyFriendlyName Speed Function` |
 | `0xc` | `m_fSpeedScale` | float32 |  | `MPropertyFriendlyName Speed Scale` |
 | `0x10` | `m_fFallingSpeedScale` | float32 |  | `MPropertyFriendlyName Falling Speed Scale` |
 

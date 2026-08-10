@@ -25,7 +25,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `nTick` | [GameTick_t](../entity2/GameTick_t.md) |  |  |
-| `0x4` | `nFlags` | [FuncRotatorRotationSummaryFlags_t](../!GlobalTypes/FuncRotatorRotationSummaryFlags_t.md) |  |  |
+| `0x4` | `nFlags` | [FuncRotatorRotationSummaryFlags_t](../server/FuncRotatorRotationSummaryFlags_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

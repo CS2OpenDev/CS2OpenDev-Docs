@@ -28,7 +28,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flStartTime` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
 | `0xc` | `m_flDuration` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
-| `0x10` | `m_rule` | [NmTransitionRule_t](../!GlobalTypes/NmTransitionRule_t.md) |  |  |
+| `0x10` | `m_rule` | [NmTransitionRule_t](../animlib/NmTransitionRule_t.md) |  |  |
 | `0x18` | `m_optionalID` | CUtlString |  |  |
 
 <details><summary>KV3 class defaults</summary>

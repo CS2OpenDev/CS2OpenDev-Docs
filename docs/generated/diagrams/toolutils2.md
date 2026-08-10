@@ -24,10 +24,12 @@ classDiagram
     CAssetTypeConfig --> CSubassetTypeInfo
     CAssetTypeConfig --> CAssetWarning
     CAssetWarning *-- CAssetWarningCheck
+    CAssetWarningCheck *-- AssetWarningFixType_t
     CDetailPropType *-- CDetailPropModel
     CModuleManifests *-- CManifestInfo
     CResourceAssetTypeInfo *-- ResourceBlockTypeInfo_t
     CSimpleAssetTypeInfo *-- AssetEngineCommand_t
     CToolsConfig *-- CEngineToolInfo
     CToolsConfig *-- CExternalToolInfo
+    ResourceBlockTypeInfo_t *-- ResourceDataEncodingType_t
 ```

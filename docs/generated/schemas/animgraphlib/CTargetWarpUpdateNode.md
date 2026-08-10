@@ -31,17 +31,17 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x18` | `m_nodePath` | [CAnimNodePath](../animgraphlib/CAnimNodePath.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
-| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../!GlobalTypes/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
+| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../animgraphlib/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x50` | `m_name` | CUtlString | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x60` | `m_pChildNode` | [CAnimUpdateNodeRef](../animgraphlib/CAnimUpdateNodeRef.md) | [CUnaryUpdateNode](../animgraphlib/CUnaryUpdateNode.md) |  |
-| `0x74` | `m_eAngleMode` | [TargetWarpAngleMode_t](../!GlobalTypes/TargetWarpAngleMode_t.md) |  |  |
+| `0x74` | `m_eAngleMode` | [TargetWarpAngleMode_t](../animgraphlib/TargetWarpAngleMode_t.md) |  |  |
 | `0x78` | `m_hTargetPositionParameter` | [CAnimParamHandle](../animgraphlib/CAnimParamHandle.md) |  |  |
 | `0x7a` | `m_hTargetUpVectorParameter` | [CAnimParamHandle](../animgraphlib/CAnimParamHandle.md) |  |  |
 | `0x7c` | `m_hTargetFacePositionParameter` | [CAnimParamHandle](../animgraphlib/CAnimParamHandle.md) |  |  |
 | `0x7e` | `m_hMoveHeadingParameter` | [CAnimParamHandle](../animgraphlib/CAnimParamHandle.md) |  |  |
 | `0x80` | `m_hDesiredMoveHeadingParameter` | [CAnimParamHandle](../animgraphlib/CAnimParamHandle.md) |  |  |
-| `0x84` | `m_eCorrectionMethod` | [TargetWarpCorrectionMethod](../!GlobalTypes/TargetWarpCorrectionMethod.md) |  |  |
-| `0x88` | `m_eTargetWarpTimingMethod` | [TargetWarpTimingMethod](../!GlobalTypes/TargetWarpTimingMethod.md) |  |  |
+| `0x84` | `m_eCorrectionMethod` | [TargetWarpCorrectionMethod](../animgraphlib/TargetWarpCorrectionMethod.md) |  |  |
+| `0x88` | `m_eTargetWarpTimingMethod` | [TargetWarpTimingMethod](../animgraphlib/TargetWarpTimingMethod.md) |  |  |
 | `0x8c` | `m_bTargetFacePositionIsWorldSpace` | bool |  |  |
 | `0x8d` | `m_bTargetPositionIsWorldSpace` | bool |  |  |
 | `0x8e` | `m_bOnlyWarpWhenTagIsFound` | bool |  |  |

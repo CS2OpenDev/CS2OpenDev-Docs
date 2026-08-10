@@ -34,7 +34,7 @@ classDiagram
 | `0x20` | `m_nEffectorTargetNodeIdx` | int16 |  |  |
 | `0x22` | `m_nEnabledNodeIdx` | int16 |  |  |
 | `0x24` | `m_flBlendTimeSeconds` | float32 |  |  |
-| `0x28` | `m_blendMode` | [NmIKBlendMode_t](../!GlobalTypes/NmIKBlendMode_t.md) |  |  |
+| `0x28` | `m_blendMode` | [NmIKBlendMode_t](../animlib/NmIKBlendMode_t.md) |  |  |
 | `0x29` | `m_bIsTargetInWorldSpace` | bool |  |  |
 | `0x2c` | `m_flChainRotationWeight` | float32 |  |  |
 

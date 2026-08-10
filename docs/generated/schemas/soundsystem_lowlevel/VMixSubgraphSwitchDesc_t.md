@@ -26,7 +26,7 @@ classDiagram
 | `0x0` | `m_name` | CUtlString |  |  |
 | `0x8` | `m_effectName` | CUtlString |  |  |
 | `0x10` | `m_subgraphs` | CUtlVector< CUtlString > |  |  |
-| `0x28` | `m_interpolationMode` | [VMixSubgraphSwitchInterpolationType_t](../!GlobalTypes/VMixSubgraphSwitchInterpolationType_t.md) |  |  |
+| `0x28` | `m_interpolationMode` | [VMixSubgraphSwitchInterpolationType_t](../soundsystem_lowlevel/VMixSubgraphSwitchInterpolationType_t.md) |  |  |
 | `0x2c` | `m_bOnlyTailsOnFadeOut` | bool |  |  |
 | `0x30` | `m_flInterpolationTime` | float32 |  |  |
 

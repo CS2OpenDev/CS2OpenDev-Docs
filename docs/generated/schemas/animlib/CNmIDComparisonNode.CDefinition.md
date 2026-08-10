@@ -30,7 +30,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `m_nNodeIdx` | int16 | [CNmGraphNode::CDefinition](../animlib/CNmGraphNode.CDefinition.md) |  |
 | `0x10` | `m_nInputValueNodeIdx` | int16 |  |  |
-| `0x12` | `m_comparison` | CNmIDComparisonNode::[Comparison_t](../!GlobalTypes/Comparison_t.md) |  |  |
+| `0x12` | `m_comparison` | CNmIDComparisonNode::[Comparison_t](../animgraphdoclib/Comparison_t.md) |  |  |
 | `0x18` | `m_comparisionIDs` | CUtlLeanVectorFixedGrowable< CGlobalSymbol, 4 > |  |  |
 
 <details><summary>KV3 class defaults</summary>

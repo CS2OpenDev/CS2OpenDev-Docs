@@ -33,21 +33,21 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x18` | `m_nodePath` | [CAnimNodePath](../animgraphlib/CAnimNodePath.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
-| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../!GlobalTypes/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
+| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../animgraphlib/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x50` | `m_name` | CUtlString | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x60` | `m_pChildNode` | [CAnimUpdateNodeRef](../animgraphlib/CAnimUpdateNodeRef.md) | [CUnaryUpdateNode](../animgraphlib/CUnaryUpdateNode.md) |  |
-| `0x74` | `m_eMode` | [OrientationWarpMode_t](../!GlobalTypes/OrientationWarpMode_t.md) |  |  |
+| `0x74` | `m_eMode` | [OrientationWarpMode_t](../animgraphlib/OrientationWarpMode_t.md) |  |  |
 | `0x78` | `m_hTargetParam` | [CAnimParamHandle](../animgraphlib/CAnimParamHandle.md) |  |  |
 | `0x7a` | `m_hTargetPositionParam` | [CAnimParamHandle](../animgraphlib/CAnimParamHandle.md) |  |  |
 | `0x7c` | `m_hFallbackTargetPositionParam` | [CAnimParamHandle](../animgraphlib/CAnimParamHandle.md) |  |  |
-| `0x80` | `m_eTargetOffsetMode` | [OrientationWarpTargetOffsetMode_t](../!GlobalTypes/OrientationWarpTargetOffsetMode_t.md) |  |  |
+| `0x80` | `m_eTargetOffsetMode` | [OrientationWarpTargetOffsetMode_t](../animgraphlib/OrientationWarpTargetOffsetMode_t.md) |  |  |
 | `0x84` | `m_flTargetOffset` | float32 |  |  |
 | `0x88` | `m_hTargetOffsetParam` | [CAnimParamHandle](../animgraphlib/CAnimParamHandle.md) |  |  |
 | `0x90` | `m_damping` | [CAnimInputDamping](../animgraphlib/CAnimInputDamping.md) |  |  |
-| `0xa8` | `m_eRootMotionSource` | [OrientationWarpRootMotionSource_t](../!GlobalTypes/OrientationWarpRootMotionSource_t.md) |  |  |
+| `0xa8` | `m_eRootMotionSource` | [OrientationWarpRootMotionSource_t](../animgraphlib/OrientationWarpRootMotionSource_t.md) |  |  |
 | `0xac` | `m_flMaxRootMotionScale` | float32 |  |  |
 | `0xb0` | `m_bEnablePreferredRotationDirection` | bool |  |  |
-| `0xb4` | `m_ePreferredRotationDirection` | [AnimValueSource](../!GlobalTypes/AnimValueSource.md) |  |  |
+| `0xb4` | `m_ePreferredRotationDirection` | [AnimValueSource](../animgraphlib/AnimValueSource.md) |  |  |
 | `0xb8` | `m_flPreferredRotationThreshold` | float32 |  |  |
 
 <details><summary>KV3 class defaults</summary>

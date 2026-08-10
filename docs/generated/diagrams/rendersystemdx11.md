@@ -14,4 +14,6 @@ Class relationships (inheritance and composition) for the `rendersystemdx11` mod
 ```mermaid
 classDiagram
     RsDepthStencilStateDesc_t *-- RsStencilStateDesc_t
+    RsRasterizerStateDesc_t *-- RsFillMode_t
+    RsRasterizerStateDesc_t *-- RsCullMode_t
 ```

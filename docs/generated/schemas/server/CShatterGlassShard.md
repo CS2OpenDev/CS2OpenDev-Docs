@@ -36,7 +36,7 @@ classDiagram
 | `0x38` | `m_hPhysicsEntity` | CHandle< [CShatterGlassShardPhysics](../server/CShatterGlassShardPhysics.md) > |  |  |
 | `0x3c` | `m_hParentPanel` | CHandle< [CFuncShatterglass](../server/CFuncShatterglass.md) > |  |  |
 | `0x40` | `m_hParentShard` | uint32 |  |  |
-| `0x44` | `m_ShatterStressType` | [ShatterGlassStressType](../!GlobalTypes/ShatterGlassStressType.md) |  |  |
+| `0x44` | `m_ShatterStressType` | [ShatterGlassStressType](../server/ShatterGlassStressType.md) |  |  |
 | `0x48` | `m_vecStressVelocity` | Vector |  |  |
 | `0x54` | `m_bCreatedModel` | bool |  | `MNotSaved` |
 | `0x58` | `m_flLongestEdge` | float32 |  | `MNotSaved` |
@@ -45,7 +45,7 @@ classDiagram
 | `0x64` | `m_flShortestAcross` | float32 |  | `MNotSaved` |
 | `0x68` | `m_flSumOfAllEdges` | float32 |  | `MNotSaved` |
 | `0x6c` | `m_flArea` | float32 |  | `MNotSaved` |
-| `0x70` | `m_nOnFrameEdge` | [OnFrame](../!GlobalTypes/OnFrame.md) |  |  |
+| `0x70` | `m_nOnFrameEdge` | [OnFrame](../server/OnFrame.md) |  |  |
 | `0x74` | `m_nSubShardGeneration` | int32 |  |  |
 | `0x78` | `m_vecAverageVertPosition` | Vector2D |  | `MNotSaved` |
 | `0x80` | `m_bAverageVertPositionIsValid` | bool |  | `MNotSaved` |

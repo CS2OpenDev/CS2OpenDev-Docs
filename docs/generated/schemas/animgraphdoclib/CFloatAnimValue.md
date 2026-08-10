@@ -27,7 +27,7 @@ classDiagram
 | `0x8` | `m_flConstValue` | float32 |  | `MPropertySuppressField` |
 | `0x10` | `m_paramName` | CUtlString |  | `MPropertySuppressField` |
 | `0x18` | `m_paramID` | [AnimParamID](../modellib/AnimParamID.md) |  | `MPropertySuppressField` |
-| `0x1c` | `m_eSource` | [EAnimValueSource](../!GlobalTypes/EAnimValueSource.md) |  | `MPropertySuppressField` |
+| `0x1c` | `m_eSource` | [EAnimValueSource](../animgraphdoclib/EAnimValueSource.md) |  | `MPropertySuppressField` |
 
 <details><summary>KV3 class defaults</summary>
 

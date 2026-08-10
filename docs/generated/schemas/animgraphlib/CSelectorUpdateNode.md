@@ -30,7 +30,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x18` | `m_nodePath` | [CAnimNodePath](../animgraphlib/CAnimNodePath.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
-| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../!GlobalTypes/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
+| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../animgraphlib/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x50` | `m_name` | CUtlString | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x60` | `m_children` | CUtlVector< [CAnimUpdateNodeRef](../animgraphlib/CAnimUpdateNodeRef.md) > |  |  |
 | `0x78` | `m_tags` | CUtlVector< int8 > |  |  |
@@ -38,7 +38,7 @@ classDiagram
 | `0x9c` | `m_flBlendTime` | CAnimValue< float32 > |  |  |
 | `0xa4` | `m_hParameter` | [CAnimParamHandle](../animgraphlib/CAnimParamHandle.md) |  |  |
 | `0xa8` | `m_nTagIndex` | int32 |  |  |
-| `0xac` | `m_eTagBehavior` | [SelectorTagBehavior_t](../!GlobalTypes/SelectorTagBehavior_t.md) |  |  |
+| `0xac` | `m_eTagBehavior` | [SelectorTagBehavior_t](../animgraphlib/SelectorTagBehavior_t.md) |  |  |
 | `0xb0` | `m_bResetOnChange` | bool |  |  |
 | `0xb1` | `m_bLockWhenWaning` | bool |  |  |
 | `0xb2` | `m_bSyncCyclesOnChange` | bool |  |  |

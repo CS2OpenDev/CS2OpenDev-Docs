@@ -31,20 +31,20 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x18` | `m_nodePath` | [CAnimNodePath](../animgraphlib/CAnimNodePath.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
-| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../!GlobalTypes/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
+| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../animgraphlib/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x50` | `m_name` | CUtlString | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x60` | `m_pChild1` | [CAnimUpdateNodeRef](../animgraphlib/CAnimUpdateNodeRef.md) | [CBinaryUpdateNode](../animgraphlib/CBinaryUpdateNode.md) |  |
 | `0x70` | `m_pChild2` | [CAnimUpdateNodeRef](../animgraphlib/CAnimUpdateNodeRef.md) | [CBinaryUpdateNode](../animgraphlib/CBinaryUpdateNode.md) |  |
-| `0x80` | `m_timingBehavior` | [BinaryNodeTiming](../!GlobalTypes/BinaryNodeTiming.md) | [CBinaryUpdateNode](../animgraphlib/CBinaryUpdateNode.md) |  |
+| `0x80` | `m_timingBehavior` | [BinaryNodeTiming](../animgraphlib/BinaryNodeTiming.md) | [CBinaryUpdateNode](../animgraphlib/CBinaryUpdateNode.md) |  |
 | `0x84` | `m_flTimingBlend` | float32 | [CBinaryUpdateNode](../animgraphlib/CBinaryUpdateNode.md) |  |
 | `0x88` | `m_bResetChild1` | bool | [CBinaryUpdateNode](../animgraphlib/CBinaryUpdateNode.md) |  |
 | `0x89` | `m_bResetChild2` | bool | [CBinaryUpdateNode](../animgraphlib/CBinaryUpdateNode.md) |  |
 | `0x94` | `m_nWeightListIndex` | int32 |  |  |
 | `0x98` | `m_flRootMotionBlend` | float32 |  |  |
-| `0x9c` | `m_blendSpace` | [BoneMaskBlendSpace](../!GlobalTypes/BoneMaskBlendSpace.md) |  |  |
-| `0xa0` | `m_footMotionTiming` | [BinaryNodeChildOption](../!GlobalTypes/BinaryNodeChildOption.md) |  |  |
+| `0x9c` | `m_blendSpace` | [BoneMaskBlendSpace](../animgraphlib/BoneMaskBlendSpace.md) |  |  |
+| `0xa0` | `m_footMotionTiming` | [BinaryNodeChildOption](../animgraphlib/BinaryNodeChildOption.md) |  |  |
 | `0xa4` | `m_bUseBlendScale` | bool |  |  |
-| `0xa8` | `m_blendValueSource` | [AnimValueSource](../!GlobalTypes/AnimValueSource.md) |  |  |
+| `0xa8` | `m_blendValueSource` | [AnimValueSource](../animgraphlib/AnimValueSource.md) |  |  |
 | `0xac` | `m_hBlendParameter` | [CAnimParamHandle](../animgraphlib/CAnimParamHandle.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>

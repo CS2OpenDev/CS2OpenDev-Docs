@@ -1,0 +1,31 @@
+---
+layout: default
+title: LayerType_t
+nav_exclude: true
+---
+
+[Schemas](../../schemas.md) / [resourcecompiler](../resourcecompiler.md) / LayerType_t
+
+# LayerType_t
+
+**Kind:** enum · **Underlying:** `uint32_t` · **Module:** resourcecompiler
+
+## Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `LAYER_TYPE_LEVELS` | 0 |  |
+| `LAYER_TYPE_VIBRANCE` | 1 |  |
+| `LAYER_TYPE_BRIGHTNESS_CONTRAST` | 2 |  |
+| `LAYER_TYPE_LUT` | 3 |  |
+| `LAYER_TYPE_COLOR_BALANCE` | 4 |  |
+| `LAYER_TYPE_COLOR_TINT` | 5 |  |
+| `LAYER_TYPE_HUE_SATURATION` | 6 |  |
+| `LAYER_TYPE_CURVES` | 7 |  |
+| `LAYER_TYPE_TONEMAPPING` | 8 |  |
+| `LAYER_TYPE_BLOOM` | 9 |  |
+| `LAYER_TYPE_VIGNETTE` | 10 |  |
+| `LAYER_TYPE_LOCAL_CONTRAST` | 11 |  |
+| `LAYER_TYPE_FOG_SCATTERING` | 12 |  |
+| `LAYER_TYPE_LOCAL_EXPOSURE` | 13 |  |
+| `MAX_LAYER_TYPES` | 14 |  |

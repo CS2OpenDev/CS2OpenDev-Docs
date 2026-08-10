@@ -26,7 +26,7 @@ classDiagram
 | `0x0` | `m_ConfigName` | CUtlString |  |  |
 | `0x8` | `m_ConfigValue` | KeyValues3 |  |  |
 | `0x18` | `m_BoundValuePath` | CUtlString |  |  |
-| `0x20` | `m_iAttachType` | [ParticleAttachment_t](../!GlobalTypes/ParticleAttachment_t.md) |  |  |
+| `0x20` | `m_iAttachType` | [ParticleAttachment_t](../animationsystem/ParticleAttachment_t.md) |  |  |
 | `0x28` | `m_strEntityScope` | CUtlString |  |  |
 | `0x30` | `m_strAttachmentName` | CUtlString |  |  |
 

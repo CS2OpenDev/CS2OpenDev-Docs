@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/compositematerialslib.md)
 
-10 types. Each links to its own page with the full field layout.
+17 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -23,3 +23,10 @@ nav_exclude: true
 | [CompositeMaterialMatchFilter_t](compositematerialslib/CompositeMaterialMatchFilter_t.md) | class | 32 | 4 |  |
 | [CompositeMaterial_t](compositematerialslib/CompositeMaterial_t.md) | class | 160 | 4 |  |
 | [GeneratedTextureHandle_t](compositematerialslib/GeneratedTextureHandle_t.md) | class | 96 | 1 |  |
+| [CompMatPropertyMutatorConditionType_t](compositematerialslib/CompMatPropertyMutatorConditionType_t.md) | enum | — | 3 |  |
+| [CompMatPropertyMutatorType_t](compositematerialslib/CompMatPropertyMutatorType_t.md) | enum | — | 10 |  |
+| [CompositeMaterialInputContainerSourceType_t](compositematerialslib/CompositeMaterialInputContainerSourceType_t.md) | enum | — | 6 |  |
+| [CompositeMaterialInputLooseVariableType_t](compositematerialslib/CompositeMaterialInputLooseVariableType_t.md) | enum | — | 15 |  |
+| [CompositeMaterialInputTextureType_t](compositematerialslib/CompositeMaterialInputTextureType_t.md) | enum | — | 8 |  |
+| [CompositeMaterialMatchFilterType_t](compositematerialslib/CompositeMaterialMatchFilterType_t.md) | enum | — | 6 |  |
+| [CompositeMaterialVarSystemVar_t](compositematerialslib/CompositeMaterialVarSystemVar_t.md) | enum | — | 2 |  |

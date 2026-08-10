@@ -38,7 +38,7 @@ classDiagram
 | `0x4d` | `m_bTeleportOnEnd` | bool |  |  |
 | `0x4e` | `m_bIgnoreRotation` | bool |  |  |
 | `0x4f` | `m_bSuccess` | bool |  |  |
-| `0x50` | `m_nForcedCrouchState` | [ForcedCrouchState_t](../!GlobalTypes/ForcedCrouchState_t.md) |  |  |
+| `0x50` | `m_nForcedCrouchState` | [ForcedCrouchState_t](../server/ForcedCrouchState_t.md) |  |  |
 | `0x54` | `m_bIgnoreCollisions` | bool |  |  |
 | `0x58` | `m_vDest` | Vector |  |  |
 | `0x64` | `m_angDst` | QAngle |  |  |

@@ -31,4 +31,4 @@ classDiagram
 | `0x18` | `m_sConflictDesc` | CUtlString |  |  |
 | `0x20` | `m_nResolveIdx` | int32 |  |  |
 | `0x28` | `m_conflictData` | [CAnimConflictInfo_t](../animgraphdoclib/CAnimConflictInfo_t.md)[2] |  |  |
-| `0x68` | `m_eConflictType` | [AnimConflictType_t](../!GlobalTypes/AnimConflictType_t.md) |  |  |
+| `0x68` | `m_eConflictType` | [AnimConflictType_t](../animgraphdoclib/AnimConflictType_t.md) |  |  |

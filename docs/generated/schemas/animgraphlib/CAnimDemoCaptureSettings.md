@@ -37,7 +37,7 @@ classDiagram
 | `0x3c` | `m_flIkTranslation_MaxQuantizationError` | float32 |  | `MPropertyFriendlyName Max IK Translation Error` `MPropertyGroupName +Quantization Settings` |
 | `0x40` | `m_baseSequence` | CUtlString |  | `MPropertyAttributeChoiceName Sequence` `MPropertyFriendlyName Base Sequence` `MPropertyGroupName +Base Pose` |
 | `0x48` | `m_nBaseSequenceFrame` | int32 |  | `MPropertyFriendlyName Base Sequence Frame` `MPropertyGroupName +Base Pose` |
-| `0x4c` | `m_boneSelectionMode` | [EDemoBoneSelectionMode](../!GlobalTypes/EDemoBoneSelectionMode.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Bone Selection Mode` `MPropertyGroupName +Bones` |
+| `0x4c` | `m_boneSelectionMode` | [EDemoBoneSelectionMode](../animgraphlib/EDemoBoneSelectionMode.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Bone Selection Mode` `MPropertyGroupName +Bones` |
 | `0x50` | `m_bones` | CUtlVector< [BoneDemoCaptureSettings_t](../animgraphlib/BoneDemoCaptureSettings_t.md) > |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Bones` `MPropertyGroupName +Bones` |
 | `0x68` | `m_ikChains` | CUtlVector< [IKDemoCaptureSettings_t](../animgraphlib/IKDemoCaptureSettings_t.md) > |  | `MPropertyFriendlyName IK Chains` |
 

@@ -25,7 +25,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_nCompositeMaterialMatchFilterType` | [CompositeMaterialMatchFilterType_t](../!GlobalTypes/CompositeMaterialMatchFilterType_t.md) |  | `MPropertyFriendlyName Match Type` |
+| `0x0` | `m_nCompositeMaterialMatchFilterType` | [CompositeMaterialMatchFilterType_t](../compositematerialslib/CompositeMaterialMatchFilterType_t.md) |  | `MPropertyFriendlyName Match Type` |
 | `0x8` | `m_strMatchFilter` | CUtlString |  | `MPropertyFriendlyName Name` |
 | `0x10` | `m_strMatchValue` | CUtlString |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Value` |
 | `0x18` | `m_bPassWhenTrue` | bool |  | `MPropertyFriendlyName Pass when True` |

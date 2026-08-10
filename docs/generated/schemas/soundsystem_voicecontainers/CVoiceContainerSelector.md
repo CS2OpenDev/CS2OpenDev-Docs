@@ -31,7 +31,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x28` | `m_vSound` | [CVSound](../soundsystem_voicecontainers/CVSound.md) | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressField` |
 | `0x68` | `m_pEnvelopeAnalyzer` | [CVoiceContainerAnalysisBase](../soundsystem_voicecontainers/CVoiceContainerAnalysisBase.md)* | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressExpr true` |
-| `0x70` | `m_mode` | [PlayBackMode_t](../!GlobalTypes/PlayBackMode_t.md) |  | `MPropertyFriendlyName Playback Mode` |
+| `0x70` | `m_mode` | [PlayBackMode_t](../soundsystem_voicecontainers/PlayBackMode_t.md) |  | `MPropertyFriendlyName Playback Mode` |
 | `0x78` | `m_soundsToPlay` | [CSoundContainerReferenceArray](../soundsystem_voicecontainers/CSoundContainerReferenceArray.md) |  | `MPropertyFriendlyName Sounds To play` |
 | `0xb0` | `m_fProbabilityWeights` | CUtlVector< float32 > |  | `MPropertyFriendlyName Relative Weights` |
 

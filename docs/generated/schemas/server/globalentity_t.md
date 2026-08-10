@@ -25,7 +25,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x0` | `name` | CUtlSymbol |  | `MKV3TransferSaveOpsForField GetGlobalSymbolDataOps` |
 | `0x2` | `levelName` | CUtlSymbol |  | `MKV3TransferSaveOpsForField GetGlobalSymbolDataOps` |
-| `0x4` | `state` | [GLOBALESTATE](../!GlobalTypes/GLOBALESTATE.md) |  |  |
+| `0x4` | `state` | [GLOBALESTATE](../server/GLOBALESTATE.md) |  |  |
 | `0x8` | `counter` | int32 |  |  |
 
 <details><summary>KV3 class defaults</summary>

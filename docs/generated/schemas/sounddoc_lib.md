@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/sounddoc_lib.md)
 
-139 types. Each links to its own page with the full field layout.
+141 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -152,3 +152,5 @@ nav_exclude: true
 | [CVMixToolGraphEntry](sounddoc_lib/CVMixToolGraphEntry.md) | class | 152 | 3 |  |
 | [CVNodeTypeDesc](sounddoc_lib/CVNodeTypeDesc.md) | class | 136 | 15 |  |
 | [CVsndInputNodeDesc](sounddoc_lib/CVsndInputNodeDesc.md) | class | 136 | 0 | [CVNodeTypeDesc](sounddoc_lib/CVNodeTypeDesc.md) |
+| [SteamAudioHRTFInterpolationType_t](sounddoc_lib/SteamAudioHRTFInterpolationType_t.md) | enum | — | 2 |  |
+| [SteamAudioOcclusionModeType_t](sounddoc_lib/SteamAudioOcclusionModeType_t.md) | enum | — | 4 |  |

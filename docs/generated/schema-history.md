@@ -7,13 +7,13 @@ nav_order: 15
 # Schema History
 
 {: .note }
-> Source: CS2 build **24537688** · 2026-08-03 · `windows-x86_64` · schema `0.5.0`
+> Source: CS2 build **24537688** · 2026-08-03 · `windows-x86_64` · schema `0.5.1`
 
 Field-precise, build-to-build evolution of the CS2 C++ entity schema, derived by diffing every committed `entity_schema.json` snapshot (SchemaTracker's cumulative `schema_evolution.json`, Layer A).  Unlike the coarse [Changelog](changelog.html) — which only reports *that* a class changed — this reports *which field* was added, removed, retyped, or moved.
 
 - **Platform:** `windows-x86_64` (the canonical render; `linux-x86_64` differs only in offsets/sizes)
 - **Baseline build:** `10832117` · **Latest build:** `24537688`
-- **Transitions:** 378 total, **138 with structural changes** (240 no-op builds)
+- **Transitions:** 379 total, **139 with structural changes** (240 no-op builds)
 - **Full per-field history:** the portable [`field_history.json`](downstream-codegen-schemas/field_history.json) carries first/last-seen and the type history for every `(class, field)` across all builds.
 
 To bring an instance captured under build *X* forward to build *Y*, apply each transition in `[X, Y)` in order.  Every op carries both endpoints, so the same chain replays backward.
@@ -22,7 +22,8 @@ To bring an instance captured under build *X* forward to build *Y*, apply each t
 
 | Transition | Classes +/−/~ | Enums +/−/~ | Field ops |
 |------------|---------------|-------------|-----------|
-| `24304127` → `24537688` | 0 / 0 / 6 | 0 / 0 / 1 | 99 |
+| `24442510` → `24537688` | 0 / 0 / 6 | 0 / 0 / 0 | 99 |
+| `24304127` → `24442510` | 0 / 0 / 0 | 0 / 0 / 1 | 0 |
 | `24248951` → `24304127` | 0 / 0 / 1 | 0 / 0 / 0 | 0 |
 | `24074625` → `24116939` | 232 / 59 / 1076 | 96 / 15 / 27 | 4792 |
 | `23773332` → `23994866` | 0 / 0 / 1 | 0 / 0 / 0 | 5 |
@@ -163,7 +164,7 @@ To bring an instance captured under build *X* forward to build *Y*, apply each t
 
 ## Most recent structural changes
 
-### `24304127` → `24537688`
+### `24442510` → `24537688`
 
 **Classes changed (6):**
 
@@ -176,6 +177,8 @@ To bring an instance captured under build *X* forward to build *Y*, apply each t
 | `client.dll/C_CSWeaponBase` | ~offset×15 | — |
 | `server.dll/CCSPlayerPawn` | ＋field×1, ~offset×7 | — |
 
+### `24304127` → `24442510`
+
 ### `24248951` → `24304127`
 
 **Classes changed (1):**
@@ -183,75 +186,3 @@ To bring an instance captured under build *X* forward to build *Y*, apply each t
 | Class | Field ops | Layout |
 |-------|-----------|--------|
 | `client.dll/C_PlantedC4` | — | resize 5904→5936 |
-
-### `24074625` → `24116939`
-
-**Classes added (232):** `!GlobalTypes/AABBWS_t`, `!GlobalTypes/AI_FacingServices_DebugSnapshotData_t`, `!GlobalTypes/AI_GroundRootMotionMotor_DebugSnapshotData_t`, `!GlobalTypes/AI_GroundRootMotionMotor_DebugSnapshotData_t::Event_t`, `!GlobalTypes/AI_MotorServices_DebugSnapshotData_t`, `!GlobalTypes/AI_MotorServices_DebugSnapshotData_t::MotorPathWaypoint_t`, `!GlobalTypes/ActorMapping_t`, `!GlobalTypes/AggregateVertexEmissiveStreamOnDiskData_t`, `!GlobalTypes/CAnimGraph2InstancePtr`, `!GlobalTypes/CAnimGraphControllerPtr`, `!GlobalTypes/CAudioAmpNodeDesc`, `!GlobalTypes/CAudioAutoFilterNodeDesc`, `!GlobalTypes/CAudioBlendDesc`, `!GlobalTypes/CAudioBoxverb2NodeDesc`, `!GlobalTypes/CAudioBoxverbNodeDesc`, `!GlobalTypes/CAudioConvolutionNodeDesc`, `!GlobalTypes/CAudioDelayNodeDesc`, `!GlobalTypes/CAudioDiffusorNodeDesc`, `!GlobalTypes/CAudioDualCompressorNodeDesc`, `!GlobalTypes/CAudioDynamics3BandNodeDesc`, `!GlobalTypes/CAudioDynamicsCompressorNodeDesc`, `!GlobalTypes/CAudioDynamicsLimiterNodeDesc`, `!GlobalTypes/CAudioDynamicsNodeDesc`, `!GlobalTypes/CAudioEQ8NodeDesc`, `!GlobalTypes/CAudioEffectChainNodeDesc`, `!GlobalTypes/CAudioEnvelopeNodeDesc`, `!GlobalTypes/CAudioFilterNodeDesc`, `!GlobalTypes/CAudioFlangerNodeDesc`, `!GlobalTypes/CAudioFreeverbNodeDesc`, `!GlobalTypes/CAudioMeterNodeDesc`, `!GlobalTypes/CAudioMixerNodeDesc`, `!GlobalTypes/CAudioModDelayNodeDesc`, `!GlobalTypes/CAudioOscNodeDesc`, `!GlobalTypes/CAudioOutputNodeDesc`, `!GlobalTypes/CAudioPannerNodeDesc`, `!GlobalTypes/CAudioPitchShiftNodeDesc`, `!GlobalTypes/CAudioPlateverbNodeDesc`, `!GlobalTypes/CAudioProcessorNodeDesc`, `!GlobalTypes/CAudioShaperNodeDesc`, `!GlobalTypes/CAudioSourceNodeDesc` … (+192 more)
-
-**Classes removed (59):** `!GlobalTypes/AI_MotorGroundAnimgraph_DebugSnapshotData_t`, `!GlobalTypes/AI_MotorGroundAnimgraph_DebugSnapshotData_t::Event_t`, `!GlobalTypes/AI_Motor_DebugSnapshotData_t`, `!GlobalTypes/CAnimEventListener`, `!GlobalTypes/CAnimEventListenerBase`, `!GlobalTypes/CAnimEventQueueListener`, `!GlobalTypes/CCompressorGroup`, `!GlobalTypes/CSceneCriteria`, `!GlobalTypes/CSceneOpportunity`, `!GlobalTypes/CSceneRequest`, `!GlobalTypes/CVoiceContainerEnvelope`, `!GlobalTypes/CastSphereSATParams_t`, `!GlobalTypes/ExternalAnimGraph_t`, `!GlobalTypes/SceneInterestTags_t`, `!GlobalTypes/SceneOpportunityActor_t`, `!GlobalTypes/SceneOpportunityHandle_t`, `!GlobalTypes/SceneRequestHandle_t`, `!GlobalTypes/SceneRequestTargetMapPair_t`, `animationsystem.dll/CPulseCell_WaitForCursorsWithTagBase::CursorState_t`, `animationsystem.dll/PulseObservableBoolExpression_t`, `assetbrowser.dll/CPulseCell_WaitForCursorsWithTagBase::CursorState_t`, `assetbrowser.dll/PulseObservableBoolExpression_t`, `assetpreview.dll/CPulseCell_WaitForCursorsWithTagBase::CursorState_t`, `assetpreview.dll/PulseObservableBoolExpression_t`, `assetrename.dll/CPulseCell_WaitForCursorsWithTagBase::CursorState_t`, `assetrename.dll/PulseObservableBoolExpression_t`, `client.dll/CInfoInteraction`, `client.dll/CPulseAnimFuncs`, `client.dll/CPulseCell_WaitForCursorsWithTagBase::CursorState_t`, `client.dll/CScenePayloadVData`, `client.dll/PulseObservableBoolExpression_t`, `hammer.dll/CPulseCell_WaitForCursorsWithTagBase::CursorState_t`, `hammer.dll/PulseObservableBoolExpression_t`, `met.dll/CPulseCell_WaitForCursorsWithTagBase::CursorState_t`, `met.dll/PulseObservableBoolExpression_t`, `modeldoc_editor.dll/CPulseCell_WaitForCursorsWithTagBase::CursorState_t`, `modeldoc_editor.dll/PulseObservableBoolExpression_t`, `modeldoc_utils.dll/CPulseCell_WaitForCursorsWithTagBase::CursorState_t`, `modeldoc_utils.dll/PulseObservableBoolExpression_t`, `particles.dll/CPulseCell_WaitForCursorsWithTagBase::CursorState_t` … (+19 more)
-
-**Classes changed (1076):**
-
-| Class | Field ops | Layout |
-|-------|-----------|--------|
-| `!GlobalTypes/AI_BaseNPCAnimGraph_DebugSnapshotData_t` | ＋field×6, ~offset×2, −field×2 | resize 40→64, reparent, flags |
-| `!GlobalTypes/AI_BaseNPC_DebugSnapshotData_t` | ＋field×7, ~offset×2, −field×4 | resize 120→376 |
-| `!GlobalTypes/AI_DefaultNPC_DebugSnapshotData_t` | ＋field×1, ~offset×1, −field×3 | resize 168→120 |
-| `!GlobalTypes/AI_DefaultNPC_DebugSnapshotData_t::PathQuery_t` | ＋field×2, −field×2 | — |
-| `!GlobalTypes/AI_Navigator_DebugSnapshotData_t` | ＋field×5, ~offset×2, −field×4 | reparent, flags |
-| `!GlobalTypes/AI_Navigator_DebugSnapshotData_t::Waypoint_t` | ＋field×1 | resize 20→24 |
-| `!GlobalTypes/AggregateMeshInfo_t` | ＋field×2, ~offset×1 | resize 36→44 |
-| `!GlobalTypes/AggregateRTProxySceneObject_t` | ＋field×1 | resize 104→120 |
-| `!GlobalTypes/AggregateSceneObject_t` | ＋field×1 | — |
-| `!GlobalTypes/AutoRoomDoorwayPairs_t` | ~type×2 | realign, flags |
-| `!GlobalTypes/CAI_Expresser` | ＋field×2 | realign, flags |
-| `!GlobalTypes/CAI_ExpresserWithFollowup` | — | realign, flags |
-| `!GlobalTypes/CAnimGraphControllerManager` | ~offset×1 | resize 176→152 |
-| `!GlobalTypes/CBaseRendererSource2` | ~meta×1 | — |
-| `!GlobalTypes/CBaseTrailRenderer` | ＋field×1, ~offset×1 | resize 12520→12888 |
-| `!GlobalTypes/CBreakableStageHelper` | — | realign, flags |
-| `!GlobalTypes/CCS2ChickenGraphController` | ~offset×8, −field×1 | resize 344→320 |
-| `!GlobalTypes/CCS2UIPawnGraphController` | ＋field×1, ~offset×11 | resize 448→472 |
-| `!GlobalTypes/CClientAlphaProperty` | — | realign, flags |
-| `!GlobalTypes/CConstantForceController` | — | realign, flags |
-| `!GlobalTypes/CDebugSnapshotData_t` | ~meta×1 | — |
-| `!GlobalTypes/CDecalInstance` | ＋field×1, ~offset×6 | — |
-| `!GlobalTypes/CDetailPropModel` | ＋field×1, ~offset×15 | resize 320→328 |
-| `!GlobalTypes/CEntityAttributeTable` | ~type×2 | — |
-| `!GlobalTypes/CFlashlightEffect` | ~type×1 | — |
-| `!GlobalTypes/CFogScatteringLayer` | — | resize 64→72 |
-| `!GlobalTypes/CGameChoreoServices` | — | realign, flags |
-| `!GlobalTypes/CGlobalLightBase` | ~type×3 | — |
-| `!GlobalTypes/CInfoChoreoAnchorPosition` | ＋field×4, ~offset×4, −field×2 | resize 56→80, realign, flags |
-| `!GlobalTypes/CMaterialDrawDescriptor` | ＋field×1, ~offset×8 | resize 264→280 |
-| `!GlobalTypes/CMotorController` | ~type×1 | realign, flags |
-| `!GlobalTypes/CMovementStatsProperty` | — | realign, flags |
-| `!GlobalTypes/CMultiplayer_Expresser` | — | realign, flags |
-| `!GlobalTypes/CNPCPhysicsHull` | ~meta×2 | resize 56→64, flags |
-| `!GlobalTypes/CNetworkTransmitComponent` | — | realign, flags |
-| `!GlobalTypes/CNmAdditiveBlendTask` | — | resize 208→256, realign |
-| `!GlobalTypes/CNmAimCSTask` | — | resize 256→304 |
-| `!GlobalTypes/CNmBlendTask` | — | resize 208→256, realign |
-| `!GlobalTypes/CNmBlendTaskBase` | — | resize 208→256 |
-| `!GlobalTypes/CNmCachedPoseReadTask` | — | resize 80→128, realign |
-| `!GlobalTypes/CNmCachedPoseWriteTask` | — | resize 80→128, realign |
-| `!GlobalTypes/CNmChainLookatNode::CDefinition` | ＋field×4, ~offset×5, −field×2 | resize 56→120 |
-| `!GlobalTypes/CNmChainLookatTask` | −field×11 | resize 128→288, realign |
-| `!GlobalTypes/CNmClip` | ＋field×1, ~offset×6, −field×4 | resize 576→512 |
-| `!GlobalTypes/CNmFollowBoneTask` | — | resize 104→144, realign |
-| `!GlobalTypes/CNmFootIKTask` | ~offset×12 | resize 272→320 |
-| `!GlobalTypes/CNmGraphDocBoneMaskNode` | ＋field×1 | resize 520→528 |
-| `!GlobalTypes/CNmGraphDocDataDictionary::IDSet_t` | ~meta×2 | — |
-| `!GlobalTypes/CNmGraphDocDataDictionary::ParameterSet_t` | ~meta×1 | — |
-| `!GlobalTypes/CNmGraphDocDataDictionary::Parameter_t` | ~meta×1 | — |
-| `!GlobalTypes/CNmGraphInstance` | — | resize 992→976 |
-| `!GlobalTypes/CNmModelSpaceBlendTask` | — | resize 208→256, realign |
-| `!GlobalTypes/CNmOverlayBlendTask` | — | resize 208→256, realign |
-| `!GlobalTypes/CNmPoseTask` | — | resize 72→112 |
-| `!GlobalTypes/CNmPreviewArchetype` | — | resize 48→64 |
-| `!GlobalTypes/CNmReferencePoseTask` | — | resize 72→112, realign |
-| `!GlobalTypes/CNmRootMotionOverrideNode::CDefinition` | ＋field×1, ~offset×3 | — |
-| `!GlobalTypes/CNmSampleTask` | — | resize 88→128, realign |
-| `!GlobalTypes/CNmScaleTask` | — | resize 160→208, realign |
-| `!GlobalTypes/CNmSkeleton` | ＋field×1, ~offset×1 | resize 192→208 |
-| … | _1016 more changed classes — see `field_history.json`_ | |

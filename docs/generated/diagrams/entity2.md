@@ -17,6 +17,7 @@ classDiagram
     CEntityComponentHelper --> EntComponentInfo_t
     EntComponentInfo_t --> CEntityComponentHelper
     EntityIOQueuePrioritizedEvent_t *-- GameTime_t
+    EntityIOQueuePrioritizedEvent_t *-- EntityIOTargetType_t
     EntityIOQueuePrioritizedEvent_t *-- CVariantDefaultAllocator
     CEntityIdentity --> CEntityAttributeTable
     CEntityInstance --> CEntityIdentity

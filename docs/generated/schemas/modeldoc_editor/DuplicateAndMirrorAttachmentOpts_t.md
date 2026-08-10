@@ -26,7 +26,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_Name` | CUtlString |  | `MPropertyFlattenIntoParentRow` `MPropertyReadOnly` |
-| `0x8` | `m_eMirrorSpace` | [MirrorSpace_t](../!GlobalTypes/MirrorSpace_t.md) |  | `MPropertyDescription Whether to mirror relative to the parent bone or to the model.` `MPropertyFriendlyName Mirror Space` |
+| `0x8` | `m_eMirrorSpace` | [MirrorSpace_t](../modeldoc_editor/MirrorSpace_t.md) |  | `MPropertyDescription Whether to mirror relative to the parent bone or to the model.` `MPropertyFriendlyName Mirror Space` |
 | `0xc` | `m_bSwapLeftRightParentBones` | bool |  | `MPropertyDescription Swap parent bones if a bone ends in a known left/right suffix, i.e. _L, _left, etc... and there's a correspondingly named bones.  Works best for bone relative mirroring in Y, i.e. across the XZ plane, left/right.` `MPropertyFriendlyName Swap Left/Right Parent Bones` |
 | `0xd` | `m_bMirrorX` | bool |  | `MPropertyDescription Mirror X Axis / Across YZ Plane / Front/Back` `MPropertyFriendlyName Mirror X Axis / YZ Plane` |
 | `0xe` | `m_bMirrorY` | bool |  | `MPropertyDescription Mirror Y Axis / Across XZ Plane / Left/Right` `MPropertyFriendlyName Mirror Y Axis / XZ Plane` |

@@ -31,7 +31,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x18` | `m_nodePath` | [CAnimNodePath](../animgraphlib/CAnimNodePath.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
-| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../!GlobalTypes/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
+| `0x48` | `m_networkMode` | [AnimNodeNetworkMode](../animgraphlib/AnimNodeNetworkMode.md) | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x50` | `m_name` | CUtlString | [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md) |  |
 | `0x6c` | `m_playbackSpeed` | float32 | [CSequenceUpdateNodeBase](../animgraphlib/CSequenceUpdateNodeBase.md) |  |
 | `0x70` | `m_bLoop` | bool | [CSequenceUpdateNodeBase](../animgraphlib/CSequenceUpdateNodeBase.md) |  |
@@ -44,7 +44,7 @@ classDiagram
 | `0xc0` | `m_flOriginalJumpDuration` | float32 |  |  |
 | `0xc4` | `m_flJumpStartCycle` | float32 |  |  |
 | `0xc8` | `m_flJumpEndCycle` | float32 |  |  |
-| `0xcc` | `m_eCorrectionMethod` | [JumpCorrectionMethod](../!GlobalTypes/JumpCorrectionMethod.md) |  |  |
+| `0xcc` | `m_eCorrectionMethod` | [JumpCorrectionMethod](../animgraphlib/JumpCorrectionMethod.md) |  |  |
 | `0xd0` | `m_bTranslationAxis` | bool[3] |  |  |
 | `0xd3` | `m_bScaleSpeed` | bool |  |  |
 

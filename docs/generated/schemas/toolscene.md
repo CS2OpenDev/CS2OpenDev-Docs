@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/toolscene.md)
 
-11 types. Each links to its own page with the full field layout.
+12 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -24,3 +24,4 @@ nav_exclude: true
 | [CLightRigSunLight](toolscene/CLightRigSunLight.md) | class | 84 | 5 | [CLightRigLight](toolscene/CLightRigLight.md) |
 | [CLightRigVMap](toolscene/CLightRigVMap.md) | class | 232 | 3 |  |
 | [CToolSceneLightRig](toolscene/CToolSceneLightRig.md) | class | 360 | 10 |  |
+| [LightRigType_t](toolscene/LightRigType_t.md) | enum | — | 4 |  |

@@ -34,7 +34,7 @@ classDiagram
 | `0x30` | `m_tagID` | [AnimTagID](../modellib/AnimTagID.md) | [CAnimTagBase](../animgraphlib/CAnimTagBase.md) | `MPropertySuppressField` |
 | `0x48` | `m_bIsReferenced` | bool | [CAnimTagBase](../animgraphlib/CAnimTagBase.md) | `MPropertySuppressField` |
 | `0x58` | `m_AttributeName` | CUtlString |  | `MPropertyFriendlyName Attribute Name` |
-| `0x60` | `m_AttributeType` | [MatterialAttributeTagType_t](../!GlobalTypes/MatterialAttributeTagType_t.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Attribute Type` |
+| `0x60` | `m_AttributeType` | [MatterialAttributeTagType_t](../animgraphlib/MatterialAttributeTagType_t.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Attribute Type` |
 | `0x64` | `m_flValue` | float32 |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Value` |
 | `0x68` | `m_Color` | Color |  | `MPropertyAttrStateCallback` `MPropertyFriendlyName Color` |
 

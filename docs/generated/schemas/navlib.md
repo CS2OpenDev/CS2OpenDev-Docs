@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/navlib.md)
 
-14 types. Each links to its own page with the full field layout.
+17 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -27,3 +27,6 @@ nav_exclude: true
 | [INavPathCost](navlib/INavPathCost.md) | class | 16 | 1 |  |
 | [NavGravity_t](navlib/NavGravity_t.md) | class | 16 | 2 |  |
 | [NavHull_t](navlib/NavHull_t.md) | class | 4 | 1 |  |
+| [NavAttributeDynamicType](navlib/NavAttributeDynamicType.md) | enum | — | 22 |  |
+| [NavAttributeEnum](navlib/NavAttributeEnum.md) | enum | — | 20 |  |
+| [NavDirType](navlib/NavDirType.md) | enum | — | 5 |  |

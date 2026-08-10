@@ -30,7 +30,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x10` | `m_nMaxCarry` | int32 |  |  |
 | `0x1c` | `m_nSplashSize` | [CRangeInt](../tier2/CRangeInt.md) |  |  |
-| `0x24` | `m_nFlags` | [AmmoFlags_t](../!GlobalTypes/AmmoFlags_t.md) |  |  |
+| `0x24` | `m_nFlags` | [AmmoFlags_t](../server/AmmoFlags_t.md) |  |  |
 | `0x28` | `m_flMass` | float32 |  |  |
 | `0x2c` | `m_flSpeed` | [CRangeFloat](../tier2/CRangeFloat.md) |  |  |
 
