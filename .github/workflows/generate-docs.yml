@@ -24,16 +24,18 @@ jobs:
   # -------------------------------------------------------------------------
   # 1. Materialise the latest SchemaTracker build from its `latest` branch (a
   #    shallow single-branch clone, so the multi-GB history is never fetched),
-  #    regenerate docs, then either push directly (push event) or open/update a
-  #    PR (schedule / dispatch).  The commit is diff-gated, so an unchanged
-  #    latest build produces no PR.
+  #    regenerate docs, and commit any diff straight to the current branch.
+  #    The commit is diff-gated, so an unchanged latest build is a no-op.
+  #    (The org forbids Actions from opening PRs, and the generated docs are
+  #    deterministic, so we commit directly rather than via a review PR — the
+  #    build + deploy jobs then publish the freshly committed docs in the same
+  #    run.)
   # -------------------------------------------------------------------------
   check-and-update:
     name: Regenerate docs from latest SchemaTracker build
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pull-requests: write
 
     steps:
       - name: Checkout repository
@@ -86,9 +88,12 @@ jobs:
             --platform windows-x86_64 \
             --output docs
 
-      # On direct push events we commit straight to the current branch.
-      - name: Commit and push (push event)
-        if: github.event_name == 'push'
+      # Commit any regenerated docs straight to the current branch.  Diff-gated,
+      # so an unchanged build is a no-op.  A GITHUB_TOKEN push does not re-trigger
+      # this workflow (loop-safe); the [skip ci] tag is belt-and-suspenders.  The
+      # build + deploy jobs below run in this same run, so freshly committed docs
+      # publish immediately.
+      - name: Commit regenerated docs
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -99,25 +104,6 @@ jobs:
             git commit -m "docs: regenerate for SchemaTracker build ${{ steps.tracker.outputs.build }} [skip ci]"
             git push
           fi
-
-      # On scheduled / manual runs, open (or update) a PR so changes are
-      # visible and can be reviewed before landing on the default branch.
-      - name: Open or update pull request (schedule / workflow_dispatch)
-        if: github.event_name != 'push'
-        uses: peter-evans/create-pull-request@v7
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "docs: regenerate for SchemaTracker build ${{ steps.tracker.outputs.build }} [skip ci]"
-          branch: automated/docs-update
-          delete-branch: true
-          title: "docs: automated update for SchemaTracker build ${{ steps.tracker.outputs.build }}"
-          body: |
-            Automated documentation update triggered by the `${{ github.event_name }}` event.
-
-            **SchemaTracker build**: `${{ steps.tracker.outputs.build }}` (commit `${{ steps.tracker.outputs.sha }}`)
-
-            This pull request was created automatically by the [Generate Documentation](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) workflow.
-          labels: automated,documentation
 
   # -------------------------------------------------------------------------
   # 2. Build Jekyll site from the docs/ directory.
@@ -160,6 +146,8 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
     needs: build
+    # Only publish the live site from the default branch.
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
