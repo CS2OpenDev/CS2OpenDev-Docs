@@ -10,7 +10,7 @@ nav_exclude: true
 Auto-generated reference for the **shipped CS2 runtime**, extracted deterministically from the game binaries by [CS2OpenDev-SchemaTracker](https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker): entity schemas, protobuf wire messages, network/demo message tables, game events, console variables & commands, and the game-content tables (items, game modes, surfaces, props, maps).
 
 {: .note }
-> Source: CS2 build **24537688** · 2026-08-03 · `windows-x86_64` · schema `0.5.1`
+> Source: CS2 build **24662694** · 2026-08-10 · `windows-x86_64` · schema `0.5.1`
 
 ## Statistics
 

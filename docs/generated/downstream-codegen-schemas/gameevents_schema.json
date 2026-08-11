@@ -1,11 +1,11 @@
 {
   "schema_format_version": "2.0",
   "generator": "https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker",
-  "build_id": 24537688,
+  "build_id": 24662694,
   "platform": "windows-x86_64",
   "revision": "hl2sdk-cs2/5f891c9026230cce0fc0a3fc4b5fef1c467a1385/v1/3d1200e346019c59",
-  "version_date": "2026-08-03",
-  "version_time": "2026-08-03T18:18:10Z",
+  "version_date": "2026-08-10",
+  "version_time": "2026-08-10T23:45:15Z",
   "events": [
     {
       "name": "achievement_earned",

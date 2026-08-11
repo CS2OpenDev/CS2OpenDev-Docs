@@ -1,11 +1,11 @@
 {
   "schema_format_version": "2.0",
   "generator": "https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker",
-  "build_id": 24537688,
+  "build_id": 24662694,
   "platform": "windows-x86_64",
   "revision": "hl2sdk-cs2/5f891c9026230cce0fc0a3fc4b5fef1c467a1385/v1/3d1200e346019c59",
-  "version_date": "2026-08-03",
-  "version_time": "2026-08-03T18:18:10Z",
+  "version_date": "2026-08-10",
+  "version_time": "2026-08-10T23:45:15Z",
   "classes": [
     {
       "alignment": 255,
@@ -525392,7 +525392,7 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"preset\": 0,\n\t\"pitchrun\": 0,\n\t\"pitchstart\": 0,\n\t\"spinup\": 0,\n\t\"spindown\": 0,\n\t\"volrun\": 0,\n\t\"volstart\": 0,\n\t\"fadein\": 0,\n\t\"fadeout\": 0,\n\t\"lfotype\": 0,\n\t\"lforate\": 0,\n\t\"lfomodpitch\": 0,\n\t\"lfomodvol\": 0,\n\t\"cspinup\": 0,\n\t\"cspincount\": 0,\n\t\"pitch\": 0,\n\t\"spinupsav\": 0,\n\t\"spindownsav\": 0,\n\t\"pitchfrac\": <HIDDEN FOR DIFF>,\n\t\"vol\": 32767,\n\t\"fadeinsav\": 0,\n\t\"fadeoutsav\": 0,\n\t\"volfrac\": 0,\n\t\"lfofrac\": 0,\n\t\"lfomult\": 0\n}",
+          "value": "{\n\t\"preset\": 0,\n\t\"pitchrun\": 0,\n\t\"pitchstart\": 0,\n\t\"spinup\": 0,\n\t\"spindown\": 0,\n\t\"volrun\": 0,\n\t\"volstart\": 0,\n\t\"fadein\": 0,\n\t\"fadeout\": 0,\n\t\"lfotype\": 0,\n\t\"lforate\": 0,\n\t\"lfomodpitch\": 0,\n\t\"lfomodvol\": 0,\n\t\"cspinup\": 0,\n\t\"cspincount\": 0,\n\t\"pitch\": 0,\n\t\"spinupsav\": 0,\n\t\"spindownsav\": 0,\n\t\"pitchfrac\": <HIDDEN FOR DIFF>,\n\t\"vol\": 32762,\n\t\"fadeinsav\": 0,\n\t\"fadeoutsav\": 0,\n\t\"volfrac\": 0,\n\t\"lfofrac\": 0,\n\t\"lfomult\": 0\n}",
           "value_parsed": {
             "preset": 0,
             "pitchrun": 0,
@@ -525413,7 +525413,7 @@
             "spinupsav": 0,
             "spindownsav": 0,
             "pitchfrac": null,
-            "vol": 32767,
+            "vol": 32762,
             "fadeinsav": 0,
             "fadeoutsav": 0,
             "volfrac": 0,
@@ -525441,7 +525441,7 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"preset\": 0,\n\t\"pitchrun\": 0,\n\t\"pitchstart\": 0,\n\t\"spinup\": 0,\n\t\"spindown\": 0,\n\t\"volrun\": 0,\n\t\"volstart\": 0,\n\t\"fadein\": 0,\n\t\"fadeout\": 0,\n\t\"lfotype\": 0,\n\t\"lforate\": 0,\n\t\"lfomodpitch\": 0,\n\t\"lfomodvol\": 0,\n\t\"cspinup\": 0,\n\t\"cspincount\": 0,\n\t\"pitch\": 0,\n\t\"spinupsav\": 0,\n\t\"spindownsav\": 0,\n\t\"pitchfrac\": <HIDDEN FOR DIFF>,\n\t\"vol\": 32767,\n\t\"fadeinsav\": 0,\n\t\"fadeoutsav\": 0,\n\t\"volfrac\": 0,\n\t\"lfofrac\": 0,\n\t\"lfomult\": 0\n}",
+          "value": "{\n\t\"preset\": 0,\n\t\"pitchrun\": 0,\n\t\"pitchstart\": 0,\n\t\"spinup\": 0,\n\t\"spindown\": 0,\n\t\"volrun\": 0,\n\t\"volstart\": 0,\n\t\"fadein\": 0,\n\t\"fadeout\": 0,\n\t\"lfotype\": 0,\n\t\"lforate\": 0,\n\t\"lfomodpitch\": 0,\n\t\"lfomodvol\": 0,\n\t\"cspinup\": 0,\n\t\"cspincount\": 0,\n\t\"pitch\": 0,\n\t\"spinupsav\": 0,\n\t\"spindownsav\": 0,\n\t\"pitchfrac\": <HIDDEN FOR DIFF>,\n\t\"vol\": 32762,\n\t\"fadeinsav\": 0,\n\t\"fadeoutsav\": 0,\n\t\"volfrac\": 0,\n\t\"lfofrac\": 0,\n\t\"lfomult\": 0\n}",
           "value_parsed": {
             "preset": 0,
             "pitchrun": 0,
@@ -525462,7 +525462,7 @@
             "spinupsav": 0,
             "spindownsav": 0,
             "pitchfrac": null,
-            "vol": 32767,
+            "vol": 32762,
             "fadeinsav": 0,
             "fadeoutsav": 0,
             "volfrac": 0,

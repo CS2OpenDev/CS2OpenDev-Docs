@@ -7,7 +7,7 @@ nav_order: 8
 # Network & Demo Messages
 
 {: .note }
-> Source: CS2 build **24537688** · 2026-08-03 · `windows-x86_64` · schema `0.5.1`
+> Source: CS2 build **24662694** · 2026-08-10 · `windows-x86_64` · schema `0.5.1`
 
 The wire-protocol tables: integer message IDs mapped to the protobuf message type carried, recovered from a static RTTI scan of the shipped binaries.  Each type links to its definition on the [protobuf pages](protobufs.md).
 
