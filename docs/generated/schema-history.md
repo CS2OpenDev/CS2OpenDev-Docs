@@ -7,13 +7,13 @@ nav_order: 15
 # Schema History
 
 {: .note }
-> Source: CS2 build **24662694** · 2026-08-10 · `windows-x86_64` · schema `0.5.1`
+> Source: CS2 build **24701871** · 2026-08-12 · `windows-x86_64` · schema `0.9.0`
 
 Field-precise, build-to-build evolution of the CS2 C++ entity schema, derived by diffing every committed `entity_schema.json` snapshot (SchemaTracker's cumulative `schema_evolution.json`, Layer A).  Unlike the coarse [Changelog](changelog.html) — which only reports *that* a class changed — this reports *which field* was added, removed, retyped, or moved.
 
 - **Platform:** `windows-x86_64` (the canonical render; `linux-x86_64` differs only in offsets/sizes)
-- **Baseline build:** `10832117` · **Latest build:** `24662694`
-- **Transitions:** 380 total, **140 with structural changes** (240 no-op builds)
+- **Baseline build:** `10832117` · **Latest build:** `24701871`
+- **Transitions:** 381 total, **140 with structural changes** (241 no-op builds)
 - **Full per-field history:** the portable [`field_history.json`](downstream-codegen-schemas/field_history.json) carries first/last-seen and the type history for every `(class, field)` across all builds.
 
 To bring an instance captured under build *X* forward to build *Y*, apply each transition in `[X, Y)` in order.  Every op carries both endpoints, so the same chain replays backward.
@@ -22,7 +22,7 @@ To bring an instance captured under build *X* forward to build *Y*, apply each t
 
 | Transition | Classes +/−/~ | Enums +/−/~ | Field ops |
 |------------|---------------|-------------|-----------|
-| `24537688` → `24662694` | 0 / 0 / 2 | 0 / 0 / 0 | 0 |
+| `24662694` → `24701871` | 0 / 0 / 2 | 0 / 0 / 0 | 0 |
 | `24442510` → `24537688` | 0 / 0 / 6 | 0 / 0 / 0 | 99 |
 | `24304127` → `24442510` | 0 / 0 / 0 | 0 / 0 / 1 | 0 |
 | `24248951` → `24304127` | 0 / 0 / 1 | 0 / 0 / 0 | 0 |
@@ -165,7 +165,7 @@ To bring an instance captured under build *X* forward to build *Y*, apply each t
 
 ## Most recent structural changes
 
-### `24537688` → `24662694`
+### `24662694` → `24701871`
 
 **Classes changed (2):**
 

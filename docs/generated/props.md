@@ -7,7 +7,7 @@ nav_order: 13
 # Prop & Collision Data
 
 {: .note }
-> Source: CS2 build **24662694** · 2026-08-10 · `windows-x86_64` · schema `0.5.1`
+> Source: CS2 build **24701871** · 2026-08-12 · `windows-x86_64` · schema `0.9.0`
 
 ## Prop classes (71)
 

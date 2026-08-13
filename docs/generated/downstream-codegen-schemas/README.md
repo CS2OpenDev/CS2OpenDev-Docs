@@ -9,7 +9,7 @@ source instead of a chain of third-party dumps.
 ## Platform & provenance
 
 Every file here projects **one** `(build, platform)` artifact set:
-`windows-x86_64` (CS2 build `24662694`).  The `build_id` (the Steam CS2 game build,
+`windows-x86_64` (CS2 build `24701871`).  The `build_id` (the Steam CS2 game build,
 numeric and monotonic) and `platform` are stamped into each schema's header
 alongside the walker `revision` and the build timestamps — read them there
 rather than assuming.
@@ -186,7 +186,7 @@ the documented vocabulary tracks upstream additions.
 
 ### ATOMIC `type.atomicCategory` values (schema_format_version 2.1+)
 
-_(none observed in this build)_
+`ATOMIC_COLLECTION_OF_T`, `ATOMIC_I`, `ATOMIC_PLAIN`, `ATOMIC_T`, `ATOMIC_TT`, `ATOMIC_UNSPECIFIED`
 
 ### Metadata keys (class / field / enum / member)
 
@@ -293,4 +293,4 @@ _(none observed in this build)_
 - `MVectorIsSometimesCoordinate`
 
 
-_Last regenerated against CS2 build `hl2sdk-cs2/5f891c9026230cce0fc0a3fc4b5fef1c467a1385/v1/3d1200e346019c59` (2026-08-10)._
+_Last regenerated against CS2 build `hl2sdk-cs2/5f891c9026230cce0fc0a3fc4b5fef1c467a1385/v1/3d1200e346019c59` (2026-08-12)._
