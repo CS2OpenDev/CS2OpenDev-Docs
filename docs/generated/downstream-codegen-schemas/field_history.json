@@ -487275,7 +487275,7 @@
   ],
   "latest_build": "24662694",
   "platform": "windows-x86_64",
-  "schema_format_version": "2.0",
+  "schema_format_version": "2.1",
   "source": {
     "build_id": "24662694",
     "generator": "https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker",
