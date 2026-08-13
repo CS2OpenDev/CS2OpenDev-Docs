@@ -58,7 +58,14 @@ except ImportError:
 # SchemaTracker's *native* shape (camelCase keys, string-encoded int64 offsets/
 # sizes, UPPERCASE type categories, projectName/binary-module split) rather than
 # DumpSource2's shape — a deliberate breaking change for downstream consumers.
-SCHEMA_FORMAT_VERSION = "2.0"
+# 2.1: SchemaTracker's 0.9.0 walkers (v1.3.0 corpus) added two fields to ATOMIC
+# type nodes, echoed here verbatim — `atomicCategory` (the explicit
+# SchemaAtomicCategory discriminator: ATOMIC_PLAIN / ATOMIC_T /
+# ATOMIC_COLLECTION_OF_T / ATOMIC_TT / ATOMIC_I) and a widened `count`
+# (COLLECTION_OF_T fixed-buffer capacity N, read from the binary's
+# m_nFixedBufferCount — previously only the two ATOMIC_I bit-vector types
+# carried a non-zero count). Additive → minor bump (SchemaTracker#8).
+SCHEMA_FORMAT_VERSION = "2.1"
 
 # Public GitHub Pages base for the generated reference, used to build
 # absolute cross-links (e.g. cs2_schema.json's diagram_url, issue #21.4) that
@@ -2445,6 +2452,7 @@ def _collect_type_vocabulary(entities: dict[str, dict]) -> dict[str, Any]:
     categories: set[str] = set()
     builtins: set[str] = set()
     atomics: set[str] = set()
+    atomic_categories: set[str] = set()
     metadata_keys: set[str] = set()
     size_only_classes = 0
 
@@ -2460,6 +2468,11 @@ def _collect_type_vocabulary(entities: dict[str, dict]) -> dict[str, Any]:
                     builtins.add(name)
                 elif cat == "ATOMIC":
                     atomics.add(name)
+            # schema_format_version 2.1: ATOMIC nodes carry the explicit
+            # SchemaAtomicCategory discriminator (SchemaTracker >= 0.9.0).
+            acat = t.get("atomicCategory")
+            if isinstance(acat, str):
+                atomic_categories.add(acat)
         for k in ("inner", "inner2", "inner3"):
             inner = t.get(k)
             if inner is not None:
@@ -2503,6 +2516,7 @@ def _collect_type_vocabulary(entities: dict[str, dict]) -> dict[str, Any]:
         "categories": sorted(categories),
         "builtins": sorted(builtins),
         "atomics": sorted(atomics),
+        "atomic_categories": sorted(atomic_categories),
         "metadata_keys": sorted(metadata_keys),
         "size_only_classes": size_only_classes,
     }
@@ -2605,6 +2619,10 @@ coarse-grained project axis (`client`, `server`, `entity2`,
             _format_vocab_section("`builtin` type names", vocab["builtins"]),
             _format_vocab_section("`atomic` type names", vocab["atomics"]),
             _format_vocab_section(
+                "ATOMIC `type.atomicCategory` values (schema_format_version 2.1+)",
+                vocab["atomic_categories"],
+            ),
+            _format_vocab_section(
                 "Metadata keys (class / field / enum / member)",
                 vocab["metadata_keys"],
                 wrap=False,
@@ -2672,7 +2690,7 @@ source instead of a chain of third-party dumps.
 ## Files
 
 - **`cs2_schema.json`** — the entity schema in SchemaTracker's **native**
-  shape (`schema_format_version` `2.0`).  Top-level: `generator`, `build_id`,
+  shape (`schema_format_version` `2.1`).  Top-level: `generator`, `build_id`,
   `platform`, `revision`, `version_date`, `version_time`, `classes`, `enums`.
   Each class carries `name`, `module` (the binary it lives in), `projectName`,
   `cppName`, `size`, `alignment`, `flags` / `flags2`, `parents[]`, `fields[]`
@@ -2680,7 +2698,18 @@ source instead of a chain of third-party dumps.
   depths; each enum carries `alignment` (underlying integer type) and
   `members[]`.  Integer offsets / sizes are **string-encoded** and type
   `category` values are **UPPERCASE** (`BUILTIN`, `ATOMIC`, `DECLARED_CLASS`,
-  `PTR`, `FIXED_ARRAY`, `BITFIELD`, …).  Optional `annotations` blocks layer
+  `PTR`, `FIXED_ARRAY`, `BITFIELD`, …).  As of `2.1` (SchemaTracker 0.9.0
+  walkers, the v1.3.0 corpus), ATOMIC type nodes also carry
+  `atomicCategory` — the explicit `SchemaAtomicCategory` discriminator
+  (`ATOMIC_PLAIN` / `ATOMIC_T` / `ATOMIC_COLLECTION_OF_T` / `ATOMIC_TT` /
+  `ATOMIC_I`) that previously had to be inferred from which `inner` keys
+  were present — and `ATOMIC_COLLECTION_OF_T` nodes populate `count` with
+  the fixed-buffer capacity `N` of the `CUtlVectorFixedGrowable< T, N >`
+  family, read from the binary's own record (never parsed from the type
+  name).  A non-zero `count` on an ATOMIC node therefore no longer implies
+  `ATOMIC_I` — switch on `atomicCategory` instead
+  ([SchemaTracker#8](https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker/issues/8)).
+  Optional `annotations` blocks layer
   in community-curated descriptions / notes / warnings, and an optional
   `diagram_url` on a class points at its module's UML inheritance diagram.
   Records are keyed by `(projectName, name)` — see [How duplicate class

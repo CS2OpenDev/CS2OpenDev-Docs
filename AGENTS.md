@@ -70,7 +70,7 @@ integer `offset` / `size` / `count` values are **string-encoded**
 
 ```json
 {
-  "schema_format_version": "2.0",
+  "schema_format_version": "2.1",
   "generator": "https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker",
   "build_id": 24537688,
   "platform": "windows-x86_64",
@@ -144,10 +144,29 @@ directly and ignore `inner`.  `count` is string-encoded.
 | `BUILTIN` | `name` | `"int32"` |
 | `DECLARED_CLASS` | `name`, `module` | `"CCSPlayerPawn"` |
 | `DECLARED_ENUM` | `name`, `module` | `"AmmoIndex_t"` |
-| `ATOMIC` | `name`, `inner` (sometimes `inner2`, `inner3`) | `"CHandle< CCSPlayerPawn >"` |
+| `ATOMIC` | `name`, `atomicCategory`, `inner` (sometimes `inner2`, `inner3`), `count` (see below) | `"CHandle< CCSPlayerPawn >"` |
 | `PTR` | `name`, `inner` | `"CPulse_Chunk*"` |
 | `FIXED_ARRAY` | `name`, `inner`, `count` | `"char[128]"` |
 | `BITFIELD` | `name`, `count` (bits) | `"bitfield:1"` |
+
+**ATOMIC sub-taxonomy** (`schema_format_version` 2.1+, SchemaTracker 0.9.0
+walkers / v1.3.0 corpus): ATOMIC nodes carry `atomicCategory` — the engine's
+own `SchemaAtomicCategory_t` discriminator, previously only inferable from
+which `inner` keys were present:
+
+| `atomicCategory` | Meaning | `count` |
+|---|---|---|
+| `ATOMIC_PLAIN` | No template args (`CUtlString`, `Vector`, …) | `"0"` |
+| `ATOMIC_T` | One type arg (`CHandle< T >`, `CUtlVector< T >`, …) — `inner` is `T` | `"0"` |
+| `ATOMIC_COLLECTION_OF_T` | Collection of `T` — `inner` is `T` | Fixed-buffer capacity `N` for the `CUtlVectorFixedGrowable< T, N >` / `CUtlLeanVectorFixedGrowable< T, N >` family (read from the binary's `m_nFixedBufferCount`, never parsed from the name); `"0"` for unbounded collections |
+| `ATOMIC_TT` | Two type args (`CUtlOrderedMap< K, V >`, …) — `inner` + `inner2` | `"0"` |
+| `ATOMIC_I` | Integer template arg (`CBitVec< 10 >`, `CTypedBitVec< 64 >`) | The integer arg |
+
+A non-zero `count` on an ATOMIC node therefore no longer implies
+`ATOMIC_I` — switch on `atomicCategory` instead
+([SchemaTracker#8](https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker/issues/8)).
+Artifacts produced by pre-0.9.0 walkers lack `atomicCategory`; treat its
+absence as "infer from `inner` keys as before".
 
 `inner` is itself a type record — recurse when you need the element type of
 a template / pointer / array.  When the innermost type is a
