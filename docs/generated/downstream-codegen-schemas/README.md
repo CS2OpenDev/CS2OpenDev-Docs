@@ -105,9 +105,18 @@ coarse-grained project axis (`client`, `server`, `entity2`,
   `latest_build`, `transition_count`, `fields` list (each `class` /
   `field` / `firstSeenBuild` / `lastSeenBuild` / `typeHistory`, plus an
   overlay-supplied `confirmedRename` where the community has verified one),
-  and `enums`.  Serves alias resolution / forward-back schema migration
-  for demo parsers and SDKs.  See the [Schema History](../schema-history.html)
-  page for the human-readable break radar.
+  and `enums`.  **`[firstSeenBuild, lastSeenBuild]` is a presence *hull*,
+  not continuous presence**: a field can be absent for intermediate builds
+  with no trace in this file (e.g. the 775 classes that vanished at
+  `22876476 → 22877907` and returned one build later).  Reconstruct exact
+  presence from `schema_evolution.json`'s per-transition add/remove ops.
+  The evolution artifact's neutral rename/move *evidence surfaces*
+  (`pairedEvidence` plus the unselected `pairCandidates` /
+  `classPairCandidates` / `fieldMoveCandidates` lists) are **not**
+  projected into this file — read them from the artifact itself; the
+  [Schema History](../schema-history.html) page documents them and serves
+  as the human-readable break radar.  Serves alias resolution /
+  forward-back schema migration for demo parsers and SDKs.
 
 All six files share a single top-level `schema_format_version` string
 that is bumped as a family.  Bump the major when a field is removed or
