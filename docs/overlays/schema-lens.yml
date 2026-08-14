@@ -3,9 +3,19 @@
 # Community overlay for the Schema History page (Layer A / schema_evolution.json).
 #
 # SchemaTracker emits the *mechanical* facts only — structural field/class/enum
-# deltas, plus neutral rename SIGNALS (pairedEvidence: offsetExact ∧ typeMatch).
+# deltas, plus neutral rename/move EVIDENCE:
+#   - pairedEvidence            (greedy 1:1, always offsetExact ∧ typeMatch; frozen)
+#   - pairCandidates            (0.6.0: N:M unselected within-class remove/add pairs;
+#                                signals typeMatch / offsetExact / sizeMatch)
+#   - classPairCandidates       (0.6.0: removed/added classes sharing a bare name —
+#                                cross-module moves; bareNameMatch / sizeMatch /
+#                                fieldSetMatch)
+#   - fieldMoveCandidates       (0.6.0: same-name same-type field moved between
+#                                surviving classes; fieldNameMatch / typeMatch /
+#                                parentChainUp / parentChainDown)
 # It deliberately does NOT assert a rename, a safety verdict, or an alias chain.
-# This file is where the community supplies the judgment the machine withholds.
+# This file is where the community supplies the judgment the machine withholds —
+# any of the surfaces above may be promoted to a confirmed_renames entry here.
 # The generator reads it; it never writes back into schema_evolution.json.
 #
 # See docs/overlays/README.md and the Schema History page for context.
@@ -16,9 +26,10 @@
 # notes: >
 #   ...
 
-# Confirmed renames — promote a mechanical remove+add (or a pairedEvidence
-# pairing) to an authoritative rename.  Folded into field_history.json's
-# aliasChain and flagged on the Schema History page.
+# Confirmed renames — promote a mechanical remove+add (or a pairedEvidence /
+# candidate pairing) to an authoritative rename.  Folded into the affected
+# field_history.json records as a `confirmedRename` block and flagged on the
+# Schema History page.
 #   NOTE: a rename is not provable from the schema alone; only assert one you
 #   have independently verified (HL2SDK diff, wire capture, changelog, etc.).
 confirmed_renames: []

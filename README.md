@@ -113,12 +113,11 @@ python3 docs/generate_docs.py \
   --output docs
 ```
 
-The `latest`-branch submodule carries only the current build, not the
-cumulative `artifacts/schema_evolution/<platform>.json`, so the **Schema
-History** page and `field_history.json` are skipped in a plain submodule run
-(CI supplements them with a targeted fetch from the default branch).  For local
-development with the full history — including Schema History — point
-`--artifacts-root` at a full SchemaTracker checkout's `artifacts/` directory:
+The `latest` branch also carries the cumulative
+`artifacts/schema_evolution/<platform>.json`, so the **Schema History** page
+and `field_history.json` render straight from a plain submodule run — no
+supplemental fetch needed.  Alternatively, point `--artifacts-root` at a full
+SchemaTracker checkout's `artifacts/` directory:
 
 ```bash
 python3 docs/generate_docs.py --repo-root . \

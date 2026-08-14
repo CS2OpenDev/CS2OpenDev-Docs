@@ -2754,9 +2754,18 @@ source instead of a chain of third-party dumps.
   `latest_build`, `transition_count`, `fields` list (each `class` /
   `field` / `firstSeenBuild` / `lastSeenBuild` / `typeHistory`, plus an
   overlay-supplied `confirmedRename` where the community has verified one),
-  and `enums`.  Serves alias resolution / forward-back schema migration
-  for demo parsers and SDKs.  See the [Schema History](../schema-history.html)
-  page for the human-readable break radar.
+  and `enums`.  **`[firstSeenBuild, lastSeenBuild]` is a presence *hull*,
+  not continuous presence**: a field can be absent for intermediate builds
+  with no trace in this file (e.g. the 775 classes that vanished at
+  `22876476 → 22877907` and returned one build later).  Reconstruct exact
+  presence from `schema_evolution.json`'s per-transition add/remove ops.
+  The evolution artifact's neutral rename/move *evidence surfaces*
+  (`pairedEvidence` plus the unselected `pairCandidates` /
+  `classPairCandidates` / `fieldMoveCandidates` lists) are **not**
+  projected into this file — read them from the artifact itself; the
+  [Schema History](../schema-history.html) page documents them and serves
+  as the human-readable break radar.  Serves alias resolution /
+  forward-back schema migration for demo parsers and SDKs.
 
 All six files share a single top-level `schema_format_version` string
 that is bumped as a family.  Bump the major when a field is removed or
@@ -3414,16 +3423,30 @@ def generate_schema_history_md(
     if lens_overlay.get("notes"):
         lines.append("{: .note }\n> " + str(lens_overlay["notes"]).strip().replace("\n", "\n> ") + "\n")
 
+    schema_version = evolution.get("schemaVersion", "")
+    version_bullet = (
+        f"- **Artifact schema version:** `{schema_version}` "
+        "(SchemaTracker's `schemas/schema_evolution.proto` family)\n"
+        if schema_version
+        else ""
+    )
     lines.append(
-        f"- **Platform:** `{platform}` (the canonical render; `linux-x86_64` "
-        "differs only in offsets/sizes)\n"
+        f"- **Platform:** `{platform}` (the canonical render; windows is a "
+        "strict **superset** in class coverage — historical Windows-only tool "
+        "binaries such as `hammer.dll` / `sfm.dll` have no Linux counterparts "
+        "— while shared classes differ in offsets/sizes per platform)\n"
         f"- **Baseline build:** `{baseline}` · **Latest build:** `{latest}`\n"
+        f"{version_bullet}"
         f"- **Transitions:** {len(transitions)} total, **{len(non_empty)} with "
         f"structural changes** ({len(transitions) - len(non_empty)} no-op builds)\n"
         f"- **Full per-field history:** the portable "
         "[`field_history.json`](downstream-codegen-schemas/field_history.json) "
         "carries first/last-seen and the type history for every "
-        f"`(class, field)` across all builds.\n"
+        "`(class, field)` across all builds.  Its "
+        "`[firstSeenBuild, lastSeenBuild]` interval is a presence **hull**, "
+        "not continuous presence — a field can be absent for intermediate "
+        "builds with no trace there; exact presence replays from the "
+        "transitions below.\n"
     )
     lines.append(
         "To bring an instance captured under build *X* forward to build *Y*, apply "
@@ -3431,13 +3454,74 @@ def generate_schema_history_md(
         "the same chain replays backward.\n"
     )
 
+    # --- evidence-surface reference (schema_evolution 0.6.0–0.8.0) ---
+    lines.append("## Evidence surfaces\n")
+    lines.append(
+        "The artifact is **facts-only**: it never asserts a rename, a move, or "
+        "a safety verdict.  Alongside the raw add/remove ops it emits neutral "
+        "*evidence* lists, each signal independently provable from the two "
+        "snapshots being diffed.  Promotion to a confirmed rename happens "
+        "downstream, in [`docs/overlays/schema-lens.yml`]"
+        "(https://github.com/CS2OpenDev/CS2OpenDev-Docs/blob/main/docs/overlays/schema-lens.yml).\n"
+    )
+    lines.append("| Surface | Scope | Signals | Since |")
+    lines.append("|---------|-------|---------|-------|")
+    lines.append(
+        "| `classChanged[].pairedEvidence` | removed+added field pairs within "
+        "one class, greedy 1:1, pre-filtered to same offset **and** same "
+        "rendered type | always exactly `offsetExact`, `typeMatch` | frozen "
+        "(pre-0.6.0) |"
+    )
+    lines.append(
+        "| `classChanged[].pairCandidates` | **every** removed/added field "
+        "pair within one class whose rendered types are equal **or** whose "
+        "offsets are equal — N:M, deliberately unselected | `typeMatch`, "
+        "`offsetExact`, `sizeMatch` (never alone) | 0.6.0 |"
+    )
+    lines.append(
+        "| `classPairCandidates` | removed/added **class** pairs sharing a "
+        "bare (module-stripped) name — the cross-module move the qualified "
+        "key cannot see | `bareNameMatch` (floor), `sizeMatch`, "
+        "`fieldSetMatch` | 0.6.0 |"
+    )
+    lines.append(
+        "| `fieldMoveCandidates` | a same-named, same-typed field removed "
+        "from one **surviving** class and added to another (hoist / "
+        "push-down / sideways move) | `fieldNameMatch` + `typeMatch` "
+        "(floor), `parentChainUp`, `parentChainDown` | 0.6.0 |"
+    )
+    lines.append("")
+    lines.append(
+        "The candidate lists are **complete on their own** — every "
+        "`pairedEvidence` pair reappears in `pairCandidates`, so consumers "
+        "never need to union the two surfaces.  A 1:1 pick among tied "
+        "candidates would be an inference, which is why the wider surfaces "
+        "stay unselected; `offsetAdjacent` is never emitted (any adjacency "
+        "threshold is consumer policy, not a fact).  `pairedEvidence` itself "
+        "is frozen for compatibility.\n"
+    )
+    lines.append(
+        "Later artifact revisions add further facts: **0.7.0** covers "
+        "class-attribute changes (`staticFieldOps`, `cppName`, `projectName`, "
+        "inheritance depths, `flags2`) and a calendar axis — each transition "
+        "carries `fromManifestCreatedUtc` / `toManifestCreatedUtc`, verbatim "
+        "from the two builds' Steam provenance records; **0.8.0** adds "
+        "structured per-key metadata ops (`metaOps` on classes, fields, and "
+        "enum members; values over 256 UTF-8 bytes are carried as a SHA-256 "
+        "hash + byte count instead of inline).\n"
+    )
+
     # --- whole-history summary table (non-empty only, most-recent first) ---
+    # The Date column is the successor build's Steam manifest-creation date
+    # (schema_evolution 0.7.0's calendar axis); blank on pre-0.7.0 artifacts.
     lines.append("## Transitions with structural changes\n")
-    lines.append("| Transition | Classes +/−/~ | Enums +/−/~ | Field ops |")
-    lines.append("|------------|---------------|-------------|-----------|")
+    lines.append("| Transition | Date | Classes +/−/~ | Enums +/−/~ | Field ops |")
+    lines.append("|------------|------|---------------|-------------|-----------|")
     for tr, c in reversed(non_empty):
+        date = (tr.get("toManifestCreatedUtc", "") or "")[:10] or "—"
         lines.append(
             f"| `{tr.get('fromBuild','')}` → `{tr.get('toBuild','')}` "
+            f"| {date} "
             f"| {c['class_added']} / {c['class_removed']} / {c['class_changed']} "
             f"| {c['enum_added']} / {c['enum_removed']} / {c['enum_changed']} "
             f"| {c['field_ops']} |"
@@ -3453,6 +3537,10 @@ def generate_schema_history_md(
     for tr, c in detail:
         frm, to = tr.get("fromBuild", ""), tr.get("toBuild", "")
         lines.append(f"### `{frm}` → `{to}`\n")
+        f_ts = tr.get("fromManifestCreatedUtc", "")
+        t_ts = tr.get("toManifestCreatedUtc", "")
+        if f_ts or t_ts:
+            lines.append(f"*Steam manifests created `{f_ts or '?'}` → `{t_ts or '?'}`*\n")
         added = tr.get("classAdded", [])
         removed = tr.get("classRemoved", [])
         if added:
@@ -3464,6 +3552,15 @@ def generate_schema_history_md(
             more = f" … (+{len(removed) - 40} more)" if len(removed) > 40 else ""
             lines.append(f"**Classes removed ({len(removed)}):** {shown}{more}\n")
 
+        cpc = tr.get("classPairCandidates", [])
+        fmc = tr.get("fieldMoveCandidates", [])
+        if cpc or fmc:
+            lines.append(
+                f"**Unselected candidates:** {len(cpc)} class-pair, "
+                f"{len(fmc)} field-move — neutral evidence only, see "
+                "[Evidence surfaces](#evidence-surfaces).\n"
+            )
+
         changed = tr.get("classChanged", [])
         if changed:
             lines.append(f"**Classes changed ({len(changed)}):**\n")
@@ -3473,9 +3570,18 @@ def generate_schema_history_md(
                 kinds: dict[str, int] = {}
                 for op in cd.get("fieldOps", []):
                     kinds[op.get("kind", "")] = kinds.get(op.get("kind", ""), 0) + 1
-                ops_txt = ", ".join(
+                op_parts = [
                     f"{_FIELDOP_LABEL.get(k, k)}×{n}" for k, n in sorted(kinds.items())
-                ) or "—"
+                ]
+                if cd.get("staticFieldOps"):
+                    op_parts.append(f"static×{len(cd['staticFieldOps'])}")
+                if cd.get("metaOps"):
+                    op_parts.append(f"meta×{len(cd['metaOps'])}")
+                if cd.get("pairedEvidence"):
+                    op_parts.append(f"paired×{len(cd['pairedEvidence'])}")
+                if cd.get("pairCandidates"):
+                    op_parts.append(f"cand×{len(cd['pairCandidates'])}")
+                ops_txt = ", ".join(op_parts) or "—"
                 layout = []
                 if cd.get("resize"):
                     rz = cd["resize"]
@@ -3515,9 +3621,15 @@ def generate_field_history_json(
     """Portable per-(class,field) history for downstream alias resolution (DVN G3).
 
     A straight projection of the artifact's ``fieldHistory``/``enumHistory``,
-    plus overlay-confirmed renames folded into an authoritative ``aliasChain``
-    (the two-tier field_history seam: SchemaTracker emits mechanical facts, Docs
-    publishes the confirmed version).
+    plus overlay-confirmed renames folded into an authoritative
+    ``confirmedRename`` block on the affected records (the two-tier
+    field_history seam: SchemaTracker emits mechanical facts, Docs publishes
+    the confirmed version).
+
+    ``[firstSeenBuild, lastSeenBuild]`` is a presence *hull*, not a guarantee
+    of continuous presence — a field can be absent for intermediate builds
+    (e.g. the 775-class blip at ``22876476 -> 22880072``) with no trace here.
+    Exact presence replays from ``schema_evolution.json``'s transitions.
     """
     rename_idx = _confirmed_rename_index(lens_overlay)
 
