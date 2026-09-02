@@ -36,11 +36,14 @@ const headings = [
 	}}
 	headings={headings}
 >
-	<div data-pagefind-body>
+	<div>
 		<p>
-			{idx.classes.length} classes and {idx.enums.length} enums across {idx.modules.length} modules,
-			walked out of the shipped CS2 binaries. Coverage is runtime only: types that exist solely in
-			the Source 2 editor and tool chain are not here.
+			{idx.classes.length} class records (twins counted separately: a name registered in both
+			{' '}<code>client</code> and <code>server</code> is two records) and {idx.enums.length} enums
+			across {idx.modules.length} modules. The Windows build walks the shipped runtime binaries and
+			the Windows-only tool binaries (<code>hammer</code>, <code>resourcecompiler</code>,{' '}
+			<code>modeldoc_editor</code>, <code>worldrenderer</code> and the rest of the table below), so
+			this is a superset of what a running client or server loads, not the runtime alone.
 		</p>
 
 		<p class="cs2-provenance">
@@ -54,11 +57,11 @@ const headings = [
 			<table>
 				<thead>
 					<tr>
-						<th>Module</th>
-						<th class="value">Classes</th>
-						<th class="value">Enums</th>
-						<th>Binaries</th>
-						<th class="ann">What it holds</th>
+						<th scope="col">Module</th>
+						<th scope="col" class="value">Classes</th>
+						<th scope="col" class="value">Enums</th>
+						<th scope="col">Binaries</th>
+						<th scope="col" class="ann">What it holds</th>
 					</tr>
 				</thead>
 				<tbody>

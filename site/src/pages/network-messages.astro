@@ -40,7 +40,7 @@ const totalRows = groups.reduce((n, g) => n + g.rows.length, 0);
 	}}
 	headings={headings}
 >
-	<div data-pagefind-body>
+	<div>
 		<p>
 			CS2 identifies most of what crosses the wire, or sits in a recorded <code>.dem</code>, by a small
 			integer id rather than a type name. A live connection multiplexes several channels (net, clc, svc,
@@ -90,12 +90,12 @@ const totalRows = groups.reduce((n, g) => n + g.rows.length, 0);
 					<table>
 						<thead>
 							<tr>
-								<th class="value">Id</th>
-								<th>Message</th>
-								<th>Enum constant</th>
-								<th>Direction</th>
-								<th>Binding</th>
-								<th class="ann">Description</th>
+								<th scope="col" class="value">Id</th>
+								<th scope="col">Message</th>
+								<th scope="col">Enum constant</th>
+								<th scope="col">Direction</th>
+								<th scope="col">Binding</th>
+								<th scope="col" class="ann">Description</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -113,7 +113,7 @@ const totalRows = groups.reduce((n, g) => n + g.rows.length, 0);
 													{row.name} <span class="cs2-missing">not in this build</span>
 												</>
 											)}
-											<span class="cs2-aliases">{rowAliases(row)}</span>
+											<span class="cs2-aliases" aria-hidden="true">{rowAliases(row)}</span>
 										</td>
 										<td>
 											{row.enum && row.constant ? (

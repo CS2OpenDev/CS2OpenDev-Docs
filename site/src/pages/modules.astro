@@ -8,6 +8,12 @@ import { moduleHref } from '../lib/urls';
 const binaries = loadBinaries();
 const schemaModules = new Set(loadSchemaIndex().modules);
 
+// Stems repeat (filesystem_stdio and tier0 ship from two directories), so the
+// row id is the path with every non-id run collapsed to one dash.
+function binaryAnchor(path: string): string {
+	return path.replace(/[^A-Za-z0-9_.-]+/g, '-');
+}
+
 const headings = [{ depth: 2, slug: 'binaries', text: 'Binaries' }];
 ---
 
@@ -18,7 +24,7 @@ const headings = [{ depth: 2, slug: 'binaries', text: 'Binaries' }];
 	}}
 	headings={headings}
 >
-	<div data-pagefind-body>
+	<div>
 		<p>
 			Every binary SchemaTracker inspected for this build, with its SHA-256 so a local copy can be
 			verified against it. A binary's <code>schema_module</code> links to the schema module of the
@@ -33,17 +39,17 @@ const headings = [{ depth: 2, slug: 'binaries', text: 'Binaries' }];
 			<table>
 				<thead>
 					<tr>
-						<th>Path</th>
-						<th class="value">Size</th>
-						<th class="value">Exports</th>
-						<th class="value">Schema registrations</th>
-						<th>SHA-256</th>
-						<th>Schema module</th>
+						<th scope="col">Path</th>
+						<th scope="col" class="value">Size</th>
+						<th scope="col" class="value">Exports</th>
+						<th scope="col" class="value">Schema registrations</th>
+						<th scope="col">SHA-256</th>
+						<th scope="col">Schema module</th>
 					</tr>
 				</thead>
 				<tbody>
 					{binaries.map((b) => (
-						<tr id={b.stem}>
+						<tr id={binaryAnchor(b.path)}>
 							<td><code>{b.path}</code></td>
 							<td class="value">{formatFileSize(b.file_size)}</td>
 							<td class="value">{b.export_count}</td>

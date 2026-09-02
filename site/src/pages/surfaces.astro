@@ -20,7 +20,7 @@ const headings = materials.map((m) => ({
 	}}
 	headings={headings}
 >
-	<div data-pagefind-body>
+	<div>
 		<p>
 			Surface property records grouped by material: footstep sounds, penetration and impact
 			behavior, and the raw physics/audio coefficients CS2 keys off a surface's material. A
@@ -37,9 +37,9 @@ const headings = materials.map((m) => ({
 					<table>
 						<thead>
 							<tr>
-								<th>Scope</th>
-								<th>Source file</th>
-								<th class="ann">Properties</th>
+								<th scope="col">Scope</th>
+								<th scope="col">Source file</th>
+								<th scope="col" class="ann">Properties</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -50,7 +50,7 @@ const headings = materials.map((m) => ({
 									<td class="ann">
 										{row.properties.map((p) =>
 											p.value.trim().startsWith('[') ? (
-												<details>
+												<details class="cs2-coefficients">
 													<summary><code>{p.name}</code></summary>
 													<code>{p.value}</code>
 												</details>

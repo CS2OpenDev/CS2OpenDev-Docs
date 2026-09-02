@@ -70,7 +70,7 @@ const description =
 ---
 
 <StarlightPage frontmatter={{ title: file.name, description }} headings={headings}>
-	<div data-pagefind-body data-pagefind-meta={`file:${file.stem}`}>
+	<div data-pagefind-meta={`file:${file.stem}`}>
 		<nav class="cs2-breadcrumb" aria-label="Breadcrumb">
 			<a href={withBase('/protobufs/')}>Protobufs</a> / <span>{file.name}</span>
 		</nav>
@@ -112,9 +112,9 @@ const description =
 					<table>
 						<thead>
 							<tr>
-								<th>Message</th>
-								<th>Enum constant</th>
-								<th class="value">Value</th>
+								<th scope="col">Message</th>
+								<th scope="col">Enum constant</th>
+								<th scope="col" class="value">Value</th>
 							</tr>
 						</thead>
 						<tbody>

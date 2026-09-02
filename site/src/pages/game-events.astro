@@ -101,7 +101,7 @@ const headings = [
 	}}
 	headings={headings}
 >
-	<div data-pagefind-body>
+	<div>
 		<p>
 			A game event is a named, one-shot notification the server broadcasts to clients and writes into a{' '}
 			<code>.dem</code> recording: a round starting, a player dying, a bomb being planted. Every event
@@ -173,10 +173,10 @@ const headings = [
 			<table>
 				<thead>
 					<tr>
-						<th>Type</th>
-						<th class="value">key_t code</th>
-						<th class="ann">Description</th>
-						<th class="ann">Note</th>
+						<th scope="col">Type</th>
+						<th scope="col" class="value">key_t code</th>
+						<th scope="col" class="ann">Description</th>
+						<th scope="col" class="ann">Note</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -232,7 +232,7 @@ const headings = [
 				>
 					{eventHeading(ev, duplicates)}
 				</h3>
-				<span class="cs2-aliases">{eventAliases(ev)}</span>
+				<span class="cs2-aliases" aria-hidden="true">{eventAliases(ev)}</span>
 				{ev.description && <p>{ev.description}</p>}
 				{ev.notes && <p class="cs2-note">{ev.notes}</p>}
 				{ev.warning && (
@@ -252,9 +252,9 @@ const headings = [
 						<table>
 							<thead>
 								<tr>
-									<th>Field</th>
-									<th>Type</th>
-									<th class="ann">Description</th>
+									<th scope="col">Field</th>
+									<th scope="col">Type</th>
+									<th scope="col" class="ann">Description</th>
 								</tr>
 							</thead>
 							<tbody>

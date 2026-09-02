@@ -39,7 +39,12 @@ export interface DataTableProps {
 type SortDir = 'asc' | 'desc' | null;
 type FacetState = Record<string, string[]>;
 
-const PLACEHOLDER_RE = /<(.+?)>/g;
+// Opens on a word character so a prose "a < b and c > d" is not a placeholder.
+const PLACEHOLDER_RE = /<(\w[^<>]*)>/g;
+
+// Rendered on the server and again on hydration, so nothing may follow the browser locale.
+const COUNT_FORMAT = new Intl.NumberFormat('en-US');
+const COLLATION = 'en';
 
 /** `<token>` becomes <code>, a newline becomes <br>; everything else is text. */
 function renderHelpText(text: string): ReactNode[] {
@@ -90,6 +95,12 @@ function renderCellContent(col: Column, row: Row) {
 	return String(value);
 }
 
+/** Row ids double as URL fragments. `+` stays because `+attack` and `-attack`
+ * are both commands; any other run outside [A-Za-z0-9_.+] becomes one dash. */
+function anchorId(value: unknown): string {
+	return String(value).replace(/[^A-Za-z0-9_.+]+/g, '-');
+}
+
 function cellClassName(col: Column): string | undefined {
 	const classes: string[] = [];
 	if (col.numeric) classes.push('dtbl-num');
@@ -132,7 +143,7 @@ function compareRows(a: Row, b: Row, key: string, numeric: boolean): number {
 	}
 	const as = av === null || av === undefined ? '' : Array.isArray(av) ? av.join(', ') : String(av);
 	const bs = bv === null || bv === undefined ? '' : Array.isArray(bv) ? bv.join(', ') : String(bv);
-	return as.localeCompare(bs, undefined, { numeric: true, sensitivity: 'base' });
+	return as.localeCompare(bs, COLLATION, { numeric: true, sensitivity: 'base' });
 }
 
 function parseSortParam(raw: string | null): { key: string; dir: SortDir } | null {
@@ -167,6 +178,7 @@ export default function DataTable({
 	const [fullRows, setFullRows] = useState<Row[] | null>(null);
 	const [srcLoading, setSrcLoading] = useState(false);
 	const [srcError, setSrcError] = useState(false);
+	const [sortNotice, setSortNotice] = useState('');
 
 	const didWriteUrlRef = useRef(false);
 	const srcFetchStartedRef = useRef(false);
@@ -205,7 +217,7 @@ export default function DataTable({
 				const v = row[col.key];
 				if (Array.isArray(v)) for (const item of v) set.add(item);
 			}
-			map[col.key] = Array.from(set).sort((a, b) => a.localeCompare(b));
+			map[col.key] = Array.from(set).sort((a, b) => a.localeCompare(b, COLLATION));
 		}
 		return map;
 	}, [effectiveRows, facetColumns]);
@@ -275,7 +287,9 @@ export default function DataTable({
 			curPageSize: number
 		): boolean => {
 			if (!anchorKey) return false;
-			const match = candidateRows.find((r) => String(r[anchorKey]) === hashId);
+			// Both sides are slugged so a pre-slug hash (`#Recipe Trade Up`) still lands.
+			const wanted = anchorId(hashId);
+			const match = candidateRows.find((r) => anchorId(r[anchorKey]) === wanted);
 			if (!match) return false;
 
 			let filter = curFilter;
@@ -297,13 +311,13 @@ export default function DataTable({
 					revealSet = [...revealSet].sort((a, b) => compareRows(a, b, curSortKey, !!col.numeric) * dir);
 				}
 			}
-			const idx = revealSet.findIndex((r) => String(r[anchorKey]) === hashId);
+			const idx = revealSet.findIndex((r) => anchorId(r[anchorKey]) === wanted);
 			if (idx < 0) return false;
 
 			if (filter !== curFilter) setFilterText(filter);
 			if (facets !== curFacets) setActiveFacets(facets);
 			setPage(curPageSize > 0 ? Math.floor(idx / curPageSize) + 1 : 1);
-			setRevealId(hashId);
+			setRevealId(wanted);
 			return true;
 		},
 		[anchorKey, effectiveSearchKeys, columnByKey]
@@ -435,25 +449,33 @@ export default function DataTable({
 	// The three-way cycle (asc -> desc -> clear) needs both the previous key
 	// and dir together, so read them off the refs above rather than stale
 	// closures.
-	const onHeaderClick = useCallback((key: string) => {
-		ensureFullRows();
-		setPage(1);
-		if (sortKeyRef.current !== key) {
-			setSortKey(key);
+	const onHeaderClick = useCallback(
+		(key: string) => {
+			ensureFullRows();
+			setPage(1);
+			const label = columnByKey.get(key)?.label ?? key;
+			if (sortKeyRef.current !== key) {
+				setSortKey(key);
+				setSortDir('asc');
+				setSortNotice(`Sorted by ${label} ascending`);
+				return;
+			}
+			if (sortDirRef.current === 'asc') {
+				setSortDir('desc');
+				setSortNotice(`Sorted by ${label} descending`);
+				return;
+			}
+			if (sortDirRef.current === 'desc') {
+				setSortKey(null);
+				setSortDir(null);
+				setSortNotice('Sort cleared');
+				return;
+			}
 			setSortDir('asc');
-			return;
-		}
-		if (sortDirRef.current === 'asc') {
-			setSortDir('desc');
-			return;
-		}
-		if (sortDirRef.current === 'desc') {
-			setSortKey(null);
-			setSortDir(null);
-			return;
-		}
-		setSortDir('asc');
-	}, [ensureFullRows]);
+			setSortNotice(`Sorted by ${label} ascending`);
+		},
+		[ensureFullRows, columnByKey]
+	);
 
 	const toggleFacet = useCallback(
 		(colKey: string, value: string) => {
@@ -487,6 +509,16 @@ export default function DataTable({
 			/* ignore */
 		}
 	}, [id, ensureFullRows]);
+
+	const handleShowPages = useCallback(() => {
+		setPageSize(pageSizeProp);
+		setPage(1);
+		try {
+			window.sessionStorage.removeItem(`dtbl:${id}:showAll`);
+		} catch {
+			/* ignore */
+		}
+	}, [id, pageSizeProp]);
 
 	const goToPage = useCallback(
 		(next: number) => {
@@ -559,7 +591,8 @@ export default function DataTable({
 							</button>{' '}
 						</span>
 					)}
-					Showing {sorted.length.toLocaleString()} of {effectiveRows.length.toLocaleString()}
+					Showing {COUNT_FORMAT.format(sorted.length)} of {COUNT_FORMAT.format(effectiveRows.length)}
+					{sortNotice && <span className="dtbl-sr-only">. {sortNotice}</span>}
 				</p>
 			</div>
 
@@ -608,7 +641,7 @@ export default function DataTable({
 							</tr>
 						) : (
 							pageRows.map((row, idx) => {
-								const rowId = anchorKey ? String(row[anchorKey]) : undefined;
+								const rowId = anchorKey ? anchorId(row[anchorKey]) : undefined;
 								return (
 									<tr key={rowId ?? `${clampedPage}-${idx}`} id={rowId}>
 										{columns.map((col) => (
@@ -641,6 +674,14 @@ export default function DataTable({
 					</button>
 					<button type="button" onClick={handleShowAll}>
 						Show all
+					</button>
+				</div>
+			)}
+
+			{pageSize === 0 && pageSizeProp > 0 && (
+				<div className="dtbl-pager">
+					<button type="button" onClick={handleShowPages}>
+						Show pages
 					</button>
 				</div>
 			)}

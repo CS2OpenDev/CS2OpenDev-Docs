@@ -46,7 +46,7 @@ const headings = [
 	}}
 	headings={headings}
 >
-	<div data-pagefind-body>
+	<div>
 		<p>
 			A console variable ("convar") is a named, typed value the engine or game code exposes to the
 			in-game console and to config files: <code>mp_roundtime</code>, <code>sv_cheats</code>,{' '}
@@ -71,10 +71,10 @@ const headings = [
 			<table>
 				<thead>
 					<tr>
-						<th>Flag</th>
-						<th class="value">ConVars</th>
-						<th class="value">Commands</th>
-						<th class="ann">Description</th>
+						<th scope="col">Flag</th>
+						<th scope="col" class="value">ConVars</th>
+						<th scope="col" class="value">Commands</th>
+						<th scope="col" class="ann">Description</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -103,7 +103,7 @@ const headings = [
 			clearing any active filter that would otherwise hide it.
 		</p>
 
-		<span class="cs2-aliases">{aliasText}</span>
+		<span class="cs2-aliases" aria-hidden="true">{aliasText}</span>
 
 		<div id="cv">
 			<DataTable

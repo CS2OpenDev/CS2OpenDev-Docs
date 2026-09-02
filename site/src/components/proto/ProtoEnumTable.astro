@@ -16,7 +16,7 @@ const aliases = [...identifierAliases(enm.name), ...enm.values.map((v) => v.name
 ---
 
 <Heading id={enm.qualified}>{enm.qualified}</Heading>
-<span class="cs2-aliases">{aliases}</span>
+<span class="cs2-aliases" aria-hidden="true">{aliases}</span>
 
 {enumHref && (
 	<p class="cs2-rel"><strong>Schema entity:</strong> <a href={enumHref}>{enm.name}</a></p>
@@ -26,10 +26,10 @@ const aliases = [...identifierAliases(enm.name), ...enm.values.map((v) => v.name
 	<table>
 		<thead>
 			<tr>
-				<th>Name</th>
-				<th class="value">Number</th>
-				<th class="ann">Description</th>
-				<th>Message</th>
+				<th scope="col">Name</th>
+				<th scope="col" class="value">Number</th>
+				<th scope="col" class="ann">Description</th>
+				<th scope="col">Message</th>
 			</tr>
 		</thead>
 		<tbody>

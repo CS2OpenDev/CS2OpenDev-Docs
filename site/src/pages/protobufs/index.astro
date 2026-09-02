@@ -40,7 +40,7 @@ const headings = sections.map((s) => ({ depth: 2, slug: s.slug, text: s.group })
 	}}
 	headings={headings}
 >
-	<div data-pagefind-body>
+	<div>
 		<p>
 			{idx.files.length} protobuf files, {totalMessages} messages and {totalEnums} enums (both counts
 			include nested types). Every file in this build declares no <code>package</code>, so the group below is derived
@@ -64,11 +64,11 @@ const headings = sections.map((s) => ({ depth: 2, slug: s.slug, text: s.group })
 					<table>
 						<thead>
 							<tr>
-								<th>File</th>
-								<th class="value">Messages</th>
-								<th class="value">Enums</th>
-								<th>Imports</th>
-								<th class="ann">Description</th>
+								<th scope="col">File</th>
+								<th scope="col" class="value">Messages</th>
+								<th scope="col" class="value">Enums</th>
+								<th scope="col">Imports</th>
+								<th scope="col" class="ann">Description</th>
 							</tr>
 						</thead>
 						<tbody>

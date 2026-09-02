@@ -80,7 +80,7 @@ const notes = ent.annotations?.notes;
 const warning = ent.annotations?.warning;
 ---
 
-<div data-pagefind-body>
+<div>
 	<nav class="cs2-breadcrumb" aria-label="Breadcrumb">
 		<a href={schemasHref()}>Schemas</a> / <a href={moduleHref(ent.module)}>{ent.module}</a> / <span>{ent.name}</span>
 	</nav>
@@ -110,7 +110,7 @@ const warning = ent.annotations?.warning;
 		<span><strong>Binary:</strong> <code>{ent.binaryModule}</code></span>
 	</p>
 
-	<span class="cs2-aliases" data-pagefind-meta={`module:${ent.module}, kind:${ent.kind}`}>{aliases}</span>
+	<span class="cs2-aliases" aria-hidden="true" data-pagefind-meta={`module:${ent.module}, kind:${ent.kind}`}>{aliases}</span>
 
 	{metadata.length > 0 && (
 		<p class="cs2-rel">
@@ -216,10 +216,10 @@ const warning = ent.annotations?.warning;
 					<table>
 						<thead>
 							<tr>
-								<th>Name</th>
-								<th class="value">Value</th>
-								<th class="value">Unsigned</th>
-								<th class="ann">Description</th>
+								<th scope="col">Name</th>
+								<th scope="col" class="value">Value</th>
+								<th scope="col" class="value">Unsigned</th>
+								<th scope="col" class="ann">Description</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -292,11 +292,11 @@ const warning = ent.annotations?.warning;
 						<table>
 							<thead>
 								<tr>
-									<th class="offset">Offset</th>
-									<th>Field</th>
-									<th>Type</th>
-									<th class="from">From</th>
-									<th class="ann">Annotations</th>
+									<th scope="col" class="offset">Offset</th>
+									<th scope="col">Field</th>
+									<th scope="col">Type</th>
+									<th scope="col" class="from">From</th>
+									<th scope="col" class="ann">Annotations</th>
 								</tr>
 							</thead>
 							<tbody>

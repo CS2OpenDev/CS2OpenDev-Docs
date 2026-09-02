@@ -37,7 +37,7 @@ const headings = [
 	}}
 	headings={headings}
 >
-	<div data-pagefind-body>
+	<div>
 		<p>
 			The CS2 economy tables: every item definition this build's <code>items_game.txt</code> carries,
 			with display fields resolved through the prefab chain when the item's own value is empty (a
@@ -82,12 +82,12 @@ const headings = [
 			<table>
 				<thead>
 					<tr>
-						<th>Id</th>
-						<th>Class name</th>
-						<th>Item slot</th>
-						<th>Item type</th>
-						<th>Name token</th>
-						<th>Parent prefab</th>
+						<th scope="col">Id</th>
+						<th scope="col">Class name</th>
+						<th scope="col">Item slot</th>
+						<th scope="col">Item type</th>
+						<th scope="col">Name token</th>
+						<th scope="col">Parent prefab</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -114,10 +114,10 @@ const headings = [
 			<table>
 				<thead>
 					<tr>
-						<th>Id</th>
-						<th>Loc key</th>
-						<th>Loc key (weapon)</th>
-						<th class="value">Value</th>
+						<th scope="col">Id</th>
+						<th scope="col">Loc key</th>
+						<th scope="col">Loc key (weapon)</th>
+						<th scope="col" class="value">Value</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -142,8 +142,8 @@ const headings = [
 			<table>
 				<thead>
 					<tr>
-						<th>Id</th>
-						<th class="value">Value</th>
+						<th scope="col">Id</th>
+						<th scope="col" class="value">Value</th>
 					</tr>
 				</thead>
 				<tbody>

@@ -31,7 +31,7 @@ const headings = [
 	}}
 	headings={headings}
 >
-	<div data-pagefind-body>
+	<div>
 		<p>
 			This is the one build-to-build transition the current artifact set carries: build{' '}
 			<code>{changelog.from_build}</code> to <code>{changelog.to_build}</code> on {changelog.platform}.
@@ -60,10 +60,10 @@ const headings = [
 			<table>
 				<thead>
 					<tr>
-						<th>Family</th>
-						<th class="value">Added</th>
-						<th class="value">Removed</th>
-						<th class="value">Changed</th>
+						<th scope="col">Family</th>
+						<th scope="col" class="value">Added</th>
+						<th scope="col" class="value">Removed</th>
+						<th scope="col" class="value">Changed</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -106,8 +106,8 @@ const headings = [
 								<table>
 									<thead>
 										<tr>
-											<th>Name</th>
-											<th class="ann">Field changes</th>
+											<th scope="col">Name</th>
+											<th scope="col" class="ann">Field changes</th>
 										</tr>
 									</thead>
 									<tbody>

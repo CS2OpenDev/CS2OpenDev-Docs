@@ -37,7 +37,7 @@ const nestedEnums = message.nested_enums
 ---
 
 <Heading id={message.qualified}>{message.qualified}</Heading>
-<span class="cs2-aliases">{aliases}</span>
+<span class="cs2-aliases" aria-hidden="true">{aliases}</span>
 
 {message.description && <p>{message.description}</p>}
 {message.notes && <p class="cs2-note">{message.notes}</p>}
@@ -78,12 +78,12 @@ const nestedEnums = message.nested_enums
 		<table>
 			<thead>
 				<tr>
-					<th>Field</th>
-					<th class="value">Number</th>
-					<th>Label</th>
-					<th>Type</th>
-					<th>Default</th>
-					<th class="ann">Description</th>
+					<th scope="col">Field</th>
+					<th scope="col" class="value">Number</th>
+					<th scope="col">Label</th>
+					<th scope="col">Type</th>
+					<th scope="col">Default</th>
+					<th scope="col" class="ann">Description</th>
 				</tr>
 			</thead>
 			<tbody>

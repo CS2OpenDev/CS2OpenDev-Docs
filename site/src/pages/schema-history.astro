@@ -34,7 +34,7 @@ const headings = [
 	}}
 	headings={headings}
 >
-	<div data-pagefind-body>
+	<div>
 		<p>
 			Every recorded build-to-build transition of <code>cs2_schema.json</code>, from the
 			baseline build <code>{history.baseline_build}</code> up to <code>{history.latest_build}</code>.
@@ -59,11 +59,11 @@ const headings = [
 					<table>
 						<thead>
 							<tr>
-								<th>Class</th>
-								<th>Field</th>
-								<th>Build</th>
-								<th class="ann">Note</th>
-								<th>Guard</th>
+								<th scope="col">Class</th>
+								<th scope="col">Field</th>
+								<th scope="col">Build</th>
+								<th scope="col" class="ann">Note</th>
+								<th scope="col">Guard</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -91,13 +91,13 @@ const headings = [
 			<table>
 				<thead>
 					<tr>
-						<th>From</th>
-						<th>To</th>
-						<th>Date</th>
-						<th class="value">Classes +/-/~</th>
-						<th class="value">Enums +/-/~</th>
-						<th class="value">Field ops</th>
-						<th>Detail</th>
+						<th scope="col">From</th>
+						<th scope="col">To</th>
+						<th scope="col">Date</th>
+						<th scope="col" class="value">Classes +/-/~</th>
+						<th scope="col" class="value">Enums +/-/~</th>
+						<th scope="col" class="value">Field ops</th>
+						<th scope="col">Detail</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -165,10 +165,10 @@ const headings = [
 						<table>
 							<thead>
 								<tr>
-									<th>Class</th>
-									<th>Field ops</th>
-									<th class="value">Resize</th>
-									<th>Flags</th>
+									<th scope="col">Class</th>
+									<th scope="col">Field ops</th>
+									<th scope="col" class="value">Resize</th>
+									<th scope="col">Flags</th>
 								</tr>
 							</thead>
 							<tbody>

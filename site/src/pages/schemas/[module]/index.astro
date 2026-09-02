@@ -39,7 +39,7 @@ const headings = [
 	}}
 	headings={headings}
 >
-	<div data-pagefind-body>
+	<div>
 		<nav class="cs2-breadcrumb" aria-label="Breadcrumb">
 			<a href={schemasHref()}>Schemas</a> / <span>{module}</span>
 		</nav>
@@ -66,11 +66,11 @@ const headings = [
 				<table>
 					<thead>
 						<tr>
-							<th>Class</th>
-							<th class="value">Size</th>
-							<th class="value">Declared</th>
-							<th class="value">Total</th>
-							<th class="ann">Description</th>
+							<th scope="col">Class</th>
+							<th scope="col" class="value">Size</th>
+							<th scope="col" class="value">Declared</th>
+							<th scope="col" class="value">Total</th>
+							<th scope="col" class="ann">Description</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -96,10 +96,10 @@ const headings = [
 				<table>
 					<thead>
 						<tr>
-							<th>Enum</th>
-							<th>Underlying</th>
-							<th class="value">Members</th>
-							<th class="ann">Description</th>
+							<th scope="col">Enum</th>
+							<th scope="col">Underlying</th>
+							<th scope="col" class="value">Members</th>
+							<th scope="col" class="ann">Description</th>
 						</tr>
 					</thead>
 					<tbody>

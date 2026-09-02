@@ -69,7 +69,7 @@ const headings = [
 	}}
 	headings={headings}
 >
-	<div data-pagefind-body>
+	<div>
 		<p>
 			These are the raw artifacts the rest of this site is rendered from, meant for a build step
 			rather than a browser: a code generator, a demo parser's schema loader, or a plugin's build
@@ -85,9 +85,9 @@ const headings = [
 			<table>
 				<thead>
 					<tr>
-						<th>File</th>
-						<th class="value">Size</th>
-						<th class="ann">Purpose</th>
+						<th scope="col">File</th>
+						<th scope="col" class="value">Size</th>
+						<th scope="col" class="ann">Purpose</th>
 					</tr>
 				</thead>
 				<tbody>

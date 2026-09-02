@@ -164,13 +164,28 @@
 	outline-offset: 2px;
 }
 
+.dtbl-sr-only {
+	position: absolute;
+	inline-size: 1px;
+	block-size: 1px;
+	padding: 0;
+	margin: -1px;
+	border: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	clip-path: inset(50%);
+}
+
 /* ---------------------------------------------------------------------------
    Table
 --------------------------------------------------------------------------- */
 
+/* The height cap makes this box the scrollport, which is what lets the sticky
+   header engage. The token is on :root in custom.css. */
 .dtbl-wrap {
 	max-width: 100%;
-	overflow-x: auto;
+	max-height: var(--cs2-table-max-h);
+	overflow: auto;
 	border: 1px solid var(--dtbl-grid);
 	border-radius: var(--dtbl-radius);
 	scrollbar-width: thin;
@@ -359,4 +374,15 @@
 
 .dtbl-pager-status {
 	color: var(--dtbl-muted);
+}
+
+@media print {
+	.dtbl-wrap {
+		max-height: none;
+		overflow: visible;
+	}
+
+	.dtbl-wrap thead th {
+		position: static;
+	}
 }
