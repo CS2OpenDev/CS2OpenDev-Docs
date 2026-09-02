@@ -1,0 +1,21 @@
+/* ---------------------------------------------------------------------------
+   Protobufs and network-message pages
+   Number columns reuse the theme's .value / .offset hooks (custom.css), which
+   already set tabular-nums; nothing proto-specific is needed for those.
+--------------------------------------------------------------------------- */
+
+/* Nested proto messages and enums render as an h4 immediately after their parent,
+   with the dotted qualified name as the heading text. The left rule is the only
+   visual cue that a section is a child rather than a new top-level type. */
+.sl-markdown-content h4[id*='.'] {
+	padding-inline-start: 0.75rem;
+	margin-inline-start: -0.05rem;
+	border-inline-start: 2px solid var(--cs2-grid);
+}
+
+/* The network page's "not in this build" marker: distinct from an ordinary
+   parenthetical count, which .cs2-count is used for elsewhere on the row. */
+.sl-markdown-content .cs2-missing {
+	font-style: italic;
+	color: var(--cs2-muted);
+}

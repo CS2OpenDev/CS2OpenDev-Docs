@@ -1,0 +1,65 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { provenanceLine } from '../lib/provenance';
+import { loadBinaries, formatFileSize } from '../lib/data/binaries';
+import { loadSchemaIndex } from '../lib/data/schema';
+import { moduleHref } from '../lib/urls';
+
+const binaries = loadBinaries();
+const schemaModules = new Set(loadSchemaIndex().modules);
+
+const headings = [{ depth: 2, slug: 'binaries', text: 'Binaries' }];
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Modules',
+		description: `${binaries.length} binaries this build's walker inspected.`,
+	}}
+	headings={headings}
+>
+	<div data-pagefind-body>
+		<p>
+			Every binary SchemaTracker inspected for this build, with its SHA-256 so a local copy can be
+			verified against it. A binary's <code>schema_module</code> links to the schema module of the
+			same name when this site renders one; not every binary registers schema types, so most rows
+			have no link.
+		</p>
+
+		<p class="cs2-provenance">{provenanceLine()}</p>
+
+		<h2 id="binaries">Binaries</h2>
+		<div class="cs2-table-wrap">
+			<table>
+				<thead>
+					<tr>
+						<th>Path</th>
+						<th class="value">Size</th>
+						<th class="value">Exports</th>
+						<th class="value">Schema registrations</th>
+						<th>SHA-256</th>
+						<th>Schema module</th>
+					</tr>
+				</thead>
+				<tbody>
+					{binaries.map((b) => (
+						<tr id={b.stem}>
+							<td><code>{b.path}</code></td>
+							<td class="value">{formatFileSize(b.file_size)}</td>
+							<td class="value">{b.export_count}</td>
+							<td class="value">{b.schema_registration_count}</td>
+							<td><code>{b.sha256}</code></td>
+							<td>
+								{b.schema_module && schemaModules.has(b.schema_module) ? (
+									<a href={moduleHref(b.schema_module)}>{b.schema_module}</a>
+								) : (
+									'-'
+								)}
+							</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</StarlightPage>

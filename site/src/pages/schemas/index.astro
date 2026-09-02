@@ -1,0 +1,105 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { moduleGloss } from '../../lib/modules';
+import { codegenArtifactHref, moduleHierarchyHref, moduleHref } from '../../lib/urls';
+import { loadSchemaIndex } from '../../lib/data/schema';
+
+const idx = loadSchemaIndex();
+const p = idx.provenance;
+
+const twinNames = new Set<string>();
+for (const [name, variants] of idx.byName) {
+	if (variants.length > 1) twinNames.add(name);
+}
+
+const rows = idx.modules.map((module) => {
+	const ents = idx.byModule.get(module) ?? [];
+	return {
+		module,
+		classes: ents.filter((e) => e.kind === 'class').length,
+		enums: ents.filter((e) => e.kind === 'enum').length,
+		binaries: [...new Set(ents.map((e) => e.binaryModule).filter(Boolean))].sort(),
+		gloss: moduleGloss(module) ?? '',
+	};
+});
+
+const headings = [
+	{ depth: 2, slug: 'modules', text: 'Modules' },
+	{ depth: 2, slug: 'reading-a-module', text: 'Reading a module' },
+];
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Schemas',
+		description: `Every CS2 entity class and enum SchemaTracker walked out of build ${p.buildId}, grouped by module.`,
+	}}
+	headings={headings}
+>
+	<div data-pagefind-body>
+		<p>
+			{idx.classes.length} classes and {idx.enums.length} enums across {idx.modules.length} modules,
+			walked out of the shipped CS2 binaries. Coverage is runtime only: types that exist solely in
+			the Source 2 editor and tool chain are not here.
+		</p>
+
+		<p class="cs2-provenance">
+			CS2 build {p.buildId} · Steam date {p.versionDate} · platform {p.platform} · schema format
+			{' '}{p.schemaFormatVersion} ·
+			<a href={codegenArtifactHref('cs2_schema.json')}>cs2_schema.json</a>
+		</p>
+
+		<h2 id="modules">Modules</h2>
+		<div class="cs2-table-wrap">
+			<table>
+				<thead>
+					<tr>
+						<th>Module</th>
+						<th class="value">Classes</th>
+						<th class="value">Enums</th>
+						<th>Binaries</th>
+						<th class="ann">What it holds</th>
+					</tr>
+				</thead>
+				<tbody>
+					{rows.map((r) => (
+						<tr>
+							<td>
+								<a href={moduleHref(r.module)}>{r.module}</a>{' '}
+								<a class="cs2-count" href={moduleHierarchyHref(r.module)}>tree</a>
+							</td>
+							<td class="value">{r.classes}</td>
+							<td class="value">{r.enums}</td>
+							<td>{r.binaries.map((b, i) => <>{i > 0 && ', '}<code>{b}</code></>)}</td>
+							<td class="ann">{r.gloss}</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+
+		<h2 id="reading-a-module">Reading a module</h2>
+		<p>
+			A module here is SchemaTracker's <code>projectName</code>, the coarse project axis a type was
+			registered under. It is not the binary: the finer <code>module</code> (for example
+			{' '}<code>server.dll</code>) is kept on every record and shown on each type page as
+			{' '}<strong>Binary</strong>. A class registered in several binaries that all roll up to the same
+			project collapses to one record, which is why the <code>pulse_runtime_lib</code> cell classes
+			appear once despite being statically linked into many tools.
+		</p>
+		<p>
+			{twinNames.size} names appear under more than one project. That is expected and the project is
+			the discriminator: <code>CCSPlayerController</code> exists in both <code>client</code> and
+			{' '}<code>server</code> with different field sets and different offsets. Each variant gets its
+			own page and links to the other. The client build also renames many server classes with a
+			{' '}<code>C_</code> prefix (<code>C_CSPlayerPawn</code> against <code>CCSPlayerPawn</code>);
+			that is a convention rather than something the artifact records, so those pages link to each
+			other as counterparts.
+		</p>
+		<p>
+			Offsets are absolute byte offsets from the object base for
+			{' '}<code>{p.platform}</code> at build {p.buildId}. They change between builds and between
+			platforms. Read the build id off the page before using one.
+		</p>
+	</div>
+</StarlightPage>

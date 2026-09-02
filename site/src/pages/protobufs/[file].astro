@@ -1,0 +1,165 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import Mermaid from '../../components/Mermaid.astro';
+import ProtoEnumTable from '../../components/proto/ProtoEnumTable.astro';
+import ProtoMessageSection from '../../components/proto/ProtoMessageSection.astro';
+import { provenanceLine } from '../../lib/provenance';
+import { protoFileHref, withBase } from '../../lib/urls';
+import {
+	fileGroup,
+	fileWireIds,
+	loadProtoIndex,
+	messageCount,
+	messageHeadings,
+	referenceDiagram,
+	referenceEdges,
+	schemaEnumHref,
+	topLevelEnums,
+	topLevelMessages,
+	type HeadingEntry,
+} from '../../lib/data/protobufs';
+import { loadSchemaIndex } from '../../lib/data/schema';
+import '../../styles/protobufs.css';
+
+export function getStaticPaths() {
+	const idx = loadProtoIndex();
+	return idx.files.map((file) => ({ params: { file: file.stem } }));
+}
+
+const { file: stem } = Astro.params;
+const idx = loadProtoIndex();
+const file = idx.filesByStem.get(stem!);
+if (!file) throw new Error(`Unknown proto file ${stem}`);
+
+const schemaIdx = loadSchemaIndex();
+
+const group = fileGroup(file.stem);
+const messages = topLevelMessages(file);
+const enums = topLevelEnums(file);
+const wireIds = fileWireIds(file);
+const diagramEligible = messageCount(file) <= 40;
+const diagramLines = diagramEligible ? referenceDiagram(file) : [];
+const diagramEdgeCount = diagramEligible ? referenceEdges(file).length : 0;
+
+const localImports = file.imports.map((i) => i.replace(/\.proto$/, ''));
+
+const headings: HeadingEntry[] = [];
+if (wireIds.length > 0) headings.push({ depth: 2, slug: 'wire-ids', text: 'Wire ids' });
+headings.push({ depth: 2, slug: 'enums', text: 'Enums' });
+for (const e of enums) headings.push({ depth: 3, slug: e.qualified, text: e.qualified });
+headings.push({ depth: 2, slug: 'messages', text: 'Messages' });
+for (const m of messages) headings.push(...messageHeadings(idx, m, 3));
+if (diagramLines.length > 0) headings.push({ depth: 2, slug: 'reference-graph', text: 'Reference graph' });
+
+const description =
+	file.description ||
+	`${messages.length} top-level message${messages.length === 1 ? '' : 's'} and ${enums.length} top-level enum${
+		enums.length === 1 ? '' : 's'
+	} in ${file.name}, build ${schemaIdx.provenance.buildId}.`;
+---
+
+<StarlightPage frontmatter={{ title: file.name, description }} headings={headings}>
+	<div data-pagefind-body data-pagefind-meta={`file:${file.stem}`}>
+		<nav class="cs2-breadcrumb" aria-label="Breadcrumb">
+			<a href={withBase('/protobufs/')}>Protobufs</a> / <span>{file.name}</span>
+		</nav>
+
+		{file.description && <p>{file.description}</p>}
+		{file.notes && <p class="cs2-note">{file.notes}</p>}
+
+		<p class="cs2-provenance">{provenanceLine()}</p>
+
+		<p class="cs2-stats">
+			<span><strong>Group:</strong> {group}</span>
+			<span><strong>Messages:</strong> {messages.length} top-level, {file.messages.length} total</span>
+			<span><strong>Enums:</strong> {enums.length} top-level, {file.enums.length} total</span>
+		</p>
+
+		<p class="cs2-rel">
+			<strong>Imports:</strong>{' '}
+			{file.imports.length === 0 ? (
+				'none'
+			) : (
+				file.imports.map((imp, i) => {
+					const impStem = localImports[i]!;
+					const local = idx.filesByStem.has(impStem);
+					return (
+						<>
+							{i > 0 && ', '}
+							{local ? <a href={protoFileHref(impStem)}>{imp}</a> : <code>{imp}</code>}
+						</>
+					);
+				})
+			)}
+		</p>
+
+		{wireIds.length > 0 && (
+			<>
+				<h2 id="wire-ids">Wire ids</h2>
+				<p>Every message in this file that a wire-id enum constant maps to, by the join rule described on the Protobufs index.</p>
+				<div class="cs2-table-wrap">
+					<table>
+						<thead>
+							<tr>
+								<th>Message</th>
+								<th>Enum constant</th>
+								<th class="value">Value</th>
+							</tr>
+						</thead>
+						<tbody>
+							{wireIds.map(({ message, wireId }) => {
+								const href = schemaEnumHref(schemaIdx, wireId.enum);
+								return (
+									<tr>
+										<td><a href={`#${message.qualified}`}>{message.qualified}</a></td>
+										<td>
+											{href ? (
+												<a href={href}>{wireId.enum}.{wireId.constant}</a>
+											) : (
+												<>{wireId.enum}.{wireId.constant}</>
+											)}
+										</td>
+										<td class="value">{wireId.value}</td>
+									</tr>
+								);
+							})}
+						</tbody>
+					</table>
+				</div>
+			</>
+		)}
+
+		<h2 id="enums">Enums</h2>
+		{enums.length === 0 ? (
+			<p class="cs2-empty">This file declares no top-level enums.</p>
+		) : (
+			enums.map((e) => <ProtoEnumTable idx={idx} schemaIdx={schemaIdx} enm={e} depth={3} />)
+		)}
+
+		<h2 id="messages">Messages</h2>
+		{messages.length === 0 ? (
+			<p class="cs2-empty">This file declares no top-level messages.</p>
+		) : (
+			messages.map((m) => <ProtoMessageSection idx={idx} schemaIdx={schemaIdx} message={m} depth={3} />)
+		)}
+
+		{diagramLines.length > 0 && (
+			<>
+				<h2 id="reference-graph">Reference graph</h2>
+				<details class="cs2-diagram" data-pagefind-ignore>
+					<summary>
+						Message reference graph <span class="cs2-count">({diagramEdgeCount} edges)</span>
+					</summary>
+					<Mermaid code={`flowchart LR\n${diagramLines.join('\n')}`} />
+				</details>
+			</>
+		)}
+
+		{!diagramEligible && (
+			<p class="cs2-note">
+				{file.name} declares {messageCount(file)} messages; the reference graph is only rendered for
+				files with 40 or fewer, where it stays legible.
+			</p>
+		)}
+	</div>
+</StarlightPage>

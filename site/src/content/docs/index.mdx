@@ -1,0 +1,118 @@
+---
+title: CS2 Reference
+description: Entity schemas, protobufs and console reference generated from the shipped Counter-Strike 2 binaries.
+---
+
+import { CardGrid, Card } from '@astrojs/starlight/components';
+import Provenance from '../../components/content/Provenance.astro';
+import { loadMeta } from '../../lib/data/meta';
+import {
+	schemasHref,
+	hierarchyHref,
+	protoFileHref,
+	networkHref,
+	gameEventsHref,
+	convarsHref,
+	commandsHref,
+	gameModesHref,
+	mapsHref,
+	itemsHref,
+	surfacesHref,
+	propsHref,
+	codegenSchemasHref,
+	withBase,
+} from '../../lib/urls';
+
+export const meta = loadMeta();
+
+Entity schemas, protobufs, console variables and content tables, generated from the
+shipped Counter-Strike 2 binaries. Every page on this site is projected from one
+CS2OpenDev-SchemaTracker artifact set, so the offsets, message shapes and console
+tables all describe the same game build; community annotations from this repository's
+overlay files are layered on top where they exist.
+
+<Provenance />
+
+## Start here
+
+<CardGrid>
+	<Card title="Plugin developers" icon="puzzle">
+		Server and client entity schemas, with offsets, field types and the inheritance
+		tree, plus a reverse index of which classes use a given type.
+
+		<ul>
+			<li><a href={schemasHref()}>Browse schemas by module</a></li>
+			<li><a href={hierarchyHref()}>Server + client inheritance tree</a></li>
+		</ul>
+	</Card>
+	<Card title="Demo parser authors" icon="document">
+		The wire protobufs a `.dem` file and a live connection are built from, plus the
+		network message and game event registries that key into them.
+
+		<ul>
+			<li><a href={protoFileHref('demo')}>demo.proto</a></li>
+			<li><a href={protoFileHref('netmessages')}>netmessages.proto</a></li>
+			<li><a href={networkHref()}>Network messages</a></li>
+			<li><a href={gameEventsHref()}>Game events</a></li>
+		</ul>
+	</Card>
+	<Card title="Server operators" icon="setting">
+		Every console variable and command this build registers, and the game modes and
+		maps a server config chooses between.
+
+		<ul>
+			<li><a href={convarsHref()}>ConVars</a></li>
+			<li><a href={commandsHref()}>Commands</a></li>
+			<li><a href={gameModesHref()}>Game modes</a></li>
+			<li><a href={mapsHref()}>Maps</a></li>
+		</ul>
+	</Card>
+	<Card title="Modders" icon="magnifier">
+		Item and kit definitions, collision groups and the surface property tables that
+		drive footsteps, penetration and impact effects.
+
+		<ul>
+			<li><a href={itemsHref()}>Items, paint kits, sticker kits, music kits</a></li>
+			<li><a href={surfacesHref()}>Surfaces</a></li>
+			<li><a href={propsHref()}>Props</a></li>
+		</ul>
+	</Card>
+	<Card title="Codegen consumers" icon="database">
+		The same data as flat, machine-readable JSON and `.proto` files, meant for a
+		build step rather than a browser.
+
+		<ul>
+			<li><a href={codegenSchemasHref()}>Codegen schemas</a></li>
+		</ul>
+	</Card>
+</CardGrid>
+
+## By the numbers
+
+| | |
+|---|---:|
+| Classes | {meta.counts.classes.toLocaleString()} |
+| Enums | {meta.counts.enums.toLocaleString()} |
+| Declared fields | {meta.counts.fields.toLocaleString()} |
+| Protobuf messages | {meta.counts.messages.toLocaleString()} |
+| ConVars | {meta.counts.convars.toLocaleString()} |
+| Commands | {meta.counts.commands.toLocaleString()} |
+| Game events | {meta.counts.events.toLocaleString()} |
+| Items | {meta.counts.items.toLocaleString()} |
+| Sticker kits | {meta.counts.sticker_kits.toLocaleString()} |
+| Maps | {meta.counts.maps.toLocaleString()} |
+| Game modes | {meta.counts.game_modes.toLocaleString()} |
+| Surface property rows | {meta.counts.surfaces.toLocaleString()} |
+| Binaries walked | {meta.counts.modules.toLocaleString()} |
+
+<a href={withBase('/blog/')}>Read the blog</a> for build-to-build notes, or go straight
+to the [GitHub repository](https://github.com/CS2OpenDev/CS2OpenDev-Docs).
+
+## How pages are generated
+
+Every reference page here is rendered at build time from one SchemaTracker artifact
+set; nothing is hand-edited except a per-entity overlay layer that adds descriptions,
+notes and warnings on top of the raw binary data. If you want to contribute an
+annotation, read the
+[overlays README](https://github.com/CS2OpenDev/CS2OpenDev-Docs/blob/main/docs/overlays/README.md)
+on GitHub.

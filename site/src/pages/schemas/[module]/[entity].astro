@@ -1,0 +1,34 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import EntityArticle from '../../../components/EntityArticle.astro';
+import { loadSchemaIndex, pagedEntities, twinsOf } from '../../../lib/data/schema';
+
+export function getStaticPaths() {
+	const idx = loadSchemaIndex();
+	return pagedEntities(idx).map((ent) => ({
+		params: { module: ent.module, entity: ent.slug },
+		props: { key: ent.key },
+	}));
+}
+
+const idx = loadSchemaIndex();
+const ent = idx.byKey.get(Astro.props.key);
+if (!ent) throw new Error(`Unknown entity ${Astro.props.key}`);
+
+// The 189 twinned names would otherwise give two identical page titles.
+const title = twinsOf(idx, ent).length > 0 ? `${ent.name} (${ent.module})` : ent.name;
+const description =
+	ent.annotations?.description?.split(/(?<=\.)\s/)[0] ??
+	`CS2 ${ent.kind} ${ent.name} in module ${ent.module}, build ${idx.provenance.buildId}.`;
+
+const headings = [
+	{ depth: 2, slug: 'relationships', text: 'Relationships' },
+	ent.kind === 'enum'
+		? { depth: 2, slug: 'values', text: 'Values' }
+		: { depth: 2, slug: 'memory-layout', text: 'Memory layout' },
+];
+---
+
+<StarlightPage frontmatter={{ title, description }} headings={headings}>
+	<EntityArticle idx={idx} ent={ent} />
+</StarlightPage>

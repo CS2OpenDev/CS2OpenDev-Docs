@@ -1,0 +1,63 @@
+---
+import Mermaid from '../Mermaid.astro';
+import { renderTreeHtml, type TreeNode } from '../../lib/tree';
+
+interface Props {
+	nodes: TreeNode[];
+	countLine: string;
+	/** Suppresses the per-node module tag for nodes from this module. Omit to mark every node. */
+	homeModule?: string;
+	/** Inheritance edges for a collapsed mermaid classDiagram. Omitted above the class cap. */
+	diagramEdges?: string[];
+}
+
+const { nodes, countLine, homeModule, diagramEdges } = Astro.props;
+const treeHtml = nodes.length > 0 ? renderTreeHtml(nodes, homeModule ? { homeModule } : {}) : '';
+const diagramCode = diagramEdges && diagramEdges.length > 0 ? `classDiagram\n${diagramEdges.join('\n')}` : undefined;
+---
+
+{nodes.length === 0 ? (
+	<p class="cs2-empty">This module registers no classes.</p>
+) : (
+	<>
+		<p class="cs2-stats">{countLine}</p>
+
+		<div class="cs2-hierarchy-controls" data-pagefind-ignore>
+			<button type="button" class="cs2-declared-toggle" data-hierarchy-action="expand">
+				Expand all
+			</button>
+			<button type="button" class="cs2-declared-toggle" data-hierarchy-action="collapse">
+				Collapse all
+			</button>
+		</div>
+		<div class="cs2-hierarchy-tree" data-pagefind-ignore set:html={treeHtml} />
+
+		{diagramCode && (
+			<details class="cs2-diagram" data-pagefind-ignore>
+				<summary>
+					Inheritance diagram <span class="cs2-count">({diagramEdges!.length} edges)</span>
+				</summary>
+				<Mermaid code={diagramCode} />
+			</details>
+		)}
+	</>
+)}
+
+<script>
+	function setOpen(container: HTMLElement, open: boolean): void {
+		for (const details of container.querySelectorAll('details')) {
+			if (open) details.setAttribute('open', '');
+			else details.removeAttribute('open');
+		}
+	}
+
+	// Delegated on document so it keeps working after Starlight's client-side
+	// page swaps without needing to re-bind on astro:page-load.
+	document.addEventListener('click', (event) => {
+		const button = (event.target as HTMLElement).closest<HTMLElement>('[data-hierarchy-action]');
+		if (!button) return;
+		const tree = button.closest('.cs2-hierarchy-controls')?.nextElementSibling;
+		if (!(tree instanceof HTMLElement) || !tree.classList.contains('cs2-hierarchy-tree')) return;
+		setOpen(tree, button.dataset.hierarchyAction === 'expand');
+	});
+</script>

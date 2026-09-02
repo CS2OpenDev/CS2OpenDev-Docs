@@ -1,0 +1,138 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { provenanceLine } from '../lib/provenance';
+import { protoMessageHref } from '../lib/urls';
+import { groupedRows, type NetworkRow } from '../lib/data/network';
+import { fileForType, loadProtoIndex, schemaEnumHref } from '../lib/data/protobufs';
+import { identifierAliases, loadSchemaIndex } from '../lib/data/schema';
+import '../styles/protobufs.css';
+
+const protoIdx = loadProtoIndex();
+const schemaIdx = loadSchemaIndex();
+const groups = groupedRows();
+
+const demoPacketFile = fileForType(protoIdx, 'CDemoPacket');
+const userMessageFile = fileForType(protoIdx, 'CSVCMsg_UserMessage');
+
+function messageCell(row: NetworkRow) {
+	if (!row.type_exists) return undefined;
+	const file = fileForType(protoIdx, row.name);
+	return file ? { href: protoMessageHref(file, row.name), text: row.name } : undefined;
+}
+
+function rowAliases(row: NetworkRow): string {
+	const parts = [...identifierAliases(row.name)];
+	if (row.constant) parts.push(...identifierAliases(row.constant));
+	return parts.join(' ');
+}
+
+const headings = groups.map((g) => ({ depth: 2, slug: g.slug, text: g.group }));
+const totalRows = groups.reduce((n, g) => n + g.rows.length, 0);
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Network Messages',
+		description: `${totalRows} network, user-message and demo-command ids for build ${schemaIdx.provenance.buildId}, grouped by channel.`,
+	}}
+	headings={headings}
+>
+	<div data-pagefind-body>
+		<p>
+			CS2 identifies most of what crosses the wire, or sits in a recorded <code>.dem</code>, by a small
+			integer id rather than a type name. A live connection multiplexes several channels (net, clc, svc,
+			...); each channel's ids are its own enum, so an id is only meaningful together with its channel
+			(<code>SvcMessages</code> id 40 and <code>NetMessages</code> id 0 are unrelated messages). User
+			messages add a second layer of indirection:{' '}
+			{userMessageFile ? (
+				<a href={protoMessageHref(userMessageFile, 'CSVCMsg_UserMessage')}>CSVCMsg_UserMessage</a>
+			) : (
+				<code>CSVCMsg_UserMessage</code>
+			)}{' '}
+			is itself an <code>SvcMessages</code> payload (id 72) whose own <code>msg_type</code> field carries
+			a second id, from the <code>UserMessages</code> rows below, identifying the{' '}
+			<code>CCSUsrMsg_*</code> / <code>CUserMessage*</code> payload packed into its <code>msg_data</code>{' '}
+			bytes. A recorded demo reuses the same idea one level up:{' '}
+			{demoPacketFile ? (
+				<a href={protoMessageHref(demoPacketFile, 'CDemoPacket')}>CDemoPacket</a>
+			) : (
+				<code>CDemoPacket</code>
+			)}{' '}
+			wraps a whole live-connection packet in its <code>data</code> field, and the <code>Demo stream</code>{' '}
+			rows below are the outer command ids that frame <code>CDemoPacket</code> itself alongside the other
+			top-level demo messages inside a <code>.dem</code> file.
+		</p>
+
+		<p>
+			Rows are keyed by (channel, id), not id alone, since an id is only unique within its channel and a
+			single (channel, id) pair can bind more than one message. <strong>Binding</strong> says how this
+			row was found: <code>rtti</code> is recovered from the shipped binary's runtime type tables,{' '}
+			<code>enum</code> is derived from a descriptor enum constant by the same message-name join rule
+			used on the Protobufs pages, and <code>both</code> agree. An <code>enum</code>-only row whose
+			<strong> Message</strong> cell reads "not in this build" names a message the enum constant implies
+			but that has no matching type anywhere in this build's descriptor set; one bound only by{' '}
+			<code>rtti</code> has no known enum constant at all. <strong>Direction</strong> is inferred from
+			the channel's naming convention, not verified against a capture, and is blank where no convention
+			applies (a recorded demo has no direction).
+		</p>
+
+		<p class="cs2-provenance">{provenanceLine()}</p>
+
+		{groups.map((g) => (
+			<>
+				<h2 id={g.slug}>
+					{g.group} <span class="cs2-count">({g.rows.length})</span>
+				</h2>
+				<div class="cs2-table-wrap">
+					<table>
+						<thead>
+							<tr>
+								<th class="value">Id</th>
+								<th>Message</th>
+								<th>Enum constant</th>
+								<th>Direction</th>
+								<th>Binding</th>
+								<th class="ann">Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							{g.rows.map((row) => {
+								const msg = messageCell(row);
+								const enumHref = row.enum ? schemaEnumHref(schemaIdx, row.enum) : undefined;
+								return (
+									<tr>
+										<td class="value">{row.id}</td>
+										<td>
+											{msg ? (
+												<a href={msg.href}>{msg.text}</a>
+											) : (
+												<>
+													{row.name} <span class="cs2-missing">not in this build</span>
+												</>
+											)}
+											<span class="cs2-aliases">{rowAliases(row)}</span>
+										</td>
+										<td>
+											{row.enum && row.constant ? (
+												enumHref ? (
+													<a href={enumHref}>{row.enum}.{row.constant}</a>
+												) : (
+													<>{row.enum}.{row.constant}</>
+												)
+											) : (
+												''
+											)}
+										</td>
+										<td>{row.direction ? row.direction.replace(/_/g, ' ') : ''}</td>
+										<td><code>{row.binding}</code></td>
+										<td class="ann">{row.description}</td>
+									</tr>
+								);
+							})}
+						</tbody>
+					</table>
+				</div>
+			</>
+		))}
+	</div>
+</StarlightPage>

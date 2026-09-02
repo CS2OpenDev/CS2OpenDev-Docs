@@ -1,0 +1,123 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import DataTable, { type Column, type Row } from '../components/islands/DataTable';
+import { provenanceLine } from '../lib/provenance';
+import { flagAnchor, flagLegend, helpTextHtml, loadConVars, rangeText } from '../lib/data/convars';
+import { identifierAliases } from '../lib/data/schema';
+import '../styles/console.css';
+
+const convars = loadConVars();
+const flags = flagLegend();
+
+const columns: Column[] = [
+	{ key: 'name', label: 'Name', mono: true },
+	{ key: 'default', label: 'Default', mono: true },
+	{ key: 'value_type', label: 'Type' },
+	{ key: 'range', label: 'Range' },
+	{ key: 'flags', label: 'Flags', facet: true },
+	{ key: 'description', label: 'Description', html: true },
+];
+
+const rows: Row[] = convars.map((c) => ({
+	name: c.name,
+	default: c.default,
+	value_type: c.value_type,
+	range: rangeText(c.min, c.max),
+	flags: c.flags,
+	description: helpTextHtml(c.help),
+}));
+
+// Deduped across all 3,955 rows, not just the first table page, so a search for a
+// term that only occurs past the DataTable's SSR page (mp_roundtime is row 1,686)
+// still finds this page. The full name is included alongside its split parts: past
+// row 250 the name exists only inside the island's props attribute, which Pagefind
+// does not index.
+const aliasText = [
+	...new Set(convars.flatMap((c) => [c.name, ...identifierAliases(c.name)])),
+].join(' ');
+
+const headings = [
+	{ depth: 2, slug: 'flags', text: 'Flags' },
+	{ depth: 2, slug: 'convars-table', text: 'ConVars' },
+];
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'ConVars',
+		description: `${convars.length} console variables for this build, with default, type, range and access flags.`,
+	}}
+	headings={headings}
+>
+	<div data-pagefind-body>
+		<p>
+			A console variable ("convar") is a named, typed value the engine or game code exposes to the
+			in-game console and to config files: <code>mp_roundtime</code>, <code>sv_cheats</code>,{' '}
+			<code>fps_max</code>, and about {convars.length.toLocaleString()} more. Each has a declared upstream
+			type (<code>Float32</code>, <code>Int32</code>, <code>Bool</code>, <code>String</code>, a vector or a
+			color) and, where the engine bounds it, a <code>min</code>/<code>max</code> range. A set of{' '}
+			<strong>flags</strong> governs who may read or set it and when: <code>cheat</code> requires{' '}
+			<code>sv_cheats 1</code> and resets when cheats are off, <code>replicated</code> pushes the server's
+			value out to connected clients, <code>notify</code> announces a change in chat, <code>archive</code>{' '}
+			is written to <code>config.cfg</code>, and so on — see the legend below for every flag this build
+			uses.
+		</p>
+
+		<p class="cs2-provenance">{provenanceLine()}</p>
+
+		<h2 id="flags">Flags</h2>
+		<p>
+			{flags.length} distinct flags appear across this build's convars and commands. A flag with a blank
+			description is one this build sets but upstream never documented in an accessible form.
+		</p>
+		<div class="cs2-table-wrap cs2-legend-table">
+			<table>
+				<thead>
+					<tr>
+						<th>Flag</th>
+						<th class="value">ConVars</th>
+						<th class="value">Commands</th>
+						<th class="ann">Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					{flags.map((f) => (
+						<tr id={flagAnchor(f.name)}>
+							<td><code>{f.name}</code></td>
+							<td class="value">{f.convar_count}</td>
+							<td class="value">{f.command_count}</td>
+							<td class="ann">{f.description}</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+
+		<h2 id="convars-table">ConVars</h2>
+		<p>
+			Sorted by name; type <code>roundtime</code> or <code>cheat</code> in the filter box, or click a flag
+			chip to narrow the table to convars carrying that flag. Multiline descriptions render with line
+			breaks preserved, and a <code>&lt;placeholder&gt;</code> token in a description is set in{' '}
+			<code>code</code> font so it reads as argument syntax rather than prose.
+		</p>
+		<p class="cs2-note">
+			<strong>Link to a convar:</strong> append <code>#&lt;name&gt;</code> to this page's URL, e.g.{' '}
+			<code>#mp_roundtime</code>. Once the page loads, the table jumps to and briefly highlights that row,
+			clearing any active filter that would otherwise hide it.
+		</p>
+
+		<span class="cs2-aliases">{aliasText}</span>
+
+		<div id="cv">
+			<DataTable
+				id="cv"
+				columns={columns}
+				rows={rows}
+				anchorKey="name"
+				caption={`${convars.length.toLocaleString()} console variables`}
+				initialSort={{ key: 'name', dir: 'asc' }}
+				client:idle
+			/>
+		</div>
+	</div>
+</StarlightPage>

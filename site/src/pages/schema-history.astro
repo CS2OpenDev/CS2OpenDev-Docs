@@ -1,0 +1,208 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { provenanceLine } from '../lib/provenance';
+import { loadSchemaHistory, type HistoryDetail } from '../lib/data/schema-history';
+import { codegenArtifactHref } from '../lib/urls';
+import '../styles/content.css';
+
+const history = loadSchemaHistory();
+
+const detailByAnchor = new Map(history.detail.map((d) => [d.anchor, d]));
+const nonEmptyCount = history.transitions.filter((t) => !t.is_empty).length;
+
+function fieldOpsText(ops: Record<string, number>): string {
+	return Object.entries(ops)
+		.map(([k, n]) => `${k} x${n}`)
+		.join(', ');
+}
+
+const FIELD_HISTORY_URL =
+	'https://github.com/CS2OpenDev/CS2OpenDev-Docs/blob/main/docs/generated/downstream-codegen-schemas/field_history.json';
+const SCHEMA_LENS_URL = 'https://github.com/CS2OpenDev/CS2OpenDev-Docs/blob/main/docs/overlays/schema-lens.yml';
+
+const headings = [
+	...(history.breaking.length > 0 ? [{ depth: 2, slug: 'warnings', text: 'Warnings' }] : []),
+	{ depth: 2, slug: 'transitions', text: 'Transitions' },
+	{ depth: 2, slug: 'recent-detail', text: 'Recent transitions in detail' },
+];
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Schema History',
+		description: `${history.transitions.length} recorded structural transitions between CS2 build ${history.baseline_build} and ${history.latest_build}.`,
+	}}
+	headings={headings}
+>
+	<div data-pagefind-body>
+		<p>
+			Every recorded build-to-build transition of <code>cs2_schema.json</code>, from the
+			baseline build <code>{history.baseline_build}</code> up to <code>{history.latest_build}</code>.
+			A transition is <strong>structural</strong> when a class or enum was added, removed, resized,
+			realigned, reparented, or had a field move, appear, disappear, or change type; a transition
+			whose only field ops are metadata changes (<code>META_CHANGE</code>, no type or offset
+			movement) is not counted as structural here, and is called out explicitly where it recurs.
+			{nonEmptyCount} of {history.transitions.length} transitions carry a structural change.
+		</p>
+
+		<p class="cs2-provenance">{provenanceLine()}</p>
+
+		{history.breaking.length > 0 && (
+			<>
+				<h2 id="warnings">Warnings</h2>
+				<p>
+					Community-flagged breaking changes from{' '}
+					<a href={SCHEMA_LENS_URL}>schema-lens.yml</a>: a field whose meaning changed in a way a
+					consumer reading raw offsets would not detect on its own.
+				</p>
+				<div class="cs2-table-wrap">
+					<table>
+						<thead>
+							<tr>
+								<th>Class</th>
+								<th>Field</th>
+								<th>Build</th>
+								<th class="ann">Note</th>
+								<th>Guard</th>
+							</tr>
+						</thead>
+						<tbody>
+							{history.breaking.map((b) => (
+								<tr>
+									<td>{b.class ? <code>{b.class}</code> : ''}</td>
+									<td>{b.field ? <code>{b.field}</code> : ''}</td>
+									<td>{b.build ?? ''}</td>
+									<td class="ann">{b.note ?? ''}</td>
+									<td>{b.guard ? <code>{b.guard}</code> : ''}</td>
+								</tr>
+							))}
+						</tbody>
+					</table>
+				</div>
+			</>
+		)}
+
+		<h2 id="transitions">Transitions</h2>
+		<p>
+			Every row's id is <code>t-&lt;from&gt;-&lt;to&gt;</code> so it can be linked to directly.
+			Rows with a <strong>Detail</strong> link have a full per-class breakdown below.
+		</p>
+		<div class="cs2-table-wrap">
+			<table>
+				<thead>
+					<tr>
+						<th>From</th>
+						<th>To</th>
+						<th>Date</th>
+						<th class="value">Classes +/-/~</th>
+						<th class="value">Enums +/-/~</th>
+						<th class="value">Field ops</th>
+						<th>Detail</th>
+					</tr>
+				</thead>
+				<tbody>
+					{history.transitions.map((t) => (
+						<tr id={`t-${t.anchor}`} class={t.is_empty ? 'cs2-transition-empty' : undefined}>
+							<td><code>{t.from_build}</code></td>
+							<td><code>{t.to_build}</code></td>
+							<td>{t.to_date}</td>
+							<td class="value">
+								{t.counts.class_added}/{t.counts.class_removed}/{t.counts.class_changed}
+							</td>
+							<td class="value">
+								{t.counts.enum_added}/{t.counts.enum_removed}/{t.counts.enum_changed}
+							</td>
+							<td class="value">{t.counts.field_ops}</td>
+							<td>{detailByAnchor.has(t.anchor) ? <a href={`#detail-${t.anchor}`}>Detail</a> : ''}</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+
+		<h2 id="recent-detail">Recent transitions in detail</h2>
+		<p>
+			The {history.detail.length} most recent transitions with a structural change, expanded to the
+			per-class field operations. A class flagged <strong>metadata only</strong> had every one of its
+			field ops come back as <code>META_CHANGE</code> — no offset, type, or membership actually moved,
+			so it is noise for an offset or layout consumer even though the diff engine recorded it.
+		</p>
+
+		{history.detail.map((d: HistoryDetail) => (
+			<>
+				<h3 id={`detail-${d.anchor}`}>
+					{d.from_build} to {d.to_build} <span class="cs2-count">({d.to_date})</span>
+				</h3>
+				<p>
+					{d.classes_added.length} classes added, {d.classes_removed.length} removed,{' '}
+					{d.classes_changed_total} changed
+					{d.classes_changed_truncated && ` (showing the first ${d.classes_changed.length})`}.
+					{(d.enums_added?.length || d.enums_removed?.length) ? (
+						<>
+							{' '}
+							{d.enums_added?.length ?? 0} enums added, {d.enums_removed?.length ?? 0} removed.
+						</>
+					) : null}
+				</p>
+
+				{d.classes_added.length > 0 && (
+					<>
+						<p><strong>Classes added</strong></p>
+						<ul class="cs2-cols">{d.classes_added.map((n) => <li><code>{n}</code></li>)}</ul>
+					</>
+				)}
+				{d.classes_removed.length > 0 && (
+					<>
+						<p><strong>Classes removed</strong></p>
+						<ul class="cs2-cols">{d.classes_removed.map((n) => <li><code>{n}</code></li>)}</ul>
+					</>
+				)}
+
+				{d.classes_changed.length === 0 ? (
+					<p class="cs2-empty">No class carries a field-level change in this transition.</p>
+				) : (
+					<div class="cs2-table-wrap">
+						<table>
+							<thead>
+								<tr>
+									<th>Class</th>
+									<th>Field ops</th>
+									<th class="value">Resize</th>
+									<th>Flags</th>
+								</tr>
+							</thead>
+							<tbody>
+								{d.classes_changed.map((c) => (
+									<tr class={c.metadata_only ? 'cs2-metadata-only' : undefined}>
+										<td>
+											<code>{c.name}</code>
+											{c.metadata_only && <span class="cs2-count"> metadata only</span>}
+										</td>
+										<td>{fieldOpsText(c.field_ops) || (c.meta_ops > 0 ? `META_CHANGE x${c.meta_ops}` : '-')}</td>
+										<td class="value">{c.resize ? `${c.resize.from} to ${c.resize.to}` : ''}</td>
+										<td>
+											{[
+												c.realign && 'realign',
+												c.reparent && 'reparent',
+												c.flags_changed && 'flags',
+											]
+												.filter(Boolean)
+												.join(', ')}
+										</td>
+									</tr>
+								))}
+							</tbody>
+						</table>
+					</div>
+				)}
+			</>
+		))}
+
+		<p>
+			Full per-transition, per-field detail lives in{' '}
+			<a href={FIELD_HISTORY_URL}>field_history.json</a> (also served at{' '}
+			<a href={codegenArtifactHref('field_history.json')}>this build's copy</a>). Community-curated
+			break annotations are edited in <a href={SCHEMA_LENS_URL}>schema-lens.yml</a>.
+		</p>
+	</div>
+</StarlightPage>

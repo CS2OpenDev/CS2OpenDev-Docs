@@ -1,0 +1,50 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import DataTable, { type Column, type Row } from '../../components/islands/DataTable';
+import { provenanceLine } from '../../lib/provenance';
+import { loadPaintKits } from '../../lib/data/items';
+import { itemsHref } from '../../lib/urls';
+
+const kits = loadPaintKits();
+
+const columns: Column[] = [
+	{ key: 'def_index', label: 'Def index', numeric: true },
+	{ key: 'name', label: 'Name', mono: true },
+	{ key: 'description_tag', label: 'Description tag' },
+];
+
+const rows: Row[] = kits.map((k) => ({
+	def_index: k.def_index,
+	name: k.name,
+	description_tag: k.description_tag,
+}));
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Paint Kits',
+		description: `${kits.length} weapon finish (paint kit) definitions for this build.`,
+	}}
+>
+	<div data-pagefind-body>
+		<p>
+			Weapon finish definitions: every paint kit this build's economy tables carry, keyed by{' '}
+			<code>def_index</code>. Back to <a href={itemsHref()}>Items</a>.
+		</p>
+
+		<p class="cs2-provenance">{provenanceLine()}</p>
+
+		<div data-pagefind-ignore>
+			<DataTable
+				id="pk"
+				columns={columns}
+				rows={rows}
+				anchorKey="name"
+				caption="Paint kits"
+				pageSize={250}
+				initialSort={{ key: 'def_index', dir: 'asc' }}
+				client:idle
+			/>
+		</div>
+	</div>
+</StarlightPage>

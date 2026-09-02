@@ -1,0 +1,29 @@
+/*
+ * Shared rules for the flat content pages (changelog, schema history, codegen schemas,
+ * home). custom.css already covers .cs2-table-wrap / .cs2-provenance / .cs2-breadcrumb /
+ * .cs2-note / .cs2-empty / .cs2-count / .cs2-cols site-wide; this file is only for
+ * classes introduced by pages under this task that custom.css does not style.
+ */
+
+.sl-markdown-content .cs2-family-detail {
+	margin-block: 0.75rem;
+}
+
+.sl-markdown-content .cs2-family-detail summary {
+	cursor: pointer;
+	font-weight: 600;
+}
+
+.sl-markdown-content tr.cs2-transition-empty {
+	color: var(--cs2-muted);
+}
+
+.sl-markdown-content tr.cs2-metadata-only td {
+	color: var(--cs2-muted);
+}
+
+/* A material's long steamaudio coefficient arrays, collapsed by default. */
+.sl-markdown-content .cs2-coefficients summary {
+	cursor: pointer;
+	color: var(--cs2-muted);
+}

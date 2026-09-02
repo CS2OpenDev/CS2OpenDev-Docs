@@ -1,0 +1,30 @@
+{
+  "name": "cs2opendev-docs-site",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "predev": "node scripts/copy-artifacts.mjs",
+    "dev": "astro dev",
+    "prebuild": "node scripts/copy-artifacts.mjs",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "node scripts/check-links.mjs dist && node scripts/check-size.mjs dist"
+  },
+  "dependencies": {
+    "@astrojs/react": "6.0.5",
+    "@astrojs/starlight": "0.41.11",
+    "astro": "7.2.10",
+    "mermaid": "11.17.2",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "sharp": "0.35.3",
+    "starlight-blog": "0.29.0",
+    "starlight-sidebar-topics": "0.8.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.5"
+  }
+}

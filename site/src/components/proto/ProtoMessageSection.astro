@@ -1,0 +1,111 @@
+---
+import { protoMessageHref } from '../../lib/urls';
+import ProtoEnumTable from './ProtoEnumTable.astro';
+import ProtoMessageSection from './ProtoMessageSection.astro';
+import {
+	linkFieldType,
+	messagesReferencing,
+	schemaEnumHref,
+	type ProtoIndex,
+	type ProtoMessage,
+} from '../../lib/data/protobufs';
+import { identifierAliases, type SchemaIndex } from '../../lib/data/schema';
+
+interface Props {
+	idx: ProtoIndex;
+	schemaIdx: SchemaIndex;
+	message: ProtoMessage;
+	depth: 3 | 4;
+}
+const { idx, schemaIdx, message, depth } = Astro.props;
+const Heading = depth === 3 ? 'h3' : 'h4';
+const aliases = [...identifierAliases(message.name), ...message.fields.map((f) => f.name)].join(' ');
+
+const oneofByField = new Map<string, string>();
+for (const o of message.oneofs) {
+	for (const fieldName of o.fields) oneofByField.set(fieldName, o.name);
+}
+
+const referencedBy = messagesReferencing(idx, message.qualified);
+
+const nestedMessages = message.nested_messages
+	.map((name) => idx.messageByQualified.get(name))
+	.filter((hit): hit is NonNullable<typeof hit> => hit !== undefined);
+const nestedEnums = message.nested_enums
+	.map((name) => idx.enumByQualified.get(name))
+	.filter((hit): hit is NonNullable<typeof hit> => hit !== undefined);
+---
+
+<Heading id={message.qualified}>{message.qualified}</Heading>
+<span class="cs2-aliases">{aliases}</span>
+
+{message.description && <p>{message.description}</p>}
+{message.notes && <p class="cs2-note">{message.notes}</p>}
+
+{message.wire_ids.length > 0 && (
+	<p class="cs2-rel">
+		<strong>Wire id:</strong>{' '}
+		{message.wire_ids.map((w, i) => {
+			const href = schemaEnumHref(schemaIdx, w.enum);
+			return (
+				<>
+					{i > 0 && ', '}
+					{href ? (
+						<a href={href}>{w.enum}.{w.constant}</a>
+					) : (
+						<>{w.enum}.{w.constant}</>
+					)}
+					{' = '}<code>{w.value}</code>
+				</>
+			);
+		})}
+	</p>
+)}
+
+{referencedBy.length > 0 && (
+	<p class="cs2-rel">
+		<strong>Referenced by</strong> <span class="cs2-count">({referencedBy.length})</span>:{' '}
+		{referencedBy.map((r, i) => (
+			<>{i > 0 && ', '}<a href={protoMessageHref(r.file, r.qualified)}>{r.qualified}</a></>
+		))}
+	</p>
+)}
+
+{message.fields.length === 0 ? (
+	<p class="cs2-empty">(no fields)</p>
+) : (
+	<div class="cs2-table-wrap">
+		<table>
+			<thead>
+				<tr>
+					<th>Field</th>
+					<th class="value">Number</th>
+					<th>Label</th>
+					<th>Type</th>
+					<th>Default</th>
+					<th class="ann">Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				{message.fields.map((f) => (
+					<tr>
+						<td><code>{f.name}</code></td>
+						<td class="value">{f.number}</td>
+						<td>
+							{f.label}
+							{oneofByField.has(f.name) && <span class="cs2-count"> oneof {oneofByField.get(f.name)}</span>}
+						</td>
+						<td set:html={linkFieldType(f)} />
+						<td>{f.default && <code>{f.default}</code>}</td>
+						<td class="ann">{f.description}</td>
+					</tr>
+				))}
+			</tbody>
+		</table>
+	</div>
+)}
+
+{nestedMessages.map((child) => (
+	<ProtoMessageSection idx={idx} schemaIdx={schemaIdx} message={child.message} depth={4} />
+))}
+{nestedEnums.map((child) => <ProtoEnumTable idx={idx} schemaIdx={schemaIdx} enm={child.enm} depth={4} />)}

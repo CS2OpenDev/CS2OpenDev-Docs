@@ -1,0 +1,48 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import DataTable, { type Column, type Row } from '../../components/islands/DataTable';
+import { provenanceLine } from '../../lib/provenance';
+import { loadMusicKits } from '../../lib/data/items';
+import { itemsHref } from '../../lib/urls';
+
+const kits = loadMusicKits();
+
+const columns: Column[] = [
+	{ key: 'def_index', label: 'Def index', numeric: true },
+	{ key: 'name', label: 'Name', mono: true },
+	{ key: 'loc_name', label: 'Loc name' },
+];
+
+const rows: Row[] = kits.map((k) => ({
+	def_index: k.def_index,
+	name: k.name,
+	loc_name: k.loc_name,
+}));
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Music Kits',
+		description: `${kits.length} music kit definitions for this build.`,
+	}}
+>
+	<div data-pagefind-body>
+		<p>
+			Music kit definitions: every music kit this build's economy tables carry, keyed by{' '}
+			<code>def_index</code>. Back to <a href={itemsHref()}>Items</a>.
+		</p>
+
+		<p class="cs2-provenance">{provenanceLine()}</p>
+
+		<DataTable
+			id="mk"
+			columns={columns}
+			rows={rows}
+			anchorKey="name"
+			caption="Music kits"
+			pageSize={250}
+			initialSort={{ key: 'def_index', dir: 'asc' }}
+			client:idle
+		/>
+	</div>
+</StarlightPage>

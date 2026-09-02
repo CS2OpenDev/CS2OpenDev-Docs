@@ -1,0 +1,58 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { provenanceLine } from '../lib/provenance';
+import { loadCollisionGroups } from '../lib/data/props';
+
+const groups = loadCollisionGroups();
+
+function list(v: string[]): string {
+	return v.length === 0 ? '-' : v.join(', ');
+}
+
+const headings = [{ depth: 2, slug: 'collision-groups', text: 'Collision groups' }];
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Props',
+		description: `${groups.length} collision groups this build's physics config registers.`,
+	}}
+	headings={headings}
+>
+	<div data-pagefind-body>
+		<p>
+			The collision groups CS2's physics configuration registers: what each group is solid to,
+			and what it explicitly excludes from those interactions.
+		</p>
+
+		<p class="cs2-provenance">{provenanceLine()}</p>
+
+		<h2 id="collision-groups">Collision groups</h2>
+		<div class="cs2-table-wrap">
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Type</th>
+						<th class="ann">Description</th>
+						<th>Interacts as</th>
+						<th>Interacts with</th>
+						<th>Excludes</th>
+					</tr>
+				</thead>
+				<tbody>
+					{groups.map((g) => (
+						<tr id={g.name}>
+							<td><code>{g.name}</code></td>
+							<td><code>{g.type}</code></td>
+							<td class="ann">{g.description}</td>
+							<td>{list(g.interact_as)}</td>
+							<td>{list(g.interact_with)}</td>
+							<td>{list(g.interact_exclude)}</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</StarlightPage>

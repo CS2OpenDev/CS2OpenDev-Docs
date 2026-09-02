@@ -9,3 +9,9 @@ upstream/schema-tracker/
 # Python cache
 docs/__pycache__/
 __pycache__/
+
+# Astro site (site/ itself IS committed)
+site/node_modules/
+site/dist/
+site/.astro/
+site/public/generated/

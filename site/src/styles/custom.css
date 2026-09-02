@@ -1,0 +1,568 @@
+/* ---------------------------------------------------------------------------
+   Tokens
+   Every Starlight style, including the Astro-scoped component <style> blocks,
+   sits in @layer starlight.*. Unlayered declarations outrank any layered one
+   regardless of specificity, so nothing here needs a layer or a hack.
+--------------------------------------------------------------------------- */
+
+:root {
+	--sl-content-width: 80rem;
+	--sl-sidebar-width: 17rem;
+	--sl-sidebar-pad-x: 0.75rem;
+
+	--cs2-toc-width: 12.5rem;
+	--cs2-mono: var(--sl-font-mono, var(--sl-font-system-mono));
+	--cs2-muted: var(--sl-color-gray-3);
+	--cs2-grid: var(--sl-color-gray-5);
+	--cs2-grid-strong: var(--sl-color-gray-4);
+	--cs2-zebra: var(--sl-color-gray-6);
+	--cs2-row-hover: var(--sl-color-accent-low);
+	--cs2-radius: 0.375rem;
+}
+
+@media (min-width: 72rem) {
+	:root {
+		--sl-content-pad-x: 1.25rem;
+	}
+}
+
+/* ---------------------------------------------------------------------------
+   Layout: give the table pages the width back
+   Starlight caps .main-pane at (100% - --sl-sidebar-width) because it reuses
+   the sidebar width for the right-hand TOC column. Splitting the two out of
+   one token is what buys the content column its extra pixels.
+--------------------------------------------------------------------------- */
+
+@media (min-width: 72rem) {
+	.right-sidebar-container {
+		width: var(--cs2-toc-width);
+	}
+
+	/* .right-sidebar is fixed-position, so its 100% has no reliable containing
+	   block here. Pin it to the same token instead. */
+	.right-sidebar {
+		width: var(--cs2-toc-width);
+	}
+
+	.right-sidebar-panel .sl-container {
+		width: calc(var(--cs2-toc-width) - 2 * var(--sl-sidebar-pad-x));
+		max-width: none;
+	}
+
+	[data-has-toc] .main-pane {
+		width: calc(100% - var(--cs2-toc-width));
+	}
+}
+
+.right-sidebar-panel a {
+	--pad-inline: 0.375rem;
+}
+
+/* Prose keeps a readable measure; tables and the cs2-* blocks take the lot. */
+.sl-markdown-content
+	> p:not(.cs2-breadcrumb, .cs2-provenance, .cs2-stats, .cs2-rel, .cs2-note, .cs2-empty),
+.sl-markdown-content > blockquote {
+	max-width: 74ch;
+}
+
+/* ---------------------------------------------------------------------------
+   Sidebar: ~100 entries, no mid-word breaks
+--------------------------------------------------------------------------- */
+
+#starlight__sidebar {
+	overscroll-behavior: contain;
+	scrollbar-width: thin;
+}
+
+/* Both Starlight's SidebarSublist and starlight-sidebar-topics set
+   overflow-wrap: anywhere on li. The id keeps this ahead of the plugin, whose
+   scoped styles are unlayered. */
+#starlight__sidebar :is(li, a, summary, span) {
+	overflow-wrap: normal;
+	word-break: normal;
+	hyphens: none;
+}
+
+#starlight__sidebar ul {
+	--sl-sidebar-item-padding-inline: 0.4rem;
+}
+
+#starlight__sidebar a {
+	padding-block: 0.2rem;
+}
+
+#starlight__sidebar summary {
+	padding-block: 0.15rem;
+}
+
+#starlight__sidebar ul ul a {
+	font-size: 0.75rem;
+	line-height: 1.35;
+}
+
+#starlight__sidebar .large {
+	font-size: var(--sl-text-sm);
+}
+
+#starlight__sidebar .top-level > li + li {
+	margin-top: 0.35rem;
+}
+
+#starlight__sidebar ul ul li {
+	border-inline-start-color: var(--sl-color-hairline-light);
+}
+
+/* ---------------------------------------------------------------------------
+   Reference tables
+--------------------------------------------------------------------------- */
+
+.sl-markdown-content .cs2-table-wrap {
+	--cs2-table-max-h: calc(100dvh - var(--sl-nav-height) - 4.5rem);
+
+	overflow: auto;
+	max-height: var(--cs2-table-max-h);
+	border: 1px solid var(--cs2-grid);
+	border-radius: var(--cs2-radius);
+	scrollbar-width: thin;
+}
+
+/* Starlight makes tables display:block + overflow:auto. Left alone, the table
+   itself is the scrollport and the sticky header never engages. */
+.sl-markdown-content .cs2-table-wrap table {
+	display: table;
+	width: 100%;
+	overflow: visible;
+	table-layout: auto;
+	font-size: var(--sl-text-xs);
+	line-height: 1.45;
+}
+
+/* Collapsed borders do not travel with a sticky cell in Chromium. */
+.sl-markdown-content .cs2-table-wrap table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+.sl-markdown-content .cs2-table-wrap :is(th, td) {
+	border-bottom: 1px solid var(--cs2-grid);
+	border-inline-end: 1px solid var(--cs2-grid);
+	padding: 0.2rem 0.5rem;
+	text-align: start;
+	overflow-wrap: anywhere;
+}
+
+.sl-markdown-content .cs2-table-wrap :is(th, td):last-child {
+	border-inline-end: 0;
+}
+
+.sl-markdown-content .cs2-table-wrap tbody tr:last-child :is(th, td) {
+	border-bottom: 0;
+}
+
+.sl-markdown-content .cs2-table-wrap thead th {
+	position: sticky;
+	top: 0;
+	z-index: 2;
+	background-color: var(--sl-color-gray-5);
+	color: var(--sl-color-white);
+	font-weight: 600;
+	white-space: nowrap;
+	border-bottom: 1px solid var(--cs2-grid-strong);
+}
+
+.sl-markdown-content .cs2-table-wrap tbody tr:nth-child(even) {
+	background-color: var(--cs2-zebra);
+}
+
+/* nth-child counts DOM rows, so hiding the inherited ones leaves runs of two
+   and three same-colored rows. Drop the stripes and let the grid carry it. */
+.cs2-declared-only:checked ~ .cs2-table-wrap tbody tr:nth-child(even),
+.cs2-declared-toggle:has(.cs2-declared-only:checked) ~ .cs2-table-wrap tbody tr:nth-child(even) {
+	background-color: transparent;
+}
+
+/* On the cells, not the row: cell backgrounds paint above row backgrounds, so
+   hover beats the stripe without a specificity contest. */
+.sl-markdown-content .cs2-table-wrap tbody tr:hover :is(th, td) {
+	background-color: var(--cs2-row-hover);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.sl-markdown-content .cs2-table-wrap tbody :is(th, td) {
+		transition: background-color 0.12s ease;
+	}
+}
+
+/* Below the two-sidebar breakpoint the table scrolls in its own box rather
+   than compressing to unreadable columns. */
+@media (max-width: 68.75rem) {
+	.sl-markdown-content .cs2-table-wrap table {
+		min-width: 46rem;
+	}
+}
+
+/* Numeric columns */
+.sl-markdown-content :is(th, td):is(.offset, .value) {
+	font-family: var(--cs2-mono);
+	font-variant-numeric: tabular-nums;
+	font-size: 0.95em;
+}
+
+.sl-markdown-content :is(th, td).offset {
+	text-align: end;
+	white-space: nowrap;
+	overflow-wrap: normal;
+	color: var(--cs2-muted);
+}
+
+.sl-markdown-content tr.inherited :is(th, td) {
+	color: var(--cs2-muted);
+}
+
+.sl-markdown-content td.from {
+	color: var(--cs2-muted);
+}
+
+.sl-markdown-content td.ann {
+	color: var(--cs2-muted);
+	overflow-wrap: anywhere;
+}
+
+.sl-markdown-content td.ann code {
+	background-color: var(--sl-color-bg-inline-code);
+	border: 1px solid var(--cs2-grid);
+	border-radius: 0.25rem;
+	color: var(--sl-color-gray-2);
+	font-size: 0.9em;
+	margin: 0;
+	padding: 0 0.25rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Declared-only filter
+--------------------------------------------------------------------------- */
+
+.cs2-declared-only:checked ~ .cs2-table-wrap tr.inherited,
+.cs2-declared-toggle:has(.cs2-declared-only:checked) ~ .cs2-table-wrap tr.inherited {
+	display: none;
+}
+
+.sl-markdown-content .cs2-declared-toggle {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	padding: 0.15rem 0.65rem;
+	border: 1px solid var(--cs2-grid);
+	border-radius: 999px;
+	background-color: var(--sl-color-gray-6);
+	color: var(--sl-color-gray-2);
+	font-size: var(--sl-text-xs);
+	line-height: 1.6;
+	cursor: pointer;
+	user-select: none;
+}
+
+.sl-markdown-content .cs2-declared-toggle:hover {
+	border-color: var(--sl-color-text-accent);
+}
+
+.cs2-declared-only {
+	inline-size: 0.85rem;
+	block-size: 0.85rem;
+	margin: 0 0.35rem 0 0;
+	vertical-align: -0.1em;
+	cursor: pointer;
+}
+
+.cs2-declared-toggle > .cs2-declared-only {
+	margin: 0;
+}
+
+.cs2-declared-only:focus-visible {
+	outline: 2px solid var(--sl-color-text-accent);
+	outline-offset: 2px;
+	border-radius: 2px;
+}
+
+/* ---------------------------------------------------------------------------
+   Page furniture
+--------------------------------------------------------------------------- */
+
+.sl-markdown-content .cs2-breadcrumb {
+	font-size: var(--sl-text-xs);
+	line-height: 1.5;
+	color: var(--cs2-muted);
+}
+
+.sl-markdown-content .cs2-breadcrumb a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.sl-markdown-content .cs2-breadcrumb a:hover {
+	color: var(--sl-color-white);
+	text-decoration: underline;
+}
+
+.sl-markdown-content .cs2-provenance {
+	font-size: var(--sl-text-2xs);
+	line-height: 1.6;
+	color: var(--cs2-muted);
+}
+
+.sl-markdown-content .cs2-stats {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.2rem 0.55rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: var(--sl-text-xs);
+	line-height: 1.6;
+	color: var(--cs2-muted);
+}
+
+/* Only fires when the pairs are elements, so a plain text line that already
+   carries its own separators is left alone. */
+.sl-markdown-content .cs2-stats > * + *::before {
+	content: '\00B7';
+	margin-inline-end: 0.55rem;
+	color: var(--sl-color-gray-4);
+}
+
+.sl-markdown-content .cs2-stats strong {
+	font-weight: 600;
+	color: var(--sl-color-gray-2);
+}
+
+.sl-markdown-content .cs2-rel {
+	font-size: var(--sl-text-sm);
+	line-height: 1.6;
+}
+
+.sl-markdown-content .cs2-rel > :is(strong, b) {
+	color: var(--sl-color-white);
+	font-weight: 600;
+	margin-inline-end: 0.4rem;
+}
+
+.sl-markdown-content .cs2-rel + .cs2-rel {
+	margin-top: 0.25rem;
+}
+
+.sl-markdown-content .cs2-note {
+	font-size: var(--sl-text-xs);
+	line-height: 1.6;
+	color: var(--cs2-muted);
+}
+
+.sl-markdown-content .cs2-empty {
+	font-size: var(--sl-text-sm);
+	font-style: italic;
+	color: var(--cs2-muted);
+}
+
+.sl-markdown-content .cs2-count {
+	font-size: 0.85em;
+	font-weight: 400;
+	color: var(--cs2-muted);
+}
+
+/* Kept in the accessibility tree and in the page text for search indexing. */
+.cs2-aliases {
+	position: absolute;
+	inline-size: 1px;
+	block-size: 1px;
+	padding: 0;
+	margin: -1px;
+	border: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	clip-path: inset(50%);
+}
+
+/* ---------------------------------------------------------------------------
+   Link columns
+--------------------------------------------------------------------------- */
+
+.sl-markdown-content .cs2-cols {
+	columns: 13rem auto;
+	column-gap: 1.5rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: var(--sl-text-sm);
+}
+
+.sl-markdown-content .cs2-cols li {
+	break-inside: avoid;
+	line-height: 1.5;
+	overflow-wrap: break-word;
+}
+
+.sl-markdown-content .cs2-cols li + li {
+	margin-top: 0.1rem;
+}
+
+@media (max-width: 30rem) {
+	.sl-markdown-content .cs2-cols {
+		columns: 1;
+	}
+}
+
+/* ---------------------------------------------------------------------------
+   Inheritance tree
+--------------------------------------------------------------------------- */
+
+.sl-markdown-content .cs2-tree {
+	font-size: var(--sl-text-sm);
+	line-height: 1.5;
+}
+
+.sl-markdown-content :is(details.cs2-tree, .cs2-tree details) {
+	border-inline-start-width: 1px;
+	border-inline-start-color: var(--sl-color-hairline-light);
+	padding-inline-start: 0.75rem;
+}
+
+.sl-markdown-content .cs2-tree summary {
+	font-weight: 500;
+	padding-block: 0.1rem;
+	margin-inline-start: -0.4rem;
+	padding-inline-start: 0.4rem;
+	border-radius: 0.25rem;
+}
+
+.sl-markdown-content .cs2-tree summary:hover {
+	background-color: var(--sl-color-gray-6);
+}
+
+.sl-markdown-content .cs2-tree summary::before {
+	--sl-details-marker-size: 1rem;
+}
+
+.sl-markdown-content .cs2-tree details[open] > summary {
+	margin-bottom: 0.15rem;
+}
+
+.sl-markdown-content .cs2-tree :is(details, ul, ol, li, p, div) + :is(details, ul, ol, li, p, div) {
+	margin-top: 0.1rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Memory layout strip
+--------------------------------------------------------------------------- */
+
+.sl-markdown-content .cs2-strip {
+	display: flex;
+	width: 100%;
+	height: 26px;
+	border: 1px solid var(--cs2-grid);
+	border-radius: var(--cs2-radius);
+	background-color: var(--sl-color-gray-6);
+	overflow: hidden;
+}
+
+/* The 1px floor keeps thin segments visible, but N segments need N pixels:
+   past roughly one segment per pixel of strip the tail clips. Set
+   --cs2-strip-seg-min to 0 on strips that emit one segment per field. */
+.sl-markdown-content .cs2-strip-seg {
+	flex-basis: 0;
+	flex-shrink: 1;
+	min-inline-size: var(--cs2-strip-seg-min, 1px);
+	border-inline-end: 1px solid var(--sl-color-hairline-shade);
+	background-color: var(--sl-color-gray-4);
+}
+
+.sl-markdown-content .cs2-strip-seg:last-child {
+	border-inline-end: 0;
+}
+
+/* The hatch lives on a pseudo-element because the segment's inline background
+   shorthand would otherwise win over any background-image set here. */
+.sl-markdown-content .cs2-strip-gap {
+	position: relative;
+	background-color: var(--sl-color-gray-5);
+}
+
+.sl-markdown-content .cs2-strip-gap::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	opacity: 0.5;
+	background-image: repeating-linear-gradient(
+		45deg,
+		transparent 0 3px,
+		var(--sl-color-gray-3) 3px 5px
+	);
+}
+
+.sl-markdown-content .cs2-strip-legend {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25rem 0.9rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: var(--sl-text-2xs);
+	line-height: 1.6;
+	color: var(--cs2-muted);
+}
+
+.sl-markdown-content .cs2-strip-swatch {
+	display: inline-block;
+	inline-size: 0.7em;
+	block-size: 0.7em;
+	margin-inline-end: 0.35em;
+	border: 1px solid var(--sl-color-hairline-shade);
+	border-radius: 2px;
+	background-color: var(--sl-color-gray-4);
+}
+
+/* ---------------------------------------------------------------------------
+   KV3 block
+--------------------------------------------------------------------------- */
+
+.sl-markdown-content .cs2-kv3 > summary {
+	font-size: var(--sl-text-sm);
+}
+
+.sl-markdown-content .cs2-kv3[open] > summary {
+	margin-bottom: 0.5rem;
+}
+
+.sl-markdown-content .cs2-kv3 pre {
+	max-height: 480px;
+	overflow: auto;
+	padding: 0.6rem 0.75rem;
+	border-radius: var(--cs2-radius);
+	font-family: var(--cs2-mono);
+	font-size: var(--sl-text-2xs);
+	line-height: 1.45;
+	scrollbar-width: thin;
+}
+
+/* ---------------------------------------------------------------------------
+   Print
+--------------------------------------------------------------------------- */
+
+@media print {
+	/* The TOC column is print:hidden, so stop reserving room for it. */
+	.main-pane {
+		--cs2-toc-width: 0px;
+	}
+
+	.sl-markdown-content .cs2-table-wrap,
+	.sl-markdown-content .cs2-kv3 pre {
+		max-height: none;
+		overflow: visible;
+	}
+
+	.sl-markdown-content .cs2-table-wrap table {
+		min-width: 0;
+	}
+
+	.sl-markdown-content .cs2-table-wrap thead th {
+		position: static;
+	}
+}

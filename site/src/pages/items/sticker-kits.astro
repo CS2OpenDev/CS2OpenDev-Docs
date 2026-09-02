@@ -1,0 +1,60 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import DataTable, { type Column, type Row } from '../../components/islands/DataTable';
+import { provenanceLine } from '../../lib/provenance';
+import { loadStickerKits } from '../../lib/data/items';
+import { itemsHref, withBase } from '../../lib/urls';
+
+const allKits = loadStickerKits();
+
+// Astro serializes the full `rows` prop into the hydration payload regardless
+// of pageSize; at 11,789 rows that alone pushed this page over the site's 3 MB
+// non-schema page budget. Ship only the first page server-side and have
+// DataTable fetch the rest from rows.json.ts on first interaction.
+const FIRST_PAGE_SIZE = 250;
+const firstPage = allKits.slice(0, FIRST_PAGE_SIZE);
+
+const columns: Column[] = [
+	{ key: 'def_index', label: 'Def index', numeric: true },
+	{ key: 'name', label: 'Name', mono: true },
+	{ key: 'item_name_token', label: 'Name token' },
+	{ key: 'description', label: 'Description token' },
+];
+
+const rows: Row[] = firstPage.map((k) => ({
+	def_index: k.def_index,
+	name: k.name,
+	item_name_token: k.item_name_token,
+	description: k.description,
+}));
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Sticker Kits',
+		description: `${allKits.length} sticker kit definitions for this build.`,
+	}}
+>
+	<div data-pagefind-body>
+	<div data-pagefind-ignore>
+		<p>
+			Sticker definitions: every sticker kit this build's economy tables carry, keyed by{' '}
+			<code>def_index</code>. Back to <a href={itemsHref()}>Items</a>.
+		</p>
+
+		<p class="cs2-provenance">{provenanceLine()}</p>
+
+		<DataTable
+			id="sk"
+			columns={columns}
+			rows={rows}
+			src={withBase('/items/sticker-kits/rows.json')}
+			anchorKey="name"
+			caption="Sticker kits"
+			pageSize={250}
+			initialSort={{ key: 'def_index', dir: 'asc' }}
+			client:idle
+		/>
+	</div>
+	</div>
+</StarlightPage>

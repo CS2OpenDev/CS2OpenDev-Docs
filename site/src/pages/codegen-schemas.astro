@@ -1,0 +1,133 @@
+---
+import { readdirSync, statSync } from 'node:fs';
+import { join } from 'node:path';
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { provenanceLine } from '../lib/provenance';
+import { codegenDir, readJsonFile } from '../lib/paths';
+import { codegenArtifactHref, withBase } from '../lib/urls';
+
+interface CS2SchemaHeader {
+	schema_format_version: string;
+}
+
+const dir = codegenDir();
+const header = readJsonFile<CS2SchemaHeader>(join(dir, 'cs2_schema.json'));
+
+function fileSize(name: string): number {
+	return statSync(join(dir, name)).size;
+}
+
+function formatBytes(n: number): string {
+	if (n < 1024) return `${n} B`;
+	if (n < 1024 * 1024) return `${(n / 1024).toFixed(1)} KB`;
+	return `${(n / (1024 * 1024)).toFixed(1)} MB`;
+}
+
+const artifacts = [
+	{
+		file: 'cs2_schema.json',
+		purpose: 'Entity schema: classes, structs, enums, fields, offsets, sizes and inheritance.',
+	},
+	{
+		file: 'convars_schema.json',
+		purpose: 'Console variable table, machine-readable counterpart to the ConVars page.',
+	},
+	{
+		file: 'commands_schema.json',
+		purpose: 'Console command table, machine-readable counterpart to the Commands page.',
+	},
+	{
+		file: 'gameevents_schema.json',
+		purpose: 'Game event registry: names, fields, sources.',
+	},
+	{
+		file: 'well_known_constants.json',
+		purpose: 'Community-curated integer/enum reference tables the schema does not expose as named types.',
+	},
+	{
+		file: 'field_history.json',
+		purpose: 'Whole-history evolution of every (class, field): first/last seen build, type history.',
+	},
+].map((a) => ({ ...a, size: fileSize(a.file), href: codegenArtifactHref(a.file) }));
+
+const protoFiles = readdirSync(join(dir, 'proto')).filter((f) => f.endsWith('.proto'));
+const protoTotalSize = protoFiles.reduce((n, f) => n + statSync(join(dir, 'proto', f)).size, 0);
+
+const README_URL =
+	'https://github.com/CS2OpenDev/CS2OpenDev-Docs/blob/main/docs/generated/downstream-codegen-schemas/README.md';
+
+const headings = [
+	{ depth: 2, slug: 'artifacts', text: 'Artifacts' },
+	{ depth: 2, slug: 'twins-and-projectname', text: 'Twins and projectName' },
+];
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Codegen Schemas',
+		description: 'Machine-readable JSON and protobuf schemas for downstream codegen, one file per artifact.',
+	}}
+	headings={headings}
+>
+	<div data-pagefind-body>
+		<p>
+			These are the raw artifacts the rest of this site is rendered from, meant for a build step
+			rather than a browser: a code generator, a demo parser's schema loader, or a plugin's build
+			pipeline. Every file below shares one <code>schema_format_version</code>, currently{' '}
+			<code>{header.schema_format_version}</code>, bumped as a family whenever a field is added,
+			removed, or renamed in any of them.
+		</p>
+
+		<p class="cs2-provenance">{provenanceLine()}</p>
+
+		<h2 id="artifacts">Artifacts</h2>
+		<div class="cs2-table-wrap">
+			<table>
+				<thead>
+					<tr>
+						<th>File</th>
+						<th class="value">Size</th>
+						<th class="ann">Purpose</th>
+					</tr>
+				</thead>
+				<tbody>
+					{artifacts.map((a) => (
+						<tr>
+							<td><a href={a.href}><code>{a.file}</code></a></td>
+							<td class="value">{formatBytes(a.size)}</td>
+							<td class="ann">{a.purpose}</td>
+						</tr>
+					))}
+					<tr>
+						<td><code>proto/*.proto</code></td>
+						<td class="value">{formatBytes(protoTotalSize)}</td>
+						<td class="ann">
+							{protoFiles.length} decompiled protobuf source files, for compiling from source. Browse
+							them rendered at <a href={withBase('/protobufs/')}>the Protobufs pages</a>, or fetch one
+							directly at <code>proto/&lt;name&gt;.proto</code> alongside the files above.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<h2 id="twins-and-projectname">Twins and projectName</h2>
+		<p>
+			<code>cs2_schema.json</code> keys every class and enum by <code>(projectName, name)</code>, not
+			by name alone. <code>projectName</code> is SchemaTracker's coarse project axis (<code>server</code>,{' '}
+			<code>client</code>, <code>entity2</code>, and a handful more): the finer upstream{' '}
+			<code>module</code> (the binary a type was walked out of) and <code>cppName</code> are kept on
+			the record, but pages and lookups are grouped by <code>projectName</code>. A name such as{' '}
+			<code>CCSPlayerController</code> legitimately has one record under <code>server</code> and
+			another under <code>client</code> — a <strong>twin</strong> pair. The two are separate types with
+			separate field layouts and offsets; this site keys its schema pages by module for exactly this
+			reason; look up <code>server/CCSPlayerController</code> and <code>client/CCSPlayerController</code>{' '}
+			as distinct pages, not one page with two answers.
+		</p>
+
+		<p>
+			Full field-by-field documentation of every file's shape lives in the contract README:{' '}
+			<a href={README_URL}>README.md</a> on GitHub.
+		</p>
+	</div>
+</StarlightPage>

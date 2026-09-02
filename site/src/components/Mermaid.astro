@@ -1,0 +1,501 @@
+---
+export interface Props {
+	code: string;
+	caption?: string;
+}
+
+const { code, caption } = Astro.props;
+---
+
+<figure class="mermaid-figure">
+	<pre class="mermaid" data-pagefind-ignore set:text={code}></pre>
+	{caption && <figcaption class="mermaid-caption">{caption}</figcaption>}
+</figure>
+
+<script>
+	type MermaidApi = (typeof import('mermaid'))['default'];
+
+	const MIN_HEIGHT = 160;
+	const MAX_HEIGHT = 640;
+	const MIN_SCALE = 0.05;
+	const MAX_SCALE = 20;
+	const HINT_IDLE = 'Click to zoom and pan';
+	const HINT_ACTIVE = 'Scroll to zoom / Drag to pan';
+
+	const sources = new WeakMap<HTMLElement, string>();
+	const teardowns = new WeakMap<HTMLElement, () => void>();
+
+	let mermaidPromise: Promise<MermaidApi> | null = null;
+	let themeWatched = false;
+	let chain: Promise<void> = Promise.resolve();
+
+	function themeName(): 'default' | 'dark' {
+		return document.documentElement.dataset.theme === 'light' ? 'default' : 'dark';
+	}
+
+	function diagrams(): HTMLElement[] {
+		return Array.from(document.querySelectorAll<HTMLElement>('pre.mermaid'));
+	}
+
+	function queue(task: () => Promise<void>): void {
+		chain = chain.then(task, task).catch(() => {});
+	}
+
+	// initialize() must land in the same microtask as the module resolving, before the
+	// window load listener mermaid registers can fire with startOnLoad still default true.
+	// A rejected promise is cleared so a failed load stays retryable.
+	function loadMermaid(): Promise<MermaidApi> {
+		if (!mermaidPromise) {
+			mermaidPromise = import('mermaid')
+				.then((mod) => {
+					mod.default.initialize({ startOnLoad: false, theme: themeName() });
+					return mod.default;
+				})
+				.catch((error: unknown) => {
+					mermaidPromise = null;
+					throw error;
+				});
+		}
+		return mermaidPromise;
+	}
+
+	function clamp(value: number, low: number, high: number): number {
+		return Math.max(low, Math.min(high, value));
+	}
+
+	function stash(nodes: HTMLElement[]): void {
+		for (const node of nodes) {
+			if (!sources.has(node)) sources.set(node, node.textContent ?? '');
+		}
+	}
+
+	// mermaid clears the element before rendering and does not put the text back on
+	// failure, so every restore path reads from the stash rather than the DOM.
+	function restore(node: HTMLElement): void {
+		node.textContent = sources.get(node) ?? '';
+	}
+
+	function reset(node: HTMLElement): void {
+		const teardown = teardowns.get(node);
+		if (teardown) {
+			teardown();
+			teardowns.delete(node);
+		}
+		const wrapper = node.parentElement;
+		if (wrapper && wrapper.classList.contains('mermaid-zoom-wrapper')) {
+			wrapper.parentNode?.insertBefore(node, wrapper);
+			wrapper.remove();
+		}
+		node.closest('.mermaid-figure')?.querySelector('.mermaid-error')?.remove();
+		node.removeAttribute('data-processed');
+		node.removeAttribute('style');
+		delete node.dataset.panzoom;
+		restore(node);
+	}
+
+	function flagError(node: HTMLElement): void {
+		restore(node);
+		if (node.closest('.mermaid-figure')?.querySelector('.mermaid-error')) return;
+		const note = document.createElement('div');
+		note.className = 'mermaid-error';
+		note.setAttribute('role', 'note');
+		note.textContent = 'This diagram could not be rendered. Its source is shown above.';
+		node.after(note);
+	}
+
+	function attach(pre: HTMLElement): void {
+		if (pre.dataset.panzoom === '1') return;
+		const svg = pre.querySelector('svg');
+		if (!svg || !pre.parentNode) return;
+		pre.dataset.panzoom = '1';
+
+		const wrapper = document.createElement('div');
+		wrapper.className = 'mermaid-zoom-wrapper';
+		wrapper.tabIndex = 0;
+		wrapper.setAttribute('role', 'group');
+		wrapper.setAttribute('aria-label', 'Diagram. Activate to zoom and pan.');
+		pre.parentNode.insertBefore(wrapper, pre);
+		wrapper.appendChild(pre);
+
+		const controls = document.createElement('div');
+		controls.className = 'mermaid-zoom-controls';
+		controls.addEventListener('pointerdown', (event) => event.stopPropagation());
+		controls.addEventListener('click', (event) => event.stopPropagation());
+		const specs: Array<[string, string]> = [
+			['+', 'Zoom in'],
+			['−', 'Zoom out'],
+			['↺', 'Reset view'],
+		];
+		const buttons = specs.map(([label, title]) => {
+			const button = document.createElement('button');
+			button.type = 'button';
+			button.textContent = label;
+			button.title = title;
+			button.setAttribute('aria-label', title);
+			controls.appendChild(button);
+			return button;
+		});
+		wrapper.appendChild(controls);
+
+		const hint = document.createElement('div');
+		hint.className = 'mermaid-zoom-hint';
+		hint.textContent = HINT_IDLE;
+		wrapper.appendChild(hint);
+
+		const box = svg.viewBox && svg.viewBox.baseVal;
+		const naturalW = (box && box.width) || parseFloat(svg.getAttribute('width') || '') || 800;
+		const naturalH = (box && box.height) || parseFloat(svg.getAttribute('height') || '') || 440;
+
+		// The pre is taken out of flow below, so the wrapper has no intrinsic height.
+		// It has to carry one before the first fit or the fit divides by zero.
+		wrapper.style.height = Math.round(clamp(naturalH, MIN_HEIGHT, MAX_HEIGHT)) + 'px';
+
+		svg.removeAttribute('width');
+		svg.removeAttribute('height');
+		svg.style.position = 'absolute';
+		svg.style.top = '0';
+		svg.style.left = '0';
+		svg.style.width = naturalW + 'px';
+		svg.style.height = naturalH + 'px';
+		svg.style.transformOrigin = '0 0';
+		svg.style.maxWidth = 'none';
+		svg.style.zIndex = '0';
+
+		let scale = 1;
+		let panX = 0;
+		let panY = 0;
+
+		// An arrow assigned after the null guard, so the narrowed svg stays non-null here.
+		const applyTransform = (): void => {
+			svg.style.transform = 'translate(' + panX + 'px,' + panY + 'px) scale(' + scale + ')';
+		};
+
+		function fitAndCenter(): void {
+			const wr = wrapper.clientWidth || naturalW;
+			const wh = wrapper.clientHeight || naturalH;
+			scale = clamp(Math.min(wr / naturalW, wh / naturalH) * 0.95, MIN_SCALE, MAX_SCALE);
+			panX = (wr - naturalW * scale) / 2;
+			panY = (wh - naturalH * scale) / 2;
+			applyTransform();
+		}
+
+		function zoomAt(x: number, y: number, factor: number): void {
+			const next = clamp(scale * factor, MIN_SCALE, MAX_SCALE);
+			panX = x - (x - panX) * (next / scale);
+			panY = y - (y - panY) * (next / scale);
+			scale = next;
+			applyTransform();
+		}
+
+		function zoomAroundCenter(factor: number): void {
+			zoomAt(wrapper.clientWidth / 2, wrapper.clientHeight / 2, factor);
+		}
+
+		let active = false;
+		let dragging = false;
+		let lastX = 0;
+		let lastY = 0;
+
+		function onWheel(event: WheelEvent): void {
+			event.preventDefault();
+			const rect = wrapper.getBoundingClientRect();
+			zoomAt(event.clientX - rect.left, event.clientY - rect.top, event.deltaY < 0 ? 1.15 : 1 / 1.15);
+		}
+
+		function onOutside(event: PointerEvent): void {
+			if (!wrapper.contains(event.target as Node)) deactivate();
+		}
+
+		function onKey(event: KeyboardEvent): void {
+			if (event.key === 'Escape') deactivate();
+		}
+
+		function activate(): void {
+			if (active) return;
+			active = true;
+			wrapper.classList.add('is-active');
+			hint.textContent = HINT_ACTIVE;
+			// passive:false only while active, so an inactive diagram never blocks page scroll.
+			wrapper.addEventListener('wheel', onWheel, { passive: false });
+			document.addEventListener('pointerdown', onOutside, true);
+			document.addEventListener('keydown', onKey);
+			wrapper.focus({ preventScroll: true });
+		}
+
+		function deactivate(): void {
+			if (!active) return;
+			active = false;
+			dragging = false;
+			wrapper.classList.remove('is-active', 'is-dragging');
+			hint.textContent = HINT_IDLE;
+			wrapper.removeEventListener('wheel', onWheel);
+			document.removeEventListener('pointerdown', onOutside, true);
+			document.removeEventListener('keydown', onKey);
+			if (document.activeElement === wrapper) wrapper.blur();
+		}
+
+		wrapper.addEventListener('click', activate);
+		wrapper.addEventListener('keydown', (event) => {
+			if (event.key === 'Enter' || event.key === ' ') {
+				event.preventDefault();
+				activate();
+			}
+		});
+
+		wrapper.addEventListener('pointerdown', (event) => {
+			if (!active) return;
+			dragging = true;
+			lastX = event.clientX;
+			lastY = event.clientY;
+			wrapper.classList.add('is-dragging');
+			try {
+				wrapper.setPointerCapture(event.pointerId);
+			} catch {}
+		});
+		wrapper.addEventListener('pointermove', (event) => {
+			if (!dragging) return;
+			panX += event.clientX - lastX;
+			panY += event.clientY - lastY;
+			lastX = event.clientX;
+			lastY = event.clientY;
+			applyTransform();
+		});
+		function endDrag(): void {
+			dragging = false;
+			wrapper.classList.remove('is-dragging');
+		}
+		wrapper.addEventListener('pointerup', endDrag);
+		wrapper.addEventListener('pointercancel', endDrag);
+
+		buttons[0]?.addEventListener('click', () => zoomAroundCenter(1.3));
+		buttons[1]?.addEventListener('click', () => zoomAroundCenter(1 / 1.3));
+		buttons[2]?.addEventListener('click', fitAndCenter);
+
+		let fitted = false;
+		function initialFit(): void {
+			if (fitted || wrapper.clientWidth === 0 || wrapper.clientHeight === 0) return;
+			fitted = true;
+			fitAndCenter();
+			resize?.disconnect();
+		}
+		const resize = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(initialFit);
+		resize?.observe(wrapper);
+		requestAnimationFrame(initialFit);
+
+		teardowns.set(pre, () => {
+			deactivate();
+			resize?.disconnect();
+		});
+	}
+
+	async function render(nodes: HTMLElement[]): Promise<void> {
+		if (nodes.length === 0) return;
+		const mermaid = await loadMermaid();
+		mermaid.initialize({
+			startOnLoad: false,
+			securityLevel: 'strict',
+			// Without this mermaid replaces a failed diagram with its own error graphic,
+			// which would pass the "has an svg" check below.
+			suppressErrorRendering: true,
+			theme: themeName(),
+		});
+		await mermaid.run({ nodes, suppressErrors: true });
+		for (const node of nodes) {
+			if (node.querySelector('svg')) attach(node);
+			else flagError(node);
+		}
+	}
+
+	function watchTheme(): void {
+		if (themeWatched) return;
+		themeWatched = true;
+		let last = document.documentElement.dataset.theme;
+		const observer = new MutationObserver(() => {
+			const next = document.documentElement.dataset.theme;
+			if (next === last) return;
+			last = next;
+			if (!mermaidPromise) return;
+			// The reset has to be queued too. Tearing down mid render would leave mermaid
+			// writing its svg over the restored source.
+			queue(async () => {
+				const nodes = diagrams();
+				for (const node of nodes) reset(node);
+				await render(nodes);
+			});
+		});
+		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+	}
+
+	function boot(): void {
+		const nodes = diagrams();
+		if (nodes.length === 0) return;
+		stash(nodes);
+		watchTheme();
+		const pending = nodes.filter((node) => !node.hasAttribute('data-processed'));
+		if (pending.length === 0) return;
+		if (typeof IntersectionObserver === 'undefined') {
+			queue(() => render(pending));
+			return;
+		}
+		const observer = new IntersectionObserver(
+			(entries) => {
+				if (!entries.some((entry) => entry.isIntersecting)) return;
+				observer.disconnect();
+				queue(() => render(pending));
+			},
+			{ rootMargin: '400px 0px' }
+		);
+		for (const node of pending) observer.observe(node);
+	}
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', boot, { once: true });
+	} else {
+		boot();
+	}
+	document.addEventListener('astro:page-load', boot);
+</script>
+
+<style is:global>
+	.mermaid-figure {
+		margin: 1.5rem 0;
+	}
+
+	.mermaid-figure > pre.mermaid {
+		margin: 0;
+		padding: 1rem;
+		overflow-x: auto;
+		color: var(--sl-color-gray-2);
+		background: var(--sl-color-bg);
+		border: 1px solid var(--sl-color-hairline);
+		border-radius: 0.5rem;
+		font-size: 0.8125rem;
+		line-height: 1.5;
+		white-space: pre;
+		tab-size: 2;
+	}
+
+	.mermaid-caption {
+		margin-top: 0.5rem;
+		color: var(--sl-color-gray-3);
+		font-size: 0.8125rem;
+		line-height: 1.5;
+		text-align: center;
+	}
+
+	.mermaid-error {
+		margin-top: 0.5rem;
+		padding: 0.5rem 0.75rem;
+		color: var(--sl-color-orange-high);
+		background: var(--sl-color-bg);
+		border: 1px solid var(--sl-color-orange);
+		border-radius: 0.25rem;
+		font-size: 0.8125rem;
+		line-height: 1.5;
+	}
+
+	.mermaid-zoom-wrapper {
+		position: relative;
+		overflow: hidden;
+		background: var(--sl-color-bg);
+		border: 1px solid var(--sl-color-hairline);
+		border-radius: 0.5rem;
+		cursor: zoom-in;
+		touch-action: pan-y;
+	}
+
+	.mermaid-zoom-wrapper.is-active {
+		border-color: var(--sl-color-accent);
+		cursor: grab;
+		touch-action: none;
+	}
+
+	.mermaid-zoom-wrapper.is-dragging {
+		cursor: grabbing;
+	}
+
+	.mermaid-zoom-wrapper:focus-visible {
+		outline: 2px solid var(--sl-color-accent);
+		outline-offset: 2px;
+	}
+
+	.mermaid-zoom-wrapper > pre.mermaid {
+		position: absolute;
+		inset: 0;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		background: none;
+		border: 0;
+		border-radius: 0;
+	}
+
+	.mermaid-zoom-wrapper > pre.mermaid > svg {
+		display: block;
+		max-width: none;
+	}
+
+	.mermaid-zoom-controls {
+		position: absolute;
+		top: 0.5rem;
+		right: 0.5rem;
+		z-index: 2;
+		display: flex;
+		gap: 0.25rem;
+	}
+
+	.mermaid-zoom-controls button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 32px;
+		min-height: 32px;
+		padding: 0;
+		color: var(--sl-color-text);
+		background: var(--sl-color-bg);
+		border: 1px solid var(--sl-color-hairline);
+		border-radius: 0.25rem;
+		font-size: 0.9375rem;
+		line-height: 1;
+		cursor: pointer;
+		transition: background-color 150ms ease, border-color 150ms ease;
+	}
+
+	.mermaid-zoom-controls button:hover {
+		background: var(--sl-color-gray-5);
+	}
+
+	.mermaid-zoom-controls button:focus-visible {
+		outline: 2px solid var(--sl-color-accent);
+		outline-offset: 2px;
+	}
+
+	.mermaid-zoom-hint {
+		position: absolute;
+		bottom: 0.5rem;
+		left: 0.5rem;
+		z-index: 2;
+		padding: 0.125rem 0.5rem;
+		color: var(--sl-color-gray-3);
+		background: var(--sl-color-bg);
+		border: 1px solid var(--sl-color-hairline);
+		border-radius: 999px;
+		font-size: 0.6875rem;
+		line-height: 1.6;
+		opacity: 0.85;
+		pointer-events: none;
+		transition: opacity 150ms ease, color 150ms ease;
+	}
+
+	.mermaid-zoom-wrapper.is-active .mermaid-zoom-hint {
+		color: var(--sl-color-text-accent);
+		opacity: 1;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.mermaid-zoom-controls button,
+		.mermaid-zoom-hint {
+			transition: none;
+		}
+	}
+</style>
