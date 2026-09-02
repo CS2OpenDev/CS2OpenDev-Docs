@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Site: dev server",
+      "type": "node-terminal",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/site",
+      "command": "npm run dev -- --open"
+    },
+    {
+      "name": "Site: dev server + Chrome debugger",
+      "type": "node-terminal",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/site",
+      "command": "npm run dev",
+      "serverReadyAction": {
+        "pattern": "(?:Local|running at)[^\\n]*?(https?://[^\\s\\u001b/)]+)",
+        "uriFormat": "%s/CS2OpenDev-Docs/",
+        "action": "debugWithChrome",
+        "webRoot": "${workspaceFolder}/site"
+      }
+    }
+  ]
+}
