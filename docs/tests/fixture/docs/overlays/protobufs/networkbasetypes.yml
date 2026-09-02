@@ -1,0 +1,165 @@
+# docs/overlays/protobufs/networkbasetypes.yml
+#
+# Overlay for Protobufs/networkbasetypes.proto
+#
+# Sources: HL2SDK (alliedmodders/hl2sdk cs2 branch), Source 2 network
+#          documentation.
+
+description: >
+  Foundational proto-type definitions shared across all CS2 network and game-event
+  messages.  Provides compact vector, angle, quaternion, colour, and player-info
+  structs used as fields in higher-level messages.
+
+messages:
+  CMsgVector:
+    description: >
+      Compact three-component world-space position or direction vector transmitted
+      over the CS2 network.  Used for shot origins, positions, normals, etc.
+    fields:
+      x:
+        description: "X component of the vector (world units)."
+      y:
+        description: "Y component of the vector (world units)."
+      z:
+        description: "Z component of the vector (world units, positive = up)."
+
+  CMsgVector2D:
+    description: >
+      Two-component vector for screen-space or 2D positions.
+    fields:
+      x:
+        description: "X component."
+      y:
+        description: "Y component."
+
+  CMsgQAngle:
+    description: >
+      Euler angle triplet (pitch, yaw, roll) used to represent orientations in
+      CS2 network messages.  Pitch = up/down, Yaw = left/right, Roll = tilt.
+    fields:
+      x:
+        description: "Pitch angle in degrees (positive = look down)."
+      y:
+        description: "Yaw angle in degrees (positive = turn left)."
+      z:
+        description: "Roll angle in degrees."
+
+  CMsgQuaternion:
+    description: >
+      Unit quaternion representation of a 3D rotation, used when higher precision
+      or gimbal-lock avoidance is needed.
+    fields:
+      x:
+        description: "Quaternion X component."
+      y:
+        description: "Quaternion Y component."
+      z:
+        description: "Quaternion Z component."
+      w:
+        description: "Quaternion W (scalar) component."
+
+  CMsgTransform:
+    description: >
+      Combined position and orientation transform message.
+    fields:
+      position:
+        description: "World-space translation vector."
+      rotation:
+        description: "Rotation quaternion."
+
+  CMsgRGBA:
+    description: >
+      32-bit RGBA colour value transmitted as four separate byte-range integers.
+    fields:
+      r:
+        description: "Red channel (0–255)."
+      g:
+        description: "Green channel (0–255)."
+      b:
+        description: "Blue channel (0–255)."
+      a:
+        description: "Alpha channel (0 = fully transparent, 255 = fully opaque)."
+
+  CMsgPlayerInfo:
+    description: >
+      Compact player-identification record stored in the 'userinfo' string
+      table.  Every connected client has an entry here; used to resolve entity
+      handles to Steam IDs and display names in demo parsers.
+    fields:
+      name:
+        description: "Steam display name of the player (UTF-8, up to 32 bytes)."
+      xuid:
+        description: "Steam's internal 64-bit XUID (may differ from SteamID64 for certain account types)."
+      userid:
+        description: "Session-scoped integer user ID assigned by the server (unique per connection)."
+      steamid:
+        description: "64-bit SteamID64 of the player."
+      fakeplayer:
+        description: "True when this slot is occupied by a bot rather than a human player."
+      ishltv:
+        description: "True when this slot is a GOTV/HLTV proxy connection."
+
+  CEntityMsg:
+    description: >
+      Wrapper that targets an entity-specific message to a specific entity handle.
+    fields:
+      target_entity:
+        description: "Packed entity handle of the target entity (0xFFFFFF = broadcast)."
+
+  CMsg_CVars:
+    description: >
+      List of convar name–value pairs, used to synchronise convar state between
+      client and server (e.g. in CNETMsg_SetConVar).
+
+  CNETMsg_NOP:
+    description: >
+      No-operation message; sent as a heartbeat or padding packet.
+
+  CNETMsg_Tick:
+    description: >
+      Per-tick synchronisation heartbeat sent from the server to all clients.
+      Carries host-performance metrics alongside the current tick number.
+    fields:
+      tick:
+        description: "Current server tick number."
+      host_computationtime:
+        description: "Server computation time for this tick in microseconds."
+      host_computationtime_std_deviation:
+        description: "Standard deviation of recent computation times in microseconds."
+      host_unfiltered_frametime:
+        description: "Unsmoothed frame time in microseconds."
+      hltv_replay_flags:
+        description: "GOTV replay control flags."
+      expected_long_tick:
+        description: "Tick number that is expected to take longer than usual (pre-warned to clients)."
+      host_frame_dropped_pct_x10:
+        description: "Percentage of server frames dropped, multiplied by 10 (e.g. 15 = 1.5%)."
+
+  CNETMsg_StringCmd:
+    description: >
+      Client→Server string command (e.g. 'joingame', 'spectate', 'changeteam').
+      The server whitelists valid commands; arbitrary console commands are not
+      accepted.
+
+  CNETMsg_SetConVar:
+    description: >
+      Pushes a list of convar values from the server to the client (or from
+      client to server when the client is reporting user settings).
+
+  CNETMsg_SignonState:
+    description: >
+      Reports the current connection stage of the client or server during the
+      multi-step sign-on sequence.
+    fields:
+      signon_state:
+        description: "SignonState_t enum: NONE=0, CHALLENGE=1, CONNECTED=2, NEW=3, PRESPAWN=4, SPAWN=5, FULL=6, CHANGELEVEL=7."
+      spawn_count:
+        description: "Incremented each map load; used to detect map changes."
+      num_server_players:
+        description: "Number of player slots currently occupied on the server."
+      players_networkids:
+        description: "List of SteamID strings for currently connected players."
+      map_name:
+        description: "Current map name."
+      addons:
+        description: "Comma-separated list of workshop addons loaded on this server."

@@ -1,0 +1,133 @@
+{
+ "buildId": "25000182",
+ "gameTypes": [
+  {
+   "gameModes": [
+    {
+     "convars": [],
+     "descriptionId": "#SFUI_GameModeCasualDesc",
+     "displayName": "",
+     "exhibitGameType": "",
+     "gameMode": 0,
+     "gameType": 0,
+     "id": "casual",
+     "mapGroupsMp": [
+      "template#include"
+     ],
+     "maxPlayers": 20,
+     "nameId": "#SFUI_GameModeCasual",
+     "typeFlags": 0
+    },
+    {
+     "convars": [],
+     "descriptionId": "#SFUI_GameModeCompetitiveDesc",
+     "displayName": "",
+     "exhibitGameType": "",
+     "gameMode": 0,
+     "gameType": 0,
+     "id": "competitive",
+     "mapGroupsMp": [
+      "template#include"
+     ],
+     "maxPlayers": 10,
+     "nameId": "#SFUI_GameModeCompetitive",
+     "typeFlags": 0
+    },
+    {
+     "convars": [],
+     "descriptionId": "#SFUI_GameModeCompetitiveDesc",
+     "displayName": "",
+     "exhibitGameType": "",
+     "gameMode": 0,
+     "gameType": 0,
+     "id": "new_user_training",
+     "mapGroupsMp": [
+      "mg_de_dust2"
+     ],
+     "maxPlayers": 10,
+     "nameId": "#SFUI_GameModeCompetitive",
+     "typeFlags": 0
+    },
+    {
+     "convars": [],
+     "descriptionId": "#SFUI_GameModeRetakesDesc",
+     "displayName": "",
+     "exhibitGameType": "",
+     "gameMode": 0,
+     "gameType": 0,
+     "id": "retakes",
+     "mapGroupsMp": [
+      "mg_casualalpha",
+      "mg_casualdelta"
+     ],
+     "maxPlayers": 7,
+     "nameId": "#SFUI_GameModeRetakes",
+     "typeFlags": 0
+    },
+    {
+     "convars": [],
+     "descriptionId": "#SFUI_GameModeScrimComp2v2Desc",
+     "displayName": "",
+     "exhibitGameType": "",
+     "gameMode": 0,
+     "gameType": 0,
+     "id": "scrimcomp2v2",
+     "mapGroupsMp": [
+      "template#include"
+     ],
+     "maxPlayers": 4,
+     "nameId": "#SFUI_GameModeScrimComp2v2",
+     "typeFlags": 0
+    },
+    {
+     "convars": [],
+     "descriptionId": "#SFUI_GameModeScrimComp5v5Desc",
+     "displayName": "",
+     "exhibitGameType": "",
+     "gameMode": 0,
+     "gameType": 0,
+     "id": "scrimcomp5v5",
+     "mapGroupsMp": [
+      "template#include"
+     ],
+     "maxPlayers": 10,
+     "nameId": "#SFUI_GameModeScrimComp5v5",
+     "typeFlags": 0
+    }
+   ],
+   "id": "classic",
+   "index": 0
+  }
+ ],
+ "mapGroups": [
+  {
+   "displayName": "",
+   "id": "mg_active",
+   "maps": [
+    "de_dust2",
+    "de_inferno",
+    "de_mirage",
+    "de_nuke",
+    "de_overpass",
+    "de_train",
+    "de_vertigo"
+   ]
+  },
+  {
+   "displayName": "",
+   "id": "mg_ar_baggage",
+   "maps": [
+    "ar_baggage"
+   ]
+  },
+  {
+   "displayName": "",
+   "id": "mg_ar_dizzy",
+   "maps": [
+    "ar_dizzy"
+   ]
+  }
+ ],
+ "platform": "windows-x86_64",
+ "schemaVersion": "0.10.0"
+}

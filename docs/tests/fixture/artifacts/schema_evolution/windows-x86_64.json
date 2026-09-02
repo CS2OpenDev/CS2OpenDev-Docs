@@ -1,0 +1,69 @@
+{
+ "platform": "windows-x86_64",
+ "schemaVersion": "0.8.0",
+ "baselineBuild": "8999999",
+ "latestBuild": "9000001",
+ "transitions": [
+  {
+   "fromBuild": "8999999",
+   "toBuild": "9000000",
+   "fromManifestCreatedUtc": "2026-08-01T00:00:00Z",
+   "toManifestCreatedUtc": "2026-08-14T00:00:00Z",
+   "classAdded": [
+    "CBaseAnimGraph"
+   ],
+   "classRemoved": [],
+   "classChanged": [
+    {
+     "name": "CBaseCombatCharacter",
+     "fieldOps": [
+      {
+       "kind": "ADD",
+       "field": "m_flFixtureOne"
+      },
+      {
+       "kind": "OFFSET_CHANGE",
+       "field": "m_iHealth"
+      }
+     ],
+     "resize": {
+      "from": "1000",
+      "to": "1008"
+     }
+    }
+   ],
+   "classPairCandidates": [],
+   "fieldMoveCandidates": []
+  },
+  {
+   "fromBuild": "9000000",
+   "toBuild": "9000001",
+   "fromManifestCreatedUtc": "2026-08-14T00:00:00Z",
+   "toManifestCreatedUtc": "2026-08-28T00:00:00Z",
+   "classAdded": [],
+   "classRemoved": [],
+   "classChanged": []
+  }
+ ],
+ "fieldHistory": [
+  {
+   "className": "CBaseCombatCharacter",
+   "field": "m_iHealth",
+   "firstSeenBuild": "8999999",
+   "lastSeenBuild": "9000001",
+   "typeHistory": [
+    {
+     "build": "8999999",
+     "type": "int32"
+    }
+   ]
+  }
+ ],
+ "enumHistory": [
+  {
+   "enumName": "SolidType_t",
+   "firstSeenBuild": "8999999",
+   "lastSeenBuild": "9000001"
+  }
+ ]
+}

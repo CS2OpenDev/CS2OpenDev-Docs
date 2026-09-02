@@ -1,0 +1,59 @@
+{
+  "families": [
+    {
+      "added": [],
+      "added_count": 0,
+      "changed": [],
+      "changed_count": 0,
+      "family": "classes",
+      "removed": [],
+      "removed_count": 0,
+      "truncated": false
+    },
+    {
+      "added": [],
+      "added_count": 0,
+      "changed": [],
+      "changed_count": 0,
+      "family": "enums",
+      "removed": [],
+      "removed_count": 0,
+      "truncated": false
+    },
+    {
+      "added": [],
+      "added_count": 0,
+      "changed": [],
+      "changed_count": 0,
+      "family": "convars",
+      "removed": [],
+      "removed_count": 0,
+      "truncated": false
+    },
+    {
+      "added": [],
+      "added_count": 0,
+      "changed": [],
+      "changed_count": 0,
+      "family": "commands",
+      "removed": [],
+      "removed_count": 0,
+      "truncated": false
+    },
+    {
+      "added": [],
+      "added_count": 0,
+      "changed": [],
+      "changed_count": 0,
+      "family": "engine_constants",
+      "removed": [],
+      "removed_count": 0,
+      "truncated": false
+    }
+  ],
+  "from_build": "24957633",
+  "no_changes": true,
+  "platform": "windows-x86_64",
+  "schema_history_anchor": "24957633-25000182",
+  "to_build": "25000182"
+}

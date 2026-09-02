@@ -1,0 +1,22 @@
+{
+  "sticker_kits": [
+    {
+      "def_index": 0,
+      "description": "#StickerKit_Desc_Default",
+      "item_name_token": "#StickerKit_Default",
+      "name": "default"
+    },
+    {
+      "def_index": 1,
+      "description": "#StickerKit_desc_dh_gologo1",
+      "item_name_token": "#StickerKit_dh_gologo1",
+      "name": "dh_gologo1"
+    },
+    {
+      "def_index": 2,
+      "description": "#StickerKit_desc_dh_gologo1_holo",
+      "item_name_token": "#StickerKit_dh_gologo1_holo",
+      "name": "dh_gologo1_holo"
+    }
+  ]
+}

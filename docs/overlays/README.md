@@ -48,12 +48,36 @@ CBaseEntity:
   description: "Base class for all server-side entities."
 ```
 
-Supported modules follow SchemaTracker's `projectName` grouping — the page
-names under `docs/generated/schemas/` (e.g. `server`, `client`, `entity2`,
-`particles`, `animgraphlib`, `pulse_runtime_lib`, …) plus `protobufs` for
-Protobuf files.  Entity overlays are matched by entity name, so a class that
-SchemaTracker files under a different binary module than its historical
-DumpSource2 module still resolves.
+Module names follow SchemaTracker's `projectName` grouping, which is also the
+directory name under `docs/generated/schemas/`.  Build 25000182 has 47 of them:
+
+```
+animationsystem  animdoclib  animgraphdoclib  animgraphlib  animlib  client
+compositematerialslib  engine2  entity2  hammer  host  mapdoclib
+materialsystem2  mathlib_extended  met  modeldoc_editor  modellib  modtools
+navlib  networksystem  panorama_content  particles  particleslib  physicslib
+pulse_runtime_lib  pulse_system  pulsedoc_lib  qcontrols  rendersystemdx11
+resourcecompiler  resourcefile  resourcesystem  scenesystem  schemasystem
+server  smartprops  sounddoc_lib  soundsystem  soundsystem_lowlevel
+soundsystem_voicecontainers  steamaudio  texturelib  tier2  toolscene
+toolutils2  vphysics2  worldrenderer
+```
+
+plus `protobufs` for Protobuf files.  There is no `globaltypes` module: every
+enum now carries a `projectName`, so the enums that file still names
+(`SolidType_t`, `MoveType_t`, …) live under `server`.  Run the generator with
+`--strict` to be told which of your keys do not match this build.
+
+Overlays are matched on `<module>/<name>` first and then by name alone across
+every module, so a key filed under the wrong module still renders. It would
+attach to an unrelated class of the same name if one appeared, and the
+generator prints it as a `MODULE` advisory, so prefer the real module.
+
+For the 189 client/server twins (`CCSPlayerController` in `server`,
+`C_CSPlayerController` and `CCSPlayerController` in `client`) the name-only
+fallback means one entry annotates both variants.  That is right when the
+prose is about the concept and wrong when the twins differ in field set or
+offsets; file the key under the module you actually verified.
 
 A few module-level files use the same physical layout but a different
 top-level shape because their downstream generator wants the file as a
@@ -67,6 +91,25 @@ unit:
 The loader treats these the same as ordinary module files but also
 keeps the raw file dict accessible under the bare module key, so the
 relevant generator can pull the whole thing in one read.
+
+### Enum member annotations
+
+An enum uses the same `fields:` key as a class; each key is a member name and
+its `description` / `notes` land in the Description column of the enum's
+Values table and in the `annotations` block of that member in
+`cs2_schema.json`.
+
+```yaml
+# docs/overlays/server.yml
+SolidType_t:
+  description: "Collision representation used by CCollisionProperty."
+  fields:
+    SOLID_VPHYSICS:
+      description: "Collide against the VPhysics representation."
+    SOLID_BBOX:
+      description: "Axis-aligned bounding box."
+      notes: "Cheapest solid type; used by most brush entities."
+```
 
 ### Single-entity format *(legacy)*
 
@@ -154,11 +197,36 @@ events:
 
 ---
 
+## Checking your overlay
+
+The generator validates every overlay key against the build it is rendering.
+It always prints what did not resolve; `--strict` turns that into a non-zero
+exit so a typo fails the run instead of vanishing from the site:
+
+```bash
+python3 docs/generate_docs.py --repo-root . \
+  --artifacts-root ./upstream/schema-tracker/artifacts --build latest \
+  --platform windows-x86_64 --output /tmp/docs-check --strict
+```
+
+Two kinds of report come out of it:
+
+- `UNRESOLVED`: the class, enum, field, proto message, proto field or game
+  event does not exist in this build.  The nearest existing name is printed
+  alongside.  These fail under `--strict`.
+- `MODULE`: the name exists but not in the module the key is filed under.
+  It still renders through the name-only fallback; fix the module anyway.
+
+A YAML syntax error is fatal with or without `--strict`: the file and the
+parse error are printed and the run exits 2, so a bad edit can no longer
+delete a whole module's annotations silently.
+
 ## Contributing
 
 1. **Fork** the repository and create a branch.
 2. Add or edit a YAML file under `docs/overlays/`.
-3. Open a pull request with a clear description of the information you are adding.
+3. Run the generator with `--strict` and fix anything it reports.
+4. Open a pull request with a clear description of the information you are adding.
 
 Please prefer **factual, source-cited** information from:
 - Official Valve developer documentation

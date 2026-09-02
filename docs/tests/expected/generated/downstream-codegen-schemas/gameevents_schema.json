@@ -1,0 +1,324 @@
+{
+  "schema_format_version": "2.2",
+  "generator": "https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker",
+  "build_id": 9000001,
+  "platform": "windows-x86_64",
+  "revision": "hl2sdk-cs2/5f891c9026230cce0fc0a3fc4b5fef1c467a1385/v1/3d1200e346019c59",
+  "version_date": "2026-08-28",
+  "version_time": "2026-08-28T00:00:00Z",
+  "events": [
+    {
+      "name": "player_death",
+      "comment": "a game event, name may be 32 charaters long",
+      "source": "core.gameevents",
+      "properties": {},
+      "fields": [
+        {
+          "name": "userid",
+          "type": "player_controller_and_pawn",
+          "comment": "user ID who died"
+        },
+        {
+          "name": "attacker",
+          "type": "player_controller_and_pawn",
+          "comment": "user ID who killed"
+        }
+      ],
+      "annotations": {
+        "description": "Fired when a player dies.  Carries `userid` (the victim) and `attacker`.  Detailed kill information (weapon, headshot, assister, penetration count, no-scope flag, distance) lives on the legacy `cs_gameevents.proto` user-message `CMsgSource1LegacyGameEvent` payload — extract those keys when parsing demos."
+      }
+    },
+    {
+      "name": "round_end",
+      "comment": "",
+      "source": "core.gameevents",
+      "properties": {},
+      "fields": [
+        {
+          "name": "winner",
+          "type": "byte",
+          "comment": "winner team/user i"
+        },
+        {
+          "name": "reason",
+          "type": "byte",
+          "comment": "reson why team won"
+        },
+        {
+          "name": "message",
+          "type": "string",
+          "comment": "end round message"
+        },
+        {
+          "name": "time",
+          "type": "float",
+          "comment": ""
+        }
+      ],
+      "annotations": {
+        "description": "Fired when a round concludes.  Carries the winning team (`winner`), the reason for the win (`reason`, see RoundEndReason table below), and a human-readable `message` string.",
+        "notes": "The `winner` value uses the same team-number scheme as the `Team` constant in `well_known_constants.json` (2=T, 3=CT, 0/1 for draw / unassigned).  The `reason` byte enumerates win conditions: bomb detonation, defusal, time expiry, eliminations, surrender, etc. — full mapping is in `public/cstrike15_gameconstants.h` upstream."
+      }
+    },
+    {
+      "name": "round_end",
+      "comment": "",
+      "source": "game.gameevents",
+      "properties": {},
+      "fields": [
+        {
+          "name": "winner",
+          "type": "byte",
+          "comment": "winner team/user i"
+        },
+        {
+          "name": "reason",
+          "type": "byte",
+          "comment": "reson why team won"
+        },
+        {
+          "name": "message",
+          "type": "string",
+          "comment": "end round message"
+        },
+        {
+          "name": "legacy",
+          "type": "byte",
+          "comment": "server-generated legacy value"
+        }
+      ],
+      "annotations": {
+        "description": "Fired when a round concludes.  Carries the winning team (`winner`), the reason for the win (`reason`, see RoundEndReason table below), and a human-readable `message` string.",
+        "notes": "The `winner` value uses the same team-number scheme as the `Team` constant in `well_known_constants.json` (2=T, 3=CT, 0/1 for draw / unassigned).  The `reason` byte enumerates win conditions: bomb detonation, defusal, time expiry, eliminations, surrender, etc. — full mapping is in `public/cstrike15_gameconstants.h` upstream."
+      }
+    },
+    {
+      "name": "bomb_planted",
+      "comment": "",
+      "source": "mod.gameevents",
+      "properties": {},
+      "fields": [
+        {
+          "name": "userid",
+          "type": "player_controller_and_pawn",
+          "comment": "player who planted the bomb"
+        },
+        {
+          "name": "site",
+          "type": "short",
+          "comment": "bombsite index"
+        },
+        {
+          "name": "c4",
+          "type": "short",
+          "comment": ""
+        }
+      ],
+      "annotations": {
+        "description": "Fired when the C4 is successfully armed.  `site` is the bombsite index (0=A, 1=B).  At this point a `CPlantedC4` entity exists and the 40-second countdown begins."
+      }
+    },
+    {
+      "name": "player_death",
+      "comment": "a game event, name may be 32 characters long",
+      "source": "mod.gameevents",
+      "properties": {},
+      "fields": [
+        {
+          "name": "userid",
+          "type": "player_controller_and_pawn",
+          "comment": "user who died"
+        },
+        {
+          "name": "attacker",
+          "type": "player_controller_and_pawn",
+          "comment": "player who killed"
+        },
+        {
+          "name": "assister",
+          "type": "player_controller_and_pawn",
+          "comment": "player who assisted in the kill"
+        },
+        {
+          "name": "assistedflash",
+          "type": "bool",
+          "comment": "assister helped with a flash"
+        },
+        {
+          "name": "weapon",
+          "type": "string",
+          "comment": "weapon name killer used"
+        },
+        {
+          "name": "weapon_itemid",
+          "type": "string",
+          "comment": "inventory item id of weapon killer used"
+        },
+        {
+          "name": "weapon_fauxitemid",
+          "type": "string",
+          "comment": "faux item id of weapon killer used"
+        },
+        {
+          "name": "weapon_originalowner_xuid",
+          "type": "string",
+          "comment": ""
+        },
+        {
+          "name": "headshot",
+          "type": "bool",
+          "comment": "singals a headshot"
+        },
+        {
+          "name": "dominated",
+          "type": "short",
+          "comment": "did killer dominate victim with this kill"
+        },
+        {
+          "name": "revenge",
+          "type": "short",
+          "comment": "did killer get revenge on victim with this kill"
+        },
+        {
+          "name": "wipe",
+          "type": "short",
+          "comment": "is the kill resulting in squad wipe"
+        },
+        {
+          "name": "penetrated",
+          "type": "short",
+          "comment": "number of objects shot penetrated before killing target"
+        },
+        {
+          "name": "noreplay",
+          "type": "bool",
+          "comment": "if replay data is unavailable, this will be present and set to false"
+        },
+        {
+          "name": "noscope",
+          "type": "bool",
+          "comment": "kill happened without a scope, used for death notice icon"
+        },
+        {
+          "name": "thrusmoke",
+          "type": "bool",
+          "comment": "hitscan weapon went through smoke grenade"
+        },
+        {
+          "name": "attackerblind",
+          "type": "bool",
+          "comment": "attacker was blind from flashbang"
+        },
+        {
+          "name": "distance",
+          "type": "float",
+          "comment": "distance to victim in meters"
+        },
+        {
+          "name": "dmg_health",
+          "type": "short",
+          "comment": "damage done to health"
+        },
+        {
+          "name": "dmg_armor",
+          "type": "byte",
+          "comment": "damage done to armor"
+        },
+        {
+          "name": "hitgroup",
+          "type": "byte",
+          "comment": "hitgroup that was damaged"
+        },
+        {
+          "name": "attackerinair",
+          "type": "bool",
+          "comment": "attacker was in midair"
+        }
+      ],
+      "annotations": {
+        "description": "Fired when a player dies.  Carries `userid` (the victim) and `attacker`.  Detailed kill information (weapon, headshot, assister, penetration count, no-scope flag, distance) lives on the legacy `cs_gameevents.proto` user-message `CMsgSource1LegacyGameEvent` payload — extract those keys when parsing demos."
+      }
+    },
+    {
+      "name": "player_jump",
+      "comment": "",
+      "source": "mod.gameevents",
+      "properties": {},
+      "fields": [
+        {
+          "name": "userid",
+          "type": "player_controller",
+          "comment": ""
+        }
+      ]
+    },
+    {
+      "name": "round_end",
+      "comment": "",
+      "source": "mod.gameevents",
+      "properties": {},
+      "fields": [
+        {
+          "name": "winner",
+          "type": "byte",
+          "comment": "winner team/user i"
+        },
+        {
+          "name": "reason",
+          "type": "byte",
+          "comment": "reson why team won"
+        },
+        {
+          "name": "message",
+          "type": "string",
+          "comment": "end round message"
+        },
+        {
+          "name": "legacy",
+          "type": "byte",
+          "comment": "server-generated legacy value"
+        },
+        {
+          "name": "player_count",
+          "type": "short",
+          "comment": "total number of players alive at the end of round, used for statistics gathering, computed on the server in the event client is in replay when receiving this message"
+        },
+        {
+          "name": "nomusic",
+          "type": "byte",
+          "comment": "if set, don't play round end music, because action is still on-going"
+        }
+      ],
+      "annotations": {
+        "description": "Fired when a round concludes.  Carries the winning team (`winner`), the reason for the win (`reason`, see RoundEndReason table below), and a human-readable `message` string.",
+        "notes": "The `winner` value uses the same team-number scheme as the `Team` constant in `well_known_constants.json` (2=T, 3=CT, 0/1 for draw / unassigned).  The `reason` byte enumerates win conditions: bomb detonation, defusal, time expiry, eliminations, surrender, etc. — full mapping is in `public/cstrike15_gameconstants.h` upstream."
+      }
+    },
+    {
+      "name": "weapon_fire",
+      "comment": "",
+      "source": "mod.gameevents",
+      "properties": {},
+      "fields": [
+        {
+          "name": "userid",
+          "type": "player_controller_and_pawn",
+          "comment": ""
+        },
+        {
+          "name": "weapon",
+          "type": "string",
+          "comment": "weapon name used"
+        },
+        {
+          "name": "silenced",
+          "type": "bool",
+          "comment": "is weapon silenced"
+        }
+      ],
+      "annotations": {
+        "description": "Fired each time a player pulls the trigger and a shot is taken. `weapon` is the lowercase classname (`ak47`, `awp`, `knife`, `hegrenade`, …).  Use `bullet_damage` for the *hit* event counterpart."
+      }
+    }
+  ]
+}

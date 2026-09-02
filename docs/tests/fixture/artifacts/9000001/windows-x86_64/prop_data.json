@@ -1,0 +1,118 @@
+{
+ "breakableModels": [
+  {
+   "id": "ConcreteChunks",
+   "models": [
+    "models/props_debris/concrete_chunk02a.vmdl",
+    "models/props_debris/concrete_chunk03a.vmdl",
+    "models/props_debris/concrete_chunk07a.vmdl",
+    "models/props_debris/concrete_chunk08a.vmdl",
+    "models/props_debris/concrete_chunk09a.vmdl"
+   ]
+  },
+  {
+   "id": "GlassChunks",
+   "models": [
+    "models/Gibs/Glass_shard01.vmdl",
+    "models/Gibs/Glass_shard02.vmdl",
+    "models/Gibs/Glass_shard03.vmdl",
+    "models/Gibs/Glass_shard04.vmdl",
+    "models/Gibs/Glass_shard05.vmdl",
+    "models/Gibs/Glass_shard06.vmdl"
+   ]
+  }
+ ],
+ "buildId": "25000182",
+ "collisionGroups": [
+  {
+   "collisionGroup": "ConditionallySolid",
+   "description": "Solid to only players and npcs, has the same functionality as clip brush",
+   "interactAs": [
+    "playerclip",
+    "npcclip"
+   ],
+   "interactExclude": [],
+   "interactWith": [],
+   "name": "clip"
+  },
+  {
+   "collisionGroup": "ConditionallySolid",
+   "description": "Solid to drones only",
+   "interactAs": [
+    "csgo_droneclip"
+   ],
+   "interactExclude": [],
+   "interactWith": [],
+   "name": "csgo_droneclip"
+  },
+  {
+   "collisionGroup": "ConditionallySolid",
+   "description": "Solid to grenades only",
+   "interactAs": [
+    "csgo_grenadeclip"
+   ],
+   "interactExclude": [],
+   "interactWith": [],
+   "name": "csgo_grenadeclip"
+  },
+  {
+   "collisionGroup": "ConditionallySolid",
+   "description": "Solid but exclude bullets & grenades.",
+   "interactAs": [
+    "passbullets"
+   ],
+   "interactExclude": [
+    "csgo_thrown_grenade"
+   ],
+   "interactWith": [],
+   "name": "csgo_railing"
+  }
+ ],
+ "platform": "windows-x86_64",
+ "propClasses": [
+  {
+   "id": "Cardboard.Base",
+   "properties": [
+    {
+     "name": "dmg.bullets",
+     "value": "0.5"
+    },
+    {
+     "name": "dmg.club",
+     "value": "1.25"
+    },
+    {
+     "name": "dmg.explosive",
+     "value": "1.5"
+    }
+   ]
+  },
+  {
+   "id": "Cardboard.Indestructable",
+   "properties": [
+    {
+     "name": "base",
+     "value": "Cardboard.Base"
+    }
+   ]
+  },
+  {
+   "id": "Cardboard.Large",
+   "properties": [
+    {
+     "name": "base",
+     "value": "Cardboard.Base"
+    },
+    {
+     "name": "health",
+     "value": "40"
+    },
+    {
+     "name": "physicsmode",
+     "value": "1"
+    }
+   ]
+  }
+ ],
+ "schemaVersion": "0.10.0"
+}

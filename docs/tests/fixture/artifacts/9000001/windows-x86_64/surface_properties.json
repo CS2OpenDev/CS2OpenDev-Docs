@@ -1,0 +1,41 @@
+{
+ "buildId": "25000182",
+ "platform": "windows-x86_64",
+ "schemaVersion": "0.10.0",
+ "surfaces": [
+  {
+   "name": "Balloon",
+   "properties": [
+    {
+     "name": "walkleft",
+     "value": "CT_Default.StepLeft"
+    }
+   ],
+   "scope": "ct_player",
+   "sourceFile": "surfaceproperties_footsteps.txt"
+  },
+  {
+   "name": "Metal_Box",
+   "properties": [],
+   "scope": "ct_player",
+   "sourceFile": "surfaceproperties_footsteps.txt"
+  },
+  {
+   "name": "Metal_Box",
+   "properties": [],
+   "scope": "t_player",
+   "sourceFile": "surfaceproperties_footsteps.txt"
+  },
+  {
+   "name": "Metal_Box",
+   "properties": [
+    {
+     "name": "bulletPenetrationDistanceModifier",
+     "value": "0.5"
+    }
+   ],
+   "scope": "",
+   "sourceFile": "surfaceproperties_game.txt"
+  }
+ ]
+}

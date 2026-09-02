@@ -1,0 +1,19 @@
+{
+  "paint_kits": [
+    {
+      "def_index": 0,
+      "description_tag": "#PaintKit_Default_Tag",
+      "name": "default"
+    },
+    {
+      "def_index": 2,
+      "description_tag": "#PaintKit_so_olive_Tag",
+      "name": "so_olive"
+    },
+    {
+      "def_index": 3,
+      "description_tag": "#PaintKit_so_red_Tag",
+      "name": "so_red"
+    }
+  ]
+}

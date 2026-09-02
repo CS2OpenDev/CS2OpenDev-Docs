@@ -1,0 +1,53 @@
+LifeState_t:
+  description: Alive/dead state of a pawn (m_lifeState).
+  fields:
+    LIFE_ALIVE:
+      description: Alive and playable.
+    LIFE_DEAD:
+      description: Dead.
+    LIFE_DYING:
+      description: Playing the death animation; not yet fully dead.
+    LIFE_RESPAWNABLE:
+      description: Dead and eligible to respawn.
+    LIFE_RESPAWNING:
+      description: In the process of respawning.
+MoveType_t:
+  description: How an entity is moved and simulated each tick (m_MoveType).
+  fields:
+    MOVETYPE_CUSTOM:
+      description: Movement handled by custom game code.
+    MOVETYPE_FLY:
+      description: Flies in a straight line, ignoring gravity.
+    MOVETYPE_FLYGRAVITY:
+      description: Ballistic arc under gravity (thrown grenades, projectiles).
+    MOVETYPE_LADDER:
+      description: Climbing a ladder.
+    MOVETYPE_NOCLIP:
+      description: Free movement with no collision (noclip).
+    MOVETYPE_NONE:
+      description: Not moved by the engine.
+    MOVETYPE_OBSERVER:
+      description: Spectator free-look movement.
+    MOVETYPE_PUSH:
+      description: Pushes other entities without being blocked (movers/doors).
+    MOVETYPE_VPHYSICS:
+      description: Driven by the VPhysics simulation.
+    MOVETYPE_WALK:
+      description: Player-style ground movement (walk/run/jump).
+SolidType_t:
+  description: Collision solid type used for an entity's physics representation (m_nSolidType).
+  fields:
+    SOLID_BBOX:
+      description: Axis-aligned bounding box.
+    SOLID_CAPSULE:
+      description: Capsule (used by player/character collision).
+    SOLID_CYLINDER:
+      description: Cylinder.
+    SOLID_NONE:
+      description: No collision.
+    SOLID_OBB:
+      description: Oriented bounding box.
+    SOLID_SPHERE:
+      description: Sphere.
+    SOLID_VPHYSICS:
+      description: Full VPhysics collision mesh.

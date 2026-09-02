@@ -1,0 +1,30 @@
+description: ''
+events:
+  bomb_planted:
+    description: 'Fired when the C4 is successfully armed.  `site` is the bombsite index (0=A, 1=B).  At
+      this point a `CPlantedC4` entity exists and the 40-second countdown begins.
+
+      '
+  player_death:
+    description: 'Fired when a player dies.  Carries `userid` (the victim) and `attacker`.  Detailed kill
+      information (weapon, headshot, assister, penetration count, no-scope flag, distance) lives on the
+      legacy `cs_gameevents.proto` user-message `CMsgSource1LegacyGameEvent` payload — extract those keys
+      when parsing demos.
+
+      '
+  round_end:
+    description: 'Fired when a round concludes.  Carries the winning team (`winner`), the reason for the
+      win (`reason`, see RoundEndReason table below), and a human-readable `message` string.
+
+      '
+    notes: 'The `winner` value uses the same team-number scheme as the `Team` constant in `well_known_constants.json`
+      (2=T, 3=CT, 0/1 for draw / unassigned).  The `reason` byte enumerates win conditions: bomb detonation,
+      defusal, time expiry, eliminations, surrender, etc. — full mapping is in `public/cstrike15_gameconstants.h`
+      upstream.
+
+      '
+  weapon_fire:
+    description: 'Fired each time a player pulls the trigger and a shot is taken. `weapon` is the lowercase
+      classname (`ak47`, `awp`, `knife`, `hegrenade`, …).  Use `bullet_damage` for the *hit* event counterpart.
+
+      '

@@ -1,0 +1,76 @@
+# docs/overlays/convar_flags.yml
+#
+# Legend for the FCVAR_* flag tokens SchemaTracker records on convars.json
+# and commands.json. site_data.py reads this file (via the shared
+# load_overlays/get_overlay machinery, under the bare "convar_flags" module
+# key) and merges it with the flag counts it measures on the current build
+# to produce the "flags" array embedded in both convars.json and
+# commands.json.
+#
+# Every flag seen on the current build must have an entry below (site_data.py
+# asserts this and fails loudly if one is missing). Where the meaning is not
+# confidently known from public Source engine references, the description is
+# left blank rather than guessed, per project policy.
+#
+# Wrapped in a top-level "flags:" key (mirroring gameevents.yml's "events:"
+# and well_known_constants.yml's "constants:") so the bare flag names never
+# leak into the shared overlays namespace that get_overlay's name-only
+# fallback scans.
+
+flags:
+  archive:
+    description: "Value is written to config.cfg on shutdown and reloaded on startup."
+  cheat:
+    description: "Requires sv_cheats 1 to change; reset when cheats are disabled."
+  client_can_execute:
+    description: "The client is allowed to run this command locally when the server sends it."
+  clientcmd_can_execute:
+    description: "A client may invoke this from a clientcmd, a narrower grant than full server trust."
+  clientdll:
+    description: "Registered by the client binary (client.dll)."
+  commandline_enforced:
+    description: "Can be forced from the command line; a command-line value locks out later changes."
+  defensive:
+    description: ""
+  demo:
+    description: ""
+  developmentonly:
+    description: "Present only in development builds; stripped or inert in shipping builds."
+  dontrecord:
+    description: "Excluded from demo recording."
+  execute_per_tick:
+    description: ""
+  gamedll:
+    description: "Registered by the game server binary (server.dll)."
+  hidden:
+    description: "Omitted from cvarlist/find output; still usable directly by name."
+  linked_concommand:
+    description: ""
+  menubar_item:
+    description: "Exposed as an item in the in-game menu bar / options UI."
+  notify:
+    description: "A change is announced to connected players (console/chat notification)."
+  per_user:
+    description: "Tracked per split-screen/local user rather than as one global value."
+  performing_callbacks:
+    description: ""
+  protected:
+    description: "Value is withheld from clients (e.g. never sent over rcon output)."
+  reference:
+    description: ""
+  release:
+    description: "Present in release/shipping builds, not just internal ones."
+  replicated:
+    description: "Server's value is sent to and enforced on connected clients."
+  server_can_execute:
+    description: "The server is allowed to invoke this on a client (rcon-style trust)."
+  server_cannot_query:
+    description: "The server may not query this client-side value."
+  unlogged:
+    description: "Not written to the console log."
+  userinfo:
+    description: "Part of the player's userinfo string, sent to the server on change."
+  vconsole_fuzzy_matching:
+    description: ""
+  vconsole_set_focus:
+    description: ""

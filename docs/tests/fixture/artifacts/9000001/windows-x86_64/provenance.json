@@ -1,0 +1,16 @@
+{
+ "buildId": "9000001",
+ "schemaVersion": "0.10.0",
+ "cs2Build": {
+  "schemaRevision": "hl2sdk-cs2/5f891c9026230cce0fc0a3fc4b5fef1c467a1385/v1/3d1200e346019c59"
+ },
+ "steam": {
+  "manifestCreatedUtc": "2026-08-28T00:00:00Z"
+ },
+ "tool": {
+  "gitCommit": "5196045c92a2fa3b702867a9e1e3272ad6016e0d",
+  "semver": "0.10.0",
+  "walkerGitSha": "5196045c92a2fa3b702867a9e1e3272ad6016e0d",
+  "walkerSrcFingerprint": "5c71d980aa45c0413c64e29672670dbd70f03da3e87d74541625377d75a36c39"
+ }
+}

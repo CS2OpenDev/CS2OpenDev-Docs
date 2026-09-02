@@ -1,0 +1,62 @@
+{
+ "buildId": "25000182",
+ "channels": [
+  {
+   "messages": [
+    {
+     "id": 16,
+     "protoMessageType": "CBidirMsg_RebroadcastGameEvent"
+    },
+    {
+     "id": 17,
+     "protoMessageType": "CBidirMsg_RebroadcastSource"
+    },
+    {
+     "id": 19,
+     "protoMessageType": "CBidirMsg_PredictionEvent"
+    }
+   ],
+   "name": "Bidirectional"
+  },
+  {
+   "messages": [
+    {
+     "id": 20,
+     "protoMessageType": "CCLCMsg_ClientInfo"
+    },
+    {
+     "id": 21,
+     "protoMessageType": "CCLCMsg_Move"
+    },
+    {
+     "id": 22,
+     "protoMessageType": "CCLCMsg_VoiceData"
+    },
+    {
+     "id": 23,
+     "protoMessageType": "CCLCMsg_BaselineAck"
+    }
+   ],
+   "name": "ClcMessages"
+  },
+  {
+   "messages": [
+    {
+     "id": 280,
+     "protoMessageType": "CClientMsg_CustomGameEvent"
+    },
+    {
+     "id": 281,
+     "protoMessageType": "CClientMsg_CustomGameEventBounce"
+    },
+    {
+     "id": 282,
+     "protoMessageType": "CClientMsg_ClientUIEvent"
+    }
+   ],
+   "name": "ClientMessages"
+  }
+ ],
+ "platform": "windows-x86_64",
+ "schemaVersion": "0.10.0"
+}

@@ -1,0 +1,31 @@
+{
+ "buildId": "25000182",
+ "messages": [
+  {
+   "id": 0,
+   "protoMessageType": "CDemoStop"
+  },
+  {
+   "id": 1,
+   "protoMessageType": "CDemoFileHeader"
+  },
+  {
+   "id": 2,
+   "protoMessageType": "CDemoFileInfo"
+  },
+  {
+   "id": 3,
+   "protoMessageType": "CDemoSyncTick"
+  },
+  {
+   "id": 4,
+   "protoMessageType": "CDemoSendTables"
+  },
+  {
+   "id": 5,
+   "protoMessageType": "CDemoClassInfo"
+  }
+ ],
+ "platform": "windows-x86_64",
+ "schemaVersion": "0.10.0"
+}

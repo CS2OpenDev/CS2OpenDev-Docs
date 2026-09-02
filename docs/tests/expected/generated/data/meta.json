@@ -1,0 +1,55 @@
+{
+  "build_id": "9000001",
+  "counts": {
+    "classes": 19,
+    "commands": 6,
+    "convars": 9,
+    "enums": 5,
+    "events": 8,
+    "fields": 675,
+    "game_modes": 6,
+    "items": 6,
+    "maps": 3,
+    "messages": 73,
+    "modules": 4,
+    "music_kits": 2,
+    "paint_kits": 3,
+    "proto_files": 3,
+    "sticker_kits": 3,
+    "surfaces": 4
+  },
+  "generated_utc": "",
+  "modules": [
+    {
+      "classes": 0,
+      "enums": 1,
+      "module": "animgraphlib"
+    },
+    {
+      "classes": 8,
+      "enums": 0,
+      "module": "client"
+    },
+    {
+      "classes": 1,
+      "enums": 0,
+      "module": "entity2"
+    },
+    {
+      "classes": 4,
+      "enums": 0,
+      "module": "modellib"
+    },
+    {
+      "classes": 8,
+      "enums": 4,
+      "module": "server"
+    }
+  ],
+  "note": "classes/enums/fields count distinct top-level entity names and their own declared fields; the modules[] list additionally counts client/server twin records (duplicates), so summing its per-module classes/enums can exceed the top-level totals above.",
+  "platform": "windows-x86_64",
+  "schema_version": "0.10.0",
+  "steam_date": "2026-08-28",
+  "tool_commit": "5196045c92a2fa3b702867a9e1e3272ad6016e0d",
+  "tool_version": "0.10.0"
+}

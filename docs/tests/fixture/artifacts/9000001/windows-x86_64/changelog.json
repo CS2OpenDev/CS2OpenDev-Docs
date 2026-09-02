@@ -1,0 +1,38 @@
+{
+ "families": [
+  {
+   "added": [],
+   "changed": [],
+   "family": "classes",
+   "removed": []
+  },
+  {
+   "added": [],
+   "changed": [],
+   "family": "enums",
+   "removed": []
+  },
+  {
+   "added": [],
+   "changed": [],
+   "family": "convars",
+   "removed": []
+  },
+  {
+   "added": [],
+   "changed": [],
+   "family": "commands",
+   "removed": []
+  },
+  {
+   "added": [],
+   "changed": [],
+   "family": "engine_constants",
+   "removed": []
+  }
+ ],
+ "fromBuild": "24957633",
+ "platform": "windows-x86_64",
+ "schemaVersion": "0.10.0",
+ "toBuild": "25000182"
+}

@@ -1,0 +1,190 @@
+{
+ "buildId": "25000182",
+ "items": [
+  {
+   "classname": "weapon_knife",
+   "defIndex": 0,
+   "descriptionToken": "",
+   "isDefault": true,
+   "itemSlot": "",
+   "itemTypeName": "",
+   "name": "default",
+   "nameToken": "#SFUI_WPNHUD_Knife",
+   "prefab": ""
+  },
+  {
+   "classname": "",
+   "defIndex": 1,
+   "descriptionToken": "",
+   "isDefault": false,
+   "itemSlot": "",
+   "itemTypeName": "",
+   "name": "weapon_deagle",
+   "nameToken": "",
+   "prefab": "weapon_deagle_prefab"
+  },
+  {
+   "classname": "",
+   "defIndex": 2,
+   "descriptionToken": "",
+   "isDefault": false,
+   "itemSlot": "",
+   "itemTypeName": "",
+   "name": "weapon_elite",
+   "nameToken": "",
+   "prefab": "weapon_elite_prefab"
+  },
+  {
+   "classname": "",
+   "defIndex": 3,
+   "descriptionToken": "",
+   "isDefault": false,
+   "itemSlot": "",
+   "itemTypeName": "",
+   "name": "weapon_fiveseven",
+   "nameToken": "",
+   "prefab": "weapon_fiveseven_prefab"
+  },
+  {
+   "classname": "",
+   "defIndex": 4,
+   "descriptionToken": "",
+   "isDefault": false,
+   "itemSlot": "",
+   "itemTypeName": "",
+   "name": "weapon_glock",
+   "nameToken": "",
+   "prefab": "weapon_glock_prefab"
+  },
+  {
+   "classname": "",
+   "defIndex": 7,
+   "descriptionToken": "",
+   "isDefault": false,
+   "itemSlot": "",
+   "itemTypeName": "",
+   "name": "weapon_ak47",
+   "nameToken": "",
+   "prefab": "weapon_ak47_prefab"
+  }
+ ],
+ "musicDefinitions": [
+  {
+   "defIndex": 1,
+   "locName": "#musickit_valve_cs2_01",
+   "name": "valve_cs2_01"
+  },
+  {
+   "defIndex": 2,
+   "locName": "#musickit_valve_csgo_02",
+   "name": "valve_02"
+  }
+ ],
+ "paintKits": [
+  {
+   "defIndex": 0,
+   "descriptionTag": "#PaintKit_Default_Tag",
+   "name": "default"
+  },
+  {
+   "defIndex": 2,
+   "descriptionTag": "#PaintKit_so_olive_Tag",
+   "name": "so_olive"
+  },
+  {
+   "defIndex": 3,
+   "descriptionTag": "#PaintKit_so_red_Tag",
+   "name": "so_red"
+  }
+ ],
+ "platform": "windows-x86_64",
+ "prefabs": [
+  {
+   "classname": "",
+   "id": "antwerp2022_signature_capsule_prefab",
+   "itemSlot": "",
+   "itemTypeName": "",
+   "nameToken": "",
+   "prefab": "weapon_case_base"
+  },
+  {
+   "classname": "",
+   "id": "antwerp2022_sticker_capsule_prefab",
+   "itemSlot": "",
+   "itemTypeName": "",
+   "nameToken": "",
+   "prefab": "weapon_case_base"
+  },
+  {
+   "classname": "",
+   "id": "antwerp2022_tournament_journal_prefab",
+   "itemSlot": "",
+   "itemTypeName": "",
+   "nameToken": "",
+   "prefab": "fan_shield"
+  },
+  {
+   "classname": "",
+   "id": "antwerp2022_tournament_pass_prefab",
+   "itemSlot": "",
+   "itemTypeName": "",
+   "nameToken": "",
+   "prefab": "fan_token"
+  }
+ ],
+ "qualities": [
+  {
+   "id": "community",
+   "value": 5
+  },
+  {
+   "id": "completed",
+   "value": 10
+  },
+  {
+   "id": "customized",
+   "value": 8
+  }
+ ],
+ "rarities": [
+  {
+   "id": "ancient",
+   "locKey": "Rarity_Ancient",
+   "locKeyWeapon": "Rarity_Ancient_Weapon",
+   "value": 6
+  },
+  {
+   "id": "common",
+   "locKey": "Rarity_Common",
+   "locKeyWeapon": "Rarity_Common_Weapon",
+   "value": 1
+  },
+  {
+   "id": "default",
+   "locKey": "Rarity_Default",
+   "locKeyWeapon": "Rarity_Default_Weapon",
+   "value": 0
+  }
+ ],
+ "schemaVersion": "0.10.0",
+ "stickerKits": [
+  {
+   "defIndex": 0,
+   "descriptionString": "#StickerKit_Desc_Default",
+   "itemName": "#StickerKit_Default",
+   "name": "default"
+  },
+  {
+   "defIndex": 1,
+   "descriptionString": "#StickerKit_desc_dh_gologo1",
+   "itemName": "#StickerKit_dh_gologo1",
+   "name": "dh_gologo1"
+  },
+  {
+   "defIndex": 2,
+   "descriptionString": "#StickerKit_desc_dh_gologo1_holo",
+   "itemName": "#StickerKit_dh_gologo1_holo",
+   "name": "dh_gologo1_holo"
+  }
+ ]
+}

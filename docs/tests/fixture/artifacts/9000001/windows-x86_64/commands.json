@@ -1,0 +1,56 @@
+{
+ "commands": [
+  {
+   "description": "Bind a key.",
+   "flags": [
+    "release"
+   ],
+   "hasCompletionCallback": false,
+   "name": "bind"
+  },
+  {
+   "description": "Kick a player by name.",
+   "flags": [
+    "dontrecord",
+    "release"
+   ],
+   "hasCompletionCallback": false,
+   "name": "kick"
+  },
+  {
+   "description": "map <mapname> :Load a new map.",
+   "flags": [
+    "release",
+    "vconsole_fuzzy_matching",
+    "vconsole_set_focus"
+   ],
+   "hasCompletionCallback": true,
+   "name": "map"
+  },
+  {
+   "description": "changelevel <mapname> :Multiplayer change level.",
+   "flags": [
+    "release"
+   ],
+   "hasCompletionCallback": true,
+   "name": "changelevel"
+  },
+  {
+   "description": "Find help about a convar/concommand.",
+   "flags": [
+    "release"
+   ],
+   "hasCompletionCallback": true,
+   "name": "help"
+  },
+  {
+   "description": "List all the currently registered anim events.\n",
+   "flags": [
+    "gamedll",
+    "cheat"
+   ],
+   "hasCompletionCallback": false,
+   "name": "animevents_dump"
+  }
+ ]
+}

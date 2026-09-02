@@ -1,0 +1,174 @@
+# docs/overlays/protobufs/gameevents.yml
+#
+# Overlay for Protobufs/gameevents.proto
+#
+# Sources: HL2SDK (alliedmodders/hl2sdk cs2 branch), Source 2 documentation,
+#          AlliedModders community research.
+
+description: >
+  Source 2 base game-event protobuf messages.  Provides the Source 1-legacy
+  game-event bridge (CMsgSource1LegacyGameEvent), sound-system events (SoS),
+  and surface-decal events.  Identified by the EBaseGameEvents enum (200–212).
+
+messages:
+  CMsgVDebugGameSessionIDEvent:
+    description: >
+      Debug event that reports the current game-session ID string to a specific
+      client.  Used during development to trace session continuity.
+    fields:
+      clientid:
+        description: "Slot index of the client receiving the session-ID debug information."
+      gamesessionid:
+        description: "Unique string identifier for the current game session."
+
+  CMsgPlaceDecalEvent:
+    description: >
+      Instructs clients to paint a decal (bullet hole, blood splatter, spray)
+      onto a surface or entity in the world.
+    fields:
+      position:
+        description: "World-space hit position where the decal should be placed."
+      normal:
+        description: "Surface normal at the hit position; orients the decal correctly."
+      saxis:
+        description: "Secondary axis vector for texture alignment."
+      boneindex:
+        description: "Bone index when the decal is attached to an animated model (-1 for world surfaces)."
+      triangleindex:
+        description: "Mesh triangle index for precise placement on complex geometry."
+      flags:
+        description: "Decal flags bitmask (temporary, permanent, etc.)."
+      color:
+        description: "RGBA colour tint applied to the decal texture."
+      random_seed:
+        description: "Random seed used to select from a decal group variant."
+      decal_group_name:
+        description: "Hash of the decal group name (e.g. 'BulletImpactConcrete')."
+      size_override:
+        description: "Override size in world units (0 = use default decal size)."
+      entityhandle:
+        description: "Entity handle to attach the decal to (0xFFFFFF = world)."
+      material_id:
+        description: "Material ID of the surface at the hit point."
+      sequence_name:
+        description: "Hash of the decal sequence name for animated decals."
+
+  CMsgClearWorldDecalsEvent:
+    description: >
+      Removes all world-surface decals matching the given flags (e.g. clears
+      bullet holes at round start).
+    fields:
+      flagstoclear:
+        description: "Bitmask of decal flags; decals with any matching flag will be removed."
+
+  CMsgClearEntityDecalsEvent:
+    description: >
+      Removes all decals painted on entity surfaces that match the given flags.
+    fields:
+      flagstoclear:
+        description: "Bitmask of decal flags to clear from all entity surfaces."
+
+  CMsgClearDecalsForEntityEvent:
+    description: >
+      Removes all decals on a specific entity that match the given flags.
+    fields:
+      flagstoclear:
+        description: "Bitmask of decal flags to clear."
+      entityhandle:
+        description: "Handle of the specific entity whose decals should be cleared."
+
+  CMsgSource1LegacyGameEventList:
+    description: >
+      Sent once at the start of a connection to register all Source 1 game-event
+      schemas with the client.  The client uses this list to decode subsequent
+      CMsgSource1LegacyGameEvent messages by ID.
+    notes: >
+      This is the Source 2 equivalent of the Source 1 'svc_GameEventList' message.
+      All classic CS:GO game events (player_death, bomb_planted, etc.) are
+      transmitted through this bridge.
+
+  CMsgSource1LegacyListenEvents:
+    description: >
+      Registers which Source 1 game-events a specific client wishes to receive.
+      Used by plugins and spectators to opt in to event streams.
+    fields:
+      playerslot:
+        description: "Player slot that is registering these event listeners."
+      eventarraybits:
+        description: "Packed bitmask array; bit N set means listen for game-event with ID N."
+
+  CMsgSource1LegacyGameEvent:
+    description: >
+      Carries a single Source 1 game-event (player_death, weapon_fire,
+      bomb_planted, etc.) over the Source 2 network layer.  The event-type
+      name and all key–value pairs are encoded inside the keys list.
+    notes: >
+      CS2 game events (player_death, round_start, bomb_exploded, etc.) are all
+      transmitted as CMsgSource1LegacyGameEvent messages.  Use the event_name
+      field to identify them and CMsgSource1LegacyGameEventList to decode keys.
+    fields:
+      eventid:
+        description: "Numeric event ID assigned during registration via CMsgSource1LegacyGameEventList."
+      event_name:
+        description: "String name of the game event (e.g. 'player_death', 'bomb_planted')."
+      keys:
+        description: "Typed key–value pairs carrying event-specific data (integers, floats, strings, booleans)."
+      server_tick:
+        description: "Server tick on which the event was fired."
+      passthrough:
+        description: "Passthrough flag used internally by the event system."
+
+  CMsgSosStartSoundEvent:
+    description: >
+      Starts a named sound event through the SoS (Sound Operating System) layer,
+      associated with an optional source entity.
+    fields:
+      soundevent_guid:
+        description: "Unique integer handle for this sound instance (used to stop or modify it later)."
+      soundevent_hash:
+        description: "CRC32 hash of the sound event name string."
+      source_entity_index:
+        description: "Entity index of the sound source (-1 = world/positional)."
+      seed:
+        description: "Random seed for sound variation selection."
+      packed_params:
+        description: "Packed binary parameters for the sound event (volume, pitch, position, etc.)."
+      start_time:
+        description: "Game time at which the sound should start playing (allows latency compensation)."
+
+  CMsgSosStopSoundEvent:
+    description: >
+      Stops a specific sound instance identified by its GUID.
+    fields:
+      soundevent_guid:
+        description: "GUID of the sound instance to stop (matches soundevent_guid from CMsgSosStartSoundEvent)."
+
+  CMsgSosStopSoundEventHash:
+    description: >
+      Stops all sound instances matching the given sound-event hash on the
+      specified source entity.
+    fields:
+      soundevent_hash:
+        description: "CRC32 hash of the sound event name to stop."
+      source_entity_index:
+        description: "Entity index to restrict the stop to (-1 = stop all matching sounds)."
+
+  CMsgSosSetSoundEventParams:
+    description: >
+      Updates runtime parameters of an active sound event without restarting it
+      (e.g. volume fade, pitch shift on a looping ambient sound).
+    fields:
+      soundevent_guid:
+        description: "GUID of the active sound instance to modify."
+      packed_params:
+        description: "New packed parameter values to apply to the running sound."
+
+  CMsgSosSetLibraryStackFields:
+    description: >
+      Modifies fields in a named sound library stack (a group of sound layers),
+      allowing global sound-mix changes from the server.
+    fields:
+      stack_hash:
+        description: "CRC32 hash of the sound library stack name to modify."
+      packed_fields:
+        description: "Packed binary field values to apply to the stack."

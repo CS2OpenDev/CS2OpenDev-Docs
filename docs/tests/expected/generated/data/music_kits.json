@@ -1,0 +1,14 @@
+{
+  "music_kits": [
+    {
+      "def_index": 1,
+      "loc_name": "#musickit_valve_cs2_01",
+      "name": "valve_cs2_01"
+    },
+    {
+      "def_index": 2,
+      "loc_name": "#musickit_valve_csgo_02",
+      "name": "valve_02"
+    }
+  ]
+}
