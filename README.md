@@ -8,10 +8,11 @@ and published to **GitHub Pages**.
 
 ### Architecture
 
-A single upstream repo is included as a **read-only git submodule**:
+All data comes from one upstream repo, materialised as a gitignored shallow
+clone at `upstream/schema-tracker/` (CI clones it fresh on every run):
 
-- [`CS2OpenDev/CS2OpenDev-SchemaTracker`](https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker)
-  at `upstream/schema-tracker/`: one deterministic, provenance-tracked,
+- [`CS2OpenDev/CS2OpenDev-SchemaTracker`](https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker):
+  one deterministic, provenance-tracked,
   proto-validated artifact set per `(build, platform)` under
   `artifacts/<build_id>/<platform>/`. SchemaTracker walks the shipped CS2
   runtime and tool binaries in-process and emits clean JSON: `entity_schema.json`
@@ -43,7 +44,7 @@ from `docs/generated/downstream-codegen-schemas/cs2_schema.json` and
 
 ```
 CS2OpenDev/CS2OpenDev-SchemaTracker (latest branch)
-    └── upstream/schema-tracker/   ← submodule tracking `latest` (single build + LATEST.json)
+    └── upstream/schema-tracker/   ← gitignored shallow clone of `latest` (single build + LATEST.json)
             artifacts/<build_id>/<platform>/*.json + protos.descriptorset
             │
             ▼
@@ -67,14 +68,16 @@ directly on GitHub.
 ### Running the generator locally
 
 ```bash
-# Clone with the submodule (tracks SchemaTracker's `latest` branch)
-git clone --recurse-submodules --shallow-submodules https://github.com/CS2OpenDev/CS2OpenDev-Docs.git
+git clone https://github.com/CS2OpenDev/CS2OpenDev-Docs.git
 cd CS2OpenDev-Docs
 
-# Or initialise the submodule in an existing clone (--remote follows `latest`)
-git submodule update --init --remote --depth 1 upstream/schema-tracker
+# Materialise the newest SchemaTracker build: a shallow clone of its `latest`
+# branch (one build plus LATEST.json, a few MB to fetch instead of the multi-GB
+# history). The path is gitignored; delete and re-clone it for a newer build.
+git clone --depth 1 --single-branch --branch latest \
+  https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker.git upstream/schema-tracker
 
-pip install pyyaml protobuf   # protoc is NOT needed
+pip install -r docs/requirements.txt   # pyyaml + protobuf; protoc is NOT needed
 
 python3 docs/generate_docs.py \
   --repo-root . \
@@ -83,8 +86,10 @@ python3 docs/generate_docs.py \
   --output docs --strict
 ```
 
-`--strict` fails the run on any overlay key that doesn't resolve against the
-build; see `docs/overlays/README.md`. Run the generator's tests with:
+`--artifacts-root` accepts any SchemaTracker checkout's `artifacts/` directory,
+so the clone above is only the default location. `--strict` fails the run on
+any overlay key that doesn't resolve against the build; see
+`docs/overlays/README.md`. Run the generator's tests with:
 
 ```bash
 python3 -m unittest discover -s docs/tests -t docs/tests
@@ -120,9 +125,13 @@ and examples.
 
 `.github/workflows/generate-docs.yml` polls for new SchemaTracker builds
 every 4 hours and rebuilds immediately on a push touching the overlays, the
-generator, its tests, or the site. It regenerates the docs with `--strict`,
-runs the generator's tests, builds the Astro site, runs its link and size
-checks, and deploys to GitHub Pages.
+generator, its tests, or the site. It regenerates the docs, runs the
+generator's tests, builds the Astro site, runs its link and size checks, and
+deploys to GitHub Pages. `--strict` is on for pushes and manual runs; the
+scheduled poll runs without it and reports unresolved overlay keys as
+warning annotations, so an upstream rename does not stall the site. Only
+`main` receives the regeneration commit; any other branch builds from the
+regenerated set as a workflow artifact and keeps its history clean.
 
 ### Join our Discord
 
