@@ -1,27 +1,6 @@
-import { existsSync, readFileSync } from 'node:fs';
-import { dirname, join, resolve } from 'node:path';
-
-const ARTIFACT_DIR = join('docs', 'generated', 'downstream-codegen-schemas');
-
-/**
- * Walk up from the working directory looking for the generator's output tree.
- * import.meta.url resolves inside dist/.prerender during a build, so it cannot
- * be used to anchor this.
- */
-function findRepoRoot(): string {
-	const override = process.env.CS2_DOCS_ROOT;
-	if (override) return resolve(override);
-	let dir = process.cwd();
-	for (let i = 0; i < 8; i++) {
-		if (existsSync(join(dir, ARTIFACT_DIR))) return dir;
-		const up = dirname(dir);
-		if (up === dir) break;
-		dir = up;
-	}
-	throw new Error(
-		`Could not find ${ARTIFACT_DIR} above ${process.cwd()}. Set CS2_DOCS_ROOT to the repository root.`
-	);
-}
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { ARTIFACT_DIR, findRepoRoot } from '../../scripts/repo-root.mjs';
 
 let repoRootCache: string | undefined;
 

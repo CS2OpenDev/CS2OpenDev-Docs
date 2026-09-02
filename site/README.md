@@ -10,6 +10,7 @@ reads the Markdown under `../docs/generated/` and never writes into it.
 npm install
 npm run dev        # copies artifacts, then astro dev on http://localhost:4321/CS2OpenDev-Docs/
 npm run build      # copies artifacts, then a full static build into dist/
+npm run check      # astro check, then link and size checks against dist/
 npm run preview    # serves dist/ at the same base path
 ```
 
@@ -75,9 +76,9 @@ Other page families (protobufs, convars, commands, game events, items, and so on
 | Schemas index | `/schemas/` |
 | JSON artifacts | `/generated/downstream-codegen-schemas/...` |
 
-The old Jekyll paths under `/generated/schemas/` redirect to the new ones. Astro cannot
-enumerate the parameters of a dynamic redirect in a static build, so `astro.config.mjs`
-writes one redirect entry per entity and module.
+The old Jekyll paths under `/generated/schemas/` redirect to the new ones. Astro does not
+prefix `base` on a redirect destination, so a dynamic redirect rule would point at the
+unprefixed path; `astro.config.mjs` writes one literal entry per entity and module instead.
 
 ## Conventions
 

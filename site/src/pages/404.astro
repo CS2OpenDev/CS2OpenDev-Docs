@@ -12,6 +12,9 @@ const protoStems = readdirSync(join(codegenDir(), 'proto'))
 	.filter((f) => f.endsWith('.proto'))
 	.map((f) => f.replace(/\.proto$/, ''));
 
+// `\u003c` keeps a `</script>` inside the serialized data from ending the island.
+const data = JSON.stringify({ modules, protoStems }).replace(/</g, '\\u003c');
+
 const sections = [
 	{ label: 'Schemas', href: schemasHref(), blurb: 'Entity classes and enums, by module.' },
 	{ label: 'Protobufs', href: withBase('/protobufs/'), blurb: 'Every protobuf message and enum in the build.' },
@@ -53,7 +56,7 @@ const sections = [
 
 	<!-- A data island, not define:vars: define:vars forces the script inline, which drops
 	     Vite module resolution and breaks the import below. -->
-	<script type="application/json" id="cs2-404-data" set:html={JSON.stringify({ modules, protoStems })}></script>
+	<script is:inline type="application/json" id="cs2-404-data" set:html={data}></script>
 
 	<script>
 		import { mapLegacyPath } from '../lib/legacy-paths';

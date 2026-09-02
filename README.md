@@ -97,7 +97,7 @@ cd site
 npm ci
 npm run dev      # http://localhost:4321/CS2OpenDev-Docs/
 npm run build    # full static build into site/dist/ (~25s, ~1.5GB)
-npm run check    # link and size checks against the build
+npm run check    # type check, then link and size checks against the build
 ```
 
 `SITE_SUBSET=<n> npm run build` builds a fast subset (first `n` entities per

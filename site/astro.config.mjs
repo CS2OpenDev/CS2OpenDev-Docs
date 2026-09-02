@@ -1,7 +1,7 @@
 // @ts-check
 import { readdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { defineConfig } from 'astro/config';
+import { defineConfig, passthroughImageService } from 'astro/config';
 import react from '@astrojs/react';
 import starlight from '@astrojs/starlight';
 import starlightBlog from 'starlight-blog';
@@ -84,15 +84,15 @@ const referenceSidebar = [
 ];
 
 /**
- * Old Jekyll paths. Astro cannot enumerate params for a dynamic redirect in a static
- * build and does not prefix `base` on a redirect destination, so every stub is listed
- * with the base baked in. Entity and module stubs come from the live schema index;
- * everything else comes from src/lib/legacy-paths.ts, the same rules the 404 page
- * falls back to for `.html` requests this table does not cover.
+ * Old Jekyll paths. Astro does not prefix `base` on a redirect destination, so a
+ * dynamic `[module]/[entity]` rule would point at the unprefixed path; every stub is
+ * listed literally with the base baked in. Entity and module stubs come from the live
+ * schema index; everything else comes from src/lib/legacy-paths.ts, the same rules
+ * the 404 page falls back to for `.html` requests this table does not cover.
  */
-const redirects = {
+const redirects = /** @type {Record<string, string>} */ ({
 	'/generated/schemas': `${BASE}/schemas/`,
-};
+});
 for (const module of idx.modules) {
 	redirects[`/generated/schemas/${module}`] = `${BASE}/schemas/${module}/`;
 }
@@ -121,9 +121,10 @@ const LEGACY_ANCHOR_SCRIPT = [
 export default defineConfig({
 	site: 'https://cs2opendev.github.io',
 	base: BASE,
-	// Parallel subset builds each need their own content cache.
-	cacheDir: process.env.ASTRO_CACHE_DIR ?? './node_modules/.astro',
+	trailingSlash: 'always',
 	redirects,
+	// Nothing on the site goes through astro:assets, so the build never needs sharp.
+	image: { service: passthroughImageService() },
 	integrations: [
 		react(),
 		starlight({
@@ -134,7 +135,9 @@ export default defineConfig({
 			customCss: ['./src/styles/custom.css'],
 			favicon: '/favicon.svg',
 			head: [
-				{ tag: 'meta', attrs: { name: 'theme-color', content: '#0b0e14' } },
+				// Starlight's page grounds: white in light mode, hsl(224, 10%, 10%) in dark.
+				{ tag: 'meta', attrs: { name: 'theme-color', media: '(prefers-color-scheme: light)', content: '#ffffff' } },
+				{ tag: 'meta', attrs: { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#17181c' } },
 				// Old Jekyll anchors were lowercased and duplicates got numeric suffixes;
 				// the new ids keep case and use a source suffix. Resolve a missing hash by
 				// data-legacy-anchor, then case-insensitive id, then id prefix.
