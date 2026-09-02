@@ -1,8 +1,6 @@
 ---
-layout: default
 title: demo.proto
-parent: Protobufs
-nav_exclude: true
+proto: demo.proto
 ---
 
 # `demo.proto`

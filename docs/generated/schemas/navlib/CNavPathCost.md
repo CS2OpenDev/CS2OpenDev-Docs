@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CNavPathCost
-nav_exclude: true
+module: navlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [navlib](../navlib.md) / CNavPathCost

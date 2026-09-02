@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ModelBoneFlexComponent_t
-nav_exclude: true
+module: modellib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [modellib](../modellib.md) / ModelBoneFlexComponent_t

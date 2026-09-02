@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CFuncRotator::RotationAxis_t"
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CFuncRotator::RotationAxis_t

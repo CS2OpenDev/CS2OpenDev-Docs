@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmParameterizedBlendNode::Parameterization_t"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmParameterizedBlendNode::Parameterization_t

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: EventServerAdvanceTick_t
-nav_exclude: true
+module: engine2
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [engine2](../engine2.md) / EventServerAdvanceTick_t

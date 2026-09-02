@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmGraphDocument::DebugParameterSet_t"
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmGraphDocument::DebugParameterSet_t

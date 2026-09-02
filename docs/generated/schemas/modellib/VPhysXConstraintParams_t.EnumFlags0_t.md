@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "VPhysXConstraintParams_t::EnumFlags0_t"
-nav_exclude: true
+module: modellib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [modellib](../modellib.md) / VPhysXConstraintParams_t::EnumFlags0_t

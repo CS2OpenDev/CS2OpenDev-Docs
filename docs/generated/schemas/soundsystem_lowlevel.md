@@ -1,8 +1,6 @@
 ---
-layout: default
 title: soundsystem_lowlevel
-parent: Schemas
-nav_exclude: true
+module: soundsystem_lowlevel
 ---
 
 # Module: soundsystem_lowlevel

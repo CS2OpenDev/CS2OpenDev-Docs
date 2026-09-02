@@ -1,7 +1,7 @@
 ---
-layout: default
 title: SAVE_HEADER
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / SAVE_HEADER

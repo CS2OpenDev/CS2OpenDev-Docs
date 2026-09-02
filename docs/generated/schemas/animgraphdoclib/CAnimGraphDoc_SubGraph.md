@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CAnimGraphDoc_SubGraph
-nav_exclude: true
+module: animgraphdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphdoclib](../animgraphdoclib.md) / CAnimGraphDoc_SubGraph

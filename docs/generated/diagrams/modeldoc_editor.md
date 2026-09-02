@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: modeldoc_editor"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: modeldoc_editor

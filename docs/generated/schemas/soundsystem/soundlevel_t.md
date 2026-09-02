@@ -1,7 +1,7 @@
 ---
-layout: default
 title: soundlevel_t
-nav_exclude: true
+module: soundsystem
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [soundsystem](../soundsystem.md) / soundlevel_t

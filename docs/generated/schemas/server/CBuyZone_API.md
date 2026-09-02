@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CBuyZone_API
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CBuyZone_API

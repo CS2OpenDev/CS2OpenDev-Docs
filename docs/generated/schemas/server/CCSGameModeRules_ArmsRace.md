@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CCSGameModeRules_ArmsRace (server)
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CCSGameModeRules_ArmsRace

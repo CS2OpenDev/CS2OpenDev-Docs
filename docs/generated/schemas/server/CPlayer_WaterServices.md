@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CPlayer_WaterServices (server)
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CPlayer_WaterServices

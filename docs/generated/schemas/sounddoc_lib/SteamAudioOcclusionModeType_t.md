@@ -1,7 +1,7 @@
 ---
-layout: default
 title: SteamAudioOcclusionModeType_t
-nav_exclude: true
+module: sounddoc_lib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [sounddoc_lib](../sounddoc_lib.md) / SteamAudioOcclusionModeType_t

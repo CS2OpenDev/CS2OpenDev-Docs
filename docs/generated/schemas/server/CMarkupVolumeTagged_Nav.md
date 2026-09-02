@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CMarkupVolumeTagged_Nav
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CMarkupVolumeTagged_Nav

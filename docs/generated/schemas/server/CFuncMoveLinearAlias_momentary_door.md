@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CFuncMoveLinearAlias_momentary_door
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CFuncMoveLinearAlias_momentary_door

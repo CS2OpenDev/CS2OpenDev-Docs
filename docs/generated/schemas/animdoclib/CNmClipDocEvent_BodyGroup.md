@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CNmClipDocEvent_BodyGroup
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmClipDocEvent_BodyGroup

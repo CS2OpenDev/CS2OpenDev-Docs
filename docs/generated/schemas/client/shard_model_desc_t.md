@@ -1,7 +1,7 @@
 ---
-layout: default
 title: shard_model_desc_t (client)
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / shard_model_desc_t

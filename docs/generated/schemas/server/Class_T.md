@@ -1,7 +1,7 @@
 ---
-layout: default
 title: Class_T
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / Class_T

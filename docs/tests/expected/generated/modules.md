@@ -1,7 +1,5 @@
 ---
-layout: default
 title: Modules
-nav_order: 14
 ---
 
 # Binary Modules

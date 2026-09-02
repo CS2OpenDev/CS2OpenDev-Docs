@@ -1,7 +1,7 @@
 ---
-layout: default
 title: PermEntityLumpData_t
-nav_exclude: true
+module: worldrenderer
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [worldrenderer](../worldrenderer.md) / PermEntityLumpData_t

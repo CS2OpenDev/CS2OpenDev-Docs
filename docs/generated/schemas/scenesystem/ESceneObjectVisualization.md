@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ESceneObjectVisualization
-nav_exclude: true
+module: scenesystem
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [scenesystem](../scenesystem.md) / ESceneObjectVisualization

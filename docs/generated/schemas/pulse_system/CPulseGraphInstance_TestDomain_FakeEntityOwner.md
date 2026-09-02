@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CPulseGraphInstance_TestDomain_FakeEntityOwner
-nav_exclude: true
+module: pulse_system
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [pulse_system](../pulse_system.md) / CPulseGraphInstance_TestDomain_FakeEntityOwner

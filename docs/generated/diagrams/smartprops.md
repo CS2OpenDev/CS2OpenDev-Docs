@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: smartprops"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: smartprops

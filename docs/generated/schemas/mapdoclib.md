@@ -1,8 +1,6 @@
 ---
-layout: default
 title: mapdoclib
-parent: Schemas
-nav_exclude: true
+module: mapdoclib
 ---
 
 # Module: mapdoclib

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ResourceDataEncodingType_t
-nav_exclude: true
+module: toolutils2
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [toolutils2](../toolutils2.md) / ResourceDataEncodingType_t

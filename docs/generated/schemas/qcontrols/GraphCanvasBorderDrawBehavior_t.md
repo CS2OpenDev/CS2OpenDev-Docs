@@ -1,7 +1,7 @@
 ---
-layout: default
 title: GraphCanvasBorderDrawBehavior_t
-nav_exclude: true
+module: qcontrols
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [qcontrols](../qcontrols.md) / GraphCanvasBorderDrawBehavior_t

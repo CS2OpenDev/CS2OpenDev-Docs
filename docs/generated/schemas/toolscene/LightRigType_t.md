@@ -1,7 +1,7 @@
 ---
-layout: default
 title: LightRigType_t
-nav_exclude: true
+module: toolscene
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [toolscene](../toolscene.md) / LightRigType_t

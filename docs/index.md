@@ -1,8 +1,5 @@
 ---
-layout: home
 title: CS2 Developer Reference
-nav_order: 1
-nav_exclude: true
 ---
 
 # CS2 Developer Reference

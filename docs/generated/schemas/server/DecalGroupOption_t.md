@@ -1,7 +1,7 @@
 ---
-layout: default
 title: DecalGroupOption_t
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / DecalGroupOption_t

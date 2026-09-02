@@ -1,7 +1,7 @@
 ---
-layout: default
 title: EventFrameBoundary_t
-nav_exclude: true
+module: engine2
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [engine2](../engine2.md) / EventFrameBoundary_t

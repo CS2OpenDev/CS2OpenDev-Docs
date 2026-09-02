@@ -1,8 +1,6 @@
 ---
-layout: default
 title: navlib
-parent: Schemas
-nav_exclude: true
+module: navlib
 ---
 
 # Module: navlib

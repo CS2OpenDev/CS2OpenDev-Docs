@@ -1,7 +1,7 @@
 ---
-layout: default
 title: C_INIT_CreateSequentialPathV2
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / C_INIT_CreateSequentialPathV2

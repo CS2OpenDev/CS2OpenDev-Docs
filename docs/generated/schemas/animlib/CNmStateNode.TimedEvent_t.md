@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmStateNode::TimedEvent_t"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmStateNode::TimedEvent_t

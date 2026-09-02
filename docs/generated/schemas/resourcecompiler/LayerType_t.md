@@ -1,7 +1,7 @@
 ---
-layout: default
 title: LayerType_t
-nav_exclude: true
+module: resourcecompiler
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [resourcecompiler](../resourcecompiler.md) / LayerType_t

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CWeaponHKP2000
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CWeaponHKP2000

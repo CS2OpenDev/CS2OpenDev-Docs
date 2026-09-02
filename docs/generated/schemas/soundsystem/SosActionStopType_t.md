@@ -1,7 +1,7 @@
 ---
-layout: default
 title: SosActionStopType_t
-nav_exclude: true
+module: soundsystem
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [soundsystem](../soundsystem.md) / SosActionStopType_t

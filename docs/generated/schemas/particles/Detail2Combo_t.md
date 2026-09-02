@@ -1,7 +1,7 @@
 ---
-layout: default
 title: Detail2Combo_t
-nav_exclude: true
+module: particles
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / Detail2Combo_t

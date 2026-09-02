@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CCSPlayerAnimationState::AirAction_t"
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CCSPlayerAnimationState::AirAction_t

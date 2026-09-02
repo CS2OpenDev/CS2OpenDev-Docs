@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CSteamAudioCompressedReverb
-nav_exclude: true
+module: steamaudio
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [steamaudio](../steamaudio.md) / CSteamAudioCompressedReverb

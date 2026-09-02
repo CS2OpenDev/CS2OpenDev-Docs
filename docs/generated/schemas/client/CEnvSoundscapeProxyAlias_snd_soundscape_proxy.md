@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CEnvSoundscapeProxyAlias_snd_soundscape_proxy (client)
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CEnvSoundscapeProxyAlias_snd_soundscape_proxy

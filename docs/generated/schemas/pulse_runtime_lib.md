@@ -1,8 +1,6 @@
 ---
-layout: default
 title: pulse_runtime_lib
-parent: Schemas
-nav_exclude: true
+module: pulse_runtime_lib
 ---
 
 # Module: pulse_runtime_lib

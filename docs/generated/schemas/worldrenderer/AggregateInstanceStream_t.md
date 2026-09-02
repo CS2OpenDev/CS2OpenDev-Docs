@@ -1,7 +1,7 @@
 ---
-layout: default
 title: AggregateInstanceStream_t
-nav_exclude: true
+module: worldrenderer
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [worldrenderer](../worldrenderer.md) / AggregateInstanceStream_t

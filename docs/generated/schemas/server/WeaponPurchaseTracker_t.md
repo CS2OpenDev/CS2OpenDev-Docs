@@ -1,7 +1,7 @@
 ---
-layout: default
 title: WeaponPurchaseTracker_t (server)
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / WeaponPurchaseTracker_t

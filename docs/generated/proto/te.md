@@ -1,8 +1,6 @@
 ---
-layout: default
 title: te.proto
-parent: Protobufs
-nav_exclude: true
+proto: te.proto
 ---
 
 # `te.proto`

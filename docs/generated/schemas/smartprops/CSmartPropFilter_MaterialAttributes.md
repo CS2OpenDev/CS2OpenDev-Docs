@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CSmartPropFilter_MaterialAttributes
-nav_exclude: true
+module: smartprops
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [smartprops](../smartprops.md) / CSmartPropFilter_MaterialAttributes

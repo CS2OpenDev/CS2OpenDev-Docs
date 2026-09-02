@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: hammer"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: hammer

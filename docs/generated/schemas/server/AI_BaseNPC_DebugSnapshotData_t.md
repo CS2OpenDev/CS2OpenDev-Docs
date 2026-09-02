@@ -1,7 +1,7 @@
 ---
-layout: default
 title: AI_BaseNPC_DebugSnapshotData_t
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / AI_BaseNPC_DebugSnapshotData_t

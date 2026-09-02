@@ -1,8 +1,6 @@
 ---
-layout: default
 title: particles
-parent: Schemas
-nav_exclude: true
+module: particles
 ---
 
 # Module: particles

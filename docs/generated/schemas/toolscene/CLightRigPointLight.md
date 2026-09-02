@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CLightRigPointLight
-nav_exclude: true
+module: toolscene
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [toolscene](../toolscene.md) / CLightRigPointLight

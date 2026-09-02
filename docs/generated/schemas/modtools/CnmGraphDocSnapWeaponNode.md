@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CnmGraphDocSnapWeaponNode
-nav_exclude: true
+module: modtools
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [modtools](../modtools.md) / CnmGraphDocSnapWeaponNode

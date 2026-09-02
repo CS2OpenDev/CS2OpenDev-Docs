@@ -1,8 +1,6 @@
 ---
-layout: default
 title: pulse_system
-parent: Schemas
-nav_exclude: true
+module: pulse_system
 ---
 
 # Module: pulse_system

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CAttributeManager::cached_attribute_float_t (server)"
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CAttributeManager::cached_attribute_float_t

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: sky3dparams_t (server)
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / sky3dparams_t

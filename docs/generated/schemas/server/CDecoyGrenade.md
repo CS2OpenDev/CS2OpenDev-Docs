@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CDecoyGrenade
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CDecoyGrenade

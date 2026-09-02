@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CParticleCollectionRendererFloatInput
-nav_exclude: true
+module: particleslib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particleslib](../particleslib.md) / CParticleCollectionRendererFloatInput

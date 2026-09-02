@@ -1,8 +1,6 @@
 ---
-layout: default
 title: met
-parent: Schemas
-nav_exclude: true
+module: met
 ---
 
 # Module: met

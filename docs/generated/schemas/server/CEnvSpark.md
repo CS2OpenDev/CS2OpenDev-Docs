@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CEnvSpark
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CEnvSpark

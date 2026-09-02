@@ -1,7 +1,7 @@
 ---
-layout: default
 title: AutoTagVDataCondition_t
-nav_exclude: true
+module: toolutils2
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [toolutils2](../toolutils2.md) / AutoTagVDataCondition_t

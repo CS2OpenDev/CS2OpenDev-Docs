@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CAnimGraphDoc_FootStepTriggerNode
-nav_exclude: true
+module: animgraphdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphdoclib](../animgraphdoclib.md) / CAnimGraphDoc_FootStepTriggerNode

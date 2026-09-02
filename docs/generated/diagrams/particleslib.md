@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: particleslib"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: particleslib

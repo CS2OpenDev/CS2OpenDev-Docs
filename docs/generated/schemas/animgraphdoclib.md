@@ -1,8 +1,6 @@
 ---
-layout: default
 title: animgraphdoclib
-parent: Schemas
-nav_exclude: true
+module: animgraphdoclib
 ---
 
 # Module: animgraphdoclib

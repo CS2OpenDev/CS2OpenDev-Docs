@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CEnvLightProbeVolume
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CEnvLightProbeVolume

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CVoiceContainerAsyncGenerator
-nav_exclude: true
+module: soundsystem_voicecontainers
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [soundsystem_voicecontainers](../soundsystem_voicecontainers.md) / CVoiceContainerAsyncGenerator

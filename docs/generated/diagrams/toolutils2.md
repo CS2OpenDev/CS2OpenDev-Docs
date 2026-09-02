@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: toolutils2"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: toolutils2

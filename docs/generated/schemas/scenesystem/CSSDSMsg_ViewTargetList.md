@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CSSDSMsg_ViewTargetList
-nav_exclude: true
+module: scenesystem
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [scenesystem](../scenesystem.md) / CSSDSMsg_ViewTargetList

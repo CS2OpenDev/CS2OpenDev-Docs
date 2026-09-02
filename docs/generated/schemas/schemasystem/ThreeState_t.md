@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ThreeState_t
-nav_exclude: true
+module: schemasystem
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [schemasystem](../schemasystem.md) / ThreeState_t

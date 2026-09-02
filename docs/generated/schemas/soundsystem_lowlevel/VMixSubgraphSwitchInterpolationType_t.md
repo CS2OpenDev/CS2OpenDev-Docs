@@ -1,7 +1,7 @@
 ---
-layout: default
 title: VMixSubgraphSwitchInterpolationType_t
-nav_exclude: true
+module: soundsystem_lowlevel
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [soundsystem_lowlevel](../soundsystem_lowlevel.md) / VMixSubgraphSwitchInterpolationType_t

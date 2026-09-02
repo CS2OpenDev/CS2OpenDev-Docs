@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: mapdoclib"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: mapdoclib

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CSoundOpvarSetAABBEntity
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CSoundOpvarSetAABBEntity

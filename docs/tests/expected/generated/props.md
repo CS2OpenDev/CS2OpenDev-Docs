@@ -1,7 +1,5 @@
 ---
-layout: default
 title: Prop Data
-nav_order: 13
 ---
 
 # Prop & Collision Data

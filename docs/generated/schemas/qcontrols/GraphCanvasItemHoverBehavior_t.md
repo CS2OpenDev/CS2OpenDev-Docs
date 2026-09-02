@@ -1,7 +1,7 @@
 ---
-layout: default
 title: GraphCanvasItemHoverBehavior_t
-nav_exclude: true
+module: qcontrols
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [qcontrols](../qcontrols.md) / GraphCanvasItemHoverBehavior_t

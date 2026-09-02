@@ -1,7 +1,7 @@
 ---
-layout: default
 title: FootPinningTimingSource
-nav_exclude: true
+module: animgraphlib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / FootPinningTimingSource

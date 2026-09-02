@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "VPhysXBodyPart_t::VPhysXFlagEnum_t"
-nav_exclude: true
+module: modellib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [modellib](../modellib.md) / VPhysXBodyPart_t::VPhysXFlagEnum_t

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CInfoChoreoLocatorShapeType_t
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CInfoChoreoLocatorShapeType_t

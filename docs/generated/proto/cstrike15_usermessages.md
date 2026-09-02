@@ -1,8 +1,6 @@
 ---
-layout: default
 title: cstrike15_usermessages.proto
-parent: Protobufs
-nav_exclude: true
+proto: cstrike15_usermessages.proto
 ---
 
 # `cstrike15_usermessages.proto`

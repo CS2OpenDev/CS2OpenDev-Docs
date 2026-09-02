@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: compositematerialslib"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: compositematerialslib

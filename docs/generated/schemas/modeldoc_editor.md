@@ -1,8 +1,6 @@
 ---
-layout: default
 title: modeldoc_editor
-parent: Schemas
-nav_exclude: true
+module: modeldoc_editor
 ---
 
 # Module: modeldoc_editor

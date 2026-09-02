@@ -1,7 +1,7 @@
 ---
-layout: default
 title: SndSeqInstrumentType_t
-nav_exclude: true
+module: soundsystem
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [soundsystem](../soundsystem.md) / SndSeqInstrumentType_t

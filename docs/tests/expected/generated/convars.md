@@ -1,7 +1,5 @@
 ---
-layout: default
 title: ConVars
-nav_order: 4
 ---
 
 # ConVar Reference

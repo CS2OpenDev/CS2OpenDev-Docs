@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CRopeKeyframeAlias_move_rope
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CRopeKeyframeAlias_move_rope

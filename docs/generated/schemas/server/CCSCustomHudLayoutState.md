@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CCSCustomHudLayoutState (server)
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CCSCustomHudLayoutState

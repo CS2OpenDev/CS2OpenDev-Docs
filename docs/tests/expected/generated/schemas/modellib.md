@@ -1,8 +1,6 @@
 ---
-layout: default
 title: modellib
-parent: Schemas
-nav_exclude: true
+module: modellib
 ---
 
 # Module: modellib

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: RsStencilStateDesc_t
-nav_exclude: true
+module: rendersystemdx11
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [rendersystemdx11](../rendersystemdx11.md) / RsStencilStateDesc_t

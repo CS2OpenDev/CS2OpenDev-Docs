@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ActiveModelConfig_t (server)
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / ActiveModelConfig_t

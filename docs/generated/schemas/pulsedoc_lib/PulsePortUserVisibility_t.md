@@ -1,7 +1,7 @@
 ---
-layout: default
 title: PulsePortUserVisibility_t
-nav_exclude: true
+module: pulsedoc_lib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [pulsedoc_lib](../pulsedoc_lib.md) / PulsePortUserVisibility_t

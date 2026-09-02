@@ -1,8 +1,6 @@
 ---
-layout: default
 title: cs_usercmd.proto
-parent: Protobufs
-nav_exclude: true
+proto: cs_usercmd.proto
 ---
 
 # `cs_usercmd.proto`

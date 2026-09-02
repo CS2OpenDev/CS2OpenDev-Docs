@@ -1,7 +1,7 @@
 ---
-layout: default
 title: NavGravity_t
-nav_exclude: true
+module: navlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [navlib](../navlib.md) / NavGravity_t

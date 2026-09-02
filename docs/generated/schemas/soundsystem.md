@@ -1,8 +1,6 @@
 ---
-layout: default
 title: soundsystem
-parent: Schemas
-nav_exclude: true
+module: soundsystem
 ---
 
 # Module: soundsystem

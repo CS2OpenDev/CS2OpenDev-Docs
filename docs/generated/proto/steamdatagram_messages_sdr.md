@@ -1,8 +1,6 @@
 ---
-layout: default
 title: steamdatagram_messages_sdr.proto
-parent: Protobufs
-nav_exclude: true
+proto: steamdatagram_messages_sdr.proto
 ---
 
 # `steamdatagram_messages_sdr.proto`

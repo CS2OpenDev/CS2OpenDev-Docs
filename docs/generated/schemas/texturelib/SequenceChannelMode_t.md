@@ -1,7 +1,7 @@
 ---
-layout: default
 title: SequenceChannelMode_t
-nav_exclude: true
+module: texturelib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [texturelib](../texturelib.md) / SequenceChannelMode_t

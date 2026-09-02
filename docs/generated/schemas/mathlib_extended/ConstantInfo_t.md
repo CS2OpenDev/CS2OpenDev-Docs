@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ConstantInfo_t
-nav_exclude: true
+module: mathlib_extended
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [mathlib_extended](../mathlib_extended.md) / ConstantInfo_t

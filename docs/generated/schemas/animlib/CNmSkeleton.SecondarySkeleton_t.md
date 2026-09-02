@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmSkeleton::SecondarySkeleton_t"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmSkeleton::SecondarySkeleton_t

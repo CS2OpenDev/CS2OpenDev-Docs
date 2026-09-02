@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CHostageAlias_info_hostage_spawn
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CHostageAlias_info_hostage_spawn

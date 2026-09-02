@@ -1,8 +1,6 @@
 ---
-layout: default
 title: resourcefile
-parent: Schemas
-nav_exclude: true
+module: resourcefile
 ---
 
 # Module: resourcefile

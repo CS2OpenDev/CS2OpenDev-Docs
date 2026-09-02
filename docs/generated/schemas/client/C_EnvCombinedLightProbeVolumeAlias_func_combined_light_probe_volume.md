@@ -1,7 +1,7 @@
 ---
-layout: default
 title: C_EnvCombinedLightProbeVolumeAlias_func_combined_light_probe_volume
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / C_EnvCombinedLightProbeVolumeAlias_func_combined_light_probe_volume

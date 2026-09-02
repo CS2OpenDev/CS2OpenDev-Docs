@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: pulse_runtime_lib"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: pulse_runtime_lib

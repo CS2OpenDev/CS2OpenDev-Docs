@@ -1,7 +1,7 @@
 ---
-layout: default
 title: NodeData_t
-nav_exclude: true
+module: worldrenderer
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [worldrenderer](../worldrenderer.md) / NodeData_t

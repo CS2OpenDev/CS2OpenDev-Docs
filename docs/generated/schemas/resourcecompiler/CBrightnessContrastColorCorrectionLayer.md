@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CBrightnessContrastColorCorrectionLayer
-nav_exclude: true
+module: resourcecompiler
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [resourcecompiler](../resourcecompiler.md) / CBrightnessContrastColorCorrectionLayer

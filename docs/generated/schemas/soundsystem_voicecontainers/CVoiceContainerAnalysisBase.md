@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CVoiceContainerAnalysisBase
-nav_exclude: true
+module: soundsystem_voicecontainers
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [soundsystem_voicecontainers](../soundsystem_voicecontainers.md) / CVoiceContainerAnalysisBase

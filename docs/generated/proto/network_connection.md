@@ -1,8 +1,6 @@
 ---
-layout: default
 title: network_connection.proto
-parent: Protobufs
-nav_exclude: true
+proto: network_connection.proto
 ---
 
 # `network_connection.proto`

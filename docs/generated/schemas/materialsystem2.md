@@ -1,8 +1,6 @@
 ---
-layout: default
 title: materialsystem2
-parent: Schemas
-nav_exclude: true
+module: materialsystem2
 ---
 
 # Module: materialsystem2

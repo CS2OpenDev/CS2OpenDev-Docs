@@ -1,7 +1,7 @@
 ---
-layout: default
 title: PulseTestEnumShape_t
-nav_exclude: true
+module: pulse_system
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [pulse_system](../pulse_system.md) / PulseTestEnumShape_t

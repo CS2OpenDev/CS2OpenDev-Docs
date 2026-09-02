@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CWeaponXM1014
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CWeaponXM1014

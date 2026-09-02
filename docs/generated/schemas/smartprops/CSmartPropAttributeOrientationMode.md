@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CSmartPropAttributeOrientationMode
-nav_exclude: true
+module: smartprops
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [smartprops](../smartprops.md) / CSmartPropAttributeOrientationMode

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CCSGO_TeamPreviewCharacterPosition_API (client)
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CCSGO_TeamPreviewCharacterPosition_API

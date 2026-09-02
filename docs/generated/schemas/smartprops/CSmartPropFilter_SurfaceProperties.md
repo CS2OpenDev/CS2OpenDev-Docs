@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CSmartPropFilter_SurfaceProperties
-nav_exclude: true
+module: smartprops
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [smartprops](../smartprops.md) / CSmartPropFilter_SurfaceProperties

@@ -1,8 +1,6 @@
 ---
-layout: default
 title: uifontfile_format.proto
-parent: Protobufs
-nav_exclude: true
+proto: uifontfile_format.proto
 ---
 
 # `uifontfile_format.proto`

@@ -1,8 +1,6 @@
 ---
-layout: default
 title: resourcecompiler
-parent: Schemas
-nav_exclude: true
+module: resourcecompiler
 ---
 
 # Module: resourcecompiler

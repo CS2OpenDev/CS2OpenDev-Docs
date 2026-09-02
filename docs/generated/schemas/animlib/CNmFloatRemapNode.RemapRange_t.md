@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmFloatRemapNode::RemapRange_t"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmFloatRemapNode::RemapRange_t

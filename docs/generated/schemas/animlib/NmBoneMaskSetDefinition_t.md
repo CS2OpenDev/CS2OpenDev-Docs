@@ -1,7 +1,7 @@
 ---
-layout: default
 title: NmBoneMaskSetDefinition_t
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / NmBoneMaskSetDefinition_t

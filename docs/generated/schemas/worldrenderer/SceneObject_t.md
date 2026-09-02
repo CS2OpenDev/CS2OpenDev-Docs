@@ -1,7 +1,7 @@
 ---
-layout: default
 title: SceneObject_t
-nav_exclude: true
+module: worldrenderer
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [worldrenderer](../worldrenderer.md) / SceneObject_t

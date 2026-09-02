@@ -1,7 +1,5 @@
 ---
-layout: default
 title: Network Messages
-nav_order: 8
 ---
 
 # Network & Demo Messages

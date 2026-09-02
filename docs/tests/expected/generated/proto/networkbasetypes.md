@@ -1,8 +1,6 @@
 ---
-layout: default
 title: networkbasetypes.proto
-parent: Protobufs
-nav_exclude: true
+proto: networkbasetypes.proto
 ---
 
 # `networkbasetypes.proto`

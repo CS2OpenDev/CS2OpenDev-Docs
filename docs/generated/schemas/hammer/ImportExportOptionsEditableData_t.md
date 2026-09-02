@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ImportExportOptionsEditableData_t
-nav_exclude: true
+module: hammer
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [hammer](../hammer.md) / ImportExportOptionsEditableData_t

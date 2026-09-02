@@ -1,7 +1,7 @@
 ---
-layout: default
 title: InfoForResourceTypeCSmartProp
-nav_exclude: true
+module: resourcesystem
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [resourcesystem](../resourcesystem.md) / InfoForResourceTypeCSmartProp

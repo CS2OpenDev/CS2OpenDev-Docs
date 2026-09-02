@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CTiltTwistConstraint
-nav_exclude: true
+module: modellib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [modellib](../modellib.md) / CTiltTwistConstraint

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: C_WeaponMag7
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / C_WeaponMag7

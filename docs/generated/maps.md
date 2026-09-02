@@ -1,7 +1,5 @@
 ---
-layout: default
 title: Maps
-nav_order: 11
 ---
 
 # Maps & Radar Overviews

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: RTProxyInstanceFlags_t
-nav_exclude: true
+module: worldrenderer
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [worldrenderer](../worldrenderer.md) / RTProxyInstanceFlags_t

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: C_fogplayerparams_t
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / C_fogplayerparams_t

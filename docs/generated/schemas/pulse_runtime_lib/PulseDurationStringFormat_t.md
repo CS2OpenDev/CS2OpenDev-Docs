@@ -1,7 +1,7 @@
 ---
-layout: default
 title: PulseDurationStringFormat_t
-nav_exclude: true
+module: pulse_runtime_lib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [pulse_runtime_lib](../pulse_runtime_lib.md) / PulseDurationStringFormat_t

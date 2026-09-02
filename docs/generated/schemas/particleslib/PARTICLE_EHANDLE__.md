@@ -1,7 +1,7 @@
 ---
-layout: default
 title: PARTICLE_EHANDLE__
-nav_exclude: true
+module: particleslib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particleslib](../particleslib.md) / PARTICLE_EHANDLE__

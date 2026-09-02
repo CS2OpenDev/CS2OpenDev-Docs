@@ -1,7 +1,7 @@
 ---
-layout: default
 title: InfoForResourceTypeManifestTestResource_t
-nav_exclude: true
+module: resourcesystem
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [resourcesystem](../resourcesystem.md) / InfoForResourceTypeManifestTestResource_t

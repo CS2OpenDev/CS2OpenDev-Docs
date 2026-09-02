@@ -1,7 +1,7 @@
 ---
-layout: default
 title: DisableShadows_t
-nav_exclude: true
+module: scenesystem
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [scenesystem](../scenesystem.md) / DisableShadows_t

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: IKBoneNameAndIndex_t
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / IKBoneNameAndIndex_t

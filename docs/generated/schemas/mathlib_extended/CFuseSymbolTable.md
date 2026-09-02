@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CFuseSymbolTable
-nav_exclude: true
+module: mathlib_extended
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [mathlib_extended](../mathlib_extended.md) / CFuseSymbolTable

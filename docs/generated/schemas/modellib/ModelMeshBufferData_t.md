@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ModelMeshBufferData_t
-nav_exclude: true
+module: modellib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [modellib](../modellib.md) / ModelMeshBufferData_t

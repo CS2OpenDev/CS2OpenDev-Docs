@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmGraphDocStateNode::StateType_t"
-nav_exclude: true
+module: animdoclib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmGraphDocStateNode::StateType_t

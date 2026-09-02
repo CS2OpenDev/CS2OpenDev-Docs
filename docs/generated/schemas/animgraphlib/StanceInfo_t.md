@@ -1,7 +1,7 @@
 ---
-layout: default
 title: StanceInfo_t
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / StanceInfo_t

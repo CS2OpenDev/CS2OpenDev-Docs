@@ -1,7 +1,7 @@
 ---
-layout: default
 title: RsRasterizerStateDesc_t
-nav_exclude: true
+module: rendersystemdx11
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [rendersystemdx11](../rendersystemdx11.md) / RsRasterizerStateDesc_t

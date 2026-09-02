@@ -1,7 +1,7 @@
 ---
-layout: default
 title: EntInput_t
-nav_exclude: true
+module: entity2
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [entity2](../entity2.md) / EntInput_t

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmGraphDocFlowGraph::Connection_t"
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmGraphDocFlowGraph::Connection_t

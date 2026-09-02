@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CNmGraphDocAimCSNode
-nav_exclude: true
+module: modtools
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [modtools](../modtools.md) / CNmGraphDocAimCSNode

@@ -1,8 +1,6 @@
 ---
-layout: default
 title: gcsystemmsgs.proto
-parent: Protobufs
-nav_exclude: true
+proto: gcsystemmsgs.proto
 ---
 
 # `gcsystemmsgs.proto`

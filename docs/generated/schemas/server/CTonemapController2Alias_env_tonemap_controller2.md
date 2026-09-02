@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CTonemapController2Alias_env_tonemap_controller2
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CTonemapController2Alias_env_tonemap_controller2

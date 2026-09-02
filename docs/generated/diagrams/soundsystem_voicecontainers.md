@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: soundsystem_voicecontainers"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: soundsystem_voicecontainers

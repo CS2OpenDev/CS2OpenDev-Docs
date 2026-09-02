@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: server"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: server

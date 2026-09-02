@@ -320,7 +320,7 @@
       "annotations": {
         "description": "Entity layer that drives the Source 2 animation graph — skeleton, ragdoll, and choreo.  Base for all animated model entities, including player pawns."
       },
-      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/client"
+      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
     {
       "alignment": 16,
@@ -599,7 +599,7 @@
       "annotations": {
         "description": "Entity layer that drives the Source 2 animation graph — skeleton, ragdoll, and choreo.  Base for all animated model entities, including player pawns."
       },
-      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/server"
+      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/server/hierarchy/"
     },
     {
       "alignment": 16,
@@ -788,7 +788,7 @@
       "annotations": {
         "description": "Base class for characters that can carry weapons and take part in combat (players, hostages, bots).  Adds wearables and navigation on top of the animated-model base."
       },
-      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/server"
+      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/server/hierarchy/"
     },
     {
       "alignment": 255,
@@ -883,7 +883,7 @@
       "singleInheritanceDepth": 1,
       "size": "96",
       "staticFields": [],
-      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/modellib"
+      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/modellib/hierarchy/"
     },
     {
       "alignment": 8,
@@ -2202,7 +2202,7 @@
       "annotations": {
         "description": "Root entity class in Source 2 from which all server-side entities derive. Provides health, team, physics, timing, and transmit state."
       },
-      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/server"
+      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/server/hierarchy/"
     },
     {
       "alignment": 8,
@@ -2848,7 +2848,7 @@
       "annotations": {
         "description": "Extends CBaseEntity with a visible model, collision, glow, and render properties.  Base class for all entities that have a mesh in the world."
       },
-      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/server"
+      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/server/hierarchy/"
     },
     {
       "alignment": 16,
@@ -3341,7 +3341,7 @@
       "annotations": {
         "description": "Base class for the in-world player pawn — the physical body a controller drives.  Aggregates the player service components (movement, weapons, observer, camera, …)."
       },
-      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/server"
+      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/server/hierarchy/"
     },
     {
       "alignment": 255,
@@ -3363,7 +3363,7 @@
       "singleInheritanceDepth": 0,
       "size": "32",
       "staticFields": [],
-      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/modellib"
+      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/modellib/hierarchy/"
     },
     {
       "alignment": 8,
@@ -3426,7 +3426,7 @@
       "singleInheritanceDepth": 2,
       "size": "136",
       "staticFields": [],
-      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/modellib"
+      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/modellib/hierarchy/"
     },
     {
       "alignment": 255,
@@ -3477,7 +3477,7 @@
       "singleInheritanceDepth": 0,
       "size": "40",
       "staticFields": [],
-      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/modellib"
+      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/modellib/hierarchy/"
     },
     {
       "alignment": 16,
@@ -5137,7 +5137,7 @@
         "description": "The physical in-world representation of a CS2 player.  Carries per-round state: health, armor, position, animations, and weapon inventory.  A new CCSPlayerPawn is created each round on (re)spawn; the corresponding CCSPlayerController persists across rounds.",
         "notes": "Source 2 architecture separates the controller (session/connection state) from the pawn (physics/animation state).  Demo parsers must follow m_hController → CCSPlayerController to resolve name, team, and stats."
       },
-      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/server"
+      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/server/hierarchy/"
     },
     {
       "alignment": 16,
@@ -5398,7 +5398,7 @@
       "annotations": {
         "description": "Abstract base class shared by CCSPlayerPawn and CCSObserverPawn, providing the flash-bang state, progress bar, and original-controller link."
       },
-      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/server"
+      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/server/hierarchy/"
     },
     {
       "alignment": 255,
@@ -6080,7 +6080,7 @@
       "singleInheritanceDepth": 0,
       "size": "304",
       "staticFields": [],
-      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/client"
+      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
     {
       "alignment": 16,
@@ -6629,7 +6629,7 @@
       "singleInheritanceDepth": 0,
       "size": "272",
       "staticFields": [],
-      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/server"
+      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/server/hierarchy/"
     },
     {
       "alignment": 8,
@@ -6775,7 +6775,7 @@
       "singleInheritanceDepth": 4,
       "size": "4616",
       "staticFields": [],
-      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/client"
+      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
     {
       "alignment": 8,
@@ -8276,7 +8276,7 @@
       "singleInheritanceDepth": 1,
       "size": "1536",
       "staticFields": [],
-      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/client"
+      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
     {
       "alignment": 8,
@@ -8968,7 +8968,7 @@
       "singleInheritanceDepth": 2,
       "size": "4016",
       "staticFields": [],
-      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/client"
+      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
     {
       "alignment": 8,
@@ -9500,7 +9500,7 @@
       "singleInheritanceDepth": 5,
       "size": "5088",
       "staticFields": [],
-      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/client"
+      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
     {
       "alignment": 16,
@@ -10955,7 +10955,7 @@
       "singleInheritanceDepth": 7,
       "size": "13424",
       "staticFields": [],
-      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/client"
+      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
     {
       "alignment": 8,
@@ -11331,7 +11331,7 @@
       "singleInheritanceDepth": 6,
       "size": "5248",
       "staticFields": [],
-      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/client"
+      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     }
   ],
   "enums": [

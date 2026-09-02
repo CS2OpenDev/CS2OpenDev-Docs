@@ -1,7 +1,7 @@
 ---
-layout: default
 title: MaterialGroupChoice_t
-nav_exclude: true
+module: smartprops
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [smartprops](../smartprops.md) / MaterialGroupChoice_t

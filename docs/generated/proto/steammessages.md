@@ -1,8 +1,6 @@
 ---
-layout: default
 title: steammessages.proto
-parent: Protobufs
-nav_exclude: true
+proto: steammessages.proto
 ---
 
 # `steammessages.proto`

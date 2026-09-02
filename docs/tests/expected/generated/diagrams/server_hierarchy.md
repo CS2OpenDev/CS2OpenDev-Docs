@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Entity Hierarchy
-parent: Schemas
-nav_exclude: true
 ---
 
 # Entity Hierarchy Diagram

@@ -1,7 +1,5 @@
 ---
-layout: default
 title: Items & Economy
-nav_order: 7
 ---
 
 # Items & Economy

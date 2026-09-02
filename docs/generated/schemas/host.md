@@ -1,8 +1,6 @@
 ---
-layout: default
 title: host
-parent: Schemas
-nav_exclude: true
+module: host
 ---
 
 # Module: host

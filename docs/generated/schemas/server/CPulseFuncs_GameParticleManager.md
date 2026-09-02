@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CPulseFuncs_GameParticleManager
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CPulseFuncs_GameParticleManager

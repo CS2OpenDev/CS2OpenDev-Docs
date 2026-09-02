@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmClipDocEventTrack::Type_t"
-nav_exclude: true
+module: animdoclib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmClipDocEventTrack::Type_t

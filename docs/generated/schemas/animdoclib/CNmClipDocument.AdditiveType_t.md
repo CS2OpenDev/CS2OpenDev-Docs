@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmClipDocument::AdditiveType_t"
-nav_exclude: true
+module: animdoclib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmClipDocument::AdditiveType_t

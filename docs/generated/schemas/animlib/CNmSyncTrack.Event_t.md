@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmSyncTrack::Event_t"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmSyncTrack::Event_t

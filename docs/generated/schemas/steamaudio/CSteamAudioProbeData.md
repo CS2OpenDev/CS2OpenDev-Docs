@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CSteamAudioProbeData
-nav_exclude: true
+module: steamaudio
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [steamaudio](../steamaudio.md) / CSteamAudioProbeData

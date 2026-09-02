@@ -1,7 +1,7 @@
 ---
-layout: default
 title: NmEventConditionOperator_t
-nav_exclude: true
+module: animdoclib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / NmEventConditionOperator_t

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: RemapValueType
-nav_exclude: true
+module: animgraphdoclib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animgraphdoclib](../animgraphdoclib.md) / RemapValueType

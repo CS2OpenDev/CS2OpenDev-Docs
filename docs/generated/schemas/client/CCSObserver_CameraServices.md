@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CCSObserver_CameraServices (client)
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CCSObserver_CameraServices

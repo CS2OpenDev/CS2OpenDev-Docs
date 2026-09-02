@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CTestPulseIOComponent_Derived
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CTestPulseIOComponent_Derived

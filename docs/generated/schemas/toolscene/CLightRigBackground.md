@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CLightRigBackground
-nav_exclude: true
+module: toolscene
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [toolscene](../toolscene.md) / CLightRigBackground

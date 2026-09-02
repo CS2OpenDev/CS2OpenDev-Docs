@@ -1,7 +1,7 @@
 ---
-layout: default
 title: IPhysicsJoint
-nav_exclude: true
+module: vphysics2
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [vphysics2](../vphysics2.md) / IPhysicsJoint

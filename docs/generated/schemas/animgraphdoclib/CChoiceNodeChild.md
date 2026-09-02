@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CChoiceNodeChild
-nav_exclude: true
+module: animgraphdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphdoclib](../animgraphdoclib.md) / CChoiceNodeChild

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CRR_Response::ResponseEnum_t"
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CRR_Response::ResponseEnum_t

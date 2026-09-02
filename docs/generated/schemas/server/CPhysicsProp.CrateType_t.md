@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CPhysicsProp::CrateType_t"
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CPhysicsProp::CrateType_t

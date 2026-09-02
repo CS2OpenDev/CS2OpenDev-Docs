@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CompositeMaterialMatchFilterType_t
-nav_exclude: true
+module: compositematerialslib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [compositematerialslib](../compositematerialslib.md) / CompositeMaterialMatchFilterType_t

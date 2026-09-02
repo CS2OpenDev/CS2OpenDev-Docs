@@ -1,7 +1,5 @@
 ---
-layout: default
 title: Protobufs
-nav_order: 3
 ---
 
 # Protobuf Reference

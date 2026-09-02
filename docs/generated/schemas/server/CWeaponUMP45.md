@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CWeaponUMP45
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CWeaponUMP45

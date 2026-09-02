@@ -1,8 +1,6 @@
 ---
-layout: default
 title: vphysics2
-parent: Schemas
-nav_exclude: true
+module: vphysics2
 ---
 
 # Module: vphysics2

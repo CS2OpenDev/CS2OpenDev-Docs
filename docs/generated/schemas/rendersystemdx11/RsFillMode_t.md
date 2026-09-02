@@ -1,7 +1,7 @@
 ---
-layout: default
 title: RsFillMode_t
-nav_exclude: true
+module: rendersystemdx11
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [rendersystemdx11](../rendersystemdx11.md) / RsFillMode_t

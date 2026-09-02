@@ -1,7 +1,7 @@
 ---
-layout: default
 title: SelectorTagBehavior_t
-nav_exclude: true
+module: animgraphlib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / SelectorTagBehavior_t

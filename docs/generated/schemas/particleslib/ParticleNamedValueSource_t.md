@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ParticleNamedValueSource_t
-nav_exclude: true
+module: particleslib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particleslib](../particleslib.md) / ParticleNamedValueSource_t

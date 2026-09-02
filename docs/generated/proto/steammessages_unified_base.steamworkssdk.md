@@ -1,8 +1,6 @@
 ---
-layout: default
 title: steammessages_unified_base.steamworkssdk.proto
-parent: Protobufs
-nav_exclude: true
+proto: steammessages_unified_base.steamworkssdk.proto
 ---
 
 # `steammessages_unified_base.steamworkssdk.proto`

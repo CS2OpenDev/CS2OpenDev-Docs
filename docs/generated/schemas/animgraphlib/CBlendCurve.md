@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CBlendCurve
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / CBlendCurve

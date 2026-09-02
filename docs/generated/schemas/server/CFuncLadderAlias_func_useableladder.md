@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CFuncLadderAlias_func_useableladder
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CFuncLadderAlias_func_useableladder

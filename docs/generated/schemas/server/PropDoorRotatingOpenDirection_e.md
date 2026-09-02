@@ -1,7 +1,7 @@
 ---
-layout: default
 title: PropDoorRotatingOpenDirection_e
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / PropDoorRotatingOpenDirection_e

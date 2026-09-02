@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CCS_PortraitWorldCallbackHandler
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CCS_PortraitWorldCallbackHandler

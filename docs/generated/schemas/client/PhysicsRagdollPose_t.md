@@ -1,7 +1,7 @@
 ---
-layout: default
 title: PhysicsRagdollPose_t (client)
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / PhysicsRagdollPose_t

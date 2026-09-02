@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: pulse_system"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: pulse_system

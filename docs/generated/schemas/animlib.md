@@ -1,8 +1,6 @@
 ---
-layout: default
 title: animlib
-parent: Schemas
-nav_exclude: true
+module: animlib
 ---
 
 # Module: animlib

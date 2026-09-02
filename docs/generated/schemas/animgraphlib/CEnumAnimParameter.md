@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CEnumAnimParameter
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / CEnumAnimParameter

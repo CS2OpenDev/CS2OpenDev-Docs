@@ -1,8 +1,6 @@
 ---
-layout: default
 title: steamaudio
-parent: Schemas
-nav_exclude: true
+module: steamaudio
 ---
 
 # Module: steamaudio

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CSPlayerBlockingUseAction_t
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CSPlayerBlockingUseAction_t

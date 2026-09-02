@@ -1,7 +1,7 @@
 ---
-layout: default
 title: DynamicContinuousContactBehavior_t
-nav_exclude: true
+module: physicslib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [physicslib](../physicslib.md) / DynamicContinuousContactBehavior_t

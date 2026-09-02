@@ -1,7 +1,7 @@
 ---
-layout: default
 title: MoodAnimationLayer_t
-nav_exclude: true
+module: animationsystem
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animationsystem](../animationsystem.md) / MoodAnimationLayer_t

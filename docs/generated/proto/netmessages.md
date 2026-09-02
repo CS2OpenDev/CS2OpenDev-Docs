@@ -1,8 +1,6 @@
 ---
-layout: default
 title: netmessages.proto
-parent: Protobufs
-nav_exclude: true
+proto: netmessages.proto
 ---
 
 # `netmessages.proto`

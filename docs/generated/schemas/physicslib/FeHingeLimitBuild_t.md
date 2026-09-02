@@ -1,7 +1,7 @@
 ---
-layout: default
 title: FeHingeLimitBuild_t
-nav_exclude: true
+module: physicslib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [physicslib](../physicslib.md) / FeHingeLimitBuild_t

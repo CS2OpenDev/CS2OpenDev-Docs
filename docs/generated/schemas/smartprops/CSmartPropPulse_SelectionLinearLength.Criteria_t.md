@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CSmartPropPulse_SelectionLinearLength::Criteria_t"
-nav_exclude: true
+module: smartprops
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [smartprops](../smartprops.md) / CSmartPropPulse_SelectionLinearLength::Criteria_t

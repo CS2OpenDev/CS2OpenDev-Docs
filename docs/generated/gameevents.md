@@ -1,7 +1,5 @@
 ---
-layout: default
 title: Game Events
-nav_order: 6
 ---
 
 # Game Events Reference

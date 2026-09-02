@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CSmartPropOperation_ComputeNormalizedVector3D
-nav_exclude: true
+module: smartprops
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [smartprops](../smartprops.md) / CSmartPropOperation_ComputeNormalizedVector3D

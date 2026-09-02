@@ -1,7 +1,7 @@
 ---
-layout: default
 title: AnimNodeNetworkMode
-nav_exclude: true
+module: animgraphlib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / AnimNodeNetworkMode

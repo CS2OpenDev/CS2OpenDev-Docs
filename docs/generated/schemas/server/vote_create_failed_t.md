@@ -1,7 +1,7 @@
 ---
-layout: default
 title: vote_create_failed_t
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / vote_create_failed_t

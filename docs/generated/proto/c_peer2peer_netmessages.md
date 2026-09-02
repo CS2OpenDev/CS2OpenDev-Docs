@@ -1,8 +1,6 @@
 ---
-layout: default
 title: c_peer2peer_netmessages.proto
-parent: Protobufs
-nav_exclude: true
+proto: c_peer2peer_netmessages.proto
 ---
 
 # `c_peer2peer_netmessages.proto`

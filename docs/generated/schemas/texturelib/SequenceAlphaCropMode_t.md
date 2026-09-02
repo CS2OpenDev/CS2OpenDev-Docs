@@ -1,7 +1,7 @@
 ---
-layout: default
 title: SequenceAlphaCropMode_t
-nav_exclude: true
+module: texturelib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [texturelib](../texturelib.md) / SequenceAlphaCropMode_t

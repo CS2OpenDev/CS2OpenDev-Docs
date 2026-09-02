@@ -1,8 +1,6 @@
 ---
-layout: default
 title: resourcesystem
-parent: Schemas
-nav_exclude: true
+module: resourcesystem
 ---
 
 # Module: resourcesystem

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmGraphDocFloatRemapNode::RemapRange_t"
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmGraphDocFloatRemapNode::RemapRange_t

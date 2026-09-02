@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CPulseServerFuncs_Sounds
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CPulseServerFuncs_Sounds

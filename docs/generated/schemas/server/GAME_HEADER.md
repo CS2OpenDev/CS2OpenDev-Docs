@@ -1,7 +1,7 @@
 ---
-layout: default
 title: GAME_HEADER
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / GAME_HEADER

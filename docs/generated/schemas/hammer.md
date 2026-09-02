@@ -1,8 +1,6 @@
 ---
-layout: default
 title: hammer
-parent: Schemas
-nav_exclude: true
+module: hammer
 ---
 
 # Module: hammer

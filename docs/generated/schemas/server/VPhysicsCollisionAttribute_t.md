@@ -1,7 +1,7 @@
 ---
-layout: default
 title: VPhysicsCollisionAttribute_t (server)
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / VPhysicsCollisionAttribute_t

@@ -1,8 +1,6 @@
 ---
-layout: default
 title: animdoclib
-parent: Schemas
-nav_exclude: true
+module: animdoclib
 ---
 
 # Module: animdoclib

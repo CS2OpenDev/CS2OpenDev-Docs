@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "C_BaseCombatCharacter::WaterWakeMode_t"
-nav_exclude: true
+module: client
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / C_BaseCombatCharacter::WaterWakeMode_t

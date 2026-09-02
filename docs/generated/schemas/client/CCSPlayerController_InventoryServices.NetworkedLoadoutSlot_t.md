@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CCSPlayerController_InventoryServices::NetworkedLoadoutSlot_t (client)"
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CCSPlayerController_InventoryServices::NetworkedLoadoutSlot_t

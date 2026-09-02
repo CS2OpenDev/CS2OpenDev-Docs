@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CWeaponG3SG1
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CWeaponG3SG1

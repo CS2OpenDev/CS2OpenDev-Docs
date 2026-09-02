@@ -1,7 +1,7 @@
 ---
-layout: default
 title: C_MapVetoPickController
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / C_MapVetoPickController

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CWeaponSG556
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CWeaponSG556

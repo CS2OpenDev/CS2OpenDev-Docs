@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "AI_MotorServices_DebugSnapshotData_t::MotorPathWaypoint_t"
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / AI_MotorServices_DebugSnapshotData_t::MotorPathWaypoint_t

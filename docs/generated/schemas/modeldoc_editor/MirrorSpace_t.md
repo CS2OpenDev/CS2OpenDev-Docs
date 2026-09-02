@@ -1,7 +1,7 @@
 ---
-layout: default
 title: MirrorSpace_t
-nav_exclude: true
+module: modeldoc_editor
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [modeldoc_editor](../modeldoc_editor.md) / MirrorSpace_t

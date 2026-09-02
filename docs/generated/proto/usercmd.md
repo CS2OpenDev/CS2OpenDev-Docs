@@ -1,8 +1,6 @@
 ---
-layout: default
 title: usercmd.proto
-parent: Protobufs
-nav_exclude: true
+proto: usercmd.proto
 ---
 
 # `usercmd.proto`

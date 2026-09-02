@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CPulseCell_Step_SetAnimGraphParam
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CPulseCell_Step_SetAnimGraphParam

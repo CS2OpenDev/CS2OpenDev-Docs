@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CMultiplayer_Expresser
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CMultiplayer_Expresser

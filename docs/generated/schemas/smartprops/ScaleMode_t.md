@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ScaleMode_t
-nav_exclude: true
+module: smartprops
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [smartprops](../smartprops.md) / ScaleMode_t

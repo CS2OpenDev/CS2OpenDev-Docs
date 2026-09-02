@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CPoseHandle
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / CPoseHandle

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: VertexPositionNormal_t
-nav_exclude: true
+module: physicslib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [physicslib](../physicslib.md) / VertexPositionNormal_t

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ParticleImpulseType_t
-nav_exclude: true
+module: particles
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / ParticleImpulseType_t

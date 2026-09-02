@@ -1,7 +1,7 @@
 ---
-layout: default
 title: BoneTransformSpace_t
-nav_exclude: true
+module: animationsystem
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animationsystem](../animationsystem.md) / BoneTransformSpace_t

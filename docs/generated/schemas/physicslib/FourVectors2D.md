@@ -1,7 +1,7 @@
 ---
-layout: default
 title: FourVectors2D
-nav_exclude: true
+module: physicslib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [physicslib](../physicslib.md) / FourVectors2D

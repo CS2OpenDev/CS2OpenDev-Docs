@@ -71,11 +71,10 @@ except ImportError:
 # Additive → minor bump.
 SCHEMA_FORMAT_VERSION = "2.2"
 
-# Public GitHub Pages base for the generated reference, used to build
-# absolute cross-links (e.g. cs2_schema.json's diagram_url, issue #21.4) that
-# resolve for a consumer reading the JSON with no site context.  Matches the
-# URLs hand-listed in AGENTS.md.
-PAGES_GENERATED_BASE = "https://cs2opendev.github.io/CS2OpenDev-Docs/generated"
+# Public site base, used to build absolute cross-links (e.g. cs2_schema.json's
+# diagram_url, issue #21.4) that resolve for a consumer reading the JSON with
+# no site context.  Matches the URLs hand-listed in AGENTS.md.
+SITE_BASE = "https://cs2opendev.github.io/CS2OpenDev-Docs"
 
 # Canonical C# namespace injected into the normalised .proto overlays (issue
 # #21.3).  A single shared namespace puts every generated message type in one
@@ -864,7 +863,7 @@ def get_overlay(overlays: dict[str, dict], module: str, name: str) -> dict:
 
 
 # Markdown table cells are line-oriented: a raw newline ends the row and
-# kramdown/GFM then reject the whole block, and a bare `<word>` is parsed as an
+# GFM then rejects the whole block, and a bare `<word>` is parsed as an
 # HTML tag.  Everything that reaches a cell goes through one of the four
 # helpers below.  The split that matters is *who wrote the text*: upstream data
 # from the game binaries is escaped hard, overlay YAML is authored Markdown and
@@ -915,8 +914,7 @@ def _md_code_cell(text: Any) -> str:
     """Body of a backticked table cell.
 
     A code span renders its content literally, so HTML entities must *not* be
-    pre-escaped here; `&#124;` is the only pipe form both kramdown and GFM
-    render inside code.
+    pre-escaped here; `&#124;` is the only pipe form GFM renders inside code.
     """
     s = "" if text is None else str(text)
     s = s.strip()
@@ -1334,7 +1332,7 @@ def _enum_value_cell(value: Any, underlying: Any) -> str:
 
 
 def _md_front_matter(**kwargs: str) -> str:
-    """Render a YAML front matter block for Jekyll."""
+    """Render a small YAML front matter block for a generated page."""
     lines = ["---"]
     for key, val in kwargs.items():
         s = str(val)
@@ -1454,7 +1452,7 @@ def _render_schema_type_page(
     # title so a search result says which one it landed on.
     twins = [v for v in _all_variants(name, entities) if v.get("module") != mod]
     title = f"{name} ({mod})" if twins else name
-    L.append(_md_front_matter(layout="default", title=title, nav_exclude="true"))
+    L.append(_md_front_matter(title=title, module=mod, kind=kind))
 
     # Breadcrumb (this page lives at schemas/<mod>/<Type>.md).
     L.append(f"[Schemas](../../schemas.md) / [{mod}](../{mod}.md) / {name}\n")
@@ -1634,8 +1632,8 @@ def _render_schema_type_page(
             )
 
     # MGetKV3ClassDefaults — raw KV3 default block, collapsed to keep the page
-    # scannable.  Rendered as escaped <pre> so it survives regardless of the
-    # kramdown block-HTML setting.
+    # scannable.  Rendered as escaped <pre> since the raw value can itself
+    # contain angle brackets and quotes.
     kv3 = None
     for m in e.get("metadata", []) or []:
         if isinstance(m, dict) and m.get("name") == "MGetKV3ClassDefaults":
@@ -1678,7 +1676,7 @@ def generate_schemas_index_md(
 
     # Master schemas.md
     lines: list[str] = []
-    lines.append(_md_front_matter(layout="default", title="Schemas", nav_order="2"))
+    lines.append(_md_front_matter(title="Schemas"))
     lines.append("# Schema Reference\n")
     if source_info:
         lines.append(_provenance_block(source_info))
@@ -1712,10 +1710,8 @@ def generate_schemas_index_md(
         # Slim module index.
         idx: list[str] = []
         idx.append(_md_front_matter(
-            layout="default",
             title=mod,
-            parent="Schemas",
-            nav_exclude="true",
+            module=mod,
         ))
         idx.append(f"# Module: {mod}\n")
         if source_info:
@@ -1817,10 +1813,7 @@ def generate_module_uml_md(entities: dict[str, dict], out_dir: Path) -> set[str]
 
         md_lines: list[str] = []
         md_lines.append(_md_front_matter(
-            layout="default",
             title=f"UML: {mod}",
-            parent="Schemas",
-            nav_exclude="true",
         ))
         md_lines.append(f"# UML: {mod}\n")
         md_lines.append(
@@ -1999,7 +1992,7 @@ def generate_protobufs_md_page(
 
     # Master index
     idx_lines: list[str] = []
-    idx_lines.append(_md_front_matter(layout="default", title="Protobufs", nav_order="3"))
+    idx_lines.append(_md_front_matter(title="Protobufs"))
     idx_lines.append("# Protobuf Reference\n")
     idx_lines.append("Network message definitions and game event structures from CS2's Protobufs directory.\n")
     idx_lines.append("| File | Messages | Enums |")
@@ -2032,10 +2025,8 @@ def generate_protobufs_md_page(
 
         p_lines: list[str] = []
         p_lines.append(_md_front_matter(
-            layout="default",
             title=pfile,
-            parent="Protobufs",
-            nav_exclude="true",
+            proto=pfile,
         ))
         p_lines.append(f"# `{pfile}`\n")
 
@@ -2167,7 +2158,7 @@ def generate_convars_md_page(
 ) -> None:
     """Generate convars.md."""
     lines: list[str] = []
-    lines.append(_md_front_matter(layout="default", title="ConVars", nav_order="4"))
+    lines.append(_md_front_matter(title="ConVars"))
     lines.append("# ConVar Reference\n")
     if source_info:
         lines.append(_provenance_block(source_info))
@@ -2195,7 +2186,7 @@ def generate_commands_md_page(
 ) -> None:
     """Generate commands.md."""
     lines: list[str] = []
-    lines.append(_md_front_matter(layout="default", title="Commands", nav_order="5"))
+    lines.append(_md_front_matter(title="Commands"))
     lines.append("# Console Commands\n")
     if source_info:
         lines.append(_provenance_block(source_info))
@@ -2223,7 +2214,7 @@ def generate_gameevents_md_page(
     overlay_events: dict = overlay.get("events", {}) or {}
 
     lines: list[str] = []
-    lines.append(_md_front_matter(layout="default", title="Game Events", nav_order="6"))
+    lines.append(_md_front_matter(title="Game Events"))
     lines.append("# Game Events Reference\n")
     lines.append(
         "Game events extracted from CS2's `.gameevents` resource files. "
@@ -2659,7 +2650,7 @@ def generate_cs2_schema(
             record = _enrich_record(raw, variant, overlays)
             # Cross-link the UML diagram for classes whose module has one.
             if variant["kind"] != "enum" and module in diagram_modules:
-                record["diagram_url"] = f"{PAGES_GENERATED_BASE}/diagrams/{module}"
+                record["diagram_url"] = f"{SITE_BASE}/schemas/{module}/hierarchy/"
             (enums_out if variant["kind"] == "enum" else classes_out).append(record)
 
     out: dict[str, Any] = {"schema_format_version": SCHEMA_FORMAT_VERSION}
@@ -3377,7 +3368,7 @@ def generate_index_md(
     source_info: dict[str, Any] | None = None,
     extra_pages: list[tuple[str, str]] | None = None,
 ) -> None:
-    """Generate the Jekyll home page index.md."""
+    """Generate the site home page, index.md."""
     # Match generate_schemas_index_md's bucketing (primary + cross-module
     # duplicate variants) so the home-page module list links every page that
     # actually gets written.
@@ -3393,7 +3384,7 @@ def generate_index_md(
     extra_pages = extra_pages or []
 
     lines: list[str] = []
-    lines.append(_md_front_matter(layout="home", title="CS2 Developer Reference", nav_order="1", nav_exclude="true"))
+    lines.append(_md_front_matter(title="CS2 Developer Reference"))
     lines.append("# CS2 Developer Reference\n")
     lines.append(
         "Auto-generated reference for the **shipped CS2 runtime**, extracted "
@@ -3465,10 +3456,7 @@ def generate_global_diagram_md(entities: dict[str, dict], out_dir: Path) -> None
     (out_dir / "diagrams").mkdir(exist_ok=True)
     md_lines: list[str] = []
     md_lines.append(_md_front_matter(
-        layout="default",
         title="Entity Hierarchy",
-        parent="Schemas",
-        nav_exclude="true",
     ))
     md_lines.append("# Entity Hierarchy Diagram\n")
     md_lines.append(
@@ -3508,12 +3496,7 @@ def _load_content_json(build_dir: Path, name: str) -> dict[str, Any] | None:
 
 
 def _provenance_block(source_info: dict[str, Any]) -> str:
-    """A one-line provenance blockquote for the top of a generated page.
-
-    Plain Markdown: no renderer downstream of this file processes kramdown
-    inline-attribute lists, so the callout marker was invisible everywhere and
-    dead weight in the raw file.
-    """
+    """A one-line provenance blockquote for the top of a generated page."""
     build = source_info.get("build_id", "?")
     date = source_info.get("version_date", "")
     plat = source_info.get("platform", "")
@@ -3530,7 +3513,7 @@ def _provenance_block(source_info: dict[str, Any]) -> str:
 
 def generate_items_md(data: dict[str, Any], source_info: dict[str, Any], out_dir: Path) -> None:
     """Economy items, prefabs, paint/sticker/music kits, rarities, qualities."""
-    lines = [_md_front_matter(layout="default", title="Items & Economy", nav_order="7")]
+    lines = [_md_front_matter(title="Items & Economy")]
     lines.append("# Items & Economy\n")
     lines.append(_provenance_block(source_info))
     lines.append(
@@ -3655,7 +3638,7 @@ def generate_network_md(
             return f"[`{type_name}`](proto/{stem}.md#{_proto_anchor(qualified)})"
         return _code(type_name)
 
-    lines = [_md_front_matter(layout="default", title="Network Messages", nav_order="8")]
+    lines = [_md_front_matter(title="Network Messages")]
     lines.append("# Network & Demo Messages\n")
     lines.append(_provenance_block(source_info))
     lines.append(
@@ -3695,7 +3678,7 @@ def generate_network_md(
 
 def generate_gamemodes_md(data: dict[str, Any], source_info: dict[str, Any], out_dir: Path) -> None:
     """Game types / modes and the map-group registry."""
-    lines = [_md_front_matter(layout="default", title="Game Modes", nav_order="9")]
+    lines = [_md_front_matter(title="Game Modes")]
     lines.append("# Game Modes & Map Groups\n")
     lines.append(_provenance_block(source_info))
     lines.append(
@@ -3739,7 +3722,7 @@ def generate_gamemodes_md(data: dict[str, Any], source_info: dict[str, Any], out
 
 def generate_changelog_md(data: dict[str, Any], source_info: dict[str, Any], out_dir: Path) -> None:
     """What changed between the previous committed build and this one."""
-    lines = [_md_front_matter(layout="default", title="Changelog", nav_order="10")]
+    lines = [_md_front_matter(title="Changelog")]
     lines.append("# Build Changelog\n")
     lines.append(_provenance_block(source_info))
     lines.append(
@@ -3803,7 +3786,7 @@ def generate_changelog_md(data: dict[str, Any], source_info: dict[str, Any], out
 
 def generate_maps_md(data: dict[str, Any], source_info: dict[str, Any], out_dir: Path) -> None:
     """Per-map radar/overview metadata + maps inventory."""
-    lines = [_md_front_matter(layout="default", title="Maps", nav_order="11")]
+    lines = [_md_front_matter(title="Maps")]
     lines.append("# Maps & Radar Overviews\n")
     lines.append(_provenance_block(source_info))
     names = data.get("mapNames", [])
@@ -3825,7 +3808,7 @@ def generate_maps_md(data: dict[str, Any], source_info: dict[str, Any], out_dir:
 
 def generate_surfaces_md(data: dict[str, Any], source_info: dict[str, Any], out_dir: Path) -> None:
     """Per-material surface physics / footstep table."""
-    lines = [_md_front_matter(layout="default", title="Surface Properties", nav_order="12")]
+    lines = [_md_front_matter(title="Surface Properties")]
     lines.append("# Surface Properties\n")
     lines.append(_provenance_block(source_info))
     surfaces = data.get("surfaces", [])
@@ -3851,7 +3834,7 @@ def generate_surfaces_md(data: dict[str, Any], source_info: dict[str, Any], out_
 
 def generate_props_md(data: dict[str, Any], source_info: dict[str, Any], out_dir: Path) -> None:
     """Breakable-prop physics classes, gib groups, collision-group registry."""
-    lines = [_md_front_matter(layout="default", title="Prop Data", nav_order="13")]
+    lines = [_md_front_matter(title="Prop Data")]
     lines.append("# Prop & Collision Data\n")
     lines.append(_provenance_block(source_info))
 
@@ -3892,7 +3875,7 @@ def generate_props_md(data: dict[str, Any], source_info: dict[str, Any], out_dir
 
 def generate_modules_md(data: dict[str, Any], source_info: dict[str, Any], out_dir: Path) -> None:
     """Per-binary inventory: hashes, sizes, and resolved interface versions."""
-    lines = [_md_front_matter(layout="default", title="Modules", nav_order="14")]
+    lines = [_md_front_matter(title="Modules")]
     lines.append("# Binary Modules\n")
     lines.append(_provenance_block(source_info))
     modules = data.get("modules", [])
@@ -4001,7 +3984,7 @@ def generate_schema_history_md(
     summarised = [(tr, _transition_counts(tr)) for tr in transitions]
     non_empty = [(tr, c) for tr, c in summarised if not _transition_is_empty(c)]
 
-    lines = [_md_front_matter(layout="default", title="Schema History", nav_order="15")]
+    lines = [_md_front_matter(title="Schema History")]
     lines.append("# Schema History\n")
     lines.append(_provenance_block(source_info))
 
@@ -4424,7 +4407,7 @@ _TABLE_SEPARATOR_RE = re.compile(r"^\|[\s\-:|]+\|\s*$")
 def check_markdown_tables(root: Path) -> list[str]:
     """Return ``file:line`` for every table row that does not start with `|`.
 
-    A newline inside a cell splits the row; kramdown then rejects the whole
+    A newline inside a cell splits the row; GFM then rejects the whole
     block and re-parses the rest of the page as one paragraph, which is how
     convars.md and commands.md stopped rendering a table at all.
     """

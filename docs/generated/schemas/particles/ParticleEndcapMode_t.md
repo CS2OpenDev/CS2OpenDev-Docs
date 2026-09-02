@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ParticleEndcapMode_t
-nav_exclude: true
+module: particles
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / ParticleEndcapMode_t

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: C_CsmFovOverride
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / C_CsmFovOverride

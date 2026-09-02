@@ -1,8 +1,6 @@
 ---
-layout: default
 title: compositematerialslib
-parent: Schemas
-nav_exclude: true
+module: compositematerialslib
 ---
 
 # Module: compositematerialslib

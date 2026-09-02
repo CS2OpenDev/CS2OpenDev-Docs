@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmGraphDocDataDictionary::IDSet_t"
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmGraphDocDataDictionary::IDSet_t

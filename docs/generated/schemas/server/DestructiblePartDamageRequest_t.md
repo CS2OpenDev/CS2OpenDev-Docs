@@ -1,7 +1,7 @@
 ---
-layout: default
 title: DestructiblePartDamageRequest_t
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / DestructiblePartDamageRequest_t

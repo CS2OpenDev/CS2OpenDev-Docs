@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmTimeConditionNode::ComparisonType_t"
-nav_exclude: true
+module: animlib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmTimeConditionNode::ComparisonType_t

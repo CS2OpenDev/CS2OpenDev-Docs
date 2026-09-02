@@ -1,8 +1,6 @@
 ---
-layout: default
 title: steamnetworkingsockets_messages_certs.proto
-parent: Protobufs
-nav_exclude: true
+proto: steamnetworkingsockets_messages_certs.proto
 ---
 
 # `steamnetworkingsockets_messages_certs.proto`

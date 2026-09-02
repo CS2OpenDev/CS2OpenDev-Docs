@@ -1,8 +1,6 @@
 ---
-layout: default
 title: scenesystem
-parent: Schemas
-nav_exclude: true
+module: scenesystem
 ---
 
 # Module: scenesystem

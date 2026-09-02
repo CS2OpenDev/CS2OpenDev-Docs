@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CPulseCell_TestWaitWithAutoTracepoints
-nav_exclude: true
+module: pulse_system
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [pulse_system](../pulse_system.md) / CPulseCell_TestWaitWithAutoTracepoints

@@ -1,8 +1,6 @@
 ---
-layout: default
 title: valveextensions.proto
-parent: Protobufs
-nav_exclude: true
+proto: valveextensions.proto
 ---
 
 # `valveextensions.proto`

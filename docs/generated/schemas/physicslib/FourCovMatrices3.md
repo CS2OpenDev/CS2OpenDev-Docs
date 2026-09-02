@@ -1,7 +1,7 @@
 ---
-layout: default
 title: FourCovMatrices3
-nav_exclude: true
+module: physicslib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [physicslib](../physicslib.md) / FourCovMatrices3

@@ -1,8 +1,6 @@
 ---
-layout: default
 title: rendersystemdx11
-parent: Schemas
-nav_exclude: true
+module: rendersystemdx11
 ---
 
 # Module: rendersystemdx11

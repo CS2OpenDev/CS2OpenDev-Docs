@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CTextureSheetDoc_Frame
-nav_exclude: true
+module: texturelib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [texturelib](../texturelib.md) / CTextureSheetDoc_Frame

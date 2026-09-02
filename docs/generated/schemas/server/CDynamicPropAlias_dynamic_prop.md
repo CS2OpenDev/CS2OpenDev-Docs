@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CDynamicPropAlias_dynamic_prop
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CDynamicPropAlias_dynamic_prop

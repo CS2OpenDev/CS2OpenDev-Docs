@@ -1,7 +1,7 @@
 ---
-layout: default
 title: FakeEntityDerivedB_tAPI
-nav_exclude: true
+module: pulse_system
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [pulse_system](../pulse_system.md) / FakeEntityDerivedB_tAPI

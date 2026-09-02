@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: toolscene"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: toolscene

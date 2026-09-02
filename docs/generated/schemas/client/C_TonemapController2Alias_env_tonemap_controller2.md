@@ -1,7 +1,7 @@
 ---
-layout: default
 title: C_TonemapController2Alias_env_tonemap_controller2
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / C_TonemapController2Alias_env_tonemap_controller2

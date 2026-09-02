@@ -1,7 +1,5 @@
 ---
-layout: default
 title: Schema History
-nav_order: 15
 ---
 
 # Schema History

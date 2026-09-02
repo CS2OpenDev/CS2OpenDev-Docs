@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CRigidBodyWeight
-nav_exclude: true
+module: animgraphdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphdoclib](../animgraphdoclib.md) / CRigidBodyWeight

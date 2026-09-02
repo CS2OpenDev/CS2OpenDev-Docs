@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ParticleOmni2LightTypeChoiceList_t
-nav_exclude: true
+module: particles
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / ParticleOmni2LightTypeChoiceList_t

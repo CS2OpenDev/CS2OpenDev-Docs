@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CNavVolumeVector
-nav_exclude: true
+module: navlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [navlib](../navlib.md) / CNavVolumeVector

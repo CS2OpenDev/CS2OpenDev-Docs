@@ -1,7 +1,7 @@
 ---
-layout: default
 title: AnimationSnapshot_t
-nav_exclude: true
+module: animationsystem
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animationsystem](../animationsystem.md) / AnimationSnapshot_t

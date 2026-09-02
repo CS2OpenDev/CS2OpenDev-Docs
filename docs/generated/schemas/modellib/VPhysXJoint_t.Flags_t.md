@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "VPhysXJoint_t::Flags_t"
-nav_exclude: true
+module: modellib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [modellib](../modellib.md) / VPhysXJoint_t::Flags_t

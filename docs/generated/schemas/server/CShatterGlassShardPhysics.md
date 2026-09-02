@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CShatterGlassShardPhysics
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CShatterGlassShardPhysics

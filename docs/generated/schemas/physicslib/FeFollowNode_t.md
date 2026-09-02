@@ -1,7 +1,7 @@
 ---
-layout: default
 title: FeFollowNode_t
-nav_exclude: true
+module: physicslib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [physicslib](../physicslib.md) / FeFollowNode_t

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: AnimationSnapshotType_t
-nav_exclude: true
+module: animationsystem
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animationsystem](../animationsystem.md) / AnimationSnapshotType_t

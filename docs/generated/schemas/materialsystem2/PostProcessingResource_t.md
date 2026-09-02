@@ -1,7 +1,7 @@
 ---
-layout: default
 title: PostProcessingResource_t
-nav_exclude: true
+module: materialsystem2
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [materialsystem2](../materialsystem2.md) / PostProcessingResource_t

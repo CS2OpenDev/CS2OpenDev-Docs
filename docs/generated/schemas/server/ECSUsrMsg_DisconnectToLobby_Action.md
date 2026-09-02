@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ECSUsrMsg_DisconnectToLobby_Action
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / ECSUsrMsg_DisconnectToLobby_Action

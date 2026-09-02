@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmBlend1DNode::CDefinition"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmBlend1DNode::CDefinition

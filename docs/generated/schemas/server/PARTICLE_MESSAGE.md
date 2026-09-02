@@ -1,7 +1,7 @@
 ---
-layout: default
 title: PARTICLE_MESSAGE
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / PARTICLE_MESSAGE

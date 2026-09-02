@@ -1,7 +1,7 @@
 ---
-layout: default
 title: JointMotion_t
-nav_exclude: true
+module: physicslib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [physicslib](../physicslib.md) / JointMotion_t

@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: modellib"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: modellib

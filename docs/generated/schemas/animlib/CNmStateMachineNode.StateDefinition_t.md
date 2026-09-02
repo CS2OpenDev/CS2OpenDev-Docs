@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmStateMachineNode::StateDefinition_t"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmStateMachineNode::StateDefinition_t

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmTransitionNode::TransitionOptions_t"
-nav_exclude: true
+module: animlib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmTransitionNode::TransitionOptions_t

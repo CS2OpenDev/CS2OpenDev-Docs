@@ -1,8 +1,6 @@
 ---
-layout: default
 title: particleslib
-parent: Schemas
-nav_exclude: true
+module: particleslib
 ---
 
 # Module: particleslib

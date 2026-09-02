@@ -1,7 +1,7 @@
 ---
-layout: default
 title: SceneViewId_t
-nav_exclude: true
+module: scenesystem
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [scenesystem](../scenesystem.md) / SceneViewId_t

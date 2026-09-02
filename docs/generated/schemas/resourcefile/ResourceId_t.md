@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ResourceId_t
-nav_exclude: true
+module: resourcefile
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [resourcefile](../resourcefile.md) / ResourceId_t

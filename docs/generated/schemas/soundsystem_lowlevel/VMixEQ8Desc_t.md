@@ -1,7 +1,7 @@
 ---
-layout: default
 title: VMixEQ8Desc_t
-nav_exclude: true
+module: soundsystem_lowlevel
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [soundsystem_lowlevel](../soundsystem_lowlevel.md) / VMixEQ8Desc_t

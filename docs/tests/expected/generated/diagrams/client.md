@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: client"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: client

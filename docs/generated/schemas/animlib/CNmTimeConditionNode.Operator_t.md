@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmTimeConditionNode::Operator_t"
-nav_exclude: true
+module: animlib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmTimeConditionNode::Operator_t

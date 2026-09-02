@@ -1,7 +1,7 @@
 ---
-layout: default
 title: C_CSGO_PreviewPlayerAlias_csgo_player_previewmodel
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / C_CSGO_PreviewPlayerAlias_csgo_player_previewmodel

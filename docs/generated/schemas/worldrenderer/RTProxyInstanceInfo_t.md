@@ -1,7 +1,7 @@
 ---
-layout: default
 title: RTProxyInstanceInfo_t
-nav_exclude: true
+module: worldrenderer
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [worldrenderer](../worldrenderer.md) / RTProxyInstanceInfo_t

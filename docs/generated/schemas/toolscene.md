@@ -1,8 +1,6 @@
 ---
-layout: default
 title: toolscene
-parent: Schemas
-nav_exclude: true
+module: toolscene
 ---
 
 # Module: toolscene

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: SmartPropSpace_t
-nav_exclude: true
+module: smartprops
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [smartprops](../smartprops.md) / SmartPropSpace_t

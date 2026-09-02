@@ -1,8 +1,6 @@
 ---
-layout: default
 title: cs_prediction_events.proto
-parent: Protobufs
-nav_exclude: true
+proto: cs_prediction_events.proto
 ---
 
 # `cs_prediction_events.proto`

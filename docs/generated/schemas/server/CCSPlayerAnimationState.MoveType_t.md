@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CCSPlayerAnimationState::MoveType_t"
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CCSPlayerAnimationState::MoveType_t

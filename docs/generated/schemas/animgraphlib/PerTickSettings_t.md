@@ -1,7 +1,7 @@
 ---
-layout: default
 title: PerTickSettings_t
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / PerTickSettings_t

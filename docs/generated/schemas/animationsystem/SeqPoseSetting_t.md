@@ -1,7 +1,7 @@
 ---
-layout: default
 title: SeqPoseSetting_t
-nav_exclude: true
+module: animationsystem
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animationsystem](../animationsystem.md) / SeqPoseSetting_t

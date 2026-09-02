@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CMotionAnalysisSettings_Foot
-nav_exclude: true
+module: modeldoc_editor
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [modeldoc_editor](../modeldoc_editor.md) / CMotionAnalysisSettings_Foot

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CSmartPropElement_PlaceMultiple
-nav_exclude: true
+module: smartprops
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [smartprops](../smartprops.md) / CSmartPropElement_PlaceMultiple

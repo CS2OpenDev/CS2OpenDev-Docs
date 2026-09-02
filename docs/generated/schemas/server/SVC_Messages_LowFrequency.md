@@ -1,7 +1,7 @@
 ---
-layout: default
 title: SVC_Messages_LowFrequency
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / SVC_Messages_LowFrequency

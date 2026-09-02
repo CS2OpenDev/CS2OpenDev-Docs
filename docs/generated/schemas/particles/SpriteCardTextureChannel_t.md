@@ -1,7 +1,7 @@
 ---
-layout: default
 title: SpriteCardTextureChannel_t
-nav_exclude: true
+module: particles
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / SpriteCardTextureChannel_t

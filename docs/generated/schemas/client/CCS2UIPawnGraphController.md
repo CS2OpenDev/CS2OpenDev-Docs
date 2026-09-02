@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CCS2UIPawnGraphController
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CCS2UIPawnGraphController

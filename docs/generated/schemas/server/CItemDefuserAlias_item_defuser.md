@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CItemDefuserAlias_item_defuser
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CItemDefuserAlias_item_defuser

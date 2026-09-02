@@ -1,8 +1,6 @@
 ---
-layout: default
 title: connectionless_netmessages.proto
-parent: Protobufs
-nav_exclude: true
+proto: connectionless_netmessages.proto
 ---
 
 # `connectionless_netmessages.proto`

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CSmartPropVariable_Float
-nav_exclude: true
+module: smartprops
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [smartprops](../smartprops.md) / CSmartPropVariable_Float

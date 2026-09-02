@@ -1,7 +1,7 @@
 ---
-layout: default
 title: NmGraphDocGraphType_t
-nav_exclude: true
+module: animdoclib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / NmGraphDocGraphType_t

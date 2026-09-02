@@ -1,7 +1,7 @@
 ---
-layout: default
 title: IAnimationGraphInstance
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / IAnimationGraphInstance

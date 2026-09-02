@@ -1,8 +1,6 @@
 ---
-layout: default
 title: engine2
-parent: Schemas
-nav_exclude: true
+module: engine2
 ---
 
 # Module: engine2

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ParticleControlPointDriver_t
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / ParticleControlPointDriver_t

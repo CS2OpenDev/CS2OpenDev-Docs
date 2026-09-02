@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmFloatChannelData::ChannelSettings_t"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmFloatChannelData::ChannelSettings_t

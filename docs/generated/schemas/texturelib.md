@@ -1,8 +1,6 @@
 ---
-layout: default
 title: texturelib
-parent: Schemas
-nav_exclude: true
+module: texturelib
 ---
 
 # Module: texturelib

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: InfoForResourceTypeCTypeScriptResource
-nav_exclude: true
+module: resourcesystem
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [resourcesystem](../resourcesystem.md) / InfoForResourceTypeCTypeScriptResource

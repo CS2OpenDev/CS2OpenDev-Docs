@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CPulseTestFuncs_LibraryA
-nav_exclude: true
+module: pulse_system
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [pulse_system](../pulse_system.md) / CPulseTestFuncs_LibraryA

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: KeyGroup_t
-nav_exclude: true
+module: soundsystem
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [soundsystem](../soundsystem.md) / KeyGroup_t

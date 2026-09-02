@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CPulseCell_Outflow_PlayDynamicVCD
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CPulseCell_Outflow_PlayDynamicVCD

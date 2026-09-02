@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: animdoclib"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: animdoclib

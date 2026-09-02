@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CDecoyProjectile
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CDecoyProjectile

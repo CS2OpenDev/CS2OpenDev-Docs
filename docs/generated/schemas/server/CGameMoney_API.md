@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CGameMoney_API
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CGameMoney_API

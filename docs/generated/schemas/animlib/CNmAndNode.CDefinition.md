@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmAndNode::CDefinition"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmAndNode::CDefinition

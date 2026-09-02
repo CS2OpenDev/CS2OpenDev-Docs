@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CSceneEntityAlias_logic_choreographed_scene
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CSceneEntityAlias_logic_choreographed_scene

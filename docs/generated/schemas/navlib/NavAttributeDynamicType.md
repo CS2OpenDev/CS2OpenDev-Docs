@@ -1,7 +1,7 @@
 ---
-layout: default
 title: NavAttributeDynamicType
-nav_exclude: true
+module: navlib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [navlib](../navlib.md) / NavAttributeDynamicType

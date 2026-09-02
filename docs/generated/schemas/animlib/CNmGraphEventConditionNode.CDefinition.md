@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmGraphEventConditionNode::CDefinition"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmGraphEventConditionNode::CDefinition

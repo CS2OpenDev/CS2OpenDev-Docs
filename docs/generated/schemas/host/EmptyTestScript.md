@@ -1,7 +1,7 @@
 ---
-layout: default
 title: EmptyTestScript
-nav_exclude: true
+module: host
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [host](../host.md) / EmptyTestScript

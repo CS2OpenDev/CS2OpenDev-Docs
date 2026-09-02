@@ -1,7 +1,7 @@
 ---
-layout: default
 title: EntityDormancyType_t
-nav_exclude: true
+module: entity2
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [entity2](../entity2.md) / EntityDormancyType_t

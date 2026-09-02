@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CFuncConveyor_API
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CFuncConveyor_API

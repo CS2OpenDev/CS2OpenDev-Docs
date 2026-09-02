@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: physicslib"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: physicslib

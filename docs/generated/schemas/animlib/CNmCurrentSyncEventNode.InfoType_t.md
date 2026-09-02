@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmCurrentSyncEventNode::InfoType_t"
-nav_exclude: true
+module: animlib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmCurrentSyncEventNode::InfoType_t

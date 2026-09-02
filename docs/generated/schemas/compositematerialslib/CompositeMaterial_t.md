@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CompositeMaterial_t
-nav_exclude: true
+module: compositematerialslib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [compositematerialslib](../compositematerialslib.md) / CompositeMaterial_t

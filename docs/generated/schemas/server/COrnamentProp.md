@@ -1,7 +1,7 @@
 ---
-layout: default
 title: COrnamentProp
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / COrnamentProp

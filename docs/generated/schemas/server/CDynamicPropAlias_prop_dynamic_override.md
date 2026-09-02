@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CDynamicPropAlias_prop_dynamic_override
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CDynamicPropAlias_prop_dynamic_override

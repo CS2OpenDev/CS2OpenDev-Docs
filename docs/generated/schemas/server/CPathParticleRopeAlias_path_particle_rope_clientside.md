@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CPathParticleRopeAlias_path_particle_rope_clientside
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CPathParticleRopeAlias_path_particle_rope_clientside

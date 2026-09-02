@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CRagdollPropAlias_physics_prop_ragdoll
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CRagdollPropAlias_physics_prop_ragdoll

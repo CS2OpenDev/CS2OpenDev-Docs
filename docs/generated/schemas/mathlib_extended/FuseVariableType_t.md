@@ -1,7 +1,7 @@
 ---
-layout: default
 title: FuseVariableType_t
-nav_exclude: true
+module: mathlib_extended
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [mathlib_extended](../mathlib_extended.md) / FuseVariableType_t

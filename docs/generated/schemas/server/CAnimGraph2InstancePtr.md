@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CAnimGraph2InstancePtr
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CAnimGraph2InstancePtr

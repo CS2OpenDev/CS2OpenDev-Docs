@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CPulseCell_LerpCameraSettings::CursorState_t (server)"
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CPulseCell_LerpCameraSettings::CursorState_t

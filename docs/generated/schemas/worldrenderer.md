@@ -1,8 +1,6 @@
 ---
-layout: default
 title: worldrenderer
-parent: Schemas
-nav_exclude: true
+module: worldrenderer
 ---
 
 # Module: worldrenderer

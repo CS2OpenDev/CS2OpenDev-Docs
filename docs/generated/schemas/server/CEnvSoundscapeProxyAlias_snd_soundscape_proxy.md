@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CEnvSoundscapeProxyAlias_snd_soundscape_proxy (server)
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CEnvSoundscapeProxyAlias_snd_soundscape_proxy

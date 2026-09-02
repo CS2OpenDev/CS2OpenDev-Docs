@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CEnvSoundscapeAlias_snd_soundscape (server)
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CEnvSoundscapeAlias_snd_soundscape

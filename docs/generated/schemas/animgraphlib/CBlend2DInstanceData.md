@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CBlend2DInstanceData
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / CBlend2DInstanceData

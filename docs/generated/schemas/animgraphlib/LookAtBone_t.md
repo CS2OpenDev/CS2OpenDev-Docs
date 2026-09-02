@@ -1,7 +1,7 @@
 ---
-layout: default
 title: LookAtBone_t
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / LookAtBone_t

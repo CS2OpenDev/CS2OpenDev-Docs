@@ -1,7 +1,7 @@
 ---
-layout: default
 title: PermModelData_t
-nav_exclude: true
+module: modellib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [modellib](../modellib.md) / PermModelData_t

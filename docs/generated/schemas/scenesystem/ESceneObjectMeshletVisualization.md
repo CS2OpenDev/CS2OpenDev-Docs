@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ESceneObjectMeshletVisualization
-nav_exclude: true
+module: scenesystem
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [scenesystem](../scenesystem.md) / ESceneObjectMeshletVisualization

@@ -1,8 +1,6 @@
 ---
-layout: default
 title: econ_gcmessages.proto
-parent: Protobufs
-nav_exclude: true
+proto: econ_gcmessages.proto
 ---
 
 # `econ_gcmessages.proto`

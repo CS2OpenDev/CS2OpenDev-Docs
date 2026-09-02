@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CRangeInt
-nav_exclude: true
+module: tier2
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [tier2](../tier2.md) / CRangeInt

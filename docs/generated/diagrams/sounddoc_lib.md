@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: sounddoc_lib"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: sounddoc_lib

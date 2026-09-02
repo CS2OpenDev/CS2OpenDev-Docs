@@ -1,8 +1,6 @@
 ---
-layout: default
 title: steamnetworkingsockets_messages_udp.proto
-parent: Protobufs
-nav_exclude: true
+proto: steamnetworkingsockets_messages_udp.proto
 ---
 
 # `steamnetworkingsockets_messages_udp.proto`

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CPulseCell_BaseState
-nav_exclude: true
+module: pulse_runtime_lib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [pulse_runtime_lib](../pulse_runtime_lib.md) / CPulseCell_BaseState

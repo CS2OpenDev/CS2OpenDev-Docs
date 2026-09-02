@@ -1,8 +1,6 @@
 ---
-layout: default
 title: steammessages_oauth.steamworkssdk.proto
-parent: Protobufs
-nav_exclude: true
+proto: steammessages_oauth.steamworkssdk.proto
 ---
 
 # `steammessages_oauth.steamworkssdk.proto`

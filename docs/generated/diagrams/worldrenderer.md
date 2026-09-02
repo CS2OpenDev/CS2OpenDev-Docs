@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: worldrenderer"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: worldrenderer

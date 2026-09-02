@@ -1,7 +1,7 @@
 ---
-layout: default
 title: Bidirectional_Messages
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / Bidirectional_Messages

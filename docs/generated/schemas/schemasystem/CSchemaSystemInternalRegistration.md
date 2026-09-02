@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CSchemaSystemInternalRegistration
-nav_exclude: true
+module: schemasystem
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [schemasystem](../schemasystem.md) / CSchemaSystemInternalRegistration

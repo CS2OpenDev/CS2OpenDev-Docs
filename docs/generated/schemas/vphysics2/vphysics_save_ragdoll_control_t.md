@@ -1,7 +1,7 @@
 ---
-layout: default
 title: vphysics_save_ragdoll_control_t
-nav_exclude: true
+module: vphysics2
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [vphysics2](../vphysics2.md) / vphysics_save_ragdoll_control_t

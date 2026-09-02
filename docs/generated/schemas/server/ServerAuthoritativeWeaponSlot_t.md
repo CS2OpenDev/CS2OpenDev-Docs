@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ServerAuthoritativeWeaponSlot_t (server)
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / ServerAuthoritativeWeaponSlot_t

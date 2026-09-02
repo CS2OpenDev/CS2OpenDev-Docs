@@ -1,8 +1,6 @@
 ---
-layout: default
 title: schemasystem
-parent: Schemas
-nav_exclude: true
+module: schemasystem
 ---
 
 # Module: schemasystem

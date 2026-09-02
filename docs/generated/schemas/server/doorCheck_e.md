@@ -1,7 +1,7 @@
 ---
-layout: default
 title: doorCheck_e
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / doorCheck_e

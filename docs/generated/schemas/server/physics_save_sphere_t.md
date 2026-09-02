@@ -1,7 +1,7 @@
 ---
-layout: default
 title: physics_save_sphere_t
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / physics_save_sphere_t

@@ -1,8 +1,6 @@
 ---
-layout: default
 title: steammessages_cloud.steamworkssdk.proto
-parent: Protobufs
-nav_exclude: true
+proto: steammessages_cloud.steamworkssdk.proto
 ---
 
 # `steammessages_cloud.steamworkssdk.proto`

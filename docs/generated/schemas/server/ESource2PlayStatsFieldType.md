@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ESource2PlayStatsFieldType
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / ESource2PlayStatsFieldType

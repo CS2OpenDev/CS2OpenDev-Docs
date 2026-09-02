@@ -1,7 +1,7 @@
 ---
-layout: default
 title: EMaterialLayer_t
-nav_exclude: true
+module: met
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [met](../met.md) / EMaterialLayer_t

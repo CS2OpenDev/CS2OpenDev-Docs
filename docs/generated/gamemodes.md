@@ -1,7 +1,5 @@
 ---
-layout: default
 title: Game Modes
-nav_order: 9
 ---
 
 # Game Modes & Map Groups

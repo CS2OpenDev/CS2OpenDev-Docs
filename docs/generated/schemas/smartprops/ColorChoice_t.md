@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ColorChoice_t
-nav_exclude: true
+module: smartprops
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [smartprops](../smartprops.md) / ColorChoice_t

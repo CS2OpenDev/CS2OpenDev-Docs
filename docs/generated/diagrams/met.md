@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: met"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: met

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmPreviewArchetype::SecondarySkeleton_t"
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmPreviewArchetype::SecondarySkeleton_t

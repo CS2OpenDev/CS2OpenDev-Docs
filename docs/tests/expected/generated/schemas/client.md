@@ -1,8 +1,6 @@
 ---
-layout: default
 title: client
-parent: Schemas
-nav_exclude: true
+module: client
 ---
 
 # Module: client

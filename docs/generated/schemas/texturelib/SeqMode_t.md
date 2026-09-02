@@ -1,7 +1,7 @@
 ---
-layout: default
 title: SeqMode_t
-nav_exclude: true
+module: texturelib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [texturelib](../texturelib.md) / SeqMode_t

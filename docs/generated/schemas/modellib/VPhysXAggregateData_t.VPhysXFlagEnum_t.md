@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "VPhysXAggregateData_t::VPhysXFlagEnum_t"
-nav_exclude: true
+module: modellib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [modellib](../modellib.md) / VPhysXAggregateData_t::VPhysXFlagEnum_t

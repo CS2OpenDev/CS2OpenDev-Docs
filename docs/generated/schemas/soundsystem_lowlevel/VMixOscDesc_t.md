@@ -1,7 +1,7 @@
 ---
-layout: default
 title: VMixOscDesc_t
-nav_exclude: true
+module: soundsystem_lowlevel
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [soundsystem_lowlevel](../soundsystem_lowlevel.md) / VMixOscDesc_t

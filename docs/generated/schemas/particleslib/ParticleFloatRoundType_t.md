@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ParticleFloatRoundType_t
-nav_exclude: true
+module: particleslib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [particleslib](../particleslib.md) / ParticleFloatRoundType_t

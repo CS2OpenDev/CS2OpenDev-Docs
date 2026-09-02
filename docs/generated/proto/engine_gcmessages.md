@@ -1,8 +1,6 @@
 ---
-layout: default
 title: engine_gcmessages.proto
-parent: Protobufs
-nav_exclude: true
+proto: engine_gcmessages.proto
 ---
 
 # `engine_gcmessages.proto`

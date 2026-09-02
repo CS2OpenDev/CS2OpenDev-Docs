@@ -1,7 +1,7 @@
 ---
-layout: default
 title: Flags_t
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / Flags_t

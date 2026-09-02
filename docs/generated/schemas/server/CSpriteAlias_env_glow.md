@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CSpriteAlias_env_glow
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CSpriteAlias_env_glow

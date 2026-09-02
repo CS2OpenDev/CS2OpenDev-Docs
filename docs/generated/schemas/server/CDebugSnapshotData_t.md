@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CDebugSnapshotData_t
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CDebugSnapshotData_t

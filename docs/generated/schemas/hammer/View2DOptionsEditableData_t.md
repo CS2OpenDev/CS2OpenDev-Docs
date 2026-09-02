@@ -1,7 +1,7 @@
 ---
-layout: default
 title: View2DOptionsEditableData_t
-nav_exclude: true
+module: hammer
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [hammer](../hammer.md) / View2DOptionsEditableData_t

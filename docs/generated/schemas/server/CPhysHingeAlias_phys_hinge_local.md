@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CPhysHingeAlias_phys_hinge_local
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CPhysHingeAlias_phys_hinge_local

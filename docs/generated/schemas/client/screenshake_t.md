@@ -1,7 +1,7 @@
 ---
-layout: default
 title: screenshake_t
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / screenshake_t

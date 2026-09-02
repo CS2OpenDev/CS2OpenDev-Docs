@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ESilhouetteType_t
-nav_exclude: true
+module: scenesystem
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [scenesystem](../scenesystem.md) / ESilhouetteType_t

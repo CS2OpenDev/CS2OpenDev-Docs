@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmGraphDocGraphEventConditionNode::Condition_t"
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmGraphDocGraphEventConditionNode::Condition_t

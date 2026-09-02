@@ -1,7 +1,7 @@
 ---
-layout: default
 title: EGCToGCMsg
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / EGCToGCMsg

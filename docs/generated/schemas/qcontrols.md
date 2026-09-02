@@ -1,8 +1,6 @@
 ---
-layout: default
 title: qcontrols
-parent: Schemas
-nav_exclude: true
+module: qcontrols
 ---
 
 # Module: qcontrols

@@ -1,8 +1,6 @@
 ---
-layout: default
 title: toolutils2
-parent: Schemas
-nav_exclude: true
+module: toolutils2
 ---
 
 # Module: toolutils2

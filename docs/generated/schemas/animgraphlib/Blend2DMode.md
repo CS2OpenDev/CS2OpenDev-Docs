@@ -1,7 +1,7 @@
 ---
-layout: default
 title: Blend2DMode
-nav_exclude: true
+module: animgraphlib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / Blend2DMode

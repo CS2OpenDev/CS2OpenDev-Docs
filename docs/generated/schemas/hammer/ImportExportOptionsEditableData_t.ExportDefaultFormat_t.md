@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "ImportExportOptionsEditableData_t::ExportDefaultFormat_t"
-nav_exclude: true
+module: hammer
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [hammer](../hammer.md) / ImportExportOptionsEditableData_t::ExportDefaultFormat_t

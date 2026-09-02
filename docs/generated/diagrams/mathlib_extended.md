@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: mathlib_extended"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: mathlib_extended

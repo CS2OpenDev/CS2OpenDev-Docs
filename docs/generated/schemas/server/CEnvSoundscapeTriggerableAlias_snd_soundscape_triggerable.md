@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CEnvSoundscapeTriggerableAlias_snd_soundscape_triggerable (server)
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CEnvSoundscapeTriggerableAlias_snd_soundscape_triggerable

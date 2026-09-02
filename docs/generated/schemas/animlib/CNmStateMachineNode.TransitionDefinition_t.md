@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmStateMachineNode::TransitionDefinition_t"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmStateMachineNode::TransitionDefinition_t

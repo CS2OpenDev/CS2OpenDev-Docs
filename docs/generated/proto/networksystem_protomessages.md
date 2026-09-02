@@ -1,8 +1,6 @@
 ---
-layout: default
 title: networksystem_protomessages.proto
-parent: Protobufs
-nav_exclude: true
+proto: networksystem_protomessages.proto
 ---
 
 # `networksystem_protomessages.proto`

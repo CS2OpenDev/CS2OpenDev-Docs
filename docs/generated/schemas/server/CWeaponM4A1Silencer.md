@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CWeaponM4A1Silencer
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CWeaponM4A1Silencer

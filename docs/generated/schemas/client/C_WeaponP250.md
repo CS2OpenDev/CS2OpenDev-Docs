@@ -1,7 +1,7 @@
 ---
-layout: default
 title: C_WeaponP250
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / C_WeaponP250

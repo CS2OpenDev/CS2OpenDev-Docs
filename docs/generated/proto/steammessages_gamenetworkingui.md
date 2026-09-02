@@ -1,8 +1,6 @@
 ---
-layout: default
 title: steammessages_gamenetworkingui.proto
-parent: Protobufs
-nav_exclude: true
+proto: steammessages_gamenetworkingui.proto
 ---
 
 # `steammessages_gamenetworkingui.proto`

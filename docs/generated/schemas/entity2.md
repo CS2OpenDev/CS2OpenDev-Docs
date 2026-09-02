@@ -1,8 +1,6 @@
 ---
-layout: default
 title: entity2
-parent: Schemas
-nav_exclude: true
+module: entity2
 ---
 
 # Module: entity2

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CPairedSequenceComponentUpdater
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / CPairedSequenceComponentUpdater

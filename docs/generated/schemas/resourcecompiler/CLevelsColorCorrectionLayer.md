@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CLevelsColorCorrectionLayer
-nav_exclude: true
+module: resourcecompiler
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [resourcecompiler](../resourcecompiler.md) / CLevelsColorCorrectionLayer

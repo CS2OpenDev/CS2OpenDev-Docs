@@ -1,7 +1,7 @@
 ---
-layout: default
 title: fieldtype_t
-nav_exclude: true
+module: schemasystem
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [schemasystem](../schemasystem.md) / fieldtype_t

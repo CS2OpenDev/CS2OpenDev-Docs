@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "PermModelInfo_t::FlagEnum"
-nav_exclude: true
+module: modellib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [modellib](../modellib.md) / PermModelInfo_t::FlagEnum

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CAnimDataChannelDesc
-nav_exclude: true
+module: animationsystem
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animationsystem](../animationsystem.md) / CAnimDataChannelDesc

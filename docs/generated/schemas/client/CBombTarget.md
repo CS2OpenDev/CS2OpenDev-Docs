@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CBombTarget (client)
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CBombTarget

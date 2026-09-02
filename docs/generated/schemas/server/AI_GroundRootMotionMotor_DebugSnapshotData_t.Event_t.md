@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "AI_GroundRootMotionMotor_DebugSnapshotData_t::Event_t"
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / AI_GroundRootMotionMotor_DebugSnapshotData_t::Event_t

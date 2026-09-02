@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CCS2WeaponGraphController (server)
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CCS2WeaponGraphController

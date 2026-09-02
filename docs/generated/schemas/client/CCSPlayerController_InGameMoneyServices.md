@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CCSPlayerController_InGameMoneyServices (client)
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CCSPlayerController_InGameMoneyServices

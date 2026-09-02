@@ -1,7 +1,5 @@
 ---
-layout: default
 title: Surface Properties
-nav_order: 12
 ---
 
 # Surface Properties

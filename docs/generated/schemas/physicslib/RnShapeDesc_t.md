@@ -1,7 +1,7 @@
 ---
-layout: default
 title: RnShapeDesc_t
-nav_exclude: true
+module: physicslib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [physicslib](../physicslib.md) / RnShapeDesc_t

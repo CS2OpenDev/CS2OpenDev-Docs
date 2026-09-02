@@ -1,7 +1,7 @@
 ---
-layout: default
 title: InfoForResourceTypeWorld_t
-nav_exclude: true
+module: resourcesystem
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [resourcesystem](../resourcesystem.md) / InfoForResourceTypeWorld_t

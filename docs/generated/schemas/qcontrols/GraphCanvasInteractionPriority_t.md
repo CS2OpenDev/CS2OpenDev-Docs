@@ -1,7 +1,7 @@
 ---
-layout: default
 title: GraphCanvasInteractionPriority_t
-nav_exclude: true
+module: qcontrols
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [qcontrols](../qcontrols.md) / GraphCanvasInteractionPriority_t

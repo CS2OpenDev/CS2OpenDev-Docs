@@ -1,8 +1,6 @@
 ---
-layout: default
 title: cstrike15_gcmessages.proto
-parent: Protobufs
-nav_exclude: true
+proto: cstrike15_gcmessages.proto
 ---
 
 # `cstrike15_gcmessages.proto`

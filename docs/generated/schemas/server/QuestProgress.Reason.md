@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "QuestProgress::Reason"
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / QuestProgress::Reason

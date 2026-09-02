@@ -1,8 +1,6 @@
 ---
-layout: default
 title: animgraphlib
-parent: Schemas
-nav_exclude: true
+module: animgraphlib
 ---
 
 # Module: animgraphlib

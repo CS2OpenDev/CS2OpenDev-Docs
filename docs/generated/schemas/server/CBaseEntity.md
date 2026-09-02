@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CBaseEntity
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CBaseEntity

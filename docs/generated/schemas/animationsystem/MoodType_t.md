@@ -1,7 +1,7 @@
 ---
-layout: default
 title: MoodType_t
-nav_exclude: true
+module: animationsystem
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animationsystem](../animationsystem.md) / MoodType_t

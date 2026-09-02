@@ -1,7 +1,7 @@
 ---
-layout: default
 title: screenfade_t
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / screenfade_t

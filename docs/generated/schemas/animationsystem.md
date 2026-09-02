@@ -1,8 +1,6 @@
 ---
-layout: default
 title: animationsystem
-parent: Schemas
-nav_exclude: true
+module: animationsystem
 ---
 
 # Module: animationsystem

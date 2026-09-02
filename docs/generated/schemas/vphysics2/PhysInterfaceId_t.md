@@ -1,7 +1,7 @@
 ---
-layout: default
 title: PhysInterfaceId_t
-nav_exclude: true
+module: vphysics2
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [vphysics2](../vphysics2.md) / PhysInterfaceId_t

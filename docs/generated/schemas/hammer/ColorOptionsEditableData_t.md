@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ColorOptionsEditableData_t
-nav_exclude: true
+module: hammer
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [hammer](../hammer.md) / ColorOptionsEditableData_t

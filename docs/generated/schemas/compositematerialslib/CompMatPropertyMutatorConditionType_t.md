@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CompMatPropertyMutatorConditionType_t
-nav_exclude: true
+module: compositematerialslib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [compositematerialslib](../compositematerialslib.md) / CompMatPropertyMutatorConditionType_t

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: TRAIN_CODE
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / TRAIN_CODE

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CCSPlayer_ActionTrackingServices (client)
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CCSPlayer_ActionTrackingServices

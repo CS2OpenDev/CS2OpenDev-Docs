@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CPlantedC4_API
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CPlantedC4_API

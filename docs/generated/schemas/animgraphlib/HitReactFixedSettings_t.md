@@ -1,7 +1,7 @@
 ---
-layout: default
 title: HitReactFixedSettings_t
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / HitReactFixedSettings_t

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: NmEasingOperation_t
-nav_exclude: true
+module: animlib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / NmEasingOperation_t

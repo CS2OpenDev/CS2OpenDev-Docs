@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CPlayer_ObserverServices (server)
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CPlayer_ObserverServices

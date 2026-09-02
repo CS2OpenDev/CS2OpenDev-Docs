@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CNmClipDocEvent_Legacy
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmClipDocEvent_Legacy

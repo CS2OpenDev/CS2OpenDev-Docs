@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: engine2"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: engine2

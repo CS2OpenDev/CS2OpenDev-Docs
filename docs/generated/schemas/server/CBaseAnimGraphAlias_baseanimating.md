@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CBaseAnimGraphAlias_baseanimating (server)
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CBaseAnimGraphAlias_baseanimating

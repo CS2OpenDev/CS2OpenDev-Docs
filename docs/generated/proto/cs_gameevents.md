@@ -1,8 +1,6 @@
 ---
-layout: default
 title: cs_gameevents.proto
-parent: Protobufs
-nav_exclude: true
+proto: cs_gameevents.proto
 ---
 
 # `cs_gameevents.proto`

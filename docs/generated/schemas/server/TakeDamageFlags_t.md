@@ -1,7 +1,7 @@
 ---
-layout: default
 title: TakeDamageFlags_t
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / TakeDamageFlags_t

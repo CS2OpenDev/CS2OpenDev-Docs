@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ParticleIndex_t
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / ParticleIndex_t

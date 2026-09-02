@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CSndSeqInstruments
-nav_exclude: true
+module: soundsystem
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [soundsystem](../soundsystem.md) / CSndSeqInstruments

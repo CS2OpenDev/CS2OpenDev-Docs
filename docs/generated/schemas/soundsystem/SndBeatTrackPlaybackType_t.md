@@ -1,7 +1,7 @@
 ---
-layout: default
 title: SndBeatTrackPlaybackType_t
-nav_exclude: true
+module: soundsystem
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [soundsystem](../soundsystem.md) / SndBeatTrackPlaybackType_t

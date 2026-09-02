@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmGraphDefinition::ExternalPoseSlot_t"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmGraphDefinition::ExternalPoseSlot_t

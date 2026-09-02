@@ -1,7 +1,7 @@
 ---
-layout: default
 title: C_PathParticleRopeAlias_path_particle_rope_clientside
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / C_PathParticleRopeAlias_path_particle_rope_clientside

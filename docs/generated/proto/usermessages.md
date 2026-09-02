@@ -1,8 +1,6 @@
 ---
-layout: default
 title: usermessages.proto
-parent: Protobufs
-nav_exclude: true
+proto: usermessages.proto
 ---
 
 # `usermessages.proto`

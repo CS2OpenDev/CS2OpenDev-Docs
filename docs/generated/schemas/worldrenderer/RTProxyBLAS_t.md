@@ -1,7 +1,7 @@
 ---
-layout: default
 title: RTProxyBLAS_t
-nav_exclude: true
+module: worldrenderer
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [worldrenderer](../worldrenderer.md) / RTProxyBLAS_t

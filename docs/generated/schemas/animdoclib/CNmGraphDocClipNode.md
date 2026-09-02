@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CNmGraphDocClipNode
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmGraphDocClipNode

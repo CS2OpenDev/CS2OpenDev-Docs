@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmClipDocument::AdditiveBaseFrame_t"
-nav_exclude: true
+module: animdoclib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmClipDocument::AdditiveBaseFrame_t

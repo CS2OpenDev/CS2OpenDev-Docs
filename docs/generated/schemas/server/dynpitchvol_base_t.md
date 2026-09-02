@@ -1,7 +1,7 @@
 ---
-layout: default
 title: dynpitchvol_base_t
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / dynpitchvol_base_t

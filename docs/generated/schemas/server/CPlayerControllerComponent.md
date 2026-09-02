@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CPlayerControllerComponent
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CPlayerControllerComponent

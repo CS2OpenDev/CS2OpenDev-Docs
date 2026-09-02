@@ -1,7 +1,7 @@
 ---
-layout: default
 title: AI_FacingServices_DebugSnapshotData_t
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / AI_FacingServices_DebugSnapshotData_t

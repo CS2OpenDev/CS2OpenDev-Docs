@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmFloatComparisonNode::Comparison_t"
-nav_exclude: true
+module: animlib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmFloatComparisonNode::Comparison_t

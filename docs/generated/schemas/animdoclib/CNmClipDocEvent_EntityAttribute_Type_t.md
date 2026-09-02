@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CNmClipDocEvent_EntityAttribute_Type_t
-nav_exclude: true
+module: animdoclib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmClipDocEvent_EntityAttribute_Type_t

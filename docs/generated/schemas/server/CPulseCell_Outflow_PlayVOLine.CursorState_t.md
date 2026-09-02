@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CPulseCell_Outflow_PlayVOLine::CursorState_t"
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CPulseCell_Outflow_PlayVOLine::CursorState_t

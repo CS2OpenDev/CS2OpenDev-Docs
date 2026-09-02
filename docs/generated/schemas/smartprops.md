@@ -1,8 +1,6 @@
 ---
-layout: default
 title: smartprops
-parent: Schemas
-nav_exclude: true
+module: smartprops
 ---
 
 # Module: smartprops

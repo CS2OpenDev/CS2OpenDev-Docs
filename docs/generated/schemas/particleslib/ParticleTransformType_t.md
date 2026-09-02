@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ParticleTransformType_t
-nav_exclude: true
+module: particleslib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [particleslib](../particleslib.md) / ParticleTransformType_t

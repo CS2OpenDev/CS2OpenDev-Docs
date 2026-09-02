@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CNmEventTargetEntity_t
-nav_exclude: true
+module: animlib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmEventTargetEntity_t

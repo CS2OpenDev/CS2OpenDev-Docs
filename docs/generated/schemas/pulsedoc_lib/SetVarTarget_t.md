@@ -1,7 +1,7 @@
 ---
-layout: default
 title: SetVarTarget_t
-nav_exclude: true
+module: pulsedoc_lib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [pulsedoc_lib](../pulsedoc_lib.md) / SetVarTarget_t

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CSprayedDataPreset
-nav_exclude: true
+module: mapdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [mapdoclib](../mapdoclib.md) / CSprayedDataPreset

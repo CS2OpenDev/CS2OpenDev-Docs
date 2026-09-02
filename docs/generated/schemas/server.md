@@ -1,8 +1,6 @@
 ---
-layout: default
 title: server
-parent: Schemas
-nav_exclude: true
+module: server
 ---
 
 # Module: server

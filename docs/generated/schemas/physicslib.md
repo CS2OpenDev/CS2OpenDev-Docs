@@ -1,8 +1,6 @@
 ---
-layout: default
 title: physicslib
-parent: Schemas
-nav_exclude: true
+module: physicslib
 ---
 
 # Module: physicslib

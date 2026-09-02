@@ -1,7 +1,7 @@
 ---
-layout: default
 title: VertJustification_e
-nav_exclude: true
+module: materialsystem2
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [materialsystem2](../materialsystem2.md) / VertJustification_e

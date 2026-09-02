@@ -1,7 +1,7 @@
 ---
-layout: default
 title: NavScope_t
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / NavScope_t

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CFuncMover::Move_t"
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CFuncMover::Move_t

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: PulseRuntimeDomainValueIndex_t
-nav_exclude: true
+module: pulse_runtime_lib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [pulse_runtime_lib](../pulse_runtime_lib.md) / PulseRuntimeDomainValueIndex_t

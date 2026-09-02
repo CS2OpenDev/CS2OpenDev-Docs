@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CTriggerSoundscape
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CTriggerSoundscape

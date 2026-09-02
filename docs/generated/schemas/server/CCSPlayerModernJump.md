@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CCSPlayerModernJump (server)
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CCSPlayerModernJump

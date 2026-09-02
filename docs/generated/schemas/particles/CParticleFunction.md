@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CParticleFunction
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / CParticleFunction

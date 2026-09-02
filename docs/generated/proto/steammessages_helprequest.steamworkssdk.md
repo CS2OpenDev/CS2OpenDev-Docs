@@ -1,8 +1,6 @@
 ---
-layout: default
 title: steammessages_helprequest.steamworkssdk.proto
-parent: Protobufs
-nav_exclude: true
+proto: steammessages_helprequest.steamworkssdk.proto
 ---
 
 # `steammessages_helprequest.steamworkssdk.proto`

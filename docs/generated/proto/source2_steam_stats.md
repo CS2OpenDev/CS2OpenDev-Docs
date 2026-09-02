@@ -1,8 +1,6 @@
 ---
-layout: default
 title: source2_steam_stats.proto
-parent: Protobufs
-nav_exclude: true
+proto: source2_steam_stats.proto
 ---
 
 # `source2_steam_stats.proto`

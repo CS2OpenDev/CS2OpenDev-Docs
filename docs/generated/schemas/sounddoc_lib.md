@@ -1,8 +1,6 @@
 ---
-layout: default
 title: sounddoc_lib
-parent: Schemas
-nav_exclude: true
+module: sounddoc_lib
 ---
 
 # Module: sounddoc_lib

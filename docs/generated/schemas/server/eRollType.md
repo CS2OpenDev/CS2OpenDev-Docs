@@ -1,7 +1,7 @@
 ---
-layout: default
 title: eRollType
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / eRollType

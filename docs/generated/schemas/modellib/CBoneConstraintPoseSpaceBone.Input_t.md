@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CBoneConstraintPoseSpaceBone::Input_t"
-nav_exclude: true
+module: modellib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [modellib](../modellib.md) / CBoneConstraintPoseSpaceBone::Input_t

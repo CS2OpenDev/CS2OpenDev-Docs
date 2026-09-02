@@ -1,7 +1,7 @@
 ---
-layout: default
 title: SelectedEditItemInfo_t
-nav_exclude: true
+module: soundsystem
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [soundsystem](../soundsystem.md) / SelectedEditItemInfo_t

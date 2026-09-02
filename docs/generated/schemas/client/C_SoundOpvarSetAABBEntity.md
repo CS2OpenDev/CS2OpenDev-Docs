@@ -1,7 +1,7 @@
 ---
-layout: default
 title: C_SoundOpvarSetAABBEntity
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / C_SoundOpvarSetAABBEntity

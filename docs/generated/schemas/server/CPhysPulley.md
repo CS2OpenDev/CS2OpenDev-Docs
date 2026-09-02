@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CPhysPulley
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CPhysPulley

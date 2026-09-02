@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CEnvCombinedLightProbeVolumeAlias_func_combined_light_probe_volume
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CEnvCombinedLightProbeVolumeAlias_func_combined_light_probe_volume

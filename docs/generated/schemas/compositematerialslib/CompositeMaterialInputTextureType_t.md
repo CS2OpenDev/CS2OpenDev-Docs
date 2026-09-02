@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CompositeMaterialInputTextureType_t
-nav_exclude: true
+module: compositematerialslib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [compositematerialslib](../compositematerialslib.md) / CompositeMaterialInputTextureType_t

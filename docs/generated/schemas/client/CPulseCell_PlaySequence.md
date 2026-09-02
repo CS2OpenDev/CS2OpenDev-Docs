@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CPulseCell_PlaySequence (client)
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CPulseCell_PlaySequence

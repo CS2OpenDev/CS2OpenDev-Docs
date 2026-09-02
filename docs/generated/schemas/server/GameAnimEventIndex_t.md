@@ -1,7 +1,7 @@
 ---
-layout: default
 title: GameAnimEventIndex_t
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / GameAnimEventIndex_t

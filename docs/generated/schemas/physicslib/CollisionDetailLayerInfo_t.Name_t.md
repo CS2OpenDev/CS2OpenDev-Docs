@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CollisionDetailLayerInfo_t::Name_t"
-nav_exclude: true
+module: physicslib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [physicslib](../physicslib.md) / CollisionDetailLayerInfo_t::Name_t

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmFloatCurveEventNode::CDefinition"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmFloatCurveEventNode::CDefinition

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ChangeAccessorFieldPathIndex_t
-nav_exclude: true
+module: networksystem
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [networksystem](../networksystem.md) / ChangeAccessorFieldPathIndex_t

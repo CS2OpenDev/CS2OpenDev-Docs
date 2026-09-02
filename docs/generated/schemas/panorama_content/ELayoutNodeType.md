@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ELayoutNodeType
-nav_exclude: true
+module: panorama_content
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [panorama_content](../panorama_content.md) / ELayoutNodeType

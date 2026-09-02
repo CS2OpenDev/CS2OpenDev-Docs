@@ -1,7 +1,7 @@
 ---
-layout: default
 title: WeaponPurchaseCount_t (client)
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / WeaponPurchaseCount_t

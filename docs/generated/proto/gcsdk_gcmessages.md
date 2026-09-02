@@ -1,8 +1,6 @@
 ---
-layout: default
 title: gcsdk_gcmessages.proto
-parent: Protobufs
-nav_exclude: true
+proto: gcsdk_gcmessages.proto
 ---
 
 # `gcsdk_gcmessages.proto`

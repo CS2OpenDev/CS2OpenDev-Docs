@@ -1,7 +1,7 @@
 ---
-layout: default
 title: VPhysXConstraint2_t
-nav_exclude: true
+module: modellib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [modellib](../modellib.md) / VPhysXConstraint2_t

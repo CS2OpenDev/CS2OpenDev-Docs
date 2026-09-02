@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CParticleFunctionPreEmission
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / CParticleFunctionPreEmission

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: PlayBackMode_t
-nav_exclude: true
+module: soundsystem_voicecontainers
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [soundsystem_voicecontainers](../soundsystem_voicecontainers.md) / PlayBackMode_t

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CAI_ChangeHintGroup
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CAI_ChangeHintGroup

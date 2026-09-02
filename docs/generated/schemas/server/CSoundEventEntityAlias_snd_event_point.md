@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CSoundEventEntityAlias_snd_event_point
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CSoundEventEntityAlias_snd_event_point

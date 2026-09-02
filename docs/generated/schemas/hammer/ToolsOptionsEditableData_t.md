@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ToolsOptionsEditableData_t
-nav_exclude: true
+module: hammer
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [hammer](../hammer.md) / ToolsOptionsEditableData_t

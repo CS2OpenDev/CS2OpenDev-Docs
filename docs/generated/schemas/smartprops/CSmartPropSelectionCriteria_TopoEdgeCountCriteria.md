@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CSmartPropSelectionCriteria_TopoEdgeCountCriteria
-nav_exclude: true
+module: smartprops
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [smartprops](../smartprops.md) / CSmartPropSelectionCriteria_TopoEdgeCountCriteria

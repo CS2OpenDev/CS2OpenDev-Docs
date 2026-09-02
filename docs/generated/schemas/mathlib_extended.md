@@ -1,8 +1,6 @@
 ---
-layout: default
 title: mathlib_extended
-parent: Schemas
-nav_exclude: true
+module: mathlib_extended
 ---
 
 # Module: mathlib_extended

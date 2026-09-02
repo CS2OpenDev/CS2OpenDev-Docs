@@ -1,8 +1,6 @@
 ---
-layout: default
 title: steammessages_publishedfile.steamworkssdk.proto
-parent: Protobufs
-nav_exclude: true
+proto: steammessages_publishedfile.steamworkssdk.proto
 ---
 
 # `steammessages_publishedfile.steamworkssdk.proto`

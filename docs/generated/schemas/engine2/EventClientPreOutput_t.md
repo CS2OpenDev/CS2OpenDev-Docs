@@ -1,7 +1,7 @@
 ---
-layout: default
 title: EventClientPreOutput_t
-nav_exclude: true
+module: engine2
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [engine2](../engine2.md) / EventClientPreOutput_t

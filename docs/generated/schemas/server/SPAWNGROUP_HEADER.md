@@ -1,7 +1,7 @@
 ---
-layout: default
 title: SPAWNGROUP_HEADER
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / SPAWNGROUP_HEADER

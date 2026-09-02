@@ -1,8 +1,6 @@
 ---
-layout: default
 title: networksystem
-parent: Schemas
-nav_exclude: true
+module: networksystem
 ---
 
 # Module: networksystem

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: RsCullMode_t
-nav_exclude: true
+module: rendersystemdx11
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [rendersystemdx11](../rendersystemdx11.md) / RsCullMode_t

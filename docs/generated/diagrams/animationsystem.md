@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: animationsystem"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: animationsystem

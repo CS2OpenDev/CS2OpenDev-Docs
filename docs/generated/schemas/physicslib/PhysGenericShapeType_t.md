@@ -1,7 +1,7 @@
 ---
-layout: default
 title: PhysGenericShapeType_t
-nav_exclude: true
+module: physicslib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [physicslib](../physicslib.md) / PhysGenericShapeType_t

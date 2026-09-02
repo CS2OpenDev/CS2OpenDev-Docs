@@ -1,7 +1,5 @@
 ---
-layout: default
 title: Schemas
-nav_order: 2
 ---
 
 # Schema Reference

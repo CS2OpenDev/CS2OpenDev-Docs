@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CFootstepControl_API (server)
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CFootstepControl_API

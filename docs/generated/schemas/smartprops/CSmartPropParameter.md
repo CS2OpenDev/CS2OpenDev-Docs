@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CSmartPropParameter
-nav_exclude: true
+module: smartprops
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [smartprops](../smartprops.md) / CSmartPropParameter

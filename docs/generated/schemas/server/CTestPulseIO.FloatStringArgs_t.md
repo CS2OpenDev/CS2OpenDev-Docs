@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CTestPulseIO::FloatStringArgs_t"
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CTestPulseIO::FloatStringArgs_t

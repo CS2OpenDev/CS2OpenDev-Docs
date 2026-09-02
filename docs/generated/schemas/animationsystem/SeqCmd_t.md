@@ -1,7 +1,7 @@
 ---
-layout: default
 title: SeqCmd_t
-nav_exclude: true
+module: animationsystem
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animationsystem](../animationsystem.md) / SeqCmd_t

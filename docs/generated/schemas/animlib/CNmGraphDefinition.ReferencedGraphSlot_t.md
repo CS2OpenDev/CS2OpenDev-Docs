@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmGraphDefinition::ReferencedGraphSlot_t"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmGraphDefinition::ReferencedGraphSlot_t

@@ -1,8 +1,6 @@
 ---
-layout: default
 title: modtools
-parent: Schemas
-nav_exclude: true
+module: modtools
 ---
 
 # Module: modtools

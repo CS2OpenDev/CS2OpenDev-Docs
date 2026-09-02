@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmTargetInfoNode::Info_t"
-nav_exclude: true
+module: animlib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmTargetInfoNode::Info_t

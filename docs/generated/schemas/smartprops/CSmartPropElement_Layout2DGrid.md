@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CSmartPropElement_Layout2DGrid
-nav_exclude: true
+module: smartprops
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [smartprops](../smartprops.md) / CSmartPropElement_Layout2DGrid

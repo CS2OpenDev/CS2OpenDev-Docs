@@ -1,7 +1,7 @@
 ---
-layout: default
 title: SmartPropPathPositions_t
-nav_exclude: true
+module: smartprops
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [smartprops](../smartprops.md) / SmartPropPathPositions_t

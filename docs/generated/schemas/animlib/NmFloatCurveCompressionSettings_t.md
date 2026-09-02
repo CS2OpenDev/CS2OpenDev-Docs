@@ -1,7 +1,7 @@
 ---
-layout: default
 title: NmFloatCurveCompressionSettings_t
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / NmFloatCurveCompressionSettings_t

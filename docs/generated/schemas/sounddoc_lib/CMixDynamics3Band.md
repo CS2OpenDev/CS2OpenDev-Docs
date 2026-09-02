@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CMixDynamics3Band
-nav_exclude: true
+module: sounddoc_lib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [sounddoc_lib](../sounddoc_lib.md) / CMixDynamics3Band

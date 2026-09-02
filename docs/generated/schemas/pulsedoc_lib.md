@@ -1,8 +1,6 @@
 ---
-layout: default
 title: pulsedoc_lib
-parent: Schemas
-nav_exclude: true
+module: pulsedoc_lib
 ---
 
 # Module: pulsedoc_lib

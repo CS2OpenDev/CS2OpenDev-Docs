@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CCSWeaponBase_API (client)
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CCSWeaponBase_API

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: FeTreeChildren_t
-nav_exclude: true
+module: physicslib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [physicslib](../physicslib.md) / FeTreeChildren_t

@@ -1,7 +1,7 @@
 ---
-layout: default
 title: EMaterialVariable_t
-nav_exclude: true
+module: met
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [met](../met.md) / EMaterialVariable_t

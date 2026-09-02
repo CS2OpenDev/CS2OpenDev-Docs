@@ -1,7 +1,7 @@
 ---
-layout: default
 title: FeFitInfluence_t
-nav_exclude: true
+module: physicslib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [physicslib](../physicslib.md) / FeFitInfluence_t

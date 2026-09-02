@@ -1,8 +1,6 @@
 ---
-layout: default
 title: panorama_content
-parent: Schemas
-nav_exclude: true
+module: panorama_content
 ---
 
 # Module: panorama_content

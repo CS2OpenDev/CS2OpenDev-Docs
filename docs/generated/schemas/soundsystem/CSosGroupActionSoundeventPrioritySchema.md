@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CSosGroupActionSoundeventPrioritySchema
-nav_exclude: true
+module: soundsystem
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [soundsystem](../soundsystem.md) / CSosGroupActionSoundeventPrioritySchema

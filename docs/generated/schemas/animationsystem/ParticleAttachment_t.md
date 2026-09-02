@@ -1,7 +1,7 @@
 ---
-layout: default
 title: ParticleAttachment_t
-nav_exclude: true
+module: animationsystem
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animationsystem](../animationsystem.md) / ParticleAttachment_t

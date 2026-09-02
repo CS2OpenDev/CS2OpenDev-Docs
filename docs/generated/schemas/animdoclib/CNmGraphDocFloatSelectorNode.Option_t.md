@@ -1,7 +1,7 @@
 ---
-layout: default
 title: "CNmGraphDocFloatSelectorNode::Option_t"
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmGraphDocFloatSelectorNode::Option_t

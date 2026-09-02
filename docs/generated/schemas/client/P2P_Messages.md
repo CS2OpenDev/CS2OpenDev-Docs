@@ -1,7 +1,7 @@
 ---
-layout: default
 title: P2P_Messages
-nav_exclude: true
+module: client
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / P2P_Messages

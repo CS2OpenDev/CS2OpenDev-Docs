@@ -1,8 +1,6 @@
 ---
-layout: default
 title: soundsystem_voicecontainers
-parent: Schemas
-nav_exclude: true
+module: soundsystem_voicecontainers
 ---
 
 # Module: soundsystem_voicecontainers

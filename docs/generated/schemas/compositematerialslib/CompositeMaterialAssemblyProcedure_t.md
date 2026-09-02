@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CompositeMaterialAssemblyProcedure_t
-nav_exclude: true
+module: compositematerialslib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [compositematerialslib](../compositematerialslib.md) / CompositeMaterialAssemblyProcedure_t

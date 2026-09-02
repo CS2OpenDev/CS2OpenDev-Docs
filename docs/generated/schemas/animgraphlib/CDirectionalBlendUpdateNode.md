@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CDirectionalBlendUpdateNode
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / CDirectionalBlendUpdateNode

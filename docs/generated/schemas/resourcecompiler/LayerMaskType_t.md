@@ -1,7 +1,7 @@
 ---
-layout: default
 title: LayerMaskType_t
-nav_exclude: true
+module: resourcecompiler
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [resourcecompiler](../resourcecompiler.md) / LayerMaskType_t

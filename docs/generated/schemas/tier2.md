@@ -1,8 +1,6 @@
 ---
-layout: default
 title: tier2
-parent: Schemas
-nav_exclude: true
+module: tier2
 ---
 
 # Module: tier2

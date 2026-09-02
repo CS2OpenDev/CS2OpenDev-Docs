@@ -1,7 +1,7 @@
 ---
-layout: default
 title: DoorState_t
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / DoorState_t

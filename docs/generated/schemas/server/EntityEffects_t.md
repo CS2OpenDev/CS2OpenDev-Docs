@@ -1,7 +1,7 @@
 ---
-layout: default
 title: EntityEffects_t
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / EntityEffects_t

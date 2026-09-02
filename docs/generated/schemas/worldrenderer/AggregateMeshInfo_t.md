@@ -1,7 +1,7 @@
 ---
-layout: default
 title: AggregateMeshInfo_t
-nav_exclude: true
+module: worldrenderer
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [worldrenderer](../worldrenderer.md) / AggregateMeshInfo_t

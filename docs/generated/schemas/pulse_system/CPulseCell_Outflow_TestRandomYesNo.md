@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CPulseCell_Outflow_TestRandomYesNo
-nav_exclude: true
+module: pulse_system
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [pulse_system](../pulse_system.md) / CPulseCell_Outflow_TestRandomYesNo

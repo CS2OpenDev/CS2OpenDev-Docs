@@ -1,7 +1,7 @@
 ---
-layout: default
 title: InventoryNodeType_t
-nav_exclude: true
+module: client
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / InventoryNodeType_t

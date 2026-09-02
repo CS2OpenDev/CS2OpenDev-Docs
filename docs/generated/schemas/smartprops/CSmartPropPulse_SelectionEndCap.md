@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CSmartPropPulse_SelectionEndCap
-nav_exclude: true
+module: smartprops
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [smartprops](../smartprops.md) / CSmartPropPulse_SelectionEndCap

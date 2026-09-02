@@ -1,7 +1,7 @@
 ---
-layout: default
 title: SteamAudioReverbSettings_t
-nav_exclude: true
+module: steamaudio
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [steamaudio](../steamaudio.md) / SteamAudioReverbSettings_t

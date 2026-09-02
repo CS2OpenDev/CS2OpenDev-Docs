@@ -1,7 +1,7 @@
 ---
-layout: default
 title: SosEditItemInfo_t
-nav_exclude: true
+module: soundsystem
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [soundsystem](../soundsystem.md) / SosEditItemInfo_t

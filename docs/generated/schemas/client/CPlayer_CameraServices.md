@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CPlayer_CameraServices (client)
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CPlayer_CameraServices

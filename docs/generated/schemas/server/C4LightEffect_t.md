@@ -1,7 +1,7 @@
 ---
-layout: default
 title: C4LightEffect_t
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / C4LightEffect_t

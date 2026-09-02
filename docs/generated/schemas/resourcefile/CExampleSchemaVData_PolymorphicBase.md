@@ -1,7 +1,7 @@
 ---
-layout: default
 title: CExampleSchemaVData_PolymorphicBase
-nav_exclude: true
+module: resourcefile
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [resourcefile](../resourcefile.md) / CExampleSchemaVData_PolymorphicBase
