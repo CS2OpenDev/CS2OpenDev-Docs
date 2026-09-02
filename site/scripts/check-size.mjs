@@ -9,13 +9,17 @@ import { readdirSync, statSync } from 'node:fs';
 import { join, posix, resolve } from 'node:path';
 
 // GitHub Pages caps a published site at 1 GB; 400 MB leaves headroom for the
-// image/font assets other page families will add later.
+// image/font assets other page families will add later. schemas/ alone is
+// 221 MB today and a second platform roughly doubles it, so that platform
+// needs a per-page diet or its own site before it fits under the cap.
 const MAX_TOTAL_BYTES = 400 * 1024 * 1024;
 
 // Entity pages are printed in bulk from one schema; a sidebar bug once made
 // every one of them carry the full 4,400-entry nav and pushed the site to
-// 4.1 GB. 200 KB is generous for a single entity's markup plus nav chrome.
-const MAX_ENTITY_PAGE_BYTES = 200 * 1024;
+// 4.1 GB, with pages near 1 MB. The largest entity page is 156 KB today and
+// grows with every upstream build; 512 KB still catches the sidebar case by
+// a factor of two without tripping on an ordinary data change.
+const MAX_ENTITY_PAGE_BYTES = 512 * 1024;
 
 // Module indexes and hierarchy pages list every class in a module (server
 // has 1,143), so they get the same ceiling as the other big tables.
