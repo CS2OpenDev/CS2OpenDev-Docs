@@ -7,7 +7,7 @@ nav_order: 8
 # Network & Demo Messages
 
 {: .note }
-> Source: CS2 build **24701871** · 2026-08-12 · `windows-x86_64` · schema `0.9.0`
+> Source: CS2 build **25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 The wire-protocol tables: integer message IDs mapped to the protobuf message type carried, recovered from a static RTTI scan of the shipped binaries.  Each type links to its definition on the [protobuf pages](protobufs.md).
 
@@ -169,7 +169,7 @@ The wire-protocol tables: integer message IDs mapped to the protobuf message typ
 | 426 | [`CMsgTESmoke`](proto/te.md) |
 | 452 | [`CMsgTEFireBullets`](proto/cs_gameevents.md) |
 
-## UserMessages (89)
+## UserMessages (90)
 
 | ID | Message type |
 |----|--------------|
@@ -262,6 +262,7 @@ The wire-protocol tables: integer message IDs mapped to the protobuf message typ
 | 387 | [`CCSUsrMsg_RecurringMissionSchema`](proto/cstrike15_usermessages.md) |
 | 388 | [`CCSUsrMsg_SendPlayerLoadout`](proto/cstrike15_usermessages.md) |
 | 389 | [`CCSUsrMsg_WeaponMagDrop`](proto/cstrike15_usermessages.md) |
+| 390 | `CCSUsrMsg_CustomHudClicked` |
 
 ## Demo stream (`.dem`) messages (19)
 

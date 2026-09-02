@@ -2120,6 +2120,7 @@ If the server is behind NAT, you can specify `0.0.0.0\|privateip:port` and if se
 | `panorama_debug_overlay_opacity_max` | `0.250000` | `hidden` `archive` |  |
 | `panorama_debug_overlay_opacity_min` | `0.010000` | `hidden` `archive` |  |
 | `panorama_debug_ready_for_display` | `false` | `developmentonly` `hidden` `defensive` |  |
+| `panorama_debug_treat_all_addons_as_untrusted` | `false` | `developmentonly` `hidden` `defensive` |  |
 | `panorama_debugger_theme` | `Light` | `clientdll` `archive` |  |
 | `panorama_disable_blur` | `false` | `developmentonly` `hidden` `defensive` |  |
 | `panorama_disable_box_shadow` | `false` | `developmentonly` `hidden` `defensive` |  |

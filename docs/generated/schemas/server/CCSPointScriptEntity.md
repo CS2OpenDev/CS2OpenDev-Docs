@@ -8,7 +8,7 @@ nav_exclude: true
 
 # CCSPointScriptEntity
 
-**Kind:** class · **Size:** 1552 bytes (`0x610`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 1576 bytes (`0x628`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CBaseEntity](../server/CBaseEntity.md)
 

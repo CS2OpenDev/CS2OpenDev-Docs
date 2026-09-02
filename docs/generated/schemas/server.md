@@ -9,7 +9,7 @@ nav_exclude: true
 
 [📊 View UML Diagram](../diagrams/server.md)
 
-1134 types. Each links to its own page with the full field layout.
+1141 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -110,6 +110,9 @@ nav_exclude: true
 | [CCS2PawnGraphController](server/CCS2PawnGraphController.md) | class | 2088 | 28 | [CCS2WeaponGraphController](server/CCS2WeaponGraphController.md) |
 | [CCS2WeaponGraphController](server/CCS2WeaponGraphController.md) | class | 1416 | 20 | [CAnimGraphControllerBase](server/CAnimGraphControllerBase.md) |
 | [CCSBot](server/CCSBot.md) | class | 24128 | 140 | [CBot](server/CBot.md) |
+| [CCSCustomHudLayout](server/CCSCustomHudLayout.md) | class | 2024 | 6 | [CBaseEntity](server/CBaseEntity.md) |
+| [CCSCustomHudLayoutState](server/CCSCustomHudLayoutState.md) | class | 408 | 4 |  |
+| [CCSCustomHudLayout_API](server/CCSCustomHudLayout_API.md) | class | 8 | 0 |  |
 | [CCSGO_EndOfMatchLineupEnd](server/CCSGO_EndOfMatchLineupEnd.md) | class | 1192 | 0 | [CCSGO_EndOfMatchLineupEndpoint](server/CCSGO_EndOfMatchLineupEndpoint.md) |
 | [CCSGO_EndOfMatchLineupEndpoint](server/CCSGO_EndOfMatchLineupEndpoint.md) | class | 1192 | 0 | [CBaseEntity](server/CBaseEntity.md) |
 | [CCSGO_EndOfMatchLineupStart](server/CCSGO_EndOfMatchLineupStart.md) | class | 1192 | 0 | [CCSGO_EndOfMatchLineupEndpoint](server/CCSGO_EndOfMatchLineupEndpoint.md) |
@@ -142,6 +145,7 @@ nav_exclude: true
 | [CCSPlace_API](server/CCSPlace_API.md) | class | 8 | 0 |  |
 | [CCSPlayerAnimationState](server/CCSPlayerAnimationState.md) | class | 224 | 16 |  |
 | [CCSPlayerBase_CameraServices](server/CCSPlayerBase_CameraServices.md) | class | 432 | 7 | [CPlayer_CameraServices](server/CPlayer_CameraServices.md) |
+| [CCSPlayerCamera](server/CCSPlayerCamera.md) | class | 1200 | 3 | [CBaseEntity](server/CBaseEntity.md) |
 | [CCSPlayerController](server/CCSPlayerController.md) | class | 2728 | 92 | [CBasePlayerController](server/CBasePlayerController.md) |
 | [CCSPlayerController_API](server/CCSPlayerController_API.md) | class | 8 | 0 |  |
 | [CCSPlayerController_ActionTrackingServices](server/CCSPlayerController_ActionTrackingServices.md) | class | 1072 | 5 | [CPlayerControllerComponent](server/CPlayerControllerComponent.md) |
@@ -171,7 +175,7 @@ nav_exclude: true
 | [CCSPlayer_WaterServices](server/CCSPlayer_WaterServices.md) | class | 128 | 6 | [CPlayer_WaterServices](server/CPlayer_WaterServices.md) |
 | [CCSPlayer_WeaponServices](server/CCSPlayer_WeaponServices.md) | class | 6272 | 13 | [CPlayer_WeaponServices](server/CPlayer_WeaponServices.md) |
 | [CCSPointPulseAPI](server/CCSPointPulseAPI.md) | class | 1 | 0 |  |
-| [CCSPointScriptEntity](server/CCSPointScriptEntity.md) | class | 1552 | 0 | [CBaseEntity](server/CBaseEntity.md) |
+| [CCSPointScriptEntity](server/CCSPointScriptEntity.md) | class | 1576 | 0 | [CBaseEntity](server/CBaseEntity.md) |
 | [CCSPointScriptEntity_API](server/CCSPointScriptEntity_API.md) | class | 8 | 0 |  |
 | [CCSSprite](server/CCSSprite.md) | class | 2016 | 0 | [CSprite](server/CSprite.md) |
 | [CCSTeam](server/CCSTeam.md) | class | 2080 | 14 | [CTeam](server/CTeam.md) |
@@ -846,6 +850,8 @@ nav_exclude: true
 | [FuncRotatorRotationSummary_t](server/FuncRotatorRotationSummary_t.md) | class | 8 | 2 |  |
 | [GAME_HEADER](server/GAME_HEADER.md) | class | 32 | 4 |  |
 | [GameAmmoTypeInfo_t](server/GameAmmoTypeInfo_t.md) | class | 80 | 2 | [AmmoTypeInfo_t](server/AmmoTypeInfo_t.md) |
+| [HUDPanelDialogVariableString_t](server/HUDPanelDialogVariableString_t.md) | class | 32 | 4 |  |
+| [HUDPanelHasClass_t](server/HUDPanelHasClass_t.md) | class | 8 | 3 |  |
 | [HullFlags_t](server/HullFlags_t.md) | class | 10 | 10 |  |
 | [IChoreoServices](server/IChoreoServices.md) | class | 8 | 0 |  |
 | [IEconItemInterface](server/IEconItemInterface.md) | class | 8 | 0 |  |
@@ -987,7 +993,7 @@ nav_exclude: true
 | [ECsgoGCMsg](server/ECsgoGCMsg.md) | enum | — | 109 |  |
 | [ECsgoGameEvents](server/ECsgoGameEvents.md) | enum | — | 4 |  |
 | [ECsgoSteamUserStat](server/ECsgoSteamUserStat.md) | enum | — | 3 |  |
-| [ECstrike15UserMessages](server/ECstrike15UserMessages.md) | enum | — | 78 |  |
+| [ECstrike15UserMessages](server/ECstrike15UserMessages.md) | enum | — | 79 |  |
 | [EDemoCommands](server/EDemoCommands.md) | enum | — | 22 |  |
 | [EDestructiblePartDamagePassThroughType](server/EDestructiblePartDamagePassThroughType.md) | enum | — | 4 |  |
 | [EDestructiblePartRadiusDamageApplyType](server/EDestructiblePartRadiusDamageApplyType.md) | enum | — | 2 |  |
@@ -1002,6 +1008,7 @@ nav_exclude: true
 | [EGCToGCMsg](server/EGCToGCMsg.md) | enum | — | 8 |  |
 | [EHapticPulseType](server/EHapticPulseType.md) | enum | — | 3 |  |
 | [EHitGroup](server/EHitGroup.md) | enum | — | 10 |  |
+| [EHudPanelClassStatus_t](server/EHudPanelClassStatus_t.md) | enum | — | 3 |  |
 | [EInButtonState](server/EInButtonState.md) | enum | — | 9 |  |
 | [EInitSystemResult](server/EInitSystemResult.md) | enum | — | 9 |  |
 | [EKillTypes_t](server/EKillTypes_t.md) | enum | — | 8 |  |

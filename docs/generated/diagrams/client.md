@@ -7,7 +7,7 @@ nav_exclude: true
 
 # UML: client
 
-Class relationships (inheritance and composition) for the `client` module (showing 300 of 382 relationships).
+Class relationships (inheritance and composition) for the `client` module (showing 300 of 384 relationships).
 
 **Arrow legend:** `<|--` inheritance &nbsp; `*--` composition &nbsp; `-->` association/pointer
 
@@ -31,6 +31,7 @@ classDiagram
     C_BaseTrigger <|-- CBombTarget
     CCS2WeaponGraphController <|-- CCS2PawnGraphController
     CAnimGraphControllerBase <|-- CCS2WeaponGraphController
+    C_BaseEntity <|-- CCSCustomHudLayout
     C_CSGO_EndOfMatchLineupEndpoint <|-- CCSGO_EndOfMatchLineupEnd
     C_CSGO_TeamIntroCharacterPosition <|-- CCSGO_WingmanIntroCharacterPosition
     CCSGO_WingmanIntroCharacterPosition <|-- CCSGO_WingmanIntroCounterTerroristPosition
@@ -43,6 +44,7 @@ classDiagram
     CPlayer_ObserverServices <|-- CCSObserver_ObserverServices
     CPlayer_UseServices <|-- CCSObserver_UseServices
     CPlayer_CameraServices <|-- CCSPlayerBase_CameraServices
+    C_BaseEntity <|-- CCSPlayerCamera
     CBasePlayerController <|-- CCSPlayerController
     CPlayerControllerComponent <|-- CCSPlayerController_ActionTrackingServices
     CPlayerControllerComponent <|-- CCSPlayerController_DamageServices
@@ -311,6 +313,4 @@ classDiagram
     C_ModelPointEntity <|-- C_PointWorldText
     C_BaseEntity <|-- C_PortraitWorldCallbackHandler
     C_BaseTrigger <|-- C_PostProcessingVolume
-    C_BaseTrigger <|-- C_Precipitation
-    C_BaseModelEntity <|-- C_PrecipitationBlocker
 ```

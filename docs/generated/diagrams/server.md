@@ -7,7 +7,7 @@ nav_exclude: true
 
 # UML: server
 
-Class relationships (inheritance and composition) for the `server` module (showing 300 of 644 relationships).
+Class relationships (inheritance and composition) for the `server` module (showing 300 of 646 relationships).
 
 **Arrow legend:** `<|--` inheritance &nbsp; `*--` composition &nbsp; `-->` association/pointer
 
@@ -68,6 +68,7 @@ classDiagram
     CBaseTrigger <|-- CBombTarget
     CCS2WeaponGraphController <|-- CCS2PawnGraphController
     CAnimGraphControllerBase <|-- CCS2WeaponGraphController
+    CBaseEntity <|-- CCSCustomHudLayout
     CCSGO_EndOfMatchLineupEndpoint <|-- CCSGO_EndOfMatchLineupEnd
     CCSGO_TeamIntroCharacterPosition <|-- CCSGO_WingmanIntroCharacterPosition
     CCSGO_WingmanIntroCharacterPosition <|-- CCSGO_WingmanIntroCounterTerroristPosition
@@ -80,6 +81,7 @@ classDiagram
     CPlayer_ObserverServices <|-- CCSObserver_ObserverServices
     CPlayer_UseServices <|-- CCSObserver_UseServices
     CPlayer_CameraServices <|-- CCSPlayerBase_CameraServices
+    CBaseEntity <|-- CCSPlayerCamera
     CBasePlayerController <|-- CCSPlayerController
     CPlayerControllerComponent <|-- CCSPlayerController_ActionTrackingServices
     CPlayerControllerComponent <|-- CCSPlayerController_DamageServices
@@ -311,6 +313,4 @@ classDiagram
     CBaseToggle <|-- CFuncMoveLinear
     CFuncMoveLinear <|-- CFuncMoveLinearAlias_momentary_door
     CBaseModelEntity <|-- CFuncMover
-    CLogicalEntity <|-- CFuncMoverRouter
-    CBaseModelEntity <|-- CFuncNavBlocker
 ```

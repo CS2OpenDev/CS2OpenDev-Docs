@@ -7,7 +7,7 @@ nav_order: 14
 # Binary Modules
 
 {: .note }
-> Source: CS2 build **24701871** · 2026-08-12 · `windows-x86_64` · schema `0.9.0`
+> Source: CS2 build **25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 139 binaries read for this build, each with its SHA-256, size, export / schema-registration counts, and the engine interface versions it resolved at load.
 
@@ -37,7 +37,7 @@ nav_order: 14
 | `game/bin/win64/d3dcompiler_47.dll` | 4346120 | 29 | 0 |  |
 | `game/bin/win64/dbghelp.dll` | 1558912 | 203 | 0 |  |
 | `game/bin/win64/embree3.dll` | 21996904 | 117 | 0 |  |
-| `game/bin/win64/engine2.dll` | 6768280 | 43 | 4 | `EngineServiceMgr001`, `GameResourceServiceClientV001`, `HostStateMgr001`, `NetworkClientService_001`, `NetworkServerService_001`, `Source2EngineToClient001`, `Source2EngineToServer001` |
+| `game/bin/win64/engine2.dll` | 6768792 | 43 | 4 | `EngineServiceMgr001`, `GameResourceServiceClientV001`, `HostStateMgr001`, `NetworkClientService_001`, `NetworkServerService_001`, `Source2EngineToClient001`, `Source2EngineToServer001` |
 | `game/bin/win64/exportsystem.dll` | 3647640 | 6 | 0 |  |
 | `game/bin/win64/filesystem_stdio.dll` | 2253464 | 6 | 0 | `VAsyncFileSystem2_001`, `VFileSystem017` |
 | `game/bin/win64/gfsdk_aftermath_lib.x64.dll` | 5736000 | 43 | 0 |  |
@@ -67,7 +67,7 @@ nav_order: 14
 | `game/bin/win64/navsystem.dll` | 1305240 | 6 | 0 |  |
 | `game/bin/win64/networksystem.dll` | 2790040 | 6 | 0 | `FlattenedSerializersVersion001`, `NetworkMessagesVersion001`, `NetworkSystemVersion001`, `SerializedEntitiesVersion001` |
 | `game/bin/win64/p4lib.dll` | 143000 | 3 | 0 |  |
-| `game/bin/win64/panorama.dll` | 5582488 | 7 | 0 | `PanoramaUIEngine001` |
+| `game/bin/win64/panorama.dll` | 5583512 | 7 | 0 | `PanoramaUIEngine001` |
 | `game/bin/win64/panorama_text_pango.dll` | 2985112 | 7 | 0 |  |
 | `game/bin/win64/panoramauiclient.dll` | 2898584 | 6 | 0 | `PanoramaUIClient001` |
 | `game/bin/win64/particles.dll` | 6102680 | 6 | 72 | `ParticleSystemMgr003` |
@@ -89,7 +89,7 @@ nav_order: 14
 | `game/bin/win64/rendersystemdx11.dll` | 4507800 | 49 | 0 | `RenderDeviceMgr001`, `RenderUtils_001` |
 | `game/bin/win64/rendersystemempty.dll` | 1746584 | 6 | 0 |  |
 | `game/bin/win64/rendersystemvulkan.dll` | 6148248 | 58 | 0 | `RenderDeviceMgr001`, `RenderUtils_001` |
-| `game/bin/win64/resourcecompiler.dll` | 56325784 | 6 | 101 |  |
+| `game/bin/win64/resourcecompiler.dll` | 56326296 | 6 | 101 |  |
 | `game/bin/win64/resourcesystem.dll` | 507544 | 6 | 0 | `ResourceSystem013` |
 | `game/bin/win64/scenefilecache.dll` | 1251480 | 6 | 0 |  |
 | `game/bin/win64/scenesystem.dll` | 7035544 | 6 | 0 | `SceneSystem_002`, `SceneUtils_001` |
@@ -109,7 +109,7 @@ nav_order: 14
 | `game/bin/win64/tbbbind.dll` | 47744 | 7 | 0 |  |
 | `game/bin/win64/tbbbind_2_0.dll` | 47744 | 7 | 0 |  |
 | `game/bin/win64/tbbbind_2_5.dll` | 48768 | 7 | 0 |  |
-| `game/bin/win64/tier0.dll` | 3945624 | 2575 | 0 |  |
+| `game/bin/win64/tier0.dll` | 3949720 | 2576 | 0 |  |
 | `game/bin/win64/toolframework2.dll` | 13308568 | 6 | 0 |  |
 | `game/bin/win64/tools/cs2_item_editor.dll` | 6694040 | 6 | 0 |  |
 | `game/bin/win64/tools/cs2_workshop_manager.dll` | 2337944 | 6 | 0 |  |
@@ -127,7 +127,7 @@ nav_order: 14
 | `game/bin/win64/v8_libbase.dll` | 1637736 | 720 | 0 |  |
 | `game/bin/win64/v8_libplatform.dll` | 1455464 | 201 | 0 |  |
 | `game/bin/win64/v8_zlib.dll` | 844136 | 86 | 0 |  |
-| `game/bin/win64/v8system.dll` | 220824 | 6 | 0 |  |
+| `game/bin/win64/v8system.dll` | 222872 | 6 | 0 |  |
 | `game/bin/win64/valve_avi.dll` | 189080 | 6 | 0 |  |
 | `game/bin/win64/valve_webm.dll` | 11376280 | 6 | 0 |  |
 | `game/bin/win64/valve_wmf.dll` | 171672 | 6 | 0 |  |
@@ -139,11 +139,11 @@ nav_order: 14
 | `game/bin/win64/vrad3.dll` | 3146904 | 6 | 0 |  |
 | `game/bin/win64/vscript.dll` | 1347224 | 183 | 0 |  |
 | `game/bin/win64/worldrenderer.dll` | 2003096 | 6 | 4 | `WorldRendererMgr001` |
-| `game/csgo/bin/win64/client.dll` | 37443224 | 6 | 537 | `Source2Client002`, `Source2ClientConfig001`, `Source2ClientPrediction001`, `Source2ClientUI001` |
+| `game/csgo/bin/win64/client.dll` | 37560472 | 6 | 541 | `Source2Client002`, `Source2ClientConfig001`, `Source2ClientPrediction001`, `Source2ClientUI001` |
 | `game/csgo/bin/win64/host.dll` | 1381528 | 6 | 0 | `GameSystem2HostHook`, `Source2Host001` |
 | `game/csgo/bin/win64/matchmaking.dll` | 1883800 | 6 | 0 | `MATCHFRAMEWORK_001` |
 | `game/csgo/bin/win64/modtools.dll` | 17308824 | 6 | 0 | `Source2ModTools001` |
-| `game/csgo/bin/win64/server.dll` | 32824984 | 6 | 798 | `Source2GameClients001`, `Source2GameEntities001`, `Source2Server001`, `Source2ServerConfig001` |
+| `game/csgo/bin/win64/server.dll` | 33002648 | 6 | 802 | `Source2GameClients001`, `Source2GameEntities001`, `Source2Server001`, `Source2ServerConfig001` |
 | `game/csgo/import_scripts/bin/filesystem_stdio.dll` | 434176 | 1 | 0 | `VAsyncFileSystem2_001`, `VFileSystem017` |
 | `game/csgo/import_scripts/bin/materialsystem.dll` | 881664 | 1 | 0 |  |
 | `game/csgo/import_scripts/bin/shaderapiempty.dll` | 85504 | 1 | 0 |  |
