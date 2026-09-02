@@ -34,7 +34,7 @@
    one token is what buys the content column its extra pixels.
 
    These selectors are Starlight internals, not its token contract. Checked
-   against 0.41: .right-sidebar-container, .main-pane and [data-has-toc] are
+   against 0.42: .right-sidebar-container, .main-pane and [data-has-toc] are
    TwoColumnContent.astro; .right-sidebar and .right-sidebar-panel are
    PageSidebar.astro; #starlight__sidebar is SidebarPersister.astro and
    .top-level / .large are SidebarSublist.astro. Re-check on every upgrade.
