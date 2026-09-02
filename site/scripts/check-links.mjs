@@ -10,9 +10,7 @@
 
 import { readFileSync, readdirSync } from 'node:fs';
 import { join, posix, resolve } from 'node:path';
-
-// Must match the `BASE` constant in astro.config.mjs.
-const BASE = '/CS2OpenDev-Docs';
+import { BASE } from './site-base.mjs';
 
 const MAX_BROKEN_PRINTED = 50;
 
@@ -85,9 +83,26 @@ function stripBase(pathname) {
 	return pathname;
 }
 
-const HREF_SRC_RE = /\s(?:href|src)=["']([^"']*)["']/g;
-const ID_RE = /\sid=["']([^"']+)["']/g;
-const REFRESH_STUB_RE = /http-equiv=["']refresh["']/i;
+// Quoted values only: island props carry escaped markup where a bare match would
+// read `href=\&quot;...` as a link. srcset is a comma-separated candidate list.
+const URL_ATTR_RE = /\s(?:href|src|poster|action)=(?:"([^"]*)"|'([^']*)')/g;
+const SRCSET_RE = /\ssrcset=(?:"([^"]*)"|'([^']*)')/g;
+const ID_RE = /\sid=(?:"([^"]+)"|'([^']+)')/g;
+const REFRESH_URL_RE = /http-equiv=["']refresh["'][^>]*?content=["']\d+;\s*url=([^"']+)["']/i;
+
+/** Whichever quote style matched. */
+function captured(m) {
+	return m[1] ?? m[2] ?? '';
+}
+
+function decodeFragment(hash) {
+	const raw = hash.slice(1);
+	try {
+		return decodeURIComponent(raw);
+	} catch {
+		return raw;
+	}
+}
 
 function classify(href) {
 	if (href === '') return 'ignore';
@@ -105,19 +120,24 @@ function main() {
 	const allFiles = new Set(allFilesList);
 	const htmlFiles = allFilesList.filter((f) => f.endsWith('.html'));
 
-	// Phase 1: read every HTML file once. Record its URL, whether it's a
-	// redirect stub, its id set, and its raw href/src values.
+	// Phase 1: read every HTML file once. Record its URL, its id set, its raw
+	// href/src values and, for a redirect stub, the refresh target.
 	const pages = new Map(); // rel path -> { url, isStub, ids, links }
 	for (const rel of htmlFiles) {
 		const content = readFileSync(join(root, rel), 'utf8');
-		const isStub = REFRESH_STUB_RE.test(content);
 		const ids = new Set();
-		for (const m of content.matchAll(ID_RE)) ids.add(m[1]);
+		for (const m of content.matchAll(ID_RE)) ids.add(captured(m));
 		const links = [];
-		if (!isStub) {
-			for (const m of content.matchAll(HREF_SRC_RE)) links.push(m[1]);
+		for (const m of content.matchAll(URL_ATTR_RE)) links.push(captured(m));
+		for (const m of content.matchAll(SRCSET_RE)) {
+			for (const candidate of captured(m).split(',')) {
+				const url = candidate.trim().split(/\s+/)[0];
+				if (url) links.push(url);
+			}
 		}
-		pages.set(rel, { url: fileToUrl(rel), isStub, ids, links });
+		const refresh = REFRESH_URL_RE.exec(content);
+		if (refresh) links.push(refresh[1]);
+		pages.set(rel, { url: fileToUrl(rel), isStub: refresh !== null, ids, links });
 	}
 
 	// Phase 2: resolve every link against the in-memory data. No further I/O.
@@ -135,7 +155,7 @@ function main() {
 
 			if (kind === 'fragment') {
 				anchorCount++;
-				const id = href.slice(1);
+				const id = decodeFragment(href);
 				if (id !== '' && !page.ids.has(id)) {
 					broken.push({ file: rel, href, reason: `missing anchor #${id} on self` });
 				}
@@ -159,7 +179,7 @@ function main() {
 			if (resolved.hash && resolved.hash.length > 1 && target.endsWith('.html') && !target.startsWith('pagefind/')) {
 				anchorCount++;
 				const targetPage = pages.get(target);
-				const id = resolved.hash.slice(1);
+				const id = decodeFragment(resolved.hash);
 				if (targetPage && !targetPage.ids.has(id)) {
 					broken.push({ file: rel, href, reason: `missing anchor #${id} on ${target}` });
 				}
@@ -169,7 +189,7 @@ function main() {
 
 	const stubCount = [...pages.values()].filter((p) => p.isStub).length;
 
-	console.log(`pages scanned: ${pages.size} (${stubCount} redirect stubs skipped as link sources)`);
+	console.log(`pages scanned: ${pages.size} (${stubCount} redirect stubs, refresh targets checked)`);
 	console.log(`links found: ${linkCount} (${internalCount} internal, checked)`);
 	console.log(`anchors checked: ${anchorCount}`);
 	console.log(`skipped by prefix: ${skippedByPrefixCount}`);

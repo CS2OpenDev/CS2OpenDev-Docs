@@ -329,7 +329,12 @@ export default function DataTable({
 		// reveal is found.
 		const rawHash = window.location.hash;
 		if (rawHash && anchorKey) {
-			const hashId = decodeURIComponent(rawHash.slice(1));
+			let hashId = rawHash.slice(1);
+			try {
+				hashId = decodeURIComponent(hashId);
+			} catch {
+				/* Malformed percent-encoding: match the raw text instead of unmounting. */
+			}
 			const found = attemptReveal(rows, hashId, nextFilter, nextFacets, nextSortKey, nextSortDir, nextPageSize);
 			if (!found && src) {
 				// Not on the server-rendered first page: fetch the rest and retry.

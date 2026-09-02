@@ -10,8 +10,8 @@ import { codegenDir } from './src/lib/paths';
 import { loadSchemaIndex, pagedEntities } from './src/lib/data/schema';
 import { entitySlug } from './src/lib/urls';
 import { enumerateLegacyRedirects } from './src/lib/legacy-paths';
-
-const BASE = '/CS2OpenDev-Docs';
+import { BASE } from './scripts/site-base.mjs';
+import { legacyHtmlStubs } from './scripts/legacy-stubs.mjs';
 
 const idx = loadSchemaIndex();
 
@@ -105,12 +105,17 @@ for (const { from, to } of enumerateLegacyRedirects({ modules: idx.modules, prot
 }
 
 const LEGACY_ANCHOR_SCRIPT = [
-	'(function(){function go(){var h=decodeURIComponent(location.hash.slice(1));',
+	'(function(){var all;',
+	'function find(h){var t=document.getElementById(h);',
+	'if(!t)t=document.querySelector(\'[data-legacy-anchor~="\'+CSS.escape(h)+\'"]\');',
+	'if(!t){var l=h.toLowerCase(),i;for(i=0;i<all.length;i++){if(all[i].id.toLowerCase()===l){t=all[i];break;}}}',
+	'return t;}',
+	'function go(){var r=location.hash.slice(1),h;try{h=decodeURIComponent(r);}catch(e){h=r;}',
 	'if(!h||document.getElementById(h))return;',
-	'var t=document.querySelector(\'[data-legacy-anchor="\'+h.replace(/"/g,\'\')+\'"]\');',
-	'var l=h.toLowerCase(),all=document.querySelectorAll(\'[id]\'),i;',
-	'if(!t){for(i=0;i<all.length;i++){if(all[i].id.toLowerCase()===l){t=all[i];break;}}}',
-	'if(!t){for(i=0;i<all.length;i++){if(all[i].id.toLowerCase().indexOf(l+\'-\')===0){t=all[i];break;}}}',
+	'all=document.querySelectorAll(\'[id]\');',
+	'var t=find(h),s=h.replace(/-+\\d+$/,\'\');',
+	'if(!t&&s!==h)t=find(s);',
+	'if(!t){var l=h.toLowerCase(),i;for(i=0;i<all.length;i++){if(all[i].id.toLowerCase().indexOf(l+\'-\')===0){t=all[i];break;}}}',
 	'if(!t)return;',
 	'history.replaceState(history.state,\'\',location.pathname+location.search+\'#\'+t.id);',
 	't.scrollIntoView();}',
@@ -127,6 +132,7 @@ export default defineConfig({
 	image: { service: passthroughImageService() },
 	integrations: [
 		react(),
+		legacyHtmlStubs(),
 		starlight({
 			title: 'CS2 Reference',
 			// src/pages/404.astro carries the legacy-path redirect script.
@@ -138,9 +144,10 @@ export default defineConfig({
 				// Starlight's page grounds: white in light mode, hsl(224, 10%, 10%) in dark.
 				{ tag: 'meta', attrs: { name: 'theme-color', media: '(prefers-color-scheme: light)', content: '#ffffff' } },
 				{ tag: 'meta', attrs: { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#17181c' } },
-				// Old Jekyll anchors were lowercased and duplicates got numeric suffixes;
-				// the new ids keep case and use a source suffix. Resolve a missing hash by
-				// data-legacy-anchor, then case-insensitive id, then id prefix.
+				// Old Jekyll anchors were lowercased, and a repeated or count-bearing
+				// heading got a numeric suffix. Resolve a missing hash by data-legacy-anchor
+				// (a space-separated list), then case-insensitive id, then the same three
+				// with the trailing -N stripped, then id prefix.
 				{ tag: 'script', content: LEGACY_ANCHOR_SCRIPT },
 			],
 			social: [

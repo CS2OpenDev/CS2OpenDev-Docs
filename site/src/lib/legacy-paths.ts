@@ -61,9 +61,13 @@ export function mapLegacyPath(pathname: string, params: LegacyPathParams): strin
 		return params.modules.includes(rest[1]!) ? `/schemas/${rest[1]}/hierarchy/` : null;
 	}
 
-	// downstream-codegen-schemas is deliberately not matched past one segment: the JSON
-	// artifacts under it are mirrored to the same path by copy-artifacts.mjs and must
-	// keep resolving directly rather than bouncing through /codegen-schemas/.
+	// Jekyll rendered the README next to the JSON artifacts; nothing else under
+	// downstream-codegen-schemas is matched, since copy-artifacts.mjs mirrors those
+	// files to the same path and they must keep resolving directly.
+	if (rest[0] === 'downstream-codegen-schemas' && rest.length === 2 && rest[1] === 'README') {
+		return '/codegen-schemas/';
+	}
+
 	if (rest.length === 1) {
 		const target = LEGACY_FLAT_PAGES[rest[0]!];
 		if (target) return target;
@@ -83,6 +87,7 @@ export function enumerateLegacyRedirects(params: LegacyPathParams): Array<{ from
 		...params.protoStems.map((stem) => `/generated/proto/${stem}`),
 		...params.modules.map((module) => `/generated/diagrams/${module}`),
 		'/generated/diagrams/server_hierarchy',
+		'/generated/downstream-codegen-schemas/README',
 	];
 	return from.map((path) => {
 		const to = mapLegacyPath(path, params);

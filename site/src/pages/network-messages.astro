@@ -27,6 +27,9 @@ function rowAliases(row: NetworkRow): string {
 }
 
 const headings = groups.map((g) => ({ depth: 2, slug: g.slug, text: g.group }));
+
+// The old page titled this group "Demo stream (`.dem`) messages".
+const LEGACY_GROUP_ANCHORS: Record<string, string> = { 'demo-stream': 'demo-stream-dem-messages' };
 const totalRows = groups.reduce((n, g) => n + g.rows.length, 0);
 ---
 
@@ -80,7 +83,7 @@ const totalRows = groups.reduce((n, g) => n + g.rows.length, 0);
 
 		{groups.map((g) => (
 			<>
-				<h2 id={g.slug}>
+				<h2 id={g.slug} data-legacy-anchor={LEGACY_GROUP_ANCHORS[g.slug]}>
 					{g.group} <span class="cs2-count">({g.rows.length})</span>
 				</h2>
 				<div class="cs2-table-wrap">

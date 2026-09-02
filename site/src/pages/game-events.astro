@@ -66,6 +66,29 @@ for (const name of Object.keys(duplicates)) {
 	if (pick) preferredLegacy.set(name, pick.anchor);
 }
 
+// Old anchors per new anchor, space-separated in data-legacy-anchor. Kramdown gave the
+// k-th repeat of a heading the id `<name>-<k>`; the old page ran core, game, mod and
+// this page keeps that order within a name, so the repeat count reproduces the id.
+const legacyAnchors = new Map<string, string[]>();
+function addLegacyAnchor(anchor: string, legacy: string) {
+	legacyAnchors.set(anchor, [...(legacyAnchors.get(anchor) ?? []), legacy]);
+}
+const repeats = new Map<string, number>();
+for (const ev of events) {
+	const k = repeats.get(ev.name) ?? 0;
+	repeats.set(ev.name, k + 1);
+	if (k > 0) addLegacyAnchor(ev.anchor, `${ev.name}-${k}`);
+}
+for (const [name, anchor] of preferredLegacy) addLegacyAnchor(anchor, name);
+
+// The old page's section ids; its per-source event sections are one list here.
+const LEGACY_SECTION_ANCHORS = {
+	'type-legend': 'field-types',
+	sources: 'summary',
+	index: 'event-index',
+	events: 'core-engine-events game-events cs2-counter-strike-events',
+};
+
 const headings = [
 	{ depth: 2, slug: 'type-legend', text: 'Field types' },
 	{ depth: 2, slug: 'sources', text: 'Sources' },
@@ -137,7 +160,7 @@ const headings = [
 
 		<p class="cs2-provenance">{provenanceLine()}</p>
 
-		<h2 id="type-legend">Field types</h2>
+		<h2 id="type-legend" data-legacy-anchor={LEGACY_SECTION_ANCHORS['type-legend']}>Field types</h2>
 		<p>
 			Each field below declares one of these types. Where the type is sent as one of{' '}
 			{keyTMsg ? (
@@ -173,7 +196,7 @@ const headings = [
 			</table>
 		</div>
 
-		<h2 id="sources">Sources</h2>
+		<h2 id="sources" data-legacy-anchor={LEGACY_SECTION_ANCHORS.sources}>Sources</h2>
 		<p>
 			Events come from {sources.length} upstream <code>.gameevents</code> files:{' '}
 			{sources.map((s, i) => (
@@ -186,7 +209,7 @@ const headings = [
 			its own section instead of colliding on one shared anchor.
 		</p>
 
-		<h2 id="index">Index</h2>
+		<h2 id="index" data-legacy-anchor={LEGACY_SECTION_ANCHORS.index}>Index</h2>
 		<p>Every event definition in this build. Type a name, source or description word into the filter box.</p>
 		<div id="ev">
 			<DataTable
@@ -201,13 +224,13 @@ const headings = [
 			/>
 		</div>
 
-		<h2 id="events">Events</h2>
+		<h2 id="events" data-legacy-anchor={LEGACY_SECTION_ANCHORS.events}>Events</h2>
 		{events.map((ev) => (
 			<>
 				<h3
 					id={ev.anchor}
 					data-pagefind-weight="7"
-					data-legacy-anchor={preferredLegacy.get(ev.name) === ev.anchor ? ev.name : undefined}
+					data-legacy-anchor={legacyAnchors.get(ev.anchor)?.join(' ')}
 				>
 					{eventHeading(ev, duplicates)}
 				</h3>

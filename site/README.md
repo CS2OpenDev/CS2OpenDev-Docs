@@ -79,6 +79,9 @@ Other page families (protobufs, convars, commands, game events, items, and so on
 The old Jekyll paths under `/generated/schemas/` redirect to the new ones. Astro does not
 prefix `base` on a redirect destination, so a dynamic redirect rule would point at the
 unprefixed path; `astro.config.mjs` writes one literal entry per entity and module instead.
+Astro emits each entry as `<path>/index.html`, but the old site served `<path>.html`, so
+`scripts/legacy-stubs.mjs` writes a sibling `.html` stub for every one after the build,
+each with a script that carries the URL fragment across (a meta refresh drops it).
 
 ## Conventions
 

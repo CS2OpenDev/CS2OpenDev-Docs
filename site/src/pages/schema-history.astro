@@ -82,7 +82,7 @@ const headings = [
 			</>
 		)}
 
-		<h2 id="transitions">Transitions</h2>
+		<h2 id="transitions" data-legacy-anchor="transitions-with-structural-changes">Transitions</h2>
 		<p>
 			Every row's id is <code>t-&lt;from&gt;-&lt;to&gt;</code> so it can be linked to directly.
 			Rows with a <strong>Detail</strong> link have a full per-class breakdown below.
@@ -120,7 +120,7 @@ const headings = [
 			</table>
 		</div>
 
-		<h2 id="recent-detail">Recent transitions in detail</h2>
+		<h2 id="recent-detail" data-legacy-anchor="most-recent-structural-changes">Recent transitions in detail</h2>
 		<p>
 			The {history.detail.length} most recent transitions with a structural change, expanded to the
 			per-class field operations. A class flagged <strong>metadata only</strong> had every one of its
@@ -130,7 +130,7 @@ const headings = [
 
 		{history.detail.map((d: HistoryDetail) => (
 			<>
-				<h3 id={`detail-${d.anchor}`}>
+				<h3 id={`detail-${d.anchor}`} data-legacy-anchor={`${d.from_build}--${d.to_build}`}>
 					{d.from_build} to {d.to_build} <span class="cs2-count">({d.to_date})</span>
 				</h3>
 				<p>

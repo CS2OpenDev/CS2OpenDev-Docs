@@ -11,9 +11,11 @@ carrying for a while.
 
 ## URLs changed
 
-Old pages under `/generated/...` redirect to their new home. If a redirect does not
-cover a link you have bookmarked, the 404 page will still get you there for anything
-that used to live under `/generated/`.
+Every old page under `/generated/...` is still served, as a static stub at its old
+`.html` address that forwards to the new page and carries any `#anchor` across with it,
+so a bookmark or a deep link keeps working without a 404 in between. Anything under
+`/generated/` the stubs do not cover falls back to the 404 page, which applies the same
+rules.
 
 - `/generated/schemas/server/CCSPlayerPawn.html` is now `/schemas/server/CCSPlayerPawn/`
 - `/generated/proto/netmessages.html` is now `/protobufs/netmessages/`

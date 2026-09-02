@@ -54,10 +54,12 @@ const headings = [
 
 		<p class="cs2-provenance">{provenanceLine()}</p>
 
+		{/* The kit tables were sections of the old items page; their old ids land on these links. */}
 		<p>
 			Paint finishes, stickers and music kits are separate definition tables, each on its own page:{' '}
-			<a href={paintKitsHref()}>Paint kits</a>, <a href={stickerKitsHref()}>Sticker kits</a>, and{' '}
-			<a href={musicKitsHref()}>Music kits</a>.
+			<a id="paint-kits" href={paintKitsHref()} data-legacy-anchor="paint-kits--skins">Paint kits</a>,{' '}
+			<a id="sticker-kits" href={stickerKitsHref()}>Sticker kits</a>, and{' '}
+			<a id="music-kits" href={musicKitsHref()}>Music kits</a>.
 		</p>
 
 		<h2 id="items">Items</h2>
