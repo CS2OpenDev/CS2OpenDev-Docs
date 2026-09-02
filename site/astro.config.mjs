@@ -147,6 +147,8 @@ export default defineConfig({
 				// Starlight's page grounds: white in light mode, hsl(224, 10%, 10%) in dark.
 				{ tag: 'meta', attrs: { name: 'theme-color', media: '(prefers-color-scheme: light)', content: '#ffffff' } },
 				{ tag: 'meta', attrs: { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#17181c' } },
+				// No og:image exists, so the large-image card would render an empty frame.
+				{ tag: 'meta', attrs: { name: 'twitter:card', content: 'summary' } },
 				// Old Jekyll anchors were lowercased, and a repeated or count-bearing
 				// heading got a numeric suffix. Resolve a missing hash by data-legacy-anchor
 				// (a space-separated list), then case-insensitive id, then the same three
