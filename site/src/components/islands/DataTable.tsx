@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'preact/compat';
 import '../../styles/datatable.css';
 
 export interface Column {
@@ -541,7 +541,7 @@ export default function DataTable({
 						value={filterText}
 						onFocus={ensureFullRows}
 						onChange={(e) => {
-							setFilterText(e.target.value);
+							setFilterText(e.currentTarget.value);
 							setPage(1);
 						}}
 						placeholder="Type to filter"

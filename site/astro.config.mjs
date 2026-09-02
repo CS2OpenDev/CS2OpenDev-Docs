@@ -2,7 +2,7 @@
 import { readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { defineConfig, passthroughImageService } from 'astro/config';
-import react from '@astrojs/react';
+import preact from '@astrojs/preact';
 import starlight from '@astrojs/starlight';
 import starlightBlog from 'starlight-blog';
 import { codegenDir } from './src/lib/paths';
@@ -133,7 +133,7 @@ export default defineConfig({
 	// Nothing on the site goes through astro:assets, so the build never needs sharp.
 	image: { service: passthroughImageService() },
 	integrations: [
-		react(),
+		preact({ compat: true }),
 		legacyHtmlStubs(),
 		starlight({
 			title: 'CS2 Reference',
