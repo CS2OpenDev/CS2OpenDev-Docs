@@ -15,7 +15,9 @@
         "release"
       ],
       "description": "This string is prefixed to the name of all bots that join the game.\n<difficulty> will be replaced with the bot's difficulty.\n<weaponclass> will be replaced with the bot's desired weapon class.\n<skill> will be replaced with a 0-100 representation of the bot's skill.",
-      "value_type": "String"
+      "value_type": "String",
+      "min": null,
+      "max": null
     },
     {
       "name": "mp_roundtime",
@@ -29,8 +31,8 @@
       ],
       "description": "How many minutes each round takes.",
       "value_type": "Float32",
-      "min": "0.100000",
-      "max": "60.000000"
+      "min": 0.1,
+      "max": 60
     },
     {
       "name": "sv_cheats",
@@ -41,7 +43,9 @@
         "release"
       ],
       "description": "Allow cheats on server",
-      "value_type": "Bool"
+      "value_type": "Bool",
+      "min": null,
+      "max": null
     },
     {
       "name": "mp_friendlyfire",
@@ -55,7 +59,9 @@
         "commandline_enforced"
       ],
       "description": "Allows team members to injure other members of their team",
-      "value_type": "Bool"
+      "value_type": "Bool",
+      "min": null,
+      "max": null
     },
     {
       "name": "cl_showfps",
@@ -65,7 +71,9 @@
         "release"
       ],
       "description": "Draw fps meter at top of screen (1 = fps, 2 = smooth fps, 3 = server MS, 4 = Show FPS and Log to file )",
-      "value_type": "Int32"
+      "value_type": "Int32",
+      "min": null,
+      "max": null
     },
     {
       "name": "mp_maxrounds",
@@ -80,7 +88,8 @@
       ],
       "description": "max number of rounds to play before server changes maps",
       "value_type": "Int32",
-      "min": "0"
+      "min": 0,
+      "max": null
     },
     {
       "name": "host_timescale",
@@ -90,7 +99,9 @@
         "cheat"
       ],
       "description": "Prescale the clock by this amount.",
-      "value_type": "Float32"
+      "value_type": "Float32",
+      "min": null,
+      "max": null
     },
     {
       "name": "sv_gravity",
@@ -103,7 +114,9 @@
         "release"
       ],
       "description": "World gravity.",
-      "value_type": "Float32"
+      "value_type": "Float32",
+      "min": null,
+      "max": null
     },
     {
       "name": "mp_retake_ct_loadout_default_pistol_round",
@@ -116,7 +129,9 @@
         "commandline_enforced"
       ],
       "description": "CT Loadouts for default pistol round when playing bomb site retake.",
-      "value_type": "String"
+      "value_type": "String",
+      "min": null,
+      "max": null
     }
   ]
 }

@@ -59,16 +59,6 @@ def _overlay_text(v: Any) -> str:
     return str(v).rstrip("\n")
 
 
-def _num(v: Any) -> float | None:
-    """Best-effort numeric coercion for upstream decimal-string fields."""
-    if v in (None, ""):
-        return None
-    try:
-        return float(v)
-    except (TypeError, ValueError):
-        return None
-
-
 def _prefix_of(name: str) -> str:
     """Text before the first underscore; the whole name if there is none."""
     return name.split("_", 1)[0] if "_" in name else name
@@ -84,16 +74,6 @@ def _iter_entity_variants(entities: dict[str, dict]):
         yield e
         for d in e.get("duplicates", []) or []:
             yield d
-
-
-def _read_latest_json(artifacts_root: Path) -> dict[str, Any]:
-    ptr = artifacts_root.parent / "LATEST.json"
-    if not ptr.is_file():
-        return {}
-    try:
-        return json.loads(ptr.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        return {}
 
 
 # ---------------------------------------------------------------------------
@@ -248,16 +228,19 @@ def build_protobufs(protos: list[dict], overlays: dict[str, dict]) -> dict:
                 "qualified": qn,
                 "parent": parent_qn,
                 "values": [
-                    {"name": v["name"], "number": int(v["number"]), "description": ""}
+                    {"name": v["name"], "number": int(v["number"])}
                     for v in e.get("values", [])
                 ],
             })
 
         def emit_msg(m: dict, parent_qn: str | None) -> None:
             qn = f"{parent_qn}.{m['name']}" if parent_qn else m["name"]
-            # Overlay message keys are unqualified top-level names only; the
-            # overlay format has no hook for a nested type's own prose yet.
-            mover = overlay_msgs.get(m["name"], {}) if parent_qn is None and isinstance(overlay_msgs.get(m["name"]), dict) else {}
+            # A nested message is keyed by its dotted path; a bare name only
+            # addresses a top-level message.
+            mover = overlay_msgs.get(qn)
+            if not isinstance(mover, dict) and parent_qn is None:
+                mover = overlay_msgs.get(m["name"])
+            mover = mover if isinstance(mover, dict) else {}
             overlay_flds = mover.get("fields", {}) if isinstance(mover.get("fields"), dict) else {}
 
             fields_out = []
@@ -325,9 +308,11 @@ def build_protobufs(protos: list[dict], overlays: dict[str, dict]) -> dict:
 # convars.json / commands.json
 # ---------------------------------------------------------------------------
 
-# Non-fatal problems found during the last emit_site_data call. The generator
-# prints them and fails under --strict.
+# Problems found during the last emit_site_data call. WARNINGS are authoring
+# errors: the generator prints them and fails under --strict. INFOS are
+# upstream facts worth a log line and never fatal.
 WARNINGS: list[str] = []
+INFOS: list[str] = []
 
 
 def _build_flags_legend(overlays: dict[str, dict], convars: list[dict], commands: list[dict]) -> list[dict]:
@@ -341,9 +326,11 @@ def _build_flags_legend(overlays: dict[str, dict], convars: list[dict], commands
         WARNINGS.append("docs/overlays/convar_flags.yml did not load; flag legend has no descriptions")
     missing = [f for f in seen_flags if f not in descriptions]
     if missing:
-        WARNINGS.append(
-            "docs/overlays/convar_flags.yml has no entry for flag(s) seen on this build: "
-            + ", ".join(missing)
+        # A flag upstream added is not an authoring error; it renders under
+        # its raw name until the overlay names it.
+        INFOS.append(
+            "docs/overlays/convar_flags.yml has no entry for flag(s) seen on this "
+            "build, shipped with a blank description: " + ", ".join(missing)
         )
 
     return [
@@ -364,8 +351,8 @@ def build_convars(convars: list[dict], flags_legend: list[dict]) -> dict:
             "name": cv["name"],
             "default": cv["default"],
             "value_type": cv["value_type"],
-            "min": _num(cv["min_value"]) if cv["has_min"] else None,
-            "max": _num(cv["max_value"]) if cv["has_max"] else None,
+            "min": gd._bound_number(cv["min_value"]) if cv["has_min"] else None,
+            "max": gd._bound_number(cv["max_value"]) if cv["has_max"] else None,
             "flags": sorted(cv["flags"]),
             "help": cv["description"],
             "prefix": _prefix_of(cv["name"]),
@@ -566,8 +553,6 @@ def build_items(data: dict) -> dict:
             "is_default": bool(it.get("isDefault", False)),
             "prefab_id": it.get("prefab", ""),
             "resolution": resolution,
-            "rarity": None,
-            "quality": None,
         })
     items_out.sort(key=lambda i: ((i["name"] or "").lower(), i["def_index"]))
 
@@ -596,9 +581,8 @@ def build_items(data: dict) -> dict:
         "qualities": qualities,
         "note": (
             "item_definitions.json carries no per-item rarity or quality link "
-            "upstream -- only the enumeration tables above exist. rarity and "
-            "quality are null on every item until SchemaTracker ships that "
-            "association."
+            "upstream; only the rarities and qualities enumeration tables "
+            "exist, so items[] has no rarity or quality field."
         ),
     }
 
@@ -946,9 +930,7 @@ def build_schema_history(evolution: dict, lens_overlay: dict, source_info: dict)
 # meta.json
 # ---------------------------------------------------------------------------
 
-def build_meta(
-    source_info: dict, latest_ptr: dict, entities: dict[str, dict], counts: dict[str, int]
-) -> dict:
+def build_meta(source_info: dict, entities: dict[str, dict], counts: dict[str, int]) -> dict:
     mod_classes: dict[str, int] = defaultdict(int)
     mod_enums: dict[str, int] = defaultdict(int)
     class_names = set()
@@ -978,8 +960,8 @@ def build_meta(
     return {
         "build_id": source_info.get("build_id", ""),
         "steam_date": source_info.get("version_date", ""),
+        "steam_manifest_utc": source_info.get("version_time", ""),
         "platform": source_info.get("platform", ""),
-        "generated_utc": latest_ptr.get("generated_utc", ""),
         "schema_version": source_info.get("schema_version", ""),
         "tool_version": source_info.get("tool_version", ""),
         "tool_commit": source_info.get("tool_commit", ""),
@@ -998,7 +980,9 @@ def build_meta(
 # README.md
 # ---------------------------------------------------------------------------
 
-def _build_readme(sizes: dict[str, int]) -> str:
+def _build_readme(sizes: dict[str, int], facts: dict[str, int]) -> str:
+    """*facts* carries the build-specific counts the prose quotes, so the
+    text never goes stale against the data next to it."""
     def kb(name: str) -> str:
         n = sizes.get(name)
         return f"{n / 1024:.1f} KB" if n is not None else "not generated this build"
@@ -1017,18 +1001,20 @@ input are byte-identical.
 
 ## meta.json ({kb('meta.json')})
 
-Build identity (`build_id`, `steam_date`, `platform`, `generated_utc` from
-`LATEST.json`, `schema_version`, `tool_version`), a `counts` object per
-family, and a `modules` list of `{{module, classes, enums}}`. `classes`/
-`enums`/`fields` in `counts` are distinct top-level entity names (matching
-what a reader would call "3,779 classes"); the per-module `modules[]` counts
+Build identity (`build_id`, `steam_date`, `steam_manifest_utc` and
+`platform` from the build's own `provenance.json`, `schema_version`,
+`tool_version`), a `counts` object per family, and a `modules` list of
+`{{module, classes, enums}}`. `classes`/`enums`/`fields` in `counts` are
+distinct top-level entity names (matching what a reader would call
+"{facts['classes']:,} classes"); the per-module `modules[]` counts
 additionally include client/server twin duplicate records, so they can sum
 to more than the top-level totals -- see the `note` field on the object.
 `counts.messages` is `protobufs.json`'s flattened total (top-level plus
-nested, 775 on this build); `counts.surfaces` is the upstream record count
-from `surface_properties.json` (303 on this build), not the number of
-distinct materials in `surfaces.json`'s `materials[]` (which is smaller,
-since the same material can have several rows).
+nested, {facts['messages']:,} on this build); `counts.surfaces` is the
+upstream record count from `surface_properties.json`
+({facts['surfaces']:,} on this build), not the number of distinct
+materials in `surfaces.json`'s `materials[]` (which is smaller, since the
+same material can have several rows).
 
 ## protobufs.json ({kb('protobufs.json')})
 
@@ -1038,10 +1024,14 @@ overlay `description`/`notes`). `messages[]` and `enums[]` on each file are
 own entry, tagged with `qualified` (dotted `Parent.Nested` path) and
 `parent` (the parent's qualified name, or `null` for a top-level type).
 `nested_messages`/`nested_enums` on a message are the qualified names of its
-*direct* children only.
+*direct* children only. A message's `description`/`notes` come from the
+overlay entry keyed by its qualified name (`CDemoClassInfo.class_t` for a
+nested type); a bare name addresses a top-level message only. Enum
+`values[]` carry `name` and `number`; the overlay format has no slot for a
+proto enum value's prose.
 
-Field type resolution (`type_kind`, `type`, `type_file`): this build's 40
-proto files carry no `package`, so a field's raw type is either a bare
+Field type resolution (`type_kind`, `type`, `type_file`): this build's
+{facts['proto_files']} proto files carry no `package`, so a field's raw type is either a bare
 simple name (a top-level type, in this file or another) or a same-file
 dotted path to a nested type. Resolution: dotted raw values are looked up
 directly against the qualified-name index; bare raw values are looked up
@@ -1101,9 +1091,10 @@ case-insensitively by name.
 
 Both files carry the same `flags` legend array
 (`{{name, convar_count, command_count, description}}`), loaded from
-`docs/overlays/convar_flags.yml`. Generation fails loudly if that overlay
-is missing an entry for a flag this build actually uses, rather than
-silently shipping an incomplete legend.
+`docs/overlays/convar_flags.yml`. A flag this build uses that has no overlay
+entry is logged as an `INFO` line and shipped with an empty `description`,
+so a new upstream flag never blocks a regeneration; add it to the overlay to
+name it.
 
 ## gameevents.json ({kb('gameevents.json')})
 
@@ -1112,10 +1103,11 @@ silently shipping an incomplete legend.
 `warning`, `properties`, `fields[]` (`name`, `type`, `description`).
 
 Anchor rule: a name unique across all sources uses itself as the anchor; a
-name that appears in more than one source (15 names on this build, e.g.
-`round_end` in all three `.gameevents` files) gets `<name>-<source-stem>`
+name that appears in more than one source gets `<name>-<source-stem>`
 (source with the `.gameevents` suffix removed, e.g. `round_end-mod`), so
 every event has a distinct, stable anchor even when the name repeats.
+{facts['duplicate_event_names']} names repeat on this build (`round_end`,
+for one, is declared in every `.gameevents` file).
 `duplicates` maps each such name to its list of sources.
 
 `type_legend` maps each field type to its description and, where derivable,
@@ -1136,9 +1128,9 @@ resolved through the prefab chain when the item's own value is empty (see
 below), `is_default`, `prefab_id`, and a `resolution` object naming, per
 resolved field, whether the value came from the item itself (`"own"`), a
 prefab in the chain (`"prefab:<id>"`), or was left unresolved (`""`).
-`rarity`/`quality` are always `null`: upstream `item_definitions.json`
-carries no per-item link to the `rarities`/`qualities` enumeration tables
-(also emitted here) -- see the `note` field on the object.
+There is no per-item `rarity`/`quality`: upstream `item_definitions.json`
+carries no link from an item to the `rarities`/`qualities` enumeration
+tables (also emitted here) -- see the `note` field on the object.
 
 Prefab resolution: an item's (or prefab's) own `prefab` field can hold
 several space-separated prefab ids (items_game.txt's multiple-inheritance
@@ -1252,6 +1244,12 @@ class flagged `metadata_only: true` when every one of its field ops is
 a real structural change). `breaking[]` is `docs/overlays/schema-lens.yml`'s
 `breaking:` list, passed through as-is.
 
+## Fields with no page yet
+
+Emitted for completeness but rendered by no site page on this build:
+`maps.json`'s `map_names` list and each map's `properties` array, and
+`game_modes.json`'s per-mode `convars` list (empty upstream on this build).
+
 ## Regenerating
 
 ```
@@ -1282,6 +1280,7 @@ def emit_site_data(
     exists for this platform).
     """
     WARNINGS.clear()
+    INFOS.clear()
     repo_root = Path(repo_root).resolve()
     artifacts_root = (
         Path(artifacts_root).resolve() if artifacts_root
@@ -1301,7 +1300,6 @@ def emit_site_data(
         )
 
     source_info = gd.build_source_info(build_dir, platform)
-    latest_ptr = _read_latest_json(artifacts_root)
 
     entities = gd.load_entity_schema(build_dir)
     protos = gd.load_proto_descriptors(build_dir / "protos.descriptorset")
@@ -1359,7 +1357,7 @@ def emit_site_data(
         "surfaces": sum(len(m["rows"]) for m in surfaces_data["materials"]),
         "modules": len(modules_data["modules"]),
     }
-    meta_data = build_meta(source_info, latest_ptr, entities, counts)
+    meta_data = build_meta(source_info, entities, counts)
 
     sizes: dict[str, int] = {}
 
@@ -1385,8 +1383,15 @@ def emit_site_data(
     if schema_history_data is not None:
         emit("schema-history.json", schema_history_data)
 
+    facts = {
+        "classes": meta_data["counts"]["classes"],
+        "messages": counts["messages"],
+        "surfaces": counts["surfaces"],
+        "proto_files": counts["proto_files"],
+        "duplicate_event_names": len(gameevents_data["duplicates"]),
+    }
     readme_path = data_dir / "README.md"
-    readme_text = _build_readme(sizes)
+    readme_text = _build_readme(sizes, facts)
     with readme_path.open("w", encoding="utf-8", newline="\n") as fh:
         fh.write(readme_text)
 
@@ -1418,6 +1423,8 @@ def main(argv: list[str] | None = None) -> int:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 2
 
+    for i in INFOS:
+        print(f"INFO: {i}")
     for w in WARNINGS:
         print(f"WARNING: {w}", file=sys.stderr)
     total = sum(sizes.values())

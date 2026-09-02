@@ -5,6 +5,8 @@ proto: demo.proto
 
 # `demo.proto`
 
+Demo-file container messages.
+
 ## Diagram
 
 ```mermaid
@@ -362,16 +364,20 @@ direction LR
 
 ### `CDemoClassInfo`
 
+Class id to network-class-name table.
+
 | Field | Number | Type | Label | Description |
 |-------|--------|------|-------|-------------|
-| `classes` | 1 | [CDemoClassInfo.class_t](#cdemoclassinfoclass_t) | repeated |  |
+| `classes` | 1 | [CDemoClassInfo.class_t](#cdemoclassinfoclass_t) | repeated | One entry per network class. |
 
 #### `CDemoClassInfo.class_t`
+
+One class id to network-class-name row.
 
 | Field | Number | Type | Label | Description |
 |-------|--------|------|-------|-------------|
 | `class_id` | 1 | int32 | optional |  |
-| `network_name` | 2 | string | optional |  |
+| `network_name` | 2 | string | optional | The network class name the id maps to. |
 | `table_name` | 3 | string | optional |  |
 
 ### `CDemoCustomData`

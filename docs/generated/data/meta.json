@@ -18,7 +18,6 @@
     "sticker_kits": 11789,
     "surfaces": 303
   },
-  "generated_utc": "2026-09-01T22:28:07Z",
   "modules": [
     {
       "classes": 47,
@@ -260,6 +259,7 @@
   "platform": "windows-x86_64",
   "schema_version": "0.10.0",
   "steam_date": "2026-08-28",
+  "steam_manifest_utc": "2026-08-28T20:16:08Z",
   "tool_commit": "5196045c92a2fa3b702867a9e1e3272ad6016e0d",
   "tool_version": "0.10.0"
 }

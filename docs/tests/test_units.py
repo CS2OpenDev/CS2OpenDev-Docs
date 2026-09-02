@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import unittest
 
-from _gen import gd
+from _gen import gd, sd
 
 
 def _cls(name, module, binary, bases=(), base_modules=(), fields=(), **extra):
@@ -290,11 +290,35 @@ class OverlayTests(unittest.TestCase):
 
     def test_module_mismatch_is_separate_from_unresolved(self):
         entities = twin_entities()
-        overlays = {"particles/CPawn": {"description": "x"}}
+        overlays = {"client/COnlyOnServer": {"description": "x"}}
         unresolved, mismatched = gd.check_overlay_keys(overlays, entities, [], [])
         self.assertEqual(unresolved, [])
         self.assertEqual(len(mismatched), 1)
-        self.assertIn("particles/CPawn", mismatched[0])
+        self.assertIn("client/COnlyOnServer", mismatched[0])
+
+    def test_unknown_overlay_stem_is_unresolved(self):
+        entities = twin_entities()
+        overlays = {
+            "nonsense": {"CPawnTypo": {"description": "x"}},
+            "nonsense/CPawnTypo": {"description": "x"},
+            "sever": {"CPawn": {"description": "x"}},
+            "sever/CPawn": {"description": "x"},
+        }
+        unresolved, mismatched = gd.check_overlay_keys(overlays, entities, [], [])
+        joined = "\n".join(unresolved)
+        self.assertIn("nonsense: no such module or overlay file", joined)
+        self.assertIn("sever: no such module or overlay file (nearest: server)", joined)
+        self.assertEqual(mismatched, [])
+
+    def test_wrapper_overlay_stems_are_known(self):
+        overlays = {
+            "gameevents": {"events": {}},
+            "gameevents/events": {},
+            "convar_flags": {"flags": {}},
+            "convar_flags/flags": {},
+        }
+        unresolved, _ = gd.check_overlay_keys(overlays, twin_entities(), [], [])
+        self.assertEqual(unresolved, [])
 
     def test_game_event_keys_are_checked(self):
         overlays = {"gameevents": {"events": {
@@ -385,6 +409,45 @@ class ProtoTests(unittest.TestCase):
         lines = "\n".join(gd._build_proto_mermaid(self.proto))
         self.assertIn('class CDemoClassInfo_class_t["CDemoClassInfo.class_t"]', lines)
         self.assertIn('class CDemoOther_class_t["CDemoOther.class_t"]', lines)
+
+
+class ConVarBoundTests(unittest.TestCase):
+    def test_integral_bound_is_an_int(self):
+        self.assertEqual(gd._bound_number("-20.000000"), -20)
+        self.assertIsInstance(gd._bound_number("-20.000000"), int)
+        self.assertEqual(gd._bound_number("0"), 0)
+
+    def test_fractional_bound_is_a_float(self):
+        self.assertEqual(gd._bound_number("0.100000"), 0.1)
+
+    def test_blank_and_non_finite_are_none(self):
+        self.assertIsNone(gd._bound_number(""))
+        self.assertIsNone(gd._bound_number(None))
+        self.assertIsNone(gd._bound_number("inf"))
+        self.assertIsNone(gd._bound_number("not a number"))
+
+
+class FlagLegendTests(unittest.TestCase):
+    def setUp(self):
+        sd.WARNINGS.clear()
+        sd.INFOS.clear()
+
+    def test_new_upstream_flag_is_informational(self):
+        overlays = {"convar_flags": {"flags": {"cheat": {"description": "Needs sv_cheats."}}}}
+        convars = [{"flags": ["cheat", "brand_new"]}]
+        commands = [{"flags": ["brand_new"]}]
+        legend = sd._build_flags_legend(overlays, convars, commands)
+        self.assertEqual(sd.WARNINGS, [])
+        self.assertEqual(len(sd.INFOS), 1)
+        self.assertIn("brand_new", sd.INFOS[0])
+        new = [f for f in legend if f["name"] == "brand_new"][0]
+        self.assertEqual(new["description"], "")
+        self.assertEqual(new["convar_count"], 1)
+        self.assertEqual(new["command_count"], 1)
+
+    def test_missing_overlay_file_is_still_a_warning(self):
+        sd._build_flags_legend({}, [{"flags": ["cheat"]}], [])
+        self.assertEqual(len(sd.WARNINGS), 1)
 
 
 class BitfieldTests(unittest.TestCase):

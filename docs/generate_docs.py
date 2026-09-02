@@ -36,6 +36,7 @@ import argparse
 import copy
 import html
 import json
+import math
 import re
 import shutil
 import sys
@@ -65,9 +66,10 @@ except ImportError:
 # (COLLECTION_OF_T fixed-buffer capacity N, read from the binary's
 # m_nFixedBufferCount — previously only the two ATOMIC_I bit-vector types
 # carried a non-zero count). Additive → minor bump (SchemaTracker#8).
-# 2.2: convars_schema.json gained the optional `value_type`, `min` and `max`
-# keys and commands_schema.json gained `has_completion_callback`; all four
-# were already loaded from the artifact and only the emitters dropped them.
+# 2.2: convars_schema.json gained the optional `value_type` key and the
+# always-present numeric `min` / `max` keys (null when unbounded), and
+# commands_schema.json gained `has_completion_callback`; all four were
+# already loaded from the artifact and only the emitters dropped them.
 # Additive → minor bump.
 SCHEMA_FORMAT_VERSION = "2.2"
 
@@ -669,6 +671,20 @@ def load_proto_descriptors(descriptorset_path: Path) -> list[dict[str, Any]]:
             continue
         results.append(_proto_descriptor_to_dict(fdp))
     return results
+
+
+def _bound_number(raw: Any) -> int | float | None:
+    """A convar bound as a JSON number: int when integral, else float; None
+    when blank or not finite (JSON has no Infinity)."""
+    if raw in (None, ""):
+        return None
+    try:
+        value = float(raw)
+    except (TypeError, ValueError):
+        return None
+    if not math.isfinite(value):
+        return None
+    return int(value) if value.is_integer() else value
 
 
 def load_convars_json(path: Path) -> list[dict]:
@@ -2676,15 +2692,15 @@ def generate_convars_schema(
     out_dir: Path,
     source_info: dict[str, Any] | None = None,
 ) -> None:
-    """Emit ``convars_schema.json`` — a structured projection of
-    DumpSource2/convars.txt.
+    """Emit ``convars_schema.json``, the structured projection of
+    SchemaTracker's ``convars.json``.
 
-    Each entry preserves the four fields ``parse_convars`` already
-    surfaces (``name``, ``default``, ``flags``, ``description``).  This
-    is the codegen-friendly counterpart to ``convars.md``; downstream
-    consumers wanting strongly-typed convar constants no longer need to
-    parse Markdown.  No overlay annotation pipeline is wired up yet —
-    add one if community-curated convar notes become a need.
+    Each entry carries ``name``, ``default``, ``flags``, ``description``,
+    ``value_type`` (when the artifact records one) and numeric ``min`` /
+    ``max`` (null on an unbounded side).  This is the codegen-friendly
+    counterpart to the ConVars page; downstream consumers wanting
+    strongly-typed convar constants no longer need to parse Markdown.  No
+    overlay annotation pipeline is wired up yet.
     """
     schema_dir = out_dir / "downstream-codegen-schemas"
     schema_dir.mkdir(parents=True, exist_ok=True)
@@ -2704,10 +2720,8 @@ def generate_convars_schema(
         }
         if cv.get("value_type"):
             rec["value_type"] = cv["value_type"]
-        if cv.get("has_min"):
-            rec["min"] = cv.get("min_value", "")
-        if cv.get("has_max"):
-            rec["max"] = cv.get("max_value", "")
+        rec["min"] = _bound_number(cv.get("min_value")) if cv.get("has_min") else None
+        rec["max"] = _bound_number(cv.get("max_value")) if cv.get("has_max") else None
         records.append(rec)
     out["convars"] = records
     (schema_dir / "convars_schema.json").write_text(
@@ -3240,7 +3254,7 @@ source instead of a chain of third-party dumps.
 ## Files
 
 - **`cs2_schema.json`** — the entity schema in SchemaTracker's **native**
-  shape (`schema_format_version` `2.1`).  Top-level: `generator`, `build_id`,
+  shape (`schema_format_version` `{SCHEMA_FORMAT_VERSION}`).  Top-level: `generator`, `build_id`,
   `platform`, `revision`, `version_date`, `version_time`, `classes`, `enums`.
   Each class carries `name`, `module` (the binary it lives in), `projectName`,
   `cppName`, `size`, `alignment`, `flags` / `flags2`, `parents[]`, `fields[]`
@@ -3272,11 +3286,16 @@ source instead of a chain of third-party dumps.
 
 - **`convars_schema.json`** — the console-variable table.  Top-level:
   `convars` list; each entry has `name` / `default` / `flags` /
-  `description` (SchemaTracker additionally exposes `valueType` and min/max
-  in the source artifact).  Codegen-friendly counterpart to `convars.md`.
+  `description` / `value_type` (upstream's declared type, e.g. `Float32`,
+  `Int32`, `Bool`, `String`; omitted when the artifact records none) /
+  `min` / `max` (JSON numbers: an integer when the bound is integral, else
+  a float; `null` on a side upstream leaves unbounded).  Codegen-friendly
+  counterpart to the ConVars page.
 
 - **`commands_schema.json`** — the console-command table.  Top-level:
-  `commands` list; each entry has `name` / `flags` / `description`.
+  `commands` list; each entry has `name` / `flags` / `description` /
+  `has_completion_callback` (boolean: the command registers an argument
+  autocomplete callback).
 
 - **`well_known_constants.json`** — community-curated reference tables
   for integer / enum values downstream tooling needs but that the schema
@@ -4260,7 +4279,7 @@ def generate_field_history_json(
 # ---------------------------------------------------------------------------
 
 # Overlay files whose top-level shape is not a map of entity names.
-_NON_ENTITY_OVERLAYS = {"gameevents", "schema-lens", "well_known_constants"}
+_NON_ENTITY_OVERLAYS = {"convar_flags", "gameevents", "schema-lens", "well_known_constants"}
 
 
 def _nearest(name: str, pool: Any) -> str:
@@ -4289,15 +4308,19 @@ def check_overlay_keys(
     mismatched: list[str] = []
 
     entity_names = set(entities)
-    # A file whose top level is a wrapper key (``events:``, ``constants:``,
-    # ``flags:``) is not a map of entity names; the loader still expands that
-    # wrapper into a ``<file>/<key>`` entry, so only validate a key when its
-    # module is a real schema module or its name is a real entity.
     schema_modules = {
         v.get("module", "")
         for e in entities.values()
         for v in _all_variants(e["name"], entities)
     }
+    # A file stem must be a schema module, a listed wrapper file or the
+    # protobufs directory; anything else annotates nothing, whatever it names.
+    known_stems = schema_modules | _NON_ENTITY_OVERLAYS | {"protobufs"}
+    for stem in sorted({k.split("/", 1)[0] for k in overlays}):
+        if stem not in known_stems:
+            unresolved.append(
+                f"{stem}: no such module or overlay file{_nearest(stem, known_stems)}"
+            )
 
     def _member_names(name: str) -> set[str]:
         out: set[str] = set()
@@ -4309,9 +4332,7 @@ def check_overlay_keys(
         if "/" not in key or not isinstance(data, dict):
             continue
         module, name = key.split("/", 1)
-        if module in _NON_ENTITY_OVERLAYS or module == "protobufs":
-            continue
-        if module not in schema_modules and name not in entity_names:
+        if module not in schema_modules:
             continue
         if name not in entity_names:
             unresolved.append(f"{key}: no such class or enum{_nearest(name, entity_names)}")
@@ -4478,7 +4499,7 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help=(
             "Fail the run when an overlay key names a class, field, message or "
-            "event this build does not have."
+            "event this build does not have, or is filed under the wrong module."
         ),
     )
     args = parser.parse_args(argv)
@@ -4699,8 +4720,9 @@ def main(argv: list[str] | None = None) -> int:
         print(f"  UNRESOLVED {line}", file=sys.stderr)
     for line in overlay_mismatched:
         print(f"  MODULE     {line}", file=sys.stderr)
-    if overlay_unresolved and args.strict:
-        print("  --strict: overlay keys must all resolve.", file=sys.stderr)
+    if (overlay_unresolved or overlay_mismatched) and args.strict:
+        print("  --strict: overlay keys must all resolve and sit under the module "
+              "that declares them.", file=sys.stderr)
         return 5
 
     print("Checking generated Markdown tables…")
@@ -4721,6 +4743,8 @@ def main(argv: list[str] | None = None) -> int:
         platform=args.platform, output=out_dir,
     )
     print(f"  {len(site_files)} file(s), {sum(site_files.values()) / 1024:.0f} KB under {generated_dir / 'data'}")
+    for i in site_data.INFOS:
+        print(f"  INFO {i}")
     for w in site_data.WARNINGS:
         print(f"  WARNING {w}", file=sys.stderr)
     if site_data.WARNINGS and args.strict:

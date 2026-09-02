@@ -216,8 +216,8 @@
         "gamedll"
       ],
       "help": "Cache size for recently-used pose recipe shapes.",
-      "max": 1024.0,
-      "min": 1.0,
+      "max": 1024,
+      "min": 1,
       "name": "ag2_network_recipeshape_cache_size",
       "prefix": "ag2",
       "value_type": "Int32"
@@ -1965,8 +1965,8 @@
         "replicated"
       ],
       "help": "Upper bound above Average Human Contribution Score that a bot must be above to change its difficulty",
-      "max": 20.0,
-      "min": -20.0,
+      "max": 20,
+      "min": -20,
       "name": "bot_autodifficulty_threshold_high",
       "prefix": "bot",
       "value_type": "Float32"
@@ -1981,8 +1981,8 @@
         "replicated"
       ],
       "help": "Lower bound below Average Human Contribution Score that a bot must be below to change its difficulty",
-      "max": 20.0,
-      "min": -20.0,
+      "max": 20,
+      "min": -20,
       "name": "bot_autodifficulty_threshold_low",
       "prefix": "bot",
       "value_type": "Float32"
@@ -2037,7 +2037,7 @@
       ],
       "help": "Max distance bots can see targets (in coop) when they are idle, dormant, hiding or asleep.",
       "max": null,
-      "min": -1.0,
+      "min": -1,
       "name": "bot_coop_idle_max_vision_distance",
       "prefix": "bot",
       "value_type": "Float32"
@@ -2320,7 +2320,7 @@
       ],
       "help": "Max distance bots can see targets.",
       "max": null,
-      "min": -1.0,
+      "min": -1,
       "name": "bot_max_vision_distance_override",
       "prefix": "bot",
       "value_type": "Float32"
@@ -3635,8 +3635,8 @@
         "clientdll"
       ],
       "help": "0 = slow, 1 = medium (default), 2 = fast",
-      "max": 2.0,
-      "min": 0.0,
+      "max": 2,
+      "min": 0,
       "name": "cc_vr_caption_speed",
       "prefix": "cc",
       "value_type": "Int32"
@@ -3690,8 +3690,8 @@
         "clientdll"
       ],
       "help": "0 = small, 1 = med (default), 2 = large",
-      "max": 2.0,
-      "min": 0.0,
+      "max": 2,
+      "min": 0,
       "name": "cc_vr_font_size",
       "prefix": "cc",
       "value_type": "Int32"
@@ -3731,8 +3731,8 @@
         "clientdll"
       ],
       "help": "0 = narrow, 1 = med (default), 2 = wide",
-      "max": 2.0,
-      "min": 0.0,
+      "max": 2,
+      "min": 0,
       "name": "cc_vr_width",
       "prefix": "cc",
       "value_type": "Int32"
@@ -4266,8 +4266,8 @@
         "developmentonly"
       ],
       "help": "Clock sync will not slow down time slower than N%",
-      "max": 100.0,
-      "min": 66.0,
+      "max": 100,
+      "min": 66,
       "name": "cl_clock_recvmargin_adjust_limit_slowdown",
       "prefix": "cl",
       "value_type": "Float32"
@@ -4278,8 +4278,8 @@
         "developmentonly"
       ],
       "help": "Clock sync will not speed up time faster than N%",
-      "max": 150.0,
-      "min": 100.0,
+      "max": 150,
+      "min": 100,
       "name": "cl_clock_recvmargin_adjust_limit_speedup",
       "prefix": "cl",
       "value_type": "Float32"
@@ -4365,7 +4365,7 @@
       ],
       "help": "Maximum number of ticks the clock is allowed to drift before the client snaps its clock to the server's.",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "cl_clockdrift_max_ticks",
       "prefix": "cl",
       "value_type": "Int32"
@@ -4391,8 +4391,8 @@
         "userinfo"
       ],
       "help": "Preferred teammate color",
-      "max": 4.0,
-      "min": 0.0,
+      "max": 4,
+      "min": 0,
       "name": "cl_color",
       "prefix": "cl",
       "value_type": "Int32"
@@ -4443,8 +4443,8 @@
         "per_user"
       ],
       "help": "If using cl_crosshairstyle 2, this is the ratio used to determine how long the inner and outer xhair pips will be. [inner = cl_crosshairsize*(1-cl_crosshair_dynamic_maxdist_splitratio), outer = cl_crosshairsize*cl_crosshair_dynamic_maxdist_splitratio]  [0 - 1]",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "cl_crosshair_dynamic_maxdist_splitratio",
       "prefix": "cl",
       "value_type": "Float32"
@@ -4457,8 +4457,8 @@
         "per_user"
       ],
       "help": "If using cl_crosshairstyle 2, this is the alpha modification that will be used for the INNER crosshair pips once they've split. [0 - 1]",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "cl_crosshair_dynamic_splitalpha_innermod",
       "prefix": "cl",
       "value_type": "Float32"
@@ -4471,7 +4471,7 @@
         "per_user"
       ],
       "help": "If using cl_crosshairstyle 2, this is the alpha modification that will be used for the OUTER crosshair pips once they've split. [0.3 - 1]",
-      "max": 1.0,
+      "max": 1,
       "min": 0.3,
       "name": "cl_crosshair_dynamic_splitalpha_outermod",
       "prefix": "cl",
@@ -4499,8 +4499,8 @@
         "release"
       ],
       "help": "0: off, 1: on",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "cl_crosshair_friendly_warning",
       "prefix": "cl",
       "value_type": "Int32"
@@ -4513,8 +4513,8 @@
         "per_user"
       ],
       "help": "Set how thick you want your crosshair outline to draw (0-3)",
-      "max": 3.0,
-      "min": 0.0,
+      "max": 3,
+      "min": 0,
       "name": "cl_crosshair_outlinethickness",
       "prefix": "cl",
       "value_type": "Float32"
@@ -4582,8 +4582,8 @@
         "per_user"
       ],
       "help": "",
-      "max": 255.0,
-      "min": 0.0,
+      "max": 255,
+      "min": 0,
       "name": "cl_crosshairalpha",
       "prefix": "cl",
       "value_type": "Int32"
@@ -4610,8 +4610,8 @@
         "per_user"
       ],
       "help": "",
-      "max": 255.0,
-      "min": 0.0,
+      "max": 255,
+      "min": 0,
       "name": "cl_crosshaircolor_b",
       "prefix": "cl",
       "value_type": "Int32"
@@ -4624,8 +4624,8 @@
         "per_user"
       ],
       "help": "",
-      "max": 255.0,
-      "min": 0.0,
+      "max": 255,
+      "min": 0,
       "name": "cl_crosshaircolor_g",
       "prefix": "cl",
       "value_type": "Int32"
@@ -4638,8 +4638,8 @@
         "per_user"
       ],
       "help": "",
-      "max": 255.0,
-      "min": 0.0,
+      "max": 255,
+      "min": 0,
       "name": "cl_crosshaircolor_r",
       "prefix": "cl",
       "value_type": "Int32"
@@ -5361,8 +5361,8 @@
         "hidden"
       ],
       "help": "Embedded stream audio volume",
-      "max": 100.0,
-      "min": 0.0,
+      "max": 100,
+      "min": 0,
       "name": "cl_embedded_stream_audio_volume",
       "prefix": "cl",
       "value_type": "Float32"
@@ -6106,8 +6106,8 @@
         "developmentonly"
       ],
       "help": "",
-      "max": 45.0,
-      "min": 1.0,
+      "max": 45,
+      "min": 1,
       "name": "cl_grenadecrosshair_tickinterval",
       "prefix": "cl",
       "value_type": "Float32"
@@ -6132,7 +6132,7 @@
         "developmentonly"
       ],
       "help": "",
-      "max": 2.0,
+      "max": 2,
       "min": 0.5,
       "name": "cl_grenadecrosshair_tickscaling",
       "prefix": "cl",
@@ -6314,8 +6314,8 @@
         "release"
       ],
       "help": "",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "cl_hud_radar_background_alpha",
       "prefix": "cl",
       "value_type": "Float32"
@@ -6370,8 +6370,8 @@
         "release"
       ],
       "help": "Frame time greater than this is considered 'poor'.",
-      "max": 100.0,
-      "min": 1.0,
+      "max": 100,
+      "min": 1,
       "name": "cl_hud_telemetry_frametime_poor",
       "prefix": "cl",
       "value_type": "Float32"
@@ -6641,8 +6641,8 @@
         "userinfo"
       ],
       "help": "Set number of client simulation interpolation ticks.",
-      "max": 19.0,
-      "min": 0.0,
+      "max": 19,
+      "min": 0,
       "name": "cl_interp_ratio",
       "prefix": "cl",
       "value_type": "Float32"
@@ -6820,7 +6820,7 @@
         "per_user"
       ],
       "help": "Ironsight dot scale",
-      "max": 2.0,
+      "max": 2,
       "min": 0.1,
       "name": "cl_ironsight_dot_scale",
       "prefix": "cl",
@@ -6833,8 +6833,8 @@
         "developmentonly"
       ],
       "help": "Ironsight filter alpha",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "cl_ironsight_filter_alpha",
       "prefix": "cl",
       "value_type": "Float32"
@@ -6846,8 +6846,8 @@
         "developmentonly"
       ],
       "help": "Ironsight min channel color value",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "cl_ironsight_min_channel_color",
       "prefix": "cl",
       "value_type": "Float32"
@@ -6886,8 +6886,8 @@
         "userinfo"
       ],
       "help": "When upstream packet jitter in a frame exceeds this threshold (ms), the frame is considered to have 'irregular delivery'.  This is a derived value and should not be modified manually",
-      "max": 100.0,
-      "min": 1.0,
+      "max": 100,
+      "min": 1,
       "name": "cl_jitter_bad_threshold_up",
       "prefix": "cl",
       "value_type": "Float32"
@@ -7203,8 +7203,8 @@
         "release"
       ],
       "help": "Number of ticks of delay for server snapshots and user commands.  This value controls the value of cl_interp_ratio, which you should not modify directly.",
-      "max": 2.0,
-      "min": 0.0,
+      "max": 2,
+      "min": 0,
       "name": "cl_net_buffer_ticks",
       "prefix": "cl",
       "value_type": "Int32"
@@ -8234,7 +8234,7 @@
         "release"
       ],
       "help": "Sets the radar scale. Valid values are 0.25 to 1.0.",
-      "max": 1.0,
+      "max": 1,
       "min": 0.25,
       "name": "cl_radar_scale",
       "prefix": "cl",
@@ -8248,7 +8248,7 @@
         "release"
       ],
       "help": "Sets the alternate radar scale. Valid values are 0.25 to 1.0.",
-      "max": 1.0,
+      "max": 1,
       "min": 0.25,
       "name": "cl_radar_scale_alternate",
       "prefix": "cl",
@@ -8747,8 +8747,8 @@
         "release"
       ],
       "help": "",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "cl_radialmenu_deadzone_size",
       "prefix": "cl",
       "value_type": "Float32"
@@ -8761,8 +8761,8 @@
         "release"
       ],
       "help": "",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "cl_radialmenu_deadzone_size_joystick",
       "prefix": "cl",
       "value_type": "Float32"
@@ -8937,7 +8937,7 @@
         "release"
       ],
       "help": "Delay in seconds before the client will resend the 'connect' attempt",
-      "max": 2.0,
+      "max": 2,
       "min": 0.1,
       "name": "cl_resend",
       "prefix": "cl",
@@ -9784,7 +9784,7 @@
         "developmentonly"
       ],
       "help": "Smooth client's view after prediction error over this many seconds",
-      "max": 2.0,
+      "max": 2,
       "min": 0.01,
       "name": "cl_smoothtime",
       "prefix": "cl",
@@ -10214,8 +10214,8 @@
         "userinfo"
       ],
       "help": "This value, multiplied by the tick interval, is added to cl_tickpacket_recvmargin_desired to obtain the effective desired recv margin.",
-      "max": 5.0,
-      "min": 0.0,
+      "max": 5,
+      "min": 0,
       "name": "cl_tickpacket_desired_queuelength",
       "prefix": "cl",
       "value_type": "Float32"
@@ -10523,7 +10523,7 @@
       ],
       "help": "max number of CUserCmds to send in one client move message",
       "max": null,
-      "min": 4.0,
+      "min": 4,
       "name": "cl_usercmd_max_per_movemsg",
       "prefix": "cl",
       "value_type": "Int32"
@@ -10642,8 +10642,8 @@
         "hidden"
       ],
       "help": "Lobby voip stream audio volume",
-      "max": 100.0,
-      "min": 0.0,
+      "max": 100,
+      "min": 0,
       "name": "cl_voip_lobby_audio_volume",
       "prefix": "cl",
       "value_type": "Int32"
@@ -11541,7 +11541,7 @@
         "replicated"
       ],
       "help": "When speeding up slowing down, this is how much",
-      "max": 10.0,
+      "max": 10,
       "min": 0.1,
       "name": "cq_dilation_percentage",
       "prefix": "cq",
@@ -14528,8 +14528,8 @@
         "replicated"
       ],
       "help": "If friendly fire is off, this will scale the penetration power and damage a bullet does when penetrating another friendly player",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "ff_damage_bullet_penetration",
       "prefix": "ff",
       "value_type": "Float32"
@@ -15130,8 +15130,8 @@
         "userinfo"
       ],
       "help": "Sets the base field-of-view.",
-      "max": 135.0,
-      "min": 1.0,
+      "max": 135,
+      "min": 1,
       "name": "fov_desired",
       "prefix": "fov",
       "value_type": "Float32"
@@ -18320,8 +18320,8 @@
         "developmentonly"
       ],
       "help": "Set jpeg screenshot quality. [1..100]",
-      "max": 100.0,
-      "min": 1.0,
+      "max": 100,
+      "min": 1,
       "name": "jpeg_quality",
       "prefix": "jpeg",
       "value_type": "Int32"
@@ -18793,8 +18793,8 @@
         "developmentonly"
       ],
       "help": "If we should draw normal silhouette or minkowski sum silhouette",
-      "max": 3.0,
-      "min": 1.0,
+      "max": 3,
+      "min": 1,
       "name": "lb_debug_silhouette_sum",
       "prefix": "lb",
       "value_type": "UInt32"
@@ -18901,8 +18901,8 @@
         "developmentonly"
       ],
       "help": "Base resolution for dynamic shadowmap sizing.  Shadowmap size of a screen sized light",
-      "max": 2048.0,
-      "min": 128.0,
+      "max": 2048,
+      "min": 128,
       "name": "lb_dynamic_shadow_resolution_base",
       "prefix": "lb",
       "value_type": "Float32"
@@ -18926,7 +18926,7 @@
         "developmentonly"
       ],
       "help": "Update delay for shadow size",
-      "max": 3.0,
+      "max": 3,
       "min": 0.1,
       "name": "lb_dynamic_shadow_resolution_delay",
       "prefix": "lb",
@@ -18939,7 +18939,7 @@
         "developmentonly"
       ],
       "help": "Update hysteresis for shadow size",
-      "max": 1.0,
+      "max": 1,
       "min": 0.01,
       "name": "lb_dynamic_shadow_resolution_hysteresis",
       "prefix": "lb",
@@ -18952,8 +18952,8 @@
         "developmentonly"
       ],
       "help": "Quantization of dynamically computed shadow size",
-      "max": 128.0,
-      "min": 8.0,
+      "max": 128,
+      "min": 8,
       "name": "lb_dynamic_shadow_resolution_quantization",
       "prefix": "lb",
       "value_type": "UInt32"
@@ -19267,8 +19267,8 @@
         "developmentonly"
       ],
       "help": "Subsurface sample count",
-      "max": 15.0,
-      "min": 3.0,
+      "max": 15,
+      "min": 3,
       "name": "lb_ssss_samples",
       "prefix": "lb",
       "value_type": "Int32"
@@ -19608,7 +19608,7 @@
         "release"
       ],
       "help": "Sets the icon scale multiplier for the overview map. Valid values are 0.5 to 3.0.",
-      "max": 3.0,
+      "max": 3,
       "min": 0.5,
       "name": "mapoverview_icon_scale",
       "prefix": "mapoverview",
@@ -20139,7 +20139,7 @@
         "developmentonly"
       ],
       "help": "Scale down the main viewport (to reduce GPU impact on CPU profiling)",
-      "max": 1.0,
+      "max": 1,
       "min": 0.001563,
       "name": "mat_viewportscale",
       "prefix": "mat",
@@ -20360,8 +20360,8 @@
         "archive"
       ],
       "help": "Longest preferred ping to dedicated servers for games",
-      "max": 350.0,
-      "min": 25.0,
+      "max": 350,
+      "min": 25,
       "name": "mm_dedicated_search_maxping",
       "prefix": "mm",
       "value_type": "Int32"
@@ -21061,8 +21061,8 @@
         "replicated"
       ],
       "help": "Whether players can purchase guns: pistols (1), SMGs (2), rifles (4), shotguns (8), sniper rifles (16), heavy MGs (32).",
-      "max": 255.0,
-      "min": 0.0,
+      "max": 255,
+      "min": 0,
       "name": "mp_buy_allow_guns",
       "prefix": "mp",
       "value_type": "Int32"
@@ -21112,7 +21112,7 @@
       ],
       "help": "How many seconds after round start players can buy items for.",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "mp_buytime",
       "prefix": "mp",
       "value_type": "Float32"
@@ -21145,7 +21145,7 @@
       ],
       "help": "how long from when the C4 is armed until it blows",
       "max": null,
-      "min": 10.0,
+      "min": 10,
       "name": "mp_c4timer",
       "prefix": "mp",
       "value_type": "Int32"
@@ -21160,8 +21160,8 @@
         "replicated"
       ],
       "help": "amount of time players can chat after the game is over",
-      "max": 120.0,
-      "min": 1.0,
+      "max": 120,
+      "min": 1,
       "name": "mp_chattime",
       "prefix": "mp",
       "value_type": "Int32"
@@ -21189,7 +21189,7 @@
       ],
       "help": "How loss streak is affected with round win: 0 = win fully resets loss bonus, 1 = first win steps down loss bonus, 2 = first win holds loss bonus and step down starting with second win",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "mp_consecutive_loss_aversion",
       "prefix": "mp",
       "value_type": "Int32"
@@ -21205,7 +21205,7 @@
       ],
       "help": "",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "mp_consecutive_loss_max",
       "prefix": "mp",
       "value_type": "Int32"
@@ -21426,8 +21426,8 @@
         "replicated"
       ],
       "help": "Which grenade to drop on player death: 0=none, 1=best, 2=current or best, 3=all grenades",
-      "max": 2.0,
-      "min": 0.0,
+      "max": 2,
+      "min": 0,
       "name": "mp_death_drop_grenade",
       "prefix": "mp",
       "value_type": "Int32"
@@ -21442,8 +21442,8 @@
         "replicated"
       ],
       "help": "Which gun to drop on player death: 0=none, 1=best, 2=current or best",
-      "max": 2.0,
-      "min": 0.0,
+      "max": 2,
+      "min": 0,
       "name": "mp_death_drop_gun",
       "prefix": "mp",
       "value_type": "Int32"
@@ -21519,8 +21519,8 @@
         "replicated"
       ],
       "help": "How to allocate defusers to CTs at start or round: 0=none, 1=random, 2=everyone",
-      "max": 2.0,
-      "min": 0.0,
+      "max": 2,
+      "min": 0,
       "name": "mp_defuser_allocation",
       "prefix": "mp",
       "value_type": "Int32"
@@ -21608,7 +21608,7 @@
       ],
       "help": "Percent of points additionally awarded when someone gets a kill with the bonus weapon during the bonus period.",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "mp_dm_bonus_percent",
       "prefix": "mp",
       "value_type": "Int32"
@@ -21640,7 +21640,7 @@
       ],
       "help": "Points to award for picking up a dogtag in deathmatch.",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "mp_dm_dogtag_score",
       "prefix": "mp",
       "value_type": "Int32"
@@ -21671,7 +21671,7 @@
       ],
       "help": "Number of base points to award for a kill in deathmatch.  Cheaper weapons award 1 or 2 additional points.",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "mp_dm_kill_base_score",
       "prefix": "mp",
       "value_type": "Int32"
@@ -21686,7 +21686,7 @@
       ],
       "help": "Maximum times to multiply the score for getting a streak of taser kills in a single life.",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "mp_dm_taser_bonus_streak_max",
       "prefix": "mp",
       "value_type": "Int32"
@@ -21810,7 +21810,7 @@
       ],
       "help": "How many seconds dogtags should stay around before despawning automatically (0 = infinite)",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "mp_dogtag_despawn_time",
       "prefix": "mp",
       "value_type": "Float32"
@@ -22124,8 +22124,8 @@
         "replicated"
       ],
       "help": "how many seconds to keep players frozen when the round starts",
-      "max": 60.0,
-      "min": 0.0,
+      "max": 60,
+      "min": 0,
       "name": "mp_freezetime",
       "prefix": "mp",
       "value_type": "Int32"
@@ -22173,7 +22173,7 @@
       ],
       "help": "If above 0, deal non-lethal damage to players over time.",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "mp_global_damage_per_second",
       "prefix": "mp",
       "value_type": "Float32"
@@ -22232,8 +22232,8 @@
         "replicated"
       ],
       "help": "Target number of seconds that halftime lasts; shortened if team intros are active",
-      "max": 300.0,
-      "min": 0.0,
+      "max": 300,
+      "min": 0,
       "name": "mp_halftime_duration",
       "prefix": "mp",
       "value_type": "Float32"
@@ -22454,8 +22454,8 @@
         "replicated"
       ],
       "help": "Number of seconds after round start to allow a player to join a game",
-      "max": 30.0,
-      "min": 0.0,
+      "max": 30,
+      "min": 0,
       "name": "mp_join_grace_time",
       "prefix": "mp",
       "value_type": "Float32"
@@ -22470,8 +22470,8 @@
         "replicated"
       ],
       "help": "Max # of players 1 team can have over another (0 disables check)",
-      "max": 30.0,
-      "min": 0.0,
+      "max": 30,
+      "min": 0,
       "name": "mp_limitteams",
       "prefix": "mp",
       "value_type": "Int32"
@@ -22483,8 +22483,8 @@
         "release"
       ],
       "help": "Logs attacks.  Values are: 0=off, 1=enemy, 2=teammate, 3=both)",
-      "max": 3.0,
-      "min": 0.0,
+      "max": 3,
+      "min": 0,
       "name": "mp_logdetail",
       "prefix": "mp",
       "value_type": "Int32"
@@ -22571,8 +22571,8 @@
         "replicated"
       ],
       "help": "Time (in seconds) until a match restarts.",
-      "max": 9999.0,
-      "min": 1.0,
+      "max": 9999,
+      "min": 1,
       "name": "mp_match_restart_delay",
       "prefix": "mp",
       "value_type": "Int32"
@@ -22604,7 +22604,7 @@
       ],
       "help": "maximum amount of money allowed in a player's account",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "mp_maxmoney",
       "prefix": "mp",
       "value_type": "Int32"
@@ -22621,7 +22621,7 @@
       ],
       "help": "max number of rounds to play before server changes maps",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "mp_maxrounds",
       "prefix": "mp",
       "value_type": "Int32"
@@ -22635,8 +22635,8 @@
         "replicated"
       ],
       "help": "Minimum number of seconds that halftime lasts even if team intros are active",
-      "max": 300.0,
-      "min": 0.0,
+      "max": 300,
+      "min": 0,
       "name": "mp_min_halftime_duration",
       "prefix": "mp",
       "value_type": "Float32"
@@ -22773,8 +22773,8 @@
         "replicated"
       ],
       "help": "Controls what information player see in the status bar: 0 all names; 1 team names; 2 no names",
-      "max": 2.0,
-      "min": 0.0,
+      "max": 2,
+      "min": 0,
       "name": "mp_playerid",
       "prefix": "mp",
       "value_type": "Int32"
@@ -22788,8 +22788,8 @@
         "replicated"
       ],
       "help": "Number of seconds to delay showing information in the status bar",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "mp_playerid_delay",
       "prefix": "mp",
       "value_type": "Float32"
@@ -22803,8 +22803,8 @@
         "replicated"
       ],
       "help": "Number of seconds to keep showing old information in the status bar",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "mp_playerid_hold",
       "prefix": "mp",
       "value_type": "Float32"
@@ -23260,7 +23260,7 @@
       ],
       "help": "Number of seconds to delay before restarting a round after a win",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "mp_round_restart_delay",
       "prefix": "mp",
       "value_type": "Float32"
@@ -23275,7 +23275,7 @@
         "replicated"
       ],
       "help": "How many minutes each round takes.",
-      "max": 60.0,
+      "max": 60,
       "min": 0.1,
       "name": "mp_roundtime",
       "prefix": "mp",
@@ -23291,8 +23291,8 @@
         "replicated"
       ],
       "help": "How many minutes each round of Bomb Defuse takes. If 0 then use mp_roundtime instead.",
-      "max": 60.0,
-      "min": 0.0,
+      "max": 60,
+      "min": 0,
       "name": "mp_roundtime_defuse",
       "prefix": "mp",
       "value_type": "Float32"
@@ -23307,8 +23307,8 @@
         "replicated"
       ],
       "help": "How many minutes each round of Hostage Rescue takes. If 0 then use mp_roundtime instead.",
-      "max": 60.0,
-      "min": 0.0,
+      "max": 60,
+      "min": 0,
       "name": "mp_roundtime_hostage",
       "prefix": "mp",
       "value_type": "Float32"
@@ -23415,7 +23415,7 @@
       ],
       "help": "How many spectators are allowed in a match.",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "mp_spectators_max",
       "prefix": "mp",
       "value_type": "Int32"
@@ -23431,7 +23431,7 @@
       ],
       "help": "Determines what the initial loss streak is.",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "mp_starting_losses",
       "prefix": "mp",
       "value_type": "Int32"
@@ -23447,7 +23447,7 @@
       ],
       "help": "amount of money each player gets when they reset",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "mp_startmoney",
       "prefix": "mp",
       "value_type": "Int32"
@@ -23615,7 +23615,7 @@
       ],
       "help": "How many seconds for team intro",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "mp_team_intro_time",
       "prefix": "mp",
       "value_type": "Float32"
@@ -23945,8 +23945,8 @@
         "release"
       ],
       "help": "How many maps to win the series (bo3 max=2; bo5 max=3; bo7 max=4)",
-      "max": 7.0,
-      "min": 0.0,
+      "max": 7,
+      "min": 0,
       "name": "mp_teamscore_max",
       "prefix": "mp",
       "value_type": "Int32"
@@ -24195,7 +24195,7 @@
       ],
       "help": "How long the warmup period lasts. Changing this value resets warmup.",
       "max": null,
-      "min": 5.0,
+      "min": 5,
       "name": "mp_warmuptime",
       "prefix": "mp",
       "value_type": "Float32"
@@ -24399,8 +24399,8 @@
         "replicated"
       ],
       "help": "Max number of times a player may purchase any weapon per match",
-      "max": 1.0,
-      "min": -1.0,
+      "max": 1,
+      "min": -1,
       "name": "mp_weapons_max_gun_purchases_per_weapon_per_match",
       "prefix": "mp",
       "value_type": "Int32"
@@ -24448,7 +24448,7 @@
       ],
       "help": "Max score one team can reach before server changes maps",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "mp_winlimit",
       "prefix": "mp",
       "value_type": "Int32"
@@ -29680,8 +29680,8 @@
         "hidden"
       ],
       "help": "Toggledebugger key operation : 0 = open/inspect, 1 = open/close",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "panorama_toggledebugger_mode",
       "prefix": "panorama",
       "value_type": "Int32"
@@ -31668,7 +31668,7 @@
       ],
       "help": "Resolution of character decal texture.",
       "max": null,
-      "min": 256.0,
+      "min": 256,
       "name": "r_character_decal_resolution",
       "prefix": "r",
       "value_type": "Int32"
@@ -34397,8 +34397,8 @@
         "archive"
       ],
       "help": "Screen Gamma (only in fullscreen modes)",
-      "max": 4.0,
-      "min": 1.0,
+      "max": 4,
+      "min": 1,
       "name": "r_fullscreen_gamma",
       "prefix": "r",
       "value_type": "Float32"
@@ -34791,8 +34791,8 @@
         "developmentonly"
       ],
       "help": "if using high contrast postprocessing, use this weight (weight = 1.0 for characters)",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "r_icon_highcontrast_postprocessing_weight",
       "prefix": "r",
       "value_type": "Float32"
@@ -36614,7 +36614,7 @@
         "clientdll"
       ],
       "help": "Spectator flash opacity",
-      "max": 1.0,
+      "max": 1,
       "min": 0.2,
       "name": "r_spectator_flashbang_opacity",
       "prefix": "r",
@@ -36849,7 +36849,7 @@
       ],
       "help": "Maximum resolution for top mip level in streaming textures",
       "max": null,
-      "min": 512.0,
+      "min": 512,
       "name": "r_texture_stream_max_resolution",
       "prefix": "r",
       "value_type": "Int32"
@@ -37360,7 +37360,7 @@
       ],
       "help": "at this distance and beyond you need to be point right at someone to see them",
       "max": null,
-      "min": 10.0,
+      "min": 10,
       "name": "radarvisdistance",
       "prefix": "radarvisdistance",
       "value_type": "Float32"
@@ -37372,8 +37372,8 @@
         "gamedll"
       ],
       "help": "how closely you have to point at someone to see them beyond max distance",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "radarvismaxdot",
       "prefix": "radarvismaxdot",
       "value_type": "Float32"
@@ -37385,8 +37385,8 @@
         "gamedll"
       ],
       "help": "0 for traditional method, 1 for more realistic method",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "radarvismethod",
       "prefix": "radarvismethod",
       "value_type": "Int32"
@@ -38010,8 +38010,8 @@
         "developmentonly"
       ],
       "help": "Rope subdivision amount",
-      "max": 8.0,
-      "min": 0.0,
+      "max": 8,
+      "min": 0,
       "name": "rope_subdiv",
       "prefix": "rope",
       "value_type": "Int32"
@@ -38193,8 +38193,8 @@
         "developmentonly"
       ],
       "help": "Sets the texture resolution the raytracer will mark to stream in",
-      "max": 2048.0,
-      "min": 64.0,
+      "max": 2048,
+      "min": 64,
       "name": "rtx_texture_resolution",
       "prefix": "rtx",
       "value_type": "UInt32"
@@ -38218,8 +38218,8 @@
         "clientdll"
       ],
       "help": "The percentage of the screen width that is considered safe from overscan. Cannot result in a width less than the height.",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "safezonex",
       "prefix": "safezonex",
       "value_type": "Float32"
@@ -38231,7 +38231,7 @@
         "clientdll"
       ],
       "help": "The percentage of the screen height that is considered safe from overscan",
-      "max": 1.0,
+      "max": 1,
       "min": 0.8,
       "name": "safezoney",
       "prefix": "safezoney",
@@ -38530,7 +38530,7 @@
       ],
       "help": "Threshold of indirect draws when we will do compaction",
       "max": null,
-      "min": 1.0,
+      "min": 1,
       "name": "sc_aggregate_indirect_draw_compaction_threshold",
       "prefix": "sc",
       "value_type": "UInt32"
@@ -38885,7 +38885,7 @@
       ],
       "help": "Percentage of the transition between two lods we will apply a dither",
       "max": 0.2,
-      "min": 0.0,
+      "min": 0,
       "name": "sc_dithered_lod_transition_amt",
       "prefix": "sc",
       "value_type": "Float32"
@@ -39886,7 +39886,7 @@
         "userinfo"
       ],
       "help": "Mouse sensitivity.",
-      "max": 8.0,
+      "max": 8,
       "min": 0.0001,
       "name": "sensitivity",
       "prefix": "sensitivity",
@@ -39901,8 +39901,8 @@
         "userinfo"
       ],
       "help": "Multiplies the mouse Y axis for finer pitch vs yaw aim",
-      "max": 2.0,
-      "min": 0.0,
+      "max": 2,
+      "min": 0,
       "name": "sensitivity_y_scale",
       "prefix": "sensitivity",
       "value_type": "Float32"
@@ -40233,8 +40233,8 @@
         "replicated"
       ],
       "help": "Game skill level.",
-      "max": 3.0,
-      "min": 1.0,
+      "max": 3,
+      "min": 1,
       "name": "skill",
       "prefix": "skill",
       "value_type": "Int32"
@@ -40575,8 +40575,8 @@
         "release"
       ],
       "help": "Volume of Deathcam Timers",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "snd_deathcamera_volume",
       "prefix": "snd",
       "value_type": "Float32"
@@ -40588,8 +40588,8 @@
         "developmentonly"
       ],
       "help": "Sound device synchronization max delay (ms)",
-      "max": 250.0,
-      "min": 0.0,
+      "max": 250,
+      "min": 0,
       "name": "snd_delay_sound_ms_max",
       "prefix": "snd",
       "value_type": "Float32"
@@ -40601,8 +40601,8 @@
         "developmentonly"
       ],
       "help": "Sound device synchronization shift (ms)",
-      "max": 50.0,
-      "min": 0.0,
+      "max": 50,
+      "min": 0,
       "name": "snd_delay_sound_ms_shift",
       "prefix": "snd",
       "value_type": "Float32"
@@ -41000,8 +41000,8 @@
         "archive"
       ],
       "help": "Game v.o. volume",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "snd_gamevoicevolume",
       "prefix": "snd",
       "value_type": "Float32"
@@ -41012,8 +41012,8 @@
         "archive"
       ],
       "help": "Game volume",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "snd_gamevolume",
       "prefix": "snd",
       "value_type": "Float32"
@@ -41168,8 +41168,8 @@
         "release"
       ],
       "help": "Volume of Map Objective Music",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "snd_mapobjective_volume",
       "prefix": "snd",
       "value_type": "Float32"
@@ -41198,8 +41198,8 @@
         "release"
       ],
       "help": "Volume of background sounds for maps",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "snd_menumap_volume",
       "prefix": "snd",
       "value_type": "Float32"
@@ -41212,8 +41212,8 @@
         "release"
       ],
       "help": "Volume of Menu / Non-gameplay music",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "snd_menumusic_volume",
       "prefix": "snd",
       "value_type": "Float32"
@@ -41299,8 +41299,8 @@
         "archive"
       ],
       "help": "Music volume",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "snd_musicvolume",
       "prefix": "snd",
       "value_type": "Float32"
@@ -41339,8 +41339,8 @@
         "release"
       ],
       "help": "Volume of MVP Music",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "snd_mvp_volume",
       "prefix": "snd",
       "value_type": "Float32"
@@ -41646,8 +41646,8 @@
         "release"
       ],
       "help": "Volume of Move Action Music",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "snd_roundaction_volume",
       "prefix": "snd",
       "value_type": "Float32"
@@ -41660,8 +41660,8 @@
         "release"
       ],
       "help": "Volume of Won/Lost Music",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "snd_roundend_volume",
       "prefix": "snd",
       "value_type": "Float32"
@@ -41674,8 +41674,8 @@
         "release"
       ],
       "help": "Volume of Round Start Music",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "snd_roundstart_volume",
       "prefix": "snd",
       "value_type": "Float32"
@@ -42628,8 +42628,8 @@
         "release"
       ],
       "help": "Volume of Ten Second Warnings",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "snd_tensecondwarning_volume",
       "prefix": "snd",
       "value_type": "Float32"
@@ -42640,8 +42640,8 @@
         "archive"
       ],
       "help": "Volume of sounds in tools (e.g. Hammer, SFM)",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "snd_toolvolume",
       "prefix": "snd",
       "value_type": "Float32"
@@ -42704,8 +42704,8 @@
         "archive"
       ],
       "help": "Voice volume",
-      "max": 2.0,
-      "min": 0.0,
+      "max": 2,
+      "min": 0,
       "name": "snd_voipvolume",
       "prefix": "snd",
       "value_type": "Float32"
@@ -43029,8 +43029,8 @@
         "developmentonly"
       ],
       "help": "Unpack mode in cs, 0 - one leaf per thread (16 output pixels), 1 (default) - one leaf row per thread (4 output pixels), 2 - one pixel out per thread.",
-      "max": 2.0,
-      "min": 0.0,
+      "max": 2,
+      "min": 0,
       "name": "sparseshadowtree_cs_unpack_mode",
       "prefix": "sparseshadowtree",
       "value_type": "Int32"
@@ -43359,8 +43359,8 @@
         "developmentonly"
       ],
       "help": "Chase cam's ideal distance from target",
-      "max": 296.0,
-      "min": 16.0,
+      "max": 296,
+      "min": 16,
       "name": "spec_chasedistance",
       "prefix": "spec",
       "value_type": "Float32"
@@ -43374,7 +43374,7 @@
       ],
       "help": "Chase cam's ideal distance from target",
       "max": null,
-      "min": 48.0,
+      "min": 48,
       "name": "spec_chasedistancespeed",
       "prefix": "spec",
       "value_type": "Float32"
@@ -43462,7 +43462,7 @@
       ],
       "help": "Time to decay glow from 1.0 to spec_glow_silent_factor after spec_glow_full_time.",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "spec_glow_decay_time",
       "prefix": "spec",
       "value_type": "Float32"
@@ -43475,7 +43475,7 @@
       ],
       "help": "Noisy players stay at full brightness for this long.",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "spec_glow_full_time",
       "prefix": "spec",
       "value_type": "Float32"
@@ -43487,8 +43487,8 @@
         "release"
       ],
       "help": "Lurking player xray glow scaling.",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "spec_glow_silent_factor",
       "prefix": "spec",
       "value_type": "Float32"
@@ -43500,8 +43500,8 @@
         "release"
       ],
       "help": "Noisy player xray glow scaling (pop when noise is made).  Make >1 to add a 'spike' to noise-making players",
-      "max": 3.0,
-      "min": 1.0,
+      "max": 3,
+      "min": 1,
       "name": "spec_glow_spike_factor",
       "prefix": "spec",
       "value_type": "Float32"
@@ -43514,7 +43514,7 @@
       ],
       "help": "Time for noisy player glow 'spike' to show that they made noise very recently.",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "spec_glow_spike_time",
       "prefix": "spec",
       "value_type": "Float32"
@@ -44299,7 +44299,7 @@
       ],
       "help": "Hard limit on maximum number of rounds (per half) that annotations can be seen in a live match",
       "max": null,
-      "min": -1.0,
+      "min": -1,
       "name": "sv_annotation_limits_max_rounds_per_half",
       "prefix": "sv",
       "value_type": "Int32"
@@ -44325,8 +44325,8 @@
         "release"
       ],
       "help": "The length of the window of trailing counter-strafe attempts considered during input automation detection.",
-      "max": 1000.0,
-      "min": 1.0,
+      "max": 1000,
+      "min": 1,
       "name": "sv_auto_cstrafe_attempt_window",
       "prefix": "sv",
       "value_type": "Int32"
@@ -44351,8 +44351,8 @@
         "release"
       ],
       "help": "0: never, 1: every time counter-strafe input automation is detected, 2: every counter-strafe",
-      "max": 2.0,
-      "min": 0.0,
+      "max": 2,
+      "min": 0,
       "name": "sv_auto_cstrafe_logging",
       "prefix": "sv",
       "value_type": "Int32"
@@ -44364,8 +44364,8 @@
         "release"
       ],
       "help": "The percentage of overlapping attempts in the attempt window below which input automation detection is triggered at the success threshold.",
-      "max": 100.0,
-      "min": 0.0,
+      "max": 100,
+      "min": 0,
       "name": "sv_auto_cstrafe_lower_overlap_pct_threshold",
       "prefix": "sv",
       "value_type": "Float32"
@@ -44377,8 +44377,8 @@
         "release"
       ],
       "help": "The minimum number of counter-strafe attempts required for input automation detection. The player must be moving more than 135.2 units/s for their counter-strafe to be considered an attempt. An attempt is either considered a success (counter-strafing took place within a single tick), an overlap (both directions were held for 1+ ticks) or an underlap (neither direction was held for 1+ ticks).",
-      "max": 1000.0,
-      "min": 1.0,
+      "max": 1000,
+      "min": 1,
       "name": "sv_auto_cstrafe_min_attempts",
       "prefix": "sv",
       "value_type": "Int32"
@@ -44390,8 +44390,8 @@
         "release"
       ],
       "help": "The length of sequential counter-strafe attempts evaluated relative to the success threshold. Input automation detection considers the best sequence within the larger attempt window.",
-      "max": 1000.0,
-      "min": 1.0,
+      "max": 1000,
+      "min": 1,
       "name": "sv_auto_cstrafe_sequence_length",
       "prefix": "sv",
       "value_type": "Int32"
@@ -44403,8 +44403,8 @@
         "release"
       ],
       "help": "The minimum number of successful counter-strafes within a best sequence that will trigger input automation detection. The number of successes that trigger input automation detection is interpolated between the success threshold and a 'perfect' sequence (all counter-strafes in a sequence are successes), depending on the player's percentage of overlapping counter-strafe attempts.",
-      "max": 1000.0,
-      "min": 1.0,
+      "max": 1000,
+      "min": 1,
       "name": "sv_auto_cstrafe_success_threshold",
       "prefix": "sv",
       "value_type": "Int32"
@@ -44416,8 +44416,8 @@
         "release"
       ],
       "help": "The percentage of overlapping attempts in the attempt window below which input automation detection is triggered when all counter-strafes in a sequence are successes.",
-      "max": 100.0,
-      "min": 0.0,
+      "max": 100,
+      "min": 0,
       "name": "sv_auto_cstrafe_upper_overlap_pct_threshold",
       "prefix": "sv",
       "value_type": "Float32"
@@ -44534,7 +44534,7 @@
       ],
       "help": "sv_legacy_jump disabled only: The time window (in seconds) around landing where a jump press is considered a bhop attempt.",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "sv_bhop_time_window",
       "prefix": "sv",
       "value_type": "Float32"
@@ -44547,7 +44547,7 @@
       ],
       "help": "Given a bot will buy a grenade, controls the odds of the grenade type. Proportional to all other sv_bot_buy_*_weight convars.",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "sv_bot_buy_decoy_weight",
       "prefix": "sv",
       "value_type": "Float32"
@@ -44560,7 +44560,7 @@
       ],
       "help": "Given a bot will buy a grenade, controls the odds of the grenade type. Proportional to all other sv_bot_buy_*_weight convars.",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "sv_bot_buy_flash_weight",
       "prefix": "sv",
       "value_type": "Float32"
@@ -44573,8 +44573,8 @@
         "release"
       ],
       "help": "Chance bots will buy a grenade with leftover money (after prim, sec and armor). Input as percent (0-100.0)",
-      "max": 100.0,
-      "min": 0.0,
+      "max": 100,
+      "min": 0,
       "name": "sv_bot_buy_grenade_chance",
       "prefix": "sv",
       "value_type": "Float32"
@@ -44587,7 +44587,7 @@
       ],
       "help": "Given a bot will buy a grenade, controls the odds of the grenade type. Proportional to all other sv_bot_buy_*_weight convars.",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "sv_bot_buy_hegrenade_weight",
       "prefix": "sv",
       "value_type": "Float32"
@@ -44600,7 +44600,7 @@
       ],
       "help": "Given a bot will buy a grenade, controls the odds of the grenade type. Proportional to all other sv_bot_buy_*_weight convars.",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "sv_bot_buy_molotov_weight",
       "prefix": "sv",
       "value_type": "Float32"
@@ -44613,7 +44613,7 @@
       ],
       "help": "Given a bot will buy a grenade, controls the odds of the grenade type. Proportional to all other sv_bot_buy_*_weight convars.",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "sv_bot_buy_smoke_weight",
       "prefix": "sv",
       "value_type": "Float32"
@@ -44788,8 +44788,8 @@
         "replicated"
       ],
       "help": "This can be used to limit the value of cl_interp_ratio for connected clients (only while they are connected).",
-      "max": 19.0,
-      "min": 0.0,
+      "max": 19,
+      "min": 0,
       "name": "sv_client_max_interp_ratio",
       "prefix": "sv",
       "value_type": "Float32"
@@ -44804,8 +44804,8 @@
         "replicated"
       ],
       "help": "This can be used to limit the value of cl_interp_ratio for connected clients (only while they are connected).\n",
-      "max": 19.0,
-      "min": 0.0,
+      "max": 19,
+      "min": 0,
       "name": "sv_client_min_interp_ratio",
       "prefix": "sv",
       "value_type": "Float32"
@@ -44959,7 +44959,7 @@
       ],
       "help": "Server min buffer size.",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "sv_cq_min_queue",
       "prefix": "sv",
       "value_type": "Int32"
@@ -45491,8 +45491,8 @@
         "release"
       ],
       "help": "Delay between player disconnecting and their corpse getting cleaned up.",
-      "max": 300.0,
-      "min": 0.0,
+      "max": 300,
+      "min": 0,
       "name": "sv_disconnected_players_cleanup_delay",
       "prefix": "sv",
       "value_type": "Int32"
@@ -45688,8 +45688,8 @@
         "replicated"
       ],
       "help": "Number of degrees of aim 'fishtail' when making an extreme strafe direction change",
-      "max": 5.0,
-      "min": -5.0,
+      "max": 5,
+      "min": -5,
       "name": "sv_extreme_strafe_accuracy_fishtail",
       "prefix": "sv",
       "value_type": "Float32"
@@ -46077,8 +46077,8 @@
         "replicated"
       ],
       "help": "Shows grenade trajectory practice visualization for this number of seconds.",
-      "max": 8.0,
-      "min": 0.0,
+      "max": 8,
+      "min": 0,
       "name": "sv_grenade_trajectory_prac_trailtime",
       "prefix": "sv",
       "value_type": "Float32"
@@ -46093,8 +46093,8 @@
         "replicated"
       ],
       "help": "Length of time grenade trajectory remains visible as a spectator.",
-      "max": 8.0,
-      "min": 0.0,
+      "max": 8,
+      "min": 0,
       "name": "sv_grenade_trajectory_time_spectator",
       "prefix": "sv",
       "value_type": "Float32"
@@ -46436,7 +46436,7 @@
       ],
       "help": "Initial upward velocity for player jumps; sqrt(2*gravity*height).",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "sv_jump_impulse",
       "prefix": "sv",
       "value_type": "Float32"
@@ -46524,8 +46524,8 @@
         "replicated"
       ],
       "help": "Cos of angle of incidence to ladder perpendicular for applying ladder_dampen",
-      "max": 1.0,
-      "min": -1.0,
+      "max": 1,
+      "min": -1,
       "name": "sv_ladder_angle",
       "prefix": "sv",
       "value_type": "Float32"
@@ -46540,8 +46540,8 @@
         "replicated"
       ],
       "help": "Amount to dampen perpendicular movement on a ladder",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "sv_ladder_dampen",
       "prefix": "sv",
       "value_type": "Float32"
@@ -46555,8 +46555,8 @@
         "replicated"
       ],
       "help": "Scale top speed on ladders",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "sv_ladder_scale_speed",
       "prefix": "sv",
       "value_type": "Float32"
@@ -46991,8 +46991,8 @@
         "replicated"
       ],
       "help": "Max bandwidth rate allowed on server, 0 == unlimited",
-      "max": 1000000.0,
-      "min": 0.0,
+      "max": 1000000,
+      "min": 0,
       "name": "sv_maxrate",
       "prefix": "sv",
       "value_type": "Int32"
@@ -47004,8 +47004,8 @@
         "developmentonly"
       ],
       "help": "Maximum replay time in seconds",
-      "max": 15.0,
-      "min": 0.0,
+      "max": 15,
+      "min": 0,
       "name": "sv_maxreplay",
       "prefix": "sv",
       "value_type": "Float32"
@@ -47035,8 +47035,8 @@
         "replicated"
       ],
       "help": "Maximum lag compensation in seconds",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "sv_maxunlag",
       "prefix": "sv",
       "value_type": "Float32"
@@ -47048,7 +47048,7 @@
         "release"
       ],
       "help": "If >0, maximumum lag compensation used for other human pawns. Applied after sv_maxunlag!",
-      "max": 1.0,
+      "max": 1,
       "min": null,
       "name": "sv_maxunlag_player",
       "prefix": "sv",
@@ -47143,8 +47143,8 @@
         "replicated"
       ],
       "help": "Min bandwidth rate allowed on server, 0 == unlimited",
-      "max": 1000000.0,
-      "min": 0.0,
+      "max": 1000000,
+      "min": 0,
       "name": "sv_minrate",
       "prefix": "sv",
       "value_type": "Int32"
@@ -47168,8 +47168,8 @@
         "developmentonly"
       ],
       "help": "Extended time in seconds before mmqueue reservation expires.",
-      "max": 180.0,
-      "min": 5.0,
+      "max": 180,
+      "min": 5,
       "name": "sv_mmqueue_reservation_extended_timeout",
       "prefix": "sv",
       "value_type": "Int32"
@@ -47180,8 +47180,8 @@
         "developmentonly"
       ],
       "help": "Time in seconds before mmqueue reservation expires.",
-      "max": 180.0,
-      "min": 5.0,
+      "max": 180,
+      "min": 5,
       "name": "sv_mmqueue_reservation_timeout",
       "prefix": "sv",
       "value_type": "Int32"
@@ -48025,7 +48025,7 @@
       ],
       "help": "Number of minutes to ban users who fail rcon authentication",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "sv_rcon_banpenalty",
       "prefix": "sv",
       "value_type": "Int32"
@@ -48050,8 +48050,8 @@
         "developmentonly"
       ],
       "help": "Max number of times a user can fail rcon authentication before being banned",
-      "max": 20.0,
-      "min": 1.0,
+      "max": 20,
+      "min": 1,
       "name": "sv_rcon_maxfailures",
       "prefix": "sv",
       "value_type": "Int32"
@@ -48063,8 +48063,8 @@
         "developmentonly"
       ],
       "help": "Number of times a user can fail rcon authentication in sv_rcon_minfailuretime before being banned",
-      "max": 20.0,
-      "min": 1.0,
+      "max": 20,
+      "min": 1,
       "name": "sv_rcon_minfailures",
       "prefix": "sv",
       "value_type": "Int32"
@@ -48077,7 +48077,7 @@
       ],
       "help": "Number of seconds to track failed rcon authentications",
       "max": null,
-      "min": 1.0,
+      "min": 1,
       "name": "sv_rcon_minfailuretime",
       "prefix": "sv",
       "value_type": "Float32"
@@ -48619,8 +48619,8 @@
         "replicated"
       ],
       "help": "Duration bullet impact indicators remain before disappearing",
-      "max": 10.0,
-      "min": 0.0,
+      "max": 10,
+      "min": 0,
       "name": "sv_showimpacts_time",
       "prefix": "sv",
       "value_type": "Float32"
@@ -48913,7 +48913,7 @@
       ],
       "help": "sv_legacy_jump only: Stamina penalty for jumping",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "sv_staminajumpcost",
       "prefix": "sv",
       "value_type": "Float32"
@@ -48929,7 +48929,7 @@
       ],
       "help": "sv_legacy_jump only: Stamina penalty for landing",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "sv_staminalandcost",
       "prefix": "sv",
       "value_type": "Float32"
@@ -48943,8 +48943,8 @@
         "replicated"
       ],
       "help": "Maximum stamina penalty",
-      "max": 100.0,
-      "min": 0.0,
+      "max": 100,
+      "min": 0,
       "name": "sv_staminamax",
       "prefix": "sv",
       "value_type": "Float32"
@@ -48959,7 +48959,7 @@
       ],
       "help": "Rate at which stamina recovers (units/sec)",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "sv_staminarecoveryrate",
       "prefix": "sv",
       "value_type": "Float32"
@@ -49404,8 +49404,8 @@
         "replicated"
       ],
       "help": "Minimum time before recognizing consecutive duck key",
-      "max": 2.0,
-      "min": 0.0,
+      "max": 2,
+      "min": 0,
       "name": "sv_timebetweenducks",
       "prefix": "sv",
       "value_type": "Float32"
@@ -50078,7 +50078,7 @@
         "release"
       ],
       "help": "The minimum ratio of players needed to vote on an issue to resolve it.",
-      "max": 1.0,
+      "max": 1,
       "min": 0.01,
       "name": "sv_vote_quorum_ratio",
       "prefix": "sv",
@@ -50153,8 +50153,8 @@
         "replicated"
       ],
       "help": "Delay between end of warmup and start of match.",
-      "max": 20.0,
-      "min": 3.0,
+      "max": 20,
+      "min": 3,
       "name": "sv_warmup_to_freezetime_delay",
       "prefix": "sv",
       "value_type": "Int32"
@@ -50823,8 +50823,8 @@
         "release"
       ],
       "help": "SourceTV broadcast delay in seconds",
-      "max": 960.0,
-      "min": 0.0,
+      "max": 960,
+      "min": 0,
       "name": "tv_delay",
       "prefix": "tv",
       "value_type": "Int32"
@@ -50837,8 +50837,8 @@
         "release"
       ],
       "help": "SourceTV[instance 1] broadcast delay in seconds",
-      "max": 960.0,
-      "min": 0.0,
+      "max": 960,
+      "min": 0,
       "name": "tv_delay1",
       "prefix": "tv",
       "value_type": "Int32"
@@ -51094,8 +51094,8 @@
         "release"
       ],
       "help": "Maximum client number on SourceTV server.",
-      "max": 255.0,
-      "min": 0.0,
+      "max": 255,
+      "min": 0,
       "name": "tv_maxclients",
       "prefix": "tv",
       "value_type": "Int32"
@@ -51106,8 +51106,8 @@
         "release"
       ],
       "help": "This number of relay client connections are reserved for SourceTV relays.",
-      "max": 255.0,
-      "min": 0.0,
+      "max": 255,
+      "min": 0,
       "name": "tv_maxclients_relayreserved",
       "prefix": "tv",
       "value_type": "Int32"
@@ -52453,8 +52453,8 @@
         "clientdll"
       ],
       "help": "Steam overlay notification position horizontal offset",
-      "max": 100.0,
-      "min": 0.0,
+      "max": 100,
+      "min": 0,
       "name": "ui_steam_overlay_notification_position_horz",
       "prefix": "ui",
       "value_type": "Int32"
@@ -52466,8 +52466,8 @@
         "clientdll"
       ],
       "help": "Steam overlay notification position vertical offset",
-      "max": 100.0,
-      "min": 0.0,
+      "max": 100,
+      "min": 0,
       "name": "ui_steam_overlay_notification_position_vert",
       "prefix": "ui",
       "value_type": "Int32"
@@ -52678,8 +52678,8 @@
         "userinfo"
       ],
       "help": "Viewmodel FOV",
-      "max": 68.0,
-      "min": 60.0,
+      "max": 68,
+      "min": 60,
       "name": "viewmodel_fov",
       "prefix": "viewmodel",
       "value_type": "Float32"
@@ -52694,7 +52694,7 @@
       ],
       "help": "viewmodel_offset_x",
       "max": 2.5,
-      "min": -2.0,
+      "min": -2,
       "name": "viewmodel_offset_x",
       "prefix": "viewmodel",
       "value_type": "Float32"
@@ -52708,8 +52708,8 @@
         "userinfo"
       ],
       "help": "viewmodel_offset_y",
-      "max": 2.0,
-      "min": -2.0,
+      "max": 2,
+      "min": -2,
       "name": "viewmodel_offset_y",
       "prefix": "viewmodel",
       "value_type": "Float32"
@@ -52723,8 +52723,8 @@
         "userinfo"
       ],
       "help": "viewmodel_offset_z",
-      "max": 2.0,
-      "min": -2.0,
+      "max": 2,
+      "min": -2,
       "name": "viewmodel_offset_z",
       "prefix": "viewmodel",
       "value_type": "Float32"
@@ -53209,8 +53209,8 @@
         "archive"
       ],
       "help": "Sound volume",
-      "max": 1.0,
-      "min": 0.0,
+      "max": 1,
+      "min": 0,
       "name": "volume",
       "prefix": "volume",
       "value_type": "Float32"
@@ -53247,8 +53247,8 @@
         "developmentonly"
       ],
       "help": "Depth of volume fog texture",
-      "max": 1024.0,
-      "min": 48.0,
+      "max": 1024,
+      "min": 48,
       "name": "volume_fog_depth",
       "prefix": "volume",
       "value_type": "Int32"
@@ -53310,8 +53310,8 @@
         "developmentonly"
       ],
       "help": "Height of volume fog texture",
-      "max": 1024.0,
-      "min": 64.0,
+      "max": 1024,
+      "min": 64,
       "name": "volume_fog_height",
       "prefix": "volume",
       "value_type": "Int32"
@@ -53375,8 +53375,8 @@
         "developmentonly"
       ],
       "help": "Width of volume fog texture",
-      "max": 1024.0,
-      "min": 64.0,
+      "max": 1024,
+      "min": 64,
       "name": "volume_fog_width",
       "prefix": "volume",
       "value_type": "Int32"
@@ -53658,7 +53658,7 @@
       ],
       "help": "Scale factor for jumping inaccuracy, set to 0 to make jumping accuracy equal to standing",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "weapon_air_spread_scale",
       "prefix": "weapon",
       "value_type": "Float32"
@@ -53806,8 +53806,8 @@
         "replicated"
       ],
       "help": "Maximum angle of slope on which the molotov will detonate",
-      "max": 90.0,
-      "min": 0.0,
+      "max": 90,
+      "min": 0,
       "name": "weapon_molotov_maxdetonateslope",
       "prefix": "weapon",
       "value_type": "Float32"
@@ -54015,7 +54015,7 @@
         "per_user"
       ],
       "help": "Additional mouse sensitivity scale factor applied when FOV is zoomed in.",
-      "max": 3.0,
+      "max": 3,
       "min": 0.01,
       "name": "zoom_sensitivity_ratio",
       "prefix": "zoom",

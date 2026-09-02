@@ -12,20 +12,22 @@ input are byte-identical.
 
 ## meta.json (1.2 KB)
 
-Build identity (`build_id`, `steam_date`, `platform`, `generated_utc` from
-`LATEST.json`, `schema_version`, `tool_version`), a `counts` object per
-family, and a `modules` list of `{module, classes, enums}`. `classes`/
-`enums`/`fields` in `counts` are distinct top-level entity names (matching
-what a reader would call "3,779 classes"); the per-module `modules[]` counts
+Build identity (`build_id`, `steam_date`, `steam_manifest_utc` and
+`platform` from the build's own `provenance.json`, `schema_version`,
+`tool_version`), a `counts` object per family, and a `modules` list of
+`{module, classes, enums}`. `classes`/`enums`/`fields` in `counts` are
+distinct top-level entity names (matching what a reader would call
+"19 classes"); the per-module `modules[]` counts
 additionally include client/server twin duplicate records, so they can sum
 to more than the top-level totals -- see the `note` field on the object.
 `counts.messages` is `protobufs.json`'s flattened total (top-level plus
-nested, 775 on this build); `counts.surfaces` is the upstream record count
-from `surface_properties.json` (303 on this build), not the number of
-distinct materials in `surfaces.json`'s `materials[]` (which is smaller,
-since the same material can have several rows).
+nested, 73 on this build); `counts.surfaces` is the
+upstream record count from `surface_properties.json`
+(4 on this build), not the number of distinct
+materials in `surfaces.json`'s `materials[]` (which is smaller, since the
+same material can have several rows).
 
-## protobufs.json (138.7 KB)
+## protobufs.json (136.8 KB)
 
 `files[]`: one entry per `.proto` file (`name`, `stem`, `package`, `imports`,
 overlay `description`/`notes`). `messages[]` and `enums[]` on each file are
@@ -33,10 +35,14 @@ overlay `description`/`notes`). `messages[]` and `enums[]` on each file are
 own entry, tagged with `qualified` (dotted `Parent.Nested` path) and
 `parent` (the parent's qualified name, or `null` for a top-level type).
 `nested_messages`/`nested_enums` on a message are the qualified names of its
-*direct* children only.
+*direct* children only. A message's `description`/`notes` come from the
+overlay entry keyed by its qualified name (`CDemoClassInfo.class_t` for a
+nested type); a bare name addresses a top-level message only. Enum
+`values[]` carry `name` and `number`; the overlay format has no slot for a
+proto enum value's prose.
 
-Field type resolution (`type_kind`, `type`, `type_file`): this build's 40
-proto files carry no `package`, so a field's raw type is either a bare
+Field type resolution (`type_kind`, `type`, `type_file`): this build's
+3 proto files carry no `package`, so a field's raw type is either a bare
 simple name (a top-level type, in this file or another) or a same-file
 dotted path to a nested type. Resolution: dotted raw values are looked up
 directly against the qualified-name index; bare raw values are looked up
@@ -96,9 +102,10 @@ case-insensitively by name.
 
 Both files carry the same `flags` legend array
 (`{name, convar_count, command_count, description}`), loaded from
-`docs/overlays/convar_flags.yml`. Generation fails loudly if that overlay
-is missing an entry for a flag this build actually uses, rather than
-silently shipping an incomplete legend.
+`docs/overlays/convar_flags.yml`. A flag this build uses that has no overlay
+entry is logged as an `INFO` line and shipped with an empty `description`,
+so a new upstream flag never blocks a regeneration; add it to the overlay to
+name it.
 
 ## gameevents.json (12.8 KB)
 
@@ -107,10 +114,11 @@ silently shipping an incomplete legend.
 `warning`, `properties`, `fields[]` (`name`, `type`, `description`).
 
 Anchor rule: a name unique across all sources uses itself as the anchor; a
-name that appears in more than one source (15 names on this build, e.g.
-`round_end` in all three `.gameevents` files) gets `<name>-<source-stem>`
+name that appears in more than one source gets `<name>-<source-stem>`
 (source with the `.gameevents` suffix removed, e.g. `round_end-mod`), so
 every event has a distinct, stable anchor even when the name repeats.
+2 names repeat on this build (`round_end`,
+for one, is declared in every `.gameevents` file).
 `duplicates` maps each such name to its list of sources.
 
 `type_legend` maps each field type to its description and, where derivable,
@@ -122,7 +130,7 @@ external header. `player_controller_and_pawn` has no single code: its
 `note` explains the bit-packing (controller id in the low byte, pawn index
 above it).
 
-## items.json (4.7 KB) / paint_kits.json (0.3 KB) / sticker_kits.json (0.5 KB) / music_kits.json (0.2 KB)
+## items.json (4.4 KB) / paint_kits.json (0.3 KB) / sticker_kits.json (0.5 KB) / music_kits.json (0.2 KB)
 
 `items[]`: `def_index`, `name` (upstream's own identifying `name` field,
 e.g. `weapon_ak47` -- previously dropped by the Markdown generator),
@@ -131,9 +139,9 @@ resolved through the prefab chain when the item's own value is empty (see
 below), `is_default`, `prefab_id`, and a `resolution` object naming, per
 resolved field, whether the value came from the item itself (`"own"`), a
 prefab in the chain (`"prefab:<id>"`), or was left unresolved (`""`).
-`rarity`/`quality` are always `null`: upstream `item_definitions.json`
-carries no per-item link to the `rarities`/`qualities` enumeration tables
-(also emitted here) -- see the `note` field on the object.
+There is no per-item `rarity`/`quality`: upstream `item_definitions.json`
+carries no link from an item to the `rarities`/`qualities` enumeration
+tables (also emitted here) -- see the `note` field on the object.
 
 Prefab resolution: an item's (or prefab's) own `prefab` field can hold
 several space-separated prefab ids (items_game.txt's multiple-inheritance
@@ -246,6 +254,12 @@ class flagged `metadata_only: true` when every one of its field ops is
 `META_CHANGE` (a metadata-only churn class, previously shown identically to
 a real structural change). `breaking[]` is `docs/overlays/schema-lens.yml`'s
 `breaking:` list, passed through as-is.
+
+## Fields with no page yet
+
+Emitted for completeness but rendered by no site page on this build:
+`maps.json`'s `map_names` list and each map's `properties` array, and
+`game_modes.json`'s per-mode `convars` list (empty upstream on this build).
 
 ## Regenerating
 

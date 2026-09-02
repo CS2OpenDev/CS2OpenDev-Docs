@@ -10,8 +10,6 @@
       "name": "default",
       "name_token": "#SFUI_WPNHUD_Knife",
       "prefab_id": "",
-      "quality": null,
-      "rarity": null,
       "resolution": {
         "classname": "own",
         "descriptionToken": "unresolved",
@@ -30,8 +28,6 @@
       "name": "weapon_ak47",
       "name_token": "",
       "prefab_id": "weapon_ak47_prefab",
-      "quality": null,
-      "rarity": null,
       "resolution": {
         "classname": "unresolved",
         "descriptionToken": "unresolved",
@@ -50,8 +46,6 @@
       "name": "weapon_deagle",
       "name_token": "",
       "prefab_id": "weapon_deagle_prefab",
-      "quality": null,
-      "rarity": null,
       "resolution": {
         "classname": "unresolved",
         "descriptionToken": "unresolved",
@@ -70,8 +64,6 @@
       "name": "weapon_elite",
       "name_token": "",
       "prefab_id": "weapon_elite_prefab",
-      "quality": null,
-      "rarity": null,
       "resolution": {
         "classname": "unresolved",
         "descriptionToken": "unresolved",
@@ -90,8 +82,6 @@
       "name": "weapon_fiveseven",
       "name_token": "",
       "prefab_id": "weapon_fiveseven_prefab",
-      "quality": null,
-      "rarity": null,
       "resolution": {
         "classname": "unresolved",
         "descriptionToken": "unresolved",
@@ -110,8 +100,6 @@
       "name": "weapon_glock",
       "name_token": "",
       "prefab_id": "weapon_glock_prefab",
-      "quality": null,
-      "rarity": null,
       "resolution": {
         "classname": "unresolved",
         "descriptionToken": "unresolved",
@@ -121,7 +109,7 @@
       }
     }
   ],
-  "note": "item_definitions.json carries no per-item rarity or quality link upstream -- only the enumeration tables above exist. rarity and quality are null on every item until SchemaTracker ships that association.",
+  "note": "item_definitions.json carries no per-item rarity or quality link upstream; only the rarities and qualities enumeration tables exist, so items[] has no rarity or quality field.",
   "prefabs": [
     {
       "classname": "",

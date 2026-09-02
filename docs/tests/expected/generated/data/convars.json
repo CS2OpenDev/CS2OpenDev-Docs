@@ -68,7 +68,7 @@
       ],
       "help": "max number of rounds to play before server changes maps",
       "max": null,
-      "min": 0.0,
+      "min": 0,
       "name": "mp_maxrounds",
       "prefix": "mp",
       "value_type": "Int32"
@@ -99,7 +99,7 @@
         "replicated"
       ],
       "help": "How many minutes each round takes.",
-      "max": 60.0,
+      "max": 60,
       "min": 0.1,
       "name": "mp_roundtime",
       "prefix": "mp",

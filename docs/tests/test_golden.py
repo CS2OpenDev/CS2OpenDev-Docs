@@ -18,11 +18,13 @@ from pathlib import Path
 from _gen import EXPECTED, FIXTURE, gd
 
 
-def run_generator(out_dir: Path, extra: list[str] | None = None) -> tuple[int, str]:
-    """Render the fixture into *out_dir*; returns ``(exit code, combined log)``."""
+def run_generator(
+    out_dir: Path, extra: list[str] | None = None, fixture: Path = FIXTURE
+) -> tuple[int, str]:
+    """Render *fixture* into *out_dir*; returns ``(exit code, combined log)``."""
     argv = [
-        "--repo-root", str(FIXTURE),
-        "--artifacts-root", str(FIXTURE / "artifacts"),
+        "--repo-root", str(fixture),
+        "--artifacts-root", str(fixture / "artifacts"),
         "--build", "9000001",
         "--platform", "windows-x86_64",
         "--output", str(out_dir),
@@ -95,6 +97,49 @@ class GoldenTests(unittest.TestCase):
             code, log = run_generator(Path(d), ["--strict"])
         self.assertNotEqual(code, 0)
         self.assertIn("CClassThatWasRemoved", log)
+
+    def test_strict_fails_on_an_unknown_overlay_stem(self):
+        with tempfile.TemporaryDirectory() as d:
+            fixture = _fixture_copy(Path(d))
+            (fixture / "docs" / "overlays" / "nonsense.yml").write_text(
+                "CCSPlayerPawnTypo:\n  description: Annotates nothing.\n",
+                encoding="utf-8",
+            )
+            code, log = run_generator(Path(d) / "out", ["--strict"], fixture)
+        self.assertNotEqual(code, 0)
+        self.assertIn("UNRESOLVED nonsense: no such module or overlay file", log)
+
+    def test_strict_fails_on_a_module_mismatch(self):
+        with tempfile.TemporaryDirectory() as d:
+            fixture = _fixture_copy(Path(d))
+            _drop_stale_overlay_keys(fixture)
+            code, log = run_generator(Path(d) / "clean", ["--strict"], fixture)
+            self.assertEqual(code, 0, log)
+            with (fixture / "docs" / "overlays" / "entity2.yml").open("a", encoding="utf-8") as fh:
+                fh.write("CCSPlayerPawn:\n  description: Filed under the wrong module.\n")
+            code, log = run_generator(Path(d) / "out", ["--strict"], fixture)
+        self.assertNotEqual(code, 0)
+        self.assertIn("MODULE     entity2/CCSPlayerPawn: CCSPlayerPawn lives in server", log)
+        self.assertNotIn("UNRESOLVED", log)
+
+
+def _fixture_copy(root: Path) -> Path:
+    dst = root / "fixture"
+    shutil.copytree(FIXTURE, dst)
+    return dst
+
+
+def _drop_stale_overlay_keys(fixture: Path) -> None:
+    """Remove the two deliberately stale keys so a copy passes ``--strict``."""
+    import yaml
+
+    overlays = fixture / "docs" / "overlays"
+    server = yaml.safe_load((overlays / "server.yml").read_text(encoding="utf-8"))
+    del server["CClassThatWasRemoved"]
+    (overlays / "server.yml").write_text(yaml.safe_dump(server), encoding="utf-8")
+    demo = yaml.safe_load((overlays / "protobufs" / "demo.yml").read_text(encoding="utf-8"))
+    del demo["messages"]["CDemoClassInfo"]["fields"]["no_such_field"]
+    (overlays / "protobufs" / "demo.yml").write_text(yaml.safe_dump(demo), encoding="utf-8")
 
 
 class ContentTests(unittest.TestCase):
@@ -196,8 +241,51 @@ class ContentTests(unittest.TestCase):
         data = json.loads(self._read("generated/downstream-codegen-schemas/convars_schema.json"))
         rt = [c for c in data["convars"] if c["name"] == "mp_roundtime"][0]
         self.assertEqual(rt["value_type"], "Float32")
-        self.assertIn("min", rt)
-        self.assertIn("max", rt)
+        self.assertEqual(rt["min"], 0.1)
+        self.assertEqual(rt["max"], 60)
+        self.assertIsInstance(rt["max"], int)
+        unbounded = [c for c in data["convars"] if c["name"] == "sv_cheats"][0]
+        self.assertIsNone(unbounded["min"])
+        self.assertIsNone(unbounded["max"])
+
+    def test_site_convars_agree_with_the_codegen_bounds(self):
+        import json
+        codegen = json.loads(self._read("generated/downstream-codegen-schemas/convars_schema.json"))
+        site = json.loads(self._read("generated/data/convars.json"))
+        by_name = {c["name"]: c for c in site["convars"]}
+        for c in codegen["convars"]:
+            self.assertEqual((c["min"], c["max"]), (by_name[c["name"]]["min"], by_name[c["name"]]["max"]), c["name"])
+
+    def test_nested_proto_overlay_key_reaches_both_outputs(self):
+        import json
+        data = json.loads(self._read("generated/data/protobufs.json"))
+        demo = [f for f in data["files"] if f["stem"] == "demo"][0]
+        nested = [m for m in demo["messages"] if m["qualified"] == "CDemoClassInfo.class_t"][0]
+        self.assertEqual(nested["description"], "One class id to network-class-name row.")
+        field = [f for f in nested["fields"] if f["name"] == "network_name"][0]
+        self.assertEqual(field["description"], "The network class name the id maps to.")
+        self.assertIn("One class id to network-class-name row.", self._read("generated/proto/demo.md"))
+
+    def test_proto_enum_values_carry_name_and_number_only(self):
+        import json
+        data = json.loads(self._read("generated/data/protobufs.json"))
+        for f in data["files"]:
+            for e in f["enums"]:
+                for v in e["values"]:
+                    self.assertEqual(set(v), {"name", "number"}, e["qualified"])
+
+    def test_items_carry_no_rarity_or_quality_field(self):
+        import json
+        data = json.loads(self._read("generated/data/items.json"))
+        for it in data["items"]:
+            self.assertNotIn("rarity", it)
+            self.assertNotIn("quality", it)
+
+    def test_meta_dates_come_from_the_build_provenance(self):
+        import json
+        meta = json.loads(self._read("generated/data/meta.json"))
+        self.assertEqual(meta["steam_manifest_utc"], "2026-08-28T00:00:00Z")
+        self.assertNotIn("generated_utc", meta)
 
     def test_commands_schema_carries_the_completion_flag(self):
         import json

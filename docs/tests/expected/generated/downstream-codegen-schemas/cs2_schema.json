@@ -5437,7 +5437,7 @@
           },
           "typeModule": "assetrename.dll",
           "annotations": {
-            "description": "CEntityIdentity pointer — the entity's identity record (name, class, handle, flags)."
+            "description": "CEntityIdentity pointer: the entity's identity record (name, class, handle, flags)."
           }
         },
         {

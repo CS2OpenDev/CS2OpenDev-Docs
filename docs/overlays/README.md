@@ -71,8 +71,9 @@ not match this build.
 
 Overlays are matched on `<module>/<name>` first and then by name alone across
 every module, so a key filed under the wrong module still renders. It would
-attach to an unrelated class of the same name if one appeared, and the
-generator prints it as a `MODULE` advisory, so prefer the real module.
+attach to an unrelated class of the same name if one appeared, so the
+generator prints it as a `MODULE` line and `--strict` fails on it; file it
+under the module the generator names.
 
 For the 189 client/server twins (`CCSPlayerController` in `server`,
 `C_CSPlayerController` and `CCSPlayerController` in `client`) the name-only
@@ -155,6 +156,9 @@ messages:
         description: "Item definition index of the weapon fired."
 ```
 
+A nested message is keyed by its dotted qualified name
+(`CDemoClassInfo.class_t`); a bare name only addresses a top-level message.
+
 Or use the multi-entity format in a single `protobufs.yml` file:
 
 ```yaml
@@ -213,10 +217,13 @@ python3 docs/generate_docs.py --repo-root . \
 Two kinds of report come out of it:
 
 - `UNRESOLVED`: the class, enum, field, proto message, proto field or game
-  event does not exist in this build.  The nearest existing name is printed
-  alongside.  These fail under `--strict`.
+  event does not exist in this build, or the file's stem is neither a schema
+  module nor one of the wrapper files (`gameevents`, `convar_flags`,
+  `schema-lens`, `well_known_constants`, the `protobufs/` directory).  The
+  nearest existing name is printed alongside.  These fail under `--strict`.
 - `MODULE`: the name exists but not in the module the key is filed under.
-  It still renders through the name-only fallback; fix the module anyway.
+  It still renders through the name-only fallback, and it fails under
+  `--strict` all the same, so move it to the module named in the report.
 
 A YAML syntax error is fatal with or without `--strict`: the file and the
 parse error are printed and the run exits 2, so a bad edit can no longer

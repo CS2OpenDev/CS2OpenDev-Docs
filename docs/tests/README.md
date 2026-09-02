@@ -77,7 +77,9 @@ lists, which is the point: the fixture is a snapshot, not a live view.
 - `demo.proto` (nested messages several levels deep), `gameevents.proto` (two
   different nested types named `key_t`, and a cross-file type reference) and
   `networkbasetypes.proto`.  `demo.proto` also imports a file that is not in
-  the set, so the unresolvable-import path is exercised.
+  the set, so the unresolvable-import path is exercised, and its overlay
+  (`protobufs/demo.yml`, synthetic) keys a nested message by its qualified
+  name, `CDemoClassInfo.class_t`.
 - Eight game events, two of which are both named `player_death` from different
   sources.
 - Convars and commands whose descriptions carry newlines, pipes and
@@ -85,7 +87,9 @@ lists, which is the point: the fixture is a snapshot, not a live view.
 - A `changelog.json` whose families are all empty, so the "no changes"
   sentence is covered.
 - Two overlay keys that resolve to nothing, so `--strict` has something to
-  fail on.
+  fail on.  The strict tests for an unknown overlay stem and a key filed
+  under the wrong module copy the fixture to a temporary directory and add
+  the offending file there.
 - The site data bundle under `generated/data/`, written by `docs/site_data.py`
   from the same fixture, so its JSON shapes are pinned by the goldens too.
 

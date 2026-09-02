@@ -10,7 +10,8 @@ change.  It keeps, deliberately:
 * one enum with overlay member annotations and one with a negative value under
   an unsigned underlying type
 * three proto files, one of which (``demo.proto``) has nested messages and
-  nested enums, plus one import that is *not* in the set
+  nested enums, plus one import that is *not* in the set; ``demo.proto``
+  also gets a synthetic overlay keyed by a nested message's qualified name
 * five game events including a name that occurs in two sources
 * convars and commands whose descriptions carry newlines, pipes and
   ``<placeholder>`` tokens
@@ -283,9 +284,9 @@ def build_overlays(repo_root: Path, dst_dir: Path, kept: dict[str, list[str]]) -
         encoding="utf-8",
     )
 
-    gt = yaml.safe_load((src / "globaltypes.yml").read_text(encoding="utf-8")) or {}
-    (dst_dir / "globaltypes.yml").write_text(
-        yaml.safe_dump({k: v for k, v in gt.items() if k in keep_names},
+    entity2 = yaml.safe_load((src / "entity2.yml").read_text(encoding="utf-8")) or {}
+    (dst_dir / "entity2.yml").write_text(
+        yaml.safe_dump({k: v for k, v in entity2.items() if k in keep_names},
                        sort_keys=True, allow_unicode=True, width=100),
         encoding="utf-8",
     )
@@ -297,6 +298,10 @@ def build_overlays(repo_root: Path, dst_dir: Path, kept: dict[str, list[str]]) -
                        sort_keys=True, allow_unicode=True, width=100),
         encoding="utf-8",
     )
+
+    # The flag legend is copied whole: site_data.py logs every flag the
+    # fixture's convars use that the legend does not name.
+    shutil.copy2(src / "convar_flags.yml", dst_dir / "convar_flags.yml")
 
     wkc = yaml.safe_load(
         (src / "well_known_constants.yml").read_text(encoding="utf-8")
@@ -326,19 +331,25 @@ def build_overlays(repo_root: Path, dst_dir: Path, kept: dict[str, list[str]]) -
         cand = src / "protobufs" / f"{stem}.yml"
         if cand.is_file():
             shutil.copy2(cand, proto_dst / cand.name)
-    if not any(proto_dst.iterdir()):
-        (proto_dst / "demo.yml").write_text(
-            "description: Demo-file container messages.\n"
-            "messages:\n"
-            "  CDemoClassInfo:\n"
-            "    description: Class id to network-class-name table.\n"
-            "    fields:\n"
-            "      classes:\n"
-            "        description: One entry per network class.\n"
-            "      no_such_field:\n"
-            "        description: Deliberately stale, for the validator test.\n",
-            encoding="utf-8",
-        )
+    # Synthetic, whatever the real overlays carry: a nested message keyed by
+    # its qualified name and one stale field for the validator.
+    (proto_dst / "demo.yml").write_text(
+        "description: Demo-file container messages.\n"
+        "messages:\n"
+        "  CDemoClassInfo:\n"
+        "    description: Class id to network-class-name table.\n"
+        "    fields:\n"
+        "      classes:\n"
+        "        description: One entry per network class.\n"
+        "      no_such_field:\n"
+        "        description: Deliberately stale, for the validator test.\n"
+        "  CDemoClassInfo.class_t:\n"
+        "    description: One class id to network-class-name row.\n"
+        "    fields:\n"
+        "      network_name:\n"
+        "        description: The network class name the id maps to.\n",
+        encoding="utf-8",
+    )
 
 
 def main(argv: list[str] | None = None) -> int:

@@ -41,7 +41,7 @@ coarse-grained project axis (`client`, `server`, `entity2`,
 ## Files
 
 - **`cs2_schema.json`** — the entity schema in SchemaTracker's **native**
-  shape (`schema_format_version` `2.1`).  Top-level: `generator`, `build_id`,
+  shape (`schema_format_version` `2.2`).  Top-level: `generator`, `build_id`,
   `platform`, `revision`, `version_date`, `version_time`, `classes`, `enums`.
   Each class carries `name`, `module` (the binary it lives in), `projectName`,
   `cppName`, `size`, `alignment`, `flags` / `flags2`, `parents[]`, `fields[]`
@@ -73,11 +73,16 @@ coarse-grained project axis (`client`, `server`, `entity2`,
 
 - **`convars_schema.json`** — the console-variable table.  Top-level:
   `convars` list; each entry has `name` / `default` / `flags` /
-  `description` (SchemaTracker additionally exposes `valueType` and min/max
-  in the source artifact).  Codegen-friendly counterpart to `convars.md`.
+  `description` / `value_type` (upstream's declared type, e.g. `Float32`,
+  `Int32`, `Bool`, `String`; omitted when the artifact records none) /
+  `min` / `max` (JSON numbers: an integer when the bound is integral, else
+  a float; `null` on a side upstream leaves unbounded).  Codegen-friendly
+  counterpart to the ConVars page.
 
 - **`commands_schema.json`** — the console-command table.  Top-level:
-  `commands` list; each entry has `name` / `flags` / `description`.
+  `commands` list; each entry has `name` / `flags` / `description` /
+  `has_completion_callback` (boolean: the command registers an argument
+  autocomplete callback).
 
 - **`well_known_constants.json`** — community-curated reference tables
   for integer / enum values downstream tooling needs but that the schema

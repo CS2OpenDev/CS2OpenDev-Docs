@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "description": "",
+      "description": "Demo-file container messages.",
       "enums": [
         {
           "name": "EDemoCommands",
@@ -9,112 +9,90 @@
           "qualified": "EDemoCommands",
           "values": [
             {
-              "description": "",
               "name": "DEM_Error",
               "number": -1
             },
             {
-              "description": "",
               "name": "DEM_Stop",
               "number": 0
             },
             {
-              "description": "",
               "name": "DEM_FileHeader",
               "number": 1
             },
             {
-              "description": "",
               "name": "DEM_FileInfo",
               "number": 2
             },
             {
-              "description": "",
               "name": "DEM_SyncTick",
               "number": 3
             },
             {
-              "description": "",
               "name": "DEM_SendTables",
               "number": 4
             },
             {
-              "description": "",
               "name": "DEM_ClassInfo",
               "number": 5
             },
             {
-              "description": "",
               "name": "DEM_StringTables",
               "number": 6
             },
             {
-              "description": "",
               "name": "DEM_Packet",
               "number": 7
             },
             {
-              "description": "",
               "name": "DEM_SignonPacket",
               "number": 8
             },
             {
-              "description": "",
               "name": "DEM_ConsoleCmd",
               "number": 9
             },
             {
-              "description": "",
               "name": "DEM_CustomData",
               "number": 10
             },
             {
-              "description": "",
               "name": "DEM_CustomDataCallbacks",
               "number": 11
             },
             {
-              "description": "",
               "name": "DEM_UserCmd",
               "number": 12
             },
             {
-              "description": "",
               "name": "DEM_FullPacket",
               "number": 13
             },
             {
-              "description": "",
               "name": "DEM_SaveGame",
               "number": 14
             },
             {
-              "description": "",
               "name": "DEM_SpawnGroups",
               "number": 15
             },
             {
-              "description": "",
               "name": "DEM_AnimationData",
               "number": 16
             },
             {
-              "description": "",
               "name": "DEM_AnimationHeader",
               "number": 17
             },
             {
-              "description": "",
               "name": "DEM_Recovery",
               "number": 18
             },
             {
-              "description": "",
               "name": "DEM_Max",
               "number": 19
             },
             {
-              "description": "",
               "name": "DEM_IsCompressed",
               "number": 64
             }
@@ -896,11 +874,11 @@
           ]
         },
         {
-          "description": "",
+          "description": "Class id to network-class-name table.",
           "fields": [
             {
               "default": "",
-              "description": "",
+              "description": "One entry per network class.",
               "label": "repeated",
               "name": "classes",
               "notes": "",
@@ -928,7 +906,7 @@
           ]
         },
         {
-          "description": "",
+          "description": "One class id to network-class-name row.",
           "fields": [
             {
               "default": "",
@@ -943,7 +921,7 @@
             },
             {
               "default": "",
-              "description": "",
+              "description": "The network class name the id maps to.",
               "label": "optional",
               "name": "network_name",
               "notes": "",
@@ -1501,77 +1479,62 @@
           "qualified": "EBaseGameEvents",
           "values": [
             {
-              "description": "",
               "name": "GE_VDebugGameSessionIDEvent",
               "number": 200
             },
             {
-              "description": "",
               "name": "GE_PlaceDecalEvent",
               "number": 201
             },
             {
-              "description": "",
               "name": "GE_ClearWorldDecalsEvent",
               "number": 202
             },
             {
-              "description": "",
               "name": "GE_ClearEntityDecalsEvent",
               "number": 203
             },
             {
-              "description": "",
               "name": "GE_ClearDecalsForEntityEvent",
               "number": 204
             },
             {
-              "description": "",
               "name": "GE_Source1LegacyGameEventList",
               "number": 205
             },
             {
-              "description": "",
               "name": "GE_Source1LegacyListenEvents",
               "number": 206
             },
             {
-              "description": "",
               "name": "GE_Source1LegacyGameEvent",
               "number": 207
             },
             {
-              "description": "",
               "name": "GE_SosStartSoundEvent",
               "number": 208
             },
             {
-              "description": "",
               "name": "GE_SosStopSoundEvent",
               "number": 209
             },
             {
-              "description": "",
               "name": "GE_SosSetSoundEventParams",
               "number": 210
             },
             {
-              "description": "",
               "name": "GE_SosSetLibraryStackFields",
               "number": 211
             },
             {
-              "description": "",
               "name": "GE_SosStopSoundEventHash",
               "number": 212
             },
             {
-              "description": "",
               "name": "GE_ClothStiffenAnimEvent",
               "number": 213
             },
             {
-              "description": "",
               "name": "GE_ClothEffectAnimEvent",
               "number": 214
             }
@@ -2663,42 +2626,34 @@
           "qualified": "SignonState_t",
           "values": [
             {
-              "description": "",
               "name": "SIGNONSTATE_NONE",
               "number": 0
             },
             {
-              "description": "",
               "name": "SIGNONSTATE_CHALLENGE",
               "number": 1
             },
             {
-              "description": "",
               "name": "SIGNONSTATE_CONNECTED",
               "number": 2
             },
             {
-              "description": "",
               "name": "SIGNONSTATE_NEW",
               "number": 3
             },
             {
-              "description": "",
               "name": "SIGNONSTATE_PRESPAWN",
               "number": 4
             },
             {
-              "description": "",
               "name": "SIGNONSTATE_SPAWN",
               "number": 5
             },
             {
-              "description": "",
               "name": "SIGNONSTATE_FULL",
               "number": 6
             },
             {
-              "description": "",
               "name": "SIGNONSTATE_CHANGELEVEL",
               "number": 7
             }
@@ -2710,67 +2665,54 @@
           "qualified": "NET_Messages",
           "values": [
             {
-              "description": "",
               "name": "net_NOP",
               "number": 0
             },
             {
-              "description": "",
               "name": "net_Disconnect_Legacy",
               "number": 1
             },
             {
-              "description": "",
               "name": "net_SplitScreenUser",
               "number": 3
             },
             {
-              "description": "",
               "name": "net_Tick",
               "number": 4
             },
             {
-              "description": "",
               "name": "net_StringCmd",
               "number": 5
             },
             {
-              "description": "",
               "name": "net_SetConVar",
               "number": 6
             },
             {
-              "description": "",
               "name": "net_SignonState",
               "number": 7
             },
             {
-              "description": "",
               "name": "net_SpawnGroup_Load",
               "number": 8
             },
             {
-              "description": "",
               "name": "net_SpawnGroup_ManifestUpdate",
               "number": 9
             },
             {
-              "description": "",
               "name": "net_SpawnGroup_SetCreationTick",
               "number": 11
             },
             {
-              "description": "",
               "name": "net_SpawnGroup_Unload",
               "number": 12
             },
             {
-              "description": "",
               "name": "net_SpawnGroup_LoadCompleted",
               "number": 13
             },
             {
-              "description": "",
               "name": "net_DebugOverlay",
               "number": 15
             }
@@ -2782,42 +2724,34 @@
           "qualified": "SpawnGroupFlags_t",
           "values": [
             {
-              "description": "",
               "name": "SPAWN_GROUP_LOAD_ENTITIES_FROM_SAVE",
               "number": 1
             },
             {
-              "description": "",
               "name": "SPAWN_GROUP_DONT_SPAWN_ENTITIES",
               "number": 2
             },
             {
-              "description": "",
               "name": "SPAWN_GROUP_SYNCHRONOUS_SPAWN",
               "number": 4
             },
             {
-              "description": "",
               "name": "SPAWN_GROUP_IS_INITIAL_SPAWN_GROUP",
               "number": 8
             },
             {
-              "description": "",
               "name": "SPAWN_GROUP_CREATE_CLIENT_ONLY_ENTITIES",
               "number": 16
             },
             {
-              "description": "",
               "name": "SPAWN_GROUP_BLOCK_UNTIL_LOADED",
               "number": 64
             },
             {
-              "description": "",
               "name": "SPAWN_GROUP_LOAD_STREAMING_DATA",
               "number": 128
             },
             {
-              "description": "",
               "name": "SPAWN_GROUP_CREATE_NEW_SCENE_WORLD",
               "number": 256
             }
@@ -3052,7 +2986,7 @@
             },
             {
               "default": "",
-              "description": "",
+              "description": "Rotation quaternion.",
               "label": "optional",
               "name": "orientation",
               "notes": "",
