@@ -12,6 +12,6 @@ CEntityInstance:
 
   fields:
     m_pEntity:
-      description: "CEntityIdentity pointer — the entity's identity record (name, class, handle, flags)."
+      description: "CEntityIdentity pointer: the entity's identity record (name, class, handle, flags)."
     m_CScriptComponent:
       description: "VScript component attached to the entity, when scripted."

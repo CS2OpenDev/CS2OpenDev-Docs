@@ -48,11 +48,11 @@ const headings = [
 		<p>
 			A console command is a named action invoked from the in-game console, a bind, or a config file:{' '}
 			<code>bot_add</code>, <code>changelevel</code>, <code>ent_fire</code>, and about{' '}
-			{commands.length.toLocaleString()} more. Unlike a convar a command carries no value of its own —
+			{commands.length.toLocaleString()} more. Unlike a convar a command carries no value of its own;
 			its help text describes the arguments it takes, and a <code>&lt;placeholder&gt;</code> token in
 			that text names an argument rather than literal syntax. The same access flags as ConVars govern who
 			may invoke a command: <code>cheat</code> requires <code>sv_cheats 1</code>,{' '}
-			<code>client_can_execute</code> lets the server trigger it on a client, and so on — see the legend
+			<code>client_can_execute</code> lets the server trigger it on a client, and so on. See the legend
 			below. A command whose <strong>Completion</strong> column reads Yes registers a tab-completion
 			callback, so typing part of its arguments and pressing Tab in the console offers candidates.
 		</p>

@@ -74,7 +74,7 @@ const headings = [
 	<div data-pagefind-body>
 		<p>
 			A game event is a named, one-shot notification the server broadcasts to clients and writes into a{' '}
-			<code>.dem</code> recording — a round starting, a player dying, a bomb being planted. Every event
+			<code>.dem</code> recording: a round starting, a player dying, a bomb being planted. Every event
 			travels as one instance of the same protobuf message,{' '}
 			{eventMsg ? (
 				<a href={protoMessageHref(eventMsg.file.stem, eventMsg.message.qualified)}>
@@ -153,7 +153,7 @@ const headings = [
 					{typeLegend.map((t) => (
 						<tr id={typeLegendAnchor(t.type)}>
 							<td><code>{t.type}</code></td>
-							<td class="value">{t.key_t_type_code === null ? '—' : t.key_t_type_code}</td>
+							<td class="value">{t.key_t_type_code === null ? '-' : t.key_t_type_code}</td>
 							<td class="ann">{t.description}</td>
 							<td class="ann">{t.note}</td>
 						</tr>

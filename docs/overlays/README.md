@@ -84,9 +84,9 @@ A few module-level files use the same physical layout but a different
 top-level shape because their downstream generator wants the file as a
 unit:
 
-- `gameevents.yml` — top-level `events:` mapping of `<event_name>:` →
+- `gameevents.yml`: top-level `events:` mapping of `<event_name>:` to
   overlay dict, applied to `gameevents_schema.json`.
-- `well_known_constants.yml` — top-level `constants:` list, projected
+- `well_known_constants.yml`: top-level `constants:` list, projected
   into `well_known_constants.json`.
 
 The loader treats these the same as ordinary module files but also

@@ -33,5 +33,5 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_iszPrivateVScripts` | CUtlSymbolLarge |  |  |
-| `0x10` | `m_pEntity` | [CEntityIdentity](../entity2/CEntityIdentity.md)* |  | CEntityIdentity pointer — the entity's identity record (name, class, handle, flags). |
+| `0x10` | `m_pEntity` | [CEntityIdentity](../entity2/CEntityIdentity.md)* |  | CEntityIdentity pointer: the entity's identity record (name, class, handle, flags). |
 | `0x28` | `m_CScriptComponent` | [CScriptComponent](../entity2/CScriptComponent.md)* |  | VScript component attached to the entity, when scripted. |
