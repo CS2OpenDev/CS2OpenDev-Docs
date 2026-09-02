@@ -375,15 +375,18 @@ export default function DataTable({
 			if (key.startsWith(prefix)) params.delete(key);
 		}
 		if (filterText) params.set(`${prefix}q`, filterText);
-		if (sortKey && sortDir) params.set(`${prefix}sort`, `${sortKey}:${sortDir}`);
+		// The initial sort is the page default, so it never goes into the URL.
+		const isDefaultSort = sortKey === (initialSort?.key ?? null) && sortDir === (initialSort?.dir ?? null);
+		if (sortKey && sortDir && !isDefaultSort) params.set(`${prefix}sort`, `${sortKey}:${sortDir}`);
 		if (clampedPage > 1) params.set(`${prefix}page`, String(clampedPage));
 		for (const [k, vals] of Object.entries(activeFacets)) {
 			if (vals.length) params.set(`${prefix}${k}`, vals.join(','));
 		}
 		const qs = params.toString();
 		const newUrl = `${window.location.pathname}${qs ? `?${qs}` : ''}${window.location.hash}`;
-		window.history.replaceState(window.history.state, '', newUrl);
-	}, [id, filterText, activeFacets, sortKey, sortDir, clampedPage]);
+		const current = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+		if (newUrl !== current) window.history.replaceState(window.history.state, '', newUrl);
+	}, [id, filterText, activeFacets, sortKey, sortDir, clampedPage, initialSort]);
 
 	// Scroll a revealed row into view once its page has actually rendered.
 	useEffect(() => {

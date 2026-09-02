@@ -69,7 +69,7 @@ const sections = [
 		const target = mapLegacyPath(path, params);
 		if (target) {
 			document.getElementById('cs2-404-redirecting')?.removeAttribute('hidden');
-			location.replace(`${base}${target}`);
+			location.replace(`${base}${target}${location.hash}`);
 		}
 	</script>
 </StarlightPage>

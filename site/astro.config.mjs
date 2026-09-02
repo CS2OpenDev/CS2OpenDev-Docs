@@ -104,6 +104,20 @@ for (const { from, to } of enumerateLegacyRedirects({ modules: idx.modules, prot
 	redirects[from] = `${BASE}${to}`;
 }
 
+const LEGACY_ANCHOR_SCRIPT = [
+	'(function(){function go(){var h=decodeURIComponent(location.hash.slice(1));',
+	'if(!h||document.getElementById(h))return;',
+	'var t=document.querySelector(\'[data-legacy-anchor="\'+h.replace(/"/g,\'\')+\'"]\');',
+	'var l=h.toLowerCase(),all=document.querySelectorAll(\'[id]\'),i;',
+	'if(!t){for(i=0;i<all.length;i++){if(all[i].id.toLowerCase()===l){t=all[i];break;}}}',
+	'if(!t){for(i=0;i<all.length;i++){if(all[i].id.toLowerCase().indexOf(l+\'-\')===0){t=all[i];break;}}}',
+	'if(!t)return;',
+	'history.replaceState(history.state,\'\',location.pathname+location.search+\'#\'+t.id);',
+	't.scrollIntoView();}',
+	'if(document.readyState===\'loading\'){document.addEventListener(\'DOMContentLoaded\',go);}else{go();}',
+	'window.addEventListener(\'hashchange\',go);})();',
+].join('');
+
 export default defineConfig({
 	site: 'https://cs2opendev.github.io',
 	base: BASE,
@@ -119,7 +133,13 @@ export default defineConfig({
 			description: `CS2 entity schema, protobuf and console reference for build ${idx.provenance.buildId} (${idx.provenance.platform}).`,
 			customCss: ['./src/styles/custom.css'],
 			favicon: '/favicon.svg',
-			head: [{ tag: 'meta', attrs: { name: 'theme-color', content: '#0b0e14' } }],
+			head: [
+				{ tag: 'meta', attrs: { name: 'theme-color', content: '#0b0e14' } },
+				// Old Jekyll anchors were lowercased and duplicates got numeric suffixes;
+				// the new ids keep case and use a source suffix. Resolve a missing hash by
+				// data-legacy-anchor, then case-insensitive id, then id prefix.
+				{ tag: 'script', content: LEGACY_ANCHOR_SCRIPT },
+			],
 			social: [
 				{
 					icon: 'github',

@@ -55,6 +55,17 @@ const rows: Row[] = events.map((ev) => ({
 	search: `${ev.name} ${ev.source} ${ev.description}`.trim(),
 }));
 
+// Old links used the bare #name. For duplicated names, prefer the mod declaration
+// (the CS2 event), else the one with the most fields.
+const preferredLegacy = new Map<string, string>();
+for (const name of Object.keys(duplicates)) {
+	const candidates = events.filter((e) => e.name === name);
+	const pick =
+		candidates.find((e) => sourceStem(e.source) === 'mod') ??
+		[...candidates].sort((a, b) => b.fields.length - a.fields.length)[0];
+	if (pick) preferredLegacy.set(name, pick.anchor);
+}
+
 const headings = [
 	{ depth: 2, slug: 'type-legend', text: 'Field types' },
 	{ depth: 2, slug: 'sources', text: 'Sources' },
@@ -193,7 +204,13 @@ const headings = [
 		<h2 id="events">Events</h2>
 		{events.map((ev) => (
 			<>
-				<h3 id={ev.anchor} data-pagefind-weight="7">{eventHeading(ev, duplicates)}</h3>
+				<h3
+					id={ev.anchor}
+					data-pagefind-weight="7"
+					data-legacy-anchor={preferredLegacy.get(ev.name) === ev.anchor ? ev.name : undefined}
+				>
+					{eventHeading(ev, duplicates)}
+				</h3>
 				<span class="cs2-aliases">{eventAliases(ev)}</span>
 				{ev.description && <p>{ev.description}</p>}
 				{ev.notes && <p class="cs2-note">{ev.notes}</p>}
