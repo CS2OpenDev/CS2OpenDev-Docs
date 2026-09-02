@@ -1174,7 +1174,7 @@ The most bandwidth-intensive server message; carries the delta-compressed entity
 |-------|--------|------|-------|-------------|
 | `max_entries` | 1 | int32 | optional | Maximum entity index present in this packet. |
 | `updated_entries` | 2 | int32 | optional | Number of entity change records in the data blob. |
-| `legacy_is_delta` | 3 | bool | optional |  |
+| `legacy_is_delta` | 3 | bool | optional | Legacy flag: true for incremental updates; false for a full baseline snapshot. |
 | `update_baseline` | 4 | bool | optional |  |
 | `baseline` | 5 | int32 | optional | Which baseline buffer (0 or 1) the data is relative to. |
 | `delta_from` | 6 | int32 | optional | Tick that the delta originates from. |
@@ -1250,7 +1250,7 @@ Incremental update to an existing string table, adding or modifying entries sinc
 | Field | Number | Type | Label | Description |
 |-------|--------|------|-------|-------------|
 | `table_id` | 1 | int32 | optional | Index of the string table to update. |
-| `num_changed_entries` | 2 | int32 | optional |  |
+| `num_changed_entries` | 2 | int32 | optional | Number of changed entries in this update. |
 | `string_data` | 3 | bytes | optional | Delta-encoded table data blob. |
 
 ### `CSVCMsg_VoiceData`
@@ -1260,7 +1260,7 @@ Relays a voice-audio packet from a speaking player to all listeners.
 | Field | Number | Type | Label | Description |
 |-------|--------|------|-------|-------------|
 | `audio` | 1 | [CMsgVoiceAudio](#cmsgvoiceaudio) | optional | CMsgVoiceAudio containing the compressed audio data and format. |
-| `client_deprecated` | 2 | int32 | optional | *(default: `-1`)* |
+| `client_deprecated` | 2 | int32 | optional | Deprecated. Player slot index of the speaker. *(default: `-1`)* |
 | `proximity` | 3 | bool | optional | True when the voice is 3D positional (proximity voice chat). |
 | `xuid` | 4 | fixed64 | optional |  |
 | `audible_mask` | 5 | int32 | optional | Bitmask of player slots that should hear this audio. |

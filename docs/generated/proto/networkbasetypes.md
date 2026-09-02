@@ -372,7 +372,7 @@ Combined position and orientation transform message.
 |-------|--------|------|-------|-------------|
 | `position` | 1 | [CMsgVector](#cmsgvector) | optional | World-space translation vector. |
 | `scale` | 2 | float | optional |  |
-| `orientation` | 3 | [CMsgQuaternion](#cmsgquaternion) | optional |  |
+| `orientation` | 3 | [CMsgQuaternion](#cmsgquaternion) | optional | Rotation quaternion. |
 
 ### `CMsgRGBA`
 

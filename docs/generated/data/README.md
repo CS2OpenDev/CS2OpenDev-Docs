@@ -25,7 +25,7 @@ from `surface_properties.json` (303 on this build), not the number of
 distinct materials in `surfaces.json`'s `materials[]` (which is smaller,
 since the same material can have several rows).
 
-## protobufs.json (1868.4 KB)
+## protobufs.json (1868.6 KB)
 
 `files[]`: one entry per `.proto` file (`name`, `stem`, `package`, `imports`,
 overlay `description`/`notes`). `messages[]` and `enums[]` on each file are

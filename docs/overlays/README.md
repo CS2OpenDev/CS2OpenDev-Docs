@@ -64,9 +64,10 @@ toolutils2  vphysics2  worldrenderer
 ```
 
 plus `protobufs` for Protobuf files.  There is no `globaltypes` module: every
-enum now carries a `projectName`, so the enums that file still names
-(`SolidType_t`, `MoveType_t`, …) live under `server`.  Run the generator with
-`--strict` to be told which of your keys do not match this build.
+enum now carries a `projectName`, so shared enums such as `SolidType_t` and
+`MoveType_t` are filed under `server.yml` alongside the classes that use
+them.  Run the generator with `--strict` to be told which of your keys do
+not match this build.
 
 Overlays are matched on `<module>/<name>` first and then by name alone across
 every module, so a key filed under the wrong module still renders. It would

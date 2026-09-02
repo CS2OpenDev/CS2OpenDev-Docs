@@ -64,7 +64,7 @@ messages:
     fields:
       position:
         description: "World-space translation vector."
-      rotation:
+      orientation:
         description: "Rotation quaternion."
 
   CMsgRGBA:

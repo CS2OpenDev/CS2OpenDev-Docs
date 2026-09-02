@@ -147,7 +147,7 @@ messages:
     fields:
       table_id:
         description: "Index of the string table to update."
-      changed_entries:
+      num_changed_entries:
         description: "Number of changed entries in this update."
       string_data:
         description: "Delta-encoded table data blob."
@@ -166,10 +166,8 @@ messages:
         description: "Maximum entity index present in this packet."
       updated_entries:
         description: "Number of entity change records in the data blob."
-      is_delta:
-        description: "True for incremental updates; false for a full baseline snapshot."
-      update_from_tick:
-        description: "Tick the delta is computed from (only valid when is_delta is true)."
+      legacy_is_delta:
+        description: "Legacy flag: true for incremental updates; false for a full baseline snapshot."
       baseline:
         description: "Which baseline buffer (0 or 1) the data is relative to."
       delta_from:
@@ -214,8 +212,8 @@ messages:
     fields:
       audio:
         description: "CMsgVoiceAudio containing the compressed audio data and format."
-      client:
-        description: "Player slot index of the speaker."
+      client_deprecated:
+        description: "Deprecated. Player slot index of the speaker."
       audible_mask:
         description: "Bitmask of player slots that should hear this audio."
       proximity:

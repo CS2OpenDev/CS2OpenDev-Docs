@@ -31884,7 +31884,7 @@
             },
             {
               "default": "",
-              "description": "",
+              "description": "Legacy flag: true for incremental updates; false for a full baseline snapshot.",
               "label": "optional",
               "name": "legacy_is_delta",
               "notes": "",
@@ -32418,7 +32418,7 @@
             },
             {
               "default": "",
-              "description": "",
+              "description": "Number of changed entries in this update.",
               "label": "optional",
               "name": "num_changed_entries",
               "notes": "",
@@ -32470,7 +32470,7 @@
             },
             {
               "default": "-1",
-              "description": "",
+              "description": "Deprecated. Player slot index of the speaker.",
               "label": "optional",
               "name": "client_deprecated",
               "notes": "",
@@ -35422,7 +35422,7 @@
             },
             {
               "default": "",
-              "description": "",
+              "description": "Rotation quaternion.",
               "label": "optional",
               "name": "orientation",
               "notes": "",

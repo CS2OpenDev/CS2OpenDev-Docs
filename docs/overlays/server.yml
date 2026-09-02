@@ -268,12 +268,6 @@ CCSPlayerPawn:
     m_flVelocityModifier:
       description: "Multiplicative speed modifier applied on top of base movement speed (0.0–1.0 typically; reduced while injured or tased)."
 
-    m_flHitHeading:
-      description: "Horizontal heading angle (degrees) of the last incoming hit; drives the flinch animation direction."
-
-    m_nHitBodyPart:
-      description: "Hit-group constant of the last incoming hit (head=1, chest=2, stomach=3, leftarm=4, rightarm=5, leftleg=6, rightleg=7, neck=8)."
-
     m_flFlinchStack:
       description: "Accumulated flinch value from recent damage; drives the camera-shake magnitude."
       notes: "Only sent to the owning player (LocalPlayerExclusive)."
@@ -314,19 +308,6 @@ CCSPlayerPawn:
     m_unFreezetimeEndEquipmentValue:
       description: "Equipment value at the moment freeze time ended."
 
-    m_aimPunchAngle:
-      description: "Accumulated aim-punch (recoil kick) angle in pitch and yaw applied to the camera view, in degrees."
-      notes: "Networked at full 32-bit precision. Clients subtract this from view angles to derive the true aim direction."
-
-    m_aimPunchAngleVel:
-      description: "Current velocity of the aim-punch angle – how fast the recoil is decaying per tick."
-
-    m_aimPunchTickBase:
-      description: "Server tick at which the aim-punch sample list was last reset."
-
-    m_aimPunchTickFraction:
-      description: "Fractional tick offset for interpolating the aim-punch curve between ticks."
-
     m_bIsBuyMenuOpen:
       description: "True while the player's buy menu is open."
 
@@ -338,9 +319,6 @@ CCSPlayerPawn:
 
     m_vRagdollDamageForce:
       description: "World-space impulse vector applied to the ragdoll bone on death."
-
-    m_vRagdollDamagePosition:
-      description: "World-space position of the hit point that caused the fatal damage."
 
     m_szRagdollDamageWeaponName:
       description: "Class name of the weapon that killed this player (used to select the correct death ragdoll)."
@@ -401,9 +379,6 @@ CCSPlayerPawn:
       description: "Server-authoritative eye angles (pitch, yaw, roll) used for hit-box calculation and third-person rendering."
       notes: "Encoded at full qangle_precise precision. The definitive source for a player's look direction."
 
-    m_thirdPersonHeading:
-      description: "Horizontal heading angle shown in third-person and spectator view (may differ from eye yaw when crouching/moving)."
-
     m_iRetakesOffering:
       description: "Retakes-mode offering index: which weapon/utility load-out this player was offered for the retake."
 
@@ -424,15 +399,6 @@ CCSPlayerPawn:
 
     m_flEmitSoundTime:
       description: "GameTime of the next footstep sound emission; controls footstep sound spacing."
-
-    m_flSlopeDropOffset:
-      description: "Vertical offset applied when the player is walking down a slope (prevents foot clipping)."
-
-    m_flSlopeDropHeight:
-      description: "Height of the slope the player is descending; used to scale the slope-drop animation."
-
-    m_vHeadConstraintOffset:
-      description: "Additional world-space offset applied to the head bone IK constraint."
 
     m_vecPlayerPatchEconIndices:
       description: "Array of 5 item-definition indices for the agent patch slots (team patches worn on the uniform)."
@@ -495,12 +461,6 @@ CCSPlayer_WeaponServices:
     m_flNextAttack:
       description: "GameTime before which no weapon switch is permitted (e.g. after throwing a grenade)."
       notes: "Only sent to the owning player (LocalPlayerExclusive)."
-
-    m_bIsLookingAtWeapon:
-      description: "True while the player is pressing the inspect key and the weapon is in the idle look-at animation."
-
-    m_bIsHoldingLookAtWeapon:
-      description: "True while the inspect key is held down (distinct from the animation actually playing)."
 
     m_networkAnimTiming:
       description: "Byte array encoding animation transition timing for the active weapon, used to synchronise viewmodel animations across client and server."
@@ -1429,17 +1389,6 @@ CCSGameRulesProxy:
 # maintainer-verified AGENTS.md architecture notes.
 # ---------------------------------------------------------------------------
 
-CEntityInstance:
-  description: >
-    Root of the entity class hierarchy (server and client).  Everything that
-    has an entity handle ultimately derives from this.
-
-  fields:
-    m_pEntity:
-      description: "CEntityIdentity pointer — the entity's identity record (name, class, handle, flags)."
-    m_CScriptComponent:
-      description: "VScript component attached to the entity, when scripted."
-
 CBaseCombatCharacter:
   description: >
     Base class for characters that can carry weapons and take part in combat
@@ -1589,3 +1538,183 @@ CItem:
       description: "Entity I/O output fired when a player picks the item up."
     m_bActivateWhenAtRest:
       description: "Whether the item only becomes pickup-able once it has come to rest."
+
+# ---------------------------------------------------------------------------
+# Global enums (shared enums referenced across server and client entities;
+# every enum in this build carries a projectName, and these all resolve to
+# server)
+# ---------------------------------------------------------------------------
+
+# --- Physics / movement ------------------------------------------------------
+
+SolidType_t:
+  description: "Collision solid type used for an entity's physics representation (m_nSolidType)."
+  fields:
+    SOLID_NONE:
+      description: "No collision."
+    SOLID_BBOX:
+      description: "Axis-aligned bounding box."
+    SOLID_OBB:
+      description: "Oriented bounding box."
+    SOLID_SPHERE:
+      description: "Sphere."
+    SOLID_VPHYSICS:
+      description: "Full VPhysics collision mesh."
+    SOLID_CAPSULE:
+      description: "Capsule (used by player/character collision)."
+    SOLID_CYLINDER:
+      description: "Cylinder."
+
+MoveType_t:
+  description: "How an entity is moved and simulated each tick (m_MoveType)."
+  fields:
+    MOVETYPE_NONE:
+      description: "Not moved by the engine."
+    MOVETYPE_WALK:
+      description: "Player-style ground movement (walk/run/jump)."
+    MOVETYPE_FLY:
+      description: "Flies in a straight line, ignoring gravity."
+    MOVETYPE_FLYGRAVITY:
+      description: "Ballistic arc under gravity (thrown grenades, projectiles)."
+    MOVETYPE_VPHYSICS:
+      description: "Driven by the VPhysics simulation."
+    MOVETYPE_PUSH:
+      description: "Pushes other entities without being blocked (movers/doors)."
+    MOVETYPE_NOCLIP:
+      description: "Free movement with no collision (noclip)."
+    MOVETYPE_OBSERVER:
+      description: "Spectator free-look movement."
+    MOVETYPE_LADDER:
+      description: "Climbing a ladder."
+    MOVETYPE_CUSTOM:
+      description: "Movement handled by custom game code."
+
+MoveCollide_t:
+  description: "How a moving entity resolves collisions along its path (fly-movetype entities)."
+
+# --- Rendering ---------------------------------------------------------------
+
+RenderMode_t:
+  description: "Transparency / rendering method for a model entity (m_nRenderMode)."
+  fields:
+    kRenderNormal:
+      description: "Opaque, standard rendering."
+    kRenderTransAlpha:
+      description: "Alpha-blended translucency."
+    kRenderNone:
+      description: "Not rendered (invisible but still present)."
+
+RenderFx_t:
+  description: "Special render effect applied to an entity (pulse / fade / strobe / glow variants; m_nRenderFX)."
+
+# --- Player / life state -----------------------------------------------------
+
+LifeState_t:
+  description: "Alive/dead state of a pawn (m_lifeState)."
+  fields:
+    LIFE_ALIVE:
+      description: "Alive and playable."
+    LIFE_DYING:
+      description: "Playing the death animation; not yet fully dead."
+    LIFE_DEAD:
+      description: "Dead."
+    LIFE_RESPAWNABLE:
+      description: "Dead and eligible to respawn."
+    LIFE_RESPAWNING:
+      description: "In the process of respawning."
+
+CSPlayerState:
+  description: "Connection / spawn state machine for a CS2 player (m_iPlayerState)."
+  fields:
+    STATE_ACTIVE:
+      description: "In active play, controlling a pawn."
+    STATE_WELCOME:
+      description: "Just connected; showing the intro / welcome screen."
+    STATE_PICKINGTEAM:
+      description: "Choosing a team."
+    STATE_DEATH_ANIM:
+      description: "Playing the death animation."
+    STATE_OBSERVER_MODE:
+      description: "Spectating (dead or connected as an observer)."
+    STATE_DORMANT:
+      description: "Not yet fully in the game (loading / intermission)."
+
+ObserverMode_t:
+  description: "Spectator camera mode (m_iObserverMode)."
+  fields:
+    OBS_MODE_NONE:
+      description: "Not observing."
+    OBS_MODE_FIXED:
+      description: "Fixed camera position."
+    OBS_MODE_IN_EYE:
+      description: "First-person: sees through the observed player's eyes."
+    OBS_MODE_CHASE:
+      description: "Third-person chase camera behind the observed player."
+    OBS_MODE_ROAMING:
+      description: "Free-roaming (free-fly) camera."
+
+ObserverInterpState_t:
+  description: "Transition state of the spectator camera as it moves between targets."
+
+# --- Weapons -----------------------------------------------------------------
+
+CSWeaponType:
+  description: "Broad weapon type classification (CCSWeaponBaseVData.m_WeaponType)."
+  fields:
+    WEAPONTYPE_C4:
+      description: "The bomb (C4)."
+    WEAPONTYPE_TASER:
+      description: "The zeus x27 taser."
+    WEAPONTYPE_GRENADE:
+      description: "A throwable grenade."
+    WEAPONTYPE_EQUIPMENT:
+      description: "Equipment (kevlar, defuse kit, and similar non-firing items)."
+
+CSWeaponCategory:
+  description: "Coarse buy-menu weapon category (CCSWeaponBaseVData.m_WeaponCategory)."
+
+CSWeaponMode:
+  description: "Weapon fire mode: primary vs secondary (right-click) fire."
+  fields:
+    Primary_Mode:
+      description: "Primary fire."
+    Secondary_Mode:
+      description: "Secondary fire (e.g. scope, burst, silencer toggle)."
+
+CSWeaponSilencerType:
+  description: "Whether and how a weapon is silenced."
+  fields:
+    WEAPONSILENCER_NONE:
+      description: "No silencer."
+    WEAPONSILENCER_DETACHABLE:
+      description: "Detachable silencer (M4A1-S, USP-S)."
+    WEAPONSILENCER_INTEGRATED:
+      description: "Permanently integrated silencer."
+
+gear_slot_t:
+  description: "Gear slot a weapon occupies on the player (weapon-switch wheel grouping)."
+  fields:
+    GEAR_SLOT_RIFLE:
+      description: "Primary weapon slot (rifles, SMGs, shotguns, LMGs)."
+    GEAR_SLOT_PISTOL:
+      description: "Secondary weapon slot (pistols)."
+    GEAR_SLOT_KNIFE:
+      description: "Melee slot (knife)."
+    GEAR_SLOT_GRENADES:
+      description: "Grenade slot."
+    GEAR_SLOT_C4:
+      description: "Bomb (C4) slot."
+
+loadout_slot_t:
+  description: >
+    Full per-loadout equipment-slot enumeration (weapons, grenades, and
+    cosmetic/agent slots).  Used to index CCSPlayerController_InventoryServices
+    loadout data.
+
+# --- Misc gameplay -----------------------------------------------------------
+
+MedalRank_t:
+  description: "Medal tier for profile achievements (none / bronze / silver / gold)."
+
+ShakeCommand_t:
+  description: "Screen-shake command type sent to clients (start / stop / amplitude / frequency / duration)."
