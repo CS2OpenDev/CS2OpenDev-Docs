@@ -5,7 +5,6 @@ import { defineConfig, passthroughImageService } from 'astro/config';
 import react from '@astrojs/react';
 import starlight from '@astrojs/starlight';
 import starlightBlog from 'starlight-blog';
-import starlightSidebarTopics from 'starlight-sidebar-topics';
 import { codegenDir } from './src/lib/paths';
 import { loadSchemaIndex, pagedEntities } from './src/lib/data/schema';
 import { entitySlug } from './src/lib/urls';
@@ -142,6 +141,7 @@ export default defineConfig({
 			disable404Route: true,
 			description: `CS2 entity schema, protobuf and console reference for build ${idx.provenance.buildId} (${idx.provenance.platform}).`,
 			customCss: ['./src/styles/custom.css'],
+			sidebar: referenceSidebar,
 			favicon: '/favicon.svg',
 			head: [
 				// Starlight's page grounds: white in light mode, hsl(224, 10%, 10%) in dark.
@@ -173,43 +173,6 @@ export default defineConfig({
 				},
 			},
 			plugins: [
-				starlightSidebarTopics(
-					[
-						{
-							// No icon: the topic switcher's icon wrapper alone is ~2 KB of inline
-							// SVG path data repeated on every page, and there is only one topic.
-							id: 'reference',
-							label: 'Reference',
-							link: '/',
-							items: referenceSidebar,
-						},
-					],
-					{
-						// Entity, module and protobuf pages are src/pages routes, so the plugin
-						// cannot infer their topic from the sidebar.
-						topics: {
-							reference: [
-								'/schemas/**',
-								'/protobufs/**',
-								'/generated/**',
-								'/convars/**',
-								'/commands/**',
-								'/game-events/**',
-								'/network-messages/**',
-								'/items/**',
-								'/maps/**',
-								'/game-modes/**',
-								'/props/**',
-								'/surfaces/**',
-								'/modules/**',
-								'/changelog/**',
-								'/schema-history/**',
-								'/codegen-schemas/**',
-							],
-						},
-						exclude: ['/blog', '/blog/**', '/404'],
-					}
-				),
 				starlightBlog({
 					title: 'Blog',
 					prefix: 'blog',

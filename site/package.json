@@ -22,8 +22,7 @@
     "mermaid": "11.17.2",
     "react": "19.2.8",
     "react-dom": "19.2.8",
-    "starlight-blog": "0.29.0",
-    "starlight-sidebar-topics": "0.8.0"
+    "starlight-blog": "0.29.0"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",

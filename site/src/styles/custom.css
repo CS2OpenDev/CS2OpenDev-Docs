@@ -81,9 +81,7 @@
 	scrollbar-width: thin;
 }
 
-/* Both Starlight's SidebarSublist and starlight-sidebar-topics set
-   overflow-wrap: anywhere on li. The id keeps this ahead of the plugin, whose
-   scoped styles are unlayered. */
+/* Starlight's SidebarSublist sets overflow-wrap: anywhere on li. */
 #starlight__sidebar :is(li, a, summary, span) {
 	overflow-wrap: normal;
 	word-break: normal;
