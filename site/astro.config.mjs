@@ -178,6 +178,8 @@ export default defineConfig({
 				starlightBlog({
 					title: 'Blog',
 					prefix: 'blog',
+					// The feed's channel link ignores the base path, and nobody subscribes to it.
+					rss: false,
 					authors: {
 						cs2opendev: { name: 'CS2OpenDev' },
 					},
