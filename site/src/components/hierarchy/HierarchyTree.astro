@@ -1,19 +1,23 @@
 ---
 import Mermaid from '../Mermaid.astro';
 import { renderTreeHtml, type TreeNode } from '../../lib/tree';
+import type { CappedDiagram } from './diagram';
 
 interface Props {
 	nodes: TreeNode[];
 	countLine: string;
 	/** Suppresses the per-node module tag for nodes from this module. Omit to mark every node. */
 	homeModule?: string;
-	/** Inheritance edges for a collapsed mermaid classDiagram. Omitted above the class cap. */
-	diagramEdges?: string[];
+	/** Inheritance edges for a mermaid classDiagram, already capped. */
+	diagram?: CappedDiagram;
+	/** Rendered as `<details open>` rather than closed. Defaults to closed. */
+	diagramOpen?: boolean;
 }
 
-const { nodes, countLine, homeModule, diagramEdges } = Astro.props;
+const { nodes, countLine, homeModule, diagram, diagramOpen } = Astro.props;
 const treeHtml = nodes.length > 0 ? renderTreeHtml(nodes, homeModule ? { homeModule } : {}) : '';
-const diagramCode = diagramEdges && diagramEdges.length > 0 ? `classDiagram\n${diagramEdges.join('\n')}` : undefined;
+const diagramCode = diagram && diagram.lines.length > 0 ? `classDiagram\n${diagram.lines.join('\n')}` : undefined;
+const truncated = diagram !== undefined && diagram.total > diagram.edgeCount;
 ---
 
 {nodes.length === 0 ? (
@@ -33,11 +37,16 @@ const diagramCode = diagramEdges && diagramEdges.length > 0 ? `classDiagram\n${d
 		<div class="cs2-hierarchy-tree" data-pagefind-ignore set:html={treeHtml} />
 
 		{diagramCode && (
-			<details class="cs2-diagram" data-pagefind-ignore>
+			<details class="cs2-diagram" data-pagefind-ignore open={diagramOpen ? true : undefined}>
 				<summary>
-					Inheritance diagram <span class="cs2-count">({diagramEdges!.length} edges)</span>
+					Inheritance diagram <span class="cs2-count">({diagram!.edgeCount} edges)</span>
 				</summary>
 				<Mermaid code={diagramCode} />
+				{truncated && (
+					<p class="cs2-note">
+						Showing the first {diagram!.edgeCount} of {diagram!.total} inheritance edges; the tree above is complete.
+					</p>
+				)}
 			</details>
 		)}
 	</>

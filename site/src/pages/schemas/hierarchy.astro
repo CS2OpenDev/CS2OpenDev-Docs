@@ -2,11 +2,14 @@
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import HierarchyTree from '../../components/hierarchy/HierarchyTree.astro';
 import { buildForest, sortRootsBySize } from '../../components/hierarchy/forest';
+import { forestInheritanceDiagramTagged } from '../../components/hierarchy/diagram';
 import { schemasHref } from '../../lib/urls';
 import { loadSchemaIndex, type ClassEntity } from '../../lib/data/schema';
 
 /** The two projects a class page can be attributed to; every other module stays on its own page. */
 const COMBINED_MODULES = ['server', 'client'];
+/** Same cap the old Jekyll site used for its per-module UML page. */
+const DIAGRAM_EDGE_CAP = 300;
 
 const idx = loadSchemaIndex();
 const p = idx.provenance;
@@ -16,6 +19,7 @@ const classes = COMBINED_MODULES.flatMap((m) =>
 );
 const roots = sortRootsBySize(buildForest(idx, classes));
 const counts = COMBINED_MODULES.map((m) => ({ module: m, count: classes.filter((c) => c.module === m).length }));
+const diagram = forestInheritanceDiagramTagged(roots, DIAGRAM_EDGE_CAP);
 
 const headings = [{ depth: 2, slug: 'tree', text: 'Inheritance tree' }];
 ---
@@ -42,6 +46,7 @@ const headings = [{ depth: 2, slug: 'tree', text: 'Inheritance tree' }];
 		<HierarchyTree
 			nodes={roots}
 			countLine={counts.map((c) => `${c.count} ${c.module}`).join(', ') + `, ${roots.length} root hierarchies.`}
+			diagram={diagram}
 		/>
 	</div>
 </StarlightPage>

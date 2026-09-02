@@ -7,8 +7,8 @@ export interface Props {
 const { code, caption } = Astro.props;
 ---
 
-<figure class="mermaid-figure">
-	<pre class="mermaid" data-pagefind-ignore set:text={code}></pre>
+<figure class="mermaid-figure" data-pagefind-ignore>
+	<pre class="mermaid" set:text={code}></pre>
 	{caption && <figcaption class="mermaid-caption">{caption}</figcaption>}
 </figure>
 
@@ -24,6 +24,9 @@ const { code, caption } = Astro.props;
 
 	const sources = new WeakMap<HTMLElement, string>();
 	const teardowns = new WeakMap<HTMLElement, () => void>();
+	// A render is queued but data-processed isn't set until the queue drains, so the
+	// observer and a details toggle can both queue the same node before either finishes.
+	const queued = new WeakSet<HTMLElement>();
 
 	let mermaidPromise: Promise<MermaidApi> | null = null;
 	let themeWatched = false;
@@ -326,6 +329,15 @@ const { code, caption } = Astro.props;
 		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 	}
 
+	function renderOne(node: HTMLElement): void {
+		if (node.hasAttribute('data-processed') || queued.has(node)) return;
+		queued.add(node);
+		queue(async () => {
+			await render([node]);
+			queued.delete(node);
+		});
+	}
+
 	function boot(): void {
 		const nodes = diagrams();
 		if (nodes.length === 0) return;
@@ -339,13 +351,28 @@ const { code, caption } = Astro.props;
 		}
 		const observer = new IntersectionObserver(
 			(entries) => {
-				if (!entries.some((entry) => entry.isIntersecting)) return;
-				observer.disconnect();
-				queue(() => render(pending));
+				for (const entry of entries) {
+					if (!entry.isIntersecting) continue;
+					observer.unobserve(entry.target);
+					renderOne(entry.target as HTMLElement);
+				}
 			},
 			{ rootMargin: '400px 0px' }
 		);
-		for (const node of pending) observer.observe(node);
+
+		for (const node of pending) {
+			const details = node.closest('details');
+			// A closed <details> hides its content at zero size, and opening it does not
+			// reliably re-fire the observer in every browser. Render straight off the
+			// toggle in that case rather than waiting on the observer to notice; the
+			// observer only has to catch what already has real geometry to intersect.
+			if (details) {
+				details.addEventListener('toggle', () => {
+					if (details.open) renderOne(node);
+				});
+			}
+			if (!details || details.open) observer.observe(node);
+		}
 	}
 
 	if (document.readyState === 'loading') {

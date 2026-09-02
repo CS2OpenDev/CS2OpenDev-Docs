@@ -9,6 +9,7 @@ import {
 	fileGroup,
 	fileWireIds,
 	loadProtoIndex,
+	messageBoxDiagram,
 	messageCount,
 	messageHeadings,
 	referenceDiagram,
@@ -33,13 +34,23 @@ if (!file) throw new Error(`Unknown proto file ${stem}`);
 
 const schemaIdx = loadSchemaIndex();
 
+/** Boxes-only fallback diagram, for files with messages but no reference edges. */
+const DIAGRAM_MESSAGE_CAP = 60;
+/** Reference graphs at or under this size open by default; bigger ones start collapsed. */
+const DIAGRAM_OPEN_EDGE_CAP = 60;
+
 const group = fileGroup(file.stem);
 const messages = topLevelMessages(file);
 const enums = topLevelEnums(file);
 const wireIds = fileWireIds(file);
-const diagramEligible = messageCount(file) <= 40;
-const diagramLines = diagramEligible ? referenceDiagram(file) : [];
-const diagramEdgeCount = diagramEligible ? referenceEdges(file).length : 0;
+const edges = referenceEdges(file);
+const hasEdges = edges.length > 0;
+const diagramLines = hasEdges
+	? referenceDiagram(file)
+	: messageCount(file) <= DIAGRAM_MESSAGE_CAP
+		? messageBoxDiagram(file, DIAGRAM_MESSAGE_CAP)
+		: [];
+const diagramOpen = hasEdges ? edges.length <= DIAGRAM_OPEN_EDGE_CAP : true;
 
 const localImports = file.imports.map((i) => i.replace(/\.proto$/, ''));
 
@@ -146,19 +157,21 @@ const description =
 		{diagramLines.length > 0 && (
 			<>
 				<h2 id="reference-graph">Reference graph</h2>
-				<details class="cs2-diagram" data-pagefind-ignore>
+				<details class="cs2-diagram" data-pagefind-ignore open={diagramOpen ? true : undefined}>
 					<summary>
-						Message reference graph <span class="cs2-count">({diagramEdgeCount} edges)</span>
+						{hasEdges ? 'Message reference graph' : 'Messages'}{' '}
+						<span class="cs2-count">({hasEdges ? `${edges.length} edges` : `${diagramLines.length} messages`})</span>
 					</summary>
-					<Mermaid code={`flowchart LR\n${diagramLines.join('\n')}`} />
+					<Mermaid code={hasEdges ? `flowchart LR\n${diagramLines.join('\n')}` : `classDiagram\n${diagramLines.join('\n')}`} />
 				</details>
 			</>
 		)}
 
-		{!diagramEligible && (
+		{!hasEdges && messageCount(file) > DIAGRAM_MESSAGE_CAP && (
 			<p class="cs2-note">
-				{file.name} declares {messageCount(file)} messages; the reference graph is only rendered for
-				files with 40 or fewer, where it stays legible.
+				{file.name} declares {messageCount(file)} messages and no message-to-message references; the
+				diagram is only rendered for files with {DIAGRAM_MESSAGE_CAP} or fewer messages, where it stays
+				legible.
 			</p>
 		)}
 	</div>

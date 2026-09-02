@@ -194,6 +194,13 @@ const warning = ent.annotations?.warning;
 		</details>
 	)}
 
+	{isClass && diagram.length > 0 && (
+		<Mermaid
+			code={`classDiagram\n${diagram.join('\n')}`}
+			caption="Inheritance chain, direct subclasses (up to 20) and a few composition edges"
+		/>
+	)}
+
 	{ent.kind === 'enum' && (
 		<>
 			<h2 id="values">Values</h2>
@@ -323,13 +330,6 @@ const warning = ent.annotations?.warning;
 					))}. The artifact does not record where a non-primary base sits inside the object, so
 					those fields are not placed in the table above.
 				</p>
-			)}
-
-			{diagram.length >= 3 && (
-				<details class="cs2-diagram" data-pagefind-ignore>
-					<summary>Relationship diagram <span class="cs2-count">({diagram.length} edges)</span></summary>
-					<Mermaid code={`classDiagram\n${diagram.join('\n')}`} />
-				</details>
 			)}
 
 			{kv3Text && (

@@ -12,8 +12,10 @@ export function getStaticPaths() {
 	return idx.modules.map((module) => ({ params: { module } }));
 }
 
-/** Diagrams past this size stop being legible and just restate the tree above. */
+/** Modules at or under this size get the diagram open by default; past it, it starts collapsed. */
 const DIAGRAM_CLASS_CAP = 40;
+/** Same cap the old Jekyll site used for its per-module UML page. */
+const DIAGRAM_EDGE_CAP = 300;
 
 const { module } = Astro.params;
 const idx = loadSchemaIndex();
@@ -21,8 +23,8 @@ const p = idx.provenance;
 
 const classes = (idx.byModule.get(module!) ?? []).filter((e): e is ClassEntity => e.kind === 'class');
 const roots = sortRootsBySize(buildModuleForest(idx, module!));
-const diagramEdges =
-	classes.length > 0 && classes.length <= DIAGRAM_CLASS_CAP ? forestInheritanceDiagram(roots) : undefined;
+const diagram = forestInheritanceDiagram(roots, DIAGRAM_EDGE_CAP);
+const diagramOpen = classes.length <= DIAGRAM_CLASS_CAP;
 
 const headings = [{ depth: 2, slug: 'tree', text: 'Inheritance tree' }];
 ---
@@ -52,7 +54,8 @@ const headings = [{ depth: 2, slug: 'tree', text: 'Inheritance tree' }];
 			nodes={roots}
 			countLine={`${classes.length} classes, ${roots.length} root hierarchies.`}
 			homeModule={module}
-			diagramEdges={diagramEdges}
+			diagram={diagram}
+			diagramOpen={diagramOpen}
 		/>
 	</div>
 </StarlightPage>
