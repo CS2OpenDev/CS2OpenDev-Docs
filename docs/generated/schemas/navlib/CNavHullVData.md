@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNavHullVData
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 60 bytes (`0x3c`) · **Align:** 4 · **Module:** navlib
 
 **Metadata:** `MVDataRoot`

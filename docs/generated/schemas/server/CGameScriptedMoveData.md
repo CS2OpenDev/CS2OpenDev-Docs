@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CGameScriptedMoveData
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 116 bytes (`0x74`) · **Align:** 4 · **Module:** server
 
 **Relationships:**

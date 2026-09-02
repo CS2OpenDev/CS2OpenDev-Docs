@@ -8,7 +8,9 @@ nav_exclude: true
 
 # CBinaryUpdateNode
 
-**Kind:** class · **Size:** 144 bytes (`0x90`) · **Align:** 255 · **Module:** animgraphlib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 144 bytes (`0x90`) · **Align:** n/a (unspecified) · **Module:** animgraphlib
 
 **Inherits from:** [CAnimUpdateNodeBase](../animgraphlib/CAnimUpdateNodeBase.md)
 

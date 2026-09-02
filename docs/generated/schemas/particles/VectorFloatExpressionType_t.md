@@ -8,13 +8,15 @@ nav_exclude: true
 
 # VectorFloatExpressionType_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** particles
 
 ## Values
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `VECTOR_FLOAT_EXPRESSION_UNINITIALIZED` | -1 | Uninitialized |
+| `VECTOR_FLOAT_EXPRESSION_UNINITIALIZED` | -1 (`0xffffffff`) | Uninitialized |
 | `VECTOR_FLOAT_EXPRESSION_DOTPRODUCT` | 0 | Dot Product |
 | `VECTOR_FLOAT_EXPRESSION_DISTANCE` | 1 | Distance Between |
 | `VECTOR_FLOAT_EXPRESSION_DISTANCESQR` | 2 | Distance Between Squared |

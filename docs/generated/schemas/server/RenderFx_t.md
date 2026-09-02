@@ -8,6 +8,8 @@ nav_exclude: true
 
 # RenderFx_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 Special render effect applied to an entity (pulse / fade / strobe / glow variants; m_nRenderFX).
 
 **Kind:** enum · **Underlying:** `uint8_t` · **Module:** server

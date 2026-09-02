@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNmGraphDocSyncEventIndexConditionNode
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 264 bytes (`0x108`) · **Align:** 8 · **Module:** animdoclib
 
 **Inherits from:** [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md)
@@ -18,6 +20,7 @@ nav_exclude: true
 classDiagram
     CNmGraphDocFlowNode <|-- CNmGraphDocSyncEventIndexConditionNode
     CNmGraphDocNode <|-- CNmGraphDocFlowNode
+    CNmGraphDocSyncEventIndexConditionNode *-- `CNmSyncEventIndexConditionNode::TriggerMode_t`
 ```
 
 ## Memory layout
@@ -34,7 +37,7 @@ classDiagram
 | `0x48` | `m_pSecondaryGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
 | `0x50` | `m_inputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 4 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0xd8` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
-| `0x100` | `m_triggerMode` | CNmSyncEventIndexConditionNode::TriggerMode_t |  |  |
+| `0x100` | `m_triggerMode` | [CNmSyncEventIndexConditionNode::TriggerMode_t](../animlib/CNmSyncEventIndexConditionNode.TriggerMode_t.md) |  |  |
 | `0x104` | `m_nSyncEventIdx` | int32 |  |  |
 
 <details><summary>KV3 class defaults</summary>

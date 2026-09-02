@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CCSPlayer_HostageServices
+title: CCSPlayer_HostageServices (client)
 nav_exclude: true
 ---
 
@@ -8,10 +8,13 @@ nav_exclude: true
 
 # CCSPlayer_HostageServices
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 Component tracking whether this player is currently carrying a hostage.
 
+**Kind:** class · **Size:** 80 bytes (`0x50`) · **Align:** n/a (unspecified) · **Module:** client
 
-**Kind:** class · **Size:** 80 bytes (`0x50`) · **Align:** 255 · **Module:** client
+**Twin:** [CCSPlayer_HostageServices (server)](../server/CCSPlayer_HostageServices.md)
 
 **Inherits from:** [CPlayerPawnComponent](../server/CPlayerPawnComponent.md)
 

@@ -8,7 +8,9 @@ nav_exclude: true
 
 # CSmartPropOperation_Trace
 
-**Kind:** class · **Size:** 848 bytes (`0x350`) · **Align:** 255 · **Module:** smartprops
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 848 bytes (`0x350`) · **Align:** n/a (unspecified) · **Module:** smartprops
 
 **Inherits from:** [CSmartPropTransformOperation](../smartprops/CSmartPropTransformOperation.md)
 

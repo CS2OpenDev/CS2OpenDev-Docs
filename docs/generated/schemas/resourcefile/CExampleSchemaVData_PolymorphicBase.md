@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CExampleSchemaVData_PolymorphicBase
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** 8 · **Module:** resourcefile
 
 **Derived by:** [CExampleSchemaVData_PolymorphicDerivedA](../resourcefile/CExampleSchemaVData_PolymorphicDerivedA.md), [CExampleSchemaVData_PolymorphicDerivedB](../resourcefile/CExampleSchemaVData_PolymorphicDerivedB.md)
@@ -22,7 +24,7 @@ classDiagram
 
 ## Memory layout
 
-1 fields (1 declared here, 0 inherited). Offsets are absolute from the object base.
+1 field (1 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|

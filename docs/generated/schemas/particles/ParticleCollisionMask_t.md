@@ -8,13 +8,15 @@ nav_exclude: true
 
 # ParticleCollisionMask_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** enum · **Underlying:** `uint64_t` · **Module:** particles
 
 ## Values
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `PARTICLE_MASK_ALL` | -1 | Mask All |
+| `PARTICLE_MASK_ALL` | -1 (`0xffffffffffffffff`) | Mask All |
 | `PARTICLE_MASK_OPAQUE` | 128 | Mask Opaque |
 | `PARTICLE_MASK_WATER` | 98304 | Mask Water |
 | `PARTICLE_MASK_SOLID` | 798721 | Mask Solid |

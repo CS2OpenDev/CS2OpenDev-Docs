@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CSmartPropSelectionCriteria_EndCap
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 200 bytes (`0xc8`) · **Align:** 8 · **Module:** smartprops
 
 **Inherits from:** [CSmartPropSelectionCriteria](../smartprops/CSmartPropSelectionCriteria.md)

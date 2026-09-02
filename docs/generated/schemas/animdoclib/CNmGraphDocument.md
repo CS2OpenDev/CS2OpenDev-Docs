@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNmGraphDocument
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 184 bytes (`0xb8`) · **Align:** 8 · **Module:** animdoclib
 
 **Inherits from:** [CNmAnimDocument](../animdoclib/CNmAnimDocument.md)
@@ -19,6 +21,7 @@ classDiagram
     CNmAnimDocument <|-- CNmGraphDocument
     CNmGraphDocument --> CNmGraphDocFlowGraph
     CNmGraphDocument *-- CNmVariationHierarchy
+    CNmGraphDocument *-- `CNmGraphDocument::DebugParameterSet_t`
 ```
 
 ## Memory layout
@@ -30,7 +33,7 @@ classDiagram
 | `0x68` | `m_nVersion` | int32 | [CNmAnimDocument](../animdoclib/CNmAnimDocument.md) | `MPropertySuppressField` |
 | `0x70` | `m_pRootGraph` | [CNmGraphDocFlowGraph](../animdoclib/CNmGraphDocFlowGraph.md)* |  |  |
 | `0x78` | `m_variationHierarchy` | [CNmVariationHierarchy](../animdoclib/CNmVariationHierarchy.md) |  |  |
-| `0x90` | `m_debugParameterSets` | CUtlLeanVector< [CNmGraphDocument](../animdoclib/CNmGraphDocument.md)::DebugParameterSet_t > |  |  |
+| `0x90` | `m_debugParameterSets` | CUtlLeanVector< [CNmGraphDocument::DebugParameterSet_t](../animdoclib/CNmGraphDocument.DebugParameterSet_t.md) > |  |  |
 | `0xa0` | `m_dictionaryIDSetIDs` | CUtlVector< V_uuid_t > |  |  |
 
 <details><summary>KV3 class defaults</summary>

@@ -8,6 +8,8 @@ nav_exclude: true
 
 # C_OP_ExternalWindForce
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 8120 bytes (`0x1fb8`) · **Align:** 8 · **Module:** particles
 
 **Inherits from:** [CParticleFunctionForce](../particles/CParticleFunctionForce.md)
@@ -57,7 +59,7 @@ classDiagram
 | `0x1618` | `m_bUseBasicMovementGravity` | bool |  | `MPropertyFriendlyName use Movement Basic for Local Gravity & Buoyancy Scale` `MPropertySuppressExpr !m_bSampleGravity` |
 | `0x1620` | `m_flLocalGravityScale` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName local gravity scale` `MPropertySuppressExpr !m_bSampleGravity` |
 | `0x1790` | `m_flLocalBuoyancyScale` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName local gravity buoyancy scale` `MPropertySuppressExpr !m_bSampleGravity` |
-| `0x1900` | `m_vecBuoyancyForce` | [CPerParticleVecInput](../particleslib/CPerParticleVecInput.md) |  | `MPropertyFriendlyName buoyancy force` `MPropertySuppressExpr !m_bSampleWater \|\| m_bSampleGravity` |
+| `0x1900` | `m_vecBuoyancyForce` | [CPerParticleVecInput](../particleslib/CPerParticleVecInput.md) |  | `MPropertyFriendlyName buoyancy force` `MPropertySuppressExpr !m_bSampleWater &#124;&#124; m_bSampleGravity` |
 
 <details><summary>KV3 class defaults</summary>
 

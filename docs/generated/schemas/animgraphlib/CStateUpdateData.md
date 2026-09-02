@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CStateUpdateData
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** 8 · **Module:** animgraphlib
 
 **Relationships:**
@@ -25,11 +27,11 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_bIsEndState` | bitfield:1 |  |  |
-| `0x0` | `m_bIsPassthrough` | bitfield:1 |  |  |
-| `0x0` | `m_bIsPassthroughRootMotion` | bitfield:1 |  |  |
-| `0x0` | `m_bIsStartState` | bitfield:1 |  |  |
-| `0x0` | `m_bPreEvaluatePassthroughTransitionPath` | bitfield:1 |  |  |
+| `0x0` bit 0 | `m_bIsEndState` | bitfield:1 |  |  |
+| `0x0` bit 1 | `m_bIsPassthrough` | bitfield:1 |  |  |
+| `0x0` bit 2 | `m_bIsPassthroughRootMotion` | bitfield:1 |  |  |
+| `0x0` bit 3 | `m_bIsStartState` | bitfield:1 |  |  |
+| `0x0` bit 4 | `m_bPreEvaluatePassthroughTransitionPath` | bitfield:1 |  |  |
 | `0x0` | `m_name` | CUtlString |  |  |
 | `0x8` | `m_hScript` | [AnimScriptHandle](../modellib/AnimScriptHandle.md) |  |  |
 | `0x10` | `m_transitionIndices` | CUtlVector< int32 > |  |  |

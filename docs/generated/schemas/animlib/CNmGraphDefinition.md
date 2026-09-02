@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNmGraphDefinition
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 440 bytes (`0x1b8`) · **Align:** 8 · **Module:** animlib
 
 **Relationships:**
@@ -16,6 +18,9 @@ nav_exclude: true
 classDiagram
     CNmGraphDefinition *-- InfoForResourceTypeCNmSkeleton
     CNmGraphDefinition --> CNmGraphVariationUserData
+    CNmGraphDefinition *-- `CNmGraphDefinition::ReferencedGraphSlot_t`
+    CNmGraphDefinition *-- `CNmGraphDefinition::ExternalGraphSlot_t`
+    CNmGraphDefinition *-- `CNmGraphDefinition::ExternalPoseSlot_t`
 ```
 
 ## Memory layout
@@ -33,9 +38,9 @@ classDiagram
 | `0x50` | `m_controlParameterIDs` | CUtlVector< CGlobalSymbol > |  |  |
 | `0x68` | `m_virtualParameterIDs` | CUtlVector< CGlobalSymbol > |  |  |
 | `0x80` | `m_virtualParameterNodeIndices` | CUtlVector< int16 > |  |  |
-| `0x98` | `m_referencedGraphSlots` | CUtlVector< [CNmGraphDefinition](../animlib/CNmGraphDefinition.md)::ReferencedGraphSlot_t > |  |  |
-| `0xb0` | `m_externalGraphSlots` | CUtlVector< [CNmGraphDefinition](../animlib/CNmGraphDefinition.md)::ExternalGraphSlot_t > |  |  |
-| `0xc8` | `m_externalPoseSlots` | CUtlVector< [CNmGraphDefinition](../animlib/CNmGraphDefinition.md)::ExternalPoseSlot_t > |  |  |
+| `0x98` | `m_referencedGraphSlots` | CUtlVector< [CNmGraphDefinition::ReferencedGraphSlot_t](../animlib/CNmGraphDefinition.ReferencedGraphSlot_t.md) > |  |  |
+| `0xb0` | `m_externalGraphSlots` | CUtlVector< [CNmGraphDefinition::ExternalGraphSlot_t](../animlib/CNmGraphDefinition.ExternalGraphSlot_t.md) > |  |  |
+| `0xc8` | `m_externalPoseSlots` | CUtlVector< [CNmGraphDefinition::ExternalPoseSlot_t](../animlib/CNmGraphDefinition.ExternalPoseSlot_t.md) > |  |  |
 | `0x150` | `m_nodePaths` | CUtlVector< CUtlString > |  |  |
 | `0x168` | `m_resources` | CUtlVector< CStrongHandleVoid > |  |  |
 

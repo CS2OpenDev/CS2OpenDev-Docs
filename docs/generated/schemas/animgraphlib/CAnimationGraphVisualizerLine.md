@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CAnimationGraphVisualizerLine
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 112 bytes (`0x70`) · **Align:** 16 · **Module:** animgraphlib
 
 **Inherits from:** [CAnimationGraphVisualizerPrimitiveBase](../animgraphlib/CAnimationGraphVisualizerPrimitiveBase.md)

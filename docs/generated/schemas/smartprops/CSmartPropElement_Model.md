@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CSmartPropElement_Model
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 784 bytes (`0x310`) · **Align:** 8 · **Module:** smartprops
 
 **Inherits from:** [CSmartPropElement](../smartprops/CSmartPropElement.md)

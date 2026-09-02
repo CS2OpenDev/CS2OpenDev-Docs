@@ -8,13 +8,15 @@ nav_exclude: true
 
 # PlayerConnectedState
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** server
 
 ## Values
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `NeverConnected` | -1 |  |
+| `NeverConnected` | -1 (`0xffffffff`) |  |
 | `Connected` | 0 |  |
 | `Connecting` | 1 |  |
 | `Reconnecting` | 2 |  |

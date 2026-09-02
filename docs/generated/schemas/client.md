@@ -7,6 +7,8 @@ nav_exclude: true
 
 # Module: client
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 [📊 View UML Diagram](../diagrams/client.md)
 
 490 types. Each links to its own page with the full field layout.

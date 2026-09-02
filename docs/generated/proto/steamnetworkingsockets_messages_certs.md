@@ -44,11 +44,11 @@ direction LR
     +CMsgSteamDatagramCertificate cert
   }
 
-  CMsgSteamDatagramCertificate --> EKeyType : key_type
+  CMsgSteamDatagramCertificate --> CMsgSteamDatagramCertificate_EKeyType : key_type
   CMsgSteamDatagramCertificate --> CMsgSteamNetworkingIdentityLegacyBinary : legacy_identity_binary
   CMsgSteamDatagramCertificateRequest --> CMsgSteamDatagramCertificate : cert
 
-  class EKeyType{
+  class CMsgSteamDatagramCertificate_EKeyType["CMsgSteamDatagramCertificate.EKeyType"]{
     <<enumeration>>
     INVALID
     ED25519
@@ -60,8 +60,8 @@ direction LR
 
 ### `CMsgSteamNetworkingIdentityLegacyBinary`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `generic_bytes` | 2 | bytes | optional |  |
 | `generic_string` | 3 | string | optional |  |
 | `ipv6_and_port` | 4 | bytes | optional |  |
@@ -69,9 +69,9 @@ direction LR
 
 ### `CMsgSteamDatagramCertificate`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `key_type` | 1 | CMsgSteamDatagramCertificate.EKeyType | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `key_type` | 1 | [CMsgSteamDatagramCertificate.EKeyType](#cmsgsteamdatagramcertificateekeytype) | optional |  |
 | `key_data` | 2 | bytes | optional |  |
 | `legacy_steam_id` | 4 | fixed64 | optional |  |
 | `gameserver_datacenter_ids` | 5 | fixed32 | repeated |  |
@@ -82,10 +82,17 @@ direction LR
 | `identity_string` | 12 | string | optional |  |
 | `ip_addresses` | 13 | string | repeated |  |
 
+#### `CMsgSteamDatagramCertificate.EKeyType`
+
+| Name | Value |
+|------|-------|
+| `INVALID` | 0 |
+| `ED25519` | 1 |
+
 ### `CMsgSteamDatagramCertificateSigned`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `private_key_data` | 1 | bytes | optional |  |
 | `cert` | 4 | bytes | optional |  |
 | `ca_key_id` | 5 | fixed64 | optional |  |
@@ -93,6 +100,6 @@ direction LR
 
 ### `CMsgSteamDatagramCertificateRequest`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `cert` | 1 | [CMsgSteamDatagramCertificate](#cmsgsteamdatagramcertificate) | optional |  |

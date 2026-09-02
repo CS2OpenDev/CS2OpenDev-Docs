@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CPulseCell_Unknown
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 88 bytes (`0x58`) · **Align:** 8 · **Module:** pulse_runtime_lib
 
 **Inherits from:** [CPulseCell_Base](../pulse_runtime_lib/CPulseCell_Base.md)

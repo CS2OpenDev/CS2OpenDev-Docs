@@ -109,8 +109,9 @@ classDiagram
     CPulseCell_Step_CallExternalMethod *-- PulseMethodCallMode_t
     CPulseCell_Step_CallExternalMethod *-- CPulse_ResumePoint
     CPulseCell_Step_PublicOutput *-- PulseRuntimeOutputIndex_t
+    CPulseCell_Timeline *-- `CPulseCell_Timeline::TimelineEvent_t`
     CPulseCell_Timeline *-- CPulse_ResumePoint
-    "CPulseCell_Timeline::TimelineEvent_t" *-- CPulse_OutflowConnection
+    `CPulseCell_Timeline::TimelineEvent_t` *-- CPulse_OutflowConnection
     CPulseCell_WaitForCursorsWithTag *-- PulseCursorCancelPriority_t
     CPulseCell_WaitForCursorsWithTagBase *-- CPulse_ResumePoint
     CPulseCell_WaitForObservable *-- CPulse_ResumePoint
@@ -135,6 +136,7 @@ classDiagram
     CPulse_OutflowConnection *-- PulseRegisterMap_t
     OutflowWithRequirements_t *-- CPulse_OutflowConnection
     OutflowWithRequirements_t *-- PulseDocNodeID_t
-    "PulseNodeDynamicOutflows_t::DynamicOutflow_t" *-- CPulse_OutflowConnection
+    PulseNodeDynamicOutflows_t *-- `PulseNodeDynamicOutflows_t::DynamicOutflow_t`
+    `PulseNodeDynamicOutflows_t::DynamicOutflow_t` *-- CPulse_OutflowConnection
     PulseSelectorOutflowList_t *-- OutflowWithRequirements_t
 ```

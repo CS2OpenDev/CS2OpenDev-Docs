@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CCSPlayer_AimPunchServices
+title: CCSPlayer_AimPunchServices (server)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CCSPlayer_AimPunchServices
 
-**Kind:** class · **Size:** 232 bytes (`0xe8`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 232 bytes (`0xe8`) · **Align:** n/a (unspecified) · **Module:** server
+
+**Twin:** [CCSPlayer_AimPunchServices (client)](../client/CCSPlayer_AimPunchServices.md)
 
 **Inherits from:** [CPlayerPawnComponent](../server/CPlayerPawnComponent.md)
 

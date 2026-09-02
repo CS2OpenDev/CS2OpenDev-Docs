@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CResourceAssetTypeInfo
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 328 bytes (`0x148`) · **Align:** 8 · **Module:** toolutils2
 
 **Inherits from:** [CSimpleAssetTypeInfo](../toolutils2/CSimpleAssetTypeInfo.md)

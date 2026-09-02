@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CSMatchStats_t
+title: CSMatchStats_t (client)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CSMatchStats_t
 
-**Kind:** class · **Size:** 128 bytes (`0x80`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 128 bytes (`0x80`) · **Align:** n/a (unspecified) · **Module:** client
+
+**Twin:** [CSMatchStats_t (server)](../server/CSMatchStats_t.md)
 
 **Inherits from:** [CSPerRoundStats_t](../client/CSPerRoundStats_t.md)
 

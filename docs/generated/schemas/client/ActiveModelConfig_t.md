@@ -1,6 +1,6 @@
 ---
 layout: default
-title: ActiveModelConfig_t
+title: ActiveModelConfig_t (client)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # ActiveModelConfig_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 112 bytes (`0x70`) · **Align:** 8 · **Module:** client
+
+**Twin:** [ActiveModelConfig_t (server)](../server/ActiveModelConfig_t.md)
 
 **Relationships:**
 

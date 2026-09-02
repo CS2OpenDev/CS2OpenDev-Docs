@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNmGraphDocVariationIDComparisonNode
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 520 bytes (`0x208`) · **Align:** 8 · **Module:** animdoclib
 
 **Inherits from:** [CNmGraphDocVariationDataNode](../animdoclib/CNmGraphDocVariationDataNode.md)
@@ -19,7 +21,7 @@ classDiagram
     CNmGraphDocVariationDataNode <|-- CNmGraphDocVariationIDComparisonNode
     CNmGraphDocFlowNode <|-- CNmGraphDocVariationDataNode
     CNmGraphDocNode <|-- CNmGraphDocFlowNode
-    CNmGraphDocVariationIDComparisonNode *-- Comparison_t
+    CNmGraphDocVariationIDComparisonNode *-- `CNmIDComparisonNode::Comparison_t`
 ```
 
 ## Memory layout
@@ -36,10 +38,10 @@ classDiagram
 | `0x48` | `m_pSecondaryGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
 | `0x50` | `m_inputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 4 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0xd8` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
-| `0x100` | `m_pDefaultVariationData` | [CNmGraphDocVariationDataNode](../animdoclib/CNmGraphDocVariationDataNode.md)::CData* | [CNmGraphDocVariationDataNode](../animdoclib/CNmGraphDocVariationDataNode.md) | `MPropertySuppressField` |
-| `0x108` | `m_overrides` | CUtlVector< [CNmGraphDocVariationDataNode](../animdoclib/CNmGraphDocVariationDataNode.md)::OverrideValue_t > | [CNmGraphDocVariationDataNode](../animdoclib/CNmGraphDocVariationDataNode.md) | `MPropertySuppressField` |
+| `0x100` | `m_pDefaultVariationData` | [CNmGraphDocVariationDataNode::CData](../animdoclib/CNmGraphDocVariationDataNode.CData.md)* | [CNmGraphDocVariationDataNode](../animdoclib/CNmGraphDocVariationDataNode.md) | `MPropertySuppressField` |
+| `0x108` | `m_overrides` | CUtlVector< [CNmGraphDocVariationDataNode::OverrideValue_t](../animdoclib/CNmGraphDocVariationDataNode.OverrideValue_t.md) > | [CNmGraphDocVariationDataNode](../animdoclib/CNmGraphDocVariationDataNode.md) | `MPropertySuppressField` |
 | `0x120` | `m_defaultResourceName` | CResourceName | [CNmGraphDocVariationDataNode](../animdoclib/CNmGraphDocVariationDataNode.md) | `MPropertySuppressField` |
-| `0x200` | `m_comparison` | CNmIDComparisonNode::[Comparison_t](../animgraphdoclib/Comparison_t.md) |  |  |
+| `0x200` | `m_comparison` | [CNmIDComparisonNode::Comparison_t](../animlib/CNmIDComparisonNode.Comparison_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

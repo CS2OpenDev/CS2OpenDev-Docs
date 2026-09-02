@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CAnimGraphDoc_ConditionContainer
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 48 bytes (`0x30`) · **Align:** 8 · **Module:** animgraphdoclib
 
 **Derived by:** [CAnimGraphDoc_AndCondition](../animgraphdoclib/CAnimGraphDoc_AndCondition.md), [CAnimGraphDoc_OrCondition](../animgraphdoclib/CAnimGraphDoc_OrCondition.md)
@@ -23,7 +25,7 @@ classDiagram
 
 ## Memory layout
 
-1 fields (1 declared here, 0 inherited). Offsets are absolute from the object base.
+1 field (1 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|

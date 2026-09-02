@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CPulseCell_PlaySequence
+title: CPulseCell_PlaySequence (server)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CPulseCell_PlaySequence
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 320 bytes (`0x140`) · **Align:** 8 · **Module:** server
+
+**Twin:** [CPulseCell_PlaySequence (client)](../client/CPulseCell_PlaySequence.md)
 
 **Inherits from:** [CPulseCell_BaseYieldingInflow](../pulse_runtime_lib/CPulseCell_BaseYieldingInflow.md)
 

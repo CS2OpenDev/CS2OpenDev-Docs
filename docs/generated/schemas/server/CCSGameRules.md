@@ -8,13 +8,13 @@ nav_exclude: true
 
 # CCSGameRules
 
-Singleton entity that holds all CS2 match-level state: phase, round timer, team time-outs, map layout flags, match stats, and end-of-round information. Accessible via the CCSGameRulesProxy entity on the client.
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
+Singleton entity that holds all CS2 match-level state: phase, round timer, team time-outs, map layout flags, match stats, and end-of-round information. Accessible via the CCSGameRulesProxy entity on the client.
 
 > 📝 Many fields here are the ground truth for demo-parsing tools (e.g. demoinfocs-golang).  Round phase transitions are driven by m_gamePhase and m_bFreezePeriod / m_bWarmupPeriod.
 
-
-**Kind:** class · **Size:** 70728 bytes (`0x11448`) · **Align:** 255 · **Module:** server
+**Kind:** class · **Size:** 70728 bytes (`0x11448`) · **Align:** n/a (unspecified) · **Module:** server
 
 **Inherits from:** [CTeamplayRules](../server/CTeamplayRules.md)
 

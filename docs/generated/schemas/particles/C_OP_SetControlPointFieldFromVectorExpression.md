@@ -8,6 +8,8 @@ nav_exclude: true
 
 # C_OP_SetControlPointFieldFromVectorExpression
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 4672 bytes (`0x1240`) · **Align:** 8 · **Module:** particles
 
 **Inherits from:** [CParticleFunctionPreEmission](../particles/CParticleFunctionPreEmission.md)

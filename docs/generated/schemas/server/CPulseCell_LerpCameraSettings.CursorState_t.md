@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "CPulseCell_LerpCameraSettings::CursorState_t"
+title: "CPulseCell_LerpCameraSettings::CursorState_t (server)"
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CPulseCell_LerpCameraSettings::CursorState_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 44 bytes (`0x2c`) · **Align:** 4 · **Module:** server
+
+**Twin:** [CPulseCell_LerpCameraSettings::CursorState_t (client)](../client/CPulseCell_LerpCameraSettings.CursorState_t.md)
 
 **Inherits from:** [CPulseCell_BaseLerp::CursorState_t](../pulse_runtime_lib/CPulseCell_BaseLerp.CursorState_t.md)
 
@@ -16,9 +20,9 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CPulseCell_BaseLerp::CursorState_t" <|-- "CPulseCell_LerpCameraSettings::CursorState_t"
-    "CPulseCell_LerpCameraSettings::CursorState_t" --> CPointCamera
-    "CPulseCell_LerpCameraSettings::CursorState_t" *-- PointCameraSettings_t
+    `CPulseCell_BaseLerp::CursorState_t` <|-- `CPulseCell_LerpCameraSettings::CursorState_t`
+    `CPulseCell_LerpCameraSettings::CursorState_t` --> CPointCamera
+    `CPulseCell_LerpCameraSettings::CursorState_t` *-- PointCameraSettings_t
 ```
 
 ## Memory layout

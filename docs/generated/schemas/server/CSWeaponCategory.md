@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CSWeaponCategory
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 Coarse buy-menu weapon category (CCSWeaponBaseVData.m_WeaponCategory).
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** server

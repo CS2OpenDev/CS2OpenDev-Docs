@@ -8,7 +8,9 @@ nav_exclude: true
 
 # CSndSeqInstBaseSchema
 
-**Kind:** class · **Size:** 32 bytes (`0x20`) · **Align:** 255 · **Module:** soundsystem
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 32 bytes (`0x20`) · **Align:** n/a (unspecified) · **Module:** soundsystem
 
 **Derived by:** [CSndSeqInstMidiSampler](../soundsystem/CSndSeqInstMidiSampler.md), [CSndSeqInstSndEvtSchema](../soundsystem/CSndSeqInstSndEvtSchema.md)
 

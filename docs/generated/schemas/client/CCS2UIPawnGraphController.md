@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CCS2UIPawnGraphController
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 472 bytes (`0x1d8`) · **Align:** 8 · **Module:** client
 
 **Inherits from:** [CAnimGraphControllerBase](../server/CAnimGraphControllerBase.md)

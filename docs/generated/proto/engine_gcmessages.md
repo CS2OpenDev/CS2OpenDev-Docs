@@ -34,8 +34,8 @@ direction LR
 
 ### `CEngineGotvSyncPacket`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `match_id` | 1 | uint64 | optional |  |
 | `instance_id` | 2 | uint32 | optional |  |
 | `signupfragment` | 3 | uint32 | optional |  |

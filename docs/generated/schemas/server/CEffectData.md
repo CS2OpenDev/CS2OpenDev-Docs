@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CEffectData
+title: CEffectData (server)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CEffectData
 
-**Kind:** class · **Size:** 112 bytes (`0x70`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 112 bytes (`0x70`) · **Align:** n/a (unspecified) · **Module:** server
+
+**Twin:** [CEffectData (client)](../client/CEffectData.md)
 
 **Relationships:**
 

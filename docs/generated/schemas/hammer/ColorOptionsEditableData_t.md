@@ -8,7 +8,9 @@ nav_exclude: true
 
 # ColorOptionsEditableData_t
 
-**Kind:** class · **Size:** 30 bytes (`0x1e`) · **Align:** 255 · **Module:** hammer
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 30 bytes (`0x1e`) · **Align:** n/a (unspecified) · **Module:** hammer
 
 ## Memory layout
 

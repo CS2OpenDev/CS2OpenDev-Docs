@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CSmartPropVariable_Material
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 280 bytes (`0x118`) · **Align:** 8 · **Module:** smartprops
 
 **Inherits from:** [CSmartPropVariable](../smartprops/CSmartPropVariable.md)

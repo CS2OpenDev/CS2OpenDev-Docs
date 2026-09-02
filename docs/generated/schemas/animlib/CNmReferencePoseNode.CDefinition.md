@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNmReferencePoseNode::CDefinition
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** 8 · **Module:** animlib
 
 **Inherits from:** [CNmPoseNode::CDefinition](../animlib/CNmPoseNode.CDefinition.md)
@@ -16,13 +18,13 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmPoseNode::CDefinition" <|-- "CNmReferencePoseNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmPoseNode::CDefinition"
+    `CNmPoseNode::CDefinition` <|-- `CNmReferencePoseNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmPoseNode::CDefinition`
 ```
 
 ## Memory layout
 
-1 fields (0 declared here, 1 inherited). Offsets are absolute from the object base.
+1 field (0 declared here, 1 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|

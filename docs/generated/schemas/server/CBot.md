@@ -8,7 +8,9 @@ nav_exclude: true
 
 # CBot
 
-**Kind:** class · **Size:** 256 bytes (`0x100`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 256 bytes (`0x100`) · **Align:** n/a (unspecified) · **Module:** server
 
 **Derived by:** [CCSBot](../server/CCSBot.md)
 

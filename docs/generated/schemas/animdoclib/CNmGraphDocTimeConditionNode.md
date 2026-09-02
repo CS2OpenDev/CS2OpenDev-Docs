@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNmGraphDocTimeConditionNode
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 264 bytes (`0x108`) · **Align:** 8 · **Module:** animdoclib
 
 **Inherits from:** [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md)
@@ -18,6 +20,8 @@ nav_exclude: true
 classDiagram
     CNmGraphDocFlowNode <|-- CNmGraphDocTimeConditionNode
     CNmGraphDocNode <|-- CNmGraphDocFlowNode
+    CNmGraphDocTimeConditionNode *-- `CNmTimeConditionNode::ComparisonType_t`
+    CNmGraphDocTimeConditionNode *-- `CNmTimeConditionNode::Operator_t`
 ```
 
 ## Memory layout
@@ -35,8 +39,8 @@ classDiagram
 | `0x50` | `m_inputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 4 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0xd8` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0x100` | `m_flComparand` | float32 |  |  |
-| `0x104` | `m_type` | CNmTimeConditionNode::ComparisonType_t |  |  |
-| `0x105` | `m_operator` | CNmTimeConditionNode::Operator_t |  |  |
+| `0x104` | `m_type` | [CNmTimeConditionNode::ComparisonType_t](../animlib/CNmTimeConditionNode.ComparisonType_t.md) |  |  |
+| `0x105` | `m_operator` | [CNmTimeConditionNode::Operator_t](../animlib/CNmTimeConditionNode.Operator_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

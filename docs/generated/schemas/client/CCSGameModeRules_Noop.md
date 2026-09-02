@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CCSGameModeRules_Noop
+title: CCSGameModeRules_Noop (client)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CCSGameModeRules_Noop
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 48 bytes (`0x30`) · **Align:** 8 · **Module:** client
+
+**Twin:** [CCSGameModeRules_Noop (server)](../server/CCSGameModeRules_Noop.md)
 
 **Inherits from:** [CCSGameModeRules](../client/CCSGameModeRules.md)
 
@@ -21,7 +25,7 @@ classDiagram
 
 ## Memory layout
 
-1 fields (0 declared here, 1 inherited). Offsets are absolute from the object base.
+1 field (0 declared here, 1 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|

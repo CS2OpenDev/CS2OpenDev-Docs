@@ -8,13 +8,15 @@ nav_exclude: true
 
 # PulseValueType_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** pulse_runtime_lib
 
 ## Values
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `PVAL_VOID` | -1 | Void |
+| `PVAL_VOID` | -1 (`0xffffffff`) | Void |
 | `PVAL_BOOL` | 0 | Boolean |
 | `PVAL_INT` | 1 | Integer |
 | `PVAL_FLOAT` | 2 | Float |

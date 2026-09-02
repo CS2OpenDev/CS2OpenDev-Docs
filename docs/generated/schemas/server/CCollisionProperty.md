@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CCollisionProperty
+title: CCollisionProperty (server)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CCollisionProperty
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 184 bytes (`0xb8`) · **Align:** 8 · **Module:** server
+
+**Twin:** [CCollisionProperty (client)](../client/CCollisionProperty.md)
 
 **Relationships:**
 

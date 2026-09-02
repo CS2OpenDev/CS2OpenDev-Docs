@@ -8,6 +8,8 @@ nav_exclude: true
 
 # C_OP_MaintainEmitter
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 1616 bytes (`0x650`) · **Align:** 8 · **Module:** particles
 
 **Inherits from:** [CParticleFunctionEmitter](../particles/CParticleFunctionEmitter.md)

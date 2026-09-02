@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CChoreoComponent
+title: CChoreoComponent (server)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CChoreoComponent
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 128 bytes (`0x80`) · **Align:** 8 · **Module:** server
+
+**Twin:** [CChoreoComponent (client)](../client/CChoreoComponent.md)
 
 **Relationships:**
 

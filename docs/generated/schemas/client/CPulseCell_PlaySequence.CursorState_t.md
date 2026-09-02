@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "CPulseCell_PlaySequence::CursorState_t"
+title: "CPulseCell_PlaySequence::CursorState_t (client)"
 nav_exclude: true
 ---
 
@@ -8,18 +8,22 @@ nav_exclude: true
 
 # CPulseCell_PlaySequence::CursorState_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 4 bytes (`0x4`) · **Align:** 4 · **Module:** client
+
+**Twin:** [CPulseCell_PlaySequence::CursorState_t (server)](../server/CPulseCell_PlaySequence.CursorState_t.md)
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    "CPulseCell_PlaySequence::CursorState_t" --> CBaseAnimGraph
+    `CPulseCell_PlaySequence::CursorState_t` --> CBaseAnimGraph
 ```
 
 ## Memory layout
 
-1 fields (1 declared here, 0 inherited). Offsets are absolute from the object base.
+1 field (1 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|

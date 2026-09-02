@@ -8,6 +8,8 @@ nav_exclude: true
 
 # DebugSnapshotBaseStructuredData_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 8 bytes (`0x8`) · **Align:** 8 · **Module:** server
 
 **Derived by:** [AI_BaseNPC_DebugSnapshotData_t](../server/AI_BaseNPC_DebugSnapshotData_t.md), [AI_DefaultNPC_DebugSnapshotData_t](../server/AI_DefaultNPC_DebugSnapshotData_t.md), [AI_GroundRootMotionMotor_DebugSnapshotData_t](../server/AI_GroundRootMotionMotor_DebugSnapshotData_t.md), [DebugDrawBoneTransforms_t](../server/DebugDrawBoneTransforms_t.md)
@@ -23,6 +25,10 @@ classDiagram
     DebugSnapshotBaseStructuredData_t <|-- AI_GroundRootMotionMotor_DebugSnapshotData_t
     DebugSnapshotBaseStructuredData_t <|-- DebugDrawBoneTransforms_t
 ```
+
+## Memory layout
+
+No schema-visible fields (8 bytes of opaque storage).
 
 <details><summary>KV3 class defaults</summary>
 

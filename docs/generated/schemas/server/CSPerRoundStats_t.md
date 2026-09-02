@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CSPerRoundStats_t
+title: CSPerRoundStats_t (server)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CSPerRoundStats_t
 
-**Kind:** class · **Size:** 104 bytes (`0x68`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 104 bytes (`0x68`) · **Align:** n/a (unspecified) · **Module:** server
+
+**Twin:** [CSPerRoundStats_t (client)](../client/CSPerRoundStats_t.md)
 
 **Derived by:** [CSMatchStats_t](../server/CSMatchStats_t.md)
 

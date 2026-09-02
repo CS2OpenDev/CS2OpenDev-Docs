@@ -8,6 +8,8 @@ nav_exclude: true
 
 # RnMeshDesc_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 216 bytes (`0xd8`) · **Align:** 8 · **Module:** physicslib
 
 **Inherits from:** [RnShapeDesc_t](../physicslib/RnShapeDesc_t.md)

@@ -8,6 +8,8 @@ nav_exclude: true
 
 # ParticleOrientationChoiceList_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** particles
 
 ## Values
@@ -18,5 +20,5 @@ nav_exclude: true
 | `PARTICLE_ORIENTATION_SCREEN_Z_ALIGNED` | 1 | Screen-Z Align |
 | `PARTICLE_ORIENTATION_WORLD_Z_ALIGNED` | 2 | World-Z Align |
 | `PARTICLE_ORIENTATION_ALIGN_TO_PARTICLE_NORMAL` | 3 | Particle Normal Align |
-| `PARTICLE_ORIENTATION_SCREENALIGN_TO_PARTICLE_NORMAL` | 4 | Screen & Particle Normal Align |
+| `PARTICLE_ORIENTATION_SCREENALIGN_TO_PARTICLE_NORMAL` | 4 | Screen &amp; Particle Normal Align |
 | `PARTICLE_ORIENTATION_FULL_3AXIS_ROTATION` | 5 | Full 3-Axis Rotation |

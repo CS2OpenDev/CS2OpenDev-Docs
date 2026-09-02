@@ -114,7 +114,7 @@ coarse-grained project axis (`client`, `server`, `entity2`,
   (`pairedEvidence` plus the unselected `pairCandidates` /
   `classPairCandidates` / `fieldMoveCandidates` lists) are **not**
   projected into this file — read them from the artifact itself; the
-  [Schema History](../schema-history.html) page documents them and serves
+  [Schema History](../schema-history.md) page documents them and serves
   as the human-readable break radar.  Serves alias resolution /
   forward-back schema migration for demo parsers and SDKs.
 

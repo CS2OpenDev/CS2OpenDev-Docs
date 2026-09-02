@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "CCSPlayerController_InventoryServices::NetworkedLoadoutSlot_t"
+title: "CCSPlayerController_InventoryServices::NetworkedLoadoutSlot_t (client)"
 nav_exclude: true
 ---
 
@@ -8,13 +8,17 @@ nav_exclude: true
 
 # CCSPlayerController_InventoryServices::NetworkedLoadoutSlot_t
 
-**Kind:** class · **Size:** 200 bytes (`0xc8`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 200 bytes (`0xc8`) · **Align:** n/a (unspecified) · **Module:** client
+
+**Twin:** [CCSPlayerController_InventoryServices::NetworkedLoadoutSlot_t (server)](../server/CCSPlayerController_InventoryServices.NetworkedLoadoutSlot_t.md)
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    "CCSPlayerController_InventoryServices::NetworkedLoadoutSlot_t" --> C_EconItemView
+    `CCSPlayerController_InventoryServices::NetworkedLoadoutSlot_t` --> C_EconItemView
 ```
 
 ## Memory layout

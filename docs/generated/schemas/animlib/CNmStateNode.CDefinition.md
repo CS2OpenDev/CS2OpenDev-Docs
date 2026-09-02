@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNmStateNode::CDefinition
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 176 bytes (`0xb0`) · **Align:** 8 · **Module:** animlib
 
 **Inherits from:** [CNmPoseNode::CDefinition](../animlib/CNmPoseNode.CDefinition.md)
@@ -16,8 +18,9 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmPoseNode::CDefinition" <|-- "CNmStateNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmPoseNode::CDefinition"
+    `CNmPoseNode::CDefinition` <|-- `CNmStateNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmPoseNode::CDefinition`
+    `CNmStateNode::CDefinition` *-- `CNmStateNode::TimedEvent_t`
 ```
 
 ## Memory layout
@@ -31,8 +34,8 @@ classDiagram
 | `0x18` | `m_entryEvents` | CUtlLeanVectorFixedGrowable< CGlobalSymbol, 3 > |  |  |
 | `0x38` | `m_executeEvents` | CUtlLeanVectorFixedGrowable< CGlobalSymbol, 3 > |  |  |
 | `0x58` | `m_exitEvents` | CUtlLeanVectorFixedGrowable< CGlobalSymbol, 3 > |  |  |
-| `0x78` | `m_timedRemainingEvents` | CUtlLeanVectorFixedGrowable< CNmStateNode::TimedEvent_t, 1 > |  |  |
-| `0x90` | `m_timedElapsedEvents` | CUtlLeanVectorFixedGrowable< CNmStateNode::TimedEvent_t, 1 > |  |  |
+| `0x78` | `m_timedRemainingEvents` | CUtlLeanVectorFixedGrowable< [CNmStateNode::TimedEvent_t](../animlib/CNmStateNode.TimedEvent_t.md), 1 > |  |  |
+| `0x90` | `m_timedElapsedEvents` | CUtlLeanVectorFixedGrowable< [CNmStateNode::TimedEvent_t](../animlib/CNmStateNode.TimedEvent_t.md), 1 > |  |  |
 | `0xa8` | `m_nLayerWeightNodeIdx` | int16 |  |  |
 | `0xaa` | `m_nLayerRootMotionWeightNodeIdx` | int16 |  |  |
 | `0xac` | `m_nLayerBoneMaskNodeIdx` | int16 |  |  |

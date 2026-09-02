@@ -374,15 +374,15 @@ direction LR
 
 **Oneofs:** `ip` (v4, v6)
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `v4` | 1 | fixed32 | optional | *(oneof: `ip`)* |
 | `v6` | 2 | bytes | optional | *(oneof: `ip`)* |
 
 ### `CMsgIPAddressBucket`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `original_ip_address` | 1 | [CMsgIPAddress](#cmsgipaddress) | optional |  |
 | `bucket` | 2 | fixed64 | optional |  |
 
@@ -390,8 +390,8 @@ direction LR
 
 **Oneofs:** `ip_addr` (ip, ip_v6)
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `steamid` | 1 | fixed64 | optional |  |
 | `client_sessionid` | 2 | int32 | optional |  |
 | `routing_appid` | 3 | uint32 | optional |  |
@@ -422,21 +422,21 @@ direction LR
 
 ### `CMsgMulti`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `size_unzipped` | 1 | uint32 | optional |  |
 | `message_body` | 2 | bytes | optional |  |
 
 ### `CMsgProtobufWrapped`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `message_body` | 1 | bytes | optional |  |
 
 ### `CMsgAuthTicket`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `estate` | 1 | uint32 | optional |  |
 | `eresult` | 2 | uint32 | optional | *(default: `2`)* |
 | `steamid` | 3 | fixed64 | optional |  |
@@ -447,8 +447,8 @@ direction LR
 
 ### `CCDDBAppDetailCommon`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `appid` | 1 | uint32 | optional |  |
 | `name` | 2 | string | optional |  |
 | `icon` | 3 | string | optional |  |
@@ -464,8 +464,8 @@ direction LR
 
 ### `CMsgAppRights`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `edit_info` | 1 | bool | optional |  |
 | `publish` | 2 | bool | optional |  |
 | `view_error_data` | 3 | bool | optional |  |
@@ -486,8 +486,8 @@ direction LR
 
 ### `CCuratorPreferences`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `supported_languages` | 1 | uint32 | optional |  |
 | `platform_windows` | 2 | bool | optional |  |
 | `platform_mac` | 3 | bool | optional |  |
@@ -505,15 +505,15 @@ direction LR
 
 ### `CLocalizationToken`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `language` | 1 | uint32 | optional |  |
 | `localized_string` | 2 | string | optional |  |
 
 ### `CClanEventUserNewsTuple`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `clanid` | 1 | uint32 | optional |  |
 | `event_gid` | 2 | fixed64 | optional |  |
 | `announcement_gid` | 3 | fixed64 | optional |  |
@@ -527,8 +527,8 @@ direction LR
 
 ### `CClanMatchEventByRange`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `rtime_before` | 1 | uint32 | optional |  |
 | `rtime_after` | 2 | uint32 | optional |  |
 | `qualified` | 3 | uint32 | optional |  |
@@ -536,8 +536,8 @@ direction LR
 
 ### `CCommunity_ClanAnnouncementInfo`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `gid` | 1 | uint64 | optional |  |
 | `clanid` | 2 | uint64 | optional |  |
 | `posterid` | 3 | uint64 | optional |  |
@@ -557,8 +557,8 @@ direction LR
 
 ### `CClanEventData`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `gid` | 1 | fixed64 | optional |  |
 | `clan_steamid` | 2 | fixed64 | optional |  |
 | `event_name` | 3 | string | optional |  |
@@ -592,8 +592,8 @@ direction LR
 
 ### `CBilling_Address`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `first_name` | 1 | string | optional |  |
 | `last_name` | 2 | string | optional |  |
 | `address1` | 3 | string | optional |  |
@@ -607,8 +607,8 @@ direction LR
 
 ### `CPackageReservationStatus`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `packageid` | 1 | uint32 | optional |  |
 | `reservation_state` | 2 | int32 | optional |  |
 | `queue_position` | 3 | int32 | optional |  |
@@ -620,13 +620,13 @@ direction LR
 
 ### `CMsgKeyValuePair`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `name` | 1 | string | optional |  |
 | `value` | 2 | string | optional |  |
 
 ### `CMsgKeyValueSet`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `pairs` | 1 | [CMsgKeyValuePair](#cmsgkeyvaluepair) | repeated |  |

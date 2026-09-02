@@ -6,8 +6,7 @@ nav_order: 11
 
 # Maps & Radar Overviews
 
-{: .note }
-> Source: CS2 build **25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 Maps inventory (22): `ar_baggage`, `ar_shoots`, `ar_shoots_night`, `cs_italy`, `cs_office`, `de_ancient`, `de_ancient_night`, `de_ancient_v1`, `de_ancient_v2`, `de_anubis`, `de_cache`, `de_dust`, `de_dust2`, `de_inferno`, `de_inferno_s2`, `de_mirage`, `de_nuke`, `de_overpass`, `de_overpass_2v2`, `de_train`, `de_vertigo`, `workshop_preview`
 
@@ -36,4 +35,4 @@ Maps inventory (22): `ar_baggage`, `ar_shoots`, `ar_shoots_night`, `cs_italy`, `
 | `de_overpass_2v2` | `overviews/de_overpass` | -4831, 1781 | 5.2 | 0.49, 0.2 | 0.66, 0.93 |
 | `de_train` | `overviews/de_train` | -2308, 2078 | 4.082077 | 0.860000, 0.770000 | 0.120000, 0.250000 |
 | `de_vertigo` | `overviews/de_vertigo_radar` | -3168, 1762 | 4.0 | 0.54, 0.25 | 0.20, 0.75 |
-| `workshop_preview` | `` | -2071, 711 | 1.699219 | ,  | ,  |
+| `workshop_preview` |  | -2071, 711 | 1.699219 | ,  | ,  |

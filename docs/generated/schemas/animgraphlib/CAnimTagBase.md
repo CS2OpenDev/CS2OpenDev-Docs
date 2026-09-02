@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CAnimTagBase
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 80 bytes (`0x50`) · **Align:** 8 · **Module:** animgraphlib
 
 **Derived by:** [CAudioAnimTag](../animgraphlib/CAudioAnimTag.md), [CBodyGroupAnimTag](../animgraphlib/CBodyGroupAnimTag.md), [CClothSettingsAnimTag](../animgraphlib/CClothSettingsAnimTag.md), [CFootFallAnimTag](../animgraphlib/CFootFallAnimTag.md), [CFootstepLandedAnimTag](../animgraphlib/CFootstepLandedAnimTag.md), [CHandshakeAnimTagBase](../animgraphlib/CHandshakeAnimTagBase.md), [CMaterialAttributeAnimTag](../animgraphlib/CMaterialAttributeAnimTag.md), [CParticleAnimTag](../animgraphlib/CParticleAnimTag.md), [CRagdollAnimTag](../animgraphlib/CRagdollAnimTag.md), [CSequenceFinishedAnimTag](../animgraphlib/CSequenceFinishedAnimTag.md), [CStringAnimTag](../animgraphlib/CStringAnimTag.md), [CTaskStatusAnimTag](../animgraphlib/CTaskStatusAnimTag.md), [CWarpSectionAnimTagBase](../animgraphlib/CWarpSectionAnimTagBase.md)

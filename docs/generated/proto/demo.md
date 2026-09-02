@@ -36,7 +36,7 @@ direction LR
     +CGameInfo.CCSGameInfo cs
   }
 
-  class CDotaGameInfo {
+  class CGameInfo_CDotaGameInfo["CGameInfo.CDotaGameInfo"] {
     +uint64 match_id
     +int32 game_mode
     +int32 game_winner
@@ -50,7 +50,7 @@ direction LR
     +uint32 end_time
   }
 
-  class CPlayerInfo {
+  class CGameInfo_CDotaGameInfo_CPlayerInfo["CGameInfo.CDotaGameInfo.CPlayerInfo"] {
     +string hero_name
     +string player_name
     +bool is_fake_client
@@ -58,13 +58,13 @@ direction LR
     +int32 game_team
   }
 
-  class CHeroSelectEvent {
+  class CGameInfo_CDotaGameInfo_CHeroSelectEvent["CGameInfo.CDotaGameInfo.CHeroSelectEvent"] {
     +bool is_pick
     +uint32 team
     +int32 hero_id
   }
 
-  class CCSGameInfo {
+  class CGameInfo_CCSGameInfo["CGameInfo.CCSGameInfo"] {
     +List~int32~ round_start_ticks
   }
 
@@ -106,7 +106,7 @@ direction LR
     +List~CDemoClassInfo.class_t~ classes
   }
 
-  class class_t {
+  class CDemoClassInfo_class_t["CDemoClassInfo.class_t"] {
     +int32 class_id
     +string network_name
     +string table_name
@@ -139,12 +139,12 @@ direction LR
     +List~CDemoStringTables.table_t~ tables
   }
 
-  class items_t {
+  class CDemoStringTables_items_t["CDemoStringTables.items_t"] {
     +string str
     +bytes data
   }
 
-  class table_t {
+  class CDemoStringTables_table_t["CDemoStringTables.table_t"] {
     +string table_name
     +List~CDemoStringTables.items_t~ items
     +List~CDemoStringTables.items_t~ items_clientside
@@ -172,22 +172,22 @@ direction LR
     +bytes spawn_group_message
   }
 
-  class DemoInitialSpawnGroupEntry {
+  class CDemoRecovery_DemoInitialSpawnGroupEntry["CDemoRecovery.DemoInitialSpawnGroupEntry"] {
     +uint32 spawngrouphandle
     +bool was_created
   }
 
-  CGameInfo --> CDotaGameInfo : dota
-  CGameInfo --> CCSGameInfo : cs
-  CDotaGameInfo --> CPlayerInfo : player_info[]
-  CDotaGameInfo --> CHeroSelectEvent : picks_bans[]
+  CGameInfo --> CGameInfo_CDotaGameInfo : dota
+  CGameInfo --> CGameInfo_CCSGameInfo : cs
+  CGameInfo_CDotaGameInfo --> CGameInfo_CDotaGameInfo_CPlayerInfo : player_info[]
+  CGameInfo_CDotaGameInfo --> CGameInfo_CDotaGameInfo_CHeroSelectEvent : picks_bans[]
   CDemoFileInfo --> CGameInfo : game_info
   CDemoFullPacket --> CDemoStringTables : string_table
   CDemoFullPacket --> CDemoPacket : packet
-  CDemoClassInfo --> class_t : classes[]
-  CDemoStringTables --> table_t : tables[]
-  table_t --> items_t : items[]
-  CDemoRecovery --> DemoInitialSpawnGroupEntry : initial_spawn_group
+  CDemoClassInfo --> CDemoClassInfo_class_t : classes[]
+  CDemoStringTables --> CDemoStringTables_table_t : tables[]
+  CDemoStringTables_table_t --> CDemoStringTables_items_t : items[]
+  CDemoRecovery --> CDemoRecovery_DemoInitialSpawnGroupEntry : initial_spawn_group
 
   class EDemoCommands{
     <<enumeration>>
@@ -250,8 +250,8 @@ direction LR
 
 ### `CDemoFileHeader`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `demo_file_stamp` | 1 | string | required |  |
 | `patch_version` | 2 | int32 | optional |  |
 | `server_name` | 3 | string | optional |  |
@@ -270,15 +270,55 @@ direction LR
 
 ### `CGameInfo`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `dota` | 4 | CGameInfo.CDotaGameInfo | optional |  |
-| `cs` | 5 | CGameInfo.CCSGameInfo | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `dota` | 4 | [CGameInfo.CDotaGameInfo](#cgameinfocdotagameinfo) | optional |  |
+| `cs` | 5 | [CGameInfo.CCSGameInfo](#cgameinfoccsgameinfo) | optional |  |
+
+#### `CGameInfo.CDotaGameInfo`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `match_id` | 1 | uint64 | optional |  |
+| `game_mode` | 2 | int32 | optional |  |
+| `game_winner` | 3 | int32 | optional |  |
+| `player_info` | 4 | [CGameInfo.CDotaGameInfo.CPlayerInfo](#cgameinfocdotagameinfocplayerinfo) | repeated |  |
+| `leagueid` | 5 | uint32 | optional |  |
+| `picks_bans` | 6 | [CGameInfo.CDotaGameInfo.CHeroSelectEvent](#cgameinfocdotagameinfocheroselectevent) | repeated |  |
+| `radiant_team_id` | 7 | uint32 | optional |  |
+| `dire_team_id` | 8 | uint32 | optional |  |
+| `radiant_team_tag` | 9 | string | optional |  |
+| `dire_team_tag` | 10 | string | optional |  |
+| `end_time` | 11 | uint32 | optional |  |
+
+##### `CGameInfo.CDotaGameInfo.CPlayerInfo`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `hero_name` | 1 | string | optional |  |
+| `player_name` | 2 | string | optional |  |
+| `is_fake_client` | 3 | bool | optional |  |
+| `steamid` | 4 | uint64 | optional |  |
+| `game_team` | 5 | int32 | optional |  |
+
+##### `CGameInfo.CDotaGameInfo.CHeroSelectEvent`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `is_pick` | 1 | bool | optional |  |
+| `team` | 2 | uint32 | optional |  |
+| `hero_id` | 3 | int32 | optional |  |
+
+#### `CGameInfo.CCSGameInfo`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `round_start_ticks` | 1 | int32 | repeated |  |
 
 ### `CDemoFileInfo`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `playback_time` | 1 | float | optional |  |
 | `playback_ticks` | 2 | int32 | optional |  |
 | `playback_frames` | 3 | int32 | optional |  |
@@ -286,21 +326,21 @@ direction LR
 
 ### `CDemoPacket`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `data` | 3 | bytes | optional |  |
 
 ### `CDemoFullPacket`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `string_table` | 1 | [CDemoStringTables](#cdemostringtables) | optional |  |
 | `packet` | 2 | [CDemoPacket](#cdemopacket) | optional |  |
 
 ### `CDemoSaveGame`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `data` | 1 | bytes | optional |  |
 | `steam_id` | 2 | fixed64 | optional |  |
 | `signature` | 3 | fixed64 | optional |  |
@@ -308,49 +348,59 @@ direction LR
 
 ### `CDemoSyncTick`
 
+*(no fields)*
+
 ### `CDemoConsoleCmd`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `cmdstring` | 1 | string | optional |  |
 
 ### `CDemoSendTables`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `data` | 1 | bytes | optional |  |
 
 ### `CDemoClassInfo`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `classes` | 1 | CDemoClassInfo.class_t | repeated |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `classes` | 1 | [CDemoClassInfo.class_t](#cdemoclassinfoclass_t) | repeated |  |
+
+#### `CDemoClassInfo.class_t`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `class_id` | 1 | int32 | optional |  |
+| `network_name` | 2 | string | optional |  |
+| `table_name` | 3 | string | optional |  |
 
 ### `CDemoCustomData`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `callback_index` | 1 | int32 | optional |  |
 | `data` | 2 | bytes | optional |  |
 
 ### `CDemoCustomDataCallbacks`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `save_id` | 1 | string | repeated |  |
 
 ### `CDemoAnimationHeader`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `entity_id` | 1 | sint32 | optional |  |
 | `tick` | 2 | int32 | optional |  |
 | `data` | 3 | bytes | optional |  |
 
 ### `CDemoAnimationData`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `entity_id` | 1 | sint32 | optional |  |
 | `start_tick` | 2 | int32 | optional |  |
 | `end_tick` | 3 | int32 | optional |  |
@@ -359,34 +409,59 @@ direction LR
 
 ### `CDemoStringTables`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `tables` | 1 | CDemoStringTables.table_t | repeated |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `tables` | 1 | [CDemoStringTables.table_t](#cdemostringtablestable_t) | repeated |  |
+
+#### `CDemoStringTables.items_t`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `str` | 1 | string | optional |  |
+| `data` | 2 | bytes | optional |  |
+
+#### `CDemoStringTables.table_t`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `table_name` | 1 | string | optional |  |
+| `items` | 2 | [CDemoStringTables.items_t](#cdemostringtablesitems_t) | repeated |  |
+| `items_clientside` | 3 | [CDemoStringTables.items_t](#cdemostringtablesitems_t) | repeated |  |
+| `table_flags` | 4 | int32 | optional |  |
 
 ### `CDemoStop`
 
+*(no fields)*
+
 ### `CDemoUserCmd`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `cmd_number` | 1 | int32 | optional |  |
 | `data` | 2 | bytes | optional |  |
 
 ### `CDemoSpawnGroups`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `msgs` | 3 | bytes | repeated |  |
 
 ### `CDemoSpawnGroupsHLTVBroadcast`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `data` | 1 | bytes | optional |  |
 
 ### `CDemoRecovery`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `initial_spawn_group` | 1 | CDemoRecovery.DemoInitialSpawnGroupEntry | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `initial_spawn_group` | 1 | [CDemoRecovery.DemoInitialSpawnGroupEntry](#cdemorecoverydemoinitialspawngroupentry) | optional |  |
 | `spawn_group_message` | 2 | bytes | optional |  |
+
+#### `CDemoRecovery.DemoInitialSpawnGroupEntry`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `spawngrouphandle` | 1 | uint32 | optional |  |
+| `was_created` | 2 | bool | optional |  |

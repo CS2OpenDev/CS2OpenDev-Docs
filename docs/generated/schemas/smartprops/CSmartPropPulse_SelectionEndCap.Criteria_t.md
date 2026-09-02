@@ -8,7 +8,9 @@ nav_exclude: true
 
 # CSmartPropPulse_SelectionEndCap::Criteria_t
 
-**Kind:** class · **Size:** 2 bytes (`0x2`) · **Align:** 255 · **Module:** smartprops
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 2 bytes (`0x2`) · **Align:** n/a (unspecified) · **Module:** smartprops
 
 ## Memory layout
 

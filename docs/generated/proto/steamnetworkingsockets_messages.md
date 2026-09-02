@@ -7,7 +7,7 @@ nav_exclude: true
 
 # `steamnetworkingsockets_messages.proto`
 
-**Imports:** `steamnetworkingsockets_messages_certs.proto`
+**Imports:** [`steamnetworkingsockets_messages_certs.proto`](steamnetworkingsockets_messages_certs.md)
 
 ## Diagram
 
@@ -108,7 +108,7 @@ direction LR
     +CMsgICECandidate add_candidate
   }
 
-  class Auth {
+  class CMsgICERendezvous_Auth["CMsgICERendezvous.Auth"] {
     +string pwd_frag
   }
 
@@ -130,7 +130,7 @@ direction LR
     +List~CMsgSteamNetworkingP2PRendezvous.ApplicationMessage~ application_messages
   }
 
-  class ConnectRequest {
+  class CMsgSteamNetworkingP2PRendezvous_ConnectRequest["CMsgSteamNetworkingP2PRendezvous.ConnectRequest"] {
     +CMsgSteamDatagramSessionCryptInfoSigned crypt
     +CMsgSteamDatagramCertificateSigned cert
     +uint32 to_virtual_port
@@ -138,21 +138,21 @@ direction LR
     +string from_fakeip
   }
 
-  class ConnectOK {
+  class CMsgSteamNetworkingP2PRendezvous_ConnectOK["CMsgSteamNetworkingP2PRendezvous.ConnectOK"] {
     +CMsgSteamDatagramSessionCryptInfoSigned crypt
     +CMsgSteamDatagramCertificateSigned cert
   }
 
-  class ConnectionClosed {
+  class CMsgSteamNetworkingP2PRendezvous_ConnectionClosed["CMsgSteamNetworkingP2PRendezvous.ConnectionClosed"] {
     +string debug
     +uint32 reason_code
   }
 
-  class ReliableMessage {
+  class CMsgSteamNetworkingP2PRendezvous_ReliableMessage["CMsgSteamNetworkingP2PRendezvous.ReliableMessage"] {
     +CMsgICERendezvous ice
   }
 
-  class ApplicationMessage {
+  class CMsgSteamNetworkingP2PRendezvous_ApplicationMessage["CMsgSteamNetworkingP2PRendezvous.ApplicationMessage"] {
     +bytes data
     +uint64 msg_num
     +uint32 flags
@@ -177,20 +177,20 @@ direction LR
     +uint32 local_candidate_types_allowed
   }
 
-  CMsgSteamDatagramSessionCryptInfo --> EKeyType : key_type
+  CMsgSteamDatagramSessionCryptInfo --> CMsgSteamDatagramSessionCryptInfo_EKeyType : key_type
   CMsgSteamDatagramSessionCryptInfo --> ESteamNetworkingSocketsCipher : ciphers[]
   CMsgSteamDatagramConnectionQuality --> CMsgSteamDatagramLinkInstantaneousStats : instantaneous
   CMsgSteamDatagramConnectionQuality --> CMsgSteamDatagramLinkLifetimeStats : lifetime
-  CMsgICERendezvous --> Auth : auth
+  CMsgICERendezvous --> CMsgICERendezvous_Auth : auth
   CMsgICERendezvous --> CMsgICECandidate : add_candidate
-  CMsgSteamNetworkingP2PRendezvous --> ConnectRequest : connect_request
-  CMsgSteamNetworkingP2PRendezvous --> ConnectOK : connect_ok
-  CMsgSteamNetworkingP2PRendezvous --> ConnectionClosed : connection_closed
-  CMsgSteamNetworkingP2PRendezvous --> ReliableMessage : reliable_messages[]
-  CMsgSteamNetworkingP2PRendezvous --> ApplicationMessage : application_messages[]
-  ConnectRequest --> CMsgSteamDatagramSessionCryptInfoSigned : crypt
-  ConnectOK --> CMsgSteamDatagramSessionCryptInfoSigned : crypt
-  ReliableMessage --> CMsgICERendezvous : ice
+  CMsgSteamNetworkingP2PRendezvous --> CMsgSteamNetworkingP2PRendezvous_ConnectRequest : connect_request
+  CMsgSteamNetworkingP2PRendezvous --> CMsgSteamNetworkingP2PRendezvous_ConnectOK : connect_ok
+  CMsgSteamNetworkingP2PRendezvous --> CMsgSteamNetworkingP2PRendezvous_ConnectionClosed : connection_closed
+  CMsgSteamNetworkingP2PRendezvous --> CMsgSteamNetworkingP2PRendezvous_ReliableMessage : reliable_messages[]
+  CMsgSteamNetworkingP2PRendezvous --> CMsgSteamNetworkingP2PRendezvous_ApplicationMessage : application_messages[]
+  CMsgSteamNetworkingP2PRendezvous_ConnectRequest --> CMsgSteamDatagramSessionCryptInfoSigned : crypt
+  CMsgSteamNetworkingP2PRendezvous_ConnectOK --> CMsgSteamDatagramSessionCryptInfoSigned : crypt
+  CMsgSteamNetworkingP2PRendezvous_ReliableMessage --> CMsgICERendezvous : ice
 
   class ESteamNetworkingSocketsCipher{
     <<enumeration>>
@@ -199,7 +199,7 @@ direction LR
     k_ESteamNetworkingSocketsCipher_AES_256_GCM
   }
 
-  class EKeyType{
+  class CMsgSteamDatagramSessionCryptInfo_EKeyType["CMsgSteamDatagramSessionCryptInfo.EKeyType"]{
     <<enumeration>>
     INVALID
     CURVE25519
@@ -221,32 +221,39 @@ direction LR
 
 ### `CMsgSteamDatagramSessionCryptInfo`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `key_type` | 1 | CMsgSteamDatagramSessionCryptInfo.EKeyType | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `key_type` | 1 | [CMsgSteamDatagramSessionCryptInfo.EKeyType](#cmsgsteamdatagramsessioncryptinfoekeytype) | optional |  |
 | `key_data` | 2 | bytes | optional |  |
 | `nonce` | 3 | fixed64 | optional |  |
 | `protocol_version` | 4 | uint32 | optional |  |
 | `ciphers` | 5 | [ESteamNetworkingSocketsCipher](#esteamnetworkingsocketscipher) | repeated |  |
 
+#### `CMsgSteamDatagramSessionCryptInfo.EKeyType`
+
+| Name | Value |
+|------|-------|
+| `INVALID` | 0 |
+| `CURVE25519` | 1 |
+
 ### `CMsgSteamDatagramSessionCryptInfoSigned`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `info` | 1 | bytes | optional |  |
 | `signature` | 2 | bytes | optional |  |
 
 ### `CMsgSteamDatagramDiagnostic`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `severity` | 1 | uint32 | optional |  |
 | `text` | 2 | string | optional |  |
 
 ### `CMsgSteamDatagramLinkInstantaneousStats`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `out_packets_per_sec_x10` | 1 | uint32 | optional |  |
 | `out_bytes_per_sec` | 2 | uint32 | optional |  |
 | `in_packets_per_sec_x10` | 3 | uint32 | optional |  |
@@ -258,8 +265,8 @@ direction LR
 
 ### `CMsgSteamDatagramLinkLifetimeStats`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `connected_seconds` | 2 | uint32 | optional |  |
 | `packets_sent` | 3 | uint64 | optional |  |
 | `kb_sent` | 4 | uint64 | optional |  |
@@ -310,48 +317,93 @@ direction LR
 
 ### `CMsgSteamDatagramConnectionQuality`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `instantaneous` | 1 | [CMsgSteamDatagramLinkInstantaneousStats](#cmsgsteamdatagramlinkinstantaneousstats) | optional |  |
 | `lifetime` | 2 | [CMsgSteamDatagramLinkLifetimeStats](#cmsgsteamdatagramlinklifetimestats) | optional |  |
 
 ### `CMsgICECandidate`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `candidate` | 3 | string | optional |  |
 
 ### `CMsgICERendezvous`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `add_candidate` | 1 | [CMsgICECandidate](#cmsgicecandidate) | optional |  |
-| `auth` | 2 | CMsgICERendezvous.Auth | optional |  |
+| `auth` | 2 | [CMsgICERendezvous.Auth](#cmsgicerendezvousauth) | optional |  |
+
+#### `CMsgICERendezvous.Auth`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `pwd_frag` | 1 | string | optional |  |
 
 ### `CMsgSteamNetworkingP2PRendezvous`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `to_connection_id` | 1 | fixed32 | optional |  |
 | `sdr_routes` | 2 | bytes | optional |  |
 | `ack_peer_routes_revision` | 3 | uint32 | optional |  |
-| `connect_request` | 4 | CMsgSteamNetworkingP2PRendezvous.ConnectRequest | optional |  |
-| `connect_ok` | 5 | CMsgSteamNetworkingP2PRendezvous.ConnectOK | optional |  |
-| `connection_closed` | 6 | CMsgSteamNetworkingP2PRendezvous.ConnectionClosed | optional |  |
+| `connect_request` | 4 | [CMsgSteamNetworkingP2PRendezvous.ConnectRequest](#cmsgsteamnetworkingp2prendezvousconnectrequest) | optional |  |
+| `connect_ok` | 5 | [CMsgSteamNetworkingP2PRendezvous.ConnectOK](#cmsgsteamnetworkingp2prendezvousconnectok) | optional |  |
+| `connection_closed` | 6 | [CMsgSteamNetworkingP2PRendezvous.ConnectionClosed](#cmsgsteamnetworkingp2prendezvousconnectionclosed) | optional |  |
 | `ice_enabled` | 7 | bool | optional |  |
 | `from_identity` | 8 | string | optional |  |
 | `from_connection_id` | 9 | fixed32 | optional |  |
 | `to_identity` | 10 | string | optional |  |
 | `ack_reliable_msg` | 11 | uint32 | optional |  |
 | `first_reliable_msg` | 12 | uint32 | optional |  |
-| `reliable_messages` | 13 | CMsgSteamNetworkingP2PRendezvous.ReliableMessage | repeated |  |
+| `reliable_messages` | 13 | [CMsgSteamNetworkingP2PRendezvous.ReliableMessage](#cmsgsteamnetworkingp2prendezvousreliablemessage) | repeated |  |
 | `hosted_server_ticket` | 14 | bytes | optional |  |
-| `application_messages` | 15 | CMsgSteamNetworkingP2PRendezvous.ApplicationMessage | repeated |  |
+| `application_messages` | 15 | [CMsgSteamNetworkingP2PRendezvous.ApplicationMessage](#cmsgsteamnetworkingp2prendezvousapplicationmessage) | repeated |  |
+
+#### `CMsgSteamNetworkingP2PRendezvous.ConnectRequest`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `crypt` | 6 | [CMsgSteamDatagramSessionCryptInfoSigned](#cmsgsteamdatagramsessioncryptinfosigned) | optional |  |
+| `cert` | 7 | [CMsgSteamDatagramCertificateSigned](steamnetworkingsockets_messages_certs.md#cmsgsteamdatagramcertificatesigned) | optional |  |
+| `to_virtual_port` | 9 | uint32 | optional |  |
+| `from_virtual_port` | 10 | uint32 | optional |  |
+| `from_fakeip` | 11 | string | optional |  |
+
+#### `CMsgSteamNetworkingP2PRendezvous.ConnectOK`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `crypt` | 5 | [CMsgSteamDatagramSessionCryptInfoSigned](#cmsgsteamdatagramsessioncryptinfosigned) | optional |  |
+| `cert` | 6 | [CMsgSteamDatagramCertificateSigned](steamnetworkingsockets_messages_certs.md#cmsgsteamdatagramcertificatesigned) | optional |  |
+
+#### `CMsgSteamNetworkingP2PRendezvous.ConnectionClosed`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `debug` | 5 | string | optional |  |
+| `reason_code` | 6 | uint32 | optional |  |
+
+#### `CMsgSteamNetworkingP2PRendezvous.ReliableMessage`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `ice` | 1 | [CMsgICERendezvous](#cmsgicerendezvous) | optional |  |
+
+#### `CMsgSteamNetworkingP2PRendezvous.ApplicationMessage`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `data` | 1 | bytes | optional |  |
+| `msg_num` | 2 | uint64 | optional |  |
+| `flags` | 3 | uint32 | optional |  |
+| `lane_idx` | 4 | uint32 | optional |  |
 
 ### `CMsgSteamNetworkingICESessionSummary`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `local_candidate_types` | 1 | uint32 | optional |  |
 | `remote_candidate_types` | 2 | uint32 | optional |  |
 | `initial_route_kind` | 3 | uint32 | optional |  |

@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNmStateMachineNode::TransitionDefinition_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 8 bytes (`0x8`) · **Align:** 2 · **Module:** animlib
 
 ## Memory layout

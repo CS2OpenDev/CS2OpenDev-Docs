@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CRenderComponent
+title: CRenderComponent (server)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CRenderComponent
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 176 bytes (`0xb0`) · **Align:** 8 · **Module:** server
+
+**Twin:** [CRenderComponent (client)](../client/CRenderComponent.md)
 
 **Inherits from:** [CEntityComponent](../entity2/CEntityComponent.md)
 

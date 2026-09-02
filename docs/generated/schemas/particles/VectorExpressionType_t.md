@@ -8,13 +8,15 @@ nav_exclude: true
 
 # VectorExpressionType_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** particles
 
 ## Values
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `VECTOR_EXPRESSION_UNINITIALIZED` | -1 | Uninitialized |
+| `VECTOR_EXPRESSION_UNINITIALIZED` | -1 (`0xffffffff`) | Uninitialized |
 | `VECTOR_EXPRESSION_ADD` | 0 | Add |
 | `VECTOR_EXPRESSION_SUBTRACT` | 1 | Subtract |
 | `VECTOR_EXPRESSION_MUL` | 2 | Multiply |

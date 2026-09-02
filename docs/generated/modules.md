@@ -6,8 +6,7 @@ nav_order: 14
 
 # Binary Modules
 
-{: .note }
-> Source: CS2 build **25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 139 binaries read for this build, each with its SHA-256, size, export / schema-registration counts, and the engine interface versions it resolved at load.
 

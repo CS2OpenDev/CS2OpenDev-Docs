@@ -7,6 +7,8 @@ nav_exclude: true
 
 # Module: engine2
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 [📊 View UML Diagram](../diagrams/engine2.md)
 
 42 types. Each links to its own page with the full field layout.

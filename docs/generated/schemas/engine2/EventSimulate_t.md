@@ -8,7 +8,9 @@ nav_exclude: true
 
 # EventSimulate_t
 
-**Kind:** class · **Size:** 48 bytes (`0x30`) · **Align:** 255 · **Module:** engine2
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 48 bytes (`0x30`) · **Align:** n/a (unspecified) · **Module:** engine2
 
 **Derived by:** [EventAdvanceTick_t](../engine2/EventAdvanceTick_t.md), [EventClientPauseSimulate_t](../engine2/EventClientPauseSimulate_t.md), [EventClientPostSimulate_t](../engine2/EventClientPostSimulate_t.md), [EventClientPreSimulate_t](../engine2/EventClientPreSimulate_t.md), [EventClientSimulate_t](../engine2/EventClientSimulate_t.md), [EventPostAdvanceTick_t](../engine2/EventPostAdvanceTick_t.md), [EventServerBeginSimulate_t](../engine2/EventServerBeginSimulate_t.md), [EventServerPollNetworking_t](../engine2/EventServerPollNetworking_t.md), [EventServerPostSimulate_t](../engine2/EventServerPostSimulate_t.md), [EventServerProcessNetworking_t](../engine2/EventServerProcessNetworking_t.md)
 

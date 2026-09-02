@@ -7,7 +7,7 @@ nav_exclude: true
 
 # `c_peer2peer_netmessages.proto`
 
-**Imports:** `netmessages.proto`, `networkbasetypes.proto`
+**Imports:** [`netmessages.proto`](netmessages.md), [`networkbasetypes.proto`](networkbasetypes.md)
 
 ## Diagram
 
@@ -40,7 +40,7 @@ direction LR
     +int32 world_scale
   }
 
-  class COrientation {
+  class CP2P_VRAvatarPosition_COrientation["CP2P_VRAvatarPosition.COrientation"] {
     +CMsgVector pos
     +CMsgQAngle ang
   }
@@ -56,7 +56,7 @@ direction LR
     +int32 dota_replay_speed
   }
 
-  CP2P_VRAvatarPosition --> COrientation : body_parts[]
+  CP2P_VRAvatarPosition --> CP2P_VRAvatarPosition_COrientation : body_parts[]
 
   class P2P_Messages{
     <<enumeration>>
@@ -69,7 +69,7 @@ direction LR
     p2p_FightingGame_Connection
   }
 
-  class Handler_Flags{
+  class CP2P_Voice_Handler_Flags["CP2P_Voice.Handler_Flags"]{
     <<enumeration>>
     Played_Audio
   }
@@ -94,43 +94,56 @@ direction LR
 
 ### `CP2P_TextMessage`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `text` | 1 | bytes | optional |  |
 
 ### `CSteam_Voice_Encoding`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `voice_data` | 1 | bytes | optional |  |
 
 ### `CP2P_Voice`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `audio` | 1 | CMsgVoiceAudio | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `audio` | 1 | [CMsgVoiceAudio](netmessages.md#cmsgvoiceaudio) | optional |  |
 | `broadcast_group` | 2 | uint32 | optional |  |
+
+#### `CP2P_Voice.Handler_Flags`
+
+| Name | Value |
+|------|-------|
+| `Played_Audio` | 1 |
 
 ### `CP2P_Ping`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `send_time` | 1 | uint64 | optional |  |
 | `is_reply` | 2 | bool | optional |  |
 
 ### `CP2P_VRAvatarPosition`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `body_parts` | 1 | CP2P_VRAvatarPosition.COrientation | repeated |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `body_parts` | 1 | [CP2P_VRAvatarPosition.COrientation](#cp2p_vravatarpositioncorientation) | repeated |  |
 | `hat_id` | 2 | int32 | optional |  |
 | `scene_id` | 3 | int32 | optional |  |
 | `world_scale` | 4 | int32 | optional |  |
 
+#### `CP2P_VRAvatarPosition.COrientation`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `pos` | 1 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `ang` | 2 | [CMsgQAngle](networkbasetypes.md#cmsgqangle) | optional |  |
+
 ### `CP2P_WatchSynchronization`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `demo_tick` | 1 | int32 | optional |  |
 | `paused` | 2 | bool | optional |  |
 | `tv_listen_voice_indices` | 3 | uint64 | optional |  |

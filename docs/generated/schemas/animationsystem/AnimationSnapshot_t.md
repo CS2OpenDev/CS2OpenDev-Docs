@@ -8,6 +8,8 @@ nav_exclude: true
 
 # AnimationSnapshot_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 288 bytes (`0x120`) · **Align:** 16 · **Module:** animationsystem
 
 **Inherits from:** [AnimationSnapshotBase_t](../animationsystem/AnimationSnapshotBase_t.md)

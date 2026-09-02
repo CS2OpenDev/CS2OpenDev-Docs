@@ -8,7 +8,9 @@ nav_exclude: true
 
 # CSndSeqInstruments
 
-**Kind:** class · **Size:** 40 bytes (`0x28`) · **Align:** 255 · **Module:** soundsystem
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 40 bytes (`0x28`) · **Align:** n/a (unspecified) · **Module:** soundsystem
 
 **Inherits from:** [ISndSeqInstruments](../soundsystem/ISndSeqInstruments.md)
 
@@ -18,3 +20,7 @@ nav_exclude: true
 classDiagram
     ISndSeqInstruments <|-- CSndSeqInstruments
 ```
+
+## Memory layout
+
+No schema-visible fields (40 bytes of opaque storage).

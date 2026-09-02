@@ -8,13 +8,15 @@ nav_exclude: true
 
 # ParticleFloatType_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** particleslib
 
 ## Values
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `PF_TYPE_INVALID` | -1 |  |
+| `PF_TYPE_INVALID` | -1 (`0xffffffff`) |  |
 | `PF_TYPE_LITERAL` | 0 |  |
 | `PF_TYPE_NAMED_VALUE` | 1 |  |
 | `PF_TYPE_RANDOM_UNIFORM` | 2 |  |

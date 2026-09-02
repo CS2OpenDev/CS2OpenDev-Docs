@@ -7,7 +7,7 @@ nav_exclude: true
 
 # `steamnetworkingsockets_messages_udp.proto`
 
-**Imports:** `steamnetworkingsockets_messages_certs.proto`, `steamnetworkingsockets_messages.proto`
+**Imports:** [`steamnetworkingsockets_messages_certs.proto`](steamnetworkingsockets_messages_certs.md), [`steamnetworkingsockets_messages.proto`](steamnetworkingsockets_messages.md)
 
 ## Diagram
 
@@ -80,7 +80,7 @@ direction LR
     k_ESteamNetworkingUDPMsg_NoConnection
   }
 
-  class Flags{
+  class CMsgSteamSockets_UDP_Stats_Flags["CMsgSteamSockets_UDP_Stats.Flags"]{
     <<enumeration>>
     ACK_REQUEST_E2E
     ACK_REQUEST_IMMEDIATE
@@ -106,16 +106,16 @@ direction LR
 
 ### `CMsgSteamSockets_UDP_ChallengeRequest`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `connection_id` | 1 | fixed32 | optional |  |
 | `my_timestamp` | 3 | fixed64 | optional |  |
 | `protocol_version` | 4 | uint32 | optional |  |
 
 ### `CMsgSteamSockets_UDP_ChallengeReply`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `connection_id` | 1 | fixed32 | optional |  |
 | `challenge` | 2 | fixed64 | optional |  |
 | `your_timestamp` | 3 | fixed64 | optional |  |
@@ -123,37 +123,37 @@ direction LR
 
 ### `CMsgSteamSockets_UDP_ConnectRequest`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `client_connection_id` | 1 | fixed32 | optional |  |
 | `challenge` | 2 | fixed64 | optional |  |
 | `legacy_client_steam_id` | 3 | fixed64 | optional |  |
-| `cert` | 4 | CMsgSteamDatagramCertificateSigned | optional |  |
+| `cert` | 4 | [CMsgSteamDatagramCertificateSigned](steamnetworkingsockets_messages_certs.md#cmsgsteamdatagramcertificatesigned) | optional |  |
 | `my_timestamp` | 5 | fixed64 | optional |  |
 | `ping_est_ms` | 6 | uint32 | optional |  |
-| `crypt` | 7 | CMsgSteamDatagramSessionCryptInfoSigned | optional |  |
+| `crypt` | 7 | [CMsgSteamDatagramSessionCryptInfoSigned](steamnetworkingsockets_messages.md#cmsgsteamdatagramsessioncryptinfosigned) | optional |  |
 | `legacy_protocol_version` | 8 | uint32 | optional |  |
-| `legacy_identity_binary` | 9 | CMsgSteamNetworkingIdentityLegacyBinary | optional |  |
+| `legacy_identity_binary` | 9 | [CMsgSteamNetworkingIdentityLegacyBinary](steamnetworkingsockets_messages_certs.md#cmsgsteamnetworkingidentitylegacybinary) | optional |  |
 | `identity_string` | 10 | string | optional |  |
 
 ### `CMsgSteamSockets_UDP_ConnectOK`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `client_connection_id` | 1 | fixed32 | optional |  |
 | `legacy_server_steam_id` | 2 | fixed64 | optional |  |
 | `your_timestamp` | 3 | fixed64 | optional |  |
 | `delay_time_usec` | 4 | uint32 | optional |  |
 | `server_connection_id` | 5 | fixed32 | optional |  |
-| `crypt` | 7 | CMsgSteamDatagramSessionCryptInfoSigned | optional |  |
-| `cert` | 8 | CMsgSteamDatagramCertificateSigned | optional |  |
-| `legacy_identity_binary` | 10 | CMsgSteamNetworkingIdentityLegacyBinary | optional |  |
+| `crypt` | 7 | [CMsgSteamDatagramSessionCryptInfoSigned](steamnetworkingsockets_messages.md#cmsgsteamdatagramsessioncryptinfosigned) | optional |  |
+| `cert` | 8 | [CMsgSteamDatagramCertificateSigned](steamnetworkingsockets_messages_certs.md#cmsgsteamdatagramcertificatesigned) | optional |  |
+| `legacy_identity_binary` | 10 | [CMsgSteamNetworkingIdentityLegacyBinary](steamnetworkingsockets_messages_certs.md#cmsgsteamnetworkingidentitylegacybinary) | optional |  |
 | `identity_string` | 11 | string | optional |  |
 
 ### `CMsgSteamSockets_UDP_ConnectionClosed`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `debug` | 2 | string | optional |  |
 | `reason_code` | 3 | uint32 | optional |  |
 | `to_connection_id` | 4 | fixed32 | optional |  |
@@ -161,14 +161,22 @@ direction LR
 
 ### `CMsgSteamSockets_UDP_NoConnection`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `from_connection_id` | 2 | fixed32 | optional |  |
 | `to_connection_id` | 3 | fixed32 | optional |  |
 
 ### `CMsgSteamSockets_UDP_Stats`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `stats` | 1 | CMsgSteamDatagramConnectionQuality | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `stats` | 1 | [CMsgSteamDatagramConnectionQuality](steamnetworkingsockets_messages.md#cmsgsteamdatagramconnectionquality) | optional |  |
 | `flags` | 3 | uint32 | optional |  |
+
+#### `CMsgSteamSockets_UDP_Stats.Flags`
+
+| Name | Value |
+|------|-------|
+| `ACK_REQUEST_E2E` | 2 |
+| `ACK_REQUEST_IMMEDIATE` | 4 |
+| `NOT_PRIMARY_TRANSPORT_E2E` | 16 |

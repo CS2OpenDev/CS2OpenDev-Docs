@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CEconItemAttribute
+title: CEconItemAttribute (server)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CEconItemAttribute
 
-**Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** n/a (unspecified) · **Module:** server
+
+**Twin:** [CEconItemAttribute (client)](../client/CEconItemAttribute.md)
 
 ## Memory layout
 

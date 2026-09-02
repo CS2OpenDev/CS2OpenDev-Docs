@@ -23,11 +23,11 @@ direction LR
     +List~CUIFontFilePackagePB.CUIEncryptedFontFilePB~ encrypted_font_files
   }
 
-  class CUIEncryptedFontFilePB {
+  class CUIFontFilePackagePB_CUIEncryptedFontFilePB["CUIFontFilePackagePB.CUIEncryptedFontFilePB"] {
     +bytes encrypted_contents
   }
 
-  CUIFontFilePackagePB --> CUIEncryptedFontFilePB : encrypted_font_files[]
+  CUIFontFilePackagePB --> CUIFontFilePackagePB_CUIEncryptedFontFilePB : encrypted_font_files[]
 
 ```
 
@@ -35,14 +35,20 @@ direction LR
 
 ### `CUIFontFilePB`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `font_file_name` | 1 | string | optional |  |
 | `opentype_font_data` | 2 | bytes | optional |  |
 
 ### `CUIFontFilePackagePB`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `package_version` | 1 | uint32 | optional |  |
-| `encrypted_font_files` | 2 | CUIFontFilePackagePB.CUIEncryptedFontFilePB | repeated |  |
+| `encrypted_font_files` | 2 | [CUIFontFilePackagePB.CUIEncryptedFontFilePB](#cuifontfilepackagepbcuiencryptedfontfilepb) | repeated |  |
+
+#### `CUIFontFilePackagePB.CUIEncryptedFontFilePB`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `encrypted_contents` | 1 | bytes | optional |  |

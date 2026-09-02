@@ -22,6 +22,7 @@ classDiagram
     AggregateSceneObject_t *-- ObjectTypeFlags_t
     AggregateSceneObject_t *-- AggregateMeshInfo_t
     AggregateSceneObject_t *-- AggregateLODSetup_t
+    BakedLightingInfo_t *-- `BakedLightingInfo_t::BakedShadowAssignment_t`
     CVoxelVisibility *-- VoxelVisBlockOffset_t
     ClutterSceneObject_t *-- ObjectTypeFlags_t
     ClutterSceneObject_t *-- ClutterTile_t

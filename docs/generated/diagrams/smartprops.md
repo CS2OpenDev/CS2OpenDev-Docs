@@ -193,6 +193,6 @@ classDiagram
     CSmartPropVariable_RadiusPlacementMode *-- SmartPropRadiusPlacementMode_t
     CSmartPropVariable_ScaleMode *-- ScaleMode_t
     CSmartPropVariable_TraceNoHit *-- TraceNoHitResult_t
-    "CSmartPropPulse_CriteriaPathPosition::Criteria_t" *-- SmartPropPathPositions_t
+    `CSmartPropPulse_CriteriaPathPosition::Criteria_t` *-- SmartPropPathPositions_t
     CSmartPropPulse_PickOneSelector *-- ConfigurationHandleShape_t
 ```

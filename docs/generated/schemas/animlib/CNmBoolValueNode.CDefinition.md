@@ -8,7 +8,9 @@ nav_exclude: true
 
 # CNmBoolValueNode::CDefinition
 
-**Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** 255 · **Module:** animlib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** n/a (unspecified) · **Module:** animlib
 
 **Inherits from:** [CNmValueNode::CDefinition](../animlib/CNmValueNode.CDefinition.md)
 
@@ -18,35 +20,35 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmValueNode::CDefinition" <|-- "CNmBoolValueNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmAndNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmCachedBoolNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmConstBoolNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmControlParameterBoolNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmFloatComparisonNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmFloatRangeComparisonNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmFootEventConditionNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmGraphEventConditionNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmIDComparisonNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmIDEventConditionNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmIDEventPercentageThroughNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmIsExternalGraphSlotFilledNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmIsExternalPoseSetNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmIsInactiveBranchConditionNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmIsTargetSetNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmNotNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmOrNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmStateCompletedConditionNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmSyncEventIndexConditionNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmTimeConditionNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmTransitionEventConditionNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmVirtualParameterBoolNode::CDefinition"
+    `CNmValueNode::CDefinition` <|-- `CNmBoolValueNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmValueNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmAndNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmCachedBoolNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmConstBoolNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmControlParameterBoolNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmFloatComparisonNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmFloatRangeComparisonNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmFootEventConditionNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmGraphEventConditionNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmIDComparisonNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmIDEventConditionNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmIDEventPercentageThroughNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmIsExternalGraphSlotFilledNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmIsExternalPoseSetNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmIsInactiveBranchConditionNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmIsTargetSetNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmNotNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmOrNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmStateCompletedConditionNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmSyncEventIndexConditionNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmTimeConditionNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmTransitionEventConditionNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmVirtualParameterBoolNode::CDefinition`
 ```
 
 ## Memory layout
 
-1 fields (0 declared here, 1 inherited). Offsets are absolute from the object base.
+1 field (0 declared here, 1 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|

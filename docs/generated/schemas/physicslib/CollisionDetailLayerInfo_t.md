@@ -8,9 +8,18 @@ nav_exclude: true
 
 # CollisionDetailLayerInfo_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 64 bytes (`0x40`) · **Align:** 8 · **Module:** physicslib
 
 **Metadata:** `MVDataOutlinerLeafNameFn`, `MVDataRoot`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CollisionDetailLayerInfo_t *-- `CollisionDetailLayerInfo_t::Name_t`
+```
 
 ## Memory layout
 
@@ -22,7 +31,7 @@ nav_exclude: true
 | `0x8` | `m_sFriendlyName` | CUtlString |  | `MPropertyDescription How name is displayed in tools` `MPropertyFriendlyName Friendly Name` |
 | `0x10` | `m_bIsQueryOnly` | bool |  | `MPropertyDescription Only query can use this layer, not collision` |
 | `0x18` | `m_sParentDetailLayer` | CUtlString |  | `MPropertyDescription Parent detail layers automatically include the child layer` |
-| `0x20` | `m_vecSubtreeDetailLayers` | CUtlVector< [CollisionDetailLayerInfo_t](../physicslib/CollisionDetailLayerInfo_t.md)::Name_t > |  | `MPropertySuppressField` |
+| `0x20` | `m_vecSubtreeDetailLayers` | CUtlVector< [CollisionDetailLayerInfo_t::Name_t](../physicslib/CollisionDetailLayerInfo_t.Name_t.md) > |  | `MPropertySuppressField` |
 | `0x38` | `m_bNotPickable` | bool |  | `MPropertySuppressField` |
 
 <details><summary>KV3 class defaults</summary>

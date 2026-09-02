@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNmIDToFloatNode::CDefinition
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 104 bytes (`0x68`) · **Align:** 8 · **Module:** animlib
 
 **Inherits from:** [CNmFloatValueNode::CDefinition](../animlib/CNmFloatValueNode.CDefinition.md)
@@ -16,9 +18,9 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmFloatValueNode::CDefinition" <|-- "CNmIDToFloatNode::CDefinition"
-    "CNmValueNode::CDefinition" <|-- "CNmFloatValueNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
+    `CNmFloatValueNode::CDefinition` <|-- `CNmIDToFloatNode::CDefinition`
+    `CNmValueNode::CDefinition` <|-- `CNmFloatValueNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmValueNode::CDefinition`
 ```
 
 ## Memory layout

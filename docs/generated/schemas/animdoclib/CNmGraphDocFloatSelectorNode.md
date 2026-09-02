@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNmGraphDocFloatSelectorNode
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 296 bytes (`0x128`) · **Align:** 8 · **Module:** animdoclib
 
 **Inherits from:** [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md)
@@ -18,6 +20,7 @@ nav_exclude: true
 classDiagram
     CNmGraphDocFlowNode <|-- CNmGraphDocFloatSelectorNode
     CNmGraphDocNode <|-- CNmGraphDocFlowNode
+    CNmGraphDocFloatSelectorNode *-- `CNmGraphDocFloatSelectorNode::Option_t`
     CNmGraphDocFloatSelectorNode *-- NmEasingOperation_t
 ```
 
@@ -35,7 +38,7 @@ classDiagram
 | `0x48` | `m_pSecondaryGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
 | `0x50` | `m_inputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 4 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0xd8` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
-| `0x100` | `m_options` | CUtlVector< [CNmGraphDocFloatSelectorNode](../animdoclib/CNmGraphDocFloatSelectorNode.md)::Option_t > |  | `MPropertyAutoExpandSelf` `MPropertyResizable` |
+| `0x100` | `m_options` | CUtlVector< [CNmGraphDocFloatSelectorNode::Option_t](../animdoclib/CNmGraphDocFloatSelectorNode.Option_t.md) > |  | `MPropertyAutoExpandSelf` `MPropertyResizable` |
 | `0x118` | `m_flDefaultValue` | float32 |  |  |
 | `0x11c` | `m_easing` | [NmEasingOperation_t](../animlib/NmEasingOperation_t.md) |  | `MPropertyGroupName +Easing` |
 | `0x120` | `m_easeTime` | float32 |  | `MPropertyGroupName +Easing` |

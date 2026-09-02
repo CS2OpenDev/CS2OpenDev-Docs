@@ -8,6 +8,8 @@ nav_exclude: true
 
 # IKDemoCaptureSettings_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 40 bytes (`0x28`) · **Align:** 8 · **Module:** animgraphlib
 
 **Relationships:**

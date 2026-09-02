@@ -8,13 +8,15 @@ nav_exclude: true
 
 # SetStatisticExpressionType_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** particles
 
 ## Values
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `SET_EXPRESSION_UNINITIALIZED` | -1 | Uninitialized |
+| `SET_EXPRESSION_UNINITIALIZED` | -1 (`0xffffffff`) | Uninitialized |
 | `SET_EXPRESSION_SUM` | 0 | Sum |
 | `SET_EXPRESSION_MEAN` | 1 | Mean/Average |
 | `SET_EXPRESSION_MEDIAN` | 2 | Median |

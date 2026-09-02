@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CSmartPropOperation_CreateLocator
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 472 bytes (`0x1d8`) · **Align:** 8 · **Module:** smartprops
 
 **Inherits from:** [CSmartPropTransformOperation](../smartprops/CSmartPropTransformOperation.md)

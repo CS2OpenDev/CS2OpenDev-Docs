@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CCSObserver_CameraServices
+title: CCSObserver_CameraServices (client)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CCSObserver_CameraServices
 
-**Kind:** class · **Size:** 688 bytes (`0x2b0`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 688 bytes (`0x2b0`) · **Align:** n/a (unspecified) · **Module:** client
+
+**Twin:** [CCSObserver_CameraServices (server)](../server/CCSObserver_CameraServices.md)
 
 **Inherits from:** [CCSPlayerBase_CameraServices](../client/CCSPlayerBase_CameraServices.md)
 

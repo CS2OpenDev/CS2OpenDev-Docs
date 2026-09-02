@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CAnimGraphDoc_SubGraph
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 224 bytes (`0xe0`) · **Align:** 8 · **Module:** animgraphdoclib
 
 **Derived by:** [CAnimGraphDoc_Graph](../animgraphdoclib/CAnimGraphDoc_Graph.md)

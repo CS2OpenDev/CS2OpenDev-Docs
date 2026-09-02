@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNmClipDocEvent_Sound
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 64 bytes (`0x40`) · **Align:** 8 · **Module:** animdoclib
 
 **Inherits from:** [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md)
@@ -18,7 +20,7 @@ nav_exclude: true
 classDiagram
     CNmClipDocEvent <|-- CNmClipDocEvent_Sound
     CNmClipDocEvent_Sound *-- CNmEventRelevance_t
-    CNmClipDocEvent_Sound *-- CNmSoundEvent
+    CNmClipDocEvent_Sound *-- `CNmSoundEvent::Position_t`
 ```
 
 ## Memory layout
@@ -33,7 +35,7 @@ classDiagram
 | `0x14` | `m_bContinuePlayingSoundAtDurationEnd` | bool |  | `MPropertyAttrStateCallback` |
 | `0x18` | `m_flDurationInterruptionThreshold` | float32 |  | `MPropertyAttrStateCallback` |
 | `0x20` | `m_name` | CUtlString |  | `MPropertyAttributeEditor SoundPicker()` `MPropertyStartGroup +Sound` |
-| `0x28` | `m_position` | [CNmSoundEvent](../animlib/CNmSoundEvent.md)::Position_t |  | `MPropertyStartGroup +Position` |
+| `0x28` | `m_position` | [CNmSoundEvent::Position_t](../animlib/CNmSoundEvent.Position_t.md) |  | `MPropertyStartGroup +Position` |
 | `0x30` | `m_attachmentName` | CUtlString |  |  |
 | `0x38` | `m_tags` | CUtlString |  | `MPropertyStartGroup +Metadata` |
 

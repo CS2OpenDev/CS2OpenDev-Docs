@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CBaseAnimGraph
+title: CBaseAnimGraph (client)
 nav_exclude: true
 ---
 
@@ -8,14 +8,17 @@ nav_exclude: true
 
 # CBaseAnimGraph
 
-Entity layer that drives the Source 2 animation graph — skeleton, ragdoll, and choreo.  Base for all animated model entities, including player pawns.
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
+Entity layer that drives the Source 2 animation graph — skeleton, ragdoll, and choreo.  Base for all animated model entities, including player pawns.
 
 **Kind:** class · **Size:** 4480 bytes (`0x1180`) · **Align:** 8 · **Module:** client
 
+**Twin:** [CBaseAnimGraph (server)](../server/CBaseAnimGraph.md)
+
 **Inherits from:** [C_BaseModelEntity](../client/C_BaseModelEntity.md)
 
-**Derived by:** [CBaseAnimGraphAlias_baseanimating](../client/CBaseAnimGraphAlias_baseanimating.md), [CBaseCombatCharacter](../server/CBaseCombatCharacter.md), [CBaseGrenade](../server/CBaseGrenade.md), [CBaseProp](../client/CBaseProp.md), [CConstraintAnchor](../server/CConstraintAnchor.md), [CEconEntity](../server/CEconEntity.md), [CFish](../server/CFish.md), [CHostageCarriableProp](../server/CHostageCarriableProp.md), [CItem](../server/CItem.md), [CItemSoda](../server/CItemSoda.md), [CPhysMagnet](../server/CPhysMagnet.md), [CPlantedC4](../server/CPlantedC4.md), [CPointCommentaryNode](../server/CPointCommentaryNode.md), [CRagdollProp](../server/CRagdollProp.md), [CWaterBullet](../server/CWaterBullet.md), [C_BaseCombatCharacter](../client/C_BaseCombatCharacter.md), [C_BaseGrenade](../client/C_BaseGrenade.md), [C_BulletHitModel](../client/C_BulletHitModel.md), [C_CS2WeaponModuleBase](../client/C_CS2WeaponModuleBase.md), [C_CSGO_PreviewModel](../client/C_CSGO_PreviewModel.md), [C_ClientRagdoll](../client/C_ClientRagdoll.md), [C_EconEntity](../client/C_EconEntity.md), [C_Fish](../client/C_Fish.md), [C_HostageCarriableProp](../client/C_HostageCarriableProp.md), [C_LateUpdatedAnimating](../client/C_LateUpdatedAnimating.md), [C_LocalTempEntity](../client/C_LocalTempEntity.md), [C_Multimeter](../client/C_Multimeter.md), [C_PhysMagnet](../client/C_PhysMagnet.md), [C_PlantedC4](../client/C_PlantedC4.md), [C_PointCommentaryNode](../client/C_PointCommentaryNode.md), [C_RagdollProp](../client/C_RagdollProp.md), [C_WaterBullet](../client/C_WaterBullet.md), [C_WorldModelGloves](../client/C_WorldModelGloves.md)
+**Derived by:** [CBaseAnimGraphAlias_baseanimating](../client/CBaseAnimGraphAlias_baseanimating.md), [CBaseProp](../client/CBaseProp.md), [C_BaseCombatCharacter](../client/C_BaseCombatCharacter.md), [C_BaseGrenade](../client/C_BaseGrenade.md), [C_BulletHitModel](../client/C_BulletHitModel.md), [C_CS2WeaponModuleBase](../client/C_CS2WeaponModuleBase.md), [C_CSGO_PreviewModel](../client/C_CSGO_PreviewModel.md), [C_ClientRagdoll](../client/C_ClientRagdoll.md), [C_EconEntity](../client/C_EconEntity.md), [C_Fish](../client/C_Fish.md), [C_HostageCarriableProp](../client/C_HostageCarriableProp.md), [C_LateUpdatedAnimating](../client/C_LateUpdatedAnimating.md), [C_LocalTempEntity](../client/C_LocalTempEntity.md), [C_Multimeter](../client/C_Multimeter.md), [C_PhysMagnet](../client/C_PhysMagnet.md), [C_PlantedC4](../client/C_PlantedC4.md), [C_PointCommentaryNode](../client/C_PointCommentaryNode.md), [C_RagdollProp](../client/C_RagdollProp.md), [C_WaterBullet](../client/C_WaterBullet.md), [C_WorldModelGloves](../client/C_WorldModelGloves.md)
 
 **Relationships:**
 
@@ -44,19 +47,6 @@ classDiagram
     CBaseAnimGraph <|-- C_RagdollProp
     CBaseAnimGraph <|-- C_WaterBullet
     CBaseAnimGraph <|-- C_WorldModelGloves
-    CBaseAnimGraph <|-- CBaseCombatCharacter
-    CBaseAnimGraph <|-- CBaseGrenade
-    CBaseAnimGraph <|-- CConstraintAnchor
-    CBaseAnimGraph <|-- CEconEntity
-    CBaseAnimGraph <|-- CFish
-    CBaseAnimGraph <|-- CHostageCarriableProp
-    CBaseAnimGraph <|-- CItem
-    CBaseAnimGraph <|-- CItemSoda
-    CBaseAnimGraph <|-- CPhysMagnet
-    CBaseAnimGraph <|-- CPlantedC4
-    CBaseAnimGraph <|-- CPointCommentaryNode
-    CBaseAnimGraph <|-- CRagdollProp
-    CBaseAnimGraph <|-- CWaterBullet
     CBaseAnimGraph *-- CAnimGraphControllerManager
     CBaseAnimGraph *-- CAnimGraphControllerPtr
     CBaseAnimGraph *-- CEntityIOOutput
@@ -71,8 +61,8 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_iszPrivateVScripts` | CUtlSymbolLarge | [CEntityInstance](../entity2/CEntityInstance.md) |  |
-| `0x10` | `m_pEntity` | [CEntityIdentity](../entity2/CEntityIdentity.md)* | [CEntityInstance](../entity2/CEntityInstance.md) |  |
-| `0x28` | `m_CScriptComponent` | [CScriptComponent](../entity2/CScriptComponent.md)* | [CEntityInstance](../entity2/CEntityInstance.md) |  |
+| `0x10` | `m_pEntity` | [CEntityIdentity](../entity2/CEntityIdentity.md)* | [CEntityInstance](../entity2/CEntityInstance.md) | CEntityIdentity pointer — the entity's identity record (name, class, handle, flags). |
+| `0x28` | `m_CScriptComponent` | [CScriptComponent](../entity2/CScriptComponent.md)* | [CEntityInstance](../entity2/CEntityInstance.md) | VScript component attached to the entity, when scripted. |
 | `0x30` | `m_CBodyComponent` | [CBodyComponent](../client/CBodyComponent.md)* | [C_BaseEntity](../client/C_BaseEntity.md) |  |
 | `0x38` | `m_NetworkTransmitComponent` | [CNetworkTransmitComponent](../server/CNetworkTransmitComponent.md) | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
 | `0x328` | `m_nLastThinkTick` | [GameTick_t](../entity2/GameTick_t.md) | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |

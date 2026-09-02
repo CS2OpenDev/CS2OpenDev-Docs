@@ -47,7 +47,7 @@ Game events extracted from CS2's `.gameevents` resource files. These events are 
 | [bonus_updated](#bonus_updated) | `core.gameevents` | 4 |  |
 | [bot_takeover](#bot_takeover) | `core.gameevents` | 5 |  |
 | [break_breakable](#break_breakable) | `core.gameevents` | 3 |  |
-| [break_prop](#break_prop) | `core.gameevents` | 5 |  |
+| [break_prop](#break_prop-coregameevents) | `core.gameevents` | 5 |  |
 | [broken_breakable](#broken_breakable) | `core.gameevents` | 3 |  |
 | [cart_updated](#cart_updated) | `core.gameevents` | 0 |  |
 | [clientside_lesson_closed](#clientside_lesson_closed) | `core.gameevents` | 1 |  |
@@ -59,12 +59,12 @@ Game events extracted from CS2's `.gameevents` resource files. These events are 
 | [drop_rate_modified](#drop_rate_modified) | `core.gameevents` | 0 |  |
 | [dynamic_shadow_light_changed](#dynamic_shadow_light_changed) | `core.gameevents` | 0 |  |
 | [entity_killed](#entity_killed) | `core.gameevents` | 4 |  |
-| [entity_visible](#entity_visible) | `core.gameevents` | 4 |  |
+| [entity_visible](#entity_visible-coregameevents) | `core.gameevents` | 4 |  |
 | [event_ticket_modified](#event_ticket_modified) | `core.gameevents` | 0 |  |
 | [finale_start](#finale_start) | `core.gameevents` | 1 |  |
 | [flare_ignite_npc](#flare_ignite_npc) | `core.gameevents` | 1 |  |
 | [game_message](#game_message) | `core.gameevents` | 2 | a message send by game logic to everyone |
-| [game_newmap](#game_newmap) | `core.gameevents` | 2 | send when new map is completely loaded |
+| [game_newmap](#game_newmap-coregameevents) | `core.gameevents` | 2 | send when new map is completely loaded |
 | [gameinstructor_draw](#gameinstructor_draw) | `core.gameevents` | 0 |  |
 | [gameinstructor_nodraw](#gameinstructor_nodraw) | `core.gameevents` | 0 |  |
 | [gc_connected](#gc_connected) | `core.gameevents` | 0 |  |
@@ -83,10 +83,10 @@ Game events extracted from CS2's `.gameevents` resource files. These events are 
 | [hltv_versioninfo](#hltv_versioninfo) | `core.gameevents` | 1 |  |
 | [hostname_changed](#hostname_changed) | `core.gameevents` | 1 |  |
 | [instructor_close_lesson](#instructor_close_lesson) | `core.gameevents` | 2 |  |
-| [instructor_server_hint_create](#instructor_server_hint_create) | `core.gameevents` | 27 | create a hint using data supplied entirely by the server/map. Intended for hints to smooth playtests before content is ready to make the hint unneccessary. NOT INTENDED AS A SHIPPABLE CRUTCH |
-| [instructor_server_hint_stop](#instructor_server_hint_stop) | `core.gameevents` | 2 | destroys a server/map created hint |
+| [instructor_server_hint_create](#instructor_server_hint_create-coregameevents) | `core.gameevents` | 27 | create a hint using data supplied entirely by the server/map. Intended for hints to smooth playtests before content is ready to make the hint unneccessary. NOT INTENDED AS A SHIPPABLE CRUTCH |
+| [instructor_server_hint_stop](#instructor_server_hint_stop-coregameevents) | `core.gameevents` | 2 | destroys a server/map created hint |
 | [instructor_start_lesson](#instructor_start_lesson) | `core.gameevents` | 6 |  |
-| [inventory_updated](#inventory_updated) | `core.gameevents` | 2 |  |
+| [inventory_updated](#inventory_updated-coregameevents) | `core.gameevents` | 2 |  |
 | [item_schema_initialized](#item_schema_initialized) | `core.gameevents` | 0 |  |
 | [local_player_controller_team](#local_player_controller_team) | `core.gameevents` | 0 |  |
 | [local_player_pawn_changed](#local_player_pawn_changed) | `core.gameevents` | 0 |  |
@@ -96,30 +96,23 @@ Game events extracted from CS2's `.gameevents` resource files. These events are 
 | [physgun_pickup](#physgun_pickup) | `core.gameevents` | 1 |  |
 | [player_activate](#player_activate) | `core.gameevents` | 1 |  |
 | [player_changename](#player_changename) | `core.gameevents` | 3 |  |
-| [player_chat](#player_chat) | `core.gameevents` | 4 | a public player chat |
+| [player_chat](#player_chat-coregameevents) | `core.gameevents` | 4 | a public player chat |
 | [player_connect](#player_connect) | `core.gameevents` | 5 | a new client connected |
 | [player_connect_full](#player_connect_full) | `core.gameevents` | 1 | player has sent final message in the connection sequence |
-| [player_death](#player_death) | `core.gameevents` | 2 | Fired when a player dies.  Carries `userid` (the victim) and `attacker`.  Detailed kill information (weapon, headshot, assister, penetration count, no-scope flag, distance) lives on the legacy `cs_gameevents.proto` user-message `CMsgSource1LegacyGameEvent` payload — extract those keys when parsing demos.
- |
+| [player_death](#player_death-coregameevents) | `core.gameevents` | 2 | Fired when a player dies.  Carries `userid` (the victim) and `attacker`.  Detailed kill information (weapon, headshot, assister, penetration count, no-scope flag, distance) lives on the legacy `cs_gameevents.proto` user-message `CMsgSource1LegacyGameEvent` payload — extract those keys when parsing demos. |
 | [player_disconnect](#player_disconnect) | `core.gameevents` | 7 | a client was disconnected |
-| [player_footstep](#player_footstep) | `core.gameevents` | 1 |  |
+| [player_footstep](#player_footstep-coregameevents) | `core.gameevents` | 1 |  |
 | [player_full_update](#player_full_update) | `core.gameevents` | 2 |  |
 | [player_hintmessage](#player_hintmessage) | `core.gameevents` | 1 |  |
-| [player_hurt](#player_hurt) | `core.gameevents` | 3 | Fired when a player takes damage from any source.  The pre-CS2 `weapon` / `dmg_armor` / `dmg_health` / `hitgroup` fields were removed in CS2; for those, use `bullet_damage` (firearm damage) or correlate with the relevant grenade-detonation event.
- |
+| [player_hurt](#player_hurt-coregameevents) | `core.gameevents` | 3 | Fired when a player takes damage from any source.  The pre-CS2 `weapon` / `dmg_armor` / `dmg_health` / `hitgroup` fields were removed in CS2; for those, use `bullet_damage` (firearm damage) or correlate with the relevant grenade-detonation event. |
 | [player_info](#player_info) | `core.gameevents` | 4 | a player changed his name |
-| [player_spawn](#player_spawn) | `core.gameevents` | 1 | Fired when a player's pawn spawns (per-round).  The controller persists across rounds; the pawn does not, so this event marks "new pawn is alive."
- |
+| [player_spawn](#player_spawn) | `core.gameevents` | 1 | Fired when a player's pawn spawns (per-round).  The controller persists across rounds; the pawn does not, so this event marks "new pawn is alive." |
 | [player_stats_updated](#player_stats_updated) | `core.gameevents` | 1 |  |
-| [player_team](#player_team) | `core.gameevents` | 7 | Fired when a player switches teams (T ↔ CT, or to/from Spectator).  `team` is the new team; `oldteam` is the previous. `disconnect=true` indicates the team change was caused by the player leaving rather than a deliberate switch.
- |
+| [player_team](#player_team-coregameevents) | `core.gameevents` | 7 | Fired when a player switches teams (T ↔ CT, or to/from Spectator).  `team` is the new team; `oldteam` is the previous. `disconnect=true` indicates the team change was caused by the player leaving rather than a deliberate switch. |
 | [ragdoll_dissolved](#ragdoll_dissolved) | `core.gameevents` | 1 |  |
-| [round_end](#round_end) | `core.gameevents` | 4 | Fired when a round concludes.  Carries the winning team (`winner`), the reason for the win (`reason`, see RoundEndReason table below), and a human-readable `message` string.
- |
-| [round_freeze_end](#round_freeze_end) | `core.gameevents` | 0 | Fired when the buy/freeze period ends and live play begins. Players regain movement; this is the canonical "round live" tick for demo-parsing tooling and stat trackers.
- |
-| [round_start](#round_start) | `core.gameevents` | 3 | Fired by the game rules when a new round begins.  Marks the start of the freeze (buy) period — players have just spawned and are frozen in place.  Use this to reset per-round bookkeeping.
- |
+| [round_end](#round_end-coregameevents) | `core.gameevents` | 4 | Fired when a round concludes.  Carries the winning team (`winner`), the reason for the win (`reason`, see RoundEndReason table below), and a human-readable `message` string. |
+| [round_freeze_end](#round_freeze_end) | `core.gameevents` | 0 | Fired when the buy/freeze period ends and live play begins. Players regain movement; this is the canonical "round live" tick for demo-parsing tooling and stat trackers. |
+| [round_start](#round_start) | `core.gameevents` | 3 | Fired by the game rules when a new round begins.  Marks the start of the freeze (buy) period — players have just spawned and are frozen in place.  Use this to reset per-round bookkeeping. |
 | [round_start_post_nav](#round_start_post_nav) | `core.gameevents` | 0 |  |
 | [round_start_pre_entity](#round_start_pre_entity) | `core.gameevents` | 0 |  |
 | [server_cvar](#server_cvar) | `core.gameevents` | 2 | a server console var has changed |
@@ -128,7 +121,7 @@ Game events extracted from CS2's `.gameevents` resource files. These events are 
 | [server_shutdown](#server_shutdown) | `core.gameevents` | 1 | server shut down |
 | [server_spawn](#server_spawn) | `core.gameevents` | 10 | send once a server starts |
 | [set_instructor_group_enabled](#set_instructor_group_enabled) | `core.gameevents` | 2 |  |
-| [spec_mode_updated](#spec_mode_updated) | `core.gameevents` | 1 |  |
+| [spec_mode_updated](#spec_mode_updated-coregameevents) | `core.gameevents` | 1 |  |
 | [spec_target_updated](#spec_target_updated) | `core.gameevents` | 2 |  |
 | [store_pricesheet_updated](#store_pricesheet_updated) | `core.gameevents` | 0 |  |
 | [team_info](#team_info) | `core.gameevents` | 2 | info about team |
@@ -138,14 +131,14 @@ Game events extracted from CS2's `.gameevents` resource files. These events are 
 | [user_data_downloaded](#user_data_downloaded) | `core.gameevents` | 0 | fired when achievements/stats are downloaded from Steam or XBox Live |
 | [vote_cast_no](#vote_cast_no) | `core.gameevents` | 2 |  |
 | [vote_cast_yes](#vote_cast_yes) | `core.gameevents` | 2 |  |
-| [vote_changed](#vote_changed) | `core.gameevents` | 3 |  |
+| [vote_changed](#vote_changed-coregameevents) | `core.gameevents` | 3 |  |
 | [vote_failed](#vote_failed) | `core.gameevents` | 1 |  |
 | [vote_passed](#vote_passed) | `core.gameevents` | 3 |  |
-| [vote_started](#vote_started) | `core.gameevents` | 5 |  |
+| [vote_started](#vote_started-coregameevents) | `core.gameevents` | 5 |  |
 | [add_bullet_hit_marker](#add_bullet_hit_marker) | `game.gameevents` | 12 |  |
 | [add_player_sonar_icon](#add_player_sonar_icon) | `game.gameevents` | 4 |  |
 | [begin_new_match](#begin_new_match) | `game.gameevents` | 0 |  |
-| [break_prop](#break_prop) | `game.gameevents` | 2 |  |
+| [break_prop](#break_prop-gamegameevents) | `game.gameevents` | 2 |  |
 | [client_loadout_changed](#client_loadout_changed) | `game.gameevents` | 0 |  |
 | [dm_bonus_weapon_start](#dm_bonus_weapon_start) | `game.gameevents` | 2 |  |
 | [door_break](#door_break) | `game.gameevents` | 2 |  |
@@ -153,21 +146,20 @@ Game events extracted from CS2's `.gameevents` resource files. These events are 
 | [door_open](#door_open) | `game.gameevents` | 2 |  |
 | [endmatch_cmm_start_reveal_items](#endmatch_cmm_start_reveal_items) | `game.gameevents` | 0 |  |
 | [endmatch_mapvote_selecting_map](#endmatch_mapvote_selecting_map) | `game.gameevents` | 11 |  |
-| [entity_visible](#entity_visible) | `game.gameevents` | 4 |  |
+| [entity_visible](#entity_visible-gamegameevents) | `game.gameevents` | 4 |  |
 | [game_end](#game_end) | `game.gameevents` | 1 | a game ended |
 | [game_init](#game_init) | `game.gameevents` | 0 | sent when a new game is started |
-| [game_newmap](#game_newmap) | `game.gameevents` | 1 | send when new map is completely loaded |
+| [game_newmap](#game_newmap-gamegameevents) | `game.gameevents` | 1 | send when new map is completely loaded |
 | [game_start](#game_start) | `game.gameevents` | 4 | a new game starts |
 | [gameui_hidden](#gameui_hidden) | `game.gameevents` | 0 |  |
-| [instructor_server_hint_create](#instructor_server_hint_create) | `game.gameevents` | 20 | create a hint using data supplied entirely by the server/map. Intended for hints to smooth playtests before content is ready to make the hint unneccessary. NOT INTENDED AS A SHIPPABLE CRUTCH |
-| [instructor_server_hint_stop](#instructor_server_hint_stop) | `game.gameevents` | 1 | destroys a server/map created hint |
-| [inventory_updated](#inventory_updated) | `game.gameevents` | 0 |  |
-| [player_chat](#player_chat) | `game.gameevents` | 3 | a public player chat |
+| [instructor_server_hint_create](#instructor_server_hint_create-gamegameevents) | `game.gameevents` | 20 | create a hint using data supplied entirely by the server/map. Intended for hints to smooth playtests before content is ready to make the hint unneccessary. NOT INTENDED AS A SHIPPABLE CRUTCH |
+| [instructor_server_hint_stop](#instructor_server_hint_stop-gamegameevents) | `game.gameevents` | 1 | destroys a server/map created hint |
+| [inventory_updated](#inventory_updated-gamegameevents) | `game.gameevents` | 0 |  |
+| [player_chat](#player_chat-gamegameevents) | `game.gameevents` | 3 | a public player chat |
 | [player_decal](#player_decal) | `game.gameevents` | 1 |  |
 | [player_score](#player_score) | `game.gameevents` | 4 | players scores changed |
 | [player_shoot](#player_shoot) | `game.gameevents` | 3 | player shoot his weapon |
-| [player_team](#player_team) | `game.gameevents` | 6 | Fired when a player switches teams (T ↔ CT, or to/from Spectator).  `team` is the new team; `oldteam` is the previous. `disconnect=true` indicates the team change was caused by the player leaving rather than a deliberate switch.
- |
+| [player_team](#player_team-gamegameevents) | `game.gameevents` | 6 | Fired when a player switches teams (T ↔ CT, or to/from Spectator).  `team` is the new team; `oldteam` is the previous. `disconnect=true` indicates the team change was caused by the player leaving rather than a deliberate switch. |
 | [read_game_titledata](#read_game_titledata) | `game.gameevents` | 1 | read user titledata from profile |
 | [reset_game_titledata](#reset_game_titledata) | `game.gameevents` | 1 | reset user titledata; do not automatically write profile |
 | [round_announce_final](#round_announce_final) | `game.gameevents` | 0 |  |
@@ -175,8 +167,7 @@ Game events extracted from CS2's `.gameevents` resource files. These events are 
 | [round_announce_match_point](#round_announce_match_point) | `game.gameevents` | 0 |  |
 | [round_announce_match_start](#round_announce_match_start) | `game.gameevents` | 0 |  |
 | [round_announce_warmup](#round_announce_warmup) | `game.gameevents` | 0 |  |
-| [round_end](#round_end) | `game.gameevents` | 4 | Fired when a round concludes.  Carries the winning team (`winner`), the reason for the win (`reason`, see RoundEndReason table below), and a human-readable `message` string.
- |
+| [round_end](#round_end-gamegameevents) | `game.gameevents` | 4 | Fired when a round concludes.  Carries the winning team (`winner`), the reason for the win (`reason`, see RoundEndReason table below), and a human-readable `message` string. |
 | [round_end_upload_stats](#round_end_upload_stats) | `game.gameevents` | 0 |  |
 | [round_officially_ended](#round_officially_ended) | `game.gameevents` | 0 |  |
 | [round_time_warning](#round_time_warning) | `game.gameevents` | 0 |  |
@@ -187,10 +178,10 @@ Game events extracted from CS2's `.gameevents` resource files. These events are 
 | [ugc_map_info_received](#ugc_map_info_received) | `game.gameevents` | 1 |  |
 | [ugc_map_unsubscribed](#ugc_map_unsubscribed) | `game.gameevents` | 1 |  |
 | [vote_cast](#vote_cast) | `game.gameevents` | 3 |  |
-| [vote_changed](#vote_changed) | `game.gameevents` | 6 |  |
+| [vote_changed](#vote_changed-gamegameevents) | `game.gameevents` | 6 |  |
 | [vote_ended](#vote_ended) | `game.gameevents` | 0 |  |
 | [vote_options](#vote_options) | `game.gameevents` | 6 |  |
-| [vote_started](#vote_started) | `game.gameevents` | 4 |  |
+| [vote_started](#vote_started-gamegameevents) | `game.gameevents` | 4 |  |
 | [warmup_end](#warmup_end) | `game.gameevents` | 0 |  |
 | [weaponhud_selection](#weaponhud_selection) | `game.gameevents` | 3 |  |
 | [write_game_titledata](#write_game_titledata) | `game.gameevents` | 1 | write user titledata in profile |
@@ -201,23 +192,15 @@ Game events extracted from CS2's `.gameevents` resource files. These events are 
 | [announce_phase_end](#announce_phase_end) | `mod.gameevents` | 0 |  |
 | [bomb_abortdefuse](#bomb_abortdefuse) | `mod.gameevents` | 1 |  |
 | [bomb_abortplant](#bomb_abortplant) | `mod.gameevents` | 2 |  |
-| [bomb_beep](#bomb_beep) | `mod.gameevents` | 1 | Fired on each beep of an armed C4.  `entindex` references the `CPlantedC4`.  Cadence accelerates as detonation approaches.
- |
+| [bomb_beep](#bomb_beep) | `mod.gameevents` | 1 | Fired on each beep of an armed C4.  `entindex` references the `CPlantedC4`.  Cadence accelerates as detonation approaches. |
 | [bomb_begindefuse](#bomb_begindefuse) | `mod.gameevents` | 2 |  |
-| [bomb_beginplant](#bomb_beginplant) | `mod.gameevents` | 2 | Fired the moment a player begins the C4 plant animation.  The plant can still be interrupted (player damaged, switches weapon, leaves site); listen for `bomb_planted` to confirm completion.
- |
-| [bomb_defused](#bomb_defused) | `mod.gameevents` | 3 | Fired when the C4 is successfully defused.  `userid` is the defuser; `site` is the bombsite.
- |
-| [bomb_dropped](#bomb_dropped) | `mod.gameevents` | 2 | Fired when a player carrying the C4 drops it (death, voluntary drop, disconnect).  `entindex` identifies the C4 world entity now sitting on the ground.
- |
-| [bomb_exploded](#bomb_exploded) | `mod.gameevents` | 3 | Fired when the C4 detonates (defuse failed / timer expired). `userid` is the original planter (the actor who armed it), not the player nearest the explosion.
- |
-| [bomb_pickup](#bomb_pickup) | `mod.gameevents` | 1 | Fired when a player picks up a dropped C4.  `userid` here is a `player_pawn` (not `player_controller_and_pawn`) — only the pawn half is meaningful.
- |
-| [bomb_planted](#bomb_planted) | `mod.gameevents` | 3 | Fired when the C4 is successfully armed.  `site` is the bombsite index (0=A, 1=B).  At this point a `CPlantedC4` entity exists and the 40-second countdown begins.
- |
-| [bullet_damage](#bullet_damage) | `mod.gameevents` | 24 | Fired on every firearm-projectile hit landed on a player.  Far richer than `player_hurt`: includes shot angles, aim-punch, inaccuracy components, penetration count, and lag-compensation type.  This is the right event for ballistics analysis and cheat-detection heuristics.
- |
+| [bomb_beginplant](#bomb_beginplant) | `mod.gameevents` | 2 | Fired the moment a player begins the C4 plant animation.  The plant can still be interrupted (player damaged, switches weapon, leaves site); listen for `bomb_planted` to confirm completion. |
+| [bomb_defused](#bomb_defused) | `mod.gameevents` | 3 | Fired when the C4 is successfully defused.  `userid` is the defuser; `site` is the bombsite. |
+| [bomb_dropped](#bomb_dropped) | `mod.gameevents` | 2 | Fired when a player carrying the C4 drops it (death, voluntary drop, disconnect).  `entindex` identifies the C4 world entity now sitting on the ground. |
+| [bomb_exploded](#bomb_exploded) | `mod.gameevents` | 3 | Fired when the C4 detonates (defuse failed / timer expired). `userid` is the original planter (the actor who armed it), not the player nearest the explosion. |
+| [bomb_pickup](#bomb_pickup) | `mod.gameevents` | 1 | Fired when a player picks up a dropped C4.  `userid` here is a `player_pawn` (not `player_controller_and_pawn`) — only the pawn half is meaningful. |
+| [bomb_planted](#bomb_planted) | `mod.gameevents` | 3 | Fired when the C4 is successfully armed.  `site` is the bombsite index (0=A, 1=B).  At this point a `CPlantedC4` entity exists and the 40-second countdown begins. |
+| [bullet_damage](#bullet_damage) | `mod.gameevents` | 24 | Fired on every firearm-projectile hit landed on a player.  Far richer than `player_hurt`: includes shot angles, aim-punch, inaccuracy components, penetration count, and lag-compensation type.  This is the right event for ballistics analysis and cheat-detection heuristics. |
 | [bullet_impact](#bullet_impact) | `mod.gameevents` | 4 |  |
 | [buymenu_close](#buymenu_close) | `mod.gameevents` | 1 |  |
 | [buymenu_open](#buymenu_open) | `mod.gameevents` | 0 |  |
@@ -230,13 +213,11 @@ Game events extracted from CS2's `.gameevents` resource files. These events are 
 | [cs_match_end_restart](#cs_match_end_restart) | `mod.gameevents` | 0 |  |
 | [cs_pre_restart](#cs_pre_restart) | `mod.gameevents` | 0 |  |
 | [cs_prev_next_spectator](#cs_prev_next_spectator) | `mod.gameevents` | 1 |  |
-| [cs_round_final_beep](#cs_round_final_beep) | `mod.gameevents` | 0 | Fired on the final pre-explosion beep of the planted C4.  Useful for demo-parsing tooling that wants to mark "bomb is about to detonate" without polling `m_flC4Blow` on the C4 entity.
- |
+| [cs_round_final_beep](#cs_round_final_beep) | `mod.gameevents` | 0 | Fired on the final pre-explosion beep of the planted C4.  Useful for demo-parsing tooling that wants to mark "bomb is about to detonate" without polling `m_flC4Blow` on the C4 entity. |
 | [cs_round_start_beep](#cs_round_start_beep) | `mod.gameevents` | 0 |  |
 | [cs_win_panel_match](#cs_win_panel_match) | `mod.gameevents` | 0 |  |
 | [cs_win_panel_round](#cs_win_panel_round) | `mod.gameevents` | 9 |  |
-| [decoy_detonate](#decoy_detonate) | `mod.gameevents` | 5 | Fired each time a decoy grenade fires its fake gunshot sound. Multiple per decoy lifetime.
- |
+| [decoy_detonate](#decoy_detonate) | `mod.gameevents` | 5 | Fired each time a decoy grenade fires its fake gunshot sound. Multiple per decoy lifetime. |
 | [decoy_firing](#decoy_firing) | `mod.gameevents` | 5 |  |
 | [decoy_started](#decoy_started) | `mod.gameevents` | 5 |  |
 | [defuser_dropped](#defuser_dropped) | `mod.gameevents` | 1 |  |
@@ -255,35 +236,28 @@ Game events extracted from CS2's `.gameevents` resource files. These events are 
 | [exit_buyzone](#exit_buyzone) | `mod.gameevents` | 2 |  |
 | [exit_rescue_zone](#exit_rescue_zone) | `mod.gameevents` | 1 |  |
 | [firstbombs_incoming_warning](#firstbombs_incoming_warning) | `mod.gameevents` | 1 |  |
-| [flashbang_detonate](#flashbang_detonate) | `mod.gameevents` | 5 | Fired when a flashbang explodes.  Per-player flash duration is *not* on this event — read `m_flFlashDuration` / `m_flFlashMaxAlpha` on each affected `CCSPlayerPawn` instead.
- |
+| [flashbang_detonate](#flashbang_detonate) | `mod.gameevents` | 5 | Fired when a flashbang explodes.  Per-player flash duration is *not* on this event — read `m_flFlashDuration` / `m_flFlashMaxAlpha` on each affected `CCSPlayerPawn` instead. |
 | [game_phase_changed](#game_phase_changed) | `mod.gameevents` | 1 |  |
 | [gg_killed_enemy](#gg_killed_enemy) | `mod.gameevents` | 5 |  |
 | [grenade_bounce](#grenade_bounce) | `mod.gameevents` | 1 |  |
-| [grenade_thrown](#grenade_thrown) | `mod.gameevents` | 2 | Fired when a grenade leaves a player's hand.  Pair with the matching `<type>_detonate` event for landing/explosion location.
- |
+| [grenade_thrown](#grenade_thrown) | `mod.gameevents` | 2 | Fired when a grenade leaves a player's hand.  Pair with the matching `<type>_detonate` event for landing/explosion location. |
 | [guardian_wave_restart](#guardian_wave_restart) | `mod.gameevents` | 0 |  |
-| [hegrenade_detonate](#hegrenade_detonate) | `mod.gameevents` | 5 | Fired when an HE grenade explodes.  `x`/`y`/`z` is the world position of the detonation; `entityid` is the projectile's entity index (now removed).
- |
+| [hegrenade_detonate](#hegrenade_detonate) | `mod.gameevents` | 5 | Fired when an HE grenade explodes.  `x`/`y`/`z` is the world position of the detonation; `entityid` is the projectile's entity index (now removed). |
 | [hide_deathpanel](#hide_deathpanel) | `mod.gameevents` | 0 |  |
 | [hltv_changed_mode](#hltv_changed_mode) | `mod.gameevents` | 3 |  |
 | [hostage_call_for_help](#hostage_call_for_help) | `mod.gameevents` | 1 |  |
 | [hostage_follows](#hostage_follows) | `mod.gameevents` | 2 |  |
 | [hostage_hurt](#hostage_hurt) | `mod.gameevents` | 2 |  |
-| [hostage_killed](#hostage_killed) | `mod.gameevents` | 2 | Fired when a hostage entity is killed.  CTs incur a money penalty; this event is the canonical hook for that bookkeeping. `hostage` is the hostage entity index, not the hostage definition.
- |
-| [hostage_rescued](#hostage_rescued) | `mod.gameevents` | 3 | Fired when a hostage reaches a rescue zone.  `site` is the rescue-zone index when a map carries more than one.
- |
+| [hostage_killed](#hostage_killed) | `mod.gameevents` | 2 | Fired when a hostage entity is killed.  CTs incur a money penalty; this event is the canonical hook for that bookkeeping. `hostage` is the hostage entity index, not the hostage definition. |
+| [hostage_rescued](#hostage_rescued) | `mod.gameevents` | 3 | Fired when a hostage reaches a rescue zone.  `site` is the rescue-zone index when a map carries more than one. |
 | [hostage_rescued_all](#hostage_rescued_all) | `mod.gameevents` | 0 |  |
 | [hostage_stops_following](#hostage_stops_following) | `mod.gameevents` | 2 |  |
 | [inferno_expire](#inferno_expire) | `mod.gameevents` | 4 |  |
 | [inferno_extinguish](#inferno_extinguish) | `mod.gameevents` | 4 |  |
 | [inferno_startburn](#inferno_startburn) | `mod.gameevents` | 4 |  |
 | [inspect_weapon](#inspect_weapon) | `mod.gameevents` | 1 |  |
-| [item_equip](#item_equip) | `mod.gameevents` | 9 | Fired when a player switches to a different weapon or gear slot. Carries flags describing the equipped item (silencer, tracers, paint kit) so demo tooling doesn't need a second lookup.
- |
-| [item_pickup](#item_pickup) | `mod.gameevents` | 4 | Fired when a player picks up a weapon or piece of gear.  `item` is the classname / definition string (`tmp`, `hegrenade`, `nvgs`, …); `defindex` is the Steam economy item definition index of the specific skin / version picked up.
- |
+| [item_equip](#item_equip) | `mod.gameevents` | 9 | Fired when a player switches to a different weapon or gear slot. Carries flags describing the equipped item (silencer, tracers, paint kit) so demo tooling doesn't need a second lookup. |
+| [item_pickup](#item_pickup) | `mod.gameevents` | 4 | Fired when a player picks up a weapon or piece of gear.  `item` is the classname / definition string (`tmp`, `hegrenade`, `nvgs`, …); `defindex` is the Steam economy item definition index of the specific skin / version picked up. |
 | [item_pickup_failed](#item_pickup_failed) | `mod.gameevents` | 4 |  |
 | [item_pickup_slerp](#item_pickup_slerp) | `mod.gameevents` | 3 |  |
 | [item_purchase](#item_purchase) | `mod.gameevents` | 4 |  |
@@ -295,8 +269,7 @@ Game events extracted from CS2's `.gameevents` resource files. These events are 
 | [material_default_complete](#material_default_complete) | `mod.gameevents` | 0 |  |
 | [mb_input_lock_cancel](#mb_input_lock_cancel) | `mod.gameevents` | 0 |  |
 | [mb_input_lock_success](#mb_input_lock_success) | `mod.gameevents` | 0 |  |
-| [molotov_detonate](#molotov_detonate) | `mod.gameevents` | 4 | Fired when a Molotov / Incendiary grenade ignites and begins laying fire.  The resulting `CInferno` entity carries the per-fragment damage volumes.
- |
+| [molotov_detonate](#molotov_detonate) | `mod.gameevents` | 4 | Fired when a Molotov / Incendiary grenade ignites and begins laying fire.  The resulting `CInferno` entity carries the per-fragment damage volumes. |
 | [nav_blocked](#nav_blocked) | `mod.gameevents` | 2 |  |
 | [nav_generate](#nav_generate) | `mod.gameevents` | 0 |  |
 | [nextlevel_changed](#nextlevel_changed) | `mod.gameevents` | 3 | a game event, name may be 32 characters long |
@@ -306,13 +279,11 @@ Game events extracted from CS2's `.gameevents` resource files. These events are 
 | [parachute_pickup](#parachute_pickup) | `mod.gameevents` | 1 |  |
 | [player_avenged_teammate](#player_avenged_teammate) | `mod.gameevents` | 2 |  |
 | [player_blind](#player_blind) | `mod.gameevents` | 4 |  |
-| [player_death](#player_death) | `mod.gameevents` | 22 | Fired when a player dies.  Carries `userid` (the victim) and `attacker`.  Detailed kill information (weapon, headshot, assister, penetration count, no-scope flag, distance) lives on the legacy `cs_gameevents.proto` user-message `CMsgSource1LegacyGameEvent` payload — extract those keys when parsing demos.
- |
+| [player_death](#player_death-modgameevents) | `mod.gameevents` | 22 | Fired when a player dies.  Carries `userid` (the victim) and `attacker`.  Detailed kill information (weapon, headshot, assister, penetration count, no-scope flag, distance) lives on the legacy `cs_gameevents.proto` user-message `CMsgSource1LegacyGameEvent` payload — extract those keys when parsing demos. |
 | [player_falldamage](#player_falldamage) | `mod.gameevents` | 2 |  |
-| [player_footstep](#player_footstep) | `mod.gameevents` | 1 |  |
+| [player_footstep](#player_footstep-modgameevents) | `mod.gameevents` | 1 |  |
 | [player_given_c4](#player_given_c4) | `mod.gameevents` | 1 |  |
-| [player_hurt](#player_hurt) | `mod.gameevents` | 8 | Fired when a player takes damage from any source.  The pre-CS2 `weapon` / `dmg_armor` / `dmg_health` / `hitgroup` fields were removed in CS2; for those, use `bullet_damage` (firearm damage) or correlate with the relevant grenade-detonation event.
- |
+| [player_hurt](#player_hurt-modgameevents) | `mod.gameevents` | 8 | Fired when a player takes damage from any source.  The pre-CS2 `weapon` / `dmg_armor` / `dmg_health` / `hitgroup` fields were removed in CS2; for those, use `bullet_damage` (firearm damage) or correlate with the relevant grenade-detonation event. |
 | [player_jump](#player_jump) | `mod.gameevents` | 1 |  |
 | [player_ping](#player_ping) | `mod.gameevents` | 6 |  |
 | [player_ping_stop](#player_ping_stop) | `mod.gameevents` | 1 |  |
@@ -321,10 +292,8 @@ Game events extracted from CS2's `.gameevents` resource files. These events are 
 | [player_sound](#player_sound) | `mod.gameevents` | 4 |  |
 | [player_spawned](#player_spawned) | `mod.gameevents` | 2 |  |
 | [repost_xbox_achievements](#repost_xbox_achievements) | `mod.gameevents` | 1 |  |
-| [round_end](#round_end) | `mod.gameevents` | 6 | Fired when a round concludes.  Carries the winning team (`winner`), the reason for the win (`reason`, see RoundEndReason table below), and a human-readable `message` string.
- |
-| [round_mvp](#round_mvp) | `mod.gameevents` | 6 | Fired at the end of a round to announce the MVP and the music kit that played.  `reason` enumerates why this player was selected (kills, defuse, plant, …); `musickitid` is the Steam item definition index of the MVP anthem.
- |
+| [round_end](#round_end-modgameevents) | `mod.gameevents` | 6 | Fired when a round concludes.  Carries the winning team (`winner`), the reason for the win (`reason`, see RoundEndReason table below), and a human-readable `message` string. |
+| [round_mvp](#round_mvp) | `mod.gameevents` | 6 | Fired at the end of a round to announce the MVP and the music kit that played.  `reason` enumerates why this player was selected (kills, defuse, plant, …); `musickitid` is the Steam item definition index of the MVP anthem. |
 | [round_poststart](#round_poststart) | `mod.gameevents` | 0 | sent after all other round restart actions |
 | [round_prestart](#round_prestart) | `mod.gameevents` | 0 | sent before all other round restart actions |
 | [seasoncoin_levelup](#seasoncoin_levelup) | `mod.gameevents` | 3 |  |
@@ -335,11 +304,9 @@ Game events extracted from CS2's `.gameevents` resource files. These events are 
 | [silencer_off](#silencer_off) | `mod.gameevents` | 1 |  |
 | [silencer_on](#silencer_on) | `mod.gameevents` | 1 |  |
 | [smoke_beacon_paradrop](#smoke_beacon_paradrop) | `mod.gameevents` | 2 |  |
-| [smokegrenade_detonate](#smokegrenade_detonate) | `mod.gameevents` | 5 | Fired when a smoke grenade pops and begins emitting smoke. Pair with `smokegrenade_expired` for the lifetime window.
- |
-| [smokegrenade_expired](#smokegrenade_expired) | `mod.gameevents` | 5 | Fired when a smoke cloud fully dissipates.
- |
-| [spec_mode_updated](#spec_mode_updated) | `mod.gameevents` | 1 |  |
+| [smokegrenade_detonate](#smokegrenade_detonate) | `mod.gameevents` | 5 | Fired when a smoke grenade pops and begins emitting smoke. Pair with `smokegrenade_expired` for the lifetime window. |
+| [smokegrenade_expired](#smokegrenade_expired) | `mod.gameevents` | 5 | Fired when a smoke cloud fully dissipates. |
+| [spec_mode_updated](#spec_mode_updated-modgameevents) | `mod.gameevents` | 1 |  |
 | [start_halftime](#start_halftime) | `mod.gameevents` | 0 |  |
 | [start_vote](#start_vote) | `mod.gameevents` | 3 |  |
 | [survival_no_respawns_final](#survival_no_respawns_final) | `mod.gameevents` | 1 |  |
@@ -357,8 +324,7 @@ Game events extracted from CS2's `.gameevents` resource files. These events are 
 | [update_matchmaking_stats](#update_matchmaking_stats) | `mod.gameevents` | 0 |  |
 | [vip_escaped](#vip_escaped) | `mod.gameevents` | 1 |  |
 | [vip_killed](#vip_killed) | `mod.gameevents` | 2 |  |
-| [weapon_fire](#weapon_fire) | `mod.gameevents` | 3 | Fired each time a player pulls the trigger and a shot is taken. `weapon` is the lowercase classname (`ak47`, `awp`, `knife`, `hegrenade`, …).  Use `bullet_damage` for the *hit* event counterpart.
- |
+| [weapon_fire](#weapon_fire) | `mod.gameevents` | 3 | Fired each time a player pulls the trigger and a shot is taken. `weapon` is the lowercase classname (`ak47`, `awp`, `knife`, `hegrenade`, …).  Use `bullet_damage` for the *hit* event counterpart. |
 | [weapon_fire_on_empty](#weapon_fire_on_empty) | `mod.gameevents` | 2 |  |
 | [weapon_reload](#weapon_reload) | `mod.gameevents` | 1 |  |
 | [weapon_zoom](#weapon_zoom) | `mod.gameevents` | 1 |  |
@@ -417,7 +383,7 @@ Game events extracted from CS2's `.gameevents` resource files. These events are 
 | `userid` | `player_pawn` |  |
 | `material` | `byte` | BREAK_GLASS, BREAK_WOOD, etc |
 
-### break_prop
+### break_prop (core.gameevents)
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -502,7 +468,7 @@ Game events extracted from CS2's `.gameevents` resource files. These events are 
 | `entindex_inflictor` | `long` |  |
 | `damagebits` | `long` |  |
 
-### entity_visible
+### entity_visible (core.gameevents)
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -536,7 +502,7 @@ a message send by game logic to everyone
 | `target` | `byte` | 0 = console, 1 = HUD |
 | `text` | `string` | the message text |
 
-### game_newmap
+### game_newmap (core.gameevents)
 
 send when new map is completely loaded
 
@@ -684,7 +650,7 @@ general HLTV status
 | `userid` | `player_controller` | The player who this lesson is intended for |
 | `hint_name` | `string` | Name of the lesson to start.  Must match instructor_lesson.txt |
 
-### instructor_server_hint_create
+### instructor_server_hint_create (core.gameevents)
 
 create a hint using data supplied entirely by the server/map. Intended for hints to smooth playtests before content is ready to make the hint unneccessary. NOT INTENDED AS A SHIPPABLE CRUTCH
 
@@ -718,7 +684,7 @@ create a hint using data supplied entirely by the server/map. Intended for hints
 | `hint_vr_offset_y` | `float` | offset for attached panels |
 | `hint_vr_offset_z` | `float` | offset for attached panels |
 
-### instructor_server_hint_stop
+### instructor_server_hint_stop (core.gameevents)
 
 destroys a server/map created hint
 
@@ -738,7 +704,7 @@ destroys a server/map created hint
 | `vr_single_controller` | `bool` |  |
 | `vr_controller_type` | `byte` |  |
 
-### inventory_updated
+### inventory_updated (core.gameevents)
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -789,7 +755,7 @@ destroys a server/map created hint
 | `oldname` | `string` | players old (current) name |
 | `newname` | `string` | players new name |
 
-### player_chat
+### player_chat (core.gameevents)
 
 a public player chat
 
@@ -820,10 +786,9 @@ player has sent final message in the connection sequence
 |-------|------|-------------|
 | `userid` | `player_controller` | user ID on server (unique on server) |
 
-### player_death
+### player_death (core.gameevents)
 
 Fired when a player dies.  Carries `userid` (the victim) and `attacker`.  Detailed kill information (weapon, headshot, assister, penetration count, no-scope flag, distance) lives on the legacy `cs_gameevents.proto` user-message `CMsgSource1LegacyGameEvent` payload — extract those keys when parsing demos.
-
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -844,7 +809,7 @@ a client was disconnected
 | `PlayerID` | `short` |  |
 | `ever_fully_connected` | `bool` | Was the player ever fully connected? |
 
-### player_footstep
+### player_footstep (core.gameevents)
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -863,10 +828,9 @@ a client was disconnected
 |-------|------|-------------|
 | `hintmessage` | `string` | localizable string of a hint |
 
-### player_hurt
+### player_hurt (core.gameevents)
 
 Fired when a player takes damage from any source.  The pre-CS2 `weapon` / `dmg_armor` / `dmg_health` / `hitgroup` fields were removed in CS2; for those, use `bullet_damage` (firearm damage) or correlate with the relevant grenade-detonation event.
-
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -889,7 +853,6 @@ a player changed his name
 
 Fired when a player's pawn spawns (per-round).  The controller persists across rounds; the pawn does not, so this event marks "new pawn is alive."
 
-
 | Field | Type | Description |
 |-------|------|-------------|
 | `userid` | `player_controller_and_pawn` |  |
@@ -900,10 +863,9 @@ Fired when a player's pawn spawns (per-round).  The controller persists across r
 |-------|------|-------------|
 | `forceupload` | `bool` |  |
 
-### player_team
+### player_team (core.gameevents)
 
 Fired when a player switches teams (T ↔ CT, or to/from Spectator).  `team` is the new team; `oldteam` is the previous. `disconnect=true` indicates the team change was caused by the player leaving rather than a deliberate switch.
-
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -921,13 +883,11 @@ Fired when a player switches teams (T ↔ CT, or to/from Spectator).  `team` is 
 |-------|------|-------------|
 | `entindex` | `long` |  |
 
-### round_end
+### round_end (core.gameevents)
 
 Fired when a round concludes.  Carries the winning team (`winner`), the reason for the win (`reason`, see RoundEndReason table below), and a human-readable `message` string.
 
-
 > 📝 The `winner` value uses the same team-number scheme as the `Team` constant in `well_known_constants.json` (2=T, 3=CT, 0/1 for draw / unassigned).  The `reason` byte enumerates win conditions: bomb detonation, defusal, time expiry, eliminations, surrender, etc. — full mapping is in `public/cstrike15_gameconstants.h` upstream.
-
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -940,16 +900,13 @@ Fired when a round concludes.  Carries the winning team (`winner`), the reason f
 
 Fired when the buy/freeze period ends and live play begins. Players regain movement; this is the canonical "round live" tick for demo-parsing tooling and stat trackers.
 
-
 *No fields — this event carries no additional data.*
 
 ### round_start
 
 Fired by the game rules when a new round begins.  Marks the start of the freeze (buy) period — players have just spawned and are frozen in place.  Use this to reset per-round bookkeeping.
 
-
 > 📝 Followed by `round_freeze_end` when the freeze period ends and live play begins.
-
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -1022,7 +979,7 @@ send once a server starts
 | `group` | `string` |  |
 | `enabled` | `short` |  |
 
-### spec_mode_updated
+### spec_mode_updated (core.gameevents)
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -1094,7 +1051,7 @@ fired when achievements/stats are downloaded from Steam or XBox Live
 | `team` | `byte` |  |
 | `entityid` | `long` | entity id of the voter |
 
-### vote_changed
+### vote_changed (core.gameevents)
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -1120,7 +1077,7 @@ fired when achievements/stats are downloaded from Steam or XBox Live
 | `param1` | `string` |  |
 | `team` | `byte` |  |
 
-### vote_started
+### vote_started (core.gameevents)
 
 **Properties:** `reliable=1`
 
@@ -1166,7 +1123,7 @@ fired when achievements/stats are downloaded from Steam or XBox Live
 
 *No fields — this event carries no additional data.*
 
-### break_prop
+### break_prop (game.gameevents)
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -1225,7 +1182,7 @@ fired when achievements/stats are downloaded from Steam or XBox Live
 | `slot9` | `byte` |  |
 | `slot10` | `byte` |  |
 
-### entity_visible
+### entity_visible (game.gameevents)
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -1248,7 +1205,7 @@ sent when a new game is started
 
 *No fields — this event carries no additional data.*
 
-### game_newmap
+### game_newmap (game.gameevents)
 
 send when new map is completely loaded
 
@@ -1271,7 +1228,7 @@ a new game starts
 
 *No fields — this event carries no additional data.*
 
-### instructor_server_hint_create
+### instructor_server_hint_create (game.gameevents)
 
 create a hint using data supplied entirely by the server/map. Intended for hints to smooth playtests before content is ready to make the hint unneccessary. NOT INTENDED AS A SHIPPABLE CRUTCH
 
@@ -1298,7 +1255,7 @@ create a hint using data supplied entirely by the server/map. Intended for hints
 | `hint_forcecaption` | `bool` | if true, the hint caption will show even if the hint is occluded |
 | `hint_local_player_only` | `bool` | if true, only the local player will see the hint |
 
-### instructor_server_hint_stop
+### instructor_server_hint_stop (game.gameevents)
 
 destroys a server/map created hint
 
@@ -1306,11 +1263,11 @@ destroys a server/map created hint
 |-------|------|-------------|
 | `hint_name` | `string` | The hint to stop. Will stop ALL hints with this name |
 
-### inventory_updated
+### inventory_updated (game.gameevents)
 
 *No fields — this event carries no additional data.*
 
-### player_chat
+### player_chat (game.gameevents)
 
 a public player chat
 
@@ -1347,10 +1304,9 @@ player shoot his weapon
 | `weapon` | `byte` | weapon ID |
 | `mode` | `byte` | weapon mode |
 
-### player_team
+### player_team (game.gameevents)
 
 Fired when a player switches teams (T ↔ CT, or to/from Spectator).  `team` is the new team; `oldteam` is the previous. `disconnect=true` indicates the team change was caused by the player leaving rather than a deliberate switch.
-
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -1397,13 +1353,11 @@ reset user titledata; do not automatically write profile
 
 *No fields — this event carries no additional data.*
 
-### round_end
+### round_end (game.gameevents)
 
 Fired when a round concludes.  Carries the winning team (`winner`), the reason for the win (`reason`, see RoundEndReason table below), and a human-readable `message` string.
 
-
 > 📝 The `winner` value uses the same team-number scheme as the `Team` constant in `well_known_constants.json` (2=T, 3=CT, 0/1 for draw / unassigned).  The `reason` byte enumerates win conditions: bomb detonation, defusal, time expiry, eliminations, surrender, etc. — full mapping is in `public/cstrike15_gameconstants.h` upstream.
-
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -1470,7 +1424,7 @@ Fired when a round concludes.  Carries the winning team (`winner`), the reason f
 | `team` | `short` |  |
 | `userid` | `player_controller` | player who voted |
 
-### vote_changed
+### vote_changed (game.gameevents)
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -1496,7 +1450,7 @@ Fired when a round concludes.  Carries the winning team (`winner`), the reason f
 | `option4` | `string` |  |
 | `option5` | `string` |  |
 
-### vote_started
+### vote_started (game.gameevents)
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -1576,7 +1530,6 @@ write user titledata in profile
 
 Fired on each beep of an armed C4.  `entindex` references the `CPlantedC4`.  Cadence accelerates as detonation approaches.
 
-
 | Field | Type | Description |
 |-------|------|-------------|
 | `entindex` | `long` | c4 entity |
@@ -1592,7 +1545,6 @@ Fired on each beep of an armed C4.  `entindex` references the `CPlantedC4`.  Cad
 
 Fired the moment a player begins the C4 plant animation.  The plant can still be interrupted (player damaged, switches weapon, leaves site); listen for `bomb_planted` to confirm completion.
 
-
 | Field | Type | Description |
 |-------|------|-------------|
 | `userid` | `player_controller_and_pawn` | player who is planting the bomb |
@@ -1601,7 +1553,6 @@ Fired the moment a player begins the C4 plant animation.  The plant can still be
 ### bomb_defused
 
 Fired when the C4 is successfully defused.  `userid` is the defuser; `site` is the bombsite.
-
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -1613,7 +1564,6 @@ Fired when the C4 is successfully defused.  `userid` is the defuser; `site` is t
 
 Fired when a player carrying the C4 drops it (death, voluntary drop, disconnect).  `entindex` identifies the C4 world entity now sitting on the ground.
 
-
 | Field | Type | Description |
 |-------|------|-------------|
 | `userid` | `player_controller_and_pawn` | player who dropped the bomb |
@@ -1622,7 +1572,6 @@ Fired when a player carrying the C4 drops it (death, voluntary drop, disconnect)
 ### bomb_exploded
 
 Fired when the C4 detonates (defuse failed / timer expired). `userid` is the original planter (the actor who armed it), not the player nearest the explosion.
-
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -1634,7 +1583,6 @@ Fired when the C4 detonates (defuse failed / timer expired). `userid` is the ori
 
 Fired when a player picks up a dropped C4.  `userid` here is a `player_pawn` (not `player_controller_and_pawn`) — only the pawn half is meaningful.
 
-
 | Field | Type | Description |
 |-------|------|-------------|
 | `userid` | `player_pawn` | player pawn who picked up the bomb |
@@ -1642,7 +1590,6 @@ Fired when a player picks up a dropped C4.  `userid` here is a `player_pawn` (no
 ### bomb_planted
 
 Fired when the C4 is successfully armed.  `site` is the bombsite index (0=A, 1=B).  At this point a `CPlantedC4` entity exists and the 40-second countdown begins.
-
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -1653,7 +1600,6 @@ Fired when the C4 is successfully armed.  `site` is the bombsite index (0=A, 1=B
 ### bullet_damage
 
 Fired on every firearm-projectile hit landed on a player.  Far richer than `player_hurt`: includes shot angles, aim-punch, inaccuracy components, penetration count, and lag-compensation type.  This is the right event for ballistics analysis and cheat-detection heuristics.
-
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -1747,7 +1693,6 @@ Fired on every firearm-projectile hit landed on a player.  Far richer than `play
 
 Fired on the final pre-explosion beep of the planted C4.  Useful for demo-parsing tooling that wants to mark "bomb is about to detonate" without polling `m_flC4Blow` on the C4 entity.
 
-
 *No fields — this event carries no additional data.*
 
 ### cs_round_start_beep
@@ -1775,7 +1720,6 @@ Fired on the final pre-explosion beep of the planted C4.  Useful for demo-parsin
 ### decoy_detonate
 
 Fired each time a decoy grenade fires its fake gunshot sound. Multiple per decoy lifetime.
-
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -1920,7 +1864,6 @@ Fired each time a decoy grenade fires its fake gunshot sound. Multiple per decoy
 
 Fired when a flashbang explodes.  Per-player flash duration is *not* on this event — read `m_flFlashDuration` / `m_flFlashMaxAlpha` on each affected `CCSPlayerPawn` instead.
 
-
 | Field | Type | Description |
 |-------|------|-------------|
 | `userid` | `player_controller_and_pawn` |  |
@@ -1955,7 +1898,6 @@ Fired when a flashbang explodes.  Per-player flash duration is *not* on this eve
 
 Fired when a grenade leaves a player's hand.  Pair with the matching `<type>_detonate` event for landing/explosion location.
 
-
 | Field | Type | Description |
 |-------|------|-------------|
 | `userid` | `player_controller_and_pawn` |  |
@@ -1968,7 +1910,6 @@ Fired when a grenade leaves a player's hand.  Pair with the matching `<type>_det
 ### hegrenade_detonate
 
 Fired when an HE grenade explodes.  `x`/`y`/`z` is the world position of the detonation; `entityid` is the projectile's entity index (now removed).
-
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -2014,7 +1955,6 @@ Fired when an HE grenade explodes.  `x`/`y`/`z` is the world position of the det
 
 Fired when a hostage entity is killed.  CTs incur a money penalty; this event is the canonical hook for that bookkeeping. `hostage` is the hostage entity index, not the hostage definition.
 
-
 | Field | Type | Description |
 |-------|------|-------------|
 | `userid` | `player_controller_and_pawn` | player who killed the hostage |
@@ -2023,7 +1963,6 @@ Fired when a hostage entity is killed.  CTs incur a money penalty; this event is
 ### hostage_rescued
 
 Fired when a hostage reaches a rescue zone.  `site` is the rescue-zone index when a map carries more than one.
-
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -2079,7 +2018,6 @@ Fired when a hostage reaches a rescue zone.  `site` is the rescue-zone index whe
 
 Fired when a player switches to a different weapon or gear slot. Carries flags describing the equipped item (silencer, tracers, paint kit) so demo tooling doesn't need a second lookup.
 
-
 | Field | Type | Description |
 |-------|------|-------------|
 | `userid` | `player_controller` |  |
@@ -2095,7 +2033,6 @@ Fired when a player switches to a different weapon or gear slot. Carries flags d
 ### item_pickup
 
 Fired when a player picks up a weapon or piece of gear.  `item` is the classname / definition string (`tmp`, `hegrenade`, `nvgs`, …); `defindex` is the Steam economy item definition index of the specific skin / version picked up.
-
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -2185,7 +2122,6 @@ Fired when a player picks up a weapon or piece of gear.  `item` is the classname
 
 Fired when a Molotov / Incendiary grenade ignites and begins laying fire.  The resulting `CInferno` entity carries the per-fragment damage volumes.
 
-
 | Field | Type | Description |
 |-------|------|-------------|
 | `userid` | `player_controller_and_pawn` |  |
@@ -2267,10 +2203,9 @@ a game event, name may be 32 characters long
 | `entityid` | `short` | the flashbang going off |
 | `blind_duration` | `float` |  |
 
-### player_death
+### player_death (mod.gameevents)
 
 Fired when a player dies.  Carries `userid` (the victim) and `attacker`.  Detailed kill information (weapon, headshot, assister, penetration count, no-scope flag, distance) lives on the legacy `cs_gameevents.proto` user-message `CMsgSource1LegacyGameEvent` payload — extract those keys when parsing demos.
-
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -2304,7 +2239,7 @@ Fired when a player dies.  Carries `userid` (the victim) and `attacker`.  Detail
 | `userid` | `player_controller_and_pawn` |  |
 | `damage` | `float` |  |
 
-### player_footstep
+### player_footstep (mod.gameevents)
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -2316,10 +2251,9 @@ Fired when a player dies.  Carries `userid` (the victim) and `attacker`.  Detail
 |-------|------|-------------|
 | `userid` | `player_controller` | user ID who received the c4 |
 
-### player_hurt
+### player_hurt (mod.gameevents)
 
 Fired when a player takes damage from any source.  The pre-CS2 `weapon` / `dmg_armor` / `dmg_health` / `hitgroup` fields were removed in CS2; for those, use `bullet_damage` (firearm damage) or correlate with the relevant grenade-detonation event.
-
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -2391,13 +2325,11 @@ Fired when a player takes damage from any source.  The pre-CS2 `weapon` / `dmg_a
 |-------|------|-------------|
 | `splitscreenplayer` | `short` | splitscreen ID |
 
-### round_end
+### round_end (mod.gameevents)
 
 Fired when a round concludes.  Carries the winning team (`winner`), the reason for the win (`reason`, see RoundEndReason table below), and a human-readable `message` string.
 
-
 > 📝 The `winner` value uses the same team-number scheme as the `Team` constant in `well_known_constants.json` (2=T, 3=CT, 0/1 for draw / unassigned).  The `reason` byte enumerates win conditions: bomb detonation, defusal, time expiry, eliminations, surrender, etc. — full mapping is in `public/cstrike15_gameconstants.h` upstream.
-
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -2411,7 +2343,6 @@ Fired when a round concludes.  Carries the winning team (`winner`), the reason f
 ### round_mvp
 
 Fired at the end of a round to announce the MVP and the music kit that played.  `reason` enumerates why this player was selected (kills, defuse, plant, …); `musickitid` is the Steam item definition index of the MVP anthem.
-
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -2499,7 +2430,6 @@ sent before all other round restart actions
 
 Fired when a smoke grenade pops and begins emitting smoke. Pair with `smokegrenade_expired` for the lifetime window.
 
-
 | Field | Type | Description |
 |-------|------|-------------|
 | `userid` | `player_controller_and_pawn` |  |
@@ -2512,7 +2442,6 @@ Fired when a smoke grenade pops and begins emitting smoke. Pair with `smokegrena
 
 Fired when a smoke cloud fully dissipates.
 
-
 | Field | Type | Description |
 |-------|------|-------------|
 | `userid` | `player_controller_and_pawn` |  |
@@ -2521,7 +2450,7 @@ Fired when a smoke cloud fully dissipates.
 | `y` | `float` |  |
 | `z` | `float` |  |
 
-### spec_mode_updated
+### spec_mode_updated (mod.gameevents)
 
 | Field | Type | Description |
 |-------|------|-------------|
@@ -2638,7 +2567,6 @@ Fired when a smoke cloud fully dissipates.
 ### weapon_fire
 
 Fired each time a player pulls the trigger and a shot is taken. `weapon` is the lowercase classname (`ak47`, `awp`, `knife`, `hegrenade`, …).  Use `bullet_damage` for the *hit* event counterpart.
-
 
 | Field | Type | Description |
 |-------|------|-------------|

@@ -6,10 +6,11 @@ nav_order: 13
 
 # Prop & Collision Data
 
-{: .note }
-> Source: CS2 build **25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
-## Prop classes (71)
+## Prop classes
+
+71 prop classes.
 
 | Class | Properties |
 |-------|------------|
@@ -85,14 +86,16 @@ nav_order: 13
 | `Wooden.chair` | base=`Wooden.Base`; breakable_count=`4`; health=`25` |
 | `Wooden.sticks` | base=`Wooden.Base`; breakable_count=`0`; physicsmode=`1` |
 
-## Collision groups (15)
+## Collision groups
+
+15 collision groups.
 
 | Group | Description | Interacts as | Interacts with |
 |-------|-------------|--------------|----------------|
 | `ConditionallySolid` | Solid to only players and npcs, has the same functionality as clip brush | `playerclip`, `npcclip` |  |
 | `ConditionallySolid` | Solid to drones only | `csgo_droneclip` |  |
 | `ConditionallySolid` | Solid to grenades only | `csgo_grenadeclip` |  |
-| `ConditionallySolid` | Solid but exclude bullets & grenades. | `passbullets` |  |
+| `ConditionallySolid` | Solid but exclude bullets &amp; grenades. | `passbullets` |  |
 | `ConditionallySolid` | Solid but exclude bullets, grenades, and players.  csgo_railings_no_players usually have a separate clip brush for player collisions. | `passbullets` |  |
 | `default` | Default collision |  |  |
 | `ConditionallySolid` | Default collision, but occlude sound, block soundscape selection, etc | `blocksound`, `CONTENTS_SOLID` |  |
@@ -105,7 +108,9 @@ nav_order: 13
 | `ConditionallySolid` | Default collision, but do not block line of sight | `CONTENTS_SOLID_NO_BLOCK_LOS` |  |
 | `ConditionallySolid` | Solid but does not block light or LOS | `window` |  |
 
-## Breakable gib groups (4)
+## Breakable gib groups
+
+4 gib groups.
 
 - **`ConcreteChunks`**: 5 models
 - **`GlassChunks`**: 6 models

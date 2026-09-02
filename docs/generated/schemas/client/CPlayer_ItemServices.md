@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CPlayer_ItemServices
+title: CPlayer_ItemServices (client)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CPlayer_ItemServices
 
-**Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** n/a (unspecified) · **Module:** client
+
+**Twin:** [CPlayer_ItemServices (server)](../server/CPlayer_ItemServices.md)
 
 **Inherits from:** [CPlayerPawnComponent](../server/CPlayerPawnComponent.md)
 

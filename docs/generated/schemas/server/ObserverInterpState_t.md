@@ -8,6 +8,8 @@ nav_exclude: true
 
 # ObserverInterpState_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 Transition state of the spectator camera as it moves between targets.
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** server

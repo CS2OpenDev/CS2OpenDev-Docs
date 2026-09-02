@@ -6,6 +6,8 @@ nav_order: 2
 
 # Schema Reference
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 Every class, struct, and enum extracted from CS2's runtime schema, organised by module. Each module page lists its types; each type has its own page carrying the full **memory layout** — field offsets, class size, and fields inherited from base classes.
 
 ## Modules
@@ -21,7 +23,7 @@ Every class, struct, and enum extracted from CS2's runtime schema, organised by 
 | [compositematerialslib](schemas/compositematerialslib.md) | 17 | [📊 Diagram](diagrams/compositematerialslib.md) |
 | [engine2](schemas/engine2.md) | 42 | [📊 Diagram](diagrams/engine2.md) |
 | [entity2](schemas/entity2.md) | 18 | [📊 Diagram](diagrams/entity2.md) |
-| [hammer](schemas/hammer.md) | 10 | — |
+| [hammer](schemas/hammer.md) | 10 | [📊 Diagram](diagrams/hammer.md) |
 | [host](schemas/host.md) | 2 | [📊 Diagram](diagrams/host.md) |
 | [mapdoclib](schemas/mapdoclib.md) | 3 | [📊 Diagram](diagrams/mapdoclib.md) |
 | [materialsystem2](schemas/materialsystem2.md) | 20 | [📊 Diagram](diagrams/materialsystem2.md) |

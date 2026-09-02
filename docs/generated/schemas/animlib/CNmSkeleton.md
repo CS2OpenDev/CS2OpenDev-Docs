@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNmSkeleton
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 208 bytes (`0xd0`) · **Align:** 8 · **Module:** animlib
 
 **Relationships:**
@@ -15,6 +17,7 @@ nav_exclude: true
 ```mermaid
 classDiagram
     CNmSkeleton *-- NmBoneMaskSetDefinition_t
+    CNmSkeleton *-- `CNmSkeleton::SecondarySkeleton_t`
     CNmSkeleton *-- CNmFloatChannelSet_t
 ```
 
@@ -31,7 +34,7 @@ classDiagram
 | `0x48` | `m_modelSpaceReferencePose` | CUtlVector< CTransform > |  |  |
 | `0x60` | `m_numBonesToSampleAtLowLOD` | int32 |  |  |
 | `0x88` | `m_maskDefinitions` | CUtlLeanVector< [NmBoneMaskSetDefinition_t](../animlib/NmBoneMaskSetDefinition_t.md) > |  |  |
-| `0xa8` | `m_secondarySkeletons` | CUtlLeanVector< [CNmSkeleton](../animlib/CNmSkeleton.md)::SecondarySkeleton_t > |  |  |
+| `0xa8` | `m_secondarySkeletons` | CUtlLeanVector< [CNmSkeleton::SecondarySkeleton_t](../animlib/CNmSkeleton.SecondarySkeleton_t.md) > |  |  |
 | `0xb8` | `m_floatChannelSets` | CUtlLeanVector< [CNmFloatChannelSet_t](../animlib/CNmFloatChannelSet_t.md) > |  |  |
 | `0xc8` | `m_bIsPropSkeleton` | bool |  |  |
 

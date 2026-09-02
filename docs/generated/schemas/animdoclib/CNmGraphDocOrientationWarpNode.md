@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNmGraphDocOrientationWarpNode
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 264 bytes (`0x108`) · **Align:** 8 · **Module:** animdoclib
 
 **Inherits from:** [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md)
@@ -18,7 +20,8 @@ nav_exclude: true
 classDiagram
     CNmGraphDocFlowNode <|-- CNmGraphDocOrientationWarpNode
     CNmGraphDocNode <|-- CNmGraphDocFlowNode
-    CNmGraphDocOrientationWarpNode *-- CNmRootMotionData
+    CNmGraphDocOrientationWarpNode *-- `CNmGraphDocOrientationWarpNode::OffsetType_t`
+    CNmGraphDocOrientationWarpNode *-- `CNmRootMotionData::SamplingMode_t`
 ```
 
 ## Memory layout
@@ -35,8 +38,8 @@ classDiagram
 | `0x48` | `m_pSecondaryGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
 | `0x50` | `m_inputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 4 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0xd8` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
-| `0x100` | `m_offsetType` | [CNmGraphDocOrientationWarpNode](../animdoclib/CNmGraphDocOrientationWarpNode.md)::OffsetType_t |  |  |
-| `0x104` | `m_samplingMode` | [CNmRootMotionData](../animlib/CNmRootMotionData.md)::SamplingMode_t |  |  |
+| `0x100` | `m_offsetType` | [CNmGraphDocOrientationWarpNode::OffsetType_t](../animdoclib/CNmGraphDocOrientationWarpNode.OffsetType_t.md) |  |  |
+| `0x104` | `m_samplingMode` | [CNmRootMotionData::SamplingMode_t](../animlib/CNmRootMotionData.SamplingMode_t.md) |  |  |
 | `0x105` | `m_bWarpTranslation` | bool |  | `MPropertyDescription Should the translation curve change as the orientation is being warped?` `MPropertyGroupName Experimental` |
 
 <details><summary>KV3 class defaults</summary>

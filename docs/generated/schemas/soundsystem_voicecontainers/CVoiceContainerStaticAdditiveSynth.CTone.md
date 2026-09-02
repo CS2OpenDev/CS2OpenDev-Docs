@@ -8,13 +8,15 @@ nav_exclude: true
 
 # CVoiceContainerStaticAdditiveSynth::CTone
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 96 bytes (`0x60`) · **Align:** 8 · **Module:** soundsystem_voicecontainers
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    "CVoiceContainerStaticAdditiveSynth::CTone" *-- CVoiceContainerStaticAdditiveSynth
+    `CVoiceContainerStaticAdditiveSynth::CTone` *-- `CVoiceContainerStaticAdditiveSynth::CHarmonic`
 ```
 
 ## Memory layout
@@ -23,7 +25,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_harmonics` | CUtlVector< [CVoiceContainerStaticAdditiveSynth](../soundsystem_voicecontainers/CVoiceContainerStaticAdditiveSynth.md)::CHarmonic > |  | `MPropertyFriendlyName Harmonics` |
+| `0x0` | `m_harmonics` | CUtlVector< [CVoiceContainerStaticAdditiveSynth::CHarmonic](../soundsystem_voicecontainers/CVoiceContainerStaticAdditiveSynth.CHarmonic.md) > |  | `MPropertyFriendlyName Harmonics` |
 | `0x18` | `m_curve` | CPiecewiseCurve |  | `MPropertyFriendlyName Envelope` |
 | `0x58` | `m_bSyncInstances` | bool |  | `MPropertyFriendlyName Play All Instances In Sync` |
 

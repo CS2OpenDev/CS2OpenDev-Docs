@@ -8,7 +8,9 @@ nav_exclude: true
 
 # View2DOptionsEditableData_t
 
-**Kind:** class · **Size:** 12 bytes (`0xc`) · **Align:** 255 · **Module:** hammer
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 12 bytes (`0xc`) · **Align:** n/a (unspecified) · **Module:** hammer
 
 ## Memory layout
 

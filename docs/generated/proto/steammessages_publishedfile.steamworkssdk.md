@@ -7,7 +7,7 @@ nav_exclude: true
 
 # `steammessages_publishedfile.steamworkssdk.proto`
 
-**Imports:** `steammessages_unified_base.steamworkssdk.proto`
+**Imports:** [`steammessages_unified_base.steamworkssdk.proto`](steammessages_unified_base.steamworkssdk.md)
 
 ## Diagram
 
@@ -128,12 +128,12 @@ direction LR
     +uint32 time_subscribed
   }
 
-  class Tag {
+  class PublishedFileDetails_Tag["PublishedFileDetails.Tag"] {
     +string tag
     +bool adminonly
   }
 
-  class Preview {
+  class PublishedFileDetails_Preview["PublishedFileDetails.Preview"] {
     +uint64 previewid
     +uint32 sortorder
     +string url
@@ -142,18 +142,18 @@ direction LR
     +string youtubevideoid
   }
 
-  class Child {
+  class PublishedFileDetails_Child["PublishedFileDetails.Child"] {
     +uint64 publishedfileid
     +uint32 sortorder
     +uint32 file_type
   }
 
-  class KVTag {
+  class PublishedFileDetails_KVTag["PublishedFileDetails.KVTag"] {
     +string key
     +string value
   }
 
-  class VoteData {
+  class PublishedFileDetails_VoteData["PublishedFileDetails.VoteData"] {
     +float score
     +uint32 votes_up
     +uint32 votes_down
@@ -182,7 +182,7 @@ direction LR
     +List~CPublishedFile_GetUserFiles_Response.App~ apps
   }
 
-  class App {
+  class CPublishedFile_GetUserFiles_Response_App["CPublishedFile_GetUserFiles_Response.App"] {
     +uint32 appid
     +string name
     +uint32 shortcutid
@@ -215,14 +215,14 @@ direction LR
   class CPublishedFile_RefreshVotingQueue_Response {
   }
 
-  PublishedFileDetails --> Preview : previews[]
-  PublishedFileDetails --> Tag : tags[]
-  PublishedFileDetails --> Child : children[]
-  PublishedFileDetails --> KVTag : kvtags[]
-  PublishedFileDetails --> VoteData : vote_data
+  PublishedFileDetails --> PublishedFileDetails_Preview : previews[]
+  PublishedFileDetails --> PublishedFileDetails_Tag : tags[]
+  PublishedFileDetails --> PublishedFileDetails_Child : children[]
+  PublishedFileDetails --> PublishedFileDetails_KVTag : kvtags[]
+  PublishedFileDetails --> PublishedFileDetails_VoteData : vote_data
   CPublishedFile_GetDetails_Response --> PublishedFileDetails : publishedfiledetails[]
   CPublishedFile_GetUserFiles_Response --> PublishedFileDetails : publishedfiledetails[]
-  CPublishedFile_GetUserFiles_Response --> App : apps[]
+  CPublishedFile_GetUserFiles_Response --> CPublishedFile_GetUserFiles_Response_App : apps[]
 
 ```
 
@@ -230,8 +230,8 @@ direction LR
 
 ### `CPublishedFile_Subscribe_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `publishedfileid` | 1 | uint64 | optional |  |
 | `list_type` | 2 | uint32 | optional |  |
 | `appid` | 3 | int32 | optional |  |
@@ -239,10 +239,12 @@ direction LR
 
 ### `CPublishedFile_Subscribe_Response`
 
+*(no fields)*
+
 ### `CPublishedFile_Unsubscribe_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `publishedfileid` | 1 | uint64 | optional |  |
 | `list_type` | 2 | uint32 | optional |  |
 | `appid` | 3 | int32 | optional |  |
@@ -250,10 +252,12 @@ direction LR
 
 ### `CPublishedFile_Unsubscribe_Response`
 
+*(no fields)*
+
 ### `CPublishedFile_Publish_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `appid` | 1 | uint32 | optional |  |
 | `consumer_appid` | 2 | uint32 | optional |  |
 | `cloudfilename` | 3 | string | optional |  |
@@ -273,15 +277,15 @@ direction LR
 
 ### `CPublishedFile_Publish_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `publishedfileid` | 1 | uint64 | optional |  |
 | `redirect_uri` | 2 | string | optional |  |
 
 ### `CPublishedFile_GetDetails_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `publishedfileids` | 1 | fixed64 | repeated |  |
 | `includetags` | 2 | bool | optional |  |
 | `includeadditionalpreviews` | 3 | bool | optional |  |
@@ -292,8 +296,8 @@ direction LR
 
 ### `PublishedFileDetails`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `result` | 1 | uint32 | optional |  |
 | `publishedfileid` | 2 | uint64 | optional |  |
 | `creator` | 3 | fixed64 | optional |  |
@@ -344,23 +348,64 @@ direction LR
 | `shortcutname` | 48 | string | optional |  |
 | `num_children` | 49 | uint32 | optional |  |
 | `num_reports` | 50 | uint32 | optional |  |
-| `previews` | 51 | PublishedFileDetails.Preview | repeated |  |
-| `tags` | 52 | PublishedFileDetails.Tag | repeated |  |
-| `children` | 53 | PublishedFileDetails.Child | repeated |  |
-| `kvtags` | 54 | PublishedFileDetails.KVTag | repeated |  |
-| `vote_data` | 55 | PublishedFileDetails.VoteData | optional |  |
+| `previews` | 51 | [PublishedFileDetails.Preview](#publishedfiledetailspreview) | repeated |  |
+| `tags` | 52 | [PublishedFileDetails.Tag](#publishedfiledetailstag) | repeated |  |
+| `children` | 53 | [PublishedFileDetails.Child](#publishedfiledetailschild) | repeated |  |
+| `kvtags` | 54 | [PublishedFileDetails.KVTag](#publishedfiledetailskvtag) | repeated |  |
+| `vote_data` | 55 | [PublishedFileDetails.VoteData](#publishedfiledetailsvotedata) | optional |  |
 | `time_subscribed` | 56 | uint32 | optional |  |
+
+#### `PublishedFileDetails.Tag`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `tag` | 1 | string | optional |  |
+| `adminonly` | 2 | bool | optional |  |
+
+#### `PublishedFileDetails.Preview`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `previewid` | 1 | uint64 | optional |  |
+| `sortorder` | 2 | uint32 | optional |  |
+| `url` | 3 | string | optional |  |
+| `size` | 4 | uint32 | optional |  |
+| `filename` | 5 | string | optional |  |
+| `youtubevideoid` | 6 | string | optional |  |
+
+#### `PublishedFileDetails.Child`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `publishedfileid` | 1 | uint64 | optional |  |
+| `sortorder` | 2 | uint32 | optional |  |
+| `file_type` | 3 | uint32 | optional |  |
+
+#### `PublishedFileDetails.KVTag`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `key` | 1 | string | optional |  |
+| `value` | 2 | string | optional |  |
+
+#### `PublishedFileDetails.VoteData`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `score` | 1 | float | optional |  |
+| `votes_up` | 2 | uint32 | optional |  |
+| `votes_down` | 3 | uint32 | optional |  |
 
 ### `CPublishedFile_GetDetails_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `publishedfiledetails` | 1 | [PublishedFileDetails](#publishedfiledetails) | repeated |  |
 
 ### `CPublishedFile_GetUserFiles_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `appid` | 1 | uint32 | optional |  |
 | `page` | 3 | uint32 | optional | *(default: `1`)* |
 | `numperpage` | 4 | uint32 | optional | *(default: `1`)* |
@@ -373,17 +418,26 @@ direction LR
 
 ### `CPublishedFile_GetUserFiles_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `total` | 1 | uint32 | optional |  |
 | `startindex` | 2 | uint32 | optional |  |
 | `publishedfiledetails` | 3 | [PublishedFileDetails](#publishedfiledetails) | repeated |  |
-| `apps` | 4 | CPublishedFile_GetUserFiles_Response.App | repeated |  |
+| `apps` | 4 | [CPublishedFile_GetUserFiles_Response.App](#cpublishedfile_getuserfiles_responseapp) | repeated |  |
+
+#### `CPublishedFile_GetUserFiles_Response.App`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `appid` | 1 | uint32 | optional |  |
+| `name` | 2 | string | optional |  |
+| `shortcutid` | 3 | uint32 | optional |  |
+| `private` | 4 | bool | optional |  |
 
 ### `CPublishedFile_Update_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `appid` | 1 | uint32 | optional |  |
 | `publishedfileid` | 2 | fixed64 | optional |  |
 | `title` | 3 | string | optional |  |
@@ -395,10 +449,12 @@ direction LR
 
 ### `CPublishedFile_Update_Response`
 
+*(no fields)*
+
 ### `CPublishedFile_RefreshVotingQueue_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `appid` | 1 | uint32 | optional |  |
 | `matching_file_type` | 2 | uint32 | optional |  |
 | `tags` | 3 | string | repeated |  |
@@ -407,3 +463,5 @@ direction LR
 | `desired_queue_size` | 6 | uint32 | optional |  |
 
 ### `CPublishedFile_RefreshVotingQueue_Response`
+
+*(no fields)*

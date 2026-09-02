@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CBaseFilter
+title: CBaseFilter (client)
 nav_exclude: true
 ---
 
@@ -8,11 +8,15 @@ nav_exclude: true
 
 # CBaseFilter
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 1592 bytes (`0x638`) · **Align:** 8 · **Module:** client
+
+**Twin:** [CBaseFilter (server)](../server/CBaseFilter.md)
 
 **Inherits from:** [CLogicalEntity](../client/CLogicalEntity.md)
 
-**Derived by:** [CFilterAttributeInt](../client/CFilterAttributeInt.md), [CFilterClass](../client/CFilterClass.md), [CFilterContext](../server/CFilterContext.md), [CFilterEnemy](../server/CFilterEnemy.md), [CFilterLOS](../client/CFilterLOS.md), [CFilterMassGreater](../client/CFilterMassGreater.md), [CFilterModel](../client/CFilterModel.md), [CFilterMultiple](../client/CFilterMultiple.md), [CFilterName](../client/CFilterName.md), [CFilterProximity](../client/CFilterProximity.md), [CFilterTeam](../client/CFilterTeam.md), [FilterDamageType](../client/FilterDamageType.md), [FilterHealth](../client/FilterHealth.md)
+**Derived by:** [CFilterAttributeInt](../client/CFilterAttributeInt.md), [CFilterClass](../client/CFilterClass.md), [CFilterLOS](../client/CFilterLOS.md), [CFilterMassGreater](../client/CFilterMassGreater.md), [CFilterModel](../client/CFilterModel.md), [CFilterMultiple](../client/CFilterMultiple.md), [CFilterName](../client/CFilterName.md), [CFilterProximity](../client/CFilterProximity.md), [CFilterTeam](../client/CFilterTeam.md), [FilterDamageType](../client/FilterDamageType.md), [FilterHealth](../client/FilterHealth.md)
 
 **Relationships:**
 
@@ -32,8 +36,6 @@ classDiagram
     CBaseFilter <|-- CFilterTeam
     CBaseFilter <|-- FilterDamageType
     CBaseFilter <|-- FilterHealth
-    CBaseFilter <|-- CFilterContext
-    CBaseFilter <|-- CFilterEnemy
     CBaseFilter *-- CEntityIOOutput
 ```
 
@@ -44,8 +46,8 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_iszPrivateVScripts` | CUtlSymbolLarge | [CEntityInstance](../entity2/CEntityInstance.md) |  |
-| `0x10` | `m_pEntity` | [CEntityIdentity](../entity2/CEntityIdentity.md)* | [CEntityInstance](../entity2/CEntityInstance.md) |  |
-| `0x28` | `m_CScriptComponent` | [CScriptComponent](../entity2/CScriptComponent.md)* | [CEntityInstance](../entity2/CEntityInstance.md) |  |
+| `0x10` | `m_pEntity` | [CEntityIdentity](../entity2/CEntityIdentity.md)* | [CEntityInstance](../entity2/CEntityInstance.md) | CEntityIdentity pointer — the entity's identity record (name, class, handle, flags). |
+| `0x28` | `m_CScriptComponent` | [CScriptComponent](../entity2/CScriptComponent.md)* | [CEntityInstance](../entity2/CEntityInstance.md) | VScript component attached to the entity, when scripted. |
 | `0x30` | `m_CBodyComponent` | [CBodyComponent](../client/CBodyComponent.md)* | [C_BaseEntity](../client/C_BaseEntity.md) |  |
 | `0x38` | `m_NetworkTransmitComponent` | [CNetworkTransmitComponent](../server/CNetworkTransmitComponent.md) | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
 | `0x328` | `m_nLastThinkTick` | [GameTick_t](../entity2/GameTick_t.md) | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |

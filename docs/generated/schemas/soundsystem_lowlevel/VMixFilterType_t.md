@@ -8,13 +8,15 @@ nav_exclude: true
 
 # VMixFilterType_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** enum · **Underlying:** `uint16_t` · **Module:** soundsystem_lowlevel
 
 ## Values
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `FILTER_UNKNOWN` | -1 |  |
+| `FILTER_UNKNOWN` | -1 (`0xffff`) |  |
 | `FILTER_LOWPASS` | 0 |  |
 | `FILTER_HIGHPASS` | 1 |  |
 | `FILTER_BANDPASS` | 2 |  |

@@ -6,8 +6,7 @@ nav_order: 12
 
 # Surface Properties
 
-{: .note }
-> Source: CS2 build **25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 303 surface records — footstep sounds, physics, and bullet-penetration modifiers per material.  The same material can appear more than once, keyed by source file / scope.
 
@@ -194,7 +193,7 @@ nav_order: 12
 | `mud` | t_player | `surfaceproperties_footsteps.txt` | walkleft=`T_Mud.StepLeft`; walkright=`T_Mud.StepLeft` |
 | `mud` |  | `surfaceproperties_game.txt` | gamematerial=`11` |
 | `no_decal` |  | `surfaceproperties_game.txt` | gamematerial=`-` |
-| `no_decal` |  | `surfaceproperties_impact_effects.txt` | impactDecalName=`` |
+| `no_decal` |  | `surfaceproperties_impact_effects.txt` | impactDecalName= |
 | `no_decal` |  | `surfaceproperties_steamaudio.txt` | absorptionCoefficients=`[0.02, 0.02, 0.02, 0.02, 0.04, 0.06, 0.08, 0.1, 0.12, 0.12, 0.12]`; scatteringCoefficients=`[0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01]`; transmissionCoefficients=`[0.015, 0.002, 0.001, 0.015, 0.002, 0.001, 0.015, 0.002, 0.001, 0.015, 0.002]` |
 | `plaster` | ct_player | `surfaceproperties_footsteps.txt` | walkleft=`CT_Concrete.StepLeft`; walkright=`CT_Concrete.StepLeft` |
 | `plaster` | t_player | `surfaceproperties_footsteps.txt` | walkleft=`T_Concrete.StepLeft`; walkright=`T_Concrete.StepLeft` |
@@ -307,7 +306,7 @@ nav_order: 12
 | `wet` | ct_player | `surfaceproperties_footsteps.txt` | walkleft=`CT_WetTile.StepLeft`; walkright=`CT_WetTile.StepLeft` |
 | `wet` | t_player | `surfaceproperties_footsteps.txt` | walkleft=`T_WetTile.StepLeft`; walkright=`T_WetTile.StepLeft` |
 | `wet` |  | `surfaceproperties_game.txt` | gamematerial=`S` |
-| `wet` |  | `surfaceproperties_impact_effects.txt` | effect=`particles/impact_fx/impact_concrete_wet.vpcf`; effect_simplified=`particles/impact_fx/impact_concrete_wet_cheap.vpcf`; impactDecalName=`` |
+| `wet` |  | `surfaceproperties_impact_effects.txt` | effect=`particles/impact_fx/impact_concrete_wet.vpcf`; effect_simplified=`particles/impact_fx/impact_concrete_wet_cheap.vpcf`; impactDecalName= |
 | `wet` |  | `surfaceproperties_steamaudio.txt` | absorptionCoefficients=`[0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.02, 0.02, 0.02, 0.03]`; scatteringCoefficients=`[0, 0, 0.01, 0.02, 0.02, 0.03, 0.05, 0.1, 0.15, 0.2, 0.3]`; transmissionCoefficients=`[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]` |
 | `wet_concrete` | ct_player | `surfaceproperties_footsteps.txt` | walkleft=`CT_WetConcrete.StepLeft`; walkright=`CT_WetConcrete.StepLeft` |
 | `wet_concrete` | t_player | `surfaceproperties_footsteps.txt` | walkleft=`T_WetConcrete.StepLeft`; walkright=`T_WetConcrete.StepLeft` |

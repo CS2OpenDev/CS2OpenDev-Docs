@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CPulseCell_TestWaitWithAutoTracepoints
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 296 bytes (`0x128`) · **Align:** 8 · **Module:** pulse_system
 
 **Inherits from:** [CPulseCell_BaseYieldingInflow](../pulse_runtime_lib/CPulseCell_BaseYieldingInflow.md)

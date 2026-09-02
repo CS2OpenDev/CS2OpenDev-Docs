@@ -51,7 +51,7 @@ direction LR
     +string note
   }
 
-  class Attribute {
+  class CQuest_PublisherAddCommunityItemsToPlayer_Request_Attribute["CQuest_PublisherAddCommunityItemsToPlayer_Request.Attribute"] {
     +uint32 attribute
     +uint64 value
   }
@@ -99,7 +99,7 @@ direction LR
     +uint32 gceresult
   }
 
-  CQuest_PublisherAddCommunityItemsToPlayer_Request --> Attribute : attributes[]
+  CQuest_PublisherAddCommunityItemsToPlayer_Request --> CQuest_PublisherAddCommunityItemsToPlayer_Request_Attribute : attributes[]
   CCommunity_GetGamePersonalDataCategories_Response --> CCommunity_GamePersonalDataCategoryInfo : categories[]
 
   class EGCSystemMsg{
@@ -444,16 +444,16 @@ direction LR
 
 ### `CMsgGCHVacVerificationChange`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `steamid` | 1 | fixed64 | optional |  |
 | `appid` | 2 | uint32 | optional |  |
 | `is_verified` | 3 | bool | optional |  |
 
 ### `CMsgGCHAccountPhoneNumberChange`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `steamid` | 1 | fixed64 | optional |  |
 | `appid` | 2 | uint32 | optional |  |
 | `phone_id` | 3 | uint64 | optional |  |
@@ -462,8 +462,8 @@ direction LR
 
 ### `CMsgGCHInviteUserToLobby`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `steamid` | 1 | fixed64 | optional |  |
 | `appid` | 2 | uint32 | optional |  |
 | `steamid_invited` | 3 | fixed64 | optional |  |
@@ -471,8 +471,8 @@ direction LR
 
 ### `CMsgGCHRecurringSubscriptionStatusChange`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `steamid` | 1 | fixed64 | optional |  |
 | `appid` | 2 | uint32 | optional |  |
 | `agreementid` | 3 | fixed64 | optional |  |
@@ -480,48 +480,55 @@ direction LR
 
 ### `CQuest_PublisherAddCommunityItemsToPlayer_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `steamid` | 1 | uint64 | optional |  |
 | `appid` | 2 | uint32 | optional |  |
 | `match_item_type` | 3 | uint32 | optional |  |
 | `match_item_class` | 4 | uint32 | optional |  |
 | `prefix_item_name` | 5 | string | optional |  |
-| `attributes` | 6 | CQuest_PublisherAddCommunityItemsToPlayer_Request.Attribute | repeated |  |
+| `attributes` | 6 | [CQuest_PublisherAddCommunityItemsToPlayer_Request.Attribute](#cquest_publisheraddcommunityitemstoplayer_requestattribute) | repeated |  |
 | `note` | 7 | string | optional |  |
+
+#### `CQuest_PublisherAddCommunityItemsToPlayer_Request.Attribute`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `attribute` | 1 | uint32 | optional |  |
+| `value` | 2 | uint64 | optional |  |
 
 ### `CQuest_PublisherAddCommunityItemsToPlayer_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `items_matched` | 1 | uint32 | optional |  |
 | `items_granted` | 2 | uint32 | optional |  |
 
 ### `CCommunity_GamePersonalDataCategoryInfo`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `type` | 1 | string | optional |  |
 | `localization_token` | 2 | string | optional |  |
 | `template_file` | 3 | string | optional |  |
 
 ### `CCommunity_GetGamePersonalDataCategories_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `appid` | 1 | uint32 | optional |  |
 
 ### `CCommunity_GetGamePersonalDataCategories_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `categories` | 1 | [CCommunity_GamePersonalDataCategoryInfo](#ccommunity_gamepersonaldatacategoryinfo) | repeated |  |
 | `app_assets_basename` | 2 | string | optional |  |
 
 ### `CCommunity_GetGamePersonalDataEntries_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `appid` | 1 | uint32 | optional |  |
 | `steamid` | 2 | uint64 | optional |  |
 | `type` | 3 | string | optional |  |
@@ -529,8 +536,8 @@ direction LR
 
 ### `CCommunity_GetGamePersonalDataEntries_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `gceresult` | 1 | uint32 | optional |  |
 | `entries` | 2 | string | repeated |  |
 | `continue_token` | 3 | string | optional |  |
@@ -538,13 +545,13 @@ direction LR
 
 ### `CCommunity_TerminateGamePersonalDataEntries_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `appid` | 1 | uint32 | optional |  |
 | `steamid` | 2 | uint64 | optional |  |
 
 ### `CCommunity_TerminateGamePersonalDataEntries_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `gceresult` | 1 | uint32 | optional |  |

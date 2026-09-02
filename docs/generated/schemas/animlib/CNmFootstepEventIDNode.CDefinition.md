@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNmFootstepEventIDNode::CDefinition
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 8 · **Module:** animlib
 
 **Inherits from:** [CNmIDValueNode::CDefinition](../animlib/CNmIDValueNode.CDefinition.md)
@@ -16,10 +18,10 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmIDValueNode::CDefinition" <|-- "CNmFootstepEventIDNode::CDefinition"
-    "CNmValueNode::CDefinition" <|-- "CNmIDValueNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
-    "CNmFootstepEventIDNode::CDefinition" *-- CNmBitFlags
+    `CNmIDValueNode::CDefinition` <|-- `CNmFootstepEventIDNode::CDefinition`
+    `CNmValueNode::CDefinition` <|-- `CNmIDValueNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmValueNode::CDefinition`
+    `CNmFootstepEventIDNode::CDefinition` *-- CNmBitFlags
 ```
 
 ## Memory layout

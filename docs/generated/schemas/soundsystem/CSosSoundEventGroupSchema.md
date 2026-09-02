@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CSosSoundEventGroupSchema
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 112 bytes (`0x70`) · **Align:** 8 · **Module:** soundsystem
 
 **Metadata:** `MVDataRoot`
@@ -33,7 +35,7 @@ classDiagram
 | `0x14` | `m_flMemberLifespanTime` | float32 |  | `MPropertyStartGroup` |
 | `0x18` | `m_bInvertMatch` | bool |  |  |
 | `0x1c` | `m_Behavior_EventName` | [SosGroupFieldBehavior_t](../soundsystem/SosGroupFieldBehavior_t.md) |  | `MPropertyAttributeEditor Radio` `MPropertyReadonlyExpr m_bMatchEventSubString` `MPropertyStartGroup +Event Name` |
-| `0x20` | `m_matchSoundEventName` | CUtlString |  | `MPropertyReadonlyExpr m_Behavior_EventName != kMatch \|\| m_bMatchEventSubString` |
+| `0x20` | `m_matchSoundEventName` | CUtlString |  | `MPropertyReadonlyExpr m_Behavior_EventName != kMatch &#124;&#124; m_bMatchEventSubString` |
 | `0x28` | `m_bMatchEventSubString` | bool |  | `MPropertyStartGroup +Event SubString` |
 | `0x30` | `m_matchSoundEventSubString` | CUtlString |  | `MPropertyReadonlyExpr !m_bMatchEventSubString` |
 | `0x38` | `m_Behavior_EntIndex` | [SosGroupFieldBehavior_t](../soundsystem/SosGroupFieldBehavior_t.md) |  | `MPropertyAttributeEditor Radio` `MPropertyStartGroup +Ent Index` |

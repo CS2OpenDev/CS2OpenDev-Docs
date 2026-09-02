@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNmGraphDocFloatRemapNode
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 272 bytes (`0x110`) · **Align:** 8 · **Module:** animdoclib
 
 **Inherits from:** [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md)
@@ -18,6 +20,7 @@ nav_exclude: true
 classDiagram
     CNmGraphDocFlowNode <|-- CNmGraphDocFloatRemapNode
     CNmGraphDocNode <|-- CNmGraphDocFlowNode
+    CNmGraphDocFloatRemapNode *-- `CNmGraphDocFloatRemapNode::RemapRange_t`
 ```
 
 ## Memory layout
@@ -34,8 +37,8 @@ classDiagram
 | `0x48` | `m_pSecondaryGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
 | `0x50` | `m_inputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 4 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0xd8` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
-| `0x100` | `m_inputRange` | [CNmGraphDocFloatRemapNode](../animdoclib/CNmGraphDocFloatRemapNode.md)::RemapRange_t |  |  |
-| `0x108` | `m_outputRange` | [CNmGraphDocFloatRemapNode](../animdoclib/CNmGraphDocFloatRemapNode.md)::RemapRange_t |  |  |
+| `0x100` | `m_inputRange` | [CNmGraphDocFloatRemapNode::RemapRange_t](../animdoclib/CNmGraphDocFloatRemapNode.RemapRange_t.md) |  |  |
+| `0x108` | `m_outputRange` | [CNmGraphDocFloatRemapNode::RemapRange_t](../animdoclib/CNmGraphDocFloatRemapNode.RemapRange_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

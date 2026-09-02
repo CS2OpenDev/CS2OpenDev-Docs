@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CSmartPropRoot
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 208 bytes (`0xd0`) · **Align:** 8 · **Module:** smartprops
 
 **Metadata:** `MPropertyDescription Root of a smart prop, contains a list of elements to evaluate.`, `MPropertyFriendlyName Smart Prop Root`, `MSmartPropClassVersion 0`, `MVDataFileExtension vsmart`, `MVDataGroupNodeClass`, `MVDataPreviewWidget smart_prop`, `MVDataRoot`, `MVDataSingleton`, `MVDataUsesComponentEditor`

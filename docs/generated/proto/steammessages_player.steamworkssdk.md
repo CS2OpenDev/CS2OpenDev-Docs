@@ -7,7 +7,7 @@ nav_exclude: true
 
 # `steammessages_player.steamworkssdk.proto`
 
-**Imports:** `steammessages_unified_base.steamworkssdk.proto`
+**Imports:** [`steammessages_unified_base.steamworkssdk.proto`](steammessages_unified_base.steamworkssdk.md)
 
 ## Diagram
 
@@ -40,13 +40,13 @@ direction LR
     +List~CPlayer_GetFriendsGameplayInfo_Response.FriendsGameplayInfo~ in_wishlist
   }
 
-  class FriendsGameplayInfo {
+  class CPlayer_GetFriendsGameplayInfo_Response_FriendsGameplayInfo["CPlayer_GetFriendsGameplayInfo_Response.FriendsGameplayInfo"] {
     +fixed64 steamid
     +uint32 minutes_played
     +uint32 minutes_played_forever
   }
 
-  class OwnGameplayInfo {
+  class CPlayer_GetFriendsGameplayInfo_Response_OwnGameplayInfo["CPlayer_GetFriendsGameplayInfo_Response.OwnGameplayInfo"] {
     +fixed64 steamid
     +uint32 minutes_played
     +uint32 minutes_played_forever
@@ -63,7 +63,7 @@ direction LR
     +List~CPlayer_GetGameBadgeLevels_Response.Badge~ badges
   }
 
-  class Badge {
+  class CPlayer_GetGameBadgeLevels_Response_Badge["CPlayer_GetGameBadgeLevels_Response.Badge"] {
     +int32 level
     +int32 series
     +uint32 border_color
@@ -77,7 +77,7 @@ direction LR
     +List~CPlayer_GetLastPlayedTimes_Response.Game~ games
   }
 
-  class Game {
+  class CPlayer_GetLastPlayedTimes_Response_Game["CPlayer_GetLastPlayedTimes_Response.Game"] {
     +int32 appid
     +uint32 last_playtime
     +int32 playtime_2weeks
@@ -98,7 +98,7 @@ direction LR
     +List~CPlayer_GetNicknameList_Response.PlayerNickname~ nicknames
   }
 
-  class PlayerNickname {
+  class CPlayer_GetNicknameList_Response_PlayerNickname["CPlayer_GetNicknameList_Response.PlayerNickname"] {
     +fixed32 accountid
     +string nickname
   }
@@ -197,11 +197,11 @@ direction LR
   }
 
   CPlayer_GetMutualFriendsForIncomingInvites_Response --> CPlayer_IncomingInviteMutualFriendList : incoming_invite_mutual_friends_lists[]
-  CPlayer_GetFriendsGameplayInfo_Response --> OwnGameplayInfo : your_info
-  CPlayer_GetFriendsGameplayInfo_Response --> FriendsGameplayInfo : in_game[]
-  CPlayer_GetGameBadgeLevels_Response --> Badge : badges[]
-  CPlayer_GetLastPlayedTimes_Response --> Game : games[]
-  CPlayer_GetNicknameList_Response --> PlayerNickname : nicknames[]
+  CPlayer_GetFriendsGameplayInfo_Response --> CPlayer_GetFriendsGameplayInfo_Response_OwnGameplayInfo : your_info
+  CPlayer_GetFriendsGameplayInfo_Response --> CPlayer_GetFriendsGameplayInfo_Response_FriendsGameplayInfo : in_game[]
+  CPlayer_GetGameBadgeLevels_Response --> CPlayer_GetGameBadgeLevels_Response_Badge : badges[]
+  CPlayer_GetLastPlayedTimes_Response --> CPlayer_GetLastPlayedTimes_Response_Game : games[]
+  CPlayer_GetNicknameList_Response --> CPlayer_GetNicknameList_Response_PlayerNickname : nicknames[]
   PerFriendPreferences --> ENotificationSetting : notifications_showingame
   CPlayer_GetPerFriendPreferences_Response --> PerFriendPreferences : preferences[]
   CPlayer_SetPerFriendPreferences_Request --> PerFriendPreferences : preferences
@@ -231,79 +231,132 @@ direction LR
 
 ### `CPlayer_GetMutualFriendsForIncomingInvites_Request`
 
+*(no fields)*
+
 ### `CPlayer_IncomingInviteMutualFriendList`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `steamid` | 1 | fixed64 | optional |  |
 | `mutual_friend_account_ids` | 2 | uint32 | repeated |  |
 
 ### `CPlayer_GetMutualFriendsForIncomingInvites_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `incoming_invite_mutual_friends_lists` | 1 | [CPlayer_IncomingInviteMutualFriendList](#cplayer_incominginvitemutualfriendlist) | repeated |  |
 
 ### `CPlayer_GetFriendsGameplayInfo_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `appid` | 1 | uint32 | optional |  |
 
 ### `CPlayer_GetFriendsGameplayInfo_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `your_info` | 1 | CPlayer_GetFriendsGameplayInfo_Response.OwnGameplayInfo | optional |  |
-| `in_game` | 2 | CPlayer_GetFriendsGameplayInfo_Response.FriendsGameplayInfo | repeated |  |
-| `played_recently` | 3 | CPlayer_GetFriendsGameplayInfo_Response.FriendsGameplayInfo | repeated |  |
-| `played_ever` | 4 | CPlayer_GetFriendsGameplayInfo_Response.FriendsGameplayInfo | repeated |  |
-| `owns` | 5 | CPlayer_GetFriendsGameplayInfo_Response.FriendsGameplayInfo | repeated |  |
-| `in_wishlist` | 6 | CPlayer_GetFriendsGameplayInfo_Response.FriendsGameplayInfo | repeated |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `your_info` | 1 | [CPlayer_GetFriendsGameplayInfo_Response.OwnGameplayInfo](#cplayer_getfriendsgameplayinfo_responseowngameplayinfo) | optional |  |
+| `in_game` | 2 | [CPlayer_GetFriendsGameplayInfo_Response.FriendsGameplayInfo](#cplayer_getfriendsgameplayinfo_responsefriendsgameplayinfo) | repeated |  |
+| `played_recently` | 3 | [CPlayer_GetFriendsGameplayInfo_Response.FriendsGameplayInfo](#cplayer_getfriendsgameplayinfo_responsefriendsgameplayinfo) | repeated |  |
+| `played_ever` | 4 | [CPlayer_GetFriendsGameplayInfo_Response.FriendsGameplayInfo](#cplayer_getfriendsgameplayinfo_responsefriendsgameplayinfo) | repeated |  |
+| `owns` | 5 | [CPlayer_GetFriendsGameplayInfo_Response.FriendsGameplayInfo](#cplayer_getfriendsgameplayinfo_responsefriendsgameplayinfo) | repeated |  |
+| `in_wishlist` | 6 | [CPlayer_GetFriendsGameplayInfo_Response.FriendsGameplayInfo](#cplayer_getfriendsgameplayinfo_responsefriendsgameplayinfo) | repeated |  |
+
+#### `CPlayer_GetFriendsGameplayInfo_Response.FriendsGameplayInfo`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `steamid` | 1 | fixed64 | optional |  |
+| `minutes_played` | 2 | uint32 | optional |  |
+| `minutes_played_forever` | 3 | uint32 | optional |  |
+
+#### `CPlayer_GetFriendsGameplayInfo_Response.OwnGameplayInfo`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `steamid` | 1 | fixed64 | optional |  |
+| `minutes_played` | 2 | uint32 | optional |  |
+| `minutes_played_forever` | 3 | uint32 | optional |  |
+| `in_wishlist` | 4 | bool | optional |  |
+| `owned` | 5 | bool | optional |  |
 
 ### `CPlayer_GetGameBadgeLevels_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `appid` | 1 | uint32 | optional |  |
 
 ### `CPlayer_GetGameBadgeLevels_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `player_level` | 1 | uint32 | optional |  |
-| `badges` | 2 | CPlayer_GetGameBadgeLevels_Response.Badge | repeated |  |
+| `badges` | 2 | [CPlayer_GetGameBadgeLevels_Response.Badge](#cplayer_getgamebadgelevels_responsebadge) | repeated |  |
+
+#### `CPlayer_GetGameBadgeLevels_Response.Badge`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `level` | 1 | int32 | optional |  |
+| `series` | 2 | int32 | optional |  |
+| `border_color` | 3 | uint32 | optional |  |
 
 ### `CPlayer_GetLastPlayedTimes_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `min_last_played` | 1 | uint32 | optional |  |
 
 ### `CPlayer_GetLastPlayedTimes_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `games` | 1 | CPlayer_GetLastPlayedTimes_Response.Game | repeated |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `games` | 1 | [CPlayer_GetLastPlayedTimes_Response.Game](#cplayer_getlastplayedtimes_responsegame) | repeated |  |
+
+#### `CPlayer_GetLastPlayedTimes_Response.Game`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `appid` | 1 | int32 | optional |  |
+| `last_playtime` | 2 | uint32 | optional |  |
+| `playtime_2weeks` | 3 | int32 | optional |  |
+| `playtime_forever` | 4 | int32 | optional |  |
+| `first_playtime` | 5 | uint32 | optional |  |
 
 ### `CPlayer_AcceptSSA_Request`
 
+*(no fields)*
+
 ### `CPlayer_AcceptSSA_Response`
+
+*(no fields)*
 
 ### `CPlayer_GetNicknameList_Request`
 
+*(no fields)*
+
 ### `CPlayer_GetNicknameList_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `nicknames` | 1 | CPlayer_GetNicknameList_Response.PlayerNickname | repeated |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `nicknames` | 1 | [CPlayer_GetNicknameList_Response.PlayerNickname](#cplayer_getnicknamelist_responseplayernickname) | repeated |  |
+
+#### `CPlayer_GetNicknameList_Response.PlayerNickname`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `accountid` | 1 | fixed32 | optional |  |
+| `nickname` | 2 | string | optional |  |
 
 ### `CPlayer_GetPerFriendPreferences_Request`
 
+*(no fields)*
+
 ### `PerFriendPreferences`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `accountid` | 1 | fixed32 | optional |  |
 | `nickname` | 2 | string | optional |  |
 | `notifications_showingame` | 3 | [ENotificationSetting](#enotificationsetting) | optional |  |
@@ -316,62 +369,66 @@ direction LR
 
 ### `CPlayer_GetPerFriendPreferences_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `preferences` | 1 | [PerFriendPreferences](#perfriendpreferences) | repeated |  |
 
 ### `CPlayer_SetPerFriendPreferences_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `preferences` | 1 | [PerFriendPreferences](#perfriendpreferences) | optional |  |
 
 ### `CPlayer_SetPerFriendPreferences_Response`
 
+*(no fields)*
+
 ### `CPlayer_AddFriend_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `steamid` | 1 | fixed64 | optional |  |
 
 ### `CPlayer_AddFriend_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `invite_sent` | 1 | bool | optional |  |
 | `friend_relationship` | 2 | uint32 | optional |  |
 
 ### `CPlayer_RemoveFriend_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `steamid` | 1 | fixed64 | optional |  |
 
 ### `CPlayer_RemoveFriend_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `friend_relationship` | 1 | uint32 | optional |  |
 
 ### `CPlayer_IgnoreFriend_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `steamid` | 1 | fixed64 | optional |  |
 | `unignore` | 2 | bool | optional |  |
 
 ### `CPlayer_IgnoreFriend_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `friend_relationship` | 1 | uint32 | optional |  |
 
 ### `CPlayer_GetCommunityPreferences_Request`
 
+*(no fields)*
+
 ### `CPlayer_CommunityPreferences`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `hide_adult_content_violence` | 1 | bool | optional | *(default: `true`)* |
 | `hide_adult_content_sex` | 2 | bool | optional | *(default: `true`)* |
 | `timestamp_updated` | 3 | uint32 | optional |  |
@@ -379,28 +436,30 @@ direction LR
 
 ### `CPlayer_GetCommunityPreferences_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `preferences` | 1 | [CPlayer_CommunityPreferences](#cplayer_communitypreferences) | optional |  |
 
 ### `CPlayer_SetCommunityPreferences_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `preferences` | 1 | [CPlayer_CommunityPreferences](#cplayer_communitypreferences) | optional |  |
 
 ### `CPlayer_SetCommunityPreferences_Response`
 
+*(no fields)*
+
 ### `CPlayer_GetNewSteamAnnouncementState_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `language` | 1 | int32 | optional |  |
 
 ### `CPlayer_GetNewSteamAnnouncementState_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `state` | 1 | int32 | optional |  |
 | `announcement_headline` | 2 | string | optional |  |
 | `announcement_url` | 3 | string | optional |  |
@@ -409,9 +468,11 @@ direction LR
 
 ### `CPlayer_UpdateSteamAnnouncementLastRead_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `announcement_gid` | 1 | uint64 | optional |  |
 | `time_posted` | 2 | uint32 | optional |  |
 
 ### `CPlayer_UpdateSteamAnnouncementLastRead_Response`
+
+*(no fields)*

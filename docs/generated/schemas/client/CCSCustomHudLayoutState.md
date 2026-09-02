@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CCSCustomHudLayoutState
+title: CCSCustomHudLayoutState (client)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CCSCustomHudLayoutState
 
-**Kind:** class · **Size:** 264 bytes (`0x108`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 264 bytes (`0x108`) · **Align:** n/a (unspecified) · **Module:** client
+
+**Twin:** [CCSCustomHudLayoutState (server)](../server/CCSCustomHudLayoutState.md)
 
 **Relationships:**
 

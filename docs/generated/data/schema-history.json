@@ -1,0 +1,6806 @@
+{
+  "baseline_build": "10832117",
+  "breaking": [],
+  "detail": [
+    {
+      "anchor": "24934554-24957633",
+      "class_pair_candidates_count": 0,
+      "classes_added": [],
+      "classes_changed": [
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/dynpitchvol_base_t",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/dynpitchvol_t",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 3
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/CCSCustomHudLayout",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "2096",
+            "to": "2088"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 2
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/CCSCustomHudLayoutState",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "272",
+            "to": "264"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 3
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "server.dll/CCSCustomHudLayout",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "2032",
+            "to": "2024"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 2
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "server.dll/CCSCustomHudLayoutState",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "416",
+            "to": "408"
+          },
+          "static_field_ops": 0
+        }
+      ],
+      "classes_changed_total": 6,
+      "classes_changed_truncated": false,
+      "classes_removed": [],
+      "field_move_candidates_count": 0,
+      "from_build": "24934554",
+      "from_date": "2026-08-25",
+      "to_build": "24957633",
+      "to_date": "2026-08-26"
+    },
+    {
+      "anchor": "24828357-24916958",
+      "class_pair_candidates_count": 0,
+      "classes_added": [
+        "!GlobalTypes/HUDPanelDialogVariableString_t",
+        "!GlobalTypes/HUDPanelHasClass_t",
+        "client.dll/CCSCustomHudLayout",
+        "client.dll/CCSCustomHudLayoutState",
+        "client.dll/CCSCustomHudLayout_API",
+        "client.dll/CCSPlayerCamera",
+        "server.dll/CCSCustomHudLayout",
+        "server.dll/CCSCustomHudLayoutState",
+        "server.dll/CCSCustomHudLayout_API",
+        "server.dll/CCSPlayerCamera"
+      ],
+      "classes_changed": [
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/dynpitchvol_base_t",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/dynpitchvol_t",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "server.dll/CCSPointScriptEntity",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "1552",
+            "to": "1576"
+          },
+          "static_field_ops": 0
+        }
+      ],
+      "classes_changed_total": 3,
+      "classes_changed_truncated": false,
+      "classes_removed": [],
+      "field_move_candidates_count": 0,
+      "from_build": "24828357",
+      "from_date": "2026-08-19",
+      "to_build": "24916958",
+      "to_date": "2026-08-24"
+    },
+    {
+      "anchor": "24701871-24828357",
+      "class_pair_candidates_count": 0,
+      "classes_added": [],
+      "classes_changed": [
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/dynpitchvol_base_t",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/dynpitchvol_t",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        }
+      ],
+      "classes_changed_total": 2,
+      "classes_changed_truncated": false,
+      "classes_removed": [],
+      "field_move_candidates_count": 0,
+      "from_build": "24701871",
+      "from_date": "2026-08-12",
+      "to_build": "24828357",
+      "to_date": "2026-08-19"
+    }
+  ],
+  "latest_build": "25000182",
+  "platform": "windows-x86_64",
+  "schema_version": "0.10.0",
+  "transitions": [
+    {
+      "anchor": "10832117-10834038",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "10832117",
+      "from_date": "2023-03-22",
+      "is_empty": true,
+      "to_build": "10834038",
+      "to_date": "2023-03-23"
+    },
+    {
+      "anchor": "10834038-10835290",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "10834038",
+      "from_date": "2023-03-23",
+      "is_empty": true,
+      "to_build": "10835290",
+      "to_date": "2023-03-23"
+    },
+    {
+      "anchor": "10835290-10852507",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "10835290",
+      "from_date": "2023-03-23",
+      "is_empty": true,
+      "to_build": "10852507",
+      "to_date": "2023-03-24"
+    },
+    {
+      "anchor": "10852507-10853092",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "10852507",
+      "from_date": "2023-03-24",
+      "is_empty": true,
+      "to_build": "10853092",
+      "to_date": "2023-03-25"
+    },
+    {
+      "anchor": "10853092-10894923",
+      "counts": {
+        "class_added": 50,
+        "class_changed": 503,
+        "class_removed": 11,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 3133
+      },
+      "from_build": "10853092",
+      "from_date": "2023-03-25",
+      "is_empty": false,
+      "to_build": "10894923",
+      "to_date": "2023-03-30"
+    },
+    {
+      "anchor": "10894923-10898038",
+      "counts": {
+        "class_added": 4,
+        "class_changed": 2,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 8
+      },
+      "from_build": "10894923",
+      "from_date": "2023-03-30",
+      "is_empty": false,
+      "to_build": "10898038",
+      "to_date": "2023-03-31"
+    },
+    {
+      "anchor": "10898038-10905515",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "10898038",
+      "from_date": "2023-03-31",
+      "is_empty": true,
+      "to_build": "10905515",
+      "to_date": "2023-03-31"
+    },
+    {
+      "anchor": "10905515-11081546",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "10905515",
+      "from_date": "2023-03-31",
+      "is_empty": true,
+      "to_build": "11081546",
+      "to_date": "2023-04-24"
+    },
+    {
+      "anchor": "11081546-11408339",
+      "counts": {
+        "class_added": 173,
+        "class_changed": 1334,
+        "class_removed": 135,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 8789
+      },
+      "from_build": "11081546",
+      "from_date": "2023-04-24",
+      "is_empty": false,
+      "to_build": "11408339",
+      "to_date": "2023-06-06"
+    },
+    {
+      "anchor": "11408339-11418830",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 2,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 4
+      },
+      "from_build": "11408339",
+      "from_date": "2023-06-06",
+      "is_empty": false,
+      "to_build": "11418830",
+      "to_date": "2023-06-07"
+    },
+    {
+      "anchor": "11418830-11428378",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "11418830",
+      "from_date": "2023-06-07",
+      "is_empty": true,
+      "to_build": "11428378",
+      "to_date": "2023-06-09"
+    },
+    {
+      "anchor": "11428378-11437123",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 2,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 4
+      },
+      "from_build": "11428378",
+      "from_date": "2023-06-09",
+      "is_empty": false,
+      "to_build": "11437123",
+      "to_date": "2023-06-09"
+    },
+    {
+      "anchor": "11437123-11472786",
+      "counts": {
+        "class_added": 4,
+        "class_changed": 24,
+        "class_removed": 1,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 99
+      },
+      "from_build": "11437123",
+      "from_date": "2023-06-09",
+      "is_empty": false,
+      "to_build": "11472786",
+      "to_date": "2023-06-14"
+    },
+    {
+      "anchor": "11472786-11473523",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "11472786",
+      "from_date": "2023-06-14",
+      "is_empty": true,
+      "to_build": "11473523",
+      "to_date": "2023-06-15"
+    },
+    {
+      "anchor": "11473523-11483104",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 4,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 6
+      },
+      "from_build": "11473523",
+      "from_date": "2023-06-15",
+      "is_empty": false,
+      "to_build": "11483104",
+      "to_date": "2023-06-15"
+    },
+    {
+      "anchor": "11483104-11519750",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "11483104",
+      "from_date": "2023-06-15",
+      "is_empty": true,
+      "to_build": "11519750",
+      "to_date": "2023-06-20"
+    },
+    {
+      "anchor": "11519750-11593506",
+      "counts": {
+        "class_added": 16,
+        "class_changed": 358,
+        "class_removed": 131,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 2801
+      },
+      "from_build": "11519750",
+      "from_date": "2023-06-20",
+      "is_empty": false,
+      "to_build": "11593506",
+      "to_date": "2023-06-29"
+    },
+    {
+      "anchor": "11593506-11602641",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 108
+      },
+      "from_build": "11593506",
+      "from_date": "2023-06-29",
+      "is_empty": false,
+      "to_build": "11602641",
+      "to_date": "2023-06-30"
+    },
+    {
+      "anchor": "11602641-11723163",
+      "counts": {
+        "class_added": 13,
+        "class_changed": 23,
+        "class_removed": 10,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 421
+      },
+      "from_build": "11602641",
+      "from_date": "2023-06-30",
+      "is_empty": false,
+      "to_build": "11723163",
+      "to_date": "2023-07-17"
+    },
+    {
+      "anchor": "11723163-11724280",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "11723163",
+      "from_date": "2023-07-17",
+      "is_empty": true,
+      "to_build": "11724280",
+      "to_date": "2023-07-18"
+    },
+    {
+      "anchor": "11724280-11732520",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 54,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 106
+      },
+      "from_build": "11724280",
+      "from_date": "2023-07-18",
+      "is_empty": false,
+      "to_build": "11732520",
+      "to_date": "2023-07-18"
+    },
+    {
+      "anchor": "11732520-11743491",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "11732520",
+      "from_date": "2023-07-18",
+      "is_empty": false,
+      "to_build": "11743491",
+      "to_date": "2023-07-19"
+    },
+    {
+      "anchor": "11743491-11761472",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "11743491",
+      "from_date": "2023-07-19",
+      "is_empty": true,
+      "to_build": "11761472",
+      "to_date": "2023-07-21"
+    },
+    {
+      "anchor": "11761472-11785765",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "11761472",
+      "from_date": "2023-07-21",
+      "is_empty": true,
+      "to_build": "11785765",
+      "to_date": "2023-07-25"
+    },
+    {
+      "anchor": "11785765-11852153",
+      "counts": {
+        "class_added": 10,
+        "class_changed": 184,
+        "class_removed": 3,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 1092
+      },
+      "from_build": "11785765",
+      "from_date": "2023-07-25",
+      "is_empty": false,
+      "to_build": "11852153",
+      "to_date": "2023-08-02"
+    },
+    {
+      "anchor": "11852153-11862226",
+      "counts": {
+        "class_added": 1,
+        "class_changed": 4,
+        "class_removed": 1,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 20
+      },
+      "from_build": "11852153",
+      "from_date": "2023-08-02",
+      "is_empty": false,
+      "to_build": "11862226",
+      "to_date": "2023-08-03"
+    },
+    {
+      "anchor": "11862226-11887584",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "11862226",
+      "from_date": "2023-08-03",
+      "is_empty": true,
+      "to_build": "11887584",
+      "to_date": "2023-08-07"
+    },
+    {
+      "anchor": "11887584-11949605",
+      "counts": {
+        "class_added": 2,
+        "class_changed": 86,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 298
+      },
+      "from_build": "11887584",
+      "from_date": "2023-08-07",
+      "is_empty": false,
+      "to_build": "11949605",
+      "to_date": "2023-08-15"
+    },
+    {
+      "anchor": "11949605-11958790",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "11949605",
+      "from_date": "2023-08-15",
+      "is_empty": true,
+      "to_build": "11958790",
+      "to_date": "2023-08-16"
+    },
+    {
+      "anchor": "11958790-11958906",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "11958790",
+      "from_date": "2023-08-16",
+      "is_empty": true,
+      "to_build": "11958906",
+      "to_date": "2023-08-16"
+    },
+    {
+      "anchor": "11958906-11969658",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "11958906",
+      "from_date": "2023-08-16",
+      "is_empty": true,
+      "to_build": "11969658",
+      "to_date": "2023-08-17"
+    },
+    {
+      "anchor": "11969658-11979365",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "11969658",
+      "from_date": "2023-08-17",
+      "is_empty": true,
+      "to_build": "11979365",
+      "to_date": "2023-08-18"
+    },
+    {
+      "anchor": "11979365-12083517",
+      "counts": {
+        "class_added": 20,
+        "class_changed": 95,
+        "class_removed": 6,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 745
+      },
+      "from_build": "11979365",
+      "from_date": "2023-08-18",
+      "is_empty": false,
+      "to_build": "12083517",
+      "to_date": "2023-08-31"
+    },
+    {
+      "anchor": "12083517-12085105",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12083517",
+      "from_date": "2023-08-31",
+      "is_empty": true,
+      "to_build": "12085105",
+      "to_date": "2023-09-01"
+    },
+    {
+      "anchor": "12085105-12093437",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 7,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 70
+      },
+      "from_build": "12085105",
+      "from_date": "2023-09-01",
+      "is_empty": false,
+      "to_build": "12093437",
+      "to_date": "2023-09-02"
+    },
+    {
+      "anchor": "12093437-12117234",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12093437",
+      "from_date": "2023-09-02",
+      "is_empty": true,
+      "to_build": "12117234",
+      "to_date": "2023-09-05"
+    },
+    {
+      "anchor": "12117234-12126933",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12117234",
+      "from_date": "2023-09-05",
+      "is_empty": true,
+      "to_build": "12126933",
+      "to_date": "2023-09-06"
+    },
+    {
+      "anchor": "12126933-12136709",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12126933",
+      "from_date": "2023-09-06",
+      "is_empty": true,
+      "to_build": "12136709",
+      "to_date": "2023-09-07"
+    },
+    {
+      "anchor": "12136709-12146510",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 5,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 126
+      },
+      "from_build": "12136709",
+      "from_date": "2023-09-07",
+      "is_empty": false,
+      "to_build": "12146510",
+      "to_date": "2023-09-08"
+    },
+    {
+      "anchor": "12146510-12146662",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12146510",
+      "from_date": "2023-09-08",
+      "is_empty": true,
+      "to_build": "12146662",
+      "to_date": "2023-09-08"
+    },
+    {
+      "anchor": "12146662-12147839",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12146662",
+      "from_date": "2023-09-08",
+      "is_empty": true,
+      "to_build": "12147839",
+      "to_date": "2023-09-09"
+    },
+    {
+      "anchor": "12147839-12182426",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 308,
+        "class_removed": 1,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 2056
+      },
+      "from_build": "12147839",
+      "from_date": "2023-09-09",
+      "is_empty": false,
+      "to_build": "12182426",
+      "to_date": "2023-09-13"
+    },
+    {
+      "anchor": "12182426-12184506",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12182426",
+      "from_date": "2023-09-13",
+      "is_empty": true,
+      "to_build": "12184506",
+      "to_date": "2023-09-14"
+    },
+    {
+      "anchor": "12184506-12192623",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 9,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 10
+      },
+      "from_build": "12184506",
+      "from_date": "2023-09-14",
+      "is_empty": false,
+      "to_build": "12192623",
+      "to_date": "2023-09-14"
+    },
+    {
+      "anchor": "12192623-12299470",
+      "counts": {
+        "class_added": 45,
+        "class_changed": 297,
+        "class_removed": 94,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 2088
+      },
+      "from_build": "12192623",
+      "from_date": "2023-09-14",
+      "is_empty": false,
+      "to_build": "12299470",
+      "to_date": "2023-09-27"
+    },
+    {
+      "anchor": "12299470-12302423",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12299470",
+      "from_date": "2023-09-27",
+      "is_empty": true,
+      "to_build": "12302423",
+      "to_date": "2023-09-28"
+    },
+    {
+      "anchor": "12302423-12303607",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12302423",
+      "from_date": "2023-09-28",
+      "is_empty": true,
+      "to_build": "12303607",
+      "to_date": "2023-09-28"
+    },
+    {
+      "anchor": "12303607-12312218",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12303607",
+      "from_date": "2023-09-28",
+      "is_empty": true,
+      "to_build": "12312218",
+      "to_date": "2023-09-29"
+    },
+    {
+      "anchor": "12312218-12321656",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 2,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 2
+      },
+      "from_build": "12312218",
+      "from_date": "2023-09-29",
+      "is_empty": false,
+      "to_build": "12321656",
+      "to_date": "2023-09-29"
+    },
+    {
+      "anchor": "12321656-12328020",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12321656",
+      "from_date": "2023-09-29",
+      "is_empty": true,
+      "to_build": "12328020",
+      "to_date": "2023-10-01"
+    },
+    {
+      "anchor": "12328020-12338824",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 54,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 53
+      },
+      "from_build": "12328020",
+      "from_date": "2023-10-01",
+      "is_empty": false,
+      "to_build": "12338824",
+      "to_date": "2023-10-02"
+    },
+    {
+      "anchor": "12338824-12349504",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12338824",
+      "from_date": "2023-10-02",
+      "is_empty": true,
+      "to_build": "12349504",
+      "to_date": "2023-10-04"
+    },
+    {
+      "anchor": "12349504-12358457",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 6,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 156
+      },
+      "from_build": "12349504",
+      "from_date": "2023-10-04",
+      "is_empty": false,
+      "to_build": "12358457",
+      "to_date": "2023-10-04"
+    },
+    {
+      "anchor": "12358457-12377892",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12358457",
+      "from_date": "2023-10-04",
+      "is_empty": true,
+      "to_build": "12377892",
+      "to_date": "2023-10-06"
+    },
+    {
+      "anchor": "12377892-12398121",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 5,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 7
+      },
+      "from_build": "12377892",
+      "from_date": "2023-10-06",
+      "is_empty": false,
+      "to_build": "12398121",
+      "to_date": "2023-10-09"
+    },
+    {
+      "anchor": "12398121-12408485",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12398121",
+      "from_date": "2023-10-09",
+      "is_empty": true,
+      "to_build": "12408485",
+      "to_date": "2023-10-11"
+    },
+    {
+      "anchor": "12408485-12416747",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12408485",
+      "from_date": "2023-10-11",
+      "is_empty": true,
+      "to_build": "12416747",
+      "to_date": "2023-10-11"
+    },
+    {
+      "anchor": "12416747-12427908",
+      "counts": {
+        "class_added": 2,
+        "class_changed": 33,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 113
+      },
+      "from_build": "12416747",
+      "from_date": "2023-10-11",
+      "is_empty": false,
+      "to_build": "12427908",
+      "to_date": "2023-10-12"
+    },
+    {
+      "anchor": "12427908-12438553",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12427908",
+      "from_date": "2023-10-12",
+      "is_empty": true,
+      "to_build": "12438553",
+      "to_date": "2023-10-13"
+    },
+    {
+      "anchor": "12438553-12465841",
+      "counts": {
+        "class_added": 1,
+        "class_changed": 10,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 238
+      },
+      "from_build": "12438553",
+      "from_date": "2023-10-13",
+      "is_empty": false,
+      "to_build": "12465841",
+      "to_date": "2023-10-17"
+    },
+    {
+      "anchor": "12465841-12485612",
+      "counts": {
+        "class_added": 1,
+        "class_changed": 56,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 95
+      },
+      "from_build": "12465841",
+      "from_date": "2023-10-17",
+      "is_empty": false,
+      "to_build": "12485612",
+      "to_date": "2023-10-19"
+    },
+    {
+      "anchor": "12485612-12494887",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12485612",
+      "from_date": "2023-10-19",
+      "is_empty": true,
+      "to_build": "12494887",
+      "to_date": "2023-10-20"
+    },
+    {
+      "anchor": "12494887-12535846",
+      "counts": {
+        "class_added": 1,
+        "class_changed": 2,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 8
+      },
+      "from_build": "12494887",
+      "from_date": "2023-10-20",
+      "is_empty": false,
+      "to_build": "12535846",
+      "to_date": "2023-10-25"
+    },
+    {
+      "anchor": "12535846-12547359",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12535846",
+      "from_date": "2023-10-25",
+      "is_empty": true,
+      "to_build": "12547359",
+      "to_date": "2023-10-26"
+    },
+    {
+      "anchor": "12547359-12606072",
+      "counts": {
+        "class_added": 11,
+        "class_changed": 149,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 951
+      },
+      "from_build": "12547359",
+      "from_date": "2023-10-26",
+      "is_empty": false,
+      "to_build": "12606072",
+      "to_date": "2023-11-02"
+    },
+    {
+      "anchor": "12606072-12607859",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12606072",
+      "from_date": "2023-11-02",
+      "is_empty": true,
+      "to_build": "12607859",
+      "to_date": "2023-11-03"
+    },
+    {
+      "anchor": "12607859-12616521",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 17,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 369
+      },
+      "from_build": "12607859",
+      "from_date": "2023-11-03",
+      "is_empty": false,
+      "to_build": "12616521",
+      "to_date": "2023-11-03"
+    },
+    {
+      "anchor": "12616521-12616847",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 60,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12616521",
+      "from_date": "2023-11-03",
+      "is_empty": false,
+      "to_build": "12616847",
+      "to_date": "2023-11-04"
+    },
+    {
+      "anchor": "12616847-12617548",
+      "counts": {
+        "class_added": 60,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12616847",
+      "from_date": "2023-11-04",
+      "is_empty": false,
+      "to_build": "12617548",
+      "to_date": "2023-11-04"
+    },
+    {
+      "anchor": "12617548-12656218",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 119,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 172
+      },
+      "from_build": "12617548",
+      "from_date": "2023-11-04",
+      "is_empty": false,
+      "to_build": "12656218",
+      "to_date": "2023-11-09"
+    },
+    {
+      "anchor": "12656218-12666450",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12656218",
+      "from_date": "2023-11-09",
+      "is_empty": false,
+      "to_build": "12666450",
+      "to_date": "2023-11-10"
+    },
+    {
+      "anchor": "12666450-12693482",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 7,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 307
+      },
+      "from_build": "12666450",
+      "from_date": "2023-11-10",
+      "is_empty": false,
+      "to_build": "12693482",
+      "to_date": "2023-11-13"
+    },
+    {
+      "anchor": "12693482-12725887",
+      "counts": {
+        "class_added": 2,
+        "class_changed": 86,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 230
+      },
+      "from_build": "12693482",
+      "from_date": "2023-11-13",
+      "is_empty": false,
+      "to_build": "12725887",
+      "to_date": "2023-11-17"
+    },
+    {
+      "anchor": "12725887-12726829",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 2,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12725887",
+      "from_date": "2023-11-17",
+      "is_empty": false,
+      "to_build": "12726829",
+      "to_date": "2023-11-17"
+    },
+    {
+      "anchor": "12726829-12727142",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12726829",
+      "from_date": "2023-11-17",
+      "is_empty": true,
+      "to_build": "12727142",
+      "to_date": "2023-11-17"
+    },
+    {
+      "anchor": "12727142-12736853",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12727142",
+      "from_date": "2023-11-17",
+      "is_empty": true,
+      "to_build": "12736853",
+      "to_date": "2023-11-17"
+    },
+    {
+      "anchor": "12736853-12756335",
+      "counts": {
+        "class_added": 1,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12736853",
+      "from_date": "2023-11-17",
+      "is_empty": false,
+      "to_build": "12756335",
+      "to_date": "2023-11-21"
+    },
+    {
+      "anchor": "12756335-12843950",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 119,
+        "class_removed": 19,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 213
+      },
+      "from_build": "12756335",
+      "from_date": "2023-11-21",
+      "is_empty": false,
+      "to_build": "12843950",
+      "to_date": "2023-11-30"
+    },
+    {
+      "anchor": "12843950-12854667",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12843950",
+      "from_date": "2023-11-30",
+      "is_empty": true,
+      "to_build": "12854667",
+      "to_date": "2023-12-01"
+    },
+    {
+      "anchor": "12854667-12873276",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 12,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 92
+      },
+      "from_build": "12854667",
+      "from_date": "2023-12-01",
+      "is_empty": false,
+      "to_build": "12873276",
+      "to_date": "2023-12-04"
+    },
+    {
+      "anchor": "12873276-12895370",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 73,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 179
+      },
+      "from_build": "12873276",
+      "from_date": "2023-12-04",
+      "is_empty": false,
+      "to_build": "12895370",
+      "to_date": "2023-12-07"
+    },
+    {
+      "anchor": "12895370-12905434",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 10,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 12
+      },
+      "from_build": "12895370",
+      "from_date": "2023-12-07",
+      "is_empty": false,
+      "to_build": "12905434",
+      "to_date": "2023-12-07"
+    },
+    {
+      "anchor": "12905434-12908237",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12905434",
+      "from_date": "2023-12-07",
+      "is_empty": true,
+      "to_build": "12908237",
+      "to_date": "2023-12-08"
+    },
+    {
+      "anchor": "12908237-12931567",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12908237",
+      "from_date": "2023-12-08",
+      "is_empty": true,
+      "to_build": "12931567",
+      "to_date": "2023-12-11"
+    },
+    {
+      "anchor": "12931567-12934552",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12931567",
+      "from_date": "2023-12-11",
+      "is_empty": true,
+      "to_build": "12934552",
+      "to_date": "2023-12-12"
+    },
+    {
+      "anchor": "12934552-12956327",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 64,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 232
+      },
+      "from_build": "12934552",
+      "from_date": "2023-12-12",
+      "is_empty": false,
+      "to_build": "12956327",
+      "to_date": "2023-12-14"
+    },
+    {
+      "anchor": "12956327-12956885",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12956327",
+      "from_date": "2023-12-14",
+      "is_empty": true,
+      "to_build": "12956885",
+      "to_date": "2023-12-14"
+    },
+    {
+      "anchor": "12956885-12957241",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12956885",
+      "from_date": "2023-12-14",
+      "is_empty": true,
+      "to_build": "12957241",
+      "to_date": "2023-12-14"
+    },
+    {
+      "anchor": "12957241-12995320",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 2
+      },
+      "from_build": "12957241",
+      "from_date": "2023-12-14",
+      "is_empty": false,
+      "to_build": "12995320",
+      "to_date": "2023-12-18"
+    },
+    {
+      "anchor": "12995320-13024819",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "12995320",
+      "from_date": "2023-12-18",
+      "is_empty": true,
+      "to_build": "13024819",
+      "to_date": "2023-12-21"
+    },
+    {
+      "anchor": "13024819-13095463",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "13024819",
+      "from_date": "2023-12-21",
+      "is_empty": true,
+      "to_build": "13095463",
+      "to_date": "2024-01-04"
+    },
+    {
+      "anchor": "13095463-13213083",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "13095463",
+      "from_date": "2024-01-04",
+      "is_empty": true,
+      "to_build": "13213083",
+      "to_date": "2024-01-18"
+    },
+    {
+      "anchor": "13213083-13223553",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "13213083",
+      "from_date": "2024-01-18",
+      "is_empty": true,
+      "to_build": "13223553",
+      "to_date": "2024-01-19"
+    },
+    {
+      "anchor": "13223553-13240071",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "13223553",
+      "from_date": "2024-01-19",
+      "is_empty": true,
+      "to_build": "13240071",
+      "to_date": "2024-01-22"
+    },
+    {
+      "anchor": "13240071-13385739",
+      "counts": {
+        "class_added": 129,
+        "class_changed": 2674,
+        "class_removed": 32,
+        "enum_added": 355,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 13991
+      },
+      "from_build": "13240071",
+      "from_date": "2024-01-22",
+      "is_empty": false,
+      "to_build": "13385739",
+      "to_date": "2024-02-06"
+    },
+    {
+      "anchor": "13385739-13387786",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "13385739",
+      "from_date": "2024-02-06",
+      "is_empty": true,
+      "to_build": "13387786",
+      "to_date": "2024-02-07"
+    },
+    {
+      "anchor": "13387786-13397689",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "13387786",
+      "from_date": "2024-02-07",
+      "is_empty": true,
+      "to_build": "13397689",
+      "to_date": "2024-02-07"
+    },
+    {
+      "anchor": "13397689-13409209",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "13397689",
+      "from_date": "2024-02-07",
+      "is_empty": true,
+      "to_build": "13409209",
+      "to_date": "2024-02-08"
+    },
+    {
+      "anchor": "13409209-13410341",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "13409209",
+      "from_date": "2024-02-08",
+      "is_empty": true,
+      "to_build": "13410341",
+      "to_date": "2024-02-09"
+    },
+    {
+      "anchor": "13410341-13438770",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "13410341",
+      "from_date": "2024-02-09",
+      "is_empty": true,
+      "to_build": "13438770",
+      "to_date": "2024-02-13"
+    },
+    {
+      "anchor": "13438770-13439412",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 41,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 3,
+        "field_ops": 0
+      },
+      "from_build": "13438770",
+      "from_date": "2024-02-13",
+      "is_empty": false,
+      "to_build": "13439412",
+      "to_date": "2024-02-13"
+    },
+    {
+      "anchor": "13439412-13460160",
+      "counts": {
+        "class_added": 41,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 3,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "13439412",
+      "from_date": "2024-02-13",
+      "is_empty": false,
+      "to_build": "13460160",
+      "to_date": "2024-02-15"
+    },
+    {
+      "anchor": "13460160-13470915",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 3,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 8
+      },
+      "from_build": "13460160",
+      "from_date": "2024-02-15",
+      "is_empty": false,
+      "to_build": "13470915",
+      "to_date": "2024-02-16"
+    },
+    {
+      "anchor": "13470915-13471625",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "13470915",
+      "from_date": "2024-02-16",
+      "is_empty": true,
+      "to_build": "13471625",
+      "to_date": "2024-02-16"
+    },
+    {
+      "anchor": "13471625-13481434",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "13471625",
+      "from_date": "2024-02-16",
+      "is_empty": true,
+      "to_build": "13481434",
+      "to_date": "2024-02-16"
+    },
+    {
+      "anchor": "13481434-13593156",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 10,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 1,
+        "enum_removed": 0,
+        "field_ops": 113
+      },
+      "from_build": "13481434",
+      "from_date": "2024-02-16",
+      "is_empty": false,
+      "to_build": "13593156",
+      "to_date": "2024-02-28"
+    },
+    {
+      "anchor": "13593156-13616159",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "13593156",
+      "from_date": "2024-02-28",
+      "is_empty": true,
+      "to_build": "13616159",
+      "to_date": "2024-03-01"
+    },
+    {
+      "anchor": "13616159-13662775",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "13616159",
+      "from_date": "2024-03-01",
+      "is_empty": true,
+      "to_build": "13662775",
+      "to_date": "2024-03-06"
+    },
+    {
+      "anchor": "13662775-13687128",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "13662775",
+      "from_date": "2024-03-06",
+      "is_empty": true,
+      "to_build": "13687128",
+      "to_date": "2024-03-09"
+    },
+    {
+      "anchor": "13687128-13735017",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 7
+      },
+      "from_build": "13687128",
+      "from_date": "2024-03-09",
+      "is_empty": false,
+      "to_build": "13735017",
+      "to_date": "2024-03-14"
+    },
+    {
+      "anchor": "13735017-13758187",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 2,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 1
+      },
+      "from_build": "13735017",
+      "from_date": "2024-03-14",
+      "is_empty": false,
+      "to_build": "13758187",
+      "to_date": "2024-03-15"
+    },
+    {
+      "anchor": "13758187-13763513",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "13758187",
+      "from_date": "2024-03-15",
+      "is_empty": true,
+      "to_build": "13763513",
+      "to_date": "2024-03-16"
+    },
+    {
+      "anchor": "13763513-13779594",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "13763513",
+      "from_date": "2024-03-16",
+      "is_empty": true,
+      "to_build": "13779594",
+      "to_date": "2024-03-18"
+    },
+    {
+      "anchor": "13779594-13791849",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "13779594",
+      "from_date": "2024-03-18",
+      "is_empty": true,
+      "to_build": "13791849",
+      "to_date": "2024-03-19"
+    },
+    {
+      "anchor": "13791849-13804656",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "13791849",
+      "from_date": "2024-03-19",
+      "is_empty": true,
+      "to_build": "13804656",
+      "to_date": "2024-03-21"
+    },
+    {
+      "anchor": "13804656-13829089",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 1
+      },
+      "from_build": "13804656",
+      "from_date": "2024-03-21",
+      "is_empty": false,
+      "to_build": "13829089",
+      "to_date": "2024-03-23"
+    },
+    {
+      "anchor": "13829089-13929176",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "13829089",
+      "from_date": "2024-03-23",
+      "is_empty": true,
+      "to_build": "13929176",
+      "to_date": "2024-04-03"
+    },
+    {
+      "anchor": "13929176-13938961",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "13929176",
+      "from_date": "2024-04-03",
+      "is_empty": true,
+      "to_build": "13938961",
+      "to_date": "2024-04-03"
+    },
+    {
+      "anchor": "13938961-13982036",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "13938961",
+      "from_date": "2024-04-03",
+      "is_empty": true,
+      "to_build": "13982036",
+      "to_date": "2024-04-08"
+    },
+    {
+      "anchor": "13982036-14075664",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "13982036",
+      "from_date": "2024-04-08",
+      "is_empty": true,
+      "to_build": "14075664",
+      "to_date": "2024-04-16"
+    },
+    {
+      "anchor": "14075664-14139085",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 9,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 136
+      },
+      "from_build": "14075664",
+      "from_date": "2024-04-16",
+      "is_empty": false,
+      "to_build": "14139085",
+      "to_date": "2024-04-23"
+    },
+    {
+      "anchor": "14139085-14178987",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 134,
+        "class_removed": 1,
+        "enum_added": 0,
+        "enum_changed": 1,
+        "enum_removed": 0,
+        "field_ops": 680
+      },
+      "from_build": "14139085",
+      "from_date": "2024-04-23",
+      "is_empty": false,
+      "to_build": "14178987",
+      "to_date": "2024-04-25"
+    },
+    {
+      "anchor": "14178987-14179660",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "14178987",
+      "from_date": "2024-04-25",
+      "is_empty": true,
+      "to_build": "14179660",
+      "to_date": "2024-04-26"
+    },
+    {
+      "anchor": "14179660-14191516",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "14179660",
+      "from_date": "2024-04-26",
+      "is_empty": true,
+      "to_build": "14191516",
+      "to_date": "2024-04-26"
+    },
+    {
+      "anchor": "14191516-14225153",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 1
+      },
+      "from_build": "14191516",
+      "from_date": "2024-04-26",
+      "is_empty": false,
+      "to_build": "14225153",
+      "to_date": "2024-04-30"
+    },
+    {
+      "anchor": "14225153-14238169",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "14225153",
+      "from_date": "2024-04-30",
+      "is_empty": true,
+      "to_build": "14238169",
+      "to_date": "2024-05-02"
+    },
+    {
+      "anchor": "14238169-14247460",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "14238169",
+      "from_date": "2024-05-02",
+      "is_empty": true,
+      "to_build": "14247460",
+      "to_date": "2024-05-02"
+    },
+    {
+      "anchor": "14247460-14249031",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "14247460",
+      "from_date": "2024-05-02",
+      "is_empty": true,
+      "to_build": "14249031",
+      "to_date": "2024-05-02"
+    },
+    {
+      "anchor": "14249031-14296060",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 1,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "14249031",
+      "from_date": "2024-05-02",
+      "is_empty": false,
+      "to_build": "14296060",
+      "to_date": "2024-05-07"
+    },
+    {
+      "anchor": "14296060-14308545",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "14296060",
+      "from_date": "2024-05-07",
+      "is_empty": true,
+      "to_build": "14308545",
+      "to_date": "2024-05-08"
+    },
+    {
+      "anchor": "14308545-14318652",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "14308545",
+      "from_date": "2024-05-08",
+      "is_empty": true,
+      "to_build": "14318652",
+      "to_date": "2024-05-09"
+    },
+    {
+      "anchor": "14318652-14320137",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "14318652",
+      "from_date": "2024-05-09",
+      "is_empty": true,
+      "to_build": "14320137",
+      "to_date": "2024-05-09"
+    },
+    {
+      "anchor": "14320137-14446408",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "14320137",
+      "from_date": "2024-05-09",
+      "is_empty": true,
+      "to_build": "14446408",
+      "to_date": "2024-05-21"
+    },
+    {
+      "anchor": "14446408-14470938",
+      "counts": {
+        "class_added": 224,
+        "class_changed": 1049,
+        "class_removed": 41,
+        "enum_added": 40,
+        "enum_changed": 26,
+        "enum_removed": 2,
+        "field_ops": 6767
+      },
+      "from_build": "14446408",
+      "from_date": "2024-05-21",
+      "is_empty": false,
+      "to_build": "14470938",
+      "to_date": "2024-05-23"
+    },
+    {
+      "anchor": "14470938-14487420",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "14470938",
+      "from_date": "2024-05-23",
+      "is_empty": true,
+      "to_build": "14487420",
+      "to_date": "2024-05-24"
+    },
+    {
+      "anchor": "14487420-14536966",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 59,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 66
+      },
+      "from_build": "14487420",
+      "from_date": "2024-05-24",
+      "is_empty": false,
+      "to_build": "14536966",
+      "to_date": "2024-05-29"
+    },
+    {
+      "anchor": "14536966-14553911",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "14536966",
+      "from_date": "2024-05-29",
+      "is_empty": true,
+      "to_build": "14553911",
+      "to_date": "2024-05-30"
+    },
+    {
+      "anchor": "14553911-14602005",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 9,
+        "class_removed": 20,
+        "enum_added": 0,
+        "enum_changed": 1,
+        "enum_removed": 0,
+        "field_ops": 12
+      },
+      "from_build": "14553911",
+      "from_date": "2024-05-30",
+      "is_empty": false,
+      "to_build": "14602005",
+      "to_date": "2024-06-04"
+    },
+    {
+      "anchor": "14602005-14670648",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "14602005",
+      "from_date": "2024-06-04",
+      "is_empty": true,
+      "to_build": "14670648",
+      "to_date": "2024-06-10"
+    },
+    {
+      "anchor": "14670648-14672345",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "14670648",
+      "from_date": "2024-06-10",
+      "is_empty": true,
+      "to_build": "14672345",
+      "to_date": "2024-06-11"
+    },
+    {
+      "anchor": "14672345-14684351",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 5,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 125
+      },
+      "from_build": "14672345",
+      "from_date": "2024-06-11",
+      "is_empty": false,
+      "to_build": "14684351",
+      "to_date": "2024-06-11"
+    },
+    {
+      "anchor": "14684351-14711932",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 1
+      },
+      "from_build": "14684351",
+      "from_date": "2024-06-11",
+      "is_empty": false,
+      "to_build": "14711932",
+      "to_date": "2024-06-13"
+    },
+    {
+      "anchor": "14711932-14748583",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "14711932",
+      "from_date": "2024-06-13",
+      "is_empty": true,
+      "to_build": "14748583",
+      "to_date": "2024-06-18"
+    },
+    {
+      "anchor": "14748583-14787627",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "14748583",
+      "from_date": "2024-06-18",
+      "is_empty": true,
+      "to_build": "14787627",
+      "to_date": "2024-06-20"
+    },
+    {
+      "anchor": "14787627-14836768",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 69,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 1,
+        "enum_removed": 0,
+        "field_ops": 314
+      },
+      "from_build": "14787627",
+      "from_date": "2024-06-20",
+      "is_empty": false,
+      "to_build": "14836768",
+      "to_date": "2024-06-25"
+    },
+    {
+      "anchor": "14836768-14837517",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "14836768",
+      "from_date": "2024-06-25",
+      "is_empty": true,
+      "to_build": "14837517",
+      "to_date": "2024-06-25"
+    },
+    {
+      "anchor": "14837517-14850494",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "14837517",
+      "from_date": "2024-06-25",
+      "is_empty": true,
+      "to_build": "14850494",
+      "to_date": "2024-06-26"
+    },
+    {
+      "anchor": "14850494-14851576",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 42,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 14,
+        "field_ops": 0
+      },
+      "from_build": "14850494",
+      "from_date": "2024-06-26",
+      "is_empty": false,
+      "to_build": "14851576",
+      "to_date": "2024-06-26"
+    },
+    {
+      "anchor": "14851576-14864281",
+      "counts": {
+        "class_added": 42,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 14,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "14851576",
+      "from_date": "2024-06-26",
+      "is_empty": false,
+      "to_build": "14864281",
+      "to_date": "2024-06-27"
+    },
+    {
+      "anchor": "14864281-14911477",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "14864281",
+      "from_date": "2024-06-27",
+      "is_empty": true,
+      "to_build": "14911477",
+      "to_date": "2024-07-02"
+    },
+    {
+      "anchor": "14911477-15007146",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "14911477",
+      "from_date": "2024-07-02",
+      "is_empty": true,
+      "to_build": "15007146",
+      "to_date": "2024-07-11"
+    },
+    {
+      "anchor": "15007146-15008695",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "15007146",
+      "from_date": "2024-07-11",
+      "is_empty": true,
+      "to_build": "15008695",
+      "to_date": "2024-07-12"
+    },
+    {
+      "anchor": "15008695-15069316",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "15008695",
+      "from_date": "2024-07-12",
+      "is_empty": true,
+      "to_build": "15069316",
+      "to_date": "2024-07-18"
+    },
+    {
+      "anchor": "15069316-15118309",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "15069316",
+      "from_date": "2024-07-18",
+      "is_empty": true,
+      "to_build": "15118309",
+      "to_date": "2024-07-23"
+    },
+    {
+      "anchor": "15118309-15155775",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "15118309",
+      "from_date": "2024-07-23",
+      "is_empty": true,
+      "to_build": "15155775",
+      "to_date": "2024-07-25"
+    },
+    {
+      "anchor": "15155775-15309899",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 2,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 28
+      },
+      "from_build": "15155775",
+      "from_date": "2024-07-25",
+      "is_empty": false,
+      "to_build": "15309899",
+      "to_date": "2024-08-08"
+    },
+    {
+      "anchor": "15309899-15312306",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 1
+      },
+      "from_build": "15309899",
+      "from_date": "2024-08-08",
+      "is_empty": false,
+      "to_build": "15312306",
+      "to_date": "2024-08-09"
+    },
+    {
+      "anchor": "15312306-15324295",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "15312306",
+      "from_date": "2024-08-09",
+      "is_empty": true,
+      "to_build": "15324295",
+      "to_date": "2024-08-09"
+    },
+    {
+      "anchor": "15324295-15372392",
+      "counts": {
+        "class_added": 2,
+        "class_changed": 13,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 368
+      },
+      "from_build": "15324295",
+      "from_date": "2024-08-09",
+      "is_empty": false,
+      "to_build": "15372392",
+      "to_date": "2024-08-14"
+    },
+    {
+      "anchor": "15372392-15424813",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "15372392",
+      "from_date": "2024-08-14",
+      "is_empty": false,
+      "to_build": "15424813",
+      "to_date": "2024-08-19"
+    },
+    {
+      "anchor": "15424813-15440595",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "15424813",
+      "from_date": "2024-08-19",
+      "is_empty": true,
+      "to_build": "15440595",
+      "to_date": "2024-08-20"
+    },
+    {
+      "anchor": "15440595-15453423",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "15440595",
+      "from_date": "2024-08-20",
+      "is_empty": true,
+      "to_build": "15453423",
+      "to_date": "2024-08-21"
+    },
+    {
+      "anchor": "15453423-15464510",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "15453423",
+      "from_date": "2024-08-21",
+      "is_empty": true,
+      "to_build": "15464510",
+      "to_date": "2024-08-22"
+    },
+    {
+      "anchor": "15464510-15582507",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "15464510",
+      "from_date": "2024-08-22",
+      "is_empty": true,
+      "to_build": "15582507",
+      "to_date": "2024-09-03"
+    },
+    {
+      "anchor": "15582507-15644071",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "15582507",
+      "from_date": "2024-09-03",
+      "is_empty": false,
+      "to_build": "15644071",
+      "to_date": "2024-09-09"
+    },
+    {
+      "anchor": "15644071-15656858",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "15644071",
+      "from_date": "2024-09-09",
+      "is_empty": true,
+      "to_build": "15656858",
+      "to_date": "2024-09-10"
+    },
+    {
+      "anchor": "15656858-15908369",
+      "counts": {
+        "class_added": 251,
+        "class_changed": 1417,
+        "class_removed": 10,
+        "enum_added": 38,
+        "enum_changed": 20,
+        "enum_removed": 1,
+        "field_ops": 8801
+      },
+      "from_build": "15656858",
+      "from_date": "2024-09-10",
+      "is_empty": false,
+      "to_build": "15908369",
+      "to_date": "2024-10-02"
+    },
+    {
+      "anchor": "15908369-15910582",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "15908369",
+      "from_date": "2024-10-02",
+      "is_empty": true,
+      "to_build": "15910582",
+      "to_date": "2024-10-03"
+    },
+    {
+      "anchor": "15910582-15923186",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "15910582",
+      "from_date": "2024-10-03",
+      "is_empty": true,
+      "to_build": "15923186",
+      "to_date": "2024-10-04"
+    },
+    {
+      "anchor": "15923186-15936283",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 2,
+        "class_removed": 0,
+        "enum_added": 1,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 14
+      },
+      "from_build": "15923186",
+      "from_date": "2024-10-04",
+      "is_empty": false,
+      "to_build": "15936283",
+      "to_date": "2024-10-05"
+    },
+    {
+      "anchor": "15936283-15947149",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "15936283",
+      "from_date": "2024-10-05",
+      "is_empty": true,
+      "to_build": "15947149",
+      "to_date": "2024-10-06"
+    },
+    {
+      "anchor": "15947149-15973486",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "15947149",
+      "from_date": "2024-10-06",
+      "is_empty": true,
+      "to_build": "15973486",
+      "to_date": "2024-10-08"
+    },
+    {
+      "anchor": "15973486-15986949",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "15973486",
+      "from_date": "2024-10-08",
+      "is_empty": true,
+      "to_build": "15986949",
+      "to_date": "2024-10-09"
+    },
+    {
+      "anchor": "15986949-16001466",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "15986949",
+      "from_date": "2024-10-09",
+      "is_empty": true,
+      "to_build": "16001466",
+      "to_date": "2024-10-10"
+    },
+    {
+      "anchor": "16001466-16015437",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "16001466",
+      "from_date": "2024-10-10",
+      "is_empty": true,
+      "to_build": "16015437",
+      "to_date": "2024-10-11"
+    },
+    {
+      "anchor": "16015437-16057663",
+      "counts": {
+        "class_added": 7,
+        "class_changed": 474,
+        "class_removed": 1,
+        "enum_added": 1,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 3002
+      },
+      "from_build": "16015437",
+      "from_date": "2024-10-11",
+      "is_empty": false,
+      "to_build": "16057663",
+      "to_date": "2024-10-15"
+    },
+    {
+      "anchor": "16057663-16058698",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "16057663",
+      "from_date": "2024-10-15",
+      "is_empty": true,
+      "to_build": "16058698",
+      "to_date": "2024-10-16"
+    },
+    {
+      "anchor": "16058698-16071819",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "16058698",
+      "from_date": "2024-10-16",
+      "is_empty": true,
+      "to_build": "16071819",
+      "to_date": "2024-10-16"
+    },
+    {
+      "anchor": "16071819-16087659",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 4,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 3
+      },
+      "from_build": "16071819",
+      "from_date": "2024-10-16",
+      "is_empty": false,
+      "to_build": "16087659",
+      "to_date": "2024-10-17"
+    },
+    {
+      "anchor": "16087659-16156846",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 114,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 90
+      },
+      "from_build": "16087659",
+      "from_date": "2024-10-17",
+      "is_empty": false,
+      "to_build": "16156846",
+      "to_date": "2024-10-23"
+    },
+    {
+      "anchor": "16156846-16172454",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "16156846",
+      "from_date": "2024-10-23",
+      "is_empty": true,
+      "to_build": "16172454",
+      "to_date": "2024-10-24"
+    },
+    {
+      "anchor": "16172454-16184206",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "16172454",
+      "from_date": "2024-10-24",
+      "is_empty": true,
+      "to_build": "16184206",
+      "to_date": "2024-10-25"
+    },
+    {
+      "anchor": "16184206-16213816",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 65,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 207
+      },
+      "from_build": "16184206",
+      "from_date": "2024-10-25",
+      "is_empty": false,
+      "to_build": "16213816",
+      "to_date": "2024-10-29"
+    },
+    {
+      "anchor": "16213816-16228412",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 2,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 5
+      },
+      "from_build": "16213816",
+      "from_date": "2024-10-29",
+      "is_empty": false,
+      "to_build": "16228412",
+      "to_date": "2024-10-29"
+    },
+    {
+      "anchor": "16228412-16243257",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "16228412",
+      "from_date": "2024-10-29",
+      "is_empty": true,
+      "to_build": "16243257",
+      "to_date": "2024-10-30"
+    },
+    {
+      "anchor": "16243257-16320304",
+      "counts": {
+        "class_added": 6,
+        "class_changed": 8,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 66
+      },
+      "from_build": "16243257",
+      "from_date": "2024-10-30",
+      "is_empty": false,
+      "to_build": "16320304",
+      "to_date": "2024-11-06"
+    },
+    {
+      "anchor": "16320304-16331695",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "16320304",
+      "from_date": "2024-11-06",
+      "is_empty": true,
+      "to_build": "16331695",
+      "to_date": "2024-11-07"
+    },
+    {
+      "anchor": "16331695-16333861",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "16331695",
+      "from_date": "2024-11-07",
+      "is_empty": true,
+      "to_build": "16333861",
+      "to_date": "2024-11-07"
+    },
+    {
+      "anchor": "16333861-16382602",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "16333861",
+      "from_date": "2024-11-07",
+      "is_empty": true,
+      "to_build": "16382602",
+      "to_date": "2024-11-12"
+    },
+    {
+      "anchor": "16382602-16398395",
+      "counts": {
+        "class_added": 1,
+        "class_changed": 16,
+        "class_removed": 0,
+        "enum_added": 1,
+        "enum_changed": 1,
+        "enum_removed": 0,
+        "field_ops": 203
+      },
+      "from_build": "16382602",
+      "from_date": "2024-11-12",
+      "is_empty": false,
+      "to_build": "16398395",
+      "to_date": "2024-11-13"
+    },
+    {
+      "anchor": "16398395-16412344",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "16398395",
+      "from_date": "2024-11-13",
+      "is_empty": true,
+      "to_build": "16412344",
+      "to_date": "2024-11-14"
+    },
+    {
+      "anchor": "16412344-16426026",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "16412344",
+      "from_date": "2024-11-14",
+      "is_empty": true,
+      "to_build": "16426026",
+      "to_date": "2024-11-15"
+    },
+    {
+      "anchor": "16426026-16432265",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "16426026",
+      "from_date": "2024-11-15",
+      "is_empty": true,
+      "to_build": "16432265",
+      "to_date": "2024-11-16"
+    },
+    {
+      "anchor": "16432265-16465245",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "16432265",
+      "from_date": "2024-11-16",
+      "is_empty": true,
+      "to_build": "16465245",
+      "to_date": "2024-11-19"
+    },
+    {
+      "anchor": "16465245-16479532",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "16465245",
+      "from_date": "2024-11-19",
+      "is_empty": true,
+      "to_build": "16479532",
+      "to_date": "2024-11-21"
+    },
+    {
+      "anchor": "16479532-16558361",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "16479532",
+      "from_date": "2024-11-21",
+      "is_empty": true,
+      "to_build": "16558361",
+      "to_date": "2024-11-27"
+    },
+    {
+      "anchor": "16558361-16559327",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "16558361",
+      "from_date": "2024-11-27",
+      "is_empty": true,
+      "to_build": "16559327",
+      "to_date": "2024-11-27"
+    },
+    {
+      "anchor": "16559327-16619281",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "16559327",
+      "from_date": "2024-11-27",
+      "is_empty": true,
+      "to_build": "16619281",
+      "to_date": "2024-12-03"
+    },
+    {
+      "anchor": "16619281-16687167",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "16619281",
+      "from_date": "2024-12-03",
+      "is_empty": true,
+      "to_build": "16687167",
+      "to_date": "2024-12-10"
+    },
+    {
+      "anchor": "16687167-16794210",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 10,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 11
+      },
+      "from_build": "16687167",
+      "from_date": "2024-12-10",
+      "is_empty": false,
+      "to_build": "16794210",
+      "to_date": "2024-12-19"
+    },
+    {
+      "anchor": "16794210-16806987",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "16794210",
+      "from_date": "2024-12-19",
+      "is_empty": true,
+      "to_build": "16806987",
+      "to_date": "2024-12-19"
+    },
+    {
+      "anchor": "16806987-16933364",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 2,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 45
+      },
+      "from_build": "16806987",
+      "from_date": "2024-12-19",
+      "is_empty": false,
+      "to_build": "16933364",
+      "to_date": "2025-01-07"
+    },
+    {
+      "anchor": "16933364-16958277",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "16933364",
+      "from_date": "2025-01-07",
+      "is_empty": true,
+      "to_build": "16958277",
+      "to_date": "2025-01-10"
+    },
+    {
+      "anchor": "16958277-17006600",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 3
+      },
+      "from_build": "16958277",
+      "from_date": "2025-01-10",
+      "is_empty": false,
+      "to_build": "17006600",
+      "to_date": "2025-01-15"
+    },
+    {
+      "anchor": "17006600-17032840",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "17006600",
+      "from_date": "2025-01-15",
+      "is_empty": true,
+      "to_build": "17032840",
+      "to_date": "2025-01-16"
+    },
+    {
+      "anchor": "17032840-17084099",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "17032840",
+      "from_date": "2025-01-16",
+      "is_empty": false,
+      "to_build": "17084099",
+      "to_date": "2025-01-21"
+    },
+    {
+      "anchor": "17084099-17148705",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "17084099",
+      "from_date": "2025-01-21",
+      "is_empty": true,
+      "to_build": "17148705",
+      "to_date": "2025-01-27"
+    },
+    {
+      "anchor": "17148705-17162095",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 2
+      },
+      "from_build": "17148705",
+      "from_date": "2025-01-27",
+      "is_empty": false,
+      "to_build": "17162095",
+      "to_date": "2025-01-28"
+    },
+    {
+      "anchor": "17162095-17177704",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "17162095",
+      "from_date": "2025-01-28",
+      "is_empty": true,
+      "to_build": "17177704",
+      "to_date": "2025-01-29"
+    },
+    {
+      "anchor": "17177704-17230622",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "17177704",
+      "from_date": "2025-01-29",
+      "is_empty": true,
+      "to_build": "17230622",
+      "to_date": "2025-02-03"
+    },
+    {
+      "anchor": "17230622-17272995",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "17230622",
+      "from_date": "2025-02-03",
+      "is_empty": false,
+      "to_build": "17272995",
+      "to_date": "2025-02-06"
+    },
+    {
+      "anchor": "17272995-17359244",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "17272995",
+      "from_date": "2025-02-06",
+      "is_empty": true,
+      "to_build": "17359244",
+      "to_date": "2025-02-13"
+    },
+    {
+      "anchor": "17359244-17459940",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "17359244",
+      "from_date": "2025-02-13",
+      "is_empty": true,
+      "to_build": "17459940",
+      "to_date": "2025-02-21"
+    },
+    {
+      "anchor": "17459940-17538224",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "17459940",
+      "from_date": "2025-02-21",
+      "is_empty": true,
+      "to_build": "17538224",
+      "to_date": "2025-02-27"
+    },
+    {
+      "anchor": "17538224-17581511",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "17538224",
+      "from_date": "2025-02-27",
+      "is_empty": true,
+      "to_build": "17581511",
+      "to_date": "2025-03-04"
+    },
+    {
+      "anchor": "17581511-17595823",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "17581511",
+      "from_date": "2025-03-04",
+      "is_empty": true,
+      "to_build": "17595823",
+      "to_date": "2025-03-04"
+    },
+    {
+      "anchor": "17595823-17680670",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "17595823",
+      "from_date": "2025-03-04",
+      "is_empty": true,
+      "to_build": "17680670",
+      "to_date": "2025-03-11"
+    },
+    {
+      "anchor": "17680670-17699163",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "17680670",
+      "from_date": "2025-03-11",
+      "is_empty": true,
+      "to_build": "17699163",
+      "to_date": "2025-03-12"
+    },
+    {
+      "anchor": "17699163-17732524",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "17699163",
+      "from_date": "2025-03-12",
+      "is_empty": true,
+      "to_build": "17732524",
+      "to_date": "2025-03-14"
+    },
+    {
+      "anchor": "17732524-17800215",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 8,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 248
+      },
+      "from_build": "17732524",
+      "from_date": "2025-03-14",
+      "is_empty": false,
+      "to_build": "17800215",
+      "to_date": "2025-03-20"
+    },
+    {
+      "anchor": "17800215-17931128",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 48,
+        "class_removed": 27,
+        "enum_added": 0,
+        "enum_changed": 3,
+        "enum_removed": 0,
+        "field_ops": 87
+      },
+      "from_build": "17800215",
+      "from_date": "2025-03-20",
+      "is_empty": false,
+      "to_build": "17931128",
+      "to_date": "2025-03-31"
+    },
+    {
+      "anchor": "17931128-17932753",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "17931128",
+      "from_date": "2025-03-31",
+      "is_empty": true,
+      "to_build": "17932753",
+      "to_date": "2025-04-01"
+    },
+    {
+      "anchor": "17932753-17947091",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "17932753",
+      "from_date": "2025-04-01",
+      "is_empty": true,
+      "to_build": "17947091",
+      "to_date": "2025-04-02"
+    },
+    {
+      "anchor": "17947091-18185360",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "17947091",
+      "from_date": "2025-04-02",
+      "is_empty": true,
+      "to_build": "18185360",
+      "to_date": "2025-04-21"
+    },
+    {
+      "anchor": "18185360-18380903",
+      "counts": {
+        "class_added": 1,
+        "class_changed": 5,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 320
+      },
+      "from_build": "18185360",
+      "from_date": "2025-04-21",
+      "is_empty": false,
+      "to_build": "18380903",
+      "to_date": "2025-05-07"
+    },
+    {
+      "anchor": "18380903-18382650",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "18380903",
+      "from_date": "2025-05-07",
+      "is_empty": true,
+      "to_build": "18382650",
+      "to_date": "2025-05-08"
+    },
+    {
+      "anchor": "18382650-18394927",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 2,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 4
+      },
+      "from_build": "18382650",
+      "from_date": "2025-05-08",
+      "is_empty": false,
+      "to_build": "18394927",
+      "to_date": "2025-05-08"
+    },
+    {
+      "anchor": "18394927-18396610",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "18394927",
+      "from_date": "2025-05-08",
+      "is_empty": true,
+      "to_build": "18396610",
+      "to_date": "2025-05-09"
+    },
+    {
+      "anchor": "18396610-18435475",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "18396610",
+      "from_date": "2025-05-09",
+      "is_empty": true,
+      "to_build": "18435475",
+      "to_date": "2025-05-12"
+    },
+    {
+      "anchor": "18435475-18451221",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "18435475",
+      "from_date": "2025-05-12",
+      "is_empty": true,
+      "to_build": "18451221",
+      "to_date": "2025-05-13"
+    },
+    {
+      "anchor": "18451221-18463281",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "18451221",
+      "from_date": "2025-05-13",
+      "is_empty": true,
+      "to_build": "18463281",
+      "to_date": "2025-05-14"
+    },
+    {
+      "anchor": "18463281-18482937",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "18463281",
+      "from_date": "2025-05-14",
+      "is_empty": true,
+      "to_build": "18482937",
+      "to_date": "2025-05-15"
+    },
+    {
+      "anchor": "18482937-18523307",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "18482937",
+      "from_date": "2025-05-15",
+      "is_empty": true,
+      "to_build": "18523307",
+      "to_date": "2025-05-19"
+    },
+    {
+      "anchor": "18523307-18557042",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "18523307",
+      "from_date": "2025-05-19",
+      "is_empty": true,
+      "to_build": "18557042",
+      "to_date": "2025-05-21"
+    },
+    {
+      "anchor": "18557042-18572496",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "18557042",
+      "from_date": "2025-05-21",
+      "is_empty": true,
+      "to_build": "18572496",
+      "to_date": "2025-05-22"
+    },
+    {
+      "anchor": "18572496-18574942",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "18572496",
+      "from_date": "2025-05-22",
+      "is_empty": true,
+      "to_build": "18574942",
+      "to_date": "2025-05-23"
+    },
+    {
+      "anchor": "18574942-18665933",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "18574942",
+      "from_date": "2025-05-23",
+      "is_empty": true,
+      "to_build": "18665933",
+      "to_date": "2025-05-29"
+    },
+    {
+      "anchor": "18665933-18709134",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "18665933",
+      "from_date": "2025-05-29",
+      "is_empty": true,
+      "to_build": "18709134",
+      "to_date": "2025-06-02"
+    },
+    {
+      "anchor": "18709134-18726201",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "18709134",
+      "from_date": "2025-06-02",
+      "is_empty": true,
+      "to_build": "18726201",
+      "to_date": "2025-06-04"
+    },
+    {
+      "anchor": "18726201-18816418",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "18726201",
+      "from_date": "2025-06-04",
+      "is_empty": true,
+      "to_build": "18816418",
+      "to_date": "2025-06-10"
+    },
+    {
+      "anchor": "18816418-19083876",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 5,
+        "class_removed": 1,
+        "enum_added": 0,
+        "enum_changed": 1,
+        "enum_removed": 0,
+        "field_ops": 7
+      },
+      "from_build": "18816418",
+      "from_date": "2025-06-10",
+      "is_empty": false,
+      "to_build": "19083876",
+      "to_date": "2025-07-02"
+    },
+    {
+      "anchor": "19083876-19086168",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "19083876",
+      "from_date": "2025-07-02",
+      "is_empty": true,
+      "to_build": "19086168",
+      "to_date": "2025-07-02"
+    },
+    {
+      "anchor": "19086168-19099927",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "19086168",
+      "from_date": "2025-07-02",
+      "is_empty": true,
+      "to_build": "19099927",
+      "to_date": "2025-07-03"
+    },
+    {
+      "anchor": "19099927-19137381",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "19099927",
+      "from_date": "2025-07-03",
+      "is_empty": true,
+      "to_build": "19137381",
+      "to_date": "2025-07-07"
+    },
+    {
+      "anchor": "19137381-19222571",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "19137381",
+      "from_date": "2025-07-07",
+      "is_empty": true,
+      "to_build": "19222571",
+      "to_date": "2025-07-14"
+    },
+    {
+      "anchor": "19222571-19236816",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 89
+      },
+      "from_build": "19222571",
+      "from_date": "2025-07-14",
+      "is_empty": false,
+      "to_build": "19236816",
+      "to_date": "2025-07-15"
+    },
+    {
+      "anchor": "19236816-19239802",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "19236816",
+      "from_date": "2025-07-15",
+      "is_empty": true,
+      "to_build": "19239802",
+      "to_date": "2025-07-16"
+    },
+    {
+      "anchor": "19239802-19251152",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "19239802",
+      "from_date": "2025-07-16",
+      "is_empty": true,
+      "to_build": "19251152",
+      "to_date": "2025-07-16"
+    },
+    {
+      "anchor": "19251152-19388062",
+      "counts": {
+        "class_added": 1442,
+        "class_changed": 2638,
+        "class_removed": 204,
+        "enum_added": 99,
+        "enum_changed": 58,
+        "enum_removed": 16,
+        "field_ops": 8194
+      },
+      "from_build": "19251152",
+      "from_date": "2025-07-16",
+      "is_empty": false,
+      "to_build": "19388062",
+      "to_date": "2025-07-28"
+    },
+    {
+      "anchor": "19388062-19391961",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "19388062",
+      "from_date": "2025-07-28",
+      "is_empty": true,
+      "to_build": "19391961",
+      "to_date": "2025-07-29"
+    },
+    {
+      "anchor": "19391961-19406478",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 50,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 75
+      },
+      "from_build": "19391961",
+      "from_date": "2025-07-29",
+      "is_empty": false,
+      "to_build": "19406478",
+      "to_date": "2025-07-30"
+    },
+    {
+      "anchor": "19406478-19421827",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 48,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 41
+      },
+      "from_build": "19406478",
+      "from_date": "2025-07-30",
+      "is_empty": false,
+      "to_build": "19421827",
+      "to_date": "2025-07-31"
+    },
+    {
+      "anchor": "19421827-19450283",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 2,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 8
+      },
+      "from_build": "19421827",
+      "from_date": "2025-07-31",
+      "is_empty": false,
+      "to_build": "19450283",
+      "to_date": "2025-08-01"
+    },
+    {
+      "anchor": "19450283-19602992",
+      "counts": {
+        "class_added": 57,
+        "class_changed": 249,
+        "class_removed": 301,
+        "enum_added": 15,
+        "enum_changed": 19,
+        "enum_removed": 14,
+        "field_ops": 985
+      },
+      "from_build": "19450283",
+      "from_date": "2025-08-01",
+      "is_empty": false,
+      "to_build": "19602992",
+      "to_date": "2025-08-14"
+    },
+    {
+      "anchor": "19602992-19605004",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "19602992",
+      "from_date": "2025-08-14",
+      "is_empty": true,
+      "to_build": "19605004",
+      "to_date": "2025-08-14"
+    },
+    {
+      "anchor": "19605004-19644975",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 9,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 290
+      },
+      "from_build": "19605004",
+      "from_date": "2025-08-14",
+      "is_empty": false,
+      "to_build": "19644975",
+      "to_date": "2025-08-18"
+    },
+    {
+      "anchor": "19644975-19657793",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "19644975",
+      "from_date": "2025-08-18",
+      "is_empty": true,
+      "to_build": "19657793",
+      "to_date": "2025-08-19"
+    },
+    {
+      "anchor": "19657793-19747060",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 20,
+        "class_removed": 0,
+        "enum_added": 1,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 216
+      },
+      "from_build": "19657793",
+      "from_date": "2025-08-19",
+      "is_empty": false,
+      "to_build": "19747060",
+      "to_date": "2025-08-26"
+    },
+    {
+      "anchor": "19747060-19762064",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "19747060",
+      "from_date": "2025-08-26",
+      "is_empty": true,
+      "to_build": "19762064",
+      "to_date": "2025-08-27"
+    },
+    {
+      "anchor": "19762064-19847200",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "19762064",
+      "from_date": "2025-08-27",
+      "is_empty": false,
+      "to_build": "19847200",
+      "to_date": "2025-09-03"
+    },
+    {
+      "anchor": "19847200-19878101",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "19847200",
+      "from_date": "2025-09-03",
+      "is_empty": true,
+      "to_build": "19878101",
+      "to_date": "2025-09-06"
+    },
+    {
+      "anchor": "19878101-19903381",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "19878101",
+      "from_date": "2025-09-06",
+      "is_empty": true,
+      "to_build": "19903381",
+      "to_date": "2025-09-08"
+    },
+    {
+      "anchor": "19903381-19916932",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 71
+      },
+      "from_build": "19903381",
+      "from_date": "2025-09-08",
+      "is_empty": false,
+      "to_build": "19916932",
+      "to_date": "2025-09-09"
+    },
+    {
+      "anchor": "19916932-19932965",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "19916932",
+      "from_date": "2025-09-09",
+      "is_empty": true,
+      "to_build": "19932965",
+      "to_date": "2025-09-10"
+    },
+    {
+      "anchor": "19932965-20007038",
+      "counts": {
+        "class_added": 20,
+        "class_changed": 1634,
+        "class_removed": 49,
+        "enum_added": 11,
+        "enum_changed": 8,
+        "enum_removed": 5,
+        "field_ops": 2941
+      },
+      "from_build": "19932965",
+      "from_date": "2025-09-10",
+      "is_empty": false,
+      "to_build": "20007038",
+      "to_date": "2025-09-16"
+    },
+    {
+      "anchor": "20007038-20007819",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20007038",
+      "from_date": "2025-09-16",
+      "is_empty": true,
+      "to_build": "20007819",
+      "to_date": "2025-09-17"
+    },
+    {
+      "anchor": "20007819-20009481",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20007819",
+      "from_date": "2025-09-17",
+      "is_empty": true,
+      "to_build": "20009481",
+      "to_date": "2025-09-17"
+    },
+    {
+      "anchor": "20009481-20011206",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20009481",
+      "from_date": "2025-09-17",
+      "is_empty": true,
+      "to_build": "20011206",
+      "to_date": "2025-09-17"
+    },
+    {
+      "anchor": "20011206-20022951",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 2,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 16
+      },
+      "from_build": "20011206",
+      "from_date": "2025-09-17",
+      "is_empty": false,
+      "to_build": "20022951",
+      "to_date": "2025-09-17"
+    },
+    {
+      "anchor": "20022951-20024151",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 2,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 2
+      },
+      "from_build": "20022951",
+      "from_date": "2025-09-17",
+      "is_empty": false,
+      "to_build": "20024151",
+      "to_date": "2025-09-18"
+    },
+    {
+      "anchor": "20024151-20040136",
+      "counts": {
+        "class_added": 2,
+        "class_changed": 3,
+        "class_removed": 2,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 14
+      },
+      "from_build": "20024151",
+      "from_date": "2025-09-18",
+      "is_empty": false,
+      "to_build": "20040136",
+      "to_date": "2025-09-19"
+    },
+    {
+      "anchor": "20040136-20040392",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20040136",
+      "from_date": "2025-09-19",
+      "is_empty": true,
+      "to_build": "20040392",
+      "to_date": "2025-09-19"
+    },
+    {
+      "anchor": "20040392-20084900",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20040392",
+      "from_date": "2025-09-19",
+      "is_empty": true,
+      "to_build": "20084900",
+      "to_date": "2025-09-22"
+    },
+    {
+      "anchor": "20084900-20101391",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 2,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 18
+      },
+      "from_build": "20084900",
+      "from_date": "2025-09-22",
+      "is_empty": false,
+      "to_build": "20101391",
+      "to_date": "2025-09-24"
+    },
+    {
+      "anchor": "20101391-20116868",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 3,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20101391",
+      "from_date": "2025-09-24",
+      "is_empty": false,
+      "to_build": "20116868",
+      "to_date": "2025-09-24"
+    },
+    {
+      "anchor": "20116868-20134212",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 8,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 109
+      },
+      "from_build": "20116868",
+      "from_date": "2025-09-24",
+      "is_empty": false,
+      "to_build": "20134212",
+      "to_date": "2025-09-26"
+    },
+    {
+      "anchor": "20134212-20135511",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20134212",
+      "from_date": "2025-09-26",
+      "is_empty": true,
+      "to_build": "20135511",
+      "to_date": "2025-09-26"
+    },
+    {
+      "anchor": "20135511-20214297",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20135511",
+      "from_date": "2025-09-26",
+      "is_empty": true,
+      "to_build": "20214297",
+      "to_date": "2025-10-01"
+    },
+    {
+      "anchor": "20214297-20215164",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20214297",
+      "from_date": "2025-10-01",
+      "is_empty": true,
+      "to_build": "20215164",
+      "to_date": "2025-10-02"
+    },
+    {
+      "anchor": "20215164-20230584",
+      "counts": {
+        "class_added": 2,
+        "class_changed": 6,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20215164",
+      "from_date": "2025-10-02",
+      "is_empty": false,
+      "to_build": "20230584",
+      "to_date": "2025-10-02"
+    },
+    {
+      "anchor": "20230584-20246812",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20230584",
+      "from_date": "2025-10-02",
+      "is_empty": true,
+      "to_build": "20246812",
+      "to_date": "2025-10-03"
+    },
+    {
+      "anchor": "20246812-20278147",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20246812",
+      "from_date": "2025-10-03",
+      "is_empty": true,
+      "to_build": "20278147",
+      "to_date": "2025-10-06"
+    },
+    {
+      "anchor": "20278147-20392228",
+      "counts": {
+        "class_added": 90,
+        "class_changed": 1373,
+        "class_removed": 15,
+        "enum_added": 9,
+        "enum_changed": 13,
+        "enum_removed": 1,
+        "field_ops": 5927
+      },
+      "from_build": "20278147",
+      "from_date": "2025-10-06",
+      "is_empty": false,
+      "to_build": "20392228",
+      "to_date": "2025-10-14"
+    },
+    {
+      "anchor": "20392228-20410358",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 3,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 44
+      },
+      "from_build": "20392228",
+      "from_date": "2025-10-14",
+      "is_empty": false,
+      "to_build": "20410358",
+      "to_date": "2025-10-15"
+    },
+    {
+      "anchor": "20410358-20442176",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20410358",
+      "from_date": "2025-10-15",
+      "is_empty": true,
+      "to_build": "20442176",
+      "to_date": "2025-10-17"
+    },
+    {
+      "anchor": "20442176-20503857",
+      "counts": {
+        "class_added": 2,
+        "class_changed": 7,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 155
+      },
+      "from_build": "20442176",
+      "from_date": "2025-10-17",
+      "is_empty": false,
+      "to_build": "20503857",
+      "to_date": "2025-10-22"
+    },
+    {
+      "anchor": "20503857-20504581",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20503857",
+      "from_date": "2025-10-22",
+      "is_empty": true,
+      "to_build": "20504581",
+      "to_date": "2025-10-22"
+    },
+    {
+      "anchor": "20504581-20505407",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20504581",
+      "from_date": "2025-10-22",
+      "is_empty": true,
+      "to_build": "20505407",
+      "to_date": "2025-10-23"
+    },
+    {
+      "anchor": "20505407-20519203",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20505407",
+      "from_date": "2025-10-23",
+      "is_empty": true,
+      "to_build": "20519203",
+      "to_date": "2025-10-23"
+    },
+    {
+      "anchor": "20519203-20535525",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20519203",
+      "from_date": "2025-10-23",
+      "is_empty": true,
+      "to_build": "20535525",
+      "to_date": "2025-10-24"
+    },
+    {
+      "anchor": "20535525-20535897",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20535525",
+      "from_date": "2025-10-24",
+      "is_empty": true,
+      "to_build": "20535897",
+      "to_date": "2025-10-24"
+    },
+    {
+      "anchor": "20535897-20596740",
+      "counts": {
+        "class_added": 2,
+        "class_changed": 32,
+        "class_removed": 2,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 95
+      },
+      "from_build": "20535897",
+      "from_date": "2025-10-24",
+      "is_empty": false,
+      "to_build": "20596740",
+      "to_date": "2025-10-29"
+    },
+    {
+      "anchor": "20596740-20670159",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 4,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 6
+      },
+      "from_build": "20596740",
+      "from_date": "2025-10-29",
+      "is_empty": false,
+      "to_build": "20670159",
+      "to_date": "2025-11-04"
+    },
+    {
+      "anchor": "20670159-20775075",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 10,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 1,
+        "enum_removed": 0,
+        "field_ops": 35
+      },
+      "from_build": "20670159",
+      "from_date": "2025-11-04",
+      "is_empty": false,
+      "to_build": "20775075",
+      "to_date": "2025-11-12"
+    },
+    {
+      "anchor": "20775075-20776295",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20775075",
+      "from_date": "2025-11-12",
+      "is_empty": true,
+      "to_build": "20776295",
+      "to_date": "2025-11-13"
+    },
+    {
+      "anchor": "20776295-20778640",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20776295",
+      "from_date": "2025-11-13",
+      "is_empty": true,
+      "to_build": "20778640",
+      "to_date": "2025-11-13"
+    },
+    {
+      "anchor": "20778640-20791778",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20778640",
+      "from_date": "2025-11-13",
+      "is_empty": true,
+      "to_build": "20791778",
+      "to_date": "2025-11-14"
+    },
+    {
+      "anchor": "20791778-20852487",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20791778",
+      "from_date": "2025-11-14",
+      "is_empty": true,
+      "to_build": "20852487",
+      "to_date": "2025-11-19"
+    },
+    {
+      "anchor": "20852487-20865201",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20852487",
+      "from_date": "2025-11-19",
+      "is_empty": true,
+      "to_build": "20865201",
+      "to_date": "2025-11-19"
+    },
+    {
+      "anchor": "20865201-20897362",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20865201",
+      "from_date": "2025-11-19",
+      "is_empty": true,
+      "to_build": "20897362",
+      "to_date": "2025-11-21"
+    },
+    {
+      "anchor": "20897362-20940526",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20897362",
+      "from_date": "2025-11-21",
+      "is_empty": true,
+      "to_build": "20940526",
+      "to_date": "2025-11-25"
+    },
+    {
+      "anchor": "20940526-21077718",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "20940526",
+      "from_date": "2025-11-25",
+      "is_empty": true,
+      "to_build": "21077718",
+      "to_date": "2025-12-06"
+    },
+    {
+      "anchor": "21077718-21105242",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "21077718",
+      "from_date": "2025-12-06",
+      "is_empty": true,
+      "to_build": "21105242",
+      "to_date": "2025-12-08"
+    },
+    {
+      "anchor": "21105242-21106099",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "21105242",
+      "from_date": "2025-12-08",
+      "is_empty": true,
+      "to_build": "21106099",
+      "to_date": "2025-12-08"
+    },
+    {
+      "anchor": "21106099-21121792",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "21106099",
+      "from_date": "2025-12-08",
+      "is_empty": true,
+      "to_build": "21121792",
+      "to_date": "2025-12-09"
+    },
+    {
+      "anchor": "21121792-21230884",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "21121792",
+      "from_date": "2025-12-09",
+      "is_empty": true,
+      "to_build": "21230884",
+      "to_date": "2025-12-17"
+    },
+    {
+      "anchor": "21230884-21248816",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "21230884",
+      "from_date": "2025-12-17",
+      "is_empty": true,
+      "to_build": "21248816",
+      "to_date": "2025-12-18"
+    },
+    {
+      "anchor": "21248816-21388631",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "21248816",
+      "from_date": "2025-12-18",
+      "is_empty": true,
+      "to_build": "21388631",
+      "to_date": "2026-01-05"
+    },
+    {
+      "anchor": "21388631-21411853",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "21388631",
+      "from_date": "2026-01-05",
+      "is_empty": true,
+      "to_build": "21411853",
+      "to_date": "2026-01-07"
+    },
+    {
+      "anchor": "21411853-21529689",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "21411853",
+      "from_date": "2026-01-07",
+      "is_empty": true,
+      "to_build": "21529689",
+      "to_date": "2026-01-16"
+    },
+    {
+      "anchor": "21529689-21593048",
+      "counts": {
+        "class_added": 437,
+        "class_changed": 1087,
+        "class_removed": 16,
+        "enum_added": 32,
+        "enum_changed": 18,
+        "enum_removed": 3,
+        "field_ops": 7627
+      },
+      "from_build": "21529689",
+      "from_date": "2026-01-16",
+      "is_empty": false,
+      "to_build": "21593048",
+      "to_date": "2026-01-21"
+    },
+    {
+      "anchor": "21593048-21594948",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "21593048",
+      "from_date": "2026-01-21",
+      "is_empty": true,
+      "to_build": "21594948",
+      "to_date": "2026-01-22"
+    },
+    {
+      "anchor": "21594948-21595680",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "21594948",
+      "from_date": "2026-01-22",
+      "is_empty": true,
+      "to_build": "21595680",
+      "to_date": "2026-01-22"
+    },
+    {
+      "anchor": "21595680-21609678",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 9,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 52
+      },
+      "from_build": "21595680",
+      "from_date": "2026-01-22",
+      "is_empty": false,
+      "to_build": "21609678",
+      "to_date": "2026-01-22"
+    },
+    {
+      "anchor": "21609678-21626952",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 4
+      },
+      "from_build": "21609678",
+      "from_date": "2026-01-22",
+      "is_empty": false,
+      "to_build": "21626952",
+      "to_date": "2026-01-24"
+    },
+    {
+      "anchor": "21626952-21657141",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 1
+      },
+      "from_build": "21626952",
+      "from_date": "2026-01-24",
+      "is_empty": false,
+      "to_build": "21657141",
+      "to_date": "2026-01-26"
+    },
+    {
+      "anchor": "21657141-21669343",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "21657141",
+      "from_date": "2026-01-26",
+      "is_empty": true,
+      "to_build": "21669343",
+      "to_date": "2026-01-27"
+    },
+    {
+      "anchor": "21669343-21708006",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "21669343",
+      "from_date": "2026-01-27",
+      "is_empty": true,
+      "to_build": "21708006",
+      "to_date": "2026-01-29"
+    },
+    {
+      "anchor": "21708006-21789745",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 5,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 195
+      },
+      "from_build": "21708006",
+      "from_date": "2026-01-29",
+      "is_empty": false,
+      "to_build": "21789745",
+      "to_date": "2026-02-04"
+    },
+    {
+      "anchor": "21789745-21856620",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "21789745",
+      "from_date": "2026-02-04",
+      "is_empty": true,
+      "to_build": "21856620",
+      "to_date": "2026-02-09"
+    },
+    {
+      "anchor": "21856620-21868850",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "21856620",
+      "from_date": "2026-02-09",
+      "is_empty": true,
+      "to_build": "21868850",
+      "to_date": "2026-02-10"
+    },
+    {
+      "anchor": "21868850-22063930",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 120
+      },
+      "from_build": "21868850",
+      "from_date": "2026-02-10",
+      "is_empty": false,
+      "to_build": "22063930",
+      "to_date": "2026-02-23"
+    },
+    {
+      "anchor": "22063930-22099296",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "22063930",
+      "from_date": "2026-02-23",
+      "is_empty": true,
+      "to_build": "22099296",
+      "to_date": "2026-02-25"
+    },
+    {
+      "anchor": "22099296-22202104",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "22099296",
+      "from_date": "2026-02-25",
+      "is_empty": true,
+      "to_build": "22202104",
+      "to_date": "2026-03-04"
+    },
+    {
+      "anchor": "22202104-22218396",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "22202104",
+      "from_date": "2026-03-04",
+      "is_empty": true,
+      "to_build": "22218396",
+      "to_date": "2026-03-05"
+    },
+    {
+      "anchor": "22218396-22266770",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "22218396",
+      "from_date": "2026-03-05",
+      "is_empty": true,
+      "to_build": "22266770",
+      "to_date": "2026-03-09"
+    },
+    {
+      "anchor": "22266770-22303696",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 120
+      },
+      "from_build": "22266770",
+      "from_date": "2026-03-09",
+      "is_empty": false,
+      "to_build": "22303696",
+      "to_date": "2026-03-11"
+    },
+    {
+      "anchor": "22303696-22305602",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "22303696",
+      "from_date": "2026-03-11",
+      "is_empty": true,
+      "to_build": "22305602",
+      "to_date": "2026-03-12"
+    },
+    {
+      "anchor": "22305602-22321057",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "22305602",
+      "from_date": "2026-03-12",
+      "is_empty": true,
+      "to_build": "22321057",
+      "to_date": "2026-03-12"
+    },
+    {
+      "anchor": "22321057-22336282",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "22321057",
+      "from_date": "2026-03-12",
+      "is_empty": true,
+      "to_build": "22336282",
+      "to_date": "2026-03-13"
+    },
+    {
+      "anchor": "22336282-22368164",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 9
+      },
+      "from_build": "22336282",
+      "from_date": "2026-03-13",
+      "is_empty": false,
+      "to_build": "22368164",
+      "to_date": "2026-03-16"
+    },
+    {
+      "anchor": "22368164-22370414",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "22368164",
+      "from_date": "2026-03-16",
+      "is_empty": true,
+      "to_build": "22370414",
+      "to_date": "2026-03-16"
+    },
+    {
+      "anchor": "22370414-22405124",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 3,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 13
+      },
+      "from_build": "22370414",
+      "from_date": "2026-03-16",
+      "is_empty": false,
+      "to_build": "22405124",
+      "to_date": "2026-03-18"
+    },
+    {
+      "anchor": "22405124-22422087",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "22405124",
+      "from_date": "2026-03-18",
+      "is_empty": true,
+      "to_build": "22422087",
+      "to_date": "2026-03-19"
+    },
+    {
+      "anchor": "22422087-22502777",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "22422087",
+      "from_date": "2026-03-19",
+      "is_empty": true,
+      "to_build": "22502777",
+      "to_date": "2026-03-25"
+    },
+    {
+      "anchor": "22502777-22589138",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "22502777",
+      "from_date": "2026-03-25",
+      "is_empty": true,
+      "to_build": "22589138",
+      "to_date": "2026-03-31"
+    },
+    {
+      "anchor": "22589138-22627914",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "22589138",
+      "from_date": "2026-03-31",
+      "is_empty": true,
+      "to_build": "22627914",
+      "to_date": "2026-04-02"
+    },
+    {
+      "anchor": "22627914-22876476",
+      "counts": {
+        "class_added": 164,
+        "class_changed": 4630,
+        "class_removed": 28,
+        "enum_added": 36,
+        "enum_changed": 16,
+        "enum_removed": 3,
+        "field_ops": 11112
+      },
+      "from_build": "22627914",
+      "from_date": "2026-04-02",
+      "is_empty": false,
+      "to_build": "22876476",
+      "to_date": "2026-04-20"
+    },
+    {
+      "anchor": "22876476-22877907",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 2,
+        "class_removed": 775,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 49,
+        "field_ops": 118
+      },
+      "from_build": "22876476",
+      "from_date": "2026-04-20",
+      "is_empty": false,
+      "to_build": "22877907",
+      "to_date": "2026-04-21"
+    },
+    {
+      "anchor": "22877907-22880072",
+      "counts": {
+        "class_added": 775,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 49,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "22877907",
+      "from_date": "2026-04-21",
+      "is_empty": false,
+      "to_build": "22880072",
+      "to_date": "2026-04-21"
+    },
+    {
+      "anchor": "22880072-22894272",
+      "counts": {
+        "class_added": 2,
+        "class_changed": 5,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 216
+      },
+      "from_build": "22880072",
+      "from_date": "2026-04-21",
+      "is_empty": false,
+      "to_build": "22894272",
+      "to_date": "2026-04-21"
+    },
+    {
+      "anchor": "22894272-22912515",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "22894272",
+      "from_date": "2026-04-21",
+      "is_empty": true,
+      "to_build": "22912515",
+      "to_date": "2026-04-22"
+    },
+    {
+      "anchor": "22912515-22948967",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "22912515",
+      "from_date": "2026-04-22",
+      "is_empty": true,
+      "to_build": "22948967",
+      "to_date": "2026-04-24"
+    },
+    {
+      "anchor": "22948967-23000122",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 12,
+        "class_removed": 2,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 1,
+        "field_ops": 174
+      },
+      "from_build": "22948967",
+      "from_date": "2026-04-24",
+      "is_empty": false,
+      "to_build": "23000122",
+      "to_date": "2026-04-28"
+    },
+    {
+      "anchor": "23000122-23002306",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "23000122",
+      "from_date": "2026-04-28",
+      "is_empty": true,
+      "to_build": "23002306",
+      "to_date": "2026-04-29"
+    },
+    {
+      "anchor": "23002306-23018732",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "23002306",
+      "from_date": "2026-04-29",
+      "is_empty": true,
+      "to_build": "23018732",
+      "to_date": "2026-04-29"
+    },
+    {
+      "anchor": "23018732-23038025",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 6,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 161
+      },
+      "from_build": "23018732",
+      "from_date": "2026-04-29",
+      "is_empty": false,
+      "to_build": "23038025",
+      "to_date": "2026-04-30"
+    },
+    {
+      "anchor": "23038025-23118419",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "23038025",
+      "from_date": "2026-04-30",
+      "is_empty": true,
+      "to_build": "23118419",
+      "to_date": "2026-05-06"
+    },
+    {
+      "anchor": "23118419-23135875",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 10,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 294
+      },
+      "from_build": "23118419",
+      "from_date": "2026-05-06",
+      "is_empty": false,
+      "to_build": "23135875",
+      "to_date": "2026-05-07"
+    },
+    {
+      "anchor": "23135875-23187627",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "23135875",
+      "from_date": "2026-05-07",
+      "is_empty": true,
+      "to_build": "23187627",
+      "to_date": "2026-05-11"
+    },
+    {
+      "anchor": "23187627-23241720",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 2,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 122
+      },
+      "from_build": "23187627",
+      "from_date": "2026-05-11",
+      "is_empty": false,
+      "to_build": "23241720",
+      "to_date": "2026-05-14"
+    },
+    {
+      "anchor": "23241720-23296257",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 6,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 30
+      },
+      "from_build": "23241720",
+      "from_date": "2026-05-14",
+      "is_empty": false,
+      "to_build": "23296257",
+      "to_date": "2026-05-18"
+    },
+    {
+      "anchor": "23296257-23333587",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "23296257",
+      "from_date": "2026-05-18",
+      "is_empty": false,
+      "to_build": "23333587",
+      "to_date": "2026-05-20"
+    },
+    {
+      "anchor": "23333587-23354238",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 11
+      },
+      "from_build": "23333587",
+      "from_date": "2026-05-20",
+      "is_empty": false,
+      "to_build": "23354238",
+      "to_date": "2026-05-22"
+    },
+    {
+      "anchor": "23354238-23355497",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "23354238",
+      "from_date": "2026-05-22",
+      "is_empty": true,
+      "to_build": "23355497",
+      "to_date": "2026-05-22"
+    },
+    {
+      "anchor": "23355497-23371447",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "23355497",
+      "from_date": "2026-05-22",
+      "is_empty": true,
+      "to_build": "23371447",
+      "to_date": "2026-05-22"
+    },
+    {
+      "anchor": "23371447-23461178",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "23371447",
+      "from_date": "2026-05-22",
+      "is_empty": true,
+      "to_build": "23461178",
+      "to_date": "2026-05-28"
+    },
+    {
+      "anchor": "23461178-23481122",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "23461178",
+      "from_date": "2026-05-28",
+      "is_empty": true,
+      "to_build": "23481122",
+      "to_date": "2026-05-30"
+    },
+    {
+      "anchor": "23481122-23517234",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "23481122",
+      "from_date": "2026-05-30",
+      "is_empty": true,
+      "to_build": "23517234",
+      "to_date": "2026-06-02"
+    },
+    {
+      "anchor": "23517234-23669105",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "23517234",
+      "from_date": "2026-06-02",
+      "is_empty": true,
+      "to_build": "23669105",
+      "to_date": "2026-06-10"
+    },
+    {
+      "anchor": "23669105-23669931",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "23669105",
+      "from_date": "2026-06-10",
+      "is_empty": true,
+      "to_build": "23669931",
+      "to_date": "2026-06-10"
+    },
+    {
+      "anchor": "23669931-23733814",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "23669931",
+      "from_date": "2026-06-10",
+      "is_empty": true,
+      "to_build": "23733814",
+      "to_date": "2026-06-15"
+    },
+    {
+      "anchor": "23733814-23773332",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "23733814",
+      "from_date": "2026-06-15",
+      "is_empty": true,
+      "to_build": "23773332",
+      "to_date": "2026-06-17"
+    },
+    {
+      "anchor": "23773332-23994866",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 5
+      },
+      "from_build": "23773332",
+      "from_date": "2026-06-17",
+      "is_empty": false,
+      "to_build": "23994866",
+      "to_date": "2026-07-01"
+    },
+    {
+      "anchor": "23994866-23995989",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "23994866",
+      "from_date": "2026-07-01",
+      "is_empty": true,
+      "to_build": "23995989",
+      "to_date": "2026-07-01"
+    },
+    {
+      "anchor": "23995989-24005619",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "23995989",
+      "from_date": "2026-07-01",
+      "is_empty": true,
+      "to_build": "24005619",
+      "to_date": "2026-07-01"
+    },
+    {
+      "anchor": "24005619-24007471",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "24005619",
+      "from_date": "2026-07-01",
+      "is_empty": true,
+      "to_build": "24007471",
+      "to_date": "2026-07-01"
+    },
+    {
+      "anchor": "24007471-24014109",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "24007471",
+      "from_date": "2026-07-01",
+      "is_empty": true,
+      "to_build": "24014109",
+      "to_date": "2026-07-02"
+    },
+    {
+      "anchor": "24014109-24025448",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "24014109",
+      "from_date": "2026-07-02",
+      "is_empty": true,
+      "to_build": "24025448",
+      "to_date": "2026-07-02"
+    },
+    {
+      "anchor": "24025448-24044494",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "24025448",
+      "from_date": "2026-07-02",
+      "is_empty": true,
+      "to_build": "24044494",
+      "to_date": "2026-07-03"
+    },
+    {
+      "anchor": "24044494-24074625",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "24044494",
+      "from_date": "2026-07-03",
+      "is_empty": true,
+      "to_build": "24074625",
+      "to_date": "2026-07-06"
+    },
+    {
+      "anchor": "24074625-24116939",
+      "counts": {
+        "class_added": 232,
+        "class_changed": 1097,
+        "class_removed": 59,
+        "enum_added": 96,
+        "enum_changed": 62,
+        "enum_removed": 15,
+        "field_ops": 4792
+      },
+      "from_build": "24074625",
+      "from_date": "2026-07-06",
+      "is_empty": false,
+      "to_build": "24116939",
+      "to_date": "2026-07-08"
+    },
+    {
+      "anchor": "24116939-24119203",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "24116939",
+      "from_date": "2026-07-08",
+      "is_empty": true,
+      "to_build": "24119203",
+      "to_date": "2026-07-09"
+    },
+    {
+      "anchor": "24119203-24122613",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "24119203",
+      "from_date": "2026-07-09",
+      "is_empty": true,
+      "to_build": "24122613",
+      "to_date": "2026-07-09"
+    },
+    {
+      "anchor": "24122613-24134959",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "24122613",
+      "from_date": "2026-07-09",
+      "is_empty": true,
+      "to_build": "24134959",
+      "to_date": "2026-07-09"
+    },
+    {
+      "anchor": "24134959-24248951",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "24134959",
+      "from_date": "2026-07-09",
+      "is_empty": true,
+      "to_build": "24248951",
+      "to_date": "2026-07-16"
+    },
+    {
+      "anchor": "24248951-24304127",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "24248951",
+      "from_date": "2026-07-16",
+      "is_empty": false,
+      "to_build": "24304127",
+      "to_date": "2026-07-20"
+    },
+    {
+      "anchor": "24304127-24442510",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 1,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "24304127",
+      "from_date": "2026-07-20",
+      "is_empty": false,
+      "to_build": "24442510",
+      "to_date": "2026-07-29"
+    },
+    {
+      "anchor": "24442510-24537688",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 6,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 99
+      },
+      "from_build": "24442510",
+      "from_date": "2026-07-29",
+      "is_empty": false,
+      "to_build": "24537688",
+      "to_date": "2026-08-03"
+    },
+    {
+      "anchor": "24537688-24662694",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "24537688",
+      "from_date": "2026-08-03",
+      "is_empty": true,
+      "to_build": "24662694",
+      "to_date": "2026-08-10"
+    },
+    {
+      "anchor": "24662694-24701871",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 2,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "24662694",
+      "from_date": "2026-08-10",
+      "is_empty": false,
+      "to_build": "24701871",
+      "to_date": "2026-08-12"
+    },
+    {
+      "anchor": "24701871-24828357",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 2,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "24701871",
+      "from_date": "2026-08-12",
+      "is_empty": false,
+      "to_build": "24828357",
+      "to_date": "2026-08-19"
+    },
+    {
+      "anchor": "24828357-24916958",
+      "counts": {
+        "class_added": 10,
+        "class_changed": 3,
+        "class_removed": 0,
+        "enum_added": 1,
+        "enum_changed": 1,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "24828357",
+      "from_date": "2026-08-19",
+      "is_empty": false,
+      "to_build": "24916958",
+      "to_date": "2026-08-24"
+    },
+    {
+      "anchor": "24916958-24934554",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "24916958",
+      "from_date": "2026-08-24",
+      "is_empty": true,
+      "to_build": "24934554",
+      "to_date": "2026-08-25"
+    },
+    {
+      "anchor": "24934554-24957633",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 6,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 10
+      },
+      "from_build": "24934554",
+      "from_date": "2026-08-25",
+      "is_empty": false,
+      "to_build": "24957633",
+      "to_date": "2026-08-26"
+    },
+    {
+      "anchor": "24957633-25000182",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "24957633",
+      "from_date": "2026-08-26",
+      "is_empty": true,
+      "to_build": "25000182",
+      "to_date": "2026-08-28"
+    }
+  ]
+}

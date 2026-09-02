@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CClientAlphaProperty
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 48 bytes (`0x30`) · **Align:** 16 · **Module:** client
 
 **Inherits from:** [IClientAlphaProperty](../client/IClientAlphaProperty.md)
@@ -26,11 +28,11 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_bAlphaOverride` | bitfield:1 |  |  |
-| `0x0` | `m_bShadowAlphaOverride` | bitfield:1 |  |  |
-| `0x0` | `m_nDesyncOffset` | bitfield:14 |  |  |
-| `0x0` | `m_nRenderFX` | bitfield:5 |  |  |
-| `0x0` | `m_nRenderMode` | bitfield:3 |  |  |
+| `0x0` bit 0 | `m_bAlphaOverride` | bitfield:1 |  |  |
+| `0x0` bit 1 | `m_bShadowAlphaOverride` | bitfield:1 |  |  |
+| `0x0` bits 2..15 | `m_nDesyncOffset` | bitfield:14 |  |  |
+| `0x0` bits 16..20 | `m_nRenderFX` | bitfield:5 |  |  |
+| `0x0` bits 21..23 | `m_nRenderMode` | bitfield:3 |  |  |
 | `0x10` | `m_nDistFadeStart` | uint16 |  |  |
 | `0x12` | `m_nDistFadeEnd` | uint16 |  |  |
 | `0x17` | `m_nAlpha` | uint8 |  |  |

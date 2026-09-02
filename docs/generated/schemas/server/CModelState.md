@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CModelState
+title: CModelState (server)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CModelState
 
-**Kind:** class · **Size:** 656 bytes (`0x290`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 656 bytes (`0x290`) · **Align:** n/a (unspecified) · **Module:** server
+
+**Twin:** [CModelState (client)](../client/CModelState.md)
 
 **Relationships:**
 

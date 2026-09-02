@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CServerOnlyModelEntity
+title: CServerOnlyModelEntity (client)
 nav_exclude: true
 ---
 
@@ -8,11 +8,13 @@ nav_exclude: true
 
 # CServerOnlyModelEntity
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 4016 bytes (`0xfb0`) · **Align:** 8 · **Module:** client
 
-**Inherits from:** [C_BaseModelEntity](../client/C_BaseModelEntity.md)
+**Twin:** [CServerOnlyModelEntity (server)](../server/CServerOnlyModelEntity.md)
 
-**Derived by:** [CCSPlace](../server/CCSPlace.md), [CFogVolume](../server/CFogVolume.md)
+**Inherits from:** [C_BaseModelEntity](../client/C_BaseModelEntity.md)
 
 **Relationships:**
 
@@ -21,8 +23,6 @@ classDiagram
     C_BaseModelEntity <|-- CServerOnlyModelEntity
     C_BaseEntity <|-- C_BaseModelEntity
     CEntityInstance <|-- C_BaseEntity
-    CServerOnlyModelEntity <|-- CCSPlace
-    CServerOnlyModelEntity <|-- CFogVolume
 ```
 
 ## Memory layout
@@ -32,8 +32,8 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_iszPrivateVScripts` | CUtlSymbolLarge | [CEntityInstance](../entity2/CEntityInstance.md) |  |
-| `0x10` | `m_pEntity` | [CEntityIdentity](../entity2/CEntityIdentity.md)* | [CEntityInstance](../entity2/CEntityInstance.md) |  |
-| `0x28` | `m_CScriptComponent` | [CScriptComponent](../entity2/CScriptComponent.md)* | [CEntityInstance](../entity2/CEntityInstance.md) |  |
+| `0x10` | `m_pEntity` | [CEntityIdentity](../entity2/CEntityIdentity.md)* | [CEntityInstance](../entity2/CEntityInstance.md) | CEntityIdentity pointer — the entity's identity record (name, class, handle, flags). |
+| `0x28` | `m_CScriptComponent` | [CScriptComponent](../entity2/CScriptComponent.md)* | [CEntityInstance](../entity2/CEntityInstance.md) | VScript component attached to the entity, when scripted. |
 | `0x30` | `m_CBodyComponent` | [CBodyComponent](../client/CBodyComponent.md)* | [C_BaseEntity](../client/C_BaseEntity.md) |  |
 | `0x38` | `m_NetworkTransmitComponent` | [CNetworkTransmitComponent](../server/CNetworkTransmitComponent.md) | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
 | `0x328` | `m_nLastThinkTick` | [GameTick_t](../entity2/GameTick_t.md) | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |

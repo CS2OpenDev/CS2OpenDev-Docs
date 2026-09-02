@@ -8,7 +8,9 @@ nav_exclude: true
 
 # C_GameRules
 
-**Kind:** class · **Size:** 64 bytes (`0x40`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 64 bytes (`0x40`) · **Align:** n/a (unspecified) · **Module:** client
 
 **Derived by:** [C_MultiplayRules](../client/C_MultiplayRules.md), [C_SingleplayRules](../client/C_SingleplayRules.md)
 

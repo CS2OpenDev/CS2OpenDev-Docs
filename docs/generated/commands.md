@@ -6,6 +6,8 @@ nav_order: 5
 
 # Console Commands
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 All console commands extracted from CS2.
 
 | Command | Flags | Description |
@@ -37,28 +39,27 @@ All console commands extracted from CS2.
 | `-radialradio3` | `clientdll` `release` |  |
 | `-spray_menu` | `clientdll` `release` |  |
 | `ShowSteamStatsSessionID` | `developmentonly` `clientdll` | Prints out the game stats session ID's (developer convar must be set to non-zero). |
-| `StackStats_Dump` | `developmentonly` | Dump a named stackstats structure to disk. Usage: stackstats_dump "structname" ["filename"] |
+| `StackStats_Dump` | `developmentonly` `autocomplete` | Dump a named stackstats structure to disk. Usage: stackstats_dump "structname" ["filename"] |
 | `Test_Checkpoint` | `developmentonly` `defensive` | Indicate to a test script that a checkpoint has been reached |
 | `Test_CreateEntity` | `gamedll` `cheat` |  |
 | `Test_EHandle` | `gamedll` `cheat` |  |
-| `Test_ExitProcess` | `cheat` | Test_ExitProcess <exit code> - immediately kill the process. |
-| `Test_Loop` | `developmentonly` `defensive` | Test_Loop <loop name> - loop back to the specified loop start point unconditionally. |
-| `Test_LoopCount` | `developmentonly` `defensive` | Test_LoopCount <loop name> <count> - loop back to the specified loop start point the specified # of times. |
-| `Test_LoopForNumSeconds` | `developmentonly` `defensive` | Test_LoopForNumSeconds <loop name> <time> - loop back to the specified start point for the specified # of seconds. |
-| `Test_RandomChance` | `developmentonly` `defensive` | Test_RandomChance <percent chance, 0-100> <token1> <token2...> - Roll the dice and maybe run the command following the percentage chance. |
+| `Test_ExitProcess` | `cheat` | Test_ExitProcess &lt;exit code&gt; - immediately kill the process. |
+| `Test_Loop` | `developmentonly` `defensive` | Test_Loop &lt;loop name&gt; - loop back to the specified loop start point unconditionally. |
+| `Test_LoopCount` | `developmentonly` `defensive` | Test_LoopCount &lt;loop name&gt; &lt;count&gt; - loop back to the specified loop start point the specified # of times. |
+| `Test_LoopForNumSeconds` | `developmentonly` `defensive` | Test_LoopForNumSeconds &lt;loop name&gt; &lt;time&gt; - loop back to the specified start point for the specified # of seconds. |
+| `Test_RandomChance` | `developmentonly` `defensive` | Test_RandomChance &lt;percent chance, 0-100&gt; &lt;token1&gt; &lt;token2...&gt; - Roll the dice and maybe run the command following the percentage chance. |
 | `Test_RandomPlayerPosition` | `gamedll` `cheat` |  |
-| `Test_StartLoop` | `developmentonly` `defensive` | Test_StartLoop <loop name> - Denote the start of a loop. Really just defines a named point you can jump to. |
+| `Test_StartLoop` | `developmentonly` `defensive` | Test_StartLoop &lt;loop name&gt; - Denote the start of a loop. Really just defines a named point you can jump to. |
 | `Test_StartScript` | `developmentonly` `defensive` | Start a test script running.. |
 | `_record` | `cheat` `dontrecord` `release` | Record a demo incrementally. |
 | `_resetgamestats` | `developmentonly` `gamedll` `defensive` | Erases current game stats and writes out a blank stats file |
 | `addip` | `developmentonly` `defensive` | Add an IP address to the ban list. |
 | `addons` | `developmentonly` `defensive` | list current addon info. |
 | `adjacent_levels` | `developmentonly` `gamedll` | List adjacent levels |
-| `adjacent_preload` | `developmentonly` `gamedll` | Preload adjacennt level data - will override regular changelevel code -- PROTOTYPE/WIP |
+| `adjacent_preload` | `developmentonly` `gamedll` `autocomplete` | Preload adjacennt level data - will override regular changelevel code -- PROTOTYPE/WIP |
 | `alias` | `release` | Alias a command. |
 | `anim_eval_stats` | `developmentonly` `gamedll` | Displays stats about how many EvaluatePose calls are unused |
-| `animevents_dump` | `gamedll` `cheat` | List all the currently registered anim events.
- |
+| `animevents_dump` | `gamedll` `cheat` | List all the currently registered anim events. |
 | `animgraph_dump_update_list` | `developmentonly` `gamedll` | Displays stats about which animations are updating |
 | `annotation_append` | `clientdll` `release` | Load annotation to a file without clearing existing annotations |
 | `annotation_clear` | `clientdll` `release` | Clear all annotation |
@@ -74,37 +75,33 @@ All console commands extracted from CS2.
 | `autosave` | `developmentonly` `gamedll` `defensive` | Autosave |
 | `autosavedangerous` | `developmentonly` `gamedll` `defensive` | AutoSaveDangerous |
 | `autosavedangerousissafe` | `developmentonly` `gamedll` `defensive` |  |
-| `axis` | `gamedll` `cheat` | Draw an axis
-	Arguments:  x y z pitch yaw roll <lifetime = 10.0> <r g b a>
- |
+| `axis` | `gamedll` `cheat` | Draw an axis<br>Arguments:  x y z pitch yaw roll &lt;lifetime = 10.0&gt; &lt;r g b a&gt; |
 | `bake_bomb_damage_render_visualization` | `clientdll` `cheat` |  |
 | `banid` | `developmentonly` `defensive` | Add a user ID to the ban list. |
 | `banip` | `developmentonly` `defensive` | Add an IP address to the ban list. |
-| `benchframe` | `release` | Takes a snapshot of a particular frame in a time demo. |
+| `benchframe` | `release` `autocomplete` | Takes a snapshot of a particular frame in a time demo. |
 | `bind` | `release` | Bind a key. |
 | `binddefaults` | `release` | Bind all keys to their default values. |
 | `bindss` | `release` | Bind a key for a particular splitscreen player. |
-| `bindtoggle` | `developmentonly` `defensive` | Performs a bind <key> "increment var <cvar> 0 1 1". |
+| `bindtoggle` | `developmentonly` `defensive` | Performs a bind &lt;key&gt; "increment var &lt;cvar&gt; 0 1 1". |
 | `blink` | `developmentonly` `dontrecord` `defensive` | Blink specified convar value between two values at the specified duration. |
-| `bot_add` | `gamedll` `release` | bot_add <t\|ct> <type> <difficulty> <name> - Adds a bot matching the given criteria. |
-| `bot_add_ct` | `gamedll` `release` | bot_add_ct <type> <difficulty> <name> - Adds a Counter-Terrorist bot matching the given criteria. |
-| `bot_add_t` | `gamedll` `release` | bot_add_t <type> <difficulty> <name> - Adds a terrorist bot matching the given criteria. |
+| `bot_add` | `gamedll` `release` | bot_add &lt;t\|ct&gt; &lt;type&gt; &lt;difficulty&gt; &lt;name&gt; - Adds a bot matching the given criteria. |
+| `bot_add_ct` | `gamedll` `release` | bot_add_ct &lt;type&gt; &lt;difficulty&gt; &lt;name&gt; - Adds a Counter-Terrorist bot matching the given criteria. |
+| `bot_add_t` | `gamedll` `release` | bot_add_t &lt;type&gt; &lt;difficulty&gt; &lt;name&gt; - Adds a terrorist bot matching the given criteria. |
 | `bot_all_weapons` | `gamedll` `release` | Allows the bots to use all weapons |
 | `bot_goto_mark` | `gamedll` `cheat` | Sends a bot to the marked nav area (useful for testing navigation meshes) |
 | `bot_goto_selected` | `gamedll` `cheat` | Sends a bot to the selected nav area (useful for testing navigation meshes) |
 | `bot_hurt` | `gamedll` `cheat` |  |
-| `bot_kick` | `gamedll` `release` | bot_kick <all> <t\|ct> <type> <difficulty> <name> - Kicks a specific bot, or all bots, matching the given criteria. |
-| `bot_kill` | `gamedll` `cheat` | bot_kill <all> <t\|ct> <type> <difficulty> <name> - Kills a specific bot, or all bots, matching the given criteria. |
+| `bot_kick` | `gamedll` `release` | bot_kick &lt;all&gt; &lt;t\|ct&gt; &lt;type&gt; &lt;difficulty&gt; &lt;name&gt; - Kicks a specific bot, or all bots, matching the given criteria. |
+| `bot_kill` | `gamedll` `cheat` | bot_kill &lt;all&gt; &lt;t\|ct&gt; &lt;type&gt; &lt;difficulty&gt; &lt;name&gt; - Kills a specific bot, or all bots, matching the given criteria. |
 | `bot_knives_only` | `gamedll` `release` | Restricts the bots to only using knives |
-| `bot_path` | `gamedll` `cheat` | bot_path <all> <t\|ct> <type> <difficulty> <name> - Tells a specific bot to follow a human path, matching the given criteria. |
+| `bot_path` | `gamedll` `cheat` | bot_path &lt;all&gt; &lt;t\|ct&gt; &lt;type&gt; &lt;difficulty&gt; &lt;name&gt; - Tells a specific bot to follow a human path, matching the given criteria. |
 | `bot_pistols_only` | `gamedll` `release` | Restricts the bots to only using pistols |
 | `bot_place` | `gamedll` `cheat` | bot_place - Places a bot from the map at where the local player is pointing. |
 | `bot_snipers_only` | `gamedll` `release` | Restricts the bots to only using sniper rifles |
-| `box` | `gamedll` `cheat` | Draw a bbox
-	Arguments:  minx miny miny maxx maxy maxz <lifetime = 10.0> <r g b a>
- |
+| `box` | `gamedll` `cheat` | Draw a bbox<br>Arguments:  minx miny miny maxx maxy maxz &lt;lifetime = 10.0&gt; &lt;r g b a&gt; |
 | `breakable_force_break` | `developmentonly` `gamedll` `defensive` | Force a breakable to break |
-| `bug` | `developmentonly` `dontrecord` `defensive` | bug [auto_fill_tokens] [-title <text>] [-noscreenshot] : Activate the bug reporter. |
+| `bug` | `developmentonly` `dontrecord` `defensive` | bug [auto_fill_tokens] [-title &lt;text&gt;] [-noscreenshot] : Activate the bug reporter. |
 | `bugbug` | `clientdll` `release` | bugbug |
 | `bugvoice_clear` | `developmentonly` `dontrecord` `defensive` | Clear voice attachment data. |
 | `bugvoice_save` | `developmentonly` `dontrecord` `defensive` | Write buffered voice attachment data to file. |
@@ -137,22 +134,16 @@ All console commands extracted from CS2.
 | `cast_physics` | `gamedll` `cheat` | Tests physics shape collision detection |
 | `cast_ray` | `gamedll` `cheat` | Tests ray cast |
 | `cast_sphere` | `gamedll` `cheat` | Tests sphere cast |
-| `cc_emit` | `developmentonly` `clientdll` `defensive` | Emits a closed caption |
-| `changelevel` | `release` | changelevel <mapname> :Multiplayer change level. |
+| `cc_emit` | `developmentonly` `clientdll` `defensive` `autocomplete` | Emits a closed caption |
+| `changelevel` | `release` `autocomplete` | changelevel &lt;mapname&gt; :Multiplayer change level. |
 | `check_nofilefd` | `developmentonly` `defensive` | Print the current number of FDs reported by getrlimit |
 | `cl_anim_eval_stats` | `developmentonly` `clientdll` | Displays stats about how many EvaluatePose calls are unused |
 | `cl_animgraph_dump_update_list` | `developmentonly` `clientdll` | Displays stats about which animations are updating |
 | `cl_avatar_convert_png` | `clientdll` `cheat` `release` | Converts all rgb avatars in the avatars directory to png |
 | `cl_avatar_convert_rgb` | `clientdll` `cheat` `release` | Converts all png avatars in the avatars directory to rgb |
-| `cl_axis` | `clientdll` `cheat` | Draw an axis
-	Arguments:  x y z pitch yaw roll <lifetime = 10.0> <r g b a>
- |
-| `cl_box` | `clientdll` `cheat` | Draw a bbox
-	Arguments:  minx miny miny maxx maxy maxz <lifetime = 10.0> <r g b a>
- |
-| `cl_break_on_missing_resource` | `developmentonly` | Break in debugger when missing resource match is found.
-Format: cl_break_on_missing_resource <substring> /(empty to break on all) / 0 to turn off.
- |
+| `cl_axis` | `clientdll` `cheat` | Draw an axis<br>Arguments:  x y z pitch yaw roll &lt;lifetime = 10.0&gt; &lt;r g b a&gt; |
+| `cl_box` | `clientdll` `cheat` | Draw a bbox<br>Arguments:  minx miny miny maxx maxy maxz &lt;lifetime = 10.0&gt; &lt;r g b a&gt; |
+| `cl_break_on_missing_resource` | `developmentonly` | Break in debugger when missing resource match is found.<br>Format: cl_break_on_missing_resource &lt;substring&gt; /(empty to break on all) / 0 to turn off. |
 | `cl_checkdeclareclasses` | `cheat` | Check game code serializers |
 | `cl_cs_dump_econ_item_stringtable` | `developmentonly` `clientdll` `defensive` | cl_cs_dump_econ_item_stringtable |
 | `cl_debugoverlay_cycle_domain` | `clientdll` `cheat` | Toggles visibility of the debug overlay system. |
@@ -162,103 +153,63 @@ Format: cl_break_on_missing_resource <substring> /(empty to break on all) / 0 to
 | `cl_debugoverlay_toggle` | `clientdll` `cheat` | Toggles visibility of the debug overlay system. |
 | `cl_destroy_ragdolls` | `developmentonly` `clientdll` `defensive` | Destroys all client-side ragdolls |
 | `cl_dev_decaltrace_blood` | `developmentonly` `clientdll` `cheat` | Shoot out a decal spray that shoots blood. |
-| `cl_drawcross` | `clientdll` `cheat` | Draws a cross at the given location
-	Arguments: x y z |
-| `cl_drawline` | `clientdll` `cheat` | Draws line between two 3D Points.
-	Green if no collision
-	Red is collides with something
-	Arguments: x1 y1 z1 x2 y2 z2 |
+| `cl_drawcross` | `clientdll` `cheat` | Draws a cross at the given location<br>Arguments: x y z |
+| `cl_drawline` | `clientdll` `cheat` | Draws line between two 3D Points.<br>Green if no collision<br>Red is collides with something<br>Arguments: x1 y1 z1 x2 y2 z2 |
 | `cl_dump_projected_texture_count` | `developmentonly` `clientdll` `defensive` | Print out number of active projected textures |
 | `cl_dump_response_symbols` | `developmentonly` `clientdll` `defensive` | print all response symbols to the console |
 | `cl_dumpentity` | `clientdll` `cheat` | Dumps info about an entity |
 | `cl_dumpsplithacks` | `developmentonly` `clientdll` `defensive` | Dump split screen workarounds. |
-| `cl_ent_absbox` | `clientdll` `cheat` | Displays the total bounding box for the given entity(s) in green.  Some entites will also display entity specific overlays.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cl_ent_absbox` | `clientdll` `cheat` | Displays the total bounding box for the given entity(s) in green.  Some entites will also display entity specific overlays.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `cl_ent_actornames` | `clientdll` `cheat` | Displays the entity name for all entities that have ShouldDisplayInActorNames true in code |
-| `cl_ent_animgraph2_open_graph` | `clientdll` `cheat` | Opens the graph and starts live debugging the AG2 graph for a given entity
-	Arguments: entityName
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `cl_ent_animgraph2_record` | `clientdll` `cheat` | Starts live debugging & recording the AG2 graph for a given entity
-	Arguments: entityName
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `cl_ent_animgraph_debug` | `clientdll` `cheat` | Displays debug draws about the given entity(ies) animgraph
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `cl_ent_attachments` | `clientdll` `cheat` | Displays the attachment points on an entity.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `cl_ent_bbox` | `clientdll` `cheat` | Displays the movement bounding box for the given entity(ies) in orange.  Some entites will also display entity specific overlays.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `cl_ent_call` | `clientdll` `cheat` | ent_call <funcname> <option:entname> calls function on current look target or filtername, checks on ent, then root, then mode, then map scope |
+| `cl_ent_animgraph2_open_graph` | `clientdll` `cheat` | Opens the graph and starts live debugging the AG2 graph for a given entity<br>Arguments: entityName<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cl_ent_animgraph2_record` | `clientdll` `cheat` | Starts live debugging &amp; recording the AG2 graph for a given entity<br>Arguments: entityName<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cl_ent_animgraph_debug` | `clientdll` `cheat` | Displays debug draws about the given entity(ies) animgraph<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cl_ent_attachments` | `clientdll` `cheat` | Displays the attachment points on an entity.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cl_ent_bbox` | `clientdll` `cheat` | Displays the movement bounding box for the given entity(ies) in orange.  Some entites will also display entity specific overlays.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cl_ent_call` | `clientdll` `cheat` | ent_call &lt;funcname&gt; &lt;option:entname&gt; calls function on current look target or filtername, checks on ent, then root, then mode, then map scope |
 | `cl_ent_clear_debug_overlays` | `clientdll` `cheat` | Clears all debug overlays |
-| `cl_ent_find` | `clientdll` `cheat` | Find and list all entities with classnames or targetnames that contain the specified substrings.
-Format: find_ent <substring>
- |
-| `cl_ent_find_index` | `clientdll` `cheat` | Display data for entity matching specified index.
-Format: find_ent_index <index>
- |
+| `cl_ent_find` | `clientdll` `cheat` | Find and list all entities with classnames or targetnames that contain the specified substrings.<br>Format: find_ent &lt;substring&gt; |
+| `cl_ent_find_index` | `clientdll` `cheat` | Display data for entity matching specified index.<br>Format: find_ent_index &lt;index&gt; |
 | `cl_ent_grab` | `clientdll` `cheat` | grabs the object in front of the player. Options: -loose -multiple -toggle |
 | `cl_ent_hierarchy` | `clientdll` `cheat` | Prints the entity hierarchy tree rooted at the specified ent(s) |
-| `cl_ent_hitbox` | `clientdll` `cheat` | Displays the hitboxes for the given entity(ies).
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `cl_ent_joints` | `clientdll` `cheat` | Displays the joint names + axes an entity.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `cl_ent_messages` | `clientdll` `cheat` | Toggles input/output message display for the selected entity(ies).  The name of the entity will be displayed as well as any messages that it sends or receives.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cl_ent_hitbox` | `clientdll` `cheat` | Displays the hitboxes for the given entity(ies).<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cl_ent_joints` | `clientdll` `cheat` | Displays the joint names + axes an entity.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cl_ent_messages` | `clientdll` `cheat` | Toggles input/output message display for the selected entity(ies).  The name of the entity will be displayed as well as any messages that it sends or receives.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `cl_ent_name` | `clientdll` `cheat` | Displays the entity name |
-| `cl_ent_picker` | `clientdll` `cheat` | Toggles 'picker' mode.  When picker is on, the bounding box, pivot and debugging text is displayed for whatever entity the player is looking at.
-	Arguments:	full - enables all debug information |
-| `cl_ent_pivot` | `clientdll` `cheat` | Displays the pivot for the given entity(ies).
-	(y=up=green, z=forward=blue, x=left=red). 
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `cl_ent_remove` | `clientdll` `cheat` | Removes the given entity(s)
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `cl_ent_remove_all` | `clientdll` `cheat` | Removes all entities of the specified type
-	Arguments:   	{entity_name} / {class_name}  |
-| `cl_ent_scale` | `clientdll` `cheat` | Scales entities.	Arguments: <scale factor> <{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}> |
+| `cl_ent_picker` | `clientdll` `cheat` | Toggles 'picker' mode.  When picker is on, the bounding box, pivot and debugging text is displayed for whatever entity the player is looking at.<br>Arguments:	full - enables all debug information |
+| `cl_ent_pivot` | `clientdll` `cheat` | Displays the pivot for the given entity(ies).<br>(y=up=green, z=forward=blue, x=left=red).<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cl_ent_remove` | `clientdll` `cheat` | Removes the given entity(s)<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cl_ent_remove_all` | `clientdll` `cheat` | Removes all entities of the specified type<br>Arguments:   	{entity_name} / {class_name} |
+| `cl_ent_scale` | `clientdll` `cheat` | Scales entities.	Arguments: &lt;scale factor&gt; &lt;{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}&gt; |
 | `cl_ent_scenehierarchy` | `clientdll` `cheat` | Prints the entity scenenode hierarchy tree rooted at the specified ent(s) |
-| `cl_ent_script_dump` | `clientdll` `cheat` | Dumps the names and values of this entity's script scope to the console
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `cl_ent_select` | `clientdll` `cheat` | Select or deselects the given entities(s) for later manipulation
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cl_ent_script_dump` | `clientdll` `cheat` | Dumps the names and values of this entity's script scope to the console<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cl_ent_select` | `clientdll` `cheat` | Select or deselects the given entities(s) for later manipulation<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `cl_ent_setang` | `clientdll` `cheat` `client_can_execute` | Set entity angles |
-| `cl_ent_setname` | `clientdll` `cheat` | Sets the targetname of the given entity(s)
-	Arguments:   	<new entity name> <{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}> |
+| `cl_ent_setname` | `clientdll` `cheat` | Sets the targetname of the given entity(s)<br>Arguments:   	&lt;new entity name&gt; &lt;{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}&gt; |
 | `cl_ent_setpos` | `clientdll` `cheat` `client_can_execute` | Move entity to position |
 | `cl_ent_show_damage` | `clientdll` `cheat` | Sets damage display mode.  When on, you will see the amount of damage dealt over the target's head. |
-| `cl_ent_skeleton` | `clientdll` `cheat` | Displays the skeleton for the given entity(ies).
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cl_ent_skeleton` | `clientdll` `cheat` | Displays the skeleton for the given entity(ies).<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `cl_ent_spew_derived_classes` | `developmentonly` `clientdll` | Prints out all entity classes which inherit from a specified base class |
-| `cl_ent_text` | `clientdll` `cheat` `vconsole_fuzzy_matching` | Displays text debugging information about the given entity(ies) on top of the entity (See Overlay Text)
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `cl_ent_text256` | `clientdll` `cheat` | Displays text debugging information about the given entity(ies) [within 256 units of the player] on top of the entity (See Overlay Text)
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `cl_ent_text_clear` | `clientdll` `cheat` | Hide text debugging information about the given entity(ies) on top of the entity (See Overlay Text)
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `cl_ent_text_filter` | `clientdll` `cheat` | Set which ent_text filters you want:  |
-| `cl_ent_text_radius` | `clientdll` `cheat` | Displays text debugging information about the given entity(ies) [near the player] on top of the entity (See Overlay Text)
-	2 Arguments:   	<Radius> <{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}> |
-| `cl_ent_text_sticky_add` | `clientdll` `cheat` | Adds to list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `cl_ent_text_sticky_clear` | `clientdll` `cheat` | Clears the list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `cl_ent_text_sticky_dump` | `clientdll` `cheat` | Spews the list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `cl_ent_text_sticky_remove` | `clientdll` `cheat` | Removes from the list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cl_ent_text` | `clientdll` `cheat` `vconsole_fuzzy_matching` `autocomplete` | Displays text debugging information about the given entity(ies) on top of the entity (See Overlay Text)<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cl_ent_text256` | `clientdll` `cheat` | Displays text debugging information about the given entity(ies) [within 256 units of the player] on top of the entity (See Overlay Text)<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cl_ent_text_clear` | `clientdll` `cheat` | Hide text debugging information about the given entity(ies) on top of the entity (See Overlay Text)<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cl_ent_text_filter` | `clientdll` `cheat` | Set which ent_text filters you want: |
+| `cl_ent_text_radius` | `clientdll` `cheat` | Displays text debugging information about the given entity(ies) [near the player] on top of the entity (See Overlay Text)<br>2 Arguments:   	&lt;Radius&gt; &lt;{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}&gt; |
+| `cl_ent_text_sticky_add` | `clientdll` `cheat` | Adds to list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cl_ent_text_sticky_clear` | `clientdll` `cheat` | Clears the list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cl_ent_text_sticky_dump` | `clientdll` `cheat` | Spews the list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cl_ent_text_sticky_remove` | `clientdll` `cheat` | Removes from the list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `cl_ent_ungrab` | `clientdll` `cheat` | un-grabs all objects |
-| `cl_ent_vcollide_wireframe` | `clientdll` `cheat` | Displays the interpolated vcollide wireframe pm am entity.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `cl_ent_viewoffset` | `clientdll` `cheat` | Displays the eye position for the given entity(ies) in red.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `cl_ent_visibility_traces` | `clientdll` `cheat` `vconsole_fuzzy_matching` | Displays visibility traces for the given entity
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `cl_ents` | `developmentonly` `clientdll` `defensive` | List client entities, sorted by spawn group |
+| `cl_ent_vcollide_wireframe` | `clientdll` `cheat` | Displays the interpolated vcollide wireframe pm am entity.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cl_ent_viewoffset` | `clientdll` `cheat` | Displays the eye position for the given entity(ies) in red.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cl_ent_visibility_traces` | `clientdll` `cheat` `vconsole_fuzzy_matching` `autocomplete` | Displays visibility traces for the given entity<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cl_ents` | `developmentonly` `clientdll` `defensive` `autocomplete` | List client entities, sorted by spawn group |
 | `cl_fullupdate` | `cheat` | Force uncompressed update |
 | `cl_game_mode_convars` | `developmentonly` `clientdll` `defensive` | Display the values of the convars for the current game_mode. |
-| `cl_imgui_debug_entity` | `clientdll` `cheat` | Shows the entity browser, focused on the entity you specify.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cl_imgui_debug_entity` | `clientdll` `cheat` | Shows the entity browser, focused on the entity you specify.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `cl_imgui_set_selection` | `clientdll` `cheat` | Sets ImGui selection |
 | `cl_imgui_set_status_text` | `clientdll` `cheat` | Sets ImGui header status text |
-| `cl_in_forcebuttonstate` | `developmentonly` `clientdll` `vconsole_fuzzy_matching` | Forces a button to be a particular state - WHEN PROCESSING USERCOMMANDS |
+| `cl_in_forcebuttonstate` | `developmentonly` `clientdll` `vconsole_fuzzy_matching` `autocomplete` | Forces a button to be a particular state - WHEN PROCESSING USERCOMMANDS |
 | `cl_interp` | `clientdll` `release` | Read the effective client simulation interpolation amount in terms of time. |
 | `cl_mainmenu_hide_blog` | `clientdll` `hidden` `clientcmd_can_execute` | Show the news panel and hide blog |
 | `cl_mainmenu_show_blog` | `clientdll` `hidden` `clientcmd_can_execute` | Show the blog and hide news panel |
@@ -271,32 +222,15 @@ Format: find_ent_index <index>
 | `cl_phys_dump_intersection_controller` | `developmentonly` `clientdll` | Dump intersection controller status |
 | `cl_phys_dump_main_world` | `developmentonly` `clientdll` | Dump physics main world to file |
 | `cl_phys_dump_memory` | `developmentonly` `clientdll` | Dump memory usage |
-| `cl_phys_list` | `developmentonly` `clientdll` | List all physics component contents of every entity in the game;
-    -stream [1\|0]         initiate\|terminate streaming to physics debugger
-    -allents              include non-physical entities
-    -classes              print class names
-    -sdk                  Rubikon-wide memory short status
-    -sdk -struct          Rubikon-wide memory use per struct
-    -sdk -rebuildsvms     Rubikon-wide SVM force rebuild and status
-    -world                current state of the world
-    -world -touch         list body pairs (bodies in contact)
-    -world -save <name>   save world to a file
-    -world -mem           memory dump (separately per game dll)
-    -world -snapshots     Start/Stop dumping snapshots of the world into the current directory
-    -world -agg           current aggregate data registry (loaded resources)
- |
+| `cl_phys_list` | `developmentonly` `clientdll` | List all physics component contents of every entity in the game;<br>-stream [1\|0]         initiate\|terminate streaming to physics debugger<br>-allents              include non-physical entities<br>-classes              print class names<br>-sdk                  Rubikon-wide memory short status<br>-sdk -struct          Rubikon-wide memory use per struct<br>-sdk -rebuildsvms     Rubikon-wide SVM force rebuild and status<br>-world                current state of the world<br>-world -touch         list body pairs (bodies in contact)<br>-world -save &lt;name&gt;   save world to a file<br>-world -mem           memory dump (separately per game dll)<br>-world -snapshots     Start/Stop dumping snapshots of the world into the current directory<br>-world -agg           current aggregate data registry (loaded resources) |
 | `cl_phys_sleep` | `developmentonly` `clientdll` | Put all physics in all the worlds to sleep |
 | `cl_phys_wakeup` | `developmentonly` `clientdll` | Wake all physics objects in the Main physics up |
 | `cl_physics_add_test` | `developmentonly` `clientdll` | add test object |
-| `cl_physics_highlight_active` | `developmentonly` `clientdll` | Turns on the absbox for all active physics objects.
-  0 : un-highlight.
- |
+| `cl_physics_highlight_active` | `developmentonly` `clientdll` | Turns on the absbox for all active physics objects.<br>0 : un-highlight. |
 | `cl_physics_remove_test` | `developmentonly` `clientdll` | remove test object |
-| `cl_physics_report_active` | `developmentonly` `clientdll` | Lists all active physics objects
-  -more : extra info
- |
+| `cl_physics_report_active` | `developmentonly` `clientdll` | Lists all active physics objects<br>-more : extra info |
 | `cl_precacheinfo` | `developmentonly` `defensive` | Show precache info (client). |
-| `cl_pred_track` | `developmentonly` `clientdll` `defensive` | <entindex> <fieldname>:  Track changes to entity index entindex, for field fieldname. |
+| `cl_pred_track` | `developmentonly` `clientdll` `defensive` `autocomplete` | &lt;entindex&gt; &lt;fieldname&gt;:  Track changes to entity index entindex, for field fieldname. |
 | `cl_pred_track_off` | `developmentonly` `clientdll` `defensive` | clear field track changes. |
 | `cl_predictioncopy_describe` | `developmentonly` `clientdll` `defensive` | Describe PredictionMap_t for entindex |
 | `cl_predictioncopy_print` | `developmentonly` `clientdll` `defensive` | Print simple description of prediction copy fields for entindex |
@@ -318,7 +252,7 @@ Format: find_ent_index <index>
 | `cl_script_clear_watches` | `clientdll` `cheat` | Clear all watches from the game debug overlay |
 | `cl_script_debug` | `clientdll` `cheat` | Toggle the in-game script debug features |
 | `cl_script_dump_all` | `clientdll` `cheat` | Dump the state of the VM to the console |
-| `cl_script_find` | `clientdll` `cheat` | Find a key in the VM  |
+| `cl_script_find` | `clientdll` `cheat` | Find a key in the VM |
 | `cl_script_help` | `clientdll` `cheat` | Output help for script functions |
 | `cl_script_help2` | `developmentonly` `clientdll` `defensive` | Output help for script functions suitable for auto-completion |
 | `cl_script_reload` | `clientdll` `cheat` | Reload scripts |
@@ -340,26 +274,20 @@ Format: find_ent_index <index>
 | `cl_sos_test_set_opvar` | `clientdll` `cheat` |  |
 | `cl_soundscape_flush` | `clientdll` `cheat` `server_can_execute` | Flushes the client side soundscapes |
 | `cl_soundscape_printdebuginfo` | `developmentonly` `clientdll` `defensive` | print soundscapes |
-| `cl_spewserializers` | `cheat` | Spew serializers |
+| `cl_spewserializers` | `cheat` `autocomplete` | Spew serializers |
 | `cl_spewworldgroups` | `developmentonly` | Spew world groups (client) |
 | `cl_ss_origin` | `developmentonly` `clientdll` `defensive` | print origin in script format |
 | `cl_test_list_entities` | `clientdll` `cheat` | test-list entities |
-| `cl_ticktiming` | `dontrecord` `release` | {print\|<interval>} [summary\|detail]  Print timing stats now, or set report interval |
+| `cl_ticktiming` | `dontrecord` `release` | {print\|&lt;interval&gt;} [summary\|detail]  Print timing stats now, or set report interval |
 | `cl_updatevisibility` | `developmentonly` `clientdll` `defensive` | Updates visibility bits. |
 | `clear` | `dontrecord` `release` | Clear console output. |
 | `clear_bombs` | `gamedll` `cheat` |  |
 | `clearall` | `dontrecord` `release` | Clear console output from all views. |
-| `cli_ent_attachments` | `clientdll` `cheat` | Displays the interpolated attachment points on an entity.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `cli_ent_hitbox` | `clientdll` `cheat` | Displays the skeleton for the given entity(ies).
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `cli_ent_pivot` | `clientdll` `cheat` | Displays the interpolated pivot for the given entity(ies).
-	(y=up=green, z=forward=blue, x=left=red). 
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `cli_ent_skeleton` | `clientdll` `cheat` | Displays the skeleton for the given entity(ies).
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `cli_ent_vcollide_wireframe` | `clientdll` `cheat` | Displays the interpolated vcollide wireframe pm am entity.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cli_ent_attachments` | `clientdll` `cheat` | Displays the interpolated attachment points on an entity.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cli_ent_hitbox` | `clientdll` `cheat` | Displays the skeleton for the given entity(ies).<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cli_ent_pivot` | `clientdll` `cheat` | Displays the interpolated pivot for the given entity(ies).<br>(y=up=green, z=forward=blue, x=left=red).<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cli_ent_skeleton` | `clientdll` `cheat` | Displays the skeleton for the given entity(ies).<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `cli_ent_vcollide_wireframe` | `clientdll` `cheat` | Displays the interpolated vcollide wireframe pm am entity.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `clutch_mode_toggle` | `clientdll` `release` | Toggle clutch mode convar |
 | `cmd` | `developmentonly` `defensive` | Forward command to server. |
 | `collect_entity_model_name` | `gamedll` `cheat` | Collect model names of the entities you're pointing at |
@@ -378,14 +306,7 @@ Format: find_ent_index <index>
 | `consoletool` | `dontrecord` `release` | Open a VConsole subtool. |
 | `convert_steamid` | `developmentonly` `clientdll` `defensive` | Convert SteamID into multiple formats |
 | `cpuinfo` | `developmentonly` `defensive` | Print CPU configuration information |
-| `crash` | `cheat` | Crash the client. Optional parameter -- type of crash:
- 0: read from NULL
- 1: write to NULL
- 2: force an Assert
- 3: infinite loop
- 4: stack buffer overrun
- 5: multiple asserts across multiple threads. Optional number of threads (default 5)
- 6: looping memory leak until we're out of memory. Optional allocation size in bytes (default 1048576/1MB) |
+| `crash` | `cheat` | Crash the client. Optional parameter -- type of crash:<br>0: read from NULL<br>1: write to NULL<br>2: force an Assert<br>3: infinite loop<br>4: stack buffer overrun<br>5: multiple asserts across multiple threads. Optional number of threads (default 5)<br>6: looping memory leak until we're out of memory. Optional allocation size in bytes (default 1048576/1MB) |
 | `crash_error` | `cheat` | Cause the engine to crash by Plat_FatalError on main thread (Debug!!) |
 | `crash_error_job` | `cheat` | Cause the engine to crash by Plat_FatalError on job thread (Debug!!) |
 | `crash_error_thread` | `cheat` | Cause the engine to crash by Plat_FatalError on non-main thread (Debug!!) |
@@ -399,18 +320,8 @@ Format: find_ent_index <index>
 | `csgo_watch_friend_session_exit_current` | `clientdll` `hidden` `clientcmd_can_execute` |  |
 | `cvarlist` | `release` | Show the list of convars/concommands. |
 | `cyclevar` | `dontrecord` `release` | Cycle through specified convar values. |
-| `dbghist_addline` | `developmentonly` `gamedll` `defensive` | Add a line to the debug history. Format: <category id> <line> |
-| `dbghist_dump` | `developmentonly` `gamedll` `defensive` | Dump the debug history to the console. Format: <category id>
-    Categories:
-     0: Entity I/O
-     1: AI Decisions
-     2: Scene Print
-     3: Alyx Blind
-     4: Log of damage done to player
-	 5: Player Teleport
-	 6: Blind Zombie Sounds
-	 7: Player Continuous
- |
+| `dbghist_addline` | `developmentonly` `gamedll` `defensive` | Add a line to the debug history. Format: &lt;category id&gt; &lt;line&gt; |
+| `dbghist_dump` | `developmentonly` `gamedll` `defensive` | Dump the debug history to the console. Format: &lt;category id&gt;<br>Categories:<br>0: Entity I/O<br>1: AI Decisions<br>2: Scene Print<br>3: Alyx Blind<br>4: Log of damage done to player<br>5: Player Teleport<br>6: Blind Zombie Sounds<br>7: Player Continuous |
 | `debug_purchase_defidx` | `clientdll` `release` `clientcmd_can_execute` | Purchase an item by defindex |
 | `debugoverlay_cycle_domain` | `gamedll` `cheat` | Toggles visibility of the debug overlay system. |
 | `debugoverlay_cycle_state` | `gamedll` `cheat` | Toggles visibility of the debug overlay system. |
@@ -428,24 +339,20 @@ Format: find_ent_index <index>
 | `demo_step_tick` | `release` | Play for N ticks (default=1) and then pause. |
 | `demo_timescale` | `release` | Sets demo replay speed. |
 | `demo_togglepause` | `release` | Toggles demo playback. |
-| `demo_writemetafile` | `developmentonly` `dontrecord` `defensive` | save current meta file demo_<version>.meta file for use in demo upconversion. |
+| `demo_writemetafile` | `developmentonly` `dontrecord` `defensive` | save current meta file demo_&lt;version&gt;.meta file for use in demo upconversion. |
 | `demolist` | `release` | Print demo sequence list. |
 | `demoui` | `clientdll` `release` | Show/hide demo playback ui |
-| `dev_send_gc_message` | `developmentonly` `clientdll` `defensive` | <msgid> Send a blank body message with a given ID to gc for routing tests |
-| `dev_send_gc_message_server` | `developmentonly` `gamedll` `defensive` | <msgid> Send a blank body message with a given ID to gc for routing tests |
-| `dev_simulate_gcdown` | `developmentonly` `clientdll` `defensive` | <state> Turn on/off simulated GC communications failure (GC is down in a way that we know it is down) |
-| `differences` | `release` | Show all convars which are not at their default values (optional restricted to specific flags). |
+| `dev_send_gc_message` | `developmentonly` `clientdll` `defensive` | &lt;msgid&gt; Send a blank body message with a given ID to gc for routing tests |
+| `dev_send_gc_message_server` | `developmentonly` `gamedll` `defensive` | &lt;msgid&gt; Send a blank body message with a given ID to gc for routing tests |
+| `dev_simulate_gcdown` | `developmentonly` `clientdll` `defensive` | &lt;state&gt; Turn on/off simulated GC communications failure (GC is down in a way that we know it is down) |
+| `differences` | `release` `autocomplete` | Show all convars which are not at their default values (optional restricted to specific flags). |
 | `disable_priority_boost` | `developmentonly` `defensive` | Disable focus based priority boost |
 | `disconnect` | `release` | Disconnect from server |
 | `dlight_debug` | `clientdll` `cheat` | Creates a dlight in front of the player |
 | `dm_reset_spawns` | `developmentonly` `gamedll` `defensive` |  |
 | `dm_togglerandomweapons` | `clientdll` `server_can_execute` `clientcmd_can_execute` | Turns random weapons in deathmatch on/off |
-| `drawcross` | `gamedll` `cheat` | Draws a cross at the given location
-	Arguments: x y z |
-| `drawline` | `gamedll` `cheat` | Draws line between two 3D Points.
-	Green if no collision
-	Red is collides with something
-	Arguments: x1 y1 z1 x2 y2 z2 |
+| `drawcross` | `gamedll` `cheat` | Draws a cross at the given location<br>Arguments: x y z |
+| `drawline` | `gamedll` `cheat` | Draws line between two 3D Points.<br>Green if no collision<br>Red is collides with something<br>Arguments: x1 y1 z1 x2 y2 z2 |
 | `drawoverviewmap` | `developmentonly` `clientdll` `defensive` | Draws the overview map |
 | `drawradar` | `developmentonly` `clientdll` `defensive` | Draws HUD radar |
 | `drop_hostage` | `developmentonly` `gamedll` `cheat` | drop held hostage |
@@ -460,7 +367,7 @@ Format: find_ent_index <index>
 | `dump_response_symbols` | `developmentonly` `gamedll` `defensive` | print all response symbols to the console |
 | `dump_secondary_scene_worlds` | `developmentonly` `clientdll` `defensive` | Lists secondary scene worlds and ref counts |
 | `dumpparticlelist` | `cheat` | Print out information on existing particle systems |
-| `dumpstringtable` | `developmentonly` `defensive` | Usage:  dumpstringtable <tablename \|all> <sv \| cl> <verbose \| simple> <element>      Print string tables to console, verbose to dump data, simple to show name and count only, can specifiy a single numeric element index to restrict spew. |
+| `dumpstringtable` | `developmentonly` `defensive` `autocomplete` | Usage:  dumpstringtable &lt;tablename \|all&gt; &lt;sv \| cl&gt; &lt;verbose \| simple&gt; &lt;element&gt;      Print string tables to console, verbose to dump data, simple to show name and count only, can specifiy a single numeric element index to restrict spew. |
 | `echo` | `server_can_execute` | Echo text to console. |
 | `echoln` | `release` | Echo the command arguments on the console |
 | `econ_build_pinboard_images_from_collection_name` | `developmentonly` `clientdll` `defensive` | Renders and saves images for all models in a collection. |
@@ -471,122 +378,74 @@ Format: find_ent_index <index>
 | `endmovie` | `developmentonly` `dontrecord` `defensive` | Stop recording movie frames. |
 | `endround` | `gamedll` `cheat` | End the current round. |
 | `engine_frametime_print_report` | `developmentonly` `defensive` | Print a performance report from the current data in the vprof 'lite' profiler |
-| `ent_absbox` | `gamedll` `cheat` | Displays the total bounding box for the given entity(s) in green.  Some entites will also display entity specific overlays.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_absbox` | `gamedll` `cheat` | Displays the total bounding box for the given entity(s) in green.  Some entites will also display entity specific overlays.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `ent_actornames` | `gamedll` `cheat` | Displays the entity name for all entities that have ShouldDisplayInActorNames true in code |
-| `ent_animgraph2_open_graph` | `gamedll` `cheat` | Opens the graph and starts live debugging the AG2 graph for a given entity
-	Arguments: entityName
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `ent_animgraph2_record` | `gamedll` `cheat` | Starts live debugging & recording the AG2 graph for a given entity
-	Arguments: entityName
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `ent_animgraph_debug` | `gamedll` `cheat` | Displays debug draws about the given entity(ies) animgraph
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `ent_attachments` | `gamedll` `cheat` | Displays the attachment points on an entity.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `ent_autoaim` | `gamedll` `cheat` | Displays the entity's autoaim radius.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `ent_bbox` | `gamedll` `cheat` | Displays the movement bounding box for the given entity(ies) in orange.  Some entites will also display entity specific overlays.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_animgraph2_open_graph` | `gamedll` `cheat` | Opens the graph and starts live debugging the AG2 graph for a given entity<br>Arguments: entityName<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_animgraph2_record` | `gamedll` `cheat` | Starts live debugging &amp; recording the AG2 graph for a given entity<br>Arguments: entityName<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_animgraph_debug` | `gamedll` `cheat` | Displays debug draws about the given entity(ies) animgraph<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_attachments` | `gamedll` `cheat` | Displays the attachment points on an entity.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_autoaim` | `gamedll` `cheat` | Displays the entity's autoaim radius.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_bbox` | `gamedll` `cheat` | Displays the movement bounding box for the given entity(ies) in orange.  Some entites will also display entity specific overlays.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `ent_bonemergeplayer` | `gamedll` `cheat` | Bonemerge the player onto the entity under the crosshairs |
-| `ent_call` | `gamedll` `cheat` | ent_call <funcname> <option:entname> calls function on current look target or filtername, checks on ent, then root, then mode, then map scope |
+| `ent_call` | `gamedll` `cheat` | ent_call &lt;funcname&gt; &lt;option:entname&gt; calls function on current look target or filtername, checks on ent, then root, then mode, then map scope |
 | `ent_cancelpendingentfires` | `developmentonly` `gamedll` `defensive` | Cancels all ent_fire created outputs that are currently waiting for their delay to expire. |
 | `ent_characterize` | `developmentonly` `gamedll` `defensive` | Spew PVS debug info for entity |
 | `ent_clear_debug_overlays` | `gamedll` `cheat` | Clears all debug overlays |
-| `ent_create` | `gamedll` `cheat` `vconsole_fuzzy_matching` | Creates an entity of the given designer or subclass name where the player is looking. |
+| `ent_create` | `gamedll` `cheat` `vconsole_fuzzy_matching` `autocomplete` | Creates an entity of the given designer or subclass name where the player is looking. |
 | `ent_debug_anim` | `developmentonly` `clientdll` `defensive` | Use the specified entity for animation debugging. |
 | `ent_debug_origin_changes` | `developmentonly` `gamedll` | turn on, off, or toggle origin changes on server for entity by index |
-| `ent_find` | `gamedll` `cheat` | Find and list all entities with classnames or targetnames that contain the specified substrings.
-Format: find_ent <substring>
- |
-| `ent_find_index` | `gamedll` `cheat` | Display data for entity matching specified index.
-Format: find_ent_index <index>
- |
-| `ent_fire` | `gamedll` `cheat` `vconsole_fuzzy_matching` | Usage:
-   ent_fire <target> [action] [value] [delay]
- |
-| `ent_fire_output` | `gamedll` `cheat` `vconsole_fuzzy_matching` | Usage:
-   ent_fire_output <target> [output name] [value] [delay]
- |
-| `ent_gib` | `gamedll` `cheat` | Gibs the given entity(s)
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_find` | `gamedll` `cheat` | Find and list all entities with classnames or targetnames that contain the specified substrings.<br>Format: find_ent &lt;substring&gt; |
+| `ent_find_index` | `gamedll` `cheat` | Display data for entity matching specified index.<br>Format: find_ent_index &lt;index&gt; |
+| `ent_fire` | `gamedll` `cheat` `vconsole_fuzzy_matching` `autocomplete` | Usage:<br>ent_fire &lt;target&gt; [action] [value] [delay] |
+| `ent_fire_output` | `gamedll` `cheat` `vconsole_fuzzy_matching` `autocomplete` | Usage:<br>ent_fire_output &lt;target&gt; [output name] [value] [delay] |
+| `ent_gib` | `gamedll` `cheat` | Gibs the given entity(s)<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `ent_grab` | `gamedll` `cheat` | grabs the object in front of the player. Options: -loose -multiple -toggle |
 | `ent_hierarchy` | `gamedll` `cheat` | Prints the entity hierarchy tree rooted at the specified ent(s) |
-| `ent_hitbox` | `gamedll` `cheat` | Displays the hitboxes for the given entity(ies).
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `ent_info` | `gamedll` `cheat` | Usage:
-   ent_info <class name>
- |
-| `ent_joints` | `gamedll` `cheat` | Displays the joint names + axes an entity.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `ent_kill` | `gamedll` `cheat` | Kills the given entity(s)
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_hitbox` | `gamedll` `cheat` | Displays the hitboxes for the given entity(ies).<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_info` | `gamedll` `cheat` | Usage:<br>ent_info &lt;class name&gt; |
+| `ent_joints` | `gamedll` `cheat` | Displays the joint names + axes an entity.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_kill` | `gamedll` `cheat` | Kills the given entity(s)<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `ent_list_report` | `developmentonly` `gamedll` `defensive` | Reports all list of all entities in a map, one by one |
-| `ent_messages` | `gamedll` `cheat` | Toggles input/output message display for the selected entity(ies).  The name of the entity will be displayed as well as any messages that it sends or receives.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_messages` | `gamedll` `cheat` | Toggles input/output message display for the selected entity(ies).  The name of the entity will be displayed as well as any messages that it sends or receives.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `ent_name` | `gamedll` `cheat` | Displays the entity name |
-| `ent_orient` | `gamedll` `cheat` | Orient the specified entity to match the player's angles. By default, only orients target entity's YAW. Use the 'allangles' option to orient on all axis.
-	Format: ent_orient <entity name> <optional: allangles> |
-| `ent_picker` | `gamedll` `cheat` | Toggles 'picker' mode.  When picker is on, the bounding box, pivot and debugging text is displayed for whatever entity the player is looking at.
-	Arguments:	full - enables all debug information |
-| `ent_pivot` | `gamedll` `cheat` | Displays the pivot for the given entity(ies).
-	(y=up=green, z=forward=blue, x=left=red). 
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `ent_rbox` | `clientdll` `cheat` | Displays the total bounding box for the given entity(s) in green.  Some entites will also display entity specific overlays.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `ent_remove` | `gamedll` `cheat` | Removes the given entity(s)
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `ent_remove_all` | `gamedll` `cheat` | Removes all entities of the specified type
-	Arguments:   	{entity_name} / {class_name}  |
+| `ent_orient` | `gamedll` `cheat` | Orient the specified entity to match the player's angles. By default, only orients target entity's YAW. Use the 'allangles' option to orient on all axis.<br>Format: ent_orient &lt;entity name&gt; &lt;optional: allangles&gt; |
+| `ent_picker` | `gamedll` `cheat` | Toggles 'picker' mode.  When picker is on, the bounding box, pivot and debugging text is displayed for whatever entity the player is looking at.<br>Arguments:	full - enables all debug information |
+| `ent_pivot` | `gamedll` `cheat` | Displays the pivot for the given entity(ies).<br>(y=up=green, z=forward=blue, x=left=red).<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_rbox` | `clientdll` `cheat` | Displays the total bounding box for the given entity(s) in green.  Some entites will also display entity specific overlays.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_remove` | `gamedll` `cheat` | Removes the given entity(s)<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_remove_all` | `gamedll` `cheat` | Removes all entities of the specified type<br>Arguments:   	{entity_name} / {class_name} |
 | `ent_reveal_in_hammer` | `developmentonly` `gamedll` | Given a mapname and hammer uniqueid, reveal it in Hammer |
 | `ent_rotate` | `gamedll` `cheat` | Rotates an entity by a specified # of degrees |
-| `ent_scale` | `gamedll` `cheat` | Scales entities.	Arguments: <scale factor> <{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}> |
+| `ent_scale` | `gamedll` `cheat` | Scales entities.	Arguments: &lt;scale factor&gt; &lt;{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}&gt; |
 | `ent_scenehierarchy` | `gamedll` `cheat` | Prints the entity scenenode hierarchy tree rooted at the specified ent(s) |
-| `ent_script_dump` | `gamedll` `cheat` | Dumps the names and values of this entity's script scope to the console
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `ent_select` | `gamedll` `cheat` | Select or deselects the given entities(s) for later manipulation
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_script_dump` | `gamedll` `cheat` | Dumps the names and values of this entity's script scope to the console<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_select` | `gamedll` `cheat` | Select or deselects the given entities(s) for later manipulation<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `ent_setang` | `gamedll` `cheat` `client_can_execute` | Set entity angles |
-| `ent_setname` | `gamedll` `cheat` | Sets the targetname of the given entity(s)
-	Arguments:   	<new entity name> <{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}> |
+| `ent_setname` | `gamedll` `cheat` | Sets the targetname of the given entity(s)<br>Arguments:   	&lt;new entity name&gt; &lt;{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}&gt; |
 | `ent_setpos` | `gamedll` `cheat` `client_can_execute` | Move entity to position |
 | `ent_show_damage` | `gamedll` `cheat` | Sets damage display mode.  When on, you will see the amount of damage dealt over the target's head. |
-| `ent_show_response_criteria` | `gamedll` `cheat` | Print, to the console, an entity's current criteria set used to select responses.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `ent_skeleton` | `gamedll` `cheat` | Displays the skeleton for the given entity(ies).
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_show_response_criteria` | `gamedll` `cheat` | Print, to the console, an entity's current criteria set used to select responses.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_skeleton` | `gamedll` `cheat` | Displays the skeleton for the given entity(ies).<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `ent_spew_derived_classes` | `developmentonly` `gamedll` | Prints out all entity classes which inherit from a specified base class |
-| `ent_teleport` | `gamedll` `cheat` | Teleport the specified entity to where the player is looking.
-	Format: ent_teleport <entity name> |
-| `ent_text` | `gamedll` `cheat` `vconsole_fuzzy_matching` | Displays text debugging information about the given entity(ies) on top of the entity (See Overlay Text)
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `ent_text256` | `gamedll` `cheat` | Displays text debugging information about the given entity(ies) [within 256 units of the player] on top of the entity (See Overlay Text)
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `ent_text_clear` | `gamedll` `cheat` | Hide text debugging information about the given entity(ies) on top of the entity (See Overlay Text)
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `ent_text_filter` | `gamedll` `cheat` | Set which ent_text filters you want:  |
-| `ent_text_radius` | `gamedll` `cheat` | Displays text debugging information about the given entity(ies) [near the player] on top of the entity (See Overlay Text)
-	2 Arguments:   	<Radius> <{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}> |
-| `ent_text_sticky_add` | `gamedll` `cheat` | Adds to list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `ent_text_sticky_clear` | `gamedll` `cheat` | Clears the list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `ent_text_sticky_dump` | `gamedll` `cheat` | Spews the list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `ent_text_sticky_remove` | `gamedll` `cheat` | Removes from the list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_teleport` | `gamedll` `cheat` | Teleport the specified entity to where the player is looking.<br>Format: ent_teleport &lt;entity name&gt; |
+| `ent_text` | `gamedll` `cheat` `vconsole_fuzzy_matching` `autocomplete` | Displays text debugging information about the given entity(ies) on top of the entity (See Overlay Text)<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_text256` | `gamedll` `cheat` | Displays text debugging information about the given entity(ies) [within 256 units of the player] on top of the entity (See Overlay Text)<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_text_clear` | `gamedll` `cheat` | Hide text debugging information about the given entity(ies) on top of the entity (See Overlay Text)<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_text_filter` | `gamedll` `cheat` | Set which ent_text filters you want: |
+| `ent_text_radius` | `gamedll` `cheat` | Displays text debugging information about the given entity(ies) [near the player] on top of the entity (See Overlay Text)<br>2 Arguments:   	&lt;Radius&gt; &lt;{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}&gt; |
+| `ent_text_sticky_add` | `gamedll` `cheat` | Adds to list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_text_sticky_clear` | `gamedll` `cheat` | Clears the list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_text_sticky_dump` | `gamedll` `cheat` | Spews the list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_text_sticky_remove` | `gamedll` `cheat` | Removes from the list of names to display text debugging information about the given entity(ies) on top of the entity (See Overlay Text)<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `ent_ungrab` | `gamedll` `cheat` | un-grabs all objects |
-| `ent_vcollide_wireframe` | `gamedll` `cheat` | Displays the interpolated vcollide wireframe pm am entity.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_vcollide_wireframe` | `gamedll` `cheat` | Displays the interpolated vcollide wireframe pm am entity.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `ent_viewentity` | `developmentonly` `gamedll` | Selects the picked entity as the view entity |
-| `ent_viewoffset` | `gamedll` `cheat` | Displays the eye position for the given entity(ies) in red.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_viewoffset` | `gamedll` `cheat` | Displays the eye position for the given entity(ies) in red.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `ent_viewpunch` | `developmentonly` `gamedll` | Used to debug ViewPunch |
-| `ent_visibility_traces` | `gamedll` `cheat` `vconsole_fuzzy_matching` | Displays visibility traces for the given entity
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `ent_visibility_traces` | `gamedll` `cheat` `vconsole_fuzzy_matching` `autocomplete` | Displays visibility traces for the given entity<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `entity_lump_list` | `developmentonly` `defensive` | List all known entity lumps |
 | `entity_lump_spew` | `developmentonly` `defensive` | Dump the contents of an entity lump |
-| `ents` | `developmentonly` `gamedll` `defensive` | List server entities, sorted by spawn group |
+| `ents` | `developmentonly` `gamedll` `defensive` `autocomplete` | List server entities, sorted by spawn group |
 | `error_message_explain_pure` | `clientdll` `hidden` `clientcmd_can_execute` | Take user to Steam support article |
 | `error_message_explain_unsigned` | `clientdll` `hidden` `clientcmd_can_execute` | Take user to Steam support article |
 | `error_message_explain_vac` | `clientdll` `hidden` `clientcmd_can_execute` | Take user to Steam support article |
@@ -595,11 +454,11 @@ Format: find_ent_index <index>
 | `exec_async` | `cheat` `dontrecord` | Execute a cfg file over time |
 | `execifexists` | `dontrecord` `release` | Execute a cfg file if file exists |
 | `explode` | `gamedll` `cheat` `client_can_execute` | Kills the player with explosive damage |
-| `explodevector` | `gamedll` `cheat` `client_can_execute` | Kills a player applying an explosive force. Usage: explodevector <player> <x value> <y value> <z value> |
+| `explodevector` | `gamedll` `cheat` `client_can_execute` | Kills a player applying an explosive force. Usage: explodevector &lt;player&gt; &lt;x value&gt; &lt;y value&gt; &lt;z value&gt; |
 | `fadein` | `gamedll` `cheat` | fadein {time r g b}: Fades the screen in from black or from the specified color over the given number of seconds. |
 | `fadeout` | `gamedll` `cheat` | fadeout {time r g b}: Fades the screen to black or to the specified color over the given number of seconds. |
 | `find` | `release` | Find concommands with the specified string in their name/help text. |
-| `findflags` | `release` | Find concommands by flags. |
+| `findflags` | `release` `autocomplete` | Find concommands by flags. |
 | `firetarget` | `gamedll` `cheat` |  |
 | `firstperson` | `clientdll` `release` `execute_per_tick` | Switch to firstperson camera. |
 | `fog_override_color` | `cheat` | Sets the fog color override |
@@ -611,11 +470,11 @@ Format: find_ent_index <index>
 | `fs_dump_open_duplicate_times` | `developmentonly` `defensive` | Set fs_report_long_reads 1 before loading to use this. Prints a list of files that were opened more than once and ~how long was spent reading from them. |
 | `func_mover_count` | `gamedll` `cheat` |  |
 | `func_mover_enable_debug_all` | `gamedll` `cheat` |  |
-| `game_alias` | `release` | Set the configuration of game type and mode based on game alias like "deathmatch". |
+| `game_alias` | `release` `autocomplete` | Set the configuration of game type and mode based on game alias like "deathmatch". |
 | `game_particle_manager_dump_requeue` | `developmentonly` `clientdll` | Dump contents of particle manager requeue |
 | `game_particle_manager_list_active` | `developmentonly` `clientdll` | Dump counts of active particles |
 | `gameevents_analyze` | `developmentonly` `gamedll` | compare game events across all mods |
-| `gameevents_dumptofile` | `developmentonly` `gamedll` | write gameevents keyvalues (sorted by name) to gameevents_<modname>.txt |
+| `gameevents_dumptofile` | `developmentonly` `gamedll` | write gameevents keyvalues (sorted by name) to gameevents_&lt;modname&gt;.txt |
 | `gameinstructor_dump_open_lessons` | `clientdll` `cheat` | Gives a list of all currently open lessons. |
 | `gameinstructor_dump_run_lesson_counts` | `clientdll` `cheat` | Gives a list of lessons that been completed or shown |
 | `gameinstructor_reload_lessons` | `developmentonly` `clientdll` `defensive` | Shuts down all open lessons and reloads them from the script file. |
@@ -635,21 +494,16 @@ Format: find_ent_index <index>
 | `getpos_exact` | `clientdll` `cheat` | dump origin and angles to the console |
 | `getposcopy` | `clientdll` `cheat` | dump position and angles to the console and clipboard |
 | `getposcopy_exact` | `clientdll` `cheat` | dump origin and angles to the console and clipboard |
-| `give` | `gamedll` `vconsole_fuzzy_matching` `client_can_execute` | Give item to player.
-	Arguments: <item_name> |
-| `give_oriented` | `gamedll` `vconsole_fuzzy_matching` `client_can_execute` | Give item oriented to player angles.
-	Arguments: <item_name> |
-| `givecurrentammo` | `gamedll` `cheat` | Give a supply of ammo for current weapon..
- |
-| `global_set` | `gamedll` `cheat` | global_set <globalname> <state>: Sets the state of the given env_global (0 = OFF, 1 = ON, 2 = DEAD). |
+| `give` | `gamedll` `vconsole_fuzzy_matching` `client_can_execute` `autocomplete` | Give item to player.<br>Arguments: &lt;item_name&gt; |
+| `give_oriented` | `gamedll` `vconsole_fuzzy_matching` `client_can_execute` `autocomplete` | Give item oriented to player angles.<br>Arguments: &lt;item_name&gt; |
+| `givecurrentammo` | `gamedll` `cheat` | Give a supply of ammo for current weapon.. |
+| `global_set` | `gamedll` `cheat` | global_set &lt;globalname&gt; &lt;state&gt;: Sets the state of the given env_global (0 = OFF, 1 = ON, 2 = DEAD). |
 | `god` | `gamedll` `cheat` `client_can_execute` | Toggle by default, or 0 to disable and 1 to enable. Player becomes invulnerable. |
-| `graphcontroller_dumpparams` | `developmentonly` `gamedll` | Print all anim graph parameters for the specified entity.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `graphcontroller_dumpparams` | `developmentonly` `gamedll` | Print all anim graph parameters for the specified entity.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `grep` | `release` | grep line for pattern, print out matching lines only |
-| `groundlist` | `developmentonly` `gamedll` `cheat` | Display ground entity list <index> |
-| `healme` | `gamedll` `cheat` `client_can_execute` | Heals the player.
-	Arguments: <health to gain> |
-| `help` | `release` | Find help about a convar/concommand. |
+| `groundlist` | `developmentonly` `gamedll` `cheat` | Display ground entity list &lt;index&gt; |
+| `healme` | `gamedll` `cheat` `client_can_execute` | Heals the player.<br>Arguments: &lt;health to gain&gt; |
+| `help` | `release` `autocomplete` | Find help about a convar/concommand. |
 | `hideconsole` | `dontrecord` `release` | Hide the console. |
 | `hideoverviewmap` | `developmentonly` `clientdll` `defensive` | Hides the overview map |
 | `hideradar` | `developmentonly` `clientdll` `defensive` | Hides HUD radar |
@@ -660,23 +514,19 @@ Format: find_ent_index <index>
 | `host_writeconfig` | `release` | Saves out the user config values. |
 | `host_writeconfig_with_prompt` | `clientdll` `release` `server_can_execute` | Write settings if user agrees |
 | `hud_reloadscheme` | `developmentonly` `clientdll` `defensive` | Reloads hud layout and animation scripts. |
-| `hurtme` | `gamedll` `cheat` `client_can_execute` | Hurts the player.
-	Arguments: <health to lose> |
-| `hurtthem` | `gamedll` `cheat` `client_can_execute` | Hurts the enemy in front of you.
-	Arguments: <health to lose> |
-| `ic` | `developmentonly` `clientdll` `defensive` | interp entity count
- |
+| `hurtme` | `gamedll` `cheat` `client_can_execute` | Hurts the player.<br>Arguments: &lt;health to lose&gt; |
+| `hurtthem` | `gamedll` `cheat` `client_can_execute` | Hurts the enemy in front of you.<br>Arguments: &lt;health to lose&gt; |
+| `ic` | `developmentonly` `clientdll` `defensive` | interp entity count |
 | `ik_debug_fabrik_backwards_iteration_toggle` | `linked_concommand` `developmentonly` `defensive` |  |
 | `ik_debug_fabrik_forwards_iteration_toggle` | `linked_concommand` `developmentonly` `defensive` |  |
 | `imgui_cycle_undocked_window_focus` | `developmentonly` `defensive` | Cycles focus between the game window and undocked imgui windows |
-| `imgui_debug_entity` | `gamedll` `cheat` | Shows the entity browser, focused on the entity you specify.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `imgui_debug_entity` | `gamedll` `cheat` | Shows the entity browser, focused on the entity you specify.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `imgui_set_selection` | `gamedll` `cheat` | Sets ImGui selection |
 | `imgui_set_status_text` | `gamedll` `cheat` | Sets ImGui header status text |
 | `import_csgo_config` | `developmentonly` `clientdll` `defensive` | Imports an existing CS:GO configuration file into CS2 |
 | `impulse` | `clientdll` `release` | Triggers impulse command |
-| `in_forcebuttonstate` | `developmentonly` `gamedll` `vconsole_fuzzy_matching` | Forces a button to be a particular state - WHEN PROCESSING USERCOMMANDS |
-| `in_forceinput` | `developmentonly` `clientdll` `vconsole_fuzzy_matching` | Forces a button to be a particular state -- WHEN SAMPLING INPUT |
+| `in_forcebuttonstate` | `developmentonly` `gamedll` `vconsole_fuzzy_matching` `autocomplete` | Forces a button to be a particular state - WHEN PROCESSING USERCOMMANDS |
+| `in_forceinput` | `developmentonly` `clientdll` `vconsole_fuzzy_matching` `autocomplete` | Forces a button to be a particular state -- WHEN SAMPLING INPUT |
 | `incrementvar` | `dontrecord` `release` | Increment specified convar value. |
 | `input_state` | `developmentonly` | input_state |
 | `instant_replay_goto_tick` | `developmentonly` `defensive` | Goto a direct timestamp of the replay |
@@ -692,10 +542,10 @@ Format: find_ent_index <index>
 | `invnextselect` | `clientdll` `server_can_execute` |  |
 | `invprev` | `clientdll` `server_can_execute` |  |
 | `invprevselect` | `clientdll` `server_can_execute` |  |
-| `iv_debug` | `developmentonly` `clientdll` `defensive` | Spew interpolated var info for entity. |
-| `iv_interp` | `developmentonly` `clientdll` `defensive` | Spew interpolated var info for entity. |
+| `iv_debug` | `developmentonly` `clientdll` `defensive` `autocomplete` | Spew interpolated var info for entity. |
+| `iv_interp` | `developmentonly` `clientdll` `defensive` `autocomplete` | Spew interpolated var info for entity. |
 | `iv_off` | `developmentonly` `clientdll` `defensive` | Turn off all interpolation variable spew. |
-| `iv_on` | `developmentonly` `clientdll` `defensive` | Spew both interpolated var debug info and history for entity. |
+| `iv_on` | `developmentonly` `clientdll` `defensive` `autocomplete` | Spew both interpolated var debug info and history for entity. |
 | `jpeg_screenshot` | `developmentonly` `defensive` | Take a jpeg screenshot: jpeg_screenshot [filename] [quality 1-100]. |
 | `key_findbinding` | `release` | Find key bound to specified command string. |
 | `key_listboundkeys` | `release` | List bound keys with bindings. |
@@ -704,7 +554,7 @@ Format: find_ent_index <index>
 | `kickid` | `dontrecord` `release` | Kick a player by userid or uniqueid, with a message. |
 | `kickid_hltv` | `dontrecord` `release` | Kick a player by userid or uniqueid, with a message. |
 | `kill` | `gamedll` `cheat` `client_can_execute` | Kills the player with generic damage |
-| `killvector` | `gamedll` `cheat` `client_can_execute` | Kills a player applying force. Usage: killvector <player> <x value> <y value> <z value> |
+| `killvector` | `gamedll` `cheat` `client_can_execute` | Kills a player applying force. Usage: killvector &lt;player&gt; &lt;x value&gt; &lt;y value&gt; &lt;z value&gt; |
 | `lastinv` | `clientdll` `server_can_execute` |  |
 | `launch_training_map` | `developmentonly` `clientdll` `defensive` |  |
 | `launch_warmup_map` | `clientdll` `dontrecord` `clientcmd_can_execute` | Launches warmup map |
@@ -712,20 +562,18 @@ Format: find_ent_index <index>
 | `lightbinner_test_computespheresilhouette` | `developmentonly` `defensive` |  |
 | `lightbinner_test_computesumsilhouette` | `developmentonly` `defensive` |  |
 | `listRecentNPCSpeech` | `developmentonly` `gamedll` `dontrecord` `defensive` | Displays a list of the last 5 lines of speech from NPCs. |
-| `listdemo` | `release` | List demo file contents. |
+| `listdemo` | `release` `autocomplete` | List demo file contents. |
 | `listid` | `developmentonly` `defensive` | Lists banned users. |
 | `listip` | `developmentonly` `defensive` | List IP addresses on the ban list. |
 | `listissues` | `gamedll` `client_can_execute` | List all the issues that can be voted on. |
-| `load` | `developmentonly` `dontrecord` `vconsole_fuzzy_matching` `defensive` | Usage:
-   load [save file name]
- |
+| `load` | `developmentonly` `dontrecord` `vconsole_fuzzy_matching` `defensive` `autocomplete` | Usage:<br>load [save file name] |
 | `localization_quest_item_string_printout` | `developmentonly` `clientdll` `defensive` | localization_quest_item_string_printout |
-| `log` | `release` | Enables logging to file, console, and udp < on \| off >. |
-| `log_color` | `dontrecord` `release` | Set the color of a logging channel. |
+| `log` | `release` | Enables logging to file, console, and udp &lt; on \| off &gt;. |
+| `log_color` | `dontrecord` `release` `autocomplete` | Set the color of a logging channel. |
 | `log_dumpchannels` | `dontrecord` `release` | Dumps information about all logging channels. |
-| `log_flags` | `dontrecord` `release` | Set the flags on a logging channel. |
-| `log_level` | `dontrecord` `release` | Set the spew level of a logging channel. |
-| `log_verbosity` | `dontrecord` `release` | Set the verbosity of a logging channel. |
+| `log_flags` | `dontrecord` `release` `autocomplete` | Set the flags on a logging channel. |
+| `log_level` | `dontrecord` `release` `autocomplete` | Set the spew level of a logging channel. |
+| `log_verbosity` | `dontrecord` `release` `autocomplete` | Set the verbosity of a logging channel. |
 | `logaddress_add_http` | `gamedll` `unlogged` `release` | Set URI of a listener to receive logs via http post. Wrap URI in double quotes. |
 | `logaddress_add_http_delayed` | `gamedll` `unlogged` `release` | Set a delay and URI of a listener to receive logs via http post. Wrap URI in double quotes. |
 | `logaddress_del_http` | `gamedll` `unlogged` `release` | Remove http listener by URI. Wrap URI in double quotes. |
@@ -736,22 +584,22 @@ Format: find_ent_index <index>
 | `lrucache_reset_stats` | `developmentonly` `defensive` | Resets stats for the specified CUtlLRUCaches (or all if none specified) |
 | `lrucache_set_size` | `developmentonly` `defensive` | Sets the specified cache to the specified size |
 | `lrucache_stats` | `developmentonly` `defensive` | Spews information about all CUtlLRUCaches |
-| `map` | `release` `vconsole_fuzzy_matching` `vconsole_set_focus` | map <mapname> :Load a new map. |
+| `map` | `release` `vconsole_fuzzy_matching` `vconsole_set_focus` `autocomplete` | map &lt;mapname&gt; :Load a new map. |
 | `map_enable_portrait_worlds` | `clientdll` `cheat` | Enables/disables portrait worlds |
 | `map_setbombradius` | `gamedll` `cheat` | Sets the bomb radius for the map. |
 | `map_showbombradius` | `gamedll` `cheat` | Shows bomb radius from the center of each bomb site and planted bomb. |
 | `map_showspawnpoints` | `developmentonly` `gamedll` `defensive` | Shows player spawn points (red=invalid). Optionally pass in the duration. |
-| `map_workshop` | `clientdll` `release` `vconsole_fuzzy_matching` `vconsole_set_focus` | Launch a workshop map |
+| `map_workshop` | `clientdll` `release` `vconsole_fuzzy_matching` `vconsole_set_focus` `autocomplete` | Launch a workshop map |
 | `mapgroup` | `gamedll` `dontrecord` `release` | Specify a map group |
 | `maps` | `release` | Displays list of maps. |
-| `markup_group_ent_bbox` | `gamedll` `cheat` | markup_group_ent_bbox <markup_group name> -> toggle ent_bbox for all members of the named markup group |
-| `markup_group_ent_text` | `gamedll` `cheat` | markup_group_ent_text <markup_group name> -> toggle ent_text for all members of the named markup group |
+| `markup_group_ent_bbox` | `gamedll` `cheat` | markup_group_ent_bbox &lt;markup_group name&gt; -&gt; toggle ent_bbox for all members of the named markup group |
+| `markup_group_ent_text` | `gamedll` `cheat` | markup_group_ent_text &lt;markup_group name&gt; -&gt; toggle ent_text for all members of the named markup group |
 | `markup_group_spew` | `gamedll` `cheat` | Spew all current markup groups and their members |
 | `mat_assert_on_shader_use` | `developmentonly` | Assert on shader used based on substring of shader name |
 | `mat_clearshadercache` | `developmentonly` `defensive` | Clears the shader cache used for dynamic shader compile. |
-| `mat_debug` | `developmentonly` `clientdll` `defensive` | Sets a mat_fullbright debug visualization mode |
+| `mat_debug` | `developmentonly` `clientdll` `defensive` `autocomplete` | Sets a mat_fullbright debug visualization mode |
 | `mat_disable_dynamic_shader_compile` | `developmentonly` `defensive` | Reloads all shaders from vcs files until the next time mat_reloadshaders is called |
-| `mat_forcereloadshaders` | `developmentonly` `defensive` | Force reloads all shaders (skips MD5 check). Takes optional substrings of shader names to recompile as arguments. |
+| `mat_forcereloadshaders` | `developmentonly` `defensive` `autocomplete` | Force reloads all shaders (skips MD5 check). Takes optional substrings of shader names to recompile as arguments. |
 | `mat_print_dead_materials` | `developmentonly` `defensive` | Print loaded materials that have no valid layers due to not supporting any of the modes in gameinfo.gi. |
 | `mat_print_error_materials` | `developmentonly` `defensive` | Print loaded materials that are using the error shader or material. |
 | `mat_print_expensive_materials` | `developmentonly` `defensive` | Print materials sorted by cost heuristic |
@@ -767,12 +615,12 @@ Format: find_ent_index <index>
 | `mat_print_textures_size` | `developmentonly` `defensive` | Print loaded textures in ascending size order. Takes an optional substring as an argument. |
 | `mat_print_textures_size_in_memory` | `developmentonly` `defensive` | Print loaded textures in ascending size order as they are in memory. Takes an optional substring as an argument. |
 | `mat_reinitmaterials` | `developmentonly` `defensive` | Reinitializes all loaded materials, reloading their shaders. |
-| `mat_reloadshaders` | `developmentonly` `defensive` | Reloads all shaders. Takes optional substrings of shader names to recompile as arguments. |
+| `mat_reloadshaders` | `developmentonly` `defensive` `autocomplete` | Reloads all shaders. Takes optional substrings of shader names to recompile as arguments. |
 | `mat_reset_material_costs` | `developmentonly` `defensive` | Reset material cost heuristic |
 | `mat_set_shader_quality` | `developmentonly` `defensive` | Force shader quality setting (valid values are 0 or 1) |
 | `matchdraft_debug_sendlog` | `clientdll` `hidden` `dontrecord` `release` `clientcmd_can_execute` | Print debug draft into HTTP log |
 | `mem_compact` | `developmentonly` `defensive` | Compacts the heap |
-| `mem_dump` | `developmentonly` `defensive` | Dump memory stats to text file or <stdout>. |
+| `mem_dump` | `developmentonly` `defensive` | Dump memory stats to text file or &lt;stdout&gt;. |
 | `mem_test` | `developmentonly` `defensive` |  |
 | `memory` | `developmentonly` `defensive` | Print memory stats. |
 | `memory_check_limit` | `developmentonly` | Assert if peak memory use is over the limit. |
@@ -790,7 +638,7 @@ Format: find_ent_index <index>
 | `mp_debug_timeouts` | `developmentonly` `gamedll` `defensive` | Prints time outs to the console for debugging |
 | `mp_disable_autokick` | `gamedll` `release` | Prevents a userid from being auto-kicked |
 | `mp_dump_timers` | `developmentonly` `gamedll` `defensive` | Prints round timers to the console for debugging |
-| `mp_modify_timeouts` | `gamedll` `release` | mp_modify_timeouts <CT\|T> <N>, e.g., mp_modify ct -1 |
+| `mp_modify_timeouts` | `gamedll` `release` | mp_modify_timeouts &lt;CT\|T&gt; &lt;N&gt;, e.g., mp_modify ct -1 |
 | `mp_pause_match` | `gamedll` `release` | Pause the match in the next freeze time |
 | `mp_scrambleteams` | `gamedll` `release` | Scramble the teams and restart the game |
 | `mp_swapteams` | `gamedll` `release` | Swap the teams and restart the game |
@@ -805,7 +653,7 @@ Format: find_ent_index <index>
 | `nav_begin_drag_selecting` | `gamedll` `cheat` | Start dragging a selection area. |
 | `nav_begin_selecting` | `gamedll` `cheat` | Start continuously adding to the selected set. |
 | `nav_check_connectivity` | `gamedll` `cheat` | Checks to be sure every (or just the marked) nav area can get to every goal area for the map (hostages or bomb site). |
-| `nav_clear_attribute` | `gamedll` `cheat` | Remove given nav attribute from all areas in the selected set. |
+| `nav_clear_attribute` | `gamedll` `cheat` `autocomplete` | Remove given nav attribute from all areas in the selected set. |
 | `nav_clear_attributes` | `gamedll` `cheat` | Clear all nav attributes of selected area. |
 | `nav_clear_selected_set` | `gamedll` `cheat` | Clear the selected set. |
 | `nav_create_indirect_connection` | `gamedll` `cheat` | Create a connection between the selected area and the area pointed at by the crosshair. |
@@ -821,13 +669,13 @@ Format: find_ent_index <index>
 | `nav_lower_drag_volume_max` | `gamedll` `cheat` | Lower the top of the drag select volume. |
 | `nav_lower_drag_volume_min` | `gamedll` `cheat` | Lower the bottom of the drag select volume. |
 | `nav_mark` | `gamedll` `cheat` | Marks the Area or Ladder under the cursor for manipulation by subsequent editing commands. |
-| `nav_mark_attribute` | `gamedll` `cheat` | Set nav attribute for all areas in the selected set. |
+| `nav_mark_attribute` | `gamedll` `cheat` `autocomplete` | Set nav attribute for all areas in the selected set. |
 | `nav_raise_drag_volume_max` | `gamedll` `cheat` | Raise the top of the drag select volume. |
 | `nav_raise_drag_volume_min` | `gamedll` `cheat` | Raise the bottom of the drag select volume. |
 | `nav_recall_selected_set` | `gamedll` `cheat` | Re-selects the stored selected set. |
 | `nav_remove_from_selected_set` | `gamedll` `cheat` | Remove current area from the selected set. |
 | `nav_select_radius` | `gamedll` `cheat` | Adds all areas in a radius to the selection set |
-| `nav_select_with_attribute` | `gamedll` `cheat` | Selects areas with the given attribute. |
+| `nav_select_with_attribute` | `gamedll` `cheat` `autocomplete` | Selects areas with the given attribute. |
 | `nav_set_movable_mesh_dormant_flag` | `gamedll` `cheat` | Set the movable mesh dormant flag (0=active, 1=dormant) |
 | `nav_split` | `gamedll` `cheat` | To split an Area into two, align the split line using your cursor and invoke the split command. |
 | `nav_store_selected_set` | `gamedll` `cheat` | Stores the current selected set for later retrieval. |
@@ -846,13 +694,12 @@ Format: find_ent_index <index>
 | `notarget` | `gamedll` `cheat` `client_can_execute` | Toggle. Player becomes hidden to NPCs. |
 | `open_asset` | `developmentonly` `defensive` | Opens an asset in it's primary editor of choice. Specify the full path to the asset from the mod directory. |
 | `open_current_map_in_hammer` | `developmentonly` | opens the current map in hammer. |
-| `open_current_map_pulse_in_tool` | `developmentonly` `vconsole_fuzzy_matching` | Opens the specified pulse used in this map in the editor.
-	Arguments: <pulse_file> |
+| `open_current_map_pulse_in_tool` | `developmentonly` `vconsole_fuzzy_matching` `autocomplete` | Opens the specified pulse used in this map in the editor.<br>Arguments: &lt;pulse_file&gt; |
 | `p2p_listpeers` | `developmentonly` `defensive` | List currently known peers. |
 | `p2p_ping` | `developmentonly` `clientdll` `defensive` | Ping a peer. |
 | `panorama_console_reset_size_and_position` | `linked_concommand` `developmentonly` `clientdll` `hidden` `defensive` | Resets the panorama console to its default size and position |
 | `panorama_dispatch_event` | `developmentonly` `defensive` | Dispatch the event defined by the argument string. No creating panel is specified. |
-| `panorama_dump_symbols` | `developmentonly` `defensive` | <ESymbolType> Dump all of the symbols in the Panorama symbol table |
+| `panorama_dump_symbols` | `developmentonly` `defensive` | &lt;ESymbolType&gt; Dump all of the symbols in the Panorama symbol table |
 | `panorama_generate_layout_xsd` | `developmentonly` `defensive` | Generate the Layout XML Schema Definition for the current run-time (types are dependent on which game DLL is running). |
 | `panorama_print_cache_status` | `developmentonly` `defensive` | Print internal panorama refcounts for every file |
 | `panorama_print_svg_stats` | `developmentonly` |  |
@@ -862,15 +709,10 @@ Format: find_ent_index <index>
 | `particle_stop_all` | `developmentonly` `clientdll` `cheat` | Stops all particle systems currently playing |
 | `particle_stop_specified` | `developmentonly` `clientdll` `cheat` | Stops all particle systems that match specified name |
 | `particle_stop_unspecified` | `developmentonly` `clientdll` `cheat` | Stops all particle systems that don't match specified name |
-| `particle_test_create` | `gamedll` `cheat` | Creates the named particle system where the player is looking.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `particle_test_destroy` | `gamedll` `cheat` | Destroys all particle systems matching the specified name.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `particle_test_start` | `gamedll` `cheat` | Dispatches the test particle system with the parameters specified in particle_test_file,
- particle_test_attach_mode and particle_test_attach_param on the entity the player is looking at.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `particle_test_stop` | `gamedll` `cheat` | Stops all particle systems on the selected entities.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `particle_test_create` | `gamedll` `cheat` | Creates the named particle system where the player is looking.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `particle_test_destroy` | `gamedll` `cheat` | Destroys all particle systems matching the specified name.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `particle_test_start` | `gamedll` `cheat` | Dispatches the test particle system with the parameters specified in particle_test_file,<br>particle_test_attach_mode and particle_test_attach_param on the entity the player is looking at.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `particle_test_stop` | `gamedll` `cheat` | Stops all particle systems on the selected entities.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `path` | `developmentonly` `defensive` | Show the filesystem path. |
 | `pause` | `release` | Toggle the server pause state. |
 | `perfectworld_replenish_funds` | `clientdll` `hidden` `clientcmd_can_execute` | Opens Perfect World funds replenishment page for account. |
@@ -879,40 +721,23 @@ Format: find_ent_index <index>
 | `phys_dump_intersection_controller` | `developmentonly` `gamedll` | Dump intersection controller status |
 | `phys_dump_main_world` | `developmentonly` `gamedll` | Dump physics main world to file |
 | `phys_dump_memory` | `developmentonly` `gamedll` | Dump memory usage |
-| `phys_list` | `developmentonly` `gamedll` | List all physics component contents of every entity in the game;
-    -stream [1\|0]         initiate\|terminate streaming to physics debugger
-    -allents              include non-physical entities
-    -classes              print class names
-    -sdk                  Rubikon-wide memory short status
-    -sdk -struct          Rubikon-wide memory use per struct
-    -sdk -rebuildsvms     Rubikon-wide SVM force rebuild and status
-    -world                current state of the world
-    -world -touch         list body pairs (bodies in contact)
-    -world -save <name>   save world to a file
-    -world -mem           memory dump (separately per game dll)
-    -world -snapshots     Start/Stop dumping snapshots of the world into the current directory
-    -world -agg           current aggregate data registry (loaded resources)
- |
+| `phys_list` | `developmentonly` `gamedll` | List all physics component contents of every entity in the game;<br>-stream [1\|0]         initiate\|terminate streaming to physics debugger<br>-allents              include non-physical entities<br>-classes              print class names<br>-sdk                  Rubikon-wide memory short status<br>-sdk -struct          Rubikon-wide memory use per struct<br>-sdk -rebuildsvms     Rubikon-wide SVM force rebuild and status<br>-world                current state of the world<br>-world -touch         list body pairs (bodies in contact)<br>-world -save &lt;name&gt;   save world to a file<br>-world -mem           memory dump (separately per game dll)<br>-world -snapshots     Start/Stop dumping snapshots of the world into the current directory<br>-world -agg           current aggregate data registry (loaded resources) |
 | `phys_shoot` | `gamedll` `cheat` | Shoots a phys object. |
 | `phys_sleep` | `developmentonly` `gamedll` | Put all physics in all the worlds to sleep |
 | `phys_wakeup` | `developmentonly` `gamedll` | Wake all physics objects in the Main physics up |
 | `physics_add_test` | `developmentonly` `gamedll` | add test object |
 | `physics_debug_entity` | `developmentonly` `gamedll` `defensive` | Dumps debug info for an entity |
-| `physics_highlight_active` | `developmentonly` `gamedll` | Turns on the absbox for all active physics objects.
-  0 : un-highlight.
- |
+| `physics_highlight_active` | `developmentonly` `gamedll` | Turns on the absbox for all active physics objects.<br>0 : un-highlight. |
 | `physics_remove_test` | `developmentonly` `gamedll` | remove test object |
-| `physics_report_active` | `developmentonly` `gamedll` | Lists all active physics objects
-  -more : extra info
- |
+| `physics_report_active` | `developmentonly` `gamedll` | Lists all active physics objects<br>-more : extra info |
 | `pixelvis_debug` | `cheat` | Dump debug info |
 | `plant_bomb` | `gamedll` `cheat` | Plant a bomb where the player is looking. |
 | `play` | `server_can_execute` | Play a sound. |
 | `playcast` | `release` | Play a broadcast |
-| `playdemo` | `release` | Play a recorded demo file (.dem ). |
+| `playdemo` | `release` `autocomplete` | Play a recorded demo file (.dem ). |
 | `player_ping` | `gamedll` `client_can_execute` | Creates a ping notification where the player is looking. |
-| `playsound` | `developmentonly` `defensive` | playsound <soundname> |
-| `playsoundscape` | `clientdll` `cheat` | Forces a soundscape to play |
+| `playsound` | `developmentonly` `defensive` `autocomplete` | playsound &lt;soundname&gt; |
+| `playsoundscape` | `clientdll` `cheat` `autocomplete` | Forces a soundscape to play |
 | `playvol` | `developmentonly` `defensive` | Play a sound at a specified volume. |
 | `png_screenshot` | `developmentonly` `defensive` | Take a .png screenshot: png_screenshot [filename] |
 | `pop_var_values` | `developmentonly` `defensive` | Restore previously pushed convars and config values |
@@ -921,12 +746,10 @@ Format: find_ent_index <index>
 | `print_mapgroup_sv` | `gamedll` `release` | Prints the current mapgroup and the contained maps |
 | `progress_enable` | `developmentonly` `defensive` |  |
 | `prop_debug` | `gamedll` `cheat` | Toggle prop debug mode. If on, props will show colorcoded bounding boxes. Red means ignore all damage. White means respond physically to damage but never break. Green maps health in the range of 100 down to 1. |
-| `prop_dynamic_create` | `gamedll` `cheat` | Creates a dynamic prop with a specific .vmdl aimed away from where the player is looking.
-	Arguments: {.vmdl name} |
-| `prop_physics_create` | `gamedll` `cheat` | Creates a physics prop with a specific .vmdl aimed away from where the player is looking.
-	Arguments: {.vmdl name} |
-| `pulse_debug_entity` | `gamedll` `cheat` `vconsole_fuzzy_matching` | Opens a graph referencing the selected entity. If it is referenced by more than 1 graph, list all the active pulse graph instances referring to that entity so you can pick which one you want. |
-| `pulse_debug_print` | `developmentonly` | Usage: pulse_debug_print <vpulse_resource> |
+| `prop_dynamic_create` | `gamedll` `cheat` | Creates a dynamic prop with a specific .vmdl aimed away from where the player is looking.<br>Arguments: {.vmdl name} |
+| `prop_physics_create` | `gamedll` `cheat` | Creates a physics prop with a specific .vmdl aimed away from where the player is looking.<br>Arguments: {.vmdl name} |
+| `pulse_debug_entity` | `gamedll` `cheat` `vconsole_fuzzy_matching` `autocomplete` | Opens a graph referencing the selected entity. If it is referenced by more than 1 graph, list all the active pulse graph instances referring to that entity so you can pick which one you want. |
+| `pulse_debug_print` | `developmentonly` | Usage: pulse_debug_print &lt;vpulse_resource&gt; |
 | `pulse_list_game_blackboards` | `gamedll` `cheat` | List all the active pulse graph instances |
 | `pulse_list_graphs` | `cheat` | List all the active pulse graph instances |
 | `pulse_open_graph_id` | `cheat` | Open a specific graph instance by id |
@@ -940,8 +763,8 @@ Format: find_ent_index <index>
 | `r_print_texture_stats` | `developmentonly` `defensive` | Texture stats |
 | `r_render_coordination_state` | `developmentonly` `defensive` | Prints out the current render coordination state. |
 | `r_renderdoc_capture_frame` | `linked_concommand` `developmentonly` `defensive` | Triggers a RenderDoc capture |
-| `r_renderdoc_capture_window_dx11` | `developmentonly` | Triggers a RenderDoc capture of a specific Window |
-| `r_renderdoc_capture_window_vulkan` | `developmentonly` | Triggers a RenderDoc capture of a specific Window |
+| `r_renderdoc_capture_window_dx11` | `developmentonly` `autocomplete` | Triggers a RenderDoc capture of a specific Window |
+| `r_renderdoc_capture_window_vulkan` | `developmentonly` `autocomplete` | Triggers a RenderDoc capture of a specific Window |
 | `r_textures_evict_all` | `linked_concommand` `developmentonly` `defensive` | Evict all resident texture. |
 | `r_toggleviewportsize` | `developmentonly` `defensive` | Toggles viewport size between small + full window. |
 | `r_viewport` | `developmentonly` `defensive` | Slams viewport size to a specified value. |
@@ -961,27 +784,25 @@ Format: find_ent_index <index>
 | `regenerate_weapon_skins` | `clientdll` `cheat` |  |
 | `reload_store_config` | `developmentonly` `clientdll` `defensive` |  |
 | `reloadgame` | `cheat` `vconsole_set_focus` | Reload the most recent saved game. |
-| `remove_weapon` | `gamedll` `cheat` `client_can_execute` | Remove a weapon held by the player.
-	Arguments: <weapon subclass name> |
-| `removeid` | `developmentonly` `defensive` | Remove a user ID from the ban list. |
-| `removeip` | `developmentonly` `defensive` | Remove an IP address from the ban list. |
+| `remove_weapon` | `gamedll` `cheat` `client_can_execute` `autocomplete` | Remove a weapon held by the player.<br>Arguments: &lt;weapon subclass name&gt; |
+| `removeid` | `developmentonly` `defensive` `autocomplete` | Remove a user ID from the ban list. |
+| `removeip` | `developmentonly` `defensive` `autocomplete` | Remove an IP address from the ban list. |
 | `repeat_last_console_command` | `release` | Repeat last console command. |
 | `replant_bomb` | `gamedll` `cheat` |  |
 | `replay_death` | `gamedll` `cheat` | start hltv replay of last death |
-| `replay_start` | `gamedll` `cheat` `client_can_execute` | Start Source2 TV replay: replay_start <delay>\|stash [<player name or index>] |
+| `replay_start` | `gamedll` `cheat` `client_can_execute` | Start Source2 TV replay: replay_start &lt;delay&gt;\|stash [&lt;player name or index&gt;] |
 | `replay_stop` | `gamedll` `client_can_execute` | stop hltv replay |
 | `report_entities` | `developmentonly` `gamedll` `cheat` | Lists all entities |
 | `report_simthinklist` | `developmentonly` `gamedll` | Lists all simulating/thinking entities |
 | `report_soundpatch` | `developmentonly` `gamedll` `defensive` | reports sound patch count |
 | `reset_gameconvars` | `cheat` | Reset game convars to default values |
-| `resource_leaks` | `developmentonly` `defensive` | resource_leaks <resource_name>: Show resource leaks for the named resource |
+| `resource_leaks` | `developmentonly` `defensive` | resource_leaks &lt;resource_name&gt;: Show resource leaks for the named resource |
 | `resource_list` | `developmentonly` `defensive` | List loaded resources matching a substring |
 | `resource_log_allocate_timing` | `developmentonly` `defensive` | Log time spent in Allocate for all resource types |
 | `resource_manifest_validate_modules` | `developmentonly` `defensive` | Scan all of the loaded modules and validate any resource manifests found |
-| `resource_repeated_reload` | `developmentonly` `defensive` | resource_repeated_reload <count> <resource_name> (<resource name> ...): Load and unload the specified resource(s) |
+| `resource_repeated_reload` | `developmentonly` `defensive` | resource_repeated_reload &lt;count&gt; &lt;resource_name&gt; (&lt;resource name&gt; ...): Load and unload the specified resource(s) |
 | `resource_reset_allocate_timing` | `developmentonly` `defensive` | Reset tracked time spent in Allocate (see resource_log_allocate_timing) |
-| `respawn_player` | `gamedll` `cheat` | Respawns the player from death!
- |
+| `respawn_player` | `gamedll` `cheat` | Respawns the player from death! |
 | `restart` | `cheat` `vconsole_set_focus` | Poor man's restart: reload the current map from disk. |
 | `restart_in_insecure` | `clientdll` `hidden` `clientcmd_can_execute` | Restart in insecure mode |
 | `restart_in_trusted` | `clientdll` `hidden` `clientcmd_can_execute` | Restart in trusted mode |
@@ -991,10 +812,7 @@ Format: find_ent_index <index>
 | `retake_barrier_point` | `gamedll` `cheat` |  |
 | `retake_barrier_spawn` | `gamedll` `cheat` |  |
 | `rr_dump_rules` | `gamedll` `cheat` | Print all response rules |
-| `rr_forceconcept` | `gamedll` `cheat` | fire a response concept directly at a given character.
-USAGE: rr_forceconcept <target name or index> <concept> "criteria1:value1,criteria2:value2,..."
-criteria values are optional.
- |
+| `rr_forceconcept` | `gamedll` `cheat` | fire a response concept directly at a given character.<br>USAGE: rr_forceconcept &lt;target name or index&gt; &lt;concept&gt; "criteria1:value1,criteria2:value2,..."<br>criteria values are optional. |
 | `rs_dump_stats` | `developmentonly` | rs_dump_stats - Dump resourcesystem stats. |
 | `run_perftest` | `cheat` `dontrecord` | Execute perftest.cfg |
 | `save` | `developmentonly` `gamedll` `dontrecord` `defensive` | Save Game |
@@ -1002,19 +820,17 @@ criteria values are optional.
 | `save_finish_async` | `developmentonly` `gamedll` `defensive` |  |
 | `save_set_subdirectory` | `developmentonly` `gamedll` `replicated` `defensive` |  |
 | `save_showelapsedtime` | `developmentonly` `gamedll` `defensive` | display up-to-date elapsed play time |
-| `save_watchclass` | `developmentonly` `gamedll` `defensive` | Restrict spew to entities with matching classname |
+| `save_watchclass` | `developmentonly` `gamedll` `defensive` `autocomplete` | Restrict spew to entities with matching classname |
 | `save_watchentity` | `developmentonly` `gamedll` `defensive` | Restrict spew to entity index |
 | `say` | `gamedll` `client_can_execute` | Display player message |
 | `say_team` | `gamedll` `client_can_execute` | Display player message to team |
-| `sc_dumpworld` | `cheat` | Dump a list of the objects in a sceneworld (Usage: sc_dumpworld <world_index>) |
-| `sc_dumpworld3d` | `cheat` | Dump the objects in a sceneworld into a 3d geoview buffer (Usage: sc_dumpworld3d <world_index>) |
+| `sc_dumpworld` | `cheat` | Dump a list of the objects in a sceneworld (Usage: sc_dumpworld &lt;world_index&gt;) |
+| `sc_dumpworld3d` | `cheat` | Dump the objects in a sceneworld into a 3d geoview buffer (Usage: sc_dumpworld3d &lt;world_index&gt;) |
 | `sc_list_extradata_allocations` | `developmentonly` `defensive` | Prints out the overall extra data allocation counts |
 | `sc_listworlds` | `cheat` | List all the active sceneworlds |
-| `sc_setclassflags` | `cheat` | Low level command to set the flags byte associated with an object class. sc_SetClassFlags <classname> <value>
- |
-| `sc_showclasses` | `cheat` | List the object class names known by scenesystem
- |
-| `scene_playvcd` | `gamedll` `cheat` | Play the given VCD as an instanced scripted scene. |
+| `sc_setclassflags` | `cheat` | Low level command to set the flags byte associated with an object class. sc_SetClassFlags &lt;classname&gt; &lt;value&gt; |
+| `sc_showclasses` | `cheat` | List the object class names known by scenesystem |
+| `scene_playvcd` | `gamedll` `cheat` `autocomplete` | Play the given VCD as an instanced scripted scene. |
 | `screenshot` | `developmentonly` `defensive` | Take a screenshot: screenshot [filename] |
 | `script_add_debug_filter` | `gamedll` `cheat` | Add a filter to the game debug overlay |
 | `script_add_watch` | `gamedll` `cheat` | Add a watch to the game debug overlay |
@@ -1023,7 +839,7 @@ criteria values are optional.
 | `script_clear_watches` | `gamedll` `cheat` | Clear all watches from the game debug overlay |
 | `script_debug` | `gamedll` `cheat` | Toggle the in-game script debug features |
 | `script_dump_all` | `gamedll` `cheat` | Dump the state of the VM to the console |
-| `script_find` | `gamedll` `cheat` | Find a key in the VM  |
+| `script_find` | `gamedll` `cheat` | Find a key in the VM |
 | `script_help` | `gamedll` `cheat` | Output help for script functions |
 | `script_help2` | `developmentonly` `gamedll` `defensive` | Output help for script functions suitable for auto-completion |
 | `script_reload` | `gamedll` `cheat` | Reload scripts |
@@ -1043,12 +859,12 @@ criteria values are optional.
 | `sellbackall` | `clientdll` `clientcmd_can_execute` | Attempt to refund all equipment |
 | `send_round_backup_file_list` | `gamedll` `hidden` `release` |  |
 | `server_game_time` | `developmentonly` `gamedll` `defensive` | Gives the game time in seconds (server's curtime) |
-| `server_snd_cast` | `gamedll` `cheat` | Casts a ray and starts a sound event where the ray hits. The sound event will retrigger periodically. Usage: server_snd_cast <eventname> [<retrigger time>] [<max distance>]. Arguments that are specified will become defaults for the remainder of the session. |
-| `server_snd_pos` | `gamedll` `cheat` | Starts a sound event at a given position. The sound event will retrigger periodically. Usage: server_snd_pos <eventname> <retrigger time> <x> <y> <z>. |
+| `server_snd_cast` | `gamedll` `cheat` | Casts a ray and starts a sound event where the ray hits. The sound event will retrigger periodically. Usage: server_snd_cast &lt;eventname&gt; [&lt;retrigger time&gt;] [&lt;max distance&gt;]. Arguments that are specified will become defaults for the remainder of the session. |
+| `server_snd_pos` | `gamedll` `cheat` | Starts a sound event at a given position. The sound event will retrigger periodically. Usage: server_snd_pos &lt;eventname&gt; &lt;retrigger time&gt; &lt;x&gt; &lt;y&gt; &lt;z&gt;. |
 | `servervoice_clear` | `developmentonly` `clientdll` `defensive` | servervoice_clear |
 | `servervoice_dump` | `developmentonly` `clientdll` `defensive` | servervoice_dump |
-| `setang` | `gamedll` `cheat` `client_can_execute` | Snap player eyes to specified pitch yaw <roll:optional> (must have sv_cheats). |
-| `setang_exact` | `gamedll` `cheat` `client_can_execute` | Snap player eyes and orientation to specified pitch yaw <roll:optional> (must have sv_cheats). |
+| `setang` | `gamedll` `cheat` `client_can_execute` | Snap player eyes to specified pitch yaw &lt;roll:optional&gt; (must have sv_cheats). |
+| `setang_exact` | `gamedll` `cheat` `client_can_execute` | Snap player eyes and orientation to specified pitch yaw &lt;roll:optional&gt; (must have sv_cheats). |
 | `setinfo` | `clientcmd_can_execute` | Adds a new user info value |
 | `setmodel` | `gamedll` `cheat` | Changes's player's model |
 | `setpause` | `release` | Set the pause state of the server. |
@@ -1056,10 +872,8 @@ criteria values are optional.
 | `setpos_exact` | `gamedll` `cheat` `client_can_execute` | Move player to an exact specified origin (must have sv_cheats). |
 | `setpos_player` | `gamedll` `cheat` `client_can_execute` | Move specified player to specified origin (must have sv_cheats). |
 | `shake` | `gamedll` `cheat` | Shake the screen. |
-| `shake_stop` | `clientdll` `cheat` | Stops all active screen shakes.
- |
-| `shake_testpunch` | `clientdll` `cheat` | Test a punch-style screen shake.
- |
+| `shake_stop` | `clientdll` `cheat` | Stops all active screen shakes. |
+| `shake_testpunch` | `clientdll` `cheat` | Test a punch-style screen shake. |
 | `shatterglass_break` | `gamedll` `cheat` |  |
 | `shatterglass_restore` | `gamedll` `cheat` |  |
 | `show_loadout_toggle` | `clientdll` `clientcmd_can_execute` | Toggles loadout display |
@@ -1067,8 +881,7 @@ criteria values are optional.
 | `showconsole` | `dontrecord` `release` | Show the console. |
 | `showents` | `gamedll` `cheat` | Dump entity list to console. |
 | `showtriggers` | `gamedll` `cheat` | Enable or Disable showing trigger entities |
-| `showtriggers_toggle` | `gamedll` `cheat` | Displays the movement bounding box for the triggers in orange.  Some entites will also display entity specific overlays.
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `showtriggers_toggle` | `gamedll` `cheat` | Displays the movement bounding box for the triggers in orange.  Some entites will also display entity specific overlays.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `slot0` | `clientdll` `server_can_execute` |  |
 | `slot1` | `clientdll` `server_can_execute` |  |
 | `slot10` | `clientdll` `server_can_execute` |  |
@@ -1095,7 +908,7 @@ criteria values are optional.
 | `snd_beatpattern_set_track_bpm` | `cheat` | Sets the tempo of the specified track |
 | `snd_beatpattern_set_track_transpose` | `cheat` | Sets the transposition of the specified track |
 | `snd_beatpattern_stop_all_tracks` | `cheat` | Stops all currently playing patterns |
-| `snd_cast` | `cheat` | Casts a ray and starts a sound event where the ray hits. The sound event will retrigger periodically if cl_snd_cast_retrigger is set. The sound event will clear previous snd_cast events if cl_snd_cast_clear is set. Usage: snd_cast <eventname> [<retrigger time>] [<max distance>]. Arguments that are specified will become defaults for the remainder of the session. |
+| `snd_cast` | `cheat` `autocomplete` | Casts a ray and starts a sound event where the ray hits. The sound event will retrigger periodically if cl_snd_cast_retrigger is set. The sound event will clear previous snd_cast events if cl_snd_cast_clear is set. Usage: snd_cast &lt;eventname&gt; [&lt;retrigger time&gt;] [&lt;max distance&gt;]. Arguments that are specified will become defaults for the remainder of the session. |
 | `snd_compare_soundevents` | `developmentonly` `cheat` | Compare the compiled and loaded contents of 2 soundevents. |
 | `snd_cs_duck_reverb` | `developmentonly` `clientdll` `defensive` | One shot trigger to duck reverb for a few seconds. |
 | `snd_front_headphone_position` | `developmentonly` `defensive` | Specifies the position (in degrees) of the virtual front left/right headphones. |
@@ -1109,8 +922,8 @@ criteria values are optional.
 | `snd_list_soundevents_by_stack` | `developmentonly` `cheat` | List all available soundevents using specified stack name |
 | `snd_print_current_mixer_mixgroup` | `developmentonly` `defensive` | Get data related to mix group matching string |
 | `snd_print_samplers` | `cheat` | List all available samplers |
-| `snd_print_soundevent` | `developmentonly` `vconsole_fuzzy_matching` `vconsole_set_focus` | Print the data associated with the specified soundevent. |
-| `snd_print_soundevent_default_public_properties` | `developmentonly` `vconsole_fuzzy_matching` `vconsole_set_focus` | Print the default public properties of a specified soundevent. Values do not reflect values set on the soundevent. For that see "snd_print_soundevent" |
+| `snd_print_soundevent` | `developmentonly` `vconsole_fuzzy_matching` `vconsole_set_focus` `autocomplete` | Print the data associated with the specified soundevent. |
+| `snd_print_soundevent_default_public_properties` | `developmentonly` `vconsole_fuzzy_matching` `vconsole_set_focus` `autocomplete` | Print the default public properties of a specified soundevent. Values do not reflect values set on the soundevent. For that see "snd_print_soundevent" |
 | `snd_purge_vsnd_table` | `developmentonly` | Purges the VSnd table |
 | `snd_rear_headphone_position` | `developmentonly` `defensive` | Specifies the position  (in degrees) of the virtual rear left/right headphones. |
 | `snd_rear_stereo_speaker_position` | `developmentonly` `defensive` | Specifies the position (in degrees) of the virtual rear left/right speakers. |
@@ -1120,7 +933,7 @@ criteria values are optional.
 | `snd_remove_soundevent` | `developmentonly` `cheat` | Remove the specified soundevent |
 | `snd_samplers_play_note` | `cheat` | Play a note from a specified sampler |
 | `snd_samplers_stop_note` | `cheat` | Stop a note from a specified sampler |
-| `snd_set_physics_surface_properties` | `cheat` | Set physics surface properties for materials. Usage: <heuristic #> <commit> |
+| `snd_set_physics_surface_properties` | `cheat` | Set physics surface properties for materials. Usage: &lt;heuristic #&gt; &lt;commit&gt; |
 | `snd_setmixer` | `developmentonly` | Set named Mixgroup of current mixer to mix vol, mute, solo. |
 | `snd_setmixlayer` | `developmentonly` | Set named Mixgroup of named mix layer to mix vol, mute, solo. |
 | `snd_side_surround_speaker_position` | `developmentonly` `defensive` | Specifies the position (in degrees) of the virtual rear left/right speakers. |
@@ -1146,8 +959,8 @@ criteria values are optional.
 | `snd_sos_set_operator_field` | `cheat` | Currently sets a single float operator field |
 | `snd_sos_set_operator_field_by_guid` | `cheat` | Currently sets a single float operator field |
 | `snd_sos_soundevent_profile` | `cheat` | Dump a record of current soundevents and profile data |
-| `snd_sos_start_soundevent` | `cheat` | Starts a specified soundevent |
-| `snd_sos_start_soundevent_at_pos` | `cheat` | Starts a specified soundevent at the given position |
+| `snd_sos_start_soundevent` | `cheat` `autocomplete` | Starts a specified soundevent |
+| `snd_sos_start_soundevent_at_pos` | `cheat` `autocomplete` | Starts a specified soundevent at the given position |
 | `snd_sos_start_stack` | `cheat` | Starts a specified stack via an empty soundevent |
 | `snd_sos_stop_all_soundevents` | `cheat` | Stops all soundevents currently on the execution list |
 | `snd_sos_stop_soundevent_guid` | `cheat` | Stops a specified soundevent |
@@ -1175,9 +988,8 @@ criteria values are optional.
 | `sndplaydelay` | `developmentonly` `defensive` |  |
 | `soundinfo` | `release` | Describe the current sound device with an active voice list. |
 | `soundlist` | `developmentonly` `defensive` | List all known sounds. |
-| `soundscape_dumpclient` | `clientdll` `cheat` | Dumps the client's soundscape data.
- |
-| `soundscape_flush` | `developmentonly` `gamedll` `defensive` | Flushes the server & client side soundscapes |
+| `soundscape_dumpclient` | `clientdll` `cheat` | Dumps the client's soundscape data. |
+| `soundscape_flush` | `developmentonly` `gamedll` `defensive` | Flushes the server &amp; client side soundscapes |
 | `soundsysteminfo` | `developmentonly` `defensive` | Describe the current sound device without an active voice list. |
 | `spawnCashStack` | `developmentonly` `gamedll` `cheat` |  |
 | `spec_goto` | `clientdll` `clientcmd_can_execute` | Move the spectator camera to a specific location. `spec_goto x y z pitch yaw` |
@@ -1197,7 +1009,7 @@ criteria values are optional.
 | `startmovie` | `developmentonly` `dontrecord` `defensive` | Start recording movie frames. |
 | `stats` | `developmentonly` `defensive` | Prints server performance variables |
 | `stats_print` | `developmentonly` `defensive` | Prints out perf statistics to the console, clears perf history |
-| `stats_print_gpu` | `developmentonly` `defensive` | Prints out GPU perf statistics to the console.  Requires stats_display > 0, and stats_collect_gpu = true.  Optional argument of CSV filename |
+| `stats_print_gpu` | `developmentonly` `defensive` | Prints out GPU perf statistics to the console.  Requires stats_display &gt; 0, and stats_collect_gpu = true.  Optional argument of CSV filename |
 | `status` | `release` | Print connection status |
 | `status_json` | `release` | Print status in JSON format |
 | `steamvrevent_quit` | `developmentonly` `gamedll` `hidden` `defensive` | steamvrevent_quit |
@@ -1208,34 +1020,31 @@ criteria values are optional.
 | `stopsound` | `cheat` |  |
 | `stopsoundscape` | `clientdll` `cheat` | Stops all soundscape processing and fades current looping sounds |
 | `stopwatch` | `developmentonly` `clientdll` `defensive` | General purpose timer. use 'stopwatch' to toggle or explicitly call 'stopwatch start' and/or 'stopwatch stop'. |
-| `subclass_change` | `gamedll` `cheat` `vconsole_fuzzy_matching` | Changes the subclass of the given entity.
-	Arguments:   	<new_subclass> {entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
-| `subclass_create` | `gamedll` `cheat` `vconsole_fuzzy_matching` | Creates an entity of the given subclass where the player is looking. |
+| `subclass_change` | `gamedll` `cheat` `vconsole_fuzzy_matching` `autocomplete` | Changes the subclass of the given entity.<br>Arguments:   	&lt;new_subclass&gt; {entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `subclass_create` | `gamedll` `cheat` `vconsole_fuzzy_matching` `autocomplete` | Creates an entity of the given subclass where the player is looking. |
 | `surfaceprop` | `gamedll` `cheat` | Reports the surface properties at the cursor |
 | `sv_annotation_give_weapon` | `gamedll` `hidden` `release` | Give weapon required by annotation |
 | `sv_annotation_remove_weapon` | `gamedll` `hidden` `release` | Remove weapon given by annotation |
 | `sv_clientrates` | `developmentonly` `defensive` | Show client rates. |
 | `sv_cs_dump_econ_item_stringtable` | `developmentonly` `gamedll` `defensive` | sv_cs_dump_econ_item_stringtable |
-| `sv_dev_simulate_gcdown` | `developmentonly` `gamedll` `defensive` | <state> Turn on/off simulated GC communications failure (GC is down in a way that we know it is down) |
+| `sv_dev_simulate_gcdown` | `developmentonly` `gamedll` `defensive` | &lt;state&gt; Turn on/off simulated GC communications failure (GC is down in a way that we know it is down) |
 | `sv_explode_inferno_at_crosshair` | `developmentonly` `gamedll` `cheat` | explodes molotov(0) or Incendiary (1) at crosshair location with single param |
 | `sv_explode_smokegrenade_at_crosshair` | `developmentonly` `gamedll` `cheat` | explodes smoke grenade at crosshair location |
 | `sv_fullupdate` | `developmentonly` `defensive` | Force a full update for all clients. |
 | `sv_game_mode_convars` | `developmentonly` `gamedll` `defensive` | Display the values of the convars for the current game_mode. |
-| `sv_histogram` | `developmentonly` `defensive` | var change info histogram
- |
+| `sv_histogram` | `developmentonly` `defensive` | var change info histogram |
 | `sv_kill_smokegrenade` | `developmentonly` `gamedll` `cheat` | kill all smoke grenades |
 | `sv_load_forced_client_names_file` | `gamedll` `release` | Loads a file containing SteamID64 names for clients |
 | `sv_load_random_client_names_file` | `gamedll` `release` | Loads a file containing random name words for clients |
-| `sv_metaduplication` | `cheat` | Check serializer meta for duplication, add verbose to command for full spew |
+| `sv_metaduplication` | `cheat` `autocomplete` | Check serializer meta for duplication, add verbose to command for full spew |
 | `sv_packstats` | `release` | Show entity packing stats, pass 'clear' as argument to reset counts. |
 | `sv_querycache_stats` | `developmentonly` `gamedll` `defensive` | Display status of the query cache (client only) |
 | `sv_rethrow_last_grenade` | `gamedll` `cheat` | Emit the last grenade thrown on the server. |
-| `sv_setsteamaccount` | `release` | token
-Set game server account token to use for logging in to a persistent game server account |
+| `sv_setsteamaccount` | `release` | token<br>Set game server account token to use for logging in to a persistent game server account |
 | `sv_showtags` | `developmentonly` `defensive` | Describe current gametags. |
 | `sv_shutdown` | `release` | Sets the server to shutdown when all games have completed |
 | `sv_soundscape_printdebuginfo` | `gamedll` `cheat` | print soundscapes |
-| `sv_spewmeta` | `cheat` | Spew serializer meta |
+| `sv_spewmeta` | `cheat` `autocomplete` | Spew serializer meta |
 | `sv_spewworldgroups` | `developmentonly` | Spew world groups (server) |
 | `sv_throw_decoygrenade` | `developmentonly` `gamedll` `cheat` | throw decoy grenade with parmas. |
 | `sv_throw_flashgrenade` | `developmentonly` `gamedll` `cheat` | throw flash grenade with parmas. |
@@ -1249,10 +1058,7 @@ Set game server account token to use for logging in to a persistent game server 
 | `teammenu` | `clientdll` `server_can_execute` | Show team selection window |
 | `telemetry_message` | `gamedll` `cheat` | Place a message in the telemetry timeline |
 | `telemetry_toggle_timespan` | `gamedll` `cheat` | Starts/stops a timespan with an ever increasing name. |
-| `test_dispatcheffect` | `gamedll` `cheat` | Test a clientside dispatch effect.
-	Usage: test_dispatcheffect <effect name> <distance away> <flags> <magnitude> <scale>
-	Defaults are: <distance 1024> <flags 0> <magnitude 0> <scale 0>
- |
+| `test_dispatcheffect` | `gamedll` `cheat` | Test a clientside dispatch effect.<br>Usage: test_dispatcheffect &lt;effect name&gt; &lt;distance away&gt; &lt;flags&gt; &lt;magnitude&gt; &lt;scale&gt;<br>Defaults are: &lt;distance 1024&gt; &lt;flags 0&gt; &lt;magnitude 0&gt; &lt;scale 0&gt; |
 | `test_entity_blocker` | `gamedll` `cheat` | Test command that drops an entity blocker out in front of the player. |
 | `test_list_entities` | `gamedll` `cheat` | test-list entities |
 | `test_shipping_assert` | `release` | Generate an assert to test shipping assertion code |
@@ -1261,8 +1067,8 @@ Set game server account token to use for logging in to a persistent game server 
 | `thirdperson` | `clientdll` `cheat` `execute_per_tick` | Switch to thirdperson camera. |
 | `thirdperson_mayamode` | `clientdll` `cheat` | Switch to thirdperson Maya-like camera controls. |
 | `thirdpersonshoulder` | `developmentonly` `clientdll` `defensive` | Switch to thirdperson-shoulder camera. |
-| `timedemo` | `release` | Play a demo and report performance info. |
-| `timedemoquit` | `release` | Play a demo, report performance info, and then exit |
+| `timedemo` | `release` `autocomplete` | Play a demo and report performance info. |
+| `timedemoquit` | `release` `autocomplete` | Play a demo, report performance info, and then exit |
 | `timeleft` | `gamedll` `client_can_execute` | prints the time remaining in the match |
 | `timeout_ct_start` | `gamedll` `release` |  |
 | `timeout_terrorist_start` | `gamedll` `release` |  |
@@ -1295,7 +1101,7 @@ Set game server account token to use for logging in to a persistent game server 
 | `vis_debug_record_start` | `developmentonly` `defensive` | Record a path to debug vis |
 | `vis_debug_record_stop` | `developmentonly` `defensive` | Record a path to debug vis |
 | `vis_debug_show` | `developmentonly` `defensive` | Show/hide the vis debug visualization |
-| `vis_debug_sunclusters` | `developmentonly` `defensive` | Showing clusters for sun/csm rendering. Red (full sun csm & lighting), Orange (no viewmodel sun or csm), Green (no sun at all) |
+| `vis_debug_sunclusters` | `developmentonly` `defensive` | Showing clusters for sun/csm rendering. Red (full sun csm &amp; lighting), Orange (no viewmodel sun or csm), Green (no sun at all) |
 | `vis_debug_tracelos` | `developmentonly` `defensive` | Trace rays and check vis from the current camera |
 | `vmem_dump` | `developmentonly` `defensive` | Dump memory stats to log. |
 | `vmix_debug_list` | `developmentonly` `defensive` | Debug dump the list of available vmix graphs |
@@ -1326,8 +1132,7 @@ Set game server account token to use for logging in to a persistent game server 
 | `vulkan_shader_table_print` | `developmentonly` `defensive` | Prints out stats for the Vulkan shader table |
 | `vulkan_vma_defrag` | `developmentonly` `defensive` | Force defragmenting memory with VMA |
 | `vulkan_vma_gpu_mem_dump` | `developmentonly` `defensive` | Dump .json file for use by GpuMemDumpVis.py |
-| `weapon_switch` | `developmentonly` `gamedll` | Use a particular weapon	
-Arguments: <weapon_name> |
+| `weapon_switch` | `developmentonly` `gamedll` | Use a particular weapon<br>Arguments: &lt;weapon_name&gt; |
 | `workshop_annotation_submit` | `clientdll` `release` | Submit annotation to workshop. To update an existing submission add its ID number from the workshop URL as a second argument. |
 | `workshop_clear_cloud_save` | `developmentonly` `gamedll` `defensive` | Remove a workshop save from steam cloud. Pass the published file id to delete or 0 to delete the non-workshop addon save. |
 | `workshop_dump_cloud_contents` | `developmentonly` `gamedll` `defensive` | Spew contents of steam cloud. |

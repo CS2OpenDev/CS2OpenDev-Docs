@@ -8,9 +8,11 @@ nav_exclude: true
 
 # CPathQueryUtil
 
-**Kind:** class · **Size:** 128 bytes (`0x80`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
-**Derived by:** [CPathQueryComponent](../server/CPathQueryComponent.md)
+**Kind:** class · **Size:** 128 bytes (`0x80`) · **Align:** n/a (unspecified) · **Module:** server
+
+**Derived by:** [CPathQueryComponent](../server/CPathQueryComponent.md), [CPathQueryComponent](../server/CPathQueryComponent.md)
 
 **Relationships:**
 

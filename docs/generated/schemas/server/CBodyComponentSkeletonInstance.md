@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CBodyComponentSkeletonInstance
+title: CBodyComponentSkeletonInstance (server)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CBodyComponentSkeletonInstance
 
-**Kind:** class · **Size:** 1248 bytes (`0x4e0`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 1248 bytes (`0x4e0`) · **Align:** n/a (unspecified) · **Module:** server
+
+**Twin:** [CBodyComponentSkeletonInstance (client)](../client/CBodyComponentSkeletonInstance.md)
 
 **Inherits from:** [CBodyComponent](../server/CBodyComponent.md)
 

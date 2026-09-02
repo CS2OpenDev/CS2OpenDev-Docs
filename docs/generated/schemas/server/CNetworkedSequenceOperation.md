@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CNetworkedSequenceOperation
+title: CNetworkedSequenceOperation (server)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CNetworkedSequenceOperation
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 40 bytes (`0x28`) · **Align:** 8 · **Module:** server
+
+**Twin:** [CNetworkedSequenceOperation (client)](../client/CNetworkedSequenceOperation.md)
 
 **Relationships:**
 

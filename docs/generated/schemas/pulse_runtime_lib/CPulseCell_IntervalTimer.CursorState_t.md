@@ -8,13 +8,15 @@ nav_exclude: true
 
 # CPulseCell_IntervalTimer::CursorState_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 20 bytes (`0x14`) · **Align:** 4 · **Module:** pulse_runtime_lib
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    "CPulseCell_IntervalTimer::CursorState_t" *-- GameTime_t
+    `CPulseCell_IntervalTimer::CursorState_t` *-- GameTime_t
 ```
 
 ## Memory layout

@@ -8,7 +8,9 @@ nav_exclude: true
 
 # CVNodeTypeDesc
 
-**Kind:** class · **Size:** 136 bytes (`0x88`) · **Align:** 255 · **Module:** sounddoc_lib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 136 bytes (`0x88`) · **Align:** n/a (unspecified) · **Module:** sounddoc_lib
 
 **Derived by:** [CAudioAmpNodeDesc](../sounddoc_lib/CAudioAmpNodeDesc.md), [CAudioBlendDesc](../sounddoc_lib/CAudioBlendDesc.md), [CAudioDualCompressorNodeDesc](../sounddoc_lib/CAudioDualCompressorNodeDesc.md), [CAudioDynamicsCompressorNodeDesc](../sounddoc_lib/CAudioDynamicsCompressorNodeDesc.md), [CAudioDynamicsLimiterNodeDesc](../sounddoc_lib/CAudioDynamicsLimiterNodeDesc.md), [CAudioDynamicsNodeDesc](../sounddoc_lib/CAudioDynamicsNodeDesc.md), [CAudioMixerNodeDesc](../sounddoc_lib/CAudioMixerNodeDesc.md), [CAudioOutputNodeDesc](../sounddoc_lib/CAudioOutputNodeDesc.md), [CAudioTrackNodeDesc](../sounddoc_lib/CAudioTrackNodeDesc.md), [CBlendVsndsToImpulseResponseNodeDesc](../sounddoc_lib/CBlendVsndsToImpulseResponseNodeDesc.md), [CControlAutomaticNodeDesc](../sounddoc_lib/CControlAutomaticNodeDesc.md), [CControlCurveNodeDesc](../sounddoc_lib/CControlCurveNodeDesc.md), [CControlInputArrayNodeDesc](../sounddoc_lib/CControlInputArrayNodeDesc.md), [CControlListenerNodeDesc](../sounddoc_lib/CControlListenerNodeDesc.md), [CControlRemapNodeDesc](../sounddoc_lib/CControlRemapNodeDesc.md), [CDelayImpulseResponseNodeDesc](../sounddoc_lib/CDelayImpulseResponseNodeDesc.md), [CEffectNameInputNodeDesc](../sounddoc_lib/CEffectNameInputNodeDesc.md), [CImpulseResponseInputNodeDesc](../sounddoc_lib/CImpulseResponseInputNodeDesc.md), [CMixControlTransientInputDesc](../sounddoc_lib/CMixControlTransientInputDesc.md), [CMixGroupBoxDesc](../sounddoc_lib/CMixGroupBoxDesc.md), [CRemapVsndToImpulseResponseNodeDesc](../sounddoc_lib/CRemapVsndToImpulseResponseNodeDesc.md), [CVAudioNodeBaseDesc](../sounddoc_lib/CVAudioNodeBaseDesc.md), [CVControlNodeBaseDesc](../sounddoc_lib/CVControlNodeBaseDesc.md), [CVsndInputNodeDesc](../sounddoc_lib/CVsndInputNodeDesc.md)
 

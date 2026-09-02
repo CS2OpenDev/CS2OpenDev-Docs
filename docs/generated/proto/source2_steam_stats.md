@@ -113,7 +113,7 @@ direction LR
     +List~CMsgSource2PerfIntervalSample.Tag~ tags
   }
 
-  class Tag {
+  class CMsgSource2PerfIntervalSample_Tag["CMsgSource2PerfIntervalSample.Tag"] {
     +string tag
     +uint32 max_value
   }
@@ -128,7 +128,7 @@ direction LR
     +string map
   }
 
-  class Client {
+  class CSource2Metrics_MatchPerfSummary_Notification_Client["CSource2Metrics_MatchPerfSummary_Notification.Client"] {
     +CMsgSource2SystemSpecs system_specs
     +CMsgSource2VProfLiteReport profile
     +uint32 build_id
@@ -161,12 +161,12 @@ direction LR
     +List~uint64~ steamid_vals
   }
 
-  class FieldDef {
+  class CMsgSource2PlayStatsPackedRecordList_FieldDef["CMsgSource2PlayStatsPackedRecordList.FieldDef"] {
     +string field_name
     +ESource2PlayStatsFieldType field_type
   }
 
-  class SteamIDList {
+  class CMsgSource2PlayStatsPackedRecordList_SteamIDList["CMsgSource2PlayStatsPackedRecordList.SteamIDList"] {
     +List~fixed64~ steamid
   }
 
@@ -188,7 +188,7 @@ direction LR
     +List~CSource2Metrics_FetchMapData_Response.MapData~ results
   }
 
-  class MapData {
+  class CSource2Metrics_FetchMapData_Response_MapData["CSource2Metrics_FetchMapData_Response.MapData"] {
     +string name
     +string type
     +string data
@@ -205,18 +205,18 @@ direction LR
   }
 
   CMsgSource2VProfLiteReport --> CMsgSource2VProfLiteReportItem : total
-  CMsgSource2PerfIntervalSample --> Tag : tags[]
+  CMsgSource2PerfIntervalSample --> CMsgSource2PerfIntervalSample_Tag : tags[]
   CSource2Metrics_MatchPerfSummary_Notification --> CMsgSource2VProfLiteReport : server_profile
-  CSource2Metrics_MatchPerfSummary_Notification --> Client : clients[]
-  Client --> CMsgSource2SystemSpecs : system_specs
-  Client --> CMsgSource2VProfLiteReport : profile
-  Client --> CMsgSource2NetworkFlowQuality : downstream_flow
-  Client --> CMsgSource2PerfIntervalSample : perf_samples[]
-  CMsgSource2PlayStatsPackedRecordList --> FieldDef : field_defs[]
-  CMsgSource2PlayStatsPackedRecordList --> SteamIDList : trustbucket_vals[]
-  FieldDef --> ESource2PlayStatsFieldType : field_type
+  CSource2Metrics_MatchPerfSummary_Notification --> CSource2Metrics_MatchPerfSummary_Notification_Client : clients[]
+  CSource2Metrics_MatchPerfSummary_Notification_Client --> CMsgSource2SystemSpecs : system_specs
+  CSource2Metrics_MatchPerfSummary_Notification_Client --> CMsgSource2VProfLiteReport : profile
+  CSource2Metrics_MatchPerfSummary_Notification_Client --> CMsgSource2NetworkFlowQuality : downstream_flow
+  CSource2Metrics_MatchPerfSummary_Notification_Client --> CMsgSource2PerfIntervalSample : perf_samples[]
+  CMsgSource2PlayStatsPackedRecordList --> CMsgSource2PlayStatsPackedRecordList_FieldDef : field_defs[]
+  CMsgSource2PlayStatsPackedRecordList --> CMsgSource2PlayStatsPackedRecordList_SteamIDList : trustbucket_vals[]
+  CMsgSource2PlayStatsPackedRecordList_FieldDef --> ESource2PlayStatsFieldType : field_type
   CSource2Metrics_RecordPlayStats_Notification --> CMsgSource2PlayStatsPackedRecordList : record_types[]
-  CSource2Metrics_FetchMapData_Response --> MapData : results[]
+  CSource2Metrics_FetchMapData_Response --> CSource2Metrics_FetchMapData_Response_MapData : results[]
   CUserMessage_UserSentBugBug --> CMsgSource2SystemSpecs : system_specs
 
   class ESource2PlayStatsFieldType{
@@ -272,8 +272,8 @@ direction LR
 
 ### `CMsgSource2SystemSpecs`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `cpu_id` | 1 | string | optional |  |
 | `cpu_brand` | 2 | string | optional |  |
 | `cpu_model` | 3 | uint32 | optional |  |
@@ -291,8 +291,8 @@ direction LR
 
 ### `CMsgSource2VProfLiteReportItem`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `name` | 1 | string | optional |  |
 | `active_samples` | 2 | uint32 | optional |  |
 | `usec_max` | 3 | uint32 | optional |  |
@@ -314,16 +314,16 @@ direction LR
 
 ### `CMsgSource2VProfLiteReport`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `total` | 1 | [CMsgSource2VProfLiteReportItem](#cmsgsource2vproflitereportitem) | optional |  |
 | `items` | 2 | [CMsgSource2VProfLiteReportItem](#cmsgsource2vproflitereportitem) | repeated |  |
 | `discarded_frames` | 3 | uint32 | optional |  |
 
 ### `CMsgSource2NetworkFlowQuality`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `duration` | 1 | uint32 | optional |  |
 | `bytes_total` | 5 | uint64 | optional |  |
 | `bytes_total_reliable` | 6 | uint64 | optional |  |
@@ -371,33 +371,52 @@ direction LR
 
 ### `CMsgSource2PerfIntervalSample`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `frame_time_max_ms` | 1 | float | optional |  |
 | `frame_time_avg_ms` | 2 | float | optional |  |
 | `frame_time_min_ms` | 3 | float | optional |  |
 | `frame_count` | 4 | int32 | optional |  |
 | `frame_time_total_ms` | 5 | float | optional |  |
-| `tags` | 6 | CMsgSource2PerfIntervalSample.Tag | repeated |  |
+| `tags` | 6 | [CMsgSource2PerfIntervalSample.Tag](#cmsgsource2perfintervalsampletag) | repeated |  |
+
+#### `CMsgSource2PerfIntervalSample.Tag`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `tag` | 1 | string | optional |  |
+| `max_value` | 2 | uint32 | optional |  |
 
 ### `CSource2Metrics_MatchPerfSummary_Notification`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `appid` | 1 | uint32 | optional |  |
 | `game_mode` | 2 | string | optional |  |
 | `server_build_id` | 3 | uint32 | optional |  |
 | `server_popid` | 4 | fixed32 | optional |  |
 | `server_profile` | 10 | [CMsgSource2VProfLiteReport](#cmsgsource2vproflitereport) | optional |  |
-| `clients` | 11 | CSource2Metrics_MatchPerfSummary_Notification.Client | repeated |  |
+| `clients` | 11 | [CSource2Metrics_MatchPerfSummary_Notification.Client](#csource2metrics_matchperfsummary_notificationclient) | repeated |  |
 | `map` | 20 | string | optional |  |
+
+#### `CSource2Metrics_MatchPerfSummary_Notification.Client`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `system_specs` | 1 | [CMsgSource2SystemSpecs](#cmsgsource2systemspecs) | optional |  |
+| `profile` | 2 | [CMsgSource2VProfLiteReport](#cmsgsource2vproflitereport) | optional |  |
+| `build_id` | 3 | uint32 | optional |  |
+| `downstream_flow` | 4 | [CMsgSource2NetworkFlowQuality](#cmsgsource2networkflowquality) | optional |  |
+| `upstream_flow` | 5 | [CMsgSource2NetworkFlowQuality](#cmsgsource2networkflowquality) | optional |  |
+| `steamid` | 10 | fixed64 | optional |  |
+| `perf_samples` | 11 | [CMsgSource2PerfIntervalSample](#cmsgsource2perfintervalsample) | repeated |  |
 
 ### `CMsgSource2PlayStatsPackedRecordList`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `record_name` | 1 | string | optional |  |
-| `field_defs` | 2 | CMsgSource2PlayStatsPackedRecordList.FieldDef | repeated |  |
+| `field_defs` | 2 | [CMsgSource2PlayStatsPackedRecordList.FieldDef](#cmsgsource2playstatspackedrecordlistfielddef) | repeated |  |
 | `record_count` | 3 | uint32 | optional |  |
 | `uint64_vals` | 4 | uint64 | repeated | *(packed)* |
 | `uint32_vals` | 5 | uint32 | repeated | *(packed)* |
@@ -414,20 +433,33 @@ direction LR
 | `low_cardinality_string_vals` | 16 | string | repeated |  |
 | `utcdatetime_vals` | 17 | fixed32 | repeated | *(packed)* |
 | `steamidtrustbucket_vals` | 18 | fixed64 | repeated | *(packed)* |
-| `trustbucket_vals` | 19 | CMsgSource2PlayStatsPackedRecordList.SteamIDList | repeated |  |
+| `trustbucket_vals` | 19 | [CMsgSource2PlayStatsPackedRecordList.SteamIDList](#cmsgsource2playstatspackedrecordliststeamidlist) | repeated |  |
 | `steamid_vals` | 20 | uint64 | repeated | *(packed)* |
+
+#### `CMsgSource2PlayStatsPackedRecordList.FieldDef`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `field_name` | 1 | string | optional |  |
+| `field_type` | 2 | [ESource2PlayStatsFieldType](#esource2playstatsfieldtype) | optional |  |
+
+#### `CMsgSource2PlayStatsPackedRecordList.SteamIDList`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `steamid` | 1 | fixed64 | repeated | *(packed)* |
 
 ### `CSource2Metrics_RecordPlayStats_Notification`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `record_types` | 1 | [CMsgSource2PlayStatsPackedRecordList](#cmsgsource2playstatspackedrecordlist) | repeated |  |
 | `appid` | 2 | uint32 | optional |  |
 
 ### `CSource2Metrics_FetchMapData_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `appid` | 1 | uint32 | optional |  |
 | `map_name` | 2 | string | optional |  |
 | `game_type` | 3 | uint32 | optional |  |
@@ -437,14 +469,22 @@ direction LR
 
 ### `CSource2Metrics_FetchMapData_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `results` | 1 | CSource2Metrics_FetchMapData_Response.MapData | repeated |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `results` | 1 | [CSource2Metrics_FetchMapData_Response.MapData](#csource2metrics_fetchmapdata_responsemapdata) | repeated |  |
+
+#### `CSource2Metrics_FetchMapData_Response.MapData`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `name` | 1 | string | optional |  |
+| `type` | 2 | string | optional |  |
+| `data` | 3 | string | optional |  |
 
 ### `CUserMessage_UserSentBugBug`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `command_line` | 1 | string | optional |  |
 | `autoexec_cfg` | 2 | string | optional |  |
 | `system_specs` | 3 | [CMsgSource2SystemSpecs](#cmsgsource2systemspecs) | optional |  |

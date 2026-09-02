@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CVMixImpulseResponseInput
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** 8 · **Module:** soundsystem_lowlevel
 
 **Inherits from:** [CVMixInputBase](../soundsystem_lowlevel/CVMixInputBase.md)
@@ -21,7 +23,7 @@ classDiagram
 
 ## Memory layout
 
-1 fields (0 declared here, 1 inherited). Offsets are absolute from the object base.
+1 field (0 declared here, 1 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|

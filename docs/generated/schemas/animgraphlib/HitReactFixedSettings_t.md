@@ -8,6 +8,8 @@ nav_exclude: true
 
 # HitReactFixedSettings_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 68 bytes (`0x44`) · **Align:** 4 · **Module:** animgraphlib
 
 ## Memory layout

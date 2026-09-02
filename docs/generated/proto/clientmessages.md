@@ -94,23 +94,23 @@ direction LR
 
 ### `CClientMsg_CustomGameEvent`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `event_name` | 1 | string | optional |  |
 | `data` | 2 | bytes | optional |  |
 
 ### `CClientMsg_CustomGameEventBounce`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `event_name` | 1 | string | optional |  |
 | `data` | 2 | bytes | optional |  |
 | `player_slot` | 3 | int32 | optional | *(default: `-1`)* |
 
 ### `CClientMsg_ClientUIEvent`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `event` | 1 | [EClientUIEvent](#eclientuievent) | optional | *(default: `EClientUIEvent_Invalid`)* |
 | `ent_ehandle` | 2 | uint32 | optional |  |
 | `client_ehandle` | 3 | uint32 | optional |  |
@@ -119,20 +119,20 @@ direction LR
 
 ### `CClientMsg_DevPaletteVisibilityChangedEvent`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `visible` | 1 | bool | optional |  |
 
 ### `CClientMsg_WorldUIControllerHasPanelChangedEvent`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `has_panel` | 1 | bool | optional |  |
 | `client_ehandle` | 2 | uint32 | optional |  |
 | `literal_hand_type` | 3 | uint32 | optional |  |
 
 ### `CClientMsg_RotateAnchor`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `angle` | 1 | float | optional |  |

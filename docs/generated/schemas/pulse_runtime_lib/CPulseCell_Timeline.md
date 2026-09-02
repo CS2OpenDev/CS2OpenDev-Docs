@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CPulseCell_Timeline
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 320 bytes (`0x140`) · **Align:** 8 · **Module:** pulse_runtime_lib
 
 **Inherits from:** [CPulseCell_BaseYieldingInflow](../pulse_runtime_lib/CPulseCell_BaseYieldingInflow.md)
@@ -19,6 +21,7 @@ classDiagram
     CPulseCell_BaseYieldingInflow <|-- CPulseCell_Timeline
     CPulseCell_BaseFlow <|-- CPulseCell_BaseYieldingInflow
     CPulseCell_Base <|-- CPulseCell_BaseFlow
+    CPulseCell_Timeline *-- `CPulseCell_Timeline::TimelineEvent_t`
     CPulseCell_Timeline *-- CPulse_ResumePoint
 ```
 
@@ -31,7 +34,7 @@ classDiagram
 | `0x8` | `m_nEditorNodeID` | [PulseDocNodeID_t](../pulse_runtime_lib/PulseDocNodeID_t.md) | [CPulseCell_Base](../pulse_runtime_lib/CPulseCell_Base.md) | `MFgdFromSchemaCompletelySkipField` |
 | `0x48` | `m_BaseFlow_OnAfterCancel` | [CPulse_ResumePoint](../pulse_runtime_lib/CPulse_ResumePoint.md) | [CPulseCell_BaseYieldingInflow](../pulse_runtime_lib/CPulseCell_BaseYieldingInflow.md) | `MPulseFGDSkipField` |
 | `0x90` | `m_BaseFlow_WhileActive` | [CPulse_ResumePoint](../pulse_runtime_lib/CPulse_ResumePoint.md) | [CPulseCell_BaseYieldingInflow](../pulse_runtime_lib/CPulseCell_BaseYieldingInflow.md) | `MPulseFGDSkipField` |
-| `0xd8` | `m_TimelineEvents` | CUtlVector< [CPulseCell_Timeline](../pulse_runtime_lib/CPulseCell_Timeline.md)::TimelineEvent_t > |  |  |
+| `0xd8` | `m_TimelineEvents` | CUtlVector< [CPulseCell_Timeline::TimelineEvent_t](../pulse_runtime_lib/CPulseCell_Timeline.TimelineEvent_t.md) > |  |  |
 | `0xf0` | `m_bWaitForChildOutflows` | bool |  |  |
 | `0xf8` | `m_OnFinished` | [CPulse_ResumePoint](../pulse_runtime_lib/CPulse_ResumePoint.md) |  |  |
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CPlayer_WeaponServices
+title: CPlayer_WeaponServices (server)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CPlayer_WeaponServices
 
-**Kind:** class · **Size:** 176 bytes (`0xb0`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 176 bytes (`0xb0`) · **Align:** n/a (unspecified) · **Module:** server
+
+**Twin:** [CPlayer_WeaponServices (client)](../client/CPlayer_WeaponServices.md)
 
 **Inherits from:** [CPlayerPawnComponent](../server/CPlayerPawnComponent.md)
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: EngineCountdownTimer
+title: EngineCountdownTimer (server)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # EngineCountdownTimer
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 8 · **Module:** server
+
+**Twin:** [EngineCountdownTimer (client)](../client/EngineCountdownTimer.md)
 
 ## Memory layout
 

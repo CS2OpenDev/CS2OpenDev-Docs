@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CCSPlayer_ItemServices
+title: CCSPlayer_ItemServices (server)
 nav_exclude: true
 ---
 
@@ -8,10 +8,13 @@ nav_exclude: true
 
 # CCSPlayer_ItemServices
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 Component tracking the utility items the player is carrying.
 
+**Kind:** class · **Size:** 80 bytes (`0x50`) · **Align:** n/a (unspecified) · **Module:** server
 
-**Kind:** class · **Size:** 80 bytes (`0x50`) · **Align:** 255 · **Module:** server
+**Twin:** [CCSPlayer_ItemServices (client)](../client/CCSPlayer_ItemServices.md)
 
 **Inherits from:** [CPlayer_ItemServices](../server/CPlayer_ItemServices.md)
 

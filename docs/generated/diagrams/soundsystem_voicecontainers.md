@@ -59,10 +59,11 @@ classDiagram
     CVoiceContainerSelector *-- CSoundContainerReferenceArray
     CVoiceContainerSet *-- CVoiceContainerSetElement
     CVoiceContainerSetElement *-- CSoundContainerReference
-    "CVoiceContainerStaticAdditiveSynth::CHarmonic" *-- EWaveform
-    "CVoiceContainerStaticAdditiveSynth::CHarmonic" *-- EMidiNote
-    "CVoiceContainerStaticAdditiveSynth::CHarmonic" *-- CVoiceContainerStaticAdditiveSynth
-    "CVoiceContainerStaticAdditiveSynth::CTone" *-- CVoiceContainerStaticAdditiveSynth
+    CVoiceContainerStaticAdditiveSynth *-- `CVoiceContainerStaticAdditiveSynth::CTone`
+    `CVoiceContainerStaticAdditiveSynth::CHarmonic` *-- EWaveform
+    `CVoiceContainerStaticAdditiveSynth::CHarmonic` *-- EMidiNote
+    `CVoiceContainerStaticAdditiveSynth::CHarmonic` *-- `CVoiceContainerStaticAdditiveSynth::CGainScalePerInstance`
+    `CVoiceContainerStaticAdditiveSynth::CTone` *-- `CVoiceContainerStaticAdditiveSynth::CHarmonic`
     CVoiceContainerSwitch *-- CSoundContainerReference
     CVoiceContainerVsndRadioButton *-- CVsndRadioButtonSlot
     CVoiceContainerVsndTrigger *-- CVsndTriggerSlot

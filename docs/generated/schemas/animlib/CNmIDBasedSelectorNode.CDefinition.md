@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNmIDBasedSelectorNode::CDefinition
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 96 bytes (`0x60`) · **Align:** 8 · **Module:** animlib
 
 **Inherits from:** [CNmPoseNode::CDefinition](../animlib/CNmPoseNode.CDefinition.md)
@@ -16,8 +18,8 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmPoseNode::CDefinition" <|-- "CNmIDBasedSelectorNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmPoseNode::CDefinition"
+    `CNmPoseNode::CDefinition` <|-- `CNmIDBasedSelectorNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmPoseNode::CDefinition`
 ```
 
 ## Memory layout

@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNmIDSwitchNode::CDefinition
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 40 bytes (`0x28`) · **Align:** 8 · **Module:** animlib
 
 **Inherits from:** [CNmIDValueNode::CDefinition](../animlib/CNmIDValueNode.CDefinition.md)
@@ -16,9 +18,9 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmIDValueNode::CDefinition" <|-- "CNmIDSwitchNode::CDefinition"
-    "CNmValueNode::CDefinition" <|-- "CNmIDValueNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
+    `CNmIDValueNode::CDefinition` <|-- `CNmIDSwitchNode::CDefinition`
+    `CNmValueNode::CDefinition` <|-- `CNmIDValueNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmValueNode::CDefinition`
 ```
 
 ## Memory layout

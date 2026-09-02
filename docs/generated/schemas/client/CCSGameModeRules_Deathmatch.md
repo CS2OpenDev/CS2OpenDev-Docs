@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CCSGameModeRules_Deathmatch
+title: CCSGameModeRules_Deathmatch (client)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CCSGameModeRules_Deathmatch
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 64 bytes (`0x40`) · **Align:** 8 · **Module:** client
+
+**Twin:** [CCSGameModeRules_Deathmatch (server)](../server/CCSGameModeRules_Deathmatch.md)
 
 **Inherits from:** [CCSGameModeRules](../client/CCSGameModeRules.md)
 

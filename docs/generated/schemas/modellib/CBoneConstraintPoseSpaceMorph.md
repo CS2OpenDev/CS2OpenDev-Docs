@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CBoneConstraintPoseSpaceMorph
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 160 bytes (`0xa0`) · **Align:** 8 · **Module:** modellib
 
 **Inherits from:** [CBoneConstraintBase](../modellib/CBoneConstraintBase.md)
@@ -17,6 +19,7 @@ nav_exclude: true
 ```mermaid
 classDiagram
     CBoneConstraintBase <|-- CBoneConstraintPoseSpaceMorph
+    CBoneConstraintPoseSpaceMorph *-- `CBoneConstraintPoseSpaceMorph::Input_t`
 ```
 
 ## Memory layout
@@ -28,7 +31,7 @@ classDiagram
 | `0x20` | `m_sBoneName` | CUtlString |  |  |
 | `0x28` | `m_sAttachmentName` | CUtlString |  |  |
 | `0x30` | `m_outputMorph` | CUtlVector< CUtlString > |  |  |
-| `0x48` | `m_inputList` | CUtlVector< [CBoneConstraintPoseSpaceMorph](../modellib/CBoneConstraintPoseSpaceMorph.md)::Input_t > |  |  |
+| `0x48` | `m_inputList` | CUtlVector< [CBoneConstraintPoseSpaceMorph::Input_t](../modellib/CBoneConstraintPoseSpaceMorph.Input_t.md) > |  |  |
 | `0x60` | `m_bClamp` | bool |  |  |
 
 <details><summary>KV3 class defaults</summary>

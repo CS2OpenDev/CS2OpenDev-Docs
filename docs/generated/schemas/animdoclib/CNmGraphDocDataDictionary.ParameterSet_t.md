@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNmGraphDocDataDictionary::ParameterSet_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 32 bytes (`0x20`) · **Align:** 8 · **Module:** animdoclib
 
 **Metadata:** `MPropertyAutoExpandSelf`
@@ -16,7 +18,7 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmGraphDocDataDictionary::ParameterSet_t" *-- CNmGraphDocDataDictionary
+    `CNmGraphDocDataDictionary::ParameterSet_t` *-- `CNmGraphDocDataDictionary::Parameter_t`
 ```
 
 ## Memory layout
@@ -26,7 +28,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_name` | CUtlString |  | `MPropertyFlattenIntoParentRow` |
-| `0x8` | `m_parameters` | CUtlVector< [CNmGraphDocDataDictionary](../animdoclib/CNmGraphDocDataDictionary.md)::Parameter_t > |  | `MPropertyAutoExpandSelf` |
+| `0x8` | `m_parameters` | CUtlVector< [CNmGraphDocDataDictionary::Parameter_t](../animdoclib/CNmGraphDocDataDictionary.Parameter_t.md) > |  | `MPropertyAutoExpandSelf` |
 
 <details><summary>KV3 class defaults</summary>
 

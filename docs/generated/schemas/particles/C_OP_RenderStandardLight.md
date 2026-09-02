@@ -8,6 +8,8 @@ nav_exclude: true
 
 # C_OP_RenderStandardLight
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 6064 bytes (`0x17b0`) · **Align:** 8 · **Module:** particles
 
 **Inherits from:** [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md)
@@ -64,13 +66,13 @@ classDiagram
 | `0x8f8` | `m_flLightStyleTime` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName light style time` `MPropertySuppressExpr m_strLightStyle == ''` |
 | `0xa68` | `m_flIntensity` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName intensity` |
 | `0xbd8` | `m_bCastShadows` | bool |  | `MPropertyFriendlyName cast shadows` `MPropertySuppressExpr m_nLightType == PARTICLE_LIGHT_TYPE_FX` |
-| `0xbd9` | `m_bDynamicBounce` | bool |  | `MPropertyFriendlyName dynamic bounce (RTGI)` `MPropertySuppressExpr !m_bCastShadows \|\| m_nLightType == PARTICLE_LIGHT_TYPE_FX \|\| mod == csgo` |
+| `0xbd9` | `m_bDynamicBounce` | bool |  | `MPropertyFriendlyName dynamic bounce (RTGI)` `MPropertySuppressExpr !m_bCastShadows &#124;&#124; m_nLightType == PARTICLE_LIGHT_TYPE_FX &#124;&#124; mod == csgo` |
 | `0xbe0` | `m_flBounceScale` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName bounce scale` `MPropertySuppressExpr !m_bDynamicBounce` |
 | `0xd50` | `m_flTheta` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName inner cone angle` `MPropertySuppressExpr m_nLightType != PARTICLE_LIGHT_TYPE_SPOT` |
 | `0xec0` | `m_flPhi` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName outer cone angle` `MPropertySuppressExpr m_nLightType != PARTICLE_LIGHT_TYPE_SPOT` |
 | `0x1030` | `m_flRadiusMultiplier` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName light radius multiplier` |
 | `0x11a0` | `m_nAttenuationStyle` | [StandardLightingAttenuationStyle_t](../particles/StandardLightingAttenuationStyle_t.md) |  | `MPropertyFriendlyName attenuation type` |
-| `0x11a8` | `m_flFalloffLinearity` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName falloff linearity` `MPropertySuppressExpr m_nAttenuationStyle == LIGHT_STYLE_NEW \|\| ( m_nAttenuationStyle == LIGHT_STYLE_OLD && m_nLightType == PARTICLE_LIGHT_TYPE_FX )` |
+| `0x11a8` | `m_flFalloffLinearity` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName falloff linearity` `MPropertySuppressExpr m_nAttenuationStyle == LIGHT_STYLE_NEW &#124;&#124; ( m_nAttenuationStyle == LIGHT_STYLE_OLD && m_nLightType == PARTICLE_LIGHT_TYPE_FX )` |
 | `0x1318` | `m_flFiftyPercentFalloff` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName falloff fifty percent` `MPropertySuppressExpr m_nAttenuationStyle == LIGHT_STYLE_OLD` |
 | `0x1488` | `m_flZeroPercentFalloff` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName falloff zero percent` `MPropertySuppressExpr m_nAttenuationStyle == LIGHT_STYLE_OLD` |
 | `0x15f8` | `m_bRenderDiffuse` | bool |  | `MPropertyFriendlyName render diffuse` `MPropertySuppressExpr m_nLightType == PARTICLE_LIGHT_TYPE_FX` |
@@ -80,16 +82,16 @@ classDiagram
 | `0x160c` | `m_nFogLightingMode` | [ParticleLightFogLightingMode_t](../particles/ParticleLightFogLightingMode_t.md) |  | `MPropertyFriendlyName fog lighting mode` `MPropertySuppressExpr m_nLightType == PARTICLE_LIGHT_TYPE_FX` |
 | `0x1610` | `m_flFogContribution` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) |  | `MPropertyFriendlyName fog contribution` `MPropertySuppressExpr m_nLightType == PARTICLE_LIGHT_TYPE_FX` |
 | `0x1780` | `m_nCapsuleLightBehavior` | [ParticleLightBehaviorChoiceList_t](../particles/ParticleLightBehaviorChoiceList_t.md) |  | `MPropertyFriendlyName capsule behavior` |
-| `0x1784` | `m_flCapsuleLength` | float32 |  | `MPropertyFriendlyName capsule length` `MPropertyStartGroup Capsule Light Controls` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE \|\| m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_TRAILS` |
-| `0x1788` | `m_bReverseOrder` | bool |  | `MPropertyFriendlyName reverse point order` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION \|\| m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_TRAILS` |
-| `0x1789` | `m_bClosedLoop` | bool |  | `MPropertyFriendlyName Closed loop` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION \|\| m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_TRAILS` |
-| `0x178c` | `m_nPrevPntSource` | [ParticleAttributeIndex_t](../particles/ParticleAttributeIndex_t.md) |  | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Anchor point source` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION \|\| m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
-| `0x1790` | `m_flMaxLength` | float32 |  | `MPropertyFriendlyName max length` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION \|\| m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
-| `0x1794` | `m_flMinLength` | float32 |  | `MPropertyFriendlyName min length` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION \|\| m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
-| `0x1798` | `m_bIgnoreDT` | bool |  | `MPropertyFriendlyName ignore delta time` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION \|\| m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
-| `0x179c` | `m_flConstrainRadiusToLengthRatio` | float32 |  | `MPropertyFriendlyName constrain radius to no more than this times the length` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION \|\| m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
-| `0x17a0` | `m_flLengthScale` | float32 |  | `MPropertyFriendlyName amount to scale trail length by` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION \|\| m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
-| `0x17a4` | `m_flLengthFadeInTime` | float32 |  | `MPropertyFriendlyName how long before a trail grows to its full length` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION \|\| m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
+| `0x1784` | `m_flCapsuleLength` | float32 |  | `MPropertyFriendlyName capsule length` `MPropertyStartGroup Capsule Light Controls` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_TRAILS` |
+| `0x1788` | `m_bReverseOrder` | bool |  | `MPropertyFriendlyName reverse point order` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_TRAILS` |
+| `0x1789` | `m_bClosedLoop` | bool |  | `MPropertyFriendlyName Closed loop` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_TRAILS` |
+| `0x178c` | `m_nPrevPntSource` | [ParticleAttributeIndex_t](../particles/ParticleAttributeIndex_t.md) |  | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Anchor point source` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
+| `0x1790` | `m_flMaxLength` | float32 |  | `MPropertyFriendlyName max length` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
+| `0x1794` | `m_flMinLength` | float32 |  | `MPropertyFriendlyName min length` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
+| `0x1798` | `m_bIgnoreDT` | bool |  | `MPropertyFriendlyName ignore delta time` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
+| `0x179c` | `m_flConstrainRadiusToLengthRatio` | float32 |  | `MPropertyFriendlyName constrain radius to no more than this times the length` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
+| `0x17a0` | `m_flLengthScale` | float32 |  | `MPropertyFriendlyName amount to scale trail length by` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
+| `0x17a4` | `m_flLengthFadeInTime` | float32 |  | `MPropertyFriendlyName how long before a trail grows to its full length` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
 
 <details><summary>KV3 class defaults</summary>
 

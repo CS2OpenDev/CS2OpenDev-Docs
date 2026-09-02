@@ -8,9 +8,18 @@ nav_exclude: true
 
 # AI_Navigator_DebugSnapshotData_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 80 bytes (`0x50`) · **Align:** 8 · **Module:** server
 
 **Metadata:** `MDebugSnapshotDataRenderFn`, `MPropertyFriendlyName Navigator`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    AI_Navigator_DebugSnapshotData_t *-- `AI_Navigator_DebugSnapshotData_t::Waypoint_t`
+```
 
 ## Memory layout
 
@@ -23,7 +32,7 @@ nav_exclude: true
 | `0x10` | `s_goal_source_location` | CUtlString |  |  |
 | `0x18` | `last_waypoint_pos` | VectorWS |  |  |
 | `0x24` | `goal_location` | VectorWS |  |  |
-| `0x30` | `waypoints` | CUtlVector< [AI_Navigator_DebugSnapshotData_t](../server/AI_Navigator_DebugSnapshotData_t.md)::Waypoint_t > |  |  |
+| `0x30` | `waypoints` | CUtlVector< [AI_Navigator_DebugSnapshotData_t::Waypoint_t](../server/AI_Navigator_DebugSnapshotData_t.Waypoint_t.md) > |  |  |
 | `0x48` | `s_arrival_movement_gait_set` | CGlobalSymbol |  |  |
 
 <details><summary>KV3 class defaults</summary>

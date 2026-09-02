@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CRenderMesh
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 552 bytes (`0x228`) · **Align:** 8 · **Module:** modellib
 
 **Relationships:**

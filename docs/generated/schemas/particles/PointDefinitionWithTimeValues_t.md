@@ -8,6 +8,8 @@ nav_exclude: true
 
 # PointDefinitionWithTimeValues_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 4 · **Module:** particles
 
 **Inherits from:** [PointDefinition_t](../particles/PointDefinition_t.md)

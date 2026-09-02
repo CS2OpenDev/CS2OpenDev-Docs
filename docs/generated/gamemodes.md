@@ -6,12 +6,13 @@ nav_order: 9
 
 # Game Modes & Map Groups
 
-{: .note }
-> Source: CS2 build **25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 Game types and their nested game modes (from `gamemodes.txt`): max players, map groups, and per-mode convar overrides.
 
-## Game type: `classic` (6 modes)
+## Game type: `classic`
+
+6 modes.
 
 ### `casual`
 
@@ -49,7 +50,9 @@ Game types and their nested game modes (from `gamemodes.txt`): max players, map 
 - **Max players:** 10
 - **Map groups:** `template#include`
 
-## Game type: `cooperative` (2 modes)
+## Game type: `cooperative`
+
+2 modes.
 
 ### `cooperative`
 
@@ -61,14 +64,18 @@ Game types and their nested game modes (from `gamemodes.txt`): max players, map 
 - **Name token:** `#SFUI_GameModeCoopMission`
 - **Max players:** 10
 
-## Game type: `custom` (1 modes)
+## Game type: `custom`
+
+1 modes.
 
 ### `custom`
 
 - **Name token:** `#SFUI_GameModeCustom`
 - **Max players:** 100
 
-## Game type: `freeforall` (1 modes)
+## Game type: `freeforall`
+
+1 modes.
 
 ### `survival`
 
@@ -76,7 +83,9 @@ Game types and their nested game modes (from `gamemodes.txt`): max players, map 
 - **Max players:** 16
 - **Map groups:** `mg_dz_sirocco`
 
-## Game type: `gungame` (3 modes)
+## Game type: `gungame`
+
+3 modes.
 
 ### `deathmatch`
 
@@ -96,7 +105,9 @@ Game types and their nested game modes (from `gamemodes.txt`): max players, map 
 - **Max players:** 16
 - **Map groups:** `mg_demolition`
 
-## Game type: `skirmish` (1 modes)
+## Game type: `skirmish`
+
+1 modes.
 
 ### `skirmish`
 
@@ -104,14 +115,18 @@ Game types and their nested game modes (from `gamemodes.txt`): max players, map 
 - **Max players:** 16
 - **Map groups:** `mg_skirmish_armsrace`
 
-## Game type: `training` (1 modes)
+## Game type: `training`
+
+1 modes.
 
 ### `training`
 
 - **Name token:** `#SFUI_GameTypeTraining`
 - **Max players:** 1
 
-## Map groups (185)
+## Map groups
+
+185 map groups.
 
 | id | Maps |
 |----|------|

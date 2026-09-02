@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CCSPlayer_WeaponServices
+title: CCSPlayer_WeaponServices (server)
 nav_exclude: true
 ---
 
@@ -8,10 +8,13 @@ nav_exclude: true
 
 # CCSPlayer_WeaponServices
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 Component attached to CCSPlayerPawn that manages the active weapon and weapon-switch timing for a CS2 player.
 
+**Kind:** class · **Size:** 6272 bytes (`0x1880`) · **Align:** n/a (unspecified) · **Module:** server
 
-**Kind:** class · **Size:** 6272 bytes (`0x1880`) · **Align:** 255 · **Module:** server
+**Twin:** [CCSPlayer_WeaponServices (client)](../client/CCSPlayer_WeaponServices.md)
 
 **Inherits from:** [CPlayer_WeaponServices](../server/CPlayer_WeaponServices.md)
 
@@ -27,16 +30,17 @@ classDiagram
 
 ## Memory layout
 
-19 fields (13 declared here, 6 inherited). Offsets are absolute from the object base.
+20 fields (13 declared here, 7 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `__m_pChainEntity` | [CNetworkVarChainer](../entity2/CNetworkVarChainer.md) | [CPlayerPawnComponent](../server/CPlayerPawnComponent.md) | `MNotSaved` |
 | `0x30` | `m_pComponentGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) | [CPlayerPawnComponent](../server/CPlayerPawnComponent.md) |  |
-| `0x48` | `m_hMyWeapons` | C_NetworkUtlVectorBase< CHandle< [C_BasePlayerWeapon](../client/C_BasePlayerWeapon.md) > > | [CPlayer_WeaponServices](../server/CPlayer_WeaponServices.md) |  |
-| `0x60` | `m_hActiveWeapon` | CHandle< [C_BasePlayerWeapon](../client/C_BasePlayerWeapon.md) > | [CPlayer_WeaponServices](../server/CPlayer_WeaponServices.md) |  |
-| `0x64` | `m_hLastWeapon` | CHandle< [C_BasePlayerWeapon](../client/C_BasePlayerWeapon.md) > | [CPlayer_WeaponServices](../server/CPlayer_WeaponServices.md) |  |
+| `0x48` | `m_hMyWeapons` | CNetworkUtlVectorBase< CHandle< [CBasePlayerWeapon](../server/CBasePlayerWeapon.md) > > | [CPlayer_WeaponServices](../server/CPlayer_WeaponServices.md) |  |
+| `0x60` | `m_hActiveWeapon` | CHandle< [CBasePlayerWeapon](../server/CBasePlayerWeapon.md) > | [CPlayer_WeaponServices](../server/CPlayer_WeaponServices.md) |  |
+| `0x64` | `m_hLastWeapon` | CHandle< [CBasePlayerWeapon](../server/CBasePlayerWeapon.md) > | [CPlayer_WeaponServices](../server/CPlayer_WeaponServices.md) |  |
 | `0x68` | `m_iAmmo` | uint16[32] | [CPlayer_WeaponServices](../server/CPlayer_WeaponServices.md) |  |
+| `0xa8` | `m_bPreventWeaponPickup` | bool | [CPlayer_WeaponServices](../server/CPlayer_WeaponServices.md) |  |
 | `0xc0` | `m_flNextAttack` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime before which no weapon switch is permitted (e.g. after throwing a grenade). *Only sent to the owning player (LocalPlayerExclusive).* |
 | `0xc4` | `m_hSavedWeapon` | CHandle< [CBasePlayerWeapon](../server/CBasePlayerWeapon.md) > |  |  |
 | `0xc8` | `m_nTimeToMelee` | int32 |  |  |

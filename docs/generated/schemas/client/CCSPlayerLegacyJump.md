@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CCSPlayerLegacyJump
+title: CCSPlayerLegacyJump (client)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CCSPlayerLegacyJump
 
-**Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** n/a (unspecified) · **Module:** client
+
+**Twin:** [CCSPlayerLegacyJump (server)](../server/CCSPlayerLegacyJump.md)
 
 ## Memory layout
 

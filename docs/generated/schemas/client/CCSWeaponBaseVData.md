@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CCSWeaponBaseVData
+title: CCSWeaponBaseVData (client)
 nav_exclude: true
 ---
 
@@ -8,10 +8,13 @@ nav_exclude: true
 
 # CCSWeaponBaseVData
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 Static weapon definition (economy + ballistics) referenced by CCSWeaponBase — the per-weapon-type data that does not change at runtime.
 
-
 **Kind:** class · **Size:** 2216 bytes (`0x8a8`) · **Align:** 8 · **Module:** client
+
+**Twin:** [CCSWeaponBaseVData (server)](../server/CCSWeaponBaseVData.md)
 
 **Inherits from:** [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md)
 

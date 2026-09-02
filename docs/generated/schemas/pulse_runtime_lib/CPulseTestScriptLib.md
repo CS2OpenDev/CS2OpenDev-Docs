@@ -8,6 +8,12 @@ nav_exclude: true
 
 # CPulseTestScriptLib
 
-**Kind:** class · **Size:** 1 bytes (`0x1`) · **Align:** 255 · **Module:** pulse_runtime_lib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 1 bytes (`0x1`) · **Align:** n/a (unspecified) · **Module:** pulse_runtime_lib
 
 **Metadata:** `MPropertyDescription Testing script helpers.`
+
+## Memory layout
+
+No schema-visible fields (1 bytes of opaque storage).

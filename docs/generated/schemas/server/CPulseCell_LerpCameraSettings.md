@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CPulseCell_LerpCameraSettings
+title: CPulseCell_LerpCameraSettings (server)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CPulseCell_LerpCameraSettings
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 328 bytes (`0x148`) · **Align:** 8 · **Module:** server
+
+**Twin:** [CPulseCell_LerpCameraSettings (client)](../client/CPulseCell_LerpCameraSettings.md)
 
 **Inherits from:** [CPulseCell_BaseLerp](../pulse_runtime_lib/CPulseCell_BaseLerp.md)
 

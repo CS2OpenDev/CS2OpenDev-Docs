@@ -7,7 +7,7 @@ nav_exclude: true
 
 # `steammessages_oauth.steamworkssdk.proto`
 
-**Imports:** `steammessages_unified_base.steamworkssdk.proto`
+**Imports:** [`steammessages_unified_base.steamworkssdk.proto`](steammessages_unified_base.steamworkssdk.md)
 
 ## Diagram
 
@@ -30,13 +30,13 @@ direction LR
 
 ### `COAuthToken_ImplicitGrantNoPrompt_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `clientid` | 1 | string | optional |  |
 
 ### `COAuthToken_ImplicitGrantNoPrompt_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `access_token` | 1 | string | optional |  |
 | `redirect_uri` | 2 | string | optional |  |

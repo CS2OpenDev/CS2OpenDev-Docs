@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CBaseAnimGraphController
+title: CBaseAnimGraphController (server)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CBaseAnimGraphController
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 1616 bytes (`0x650`) · **Align:** 8 · **Module:** server
+
+**Twin:** [CBaseAnimGraphController (client)](../client/CBaseAnimGraphController.md)
 
 **Inherits from:** [CSkeletonAnimationController](../server/CSkeletonAnimationController.md)
 

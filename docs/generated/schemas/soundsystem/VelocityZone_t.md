@@ -8,7 +8,9 @@ nav_exclude: true
 
 # VelocityZone_t
 
-**Kind:** class · **Size:** 20 bytes (`0x14`) · **Align:** 255 · **Module:** soundsystem
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 20 bytes (`0x14`) · **Align:** n/a (unspecified) · **Module:** soundsystem
 
 ## Memory layout
 

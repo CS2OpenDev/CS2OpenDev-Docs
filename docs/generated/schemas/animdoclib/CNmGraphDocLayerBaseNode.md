@@ -8,7 +8,9 @@ nav_exclude: true
 
 # CNmGraphDocLayerBaseNode
 
-**Kind:** class · **Size:** 264 bytes (`0x108`) · **Align:** 255 · **Module:** animdoclib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 264 bytes (`0x108`) · **Align:** n/a (unspecified) · **Module:** animdoclib
 
 **Inherits from:** [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md)
 

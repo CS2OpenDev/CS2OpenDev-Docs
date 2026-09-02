@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CSWeaponMode
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 Weapon fire mode: primary vs secondary (right-click) fire.
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** server
@@ -16,6 +18,6 @@ Weapon fire mode: primary vs secondary (right-click) fire.
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `Primary_Mode` | 0 |  |
-| `Secondary_Mode` | 1 |  |
+| `Primary_Mode` | 0 | Primary fire. |
+| `Secondary_Mode` | 1 | Secondary fire (e.g. scope, burst, silencer toggle). |
 | `WeaponMode_MAX` | 2 |  |

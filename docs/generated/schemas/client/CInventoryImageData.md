@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CInventoryImageData
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 248 bytes (`0xf8`) · **Align:** 8 · **Module:** client
 
 **Metadata:** `MVDataHideNodeClass`, `MVDataOutlinerDetailExpr name`, `MVDataOutlinerLeafColorFn`, `MVDataOutlinerLeafDetailFn`, `MVDataOutlinerLeafNameFn`, `MVDataOverlayType 1`, `MVDataPostSaveFixupFn`, `MVDataPreLoadFixupFn`, `MVDataPreviewWidget csgo_inv_image_preview`, `MVDataRoot`, `MVDataVirtualNodeFactoryFn`

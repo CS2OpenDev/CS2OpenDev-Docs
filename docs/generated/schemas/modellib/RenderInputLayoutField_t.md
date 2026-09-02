@@ -8,7 +8,9 @@ nav_exclude: true
 
 # RenderInputLayoutField_t
 
-**Kind:** class · **Size:** 76 bytes (`0x4c`) · **Align:** 255 · **Module:** modellib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 76 bytes (`0x4c`) · **Align:** n/a (unspecified) · **Module:** modellib
 
 **Relationships:**
 

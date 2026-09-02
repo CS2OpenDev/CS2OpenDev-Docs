@@ -8,7 +8,9 @@ nav_exclude: true
 
 # CParticleFunctionInitializer
 
-**Kind:** class · **Size:** 480 bytes (`0x1e0`) · **Align:** 255 · **Module:** particles
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 480 bytes (`0x1e0`) · **Align:** n/a (unspecified) · **Module:** particles
 
 **Inherits from:** [CParticleFunction](../particles/CParticleFunction.md)
 

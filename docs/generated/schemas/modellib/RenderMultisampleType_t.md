@@ -8,13 +8,15 @@ nav_exclude: true
 
 # RenderMultisampleType_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** enum · **Underlying:** `uint8_t` · **Module:** modellib
 
 ## Values
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `RENDER_MULTISAMPLE_INVALID` | -1 |  |
+| `RENDER_MULTISAMPLE_INVALID` | -1 (`0xff`) |  |
 | `RENDER_MULTISAMPLE_NONE` | 0 |  |
 | `RENDER_MULTISAMPLE_2X` | 1 |  |
 | `RENDER_MULTISAMPLE_4X` | 2 |  |

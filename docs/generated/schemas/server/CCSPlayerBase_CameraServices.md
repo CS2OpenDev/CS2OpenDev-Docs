@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CCSPlayerBase_CameraServices
+title: CCSPlayerBase_CameraServices (server)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CCSPlayerBase_CameraServices
 
-**Kind:** class · **Size:** 432 bytes (`0x1b0`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 432 bytes (`0x1b0`) · **Align:** n/a (unspecified) · **Module:** server
+
+**Twin:** [CCSPlayerBase_CameraServices (client)](../client/CCSPlayerBase_CameraServices.md)
 
 **Inherits from:** [CPlayer_CameraServices](../server/CPlayer_CameraServices.md)
 
@@ -28,7 +32,7 @@ classDiagram
 
 ## Memory layout
 
-29 fields (7 declared here, 22 inherited). Offsets are absolute from the object base.
+21 fields (7 declared here, 14 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -37,15 +41,15 @@ classDiagram
 | `0x48` | `m_vecCsViewPunchAngle` | QAngle | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |
 | `0x54` | `m_nCsViewPunchAngleTick` | [GameTick_t](../entity2/GameTick_t.md) | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |
 | `0x58` | `m_flCsViewPunchAngleTickRatio` | float32 | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |
-| `0x60` | `m_PlayerFog` | [C_fogplayerparams_t](../client/C_fogplayerparams_t.md) | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |
-| `0xa0` | `m_hColorCorrectionCtrl` | CHandle< [C_ColorCorrection](../client/C_ColorCorrection.md) > | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |
-| `0xa4` | `m_hViewEntity` | CHandle< [C_BaseEntity](../client/C_BaseEntity.md) > | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |
-| `0xa8` | `m_hTonemapController` | CHandle< [C_TonemapController2](../client/C_TonemapController2.md) > | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |
+| `0x60` | `m_PlayerFog` | fogplayerparams_t | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |
+| `0xa0` | `m_hColorCorrectionCtrl` | CHandle< [CColorCorrection](../server/CColorCorrection.md) > | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |
+| `0xa4` | `m_hViewEntity` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |
+| `0xa8` | `m_hTonemapController` | CHandle< [CTonemapController2](../server/CTonemapController2.md) > | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |
 | `0xb0` | `m_audio` | audioparams_t | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |
-| `0x128` | `m_PostProcessingVolumes` | C_NetworkUtlVectorBase< CHandle< [C_PostProcessingVolume](../client/C_PostProcessingVolume.md) > > | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |
+| `0x128` | `m_PostProcessingVolumes` | CNetworkUtlVectorBase< CHandle< [CPostProcessingVolume](../server/CPostProcessingVolume.md) > > | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |
 | `0x140` | `m_flOldPlayerZ` | float32 | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |
 | `0x144` | `m_flOldPlayerViewOffsetZ` | float32 | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |
-| `0x148` | `m_CurrentFog` | fogparams_t | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |
+| `0x160` | `m_hTriggerSoundscapeList` | CUtlVector< CHandle< [CEnvSoundscapeTriggerable](../server/CEnvSoundscapeTriggerable.md) > > | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |
 | `0x178` | `m_iFOV` | uint32 |  |  |
 | `0x17c` | `m_iFOVStart` | uint32 |  |  |
 | `0x180` | `m_flFOVTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
@@ -53,11 +57,3 @@ classDiagram
 | `0x188` | `m_hZoomOwner` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
 | `0x190` | `m_hTriggerFogList` | CUtlVector< CHandle< [CBaseEntity](../server/CBaseEntity.md) > > |  |  |
 | `0x1a8` | `m_hLastFogTrigger` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
-| `0x1b0` | `m_hOldFogController` | CHandle< [C_FogController](../client/C_FogController.md) > | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |
-| `0x1b4` | `m_bOverrideFogColor` | bool[5] | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |
-| `0x1b9` | `m_OverrideFogColor` | Color[5] | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |
-| `0x1cd` | `m_bOverrideFogStartEnd` | bool[5] | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |
-| `0x1d4` | `m_fOverrideFogStart` | float32[5] | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |
-| `0x1e8` | `m_fOverrideFogEnd` | float32[5] | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |
-| `0x1fc` | `m_hActivePostProcessingVolume` | CHandle< [C_PostProcessingVolume](../client/C_PostProcessingVolume.md) > | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |
-| `0x200` | `m_angDemoViewAngles` | QAngle | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md) |  |

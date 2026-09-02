@@ -1,6 +1,6 @@
 ---
 layout: default
-title: fogparams_t
+title: fogparams_t (client)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # fogparams_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 104 bytes (`0x68`) · **Align:** 8 · **Module:** client
+
+**Twin:** [fogparams_t (server)](../server/fogparams_t.md)
 
 **Relationships:**
 

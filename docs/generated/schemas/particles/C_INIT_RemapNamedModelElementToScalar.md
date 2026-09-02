@@ -8,7 +8,9 @@ nav_exclude: true
 
 # C_INIT_RemapNamedModelElementToScalar
 
-**Kind:** class · **Size:** 552 bytes (`0x228`) · **Align:** 255 · **Module:** particles
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 552 bytes (`0x228`) · **Align:** n/a (unspecified) · **Module:** particles
 
 **Inherits from:** [CParticleFunctionInitializer](../particles/CParticleFunctionInitializer.md)
 

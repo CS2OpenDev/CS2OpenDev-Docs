@@ -8,7 +8,9 @@ nav_exclude: true
 
 # CSosGroupActionSchema
 
-**Kind:** class · **Size:** 8 bytes (`0x8`) · **Align:** 255 · **Module:** soundsystem
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 8 bytes (`0x8`) · **Align:** n/a (unspecified) · **Module:** soundsystem
 
 **Derived by:** [CSosGroupActionLimitSchema](../soundsystem/CSosGroupActionLimitSchema.md), [CSosGroupActionMemberCountEnvelopeSchema](../soundsystem/CSosGroupActionMemberCountEnvelopeSchema.md), [CSosGroupActionOcclusionSchema](../soundsystem/CSosGroupActionOcclusionSchema.md), [CSosGroupActionSetSoundeventParameterSchema](../soundsystem/CSosGroupActionSetSoundeventParameterSchema.md), [CSosGroupActionSoundeventClusterSchema](../soundsystem/CSosGroupActionSoundeventClusterSchema.md), [CSosGroupActionSoundeventCountSchema](../soundsystem/CSosGroupActionSoundeventCountSchema.md), [CSosGroupActionSoundeventMinMaxValuesSchema](../soundsystem/CSosGroupActionSoundeventMinMaxValuesSchema.md), [CSosGroupActionSoundeventPrioritySchema](../soundsystem/CSosGroupActionSoundeventPrioritySchema.md), [CSosGroupActionTimeBlockLimitSchema](../soundsystem/CSosGroupActionTimeBlockLimitSchema.md), [CSosGroupActionTimeLimitSchema](../soundsystem/CSosGroupActionTimeLimitSchema.md)
 
@@ -29,3 +31,7 @@ classDiagram
     CSosGroupActionSchema <|-- CSosGroupActionTimeBlockLimitSchema
     CSosGroupActionSchema <|-- CSosGroupActionTimeLimitSchema
 ```
+
+## Memory layout
+
+No schema-visible fields (8 bytes of opaque storage).

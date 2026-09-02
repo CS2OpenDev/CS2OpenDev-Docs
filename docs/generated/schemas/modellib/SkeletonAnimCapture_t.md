@@ -8,7 +8,17 @@ nav_exclude: true
 
 # SkeletonAnimCapture_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 192 bytes (`0xc0`) · **Align:** 8 · **Module:** modellib
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    SkeletonAnimCapture_t *-- `SkeletonAnimCapture_t::Bone_t`
+    SkeletonAnimCapture_t *-- `SkeletonAnimCapture_t::Frame_t`
+```
 
 ## Memory layout
 
@@ -21,11 +31,11 @@ nav_exclude: true
 | `0x8` | `m_ImportedCollision` | CUtlVector< CEntityIndex > |  |  |
 | `0x20` | `m_ModelName` | CUtlString |  |  |
 | `0x28` | `m_CaptureName` | CUtlString |  |  |
-| `0x30` | `m_ModelBindPose` | CUtlVector< [SkeletonAnimCapture_t](../modellib/SkeletonAnimCapture_t.md)::Bone_t > |  |  |
-| `0x48` | `m_FeModelInitPose` | CUtlVector< [SkeletonAnimCapture_t](../modellib/SkeletonAnimCapture_t.md)::Bone_t > |  |  |
+| `0x30` | `m_ModelBindPose` | CUtlVector< [SkeletonAnimCapture_t::Bone_t](../modellib/SkeletonAnimCapture_t.Bone_t.md) > |  |  |
+| `0x48` | `m_FeModelInitPose` | CUtlVector< [SkeletonAnimCapture_t::Bone_t](../modellib/SkeletonAnimCapture_t.Bone_t.md) > |  |  |
 | `0x60` | `m_nFlexControllers` | int32 |  |  |
 | `0x64` | `m_bPredicted` | bool |  |  |
-| `0xa8` | `m_Frames` | CUtlVector< [SkeletonAnimCapture_t](../modellib/SkeletonAnimCapture_t.md)::Frame_t > |  |  |
+| `0xa8` | `m_Frames` | CUtlVector< [SkeletonAnimCapture_t::Frame_t](../modellib/SkeletonAnimCapture_t.Frame_t.md) > |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

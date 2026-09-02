@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNmClipDocEventTrack
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 40 bytes (`0x28`) · **Align:** 8 · **Module:** animdoclib
 
 **Relationships:**
@@ -15,6 +17,7 @@ nav_exclude: true
 ```mermaid
 classDiagram
     CNmClipDocEventTrack --> CNmClipDocEvent
+    CNmClipDocEventTrack *-- `CNmClipDocEventTrack::Type_t`
 ```
 
 ## Memory layout
@@ -25,7 +28,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x0` | `m_events` | CUtlVector< [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md)* > |  |  |
 | `0x18` | `m_eventClassName` | CUtlString |  |  |
-| `0x20` | `m_type` | [CNmClipDocEventTrack](../animdoclib/CNmClipDocEventTrack.md)::Type_t |  |  |
+| `0x20` | `m_type` | [CNmClipDocEventTrack::Type_t](../animdoclib/CNmClipDocEventTrack.Type_t.md) |  |  |
 | `0x24` | `m_bIsSyncTrack` | bool |  |  |
 | `0x25` | `m_bIsDisabled` | bool |  |  |
 

@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CStateNodeTransitionData
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 28 bytes (`0x1c`) · **Align:** 4 · **Module:** animgraphlib
 
 **Relationships:**
@@ -23,9 +25,9 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_bReset` | bitfield:1 |  |  |
+| `0x0` bit 0 | `m_bReset` | bitfield:1 |  |  |
 | `0x0` | `m_curve` | [CBlendCurve](../animgraphlib/CBlendCurve.md) |  |  |
-| `0x0` | `m_resetCycleOption` | bitfield:3 |  |  |
+| `0x0` bits 0..2 | `m_resetCycleOption` | bitfield:3 |  |  |
 | `0x8` | `m_blendDuration` | CAnimValue< float32 > |  |  |
 | `0x10` | `m_resetCycleValue` | CAnimValue< float32 > |  |  |
 

@@ -8,6 +8,8 @@ nav_exclude: true
 
 # C_OP_RenderLights
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 592 bytes (`0x250`) · **Align:** 8 · **Module:** particles
 
 **Inherits from:** [C_OP_RenderPoints](../particles/C_OP_RenderPoints.md)

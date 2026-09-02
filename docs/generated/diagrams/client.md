@@ -123,7 +123,7 @@ classDiagram
     CEntitySubclassVDataBase <|-- CPrecipitationVData
     CEntityComponent <|-- CPropDataComponent
     CPulseCell_BaseLerp <|-- CPulseCell_LerpCameraSettings
-    "CPulseCell_BaseLerp::CursorState_t" <|-- "CPulseCell_LerpCameraSettings::CursorState_t"
+    `CPulseCell_BaseLerp::CursorState_t` <|-- `CPulseCell_LerpCameraSettings::CursorState_t`
     CPulseCell_BaseYieldingInflow <|-- CPulseCell_PlaySequence
     CPulseCell_BaseFlow <|-- CPulseCell_Step_EntFire
     C_BaseEntity <|-- CPulseGameBlackboard

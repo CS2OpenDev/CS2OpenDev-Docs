@@ -8,13 +8,18 @@ nav_exclude: true
 
 # CCSPlayerAnimationState
 
-**Kind:** class · **Size:** 224 bytes (`0xe0`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 224 bytes (`0xe0`) · **Align:** n/a (unspecified) · **Module:** server
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CCSPlayerAnimationState *-- MoveType_t
+    CCSPlayerAnimationState *-- `CCSPlayerAnimationState::MoveType_t`
+    CCSPlayerAnimationState *-- `CCSPlayerAnimationState::GroundMoveState_t`
+    CCSPlayerAnimationState *-- `CCSPlayerAnimationState::Direction_t`
+    CCSPlayerAnimationState *-- `CCSPlayerAnimationState::AirAction_t`
     CCSPlayerAnimationState *-- GameTick_t
 ```
 
@@ -24,10 +29,10 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x18` | `m_currentMoveType` | [CCSPlayerAnimationState](../server/CCSPlayerAnimationState.md)::[MoveType_t](../server/MoveType_t.md) |  |  |
-| `0x19` | `m_groundMoveState` | [CCSPlayerAnimationState](../server/CCSPlayerAnimationState.md)::GroundMoveState_t |  |  |
-| `0x1a` | `m_groundActionDirection` | [CCSPlayerAnimationState](../server/CCSPlayerAnimationState.md)::Direction_t |  |  |
-| `0x1b` | `m_airAction` | [CCSPlayerAnimationState](../server/CCSPlayerAnimationState.md)::AirAction_t |  |  |
+| `0x18` | `m_currentMoveType` | [CCSPlayerAnimationState::MoveType_t](../server/CCSPlayerAnimationState.MoveType_t.md) |  |  |
+| `0x19` | `m_groundMoveState` | [CCSPlayerAnimationState::GroundMoveState_t](../server/CCSPlayerAnimationState.GroundMoveState_t.md) |  |  |
+| `0x1a` | `m_groundActionDirection` | [CCSPlayerAnimationState::Direction_t](../server/CCSPlayerAnimationState.Direction_t.md) |  |  |
+| `0x1b` | `m_airAction` | [CCSPlayerAnimationState::AirAction_t](../server/CCSPlayerAnimationState.AirAction_t.md) |  |  |
 | `0x1c` | `m_bWasOnGroundLastUpdate` | bool |  |  |
 | `0x1d` | `m_bWasStationaryLastUpdate` | bool |  |  |
 | `0x20` | `m_actionStartTick` | [GameTick_t](../entity2/GameTick_t.md) |  |  |

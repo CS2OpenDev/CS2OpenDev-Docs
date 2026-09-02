@@ -8,13 +8,15 @@ nav_exclude: true
 
 # ParticleVecType_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** particleslib
 
 ## Values
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `PVEC_TYPE_INVALID` | -1 |  |
+| `PVEC_TYPE_INVALID` | -1 (`0xffffffff`) |  |
 | `PVEC_TYPE_LITERAL` | 0 |  |
 | `PVEC_TYPE_LITERAL_COLOR` | 1 |  |
 | `PVEC_TYPE_NAMED_VALUE` | 2 |  |

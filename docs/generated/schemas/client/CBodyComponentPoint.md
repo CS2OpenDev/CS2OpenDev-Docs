@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CBodyComponentPoint
+title: CBodyComponentPoint (client)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CBodyComponentPoint
 
-**Kind:** class · **Size:** 432 bytes (`0x1b0`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 432 bytes (`0x1b0`) · **Align:** n/a (unspecified) · **Module:** client
+
+**Twin:** [CBodyComponentPoint (server)](../server/CBodyComponentPoint.md)
 
 **Inherits from:** [CBodyComponent](../client/CBodyComponent.md)
 

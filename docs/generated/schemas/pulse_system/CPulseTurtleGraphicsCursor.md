@@ -8,7 +8,9 @@ nav_exclude: true
 
 # CPulseTurtleGraphicsCursor
 
-**Kind:** class · **Size:** 240 bytes (`0xf0`) · **Align:** 255 · **Module:** pulse_system
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 240 bytes (`0xf0`) · **Align:** n/a (unspecified) · **Module:** pulse_system
 
 **Inherits from:** [CPulseExecCursor](../pulse_runtime_lib/CPulseExecCursor.md)
 

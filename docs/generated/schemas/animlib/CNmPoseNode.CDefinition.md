@@ -8,7 +8,9 @@ nav_exclude: true
 
 # CNmPoseNode::CDefinition
 
-**Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** 255 · **Module:** animlib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** n/a (unspecified) · **Module:** animlib
 
 **Inherits from:** [CNmGraphNode::CDefinition](../animlib/CNmGraphNode.CDefinition.md)
 
@@ -18,30 +20,30 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmGraphNode::CDefinition" <|-- "CNmPoseNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmAnimationPoseNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmBlend2DNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmClipReferenceNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmExternalPoseNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmIDBasedSelectorNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmLayerBlendNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmOrientationWarpNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmParameterizedBlendNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmParameterizedSelectorNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmPassthroughNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmReferencePoseNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmReferencedGraphNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmSelectorNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmStateMachineNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmStateNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmTargetWarpNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmTransitionNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmZeroPoseNode::CDefinition"
+    `CNmGraphNode::CDefinition` <|-- `CNmPoseNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmAnimationPoseNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmBlend2DNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmClipReferenceNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmExternalPoseNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmIDBasedSelectorNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmLayerBlendNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmOrientationWarpNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmParameterizedBlendNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmParameterizedSelectorNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmPassthroughNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmReferencePoseNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmReferencedGraphNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmSelectorNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmStateMachineNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmStateNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmTargetWarpNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmTransitionNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmZeroPoseNode::CDefinition`
 ```
 
 ## Memory layout
 
-1 fields (0 declared here, 1 inherited). Offsets are absolute from the object base.
+1 field (0 declared here, 1 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|

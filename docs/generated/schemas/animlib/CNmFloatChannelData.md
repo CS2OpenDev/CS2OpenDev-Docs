@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNmFloatChannelData
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 88 bytes (`0x58`) · **Align:** 8 · **Module:** animlib
 
 **Relationships:**
@@ -15,6 +17,7 @@ nav_exclude: true
 ```mermaid
 classDiagram
     CNmFloatChannelData *-- InfoForResourceTypeCNmSkeleton
+    CNmFloatChannelData *-- `CNmFloatChannelData::ChannelSettings_t`
 ```
 
 ## Memory layout
@@ -25,7 +28,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x0` | `m_skeleton` | CStrongHandle< [InfoForResourceTypeCNmSkeleton](../resourcesystem/InfoForResourceTypeCNmSkeleton.md) > |  |  |
 | `0x8` | `m_setID` | CGlobalSymbol |  |  |
-| `0x10` | `m_channelSettings` | CUtlVector< [CNmFloatChannelData](../animlib/CNmFloatChannelData.md)::ChannelSettings_t > |  |  |
+| `0x10` | `m_channelSettings` | CUtlVector< [CNmFloatChannelData::ChannelSettings_t](../animlib/CNmFloatChannelData.ChannelSettings_t.md) > |  |  |
 | `0x28` | `m_compressedData` | CUtlVector< uint16 > |  |  |
 | `0x40` | `m_compressedOffsets` | CUtlVector< uint32 > |  |  |
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CCSGameModeRules_ArmsRace
+title: CCSGameModeRules_ArmsRace (client)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CCSGameModeRules_ArmsRace
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** 8 · **Module:** client
+
+**Twin:** [CCSGameModeRules_ArmsRace (server)](../server/CCSGameModeRules_ArmsRace.md)
 
 **Inherits from:** [CCSGameModeRules](../client/CCSGameModeRules.md)
 

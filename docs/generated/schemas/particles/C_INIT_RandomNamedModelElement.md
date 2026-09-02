@@ -8,7 +8,9 @@ nav_exclude: true
 
 # C_INIT_RandomNamedModelElement
 
-**Kind:** class · **Size:** 520 bytes (`0x208`) · **Align:** 255 · **Module:** particles
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 520 bytes (`0x208`) · **Align:** n/a (unspecified) · **Module:** particles
 
 **Inherits from:** [CParticleFunctionInitializer](../particles/CParticleFunctionInitializer.md)
 

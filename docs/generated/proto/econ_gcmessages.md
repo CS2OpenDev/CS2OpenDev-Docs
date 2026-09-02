@@ -7,7 +7,7 @@ nav_exclude: true
 
 # `econ_gcmessages.proto`
 
-**Imports:** `steammessages.proto`
+**Imports:** [`steammessages.proto`](steammessages.md)
 
 ## Diagram
 
@@ -445,8 +445,8 @@ direction LR
 
 ### `CMsgGCGiftedItems`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `accountid` | 1 | uint32 | optional |  |
 | `giftdefindex` | 2 | uint32 | optional |  |
 | `max_gifts_possible` | 3 | uint32 | optional |  |
@@ -455,8 +455,8 @@ direction LR
 
 ### `CMsgGCDev_SchemaReservationRequest`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `schema_typename` | 1 | string | optional |  |
 | `instance_name` | 2 | string | optional |  |
 | `context` | 3 | uint64 | optional |  |
@@ -464,21 +464,21 @@ direction LR
 
 ### `CMsgCasketItem`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `casket_item_id` | 1 | uint64 | optional |  |
 | `item_item_id` | 2 | uint64 | optional |  |
 
 ### `CMsgGCUserTrackTimePlayedConsecutively`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `state` | 1 | uint32 | optional |  |
 
 ### `CMsgGCItemCustomizationNotification`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `item_id` | 1 | uint64 | repeated |  |
 | `request` | 2 | uint32 | optional |  |
 | `extra_data` | 3 | uint64 | repeated |  |

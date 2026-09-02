@@ -8,7 +8,9 @@ nav_exclude: true
 
 # CPulse_OutflowConnection
 
-**Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** 255 · **Module:** pulse_runtime_lib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** n/a (unspecified) · **Module:** pulse_runtime_lib
 
 **Derived by:** [CPulse_ResumePoint](../pulse_runtime_lib/CPulse_ResumePoint.md), [SignatureOutflow_Continue](../pulse_runtime_lib/SignatureOutflow_Continue.md)
 

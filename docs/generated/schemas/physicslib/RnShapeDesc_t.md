@@ -8,6 +8,8 @@ nav_exclude: true
 
 # RnShapeDesc_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 8 · **Module:** physicslib
 
 **Derived by:** [RnCapsuleDesc_t](../physicslib/RnCapsuleDesc_t.md), [RnCompoundDesc_t](../physicslib/RnCompoundDesc_t.md), [RnHullDesc_t](../physicslib/RnHullDesc_t.md), [RnMeshDesc_t](../physicslib/RnMeshDesc_t.md), [RnSphereDesc_t](../physicslib/RnSphereDesc_t.md)

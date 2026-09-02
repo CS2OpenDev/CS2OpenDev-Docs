@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNmGraphDocTransitionNode
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 288 bytes (`0x120`) · **Align:** 8 · **Module:** animdoclib
 
 **Inherits from:** [CNmGraphDocResultNode](../animdoclib/CNmGraphDocResultNode.md)
@@ -24,6 +26,7 @@ classDiagram
     CNmGraphDocTransitionNode <|-- CNmGraphDocGlobalTransitionNode
     CNmGraphDocTransitionNode *-- NmRootMotionBlendMode_t
     CNmGraphDocTransitionNode *-- NmEasingOperation_t
+    CNmGraphDocTransitionNode *-- `CNmGraphDocTransitionNode::TimeMatchMode_t`
 ```
 
 ## Memory layout
@@ -46,7 +49,7 @@ classDiagram
 | `0x10d` | `m_rootMotionBlend` | [NmRootMotionBlendMode_t](../animlib/NmRootMotionBlendMode_t.md) |  | `MPropertyGroupName +Transition` |
 | `0x10e` | `m_blendWeightEasing` | [NmEasingOperation_t](../animlib/NmEasingOperation_t.md) |  | `MPropertyGroupName +Transition` |
 | `0x110` | `m_flBoneMaskBlendInTimePercentage` | float32 |  | `MPropertyGroupName +Transition` |
-| `0x114` | `m_timeMatchMode` | [CNmGraphDocTransitionNode](../animdoclib/CNmGraphDocTransitionNode.md)::TimeMatchMode_t |  | `MPropertyGroupName +Target Time` |
+| `0x114` | `m_timeMatchMode` | [CNmGraphDocTransitionNode::TimeMatchMode_t](../animdoclib/CNmGraphDocTransitionNode.TimeMatchMode_t.md) |  | `MPropertyGroupName +Target Time` |
 | `0x118` | `m_flTimeOffset` | float32 |  | `MPropertyGroupName +Target Time` |
 | `0x11c` | `m_bCanBeForced` | bool |  | `MPropertyGroupName Advanced` |
 

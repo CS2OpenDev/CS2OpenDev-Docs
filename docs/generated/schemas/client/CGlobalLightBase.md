@@ -8,7 +8,9 @@ nav_exclude: true
 
 # CGlobalLightBase
 
-**Kind:** class · **Size:** 1216 bytes (`0x4c0`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 1216 bytes (`0x4c0`) · **Align:** n/a (unspecified) · **Module:** client
 
 **Derived by:** [C_GlobalLight](../client/C_GlobalLight.md)
 

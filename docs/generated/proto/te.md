@@ -7,7 +7,7 @@ nav_exclude: true
 
 # `te.proto`
 
-**Imports:** `networkbasetypes.proto`
+**Imports:** [`networkbasetypes.proto`](networkbasetypes.md)
 
 ## Diagram
 
@@ -293,15 +293,15 @@ direction LR
 
 ### `CMsgTEArmorRicochet`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `pos` | 1 | CMsgVector | optional |  |
-| `dir` | 2 | CMsgVector | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `pos` | 1 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `dir` | 2 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
 
 ### `CMsgTEBaseBeam`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `modelindex` | 1 | fixed64 | optional |  |
 | `haloindex` | 2 | fixed64 | optional |  |
 | `startframe` | 3 | uint32 | optional |  |
@@ -317,76 +317,76 @@ direction LR
 
 ### `CMsgTEBeamEntPoint`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `base` | 1 | [CMsgTEBaseBeam](#cmsgtebasebeam) | optional |  |
 | `startentity` | 2 | uint32 | optional |  |
 | `endentity` | 3 | uint32 | optional |  |
-| `start` | 4 | CMsgVector | optional |  |
-| `end` | 5 | CMsgVector | optional |  |
+| `start` | 4 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `end` | 5 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
 
 ### `CMsgTEBeamEnts`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `base` | 1 | [CMsgTEBaseBeam](#cmsgtebasebeam) | optional |  |
 | `startentity` | 2 | uint32 | optional |  |
 | `endentity` | 3 | uint32 | optional |  |
 
 ### `CMsgTEBeamPoints`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `base` | 1 | [CMsgTEBaseBeam](#cmsgtebasebeam) | optional |  |
-| `start` | 2 | CMsgVector | optional |  |
-| `end` | 3 | CMsgVector | optional |  |
+| `start` | 2 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `end` | 3 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
 
 ### `CMsgTEBeamRing`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `base` | 1 | [CMsgTEBaseBeam](#cmsgtebasebeam) | optional |  |
 | `startentity` | 2 | uint32 | optional |  |
 | `endentity` | 3 | uint32 | optional |  |
 
 ### `CMsgTEBubbles`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `mins` | 1 | CMsgVector | optional |  |
-| `maxs` | 2 | CMsgVector | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `mins` | 1 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `maxs` | 2 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
 | `height` | 3 | float | optional |  |
 | `count` | 4 | uint32 | optional |  |
 | `speed` | 5 | float | optional |  |
 
 ### `CMsgTEBubbleTrail`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `mins` | 1 | CMsgVector | optional |  |
-| `maxs` | 2 | CMsgVector | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `mins` | 1 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `maxs` | 2 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
 | `waterz` | 3 | float | optional |  |
 | `count` | 4 | uint32 | optional |  |
 | `speed` | 5 | float | optional |  |
 
 ### `CMsgTEDecal`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `origin` | 1 | CMsgVector | optional |  |
-| `start` | 2 | CMsgVector | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `origin` | 1 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `start` | 2 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
 | `entity` | 3 | int32 | optional | *(default: `-1`)* |
 | `hitbox` | 4 | uint32 | optional |  |
 | `index` | 5 | uint32 | optional |  |
 
 ### `CMsgEffectData`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `origin` | 1 | CMsgVector | optional |  |
-| `start` | 2 | CMsgVector | optional |  |
-| `normal` | 3 | CMsgVector | optional |  |
-| `angles` | 4 | CMsgQAngle | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `origin` | 1 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `start` | 2 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `normal` | 3 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `angles` | 4 | [CMsgQAngle](networkbasetypes.md#cmsgqangle) | optional |  |
 | `entity` | 5 | fixed32 | optional | *(default: `16777215`)* |
 | `otherentity` | 6 | fixed32 | optional | *(default: `16777215`)* |
 | `scale` | 7 | float | optional |  |
@@ -405,34 +405,34 @@ direction LR
 
 ### `CMsgTEEffectDispatch`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `effectdata` | 1 | [CMsgEffectData](#cmsgeffectdata) | optional |  |
 
 ### `CMsgTEEnergySplash`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `pos` | 1 | CMsgVector | optional |  |
-| `dir` | 2 | CMsgVector | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `pos` | 1 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `dir` | 2 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
 | `explosive` | 3 | bool | optional |  |
 
 ### `CMsgTEFizz`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `entity` | 1 | int32 | optional | *(default: `-1`)* |
 | `density` | 2 | uint32 | optional |  |
 | `current` | 3 | int32 | optional |  |
 
 ### `CMsgTEShatterSurface`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `origin` | 1 | CMsgVector | optional |  |
-| `angles` | 2 | CMsgQAngle | optional |  |
-| `force` | 3 | CMsgVector | optional |  |
-| `forcepos` | 4 | CMsgVector | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `origin` | 1 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `angles` | 2 | [CMsgQAngle](networkbasetypes.md#cmsgqangle) | optional |  |
+| `force` | 3 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `forcepos` | 4 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
 | `width` | 5 | float | optional |  |
 | `height` | 6 | float | optional |  |
 | `shardsize` | 7 | float | optional |  |
@@ -442,88 +442,88 @@ direction LR
 
 ### `CMsgTEGlowSprite`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `origin` | 1 | CMsgVector | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `origin` | 1 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
 | `scale` | 2 | float | optional |  |
 | `life` | 3 | float | optional |  |
 | `brightness` | 4 | uint32 | optional |  |
 
 ### `CMsgTEImpact`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `origin` | 1 | CMsgVector | optional |  |
-| `normal` | 2 | CMsgVector | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `origin` | 1 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `normal` | 2 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
 | `type` | 3 | uint32 | optional |  |
 
 ### `CMsgTEMuzzleFlash`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `origin` | 1 | CMsgVector | optional |  |
-| `angles` | 2 | CMsgQAngle | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `origin` | 1 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `angles` | 2 | [CMsgQAngle](networkbasetypes.md#cmsgqangle) | optional |  |
 | `scale` | 3 | float | optional |  |
 | `type` | 4 | uint32 | optional |  |
 
 ### `CMsgTEBloodStream`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `origin` | 1 | CMsgVector | optional |  |
-| `direction` | 2 | CMsgVector | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `origin` | 1 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `direction` | 2 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
 | `color` | 3 | fixed32 | optional |  |
 | `amount` | 4 | uint32 | optional |  |
 
 ### `CMsgTEExplosion`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `origin` | 1 | CMsgVector | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `origin` | 1 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
 | `flags` | 3 | uint32 | optional |  |
-| `normal` | 4 | CMsgVector | optional |  |
+| `normal` | 4 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
 | `radius` | 6 | uint32 | optional |  |
 | `magnitude` | 7 | uint32 | optional |  |
 | `affect_ragdolls` | 9 | bool | optional |  |
 | `sound_name` | 10 | string | optional |  |
 | `explosion_type` | 11 | uint32 | optional |  |
 | `create_debris` | 12 | bool | optional |  |
-| `debris_origin` | 13 | CMsgVector | optional |  |
+| `debris_origin` | 13 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
 | `debris_surfaceprop` | 14 | fixed32 | optional |  |
 | `explosion_type_name` | 15 | uint32 | optional | *(default: `0`)* |
 
 ### `CMsgTEDust`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `origin` | 1 | CMsgVector | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `origin` | 1 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
 | `size` | 2 | float | optional |  |
 | `speed` | 3 | float | optional |  |
-| `direction` | 4 | CMsgVector | optional |  |
+| `direction` | 4 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
 
 ### `CMsgTELargeFunnel`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `origin` | 1 | CMsgVector | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `origin` | 1 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
 | `reversed` | 2 | uint32 | optional |  |
 
 ### `CMsgTESparks`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `origin` | 1 | CMsgVector | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `origin` | 1 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
 | `magnitude` | 2 | uint32 | optional |  |
 | `length` | 3 | uint32 | optional |  |
-| `direction` | 4 | CMsgVector | optional |  |
+| `direction` | 4 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
 
 ### `CMsgTEPhysicsProp`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `origin` | 1 | CMsgVector | optional |  |
-| `velocity` | 2 | CMsgVector | optional |  |
-| `angles` | 3 | CMsgQAngle | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `origin` | 1 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `velocity` | 2 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `angles` | 3 | [CMsgQAngle](networkbasetypes.md#cmsgqangle) | optional |  |
 | `skin` | 4 | fixed32 | optional | *(default: `0`)* |
 | `flags` | 5 | uint32 | optional |  |
 | `effects` | 6 | uint32 | optional |  |
@@ -531,21 +531,21 @@ direction LR
 | `modelindex` | 8 | fixed64 | optional |  |
 | `unused_breakmodelsnottomake` | 9 | uint32 | optional |  |
 | `scale` | 10 | float | optional |  |
-| `dmgpos` | 11 | CMsgVector | optional |  |
-| `dmgdir` | 12 | CMsgVector | optional |  |
+| `dmgpos` | 11 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `dmgdir` | 12 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
 | `dmgtype` | 13 | int32 | optional |  |
 
 ### `CMsgTESmoke`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `origin` | 1 | CMsgVector | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `origin` | 1 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
 | `scale` | 2 | float | optional |  |
 
 ### `CMsgTEWorldDecal`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `origin` | 1 | CMsgVector | optional |  |
-| `normal` | 2 | CMsgVector | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `origin` | 1 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `normal` | 2 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
 | `index` | 3 | uint32 | optional |  |

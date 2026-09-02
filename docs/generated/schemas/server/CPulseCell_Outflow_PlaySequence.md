@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CPulseCell_Outflow_PlaySequence
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 320 bytes (`0x140`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CPulseCell_Outflow_PlaySceneBase](../server/CPulseCell_Outflow_PlaySceneBase.md)

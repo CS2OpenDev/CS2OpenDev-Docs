@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNmSpeedScaleBaseNode::CDefinition
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 32 bytes (`0x20`) · **Align:** 8 · **Module:** animlib
 
 **Inherits from:** [CNmPassthroughNode::CDefinition](../animlib/CNmPassthroughNode.CDefinition.md)
@@ -18,12 +20,12 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmPassthroughNode::CDefinition" <|-- "CNmSpeedScaleBaseNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmPassthroughNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmPoseNode::CDefinition"
-    "CNmSpeedScaleBaseNode::CDefinition" <|-- "CNmDurationScaleNode::CDefinition"
-    "CNmSpeedScaleBaseNode::CDefinition" <|-- "CNmSpeedScaleNode::CDefinition"
-    "CNmSpeedScaleBaseNode::CDefinition" <|-- "CNmVelocityBasedSpeedScaleNode::CDefinition"
+    `CNmPassthroughNode::CDefinition` <|-- `CNmSpeedScaleBaseNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmPassthroughNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmPoseNode::CDefinition`
+    `CNmSpeedScaleBaseNode::CDefinition` <|-- `CNmDurationScaleNode::CDefinition`
+    `CNmSpeedScaleBaseNode::CDefinition` <|-- `CNmSpeedScaleNode::CDefinition`
+    `CNmSpeedScaleBaseNode::CDefinition` <|-- `CNmVelocityBasedSpeedScaleNode::CDefinition`
 ```
 
 ## Memory layout

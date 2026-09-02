@@ -8,7 +8,9 @@ nav_exclude: true
 
 # CSAdditionalPerRoundStats_t
 
-**Kind:** class · **Size:** 248 bytes (`0xf8`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 248 bytes (`0xf8`) · **Align:** n/a (unspecified) · **Module:** server
 
 **Derived by:** [CSAdditionalMatchStats_t](../server/CSAdditionalMatchStats_t.md)
 

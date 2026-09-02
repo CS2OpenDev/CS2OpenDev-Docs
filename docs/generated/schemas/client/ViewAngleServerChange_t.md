@@ -1,6 +1,6 @@
 ---
 layout: default
-title: ViewAngleServerChange_t
+title: ViewAngleServerChange_t (client)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # ViewAngleServerChange_t
 
-**Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** n/a (unspecified) · **Module:** client
+
+**Twin:** [ViewAngleServerChange_t (server)](../server/ViewAngleServerChange_t.md)
 
 **Relationships:**
 

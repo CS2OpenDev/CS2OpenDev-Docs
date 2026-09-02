@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CBodyComponentBaseAnimGraph
+title: CBodyComponentBaseAnimGraph (client)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CBodyComponentBaseAnimGraph
 
-**Kind:** class · **Size:** 2992 bytes (`0xbb0`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 2992 bytes (`0xbb0`) · **Align:** n/a (unspecified) · **Module:** client
+
+**Twin:** [CBodyComponentBaseAnimGraph (server)](../server/CBodyComponentBaseAnimGraph.md)
 
 **Inherits from:** [CBodyComponentSkeletonInstance](../client/CBodyComponentSkeletonInstance.md)
 

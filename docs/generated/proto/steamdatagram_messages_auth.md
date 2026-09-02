@@ -7,7 +7,7 @@ nav_exclude: true
 
 # `steamdatagram_messages_auth.proto`
 
-**Imports:** `steamnetworkingsockets_messages_certs.proto`
+**Imports:** [`steamnetworkingsockets_messages_certs.proto`](steamnetworkingsockets_messages_certs.md)
 
 ## Diagram
 
@@ -31,7 +31,7 @@ direction LR
     +bytes legacy_gameserver_identity_binary
   }
 
-  class ExtraField {
+  class CMsgSteamDatagramRelayAuthTicket_ExtraField["CMsgSteamDatagramRelayAuthTicket.ExtraField"] {
     +string name
     +string string_value
     +sint64 int64_value
@@ -76,7 +76,7 @@ direction LR
     +uint32 protocol_version
   }
 
-  CMsgSteamDatagramRelayAuthTicket --> ExtraField : extra_fields[]
+  CMsgSteamDatagramRelayAuthTicket --> CMsgSteamDatagramRelayAuthTicket_ExtraField : extra_fields[]
 
 ```
 
@@ -84,14 +84,14 @@ direction LR
 
 ### `CMsgSteamDatagramRelayAuthTicket`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `time_expiry` | 1 | fixed32 | optional |  |
 | `legacy_authorized_steam_id` | 2 | fixed64 | optional |  |
 | `authorized_public_ip` | 3 | fixed32 | optional |  |
 | `legacy_gameserver_steam_id` | 4 | fixed64 | optional |  |
 | `app_id` | 7 | uint32 | optional |  |
-| `extra_fields` | 8 | CMsgSteamDatagramRelayAuthTicket.ExtraField | repeated |  |
+| `extra_fields` | 8 | [CMsgSteamDatagramRelayAuthTicket.ExtraField](#cmsgsteamdatagramrelayauthticketextrafield) | repeated |  |
 | `legacy_gameserver_pop_id` | 9 | fixed32 | optional |  |
 | `virtual_port` | 10 | uint32 | optional |  |
 | `gameserver_address` | 11 | bytes | optional |  |
@@ -100,28 +100,37 @@ direction LR
 | `authorized_client_identity_string` | 14 | string | optional |  |
 | `gameserver_identity_string` | 15 | string | optional |  |
 
+#### `CMsgSteamDatagramRelayAuthTicket.ExtraField`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `name` | 1 | string | optional |  |
+| `string_value` | 2 | string | optional |  |
+| `int64_value` | 3 | sint64 | optional |  |
+| `fixed64_value` | 5 | fixed64 | optional |  |
+
 ### `CMsgSteamDatagramSignedRelayAuthTicket`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `reserved_do_not_use` | 1 | fixed64 | optional |  |
 | `key_id` | 2 | fixed64 | optional |  |
 | `ticket` | 3 | bytes | optional |  |
 | `signature` | 4 | bytes | optional |  |
-| `certs` | 5 | CMsgSteamDatagramCertificateSigned | repeated |  |
+| `certs` | 5 | [CMsgSteamDatagramCertificateSigned](steamnetworkingsockets_messages_certs.md#cmsgsteamdatagramcertificatesigned) | repeated |  |
 
 ### `CMsgSteamDatagramCachedCredentialsForApp`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `private_key` | 1 | bytes | optional |  |
 | `cert` | 2 | bytes | optional |  |
 | `relay_tickets` | 3 | bytes | repeated |  |
 
 ### `CMsgSteamDatagramGameCoordinatorServerLogin`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `time_generated` | 1 | uint32 | optional |  |
 | `appid` | 2 | uint32 | optional |  |
 | `routing` | 3 | bytes | optional |  |
@@ -132,16 +141,16 @@ direction LR
 
 ### `CMsgSteamDatagramSignedGameCoordinatorServerLogin`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `cert` | 1 | CMsgSteamDatagramCertificateSigned | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `cert` | 1 | [CMsgSteamDatagramCertificateSigned](steamnetworkingsockets_messages_certs.md#cmsgsteamdatagramcertificatesigned) | optional |  |
 | `login` | 2 | bytes | optional |  |
 | `signature` | 3 | bytes | optional |  |
 
 ### `CMsgSteamDatagramHostedServerAddressPlaintext`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `ipv4` | 1 | fixed32 | optional |  |
 | `ipv6` | 2 | bytes | optional |  |
 | `port` | 3 | uint32 | optional |  |

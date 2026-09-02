@@ -8,18 +8,20 @@ nav_exclude: true
 
 # C_RopeKeyframe::CPhysicsDelegate
 
-**Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** n/a (unspecified) · **Module:** client
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    "C_RopeKeyframe::CPhysicsDelegate" --> C_RopeKeyframe
+    `C_RopeKeyframe::CPhysicsDelegate` --> C_RopeKeyframe
 ```
 
 ## Memory layout
 
-1 fields (1 declared here, 0 inherited). Offsets are absolute from the object base.
+1 field (1 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|

@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CAudioMorphData
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 104 bytes (`0x68`) · **Align:** 8 · **Module:** soundsystem_voicecontainers
 
 ## Memory layout

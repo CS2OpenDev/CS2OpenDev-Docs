@@ -8,6 +8,8 @@ nav_exclude: true
 
 # C_OP_DistanceBetweenCPsToCP
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 664 bytes (`0x298`) · **Align:** 8 · **Module:** particles
 
 **Inherits from:** [CParticleFunctionPreEmission](../particles/CParticleFunctionPreEmission.md)

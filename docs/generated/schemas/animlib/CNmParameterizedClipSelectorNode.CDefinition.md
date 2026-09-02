@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNmParameterizedClipSelectorNode::CDefinition
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 64 bytes (`0x40`) · **Align:** 8 · **Module:** animlib
 
 **Inherits from:** [CNmClipReferenceNode::CDefinition](../animlib/CNmClipReferenceNode.CDefinition.md)
@@ -16,9 +18,9 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmClipReferenceNode::CDefinition" <|-- "CNmParameterizedClipSelectorNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmClipReferenceNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmPoseNode::CDefinition"
+    `CNmClipReferenceNode::CDefinition` <|-- `CNmParameterizedClipSelectorNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmClipReferenceNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmPoseNode::CDefinition`
 ```
 
 ## Memory layout

@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CSimpleAssetTypeInfo
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 256 bytes (`0x100`) · **Align:** 8 · **Module:** toolutils2
 
 **Derived by:** [CBitmapAssetTypeInfo](../toolutils2/CBitmapAssetTypeInfo.md), [CResourceAssetTypeInfo](../toolutils2/CResourceAssetTypeInfo.md), [CVMMDAssetTypeInfo](../toolutils2/CVMMDAssetTypeInfo.md)

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CTimeline
+title: CTimeline (client)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CTimeline
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 552 bytes (`0x228`) · **Align:** 8 · **Module:** client
+
+**Twin:** [CTimeline (server)](../server/CTimeline.md)
 
 **Inherits from:** [IntervalTimer](../client/IntervalTimer.md)
 

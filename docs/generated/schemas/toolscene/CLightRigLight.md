@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CLightRigLight
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 64 bytes (`0x40`) · **Align:** 4 · **Module:** toolscene
 
 **Derived by:** [CLightRigPointLight](../toolscene/CLightRigPointLight.md), [CLightRigSpotLight](../toolscene/CLightRigSpotLight.md), [CLightRigSunLight](../toolscene/CLightRigSunLight.md)

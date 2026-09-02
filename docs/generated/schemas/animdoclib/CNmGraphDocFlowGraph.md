@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNmGraphDocFlowGraph
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 104 bytes (`0x68`) · **Align:** 8 · **Module:** animdoclib
 
 **Inherits from:** [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)
@@ -17,6 +19,7 @@ nav_exclude: true
 ```mermaid
 classDiagram
     CNmGraphDocGraph <|-- CNmGraphDocFlowGraph
+    CNmGraphDocFlowGraph *-- `CNmGraphDocFlowGraph::Connection_t`
 ```
 
 ## Memory layout
@@ -30,7 +33,7 @@ classDiagram
 | `0x38` | `m_graphType` | [NmGraphDocGraphType_t](../animdoclib/NmGraphDocGraphType_t.md) | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md) |  |
 | `0x3c` | `m_viewOffset` | Vector2D | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md) |  |
 | `0x44` | `m_flViewZoom` | float32 | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md) |  |
-| `0x50` | `m_connections` | CUtlVector< [CNmGraphDocFlowGraph](../animdoclib/CNmGraphDocFlowGraph.md)::Connection_t > |  |  |
+| `0x50` | `m_connections` | CUtlVector< [CNmGraphDocFlowGraph::Connection_t](../animdoclib/CNmGraphDocFlowGraph.Connection_t.md) > |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

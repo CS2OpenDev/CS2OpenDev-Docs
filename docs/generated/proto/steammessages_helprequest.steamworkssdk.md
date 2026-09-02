@@ -7,7 +7,7 @@ nav_exclude: true
 
 # `steammessages_helprequest.steamworkssdk.proto`
 
-**Imports:** `steammessages_unified_base.steamworkssdk.proto`
+**Imports:** [`steammessages_unified_base.steamworkssdk.proto`](steammessages_unified_base.steamworkssdk.md)
 
 ## Diagram
 
@@ -32,8 +32,8 @@ direction LR
 
 ### `CHelpRequestLogs_UploadUserApplicationLog_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `appid` | 1 | uint32 | optional |  |
 | `log_type` | 2 | string | optional |  |
 | `version_string` | 3 | string | optional |  |
@@ -41,6 +41,6 @@ direction LR
 
 ### `CHelpRequestLogs_UploadUserApplicationLog_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `id` | 1 | uint64 | optional |  |

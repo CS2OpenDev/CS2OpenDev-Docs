@@ -40,6 +40,8 @@ classDiagram
     CAnimSkeleton *-- CAnimFoot
     CBaseConstraint *-- CConstraintSlave
     CBaseConstraint *-- CConstraintTarget
+    CBoneConstraintPoseSpaceBone *-- `CBoneConstraintPoseSpaceBone::Input_t`
+    CBoneConstraintPoseSpaceMorph *-- `CBoneConstraintPoseSpaceMorph::Input_t`
     CFlexOp *-- FlexOpCode_t
     CFlexRule *-- CFlexOp
     CFootCycleDefinition *-- CAnimCycle
@@ -50,6 +52,7 @@ classDiagram
     CFootTrajectories *-- CFootTrajectory
     CHitBoxSet *-- CHitBox
     CHitBoxSetList *-- CHitBoxSet
+    CMaterialDrawDescriptor *-- `CMaterialDrawDescriptor::RigidMeshPart_t`
     CMaterialDrawDescriptor *-- RenderPrimitiveType_t
     CMaterialDrawDescriptor *-- CRenderBufferBinding
     CMeshletDescriptor *-- CDrawCullingData
@@ -77,8 +80,9 @@ classDiagram
     CRenderSkeleton *-- RenderSkeletonBone_t
     CSceneObjectData *-- CMaterialDrawDescriptor
     CSceneObjectData *-- CMeshletDescriptor
-    "CSceneObjectData::RTProxyDrawDescriptor_t" *-- CMaterialDrawDescriptor
-    "CSceneObjectData::RTProxyDrawDescriptor_t" *-- VertexAlbedoFormat_t
+    CSceneObjectData *-- `CSceneObjectData::RTProxyDrawDescriptor_t`
+    `CSceneObjectData::RTProxyDrawDescriptor_t` *-- CMaterialDrawDescriptor
+    `CSceneObjectData::RTProxyDrawDescriptor_t` *-- VertexAlbedoFormat_t
     CVPhysXSurfacePropertiesList --> CPhysSurfaceProperties
     ModelBoneFlexDriverControl_t *-- ModelBoneFlexComponent_t
     ModelBoneFlexDriver_t *-- ModelBoneFlexDriverControl_t
@@ -94,8 +98,11 @@ classDiagram
     PermModelData_t *-- ModelAnimGraph2Ref_t
     RenderInputLayoutField_t *-- RenderSlotType_t
     RenderSkeletonBone_t *-- SkeletonBoneBounds_t
-    "SkeletonAnimCapture_t::Frame_t" *-- SkeletonAnimCapture_t
+    SkeletonAnimCapture_t *-- `SkeletonAnimCapture_t::Bone_t`
+    SkeletonAnimCapture_t *-- `SkeletonAnimCapture_t::Frame_t`
+    `SkeletonAnimCapture_t::Frame_t` *-- `SkeletonAnimCapture_t::FrameStamp_t`
     SkeletonDemoDb_t --> SkeletonAnimCapture_t
+    SkeletonDemoDb_t *-- `SkeletonAnimCapture_t::Camera_t`
     VPhysXAggregateData_t *-- VPhysXBodyPart_t
     VPhysXAggregateData_t *-- PhysShapeMarkup_t
     VPhysXAggregateData_t *-- VPhysXConstraint2_t

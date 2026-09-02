@@ -7,7 +7,7 @@ nav_exclude: true
 
 # `steamdatagram_messages_sdr.proto`
 
-**Imports:** `steamnetworkingsockets_messages_certs.proto`, `steamnetworkingsockets_messages.proto`
+**Imports:** [`steamnetworkingsockets_messages_certs.proto`](steamnetworkingsockets_messages_certs.md), [`steamnetworkingsockets_messages.proto`](steamnetworkingsockets_messages.md)
 
 ## Diagram
 
@@ -51,13 +51,13 @@ direction LR
     +uint64 dummy_varint
   }
 
-  class RouteException {
+  class CMsgSteamDatagramRouterPingReply_RouteException["CMsgSteamDatagramRouterPingReply.RouteException"] {
     +fixed32 data_center_id
     +uint32 flags
     +uint32 penalty
   }
 
-  class AltAddress {
+  class CMsgSteamDatagramRouterPingReply_AltAddress["CMsgSteamDatagramRouterPingReply.AltAddress"] {
     +fixed32 ipv4
     +uint32 port
     +uint32 penalty
@@ -135,7 +135,7 @@ direction LR
     +List~CMsgSteamDatagramClientPingSampleReply.LegacyDataCenter~ legacy_data_centers
   }
 
-  class POP {
+  class CMsgSteamDatagramClientPingSampleReply_POP["CMsgSteamDatagramClientPingSampleReply.POP"] {
     +fixed32 pop_id
     +uint32 default_front_ping_ms
     +uint32 cluster_penalty
@@ -154,13 +154,13 @@ direction LR
     +fixed32 test_dc_via_relay_pop_id
   }
 
-  class AltAddress {
+  class CMsgSteamDatagramClientPingSampleReply_POP_AltAddress["CMsgSteamDatagramClientPingSampleReply.POP.AltAddress"] {
     +string id
     +uint32 front_ping_ms
     +uint32 penalty
   }
 
-  class LegacyDataCenter {
+  class CMsgSteamDatagramClientPingSampleReply_LegacyDataCenter["CMsgSteamDatagramClientPingSampleReply.LegacyDataCenter"] {
     +fixed32 data_center_id
     +fixed32 best_dc_via_relay_pop_id
     +uint32 best_dc_ping_ms
@@ -181,7 +181,7 @@ direction LR
     +CMsgSteamDatagramClientSwitchedPrimary.RouterQuality to_quality_then
   }
 
-  class RouterQuality {
+  class CMsgSteamDatagramClientSwitchedPrimary_RouterQuality["CMsgSteamDatagramClientSwitchedPrimary.RouterQuality"] {
     +uint32 score
     +uint32 front_ping
     +uint32 back_ping
@@ -369,7 +369,7 @@ direction LR
     +string build
   }
 
-  class EncryptedData {
+  class CMsgSteamDatagramP2PSessionRequestBody_EncryptedData["CMsgSteamDatagramP2PSessionRequestBody.EncryptedData"] {
     +string peer_identity_string
   }
 
@@ -433,14 +433,14 @@ direction LR
     +uint32 revision
   }
 
-  class RelayCluster {
+  class CMsgSteamDatagramP2PRoutes_RelayCluster["CMsgSteamDatagramP2PRoutes.RelayCluster"] {
     +fixed32 pop_id
     +uint32 ping_ms
     +uint32 score_penalty
     +bytes session_relay_routing_token
   }
 
-  class Route {
+  class CMsgSteamDatagramP2PRoutes_Route["CMsgSteamDatagramP2PRoutes.Route"] {
     +fixed32 my_pop_id
     +fixed32 your_pop_id
     +uint32 legacy_score
@@ -461,22 +461,22 @@ direction LR
     +string message
   }
 
-  CMsgSteamDatagramRouterPingReply --> RouteException : route_exceptions[]
-  CMsgSteamDatagramRouterPingReply --> AltAddress : alt_addresses[]
-  AltAddress --> Protocol : protocol
+  CMsgSteamDatagramRouterPingReply --> CMsgSteamDatagramRouterPingReply_RouteException : route_exceptions[]
+  CMsgSteamDatagramRouterPingReply --> CMsgSteamDatagramRouterPingReply_AltAddress : alt_addresses[]
+  CMsgSteamDatagramRouterPingReply_AltAddress --> CMsgSteamDatagramRouterPingReply_AltAddress_Protocol : protocol
   CMsgSteamDatagramGameserverPingRequestBody --> CMsgSteamNetworkingIPAddress : your_public_ip
   CMsgSteamDatagramClientPingSampleReply --> CMsgTOSTreatment : tos
-  CMsgSteamDatagramClientPingSampleReply --> POP : pops[]
-  CMsgSteamDatagramClientPingSampleReply --> LegacyDataCenter : legacy_data_centers[]
-  POP --> AltAddress : alt_addresses[]
-  CMsgSteamDatagramClientSwitchedPrimary --> RouterQuality : from_quality_now
+  CMsgSteamDatagramClientPingSampleReply --> CMsgSteamDatagramClientPingSampleReply_POP : pops[]
+  CMsgSteamDatagramClientPingSampleReply --> CMsgSteamDatagramClientPingSampleReply_LegacyDataCenter : legacy_data_centers[]
+  CMsgSteamDatagramClientPingSampleReply_POP --> CMsgSteamDatagramClientPingSampleReply_POP_AltAddress : alt_addresses[]
+  CMsgSteamDatagramClientSwitchedPrimary --> CMsgSteamDatagramClientSwitchedPrimary_RouterQuality : from_quality_now
   CMsgSteamDatagramP2PRoutingSummary --> CMsgSteamNetworkingP2PSDRRoutingSummary : sdr
-  CMsgSteamDatagramConnectionClosed --> ERelayMode : relay_mode
+  CMsgSteamDatagramConnectionClosed --> CMsgSteamDatagramConnectionClosed_ERelayMode : relay_mode
   CMsgSteamDatagramConnectionClosed --> CMsgSteamDatagramP2PRoutingSummary : p2p_routing_summary
   CMsgSteamDatagramNoConnection --> CMsgSteamDatagramP2PRoutingSummary : p2p_routing_summary
   CMsgSteamDatagramConnectionStatsP2PClientToRouter --> CMsgSteamDatagramP2PRoutingSummary : p2p_routing_summary
-  CMsgSteamDatagramP2PRoutes --> RelayCluster : relay_clusters[]
-  CMsgSteamDatagramP2PRoutes --> Route : routes[]
+  CMsgSteamDatagramP2PRoutes --> CMsgSteamDatagramP2PRoutes_RelayCluster : relay_clusters[]
+  CMsgSteamDatagramP2PRoutes --> CMsgSteamDatagramP2PRoutes_Route : routes[]
 
   class ESteamDatagramMsgID{
     <<enumeration>>
@@ -516,25 +516,25 @@ direction LR
     k_ESteamDatagramMsg_RelayToRelayPingReply
   }
 
-  class Flags{
+  class CMsgSteamDatagramRouterPingReply_Flags["CMsgSteamDatagramRouterPingReply.Flags"]{
     <<enumeration>>
     FLAG_MAYBE_MORE_DATA_CENTERS
     FLAG_MAYBE_MORE_ALT_ADDRESSES
   }
 
-  class Protocol{
+  class CMsgSteamDatagramRouterPingReply_AltAddress_Protocol["CMsgSteamDatagramRouterPingReply.AltAddress.Protocol"]{
     <<enumeration>>
     DefaultProtocol
   }
 
-  class ERelayMode{
+  class CMsgSteamDatagramConnectionClosed_ERelayMode["CMsgSteamDatagramConnectionClosed.ERelayMode"]{
     <<enumeration>>
     None
     EndToEnd
     ClosedByPeer
   }
 
-  class Flags{
+  class CMsgSteamDatagramConnectionStatsClientToRouter_Flags["CMsgSteamDatagramConnectionStatsClientToRouter.Flags"]{
     <<enumeration>>
     ACK_REQUEST_RELAY
     ACK_REQUEST_E2E
@@ -543,28 +543,28 @@ direction LR
     CLIENT_RELAY_OVERRIDE
   }
 
-  class Flags{
+  class CMsgSteamDatagramConnectionStatsRouterToClient_Flags["CMsgSteamDatagramConnectionStatsRouterToClient.Flags"]{
     <<enumeration>>
     ACK_REQUEST_RELAY
     ACK_REQUEST_E2E
     ACK_REQUEST_IMMEDIATE
   }
 
-  class Flags{
+  class CMsgSteamDatagramConnectionStatsRouterToServer_Flags["CMsgSteamDatagramConnectionStatsRouterToServer.Flags"]{
     <<enumeration>>
     ACK_REQUEST_RELAY
     ACK_REQUEST_E2E
     ACK_REQUEST_IMMEDIATE
   }
 
-  class Flags{
+  class CMsgSteamDatagramConnectionStatsServerToRouter_Flags["CMsgSteamDatagramConnectionStatsServerToRouter.Flags"]{
     <<enumeration>>
     ACK_REQUEST_RELAY
     ACK_REQUEST_E2E
     ACK_REQUEST_IMMEDIATE
   }
 
-  class Flags{
+  class CMsgSteamDatagramConnectionStatsP2PClientToRouter_Flags["CMsgSteamDatagramConnectionStatsP2PClientToRouter.Flags"]{
     <<enumeration>>
     ACK_REQUEST_RELAY
     ACK_REQUEST_E2E
@@ -574,7 +574,7 @@ direction LR
     CLIENT_RELAY_OVERRIDE
   }
 
-  class Flags{
+  class CMsgSteamDatagramConnectionStatsP2PRouterToClient_Flags["CMsgSteamDatagramConnectionStatsP2PRouterToClient.Flags"]{
     <<enumeration>>
     ACK_REQUEST_RELAY
     ACK_REQUEST_E2E
@@ -629,24 +629,24 @@ direction LR
 
 ### `CMsgSteamNetworkingIPAddress`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `v4` | 1 | fixed32 | optional |  |
 | `v6` | 2 | bytes | optional |  |
 
 ### `CMsgSteamDatagramSignedMessageGeneric`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `cert` | 1 | CMsgSteamDatagramCertificateSigned | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `cert` | 1 | [CMsgSteamDatagramCertificateSigned](steamnetworkingsockets_messages_certs.md#cmsgsteamdatagramcertificatesigned) | optional |  |
 | `signed_data` | 2 | bytes | optional |  |
 | `signature` | 3 | bytes | optional |  |
 | `dummy_pad` | 1023 | bytes | optional |  |
 
 ### `CMsgSteamDatagramRouterPingReply`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `client_timestamp` | 1 | fixed32 | optional |  |
 | `latency_datacenter_ids` | 2 | fixed32 | repeated | *(packed)* |
 | `latency_ping_ms` | 3 | uint32 | repeated | *(packed)* |
@@ -656,10 +656,10 @@ direction LR
 | `seconds_until_shutdown` | 7 | uint32 | optional |  |
 | `client_cookie` | 8 | fixed32 | optional |  |
 | `scoring_penalty_relay_cluster` | 9 | uint32 | optional |  |
-| `route_exceptions` | 10 | CMsgSteamDatagramRouterPingReply.RouteException | repeated |  |
+| `route_exceptions` | 10 | [CMsgSteamDatagramRouterPingReply.RouteException](#cmsgsteamdatagramrouterpingreplyrouteexception) | repeated |  |
 | `your_public_port` | 11 | fixed32 | optional |  |
 | `flags` | 12 | uint32 | optional |  |
-| `alt_addresses` | 13 | CMsgSteamDatagramRouterPingReply.AltAddress | repeated |  |
+| `alt_addresses` | 13 | [CMsgSteamDatagramRouterPingReply.AltAddress](#cmsgsteamdatagramrouterpingreplyaltaddress) | repeated |  |
 | `latency_datacenter_ids_p2p` | 14 | fixed32 | repeated | *(packed)* |
 | `latency_ping_ms_p2p` | 15 | uint32 | repeated | *(packed)* |
 | `recv_tos` | 16 | uint32 | optional |  |
@@ -669,10 +669,41 @@ direction LR
 | `dummy_pad` | 99 | bytes | optional |  |
 | `dummy_varint` | 100 | uint64 | optional |  |
 
+#### `CMsgSteamDatagramRouterPingReply.Flags`
+
+| Name | Value |
+|------|-------|
+| `FLAG_MAYBE_MORE_DATA_CENTERS` | 1 |
+| `FLAG_MAYBE_MORE_ALT_ADDRESSES` | 2 |
+
+#### `CMsgSteamDatagramRouterPingReply.RouteException`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `data_center_id` | 1 | fixed32 | optional |  |
+| `flags` | 2 | uint32 | optional |  |
+| `penalty` | 3 | uint32 | optional |  |
+
+#### `CMsgSteamDatagramRouterPingReply.AltAddress`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `ipv4` | 1 | fixed32 | optional |  |
+| `port` | 2 | uint32 | optional |  |
+| `penalty` | 3 | uint32 | optional |  |
+| `protocol` | 4 | [CMsgSteamDatagramRouterPingReply.AltAddress.Protocol](#cmsgsteamdatagramrouterpingreplyaltaddressprotocol) | optional | *(default: `DefaultProtocol`)* |
+| `id` | 5 | string | optional |  |
+
+##### `CMsgSteamDatagramRouterPingReply.AltAddress.Protocol`
+
+| Name | Value |
+|------|-------|
+| `DefaultProtocol` | 0 |
+
 ### `CMsgSteamDatagramGameserverPingRequestBody`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `relay_popid` | 1 | fixed32 | optional |  |
 | `your_public_ip` | 2 | [CMsgSteamNetworkingIPAddress](#cmsgsteamnetworkingipaddress) | optional |  |
 | `your_public_port` | 3 | uint32 | optional |  |
@@ -683,22 +714,22 @@ direction LR
 
 ### `CMsgSteamDatagramGameserverPingRequestEnvelope`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `legacy_your_public_ip` | 1 | fixed32 | optional |  |
 | `legacy_relay_unix_time` | 2 | fixed32 | optional |  |
 | `legacy_challenge` | 3 | fixed64 | optional |  |
 | `legacy_router_timestamp` | 4 | fixed32 | optional |  |
 | `legacy_your_public_port` | 5 | fixed32 | optional |  |
-| `cert` | 6 | CMsgSteamDatagramCertificateSigned | optional |  |
+| `cert` | 6 | [CMsgSteamDatagramCertificateSigned](steamnetworkingsockets_messages_certs.md#cmsgsteamdatagramcertificatesigned) | optional |  |
 | `signed_data` | 7 | bytes | optional |  |
 | `signature` | 8 | bytes | optional |  |
 | `dummy_pad` | 1023 | bytes | optional |  |
 
 ### `CMsgSteamDatagramGameserverPingReplyData`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `echo_relay_unix_time` | 2 | fixed32 | optional |  |
 | `legacy_challenge` | 3 | fixed64 | optional |  |
 | `legacy_router_timestamp` | 4 | fixed32 | optional |  |
@@ -713,8 +744,8 @@ direction LR
 
 ### `CMsgSteamDatagramNoSessionRelayToClient`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `your_public_ip` | 2 | fixed32 | optional |  |
 | `server_time` | 3 | fixed32 | optional |  |
 | `challenge` | 4 | fixed64 | optional |  |
@@ -724,8 +755,8 @@ direction LR
 
 ### `CMsgSteamDatagramNoSessionRelayToPeer`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `legacy_relay_session_id` | 1 | uint32 | optional |  |
 | `from_relay_session_id` | 2 | fixed32 | optional |  |
 | `from_connection_id` | 7 | fixed32 | optional |  |
@@ -733,32 +764,69 @@ direction LR
 
 ### `CMsgTOSTreatment`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `l4s_detect` | 1 | string | optional |  |
 | `up_ecn1` | 2 | string | optional |  |
 | `down_dscp45` | 3 | string | optional |  |
 
 ### `CMsgSteamDatagramClientPingSampleRequest`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `connection_id` | 1 | fixed32 | optional |  |
 
 ### `CMsgSteamDatagramClientPingSampleReply`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `connection_id` | 1 | fixed32 | optional |  |
-| `pops` | 2 | CMsgSteamDatagramClientPingSampleReply.POP | repeated |  |
-| `legacy_data_centers` | 3 | CMsgSteamDatagramClientPingSampleReply.LegacyDataCenter | repeated |  |
+| `pops` | 2 | [CMsgSteamDatagramClientPingSampleReply.POP](#cmsgsteamdatagramclientpingsamplereplypop) | repeated |  |
+| `legacy_data_centers` | 3 | [CMsgSteamDatagramClientPingSampleReply.LegacyDataCenter](#cmsgsteamdatagramclientpingsamplereplylegacydatacenter) | repeated |  |
 | `relay_override_active` | 5 | bool | optional |  |
 | `tos` | 6 | [CMsgTOSTreatment](#cmsgtostreatment) | optional |  |
 
+#### `CMsgSteamDatagramClientPingSampleReply.POP`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `pop_id` | 1 | fixed32 | optional |  |
+| `default_front_ping_ms` | 2 | uint32 | optional |  |
+| `default_e2e_ping_ms` | 3 | uint32 | optional |  |
+| `cluster_penalty` | 4 | uint32 | optional |  |
+| `default_e2e_score` | 5 | uint32 | optional |  |
+| `p2p_via_peer_relay_pop_id` | 6 | fixed32 | optional |  |
+| `alt_addresses` | 7 | [CMsgSteamDatagramClientPingSampleReply.POP.AltAddress](#cmsgsteamdatagramclientpingsamplereplypopaltaddress) | repeated |  |
+| `best_dc_ping_ms` | 9 | uint32 | optional |  |
+| `best_dc_score` | 10 | uint32 | optional |  |
+| `best_dc_via_relay_pop_id` | 11 | fixed32 | optional |  |
+| `default_dc_ping_ms` | 12 | uint32 | optional |  |
+| `default_dc_score` | 13 | uint32 | optional |  |
+| `default_dc_via_relay_pop_id` | 14 | fixed32 | optional |  |
+| `test_dc_ping_ms` | 15 | uint32 | optional |  |
+| `test_dc_score` | 16 | uint32 | optional |  |
+| `test_dc_via_relay_pop_id` | 17 | fixed32 | optional |  |
+
+##### `CMsgSteamDatagramClientPingSampleReply.POP.AltAddress`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `id` | 1 | string | optional |  |
+| `front_ping_ms` | 2 | uint32 | optional |  |
+| `penalty` | 3 | uint32 | optional |  |
+
+#### `CMsgSteamDatagramClientPingSampleReply.LegacyDataCenter`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `data_center_id` | 1 | fixed32 | optional |  |
+| `best_dc_via_relay_pop_id` | 2 | fixed32 | optional |  |
+| `best_dc_ping_ms` | 3 | uint32 | optional |  |
+
 ### `CMsgSteamDatagramClientSwitchedPrimary`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `connection_id` | 1 | fixed32 | optional |  |
 | `from_ip` | 2 | fixed32 | optional |  |
 | `from_port` | 3 | uint32 | optional |  |
@@ -767,41 +835,50 @@ direction LR
 | `from_active_packets_recv` | 6 | uint32 | optional |  |
 | `from_dropped_reason` | 7 | string | optional |  |
 | `gap_ms` | 8 | uint32 | optional |  |
-| `from_quality_now` | 9 | CMsgSteamDatagramClientSwitchedPrimary.RouterQuality | optional |  |
-| `to_quality_now` | 10 | CMsgSteamDatagramClientSwitchedPrimary.RouterQuality | optional |  |
-| `from_quality_then` | 11 | CMsgSteamDatagramClientSwitchedPrimary.RouterQuality | optional |  |
-| `to_quality_then` | 12 | CMsgSteamDatagramClientSwitchedPrimary.RouterQuality | optional |  |
+| `from_quality_now` | 9 | [CMsgSteamDatagramClientSwitchedPrimary.RouterQuality](#cmsgsteamdatagramclientswitchedprimaryrouterquality) | optional |  |
+| `to_quality_now` | 10 | [CMsgSteamDatagramClientSwitchedPrimary.RouterQuality](#cmsgsteamdatagramclientswitchedprimaryrouterquality) | optional |  |
+| `from_quality_then` | 11 | [CMsgSteamDatagramClientSwitchedPrimary.RouterQuality](#cmsgsteamdatagramclientswitchedprimaryrouterquality) | optional |  |
+| `to_quality_then` | 12 | [CMsgSteamDatagramClientSwitchedPrimary.RouterQuality](#cmsgsteamdatagramclientswitchedprimaryrouterquality) | optional |  |
+
+#### `CMsgSteamDatagramClientSwitchedPrimary.RouterQuality`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `score` | 1 | uint32 | optional |  |
+| `front_ping` | 2 | uint32 | optional |  |
+| `back_ping` | 3 | uint32 | optional |  |
+| `seconds_until_down` | 4 | uint32 | optional |  |
 
 ### `CMsgSteamDatagramConnectRequest`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `connection_id` | 1 | fixed32 | optional |  |
 | `gameserver_relay_session_id` | 2 | uint32 | optional |  |
 | `legacy_client_steam_id` | 3 | fixed64 | optional |  |
 | `my_timestamp` | 4 | fixed64 | optional |  |
 | `ping_est_ms` | 5 | uint32 | optional |  |
-| `crypt` | 6 | CMsgSteamDatagramSessionCryptInfoSigned | optional |  |
-| `cert` | 7 | CMsgSteamDatagramCertificateSigned | optional |  |
+| `crypt` | 6 | [CMsgSteamDatagramSessionCryptInfoSigned](steamnetworkingsockets_messages.md#cmsgsteamdatagramsessioncryptinfosigned) | optional |  |
+| `cert` | 7 | [CMsgSteamDatagramCertificateSigned](steamnetworkingsockets_messages_certs.md#cmsgsteamdatagramcertificatesigned) | optional |  |
 | `virtual_port` | 9 | uint32 | optional |  |
 | `routing_secret` | 10 | fixed64 | optional |  |
 
 ### `CMsgSteamDatagramConnectOK`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `client_connection_id` | 1 | fixed32 | optional |  |
 | `gameserver_relay_session_id` | 2 | uint32 | optional |  |
 | `your_timestamp` | 3 | fixed64 | optional |  |
 | `delay_time_usec` | 4 | uint32 | optional |  |
-| `crypt` | 5 | CMsgSteamDatagramSessionCryptInfoSigned | optional |  |
-| `cert` | 6 | CMsgSteamDatagramCertificateSigned | optional |  |
+| `crypt` | 5 | [CMsgSteamDatagramSessionCryptInfoSigned](steamnetworkingsockets_messages.md#cmsgsteamdatagramsessioncryptinfosigned) | optional |  |
+| `cert` | 6 | [CMsgSteamDatagramCertificateSigned](steamnetworkingsockets_messages_certs.md#cmsgsteamdatagramcertificatesigned) | optional |  |
 | `server_connection_id` | 7 | fixed32 | optional |  |
 
 ### `CMsgSteamNetworkingP2PSDRRoutingSummary`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `initial_ping` | 1 | uint32 | optional |  |
 | `initial_ping_front_local` | 2 | uint32 | optional |  |
 | `initial_ping_front_remote` | 3 | uint32 | optional |  |
@@ -820,18 +897,18 @@ direction LR
 
 ### `CMsgSteamDatagramP2PRoutingSummary`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `ice` | 2 | CMsgSteamNetworkingICESessionSummary | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `ice` | 2 | [CMsgSteamNetworkingICESessionSummary](steamnetworkingsockets_messages.md#cmsgsteamnetworkingicesessionsummary) | optional |  |
 | `sdr` | 3 | [CMsgSteamNetworkingP2PSDRRoutingSummary](#cmsgsteamnetworkingp2psdrroutingsummary) | optional |  |
 
 ### `CMsgSteamDatagramConnectionClosed`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `legacy_gameserver_relay_session_id` | 2 | uint32 | optional |  |
 | `legacy_from_steam_id` | 3 | fixed64 | optional |  |
-| `relay_mode` | 4 | CMsgSteamDatagramConnectionClosed.ERelayMode | optional |  |
+| `relay_mode` | 4 | [CMsgSteamDatagramConnectionClosed.ERelayMode](#cmsgsteamdatagramconnectionclosederelaymode) | optional |  |
 | `debug` | 5 | string | optional |  |
 | `reason_code` | 6 | uint32 | optional |  |
 | `to_connection_id` | 7 | fixed32 | optional |  |
@@ -840,20 +917,28 @@ direction LR
 | `from_relay_session_id` | 10 | fixed32 | optional |  |
 | `forward_target_relay_routing_token` | 11 | bytes | optional |  |
 | `forward_target_revision` | 12 | uint32 | optional |  |
-| `legacy_from_identity_binary` | 13 | CMsgSteamNetworkingIdentityLegacyBinary | optional |  |
+| `legacy_from_identity_binary` | 13 | [CMsgSteamNetworkingIdentityLegacyBinary](steamnetworkingsockets_messages_certs.md#cmsgsteamnetworkingidentitylegacybinary) | optional |  |
 | `routing_secret` | 14 | fixed64 | optional |  |
 | `from_identity_string` | 15 | string | optional |  |
 | `not_primary_session` | 16 | bool | optional |  |
-| `quality_relay` | 17 | CMsgSteamDatagramConnectionQuality | optional |  |
-| `quality_e2e` | 18 | CMsgSteamDatagramConnectionQuality | optional |  |
+| `quality_relay` | 17 | [CMsgSteamDatagramConnectionQuality](steamnetworkingsockets_messages.md#cmsgsteamdatagramconnectionquality) | optional |  |
+| `quality_e2e` | 18 | [CMsgSteamDatagramConnectionQuality](steamnetworkingsockets_messages.md#cmsgsteamdatagramconnectionquality) | optional |  |
 | `not_primary_transport` | 19 | bool | optional |  |
 | `p2p_routing_summary` | 21 | [CMsgSteamDatagramP2PRoutingSummary](#cmsgsteamdatagramp2proutingsummary) | optional |  |
 | `relay_override_active` | 22 | bool | optional |  |
 
+#### `CMsgSteamDatagramConnectionClosed.ERelayMode`
+
+| Name | Value |
+|------|-------|
+| `None` | 0 |
+| `EndToEnd` | 1 |
+| `ClosedByPeer` | 2 |
+
 ### `CMsgSteamDatagramNoConnection`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `legacy_gameserver_relay_session_id` | 2 | uint32 | optional |  |
 | `legacy_from_steam_id` | 3 | fixed64 | optional |  |
 | `end_to_end` | 4 | bool | optional |  |
@@ -864,8 +949,8 @@ direction LR
 | `from_relay_session_id` | 10 | fixed32 | optional |  |
 | `routing_secret` | 11 | fixed64 | optional |  |
 | `not_primary_session` | 12 | bool | optional |  |
-| `quality_relay` | 13 | CMsgSteamDatagramConnectionQuality | optional |  |
-| `quality_e2e` | 14 | CMsgSteamDatagramConnectionQuality | optional |  |
+| `quality_relay` | 13 | [CMsgSteamDatagramConnectionQuality](steamnetworkingsockets_messages.md#cmsgsteamdatagramconnectionquality) | optional |  |
+| `quality_e2e` | 14 | [CMsgSteamDatagramConnectionQuality](steamnetworkingsockets_messages.md#cmsgsteamdatagramconnectionquality) | optional |  |
 | `not_primary_transport` | 15 | bool | optional |  |
 | `p2p_routing_summary` | 16 | [CMsgSteamDatagramP2PRoutingSummary](#cmsgsteamdatagramp2proutingsummary) | optional |  |
 | `relay_override_active` | 17 | bool | optional |  |
@@ -873,8 +958,8 @@ direction LR
 
 ### `CMsgSteamDatagramGameserverSessionRequest`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `ticket` | 1 | bytes | optional |  |
 | `challenge_time` | 3 | fixed32 | optional |  |
 | `challenge` | 4 | fixed64 | optional |  |
@@ -885,12 +970,12 @@ direction LR
 | `platform` | 9 | string | optional |  |
 | `build` | 10 | string | optional |  |
 | `dev_gameserver_identity` | 100 | string | optional |  |
-| `dev_client_cert` | 101 | CMsgSteamDatagramCertificateSigned | optional |  |
+| `dev_client_cert` | 101 | [CMsgSteamDatagramCertificateSigned](steamnetworkingsockets_messages_certs.md#cmsgsteamdatagramcertificatesigned) | optional |  |
 
 ### `CMsgSteamDatagramGameserverSessionEstablished`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `connection_id` | 1 | fixed32 | optional |  |
 | `gameserver_identity_string` | 2 | string | optional |  |
 | `legacy_gameserver_steamid` | 3 | fixed64 | optional |  |
@@ -900,10 +985,10 @@ direction LR
 
 ### `CMsgSteamDatagramConnectionStatsClientToRouter`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `quality_relay` | 1 | CMsgSteamDatagramConnectionQuality | optional |  |
-| `quality_e2e` | 2 | CMsgSteamDatagramConnectionQuality | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `quality_relay` | 1 | [CMsgSteamDatagramConnectionQuality](steamnetworkingsockets_messages.md#cmsgsteamdatagramconnectionquality) | optional |  |
+| `quality_e2e` | 2 | [CMsgSteamDatagramConnectionQuality](steamnetworkingsockets_messages.md#cmsgsteamdatagramconnectionquality) | optional |  |
 | `ack_relay` | 4 | fixed32 | repeated |  |
 | `legacy_ack_e2e` | 5 | fixed32 | repeated |  |
 | `flags` | 6 | uint32 | optional |  |
@@ -911,12 +996,22 @@ direction LR
 | `seq_num_c2r` | 9 | uint32 | optional |  |
 | `seq_num_e2e` | 10 | uint32 | optional |  |
 
+#### `CMsgSteamDatagramConnectionStatsClientToRouter.Flags`
+
+| Name | Value |
+|------|-------|
+| `ACK_REQUEST_RELAY` | 1 |
+| `ACK_REQUEST_E2E` | 2 |
+| `ACK_REQUEST_IMMEDIATE` | 4 |
+| `NOT_PRIMARY_SESSION` | 8 |
+| `CLIENT_RELAY_OVERRIDE` | 32 |
+
 ### `CMsgSteamDatagramConnectionStatsRouterToClient`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `quality_relay` | 1 | CMsgSteamDatagramConnectionQuality | optional |  |
-| `quality_e2e` | 2 | CMsgSteamDatagramConnectionQuality | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `quality_relay` | 1 | [CMsgSteamDatagramConnectionQuality](steamnetworkingsockets_messages.md#cmsgsteamdatagramconnectionquality) | optional |  |
+| `quality_e2e` | 2 | [CMsgSteamDatagramConnectionQuality](steamnetworkingsockets_messages.md#cmsgsteamdatagramconnectionquality) | optional |  |
 | `seconds_until_shutdown` | 6 | uint32 | optional |  |
 | `client_connection_id` | 7 | fixed32 | optional |  |
 | `seq_num_r2c` | 8 | uint32 | optional |  |
@@ -928,12 +1023,20 @@ direction LR
 | `legacy_ack_e2e` | 14 | fixed32 | repeated |  |
 | `flags` | 15 | uint32 | optional |  |
 
+#### `CMsgSteamDatagramConnectionStatsRouterToClient.Flags`
+
+| Name | Value |
+|------|-------|
+| `ACK_REQUEST_RELAY` | 1 |
+| `ACK_REQUEST_E2E` | 2 |
+| `ACK_REQUEST_IMMEDIATE` | 4 |
+
 ### `CMsgSteamDatagramConnectionStatsRouterToServer`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `quality_relay` | 1 | CMsgSteamDatagramConnectionQuality | optional |  |
-| `quality_e2e` | 2 | CMsgSteamDatagramConnectionQuality | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `quality_relay` | 1 | [CMsgSteamDatagramConnectionQuality](steamnetworkingsockets_messages.md#cmsgsteamdatagramconnectionquality) | optional |  |
+| `quality_e2e` | 2 | [CMsgSteamDatagramConnectionQuality](steamnetworkingsockets_messages.md#cmsgsteamdatagramconnectionquality) | optional |  |
 | `seq_num_r2s` | 5 | uint32 | optional |  |
 | `seq_num_e2e` | 6 | uint32 | optional |  |
 | `legacy_client_steam_id` | 7 | fixed64 | optional |  |
@@ -946,12 +1049,20 @@ direction LR
 | `routing_secret` | 14 | fixed64 | optional |  |
 | `client_identity_string` | 15 | string | optional |  |
 
+#### `CMsgSteamDatagramConnectionStatsRouterToServer.Flags`
+
+| Name | Value |
+|------|-------|
+| `ACK_REQUEST_RELAY` | 1 |
+| `ACK_REQUEST_E2E` | 2 |
+| `ACK_REQUEST_IMMEDIATE` | 4 |
+
 ### `CMsgSteamDatagramConnectionStatsServerToRouter`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `quality_relay` | 1 | CMsgSteamDatagramConnectionQuality | optional |  |
-| `quality_e2e` | 2 | CMsgSteamDatagramConnectionQuality | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `quality_relay` | 1 | [CMsgSteamDatagramConnectionQuality](steamnetworkingsockets_messages.md#cmsgsteamdatagramconnectionquality) | optional |  |
+| `quality_e2e` | 2 | [CMsgSteamDatagramConnectionQuality](steamnetworkingsockets_messages.md#cmsgsteamdatagramconnectionquality) | optional |  |
 | `seq_num_s2r` | 3 | uint32 | optional |  |
 | `seq_num_e2e` | 4 | uint32 | optional |  |
 | `relay_session_id` | 6 | uint32 | optional |  |
@@ -961,10 +1072,18 @@ direction LR
 | `flags` | 10 | uint32 | optional |  |
 | `server_connection_id` | 11 | fixed32 | optional |  |
 
+#### `CMsgSteamDatagramConnectionStatsServerToRouter.Flags`
+
+| Name | Value |
+|------|-------|
+| `ACK_REQUEST_RELAY` | 1 |
+| `ACK_REQUEST_E2E` | 2 |
+| `ACK_REQUEST_IMMEDIATE` | 4 |
+
 ### `CMsgSteamDatagramP2PSessionRequestBody`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `challenge_time` | 1 | fixed32 | optional |  |
 | `challenge` | 2 | fixed64 | optional |  |
 | `client_connection_id` | 3 | fixed32 | optional |  |
@@ -979,18 +1098,24 @@ direction LR
 | `encryption_your_public_key_lead_byte` | 15 | uint32 | optional |  |
 | `encryption_my_ephemeral_public_key` | 16 | bytes | optional |  |
 
+#### `CMsgSteamDatagramP2PSessionRequestBody.EncryptedData`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `peer_identity_string` | 1 | string | optional |  |
+
 ### `CMsgSteamDatagramP2PSessionRequest`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `cert` | 1 | CMsgSteamDatagramCertificateSigned | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `cert` | 1 | [CMsgSteamDatagramCertificateSigned](steamnetworkingsockets_messages_certs.md#cmsgsteamdatagramcertificatesigned) | optional |  |
 | `body` | 2 | bytes | optional |  |
 | `signature` | 3 | bytes | optional |  |
 
 ### `CMsgSteamDatagramP2PSessionEstablished`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `connection_id` | 1 | fixed32 | optional |  |
 | `seconds_until_shutdown` | 3 | uint32 | optional |  |
 | `relay_routing_token` | 4 | bytes | optional |  |
@@ -998,10 +1123,10 @@ direction LR
 
 ### `CMsgSteamDatagramConnectionStatsP2PClientToRouter`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `quality_relay` | 1 | CMsgSteamDatagramConnectionQuality | optional |  |
-| `quality_e2e` | 2 | CMsgSteamDatagramConnectionQuality | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `quality_relay` | 1 | [CMsgSteamDatagramConnectionQuality](steamnetworkingsockets_messages.md#cmsgsteamdatagramconnectionquality) | optional |  |
+| `quality_e2e` | 2 | [CMsgSteamDatagramConnectionQuality](steamnetworkingsockets_messages.md#cmsgsteamdatagramconnectionquality) | optional |  |
 | `ack_relay` | 3 | fixed32 | repeated |  |
 | `legacy_ack_e2e` | 4 | fixed32 | repeated |  |
 | `flags` | 5 | uint32 | optional |  |
@@ -1014,12 +1139,23 @@ direction LR
 | `seq_num_e2e` | 12 | uint32 | optional |  |
 | `p2p_routing_summary` | 14 | [CMsgSteamDatagramP2PRoutingSummary](#cmsgsteamdatagramp2proutingsummary) | optional |  |
 
+#### `CMsgSteamDatagramConnectionStatsP2PClientToRouter.Flags`
+
+| Name | Value |
+|------|-------|
+| `ACK_REQUEST_RELAY` | 1 |
+| `ACK_REQUEST_E2E` | 2 |
+| `ACK_REQUEST_IMMEDIATE` | 4 |
+| `NOT_PRIMARY_SESSION` | 8 |
+| `NOT_PRIMARY_TRANSPORT_E2E` | 16 |
+| `CLIENT_RELAY_OVERRIDE` | 32 |
+
 ### `CMsgSteamDatagramConnectionStatsP2PRouterToClient`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `quality_relay` | 1 | CMsgSteamDatagramConnectionQuality | optional |  |
-| `quality_e2e` | 2 | CMsgSteamDatagramConnectionQuality | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `quality_relay` | 1 | [CMsgSteamDatagramConnectionQuality](steamnetworkingsockets_messages.md#cmsgsteamdatagramconnectionquality) | optional |  |
+| `quality_e2e` | 2 | [CMsgSteamDatagramConnectionQuality](steamnetworkingsockets_messages.md#cmsgsteamdatagramconnectionquality) | optional |  |
 | `seconds_until_shutdown` | 3 | uint32 | optional |  |
 | `migrate_request_ip` | 4 | fixed32 | optional |  |
 | `migrate_request_port` | 5 | uint32 | optional |  |
@@ -1034,10 +1170,19 @@ direction LR
 | `seq_num_r2c` | 14 | uint32 | optional |  |
 | `seq_num_e2e` | 15 | uint32 | optional |  |
 
+#### `CMsgSteamDatagramConnectionStatsP2PRouterToClient.Flags`
+
+| Name | Value |
+|------|-------|
+| `ACK_REQUEST_RELAY` | 1 |
+| `ACK_REQUEST_E2E` | 2 |
+| `ACK_REQUEST_IMMEDIATE` | 4 |
+| `NOT_PRIMARY_TRANSPORT_E2E` | 16 |
+
 ### `CMsgSteamDatagramP2PBadRouteRouterToClient`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `connection_id` | 1 | fixed32 | optional |  |
 | `failed_relay_routing_token` | 2 | bytes | optional |  |
 | `ack_forward_target_revision` | 3 | uint32 | optional |  |
@@ -1045,16 +1190,34 @@ direction LR
 
 ### `CMsgSteamDatagramP2PRoutes`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `relay_clusters` | 1 | CMsgSteamDatagramP2PRoutes.RelayCluster | repeated |  |
-| `routes` | 2 | CMsgSteamDatagramP2PRoutes.Route | repeated |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `relay_clusters` | 1 | [CMsgSteamDatagramP2PRoutes.RelayCluster](#cmsgsteamdatagramp2proutesrelaycluster) | repeated |  |
+| `routes` | 2 | [CMsgSteamDatagramP2PRoutes.Route](#cmsgsteamdatagramp2proutesroute) | repeated |  |
 | `revision` | 3 | uint32 | optional |  |
+
+#### `CMsgSteamDatagramP2PRoutes.RelayCluster`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `pop_id` | 1 | fixed32 | optional |  |
+| `ping_ms` | 2 | uint32 | optional |  |
+| `score_penalty` | 3 | uint32 | optional |  |
+| `session_relay_routing_token` | 4 | bytes | optional |  |
+
+#### `CMsgSteamDatagramP2PRoutes.Route`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `my_pop_id` | 1 | fixed32 | optional |  |
+| `your_pop_id` | 2 | fixed32 | optional |  |
+| `legacy_score` | 3 | uint32 | optional |  |
+| `interior_score` | 4 | uint32 | optional |  |
 
 ### `CMsgSteamDatagramSetSecondaryAddressRequest`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `client_main_ip` | 1 | fixed32 | optional |  |
 | `client_main_port` | 2 | fixed32 | optional |  |
 | `client_connection_id` | 3 | fixed32 | optional |  |
@@ -1064,7 +1227,7 @@ direction LR
 
 ### `CMsgSteamDatagramSetSecondaryAddressResult`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `success` | 1 | bool | optional |  |
 | `message` | 2 | string | optional |  |

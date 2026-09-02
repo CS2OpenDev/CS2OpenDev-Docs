@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CCS2WeaponGraphController
+title: CCS2WeaponGraphController (client)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CCS2WeaponGraphController
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 672 bytes (`0x2a0`) · **Align:** 8 · **Module:** client
+
+**Twin:** [CCS2WeaponGraphController (server)](../server/CCS2WeaponGraphController.md)
 
 **Inherits from:** [CAnimGraphControllerBase](../server/CAnimGraphControllerBase.md)
 

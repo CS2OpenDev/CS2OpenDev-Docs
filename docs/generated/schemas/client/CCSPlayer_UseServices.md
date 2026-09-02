@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CCSPlayer_UseServices
+title: CCSPlayer_UseServices (client)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CCSPlayer_UseServices
 
-**Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** n/a (unspecified) · **Module:** client
+
+**Twin:** [CCSPlayer_UseServices (server)](../server/CCSPlayer_UseServices.md)
 
 **Inherits from:** [CPlayer_UseServices](../client/CPlayer_UseServices.md)
 

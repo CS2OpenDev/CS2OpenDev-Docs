@@ -8,7 +8,9 @@ nav_exclude: true
 
 # CNavVolumeSphere
 
-**Kind:** class · **Size:** 136 bytes (`0x88`) · **Align:** 255 · **Module:** navlib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 136 bytes (`0x88`) · **Align:** n/a (unspecified) · **Module:** navlib
 
 **Inherits from:** [CNavVolume](../navlib/CNavVolume.md)
 

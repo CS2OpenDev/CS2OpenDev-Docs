@@ -8,13 +8,15 @@ nav_exclude: true
 
 # ParticleAttachment_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** animationsystem
 
 ## Values
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `PATTACH_INVALID` | -1 |  |
+| `PATTACH_INVALID` | -1 (`0xffffffff`) |  |
 | `PATTACH_ABSORIGIN` | 0 |  |
 | `PATTACH_ABSORIGIN_FOLLOW` | 1 |  |
 | `PATTACH_CUSTOMORIGIN` | 2 |  |

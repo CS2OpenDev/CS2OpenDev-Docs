@@ -43,5 +43,5 @@ classDiagram
     CPulseExecCursor <|-- CTestDomainDerived_Cursor
     CPulseCell_TestEnums *-- PulseTestEnumColor_t
     CPulseCell_TestEnums *-- PulseTestEnumFlags_t
-    "CPulseCell_TestWaitWithCursorState::CursorState_t" *-- CPulseCell_TestWaitWithCursorState
+    `CPulseCell_TestWaitWithCursorState::CursorState_t` *-- CPulseCell_TestWaitWithCursorState
 ```

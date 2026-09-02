@@ -8,6 +8,8 @@ nav_exclude: true
 
 # C_SceneEntity
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 1640 bytes (`0x668`) · **Align:** 8 · **Module:** client
 
 **Inherits from:** [C_PointEntity](../client/C_PointEntity.md)
@@ -20,6 +22,7 @@ classDiagram
     C_BaseEntity <|-- C_PointEntity
     CEntityInstance <|-- C_BaseEntity
     C_SceneEntity --> C_BaseModelEntity
+    C_SceneEntity *-- `C_SceneEntity::QueuedEvents_t`
 ```
 
 ## Memory layout
@@ -29,8 +32,8 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_iszPrivateVScripts` | CUtlSymbolLarge | [CEntityInstance](../entity2/CEntityInstance.md) |  |
-| `0x10` | `m_pEntity` | [CEntityIdentity](../entity2/CEntityIdentity.md)* | [CEntityInstance](../entity2/CEntityInstance.md) |  |
-| `0x28` | `m_CScriptComponent` | [CScriptComponent](../entity2/CScriptComponent.md)* | [CEntityInstance](../entity2/CEntityInstance.md) |  |
+| `0x10` | `m_pEntity` | [CEntityIdentity](../entity2/CEntityIdentity.md)* | [CEntityInstance](../entity2/CEntityInstance.md) | CEntityIdentity pointer — the entity's identity record (name, class, handle, flags). |
+| `0x28` | `m_CScriptComponent` | [CScriptComponent](../entity2/CScriptComponent.md)* | [CEntityInstance](../entity2/CEntityInstance.md) | VScript component attached to the entity, when scripted. |
 | `0x30` | `m_CBodyComponent` | [CBodyComponent](../client/CBodyComponent.md)* | [C_BaseEntity](../client/C_BaseEntity.md) |  |
 | `0x38` | `m_NetworkTransmitComponent` | [CNetworkTransmitComponent](../server/CNetworkTransmitComponent.md) | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
 | `0x328` | `m_nLastThinkTick` | [GameTick_t](../entity2/GameTick_t.md) | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
@@ -124,5 +127,5 @@ classDiagram
 | `0x618` | `m_hOwner` | CHandle< [C_BaseModelEntity](../client/C_BaseModelEntity.md) > |  | `MNotSaved` |
 | `0x620` | `m_hActorList` | C_NetworkUtlVectorBase< CHandle< [C_BaseModelEntity](../client/C_BaseModelEntity.md) > > |  | `MNotSaved` |
 | `0x638` | `m_bWasPlaying` | bool |  | `MNotSaved` |
-| `0x648` | `m_QueuedEvents` | CUtlVector< [C_SceneEntity](../client/C_SceneEntity.md)::QueuedEvents_t > |  | `MNotSaved` |
+| `0x648` | `m_QueuedEvents` | CUtlVector< [C_SceneEntity::QueuedEvents_t](../client/C_SceneEntity.QueuedEvents_t.md) > |  | `MNotSaved` |
 | `0x660` | `m_flCurrentTime` | float32 |  | `MNotSaved` |

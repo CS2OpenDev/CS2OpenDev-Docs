@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CNmParticleEvent
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 112 bytes (`0x70`) · **Align:** 8 · **Module:** animlib
 
 **Inherits from:** [CNmEvent](../animlib/CNmEvent.md)
@@ -18,6 +20,7 @@ nav_exclude: true
 classDiagram
     CNmEvent <|-- CNmParticleEvent
     CNmParticleEvent *-- CNmEventRelevance_t
+    CNmParticleEvent *-- `CNmParticleEvent::Type_t`
     CNmParticleEvent *-- CNmEventTargetEntity_t
     CNmParticleEvent *-- InfoForResourceTypeIParticleSystemDefinition
     CNmParticleEvent *-- ParticleAttachment_t
@@ -33,7 +36,7 @@ classDiagram
 | `0xc` | `m_flDuration` | [NmPercent_t](../animlib/NmPercent_t.md) | [CNmEvent](../animlib/CNmEvent.md) |  |
 | `0x10` | `m_syncID` | CGlobalSymbol | [CNmEvent](../animlib/CNmEvent.md) |  |
 | `0x18` | `m_relevance` | [CNmEventRelevance_t](../animlib/CNmEventRelevance_t.md) |  |  |
-| `0x1c` | `m_type` | [CNmParticleEvent](../animlib/CNmParticleEvent.md)::Type_t |  |  |
+| `0x1c` | `m_type` | [CNmParticleEvent::Type_t](../animlib/CNmParticleEvent.Type_t.md) |  |  |
 | `0x20` | `m_target` | [CNmEventTargetEntity_t](../animlib/CNmEventTargetEntity_t.md) |  |  |
 | `0x28` | `m_hParticleSystem` | CStrongHandle< [InfoForResourceTypeIParticleSystemDefinition](../resourcesystem/InfoForResourceTypeIParticleSystemDefinition.md) > |  |  |
 | `0x30` | `m_tags` | CUtlString |  |  |

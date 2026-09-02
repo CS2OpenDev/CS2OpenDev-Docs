@@ -8,6 +8,8 @@ nav_exclude: true
 
 # CAnimGraphDoc_GroupNode
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 184 bytes (`0xb8`) · **Align:** 8 · **Module:** animgraphdoclib
 
 **Inherits from:** [CAnimGraphDoc_ContainerNodeBase](../animgraphdoclib/CAnimGraphDoc_ContainerNodeBase.md)

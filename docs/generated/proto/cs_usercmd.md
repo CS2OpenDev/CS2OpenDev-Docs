@@ -7,7 +7,7 @@ nav_exclude: true
 
 # `cs_usercmd.proto`
 
-**Imports:** `valveextensions.proto`, `networkbasetypes.proto`, `usercmd.proto`
+**Imports:** [`valveextensions.proto`](valveextensions.md), [`networkbasetypes.proto`](networkbasetypes.md), [`usercmd.proto`](usercmd.md)
 
 ## Diagram
 
@@ -64,23 +64,23 @@ direction LR
 
 ### `CSGOInterpolationInfoPB`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `src_tick` | 1 | int32 | optional | *(default: `-1`)* |
 | `dst_tick` | 2 | int32 | optional | *(default: `-1`)* |
 | `frac` | 3 | float | optional | *(default: `0`)* |
 
 ### `CSGOInterpolationInfoPB_CL`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `frac` | 3 | float | optional | *(default: `0`)* |
 
 ### `CSGOInputHistoryEntryPB`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `view_angles` | 2 | CMsgQAngle | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `view_angles` | 2 | [CMsgQAngle](networkbasetypes.md#cmsgqangle) | optional |  |
 | `render_tick_count` | 4 | int32 | optional |  |
 | `render_tick_fraction` | 5 | float | optional |  |
 | `player_tick_count` | 6 | int32 | optional |  |
@@ -91,16 +91,16 @@ direction LR
 | `player_interp` | 15 | [CSGOInterpolationInfoPB](#csgointerpolationinfopb) | optional |  |
 | `frame_number` | 64 | int32 | optional |  |
 | `target_ent_index` | 65 | int32 | optional | *(default: `-1`)* |
-| `shoot_position` | 66 | CMsgVector | optional |  |
-| `target_head_pos_check` | 67 | CMsgVector | optional |  |
-| `target_abs_pos_check` | 68 | CMsgVector | optional |  |
-| `target_abs_ang_check` | 69 | CMsgQAngle | optional |  |
+| `shoot_position` | 66 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `target_head_pos_check` | 67 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `target_abs_pos_check` | 68 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `target_abs_ang_check` | 69 | [CMsgQAngle](networkbasetypes.md#cmsgqangle) | optional |  |
 
 ### `CSGOUserCmdPB`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `base` | 1 | CBaseUserCmdPB | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `base` | 1 | [CBaseUserCmdPB](usercmd.md#cbaseusercmdpb) | optional |  |
 | `input_history` | 2 | [CSGOInputHistoryEntryPB](#csgoinputhistoryentrypb) | repeated |  |
 | `attack1_start_history_index` | 6 | int32 | optional | *(default: `-1`)* |
 | `attack2_start_history_index` | 7 | int32 | optional | *(default: `-1`)* |

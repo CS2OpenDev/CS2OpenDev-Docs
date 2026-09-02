@@ -8,6 +8,8 @@ nav_exclude: true
 
 # C_INIT_CreatePhyllotaxis
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 528 bytes (`0x210`) · **Align:** 8 · **Module:** particles
 
 **Inherits from:** [CParticleFunctionInitializer](../particles/CParticleFunctionInitializer.md)
@@ -53,7 +55,7 @@ classDiagram
 | `0x1f8` | `m_fpointAngle` | float32 |  | `MPropertyFriendlyName golden angle (is 137.508)` |
 | `0x1fc` | `m_fsizeOverall` | float32 |  | `MPropertyFriendlyName overall size multiplier (-1 count based distribution)` |
 | `0x200` | `m_fRadBias` | float32 |  | `MPropertyFriendlyName radius bias` |
-| `0x204` | `m_fMinRad` | float32 |  | `MPropertyFriendlyName radius min ` |
+| `0x204` | `m_fMinRad` | float32 |  | `MPropertyFriendlyName radius min` |
 | `0x208` | `m_fDistBias` | float32 |  | `MPropertyFriendlyName distribution bias` |
 | `0x20c` | `m_bUseLocalCoords` | bool |  | `MPropertyFriendlyName local space` |
 | `0x20d` | `m_bUseWithContEmit` | bool |  | `MPropertyFriendlyName use continuous emission` |

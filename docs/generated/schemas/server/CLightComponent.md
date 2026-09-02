@@ -1,6 +1,6 @@
 ---
 layout: default
-title: CLightComponent
+title: CLightComponent (server)
 nav_exclude: true
 ---
 
@@ -8,7 +8,11 @@ nav_exclude: true
 
 # CLightComponent
 
-**Kind:** class · **Size:** 448 bytes (`0x1c0`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 448 bytes (`0x1c0`) · **Align:** n/a (unspecified) · **Module:** server
+
+**Twin:** [CLightComponent (client)](../client/CLightComponent.md)
 
 **Inherits from:** [CEntityComponent](../entity2/CEntityComponent.md)
 
