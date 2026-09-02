@@ -1,6 +1,6 @@
 import { join } from 'node:path';
+import type { Row } from '../../components/islands/DataTable';
 import { siteDataDir, readJsonFile } from '../paths';
-import { escapeHtml } from '../html';
 
 export interface ConVarFlagLegendEntry {
 	name: string;
@@ -58,13 +58,15 @@ export function rangeText(min: number | null, max: number | null): string {
 	return '';
 }
 
-/**
- * Raw upstream help text to trusted HTML: escape first, then turn `<token>` placeholders
- * into `<code>` and newlines into `<br>` so multi-line descriptions (bot_prefix, and 15
- * more convars) render as one readable table cell instead of breaking the table.
- */
-export function helpTextHtml(help: string): string {
-	const escaped = escapeHtml(help);
-	const withPlaceholders = escaped.replace(/&lt;(.+?)&gt;/g, '<code>&lt;$1&gt;</code>');
-	return withPlaceholders.replace(/\n/g, '<br>');
+/** Every convar as a DataTable row. The page's first page and rows.json both
+ * come from here, so a hash reveal lands on the same row either way. */
+export function convarRows(): Row[] {
+	return loadConVars().map((c) => ({
+		name: c.name,
+		default: c.default,
+		value_type: c.value_type,
+		range: rangeText(c.min, c.max),
+		flags: c.flags,
+		description: c.help,
+	}));
 }

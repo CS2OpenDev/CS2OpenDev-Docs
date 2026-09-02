@@ -1,9 +1,10 @@
 ---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
-import DataTable, { type Column, type Row } from '../../components/islands/DataTable';
+import DataTable, { PAGE_SIZE, type Column } from '../../components/islands/DataTable';
+import TableRowsNote from '../../components/TableRowsNote.astro';
 import { provenanceLine } from '../../lib/provenance';
-import { loadPaintKits } from '../../lib/data/items';
-import { itemsHref } from '../../lib/urls';
+import { loadPaintKits, paintKitRows } from '../../lib/data/items';
+import { itemsHref, withBase } from '../../lib/urls';
 
 const kits = loadPaintKits();
 
@@ -13,11 +14,10 @@ const columns: Column[] = [
 	{ key: 'description_tag', label: 'Description tag' },
 ];
 
-const rows: Row[] = kits.map((k) => ({
-	def_index: k.def_index,
-	name: k.name,
-	description_tag: k.description_tag,
-}));
+// Only the first page rides in the island's props; the rest comes from
+// paint-kits/rows.json.ts on first interaction.
+const rows = paintKitRows().slice(0, PAGE_SIZE);
+const rowsHref = withBase('/items/paint-kits/rows.json');
 ---
 
 <StarlightPage
@@ -39,12 +39,14 @@ const rows: Row[] = kits.map((k) => ({
 				id="pk"
 				columns={columns}
 				rows={rows}
+				src={rowsHref}
 				anchorKey="name"
 				caption="Paint kits"
-				pageSize={250}
+				pageSize={PAGE_SIZE}
 				initialSort={{ key: 'def_index', dir: 'asc' }}
 				client:idle
 			/>
+			<TableRowsNote shown={rows.length} total={kits.length} rowsHref={rowsHref} />
 		</div>
 	</div>
 </StarlightPage>

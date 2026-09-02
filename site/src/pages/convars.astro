@@ -1,9 +1,11 @@
 ---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
-import DataTable, { type Column, type Row } from '../components/islands/DataTable';
+import DataTable, { PAGE_SIZE, type Column } from '../components/islands/DataTable';
+import TableRowsNote from '../components/TableRowsNote.astro';
 import { provenanceLine } from '../lib/provenance';
-import { flagAnchor, flagLegend, helpTextHtml, loadConVars, rangeText } from '../lib/data/convars';
+import { convarRows, flagAnchor, flagLegend, loadConVars } from '../lib/data/convars';
 import { identifierAliases } from '../lib/data/schema';
+import { withBase } from '../lib/urls';
 import '../styles/console.css';
 
 const convars = loadConVars();
@@ -15,23 +17,18 @@ const columns: Column[] = [
 	{ key: 'value_type', label: 'Type' },
 	{ key: 'range', label: 'Range' },
 	{ key: 'flags', label: 'Flags', facet: true },
-	{ key: 'description', label: 'Description', html: true },
+	{ key: 'description', label: 'Description', helpText: true },
 ];
 
-const rows: Row[] = convars.map((c) => ({
-	name: c.name,
-	default: c.default,
-	value_type: c.value_type,
-	range: rangeText(c.min, c.max),
-	flags: c.flags,
-	description: helpTextHtml(c.help),
-}));
+// Only the first page rides in the island's props; the rest comes from
+// convars/rows.json.ts on first interaction.
+const rows = convarRows().slice(0, PAGE_SIZE);
+const rowsHref = withBase('/convars/rows.json');
 
 // Deduped across all 3,955 rows, not just the first table page, so a search for a
 // term that only occurs past the DataTable's SSR page (mp_roundtime is row 1,686)
 // still finds this page. The full name is included alongside its split parts: past
-// row 250 the name exists only inside the island's props attribute, which Pagefind
-// does not index.
+// row 250 the name is not in the page at all until the island fetches rows.json.
 const aliasText = [
 	...new Set(convars.flatMap((c) => [c.name, ...identifierAliases(c.name)])),
 ].join(' ');
@@ -113,11 +110,14 @@ const headings = [
 				id="cv"
 				columns={columns}
 				rows={rows}
+				src={rowsHref}
 				anchorKey="name"
 				caption={`${convars.length.toLocaleString()} console variables`}
+				pageSize={PAGE_SIZE}
 				initialSort={{ key: 'name', dir: 'asc' }}
 				client:idle
 			/>
 		</div>
+		<TableRowsNote shown={rows.length} total={convars.length} rowsHref={rowsHref} artifact="convars_schema.json" />
 	</div>
 </StarlightPage>

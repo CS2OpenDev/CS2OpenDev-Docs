@@ -1,9 +1,11 @@
 ---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
-import DataTable, { type Column, type Row } from '../components/islands/DataTable';
+import DataTable, { PAGE_SIZE, type Column } from '../components/islands/DataTable';
+import TableRowsNote from '../components/TableRowsNote.astro';
 import { provenanceLine } from '../lib/provenance';
-import { flagAnchor, flagLegend, helpTextHtml, loadCommands } from '../lib/data/commands';
+import { commandRows, flagAnchor, flagLegend, loadCommands } from '../lib/data/commands';
 import { identifierAliases } from '../lib/data/schema';
+import { withBase } from '../lib/urls';
 import '../styles/console.css';
 
 const commands = loadCommands();
@@ -13,20 +15,18 @@ const columns: Column[] = [
 	{ key: 'name', label: 'Name', mono: true },
 	{ key: 'completion', label: 'Completion' },
 	{ key: 'flags', label: 'Flags', facet: true },
-	{ key: 'description', label: 'Description', html: true },
+	{ key: 'description', label: 'Description', helpText: true },
 ];
 
-const rows: Row[] = commands.map((c) => ({
-	name: c.name,
-	completion: c.has_completion_callback ? 'Yes' : '',
-	flags: c.flags,
-	description: helpTextHtml(c.help),
-}));
+// Only the first page rides in the island's props; the rest comes from
+// commands/rows.json.ts on first interaction.
+const rows = commandRows().slice(0, PAGE_SIZE);
+const rowsHref = withBase('/commands/rows.json');
 
 // Deduped across every command, not just the DataTable's first SSR page, so a search
 // for a term on a later page still resolves to this page. The full name is included
-// alongside its split parts: past the SSR page the name exists only inside the
-// island's props attribute, which Pagefind does not index.
+// alongside its split parts: past the SSR page the name is not in the page at all
+// until the island fetches rows.json.
 const aliasText = [
 	...new Set(commands.flatMap((c) => [c.name, ...identifierAliases(c.name)])),
 ].join(' ');
@@ -106,11 +106,14 @@ const headings = [
 				id="cmd"
 				columns={columns}
 				rows={rows}
+				src={rowsHref}
 				anchorKey="name"
 				caption={`${commands.length.toLocaleString()} console commands`}
+				pageSize={PAGE_SIZE}
 				initialSort={{ key: 'name', dir: 'asc' }}
 				client:idle
 			/>
 		</div>
+		<TableRowsNote shown={rows.length} total={commands.length} rowsHref={rowsHref} artifact="commands_schema.json" />
 	</div>
 </StarlightPage>

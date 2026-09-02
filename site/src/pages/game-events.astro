@@ -1,13 +1,14 @@
 ---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
-import DataTable, { type Column, type Row } from '../components/islands/DataTable';
+import DataTable, { PAGE_SIZE, type Column } from '../components/islands/DataTable';
+import TableRowsNote from '../components/TableRowsNote.astro';
 import { provenanceLine } from '../lib/provenance';
-import { escapeHtml } from '../lib/html';
-import { protoMessageHref } from '../lib/urls';
+import { protoMessageHref, withBase } from '../lib/urls';
 import { loadProtoIndex, schemaEnumHref } from '../lib/data/protobufs';
 import { identifierAliases, loadSchemaIndex } from '../lib/data/schema';
 import {
 	eventHeading,
+	gameEventRows,
 	loadGameEventsData,
 	sourceStem,
 	typeLegendAnchor,
@@ -39,21 +40,16 @@ function eventAliases(ev: GameEvent): string {
 }
 
 const columns: Column[] = [
-	{ key: 'name', label: 'Name', html: true },
+	{ key: 'name', label: 'Name', hrefKey: 'href' },
 	{ key: 'source', label: 'Source' },
 	{ key: 'fields', label: 'Fields', numeric: true },
 	{ key: 'description', label: 'Description' },
 ];
 
-const rows: Row[] = events.map((ev) => ({
-	name: `<a href="#${ev.anchor}">${escapeHtml(eventHeading(ev, duplicates))}</a>`,
-	source: sourceStem(ev.source),
-	fields: ev.fields.length,
-	description: ev.description,
-	// Text-only shadow field: the Name column's value is markup, so search matches on
-	// href/tag noise unless it reads this plain field instead.
-	search: `${ev.name} ${ev.source} ${ev.description}`.trim(),
-}));
+// Only the first page rides in the island's props; the rest comes from
+// game-events/rows.json.ts on first interaction.
+const rows = gameEventRows().slice(0, PAGE_SIZE);
+const rowsHref = withBase('/game-events/rows.json');
 
 // Old links used the bare #name. For duplicated names, prefer the mod declaration
 // (the CS2 event), else the one with the most fields.
@@ -216,13 +212,15 @@ const headings = [
 				id="ev"
 				columns={columns}
 				rows={rows}
-				searchKeys={['search']}
-				pageSize={0}
+				src={rowsHref}
+				searchKeys={['name', 'source', 'description']}
+				pageSize={PAGE_SIZE}
 				caption={`${events.length} game event definitions`}
 				initialSort={{ key: 'name', dir: 'asc' }}
 				client:idle
 			/>
 		</div>
+		<TableRowsNote shown={rows.length} total={events.length} rowsHref={rowsHref} artifact="gameevents_schema.json" />
 
 		<h2 id="events" data-legacy-anchor={LEGACY_SECTION_ANCHORS.events}>Events</h2>
 		{events.map((ev) => (

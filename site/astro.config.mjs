@@ -128,6 +128,9 @@ export default defineConfig({
 	base: BASE,
 	trailingSlash: 'always',
 	redirects,
+	// Astro inlines any stylesheet under 4 KB into every page that imports it;
+	// on 4,390 entity pages that is about 18 MB of repeated CSS.
+	build: { inlineStylesheets: 'never' },
 	// Nothing on the site goes through astro:assets, so the build never needs sharp.
 	image: { service: passthroughImageService() },
 	integrations: [

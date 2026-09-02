@@ -195,10 +195,15 @@ const warning = ent.annotations?.warning;
 	)}
 
 	{isClass && diagram.length > 0 && (
-		<Mermaid
-			code={`classDiagram\n${diagram.join('\n')}`}
-			caption="Inheritance chain, direct subclasses (up to 20) and a few composition edges"
-		/>
+		<details class="cs2-diagram" data-pagefind-ignore>
+			<summary>
+				Relationship diagram <span class="cs2-count">({diagram.length} edges)</span>
+			</summary>
+			<Mermaid
+				code={`classDiagram\n${diagram.join('\n')}`}
+				caption="Inheritance chain, direct subclasses (up to 20) and a few composition edges"
+			/>
+		</details>
 	)}
 
 	{ent.kind === 'enum' && (

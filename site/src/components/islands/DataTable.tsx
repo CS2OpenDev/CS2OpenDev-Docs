@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import '../../styles/datatable.css';
 
 export interface Column {
@@ -7,10 +7,16 @@ export interface Column {
 	numeric?: boolean;
 	mono?: boolean;
 	html?: boolean;
+	/** Raw console help text: `<placeholder>` tokens set in code font, newlines kept. */
+	helpText?: boolean;
+	/** Render the cell as a link whose href is the row's value under this key. */
+	hrefKey?: string;
 	sortable?: boolean;
 	width?: string;
 	facet?: boolean;
 }
+
+export const PAGE_SIZE = 250;
 
 export type Row = Record<string, string | number | boolean | null | string[]>;
 
@@ -25,18 +31,47 @@ export interface DataTableProps {
 	caption?: string;
 	emptyText?: string;
 	/** When set, `rows` is only the server-rendered first page. The full set
-	 * (a JSON array of Row) is fetched from this URL on first interaction. */
+	 * (a JSON array of Row) is fetched from this URL on first interaction:
+	 * filter focus, sort, facet, page, or a hash that misses the first page. */
 	src?: string;
 }
 
 type SortDir = 'asc' | 'desc' | null;
 type FacetState = Record<string, string[]>;
 
+const PLACEHOLDER_RE = /<(.+?)>/g;
+
+/** `<token>` becomes <code>, a newline becomes <br>; everything else is text. */
+function renderHelpText(text: string): ReactNode[] {
+	const out: ReactNode[] = [];
+	text.split('\n').forEach((line, li) => {
+		if (li > 0) out.push(<br key={`br${li}`} />);
+		let last = 0;
+		for (const m of line.matchAll(PLACEHOLDER_RE)) {
+			const at = m.index ?? 0;
+			if (at > last) out.push(line.slice(last, at));
+			out.push(<code key={`c${li}.${at}`}>{m[0]}</code>);
+			last = at + m[0].length;
+		}
+		if (last < line.length) out.push(line.slice(last));
+	});
+	return out;
+}
+
 /** Pure, module-scope so the row loop never allocates a closure per cell. */
-function renderCellContent(col: Column, value: Row[string]) {
+function renderCellContent(col: Column, row: Row) {
+	const value = row[col.key];
 	if (col.html) {
 		const html = value === null || value === undefined ? '' : String(value);
 		return <span dangerouslySetInnerHTML={{ __html: html }} />;
+	}
+	if (col.helpText) {
+		return value === null || value === undefined ? '' : renderHelpText(String(value));
+	}
+	if (col.hrefKey) {
+		const href = row[col.hrefKey];
+		const text = value === null || value === undefined ? '' : String(value);
+		return href ? <a href={String(href)}>{text}</a> : text;
 	}
 	if (col.facet) {
 		const arr = Array.isArray(value) ? value : [];
@@ -131,6 +166,7 @@ export default function DataTable({
 	const [revealId, setRevealId] = useState<string | null>(null);
 	const [fullRows, setFullRows] = useState<Row[] | null>(null);
 	const [srcLoading, setSrcLoading] = useState(false);
+	const [srcError, setSrcError] = useState(false);
 
 	const didWriteUrlRef = useRef(false);
 	const srcFetchStartedRef = useRef(false);
@@ -157,7 +193,7 @@ export default function DataTable({
 	const facetColumns = useMemo(() => columns.filter((c) => c.facet), [columns]);
 
 	const effectiveSearchKeys = useMemo(
-		() => searchKeys ?? columns.filter((c) => !c.html && !c.facet).map((c) => c.key),
+		() => searchKeys ?? columns.filter((c) => !c.html && !c.helpText && !c.facet).map((c) => c.key),
 		[searchKeys, columns]
 	);
 
@@ -200,13 +236,15 @@ export default function DataTable({
 		return sorted.slice(start, start + pageSize);
 	}, [sorted, clampedPage, pageSize]);
 
-	// Fetches the full row set exactly once. Safe to call from multiple
-	// handlers (focus, sort, facet, page, hash reveal, idle prefetch): the ref
-	// guard makes every call after the first a no-op.
+	// Fetches the full row set once. Safe to call from every handler (focus,
+	// sort, facet, page, hash reveal, retry): the ref guard makes a call while
+	// a fetch is in flight or already resolved a no-op. Nothing fetches on idle;
+	// a viewer who only reads the first page never downloads the rest.
 	const ensureFullRows = useCallback(() => {
 		if (!src || srcFetchStartedRef.current) return;
 		srcFetchStartedRef.current = true;
 		setSrcLoading(true);
+		setSrcError(false);
 		fetch(src)
 			.then((res) => {
 				if (!res.ok) throw new Error(`${res.status}`);
@@ -217,25 +255,12 @@ export default function DataTable({
 				setSrcLoading(false);
 			})
 			.catch(() => {
-				// Leave fullRows null; the server-rendered first page stays usable.
+				// The first page stays usable; the guard is released so Retry can fetch again.
+				srcFetchStartedRef.current = false;
 				setSrcLoading(false);
+				setSrcError(true);
 			});
 	}, [src]);
-
-	// Prefetch once the main thread is idle, so most viewers never see the
-	// loading note at all. Safari has no requestIdleCallback, hence the timer.
-	useEffect(() => {
-		if (!src || typeof window === 'undefined') return;
-		const w = window as typeof window & { requestIdleCallback?: (cb: () => void) => number };
-		if (typeof w.requestIdleCallback === 'function') {
-			const handle = w.requestIdleCallback(() => ensureFullRows());
-			return () => {
-				(window as typeof window & { cancelIdleCallback?: (h: number) => void }).cancelIdleCallback?.(handle);
-			};
-		}
-		const timer = setTimeout(() => ensureFullRows(), 200);
-		return () => clearTimeout(timer);
-	}, [src, ensureFullRows]);
 
 	// Shared by the mount-time hash check and the deferred retry once the full
 	// set arrives. Returns whether hashId was found in candidateRows.
@@ -526,6 +551,14 @@ export default function DataTable({
 
 				<p className="dtbl-count" aria-live="polite">
 					{srcLoading && <span className="dtbl-loading">Loading full list… </span>}
+					{srcError && (
+						<span className="dtbl-error">
+							Could not load the remaining rows.{' '}
+							<button type="button" onClick={ensureFullRows}>
+								Retry
+							</button>{' '}
+						</span>
+					)}
 					Showing {sorted.length.toLocaleString()} of {effectiveRows.length.toLocaleString()}
 				</p>
 			</div>
@@ -580,7 +613,7 @@ export default function DataTable({
 									<tr key={rowId ?? `${clampedPage}-${idx}`} id={rowId}>
 										{columns.map((col) => (
 											<td key={col.key} className={cellClassName(col)}>
-												{renderCellContent(col, row[col.key])}
+												{renderCellContent(col, row)}
 											</td>
 										))}
 									</tr>

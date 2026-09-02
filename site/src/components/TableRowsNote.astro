@@ -1,0 +1,26 @@
+---
+import { codegenArtifactHref } from '../lib/urls';
+
+interface Props {
+	/** Rows the server rendered, and the island's props carry. */
+	shown: number;
+	total: number;
+	rowsHref: string;
+	/** Generated artifact under downstream-codegen-schemas carrying the same data, if any. */
+	artifact?: string;
+}
+const { shown, total, rowsHref, artifact } = Astro.props;
+---
+
+{shown < total && (
+	<p class="cs2-note">
+		The first {shown} of {total.toLocaleString()} rows are in the page; the rest load the first time you
+		filter, sort or page the table. Without scripts, the full list is{' '}
+		<a href={rowsHref}>rows.json</a>
+		{artifact && (
+			<>
+				{' '}or the generated <a href={codegenArtifactHref(artifact)}>{artifact}</a>
+			</>
+		)}.
+	</p>
+)}

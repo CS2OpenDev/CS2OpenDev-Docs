@@ -1,4 +1,5 @@
 import { join } from 'node:path';
+import type { Row } from '../../components/islands/DataTable';
 import { siteDataDir, readJsonFile } from '../paths';
 
 export interface GameEventField {
@@ -57,4 +58,16 @@ export function eventHeading(ev: GameEvent, duplicates: Record<string, string[]>
 
 export function typeLegendAnchor(type: string): string {
 	return `type-${type}`;
+}
+
+/** Index rows, shared by the page and rows.json. `href` is the event's own section. */
+export function gameEventRows(): Row[] {
+	const { events, duplicates } = loadGameEventsData();
+	return events.map((ev) => ({
+		name: eventHeading(ev, duplicates),
+		href: `#${ev.anchor}`,
+		source: sourceStem(ev.source),
+		fields: ev.fields.length,
+		description: ev.description,
+	}));
 }

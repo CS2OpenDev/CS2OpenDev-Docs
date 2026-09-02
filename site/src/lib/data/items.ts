@@ -1,4 +1,5 @@
 import { join } from 'node:path';
+import type { Row } from '../../components/islands/DataTable';
 import { readJsonFile, siteDataDir } from '../paths';
 
 export interface ItemResolution {
@@ -97,4 +98,43 @@ export function loadStickerKits(): StickerKit[] {
 export function loadMusicKits(): MusicKit[] {
 	musicKitsCache ??= readJsonFile<{ music_kits: MusicKit[] }>(join(siteDataDir(), 'music_kits.json')).music_kits;
 	return musicKitsCache;
+}
+
+// DataTable rows for the four tables. Each page slices its first page from the
+// same array its rows.json serves, so the two agree row for row.
+
+export function itemRows(): Row[] {
+	return loadItems().items.map((it) => ({
+		def_index: it.def_index,
+		name: it.name,
+		prefab_id: it.prefab_id,
+		item_type_name: it.item_type_name ? [it.item_type_name] : [],
+		classname: it.classname,
+		name_token: it.name_token,
+	}));
+}
+
+export function paintKitRows(): Row[] {
+	return loadPaintKits().map((k) => ({
+		def_index: k.def_index,
+		name: k.name,
+		description_tag: k.description_tag,
+	}));
+}
+
+export function stickerKitRows(): Row[] {
+	return loadStickerKits().map((k) => ({
+		def_index: k.def_index,
+		name: k.name,
+		item_name_token: k.item_name_token,
+		description: k.description,
+	}));
+}
+
+export function musicKitRows(): Row[] {
+	return loadMusicKits().map((k) => ({
+		def_index: k.def_index,
+		name: k.name,
+		loc_name: k.loc_name,
+	}));
 }

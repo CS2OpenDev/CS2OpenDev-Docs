@@ -1,9 +1,10 @@
 ---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
-import DataTable, { type Column, type Row } from '../../components/islands/DataTable';
+import DataTable, { PAGE_SIZE, type Column } from '../../components/islands/DataTable';
+import TableRowsNote from '../../components/TableRowsNote.astro';
 import { provenanceLine } from '../../lib/provenance';
-import { loadItems } from '../../lib/data/items';
-import { paintKitsHref, stickerKitsHref, musicKitsHref } from '../../lib/urls';
+import { itemRows, loadItems } from '../../lib/data/items';
+import { paintKitsHref, stickerKitsHref, musicKitsHref, withBase } from '../../lib/urls';
 
 const { items, prefabs, rarities, qualities } = loadItems();
 
@@ -16,14 +17,10 @@ const columns: Column[] = [
 	{ key: 'name_token', label: 'Name token' },
 ];
 
-const rows: Row[] = items.map((it) => ({
-	def_index: it.def_index,
-	name: it.name,
-	prefab_id: it.prefab_id,
-	item_type_name: it.item_type_name ? [it.item_type_name] : [],
-	classname: it.classname,
-	name_token: it.name_token,
-}));
+// Only the first page rides in the island's props; the rest comes from
+// items/rows.json.ts on first interaction.
+const rows = itemRows().slice(0, PAGE_SIZE);
+const rowsHref = withBase('/items/rows.json');
 
 const headings = [
 	{ depth: 2, slug: 'items', text: 'Items' },
@@ -67,11 +64,14 @@ const headings = [
 			id="it"
 			columns={columns}
 			rows={rows}
+			src={rowsHref}
 			anchorKey="name"
 			caption="Items"
+			pageSize={PAGE_SIZE}
 			initialSort={{ key: 'def_index', dir: 'asc' }}
 			client:idle
 		/>
+		<TableRowsNote shown={rows.length} total={items.length} rowsHref={rowsHref} />
 
 		<h2 id="prefabs">Prefabs</h2>
 		<p>

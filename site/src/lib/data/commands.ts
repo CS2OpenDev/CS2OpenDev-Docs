@@ -1,9 +1,10 @@
 import { join } from 'node:path';
+import type { Row } from '../../components/islands/DataTable';
 import { siteDataDir, readJsonFile } from '../paths';
 import { flagLegend as convarFlagLegend, type ConVarFlagLegendEntry } from './convars';
 
 export type { ConVarFlagLegendEntry };
-export { helpTextHtml, flagAnchor } from './convars';
+export { flagAnchor } from './convars';
 
 export interface CommandRaw {
 	name: string;
@@ -33,4 +34,14 @@ export function loadCommands(): CommandRaw[] {
 /** commands.json carries its own copy of the same legend array as convars.json. */
 export function flagLegend(): ConVarFlagLegendEntry[] {
 	return loadCommandsData().flags ?? convarFlagLegend();
+}
+
+/** Every command as a DataTable row; shared by the page and rows.json. */
+export function commandRows(): Row[] {
+	return loadCommands().map((c) => ({
+		name: c.name,
+		completion: c.has_completion_callback ? 'Yes' : '',
+		flags: c.flags,
+		description: c.help,
+	}));
 }

@@ -1,18 +1,12 @@
 ---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
-import DataTable, { type Column, type Row } from '../../components/islands/DataTable';
+import DataTable, { PAGE_SIZE, type Column } from '../../components/islands/DataTable';
+import TableRowsNote from '../../components/TableRowsNote.astro';
 import { provenanceLine } from '../../lib/provenance';
-import { loadStickerKits } from '../../lib/data/items';
+import { loadStickerKits, stickerKitRows } from '../../lib/data/items';
 import { itemsHref, withBase } from '../../lib/urls';
 
 const allKits = loadStickerKits();
-
-// Astro serializes the full `rows` prop into the hydration payload regardless
-// of pageSize; at 11,789 rows that alone pushed this page over the site's 3 MB
-// non-schema page budget. Ship only the first page server-side and have
-// DataTable fetch the rest from rows.json.ts on first interaction.
-const FIRST_PAGE_SIZE = 250;
-const firstPage = allKits.slice(0, FIRST_PAGE_SIZE);
 
 const columns: Column[] = [
 	{ key: 'def_index', label: 'Def index', numeric: true },
@@ -21,12 +15,11 @@ const columns: Column[] = [
 	{ key: 'description', label: 'Description token' },
 ];
 
-const rows: Row[] = firstPage.map((k) => ({
-	def_index: k.def_index,
-	name: k.name,
-	item_name_token: k.item_name_token,
-	description: k.description,
-}));
+// Astro serializes the whole `rows` prop regardless of pageSize; at 11,789 rows
+// that alone put this page over the 3 MB budget. Only the first page rides in
+// the props; the rest comes from rows.json.ts on first interaction.
+const rows = stickerKitRows().slice(0, PAGE_SIZE);
+const rowsHref = withBase('/items/sticker-kits/rows.json');
 ---
 
 <StarlightPage
@@ -48,13 +41,14 @@ const rows: Row[] = firstPage.map((k) => ({
 			id="sk"
 			columns={columns}
 			rows={rows}
-			src={withBase('/items/sticker-kits/rows.json')}
+			src={rowsHref}
 			anchorKey="name"
 			caption="Sticker kits"
-			pageSize={250}
+			pageSize={PAGE_SIZE}
 			initialSort={{ key: 'def_index', dir: 'asc' }}
 			client:idle
 		/>
+		<TableRowsNote shown={rows.length} total={allKits.length} rowsHref={rowsHref} />
 	</div>
 	</div>
 </StarlightPage>
