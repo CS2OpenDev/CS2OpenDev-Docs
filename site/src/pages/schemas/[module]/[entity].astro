@@ -1,6 +1,7 @@
 ---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import EntityArticle from '../../../components/EntityArticle.astro';
+import { stripInlineCode } from '../../../lib/html';
 import { loadSchemaIndex, pagedEntities, twinsOf } from '../../../lib/data/schema';
 
 export function getStaticPaths() {
@@ -17,9 +18,10 @@ if (!ent) throw new Error(`Unknown entity ${Astro.props.key}`);
 
 // The 189 twinned names would otherwise give two identical page titles.
 const title = twinsOf(idx, ent).length > 0 ? `${ent.name} (${ent.module})` : ent.name;
-const description =
-	ent.annotations?.description?.split(/(?<=\.)\s/)[0] ??
-	`CS2 ${ent.kind} ${ent.name} in module ${ent.module}, build ${idx.provenance.buildId}.`;
+const firstSentence = ent.annotations?.description?.split(/(?<=\.)\s/)[0];
+const description = firstSentence
+	? stripInlineCode(firstSentence)
+	: `CS2 ${ent.kind} ${ent.name} in module ${ent.module}, build ${idx.provenance.buildId}.`;
 
 const headings = [
 	{ depth: 2, slug: 'relationships', text: 'Relationships' },

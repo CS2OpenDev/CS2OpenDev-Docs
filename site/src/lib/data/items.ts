@@ -1,6 +1,6 @@
 import { join } from 'node:path';
 import type { Row } from '../../components/islands/DataTable';
-import { readJsonFile, siteDataDir } from '../paths';
+import { readJsonFile, requireKeys, requireRows, siteDataDir } from '../paths';
 
 export interface ItemResolution {
 	classname: string;
@@ -20,8 +20,6 @@ export interface Item {
 	description_token: string;
 	is_default: boolean;
 	prefab_id: string;
-	quality: string | null;
-	rarity: string | null;
 	resolution: ItemResolution;
 }
 
@@ -79,24 +77,55 @@ let stickerKitsCache: StickerKit[] | undefined;
 let musicKitsCache: MusicKit[] | undefined;
 
 export function loadItems(): RawItems {
-	itemsCache ??= readJsonFile<RawItems>(join(siteDataDir(), 'items.json'));
+	if (itemsCache) return itemsCache;
+	const file = join(siteDataDir(), 'items.json');
+	const raw = readJsonFile<RawItems>(file);
+	requireKeys(file, raw, ['items', 'prefabs', 'rarities', 'qualities', 'note']);
+	requireRows(file, raw.items, 'items', [
+		'def_index',
+		'name',
+		'classname',
+		'name_token',
+		'item_type_name',
+		'item_slot',
+		'description_token',
+		'is_default',
+		'prefab_id',
+		'resolution',
+	]);
+	requireRows(file, raw.prefabs, 'prefabs', ['id', 'classname', 'item_slot', 'item_type_name', 'name_token', 'parent_prefab']);
+	requireRows(file, raw.rarities, 'rarities', ['id', 'loc_key', 'loc_key_weapon', 'value']);
+	requireRows(file, raw.qualities, 'qualities', ['id', 'value']);
+	itemsCache = raw;
 	return itemsCache;
 }
 
+/** One kit table per file, each a single top-level array. */
+function loadKits<T>(name: string, key: string, keys: readonly string[]): T[] {
+	const file = join(siteDataDir(), name);
+	const raw = readJsonFile<Record<string, T[]>>(file);
+	requireKeys(file, raw, [key]);
+	requireRows(file, raw[key], key, keys);
+	return raw[key]!;
+}
+
 export function loadPaintKits(): PaintKit[] {
-	paintKitsCache ??= readJsonFile<{ paint_kits: PaintKit[] }>(join(siteDataDir(), 'paint_kits.json')).paint_kits;
+	paintKitsCache ??= loadKits<PaintKit>('paint_kits.json', 'paint_kits', ['def_index', 'name', 'description_tag']);
 	return paintKitsCache;
 }
 
 export function loadStickerKits(): StickerKit[] {
-	stickerKitsCache ??= readJsonFile<{ sticker_kits: StickerKit[] }>(
-		join(siteDataDir(), 'sticker_kits.json')
-	).sticker_kits;
+	stickerKitsCache ??= loadKits<StickerKit>('sticker_kits.json', 'sticker_kits', [
+		'def_index',
+		'name',
+		'description',
+		'item_name_token',
+	]);
 	return stickerKitsCache;
 }
 
 export function loadMusicKits(): MusicKit[] {
-	musicKitsCache ??= readJsonFile<{ music_kits: MusicKit[] }>(join(siteDataDir(), 'music_kits.json')).music_kits;
+	musicKitsCache ??= loadKits<MusicKit>('music_kits.json', 'music_kits', ['def_index', 'name', 'loc_name']);
 	return musicKitsCache;
 }
 

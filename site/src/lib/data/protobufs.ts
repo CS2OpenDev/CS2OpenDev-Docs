@@ -1,5 +1,5 @@
 import { join } from 'node:path';
-import { siteDataDir, readJsonFile } from '../paths';
+import { siteDataDir, readJsonFile, requireKeys, requireRows } from '../paths';
 import { escapeHtml } from '../html';
 import { entityHref, protoEnumHref, protoMessageHref } from '../urls';
 import { resolveEntity, type SchemaIndex } from './schema';
@@ -49,7 +49,6 @@ export interface ProtoMessage {
 export interface ProtoEnumValue {
 	name: string;
 	number: number;
-	description: string;
 }
 
 export interface ProtoEnum {
@@ -144,7 +143,39 @@ let cache: ProtoIndex | undefined;
 
 export function loadProtoIndex(): ProtoIndex {
 	if (cache) return cache;
-	const raw = readJsonFile<RawProtoData>(join(siteDataDir(), 'protobufs.json'));
+	const file = join(siteDataDir(), 'protobufs.json');
+	const raw = readJsonFile<RawProtoData>(file);
+	requireKeys(file, raw, ['files', 'types', 'referenced_by']);
+	requireRows(file, raw.files, 'files', ['name', 'stem', 'package', 'imports', 'description', 'notes', 'messages', 'enums']);
+	// The first file may declare no messages or no enums; check the first of each that exists.
+	const withMessages = raw.files.find((f) => f.messages.length > 0);
+	requireRows(file, withMessages?.messages, 'files[].messages', [
+		'name',
+		'qualified',
+		'parent',
+		'description',
+		'notes',
+		'fields',
+		'nested_messages',
+		'nested_enums',
+		'oneofs',
+		'wire_ids',
+	]);
+	const withFields = raw.files.flatMap((f) => f.messages).find((m) => m.fields.length > 0);
+	requireRows(file, withFields?.fields, 'files[].messages[].fields', [
+		'name',
+		'number',
+		'label',
+		'type',
+		'type_kind',
+		'type_file',
+		'default',
+		'description',
+		'notes',
+	]);
+	const withEnums = raw.files.find((f) => f.enums.length > 0);
+	requireRows(file, withEnums?.enums, 'files[].enums', ['name', 'qualified', 'parent', 'values']);
+	requireRows(file, withEnums?.enums[0]?.values, 'files[].enums[].values', ['name', 'number']);
 
 	const filesByStem = new Map<string, ProtoFile>();
 	const messageByQualified = new Map<string, { file: ProtoFile; message: ProtoMessage }>();

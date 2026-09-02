@@ -3,6 +3,7 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import Mermaid from '../../components/Mermaid.astro';
 import ProtoEnumTable from '../../components/proto/ProtoEnumTable.astro';
 import ProtoMessageSection from '../../components/proto/ProtoMessageSection.astro';
+import { inlineCodeHtml, stripInlineCode } from '../../lib/html';
 import { provenanceLine } from '../../lib/provenance';
 import { protoFileHref, withBase } from '../../lib/urls';
 import {
@@ -63,7 +64,7 @@ for (const m of messages) headings.push(...messageHeadings(idx, m, 3));
 if (diagramLines.length > 0) headings.push({ depth: 2, slug: 'reference-graph', text: 'Reference graph' });
 
 const description =
-	file.description ||
+	stripInlineCode(file.description) ||
 	`${messages.length} top-level message${messages.length === 1 ? '' : 's'} and ${enums.length} top-level enum${
 		enums.length === 1 ? '' : 's'
 	} in ${file.name}, build ${schemaIdx.provenance.buildId}.`;
@@ -75,8 +76,8 @@ const description =
 			<a href={withBase('/protobufs/')}>Protobufs</a> / <span>{file.name}</span>
 		</nav>
 
-		{file.description && <p>{file.description}</p>}
-		{file.notes && <p class="cs2-note">{file.notes}</p>}
+		{file.description && <p set:html={inlineCodeHtml(file.description)} />}
+		{file.notes && <p class="cs2-note" set:html={inlineCodeHtml(file.notes)} />}
 
 		<p class="cs2-provenance">{provenanceLine()}</p>
 

@@ -1,5 +1,5 @@
 import { join } from 'node:path';
-import { readJsonFile, siteDataDir } from '../paths';
+import { readJsonFile, requireKeys, requireRows, siteDataDir } from '../paths';
 
 export interface MapEntry {
 	name: string;
@@ -36,7 +36,28 @@ let cache: MapsIndex | undefined;
 
 export function loadMaps(): MapsIndex {
 	if (cache) return cache;
-	const raw = readJsonFile<RawMapsData>(join(siteDataDir(), 'maps.json'));
+	const file = join(siteDataDir(), 'maps.json');
+	const raw = readJsonFile<RawMapsData>(file);
+	requireKeys(file, raw, ['map_names', 'note', 'maps']);
+	requireRows(file, raw.maps, 'maps', [
+		'name',
+		'material',
+		'blockName',
+		'bombAX',
+		'bombAY',
+		'bombBX',
+		'bombBY',
+		'ctSpawnX',
+		'ctSpawnY',
+		'tSpawnX',
+		'tSpawnY',
+		'posX',
+		'posY',
+		'rotate',
+		'scale',
+		'zoom',
+		'properties',
+	]);
 	cache = { maps: raw.maps, note: raw.note };
 	return cache;
 }

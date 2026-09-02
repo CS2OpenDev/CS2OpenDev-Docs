@@ -1,6 +1,6 @@
 ---
 import Mermaid from './Mermaid.astro';
-import { hex, toInt } from '../lib/html';
+import { hex, inlineCodeHtml, toInt } from '../lib/html';
 import { codegenArtifactHref, entityHref, moduleHref, schemasHref } from '../lib/urls';
 import { buildEntityTree, renderTreeHtml } from '../lib/tree';
 import {
@@ -85,9 +85,9 @@ const warning = ent.annotations?.warning;
 		<a href={schemasHref()}>Schemas</a> / <a href={moduleHref(ent.module)}>{ent.module}</a> / <span>{ent.name}</span>
 	</nav>
 
-	{description && <p>{description}</p>}
-	{notes && <p class="cs2-note">{notes}</p>}
-	{warning && <p class="cs2-note"><strong>Warning:</strong> {warning}</p>}
+	{description && <p set:html={inlineCodeHtml(description)} />}
+	{notes && <p class="cs2-note" set:html={inlineCodeHtml(notes)} />}
+	{warning && <p class="cs2-note"><strong>Warning:</strong> <Fragment set:html={inlineCodeHtml(warning)} /></p>}
 
 	<p class="cs2-provenance">
 		CS2 build {p.buildId} · Steam date {p.versionDate} · platform {p.platform} ·{' '}
@@ -231,7 +231,7 @@ const warning = ent.annotations?.warning;
 										<td class="value">{v.value}</td>
 										<td class="value">{v.hex ? <code>{v.hex}</code> : ''}</td>
 										<td class="ann">
-											{m.annotations?.description && <span>{m.annotations.description} </span>}
+											{m.annotations?.description && <span set:html={`${inlineCodeHtml(m.annotations.description)} `} />}
 											{friendlyText(m.metadata) && <span>{friendlyText(m.metadata)} </span>}
 											{m.metadata.filter((a) => a.name).map((a) => <><code>{metaLabel(a)}</code>{' '}</>)}
 										</td>
@@ -316,7 +316,7 @@ const warning = ent.annotations?.warning;
 											)}
 										</td>
 										<td class="ann">
-											{r.field.annotations?.description && <span>{r.field.annotations.description} </span>}
+											{r.field.annotations?.description && <span set:html={`${inlineCodeHtml(r.field.annotations.description)} `} />}
 											{r.field.metadata.filter((a) => a.name).map((a) => <><code>{metaLabel(a)}</code>{' '}</>)}
 										</td>
 									</tr>

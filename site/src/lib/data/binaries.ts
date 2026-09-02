@@ -1,5 +1,5 @@
 import { join } from 'node:path';
-import { readJsonFile, siteDataDir } from '../paths';
+import { readJsonFile, requireKeys, requireRows, siteDataDir } from '../paths';
 
 export interface BinaryModule {
 	path: string;
@@ -20,7 +20,19 @@ let cache: BinaryModule[] | undefined;
 
 export function loadBinaries(): BinaryModule[] {
 	if (cache) return cache;
-	const raw = readJsonFile<RawModulesData>(join(siteDataDir(), 'modules.json'));
+	const file = join(siteDataDir(), 'modules.json');
+	const raw = readJsonFile<RawModulesData>(file);
+	requireKeys(file, raw, ['modules']);
+	requireRows(file, raw.modules, 'modules', [
+		'path',
+		'stem',
+		'file_size',
+		'sha256',
+		'export_count',
+		'resolved_interfaces',
+		'schema_module',
+		'schema_registration_count',
+	]);
 	cache = raw.modules;
 	return cache;
 }

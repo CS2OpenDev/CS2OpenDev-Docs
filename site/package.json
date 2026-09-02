@@ -10,7 +10,7 @@
     "predev": "node scripts/copy-artifacts.mjs",
     "dev": "astro dev",
     "prebuild": "node scripts/copy-artifacts.mjs",
-    "build": "astro build",
+    "build": "SITE_STRICT=1 astro build",
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check && node scripts/check-links.mjs dist && node scripts/check-size.mjs dist"

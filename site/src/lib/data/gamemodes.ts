@@ -1,5 +1,5 @@
 import { join } from 'node:path';
-import { readJsonFile, siteDataDir } from '../paths';
+import { readJsonFile, requireKeys, requireRows, siteDataDir } from '../paths';
 
 export interface GameMode {
 	id: string;
@@ -43,7 +43,25 @@ let cache: GameModesIndex | undefined;
 
 export function loadGameModes(): GameModesIndex {
 	if (cache) return cache;
-	const raw = readJsonFile<RawGameModesData>(join(siteDataDir(), 'game_modes.json'));
+	const file = join(siteDataDir(), 'game_modes.json');
+	const raw = readJsonFile<RawGameModesData>(file);
+	requireKeys(file, raw, ['note', 'game_types', 'map_groups']);
+	requireRows(file, raw.game_types, 'game_types', ['id', 'index', 'modes']);
+	requireRows(file, raw.game_types[0]!.modes, 'game_types[0].modes', [
+		'id',
+		'game_type',
+		'game_mode',
+		'name_token',
+		'description_token',
+		'display_name',
+		'max_players',
+		'map_groups',
+		'type_flags',
+		'exhibit_game_type',
+		'convars',
+		'has_convar_overrides',
+	]);
+	requireRows(file, raw.map_groups, 'map_groups', ['id', 'maps']);
 	cache = {
 		note: raw.note,
 		gameTypes: raw.game_types,

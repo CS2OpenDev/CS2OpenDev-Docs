@@ -1,6 +1,6 @@
 import { join } from 'node:path';
 import type { Row } from '../../components/islands/DataTable';
-import { siteDataDir, readJsonFile } from '../paths';
+import { siteDataDir, readJsonFile, requireKeys, requireRows } from '../paths';
 
 export interface ConVarFlagLegendEntry {
 	name: string;
@@ -29,7 +29,12 @@ let cache: RawConVarsData | undefined;
 
 export function loadConVarsData(): RawConVarsData {
 	if (cache) return cache;
-	cache = readJsonFile<RawConVarsData>(join(siteDataDir(), 'convars.json'));
+	const file = join(siteDataDir(), 'convars.json');
+	const raw = readJsonFile<RawConVarsData>(file);
+	requireKeys(file, raw, ['convars', 'flags']);
+	requireRows(file, raw.convars, 'convars', ['name', 'default', 'value_type', 'min', 'max', 'flags', 'help', 'prefix']);
+	requireRows(file, raw.flags, 'flags', ['name', 'convar_count', 'command_count', 'description']);
+	cache = raw;
 	return cache;
 }
 

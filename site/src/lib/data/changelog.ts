@@ -1,5 +1,5 @@
 import { join } from 'node:path';
-import { readJsonFile, siteDataDir } from '../paths';
+import { readJsonFile, requireKeys, requireRows, siteDataDir } from '../paths';
 
 export interface ChangelogFieldChange {
 	field: string;
@@ -36,6 +36,19 @@ let cache: Changelog | undefined;
 
 export function loadChangelog(): Changelog {
 	if (cache) return cache;
-	cache = readJsonFile<Changelog>(join(siteDataDir(), 'changelog.json'));
+	const file = join(siteDataDir(), 'changelog.json');
+	const raw = readJsonFile<Changelog>(file);
+	requireKeys(file, raw, ['from_build', 'to_build', 'platform', 'families', 'no_changes', 'schema_history_anchor']);
+	requireRows(file, raw.families, 'families', [
+		'family',
+		'added_count',
+		'removed_count',
+		'changed_count',
+		'added',
+		'removed',
+		'changed',
+		'truncated',
+	]);
+	cache = raw;
 	return cache;
 }

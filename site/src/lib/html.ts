@@ -6,6 +6,18 @@ export function escapeHtml(s: string): string {
 		.replace(/"/g, '&quot;');
 }
 
+const CODE_SPAN = /`([^`]+)`/g;
+
+/** Overlay prose as HTML: escaped text with `code spans` set in <code>, the only markup the overlays use. */
+export function inlineCodeHtml(s: string): string {
+	return escapeHtml(s).replace(CODE_SPAN, '<code>$1</code>');
+}
+
+/** Overlay prose for plain-text slots such as a meta description. */
+export function stripInlineCode(s: string): string {
+	return s.replace(CODE_SPAN, '$1');
+}
+
 export function hex(n: number): string {
 	return n < 0 ? `-0x${Math.abs(n).toString(16)}` : `0x${n.toString(16)}`;
 }

@@ -1,6 +1,6 @@
 ---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
-import { hex, toInt } from '../../../lib/html';
+import { hex, inlineCodeHtml, toInt } from '../../../lib/html';
 import { moduleGloss } from '../../../lib/modules';
 import { codegenArtifactHref, entityHref, moduleHierarchyHref, schemasHref } from '../../../lib/urls';
 import { layoutCounts, loadSchemaIndex, type ClassEntity, type EnumEntity } from '../../../lib/data/schema';
@@ -80,7 +80,7 @@ const headings = [
 								<td class="value">{r.size === null ? '-' : <code>{hex(r.size)}</code>}</td>
 								<td class="value">{r.counts.own}</td>
 								<td class="value">{r.counts.total}</td>
-								<td class="ann">{r.description}</td>
+								<td class="ann" set:html={inlineCodeHtml(r.description)} />
 							</tr>
 						))}
 					</tbody>
@@ -108,7 +108,7 @@ const headings = [
 								<td><a href={entityHref(e.module, e.name)}>{e.name}</a></td>
 								<td><code>{e.raw.alignment}</code></td>
 								<td class="value">{e.raw.members.length}</td>
-								<td class="ann">{e.annotations?.description ?? ''}</td>
+								<td class="ann" set:html={inlineCodeHtml(e.annotations?.description ?? '')} />
 							</tr>
 						))}
 					</tbody>

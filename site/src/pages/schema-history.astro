@@ -6,9 +6,10 @@ import { codegenArtifactHref } from '../lib/urls';
 import '../styles/content.css';
 
 const history = loadSchemaHistory();
+const EMPTY_TEXT = 'No schema history is published for this platform yet.';
 
-const detailByAnchor = new Map(history.detail.map((d) => [d.anchor, d]));
-const nonEmptyCount = history.transitions.filter((t) => !t.is_empty).length;
+const detailByAnchor = new Map((history?.detail ?? []).map((d) => [d.anchor, d]));
+const nonEmptyCount = history ? history.transitions.filter((t) => !t.is_empty).length : 0;
 
 function fieldOpsText(ops: Record<string, number>): string {
 	return Object.entries(ops)
@@ -20,20 +21,31 @@ const FIELD_HISTORY_URL =
 	'https://github.com/CS2OpenDev/CS2OpenDev-Docs/blob/main/docs/generated/downstream-codegen-schemas/field_history.json';
 const SCHEMA_LENS_URL = 'https://github.com/CS2OpenDev/CS2OpenDev-Docs/blob/main/docs/overlays/schema-lens.yml';
 
-const headings = [
-	...(history.breaking.length > 0 ? [{ depth: 2, slug: 'warnings', text: 'Warnings' }] : []),
-	{ depth: 2, slug: 'transitions', text: 'Transitions' },
-	{ depth: 2, slug: 'recent-detail', text: 'Recent transitions in detail' },
-];
+const headings = history
+	? [
+			...(history.breaking.length > 0 ? [{ depth: 2, slug: 'warnings', text: 'Warnings' }] : []),
+			{ depth: 2, slug: 'transitions', text: 'Transitions' },
+			{ depth: 2, slug: 'recent-detail', text: 'Recent transitions in detail' },
+		]
+	: [];
 ---
 
 <StarlightPage
 	frontmatter={{
 		title: 'Schema History',
-		description: `${history.transitions.length} recorded structural transitions between CS2 build ${history.baseline_build} and ${history.latest_build}.`,
+		description: history
+			? `${history.transitions.length} recorded structural transitions between CS2 build ${history.baseline_build} and ${history.latest_build}.`
+			: EMPTY_TEXT,
 	}}
 	headings={headings}
 >
+	{!history && (
+		<div>
+			<p class="cs2-provenance">{provenanceLine()}</p>
+			<p class="cs2-empty">{EMPTY_TEXT}</p>
+		</div>
+	)}
+	{history && (
 	<div>
 		<p>
 			Every recorded build-to-build transition of <code>cs2_schema.json</code>, from the
@@ -205,4 +217,5 @@ const headings = [
 			break annotations are edited in <a href={SCHEMA_LENS_URL}>schema-lens.yml</a>.
 		</p>
 	</div>
+	)}
 </StarlightPage>

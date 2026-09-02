@@ -1,5 +1,5 @@
 import { join } from 'node:path';
-import { siteDataDir, readJsonFile } from '../paths';
+import { siteDataDir, readJsonFile, requireKeys, requireRows } from '../paths';
 import { fileForType, loadProtoIndex } from './protobufs';
 
 export type NetworkBinding = 'rtti' | 'enum' | 'both';
@@ -24,7 +24,20 @@ let cache: NetworkRow[] | undefined;
 
 export function loadNetworkRows(): NetworkRow[] {
 	if (cache) return cache;
-	const raw = readJsonFile<RawNetworkData>(join(siteDataDir(), 'network.json'));
+	const file = join(siteDataDir(), 'network.json');
+	const raw = readJsonFile<RawNetworkData>(file);
+	requireKeys(file, raw, ['rows']);
+	requireRows(file, raw.rows, 'rows', [
+		'id',
+		'name',
+		'group',
+		'enum',
+		'constant',
+		'direction',
+		'binding',
+		'type_exists',
+		'description',
+	]);
 	cache = raw.rows;
 	return cache;
 }

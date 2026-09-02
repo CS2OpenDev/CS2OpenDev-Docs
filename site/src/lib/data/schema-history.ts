@@ -1,5 +1,6 @@
+import { existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { readJsonFile, siteDataDir } from '../paths';
+import { readJsonFile, requireKeys, requireRows, siteDataDir } from '../paths';
 
 export interface HistoryTransition {
 	from_build: string;
@@ -73,11 +74,35 @@ export interface SchemaHistory {
 	breaking: BreakingEntry[];
 }
 
-let cache: SchemaHistory | undefined;
+let cache: SchemaHistory | null | undefined;
 
-export function loadSchemaHistory(): SchemaHistory {
-	if (cache) return cache;
-	const raw = readJsonFile<SchemaHistory>(join(siteDataDir(), 'schema-history.json'));
+/** null when the generator had no schema_evolution data for this platform and wrote no file. */
+export function loadSchemaHistory(): SchemaHistory | null {
+	if (cache !== undefined) return cache;
+	const file = join(siteDataDir(), 'schema-history.json');
+	if (!existsSync(file)) {
+		cache = null;
+		return cache;
+	}
+	const raw = readJsonFile<SchemaHistory>(file);
+	requireKeys(file, raw, ['baseline_build', 'latest_build', 'platform', 'schema_version', 'transitions', 'detail', 'breaking']);
+	requireRows(file, raw.transitions, 'transitions', ['from_build', 'to_build', 'from_date', 'to_date', 'anchor', 'counts', 'is_empty']);
+	if (raw.detail.length > 0) {
+		requireKeys(file, raw.detail[0], [
+			'from_build',
+			'to_build',
+			'anchor',
+			'from_date',
+			'to_date',
+			'classes_added',
+			'classes_removed',
+			'classes_changed',
+			'classes_changed_total',
+			'classes_changed_truncated',
+			'class_pair_candidates_count',
+			'field_move_candidates_count',
+		], 'detail[0]');
+	}
 	for (const d of raw.detail) {
 		d.enums_added ??= [];
 		d.enums_removed ??= [];

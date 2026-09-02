@@ -1,4 +1,5 @@
 ---
+import { inlineCodeHtml } from '../../lib/html';
 import { protoMessageHref } from '../../lib/urls';
 import ProtoEnumTable from './ProtoEnumTable.astro';
 import ProtoMessageSection from './ProtoMessageSection.astro';
@@ -39,8 +40,8 @@ const nestedEnums = message.nested_enums
 <Heading id={message.qualified}>{message.qualified}</Heading>
 <span class="cs2-aliases" aria-hidden="true">{aliases}</span>
 
-{message.description && <p>{message.description}</p>}
-{message.notes && <p class="cs2-note">{message.notes}</p>}
+{message.description && <p set:html={inlineCodeHtml(message.description)} />}
+{message.notes && <p class="cs2-note" set:html={inlineCodeHtml(message.notes)} />}
 
 {message.wire_ids.length > 0 && (
 	<p class="cs2-rel">
@@ -97,7 +98,7 @@ const nestedEnums = message.nested_enums
 						</td>
 						<td set:html={linkFieldType(f)} />
 						<td>{f.default && <code>{f.default}</code>}</td>
-						<td class="ann">{f.description}</td>
+						<td class="ann" set:html={inlineCodeHtml(f.description)} />
 					</tr>
 				))}
 			</tbody>

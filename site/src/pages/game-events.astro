@@ -2,6 +2,7 @@
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import DataTable, { PAGE_SIZE, type Column } from '../components/islands/DataTable';
 import TableRowsNote from '../components/TableRowsNote.astro';
+import { inlineCodeHtml } from '../lib/html';
 import { provenanceLine } from '../lib/provenance';
 import { protoMessageHref, withBase } from '../lib/urls';
 import { loadProtoIndex, schemaEnumHref } from '../lib/data/protobufs';
@@ -43,7 +44,7 @@ const columns: Column[] = [
 	{ key: 'name', label: 'Name', hrefKey: 'href' },
 	{ key: 'source', label: 'Source' },
 	{ key: 'fields', label: 'Fields', numeric: true },
-	{ key: 'description', label: 'Description' },
+	{ key: 'description', label: 'Description', html: true },
 ];
 
 // Only the first page rides in the island's props; the rest comes from
@@ -213,7 +214,7 @@ const headings = [
 				columns={columns}
 				rows={rows}
 				src={rowsHref}
-				searchKeys={['name', 'source', 'description']}
+				searchKeys={['name', 'source', 'search']}
 				pageSize={PAGE_SIZE}
 				caption={`${events.length} game event definitions`}
 				initialSort={{ key: 'name', dir: 'asc' }}
@@ -233,11 +234,11 @@ const headings = [
 					{eventHeading(ev, duplicates)}
 				</h3>
 				<span class="cs2-aliases" aria-hidden="true">{eventAliases(ev)}</span>
-				{ev.description && <p>{ev.description}</p>}
-				{ev.notes && <p class="cs2-note">{ev.notes}</p>}
+				{ev.description && <p set:html={inlineCodeHtml(ev.description)} />}
+				{ev.notes && <p class="cs2-note" set:html={inlineCodeHtml(ev.notes)} />}
 				{ev.warning && (
 					<p class="cs2-note">
-						<strong>Warning:</strong> {ev.warning}
+						<strong>Warning:</strong> <Fragment set:html={inlineCodeHtml(ev.warning)} />
 					</p>
 				)}
 				<p class="cs2-rel">
@@ -262,7 +263,7 @@ const headings = [
 									<tr>
 										<td><code>{f.name}</code></td>
 										<td><code>{f.type}</code></td>
-										<td class="ann">{f.description}</td>
+										<td class="ann" set:html={inlineCodeHtml(f.description)} />
 									</tr>
 								))}
 							</tbody>

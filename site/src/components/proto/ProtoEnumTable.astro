@@ -28,7 +28,6 @@ const aliases = [...identifierAliases(enm.name), ...enm.values.map((v) => v.name
 			<tr>
 				<th scope="col">Name</th>
 				<th scope="col" class="value">Number</th>
-				<th scope="col" class="ann">Description</th>
 				<th scope="col">Message</th>
 			</tr>
 		</thead>
@@ -39,7 +38,6 @@ const aliases = [...identifierAliases(enm.name), ...enm.values.map((v) => v.name
 					<tr>
 						<td><code>{v.name}</code></td>
 						<td class="value">{v.number}</td>
-						<td class="ann">{v.description}</td>
 						<td>{target && <a href={protoMessageHref(target.file, target.qualified)}>{target.qualified}</a>}</td>
 					</tr>
 				);

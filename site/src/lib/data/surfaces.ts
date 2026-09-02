@@ -1,5 +1,5 @@
 import { join } from 'node:path';
-import { readJsonFile, siteDataDir } from '../paths';
+import { readJsonFile, requireKeys, requireRows, siteDataDir } from '../paths';
 
 export interface SurfaceProperty {
 	name: string;
@@ -25,7 +25,11 @@ let cache: SurfaceMaterial[] | undefined;
 
 export function loadSurfaceMaterials(): SurfaceMaterial[] {
 	if (cache) return cache;
-	const raw = readJsonFile<RawSurfacesData>(join(siteDataDir(), 'surfaces.json'));
+	const file = join(siteDataDir(), 'surfaces.json');
+	const raw = readJsonFile<RawSurfacesData>(file);
+	requireKeys(file, raw, ['materials']);
+	requireRows(file, raw.materials, 'materials', ['name', 'rows']);
+	requireRows(file, raw.materials[0]!.rows, 'materials[0].rows', ['scope', 'source_file', 'properties']);
 	cache = raw.materials;
 	return cache;
 }

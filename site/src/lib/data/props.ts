@@ -1,5 +1,5 @@
 import { join } from 'node:path';
-import { readJsonFile, siteDataDir } from '../paths';
+import { readJsonFile, requireKeys, requireRows, siteDataDir } from '../paths';
 
 export interface CollisionGroup {
 	name: string;
@@ -10,17 +10,54 @@ export interface CollisionGroup {
 	interact_exclude: string[];
 }
 
-interface RawPropsData {
-	breakable_models: unknown[];
-	collision_groups: CollisionGroup[];
-	prop_classes: unknown[];
+export interface PropProperty {
+	name: string;
+	value: string;
 }
 
-let cache: CollisionGroup[] | undefined;
+export interface PropClass {
+	id: string;
+	properties: PropProperty[];
+}
 
-export function loadCollisionGroups(): CollisionGroup[] {
+export interface BreakableModelGroup {
+	id: string;
+	models: string[];
+}
+
+interface RawPropsData {
+	breakable_models: BreakableModelGroup[];
+	collision_groups: CollisionGroup[];
+	prop_classes: PropClass[];
+}
+
+export interface PropsIndex {
+	collisionGroups: CollisionGroup[];
+	propClasses: PropClass[];
+	breakableModels: BreakableModelGroup[];
+}
+
+let cache: PropsIndex | undefined;
+
+export function loadProps(): PropsIndex {
 	if (cache) return cache;
-	const raw = readJsonFile<RawPropsData>(join(siteDataDir(), 'props.json'));
-	cache = raw.collision_groups;
+	const file = join(siteDataDir(), 'props.json');
+	const raw = readJsonFile<RawPropsData>(file);
+	requireKeys(file, raw, ['breakable_models', 'collision_groups', 'prop_classes']);
+	requireRows(file, raw.collision_groups, 'collision_groups', [
+		'name',
+		'type',
+		'description',
+		'interact_as',
+		'interact_with',
+		'interact_exclude',
+	]);
+	requireRows(file, raw.prop_classes, 'prop_classes', ['id', 'properties']);
+	requireRows(file, raw.breakable_models, 'breakable_models', ['id', 'models']);
+	cache = {
+		collisionGroups: raw.collision_groups,
+		propClasses: raw.prop_classes,
+		breakableModels: raw.breakable_models,
+	};
 	return cache;
 }

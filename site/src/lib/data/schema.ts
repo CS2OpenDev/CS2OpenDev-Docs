@@ -1,5 +1,5 @@
 import { join } from 'node:path';
-import { codegenDir, readJsonFile } from '../paths';
+import { codegenDir, readJsonFile, requireKeys, requireRows } from '../paths';
 import { escapeHtml, toInt } from '../html';
 import { entityHref, entitySlug } from '../urls';
 
@@ -144,15 +144,52 @@ export interface SchemaIndex {
 	modules: string[];
 	/** Bases that resolve outside the referring module because no local variant exists. */
 	crossModuleBases: number;
+	/** Parent or field-type names that fell through to the first variant, neither project nor binary matching. */
+	ambiguousTypeReferences: number;
+	/** Inherited fields hidden by a same-named field lower in the spine; flattenLayout drops them. */
+	shadowedInheritedFields: number;
 }
 
 const TYPE_REF = /[A-Z_]\w+(?:::\w+)*/g;
+
+/** The cs2_schema.json major this site's readers were written against. */
+const SCHEMA_FORMAT_MAJOR = 2;
 
 let cache: SchemaIndex | undefined;
 
 export function loadSchemaIndex(): SchemaIndex {
 	if (cache) return cache;
-	const raw = readJsonFile<RawSchema>(join(codegenDir(), 'cs2_schema.json'));
+	const file = join(codegenDir(), 'cs2_schema.json');
+	const raw = readJsonFile<RawSchema>(file);
+	requireKeys(file, raw, [
+		'schema_format_version',
+		'generator',
+		'build_id',
+		'platform',
+		'revision',
+		'version_date',
+		'version_time',
+		'classes',
+		'enums',
+	]);
+	const major = Number.parseInt(String(raw.schema_format_version).split('.')[0] ?? '', 10);
+	if (major !== SCHEMA_FORMAT_MAJOR) {
+		throw new Error(
+			`cs2_schema.json: schema_format_version ${raw.schema_format_version} is not major ${SCHEMA_FORMAT_MAJOR}, ` +
+				'which the site readers were written against'
+		);
+	}
+	requireRows(file, raw.classes, 'classes', ['name', 'module', 'projectName', 'size', 'alignment', 'flags', 'parents', 'fields', 'metadata']);
+	requireRows(file, raw.enums, 'enums', ['name', 'module', 'projectName', 'alignment', 'size', 'flags', 'members']);
+	const withFields = raw.classes.find((c) => c.fields.length > 0);
+	requireRows(file, withFields?.fields, 'classes[].fields', ['name', 'offset', 'type', 'metadata']);
+	requireKeys(file, withFields?.fields[0]?.type, ['category', 'name'], 'classes[].fields[0].type');
+	const withMembers = raw.enums.find((e) => e.members.length > 0);
+	requireRows(file, withMembers?.members, 'enums[].members', ['name', 'value', 'metadata']);
+	console.log(
+		`schema: cs2_schema.json format ${raw.schema_format_version}, build ${raw.build_id}, ` +
+			`${raw.classes.length} classes, ${raw.enums.length} enums`
+	);
 
 	const classes: ClassEntity[] = raw.classes.map((c) => ({
 		kind: 'class',
@@ -206,11 +243,15 @@ export function loadSchemaIndex(): SchemaIndex {
 		usedBy: new Map(),
 		modules,
 		crossModuleBases: 0,
+		ambiguousTypeReferences: 0,
+		shadowedInheritedFields: 0,
 	};
 
 	for (const c of classes) {
 		for (const p of c.raw.parents) {
-			const pe = resolveClass(idx, p.name, [c.module], p.module);
+			const hit = resolveDetailed(idx, p.name, [c.module], p.module);
+			if (hit.ambiguous) idx.ambiguousTypeReferences++;
+			const pe = hit.ent && hit.ent.kind === 'class' ? hit.ent : undefined;
 			if (!pe) continue;
 			if (pe.module !== c.module) idx.crossModuleBases++;
 			push(idx.children, pe.key, c);
@@ -220,9 +261,39 @@ export function loadSchemaIndex(): SchemaIndex {
 
 	buildUsedBy(idx);
 	assertNoCrossProjectSpine(idx);
+	idx.shadowedInheritedFields = countShadowedFields(idx);
+
+	// Both are clean on the builds this site was written against. A non-zero
+	// count means a page silently picked a variant or dropped a row.
+	console.log(
+		`schema: ${idx.ambiguousTypeReferences} ambiguous type references, ` +
+			`${idx.shadowedInheritedFields} shadowed inherited fields`
+	);
+	if (process.env.SITE_STRICT === '1' && (idx.ambiguousTypeReferences > 0 || idx.shadowedInheritedFields > 0)) {
+		throw new Error(
+			`SITE_STRICT: ${idx.ambiguousTypeReferences} ambiguous type reference(s) and ` +
+				`${idx.shadowedInheritedFields} shadowed inherited field(s); see resolveEntity and flattenLayout`
+		);
+	}
 
 	cache = idx;
 	return idx;
+}
+
+/** Inherited rows flattenLayout would hide behind a same-named field nearer the leaf. */
+function countShadowedFields(idx: SchemaIndex): number {
+	let shadowed = 0;
+	for (const c of idx.classes) {
+		const seen = new Set<string>();
+		for (const f of c.raw.fields) seen.add(f.name);
+		for (const anc of spineOf(idx, c)) {
+			for (const f of anc.raw.fields) {
+				if (seen.has(f.name)) shadowed++;
+				else seen.add(f.name);
+			}
+		}
+	}
+	return shadowed;
 }
 
 function push<T>(map: Map<string, T[]>, key: string, value: T): void {
@@ -246,19 +317,29 @@ export function resolveEntity(
 	prefer: readonly string[],
 	binaryModule?: string
 ): Entity | undefined {
+	return resolveDetailed(idx, name, prefer, binaryModule).ent;
+}
+
+/** resolveEntity plus whether the answer was the first-variant fallback. */
+function resolveDetailed(
+	idx: SchemaIndex,
+	name: string,
+	prefer: readonly string[],
+	binaryModule?: string
+): { ent: Entity | undefined; ambiguous: boolean } {
 	const variants = idx.byName.get(name);
-	if (!variants) return undefined;
-	if (variants.length === 1) return variants[0];
+	if (!variants) return { ent: undefined, ambiguous: false };
+	if (variants.length === 1) return { ent: variants[0], ambiguous: false };
 	for (const module of prefer) {
 		if (!module) continue;
 		const hit = variants.find((v) => v.module === module);
-		if (hit) return hit;
+		if (hit) return { ent: hit, ambiguous: false };
 	}
 	if (binaryModule) {
 		const hit = variants.find((v) => v.binaryModule === binaryModule);
-		if (hit) return hit;
+		if (hit) return { ent: hit, ambiguous: false };
 	}
-	return variants[0];
+	return { ent: variants[0], ambiguous: true };
 }
 
 export function resolveClass(
@@ -284,7 +365,9 @@ function buildUsedBy(idx: SchemaIndex): void {
 	for (const c of idx.classes) {
 		for (const f of c.raw.fields) {
 			for (const refName of typeRefNames(f.type.name)) {
-				const target = resolveEntity(idx, refName, [c.module], f.typeModule);
+				const hit = resolveDetailed(idx, refName, [c.module], f.typeModule);
+				if (hit.ambiguous) idx.ambiguousTypeReferences++;
+				const target = hit.ent;
 				if (!target || target.key === c.key) continue;
 				let users = seen.get(target.key);
 				if (!users) {
