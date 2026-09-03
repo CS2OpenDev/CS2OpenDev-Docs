@@ -1,0 +1,47 @@
+---
+import { protoMessageHref } from '../../lib/urls';
+import { messageForConstant, schemaEnumHref, type ProtoEnum, type ProtoIndex } from '../../lib/data/protobufs';
+import { identifierAliases, type SchemaIndex } from '../../lib/data/schema';
+
+interface Props {
+	idx: ProtoIndex;
+	schemaIdx: SchemaIndex;
+	enm: ProtoEnum;
+	depth: 3 | 4;
+}
+const { idx, schemaIdx, enm, depth } = Astro.props;
+const Heading = depth === 3 ? 'h3' : 'h4';
+const enumHref = schemaEnumHref(schemaIdx, enm.name);
+const aliases = [...identifierAliases(enm.name), ...enm.values.map((v) => v.name)].join(' ');
+---
+
+<Heading id={enm.qualified}>{enm.qualified}</Heading>
+<span class="cs2-aliases" aria-hidden="true">{aliases}</span>
+
+{enumHref && (
+	<p class="cs2-rel"><strong>Schema entity:</strong> <a href={enumHref}>{enm.name}</a></p>
+)}
+
+<div class="cs2-table-wrap">
+	<table>
+		<thead>
+			<tr>
+				<th scope="col">Name</th>
+				<th scope="col" class="value">Number</th>
+				<th scope="col">Message</th>
+			</tr>
+		</thead>
+		<tbody>
+			{enm.values.map((v) => {
+				const target = messageForConstant(idx, enm.name, v.name);
+				return (
+					<tr>
+						<td><code>{v.name}</code></td>
+						<td class="value">{v.number}</td>
+						<td>{target && <a href={protoMessageHref(target.file, target.qualified)}>{target.qualified}</a>}</td>
+					</tr>
+				);
+			})}
+		</tbody>
+	</table>
+</div>

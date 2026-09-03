@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CSSDSMsg_PostLayer
-nav_exclude: true
+module: scenesystem
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [scenesystem](../scenesystem.md) / CSSDSMsg_PostLayer
 
 # CSSDSMsg_PostLayer
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 48 bytes (`0x30`) · **Align:** 8 · **Module:** scenesystem
 

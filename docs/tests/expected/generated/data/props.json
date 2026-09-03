@@ -1,0 +1,115 @@
+{
+  "breakable_models": [
+    {
+      "id": "ConcreteChunks",
+      "models": [
+        "models/props_debris/concrete_chunk02a.vmdl",
+        "models/props_debris/concrete_chunk03a.vmdl",
+        "models/props_debris/concrete_chunk07a.vmdl",
+        "models/props_debris/concrete_chunk08a.vmdl",
+        "models/props_debris/concrete_chunk09a.vmdl"
+      ]
+    },
+    {
+      "id": "GlassChunks",
+      "models": [
+        "models/Gibs/Glass_shard01.vmdl",
+        "models/Gibs/Glass_shard02.vmdl",
+        "models/Gibs/Glass_shard03.vmdl",
+        "models/Gibs/Glass_shard04.vmdl",
+        "models/Gibs/Glass_shard05.vmdl",
+        "models/Gibs/Glass_shard06.vmdl"
+      ]
+    }
+  ],
+  "collision_groups": [
+    {
+      "description": "Solid to only players and npcs, has the same functionality as clip brush",
+      "interact_as": [
+        "playerclip",
+        "npcclip"
+      ],
+      "interact_exclude": [],
+      "interact_with": [],
+      "name": "clip",
+      "type": "ConditionallySolid"
+    },
+    {
+      "description": "Solid to drones only",
+      "interact_as": [
+        "csgo_droneclip"
+      ],
+      "interact_exclude": [],
+      "interact_with": [],
+      "name": "csgo_droneclip",
+      "type": "ConditionallySolid"
+    },
+    {
+      "description": "Solid to grenades only",
+      "interact_as": [
+        "csgo_grenadeclip"
+      ],
+      "interact_exclude": [],
+      "interact_with": [],
+      "name": "csgo_grenadeclip",
+      "type": "ConditionallySolid"
+    },
+    {
+      "description": "Solid but exclude bullets & grenades.",
+      "interact_as": [
+        "passbullets"
+      ],
+      "interact_exclude": [
+        "csgo_thrown_grenade"
+      ],
+      "interact_with": [],
+      "name": "csgo_railing",
+      "type": "ConditionallySolid"
+    }
+  ],
+  "prop_classes": [
+    {
+      "id": "Cardboard.Base",
+      "properties": [
+        {
+          "name": "dmg.bullets",
+          "value": "0.5"
+        },
+        {
+          "name": "dmg.club",
+          "value": "1.25"
+        },
+        {
+          "name": "dmg.explosive",
+          "value": "1.5"
+        }
+      ]
+    },
+    {
+      "id": "Cardboard.Indestructable",
+      "properties": [
+        {
+          "name": "base",
+          "value": "Cardboard.Base"
+        }
+      ]
+    },
+    {
+      "id": "Cardboard.Large",
+      "properties": [
+        {
+          "name": "base",
+          "value": "Cardboard.Base"
+        },
+        {
+          "name": "health",
+          "value": "40"
+        },
+        {
+          "name": "physicsmode",
+          "value": "1"
+        }
+      ]
+    }
+  ]
+}

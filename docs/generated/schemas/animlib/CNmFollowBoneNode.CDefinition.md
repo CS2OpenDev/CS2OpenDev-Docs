@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmFollowBoneNode::CDefinition"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmFollowBoneNode::CDefinition
 
 # CNmFollowBoneNode::CDefinition
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 48 bytes (`0x30`) · **Align:** 8 · **Module:** animlib
 
@@ -16,10 +18,10 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmPassthroughNode::CDefinition" <|-- "CNmFollowBoneNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmPassthroughNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmPoseNode::CDefinition"
-    "CNmFollowBoneNode::CDefinition" *-- NmFollowBoneMode_t
+    `CNmPassthroughNode::CDefinition` <|-- `CNmFollowBoneNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmPassthroughNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmPoseNode::CDefinition`
+    `CNmFollowBoneNode::CDefinition` *-- NmFollowBoneMode_t
 ```
 
 ## Memory layout

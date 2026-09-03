@@ -1,12 +1,14 @@
 ---
-layout: default
 title: C_CommandContext
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / C_CommandContext
 
 # C_CommandContext
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 168 bytes (`0xa8`) · **Align:** 8 · **Module:** client
 

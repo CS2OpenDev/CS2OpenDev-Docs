@@ -1,14 +1,18 @@
 ---
-layout: default
-title: WeaponPurchaseCount_t
-nav_exclude: true
+title: WeaponPurchaseCount_t (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / WeaponPurchaseCount_t
 
 # WeaponPurchaseCount_t
 
-**Kind:** class · **Size:** 56 bytes (`0x38`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 56 bytes (`0x38`) · **Align:** n/a (unspecified) · **Module:** client
+
+**Twin:** [WeaponPurchaseCount_t (server)](../server/WeaponPurchaseCount_t.md)
 
 ## Memory layout
 

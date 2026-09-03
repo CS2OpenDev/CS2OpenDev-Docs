@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: pulse_system"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: pulse_system
@@ -43,5 +40,5 @@ classDiagram
     CPulseExecCursor <|-- CTestDomainDerived_Cursor
     CPulseCell_TestEnums *-- PulseTestEnumColor_t
     CPulseCell_TestEnums *-- PulseTestEnumFlags_t
-    "CPulseCell_TestWaitWithCursorState::CursorState_t" *-- CPulseCell_TestWaitWithCursorState
+    `CPulseCell_TestWaitWithCursorState::CursorState_t` *-- CPulseCell_TestWaitWithCursorState
 ```

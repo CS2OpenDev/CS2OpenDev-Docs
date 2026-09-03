@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CSPerRoundStats_t
-nav_exclude: true
+title: CSPerRoundStats_t (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CSPerRoundStats_t
 
 # CSPerRoundStats_t
 
-**Kind:** class · **Size:** 104 bytes (`0x68`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 104 bytes (`0x68`) · **Align:** n/a (unspecified) · **Module:** client
+
+**Twin:** [CSPerRoundStats_t (server)](../server/CSPerRoundStats_t.md)
 
 **Derived by:** [CSMatchStats_t](../client/CSMatchStats_t.md)
 

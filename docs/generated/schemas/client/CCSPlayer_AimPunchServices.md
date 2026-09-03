@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CCSPlayer_AimPunchServices
-nav_exclude: true
+title: CCSPlayer_AimPunchServices (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CCSPlayer_AimPunchServices
 
 # CCSPlayer_AimPunchServices
 
-**Kind:** class · **Size:** 232 bytes (`0xe8`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 232 bytes (`0xe8`) · **Align:** n/a (unspecified) · **Module:** client
+
+**Twin:** [CCSPlayer_AimPunchServices (server)](../server/CCSPlayer_AimPunchServices.md)
 
 **Inherits from:** [CPlayerPawnComponent](../server/CPlayerPawnComponent.md)
 

@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmVelocityBlendNode::CDefinition"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmVelocityBlendNode::CDefinition
 
 # CNmVelocityBlendNode::CDefinition
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 48 bytes (`0x30`) · **Align:** 8 · **Module:** animlib
 
@@ -16,9 +18,9 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmParameterizedBlendNode::CDefinition" <|-- "CNmVelocityBlendNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmParameterizedBlendNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmPoseNode::CDefinition"
+    `CNmParameterizedBlendNode::CDefinition` <|-- `CNmVelocityBlendNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmParameterizedBlendNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmPoseNode::CDefinition`
 ```
 
 ## Memory layout

@@ -1,14 +1,16 @@
 ---
-layout: default
 title: EmptyTestScript
-nav_exclude: true
+module: host
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [host](../host.md) / EmptyTestScript
 
 # EmptyTestScript
 
-**Kind:** class · **Size:** 32 bytes (`0x20`) · **Align:** 255 · **Module:** host
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 32 bytes (`0x20`) · **Align:** n/a (unspecified) · **Module:** host
 
 **Inherits from:** [CAnimScriptBase](../host/CAnimScriptBase.md)
 

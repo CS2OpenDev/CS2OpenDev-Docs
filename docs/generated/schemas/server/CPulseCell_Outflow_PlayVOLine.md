@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CPulseCell_Outflow_PlayVOLine
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CPulseCell_Outflow_PlayVOLine
 
 # CPulseCell_Outflow_PlayVOLine
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 288 bytes (`0x120`) · **Align:** 8 · **Module:** server
 

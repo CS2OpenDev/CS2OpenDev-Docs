@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CPulseCell_Outflow_ScriptedSequence
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CPulseCell_Outflow_ScriptedSequence
 
 # CPulseCell_Outflow_ScriptedSequence
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 408 bytes (`0x198`) · **Align:** 8 · **Module:** server
 

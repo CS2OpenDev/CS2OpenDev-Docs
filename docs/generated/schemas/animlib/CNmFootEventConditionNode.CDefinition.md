@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmFootEventConditionNode::CDefinition"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmFootEventConditionNode::CDefinition
 
 # CNmFootEventConditionNode::CDefinition
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 8 · **Module:** animlib
 
@@ -16,11 +18,11 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmBoolValueNode::CDefinition" <|-- "CNmFootEventConditionNode::CDefinition"
-    "CNmValueNode::CDefinition" <|-- "CNmBoolValueNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
-    "CNmFootEventConditionNode::CDefinition" *-- NmFootPhaseCondition_t
-    "CNmFootEventConditionNode::CDefinition" *-- CNmBitFlags
+    `CNmBoolValueNode::CDefinition` <|-- `CNmFootEventConditionNode::CDefinition`
+    `CNmValueNode::CDefinition` <|-- `CNmBoolValueNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmValueNode::CDefinition`
+    `CNmFootEventConditionNode::CDefinition` *-- NmFootPhaseCondition_t
+    `CNmFootEventConditionNode::CDefinition` *-- CNmBitFlags
 ```
 
 ## Memory layout

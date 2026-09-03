@@ -1,16 +1,13 @@
 ---
-layout: default
 title: netmessages.proto
-parent: Protobufs
-nav_exclude: true
+proto: netmessages.proto
 ---
 
 # `netmessages.proto`
 
-**Imports:** `networkbasetypes.proto`, `source2_steam_stats.proto`
+**Imports:** [`networkbasetypes.proto`](networkbasetypes.md), [`source2_steam_stats.proto`](source2_steam_stats.md)
 
 Core Source 2 network protocol messages exchanged between client and server. Includes server-info negotiation, entity delta updates, string tables, voice data, and game-event delivery.  Client→Server messages use the CLC_ prefix; Server→Client use SVC_.
-
 
 ## Diagram
 
@@ -126,7 +123,7 @@ direction LR
     +List~CSVCMsg_ClassInfo.class_t~ classes
   }
 
-  class class_t {
+  class CSVCMsg_ClassInfo_class_t["CSVCMsg_ClassInfo.class_t"] {
     +int32 class_id
     +string class_name
   }
@@ -150,7 +147,7 @@ direction LR
     +List~CSVCMsg_Sounds.sounddata_t~ sounds
   }
 
-  class sounddata_t {
+  class CSVCMsg_Sounds_sounddata_t["CSVCMsg_Sounds.sounddata_t"] {
     +sint32 origin_x
     +sint32 origin_y
     +sint32 origin_z
@@ -228,7 +225,7 @@ direction LR
     +List~CSVCMsg_SendTable.sendprop_t~ props
   }
 
-  class sendprop_t {
+  class CSVCMsg_SendTable_sendprop_t["CSVCMsg_SendTable.sendprop_t"] {
     +int32 type
     +string var_name
     +int32 flags
@@ -244,12 +241,12 @@ direction LR
     +List~CSVCMsg_GameEventList.descriptor_t~ descriptors
   }
 
-  class key_t {
+  class CSVCMsg_GameEventList_key_t["CSVCMsg_GameEventList.key_t"] {
     +int32 type
     +string name
   }
 
-  class descriptor_t {
+  class CSVCMsg_GameEventList_descriptor_t["CSVCMsg_GameEventList.descriptor_t"] {
     +int32 eventid
     +string name
     +List~CSVCMsg_GameEventList.key_t~ keys
@@ -280,17 +277,17 @@ direction LR
     +bytes dev_padding
   }
 
-  class alternate_baseline_t {
+  class CSVCMsg_PacketEntities_alternate_baseline_t["CSVCMsg_PacketEntities.alternate_baseline_t"] {
     +int32 entity_index
     +int32 baseline_index
   }
 
-  class non_transmitted_entities_t {
+  class CSVCMsg_PacketEntities_non_transmitted_entities_t["CSVCMsg_PacketEntities.non_transmitted_entities_t"] {
     +int32 header_count
     +bytes data
   }
 
-  class outofpvs_entity_updates_t {
+  class CSVCMsg_PacketEntities_outofpvs_entity_updates_t["CSVCMsg_PacketEntities.outofpvs_entity_updates_t"] {
     +int32 count
     +bytes data
   }
@@ -402,7 +399,7 @@ direction LR
     +int32 var_serializer_sym
   }
 
-  class polymorphic_field_t {
+  class ProtoFlattenedSerializerField_t_polymorphic_field_t["ProtoFlattenedSerializerField_t.polymorphic_field_t"] {
     +int32 polymorphic_field_serializer_name_sym
     +int32 polymorphic_field_serializer_version
   }
@@ -469,12 +466,12 @@ direction LR
     +List~CMsgServerNetworkStats.Player~ players
   }
 
-  class Port {
+  class CMsgServerNetworkStats_Port["CMsgServerNetworkStats.Port"] {
     +int32 port
     +string name
   }
 
-  class Player {
+  class CMsgServerNetworkStats_Player["CMsgServerNetworkStats.Player"] {
     +uint64 steamid
     +string remote_addr
     +int32 ping_avg_ms
@@ -545,24 +542,24 @@ direction LR
   CMsgVoiceAudio --> VoiceDataFormat_t : format
   CCLCMsg_VoiceData --> CMsgVoiceAudio : audio
   CCLCMsg_RequestPause --> RequestPause_t : pause_type
-  CSVCMsg_ClassInfo --> class_t : classes[]
-  CSVCMsg_Sounds --> sounddata_t : sounds[]
+  CSVCMsg_ClassInfo --> CSVCMsg_ClassInfo_class_t : classes[]
+  CSVCMsg_Sounds --> CSVCMsg_Sounds_sounddata_t : sounds[]
   CSVCMsg_Prefetch --> PrefetchType : resource_type
   CSVCMsg_SplitScreen --> ESplitScreenMessageType : type
-  CSVCMsg_SendTable --> sendprop_t : props[]
-  CSVCMsg_GameEventList --> descriptor_t : descriptors[]
-  descriptor_t --> key_t : keys[]
-  CSVCMsg_PacketEntities --> alternate_baseline_t : alternate_baselines[]
-  CSVCMsg_PacketEntities --> non_transmitted_entities_t : non_transmitted_entities
-  CSVCMsg_PacketEntities --> outofpvs_entity_updates_t : outofpvs_entity_updates
+  CSVCMsg_SendTable --> CSVCMsg_SendTable_sendprop_t : props[]
+  CSVCMsg_GameEventList --> CSVCMsg_GameEventList_descriptor_t : descriptors[]
+  CSVCMsg_GameEventList_descriptor_t --> CSVCMsg_GameEventList_key_t : keys[]
+  CSVCMsg_PacketEntities --> CSVCMsg_PacketEntities_alternate_baseline_t : alternate_baselines[]
+  CSVCMsg_PacketEntities --> CSVCMsg_PacketEntities_non_transmitted_entities_t : non_transmitted_entities
+  CSVCMsg_PacketEntities --> CSVCMsg_PacketEntities_outofpvs_entity_updates_t : outofpvs_entity_updates
   CSVCMsg_VoiceData --> CMsgVoiceAudio : audio
   CMsgServerPeer --> CMsgIPCAddress : ipc
   CSVCMsg_PeerList --> CMsgServerPeer : peer[]
-  ProtoFlattenedSerializerField_t --> polymorphic_field_t : polymorphic_types[]
+  ProtoFlattenedSerializerField_t --> ProtoFlattenedSerializerField_t_polymorphic_field_t : polymorphic_types[]
   CSVCMsg_FlattenedSerializer --> ProtoFlattenedSerializer_t : serializers[]
   CSVCMsg_FlattenedSerializer --> ProtoFlattenedSerializerField_t : fields[]
-  CMsgServerNetworkStats --> Port : ports[]
-  CMsgServerNetworkStats --> Player : players[]
+  CMsgServerNetworkStats --> CMsgServerNetworkStats_Port : ports[]
+  CMsgServerNetworkStats --> CMsgServerNetworkStats_Player : players[]
   CSVCMsg_UserCommands --> CMsgServerUserCmd : commands[]
 
   class CLC_Messages{
@@ -682,7 +679,7 @@ direction LR
     REPLAY_EVENT_VICTORY
   }
 
-  class ESyncType{
+  class CBidirMsg_PredictionEvent_ESyncType["CBidirMsg_PredictionEvent.ESyncType"]{
     <<enumeration>>
     ST_Tick
     ST_UserCmdNum
@@ -826,9 +823,8 @@ direction LR
 
 Sent by the client immediately after the initial connection handshake to provide hardware/software capability information.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `send_table_crc` | 1 | fixed32 | optional |  |
 | `server_count` | 2 | uint32 | optional |  |
 | `is_hltv` | 3 | bool | optional |  |
@@ -839,16 +835,15 @@ Sent by the client immediately after the initial connection handshake to provide
 
 Primary per-tick user-command message carrying all player input: view angles, buttons pressed, tick number, and move delta.  This is the heartbeat of the client→server input channel.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `data` | 3 | bytes | optional |  |
 | `last_command_number` | 4 | uint32 | optional |  |
 
 ### `CMsgVoiceAudio`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `format` | 1 | [VoiceDataFormat_t](#voicedataformat_t) | optional | *(default: `VOICEDATA_FORMAT_STEAM`)* |
 | `voice_data` | 2 | bytes | optional |  |
 | `sequence_bytes` | 3 | int32 | optional |  |
@@ -863,9 +858,8 @@ Primary per-tick user-command message carrying all player input: view angles, bu
 
 Carries a compressed voice-audio packet from the client to the server for relay to nearby players.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `audio` | 1 | [CMsgVoiceAudio](#cmsgvoiceaudio) | optional |  |
 | `xuid` | 2 | fixed64 | optional |  |
 | `tick` | 3 | uint32 | optional |  |
@@ -874,9 +868,8 @@ Carries a compressed voice-audio packet from the client to the server for relay 
 
 Acknowledges that the client has received and applied the entity baseline snapshot up to a given tick, allowing the server to stop retransmitting baseline data.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `baseline_tick` | 1 | int32 | optional |  |
 | `baseline_nr` | 2 | int32 | optional |  |
 
@@ -884,18 +877,16 @@ Acknowledges that the client has received and applied the entity baseline snapsh
 
 Registers which game-events this client wishes to receive (similar to CMsgSource1LegacyListenEvents but at the CLC layer).
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `event_mask` | 1 | fixed32 | repeated |  |
 
 ### `CCLCMsg_RespondCvarValue`
 
 Client response to a CSVCMsg_GetCvarValue query; reports the current value of a convar requested by the server (e.g. for anti-cheat verification).
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `cookie` | 1 | int32 | optional |  |
 | `status_code` | 2 | int32 | optional |  |
 | `name` | 3 | string | optional |  |
@@ -905,68 +896,65 @@ Client response to a CSVCMsg_GetCvarValue query; reports the current value of a 
 
 Periodic heartbeat sent by the client while loading a map, reporting the current loading percentage so the server can track all-clients-loaded state.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `progress` | 1 | int32 | optional |  |
 
 ### `CCLCMsg_SplitPlayerConnect`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `playername` | 1 | string | optional |  |
 
 ### `CCLCMsg_SplitPlayerDisconnect`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `slot` | 1 | int32 | optional |  |
 
 ### `CCLCMsg_ServerStatus`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `simplified` | 1 | bool | optional |  |
 
 ### `CCLCMsg_RequestPause`
 
 Client request to pause or unpause the server (only honoured when the client has appropriate privileges, e.g. tournament admin).
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `pause_type` | 1 | [RequestPause_t](#requestpause_t) | optional | *(default: `RP_PAUSE`)* |
 | `pause_group` | 2 | int32 | optional |  |
 
 ### `CCLCMsg_CmdKeyValues`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `data` | 1 | bytes | optional |  |
 
 ### `CCLCMsg_RconServerDetails`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `token` | 1 | bytes | optional |  |
 
 ### `CCLCMsg_Diagnostic`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `system_specs` | 1 | CMsgSource2SystemSpecs | optional |  |
-| `vprof_report` | 2 | CMsgSource2VProfLiteReport | optional |  |
-| `downstream_flow` | 3 | CMsgSource2NetworkFlowQuality | optional |  |
-| `upstream_flow` | 4 | CMsgSource2NetworkFlowQuality | optional |  |
-| `perf_samples` | 5 | CMsgSource2PerfIntervalSample | repeated |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `system_specs` | 1 | [CMsgSource2SystemSpecs](source2_steam_stats.md#cmsgsource2systemspecs) | optional |  |
+| `vprof_report` | 2 | [CMsgSource2VProfLiteReport](source2_steam_stats.md#cmsgsource2vproflitereport) | optional |  |
+| `downstream_flow` | 3 | [CMsgSource2NetworkFlowQuality](source2_steam_stats.md#cmsgsource2networkflowquality) | optional |  |
+| `upstream_flow` | 4 | [CMsgSource2NetworkFlowQuality](source2_steam_stats.md#cmsgsource2networkflowquality) | optional |  |
+| `perf_samples` | 5 | [CMsgSource2PerfIntervalSample](source2_steam_stats.md#cmsgsource2perfintervalsample) | repeated |  |
 
 ### `CSVCMsg_ServerInfo`
 
 First substantial message sent by the server after handshake.  Provides all configuration data the client needs to initialise its session.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `protocol` | 1 | int32 | optional | Network protocol version number. |
 | `server_count` | 2 | int32 | optional | Unique server instance counter; increments on each map change. |
 | `is_dedicated` | 3 | bool | optional | True when running on a dedicated server (as opposed to a listen server). |
@@ -981,56 +969,84 @@ First substantial message sent by the server after handshake.  Provides all conf
 | `sky_name` | 16 | string | optional | Sky-box texture set name used for the current map. |
 | `host_name` | 17 | string | optional | Display name of the server as shown in the server browser. |
 | `addon_name` | 18 | string | optional |  |
-| `game_session_config` | 19 | CSVCMsg_GameSessionConfiguration | optional |  |
+| `game_session_config` | 19 | [CSVCMsg_GameSessionConfiguration](networkbasetypes.md#csvcmsg_gamesessionconfiguration) | optional |  |
 | `game_session_manifest` | 20 | bytes | optional |  |
 
 ### `CSVCMsg_ClassInfo`
 
 Enumerates all entity class types known to the server, mapping numeric class IDs to class name strings.  Clients use this to instantiate the correct entity objects when receiving entity creation deltas.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `create_on_client` | 1 | bool | optional | True when the client should create entity objects from this list immediately. |
-| `classes` | 2 | CSVCMsg_ClassInfo.class_t | repeated | List of (class_id, class_name) pairs for all registered entity classes. |
+| `classes` | 2 | [CSVCMsg_ClassInfo.class_t](#csvcmsg_classinfoclass_t) | repeated | List of (class_id, class_name) pairs for all registered entity classes. |
+
+#### `CSVCMsg_ClassInfo.class_t`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `class_id` | 1 | int32 | optional |  |
+| `class_name` | 3 | string | optional |  |
 
 ### `CSVCMsg_SetPause`
 
 Instructs the client to enter or leave pause state.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `paused` | 1 | bool | optional | True to pause client-side simulation. |
 
 ### `CSVCMsg_VoiceInit`
 
 Initialises the voice-codec parameters on the client.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `quality` | 1 | int32 | optional | Voice codec quality level. |
 | `codec` | 2 | string | optional |  |
 | `version` | 3 | int32 | optional | *(default: `0`)* |
 
 ### `CSVCMsg_Print`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `text` | 1 | string | optional |  |
 
 ### `CSVCMsg_Sounds`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `reliable_sound` | 1 | bool | optional |  |
-| `sounds` | 2 | CSVCMsg_Sounds.sounddata_t | repeated |  |
+| `sounds` | 2 | [CSVCMsg_Sounds.sounddata_t](#csvcmsg_soundssounddata_t) | repeated |  |
+
+#### `CSVCMsg_Sounds.sounddata_t`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `origin_x` | 1 | sint32 | optional |  |
+| `origin_y` | 2 | sint32 | optional |  |
+| `origin_z` | 3 | sint32 | optional |  |
+| `volume` | 4 | uint32 | optional |  |
+| `delay_value` | 5 | float | optional |  |
+| `sequence_number` | 6 | int32 | optional |  |
+| `entity_index` | 7 | int32 | optional | *(default: `-1`)* |
+| `channel` | 8 | int32 | optional |  |
+| `pitch` | 9 | int32 | optional |  |
+| `flags` | 10 | int32 | optional |  |
+| `sound_num` | 11 | uint32 | optional |  |
+| `sound_num_handle` | 12 | fixed32 | optional |  |
+| `speaker_entity` | 13 | int32 | optional |  |
+| `random_seed` | 14 | int32 | optional |  |
+| `sound_level` | 15 | int32 | optional |  |
+| `is_sentence` | 16 | bool | optional |  |
+| `is_ambient` | 17 | bool | optional |  |
+| `guid` | 18 | uint32 | optional |  |
+| `sound_resource_id` | 19 | fixed64 | optional |  |
 
 ### `CSVCMsg_Prefetch`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `sound_index` | 1 | int32 | optional |  |
 | `resource_type` | 2 | [PrefetchType](#prefetchtype) | optional | *(default: `PFT_SOUND`)* |
 
@@ -1038,9 +1054,8 @@ Initialises the voice-codec parameters on the client.
 
 Changes the entity index used as the origin for the client's view (e.g. switches from player view to a camera entity during replays).
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `entity_index` | 1 | int32 | optional | Entity index to use as the view origin. *(default: `-1`)* |
 | `slot` | 2 | int32 | optional | Split-screen slot this view assignment applies to. *(default: `-1`)* |
 
@@ -1048,23 +1063,22 @@ Changes the entity index used as the origin for the client's view (e.g. switches
 
 Forces the client's view angles to specific values (used for spawn orientation resets, teleports, and some map entities).
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `relative` | 1 | bool | optional | True for a relative angle delta, false for absolute. |
-| `angle` | 2 | CMsgQAngle | optional | Target view angle (pitch, yaw, roll). |
+| `angle` | 2 | [CMsgQAngle](networkbasetypes.md#cmsgqangle) | optional | Target view angle (pitch, yaw, roll). |
 
 ### `CSVCMsg_CrosshairAngle`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `angle` | 1 | CMsgQAngle | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `angle` | 1 | [CMsgQAngle](networkbasetypes.md#cmsgqangle) | optional |  |
 
 ### `CSVCMsg_BSPDecal`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `pos` | 1 | CMsgVector | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `pos` | 1 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
 | `decal_texture_index` | 2 | int32 | optional |  |
 | `entity_index` | 3 | int32 | optional | *(default: `-1`)* |
 | `model_index` | 4 | int32 | optional |  |
@@ -1072,8 +1086,8 @@ Forces the client's view angles to specific values (used for spawn orientation r
 
 ### `CSVCMsg_SplitScreen`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `type` | 1 | [ESplitScreenMessageType](#esplitscreenmessagetype) | optional | *(default: `MSG_SPLITSCREEN_ADDUSER`)* |
 | `slot` | 2 | int32 | optional |  |
 | `player_index` | 3 | int32 | optional | *(default: `-1`)* |
@@ -1082,16 +1096,15 @@ Forces the client's view angles to specific values (used for spawn orientation r
 
 Asks the client to report the current value of a specific convar. The client responds with CCLCMsg_RespondCvarValue.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `cookie` | 1 | int32 | optional | Opaque identifier echoed back in the response for correlation. |
 | `cvar_name` | 2 | string | optional | Name of the convar whose value is being queried. |
 
 ### `CSVCMsg_Menu`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `dialog_type` | 1 | int32 | optional |  |
 | `menu_key_values` | 2 | bytes | optional |  |
 
@@ -1099,41 +1112,67 @@ Asks the client to report the current value of a specific convar. The client res
 
 Wraps a higher-level user-message (CCSUsrMsg_*, CUserMessage*) inside a network packet for reliable delivery.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `msg_type` | 1 | int32 | optional | User-message type ID from ECstrike15UserMessages or EBaseUserMessages. |
 | `msg_data` | 2 | bytes | optional | Serialised protobuf payload of the specific user-message type. |
 | `passthrough` | 3 | int32 | optional | Passthrough flag used by split-screen. |
 
 ### `CSVCMsg_SendTable`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `is_end` | 1 | bool | optional |  |
 | `net_table_name` | 2 | string | optional |  |
 | `needs_decoder` | 3 | bool | optional |  |
-| `props` | 4 | CSVCMsg_SendTable.sendprop_t | repeated |  |
+| `props` | 4 | [CSVCMsg_SendTable.sendprop_t](#csvcmsg_sendtablesendprop_t) | repeated |  |
+
+#### `CSVCMsg_SendTable.sendprop_t`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `type` | 1 | int32 | optional |  |
+| `var_name` | 2 | string | optional |  |
+| `flags` | 3 | int32 | optional |  |
+| `priority` | 4 | int32 | optional |  |
+| `dt_name` | 5 | string | optional |  |
+| `num_elements` | 6 | int32 | optional |  |
+| `low_value` | 7 | float | optional |  |
+| `high_value` | 8 | float | optional |  |
+| `num_bits` | 9 | int32 | optional |  |
 
 ### `CSVCMsg_GameEventList`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `descriptors` | 1 | CSVCMsg_GameEventList.descriptor_t | repeated |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `descriptors` | 1 | [CSVCMsg_GameEventList.descriptor_t](#csvcmsg_gameeventlistdescriptor_t) | repeated |  |
+
+#### `CSVCMsg_GameEventList.key_t`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `type` | 1 | int32 | optional |  |
+| `name` | 2 | string | optional |  |
+
+#### `CSVCMsg_GameEventList.descriptor_t`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `eventid` | 1 | int32 | optional |  |
+| `name` | 2 | string | optional |  |
+| `keys` | 3 | [CSVCMsg_GameEventList.key_t](#csvcmsg_gameeventlistkey_t) | repeated |  |
 
 ### `CSVCMsg_PacketEntities`
 
 The most bandwidth-intensive server message; carries the delta-compressed entity-state update for all entities that changed since the client's last acknowledged snapshot.
 
-
 > 📝 The inner data blob is decoded using the Source 2 entity-delta codec. Demo parsers (demoinfocs-golang, etc.) spend most of their time processing this message.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `max_entries` | 1 | int32 | optional | Maximum entity index present in this packet. |
 | `updated_entries` | 2 | int32 | optional | Number of entity change records in the data blob. |
-| `legacy_is_delta` | 3 | bool | optional |  |
+| `legacy_is_delta` | 3 | bool | optional | Legacy flag: true for incremental updates; false for a full baseline snapshot. |
 | `update_baseline` | 4 | bool | optional |  |
 | `baseline` | 5 | int32 | optional | Which baseline buffer (0 or 1) the data is relative to. |
 | `delta_from` | 6 | int32 | optional | Tick that the delta originates from. |
@@ -1144,23 +1183,43 @@ The most bandwidth-intensive server message; carries the delta-compressed entity
 | `last_cmd_number_executed` | 11 | uint32 | optional |  |
 | `server_tick` | 12 | uint32 | optional |  |
 | `serialized_entities` | 13 | bytes | optional |  |
-| `alternate_baselines` | 15 | CSVCMsg_PacketEntities.alternate_baseline_t | repeated |  |
+| `alternate_baselines` | 15 | [CSVCMsg_PacketEntities.alternate_baseline_t](#csvcmsg_packetentitiesalternate_baseline_t) | repeated |  |
 | `has_pvs_vis_bits_deprecated` | 16 | uint32 | optional |  |
 | `last_cmd_number_recv_delta` | 17 | sint32 | optional |  |
-| `non_transmitted_entities` | 19 | CSVCMsg_PacketEntities.non_transmitted_entities_t | optional |  |
+| `non_transmitted_entities` | 19 | [CSVCMsg_PacketEntities.non_transmitted_entities_t](#csvcmsg_packetentitiesnon_transmitted_entities_t) | optional |  |
 | `cq_starved_command_ticks` | 20 | uint32 | optional |  |
 | `cq_discarded_command_ticks` | 21 | uint32 | optional |  |
 | `cmd_recv_status` | 22 | sint32 | repeated | *(packed)* |
-| `outofpvs_entity_updates` | 23 | CSVCMsg_PacketEntities.outofpvs_entity_updates_t | optional |  |
+| `outofpvs_entity_updates` | 23 | [CSVCMsg_PacketEntities.outofpvs_entity_updates_t](#csvcmsg_packetentitiesoutofpvs_entity_updates_t) | optional |  |
 | `dev_padding` | 999 | bytes | optional |  |
+
+#### `CSVCMsg_PacketEntities.alternate_baseline_t`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `entity_index` | 1 | int32 | optional |  |
+| `baseline_index` | 2 | int32 | optional |  |
+
+#### `CSVCMsg_PacketEntities.non_transmitted_entities_t`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `header_count` | 1 | int32 | optional |  |
+| `data` | 2 | bytes | optional |  |
+
+#### `CSVCMsg_PacketEntities.outofpvs_entity_updates_t`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `count` | 1 | int32 | optional |  |
+| `data` | 2 | bytes | optional |  |
 
 ### `CSVCMsg_TempEntities`
 
 Batches one or more temporary-entity (TE) events into a single reliable message.  TE events produce short-lived visual/audio effects without creating persistent server entities.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `reliable` | 1 | bool | optional |  |
 | `num_entries` | 2 | int32 | optional | Number of TE entries packed into this message. |
 | `entity_data` | 3 | bytes | optional | Serialised list of TE event data blobs. |
@@ -1169,9 +1228,8 @@ Batches one or more temporary-entity (TE) events into a single reliable message.
 
 Creates a new named string table on the client, initialised with the provided data blob.  String tables are the primary mechanism for sharing static/semi-static lookup data (model precache, sound precache, user info, etc.).
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `name` | 1 | string | optional | Unique name of the string table (e.g. 'userinfo', 'modelprecache'). |
 | `num_entries` | 2 | int32 | optional | Number of entries in the initial table. |
 | `user_data_fixed_size` | 3 | bool | optional | True when all entries have fixed-size user-data blobs. |
@@ -1187,22 +1245,20 @@ Creates a new named string table on the client, initialised with the provided da
 
 Incremental update to an existing string table, adding or modifying entries since the last full snapshot.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `table_id` | 1 | int32 | optional | Index of the string table to update. |
-| `num_changed_entries` | 2 | int32 | optional |  |
+| `num_changed_entries` | 2 | int32 | optional | Number of changed entries in this update. |
 | `string_data` | 3 | bytes | optional | Delta-encoded table data blob. |
 
 ### `CSVCMsg_VoiceData`
 
 Relays a voice-audio packet from a speaking player to all listeners.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `audio` | 1 | [CMsgVoiceAudio](#cmsgvoiceaudio) | optional | CMsgVoiceAudio containing the compressed audio data and format. |
-| `client_deprecated` | 2 | int32 | optional | *(default: `-1`)* |
+| `client_deprecated` | 2 | int32 | optional | Deprecated. Player slot index of the speaker. *(default: `-1`)* |
 | `proximity` | 3 | bool | optional | True when the voice is 3D positional (proximity voice chat). |
 | `xuid` | 4 | fixed64 | optional |  |
 | `audible_mask` | 5 | int32 | optional | Bitmask of player slots that should hear this audio. |
@@ -1214,17 +1270,16 @@ Relays a voice-audio packet from a speaking player to all listeners.
 
 Reliable wrapper for delta packets that must be delivered in order and without loss (e.g. initial baseline or important game-state transitions).
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `tick` | 1 | int32 | optional |  |
 | `messagessize` | 2 | int32 | optional |  |
 | `state` | 3 | bool | optional |  |
 
 ### `CSVCMsg_FullFrameSplit`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `tick` | 1 | int32 | optional |  |
 | `section` | 2 | int32 | optional |  |
 | `total` | 3 | int32 | optional |  |
@@ -1232,8 +1287,8 @@ Reliable wrapper for delta packets that must be delivered in order and without l
 
 ### `CSVCMsg_HLTVStatus`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `master` | 1 | string | optional |  |
 | `clients` | 2 | int32 | optional |  |
 | `slots` | 3 | int32 | optional |  |
@@ -1241,34 +1296,34 @@ Reliable wrapper for delta packets that must be delivered in order and without l
 
 ### `CSVCMsg_ServerSteamID`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `steam_id` | 1 | uint64 | optional |  |
 
 ### `CSVCMsg_CmdKeyValues`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `data` | 1 | bytes | optional |  |
 
 ### `CSVCMsg_RconServerDetails`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `token` | 1 | bytes | optional |  |
 | `details` | 2 | string | optional |  |
 
 ### `CMsgIPCAddress`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `computer_guid` | 1 | fixed64 | optional |  |
 | `process_id` | 2 | uint32 | optional |  |
 
 ### `CMsgServerPeer`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `player_slot` | 1 | int32 | optional | *(default: `-1`)* |
 | `steamid` | 2 | fixed64 | optional |  |
 | `ipc` | 3 | [CMsgIPCAddress](#cmsgipcaddress) | optional |  |
@@ -1278,21 +1333,21 @@ Reliable wrapper for delta packets that must be delivered in order and without l
 
 ### `CSVCMsg_PeerList`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `peer` | 1 | [CMsgServerPeer](#cmsgserverpeer) | repeated |  |
 
 ### `CSVCMsg_ClearAllStringTables`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `mapname` | 1 | string | optional |  |
 | `create_tables_skipped` | 3 | bool | optional |  |
 
 ### `ProtoFlattenedSerializerField_t`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `var_type_sym` | 1 | int32 | optional |  |
 | `var_name_sym` | 2 | int32 | optional |  |
 | `bit_count` | 3 | int32 | optional |  |
@@ -1303,35 +1358,42 @@ Reliable wrapper for delta packets that must be delivered in order and without l
 | `field_serializer_version` | 8 | int32 | optional |  |
 | `send_node_sym` | 9 | int32 | optional |  |
 | `var_encoder_sym` | 10 | int32 | optional |  |
-| `polymorphic_types` | 11 | ProtoFlattenedSerializerField_t.polymorphic_field_t | repeated |  |
+| `polymorphic_types` | 11 | [ProtoFlattenedSerializerField_t.polymorphic_field_t](#protoflattenedserializerfield_tpolymorphic_field_t) | repeated |  |
 | `var_serializer_sym` | 12 | int32 | optional |  |
+
+#### `ProtoFlattenedSerializerField_t.polymorphic_field_t`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `polymorphic_field_serializer_name_sym` | 1 | int32 | optional |  |
+| `polymorphic_field_serializer_version` | 2 | int32 | optional |  |
 
 ### `ProtoFlattenedSerializer_t`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `serializer_name_sym` | 1 | int32 | optional |  |
 | `serializer_version` | 2 | int32 | optional |  |
 | `fields_index` | 3 | int32 | repeated |  |
 
 ### `CSVCMsg_FlattenedSerializer`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `serializers` | 1 | [ProtoFlattenedSerializer_t](#protoflattenedserializer_t) | repeated |  |
 | `symbols` | 2 | string | repeated |  |
 | `fields` | 3 | [ProtoFlattenedSerializerField_t](#protoflattenedserializerfield_t) | repeated |  |
 
 ### `CSVCMsg_StopSound`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `guid` | 1 | fixed32 | optional |  |
 
 ### `CBidirMsg_RebroadcastGameEvent`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `posttoserver` | 1 | bool | optional |  |
 | `buftype` | 2 | int32 | optional |  |
 | `clientbitcount` | 3 | uint32 | optional |  |
@@ -1339,23 +1401,30 @@ Reliable wrapper for delta packets that must be delivered in order and without l
 
 ### `CBidirMsg_RebroadcastSource`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `eventsource` | 1 | int32 | optional |  |
 
 ### `CBidirMsg_PredictionEvent`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `event_id` | 1 | uint32 | optional |  |
 | `event_data` | 2 | bytes | optional |  |
 | `sync_type` | 3 | uint32 | optional |  |
 | `sync_val_uint32` | 4 | uint32 | optional |  |
 
+#### `CBidirMsg_PredictionEvent.ESyncType`
+
+| Name | Value |
+|------|-------|
+| `ST_Tick` | 0 |
+| `ST_UserCmdNum` | 1 |
+
 ### `CMsgServerNetworkStats`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `dedicated` | 1 | bool | optional |  |
 | `cpu_usage` | 2 | int32 | optional |  |
 | `memory_used_mb` | 3 | int32 | optional |  |
@@ -1367,7 +1436,7 @@ Reliable wrapper for delta packets that must be delivered in order and without l
 | `num_spectators` | 10 | int32 | optional |  |
 | `num_tv_relays` | 11 | int32 | optional |  |
 | `fps` | 12 | float | optional |  |
-| `ports` | 17 | CMsgServerNetworkStats.Port | repeated |  |
+| `ports` | 17 | [CMsgServerNetworkStats.Port](#cmsgservernetworkstatsport) | repeated |  |
 | `avg_ping_ms` | 18 | float | optional |  |
 | `avg_engine_latency_out` | 19 | float | optional |  |
 | `avg_packets_out` | 20 | float | optional |  |
@@ -1380,12 +1449,32 @@ Reliable wrapper for delta packets that must be delivered in order and without l
 | `total_packets_in` | 27 | uint64 | optional |  |
 | `total_data_out` | 28 | uint64 | optional |  |
 | `total_packets_out` | 29 | uint64 | optional |  |
-| `players` | 30 | CMsgServerNetworkStats.Player | repeated |  |
+| `players` | 30 | [CMsgServerNetworkStats.Player](#cmsgservernetworkstatsplayer) | repeated |  |
+
+#### `CMsgServerNetworkStats.Port`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `port` | 1 | int32 | optional |  |
+| `name` | 2 | string | optional |  |
+
+#### `CMsgServerNetworkStats.Player`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `steamid` | 1 | uint64 | optional |  |
+| `remote_addr` | 2 | string | optional |  |
+| `ping_avg_ms` | 4 | int32 | optional |  |
+| `packet_loss_pct` | 5 | float | optional |  |
+| `is_bot` | 6 | bool | optional |  |
+| `loss_in` | 7 | float | optional |  |
+| `loss_out` | 8 | float | optional |  |
+| `engine_latency_ms` | 9 | int32 | optional |  |
 
 ### `CSVCMsg_HltvReplay`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `delay` | 1 | int32 | optional |  |
 | `primary_target` | 2 | int32 | optional | *(default: `-1`)* |
 | `replay_stop_at` | 3 | int32 | optional |  |
@@ -1397,8 +1486,8 @@ Reliable wrapper for delta packets that must be delivered in order and without l
 
 ### `CCLCMsg_HltvReplay`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `request` | 1 | int32 | optional |  |
 | `slowdown_length` | 2 | float | optional |  |
 | `slowdown_rate` | 3 | float | optional |  |
@@ -1407,34 +1496,34 @@ Reliable wrapper for delta packets that must be delivered in order and without l
 
 ### `CSVCMsg_Broadcast_Command`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `cmd` | 1 | string | optional |  |
 
 ### `CCLCMsg_HltvFixupOperatorTick`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `tick` | 1 | int32 | optional |  |
 | `props_data` | 2 | bytes | optional |  |
-| `origin` | 3 | CMsgVector | optional |  |
-| `eye_angles` | 4 | CMsgQAngle | optional |  |
+| `origin` | 3 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `eye_angles` | 4 | [CMsgQAngle](networkbasetypes.md#cmsgqangle) | optional |  |
 | `observer_mode` | 5 | int32 | optional |  |
 | `cameraman_scoreboard` | 6 | bool | optional |  |
 | `observer_target` | 7 | int32 | optional |  |
-| `view_offset` | 8 | CMsgVector | optional |  |
+| `view_offset` | 8 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
 
 ### `CSVCMsg_HltvFixupOperatorStatus`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `mode` | 1 | uint32 | optional |  |
 | `override_operator_name` | 2 | string | optional |  |
 
 ### `CMsgServerUserCmd`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `data` | 1 | bytes | optional |  |
 | `cmd_number` | 2 | int32 | optional |  |
 | `player_slot` | 3 | int32 | optional | *(default: `-1`)* |
@@ -1444,13 +1533,13 @@ Reliable wrapper for delta packets that must be delivered in order and without l
 
 ### `CSVCMsg_UserCommands`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `commands` | 1 | [CMsgServerUserCmd](#cmsgserverusercmd) | repeated |  |
 
 ### `CSVCMsg_NextMsgPredicted`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `predicted_by_player_slot` | 1 | int32 | optional | *(default: `-1`)* |
 | `message_type_id` | 2 | uint32 | optional |  |

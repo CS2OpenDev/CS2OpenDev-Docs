@@ -1,14 +1,16 @@
 ---
-layout: default
 title: IPhysAggregateInstance
-nav_exclude: true
+module: vphysics2
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [vphysics2](../vphysics2.md) / IPhysAggregateInstance
 
 # IPhysAggregateInstance
 
-**Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 255 · **Module:** vphysics2
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** n/a (unspecified) · **Module:** vphysics2
 
 **Inherits from:** [IPhysicsBodyList](../vphysics2/IPhysicsBodyList.md)
 

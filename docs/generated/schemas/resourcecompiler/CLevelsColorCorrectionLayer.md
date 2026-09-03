@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CLevelsColorCorrectionLayer
-nav_exclude: true
+module: resourcecompiler
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [resourcecompiler](../resourcecompiler.md) / CLevelsColorCorrectionLayer
 
 # CLevelsColorCorrectionLayer
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 120 bytes (`0x78`) · **Align:** 8 · **Module:** resourcecompiler
 

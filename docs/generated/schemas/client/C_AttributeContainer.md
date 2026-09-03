@@ -1,14 +1,16 @@
 ---
-layout: default
 title: C_AttributeContainer
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / C_AttributeContainer
 
 # C_AttributeContainer
 
-**Kind:** class · **Size:** 1232 bytes (`0x4d0`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 1232 bytes (`0x4d0`) · **Align:** n/a (unspecified) · **Module:** client
 
 **Inherits from:** [CAttributeManager](../client/CAttributeManager.md)
 
@@ -31,7 +33,7 @@ classDiagram
 | `0x24` | `m_hOuter` | CHandle< [C_BaseEntity](../client/C_BaseEntity.md) > | [CAttributeManager](../client/CAttributeManager.md) |  |
 | `0x28` | `m_bPreventLoopback` | bool | [CAttributeManager](../client/CAttributeManager.md) |  |
 | `0x2c` | `m_ProviderType` | attributeprovidertypes_t | [CAttributeManager](../client/CAttributeManager.md) |  |
-| `0x30` | `m_CachedResults` | CUtlVector< [CAttributeManager](../client/CAttributeManager.md)::cached_attribute_float_t > | [CAttributeManager](../client/CAttributeManager.md) |  |
+| `0x30` | `m_CachedResults` | CUtlVector< [CAttributeManager::cached_attribute_float_t](../client/CAttributeManager.cached_attribute_float_t.md) > | [CAttributeManager](../client/CAttributeManager.md) |  |
 | `0x50` | `m_Item` | [C_EconItemView](../client/C_EconItemView.md) |  |  |
 | `0x4c0` | `m_iExternalItemProviderRegisteredToken` | int32 |  |  |
 | `0x4c8` | `m_ullRegisteredAsItemID` | uint64 |  |  |

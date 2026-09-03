@@ -1,12 +1,14 @@
 ---
-layout: default
 title: screenshake_t
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / screenshake_t
 
 # screenshake_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 56 bytes (`0x38`) · **Align:** 4 · **Module:** client
 

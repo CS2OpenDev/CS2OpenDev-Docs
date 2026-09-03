@@ -1,14 +1,18 @@
 ---
-layout: default
-title: shard_model_desc_t
-nav_exclude: true
+title: shard_model_desc_t (server)
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / shard_model_desc_t
 
 # shard_model_desc_t
 
-**Kind:** class · **Size:** 128 bytes (`0x80`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 128 bytes (`0x80`) · **Align:** n/a (unspecified) · **Module:** server
+
+**Twin:** [shard_model_desc_t (client)](../client/shard_model_desc_t.md)
 
 **Relationships:**
 

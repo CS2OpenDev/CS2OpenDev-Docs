@@ -1,0 +1,119 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import DataTable, { PAGE_SIZE, type Column } from '../components/islands/DataTable';
+import TableRowsNote from '../components/TableRowsNote.astro';
+import { provenanceLine } from '../lib/provenance';
+import { commandRows, flagAnchor, flagLegend, loadCommands } from '../lib/data/commands';
+import { identifierAliases } from '../lib/data/schema';
+import { withBase } from '../lib/urls';
+import '../styles/console.css';
+
+const commands = loadCommands();
+const flags = flagLegend();
+
+const columns: Column[] = [
+	{ key: 'name', label: 'Name', mono: true },
+	{ key: 'completion', label: 'Completion' },
+	{ key: 'flags', label: 'Flags', facet: true },
+	{ key: 'description', label: 'Description', helpText: true },
+];
+
+// Only the first page rides in the island's props; the rest comes from
+// commands/rows.json.ts on first interaction.
+const rows = commandRows().slice(0, PAGE_SIZE);
+const rowsHref = withBase('/commands/rows.json');
+
+// Deduped across every command, not just the DataTable's first SSR page, so a search
+// for a term on a later page still resolves to this page. The full name is included
+// alongside its split parts: past the SSR page the name is not in the page at all
+// until the island fetches rows.json.
+const aliasText = [
+	...new Set(commands.flatMap((c) => [c.name, ...identifierAliases(c.name)])),
+].join(' ');
+
+const headings = [
+	{ depth: 2, slug: 'flags', text: 'Flags' },
+	{ depth: 2, slug: 'commands-table', text: 'Commands' },
+];
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Commands',
+		description: `${commands.length} console commands for this build, with access flags and argument syntax.`,
+	}}
+	headings={headings}
+>
+	<div>
+		<p>
+			A console command is a named action invoked from the in-game console, a bind, or a config file:{' '}
+			<code>bot_add</code>, <code>changelevel</code>, <code>ent_fire</code>, and about{' '}
+			{commands.length.toLocaleString()} more. Unlike a convar a command carries no value of its own;
+			its help text describes the arguments it takes, and a <code>&lt;placeholder&gt;</code> token in
+			that text names an argument rather than literal syntax. The same access flags as ConVars govern who
+			may invoke a command: <code>cheat</code> requires <code>sv_cheats 1</code>,{' '}
+			<code>client_can_execute</code> lets the server trigger it on a client, and so on. See the legend
+			below. A command whose <strong>Completion</strong> column reads Yes registers a tab-completion
+			callback, so typing part of its arguments and pressing Tab in the console offers candidates.
+		</p>
+
+		<p class="cs2-provenance">{provenanceLine()}</p>
+
+		<h2 id="flags">Flags</h2>
+		<p>
+			{flags.length} distinct flags appear across this build's convars and commands. A flag with a blank
+			description is one this build sets but upstream never documented in an accessible form.
+		</p>
+		<div class="cs2-table-wrap cs2-legend-table">
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Flag</th>
+						<th scope="col" class="value">ConVars</th>
+						<th scope="col" class="value">Commands</th>
+						<th scope="col" class="ann">Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					{flags.map((f) => (
+						<tr id={flagAnchor(f.name)}>
+							<td><code>{f.name}</code></td>
+							<td class="value">{f.convar_count}</td>
+							<td class="value">{f.command_count}</td>
+							<td class="ann">{f.description}</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+
+		<h2 id="commands-table">Commands</h2>
+		<p>
+			Sorted by name; type into the filter box or click a flag chip to narrow the table. Multiline help
+			text renders with line breaks preserved, and a <code>&lt;placeholder&gt;</code> token is set in{' '}
+			<code>code</code> font so it reads as argument syntax rather than prose.
+		</p>
+		<p class="cs2-note">
+			<strong>Link to a command:</strong> append <code>#&lt;name&gt;</code> to this page's URL, e.g.{' '}
+			<code>#bot_add</code>. Once the page loads, the table jumps to and briefly highlights that row,
+			clearing any active filter that would otherwise hide it.
+		</p>
+
+		<span class="cs2-aliases" aria-hidden="true">{aliasText}</span>
+
+		<div id="cmd">
+			<DataTable
+				id="cmd"
+				columns={columns}
+				rows={rows}
+				src={rowsHref}
+				anchorKey="name"
+				caption={`${commands.length.toLocaleString()} console commands`}
+				pageSize={PAGE_SIZE}
+				initialSort={{ key: 'name', dir: 'asc' }}
+				client:idle
+			/>
+		</div>
+		<TableRowsNote shown={rows.length} total={commands.length} rowsHref={rowsHref} artifact="commands_schema.json" />
+	</div>
+</StarlightPage>

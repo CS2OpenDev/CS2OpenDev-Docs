@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CMixFilter
-nav_exclude: true
+module: sounddoc_lib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [sounddoc_lib](../sounddoc_lib.md) / CMixFilter
 
 # CMixFilter
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 64 bytes (`0x40`) · **Align:** 8 · **Module:** sounddoc_lib
 

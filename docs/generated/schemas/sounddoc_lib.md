@@ -1,11 +1,11 @@
 ---
-layout: default
 title: sounddoc_lib
-parent: Schemas
-nav_exclude: true
+module: sounddoc_lib
 ---
 
 # Module: sounddoc_lib
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 [📊 View UML Diagram](../diagrams/sounddoc_lib.md)
 

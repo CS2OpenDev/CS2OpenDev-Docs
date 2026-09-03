@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmTransitionNode::CDefinition"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmTransitionNode::CDefinition
 
 # CNmTransitionNode::CDefinition
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 48 bytes (`0x30`) · **Align:** 8 · **Module:** animlib
 
@@ -16,12 +18,12 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmPoseNode::CDefinition" <|-- "CNmTransitionNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmPoseNode::CDefinition"
-    "CNmTransitionNode::CDefinition" *-- NmPercent_t
-    "CNmTransitionNode::CDefinition" *-- CNmBitFlags
-    "CNmTransitionNode::CDefinition" *-- NmEasingOperation_t
-    "CNmTransitionNode::CDefinition" *-- NmRootMotionBlendMode_t
+    `CNmPoseNode::CDefinition` <|-- `CNmTransitionNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmPoseNode::CDefinition`
+    `CNmTransitionNode::CDefinition` *-- NmPercent_t
+    `CNmTransitionNode::CDefinition` *-- CNmBitFlags
+    `CNmTransitionNode::CDefinition` *-- NmEasingOperation_t
+    `CNmTransitionNode::CDefinition` *-- NmRootMotionBlendMode_t
 ```
 
 ## Memory layout

@@ -1,12 +1,14 @@
 ---
-layout: default
 title: WorldBuilderParams_t
-nav_exclude: true
+module: worldrenderer
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [worldrenderer](../worldrenderer.md) / WorldBuilderParams_t
 
 # WorldBuilderParams_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 96 bytes (`0x60`) · **Align:** 8 · **Module:** worldrenderer
 

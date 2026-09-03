@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CPulseCell_Outflow_PlayVCD
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CPulseCell_Outflow_PlayVCD
 
 # CPulseCell_Outflow_PlayVCD
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 488 bytes (`0x1e8`) · **Align:** 8 · **Module:** server
 
@@ -23,6 +25,7 @@ classDiagram
     CPulseCell_Base <|-- CPulseCell_BaseFlow
     CPulseCell_Outflow_PlayVCD *-- InfoForResourceTypeCChoreoSceneResource
     CPulseCell_Outflow_PlayVCD *-- CPulse_OutflowConnection
+    CPulseCell_Outflow_PlayVCD *-- `CPulseCell_Outflow_PlayVCD::VCDRequirementInfo_t`
 ```
 
 ## Memory layout
@@ -39,7 +42,7 @@ classDiagram
 | `0x138` | `m_hChoreoScene` | CStrongHandle< [InfoForResourceTypeCChoreoSceneResource](../resourcesystem/InfoForResourceTypeCChoreoSceneResource.md) > |  |  |
 | `0x140` | `m_OnPaused` | [CPulse_OutflowConnection](../pulse_runtime_lib/CPulse_OutflowConnection.md) |  |  |
 | `0x188` | `m_OnResumed` | [CPulse_OutflowConnection](../pulse_runtime_lib/CPulse_OutflowConnection.md) |  |  |
-| `0x1d0` | `m_OutRequirements` | CUtlVector< [CPulseCell_Outflow_PlayVCD](../server/CPulseCell_Outflow_PlayVCD.md)::VCDRequirementInfo_t > |  |  |
+| `0x1d0` | `m_OutRequirements` | CUtlVector< [CPulseCell_Outflow_PlayVCD::VCDRequirementInfo_t](../server/CPulseCell_Outflow_PlayVCD.VCDRequirementInfo_t.md) > |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

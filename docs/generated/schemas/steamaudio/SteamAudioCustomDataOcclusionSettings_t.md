@@ -1,12 +1,14 @@
 ---
-layout: default
 title: SteamAudioCustomDataOcclusionSettings_t
-nav_exclude: true
+module: steamaudio
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [steamaudio](../steamaudio.md) / SteamAudioCustomDataOcclusionSettings_t
 
 # SteamAudioCustomDataOcclusionSettings_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 12 bytes (`0xc`) · **Align:** 4 · **Module:** steamaudio
 

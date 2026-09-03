@@ -1,0 +1,509 @@
+{
+  "music_kits": [
+    {
+      "def_index": 1,
+      "loc_name": "#musickit_valve_cs2_01",
+      "name": "valve_cs2_01"
+    },
+    {
+      "def_index": 2,
+      "loc_name": "#musickit_valve_csgo_02",
+      "name": "valve_02"
+    },
+    {
+      "def_index": 3,
+      "loc_name": "#musickit_danielsadowski_01",
+      "name": "danielsadowski_01"
+    },
+    {
+      "def_index": 4,
+      "loc_name": "#musickit_noisia_01",
+      "name": "noisia_01"
+    },
+    {
+      "def_index": 5,
+      "loc_name": "#musickit_robertallaire_01",
+      "name": "robertallaire_01"
+    },
+    {
+      "def_index": 6,
+      "loc_name": "#musickit_seanmurray_01",
+      "name": "seanmurray_01"
+    },
+    {
+      "def_index": 7,
+      "loc_name": "#musickit_feedme_01",
+      "name": "feedme_01"
+    },
+    {
+      "def_index": 8,
+      "loc_name": "#musickit_dren_01",
+      "name": "dren_01"
+    },
+    {
+      "def_index": 9,
+      "loc_name": "#musickit_austinwintory_01",
+      "name": "austinwintory_01"
+    },
+    {
+      "def_index": 10,
+      "loc_name": "#musickit_sasha_01",
+      "name": "sasha_01"
+    },
+    {
+      "def_index": 11,
+      "loc_name": "#musickit_skog_01",
+      "name": "skog_01"
+    },
+    {
+      "def_index": 12,
+      "loc_name": "#musickit_midnightriders_01",
+      "name": "midnightriders_01"
+    },
+    {
+      "def_index": 13,
+      "loc_name": "#musickit_mattlange_01",
+      "name": "mattlange_01"
+    },
+    {
+      "def_index": 14,
+      "loc_name": "#musickit_mateomessina_01",
+      "name": "mateomessina_01"
+    },
+    {
+      "def_index": 15,
+      "loc_name": "#musickit_hotlinemiami_01",
+      "name": "hotlinemiami_01"
+    },
+    {
+      "def_index": 16,
+      "loc_name": "#musickit_danielsadowski_02",
+      "name": "danielsadowski_02"
+    },
+    {
+      "def_index": 17,
+      "loc_name": "#musickit_damjanmravunac_01",
+      "name": "damjanmravunac_01"
+    },
+    {
+      "def_index": 18,
+      "loc_name": "#musickit_proxy_01",
+      "name": "proxy_01"
+    },
+    {
+      "def_index": 19,
+      "loc_name": "#musickit_kitheory_01",
+      "name": "kitheory_01"
+    },
+    {
+      "def_index": 20,
+      "loc_name": "#musickit_troelsfolmann_01",
+      "name": "troelsfolmann_01"
+    },
+    {
+      "def_index": 21,
+      "loc_name": "#musickit_kellybailey_01",
+      "name": "kellybailey_01"
+    },
+    {
+      "def_index": 22,
+      "loc_name": "#musickit_skog_02",
+      "name": "skog_02"
+    },
+    {
+      "def_index": 23,
+      "loc_name": "#musickit_danielsadowski_03",
+      "name": "danielsadowski_03"
+    },
+    {
+      "def_index": 24,
+      "loc_name": "#musickit_awolnation_01",
+      "name": "awolnation_01"
+    },
+    {
+      "def_index": 25,
+      "loc_name": "#musickit_mordfustang_01",
+      "name": "mordfustang_01"
+    },
+    {
+      "def_index": 26,
+      "loc_name": "#musickit_michaelbross_01",
+      "name": "michaelbross_01"
+    },
+    {
+      "def_index": 27,
+      "loc_name": "#musickit_ianhultquist_01",
+      "name": "ianhultquist_01"
+    },
+    {
+      "def_index": 28,
+      "loc_name": "#musickit_newbeatfund_01",
+      "name": "newbeatfund_01"
+    },
+    {
+      "def_index": 29,
+      "loc_name": "#musickit_beartooth_01",
+      "name": "beartooth_01"
+    },
+    {
+      "def_index": 30,
+      "loc_name": "#musickit_lenniemoore_01",
+      "name": "lenniemoore_01"
+    },
+    {
+      "def_index": 31,
+      "loc_name": "#musickit_darude_01",
+      "name": "darude_01"
+    },
+    {
+      "def_index": 32,
+      "loc_name": "#musickit_beartooth_02",
+      "name": "beartooth_02"
+    },
+    {
+      "def_index": 33,
+      "loc_name": "#musickit_blitzkids_01",
+      "name": "blitzkids_01"
+    },
+    {
+      "def_index": 34,
+      "loc_name": "#musickit_hundredth_01",
+      "name": "hundredth_01"
+    },
+    {
+      "def_index": 35,
+      "loc_name": "#musickit_neckdeep_01",
+      "name": "neckdeep_01"
+    },
+    {
+      "def_index": 36,
+      "loc_name": "#musickit_roam_01",
+      "name": "roam_01"
+    },
+    {
+      "def_index": 37,
+      "loc_name": "#musickit_twinatlantic_01",
+      "name": "twinatlantic_01"
+    },
+    {
+      "def_index": 38,
+      "loc_name": "#musickit_skog_03",
+      "name": "skog_03"
+    },
+    {
+      "def_index": 39,
+      "loc_name": "#musickit_theverkkars_01",
+      "name": "theverkkars_01"
+    },
+    {
+      "def_index": 40,
+      "loc_name": "#musickit_halo_01",
+      "name": "halo_01"
+    },
+    {
+      "def_index": 41,
+      "loc_name": "#musickit_scarlxrd_01",
+      "name": "scarlxrd_01"
+    },
+    {
+      "def_index": 42,
+      "loc_name": "#musickit_hlalyx_01",
+      "name": "hlalyx_01"
+    },
+    {
+      "def_index": 43,
+      "loc_name": "#musickit_austinwintory_02",
+      "name": "austinwintory_02"
+    },
+    {
+      "def_index": 44,
+      "loc_name": "#musickit_dren_02",
+      "name": "dren_02"
+    },
+    {
+      "def_index": 45,
+      "loc_name": "#musickit_danielsadowski_04",
+      "name": "danielsadowski_04"
+    },
+    {
+      "def_index": 46,
+      "loc_name": "#musickit_treeadams_benbromfield_01",
+      "name": "treeadams_benbromfield_01"
+    },
+    {
+      "def_index": 47,
+      "loc_name": "#musickit_timhuling_01",
+      "name": "timhuling_01"
+    },
+    {
+      "def_index": 48,
+      "loc_name": "#musickit_sammarshall_01",
+      "name": "sammarshall_01"
+    },
+    {
+      "def_index": 49,
+      "loc_name": "#musickit_mattlevine_01",
+      "name": "mattlevine_01"
+    },
+    {
+      "def_index": 50,
+      "loc_name": "#musickit_amontobin_01",
+      "name": "amontobin_01"
+    },
+    {
+      "def_index": 51,
+      "loc_name": "#musickit_hades_01",
+      "name": "hades_01"
+    },
+    {
+      "def_index": 52,
+      "loc_name": "#musickit_neckdeep_02",
+      "name": "neckdeep_02"
+    },
+    {
+      "def_index": 53,
+      "loc_name": "#musickit_scarlxrd_02",
+      "name": "scarlxrd_02"
+    },
+    {
+      "def_index": 54,
+      "loc_name": "#musickit_austinwintory_03",
+      "name": "austinwintory_03"
+    },
+    {
+      "def_index": 55,
+      "loc_name": "#musickit_chipzel_01",
+      "name": "chipzel_01"
+    },
+    {
+      "def_index": 56,
+      "loc_name": "#musickit_freakydna_01",
+      "name": "freakydna_01"
+    },
+    {
+      "def_index": 57,
+      "loc_name": "#musickit_jesseharlin_01",
+      "name": "jesseharlin_01"
+    },
+    {
+      "def_index": 58,
+      "loc_name": "#musickit_laurashigihara_01",
+      "name": "laurashigihara_01"
+    },
+    {
+      "def_index": 59,
+      "loc_name": "#musickit_sarahschachner_01",
+      "name": "sarahschachner_01"
+    },
+    {
+      "def_index": 60,
+      "loc_name": "#musickit_bbnos_01",
+      "name": "bbnos_01"
+    },
+    {
+      "def_index": 61,
+      "loc_name": "#musickit_theverkkars_02",
+      "name": "theverkkars_02"
+    },
+    {
+      "def_index": 62,
+      "loc_name": "#musickit_3kliksphilip_01",
+      "name": "3kliksphilip_01"
+    },
+    {
+      "def_index": 63,
+      "loc_name": "#musickit_hlb_01",
+      "name": "hlb_01"
+    },
+    {
+      "def_index": 64,
+      "loc_name": "#musickit_juelz_01",
+      "name": "juelz_01"
+    },
+    {
+      "def_index": 65,
+      "loc_name": "#musickit_knock2_01",
+      "name": "knock2_01"
+    },
+    {
+      "def_index": 66,
+      "loc_name": "#musickit_meechydarko_01",
+      "name": "meechydarko_01"
+    },
+    {
+      "def_index": 67,
+      "loc_name": "#musickit_sullivanking_01",
+      "name": "sullivanking_01"
+    },
+    {
+      "def_index": 68,
+      "loc_name": "#musickit_perfectworld_01",
+      "name": "perfectworld_01"
+    },
+    {
+      "def_index": 69,
+      "loc_name": "#musickit_denzelcurry_01",
+      "name": "denzelcurry_01"
+    },
+    {
+      "def_index": 70,
+      "loc_name": "#musickit_valve_csgo_01",
+      "name": "valve_01"
+    },
+    {
+      "def_index": 71,
+      "loc_name": "#musickit_dryden_01",
+      "name": "dryden_01"
+    },
+    {
+      "def_index": 72,
+      "loc_name": "#musickit_isoxo_01",
+      "name": "isoxo_01"
+    },
+    {
+      "def_index": 73,
+      "loc_name": "#musickit_killscript_01",
+      "name": "killscript_01"
+    },
+    {
+      "def_index": 74,
+      "loc_name": "#musickit_knock2_02",
+      "name": "knock2_02"
+    },
+    {
+      "def_index": 75,
+      "loc_name": "#musickit_radcat_01",
+      "name": "radcat_01"
+    },
+    {
+      "def_index": 76,
+      "loc_name": "#musickit_twerl_01",
+      "name": "twerl_01"
+    },
+    {
+      "def_index": 78,
+      "loc_name": "#MusicKit_austinwintory_04",
+      "name": "austinwintory_04"
+    },
+    {
+      "def_index": 79,
+      "loc_name": "#MusicKit_benbromfield_01",
+      "name": "benbromfield_01"
+    },
+    {
+      "def_index": 80,
+      "loc_name": "#MusicKit_danielsadowski_05",
+      "name": "danielsadowski_05"
+    },
+    {
+      "def_index": 81,
+      "loc_name": "#MusicKit_dren_03",
+      "name": "dren_03"
+    },
+    {
+      "def_index": 82,
+      "loc_name": "#MusicKit_mattlevine_02",
+      "name": "mattlevine_02"
+    },
+    {
+      "def_index": 83,
+      "loc_name": "#MusicKit_sammarshall_02",
+      "name": "sammarshall_02"
+    },
+    {
+      "def_index": 84,
+      "loc_name": "#MusicKit_timhuling_02",
+      "name": "timhuling_02"
+    },
+    {
+      "def_index": 85,
+      "loc_name": "#MusicKit_treeadams_01",
+      "name": "treeadams_01"
+    },
+    {
+      "def_index": 86,
+      "loc_name": "#MusicKit_perfectworld_02",
+      "name": "perfectworld_02"
+    },
+    {
+      "def_index": 87,
+      "loc_name": "#MusicKit_adambeyer_01",
+      "name": "adambeyer_01"
+    },
+    {
+      "def_index": 88,
+      "loc_name": "#MusicKit_ghost_01",
+      "name": "ghost_01"
+    },
+    {
+      "def_index": 89,
+      "loc_name": "#MusicKit_health_01",
+      "name": "health_01"
+    },
+    {
+      "def_index": 90,
+      "loc_name": "#MusicKit_jamesandthecoldgun_01",
+      "name": "jamesandthecoldgun_01"
+    },
+    {
+      "def_index": 91,
+      "loc_name": "#MusicKit_jonathanyoung_01",
+      "name": "jonathanyoung_01"
+    },
+    {
+      "def_index": 92,
+      "loc_name": "#MusicKit_juelz_02",
+      "name": "juelz_02"
+    },
+    {
+      "def_index": 93,
+      "loc_name": "#MusicKit_killermike_01",
+      "name": "killermike_01"
+    },
+    {
+      "def_index": 94,
+      "loc_name": "#MusicKit_pvris_01",
+      "name": "pvris_01"
+    },
+    {
+      "def_index": 95,
+      "loc_name": "#MusicKit_selectiveresponse_01",
+      "name": "selectiveresponse_01"
+    },
+    {
+      "def_index": 96,
+      "loc_name": "#MusicKit_tigercub_01",
+      "name": "tigercub_01"
+    },
+    {
+      "def_index": 98,
+      "loc_name": "#MusicKit_alrt_01",
+      "name": "alrt_01"
+    },
+    {
+      "def_index": 99,
+      "loc_name": "#MusicKit_altare_01",
+      "name": "altare_01"
+    },
+    {
+      "def_index": 100,
+      "loc_name": "#MusicKit_borne_01",
+      "name": "borne_01"
+    },
+    {
+      "def_index": 101,
+      "loc_name": "#MusicKit_pirapus_01",
+      "name": "pirapus_01"
+    },
+    {
+      "def_index": 102,
+      "loc_name": "#MusicKit_repiet_01",
+      "name": "repiet_01"
+    },
+    {
+      "def_index": 103,
+      "loc_name": "#MusicKit_shockone_01",
+      "name": "shockone_01"
+    }
+  ]
+}

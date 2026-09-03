@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CPlayer_WeaponServices
-nav_exclude: true
+title: CPlayer_WeaponServices (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CPlayer_WeaponServices
 
 # CPlayer_WeaponServices
 
-**Kind:** class · **Size:** 168 bytes (`0xa8`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 168 bytes (`0xa8`) · **Align:** n/a (unspecified) · **Module:** client
+
+**Twin:** [CPlayer_WeaponServices (server)](../server/CPlayer_WeaponServices.md)
 
 **Inherits from:** [CPlayerPawnComponent](../server/CPlayerPawnComponent.md)
 

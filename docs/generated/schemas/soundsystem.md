@@ -1,11 +1,11 @@
 ---
-layout: default
 title: soundsystem
-parent: Schemas
-nav_exclude: true
+module: soundsystem
 ---
 
 # Module: soundsystem
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 [📊 View UML Diagram](../diagrams/soundsystem.md)
 

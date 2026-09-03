@@ -1,12 +1,14 @@
 ---
-layout: default
 title: C_OP_SetFloatCollection
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / C_OP_SetFloatCollection
 
 # C_OP_SetFloatCollection
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 1248 bytes (`0x4e0`) · **Align:** 16 · **Module:** particles
 

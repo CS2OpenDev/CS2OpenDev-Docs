@@ -1,0 +1,17 @@
+# docs/overlays/entity2.yml
+#
+# Multi-entity overlay for the 'entity2' schema module: the root entity
+# module shared by server and client.
+#
+# See docs/overlays/README.md for the full format reference.
+
+CEntityInstance:
+  description: >
+    Root of the entity class hierarchy (server and client).  Everything that
+    has an entity handle ultimately derives from this.
+
+  fields:
+    m_pEntity:
+      description: "CEntityIdentity pointer: the entity's identity record (name, class, handle, flags)."
+    m_CScriptComponent:
+      description: "VScript component attached to the entity, when scripted."

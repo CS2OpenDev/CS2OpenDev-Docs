@@ -1,12 +1,14 @@
 ---
-layout: default
 title: C_OP_RenderSprites
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / C_OP_RenderSprites
 
 # C_OP_RenderSprites
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 21064 bytes (`0x5248`) · **Align:** 8 · **Module:** particles
 
@@ -95,7 +97,7 @@ classDiagram
 | `0x2048` | `m_flSourceAlphaValueToMapToOne` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName source alpha value to map to alpha of 1` `MPropertySortPriority 300` |
 | `0x21b8` | `m_bRefract` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName refract background` `MPropertySortPriority 200` `MPropertyStartGroup Refraction` |
 | `0x21b9` | `m_bRefractSolid` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName refract draws opaque - alpha scales refraction` `MPropertySortPriority 200` `MPropertySuppressExpr !m_bRefract` |
-| `0x21ba` | `m_bRefract2Passes` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName refract in 2 passes - can refract particles behind, requires (MBOIT!)` `MPropertySortPriority 200` `MPropertySuppressExpr mod != hlx \|\| !m_bRefract` |
+| `0x21ba` | `m_bRefract2Passes` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName refract in 2 passes - can refract particles behind, requires (MBOIT!)` `MPropertySortPriority 200` `MPropertySuppressExpr mod != hlx &#124;&#124; !m_bRefract` |
 | `0x21c0` | `m_flRefractAmount` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyAttributeRange -2 2` `MPropertyFriendlyName refract amount` `MPropertySortPriority 200` `MPropertySuppressExpr !m_bRefract` |
 | `0x2330` | `m_nRefractBlurRadius` | int32 | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName refract blur radius` `MPropertySortPriority 200` `MPropertySuppressExpr !m_bRefract` |
 | `0x2334` | `m_nRefractBlurType` | [BlurFilterType_t](../particles/BlurFilterType_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName refract blur type` `MPropertySortPriority 200` `MPropertySuppressExpr !m_bRefract` |
@@ -144,7 +146,7 @@ classDiagram
 | `0x36cc` | `m_flOutlineEnd1` | float32 |  | `MPropertyFriendlyName outline end 1` `MPropertySortPriority 0` `MPropertySuppressExpr !m_bOutline` |
 | `0x36d0` | `m_nLightingMode` | [ParticleLightingQuality_t](../particles/ParticleLightingQuality_t.md) |  | `MPropertyFriendlyName lighting mode` `MPropertySortPriority 400` `MPropertyStartGroup Lighting and Shadows` `MPropertySuppressExpr mod != hlx` |
 | `0x36d8` | `m_vecLightingOverride` | [CParticleCollectionRendererVecInput](../particleslib/CParticleCollectionRendererVecInput.md) |  | `MPropertyFriendlyName lighting override` `MPropertySortPriority 400` `MPropertySuppressExpr m_nLightingMode != PARTICLE_LIGHTING_OVERRIDE_POSITION && m_nLightingMode != PARTICLE_LIGHTING_OVERRIDE_COLOR && m_nLightingMode != PARTICLE_LIGHTING_ADD_EXTRA_LIGHT` |
-| `0x3d90` | `m_flLightingTessellation` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) |  | `MPropertyAttributeRange 0 5` `MPropertyFriendlyName vertex lighting tessellation (0-5)` `MPropertySortPriority 400` `MPropertySuppressExpr mod != hlx \|\| m_nLightingMode != PARTICLE_LIGHTING_PER_VERTEX` |
+| `0x3d90` | `m_flLightingTessellation` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) |  | `MPropertyAttributeRange 0 5` `MPropertyFriendlyName vertex lighting tessellation (0-5)` `MPropertySortPriority 400` `MPropertySuppressExpr mod != hlx &#124;&#124; m_nLightingMode != PARTICLE_LIGHTING_PER_VERTEX` |
 | `0x3f00` | `m_flLightingDirectionality` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) |  | `MPropertyFriendlyName lighting directionality` `MPropertySortPriority 400` `MPropertySuppressExpr mod != hlx` |
 | `0x4070` | `m_bParticleShadows` | bool |  | `MPropertyFriendlyName Particle Shadows` `MPropertySortPriority 400` `MPropertySuppressExpr mod != csgo` |
 | `0x4074` | `m_flShadowDensity` | float32 |  | `MPropertyFriendlyName Shadow Density` `MPropertySortPriority 400` `MPropertySuppressExpr !m_bParticleShadows` |

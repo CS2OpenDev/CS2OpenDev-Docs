@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CNmGraphDocIDEventConditionNode
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmGraphDocIDEventConditionNode
 
 # CNmGraphDocIDEventConditionNode
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 288 bytes (`0x120`) · **Align:** 8 · **Module:** animdoclib
 
@@ -19,6 +21,7 @@ classDiagram
     CNmGraphDocFlowNode <|-- CNmGraphDocIDEventConditionNode
     CNmGraphDocNode <|-- CNmGraphDocFlowNode
     CNmGraphDocIDEventConditionNode *-- NmEventConditionOperator_t
+    CNmGraphDocIDEventConditionNode *-- `CNmGraphDocIDEventConditionNode::SearchRule_t`
 ```
 
 ## Memory layout
@@ -36,7 +39,7 @@ classDiagram
 | `0x50` | `m_inputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 4 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0xd8` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0x100` | `m_operator` | [NmEventConditionOperator_t](../animdoclib/NmEventConditionOperator_t.md) |  |  |
-| `0x101` | `m_searchRule` | [CNmGraphDocIDEventConditionNode](../animdoclib/CNmGraphDocIDEventConditionNode.md)::SearchRule_t |  |  |
+| `0x101` | `m_searchRule` | [CNmGraphDocIDEventConditionNode::SearchRule_t](../animdoclib/CNmGraphDocIDEventConditionNode.SearchRule_t.md) |  |  |
 | `0x102` | `m_bLimitSearchToSourceState` | bool |  | `MPropertyGroupName +Advanced Search Rules` |
 | `0x103` | `m_bIgnoreInactiveBranchEvents` | bool |  | `MPropertyGroupName +Advanced Search Rules` |
 | `0x108` | `m_eventIDs` | CUtlVector< CGlobalSymbol > |  | `MPropertyAttributeEditor AnimGraphID()` `MPropertyAutoExpandSelf` `MPropertyGroupName +Conditions` |

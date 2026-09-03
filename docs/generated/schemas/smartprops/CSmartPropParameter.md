@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CSmartPropParameter
-nav_exclude: true
+module: smartprops
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [smartprops](../smartprops.md) / CSmartPropParameter
 
 # CSmartPropParameter
 
-**Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** 255 · **Module:** smartprops
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** n/a (unspecified) · **Module:** smartprops
 
 **Derived by:** [CSmartPropChoice](../smartprops/CSmartPropChoice.md), [CSmartPropVariable](../smartprops/CSmartPropVariable.md)
 
@@ -24,7 +26,7 @@ classDiagram
 
 ## Memory layout
 
-1 fields (1 declared here, 0 inherited). Offsets are absolute from the object base.
+1 field (1 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|

@@ -1,12 +1,14 @@
 ---
-layout: default
 title: StanceType_t
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / StanceType_t
 
 # StanceType_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** server
 
@@ -14,7 +16,7 @@ nav_exclude: true
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `STANCE_CURRENT` | -1 | Current |
+| `STANCE_CURRENT` | -1 (`0xffffffff`) | Current |
 | `STANCE_DEFAULT` | 0 | Default |
 | `STANCE_CROUCHING` | 1 | Crouching |
 | `STANCE_PRONE` | 2 | Prone |

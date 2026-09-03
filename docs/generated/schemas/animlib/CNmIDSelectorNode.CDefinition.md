@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmIDSelectorNode::CDefinition"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmIDSelectorNode::CDefinition
 
 # CNmIDSelectorNode::CDefinition
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 96 bytes (`0x60`) · **Align:** 8 · **Module:** animlib
 
@@ -16,9 +18,9 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmIDValueNode::CDefinition" <|-- "CNmIDSelectorNode::CDefinition"
-    "CNmValueNode::CDefinition" <|-- "CNmIDValueNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
+    `CNmIDValueNode::CDefinition` <|-- `CNmIDSelectorNode::CDefinition`
+    `CNmValueNode::CDefinition` <|-- `CNmIDValueNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmValueNode::CDefinition`
 ```
 
 ## Memory layout

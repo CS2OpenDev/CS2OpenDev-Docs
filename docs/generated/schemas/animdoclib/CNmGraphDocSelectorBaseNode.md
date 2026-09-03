@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CNmGraphDocSelectorBaseNode
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmGraphDocSelectorBaseNode
 
 # CNmGraphDocSelectorBaseNode
 
-**Kind:** class · **Size:** 280 bytes (`0x118`) · **Align:** 255 · **Module:** animdoclib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 280 bytes (`0x118`) · **Align:** n/a (unspecified) · **Module:** animdoclib
 
 **Inherits from:** [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md)
 

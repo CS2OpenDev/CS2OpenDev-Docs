@@ -1,22 +1,31 @@
 ---
-layout: default
 title: CNmBlendSpace1D
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmBlendSpace1D
 
 # CNmBlendSpace1D
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 8 · **Module:** animdoclib
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CNmBlendSpace1D *-- `CNmBlendSpace1D::Point_t`
+```
 
 ## Memory layout
 
-1 fields (1 declared here, 0 inherited). Offsets are absolute from the object base.
+1 field (1 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_points` | CUtlVector< [CNmBlendSpace1D](../animdoclib/CNmBlendSpace1D.md)::Point_t > |  | `MPropertyAutoExpandSelf` `MPropertyResizable` |
+| `0x0` | `m_points` | CUtlVector< [CNmBlendSpace1D::Point_t](../animdoclib/CNmBlendSpace1D.Point_t.md) > |  | `MPropertyAutoExpandSelf` `MPropertyResizable` |
 
 <details><summary>KV3 class defaults</summary>
 

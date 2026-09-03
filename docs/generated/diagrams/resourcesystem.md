@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: resourcesystem"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: resourcesystem

@@ -1,12 +1,14 @@
 ---
-layout: default
 title: C_INIT_InitialRepulsionVelocity
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / C_INIT_InitialRepulsionVelocity
 
 # C_INIT_InitialRepulsionVelocity
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 664 bytes (`0x298`) · **Align:** 8 · **Module:** particles
 

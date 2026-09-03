@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CVoiceContainerStaticAdditiveSynth::CHarmonic"
-nav_exclude: true
+module: soundsystem_voicecontainers
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [soundsystem_voicecontainers](../soundsystem_voicecontainers.md) / CVoiceContainerStaticAdditiveSynth::CHarmonic
 
 # CVoiceContainerStaticAdditiveSynth::CHarmonic
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 104 bytes (`0x68`) · **Align:** 8 · **Module:** soundsystem_voicecontainers
 
@@ -14,9 +16,9 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CVoiceContainerStaticAdditiveSynth::CHarmonic" *-- EWaveform
-    "CVoiceContainerStaticAdditiveSynth::CHarmonic" *-- EMidiNote
-    "CVoiceContainerStaticAdditiveSynth::CHarmonic" *-- CVoiceContainerStaticAdditiveSynth
+    `CVoiceContainerStaticAdditiveSynth::CHarmonic` *-- EWaveform
+    `CVoiceContainerStaticAdditiveSynth::CHarmonic` *-- EMidiNote
+    `CVoiceContainerStaticAdditiveSynth::CHarmonic` *-- `CVoiceContainerStaticAdditiveSynth::CGainScalePerInstance`
 ```
 
 ## Memory layout
@@ -31,7 +33,7 @@ classDiagram
 | `0x8` | `m_flCents` | float32 |  | `MPropertyFriendlyName Cents To Detune ( -100:100 )` |
 | `0xc` | `m_flPhase` | float32 |  | `MPropertyFriendlyName Phase ( 0 - 1 )` |
 | `0x10` | `m_curve` | CPiecewiseCurve |  | `MPropertyFriendlyName Envelope (Relative to Tone Envelope)` |
-| `0x50` | `m_volumeScaling` | [CVoiceContainerStaticAdditiveSynth](../soundsystem_voicecontainers/CVoiceContainerStaticAdditiveSynth.md)::CGainScalePerInstance |  |  |
+| `0x50` | `m_volumeScaling` | [CVoiceContainerStaticAdditiveSynth::CGainScalePerInstance](../soundsystem_voicecontainers/CVoiceContainerStaticAdditiveSynth.CGainScalePerInstance.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

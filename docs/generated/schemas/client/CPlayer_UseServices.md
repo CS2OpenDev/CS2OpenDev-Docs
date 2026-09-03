@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CPlayer_UseServices
-nav_exclude: true
+title: CPlayer_UseServices (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CPlayer_UseServices
 
 # CPlayer_UseServices
 
-**Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** n/a (unspecified) · **Module:** client
+
+**Twin:** [CPlayer_UseServices (server)](../server/CPlayer_UseServices.md)
 
 **Inherits from:** [CPlayerPawnComponent](../server/CPlayerPawnComponent.md)
 

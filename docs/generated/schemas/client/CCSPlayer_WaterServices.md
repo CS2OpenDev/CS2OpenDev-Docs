@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CCSPlayer_WaterServices
-nav_exclude: true
+title: CCSPlayer_WaterServices (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CCSPlayer_WaterServices
 
 # CCSPlayer_WaterServices
 
-**Kind:** class · **Size:** 112 bytes (`0x70`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 112 bytes (`0x70`) · **Align:** n/a (unspecified) · **Module:** client
+
+**Twin:** [CCSPlayer_WaterServices (server)](../server/CCSPlayer_WaterServices.md)
 
 **Inherits from:** [CPlayer_WaterServices](../client/CPlayer_WaterServices.md)
 

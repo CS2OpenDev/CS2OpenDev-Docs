@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CChoiceInstanceData
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / CChoiceInstanceData
 
 # CChoiceInstanceData
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 52 bytes (`0x34`) · **Align:** 4 · **Module:** animgraphlib
 

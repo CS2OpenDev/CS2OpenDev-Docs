@@ -1,17 +1,20 @@
 ---
-layout: default
-title: CCSPlayer_ActionTrackingServices
-nav_exclude: true
+title: CCSPlayer_ActionTrackingServices (server)
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CCSPlayer_ActionTrackingServices
 
 # CCSPlayer_ActionTrackingServices
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 Component tracking scoring-relevant actions: weapon purchases and hostage rescue status.
 
+**Kind:** class · **Size:** 784 bytes (`0x310`) · **Align:** n/a (unspecified) · **Module:** server
 
-**Kind:** class · **Size:** 784 bytes (`0x310`) · **Align:** 255 · **Module:** server
+**Twin:** [CCSPlayer_ActionTrackingServices (client)](../client/CCSPlayer_ActionTrackingServices.md)
 
 **Inherits from:** [CPlayerPawnComponent](../server/CPlayerPawnComponent.md)
 

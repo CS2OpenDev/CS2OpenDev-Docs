@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CompositeMaterialMatchFilter_t
-nav_exclude: true
+module: compositematerialslib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [compositematerialslib](../compositematerialslib.md) / CompositeMaterialMatchFilter_t
 
 # CompositeMaterialMatchFilter_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 32 bytes (`0x20`) · **Align:** 8 · **Module:** compositematerialslib
 

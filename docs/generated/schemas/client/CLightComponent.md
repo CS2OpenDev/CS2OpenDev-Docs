@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CLightComponent
-nav_exclude: true
+title: CLightComponent (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CLightComponent
 
 # CLightComponent
 
-**Kind:** class · **Size:** 496 bytes (`0x1f0`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 496 bytes (`0x1f0`) · **Align:** n/a (unspecified) · **Module:** client
+
+**Twin:** [CLightComponent (server)](../server/CLightComponent.md)
 
 **Inherits from:** [CEntityComponent](../entity2/CEntityComponent.md)
 

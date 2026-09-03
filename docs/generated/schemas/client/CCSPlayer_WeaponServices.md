@@ -1,17 +1,20 @@
 ---
-layout: default
-title: CCSPlayer_WeaponServices
-nav_exclude: true
+title: CCSPlayer_WeaponServices (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CCSPlayer_WeaponServices
 
 # CCSPlayer_WeaponServices
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 Component attached to CCSPlayerPawn that manages the active weapon and weapon-switch timing for a CS2 player.
 
+**Kind:** class · **Size:** 5584 bytes (`0x15d0`) · **Align:** n/a (unspecified) · **Module:** client
 
-**Kind:** class · **Size:** 5584 bytes (`0x15d0`) · **Align:** 255 · **Module:** client
+**Twin:** [CCSPlayer_WeaponServices (server)](../server/CCSPlayer_WeaponServices.md)
 
 **Inherits from:** [CPlayer_WeaponServices](../client/CPlayer_WeaponServices.md)
 

@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CModelConfigElement
-nav_exclude: true
+module: modellib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [modellib](../modellib.md) / CModelConfigElement
 
 # CModelConfigElement
 
-**Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** 255 · **Module:** modellib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** n/a (unspecified) · **Module:** modellib
 
 **Derived by:** [CModelConfigElement_AttachedModel](../modellib/CModelConfigElement_AttachedModel.md), [CModelConfigElement_Command](../modellib/CModelConfigElement_Command.md), [CModelConfigElement_RandomColor](../modellib/CModelConfigElement_RandomColor.md), [CModelConfigElement_RandomPick](../modellib/CModelConfigElement_RandomPick.md), [CModelConfigElement_SetBodygroup](../modellib/CModelConfigElement_SetBodygroup.md), [CModelConfigElement_SetBodygroupOnAttachedModels](../modellib/CModelConfigElement_SetBodygroupOnAttachedModels.md), [CModelConfigElement_SetMaterialGroup](../modellib/CModelConfigElement_SetMaterialGroup.md), [CModelConfigElement_SetMaterialGroupOnAttachedModels](../modellib/CModelConfigElement_SetMaterialGroupOnAttachedModels.md), [CModelConfigElement_SetRenderColor](../modellib/CModelConfigElement_SetRenderColor.md), [CModelConfigElement_UserPick](../modellib/CModelConfigElement_UserPick.md)
 

@@ -1,13 +1,11 @@
 ---
-layout: default
 title: steammessages_cloud.steamworkssdk.proto
-parent: Protobufs
-nav_exclude: true
+proto: steammessages_cloud.steamworkssdk.proto
 ---
 
 # `steammessages_cloud.steamworkssdk.proto`
 
-**Imports:** `steammessages_unified_base.steamworkssdk.proto`
+**Imports:** [`steammessages_unified_base.steamworkssdk.proto`](steammessages_unified_base.steamworkssdk.md)
 
 ## Diagram
 
@@ -71,27 +69,27 @@ direction LR
 
 ### `CCloud_GetUploadServerInfo_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `appid` | 1 | uint32 | optional |  |
 
 ### `CCloud_GetUploadServerInfo_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `server_url` | 1 | string | optional |  |
 
 ### `CCloud_GetFileDetails_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `ugcid` | 1 | uint64 | optional |  |
 | `appid` | 2 | uint32 | optional |  |
 
 ### `CCloud_UserFile`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `appid` | 1 | uint32 | optional |  |
 | `ugcid` | 2 | uint64 | optional |  |
 | `filename` | 3 | string | optional |  |
@@ -102,14 +100,14 @@ direction LR
 
 ### `CCloud_GetFileDetails_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `details` | 1 | [CCloud_UserFile](#ccloud_userfile) | optional |  |
 
 ### `CCloud_EnumerateUserFiles_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `appid` | 1 | uint32 | optional |  |
 | `extended_details` | 2 | bool | optional |  |
 | `count` | 3 | uint32 | optional |  |
@@ -117,16 +115,18 @@ direction LR
 
 ### `CCloud_EnumerateUserFiles_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `files` | 1 | [CCloud_UserFile](#ccloud_userfile) | repeated |  |
 | `total_files` | 2 | uint32 | optional |  |
 
 ### `CCloud_Delete_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `filename` | 1 | string | optional |  |
 | `appid` | 2 | uint32 | optional |  |
 
 ### `CCloud_Delete_Response`
+
+*(no fields)*

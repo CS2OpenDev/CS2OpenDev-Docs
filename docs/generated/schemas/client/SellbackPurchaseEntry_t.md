@@ -1,14 +1,18 @@
 ---
-layout: default
-title: SellbackPurchaseEntry_t
-nav_exclude: true
+title: SellbackPurchaseEntry_t (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / SellbackPurchaseEntry_t
 
 # SellbackPurchaseEntry_t
 
-**Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** n/a (unspecified) · **Module:** client
+
+**Twin:** [SellbackPurchaseEntry_t (server)](../server/SellbackPurchaseEntry_t.md)
 
 ## Memory layout
 

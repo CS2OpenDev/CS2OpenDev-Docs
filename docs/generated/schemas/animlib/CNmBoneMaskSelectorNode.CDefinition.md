@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmBoneMaskSelectorNode::CDefinition"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmBoneMaskSelectorNode::CDefinition
 
 # CNmBoneMaskSelectorNode::CDefinition
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 120 bytes (`0x78`) · **Align:** 8 · **Module:** animlib
 
@@ -16,9 +18,9 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmBoneMaskValueNode::CDefinition" <|-- "CNmBoneMaskSelectorNode::CDefinition"
-    "CNmValueNode::CDefinition" <|-- "CNmBoneMaskValueNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
+    `CNmBoneMaskValueNode::CDefinition` <|-- `CNmBoneMaskSelectorNode::CDefinition`
+    `CNmValueNode::CDefinition` <|-- `CNmBoneMaskValueNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmValueNode::CDefinition`
 ```
 
 ## Memory layout

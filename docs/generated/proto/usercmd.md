@@ -1,13 +1,11 @@
 ---
-layout: default
 title: usercmd.proto
-parent: Protobufs
-nav_exclude: true
+proto: usercmd.proto
 ---
 
 # `usercmd.proto`
 
-**Imports:** `valveextensions.proto`, `networkbasetypes.proto`
+**Imports:** [`valveextensions.proto`](valveextensions.md), [`networkbasetypes.proto`](networkbasetypes.md)
 
 ## Diagram
 
@@ -72,16 +70,16 @@ direction LR
 
 ### `CInButtonStatePB`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `buttonstate1` | 1 | uint64 | optional |  |
 | `buttonstate2` | 2 | uint64 | optional |  |
 | `buttonstate3` | 3 | uint64 | optional |  |
 
 ### `CSubtickMoveStep`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `button` | 1 | uint64 | optional |  |
 | `pressed` | 2 | bool | optional |  |
 | `when` | 3 | float | optional |  |
@@ -92,18 +90,18 @@ direction LR
 
 ### `CBaseUserCmdExecutionNotes`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `ignored_reason` | 1 | string | optional |  |
 
 ### `CBaseUserCmdPB`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `legacy_command_number` | 1 | int32 | optional |  |
 | `client_tick` | 2 | int32 | optional |  |
 | `buttons_pb` | 3 | [CInButtonStatePB](#cinbuttonstatepb) | optional |  |
-| `viewangles` | 4 | CMsgQAngle | optional |  |
+| `viewangles` | 4 | [CMsgQAngle](networkbasetypes.md#cmsgqangle) | optional |  |
 | `forwardmove` | 5 | float | optional |  |
 | `leftmove` | 6 | float | optional |  |
 | `upmove` | 7 | float | optional |  |
@@ -122,6 +120,6 @@ direction LR
 
 ### `CUserCmdBasePB`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `base` | 1 | [CBaseUserCmdPB](#cbaseusercmdpb) | optional |  |

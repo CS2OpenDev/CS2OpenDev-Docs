@@ -1,14 +1,18 @@
 ---
-layout: default
-title: sky3dparams_t
-nav_exclude: true
+title: sky3dparams_t (server)
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / sky3dparams_t
 
 # sky3dparams_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 144 bytes (`0x90`) · **Align:** 8 · **Module:** server
+
+**Twin:** [sky3dparams_t (client)](../client/sky3dparams_t.md)
 
 ## Memory layout
 

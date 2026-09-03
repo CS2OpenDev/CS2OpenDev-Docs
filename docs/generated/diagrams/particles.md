@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: particles"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: particles

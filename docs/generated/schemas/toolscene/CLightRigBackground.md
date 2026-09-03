@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CLightRigBackground
-nav_exclude: true
+module: toolscene
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [toolscene](../toolscene.md) / CLightRigBackground
 
 # CLightRigBackground
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 5 bytes (`0x5`) · **Align:** 1 · **Module:** toolscene
 

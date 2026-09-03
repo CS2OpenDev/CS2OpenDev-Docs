@@ -1,8 +1,6 @@
 ---
-layout: default
 title: steammessages.proto
-parent: Protobufs
-nav_exclude: true
+proto: steammessages.proto
 ---
 
 # `steammessages.proto`
@@ -68,8 +66,8 @@ direction LR
 
 ### `CMsgProtoBufHeader`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `client_steam_id` | 1 | fixed64 | optional |  |
 | `client_session_id` | 2 | int32 | optional |  |
 | `source_app_id` | 3 | uint32 | optional |  |
@@ -84,14 +82,14 @@ direction LR
 
 ### `CChinaAgreementSessions_StartAgreementSessionInGame_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `appid` | 1 | uint32 | optional |  |
 | `steamid` | 2 | fixed64 | optional |  |
 | `client_ipaddress` | 3 | string | optional |  |
 
 ### `CChinaAgreementSessions_StartAgreementSessionInGame_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `agreement_url` | 1 | string | optional |  |

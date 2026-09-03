@@ -1,13 +1,11 @@
 ---
-layout: default
 title: base_gcmessages.proto
-parent: Protobufs
-nav_exclude: true
+proto: base_gcmessages.proto
 ---
 
 # `base_gcmessages.proto`
 
-**Imports:** `steammessages.proto`
+**Imports:** [`steammessages.proto`](steammessages.md)
 
 ## Diagram
 
@@ -293,7 +291,7 @@ direction LR
     +List~CMsgSetItemPositions.ItemPosition~ item_positions
   }
 
-  class ItemPosition {
+  class CMsgSetItemPositions_ItemPosition["CMsgSetItemPositions.ItemPosition"] {
     +uint32 legacy_item_id
     +uint32 position
     +uint64 item_id
@@ -534,11 +532,11 @@ direction LR
   CSOEconItem --> CSOEconItemAttribute : attribute[]
   CSOEconItem --> CSOEconItem : interior_item
   CSOEconItem --> CSOEconItemEquipped : equipped_state[]
-  CMsgSetItemPositions --> ItemPosition : item_positions[]
+  CMsgSetItemPositions --> CMsgSetItemPositions_ItemPosition : item_positions[]
   CMsgGCBannedWord --> GC_BannedWordType : word_type
   CMsgGCBannedWordListResponse --> CMsgGCBannedWord : word_list[]
   CMsgGCToGCBannedWordListBroadcast --> CMsgGCBannedWordListResponse : broadcast
-  CMsgGameServerInfo --> ServerType : server_type
+  CMsgGameServerInfo --> CMsgGameServerInfo_ServerType : server_type
   CMsgAdjustEquipSlots --> CMsgAdjustEquipSlot : slots[]
 
   class EGCBaseMsg{
@@ -572,7 +570,7 @@ direction LR
     GC_BANNED_WORD_ENABLE_WORD
   }
 
-  class ServerType{
+  class CMsgGameServerInfo_ServerType["CMsgGameServerInfo.ServerType"]{
     <<enumeration>>
     UNSPECIFIED
     GAME
@@ -621,8 +619,8 @@ direction LR
 
 ### `CGCStorePurchaseInit_LineItem`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `item_def_id` | 1 | uint32 | optional |  |
 | `quantity` | 2 | uint32 | optional |  |
 | `cost_in_local_currency` | 3 | uint64 | optional |  |
@@ -631,8 +629,8 @@ direction LR
 
 ### `CMsgGCStorePurchaseInit`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `country` | 1 | string | optional |  |
 | `language` | 2 | int32 | optional |  |
 | `currency` | 3 | int32 | optional |  |
@@ -640,8 +638,8 @@ direction LR
 
 ### `CMsgGCStorePurchaseInitResponse`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `result` | 1 | int32 | optional |  |
 | `txn_id` | 2 | uint64 | optional |  |
 | `url` | 3 | string | optional |  |
@@ -649,45 +647,45 @@ direction LR
 
 ### `CSOPartyInvite`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `group_id` | 1 | uint64 | optional |  |
 | `sender_id` | 2 | fixed64 | optional |  |
 | `sender_name` | 3 | string | optional |  |
 
 ### `CSOLobbyInvite`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `group_id` | 1 | uint64 | optional |  |
 | `sender_id` | 2 | fixed64 | optional |  |
 | `sender_name` | 3 | string | optional |  |
 
 ### `CMsgSystemBroadcast`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `message` | 1 | string | optional |  |
 
 ### `CMsgInviteToParty`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `steam_id` | 1 | fixed64 | optional |  |
 | `client_version` | 2 | uint32 | optional |  |
 | `team_invite` | 3 | uint32 | optional |  |
 
 ### `CMsgInvitationCreated`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `group_id` | 1 | uint64 | optional |  |
 | `steam_id` | 2 | fixed64 | optional |  |
 
 ### `CMsgPartyInviteResponse`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `party_id` | 1 | uint64 | optional |  |
 | `accept` | 2 | bool | optional |  |
 | `client_version` | 3 | uint32 | optional |  |
@@ -695,24 +693,28 @@ direction LR
 
 ### `CMsgKickFromParty`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `steam_id` | 1 | fixed64 | optional |  |
 
 ### `CMsgLeaveParty`
 
+*(no fields)*
+
 ### `CMsgServerAvailable`
+
+*(no fields)*
 
 ### `CMsgLANServerAvailable`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `lobby_id` | 1 | fixed64 | optional |  |
 
 ### `CSOEconGameAccountClient`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `additional_backpack_slots` | 1 | uint32 | optional | *(default: `0`)* |
 | `trade_ban_expiration` | 6 | fixed32 | optional |  |
 | `bonus_xp_timestamp_refresh` | 12 | fixed32 | optional |  |
@@ -722,8 +724,8 @@ direction LR
 
 ### `CSOItemCriteriaCondition`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `op` | 1 | int32 | optional |  |
 | `field` | 2 | string | optional |  |
 | `required` | 3 | bool | optional |  |
@@ -732,8 +734,8 @@ direction LR
 
 ### `CSOItemCriteria`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `item_level` | 1 | uint32 | optional |  |
 | `item_quality` | 2 | int32 | optional |  |
 | `item_level_set` | 3 | bool | optional |  |
@@ -748,8 +750,8 @@ direction LR
 
 ### `CSOItemRecipe`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `def_index` | 1 | uint32 | optional |  |
 | `name` | 2 | string | optional |  |
 | `n_a` | 3 | string | optional |  |
@@ -772,15 +774,15 @@ direction LR
 
 ### `CMsgDevNewItemRequest`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `receiver` | 1 | fixed64 | optional |  |
 | `criteria` | 2 | [CSOItemCriteria](#csoitemcriteria) | optional |  |
 
 ### `CMsgIncrementKillCountAttribute`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `killer_account_id` | 1 | fixed32 | optional |  |
 | `victim_account_id` | 2 | fixed32 | optional |  |
 | `item_id` | 3 | uint64 | optional |  |
@@ -789,8 +791,8 @@ direction LR
 
 ### `CMsgApplySticker`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `sticker_item_id` | 1 | uint64 | optional |  |
 | `item_item_id` | 2 | uint64 | optional |  |
 | `sticker_slot` | 3 | uint32 | optional |  |
@@ -805,60 +807,60 @@ direction LR
 
 ### `CMsgModifyItemAttribute`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `item_id` | 1 | uint64 | optional |  |
 | `attr_defidx` | 2 | uint32 | optional |  |
 | `attr_value` | 3 | uint32 | optional |  |
 
 ### `CMsgApplyStatTrakSwap`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `tool_item_id` | 1 | uint64 | optional |  |
 | `item_1_item_id` | 2 | uint64 | optional |  |
 | `item_2_item_id` | 3 | uint64 | optional |  |
 
 ### `CMsgApplyStrangePart`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `strange_part_item_id` | 1 | uint64 | optional |  |
 | `item_item_id` | 2 | uint64 | optional |  |
 
 ### `CMsgApplyPennantUpgrade`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `upgrade_item_id` | 1 | uint64 | optional |  |
 | `pennant_item_id` | 2 | uint64 | optional |  |
 
 ### `CMsgApplyEggEssence`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `essence_item_id` | 1 | uint64 | optional |  |
 | `egg_item_id` | 2 | uint64 | optional |  |
 
 ### `CSOEconItemAttribute`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `def_index` | 1 | uint32 | optional |  |
 | `value` | 2 | uint32 | optional |  |
 | `value_bytes` | 3 | bytes | optional |  |
 
 ### `CSOEconItemEquipped`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `new_class` | 1 | uint32 | optional |  |
 | `new_slot` | 2 | uint32 | optional |  |
 
 ### `CSOEconItem`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `id` | 1 | uint64 | optional |  |
 | `account_id` | 2 | uint32 | optional |  |
 | `inventory` | 3 | uint32 | optional |  |
@@ -880,14 +882,14 @@ direction LR
 
 ### `CMsgSortItems`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `sort_type` | 1 | uint32 | optional |  |
 
 ### `CSOEconClaimCode`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `account_id` | 1 | uint32 | optional |  |
 | `code_type` | 2 | uint32 | optional |  |
 | `time_acquired` | 3 | uint32 | optional |  |
@@ -895,15 +897,15 @@ direction LR
 
 ### `CMsgStoreGetUserData`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `price_sheet_version` | 1 | fixed32 | optional |  |
 | `currency` | 2 | int32 | optional |  |
 
 ### `CMsgStoreGetUserDataResponse`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `result` | 1 | int32 | optional |  |
 | `currency_deprecated` | 2 | int32 | optional |  |
 | `country_deprecated` | 3 | string | optional |  |
@@ -912,24 +914,26 @@ direction LR
 
 ### `CMsgUpdateItemSchema`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `items_game` | 1 | bytes | optional |  |
 | `item_schema_version` | 2 | fixed32 | optional |  |
 | `items_game_url` | 4 | string | optional |  |
 
 ### `CMsgGCError`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `error_text` | 1 | string | optional |  |
 
 ### `CMsgRequestInventoryRefresh`
 
+*(no fields)*
+
 ### `CMsgUseItem`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `item_id` | 1 | uint64 | optional |  |
 | `target_steam_id` | 2 | fixed64 | optional |  |
 | `gift__potential_targets` | 3 | uint32 | repeated |  |
@@ -938,22 +942,22 @@ direction LR
 
 ### `CMsgReplayUploadedToYouTube`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `youtube_url` | 1 | string | optional |  |
 | `youtube_account_name` | 2 | string | optional |  |
 | `session_id` | 3 | uint64 | optional |  |
 
 ### `CMsgConsumableExhausted`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `item_def_id` | 1 | int32 | optional |  |
 
 ### `CMsgItemAcknowledged__DEPRECATED`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `account_id` | 1 | uint32 | optional |  |
 | `inventory` | 2 | uint32 | optional |  |
 | `def_index` | 3 | uint32 | optional |  |
@@ -964,14 +968,22 @@ direction LR
 
 ### `CMsgSetItemPositions`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `item_positions` | 1 | CMsgSetItemPositions.ItemPosition | repeated |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `item_positions` | 1 | [CMsgSetItemPositions.ItemPosition](#cmsgsetitempositionsitemposition) | repeated |  |
+
+#### `CMsgSetItemPositions.ItemPosition`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `legacy_item_id` | 1 | uint32 | optional |  |
+| `position` | 2 | uint32 | optional |  |
+| `item_id` | 3 | uint64 | optional |  |
 
 ### `CMsgGCReportAbuse`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `target_steam_id` | 1 | fixed64 | optional |  |
 | `abuse_type` | 2 | uint32 | optional |  |
 | `content_type` | 3 | uint32 | optional |  |
@@ -982,24 +994,24 @@ direction LR
 
 ### `CMsgGCReportAbuseResponse`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `target_steam_id` | 1 | fixed64 | optional |  |
 | `result` | 2 | uint32 | optional |  |
 | `error_message` | 3 | string | optional |  |
 
 ### `CMsgGCNameItemNotification`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `player_steamid` | 1 | fixed64 | optional |  |
 | `item_def_index` | 2 | uint32 | optional |  |
 | `item_name_custom` | 3 | string | optional |  |
 
 ### `CMsgGCClientDisplayNotification`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `notification_title_localization_key` | 1 | string | optional |  |
 | `notification_body_localization_key` | 2 | string | optional |  |
 | `body_substring_keys` | 3 | string | repeated |  |
@@ -1007,14 +1019,14 @@ direction LR
 
 ### `CMsgGCShowItemsPickedUp`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `player_steamid` | 1 | fixed64 | optional |  |
 
 ### `CMsgGCIncrementKillCountResponse`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `killer_account_id` | 1 | uint32 | optional |  |
 | `num_kills` | 2 | uint32 | optional |  |
 | `item_def` | 3 | uint32 | optional |  |
@@ -1022,8 +1034,8 @@ direction LR
 
 ### `CSOEconItemDropRateBonus`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `account_id` | 1 | uint32 | optional |  |
 | `expiration_date` | 2 | fixed32 | optional |  |
 | `bonus` | 3 | float | optional |  |
@@ -1033,8 +1045,8 @@ direction LR
 
 ### `CSOEconItemLeagueViewPass`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `account_id` | 1 | uint32 | optional |  |
 | `league_id` | 2 | uint32 | optional |  |
 | `admin` | 3 | uint32 | optional |  |
@@ -1042,56 +1054,58 @@ direction LR
 
 ### `CSOEconItemEventTicket`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `account_id` | 1 | uint32 | optional |  |
 | `event_id` | 2 | uint32 | optional |  |
 | `item_id` | 3 | uint64 | optional |  |
 
 ### `CMsgGCItemPreviewItemBoughtNotification`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `item_def_index` | 1 | uint32 | optional |  |
 
 ### `CMsgGCStorePurchaseCancel`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `txn_id` | 1 | uint64 | optional |  |
 
 ### `CMsgGCStorePurchaseCancelResponse`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `result` | 1 | uint32 | optional |  |
 
 ### `CMsgGCStorePurchaseFinalize`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `txn_id` | 1 | uint64 | optional |  |
 
 ### `CMsgGCStorePurchaseFinalizeResponse`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `result` | 1 | uint32 | optional |  |
 | `item_ids` | 2 | uint64 | repeated |  |
 
 ### `CMsgGCBannedWordListRequest`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `ban_list_group_id` | 1 | uint32 | optional |  |
 | `word_id` | 2 | uint32 | optional |  |
 
 ### `CMsgGCRequestAnnouncements`
 
+*(no fields)*
+
 ### `CMsgGCRequestAnnouncementsResponse`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `announcement_title` | 1 | string | optional |  |
 | `announcement` | 2 | string | optional |  |
 | `nextmatch_title` | 3 | string | optional |  |
@@ -1099,111 +1113,115 @@ direction LR
 
 ### `CMsgGCBannedWord`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `word_id` | 1 | uint32 | optional |  |
 | `word_type` | 2 | [GC_BannedWordType](#gc_bannedwordtype) | optional |  |
 | `word` | 3 | string | optional |  |
 
 ### `CMsgGCBannedWordListResponse`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `ban_list_group_id` | 1 | uint32 | optional |  |
 | `word_list` | 2 | [CMsgGCBannedWord](#cmsggcbannedword) | repeated |  |
 
 ### `CMsgGCToGCBannedWordListBroadcast`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `broadcast` | 1 | [CMsgGCBannedWordListResponse](#cmsggcbannedwordlistresponse) | optional |  |
 
 ### `CMsgGCToGCBannedWordListUpdated`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `group_id` | 1 | uint32 | optional |  |
 
 ### `CMsgGCToGCDirtySDOCache`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `sdo_type` | 1 | uint32 | optional |  |
 | `key_uint64` | 2 | uint64 | optional |  |
 
 ### `CMsgGCToGCDirtyMultipleSDOCache`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `sdo_type` | 1 | uint32 | optional |  |
 | `key_uint64` | 2 | uint64 | repeated |  |
 
 ### `CMsgGCCollectItem`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `collection_item_id` | 1 | uint64 | optional |  |
 | `subject_item_id` | 2 | uint64 | optional |  |
 
 ### `CMsgSDONoMemcached`
 
+*(no fields)*
+
 ### `CMsgGCToGCUpdateSQLKeyValue`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `key_name` | 1 | string | optional |  |
 
 ### `CMsgGCToGCIsTrustedServer`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `steam_id` | 1 | fixed64 | optional |  |
 
 ### `CMsgGCToGCIsTrustedServerResponse`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `is_trusted` | 1 | bool | optional |  |
 
 ### `CMsgGCToGCBroadcastConsoleCommand`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `con_command` | 1 | string | optional |  |
 
 ### `CMsgGCServerVersionUpdated`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `server_version` | 1 | uint32 | optional |  |
 
 ### `CMsgGCClientVersionUpdated`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `client_version` | 1 | uint32 | optional |  |
 
 ### `CMsgGCToGCWebAPIAccountChanged`
 
+*(no fields)*
+
 ### `CMsgGCToGCRequestPassportItemGrant`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `steam_id` | 1 | fixed64 | optional |  |
 | `league_id` | 2 | uint32 | optional |  |
 | `reward_flag` | 3 | int32 | optional |  |
 
 ### `CMsgGameServerInfo`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `server_public_ip_addr` | 1 | fixed32 | optional |  |
 | `server_private_ip_addr` | 2 | fixed32 | optional |  |
 | `server_port` | 3 | uint32 | optional |  |
 | `server_tv_port` | 4 | uint32 | optional |  |
 | `server_key` | 5 | string | optional |  |
 | `server_hibernation` | 6 | bool | optional |  |
-| `server_type` | 7 | CMsgGameServerInfo.ServerType | optional | *(default: `UNSPECIFIED`)* |
+| `server_type` | 7 | [CMsgGameServerInfo.ServerType](#cmsggameserverinfoservertype) | optional | *(default: `UNSPECIFIED`)* |
 | `server_region` | 8 | uint32 | optional |  |
 | `server_loadavg` | 9 | float | optional |  |
 | `server_tv_broadcast_time` | 10 | float | optional |  |
@@ -1216,10 +1234,18 @@ direction LR
 | `parent_relay_count` | 17 | uint32 | optional |  |
 | `tv_secret_code` | 18 | fixed64 | optional |  |
 
+#### `CMsgGameServerInfo.ServerType`
+
+| Name | Value |
+|------|-------|
+| `UNSPECIFIED` | 0 |
+| `GAME` | 1 |
+| `PROXY` | 2 |
+
 ### `CSOEconEquipSlot`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `account_id` | 1 | uint32 | optional |  |
 | `class_id` | 2 | uint32 | optional |  |
 | `slot_id` | 3 | uint32 | optional |  |
@@ -1228,23 +1254,23 @@ direction LR
 
 ### `CMsgAdjustEquipSlot`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `class_id` | 1 | uint32 | optional |  |
 | `slot_id` | 2 | uint32 | optional |  |
 | `item_id` | 3 | uint64 | optional |  |
 
 ### `CMsgAdjustEquipSlots`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `slots` | 1 | [CMsgAdjustEquipSlot](#cmsgadjustequipslot) | repeated |  |
 | `change_num` | 2 | uint32 | optional |  |
 
 ### `CMsgOpenCrate`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `tool_item_id` | 1 | uint64 | optional |  |
 | `subject_item_id` | 2 | uint64 | optional |  |
 | `for_rental` | 3 | bool | optional |  |
@@ -1253,8 +1279,8 @@ direction LR
 
 ### `CSOEconRentalHistory`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `account_id` | 1 | uint32 | optional |  |
 | `crate_item_id` | 2 | uint64 | optional |  |
 | `crate_def_index` | 3 | uint32 | optional |  |
@@ -1263,6 +1289,6 @@ direction LR
 
 ### `CMsgAcknowledgeRentalExpiration`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `crate_item_id` | 1 | uint64 | optional |  |

@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: entity2"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: entity2

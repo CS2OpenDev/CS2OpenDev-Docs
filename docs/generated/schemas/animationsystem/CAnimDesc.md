@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CAnimDesc
-nav_exclude: true
+module: animationsystem
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animationsystem](../animationsystem.md) / CAnimDesc
 
 # CAnimDesc
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 464 bytes (`0x1d0`) · **Align:** 16 · **Module:** animationsystem
 

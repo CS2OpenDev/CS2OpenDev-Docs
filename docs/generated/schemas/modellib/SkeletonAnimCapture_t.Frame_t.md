@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "SkeletonAnimCapture_t::Frame_t"
-nav_exclude: true
+module: modellib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [modellib](../modellib.md) / SkeletonAnimCapture_t::Frame_t
 
 # SkeletonAnimCapture_t::Frame_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 192 bytes (`0xc0`) · **Align:** 16 · **Module:** modellib
 
@@ -14,7 +16,7 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "SkeletonAnimCapture_t::Frame_t" *-- SkeletonAnimCapture_t
+    `SkeletonAnimCapture_t::Frame_t` *-- `SkeletonAnimCapture_t::FrameStamp_t`
 ```
 
 ## Memory layout
@@ -24,7 +26,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_flTime` | float32 |  |  |
-| `0x4` | `m_Stamp` | [SkeletonAnimCapture_t](../modellib/SkeletonAnimCapture_t.md)::FrameStamp_t |  |  |
+| `0x4` | `m_Stamp` | [SkeletonAnimCapture_t::FrameStamp_t](../modellib/SkeletonAnimCapture_t.FrameStamp_t.md) |  |  |
 | `0x20` | `m_Transform` | CTransform |  |  |
 | `0x40` | `m_bTeleport` | bool |  |  |
 | `0x48` | `m_CompositeBones` | CUtlVector< CTransform > |  |  |

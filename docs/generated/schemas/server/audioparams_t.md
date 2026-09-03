@@ -1,14 +1,18 @@
 ---
-layout: default
-title: audioparams_t
-nav_exclude: true
+title: audioparams_t (server)
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / audioparams_t
 
 # audioparams_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 120 bytes (`0x78`) · **Align:** 8 · **Module:** server
+
+**Twin:** [audioparams_t (client)](../client/audioparams_t.md)
 
 ## Memory layout
 

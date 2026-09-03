@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CNmGraphDocVariationDataNode
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmGraphDocVariationDataNode
 
 # CNmGraphDocVariationDataNode
 
-**Kind:** class · **Size:** 512 bytes (`0x200`) · **Align:** 255 · **Module:** animdoclib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 512 bytes (`0x200`) · **Align:** n/a (unspecified) · **Module:** animdoclib
 
 **Inherits from:** [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md)
 
@@ -33,6 +35,8 @@ classDiagram
     CNmGraphDocVariationDataNode <|-- CnmGraphDocFootIKNode
     CNmGraphDocVariationDataNode <|-- CnmGraphDocTwoBoneIKNode
     CNmGraphDocVariationDataNode <|-- CnmGraphDocVariationConstFloatNode
+    CNmGraphDocVariationDataNode --> `CNmGraphDocVariationDataNode::CData`
+    CNmGraphDocVariationDataNode *-- `CNmGraphDocVariationDataNode::OverrideValue_t`
 ```
 
 ## Memory layout
@@ -49,6 +53,6 @@ classDiagram
 | `0x48` | `m_pSecondaryGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
 | `0x50` | `m_inputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 4 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0xd8` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
-| `0x100` | `m_pDefaultVariationData` | [CNmGraphDocVariationDataNode](../animdoclib/CNmGraphDocVariationDataNode.md)::CData* |  | `MPropertySuppressField` |
-| `0x108` | `m_overrides` | CUtlVector< [CNmGraphDocVariationDataNode](../animdoclib/CNmGraphDocVariationDataNode.md)::OverrideValue_t > |  | `MPropertySuppressField` |
+| `0x100` | `m_pDefaultVariationData` | [CNmGraphDocVariationDataNode::CData](../animdoclib/CNmGraphDocVariationDataNode.CData.md)* |  | `MPropertySuppressField` |
+| `0x108` | `m_overrides` | CUtlVector< [CNmGraphDocVariationDataNode::OverrideValue_t](../animdoclib/CNmGraphDocVariationDataNode.OverrideValue_t.md) > |  | `MPropertySuppressField` |
 | `0x120` | `m_defaultResourceName` | CResourceName |  | `MPropertySuppressField` |

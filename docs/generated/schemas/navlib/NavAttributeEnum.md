@@ -1,12 +1,14 @@
 ---
-layout: default
 title: NavAttributeEnum
-nav_exclude: true
+module: navlib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [navlib](../navlib.md) / NavAttributeEnum
 
 # NavAttributeEnum
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** enum · **Underlying:** `uint64_t` · **Module:** navlib
 

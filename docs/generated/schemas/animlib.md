@@ -1,11 +1,11 @@
 ---
-layout: default
 title: animlib
-parent: Schemas
-nav_exclude: true
+module: animlib
 ---
 
 # Module: animlib
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 [📊 View UML Diagram](../diagrams/animlib.md)
 

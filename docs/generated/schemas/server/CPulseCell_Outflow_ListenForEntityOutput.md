@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CPulseCell_Outflow_ListenForEntityOutput
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CPulseCell_Outflow_ListenForEntityOutput
 
 # CPulseCell_Outflow_ListenForEntityOutput
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 312 bytes (`0x138`) · **Align:** 8 · **Module:** server
 

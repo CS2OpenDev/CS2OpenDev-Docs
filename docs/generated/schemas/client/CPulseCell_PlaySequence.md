@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CPulseCell_PlaySequence
-nav_exclude: true
+title: CPulseCell_PlaySequence (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CPulseCell_PlaySequence
 
 # CPulseCell_PlaySequence
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 320 bytes (`0x140`) · **Align:** 8 · **Module:** client
+
+**Twin:** [CPulseCell_PlaySequence (server)](../server/CPulseCell_PlaySequence.md)
 
 **Inherits from:** [CPulseCell_BaseYieldingInflow](../pulse_runtime_lib/CPulseCell_BaseYieldingInflow.md)
 

@@ -1,12 +1,14 @@
 ---
-layout: default
 title: EDemoCommands
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / EDemoCommands
 
 # EDemoCommands
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** server
 
@@ -14,7 +16,7 @@ nav_exclude: true
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `DEM_Error` | -1 |  |
+| `DEM_Error` | -1 (`0xffffffff`) |  |
 | `DEM_Stop` | 0 |  |
 | `DEM_FileHeader` | 1 |  |
 | `DEM_FileInfo` | 2 |  |

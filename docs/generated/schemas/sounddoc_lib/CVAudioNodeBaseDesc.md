@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CVAudioNodeBaseDesc
-nav_exclude: true
+module: sounddoc_lib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [sounddoc_lib](../sounddoc_lib.md) / CVAudioNodeBaseDesc
 
 # CVAudioNodeBaseDesc
 
-**Kind:** class · **Size:** 136 bytes (`0x88`) · **Align:** 255 · **Module:** sounddoc_lib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 136 bytes (`0x88`) · **Align:** n/a (unspecified) · **Module:** sounddoc_lib
 
 **Inherits from:** [CVNodeTypeDesc](../sounddoc_lib/CVNodeTypeDesc.md)
 

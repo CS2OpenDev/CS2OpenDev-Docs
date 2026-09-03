@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CNmSkeletonDocument
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmSkeletonDocument
 
 # CNmSkeletonDocument
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 288 bytes (`0x120`) · **Align:** 8 · **Module:** animdoclib
 
@@ -17,6 +19,7 @@ nav_exclude: true
 ```mermaid
 classDiagram
     CNmAnimDocument <|-- CNmSkeletonDocument
+    CNmSkeletonDocument *-- `CNmSkeletonDocument::SecondarySkeleton_t`
     CNmSkeletonDocument *-- NmBoneMaskSetDefinition_t
     CNmSkeletonDocument *-- CNmFloatChannelSet_t
 ```
@@ -33,7 +36,7 @@ classDiagram
 | `0x80` | `m_flGlobalScale` | float32 |  |  |
 | `0x84` | `m_bIsAttachableProp` | bool |  |  |
 | `0x85` | `m_bIsCS_HACK` | bool |  |  |
-| `0x88` | `m_secondarySkeletons` | CUtlVector< [CNmSkeletonDocument](../animdoclib/CNmSkeletonDocument.md)::SecondarySkeleton_t > |  | `MPropertyAutoExpandSelf` `MPropertyFriendlyName Expected secondary skeletons` |
+| `0x88` | `m_secondarySkeletons` | CUtlVector< [CNmSkeletonDocument::SecondarySkeleton_t](../animdoclib/CNmSkeletonDocument.SecondarySkeleton_t.md) > |  | `MPropertyAutoExpandSelf` `MPropertyFriendlyName Expected secondary skeletons` |
 | `0xa0` | `m_gameplayRelevantBones` | CUtlVector< CGlobalSymbol > |  | `MPropertyDescription The set of bones that need to be converted at import to match the S2 coordinate system (Z-up, X-forward)` |
 | `0xb8` | `m_highLODBones` | CUtlVector< CGlobalSymbol > |  | `MPropertySuppressField` |
 | `0xd0` | `m_boneMaskSetDefinitions` | CUtlVector< [NmBoneMaskSetDefinition_t](../animlib/NmBoneMaskSetDefinition_t.md) > |  | `MPropertySuppressField` |

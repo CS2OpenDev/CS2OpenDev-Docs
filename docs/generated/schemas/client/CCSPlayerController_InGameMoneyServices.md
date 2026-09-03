@@ -1,17 +1,20 @@
 ---
-layout: default
-title: CCSPlayerController_InGameMoneyServices
-nav_exclude: true
+title: CCSPlayerController_InGameMoneyServices (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CCSPlayerController_InGameMoneyServices
 
 # CCSPlayerController_InGameMoneyServices
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 Economy component of CCSPlayerController: the player's buy-menu balance and cash-spend accounting.
 
+**Kind:** class · **Size:** 80 bytes (`0x50`) · **Align:** n/a (unspecified) · **Module:** client
 
-**Kind:** class · **Size:** 80 bytes (`0x50`) · **Align:** 255 · **Module:** client
+**Twin:** [CCSPlayerController_InGameMoneyServices (server)](../server/CCSPlayerController_InGameMoneyServices.md)
 
 **Inherits from:** [CPlayerControllerComponent](../server/CPlayerControllerComponent.md)
 

@@ -1,14 +1,16 @@
 ---
-layout: default
 title: VsInputSignatureElement_t
-nav_exclude: true
+module: modellib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [modellib](../modellib.md) / VsInputSignatureElement_t
 
 # VsInputSignatureElement_t
 
-**Kind:** class · **Size:** 196 bytes (`0xc4`) · **Align:** 255 · **Module:** modellib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 196 bytes (`0xc4`) · **Align:** n/a (unspecified) · **Module:** modellib
 
 ## Memory layout
 

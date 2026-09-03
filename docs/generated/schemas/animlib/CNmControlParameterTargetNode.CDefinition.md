@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmControlParameterTargetNode::CDefinition"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmControlParameterTargetNode::CDefinition
 
 # CNmControlParameterTargetNode::CDefinition
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** 8 · **Module:** animlib
 
@@ -16,14 +18,14 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmTargetValueNode::CDefinition" <|-- "CNmControlParameterTargetNode::CDefinition"
-    "CNmValueNode::CDefinition" <|-- "CNmTargetValueNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
+    `CNmTargetValueNode::CDefinition` <|-- `CNmControlParameterTargetNode::CDefinition`
+    `CNmValueNode::CDefinition` <|-- `CNmTargetValueNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmValueNode::CDefinition`
 ```
 
 ## Memory layout
 
-1 fields (0 declared here, 1 inherited). Offsets are absolute from the object base.
+1 field (0 declared here, 1 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|

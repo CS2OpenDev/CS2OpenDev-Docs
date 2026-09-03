@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CAnimationGraphVisualizerPie
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / CAnimationGraphVisualizerPie
 
 # CAnimationGraphVisualizerPie
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 128 bytes (`0x80`) · **Align:** 16 · **Module:** animgraphlib
 

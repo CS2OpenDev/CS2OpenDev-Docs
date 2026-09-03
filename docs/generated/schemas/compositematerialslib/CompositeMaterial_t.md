@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CompositeMaterial_t
-nav_exclude: true
+module: compositematerialslib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [compositematerialslib](../compositematerialslib.md) / CompositeMaterial_t
 
 # CompositeMaterial_t
 
-**Kind:** class · **Size:** 160 bytes (`0xa0`) · **Align:** 255 · **Module:** compositematerialslib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 160 bytes (`0xa0`) · **Align:** n/a (unspecified) · **Module:** compositematerialslib
 
 **Metadata:** `MPropertyElementNameFn`
 

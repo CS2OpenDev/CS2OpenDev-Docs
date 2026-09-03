@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CNmGraphDocBoneMaskParameterReferenceNode
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmGraphDocBoneMaskParameterReferenceNode
 
 # CNmGraphDocBoneMaskParameterReferenceNode
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 304 bytes (`0x130`) · **Align:** 8 · **Module:** animdoclib
 

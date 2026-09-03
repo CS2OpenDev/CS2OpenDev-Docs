@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CVoiceContainerStaticAdditiveSynth
-nav_exclude: true
+module: soundsystem_voicecontainers
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [soundsystem_voicecontainers](../soundsystem_voicecontainers.md) / CVoiceContainerStaticAdditiveSynth
 
 # CVoiceContainerStaticAdditiveSynth
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 176 bytes (`0xb0`) · **Align:** 8 · **Module:** soundsystem_voicecontainers
 
@@ -21,6 +23,7 @@ classDiagram
     CVoiceContainerAsyncGenerator <|-- CVoiceContainerStaticAdditiveSynth
     CVoiceContainerGenerator <|-- CVoiceContainerAsyncGenerator
     CVoiceContainerBase <|-- CVoiceContainerGenerator
+    CVoiceContainerStaticAdditiveSynth *-- `CVoiceContainerStaticAdditiveSynth::CTone`
 ```
 
 ## Memory layout
@@ -31,7 +34,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x28` | `m_vSound` | [CVSound](../soundsystem_voicecontainers/CVSound.md) | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressField` |
 | `0x68` | `m_pEnvelopeAnalyzer` | [CVoiceContainerAnalysisBase](../soundsystem_voicecontainers/CVoiceContainerAnalysisBase.md)* | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressExpr true` |
-| `0x80` | `m_tones` | CUtlVector< [CVoiceContainerStaticAdditiveSynth](../soundsystem_voicecontainers/CVoiceContainerStaticAdditiveSynth.md)::CTone > |  |  |
+| `0x80` | `m_tones` | CUtlVector< [CVoiceContainerStaticAdditiveSynth::CTone](../soundsystem_voicecontainers/CVoiceContainerStaticAdditiveSynth.CTone.md) > |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

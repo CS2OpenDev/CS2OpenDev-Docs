@@ -1,0 +1,265 @@
+{
+  "build_id": "25000182",
+  "counts": {
+    "classes": 3590,
+    "commands": 1132,
+    "convars": 3955,
+    "enums": 611,
+    "events": 289,
+    "fields": 18549,
+    "game_modes": 15,
+    "items": 2054,
+    "maps": 22,
+    "messages": 775,
+    "modules": 139,
+    "music_kits": 101,
+    "paint_kits": 1481,
+    "proto_files": 40,
+    "sticker_kits": 11789,
+    "surfaces": 303
+  },
+  "modules": [
+    {
+      "classes": 47,
+      "enums": 7,
+      "module": "animationsystem"
+    },
+    {
+      "classes": 197,
+      "enums": 12,
+      "module": "animdoclib"
+    },
+    {
+      "classes": 158,
+      "enums": 14,
+      "module": "animgraphdoclib"
+    },
+    {
+      "classes": 243,
+      "enums": 57,
+      "module": "animgraphlib"
+    },
+    {
+      "classes": 180,
+      "enums": 37,
+      "module": "animlib"
+    },
+    {
+      "classes": 487,
+      "enums": 3,
+      "module": "client"
+    },
+    {
+      "classes": 10,
+      "enums": 7,
+      "module": "compositematerialslib"
+    },
+    {
+      "classes": 42,
+      "enums": 0,
+      "module": "engine2"
+    },
+    {
+      "classes": 16,
+      "enums": 2,
+      "module": "entity2"
+    },
+    {
+      "classes": 7,
+      "enums": 3,
+      "module": "hammer"
+    },
+    {
+      "classes": 2,
+      "enums": 0,
+      "module": "host"
+    },
+    {
+      "classes": 3,
+      "enums": 0,
+      "module": "mapdoclib"
+    },
+    {
+      "classes": 15,
+      "enums": 5,
+      "module": "materialsystem2"
+    },
+    {
+      "classes": 11,
+      "enums": 2,
+      "module": "mathlib_extended"
+    },
+    {
+      "classes": 3,
+      "enums": 0,
+      "module": "met"
+    },
+    {
+      "classes": 3,
+      "enums": 1,
+      "module": "modeldoc_editor"
+    },
+    {
+      "classes": 114,
+      "enums": 26,
+      "module": "modellib"
+    },
+    {
+      "classes": 2,
+      "enums": 0,
+      "module": "modtools"
+    },
+    {
+      "classes": 14,
+      "enums": 3,
+      "module": "navlib"
+    },
+    {
+      "classes": 1,
+      "enums": 0,
+      "module": "networksystem"
+    },
+    {
+      "classes": 0,
+      "enums": 2,
+      "module": "panorama_content"
+    },
+    {
+      "classes": 434,
+      "enums": 73,
+      "module": "particles"
+    },
+    {
+      "classes": 21,
+      "enums": 18,
+      "module": "particleslib"
+    },
+    {
+      "classes": 99,
+      "enums": 4,
+      "module": "physicslib"
+    },
+    {
+      "classes": 98,
+      "enums": 11,
+      "module": "pulse_runtime_lib"
+    },
+    {
+      "classes": 38,
+      "enums": 4,
+      "module": "pulse_system"
+    },
+    {
+      "classes": 3,
+      "enums": 1,
+      "module": "pulsedoc_lib"
+    },
+    {
+      "classes": 0,
+      "enums": 15,
+      "module": "qcontrols"
+    },
+    {
+      "classes": 4,
+      "enums": 3,
+      "module": "rendersystemdx11"
+    },
+    {
+      "classes": 17,
+      "enums": 2,
+      "module": "resourcecompiler"
+    },
+    {
+      "classes": 6,
+      "enums": 0,
+      "module": "resourcefile"
+    },
+    {
+      "classes": 48,
+      "enums": 0,
+      "module": "resourcesystem"
+    },
+    {
+      "classes": 9,
+      "enums": 6,
+      "module": "scenesystem"
+    },
+    {
+      "classes": 1,
+      "enums": 2,
+      "module": "schemasystem"
+    },
+    {
+      "classes": 910,
+      "enums": 231,
+      "module": "server"
+    },
+    {
+      "classes": 149,
+      "enums": 18,
+      "module": "smartprops"
+    },
+    {
+      "classes": 139,
+      "enums": 2,
+      "module": "sounddoc_lib"
+    },
+    {
+      "classes": 35,
+      "enums": 13,
+      "module": "soundsystem"
+    },
+    {
+      "classes": 73,
+      "enums": 7,
+      "module": "soundsystem_lowlevel"
+    },
+    {
+      "classes": 42,
+      "enums": 7,
+      "module": "soundsystem_voicecontainers"
+    },
+    {
+      "classes": 17,
+      "enums": 0,
+      "module": "steamaudio"
+    },
+    {
+      "classes": 4,
+      "enums": 6,
+      "module": "texturelib"
+    },
+    {
+      "classes": 2,
+      "enums": 0,
+      "module": "tier2"
+    },
+    {
+      "classes": 11,
+      "enums": 1,
+      "module": "toolscene"
+    },
+    {
+      "classes": 21,
+      "enums": 2,
+      "module": "toolutils2"
+    },
+    {
+      "classes": 14,
+      "enums": 1,
+      "module": "vphysics2"
+    },
+    {
+      "classes": 29,
+      "enums": 3,
+      "module": "worldrenderer"
+    }
+  ],
+  "note": "classes/enums/fields count distinct top-level entity names and their own declared fields; the modules[] list additionally counts client/server twin records (duplicates), so summing its per-module classes/enums can exceed the top-level totals above.",
+  "platform": "windows-x86_64",
+  "schema_version": "0.10.0",
+  "steam_date": "2026-08-28",
+  "steam_manifest_utc": "2026-08-28T20:16:08Z",
+  "tool_commit": "5196045c92a2fa3b702867a9e1e3272ad6016e0d",
+  "tool_version": "0.10.0"
+}

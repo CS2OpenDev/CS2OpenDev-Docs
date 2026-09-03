@@ -1,12 +1,14 @@
 ---
-layout: default
 title: AggregateMeshInfo_t
-nav_exclude: true
+module: worldrenderer
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [worldrenderer](../worldrenderer.md) / AggregateMeshInfo_t
 
 # AggregateMeshInfo_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 44 bytes (`0x2c`) · **Align:** 4 · **Module:** worldrenderer
 

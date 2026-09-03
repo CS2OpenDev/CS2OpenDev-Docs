@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CSAdditionalMatchStats_t
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CSAdditionalMatchStats_t
 
 # CSAdditionalMatchStats_t
 
-**Kind:** class · **Size:** 296 bytes (`0x128`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 296 bytes (`0x128`) · **Align:** n/a (unspecified) · **Module:** server
 
 **Inherits from:** [CSAdditionalPerRoundStats_t](../server/CSAdditionalPerRoundStats_t.md)
 

@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: resourcefile"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: resourcefile

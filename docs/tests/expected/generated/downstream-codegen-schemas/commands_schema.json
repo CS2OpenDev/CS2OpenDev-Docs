@@ -1,0 +1,63 @@
+{
+  "schema_format_version": "2.2",
+  "generator": "https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker",
+  "build_id": 9000001,
+  "platform": "windows-x86_64",
+  "revision": "hl2sdk-cs2/5f891c9026230cce0fc0a3fc4b5fef1c467a1385/v1/3d1200e346019c59",
+  "version_date": "2026-08-28",
+  "version_time": "2026-08-28T00:00:00Z",
+  "commands": [
+    {
+      "name": "bind",
+      "flags": [
+        "release"
+      ],
+      "description": "Bind a key.",
+      "has_completion_callback": false
+    },
+    {
+      "name": "kick",
+      "flags": [
+        "dontrecord",
+        "release"
+      ],
+      "description": "Kick a player by name.",
+      "has_completion_callback": false
+    },
+    {
+      "name": "map",
+      "flags": [
+        "release",
+        "vconsole_fuzzy_matching",
+        "vconsole_set_focus"
+      ],
+      "description": "map <mapname> :Load a new map.",
+      "has_completion_callback": true
+    },
+    {
+      "name": "changelevel",
+      "flags": [
+        "release"
+      ],
+      "description": "changelevel <mapname> :Multiplayer change level.",
+      "has_completion_callback": true
+    },
+    {
+      "name": "help",
+      "flags": [
+        "release"
+      ],
+      "description": "Find help about a convar/concommand.",
+      "has_completion_callback": true
+    },
+    {
+      "name": "animevents_dump",
+      "flags": [
+        "gamedll",
+        "cheat"
+      ],
+      "description": "List all the currently registered anim events.\n",
+      "has_completion_callback": false
+    }
+  ]
+}

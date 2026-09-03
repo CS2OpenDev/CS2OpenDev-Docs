@@ -1,12 +1,14 @@
 ---
-layout: default
 title: C_OP_TeleportBeam
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / C_OP_TeleportBeam
 
 # C_OP_TeleportBeam
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 528 bytes (`0x210`) · **Align:** 8 · **Module:** particles
 

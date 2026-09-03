@@ -5,48 +5,68 @@ on:
   schedule:
     - cron: "0 */4 * * *"
 
-  # Rebuild immediately when overlays, the generator, or workflow config change
+  # Rebuild immediately when overlays, the generator, its tests, or the site
+  # change. A README under the overlays or the site is prose only and does not
+  # cost a regeneration and a deploy.
   push:
     paths:
       - "docs/overlays/**"
       - "docs/generate_docs.py"
+      - "docs/site_data.py"
+      - "docs/tests/**"
+      - "site/**"
       - ".github/workflows/generate-docs.yml"
+      - "!docs/overlays/**/README.md"
+      - "!site/**/README.md"
 
-  # Allow manual runs from the Actions tab
+  # Manual runs from the Actions tab. The shallow clone below carries only the
+  # newest build, so `build` is either `latest` or that build's id.
   workflow_dispatch:
-
-# Only one docs build at a time per branch; cancel any in-progress run
-concurrency:
-  group: docs-${{ github.ref }}
-  cancel-in-progress: true
+    inputs:
+      build:
+        description: "SchemaTracker build id to generate from"
+        type: string
+        default: latest
+      platform:
+        description: "SchemaTracker platform"
+        type: string
+        default: windows-x86_64
 
 jobs:
   # -------------------------------------------------------------------------
   # 1. Materialise the latest SchemaTracker build from its `latest` branch (a
   #    shallow single-branch clone, so the multi-GB history is never fetched),
-  #    regenerate docs, and commit any diff straight to the current branch.
-  #    The commit is diff-gated, so an unchanged latest build is a no-op.
-  #    (The org forbids Actions from opening PRs, and the generated docs are
-  #    deterministic, so we commit directly rather than via a review PR — the
-  #    build + deploy jobs then publish the freshly committed docs in the same
-  #    run.)
+  #    regenerate docs and run the generator's tests. On main any diff is
+  #    committed straight to the branch (the org forbids Actions from opening
+  #    PRs, and the generated docs are deterministic); on every other branch
+  #    the regenerated set is handed to build-site as a workflow artifact so
+  #    the branch builds against the freshest data without a bot commit.
   # -------------------------------------------------------------------------
   check-and-update:
     name: Regenerate docs from latest SchemaTracker build
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    # One regeneration per branch; a newer push supersedes the run in flight.
+    concurrency:
+      group: docs-${{ github.ref }}
+      cancel-in-progress: true
     permissions:
       contents: write
+    outputs:
+      changed: ${{ steps.diff.outputs.changed }}
 
     steps:
+      # fetch-depth 1: the job only reads and commits on top of the branch tip,
+      # never diffs against older history.
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
       # Shallow single-branch clone of the SchemaTracker `latest` branch, which
       # carries only the newest build (artifacts/<build_id>/<platform>/) plus a
-      # root LATEST.json pointer — tens of MB rather than the whole artifacts/
-      # tree.  CS2OpenDev-SchemaTracker is public, so the plain HTTPS URL clones
+      # root LATEST.json pointer - tens of MB rather than the whole artifacts/
+      # tree. CS2OpenDev-SchemaTracker is public, so the plain HTTPS URL clones
       # without credentials (no token needed).
       - name: Materialise latest SchemaTracker build (latest branch)
         id: tracker
@@ -60,7 +80,7 @@ jobs:
           # artifacts/schema_evolution/<platform>.json files (maintained by
           # SchemaTracker's publish-latest workflow) alongside the newest build,
           # so the Schema History page + field_history.json render straight from
-          # this shallow clone — no supplemental fetch needed.  (SchemaTracker's
+          # this shallow clone - no supplemental fetch needed. (SchemaTracker's
           # default branch is a clean, artifact-free history and is NOT a source
           # for these files.)
 
@@ -72,83 +92,171 @@ jobs:
           echo "sha=$SHA"      >> "$GITHUB_OUTPUT"
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.12"
+          cache: pip
+          cache-dependency-path: docs/requirements.txt
 
       - name: Install Python dependencies
-        run: pip install pyyaml protobuf -q
+        run: pip install -q -r docs/requirements.txt
 
+      # --strict fails the run on an unresolved overlay key or a site-data
+      # warning. It stays on for pushes and manual runs, where a human sees the
+      # failure. The scheduled poll runs without it and reports the same lines
+      # as annotations instead, so an upstream rename that orphans an overlay
+      # key cannot stall every docs update until someone edits YAML.
       - name: Generate documentation
+        env:
+          PYTHONUNBUFFERED: "1"
+          BUILD: ${{ inputs.build || 'latest' }}
+          PLATFORM: ${{ inputs.platform || 'windows-x86_64' }}
         run: |
+          set -uo pipefail
+          STRICT=()
+          if [ "$GITHUB_EVENT_NAME" != schedule ]; then STRICT=(--strict); fi
+          LOG="$RUNNER_TEMP/generate.log"
           python3 docs/generate_docs.py \
             --repo-root . \
             --artifacts-root ./upstream/schema-tracker/artifacts \
-            --build latest \
-            --platform windows-x86_64 \
-            --output docs
+            --build "$BUILD" \
+            --platform "$PLATFORM" \
+            --output docs \
+            "${STRICT[@]}" 2>&1 | tee "$LOG"
+          status=$?
+          sed -nE 's/^[[:space:]]*((UNRESOLVED|MODULE|WARNING)[[:space:]:].*)$/::warning::\1/p' "$LOG"
+          exit "$status"
 
-      # Commit any regenerated docs straight to the current branch.  Diff-gated,
-      # so an unchanged build is a no-op.  A GITHUB_TOKEN push does not re-trigger
-      # this workflow (loop-safe); the [skip ci] tag is belt-and-suspenders.  The
-      # build + deploy jobs below run in this same run, so freshly committed docs
-      # publish immediately.
-      - name: Commit regenerated docs
+      - name: Run generator tests
+        run: python3 -m unittest discover -s docs/tests -t docs/tests
+
+      # Diff-gated so an unchanged build is a no-op; downstream jobs read
+      # `changed` instead of re-deriving it from git state themselves.
+      - name: Detect regenerated changes
+        id: diff
         run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add docs/
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
+          if git diff --cached --quiet -- docs/; then
+            echo "No changes."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           else
-            git commit -m "docs: regenerate for SchemaTracker build ${{ steps.tracker.outputs.build }} [skip ci]"
-            git push
+            git diff --cached --stat -- docs/ | tail -1
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
+      # main only. A GITHUB_TOKEN push does not re-trigger this workflow
+      # (loop-safe); the [skip ci] tag is belt-and-suspenders. The branch may
+      # have moved during the run, so the commit is replayed on the new tip
+      # rather than failing the push.
+      - name: Commit regenerated docs
+        if: github.ref == 'refs/heads/main' && steps.diff.outputs.changed == 'true'
+        env:
+          BUILD: ${{ steps.tracker.outputs.build }}
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "docs: regenerate for SchemaTracker build ${BUILD} [skip ci]"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      # Every other branch keeps its history clean and builds from this
+      # artifact instead.
+      - name: Upload regenerated docs
+        if: github.ref != 'refs/heads/main' && steps.diff.outputs.changed == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: regenerated-docs
+          path: |
+            docs/generated
+            docs/index.md
+          if-no-files-found: error
+          retention-days: 1
+
   # -------------------------------------------------------------------------
-  # 2. Build Jekyll site from the docs/ directory.
-  #    Checks out the branch HEAD so it always picks up any commit pushed
-  #    by the check-and-update job above.
+  # 2. Build the Astro site from docs/generated/ and run the verification
+  #    scripts against the output. Skipped on an unchanged schedule run so a
+  #    no-op poll doesn't spend a full site build; manual runs and pushes
+  #    always build so a site-only change (no docs diff) still deploys.
   # -------------------------------------------------------------------------
-  build:
-    name: Build Jekyll documentation
+  build-site:
+    name: Build Astro site
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     needs: check-and-update
+    if: needs.check-and-update.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' || github.event_name == 'push'
+    concurrency:
+      group: docs-${{ github.ref }}
+      cancel-in-progress: true
     permissions:
       contents: read
-      pages: write
-      id-token: write
 
     steps:
-      - name: Checkout repository (latest HEAD)
-        uses: actions/checkout@v4
+      # main: re-checkout the branch tip, which must include the commit job 1
+      # just pushed. Other branches: the run's own commit, with job 1's
+      # regenerated set laid over it below.
+      - name: Checkout repository
+        uses: actions/checkout@v7
         with:
-          ref: ${{ github.ref_name }}
-          fetch-depth: 0
+          ref: ${{ github.ref == 'refs/heads/main' && github.ref_name || github.sha }}
+          fetch-depth: 1
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+      # Cleared first so a page the regeneration removed does not survive from
+      # the checkout.
+      - name: Drop the checked-out generated docs
+        if: github.ref != 'refs/heads/main' && needs.check-and-update.outputs.changed == 'true'
+        run: rm -rf docs/generated docs/index.md
 
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
+      - name: Download regenerated docs
+        if: github.ref != 'refs/heads/main' && needs.check-and-update.outputs.changed == 'true'
+        uses: actions/download-artifact@v8
         with:
-          source: ./docs
-          destination: ./_site
+          name: regenerated-docs
+          path: docs
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: site/.nvmrc
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Install site dependencies
+        working-directory: site
+        run: npm ci
+
+      # 6144 MB headroom over the ~1.6 GB observed peak; a static build has no
+      # server process competing for the runner's memory.
+      - name: Build site
+        working-directory: site
+        env:
+          NODE_OPTIONS: "--max-old-space-size=6144"
+        run: npm run build
+
+      - name: Verify site output
+        working-directory: site
+        run: npm run check
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
-          path: ./_site
+          path: site/dist
 
   # -------------------------------------------------------------------------
   # 3. Deploy to GitHub Pages (only from the default branch).
   # -------------------------------------------------------------------------
   deploy:
     name: Deploy to GitHub Pages
-    needs: build
+    needs: build-site
     # Only publish the live site from the default branch.
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # A live deploy is never cancelled by a newer run; it queues behind, the
+    # way the GitHub Pages starter workflow does it.
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -159,4 +267,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

@@ -1,17 +1,20 @@
 ---
-layout: default
-title: CCSPlayerController_InventoryServices
-nav_exclude: true
+title: CCSPlayerController_InventoryServices (server)
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CCSPlayerController_InventoryServices
 
 # CCSPlayerController_InventoryServices
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 Loadout and persona component of CCSPlayerController: equipped items, music kit, rank, and public-profile data.
 
+**Kind:** class · **Size:** 4064 bytes (`0xfe0`) · **Align:** n/a (unspecified) · **Module:** server
 
-**Kind:** class · **Size:** 4064 bytes (`0xfe0`) · **Align:** 255 · **Module:** server
+**Twin:** [CCSPlayerController_InventoryServices (client)](../client/CCSPlayerController_InventoryServices.md)
 
 **Inherits from:** [CPlayerControllerComponent](../server/CPlayerControllerComponent.md)
 

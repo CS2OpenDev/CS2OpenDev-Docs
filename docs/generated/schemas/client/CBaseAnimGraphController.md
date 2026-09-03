@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CBaseAnimGraphController
-nav_exclude: true
+title: CBaseAnimGraphController (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CBaseAnimGraphController
 
 # CBaseAnimGraphController
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 1696 bytes (`0x6a0`) · **Align:** 8 · **Module:** client
+
+**Twin:** [CBaseAnimGraphController (server)](../server/CBaseAnimGraphController.md)
 
 **Inherits from:** [CSkeletonAnimationController](../server/CSkeletonAnimationController.md)
 

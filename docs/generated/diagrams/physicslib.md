@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: physicslib"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: physicslib
@@ -26,6 +23,7 @@ classDiagram
     CFeNamedJiggleBone *-- CFeJiggleBone
     CFeVertexMapBuildArray --> FeVertexMapBuild_t
     CRegionSVM *-- RnPlane_t
+    CollisionDetailLayerInfo_t *-- `CollisionDetailLayerInfo_t::Name_t`
     FeCollisionPlane_t *-- RnPlane_t
     FeSimdTri_t *-- FourVectors2D
     PhysFeModelDesc_t *-- FeNodeBase_t

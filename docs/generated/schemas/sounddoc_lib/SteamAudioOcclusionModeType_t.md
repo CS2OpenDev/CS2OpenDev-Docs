@@ -1,12 +1,14 @@
 ---
-layout: default
 title: SteamAudioOcclusionModeType_t
-nav_exclude: true
+module: sounddoc_lib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [sounddoc_lib](../sounddoc_lib.md) / SteamAudioOcclusionModeType_t
 
 # SteamAudioOcclusionModeType_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** sounddoc_lib
 

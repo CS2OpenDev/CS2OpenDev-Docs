@@ -1,14 +1,16 @@
 ---
-layout: default
 title: RsRasterizerStateDesc_t
-nav_exclude: true
+module: rendersystemdx11
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [rendersystemdx11](../rendersystemdx11.md) / RsRasterizerStateDesc_t
 
 # RsRasterizerStateDesc_t
 
-**Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** 255 · **Module:** rendersystemdx11
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** n/a (unspecified) · **Module:** rendersystemdx11
 
 **Relationships:**
 

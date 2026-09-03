@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CNmGraphDocGlobalTransitionNode
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmGraphDocGlobalTransitionNode
 
 # CNmGraphDocGlobalTransitionNode
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 304 bytes (`0x130`) · **Align:** 8 · **Module:** animdoclib
 
@@ -42,7 +44,7 @@ classDiagram
 | `0x10d` | `m_rootMotionBlend` | [NmRootMotionBlendMode_t](../animlib/NmRootMotionBlendMode_t.md) | [CNmGraphDocTransitionNode](../animdoclib/CNmGraphDocTransitionNode.md) | `MPropertyGroupName +Transition` |
 | `0x10e` | `m_blendWeightEasing` | [NmEasingOperation_t](../animlib/NmEasingOperation_t.md) | [CNmGraphDocTransitionNode](../animdoclib/CNmGraphDocTransitionNode.md) | `MPropertyGroupName +Transition` |
 | `0x110` | `m_flBoneMaskBlendInTimePercentage` | float32 | [CNmGraphDocTransitionNode](../animdoclib/CNmGraphDocTransitionNode.md) | `MPropertyGroupName +Transition` |
-| `0x114` | `m_timeMatchMode` | [CNmGraphDocTransitionNode](../animdoclib/CNmGraphDocTransitionNode.md)::TimeMatchMode_t | [CNmGraphDocTransitionNode](../animdoclib/CNmGraphDocTransitionNode.md) | `MPropertyGroupName +Target Time` |
+| `0x114` | `m_timeMatchMode` | [CNmGraphDocTransitionNode::TimeMatchMode_t](../animdoclib/CNmGraphDocTransitionNode.TimeMatchMode_t.md) | [CNmGraphDocTransitionNode](../animdoclib/CNmGraphDocTransitionNode.md) | `MPropertyGroupName +Target Time` |
 | `0x118` | `m_flTimeOffset` | float32 | [CNmGraphDocTransitionNode](../animdoclib/CNmGraphDocTransitionNode.md) | `MPropertyGroupName +Target Time` |
 | `0x11c` | `m_bCanBeForced` | bool | [CNmGraphDocTransitionNode](../animdoclib/CNmGraphDocTransitionNode.md) | `MPropertyGroupName Advanced` |
 | `0x120` | `m_stateID` | V_uuid_t |  | `MPropertySuppressField` |

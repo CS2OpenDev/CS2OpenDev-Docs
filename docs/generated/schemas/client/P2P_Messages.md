@@ -1,12 +1,14 @@
 ---
-layout: default
 title: P2P_Messages
-nav_exclude: true
+module: client
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / P2P_Messages
 
 # P2P_Messages
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** client
 

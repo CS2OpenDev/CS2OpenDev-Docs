@@ -1,12 +1,14 @@
 ---
-layout: default
 title: TextureControls_t
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / TextureControls_t
 
 # TextureControls_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 2608 bytes (`0xa30`) · **Align:** 8 · **Module:** particles
 

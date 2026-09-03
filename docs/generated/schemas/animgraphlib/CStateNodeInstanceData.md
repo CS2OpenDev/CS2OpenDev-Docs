@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CStateNodeInstanceData
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / CStateNodeInstanceData
 
 # CStateNodeInstanceData
 
-**Kind:** class · **Size:** 76 bytes (`0x4c`) · **Align:** 255 · **Module:** animgraphlib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 76 bytes (`0x4c`) · **Align:** n/a (unspecified) · **Module:** animgraphlib
 
 ## Memory layout
 

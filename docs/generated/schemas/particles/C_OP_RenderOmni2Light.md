@@ -1,12 +1,14 @@
 ---
-layout: default
 title: C_OP_RenderOmni2Light
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / C_OP_RenderOmni2Light
 
 # C_OP_RenderOmni2Light
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 6024 bytes (`0x1788`) · **Align:** 8 · **Module:** particles
 
@@ -63,7 +65,7 @@ classDiagram
 | `0xa70` | `m_flBrightnessLumens` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Lumens` `MPropertySuppressExpr m_nBrightnessUnit != PARTICLE_LIGHT_UNIT_LUMENS` |
 | `0xbe0` | `m_flBrightnessCandelas` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Candelas` `MPropertySuppressExpr m_nBrightnessUnit != PARTICLE_LIGHT_UNIT_CANDELAS` |
 | `0xd50` | `m_bCastShadows` | bool |  | `MPropertyFriendlyName Shadows` `MPropertySuppressExpr mod == csgo` |
-| `0xd51` | `m_bDynamicBounce` | bool |  | `MPropertyFriendlyName Dynamic Bounce (RTGI)` `MPropertySuppressExpr !m_bCastShadows \|\| mod == csgo` |
+| `0xd51` | `m_bDynamicBounce` | bool |  | `MPropertyFriendlyName Dynamic Bounce (RTGI)` `MPropertySuppressExpr !m_bCastShadows &#124;&#124; mod == csgo` |
 | `0xd58` | `m_flBounceScale` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName bounce scale` `MPropertySuppressExpr !m_bDynamicBounce` |
 | `0xec8` | `m_bFog` | bool |  | `MPropertyFriendlyName Fog` |
 | `0xed0` | `m_flFogScale` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Fog Scale` `MPropertySuppressExpr !m_bFog` |

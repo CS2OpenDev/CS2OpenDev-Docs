@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CCS2PawnGraphController
-nav_exclude: true
+title: CCS2PawnGraphController (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CCS2PawnGraphController
 
 # CCS2PawnGraphController
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 1344 bytes (`0x540`) · **Align:** 8 · **Module:** client
+
+**Twin:** [CCS2PawnGraphController (server)](../server/CCS2PawnGraphController.md)
 
 **Inherits from:** [CCS2WeaponGraphController](../client/CCS2WeaponGraphController.md)
 

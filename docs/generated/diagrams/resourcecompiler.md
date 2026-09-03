@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: resourcecompiler"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: resourcecompiler

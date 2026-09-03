@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CSmartPropElement_Layout2DGrid
-nav_exclude: true
+module: smartprops
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [smartprops](../smartprops.md) / CSmartPropElement_Layout2DGrid
 
 # CSmartPropElement_Layout2DGrid
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 928 bytes (`0x3a0`) · **Align:** 8 · **Module:** smartprops
 
@@ -46,8 +48,8 @@ classDiagram
 | `0x260` | `m_flSpacingWidth` | CSmartPropAttributeFloat |  | `MPropertyAttributeRange biased 0 1024` `MPropertyDescription Minimum Width of filled grid cells.` `MPropertySuppressExpr m_GridArrangement == SEGMENT` |
 | `0x2a0` | `m_flSpacingLength` | CSmartPropAttributeFloat |  | `MPropertyAttributeRange biased 0 1024` `MPropertyDescription Minimum Length of filled grid cells.` `MPropertySuppressExpr m_GridArrangement == SEGMENT` |
 | `0x2e0` | `m_bAlternateShift` | CSmartPropAttributeBool |  | `MPropertyDescription Shifts every other cell row and/or column.` `MPropertySuppressExpr m_GridArrangement == FILL` |
-| `0x320` | `m_flAlternateShiftWidth` | CSmartPropAttributeFloat |  | `MPropertyAttributeRange biased 0 1024` `MPropertyDescription Vary cell shift in X.` `MPropertySuppressExpr m_GridArrangement == FILL \|\| m_bAlternateShift == false` |
-| `0x360` | `m_flAlternateShiftLength` | CSmartPropAttributeFloat |  | `MPropertyAttributeRange biased 0 1024` `MPropertyDescription Vary cell shift in Y.` `MPropertySuppressExpr m_GridArrangement == FILL \|\| m_bAlternateShift == false` |
+| `0x320` | `m_flAlternateShiftWidth` | CSmartPropAttributeFloat |  | `MPropertyAttributeRange biased 0 1024` `MPropertyDescription Vary cell shift in X.` `MPropertySuppressExpr m_GridArrangement == FILL &#124;&#124; m_bAlternateShift == false` |
+| `0x360` | `m_flAlternateShiftLength` | CSmartPropAttributeFloat |  | `MPropertyAttributeRange biased 0 1024` `MPropertyDescription Vary cell shift in Y.` `MPropertySuppressExpr m_GridArrangement == FILL &#124;&#124; m_bAlternateShift == false` |
 
 <details><summary>KV3 class defaults</summary>
 

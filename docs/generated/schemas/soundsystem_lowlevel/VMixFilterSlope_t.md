@@ -1,12 +1,14 @@
 ---
-layout: default
 title: VMixFilterSlope_t
-nav_exclude: true
+module: soundsystem_lowlevel
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [soundsystem_lowlevel](../soundsystem_lowlevel.md) / VMixFilterSlope_t
 
 # VMixFilterSlope_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** enum · **Underlying:** `uint8_t` · **Module:** soundsystem_lowlevel
 

@@ -1,0 +1,124 @@
+{
+  "commands": [
+    {
+      "flags": [
+        "cheat",
+        "gamedll"
+      ],
+      "has_completion_callback": false,
+      "help": "List all the currently registered anim events.\n",
+      "name": "animevents_dump",
+      "prefix": "animevents"
+    },
+    {
+      "flags": [
+        "release"
+      ],
+      "has_completion_callback": false,
+      "help": "Bind a key.",
+      "name": "bind",
+      "prefix": "bind"
+    },
+    {
+      "flags": [
+        "release"
+      ],
+      "has_completion_callback": true,
+      "help": "changelevel <mapname> :Multiplayer change level.",
+      "name": "changelevel",
+      "prefix": "changelevel"
+    },
+    {
+      "flags": [
+        "release"
+      ],
+      "has_completion_callback": true,
+      "help": "Find help about a convar/concommand.",
+      "name": "help",
+      "prefix": "help"
+    },
+    {
+      "flags": [
+        "dontrecord",
+        "release"
+      ],
+      "has_completion_callback": false,
+      "help": "Kick a player by name.",
+      "name": "kick",
+      "prefix": "kick"
+    },
+    {
+      "flags": [
+        "release",
+        "vconsole_fuzzy_matching",
+        "vconsole_set_focus"
+      ],
+      "has_completion_callback": true,
+      "help": "map <mapname> :Load a new map.",
+      "name": "map",
+      "prefix": "map"
+    }
+  ],
+  "flags": [
+    {
+      "command_count": 1,
+      "convar_count": 1,
+      "description": "Requires sv_cheats 1 to change; reset when cheats are disabled.",
+      "name": "cheat"
+    },
+    {
+      "command_count": 0,
+      "convar_count": 5,
+      "description": "Registered by the client binary (client.dll).",
+      "name": "clientdll"
+    },
+    {
+      "command_count": 0,
+      "convar_count": 4,
+      "description": "Can be forced from the command line; a command-line value locks out later changes.",
+      "name": "commandline_enforced"
+    },
+    {
+      "command_count": 1,
+      "convar_count": 0,
+      "description": "Excluded from demo recording.",
+      "name": "dontrecord"
+    },
+    {
+      "command_count": 1,
+      "convar_count": 6,
+      "description": "Registered by the game server binary (server.dll).",
+      "name": "gamedll"
+    },
+    {
+      "command_count": 0,
+      "convar_count": 5,
+      "description": "A change is announced to connected players (console/chat notification).",
+      "name": "notify"
+    },
+    {
+      "command_count": 5,
+      "convar_count": 8,
+      "description": "Present in release/shipping builds, not just internal ones.",
+      "name": "release"
+    },
+    {
+      "command_count": 0,
+      "convar_count": 7,
+      "description": "Server's value is sent to and enforced on connected clients.",
+      "name": "replicated"
+    },
+    {
+      "command_count": 1,
+      "convar_count": 0,
+      "description": "",
+      "name": "vconsole_fuzzy_matching"
+    },
+    {
+      "command_count": 1,
+      "convar_count": 0,
+      "description": "",
+      "name": "vconsole_set_focus"
+    }
+  ]
+}

@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CCSCustomHudLayoutState
-nav_exclude: true
+title: CCSCustomHudLayoutState (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CCSCustomHudLayoutState
 
 # CCSCustomHudLayoutState
 
-**Kind:** class · **Size:** 264 bytes (`0x108`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 264 bytes (`0x108`) · **Align:** n/a (unspecified) · **Module:** client
+
+**Twin:** [CCSCustomHudLayoutState (server)](../server/CCSCustomHudLayoutState.md)
 
 **Relationships:**
 

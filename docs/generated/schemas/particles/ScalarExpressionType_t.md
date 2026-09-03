@@ -1,12 +1,14 @@
 ---
-layout: default
 title: ScalarExpressionType_t
-nav_exclude: true
+module: particles
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / ScalarExpressionType_t
 
 # ScalarExpressionType_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** particles
 
@@ -14,7 +16,7 @@ nav_exclude: true
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `SCALAR_EXPRESSION_UNINITIALIZED` | -1 | Uninitialized |
+| `SCALAR_EXPRESSION_UNINITIALIZED` | -1 (`0xffffffff`) | Uninitialized |
 | `SCALAR_EXPRESSION_ADD` | 0 | Add |
 | `SCALAR_EXPRESSION_SUBTRACT` | 1 | Subtract |
 | `SCALAR_EXPRESSION_MUL` | 2 | Multiply |

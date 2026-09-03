@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CPrecipitationVData
-nav_exclude: true
+title: CPrecipitationVData (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CPrecipitationVData
 
 # CPrecipitationVData
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 752 bytes (`0x2f0`) · **Align:** 8 · **Module:** client
+
+**Twin:** [CPrecipitationVData (server)](../server/CPrecipitationVData.md)
 
 **Inherits from:** [CEntitySubclassVDataBase](../server/CEntitySubclassVDataBase.md)
 

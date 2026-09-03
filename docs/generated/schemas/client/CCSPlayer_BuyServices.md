@@ -1,17 +1,20 @@
 ---
-layout: default
-title: CCSPlayer_BuyServices
-nav_exclude: true
+title: CCSPlayer_BuyServices (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CCSPlayer_BuyServices
 
 # CCSPlayer_BuyServices
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 Component that records the player's sellback-eligible purchases for the current round.
 
+**Kind:** class · **Size:** 176 bytes (`0xb0`) · **Align:** n/a (unspecified) · **Module:** client
 
-**Kind:** class · **Size:** 176 bytes (`0xb0`) · **Align:** 255 · **Module:** client
+**Twin:** [CCSPlayer_BuyServices (server)](../server/CCSPlayer_BuyServices.md)
 
 **Inherits from:** [CPlayerPawnComponent](../server/CPlayerPawnComponent.md)
 

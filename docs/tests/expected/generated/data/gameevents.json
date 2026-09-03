@@ -1,0 +1,419 @@
+{
+  "duplicates": {
+    "player_death": [
+      "core.gameevents",
+      "mod.gameevents"
+    ],
+    "round_end": [
+      "core.gameevents",
+      "game.gameevents",
+      "mod.gameevents"
+    ]
+  },
+  "events": [
+    {
+      "anchor": "bomb_planted",
+      "description": "Fired when the C4 is successfully armed.  `site` is the bombsite index (0=A, 1=B).  At this point a `CPlantedC4` entity exists and the 40-second countdown begins.",
+      "fields": [
+        {
+          "description": "player who planted the bomb",
+          "name": "userid",
+          "type": "player_controller_and_pawn"
+        },
+        {
+          "description": "bombsite index",
+          "name": "site",
+          "type": "short"
+        },
+        {
+          "description": "",
+          "name": "c4",
+          "type": "short"
+        }
+      ],
+      "name": "bomb_planted",
+      "notes": "",
+      "properties": {},
+      "source": "mod.gameevents",
+      "warning": ""
+    },
+    {
+      "anchor": "player_death-core",
+      "description": "Fired when a player dies.  Carries `userid` (the victim) and `attacker`.  Detailed kill information (weapon, headshot, assister, penetration count, no-scope flag, distance) lives on the legacy `cs_gameevents.proto` user-message `CMsgSource1LegacyGameEvent` payload — extract those keys when parsing demos.",
+      "fields": [
+        {
+          "description": "user ID who died",
+          "name": "userid",
+          "type": "player_controller_and_pawn"
+        },
+        {
+          "description": "user ID who killed",
+          "name": "attacker",
+          "type": "player_controller_and_pawn"
+        }
+      ],
+      "name": "player_death",
+      "notes": "",
+      "properties": {},
+      "source": "core.gameevents",
+      "warning": ""
+    },
+    {
+      "anchor": "player_death-mod",
+      "description": "Fired when a player dies.  Carries `userid` (the victim) and `attacker`.  Detailed kill information (weapon, headshot, assister, penetration count, no-scope flag, distance) lives on the legacy `cs_gameevents.proto` user-message `CMsgSource1LegacyGameEvent` payload — extract those keys when parsing demos.",
+      "fields": [
+        {
+          "description": "user who died",
+          "name": "userid",
+          "type": "player_controller_and_pawn"
+        },
+        {
+          "description": "player who killed",
+          "name": "attacker",
+          "type": "player_controller_and_pawn"
+        },
+        {
+          "description": "player who assisted in the kill",
+          "name": "assister",
+          "type": "player_controller_and_pawn"
+        },
+        {
+          "description": "assister helped with a flash",
+          "name": "assistedflash",
+          "type": "bool"
+        },
+        {
+          "description": "weapon name killer used",
+          "name": "weapon",
+          "type": "string"
+        },
+        {
+          "description": "inventory item id of weapon killer used",
+          "name": "weapon_itemid",
+          "type": "string"
+        },
+        {
+          "description": "faux item id of weapon killer used",
+          "name": "weapon_fauxitemid",
+          "type": "string"
+        },
+        {
+          "description": "",
+          "name": "weapon_originalowner_xuid",
+          "type": "string"
+        },
+        {
+          "description": "singals a headshot",
+          "name": "headshot",
+          "type": "bool"
+        },
+        {
+          "description": "did killer dominate victim with this kill",
+          "name": "dominated",
+          "type": "short"
+        },
+        {
+          "description": "did killer get revenge on victim with this kill",
+          "name": "revenge",
+          "type": "short"
+        },
+        {
+          "description": "is the kill resulting in squad wipe",
+          "name": "wipe",
+          "type": "short"
+        },
+        {
+          "description": "number of objects shot penetrated before killing target",
+          "name": "penetrated",
+          "type": "short"
+        },
+        {
+          "description": "if replay data is unavailable, this will be present and set to false",
+          "name": "noreplay",
+          "type": "bool"
+        },
+        {
+          "description": "kill happened without a scope, used for death notice icon",
+          "name": "noscope",
+          "type": "bool"
+        },
+        {
+          "description": "hitscan weapon went through smoke grenade",
+          "name": "thrusmoke",
+          "type": "bool"
+        },
+        {
+          "description": "attacker was blind from flashbang",
+          "name": "attackerblind",
+          "type": "bool"
+        },
+        {
+          "description": "distance to victim in meters",
+          "name": "distance",
+          "type": "float"
+        },
+        {
+          "description": "damage done to health",
+          "name": "dmg_health",
+          "type": "short"
+        },
+        {
+          "description": "damage done to armor",
+          "name": "dmg_armor",
+          "type": "byte"
+        },
+        {
+          "description": "hitgroup that was damaged",
+          "name": "hitgroup",
+          "type": "byte"
+        },
+        {
+          "description": "attacker was in midair",
+          "name": "attackerinair",
+          "type": "bool"
+        }
+      ],
+      "name": "player_death",
+      "notes": "",
+      "properties": {},
+      "source": "mod.gameevents",
+      "warning": ""
+    },
+    {
+      "anchor": "player_jump",
+      "description": "",
+      "fields": [
+        {
+          "description": "",
+          "name": "userid",
+          "type": "player_controller"
+        }
+      ],
+      "name": "player_jump",
+      "notes": "",
+      "properties": {},
+      "source": "mod.gameevents",
+      "warning": ""
+    },
+    {
+      "anchor": "round_end-core",
+      "description": "Fired when a round concludes.  Carries the winning team (`winner`), the reason for the win (`reason`, see RoundEndReason table below), and a human-readable `message` string.",
+      "fields": [
+        {
+          "description": "winner team/user i",
+          "name": "winner",
+          "type": "byte"
+        },
+        {
+          "description": "reson why team won",
+          "name": "reason",
+          "type": "byte"
+        },
+        {
+          "description": "end round message",
+          "name": "message",
+          "type": "string"
+        },
+        {
+          "description": "",
+          "name": "time",
+          "type": "float"
+        }
+      ],
+      "name": "round_end",
+      "notes": "The `winner` value uses the same team-number scheme as the `Team` constant in `well_known_constants.json` (2=T, 3=CT, 0/1 for draw / unassigned).  The `reason` byte enumerates win conditions: bomb detonation, defusal, time expiry, eliminations, surrender, etc. — full mapping is in `public/cstrike15_gameconstants.h` upstream.",
+      "properties": {},
+      "source": "core.gameevents",
+      "warning": ""
+    },
+    {
+      "anchor": "round_end-game",
+      "description": "Fired when a round concludes.  Carries the winning team (`winner`), the reason for the win (`reason`, see RoundEndReason table below), and a human-readable `message` string.",
+      "fields": [
+        {
+          "description": "winner team/user i",
+          "name": "winner",
+          "type": "byte"
+        },
+        {
+          "description": "reson why team won",
+          "name": "reason",
+          "type": "byte"
+        },
+        {
+          "description": "end round message",
+          "name": "message",
+          "type": "string"
+        },
+        {
+          "description": "server-generated legacy value",
+          "name": "legacy",
+          "type": "byte"
+        }
+      ],
+      "name": "round_end",
+      "notes": "The `winner` value uses the same team-number scheme as the `Team` constant in `well_known_constants.json` (2=T, 3=CT, 0/1 for draw / unassigned).  The `reason` byte enumerates win conditions: bomb detonation, defusal, time expiry, eliminations, surrender, etc. — full mapping is in `public/cstrike15_gameconstants.h` upstream.",
+      "properties": {},
+      "source": "game.gameevents",
+      "warning": ""
+    },
+    {
+      "anchor": "round_end-mod",
+      "description": "Fired when a round concludes.  Carries the winning team (`winner`), the reason for the win (`reason`, see RoundEndReason table below), and a human-readable `message` string.",
+      "fields": [
+        {
+          "description": "winner team/user i",
+          "name": "winner",
+          "type": "byte"
+        },
+        {
+          "description": "reson why team won",
+          "name": "reason",
+          "type": "byte"
+        },
+        {
+          "description": "end round message",
+          "name": "message",
+          "type": "string"
+        },
+        {
+          "description": "server-generated legacy value",
+          "name": "legacy",
+          "type": "byte"
+        },
+        {
+          "description": "total number of players alive at the end of round, used for statistics gathering, computed on the server in the event client is in replay when receiving this message",
+          "name": "player_count",
+          "type": "short"
+        },
+        {
+          "description": "if set, don't play round end music, because action is still on-going",
+          "name": "nomusic",
+          "type": "byte"
+        }
+      ],
+      "name": "round_end",
+      "notes": "The `winner` value uses the same team-number scheme as the `Team` constant in `well_known_constants.json` (2=T, 3=CT, 0/1 for draw / unassigned).  The `reason` byte enumerates win conditions: bomb detonation, defusal, time expiry, eliminations, surrender, etc. — full mapping is in `public/cstrike15_gameconstants.h` upstream.",
+      "properties": {},
+      "source": "mod.gameevents",
+      "warning": ""
+    },
+    {
+      "anchor": "weapon_fire",
+      "description": "Fired each time a player pulls the trigger and a shot is taken. `weapon` is the lowercase classname (`ak47`, `awp`, `knife`, `hegrenade`, …).  Use `bullet_damage` for the *hit* event counterpart.",
+      "fields": [
+        {
+          "description": "",
+          "name": "userid",
+          "type": "player_controller_and_pawn"
+        },
+        {
+          "description": "weapon name used",
+          "name": "weapon",
+          "type": "string"
+        },
+        {
+          "description": "is weapon silenced",
+          "name": "silenced",
+          "type": "bool"
+        }
+      ],
+      "name": "weapon_fire",
+      "notes": "",
+      "properties": {},
+      "source": "mod.gameevents",
+      "warning": ""
+    }
+  ],
+  "sources": [
+    "core.gameevents",
+    "game.gameevents",
+    "mod.gameevents"
+  ],
+  "type_legend": [
+    {
+      "description": "Unsigned int, 1 bit",
+      "key_t_type_code": 6,
+      "note": "",
+      "type": "bool"
+    },
+    {
+      "description": "Unsigned int, 8 bit",
+      "key_t_type_code": 5,
+      "note": "",
+      "type": "byte"
+    },
+    {
+      "description": "Entity handle",
+      "key_t_type_code": 3,
+      "note": "Sent as a plain integer, wire-coded the same as key_t.type 3 (long).",
+      "type": "ehandle"
+    },
+    {
+      "description": "Float, 32 bit",
+      "key_t_type_code": 2,
+      "note": "",
+      "type": "float"
+    },
+    {
+      "description": "Signed integer",
+      "key_t_type_code": 3,
+      "note": "",
+      "type": "int"
+    },
+    {
+      "description": "Any data, not networked",
+      "key_t_type_code": 0,
+      "note": "Not carried in the key_t union; type 0 means no value is sent.",
+      "type": "local"
+    },
+    {
+      "description": "Signed int, 32 bit",
+      "key_t_type_code": 3,
+      "note": "",
+      "type": "long"
+    },
+    {
+      "description": "Value is not networked",
+      "key_t_type_code": 0,
+      "note": "Not carried in the key_t union; type 0 means no value is sent.",
+      "type": "none"
+    },
+    {
+      "description": "Player controller entity reference",
+      "key_t_type_code": 3,
+      "note": "Sent as a plain integer, wire-coded the same as key_t.type 3 (long).",
+      "type": "player_controller"
+    },
+    {
+      "description": "Player controller + pawn entity reference",
+      "key_t_type_code": null,
+      "note": "Packs two indices into one integer: controller id in the low byte, pawn index in the bytes above it. Decode as controller_id = value & 0xFF, pawn_index = value >> 8. Not a distinct key_t code on its own.",
+      "type": "player_controller_and_pawn"
+    },
+    {
+      "description": "Player pawn entity reference",
+      "key_t_type_code": 3,
+      "note": "Sent as a plain integer, wire-coded the same as key_t.type 3 (long).",
+      "type": "player_pawn"
+    },
+    {
+      "description": "Signed int, 16 bit",
+      "key_t_type_code": 4,
+      "note": "",
+      "type": "short"
+    },
+    {
+      "description": "A zero-terminated string",
+      "key_t_type_code": 1,
+      "note": "",
+      "type": "string"
+    },
+    {
+      "description": "Unsigned 64-bit integer (string-encoded)",
+      "key_t_type_code": 7,
+      "note": "",
+      "type": "uint64"
+    }
+  ]
+}

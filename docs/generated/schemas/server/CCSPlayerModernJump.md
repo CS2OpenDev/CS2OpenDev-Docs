@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CCSPlayerModernJump
-nav_exclude: true
+title: CCSPlayerModernJump (server)
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CCSPlayerModernJump
 
 # CCSPlayerModernJump
 
-**Kind:** class · **Size:** 56 bytes (`0x38`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 56 bytes (`0x38`) · **Align:** n/a (unspecified) · **Module:** server
+
+**Twin:** [CCSPlayerModernJump (client)](../client/CCSPlayerModernJump.md)
 
 **Relationships:**
 

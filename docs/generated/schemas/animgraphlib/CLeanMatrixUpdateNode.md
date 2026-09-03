@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CLeanMatrixUpdateNode
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / CLeanMatrixUpdateNode
 
 # CLeanMatrixUpdateNode
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 240 bytes (`0xf0`) · **Align:** 8 · **Module:** animgraphlib
 

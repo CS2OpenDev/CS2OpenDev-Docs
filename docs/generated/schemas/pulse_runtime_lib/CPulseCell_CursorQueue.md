@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CPulseCell_CursorQueue
-nav_exclude: true
+module: pulse_runtime_lib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [pulse_runtime_lib](../pulse_runtime_lib.md) / CPulseCell_CursorQueue
 
 # CPulseCell_CursorQueue
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 304 bytes (`0x130`) · **Align:** 8 · **Module:** pulse_runtime_lib
 

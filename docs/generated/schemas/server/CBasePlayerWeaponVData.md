@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CBasePlayerWeaponVData
-nav_exclude: true
+title: CBasePlayerWeaponVData (server)
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CBasePlayerWeaponVData
 
 # CBasePlayerWeaponVData
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 1312 bytes (`0x520`) · **Align:** 8 · **Module:** server
+
+**Twin:** [CBasePlayerWeaponVData (client)](../client/CBasePlayerWeaponVData.md)
 
 **Inherits from:** [CEntitySubclassVDataBase](../server/CEntitySubclassVDataBase.md)
 

@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CBtActionAim
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CBtActionAim
 
 # CBtActionAim
 
-**Kind:** class · **Size:** 248 bytes (`0xf8`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 248 bytes (`0xf8`) · **Align:** n/a (unspecified) · **Module:** server
 
 **Inherits from:** [CBtNode](../server/CBtNode.md)
 

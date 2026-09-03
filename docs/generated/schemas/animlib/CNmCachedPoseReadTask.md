@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CNmCachedPoseReadTask
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmCachedPoseReadTask
 
 # CNmCachedPoseReadTask
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 128 bytes (`0x80`) · **Align:** 16 · **Module:** animlib
 
@@ -18,3 +20,7 @@ nav_exclude: true
 classDiagram
     CNmPoseTask <|-- CNmCachedPoseReadTask
 ```
+
+## Memory layout
+
+No schema-visible fields (128 bytes of opaque storage).

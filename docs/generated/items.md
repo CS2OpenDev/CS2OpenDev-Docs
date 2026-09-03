@@ -1,2076 +1,2077 @@
 ---
-layout: default
 title: Items & Economy
-nav_order: 7
 ---
 
 # Items & Economy
 
-{: .note }
-> Source: CS2 build **25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 Economy definitions extracted from the content pack's `items_game.txt`: weapon / equipment items, their prefabs, paint kits (skins), sticker kits, music kits, and the rarity / quality scales.  Name tokens (`#SFUI_*`, `#PaintKit_*`, …) resolve to display strings via the localization table.
 
-## Items (2054)
+## Items
+
+2054 item definitions.
 
 | defIndex | Name token | Classname | Prefab | Item type |
 |----------|------------|-----------|--------|-----------|
-| 0 | `#SFUI_WPNHUD_Knife` | `weapon_knife` | `` |  |
-| 1 | `` | `` | `weapon_deagle_prefab` |  |
-| 2 | `` | `` | `weapon_elite_prefab` |  |
-| 3 | `` | `` | `weapon_fiveseven_prefab` |  |
-| 4 | `` | `` | `weapon_glock_prefab` |  |
-| 7 | `` | `` | `weapon_ak47_prefab` |  |
-| 8 | `` | `` | `weapon_aug_prefab` |  |
-| 9 | `` | `` | `weapon_awp_prefab` |  |
-| 10 | `` | `` | `weapon_famas_prefab` |  |
-| 11 | `` | `` | `weapon_g3sg1_prefab` |  |
-| 13 | `` | `` | `weapon_galilar_prefab` |  |
-| 14 | `` | `` | `weapon_m249_prefab` |  |
-| 16 | `` | `` | `weapon_m4a1_prefab` |  |
-| 17 | `` | `` | `weapon_mac10_prefab` |  |
-| 19 | `` | `` | `weapon_p90_prefab` |  |
-| 23 | `` | `` | `weapon_mp5sd_prefab` |  |
-| 24 | `` | `` | `weapon_ump45_prefab` |  |
-| 25 | `` | `` | `weapon_xm1014_prefab` |  |
-| 26 | `` | `` | `weapon_bizon_prefab` |  |
-| 27 | `` | `` | `weapon_mag7_prefab` |  |
-| 28 | `` | `` | `weapon_negev_prefab` |  |
-| 29 | `` | `` | `weapon_sawedoff_prefab` |  |
-| 30 | `` | `` | `weapon_tec9_prefab` |  |
-| 31 | `` | `` | `weapon_taser_prefab` |  |
-| 32 | `` | `` | `weapon_hkp2000_prefab` |  |
-| 33 | `` | `` | `weapon_mp7_prefab` |  |
-| 34 | `` | `` | `weapon_mp9_prefab` |  |
-| 35 | `` | `` | `weapon_nova_prefab` |  |
-| 36 | `` | `` | `weapon_p250_prefab` |  |
-| 38 | `` | `` | `weapon_scar20_prefab` |  |
-| 39 | `` | `` | `weapon_sg556_prefab` |  |
-| 40 | `` | `` | `weapon_ssg08_prefab` |  |
+| 0 | `#SFUI_WPNHUD_Knife` | `weapon_knife` |  |  |
+| 1 |  |  | `weapon_deagle_prefab` |  |
+| 2 |  |  | `weapon_elite_prefab` |  |
+| 3 |  |  | `weapon_fiveseven_prefab` |  |
+| 4 |  |  | `weapon_glock_prefab` |  |
+| 7 |  |  | `weapon_ak47_prefab` |  |
+| 8 |  |  | `weapon_aug_prefab` |  |
+| 9 |  |  | `weapon_awp_prefab` |  |
+| 10 |  |  | `weapon_famas_prefab` |  |
+| 11 |  |  | `weapon_g3sg1_prefab` |  |
+| 13 |  |  | `weapon_galilar_prefab` |  |
+| 14 |  |  | `weapon_m249_prefab` |  |
+| 16 |  |  | `weapon_m4a1_prefab` |  |
+| 17 |  |  | `weapon_mac10_prefab` |  |
+| 19 |  |  | `weapon_p90_prefab` |  |
+| 23 |  |  | `weapon_mp5sd_prefab` |  |
+| 24 |  |  | `weapon_ump45_prefab` |  |
+| 25 |  |  | `weapon_xm1014_prefab` |  |
+| 26 |  |  | `weapon_bizon_prefab` |  |
+| 27 |  |  | `weapon_mag7_prefab` |  |
+| 28 |  |  | `weapon_negev_prefab` |  |
+| 29 |  |  | `weapon_sawedoff_prefab` |  |
+| 30 |  |  | `weapon_tec9_prefab` |  |
+| 31 |  |  | `weapon_taser_prefab` |  |
+| 32 |  |  | `weapon_hkp2000_prefab` |  |
+| 33 |  |  | `weapon_mp7_prefab` |  |
+| 34 |  |  | `weapon_mp9_prefab` |  |
+| 35 |  |  | `weapon_nova_prefab` |  |
+| 36 |  |  | `weapon_p250_prefab` |  |
+| 38 |  |  | `weapon_scar20_prefab` |  |
+| 39 |  |  | `weapon_sg556_prefab` |  |
+| 40 |  |  | `weapon_ssg08_prefab` |  |
 | 41 | `#SFUI_WPNHUD_Knife` | `weapon_knifegg` | `melee` |  |
-| 42 | `#SFUI_WPNHUD_Knife` | `` | `melee` |  |
-| 43 | `` | `` | `weapon_flashbang_prefab` |  |
-| 44 | `` | `` | `weapon_hegrenade_prefab` |  |
-| 45 | `` | `` | `weapon_smokegrenade_prefab` |  |
-| 46 | `` | `` | `weapon_molotov_prefab` |  |
-| 47 | `` | `` | `weapon_decoy_prefab` |  |
-| 48 | `` | `` | `weapon_incgrenade_prefab` |  |
-| 49 | `#SFUI_WPNHUD_C4` | `` | `c4` |  |
+| 42 | `#SFUI_WPNHUD_Knife` |  | `melee` |  |
+| 43 |  |  | `weapon_flashbang_prefab` |  |
+| 44 |  |  | `weapon_hegrenade_prefab` |  |
+| 45 |  |  | `weapon_smokegrenade_prefab` |  |
+| 46 |  |  | `weapon_molotov_prefab` |  |
+| 47 |  |  | `weapon_decoy_prefab` |  |
+| 48 |  |  | `weapon_incgrenade_prefab` |  |
+| 49 | `#SFUI_WPNHUD_C4` |  | `c4` |  |
 | 50 | `#SFUI_WPNHUD_KEVLAR` | `item_kevlar` | `equipment` |  |
 | 51 | `#SFUI_WPNHUD_ASSAULTSUIT` | `item_assaultsuit` | `equipment` |  |
 | 52 | `#SFUI_WPNHUD_HEAVYASSAULTSUIT` | `item_heavyassaultsuit` | `equipment` |  |
-| 54 | `` | `item_nvgs` | `equipment` |  |
+| 54 |  | `item_nvgs` | `equipment` |  |
 | 55 | `#SFUI_WPNHUD_DEFUSER` | `item_defuser` | `equipment` |  |
 | 56 | `#SFUI_WPNHUD_CUTTERS` | `item_defuser` | `equipment` |  |
 | 57 | `#SFUI_WPNHUD_Healthshot` | `weapon_healthshot` | `weapon_healthshot_prefab` |  |
-| 58 | `#CSGO_Type_MusicKit` | `` | `musickit_prefab` |  |
-| 59 | `#SFUI_WPNHUD_Knife_T` | `` | `melee` |  |
-| 60 | `` | `` | `weapon_m4a1_silencer_prefab` |  |
-| 61 | `` | `` | `weapon_usp_silencer_prefab` |  |
-| 62 | `#CSGO_Recipe_TradeUp` | `` | `recipe` |  |
-| 63 | `` | `` | `weapon_cz75a_prefab` |  |
-| 64 | `` | `` | `weapon_revolver_prefab` |  |
-| 65 | `#CSGO_RemoveKeychainTool_Title` | `` | `recipe` |  |
-| 500 | `#SFUI_WPNHUD_KnifeBayonet` | `` | `melee_unusual` |  |
-| 503 | `#SFUI_WPNHUD_KnifeCSS` | `` | `melee_unusual` |  |
-| 505 | `#SFUI_WPNHUD_KnifeFlip` | `` | `melee_unusual` |  |
-| 506 | `#SFUI_WPNHUD_KnifeGut` | `` | `melee_unusual` |  |
-| 507 | `#SFUI_WPNHUD_KnifeKaram` | `` | `melee_unusual` |  |
-| 508 | `#SFUI_WPNHUD_KnifeM9` | `` | `melee_unusual` |  |
-| 509 | `#SFUI_WPNHUD_KnifeTactical` | `` | `melee_unusual` |  |
-| 512 | `#SFUI_WPNHUD_knife_falchion_advanced` | `` | `melee_unusual` |  |
-| 514 | `#SFUI_WPNHUD_knife_survival_bowie` | `` | `melee_unusual` |  |
-| 515 | `#SFUI_WPNHUD_Knife_Butterfly` | `` | `melee_unusual` |  |
-| 516 | `#SFUI_WPNHUD_knife_push` | `` | `melee_unusual` |  |
-| 517 | `#SFUI_WPNHUD_knife_cord` | `` | `melee_unusual` |  |
-| 518 | `#SFUI_WPNHUD_knife_canis` | `` | `melee_unusual` |  |
-| 519 | `#SFUI_WPNHUD_knife_ursus` | `` | `melee_unusual` |  |
-| 520 | `#SFUI_WPNHUD_knife_gypsy_jackknife` | `` | `melee_unusual` |  |
-| 521 | `#SFUI_WPNHUD_knife_outdoor` | `` | `melee_unusual` |  |
-| 522 | `#SFUI_WPNHUD_knife_stiletto` | `` | `melee_unusual` |  |
-| 523 | `#SFUI_WPNHUD_knife_widowmaker` | `` | `melee_unusual` |  |
-| 525 | `#SFUI_WPNHUD_knife_skeleton` | `` | `melee_unusual` |  |
-| 526 | `#SFUI_WPNHUD_knife_kukri` | `` | `melee_unusual` |  |
-| 874 | `#CSGO_CollectibleCoin_FiveYearService` | `` | `collectible_untradable_coin` |  |
-| 875 | `#CSGO_CollectibleCoin_DH2013_Champion` | `` | `majors_trophy` |  |
-| 876 | `#CSGO_CollectibleCoin_DH2013_Finalist` | `` | `majors_trophy` |  |
-| 877 | `#CSGO_CollectibleCoin_DH2013_SemiFinalist` | `` | `majors_trophy` |  |
-| 878 | `#CSGO_CollectibleCoin_DH2013_QuarterFinalist` | `` | `majors_trophy` |  |
-| 879 | `#CSGO_CollectibleCoin_Kat2014_Champion` | `` | `majors_trophy` |  |
-| 880 | `#CSGO_CollectibleCoin_Kat2014_Finalist` | `` | `majors_trophy` |  |
-| 881 | `#CSGO_CollectibleCoin_Kat2014_SemiFinalist` | `` | `majors_trophy` |  |
-| 882 | `#CSGO_CollectibleCoin_Kat2014_QuarterFinalist` | `` | `majors_trophy` |  |
-| 883 | `#CSGO_CollectibleCoin_Cologne2014_Champion` | `` | `majors_trophy` |  |
-| 884 | `#CSGO_CollectibleCoin_Cologne2014_Finalist` | `` | `majors_trophy` |  |
-| 885 | `#CSGO_CollectibleCoin_Cologne2014_SemiFinalist` | `` | `majors_trophy` |  |
-| 886 | `#CSGO_CollectibleCoin_Cologne2014_QuarterFinalist` | `` | `majors_trophy` |  |
-| 887 | `#CSGO_CollectibleCoin_Cologne2014_PickEmBronze` | `` | `pickem_trophy` |  |
-| 888 | `#CSGO_CollectibleCoin_Cologne2014_PickEmSilver` | `` | `pickem_trophy` |  |
-| 889 | `#CSGO_CollectibleCoin_Cologne2014_PickEmGold` | `` | `pickem_trophy` |  |
-| 890 | `#CSGO_CollectibleCoin_DHW2014_Champion` | `` | `majors_trophy` |  |
-| 891 | `#CSGO_CollectibleCoin_DHW2014_Finalist` | `` | `majors_trophy` |  |
-| 892 | `#CSGO_CollectibleCoin_DHW2014_SemiFinalist` | `` | `majors_trophy` |  |
-| 893 | `#CSGO_CollectibleCoin_DHW2014_QuarterFinalist` | `` | `majors_trophy` |  |
-| 894 | `#CSGO_CollectibleCoin_DHW2014_PickEmBronze` | `` | `pickem_trophy` |  |
-| 895 | `#CSGO_CollectibleCoin_DHW2014_PickEmSilver` | `` | `pickem_trophy` |  |
-| 896 | `#CSGO_CollectibleCoin_DHW2014_PickEmGold` | `` | `pickem_trophy` |  |
-| 897 | `#CSGO_CollectibleCoin_Kat2015_Champion` | `` | `majors_trophy` |  |
-| 898 | `#CSGO_CollectibleCoin_Kat2015_Finalist` | `` | `majors_trophy` |  |
-| 899 | `#CSGO_CollectibleCoin_Kat2015_SemiFinalist` | `` | `majors_trophy` |  |
-| 900 | `#CSGO_CollectibleCoin_Kat2015_QuarterFinalist` | `` | `majors_trophy` |  |
-| 901 | `#CSGO_CollectibleCoin_Kat2015_PickEmBronze` | `` | `pickem_trophy` |  |
-| 902 | `#CSGO_CollectibleCoin_Kat2015_PickEmSilver` | `` | `pickem_trophy` |  |
-| 903 | `#CSGO_CollectibleCoin_Kat2015_PickEmGold` | `` | `pickem_trophy` |  |
-| 904 | `#CSGO_CollectibleCoin_Cologne2015_Champion` | `` | `pickem_trophy` |  |
-| 905 | `#CSGO_CollectibleCoin_Cologne2015_Finalist` | `` | `majors_trophy` |  |
-| 906 | `#CSGO_CollectibleCoin_Cologne2015_SemiFinalist` | `` | `majors_trophy` |  |
-| 907 | `#CSGO_CollectibleCoin_Cologne2015_QuarterFinalist` | `` | `majors_trophy` |  |
-| 908 | `#CSGO_CollectibleCoin_Cologne2015_PickEmBronze` | `` | `majors_trophy` |  |
-| 909 | `#CSGO_CollectibleCoin_Cologne2015_PickEmSilver` | `` | `pickem_trophy` |  |
-| 910 | `#CSGO_CollectibleCoin_Cologne2015_PickEmGold` | `` | `pickem_trophy` |  |
-| 911 | `#CSGO_CollectibleCoin_Cluj2015_PickEmBronze` | `` | `pickem_trophy` |  |
-| 912 | `#CSGO_CollectibleCoin_Cluj2015_PickEmSilver` | `` | `pickem_trophy` |  |
-| 913 | `#CSGO_CollectibleCoin_Cluj2015_PickEmGold` | `` | `pickem_trophy` |  |
-| 914 | `#CSGO_CollectibleCoin_Cluj2015_FantasyBronze` | `` | `pickem_trophy` |  |
-| 915 | `#CSGO_CollectibleCoin_Cluj2015_FantasySilver` | `` | `pickem_trophy` |  |
-| 916 | `#CSGO_CollectibleCoin_Cluj2015_FantasyGold` | `` | `pickem_trophy` |  |
-| 917 | `#CSGO_CollectibleCoin_Cluj2015_Champion` | `` | `majors_trophy` |  |
-| 918 | `#CSGO_CollectibleCoin_Cluj2015_Finalist` | `` | `majors_trophy` |  |
-| 919 | `#CSGO_CollectibleCoin_Cluj2015_Semifinalist` | `` | `majors_trophy` |  |
-| 920 | `#CSGO_CollectibleCoin_Cluj2015_Quarterfinalist` | `` | `majors_trophy` |  |
-| 921 | `#CSGO_CollectibleCoin_Columbus2016_PickEmBronze` | `` | `pickem_trophy` |  |
-| 922 | `#CSGO_CollectibleCoin_Columbus2016_PickEmSilver` | `` | `pickem_trophy` |  |
-| 923 | `#CSGO_CollectibleCoin_Columbus2016_PickEmGold` | `` | `pickem_trophy` |  |
-| 924 | `#CSGO_CollectibleCoin_Columbus2016_FantasyBronze` | `` | `pickem_trophy` |  |
-| 925 | `#CSGO_CollectibleCoin_Columbus2016_FantasySilver` | `` | `pickem_trophy` |  |
-| 926 | `#CSGO_CollectibleCoin_Columbus2016_FantasyGold` | `` | `pickem_trophy` |  |
-| 927 | `#CSGO_CollectibleCoin_Columbus2016_Champion` | `` | `majors_trophy` |  |
-| 928 | `#CSGO_CollectibleCoin_Columbus2016_Finalist` | `` | `majors_trophy` |  |
-| 929 | `#CSGO_CollectibleCoin_Columbus2016_Semifinalist` | `` | `majors_trophy` |  |
-| 930 | `#CSGO_CollectibleCoin_Columbus2016_Quarterfinalist` | `` | `majors_trophy` |  |
-| 931 | `#CSGO_CollectibleCoin_Cologne2016_Champion` | `` | `majors_trophy` |  |
-| 932 | `#CSGO_CollectibleCoin_Cologne2016_Finalist` | `` | `majors_trophy` |  |
-| 933 | `#CSGO_CollectibleCoin_Cologne2016_Semifinalist` | `` | `majors_trophy` |  |
-| 934 | `#CSGO_CollectibleCoin_Cologne2016_Quarterfinalist` | `` | `majors_trophy` |  |
-| 935 | `#CSGO_CollectibleCoin_Cologne2016_PickEmBronze` | `` | `pickem_trophy` |  |
-| 936 | `#CSGO_CollectibleCoin_Cologne2016_PickEmSilver` | `` | `pickem_trophy` |  |
-| 937 | `#CSGO_CollectibleCoin_Cologne2016_PickEmGold` | `` | `pickem_trophy` |  |
-| 938 | `#CSGO_CollectibleCoin_Cologne2016_FantasyBronze` | `` | `pickem_trophy` |  |
-| 939 | `#CSGO_CollectibleCoin_Cologne2016_FantasySilver` | `` | `pickem_trophy` |  |
-| 940 | `#CSGO_CollectibleCoin_Cologne2016_FantasyGold` | `` | `pickem_trophy` |  |
-| 941 | `#CSGO_CollectibleCoin_Atlanta2017_Champion` | `` | `majors_trophy` |  |
-| 942 | `#CSGO_CollectibleCoin_Atlanta2017_Finalist` | `` | `majors_trophy` |  |
-| 943 | `#CSGO_CollectibleCoin_Atlanta2017_Semifinalist` | `` | `majors_trophy` |  |
-| 944 | `#CSGO_CollectibleCoin_Atlanta2017_Quarterfinalist` | `` | `majors_trophy` |  |
-| 945 | `#CSGO_CollectibleCoin_Atlanta2017_PickEmBronze` | `` | `pickem_trophy` |  |
-| 946 | `#CSGO_CollectibleCoin_Atlanta2017_PickEmSilver` | `` | `pickem_trophy` |  |
-| 947 | `#CSGO_CollectibleCoin_Atlanta2017_PickEmGold` | `` | `pickem_trophy` |  |
-| 948 | `#CSGO_CollectibleCoin_Krakow2017_Champion` | `` | `majors_trophy` |  |
-| 949 | `#CSGO_CollectibleCoin_Krakow2017_Finalist` | `` | `majors_trophy` |  |
-| 950 | `#CSGO_CollectibleCoin_Krakow2017_Semifinalist` | `` | `majors_trophy` |  |
-| 951 | `#CSGO_CollectibleCoin_Krakow2017_Quarterfinalist` | `` | `majors_trophy` |  |
-| 952 | `#CSGO_CollectibleCoin_Krakow2017_PickEmBronze` | `` | `pickem_trophy` |  |
-| 953 | `#CSGO_CollectibleCoin_Krakow2017_PickEmSilver` | `` | `pickem_trophy` |  |
-| 954 | `#CSGO_CollectibleCoin_Krakow2017_PickEmGold` | `` | `pickem_trophy` |  |
-| 955 | `#CSGO_CollectibleCoin_Boston2018_Champion` | `` | `majors_trophy` |  |
-| 956 | `#CSGO_CollectibleCoin_Boston2018_Finalist` | `` | `majors_trophy` |  |
-| 957 | `#CSGO_CollectibleCoin_Boston2018_Semifinalist` | `` | `majors_trophy` |  |
-| 958 | `#CSGO_CollectibleCoin_Boston2018_Quarterfinalist` | `` | `majors_trophy` |  |
-| 959 | `#CSGO_CollectibleCoin_Boston2018_PickEmBronze` | `` | `pickem_trophy` |  |
-| 960 | `#CSGO_CollectibleCoin_Boston2018_PickEmSilver` | `` | `pickem_trophy` |  |
-| 961 | `#CSGO_CollectibleCoin_Boston2018_PickEmGold` | `` | `pickem_trophy` |  |
-| 962 | `#CSGO_CollectibleCoin_London2018_Champion` | `` | `majors_trophy` |  |
-| 963 | `#CSGO_CollectibleCoin_London2018_Finalist` | `` | `majors_trophy` |  |
-| 964 | `#CSGO_CollectibleCoin_London2018_Semifinalist` | `` | `majors_trophy` |  |
-| 965 | `#CSGO_CollectibleCoin_London2018_Quarterfinalist` | `` | `majors_trophy` |  |
-| 966 | `#CSGO_CollectibleCoin_London2018_PickEmBronze` | `` | `pickem_trophy` |  |
-| 967 | `#CSGO_CollectibleCoin_London2018_PickEmSilver` | `` | `pickem_trophy` |  |
-| 968 | `#CSGO_CollectibleCoin_London2018_PickEmGold` | `` | `pickem_trophy` |  |
-| 969 | `#CSGO_CollectibleCoin_TenYearService` | `` | `collectible_untradable_coin` |  |
-| 970 | `#CSGO_CollectibleCoin_FortiusQuoFidelius` | `` | `collectible_untradable_coin` |  |
-| 971 | `#CSGO_CollectibleCoin_Katowice2019_Champion` | `` | `majors_trophy` |  |
-| 972 | `#CSGO_CollectibleCoin_Katowice2019_Finalist` | `` | `majors_trophy` |  |
-| 973 | `#CSGO_CollectibleCoin_Katowice2019_Semifinalist` | `` | `majors_trophy` |  |
-| 974 | `#CSGO_CollectibleCoin_Katowice2019_Quarterfinalist` | `` | `majors_trophy` |  |
-| 975 | `#CSGO_CollectibleCoin_Berlin2019_Champion` | `` | `majors_trophy` |  |
-| 976 | `#CSGO_CollectibleCoin_Berlin2019_Finalist` | `` | `majors_trophy` |  |
-| 977 | `#CSGO_CollectibleCoin_Berlin2019_Semifinalist` | `` | `majors_trophy` |  |
-| 978 | `#CSGO_CollectibleCoin_Berlin2019_Quarterfinalist` | `` | `majors_trophy` |  |
-| 979 | `#CSGO_CollectibleCoin_Stockh2021_Champion` | `` | `majors_trophy` |  |
-| 980 | `#CSGO_CollectibleCoin_Stockh2021_Finalist` | `` | `majors_trophy` |  |
-| 981 | `#CSGO_CollectibleCoin_Stockh2021_Semifinalist` | `` | `majors_trophy` |  |
-| 982 | `#CSGO_CollectibleCoin_Stockh2021_Quarterfinalist` | `` | `majors_trophy` |  |
-| 983 | `#CSGO_CollectibleCoin_Antwerp2022_Champion` | `` | `majors_trophy` |  |
-| 984 | `#CSGO_CollectibleCoin_Antwerp2022_Finalist` | `` | `majors_trophy` |  |
-| 985 | `#CSGO_CollectibleCoin_Antwerp2022_Semifinalist` | `` | `majors_trophy` |  |
-| 986 | `#CSGO_CollectibleCoin_Antwerp2022_Quarterfinalist` | `` | `majors_trophy` |  |
-| 987 | `#CSGO_CollectibleCoin_CsgoTenYearAnniversaryMemorabilia` | `` | `collectible_untradable_coin` |  |
-| 988 | `#CSGO_CollectibleCoin_Rio2022_Champion` | `` | `majors_trophy` |  |
-| 989 | `#CSGO_CollectibleCoin_Rio2022_Finalist` | `` | `majors_trophy` |  |
-| 990 | `#CSGO_CollectibleCoin_Rio2022_Semifinalist` | `` | `majors_trophy` |  |
-| 991 | `#CSGO_CollectibleCoin_Rio2022_Quarterfinalist` | `` | `majors_trophy` |  |
-| 992 | `#CSGO_CollectibleCoin_Paris2023_Champion` | `` | `majors_trophy` |  |
-| 993 | `#CSGO_CollectibleCoin_Paris2023_Finalist` | `` | `majors_trophy` |  |
-| 994 | `#CSGO_CollectibleCoin_Paris2023_Semifinalist` | `` | `majors_trophy` |  |
-| 995 | `#CSGO_CollectibleCoin_Paris2023_Quarterfinalist` | `` | `majors_trophy` |  |
-| 996 | `#CSGO_CollectibleCoin_CoinCsgo` | `` | `collectible_untradable_coin` |  |
-| 1000 | `#CSGO_Ticket_CommunitySeasonOneSpring2013` | `` | `season_pass` |  |
-| 1001 | `#CSGO_Collectible_CommunitySeasonOneSpring2013_Coin1` | `` | `season1_coin` |  |
-| 1002 | `#CSGO_Collectible_CommunitySeasonOneSpring2013_Coin2` | `` | `season1_coin` |  |
-| 1003 | `#CSGO_Collectible_CommunitySeasonOneSpring2013_Coin3` | `` | `season1_coin` |  |
-| 1004 | `#CSGO_Collectible_MapTokenMuseum` | `` | `map_token` |  |
-| 1005 | `#CSGO_Collectible_MapTokenDowntown` | `` | `map_token` |  |
-| 1006 | `#CSGO_Collectible_MapTokenThunder` | `` | `map_token` |  |
-| 1007 | `#CSGO_Collectible_MapTokenFavela` | `` | `map_token` |  |
-| 1008 | `#CSGO_Collectible_MapTokenMotel` | `` | `map_token` |  |
-| 1009 | `#CSGO_Collectible_MapTokenSeaside` | `` | `map_token` |  |
-| 1010 | `#CSGO_Collectible_MapTokenLibrary` | `` | `map_token` |  |
-| 1012 | `#CSGO_Ticket_CommunitySeasonTwoAutumn2013` | `` | `season_pass` |  |
-| 1013 | `#CSGO_Collectible_CommunitySeasonTwoAutumn2013_Coin1` | `` | `season2_coin` |  |
-| 1014 | `#CSGO_Collectible_CommunitySeasonTwoAutumn2013_Coin2` | `` | `season2_coin` |  |
-| 1015 | `#CSGO_Collectible_CommunitySeasonTwoAutumn2013_Coin3` | `` | `season2_coin` |  |
-| 1016 | `#CSGO_Collectible_MapTokenAgency` | `` | `map_token` |  |
-| 1017 | `#CSGO_Collectible_MapTokenAli` | `` | `map_token` |  |
-| 1018 | `#CSGO_Collectible_MapTokenCache` | `` | `map_token` |  |
-| 1019 | `#CSGO_Collectible_MapTokenChinatown` | `` | `map_token` |  |
-| 1020 | `#CSGO_Collectible_MapTokenGwalior` | `` | `map_token` |  |
-| 1021 | `#CSGO_Collectible_MapTokenRuins` | `` | `map_token` |  |
-| 1022 | `#CSGO_Collectible_MapTokenSiege` | `` | `map_token` |  |
-| 1023 | `#CSGO_Ticket_CommunitySeasonThreeSpring2014` | `` | `season_pass` |  |
-| 1024 | `#CSGO_Collectible_CommunitySeasonThreeSpring2014_Coin1` | `` | `season3_coin` |  |
-| 1025 | `#CSGO_Collectible_CommunitySeasonThreeSpring2014_Coin2` | `` | `season3_coin` |  |
-| 1026 | `#CSGO_Collectible_CommunitySeasonThreeSpring2014_Coin3` | `` | `season3_coin` |  |
-| 1027 | `#CSGO_Ticket_CommunitySeasonFourSummer2014` | `` | `season_pass` |  |
-| 1028 | `#CSGO_Collectible_CommunitySeasonFourSummer2014_Coin1` | `` | `season4_coin` |  |
-| 1029 | `#CSGO_Collectible_CommunitySeasonFourSummer2014_Coin2` | `` | `season4_coin` |  |
-| 1030 | `#CSGO_Collectible_CommunitySeasonFourSummer2014_Coin3` | `` | `season4_coin` |  |
-| 1031 | `#CSGO_Collectible_MapTokenCastle` | `` | `map_token` |  |
-| 1032 | `#CSGO_Collectible_MapTokenBlackGold` | `` | `map_token` |  |
-| 1033 | `#CSGO_Collectible_MapTokenRush` | `` | `map_token` |  |
-| 1034 | `#CSGO_Collectible_MapTokenMist` | `` | `map_token` |  |
-| 1035 | `#CSGO_Collectible_MapTokenInsertion` | `` | `map_token` |  |
-| 1036 | `#CSGO_Collectible_MapTokenOvergrown` | `` | `map_token` |  |
-| 1037 | `#CSGO_Collectible_MapTokenMarquis` | `` | `map_token` |  |
-| 1038 | `#CSGO_Collectible_MapTokenWorkout` | `` | `map_token` |  |
-| 1039 | `#CSGO_Collectible_MapTokenBackalley` | `` | `map_token` |  |
-| 1040 | `#CSGO_Collectible_MapTokenSeason` | `` | `map_token` |  |
-| 1041 | `#CSGO_Collectible_MapTokenBazaar` | `` | `map_token` |  |
-| 1042 | `#CSGO_Collectible_MapTokenFacade` | `` | `map_token` |  |
-| 1043 | `#CSGO_Collectible_MapTokenLog` | `` | `map_token` |  |
-| 1044 | `#CSGO_Collectible_MapTokenRails` | `` | `map_token` |  |
-| 1045 | `#CSGO_Collectible_MapTokenResort` | `` | `map_token` |  |
-| 1046 | `#CSGO_Collectible_MapTokenZoo` | `` | `map_token` |  |
-| 1047 | `#CSGO_Collectible_MapTokenSantorini` | `` | `map_token` |  |
-| 1048 | `#CSGO_Collectible_MapTokenCoast` | `` | `map_token` |  |
-| 1049 | `#CSGO_Collectible_MapTokenMikla` | `` | `map_token` |  |
-| 1050 | `#CSGO_Collectible_MapTokenRoyal` | `` | `map_token` |  |
-| 1051 | `#CSGO_Collectible_MapTokenEmpire` | `` | `map_token` |  |
-| 1052 | `#CSGO_Collectible_MapTokenTulip` | `` | `map_token` |  |
-| 1053 | `#CSGO_Collectible_MapTokenCruise` | `` | `map_token` |  |
-| 1054 | `#CSGO_Collectible_MapTokenSubzero` | `` | `map_token` |  |
-| 1055 | `#CSGO_Collectible_MapTokenBiome` | `` | `map_token` |  |
-| 1056 | `#CSGO_Collectible_MapTokenAbbey` | `` | `map_token` |  |
-| 1057 | `#CSGO_Collectible_MapTokenRuby` | `` | `map_token` |  |
-| 1058 | `#CSGO_Collectible_MapTokenBreach` | `` | `map_token` |  |
-| 1059 | `#CSGO_Collectible_MapTokenStudio` | `` | `map_token` |  |
-| 1060 | `#CSGO_Collectible_MapTokenJungle` | `` | `map_token` |  |
-| 1061 | `#CSGO_Collectible_MapTokenAnubis` | `` | `map_token` |  |
-| 1062 | `#CSGO_Collectible_MapTokenChlorine` | `` | `map_token` |  |
-| 1063 | `#CSGO_Collectible_MapTokenMutiny` | `` | `map_token` |  |
-| 1064 | `#CSGO_Collectible_MapTokenSwamp` | `` | `map_token` |  |
-| 1065 | `#CSGO_Collectible_MapTokenFrostbite` | `` | `map_token` |  |
-| 1066 | `#CSGO_Collectible_MapTokenEngage` | `` | `map_token` |  |
-| 1067 | `#CSGO_Collectible_MapTokenApollo` | `` | `map_token` |  |
-| 1068 | `#CSGO_Collectible_MapTokenGuard` | `` | `map_token` |  |
-| 1069 | `#CSGO_Collectible_MapTokenElysion` | `` | `map_token` |  |
-| 1070 | `#CSGO_Collectible_MapTokenGrind` | `` | `map_token` |  |
-| 1071 | `#CSGO_Collectible_MapTokenMocha` | `` | `map_token` |  |
-| 1072 | `#CSGO_Collectible_MapTokenCalavera` | `` | `map_token` |  |
-| 1073 | `#CSGO_Collectible_MapTokenPitstop` | `` | `map_token` |  |
-| 1074 | `#CSGO_Collectible_MapTokenBasalt` | `` | `map_token` |  |
-| 1075 | `#CSGO_Collectible_MapTokenInsertion2` | `` | `map_token` |  |
-| 1076 | `#CSGO_Collectible_MapTokenRavine` | `` | `map_token` |  |
-| 1077 | `#CSGO_Collectible_MapTokenExtraction` | `` | `map_token` |  |
-| 1078 | `#CSGO_Collectible_MapTokenCounty` | `` | `map_token` |  |
-| 1079 | `#CSGO_Collectible_MapTokenIris` | `` | `map_token` |  |
-| 1080 | `#CSGO_Collectible_MapTokenClimb` | `` | `map_token` |  |
-| 1081 | `#CSGO_Collectible_MapTokenCrete` | `` | `map_token` |  |
-| 1082 | `#CSGO_Collectible_MapTokenHive` | `` | `map_token` |  |
-| 1083 | `#CSGO_Collectible_MapTokenVineyard` | `` | `map_token` |  |
-| 1084 | `#CSGO_Collectible_MapTokenEmber` | `` | `map_token` |  |
-| 1085 | `#CSGO_Collectible_MapTokenTuscan` | `` | `map_token` |  |
-| 1086 | `#CSGO_Collectible_MapTokenPrime` | `` | `map_token` |  |
-| 1087 | `#CSGO_Collectible_MapTokenBlagai` | `` | `map_token` |  |
-| 1088 | `#CSGO_Collectible_MapTokenBoyard` | `` | `map_token` |  |
-| 1089 | `#CSGO_Collectible_MapTokenChalice` | `` | `map_token` |  |
-| 1200 | `#CSGO_Tool_Name_Tag` | `` | `valve csgo_tool` | #CSGO_Tool_Name_TagTag |
-| 1201 | `#CSGO_Tool_Casket_Tag` | `` | `valve csgo_tool` |  |
-| 1203 | `` | `` | `valve weapon_case_key` |  |
-| 1204 | `#CSGO_esports_crate_key_1` | `` | `valve weapon_case_key` |  |
-| 1209 | `#CSGO_Tool_Sticker` | `` | `csgo_tool` | #CSGO_Tool_Sticker |
-| 1210 | `#CSGO_Tool_Gift1Player` | `` | `valve csgo_tool` | #CSGO_Tool_GiftTag |
-| 1211 | `#CSGO_Tool_Gift9Players` | `` | `valve csgo_tool` | #CSGO_Tool_GiftTag |
-| 1212 | `#CSGO_sticker_crate_key_1` | `` | `valve weapon_case_key` |  |
-| 1214 | `#CSGO_community_crate_key_1` | `` | `weapon_case_key` |  |
-| 1215 | `#CSGO_Tool_Gift25Spectators` | `` | `valve csgo_tool` | #CSGO_Tool_GiftTag |
-| 1303 | `#CSGO_community_crate_key_2` | `` | `weapon_case_key` |  |
-| 1304 | `#CSGO_sticker_crate_key_community01` | `` | `weapon_case_key` |  |
-| 1305 | `#CSGO_community_crate_key_3` | `` | `weapon_case_key` |  |
-| 1306 | `#quest` | `` | `quest_prefab` |  |
-| 1307 | `#CSGO_community_crate_key_3` | `` | `weapon_case_key` |  |
-| 1308 | `#CSGO_sticker_crate_key_community01` | `` | `weapon_case_key` |  |
-| 1309 | `#CSGO_community_crate_key_4` | `` | `weapon_case_key` |  |
-| 1310 | `#CSGO_community_crate_key_4` | `` | `weapon_case_key` |  |
-| 1311 | `#CSGO_community_crate_key_4` | `` | `weapon_case_key` |  |
-| 1313 | `#CSGO_community_crate_key_4` | `` | `weapon_case_key` |  |
-| 1314 | `` | `` | `musickit_prefab` |  |
-| 1315 | `#CSGO_Ticket_CommunitySeasonFiveSummer2014` | `` | `season_pass` |  |
-| 1316 | `#CSGO_Collectible_CommunitySeasonFiveSummer2014_Coin1` | `` | `season5_coin` |  |
-| 1317 | `#CSGO_Collectible_CommunitySeasonFiveSummer2014_Coin2` | `` | `season5_coin` |  |
-| 1318 | `#CSGO_Collectible_CommunitySeasonFiveSummer2014_Coin3` | `` | `season5_coin` |  |
-| 1320 | `#csgo_campaign_maghreb` | `` | `valve campaign_prefab` |  |
-| 1321 | `#csgo_campaign_eurasia` | `` | `valve campaign_prefab` |  |
-| 1322 | `#CSGO_community_crate_key_5` | `` | `weapon_case_key` |  |
-| 1323 | `#CSGO_community_crate_key_6` | `` | `weapon_case_key` |  |
-| 1324 | `#CSGO_tool_stattrak_swap` | `` | `valve csgo_tool` |  |
-| 1325 | `#CSGO_community_crate_key_7` | `` | `weapon_case_key` |  |
-| 1326 | `#CSGO_Ticket_CommunitySeasonSix2015` | `` | `season_pass` |  |
-| 1327 | `#CSGO_Collectible_CommunitySeasonSix2015_Coin1` | `` | `season6_coin` |  |
-| 1328 | `#CSGO_Collectible_CommunitySeasonSix2015_Coin2` | `` | `season6_coin` |  |
-| 1329 | `#CSGO_Collectible_CommunitySeasonSix2015_Coin3` | `` | `season6_coin` |  |
-| 1330 | `#CSGO_community_crate_key_8` | `` | `weapon_case_key` |  |
-| 1331 | `#CSGO_Collectible_GlobalGeneral2015` | `` | `prestige_coin` |  |
-| 1332 | `#CSGO_Collectible_GlobalGeneral2015` | `` | `prestige_coin` |  |
-| 1333 | `#CSGO_community_crate_key_9` | `` | `weapon_case_key` |  |
-| 1334 | `#CSGO_crate_community_10_key` | `` | `weapon_case_key` |  |
-| 1335 | `#CSGO_Ticket_CommunitySeasonSeven2016` | `` | `season_pass` |  |
-| 1336 | `#CSGO_Collectible_CommunitySeasonSeven2016_Coin1` | `` | `season7_coin` |  |
-| 1337 | `#CSGO_Collectible_CommunitySeasonSeven2016_Coin2` | `` | `season7_coin` |  |
-| 1338 | `#CSGO_Collectible_CommunitySeasonSeven2016_Coin3` | `` | `season7_coin` |  |
-| 1339 | `#CSGO_Collectible_GlobalGeneral2016` | `` | `prestige_coin` |  |
-| 1340 | `#CSGO_Collectible_GlobalGeneral2016` | `` | `prestige_coin` |  |
-| 1341 | `#CSGO_Collectible_GlobalGeneral2016` | `` | `prestige_coin` |  |
-| 1342 | `#CSGO_Collectible_GlobalGeneral2016` | `` | `prestige_coin` |  |
-| 1343 | `#CSGO_Collectible_GlobalGeneral2016` | `` | `prestige_coin` |  |
-| 1344 | `#CSGO_Collectible_GlobalGeneral2016` | `` | `prestige_coin` |  |
-| 1347 | `#CSGO_crate_key_community_12` | `` | `weapon_case_key` |  |
-| 1348 | `#CSGO_Tool_Spray` | `` | `csgo_tool` | #CSGO_Type_Spray |
-| 1349 | `#CSGO_Tool_SprayPaint` | `` | `csgo_tool` | #CSGO_Type_Spray |
-| 1350 | `#CSGO_crate_key_community_13` | `` | `weapon_case_key` |  |
-| 1351 | `#CSGO_crate_key_gamma_2` | `` | `weapon_case_key` |  |
-| 1352 | `#CSGO_Ticket_CommunitySeasonEight2017` | `` | `season_pass` |  |
-| 1353 | `#CSGO_Purchasable_Game_License` | `` | `valve collectible_untradable_coin` |  |
-| 1354 | `#CSGO_Purchasable_XpShop_Ticket` | `` | `valve season_pass` |  |
-| 1355 | `#CSGO_Tool_Keychain` | `` | `csgo_tool` | #CSGO_Tool_Keychain |
-| 1356 | `#CSGO_crate_key_community_15` | `` | `weapon_case_key` |  |
-| 1357 | `#CSGO_Collectible_GlobalGeneral2017` | `` | `prestige_coin` |  |
-| 1358 | `#CSGO_Collectible_GlobalGeneral2017` | `` | `prestige_coin` |  |
-| 1359 | `#CSGO_Collectible_GlobalGeneral2017` | `` | `prestige_coin` |  |
-| 1360 | `#CSGO_Collectible_GlobalGeneral2017` | `` | `prestige_coin` |  |
-| 1361 | `#CSGO_Collectible_GlobalGeneral2017` | `` | `prestige_coin` |  |
-| 1362 | `#CSGO_Collectible_GlobalGeneral2017` | `` | `prestige_coin` |  |
-| 1363 | `#CSGO_Collectible_GlobalGeneral2017` | `` | `prestige_coin` |  |
-| 1364 | `#CSGO_crate_key_community_16` | `` | `weapon_case_key` |  |
-| 1365 | `#CSGO_crate_key_community_17` | `` | `weapon_case_key` |  |
-| 1366 | `#CSGO_crate_key_community_18` | `` | `weapon_case_key` |  |
-| 1367 | `#CSGO_Collectible_GlobalGeneral2018` | `` | `prestige_coin` |  |
-| 1368 | `#CSGO_Collectible_GlobalGeneral2018` | `` | `prestige_coin` |  |
-| 1369 | `#CSGO_Collectible_GlobalGeneral2018` | `` | `prestige_coin` |  |
-| 1370 | `#CSGO_Collectible_GlobalGeneral2018` | `` | `prestige_coin` |  |
-| 1371 | `#CSGO_Collectible_GlobalGeneral2018` | `` | `prestige_coin` |  |
-| 1372 | `#CSGO_Collectible_GlobalGeneral2018` | `` | `prestige_coin` |  |
-| 1373 | `#CSGO_crate_key_community_19` | `` | `weapon_case_key` |  |
-| 1374 | `#CSGO_crate_key_community_20` | `` | `weapon_case_key` |  |
-| 1375 | `#CSGO_crate_key_community_21` | `` | `weapon_case_key` |  |
-| 1376 | `#CSGO_Collectible_GlobalGeneral2019` | `` | `prestige_coin` |  |
-| 1377 | `#CSGO_Collectible_GlobalGeneral2019` | `` | `prestige_coin` |  |
-| 1378 | `#CSGO_Collectible_GlobalGeneral2019` | `` | `prestige_coin` |  |
-| 1379 | `#CSGO_Collectible_GlobalGeneral2019` | `` | `prestige_coin` |  |
-| 1380 | `#CSGO_Collectible_GlobalGeneral2019` | `` | `prestige_coin` |  |
-| 1381 | `#CSGO_Collectible_GlobalGeneral2019` | `` | `prestige_coin` |  |
-| 1383 | `#CSGO_crate_key_community_22` | `` | `weapon_case_key` |  |
-| 1384 | `#CSGO_crate_key_community_23` | `` | `weapon_case_key` |  |
-| 1385 | `#CSGO_crate_key_community_24` | `` | `weapon_case_key` |  |
-| 1386 | `#CSGO_crate_key_community_25` | `` | `weapon_case_key` |  |
-| 1387 | `#CSGO_crate_key_community_26` | `` | `weapon_case_key` |  |
-| 1388 | `#CSGO_crate_key_community_27` | `` | `weapon_case_key` |  |
-| 1389 | `#CSGO_crate_key_community_28` | `` | `weapon_case_key` |  |
-| 1390 | `#CSGO_crate_key_community_29` | `` | `weapon_case_key` |  |
-| 1391 | `#CSGO_crate_key_community_30` | `` | `valve weapon_case_key` |  |
-| 1392 | `#CSGO_crate_key_community_31` | `` | `weapon_case_key` |  |
-| 1393 | `#CSGO_crate_key_community_32` | `` | `weapon_case_key` |  |
-| 1394 | `#CSGO_crate_key_community_33` | `` | `weapon_case_key` |  |
-| 4000 | `#CSGO_Tool_Keychain` | `` | `valve csgo_tool` | #CSGO_Tool_Keychain |
-| 4001 | `#CSGO_crate_valve_1` | `` | `weapon_case` |  |
-| 4002 | `#CSGO_crate_esports_2013` | `` | `weapon_case` |  |
-| 4003 | `#CSGO_crate_operation_ii` | `` | `weapon_case` |  |
-| 4004 | `#CSGO_crate_valve_2` | `` | `weapon_case` |  |
-| 4005 | `#CSGO_crate_esports_2013_winter` | `` | `weapon_case` |  |
-| 4006 | `#CSGO_crate_dhw13_promo` | `` | `weapon_case_souvenirpkg` |  |
-| 4007 | `#CSGO_crate_sticker_pack01` | `` | `sticker_capsule` |  |
-| 4009 | `#CSGO_crate_community_1` | `` | `weapon_case` |  |
-| 4010 | `#CSGO_crate_valve_3` | `` | `weapon_case` |  |
-| 4011 | `#CSGO_crate_community_2` | `` | `weapon_case` |  |
-| 4012 | `#CSGO_crate_sticker_pack02` | `` | `sticker_capsule` |  |
-| 4013 | `#CSGO_crate_ems14_promo` | `` | `weapon_case_souvenirpkg` |  |
-| 4014 | `#CSGO_crate_sticker_pack_kat2014_01` | `` | `sticker_capsule` |  |
-| 4015 | `#CSGO_crate_sticker_pack_kat2014_02` | `` | `sticker_capsule` |  |
-| 4016 | `#CSGO_crate_sticker_pack_community01` | `` | `sticker_capsule` |  |
-| 4017 | `#CSGO_crate_community_3` | `` | `weapon_case` |  |
-| 4018 | `#CSGO_crate_community_4` | `` | `weapon_case` |  |
-| 4019 | `#CSGO_crate_esports_2014_summer` | `` | `weapon_case` |  |
-| 4020 | `#CSGO_crate_sticker_pack_cologne2014_01` | `` | `sticker_capsule` |  |
-| 4021 | `#CSGO_crate_sticker_pack_cologne2014_02` | `` | `sticker_capsule` |  |
-| 4022 | `#CSGO_crate_esl14_promo_de_dust2` | `` | `weapon_case_souvenirpkg` |  |
-| 4023 | `#CSGO_crate_esl14_promo_de_inferno` | `` | `weapon_case_souvenirpkg` |  |
-| 4024 | `#CSGO_crate_esl14_promo_de_mirage` | `` | `weapon_case_souvenirpkg` |  |
-| 4025 | `#CSGO_crate_esl14_promo_de_nuke` | `` | `weapon_case_souvenirpkg` |  |
-| 4026 | `#CSGO_crate_esl14_promo_de_cache` | `` | `weapon_case_souvenirpkg` |  |
-| 4027 | `#CSGO_crate_esl14_promo_de_cbble` | `` | `weapon_case_souvenirpkg` |  |
-| 4028 | `#CSGO_crate_esl14_promo_de_overpass` | `` | `weapon_case_souvenirpkg` |  |
-| 4029 | `#CSGO_crate_operation_vanguard` | `` | `weapon_case` |  |
-| 4030 | `#CSGO_crate_sticker_pack_dhw2014_01` | `` | `sticker_capsule` |  |
-| 4031 | `#CSGO_crate_dhw14_promo_de_dust2` | `` | `weapon_case_souvenirpkg` |  |
-| 4032 | `#CSGO_crate_dhw14_promo_de_inferno` | `` | `weapon_case_souvenirpkg` |  |
-| 4033 | `#CSGO_crate_dhw14_promo_de_mirage` | `` | `weapon_case_souvenirpkg` |  |
-| 4034 | `#CSGO_crate_dhw14_promo_de_nuke` | `` | `weapon_case_souvenirpkg` |  |
-| 4035 | `#CSGO_crate_dhw14_promo_de_cache` | `` | `weapon_case_souvenirpkg` |  |
-| 4036 | `#CSGO_crate_dhw14_promo_de_cbble` | `` | `weapon_case_souvenirpkg` |  |
-| 4037 | `#CSGO_crate_dhw14_promo_de_overpass` | `` | `weapon_case_souvenirpkg` |  |
-| 4038 | `#StickerKit_dhw2014_fnatic` | `` | `dhw14_sticker_capsule_prefab` |  |
-| 4039 | `#StickerKit_dhw2014_cloud9` | `` | `dhw14_sticker_capsule_prefab` |  |
-| 4040 | `#CSGO_crate_sticker_pack_cologne2026_all` | `` | `cologne2026_sticker_capsule_prefab volatile_pricing_stickercap1` |  |
-| 4041 | `#StickerKit_dhw2014_ninjasinpyjamas` | `` | `dhw14_sticker_capsule_prefab` |  |
-| 4042 | `#StickerKit_dhw2014_virtuspro` | `` | `dhw14_sticker_capsule_prefab` |  |
-| 4043 | `#StickerKit_dhw2014_navi` | `` | `dhw14_sticker_capsule_prefab` |  |
-| 4045 | `#StickerKit_dhw2014_teamdignitas` | `` | `dhw14_sticker_capsule_prefab` |  |
-| 4046 | `#StickerKit_dhw2014_bravadogaming` | `` | `dhw14_sticker_capsule_prefab` |  |
-| 4047 | `#StickerKit_dhw2014_escgaming` | `` | `dhw14_sticker_capsule_prefab` |  |
-| 4048 | `#StickerKit_dhw2014_hellraisers` | `` | `dhw14_sticker_capsule_prefab` |  |
-| 4049 | `#StickerKit_dhw2014_myxmg` | `` | `dhw14_sticker_capsule_prefab` |  |
-| 4050 | `#StickerKit_dhw2014_ibuypower` | `` | `dhw14_sticker_capsule_prefab` |  |
-| 4051 | `#StickerKit_dhw2014_teamldlc` | `` | `dhw14_sticker_capsule_prefab` |  |
-| 4052 | `#StickerKit_dhw2014_pentasports` | `` | `dhw14_sticker_capsule_prefab` |  |
-| 4053 | `#StickerKit_dhw2014_planetkeydynamics` | `` | `dhw14_sticker_capsule_prefab` |  |
-| 4054 | `#StickerKit_dhw2014_dhw` | `` | `dhw14_sticker_capsule_prefab` |  |
-| 4055 | `#StickerKit_dhw2014_3dmax` | `` | `dhw14_sticker_capsule_prefab` |  |
-| 4056 | `#StickerKit_dhw2014_copenhagenwolves` | `` | `dhw14_sticker_capsule_prefab` |  |
-| 4057 | `#StickerKit_dhw2014_datteam` | `` | `dhw14_sticker_capsule_prefab` |  |
-| 4058 | `#StickerKit_dhw2014_londonconspiracy` | `` | `dhw14_sticker_capsule_prefab` |  |
-| 4059 | `#StickerKit_dhw2014_mousesports` | `` | `dhw14_sticker_capsule_prefab` |  |
-| 4060 | `#StickerKit_dhw2014_flipsid3` | `` | `dhw14_sticker_capsule_prefab` |  |
-| 4061 | `#CSGO_crate_community_6` | `` | `weapon_case` |  |
-| 4062 | `#StickerKit_eslkatowice2015_3dmax` | `` | `eslkatowice2015_sticker_capsule_prefab` |  |
-| 4063 | `#StickerKit_eslkatowice2015_cloud9` | `` | `eslkatowice2015_sticker_capsule_prefab` |  |
-| 4064 | `#StickerKit_eslkatowice2015_counterlogic` | `` | `eslkatowice2015_sticker_capsule_prefab` |  |
-| 4065 | `#StickerKit_eslkatowice2015_flipsid3` | `` | `eslkatowice2015_sticker_capsule_prefab` |  |
-| 4066 | `#StickerKit_eslkatowice2015_fnatic` | `` | `eslkatowice2015_sticker_capsule_prefab` |  |
-| 4067 | `#StickerKit_eslkatowice2015_hellraisers` | `` | `eslkatowice2015_sticker_capsule_prefab` |  |
-| 4068 | `#StickerKit_eslkatowice2015_keyd` | `` | `eslkatowice2015_sticker_capsule_prefab` |  |
-| 4069 | `#StickerKit_eslkatowice2015_lgb` | `` | `eslkatowice2015_sticker_capsule_prefab` |  |
-| 4070 | `#StickerKit_eslkatowice2015_navi` | `` | `eslkatowice2015_sticker_capsule_prefab` |  |
-| 4071 | `#StickerKit_eslkatowice2015_ninjasinpyjamas` | `` | `eslkatowice2015_sticker_capsule_prefab` |  |
-| 4072 | `#StickerKit_eslkatowice2015_pentasports` | `` | `eslkatowice2015_sticker_capsule_prefab` |  |
-| 4073 | `#StickerKit_eslkatowice2015_teamenvyus` | `` | `eslkatowice2015_sticker_capsule_prefab` |  |
-| 4074 | `#StickerKit_eslkatowice2015_teamsolomid` | `` | `eslkatowice2015_sticker_capsule_prefab` |  |
-| 4075 | `#StickerKit_eslkatowice2015_titan` | `` | `eslkatowice2015_sticker_capsule_prefab` |  |
-| 4076 | `#StickerKit_eslkatowice2015_virtuspro` | `` | `eslkatowice2015_sticker_capsule_prefab` |  |
-| 4077 | `#StickerKit_eslkatowice2015_voxeminor` | `` | `eslkatowice2015_sticker_capsule_prefab` |  |
-| 4078 | `#StickerKit_eslkatowice2015_esl_a` | `` | `eslkatowice2015_sticker_capsule_prefab` |  |
-| 4079 | `#CSGO_crate_eslkatowice2015_promo_de_dust2` | `` | `weapon_case_souvenirpkg` |  |
-| 4080 | `#CSGO_crate_eslkatowice2015_promo_de_inferno` | `` | `weapon_case_souvenirpkg` |  |
-| 4081 | `#CSGO_crate_eslkatowice2015_promo_de_mirage` | `` | `weapon_case_souvenirpkg` |  |
-| 4082 | `#CSGO_crate_eslkatowice2015_promo_de_nuke` | `` | `weapon_case_souvenirpkg` |  |
-| 4083 | `#CSGO_crate_eslkatowice2015_promo_de_cache` | `` | `weapon_case_souvenirpkg` |  |
-| 4084 | `#CSGO_crate_eslkatowice2015_promo_de_cbble` | `` | `weapon_case_souvenirpkg` |  |
-| 4085 | `#CSGO_crate_eslkatowice2015_promo_de_overpass` | `` | `weapon_case_souvenirpkg` |  |
-| 4086 | `#CSGO_crate_sticker_pack_eslkatowice2015_01` | `` | `weapon_case_base` |  |
-| 4087 | `#CSGO_crate_sticker_pack_eslkatowice2015_02` | `` | `weapon_case_base` |  |
-| 4088 | `#CSGO_crate_tool_stattrak_swap` | `` | `valve weapon_case_base` |  |
-| 4089 | `#CSGO_crate_community_7` | `` | `weapon_case` |  |
-| 4090 | `#CSGO_crate_sticker_pack_enfu_capsule` | `` | `weapon_case_base` |  |
-| 4091 | `#CSGO_crate_community_8` | `` | `weapon_case` |  |
-| 4092 | `#StickerKit_eslcologne2015_team_fnatic` | `` | `eslcologne2015_sticker_capsule_prefab` |  |
-| 4093 | `#StickerKit_eslcologne2015_team_virtuspro` | `` | `eslcologne2015_sticker_capsule_prefab` |  |
-| 4094 | `#StickerKit_eslcologne2015_team_mousesports` | `` | `eslcologne2015_sticker_capsule_prefab` |  |
-| 4095 | `#StickerKit_eslcologne2015_team_navi` | `` | `eslcologne2015_sticker_capsule_prefab` |  |
-| 4096 | `#StickerKit_eslcologne2015_team_renegades` | `` | `eslcologne2015_sticker_capsule_prefab` |  |
-| 4097 | `#StickerKit_eslcologne2015_team_kinguin` | `` | `eslcologne2015_sticker_capsule_prefab` |  |
-| 4098 | `#StickerKit_eslcologne2015_team_ebettle` | `` | `eslcologne2015_sticker_capsule_prefab` |  |
-| 4099 | `#StickerKit_eslcologne2015_team_cloud9` | `` | `eslcologne2015_sticker_capsule_prefab` |  |
-| 4100 | `#StickerKit_eslcologne2015_team_ninjasinpyjamas` | `` | `eslcologne2015_sticker_capsule_prefab` |  |
-| 4101 | `#StickerKit_eslcologne2015_team_envyus` | `` | `eslcologne2015_sticker_capsule_prefab` |  |
-| 4102 | `#StickerKit_eslcologne2015_team_luminositygaming` | `` | `eslcologne2015_sticker_capsule_prefab` |  |
-| 4103 | `#StickerKit_eslcologne2015_team_solomid` | `` | `eslcologne2015_sticker_capsule_prefab` |  |
-| 4104 | `#StickerKit_eslcologne2015_team_teamimmunity` | `` | `eslcologne2015_sticker_capsule_prefab` |  |
-| 4105 | `#StickerKit_eslcologne2015_team_flipside` | `` | `eslcologne2015_sticker_capsule_prefab` |  |
-| 4106 | `#StickerKit_eslcologne2015_team_titan` | `` | `eslcologne2015_sticker_capsule_prefab` |  |
-| 4107 | `#StickerKit_eslcologne2015_team_clg` | `` | `eslcologne2015_sticker_capsule_prefab` |  |
-| 4108 | `#StickerKit_eslcologne2015_team_esl` | `` | `eslcologne2015_sticker_capsule_prefab` |  |
-| 4109 | `#CSGO_crate_sticker_pack_eslcologne2015_legends` | `` | `weapon_case_base` |  |
-| 4110 | `#CSGO_crate_sticker_pack_eslcologne2015_challengers` | `` | `weapon_case_base` |  |
-| 4111 | `#CSGO_crate_signature_pack_eslcologne2015_group_1` | `` | `weapon_case_base` |  |
-| 4112 | `#CSGO_crate_signature_pack_eslcologne2015_group_2` | `` | `weapon_case_base` |  |
-| 4113 | `#CSGO_crate_signature_pack_eslcologne2015_group_3` | `` | `weapon_case_base` |  |
-| 4114 | `#CSGO_crate_signature_pack_eslcologne2015_group_4` | `` | `weapon_case_base` |  |
-| 4115 | `#CSGO_crate_signature_pack_eslcologne2015_fnatic` | `` | `weapon_case_base` |  |
-| 4116 | `#CSGO_crate_signature_pack_eslcologne2015_luminositygaming` | `` | `weapon_case_base` |  |
-| 4117 | `#CSGO_crate_signature_pack_eslcologne2015_navi` | `` | `weapon_case_base` |  |
-| 4118 | `#CSGO_crate_signature_pack_eslcologne2015_ninjasinpyjamas` | `` | `weapon_case_base` |  |
-| 4119 | `#CSGO_crate_signature_pack_eslcologne2015_envyus` | `` | `weapon_case_base` |  |
-| 4120 | `#CSGO_crate_signature_pack_eslcologne2015_titan` | `` | `weapon_case_base` |  |
-| 4121 | `#CSGO_crate_signature_pack_eslcologne2015_solomid` | `` | `weapon_case_base` |  |
-| 4122 | `#CSGO_crate_signature_pack_eslcologne2015_virtuspro` | `` | `weapon_case_base` |  |
-| 4123 | `#CSGO_crate_signature_pack_eslcologne2015_mousesports` | `` | `weapon_case_base` |  |
-| 4124 | `#CSGO_crate_signature_pack_eslcologne2015_renegades` | `` | `weapon_case_base` |  |
-| 4125 | `#CSGO_crate_signature_pack_eslcologne2015_teamimmunity` | `` | `weapon_case_base` |  |
-| 4126 | `#CSGO_crate_signature_pack_eslcologne2015_ebettle` | `` | `weapon_case_base` |  |
-| 4127 | `#CSGO_crate_signature_pack_eslcologne2015_kinguin` | `` | `weapon_case_base` |  |
-| 4128 | `#CSGO_crate_signature_pack_eslcologne2015_flipside` | `` | `weapon_case_base` |  |
-| 4129 | `#CSGO_crate_signature_pack_eslcologne2015_clg` | `` | `weapon_case_base` |  |
-| 4130 | `#CSGO_crate_signature_pack_eslcologne2015_cloud9` | `` | `weapon_case_base` |  |
-| 4131 | `#CSGO_crate_eslcologne2015_promo_de_dust2` | `` | `weapon_case_souvenirpkg` |  |
-| 4132 | `#CSGO_crate_eslcologne2015_promo_de_mirage` | `` | `weapon_case_souvenirpkg` |  |
-| 4133 | `#CSGO_crate_eslcologne2015_promo_de_inferno` | `` | `weapon_case_souvenirpkg` |  |
-| 4134 | `#CSGO_crate_eslcologne2015_promo_de_cbble` | `` | `weapon_case_souvenirpkg` |  |
-| 4135 | `#CSGO_crate_eslcologne2015_promo_de_overpass` | `` | `weapon_case_souvenirpkg` |  |
-| 4136 | `#CSGO_crate_eslcologne2015_promo_de_cache` | `` | `weapon_case_souvenirpkg` |  |
-| 4137 | `#CSGO_crate_eslcologne2015_promo_de_train` | `` | `weapon_case_souvenirpkg` |  |
-| 4138 | `#CSGO_crate_community_9` | `` | `weapon_case` |  |
-| 4139 | `#StickerKit_cluj2015_team_nip` | `` | `cluj2015_sticker_capsule_prefab` |  |
-| 4140 | `#StickerKit_cluj2015_team_dig` | `` | `cluj2015_sticker_capsule_prefab` |  |
-| 4141 | `#StickerKit_cluj2015_team_clg` | `` | `cluj2015_sticker_capsule_prefab` |  |
-| 4142 | `#StickerKit_cluj2015_team_vex` | `` | `cluj2015_sticker_capsule_prefab` |  |
-| 4143 | `#StickerKit_cluj2015_team_flip` | `` | `cluj2015_sticker_capsule_prefab` |  |
-| 4144 | `#StickerKit_cluj2015_team_liq` | `` | `cluj2015_sticker_capsule_prefab` |  |
-| 4145 | `#StickerKit_cluj2015_team_mss` | `` | `cluj2015_sticker_capsule_prefab` |  |
-| 4146 | `#StickerKit_cluj2015_team_navi` | `` | `cluj2015_sticker_capsule_prefab` |  |
-| 4147 | `#StickerKit_cluj2015_team_vp` | `` | `cluj2015_sticker_capsule_prefab` |  |
-| 4148 | `#StickerKit_cluj2015_team_c9` | `` | `cluj2015_sticker_capsule_prefab` |  |
-| 4149 | `#StickerKit_cluj2015_team_g2` | `` | `cluj2015_sticker_capsule_prefab` |  |
-| 4150 | `#StickerKit_cluj2015_team_tit` | `` | `cluj2015_sticker_capsule_prefab` |  |
-| 4151 | `#StickerKit_cluj2015_team_tsolo` | `` | `cluj2015_sticker_capsule_prefab` |  |
-| 4152 | `#StickerKit_cluj2015_team_nv` | `` | `cluj2015_sticker_capsule_prefab` |  |
-| 4153 | `#StickerKit_cluj2015_team_fntc` | `` | `cluj2015_sticker_capsule_prefab` |  |
-| 4154 | `#StickerKit_cluj2015_team_lumi` | `` | `cluj2015_sticker_capsule_prefab` |  |
-| 4155 | `#StickerKit_cluj2015_team_dhc` | `` | `cluj2015_sticker_capsule_prefab` |  |
-| 4156 | `#CSGO_crate_sticker_pack_cluj2015_legends` | `` | `weapon_case_base` |  |
-| 4157 | `#CSGO_crate_sticker_pack_cluj2015_challengers` | `` | `weapon_case_base` |  |
-| 4158 | `#CSGO_crate_signature_pack_cluj2015_group_1` | `` | `weapon_case_base` |  |
-| 4159 | `#CSGO_crate_signature_pack_cluj2015_group_2` | `` | `weapon_case_base` |  |
-| 4160 | `#CSGO_crate_signature_pack_cluj2015_nip` | `` | `weapon_case_base` |  |
-| 4161 | `#CSGO_crate_signature_pack_cluj2015_dig` | `` | `weapon_case_base` |  |
-| 4162 | `#CSGO_crate_signature_pack_cluj2015_clg` | `` | `weapon_case_base` |  |
-| 4163 | `#CSGO_crate_signature_pack_cluj2015_vex` | `` | `weapon_case_base` |  |
-| 4164 | `#CSGO_crate_signature_pack_cluj2015_flip` | `` | `weapon_case_base` |  |
-| 4165 | `#CSGO_crate_signature_pack_cluj2015_liq` | `` | `weapon_case_base` |  |
-| 4166 | `#CSGO_crate_signature_pack_cluj2015_mss` | `` | `weapon_case_base` |  |
-| 4167 | `#CSGO_crate_signature_pack_cluj2015_navi` | `` | `weapon_case_base` |  |
-| 4168 | `#CSGO_crate_signature_pack_cluj2015_vp` | `` | `weapon_case_base` |  |
-| 4169 | `#CSGO_crate_signature_pack_cluj2015_c9` | `` | `weapon_case_base` |  |
-| 4170 | `#CSGO_crate_signature_pack_cluj2015_g2` | `` | `weapon_case_base` |  |
-| 4171 | `#CSGO_crate_signature_pack_cluj2015_tit` | `` | `weapon_case_base` |  |
-| 4172 | `#CSGO_crate_signature_pack_cluj2015_tsolo` | `` | `weapon_case_base` |  |
-| 4173 | `#CSGO_crate_signature_pack_cluj2015_nv` | `` | `weapon_case_base` |  |
-| 4174 | `#CSGO_crate_signature_pack_cluj2015_fntc` | `` | `weapon_case_base` |  |
-| 4175 | `#CSGO_crate_signature_pack_cluj2015_lumi` | `` | `weapon_case_base` |  |
-| 4176 | `#CSGO_crate_cluj2015_promo_de_dust2` | `` | `weapon_case_souvenirpkg` |  |
-| 4177 | `#CSGO_crate_cluj2015_promo_de_mirage` | `` | `weapon_case_souvenirpkg` |  |
-| 4178 | `#CSGO_crate_cluj2015_promo_de_inferno` | `` | `weapon_case_souvenirpkg` |  |
-| 4179 | `#CSGO_crate_cluj2015_promo_de_cbble` | `` | `weapon_case_souvenirpkg` |  |
-| 4180 | `#CSGO_crate_cluj2015_promo_de_overpass` | `` | `weapon_case_souvenirpkg` |  |
-| 4181 | `#CSGO_crate_cluj2015_promo_de_cache` | `` | `weapon_case_souvenirpkg` |  |
-| 4182 | `#CSGO_crate_cluj2015_promo_de_train` | `` | `weapon_case_souvenirpkg` |  |
-| 4183 | `#CSGO_crate_sticker_pack_pinups_capsule` | `` | `weapon_case_base` |  |
-| 4184 | `#CSGO_crate_sticker_pack_slid3_capsule` | `` | `weapon_case_base` |  |
-| 4185 | `#CSGO_crate_sticker_pack_team_roles_capsule` | `` | `weapon_case_base` |  |
-| 4186 | `#CSGO_crate_community_10` | `` | `weapon_case` |  |
-| 4187 | `#CSGO_crate_community_11` | `` | `weapon_case` |  |
-| 4188 | `#StickerKit_columbus2016_team_nip` | `` | `columbus2016_sticker_capsule_prefab` |  |
-| 4189 | `#StickerKit_columbus2016_team_splc` | `` | `columbus2016_sticker_capsule_prefab` |  |
-| 4190 | `#StickerKit_columbus2016_team_clg` | `` | `columbus2016_sticker_capsule_prefab` |  |
-| 4191 | `#StickerKit_columbus2016_team_gamb` | `` | `columbus2016_sticker_capsule_prefab` |  |
-| 4192 | `#StickerKit_columbus2016_team_flip` | `` | `columbus2016_sticker_capsule_prefab` |  |
-| 4193 | `#StickerKit_columbus2016_team_liq` | `` | `columbus2016_sticker_capsule_prefab` |  |
-| 4194 | `#StickerKit_columbus2016_team_mss` | `` | `columbus2016_sticker_capsule_prefab` |  |
-| 4195 | `#StickerKit_columbus2016_team_navi` | `` | `columbus2016_sticker_capsule_prefab` |  |
-| 4196 | `#StickerKit_columbus2016_team_vp` | `` | `columbus2016_sticker_capsule_prefab` |  |
-| 4197 | `#StickerKit_columbus2016_team_c9` | `` | `columbus2016_sticker_capsule_prefab` |  |
-| 4198 | `#StickerKit_columbus2016_team_g2` | `` | `columbus2016_sticker_capsule_prefab` |  |
-| 4199 | `#StickerKit_columbus2016_team_faze` | `` | `columbus2016_sticker_capsule_prefab` |  |
-| 4200 | `#StickerKit_columbus2016_team_astr` | `` | `columbus2016_sticker_capsule_prefab` |  |
-| 4201 | `#StickerKit_columbus2016_team_nv` | `` | `columbus2016_sticker_capsule_prefab` |  |
-| 4202 | `#StickerKit_columbus2016_team_fntc` | `` | `columbus2016_sticker_capsule_prefab` |  |
-| 4203 | `#StickerKit_columbus2016_team_lumi` | `` | `columbus2016_sticker_capsule_prefab` |  |
-| 4204 | `#StickerKit_columbus2016_team_mlg` | `` | `columbus2016_sticker_capsule_prefab` |  |
-| 4205 | `#CSGO_crate_sticker_pack_columbus2016_legends` | `` | `columbus2016_sticker_capsule_prefab` |  |
-| 4206 | `#CSGO_crate_sticker_pack_columbus2016_challengers` | `` | `columbus2016_sticker_capsule_prefab` |  |
-| 4207 | `#CSGO_crate_signature_pack_columbus2016_group_1` | `` | `columbus2016_signature_capsule_prefab` |  |
-| 4208 | `#CSGO_crate_signature_pack_columbus2016_group_2` | `` | `columbus2016_signature_capsule_prefab` |  |
-| 4209 | `#CSGO_crate_signature_pack_columbus2016_nip` | `` | `columbus2016_signature_capsule_prefab` |  |
-| 4210 | `#CSGO_crate_signature_pack_columbus2016_splc` | `` | `columbus2016_signature_capsule_prefab` |  |
-| 4211 | `#CSGO_crate_signature_pack_columbus2016_clg` | `` | `columbus2016_signature_capsule_prefab` |  |
-| 4212 | `#CSGO_crate_signature_pack_columbus2016_gamb` | `` | `columbus2016_signature_capsule_prefab` |  |
-| 4213 | `#CSGO_crate_signature_pack_columbus2016_flip` | `` | `columbus2016_signature_capsule_prefab` |  |
-| 4214 | `#CSGO_crate_signature_pack_columbus2016_liq` | `` | `columbus2016_signature_capsule_prefab` |  |
-| 4215 | `#CSGO_crate_signature_pack_columbus2016_mss` | `` | `columbus2016_signature_capsule_prefab` |  |
-| 4216 | `#CSGO_crate_signature_pack_columbus2016_navi` | `` | `columbus2016_signature_capsule_prefab` |  |
-| 4217 | `#CSGO_crate_signature_pack_columbus2016_vp` | `` | `columbus2016_signature_capsule_prefab` |  |
-| 4218 | `#CSGO_crate_signature_pack_columbus2016_c9` | `` | `columbus2016_signature_capsule_prefab` |  |
-| 4219 | `#CSGO_crate_signature_pack_columbus2016_g2` | `` | `columbus2016_signature_capsule_prefab` |  |
-| 4220 | `#CSGO_crate_signature_pack_columbus2016_faze` | `` | `columbus2016_signature_capsule_prefab` |  |
-| 4221 | `#CSGO_crate_signature_pack_columbus2016_astr` | `` | `columbus2016_signature_capsule_prefab` |  |
-| 4222 | `#CSGO_crate_signature_pack_columbus2016_nv` | `` | `columbus2016_signature_capsule_prefab` |  |
-| 4223 | `#CSGO_crate_signature_pack_columbus2016_fntc` | `` | `columbus2016_signature_capsule_prefab` |  |
-| 4224 | `#CSGO_crate_signature_pack_columbus2016_lumi` | `` | `columbus2016_signature_capsule_prefab` |  |
-| 4225 | `#CSGO_crate_columbus2016_promo_de_dust2` | `` | `weapon_case_souvenirpkg` |  |
-| 4226 | `#CSGO_crate_columbus2016_promo_de_mirage` | `` | `weapon_case_souvenirpkg` |  |
-| 4227 | `#CSGO_crate_columbus2016_promo_de_inferno` | `` | `weapon_case_souvenirpkg` |  |
-| 4228 | `#CSGO_crate_columbus2016_promo_de_cbble` | `` | `weapon_case_souvenirpkg` |  |
-| 4229 | `#CSGO_crate_columbus2016_promo_de_overpass` | `` | `weapon_case_souvenirpkg` |  |
-| 4230 | `#CSGO_crate_columbus2016_promo_de_cache` | `` | `weapon_case_souvenirpkg` |  |
-| 4231 | `#CSGO_crate_columbus2016_promo_de_train` | `` | `weapon_case_souvenirpkg` |  |
-| 4232 | `#CSGO_crate_columbus2016_promo_de_nuke` | `` | `weapon_case_souvenirpkg` |  |
-| 4233 | `#CSGO_crate_community_12` | `` | `weapon_case` |  |
-| 4234 | `#CSGO_crate_sprays_community_1` | `` | `graffiti_box` |  |
-| 4235 | `#CSGO_crate_pins_series_1` | `` | `weapon_case_base` |  |
-| 4236 | `#CSGO_crate_community_13` | `` | `weapon_case` |  |
-| 4237 | `#StickerKit_cologne2016_team_nip` | `` | `cologne2016_sticker_capsule_prefab` |  |
-| 4238 | `#StickerKit_cologne2016_team_optc` | `` | `cologne2016_sticker_capsule_prefab` |  |
-| 4239 | `#StickerKit_cologne2016_team_clg` | `` | `cologne2016_sticker_capsule_prefab` |  |
-| 4240 | `#StickerKit_cologne2016_team_gamb` | `` | `cologne2016_sticker_capsule_prefab` |  |
-| 4241 | `#StickerKit_cologne2016_team_flip` | `` | `cologne2016_sticker_capsule_prefab` |  |
-| 4242 | `#StickerKit_cologne2016_team_liq` | `` | `cologne2016_sticker_capsule_prefab` |  |
-| 4243 | `#StickerKit_cologne2016_team_mss` | `` | `cologne2016_sticker_capsule_prefab` |  |
-| 4244 | `#StickerKit_cologne2016_team_navi` | `` | `cologne2016_sticker_capsule_prefab` |  |
-| 4245 | `#StickerKit_cologne2016_team_vp` | `` | `cologne2016_sticker_capsule_prefab` |  |
-| 4246 | `#StickerKit_cologne2016_team_sk` | `` | `cologne2016_sticker_capsule_prefab` |  |
-| 4247 | `#StickerKit_cologne2016_team_g2` | `` | `cologne2016_sticker_capsule_prefab` |  |
-| 4248 | `#StickerKit_cologne2016_team_faze` | `` | `cologne2016_sticker_capsule_prefab` |  |
-| 4249 | `#StickerKit_cologne2016_team_astr` | `` | `cologne2016_sticker_capsule_prefab` |  |
-| 4250 | `#StickerKit_cologne2016_team_nv` | `` | `cologne2016_sticker_capsule_prefab` |  |
-| 4251 | `#StickerKit_cologne2016_team_fntc` | `` | `cologne2016_sticker_capsule_prefab` |  |
-| 4252 | `#StickerKit_cologne2016_team_dig` | `` | `cologne2016_sticker_capsule_prefab` |  |
-| 4253 | `#StickerKit_cologne2016_team_esl` | `` | `cologne2016_sticker_capsule_prefab` |  |
-| 4254 | `#CSGO_crate_sticker_pack_cologne2016_legends` | `` | `cologne2016_sticker_capsule_prefab` |  |
-| 4255 | `#CSGO_crate_sticker_pack_cologne2016_challengers` | `` | `cologne2016_sticker_capsule_prefab` |  |
-| 4256 | `#CSGO_crate_signature_pack_cologne2016_group_1` | `` | `cologne2016_signature_capsule_prefab` |  |
-| 4257 | `#CSGO_crate_signature_pack_cologne2016_group_2` | `` | `cologne2016_signature_capsule_prefab` |  |
-| 4258 | `#CSGO_crate_signature_pack_cologne2016_nip` | `` | `cologne2016_signature_capsule_prefab` |  |
-| 4259 | `#CSGO_crate_signature_pack_cologne2016_optc` | `` | `cologne2016_signature_capsule_prefab` |  |
-| 4260 | `#CSGO_crate_signature_pack_cologne2016_clg` | `` | `cologne2016_signature_capsule_prefab` |  |
-| 4261 | `#CSGO_crate_signature_pack_cologne2016_gamb` | `` | `cologne2016_signature_capsule_prefab` |  |
-| 4262 | `#CSGO_crate_signature_pack_cologne2016_flip` | `` | `cologne2016_signature_capsule_prefab` |  |
-| 4263 | `#CSGO_crate_signature_pack_cologne2016_liq` | `` | `cologne2016_signature_capsule_prefab` |  |
-| 4264 | `#CSGO_crate_signature_pack_cologne2016_mss` | `` | `cologne2016_signature_capsule_prefab` |  |
-| 4265 | `#CSGO_crate_signature_pack_cologne2016_navi` | `` | `cologne2016_signature_capsule_prefab` |  |
-| 4266 | `#CSGO_crate_signature_pack_cologne2016_vp` | `` | `cologne2016_signature_capsule_prefab` |  |
-| 4267 | `#CSGO_crate_signature_pack_cologne2016_sk` | `` | `cologne2016_signature_capsule_prefab` |  |
-| 4268 | `#CSGO_crate_signature_pack_cologne2016_g2` | `` | `cologne2016_signature_capsule_prefab` |  |
-| 4269 | `#CSGO_crate_signature_pack_cologne2016_faze` | `` | `cologne2016_signature_capsule_prefab` |  |
-| 4270 | `#CSGO_crate_signature_pack_cologne2016_astr` | `` | `cologne2016_signature_capsule_prefab` |  |
-| 4271 | `#CSGO_crate_signature_pack_cologne2016_nv` | `` | `cologne2016_signature_capsule_prefab` |  |
-| 4272 | `#CSGO_crate_signature_pack_cologne2016_fntc` | `` | `cologne2016_signature_capsule_prefab` |  |
-| 4273 | `#CSGO_crate_signature_pack_cologne2016_dig` | `` | `cologne2016_signature_capsule_prefab` |  |
-| 4274 | `#CSGO_crate_cologne2016_promo_de_dust2` | `` | `weapon_case_souvenirpkg` |  |
-| 4275 | `#CSGO_crate_cologne2016_promo_de_mirage` | `` | `weapon_case_souvenirpkg` |  |
-| 4276 | `#CSGO_crate_cologne2016_promo_de_cbble` | `` | `weapon_case_souvenirpkg` |  |
-| 4277 | `#CSGO_crate_cologne2016_promo_de_overpass` | `` | `weapon_case_souvenirpkg` |  |
-| 4278 | `#CSGO_crate_cologne2016_promo_de_cache` | `` | `weapon_case_souvenirpkg` |  |
-| 4279 | `#CSGO_crate_cologne2016_promo_de_train` | `` | `weapon_case_souvenirpkg` |  |
-| 4280 | `#CSGO_crate_cologne2016_promo_de_nuke` | `` | `weapon_case_souvenirpkg` |  |
-| 4281 | `#CSGO_crate_gamma_2` | `` | `weapon_case` |  |
-| 4282 | `#CSGO_crate_sticker_pack_sugarface_capsule` | `` | `sticker_capsule` |  |
-| 4283 | `#CSGO_crate_sticker_pack_bestiary_capsule` | `` | `sticker_capsule` |  |
-| 4284 | `#CSGO_crate_pins_series_2` | `` | `weapon_case_base` |  |
-| 4285 | `#CSGO_crate_sprays_vcap1` | `` | `graffiti_box` |  |
-| 4286 | `#CSGO_crate_sprays_illuminate1` | `` | `graffiti_box` |  |
-| 4287 | `#CSGO_crate_musickit_radicals_stattrak_capsule` | `` | `weapon_case_base` |  |
-| 4288 | `#CSGO_crate_community_15` | `` | `weapon_case` |  |
-| 4289 | `#StoreItem_atlanta2017_team_astr_sticker` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4290 | `#StoreItem_atlanta2017_team_nv_sticker` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4291 | `#StoreItem_atlanta2017_team_faze_sticker` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4292 | `#StoreItem_atlanta2017_team_flip_sticker` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4293 | `#StoreItem_atlanta2017_team_fntc_sticker` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4294 | `#StoreItem_atlanta2017_team_g2_sticker` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4295 | `#StoreItem_atlanta2017_team_gamb_sticker` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4296 | `#StoreItem_atlanta2017_team_god_sticker` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4297 | `#StoreItem_atlanta2017_team_hlr_sticker` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4298 | `#StoreItem_atlanta2017_team_mss_sticker` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4299 | `#StoreItem_atlanta2017_team_navi_sticker` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4300 | `#StoreItem_atlanta2017_team_nor_sticker` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4301 | `#StoreItem_atlanta2017_team_optc_sticker` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4302 | `#StoreItem_atlanta2017_team_sk_sticker` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4303 | `#StoreItem_atlanta2017_team_liq_sticker` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4304 | `#StoreItem_atlanta2017_team_vp_sticker` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4305 | `#StoreItem_atlanta2017_team_eleague_sticker` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4306 | `#StoreItem_atlanta2017_team_astr_graffiti` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4307 | `#StoreItem_atlanta2017_team_nv_graffiti` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4308 | `#StoreItem_atlanta2017_team_faze_graffiti` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4309 | `#StoreItem_atlanta2017_team_flip_graffiti` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4310 | `#StoreItem_atlanta2017_team_fntc_graffiti` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4311 | `#StoreItem_atlanta2017_team_g2_graffiti` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4312 | `#StoreItem_atlanta2017_team_gamb_graffiti` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4313 | `#StoreItem_atlanta2017_team_god_graffiti` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4314 | `#StoreItem_atlanta2017_team_hlr_graffiti` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4315 | `#StoreItem_atlanta2017_team_mss_graffiti` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4316 | `#StoreItem_atlanta2017_team_navi_graffiti` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4317 | `#StoreItem_atlanta2017_team_nor_graffiti` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4318 | `#StoreItem_atlanta2017_team_optc_graffiti` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4319 | `#StoreItem_atlanta2017_team_sk_graffiti` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4320 | `#StoreItem_atlanta2017_team_liq_graffiti` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4321 | `#StoreItem_atlanta2017_team_vp_graffiti` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4322 | `#StoreItem_atlanta2017_team_eleague_graffiti` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4323 | `#CSGO_crate_sticker_pack_atlanta2017_legends` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4324 | `#CSGO_crate_sticker_pack_atlanta2017_challengers` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4325 | `#CSGO_crate_signature_pack_atlanta2017_group_1` | `` | `atlanta2017_signature_capsule_prefab` |  |
-| 4326 | `#CSGO_crate_signature_pack_atlanta2017_group_2` | `` | `atlanta2017_signature_capsule_prefab` |  |
-| 4327 | `#CSGO_crate_signature_pack_atlanta2017_astr` | `` | `atlanta2017_signature_capsule_prefab` |  |
-| 4328 | `#CSGO_crate_signature_pack_atlanta2017_nv` | `` | `atlanta2017_signature_capsule_prefab` |  |
-| 4329 | `#CSGO_crate_signature_pack_atlanta2017_faze` | `` | `atlanta2017_signature_capsule_prefab` |  |
-| 4330 | `#CSGO_crate_signature_pack_atlanta2017_flip` | `` | `atlanta2017_signature_capsule_prefab` |  |
-| 4331 | `#CSGO_crate_signature_pack_atlanta2017_fntc` | `` | `atlanta2017_signature_capsule_prefab` |  |
-| 4332 | `#CSGO_crate_signature_pack_atlanta2017_g2` | `` | `atlanta2017_signature_capsule_prefab` |  |
-| 4333 | `#CSGO_crate_signature_pack_atlanta2017_gamb` | `` | `atlanta2017_signature_capsule_prefab` |  |
-| 4334 | `#CSGO_crate_signature_pack_atlanta2017_god` | `` | `atlanta2017_signature_capsule_prefab` |  |
-| 4335 | `#CSGO_crate_signature_pack_atlanta2017_hlr` | `` | `atlanta2017_signature_capsule_prefab` |  |
-| 4336 | `#CSGO_crate_signature_pack_atlanta2017_mss` | `` | `atlanta2017_signature_capsule_prefab` |  |
-| 4337 | `#CSGO_crate_signature_pack_atlanta2017_navi` | `` | `atlanta2017_signature_capsule_prefab` |  |
-| 4338 | `#CSGO_crate_signature_pack_atlanta2017_nor` | `` | `atlanta2017_signature_capsule_prefab` |  |
-| 4339 | `#CSGO_crate_signature_pack_atlanta2017_optc` | `` | `atlanta2017_signature_capsule_prefab` |  |
-| 4340 | `#CSGO_crate_signature_pack_atlanta2017_sk` | `` | `atlanta2017_signature_capsule_prefab` |  |
-| 4341 | `#CSGO_crate_signature_pack_atlanta2017_liq` | `` | `atlanta2017_signature_capsule_prefab` |  |
-| 4342 | `#CSGO_crate_signature_pack_atlanta2017_vp` | `` | `atlanta2017_signature_capsule_prefab` |  |
-| 4343 | `#CSGO_crate_atlanta2017_bundle_of_all` | `` | `atlanta2017_sticker_capsule_prefab` |  |
-| 4344 | `#CSGO_crate_atlanta2017_promo_de_dust2` | `` | `weapon_case_souvenirpkg` |  |
-| 4345 | `#CSGO_crate_atlanta2017_promo_de_mirage` | `` | `weapon_case_souvenirpkg` |  |
-| 4346 | `#CSGO_crate_atlanta2017_promo_de_cbble` | `` | `weapon_case_souvenirpkg` |  |
-| 4347 | `#CSGO_crate_atlanta2017_promo_de_overpass` | `` | `weapon_case_souvenirpkg` |  |
-| 4348 | `#CSGO_crate_atlanta2017_promo_de_cache` | `` | `weapon_case_souvenirpkg` |  |
-| 4349 | `#CSGO_crate_atlanta2017_promo_de_train` | `` | `weapon_case_souvenirpkg` |  |
-| 4350 | `#CSGO_crate_atlanta2017_promo_de_nuke` | `` | `weapon_case_souvenirpkg` |  |
-| 4351 | `#CSGO_crate_community_16` | `` | `weapon_case` |  |
-| 4352 | `#CSGO_crate_community_17` | `` | `weapon_case` |  |
-| 4353 | `#CSGO_Collectible_CommunitySeasonEight2017_Coin1` | `` | `season8_coin` |  |
-| 4354 | `#CSGO_Collectible_CommunitySeasonEight2017_Coin2` | `` | `season8_coin` |  |
-| 4355 | `#CSGO_Collectible_CommunitySeasonEight2017_Coin3` | `` | `season8_coin` |  |
-| 4356 | `#CSGO_Collectible_CommunitySeasonEight2017_Coin4` | `` | `season8_coin` |  |
-| 4357 | `#StoreItem_krakow2017_team_astr_sticker` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4358 | `#StoreItem_krakow2017_team_vp_sticker` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4359 | `#StoreItem_krakow2017_team_fntc_sticker` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4360 | `#StoreItem_krakow2017_team_sk_sticker` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4361 | `#StoreItem_krakow2017_team_navi_sticker` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4362 | `#StoreItem_krakow2017_team_gamb_sticker` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4363 | `#StoreItem_krakow2017_team_nor_sticker` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4364 | `#StoreItem_krakow2017_team_faze_sticker` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4365 | `#StoreItem_krakow2017_team_mss_sticker` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4366 | `#StoreItem_krakow2017_team_g2_sticker` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4367 | `#StoreItem_krakow2017_team_big_sticker` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4368 | `#StoreItem_krakow2017_team_c9_sticker` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4369 | `#StoreItem_krakow2017_team_penta_sticker` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4370 | `#StoreItem_krakow2017_team_flip_sticker` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4371 | `#StoreItem_krakow2017_team_imt_sticker` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4372 | `#StoreItem_krakow2017_team_vega_sticker` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4373 | `#StoreItem_krakow2017_team_pgl_sticker` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4374 | `#StoreItem_krakow2017_team_astr_graffiti` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4375 | `#StoreItem_krakow2017_team_vp_graffiti` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4376 | `#StoreItem_krakow2017_team_fntc_graffiti` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4377 | `#StoreItem_krakow2017_team_sk_graffiti` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4378 | `#StoreItem_krakow2017_team_navi_graffiti` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4379 | `#StoreItem_krakow2017_team_gamb_graffiti` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4380 | `#StoreItem_krakow2017_team_nor_graffiti` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4381 | `#StoreItem_krakow2017_team_faze_graffiti` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4382 | `#StoreItem_krakow2017_team_mss_graffiti` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4383 | `#StoreItem_krakow2017_team_g2_graffiti` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4384 | `#StoreItem_krakow2017_team_big_graffiti` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4385 | `#StoreItem_krakow2017_team_c9_graffiti` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4386 | `#StoreItem_krakow2017_team_penta_graffiti` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4387 | `#StoreItem_krakow2017_team_flip_graffiti` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4388 | `#StoreItem_krakow2017_team_imt_graffiti` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4389 | `#StoreItem_krakow2017_team_vega_graffiti` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4390 | `#StoreItem_krakow2017_team_pgl_graffiti` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4391 | `#CSGO_crate_sticker_pack_krakow2017_legends` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4392 | `#CSGO_crate_sticker_pack_krakow2017_challengers` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4393 | `#CSGO_crate_signature_pack_krakow2017_group_1` | `` | `krakow2017_signature_capsule_prefab` |  |
-| 4394 | `#CSGO_crate_signature_pack_krakow2017_group_2` | `` | `krakow2017_signature_capsule_prefab` |  |
-| 4395 | `#CSGO_crate_krakow2017_bundle_of_all` | `` | `krakow2017_sticker_capsule_prefab` |  |
-| 4396 | `#CSGO_crate_krakow2017_promo_de_inferno` | `` | `weapon_case_souvenirpkg` |  |
-| 4397 | `#CSGO_crate_krakow2017_promo_de_mirage` | `` | `weapon_case_souvenirpkg` |  |
-| 4398 | `#CSGO_crate_krakow2017_promo_de_cbble` | `` | `weapon_case_souvenirpkg` |  |
-| 4399 | `#CSGO_crate_krakow2017_promo_de_overpass` | `` | `weapon_case_souvenirpkg` |  |
-| 4400 | `#CSGO_crate_krakow2017_promo_de_cache` | `` | `weapon_case_souvenirpkg` |  |
-| 4401 | `#CSGO_crate_krakow2017_promo_de_train` | `` | `weapon_case_souvenirpkg` |  |
-| 4402 | `#CSGO_crate_krakow2017_promo_de_nuke` | `` | `weapon_case_souvenirpkg` |  |
-| 4403 | `#CSGO_crate_community_18` | `` | `weapon_case` |  |
-| 4404 | `#CSGO_crate_sticker_pack_illuminate_capsule_01` | `` | `sticker_capsule` |  |
-| 4405 | `#CSGO_crate_sticker_pack_illuminate_capsule_02` | `` | `sticker_capsule` |  |
-| 4406 | `#StoreItem_boston2018_team_gamb_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4407 | `#StoreItem_boston2018_team_thv_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4408 | `#StoreItem_boston2018_team_astr_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4409 | `#StoreItem_boston2018_team_vp_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4410 | `#StoreItem_boston2018_team_fntc_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4411 | `#StoreItem_boston2018_team_sk_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4412 | `#StoreItem_boston2018_team_big_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4413 | `#StoreItem_boston2018_team_nor_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4414 | `#StoreItem_boston2018_team_g2_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4415 | `#StoreItem_boston2018_team_c9_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4416 | `#StoreItem_boston2018_team_flip_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4417 | `#StoreItem_boston2018_team_navi_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4418 | `#StoreItem_boston2018_team_mss_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4419 | `#StoreItem_boston2018_team_spr_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4420 | `#StoreItem_boston2018_team_faze_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4421 | `#StoreItem_boston2018_team_vega_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4422 | `#StoreItem_boston2018_team_spc_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4423 | `#StoreItem_boston2018_team_liq_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4424 | `#StoreItem_boston2018_team_avg_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4425 | `#StoreItem_boston2018_team_ren_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4426 | `#StoreItem_boston2018_team_nv_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4427 | `#StoreItem_boston2018_team_mfg_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4428 | `#StoreItem_boston2018_team_qb_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4429 | `#StoreItem_boston2018_team_tyl_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4430 | `#StoreItem_boston2018_team_eleague_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4431 | `#StoreItem_boston2018_team_gamb_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4432 | `#StoreItem_boston2018_team_thv_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4433 | `#StoreItem_boston2018_team_astr_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4434 | `#StoreItem_boston2018_team_vp_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4435 | `#StoreItem_boston2018_team_fntc_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4436 | `#StoreItem_boston2018_team_sk_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4437 | `#StoreItem_boston2018_team_big_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4438 | `#StoreItem_boston2018_team_nor_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4439 | `#StoreItem_boston2018_team_g2_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4440 | `#StoreItem_boston2018_team_c9_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4441 | `#StoreItem_boston2018_team_flip_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4442 | `#StoreItem_boston2018_team_navi_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4443 | `#StoreItem_boston2018_team_mss_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4444 | `#StoreItem_boston2018_team_spr_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4445 | `#StoreItem_boston2018_team_faze_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4446 | `#StoreItem_boston2018_team_vega_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4447 | `#StoreItem_boston2018_team_spc_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4448 | `#StoreItem_boston2018_team_liq_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4449 | `#StoreItem_boston2018_team_avg_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4450 | `#StoreItem_boston2018_team_ren_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4451 | `#StoreItem_boston2018_team_nv_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4452 | `#StoreItem_boston2018_team_mfg_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4453 | `#StoreItem_boston2018_team_qb_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4454 | `#StoreItem_boston2018_team_tyl_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4455 | `#StoreItem_boston2018_team_eleague_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4456 | `#CSGO_crate_sticker_pack_boston2018_legends` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4457 | `#CSGO_crate_sticker_pack_boston2018_challengers` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4458 | `#CSGO_crate_sticker_pack_boston2018_contenders` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4459 | `#CSGO_crate_signature_pack_boston2018_group_legends` | `` | `boston2018_signature_capsule_prefab` |  |
-| 4460 | `#CSGO_crate_signature_pack_boston2018_group_challengers` | `` | `boston2018_signature_capsule_prefab` |  |
-| 4461 | `#CSGO_crate_signature_pack_boston2018_group_contenders` | `` | `boston2018_signature_capsule_prefab` |  |
-| 4462 | `#CSGO_crate_boston2018_bundle_of_all` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4463 | `#CSGO_crate_boston2018_promo_de_inferno` | `` | `weapon_case_souvenirpkg` |  |
-| 4464 | `#CSGO_crate_boston2018_promo_de_mirage` | `` | `weapon_case_souvenirpkg` |  |
-| 4465 | `#CSGO_crate_boston2018_promo_de_cbble` | `` | `weapon_case_souvenirpkg` |  |
-| 4466 | `#CSGO_crate_boston2018_promo_de_overpass` | `` | `weapon_case_souvenirpkg` |  |
-| 4467 | `#CSGO_crate_boston2018_promo_de_cache` | `` | `weapon_case_souvenirpkg` |  |
-| 4468 | `#CSGO_crate_boston2018_promo_de_train` | `` | `weapon_case_souvenirpkg` |  |
-| 4469 | `#CSGO_crate_boston2018_promo_de_nuke` | `` | `weapon_case_souvenirpkg` |  |
-| 4470 | `#CSGO_crate_sticker_pack_comm2018_01_capsule` | `` | `sticker_capsule` |  |
-| 4471 | `#CSGO_crate_community_19` | `` | `weapon_case` |  |
-| 4472 | `#StoreItem_boston2018_team_flg_sticker` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4473 | `#StoreItem_boston2018_team_flg_graffiti` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4474 | `#CSGO_crate_sticker_pack_boston2018_contenders_flg` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4475 | `#CSGO_crate_signature_pack_boston2018_group_contenders_flg` | `` | `boston2018_signature_capsule_prefab` |  |
-| 4476 | `#CSGO_crate_boston2018_bundle_of_all` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4477 | `#CSGO_crate_sticker_pack_chicken_capsule` | `` | `sticker_capsule` |  |
-| 4478 | `#CSGO_crate_sticker_pack_boston2018_legends_ntv` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4479 | `#CSGO_crate_signature_pack_boston2018_group_legends_ntv` | `` | `boston2018_signature_capsule_prefab` |  |
-| 4480 | `#CSGO_crate_boston2018_bundle_of_all` | `` | `boston2018_sticker_capsule_prefab` |  |
-| 4481 | `#CSGO_crate_pins_series_3` | `` | `weapon_case_base` |  |
-| 4482 | `#CSGO_crate_community_20` | `` | `weapon_case` |  |
-| 4483 | `#StoreItem_london2018_team_c9_sticker` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4484 | `#StoreItem_london2018_team_faze_sticker` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4485 | `#StoreItem_london2018_team_navi_sticker` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4486 | `#StoreItem_london2018_team_mibr_sticker` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4487 | `#StoreItem_london2018_team_mss_sticker` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4488 | `#StoreItem_london2018_team_wins_sticker` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4489 | `#StoreItem_london2018_team_g2_sticker` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4490 | `#StoreItem_london2018_team_fntc_sticker` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4491 | `#StoreItem_london2018_team_gamb_sticker` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4492 | `#StoreItem_london2018_team_vega_sticker` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4493 | `#StoreItem_london2018_team_spc_sticker` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4494 | `#StoreItem_london2018_team_big_sticker` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4495 | `#StoreItem_london2018_team_astr_sticker` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4496 | `#StoreItem_london2018_team_liq_sticker` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4497 | `#StoreItem_london2018_team_nor_sticker` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4498 | `#StoreItem_london2018_team_vp_sticker` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4499 | `#StoreItem_london2018_team_nip_sticker` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4500 | `#StoreItem_london2018_team_col_sticker` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4501 | `#StoreItem_london2018_team_hlr_sticker` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4502 | `#StoreItem_london2018_team_ren_sticker` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4503 | `#StoreItem_london2018_team_optc_sticker` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4504 | `#StoreItem_london2018_team_rog_sticker` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4505 | `#StoreItem_london2018_team_spir_sticker` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4506 | `#StoreItem_london2018_team_tyl_sticker` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4507 | `#StoreItem_london2018_team_faceit_sticker` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4508 | `#StoreItem_london2018_team_c9_graffiti` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4509 | `#StoreItem_london2018_team_faze_graffiti` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4510 | `#StoreItem_london2018_team_navi_graffiti` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4511 | `#StoreItem_london2018_team_mibr_graffiti` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4512 | `#StoreItem_london2018_team_mss_graffiti` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4513 | `#StoreItem_london2018_team_wins_graffiti` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4514 | `#StoreItem_london2018_team_g2_graffiti` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4515 | `#StoreItem_london2018_team_fntc_graffiti` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4516 | `#StoreItem_london2018_team_gamb_graffiti` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4517 | `#StoreItem_london2018_team_vega_graffiti` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4518 | `#StoreItem_london2018_team_spc_graffiti` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4519 | `#StoreItem_london2018_team_big_graffiti` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4520 | `#StoreItem_london2018_team_astr_graffiti` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4521 | `#StoreItem_london2018_team_liq_graffiti` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4522 | `#StoreItem_london2018_team_nor_graffiti` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4523 | `#StoreItem_london2018_team_vp_graffiti` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4524 | `#StoreItem_london2018_team_nip_graffiti` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4525 | `#StoreItem_london2018_team_col_graffiti` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4526 | `#StoreItem_london2018_team_hlr_graffiti` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4527 | `#StoreItem_london2018_team_ren_graffiti` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4528 | `#StoreItem_london2018_team_optc_graffiti` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4529 | `#StoreItem_london2018_team_rog_graffiti` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4530 | `#StoreItem_london2018_team_spir_graffiti` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4531 | `#StoreItem_london2018_team_tyl_graffiti` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4532 | `#StoreItem_london2018_team_faceit_graffiti` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4533 | `#CSGO_crate_sticker_pack_london2018_legends` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4534 | `#CSGO_crate_sticker_pack_london2018_challengers` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4535 | `#CSGO_crate_sticker_pack_london2018_contenders` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4536 | `#CSGO_crate_signature_pack_london2018_group_legends` | `` | `london2018_signature_capsule_prefab` |  |
-| 4537 | `#CSGO_crate_signature_pack_london2018_group_challengers` | `` | `london2018_signature_capsule_prefab` |  |
-| 4538 | `#CSGO_crate_signature_pack_london2018_group_contenders` | `` | `london2018_signature_capsule_prefab` |  |
-| 4539 | `#CSGO_crate_london2018_bundle_of_all` | `` | `london2018_sticker_capsule_prefab` |  |
-| 4540 | `#CSGO_crate_london2018_promo_de_inferno` | `` | `weapon_case_souvenirpkg` |  |
-| 4541 | `#CSGO_crate_london2018_promo_de_mirage` | `` | `weapon_case_souvenirpkg` |  |
-| 4542 | `#CSGO_crate_london2018_promo_de_dust2` | `` | `weapon_case_souvenirpkg` |  |
-| 4543 | `#CSGO_crate_london2018_promo_de_overpass` | `` | `weapon_case_souvenirpkg` |  |
-| 4544 | `#CSGO_crate_london2018_promo_de_cache` | `` | `weapon_case_souvenirpkg` |  |
-| 4545 | `#CSGO_crate_london2018_promo_de_train` | `` | `weapon_case_souvenirpkg` |  |
-| 4546 | `#CSGO_crate_london2018_promo_de_nuke` | `` | `weapon_case_souvenirpkg` |  |
-| 4547 | `#CSGO_crate_sticker_pack_skillgroup_capsule` | `` | `sticker_capsule` |  |
-| 4548 | `#CSGO_crate_community_21` | `` | `weapon_case` |  |
-| 4549 | `#CSGO_Ticket_CommunitySeasonNine2019` | `` | `season_pass` |  |
-| 4550 | `#CSGO_Collectible_CommunitySeasonNine2019_Coin1` | `` | `season9_coin` |  |
-| 4551 | `#CSGO_Collectible_CommunitySeasonNine2019_Coin2` | `` | `season9_coin` |  |
-| 4552 | `#CSGO_Collectible_CommunitySeasonNine2019_Coin3` | `` | `season9_coin` |  |
-| 4553 | `#CSGO_Collectible_CommunitySeasonNine2019_Coin4` | `` | `season9_coin` |  |
-| 4554 | `#CSGO_TournamentPass_katowice2019` | `` | `katowice2019_tournament_pass_prefab` |  |
-| 4555 | `#CSGO_TournamentJournal_katowice2019` | `` | `katowice2019_tournament_journal_prefab` |  |
-| 4556 | `#CSGO_TournamentJournal_katowice2019_Silver` | `` | `katowice2019_tournament_journal_prefab` |  |
-| 4557 | `#CSGO_TournamentJournal_katowice2019_Gold` | `` | `katowice2019_tournament_journal_prefab` |  |
-| 4558 | `#CSGO_TournamentJournal_katowice2019_Crystal` | `` | `katowice2019_tournament_journal_prefab` |  |
-| 4559 | `#StoreItem_katowice2019_team_astr_sticker` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4560 | `#StoreItem_katowice2019_team_avg_sticker` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4561 | `#StoreItem_katowice2019_team_big_sticker` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4562 | `#StoreItem_katowice2019_team_c9_sticker` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4563 | `#StoreItem_katowice2019_team_col_sticker` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4564 | `#StoreItem_katowice2019_team_ence_sticker` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4565 | `#StoreItem_katowice2019_team_faze_sticker` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4566 | `#StoreItem_katowice2019_team_fntc_sticker` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4567 | `#StoreItem_katowice2019_team_furi_sticker` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4568 | `#StoreItem_katowice2019_team_g2_sticker` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4569 | `#StoreItem_katowice2019_team_gray_sticker` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4570 | `#StoreItem_katowice2019_team_hlr_sticker` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4571 | `#StoreItem_katowice2019_team_mibr_sticker` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4572 | `#StoreItem_katowice2019_team_navi_sticker` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4573 | `#StoreItem_katowice2019_team_nip_sticker` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4574 | `#StoreItem_katowice2019_team_nrg_sticker` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4575 | `#StoreItem_katowice2019_team_ren_sticker` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4576 | `#StoreItem_katowice2019_team_liq_sticker` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4577 | `#StoreItem_katowice2019_team_spir_sticker` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4578 | `#StoreItem_katowice2019_team_tyl_sticker` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4579 | `#StoreItem_katowice2019_team_vega_sticker` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4580 | `#StoreItem_katowice2019_team_vici_sticker` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4581 | `#StoreItem_katowice2019_team_vita_sticker` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4582 | `#StoreItem_katowice2019_team_wins_sticker` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4583 | `#StoreItem_katowice2019_team_iem_sticker` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4584 | `#CSGO_crate_sticker_pack_katowice2019_legends` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4585 | `#CSGO_crate_sticker_pack_katowice2019_challengers` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4586 | `#CSGO_crate_sticker_pack_katowice2019_contenders` | `` | `katowice2019_sticker_capsule_prefab` |  |
-| 4587 | `#CSGO_crate_signature_pack_katowice2019_group_legends` | `` | `katowice2019_signature_capsule_prefab` |  |
-| 4588 | `#CSGO_crate_signature_pack_katowice2019_group_challengers` | `` | `katowice2019_signature_capsule_prefab` |  |
-| 4589 | `#CSGO_crate_signature_pack_katowice2019_group_contenders` | `` | `katowice2019_signature_capsule_prefab` |  |
-| 4590 | `#CSGO_crate_katowice2019_promo_de_inferno` | `` | `weapon_case_souvenirpkg` |  |
-| 4591 | `#CSGO_crate_katowice2019_promo_de_mirage` | `` | `weapon_case_souvenirpkg` |  |
-| 4592 | `#CSGO_crate_katowice2019_promo_de_dust2` | `` | `weapon_case_souvenirpkg` |  |
-| 4593 | `#CSGO_crate_katowice2019_promo_de_overpass` | `` | `weapon_case_souvenirpkg` |  |
-| 4594 | `#CSGO_crate_katowice2019_promo_de_cache` | `` | `weapon_case_souvenirpkg` |  |
-| 4595 | `#CSGO_crate_katowice2019_promo_de_train` | `` | `weapon_case_souvenirpkg` |  |
-| 4596 | `#CSGO_crate_katowice2019_promo_de_nuke` | `` | `weapon_case_souvenirpkg` |  |
-| 4597 | `#CSGO_crate_sticker_pack_halo_capsule` | `` | `sticker_capsule` |  |
-| 4598 | `#CSGO_crate_community_22` | `` | `weapon_case` |  |
-| 4599 | `#CSGO_crate_sticker_pack_feral_predators_capsule` | `` | `sticker_capsule` |  |
-| 4600 | `#CSGO_crate_sticker_pack_shattered_web` | `` | `sticker_capsule` |  |
-| 4601 | `#CSGO_set_overpass` | `` | `weapon_case_base` |  |
-| 4602 | `#CSGO_set_cobblestone` | `` | `weapon_case_base` |  |
-| 4603 | `#CSGO_set_cache` | `` | `weapon_case_base` |  |
-| 4604 | `#CSGO_set_gods_and_monsters` | `` | `weapon_case_base` |  |
-| 4605 | `#CSGO_set_chopshop` | `` | `weapon_case_base` |  |
-| 4606 | `#CSGO_set_kimono` | `` | `weapon_case_base` |  |
-| 4607 | `#CSGO_tool_xpgrant` | `` | `csgo_tool` | #CSGO_Type_Ticket |
-| 4608 | `#CSGO_set_canals` | `` | `weapon_case_base` |  |
-| 4609 | `#CSGO_Tool_Patch` | `` | `csgo_tool` | #CSGO_Tool_Patch |
-| 4610 | `#CSGO_crate_patch_pack01` | `` | `patch_capsule` |  |
-| 4611 | `#CSGO_set_norse` | `` | `weapon_case_base` |  |
-| 4612 | `#CSGO_set_stmarc` | `` | `weapon_case_base` |  |
-| 4613 | `#CSGO_CustomPlayer_tm_professional_varf5` | `` | `customplayertradable` |  |
-| 4614 | `#CSGO_crate_patch_pack02` | `` | `patch_capsule` |  |
-| 4615 | `#CSGO_crate_patch_pack_hlalyx` | `` | `patch_capsule` |  |
-| 4616 | `#CSGO_crate_sticker_pack_warhammer` | `` | `sticker_capsule` |  |
-| 4617 | `#CSGO_crate_spray_std3` | `` | `graffiti_box` |  |
-| 4618 | `#CSGO_crate_spray_std2_2` | `` | `graffiti_box` |  |
-| 4619 | `#CSGO_CustomPlayer_ctm_st6_variantj` | `` | `customplayertradable` |  |
-| 4620 | `#CSGO_crate_community_23` | `` | `weapon_case` |  |
-| 4621 | `#CSGO_crate_spray_std2_1` | `` | `graffiti_box` |  |
-| 4622 | `#CSGO_TournamentPass_berlin2019` | `` | `berlin2019_tournament_pass_prefab berlin2019_tournament_steamtv_items` |  |
-| 4623 | `#CSGO_TournamentJournal_berlin2019` | `` | `berlin2019_tournament_journal_prefab` |  |
-| 4624 | `#CSGO_TournamentJournal_berlin2019_Silver` | `` | `berlin2019_tournament_journal_prefab` |  |
-| 4625 | `#CSGO_TournamentJournal_berlin2019_Gold` | `` | `berlin2019_tournament_journal_prefab` |  |
-| 4626 | `#CSGO_TournamentJournal_berlin2019_Crystal` | `` | `berlin2019_tournament_journal_prefab` |  |
-| 4627 | `#CSGO_TournamentPass_berlin2019_pack` | `` | `berlin2019_tournament_pass_prefab berlin2019_tournament_steamtv_items` |  |
-| 4628 | `#CSGO_TournamentPass_berlin2019_charge` | `` | `berlin2019_tournament_pass_prefab` |  |
-| 4629 | `#StoreItem_berlin2019_team_astr_sticker` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4630 | `#StoreItem_berlin2019_team_ence_sticker` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4631 | `#StoreItem_berlin2019_team_mibr_sticker` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4632 | `#StoreItem_berlin2019_team_navi_sticker` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4633 | `#StoreItem_berlin2019_team_nip_sticker` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4634 | `#StoreItem_berlin2019_team_faze_sticker` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4635 | `#StoreItem_berlin2019_team_liq_sticker` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4636 | `#StoreItem_berlin2019_team_ren_sticker` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4637 | `#StoreItem_berlin2019_team_col_sticker` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4638 | `#StoreItem_berlin2019_team_hlr_sticker` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4639 | `#StoreItem_berlin2019_team_avg_sticker` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4640 | `#StoreItem_berlin2019_team_g2_sticker` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4641 | `#StoreItem_berlin2019_team_vita_sticker` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4642 | `#StoreItem_berlin2019_team_gray_sticker` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4643 | `#StoreItem_berlin2019_team_mss_sticker` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4644 | `#StoreItem_berlin2019_team_forz_sticker` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4645 | `#StoreItem_berlin2019_team_nrg_sticker` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4646 | `#StoreItem_berlin2019_team_tyl_sticker` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4647 | `#StoreItem_berlin2019_team_furi_sticker` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4648 | `#StoreItem_berlin2019_team_cr4z_sticker` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4649 | `#StoreItem_berlin2019_team_syma_sticker` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4650 | `#StoreItem_berlin2019_team_nor_sticker` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4651 | `#StoreItem_berlin2019_team_drea_sticker` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4652 | `#StoreItem_berlin2019_team_intz_sticker` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4653 | `#StoreItem_berlin2019_team_star_sticker` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4654 | `#CSGO_crate_sticker_pack_berlin2019_legends` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4655 | `#CSGO_crate_sticker_pack_berlin2019_challengers` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4656 | `#CSGO_crate_sticker_pack_berlin2019_contenders` | `` | `berlin2019_sticker_capsule_prefab` |  |
-| 4657 | `#CSGO_crate_signature_pack_berlin2019_group_legends` | `` | `berlin2019_signature_capsule_prefab` |  |
-| 4658 | `#CSGO_crate_signature_pack_berlin2019_group_challengers` | `` | `berlin2019_signature_capsule_prefab` |  |
-| 4659 | `#CSGO_crate_signature_pack_berlin2019_group_contenders` | `` | `berlin2019_signature_capsule_prefab` |  |
-| 4660 | `#CSGO_crate_berlin2019_promo_de_inferno` | `` | `weapon_case_souvenirpkg` |  |
-| 4661 | `#CSGO_crate_berlin2019_promo_de_mirage` | `` | `weapon_case_souvenirpkg` |  |
-| 4662 | `#CSGO_crate_berlin2019_promo_de_dust2` | `` | `weapon_case_souvenirpkg` |  |
-| 4663 | `#CSGO_crate_berlin2019_promo_de_overpass` | `` | `weapon_case_souvenirpkg` |  |
-| 4664 | `#CSGO_crate_berlin2019_promo_de_train` | `` | `weapon_case_souvenirpkg` |  |
-| 4665 | `#CSGO_crate_berlin2019_promo_de_nuke` | `` | `weapon_case_souvenirpkg` |  |
-| 4666 | `#CSGO_crate_berlin2019_promo_de_vertigo` | `` | `weapon_case_souvenirpkg` |  |
-| 4667 | `#CSGO_crate_sticker_pack_shattered_web` | `` | `weapon_case_base` |  |
-| 4668 | `#CSGO_crate_xray_p250` | `` | `weapon_case_base` |  |
-| 4669 | `#CSGO_crate_community_24` | `` | `weapon_case` |  |
-| 4670 | `#CSGO_crate_sticker_pack_cs20_capsule` | `` | `weapon_case_base` |  |
-| 4671 | `#CSGO_Collectible_CommunitySeasonNine2019_PlusStars1` | `` | `valve season_tiers` |  |
-| 4672 | `#CSGO_Collectible_CommunitySeasonNine2019_PlusStars10` | `` | `valve season_tiers` |  |
-| 4673 | `#CSGO_Collectible_CommunitySeasonNine2019_PlusStars100` | `` | `valve season_tiers` |  |
-| 4674 | `#CSGO_Collectible_GlobalGeneral2020` | `` | `prestige_coin` |  |
-| 4675 | `#CSGO_Collectible_GlobalGeneral2020` | `` | `prestige_coin` |  |
-| 4676 | `#CSGO_Collectible_GlobalGeneral2020` | `` | `prestige_coin` |  |
-| 4677 | `#CSGO_Collectible_GlobalGeneral2020` | `` | `prestige_coin` |  |
-| 4678 | `#CSGO_Collectible_GlobalGeneral2020` | `` | `prestige_coin` |  |
-| 4679 | `#CSGO_Collectible_GlobalGeneral2020` | `` | `prestige_coin` |  |
-| 4680 | `#CSGO_CustomPlayer_ctm_st6_variantl` | `` | `customplayertradable` |  |
-| 4682 | `#CSGO_Collectible_Pin_alyx_04` | `` | `commodity_pin` |  |
-| 4683 | `#CSGO_Collectible_Pin_alyx_07` | `` | `commodity_pin` |  |
-| 4684 | `#CSGO_Collectible_Pin_alyx_09` | `` | `commodity_pin` |  |
-| 4685 | `#CSGO_Collectible_Pin_alyx_05` | `` | `commodity_pin` |  |
-| 4686 | `#CSGO_Collectible_Pin_alyx_12` | `` | `commodity_pin` |  |
-| 4687 | `#CSGO_Collectible_Pin_alyx_01` | `` | `commodity_pin` |  |
-| 4688 | `#CSGO_Collectible_Pin_alyx_02` | `` | `commodity_pin` |  |
-| 4689 | `#CSGO_Collectible_Pin_alyx_03` | `` | `commodity_pin` |  |
-| 4690 | `#CSGO_Collectible_Pin_alyx_06` | `` | `commodity_pin` |  |
-| 4691 | `#CSGO_Collectible_Pin_alyx_08` | `` | `commodity_pin` |  |
-| 4692 | `#CSGO_Collectible_Pin_alyx_11` | `` | `commodity_pin` |  |
-| 4693 | `#CSGO_crate_pins_hlalyx` | `` | `weapon_case_base` |  |
-| 4694 | `#CSGO_crate_sticker_pack_hlalyx_capsule` | `` | `weapon_case_base` |  |
-| 4695 | `#CSGO_crate_community_25` | `` | `weapon_case` |  |
-| 4696 | `#CSGO_crate_musickit_masterminds_capsule` | `` | `weapon_case_base` |  |
-| 4697 | `#CSGO_crate_musickit_masterminds_stattrak_capsule` | `` | `weapon_case_base` |  |
-| 4698 | `#CSGO_crate_community_26` | `` | `weapon_case` |  |
-| 4699 | `#CSGO_Ticket_CommunitySeasonTen2020` | `` | `season_pass` |  |
-| 4700 | `#CSGO_Collectible_CommunitySeasonTen2020_Coin1` | `` | `season10_coin` |  |
-| 4701 | `#CSGO_Collectible_CommunitySeasonTen2020_Coin2` | `` | `season10_coin` |  |
-| 4702 | `#CSGO_Collectible_CommunitySeasonTen2020_Coin3` | `` | `season10_coin` |  |
-| 4703 | `#CSGO_Collectible_CommunitySeasonTen2020_Coin4` | `` | `season10_coin` |  |
-| 4704 | `#CSGO_Collectible_CommunitySeasonTen2020_PlusStars1` | `` | `valve season_tiers` |  |
-| 4705 | `#CSGO_Collectible_CommunitySeasonTen2020_PlusStars10` | `` | `valve season_tiers` |  |
-| 4706 | `#CSGO_Collectible_CommunitySeasonTen2020_PlusStars100` | `` | `valve season_tiers` |  |
-| 4707 | `#CSGO_character_operator_dossier_op09_rare` | `` | `weapon_case_base` |  |
-| 4708 | `#CSGO_character_operator_dossier_op09_mythical` | `` | `weapon_case_base` |  |
-| 4709 | `#CSGO_character_operator_dossier_op09_legendary` | `` | `weapon_case_base` |  |
-| 4710 | `#CSGO_character_operator_dossier_op10_ancient1` | `` | `weapon_case_base` |  |
-| 4711 | `#CSGO_CustomPlayer_ctm_swat_variante` | `` | `customplayertradable` |  |
-| 4712 | `#CSGO_CustomPlayer_ctm_swat_variantf` | `` | `customplayertradable` |  |
-| 4713 | `#CSGO_CustomPlayer_ctm_swat_variantg` | `` | `customplayertradable` |  |
-| 4714 | `#CSGO_CustomPlayer_ctm_swat_varianth` | `` | `customplayertradable` |  |
-| 4715 | `#CSGO_CustomPlayer_ctm_swat_varianti` | `` | `customplayertradable` |  |
-| 4716 | `#CSGO_CustomPlayer_ctm_swat_variantj` | `` | `customplayertradable` |  |
-| 4717 | `#CSGO_crate_community_27` | `` | `weapon_case` |  |
-| 4718 | `#CSGO_CustomPlayer_tm_balkan_variantk` | `` | `customplayertradable` |  |
-| 4719 | `#CSGO_crate_sticker_pack_recoil` | `` | `sticker_capsule` |  |
-| 4720 | `#CSGO_set_op10_ct` | `` | `weapon_case_base` |  |
-| 4721 | `#CSGO_set_op10_t` | `` | `weapon_case_base` |  |
-| 4722 | `#CSGO_set_op10_ancient` | `` | `weapon_case_base` |  |
-| 4723 | `#CSGO_crate_sticker_pack_recoil` | `` | `weapon_case_base` |  |
-| 4724 | `#CSGO_character_operator_dossier_op10_ancient2` | `` | `weapon_case_base` |  |
-| 4725 | `#CSGO_Wearable_t_studded_brokenfang_gloves` | `` | `hands_paintable` |  |
-| 4726 | `#CSGO_CustomPlayer_tm_professional_varf` | `` | `customplayertradable` |  |
-| 4727 | `#CSGO_CustomPlayer_tm_professional_varg` | `` | `customplayertradable` |  |
-| 4728 | `#CSGO_CustomPlayer_tm_professional_varh` | `` | `customplayertradable` |  |
-| 4729 | `#CSGO_crate_sticker_pack_broken_fang` | `` | `sticker_capsule` |  |
-| 4730 | `#CSGO_CustomPlayer_tm_professional_varj` | `` | `customplayertradable` |  |
-| 4731 | `#CSGO_crate_sticker_pack_broken_fang` | `` | `weapon_case_base` |  |
-| 4732 | `#CSGO_CustomPlayer_tm_professional_vari` | `` | `customplayertradable` |  |
-| 4733 | `#CSGO_CustomPlayer_tm_professional_varf1` | `` | `customplayertradable` |  |
-| 4734 | `#CSGO_CustomPlayer_tm_professional_varf2` | `` | `customplayertradable` |  |
-| 4735 | `#CSGO_CustomPlayer_tm_professional_varf3` | `` | `customplayertradable` |  |
-| 4736 | `#CSGO_CustomPlayer_tm_professional_varf4` | `` | `customplayertradable` |  |
-| 4737 | `#CSGO_Collectible_GlobalGeneral2021` | `` | `prestige_coin` |  |
-| 4738 | `#CSGO_Collectible_GlobalGeneral2021` | `` | `prestige_coin` |  |
-| 4739 | `#CSGO_Collectible_GlobalGeneral2021` | `` | `prestige_coin` |  |
-| 4740 | `#CSGO_Collectible_GlobalGeneral2021` | `` | `prestige_coin` |  |
-| 4741 | `#CSGO_Collectible_GlobalGeneral2021` | `` | `prestige_coin` |  |
-| 4742 | `#CSGO_Collectible_GlobalGeneral2021` | `` | `prestige_coin` |  |
-| 4743 | `#CSGO_crate_sticker_pack_rmr2020_legends` | `` | `rmr2020_sticker_capsule_prefab` |  |
-| 4744 | `#CSGO_crate_sticker_pack_rmr2020_challengers` | `` | `rmr2020_sticker_capsule_prefab` |  |
-| 4745 | `#CSGO_crate_sticker_pack_rmr2020_contenders` | `` | `rmr2020_sticker_capsule_prefab` |  |
-| 4746 | `#CSGO_crate_sticker_pack_poorly_drawn_capsule` | `` | `sticker_capsule` |  |
-| 4747 | `#CSGO_crate_community_28` | `` | `weapon_case` |  |
-| 4748 | `#CSGO_tool_subscription1` | `` | `valve csgo_tool` | #CSGO_Type_Ticket |
-| 4749 | `#CSGO_CustomPlayer_ctm_gendarmerie_varianta` | `` | `customplayertradable` |  |
-| 4750 | `#CSGO_CustomPlayer_ctm_gendarmerie_variantb` | `` | `customplayertradable` |  |
-| 4751 | `#CSGO_CustomPlayer_ctm_gendarmerie_variantc` | `` | `customplayertradable` |  |
-| 4752 | `#CSGO_CustomPlayer_ctm_gendarmerie_variantd` | `` | `customplayertradable` |  |
-| 4753 | `#CSGO_CustomPlayer_ctm_gendarmerie_variante` | `` | `customplayertradable` |  |
-| 4754 | `#CSGO_crate_musickit_tacticians_capsule` | `` | `weapon_case_base` |  |
-| 4755 | `#CSGO_crate_musickit_tacticians_stattrak_capsule` | `` | `weapon_case_base` |  |
-| 4756 | `#CSGO_CustomPlayer_ctm_swat_variantk` | `` | `customplayertradable` |  |
-| 4757 | `#CSGO_CustomPlayer_ctm_diver_varianta` | `` | `customplayertradable` |  |
-| 4758 | `#CSGO_Ticket_CommunitySeasonEleven2021` | `` | `season_pass` |  |
-| 4759 | `#CSGO_Collectible_CommunitySeasonEleven2021_Coin1` | `` | `season11_coin` |  |
-| 4760 | `#CSGO_Collectible_CommunitySeasonEleven2021_Coin2` | `` | `season11_coin` |  |
-| 4761 | `#CSGO_Collectible_CommunitySeasonEleven2021_Coin3` | `` | `season11_coin` |  |
-| 4762 | `#CSGO_Collectible_CommunitySeasonEleven2021_Coin4` | `` | `season11_coin` |  |
-| 4763 | `#CSGO_Collectible_CommunitySeasonEleven2021_PlusStars1` | `` | `valve season_tiers` |  |
-| 4764 | `#CSGO_Collectible_CommunitySeasonEleven2021_PlusStars10` | `` | `valve season_tiers` |  |
-| 4765 | `#CSGO_Collectible_CommunitySeasonEleven2021_PlusStars100` | `` | `valve season_tiers` |  |
-| 4766 | `#CSGO_character_operator_dossier_op09_rare` | `` | `weapon_case_base` |  |
-| 4767 | `#CSGO_character_operator_dossier_op09_mythical` | `` | `weapon_case_base` |  |
-| 4768 | `#CSGO_character_operator_dossier_op09_legendary` | `` | `weapon_case_base` |  |
-| 4769 | `#CSGO_character_operator_dossier_op11_ancient1` | `` | `weapon_case_base` |  |
-| 4770 | `#CSGO_character_operator_dossier_op11_ancient2` | `` | `weapon_case_base` |  |
-| 4771 | `#CSGO_CustomPlayer_ctm_diver_variantb` | `` | `customplayertradable` |  |
-| 4772 | `#CSGO_CustomPlayer_ctm_diver_variantc` | `` | `customplayertradable` |  |
-| 4773 | `#CSGO_CustomPlayer_tm_jungle_raider_varianta` | `` | `customplayertradable` |  |
-| 4774 | `#CSGO_CustomPlayer_tm_jungle_raider_variantb` | `` | `customplayertradable` |  |
-| 4775 | `#CSGO_CustomPlayer_tm_jungle_raider_variantc` | `` | `customplayertradable` |  |
-| 4776 | `#CSGO_CustomPlayer_tm_jungle_raider_variantd` | `` | `customplayertradable` |  |
-| 4777 | `#CSGO_CustomPlayer_tm_jungle_raider_variante` | `` | `customplayertradable` |  |
-| 4778 | `#CSGO_CustomPlayer_tm_jungle_raider_variantf` | `` | `customplayertradable` |  |
-| 4779 | `#CSGO_crate_sticker_pack_riptide_surfshop` | `` | `sticker_capsule` |  |
-| 4780 | `#CSGO_CustomPlayer_tm_jungle_raider_variantb2` | `` | `customplayertradable` |  |
-| 4781 | `#CSGO_CustomPlayer_tm_jungle_raider_variantf2` | `` | `customplayertradable` |  |
-| 4782 | `#CSGO_crate_sticker_pack_community2021_capsule` | `` | `sticker_capsule` |  |
-| 4783 | `#CSGO_crate_sticker_pack_op_riptide_capsule` | `` | `sticker_capsule` |  |
-| 4784 | `#CSGO_crate_sticker_pack_spring2022_capsule` | `` | `sticker_capsule` |  |
-| 4785 | `#CSGO_set_train_2021` | `` | `weapon_case_base` |  |
-| 4786 | `#CSGO_set_train_2021` | `` | `weapon_case_base` |  |
-| 4787 | `#CSGO_set_train_2021` | `` | `weapon_case_base` |  |
-| 4788 | `#CSGO_set_train_2021` | `` | `weapon_case_base` |  |
-| 4789 | `#CSGO_crate_sticker_pack_bf2042_capsule` | `` | `sticker_capsule` |  |
-| 4790 | `#CSGO_crate_community_29` | `` | `weapon_case` |  |
-| 4791 | `#CSGO_crate_sticker_pack_riptide_surfshop` | `` | `weapon_case_base` |  |
-| 4792 | `#CSGO_set_vertigo_2021` | `` | `weapon_case_base` |  |
-| 4793 | `#CSGO_set_dust_2_2021` | `` | `weapon_case_base` |  |
-| 4794 | `#CSGO_set_mirage_2021` | `` | `weapon_case_base` |  |
-| 4795 | `#CSGO_crate_patch_pack03` | `` | `patch_capsule` |  |
-| 4796 | `#CSGO_TournamentPass_stockh2021` | `` | `stockh2021_tournament_pass_prefab stockh2021_tournament_steamtv_items` |  |
-| 4797 | `#CSGO_TournamentJournal_stockh2021` | `` | `stockh2021_tournament_journal_prefab` |  |
-| 4798 | `#CSGO_TournamentJournal_stockh2021_Silver` | `` | `stockh2021_tournament_journal_prefab` |  |
-| 4799 | `#CSGO_TournamentJournal_stockh2021_Gold` | `` | `stockh2021_tournament_journal_prefab` |  |
-| 4800 | `#CSGO_TournamentJournal_stockh2021_Crystal` | `` | `stockh2021_tournament_journal_prefab` |  |
-| 4801 | `#CSGO_TournamentPass_stockh2021_pack` | `` | `stockh2021_tournament_pass_prefab stockh2021_tournament_steamtv_items` |  |
-| 4802 | `#CSGO_TournamentPass_stockh2021_charge` | `` | `stockh2021_tournament_pass_prefab` |  |
-| 4803 | `#CSGO_crate_sticker_pack_stockh2021_legends` | `` | `stockh2021_sticker_capsule_prefab` |  |
-| 4804 | `#CSGO_crate_sticker_pack_stockh2021_challengers` | `` | `stockh2021_sticker_capsule_prefab` |  |
-| 4805 | `#CSGO_crate_sticker_pack_stockh2021_contenders` | `` | `stockh2021_sticker_capsule_prefab` |  |
-| 4806 | `#CSGO_crate_patch_pack_stockh2021_legends` | `` | `stockh2021_patch_capsule_prefab` |  |
-| 4807 | `#CSGO_crate_patch_pack_stockh2021_challengers` | `` | `stockh2021_patch_capsule_prefab` |  |
-| 4808 | `#CSGO_crate_patch_pack_stockh2021_contenders` | `` | `stockh2021_patch_capsule_prefab` |  |
-| 4809 | `#CSGO_crate_stockh2021_promo_de_inferno` | `` | `weapon_case_souvenirpkg` |  |
-| 4810 | `#CSGO_crate_stockh2021_promo_de_mirage` | `` | `weapon_case_souvenirpkg` |  |
-| 4811 | `#CSGO_crate_stockh2021_promo_de_dust2` | `` | `weapon_case_souvenirpkg` |  |
-| 4812 | `#CSGO_crate_stockh2021_promo_de_overpass` | `` | `weapon_case_souvenirpkg` |  |
-| 4813 | `#CSGO_crate_stockh2021_promo_de_ancient` | `` | `weapon_case_souvenirpkg` |  |
-| 4814 | `#CSGO_crate_stockh2021_promo_de_nuke` | `` | `weapon_case_souvenirpkg` |  |
-| 4815 | `#CSGO_crate_stockh2021_promo_de_vertigo` | `` | `weapon_case_souvenirpkg` |  |
-| 4816 | `#CSGO_crate_signature_pack_stockh2021_group_champions` | `` | `stockh2021_signature_capsule_prefab` |  |
-| 4817 | `#CSGO_crate_signature_pack_stockh2021_group_finalists` | `` | `stockh2021_signature_capsule_prefab` |  |
-| 4818 | `#CSGO_crate_community_30` | `` | `weapon_case` |  |
-| 4819 | `#CSGO_Collectible_GlobalGeneral2022` | `` | `prestige_coin` |  |
-| 4820 | `#CSGO_Collectible_GlobalGeneral2022` | `` | `prestige_coin` |  |
-| 4821 | `#CSGO_Collectible_GlobalGeneral2022` | `` | `prestige_coin` |  |
-| 4822 | `#CSGO_Collectible_GlobalGeneral2022` | `` | `prestige_coin` |  |
-| 4823 | `#CSGO_Collectible_GlobalGeneral2022` | `` | `prestige_coin` |  |
-| 4824 | `#CSGO_Collectible_GlobalGeneral2022` | `` | `prestige_coin` |  |
-| 4825 | `#CSGO_TournamentPass_antwerp2022` | `` | `antwerp2022_tournament_pass_prefab antwerp2022_tournament_steamtv_items` |  |
-| 4826 | `#CSGO_TournamentJournal_antwerp2022` | `` | `antwerp2022_tournament_journal_prefab` |  |
-| 4827 | `#CSGO_TournamentJournal_antwerp2022_Silver` | `` | `antwerp2022_tournament_journal_prefab` |  |
-| 4828 | `#CSGO_TournamentJournal_antwerp2022_Gold` | `` | `antwerp2022_tournament_journal_prefab` |  |
-| 4829 | `#CSGO_TournamentJournal_antwerp2022_Crystal` | `` | `antwerp2022_tournament_journal_prefab` |  |
-| 4830 | `#CSGO_TournamentPass_antwerp2022_pack` | `` | `antwerp2022_tournament_pass_prefab antwerp2022_tournament_steamtv_items` |  |
-| 4831 | `#CSGO_TournamentPass_antwerp2022_charge` | `` | `antwerp2022_tournament_pass_prefab` |  |
-| 4832 | `#CSGO_crate_sticker_pack_antwerp2022_legends` | `` | `antwerp2022_sticker_capsule_prefab antwerp2022_sellable_item_with_payment_rules` |  |
-| 4833 | `#CSGO_crate_sticker_pack_antwerp2022_challengers` | `` | `antwerp2022_sticker_capsule_prefab antwerp2022_sellable_item_with_payment_rules` |  |
-| 4834 | `#CSGO_crate_sticker_pack_antwerp2022_contenders` | `` | `antwerp2022_sticker_capsule_prefab antwerp2022_sellable_item_with_payment_rules` |  |
-| 4835 | `#CSGO_crate_antwerp2022_promo_de_inferno` | `` | `weapon_case_souvenirpkg` |  |
-| 4836 | `#CSGO_crate_antwerp2022_promo_de_mirage` | `` | `weapon_case_souvenirpkg` |  |
-| 4837 | `#CSGO_crate_antwerp2022_promo_de_dust2` | `` | `weapon_case_souvenirpkg` |  |
-| 4838 | `#CSGO_crate_antwerp2022_promo_de_overpass` | `` | `weapon_case_souvenirpkg` |  |
-| 4839 | `#CSGO_crate_antwerp2022_promo_de_ancient` | `` | `weapon_case_souvenirpkg` |  |
-| 4840 | `#CSGO_crate_antwerp2022_promo_de_nuke` | `` | `weapon_case_souvenirpkg` |  |
-| 4841 | `#CSGO_crate_antwerp2022_promo_de_vertigo` | `` | `weapon_case_souvenirpkg` |  |
-| 4842 | `#CSGO_crate_signature_pack_antwerp2022_group_legends` | `` | `antwerp2022_signature_capsule_prefab antwerp2022_sellable_item_with_payment_rules` |  |
-| 4843 | `#CSGO_crate_signature_pack_antwerp2022_group_challengers` | `` | `antwerp2022_signature_capsule_prefab antwerp2022_sellable_item_with_payment_rules` |  |
-| 4844 | `#CSGO_crate_signature_pack_antwerp2022_group_contenders` | `` | `antwerp2022_signature_capsule_prefab antwerp2022_sellable_item_with_payment_rules` |  |
-| 4845 | `#CSGO_crate_signature_pack_antwerp2022_group_champions` | `` | `antwerp2022_signature_capsule_prefab antwerp2022_sellable_item_with_payment_rules` |  |
-| 4846 | `#CSGO_crate_community_31` | `` | `weapon_case` |  |
-| 4847 | `#CSGO_crate_sticker_pack_csgo10_capsule` | `` | `sticker_capsule` |  |
-| 4848 | `#CSGO_crate_musickit_initiators_capsule` | `` | `weapon_case_base` |  |
-| 4849 | `#CSGO_crate_musickit_initiators_stattrak_capsule` | `` | `weapon_case_base` |  |
-| 4850 | `#CSGO_TournamentPass_rio2022` | `` | `rio2022_tournament_pass_prefab rio2022_tournament_steamtv_items` |  |
-| 4851 | `#CSGO_TournamentJournal_rio2022` | `` | `rio2022_tournament_journal_prefab` |  |
-| 4852 | `#CSGO_TournamentJournal_rio2022_Silver` | `` | `rio2022_tournament_journal_prefab` |  |
-| 4853 | `#CSGO_TournamentJournal_rio2022_Gold` | `` | `rio2022_tournament_journal_prefab` |  |
-| 4854 | `#CSGO_TournamentJournal_rio2022_Crystal` | `` | `rio2022_tournament_journal_prefab` |  |
-| 4855 | `#CSGO_TournamentPass_rio2022_pack` | `` | `rio2022_tournament_pass_prefab rio2022_tournament_steamtv_items` |  |
-| 4856 | `#CSGO_TournamentPass_rio2022_charge` | `` | `rio2022_tournament_pass_prefab` |  |
-| 4857 | `#CSGO_crate_sticker_pack_rio2022_legends` | `` | `rio2022_sticker_capsule_prefab rio2022_sellable_item_with_payment_rules` |  |
-| 4858 | `#CSGO_crate_sticker_pack_rio2022_challengers` | `` | `rio2022_sticker_capsule_prefab rio2022_sellable_item_with_payment_rules` |  |
-| 4859 | `#CSGO_crate_sticker_pack_rio2022_contenders` | `` | `rio2022_sticker_capsule_prefab rio2022_sellable_item_with_payment_rules` |  |
-| 4860 | `#CSGO_crate_rio2022_promo_de_inferno` | `` | `weapon_case_souvenirpkg` |  |
-| 4861 | `#CSGO_crate_rio2022_promo_de_mirage` | `` | `weapon_case_souvenirpkg` |  |
-| 4862 | `#CSGO_crate_rio2022_promo_de_dust2` | `` | `weapon_case_souvenirpkg` |  |
-| 4863 | `#CSGO_crate_rio2022_promo_de_overpass` | `` | `weapon_case_souvenirpkg` |  |
-| 4864 | `#CSGO_crate_rio2022_promo_de_ancient` | `` | `weapon_case_souvenirpkg` |  |
-| 4865 | `#CSGO_crate_rio2022_promo_de_nuke` | `` | `weapon_case_souvenirpkg` |  |
-| 4866 | `#CSGO_crate_rio2022_promo_de_vertigo` | `` | `weapon_case_souvenirpkg` |  |
-| 4867 | `#CSGO_crate_signature_pack_rio2022_group_legends` | `` | `rio2022_signature_capsule_prefab rio2022_sellable_item_with_payment_rules` |  |
-| 4868 | `#CSGO_crate_signature_pack_rio2022_group_challengers` | `` | `rio2022_signature_capsule_prefab rio2022_sellable_item_with_payment_rules` |  |
-| 4869 | `#CSGO_crate_signature_pack_rio2022_group_contenders` | `` | `rio2022_signature_capsule_prefab rio2022_sellable_item_with_payment_rules` |  |
-| 4870 | `#CSGO_crate_signature_pack_rio2022_group_champions` | `` | `rio2022_signature_capsule_prefab rio2022_sellable_item_with_payment_rules` |  |
-| 4871 | `#CSGO_storageunit0_rio2022` | `` | `weapon_case_base rio2022_sellable_item_with_payment_rules` |  |
-| 4872 | `#CSGO_storageunit1_rio2022` | `` | `weapon_case_base rio2022_sellable_item_with_payment_rules` |  |
-| 4873 | `#CSGO_Collectible_GlobalGeneral2023` | `` | `prestige_coin` |  |
-| 4874 | `#CSGO_Collectible_GlobalGeneral2023` | `` | `prestige_coin` |  |
-| 4875 | `#CSGO_Collectible_GlobalGeneral2023` | `` | `prestige_coin` |  |
-| 4876 | `#CSGO_Collectible_GlobalGeneral2023` | `` | `prestige_coin` |  |
-| 4877 | `#CSGO_Collectible_GlobalGeneral2023` | `` | `prestige_coin` |  |
-| 4878 | `#CSGO_Collectible_GlobalGeneral2023` | `` | `prestige_coin` |  |
-| 4879 | `#CSGO_crate_sticker_pack_community2022_capsule` | `` | `sticker_capsule` |  |
-| 4880 | `#CSGO_crate_community_32` | `` | `weapon_case` |  |
-| 4882 | `#CSGO_set_anubis_storepromo` | `` | `weapon_case_selfopening_collection` |  |
-| 4883 | `#CSGO_TournamentPass_paris2023` | `` | `paris2023_tournament_pass_prefab paris2023_tournament_steamtv_items` |  |
-| 4884 | `#CSGO_TournamentJournal_paris2023` | `` | `paris2023_tournament_journal_prefab` |  |
-| 4885 | `#CSGO_TournamentJournal_paris2023_Silver` | `` | `paris2023_tournament_journal_prefab` |  |
-| 4886 | `#CSGO_TournamentJournal_paris2023_Gold` | `` | `paris2023_tournament_journal_prefab` |  |
-| 4887 | `#CSGO_TournamentJournal_paris2023_Crystal` | `` | `paris2023_tournament_journal_prefab` |  |
-| 4888 | `#CSGO_TournamentPass_paris2023_pack` | `` | `paris2023_tournament_pass_prefab paris2023_tournament_steamtv_items` |  |
-| 4889 | `#CSGO_TournamentPass_paris2023_charge` | `` | `paris2023_tournament_pass_prefab` |  |
-| 4890 | `#CSGO_crate_sticker_pack_paris2023_legends` | `` | `paris2023_sticker_capsule_prefab paris2023_sellable_item_with_payment_rules` |  |
-| 4891 | `#CSGO_crate_sticker_pack_paris2023_challengers` | `` | `paris2023_sticker_capsule_prefab paris2023_sellable_item_with_payment_rules` |  |
-| 4892 | `#CSGO_crate_sticker_pack_paris2023_contenders` | `` | `paris2023_sticker_capsule_prefab paris2023_sellable_item_with_payment_rules` |  |
-| 4893 | `#CSGO_crate_paris2023_promo_de_inferno` | `` | `weapon_case_souvenirpkg` |  |
-| 4894 | `#CSGO_crate_paris2023_promo_de_mirage` | `` | `weapon_case_souvenirpkg` |  |
-| 4895 | `#CSGO_crate_paris2023_promo_de_anubis` | `` | `weapon_case_souvenirpkg` |  |
-| 4896 | `#CSGO_crate_paris2023_promo_de_overpass` | `` | `weapon_case_souvenirpkg` |  |
-| 4897 | `#CSGO_crate_paris2023_promo_de_ancient` | `` | `weapon_case_souvenirpkg` |  |
-| 4898 | `#CSGO_crate_paris2023_promo_de_nuke` | `` | `weapon_case_souvenirpkg` |  |
-| 4899 | `#CSGO_crate_paris2023_promo_de_vertigo` | `` | `weapon_case_souvenirpkg` |  |
-| 4900 | `#CSGO_crate_signature_pack_paris2023_group_legends` | `` | `paris2023_signature_capsule_prefab paris2023_sellable_item_with_payment_rules` |  |
-| 4901 | `#CSGO_crate_signature_pack_paris2023_group_challengers` | `` | `paris2023_signature_capsule_prefab paris2023_sellable_item_with_payment_rules` |  |
-| 4902 | `#CSGO_crate_signature_pack_paris2023_group_contenders` | `` | `paris2023_signature_capsule_prefab paris2023_sellable_item_with_payment_rules` |  |
-| 4903 | `#CSGO_crate_signature_pack_paris2023_group_champions` | `` | `paris2023_signature_capsule_prefab paris2023_sellable_item_with_payment_rules` |  |
-| 4904 | `#CSGO_crate_community_33` | `` | `weapon_case` |  |
-| 4905 | `#CSGO_crate_sticker_pack_community_2024_capsule` | `` | `sticker_capsule` |  |
-| 4906 | `#CSGO_Collectible_GlobalGeneral2024` | `` | `prestige_coin` |  |
-| 4907 | `#CSGO_Collectible_GlobalGeneral2024` | `` | `prestige_coin` |  |
-| 4908 | `#CSGO_Collectible_GlobalGeneral2024` | `` | `prestige_coin` |  |
-| 4909 | `#CSGO_Collectible_GlobalGeneral2024` | `` | `prestige_coin` |  |
-| 4910 | `#CSGO_Collectible_GlobalGeneral2024` | `` | `prestige_coin` |  |
-| 4911 | `#CSGO_Collectible_GlobalGeneral2024` | `` | `prestige_coin` |  |
-| 4914 | `#CSGO_crate_musickit_nightmode_capsule` | `` | `weapon_case_base` |  |
-| 4915 | `#CSGO_crate_musickit_nightmode_stattrak_capsule` | `` | `weapon_case_base` |  |
-| 4916 | `#CSGO_TournamentPass_cph2024` | `` | `cph2024_tournament_pass_prefab cph2024_tournament_steamtv_items` |  |
-| 4917 | `#CSGO_TournamentJournal_cph2024` | `` | `cph2024_tournament_journal_prefab` |  |
-| 4918 | `#CSGO_TournamentJournal_cph2024_Silver` | `` | `cph2024_tournament_journal_prefab` |  |
-| 4919 | `#CSGO_TournamentJournal_cph2024_Gold` | `` | `cph2024_tournament_journal_prefab` |  |
-| 4920 | `#CSGO_TournamentJournal_cph2024_Crystal` | `` | `cph2024_tournament_journal_prefab` |  |
-| 4921 | `#CSGO_TournamentPass_cph2024_pack` | `` | `cph2024_tournament_pass_prefab cph2024_tournament_steamtv_items` |  |
-| 4922 | `#CSGO_TournamentPass_cph2024_charge` | `` | `cph2024_tournament_pass_prefab` |  |
-| 4923 | `#CSGO_crate_sticker_pack_cph2024_legends` | `` | `cph2024_sticker_capsule_prefab cph2024_sellable_item_with_payment_rules` |  |
-| 4924 | `#CSGO_crate_sticker_pack_cph2024_challengers` | `` | `cph2024_sticker_capsule_prefab cph2024_sellable_item_with_payment_rules` |  |
-| 4925 | `#CSGO_crate_sticker_pack_cph2024_contenders` | `` | `cph2024_sticker_capsule_prefab cph2024_sellable_item_with_payment_rules` |  |
-| 4926 | `#CSGO_crate_cph2024_promo_de_inferno` | `` | `weapon_case_souvenirpkg` |  |
-| 4927 | `#CSGO_crate_cph2024_promo_de_mirage` | `` | `weapon_case_souvenirpkg` |  |
-| 4928 | `#CSGO_crate_cph2024_promo_de_anubis` | `` | `weapon_case_souvenirpkg` |  |
-| 4929 | `#CSGO_crate_cph2024_promo_de_overpass` | `` | `weapon_case_souvenirpkg` |  |
-| 4930 | `#CSGO_crate_cph2024_promo_de_ancient` | `` | `weapon_case_souvenirpkg` |  |
-| 4931 | `#CSGO_crate_cph2024_promo_de_nuke` | `` | `weapon_case_souvenirpkg` |  |
-| 4932 | `#CSGO_crate_cph2024_promo_de_vertigo` | `` | `weapon_case_souvenirpkg` |  |
-| 4933 | `#CSGO_CollectibleCoin_cph2024_Champion` | `` | `majors_trophy` |  |
-| 4934 | `#CSGO_CollectibleCoin_cph2024_Finalist` | `` | `majors_trophy` |  |
-| 4935 | `#CSGO_CollectibleCoin_cph2024_Semifinalist` | `` | `majors_trophy` |  |
-| 4936 | `#CSGO_CollectibleCoin_cph2024_Quarterfinalist` | `` | `majors_trophy` |  |
-| 4937 | `#CSGO_crate_signature_pack_cph2024_group_legends` | `` | `cph2024_signature_capsule_prefab cph2024_sellable_item_with_payment_rules` |  |
-| 4938 | `#CSGO_crate_signature_pack_cph2024_group_challengers` | `` | `cph2024_signature_capsule_prefab cph2024_sellable_item_with_payment_rules` |  |
-| 4939 | `#CSGO_crate_signature_pack_cph2024_group_contenders` | `` | `cph2024_signature_capsule_prefab cph2024_sellable_item_with_payment_rules` |  |
-| 4940 | `#CSGO_crate_signature_pack_cph2024_group_champions` | `` | `cph2024_signature_capsule_prefab cph2024_sellable_item_with_payment_rules` |  |
-| 4941 | `#CSGO_Collectible_MapTokenThera` | `` | `map_token` |  |
-| 4942 | `#CSGO_Collectible_MapTokenMills` | `` | `map_token` |  |
-| 4943 | `#CSGO_Collectible_MapTokenAssembly` | `` | `map_token` |  |
-| 4944 | `#CSGO_Collectible_MapTokenMemento` | `` | `map_token` |  |
-| 4945 | `#CSGO_Collectible_MapTokenPoolDay` | `` | `map_token` |  |
-| 4946 | `#CSGO_crate_musickit_masterminds2_capsule` | `` | `weapon_case_base` |  |
-| 4947 | `#CSGO_crate_musickit_masterminds2_stattrak_capsule` | `` | `weapon_case_base` |  |
-| 4950 | `#CSGO_RemoveKeychainToolCharges_Title` | `` | `valve csgo_tool` |  |
-| 4951 | `#CSGO_Collectible_GlobalGeneral2025` | `` | `prestige_coin` |  |
-| 4952 | `#CSGO_Collectible_GlobalGeneral2025` | `` | `prestige_coin` |  |
-| 4953 | `#CSGO_Collectible_GlobalGeneral2025` | `` | `prestige_coin` |  |
-| 4954 | `#CSGO_Collectible_GlobalGeneral2025` | `` | `prestige_coin` |  |
-| 4955 | `#CSGO_Collectible_GlobalGeneral2025` | `` | `prestige_coin` |  |
-| 4956 | `#CSGO_Collectible_GlobalGeneral2025` | `` | `prestige_coin` |  |
-| 4957 | `#CSGO_TournamentPass_sha2024` | `` | `sha2024_tournament_pass_prefab sha2024_tournament_steamtv_items` |  |
-| 4958 | `#CSGO_TournamentJournal_sha2024` | `` | `sha2024_tournament_journal_prefab` |  |
-| 4959 | `#CSGO_TournamentJournal_sha2024_Silver` | `` | `sha2024_tournament_journal_prefab` |  |
-| 4960 | `#CSGO_TournamentJournal_sha2024_Gold` | `` | `sha2024_tournament_journal_prefab` |  |
-| 4961 | `#CSGO_TournamentJournal_sha2024_Crystal` | `` | `sha2024_tournament_journal_prefab` |  |
-| 4962 | `#CSGO_TournamentPass_sha2024_pack` | `` | `sha2024_tournament_pass_prefab sha2024_tournament_steamtv_items` |  |
-| 4963 | `#CSGO_TournamentPass_sha2024_charge` | `` | `sha2024_tournament_pass_prefab` |  |
-| 4964 | `#CSGO_crate_sticker_pack_sha2024_legends` | `` | `sha2024_sticker_capsule_prefab sha2024_sellable_item_with_payment_rules` |  |
-| 4965 | `#CSGO_crate_sticker_pack_sha2024_challengers` | `` | `sha2024_sticker_capsule_prefab sha2024_sellable_item_with_payment_rules` |  |
-| 4966 | `#CSGO_crate_sticker_pack_sha2024_contenders` | `` | `sha2024_sticker_capsule_prefab sha2024_sellable_item_with_payment_rules` |  |
-| 4967 | `#CSGO_crate_sha2024_promo_de_inferno` | `` | `sha2024_souvenir_crate_promo_prefab` |  |
-| 4968 | `#CSGO_crate_sha2024_promo_de_mirage` | `` | `sha2024_souvenir_crate_promo_prefab` |  |
-| 4969 | `#CSGO_crate_sha2024_promo_de_anubis` | `` | `sha2024_souvenir_crate_promo_prefab` |  |
-| 4970 | `#CSGO_crate_sha2024_promo_de_dust2` | `` | `sha2024_souvenir_crate_promo_prefab` |  |
-| 4971 | `#CSGO_crate_sha2024_promo_de_ancient` | `` | `sha2024_souvenir_crate_promo_prefab` |  |
-| 4972 | `#CSGO_crate_sha2024_promo_de_nuke` | `` | `sha2024_souvenir_crate_promo_prefab` |  |
-| 4973 | `#CSGO_crate_sha2024_promo_de_vertigo` | `` | `sha2024_souvenir_crate_promo_prefab` |  |
-| 4974 | `#CSGO_CollectibleCoin_sha2024_Champion` | `` | `majors_trophy` |  |
-| 4975 | `#CSGO_CollectibleCoin_sha2024_Finalist` | `` | `majors_trophy` |  |
-| 4976 | `#CSGO_CollectibleCoin_sha2024_Semifinalist` | `` | `majors_trophy` |  |
-| 4977 | `#CSGO_CollectibleCoin_sha2024_Quarterfinalist` | `` | `majors_trophy` |  |
-| 4978 | `#CSGO_crate_signature_pack_sha2024_group_legends` | `` | `sha2024_signature_capsule_prefab sha2024_sellable_item_with_payment_rules` |  |
-| 4979 | `#CSGO_crate_signature_pack_sha2024_group_challengers` | `` | `sha2024_signature_capsule_prefab sha2024_sellable_item_with_payment_rules` |  |
-| 4980 | `#CSGO_crate_signature_pack_sha2024_group_contenders` | `` | `sha2024_signature_capsule_prefab sha2024_sellable_item_with_payment_rules` |  |
-| 4981 | `#CSGO_crate_signature_pack_sha2024_group_champions` | `` | `sha2024_signature_capsule_prefab sha2024_sellable_item_with_payment_rules` |  |
-| 4982 | `#CSGO_Collectible_MapTokenWhistle` | `` | `map_token` |  |
-| 4983 | `#CSGO_Collectible_MapTokenPalais` | `` | `map_token` |  |
-| 4984 | `#CSGO_Collectible_MapTokenEdin` | `` | `map_token` |  |
-| 4985 | `#CSGO_Collectible_MapTokenBasaltCS2` | `` | `map_token` |  |
-| 4986 | `#CSGO_Collectible_PremierSeason1Coin` | `` | `premier_season_coin` |  |
-| 4987 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 4988 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 4989 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 4990 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 4991 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 4992 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 4993 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 4994 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 4995 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 4996 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 4997 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 4998 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 4999 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 5000 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 5001 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 5002 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 5003 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 5004 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 5005 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 5006 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 5007 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 5008 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 5009 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 5010 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 5011 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 5012 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 5013 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 5014 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 5015 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 5016 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 5017 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 5018 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 5019 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 5020 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 5021 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 5022 | `#CSGO_Collectible_PremierSeason2Coin` | `` | `premier_season_coin` |  |
-| 5027 | `#CSGO_Wearable_t_studdedgloves` | `` | `hands_paintable` |  |
-| 5028 | `#CSGO_Wearable_t_defaultgloves` | `` | `hands` |  |
-| 5029 | `#CSGO_Wearable_ct_defaultgloves` | `` | `hands` |  |
-| 5030 | `#CSGO_Wearable_v_sporty_glove` | `` | `hands_paintable` |  |
-| 5031 | `#CSGO_Wearable_v_slick_glove` | `` | `hands_paintable` |  |
-| 5032 | `#CSGO_Wearable_v_leather_handwrap` | `` | `hands_paintable` |  |
-| 5033 | `#CSGO_Wearable_v_motorcycle_glove` | `` | `hands_paintable` |  |
-| 5034 | `#CSGO_Wearable_v_specialist_glove` | `` | `hands_paintable` |  |
-| 5035 | `#CSGO_Wearable_t_studded_hydra_gloves` | `` | `hands_paintable` |  |
-| 5036 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5037 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5038 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5039 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5040 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5041 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5042 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5043 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5044 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5045 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5046 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5047 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5048 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5049 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5050 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5051 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5052 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5053 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5054 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5055 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5056 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5057 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5058 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5059 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5060 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5061 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5062 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5063 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5064 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5065 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5066 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5067 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5068 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5069 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5070 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5071 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5072 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5073 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5074 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5075 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5076 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5077 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5078 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5079 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5080 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5081 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5082 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5083 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5084 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5085 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5086 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5087 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5088 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5089 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5090 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5091 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5092 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5093 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5094 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5095 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5096 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5097 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5100 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5101 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5102 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5103 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5104 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5105 | `#CSGO_CustomPlayer_tm_leet_variantg` | `` | `customplayertradable` |  |
-| 5106 | `#CSGO_CustomPlayer_tm_leet_varianth` | `` | `customplayertradable` |  |
-| 5107 | `#CSGO_CustomPlayer_tm_leet_varianti` | `` | `customplayertradable` |  |
-| 5108 | `#CSGO_CustomPlayer_tm_leet_variantf` | `` | `customplayertradable` |  |
-| 5109 | `#CSGO_CustomPlayer_tm_leet_variantj` | `` | `customplayertradable` |  |
-| 5110 | `#CSGO_TournamentPass_aus2025` | `` | `aus2025_tournament_pass_prefab aus2025_tournament_steamtv_items` |  |
-| 5111 | `#CSGO_TournamentJournal_aus2025` | `` | `aus2025_tournament_journal_prefab` |  |
-| 5112 | `#CSGO_TournamentJournal_aus2025_Silver` | `` | `aus2025_tournament_journal_prefab` |  |
-| 5113 | `#CSGO_TournamentJournal_aus2025_Gold` | `` | `aus2025_tournament_journal_prefab` |  |
-| 5114 | `#CSGO_TournamentJournal_aus2025_Crystal` | `` | `aus2025_tournament_journal_prefab` |  |
-| 5115 | `#CSGO_TournamentPass_aus2025_pack` | `` | `aus2025_tournament_pass_prefab aus2025_tournament_steamtv_items` |  |
-| 5116 | `#CSGO_TournamentPass_aus2025_charge` | `` | `aus2025_tournament_pass_prefab` |  |
-| 5117 | `#CSGO_crate_sticker_pack_aus2025_legends` | `` | `aus2025_sticker_capsule_prefab aus2025_sellable_item_with_payment_rules` |  |
-| 5118 | `#CSGO_crate_sticker_pack_aus2025_challengers` | `` | `aus2025_sticker_capsule_prefab aus2025_sellable_item_with_payment_rules` |  |
-| 5119 | `#CSGO_crate_sticker_pack_aus2025_contenders` | `` | `aus2025_sticker_capsule_prefab aus2025_sellable_item_with_payment_rules` |  |
-| 5120 | `#CSGO_crate_aus2025_promo_de_inferno` | `` | `aus2025_souvenir_crate_promo_prefab` |  |
-| 5121 | `#CSGO_crate_aus2025_promo_de_mirage` | `` | `aus2025_souvenir_crate_promo_prefab` |  |
-| 5122 | `#CSGO_crate_aus2025_promo_de_anubis` | `` | `aus2025_souvenir_crate_promo_prefab` |  |
-| 5123 | `#CSGO_crate_aus2025_promo_de_dust2` | `` | `aus2025_souvenir_crate_promo_prefab` |  |
-| 5124 | `#CSGO_crate_aus2025_promo_de_ancient` | `` | `aus2025_souvenir_crate_promo_prefab` |  |
-| 5125 | `#CSGO_crate_aus2025_promo_de_nuke` | `` | `aus2025_souvenir_crate_promo_prefab` |  |
-| 5126 | `#CSGO_crate_aus2025_promo_de_train` | `` | `aus2025_souvenir_crate_promo_prefab` |  |
-| 5127 | `#CSGO_CollectibleCoin_aus2025_Champion` | `` | `majors_trophy` |  |
-| 5128 | `#CSGO_CollectibleCoin_aus2025_Finalist` | `` | `majors_trophy` |  |
-| 5129 | `#CSGO_CollectibleCoin_aus2025_Semifinalist` | `` | `majors_trophy` |  |
-| 5130 | `#CSGO_CollectibleCoin_aus2025_Quarterfinalist` | `` | `majors_trophy` |  |
-| 5131 | `#CSGO_crate_signature_pack_aus2025_group_legends` | `` | `aus2025_signature_capsule_prefab aus2025_sellable_item_with_payment_rules` |  |
-| 5132 | `#CSGO_crate_signature_pack_aus2025_group_challengers` | `` | `aus2025_signature_capsule_prefab aus2025_sellable_item_with_payment_rules` |  |
-| 5133 | `#CSGO_crate_signature_pack_aus2025_group_contenders` | `` | `aus2025_signature_capsule_prefab aus2025_sellable_item_with_payment_rules` |  |
-| 5134 | `#CSGO_crate_signature_pack_aus2025_group_champions` | `` | `aus2025_signature_capsule_prefab aus2025_sellable_item_with_payment_rules` |  |
-| 5135 | `#CSGO_Collectible_MapTokenAgencyCS2` | `` | `map_token` |  |
-| 5136 | `#CSGO_Collectible_MapTokenJura` | `` | `map_token` |  |
-| 5137 | `#CSGO_Collectible_MapTokenGrail` | `` | `map_token` |  |
-| 5138 | `#CSGO_Collectible_MapTokenDogtown` | `` | `map_token` |  |
-| 5139 | `#CSGO_Collectible_MapTokenBrewery` | `` | `map_token` |  |
-| 5140 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5141 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5142 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5143 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5144 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5145 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5146 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5147 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5148 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5149 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5150 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5151 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5152 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5153 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5154 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5155 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5156 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5157 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5158 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5159 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5160 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5161 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5162 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5163 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5164 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5165 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5166 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5167 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5168 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5169 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5170 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5171 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5172 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5173 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5174 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5175 | `#CSGO_Collectible_PremierSeason3Coin` | `` | `premier_season_coin` |  |
-| 5176 | `#CSGO_crate_community_36` | `` | `volatile_pricing weapon_case_selfopening_collection` |  |
-| 5177 | `#CSGO_Collectible_MapTokenGolden` | `` | `map_token` |  |
-| 5178 | `#CSGO_Collectible_MapTokenRooftop` | `` | `map_token` |  |
-| 5179 | `#CSGO_Collectible_MapTokenPalacio` | `` | `map_token` |  |
-| 5180 | `#CSGO_Collectible_MapTokenTransit` | `` | `map_token` |  |
-| 5181 | `#CSGO_crate_community_37` | `` | `volatile_pricing_gloves weapon_case_selfopening_collection` |  |
-| 5200 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5201 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5202 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5203 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5204 | `#CSGO_CustomPlayer_t_map_based` | `` | `customplayer` |  |
-| 5205 | `#CSGO_CustomPlayer_tm_phoenix_varianth` | `` | `customplayertradable` |  |
-| 5206 | `#CSGO_CustomPlayer_tm_phoenix_variantf` | `` | `customplayertradable` |  |
-| 5207 | `#CSGO_CustomPlayer_tm_phoenix_variantg` | `` | `customplayertradable` |  |
-| 5208 | `#CSGO_CustomPlayer_tm_phoenix_varianti` | `` | `customplayertradable` |  |
-| 5209 | `#CSGO_TournamentPass_bud2025` | `` | `bud2025_tournament_pass_prefab bud2025_tournament_steamtv_items` |  |
-| 5210 | `#CSGO_TournamentJournal_bud2025` | `` | `bud2025_tournament_journal_prefab` |  |
-| 5211 | `#CSGO_TournamentJournal_bud2025_Silver` | `` | `bud2025_tournament_journal_prefab` |  |
-| 5212 | `#CSGO_TournamentJournal_bud2025_Gold` | `` | `bud2025_tournament_journal_prefab` |  |
-| 5213 | `#CSGO_TournamentJournal_bud2025_Crystal` | `` | `bud2025_tournament_journal_prefab` |  |
-| 5214 | `#CSGO_TournamentPass_bud2025_pack` | `` | `bud2025_tournament_pass_prefab bud2025_tournament_steamtv_items` |  |
-| 5215 | `#CSGO_TournamentPass_bud2025_charge` | `` | `bud2025_tournament_pass_prefab` |  |
-| 5216 | `#CSGO_crate_sticker_pack_bud2025_legends` | `` | `bud2025_sticker_capsule_prefab bud2025_sellable_item_with_payment_rules` |  |
-| 5217 | `#CSGO_crate_sticker_pack_bud2025_challengers` | `` | `bud2025_sticker_capsule_prefab bud2025_sellable_item_with_payment_rules` |  |
-| 5218 | `#CSGO_crate_sticker_pack_bud2025_contenders` | `` | `bud2025_sticker_capsule_prefab bud2025_sellable_item_with_payment_rules` |  |
-| 5219 | `#CSGO_crate_bud2025_promo_de_inferno` | `` | `bud2025_souvenir_crate_promo_prefab` |  |
-| 5220 | `#CSGO_crate_bud2025_promo_de_mirage` | `` | `bud2025_souvenir_crate_promo_prefab` |  |
-| 5221 | `#CSGO_crate_bud2025_promo_de_overpass` | `` | `bud2025_souvenir_crate_promo_prefab` |  |
-| 5222 | `#CSGO_crate_bud2025_promo_de_dust2` | `` | `bud2025_souvenir_crate_promo_prefab` |  |
-| 5223 | `#CSGO_crate_bud2025_promo_de_ancient` | `` | `bud2025_souvenir_crate_promo_prefab` |  |
-| 5224 | `#CSGO_crate_bud2025_promo_de_nuke` | `` | `bud2025_souvenir_crate_promo_prefab` |  |
-| 5225 | `#CSGO_crate_bud2025_promo_de_train` | `` | `bud2025_souvenir_crate_promo_prefab` |  |
-| 5226 | `#CSGO_CollectibleCoin_bud2025_Champion` | `` | `majors_trophy` |  |
-| 5227 | `#CSGO_CollectibleCoin_bud2025_Finalist` | `` | `majors_trophy` |  |
-| 5228 | `#CSGO_CollectibleCoin_bud2025_Semifinalist` | `` | `majors_trophy` |  |
-| 5229 | `#CSGO_CollectibleCoin_bud2025_Quarterfinalist` | `` | `majors_trophy` |  |
-| 5230 | `#CSGO_crate_signature_pack_bud2025_group_legends` | `` | `bud2025_signature_capsule_prefab bud2025_sellable_item_with_payment_rules` |  |
-| 5231 | `#CSGO_crate_signature_pack_bud2025_group_challengers` | `` | `bud2025_signature_capsule_prefab bud2025_sellable_item_with_payment_rules` |  |
-| 5232 | `#CSGO_crate_signature_pack_bud2025_group_contenders` | `` | `bud2025_signature_capsule_prefab bud2025_sellable_item_with_payment_rules` |  |
-| 5233 | `#CSGO_crate_signature_pack_bud2025_group_champions` | `` | `bud2025_signature_capsule_prefab bud2025_sellable_item_with_payment_rules` |  |
-| 5234 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5235 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5236 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5237 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5238 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5239 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5240 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5241 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5242 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5243 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5244 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5245 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5246 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5247 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5248 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5249 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5250 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5251 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5252 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5253 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5254 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5255 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5256 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5257 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5258 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5259 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5260 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5261 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5262 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5263 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5264 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5265 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5266 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5267 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5268 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5269 | `#CSGO_Collectible_PremierSeason4Coin` | `` | `premier_season_coin` |  |
-| 5270 | `#CSGO_Collectible_GlobalGeneral2026` | `` | `prestige_coin` |  |
-| 5271 | `#CSGO_Collectible_GlobalGeneral2026` | `` | `prestige_coin` |  |
-| 5272 | `#CSGO_Collectible_GlobalGeneral2026` | `` | `prestige_coin` |  |
-| 5273 | `#CSGO_Collectible_GlobalGeneral2026` | `` | `prestige_coin` |  |
-| 5274 | `#CSGO_Collectible_GlobalGeneral2026` | `` | `prestige_coin` |  |
-| 5275 | `#CSGO_Collectible_GlobalGeneral2026` | `` | `prestige_coin` |  |
-| 5276 | `#CSGO_Collectible_MapTokenWarden` | `` | `map_token` |  |
-| 5277 | `#CSGO_Collectible_MapTokenStronghold` | `` | `map_token` |  |
-| 5278 | `#CSGO_Collectible_MapTokenAlpine` | `` | `map_token` |  |
-| 5279 | `#CSGO_Collectible_MapTokenPoseidon` | `` | `map_token` |  |
-| 5280 | `#CSGO_Collectible_MapTokenSanctum` | `` | `map_token` |  |
-| 5281 | `#CSGO_Collectible_MapTokenBoulder` | `` | `map_token` |  |
-| 5282 | `#CSGO_Collectible_MapTokenFachwerk` | `` | `map_token` |  |
-| 5283 | `#CSGO_Collectible_MapTokenShelter` | `` | `map_token` |  |
-| 5284 | `#CSGO_Collectible_MapTokenDebris` | `` | `map_token` |  |
-| 5285 | `#CSGO_Collectible_MapTokenElDorado` | `` | `map_token` |  |
-| 5300 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5301 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5302 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5303 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5304 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5305 | `#CSGO_CustomPlayer_ctm_fbi_variantf` | `` | `customplayertradable` |  |
-| 5306 | `#CSGO_CustomPlayer_ctm_fbi_variantg` | `` | `customplayertradable` |  |
-| 5307 | `#CSGO_CustomPlayer_ctm_fbi_varianth` | `` | `customplayertradable` |  |
-| 5308 | `#CSGO_CustomPlayer_ctm_fbi_variantb` | `` | `customplayertradable` |  |
-| 5309 | `` | `` | `cologne2026_tournament_credits_prefab cologne2026_sellable_item1` |  |
-| 5310 | `#CSGO_TournamentPass_cologne2026` | `` | `cologne2026_tournament_pass_prefab cologne2026_tournament_steamtv_items` |  |
-| 5311 | `#CSGO_TournamentPass_cologne2026_pack` | `` | `cologne2026_tournament_pass_prefab cologne2026_tournament_steamtv_items` |  |
-| 5312 | `#CSGO_TournamentJournal_cologne2026` | `` | `cologne2026_tournament_journal_prefab` |  |
-| 5313 | `#CSGO_TournamentJournal_cologne2026_Silver` | `` | `cologne2026_tournament_journal_prefab` |  |
-| 5314 | `#CSGO_TournamentJournal_cologne2026_Gold` | `` | `cologne2026_tournament_journal_prefab` |  |
-| 5315 | `#CSGO_TournamentJournal_cologne2026_Crystal` | `` | `cologne2026_tournament_journal_prefab` |  |
-| 5316 | `#CSGO_crate_sticker_pack_cologne2026_all` | `` | `cologne2026_sticker_capsule_prefab volatile_pricing_stickercap1` |  |
-| 5317 | `#CSGO_crate_sticker_pack_cologne2026_orgs` | `` | `cologne2026_sticker_capsule_prefab` |  |
-| 5318 | `#CSGO_crate_signature_pack_cologne2026_group_players` | `` | `cologne2026_signature_capsule_prefab` |  |
-| 5319 | `#CSGO_CollectibleCoin_cologne2026_Champion` | `` | `majors_trophy` |  |
-| 5320 | `#CSGO_CollectibleCoin_cologne2026_Finalist` | `` | `majors_trophy` |  |
-| 5321 | `#CSGO_CollectibleCoin_cologne2026_Semifinalist` | `` | `majors_trophy` |  |
-| 5322 | `#CSGO_CollectibleCoin_cologne2026_Quarterfinalist` | `` | `majors_trophy` |  |
-| 5323 | `#keychain_kc_cologne2026` | `` | `cologne2026_sticker_capsule_prefab volatile_pricing_uniform1` |  |
-| 5324 | `#keychain_kc_cologne2026` | `` | `cologne2026_sticker_capsule_prefab volatile_pricing_uniform1` |  |
-| 5325 | `#keychain_kc_cologne2026` | `` | `cologne2026_sticker_capsule_prefab volatile_pricing_uniform1` |  |
-| 5326 | `#keychain_kc_cologne2026` | `` | `cologne2026_sticker_capsule_prefab volatile_pricing_uniform1` |  |
-| 5327 | `#keychain_kc_cologne2026` | `` | `cologne2026_sticker_capsule_prefab volatile_pricing_uniform1` |  |
-| 5328 | `#keychain_kc_cologne2026` | `` | `cologne2026_sticker_capsule_prefab volatile_pricing_uniform1` |  |
-| 5329 | `#CSGO_crate_sticker_pack_cologne2026_all` | `` | `cologne2026_sticker_capsule_prefab volatile_pricing_stickercap1` |  |
-| 5330 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5331 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5332 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5333 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5334 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5335 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5336 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5337 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5338 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5339 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5340 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5341 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5342 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5343 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5344 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5345 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5346 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5347 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5348 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5349 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5350 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5351 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5352 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5353 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5354 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5355 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5356 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5357 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5358 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5359 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5360 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5361 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5362 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5363 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5364 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5365 | `#CSGO_Collectible_PremierSeason5Coin` | `` | `premier_season_coin` |  |
-| 5400 | `#CSGO_CustomPlayer_ctm_st6_variantk` | `` | `customplayertradable` |  |
-| 5401 | `#CSGO_CustomPlayer_ctm_st6_variante` | `` | `customplayertradable` |  |
-| 5402 | `#CSGO_CustomPlayer_ctm_st6_variantg` | `` | `customplayertradable` |  |
-| 5403 | `#CSGO_CustomPlayer_ctm_st6_variantm` | `` | `customplayertradable` |  |
-| 5404 | `#CSGO_CustomPlayer_ctm_st6_varianti` | `` | `customplayertradable` |  |
-| 5405 | `#CSGO_CustomPlayer_ctm_st6_variantn` | `` | `customplayertradable` |  |
-| 5500 | `#CSGO_CustomPlayer_tm_balkan_variantf` | `` | `customplayertradable` |  |
-| 5501 | `#CSGO_CustomPlayer_tm_balkan_varianti` | `` | `customplayertradable` |  |
-| 5502 | `#CSGO_CustomPlayer_tm_balkan_variantg` | `` | `customplayertradable` |  |
-| 5503 | `#CSGO_CustomPlayer_tm_balkan_variantj` | `` | `customplayertradable` |  |
-| 5504 | `#CSGO_CustomPlayer_tm_balkan_varianth` | `` | `customplayertradable` |  |
-| 5505 | `#CSGO_CustomPlayer_tm_balkan_variantl` | `` | `customplayertradable` |  |
-| 5600 | `#CSGO_CustomPlayer_ct_map_based` | `` | `customplayer` |  |
-| 5601 | `#CSGO_CustomPlayer_ctm_sas_variantf` | `` | `customplayertradable` |  |
-| 5602 | `#CSGO_CustomPlayer_ctm_sas_variantg` | `` | `customplayertradable` |  |
-| 6001 | `#CSGO_Collectible_Pin_DustII` | `` | `attendance_pin` |  |
-| 6002 | `#CSGO_Collectible_Pin_GuardianElite` | `` | `attendance_pin` |  |
-| 6003 | `#CSGO_Collectible_Pin_Mirage` | `` | `attendance_pin` |  |
-| 6004 | `#CSGO_Collectible_Pin_Inferno` | `` | `attendance_pin` |  |
-| 6005 | `#CSGO_Collectible_Pin_Italy` | `` | `attendance_pin` |  |
-| 6006 | `#CSGO_Collectible_Pin_Victory` | `` | `attendance_pin` |  |
-| 6007 | `#CSGO_Collectible_Pin_Militia` | `` | `attendance_pin` |  |
-| 6008 | `#CSGO_Collectible_Pin_Nuke` | `` | `attendance_pin` |  |
-| 6009 | `#CSGO_Collectible_Pin_Train` | `` | `attendance_pin` |  |
-| 6010 | `#CSGO_Collectible_Pin_Guardian` | `` | `attendance_pin` |  |
-| 6011 | `#CSGO_Collectible_Pin_Tactics` | `` | `attendance_pin` |  |
-| 6012 | `#CSGO_Collectible_Pin_guardian_2` | `` | `attendance_pin` |  |
-| 6013 | `#CSGO_Collectible_Pin_bravo` | `` | `attendance_pin` |  |
-| 6014 | `#CSGO_Collectible_Pin_baggage` | `` | `attendance_pin` |  |
-| 6015 | `#CSGO_Collectible_Pin_phoenix` | `` | `attendance_pin` |  |
-| 6016 | `#CSGO_Collectible_Pin_office` | `` | `attendance_pin` |  |
-| 6017 | `#CSGO_Collectible_Pin_cobblestone` | `` | `attendance_pin` |  |
-| 6018 | `#CSGO_Collectible_Pin_overpass` | `` | `attendance_pin` |  |
-| 6019 | `#CSGO_Collectible_Pin_bloodhound` | `` | `attendance_pin` |  |
-| 6020 | `#CSGO_Collectible_Pin_cache` | `` | `attendance_pin` |  |
-| 6021 | `#CSGO_Collectible_Pin_valeria` | `` | `attendance_pin` |  |
-| 6022 | `#CSGO_Collectible_Pin_chroma` | `` | `attendance_pin` |  |
-| 6023 | `#CSGO_Collectible_Pin_guardian_3` | `` | `attendance_pin` |  |
-| 6024 | `#CSGO_Collectible_Pin_canals` | `` | `attendance_pin` |  |
-| 6025 | `#CSGO_Collectible_Pin_welcome_to_the_clutch` | `` | `attendance_pin` |  |
-| 6026 | `#CSGO_Collectible_Pin_death_sentence` | `` | `attendance_pin` |  |
-| 6027 | `#CSGO_Collectible_Pin_inferno_2` | `` | `attendance_pin` |  |
-| 6028 | `#CSGO_Collectible_Pin_wildfire` | `` | `attendance_pin` |  |
-| 6029 | `#CSGO_Collectible_Pin_easy_peasy` | `` | `attendance_pin` |  |
-| 6030 | `#CSGO_Collectible_Pin_aces_high` | `` | `attendance_pin` |  |
-| 6031 | `#CSGO_Collectible_Pin_hydra` | `` | `attendance_pin` |  |
-| 6032 | `#CSGO_Collectible_Pin_howl` | `` | `attendance_pin` |  |
-| 6033 | `#CSGO_Collectible_Pin_brigadier_general` | `` | `attendance_pin` |  |
-| 6034 | `#CSGO_Collectible_Pin_alyx_10` | `` | `attendance_pin` |  |
-| 6046 | `` | `` | `collectible_untradable_coin` |  |
-| 6047 | `` | `` | `collectible_untradable_coin` |  |
-| 6048 | `` | `` | `collectible_untradable_coin` |  |
-| 6049 | `` | `` | `collectible_untradable_coin` |  |
-| 6050 | `` | `` | `collectible_untradable_coin` |  |
-| 6051 | `` | `` | `collectible_untradable_coin` |  |
-| 6052 | `` | `` | `collectible_untradable_coin` |  |
-| 6053 | `` | `` | `collectible_untradable_coin` |  |
-| 6054 | `` | `` | `collectible_untradable_coin` |  |
-| 6055 | `` | `` | `collectible_untradable_coin` |  |
-| 6056 | `` | `` | `collectible_untradable_coin` |  |
-| 6057 | `` | `` | `collectible_untradable_coin` |  |
-| 6058 | `` | `` | `collectible_untradable_coin` |  |
-| 6059 | `` | `` | `collectible_untradable_coin` |  |
-| 6060 | `` | `` | `collectible_untradable_coin` |  |
-| 6061 | `` | `` | `collectible_untradable_coin` |  |
-| 6062 | `` | `` | `collectible_untradable_coin` |  |
-| 6063 | `` | `` | `collectible_untradable_coin` |  |
-| 6064 | `` | `` | `collectible_untradable_coin` |  |
-| 6065 | `` | `` | `collectible_untradable_coin` |  |
-| 6066 | `` | `` | `collectible_untradable_coin` |  |
-| 6067 | `` | `` | `collectible_untradable_coin` |  |
-| 6068 | `` | `` | `collectible_untradable_coin` |  |
-| 6069 | `` | `` | `collectible_untradable_coin` |  |
-| 6070 | `` | `` | `collectible_untradable_coin` |  |
-| 6071 | `` | `` | `collectible_untradable_coin` |  |
-| 6072 | `` | `` | `collectible_untradable_coin` |  |
-| 6073 | `` | `` | `collectible_untradable_coin` |  |
-| 6074 | `` | `` | `collectible_untradable_coin` |  |
-| 6075 | `` | `` | `collectible_untradable_coin` |  |
-| 6076 | `` | `` | `collectible_untradable_coin` |  |
-| 6077 | `` | `` | `collectible_untradable_coin` |  |
-| 6078 | `` | `` | `collectible_untradable_coin` |  |
-| 6079 | `` | `` | `collectible_untradable_coin` |  |
-| 6080 | `` | `` | `collectible_untradable_coin` |  |
-| 6081 | `` | `` | `collectible_untradable_coin` |  |
-| 6082 | `` | `` | `collectible_untradable_coin` |  |
-| 6083 | `` | `` | `collectible_untradable_coin` |  |
-| 6084 | `` | `` | `collectible_untradable_coin` |  |
-| 6085 | `` | `` | `collectible_untradable_coin` |  |
-| 6086 | `` | `` | `collectible_untradable_coin` |  |
-| 6087 | `` | `` | `collectible_untradable_coin` |  |
-| 6088 | `` | `` | `collectible_untradable_coin` |  |
-| 6101 | `#CSGO_Collectible_Pin_DustII` | `` | `commodity_pin` |  |
-| 6102 | `#CSGO_Collectible_Pin_GuardianElite` | `` | `commodity_pin` |  |
-| 6103 | `#CSGO_Collectible_Pin_Mirage` | `` | `commodity_pin` |  |
-| 6104 | `#CSGO_Collectible_Pin_Inferno` | `` | `commodity_pin` |  |
-| 6105 | `#CSGO_Collectible_Pin_Italy` | `` | `commodity_pin` |  |
-| 6106 | `#CSGO_Collectible_Pin_Victory` | `` | `commodity_pin` |  |
-| 6107 | `#CSGO_Collectible_Pin_Militia` | `` | `commodity_pin` |  |
-| 6108 | `#CSGO_Collectible_Pin_Nuke` | `` | `commodity_pin` |  |
-| 6109 | `#CSGO_Collectible_Pin_Train` | `` | `commodity_pin` |  |
-| 6110 | `#CSGO_Collectible_Pin_Guardian` | `` | `commodity_pin` |  |
-| 6111 | `#CSGO_Collectible_Pin_Tactics` | `` | `commodity_pin` |  |
-| 6112 | `#CSGO_Collectible_Pin_guardian_2` | `` | `commodity_pin` |  |
-| 6113 | `#CSGO_Collectible_Pin_bravo` | `` | `commodity_pin` |  |
-| 6114 | `#CSGO_Collectible_Pin_baggage` | `` | `commodity_pin` |  |
-| 6115 | `#CSGO_Collectible_Pin_phoenix` | `` | `commodity_pin` |  |
-| 6116 | `#CSGO_Collectible_Pin_office` | `` | `commodity_pin` |  |
-| 6117 | `#CSGO_Collectible_Pin_cobblestone` | `` | `commodity_pin` |  |
-| 6118 | `#CSGO_Collectible_Pin_overpass` | `` | `commodity_pin` |  |
-| 6119 | `#CSGO_Collectible_Pin_bloodhound` | `` | `commodity_pin` |  |
-| 6120 | `#CSGO_Collectible_Pin_cache` | `` | `commodity_pin` |  |
-| 6121 | `#CSGO_Collectible_Pin_valeria` | `` | `commodity_pin` |  |
-| 6122 | `#CSGO_Collectible_Pin_chroma` | `` | `commodity_pin` |  |
-| 6123 | `#CSGO_Collectible_Pin_guardian_3` | `` | `commodity_pin` |  |
-| 6124 | `#CSGO_Collectible_Pin_canals` | `` | `commodity_pin` |  |
-| 6125 | `#CSGO_Collectible_Pin_welcome_to_the_clutch` | `` | `commodity_pin` |  |
-| 6126 | `#CSGO_Collectible_Pin_death_sentence` | `` | `commodity_pin` |  |
-| 6127 | `#CSGO_Collectible_Pin_inferno_2` | `` | `commodity_pin` |  |
-| 6128 | `#CSGO_Collectible_Pin_wildfire` | `` | `commodity_pin` |  |
-| 6129 | `#CSGO_Collectible_Pin_easy_peasy` | `` | `commodity_pin` |  |
-| 6130 | `#CSGO_Collectible_Pin_aces_high` | `` | `commodity_pin` |  |
-| 6131 | `#CSGO_Collectible_Pin_hydra` | `` | `commodity_pin` |  |
-| 6132 | `#CSGO_Collectible_Pin_howl` | `` | `commodity_pin` |  |
-| 6133 | `#CSGO_Collectible_Pin_brigadier_general` | `` | `commodity_pin` |  |
-| 6134 | `#CSGO_Collectible_Pin_alyx_10` | `` | `commodity_pin` |  |
-| 6404 | `#CSGO_character_operator_dossier_op09_rare` | `` | `weapon_case_base` |  |
-| 6405 | `#CSGO_character_operator_dossier_op09_mythical` | `` | `weapon_case_base` |  |
-| 6406 | `#CSGO_character_operator_dossier_op09_legendary` | `` | `weapon_case_base` |  |
-| 6407 | `#CSGO_character_operator_dossier_op09_ancient` | `` | `weapon_case_base` |  |
-| 7000 | `#CSGO_crate_key_community_11` | `` | `weapon_case_key` |  |
-| 7002 | `#CSGO_crate_key_community_34` | `` | `weapon_case_key` |  |
-| 7003 | `#CSGO_crate_community_34` | `` | `weapon_case` |  |
-| 7007 | `#CSGO_crate_community_35` | `` | `weapon_case` |  |
-| 7008 | `#CSGO_crate_key_community_35` | `` | `weapon_case_key` |  |
-| 7011 | `CSGO_crate_sticker_pack_warhammer_traitor_capsule` | `` | `sticker_capsule` |  |
-| 7012 | `#coupon_warhammer_traitor_sticker_capsule` | `` | `coupon_warhammer_traitor_capsule_prefab` |  |
-| 7013 | `CSGO_crate_sticker_pack_warhammer_adeptus_capsule` | `` | `sticker_capsule` |  |
-| 7014 | `#coupon_warhammer_adeptus_sticker_capsule` | `` | `coupon_warhammer_adeptus_capsule_prefab` |  |
-| 7015 | `#CSGO_crate_sticker_pack_warhammer_imperium_capsule` | `` | `sticker_capsule` |  |
-| 7016 | `#coupon_warhammer_imperium_sticker_capsule` | `` | `coupon_warhammer_imperium_capsule_prefab` |  |
-| 7017 | `CSGO_crate_sticker_pack_warhammer_xenos_capsule` | `` | `sticker_capsule` |  |
-| 7018 | `#coupon_warhammer_xenos_sticker_capsule` | `` | `coupon_warhammer_xenos_capsule_prefab` |  |
-| 7019 | `#CSGO_crate_musickit_deluge_capsule` | `` | `weapon_case_base` |  |
-| 7020 | `#coupon_deluge_musickit_capsule` | `` | `coupon_deluge_capsule_prefab` |  |
-| 7021 | `#CSGO_crate_musickit_deluge_stattrak_capsule` | `` | `weapon_case_base` |  |
-| 7022 | `#coupon_deluge_stattrak_musickit_capsule` | `` | `coupon_deluge_capsule_prefab` |  |
-| 7029 | `#coupon_alrt_01` | `` | `coupon_prefab` |  |
-| 7030 | `#coupon_alrt_01_stattrak` | `` | `coupon_prefab` |  |
-| 7031 | `#coupon_borne_01` | `` | `coupon_prefab` |  |
-| 7032 | `#coupon_borne_01_stattrak` | `` | `coupon_prefab` |  |
-| 7033 | `#coupon_altare_01` | `` | `coupon_prefab` |  |
-| 7034 | `#coupon_altare_01_stattrak` | `` | `coupon_prefab` |  |
-| 7035 | `#coupon_pirapus_01` | `` | `coupon_prefab` |  |
-| 7036 | `#coupon_pirapus_01_stattrak` | `` | `coupon_prefab` |  |
-| 7037 | `#coupon_repiet_01_stattrak` | `` | `coupon_prefab` |  |
-| 7038 | `#coupon_repiet_01` | `` | `coupon_prefab` |  |
-| 7039 | `#coupon_shockone_01_stattrak` | `` | `coupon_prefab` |  |
-| 7040 | `#coupon_shockone_01` | `` | `coupon_prefab` |  |
-| 7041 | `CSGO_crate_sticker_pack_jackass_capsule` | `` | `sticker_capsule` |  |
-| 7042 | `#coupon_jackass_sticker_capsule` | `` | `coupon_jackass_capsule_prefab` |  |
-| 20000 | `#coupon_bossyburger` | `` | `coupon_prefab` |  |
-| 20001 | `#coupon_catcall` | `` | `coupon_prefab` |  |
-| 20002 | `#coupon_chickenstrike` | `` | `coupon_prefab` |  |
-| 20003 | `#coupon_ctbanana` | `` | `coupon_prefab` |  |
-| 20004 | `#coupon_dontworryimpro` | `` | `coupon_prefab` |  |
-| 20005 | `#coupon_fightlikeagirl` | `` | `coupon_prefab` |  |
-| 20006 | `#coupon_handmadeflash` | `` | `coupon_prefab` |  |
-| 20007 | `#coupon_kawaiikiller` | `` | `coupon_prefab` |  |
-| 20008 | `#coupon_neluthebear` | `` | `coupon_prefab` |  |
-| 20009 | `#coupon_oneshotonekill` | `` | `coupon_prefab` |  |
-| 20010 | `#coupon_shootingstar` | `` | `coupon_prefab` |  |
-| 20012 | `#coupon_warpenguin` | `` | `coupon_prefab` |  |
-| 20013 | `#coupon_windywalking` | `` | `coupon_prefab` |  |
-| 20014 | `#coupon_blitzkrieg` | `` | `coupon_prefab` |  |
-| 20015 | `#coupon_pigeonmaster` | `` | `coupon_prefab` |  |
-| 20016 | `#coupon_terrorized` | `` | `coupon_prefab` |  |
-| 20017 | `#coupon_tilldeathdouspart` | `` | `coupon_prefab` |  |
-| 20018 | `#coupon_stayfrosty` | `` | `coupon_prefab` |  |
-| 20019 | `#coupon_toncat` | `` | `coupon_prefab` |  |
-| 20020 | `#coupon_danielsadowski_01` | `` | `coupon_prefab` |  |
-| 20021 | `#coupon_noisia_01` | `` | `coupon_prefab` |  |
-| 20022 | `#coupon_robertallaire_01` | `` | `coupon_prefab` |  |
-| 20023 | `#coupon_seanmurray_01` | `` | `coupon_prefab` |  |
-| 20024 | `#coupon_feedme_01` | `` | `coupon_prefab` |  |
-| 20025 | `#coupon_dren_01` | `` | `coupon_prefab` |  |
-| 20026 | `#coupon_austinwintory_01` | `` | `coupon_prefab` |  |
-| 20027 | `#coupon_sasha_01` | `` | `coupon_prefab` |  |
-| 20028 | `#coupon_skog_01` | `` | `coupon_prefab` |  |
-| 20029 | `#coupon_doomed` | `` | `coupon_prefab` |  |
-| 20030 | `#coupon_queenofpain` | `` | `coupon_prefab` |  |
-| 20031 | `#coupon_trickorthreat` | `` | `coupon_prefab` |  |
-| 20032 | `#coupon_trickortreat` | `` | `coupon_prefab` |  |
-| 20033 | `#coupon_witch` | `` | `coupon_prefab` |  |
-| 20034 | `#coupon_zombielover` | `` | `coupon_prefab` |  |
-| 20035 | `#coupon_blood_broiler` | `` | `coupon_prefab` |  |
-| 20036 | `#coupon_dinked` | `` | `coupon_prefab` |  |
-| 20037 | `#coupon_drugwarveteran` | `` | `coupon_prefab` |  |
-| 20038 | `#coupon_hohoho` | `` | `coupon_prefab` |  |
-| 20039 | `#coupon_massivepear` | `` | `coupon_prefab` |  |
-| 20040 | `#coupon_mylittlefriend` | `` | `coupon_prefab` |  |
-| 20041 | `#coupon_pandamonium` | `` | `coupon_prefab` |  |
-| 20042 | `#coupon_pieceofcake` | `` | `coupon_prefab` |  |
-| 20043 | `#coupon_saschicken` | `` | `coupon_prefab` |  |
-| 20044 | `#coupon_thuglife` | `` | `coupon_prefab` |  |
-| 20045 | `#coupon_trekt` | `` | `coupon_prefab` |  |
-| 20046 | `#coupon_warowl` | `` | `coupon_prefab` |  |
-| 20047 | `#coupon_workforfood` | `` | `coupon_prefab` |  |
-| 20048 | `#coupon_phoenix_foil` | `` | `coupon_prefab` |  |
-| 20049 | `#coupon_bombsquad_foil` | `` | `coupon_prefab` |  |
-| 20050 | `#coupon_midnightriders_01` | `` | `valve coupon_prefab` |  |
-| 20051 | `#coupon_danielsadowski_02` | `` | `coupon_prefab` |  |
-| 20052 | `#coupon_hotlinemiami_01` | `` | `coupon_prefab` |  |
-| 20053 | `#coupon_mattlange_01` | `` | `coupon_prefab` |  |
-| 20054 | `#coupon_mateomessina_01` | `` | `coupon_prefab` |  |
-| 20055 | `#coupon_damjanmravunac_01` | `` | `coupon_prefab` |  |
-| 20056 | `#coupon_flickshot` | `` | `coupon_prefab` |  |
-| 20057 | `#coupon_headshot_guarantee` | `` | `coupon_prefab` |  |
-| 20058 | `#coupon_eco_rush` | `` | `coupon_prefab` |  |
-| 20059 | `#coupon_just_trolling` | `` | `valve coupon_prefab` |  |
-| 20061 | `#coupon_firestarter_holo` | `` | `coupon_prefab` |  |
-| 20062 | `#coupon_lucky_cat_foil` | `` | `coupon_prefab` |  |
-| 20063 | `#coupon_robot_head` | `` | `coupon_prefab` |  |
-| 20064 | `#coupon_witchcraft` | `` | `coupon_prefab` |  |
-| 20065 | `#coupon_wanna_fight` | `` | `coupon_prefab` |  |
-| 20066 | `#coupon_hostage_rescue` | `` | `coupon_prefab` |  |
-| 20067 | `#coupon_hamster_hawk` | `` | `coupon_prefab` |  |
-| 20068 | `#coupon_headless_chicken` | `` | `coupon_prefab` |  |
-| 20069 | `#coupon_proxy_01` | `` | `coupon_prefab` |  |
-| 20070 | `#coupon_kitheory_01` | `` | `coupon_prefab` |  |
-| 20071 | `#coupon_troelsfolmann_01` | `` | `coupon_prefab` |  |
-| 20072 | `#coupon_kellybailey_01` | `` | `coupon_prefab` |  |
-| 20073 | `#coupon_skog_02` | `` | `coupon_prefab` |  |
-| 20074 | `#coupon_enfu_sticker_capsule` | `` | `coupon_enfu_capsule_prefab` |  |
-| 20075 | `#coupon_awp_country` | `` | `coupon_prefab` |  |
-| 20076 | `#coupon_chi_bomb` | `` | `coupon_prefab` |  |
-| 20077 | `#coupon_fox` | `` | `coupon_prefab` |  |
-| 20078 | `#coupon_knifeclub` | `` | `coupon_prefab` |  |
-| 20079 | `#coupon_cs_on_the_mind` | `` | `coupon_prefab` |  |
-| 20080 | `#coupon_ninja_defuse` | `` | `coupon_prefab` |  |
-| 20081 | `#coupon_pros_dont_fake` | `` | `coupon_prefab` |  |
-| 20082 | `#coupon_kawaiikiller_t` | `` | `coupon_prefab` |  |
-| 20083 | `#coupon_baackstabber` | `` | `coupon_prefab` |  |
-| 20084 | `#coupon_delicious_tears` | `` | `coupon_prefab` |  |
-| 20085 | `#coupon_danielsadowski_03` | `` | `coupon_prefab` |  |
-| 20086 | `#coupon_awolnation_01` | `` | `coupon_prefab` |  |
-| 20087 | `#coupon_mordfustang_01` | `` | `coupon_prefab` |  |
-| 20088 | `#coupon_michaelbross_01` | `` | `coupon_prefab` |  |
-| 20089 | `#coupon_ianhultquist_01` | `` | `coupon_prefab` |  |
-| 20090 | `#coupon_newbeatfund_01` | `` | `coupon_prefab` |  |
-| 20091 | `#coupon_beartooth_01` | `` | `coupon_prefab` |  |
-| 20092 | `#coupon_lenniemoore_01` | `` | `coupon_prefab` |  |
-| 20093 | `#coupon_darude_01` | `` | `coupon_prefab` |  |
-| 20094 | `#coupon_proxy_01_stattrak` | `` | `coupon_prefab` |  |
-| 20095 | `#coupon_kitheory_01_stattrak` | `` | `coupon_prefab` |  |
-| 20096 | `#coupon_troelsfolmann_01_stattrak` | `` | `coupon_prefab` |  |
-| 20097 | `#coupon_kellybailey_01_stattrak` | `` | `coupon_prefab` |  |
-| 20098 | `#coupon_skog_02_stattrak` | `` | `coupon_prefab` |  |
-| 20099 | `#coupon_danielsadowski_03_stattrak` | `` | `coupon_prefab` |  |
-| 20100 | `#coupon_awolnation_01_stattrak` | `` | `coupon_prefab` |  |
-| 20101 | `#coupon_mordfustang_01_stattrak` | `` | `coupon_prefab` |  |
-| 20102 | `#coupon_michaelbross_01_stattrak` | `` | `coupon_prefab` |  |
-| 20103 | `#coupon_ianhultquist_01_stattrak` | `` | `coupon_prefab` |  |
-| 20104 | `#coupon_newbeatfund_01_stattrak` | `` | `coupon_prefab` |  |
-| 20105 | `#coupon_beartooth_01_stattrak` | `` | `coupon_prefab` |  |
-| 20106 | `#coupon_lenniemoore_01_stattrak` | `` | `coupon_prefab` |  |
-| 20107 | `#coupon_darude_01_stattrak` | `` | `coupon_prefab` |  |
-| 20108 | `#coupon_danielsadowski_01_stattrak` | `` | `coupon_prefab` |  |
-| 20109 | `#coupon_noisia_01_stattrak` | `` | `coupon_prefab` |  |
-| 20110 | `#coupon_robertallaire_01_stattrak` | `` | `coupon_prefab` |  |
-| 20111 | `#coupon_seanmurray_01_stattrak` | `` | `coupon_prefab` |  |
-| 20112 | `#coupon_feedme_01_stattrak` | `` | `coupon_prefab` |  |
-| 20113 | `#coupon_dren_01_stattrak` | `` | `coupon_prefab` |  |
-| 20114 | `#coupon_austinwintory_01_stattrak` | `` | `coupon_prefab` |  |
-| 20115 | `#coupon_sasha_01_stattrak` | `` | `coupon_prefab` |  |
-| 20116 | `#coupon_skog_01_stattrak` | `` | `coupon_prefab` |  |
-| 20117 | `#coupon_midnightriders_01_stattrak` | `` | `valve coupon_prefab` |  |
-| 20118 | `#coupon_danielsadowski_02_stattrak` | `` | `coupon_prefab` |  |
-| 20119 | `#coupon_hotlinemiami_01_stattrak` | `` | `coupon_prefab` |  |
-| 20120 | `#coupon_mattlange_01_stattrak` | `` | `coupon_prefab` |  |
-| 20121 | `#coupon_mateomessina_01_stattrak` | `` | `coupon_prefab` |  |
-| 20122 | `#coupon_damjanmravunac_01_stattrak` | `` | `coupon_prefab` |  |
-| 20123 | `#coupon_pinups_sticker_capsule` | `` | `coupon_pinups_capsule_prefab` |  |
-| 20124 | `#coupon_slid3_sticker_capsule` | `` | `coupon_slid3_capsule_prefab` |  |
-| 20125 | `#coupon_team_roles_sticker_capsule` | `` | `coupon_team_roles_capsule_prefab` |  |
-| 20126 | `#coupon_pins_series_1` | `` | `valve coupon_prefab` |  |
-| 20127 | `#coupon_sugarface_sticker_capsule` | `` | `coupon_sugarface_capsule_prefab` |  |
-| 20128 | `#coupon_bestiary_sticker_capsule` | `` | `coupon_bestiary_capsule_prefab` |  |
-| 20129 | `#coupon_crate_sprays_vcap1` | `` | `valve coupon_prefab` |  |
-| 20130 | `#coupon_crate_sprays_community_1` | `` | `coupon_sprays_capsule_community_1` |  |
-| 20131 | `#coupon_pins_series_2` | `` | `valve coupon_prefab` |  |
-| 20133 | `#coupon_radicals_stattrak_musickit_capsule` | `` | `coupon_radicals_capsule_prefab` |  |
-| 20134 | `#coupon_illuminate_capsule_01` | `` | `valve coupon_prefab` |  |
-| 20135 | `#coupon_illuminate_capsule_02` | `` | `valve coupon_prefab` |  |
-| 20136 | `#coupon_illuminate_sprays_capsule_01` | `` | `valve coupon_prefab` |  |
-| 20137 | `#coupon_comm2018_01_sticker_capsule` | `` | `coupon_comm2018_01_capsule_prefab` |  |
-| 20138 | `#coupon_pins_series_3` | `` | `valve coupon_prefab` |  |
-| 20139 | `#coupon_skillgroup_sticker_capsule` | `` | `coupon_skillgroup_capsule_prefab` |  |
-| 20140 | `#coupon_theverkkars_01` | `` | `valve coupon_prefab` |  |
-| 20141 | `#coupon_theverkkars_01_stattrak` | `` | `valve coupon_prefab` |  |
-| 20142 | `#coupon_feral_predators_sticker_capsule` | `` | `coupon_feral_predators_capsule_prefab` |  |
-| 20143 | `#coupon_chicken_sticker_capsule` | `` | `coupon_chicken_capsule_prefab` |  |
-| 20144 | `#coupon_crate_xray_p250` | `` | `valve coupon_prefab` |  |
-| 20145 | `#coupon_cs20_sticker_capsule` | `` | `coupon_cs20_capsule_prefab` |  |
-| 20146 | `#coupon_halo_sticker_capsule` | `` | `coupon_halo_capsule_prefab` |  |
-| 20147 | `#coupon_scarlxrd_01` | `` | `coupon_prefab` |  |
-| 20148 | `#coupon_scarlxrd_01_stattrak` | `` | `coupon_prefab` |  |
-| 20149 | `#coupon_crate_patch_pack01` | `` | `valve coupon_prefab` |  |
-| 20152 | `#coupon_pins_hlalyx` | `` | `valve coupon_prefab` |  |
-| 20153 | `#coupon_hlalyx_sticker_capsule` | `` | `valve coupon_prefab` |  |
-| 20154 | `#coupon_crate_patch_pack_hlalyx` | `` | `valve coupon_prefab` |  |
-| 20169 | `#coupon_masterminds_musickit_capsule` | `` | `coupon_masterminds_capsule_prefab` |  |
-| 20170 | `#coupon_masterminds_stattrak_musickit_capsule` | `` | `coupon_masterminds_capsule_prefab` |  |
-| 20171 | `#coupon_warhammer_sticker_capsule` | `` | `coupon_warhammer_capsule_prefab` |  |
-| 20172 | `#coupon_amontobin_01` | `` | `valve coupon_prefab` |  |
-| 20173 | `#coupon_amontobin_01_stattrak` | `` | `valve coupon_prefab` |  |
-| 20174 | `#coupon_poorly_drawn_sticker_capsule` | `` | `coupon_poorly_drawn_capsule_prefab` |  |
-| 20175 | `#coupon_neckdeep_02` | `` | `coupon_prefab` |  |
-| 20176 | `#coupon_neckdeep_02_stattrak` | `` | `coupon_prefab` |  |
-| 20177 | `#coupon_scarlxrd_02` | `` | `coupon_prefab` |  |
-| 20178 | `#coupon_scarlxrd_02_stattrak` | `` | `coupon_prefab` |  |
-| 20179 | `#coupon_tacticians_musickit_capsule` | `` | `coupon_tacticians_capsule_prefab` |  |
-| 20180 | `#coupon_tacticians_stattrak_musickit_capsule` | `` | `coupon_tacticians_capsule_prefab` |  |
-| 20181 | `#coupon_community2021_sticker_capsule` | `` | `coupon_community2021_capsule_prefab` |  |
-| 20182 | `#coupon_bf2042_sticker_capsule` | `` | `coupon_bf2042_capsule_prefab` |  |
-| 20183 | `#coupon_bbnos_01` | `` | `coupon_prefab` |  |
-| 20184 | `#coupon_bbnos_01_stattrak` | `` | `coupon_prefab` |  |
-| 20185 | `#coupon_theverkkars_02` | `` | `coupon_prefab` |  |
-| 20186 | `#coupon_theverkkars_02_stattrak` | `` | `coupon_prefab` |  |
-| 20187 | `#coupon_spring2022_sticker_capsule` | `` | `coupon_spring2022_capsule_prefab` |  |
-| 20188 | `#coupon_csgo10_sticker_capsule` | `` | `coupon_csgo10_capsule_prefab` |  |
-| 20189 | `#coupon_initiators_musickit_capsule` | `` | `coupon_initiators_capsule_prefab` |  |
-| 20190 | `#coupon_initiators_stattrak_musickit_capsule` | `` | `coupon_initiators_capsule_prefab` |  |
-| 20191 | `#coupon_perfectworld_01` | `` | `coupon_prefab` |  |
-| 20192 | `#coupon_perfectworld_01_stattrak` | `` | `coupon_prefab` |  |
-| 20193 | `#coupon_community2022_sticker_capsule` | `` | `coupon_community2022_capsule_prefab` |  |
-| 20194 | `#coupon_denzelcurry_01` | `` | `coupon_prefab` |  |
-| 20195 | `#coupon_denzelcurry_01_stattrak` | `` | `coupon_prefab` |  |
-| 20197 | `#coupon_crate_anubis_storepromo` | `` | `valve coupon_prefab` |  |
-| 20198 | `#coupon_nightmode_musickit_capsule` | `` | `coupon_nightmode_capsule_prefab` |  |
-| 20199 | `#coupon_nightmode_stattrak_musickit_capsule` | `` | `coupon_nightmode_capsule_prefab` |  |
-| 20200 | `#coupon_community_2024_sticker_capsule` | `` | `coupon_community_2024_capsule_prefab` |  |
-| 20204 | `#coupon_masterminds2_musickit_capsule` | `` | `coupon_masterminds2_capsule_prefab` |  |
-| 20205 | `#coupon_masterminds2_stattrak_musickit_capsule` | `` | `coupon_masterminds2_capsule_prefab` |  |
-| 20206 | `#coupon_perfectworld_02` | `` | `coupon_prefab` |  |
-| 20207 | `#coupon_perfectworld_02_stattrak` | `` | `coupon_prefab` |  |
-| 30050 | `#CSGO_crate_key_community_30_contestwinner` | `` | `weapon_case_key` |  |
-| 30092 | `#CSGO_set_anubis_storepromo_key_contestwinner` | `` | `weapon_case_key` |  |
-| 30115 | `#CSGO_set_train_2025_storepromo_key_contestwinner` | `` | `weapon_case_key` |  |
+| 58 | `#CSGO_Type_MusicKit` |  | `musickit_prefab` |  |
+| 59 | `#SFUI_WPNHUD_Knife_T` |  | `melee` |  |
+| 60 |  |  | `weapon_m4a1_silencer_prefab` |  |
+| 61 |  |  | `weapon_usp_silencer_prefab` |  |
+| 62 | `#CSGO_Recipe_TradeUp` |  | `recipe` |  |
+| 63 |  |  | `weapon_cz75a_prefab` |  |
+| 64 |  |  | `weapon_revolver_prefab` |  |
+| 65 | `#CSGO_RemoveKeychainTool_Title` |  | `recipe` |  |
+| 500 | `#SFUI_WPNHUD_KnifeBayonet` |  | `melee_unusual` |  |
+| 503 | `#SFUI_WPNHUD_KnifeCSS` |  | `melee_unusual` |  |
+| 505 | `#SFUI_WPNHUD_KnifeFlip` |  | `melee_unusual` |  |
+| 506 | `#SFUI_WPNHUD_KnifeGut` |  | `melee_unusual` |  |
+| 507 | `#SFUI_WPNHUD_KnifeKaram` |  | `melee_unusual` |  |
+| 508 | `#SFUI_WPNHUD_KnifeM9` |  | `melee_unusual` |  |
+| 509 | `#SFUI_WPNHUD_KnifeTactical` |  | `melee_unusual` |  |
+| 512 | `#SFUI_WPNHUD_knife_falchion_advanced` |  | `melee_unusual` |  |
+| 514 | `#SFUI_WPNHUD_knife_survival_bowie` |  | `melee_unusual` |  |
+| 515 | `#SFUI_WPNHUD_Knife_Butterfly` |  | `melee_unusual` |  |
+| 516 | `#SFUI_WPNHUD_knife_push` |  | `melee_unusual` |  |
+| 517 | `#SFUI_WPNHUD_knife_cord` |  | `melee_unusual` |  |
+| 518 | `#SFUI_WPNHUD_knife_canis` |  | `melee_unusual` |  |
+| 519 | `#SFUI_WPNHUD_knife_ursus` |  | `melee_unusual` |  |
+| 520 | `#SFUI_WPNHUD_knife_gypsy_jackknife` |  | `melee_unusual` |  |
+| 521 | `#SFUI_WPNHUD_knife_outdoor` |  | `melee_unusual` |  |
+| 522 | `#SFUI_WPNHUD_knife_stiletto` |  | `melee_unusual` |  |
+| 523 | `#SFUI_WPNHUD_knife_widowmaker` |  | `melee_unusual` |  |
+| 525 | `#SFUI_WPNHUD_knife_skeleton` |  | `melee_unusual` |  |
+| 526 | `#SFUI_WPNHUD_knife_kukri` |  | `melee_unusual` |  |
+| 874 | `#CSGO_CollectibleCoin_FiveYearService` |  | `collectible_untradable_coin` |  |
+| 875 | `#CSGO_CollectibleCoin_DH2013_Champion` |  | `majors_trophy` |  |
+| 876 | `#CSGO_CollectibleCoin_DH2013_Finalist` |  | `majors_trophy` |  |
+| 877 | `#CSGO_CollectibleCoin_DH2013_SemiFinalist` |  | `majors_trophy` |  |
+| 878 | `#CSGO_CollectibleCoin_DH2013_QuarterFinalist` |  | `majors_trophy` |  |
+| 879 | `#CSGO_CollectibleCoin_Kat2014_Champion` |  | `majors_trophy` |  |
+| 880 | `#CSGO_CollectibleCoin_Kat2014_Finalist` |  | `majors_trophy` |  |
+| 881 | `#CSGO_CollectibleCoin_Kat2014_SemiFinalist` |  | `majors_trophy` |  |
+| 882 | `#CSGO_CollectibleCoin_Kat2014_QuarterFinalist` |  | `majors_trophy` |  |
+| 883 | `#CSGO_CollectibleCoin_Cologne2014_Champion` |  | `majors_trophy` |  |
+| 884 | `#CSGO_CollectibleCoin_Cologne2014_Finalist` |  | `majors_trophy` |  |
+| 885 | `#CSGO_CollectibleCoin_Cologne2014_SemiFinalist` |  | `majors_trophy` |  |
+| 886 | `#CSGO_CollectibleCoin_Cologne2014_QuarterFinalist` |  | `majors_trophy` |  |
+| 887 | `#CSGO_CollectibleCoin_Cologne2014_PickEmBronze` |  | `pickem_trophy` |  |
+| 888 | `#CSGO_CollectibleCoin_Cologne2014_PickEmSilver` |  | `pickem_trophy` |  |
+| 889 | `#CSGO_CollectibleCoin_Cologne2014_PickEmGold` |  | `pickem_trophy` |  |
+| 890 | `#CSGO_CollectibleCoin_DHW2014_Champion` |  | `majors_trophy` |  |
+| 891 | `#CSGO_CollectibleCoin_DHW2014_Finalist` |  | `majors_trophy` |  |
+| 892 | `#CSGO_CollectibleCoin_DHW2014_SemiFinalist` |  | `majors_trophy` |  |
+| 893 | `#CSGO_CollectibleCoin_DHW2014_QuarterFinalist` |  | `majors_trophy` |  |
+| 894 | `#CSGO_CollectibleCoin_DHW2014_PickEmBronze` |  | `pickem_trophy` |  |
+| 895 | `#CSGO_CollectibleCoin_DHW2014_PickEmSilver` |  | `pickem_trophy` |  |
+| 896 | `#CSGO_CollectibleCoin_DHW2014_PickEmGold` |  | `pickem_trophy` |  |
+| 897 | `#CSGO_CollectibleCoin_Kat2015_Champion` |  | `majors_trophy` |  |
+| 898 | `#CSGO_CollectibleCoin_Kat2015_Finalist` |  | `majors_trophy` |  |
+| 899 | `#CSGO_CollectibleCoin_Kat2015_SemiFinalist` |  | `majors_trophy` |  |
+| 900 | `#CSGO_CollectibleCoin_Kat2015_QuarterFinalist` |  | `majors_trophy` |  |
+| 901 | `#CSGO_CollectibleCoin_Kat2015_PickEmBronze` |  | `pickem_trophy` |  |
+| 902 | `#CSGO_CollectibleCoin_Kat2015_PickEmSilver` |  | `pickem_trophy` |  |
+| 903 | `#CSGO_CollectibleCoin_Kat2015_PickEmGold` |  | `pickem_trophy` |  |
+| 904 | `#CSGO_CollectibleCoin_Cologne2015_Champion` |  | `pickem_trophy` |  |
+| 905 | `#CSGO_CollectibleCoin_Cologne2015_Finalist` |  | `majors_trophy` |  |
+| 906 | `#CSGO_CollectibleCoin_Cologne2015_SemiFinalist` |  | `majors_trophy` |  |
+| 907 | `#CSGO_CollectibleCoin_Cologne2015_QuarterFinalist` |  | `majors_trophy` |  |
+| 908 | `#CSGO_CollectibleCoin_Cologne2015_PickEmBronze` |  | `majors_trophy` |  |
+| 909 | `#CSGO_CollectibleCoin_Cologne2015_PickEmSilver` |  | `pickem_trophy` |  |
+| 910 | `#CSGO_CollectibleCoin_Cologne2015_PickEmGold` |  | `pickem_trophy` |  |
+| 911 | `#CSGO_CollectibleCoin_Cluj2015_PickEmBronze` |  | `pickem_trophy` |  |
+| 912 | `#CSGO_CollectibleCoin_Cluj2015_PickEmSilver` |  | `pickem_trophy` |  |
+| 913 | `#CSGO_CollectibleCoin_Cluj2015_PickEmGold` |  | `pickem_trophy` |  |
+| 914 | `#CSGO_CollectibleCoin_Cluj2015_FantasyBronze` |  | `pickem_trophy` |  |
+| 915 | `#CSGO_CollectibleCoin_Cluj2015_FantasySilver` |  | `pickem_trophy` |  |
+| 916 | `#CSGO_CollectibleCoin_Cluj2015_FantasyGold` |  | `pickem_trophy` |  |
+| 917 | `#CSGO_CollectibleCoin_Cluj2015_Champion` |  | `majors_trophy` |  |
+| 918 | `#CSGO_CollectibleCoin_Cluj2015_Finalist` |  | `majors_trophy` |  |
+| 919 | `#CSGO_CollectibleCoin_Cluj2015_Semifinalist` |  | `majors_trophy` |  |
+| 920 | `#CSGO_CollectibleCoin_Cluj2015_Quarterfinalist` |  | `majors_trophy` |  |
+| 921 | `#CSGO_CollectibleCoin_Columbus2016_PickEmBronze` |  | `pickem_trophy` |  |
+| 922 | `#CSGO_CollectibleCoin_Columbus2016_PickEmSilver` |  | `pickem_trophy` |  |
+| 923 | `#CSGO_CollectibleCoin_Columbus2016_PickEmGold` |  | `pickem_trophy` |  |
+| 924 | `#CSGO_CollectibleCoin_Columbus2016_FantasyBronze` |  | `pickem_trophy` |  |
+| 925 | `#CSGO_CollectibleCoin_Columbus2016_FantasySilver` |  | `pickem_trophy` |  |
+| 926 | `#CSGO_CollectibleCoin_Columbus2016_FantasyGold` |  | `pickem_trophy` |  |
+| 927 | `#CSGO_CollectibleCoin_Columbus2016_Champion` |  | `majors_trophy` |  |
+| 928 | `#CSGO_CollectibleCoin_Columbus2016_Finalist` |  | `majors_trophy` |  |
+| 929 | `#CSGO_CollectibleCoin_Columbus2016_Semifinalist` |  | `majors_trophy` |  |
+| 930 | `#CSGO_CollectibleCoin_Columbus2016_Quarterfinalist` |  | `majors_trophy` |  |
+| 931 | `#CSGO_CollectibleCoin_Cologne2016_Champion` |  | `majors_trophy` |  |
+| 932 | `#CSGO_CollectibleCoin_Cologne2016_Finalist` |  | `majors_trophy` |  |
+| 933 | `#CSGO_CollectibleCoin_Cologne2016_Semifinalist` |  | `majors_trophy` |  |
+| 934 | `#CSGO_CollectibleCoin_Cologne2016_Quarterfinalist` |  | `majors_trophy` |  |
+| 935 | `#CSGO_CollectibleCoin_Cologne2016_PickEmBronze` |  | `pickem_trophy` |  |
+| 936 | `#CSGO_CollectibleCoin_Cologne2016_PickEmSilver` |  | `pickem_trophy` |  |
+| 937 | `#CSGO_CollectibleCoin_Cologne2016_PickEmGold` |  | `pickem_trophy` |  |
+| 938 | `#CSGO_CollectibleCoin_Cologne2016_FantasyBronze` |  | `pickem_trophy` |  |
+| 939 | `#CSGO_CollectibleCoin_Cologne2016_FantasySilver` |  | `pickem_trophy` |  |
+| 940 | `#CSGO_CollectibleCoin_Cologne2016_FantasyGold` |  | `pickem_trophy` |  |
+| 941 | `#CSGO_CollectibleCoin_Atlanta2017_Champion` |  | `majors_trophy` |  |
+| 942 | `#CSGO_CollectibleCoin_Atlanta2017_Finalist` |  | `majors_trophy` |  |
+| 943 | `#CSGO_CollectibleCoin_Atlanta2017_Semifinalist` |  | `majors_trophy` |  |
+| 944 | `#CSGO_CollectibleCoin_Atlanta2017_Quarterfinalist` |  | `majors_trophy` |  |
+| 945 | `#CSGO_CollectibleCoin_Atlanta2017_PickEmBronze` |  | `pickem_trophy` |  |
+| 946 | `#CSGO_CollectibleCoin_Atlanta2017_PickEmSilver` |  | `pickem_trophy` |  |
+| 947 | `#CSGO_CollectibleCoin_Atlanta2017_PickEmGold` |  | `pickem_trophy` |  |
+| 948 | `#CSGO_CollectibleCoin_Krakow2017_Champion` |  | `majors_trophy` |  |
+| 949 | `#CSGO_CollectibleCoin_Krakow2017_Finalist` |  | `majors_trophy` |  |
+| 950 | `#CSGO_CollectibleCoin_Krakow2017_Semifinalist` |  | `majors_trophy` |  |
+| 951 | `#CSGO_CollectibleCoin_Krakow2017_Quarterfinalist` |  | `majors_trophy` |  |
+| 952 | `#CSGO_CollectibleCoin_Krakow2017_PickEmBronze` |  | `pickem_trophy` |  |
+| 953 | `#CSGO_CollectibleCoin_Krakow2017_PickEmSilver` |  | `pickem_trophy` |  |
+| 954 | `#CSGO_CollectibleCoin_Krakow2017_PickEmGold` |  | `pickem_trophy` |  |
+| 955 | `#CSGO_CollectibleCoin_Boston2018_Champion` |  | `majors_trophy` |  |
+| 956 | `#CSGO_CollectibleCoin_Boston2018_Finalist` |  | `majors_trophy` |  |
+| 957 | `#CSGO_CollectibleCoin_Boston2018_Semifinalist` |  | `majors_trophy` |  |
+| 958 | `#CSGO_CollectibleCoin_Boston2018_Quarterfinalist` |  | `majors_trophy` |  |
+| 959 | `#CSGO_CollectibleCoin_Boston2018_PickEmBronze` |  | `pickem_trophy` |  |
+| 960 | `#CSGO_CollectibleCoin_Boston2018_PickEmSilver` |  | `pickem_trophy` |  |
+| 961 | `#CSGO_CollectibleCoin_Boston2018_PickEmGold` |  | `pickem_trophy` |  |
+| 962 | `#CSGO_CollectibleCoin_London2018_Champion` |  | `majors_trophy` |  |
+| 963 | `#CSGO_CollectibleCoin_London2018_Finalist` |  | `majors_trophy` |  |
+| 964 | `#CSGO_CollectibleCoin_London2018_Semifinalist` |  | `majors_trophy` |  |
+| 965 | `#CSGO_CollectibleCoin_London2018_Quarterfinalist` |  | `majors_trophy` |  |
+| 966 | `#CSGO_CollectibleCoin_London2018_PickEmBronze` |  | `pickem_trophy` |  |
+| 967 | `#CSGO_CollectibleCoin_London2018_PickEmSilver` |  | `pickem_trophy` |  |
+| 968 | `#CSGO_CollectibleCoin_London2018_PickEmGold` |  | `pickem_trophy` |  |
+| 969 | `#CSGO_CollectibleCoin_TenYearService` |  | `collectible_untradable_coin` |  |
+| 970 | `#CSGO_CollectibleCoin_FortiusQuoFidelius` |  | `collectible_untradable_coin` |  |
+| 971 | `#CSGO_CollectibleCoin_Katowice2019_Champion` |  | `majors_trophy` |  |
+| 972 | `#CSGO_CollectibleCoin_Katowice2019_Finalist` |  | `majors_trophy` |  |
+| 973 | `#CSGO_CollectibleCoin_Katowice2019_Semifinalist` |  | `majors_trophy` |  |
+| 974 | `#CSGO_CollectibleCoin_Katowice2019_Quarterfinalist` |  | `majors_trophy` |  |
+| 975 | `#CSGO_CollectibleCoin_Berlin2019_Champion` |  | `majors_trophy` |  |
+| 976 | `#CSGO_CollectibleCoin_Berlin2019_Finalist` |  | `majors_trophy` |  |
+| 977 | `#CSGO_CollectibleCoin_Berlin2019_Semifinalist` |  | `majors_trophy` |  |
+| 978 | `#CSGO_CollectibleCoin_Berlin2019_Quarterfinalist` |  | `majors_trophy` |  |
+| 979 | `#CSGO_CollectibleCoin_Stockh2021_Champion` |  | `majors_trophy` |  |
+| 980 | `#CSGO_CollectibleCoin_Stockh2021_Finalist` |  | `majors_trophy` |  |
+| 981 | `#CSGO_CollectibleCoin_Stockh2021_Semifinalist` |  | `majors_trophy` |  |
+| 982 | `#CSGO_CollectibleCoin_Stockh2021_Quarterfinalist` |  | `majors_trophy` |  |
+| 983 | `#CSGO_CollectibleCoin_Antwerp2022_Champion` |  | `majors_trophy` |  |
+| 984 | `#CSGO_CollectibleCoin_Antwerp2022_Finalist` |  | `majors_trophy` |  |
+| 985 | `#CSGO_CollectibleCoin_Antwerp2022_Semifinalist` |  | `majors_trophy` |  |
+| 986 | `#CSGO_CollectibleCoin_Antwerp2022_Quarterfinalist` |  | `majors_trophy` |  |
+| 987 | `#CSGO_CollectibleCoin_CsgoTenYearAnniversaryMemorabilia` |  | `collectible_untradable_coin` |  |
+| 988 | `#CSGO_CollectibleCoin_Rio2022_Champion` |  | `majors_trophy` |  |
+| 989 | `#CSGO_CollectibleCoin_Rio2022_Finalist` |  | `majors_trophy` |  |
+| 990 | `#CSGO_CollectibleCoin_Rio2022_Semifinalist` |  | `majors_trophy` |  |
+| 991 | `#CSGO_CollectibleCoin_Rio2022_Quarterfinalist` |  | `majors_trophy` |  |
+| 992 | `#CSGO_CollectibleCoin_Paris2023_Champion` |  | `majors_trophy` |  |
+| 993 | `#CSGO_CollectibleCoin_Paris2023_Finalist` |  | `majors_trophy` |  |
+| 994 | `#CSGO_CollectibleCoin_Paris2023_Semifinalist` |  | `majors_trophy` |  |
+| 995 | `#CSGO_CollectibleCoin_Paris2023_Quarterfinalist` |  | `majors_trophy` |  |
+| 996 | `#CSGO_CollectibleCoin_CoinCsgo` |  | `collectible_untradable_coin` |  |
+| 1000 | `#CSGO_Ticket_CommunitySeasonOneSpring2013` |  | `season_pass` |  |
+| 1001 | `#CSGO_Collectible_CommunitySeasonOneSpring2013_Coin1` |  | `season1_coin` |  |
+| 1002 | `#CSGO_Collectible_CommunitySeasonOneSpring2013_Coin2` |  | `season1_coin` |  |
+| 1003 | `#CSGO_Collectible_CommunitySeasonOneSpring2013_Coin3` |  | `season1_coin` |  |
+| 1004 | `#CSGO_Collectible_MapTokenMuseum` |  | `map_token` |  |
+| 1005 | `#CSGO_Collectible_MapTokenDowntown` |  | `map_token` |  |
+| 1006 | `#CSGO_Collectible_MapTokenThunder` |  | `map_token` |  |
+| 1007 | `#CSGO_Collectible_MapTokenFavela` |  | `map_token` |  |
+| 1008 | `#CSGO_Collectible_MapTokenMotel` |  | `map_token` |  |
+| 1009 | `#CSGO_Collectible_MapTokenSeaside` |  | `map_token` |  |
+| 1010 | `#CSGO_Collectible_MapTokenLibrary` |  | `map_token` |  |
+| 1012 | `#CSGO_Ticket_CommunitySeasonTwoAutumn2013` |  | `season_pass` |  |
+| 1013 | `#CSGO_Collectible_CommunitySeasonTwoAutumn2013_Coin1` |  | `season2_coin` |  |
+| 1014 | `#CSGO_Collectible_CommunitySeasonTwoAutumn2013_Coin2` |  | `season2_coin` |  |
+| 1015 | `#CSGO_Collectible_CommunitySeasonTwoAutumn2013_Coin3` |  | `season2_coin` |  |
+| 1016 | `#CSGO_Collectible_MapTokenAgency` |  | `map_token` |  |
+| 1017 | `#CSGO_Collectible_MapTokenAli` |  | `map_token` |  |
+| 1018 | `#CSGO_Collectible_MapTokenCache` |  | `map_token` |  |
+| 1019 | `#CSGO_Collectible_MapTokenChinatown` |  | `map_token` |  |
+| 1020 | `#CSGO_Collectible_MapTokenGwalior` |  | `map_token` |  |
+| 1021 | `#CSGO_Collectible_MapTokenRuins` |  | `map_token` |  |
+| 1022 | `#CSGO_Collectible_MapTokenSiege` |  | `map_token` |  |
+| 1023 | `#CSGO_Ticket_CommunitySeasonThreeSpring2014` |  | `season_pass` |  |
+| 1024 | `#CSGO_Collectible_CommunitySeasonThreeSpring2014_Coin1` |  | `season3_coin` |  |
+| 1025 | `#CSGO_Collectible_CommunitySeasonThreeSpring2014_Coin2` |  | `season3_coin` |  |
+| 1026 | `#CSGO_Collectible_CommunitySeasonThreeSpring2014_Coin3` |  | `season3_coin` |  |
+| 1027 | `#CSGO_Ticket_CommunitySeasonFourSummer2014` |  | `season_pass` |  |
+| 1028 | `#CSGO_Collectible_CommunitySeasonFourSummer2014_Coin1` |  | `season4_coin` |  |
+| 1029 | `#CSGO_Collectible_CommunitySeasonFourSummer2014_Coin2` |  | `season4_coin` |  |
+| 1030 | `#CSGO_Collectible_CommunitySeasonFourSummer2014_Coin3` |  | `season4_coin` |  |
+| 1031 | `#CSGO_Collectible_MapTokenCastle` |  | `map_token` |  |
+| 1032 | `#CSGO_Collectible_MapTokenBlackGold` |  | `map_token` |  |
+| 1033 | `#CSGO_Collectible_MapTokenRush` |  | `map_token` |  |
+| 1034 | `#CSGO_Collectible_MapTokenMist` |  | `map_token` |  |
+| 1035 | `#CSGO_Collectible_MapTokenInsertion` |  | `map_token` |  |
+| 1036 | `#CSGO_Collectible_MapTokenOvergrown` |  | `map_token` |  |
+| 1037 | `#CSGO_Collectible_MapTokenMarquis` |  | `map_token` |  |
+| 1038 | `#CSGO_Collectible_MapTokenWorkout` |  | `map_token` |  |
+| 1039 | `#CSGO_Collectible_MapTokenBackalley` |  | `map_token` |  |
+| 1040 | `#CSGO_Collectible_MapTokenSeason` |  | `map_token` |  |
+| 1041 | `#CSGO_Collectible_MapTokenBazaar` |  | `map_token` |  |
+| 1042 | `#CSGO_Collectible_MapTokenFacade` |  | `map_token` |  |
+| 1043 | `#CSGO_Collectible_MapTokenLog` |  | `map_token` |  |
+| 1044 | `#CSGO_Collectible_MapTokenRails` |  | `map_token` |  |
+| 1045 | `#CSGO_Collectible_MapTokenResort` |  | `map_token` |  |
+| 1046 | `#CSGO_Collectible_MapTokenZoo` |  | `map_token` |  |
+| 1047 | `#CSGO_Collectible_MapTokenSantorini` |  | `map_token` |  |
+| 1048 | `#CSGO_Collectible_MapTokenCoast` |  | `map_token` |  |
+| 1049 | `#CSGO_Collectible_MapTokenMikla` |  | `map_token` |  |
+| 1050 | `#CSGO_Collectible_MapTokenRoyal` |  | `map_token` |  |
+| 1051 | `#CSGO_Collectible_MapTokenEmpire` |  | `map_token` |  |
+| 1052 | `#CSGO_Collectible_MapTokenTulip` |  | `map_token` |  |
+| 1053 | `#CSGO_Collectible_MapTokenCruise` |  | `map_token` |  |
+| 1054 | `#CSGO_Collectible_MapTokenSubzero` |  | `map_token` |  |
+| 1055 | `#CSGO_Collectible_MapTokenBiome` |  | `map_token` |  |
+| 1056 | `#CSGO_Collectible_MapTokenAbbey` |  | `map_token` |  |
+| 1057 | `#CSGO_Collectible_MapTokenRuby` |  | `map_token` |  |
+| 1058 | `#CSGO_Collectible_MapTokenBreach` |  | `map_token` |  |
+| 1059 | `#CSGO_Collectible_MapTokenStudio` |  | `map_token` |  |
+| 1060 | `#CSGO_Collectible_MapTokenJungle` |  | `map_token` |  |
+| 1061 | `#CSGO_Collectible_MapTokenAnubis` |  | `map_token` |  |
+| 1062 | `#CSGO_Collectible_MapTokenChlorine` |  | `map_token` |  |
+| 1063 | `#CSGO_Collectible_MapTokenMutiny` |  | `map_token` |  |
+| 1064 | `#CSGO_Collectible_MapTokenSwamp` |  | `map_token` |  |
+| 1065 | `#CSGO_Collectible_MapTokenFrostbite` |  | `map_token` |  |
+| 1066 | `#CSGO_Collectible_MapTokenEngage` |  | `map_token` |  |
+| 1067 | `#CSGO_Collectible_MapTokenApollo` |  | `map_token` |  |
+| 1068 | `#CSGO_Collectible_MapTokenGuard` |  | `map_token` |  |
+| 1069 | `#CSGO_Collectible_MapTokenElysion` |  | `map_token` |  |
+| 1070 | `#CSGO_Collectible_MapTokenGrind` |  | `map_token` |  |
+| 1071 | `#CSGO_Collectible_MapTokenMocha` |  | `map_token` |  |
+| 1072 | `#CSGO_Collectible_MapTokenCalavera` |  | `map_token` |  |
+| 1073 | `#CSGO_Collectible_MapTokenPitstop` |  | `map_token` |  |
+| 1074 | `#CSGO_Collectible_MapTokenBasalt` |  | `map_token` |  |
+| 1075 | `#CSGO_Collectible_MapTokenInsertion2` |  | `map_token` |  |
+| 1076 | `#CSGO_Collectible_MapTokenRavine` |  | `map_token` |  |
+| 1077 | `#CSGO_Collectible_MapTokenExtraction` |  | `map_token` |  |
+| 1078 | `#CSGO_Collectible_MapTokenCounty` |  | `map_token` |  |
+| 1079 | `#CSGO_Collectible_MapTokenIris` |  | `map_token` |  |
+| 1080 | `#CSGO_Collectible_MapTokenClimb` |  | `map_token` |  |
+| 1081 | `#CSGO_Collectible_MapTokenCrete` |  | `map_token` |  |
+| 1082 | `#CSGO_Collectible_MapTokenHive` |  | `map_token` |  |
+| 1083 | `#CSGO_Collectible_MapTokenVineyard` |  | `map_token` |  |
+| 1084 | `#CSGO_Collectible_MapTokenEmber` |  | `map_token` |  |
+| 1085 | `#CSGO_Collectible_MapTokenTuscan` |  | `map_token` |  |
+| 1086 | `#CSGO_Collectible_MapTokenPrime` |  | `map_token` |  |
+| 1087 | `#CSGO_Collectible_MapTokenBlagai` |  | `map_token` |  |
+| 1088 | `#CSGO_Collectible_MapTokenBoyard` |  | `map_token` |  |
+| 1089 | `#CSGO_Collectible_MapTokenChalice` |  | `map_token` |  |
+| 1200 | `#CSGO_Tool_Name_Tag` |  | `valve csgo_tool` | #CSGO_Tool_Name_TagTag |
+| 1201 | `#CSGO_Tool_Casket_Tag` |  | `valve csgo_tool` |  |
+| 1203 |  |  | `valve weapon_case_key` |  |
+| 1204 | `#CSGO_esports_crate_key_1` |  | `valve weapon_case_key` |  |
+| 1209 | `#CSGO_Tool_Sticker` |  | `csgo_tool` | #CSGO_Tool_Sticker |
+| 1210 | `#CSGO_Tool_Gift1Player` |  | `valve csgo_tool` | #CSGO_Tool_GiftTag |
+| 1211 | `#CSGO_Tool_Gift9Players` |  | `valve csgo_tool` | #CSGO_Tool_GiftTag |
+| 1212 | `#CSGO_sticker_crate_key_1` |  | `valve weapon_case_key` |  |
+| 1214 | `#CSGO_community_crate_key_1` |  | `weapon_case_key` |  |
+| 1215 | `#CSGO_Tool_Gift25Spectators` |  | `valve csgo_tool` | #CSGO_Tool_GiftTag |
+| 1303 | `#CSGO_community_crate_key_2` |  | `weapon_case_key` |  |
+| 1304 | `#CSGO_sticker_crate_key_community01` |  | `weapon_case_key` |  |
+| 1305 | `#CSGO_community_crate_key_3` |  | `weapon_case_key` |  |
+| 1306 | `#quest` |  | `quest_prefab` |  |
+| 1307 | `#CSGO_community_crate_key_3` |  | `weapon_case_key` |  |
+| 1308 | `#CSGO_sticker_crate_key_community01` |  | `weapon_case_key` |  |
+| 1309 | `#CSGO_community_crate_key_4` |  | `weapon_case_key` |  |
+| 1310 | `#CSGO_community_crate_key_4` |  | `weapon_case_key` |  |
+| 1311 | `#CSGO_community_crate_key_4` |  | `weapon_case_key` |  |
+| 1313 | `#CSGO_community_crate_key_4` |  | `weapon_case_key` |  |
+| 1314 |  |  | `musickit_prefab` |  |
+| 1315 | `#CSGO_Ticket_CommunitySeasonFiveSummer2014` |  | `season_pass` |  |
+| 1316 | `#CSGO_Collectible_CommunitySeasonFiveSummer2014_Coin1` |  | `season5_coin` |  |
+| 1317 | `#CSGO_Collectible_CommunitySeasonFiveSummer2014_Coin2` |  | `season5_coin` |  |
+| 1318 | `#CSGO_Collectible_CommunitySeasonFiveSummer2014_Coin3` |  | `season5_coin` |  |
+| 1320 | `#csgo_campaign_maghreb` |  | `valve campaign_prefab` |  |
+| 1321 | `#csgo_campaign_eurasia` |  | `valve campaign_prefab` |  |
+| 1322 | `#CSGO_community_crate_key_5` |  | `weapon_case_key` |  |
+| 1323 | `#CSGO_community_crate_key_6` |  | `weapon_case_key` |  |
+| 1324 | `#CSGO_tool_stattrak_swap` |  | `valve csgo_tool` |  |
+| 1325 | `#CSGO_community_crate_key_7` |  | `weapon_case_key` |  |
+| 1326 | `#CSGO_Ticket_CommunitySeasonSix2015` |  | `season_pass` |  |
+| 1327 | `#CSGO_Collectible_CommunitySeasonSix2015_Coin1` |  | `season6_coin` |  |
+| 1328 | `#CSGO_Collectible_CommunitySeasonSix2015_Coin2` |  | `season6_coin` |  |
+| 1329 | `#CSGO_Collectible_CommunitySeasonSix2015_Coin3` |  | `season6_coin` |  |
+| 1330 | `#CSGO_community_crate_key_8` |  | `weapon_case_key` |  |
+| 1331 | `#CSGO_Collectible_GlobalGeneral2015` |  | `prestige_coin` |  |
+| 1332 | `#CSGO_Collectible_GlobalGeneral2015` |  | `prestige_coin` |  |
+| 1333 | `#CSGO_community_crate_key_9` |  | `weapon_case_key` |  |
+| 1334 | `#CSGO_crate_community_10_key` |  | `weapon_case_key` |  |
+| 1335 | `#CSGO_Ticket_CommunitySeasonSeven2016` |  | `season_pass` |  |
+| 1336 | `#CSGO_Collectible_CommunitySeasonSeven2016_Coin1` |  | `season7_coin` |  |
+| 1337 | `#CSGO_Collectible_CommunitySeasonSeven2016_Coin2` |  | `season7_coin` |  |
+| 1338 | `#CSGO_Collectible_CommunitySeasonSeven2016_Coin3` |  | `season7_coin` |  |
+| 1339 | `#CSGO_Collectible_GlobalGeneral2016` |  | `prestige_coin` |  |
+| 1340 | `#CSGO_Collectible_GlobalGeneral2016` |  | `prestige_coin` |  |
+| 1341 | `#CSGO_Collectible_GlobalGeneral2016` |  | `prestige_coin` |  |
+| 1342 | `#CSGO_Collectible_GlobalGeneral2016` |  | `prestige_coin` |  |
+| 1343 | `#CSGO_Collectible_GlobalGeneral2016` |  | `prestige_coin` |  |
+| 1344 | `#CSGO_Collectible_GlobalGeneral2016` |  | `prestige_coin` |  |
+| 1347 | `#CSGO_crate_key_community_12` |  | `weapon_case_key` |  |
+| 1348 | `#CSGO_Tool_Spray` |  | `csgo_tool` | #CSGO_Type_Spray |
+| 1349 | `#CSGO_Tool_SprayPaint` |  | `csgo_tool` | #CSGO_Type_Spray |
+| 1350 | `#CSGO_crate_key_community_13` |  | `weapon_case_key` |  |
+| 1351 | `#CSGO_crate_key_gamma_2` |  | `weapon_case_key` |  |
+| 1352 | `#CSGO_Ticket_CommunitySeasonEight2017` |  | `season_pass` |  |
+| 1353 | `#CSGO_Purchasable_Game_License` |  | `valve collectible_untradable_coin` |  |
+| 1354 | `#CSGO_Purchasable_XpShop_Ticket` |  | `valve season_pass` |  |
+| 1355 | `#CSGO_Tool_Keychain` |  | `csgo_tool` | #CSGO_Tool_Keychain |
+| 1356 | `#CSGO_crate_key_community_15` |  | `weapon_case_key` |  |
+| 1357 | `#CSGO_Collectible_GlobalGeneral2017` |  | `prestige_coin` |  |
+| 1358 | `#CSGO_Collectible_GlobalGeneral2017` |  | `prestige_coin` |  |
+| 1359 | `#CSGO_Collectible_GlobalGeneral2017` |  | `prestige_coin` |  |
+| 1360 | `#CSGO_Collectible_GlobalGeneral2017` |  | `prestige_coin` |  |
+| 1361 | `#CSGO_Collectible_GlobalGeneral2017` |  | `prestige_coin` |  |
+| 1362 | `#CSGO_Collectible_GlobalGeneral2017` |  | `prestige_coin` |  |
+| 1363 | `#CSGO_Collectible_GlobalGeneral2017` |  | `prestige_coin` |  |
+| 1364 | `#CSGO_crate_key_community_16` |  | `weapon_case_key` |  |
+| 1365 | `#CSGO_crate_key_community_17` |  | `weapon_case_key` |  |
+| 1366 | `#CSGO_crate_key_community_18` |  | `weapon_case_key` |  |
+| 1367 | `#CSGO_Collectible_GlobalGeneral2018` |  | `prestige_coin` |  |
+| 1368 | `#CSGO_Collectible_GlobalGeneral2018` |  | `prestige_coin` |  |
+| 1369 | `#CSGO_Collectible_GlobalGeneral2018` |  | `prestige_coin` |  |
+| 1370 | `#CSGO_Collectible_GlobalGeneral2018` |  | `prestige_coin` |  |
+| 1371 | `#CSGO_Collectible_GlobalGeneral2018` |  | `prestige_coin` |  |
+| 1372 | `#CSGO_Collectible_GlobalGeneral2018` |  | `prestige_coin` |  |
+| 1373 | `#CSGO_crate_key_community_19` |  | `weapon_case_key` |  |
+| 1374 | `#CSGO_crate_key_community_20` |  | `weapon_case_key` |  |
+| 1375 | `#CSGO_crate_key_community_21` |  | `weapon_case_key` |  |
+| 1376 | `#CSGO_Collectible_GlobalGeneral2019` |  | `prestige_coin` |  |
+| 1377 | `#CSGO_Collectible_GlobalGeneral2019` |  | `prestige_coin` |  |
+| 1378 | `#CSGO_Collectible_GlobalGeneral2019` |  | `prestige_coin` |  |
+| 1379 | `#CSGO_Collectible_GlobalGeneral2019` |  | `prestige_coin` |  |
+| 1380 | `#CSGO_Collectible_GlobalGeneral2019` |  | `prestige_coin` |  |
+| 1381 | `#CSGO_Collectible_GlobalGeneral2019` |  | `prestige_coin` |  |
+| 1383 | `#CSGO_crate_key_community_22` |  | `weapon_case_key` |  |
+| 1384 | `#CSGO_crate_key_community_23` |  | `weapon_case_key` |  |
+| 1385 | `#CSGO_crate_key_community_24` |  | `weapon_case_key` |  |
+| 1386 | `#CSGO_crate_key_community_25` |  | `weapon_case_key` |  |
+| 1387 | `#CSGO_crate_key_community_26` |  | `weapon_case_key` |  |
+| 1388 | `#CSGO_crate_key_community_27` |  | `weapon_case_key` |  |
+| 1389 | `#CSGO_crate_key_community_28` |  | `weapon_case_key` |  |
+| 1390 | `#CSGO_crate_key_community_29` |  | `weapon_case_key` |  |
+| 1391 | `#CSGO_crate_key_community_30` |  | `valve weapon_case_key` |  |
+| 1392 | `#CSGO_crate_key_community_31` |  | `weapon_case_key` |  |
+| 1393 | `#CSGO_crate_key_community_32` |  | `weapon_case_key` |  |
+| 1394 | `#CSGO_crate_key_community_33` |  | `weapon_case_key` |  |
+| 4000 | `#CSGO_Tool_Keychain` |  | `valve csgo_tool` | #CSGO_Tool_Keychain |
+| 4001 | `#CSGO_crate_valve_1` |  | `weapon_case` |  |
+| 4002 | `#CSGO_crate_esports_2013` |  | `weapon_case` |  |
+| 4003 | `#CSGO_crate_operation_ii` |  | `weapon_case` |  |
+| 4004 | `#CSGO_crate_valve_2` |  | `weapon_case` |  |
+| 4005 | `#CSGO_crate_esports_2013_winter` |  | `weapon_case` |  |
+| 4006 | `#CSGO_crate_dhw13_promo` |  | `weapon_case_souvenirpkg` |  |
+| 4007 | `#CSGO_crate_sticker_pack01` |  | `sticker_capsule` |  |
+| 4009 | `#CSGO_crate_community_1` |  | `weapon_case` |  |
+| 4010 | `#CSGO_crate_valve_3` |  | `weapon_case` |  |
+| 4011 | `#CSGO_crate_community_2` |  | `weapon_case` |  |
+| 4012 | `#CSGO_crate_sticker_pack02` |  | `sticker_capsule` |  |
+| 4013 | `#CSGO_crate_ems14_promo` |  | `weapon_case_souvenirpkg` |  |
+| 4014 | `#CSGO_crate_sticker_pack_kat2014_01` |  | `sticker_capsule` |  |
+| 4015 | `#CSGO_crate_sticker_pack_kat2014_02` |  | `sticker_capsule` |  |
+| 4016 | `#CSGO_crate_sticker_pack_community01` |  | `sticker_capsule` |  |
+| 4017 | `#CSGO_crate_community_3` |  | `weapon_case` |  |
+| 4018 | `#CSGO_crate_community_4` |  | `weapon_case` |  |
+| 4019 | `#CSGO_crate_esports_2014_summer` |  | `weapon_case` |  |
+| 4020 | `#CSGO_crate_sticker_pack_cologne2014_01` |  | `sticker_capsule` |  |
+| 4021 | `#CSGO_crate_sticker_pack_cologne2014_02` |  | `sticker_capsule` |  |
+| 4022 | `#CSGO_crate_esl14_promo_de_dust2` |  | `weapon_case_souvenirpkg` |  |
+| 4023 | `#CSGO_crate_esl14_promo_de_inferno` |  | `weapon_case_souvenirpkg` |  |
+| 4024 | `#CSGO_crate_esl14_promo_de_mirage` |  | `weapon_case_souvenirpkg` |  |
+| 4025 | `#CSGO_crate_esl14_promo_de_nuke` |  | `weapon_case_souvenirpkg` |  |
+| 4026 | `#CSGO_crate_esl14_promo_de_cache` |  | `weapon_case_souvenirpkg` |  |
+| 4027 | `#CSGO_crate_esl14_promo_de_cbble` |  | `weapon_case_souvenirpkg` |  |
+| 4028 | `#CSGO_crate_esl14_promo_de_overpass` |  | `weapon_case_souvenirpkg` |  |
+| 4029 | `#CSGO_crate_operation_vanguard` |  | `weapon_case` |  |
+| 4030 | `#CSGO_crate_sticker_pack_dhw2014_01` |  | `sticker_capsule` |  |
+| 4031 | `#CSGO_crate_dhw14_promo_de_dust2` |  | `weapon_case_souvenirpkg` |  |
+| 4032 | `#CSGO_crate_dhw14_promo_de_inferno` |  | `weapon_case_souvenirpkg` |  |
+| 4033 | `#CSGO_crate_dhw14_promo_de_mirage` |  | `weapon_case_souvenirpkg` |  |
+| 4034 | `#CSGO_crate_dhw14_promo_de_nuke` |  | `weapon_case_souvenirpkg` |  |
+| 4035 | `#CSGO_crate_dhw14_promo_de_cache` |  | `weapon_case_souvenirpkg` |  |
+| 4036 | `#CSGO_crate_dhw14_promo_de_cbble` |  | `weapon_case_souvenirpkg` |  |
+| 4037 | `#CSGO_crate_dhw14_promo_de_overpass` |  | `weapon_case_souvenirpkg` |  |
+| 4038 | `#StickerKit_dhw2014_fnatic` |  | `dhw14_sticker_capsule_prefab` |  |
+| 4039 | `#StickerKit_dhw2014_cloud9` |  | `dhw14_sticker_capsule_prefab` |  |
+| 4040 | `#CSGO_crate_sticker_pack_cologne2026_all` |  | `cologne2026_sticker_capsule_prefab volatile_pricing_stickercap1` |  |
+| 4041 | `#StickerKit_dhw2014_ninjasinpyjamas` |  | `dhw14_sticker_capsule_prefab` |  |
+| 4042 | `#StickerKit_dhw2014_virtuspro` |  | `dhw14_sticker_capsule_prefab` |  |
+| 4043 | `#StickerKit_dhw2014_navi` |  | `dhw14_sticker_capsule_prefab` |  |
+| 4045 | `#StickerKit_dhw2014_teamdignitas` |  | `dhw14_sticker_capsule_prefab` |  |
+| 4046 | `#StickerKit_dhw2014_bravadogaming` |  | `dhw14_sticker_capsule_prefab` |  |
+| 4047 | `#StickerKit_dhw2014_escgaming` |  | `dhw14_sticker_capsule_prefab` |  |
+| 4048 | `#StickerKit_dhw2014_hellraisers` |  | `dhw14_sticker_capsule_prefab` |  |
+| 4049 | `#StickerKit_dhw2014_myxmg` |  | `dhw14_sticker_capsule_prefab` |  |
+| 4050 | `#StickerKit_dhw2014_ibuypower` |  | `dhw14_sticker_capsule_prefab` |  |
+| 4051 | `#StickerKit_dhw2014_teamldlc` |  | `dhw14_sticker_capsule_prefab` |  |
+| 4052 | `#StickerKit_dhw2014_pentasports` |  | `dhw14_sticker_capsule_prefab` |  |
+| 4053 | `#StickerKit_dhw2014_planetkeydynamics` |  | `dhw14_sticker_capsule_prefab` |  |
+| 4054 | `#StickerKit_dhw2014_dhw` |  | `dhw14_sticker_capsule_prefab` |  |
+| 4055 | `#StickerKit_dhw2014_3dmax` |  | `dhw14_sticker_capsule_prefab` |  |
+| 4056 | `#StickerKit_dhw2014_copenhagenwolves` |  | `dhw14_sticker_capsule_prefab` |  |
+| 4057 | `#StickerKit_dhw2014_datteam` |  | `dhw14_sticker_capsule_prefab` |  |
+| 4058 | `#StickerKit_dhw2014_londonconspiracy` |  | `dhw14_sticker_capsule_prefab` |  |
+| 4059 | `#StickerKit_dhw2014_mousesports` |  | `dhw14_sticker_capsule_prefab` |  |
+| 4060 | `#StickerKit_dhw2014_flipsid3` |  | `dhw14_sticker_capsule_prefab` |  |
+| 4061 | `#CSGO_crate_community_6` |  | `weapon_case` |  |
+| 4062 | `#StickerKit_eslkatowice2015_3dmax` |  | `eslkatowice2015_sticker_capsule_prefab` |  |
+| 4063 | `#StickerKit_eslkatowice2015_cloud9` |  | `eslkatowice2015_sticker_capsule_prefab` |  |
+| 4064 | `#StickerKit_eslkatowice2015_counterlogic` |  | `eslkatowice2015_sticker_capsule_prefab` |  |
+| 4065 | `#StickerKit_eslkatowice2015_flipsid3` |  | `eslkatowice2015_sticker_capsule_prefab` |  |
+| 4066 | `#StickerKit_eslkatowice2015_fnatic` |  | `eslkatowice2015_sticker_capsule_prefab` |  |
+| 4067 | `#StickerKit_eslkatowice2015_hellraisers` |  | `eslkatowice2015_sticker_capsule_prefab` |  |
+| 4068 | `#StickerKit_eslkatowice2015_keyd` |  | `eslkatowice2015_sticker_capsule_prefab` |  |
+| 4069 | `#StickerKit_eslkatowice2015_lgb` |  | `eslkatowice2015_sticker_capsule_prefab` |  |
+| 4070 | `#StickerKit_eslkatowice2015_navi` |  | `eslkatowice2015_sticker_capsule_prefab` |  |
+| 4071 | `#StickerKit_eslkatowice2015_ninjasinpyjamas` |  | `eslkatowice2015_sticker_capsule_prefab` |  |
+| 4072 | `#StickerKit_eslkatowice2015_pentasports` |  | `eslkatowice2015_sticker_capsule_prefab` |  |
+| 4073 | `#StickerKit_eslkatowice2015_teamenvyus` |  | `eslkatowice2015_sticker_capsule_prefab` |  |
+| 4074 | `#StickerKit_eslkatowice2015_teamsolomid` |  | `eslkatowice2015_sticker_capsule_prefab` |  |
+| 4075 | `#StickerKit_eslkatowice2015_titan` |  | `eslkatowice2015_sticker_capsule_prefab` |  |
+| 4076 | `#StickerKit_eslkatowice2015_virtuspro` |  | `eslkatowice2015_sticker_capsule_prefab` |  |
+| 4077 | `#StickerKit_eslkatowice2015_voxeminor` |  | `eslkatowice2015_sticker_capsule_prefab` |  |
+| 4078 | `#StickerKit_eslkatowice2015_esl_a` |  | `eslkatowice2015_sticker_capsule_prefab` |  |
+| 4079 | `#CSGO_crate_eslkatowice2015_promo_de_dust2` |  | `weapon_case_souvenirpkg` |  |
+| 4080 | `#CSGO_crate_eslkatowice2015_promo_de_inferno` |  | `weapon_case_souvenirpkg` |  |
+| 4081 | `#CSGO_crate_eslkatowice2015_promo_de_mirage` |  | `weapon_case_souvenirpkg` |  |
+| 4082 | `#CSGO_crate_eslkatowice2015_promo_de_nuke` |  | `weapon_case_souvenirpkg` |  |
+| 4083 | `#CSGO_crate_eslkatowice2015_promo_de_cache` |  | `weapon_case_souvenirpkg` |  |
+| 4084 | `#CSGO_crate_eslkatowice2015_promo_de_cbble` |  | `weapon_case_souvenirpkg` |  |
+| 4085 | `#CSGO_crate_eslkatowice2015_promo_de_overpass` |  | `weapon_case_souvenirpkg` |  |
+| 4086 | `#CSGO_crate_sticker_pack_eslkatowice2015_01` |  | `weapon_case_base` |  |
+| 4087 | `#CSGO_crate_sticker_pack_eslkatowice2015_02` |  | `weapon_case_base` |  |
+| 4088 | `#CSGO_crate_tool_stattrak_swap` |  | `valve weapon_case_base` |  |
+| 4089 | `#CSGO_crate_community_7` |  | `weapon_case` |  |
+| 4090 | `#CSGO_crate_sticker_pack_enfu_capsule` |  | `weapon_case_base` |  |
+| 4091 | `#CSGO_crate_community_8` |  | `weapon_case` |  |
+| 4092 | `#StickerKit_eslcologne2015_team_fnatic` |  | `eslcologne2015_sticker_capsule_prefab` |  |
+| 4093 | `#StickerKit_eslcologne2015_team_virtuspro` |  | `eslcologne2015_sticker_capsule_prefab` |  |
+| 4094 | `#StickerKit_eslcologne2015_team_mousesports` |  | `eslcologne2015_sticker_capsule_prefab` |  |
+| 4095 | `#StickerKit_eslcologne2015_team_navi` |  | `eslcologne2015_sticker_capsule_prefab` |  |
+| 4096 | `#StickerKit_eslcologne2015_team_renegades` |  | `eslcologne2015_sticker_capsule_prefab` |  |
+| 4097 | `#StickerKit_eslcologne2015_team_kinguin` |  | `eslcologne2015_sticker_capsule_prefab` |  |
+| 4098 | `#StickerKit_eslcologne2015_team_ebettle` |  | `eslcologne2015_sticker_capsule_prefab` |  |
+| 4099 | `#StickerKit_eslcologne2015_team_cloud9` |  | `eslcologne2015_sticker_capsule_prefab` |  |
+| 4100 | `#StickerKit_eslcologne2015_team_ninjasinpyjamas` |  | `eslcologne2015_sticker_capsule_prefab` |  |
+| 4101 | `#StickerKit_eslcologne2015_team_envyus` |  | `eslcologne2015_sticker_capsule_prefab` |  |
+| 4102 | `#StickerKit_eslcologne2015_team_luminositygaming` |  | `eslcologne2015_sticker_capsule_prefab` |  |
+| 4103 | `#StickerKit_eslcologne2015_team_solomid` |  | `eslcologne2015_sticker_capsule_prefab` |  |
+| 4104 | `#StickerKit_eslcologne2015_team_teamimmunity` |  | `eslcologne2015_sticker_capsule_prefab` |  |
+| 4105 | `#StickerKit_eslcologne2015_team_flipside` |  | `eslcologne2015_sticker_capsule_prefab` |  |
+| 4106 | `#StickerKit_eslcologne2015_team_titan` |  | `eslcologne2015_sticker_capsule_prefab` |  |
+| 4107 | `#StickerKit_eslcologne2015_team_clg` |  | `eslcologne2015_sticker_capsule_prefab` |  |
+| 4108 | `#StickerKit_eslcologne2015_team_esl` |  | `eslcologne2015_sticker_capsule_prefab` |  |
+| 4109 | `#CSGO_crate_sticker_pack_eslcologne2015_legends` |  | `weapon_case_base` |  |
+| 4110 | `#CSGO_crate_sticker_pack_eslcologne2015_challengers` |  | `weapon_case_base` |  |
+| 4111 | `#CSGO_crate_signature_pack_eslcologne2015_group_1` |  | `weapon_case_base` |  |
+| 4112 | `#CSGO_crate_signature_pack_eslcologne2015_group_2` |  | `weapon_case_base` |  |
+| 4113 | `#CSGO_crate_signature_pack_eslcologne2015_group_3` |  | `weapon_case_base` |  |
+| 4114 | `#CSGO_crate_signature_pack_eslcologne2015_group_4` |  | `weapon_case_base` |  |
+| 4115 | `#CSGO_crate_signature_pack_eslcologne2015_fnatic` |  | `weapon_case_base` |  |
+| 4116 | `#CSGO_crate_signature_pack_eslcologne2015_luminositygaming` |  | `weapon_case_base` |  |
+| 4117 | `#CSGO_crate_signature_pack_eslcologne2015_navi` |  | `weapon_case_base` |  |
+| 4118 | `#CSGO_crate_signature_pack_eslcologne2015_ninjasinpyjamas` |  | `weapon_case_base` |  |
+| 4119 | `#CSGO_crate_signature_pack_eslcologne2015_envyus` |  | `weapon_case_base` |  |
+| 4120 | `#CSGO_crate_signature_pack_eslcologne2015_titan` |  | `weapon_case_base` |  |
+| 4121 | `#CSGO_crate_signature_pack_eslcologne2015_solomid` |  | `weapon_case_base` |  |
+| 4122 | `#CSGO_crate_signature_pack_eslcologne2015_virtuspro` |  | `weapon_case_base` |  |
+| 4123 | `#CSGO_crate_signature_pack_eslcologne2015_mousesports` |  | `weapon_case_base` |  |
+| 4124 | `#CSGO_crate_signature_pack_eslcologne2015_renegades` |  | `weapon_case_base` |  |
+| 4125 | `#CSGO_crate_signature_pack_eslcologne2015_teamimmunity` |  | `weapon_case_base` |  |
+| 4126 | `#CSGO_crate_signature_pack_eslcologne2015_ebettle` |  | `weapon_case_base` |  |
+| 4127 | `#CSGO_crate_signature_pack_eslcologne2015_kinguin` |  | `weapon_case_base` |  |
+| 4128 | `#CSGO_crate_signature_pack_eslcologne2015_flipside` |  | `weapon_case_base` |  |
+| 4129 | `#CSGO_crate_signature_pack_eslcologne2015_clg` |  | `weapon_case_base` |  |
+| 4130 | `#CSGO_crate_signature_pack_eslcologne2015_cloud9` |  | `weapon_case_base` |  |
+| 4131 | `#CSGO_crate_eslcologne2015_promo_de_dust2` |  | `weapon_case_souvenirpkg` |  |
+| 4132 | `#CSGO_crate_eslcologne2015_promo_de_mirage` |  | `weapon_case_souvenirpkg` |  |
+| 4133 | `#CSGO_crate_eslcologne2015_promo_de_inferno` |  | `weapon_case_souvenirpkg` |  |
+| 4134 | `#CSGO_crate_eslcologne2015_promo_de_cbble` |  | `weapon_case_souvenirpkg` |  |
+| 4135 | `#CSGO_crate_eslcologne2015_promo_de_overpass` |  | `weapon_case_souvenirpkg` |  |
+| 4136 | `#CSGO_crate_eslcologne2015_promo_de_cache` |  | `weapon_case_souvenirpkg` |  |
+| 4137 | `#CSGO_crate_eslcologne2015_promo_de_train` |  | `weapon_case_souvenirpkg` |  |
+| 4138 | `#CSGO_crate_community_9` |  | `weapon_case` |  |
+| 4139 | `#StickerKit_cluj2015_team_nip` |  | `cluj2015_sticker_capsule_prefab` |  |
+| 4140 | `#StickerKit_cluj2015_team_dig` |  | `cluj2015_sticker_capsule_prefab` |  |
+| 4141 | `#StickerKit_cluj2015_team_clg` |  | `cluj2015_sticker_capsule_prefab` |  |
+| 4142 | `#StickerKit_cluj2015_team_vex` |  | `cluj2015_sticker_capsule_prefab` |  |
+| 4143 | `#StickerKit_cluj2015_team_flip` |  | `cluj2015_sticker_capsule_prefab` |  |
+| 4144 | `#StickerKit_cluj2015_team_liq` |  | `cluj2015_sticker_capsule_prefab` |  |
+| 4145 | `#StickerKit_cluj2015_team_mss` |  | `cluj2015_sticker_capsule_prefab` |  |
+| 4146 | `#StickerKit_cluj2015_team_navi` |  | `cluj2015_sticker_capsule_prefab` |  |
+| 4147 | `#StickerKit_cluj2015_team_vp` |  | `cluj2015_sticker_capsule_prefab` |  |
+| 4148 | `#StickerKit_cluj2015_team_c9` |  | `cluj2015_sticker_capsule_prefab` |  |
+| 4149 | `#StickerKit_cluj2015_team_g2` |  | `cluj2015_sticker_capsule_prefab` |  |
+| 4150 | `#StickerKit_cluj2015_team_tit` |  | `cluj2015_sticker_capsule_prefab` |  |
+| 4151 | `#StickerKit_cluj2015_team_tsolo` |  | `cluj2015_sticker_capsule_prefab` |  |
+| 4152 | `#StickerKit_cluj2015_team_nv` |  | `cluj2015_sticker_capsule_prefab` |  |
+| 4153 | `#StickerKit_cluj2015_team_fntc` |  | `cluj2015_sticker_capsule_prefab` |  |
+| 4154 | `#StickerKit_cluj2015_team_lumi` |  | `cluj2015_sticker_capsule_prefab` |  |
+| 4155 | `#StickerKit_cluj2015_team_dhc` |  | `cluj2015_sticker_capsule_prefab` |  |
+| 4156 | `#CSGO_crate_sticker_pack_cluj2015_legends` |  | `weapon_case_base` |  |
+| 4157 | `#CSGO_crate_sticker_pack_cluj2015_challengers` |  | `weapon_case_base` |  |
+| 4158 | `#CSGO_crate_signature_pack_cluj2015_group_1` |  | `weapon_case_base` |  |
+| 4159 | `#CSGO_crate_signature_pack_cluj2015_group_2` |  | `weapon_case_base` |  |
+| 4160 | `#CSGO_crate_signature_pack_cluj2015_nip` |  | `weapon_case_base` |  |
+| 4161 | `#CSGO_crate_signature_pack_cluj2015_dig` |  | `weapon_case_base` |  |
+| 4162 | `#CSGO_crate_signature_pack_cluj2015_clg` |  | `weapon_case_base` |  |
+| 4163 | `#CSGO_crate_signature_pack_cluj2015_vex` |  | `weapon_case_base` |  |
+| 4164 | `#CSGO_crate_signature_pack_cluj2015_flip` |  | `weapon_case_base` |  |
+| 4165 | `#CSGO_crate_signature_pack_cluj2015_liq` |  | `weapon_case_base` |  |
+| 4166 | `#CSGO_crate_signature_pack_cluj2015_mss` |  | `weapon_case_base` |  |
+| 4167 | `#CSGO_crate_signature_pack_cluj2015_navi` |  | `weapon_case_base` |  |
+| 4168 | `#CSGO_crate_signature_pack_cluj2015_vp` |  | `weapon_case_base` |  |
+| 4169 | `#CSGO_crate_signature_pack_cluj2015_c9` |  | `weapon_case_base` |  |
+| 4170 | `#CSGO_crate_signature_pack_cluj2015_g2` |  | `weapon_case_base` |  |
+| 4171 | `#CSGO_crate_signature_pack_cluj2015_tit` |  | `weapon_case_base` |  |
+| 4172 | `#CSGO_crate_signature_pack_cluj2015_tsolo` |  | `weapon_case_base` |  |
+| 4173 | `#CSGO_crate_signature_pack_cluj2015_nv` |  | `weapon_case_base` |  |
+| 4174 | `#CSGO_crate_signature_pack_cluj2015_fntc` |  | `weapon_case_base` |  |
+| 4175 | `#CSGO_crate_signature_pack_cluj2015_lumi` |  | `weapon_case_base` |  |
+| 4176 | `#CSGO_crate_cluj2015_promo_de_dust2` |  | `weapon_case_souvenirpkg` |  |
+| 4177 | `#CSGO_crate_cluj2015_promo_de_mirage` |  | `weapon_case_souvenirpkg` |  |
+| 4178 | `#CSGO_crate_cluj2015_promo_de_inferno` |  | `weapon_case_souvenirpkg` |  |
+| 4179 | `#CSGO_crate_cluj2015_promo_de_cbble` |  | `weapon_case_souvenirpkg` |  |
+| 4180 | `#CSGO_crate_cluj2015_promo_de_overpass` |  | `weapon_case_souvenirpkg` |  |
+| 4181 | `#CSGO_crate_cluj2015_promo_de_cache` |  | `weapon_case_souvenirpkg` |  |
+| 4182 | `#CSGO_crate_cluj2015_promo_de_train` |  | `weapon_case_souvenirpkg` |  |
+| 4183 | `#CSGO_crate_sticker_pack_pinups_capsule` |  | `weapon_case_base` |  |
+| 4184 | `#CSGO_crate_sticker_pack_slid3_capsule` |  | `weapon_case_base` |  |
+| 4185 | `#CSGO_crate_sticker_pack_team_roles_capsule` |  | `weapon_case_base` |  |
+| 4186 | `#CSGO_crate_community_10` |  | `weapon_case` |  |
+| 4187 | `#CSGO_crate_community_11` |  | `weapon_case` |  |
+| 4188 | `#StickerKit_columbus2016_team_nip` |  | `columbus2016_sticker_capsule_prefab` |  |
+| 4189 | `#StickerKit_columbus2016_team_splc` |  | `columbus2016_sticker_capsule_prefab` |  |
+| 4190 | `#StickerKit_columbus2016_team_clg` |  | `columbus2016_sticker_capsule_prefab` |  |
+| 4191 | `#StickerKit_columbus2016_team_gamb` |  | `columbus2016_sticker_capsule_prefab` |  |
+| 4192 | `#StickerKit_columbus2016_team_flip` |  | `columbus2016_sticker_capsule_prefab` |  |
+| 4193 | `#StickerKit_columbus2016_team_liq` |  | `columbus2016_sticker_capsule_prefab` |  |
+| 4194 | `#StickerKit_columbus2016_team_mss` |  | `columbus2016_sticker_capsule_prefab` |  |
+| 4195 | `#StickerKit_columbus2016_team_navi` |  | `columbus2016_sticker_capsule_prefab` |  |
+| 4196 | `#StickerKit_columbus2016_team_vp` |  | `columbus2016_sticker_capsule_prefab` |  |
+| 4197 | `#StickerKit_columbus2016_team_c9` |  | `columbus2016_sticker_capsule_prefab` |  |
+| 4198 | `#StickerKit_columbus2016_team_g2` |  | `columbus2016_sticker_capsule_prefab` |  |
+| 4199 | `#StickerKit_columbus2016_team_faze` |  | `columbus2016_sticker_capsule_prefab` |  |
+| 4200 | `#StickerKit_columbus2016_team_astr` |  | `columbus2016_sticker_capsule_prefab` |  |
+| 4201 | `#StickerKit_columbus2016_team_nv` |  | `columbus2016_sticker_capsule_prefab` |  |
+| 4202 | `#StickerKit_columbus2016_team_fntc` |  | `columbus2016_sticker_capsule_prefab` |  |
+| 4203 | `#StickerKit_columbus2016_team_lumi` |  | `columbus2016_sticker_capsule_prefab` |  |
+| 4204 | `#StickerKit_columbus2016_team_mlg` |  | `columbus2016_sticker_capsule_prefab` |  |
+| 4205 | `#CSGO_crate_sticker_pack_columbus2016_legends` |  | `columbus2016_sticker_capsule_prefab` |  |
+| 4206 | `#CSGO_crate_sticker_pack_columbus2016_challengers` |  | `columbus2016_sticker_capsule_prefab` |  |
+| 4207 | `#CSGO_crate_signature_pack_columbus2016_group_1` |  | `columbus2016_signature_capsule_prefab` |  |
+| 4208 | `#CSGO_crate_signature_pack_columbus2016_group_2` |  | `columbus2016_signature_capsule_prefab` |  |
+| 4209 | `#CSGO_crate_signature_pack_columbus2016_nip` |  | `columbus2016_signature_capsule_prefab` |  |
+| 4210 | `#CSGO_crate_signature_pack_columbus2016_splc` |  | `columbus2016_signature_capsule_prefab` |  |
+| 4211 | `#CSGO_crate_signature_pack_columbus2016_clg` |  | `columbus2016_signature_capsule_prefab` |  |
+| 4212 | `#CSGO_crate_signature_pack_columbus2016_gamb` |  | `columbus2016_signature_capsule_prefab` |  |
+| 4213 | `#CSGO_crate_signature_pack_columbus2016_flip` |  | `columbus2016_signature_capsule_prefab` |  |
+| 4214 | `#CSGO_crate_signature_pack_columbus2016_liq` |  | `columbus2016_signature_capsule_prefab` |  |
+| 4215 | `#CSGO_crate_signature_pack_columbus2016_mss` |  | `columbus2016_signature_capsule_prefab` |  |
+| 4216 | `#CSGO_crate_signature_pack_columbus2016_navi` |  | `columbus2016_signature_capsule_prefab` |  |
+| 4217 | `#CSGO_crate_signature_pack_columbus2016_vp` |  | `columbus2016_signature_capsule_prefab` |  |
+| 4218 | `#CSGO_crate_signature_pack_columbus2016_c9` |  | `columbus2016_signature_capsule_prefab` |  |
+| 4219 | `#CSGO_crate_signature_pack_columbus2016_g2` |  | `columbus2016_signature_capsule_prefab` |  |
+| 4220 | `#CSGO_crate_signature_pack_columbus2016_faze` |  | `columbus2016_signature_capsule_prefab` |  |
+| 4221 | `#CSGO_crate_signature_pack_columbus2016_astr` |  | `columbus2016_signature_capsule_prefab` |  |
+| 4222 | `#CSGO_crate_signature_pack_columbus2016_nv` |  | `columbus2016_signature_capsule_prefab` |  |
+| 4223 | `#CSGO_crate_signature_pack_columbus2016_fntc` |  | `columbus2016_signature_capsule_prefab` |  |
+| 4224 | `#CSGO_crate_signature_pack_columbus2016_lumi` |  | `columbus2016_signature_capsule_prefab` |  |
+| 4225 | `#CSGO_crate_columbus2016_promo_de_dust2` |  | `weapon_case_souvenirpkg` |  |
+| 4226 | `#CSGO_crate_columbus2016_promo_de_mirage` |  | `weapon_case_souvenirpkg` |  |
+| 4227 | `#CSGO_crate_columbus2016_promo_de_inferno` |  | `weapon_case_souvenirpkg` |  |
+| 4228 | `#CSGO_crate_columbus2016_promo_de_cbble` |  | `weapon_case_souvenirpkg` |  |
+| 4229 | `#CSGO_crate_columbus2016_promo_de_overpass` |  | `weapon_case_souvenirpkg` |  |
+| 4230 | `#CSGO_crate_columbus2016_promo_de_cache` |  | `weapon_case_souvenirpkg` |  |
+| 4231 | `#CSGO_crate_columbus2016_promo_de_train` |  | `weapon_case_souvenirpkg` |  |
+| 4232 | `#CSGO_crate_columbus2016_promo_de_nuke` |  | `weapon_case_souvenirpkg` |  |
+| 4233 | `#CSGO_crate_community_12` |  | `weapon_case` |  |
+| 4234 | `#CSGO_crate_sprays_community_1` |  | `graffiti_box` |  |
+| 4235 | `#CSGO_crate_pins_series_1` |  | `weapon_case_base` |  |
+| 4236 | `#CSGO_crate_community_13` |  | `weapon_case` |  |
+| 4237 | `#StickerKit_cologne2016_team_nip` |  | `cologne2016_sticker_capsule_prefab` |  |
+| 4238 | `#StickerKit_cologne2016_team_optc` |  | `cologne2016_sticker_capsule_prefab` |  |
+| 4239 | `#StickerKit_cologne2016_team_clg` |  | `cologne2016_sticker_capsule_prefab` |  |
+| 4240 | `#StickerKit_cologne2016_team_gamb` |  | `cologne2016_sticker_capsule_prefab` |  |
+| 4241 | `#StickerKit_cologne2016_team_flip` |  | `cologne2016_sticker_capsule_prefab` |  |
+| 4242 | `#StickerKit_cologne2016_team_liq` |  | `cologne2016_sticker_capsule_prefab` |  |
+| 4243 | `#StickerKit_cologne2016_team_mss` |  | `cologne2016_sticker_capsule_prefab` |  |
+| 4244 | `#StickerKit_cologne2016_team_navi` |  | `cologne2016_sticker_capsule_prefab` |  |
+| 4245 | `#StickerKit_cologne2016_team_vp` |  | `cologne2016_sticker_capsule_prefab` |  |
+| 4246 | `#StickerKit_cologne2016_team_sk` |  | `cologne2016_sticker_capsule_prefab` |  |
+| 4247 | `#StickerKit_cologne2016_team_g2` |  | `cologne2016_sticker_capsule_prefab` |  |
+| 4248 | `#StickerKit_cologne2016_team_faze` |  | `cologne2016_sticker_capsule_prefab` |  |
+| 4249 | `#StickerKit_cologne2016_team_astr` |  | `cologne2016_sticker_capsule_prefab` |  |
+| 4250 | `#StickerKit_cologne2016_team_nv` |  | `cologne2016_sticker_capsule_prefab` |  |
+| 4251 | `#StickerKit_cologne2016_team_fntc` |  | `cologne2016_sticker_capsule_prefab` |  |
+| 4252 | `#StickerKit_cologne2016_team_dig` |  | `cologne2016_sticker_capsule_prefab` |  |
+| 4253 | `#StickerKit_cologne2016_team_esl` |  | `cologne2016_sticker_capsule_prefab` |  |
+| 4254 | `#CSGO_crate_sticker_pack_cologne2016_legends` |  | `cologne2016_sticker_capsule_prefab` |  |
+| 4255 | `#CSGO_crate_sticker_pack_cologne2016_challengers` |  | `cologne2016_sticker_capsule_prefab` |  |
+| 4256 | `#CSGO_crate_signature_pack_cologne2016_group_1` |  | `cologne2016_signature_capsule_prefab` |  |
+| 4257 | `#CSGO_crate_signature_pack_cologne2016_group_2` |  | `cologne2016_signature_capsule_prefab` |  |
+| 4258 | `#CSGO_crate_signature_pack_cologne2016_nip` |  | `cologne2016_signature_capsule_prefab` |  |
+| 4259 | `#CSGO_crate_signature_pack_cologne2016_optc` |  | `cologne2016_signature_capsule_prefab` |  |
+| 4260 | `#CSGO_crate_signature_pack_cologne2016_clg` |  | `cologne2016_signature_capsule_prefab` |  |
+| 4261 | `#CSGO_crate_signature_pack_cologne2016_gamb` |  | `cologne2016_signature_capsule_prefab` |  |
+| 4262 | `#CSGO_crate_signature_pack_cologne2016_flip` |  | `cologne2016_signature_capsule_prefab` |  |
+| 4263 | `#CSGO_crate_signature_pack_cologne2016_liq` |  | `cologne2016_signature_capsule_prefab` |  |
+| 4264 | `#CSGO_crate_signature_pack_cologne2016_mss` |  | `cologne2016_signature_capsule_prefab` |  |
+| 4265 | `#CSGO_crate_signature_pack_cologne2016_navi` |  | `cologne2016_signature_capsule_prefab` |  |
+| 4266 | `#CSGO_crate_signature_pack_cologne2016_vp` |  | `cologne2016_signature_capsule_prefab` |  |
+| 4267 | `#CSGO_crate_signature_pack_cologne2016_sk` |  | `cologne2016_signature_capsule_prefab` |  |
+| 4268 | `#CSGO_crate_signature_pack_cologne2016_g2` |  | `cologne2016_signature_capsule_prefab` |  |
+| 4269 | `#CSGO_crate_signature_pack_cologne2016_faze` |  | `cologne2016_signature_capsule_prefab` |  |
+| 4270 | `#CSGO_crate_signature_pack_cologne2016_astr` |  | `cologne2016_signature_capsule_prefab` |  |
+| 4271 | `#CSGO_crate_signature_pack_cologne2016_nv` |  | `cologne2016_signature_capsule_prefab` |  |
+| 4272 | `#CSGO_crate_signature_pack_cologne2016_fntc` |  | `cologne2016_signature_capsule_prefab` |  |
+| 4273 | `#CSGO_crate_signature_pack_cologne2016_dig` |  | `cologne2016_signature_capsule_prefab` |  |
+| 4274 | `#CSGO_crate_cologne2016_promo_de_dust2` |  | `weapon_case_souvenirpkg` |  |
+| 4275 | `#CSGO_crate_cologne2016_promo_de_mirage` |  | `weapon_case_souvenirpkg` |  |
+| 4276 | `#CSGO_crate_cologne2016_promo_de_cbble` |  | `weapon_case_souvenirpkg` |  |
+| 4277 | `#CSGO_crate_cologne2016_promo_de_overpass` |  | `weapon_case_souvenirpkg` |  |
+| 4278 | `#CSGO_crate_cologne2016_promo_de_cache` |  | `weapon_case_souvenirpkg` |  |
+| 4279 | `#CSGO_crate_cologne2016_promo_de_train` |  | `weapon_case_souvenirpkg` |  |
+| 4280 | `#CSGO_crate_cologne2016_promo_de_nuke` |  | `weapon_case_souvenirpkg` |  |
+| 4281 | `#CSGO_crate_gamma_2` |  | `weapon_case` |  |
+| 4282 | `#CSGO_crate_sticker_pack_sugarface_capsule` |  | `sticker_capsule` |  |
+| 4283 | `#CSGO_crate_sticker_pack_bestiary_capsule` |  | `sticker_capsule` |  |
+| 4284 | `#CSGO_crate_pins_series_2` |  | `weapon_case_base` |  |
+| 4285 | `#CSGO_crate_sprays_vcap1` |  | `graffiti_box` |  |
+| 4286 | `#CSGO_crate_sprays_illuminate1` |  | `graffiti_box` |  |
+| 4287 | `#CSGO_crate_musickit_radicals_stattrak_capsule` |  | `weapon_case_base` |  |
+| 4288 | `#CSGO_crate_community_15` |  | `weapon_case` |  |
+| 4289 | `#StoreItem_atlanta2017_team_astr_sticker` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4290 | `#StoreItem_atlanta2017_team_nv_sticker` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4291 | `#StoreItem_atlanta2017_team_faze_sticker` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4292 | `#StoreItem_atlanta2017_team_flip_sticker` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4293 | `#StoreItem_atlanta2017_team_fntc_sticker` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4294 | `#StoreItem_atlanta2017_team_g2_sticker` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4295 | `#StoreItem_atlanta2017_team_gamb_sticker` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4296 | `#StoreItem_atlanta2017_team_god_sticker` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4297 | `#StoreItem_atlanta2017_team_hlr_sticker` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4298 | `#StoreItem_atlanta2017_team_mss_sticker` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4299 | `#StoreItem_atlanta2017_team_navi_sticker` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4300 | `#StoreItem_atlanta2017_team_nor_sticker` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4301 | `#StoreItem_atlanta2017_team_optc_sticker` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4302 | `#StoreItem_atlanta2017_team_sk_sticker` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4303 | `#StoreItem_atlanta2017_team_liq_sticker` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4304 | `#StoreItem_atlanta2017_team_vp_sticker` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4305 | `#StoreItem_atlanta2017_team_eleague_sticker` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4306 | `#StoreItem_atlanta2017_team_astr_graffiti` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4307 | `#StoreItem_atlanta2017_team_nv_graffiti` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4308 | `#StoreItem_atlanta2017_team_faze_graffiti` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4309 | `#StoreItem_atlanta2017_team_flip_graffiti` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4310 | `#StoreItem_atlanta2017_team_fntc_graffiti` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4311 | `#StoreItem_atlanta2017_team_g2_graffiti` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4312 | `#StoreItem_atlanta2017_team_gamb_graffiti` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4313 | `#StoreItem_atlanta2017_team_god_graffiti` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4314 | `#StoreItem_atlanta2017_team_hlr_graffiti` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4315 | `#StoreItem_atlanta2017_team_mss_graffiti` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4316 | `#StoreItem_atlanta2017_team_navi_graffiti` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4317 | `#StoreItem_atlanta2017_team_nor_graffiti` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4318 | `#StoreItem_atlanta2017_team_optc_graffiti` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4319 | `#StoreItem_atlanta2017_team_sk_graffiti` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4320 | `#StoreItem_atlanta2017_team_liq_graffiti` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4321 | `#StoreItem_atlanta2017_team_vp_graffiti` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4322 | `#StoreItem_atlanta2017_team_eleague_graffiti` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4323 | `#CSGO_crate_sticker_pack_atlanta2017_legends` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4324 | `#CSGO_crate_sticker_pack_atlanta2017_challengers` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4325 | `#CSGO_crate_signature_pack_atlanta2017_group_1` |  | `atlanta2017_signature_capsule_prefab` |  |
+| 4326 | `#CSGO_crate_signature_pack_atlanta2017_group_2` |  | `atlanta2017_signature_capsule_prefab` |  |
+| 4327 | `#CSGO_crate_signature_pack_atlanta2017_astr` |  | `atlanta2017_signature_capsule_prefab` |  |
+| 4328 | `#CSGO_crate_signature_pack_atlanta2017_nv` |  | `atlanta2017_signature_capsule_prefab` |  |
+| 4329 | `#CSGO_crate_signature_pack_atlanta2017_faze` |  | `atlanta2017_signature_capsule_prefab` |  |
+| 4330 | `#CSGO_crate_signature_pack_atlanta2017_flip` |  | `atlanta2017_signature_capsule_prefab` |  |
+| 4331 | `#CSGO_crate_signature_pack_atlanta2017_fntc` |  | `atlanta2017_signature_capsule_prefab` |  |
+| 4332 | `#CSGO_crate_signature_pack_atlanta2017_g2` |  | `atlanta2017_signature_capsule_prefab` |  |
+| 4333 | `#CSGO_crate_signature_pack_atlanta2017_gamb` |  | `atlanta2017_signature_capsule_prefab` |  |
+| 4334 | `#CSGO_crate_signature_pack_atlanta2017_god` |  | `atlanta2017_signature_capsule_prefab` |  |
+| 4335 | `#CSGO_crate_signature_pack_atlanta2017_hlr` |  | `atlanta2017_signature_capsule_prefab` |  |
+| 4336 | `#CSGO_crate_signature_pack_atlanta2017_mss` |  | `atlanta2017_signature_capsule_prefab` |  |
+| 4337 | `#CSGO_crate_signature_pack_atlanta2017_navi` |  | `atlanta2017_signature_capsule_prefab` |  |
+| 4338 | `#CSGO_crate_signature_pack_atlanta2017_nor` |  | `atlanta2017_signature_capsule_prefab` |  |
+| 4339 | `#CSGO_crate_signature_pack_atlanta2017_optc` |  | `atlanta2017_signature_capsule_prefab` |  |
+| 4340 | `#CSGO_crate_signature_pack_atlanta2017_sk` |  | `atlanta2017_signature_capsule_prefab` |  |
+| 4341 | `#CSGO_crate_signature_pack_atlanta2017_liq` |  | `atlanta2017_signature_capsule_prefab` |  |
+| 4342 | `#CSGO_crate_signature_pack_atlanta2017_vp` |  | `atlanta2017_signature_capsule_prefab` |  |
+| 4343 | `#CSGO_crate_atlanta2017_bundle_of_all` |  | `atlanta2017_sticker_capsule_prefab` |  |
+| 4344 | `#CSGO_crate_atlanta2017_promo_de_dust2` |  | `weapon_case_souvenirpkg` |  |
+| 4345 | `#CSGO_crate_atlanta2017_promo_de_mirage` |  | `weapon_case_souvenirpkg` |  |
+| 4346 | `#CSGO_crate_atlanta2017_promo_de_cbble` |  | `weapon_case_souvenirpkg` |  |
+| 4347 | `#CSGO_crate_atlanta2017_promo_de_overpass` |  | `weapon_case_souvenirpkg` |  |
+| 4348 | `#CSGO_crate_atlanta2017_promo_de_cache` |  | `weapon_case_souvenirpkg` |  |
+| 4349 | `#CSGO_crate_atlanta2017_promo_de_train` |  | `weapon_case_souvenirpkg` |  |
+| 4350 | `#CSGO_crate_atlanta2017_promo_de_nuke` |  | `weapon_case_souvenirpkg` |  |
+| 4351 | `#CSGO_crate_community_16` |  | `weapon_case` |  |
+| 4352 | `#CSGO_crate_community_17` |  | `weapon_case` |  |
+| 4353 | `#CSGO_Collectible_CommunitySeasonEight2017_Coin1` |  | `season8_coin` |  |
+| 4354 | `#CSGO_Collectible_CommunitySeasonEight2017_Coin2` |  | `season8_coin` |  |
+| 4355 | `#CSGO_Collectible_CommunitySeasonEight2017_Coin3` |  | `season8_coin` |  |
+| 4356 | `#CSGO_Collectible_CommunitySeasonEight2017_Coin4` |  | `season8_coin` |  |
+| 4357 | `#StoreItem_krakow2017_team_astr_sticker` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4358 | `#StoreItem_krakow2017_team_vp_sticker` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4359 | `#StoreItem_krakow2017_team_fntc_sticker` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4360 | `#StoreItem_krakow2017_team_sk_sticker` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4361 | `#StoreItem_krakow2017_team_navi_sticker` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4362 | `#StoreItem_krakow2017_team_gamb_sticker` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4363 | `#StoreItem_krakow2017_team_nor_sticker` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4364 | `#StoreItem_krakow2017_team_faze_sticker` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4365 | `#StoreItem_krakow2017_team_mss_sticker` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4366 | `#StoreItem_krakow2017_team_g2_sticker` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4367 | `#StoreItem_krakow2017_team_big_sticker` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4368 | `#StoreItem_krakow2017_team_c9_sticker` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4369 | `#StoreItem_krakow2017_team_penta_sticker` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4370 | `#StoreItem_krakow2017_team_flip_sticker` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4371 | `#StoreItem_krakow2017_team_imt_sticker` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4372 | `#StoreItem_krakow2017_team_vega_sticker` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4373 | `#StoreItem_krakow2017_team_pgl_sticker` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4374 | `#StoreItem_krakow2017_team_astr_graffiti` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4375 | `#StoreItem_krakow2017_team_vp_graffiti` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4376 | `#StoreItem_krakow2017_team_fntc_graffiti` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4377 | `#StoreItem_krakow2017_team_sk_graffiti` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4378 | `#StoreItem_krakow2017_team_navi_graffiti` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4379 | `#StoreItem_krakow2017_team_gamb_graffiti` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4380 | `#StoreItem_krakow2017_team_nor_graffiti` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4381 | `#StoreItem_krakow2017_team_faze_graffiti` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4382 | `#StoreItem_krakow2017_team_mss_graffiti` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4383 | `#StoreItem_krakow2017_team_g2_graffiti` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4384 | `#StoreItem_krakow2017_team_big_graffiti` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4385 | `#StoreItem_krakow2017_team_c9_graffiti` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4386 | `#StoreItem_krakow2017_team_penta_graffiti` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4387 | `#StoreItem_krakow2017_team_flip_graffiti` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4388 | `#StoreItem_krakow2017_team_imt_graffiti` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4389 | `#StoreItem_krakow2017_team_vega_graffiti` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4390 | `#StoreItem_krakow2017_team_pgl_graffiti` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4391 | `#CSGO_crate_sticker_pack_krakow2017_legends` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4392 | `#CSGO_crate_sticker_pack_krakow2017_challengers` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4393 | `#CSGO_crate_signature_pack_krakow2017_group_1` |  | `krakow2017_signature_capsule_prefab` |  |
+| 4394 | `#CSGO_crate_signature_pack_krakow2017_group_2` |  | `krakow2017_signature_capsule_prefab` |  |
+| 4395 | `#CSGO_crate_krakow2017_bundle_of_all` |  | `krakow2017_sticker_capsule_prefab` |  |
+| 4396 | `#CSGO_crate_krakow2017_promo_de_inferno` |  | `weapon_case_souvenirpkg` |  |
+| 4397 | `#CSGO_crate_krakow2017_promo_de_mirage` |  | `weapon_case_souvenirpkg` |  |
+| 4398 | `#CSGO_crate_krakow2017_promo_de_cbble` |  | `weapon_case_souvenirpkg` |  |
+| 4399 | `#CSGO_crate_krakow2017_promo_de_overpass` |  | `weapon_case_souvenirpkg` |  |
+| 4400 | `#CSGO_crate_krakow2017_promo_de_cache` |  | `weapon_case_souvenirpkg` |  |
+| 4401 | `#CSGO_crate_krakow2017_promo_de_train` |  | `weapon_case_souvenirpkg` |  |
+| 4402 | `#CSGO_crate_krakow2017_promo_de_nuke` |  | `weapon_case_souvenirpkg` |  |
+| 4403 | `#CSGO_crate_community_18` |  | `weapon_case` |  |
+| 4404 | `#CSGO_crate_sticker_pack_illuminate_capsule_01` |  | `sticker_capsule` |  |
+| 4405 | `#CSGO_crate_sticker_pack_illuminate_capsule_02` |  | `sticker_capsule` |  |
+| 4406 | `#StoreItem_boston2018_team_gamb_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4407 | `#StoreItem_boston2018_team_thv_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4408 | `#StoreItem_boston2018_team_astr_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4409 | `#StoreItem_boston2018_team_vp_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4410 | `#StoreItem_boston2018_team_fntc_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4411 | `#StoreItem_boston2018_team_sk_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4412 | `#StoreItem_boston2018_team_big_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4413 | `#StoreItem_boston2018_team_nor_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4414 | `#StoreItem_boston2018_team_g2_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4415 | `#StoreItem_boston2018_team_c9_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4416 | `#StoreItem_boston2018_team_flip_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4417 | `#StoreItem_boston2018_team_navi_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4418 | `#StoreItem_boston2018_team_mss_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4419 | `#StoreItem_boston2018_team_spr_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4420 | `#StoreItem_boston2018_team_faze_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4421 | `#StoreItem_boston2018_team_vega_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4422 | `#StoreItem_boston2018_team_spc_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4423 | `#StoreItem_boston2018_team_liq_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4424 | `#StoreItem_boston2018_team_avg_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4425 | `#StoreItem_boston2018_team_ren_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4426 | `#StoreItem_boston2018_team_nv_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4427 | `#StoreItem_boston2018_team_mfg_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4428 | `#StoreItem_boston2018_team_qb_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4429 | `#StoreItem_boston2018_team_tyl_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4430 | `#StoreItem_boston2018_team_eleague_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4431 | `#StoreItem_boston2018_team_gamb_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4432 | `#StoreItem_boston2018_team_thv_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4433 | `#StoreItem_boston2018_team_astr_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4434 | `#StoreItem_boston2018_team_vp_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4435 | `#StoreItem_boston2018_team_fntc_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4436 | `#StoreItem_boston2018_team_sk_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4437 | `#StoreItem_boston2018_team_big_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4438 | `#StoreItem_boston2018_team_nor_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4439 | `#StoreItem_boston2018_team_g2_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4440 | `#StoreItem_boston2018_team_c9_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4441 | `#StoreItem_boston2018_team_flip_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4442 | `#StoreItem_boston2018_team_navi_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4443 | `#StoreItem_boston2018_team_mss_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4444 | `#StoreItem_boston2018_team_spr_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4445 | `#StoreItem_boston2018_team_faze_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4446 | `#StoreItem_boston2018_team_vega_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4447 | `#StoreItem_boston2018_team_spc_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4448 | `#StoreItem_boston2018_team_liq_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4449 | `#StoreItem_boston2018_team_avg_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4450 | `#StoreItem_boston2018_team_ren_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4451 | `#StoreItem_boston2018_team_nv_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4452 | `#StoreItem_boston2018_team_mfg_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4453 | `#StoreItem_boston2018_team_qb_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4454 | `#StoreItem_boston2018_team_tyl_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4455 | `#StoreItem_boston2018_team_eleague_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4456 | `#CSGO_crate_sticker_pack_boston2018_legends` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4457 | `#CSGO_crate_sticker_pack_boston2018_challengers` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4458 | `#CSGO_crate_sticker_pack_boston2018_contenders` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4459 | `#CSGO_crate_signature_pack_boston2018_group_legends` |  | `boston2018_signature_capsule_prefab` |  |
+| 4460 | `#CSGO_crate_signature_pack_boston2018_group_challengers` |  | `boston2018_signature_capsule_prefab` |  |
+| 4461 | `#CSGO_crate_signature_pack_boston2018_group_contenders` |  | `boston2018_signature_capsule_prefab` |  |
+| 4462 | `#CSGO_crate_boston2018_bundle_of_all` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4463 | `#CSGO_crate_boston2018_promo_de_inferno` |  | `weapon_case_souvenirpkg` |  |
+| 4464 | `#CSGO_crate_boston2018_promo_de_mirage` |  | `weapon_case_souvenirpkg` |  |
+| 4465 | `#CSGO_crate_boston2018_promo_de_cbble` |  | `weapon_case_souvenirpkg` |  |
+| 4466 | `#CSGO_crate_boston2018_promo_de_overpass` |  | `weapon_case_souvenirpkg` |  |
+| 4467 | `#CSGO_crate_boston2018_promo_de_cache` |  | `weapon_case_souvenirpkg` |  |
+| 4468 | `#CSGO_crate_boston2018_promo_de_train` |  | `weapon_case_souvenirpkg` |  |
+| 4469 | `#CSGO_crate_boston2018_promo_de_nuke` |  | `weapon_case_souvenirpkg` |  |
+| 4470 | `#CSGO_crate_sticker_pack_comm2018_01_capsule` |  | `sticker_capsule` |  |
+| 4471 | `#CSGO_crate_community_19` |  | `weapon_case` |  |
+| 4472 | `#StoreItem_boston2018_team_flg_sticker` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4473 | `#StoreItem_boston2018_team_flg_graffiti` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4474 | `#CSGO_crate_sticker_pack_boston2018_contenders_flg` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4475 | `#CSGO_crate_signature_pack_boston2018_group_contenders_flg` |  | `boston2018_signature_capsule_prefab` |  |
+| 4476 | `#CSGO_crate_boston2018_bundle_of_all` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4477 | `#CSGO_crate_sticker_pack_chicken_capsule` |  | `sticker_capsule` |  |
+| 4478 | `#CSGO_crate_sticker_pack_boston2018_legends_ntv` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4479 | `#CSGO_crate_signature_pack_boston2018_group_legends_ntv` |  | `boston2018_signature_capsule_prefab` |  |
+| 4480 | `#CSGO_crate_boston2018_bundle_of_all` |  | `boston2018_sticker_capsule_prefab` |  |
+| 4481 | `#CSGO_crate_pins_series_3` |  | `weapon_case_base` |  |
+| 4482 | `#CSGO_crate_community_20` |  | `weapon_case` |  |
+| 4483 | `#StoreItem_london2018_team_c9_sticker` |  | `london2018_sticker_capsule_prefab` |  |
+| 4484 | `#StoreItem_london2018_team_faze_sticker` |  | `london2018_sticker_capsule_prefab` |  |
+| 4485 | `#StoreItem_london2018_team_navi_sticker` |  | `london2018_sticker_capsule_prefab` |  |
+| 4486 | `#StoreItem_london2018_team_mibr_sticker` |  | `london2018_sticker_capsule_prefab` |  |
+| 4487 | `#StoreItem_london2018_team_mss_sticker` |  | `london2018_sticker_capsule_prefab` |  |
+| 4488 | `#StoreItem_london2018_team_wins_sticker` |  | `london2018_sticker_capsule_prefab` |  |
+| 4489 | `#StoreItem_london2018_team_g2_sticker` |  | `london2018_sticker_capsule_prefab` |  |
+| 4490 | `#StoreItem_london2018_team_fntc_sticker` |  | `london2018_sticker_capsule_prefab` |  |
+| 4491 | `#StoreItem_london2018_team_gamb_sticker` |  | `london2018_sticker_capsule_prefab` |  |
+| 4492 | `#StoreItem_london2018_team_vega_sticker` |  | `london2018_sticker_capsule_prefab` |  |
+| 4493 | `#StoreItem_london2018_team_spc_sticker` |  | `london2018_sticker_capsule_prefab` |  |
+| 4494 | `#StoreItem_london2018_team_big_sticker` |  | `london2018_sticker_capsule_prefab` |  |
+| 4495 | `#StoreItem_london2018_team_astr_sticker` |  | `london2018_sticker_capsule_prefab` |  |
+| 4496 | `#StoreItem_london2018_team_liq_sticker` |  | `london2018_sticker_capsule_prefab` |  |
+| 4497 | `#StoreItem_london2018_team_nor_sticker` |  | `london2018_sticker_capsule_prefab` |  |
+| 4498 | `#StoreItem_london2018_team_vp_sticker` |  | `london2018_sticker_capsule_prefab` |  |
+| 4499 | `#StoreItem_london2018_team_nip_sticker` |  | `london2018_sticker_capsule_prefab` |  |
+| 4500 | `#StoreItem_london2018_team_col_sticker` |  | `london2018_sticker_capsule_prefab` |  |
+| 4501 | `#StoreItem_london2018_team_hlr_sticker` |  | `london2018_sticker_capsule_prefab` |  |
+| 4502 | `#StoreItem_london2018_team_ren_sticker` |  | `london2018_sticker_capsule_prefab` |  |
+| 4503 | `#StoreItem_london2018_team_optc_sticker` |  | `london2018_sticker_capsule_prefab` |  |
+| 4504 | `#StoreItem_london2018_team_rog_sticker` |  | `london2018_sticker_capsule_prefab` |  |
+| 4505 | `#StoreItem_london2018_team_spir_sticker` |  | `london2018_sticker_capsule_prefab` |  |
+| 4506 | `#StoreItem_london2018_team_tyl_sticker` |  | `london2018_sticker_capsule_prefab` |  |
+| 4507 | `#StoreItem_london2018_team_faceit_sticker` |  | `london2018_sticker_capsule_prefab` |  |
+| 4508 | `#StoreItem_london2018_team_c9_graffiti` |  | `london2018_sticker_capsule_prefab` |  |
+| 4509 | `#StoreItem_london2018_team_faze_graffiti` |  | `london2018_sticker_capsule_prefab` |  |
+| 4510 | `#StoreItem_london2018_team_navi_graffiti` |  | `london2018_sticker_capsule_prefab` |  |
+| 4511 | `#StoreItem_london2018_team_mibr_graffiti` |  | `london2018_sticker_capsule_prefab` |  |
+| 4512 | `#StoreItem_london2018_team_mss_graffiti` |  | `london2018_sticker_capsule_prefab` |  |
+| 4513 | `#StoreItem_london2018_team_wins_graffiti` |  | `london2018_sticker_capsule_prefab` |  |
+| 4514 | `#StoreItem_london2018_team_g2_graffiti` |  | `london2018_sticker_capsule_prefab` |  |
+| 4515 | `#StoreItem_london2018_team_fntc_graffiti` |  | `london2018_sticker_capsule_prefab` |  |
+| 4516 | `#StoreItem_london2018_team_gamb_graffiti` |  | `london2018_sticker_capsule_prefab` |  |
+| 4517 | `#StoreItem_london2018_team_vega_graffiti` |  | `london2018_sticker_capsule_prefab` |  |
+| 4518 | `#StoreItem_london2018_team_spc_graffiti` |  | `london2018_sticker_capsule_prefab` |  |
+| 4519 | `#StoreItem_london2018_team_big_graffiti` |  | `london2018_sticker_capsule_prefab` |  |
+| 4520 | `#StoreItem_london2018_team_astr_graffiti` |  | `london2018_sticker_capsule_prefab` |  |
+| 4521 | `#StoreItem_london2018_team_liq_graffiti` |  | `london2018_sticker_capsule_prefab` |  |
+| 4522 | `#StoreItem_london2018_team_nor_graffiti` |  | `london2018_sticker_capsule_prefab` |  |
+| 4523 | `#StoreItem_london2018_team_vp_graffiti` |  | `london2018_sticker_capsule_prefab` |  |
+| 4524 | `#StoreItem_london2018_team_nip_graffiti` |  | `london2018_sticker_capsule_prefab` |  |
+| 4525 | `#StoreItem_london2018_team_col_graffiti` |  | `london2018_sticker_capsule_prefab` |  |
+| 4526 | `#StoreItem_london2018_team_hlr_graffiti` |  | `london2018_sticker_capsule_prefab` |  |
+| 4527 | `#StoreItem_london2018_team_ren_graffiti` |  | `london2018_sticker_capsule_prefab` |  |
+| 4528 | `#StoreItem_london2018_team_optc_graffiti` |  | `london2018_sticker_capsule_prefab` |  |
+| 4529 | `#StoreItem_london2018_team_rog_graffiti` |  | `london2018_sticker_capsule_prefab` |  |
+| 4530 | `#StoreItem_london2018_team_spir_graffiti` |  | `london2018_sticker_capsule_prefab` |  |
+| 4531 | `#StoreItem_london2018_team_tyl_graffiti` |  | `london2018_sticker_capsule_prefab` |  |
+| 4532 | `#StoreItem_london2018_team_faceit_graffiti` |  | `london2018_sticker_capsule_prefab` |  |
+| 4533 | `#CSGO_crate_sticker_pack_london2018_legends` |  | `london2018_sticker_capsule_prefab` |  |
+| 4534 | `#CSGO_crate_sticker_pack_london2018_challengers` |  | `london2018_sticker_capsule_prefab` |  |
+| 4535 | `#CSGO_crate_sticker_pack_london2018_contenders` |  | `london2018_sticker_capsule_prefab` |  |
+| 4536 | `#CSGO_crate_signature_pack_london2018_group_legends` |  | `london2018_signature_capsule_prefab` |  |
+| 4537 | `#CSGO_crate_signature_pack_london2018_group_challengers` |  | `london2018_signature_capsule_prefab` |  |
+| 4538 | `#CSGO_crate_signature_pack_london2018_group_contenders` |  | `london2018_signature_capsule_prefab` |  |
+| 4539 | `#CSGO_crate_london2018_bundle_of_all` |  | `london2018_sticker_capsule_prefab` |  |
+| 4540 | `#CSGO_crate_london2018_promo_de_inferno` |  | `weapon_case_souvenirpkg` |  |
+| 4541 | `#CSGO_crate_london2018_promo_de_mirage` |  | `weapon_case_souvenirpkg` |  |
+| 4542 | `#CSGO_crate_london2018_promo_de_dust2` |  | `weapon_case_souvenirpkg` |  |
+| 4543 | `#CSGO_crate_london2018_promo_de_overpass` |  | `weapon_case_souvenirpkg` |  |
+| 4544 | `#CSGO_crate_london2018_promo_de_cache` |  | `weapon_case_souvenirpkg` |  |
+| 4545 | `#CSGO_crate_london2018_promo_de_train` |  | `weapon_case_souvenirpkg` |  |
+| 4546 | `#CSGO_crate_london2018_promo_de_nuke` |  | `weapon_case_souvenirpkg` |  |
+| 4547 | `#CSGO_crate_sticker_pack_skillgroup_capsule` |  | `sticker_capsule` |  |
+| 4548 | `#CSGO_crate_community_21` |  | `weapon_case` |  |
+| 4549 | `#CSGO_Ticket_CommunitySeasonNine2019` |  | `season_pass` |  |
+| 4550 | `#CSGO_Collectible_CommunitySeasonNine2019_Coin1` |  | `season9_coin` |  |
+| 4551 | `#CSGO_Collectible_CommunitySeasonNine2019_Coin2` |  | `season9_coin` |  |
+| 4552 | `#CSGO_Collectible_CommunitySeasonNine2019_Coin3` |  | `season9_coin` |  |
+| 4553 | `#CSGO_Collectible_CommunitySeasonNine2019_Coin4` |  | `season9_coin` |  |
+| 4554 | `#CSGO_TournamentPass_katowice2019` |  | `katowice2019_tournament_pass_prefab` |  |
+| 4555 | `#CSGO_TournamentJournal_katowice2019` |  | `katowice2019_tournament_journal_prefab` |  |
+| 4556 | `#CSGO_TournamentJournal_katowice2019_Silver` |  | `katowice2019_tournament_journal_prefab` |  |
+| 4557 | `#CSGO_TournamentJournal_katowice2019_Gold` |  | `katowice2019_tournament_journal_prefab` |  |
+| 4558 | `#CSGO_TournamentJournal_katowice2019_Crystal` |  | `katowice2019_tournament_journal_prefab` |  |
+| 4559 | `#StoreItem_katowice2019_team_astr_sticker` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4560 | `#StoreItem_katowice2019_team_avg_sticker` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4561 | `#StoreItem_katowice2019_team_big_sticker` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4562 | `#StoreItem_katowice2019_team_c9_sticker` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4563 | `#StoreItem_katowice2019_team_col_sticker` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4564 | `#StoreItem_katowice2019_team_ence_sticker` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4565 | `#StoreItem_katowice2019_team_faze_sticker` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4566 | `#StoreItem_katowice2019_team_fntc_sticker` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4567 | `#StoreItem_katowice2019_team_furi_sticker` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4568 | `#StoreItem_katowice2019_team_g2_sticker` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4569 | `#StoreItem_katowice2019_team_gray_sticker` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4570 | `#StoreItem_katowice2019_team_hlr_sticker` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4571 | `#StoreItem_katowice2019_team_mibr_sticker` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4572 | `#StoreItem_katowice2019_team_navi_sticker` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4573 | `#StoreItem_katowice2019_team_nip_sticker` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4574 | `#StoreItem_katowice2019_team_nrg_sticker` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4575 | `#StoreItem_katowice2019_team_ren_sticker` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4576 | `#StoreItem_katowice2019_team_liq_sticker` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4577 | `#StoreItem_katowice2019_team_spir_sticker` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4578 | `#StoreItem_katowice2019_team_tyl_sticker` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4579 | `#StoreItem_katowice2019_team_vega_sticker` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4580 | `#StoreItem_katowice2019_team_vici_sticker` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4581 | `#StoreItem_katowice2019_team_vita_sticker` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4582 | `#StoreItem_katowice2019_team_wins_sticker` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4583 | `#StoreItem_katowice2019_team_iem_sticker` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4584 | `#CSGO_crate_sticker_pack_katowice2019_legends` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4585 | `#CSGO_crate_sticker_pack_katowice2019_challengers` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4586 | `#CSGO_crate_sticker_pack_katowice2019_contenders` |  | `katowice2019_sticker_capsule_prefab` |  |
+| 4587 | `#CSGO_crate_signature_pack_katowice2019_group_legends` |  | `katowice2019_signature_capsule_prefab` |  |
+| 4588 | `#CSGO_crate_signature_pack_katowice2019_group_challengers` |  | `katowice2019_signature_capsule_prefab` |  |
+| 4589 | `#CSGO_crate_signature_pack_katowice2019_group_contenders` |  | `katowice2019_signature_capsule_prefab` |  |
+| 4590 | `#CSGO_crate_katowice2019_promo_de_inferno` |  | `weapon_case_souvenirpkg` |  |
+| 4591 | `#CSGO_crate_katowice2019_promo_de_mirage` |  | `weapon_case_souvenirpkg` |  |
+| 4592 | `#CSGO_crate_katowice2019_promo_de_dust2` |  | `weapon_case_souvenirpkg` |  |
+| 4593 | `#CSGO_crate_katowice2019_promo_de_overpass` |  | `weapon_case_souvenirpkg` |  |
+| 4594 | `#CSGO_crate_katowice2019_promo_de_cache` |  | `weapon_case_souvenirpkg` |  |
+| 4595 | `#CSGO_crate_katowice2019_promo_de_train` |  | `weapon_case_souvenirpkg` |  |
+| 4596 | `#CSGO_crate_katowice2019_promo_de_nuke` |  | `weapon_case_souvenirpkg` |  |
+| 4597 | `#CSGO_crate_sticker_pack_halo_capsule` |  | `sticker_capsule` |  |
+| 4598 | `#CSGO_crate_community_22` |  | `weapon_case` |  |
+| 4599 | `#CSGO_crate_sticker_pack_feral_predators_capsule` |  | `sticker_capsule` |  |
+| 4600 | `#CSGO_crate_sticker_pack_shattered_web` |  | `sticker_capsule` |  |
+| 4601 | `#CSGO_set_overpass` |  | `weapon_case_base` |  |
+| 4602 | `#CSGO_set_cobblestone` |  | `weapon_case_base` |  |
+| 4603 | `#CSGO_set_cache` |  | `weapon_case_base` |  |
+| 4604 | `#CSGO_set_gods_and_monsters` |  | `weapon_case_base` |  |
+| 4605 | `#CSGO_set_chopshop` |  | `weapon_case_base` |  |
+| 4606 | `#CSGO_set_kimono` |  | `weapon_case_base` |  |
+| 4607 | `#CSGO_tool_xpgrant` |  | `csgo_tool` | #CSGO_Type_Ticket |
+| 4608 | `#CSGO_set_canals` |  | `weapon_case_base` |  |
+| 4609 | `#CSGO_Tool_Patch` |  | `csgo_tool` | #CSGO_Tool_Patch |
+| 4610 | `#CSGO_crate_patch_pack01` |  | `patch_capsule` |  |
+| 4611 | `#CSGO_set_norse` |  | `weapon_case_base` |  |
+| 4612 | `#CSGO_set_stmarc` |  | `weapon_case_base` |  |
+| 4613 | `#CSGO_CustomPlayer_tm_professional_varf5` |  | `customplayertradable` |  |
+| 4614 | `#CSGO_crate_patch_pack02` |  | `patch_capsule` |  |
+| 4615 | `#CSGO_crate_patch_pack_hlalyx` |  | `patch_capsule` |  |
+| 4616 | `#CSGO_crate_sticker_pack_warhammer` |  | `sticker_capsule` |  |
+| 4617 | `#CSGO_crate_spray_std3` |  | `graffiti_box` |  |
+| 4618 | `#CSGO_crate_spray_std2_2` |  | `graffiti_box` |  |
+| 4619 | `#CSGO_CustomPlayer_ctm_st6_variantj` |  | `customplayertradable` |  |
+| 4620 | `#CSGO_crate_community_23` |  | `weapon_case` |  |
+| 4621 | `#CSGO_crate_spray_std2_1` |  | `graffiti_box` |  |
+| 4622 | `#CSGO_TournamentPass_berlin2019` |  | `berlin2019_tournament_pass_prefab berlin2019_tournament_steamtv_items` |  |
+| 4623 | `#CSGO_TournamentJournal_berlin2019` |  | `berlin2019_tournament_journal_prefab` |  |
+| 4624 | `#CSGO_TournamentJournal_berlin2019_Silver` |  | `berlin2019_tournament_journal_prefab` |  |
+| 4625 | `#CSGO_TournamentJournal_berlin2019_Gold` |  | `berlin2019_tournament_journal_prefab` |  |
+| 4626 | `#CSGO_TournamentJournal_berlin2019_Crystal` |  | `berlin2019_tournament_journal_prefab` |  |
+| 4627 | `#CSGO_TournamentPass_berlin2019_pack` |  | `berlin2019_tournament_pass_prefab berlin2019_tournament_steamtv_items` |  |
+| 4628 | `#CSGO_TournamentPass_berlin2019_charge` |  | `berlin2019_tournament_pass_prefab` |  |
+| 4629 | `#StoreItem_berlin2019_team_astr_sticker` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4630 | `#StoreItem_berlin2019_team_ence_sticker` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4631 | `#StoreItem_berlin2019_team_mibr_sticker` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4632 | `#StoreItem_berlin2019_team_navi_sticker` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4633 | `#StoreItem_berlin2019_team_nip_sticker` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4634 | `#StoreItem_berlin2019_team_faze_sticker` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4635 | `#StoreItem_berlin2019_team_liq_sticker` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4636 | `#StoreItem_berlin2019_team_ren_sticker` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4637 | `#StoreItem_berlin2019_team_col_sticker` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4638 | `#StoreItem_berlin2019_team_hlr_sticker` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4639 | `#StoreItem_berlin2019_team_avg_sticker` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4640 | `#StoreItem_berlin2019_team_g2_sticker` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4641 | `#StoreItem_berlin2019_team_vita_sticker` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4642 | `#StoreItem_berlin2019_team_gray_sticker` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4643 | `#StoreItem_berlin2019_team_mss_sticker` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4644 | `#StoreItem_berlin2019_team_forz_sticker` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4645 | `#StoreItem_berlin2019_team_nrg_sticker` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4646 | `#StoreItem_berlin2019_team_tyl_sticker` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4647 | `#StoreItem_berlin2019_team_furi_sticker` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4648 | `#StoreItem_berlin2019_team_cr4z_sticker` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4649 | `#StoreItem_berlin2019_team_syma_sticker` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4650 | `#StoreItem_berlin2019_team_nor_sticker` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4651 | `#StoreItem_berlin2019_team_drea_sticker` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4652 | `#StoreItem_berlin2019_team_intz_sticker` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4653 | `#StoreItem_berlin2019_team_star_sticker` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4654 | `#CSGO_crate_sticker_pack_berlin2019_legends` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4655 | `#CSGO_crate_sticker_pack_berlin2019_challengers` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4656 | `#CSGO_crate_sticker_pack_berlin2019_contenders` |  | `berlin2019_sticker_capsule_prefab` |  |
+| 4657 | `#CSGO_crate_signature_pack_berlin2019_group_legends` |  | `berlin2019_signature_capsule_prefab` |  |
+| 4658 | `#CSGO_crate_signature_pack_berlin2019_group_challengers` |  | `berlin2019_signature_capsule_prefab` |  |
+| 4659 | `#CSGO_crate_signature_pack_berlin2019_group_contenders` |  | `berlin2019_signature_capsule_prefab` |  |
+| 4660 | `#CSGO_crate_berlin2019_promo_de_inferno` |  | `weapon_case_souvenirpkg` |  |
+| 4661 | `#CSGO_crate_berlin2019_promo_de_mirage` |  | `weapon_case_souvenirpkg` |  |
+| 4662 | `#CSGO_crate_berlin2019_promo_de_dust2` |  | `weapon_case_souvenirpkg` |  |
+| 4663 | `#CSGO_crate_berlin2019_promo_de_overpass` |  | `weapon_case_souvenirpkg` |  |
+| 4664 | `#CSGO_crate_berlin2019_promo_de_train` |  | `weapon_case_souvenirpkg` |  |
+| 4665 | `#CSGO_crate_berlin2019_promo_de_nuke` |  | `weapon_case_souvenirpkg` |  |
+| 4666 | `#CSGO_crate_berlin2019_promo_de_vertigo` |  | `weapon_case_souvenirpkg` |  |
+| 4667 | `#CSGO_crate_sticker_pack_shattered_web` |  | `weapon_case_base` |  |
+| 4668 | `#CSGO_crate_xray_p250` |  | `weapon_case_base` |  |
+| 4669 | `#CSGO_crate_community_24` |  | `weapon_case` |  |
+| 4670 | `#CSGO_crate_sticker_pack_cs20_capsule` |  | `weapon_case_base` |  |
+| 4671 | `#CSGO_Collectible_CommunitySeasonNine2019_PlusStars1` |  | `valve season_tiers` |  |
+| 4672 | `#CSGO_Collectible_CommunitySeasonNine2019_PlusStars10` |  | `valve season_tiers` |  |
+| 4673 | `#CSGO_Collectible_CommunitySeasonNine2019_PlusStars100` |  | `valve season_tiers` |  |
+| 4674 | `#CSGO_Collectible_GlobalGeneral2020` |  | `prestige_coin` |  |
+| 4675 | `#CSGO_Collectible_GlobalGeneral2020` |  | `prestige_coin` |  |
+| 4676 | `#CSGO_Collectible_GlobalGeneral2020` |  | `prestige_coin` |  |
+| 4677 | `#CSGO_Collectible_GlobalGeneral2020` |  | `prestige_coin` |  |
+| 4678 | `#CSGO_Collectible_GlobalGeneral2020` |  | `prestige_coin` |  |
+| 4679 | `#CSGO_Collectible_GlobalGeneral2020` |  | `prestige_coin` |  |
+| 4680 | `#CSGO_CustomPlayer_ctm_st6_variantl` |  | `customplayertradable` |  |
+| 4682 | `#CSGO_Collectible_Pin_alyx_04` |  | `commodity_pin` |  |
+| 4683 | `#CSGO_Collectible_Pin_alyx_07` |  | `commodity_pin` |  |
+| 4684 | `#CSGO_Collectible_Pin_alyx_09` |  | `commodity_pin` |  |
+| 4685 | `#CSGO_Collectible_Pin_alyx_05` |  | `commodity_pin` |  |
+| 4686 | `#CSGO_Collectible_Pin_alyx_12` |  | `commodity_pin` |  |
+| 4687 | `#CSGO_Collectible_Pin_alyx_01` |  | `commodity_pin` |  |
+| 4688 | `#CSGO_Collectible_Pin_alyx_02` |  | `commodity_pin` |  |
+| 4689 | `#CSGO_Collectible_Pin_alyx_03` |  | `commodity_pin` |  |
+| 4690 | `#CSGO_Collectible_Pin_alyx_06` |  | `commodity_pin` |  |
+| 4691 | `#CSGO_Collectible_Pin_alyx_08` |  | `commodity_pin` |  |
+| 4692 | `#CSGO_Collectible_Pin_alyx_11` |  | `commodity_pin` |  |
+| 4693 | `#CSGO_crate_pins_hlalyx` |  | `weapon_case_base` |  |
+| 4694 | `#CSGO_crate_sticker_pack_hlalyx_capsule` |  | `weapon_case_base` |  |
+| 4695 | `#CSGO_crate_community_25` |  | `weapon_case` |  |
+| 4696 | `#CSGO_crate_musickit_masterminds_capsule` |  | `weapon_case_base` |  |
+| 4697 | `#CSGO_crate_musickit_masterminds_stattrak_capsule` |  | `weapon_case_base` |  |
+| 4698 | `#CSGO_crate_community_26` |  | `weapon_case` |  |
+| 4699 | `#CSGO_Ticket_CommunitySeasonTen2020` |  | `season_pass` |  |
+| 4700 | `#CSGO_Collectible_CommunitySeasonTen2020_Coin1` |  | `season10_coin` |  |
+| 4701 | `#CSGO_Collectible_CommunitySeasonTen2020_Coin2` |  | `season10_coin` |  |
+| 4702 | `#CSGO_Collectible_CommunitySeasonTen2020_Coin3` |  | `season10_coin` |  |
+| 4703 | `#CSGO_Collectible_CommunitySeasonTen2020_Coin4` |  | `season10_coin` |  |
+| 4704 | `#CSGO_Collectible_CommunitySeasonTen2020_PlusStars1` |  | `valve season_tiers` |  |
+| 4705 | `#CSGO_Collectible_CommunitySeasonTen2020_PlusStars10` |  | `valve season_tiers` |  |
+| 4706 | `#CSGO_Collectible_CommunitySeasonTen2020_PlusStars100` |  | `valve season_tiers` |  |
+| 4707 | `#CSGO_character_operator_dossier_op09_rare` |  | `weapon_case_base` |  |
+| 4708 | `#CSGO_character_operator_dossier_op09_mythical` |  | `weapon_case_base` |  |
+| 4709 | `#CSGO_character_operator_dossier_op09_legendary` |  | `weapon_case_base` |  |
+| 4710 | `#CSGO_character_operator_dossier_op10_ancient1` |  | `weapon_case_base` |  |
+| 4711 | `#CSGO_CustomPlayer_ctm_swat_variante` |  | `customplayertradable` |  |
+| 4712 | `#CSGO_CustomPlayer_ctm_swat_variantf` |  | `customplayertradable` |  |
+| 4713 | `#CSGO_CustomPlayer_ctm_swat_variantg` |  | `customplayertradable` |  |
+| 4714 | `#CSGO_CustomPlayer_ctm_swat_varianth` |  | `customplayertradable` |  |
+| 4715 | `#CSGO_CustomPlayer_ctm_swat_varianti` |  | `customplayertradable` |  |
+| 4716 | `#CSGO_CustomPlayer_ctm_swat_variantj` |  | `customplayertradable` |  |
+| 4717 | `#CSGO_crate_community_27` |  | `weapon_case` |  |
+| 4718 | `#CSGO_CustomPlayer_tm_balkan_variantk` |  | `customplayertradable` |  |
+| 4719 | `#CSGO_crate_sticker_pack_recoil` |  | `sticker_capsule` |  |
+| 4720 | `#CSGO_set_op10_ct` |  | `weapon_case_base` |  |
+| 4721 | `#CSGO_set_op10_t` |  | `weapon_case_base` |  |
+| 4722 | `#CSGO_set_op10_ancient` |  | `weapon_case_base` |  |
+| 4723 | `#CSGO_crate_sticker_pack_recoil` |  | `weapon_case_base` |  |
+| 4724 | `#CSGO_character_operator_dossier_op10_ancient2` |  | `weapon_case_base` |  |
+| 4725 | `#CSGO_Wearable_t_studded_brokenfang_gloves` |  | `hands_paintable` |  |
+| 4726 | `#CSGO_CustomPlayer_tm_professional_varf` |  | `customplayertradable` |  |
+| 4727 | `#CSGO_CustomPlayer_tm_professional_varg` |  | `customplayertradable` |  |
+| 4728 | `#CSGO_CustomPlayer_tm_professional_varh` |  | `customplayertradable` |  |
+| 4729 | `#CSGO_crate_sticker_pack_broken_fang` |  | `sticker_capsule` |  |
+| 4730 | `#CSGO_CustomPlayer_tm_professional_varj` |  | `customplayertradable` |  |
+| 4731 | `#CSGO_crate_sticker_pack_broken_fang` |  | `weapon_case_base` |  |
+| 4732 | `#CSGO_CustomPlayer_tm_professional_vari` |  | `customplayertradable` |  |
+| 4733 | `#CSGO_CustomPlayer_tm_professional_varf1` |  | `customplayertradable` |  |
+| 4734 | `#CSGO_CustomPlayer_tm_professional_varf2` |  | `customplayertradable` |  |
+| 4735 | `#CSGO_CustomPlayer_tm_professional_varf3` |  | `customplayertradable` |  |
+| 4736 | `#CSGO_CustomPlayer_tm_professional_varf4` |  | `customplayertradable` |  |
+| 4737 | `#CSGO_Collectible_GlobalGeneral2021` |  | `prestige_coin` |  |
+| 4738 | `#CSGO_Collectible_GlobalGeneral2021` |  | `prestige_coin` |  |
+| 4739 | `#CSGO_Collectible_GlobalGeneral2021` |  | `prestige_coin` |  |
+| 4740 | `#CSGO_Collectible_GlobalGeneral2021` |  | `prestige_coin` |  |
+| 4741 | `#CSGO_Collectible_GlobalGeneral2021` |  | `prestige_coin` |  |
+| 4742 | `#CSGO_Collectible_GlobalGeneral2021` |  | `prestige_coin` |  |
+| 4743 | `#CSGO_crate_sticker_pack_rmr2020_legends` |  | `rmr2020_sticker_capsule_prefab` |  |
+| 4744 | `#CSGO_crate_sticker_pack_rmr2020_challengers` |  | `rmr2020_sticker_capsule_prefab` |  |
+| 4745 | `#CSGO_crate_sticker_pack_rmr2020_contenders` |  | `rmr2020_sticker_capsule_prefab` |  |
+| 4746 | `#CSGO_crate_sticker_pack_poorly_drawn_capsule` |  | `sticker_capsule` |  |
+| 4747 | `#CSGO_crate_community_28` |  | `weapon_case` |  |
+| 4748 | `#CSGO_tool_subscription1` |  | `valve csgo_tool` | #CSGO_Type_Ticket |
+| 4749 | `#CSGO_CustomPlayer_ctm_gendarmerie_varianta` |  | `customplayertradable` |  |
+| 4750 | `#CSGO_CustomPlayer_ctm_gendarmerie_variantb` |  | `customplayertradable` |  |
+| 4751 | `#CSGO_CustomPlayer_ctm_gendarmerie_variantc` |  | `customplayertradable` |  |
+| 4752 | `#CSGO_CustomPlayer_ctm_gendarmerie_variantd` |  | `customplayertradable` |  |
+| 4753 | `#CSGO_CustomPlayer_ctm_gendarmerie_variante` |  | `customplayertradable` |  |
+| 4754 | `#CSGO_crate_musickit_tacticians_capsule` |  | `weapon_case_base` |  |
+| 4755 | `#CSGO_crate_musickit_tacticians_stattrak_capsule` |  | `weapon_case_base` |  |
+| 4756 | `#CSGO_CustomPlayer_ctm_swat_variantk` |  | `customplayertradable` |  |
+| 4757 | `#CSGO_CustomPlayer_ctm_diver_varianta` |  | `customplayertradable` |  |
+| 4758 | `#CSGO_Ticket_CommunitySeasonEleven2021` |  | `season_pass` |  |
+| 4759 | `#CSGO_Collectible_CommunitySeasonEleven2021_Coin1` |  | `season11_coin` |  |
+| 4760 | `#CSGO_Collectible_CommunitySeasonEleven2021_Coin2` |  | `season11_coin` |  |
+| 4761 | `#CSGO_Collectible_CommunitySeasonEleven2021_Coin3` |  | `season11_coin` |  |
+| 4762 | `#CSGO_Collectible_CommunitySeasonEleven2021_Coin4` |  | `season11_coin` |  |
+| 4763 | `#CSGO_Collectible_CommunitySeasonEleven2021_PlusStars1` |  | `valve season_tiers` |  |
+| 4764 | `#CSGO_Collectible_CommunitySeasonEleven2021_PlusStars10` |  | `valve season_tiers` |  |
+| 4765 | `#CSGO_Collectible_CommunitySeasonEleven2021_PlusStars100` |  | `valve season_tiers` |  |
+| 4766 | `#CSGO_character_operator_dossier_op09_rare` |  | `weapon_case_base` |  |
+| 4767 | `#CSGO_character_operator_dossier_op09_mythical` |  | `weapon_case_base` |  |
+| 4768 | `#CSGO_character_operator_dossier_op09_legendary` |  | `weapon_case_base` |  |
+| 4769 | `#CSGO_character_operator_dossier_op11_ancient1` |  | `weapon_case_base` |  |
+| 4770 | `#CSGO_character_operator_dossier_op11_ancient2` |  | `weapon_case_base` |  |
+| 4771 | `#CSGO_CustomPlayer_ctm_diver_variantb` |  | `customplayertradable` |  |
+| 4772 | `#CSGO_CustomPlayer_ctm_diver_variantc` |  | `customplayertradable` |  |
+| 4773 | `#CSGO_CustomPlayer_tm_jungle_raider_varianta` |  | `customplayertradable` |  |
+| 4774 | `#CSGO_CustomPlayer_tm_jungle_raider_variantb` |  | `customplayertradable` |  |
+| 4775 | `#CSGO_CustomPlayer_tm_jungle_raider_variantc` |  | `customplayertradable` |  |
+| 4776 | `#CSGO_CustomPlayer_tm_jungle_raider_variantd` |  | `customplayertradable` |  |
+| 4777 | `#CSGO_CustomPlayer_tm_jungle_raider_variante` |  | `customplayertradable` |  |
+| 4778 | `#CSGO_CustomPlayer_tm_jungle_raider_variantf` |  | `customplayertradable` |  |
+| 4779 | `#CSGO_crate_sticker_pack_riptide_surfshop` |  | `sticker_capsule` |  |
+| 4780 | `#CSGO_CustomPlayer_tm_jungle_raider_variantb2` |  | `customplayertradable` |  |
+| 4781 | `#CSGO_CustomPlayer_tm_jungle_raider_variantf2` |  | `customplayertradable` |  |
+| 4782 | `#CSGO_crate_sticker_pack_community2021_capsule` |  | `sticker_capsule` |  |
+| 4783 | `#CSGO_crate_sticker_pack_op_riptide_capsule` |  | `sticker_capsule` |  |
+| 4784 | `#CSGO_crate_sticker_pack_spring2022_capsule` |  | `sticker_capsule` |  |
+| 4785 | `#CSGO_set_train_2021` |  | `weapon_case_base` |  |
+| 4786 | `#CSGO_set_train_2021` |  | `weapon_case_base` |  |
+| 4787 | `#CSGO_set_train_2021` |  | `weapon_case_base` |  |
+| 4788 | `#CSGO_set_train_2021` |  | `weapon_case_base` |  |
+| 4789 | `#CSGO_crate_sticker_pack_bf2042_capsule` |  | `sticker_capsule` |  |
+| 4790 | `#CSGO_crate_community_29` |  | `weapon_case` |  |
+| 4791 | `#CSGO_crate_sticker_pack_riptide_surfshop` |  | `weapon_case_base` |  |
+| 4792 | `#CSGO_set_vertigo_2021` |  | `weapon_case_base` |  |
+| 4793 | `#CSGO_set_dust_2_2021` |  | `weapon_case_base` |  |
+| 4794 | `#CSGO_set_mirage_2021` |  | `weapon_case_base` |  |
+| 4795 | `#CSGO_crate_patch_pack03` |  | `patch_capsule` |  |
+| 4796 | `#CSGO_TournamentPass_stockh2021` |  | `stockh2021_tournament_pass_prefab stockh2021_tournament_steamtv_items` |  |
+| 4797 | `#CSGO_TournamentJournal_stockh2021` |  | `stockh2021_tournament_journal_prefab` |  |
+| 4798 | `#CSGO_TournamentJournal_stockh2021_Silver` |  | `stockh2021_tournament_journal_prefab` |  |
+| 4799 | `#CSGO_TournamentJournal_stockh2021_Gold` |  | `stockh2021_tournament_journal_prefab` |  |
+| 4800 | `#CSGO_TournamentJournal_stockh2021_Crystal` |  | `stockh2021_tournament_journal_prefab` |  |
+| 4801 | `#CSGO_TournamentPass_stockh2021_pack` |  | `stockh2021_tournament_pass_prefab stockh2021_tournament_steamtv_items` |  |
+| 4802 | `#CSGO_TournamentPass_stockh2021_charge` |  | `stockh2021_tournament_pass_prefab` |  |
+| 4803 | `#CSGO_crate_sticker_pack_stockh2021_legends` |  | `stockh2021_sticker_capsule_prefab` |  |
+| 4804 | `#CSGO_crate_sticker_pack_stockh2021_challengers` |  | `stockh2021_sticker_capsule_prefab` |  |
+| 4805 | `#CSGO_crate_sticker_pack_stockh2021_contenders` |  | `stockh2021_sticker_capsule_prefab` |  |
+| 4806 | `#CSGO_crate_patch_pack_stockh2021_legends` |  | `stockh2021_patch_capsule_prefab` |  |
+| 4807 | `#CSGO_crate_patch_pack_stockh2021_challengers` |  | `stockh2021_patch_capsule_prefab` |  |
+| 4808 | `#CSGO_crate_patch_pack_stockh2021_contenders` |  | `stockh2021_patch_capsule_prefab` |  |
+| 4809 | `#CSGO_crate_stockh2021_promo_de_inferno` |  | `weapon_case_souvenirpkg` |  |
+| 4810 | `#CSGO_crate_stockh2021_promo_de_mirage` |  | `weapon_case_souvenirpkg` |  |
+| 4811 | `#CSGO_crate_stockh2021_promo_de_dust2` |  | `weapon_case_souvenirpkg` |  |
+| 4812 | `#CSGO_crate_stockh2021_promo_de_overpass` |  | `weapon_case_souvenirpkg` |  |
+| 4813 | `#CSGO_crate_stockh2021_promo_de_ancient` |  | `weapon_case_souvenirpkg` |  |
+| 4814 | `#CSGO_crate_stockh2021_promo_de_nuke` |  | `weapon_case_souvenirpkg` |  |
+| 4815 | `#CSGO_crate_stockh2021_promo_de_vertigo` |  | `weapon_case_souvenirpkg` |  |
+| 4816 | `#CSGO_crate_signature_pack_stockh2021_group_champions` |  | `stockh2021_signature_capsule_prefab` |  |
+| 4817 | `#CSGO_crate_signature_pack_stockh2021_group_finalists` |  | `stockh2021_signature_capsule_prefab` |  |
+| 4818 | `#CSGO_crate_community_30` |  | `weapon_case` |  |
+| 4819 | `#CSGO_Collectible_GlobalGeneral2022` |  | `prestige_coin` |  |
+| 4820 | `#CSGO_Collectible_GlobalGeneral2022` |  | `prestige_coin` |  |
+| 4821 | `#CSGO_Collectible_GlobalGeneral2022` |  | `prestige_coin` |  |
+| 4822 | `#CSGO_Collectible_GlobalGeneral2022` |  | `prestige_coin` |  |
+| 4823 | `#CSGO_Collectible_GlobalGeneral2022` |  | `prestige_coin` |  |
+| 4824 | `#CSGO_Collectible_GlobalGeneral2022` |  | `prestige_coin` |  |
+| 4825 | `#CSGO_TournamentPass_antwerp2022` |  | `antwerp2022_tournament_pass_prefab antwerp2022_tournament_steamtv_items` |  |
+| 4826 | `#CSGO_TournamentJournal_antwerp2022` |  | `antwerp2022_tournament_journal_prefab` |  |
+| 4827 | `#CSGO_TournamentJournal_antwerp2022_Silver` |  | `antwerp2022_tournament_journal_prefab` |  |
+| 4828 | `#CSGO_TournamentJournal_antwerp2022_Gold` |  | `antwerp2022_tournament_journal_prefab` |  |
+| 4829 | `#CSGO_TournamentJournal_antwerp2022_Crystal` |  | `antwerp2022_tournament_journal_prefab` |  |
+| 4830 | `#CSGO_TournamentPass_antwerp2022_pack` |  | `antwerp2022_tournament_pass_prefab antwerp2022_tournament_steamtv_items` |  |
+| 4831 | `#CSGO_TournamentPass_antwerp2022_charge` |  | `antwerp2022_tournament_pass_prefab` |  |
+| 4832 | `#CSGO_crate_sticker_pack_antwerp2022_legends` |  | `antwerp2022_sticker_capsule_prefab antwerp2022_sellable_item_with_payment_rules` |  |
+| 4833 | `#CSGO_crate_sticker_pack_antwerp2022_challengers` |  | `antwerp2022_sticker_capsule_prefab antwerp2022_sellable_item_with_payment_rules` |  |
+| 4834 | `#CSGO_crate_sticker_pack_antwerp2022_contenders` |  | `antwerp2022_sticker_capsule_prefab antwerp2022_sellable_item_with_payment_rules` |  |
+| 4835 | `#CSGO_crate_antwerp2022_promo_de_inferno` |  | `weapon_case_souvenirpkg` |  |
+| 4836 | `#CSGO_crate_antwerp2022_promo_de_mirage` |  | `weapon_case_souvenirpkg` |  |
+| 4837 | `#CSGO_crate_antwerp2022_promo_de_dust2` |  | `weapon_case_souvenirpkg` |  |
+| 4838 | `#CSGO_crate_antwerp2022_promo_de_overpass` |  | `weapon_case_souvenirpkg` |  |
+| 4839 | `#CSGO_crate_antwerp2022_promo_de_ancient` |  | `weapon_case_souvenirpkg` |  |
+| 4840 | `#CSGO_crate_antwerp2022_promo_de_nuke` |  | `weapon_case_souvenirpkg` |  |
+| 4841 | `#CSGO_crate_antwerp2022_promo_de_vertigo` |  | `weapon_case_souvenirpkg` |  |
+| 4842 | `#CSGO_crate_signature_pack_antwerp2022_group_legends` |  | `antwerp2022_signature_capsule_prefab antwerp2022_sellable_item_with_payment_rules` |  |
+| 4843 | `#CSGO_crate_signature_pack_antwerp2022_group_challengers` |  | `antwerp2022_signature_capsule_prefab antwerp2022_sellable_item_with_payment_rules` |  |
+| 4844 | `#CSGO_crate_signature_pack_antwerp2022_group_contenders` |  | `antwerp2022_signature_capsule_prefab antwerp2022_sellable_item_with_payment_rules` |  |
+| 4845 | `#CSGO_crate_signature_pack_antwerp2022_group_champions` |  | `antwerp2022_signature_capsule_prefab antwerp2022_sellable_item_with_payment_rules` |  |
+| 4846 | `#CSGO_crate_community_31` |  | `weapon_case` |  |
+| 4847 | `#CSGO_crate_sticker_pack_csgo10_capsule` |  | `sticker_capsule` |  |
+| 4848 | `#CSGO_crate_musickit_initiators_capsule` |  | `weapon_case_base` |  |
+| 4849 | `#CSGO_crate_musickit_initiators_stattrak_capsule` |  | `weapon_case_base` |  |
+| 4850 | `#CSGO_TournamentPass_rio2022` |  | `rio2022_tournament_pass_prefab rio2022_tournament_steamtv_items` |  |
+| 4851 | `#CSGO_TournamentJournal_rio2022` |  | `rio2022_tournament_journal_prefab` |  |
+| 4852 | `#CSGO_TournamentJournal_rio2022_Silver` |  | `rio2022_tournament_journal_prefab` |  |
+| 4853 | `#CSGO_TournamentJournal_rio2022_Gold` |  | `rio2022_tournament_journal_prefab` |  |
+| 4854 | `#CSGO_TournamentJournal_rio2022_Crystal` |  | `rio2022_tournament_journal_prefab` |  |
+| 4855 | `#CSGO_TournamentPass_rio2022_pack` |  | `rio2022_tournament_pass_prefab rio2022_tournament_steamtv_items` |  |
+| 4856 | `#CSGO_TournamentPass_rio2022_charge` |  | `rio2022_tournament_pass_prefab` |  |
+| 4857 | `#CSGO_crate_sticker_pack_rio2022_legends` |  | `rio2022_sticker_capsule_prefab rio2022_sellable_item_with_payment_rules` |  |
+| 4858 | `#CSGO_crate_sticker_pack_rio2022_challengers` |  | `rio2022_sticker_capsule_prefab rio2022_sellable_item_with_payment_rules` |  |
+| 4859 | `#CSGO_crate_sticker_pack_rio2022_contenders` |  | `rio2022_sticker_capsule_prefab rio2022_sellable_item_with_payment_rules` |  |
+| 4860 | `#CSGO_crate_rio2022_promo_de_inferno` |  | `weapon_case_souvenirpkg` |  |
+| 4861 | `#CSGO_crate_rio2022_promo_de_mirage` |  | `weapon_case_souvenirpkg` |  |
+| 4862 | `#CSGO_crate_rio2022_promo_de_dust2` |  | `weapon_case_souvenirpkg` |  |
+| 4863 | `#CSGO_crate_rio2022_promo_de_overpass` |  | `weapon_case_souvenirpkg` |  |
+| 4864 | `#CSGO_crate_rio2022_promo_de_ancient` |  | `weapon_case_souvenirpkg` |  |
+| 4865 | `#CSGO_crate_rio2022_promo_de_nuke` |  | `weapon_case_souvenirpkg` |  |
+| 4866 | `#CSGO_crate_rio2022_promo_de_vertigo` |  | `weapon_case_souvenirpkg` |  |
+| 4867 | `#CSGO_crate_signature_pack_rio2022_group_legends` |  | `rio2022_signature_capsule_prefab rio2022_sellable_item_with_payment_rules` |  |
+| 4868 | `#CSGO_crate_signature_pack_rio2022_group_challengers` |  | `rio2022_signature_capsule_prefab rio2022_sellable_item_with_payment_rules` |  |
+| 4869 | `#CSGO_crate_signature_pack_rio2022_group_contenders` |  | `rio2022_signature_capsule_prefab rio2022_sellable_item_with_payment_rules` |  |
+| 4870 | `#CSGO_crate_signature_pack_rio2022_group_champions` |  | `rio2022_signature_capsule_prefab rio2022_sellable_item_with_payment_rules` |  |
+| 4871 | `#CSGO_storageunit0_rio2022` |  | `weapon_case_base rio2022_sellable_item_with_payment_rules` |  |
+| 4872 | `#CSGO_storageunit1_rio2022` |  | `weapon_case_base rio2022_sellable_item_with_payment_rules` |  |
+| 4873 | `#CSGO_Collectible_GlobalGeneral2023` |  | `prestige_coin` |  |
+| 4874 | `#CSGO_Collectible_GlobalGeneral2023` |  | `prestige_coin` |  |
+| 4875 | `#CSGO_Collectible_GlobalGeneral2023` |  | `prestige_coin` |  |
+| 4876 | `#CSGO_Collectible_GlobalGeneral2023` |  | `prestige_coin` |  |
+| 4877 | `#CSGO_Collectible_GlobalGeneral2023` |  | `prestige_coin` |  |
+| 4878 | `#CSGO_Collectible_GlobalGeneral2023` |  | `prestige_coin` |  |
+| 4879 | `#CSGO_crate_sticker_pack_community2022_capsule` |  | `sticker_capsule` |  |
+| 4880 | `#CSGO_crate_community_32` |  | `weapon_case` |  |
+| 4882 | `#CSGO_set_anubis_storepromo` |  | `weapon_case_selfopening_collection` |  |
+| 4883 | `#CSGO_TournamentPass_paris2023` |  | `paris2023_tournament_pass_prefab paris2023_tournament_steamtv_items` |  |
+| 4884 | `#CSGO_TournamentJournal_paris2023` |  | `paris2023_tournament_journal_prefab` |  |
+| 4885 | `#CSGO_TournamentJournal_paris2023_Silver` |  | `paris2023_tournament_journal_prefab` |  |
+| 4886 | `#CSGO_TournamentJournal_paris2023_Gold` |  | `paris2023_tournament_journal_prefab` |  |
+| 4887 | `#CSGO_TournamentJournal_paris2023_Crystal` |  | `paris2023_tournament_journal_prefab` |  |
+| 4888 | `#CSGO_TournamentPass_paris2023_pack` |  | `paris2023_tournament_pass_prefab paris2023_tournament_steamtv_items` |  |
+| 4889 | `#CSGO_TournamentPass_paris2023_charge` |  | `paris2023_tournament_pass_prefab` |  |
+| 4890 | `#CSGO_crate_sticker_pack_paris2023_legends` |  | `paris2023_sticker_capsule_prefab paris2023_sellable_item_with_payment_rules` |  |
+| 4891 | `#CSGO_crate_sticker_pack_paris2023_challengers` |  | `paris2023_sticker_capsule_prefab paris2023_sellable_item_with_payment_rules` |  |
+| 4892 | `#CSGO_crate_sticker_pack_paris2023_contenders` |  | `paris2023_sticker_capsule_prefab paris2023_sellable_item_with_payment_rules` |  |
+| 4893 | `#CSGO_crate_paris2023_promo_de_inferno` |  | `weapon_case_souvenirpkg` |  |
+| 4894 | `#CSGO_crate_paris2023_promo_de_mirage` |  | `weapon_case_souvenirpkg` |  |
+| 4895 | `#CSGO_crate_paris2023_promo_de_anubis` |  | `weapon_case_souvenirpkg` |  |
+| 4896 | `#CSGO_crate_paris2023_promo_de_overpass` |  | `weapon_case_souvenirpkg` |  |
+| 4897 | `#CSGO_crate_paris2023_promo_de_ancient` |  | `weapon_case_souvenirpkg` |  |
+| 4898 | `#CSGO_crate_paris2023_promo_de_nuke` |  | `weapon_case_souvenirpkg` |  |
+| 4899 | `#CSGO_crate_paris2023_promo_de_vertigo` |  | `weapon_case_souvenirpkg` |  |
+| 4900 | `#CSGO_crate_signature_pack_paris2023_group_legends` |  | `paris2023_signature_capsule_prefab paris2023_sellable_item_with_payment_rules` |  |
+| 4901 | `#CSGO_crate_signature_pack_paris2023_group_challengers` |  | `paris2023_signature_capsule_prefab paris2023_sellable_item_with_payment_rules` |  |
+| 4902 | `#CSGO_crate_signature_pack_paris2023_group_contenders` |  | `paris2023_signature_capsule_prefab paris2023_sellable_item_with_payment_rules` |  |
+| 4903 | `#CSGO_crate_signature_pack_paris2023_group_champions` |  | `paris2023_signature_capsule_prefab paris2023_sellable_item_with_payment_rules` |  |
+| 4904 | `#CSGO_crate_community_33` |  | `weapon_case` |  |
+| 4905 | `#CSGO_crate_sticker_pack_community_2024_capsule` |  | `sticker_capsule` |  |
+| 4906 | `#CSGO_Collectible_GlobalGeneral2024` |  | `prestige_coin` |  |
+| 4907 | `#CSGO_Collectible_GlobalGeneral2024` |  | `prestige_coin` |  |
+| 4908 | `#CSGO_Collectible_GlobalGeneral2024` |  | `prestige_coin` |  |
+| 4909 | `#CSGO_Collectible_GlobalGeneral2024` |  | `prestige_coin` |  |
+| 4910 | `#CSGO_Collectible_GlobalGeneral2024` |  | `prestige_coin` |  |
+| 4911 | `#CSGO_Collectible_GlobalGeneral2024` |  | `prestige_coin` |  |
+| 4914 | `#CSGO_crate_musickit_nightmode_capsule` |  | `weapon_case_base` |  |
+| 4915 | `#CSGO_crate_musickit_nightmode_stattrak_capsule` |  | `weapon_case_base` |  |
+| 4916 | `#CSGO_TournamentPass_cph2024` |  | `cph2024_tournament_pass_prefab cph2024_tournament_steamtv_items` |  |
+| 4917 | `#CSGO_TournamentJournal_cph2024` |  | `cph2024_tournament_journal_prefab` |  |
+| 4918 | `#CSGO_TournamentJournal_cph2024_Silver` |  | `cph2024_tournament_journal_prefab` |  |
+| 4919 | `#CSGO_TournamentJournal_cph2024_Gold` |  | `cph2024_tournament_journal_prefab` |  |
+| 4920 | `#CSGO_TournamentJournal_cph2024_Crystal` |  | `cph2024_tournament_journal_prefab` |  |
+| 4921 | `#CSGO_TournamentPass_cph2024_pack` |  | `cph2024_tournament_pass_prefab cph2024_tournament_steamtv_items` |  |
+| 4922 | `#CSGO_TournamentPass_cph2024_charge` |  | `cph2024_tournament_pass_prefab` |  |
+| 4923 | `#CSGO_crate_sticker_pack_cph2024_legends` |  | `cph2024_sticker_capsule_prefab cph2024_sellable_item_with_payment_rules` |  |
+| 4924 | `#CSGO_crate_sticker_pack_cph2024_challengers` |  | `cph2024_sticker_capsule_prefab cph2024_sellable_item_with_payment_rules` |  |
+| 4925 | `#CSGO_crate_sticker_pack_cph2024_contenders` |  | `cph2024_sticker_capsule_prefab cph2024_sellable_item_with_payment_rules` |  |
+| 4926 | `#CSGO_crate_cph2024_promo_de_inferno` |  | `weapon_case_souvenirpkg` |  |
+| 4927 | `#CSGO_crate_cph2024_promo_de_mirage` |  | `weapon_case_souvenirpkg` |  |
+| 4928 | `#CSGO_crate_cph2024_promo_de_anubis` |  | `weapon_case_souvenirpkg` |  |
+| 4929 | `#CSGO_crate_cph2024_promo_de_overpass` |  | `weapon_case_souvenirpkg` |  |
+| 4930 | `#CSGO_crate_cph2024_promo_de_ancient` |  | `weapon_case_souvenirpkg` |  |
+| 4931 | `#CSGO_crate_cph2024_promo_de_nuke` |  | `weapon_case_souvenirpkg` |  |
+| 4932 | `#CSGO_crate_cph2024_promo_de_vertigo` |  | `weapon_case_souvenirpkg` |  |
+| 4933 | `#CSGO_CollectibleCoin_cph2024_Champion` |  | `majors_trophy` |  |
+| 4934 | `#CSGO_CollectibleCoin_cph2024_Finalist` |  | `majors_trophy` |  |
+| 4935 | `#CSGO_CollectibleCoin_cph2024_Semifinalist` |  | `majors_trophy` |  |
+| 4936 | `#CSGO_CollectibleCoin_cph2024_Quarterfinalist` |  | `majors_trophy` |  |
+| 4937 | `#CSGO_crate_signature_pack_cph2024_group_legends` |  | `cph2024_signature_capsule_prefab cph2024_sellable_item_with_payment_rules` |  |
+| 4938 | `#CSGO_crate_signature_pack_cph2024_group_challengers` |  | `cph2024_signature_capsule_prefab cph2024_sellable_item_with_payment_rules` |  |
+| 4939 | `#CSGO_crate_signature_pack_cph2024_group_contenders` |  | `cph2024_signature_capsule_prefab cph2024_sellable_item_with_payment_rules` |  |
+| 4940 | `#CSGO_crate_signature_pack_cph2024_group_champions` |  | `cph2024_signature_capsule_prefab cph2024_sellable_item_with_payment_rules` |  |
+| 4941 | `#CSGO_Collectible_MapTokenThera` |  | `map_token` |  |
+| 4942 | `#CSGO_Collectible_MapTokenMills` |  | `map_token` |  |
+| 4943 | `#CSGO_Collectible_MapTokenAssembly` |  | `map_token` |  |
+| 4944 | `#CSGO_Collectible_MapTokenMemento` |  | `map_token` |  |
+| 4945 | `#CSGO_Collectible_MapTokenPoolDay` |  | `map_token` |  |
+| 4946 | `#CSGO_crate_musickit_masterminds2_capsule` |  | `weapon_case_base` |  |
+| 4947 | `#CSGO_crate_musickit_masterminds2_stattrak_capsule` |  | `weapon_case_base` |  |
+| 4950 | `#CSGO_RemoveKeychainToolCharges_Title` |  | `valve csgo_tool` |  |
+| 4951 | `#CSGO_Collectible_GlobalGeneral2025` |  | `prestige_coin` |  |
+| 4952 | `#CSGO_Collectible_GlobalGeneral2025` |  | `prestige_coin` |  |
+| 4953 | `#CSGO_Collectible_GlobalGeneral2025` |  | `prestige_coin` |  |
+| 4954 | `#CSGO_Collectible_GlobalGeneral2025` |  | `prestige_coin` |  |
+| 4955 | `#CSGO_Collectible_GlobalGeneral2025` |  | `prestige_coin` |  |
+| 4956 | `#CSGO_Collectible_GlobalGeneral2025` |  | `prestige_coin` |  |
+| 4957 | `#CSGO_TournamentPass_sha2024` |  | `sha2024_tournament_pass_prefab sha2024_tournament_steamtv_items` |  |
+| 4958 | `#CSGO_TournamentJournal_sha2024` |  | `sha2024_tournament_journal_prefab` |  |
+| 4959 | `#CSGO_TournamentJournal_sha2024_Silver` |  | `sha2024_tournament_journal_prefab` |  |
+| 4960 | `#CSGO_TournamentJournal_sha2024_Gold` |  | `sha2024_tournament_journal_prefab` |  |
+| 4961 | `#CSGO_TournamentJournal_sha2024_Crystal` |  | `sha2024_tournament_journal_prefab` |  |
+| 4962 | `#CSGO_TournamentPass_sha2024_pack` |  | `sha2024_tournament_pass_prefab sha2024_tournament_steamtv_items` |  |
+| 4963 | `#CSGO_TournamentPass_sha2024_charge` |  | `sha2024_tournament_pass_prefab` |  |
+| 4964 | `#CSGO_crate_sticker_pack_sha2024_legends` |  | `sha2024_sticker_capsule_prefab sha2024_sellable_item_with_payment_rules` |  |
+| 4965 | `#CSGO_crate_sticker_pack_sha2024_challengers` |  | `sha2024_sticker_capsule_prefab sha2024_sellable_item_with_payment_rules` |  |
+| 4966 | `#CSGO_crate_sticker_pack_sha2024_contenders` |  | `sha2024_sticker_capsule_prefab sha2024_sellable_item_with_payment_rules` |  |
+| 4967 | `#CSGO_crate_sha2024_promo_de_inferno` |  | `sha2024_souvenir_crate_promo_prefab` |  |
+| 4968 | `#CSGO_crate_sha2024_promo_de_mirage` |  | `sha2024_souvenir_crate_promo_prefab` |  |
+| 4969 | `#CSGO_crate_sha2024_promo_de_anubis` |  | `sha2024_souvenir_crate_promo_prefab` |  |
+| 4970 | `#CSGO_crate_sha2024_promo_de_dust2` |  | `sha2024_souvenir_crate_promo_prefab` |  |
+| 4971 | `#CSGO_crate_sha2024_promo_de_ancient` |  | `sha2024_souvenir_crate_promo_prefab` |  |
+| 4972 | `#CSGO_crate_sha2024_promo_de_nuke` |  | `sha2024_souvenir_crate_promo_prefab` |  |
+| 4973 | `#CSGO_crate_sha2024_promo_de_vertigo` |  | `sha2024_souvenir_crate_promo_prefab` |  |
+| 4974 | `#CSGO_CollectibleCoin_sha2024_Champion` |  | `majors_trophy` |  |
+| 4975 | `#CSGO_CollectibleCoin_sha2024_Finalist` |  | `majors_trophy` |  |
+| 4976 | `#CSGO_CollectibleCoin_sha2024_Semifinalist` |  | `majors_trophy` |  |
+| 4977 | `#CSGO_CollectibleCoin_sha2024_Quarterfinalist` |  | `majors_trophy` |  |
+| 4978 | `#CSGO_crate_signature_pack_sha2024_group_legends` |  | `sha2024_signature_capsule_prefab sha2024_sellable_item_with_payment_rules` |  |
+| 4979 | `#CSGO_crate_signature_pack_sha2024_group_challengers` |  | `sha2024_signature_capsule_prefab sha2024_sellable_item_with_payment_rules` |  |
+| 4980 | `#CSGO_crate_signature_pack_sha2024_group_contenders` |  | `sha2024_signature_capsule_prefab sha2024_sellable_item_with_payment_rules` |  |
+| 4981 | `#CSGO_crate_signature_pack_sha2024_group_champions` |  | `sha2024_signature_capsule_prefab sha2024_sellable_item_with_payment_rules` |  |
+| 4982 | `#CSGO_Collectible_MapTokenWhistle` |  | `map_token` |  |
+| 4983 | `#CSGO_Collectible_MapTokenPalais` |  | `map_token` |  |
+| 4984 | `#CSGO_Collectible_MapTokenEdin` |  | `map_token` |  |
+| 4985 | `#CSGO_Collectible_MapTokenBasaltCS2` |  | `map_token` |  |
+| 4986 | `#CSGO_Collectible_PremierSeason1Coin` |  | `premier_season_coin` |  |
+| 4987 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 4988 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 4989 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 4990 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 4991 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 4992 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 4993 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 4994 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 4995 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 4996 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 4997 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 4998 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 4999 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 5000 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 5001 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 5002 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 5003 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 5004 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 5005 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 5006 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 5007 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 5008 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 5009 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 5010 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 5011 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 5012 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 5013 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 5014 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 5015 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 5016 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 5017 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 5018 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 5019 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 5020 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 5021 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 5022 | `#CSGO_Collectible_PremierSeason2Coin` |  | `premier_season_coin` |  |
+| 5027 | `#CSGO_Wearable_t_studdedgloves` |  | `hands_paintable` |  |
+| 5028 | `#CSGO_Wearable_t_defaultgloves` |  | `hands` |  |
+| 5029 | `#CSGO_Wearable_ct_defaultgloves` |  | `hands` |  |
+| 5030 | `#CSGO_Wearable_v_sporty_glove` |  | `hands_paintable` |  |
+| 5031 | `#CSGO_Wearable_v_slick_glove` |  | `hands_paintable` |  |
+| 5032 | `#CSGO_Wearable_v_leather_handwrap` |  | `hands_paintable` |  |
+| 5033 | `#CSGO_Wearable_v_motorcycle_glove` |  | `hands_paintable` |  |
+| 5034 | `#CSGO_Wearable_v_specialist_glove` |  | `hands_paintable` |  |
+| 5035 | `#CSGO_Wearable_t_studded_hydra_gloves` |  | `hands_paintable` |  |
+| 5036 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5037 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5038 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5039 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5040 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5041 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5042 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5043 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5044 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5045 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5046 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5047 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5048 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5049 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5050 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5051 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5052 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5053 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5054 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5055 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5056 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5057 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5058 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5059 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5060 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5061 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5062 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5063 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5064 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5065 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5066 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5067 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5068 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5069 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5070 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5071 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5072 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5073 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5074 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5075 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5076 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5077 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5078 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5079 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5080 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5081 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5082 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5083 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5084 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5085 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5086 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5087 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5088 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5089 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5090 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5091 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5092 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5093 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5094 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5095 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5096 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5097 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5100 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5101 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5102 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5103 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5104 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5105 | `#CSGO_CustomPlayer_tm_leet_variantg` |  | `customplayertradable` |  |
+| 5106 | `#CSGO_CustomPlayer_tm_leet_varianth` |  | `customplayertradable` |  |
+| 5107 | `#CSGO_CustomPlayer_tm_leet_varianti` |  | `customplayertradable` |  |
+| 5108 | `#CSGO_CustomPlayer_tm_leet_variantf` |  | `customplayertradable` |  |
+| 5109 | `#CSGO_CustomPlayer_tm_leet_variantj` |  | `customplayertradable` |  |
+| 5110 | `#CSGO_TournamentPass_aus2025` |  | `aus2025_tournament_pass_prefab aus2025_tournament_steamtv_items` |  |
+| 5111 | `#CSGO_TournamentJournal_aus2025` |  | `aus2025_tournament_journal_prefab` |  |
+| 5112 | `#CSGO_TournamentJournal_aus2025_Silver` |  | `aus2025_tournament_journal_prefab` |  |
+| 5113 | `#CSGO_TournamentJournal_aus2025_Gold` |  | `aus2025_tournament_journal_prefab` |  |
+| 5114 | `#CSGO_TournamentJournal_aus2025_Crystal` |  | `aus2025_tournament_journal_prefab` |  |
+| 5115 | `#CSGO_TournamentPass_aus2025_pack` |  | `aus2025_tournament_pass_prefab aus2025_tournament_steamtv_items` |  |
+| 5116 | `#CSGO_TournamentPass_aus2025_charge` |  | `aus2025_tournament_pass_prefab` |  |
+| 5117 | `#CSGO_crate_sticker_pack_aus2025_legends` |  | `aus2025_sticker_capsule_prefab aus2025_sellable_item_with_payment_rules` |  |
+| 5118 | `#CSGO_crate_sticker_pack_aus2025_challengers` |  | `aus2025_sticker_capsule_prefab aus2025_sellable_item_with_payment_rules` |  |
+| 5119 | `#CSGO_crate_sticker_pack_aus2025_contenders` |  | `aus2025_sticker_capsule_prefab aus2025_sellable_item_with_payment_rules` |  |
+| 5120 | `#CSGO_crate_aus2025_promo_de_inferno` |  | `aus2025_souvenir_crate_promo_prefab` |  |
+| 5121 | `#CSGO_crate_aus2025_promo_de_mirage` |  | `aus2025_souvenir_crate_promo_prefab` |  |
+| 5122 | `#CSGO_crate_aus2025_promo_de_anubis` |  | `aus2025_souvenir_crate_promo_prefab` |  |
+| 5123 | `#CSGO_crate_aus2025_promo_de_dust2` |  | `aus2025_souvenir_crate_promo_prefab` |  |
+| 5124 | `#CSGO_crate_aus2025_promo_de_ancient` |  | `aus2025_souvenir_crate_promo_prefab` |  |
+| 5125 | `#CSGO_crate_aus2025_promo_de_nuke` |  | `aus2025_souvenir_crate_promo_prefab` |  |
+| 5126 | `#CSGO_crate_aus2025_promo_de_train` |  | `aus2025_souvenir_crate_promo_prefab` |  |
+| 5127 | `#CSGO_CollectibleCoin_aus2025_Champion` |  | `majors_trophy` |  |
+| 5128 | `#CSGO_CollectibleCoin_aus2025_Finalist` |  | `majors_trophy` |  |
+| 5129 | `#CSGO_CollectibleCoin_aus2025_Semifinalist` |  | `majors_trophy` |  |
+| 5130 | `#CSGO_CollectibleCoin_aus2025_Quarterfinalist` |  | `majors_trophy` |  |
+| 5131 | `#CSGO_crate_signature_pack_aus2025_group_legends` |  | `aus2025_signature_capsule_prefab aus2025_sellable_item_with_payment_rules` |  |
+| 5132 | `#CSGO_crate_signature_pack_aus2025_group_challengers` |  | `aus2025_signature_capsule_prefab aus2025_sellable_item_with_payment_rules` |  |
+| 5133 | `#CSGO_crate_signature_pack_aus2025_group_contenders` |  | `aus2025_signature_capsule_prefab aus2025_sellable_item_with_payment_rules` |  |
+| 5134 | `#CSGO_crate_signature_pack_aus2025_group_champions` |  | `aus2025_signature_capsule_prefab aus2025_sellable_item_with_payment_rules` |  |
+| 5135 | `#CSGO_Collectible_MapTokenAgencyCS2` |  | `map_token` |  |
+| 5136 | `#CSGO_Collectible_MapTokenJura` |  | `map_token` |  |
+| 5137 | `#CSGO_Collectible_MapTokenGrail` |  | `map_token` |  |
+| 5138 | `#CSGO_Collectible_MapTokenDogtown` |  | `map_token` |  |
+| 5139 | `#CSGO_Collectible_MapTokenBrewery` |  | `map_token` |  |
+| 5140 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5141 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5142 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5143 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5144 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5145 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5146 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5147 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5148 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5149 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5150 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5151 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5152 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5153 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5154 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5155 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5156 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5157 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5158 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5159 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5160 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5161 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5162 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5163 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5164 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5165 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5166 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5167 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5168 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5169 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5170 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5171 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5172 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5173 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5174 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5175 | `#CSGO_Collectible_PremierSeason3Coin` |  | `premier_season_coin` |  |
+| 5176 | `#CSGO_crate_community_36` |  | `volatile_pricing weapon_case_selfopening_collection` |  |
+| 5177 | `#CSGO_Collectible_MapTokenGolden` |  | `map_token` |  |
+| 5178 | `#CSGO_Collectible_MapTokenRooftop` |  | `map_token` |  |
+| 5179 | `#CSGO_Collectible_MapTokenPalacio` |  | `map_token` |  |
+| 5180 | `#CSGO_Collectible_MapTokenTransit` |  | `map_token` |  |
+| 5181 | `#CSGO_crate_community_37` |  | `volatile_pricing_gloves weapon_case_selfopening_collection` |  |
+| 5200 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5201 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5202 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5203 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5204 | `#CSGO_CustomPlayer_t_map_based` |  | `customplayer` |  |
+| 5205 | `#CSGO_CustomPlayer_tm_phoenix_varianth` |  | `customplayertradable` |  |
+| 5206 | `#CSGO_CustomPlayer_tm_phoenix_variantf` |  | `customplayertradable` |  |
+| 5207 | `#CSGO_CustomPlayer_tm_phoenix_variantg` |  | `customplayertradable` |  |
+| 5208 | `#CSGO_CustomPlayer_tm_phoenix_varianti` |  | `customplayertradable` |  |
+| 5209 | `#CSGO_TournamentPass_bud2025` |  | `bud2025_tournament_pass_prefab bud2025_tournament_steamtv_items` |  |
+| 5210 | `#CSGO_TournamentJournal_bud2025` |  | `bud2025_tournament_journal_prefab` |  |
+| 5211 | `#CSGO_TournamentJournal_bud2025_Silver` |  | `bud2025_tournament_journal_prefab` |  |
+| 5212 | `#CSGO_TournamentJournal_bud2025_Gold` |  | `bud2025_tournament_journal_prefab` |  |
+| 5213 | `#CSGO_TournamentJournal_bud2025_Crystal` |  | `bud2025_tournament_journal_prefab` |  |
+| 5214 | `#CSGO_TournamentPass_bud2025_pack` |  | `bud2025_tournament_pass_prefab bud2025_tournament_steamtv_items` |  |
+| 5215 | `#CSGO_TournamentPass_bud2025_charge` |  | `bud2025_tournament_pass_prefab` |  |
+| 5216 | `#CSGO_crate_sticker_pack_bud2025_legends` |  | `bud2025_sticker_capsule_prefab bud2025_sellable_item_with_payment_rules` |  |
+| 5217 | `#CSGO_crate_sticker_pack_bud2025_challengers` |  | `bud2025_sticker_capsule_prefab bud2025_sellable_item_with_payment_rules` |  |
+| 5218 | `#CSGO_crate_sticker_pack_bud2025_contenders` |  | `bud2025_sticker_capsule_prefab bud2025_sellable_item_with_payment_rules` |  |
+| 5219 | `#CSGO_crate_bud2025_promo_de_inferno` |  | `bud2025_souvenir_crate_promo_prefab` |  |
+| 5220 | `#CSGO_crate_bud2025_promo_de_mirage` |  | `bud2025_souvenir_crate_promo_prefab` |  |
+| 5221 | `#CSGO_crate_bud2025_promo_de_overpass` |  | `bud2025_souvenir_crate_promo_prefab` |  |
+| 5222 | `#CSGO_crate_bud2025_promo_de_dust2` |  | `bud2025_souvenir_crate_promo_prefab` |  |
+| 5223 | `#CSGO_crate_bud2025_promo_de_ancient` |  | `bud2025_souvenir_crate_promo_prefab` |  |
+| 5224 | `#CSGO_crate_bud2025_promo_de_nuke` |  | `bud2025_souvenir_crate_promo_prefab` |  |
+| 5225 | `#CSGO_crate_bud2025_promo_de_train` |  | `bud2025_souvenir_crate_promo_prefab` |  |
+| 5226 | `#CSGO_CollectibleCoin_bud2025_Champion` |  | `majors_trophy` |  |
+| 5227 | `#CSGO_CollectibleCoin_bud2025_Finalist` |  | `majors_trophy` |  |
+| 5228 | `#CSGO_CollectibleCoin_bud2025_Semifinalist` |  | `majors_trophy` |  |
+| 5229 | `#CSGO_CollectibleCoin_bud2025_Quarterfinalist` |  | `majors_trophy` |  |
+| 5230 | `#CSGO_crate_signature_pack_bud2025_group_legends` |  | `bud2025_signature_capsule_prefab bud2025_sellable_item_with_payment_rules` |  |
+| 5231 | `#CSGO_crate_signature_pack_bud2025_group_challengers` |  | `bud2025_signature_capsule_prefab bud2025_sellable_item_with_payment_rules` |  |
+| 5232 | `#CSGO_crate_signature_pack_bud2025_group_contenders` |  | `bud2025_signature_capsule_prefab bud2025_sellable_item_with_payment_rules` |  |
+| 5233 | `#CSGO_crate_signature_pack_bud2025_group_champions` |  | `bud2025_signature_capsule_prefab bud2025_sellable_item_with_payment_rules` |  |
+| 5234 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5235 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5236 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5237 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5238 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5239 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5240 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5241 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5242 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5243 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5244 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5245 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5246 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5247 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5248 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5249 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5250 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5251 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5252 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5253 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5254 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5255 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5256 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5257 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5258 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5259 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5260 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5261 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5262 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5263 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5264 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5265 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5266 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5267 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5268 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5269 | `#CSGO_Collectible_PremierSeason4Coin` |  | `premier_season_coin` |  |
+| 5270 | `#CSGO_Collectible_GlobalGeneral2026` |  | `prestige_coin` |  |
+| 5271 | `#CSGO_Collectible_GlobalGeneral2026` |  | `prestige_coin` |  |
+| 5272 | `#CSGO_Collectible_GlobalGeneral2026` |  | `prestige_coin` |  |
+| 5273 | `#CSGO_Collectible_GlobalGeneral2026` |  | `prestige_coin` |  |
+| 5274 | `#CSGO_Collectible_GlobalGeneral2026` |  | `prestige_coin` |  |
+| 5275 | `#CSGO_Collectible_GlobalGeneral2026` |  | `prestige_coin` |  |
+| 5276 | `#CSGO_Collectible_MapTokenWarden` |  | `map_token` |  |
+| 5277 | `#CSGO_Collectible_MapTokenStronghold` |  | `map_token` |  |
+| 5278 | `#CSGO_Collectible_MapTokenAlpine` |  | `map_token` |  |
+| 5279 | `#CSGO_Collectible_MapTokenPoseidon` |  | `map_token` |  |
+| 5280 | `#CSGO_Collectible_MapTokenSanctum` |  | `map_token` |  |
+| 5281 | `#CSGO_Collectible_MapTokenBoulder` |  | `map_token` |  |
+| 5282 | `#CSGO_Collectible_MapTokenFachwerk` |  | `map_token` |  |
+| 5283 | `#CSGO_Collectible_MapTokenShelter` |  | `map_token` |  |
+| 5284 | `#CSGO_Collectible_MapTokenDebris` |  | `map_token` |  |
+| 5285 | `#CSGO_Collectible_MapTokenElDorado` |  | `map_token` |  |
+| 5300 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5301 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5302 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5303 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5304 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5305 | `#CSGO_CustomPlayer_ctm_fbi_variantf` |  | `customplayertradable` |  |
+| 5306 | `#CSGO_CustomPlayer_ctm_fbi_variantg` |  | `customplayertradable` |  |
+| 5307 | `#CSGO_CustomPlayer_ctm_fbi_varianth` |  | `customplayertradable` |  |
+| 5308 | `#CSGO_CustomPlayer_ctm_fbi_variantb` |  | `customplayertradable` |  |
+| 5309 |  |  | `cologne2026_tournament_credits_prefab cologne2026_sellable_item1` |  |
+| 5310 | `#CSGO_TournamentPass_cologne2026` |  | `cologne2026_tournament_pass_prefab cologne2026_tournament_steamtv_items` |  |
+| 5311 | `#CSGO_TournamentPass_cologne2026_pack` |  | `cologne2026_tournament_pass_prefab cologne2026_tournament_steamtv_items` |  |
+| 5312 | `#CSGO_TournamentJournal_cologne2026` |  | `cologne2026_tournament_journal_prefab` |  |
+| 5313 | `#CSGO_TournamentJournal_cologne2026_Silver` |  | `cologne2026_tournament_journal_prefab` |  |
+| 5314 | `#CSGO_TournamentJournal_cologne2026_Gold` |  | `cologne2026_tournament_journal_prefab` |  |
+| 5315 | `#CSGO_TournamentJournal_cologne2026_Crystal` |  | `cologne2026_tournament_journal_prefab` |  |
+| 5316 | `#CSGO_crate_sticker_pack_cologne2026_all` |  | `cologne2026_sticker_capsule_prefab volatile_pricing_stickercap1` |  |
+| 5317 | `#CSGO_crate_sticker_pack_cologne2026_orgs` |  | `cologne2026_sticker_capsule_prefab` |  |
+| 5318 | `#CSGO_crate_signature_pack_cologne2026_group_players` |  | `cologne2026_signature_capsule_prefab` |  |
+| 5319 | `#CSGO_CollectibleCoin_cologne2026_Champion` |  | `majors_trophy` |  |
+| 5320 | `#CSGO_CollectibleCoin_cologne2026_Finalist` |  | `majors_trophy` |  |
+| 5321 | `#CSGO_CollectibleCoin_cologne2026_Semifinalist` |  | `majors_trophy` |  |
+| 5322 | `#CSGO_CollectibleCoin_cologne2026_Quarterfinalist` |  | `majors_trophy` |  |
+| 5323 | `#keychain_kc_cologne2026` |  | `cologne2026_sticker_capsule_prefab volatile_pricing_uniform1` |  |
+| 5324 | `#keychain_kc_cologne2026` |  | `cologne2026_sticker_capsule_prefab volatile_pricing_uniform1` |  |
+| 5325 | `#keychain_kc_cologne2026` |  | `cologne2026_sticker_capsule_prefab volatile_pricing_uniform1` |  |
+| 5326 | `#keychain_kc_cologne2026` |  | `cologne2026_sticker_capsule_prefab volatile_pricing_uniform1` |  |
+| 5327 | `#keychain_kc_cologne2026` |  | `cologne2026_sticker_capsule_prefab volatile_pricing_uniform1` |  |
+| 5328 | `#keychain_kc_cologne2026` |  | `cologne2026_sticker_capsule_prefab volatile_pricing_uniform1` |  |
+| 5329 | `#CSGO_crate_sticker_pack_cologne2026_all` |  | `cologne2026_sticker_capsule_prefab volatile_pricing_stickercap1` |  |
+| 5330 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5331 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5332 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5333 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5334 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5335 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5336 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5337 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5338 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5339 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5340 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5341 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5342 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5343 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5344 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5345 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5346 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5347 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5348 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5349 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5350 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5351 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5352 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5353 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5354 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5355 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5356 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5357 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5358 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5359 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5360 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5361 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5362 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5363 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5364 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5365 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
+| 5400 | `#CSGO_CustomPlayer_ctm_st6_variantk` |  | `customplayertradable` |  |
+| 5401 | `#CSGO_CustomPlayer_ctm_st6_variante` |  | `customplayertradable` |  |
+| 5402 | `#CSGO_CustomPlayer_ctm_st6_variantg` |  | `customplayertradable` |  |
+| 5403 | `#CSGO_CustomPlayer_ctm_st6_variantm` |  | `customplayertradable` |  |
+| 5404 | `#CSGO_CustomPlayer_ctm_st6_varianti` |  | `customplayertradable` |  |
+| 5405 | `#CSGO_CustomPlayer_ctm_st6_variantn` |  | `customplayertradable` |  |
+| 5500 | `#CSGO_CustomPlayer_tm_balkan_variantf` |  | `customplayertradable` |  |
+| 5501 | `#CSGO_CustomPlayer_tm_balkan_varianti` |  | `customplayertradable` |  |
+| 5502 | `#CSGO_CustomPlayer_tm_balkan_variantg` |  | `customplayertradable` |  |
+| 5503 | `#CSGO_CustomPlayer_tm_balkan_variantj` |  | `customplayertradable` |  |
+| 5504 | `#CSGO_CustomPlayer_tm_balkan_varianth` |  | `customplayertradable` |  |
+| 5505 | `#CSGO_CustomPlayer_tm_balkan_variantl` |  | `customplayertradable` |  |
+| 5600 | `#CSGO_CustomPlayer_ct_map_based` |  | `customplayer` |  |
+| 5601 | `#CSGO_CustomPlayer_ctm_sas_variantf` |  | `customplayertradable` |  |
+| 5602 | `#CSGO_CustomPlayer_ctm_sas_variantg` |  | `customplayertradable` |  |
+| 6001 | `#CSGO_Collectible_Pin_DustII` |  | `attendance_pin` |  |
+| 6002 | `#CSGO_Collectible_Pin_GuardianElite` |  | `attendance_pin` |  |
+| 6003 | `#CSGO_Collectible_Pin_Mirage` |  | `attendance_pin` |  |
+| 6004 | `#CSGO_Collectible_Pin_Inferno` |  | `attendance_pin` |  |
+| 6005 | `#CSGO_Collectible_Pin_Italy` |  | `attendance_pin` |  |
+| 6006 | `#CSGO_Collectible_Pin_Victory` |  | `attendance_pin` |  |
+| 6007 | `#CSGO_Collectible_Pin_Militia` |  | `attendance_pin` |  |
+| 6008 | `#CSGO_Collectible_Pin_Nuke` |  | `attendance_pin` |  |
+| 6009 | `#CSGO_Collectible_Pin_Train` |  | `attendance_pin` |  |
+| 6010 | `#CSGO_Collectible_Pin_Guardian` |  | `attendance_pin` |  |
+| 6011 | `#CSGO_Collectible_Pin_Tactics` |  | `attendance_pin` |  |
+| 6012 | `#CSGO_Collectible_Pin_guardian_2` |  | `attendance_pin` |  |
+| 6013 | `#CSGO_Collectible_Pin_bravo` |  | `attendance_pin` |  |
+| 6014 | `#CSGO_Collectible_Pin_baggage` |  | `attendance_pin` |  |
+| 6015 | `#CSGO_Collectible_Pin_phoenix` |  | `attendance_pin` |  |
+| 6016 | `#CSGO_Collectible_Pin_office` |  | `attendance_pin` |  |
+| 6017 | `#CSGO_Collectible_Pin_cobblestone` |  | `attendance_pin` |  |
+| 6018 | `#CSGO_Collectible_Pin_overpass` |  | `attendance_pin` |  |
+| 6019 | `#CSGO_Collectible_Pin_bloodhound` |  | `attendance_pin` |  |
+| 6020 | `#CSGO_Collectible_Pin_cache` |  | `attendance_pin` |  |
+| 6021 | `#CSGO_Collectible_Pin_valeria` |  | `attendance_pin` |  |
+| 6022 | `#CSGO_Collectible_Pin_chroma` |  | `attendance_pin` |  |
+| 6023 | `#CSGO_Collectible_Pin_guardian_3` |  | `attendance_pin` |  |
+| 6024 | `#CSGO_Collectible_Pin_canals` |  | `attendance_pin` |  |
+| 6025 | `#CSGO_Collectible_Pin_welcome_to_the_clutch` |  | `attendance_pin` |  |
+| 6026 | `#CSGO_Collectible_Pin_death_sentence` |  | `attendance_pin` |  |
+| 6027 | `#CSGO_Collectible_Pin_inferno_2` |  | `attendance_pin` |  |
+| 6028 | `#CSGO_Collectible_Pin_wildfire` |  | `attendance_pin` |  |
+| 6029 | `#CSGO_Collectible_Pin_easy_peasy` |  | `attendance_pin` |  |
+| 6030 | `#CSGO_Collectible_Pin_aces_high` |  | `attendance_pin` |  |
+| 6031 | `#CSGO_Collectible_Pin_hydra` |  | `attendance_pin` |  |
+| 6032 | `#CSGO_Collectible_Pin_howl` |  | `attendance_pin` |  |
+| 6033 | `#CSGO_Collectible_Pin_brigadier_general` |  | `attendance_pin` |  |
+| 6034 | `#CSGO_Collectible_Pin_alyx_10` |  | `attendance_pin` |  |
+| 6046 |  |  | `collectible_untradable_coin` |  |
+| 6047 |  |  | `collectible_untradable_coin` |  |
+| 6048 |  |  | `collectible_untradable_coin` |  |
+| 6049 |  |  | `collectible_untradable_coin` |  |
+| 6050 |  |  | `collectible_untradable_coin` |  |
+| 6051 |  |  | `collectible_untradable_coin` |  |
+| 6052 |  |  | `collectible_untradable_coin` |  |
+| 6053 |  |  | `collectible_untradable_coin` |  |
+| 6054 |  |  | `collectible_untradable_coin` |  |
+| 6055 |  |  | `collectible_untradable_coin` |  |
+| 6056 |  |  | `collectible_untradable_coin` |  |
+| 6057 |  |  | `collectible_untradable_coin` |  |
+| 6058 |  |  | `collectible_untradable_coin` |  |
+| 6059 |  |  | `collectible_untradable_coin` |  |
+| 6060 |  |  | `collectible_untradable_coin` |  |
+| 6061 |  |  | `collectible_untradable_coin` |  |
+| 6062 |  |  | `collectible_untradable_coin` |  |
+| 6063 |  |  | `collectible_untradable_coin` |  |
+| 6064 |  |  | `collectible_untradable_coin` |  |
+| 6065 |  |  | `collectible_untradable_coin` |  |
+| 6066 |  |  | `collectible_untradable_coin` |  |
+| 6067 |  |  | `collectible_untradable_coin` |  |
+| 6068 |  |  | `collectible_untradable_coin` |  |
+| 6069 |  |  | `collectible_untradable_coin` |  |
+| 6070 |  |  | `collectible_untradable_coin` |  |
+| 6071 |  |  | `collectible_untradable_coin` |  |
+| 6072 |  |  | `collectible_untradable_coin` |  |
+| 6073 |  |  | `collectible_untradable_coin` |  |
+| 6074 |  |  | `collectible_untradable_coin` |  |
+| 6075 |  |  | `collectible_untradable_coin` |  |
+| 6076 |  |  | `collectible_untradable_coin` |  |
+| 6077 |  |  | `collectible_untradable_coin` |  |
+| 6078 |  |  | `collectible_untradable_coin` |  |
+| 6079 |  |  | `collectible_untradable_coin` |  |
+| 6080 |  |  | `collectible_untradable_coin` |  |
+| 6081 |  |  | `collectible_untradable_coin` |  |
+| 6082 |  |  | `collectible_untradable_coin` |  |
+| 6083 |  |  | `collectible_untradable_coin` |  |
+| 6084 |  |  | `collectible_untradable_coin` |  |
+| 6085 |  |  | `collectible_untradable_coin` |  |
+| 6086 |  |  | `collectible_untradable_coin` |  |
+| 6087 |  |  | `collectible_untradable_coin` |  |
+| 6088 |  |  | `collectible_untradable_coin` |  |
+| 6101 | `#CSGO_Collectible_Pin_DustII` |  | `commodity_pin` |  |
+| 6102 | `#CSGO_Collectible_Pin_GuardianElite` |  | `commodity_pin` |  |
+| 6103 | `#CSGO_Collectible_Pin_Mirage` |  | `commodity_pin` |  |
+| 6104 | `#CSGO_Collectible_Pin_Inferno` |  | `commodity_pin` |  |
+| 6105 | `#CSGO_Collectible_Pin_Italy` |  | `commodity_pin` |  |
+| 6106 | `#CSGO_Collectible_Pin_Victory` |  | `commodity_pin` |  |
+| 6107 | `#CSGO_Collectible_Pin_Militia` |  | `commodity_pin` |  |
+| 6108 | `#CSGO_Collectible_Pin_Nuke` |  | `commodity_pin` |  |
+| 6109 | `#CSGO_Collectible_Pin_Train` |  | `commodity_pin` |  |
+| 6110 | `#CSGO_Collectible_Pin_Guardian` |  | `commodity_pin` |  |
+| 6111 | `#CSGO_Collectible_Pin_Tactics` |  | `commodity_pin` |  |
+| 6112 | `#CSGO_Collectible_Pin_guardian_2` |  | `commodity_pin` |  |
+| 6113 | `#CSGO_Collectible_Pin_bravo` |  | `commodity_pin` |  |
+| 6114 | `#CSGO_Collectible_Pin_baggage` |  | `commodity_pin` |  |
+| 6115 | `#CSGO_Collectible_Pin_phoenix` |  | `commodity_pin` |  |
+| 6116 | `#CSGO_Collectible_Pin_office` |  | `commodity_pin` |  |
+| 6117 | `#CSGO_Collectible_Pin_cobblestone` |  | `commodity_pin` |  |
+| 6118 | `#CSGO_Collectible_Pin_overpass` |  | `commodity_pin` |  |
+| 6119 | `#CSGO_Collectible_Pin_bloodhound` |  | `commodity_pin` |  |
+| 6120 | `#CSGO_Collectible_Pin_cache` |  | `commodity_pin` |  |
+| 6121 | `#CSGO_Collectible_Pin_valeria` |  | `commodity_pin` |  |
+| 6122 | `#CSGO_Collectible_Pin_chroma` |  | `commodity_pin` |  |
+| 6123 | `#CSGO_Collectible_Pin_guardian_3` |  | `commodity_pin` |  |
+| 6124 | `#CSGO_Collectible_Pin_canals` |  | `commodity_pin` |  |
+| 6125 | `#CSGO_Collectible_Pin_welcome_to_the_clutch` |  | `commodity_pin` |  |
+| 6126 | `#CSGO_Collectible_Pin_death_sentence` |  | `commodity_pin` |  |
+| 6127 | `#CSGO_Collectible_Pin_inferno_2` |  | `commodity_pin` |  |
+| 6128 | `#CSGO_Collectible_Pin_wildfire` |  | `commodity_pin` |  |
+| 6129 | `#CSGO_Collectible_Pin_easy_peasy` |  | `commodity_pin` |  |
+| 6130 | `#CSGO_Collectible_Pin_aces_high` |  | `commodity_pin` |  |
+| 6131 | `#CSGO_Collectible_Pin_hydra` |  | `commodity_pin` |  |
+| 6132 | `#CSGO_Collectible_Pin_howl` |  | `commodity_pin` |  |
+| 6133 | `#CSGO_Collectible_Pin_brigadier_general` |  | `commodity_pin` |  |
+| 6134 | `#CSGO_Collectible_Pin_alyx_10` |  | `commodity_pin` |  |
+| 6404 | `#CSGO_character_operator_dossier_op09_rare` |  | `weapon_case_base` |  |
+| 6405 | `#CSGO_character_operator_dossier_op09_mythical` |  | `weapon_case_base` |  |
+| 6406 | `#CSGO_character_operator_dossier_op09_legendary` |  | `weapon_case_base` |  |
+| 6407 | `#CSGO_character_operator_dossier_op09_ancient` |  | `weapon_case_base` |  |
+| 7000 | `#CSGO_crate_key_community_11` |  | `weapon_case_key` |  |
+| 7002 | `#CSGO_crate_key_community_34` |  | `weapon_case_key` |  |
+| 7003 | `#CSGO_crate_community_34` |  | `weapon_case` |  |
+| 7007 | `#CSGO_crate_community_35` |  | `weapon_case` |  |
+| 7008 | `#CSGO_crate_key_community_35` |  | `weapon_case_key` |  |
+| 7011 | `CSGO_crate_sticker_pack_warhammer_traitor_capsule` |  | `sticker_capsule` |  |
+| 7012 | `#coupon_warhammer_traitor_sticker_capsule` |  | `coupon_warhammer_traitor_capsule_prefab` |  |
+| 7013 | `CSGO_crate_sticker_pack_warhammer_adeptus_capsule` |  | `sticker_capsule` |  |
+| 7014 | `#coupon_warhammer_adeptus_sticker_capsule` |  | `coupon_warhammer_adeptus_capsule_prefab` |  |
+| 7015 | `#CSGO_crate_sticker_pack_warhammer_imperium_capsule` |  | `sticker_capsule` |  |
+| 7016 | `#coupon_warhammer_imperium_sticker_capsule` |  | `coupon_warhammer_imperium_capsule_prefab` |  |
+| 7017 | `CSGO_crate_sticker_pack_warhammer_xenos_capsule` |  | `sticker_capsule` |  |
+| 7018 | `#coupon_warhammer_xenos_sticker_capsule` |  | `coupon_warhammer_xenos_capsule_prefab` |  |
+| 7019 | `#CSGO_crate_musickit_deluge_capsule` |  | `weapon_case_base` |  |
+| 7020 | `#coupon_deluge_musickit_capsule` |  | `coupon_deluge_capsule_prefab` |  |
+| 7021 | `#CSGO_crate_musickit_deluge_stattrak_capsule` |  | `weapon_case_base` |  |
+| 7022 | `#coupon_deluge_stattrak_musickit_capsule` |  | `coupon_deluge_capsule_prefab` |  |
+| 7029 | `#coupon_alrt_01` |  | `coupon_prefab` |  |
+| 7030 | `#coupon_alrt_01_stattrak` |  | `coupon_prefab` |  |
+| 7031 | `#coupon_borne_01` |  | `coupon_prefab` |  |
+| 7032 | `#coupon_borne_01_stattrak` |  | `coupon_prefab` |  |
+| 7033 | `#coupon_altare_01` |  | `coupon_prefab` |  |
+| 7034 | `#coupon_altare_01_stattrak` |  | `coupon_prefab` |  |
+| 7035 | `#coupon_pirapus_01` |  | `coupon_prefab` |  |
+| 7036 | `#coupon_pirapus_01_stattrak` |  | `coupon_prefab` |  |
+| 7037 | `#coupon_repiet_01_stattrak` |  | `coupon_prefab` |  |
+| 7038 | `#coupon_repiet_01` |  | `coupon_prefab` |  |
+| 7039 | `#coupon_shockone_01_stattrak` |  | `coupon_prefab` |  |
+| 7040 | `#coupon_shockone_01` |  | `coupon_prefab` |  |
+| 7041 | `CSGO_crate_sticker_pack_jackass_capsule` |  | `sticker_capsule` |  |
+| 7042 | `#coupon_jackass_sticker_capsule` |  | `coupon_jackass_capsule_prefab` |  |
+| 20000 | `#coupon_bossyburger` |  | `coupon_prefab` |  |
+| 20001 | `#coupon_catcall` |  | `coupon_prefab` |  |
+| 20002 | `#coupon_chickenstrike` |  | `coupon_prefab` |  |
+| 20003 | `#coupon_ctbanana` |  | `coupon_prefab` |  |
+| 20004 | `#coupon_dontworryimpro` |  | `coupon_prefab` |  |
+| 20005 | `#coupon_fightlikeagirl` |  | `coupon_prefab` |  |
+| 20006 | `#coupon_handmadeflash` |  | `coupon_prefab` |  |
+| 20007 | `#coupon_kawaiikiller` |  | `coupon_prefab` |  |
+| 20008 | `#coupon_neluthebear` |  | `coupon_prefab` |  |
+| 20009 | `#coupon_oneshotonekill` |  | `coupon_prefab` |  |
+| 20010 | `#coupon_shootingstar` |  | `coupon_prefab` |  |
+| 20012 | `#coupon_warpenguin` |  | `coupon_prefab` |  |
+| 20013 | `#coupon_windywalking` |  | `coupon_prefab` |  |
+| 20014 | `#coupon_blitzkrieg` |  | `coupon_prefab` |  |
+| 20015 | `#coupon_pigeonmaster` |  | `coupon_prefab` |  |
+| 20016 | `#coupon_terrorized` |  | `coupon_prefab` |  |
+| 20017 | `#coupon_tilldeathdouspart` |  | `coupon_prefab` |  |
+| 20018 | `#coupon_stayfrosty` |  | `coupon_prefab` |  |
+| 20019 | `#coupon_toncat` |  | `coupon_prefab` |  |
+| 20020 | `#coupon_danielsadowski_01` |  | `coupon_prefab` |  |
+| 20021 | `#coupon_noisia_01` |  | `coupon_prefab` |  |
+| 20022 | `#coupon_robertallaire_01` |  | `coupon_prefab` |  |
+| 20023 | `#coupon_seanmurray_01` |  | `coupon_prefab` |  |
+| 20024 | `#coupon_feedme_01` |  | `coupon_prefab` |  |
+| 20025 | `#coupon_dren_01` |  | `coupon_prefab` |  |
+| 20026 | `#coupon_austinwintory_01` |  | `coupon_prefab` |  |
+| 20027 | `#coupon_sasha_01` |  | `coupon_prefab` |  |
+| 20028 | `#coupon_skog_01` |  | `coupon_prefab` |  |
+| 20029 | `#coupon_doomed` |  | `coupon_prefab` |  |
+| 20030 | `#coupon_queenofpain` |  | `coupon_prefab` |  |
+| 20031 | `#coupon_trickorthreat` |  | `coupon_prefab` |  |
+| 20032 | `#coupon_trickortreat` |  | `coupon_prefab` |  |
+| 20033 | `#coupon_witch` |  | `coupon_prefab` |  |
+| 20034 | `#coupon_zombielover` |  | `coupon_prefab` |  |
+| 20035 | `#coupon_blood_broiler` |  | `coupon_prefab` |  |
+| 20036 | `#coupon_dinked` |  | `coupon_prefab` |  |
+| 20037 | `#coupon_drugwarveteran` |  | `coupon_prefab` |  |
+| 20038 | `#coupon_hohoho` |  | `coupon_prefab` |  |
+| 20039 | `#coupon_massivepear` |  | `coupon_prefab` |  |
+| 20040 | `#coupon_mylittlefriend` |  | `coupon_prefab` |  |
+| 20041 | `#coupon_pandamonium` |  | `coupon_prefab` |  |
+| 20042 | `#coupon_pieceofcake` |  | `coupon_prefab` |  |
+| 20043 | `#coupon_saschicken` |  | `coupon_prefab` |  |
+| 20044 | `#coupon_thuglife` |  | `coupon_prefab` |  |
+| 20045 | `#coupon_trekt` |  | `coupon_prefab` |  |
+| 20046 | `#coupon_warowl` |  | `coupon_prefab` |  |
+| 20047 | `#coupon_workforfood` |  | `coupon_prefab` |  |
+| 20048 | `#coupon_phoenix_foil` |  | `coupon_prefab` |  |
+| 20049 | `#coupon_bombsquad_foil` |  | `coupon_prefab` |  |
+| 20050 | `#coupon_midnightriders_01` |  | `valve coupon_prefab` |  |
+| 20051 | `#coupon_danielsadowski_02` |  | `coupon_prefab` |  |
+| 20052 | `#coupon_hotlinemiami_01` |  | `coupon_prefab` |  |
+| 20053 | `#coupon_mattlange_01` |  | `coupon_prefab` |  |
+| 20054 | `#coupon_mateomessina_01` |  | `coupon_prefab` |  |
+| 20055 | `#coupon_damjanmravunac_01` |  | `coupon_prefab` |  |
+| 20056 | `#coupon_flickshot` |  | `coupon_prefab` |  |
+| 20057 | `#coupon_headshot_guarantee` |  | `coupon_prefab` |  |
+| 20058 | `#coupon_eco_rush` |  | `coupon_prefab` |  |
+| 20059 | `#coupon_just_trolling` |  | `valve coupon_prefab` |  |
+| 20061 | `#coupon_firestarter_holo` |  | `coupon_prefab` |  |
+| 20062 | `#coupon_lucky_cat_foil` |  | `coupon_prefab` |  |
+| 20063 | `#coupon_robot_head` |  | `coupon_prefab` |  |
+| 20064 | `#coupon_witchcraft` |  | `coupon_prefab` |  |
+| 20065 | `#coupon_wanna_fight` |  | `coupon_prefab` |  |
+| 20066 | `#coupon_hostage_rescue` |  | `coupon_prefab` |  |
+| 20067 | `#coupon_hamster_hawk` |  | `coupon_prefab` |  |
+| 20068 | `#coupon_headless_chicken` |  | `coupon_prefab` |  |
+| 20069 | `#coupon_proxy_01` |  | `coupon_prefab` |  |
+| 20070 | `#coupon_kitheory_01` |  | `coupon_prefab` |  |
+| 20071 | `#coupon_troelsfolmann_01` |  | `coupon_prefab` |  |
+| 20072 | `#coupon_kellybailey_01` |  | `coupon_prefab` |  |
+| 20073 | `#coupon_skog_02` |  | `coupon_prefab` |  |
+| 20074 | `#coupon_enfu_sticker_capsule` |  | `coupon_enfu_capsule_prefab` |  |
+| 20075 | `#coupon_awp_country` |  | `coupon_prefab` |  |
+| 20076 | `#coupon_chi_bomb` |  | `coupon_prefab` |  |
+| 20077 | `#coupon_fox` |  | `coupon_prefab` |  |
+| 20078 | `#coupon_knifeclub` |  | `coupon_prefab` |  |
+| 20079 | `#coupon_cs_on_the_mind` |  | `coupon_prefab` |  |
+| 20080 | `#coupon_ninja_defuse` |  | `coupon_prefab` |  |
+| 20081 | `#coupon_pros_dont_fake` |  | `coupon_prefab` |  |
+| 20082 | `#coupon_kawaiikiller_t` |  | `coupon_prefab` |  |
+| 20083 | `#coupon_baackstabber` |  | `coupon_prefab` |  |
+| 20084 | `#coupon_delicious_tears` |  | `coupon_prefab` |  |
+| 20085 | `#coupon_danielsadowski_03` |  | `coupon_prefab` |  |
+| 20086 | `#coupon_awolnation_01` |  | `coupon_prefab` |  |
+| 20087 | `#coupon_mordfustang_01` |  | `coupon_prefab` |  |
+| 20088 | `#coupon_michaelbross_01` |  | `coupon_prefab` |  |
+| 20089 | `#coupon_ianhultquist_01` |  | `coupon_prefab` |  |
+| 20090 | `#coupon_newbeatfund_01` |  | `coupon_prefab` |  |
+| 20091 | `#coupon_beartooth_01` |  | `coupon_prefab` |  |
+| 20092 | `#coupon_lenniemoore_01` |  | `coupon_prefab` |  |
+| 20093 | `#coupon_darude_01` |  | `coupon_prefab` |  |
+| 20094 | `#coupon_proxy_01_stattrak` |  | `coupon_prefab` |  |
+| 20095 | `#coupon_kitheory_01_stattrak` |  | `coupon_prefab` |  |
+| 20096 | `#coupon_troelsfolmann_01_stattrak` |  | `coupon_prefab` |  |
+| 20097 | `#coupon_kellybailey_01_stattrak` |  | `coupon_prefab` |  |
+| 20098 | `#coupon_skog_02_stattrak` |  | `coupon_prefab` |  |
+| 20099 | `#coupon_danielsadowski_03_stattrak` |  | `coupon_prefab` |  |
+| 20100 | `#coupon_awolnation_01_stattrak` |  | `coupon_prefab` |  |
+| 20101 | `#coupon_mordfustang_01_stattrak` |  | `coupon_prefab` |  |
+| 20102 | `#coupon_michaelbross_01_stattrak` |  | `coupon_prefab` |  |
+| 20103 | `#coupon_ianhultquist_01_stattrak` |  | `coupon_prefab` |  |
+| 20104 | `#coupon_newbeatfund_01_stattrak` |  | `coupon_prefab` |  |
+| 20105 | `#coupon_beartooth_01_stattrak` |  | `coupon_prefab` |  |
+| 20106 | `#coupon_lenniemoore_01_stattrak` |  | `coupon_prefab` |  |
+| 20107 | `#coupon_darude_01_stattrak` |  | `coupon_prefab` |  |
+| 20108 | `#coupon_danielsadowski_01_stattrak` |  | `coupon_prefab` |  |
+| 20109 | `#coupon_noisia_01_stattrak` |  | `coupon_prefab` |  |
+| 20110 | `#coupon_robertallaire_01_stattrak` |  | `coupon_prefab` |  |
+| 20111 | `#coupon_seanmurray_01_stattrak` |  | `coupon_prefab` |  |
+| 20112 | `#coupon_feedme_01_stattrak` |  | `coupon_prefab` |  |
+| 20113 | `#coupon_dren_01_stattrak` |  | `coupon_prefab` |  |
+| 20114 | `#coupon_austinwintory_01_stattrak` |  | `coupon_prefab` |  |
+| 20115 | `#coupon_sasha_01_stattrak` |  | `coupon_prefab` |  |
+| 20116 | `#coupon_skog_01_stattrak` |  | `coupon_prefab` |  |
+| 20117 | `#coupon_midnightriders_01_stattrak` |  | `valve coupon_prefab` |  |
+| 20118 | `#coupon_danielsadowski_02_stattrak` |  | `coupon_prefab` |  |
+| 20119 | `#coupon_hotlinemiami_01_stattrak` |  | `coupon_prefab` |  |
+| 20120 | `#coupon_mattlange_01_stattrak` |  | `coupon_prefab` |  |
+| 20121 | `#coupon_mateomessina_01_stattrak` |  | `coupon_prefab` |  |
+| 20122 | `#coupon_damjanmravunac_01_stattrak` |  | `coupon_prefab` |  |
+| 20123 | `#coupon_pinups_sticker_capsule` |  | `coupon_pinups_capsule_prefab` |  |
+| 20124 | `#coupon_slid3_sticker_capsule` |  | `coupon_slid3_capsule_prefab` |  |
+| 20125 | `#coupon_team_roles_sticker_capsule` |  | `coupon_team_roles_capsule_prefab` |  |
+| 20126 | `#coupon_pins_series_1` |  | `valve coupon_prefab` |  |
+| 20127 | `#coupon_sugarface_sticker_capsule` |  | `coupon_sugarface_capsule_prefab` |  |
+| 20128 | `#coupon_bestiary_sticker_capsule` |  | `coupon_bestiary_capsule_prefab` |  |
+| 20129 | `#coupon_crate_sprays_vcap1` |  | `valve coupon_prefab` |  |
+| 20130 | `#coupon_crate_sprays_community_1` |  | `coupon_sprays_capsule_community_1` |  |
+| 20131 | `#coupon_pins_series_2` |  | `valve coupon_prefab` |  |
+| 20133 | `#coupon_radicals_stattrak_musickit_capsule` |  | `coupon_radicals_capsule_prefab` |  |
+| 20134 | `#coupon_illuminate_capsule_01` |  | `valve coupon_prefab` |  |
+| 20135 | `#coupon_illuminate_capsule_02` |  | `valve coupon_prefab` |  |
+| 20136 | `#coupon_illuminate_sprays_capsule_01` |  | `valve coupon_prefab` |  |
+| 20137 | `#coupon_comm2018_01_sticker_capsule` |  | `coupon_comm2018_01_capsule_prefab` |  |
+| 20138 | `#coupon_pins_series_3` |  | `valve coupon_prefab` |  |
+| 20139 | `#coupon_skillgroup_sticker_capsule` |  | `coupon_skillgroup_capsule_prefab` |  |
+| 20140 | `#coupon_theverkkars_01` |  | `valve coupon_prefab` |  |
+| 20141 | `#coupon_theverkkars_01_stattrak` |  | `valve coupon_prefab` |  |
+| 20142 | `#coupon_feral_predators_sticker_capsule` |  | `coupon_feral_predators_capsule_prefab` |  |
+| 20143 | `#coupon_chicken_sticker_capsule` |  | `coupon_chicken_capsule_prefab` |  |
+| 20144 | `#coupon_crate_xray_p250` |  | `valve coupon_prefab` |  |
+| 20145 | `#coupon_cs20_sticker_capsule` |  | `coupon_cs20_capsule_prefab` |  |
+| 20146 | `#coupon_halo_sticker_capsule` |  | `coupon_halo_capsule_prefab` |  |
+| 20147 | `#coupon_scarlxrd_01` |  | `coupon_prefab` |  |
+| 20148 | `#coupon_scarlxrd_01_stattrak` |  | `coupon_prefab` |  |
+| 20149 | `#coupon_crate_patch_pack01` |  | `valve coupon_prefab` |  |
+| 20152 | `#coupon_pins_hlalyx` |  | `valve coupon_prefab` |  |
+| 20153 | `#coupon_hlalyx_sticker_capsule` |  | `valve coupon_prefab` |  |
+| 20154 | `#coupon_crate_patch_pack_hlalyx` |  | `valve coupon_prefab` |  |
+| 20169 | `#coupon_masterminds_musickit_capsule` |  | `coupon_masterminds_capsule_prefab` |  |
+| 20170 | `#coupon_masterminds_stattrak_musickit_capsule` |  | `coupon_masterminds_capsule_prefab` |  |
+| 20171 | `#coupon_warhammer_sticker_capsule` |  | `coupon_warhammer_capsule_prefab` |  |
+| 20172 | `#coupon_amontobin_01` |  | `valve coupon_prefab` |  |
+| 20173 | `#coupon_amontobin_01_stattrak` |  | `valve coupon_prefab` |  |
+| 20174 | `#coupon_poorly_drawn_sticker_capsule` |  | `coupon_poorly_drawn_capsule_prefab` |  |
+| 20175 | `#coupon_neckdeep_02` |  | `coupon_prefab` |  |
+| 20176 | `#coupon_neckdeep_02_stattrak` |  | `coupon_prefab` |  |
+| 20177 | `#coupon_scarlxrd_02` |  | `coupon_prefab` |  |
+| 20178 | `#coupon_scarlxrd_02_stattrak` |  | `coupon_prefab` |  |
+| 20179 | `#coupon_tacticians_musickit_capsule` |  | `coupon_tacticians_capsule_prefab` |  |
+| 20180 | `#coupon_tacticians_stattrak_musickit_capsule` |  | `coupon_tacticians_capsule_prefab` |  |
+| 20181 | `#coupon_community2021_sticker_capsule` |  | `coupon_community2021_capsule_prefab` |  |
+| 20182 | `#coupon_bf2042_sticker_capsule` |  | `coupon_bf2042_capsule_prefab` |  |
+| 20183 | `#coupon_bbnos_01` |  | `coupon_prefab` |  |
+| 20184 | `#coupon_bbnos_01_stattrak` |  | `coupon_prefab` |  |
+| 20185 | `#coupon_theverkkars_02` |  | `coupon_prefab` |  |
+| 20186 | `#coupon_theverkkars_02_stattrak` |  | `coupon_prefab` |  |
+| 20187 | `#coupon_spring2022_sticker_capsule` |  | `coupon_spring2022_capsule_prefab` |  |
+| 20188 | `#coupon_csgo10_sticker_capsule` |  | `coupon_csgo10_capsule_prefab` |  |
+| 20189 | `#coupon_initiators_musickit_capsule` |  | `coupon_initiators_capsule_prefab` |  |
+| 20190 | `#coupon_initiators_stattrak_musickit_capsule` |  | `coupon_initiators_capsule_prefab` |  |
+| 20191 | `#coupon_perfectworld_01` |  | `coupon_prefab` |  |
+| 20192 | `#coupon_perfectworld_01_stattrak` |  | `coupon_prefab` |  |
+| 20193 | `#coupon_community2022_sticker_capsule` |  | `coupon_community2022_capsule_prefab` |  |
+| 20194 | `#coupon_denzelcurry_01` |  | `coupon_prefab` |  |
+| 20195 | `#coupon_denzelcurry_01_stattrak` |  | `coupon_prefab` |  |
+| 20197 | `#coupon_crate_anubis_storepromo` |  | `valve coupon_prefab` |  |
+| 20198 | `#coupon_nightmode_musickit_capsule` |  | `coupon_nightmode_capsule_prefab` |  |
+| 20199 | `#coupon_nightmode_stattrak_musickit_capsule` |  | `coupon_nightmode_capsule_prefab` |  |
+| 20200 | `#coupon_community_2024_sticker_capsule` |  | `coupon_community_2024_capsule_prefab` |  |
+| 20204 | `#coupon_masterminds2_musickit_capsule` |  | `coupon_masterminds2_capsule_prefab` |  |
+| 20205 | `#coupon_masterminds2_stattrak_musickit_capsule` |  | `coupon_masterminds2_capsule_prefab` |  |
+| 20206 | `#coupon_perfectworld_02` |  | `coupon_prefab` |  |
+| 20207 | `#coupon_perfectworld_02_stattrak` |  | `coupon_prefab` |  |
+| 30050 | `#CSGO_crate_key_community_30_contestwinner` |  | `weapon_case_key` |  |
+| 30092 | `#CSGO_set_anubis_storepromo_key_contestwinner` |  | `weapon_case_key` |  |
+| 30115 | `#CSGO_set_train_2025_storepromo_key_contestwinner` |  | `weapon_case_key` |  |
 
-## Paint Kits — skins (1481)
+## Paint Kits — skins
+
+1481 paint kits.
 
 | defIndex | Name | Description tag |
 |----------|------|----------------|
@@ -3482,7 +3483,7 @@ Economy definitions extracted from the content pack's `items_game.txt`: weapon /
 | 1475 | `sawedoff_lunar_wyrm` | `#PaintKit_sawedoff_lunar_wyrm_Tag` |
 | 1476 | `hye_spyglitch_green_m4a1s` | `#PaintKit_hye_spyglitch_Tag` |
 | 1477 | `famas_corp_defense` | `#PaintKit_famas_corp_defense_Tag` |
-| 9001 | `workshop_default` | `` |
+| 9001 | `workshop_default` |  |
 | 10006 | `bloodhound_black_silver` | `#PaintKit_bloodhound_black_silver_tag` |
 | 10007 | `bloodhound_snakeskin_brass` | `#PaintKit_bloodhound_snakeskin_brass_tag` |
 | 10008 | `bloodhound_metallic` | `#PaintKit_bloodhound_metallic_tag` |
@@ -3556,7 +3557,9 @@ Economy definitions extracted from the content pack's `items_game.txt`: weapon /
 | 10087 | `operation10_floral` | `#PaintKit_operation10_floral_tag` |
 | 10088 | `operation10_snakeskin_black` | `#PaintKit_operation10_snakeskin_black_tag` |
 
-## Sticker Kits (11789)
+## Sticker Kits
+
+11789 sticker kits.
 
 | defIndex | Name | Item name token | Description |
 |----------|------|-----------------|-------------|
@@ -15350,7 +15353,9 @@ Economy definitions extracted from the content pack's `items_game.txt`: weapon /
 | 11812 | `cologne2026_signature_nettik_holo_ranking` | `#StickerKit_cologne2026_signature_nettik_holo_ranking` | `#StickerKit_desc_cologne2026_signature_nettik_holo` |
 | 11813 | `cologne2026_signature_nettik_gold_ranking` | `#StickerKit_cologne2026_signature_nettik_gold_ranking` | `#StickerKit_desc_cologne2026_signature_nettik_gold` |
 
-## Music Kits (101)
+## Music Kits
+
+101 music kits.
 
 | defIndex | Name | Loc name |
 |----------|------|----------|
@@ -15456,189 +15461,191 @@ Economy definitions extracted from the content pack's `items_game.txt`: weapon /
 | 102 | `repiet_01` | `#MusicKit_repiet_01` |
 | 103 | `shockone_01` | `#MusicKit_shockone_01` |
 
-## Prefabs (213)
+## Prefabs
+
+213 prefabs.
 
 | id | Parent prefab | Classname | Item type |
 |----|---------------|-----------|-----------|
-| `antwerp2022_signature_capsule_prefab` | `weapon_case_base` | `` |  |
-| `antwerp2022_sticker_capsule_prefab` | `weapon_case_base` | `` |  |
-| `antwerp2022_tournament_journal_prefab` | `fan_shield` | `` |  |
-| `antwerp2022_tournament_pass_prefab` | `fan_token` | `` |  |
-| `atlanta2017_signature_capsule_prefab` | `weapon_case_base` | `` |  |
-| `atlanta2017_sticker_capsule_prefab` | `sticker_capsule` | `` |  |
-| `attendance_pin` | `collectible_untradable` | `` |  |
-| `aus2025_signature_capsule_prefab` | `aus2025_sticker_capsule_prefab` | `` |  |
-| `aus2025_souvenir_crate_promo_prefab` | `weapon_case_souvenirpkg` | `` |  |
-| `aus2025_sticker_capsule_prefab` | `weapon_case_base` | `` |  |
-| `aus2025_tournament_journal_prefab` | `fan_shield` | `` |  |
-| `aus2025_tournament_pass_prefab` | `fan_token` | `` |  |
-| `berlin2019_signature_capsule_prefab` | `weapon_case_base` | `` |  |
-| `berlin2019_sticker_capsule_prefab` | `sticker_capsule` | `` |  |
-| `berlin2019_tournament_journal_prefab` | `fan_shield` | `` |  |
-| `berlin2019_tournament_pass_prefab` | `fan_token` | `` |  |
-| `boston2018_signature_capsule_prefab` | `weapon_case_base` | `` |  |
-| `boston2018_sticker_capsule_prefab` | `sticker_capsule` | `` |  |
-| `bud2025_signature_capsule_prefab` | `bud2025_sticker_capsule_prefab` | `` |  |
-| `bud2025_souvenir_crate_promo_prefab` | `weapon_case_souvenirpkg` | `` |  |
-| `bud2025_sticker_capsule_prefab` | `weapon_case_base` | `` |  |
-| `bud2025_tournament_journal_prefab` | `fan_shield` | `` |  |
-| `bud2025_tournament_pass_prefab` | `fan_token` | `` |  |
-| `bundle_base` | `` | `bundle` | #CSGO_Type_StoreBundle |
+| `antwerp2022_signature_capsule_prefab` | `weapon_case_base` |  |  |
+| `antwerp2022_sticker_capsule_prefab` | `weapon_case_base` |  |  |
+| `antwerp2022_tournament_journal_prefab` | `fan_shield` |  |  |
+| `antwerp2022_tournament_pass_prefab` | `fan_token` |  |  |
+| `atlanta2017_signature_capsule_prefab` | `weapon_case_base` |  |  |
+| `atlanta2017_sticker_capsule_prefab` | `sticker_capsule` |  |  |
+| `attendance_pin` | `collectible_untradable` |  |  |
+| `aus2025_signature_capsule_prefab` | `aus2025_sticker_capsule_prefab` |  |  |
+| `aus2025_souvenir_crate_promo_prefab` | `weapon_case_souvenirpkg` |  |  |
+| `aus2025_sticker_capsule_prefab` | `weapon_case_base` |  |  |
+| `aus2025_tournament_journal_prefab` | `fan_shield` |  |  |
+| `aus2025_tournament_pass_prefab` | `fan_token` |  |  |
+| `berlin2019_signature_capsule_prefab` | `weapon_case_base` |  |  |
+| `berlin2019_sticker_capsule_prefab` | `sticker_capsule` |  |  |
+| `berlin2019_tournament_journal_prefab` | `fan_shield` |  |  |
+| `berlin2019_tournament_pass_prefab` | `fan_token` |  |  |
+| `boston2018_signature_capsule_prefab` | `weapon_case_base` |  |  |
+| `boston2018_sticker_capsule_prefab` | `sticker_capsule` |  |  |
+| `bud2025_signature_capsule_prefab` | `bud2025_sticker_capsule_prefab` |  |  |
+| `bud2025_souvenir_crate_promo_prefab` | `weapon_case_souvenirpkg` |  |  |
+| `bud2025_sticker_capsule_prefab` | `weapon_case_base` |  |  |
+| `bud2025_tournament_journal_prefab` | `fan_shield` |  |  |
+| `bud2025_tournament_pass_prefab` | `fan_token` |  |  |
+| `bundle_base` |  | `bundle` | #CSGO_Type_StoreBundle |
 | `c4` | `weapon_base weapon_supports_keychains` | `weapon_c4` | #CSGO_Type_C4 |
-| `campaign_prefab` | `` | `collectible_item` | #campaign |
-| `cluj2015_sticker_capsule_prefab` | `weapon_case_base` | `` |  |
-| `collectible` | `` | `collectible_item` | #CSGO_Type_Collectible |
-| `collectible_untradable` | `collectible` | `` |  |
-| `collectible_untradable_coin` | `collectible_untradable` | `` |  |
-| `cologne2016_signature_capsule_prefab` | `weapon_case_base` | `` |  |
-| `cologne2016_sticker_capsule_prefab` | `sticker_capsule` | `` |  |
-| `cologne2026_sellable_item1` | `cologne2026_sellable_item0` | `` |  |
-| `cologne2026_signature_capsule_prefab` | `cologne2026_sticker_capsule_prefab` | `` |  |
-| `cologne2026_sticker_capsule_prefab` | `weapon_case_base` | `` |  |
-| `cologne2026_tournament_credits_prefab` | `season_tiers` | `` |  |
-| `cologne2026_tournament_journal_prefab` | `fan_shield` | `` |  |
-| `cologne2026_tournament_pass_prefab` | `fan_token cologne2026_sellable_item1` | `` |  |
-| `columbus2016_signature_capsule_prefab` | `weapon_case_base` | `` |  |
-| `columbus2016_sticker_capsule_prefab` | `sticker_capsule` | `` |  |
-| `commodity_pin` | `collectible` | `` |  |
-| `coupon_bestiary_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_bf2042_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_chicken_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_comm2018_01_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_community2021_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_community2022_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_community_2024_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_cs20_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_csgo10_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_deluge_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_directpurchase_prefab` | `coupon_prefab` | `` |  |
-| `coupon_enfu_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_feral_predators_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_halo_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_initiators_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_jackass_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_masterminds2_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_masterminds_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_nightmode_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_pinups_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_poorly_drawn_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_prefab` | `weapon_case_base` | `` |  |
-| `coupon_radicals_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_skillgroup_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_slid3_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_sprays_capsule_community_1` | `coupon_prefab` | `` |  |
-| `coupon_spring2022_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_sugarface_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_tacticians_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_team_roles_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_warhammer_adeptus_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_warhammer_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_warhammer_imperium_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_warhammer_traitor_capsule_prefab` | `coupon_prefab` | `` |  |
-| `coupon_warhammer_xenos_capsule_prefab` | `coupon_prefab` | `` |  |
-| `cph2024_signature_capsule_prefab` | `weapon_case_base` | `` |  |
-| `cph2024_sticker_capsule_prefab` | `weapon_case_base` | `` |  |
-| `cph2024_tournament_journal_prefab` | `fan_shield` | `` |  |
-| `cph2024_tournament_pass_prefab` | `fan_token` | `` |  |
-| `csgo_tool` | `` | `tool` | #CSGO_Type_Tool |
-| `customplayer` | `wearable` | `` | #Type_CustomPlayer |
-| `customplayertradable` | `customplayer` | `` |  |
-| `dhw14_sticker_capsule_prefab` | `sticker_capsule` | `` |  |
-| `equipment` | `weapon_base` | `` | #CSGO_Type_Equipment |
-| `eslcologne2015_sticker_capsule_prefab` | `weapon_case_base` | `` |  |
-| `eslkatowice2015_sticker_capsule_prefab` | `sticker_capsule` | `` |  |
+| `campaign_prefab` |  | `collectible_item` | #campaign |
+| `cluj2015_sticker_capsule_prefab` | `weapon_case_base` |  |  |
+| `collectible` |  | `collectible_item` | #CSGO_Type_Collectible |
+| `collectible_untradable` | `collectible` |  |  |
+| `collectible_untradable_coin` | `collectible_untradable` |  |  |
+| `cologne2016_signature_capsule_prefab` | `weapon_case_base` |  |  |
+| `cologne2016_sticker_capsule_prefab` | `sticker_capsule` |  |  |
+| `cologne2026_sellable_item1` | `cologne2026_sellable_item0` |  |  |
+| `cologne2026_signature_capsule_prefab` | `cologne2026_sticker_capsule_prefab` |  |  |
+| `cologne2026_sticker_capsule_prefab` | `weapon_case_base` |  |  |
+| `cologne2026_tournament_credits_prefab` | `season_tiers` |  |  |
+| `cologne2026_tournament_journal_prefab` | `fan_shield` |  |  |
+| `cologne2026_tournament_pass_prefab` | `fan_token cologne2026_sellable_item1` |  |  |
+| `columbus2016_signature_capsule_prefab` | `weapon_case_base` |  |  |
+| `columbus2016_sticker_capsule_prefab` | `sticker_capsule` |  |  |
+| `commodity_pin` | `collectible` |  |  |
+| `coupon_bestiary_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_bf2042_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_chicken_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_comm2018_01_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_community2021_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_community2022_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_community_2024_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_cs20_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_csgo10_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_deluge_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_directpurchase_prefab` | `coupon_prefab` |  |  |
+| `coupon_enfu_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_feral_predators_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_halo_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_initiators_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_jackass_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_masterminds2_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_masterminds_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_nightmode_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_pinups_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_poorly_drawn_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_prefab` | `weapon_case_base` |  |  |
+| `coupon_radicals_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_skillgroup_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_slid3_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_sprays_capsule_community_1` | `coupon_prefab` |  |  |
+| `coupon_spring2022_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_sugarface_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_tacticians_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_team_roles_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_warhammer_adeptus_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_warhammer_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_warhammer_imperium_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_warhammer_traitor_capsule_prefab` | `coupon_prefab` |  |  |
+| `coupon_warhammer_xenos_capsule_prefab` | `coupon_prefab` |  |  |
+| `cph2024_signature_capsule_prefab` | `weapon_case_base` |  |  |
+| `cph2024_sticker_capsule_prefab` | `weapon_case_base` |  |  |
+| `cph2024_tournament_journal_prefab` | `fan_shield` |  |  |
+| `cph2024_tournament_pass_prefab` | `fan_token` |  |  |
+| `csgo_tool` |  | `tool` | #CSGO_Type_Tool |
+| `customplayer` | `wearable` |  | #Type_CustomPlayer |
+| `customplayertradable` | `customplayer` |  |  |
+| `dhw14_sticker_capsule_prefab` | `sticker_capsule` |  |  |
+| `equipment` | `weapon_base` |  | #CSGO_Type_Equipment |
+| `eslcologne2015_sticker_capsule_prefab` | `weapon_case_base` |  |  |
+| `eslkatowice2015_sticker_capsule_prefab` | `sticker_capsule` |  |  |
 | `explosive_grenade` | `grenade` | `weapon_hegrenade` |  |
 | `fan_shield` | `csgo_tool` | `collectible_item` | #CSGO_Type_Collectible |
-| `fan_token` | `csgo_tool` | `` | #CSGO_Type_Ticket |
-| `flair_pin` | `collectible` | `` |  |
-| `graffiti_box` | `weapon_case_base` | `` |  |
-| `grenade` | `weapon_base` | `` | #CSGO_Type_Grenade |
-| `hands` | `wearable` | `` | #Type_Hands |
-| `hands_paintable` | `hands` | `` |  |
-| `katowice2019_signature_capsule_prefab` | `weapon_case_base` | `` |  |
-| `katowice2019_sticker_capsule_prefab` | `sticker_capsule` | `` |  |
-| `katowice2019_tournament_journal_prefab` | `fan_shield` | `` |  |
-| `katowice2019_tournament_pass_prefab` | `fan_token` | `` |  |
-| `krakow2017_signature_capsule_prefab` | `weapon_case_base` | `` |  |
-| `krakow2017_sticker_capsule_prefab` | `sticker_capsule` | `` |  |
-| `london2018_signature_capsule_prefab` | `weapon_case_base` | `` |  |
-| `london2018_sticker_capsule_prefab` | `sticker_capsule` | `` |  |
-| `machinegun` | `primary` | `` | #CSGO_Type_Machinegun |
-| `majors_trophy` | `collectible_untradable` | `` |  |
+| `fan_token` | `csgo_tool` |  | #CSGO_Type_Ticket |
+| `flair_pin` | `collectible` |  |  |
+| `graffiti_box` | `weapon_case_base` |  |  |
+| `grenade` | `weapon_base` |  | #CSGO_Type_Grenade |
+| `hands` | `wearable` |  | #Type_Hands |
+| `hands_paintable` | `hands` |  |  |
+| `katowice2019_signature_capsule_prefab` | `weapon_case_base` |  |  |
+| `katowice2019_sticker_capsule_prefab` | `sticker_capsule` |  |  |
+| `katowice2019_tournament_journal_prefab` | `fan_shield` |  |  |
+| `katowice2019_tournament_pass_prefab` | `fan_token` |  |  |
+| `krakow2017_signature_capsule_prefab` | `weapon_case_base` |  |  |
+| `krakow2017_sticker_capsule_prefab` | `sticker_capsule` |  |  |
+| `london2018_signature_capsule_prefab` | `weapon_case_base` |  |  |
+| `london2018_sticker_capsule_prefab` | `sticker_capsule` |  |  |
+| `machinegun` | `primary` |  | #CSGO_Type_Machinegun |
+| `majors_trophy` | `collectible_untradable` |  |  |
 | `map_token` | `collectible` | `map_token` |  |
 | `melee` | `weapon_base` | `weapon_knife` | #CSGO_Type_Knife |
-| `melee_unusual` | `melee` | `` |  |
-| `musickit_prefab` | `` | `collectible_item` | #CSGO_Type_MusicKit |
-| `operation_coin` | `collectible_untradable` | `` |  |
-| `paris2023_signature_capsule_prefab` | `weapon_case_base` | `` |  |
-| `paris2023_sticker_capsule_prefab` | `weapon_case_base` | `` |  |
-| `paris2023_tournament_journal_prefab` | `fan_shield` | `` |  |
-| `paris2023_tournament_pass_prefab` | `fan_token` | `` |  |
-| `patch_capsule` | `weapon_case_base` | `` |  |
-| `pickem_trophy` | `collectible_untradable` | `` |  |
-| `premier_season_coin` | `prestige_coin` | `` |  |
-| `prestige_coin` | `collectible_untradable` | `` |  |
-| `primary` | `weapon_base weapon_supports_stickers weapon_supports_keychains` | `` |  |
-| `quest_prefab` | `` | `collectible_item` | #CSGO_Type_Quest |
-| `recipe` | `csgo_tool` | `` | #CSGO_Type_recipe |
-| `rifle` | `primary` | `` | #CSGO_Type_Rifle |
-| `rio2022_signature_capsule_prefab` | `weapon_case_base` | `` |  |
-| `rio2022_sticker_capsule_prefab` | `weapon_case_base` | `` |  |
-| `rio2022_tournament_journal_prefab` | `fan_shield` | `` |  |
-| `rio2022_tournament_pass_prefab` | `fan_token` | `` |  |
-| `rmr2020_sticker_capsule_prefab` | `weapon_case_base` | `` |  |
-| `season10_coin` | `operation_coin` | `` |  |
-| `season11_coin` | `operation_coin` | `` |  |
-| `season1_coin` | `operation_coin` | `` |  |
-| `season2_coin` | `operation_coin` | `` |  |
-| `season3_coin` | `operation_coin` | `` |  |
-| `season4_coin` | `operation_coin` | `` |  |
-| `season5_coin` | `operation_coin` | `` |  |
-| `season6_coin` | `operation_coin` | `` |  |
-| `season7_coin` | `operation_coin` | `` |  |
-| `season8_coin` | `operation_coin` | `` |  |
-| `season9_coin` | `operation_coin` | `` |  |
-| `season_pass` | `csgo_tool` | `` | #CSGO_Type_Ticket |
-| `season_tiers` | `csgo_tool` | `` | #CSGO_Type_Ticket |
-| `secondary` | `weapon_base weapon_supports_stickers weapon_supports_keychains` | `` | #CSGO_Type_Pistol |
-| `sha2024_signature_capsule_prefab` | `sha2024_sticker_capsule_prefab` | `` |  |
-| `sha2024_souvenir_crate_promo_prefab` | `weapon_case_souvenirpkg` | `` |  |
-| `sha2024_sticker_capsule_prefab` | `weapon_case_base` | `` |  |
-| `sha2024_tournament_journal_prefab` | `fan_shield` | `` |  |
-| `sha2024_tournament_pass_prefab` | `fan_token` | `` |  |
-| `shotgun` | `primary` | `` | #CSGO_Type_Shotgun |
-| `smg` | `primary` | `` | #CSGO_Type_SMG |
-| `sniper_rifle` | `primary` | `` | #CSGO_Type_SniperRifle |
-| `steam_badge` | `collectible_untradable` | `` |  |
-| `sticker_capsule` | `weapon_case_base` | `` |  |
-| `stockh2021_patch_capsule_prefab` | `stockh2021_sticker_capsule_prefab` | `` |  |
-| `stockh2021_signature_capsule_prefab` | `weapon_case_base` | `` |  |
-| `stockh2021_sticker_capsule_prefab` | `weapon_case_base` | `` |  |
-| `stockh2021_tournament_journal_prefab` | `fan_shield` | `` |  |
-| `stockh2021_tournament_pass_prefab` | `fan_token` | `` |  |
-| `volatile_pricing` | `valve` | `` |  |
-| `volatile_pricing_gloves` | `valve` | `` |  |
+| `melee_unusual` | `melee` |  |  |
+| `musickit_prefab` |  | `collectible_item` | #CSGO_Type_MusicKit |
+| `operation_coin` | `collectible_untradable` |  |  |
+| `paris2023_signature_capsule_prefab` | `weapon_case_base` |  |  |
+| `paris2023_sticker_capsule_prefab` | `weapon_case_base` |  |  |
+| `paris2023_tournament_journal_prefab` | `fan_shield` |  |  |
+| `paris2023_tournament_pass_prefab` | `fan_token` |  |  |
+| `patch_capsule` | `weapon_case_base` |  |  |
+| `pickem_trophy` | `collectible_untradable` |  |  |
+| `premier_season_coin` | `prestige_coin` |  |  |
+| `prestige_coin` | `collectible_untradable` |  |  |
+| `primary` | `weapon_base weapon_supports_stickers weapon_supports_keychains` |  |  |
+| `quest_prefab` |  | `collectible_item` | #CSGO_Type_Quest |
+| `recipe` | `csgo_tool` |  | #CSGO_Type_recipe |
+| `rifle` | `primary` |  | #CSGO_Type_Rifle |
+| `rio2022_signature_capsule_prefab` | `weapon_case_base` |  |  |
+| `rio2022_sticker_capsule_prefab` | `weapon_case_base` |  |  |
+| `rio2022_tournament_journal_prefab` | `fan_shield` |  |  |
+| `rio2022_tournament_pass_prefab` | `fan_token` |  |  |
+| `rmr2020_sticker_capsule_prefab` | `weapon_case_base` |  |  |
+| `season10_coin` | `operation_coin` |  |  |
+| `season11_coin` | `operation_coin` |  |  |
+| `season1_coin` | `operation_coin` |  |  |
+| `season2_coin` | `operation_coin` |  |  |
+| `season3_coin` | `operation_coin` |  |  |
+| `season4_coin` | `operation_coin` |  |  |
+| `season5_coin` | `operation_coin` |  |  |
+| `season6_coin` | `operation_coin` |  |  |
+| `season7_coin` | `operation_coin` |  |  |
+| `season8_coin` | `operation_coin` |  |  |
+| `season9_coin` | `operation_coin` |  |  |
+| `season_pass` | `csgo_tool` |  | #CSGO_Type_Ticket |
+| `season_tiers` | `csgo_tool` |  | #CSGO_Type_Ticket |
+| `secondary` | `weapon_base weapon_supports_stickers weapon_supports_keychains` |  | #CSGO_Type_Pistol |
+| `sha2024_signature_capsule_prefab` | `sha2024_sticker_capsule_prefab` |  |  |
+| `sha2024_souvenir_crate_promo_prefab` | `weapon_case_souvenirpkg` |  |  |
+| `sha2024_sticker_capsule_prefab` | `weapon_case_base` |  |  |
+| `sha2024_tournament_journal_prefab` | `fan_shield` |  |  |
+| `sha2024_tournament_pass_prefab` | `fan_token` |  |  |
+| `shotgun` | `primary` |  | #CSGO_Type_Shotgun |
+| `smg` | `primary` |  | #CSGO_Type_SMG |
+| `sniper_rifle` | `primary` |  | #CSGO_Type_SniperRifle |
+| `steam_badge` | `collectible_untradable` |  |  |
+| `sticker_capsule` | `weapon_case_base` |  |  |
+| `stockh2021_patch_capsule_prefab` | `stockh2021_sticker_capsule_prefab` |  |  |
+| `stockh2021_signature_capsule_prefab` | `weapon_case_base` |  |  |
+| `stockh2021_sticker_capsule_prefab` | `weapon_case_base` |  |  |
+| `stockh2021_tournament_journal_prefab` | `fan_shield` |  |  |
+| `stockh2021_tournament_pass_prefab` | `fan_token` |  |  |
+| `volatile_pricing` | `valve` |  |  |
+| `volatile_pricing_gloves` | `valve` |  |  |
 | `weapon_ak47_prefab` | `rifle` | `weapon_ak47` |  |
 | `weapon_aug_prefab` | `rifle` | `weapon_aug` |  |
 | `weapon_awp_prefab` | `sniper_rifle` | `weapon_awp` |  |
-| `weapon_base` | `` | `` | #CSGO_Type_Weapon |
+| `weapon_base` |  |  | #CSGO_Type_Weapon |
 | `weapon_bizon_prefab` | `smg` | `weapon_bizon` |  |
-| `weapon_case` | `weapon_case_base` | `` |  |
-| `weapon_case_base` | `` | `supply_crate` | #CSGO_Type_WeaponCase |
-| `weapon_case_key` | `csgo_tool` | `` | #CSGO_Tool_WeaponCase_KeyTag |
-| `weapon_case_selfopening_collection` | `weapon_case_base` | `` |  |
-| `weapon_case_souvenirpkg` | `weapon_case_base` | `` |  |
+| `weapon_case` | `weapon_case_base` |  |  |
+| `weapon_case_base` |  | `supply_crate` | #CSGO_Type_WeaponCase |
+| `weapon_case_key` | `csgo_tool` |  | #CSGO_Tool_WeaponCase_KeyTag |
+| `weapon_case_selfopening_collection` | `weapon_case_base` |  |  |
+| `weapon_case_souvenirpkg` | `weapon_case_base` |  |  |
 | `weapon_cz75a_prefab` | `secondary` | `weapon_cz75a` |  |
 | `weapon_deagle_prefab` | `secondary` | `weapon_deagle` |  |
 | `weapon_decoy_prefab` | `grenade` | `weapon_decoy` |  |
-| `weapon_diversion_prefab` | `weapon_decoy_prefab` | `` |  |
+| `weapon_diversion_prefab` | `weapon_decoy_prefab` |  |  |
 | `weapon_elite_prefab` | `secondary` | `weapon_elite` |  |
 | `weapon_famas_prefab` | `rifle` | `weapon_famas` |  |
-| `weapon_fire_grenade_prefab` | `grenade` | `` |  |
-| `weapon_firebomb_prefab` | `weapon_molotov_prefab` | `` |  |
+| `weapon_fire_grenade_prefab` | `grenade` |  |  |
+| `weapon_firebomb_prefab` | `weapon_molotov_prefab` |  |  |
 | `weapon_fiveseven_prefab` | `secondary` | `weapon_fiveseven` |  |
 | `weapon_flashbang_prefab` | `grenade` | `weapon_flashbang` |  |
-| `weapon_frag_grenade_prefab` | `weapon_hegrenade_prefab` | `` |  |
+| `weapon_frag_grenade_prefab` | `weapon_hegrenade_prefab` |  |  |
 | `weapon_g3sg1_prefab` | `sniper_rifle` | `weapon_g3sg1` |  |
 | `weapon_galilar_prefab` | `rifle` | `weapon_galilar` |  |
 | `weapon_glock_prefab` | `secondary` | `weapon_glock` |  |
@@ -15665,16 +15672,18 @@ Economy definitions extracted from the content pack's `items_game.txt`: weapon /
 | `weapon_sg556_prefab` | `rifle` | `weapon_sg556` |  |
 | `weapon_smokegrenade_prefab` | `grenade` | `weapon_smokegrenade` |  |
 | `weapon_ssg08_prefab` | `sniper_rifle` | `weapon_ssg08` |  |
-| `weapon_supports_keychains` | `` | `` |  |
-| `weapon_supports_stickers` | `` | `` |  |
+| `weapon_supports_keychains` |  |  |  |
+| `weapon_supports_stickers` |  |  |  |
 | `weapon_taser_prefab` | `equipment weapon_supports_stickers weapon_supports_keychains` | `weapon_taser` |  |
 | `weapon_tec9_prefab` | `secondary` | `weapon_tec9` |  |
 | `weapon_ump45_prefab` | `smg` | `weapon_ump45` |  |
 | `weapon_usp_silencer_prefab` | `secondary` | `weapon_hkp2000` |  |
 | `weapon_xm1014_prefab` | `shotgun` | `weapon_xm1014` |  |
-| `wearable` | `` | `wearable_item` |  |
+| `wearable` |  | `wearable_item` |  |
 
-## Rarities (9)
+## Rarities
+
+9 rarities.
 
 | id | Value | Loc key | Weapon loc key |
 |----|-------|---------|----------------|
@@ -15688,7 +15697,9 @@ Economy definitions extracted from the content pack's `items_game.txt`: weapon /
 | `uncommon` | 2 | `Rarity_Uncommon` | `Rarity_Uncommon_Weapon` |
 | `unusual` | 99 | `Unusual` | `Rarity_Unusual` |
 
-## Qualities (15)
+## Qualities
+
+15 qualities.
 
 | id | Value |
 |----|-------|

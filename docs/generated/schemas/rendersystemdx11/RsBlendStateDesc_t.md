@@ -1,14 +1,16 @@
 ---
-layout: default
 title: RsBlendStateDesc_t
-nav_exclude: true
+module: rendersystemdx11
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [rendersystemdx11](../rendersystemdx11.md) / RsBlendStateDesc_t
 
 # RsBlendStateDesc_t
 
-**Kind:** class · **Size:** 32 bytes (`0x20`) · **Align:** 255 · **Module:** rendersystemdx11
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 32 bytes (`0x20`) · **Align:** n/a (unspecified) · **Module:** rendersystemdx11
 
 ## Memory layout
 
@@ -16,9 +18,9 @@ nav_exclude: true
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_bAlphaToCoverageEnable` | bitfield:1 |  |  |
-| `0x0` | `m_bIndependentBlendEnable` | bitfield:1 |  |  |
-| `0x0` | `m_blendOpBits` | bitfield:30 |  |  |
+| `0x0` bit 0 | `m_bAlphaToCoverageEnable` | bitfield:1 |  |  |
+| `0x0` bit 1 | `m_bIndependentBlendEnable` | bitfield:1 |  |  |
+| `0x0` bits 2..31 | `m_blendOpBits` | bitfield:30 |  |  |
 | `0x0` | `m_srcBlendBits` | uint32 |  |  |
 | `0x4` | `m_destBlendBits` | uint32 |  |  |
 | `0x8` | `m_srcBlendAlphaBits` | uint32 |  |  |

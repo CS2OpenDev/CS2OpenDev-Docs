@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CCSObserver_ObserverServices
-nav_exclude: true
+title: CCSObserver_ObserverServices (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CCSObserver_ObserverServices
 
 # CCSObserver_ObserverServices
 
-**Kind:** class · **Size:** 240 bytes (`0xf0`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 240 bytes (`0xf0`) · **Align:** n/a (unspecified) · **Module:** client
+
+**Twin:** [CCSObserver_ObserverServices (server)](../server/CCSObserver_ObserverServices.md)
 
 **Inherits from:** [CPlayer_ObserverServices](../client/CPlayer_ObserverServices.md)
 

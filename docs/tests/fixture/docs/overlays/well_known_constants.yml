@@ -1,0 +1,33 @@
+constants:
+- name: Team
+  comment: CCSPlayerController.m_iTeamNum / CBaseEntity.m_iTeamNum values.
+  description: 'CS2 team assignment.  Spectator is a real team slot, not just an absence of one.
+
+    '
+  members:
+  - name: Unassigned
+    value: 0
+  - name: Spectator
+    value: 1
+  - name: Terrorist
+    value: 2
+  - name: CounterTerrorist
+    value: 3
+- name: GamePhase
+  comment: CCSGameRules.m_gamePhase values.
+  description: 'Match-level phase indicator.  Pre-overtime is the half-time between regulation and OT
+    periods, not the buy phase of an OT round.
+
+    '
+  members:
+  - name: FirstHalf
+    value: 1
+  - name: SecondHalf
+    value: 2
+  - name: PreOvertime
+    value: 3
+    description: Half-time of overtime (between regulation and OT).
+  - name: Overtime
+    value: 4
+  - name: GameOver
+    value: 5

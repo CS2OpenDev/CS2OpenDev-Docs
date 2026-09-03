@@ -1,12 +1,14 @@
 ---
-layout: default
 title: MaterialParamTexture_t
-nav_exclude: true
+module: materialsystem2
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [materialsystem2](../materialsystem2.md) / MaterialParamTexture_t
 
 # MaterialParamTexture_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** 8 · **Module:** materialsystem2
 

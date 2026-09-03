@@ -1,12 +1,14 @@
 ---
-layout: default
 title: SkeletonDemoDb_t
-nav_exclude: true
+module: modellib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [modellib](../modellib.md) / SkeletonDemoDb_t
 
 # SkeletonDemoDb_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 56 bytes (`0x38`) · **Align:** 8 · **Module:** modellib
 
@@ -15,6 +17,7 @@ nav_exclude: true
 ```mermaid
 classDiagram
     SkeletonDemoDb_t --> SkeletonAnimCapture_t
+    SkeletonDemoDb_t *-- `SkeletonAnimCapture_t::Camera_t`
 ```
 
 ## Memory layout
@@ -24,7 +27,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_AnimCaptures` | CUtlVector< [SkeletonAnimCapture_t](../modellib/SkeletonAnimCapture_t.md)* > |  |  |
-| `0x18` | `m_CameraTrack` | CUtlVector< [SkeletonAnimCapture_t](../modellib/SkeletonAnimCapture_t.md)::Camera_t > |  |  |
+| `0x18` | `m_CameraTrack` | CUtlVector< [SkeletonAnimCapture_t::Camera_t](../modellib/SkeletonAnimCapture_t.Camera_t.md) > |  |  |
 | `0x30` | `m_flRecordingTime` | float32 |  |  |
 
 <details><summary>KV3 class defaults</summary>

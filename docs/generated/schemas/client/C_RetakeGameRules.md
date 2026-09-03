@@ -1,14 +1,16 @@
 ---
-layout: default
 title: C_RetakeGameRules
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / C_RetakeGameRules
 
 # C_RetakeGameRules
 
-**Kind:** class · **Size:** 344 bytes (`0x158`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 344 bytes (`0x158`) · **Align:** n/a (unspecified) · **Module:** client
 
 **Relationships:**
 

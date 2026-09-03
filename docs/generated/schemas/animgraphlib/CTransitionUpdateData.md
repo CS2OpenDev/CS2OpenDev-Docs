@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CTransitionUpdateData
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / CTransitionUpdateData
 
 # CTransitionUpdateData
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 3 bytes (`0x3`) · **Align:** 1 · **Module:** animgraphlib
 
@@ -16,8 +18,8 @@ nav_exclude: true
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_bDisabled` | bitfield:1 |  |  |
-| `0x0` | `m_nHandshakeMaskToDisableFirst` | bitfield:7 |  |  |
+| `0x0` bit 0 | `m_bDisabled` | bitfield:1 |  |  |
+| `0x0` bits 1..7 | `m_nHandshakeMaskToDisableFirst` | bitfield:7 |  |  |
 | `0x0` | `m_srcStateIndex` | uint8 |  |  |
 | `0x1` | `m_destStateIndex` | uint8 |  |  |
 

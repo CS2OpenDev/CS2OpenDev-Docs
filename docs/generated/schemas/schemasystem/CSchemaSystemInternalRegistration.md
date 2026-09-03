@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CSchemaSystemInternalRegistration
-nav_exclude: true
+module: schemasystem
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [schemasystem](../schemasystem.md) / CSchemaSystemInternalRegistration
 
 # CSchemaSystemInternalRegistration
 
-**Kind:** class · **Size:** 384 bytes (`0x180`) · **Align:** 255 · **Module:** schemasystem
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 384 bytes (`0x180`) · **Align:** n/a (unspecified) · **Module:** schemasystem
 
 ## Memory layout
 

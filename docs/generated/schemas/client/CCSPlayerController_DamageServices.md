@@ -1,17 +1,20 @@
 ---
-layout: default
-title: CCSPlayerController_DamageServices
-nav_exclude: true
+title: CCSPlayerController_DamageServices (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CCSPlayerController_DamageServices
 
 # CCSPlayerController_DamageServices
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 Damage-log component of CCSPlayerController, backing the end-of-round 'damage given / taken' report.
 
+**Kind:** class · **Size:** 176 bytes (`0xb0`) · **Align:** n/a (unspecified) · **Module:** client
 
-**Kind:** class · **Size:** 176 bytes (`0xb0`) · **Align:** 255 · **Module:** client
+**Twin:** [CCSPlayerController_DamageServices (server)](../server/CCSPlayerController_DamageServices.md)
 
 **Inherits from:** [CPlayerControllerComponent](../server/CPlayerControllerComponent.md)
 

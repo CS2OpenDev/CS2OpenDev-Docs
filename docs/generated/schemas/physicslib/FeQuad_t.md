@@ -1,12 +1,14 @@
 ---
-layout: default
 title: FeQuad_t
-nav_exclude: true
+module: physicslib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [physicslib](../physicslib.md) / FeQuad_t
 
 # FeQuad_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 76 bytes (`0x4c`) · **Align:** 4 · **Module:** physicslib
 

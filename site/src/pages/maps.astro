@@ -1,0 +1,78 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { provenanceLine } from '../lib/provenance';
+import { loadMaps } from '../lib/data/maps';
+
+const { maps, note } = loadMaps();
+
+function cell(v: string): string {
+	return v === '' ? '-' : v;
+}
+
+const headings = [{ depth: 2, slug: 'maps', text: 'Maps' }];
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Maps',
+		description: `${maps.length} maps with a radar overview definition in this build.`,
+	}}
+	headings={headings}
+>
+	<div>
+		<p>
+			Every map in this build that ships a radar overview definition: spawn and bomb site
+			coordinates, and the overview image's rotation, scale and zoom. {note}
+		</p>
+
+		<p class="cs2-provenance">{provenanceLine()}</p>
+
+		<h2 id="maps">Maps</h2>
+		<div class="cs2-table-wrap">
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Name</th>
+						<th scope="col">Material</th>
+						<th scope="col">Block name</th>
+						<th scope="col" class="value">Bomb A X</th>
+						<th scope="col" class="value">Bomb A Y</th>
+						<th scope="col" class="value">Bomb B X</th>
+						<th scope="col" class="value">Bomb B Y</th>
+						<th scope="col" class="value">CT spawn X</th>
+						<th scope="col" class="value">CT spawn Y</th>
+						<th scope="col" class="value">T spawn X</th>
+						<th scope="col" class="value">T spawn Y</th>
+						<th scope="col" class="value">Pos X</th>
+						<th scope="col" class="value">Pos Y</th>
+						<th scope="col" class="value">Rotate</th>
+						<th scope="col" class="value">Scale</th>
+						<th scope="col" class="value">Zoom</th>
+					</tr>
+				</thead>
+				<tbody>
+					{maps.map((m) => (
+						<tr id={m.name}>
+							<td><code>{m.name}</code></td>
+							<td>{cell(m.material)}</td>
+							<td>{cell(m.blockName)}</td>
+							<td class="value">{cell(m.bombAX)}</td>
+							<td class="value">{cell(m.bombAY)}</td>
+							<td class="value">{cell(m.bombBX)}</td>
+							<td class="value">{cell(m.bombBY)}</td>
+							<td class="value">{cell(m.ctSpawnX)}</td>
+							<td class="value">{cell(m.ctSpawnY)}</td>
+							<td class="value">{cell(m.tSpawnX)}</td>
+							<td class="value">{cell(m.tSpawnY)}</td>
+							<td class="value">{cell(m.posX)}</td>
+							<td class="value">{cell(m.posY)}</td>
+							<td class="value">{cell(m.rotate)}</td>
+							<td class="value">{cell(m.scale)}</td>
+							<td class="value">{cell(m.zoom)}</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</StarlightPage>

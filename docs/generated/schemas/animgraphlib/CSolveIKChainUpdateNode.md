@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CSolveIKChainUpdateNode
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / CSolveIKChainUpdateNode
 
 # CSolveIKChainUpdateNode
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 168 bytes (`0xa8`) · **Align:** 8 · **Module:** animgraphlib
 

@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CConcreteAnimParameter
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / CConcreteAnimParameter
 
 # CConcreteAnimParameter
 
-**Kind:** class · **Size:** 128 bytes (`0x80`) · **Align:** 255 · **Module:** animgraphlib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 128 bytes (`0x80`) · **Align:** n/a (unspecified) · **Module:** animgraphlib
 
 **Inherits from:** [CAnimParameterBase](../animgraphlib/CAnimParameterBase.md)
 

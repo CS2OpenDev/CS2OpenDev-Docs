@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CCSPlayerBase_CameraServices
-nav_exclude: true
+title: CCSPlayerBase_CameraServices (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CCSPlayerBase_CameraServices
 
 # CCSPlayerBase_CameraServices
 
-**Kind:** class · **Size:** 680 bytes (`0x2a8`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 680 bytes (`0x2a8`) · **Align:** n/a (unspecified) · **Module:** client
+
+**Twin:** [CCSPlayerBase_CameraServices (server)](../server/CCSPlayerBase_CameraServices.md)
 
 **Inherits from:** [CPlayer_CameraServices](../client/CPlayer_CameraServices.md)
 

@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmGraphDocVariationDataNode::OverrideValue_t"
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmGraphDocVariationDataNode::OverrideValue_t
 
 # CNmGraphDocVariationDataNode::OverrideValue_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** 8 · **Module:** animdoclib
 
@@ -14,7 +16,7 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmGraphDocVariationDataNode::OverrideValue_t" --> CNmGraphDocVariationDataNode
+    `CNmGraphDocVariationDataNode::OverrideValue_t` --> `CNmGraphDocVariationDataNode::CData`
 ```
 
 ## Memory layout
@@ -24,7 +26,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_variationID` | CGlobalSymbol |  |  |
-| `0x8` | `m_pData` | [CNmGraphDocVariationDataNode](../animdoclib/CNmGraphDocVariationDataNode.md)::CData* |  |  |
+| `0x8` | `m_pData` | [CNmGraphDocVariationDataNode::CData](../animdoclib/CNmGraphDocVariationDataNode.CData.md)* |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

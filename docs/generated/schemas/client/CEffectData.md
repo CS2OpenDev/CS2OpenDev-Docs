@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CEffectData
-nav_exclude: true
+title: CEffectData (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CEffectData
 
 # CEffectData
 
-**Kind:** class · **Size:** 120 bytes (`0x78`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 120 bytes (`0x78`) · **Align:** n/a (unspecified) · **Module:** client
+
+**Twin:** [CEffectData (server)](../server/CEffectData.md)
 
 **Relationships:**
 

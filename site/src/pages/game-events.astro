@@ -1,0 +1,276 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import DataTable, { PAGE_SIZE, type Column } from '../components/islands/DataTable';
+import TableRowsNote from '../components/TableRowsNote.astro';
+import { inlineCodeHtml } from '../lib/html';
+import { provenanceLine } from '../lib/provenance';
+import { protoMessageHref, withBase } from '../lib/urls';
+import { loadProtoIndex, schemaEnumHref } from '../lib/data/protobufs';
+import { identifierAliases, loadSchemaIndex } from '../lib/data/schema';
+import {
+	eventHeading,
+	gameEventRows,
+	loadGameEventsData,
+	sourceStem,
+	typeLegendAnchor,
+	type GameEvent,
+} from '../lib/data/gameevents';
+import '../styles/console.css';
+
+const { events, duplicates, sources, type_legend: typeLegend } = loadGameEventsData();
+const protoIdx = loadProtoIndex();
+const schemaIdx = loadSchemaIndex();
+
+const eventMsg = protoIdx.messageByQualified.get('CMsgSource1LegacyGameEvent');
+const listMsg = protoIdx.messageByQualified.get('CMsgSource1LegacyGameEventList');
+const keyTMsg = protoIdx.messageByQualified.get('CMsgSource1LegacyGameEvent.key_t');
+
+function wireIdText(hit: typeof eventMsg) {
+	const w = hit?.message.wire_ids[0];
+	if (!hit || !w) return null;
+	const enumHref = schemaEnumHref(schemaIdx, w.enum);
+	return { enumName: w.enum, constant: w.constant, value: w.value, href: enumHref };
+}
+const eventWire = wireIdText(eventMsg);
+const listWire = wireIdText(listMsg);
+
+const duplicateCount = Object.keys(duplicates).length;
+
+function eventAliases(ev: GameEvent): string {
+	return [...identifierAliases(ev.name), ...ev.fields.map((f) => f.name)].join(' ');
+}
+
+const columns: Column[] = [
+	{ key: 'name', label: 'Name', hrefKey: 'href' },
+	{ key: 'source', label: 'Source' },
+	{ key: 'fields', label: 'Fields', numeric: true },
+	{ key: 'description', label: 'Description', html: true },
+];
+
+// Only the first page rides in the island's props; the rest comes from
+// game-events/rows.json.ts on first interaction.
+const rows = gameEventRows().slice(0, PAGE_SIZE);
+const rowsHref = withBase('/game-events/rows.json');
+
+// Old links used the bare #name. For duplicated names, prefer the mod declaration
+// (the CS2 event), else the one with the most fields.
+const preferredLegacy = new Map<string, string>();
+for (const name of Object.keys(duplicates)) {
+	const candidates = events.filter((e) => e.name === name);
+	const pick =
+		candidates.find((e) => sourceStem(e.source) === 'mod') ??
+		[...candidates].sort((a, b) => b.fields.length - a.fields.length)[0];
+	if (pick) preferredLegacy.set(name, pick.anchor);
+}
+
+// Old anchors per new anchor, space-separated in data-legacy-anchor. Kramdown gave the
+// k-th repeat of a heading the id `<name>-<k>`; the old page ran core, game, mod and
+// this page keeps that order within a name, so the repeat count reproduces the id.
+const legacyAnchors = new Map<string, string[]>();
+function addLegacyAnchor(anchor: string, legacy: string) {
+	legacyAnchors.set(anchor, [...(legacyAnchors.get(anchor) ?? []), legacy]);
+}
+const repeats = new Map<string, number>();
+for (const ev of events) {
+	const k = repeats.get(ev.name) ?? 0;
+	repeats.set(ev.name, k + 1);
+	if (k > 0) addLegacyAnchor(ev.anchor, `${ev.name}-${k}`);
+}
+for (const [name, anchor] of preferredLegacy) addLegacyAnchor(anchor, name);
+
+// The old page's section ids; its per-source event sections are one list here.
+const LEGACY_SECTION_ANCHORS = {
+	'type-legend': 'field-types',
+	sources: 'summary',
+	index: 'event-index',
+	events: 'core-engine-events game-events cs2-counter-strike-events',
+};
+
+const headings = [
+	{ depth: 2, slug: 'type-legend', text: 'Field types' },
+	{ depth: 2, slug: 'sources', text: 'Sources' },
+	{ depth: 2, slug: 'index', text: 'Index' },
+	{ depth: 2, slug: 'events', text: 'Events' },
+	...events.map((ev) => ({ depth: 3, slug: ev.anchor, text: eventHeading(ev, duplicates) })),
+];
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Game Events',
+		description: `${events.length} game event definitions for this build, with field types and per-event field tables.`,
+	}}
+	headings={headings}
+>
+	<div>
+		<p>
+			A game event is a named, one-shot notification the server broadcasts to clients and writes into a{' '}
+			<code>.dem</code> recording: a round starting, a player dying, a bomb being planted. Every event
+			travels as one instance of the same protobuf message,{' '}
+			{eventMsg ? (
+				<a href={protoMessageHref(eventMsg.file.stem, eventMsg.message.qualified)}>
+					{eventMsg.message.qualified}
+				</a>
+			) : (
+				<code>CMsgSource1LegacyGameEvent</code>
+			)}
+			{eventWire && (
+				<>
+					{' '}
+					(wire id{' '}
+					{eventWire.href ? (
+						<a href={eventWire.href}>{eventWire.enumName}.{eventWire.constant}</a>
+					) : (
+						<>{eventWire.enumName}.{eventWire.constant}</>
+					)}
+					{' = '}<code>{eventWire.value}</code>)
+				</>
+			)}
+			, whose <code>event_name</code> and <code>eventid</code> fields say which definition below applies
+			and whose repeated <code>keys</code> field carries the event's own fields as typed key/value pairs (
+			{keyTMsg ? (
+				<a href={protoMessageHref(keyTMsg.file.stem, keyTMsg.message.qualified)}>{keyTMsg.message.qualified}</a>
+			) : (
+				<code>CMsgSource1LegacyGameEvent.key_t</code>
+			)}
+			, one union entry per key). Before any event fires, the server sends the whole registry once as{' '}
+			{listMsg ? (
+				<a href={protoMessageHref(listMsg.file.stem, listMsg.message.qualified)}>{listMsg.message.qualified}</a>
+			) : (
+				<code>CMsgSource1LegacyGameEventList</code>
+			)}
+			{listWire && (
+				<>
+					{' '}
+					(wire id{' '}
+					{listWire.href ? (
+						<a href={listWire.href}>{listWire.enumName}.{listWire.constant}</a>
+					) : (
+						<>{listWire.enumName}.{listWire.constant}</>
+					)}
+					{' = '}<code>{listWire.value}</code>)
+				</>
+			)}
+			, which is how a client or a demo parser learns which numeric <code>eventid</code> maps to which of
+			the {events.length} definitions below and what each key's declared type is.
+		</p>
+
+		<p class="cs2-provenance">{provenanceLine()}</p>
+
+		<h2 id="type-legend" data-legacy-anchor={LEGACY_SECTION_ANCHORS['type-legend']}>Field types</h2>
+		<p>
+			Each field below declares one of these types. Where the type is sent as one of{' '}
+			{keyTMsg ? (
+				<a href={protoMessageHref(keyTMsg.file.stem, keyTMsg.message.qualified)}>key_t</a>
+			) : (
+				<code>key_t</code>
+			)}'s union members, its numeric wire code is the member's own field number minus one (
+			<code>val_string</code> is field 2, so type code 1; <code>val_uint64</code> is field 8, so type code
+			7). <code>player_controller_and_pawn</code> is not one of the union members: it packs two indices
+			into one plain integer sent as type code 3, decoded as{' '}
+			<code>controller_id = value &amp; 0xFF</code>, <code>pawn_index = value &gt;&gt; 8</code>.
+		</p>
+		<div class="cs2-table-wrap cs2-legend-table">
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Type</th>
+						<th scope="col" class="value">key_t code</th>
+						<th scope="col" class="ann">Description</th>
+						<th scope="col" class="ann">Note</th>
+					</tr>
+				</thead>
+				<tbody>
+					{typeLegend.map((t) => (
+						<tr id={typeLegendAnchor(t.type)}>
+							<td><code>{t.type}</code></td>
+							<td class="value">{t.key_t_type_code === null ? '-' : t.key_t_type_code}</td>
+							<td class="ann">{t.description}</td>
+							<td class="ann">{t.note}</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+
+		<h2 id="sources" data-legacy-anchor={LEGACY_SECTION_ANCHORS.sources}>Sources</h2>
+		<p>
+			Events come from {sources.length} upstream <code>.gameevents</code> files:{' '}
+			{sources.map((s, i) => (
+				<>{i > 0 && ', '}<code>{s}</code></>
+			))}
+			. {duplicateCount} event names are declared in more than one source (<code>round_end</code> is in
+			all three); each declaration keeps its own anchor built from the name plus its source stem, e.g.{' '}
+			<code>player_death-core</code> (the 2-field base engine stub) versus <code>player_death-mod</code>{' '}
+			(the 22-field definition this game mode actually fires), so every declaration below is reachable on
+			its own section instead of colliding on one shared anchor.
+		</p>
+
+		<h2 id="index" data-legacy-anchor={LEGACY_SECTION_ANCHORS.index}>Index</h2>
+		<p>Every event definition in this build. Type a name, source or description word into the filter box.</p>
+		<div id="ev">
+			<DataTable
+				id="ev"
+				columns={columns}
+				rows={rows}
+				src={rowsHref}
+				searchKeys={['name', 'source', 'search']}
+				pageSize={PAGE_SIZE}
+				caption={`${events.length} game event definitions`}
+				initialSort={{ key: 'name', dir: 'asc' }}
+				client:idle
+			/>
+		</div>
+		<TableRowsNote shown={rows.length} total={events.length} rowsHref={rowsHref} artifact="gameevents_schema.json" />
+
+		<h2 id="events" data-legacy-anchor={LEGACY_SECTION_ANCHORS.events}>Events</h2>
+		{events.map((ev) => (
+			<>
+				<h3
+					id={ev.anchor}
+					data-pagefind-weight="7"
+					data-legacy-anchor={legacyAnchors.get(ev.anchor)?.join(' ')}
+				>
+					{eventHeading(ev, duplicates)}
+				</h3>
+				<span class="cs2-aliases" aria-hidden="true">{eventAliases(ev)}</span>
+				{ev.description && <p set:html={inlineCodeHtml(ev.description)} />}
+				{ev.notes && <p class="cs2-note" set:html={inlineCodeHtml(ev.notes)} />}
+				{ev.warning && (
+					<p class="cs2-note">
+						<strong>Warning:</strong> <Fragment set:html={inlineCodeHtml(ev.warning)} />
+					</p>
+				)}
+				<p class="cs2-rel">
+					<strong>Source:</strong> <code>{ev.source}</code>
+					{' · '}
+					<strong>Fields:</strong> {ev.fields.length}
+				</p>
+				{ev.fields.length === 0 ? (
+					<p class="cs2-empty">This event carries no fields.</p>
+				) : (
+					<div class="cs2-table-wrap">
+						<table>
+							<thead>
+								<tr>
+									<th scope="col">Field</th>
+									<th scope="col">Type</th>
+									<th scope="col" class="ann">Description</th>
+								</tr>
+							</thead>
+							<tbody>
+								{ev.fields.map((f) => (
+									<tr>
+										<td><code>{f.name}</code></td>
+										<td><code>{f.type}</code></td>
+										<td class="ann" set:html={inlineCodeHtml(f.description)} />
+									</tr>
+								))}
+							</tbody>
+						</table>
+					</div>
+				)}
+			</>
+		))}
+	</div>
+</StarlightPage>

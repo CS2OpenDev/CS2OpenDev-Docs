@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmTargetWarpNode::CDefinition"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmTargetWarpNode::CDefinition
 
 # CNmTargetWarpNode::CDefinition
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 56 bytes (`0x38`) · **Align:** 8 · **Module:** animlib
 
@@ -16,9 +18,10 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmPoseNode::CDefinition" <|-- "CNmTargetWarpNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmPoseNode::CDefinition"
-    "CNmTargetWarpNode::CDefinition" *-- CNmRootMotionData
+    `CNmPoseNode::CDefinition` <|-- `CNmTargetWarpNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmPoseNode::CDefinition`
+    `CNmTargetWarpNode::CDefinition` *-- `CNmRootMotionData::SamplingMode_t`
+    `CNmTargetWarpNode::CDefinition` *-- `CNmTargetWarpNode::TargetUpdateRule_t`
 ```
 
 ## Memory layout
@@ -30,8 +33,8 @@ classDiagram
 | `0x8` | `m_nNodeIdx` | int16 | [CNmGraphNode::CDefinition](../animlib/CNmGraphNode.CDefinition.md) |  |
 | `0x10` | `m_nClipReferenceNodeIdx` | int16 |  |  |
 | `0x12` | `m_nTargetValueNodeIdx` | int16 |  |  |
-| `0x14` | `m_samplingMode` | [CNmRootMotionData](../animlib/CNmRootMotionData.md)::SamplingMode_t |  |  |
-| `0x15` | `m_targetUpdateRule` | CNmTargetWarpNode::TargetUpdateRule_t |  |  |
+| `0x14` | `m_samplingMode` | [CNmRootMotionData::SamplingMode_t](../animlib/CNmRootMotionData.SamplingMode_t.md) |  |  |
+| `0x15` | `m_targetUpdateRule` | [CNmTargetWarpNode::TargetUpdateRule_t](../animlib/CNmTargetWarpNode.TargetUpdateRule_t.md) |  |  |
 | `0x16` | `m_bAlignWithTargetAtLastWarpEvent` | bool |  |  |
 | `0x18` | `m_flSamplingPositionErrorThresholdSq` | float32 |  |  |
 | `0x1c` | `m_flMaxTangentLength` | float32 |  |  |

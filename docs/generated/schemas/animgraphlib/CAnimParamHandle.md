@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CAnimParamHandle
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / CAnimParamHandle
 
 # CAnimParamHandle
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 2 bytes (`0x2`) · **Align:** 1 · **Module:** animgraphlib
 

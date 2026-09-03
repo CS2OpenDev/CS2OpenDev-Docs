@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CExplosionTypeData
-nav_exclude: true
+title: CExplosionTypeData (server)
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CExplosionTypeData
 
 # CExplosionTypeData
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 256 bytes (`0x100`) · **Align:** 8 · **Module:** server
+
+**Twin:** [CExplosionTypeData (client)](../client/CExplosionTypeData.md)
 
 **Metadata:** `MVDataAssociatedFile scripts/explosion_types.vdata`, `MVDataOverlayType 1`, `MVDataRoot`
 

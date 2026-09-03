@@ -1,0 +1,90 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { provenanceLine } from '../../lib/provenance';
+import { protoFileHref } from '../../lib/urls';
+import { PROTO_GROUP_ORDER, filesByGroup, loadProtoIndex, type ProtoFile } from '../../lib/data/protobufs';
+import '../../styles/protobufs.css';
+
+const idx = loadProtoIndex();
+const grouped = filesByGroup(idx);
+
+const GROUP_SLUG: Record<string, string> = {
+	'CS2 wire format': 'cs2-wire-format',
+	Demo: 'demo',
+	'Game events': 'game-events',
+	'User messages': 'user-messages',
+	'GC and Steam SDK': 'gc-and-steam-sdk',
+	Other: 'other',
+};
+
+const sections = PROTO_GROUP_ORDER.map((group) => ({
+	group,
+	slug: GROUP_SLUG[group]!,
+	files: grouped.get(group) ?? [],
+})).filter((s) => s.files.length > 0);
+
+function importCell(file: ProtoFile) {
+	return file.imports.length === 0 ? '' : file.imports.map((i) => i.replace(/\.proto$/, '')).join(', ');
+}
+
+const totalMessages = idx.files.reduce((n, f) => n + f.messages.length, 0);
+const totalEnums = idx.files.reduce((n, f) => n + f.enums.length, 0);
+
+const headings = sections.map((s) => ({ depth: 2, slug: s.slug, text: s.group }));
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Protobufs',
+		description: `The ${idx.files.length} .proto files SchemaTracker packaged for this build, grouped by what they carry.`,
+	}}
+	headings={headings}
+>
+	<div>
+		<p>
+			{idx.files.length} protobuf files, {totalMessages} messages and {totalEnums} enums (both counts
+			include nested types). Every file in this build declares no <code>package</code>, so the group below is derived
+			from the file name: <code>demo.proto</code> is <strong>Demo</strong>; a name ending in
+			{' '}<code>gameevents</code> or <code>usermessages</code> is that family; the files that carry the
+			core connection, channel and entity-delta protocol (<code>netmessages</code>,{' '}
+			<code>networkbasetypes</code>, <code>usercmd</code>, <code>te</code>, and seven more) are{' '}
+			<strong>CS2 wire format</strong>; a name for a GC channel, a Steam message set, or Steam Datagram
+			Relay is <strong>GC and Steam SDK</strong>; everything left over is <strong>Other</strong>. Only
+			the first four groups are the CS2 game's own wire format; the rest ship in the same descriptor
+			set because the client links against the Steam client and GC libraries, not because CS2 speaks
+			them over its own connection.
+		</p>
+
+		<p class="cs2-provenance">{provenanceLine()}</p>
+
+		{sections.map((s) => (
+			<>
+				<h2 id={s.slug}>{s.group}</h2>
+				<div class="cs2-table-wrap">
+					<table>
+						<thead>
+							<tr>
+								<th scope="col">File</th>
+								<th scope="col" class="value">Messages</th>
+								<th scope="col" class="value">Enums</th>
+								<th scope="col">Imports</th>
+								<th scope="col" class="ann">Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							{s.files.map((f) => (
+								<tr>
+									<td><a href={protoFileHref(f.stem)}>{f.name}</a></td>
+									<td class="value">{f.messages.length}</td>
+									<td class="value">{f.enums.length}</td>
+									<td>{importCell(f)}</td>
+									<td class="ann">{f.description}</td>
+								</tr>
+							))}
+						</tbody>
+					</table>
+				</div>
+			</>
+		))}
+	</div>
+</StarlightPage>

@@ -1,11 +1,11 @@
 ---
-layout: default
 title: soundsystem_voicecontainers
-parent: Schemas
-nav_exclude: true
+module: soundsystem_voicecontainers
 ---
 
 # Module: soundsystem_voicecontainers
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 [📊 View UML Diagram](../diagrams/soundsystem_voicecontainers.md)
 

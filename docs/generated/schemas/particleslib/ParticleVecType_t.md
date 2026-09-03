@@ -1,12 +1,14 @@
 ---
-layout: default
 title: ParticleVecType_t
-nav_exclude: true
+module: particleslib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [particleslib](../particleslib.md) / ParticleVecType_t
 
 # ParticleVecType_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** particleslib
 
@@ -14,7 +16,7 @@ nav_exclude: true
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `PVEC_TYPE_INVALID` | -1 |  |
+| `PVEC_TYPE_INVALID` | -1 (`0xffffffff`) |  |
 | `PVEC_TYPE_LITERAL` | 0 |  |
 | `PVEC_TYPE_LITERAL_COLOR` | 1 |  |
 | `PVEC_TYPE_NAMED_VALUE` | 2 |  |

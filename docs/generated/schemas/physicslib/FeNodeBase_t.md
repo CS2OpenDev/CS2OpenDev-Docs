@@ -1,12 +1,14 @@
 ---
-layout: default
 title: FeNodeBase_t
-nav_exclude: true
+module: physicslib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [physicslib](../physicslib.md) / FeNodeBase_t
 
 # FeNodeBase_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 32 bytes (`0x20`) · **Align:** 16 · **Module:** physicslib
 

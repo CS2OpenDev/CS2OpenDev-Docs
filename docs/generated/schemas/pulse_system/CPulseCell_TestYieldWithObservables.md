@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CPulseCell_TestYieldWithObservables
-nav_exclude: true
+module: pulse_system
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [pulse_system](../pulse_system.md) / CPulseCell_TestYieldWithObservables
 
 # CPulseCell_TestYieldWithObservables
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 544 bytes (`0x220`) · **Align:** 8 · **Module:** pulse_system
 

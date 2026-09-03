@@ -1,14 +1,16 @@
 ---
-layout: default
 title: HullFlags_t
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / HullFlags_t
 
 # HullFlags_t
 
-**Kind:** class · **Size:** 10 bytes (`0xa`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 10 bytes (`0xa`) · **Align:** n/a (unspecified) · **Module:** server
 
 ## Memory layout
 

@@ -1,14 +1,16 @@
 ---
-layout: default
 title: View3DOptionsEditableData_t
-nav_exclude: true
+module: hammer
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [hammer](../hammer.md) / View3DOptionsEditableData_t
 
 # View3DOptionsEditableData_t
 
-**Kind:** class · **Size:** 88 bytes (`0x58`) · **Align:** 255 · **Module:** hammer
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 88 bytes (`0x58`) · **Align:** n/a (unspecified) · **Module:** hammer
 
 ## Memory layout
 

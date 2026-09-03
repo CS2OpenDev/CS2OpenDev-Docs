@@ -1,12 +1,14 @@
 ---
-layout: default
 title: PerTickSettings_t
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / PerTickSettings_t
 
 # PerTickSettings_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 1728 bytes (`0x6c0`) · **Align:** 16 · **Module:** animgraphlib
 

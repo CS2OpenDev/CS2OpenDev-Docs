@@ -1,12 +1,14 @@
 ---
-layout: default
 title: C_RopeKeyframe
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / C_RopeKeyframe
 
 # C_RopeKeyframe
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 4896 bytes (`0x1320`) · **Align:** 8 · **Module:** client
 
@@ -22,6 +24,7 @@ classDiagram
     C_RopeKeyframe *-- InfoForResourceTypeIMaterial2
     C_RopeKeyframe --> C_BaseEntity
     C_RopeKeyframe *-- AttachmentHandle_t
+    C_RopeKeyframe *-- `C_RopeKeyframe::CPhysicsDelegate`
 ```
 
 ## Memory layout
@@ -30,13 +33,13 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_bEndPointAttachmentAnglesDirty` | bitfield:1 |  | `MNotSaved` |
-| `0x0` | `m_bEndPointAttachmentPositionsDirty` | bitfield:1 |  | `MNotSaved` |
-| `0x0` | `m_bNewDataThisFrame` | bitfield:1 |  | `MNotSaved` |
-| `0x0` | `m_bPhysicsInitted` | bitfield:1 |  | `MNotSaved` |
+| `0x0` bit 0 | `m_bEndPointAttachmentAnglesDirty` | bitfield:1 |  | `MNotSaved` |
+| `0x0` bit 1 | `m_bEndPointAttachmentPositionsDirty` | bitfield:1 |  | `MNotSaved` |
+| `0x0` bit 2 | `m_bNewDataThisFrame` | bitfield:1 |  | `MNotSaved` |
+| `0x0` bit 3 | `m_bPhysicsInitted` | bitfield:1 |  | `MNotSaved` |
 | `0x8` | `m_iszPrivateVScripts` | CUtlSymbolLarge | [CEntityInstance](../entity2/CEntityInstance.md) |  |
-| `0x10` | `m_pEntity` | [CEntityIdentity](../entity2/CEntityIdentity.md)* | [CEntityInstance](../entity2/CEntityInstance.md) |  |
-| `0x28` | `m_CScriptComponent` | [CScriptComponent](../entity2/CScriptComponent.md)* | [CEntityInstance](../entity2/CEntityInstance.md) |  |
+| `0x10` | `m_pEntity` | [CEntityIdentity](../entity2/CEntityIdentity.md)* | [CEntityInstance](../entity2/CEntityInstance.md) | CEntityIdentity pointer: the entity's identity record (name, class, handle, flags). |
+| `0x28` | `m_CScriptComponent` | [CScriptComponent](../entity2/CScriptComponent.md)* | [CEntityInstance](../entity2/CEntityInstance.md) | VScript component attached to the entity, when scripted. |
 | `0x30` | `m_CBodyComponent` | [CBodyComponent](../client/CBodyComponent.md)* | [C_BaseEntity](../client/C_BaseEntity.md) |  |
 | `0x38` | `m_NetworkTransmitComponent` | [CNetworkTransmitComponent](../server/CNetworkTransmitComponent.md) | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
 | `0x328` | `m_nLastThinkTick` | [GameTick_t](../entity2/GameTick_t.md) | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
@@ -186,7 +189,7 @@ classDiagram
 | `0x1288` | `m_fLockedPoints` | uint8 |  | `MNotSaved` |
 | `0x1289` | `m_nChangeCount` | uint8 |  | `MNotSaved` |
 | `0x128c` | `m_Width` | float32 |  | `MNotSaved` |
-| `0x1290` | `m_PhysicsDelegate` | [C_RopeKeyframe](../client/C_RopeKeyframe.md)::CPhysicsDelegate |  | `MNotSaved` |
+| `0x1290` | `m_PhysicsDelegate` | [C_RopeKeyframe::CPhysicsDelegate](../client/C_RopeKeyframe.CPhysicsDelegate.md) |  | `MNotSaved` |
 | `0x12a0` | `m_hMaterial` | CStrongHandle< [InfoForResourceTypeIMaterial2](../resourcesystem/InfoForResourceTypeIMaterial2.md) > |  | `MNotSaved` |
 | `0x12a8` | `m_TextureHeight` | int32 |  | `MNotSaved` |
 | `0x12ac` | `m_vecImpulse` | Vector |  | `MNotSaved` |

@@ -1,12 +1,14 @@
 ---
-layout: default
 title: C_OP_ColorInterpolateRandom
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / C_OP_ColorInterpolateRandom
 
 # C_OP_ColorInterpolateRandom
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 536 bytes (`0x218`) · **Align:** 8 · **Module:** particles
 

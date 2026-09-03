@@ -1,0 +1,148 @@
+{
+ "convars": [
+  {
+   "default": "",
+   "description": "This string is prefixed to the name of all bots that join the game.\n<difficulty> will be replaced with the bot's difficulty.\n<weaponclass> will be replaced with the bot's desired weapon class.\n<skill> will be replaced with a 0-100 representation of the bot's skill.",
+   "flags": [
+    "gamedll",
+    "release"
+   ],
+   "hasMax": false,
+   "hasMin": false,
+   "maxValue": "",
+   "minValue": "",
+   "name": "bot_prefix",
+   "valueType": "String"
+  },
+  {
+   "default": "5.000000",
+   "description": "How many minutes each round takes.",
+   "flags": [
+    "gamedll",
+    "notify",
+    "replicated",
+    "release",
+    "commandline_enforced"
+   ],
+   "hasMax": true,
+   "hasMin": true,
+   "maxValue": "60.000000",
+   "minValue": "0.100000",
+   "name": "mp_roundtime",
+   "valueType": "Float32"
+  },
+  {
+   "default": "false",
+   "description": "Allow cheats on server",
+   "flags": [
+    "notify",
+    "replicated",
+    "release"
+   ],
+   "hasMax": false,
+   "hasMin": false,
+   "maxValue": "",
+   "minValue": "",
+   "name": "sv_cheats",
+   "valueType": "Bool"
+  },
+  {
+   "default": "false",
+   "description": "Allows team members to injure other members of their team",
+   "flags": [
+    "gamedll",
+    "clientdll",
+    "notify",
+    "replicated",
+    "release",
+    "commandline_enforced"
+   ],
+   "hasMax": false,
+   "hasMin": false,
+   "maxValue": "",
+   "minValue": "",
+   "name": "mp_friendlyfire",
+   "valueType": "Bool"
+  },
+  {
+   "default": "0",
+   "description": "Draw fps meter at top of screen (1 = fps, 2 = smooth fps, 3 = server MS, 4 = Show FPS and Log to file )",
+   "flags": [
+    "clientdll",
+    "release"
+   ],
+   "hasMax": false,
+   "hasMin": false,
+   "maxValue": "",
+   "minValue": "",
+   "name": "cl_showfps",
+   "valueType": "Int32"
+  },
+  {
+   "default": "0",
+   "description": "max number of rounds to play before server changes maps",
+   "flags": [
+    "gamedll",
+    "clientdll",
+    "notify",
+    "replicated",
+    "release",
+    "commandline_enforced"
+   ],
+   "hasMax": false,
+   "hasMin": true,
+   "maxValue": "",
+   "minValue": "0",
+   "name": "mp_maxrounds",
+   "valueType": "Int32"
+  },
+  {
+   "default": "1.000000",
+   "description": "Prescale the clock by this amount.",
+   "flags": [
+    "replicated",
+    "cheat"
+   ],
+   "hasMax": false,
+   "hasMin": false,
+   "maxValue": "",
+   "minValue": "",
+   "name": "host_timescale",
+   "valueType": "Float32"
+  },
+  {
+   "default": "800.000000",
+   "description": "World gravity.",
+   "flags": [
+    "gamedll",
+    "clientdll",
+    "notify",
+    "replicated",
+    "release"
+   ],
+   "hasMax": false,
+   "hasMin": false,
+   "maxValue": "",
+   "minValue": "",
+   "name": "sv_gravity",
+   "valueType": "Float32"
+  },
+  {
+   "default": "1|3;#GameUI_Retake_Card_4v3,1,0,secondary0|1;#GameUI_Retake_Card_FlashOut,0,0,secondary0,grenade0;#GameUI_Retake_Card_HideAndPeek,0,0,secondary0,grenade1",
+   "description": "CT Loadouts for default pistol round when playing bomb site retake.",
+   "flags": [
+    "gamedll",
+    "clientdll",
+    "replicated",
+    "release",
+    "commandline_enforced"
+   ],
+   "hasMax": false,
+   "hasMin": false,
+   "maxValue": "",
+   "minValue": "",
+   "name": "mp_retake_ct_loadout_default_pistol_round",
+   "valueType": "String"
+  }
+ ]
+}

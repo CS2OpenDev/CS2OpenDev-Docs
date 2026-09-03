@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CPulseGraphInstance_TestDomain_Derived
-nav_exclude: true
+module: pulse_system
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [pulse_system](../pulse_system.md) / CPulseGraphInstance_TestDomain_Derived
 
 # CPulseGraphInstance_TestDomain_Derived
 
-**Kind:** class · **Size:** 352 bytes (`0x160`) · **Align:** 255 · **Module:** pulse_system
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 352 bytes (`0x160`) · **Align:** n/a (unspecified) · **Module:** pulse_system
 
 **Inherits from:** [CPulseGraphInstance_TestDomain](../pulse_system/CPulseGraphInstance_TestDomain.md)
 

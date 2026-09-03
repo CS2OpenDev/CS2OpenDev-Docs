@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CAnimComponentUpdater
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / CAnimComponentUpdater
 
 # CAnimComponentUpdater
 
-**Kind:** class · **Size:** 48 bytes (`0x30`) · **Align:** 255 · **Module:** animgraphlib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 48 bytes (`0x30`) · **Align:** n/a (unspecified) · **Module:** animgraphlib
 
 **Derived by:** [CActionComponentUpdater](../animgraphlib/CActionComponentUpdater.md), [CAnimScriptComponentUpdater](../animgraphlib/CAnimScriptComponentUpdater.md), [CCPPScriptComponentUpdater](../animgraphlib/CCPPScriptComponentUpdater.md), [CDampedValueComponentUpdater](../animgraphlib/CDampedValueComponentUpdater.md), [CDemoSettingsComponentUpdater](../animgraphlib/CDemoSettingsComponentUpdater.md), [CLODComponentUpdater](../animgraphlib/CLODComponentUpdater.md), [CLookComponentUpdater](../animgraphlib/CLookComponentUpdater.md), [CMovementComponentUpdater](../animgraphlib/CMovementComponentUpdater.md), [CPairedSequenceComponentUpdater](../animgraphlib/CPairedSequenceComponentUpdater.md), [CRagdollComponentUpdater](../animgraphlib/CRagdollComponentUpdater.md), [CRemapValueComponentUpdater](../animgraphlib/CRemapValueComponentUpdater.md), [CSlopeComponentUpdater](../animgraphlib/CSlopeComponentUpdater.md), [CStateMachineComponentUpdater](../animgraphlib/CStateMachineComponentUpdater.md)
 

@@ -1,12 +1,14 @@
 ---
-layout: default
 title: C_OP_RenderDeferredLight
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / C_OP_RenderDeferredLight
 
 # C_OP_RenderDeferredLight
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 2336 bytes (`0x920`) · **Align:** 8 · **Module:** particles
 

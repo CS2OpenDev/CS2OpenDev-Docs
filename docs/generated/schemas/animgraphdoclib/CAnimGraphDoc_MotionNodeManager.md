@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CAnimGraphDoc_MotionNodeManager
-nav_exclude: true
+module: animgraphdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphdoclib](../animgraphdoclib.md) / CAnimGraphDoc_MotionNodeManager
 
 # CAnimGraphDoc_MotionNodeManager
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 80 bytes (`0x50`) · **Align:** 8 · **Module:** animgraphdoclib
 
@@ -21,7 +23,7 @@ classDiagram
 
 ## Memory layout
 
-1 fields (0 declared here, 1 inherited). Offsets are absolute from the object base.
+1 field (0 declared here, 1 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|

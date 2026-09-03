@@ -1,0 +1,130 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { provenanceLine } from '../lib/provenance';
+import { loadProps } from '../lib/data/props';
+
+const { collisionGroups, propClasses, breakableModels } = loadProps();
+
+function list(v: string[]): string {
+	return v.length === 0 ? '-' : v.join(', ');
+}
+
+const headings = [
+	{ depth: 2, slug: 'prop-classes', text: 'Prop classes' },
+	{ depth: 2, slug: 'collision-groups', text: 'Collision groups' },
+	{ depth: 2, slug: 'breakable-models', text: 'Breakable gib groups' },
+];
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Props',
+		description: `${propClasses.length} prop classes, ${collisionGroups.length} collision groups and ${breakableModels.length} breakable gib groups from this build's physics and prop data.`,
+	}}
+	headings={headings}
+>
+	<div>
+		<p>
+			The prop and collision tables CS2's physics configuration registers: the damage and health
+			classes a breakable prop model can be assigned, the collision groups with what each is solid
+			to and what it explicitly excludes, and the debris models a breaking prop spawns.
+		</p>
+
+		<p class="cs2-provenance">{provenanceLine()}</p>
+
+		<h2 id="prop-classes">Prop classes</h2>
+		<p>
+			A prop class names a material family and size (<code>Wooden.Large</code>, <code>Glass.Window</code>)
+			and carries the damage multipliers, health and physics mode a model of that class breaks with.
+			A <code>base</code> property inherits the rest from another class.
+		</p>
+		<div class="cs2-table-wrap">
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Class</th>
+						<th scope="col">Properties</th>
+					</tr>
+				</thead>
+				<tbody>
+					{propClasses.map((pc) => (
+						<tr id={`prop-${pc.id}`}>
+							<td><code>{pc.id}</code></td>
+							<td>
+								{pc.properties.length === 0
+									? '-'
+									: pc.properties.map((p, i) => (
+											<>
+												{i > 0 && '; '}
+												{p.name}=<code>{p.value}</code>
+											</>
+										))}
+							</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+
+		<h2 id="collision-groups">Collision groups</h2>
+		<div class="cs2-table-wrap">
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Name</th>
+						<th scope="col">Type</th>
+						<th scope="col" class="ann">Description</th>
+						<th scope="col">Interacts as</th>
+						<th scope="col">Interacts with</th>
+						<th scope="col">Excludes</th>
+					</tr>
+				</thead>
+				<tbody>
+					{collisionGroups.map((g) => (
+						<tr id={g.name}>
+							<td><code>{g.name}</code></td>
+							<td><code>{g.type}</code></td>
+							<td class="ann">{g.description}</td>
+							<td>{list(g.interact_as)}</td>
+							<td>{list(g.interact_with)}</td>
+							<td>{list(g.interact_exclude)}</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+
+		<h2 id="breakable-models" data-legacy-anchor="breakable-gib-groups">Breakable gib groups</h2>
+		<p>
+			A prop class's <code>breakable_model</code> property names one of these groups; the models are
+			the debris chunks spawned when a prop of that class breaks.
+		</p>
+		<div class="cs2-table-wrap">
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Group</th>
+						<th scope="col" class="value">Models</th>
+						<th scope="col">Model paths</th>
+					</tr>
+				</thead>
+				<tbody>
+					{breakableModels.map((b) => (
+						<tr id={`gib-${b.id}`}>
+							<td><code>{b.id}</code></td>
+							<td class="value">{b.models.length}</td>
+							<td>
+								{b.models.map((m, i) => (
+									<>
+										{i > 0 && <br />}
+										<code>{m}</code>
+									</>
+								))}
+							</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</StarlightPage>

@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CPerParticleFloatInput
-nav_exclude: true
+module: particleslib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particleslib](../particleslib.md) / CPerParticleFloatInput
 
 # CPerParticleFloatInput
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 368 bytes (`0x170`) · **Align:** 8 · **Module:** particleslib
 

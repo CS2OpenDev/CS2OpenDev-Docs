@@ -1,14 +1,16 @@
 ---
-layout: default
 title: C_CSGameRules
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / C_CSGameRules
 
 # C_CSGameRules
 
-**Kind:** class · **Size:** 20320 bytes (`0x4f60`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 20320 bytes (`0x4f60`) · **Align:** n/a (unspecified) · **Module:** client
 
 **Inherits from:** [C_TeamplayRules](../client/C_TeamplayRules.md)
 

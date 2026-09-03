@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: soundsystem"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: soundsystem

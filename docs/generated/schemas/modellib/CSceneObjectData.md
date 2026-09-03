@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CSceneObjectData
-nav_exclude: true
+module: modellib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [modellib](../modellib.md) / CSceneObjectData
 
 # CSceneObjectData
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 184 bytes (`0xb8`) · **Align:** 8 · **Module:** modellib
 
@@ -17,6 +19,7 @@ classDiagram
     CSceneObjectData *-- CMaterialDrawDescriptor
     CSceneObjectData *-- AABB_t
     CSceneObjectData *-- CMeshletDescriptor
+    CSceneObjectData *-- `CSceneObjectData::RTProxyDrawDescriptor_t`
 ```
 
 ## Memory layout
@@ -30,7 +33,7 @@ classDiagram
 | `0x18` | `m_drawCalls` | CUtlLeanVector< [CMaterialDrawDescriptor](../modellib/CMaterialDrawDescriptor.md) > |  |  |
 | `0x28` | `m_drawBounds` | CUtlLeanVector< [AABB_t](../mathlib_extended/AABB_t.md) > |  |  |
 | `0x38` | `m_meshlets` | CUtlLeanVector< [CMeshletDescriptor](../modellib/CMeshletDescriptor.md) > |  |  |
-| `0x48` | `m_rtProxyDrawCalls` | CUtlLeanVector< [CSceneObjectData](../modellib/CSceneObjectData.md)::RTProxyDrawDescriptor_t > |  |  |
+| `0x48` | `m_rtProxyDrawCalls` | CUtlLeanVector< [CSceneObjectData::RTProxyDrawDescriptor_t](../modellib/CSceneObjectData.RTProxyDrawDescriptor_t.md) > |  |  |
 | `0x58` | `m_vTintColor` | Vector4D |  |  |
 
 <details><summary>KV3 class defaults</summary>

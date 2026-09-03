@@ -1,12 +1,14 @@
 ---
-layout: default
 title: C_OP_PerParticleForce
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / C_OP_PerParticleForce
 
 # C_OP_PerParticleForce
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 2584 bytes (`0xa18`) · **Align:** 8 · **Module:** particles
 

@@ -1,0 +1,78 @@
+---
+import { readdirSync } from 'node:fs';
+import { join } from 'node:path';
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { codegenDir } from '../lib/paths';
+import { loadSchemaIndex } from '../lib/data/schema';
+import { networkHref, schemasHref, withBase } from '../lib/urls';
+
+const idx = loadSchemaIndex();
+const modules = idx.modules;
+const protoStems = readdirSync(join(codegenDir(), 'proto'))
+	.filter((f) => f.endsWith('.proto'))
+	.map((f) => f.replace(/\.proto$/, ''));
+
+// `\u003c` keeps a `</script>` inside the serialized data from ending the island.
+const data = JSON.stringify({ modules, protoStems }).replace(/</g, '\\u003c');
+
+const sections = [
+	{ label: 'Schemas', href: schemasHref(), blurb: 'Entity classes and enums, by module.' },
+	{ label: 'Protobufs', href: withBase('/protobufs/'), blurb: 'Every protobuf message and enum in the build.' },
+	{ label: 'ConVars', href: withBase('/convars/'), blurb: 'Console variables.' },
+	{ label: 'Commands', href: withBase('/commands/'), blurb: 'Console commands.' },
+	{ label: 'Game Events', href: withBase('/game-events/'), blurb: 'The game event registry.' },
+	{ label: 'Network Messages', href: networkHref(), blurb: 'Networked message types.' },
+	{ label: 'Items', href: withBase('/items/'), blurb: 'Item definitions.' },
+	{ label: 'Maps', href: withBase('/maps/'), blurb: 'Map list.' },
+	{ label: 'Game Modes', href: withBase('/game-modes/'), blurb: 'Game mode definitions.' },
+];
+---
+
+<StarlightPage frontmatter={{ title: 'Page not found', template: 'splash' }}>
+	<p id="cs2-404-redirecting" hidden>Redirecting to the new location&hellip;</p>
+
+	<p>
+		This page does not exist. The reference site moved off Jekyll and onto this Astro build in
+		2026; every page changed address in the move. A link here is either out of date or was never
+		a page on this site.
+	</p>
+	<p>
+		If you followed a link that starts with <code>/generated/</code>, this page will send you
+		to its new location automatically. Otherwise, start from one of the main sections:
+	</p>
+
+	<ul class="cs2-cols">
+		{sections.map((s) => (
+			<li>
+				<a href={s.href}>{s.label}</a> <span class="cs2-count">{s.blurb}</span>
+			</li>
+		))}
+	</ul>
+
+	<p>
+		Still stuck? Report it on <a href="https://github.com/CS2OpenDev/CS2OpenDev-Docs/issues">the
+		GitHub repo</a>.
+	</p>
+
+	<!-- A data island, not define:vars: define:vars forces the script inline, which drops
+	     Vite module resolution and breaks the import below. -->
+	<script is:inline type="application/json" id="cs2-404-data" set:html={data}></script>
+
+	<script>
+		import { mapLegacyPath } from '../lib/legacy-paths';
+
+		const dataEl = document.getElementById('cs2-404-data');
+		const params = JSON.parse(dataEl?.textContent ?? '{"modules":[],"protoStems":[]}');
+
+		const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+		let path = location.pathname;
+		if (base && path.startsWith(base)) path = path.slice(base.length);
+		if (!path.startsWith('/')) path = '/' + path;
+
+		const target = mapLegacyPath(path, params);
+		if (target) {
+			document.getElementById('cs2-404-redirecting')?.removeAttribute('hidden');
+			location.replace(`${base}${target}${location.hash}`);
+		}
+	</script>
+</StarlightPage>

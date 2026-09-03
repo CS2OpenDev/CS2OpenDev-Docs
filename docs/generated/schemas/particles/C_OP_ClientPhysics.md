@@ -1,12 +1,14 @@
 ---
-layout: default
 title: C_OP_ClientPhysics
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / C_OP_ClientPhysics
 
 # C_OP_ClientPhysics
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 1344 bytes (`0x540`) · **Align:** 8 · **Module:** particles
 

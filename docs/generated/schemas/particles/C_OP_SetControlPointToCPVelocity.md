@@ -1,12 +1,14 @@
 ---
-layout: default
 title: C_OP_SetControlPointToCPVelocity
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / C_OP_SetControlPointToCPVelocity
 
 # C_OP_SetControlPointToCPVelocity
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 2224 bytes (`0x8b0`) · **Align:** 8 · **Module:** particles
 

@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmFootstepEventPercentageThroughNode::CDefinition"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmFootstepEventPercentageThroughNode::CDefinition
 
 # CNmFootstepEventPercentageThroughNode::CDefinition
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 8 · **Module:** animlib
 
@@ -16,11 +18,11 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFootstepEventPercentageThroughNode::CDefinition"
-    "CNmValueNode::CDefinition" <|-- "CNmFloatValueNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
-    "CNmFootstepEventPercentageThroughNode::CDefinition" *-- NmFootPhaseCondition_t
-    "CNmFootstepEventPercentageThroughNode::CDefinition" *-- CNmBitFlags
+    `CNmFloatValueNode::CDefinition` <|-- `CNmFootstepEventPercentageThroughNode::CDefinition`
+    `CNmValueNode::CDefinition` <|-- `CNmFloatValueNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmValueNode::CDefinition`
+    `CNmFootstepEventPercentageThroughNode::CDefinition` *-- NmFootPhaseCondition_t
+    `CNmFootstepEventPercentageThroughNode::CDefinition` *-- CNmBitFlags
 ```
 
 ## Memory layout

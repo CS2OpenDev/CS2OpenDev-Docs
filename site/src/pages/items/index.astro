@@ -1,0 +1,160 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import DataTable, { PAGE_SIZE, type Column } from '../../components/islands/DataTable';
+import TableRowsNote from '../../components/TableRowsNote.astro';
+import { provenanceLine } from '../../lib/provenance';
+import { itemRows, loadItems } from '../../lib/data/items';
+import { paintKitsHref, stickerKitsHref, musicKitsHref, withBase } from '../../lib/urls';
+
+const { items, prefabs, rarities, qualities } = loadItems();
+
+const columns: Column[] = [
+	{ key: 'def_index', label: 'Def index', numeric: true },
+	{ key: 'name', label: 'Name', mono: true },
+	{ key: 'prefab_id', label: 'Prefab' },
+	{ key: 'item_type_name', label: 'Item type', facet: true },
+	{ key: 'classname', label: 'Class name' },
+	{ key: 'name_token', label: 'Name token' },
+];
+
+// Only the first page rides in the island's props; the rest comes from
+// items/rows.json.ts on first interaction.
+const rows = itemRows().slice(0, PAGE_SIZE);
+const rowsHref = withBase('/items/rows.json');
+
+const headings = [
+	{ depth: 2, slug: 'items', text: 'Items' },
+	{ depth: 2, slug: 'prefabs', text: 'Prefabs' },
+	{ depth: 2, slug: 'rarities', text: 'Rarities' },
+	{ depth: 2, slug: 'qualities', text: 'Qualities' },
+];
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Items',
+		description: `${items.length} item definitions from this build's items_game.txt, resolved through their prefab chain.`,
+	}}
+	headings={headings}
+>
+	<div>
+		<p>
+			The CS2 economy tables: every item definition this build's <code>items_game.txt</code> carries,
+			with display fields resolved through the prefab chain when the item's own value is empty (a
+			base weapon like <code>weapon_ak47</code> gets its <code>classname</code> and{' '}
+			<code>name_token</code> from its prefab, not from a field on the item itself). Values such as{' '}
+			<code>name_token</code> and <code>description_token</code> (for example{' '}
+			<code>#SFUI_WPNHUD_AK47</code>) are the raw localization tokens upstream stores, not resolved
+			display text: this build's artifact set does not ship the string table those tokens key into, so
+			a token is shown as-is rather than as the string a player would see in-game.
+		</p>
+
+		<p class="cs2-provenance">{provenanceLine()}</p>
+
+		{/* The kit tables were sections of the old items page; their old ids land on these links. */}
+		<p>
+			Paint finishes, stickers and music kits are separate definition tables, each on its own page:{' '}
+			<a id="paint-kits" href={paintKitsHref()} data-legacy-anchor="paint-kits--skins">Paint kits</a>,{' '}
+			<a id="sticker-kits" href={stickerKitsHref()}>Sticker kits</a>, and{' '}
+			<a id="music-kits" href={musicKitsHref()}>Music kits</a>.
+		</p>
+
+		<h2 id="items">Items</h2>
+		<DataTable
+			id="it"
+			columns={columns}
+			rows={rows}
+			src={rowsHref}
+			anchorKey="name"
+			caption="Items"
+			pageSize={PAGE_SIZE}
+			initialSort={{ key: 'def_index', dir: 'asc' }}
+			client:idle
+		/>
+		<TableRowsNote shown={rows.length} total={items.length} rowsHref={rowsHref} />
+
+		<h2 id="prefabs">Prefabs</h2>
+		<p>
+			Shared field bundles an item's <code>prefab</code> field can chain into, walked depth-first when
+			resolving an item's display fields above.
+		</p>
+		<div class="cs2-table-wrap">
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Id</th>
+						<th scope="col">Class name</th>
+						<th scope="col">Item slot</th>
+						<th scope="col">Item type</th>
+						<th scope="col">Name token</th>
+						<th scope="col">Parent prefab</th>
+					</tr>
+				</thead>
+				<tbody>
+					{prefabs.map((p) => (
+						<tr>
+							<td><code>{p.id}</code></td>
+							<td>{p.classname}</td>
+							<td>{p.item_slot}</td>
+							<td>{p.item_type_name}</td>
+							<td>{p.name_token}</td>
+							<td>{p.parent_prefab ? <code>{p.parent_prefab}</code> : ''}</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+
+		<h2 id="rarities">Rarities</h2>
+		<p>
+			Upstream's rarity enumeration. No item record links to one of these rows on this build, so the
+			items table above carries no rarity column.
+		</p>
+		<div class="cs2-table-wrap">
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Id</th>
+						<th scope="col">Loc key</th>
+						<th scope="col">Loc key (weapon)</th>
+						<th scope="col" class="value">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					{rarities.map((r) => (
+						<tr>
+							<td><code>{r.id}</code></td>
+							<td>{r.loc_key}</td>
+							<td>{r.loc_key_weapon}</td>
+							<td class="value">{r.value}</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+
+		<h2 id="qualities">Qualities</h2>
+		<p>
+			Upstream's quality enumeration, same caveat as rarities: no item record links to a row here on
+			this build.
+		</p>
+		<div class="cs2-table-wrap">
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Id</th>
+						<th scope="col" class="value">Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					{qualities.map((q) => (
+						<tr>
+							<td><code>{q.id}</code></td>
+							<td class="value">{q.value}</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</StarlightPage>

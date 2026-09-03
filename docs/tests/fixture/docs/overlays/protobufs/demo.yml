@@ -1,0 +1,14 @@
+description: Demo-file container messages.
+messages:
+  CDemoClassInfo:
+    description: Class id to network-class-name table.
+    fields:
+      classes:
+        description: One entry per network class.
+      no_such_field:
+        description: Deliberately stale, for the validator test.
+  CDemoClassInfo.class_t:
+    description: One class id to network-class-name row.
+    fields:
+      network_name:
+        description: The network class name the id maps to.

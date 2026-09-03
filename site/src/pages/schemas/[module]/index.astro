@@ -1,0 +1,119 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { hex, inlineCodeHtml, toInt } from '../../../lib/html';
+import { moduleGloss } from '../../../lib/modules';
+import { codegenArtifactHref, entityHref, moduleHierarchyHref, schemasHref } from '../../../lib/urls';
+import { layoutCounts, loadSchemaIndex, type ClassEntity, type EnumEntity } from '../../../lib/data/schema';
+
+export function getStaticPaths() {
+	const idx = loadSchemaIndex();
+	return idx.modules.map((module) => ({ params: { module } }));
+}
+
+const { module } = Astro.params;
+const idx = loadSchemaIndex();
+const p = idx.provenance;
+const entities = idx.byModule.get(module!) ?? [];
+const classes = entities.filter((e): e is ClassEntity => e.kind === 'class');
+const enums = entities.filter((e): e is EnumEntity => e.kind === 'enum');
+const binaries = [...new Set(entities.map((e) => e.binaryModule).filter(Boolean))].sort();
+const gloss = moduleGloss(module!);
+
+const classRows = classes.map((c) => ({
+	ent: c,
+	size: toInt(c.raw.size),
+	counts: layoutCounts(idx, c),
+	description: c.annotations?.description ?? '',
+}));
+
+const headings = [
+	{ depth: 2, slug: 'classes', text: 'Classes' },
+	{ depth: 2, slug: 'enums', text: 'Enums' },
+];
+---
+
+<StarlightPage
+	frontmatter={{
+		title: module!,
+		description: `${classes.length} classes and ${enums.length} enums in the CS2 ${module} module, build ${p.buildId}.`,
+	}}
+	headings={headings}
+>
+	<div>
+		<nav class="cs2-breadcrumb" aria-label="Breadcrumb">
+			<a href={schemasHref()}>Schemas</a> / <span>{module}</span>
+		</nav>
+
+		{gloss && <p>{gloss}</p>}
+
+		<p class="cs2-provenance">
+			CS2 build {p.buildId} · Steam date {p.versionDate} · platform {p.platform} ·{' '}
+			<a href={codegenArtifactHref('cs2_schema.json')}>cs2_schema.json</a>
+		</p>
+
+		<p class="cs2-stats">
+			<span><strong>Classes:</strong> {classes.length}</span>
+			<span><strong>Enums:</strong> {enums.length}</span>
+			<span><strong>Binaries:</strong> {binaries.map((b, i) => <>{i > 0 && ', '}<code>{b}</code></>)}</span>
+			<span><a href={moduleHierarchyHref(module!)}>Inheritance tree for this module</a></span>
+		</p>
+
+		<h2 id="classes">Classes</h2>
+		{classes.length === 0 ? (
+			<p class="cs2-empty">This module registers no classes.</p>
+		) : (
+			<div class="cs2-table-wrap">
+				<table>
+					<thead>
+						<tr>
+							<th scope="col">Class</th>
+							<th scope="col" class="value">Size</th>
+							<th scope="col" class="value">Declared</th>
+							<th scope="col" class="value">Total</th>
+							<th scope="col" class="ann">Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						{classRows.map((r) => (
+							<tr>
+								<td><a href={entityHref(r.ent.module, r.ent.name)}>{r.ent.name}</a></td>
+								<td class="value">{r.size === null ? '-' : <code>{hex(r.size)}</code>}</td>
+								<td class="value">{r.counts.own}</td>
+								<td class="value">{r.counts.total}</td>
+								<td class="ann" set:html={inlineCodeHtml(r.description)} />
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+		)}
+
+		<h2 id="enums">Enums</h2>
+		{enums.length === 0 ? (
+			<p class="cs2-empty">This module registers no enums.</p>
+		) : (
+			<div class="cs2-table-wrap">
+				<table>
+					<thead>
+						<tr>
+							<th scope="col">Enum</th>
+							<th scope="col">Underlying</th>
+							<th scope="col" class="value">Members</th>
+							<th scope="col" class="ann">Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						{enums.map((e) => (
+							<tr>
+								<td><a href={entityHref(e.module, e.name)}>{e.name}</a></td>
+								<td><code>{e.raw.alignment}</code></td>
+								<td class="value">{e.raw.members.length}</td>
+								<td class="ann" set:html={inlineCodeHtml(e.annotations?.description ?? '')} />
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+		)}
+	</div>
+</StarlightPage>

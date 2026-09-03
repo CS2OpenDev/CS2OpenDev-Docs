@@ -1,0 +1,82 @@
+{
+  "baseline_build": "8999999",
+  "breaking": [],
+  "detail": [
+    {
+      "anchor": "8999999-9000000",
+      "class_pair_candidates_count": 0,
+      "classes_added": [
+        "CBaseAnimGraph"
+      ],
+      "classes_changed": [
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "ADD": 1,
+            "OFFSET_CHANGE": 1
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "CBaseCombatCharacter",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "1000",
+            "to": "1008"
+          },
+          "static_field_ops": 0
+        }
+      ],
+      "classes_changed_total": 1,
+      "classes_changed_truncated": false,
+      "classes_removed": [],
+      "field_move_candidates_count": 0,
+      "from_build": "8999999",
+      "from_date": "2026-08-01",
+      "to_build": "9000000",
+      "to_date": "2026-08-14"
+    }
+  ],
+  "latest_build": "9000001",
+  "platform": "windows-x86_64",
+  "schema_version": "0.8.0",
+  "transitions": [
+    {
+      "anchor": "8999999-9000000",
+      "counts": {
+        "class_added": 1,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 2
+      },
+      "from_build": "8999999",
+      "from_date": "2026-08-01",
+      "is_empty": false,
+      "to_build": "9000000",
+      "to_date": "2026-08-14"
+    },
+    {
+      "anchor": "9000000-9000001",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 0,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "9000000",
+      "from_date": "2026-08-14",
+      "is_empty": true,
+      "to_build": "9000001",
+      "to_date": "2026-08-28"
+    }
+  ]
+}

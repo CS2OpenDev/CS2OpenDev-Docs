@@ -1,12 +1,14 @@
 ---
-layout: default
 title: ParticlePinDistance_t
-nav_exclude: true
+module: particles
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / ParticlePinDistance_t
 
 # ParticlePinDistance_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** particles
 
@@ -14,7 +16,7 @@ nav_exclude: true
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `PARTICLE_PIN_DISTANCE_NONE` | -1 | Don't Break |
+| `PARTICLE_PIN_DISTANCE_NONE` | -1 (`0xffffffff`) | Don't Break |
 | `PARTICLE_PIN_DISTANCE_NEIGHBOR` | 0 | Distance to Neighboring Particle |
 | `PARTICLE_PIN_DISTANCE_FARTHEST` | 1 | Distance to Farthest Particle |
 | `PARTICLE_PIN_DISTANCE_FIRST` | 2 | Distance to First Particle |
@@ -25,4 +27,4 @@ nav_exclude: true
 | `PARTICLE_PIN_DISTANCE_CP_PAIR_BOTH` | 8 | Distance to Both of Two Control Points |
 | `PARTICLE_PIN_SPEED` | 9 | Particle Speed |
 | `PARTICLE_PIN_COLLECTION_AGE` | 10 | Collection Age |
-| `PARTICLE_PIN_FLOAT_VALUE` | 11 | Break Value of >= 1 |
+| `PARTICLE_PIN_FLOAT_VALUE` | 11 | Break Value of &gt;= 1 |

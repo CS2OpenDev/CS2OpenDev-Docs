@@ -1,12 +1,14 @@
 ---
-layout: default
 title: ParticlePreviewState_t
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / ParticlePreviewState_t
 
 # ParticlePreviewState_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 112 bytes (`0x70`) · **Align:** 8 · **Module:** particles
 

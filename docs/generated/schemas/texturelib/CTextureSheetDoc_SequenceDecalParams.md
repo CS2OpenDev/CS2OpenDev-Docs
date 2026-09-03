@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CTextureSheetDoc_SequenceDecalParams
-nav_exclude: true
+module: texturelib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [texturelib](../texturelib.md) / CTextureSheetDoc_SequenceDecalParams
 
 # CTextureSheetDoc_SequenceDecalParams
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 36 bytes (`0x24`) · **Align:** 4 · **Module:** texturelib
 

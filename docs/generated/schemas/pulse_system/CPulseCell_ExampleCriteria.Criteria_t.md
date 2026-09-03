@@ -1,14 +1,16 @@
 ---
-layout: default
 title: "CPulseCell_ExampleCriteria::Criteria_t"
-nav_exclude: true
+module: pulse_system
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [pulse_system](../pulse_system.md) / CPulseCell_ExampleCriteria::Criteria_t
 
 # CPulseCell_ExampleCriteria::Criteria_t
 
-**Kind:** class · **Size:** 12 bytes (`0xc`) · **Align:** 255 · **Module:** pulse_system
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 12 bytes (`0xc`) · **Align:** n/a (unspecified) · **Module:** pulse_system
 
 ## Memory layout
 

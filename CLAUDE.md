@@ -4,61 +4,51 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repo is (and is not)
 
-This repo is a **documentation generator and Jekyll site**, not a CS2 plugin / SDK / runtime. It auto-generates Markdown reference docs (entity schemas, Protobuf messages, ConVars, commands, UML diagrams) from a snapshot of CS2 game files and publishes them to GitHub Pages.
+This repo is a **documentation generator and static site**, not a CS2 plugin / SDK / runtime. It auto-generates Markdown and JSON reference docs (entity schemas, Protobuf messages, ConVars, commands, UML diagrams) from a snapshot of CS2 game files and publishes an Astro + Starlight site to GitHub Pages.
 
-Do **not** write CS2 plugin code, server-side logic, demo parsers, or game tooling here. Such requests should be redirected to a separate consumer project — this repo only describes the data those projects need. `AGENTS.md` and `.github/agents/cs2-engineer.agent.md` exist as **deliverables for external consumers** of the docs (loaded into their AI tools); they do not describe what gets built *in this repo*.
+Do **not** write CS2 plugin code, server-side logic, demo parsers, or game tooling here. Such requests should be redirected to a separate consumer project; this repo only describes the data those projects need. `AGENTS.md` and `.github/agents/cs2-engineer.agent.md` exist as **deliverables for external consumers** of the docs (loaded into their AI tools); they do not describe what gets built *in this repo*.
 
 ## Architecture
 
 ```
 CS2OpenDev/CS2OpenDev-SchemaTracker (upstream, `latest` branch)
-    └── upstream/schema-tracker/  ← read-only git submodule tracking `latest` (single build + LATEST.json)
+    └── upstream/schema-tracker/  ← gitignored shallow clone of `latest` (single build + LATEST.json)
             artifacts/<build_id>/<platform>/*.json + protos.descriptorset
             │
             ▼
-    docs/generate_docs.py           ← the only generator
-    docs/overlays/                  ← YAML community annotations (HAND-EDITED)
+    docs/generate_docs.py       ← the only generator; also runs docs/site_data.py
+    docs/overlays/               ← YAML community annotations (HAND-EDITED)
             │
-            ▼
-    docs/index.md                   ← GENERATED home page (Jekyll requires it at site root)
-    docs/generated/                 ← GENERATED reference docs (everything else)
-        schemas.md, schemas/*.md
-        protobufs.md, proto/*.md
-        diagrams/*.md
-        convars.md, commands.md, gameevents.md
-        cs2_schema.json              ← portable JSON Schema (2020-12) for codegen
-        gameevents_schema.json       ← portable JSON Schema for game events
-            │
-            ▼
-    Jekyll (just-the-docs theme, hand-maintained _config.yml + _includes/) → GitHub Pages
+            ├── docs/index.md              ← GENERATED Markdown landing page
+            ├── docs/generated/            ← GENERATED Markdown + downstream-codegen-schemas/*.json
+            └── docs/generated/data/       ← GENERATED JSON bundle that backs the site
+                    │
+                    ▼
+            site/  Astro + Starlight, reads only the JSON above → GitHub Pages
 ```
 
-Everything comes from **one** CS2OpenDev-SchemaTracker artifact set —
-`artifacts/<build_id>/<platform>/` — selected by `resolve_build_dir` (highest-numbered
+Everything comes from **one** CS2OpenDev-SchemaTracker artifact set,
+`artifacts/<build_id>/<platform>/`, selected by `resolve_build_dir` (highest-numbered
 committed build for the chosen platform, default `windows-x86_64`). Inputs the generator reads:
-- `entity_schema.json` — the structured entity dump (classes, structs, enums, fields, offsets, sizes, parents, metadata, binary `module` + `projectName`).  Source of truth for the schema; loaded by `load_entity_schema` and shaped by `_convert_class`/`_convert_enum`.
-- `protos.descriptorset` — a **prebuilt** `FileDescriptorSet` of the build's protobufs, read directly via `google.protobuf.descriptor_pb2` (no `protoc`).  `google/protobuf/*` well-known files are skipped.
-- `convars.json`, `commands.json` — loaded as structured JSON (richer than the old text dumps: `valueType`, min/max, completion-callback flags).
-- `gameevents.json` — structurally-parsed game-event registry.
-- `provenance.json` — build id, Steam date, schema/tool versions (page/schema headers).
+- `entity_schema.json`: the structured entity dump (classes, structs, enums, fields, offsets, sizes, parents, metadata, binary `module` + `projectName`).  Source of truth for the schema; loaded by `load_entity_schema` and shaped by `_convert_class`/`_convert_enum`.
+- `protos.descriptorset`: a **prebuilt** `FileDescriptorSet` of the build's protobufs, read directly via `google.protobuf.descriptor_pb2` (no `protoc`).  `google/protobuf/*` well-known files are skipped.
+- `convars.json`, `commands.json`: loaded as structured JSON (richer than the old text dumps: `valueType`, min/max, completion-callback flags).
+- `gameevents.json`: structurally-parsed game-event registry.
+- `provenance.json`: build id, Steam date, schema/tool versions (page/schema headers).
 
-SchemaTracker walks the **shipped CS2 runtime binaries**, so coverage is runtime-only
-(~1,500 entities across `client`/`server`/`entity2`/`pulse_runtime_lib`/`particleslib`/`animgraphlib`);
-the Source 2 editor/tooling schema is deliberately absent. Content artifacts
-(`item_definitions.json`, `game_modes.json`, `network_messages.json`, `changelog.json`, …)
-are available for new pages but not all wired up yet.
+`windows-x86_64` is a superset build: SchemaTracker walks both the shipped CS2 **runtime** binaries and the Windows-only **tool** binaries (`hammer`, `resourcecompiler`, `worldrenderer`, `modeldoc_editor`, and others), so the schema spans 47 modules. See `docs/generated/data/meta.json` for the current per-build module list and counts. Content artifacts (items, game modes, surfaces, props, maps, network/demo message tables) are wired into `docs/generated/data/`; see `docs/generated/data/README.md`.
 
-No external tools are shelled out — `protoc` is no longer required.
+No external tools are shelled out; `protoc` is no longer required.
 
 Per-entity overlays at `docs/overlays/<module>.yml` (multi-entity, recommended) or `docs/overlays/<module>/<EntityName>.yml` (legacy single-file) get merged into the generated output. Format is documented in `docs/overlays/README.md`.
 
 ## Critical rules
 
-- **Never hand-edit anything under `docs/generated/`.** Every file there is overwritten by the next generator run. The home page (`docs/index.md`) is also generated — don't hand-edit it. To change generated content, edit either (a) the generator script or (b) an overlay YAML.
-- `docs/_config.yml`, `docs/_includes/`, and `docs/Gemfile` are **hand-maintained**. The generator does not touch them. Theme/layout customization goes here.
-- **Never edit `upstream/schema-tracker/`** — it's a read-only submodule pointing at `CS2OpenDev/CS2OpenDev-SchemaTracker`. It tracks that repo's **`latest`** branch, which carries only the newest build's artifacts plus a root `LATEST.json` pointer — so `git submodule update --init --remote --depth 1 upstream/schema-tracker` is a tens-of-MB checkout, not the multi-GB full history. Without it materialised, the generator exits with an error. For local dev you can bypass the submodule with `--artifacts-root <path-to-a-SchemaTracker-checkout>/artifacts`. Note: the `latest` branch now also carries `artifacts/schema_evolution/<platform>.json` (input to the Schema History page), so a plain `latest`-only checkout renders Schema History too — no supplemental fetch required.
-- The submodule pointers are only advanced by the scheduled GitHub Action (`.github/workflows/generate-docs.yml`) — don't bump them locally as part of a content change unless that's specifically what you're doing.
+- **Never hand-edit anything under `docs/generated/`**: not the Markdown, not `downstream-codegen-schemas/`, not `data/`. Every file there is overwritten by the next generator run. `docs/index.md` is also generated; don't hand-edit it. To change generated content, edit either (a) the generator (`docs/generate_docs.py` / `docs/site_data.py`) or (b) an overlay YAML.
+- **The site never reads generated Markdown.** Every page under `site/` renders from `docs/generated/downstream-codegen-schemas/cs2_schema.json` and `docs/generated/data/*.json`. Hand-written site content (the landing page, blog posts) lives under `site/src/content/docs/`. The sidebar in `site/astro.config.mjs` is hand-written and must never be switched to an autogenerated one over the entity pages: that puts roughly 4,400 links on every page of the site.
+- **Never edit `upstream/schema-tracker/`**. It's a read-only, gitignored shallow clone of `CS2OpenDev/CS2OpenDev-SchemaTracker`'s **`latest`** branch, which carries only the newest build's artifacts plus a root `LATEST.json` pointer, so the clone fetches a few MB, not the multi-GB full history. There is no submodule and no gitlink: nothing in this repo records which upstream commit was used, and the Action clones the branch fresh on every run. Without it materialised, the generator exits with an error. For local dev you can point `--artifacts-root` at any SchemaTracker checkout's `artifacts/` directory instead.
 - `AGENTS.md` is the canonical context-for-external-AI-tools file. If schema/architecture facts change, update it there (not in CLAUDE.md, which is for *this* repo's contributors).
+- Run the generator's tests after a generator change (`python3 -m unittest discover -s docs/tests -t docs/tests`), and pass `--strict` the way CI does so an unresolved overlay key fails the run instead of silently vanishing.
 
 ## Common commands
 
@@ -66,27 +56,22 @@ Per-entity overlays at `docs/overlays/<module>.yml` (multi-entity, recommended) 
 # Materialise just the latest SchemaTracker build (shallow clone of `latest`):
 git clone --depth 1 --single-branch --branch latest \
   https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker.git upstream/schema-tracker
-# (or, via the submodule declaration:)
-#   git submodule update --init --remote --depth 1 upstream/schema-tracker
 
-# Regenerate all docs (the only build step that matters):
-pip install pyyaml protobuf   # protoc is NOT needed
+# Regenerate all docs, including the site's JSON data bundle:
+pip install -r docs/requirements.txt   # protoc is NOT needed
 python3 docs/generate_docs.py --repo-root . \
   --artifacts-root ./upstream/schema-tracker/artifacts --build latest \
-  --platform windows-x86_64 --output docs
+  --platform windows-x86_64 --output docs --strict
 
-# Local dev against a full SchemaTracker checkout (skip the submodule):
-python3 docs/generate_docs.py --repo-root . \
-  --artifacts-root /path/to/CS2OpenDev-SchemaTracker/artifacts --output docs
+# Run the generator's tests:
+python3 -m unittest discover -s docs/tests -t docs/tests
+
+# Build the site (from site/):
+npm ci && npm run build && npm run check
 ```
 
-There is no test suite, lint config, or build step beyond the Python generator and Jekyll. Validation is "run the generator, `git status` should show changes only under `docs/generated/` (plus `docs/index.md` if entity counts changed)."
+Validation is "run the generator with `--strict`, `git status` should show changes only under `docs/generated/` (plus `docs/index.md` if entity counts changed); the generator's tests, and the site build and checks, all pass."
 
 ## Workflow behavior worth knowing
 
-`.github/workflows/generate-docs.yml` runs every 4 hours (cron) and on pushes that touch `docs/overlays/**`, `docs/generate_docs.py`, or the workflow itself.
-
-- **Push event** → regenerates and commits straight to the branch (`[skip ci]`).
-- **Schedule / manual dispatch** → opens or updates a PR on branch `automated/docs-update`.
-
-So: a PR that only edits an overlay will trigger a regeneration commit on the same branch. Don't be surprised when generated files under `docs/generated/` change without you authoring them.
+`.github/workflows/generate-docs.yml` polls every 4 hours and rebuilds on a push touching `docs/overlays/**`, `docs/generate_docs.py`, `docs/site_data.py`, `docs/tests/**`, or `site/**` (README edits under the overlays and the site are excluded). It regenerates the docs and runs the generator's tests. `--strict` is on for pushes and manual runs; the scheduled poll runs without it and turns `UNRESOLVED`, `MODULE` and `WARNING` lines into `::warning::` annotations so an upstream rename cannot stall the site. On `main` any diff is committed straight to the branch (`[skip ci]`, rebased onto the tip first; the commit is diff-gated, so an unchanged upstream build is a no-op). On any other branch nothing is committed: the regenerated `docs/generated/` and `docs/index.md` go to the build job as a workflow artifact. A separate job then builds the Astro site and runs its link and size checks before deploying to GitHub Pages, so a site-only change with no docs diff still redeploys.

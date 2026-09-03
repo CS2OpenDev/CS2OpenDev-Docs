@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CSmartPropElement_FitOnLine
-nav_exclude: true
+module: smartprops
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [smartprops](../smartprops.md) / CSmartPropElement_FitOnLine
 
 # CSmartPropElement_FitOnLine
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 736 bytes (`0x2e0`) · **Align:** 8 · **Module:** smartprops
 

@@ -1,0 +1,1513 @@
+{
+  "game_types": [
+    {
+      "id": "classic",
+      "index": 0,
+      "modes": [
+        {
+          "convars": [],
+          "description_token": "#SFUI_GameModeCasualDesc",
+          "display_name": "",
+          "exhibit_game_type": "",
+          "game_mode": 0,
+          "game_type": 0,
+          "has_convar_overrides": false,
+          "id": "casual",
+          "map_groups": [
+            "template#include"
+          ],
+          "max_players": 20,
+          "name_token": "#SFUI_GameModeCasual",
+          "type_flags": 0
+        },
+        {
+          "convars": [],
+          "description_token": "#SFUI_GameModeCompetitiveDesc",
+          "display_name": "",
+          "exhibit_game_type": "",
+          "game_mode": 0,
+          "game_type": 0,
+          "has_convar_overrides": false,
+          "id": "competitive",
+          "map_groups": [
+            "template#include"
+          ],
+          "max_players": 10,
+          "name_token": "#SFUI_GameModeCompetitive",
+          "type_flags": 0
+        },
+        {
+          "convars": [],
+          "description_token": "#SFUI_GameModeCompetitiveDesc",
+          "display_name": "",
+          "exhibit_game_type": "",
+          "game_mode": 0,
+          "game_type": 0,
+          "has_convar_overrides": false,
+          "id": "new_user_training",
+          "map_groups": [
+            "mg_de_dust2"
+          ],
+          "max_players": 10,
+          "name_token": "#SFUI_GameModeCompetitive",
+          "type_flags": 0
+        },
+        {
+          "convars": [],
+          "description_token": "#SFUI_GameModeRetakesDesc",
+          "display_name": "",
+          "exhibit_game_type": "",
+          "game_mode": 0,
+          "game_type": 0,
+          "has_convar_overrides": false,
+          "id": "retakes",
+          "map_groups": [
+            "mg_casualalpha",
+            "mg_casualdelta"
+          ],
+          "max_players": 7,
+          "name_token": "#SFUI_GameModeRetakes",
+          "type_flags": 0
+        },
+        {
+          "convars": [],
+          "description_token": "#SFUI_GameModeScrimComp2v2Desc",
+          "display_name": "",
+          "exhibit_game_type": "",
+          "game_mode": 0,
+          "game_type": 0,
+          "has_convar_overrides": false,
+          "id": "scrimcomp2v2",
+          "map_groups": [
+            "template#include"
+          ],
+          "max_players": 4,
+          "name_token": "#SFUI_GameModeScrimComp2v2",
+          "type_flags": 0
+        },
+        {
+          "convars": [],
+          "description_token": "#SFUI_GameModeScrimComp5v5Desc",
+          "display_name": "",
+          "exhibit_game_type": "",
+          "game_mode": 0,
+          "game_type": 0,
+          "has_convar_overrides": false,
+          "id": "scrimcomp5v5",
+          "map_groups": [
+            "template#include"
+          ],
+          "max_players": 10,
+          "name_token": "#SFUI_GameModeScrimComp5v5",
+          "type_flags": 0
+        }
+      ]
+    },
+    {
+      "id": "cooperative",
+      "index": 0,
+      "modes": [
+        {
+          "convars": [],
+          "description_token": "#SFUI_GameModeCooperativeDesc",
+          "display_name": "",
+          "exhibit_game_type": "",
+          "game_mode": 0,
+          "game_type": 0,
+          "has_convar_overrides": false,
+          "id": "cooperative",
+          "map_groups": [],
+          "max_players": 20,
+          "name_token": "#SFUI_GameModeCooperative",
+          "type_flags": 0
+        },
+        {
+          "convars": [],
+          "description_token": "#SFUI_GameModeCooperativeDesc",
+          "display_name": "",
+          "exhibit_game_type": "",
+          "game_mode": 0,
+          "game_type": 0,
+          "has_convar_overrides": false,
+          "id": "coopmission",
+          "map_groups": [],
+          "max_players": 10,
+          "name_token": "#SFUI_GameModeCoopMission",
+          "type_flags": 0
+        }
+      ]
+    },
+    {
+      "id": "custom",
+      "index": 0,
+      "modes": [
+        {
+          "convars": [],
+          "description_token": "#SFUI_GameModeCustomDesc",
+          "display_name": "",
+          "exhibit_game_type": "",
+          "game_mode": 0,
+          "game_type": 0,
+          "has_convar_overrides": false,
+          "id": "custom",
+          "map_groups": [],
+          "max_players": 100,
+          "name_token": "#SFUI_GameModeCustom",
+          "type_flags": 0
+        }
+      ]
+    },
+    {
+      "id": "freeforall",
+      "index": 0,
+      "modes": [
+        {
+          "convars": [],
+          "description_token": "#SFUI_GameModeSurvivalDesc",
+          "display_name": "",
+          "exhibit_game_type": "",
+          "game_mode": 0,
+          "game_type": 0,
+          "has_convar_overrides": false,
+          "id": "survival",
+          "map_groups": [
+            "mg_dz_sirocco"
+          ],
+          "max_players": 16,
+          "name_token": "#SFUI_GameModeSurvival",
+          "type_flags": 0
+        }
+      ]
+    },
+    {
+      "id": "gungame",
+      "index": 0,
+      "modes": [
+        {
+          "convars": [],
+          "description_token": "#SFUI_DeathmatchDesc",
+          "display_name": "",
+          "exhibit_game_type": "",
+          "game_mode": 0,
+          "game_type": 0,
+          "has_convar_overrides": false,
+          "id": "deathmatch",
+          "map_groups": [
+            "template#include"
+          ],
+          "max_players": 16,
+          "name_token": "#SFUI_Deathmatch",
+          "type_flags": 0
+        },
+        {
+          "convars": [],
+          "description_token": "#SFUI_GameModeGGProgressiveDesc",
+          "display_name": "",
+          "exhibit_game_type": "",
+          "game_mode": 0,
+          "game_type": 0,
+          "has_convar_overrides": false,
+          "id": "gungameprogressive",
+          "map_groups": [
+            "mg_armsrace"
+          ],
+          "max_players": 16,
+          "name_token": "#SFUI_GameModeGGProgressive",
+          "type_flags": 0
+        },
+        {
+          "convars": [],
+          "description_token": "#SFUI_GameModeGGBombDesc",
+          "display_name": "",
+          "exhibit_game_type": "",
+          "game_mode": 0,
+          "game_type": 0,
+          "has_convar_overrides": false,
+          "id": "gungametrbomb",
+          "map_groups": [
+            "mg_demolition"
+          ],
+          "max_players": 16,
+          "name_token": "#SFUI_GameModeGGBomb",
+          "type_flags": 0
+        }
+      ]
+    },
+    {
+      "id": "skirmish",
+      "index": 0,
+      "modes": [
+        {
+          "convars": [],
+          "description_token": "#SFUI_GameModeSkirmishDesc",
+          "display_name": "",
+          "exhibit_game_type": "",
+          "game_mode": 0,
+          "game_type": 0,
+          "has_convar_overrides": false,
+          "id": "skirmish",
+          "map_groups": [
+            "mg_skirmish_armsrace"
+          ],
+          "max_players": 16,
+          "name_token": "#SFUI_GameModeSkirmish",
+          "type_flags": 0
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "index": 0,
+      "modes": [
+        {
+          "convars": [],
+          "description_token": "#SFUI_GameModeTrainingDesc",
+          "display_name": "",
+          "exhibit_game_type": "",
+          "game_mode": 0,
+          "game_type": 0,
+          "has_convar_overrides": false,
+          "id": "training",
+          "map_groups": [],
+          "max_players": 1,
+          "name_token": "#SFUI_GameTypeTraining",
+          "type_flags": 0
+        }
+      ]
+    }
+  ],
+  "map_groups": [
+    {
+      "id": "mg_active",
+      "maps": [
+        "de_dust2",
+        "de_inferno",
+        "de_mirage",
+        "de_nuke",
+        "de_overpass",
+        "de_train",
+        "de_vertigo"
+      ]
+    },
+    {
+      "id": "mg_ar_baggage",
+      "maps": [
+        "ar_baggage"
+      ]
+    },
+    {
+      "id": "mg_ar_dizzy",
+      "maps": [
+        "ar_dizzy"
+      ]
+    },
+    {
+      "id": "mg_ar_lake",
+      "maps": [
+        "de_lake"
+      ]
+    },
+    {
+      "id": "mg_ar_lunacy",
+      "maps": [
+        "ar_lunacy"
+      ]
+    },
+    {
+      "id": "mg_ar_monastery",
+      "maps": [
+        "ar_monastery"
+      ]
+    },
+    {
+      "id": "mg_ar_pool_day",
+      "maps": [
+        "ar_pool_day"
+      ]
+    },
+    {
+      "id": "mg_ar_safehouse",
+      "maps": [
+        "de_safehouse"
+      ]
+    },
+    {
+      "id": "mg_ar_shoots",
+      "maps": [
+        "ar_shoots"
+      ]
+    },
+    {
+      "id": "mg_ar_shoots_night",
+      "maps": [
+        "ar_shoots_night"
+      ]
+    },
+    {
+      "id": "mg_ar_stmarc",
+      "maps": [
+        "de_stmarc"
+      ]
+    },
+    {
+      "id": "mg_armsrace",
+      "maps": [
+        "ar_baggage",
+        "ar_pool_day",
+        "ar_shoots",
+        "ar_shoots_night"
+      ]
+    },
+    {
+      "id": "mg_casualalpha",
+      "maps": [
+        "de_cache",
+        "de_dust2",
+        "de_inferno",
+        "de_mirage",
+        "de_vertigo"
+      ]
+    },
+    {
+      "id": "mg_casualcharlie",
+      "maps": [
+        "cs_shelter",
+        "de_boulder",
+        "de_fachwerk"
+      ]
+    },
+    {
+      "id": "mg_casualdelta",
+      "maps": [
+        "de_ancient_night",
+        "de_anubis",
+        "de_nuke",
+        "de_overpass",
+        "de_train"
+      ]
+    },
+    {
+      "id": "mg_casualsigma",
+      "maps": [
+        "de_dust2",
+        "de_inferno",
+        "de_mirage",
+        "de_vertigo"
+      ]
+    },
+    {
+      "id": "mg_coop_autumn",
+      "maps": [
+        "coop_autumn"
+      ]
+    },
+    {
+      "id": "mg_coop_cementplant",
+      "maps": [
+        "coop_cementplant"
+      ]
+    },
+    {
+      "id": "mg_coop_fall",
+      "maps": [
+        "coop_fall"
+      ]
+    },
+    {
+      "id": "mg_coop_kasbah",
+      "maps": [
+        "coop_kasbah"
+      ]
+    },
+    {
+      "id": "mg_cs_agency",
+      "maps": [
+        "cs_agency"
+      ]
+    },
+    {
+      "id": "mg_cs_alpine",
+      "maps": [
+        "cs_alpine"
+      ]
+    },
+    {
+      "id": "mg_cs_apollo",
+      "maps": [
+        "cs_apollo"
+      ]
+    },
+    {
+      "id": "mg_cs_assault",
+      "maps": [
+        "cs_assault"
+      ]
+    },
+    {
+      "id": "mg_cs_backalley",
+      "maps": [
+        "cs_backalley"
+      ]
+    },
+    {
+      "id": "mg_cs_climb",
+      "maps": [
+        "cs_climb"
+      ]
+    },
+    {
+      "id": "mg_cs_cruise",
+      "maps": [
+        "cs_cruise"
+      ]
+    },
+    {
+      "id": "mg_cs_downtown",
+      "maps": [
+        "cs_downtown"
+      ]
+    },
+    {
+      "id": "mg_cs_insertion",
+      "maps": [
+        "cs_insertion"
+      ]
+    },
+    {
+      "id": "mg_cs_insertion2",
+      "maps": [
+        "cs_insertion2"
+      ]
+    },
+    {
+      "id": "mg_cs_italy",
+      "maps": [
+        "cs_italy"
+      ]
+    },
+    {
+      "id": "mg_cs_militia",
+      "maps": [
+        "cs_militia"
+      ]
+    },
+    {
+      "id": "mg_cs_motel",
+      "maps": [
+        "cs_motel"
+      ]
+    },
+    {
+      "id": "mg_cs_museum",
+      "maps": [
+        "cs_museum"
+      ]
+    },
+    {
+      "id": "mg_cs_office",
+      "maps": [
+        "cs_office"
+      ]
+    },
+    {
+      "id": "mg_cs_rush",
+      "maps": [
+        "cs_rush"
+      ]
+    },
+    {
+      "id": "mg_cs_shelter",
+      "maps": [
+        "cs_shelter"
+      ]
+    },
+    {
+      "id": "mg_cs_siege",
+      "maps": [
+        "cs_siege"
+      ]
+    },
+    {
+      "id": "mg_cs_thunder",
+      "maps": [
+        "cs_thunder"
+      ]
+    },
+    {
+      "id": "mg_cs_workout",
+      "maps": [
+        "cs_workout"
+      ]
+    },
+    {
+      "id": "mg_de_abbey",
+      "maps": [
+        "de_abbey"
+      ]
+    },
+    {
+      "id": "mg_de_ali",
+      "maps": [
+        "de_ali"
+      ]
+    },
+    {
+      "id": "mg_de_ancient",
+      "maps": [
+        "de_ancient"
+      ]
+    },
+    {
+      "id": "mg_de_ancient_night",
+      "maps": [
+        "de_ancient_night"
+      ]
+    },
+    {
+      "id": "mg_de_anubis",
+      "maps": [
+        "de_anubis"
+      ]
+    },
+    {
+      "id": "mg_de_assembly",
+      "maps": [
+        "de_assembly"
+      ]
+    },
+    {
+      "id": "mg_de_austria",
+      "maps": [
+        "de_austria"
+      ]
+    },
+    {
+      "id": "mg_de_aztec",
+      "maps": [
+        "de_aztec"
+      ]
+    },
+    {
+      "id": "mg_de_bank",
+      "maps": [
+        "de_bank"
+      ]
+    },
+    {
+      "id": "mg_de_basalt",
+      "maps": [
+        "de_basalt"
+      ]
+    },
+    {
+      "id": "mg_de_bazaar",
+      "maps": [
+        "de_bazaar"
+      ]
+    },
+    {
+      "id": "mg_de_biome",
+      "maps": [
+        "de_biome"
+      ]
+    },
+    {
+      "id": "mg_de_blackgold",
+      "maps": [
+        "de_blackgold"
+      ]
+    },
+    {
+      "id": "mg_de_blagai",
+      "maps": [
+        "de_blagai"
+      ]
+    },
+    {
+      "id": "mg_de_boulder",
+      "maps": [
+        "de_boulder"
+      ]
+    },
+    {
+      "id": "mg_de_boyard",
+      "maps": [
+        "de_boyard"
+      ]
+    },
+    {
+      "id": "mg_de_breach",
+      "maps": [
+        "de_breach"
+      ]
+    },
+    {
+      "id": "mg_de_brewery",
+      "maps": [
+        "de_brewery"
+      ]
+    },
+    {
+      "id": "mg_de_cache",
+      "maps": [
+        "de_cache"
+      ]
+    },
+    {
+      "id": "mg_de_cache_scrimmagemap",
+      "maps": [
+        "de_cache_scrimmagemap"
+      ]
+    },
+    {
+      "id": "mg_de_calavera",
+      "maps": [
+        "de_calavera"
+      ]
+    },
+    {
+      "id": "mg_de_canals",
+      "maps": [
+        "de_canals"
+      ]
+    },
+    {
+      "id": "mg_de_castle",
+      "maps": [
+        "de_castle"
+      ]
+    },
+    {
+      "id": "mg_de_cbble",
+      "maps": [
+        "de_cbble"
+      ]
+    },
+    {
+      "id": "mg_de_chalice",
+      "maps": [
+        "de_chalice"
+      ]
+    },
+    {
+      "id": "mg_de_chinatown",
+      "maps": [
+        "de_chinatown"
+      ]
+    },
+    {
+      "id": "mg_de_chlorine",
+      "maps": [
+        "de_chlorine"
+      ]
+    },
+    {
+      "id": "mg_de_coast",
+      "maps": [
+        "de_coast"
+      ]
+    },
+    {
+      "id": "mg_de_crete",
+      "maps": [
+        "de_crete"
+      ]
+    },
+    {
+      "id": "mg_de_debris",
+      "maps": [
+        "de_debris"
+      ]
+    },
+    {
+      "id": "mg_de_dogtown",
+      "maps": [
+        "de_dogtown"
+      ]
+    },
+    {
+      "id": "mg_de_dust",
+      "maps": [
+        "de_dust"
+      ]
+    },
+    {
+      "id": "mg_de_dust2",
+      "maps": [
+        "de_dust2"
+      ]
+    },
+    {
+      "id": "mg_de_edin",
+      "maps": [
+        "de_edin"
+      ]
+    },
+    {
+      "id": "mg_de_eldorado",
+      "maps": [
+        "de_eldorado"
+      ]
+    },
+    {
+      "id": "mg_de_elysion",
+      "maps": [
+        "de_elysion"
+      ]
+    },
+    {
+      "id": "mg_de_empire",
+      "maps": [
+        "de_empire"
+      ]
+    },
+    {
+      "id": "mg_de_engage",
+      "maps": [
+        "de_engage"
+      ]
+    },
+    {
+      "id": "mg_de_extraction",
+      "maps": [
+        "de_extraction"
+      ]
+    },
+    {
+      "id": "mg_de_facade",
+      "maps": [
+        "de_facade"
+      ]
+    },
+    {
+      "id": "mg_de_fachwerk",
+      "maps": [
+        "de_fachwerk"
+      ]
+    },
+    {
+      "id": "mg_de_favela",
+      "maps": [
+        "de_favela"
+      ]
+    },
+    {
+      "id": "mg_de_golden",
+      "maps": [
+        "de_golden"
+      ]
+    },
+    {
+      "id": "mg_de_grail",
+      "maps": [
+        "de_grail"
+      ]
+    },
+    {
+      "id": "mg_de_grind",
+      "maps": [
+        "de_grind"
+      ]
+    },
+    {
+      "id": "mg_de_guard",
+      "maps": [
+        "de_guard"
+      ]
+    },
+    {
+      "id": "mg_de_gwalior",
+      "maps": [
+        "de_gwalior"
+      ]
+    },
+    {
+      "id": "mg_de_hive",
+      "maps": [
+        "de_hive"
+      ]
+    },
+    {
+      "id": "mg_de_inferno",
+      "maps": [
+        "de_inferno"
+      ]
+    },
+    {
+      "id": "mg_de_iris",
+      "maps": [
+        "de_iris"
+      ]
+    },
+    {
+      "id": "mg_de_jura",
+      "maps": [
+        "de_jura"
+      ]
+    },
+    {
+      "id": "mg_de_lake",
+      "maps": [
+        "de_lake"
+      ]
+    },
+    {
+      "id": "mg_de_library",
+      "maps": [
+        "de_library"
+      ]
+    },
+    {
+      "id": "mg_de_lite",
+      "maps": [
+        "de_lite"
+      ]
+    },
+    {
+      "id": "mg_de_log",
+      "maps": [
+        "de_log"
+      ]
+    },
+    {
+      "id": "mg_de_marquis",
+      "maps": [
+        "de_marquis"
+      ]
+    },
+    {
+      "id": "mg_de_memento",
+      "maps": [
+        "de_memento"
+      ]
+    },
+    {
+      "id": "mg_de_mikla",
+      "maps": [
+        "de_mikla"
+      ]
+    },
+    {
+      "id": "mg_de_mills",
+      "maps": [
+        "de_mills"
+      ]
+    },
+    {
+      "id": "mg_de_mirage",
+      "maps": [
+        "de_mirage"
+      ]
+    },
+    {
+      "id": "mg_de_mirage_scrimmagemap",
+      "maps": [
+        "de_mirage_scrimmagemap"
+      ]
+    },
+    {
+      "id": "mg_de_mist",
+      "maps": [
+        "de_mist"
+      ]
+    },
+    {
+      "id": "mg_de_mocha",
+      "maps": [
+        "de_mocha"
+      ]
+    },
+    {
+      "id": "mg_de_mutiny",
+      "maps": [
+        "de_mutiny"
+      ]
+    },
+    {
+      "id": "mg_de_nuke",
+      "maps": [
+        "de_nuke"
+      ]
+    },
+    {
+      "id": "mg_de_overgrown",
+      "maps": [
+        "de_overgrown"
+      ]
+    },
+    {
+      "id": "mg_de_overpass",
+      "maps": [
+        "de_overpass"
+      ]
+    },
+    {
+      "id": "mg_de_palacio",
+      "maps": [
+        "de_palacio"
+      ]
+    },
+    {
+      "id": "mg_de_palais",
+      "maps": [
+        "de_palais"
+      ]
+    },
+    {
+      "id": "mg_de_pitstop",
+      "maps": [
+        "de_pitstop"
+      ]
+    },
+    {
+      "id": "mg_de_poseidon",
+      "maps": [
+        "de_poseidon"
+      ]
+    },
+    {
+      "id": "mg_de_prime",
+      "maps": [
+        "de_prime"
+      ]
+    },
+    {
+      "id": "mg_de_rails",
+      "maps": [
+        "de_rails"
+      ]
+    },
+    {
+      "id": "mg_de_ravine",
+      "maps": [
+        "de_ravine"
+      ]
+    },
+    {
+      "id": "mg_de_resort",
+      "maps": [
+        "de_resort"
+      ]
+    },
+    {
+      "id": "mg_de_rooftop",
+      "maps": [
+        "de_rooftop"
+      ]
+    },
+    {
+      "id": "mg_de_royal",
+      "maps": [
+        "de_royal"
+      ]
+    },
+    {
+      "id": "mg_de_ruby",
+      "maps": [
+        "de_ruby"
+      ]
+    },
+    {
+      "id": "mg_de_ruins",
+      "maps": [
+        "de_ruins"
+      ]
+    },
+    {
+      "id": "mg_de_safehouse",
+      "maps": [
+        "de_safehouse"
+      ]
+    },
+    {
+      "id": "mg_de_sanctum",
+      "maps": [
+        "de_sanctum"
+      ]
+    },
+    {
+      "id": "mg_de_santorini",
+      "maps": [
+        "de_santorini"
+      ]
+    },
+    {
+      "id": "mg_de_seaside",
+      "maps": [
+        "de_seaside"
+      ]
+    },
+    {
+      "id": "mg_de_season",
+      "maps": [
+        "de_season"
+      ]
+    },
+    {
+      "id": "mg_de_shipped",
+      "maps": [
+        "de_shipped"
+      ]
+    },
+    {
+      "id": "mg_de_shortdust",
+      "maps": [
+        "de_shortdust"
+      ]
+    },
+    {
+      "id": "mg_de_shortnuke",
+      "maps": [
+        "de_shortnuke"
+      ]
+    },
+    {
+      "id": "mg_de_shorttrain",
+      "maps": [
+        "de_shorttrain"
+      ]
+    },
+    {
+      "id": "mg_de_stmarc",
+      "maps": [
+        "de_stmarc"
+      ]
+    },
+    {
+      "id": "mg_de_stronghold",
+      "maps": [
+        "de_stronghold"
+      ]
+    },
+    {
+      "id": "mg_de_studio",
+      "maps": [
+        "de_studio"
+      ]
+    },
+    {
+      "id": "mg_de_subzero",
+      "maps": [
+        "de_subzero"
+      ]
+    },
+    {
+      "id": "mg_de_sugarcane",
+      "maps": [
+        "de_sugarcane"
+      ]
+    },
+    {
+      "id": "mg_de_swamp",
+      "maps": [
+        "de_swamp"
+      ]
+    },
+    {
+      "id": "mg_de_thera",
+      "maps": [
+        "de_thera"
+      ]
+    },
+    {
+      "id": "mg_de_thrill",
+      "maps": [
+        "de_thrill"
+      ]
+    },
+    {
+      "id": "mg_de_train",
+      "maps": [
+        "de_train"
+      ]
+    },
+    {
+      "id": "mg_de_transit",
+      "maps": [
+        "de_transit"
+      ]
+    },
+    {
+      "id": "mg_de_tulip",
+      "maps": [
+        "de_tulip"
+      ]
+    },
+    {
+      "id": "mg_de_tuscan",
+      "maps": [
+        "de_tuscan"
+      ]
+    },
+    {
+      "id": "mg_de_vertigo",
+      "maps": [
+        "de_vertigo"
+      ]
+    },
+    {
+      "id": "mg_de_warden",
+      "maps": [
+        "de_warden"
+      ]
+    },
+    {
+      "id": "mg_de_whistle",
+      "maps": [
+        "de_whistle"
+      ]
+    },
+    {
+      "id": "mg_de_zoo",
+      "maps": [
+        "de_zoo"
+      ]
+    },
+    {
+      "id": "mg_deathmatch",
+      "maps": [
+        "ar_baggage",
+        "ar_monastery",
+        "ar_shoots",
+        "cs_assault",
+        "cs_italy",
+        "cs_militia",
+        "cs_office",
+        "de_aztec",
+        "de_bank",
+        "de_cbble",
+        "de_dust",
+        "de_dust2",
+        "de_inferno",
+        "de_mirage",
+        "de_nuke",
+        "de_overpass",
+        "de_safehouse",
+        "de_shortdust",
+        "de_stmarc",
+        "de_sugarcane",
+        "de_vertigo"
+      ]
+    },
+    {
+      "id": "mg_demolition",
+      "maps": [
+        "de_safehouse",
+        "de_shortdust"
+      ]
+    },
+    {
+      "id": "mg_dust247",
+      "maps": [
+        "de_dust2"
+      ]
+    },
+    {
+      "id": "mg_dz_blacksite",
+      "maps": [
+        "dz_blacksite"
+      ]
+    },
+    {
+      "id": "mg_dz_county",
+      "maps": [
+        "dz_county"
+      ]
+    },
+    {
+      "id": "mg_dz_ember",
+      "maps": [
+        "dz_ember"
+      ]
+    },
+    {
+      "id": "mg_dz_frostbite",
+      "maps": [
+        "dz_frostbite"
+      ]
+    },
+    {
+      "id": "mg_dz_junglety",
+      "maps": [
+        "dz_junglety"
+      ]
+    },
+    {
+      "id": "mg_dz_sirocco",
+      "maps": [
+        "dz_sirocco"
+      ]
+    },
+    {
+      "id": "mg_dz_vineyard",
+      "maps": [
+        "dz_vineyard"
+      ]
+    },
+    {
+      "id": "mg_gd_bank",
+      "maps": [
+        "gd_bank"
+      ]
+    },
+    {
+      "id": "mg_gd_cbble",
+      "maps": [
+        "gd_cbble"
+      ]
+    },
+    {
+      "id": "mg_gd_crashsite",
+      "maps": [
+        "gd_crashsite"
+      ]
+    },
+    {
+      "id": "mg_gd_dizzy",
+      "maps": [
+        "gd_dizzy"
+      ]
+    },
+    {
+      "id": "mg_gd_lake",
+      "maps": [
+        "gd_lake"
+      ]
+    },
+    {
+      "id": "mg_gd_lunacy",
+      "maps": [
+        "gd_lunacy"
+      ]
+    },
+    {
+      "id": "mg_gd_rialto",
+      "maps": [
+        "gd_rialto"
+      ]
+    },
+    {
+      "id": "mg_gd_sugarcane",
+      "maps": [
+        "gd_sugarcane"
+      ]
+    },
+    {
+      "id": "mg_hostage",
+      "maps": [
+        "cs_italy",
+        "cs_office"
+      ]
+    },
+    {
+      "id": "mg_lobby_mapveto",
+      "maps": [
+        "lobby_mapveto"
+      ]
+    },
+    {
+      "id": "mg_lowgravity",
+      "maps": [
+        "ar_dizzy",
+        "ar_lunacy",
+        "ar_shoots",
+        "de_safehouse"
+      ]
+    },
+    {
+      "id": "mg_op_breakout",
+      "maps": [
+        "cs_insertion",
+        "cs_rush",
+        "de_blackgold",
+        "de_castle",
+        "de_mist",
+        "de_overgrown"
+      ]
+    },
+    {
+      "id": "mg_op_op05",
+      "maps": [
+        "cs_backalley",
+        "cs_workout",
+        "de_bazaar",
+        "de_facade",
+        "de_marquis",
+        "de_season",
+        "de_train"
+      ]
+    },
+    {
+      "id": "mg_op_op06",
+      "maps": [
+        "cs_agency",
+        "de_log",
+        "de_rails",
+        "de_resort",
+        "de_season",
+        "de_zoo"
+      ]
+    },
+    {
+      "id": "mg_op_op07",
+      "maps": [
+        "cs_cruise",
+        "de_coast",
+        "de_empire",
+        "de_mikla",
+        "de_royal",
+        "de_santorini",
+        "de_tulip"
+      ]
+    },
+    {
+      "id": "mg_op_op08",
+      "maps": [
+        "cs_agency",
+        "cs_insertion",
+        "de_austria",
+        "de_blackgold",
+        "de_lite",
+        "de_shipped",
+        "de_thrill"
+      ]
+    },
+    {
+      "id": "mg_reserves",
+      "maps": [
+        "de_canals",
+        "de_dust"
+      ]
+    },
+    {
+      "id": "mg_skirmish_armsrace",
+      "maps": [
+        "ar_baggage",
+        "ar_pool_day",
+        "ar_shoots",
+        "ar_shoots_night"
+      ]
+    },
+    {
+      "id": "mg_skirmish_demolition",
+      "maps": [
+        "de_bank",
+        "de_safehouse",
+        "de_shortdust",
+        "de_stmarc",
+        "de_sugarcane"
+      ]
+    },
+    {
+      "id": "mg_skirmish_dm_freeforall",
+      "maps": [
+        "cs_assault",
+        "cs_italy",
+        "cs_militia",
+        "cs_office",
+        "de_ancient",
+        "de_cbble",
+        "de_dust2",
+        "de_inferno",
+        "de_mirage",
+        "de_nuke",
+        "de_overpass",
+        "de_stmarc",
+        "de_vertigo"
+      ]
+    },
+    {
+      "id": "mg_skirmish_flyingscoutsman",
+      "maps": [
+        "ar_dizzy",
+        "ar_lunacy",
+        "ar_shoots",
+        "de_safehouse"
+      ]
+    },
+    {
+      "id": "mg_skirmish_headshots",
+      "maps": [
+        "cs_agency",
+        "de_blackgold",
+        "de_cache",
+        "de_cbble",
+        "de_inferno",
+        "de_nuke"
+      ]
+    },
+    {
+      "id": "mg_skirmish_heavyassaultsuit",
+      "maps": [
+        "de_austria",
+        "de_dust2",
+        "de_mirage",
+        "de_overpass",
+        "de_shipped"
+      ]
+    },
+    {
+      "id": "mg_skirmish_huntergatherers",
+      "maps": [
+        "cs_insertion",
+        "de_canals",
+        "de_cbble",
+        "de_dust2",
+        "de_nuke",
+        "de_thrill",
+        "de_train"
+      ]
+    },
+    {
+      "id": "mg_skirmish_retakes",
+      "maps": [
+        "de_ancient",
+        "de_dust2",
+        "de_inferno",
+        "de_mirage",
+        "de_nuke",
+        "de_overpass",
+        "de_train",
+        "de_vertigo"
+      ]
+    },
+    {
+      "id": "mg_skirmish_stabstabzap",
+      "maps": [
+        "de_austria",
+        "de_safehouse",
+        "gd_rialto"
+      ]
+    },
+    {
+      "id": "mg_skirmish_triggerdiscipline",
+      "maps": [
+        "de_austria",
+        "de_dust2",
+        "de_inferno",
+        "de_lite",
+        "de_mirage",
+        "de_thrill"
+      ]
+    },
+    {
+      "id": "mg_training1",
+      "maps": [
+        "training1"
+      ]
+    },
+    {
+      "id": "random_ar",
+      "maps": []
+    },
+    {
+      "id": "random_classic",
+      "maps": []
+    },
+    {
+      "id": "random_demo",
+      "maps": []
+    }
+  ],
+  "note": "game_type/game_mode are the numeric ids this build's gamemodes.txt carries per mode; every mode's convars list is empty upstream on this build, so has_convar_overrides is false throughout."
+}

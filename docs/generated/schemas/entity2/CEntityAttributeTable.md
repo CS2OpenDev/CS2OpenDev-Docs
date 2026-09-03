@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CEntityAttributeTable
-nav_exclude: true
+module: entity2
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [entity2](../entity2.md) / CEntityAttributeTable
 
 # CEntityAttributeTable
 
-**Kind:** class · **Size:** 80 bytes (`0x50`) · **Align:** 255 · **Module:** entity2
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 80 bytes (`0x50`) · **Align:** n/a (unspecified) · **Module:** entity2
 
 ## Memory layout
 

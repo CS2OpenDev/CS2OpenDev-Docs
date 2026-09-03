@@ -1,12 +1,14 @@
 ---
-layout: default
 title: VMixDynamicsDesc_t
-nav_exclude: true
+module: soundsystem_lowlevel
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [soundsystem_lowlevel](../soundsystem_lowlevel.md) / VMixDynamicsDesc_t
 
 # VMixDynamicsDesc_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 48 bytes (`0x30`) · **Align:** 4 · **Module:** soundsystem_lowlevel
 

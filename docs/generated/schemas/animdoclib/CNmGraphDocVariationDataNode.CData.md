@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmGraphDocVariationDataNode::CData"
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmGraphDocVariationDataNode::CData
 
 # CNmGraphDocVariationDataNode::CData
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 8 bytes (`0x8`) · **Align:** 8 · **Module:** animdoclib
 
@@ -16,20 +18,24 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmGraphDocVariationDataNode::CData" <|-- "CNmGraphDocAnimationPoseNode::CData"
-    "CNmGraphDocVariationDataNode::CData" <|-- "CNmGraphDocBoneMaskNode::CData"
-    "CNmGraphDocVariationDataNode::CData" <|-- "CNmGraphDocClipNode::CData"
-    "CNmGraphDocVariationDataNode::CData" <|-- "CNmGraphDocParameterizedClipSelectorNode::CData"
-    "CNmGraphDocVariationDataNode::CData" <|-- "CNmGraphDocParameterizedSelectorNode::CData"
-    "CNmGraphDocVariationDataNode::CData" <|-- "CNmGraphDocReferencedGraphNode::CData"
-    "CNmGraphDocVariationDataNode::CData" <|-- "CNmGraphDocTargetWarpNode::CData"
-    "CNmGraphDocVariationDataNode::CData" <|-- "CNmGraphDocVariationIDComparisonNode::CData"
-    "CNmGraphDocVariationDataNode::CData" <|-- "CnmGraphDocChainLookatNode::CData"
-    "CNmGraphDocVariationDataNode::CData" <|-- "CnmGraphDocFollowBoneNode::CData"
-    "CNmGraphDocVariationDataNode::CData" <|-- "CnmGraphDocFootIKNode::CData"
-    "CNmGraphDocVariationDataNode::CData" <|-- "CnmGraphDocTwoBoneIKNode::CData"
-    "CNmGraphDocVariationDataNode::CData" <|-- "CnmGraphDocVariationConstFloatNode::CData"
+    `CNmGraphDocVariationDataNode::CData` <|-- `CNmGraphDocAnimationPoseNode::CData`
+    `CNmGraphDocVariationDataNode::CData` <|-- `CNmGraphDocBoneMaskNode::CData`
+    `CNmGraphDocVariationDataNode::CData` <|-- `CNmGraphDocClipNode::CData`
+    `CNmGraphDocVariationDataNode::CData` <|-- `CNmGraphDocParameterizedClipSelectorNode::CData`
+    `CNmGraphDocVariationDataNode::CData` <|-- `CNmGraphDocParameterizedSelectorNode::CData`
+    `CNmGraphDocVariationDataNode::CData` <|-- `CNmGraphDocReferencedGraphNode::CData`
+    `CNmGraphDocVariationDataNode::CData` <|-- `CNmGraphDocTargetWarpNode::CData`
+    `CNmGraphDocVariationDataNode::CData` <|-- `CNmGraphDocVariationIDComparisonNode::CData`
+    `CNmGraphDocVariationDataNode::CData` <|-- `CnmGraphDocChainLookatNode::CData`
+    `CNmGraphDocVariationDataNode::CData` <|-- `CnmGraphDocFollowBoneNode::CData`
+    `CNmGraphDocVariationDataNode::CData` <|-- `CnmGraphDocFootIKNode::CData`
+    `CNmGraphDocVariationDataNode::CData` <|-- `CnmGraphDocTwoBoneIKNode::CData`
+    `CNmGraphDocVariationDataNode::CData` <|-- `CnmGraphDocVariationConstFloatNode::CData`
 ```
+
+## Memory layout
+
+No schema-visible fields (8 bytes of opaque storage).
 
 <details><summary>KV3 class defaults</summary>
 

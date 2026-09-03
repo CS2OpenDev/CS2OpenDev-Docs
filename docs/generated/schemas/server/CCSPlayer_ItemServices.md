@@ -1,17 +1,20 @@
 ---
-layout: default
-title: CCSPlayer_ItemServices
-nav_exclude: true
+title: CCSPlayer_ItemServices (server)
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CCSPlayer_ItemServices
 
 # CCSPlayer_ItemServices
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 Component tracking the utility items the player is carrying.
 
+**Kind:** class · **Size:** 80 bytes (`0x50`) · **Align:** n/a (unspecified) · **Module:** server
 
-**Kind:** class · **Size:** 80 bytes (`0x50`) · **Align:** 255 · **Module:** server
+**Twin:** [CCSPlayer_ItemServices (client)](../client/CCSPlayer_ItemServices.md)
 
 **Inherits from:** [CPlayer_ItemServices](../server/CPlayer_ItemServices.md)
 

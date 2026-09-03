@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CSmartPropPulse_CreateRotator
-nav_exclude: true
+module: smartprops
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [smartprops](../smartprops.md) / CSmartPropPulse_CreateRotator
 
 # CSmartPropPulse_CreateRotator
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 80 bytes (`0x50`) · **Align:** 8 · **Module:** smartprops
 

@@ -1,12 +1,14 @@
 ---
-layout: default
 title: VMixDualCompressorDesc_t
-nav_exclude: true
+module: soundsystem_lowlevel
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [soundsystem_lowlevel](../soundsystem_lowlevel.md) / VMixDualCompressorDesc_t
 
 # VMixDualCompressorDesc_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 52 bytes (`0x34`) · **Align:** 4 · **Module:** soundsystem_lowlevel
 

@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CBoneConstraintRbf
-nav_exclude: true
+module: modellib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [modellib](../modellib.md) / CBoneConstraintRbf
 
 # CBoneConstraintRbf
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 200 bytes (`0xc8`) · **Align:** 8 · **Module:** modellib
 

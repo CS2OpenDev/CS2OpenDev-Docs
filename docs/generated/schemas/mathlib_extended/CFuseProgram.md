@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CFuseProgram
-nav_exclude: true
+module: mathlib_extended
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [mathlib_extended](../mathlib_extended.md) / CFuseProgram
 
 # CFuseProgram
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 80 bytes (`0x50`) · **Align:** 8 · **Module:** mathlib_extended
 

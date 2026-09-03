@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmIDEventConditionNode::CDefinition"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmIDEventConditionNode::CDefinition
 
 # CNmIDEventConditionNode::CDefinition
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 88 bytes (`0x58`) · **Align:** 8 · **Module:** animlib
 
@@ -16,10 +18,10 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmBoolValueNode::CDefinition" <|-- "CNmIDEventConditionNode::CDefinition"
-    "CNmValueNode::CDefinition" <|-- "CNmBoolValueNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
-    "CNmIDEventConditionNode::CDefinition" *-- CNmBitFlags
+    `CNmBoolValueNode::CDefinition` <|-- `CNmIDEventConditionNode::CDefinition`
+    `CNmValueNode::CDefinition` <|-- `CNmBoolValueNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmValueNode::CDefinition`
+    `CNmIDEventConditionNode::CDefinition` *-- CNmBitFlags
 ```
 
 ## Memory layout

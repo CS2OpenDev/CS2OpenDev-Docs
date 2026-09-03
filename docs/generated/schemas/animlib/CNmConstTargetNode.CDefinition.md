@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmConstTargetNode::CDefinition"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmConstTargetNode::CDefinition
 
 # CNmConstTargetNode::CDefinition
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 64 bytes (`0x40`) · **Align:** 16 · **Module:** animlib
 
@@ -16,10 +18,10 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmTargetValueNode::CDefinition" <|-- "CNmConstTargetNode::CDefinition"
-    "CNmValueNode::CDefinition" <|-- "CNmTargetValueNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
-    "CNmConstTargetNode::CDefinition" *-- CNmTarget
+    `CNmTargetValueNode::CDefinition` <|-- `CNmConstTargetNode::CDefinition`
+    `CNmValueNode::CDefinition` <|-- `CNmTargetValueNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmValueNode::CDefinition`
+    `CNmConstTargetNode::CDefinition` *-- CNmTarget
 ```
 
 ## Memory layout

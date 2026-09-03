@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CMotionMetricEvaluator
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / CMotionMetricEvaluator
 
 # CMotionMetricEvaluator
 
-**Kind:** class · **Size:** 80 bytes (`0x50`) · **Align:** 255 · **Module:** animgraphlib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 80 bytes (`0x50`) · **Align:** n/a (unspecified) · **Module:** animgraphlib
 
 **Derived by:** [CBlockSelectionMetricEvaluator](../animgraphlib/CBlockSelectionMetricEvaluator.md), [CBonePositionMetricEvaluator](../animgraphlib/CBonePositionMetricEvaluator.md), [CBoneVelocityMetricEvaluator](../animgraphlib/CBoneVelocityMetricEvaluator.md), [CCurrentRotationVelocityMetricEvaluator](../animgraphlib/CCurrentRotationVelocityMetricEvaluator.md), [CCurrentVelocityMetricEvaluator](../animgraphlib/CCurrentVelocityMetricEvaluator.md), [CDistanceRemainingMetricEvaluator](../animgraphlib/CDistanceRemainingMetricEvaluator.md), [CFootCycleMetricEvaluator](../animgraphlib/CFootCycleMetricEvaluator.md), [CFootPositionMetricEvaluator](../animgraphlib/CFootPositionMetricEvaluator.md), [CFutureFacingMetricEvaluator](../animgraphlib/CFutureFacingMetricEvaluator.md), [CFutureVelocityMetricEvaluator](../animgraphlib/CFutureVelocityMetricEvaluator.md), [CPathMetricEvaluator](../animgraphlib/CPathMetricEvaluator.md), [CStepsRemainingMetricEvaluator](../animgraphlib/CStepsRemainingMetricEvaluator.md), [CTimeRemainingMetricEvaluator](../animgraphlib/CTimeRemainingMetricEvaluator.md)
 

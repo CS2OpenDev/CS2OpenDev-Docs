@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CNetworkedSequenceOperation
-nav_exclude: true
+title: CNetworkedSequenceOperation (server)
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CNetworkedSequenceOperation
 
 # CNetworkedSequenceOperation
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 40 bytes (`0x28`) · **Align:** 8 · **Module:** server
+
+**Twin:** [CNetworkedSequenceOperation (client)](../client/CNetworkedSequenceOperation.md)
 
 **Relationships:**
 

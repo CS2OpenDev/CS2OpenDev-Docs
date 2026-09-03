@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CVoiceContainerBase
-nav_exclude: true
+module: soundsystem_voicecontainers
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [soundsystem_voicecontainers](../soundsystem_voicecontainers.md) / CVoiceContainerBase
 
 # CVoiceContainerBase
 
-**Kind:** class · **Size:** 112 bytes (`0x70`) · **Align:** 255 · **Module:** soundsystem_voicecontainers
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 112 bytes (`0x70`) · **Align:** n/a (unspecified) · **Module:** soundsystem_voicecontainers
 
 **Derived by:** [CVoiceContainerBlender](../soundsystem_voicecontainers/CVoiceContainerBlender.md), [CVoiceContainerDefault](../soundsystem_voicecontainers/CVoiceContainerDefault.md), [CVoiceContainerEnum](../soundsystem_voicecontainers/CVoiceContainerEnum.md), [CVoiceContainerGenerator](../soundsystem_voicecontainers/CVoiceContainerGenerator.md), [CVoiceContainerLoopTrigger](../soundsystem_voicecontainers/CVoiceContainerLoopTrigger.md), [CVoiceContainerLoopXFade](../soundsystem_voicecontainers/CVoiceContainerLoopXFade.md), [CVoiceContainerMultiBlender](../soundsystem_voicecontainers/CVoiceContainerMultiBlender.md), [CVoiceContainerParameterBlender](../soundsystem_voicecontainers/CVoiceContainerParameterBlender.md), [CVoiceContainerSelector](../soundsystem_voicecontainers/CVoiceContainerSelector.md), [CVoiceContainerSet](../soundsystem_voicecontainers/CVoiceContainerSet.md), [CVoiceContainerSwitch](../soundsystem_voicecontainers/CVoiceContainerSwitch.md), [CVoiceContainerVMixSnd](../soundsystem/CVoiceContainerVMixSnd.md), [CVoiceContainerVsndRadioButton](../soundsystem_voicecontainers/CVoiceContainerVsndRadioButton.md), [CVoiceContainerVsndTrigger](../soundsystem_voicecontainers/CVoiceContainerVsndTrigger.md)
 

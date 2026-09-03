@@ -1,12 +1,14 @@
 ---
-layout: default
 title: C_INIT_RemapTransformToVector
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / C_INIT_RemapTransformToVector
 
 # C_INIT_RemapTransformToVector
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 768 bytes (`0x300`) · **Align:** 8 · **Module:** particles
 

@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CAnimGraphDoc_Motor
-nav_exclude: true
+module: animgraphdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphdoclib](../animgraphdoclib.md) / CAnimGraphDoc_Motor
 
 # CAnimGraphDoc_Motor
 
-**Kind:** class · **Size:** 48 bytes (`0x30`) · **Align:** 255 · **Module:** animgraphdoclib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 48 bytes (`0x30`) · **Align:** n/a (unspecified) · **Module:** animgraphdoclib
 
 **Derived by:** [CAnimGraphDoc_PathMotorBase](../animgraphdoclib/CAnimGraphDoc_PathMotorBase.md), [CAnimGraphDoc_PlayerInputMotor](../animgraphdoclib/CAnimGraphDoc_PlayerInputMotor.md)
 

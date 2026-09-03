@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmCachedVectorNode::CDefinition"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmCachedVectorNode::CDefinition
 
 # CNmCachedVectorNode::CDefinition
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 8 · **Module:** animlib
 
@@ -16,10 +18,10 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmVectorValueNode::CDefinition" <|-- "CNmCachedVectorNode::CDefinition"
-    "CNmValueNode::CDefinition" <|-- "CNmVectorValueNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
-    "CNmCachedVectorNode::CDefinition" *-- NmCachedValueMode_t
+    `CNmVectorValueNode::CDefinition` <|-- `CNmCachedVectorNode::CDefinition`
+    `CNmValueNode::CDefinition` <|-- `CNmVectorValueNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmValueNode::CDefinition`
+    `CNmCachedVectorNode::CDefinition` *-- NmCachedValueMode_t
 ```
 
 ## Memory layout

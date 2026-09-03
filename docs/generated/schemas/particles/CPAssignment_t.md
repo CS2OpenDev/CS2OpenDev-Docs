@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CPAssignment_t
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / CPAssignment_t
 
 # CPAssignment_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 1736 bytes (`0x6c8`) · **Align:** 8 · **Module:** particles
 

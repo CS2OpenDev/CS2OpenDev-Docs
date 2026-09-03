@@ -1,12 +1,14 @@
 ---
-layout: default
 title: RumbleEffect_t
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / RumbleEffect_t
 
 # RumbleEffect_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** server
 
@@ -14,7 +16,7 @@ nav_exclude: true
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `RUMBLE_INVALID` | -1 |  |
+| `RUMBLE_INVALID` | -1 (`0xffffffff`) |  |
 | `RUMBLE_STOP_ALL` | 0 |  |
 | `RUMBLE_PISTOL` | 1 |  |
 | `RUMBLE_357` | 2 |  |

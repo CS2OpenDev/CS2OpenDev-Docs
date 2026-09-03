@@ -1,15 +1,12 @@
 ---
-layout: default
 title: Schema History
-nav_order: 15
 ---
 
 # Schema History
 
-{: .note }
-> Source: CS2 build **25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
-Field-precise, build-to-build evolution of the CS2 C++ entity schema, derived by diffing every committed `entity_schema.json` snapshot (SchemaTracker's cumulative `schema_evolution.json`, Layer A).  Unlike the coarse [Changelog](changelog.html) — which only reports *that* a class changed — this reports *which field* was added, removed, retyped, or moved.
+Field-precise, build-to-build evolution of the CS2 C++ entity schema, derived by diffing every committed `entity_schema.json` snapshot (SchemaTracker's cumulative `schema_evolution.json`, Layer A).  Unlike the coarse [Changelog](changelog.md) — which only reports *that* a class changed — this reports *which field* was added, removed, retyped, or moved.
 
 - **Platform:** `windows-x86_64` (the canonical render; windows is a strict **superset** in class coverage — historical Windows-only tool binaries such as `hammer.dll` / `sfm.dll` have no Linux counterparts — while shared classes differ in offsets/sizes per platform)
 - **Baseline build:** `10832117` · **Latest build:** `25000182`

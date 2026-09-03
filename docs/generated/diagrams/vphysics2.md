@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: vphysics2"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: vphysics2

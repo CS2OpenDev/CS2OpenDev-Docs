@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CGameChoreoServices
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CGameChoreoServices
 
 # CGameChoreoServices
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 32 bytes (`0x20`) · **Align:** 8 · **Module:** server
 
@@ -19,7 +21,8 @@ classDiagram
     IChoreoServices <|-- CGameChoreoServices
     CGameChoreoServices --> CBaseModelEntity
     CGameChoreoServices --> CScriptedSequence
-    CGameChoreoServices *-- IChoreoServices
+    CGameChoreoServices *-- `IChoreoServices::ScriptState_t`
+    CGameChoreoServices *-- `IChoreoServices::ChoreoState_t`
     CGameChoreoServices *-- GameTime_t
 ```
 
@@ -31,8 +34,8 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `m_hOwner` | CHandle< [CBaseModelEntity](../server/CBaseModelEntity.md) > |  |  |
 | `0xc` | `m_hScriptedSequence` | CHandle< [CScriptedSequence](../server/CScriptedSequence.md) > |  |  |
-| `0x10` | `m_scriptState` | [IChoreoServices](../server/IChoreoServices.md)::ScriptState_t |  |  |
-| `0x14` | `m_choreoState` | [IChoreoServices](../server/IChoreoServices.md)::ChoreoState_t |  |  |
+| `0x10` | `m_scriptState` | [IChoreoServices::ScriptState_t](../server/IChoreoServices.ScriptState_t.md) |  |  |
+| `0x14` | `m_choreoState` | [IChoreoServices::ChoreoState_t](../server/IChoreoServices.ChoreoState_t.md) |  |  |
 | `0x18` | `m_flTimeStartedState` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>

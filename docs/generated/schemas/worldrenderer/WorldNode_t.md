@@ -1,12 +1,14 @@
 ---
-layout: default
 title: WorldNode_t
-nav_exclude: true
+module: worldrenderer
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [worldrenderer](../worldrenderer.md) / WorldNode_t
 
 # WorldNode_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 400 bytes (`0x190`) · **Align:** 8 · **Module:** worldrenderer
 

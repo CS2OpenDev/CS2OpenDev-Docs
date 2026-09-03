@@ -1,12 +1,14 @@
 ---
-layout: default
 title: C_OP_RenderVolumetricEmitter
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / C_OP_RenderVolumetricEmitter
 
 # C_OP_RenderVolumetricEmitter
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 8680 bytes (`0x21e8`) · **Align:** 8 · **Module:** particles
 
@@ -62,7 +64,7 @@ classDiagram
 | `0x17d8` | `m_flRadius` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName radius` |
 | `0x1948` | `m_flDensity` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName density` `MPropertySuppressExpr m_nType == PARTICLE_VOLUMETRIC_SMOKE_TYPE_TRACE` |
 | `0x1ab8` | `m_flTemperature` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName temperature` `MPropertySuppressExpr m_nType == PARTICLE_VOLUMETRIC_SMOKE_TYPE_TRACE` |
-| `0x1c28` | `m_flMagnitude` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName magnitude` `MPropertySuppressExpr m_nType == PARTICLE_VOLUMETRIC_SMOKE_TYPE_EMISSION \|\| m_nType == PARTICLE_VOLUMETRIC_SMOKE_TYPE_TRACE` |
+| `0x1c28` | `m_flMagnitude` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName magnitude` `MPropertySuppressExpr m_nType == PARTICLE_VOLUMETRIC_SMOKE_TYPE_EMISSION &#124;&#124; m_nType == PARTICLE_VOLUMETRIC_SMOKE_TYPE_TRACE` |
 | `0x1d98` | `m_flKillRadius` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName kill radius` `MPropertySuppressExpr m_nType == PARTICLE_VOLUMETRIC_SMOKE_TYPE_EMISSION` |
 | `0x1f08` | `m_flKillDensityScale` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName kill density scale` `MPropertySuppressExpr m_nType == PARTICLE_VOLUMETRIC_SMOKE_TYPE_EMISSION` |
 | `0x2078` | `m_flFalloff` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName falloff` `MPropertySuppressExpr m_nType == PARTICLE_VOLUMETRIC_SMOKE_TYPE_EMISSION` |

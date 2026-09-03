@@ -1,18 +1,22 @@
 ---
-layout: default
-title: CSoundOpvarSetBoxEntity
-nav_exclude: true
+title: CSoundOpvarSetBoxEntity (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CSoundOpvarSetBoxEntity
 
 # CSoundOpvarSetBoxEntity
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 1568 bytes (`0x620`) · **Align:** 8 · **Module:** client
+
+**Twin:** [CSoundOpvarSetBoxEntity (server)](../server/CSoundOpvarSetBoxEntity.md)
 
 **Inherits from:** [C_SoundOpvarSetPointEntity](../client/C_SoundOpvarSetPointEntity.md)
 
-**Derived by:** [CSoundOpvarSetAABBEntity](../server/CSoundOpvarSetAABBEntity.md), [C_SoundOpvarSetAABBEntity](../client/C_SoundOpvarSetAABBEntity.md)
+**Derived by:** [C_SoundOpvarSetAABBEntity](../client/C_SoundOpvarSetAABBEntity.md)
 
 **Relationships:**
 
@@ -23,7 +27,6 @@ classDiagram
     C_BaseEntity <|-- C_SoundOpvarSetPointBase
     CEntityInstance <|-- C_BaseEntity
     CSoundOpvarSetBoxEntity <|-- C_SoundOpvarSetAABBEntity
-    CSoundOpvarSetBoxEntity <|-- CSoundOpvarSetAABBEntity
 ```
 
 ## Memory layout
@@ -33,8 +36,8 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_iszPrivateVScripts` | CUtlSymbolLarge | [CEntityInstance](../entity2/CEntityInstance.md) |  |
-| `0x10` | `m_pEntity` | [CEntityIdentity](../entity2/CEntityIdentity.md)* | [CEntityInstance](../entity2/CEntityInstance.md) |  |
-| `0x28` | `m_CScriptComponent` | [CScriptComponent](../entity2/CScriptComponent.md)* | [CEntityInstance](../entity2/CEntityInstance.md) |  |
+| `0x10` | `m_pEntity` | [CEntityIdentity](../entity2/CEntityIdentity.md)* | [CEntityInstance](../entity2/CEntityInstance.md) | CEntityIdentity pointer: the entity's identity record (name, class, handle, flags). |
+| `0x28` | `m_CScriptComponent` | [CScriptComponent](../entity2/CScriptComponent.md)* | [CEntityInstance](../entity2/CEntityInstance.md) | VScript component attached to the entity, when scripted. |
 | `0x30` | `m_CBodyComponent` | [CBodyComponent](../client/CBodyComponent.md)* | [C_BaseEntity](../client/C_BaseEntity.md) |  |
 | `0x38` | `m_NetworkTransmitComponent` | [CNetworkTransmitComponent](../server/CNetworkTransmitComponent.md) | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
 | `0x328` | `m_nLastThinkTick` | [GameTick_t](../entity2/GameTick_t.md) | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |

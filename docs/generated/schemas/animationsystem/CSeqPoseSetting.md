@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CSeqPoseSetting
-nav_exclude: true
+module: animationsystem
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animationsystem](../animationsystem.md) / CSeqPoseSetting
 
 # CSeqPoseSetting
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 64 bytes (`0x40`) · **Align:** 8 · **Module:** animationsystem
 

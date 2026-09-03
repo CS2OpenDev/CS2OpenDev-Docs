@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CSmartPropElement_Group
-nav_exclude: true
+module: smartprops
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [smartprops](../smartprops.md) / CSmartPropElement_Group
 
 # CSmartPropElement_Group
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 160 bytes (`0xa0`) · **Align:** 8 · **Module:** smartprops
 

@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: materialsystem2"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: materialsystem2

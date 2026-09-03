@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CStopwatch
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CStopwatch
 
 # CStopwatch
 
-**Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** n/a (unspecified) · **Module:** server
 
 **Inherits from:** [CStopwatchBase](../server/CStopwatchBase.md)
 

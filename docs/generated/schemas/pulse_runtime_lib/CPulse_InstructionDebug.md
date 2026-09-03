@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CPulse_InstructionDebug
-nav_exclude: true
+module: pulse_runtime_lib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [pulse_runtime_lib](../pulse_runtime_lib.md) / CPulse_InstructionDebug
 
 # CPulse_InstructionDebug
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 8 · **Module:** pulse_runtime_lib
 

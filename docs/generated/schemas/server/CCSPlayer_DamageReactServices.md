@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CCSPlayer_DamageReactServices
-nav_exclude: true
+title: CCSPlayer_DamageReactServices (server)
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CCSPlayer_DamageReactServices
 
 # CCSPlayer_DamageReactServices
 
-**Kind:** class · **Size:** 104 bytes (`0x68`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 104 bytes (`0x68`) · **Align:** n/a (unspecified) · **Module:** server
+
+**Twin:** [CCSPlayer_DamageReactServices (client)](../client/CCSPlayer_DamageReactServices.md)
 
 **Inherits from:** [CPlayerPawnComponent](../server/CPlayerPawnComponent.md)
 

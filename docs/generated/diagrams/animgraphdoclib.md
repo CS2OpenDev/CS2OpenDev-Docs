@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: animgraphdoclib"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: animgraphdoclib

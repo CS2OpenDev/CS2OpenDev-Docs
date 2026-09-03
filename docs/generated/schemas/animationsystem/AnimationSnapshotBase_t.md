@@ -1,12 +1,14 @@
 ---
-layout: default
 title: AnimationSnapshotBase_t
-nav_exclude: true
+module: animationsystem
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animationsystem](../animationsystem.md) / AnimationSnapshotBase_t
 
 # AnimationSnapshotBase_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 272 bytes (`0x110`) · **Align:** 16 · **Module:** animationsystem
 

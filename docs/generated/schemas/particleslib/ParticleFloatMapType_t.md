@@ -1,12 +1,14 @@
 ---
-layout: default
 title: ParticleFloatMapType_t
-nav_exclude: true
+module: particleslib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [particleslib](../particleslib.md) / ParticleFloatMapType_t
 
 # ParticleFloatMapType_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** particleslib
 
@@ -14,7 +16,7 @@ nav_exclude: true
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `PF_MAP_TYPE_INVALID` | -1 |  |
+| `PF_MAP_TYPE_INVALID` | -1 (`0xffffffff`) |  |
 | `PF_MAP_TYPE_DIRECT` | 0 |  |
 | `PF_MAP_TYPE_MULT` | 1 |  |
 | `PF_MAP_TYPE_REMAP` | 2 |  |

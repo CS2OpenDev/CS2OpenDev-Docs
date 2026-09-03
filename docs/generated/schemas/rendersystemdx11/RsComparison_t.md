@@ -1,12 +1,14 @@
 ---
-layout: default
 title: RsComparison_t
-nav_exclude: true
+module: rendersystemdx11
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [rendersystemdx11](../rendersystemdx11.md) / RsComparison_t
 
 # RsComparison_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** enum · **Underlying:** `uint8_t` · **Module:** rendersystemdx11
 

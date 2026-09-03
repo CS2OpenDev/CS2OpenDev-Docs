@@ -1,18 +1,22 @@
 ---
-layout: default
-title: CLogicalEntity
-nav_exclude: true
+title: CLogicalEntity (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CLogicalEntity
 
 # CLogicalEntity
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 1536 bytes (`0x600`) · **Align:** 8 · **Module:** client
+
+**Twin:** [CLogicalEntity (server)](../server/CLogicalEntity.md)
 
 **Inherits from:** [C_BaseEntity](../client/C_BaseEntity.md)
 
-**Derived by:** [CBaseFilter](../client/CBaseFilter.md), [CEnvFade](../server/CEnvFade.md), [CEnvGlobal](../server/CEnvGlobal.md), [CFuncMoverRouter](../server/CFuncMoverRouter.md), [CInfoSpawnGroupLoadUnload](../server/CInfoSpawnGroupLoadUnload.md), [CLogicAchievement](../server/CLogicAchievement.md), [CLogicActivityEvent](../server/CLogicActivityEvent.md), [CLogicAutosave](../server/CLogicAutosave.md), [CLogicBranch](../server/CLogicBranch.md), [CLogicBranchList](../server/CLogicBranchList.md), [CLogicCase](../server/CLogicCase.md), [CLogicCollisionPair](../server/CLogicCollisionPair.md), [CLogicCompare](../server/CLogicCompare.md), [CLogicDistanceAutosave](../server/CLogicDistanceAutosave.md), [CLogicDistanceCheck](../server/CLogicDistanceCheck.md), [CLogicEventListener](../server/CLogicEventListener.md), [CLogicGameEvent](../server/CLogicGameEvent.md), [CLogicGameEventListener](../server/CLogicGameEventListener.md), [CLogicLineToEntity](../server/CLogicLineToEntity.md), [CLogicMeasureMovement](../server/CLogicMeasureMovement.md), [CLogicNavigation](../server/CLogicNavigation.md), [CLogicPlayerProxy](../server/CLogicPlayerProxy.md), [CLogicRelay](../client/CLogicRelay.md), [CMapSharedEnvironment](../server/CMapSharedEnvironment.md), [CMathColorBlend](../server/CMathColorBlend.md), [CMathCounter](../server/CMathCounter.md), [CMathRemap](../server/CMathRemap.md), [CMultiLightProxy](../server/CMultiLightProxy.md), [CMultiSource](../server/CMultiSource.md), [CPathKeyFrame](../server/CPathKeyFrame.md), [CPathMoverEntitySpawner](../server/CPathMoverEntitySpawner.md), [CPhysConstraint](../server/CPhysConstraint.md), [CPhysMotor](../server/CPhysMotor.md), [CPhysicsEntitySolver](../server/CPhysicsEntitySolver.md), [CPointTemplate](../client/CPointTemplate.md), [CSceneListManager](../server/CSceneListManager.md), [CSoundStackSave](../server/CSoundStackSave.md), [CTestPulseIO](../server/CTestPulseIO.md), [CTimerEntity](../server/CTimerEntity.md)
+**Derived by:** [CBaseFilter](../client/CBaseFilter.md), [CLogicRelay](../client/CLogicRelay.md), [CPointTemplate](../client/CPointTemplate.md)
 
 **Metadata:** `MEntityAllowsPortraitWorldSpawn`
 
@@ -25,42 +29,6 @@ classDiagram
     CLogicalEntity <|-- CBaseFilter
     CLogicalEntity <|-- CLogicRelay
     CLogicalEntity <|-- CPointTemplate
-    CLogicalEntity <|-- CEnvFade
-    CLogicalEntity <|-- CEnvGlobal
-    CLogicalEntity <|-- CFuncMoverRouter
-    CLogicalEntity <|-- CInfoSpawnGroupLoadUnload
-    CLogicalEntity <|-- CLogicAchievement
-    CLogicalEntity <|-- CLogicActivityEvent
-    CLogicalEntity <|-- CLogicAutosave
-    CLogicalEntity <|-- CLogicBranch
-    CLogicalEntity <|-- CLogicBranchList
-    CLogicalEntity <|-- CLogicCase
-    CLogicalEntity <|-- CLogicCollisionPair
-    CLogicalEntity <|-- CLogicCompare
-    CLogicalEntity <|-- CLogicDistanceAutosave
-    CLogicalEntity <|-- CLogicDistanceCheck
-    CLogicalEntity <|-- CLogicEventListener
-    CLogicalEntity <|-- CLogicGameEvent
-    CLogicalEntity <|-- CLogicGameEventListener
-    CLogicalEntity <|-- CLogicLineToEntity
-    CLogicalEntity <|-- CLogicMeasureMovement
-    CLogicalEntity <|-- CLogicNavigation
-    CLogicalEntity <|-- CLogicPlayerProxy
-    CLogicalEntity <|-- CMapSharedEnvironment
-    CLogicalEntity <|-- CMathColorBlend
-    CLogicalEntity <|-- CMathCounter
-    CLogicalEntity <|-- CMathRemap
-    CLogicalEntity <|-- CMultiLightProxy
-    CLogicalEntity <|-- CMultiSource
-    CLogicalEntity <|-- CPathKeyFrame
-    CLogicalEntity <|-- CPathMoverEntitySpawner
-    CLogicalEntity <|-- CPhysConstraint
-    CLogicalEntity <|-- CPhysMotor
-    CLogicalEntity <|-- CPhysicsEntitySolver
-    CLogicalEntity <|-- CSceneListManager
-    CLogicalEntity <|-- CSoundStackSave
-    CLogicalEntity <|-- CTestPulseIO
-    CLogicalEntity <|-- CTimerEntity
 ```
 
 ## Memory layout
@@ -70,8 +38,8 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_iszPrivateVScripts` | CUtlSymbolLarge | [CEntityInstance](../entity2/CEntityInstance.md) |  |
-| `0x10` | `m_pEntity` | [CEntityIdentity](../entity2/CEntityIdentity.md)* | [CEntityInstance](../entity2/CEntityInstance.md) |  |
-| `0x28` | `m_CScriptComponent` | [CScriptComponent](../entity2/CScriptComponent.md)* | [CEntityInstance](../entity2/CEntityInstance.md) |  |
+| `0x10` | `m_pEntity` | [CEntityIdentity](../entity2/CEntityIdentity.md)* | [CEntityInstance](../entity2/CEntityInstance.md) | CEntityIdentity pointer: the entity's identity record (name, class, handle, flags). |
+| `0x28` | `m_CScriptComponent` | [CScriptComponent](../entity2/CScriptComponent.md)* | [CEntityInstance](../entity2/CEntityInstance.md) | VScript component attached to the entity, when scripted. |
 | `0x30` | `m_CBodyComponent` | [CBodyComponent](../client/CBodyComponent.md)* | [C_BaseEntity](../client/C_BaseEntity.md) |  |
 | `0x38` | `m_NetworkTransmitComponent` | [CNetworkTransmitComponent](../server/CNetworkTransmitComponent.md) | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
 | `0x328` | `m_nLastThinkTick` | [GameTick_t](../entity2/GameTick_t.md) | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |

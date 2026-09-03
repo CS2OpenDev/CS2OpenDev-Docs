@@ -1,0 +1,293 @@
+{
+ "events": [
+  {
+   "comment": "a game event, name may be 32 charaters long",
+   "fields": [
+    {
+     "comment": "user ID who died",
+     "name": "userid",
+     "type": "player_controller_and_pawn"
+    },
+    {
+     "comment": "user ID who killed",
+     "name": "attacker",
+     "type": "player_controller_and_pawn"
+    }
+   ],
+   "name": "player_death",
+   "properties": {},
+   "source": "core.gameevents"
+  },
+  {
+   "comment": "",
+   "fields": [
+    {
+     "comment": "winner team/user i",
+     "name": "winner",
+     "type": "byte"
+    },
+    {
+     "comment": "reson why team won",
+     "name": "reason",
+     "type": "byte"
+    },
+    {
+     "comment": "end round message",
+     "name": "message",
+     "type": "string"
+    },
+    {
+     "comment": "",
+     "name": "time",
+     "type": "float"
+    }
+   ],
+   "name": "round_end",
+   "properties": {},
+   "source": "core.gameevents"
+  },
+  {
+   "comment": "",
+   "fields": [
+    {
+     "comment": "winner team/user i",
+     "name": "winner",
+     "type": "byte"
+    },
+    {
+     "comment": "reson why team won",
+     "name": "reason",
+     "type": "byte"
+    },
+    {
+     "comment": "end round message",
+     "name": "message",
+     "type": "string"
+    },
+    {
+     "comment": "server-generated legacy value",
+     "name": "legacy",
+     "type": "byte"
+    }
+   ],
+   "name": "round_end",
+   "properties": {},
+   "source": "game.gameevents"
+  },
+  {
+   "comment": "",
+   "fields": [
+    {
+     "comment": "player who planted the bomb",
+     "name": "userid",
+     "type": "player_controller_and_pawn"
+    },
+    {
+     "comment": "bombsite index",
+     "name": "site",
+     "type": "short"
+    },
+    {
+     "comment": "",
+     "name": "c4",
+     "type": "short"
+    }
+   ],
+   "name": "bomb_planted",
+   "properties": {},
+   "source": "mod.gameevents"
+  },
+  {
+   "comment": "a game event, name may be 32 characters long",
+   "fields": [
+    {
+     "comment": "user who died",
+     "name": "userid",
+     "type": "player_controller_and_pawn"
+    },
+    {
+     "comment": "player who killed",
+     "name": "attacker",
+     "type": "player_controller_and_pawn"
+    },
+    {
+     "comment": "player who assisted in the kill",
+     "name": "assister",
+     "type": "player_controller_and_pawn"
+    },
+    {
+     "comment": "assister helped with a flash",
+     "name": "assistedflash",
+     "type": "bool"
+    },
+    {
+     "comment": "weapon name killer used",
+     "name": "weapon",
+     "type": "string"
+    },
+    {
+     "comment": "inventory item id of weapon killer used",
+     "name": "weapon_itemid",
+     "type": "string"
+    },
+    {
+     "comment": "faux item id of weapon killer used",
+     "name": "weapon_fauxitemid",
+     "type": "string"
+    },
+    {
+     "comment": "",
+     "name": "weapon_originalowner_xuid",
+     "type": "string"
+    },
+    {
+     "comment": "singals a headshot",
+     "name": "headshot",
+     "type": "bool"
+    },
+    {
+     "comment": "did killer dominate victim with this kill",
+     "name": "dominated",
+     "type": "short"
+    },
+    {
+     "comment": "did killer get revenge on victim with this kill",
+     "name": "revenge",
+     "type": "short"
+    },
+    {
+     "comment": "is the kill resulting in squad wipe",
+     "name": "wipe",
+     "type": "short"
+    },
+    {
+     "comment": "number of objects shot penetrated before killing target",
+     "name": "penetrated",
+     "type": "short"
+    },
+    {
+     "comment": "if replay data is unavailable, this will be present and set to false",
+     "name": "noreplay",
+     "type": "bool"
+    },
+    {
+     "comment": "kill happened without a scope, used for death notice icon",
+     "name": "noscope",
+     "type": "bool"
+    },
+    {
+     "comment": "hitscan weapon went through smoke grenade",
+     "name": "thrusmoke",
+     "type": "bool"
+    },
+    {
+     "comment": "attacker was blind from flashbang",
+     "name": "attackerblind",
+     "type": "bool"
+    },
+    {
+     "comment": "distance to victim in meters",
+     "name": "distance",
+     "type": "float"
+    },
+    {
+     "comment": "damage done to health",
+     "name": "dmg_health",
+     "type": "short"
+    },
+    {
+     "comment": "damage done to armor",
+     "name": "dmg_armor",
+     "type": "byte"
+    },
+    {
+     "comment": "hitgroup that was damaged",
+     "name": "hitgroup",
+     "type": "byte"
+    },
+    {
+     "comment": "attacker was in midair",
+     "name": "attackerinair",
+     "type": "bool"
+    }
+   ],
+   "name": "player_death",
+   "properties": {},
+   "source": "mod.gameevents"
+  },
+  {
+   "comment": "",
+   "fields": [
+    {
+     "comment": "",
+     "name": "userid",
+     "type": "player_controller"
+    }
+   ],
+   "name": "player_jump",
+   "properties": {},
+   "source": "mod.gameevents"
+  },
+  {
+   "comment": "",
+   "fields": [
+    {
+     "comment": "winner team/user i",
+     "name": "winner",
+     "type": "byte"
+    },
+    {
+     "comment": "reson why team won",
+     "name": "reason",
+     "type": "byte"
+    },
+    {
+     "comment": "end round message",
+     "name": "message",
+     "type": "string"
+    },
+    {
+     "comment": "server-generated legacy value",
+     "name": "legacy",
+     "type": "byte"
+    },
+    {
+     "comment": "total number of players alive at the end of round, used for statistics gathering, computed on the server in the event client is in replay when receiving this message",
+     "name": "player_count",
+     "type": "short"
+    },
+    {
+     "comment": "if set, don't play round end music, because action is still on-going",
+     "name": "nomusic",
+     "type": "byte"
+    }
+   ],
+   "name": "round_end",
+   "properties": {},
+   "source": "mod.gameevents"
+  },
+  {
+   "comment": "",
+   "fields": [
+    {
+     "comment": "",
+     "name": "userid",
+     "type": "player_controller_and_pawn"
+    },
+    {
+     "comment": "weapon name used",
+     "name": "weapon",
+     "type": "string"
+    },
+    {
+     "comment": "is weapon silenced",
+     "name": "silenced",
+     "type": "bool"
+    }
+   ],
+   "name": "weapon_fire",
+   "properties": {},
+   "source": "mod.gameevents"
+  }
+ ]
+}

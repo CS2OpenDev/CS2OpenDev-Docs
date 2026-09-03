@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CNmAnimDocument
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmAnimDocument
 
 # CNmAnimDocument
 
-**Kind:** class · **Size:** 112 bytes (`0x70`) · **Align:** 255 · **Module:** animdoclib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 112 bytes (`0x70`) · **Align:** n/a (unspecified) · **Module:** animdoclib
 
 **Derived by:** [CNmClipDocument](../animdoclib/CNmClipDocument.md), [CNmGraphDocument](../animdoclib/CNmGraphDocument.md), [CNmSkeletonDocument](../animdoclib/CNmSkeletonDocument.md)
 
@@ -23,7 +25,7 @@ classDiagram
 
 ## Memory layout
 
-1 fields (1 declared here, 0 inherited). Offsets are absolute from the object base.
+1 field (1 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|

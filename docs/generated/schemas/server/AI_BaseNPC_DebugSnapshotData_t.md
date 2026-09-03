@@ -1,12 +1,14 @@
 ---
-layout: default
 title: AI_BaseNPC_DebugSnapshotData_t
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / AI_BaseNPC_DebugSnapshotData_t
 
 # AI_BaseNPC_DebugSnapshotData_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 376 bytes (`0x178`) · **Align:** 8 · **Module:** server
 

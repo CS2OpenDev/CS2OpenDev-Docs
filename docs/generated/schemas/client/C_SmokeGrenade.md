@@ -1,12 +1,14 @@
 ---
-layout: default
 title: C_SmokeGrenade
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / C_SmokeGrenade
 
 # C_SmokeGrenade
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 7584 bytes (`0x1da0`) · **Align:** 16 · **Module:** client
 
@@ -30,8 +32,8 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_iszPrivateVScripts` | CUtlSymbolLarge | [CEntityInstance](../entity2/CEntityInstance.md) |  |
-| `0x10` | `m_pEntity` | [CEntityIdentity](../entity2/CEntityIdentity.md)* | [CEntityInstance](../entity2/CEntityInstance.md) |  |
-| `0x28` | `m_CScriptComponent` | [CScriptComponent](../entity2/CScriptComponent.md)* | [CEntityInstance](../entity2/CEntityInstance.md) |  |
+| `0x10` | `m_pEntity` | [CEntityIdentity](../entity2/CEntityIdentity.md)* | [CEntityInstance](../entity2/CEntityInstance.md) | CEntityIdentity pointer: the entity's identity record (name, class, handle, flags). |
+| `0x28` | `m_CScriptComponent` | [CScriptComponent](../entity2/CScriptComponent.md)* | [CEntityInstance](../entity2/CEntityInstance.md) | VScript component attached to the entity, when scripted. |
 | `0x30` | `m_CBodyComponent` | [CBodyComponent](../client/CBodyComponent.md)* | [C_BaseEntity](../client/C_BaseEntity.md) |  |
 | `0x38` | `m_NetworkTransmitComponent` | [CNetworkTransmitComponent](../server/CNetworkTransmitComponent.md) | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
 | `0x328` | `m_nLastThinkTick` | [GameTick_t](../entity2/GameTick_t.md) | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
@@ -159,7 +161,7 @@ classDiagram
 | `0xf64` | `m_bUseClientOverrideTint` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
 | `0xfa0` | `m_bvDisabledHitGroups` | uint32[1] | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
 | `0xfb0` | `m_graphControllerManager` | [CAnimGraphControllerManager](../server/CAnimGraphControllerManager.md) | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
-| `0x1048` | `m_pMainGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
+| `0x1048` | `m_pMainGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | The primary animation-graph controller instance for this entity. |
 | `0x1050` | `m_bInitiallyPopulateInterpHistory` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
 | `0x1052` | `m_bSuppressAnimEventSounds` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
 | `0x1058` | `m_OnLayerCycleUpdated` | CEntityOutputTemplate< float32 > | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
@@ -172,7 +174,7 @@ classDiagram
 | `0x10b8` | `m_bBuiltRagdoll` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
 | `0x10c8` | `m_pRagdollControl` | [IPhysicsRagdollControl](../vphysics2/IPhysicsRagdollControl.md)* | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MPhysPtr` |
 | `0x10d0` | `m_RagdollPose` | [PhysicsRagdollPose_t](../client/PhysicsRagdollPose_t.md) | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
-| `0x1118` | `m_bRagdollEnabled` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
+| `0x1118` | `m_bRagdollEnabled` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | True while the entity is simulated as a ragdoll rather than animated. |
 | `0x1119` | `m_bRagdollClientSide` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
 | `0x1128` | `m_bHasAnimatedMaterialAttributes` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
 | `0x1190` | `m_flFlexDelayTime` | float32 | [C_EconEntity](../client/C_EconEntity.md) |  |
@@ -194,7 +196,7 @@ classDiagram
 | `0x16bc` | `m_nUnloadedModelIndex` | int32 | [C_EconEntity](../client/C_EconEntity.md) |  |
 | `0x16c0` | `m_iNumOwnerValidationRetries` | int32 | [C_EconEntity](../client/C_EconEntity.md) |  |
 | `0x16d0` | `m_hOldProvidee` | CHandle< [C_BaseEntity](../client/C_BaseEntity.md) > | [C_EconEntity](../client/C_EconEntity.md) |  |
-| `0x16d8` | `m_vecAttachedModels` | CUtlVector< [C_EconEntity](../client/C_EconEntity.md)::AttachedModelData_t > | [C_EconEntity](../client/C_EconEntity.md) |  |
+| `0x16d8` | `m_vecAttachedModels` | CUtlVector< [C_EconEntity::AttachedModelData_t](../client/C_EconEntity.AttachedModelData_t.md) > | [C_EconEntity](../client/C_EconEntity.md) |  |
 | `0x16f0` | `m_nNextPrimaryAttackTick` | [GameTick_t](../entity2/GameTick_t.md) | [C_BasePlayerWeapon](../client/C_BasePlayerWeapon.md) |  |
 | `0x16f4` | `m_flNextPrimaryAttackTickRatio` | float32 | [C_BasePlayerWeapon](../client/C_BasePlayerWeapon.md) |  |
 | `0x16f8` | `m_nNextSecondaryAttackTick` | [GameTick_t](../entity2/GameTick_t.md) | [C_BasePlayerWeapon](../client/C_BasePlayerWeapon.md) |  |

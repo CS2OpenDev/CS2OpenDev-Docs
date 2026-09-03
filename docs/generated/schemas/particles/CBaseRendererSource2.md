@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CBaseRendererSource2
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / CBaseRendererSource2
 
 # CBaseRendererSource2
 
-**Kind:** class · **Size:** 11760 bytes (`0x2df0`) · **Align:** 255 · **Module:** particles
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 11760 bytes (`0x2df0`) · **Align:** n/a (unspecified) · **Module:** particles
 
 **Inherits from:** [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md)
 
@@ -102,7 +104,7 @@ classDiagram
 | `0x2048` | `m_flSourceAlphaValueToMapToOne` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) |  | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName source alpha value to map to alpha of 1` `MPropertySortPriority 300` |
 | `0x21b8` | `m_bRefract` | bool |  | `MPropertyFriendlyName refract background` `MPropertySortPriority 200` `MPropertyStartGroup Refraction` |
 | `0x21b9` | `m_bRefractSolid` | bool |  | `MPropertyFriendlyName refract draws opaque - alpha scales refraction` `MPropertySortPriority 200` `MPropertySuppressExpr !m_bRefract` |
-| `0x21ba` | `m_bRefract2Passes` | bool |  | `MPropertyFriendlyName refract in 2 passes - can refract particles behind, requires (MBOIT!)` `MPropertySortPriority 200` `MPropertySuppressExpr mod != hlx \|\| !m_bRefract` |
+| `0x21ba` | `m_bRefract2Passes` | bool |  | `MPropertyFriendlyName refract in 2 passes - can refract particles behind, requires (MBOIT!)` `MPropertySortPriority 200` `MPropertySuppressExpr mod != hlx &#124;&#124; !m_bRefract` |
 | `0x21c0` | `m_flRefractAmount` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) |  | `MPropertyAttributeRange -2 2` `MPropertyFriendlyName refract amount` `MPropertySortPriority 200` `MPropertySuppressExpr !m_bRefract` |
 | `0x2330` | `m_nRefractBlurRadius` | int32 |  | `MPropertyFriendlyName refract blur radius` `MPropertySortPriority 200` `MPropertySuppressExpr !m_bRefract` |
 | `0x2334` | `m_nRefractBlurType` | [BlurFilterType_t](../particles/BlurFilterType_t.md) |  | `MPropertyFriendlyName refract blur type` `MPropertySortPriority 200` `MPropertySuppressExpr !m_bRefract` |

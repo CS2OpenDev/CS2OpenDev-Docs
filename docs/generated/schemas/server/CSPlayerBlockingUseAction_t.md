@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CSPlayerBlockingUseAction_t
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CSPlayerBlockingUseAction_t
 
 # CSPlayerBlockingUseAction_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** server
 

@@ -1,12 +1,14 @@
 ---
-layout: default
 title: AI_GroundRootMotionMotor_DebugSnapshotData_t
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / AI_GroundRootMotionMotor_DebugSnapshotData_t
 
 # AI_GroundRootMotionMotor_DebugSnapshotData_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 136 bytes (`0x88`) · **Align:** 8 · **Module:** server
 
@@ -19,6 +21,7 @@ nav_exclude: true
 ```mermaid
 classDiagram
     DebugSnapshotBaseStructuredData_t <|-- AI_GroundRootMotionMotor_DebugSnapshotData_t
+    AI_GroundRootMotionMotor_DebugSnapshotData_t *-- `AI_GroundRootMotionMotor_DebugSnapshotData_t::Event_t`
 ```
 
 ## Memory layout
@@ -44,7 +47,7 @@ classDiagram
 | `0x64` | `f_forward_strafing_angle_desired` | float32 |  |  |
 | `0x68` | `f_current_lean` | float32 |  |  |
 | `0x6c` | `f_target_lean` | float32 |  |  |
-| `0x70` | `vec_events` | CUtlVector< [AI_GroundRootMotionMotor_DebugSnapshotData_t](../server/AI_GroundRootMotionMotor_DebugSnapshotData_t.md)::Event_t > |  |  |
+| `0x70` | `vec_events` | CUtlVector< [AI_GroundRootMotionMotor_DebugSnapshotData_t::Event_t](../server/AI_GroundRootMotionMotor_DebugSnapshotData_t.Event_t.md) > |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

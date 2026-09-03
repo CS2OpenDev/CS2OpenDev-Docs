@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CBodyComponentSkeletonInstance
-nav_exclude: true
+title: CBodyComponentSkeletonInstance (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CBodyComponentSkeletonInstance
 
 # CBodyComponentSkeletonInstance
 
-**Kind:** class · **Size:** 1296 bytes (`0x510`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 1296 bytes (`0x510`) · **Align:** n/a (unspecified) · **Module:** client
+
+**Twin:** [CBodyComponentSkeletonInstance (server)](../server/CBodyComponentSkeletonInstance.md)
 
 **Inherits from:** [CBodyComponent](../client/CBodyComponent.md)
 

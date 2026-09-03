@@ -1,8 +1,6 @@
 ---
-layout: default
 title: cstrike15_gcmessages.proto
-parent: Protobufs
-nav_exclude: true
+proto: cstrike15_gcmessages.proto
 ---
 
 # `cstrike15_gcmessages.proto`
@@ -68,7 +66,7 @@ direction LR
     +uint32 rank_expiry
   }
 
-  class PerMapRank {
+  class PlayerRankingInfo_PerMapRank["PlayerRankingInfo.PerMapRank"] {
     +uint32 map_id
     +uint32 rank_id
     +uint32 wins
@@ -96,12 +94,12 @@ direction LR
     +string leaderboard_name
   }
 
-  class Entry {
+  class ScoreLeaderboardData_Entry["ScoreLeaderboardData.Entry"] {
     +uint32 tag
     +uint32 val
   }
 
-  class AccountEntries {
+  class ScoreLeaderboardData_AccountEntries["ScoreLeaderboardData.AccountEntries"] {
     +uint32 accountid
     +List~ScoreLeaderboardData.Entry~ entries
   }
@@ -177,7 +175,7 @@ direction LR
     +float vote_phase_length
   }
 
-  class Entry {
+  class CDataGCCStrike15_v2_TournamentMatchDraft_Entry["CDataGCCStrike15_v2_TournamentMatchDraft.Entry"] {
     +int32 mapid
     +int32 team_id_ct
   }
@@ -189,7 +187,7 @@ direction LR
     +List~int32~ wins
   }
 
-  class TeamStats {
+  class CPreMatchInfoData_TeamStats["CPreMatchInfoData.TeamStats"] {
     +int32 match_info_idxtxt
     +string match_info_txt
     +List~string~ match_info_teams
@@ -238,13 +236,13 @@ direction LR
     +List~CMsgGCCStrike15_ClientDeepStats.DeepStatsMatch~ matches
   }
 
-  class DeepStatsRange {
+  class CMsgGCCStrike15_ClientDeepStats_DeepStatsRange["CMsgGCCStrike15_ClientDeepStats.DeepStatsRange"] {
     +uint32 begin
     +uint32 end
     +bool frozen
   }
 
-  class DeepStatsMatch {
+  class CMsgGCCStrike15_ClientDeepStats_DeepStatsMatch["CMsgGCCStrike15_ClientDeepStats.DeepStatsMatch"] {
     +DeepPlayerStatsEntry player
     +List~DeepPlayerMatchEvent~ events
   }
@@ -275,7 +273,7 @@ direction LR
     +uint32 upgrade_level
   }
 
-  class Sticker {
+  class CEconItemPreviewDataBlock_Sticker["CEconItemPreviewDataBlock.Sticker"] {
     +uint32 slot
     +uint32 sticker_id
     +float wear
@@ -308,13 +306,13 @@ direction LR
   }
 
   TournamentTeam --> TournamentPlayer : players[]
-  PlayerRankingInfo --> PerMapRank : per_map_rank[]
-  ScoreLeaderboardData --> AccountEntries : accountentries[]
-  ScoreLeaderboardData --> Entry : matchentries[]
-  AccountEntries --> Entry : entries[]
-  CDataGCCStrike15_v2_TournamentMatchDraft --> Entry : drafts[]
+  PlayerRankingInfo --> PlayerRankingInfo_PerMapRank : per_map_rank[]
+  ScoreLeaderboardData --> ScoreLeaderboardData_AccountEntries : accountentries[]
+  ScoreLeaderboardData --> ScoreLeaderboardData_Entry : matchentries[]
+  ScoreLeaderboardData_AccountEntries --> ScoreLeaderboardData_Entry : entries[]
+  CDataGCCStrike15_v2_TournamentMatchDraft --> CDataGCCStrike15_v2_TournamentMatchDraft_Entry : drafts[]
   CPreMatchInfoData --> CDataGCCStrike15_v2_TournamentMatchDraft : draft
-  CPreMatchInfoData --> TeamStats : stats[]
+  CPreMatchInfoData --> CPreMatchInfoData_TeamStats : stats[]
   CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve --> PlayerRankingInfo : rankings[]
   CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve --> IpAddressMask : whitelist[]
   CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve --> TournamentEvent : tournament_event
@@ -322,11 +320,11 @@ direction LR
   CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve --> CPreMatchInfoData : pre_match_data
   CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve --> OperationalVarValue : op_var_values[]
   CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded --> XpProgressData : xp_progress_data[]
-  CMsgGCCStrike15_ClientDeepStats --> DeepStatsRange : range
-  CMsgGCCStrike15_ClientDeepStats --> DeepStatsMatch : matches[]
-  DeepStatsMatch --> DeepPlayerStatsEntry : player
-  DeepStatsMatch --> DeepPlayerMatchEvent : events[]
-  CEconItemPreviewDataBlock --> Sticker : stickers[]
+  CMsgGCCStrike15_ClientDeepStats --> CMsgGCCStrike15_ClientDeepStats_DeepStatsRange : range
+  CMsgGCCStrike15_ClientDeepStats --> CMsgGCCStrike15_ClientDeepStats_DeepStatsMatch : matches[]
+  CMsgGCCStrike15_ClientDeepStats_DeepStatsMatch --> DeepPlayerStatsEntry : player
+  CMsgGCCStrike15_ClientDeepStats_DeepStatsMatch --> DeepPlayerMatchEvent : events[]
+  CEconItemPreviewDataBlock --> CEconItemPreviewDataBlock_Sticker : stickers[]
 
 ```
 
@@ -334,8 +332,8 @@ direction LR
 
 ### `TournamentPlayer`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `account_id` | 1 | uint32 | optional |  |
 | `player_nick` | 2 | string | optional |  |
 | `player_name` | 3 | string | optional |  |
@@ -346,8 +344,8 @@ direction LR
 
 ### `TournamentTeam`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `team_id` | 1 | int32 | optional |  |
 | `team_tag` | 2 | string | optional |  |
 | `team_flag` | 3 | string | optional |  |
@@ -356,8 +354,8 @@ direction LR
 
 ### `TournamentEvent`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `event_id` | 1 | int32 | optional |  |
 | `event_tag` | 2 | string | optional |  |
 | `event_name` | 3 | string | optional |  |
@@ -370,8 +368,8 @@ direction LR
 
 ### `OperationalVarValue`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `name` | 1 | string | optional |  |
 | `ivalue` | 2 | int32 | optional |  |
 | `fvalue` | 3 | float | optional |  |
@@ -379,8 +377,8 @@ direction LR
 
 ### `PlayerRankingInfo`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `account_id` | 1 | uint32 | optional |  |
 | `rank_id` | 2 | uint32 | optional |  |
 | `wins` | 3 | uint32 | optional |  |
@@ -392,15 +390,23 @@ direction LR
 | `rank_if_win` | 10 | uint32 | optional |  |
 | `rank_if_lose` | 11 | uint32 | optional |  |
 | `rank_if_tie` | 12 | uint32 | optional |  |
-| `per_map_rank` | 13 | PlayerRankingInfo.PerMapRank | repeated |  |
+| `per_map_rank` | 13 | [PlayerRankingInfo.PerMapRank](#playerrankinginfopermaprank) | repeated |  |
 | `leaderboard_name_status` | 14 | uint32 | optional |  |
 | `highest_rank` | 15 | uint32 | optional |  |
 | `rank_expiry` | 16 | uint32 | optional |  |
 
+#### `PlayerRankingInfo.PerMapRank`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `map_id` | 1 | uint32 | optional |  |
+| `rank_id` | 2 | uint32 | optional |  |
+| `wins` | 3 | uint32 | optional |  |
+
 ### `IpAddressMask`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `a` | 1 | uint32 | optional |  |
 | `b` | 2 | uint32 | optional |  |
 | `c` | 3 | uint32 | optional |  |
@@ -410,25 +416,39 @@ direction LR
 
 ### `XpProgressData`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `xp_points` | 1 | uint32 | optional |  |
 | `xp_category` | 2 | int32 | optional |  |
 
 ### `ScoreLeaderboardData`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `quest_id` | 1 | uint64 | optional |  |
 | `score` | 2 | uint32 | optional |  |
-| `accountentries` | 3 | ScoreLeaderboardData.AccountEntries | repeated |  |
-| `matchentries` | 5 | ScoreLeaderboardData.Entry | repeated |  |
+| `accountentries` | 3 | [ScoreLeaderboardData.AccountEntries](#scoreleaderboarddataaccountentries) | repeated |  |
+| `matchentries` | 5 | [ScoreLeaderboardData.Entry](#scoreleaderboarddataentry) | repeated |  |
 | `leaderboard_name` | 6 | string | optional |  |
+
+#### `ScoreLeaderboardData.Entry`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `tag` | 1 | uint32 | optional |  |
+| `val` | 2 | uint32 | optional |  |
+
+#### `ScoreLeaderboardData.AccountEntries`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `accountid` | 1 | uint32 | optional |  |
+| `entries` | 2 | [ScoreLeaderboardData.Entry](#scoreleaderboarddataentry) | repeated |  |
 
 ### `DeepPlayerStatsEntry`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `accountid` | 1 | uint32 | optional |  |
 | `match_id` | 2 | uint64 | optional |  |
 | `mm_game_mode` | 3 | uint32 | optional |  |
@@ -460,8 +480,8 @@ direction LR
 
 ### `DeepPlayerMatchEvent`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `accountid` | 1 | uint32 | optional |  |
 | `match_id` | 2 | uint64 | optional |  |
 | `event_id` | 3 | uint32 | optional |  |
@@ -479,8 +499,8 @@ direction LR
 
 ### `CDataGCCStrike15_v2_TournamentMatchDraft`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `event_id` | 1 | int32 | optional |  |
 | `event_stage_id` | 2 | int32 | optional |  |
 | `team_id_0` | 3 | int32 | optional |  |
@@ -490,7 +510,7 @@ direction LR
 | `team_id_start` | 7 | int32 | optional |  |
 | `team_id_veto1` | 8 | int32 | optional |  |
 | `team_id_pickn` | 9 | int32 | optional |  |
-| `drafts` | 10 | CDataGCCStrike15_v2_TournamentMatchDraft.Entry | repeated |  |
+| `drafts` | 10 | [CDataGCCStrike15_v2_TournamentMatchDraft.Entry](#cdatagccstrike15_v2_tournamentmatchdraftentry) | repeated |  |
 | `vote_mapid_0` | 11 | int32 | repeated |  |
 | `vote_mapid_1` | 12 | int32 | repeated |  |
 | `vote_mapid_2` | 13 | int32 | repeated |  |
@@ -502,19 +522,34 @@ direction LR
 | `vote_phase_start` | 19 | float | optional |  |
 | `vote_phase_length` | 20 | float | optional |  |
 
+#### `CDataGCCStrike15_v2_TournamentMatchDraft.Entry`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `mapid` | 1 | int32 | optional |  |
+| `team_id_ct` | 2 | int32 | optional |  |
+
 ### `CPreMatchInfoData`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `predictions_pct` | 1 | int32 | optional |  |
 | `draft` | 4 | [CDataGCCStrike15_v2_TournamentMatchDraft](#cdatagccstrike15_v2_tournamentmatchdraft) | optional |  |
-| `stats` | 5 | CPreMatchInfoData.TeamStats | repeated |  |
+| `stats` | 5 | [CPreMatchInfoData.TeamStats](#cprematchinfodatateamstats) | repeated |  |
 | `wins` | 6 | int32 | repeated |  |
+
+#### `CPreMatchInfoData.TeamStats`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `match_info_idxtxt` | 1 | int32 | optional |  |
+| `match_info_txt` | 2 | string | optional |  |
+| `match_info_teams` | 3 | string | repeated |  |
 
 ### `CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `account_ids` | 1 | uint32 | repeated |  |
 | `game_type` | 2 | uint32 | optional |  |
 | `match_id` | 3 | uint64 | optional |  |
@@ -539,8 +574,8 @@ direction LR
 
 ### `CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `xp_progress_data` | 1 | [XpProgressData](#xpprogressdata) | repeated |  |
 | `account_id` | 2 | uint32 | optional |  |
 | `current_xp` | 3 | uint32 | optional |  |
@@ -554,16 +589,31 @@ direction LR
 
 ### `CMsgGCCStrike15_ClientDeepStats`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `account_id` | 1 | uint32 | optional |  |
-| `range` | 2 | CMsgGCCStrike15_ClientDeepStats.DeepStatsRange | optional |  |
-| `matches` | 3 | CMsgGCCStrike15_ClientDeepStats.DeepStatsMatch | repeated |  |
+| `range` | 2 | [CMsgGCCStrike15_ClientDeepStats.DeepStatsRange](#cmsggccstrike15_clientdeepstatsdeepstatsrange) | optional |  |
+| `matches` | 3 | [CMsgGCCStrike15_ClientDeepStats.DeepStatsMatch](#cmsggccstrike15_clientdeepstatsdeepstatsmatch) | repeated |  |
+
+#### `CMsgGCCStrike15_ClientDeepStats.DeepStatsRange`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `begin` | 1 | uint32 | optional |  |
+| `end` | 2 | uint32 | optional |  |
+| `frozen` | 3 | bool | optional |  |
+
+#### `CMsgGCCStrike15_ClientDeepStats.DeepStatsMatch`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `player` | 1 | [DeepPlayerStatsEntry](#deepplayerstatsentry) | optional |  |
+| `events` | 2 | [DeepPlayerMatchEvent](#deepplayermatchevent) | repeated |  |
 
 ### `CEconItemPreviewDataBlock`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `accountid` | 1 | uint32 | optional |  |
 | `itemid` | 2 | uint64 | optional |  |
 | `defindex` | 3 | uint32 | optional |  |
@@ -575,7 +625,7 @@ direction LR
 | `killeaterscoretype` | 9 | uint32 | optional |  |
 | `killeatervalue` | 10 | uint32 | optional |  |
 | `customname` | 11 | string | optional |  |
-| `stickers` | 12 | CEconItemPreviewDataBlock.Sticker | repeated |  |
+| `stickers` | 12 | [CEconItemPreviewDataBlock.Sticker](#ceconitempreviewdatablocksticker) | repeated |  |
 | `inventory` | 13 | uint32 | optional |  |
 | `origin` | 14 | uint32 | optional |  |
 | `questid` | 15 | uint32 | optional |  |
@@ -583,15 +633,32 @@ direction LR
 | `musicindex` | 17 | uint32 | optional |  |
 | `entindex` | 18 | int32 | optional |  |
 | `petindex` | 19 | uint32 | optional |  |
-| `keychains` | 20 | CEconItemPreviewDataBlock.Sticker | repeated |  |
+| `keychains` | 20 | [CEconItemPreviewDataBlock.Sticker](#ceconitempreviewdatablocksticker) | repeated |  |
 | `style` | 21 | uint32 | optional |  |
-| `variations` | 22 | CEconItemPreviewDataBlock.Sticker | repeated |  |
+| `variations` | 22 | [CEconItemPreviewDataBlock.Sticker](#ceconitempreviewdatablocksticker) | repeated |  |
 | `upgrade_level` | 23 | uint32 | optional |  |
+
+#### `CEconItemPreviewDataBlock.Sticker`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `slot` | 1 | uint32 | optional |  |
+| `sticker_id` | 2 | uint32 | optional |  |
+| `wear` | 3 | float | optional |  |
+| `scale` | 4 | float | optional |  |
+| `rotation` | 5 | float | optional |  |
+| `tint_id` | 6 | uint32 | optional |  |
+| `offset_x` | 7 | float | optional |  |
+| `offset_y` | 8 | float | optional |  |
+| `offset_z` | 9 | float | optional |  |
+| `pattern` | 10 | uint32 | optional |  |
+| `highlight_reel` | 11 | uint32 | optional |  |
+| `wrapped_sticker` | 12 | uint32 | optional |  |
 
 ### `PlayerDecalDigitalSignature`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `signature` | 1 | bytes | optional |  |
 | `accountid` | 2 | uint32 | optional |  |
 | `rtime` | 3 | uint32 | optional |  |

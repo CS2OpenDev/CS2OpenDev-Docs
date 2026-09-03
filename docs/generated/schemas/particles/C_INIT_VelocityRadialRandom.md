@@ -1,12 +1,14 @@
 ---
-layout: default
 title: C_INIT_VelocityRadialRandom
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / C_INIT_VelocityRadialRandom
 
 # C_INIT_VelocityRadialRandom
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 4680 bytes (`0x1248`) · **Align:** 8 · **Module:** particles
 

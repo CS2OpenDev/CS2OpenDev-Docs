@@ -1,8 +1,6 @@
 ---
-layout: default
 title: engine_gcmessages.proto
-parent: Protobufs
-nav_exclude: true
+proto: engine_gcmessages.proto
 ---
 
 # `engine_gcmessages.proto`
@@ -34,8 +32,8 @@ direction LR
 
 ### `CEngineGotvSyncPacket`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `match_id` | 1 | uint64 | optional |  |
 | `instance_id` | 2 | uint32 | optional |  |
 | `signupfragment` | 3 | uint32 | optional |  |

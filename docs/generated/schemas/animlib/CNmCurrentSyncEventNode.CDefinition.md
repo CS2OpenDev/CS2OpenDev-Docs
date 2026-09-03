@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmCurrentSyncEventNode::CDefinition"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmCurrentSyncEventNode::CDefinition
 
 # CNmCurrentSyncEventNode::CDefinition
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 8 · **Module:** animlib
 
@@ -16,9 +18,10 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmFloatValueNode::CDefinition" <|-- "CNmCurrentSyncEventNode::CDefinition"
-    "CNmValueNode::CDefinition" <|-- "CNmFloatValueNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
+    `CNmFloatValueNode::CDefinition` <|-- `CNmCurrentSyncEventNode::CDefinition`
+    `CNmValueNode::CDefinition` <|-- `CNmFloatValueNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmValueNode::CDefinition`
+    `CNmCurrentSyncEventNode::CDefinition` *-- `CNmCurrentSyncEventNode::InfoType_t`
 ```
 
 ## Memory layout
@@ -29,7 +32,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `m_nNodeIdx` | int16 | [CNmGraphNode::CDefinition](../animlib/CNmGraphNode.CDefinition.md) |  |
 | `0x10` | `m_nSourceStateNodeIdx` | int16 |  |  |
-| `0x12` | `m_infoType` | CNmCurrentSyncEventNode::InfoType_t |  |  |
+| `0x12` | `m_infoType` | [CNmCurrentSyncEventNode::InfoType_t](../animlib/CNmCurrentSyncEventNode.InfoType_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

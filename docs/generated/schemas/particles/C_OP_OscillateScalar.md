@@ -1,12 +1,14 @@
 ---
-layout: default
 title: C_OP_OscillateScalar
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / C_OP_OscillateScalar
 
 # C_OP_OscillateScalar
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 520 bytes (`0x208`) · **Align:** 8 · **Module:** particles
 

@@ -1,14 +1,18 @@
 ---
-layout: default
-title: SequenceHistory_t
-nav_exclude: true
+title: SequenceHistory_t (server)
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / SequenceHistory_t
 
 # SequenceHistory_t
 
-**Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** n/a (unspecified) · **Module:** server
+
+**Twin:** [SequenceHistory_t (client)](../client/SequenceHistory_t.md)
 
 **Relationships:**
 

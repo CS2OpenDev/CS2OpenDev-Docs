@@ -1,13 +1,11 @@
 ---
-layout: default
 title: steammessages_gamenetworkingui.proto
-parent: Protobufs
-nav_exclude: true
+proto: steammessages_gamenetworkingui.proto
 ---
 
 # `steammessages_gamenetworkingui.proto`
 
-**Imports:** `steamnetworkingsockets_messages.proto`, `steamdatagram_messages_sdr.proto`
+**Imports:** [`steamnetworkingsockets_messages.proto`](steamnetworkingsockets_messages.md), [`steamdatagram_messages_sdr.proto`](steamdatagram_messages_sdr.md)
 
 ## Diagram
 
@@ -80,10 +78,12 @@ direction LR
 
 ### `CGameNetworkingUI_GlobalState`
 
+*(no fields)*
+
 ### `CGameNetworkingUI_ConnectionState`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `connection_key` | 1 | string | optional |  |
 | `appid` | 2 | uint32 | optional |  |
 | `connection_id_local` | 3 | fixed32 | optional |  |
@@ -99,29 +99,29 @@ direction LR
 | `sdrpopid_local` | 21 | string | optional |  |
 | `sdrpopid_remote` | 22 | string | optional |  |
 | `address_remote` | 23 | string | optional |  |
-| `p2p_routing` | 24 | CMsgSteamDatagramP2PRoutingSummary | optional |  |
+| `p2p_routing` | 24 | [CMsgSteamDatagramP2PRoutingSummary](steamdatagram_messages_sdr.md#cmsgsteamdatagramp2proutingsummary) | optional |  |
 | `ping_interior` | 25 | uint32 | optional |  |
 | `ping_remote_front` | 26 | uint32 | optional |  |
 | `ping_default_internet_route` | 27 | uint32 | optional |  |
-| `e2e_quality_local` | 30 | CMsgSteamDatagramConnectionQuality | optional |  |
-| `e2e_quality_remote` | 31 | CMsgSteamDatagramConnectionQuality | optional |  |
+| `e2e_quality_local` | 30 | [CMsgSteamDatagramConnectionQuality](steamnetworkingsockets_messages.md#cmsgsteamdatagramconnectionquality) | optional |  |
+| `e2e_quality_remote` | 31 | [CMsgSteamDatagramConnectionQuality](steamnetworkingsockets_messages.md#cmsgsteamdatagramconnectionquality) | optional |  |
 | `e2e_quality_remote_instantaneous_time` | 32 | uint64 | optional |  |
 | `e2e_quality_remote_lifetime_time` | 33 | uint64 | optional |  |
-| `front_quality_local` | 40 | CMsgSteamDatagramConnectionQuality | optional |  |
-| `front_quality_remote` | 41 | CMsgSteamDatagramConnectionQuality | optional |  |
+| `front_quality_local` | 40 | [CMsgSteamDatagramConnectionQuality](steamnetworkingsockets_messages.md#cmsgsteamdatagramconnectionquality) | optional |  |
+| `front_quality_remote` | 41 | [CMsgSteamDatagramConnectionQuality](steamnetworkingsockets_messages.md#cmsgsteamdatagramconnectionquality) | optional |  |
 | `front_quality_remote_instantaneous_time` | 42 | uint64 | optional |  |
 | `front_quality_remote_lifetime_time` | 43 | uint64 | optional |  |
 
 ### `CGameNetworkingUI_Message`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `connection_state` | 1 | [CGameNetworkingUI_ConnectionState](#cgamenetworkingui_connectionstate) | repeated |  |
 
 ### `CGameNetworkingUI_ConnectionSummary`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `transport_kind` | 1 | uint32 | optional |  |
 | `sdrpop_local` | 2 | string | optional |  |
 | `sdrpop_remote` | 3 | string | optional |  |
@@ -133,8 +133,8 @@ direction LR
 
 ### `CGameNetworkingUI_AppSummary`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `appid` | 1 | uint32 | optional |  |
 | `ip_was_shared_with_friend` | 10 | bool | optional |  |
 | `ip_was_shared_with_nonfriend` | 11 | bool | optional |  |

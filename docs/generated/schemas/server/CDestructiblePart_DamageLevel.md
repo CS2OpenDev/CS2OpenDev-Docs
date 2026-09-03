@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CDestructiblePart_DamageLevel
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CDestructiblePart_DamageLevel
 
 # CDestructiblePart_DamageLevel
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** 8 · **Module:** server
 
@@ -29,7 +31,7 @@ classDiagram
 | `0x0` | `m_sName` | CUtlString |  | `MPropertyDescription Name for this damage level.  Presently only used for debugging/display - one day may be used in code to allow destroying by name.` |
 | `0x8` | `m_sBreakablePieceName` | CGlobalSymbol |  | `MPropertyAttributeEditor ModelDocPicker( MODELDOC_PICK_TYPE_BREAKPIECE )` `MPropertyDescription Name of the breakable to trigger breaking on when health reaches zero.` `MPropertyStartGroup +Model Setup` |
 | `0x10` | `m_nBodyGroupValue` | int32 |  | `MPropertyDescription Value to set for the body group when the damage level is broken.` |
-| `0x14` | `m_nHealth` | [CSkillInt](../server/CSkillInt.md) |  | `MPropertyDescription Total health of this damage level. When it reaches 0, the damage level is 'broken' using the breakable prop system.` `MPropertyStartGroup +Damage` `MPropertySuppressExpr m_nDamagePassthroughType == InvincibleAbsorb \|\| m_nDamagePassthroughType == InvinciblePassthrough` |
+| `0x14` | `m_nHealth` | [CSkillInt](../server/CSkillInt.md) |  | `MPropertyDescription Total health of this damage level. When it reaches 0, the damage level is 'broken' using the breakable prop system.` `MPropertyStartGroup +Damage` `MPropertySuppressExpr m_nDamagePassthroughType == InvincibleAbsorb &#124;&#124; m_nDamagePassthroughType == InvinciblePassthrough` |
 | `0x24` | `m_flCriticalDamagePercent` | float32 |  | `MPropertyDescription % chance (0-1) of dealing 'critical' damage, which destroys this damage level, regardless of damage pass through type.` |
 | `0x28` | `m_nDamagePassthroughType` | [EDestructiblePartDamagePassThroughType](../server/EDestructiblePartDamagePassThroughType.md) |  | `MPropertyDescription How damage to this damage level is handled.` |
 | `0x2c` | `m_nDestructionDeathBehavior` | [DestructiblePartDestructionDeathBehavior_t](../server/DestructiblePartDestructionDeathBehavior_t.md) |  | `MPropertyDescription Should the entity die when this damage level is destroyed?` `MPropertyStartGroup +Death` |

@@ -1,12 +1,14 @@
 ---
-layout: default
 title: C_OP_RenderLightBeam
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / C_OP_RenderLightBeam
 
 # C_OP_RenderLightBeam
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 8088 bytes (`0x1f98`) · **Align:** 8 · **Module:** particles
 
@@ -60,7 +62,7 @@ classDiagram
 | `0xa68` | `m_flBrightnessLumensPerMeter` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName Lumens Per Meter` |
 | `0xbd8` | `m_flNumberOfLightsToCreate` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName Number Of Lights To Create` |
 | `0xd48` | `m_bCastShadows` | bool |  | `MPropertyFriendlyName Shadows` `MPropertySuppressExpr mod == csgo` |
-| `0xd49` | `m_bDynamicBounce` | bool |  | `MPropertyFriendlyName Dynamic Bounce (RTGI)` `MPropertySuppressExpr !m_bCastShadows \|\| mod == csgo` |
+| `0xd49` | `m_bDynamicBounce` | bool |  | `MPropertyFriendlyName Dynamic Bounce (RTGI)` `MPropertySuppressExpr !m_bCastShadows &#124;&#124; mod == csgo` |
 | `0xd50` | `m_flBounceScale` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName Bounce Scale` `MPropertySuppressExpr !m_bDynamicBounce` |
 | `0xec0` | `m_flSkirt` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName Skirt` |
 | `0x1030` | `m_flRange` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName Range` |

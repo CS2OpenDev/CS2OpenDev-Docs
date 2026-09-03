@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmSnapWeaponNode::CDefinition"
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CNmSnapWeaponNode::CDefinition
 
 # CNmSnapWeaponNode::CDefinition
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 32 bytes (`0x20`) · **Align:** 8 · **Module:** server
 
@@ -16,9 +18,9 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmPassthroughNode::CDefinition" <|-- "CNmSnapWeaponNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmPassthroughNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmPoseNode::CDefinition"
+    `CNmPassthroughNode::CDefinition` <|-- `CNmSnapWeaponNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmPassthroughNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmPoseNode::CDefinition`
 ```
 
 ## Memory layout

@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CBodyComponentBaseModelEntity
-nav_exclude: true
+title: CBodyComponentBaseModelEntity (server)
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CBodyComponentBaseModelEntity
 
 # CBodyComponentBaseModelEntity
 
-**Kind:** class · **Size:** 1248 bytes (`0x4e0`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 1248 bytes (`0x4e0`) · **Align:** n/a (unspecified) · **Module:** server
+
+**Twin:** [CBodyComponentBaseModelEntity (client)](../client/CBodyComponentBaseModelEntity.md)
 
 **Inherits from:** [CBodyComponentSkeletonInstance](../server/CBodyComponentSkeletonInstance.md)
 

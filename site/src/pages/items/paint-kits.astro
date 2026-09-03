@@ -1,0 +1,52 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import DataTable, { PAGE_SIZE, type Column } from '../../components/islands/DataTable';
+import TableRowsNote from '../../components/TableRowsNote.astro';
+import { provenanceLine } from '../../lib/provenance';
+import { loadPaintKits, paintKitRows } from '../../lib/data/items';
+import { itemsHref, withBase } from '../../lib/urls';
+
+const kits = loadPaintKits();
+
+const columns: Column[] = [
+	{ key: 'def_index', label: 'Def index', numeric: true },
+	{ key: 'name', label: 'Name', mono: true },
+	{ key: 'description_tag', label: 'Description tag' },
+];
+
+// Only the first page rides in the island's props; the rest comes from
+// paint-kits/rows.json.ts on first interaction.
+const rows = paintKitRows().slice(0, PAGE_SIZE);
+const rowsHref = withBase('/items/paint-kits/rows.json');
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Paint Kits',
+		description: `${kits.length} weapon finish (paint kit) definitions for this build.`,
+	}}
+>
+	<div>
+		<p>
+			Weapon finish definitions: every paint kit this build's economy tables carry, keyed by{' '}
+			<code>def_index</code>. Back to <a href={itemsHref()}>Items</a>.
+		</p>
+
+		<p class="cs2-provenance">{provenanceLine()}</p>
+
+		<div data-pagefind-ignore>
+			<DataTable
+				id="pk"
+				columns={columns}
+				rows={rows}
+				src={rowsHref}
+				anchorKey="name"
+				caption="Paint kits"
+				pageSize={PAGE_SIZE}
+				initialSort={{ key: 'def_index', dir: 'asc' }}
+				client:idle
+			/>
+			<TableRowsNote shown={rows.length} total={kits.length} rowsHref={rowsHref} />
+		</div>
+	</div>
+</StarlightPage>

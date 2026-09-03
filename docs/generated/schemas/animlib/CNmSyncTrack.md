@@ -1,14 +1,23 @@
 ---
-layout: default
 title: CNmSyncTrack
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmSyncTrack
 
 # CNmSyncTrack
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 176 bytes (`0xb0`) · **Align:** 8 · **Module:** animlib
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CNmSyncTrack *-- `CNmSyncTrack::Event_t`
+```
 
 ## Memory layout
 
@@ -16,7 +25,7 @@ nav_exclude: true
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_syncEvents` | CUtlLeanVectorFixedGrowable< [CNmSyncTrack](../animlib/CNmSyncTrack.md)::Event_t, 10 > |  |  |
+| `0x0` | `m_syncEvents` | CUtlLeanVectorFixedGrowable< [CNmSyncTrack::Event_t](../animlib/CNmSyncTrack.Event_t.md), 10 > |  |  |
 | `0xa8` | `m_nStartEventOffset` | int32 |  |  |
 
 <details><summary>KV3 class defaults</summary>

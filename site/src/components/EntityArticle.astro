@@ -1,0 +1,355 @@
+---
+import Mermaid from './Mermaid.astro';
+import { hex, inlineCodeHtml, toInt } from '../lib/html';
+import { codegenArtifactHref, entityHref, moduleHref, schemasHref } from '../lib/urls';
+import { buildEntityTree, renderTreeHtml } from '../lib/tree';
+import {
+	counterpartOf,
+	childrenOf,
+	directParents,
+	displayMetadata,
+	enumValueDisplay,
+	flattenLayout,
+	friendlyText,
+	identifierAliases,
+	kv3Defaults,
+	linkTypeHtml,
+	metaLabel,
+	segmentColor,
+	stripSegments,
+	twinsOf,
+	usersOf,
+	type Entity,
+	type SchemaIndex,
+} from '../lib/data/schema';
+import { relationshipDiagram } from '../lib/diagram';
+
+interface Props {
+	idx: SchemaIndex;
+	ent: Entity;
+}
+const { idx, ent } = Astro.props;
+const p = idx.provenance;
+
+const isClass = ent.kind === 'class';
+const size = isClass ? toInt(ent.raw.size) : ent.raw.size;
+const alignment = isClass ? ent.raw.alignment : undefined;
+const underlying = ent.kind === 'enum' ? ent.raw.alignment : undefined;
+
+const parents = isClass ? directParents(idx, ent) : [];
+const derived = childrenOf(idx, ent);
+const twins = twinsOf(idx, ent);
+const counterpart = counterpartOf(idx, ent);
+const users = usersOf(idx, ent);
+const USER_CAP = 50;
+
+const layout = isClass ? flattenLayout(idx, ent) : undefined;
+const rows = layout?.rows ?? [];
+const inheritedCount = rows.length - (layout?.ownCount ?? 0);
+const segments = layout && rows.length <= 400 ? stripSegments(layout, size) : [];
+const declaringOrder = new Map<string, number>();
+for (const seg of segments) {
+	if (seg.declaring && !declaringOrder.has(seg.declaring.key)) {
+		declaringOrder.set(seg.declaring.key, declaringOrder.size);
+	}
+}
+const legend = [...declaringOrder.entries()].map(([key, i]) => ({
+	ent: idx.byKey.get(key)!,
+	color: segmentColor(i),
+}));
+// Per-declaring-class colours as classes: an inline style on 250 segments is far heavier.
+const stripCss = legend.map((l, i) => `#cs2-strip .c${i}{background:${l.color}}`).join('');
+
+const tree = isClass ? renderTreeHtml([buildEntityTree(idx, ent)], { homeModule: ent.module }) : '';
+const metadata = isClass ? displayMetadata(ent) : [];
+const kv3 = isClass ? kv3Defaults(ent) : undefined;
+const KV3_FULL_LIMIT = 20 * 1024;
+const KV3_PREVIEW = 2 * 1024;
+const kv3Truncated = kv3 !== undefined && kv3.length > KV3_FULL_LIMIT;
+const kv3Text = kv3Truncated ? `${kv3!.slice(0, KV3_PREVIEW)}\n...` : kv3;
+
+const diagram = relationshipDiagram(idx, ent);
+
+const aliases = [
+	...identifierAliases(ent.name),
+	...(isClass ? ent.raw.fields.map((f) => f.name) : ent.raw.members.map((m) => m.name)),
+].join(' ');
+
+const description = ent.annotations?.description;
+const notes = ent.annotations?.notes;
+const warning = ent.annotations?.warning;
+---
+
+<div>
+	<nav class="cs2-breadcrumb" aria-label="Breadcrumb">
+		<a href={schemasHref()}>Schemas</a> / <a href={moduleHref(ent.module)}>{ent.module}</a> / <span>{ent.name}</span>
+	</nav>
+
+	{description && <p set:html={inlineCodeHtml(description)} />}
+	{notes && <p class="cs2-note" set:html={inlineCodeHtml(notes)} />}
+	{warning && <p class="cs2-note"><strong>Warning:</strong> <Fragment set:html={inlineCodeHtml(warning)} /></p>}
+
+	<p class="cs2-provenance">
+		CS2 build {p.buildId} · Steam date {p.versionDate} · platform {p.platform} ·{' '}
+		<a href={codegenArtifactHref('cs2_schema.json')}>cs2_schema.json</a>
+	</p>
+
+	<p class="cs2-stats">
+		<span><strong>Kind:</strong> {ent.kind}</span>
+		{size !== null && size !== undefined && (
+			<span><strong>Size:</strong> {size} bytes (<code>{hex(size)}</code>)</span>
+		)}
+		{alignment !== undefined && (
+			<span>
+				<strong>Alignment:</strong>{' '}
+				{alignment === 255 ? 'unspecified (0xff sentinel)' : `${alignment} bytes`}
+			</span>
+		)}
+		{underlying && <span><strong>Underlying type:</strong> <code>{underlying}</code></span>}
+		<span><strong>Module:</strong> <a href={moduleHref(ent.module)}>{ent.module}</a></span>
+		<span><strong>Binary:</strong> <code>{ent.binaryModule}</code></span>
+	</p>
+
+	<span class="cs2-aliases" aria-hidden="true" data-pagefind-meta={`module:${ent.module}, kind:${ent.kind}`}>{aliases}</span>
+
+	{metadata.length > 0 && (
+		<p class="cs2-rel">
+			<strong>Metadata:</strong>{' '}
+			{metadata.map((m, i) => (
+				<>{i > 0 && ' '}<code>{m}</code></>
+			))}
+		</p>
+	)}
+
+	<h2 id="relationships">Relationships</h2>
+
+	{isClass && parents.length > 0 && (
+		<p class="cs2-rel">
+			<strong>Inherits from:</strong>{' '}
+			{parents.map((b, i) => (
+				<>
+					{i > 0 && ', '}
+					{b.ent ? <a href={entityHref(b.ent.module, b.ent.name)}>{b.name}</a> : b.name}
+				</>
+			))}
+		</p>
+	)}
+	{isClass && parents.length === 0 && <p class="cs2-rel"><strong>Inherits from:</strong> nothing; this is a root class.</p>}
+
+	{twins.length > 0 && (
+		<p class="cs2-rel">
+			<strong>Same name in another module:</strong>{' '}
+			{twins.map((t, i) => (
+				<>{i > 0 && ', '}<a href={entityHref(t.module, t.name)}>{t.name} ({t.module})</a></>
+			))}
+		</p>
+	)}
+	{counterpart && (
+		<p class="cs2-rel">
+			<strong>{counterpart.module === 'client' ? 'Client' : 'Server'} counterpart:</strong>{' '}
+			<a href={entityHref(counterpart.module, counterpart.name)}>{counterpart.name}</a>
+		</p>
+	)}
+
+	{derived.length > 0 && derived.length <= 10 && (
+		<p class="cs2-rel">
+			<strong>Derived by:</strong>{' '}
+			{derived.map((d, i) => (
+				<>{i > 0 && ', '}<a href={entityHref(d.module, d.name)}>{d.name}</a></>
+			))}
+		</p>
+	)}
+	{derived.length > 10 && (
+		<>
+			<p class="cs2-rel"><strong>Derived by</strong> <span class="cs2-count">({derived.length})</span></p>
+			<ul class="cs2-cols">
+				{derived.map((d) => <li><a href={entityHref(d.module, d.name)}>{d.name}</a></li>)}
+			</ul>
+		</>
+	)}
+
+	{users.length > 0 && (
+		<>
+			<p class="cs2-rel">
+				<strong>Used by</strong> <span class="cs2-count">
+					({users.length > USER_CAP ? `${USER_CAP} of ${users.length}` : users.length})
+				</span> as a field type
+			</p>
+			<ul class="cs2-cols">
+				{users.slice(0, USER_CAP).map((u) => (
+					<li><a href={entityHref(u.module, u.name)}>{u.name}</a>{u.module !== ent.module && <span class="cs2-count"> {u.module}</span>}</li>
+				))}
+			</ul>
+		</>
+	)}
+
+	{!isClass && twins.length === 0 && !counterpart && users.length === 0 && (
+		<p class="cs2-rel">No field in the schema is typed with this enum, and no other module declares the same name.</p>
+	)}
+
+	{isClass && (
+		<details class="cs2-tree-details" data-pagefind-ignore open>
+			<summary>Inheritance tree</summary>
+			<Fragment set:html={tree} />
+		</details>
+	)}
+
+	{isClass && diagram.length > 0 && (
+		<details class="cs2-diagram" data-pagefind-ignore>
+			<summary>
+				Relationship diagram <span class="cs2-count">({diagram.length} edges)</span>
+			</summary>
+			<Mermaid
+				code={`classDiagram\n${diagram.join('\n')}`}
+				caption="Inheritance chain, direct subclasses (up to 20) and a few composition edges"
+			/>
+		</details>
+	)}
+
+	{ent.kind === 'enum' && (
+		<>
+			<h2 id="values">Values</h2>
+			{ent.raw.members.length === 0 ? (
+				<p class="cs2-empty">The schema exposes no members for this enum.</p>
+			) : (
+				<div class="cs2-table-wrap">
+					<table>
+						<thead>
+							<tr>
+								<th scope="col">Name</th>
+								<th scope="col" class="value">Value</th>
+								<th scope="col" class="value">Unsigned</th>
+								<th scope="col" class="ann">Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							{ent.raw.members.map((m) => {
+								const v = enumValueDisplay(ent.raw, m.value);
+								return (
+									<tr>
+										<td><code>{m.name}</code></td>
+										<td class="value">{v.value}</td>
+										<td class="value">{v.hex ? <code>{v.hex}</code> : ''}</td>
+										<td class="ann">
+											{m.annotations?.description && <span set:html={`${inlineCodeHtml(m.annotations.description)} `} />}
+											{friendlyText(m.metadata) && <span>{friendlyText(m.metadata)} </span>}
+											{m.metadata.filter((a) => a.name).map((a) => <><code>{metaLabel(a)}</code>{' '}</>)}
+										</td>
+									</tr>
+								);
+							})}
+						</tbody>
+					</table>
+				</div>
+			)}
+		</>
+	)}
+
+	{isClass && (
+		<>
+			<h2 id="memory-layout">Memory layout</h2>
+			{rows.length === 0 ? (
+				<p class="cs2-empty">
+					The schema exposes no fields for this class. It is registered for its type identity or
+					its methods only.
+				</p>
+			) : (
+				<>
+					<p>
+						{rows.length} fields, {layout!.ownCount} declared here and {inheritedCount} inherited.
+						Offsets are absolute from the object base on {p.platform}.
+					</p>
+
+					{segments.length > 0 && (
+						<>
+							<style is:inline set:html={stripCss}></style>
+							<div id="cs2-strip" class="cs2-strip" role="img" aria-label={`Field placement across ${size} bytes`} data-pagefind-ignore>
+								{segments.map((seg) => (
+									<i
+										class={seg.gap ? 'cs2-strip-seg cs2-strip-gap' : `cs2-strip-seg c${declaringOrder.get(seg.declaring!.key)}`}
+										style={`flex-grow:${seg.span}`}
+										title={seg.label}
+									/>
+								))}
+							</div>
+							<p class="cs2-strip-legend" data-pagefind-ignore>
+								{legend.map((l) => (
+									<span>
+										<span class="cs2-strip-swatch" style={`background:${l.color}`}></span>
+										{l.ent.name}
+									</span>
+								))}
+							</p>
+						</>
+					)}
+
+					<input type="checkbox" id="declared-only" class="cs2-declared-only" />
+					<label class="cs2-declared-toggle" for="declared-only">
+						Show only fields declared here <span class="cs2-count">({layout!.ownCount})</span>
+					</label>
+
+					<div class="cs2-table-wrap">
+						<table>
+							<thead>
+								<tr>
+									<th scope="col" class="offset">Offset</th>
+									<th scope="col">Field</th>
+									<th scope="col">Type</th>
+									<th scope="col" class="from">From</th>
+									<th scope="col" class="ann">Annotations</th>
+								</tr>
+							</thead>
+							<tbody>
+								{rows.map((r) => (
+									<tr class={r.inherited ? 'inherited' : undefined} data-pagefind-ignore={r.inherited ? '' : undefined}>
+										<td class="offset">
+											{r.offset === null ? '-' : <code>{hex(r.offset)}</code>}
+											{r.bit !== null && <span class="cs2-count"> :{r.bit}{r.bitWidth! > 1 ? `+${r.bitWidth! - 1}` : ''}</span>}
+										</td>
+										<td><code>{r.field.name}</code></td>
+										<td set:html={linkTypeHtml(idx, r.field.type.name, ent.module, r.field.typeModule)} />
+										<td class="from">
+											{r.inherited ? (
+												<a href={entityHref(r.declaring.module, r.declaring.name)}>{r.declaring.name}</a>
+											) : (
+												''
+											)}
+										</td>
+										<td class="ann">
+											{r.field.annotations?.description && <span set:html={`${inlineCodeHtml(r.field.annotations.description)} `} />}
+											{r.field.metadata.filter((a) => a.name).map((a) => <><code>{metaLabel(a)}</code>{' '}</>)}
+										</td>
+									</tr>
+								))}
+							</tbody>
+						</table>
+					</div>
+				</>
+			)}
+
+			{layout && layout.secondary.length > 0 && (
+				<p class="cs2-note">
+					<strong>Also inherits:</strong>{' '}
+					{layout.secondary.map((s, i) => (
+						<>{i > 0 && ', '}<a href={entityHref(s.module, s.name)}>{s.name}</a></>
+					))}. The artifact does not record where a non-primary base sits inside the object, so
+					those fields are not placed in the table above.
+				</p>
+			)}
+
+			{kv3Text && (
+				<details class="cs2-kv3" data-pagefind-ignore>
+					<summary>KV3 class defaults</summary>
+					{kv3Truncated && (
+						<p class="cs2-note">
+							Truncated to the first {KV3_PREVIEW} bytes of {kv3!.length}. The full value is in{' '}
+							<a href={codegenArtifactHref('cs2_schema.json')}>cs2_schema.json</a> under
+							<code> classes[].metadata[MGetKV3ClassDefaults]</code>.
+						</p>
+					)}
+					<pre>{kv3Text}</pre>
+				</details>
+			)}
+		</>
+	)}
+</div>

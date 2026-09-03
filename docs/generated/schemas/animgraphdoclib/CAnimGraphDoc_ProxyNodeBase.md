@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CAnimGraphDoc_ProxyNodeBase
-nav_exclude: true
+module: animgraphdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphdoclib](../animgraphdoclib.md) / CAnimGraphDoc_ProxyNodeBase
 
 # CAnimGraphDoc_ProxyNodeBase
 
-**Kind:** class · **Size:** 96 bytes (`0x60`) · **Align:** 255 · **Module:** animgraphdoclib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 96 bytes (`0x60`) · **Align:** n/a (unspecified) · **Module:** animgraphdoclib
 
 **Inherits from:** [CAnimGraphDoc_Node](../animgraphdoclib/CAnimGraphDoc_Node.md)
 

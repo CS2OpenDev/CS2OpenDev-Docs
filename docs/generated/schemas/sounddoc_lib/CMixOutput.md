@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CMixOutput
-nav_exclude: true
+module: sounddoc_lib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [sounddoc_lib](../sounddoc_lib.md) / CMixOutput
 
 # CMixOutput
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 48 bytes (`0x30`) · **Align:** 8 · **Module:** sounddoc_lib
 
@@ -34,8 +36,7 @@ classDiagram
 | `0x1a` | `m_bEditProperties` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x20` | `m_flVolume1` | float32 |  | `MPropertyDescription Volume for audio.Input1.<br>Range is 0 - 1` |
 | `0x24` | `m_flVolume2` | float32 |  | `MPropertyDescription Volume for audio.Input2.<br>Range is 0 - 1` |
-| `0x28` | `m_sendTo` | CUtlString |  | `MPropertyAttributeChoiceName send_to_track` `MPropertyDescription Optional name of a send in your main mix graph.  When set this node's mix will be sent to the named track in your main mix graph.
-Most voice graphs have a single output, that is routed by the sound operator stack.You should only use this for special cases where the vmix graph needs to route additional unique mixes to specific tracks.e.g.bypass HRTF andsend a different mix to the reverb send` `MPropertyFriendlyName Send To Track` |
+| `0x28` | `m_sendTo` | CUtlString |  | `MPropertyAttributeChoiceName send_to_track` `MPropertyDescription Optional name of a send in your main mix graph.  When set this node's mix will be sent to the named track in your main mix graph. Most voice graphs have a single output, that is routed by the sound operator stack.You should only use this for special cases where the vmix graph needs to route additional unique mixes to specific tracks.e.g.bypass HRTF andsend a different mix to the reverb send` `MPropertyFriendlyName Send To Track` |
 
 <details><summary>KV3 class defaults</summary>
 

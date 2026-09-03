@@ -31,32 +31,105 @@ automatically every 4 hours:
   game-content tables (items, game modes, surfaces, props, maps).
 
 Because SchemaTracker reads only the game binaries, coverage is
-**runtime-only**: the schema spans the modules those binaries register
-(`client`, `server`, `entity2`, `pulse_runtime_lib`, `particleslib`,
-`animgraphlib`) — roughly 1,500 types.  The Source 2 editor / tooling
-schema (hammer, modeldoc, resourcecompiler, worldrenderer, …) never ships
-in the game and is intentionally **absent**.
+**binary-derived**: the schema is whatever the shipped binaries register,
+never reconstructed from source. On `windows-x86_64` that includes both the
+shipped runtime modules (`client`, `server`, `entity2`, …) and the
+Windows-only tool binaries Valve ships alongside the game (`hammer.dll`,
+`resourcecompiler.dll`, `worldrenderer.dll`, `modeldoc_editor.dll`, and
+others), so the Source 2 editor / tooling schema is present, not absent. As
+of build 25000182 (2026-08-28 Steam date; see `docs/generated/data/meta.json`
+for current numbers) the schema spans **47 modules**, 3,590 distinct
+top-level classes, 611 enums, and 18,549 fields.
+
+The site base is `https://cs2opendev.github.io/CS2OpenDev-Docs`. Entity
+pages live at `/schemas/<module>/<TypeName>/` (case preserved, `::`
+written as `.`, see [URL scheme](#url-scheme) below); the JSON schema
+files below keep their old path, `/generated/downstream-codegen-schemas/<file>`.
+Old `/generated/schemas/...`-style URLs from the previous Jekyll site
+redirect to the new paths.
 
 The documentation covers:
 
 | Section | Contents | Browse URL |
 |---------|----------|------------|
-| **Schema entities** | All C++ entity classes, structs, and enums the CS2 runtime binaries register (~1,500 types across 6 modules), each with field offsets, class sizes, flags, and the binary module it lives in | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas |
-| **Protobufs** | The build's `.proto` message definitions — game events, network messages, GC messages, demo format (~32 files, ~500 messages), read from SchemaTracker's prebuilt `FileDescriptorSet`.  These are reconstructed from the binaries, so they carry **no source comments** (see the network-message tables below for the ID↔type mapping). | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/protobufs |
-| **Network & demo messages** | Wire-protocol tables: integer message ID → protobuf message type, per channel, cross-linked to the protobuf pages | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/network |
-| **ConVars** | Every console variable with default value, flags, value type, and description (~3,350 entries) | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/convars |
-| **Commands** | Every console command with flags and description (~840 entries) | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/commands |
-| **Items & economy** | Items, prefabs, paint kits (skins), sticker kits, music kits, rarities, qualities | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/items |
-| **Game modes / maps / surfaces / props** | Game types & modes, map groups, radar overviews, surface physics, breakable-prop data | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/gamemodes |
-| **Changelog** | Per-build diff (added / removed / changed) against the previous build | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/changelog |
-| **UML diagrams** | Mermaid class-hierarchy diagrams for every schema module | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/diagrams/server_hierarchy |
-| **Entity schema** | `downstream-codegen-schemas/cs2_schema.json` — the entity schema in SchemaTracker's **native** shape (top-level `generator` / `build_id` / `platform` / `revision` / `version_date` / `version_time` / `classes` / `enums`), enriched with optional community `annotations`.  See the [format reference](#cs2_schemajson-format) below. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/cs2_schema.json |
-| **Game events schema** | `downstream-codegen-schemas/gameevents_schema.json` — the game-event registry.  Top-level `events` list; each event has `name` / `comment` / `source` / `properties` / `fields`.  Same `annotations` enrichment pattern as `cs2_schema.json`. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/gameevents_schema.json |
-| **ConVars schema** | `downstream-codegen-schemas/convars_schema.json` — top-level `convars` list, each `{ name, default, flags, description }`. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/convars_schema.json |
-| **Commands schema** | `downstream-codegen-schemas/commands_schema.json` — top-level `commands` list, each `{ name, flags, description }`. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/commands_schema.json |
-| **Well-known constants** | `downstream-codegen-schemas/well_known_constants.json` — integer / enum values downstream tooling needs but that the schema doesn't expose as named enum types (team numbers, `m_gamePhase`, `CSWeaponState_t`, …).  Source of truth is `docs/overlays/well_known_constants.yml`. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/well_known_constants.json |
-| **Schema history** | Field-precise build-to-build evolution of the entity schema, rendered from SchemaTracker's cumulative, facts-only `schema_evolution.json` (Layer A).  Documents the artifact's neutral rename/move **evidence surfaces**: the frozen `pairedEvidence` 1:1 pairs plus the unselected candidate lists added in artifact rev 0.6.0 (`pairCandidates`, `classPairCandidates`, `fieldMoveCandidates`), the 0.7.0 calendar axis (`fromManifestCreatedUtc` / `toManifestCreatedUtc`) and attribute coverage, and the 0.8.0 per-key `metaOps`.  No rename or safety verdict is ever asserted — promotion happens via `docs/overlays/schema-lens.yml`. | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schema-history |
-| **Field history schema** | `downstream-codegen-schemas/field_history.json` — whole-history record per `(class, field)`: `firstSeenBuild` / `lastSeenBuild` / `typeHistory`, plus a community-verified `confirmedRename` block where one exists.  **`[firstSeenBuild, lastSeenBuild]` is a presence *hull*, not continuous presence** — reconstruct exact presence from `schema_evolution.json`'s transitions.  Windows is the canonical platform and a strict superset in class coverage (historical Windows-only tool binaries such as `hammer.dll` / `sfm.dll` have no Linux counterparts). | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/downstream-codegen-schemas/field_history.json |
+| **Schema entities** | All C++ entity classes, structs, and enums the CS2 runtime + tool binaries register (3,590 classes, 611 enums across 47 modules on build 25000182), each with field offsets, class sizes, flags, and the binary module it lives in | `/schemas/` |
+| **Protobufs** | The build's `.proto` message definitions: game events, network messages, GC messages, demo format (40 files, 775 messages counting nested types), read from SchemaTracker's prebuilt `FileDescriptorSet`.  These are reconstructed from the binaries, so they carry **no source comments** (see the network-message table below for the ID↔type mapping). | `/protobufs/` |
+| **Network & demo messages** | Wire-protocol table: integer message ID → protobuf message type, per channel, cross-linked to the protobuf pages | `/network-messages/` |
+| **ConVars** | Every console variable with default value, flags, value type, min/max, and description (3,955 entries) | `/convars/` |
+| **Commands** | Every console command with flags and description (1,132 entries) | `/commands/` |
+| **Game events** | The parsed `.gameevents` registry, one entry per event, anchored so a duplicate name across source files (`round_end` in all three `.gameevents` files, for example) still gets a unique link | `/game-events/` |
+| **Items & economy** | Items, prefabs, paint kits (skins), sticker kits, music kits, rarities, qualities | `/items/`, `/items/paint-kits/`, `/items/sticker-kits/`, `/items/music-kits/` |
+| **Maps / game modes / surfaces / props** | Radar overviews and bomb-site coordinates, game types & modes, surface physics, breakable-prop data: each its own page now | `/maps/`, `/game-modes/`, `/surfaces/`, `/props/` |
+| **Binaries / modules** | Every binary in the build, with SHA-256 and, where the binary matches a schema module, the `projectName` it registers | `/modules/` |
+| **Changelog** | Per-build diff (added / removed / changed) against the previous build | `/changelog/` |
+| **UML diagrams** | Mermaid class-hierarchy diagrams; every module has its own at `/schemas/<module>/hierarchy/`, and `/schemas/hierarchy/` is the combined server + client tree that replaced the old single `server_hierarchy` diagram | `/schemas/hierarchy/` |
+| **Codegen schema formats** | Overview of the five downstream JSON schema files below: shape, versioning, migration notes | `/codegen-schemas/` |
+| **Entity schema** | `downstream-codegen-schemas/cs2_schema.json`: the entity schema in SchemaTracker's **native** shape (top-level `generator` / `build_id` / `platform` / `revision` / `version_date` / `version_time` / `classes` / `enums`), enriched with optional community `annotations`.  See the [format reference](#cs2_schemajson-format) below. | `/generated/downstream-codegen-schemas/cs2_schema.json` |
+| **Game events schema** | `downstream-codegen-schemas/gameevents_schema.json`: the game-event registry.  Top-level `events` list; each event has `name` / `comment` / `source` / `properties` / `fields`.  Same `annotations` enrichment pattern as `cs2_schema.json`. | `/generated/downstream-codegen-schemas/gameevents_schema.json` |
+| **ConVars schema** | `downstream-codegen-schemas/convars_schema.json`: top-level `convars` list, each `{ name, default, flags, description, value_type, min, max }`. `value_type` is upstream's declared type (`Float32`, `Int32`, `Bool`, `String`, ...); `min`/`max` are JSON numbers (integer when integral, else float) and `null` on an unbounded side. | `/generated/downstream-codegen-schemas/convars_schema.json` |
+| **Commands schema** | `downstream-codegen-schemas/commands_schema.json`: top-level `commands` list, each `{ name, flags, description, has_completion_callback }`. | `/generated/downstream-codegen-schemas/commands_schema.json` |
+| **Well-known constants** | `downstream-codegen-schemas/well_known_constants.json`: integer / enum values downstream tooling needs but that the schema doesn't expose as named enum types (team numbers, `m_gamePhase`, `CSWeaponState_t`, …).  Source of truth is `docs/overlays/well_known_constants.yml`. | `/generated/downstream-codegen-schemas/well_known_constants.json` |
+| **Schema history** | Field-precise build-to-build evolution of the entity schema, rendered from SchemaTracker's cumulative, facts-only `schema_evolution.json` (Layer A).  Documents the artifact's neutral rename/move **evidence surfaces**: the frozen `pairedEvidence` 1:1 pairs plus the unselected candidate lists added in artifact rev 0.6.0 (`pairCandidates`, `classPairCandidates`, `fieldMoveCandidates`), the 0.7.0 calendar axis (`fromManifestCreatedUtc` / `toManifestCreatedUtc`) and attribute coverage, and the 0.8.0 per-key `metaOps`.  No rename or safety verdict is ever asserted; promotion happens via `docs/overlays/schema-lens.yml`. | `/schema-history/` |
+| **Field history schema** | `downstream-codegen-schemas/field_history.json`: whole-history record per `(class, field)`: `firstSeenBuild` / `lastSeenBuild` / `typeHistory`, plus a community-verified `confirmedRename` block where one exists.  **`[firstSeenBuild, lastSeenBuild]` is a presence *hull*, not continuous presence**. Reconstruct exact presence from `schema_evolution.json`'s transitions.  Windows is the canonical platform and a strict superset in class coverage (historical Windows-only tool binaries such as `hammer.dll` / `sfm.dll` have no Linux counterparts). | `/generated/downstream-codegen-schemas/field_history.json` |
+
+### URL scheme
+
+Prefix every path in this document with the site base to get a full URL,
+e.g. `https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/server/CBaseEntity/`.
+
+- Entity page: `/schemas/<module>/<TypeName>/`. Module is the schema's
+  `projectName` (`server`, `client`, `entity2`, …), case is preserved, and
+  `::` in a nested type name is written as `.` (`CBoneConstraintPoseSpaceBone::Input_t`
+  becomes `/schemas/modellib/CBoneConstraintPoseSpaceBone.Input_t/`).
+- Module index: `/schemas/<module>/`. Module inheritance tree:
+  `/schemas/<module>/hierarchy/`. Combined server + client tree:
+  `/schemas/hierarchy/`.
+- Proto file page: `/protobufs/<stem>/`, with one anchor per message or
+  enum: `#<QualifiedName>` for a top-level type, `#Parent.Nested` for a
+  nested one.
+- ConVars, commands, and game events are single pages with one entry per
+  anchor: `/convars/#<name>`, `/commands/#<name>`, `/game-events/#<anchor>`.
+  A game event name that repeats across `.gameevents` source files gets a
+  source suffix on the anchor instead of colliding, e.g. `player_death-mod`.
+- The five `downstream-codegen-schemas/*.json` files and `field_history.json`
+  are the one exception to the new scheme: they keep serving at
+  `/generated/downstream-codegen-schemas/<file>`, matching their path in
+  the git repository.
+
+### Twin entities and `projectName`
+
+A class compiled into both the client and server binaries (`CCSPlayerController`
+in `server`, `C_CSPlayerController` and `CCSPlayerController` in `client`) is
+not one record: SchemaTracker emits one independent record per
+`(projectName, name)` pair, each with its own offsets, because client and
+server layouts can and do diverge. `module` on a record names the actual
+binary (`server.dll`, `client.dll`, …); `projectName` is the grouping axis
+the site and `docs/overlays/` key on. A generator fix on this branch means
+a server-module twin page no longer silently inherits its offsets from the
+client record that happens to share its name; each twin's page, and its
+page title, now names the module it was built from.
+
+### The `docs/generated/data/` bundle
+
+Alongside the `downstream-codegen-schemas/` JSON above, `docs/site_data.py`
+writes a second, larger JSON bundle to `docs/generated/data/` that backs
+the Astro site's non-entity pages. It is **not served at a site URL**:
+only `downstream-codegen-schemas/` is copied into the site's build output,
+so reach it via the raw GitHub path,
+`https://raw.githubusercontent.com/CS2OpenDev/CS2OpenDev-Docs/main/docs/generated/data/<file>`.
+Full field-level documentation is in
+[`docs/generated/data/README.md`](docs/generated/data/README.md); one line
+each:
+
+- `meta.json`: build identity, per-family counts, and the 47-module list this document's counts are drawn from.
+- `protobufs.json`: every proto file, flattened messages/enums (nested types included), type resolution, and the wire-id join that backs `network.json`.
+- `convars.json` / `commands.json`: the ConVars and commands tables, with the shared `flags` legend from `docs/overlays/convar_flags.yml`.
+- `gameevents.json`: the game-event registry with anchors and the wire `key_t` type-code legend.
+- `items.json` / `paint_kits.json` / `sticker_kits.json` / `music_kits.json`: items and their prefab-resolved display fields, skins, stickers, music kits.
+- `maps.json` / `game_modes.json` / `props.json` / `surfaces.json`: map radar data, game modes, breakable-prop collision groups, surface materials.
+- `modules.json`: every binary in the build with its SHA-256 and, where it matches one, the schema module it registers.
+- `network.json`: the union of RTTI-recovered and enum-derived message-id tables, by channel.
+- `changelog.json` / `schema-history.json`: the latest build-pair diff and the full cross-build schema evolution record.
 
 ### `cs2_schema.json` format
 
@@ -72,13 +145,13 @@ integer `offset` / `size` / `count` values are **string-encoded**
 
 ```json
 {
-  "schema_format_version": "2.1",
+  "schema_format_version": "2.2",
   "generator": "https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker",
-  "build_id": 24537688,
+  "build_id": 25000182,
   "platform": "windows-x86_64",
   "revision": "hl2sdk-cs2/…",
-  "version_date": "2026-07-09",
-  "version_time": "2026-07-09T20:41:37Z",
+  "version_date": "2026-08-28",
+  "version_time": "2026-08-28T20:16:08Z",
   "classes": [...],
   "enums":   [...]
 }
@@ -275,7 +348,7 @@ Same enrichment pattern as `cs2_schema.json`, applied to the parsed
 Field `type` values are the raw .gameevents type tags — `none`,
 `string`, `bool`, `byte`, `short`, `long`, `float`, `uint64`, `local`,
 `player_controller`, `player_controller_and_pawn`, `player_pawn`,
-`ehandle`.  See the [generated reference page](https://cs2opendev.github.io/CS2OpenDev-Docs/generated/gameevents)
+`ehandle`.  See the [generated reference page](https://cs2opendev.github.io/CS2OpenDev-Docs/game-events/)
 for human-readable type meanings.
 
 ---
@@ -301,7 +374,7 @@ All server-side entities ultimately derive from `CEntityInstance` →
 
 ### `CBaseEntity`
 *Root entity. Every server entity derives from this.*
-Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server/CBaseEntity
+Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/server/CBaseEntity/
 
 Key fields:
 
@@ -319,7 +392,7 @@ Key fields:
 
 ### `CCSPlayerController`
 *One per connected client, persists across rounds.*
-Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server/CCSPlayerController
+Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/server/CCSPlayerController/
 
 Inheritance: `CEntityInstance` → `CBaseEntity` → `CBasePlayerController` → `CCSPlayerController`
 
@@ -347,7 +420,7 @@ Key fields:
 
 ### `CCSPlayerPawn`
 *The in-world player body; recreated each round.*
-Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server/CCSPlayerPawn
+Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/server/CCSPlayerPawn/
 
 Inheritance: `CBaseEntity` → `CBaseModelEntity` → `CBaseFlex` → `CBaseAnimGraph` → `CBaseCombatCharacter` → `CBasePlayerPawn` → `CCSPlayerPawnBase` → `CCSPlayerPawn`
 
@@ -373,7 +446,7 @@ Key fields:
 
 ### `CCSGameRules`
 *Singleton holding all match-level state.*
-Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server/CCSGameRules
+Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/server/CCSGameRules/
 
 Accessed via the `CCSGameRulesProxy` entity on the client. Inheritance:
 `CGameRules` → `CMultiplayRules` → `CTeamplayRules` → `CCSGameRules`
@@ -404,7 +477,7 @@ Key fields:
 
 ### `CCSWeaponBase` / `CCSWeaponBaseGun`
 *Base weapon classes.*
-Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server/CCSWeaponBase
+Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/server/CCSWeaponBase/
 
 Inheritance: `CBaseEntity` → `CBaseModelEntity` → `CBasePlayerWeapon` → `CCSWeaponBase` → `CCSWeaponBaseGun`
 
@@ -426,13 +499,13 @@ All individual weapons (`CAWP`, `CAK47`, `CDEAGLE`, etc.) inherit from
 `CCSWeaponBaseGun` and typically carry 0 additional fields (all data is in
 `CCSWeaponBaseVData` and the base classes).
 
-Full weapon list: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server
+Full weapon list: https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/server/
 
 ---
 
 ### `CPlantedC4`
 *The planted bomb entity.*
-Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server/CPlantedC4
+Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/server/CPlantedC4/
 
 | Field | Type | Notes |
 |-------|------|-------|
@@ -449,52 +522,62 @@ Full reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/s
 ## Key Protobuf message groups
 
 ### Game events (`cs_gameevents.proto`)
-Reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/proto/cs_gameevents
+Reference: `/protobufs/cs_gameevents/`
 
 CS2-specific game event messages (e.g. bomb plant/defuse, kill, round end).
 Sent as `CMsgSource1LegacyGameEvent` on the network.
 
 ### CS2 user messages (`cstrike15_usermessages.proto`)
-Reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/proto/cstrike15_usermessages
+Reference: `/protobufs/cstrike15_usermessages/`
 
-73 messages sent from server to individual clients: HUD hints, radar updates,
-kill cam data, round end summary, item purchases, etc.
+74 top-level messages sent from server to individual clients: HUD hints,
+radar updates, kill cam data, round-end and match-end summaries, item
+purchases, etc.
 
-Key messages: `CCSUsrMsg_RoundEnd`, `CCSUsrMsg_SendAudio`,
+Key messages: `CCSUsrMsg_RoundEndReportData`, `CCSUsrMsg_SendAudio`,
 `CCSUsrMsg_RadioText`, `CCSUsrMsg_HudMsg`, `CCSUsrMsg_KillCam`,
-`CCSUsrMsg_MatchEndData`
+`CCSUsrMsg_EndOfMatchAllPlayersData`
 
 ### CS2 GC messages (`cstrike15_gcmessages.proto`)
-Reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/proto/cstrike15_gcmessages
+Reference: `/protobufs/cstrike15_gcmessages/`
 
-156 messages between the game client/server and Valve's Game Coordinator:
-matchmaking, lobbies, item inventory, competitive ranks, GOTV relay, etc.
+17 top-level messages (25 counting nested types) exchanged with Valve's
+Game Coordinator that are specific to CS2: tournament data, competitive
+ranking, XP progress, deep player stats, item preview blocks. The shared
+Game Coordinator envelope, session, and matchmaking-hello messages live in
+sibling files also under `/protobufs/`: `base_gcmessages.proto`,
+`gcsdk_gcmessages.proto`, `econ_gcmessages.proto`, `gcsystemmsgs.proto`,
+which together carry most of the remaining GC-related message volume.
 
-Key messages: `CMsgGCCStrike15_v2_MatchmakingClient2GCHello`,
-`CMsgGCCStrike15_v2_ClientRequestPlayersProfile`,
-`CMsgGCCStrike15_v2_MatchList`
+Key messages: `PlayerRankingInfo`, `XpProgressData`, `CEconItemPreviewDataBlock`
 
 ### Core net messages (`netmessages.proto`)
-Reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/proto/netmessages
+Reference: `/protobufs/netmessages/`
 
-63 engine-level network messages: snapshot packets, string tables, data
-tables (SendTables), sound events, entity creation/deletion.
+63 top-level engine-level network messages: snapshot packets, string
+tables, data tables (SendTables), server info, voice data. (`CNETMsg_Tick`
+and `CSVCMsg_GameEvent` are real CS2 wire messages but are declared in
+`networkbasetypes.proto`, not here: check `/protobufs/networkbasetypes/`
+for those.)
 
-Key messages: `CNETMsg_Tick`, `CSVCMsg_PacketEntities`,
-`CSVCMsg_CreateStringTable`, `CSVCMsg_GameEvent`, `CSVCMsg_UserMessage`
+Key messages: `CSVCMsg_PacketEntities`, `CSVCMsg_SendTable`,
+`CSVCMsg_CreateStringTable`, `CSVCMsg_GameEventList`, `CSVCMsg_UserMessage`
 
 ### Demo file format (`demo.proto`)
-Reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/proto/demo
+Reference: `/protobufs/demo/`
 
-Messages defining the `.dem` file format: `CDemoHeader`, `CDemoFileHeader`,
+Messages defining the `.dem` file format: `CDemoFileHeader`,
 `CDemoPacket`, `CDemoFullPacket`, `CDemoStringTables`, `CDemoClassInfo`.
-CS2 demos are written in the Source 2 "PBDEMS2" binary format.
+CS2 demos are written in the Source 2 "PBDEMS2" binary format. (There is
+no `CDemoHeader` message in this build; the file header message is
+`CDemoFileHeader`.)
 
 ### User commands (`cs_usercmd.proto`)
-Reference: https://cs2opendev.github.io/CS2OpenDev-Docs/generated/proto/cs_usercmd
+Reference: `/protobufs/cs_usercmd/`
 
-`CCSUsrCmd` — the per-tick command sent from client to server: move direction,
-view angles, attack buttons, subtick data.
+`CSGOUserCmdPB` is the per-tick command sent from client to server: move
+direction, view angles, attack buttons, subtick data. (There is no
+`CCSUsrCmd` message in this build.)
 
 ---
 
@@ -528,24 +611,65 @@ view angles, attack buttons, subtick data.
 
 ## Schema modules quick-reference
 
-| Module | Entities | Description | URL |
-|--------|----------|-------------|-----|
-| `server` | ~574 | Server-side entity classes (weapons, players, game rules, …) | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/server |
-| `client` | ~714 | Client-side entity mirrors and UI components | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/client |
-| `particles` | ~502 | Particle system types | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/particles |
-| `animgraphlib` | ~265 | Animation graph nodes and types | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/animgraphlib |
-| `animlib` | ~210 | Core animation types | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/animlib |
-| `animationsystem` | ~55 | Top-level animation system | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/animationsystem |
-| `physicslib` | ~98 | Physics types | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/physicslib |
-| `vphysics2` | ~5 | Havok physics integration | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/vphysics2 |
-| `modellib` | ~140 | Model/mesh types | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/modellib |
-| `soundsystem` | ~23 | Sound system types | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/soundsystem |
-| `materialsystem2` | ~19 | Material types | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/materialsystem2 |
-| `entity2` | ~17 | Base entity framework types (`CEntityInstance`, `GameTime_t`, …) | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/entity2 |
-| `navlib` | ~11 | Navigation mesh types | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/navlib |
-| `resourcesystem` | ~48 | Resource/asset system types | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/resourcesystem |
-| `scenesystem` | ~12 | Scene graph types | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/scenesystem |
-| `pulse_system` | ~30 | Pulse scripting system | https://cs2opendev.github.io/CS2OpenDev-Docs/generated/schemas/pulse_system |
+All 47 modules on build 25000182, sorted alphabetically. `Classes`/`Enums`
+are this module's counts from `meta.json`'s `modules[]` list, which
+include client/server twin records, so summing this column across all 47
+rows comes out higher than the top-level distinct-name totals above
+(3,590 classes, 611 enums). `Description` is left blank where this
+document has no specific, sourced claim to make about a module beyond its
+name; `hammer`, `resourcecompiler`, `worldrenderer`, and `modeldoc_editor`
+are four of the Windows-only tool binaries called out in the coverage note
+above.
+
+| Module | Classes | Enums | Description | URL |
+|--------|---------|-------|--------------|-----|
+| `animationsystem` | 47 | 7 | Top-level animation system | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/animationsystem/ |
+| `animdoclib` | 197 | 12 |  | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/animdoclib/ |
+| `animgraphdoclib` | 158 | 14 |  | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/animgraphdoclib/ |
+| `animgraphlib` | 243 | 57 | Animation graph nodes and types | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/animgraphlib/ |
+| `animlib` | 180 | 37 | Core animation types | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/animlib/ |
+| `client` | 487 | 3 | Client-side entity mirrors and UI components | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/ |
+| `compositematerialslib` | 10 | 7 |  | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/compositematerialslib/ |
+| `engine2` | 42 | 0 | Core engine2 types | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/engine2/ |
+| `entity2` | 16 | 2 | Base entity framework types (`CEntityInstance`, `GameTime_t`, …) | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/entity2/ |
+| `hammer` | 7 | 3 | Hammer level editor types | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/hammer/ |
+| `host` | 2 | 0 | Host application types | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/host/ |
+| `mapdoclib` | 3 | 0 |  | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/mapdoclib/ |
+| `materialsystem2` | 15 | 5 | Material types | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/materialsystem2/ |
+| `mathlib_extended` | 11 | 2 |  | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/mathlib_extended/ |
+| `met` | 3 | 0 |  | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/met/ |
+| `modeldoc_editor` | 3 | 1 | Model doc editor types | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/modeldoc_editor/ |
+| `modellib` | 114 | 26 | Model/mesh types | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/modellib/ |
+| `modtools` | 2 | 0 | Mod tools types | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/modtools/ |
+| `navlib` | 14 | 3 | Navigation mesh types | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/navlib/ |
+| `networksystem` | 1 | 0 | Networking system types | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/networksystem/ |
+| `panorama_content` | 0 | 2 |  | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/panorama_content/ |
+| `particles` | 434 | 73 | Particle system types | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/particles/ |
+| `particleslib` | 21 | 18 |  | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/particleslib/ |
+| `physicslib` | 99 | 4 | Physics types | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/physicslib/ |
+| `pulse_runtime_lib` | 98 | 11 |  | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/pulse_runtime_lib/ |
+| `pulse_system` | 38 | 4 | Pulse scripting system | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/pulse_system/ |
+| `pulsedoc_lib` | 3 | 1 |  | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/pulsedoc_lib/ |
+| `qcontrols` | 0 | 15 |  | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/qcontrols/ |
+| `rendersystemdx11` | 4 | 3 | DirectX 11 render backend types | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/rendersystemdx11/ |
+| `resourcecompiler` | 17 | 2 | Resource compiler pipeline types | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/resourcecompiler/ |
+| `resourcefile` | 6 | 0 |  | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/resourcefile/ |
+| `resourcesystem` | 48 | 0 | Resource/asset system types | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/resourcesystem/ |
+| `scenesystem` | 9 | 6 | Scene graph types | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/scenesystem/ |
+| `schemasystem` | 1 | 2 | Schema reflection system types | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/schemasystem/ |
+| `server` | 910 | 231 | Server-side entity classes (weapons, players, game rules, …) | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/server/ |
+| `smartprops` | 149 | 18 |  | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/smartprops/ |
+| `sounddoc_lib` | 139 | 2 |  | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/sounddoc_lib/ |
+| `soundsystem` | 35 | 13 | Sound system types | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem/ |
+| `soundsystem_lowlevel` | 73 | 7 |  | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_lowlevel/ |
+| `soundsystem_voicecontainers` | 42 | 7 |  | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/ |
+| `steamaudio` | 17 | 0 | Steam Audio integration types | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/steamaudio/ |
+| `texturelib` | 4 | 6 |  | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/texturelib/ |
+| `tier2` | 2 | 0 |  | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/tier2/ |
+| `toolscene` | 11 | 1 |  | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/toolscene/ |
+| `toolutils2` | 21 | 2 |  | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/toolutils2/ |
+| `vphysics2` | 14 | 1 | Havok physics integration | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/vphysics2/ |
+| `worldrenderer` | 29 | 3 | World renderer types | https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/worldrenderer/ |
 
 ---
 
@@ -584,7 +708,7 @@ content for a specific section:
 | Decode kill/damage events | `cs_gameevents.proto` → `CMsgSource1LegacyGameEvent` |
 | Understand weapon properties | `CCSWeaponBase`, `CCSWeaponBaseGun`, `CCSWeaponBaseVData` in `server` schema |
 | Work with bomb events | `CPlantedC4` in `server` schema, `cs_gameevents.proto` |
-| Decode player commands | `cs_usercmd.proto` → `CCSUsrCmd` |
+| Decode player commands | `cs_usercmd.proto` → `CSGOUserCmdPB` |
 | Find all convars for a system | ConVars reference, filter by flag or prefix |
 | Build a server plugin (Metamod/CS2) | `server` schema for entity offsets, `netmessages.proto` for hooking |
 | Work with item/skin data | `cstrike15_gcmessages.proto`, `CCSPlayerController_InventoryServices` |

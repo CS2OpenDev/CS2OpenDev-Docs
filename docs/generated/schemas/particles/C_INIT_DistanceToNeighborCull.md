@@ -1,12 +1,14 @@
 ---
-layout: default
 title: C_INIT_DistanceToNeighborCull
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / C_INIT_DistanceToNeighborCull
 
 # C_INIT_DistanceToNeighborCull
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 1608 bytes (`0x648`) · **Align:** 8 · **Module:** particles
 

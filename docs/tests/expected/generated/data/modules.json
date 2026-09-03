@@ -1,0 +1,44 @@
+{
+  "modules": [
+    {
+      "export_count": 64,
+      "file_size": "177280",
+      "path": "game/bin/win64/OpenImageDenoise.dll",
+      "resolved_interfaces": [],
+      "schema_module": null,
+      "schema_registration_count": 0,
+      "sha256": "77ddb058fd2c5870cee1a16c4aabb4618f592f9602f388e3c18e406ed753559a",
+      "stem": "OpenImageDenoise"
+    },
+    {
+      "export_count": 564,
+      "file_size": "50625664",
+      "path": "game/bin/win64/OpenImageDenoise_core.dll",
+      "resolved_interfaces": [],
+      "schema_module": null,
+      "schema_registration_count": 0,
+      "sha256": "8a445b2112e33aa94da9a4dd4dbd5e54a8b697866aabf4ded81b87c5e3826731",
+      "stem": "OpenImageDenoise_core"
+    },
+    {
+      "export_count": 1,
+      "file_size": "513664",
+      "path": "game/bin/win64/OpenImageDenoise_device_cpu.dll",
+      "resolved_interfaces": [],
+      "schema_module": null,
+      "schema_registration_count": 0,
+      "sha256": "7e14c3d7a19736cefe515779668c15ad20f1481d78f198055625289198cee286",
+      "stem": "OpenImageDenoise_device_cpu"
+    },
+    {
+      "export_count": 1,
+      "file_size": "2518656",
+      "path": "game/bin/win64/OpenImageDenoise_device_cuda.dll",
+      "resolved_interfaces": [],
+      "schema_module": null,
+      "schema_registration_count": 0,
+      "sha256": "d2ab3613f1c4e2f86ba446a1e8beb13ea9788d05455e41f569a16731618309ff",
+      "stem": "OpenImageDenoise_device_cuda"
+    }
+  ]
+}

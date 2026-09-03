@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CPulseCell_Outflow_PlayVCD::VCDRequirementInfo_t"
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CPulseCell_Outflow_PlayVCD::VCDRequirementInfo_t
 
 # CPulseCell_Outflow_PlayVCD::VCDRequirementInfo_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 80 bytes (`0x50`) · **Align:** 8 · **Module:** server
 
@@ -14,7 +16,7 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CPulseCell_Outflow_PlayVCD::VCDRequirementInfo_t" *-- CPulse_OutflowConnection
+    `CPulseCell_Outflow_PlayVCD::VCDRequirementInfo_t` *-- CPulse_OutflowConnection
 ```
 
 ## Memory layout

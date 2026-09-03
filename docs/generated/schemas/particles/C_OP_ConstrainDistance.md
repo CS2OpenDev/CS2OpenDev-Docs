@@ -1,12 +1,14 @@
 ---
-layout: default
 title: C_OP_ConstrainDistance
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / C_OP_ConstrainDistance
 
 # C_OP_ConstrainDistance
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 1232 bytes (`0x4d0`) · **Align:** 8 · **Module:** particles
 

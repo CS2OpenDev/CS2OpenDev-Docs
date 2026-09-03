@@ -1,12 +1,14 @@
 ---
-layout: default
 title: inv_image_data_t
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / inv_image_data_t
 
 # inv_image_data_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 232 bytes (`0xe8`) · **Align:** 8 · **Module:** client
 

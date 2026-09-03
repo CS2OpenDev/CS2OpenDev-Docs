@@ -1,12 +1,14 @@
 ---
-layout: default
 title: C_OP_SetUserEvent
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / C_OP_SetUserEvent
 
 # C_OP_SetUserEvent
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 1592 bytes (`0x638`) · **Align:** 8 · **Module:** particles
 

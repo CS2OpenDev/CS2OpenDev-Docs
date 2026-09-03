@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CLightRigSunLight
-nav_exclude: true
+module: toolscene
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [toolscene](../toolscene.md) / CLightRigSunLight
 
 # CLightRigSunLight
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 84 bytes (`0x54`) · **Align:** 4 · **Module:** toolscene
 

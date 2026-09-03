@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CCSPlayer_RadioServices
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CCSPlayer_RadioServices
 
 # CCSPlayer_RadioServices
 
-**Kind:** class · **Size:** 104 bytes (`0x68`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 104 bytes (`0x68`) · **Align:** n/a (unspecified) · **Module:** server
 
 **Inherits from:** [CPlayerPawnComponent](../server/CPlayerPawnComponent.md)
 

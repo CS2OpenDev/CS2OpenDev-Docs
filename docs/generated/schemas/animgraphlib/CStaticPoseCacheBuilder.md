@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CStaticPoseCacheBuilder
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / CStaticPoseCacheBuilder
 
 # CStaticPoseCacheBuilder
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 56 bytes (`0x38`) · **Align:** 8 · **Module:** animgraphlib
 

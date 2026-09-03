@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmGraphDocDataDictionary::Parameter_t"
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmGraphDocDataDictionary::Parameter_t
 
 # CNmGraphDocDataDictionary::Parameter_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 64 bytes (`0x40`) · **Align:** 8 · **Module:** animdoclib
 
@@ -16,7 +18,7 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmGraphDocDataDictionary::Parameter_t" *-- NmGraphValueType_t
+    `CNmGraphDocDataDictionary::Parameter_t` *-- NmGraphValueType_t
 ```
 
 ## Memory layout

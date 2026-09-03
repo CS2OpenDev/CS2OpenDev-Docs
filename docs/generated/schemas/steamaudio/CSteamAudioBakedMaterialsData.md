@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CSteamAudioBakedMaterialsData
-nav_exclude: true
+module: steamaudio
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [steamaudio](../steamaudio.md) / CSteamAudioBakedMaterialsData
 
 # CSteamAudioBakedMaterialsData
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 56 bytes (`0x38`) · **Align:** 8 · **Module:** steamaudio
 

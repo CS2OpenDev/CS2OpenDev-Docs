@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CBuoyancyHelper
-nav_exclude: true
+title: CBuoyancyHelper (server)
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CBuoyancyHelper
 
 # CBuoyancyHelper
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 280 bytes (`0x118`) · **Align:** 8 · **Module:** server
+
+**Twin:** [CBuoyancyHelper (client)](../client/CBuoyancyHelper.md)
 
 **Relationships:**
 

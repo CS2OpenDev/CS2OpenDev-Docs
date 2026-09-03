@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: rendersystemdx11"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: rendersystemdx11

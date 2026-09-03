@@ -1,20 +1,22 @@
 ---
-layout: default
-title: CCSPlayerController
-nav_exclude: true
+title: CCSPlayerController (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CCSPlayerController
 
 # CCSPlayerController
 
-The server-side controller entity for a CS2 player.  One CCSPlayerController exists per connected client for the lifetime of the connection; it persists across rounds.  The controller owns a CCSPlayerPawn (the physical in-world representation) which may be recreated each round.
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
+The server-side controller entity for a CS2 player.  One CCSPlayerController exists per connected client for the lifetime of the connection; it persists across rounds.  The controller owns a CCSPlayerPawn (the physical in-world representation) which may be recreated each round.
 
 > 📝 The controller / pawn split mirrors the Source 2 architecture described in the HL2SDK: a lightweight controller manages session-level state (score, team, competitive rank) while the pawn carries per-round physics and animation state.  Demo parsers should track m_hPlayerPawn to find the corresponding pawn entity handle each round.
 
-
 **Kind:** class · **Size:** 2400 bytes (`0x960`) · **Align:** 8 · **Module:** client
+
+**Twin:** [CCSPlayerController (server)](../server/CCSPlayerController.md)
 
 **Inherits from:** [CBasePlayerController](../client/CBasePlayerController.md)
 
@@ -30,7 +32,7 @@ classDiagram
     CCSPlayerController --> CCSPlayerController_ActionTrackingServices
     CCSPlayerController --> CCSPlayerController_DamageServices
     CCSPlayerController *-- GameTime_t
-    CCSPlayerController *-- QuestProgress
+    CCSPlayerController *-- `QuestProgress::Reason`
     CCSPlayerController --> C_CSPlayerPawn
     CCSPlayerController --> C_CSObserverPawn
 ```
@@ -42,8 +44,8 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_iszPrivateVScripts` | CUtlSymbolLarge | [CEntityInstance](../entity2/CEntityInstance.md) |  |
-| `0x10` | `m_pEntity` | [CEntityIdentity](../entity2/CEntityIdentity.md)* | [CEntityInstance](../entity2/CEntityInstance.md) |  |
-| `0x28` | `m_CScriptComponent` | [CScriptComponent](../entity2/CScriptComponent.md)* | [CEntityInstance](../entity2/CEntityInstance.md) |  |
+| `0x10` | `m_pEntity` | [CEntityIdentity](../entity2/CEntityIdentity.md)* | [CEntityInstance](../entity2/CEntityInstance.md) | CEntityIdentity pointer: the entity's identity record (name, class, handle, flags). |
+| `0x28` | `m_CScriptComponent` | [CScriptComponent](../entity2/CScriptComponent.md)* | [CEntityInstance](../entity2/CEntityInstance.md) | VScript component attached to the entity, when scripted. |
 | `0x30` | `m_CBodyComponent` | [CBodyComponent](../client/CBodyComponent.md)* | [C_BaseEntity](../client/C_BaseEntity.md) |  |
 | `0x38` | `m_NetworkTransmitComponent` | [CNetworkTransmitComponent](../server/CNetworkTransmitComponent.md) | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
 | `0x328` | `m_nLastThinkTick` | [GameTick_t](../entity2/GameTick_t.md) | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
@@ -128,21 +130,21 @@ classDiagram
 | `0x5f8` | `m_nBloodType` | [BloodType](../server/BloodType.md) | [C_BaseEntity](../client/C_BaseEntity.md) |  |
 | `0x608` | `m_CommandContext` | [C_CommandContext](../client/C_CommandContext.md) | [CBasePlayerController](../client/CBasePlayerController.md) | `MNotSaved` |
 | `0x6b0` | `m_nInButtonsWhichAreToggles` | uint64 | [CBasePlayerController](../client/CBasePlayerController.md) | `MNotSaved` |
-| `0x6b8` | `m_nTickBase` | uint32 | [CBasePlayerController](../client/CBasePlayerController.md) | `MNotSaved` |
-| `0x6bc` | `m_hPawn` | CHandle< [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) > | [CBasePlayerController](../client/CBasePlayerController.md) |  |
+| `0x6b8` | `m_nTickBase` | uint32 | [CBasePlayerController](../client/CBasePlayerController.md) | Server tick number at the time of the most-recent usercmd from this client. *Only sent to the owning player (LocalPlayerExclusive). Used for lag compensation and prediction.* `MNotSaved` |
+| `0x6bc` | `m_hPawn` | CHandle< [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) > | [CBasePlayerController](../client/CBasePlayerController.md) | CHandle to the base pawn currently controlled by this controller. *For CS2 human players the concrete type is CCSPlayerPawn.  Use m_hPlayerPawn on CCSPlayerController for the typed handle.* |
 | `0x6c0` | `m_bKnownTeamMismatch` | bool | [CBasePlayerController](../client/CBasePlayerController.md) |  |
 | `0x6c4` | `m_hPredictedPawn` | CHandle< [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) > | [CBasePlayerController](../client/CBasePlayerController.md) | `MNotSaved` |
 | `0x6c8` | `m_nSplitScreenSlot` | CSplitScreenSlot | [CBasePlayerController](../client/CBasePlayerController.md) | `MNotSaved` |
 | `0x6cc` | `m_hSplitOwner` | CHandle< [CBasePlayerController](../client/CBasePlayerController.md) > | [CBasePlayerController](../client/CBasePlayerController.md) | `MNotSaved` |
 | `0x6d0` | `m_hSplitScreenPlayers` | CUtlVector< CHandle< [CBasePlayerController](../client/CBasePlayerController.md) > > | [CBasePlayerController](../client/CBasePlayerController.md) | `MNotSaved` |
 | `0x6e8` | `m_bIsHLTV` | bool | [CBasePlayerController](../client/CBasePlayerController.md) |  |
-| `0x6ec` | `m_iConnected` | [PlayerConnectedState](../server/PlayerConnectedState.md) | [CBasePlayerController](../client/CBasePlayerController.md) | `MNotSaved` |
+| `0x6ec` | `m_iConnected` | [PlayerConnectedState](../server/PlayerConnectedState.md) | [CBasePlayerController](../client/CBasePlayerController.md) | PlayerConnectedState enum – 0 = Disconnected, 1 = Connected, 2 = Connecting. `MNotSaved` |
 | `0x6f0` | `m_iMostConnected` | [PlayerConnectedState](../server/PlayerConnectedState.md) | [CBasePlayerController](../client/CBasePlayerController.md) | `MNotSaved` |
-| `0x6f4` | `m_iszPlayerName` | char[128] | [CBasePlayerController](../client/CBasePlayerController.md) | `MNotSaved` |
-| `0x780` | `m_steamID` | uint64 | [CBasePlayerController](../client/CBasePlayerController.md) | `MNotSaved` |
+| `0x6f4` | `m_iszPlayerName` | char[128] | [CBasePlayerController](../client/CBasePlayerController.md) | Display name of the player, as reported by Steam (up to 128 bytes, UTF-8). `MNotSaved` |
+| `0x780` | `m_steamID` | uint64 | [CBasePlayerController](../client/CBasePlayerController.md) | 64-bit Steam account ID (SteamID64) of the connected client. *Transmitted as a fixed64; only sent to the owning player and GOTV.* `MNotSaved` |
 | `0x788` | `m_bIsLocalPlayerController` | bool | [CBasePlayerController](../client/CBasePlayerController.md) | `MNotSaved` |
-| `0x789` | `m_bNoClipEnabled` | bool | [CBasePlayerController](../client/CBasePlayerController.md) |  |
-| `0x78c` | `m_iDesiredFOV` | uint32 | [CBasePlayerController](../client/CBasePlayerController.md) |  |
+| `0x789` | `m_bNoClipEnabled` | bool | [CBasePlayerController](../client/CBasePlayerController.md) | True when sv_cheats noclip is active for this player. |
+| `0x78c` | `m_iDesiredFOV` | uint32 | [CBasePlayerController](../client/CBasePlayerController.md) | Field-of-view override requested by the player (0 = use server default). |
 | `0x810` | `m_pInGameMoneyServices` | [CCSPlayerController_InGameMoneyServices](../client/CCSPlayerController_InGameMoneyServices.md)* |  |  |
 | `0x818` | `m_pInventoryServices` | [CCSPlayerController_InventoryServices](../client/CCSPlayerController_InventoryServices.md)* |  |  |
 | `0x820` | `m_pActionTrackingServices` | [CCSPlayerController_ActionTrackingServices](../client/CCSPlayerController_ActionTrackingServices.md)* |  |  |
@@ -160,8 +162,7 @@ classDiagram
 | `0x868` | `m_sSanitizedPlayerName` | CUtlString |  |  |
 | `0x870` | `m_iCoachingTeam` | int32 |  | Team number this player is coaching (0 if not coaching). |
 | `0x878` | `m_nPlayerDominated` | uint64 |  | 64-bit bitmask; bit N set means this player is dominating player-slot N. |
-| `0x880` | `m_nPlayerDominatingMe` | uint64 |  | 64-bit mask of player-slot bits that are currently dominating this player.
- |
+| `0x880` | `m_nPlayerDominatingMe` | uint64 |  | 64-bit mask of player-slot bits that are currently dominating this player. |
 | `0x888` | `m_iCompetitiveRanking` | int32 |  | Player's current Premier/Competitive numeric skill rating. |
 | `0x88c` | `m_iCompetitiveWins` | int32 |  | Total number of ranked wins accumulated on this account. |
 | `0x890` | `m_iCompetitiveRankType` | int8 |  | Rank type identifier (e.g. 0 = unranked, 11 = Premier, 12 = Competitive). |
@@ -171,7 +172,7 @@ classDiagram
 | `0x8a0` | `m_nEndMatchNextMapVote` | int32 |  | Index of the map this player has voted for in the end-of-match map vote. |
 | `0x8a4` | `m_unActiveQuestId` | uint16 |  | Active operation mission ID for this player (0 if none active). |
 | `0x8a8` | `m_rtActiveMissionPeriod` | uint32 |  |  |
-| `0x8ac` | `m_nQuestProgressReason` | [QuestProgress](../server/QuestProgress.md)::Reason |  | Reason code for the last quest-progress update sent to this player. |
+| `0x8ac` | `m_nQuestProgressReason` | [QuestProgress::Reason](../server/QuestProgress.Reason.md) |  | Reason code for the last quest-progress update sent to this player. |
 | `0x8b0` | `m_unPlayerTvControlFlags` | uint32 |  |  |
 | `0x8e0` | `m_iDraftIndex` | int32 |  |  |
 | `0x8e4` | `m_msQueuedModeDisconnectionTimestamp` | uint32 |  |  |
@@ -189,8 +190,7 @@ classDiagram
 | `0x90a` | `m_bHasBeenControlledByPlayerThisRound` | bool |  |  |
 | `0x90c` | `m_nBotsControlledThisRound` | int32 |  |  |
 | `0x910` | `m_bCanControlObservedBot` | bool |  | True when the player is allowed to take control of the bot they are spectating. |
-| `0x914` | `m_hPlayerPawn` | CHandle< [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) > |  | CHandle pointing to the player's active CCSPlayerPawn. *Becomes invalid (INVALID_EHANDLE) when the player is dead and their pawn has been removed.  Check m_bPawnIsAlive before dereferencing.
-* |
+| `0x914` | `m_hPlayerPawn` | CHandle< [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) > |  | CHandle pointing to the player's active CCSPlayerPawn. *Becomes invalid (INVALID_EHANDLE) when the player is dead and their pawn has been removed.  Check m_bPawnIsAlive before dereferencing.* |
 | `0x918` | `m_hObserverPawn` | CHandle< [C_CSObserverPawn](../client/C_CSObserverPawn.md) > |  | CHandle to the CCSObserverPawn when the player is spectating. *Valid only while the player is in spectator mode; otherwise INVALID_EHANDLE.* |
 | `0x91c` | `m_bPawnIsAlive` | bool |  | True while the player's pawn is alive and spawned. |
 | `0x920` | `m_iPawnHealth` | uint32 |  | Current health of the pawn, networked to teammates and spectators. *Only sent to TeammateAndSpectatorExclusive group; enemies do not receive this.* |
@@ -201,8 +201,7 @@ classDiagram
 | `0x92c` | `m_iPawnLifetimeStart` | int32 |  | Server tick on which the current pawn was spawned. |
 | `0x930` | `m_iPawnLifetimeEnd` | int32 |  | Server tick on which the current pawn died (0 while still alive). |
 | `0x934` | `m_iPawnBotDifficulty` | int32 |  |  |
-| `0x938` | `m_hOriginalControllerOfCurrentPawn` | CHandle< [CCSPlayerController](../client/CCSPlayerController.md) > |  | When a human takes over a bot, this holds a handle back to the original bot controller so the pawn can be returned after the human disconnects.
- |
+| `0x938` | `m_hOriginalControllerOfCurrentPawn` | CHandle< [CCSPlayerController](../client/CCSPlayerController.md) > |  | When a human takes over a bot, this holds a handle back to the original bot controller so the pawn can be returned after the human disconnects. |
 | `0x93c` | `m_iScore` | int32 |  | Lifetime score for this connection (frags minus team-kills, etc.). |
 | `0x940` | `m_recentKillQueue` | uint8[8] |  | Circular buffer of the 8 most-recent enemy kills this round (pawn entity indices). *Used to determine domination/revenge streaks.* |
 | `0x948` | `m_nFirstKill` | uint8 |  | Index within m_recentKillQueue of the oldest valid entry. |

@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CSmartPropOperation_CreateRotator
-nav_exclude: true
+module: smartprops
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [smartprops](../smartprops.md) / CSmartPropOperation_CreateRotator
 
 # CSmartPropOperation_CreateRotator
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 800 bytes (`0x320`) · **Align:** 8 · **Module:** smartprops
 

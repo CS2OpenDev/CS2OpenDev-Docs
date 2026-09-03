@@ -1,14 +1,16 @@
 ---
-layout: default
 title: C_EconItemView
-nav_exclude: true
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / C_EconItemView
 
 # C_EconItemView
 
-**Kind:** class · **Size:** 1136 bytes (`0x470`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 1136 bytes (`0x470`) · **Align:** n/a (unspecified) · **Module:** client
 
 **Inherits from:** [IEconItemInterface](../server/IEconItemInterface.md)
 

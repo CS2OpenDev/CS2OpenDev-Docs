@@ -1,11 +1,11 @@
 ---
-layout: default
 title: pulsedoc_lib
-parent: Schemas
-nav_exclude: true
+module: pulsedoc_lib
 ---
 
 # Module: pulsedoc_lib
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 4 types. Each links to its own page with the full field layout.
 

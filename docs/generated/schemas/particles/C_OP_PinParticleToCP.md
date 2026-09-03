@@ -1,12 +1,14 @@
 ---
-layout: default
 title: C_OP_PinParticleToCP
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / C_OP_PinParticleToCP
 
 # C_OP_PinParticleToCP
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 4440 bytes (`0x1158`) · **Align:** 8 · **Module:** particles
 
@@ -61,7 +63,7 @@ classDiagram
 | `0xe6c` | `m_nBreakControlPointNumber2` | int32 |  | `MPropertyFriendlyName break comparison control point 2` |
 | `0xe70` | `m_flBreakValue` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName break value` |
 | `0xfe0` | `m_flInterpolation` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Interpolation` |
-| `0x1150` | `m_bRetainInitialVelocity` | bool |  | `MPropertyFriendlyName Retain Initial Velocity ` `MPropertySuppressExpr m_nParticleSelection != PARTICLE_SELECTION_LAST` |
+| `0x1150` | `m_bRetainInitialVelocity` | bool |  | `MPropertyFriendlyName Retain Initial Velocity` `MPropertySuppressExpr m_nParticleSelection != PARTICLE_SELECTION_LAST` |
 
 <details><summary>KV3 class defaults</summary>
 

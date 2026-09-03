@@ -1,0 +1,201 @@
+{
+  "convars": [
+    {
+      "default": "",
+      "flags": [
+        "gamedll",
+        "release"
+      ],
+      "help": "This string is prefixed to the name of all bots that join the game.\n<difficulty> will be replaced with the bot's difficulty.\n<weaponclass> will be replaced with the bot's desired weapon class.\n<skill> will be replaced with a 0-100 representation of the bot's skill.",
+      "max": null,
+      "min": null,
+      "name": "bot_prefix",
+      "prefix": "bot",
+      "value_type": "String"
+    },
+    {
+      "default": "0",
+      "flags": [
+        "clientdll",
+        "release"
+      ],
+      "help": "Draw fps meter at top of screen (1 = fps, 2 = smooth fps, 3 = server MS, 4 = Show FPS and Log to file )",
+      "max": null,
+      "min": null,
+      "name": "cl_showfps",
+      "prefix": "cl",
+      "value_type": "Int32"
+    },
+    {
+      "default": "1.000000",
+      "flags": [
+        "cheat",
+        "replicated"
+      ],
+      "help": "Prescale the clock by this amount.",
+      "max": null,
+      "min": null,
+      "name": "host_timescale",
+      "prefix": "host",
+      "value_type": "Float32"
+    },
+    {
+      "default": "false",
+      "flags": [
+        "clientdll",
+        "commandline_enforced",
+        "gamedll",
+        "notify",
+        "release",
+        "replicated"
+      ],
+      "help": "Allows team members to injure other members of their team",
+      "max": null,
+      "min": null,
+      "name": "mp_friendlyfire",
+      "prefix": "mp",
+      "value_type": "Bool"
+    },
+    {
+      "default": "0",
+      "flags": [
+        "clientdll",
+        "commandline_enforced",
+        "gamedll",
+        "notify",
+        "release",
+        "replicated"
+      ],
+      "help": "max number of rounds to play before server changes maps",
+      "max": null,
+      "min": 0,
+      "name": "mp_maxrounds",
+      "prefix": "mp",
+      "value_type": "Int32"
+    },
+    {
+      "default": "1|3;#GameUI_Retake_Card_4v3,1,0,secondary0|1;#GameUI_Retake_Card_FlashOut,0,0,secondary0,grenade0;#GameUI_Retake_Card_HideAndPeek,0,0,secondary0,grenade1",
+      "flags": [
+        "clientdll",
+        "commandline_enforced",
+        "gamedll",
+        "release",
+        "replicated"
+      ],
+      "help": "CT Loadouts for default pistol round when playing bomb site retake.",
+      "max": null,
+      "min": null,
+      "name": "mp_retake_ct_loadout_default_pistol_round",
+      "prefix": "mp",
+      "value_type": "String"
+    },
+    {
+      "default": "5.000000",
+      "flags": [
+        "commandline_enforced",
+        "gamedll",
+        "notify",
+        "release",
+        "replicated"
+      ],
+      "help": "How many minutes each round takes.",
+      "max": 60,
+      "min": 0.1,
+      "name": "mp_roundtime",
+      "prefix": "mp",
+      "value_type": "Float32"
+    },
+    {
+      "default": "false",
+      "flags": [
+        "notify",
+        "release",
+        "replicated"
+      ],
+      "help": "Allow cheats on server",
+      "max": null,
+      "min": null,
+      "name": "sv_cheats",
+      "prefix": "sv",
+      "value_type": "Bool"
+    },
+    {
+      "default": "800.000000",
+      "flags": [
+        "clientdll",
+        "gamedll",
+        "notify",
+        "release",
+        "replicated"
+      ],
+      "help": "World gravity.",
+      "max": null,
+      "min": null,
+      "name": "sv_gravity",
+      "prefix": "sv",
+      "value_type": "Float32"
+    }
+  ],
+  "flags": [
+    {
+      "command_count": 1,
+      "convar_count": 1,
+      "description": "Requires sv_cheats 1 to change; reset when cheats are disabled.",
+      "name": "cheat"
+    },
+    {
+      "command_count": 0,
+      "convar_count": 5,
+      "description": "Registered by the client binary (client.dll).",
+      "name": "clientdll"
+    },
+    {
+      "command_count": 0,
+      "convar_count": 4,
+      "description": "Can be forced from the command line; a command-line value locks out later changes.",
+      "name": "commandline_enforced"
+    },
+    {
+      "command_count": 1,
+      "convar_count": 0,
+      "description": "Excluded from demo recording.",
+      "name": "dontrecord"
+    },
+    {
+      "command_count": 1,
+      "convar_count": 6,
+      "description": "Registered by the game server binary (server.dll).",
+      "name": "gamedll"
+    },
+    {
+      "command_count": 0,
+      "convar_count": 5,
+      "description": "A change is announced to connected players (console/chat notification).",
+      "name": "notify"
+    },
+    {
+      "command_count": 5,
+      "convar_count": 8,
+      "description": "Present in release/shipping builds, not just internal ones.",
+      "name": "release"
+    },
+    {
+      "command_count": 0,
+      "convar_count": 7,
+      "description": "Server's value is sent to and enforced on connected clients.",
+      "name": "replicated"
+    },
+    {
+      "command_count": 1,
+      "convar_count": 0,
+      "description": "",
+      "name": "vconsole_fuzzy_matching"
+    },
+    {
+      "command_count": 1,
+      "convar_count": 0,
+      "description": "",
+      "name": "vconsole_set_focus"
+    }
+  ]
+}

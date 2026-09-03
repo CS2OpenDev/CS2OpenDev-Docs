@@ -1,0 +1,611 @@
+{
+  "map_names": [
+    "ar_baggage",
+    "ar_shoots",
+    "ar_shoots_night",
+    "cs_italy",
+    "cs_office",
+    "de_ancient",
+    "de_ancient_night",
+    "de_ancient_v1",
+    "de_ancient_v2",
+    "de_anubis",
+    "de_cache",
+    "de_dust",
+    "de_dust2",
+    "de_inferno",
+    "de_inferno_s2",
+    "de_mirage",
+    "de_nuke",
+    "de_overpass",
+    "de_overpass_2v2",
+    "de_train",
+    "de_vertigo",
+    "workshop_preview"
+  ],
+  "maps": [
+    {
+      "blockName": "",
+      "bombAX": "",
+      "bombAY": "",
+      "bombBX": "",
+      "bombBY": "",
+      "ctSpawnX": "0.510000",
+      "ctSpawnY": "0.820000",
+      "material": "overviews/ar_baggage",
+      "name": "ar_baggage",
+      "posX": "-1316",
+      "posY": "1288",
+      "properties": [],
+      "rotate": "1",
+      "scale": "2.539062",
+      "tSpawnX": "0.510000",
+      "tSpawnY": "0.290000",
+      "zoom": "1.300000"
+    },
+    {
+      "blockName": "",
+      "bombAX": "",
+      "bombAY": "",
+      "bombBX": "",
+      "bombBY": "",
+      "ctSpawnX": "0.520000",
+      "ctSpawnY": "0.270000",
+      "material": "overviews/ar_shoots",
+      "name": "ar_shoots",
+      "posX": "-1368",
+      "posY": "1952",
+      "properties": [],
+      "rotate": "",
+      "scale": "2.687500",
+      "tSpawnX": "0.520000",
+      "tSpawnY": "0.710000",
+      "zoom": ""
+    },
+    {
+      "blockName": "",
+      "bombAX": "",
+      "bombAY": "",
+      "bombBX": "",
+      "bombBY": "",
+      "ctSpawnX": "0.520000",
+      "ctSpawnY": "0.270000",
+      "material": "overviews/ar_shoots_night",
+      "name": "ar_shoots_night",
+      "posX": "-1368",
+      "posY": "1952",
+      "properties": [],
+      "rotate": "",
+      "scale": "2.687500",
+      "tSpawnX": "0.520000",
+      "tSpawnY": "0.710000",
+      "zoom": ""
+    },
+    {
+      "blockName": "",
+      "bombAX": "",
+      "bombAY": "",
+      "bombBX": "",
+      "bombBY": "",
+      "ctSpawnX": "0.41",
+      "ctSpawnY": "0.91",
+      "material": "overviews/cs_italy",
+      "name": "cs_italy",
+      "posX": "-2647",
+      "posY": "2592",
+      "properties": [
+        {
+          "name": "Hostage1_x",
+          "value": "0.43"
+        },
+        {
+          "name": "Hostage1_y",
+          "value": "0.29"
+        },
+        {
+          "name": "Hostage2_x",
+          "value": "0.48"
+        },
+        {
+          "name": "Hostage2_y",
+          "value": "0.24"
+        },
+        {
+          "name": "Hostage3_x",
+          "value": "0.64"
+        },
+        {
+          "name": "Hostage3_y",
+          "value": "0.03"
+        },
+        {
+          "name": "Hostage4_x",
+          "value": "0.72"
+        },
+        {
+          "name": "Hostage4_y",
+          "value": "0.05"
+        }
+      ],
+      "rotate": "1",
+      "scale": "4.6",
+      "tSpawnX": "0.6",
+      "tSpawnY": "0.1",
+      "zoom": "1.5"
+    },
+    {
+      "blockName": "",
+      "bombAX": "",
+      "bombAY": "",
+      "bombBX": "",
+      "bombBY": "",
+      "ctSpawnX": "0.16",
+      "ctSpawnY": "0.89",
+      "material": "overviews/cs_office",
+      "name": "cs_office",
+      "posX": "-1838",
+      "posY": "1858",
+      "properties": [
+        {
+          "name": "Hostage1_x",
+          "value": "0.84"
+        },
+        {
+          "name": "Hostage1_y",
+          "value": "0.27"
+        },
+        {
+          "name": "Hostage2_x",
+          "value": "0.84"
+        },
+        {
+          "name": "Hostage2_y",
+          "value": "0.48"
+        },
+        {
+          "name": "Hostage3_x",
+          "value": "0.91"
+        },
+        {
+          "name": "Hostage3_y",
+          "value": "0.48"
+        },
+        {
+          "name": "Hostage4_x",
+          "value": "0.77"
+        },
+        {
+          "name": "Hostage4_y",
+          "value": "0.48"
+        },
+        {
+          "name": "Hostage5_x",
+          "value": "0.77"
+        },
+        {
+          "name": "Hostage5_y",
+          "value": "0.55"
+        }
+      ],
+      "rotate": "",
+      "scale": "4.1",
+      "tSpawnX": "0.78",
+      "tSpawnY": "0.30",
+      "zoom": ""
+    },
+    {
+      "blockName": "",
+      "bombAX": "0.31",
+      "bombAY": "0.25",
+      "bombBX": "0.80",
+      "bombBY": "0.40",
+      "ctSpawnX": "0.51",
+      "ctSpawnY": "0.17",
+      "material": "overviews/de_ancient",
+      "name": "de_ancient",
+      "posX": "-2953",
+      "posY": "2164",
+      "properties": [],
+      "rotate": "0",
+      "scale": "5",
+      "tSpawnX": "0.485",
+      "tSpawnY": "0.87",
+      "zoom": "0"
+    },
+    {
+      "blockName": "de_ancient",
+      "bombAX": "0.31",
+      "bombAY": "0.25",
+      "bombBX": "0.80",
+      "bombBY": "0.40",
+      "ctSpawnX": "0.51",
+      "ctSpawnY": "0.17",
+      "material": "overviews/de_ancient",
+      "name": "de_ancient_night",
+      "posX": "-2953",
+      "posY": "2164",
+      "properties": [],
+      "rotate": "0",
+      "scale": "5",
+      "tSpawnX": "0.485",
+      "tSpawnY": "0.87",
+      "zoom": "0"
+    },
+    {
+      "blockName": "de_ancient",
+      "bombAX": "0.31",
+      "bombAY": "0.25",
+      "bombBX": "0.80",
+      "bombBY": "0.40",
+      "ctSpawnX": "0.51",
+      "ctSpawnY": "0.17",
+      "material": "overviews/de_ancient",
+      "name": "de_ancient_v1",
+      "posX": "-2953",
+      "posY": "2164",
+      "properties": [],
+      "rotate": "0",
+      "scale": "5",
+      "tSpawnX": "0.485",
+      "tSpawnY": "0.87",
+      "zoom": "0"
+    },
+    {
+      "blockName": "de_ancient",
+      "bombAX": "0.31",
+      "bombAY": "0.25",
+      "bombBX": "0.80",
+      "bombBY": "0.40",
+      "ctSpawnX": "0.51",
+      "ctSpawnY": "0.17",
+      "material": "overviews/de_ancient",
+      "name": "de_ancient_v2",
+      "posX": "-2953",
+      "posY": "2164",
+      "properties": [],
+      "rotate": "0",
+      "scale": "5",
+      "tSpawnX": "0.485",
+      "tSpawnY": "0.87",
+      "zoom": "0"
+    },
+    {
+      "blockName": "",
+      "bombAX": "",
+      "bombAY": "",
+      "bombBX": "",
+      "bombBY": "",
+      "ctSpawnX": "0.610000",
+      "ctSpawnY": "0.220000",
+      "material": "overviews/de_anubis",
+      "name": "de_anubis",
+      "posX": "-2796.000000",
+      "posY": "3328.000000",
+      "properties": [],
+      "rotate": "",
+      "scale": "5.220000",
+      "tSpawnX": "0.580000",
+      "tSpawnY": "0.930000",
+      "zoom": ""
+    },
+    {
+      "blockName": "",
+      "bombAX": "0.325",
+      "bombAY": "0.26",
+      "bombBX": "0.345",
+      "bombBY": "0.79",
+      "ctSpawnX": "0.09775",
+      "ctSpawnY": "0.473",
+      "material": "overviews/de_cache_radar",
+      "name": "de_cache",
+      "posX": "-2000",
+      "posY": "3250",
+      "properties": [
+        {
+          "name": "inset_bottom",
+          "value": "0.04"
+        },
+        {
+          "name": "inset_left",
+          "value": "0.16"
+        },
+        {
+          "name": "inset_right",
+          "value": "0.2"
+        },
+        {
+          "name": "inset_top",
+          "value": "0.04"
+        }
+      ],
+      "rotate": "",
+      "scale": "5.5",
+      "tSpawnX": "0.887",
+      "tSpawnY": "0.585",
+      "zoom": ""
+    },
+    {
+      "blockName": "",
+      "bombAX": "0.80",
+      "bombAY": "0.55",
+      "bombBX": "0.53",
+      "bombBY": "0.74",
+      "ctSpawnX": "0.47",
+      "ctSpawnY": "0.92",
+      "material": "overviews/de_dust",
+      "name": "de_dust",
+      "posX": "-2850",
+      "posY": "4073",
+      "properties": [],
+      "rotate": "1",
+      "scale": "6",
+      "tSpawnX": "0.47",
+      "tSpawnY": "0.10",
+      "zoom": "1.3"
+    },
+    {
+      "blockName": "",
+      "bombAX": "0.80",
+      "bombAY": "0.16",
+      "bombBX": "0.21",
+      "bombBY": "0.12",
+      "ctSpawnX": "0.62",
+      "ctSpawnY": "0.21",
+      "material": "overviews/de_dust2_v2",
+      "name": "de_dust2",
+      "posX": "-2476",
+      "posY": "3239",
+      "properties": [
+        {
+          "name": "inset_bottom",
+          "value": "0.0"
+        },
+        {
+          "name": "inset_left",
+          "value": "0.0"
+        },
+        {
+          "name": "inset_right",
+          "value": "0.0"
+        },
+        {
+          "name": "inset_top",
+          "value": "0.0"
+        }
+      ],
+      "rotate": "1",
+      "scale": "4.4",
+      "tSpawnX": "0.39",
+      "tSpawnY": "0.91",
+      "zoom": "1.1"
+    },
+    {
+      "blockName": "",
+      "bombAX": "0.81",
+      "bombAY": "0.69",
+      "bombBX": "0.49",
+      "bombBY": "0.22",
+      "ctSpawnX": "0.9",
+      "ctSpawnY": "0.35",
+      "material": "overviews/de_inferno",
+      "name": "de_inferno",
+      "posX": "-2087",
+      "posY": "3870",
+      "properties": [],
+      "rotate": "",
+      "scale": "4.9",
+      "tSpawnX": "0.1",
+      "tSpawnY": "0.67",
+      "zoom": ""
+    },
+    {
+      "blockName": "de_inferno",
+      "bombAX": "0.81",
+      "bombAY": "0.69",
+      "bombBX": "0.49",
+      "bombBY": "0.22",
+      "ctSpawnX": "0.9",
+      "ctSpawnY": "0.35",
+      "material": "overviews/de_inferno",
+      "name": "de_inferno_s2",
+      "posX": "-2087",
+      "posY": "3870",
+      "properties": [],
+      "rotate": "",
+      "scale": "4.9",
+      "tSpawnX": "0.1",
+      "tSpawnY": "0.67",
+      "zoom": ""
+    },
+    {
+      "blockName": "",
+      "bombAX": "0.54",
+      "bombAY": "0.76",
+      "bombBX": "0.23",
+      "bombBY": "0.28",
+      "ctSpawnX": "0.28",
+      "ctSpawnY": "0.70",
+      "material": "overviews/de_mirage",
+      "name": "de_mirage",
+      "posX": "-3230",
+      "posY": "1713",
+      "properties": [
+        {
+          "name": "inset_bottom",
+          "value": "0.08"
+        },
+        {
+          "name": "inset_left",
+          "value": "0.135"
+        },
+        {
+          "name": "inset_right",
+          "value": "0.105"
+        },
+        {
+          "name": "inset_top",
+          "value": "0.08"
+        }
+      ],
+      "rotate": "0",
+      "scale": "5.00",
+      "tSpawnX": "0.87",
+      "tSpawnY": "0.36",
+      "zoom": "0"
+    },
+    {
+      "blockName": "",
+      "bombAX": "0.58",
+      "bombAY": "0.48",
+      "bombBX": "0.58",
+      "bombBY": "0.58",
+      "ctSpawnX": "0.82",
+      "ctSpawnY": "0.45",
+      "material": "overviews/de_nuke",
+      "name": "de_nuke",
+      "posX": "-3453",
+      "posY": "2887",
+      "properties": [
+        {
+          "name": "inset_bottom",
+          "value": "0.2"
+        },
+        {
+          "name": "inset_left",
+          "value": "0.33"
+        },
+        {
+          "name": "inset_right",
+          "value": "0.2"
+        },
+        {
+          "name": "inset_top",
+          "value": "0.2"
+        }
+      ],
+      "rotate": "",
+      "scale": "7",
+      "tSpawnX": "0.19",
+      "tSpawnY": "0.54",
+      "zoom": ""
+    },
+    {
+      "blockName": "",
+      "bombAX": "0.55",
+      "bombAY": "0.23",
+      "bombBX": "0.7",
+      "bombBY": "0.31",
+      "ctSpawnX": "0.49",
+      "ctSpawnY": "0.2",
+      "material": "overviews/de_overpass",
+      "name": "de_overpass",
+      "posX": "-4831",
+      "posY": "1781",
+      "properties": [],
+      "rotate": "0",
+      "scale": "5.2",
+      "tSpawnX": "0.66",
+      "tSpawnY": "0.93",
+      "zoom": "0"
+    },
+    {
+      "blockName": "de_overpass",
+      "bombAX": "0.55",
+      "bombAY": "0.23",
+      "bombBX": "0.7",
+      "bombBY": "0.31",
+      "ctSpawnX": "0.49",
+      "ctSpawnY": "0.2",
+      "material": "overviews/de_overpass",
+      "name": "de_overpass_2v2",
+      "posX": "-4831",
+      "posY": "1781",
+      "properties": [],
+      "rotate": "0",
+      "scale": "5.2",
+      "tSpawnX": "0.66",
+      "tSpawnY": "0.93",
+      "zoom": "0"
+    },
+    {
+      "blockName": "",
+      "bombAX": "0.630000",
+      "bombAY": "0.490000",
+      "bombBX": "0.520000",
+      "bombBY": "0.760000",
+      "ctSpawnX": "0.860000",
+      "ctSpawnY": "0.770000",
+      "material": "overviews/de_train",
+      "name": "de_train",
+      "posX": "-2308",
+      "posY": "2078",
+      "properties": [],
+      "rotate": "",
+      "scale": "4.082077",
+      "tSpawnX": "0.120000",
+      "tSpawnY": "0.250000",
+      "zoom": ""
+    },
+    {
+      "blockName": "",
+      "bombAX": "0.705",
+      "bombAY": "0.585",
+      "bombBX": "0.222",
+      "bombBY": "0.223",
+      "ctSpawnX": "0.54",
+      "ctSpawnY": "0.25",
+      "material": "overviews/de_vertigo_radar",
+      "name": "de_vertigo",
+      "posX": "-3168",
+      "posY": "1762",
+      "properties": [
+        {
+          "name": "inset_bottom",
+          "value": "0.15"
+        },
+        {
+          "name": "inset_left",
+          "value": "0.1"
+        },
+        {
+          "name": "inset_right",
+          "value": "0.2"
+        },
+        {
+          "name": "inset_top",
+          "value": "0.1"
+        }
+      ],
+      "rotate": "",
+      "scale": "4.0",
+      "tSpawnX": "0.20",
+      "tSpawnY": "0.75",
+      "zoom": ""
+    },
+    {
+      "blockName": "",
+      "bombAX": "",
+      "bombAY": "",
+      "bombBX": "",
+      "bombBY": "",
+      "ctSpawnX": "",
+      "ctSpawnY": "",
+      "material": "",
+      "name": "workshop_preview",
+      "posX": "-2071",
+      "posY": "711",
+      "properties": [
+        {
+          "name": "autogenerated_tga",
+          "value": "1"
+        }
+      ],
+      "rotate": "",
+      "scale": "1.699219",
+      "tSpawnX": "",
+      "tSpawnY": "",
+      "zoom": ""
+    }
+  ],
+  "note": "This is the set of maps that ship a radar overview definition, not the game's full map list."
+}

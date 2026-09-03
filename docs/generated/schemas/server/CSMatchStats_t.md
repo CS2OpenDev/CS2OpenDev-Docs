@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CSMatchStats_t
-nav_exclude: true
+title: CSMatchStats_t (server)
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CSMatchStats_t
 
 # CSMatchStats_t
 
-**Kind:** class · **Size:** 192 bytes (`0xc0`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 192 bytes (`0xc0`) · **Align:** n/a (unspecified) · **Module:** server
+
+**Twin:** [CSMatchStats_t (client)](../client/CSMatchStats_t.md)
 
 **Inherits from:** [CSPerRoundStats_t](../server/CSPerRoundStats_t.md)
 

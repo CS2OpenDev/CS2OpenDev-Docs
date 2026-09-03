@@ -1,0 +1,344 @@
+CBaseAnimGraph:
+  description: 'Entity layer that drives the Source 2 animation graph — skeleton, ragdoll, and choreo.  Base
+    for all animated model entities, including player pawns.
+
+    '
+  fields:
+    m_bRagdollEnabled:
+      description: True while the entity is simulated as a ragdoll rather than animated.
+    m_pMainGraphController:
+      description: The primary animation-graph controller instance for this entity.
+CBaseCombatCharacter:
+  description: 'Base class for characters that can carry weapons and take part in combat (players, hostages,
+    bots).  Adds wearables and navigation on top of the animated-model base.
+
+    '
+  fields:
+    m_hMyWearables:
+      description: Handles to the character's equipped wearable items (gloves, agent model pieces).
+    m_impactEnergyScale:
+      description: Scale applied to impact-damage energy for this character.
+CBaseEntity:
+  description: 'Root entity class in Source 2 from which all server-side entities derive. Provides health,
+    team, physics, timing, and transmit state.
+
+    '
+  fields:
+    m_bAnimatedEveryTick:
+      description: True when the entity's animation must be updated every server tick regardless of network
+        interest.
+    m_fEffects:
+      description: Effect flags bitmask (EF_NODRAW = 32, EF_NORECEIVESHADOW = 64, etc.).
+    m_fFlags:
+      description: Entity flags bitmask (FL_ONGROUND = 1, FL_DUCKING = 4, FL_INWATER = 8, FL_FROZEN =
+        0x200, etc.).
+    m_flAnimTime:
+      description: Floating-point timestamp of the most-recent animation update; used by the client for
+        animation interpolation.
+    m_flFriction:
+      description: Surface friction multiplier (1.0 = normal; lower values make the entity slide more).
+    m_flGravityScale:
+      description: Gravity scale multiplier (1.0 = normal; 0 = no gravity).
+    m_flSimulationTime:
+      description: Floating-point timestamp of the most-recent physics simulation step; used by the client
+        for position interpolation.
+    m_flTimeScale:
+      description: Time-scale multiplier applied to this entity's simulation (1.0 = real time; used by
+        bullet time effects).
+    m_hGroundEntity:
+      description: CHandle to the entity this entity is standing on (INVALID_EHANDLE if airborne).
+    m_hOwnerEntity:
+      description: CHandle to the entity that owns or spawned this entity (e.g. the thrower of a grenade).
+    m_iHealth:
+      description: Current health points of the entity. Serialised with the 'ClampHealth' encoder so values
+        above max are clamped.
+      notes: Sent only to the Player network group and LocalPlayerExclusive.
+    m_iMaxHealth:
+      description: Maximum health points; used to normalise health bars in the HUD.
+    m_iTeamNum:
+      description: 'Team number: 0 = Unassigned, 1 = Spectator, 2 = Terrorist, 3 = Counter-Terrorist.'
+    m_lifeState:
+      description: 'LIFE_STATE enum: 0 = Alive, 1 = Dying, 2 = Dead, 3 = Respawnable, 4 = Discardbody.'
+    m_nNextThinkTick:
+      description: Server tick on which the entity's Think() function will next execute (-1 = never).
+    m_vecBaseVelocity:
+      description: Additional world-space velocity contributed by moving platforms, conveyor belts, etc.
+    m_vecVelocity:
+      description: Current world-space velocity vector of the entity.
+CBaseModelEntity:
+  description: 'Extends CBaseEntity with a visible model, collision, glow, and render properties.  Base
+    class for all entities that have a mesh in the world.
+
+    '
+  fields:
+    m_Collision:
+      description: CCollisionProperty struct encoding the entity's collision bounding box shape and flags.
+    m_Glow:
+      description: CGlowProperty struct controlling the entity's glow outline (colour, radius, visibility
+        rules).
+    m_clrRender:
+      description: RGBA tint colour multiplied onto the entity's diffuse texture.
+    m_fadeMaxDist:
+      description: Distance at which the entity is fully faded out and invisible.
+    m_fadeMinDist:
+      description: Minimum distance (world units) at which the entity starts to fade out.
+    m_flFadeScale:
+      description: Scale factor applied to fade distances; 0 disables distance fading.
+    m_flGlowBackfaceMult:
+      description: Multiplier for the glow effect on back-facing surfaces of the model.
+    m_flShadowStrength:
+      description: Opacity of this entity's cast shadow (0 = no shadow, 1 = full shadow).
+    m_nRenderFX:
+      description: RenderFx_t enum for special rendering effects (pulsing, fading, hologram, etc.).
+    m_nRenderMode:
+      description: RenderMode_t enum controlling transparency and rendering method (0 = Normal, 5 = Translucent,
+        etc.).
+    m_vecViewOffset:
+      description: Offset from the entity origin to the player's view position (eye height).
+CBasePlayerPawn:
+  description: 'Base class for the in-world player pawn — the physical body a controller drives.  Aggregates
+    the player service components (movement, weapons, observer, camera, …).
+
+    '
+  fields:
+    m_pCameraServices:
+      description: View / camera component.
+    m_pItemServices:
+      description: Carried-item component (defuser, helmet).
+    m_pMovementServices:
+      description: Movement / input component.
+    m_pObserverServices:
+      description: Spectator component, active while the pawn is dead or observing.
+    m_pWeaponServices:
+      description: Weapon-handling component (active weapon, switch timing).
+    v_angle:
+      description: Current view (eye) angles of the pawn.
+CCSPlayerPawn:
+  description: 'The physical in-world representation of a CS2 player.  Carries per-round state: health,
+    armor, position, animations, and weapon inventory.  A new CCSPlayerPawn is created each round on (re)spawn;
+    the corresponding CCSPlayerController persists across rounds.
+
+    '
+  fields:
+    m_ArmorValue:
+      description: 'Current armor HP (0–100). Combined-arms note: vest+helmet does not exceed 100 armor
+        points.'
+    m_EconGloves:
+      description: CEconItemView describing the glove skin equipped on this player.
+    m_GunGameImmunityColor:
+      description: Color applied to the player model while gun-game immunity is active.
+    m_angEyeAngles:
+      description: Server-authoritative eye angles (pitch, yaw, roll) used for hit-box calculation and
+        third-person rendering.
+      notes: Encoded at full qangle_precise precision. The definitive source for a player's look direction.
+    m_bGunGameImmunity:
+      description: True while the player has gun-game spawn immunity (brief invincibility after spawning
+        in Arms Race mode).
+    m_bHasFemaleVoice:
+      description: True when the equipped agent skin uses a female voice pack.
+    m_bInBombZone:
+      description: True while the player is standing inside a bomb-plant zone (bombsite trigger).
+      notes: m_nWhichBombZone indicates which site (0 = not in any, 1 = A, 2 = B).
+    m_bInBuyZone:
+      description: True while the player is standing inside a buy zone.
+    m_bInHostageRescueZone:
+      description: True while the player is inside a hostage rescue zone.
+    m_bInNoDefuseArea:
+      description: True when the player is in a location where defusing is not permitted.
+    m_bIsBuyMenuOpen:
+      description: True while the player's buy menu is open.
+    m_bIsDefusing:
+      description: True while the player is actively defusing the planted bomb.
+    m_bIsGrabbingHostage:
+      description: True while the player is picking up a hostage entity.
+    m_bIsScoped:
+      description: True while the player is looking through a weapon scope.
+    m_bIsWalking:
+      description: True while the player is in walk mode (shift-walk / cl_showpos = 1 walking).
+    m_bKilledByHeadshot:
+      description: True if the killing blow on this player was a headshot.
+    m_bLeftHanded:
+      description: True when the player has switched the weapon to the left hand (cl_lefthand 1).
+    m_bRagdollDamageHeadshot:
+      description: True if the fatal blow was a headshot, used to trigger headshot-specific ragdoll animation.
+    m_bResumeZoom:
+      description: True when the scope should be re-engaged automatically after the next shot (AWP/SSG
+        08 bolt-action mechanic).
+    m_bRetakesHasDefuseKit:
+      description: True when the retakes system has granted this player a defuse kit for the retake round.
+    m_bRetakesMVPLastRound:
+      description: True if this player earned the retakes MVP award in the previous round.
+    m_bWaitForNoAttack:
+      description: True when the weapon's fire input must be fully released before the next shot is accepted
+        (prevents auto-fire on re-deploy).
+    m_entitySpottedState:
+      description: EntitySpottedState_t struct tracking which players have spotted (ESP-radar dot) this
+        entity.
+      notes: See also m_bSpotted and the spotted bitmask used by the minimap.
+    m_fImmuneToGunGameDamageTime:
+      description: GameTime until which the player is immune to damage in Gun Game / Arms Race mode.
+    m_fMolotovDamageTime:
+      description: GameTime at which molotov/incendiary damage will next be applied to this player.
+    m_fSwitchedHandednessTime:
+      description: GameTime at which the player last toggled handedness (prevents rapid toggling).
+    m_flEmitSoundTime:
+      description: GameTime of the next footstep sound emission; controls footstep sound spacing.
+    m_flFlinchStack:
+      description: Accumulated flinch value from recent damage; drives the camera-shake magnitude.
+      notes: Only sent to the owning player (LocalPlayerExclusive).
+    m_flHealthShotBoostExpirationTime:
+      description: GameTime at which the health-shot (medshot) movement speed boost expires.
+    m_flTimeOfLastInjury:
+      description: GameTime of the most-recent damage event that reduced this player's health.
+    m_flVelocityModifier:
+      description: Multiplicative speed modifier applied on top of base movement speed (0.0–1.0 typically;
+        reduced while injured or tased).
+    m_flViewmodelFOV:
+      description: Custom viewmodel FOV in degrees (cl_viewmodel_fov; clamped to 60–68).
+    m_flViewmodelOffsetX:
+      description: Custom viewmodel X offset in world units (cl_viewmodel_offset_x).
+    m_flViewmodelOffsetY:
+      description: Custom viewmodel Y offset in world units (cl_viewmodel_offset_y).
+    m_flViewmodelOffsetZ:
+      description: Custom viewmodel Z offset in world units (cl_viewmodel_offset_z).
+    m_iBlockingUseActionInProgress:
+      description: CSPlayerBlockingUseAction_t enum indicating a use-action in progress that blocks other
+        actions (e.g. defuse, hostage grab).
+    m_iRetakesMVPBoostItem:
+      description: Item definition index of the bonus item awarded to the retakes MVP.
+    m_iRetakesOffering:
+      description: 'Retakes-mode offering index: which weapon/utility load-out this player was offered
+        for the retake.'
+    m_iRetakesOfferingCard:
+      description: Card index the player selected in the retakes offering interface.
+    m_iShotsFired:
+      description: Number of bullets fired since the player last stopped firing (resets when trigger is
+        released or weapon changes).
+      notes: Used to drive the walk-run bobbing animation state.
+    m_nEconGlovesChanged:
+      description: Incremented each time the glove loadout changes, so the client can refresh the glove
+        model.
+    m_nLastKillerIndex:
+      description: Entity index of the player or entity that last killed this pawn.
+    m_nRagdollDamageBone:
+      description: Bone index of the last hit that caused a ragdoll impulse.
+    m_nWhichBombZone:
+      description: Indicates which bomb site the player is currently inside (0 = none, 1 = A, 2 = B).
+    m_pActionTrackingServices:
+      description: Pointer to CCSPlayer_ActionTrackingServices which tracks weapon purchases and rescue
+        state for stats/scoring.
+    m_pBulletServices:
+      description: Pointer to CCSPlayer_BulletServices which tracks hit counts registered on the server.
+    m_pBuyServices:
+      description: Pointer to CCSPlayer_BuyServices which tracks sellback purchase history for the current
+        round.
+    m_pHostageServices:
+      description: Pointer to CCSPlayer_HostageServices which tracks which hostage entity this player
+        is currently carrying.
+    m_qDeathEyeAngles:
+      description: Eye angles at the moment of death, used to pose the ragdoll's head correctly.
+    m_szLastPlaceName:
+      description: Human-readable area/landmark name from the nav mesh where the player was last located
+        (e.g. 'CTSpawn', 'BombsiteA').
+    m_szRagdollDamageWeaponName:
+      description: Class name of the weapon that killed this player (used to select the correct death
+        ragdoll).
+    m_unCurrentEquipmentValue:
+      description: Total buy value (in dollars) of equipment currently held by the player.
+    m_unFreezetimeEndEquipmentValue:
+      description: Equipment value at the moment freeze time ended.
+    m_unRoundStartEquipmentValue:
+      description: Equipment value at the start of the current round (after freeze-time buy phase ends).
+    m_vRagdollDamageForce:
+      description: World-space impulse vector applied to the ragdoll bone on death.
+    m_vRagdollServerOrigin:
+      description: World-space position of the player's origin at the moment of death.
+    m_vecPlayerPatchEconIndices:
+      description: Array of 5 item-definition indices for the agent patch slots (team patches worn on
+        the uniform).
+  notes: 'Source 2 architecture separates the controller (session/connection state) from the pawn (physics/animation
+    state).  Demo parsers must follow m_hController → CCSPlayerController to resolve name, team, and stats.
+
+    '
+CCSPlayerPawnBase:
+  description: 'Abstract base class shared by CCSPlayerPawn and CCSObserverPawn, providing the flash-bang
+    state, progress bar, and original-controller link.
+
+    '
+  fields:
+    m_bHasMovedSinceSpawn:
+      description: True once the player moves after spawning; prevents accidental movement-triggered events.
+    m_flFlashDuration:
+      description: Total duration in seconds of the current flash-bang blind effect (0 when not flashed).
+    m_flFlashMaxAlpha:
+      description: Peak screen-overlay alpha (0–255) of the current flash bang; scales with proximity
+        and facing angle.
+    m_flProgressBarStartTime:
+      description: GameTime at which the current progress bar (defuse/pickup) started.
+    m_hOriginalController:
+      description: CHandle back to the CCSPlayerController that owns this pawn, even when a bot has taken
+        over.
+      notes: Use this to map a pawn to its player for demo parsing.
+    m_iPlayerState:
+      description: 'CSPlayerState enum: STATE_ACTIVE = 0 (alive), STATE_WELCOME = 1, STATE_PICKINGTEAM
+        = 2, STATE_PICKINGCLASS = 3, STATE_DEATH_ANIM = 4, STATE_DEATH_WAIT_FOR_KEY = 5, STATE_OBSERVER_MODE
+        = 6.'
+    m_iProgressBarDuration:
+      description: Duration in seconds of the current progress bar interaction.
+    m_pPingServices:
+      description: Pointer to CCSPlayer_PingServices managing the in-game map-ping system.
+CClassThatWasRemoved:
+  description: Gone from this build.
+LifeState_t:
+  description: Alive/dead state of a pawn (m_lifeState).
+  fields:
+    LIFE_ALIVE:
+      description: Alive and playable.
+    LIFE_DEAD:
+      description: Dead.
+    LIFE_DYING:
+      description: Playing the death animation; not yet fully dead.
+    LIFE_RESPAWNABLE:
+      description: Dead and eligible to respawn.
+    LIFE_RESPAWNING:
+      description: In the process of respawning.
+MoveType_t:
+  description: How an entity is moved and simulated each tick (m_MoveType).
+  fields:
+    MOVETYPE_CUSTOM:
+      description: Movement handled by custom game code.
+    MOVETYPE_FLY:
+      description: Flies in a straight line, ignoring gravity.
+    MOVETYPE_FLYGRAVITY:
+      description: Ballistic arc under gravity (thrown grenades, projectiles).
+    MOVETYPE_LADDER:
+      description: Climbing a ladder.
+    MOVETYPE_NOCLIP:
+      description: Free movement with no collision (noclip).
+    MOVETYPE_NONE:
+      description: Not moved by the engine.
+    MOVETYPE_OBSERVER:
+      description: Spectator free-look movement.
+    MOVETYPE_PUSH:
+      description: Pushes other entities without being blocked (movers/doors).
+    MOVETYPE_VPHYSICS:
+      description: Driven by the VPhysics simulation.
+    MOVETYPE_WALK:
+      description: Player-style ground movement (walk/run/jump).
+SolidType_t:
+  description: Collision solid type used for an entity's physics representation (m_nSolidType).
+  fields:
+    SOLID_BBOX:
+      description: Axis-aligned bounding box.
+    SOLID_CAPSULE:
+      description: Capsule (used by player/character collision).
+    SOLID_CYLINDER:
+      description: Cylinder.
+    SOLID_NONE:
+      description: No collision.
+    SOLID_OBB:
+      description: Oriented bounding box.
+    SOLID_SPHERE:
+      description: Sphere.
+    SOLID_VPHYSICS:
+      description: Full VPhysics collision mesh.

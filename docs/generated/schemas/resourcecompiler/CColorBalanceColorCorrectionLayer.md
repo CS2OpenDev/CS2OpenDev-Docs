@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CColorBalanceColorCorrectionLayer
-nav_exclude: true
+module: resourcecompiler
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [resourcecompiler](../resourcecompiler.md) / CColorBalanceColorCorrectionLayer
 
 # CColorBalanceColorCorrectionLayer
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 80 bytes (`0x50`) · **Align:** 8 · **Module:** resourcecompiler
 

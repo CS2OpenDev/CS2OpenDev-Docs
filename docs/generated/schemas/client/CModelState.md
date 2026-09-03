@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CModelState
-nav_exclude: true
+title: CModelState (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CModelState
 
 # CModelState
 
-**Kind:** class · **Size:** 688 bytes (`0x2b0`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 688 bytes (`0x2b0`) · **Align:** n/a (unspecified) · **Module:** client
+
+**Twin:** [CModelState (server)](../server/CModelState.md)
 
 **Relationships:**
 

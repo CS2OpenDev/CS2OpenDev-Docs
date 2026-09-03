@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CSmartPropOperation_RandomOffset
-nav_exclude: true
+module: smartprops
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [smartprops](../smartprops.md) / CSmartPropOperation_RandomOffset
 
 # CSmartPropOperation_RandomOffset
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 272 bytes (`0x110`) · **Align:** 8 · **Module:** smartprops
 

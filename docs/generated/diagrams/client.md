@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: client"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: client
@@ -123,7 +120,7 @@ classDiagram
     CEntitySubclassVDataBase <|-- CPrecipitationVData
     CEntityComponent <|-- CPropDataComponent
     CPulseCell_BaseLerp <|-- CPulseCell_LerpCameraSettings
-    "CPulseCell_BaseLerp::CursorState_t" <|-- "CPulseCell_LerpCameraSettings::CursorState_t"
+    `CPulseCell_BaseLerp::CursorState_t` <|-- `CPulseCell_LerpCameraSettings::CursorState_t`
     CPulseCell_BaseYieldingInflow <|-- CPulseCell_PlaySequence
     CPulseCell_BaseFlow <|-- CPulseCell_Step_EntFire
     C_BaseEntity <|-- CPulseGameBlackboard

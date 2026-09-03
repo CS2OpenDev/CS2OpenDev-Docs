@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CLightRigExposure
-nav_exclude: true
+module: toolscene
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [toolscene](../toolscene.md) / CLightRigExposure
 
 # CLightRigExposure
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 12 bytes (`0xc`) · **Align:** 4 · **Module:** toolscene
 

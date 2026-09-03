@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CGameSceneNode
-nav_exclude: true
+title: CGameSceneNode (server)
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CGameSceneNode
 
 # CGameSceneNode
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 272 bytes (`0x110`) · **Align:** 16 · **Module:** server
+
+**Twin:** [CGameSceneNode (client)](../client/CGameSceneNode.md)
 
 **Derived by:** [CSkeletonInstance](../server/CSkeletonInstance.md)
 
@@ -28,15 +32,15 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_bBoneMergeFlex` | bitfield:1 |  | `MNotSaved` |
-| `0x0` | `m_bDirtyBoneMergeBoneToRoot` | bitfield:1 |  | `MNotSaved` |
-| `0x0` | `m_bDirtyBoneMergeInfo` | bitfield:1 |  | `MNotSaved` |
-| `0x0` | `m_bDirtyHierarchy` | bitfield:1 |  | `MNotSaved` |
-| `0x0` | `m_bNetworkedAnglesChanged` | bitfield:1 |  | `MNotSaved` |
-| `0x0` | `m_bNetworkedPositionChanged` | bitfield:1 |  | `MNotSaved` |
-| `0x0` | `m_bNetworkedScaleChanged` | bitfield:1 |  | `MNotSaved` |
-| `0x0` | `m_bWillBeCallingPostDataUpdate` | bitfield:1 |  | `MNotSaved` |
-| `0x0` | `m_nLatchAbsOrigin` | bitfield:2 |  | `MNotSaved` |
+| `0x0` bit 0 | `m_bBoneMergeFlex` | bitfield:1 |  | `MNotSaved` |
+| `0x0` bit 1 | `m_bDirtyBoneMergeBoneToRoot` | bitfield:1 |  | `MNotSaved` |
+| `0x0` bit 2 | `m_bDirtyBoneMergeInfo` | bitfield:1 |  | `MNotSaved` |
+| `0x0` bit 3 | `m_bDirtyHierarchy` | bitfield:1 |  | `MNotSaved` |
+| `0x0` bit 4 | `m_bNetworkedAnglesChanged` | bitfield:1 |  | `MNotSaved` |
+| `0x0` bit 5 | `m_bNetworkedPositionChanged` | bitfield:1 |  | `MNotSaved` |
+| `0x0` bit 6 | `m_bNetworkedScaleChanged` | bitfield:1 |  | `MNotSaved` |
+| `0x0` bit 7 | `m_bWillBeCallingPostDataUpdate` | bitfield:1 |  | `MNotSaved` |
+| `0x0` bits 8..9 | `m_nLatchAbsOrigin` | bitfield:2 |  | `MNotSaved` |
 | `0x10` | `m_nodeToWorld` | CTransformWS |  | `MNotSaved` |
 | `0x30` | `m_pOwner` | [CEntityInstance](../entity2/CEntityInstance.md)* |  | `MNotSaved` |
 | `0x38` | `m_pParent` | [CGameSceneNode](../server/CGameSceneNode.md)* |  | `MNotSaved` |

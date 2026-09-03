@@ -1,12 +1,14 @@
 ---
-layout: default
 title: MaterialParamVector_t
-nav_exclude: true
+module: materialsystem2
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [materialsystem2](../materialsystem2.md) / MaterialParamVector_t
 
 # MaterialParamVector_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 8 · **Module:** materialsystem2
 

@@ -1,14 +1,16 @@
 ---
-layout: default
 title: "CNmFloatValueNode::CDefinition"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmFloatValueNode::CDefinition
 
 # CNmFloatValueNode::CDefinition
 
-**Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** 255 · **Module:** animlib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** n/a (unspecified) · **Module:** animlib
 
 **Inherits from:** [CNmValueNode::CDefinition](../animlib/CNmValueNode.CDefinition.md)
 
@@ -18,32 +20,32 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmValueNode::CDefinition" <|-- "CNmFloatValueNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmCachedFloatNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmConstFloatNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmControlParameterFloatNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmCurrentSyncEventNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatAngleMathNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatClampNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatCurveEventNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatCurveNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatEaseNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatMathNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatRemapNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatSelectorNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatSpringNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatSwitchNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFootstepEventPercentageThroughNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmIDToFloatNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmTargetInfoNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmVectorInfoNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmVirtualParameterFloatNode::CDefinition"
+    `CNmValueNode::CDefinition` <|-- `CNmFloatValueNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmValueNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmCachedFloatNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmConstFloatNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmControlParameterFloatNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmCurrentSyncEventNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmFloatAngleMathNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmFloatClampNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmFloatCurveEventNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmFloatCurveNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmFloatEaseNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmFloatMathNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmFloatRemapNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmFloatSelectorNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmFloatSpringNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmFloatSwitchNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmFootstepEventPercentageThroughNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmIDToFloatNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmTargetInfoNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmVectorInfoNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmVirtualParameterFloatNode::CDefinition`
 ```
 
 ## Memory layout
 
-1 fields (0 declared here, 1 inherited). Offsets are absolute from the object base.
+1 field (0 declared here, 1 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|

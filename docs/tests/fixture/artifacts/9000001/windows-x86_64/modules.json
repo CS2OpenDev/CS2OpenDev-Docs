@@ -1,0 +1,39 @@
+{
+ "buildId": "25000182",
+ "modules": [
+  {
+   "exportCount": 64,
+   "fileSize": "177280",
+   "path": "game/bin/win64/OpenImageDenoise.dll",
+   "resolvedInterfaces": [],
+   "schemaRegistrationCount": 0,
+   "sha256": "77ddb058fd2c5870cee1a16c4aabb4618f592f9602f388e3c18e406ed753559a"
+  },
+  {
+   "exportCount": 564,
+   "fileSize": "50625664",
+   "path": "game/bin/win64/OpenImageDenoise_core.dll",
+   "resolvedInterfaces": [],
+   "schemaRegistrationCount": 0,
+   "sha256": "8a445b2112e33aa94da9a4dd4dbd5e54a8b697866aabf4ded81b87c5e3826731"
+  },
+  {
+   "exportCount": 1,
+   "fileSize": "513664",
+   "path": "game/bin/win64/OpenImageDenoise_device_cpu.dll",
+   "resolvedInterfaces": [],
+   "schemaRegistrationCount": 0,
+   "sha256": "7e14c3d7a19736cefe515779668c15ad20f1481d78f198055625289198cee286"
+  },
+  {
+   "exportCount": 1,
+   "fileSize": "2518656",
+   "path": "game/bin/win64/OpenImageDenoise_device_cuda.dll",
+   "resolvedInterfaces": [],
+   "schemaRegistrationCount": 0,
+   "sha256": "d2ab3613f1c4e2f86ba446a1e8beb13ea9788d05455e41f569a16731618309ff"
+  }
+ ],
+ "platform": "windows-x86_64",
+ "schemaVersion": "0.10.0"
+}

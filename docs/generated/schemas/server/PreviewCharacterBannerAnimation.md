@@ -1,12 +1,14 @@
 ---
-layout: default
 title: PreviewCharacterBannerAnimation
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / PreviewCharacterBannerAnimation
 
 # PreviewCharacterBannerAnimation
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** server
 
@@ -14,7 +16,7 @@ nav_exclude: true
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `INVALID` | -1 |  |
+| `INVALID` | -1 (`0xffffffff`) |  |
 | `IDLE_OFFSCREEN` | 0 |  |
 | `BANNER_AWP_ACE_GUN` | 1 |  |
 | `BANNER_AWP_ACE_A` | 2 |  |

@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CNmGraphDocAimCSNode
-nav_exclude: true
+module: modtools
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [modtools](../modtools.md) / CNmGraphDocAimCSNode
 
 # CNmGraphDocAimCSNode
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 272 bytes (`0x110`) · **Align:** 8 · **Module:** modtools
 

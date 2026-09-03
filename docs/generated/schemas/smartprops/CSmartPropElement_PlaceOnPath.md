@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CSmartPropElement_PlaceOnPath
-nav_exclude: true
+module: smartprops
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [smartprops](../smartprops.md) / CSmartPropElement_PlaceOnPath
 
 # CSmartPropElement_PlaceOnPath
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 768 bytes (`0x300`) · **Align:** 8 · **Module:** smartprops
 
@@ -39,7 +41,7 @@ classDiagram
 | `0xa8` | `m_flSpacing` | CSmartPropAttributeFloat |  | `MPropertyDescription Spacing between points on the path` |
 | `0xe8` | `m_flOffsetAlongPath` | CSmartPropAttributeFloat |  | `MPropertyDescription Offset from the start of the path to place the first point.` |
 | `0x128` | `m_vPathOffset` | CSmartPropAttributeVector2D |  | `MPropertyDescription Offset to apply to the path, specifies a horizontal and vertical offset to apply relative to the up direction.` `MPropertyFriendlyName Offset from path` |
-| `0x168` | `m_PathSpace` | [CSmartPropAttributeCoordinateSpace](../smartprops/CSmartPropAttributeCoordinateSpace.md) |  | `MPropertyDescription Specifies the space in which the provided input path is to be evalauted.<br><br><b>World Space</b>: The input path will be evaluated in world space, such that child elements will be placed directly on the target path regardless of the transform of the smart prop object. <br><b>Object Space</b>: The world space transform of the input path will be ignored and instead the path will be evaluated relative to the transform of the smart prop object. <br><b>Element Space</b>: The world space transform of the input path will be ignored and instead the path will be evaluated relative to the transform of the current element within the smart prop. ` `MPropertyFriendlyName Path Evaluation Space` |
+| `0x168` | `m_PathSpace` | [CSmartPropAttributeCoordinateSpace](../smartprops/CSmartPropAttributeCoordinateSpace.md) |  | `MPropertyDescription Specifies the space in which the provided input path is to be evalauted.<br><br><b>World Space</b>: The input path will be evaluated in world space, such that child elements will be placed directly on the target path regardless of the transform of the smart prop object. <br><b>Object Space</b>: The world space transform of the input path will be ignored and instead the path will be evaluated relative to the transform of the smart prop object. <br><b>Element Space</b>: The world space transform of the input path will be ignored and instead the path will be evaluated relative to the transform of the current element within the smart prop.` `MPropertyFriendlyName Path Evaluation Space` |
 | `0x1a8` | `m_bUseFixedUpDirection` | CSmartPropAttributeBool |  | `MPropertyDescription If true, treat the specified up direction as fixed up direction to apply to all elements placed on the path. If false the up direction is just an initial direction.` |
 | `0x1e8` | `m_bUseProjectedDistance` | CSmartPropAttributeBool |  | `MPropertyDescription Compute the spacing distance in the 2d plane defined by the up direction. Most useful when using a fixed up direction, if maintaining a distance in the 2d plane is more important than maintaing distance along the path.` |
 | `0x228` | `m_vUpDirection` | CSmartPropAttributeVector |  | `MPropertyDescription If not using a fixed up direction, provides an initial up direction which will be used to determine the orientation of first element on the path, after that the elements will incrementally update to follow the path and may not match this direction. If Use Fixed Up direction is specified, then all elements will use this direction to deterime their up direction.` |

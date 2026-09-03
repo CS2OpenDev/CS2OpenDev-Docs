@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CAnimGraphDoc_MotionItem
-nav_exclude: true
+module: animgraphdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphdoclib](../animgraphdoclib.md) / CAnimGraphDoc_MotionItem
 
 # CAnimGraphDoc_MotionItem
 
-**Kind:** class · **Size:** 168 bytes (`0xa8`) · **Align:** 255 · **Module:** animgraphdoclib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 168 bytes (`0xa8`) · **Align:** n/a (unspecified) · **Module:** animgraphdoclib
 
 **Derived by:** [CAnimGraphDoc_GraphMotionItem](../animgraphdoclib/CAnimGraphDoc_GraphMotionItem.md), [CAnimGraphDoc_SequenceMotionItem](../animgraphdoclib/CAnimGraphDoc_SequenceMotionItem.md)
 

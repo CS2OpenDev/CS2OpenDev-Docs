@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CNmClip
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmClip
 
 # CNmClip
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 512 bytes (`0x200`) · **Align:** 16 · **Module:** animlib
 
@@ -19,6 +21,7 @@ classDiagram
     CNmClip --> CNmFloatChannelData
     CNmClip *-- CNmSyncTrack
     CNmClip *-- CNmRootMotionData
+    CNmClip *-- `CNmClip::ModelSpaceSamplingChainLink_t`
 ```
 
 ## Memory layout
@@ -38,7 +41,7 @@ classDiagram
 | `0xc0` | `m_syncTrack` | [CNmSyncTrack](../animlib/CNmSyncTrack.md) |  |  |
 | `0x170` | `m_rootMotion` | [CNmRootMotionData](../animlib/CNmRootMotionData.md) |  |  |
 | `0x1c0` | `m_bIsAdditive` | bool |  |  |
-| `0x1c8` | `m_modelSpaceSamplingChain` | CUtlVector< [CNmClip](../animlib/CNmClip.md)::ModelSpaceSamplingChainLink_t > |  |  |
+| `0x1c8` | `m_modelSpaceSamplingChain` | CUtlVector< [CNmClip::ModelSpaceSamplingChainLink_t](../animlib/CNmClip.ModelSpaceSamplingChainLink_t.md) > |  |  |
 | `0x1e0` | `m_modelSpaceBoneSamplingIndices` | CUtlVector< int32 > |  |  |
 
 <details><summary>KV3 class defaults</summary>

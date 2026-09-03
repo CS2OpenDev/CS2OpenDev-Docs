@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CPulseServerCursor
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CPulseServerCursor
 
 # CPulseServerCursor
 
-**Kind:** class · **Size:** 240 bytes (`0xf0`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 240 bytes (`0xf0`) · **Align:** n/a (unspecified) · **Module:** server
 
 **Inherits from:** [CPulseExecCursor](../pulse_runtime_lib/CPulseExecCursor.md)
 

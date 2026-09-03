@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CSteamAudioProbeGrid
-nav_exclude: true
+module: steamaudio
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [steamaudio](../steamaudio.md) / CSteamAudioProbeGrid
 
 # CSteamAudioProbeGrid
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 88 bytes (`0x58`) · **Align:** 8 · **Module:** steamaudio
 

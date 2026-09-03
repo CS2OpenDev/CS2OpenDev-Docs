@@ -1,0 +1,9 @@
+description: Fixture schema-lens overlay.
+notes: |
+  Two lines, so the blockquote continuation is covered.
+  Second line.
+confirmed_renames:
+  - class: CBaseEntity
+    from: m_iOldHealth
+    to: m_iHealth
+    note: Renamed in the fixture's synthetic transition.

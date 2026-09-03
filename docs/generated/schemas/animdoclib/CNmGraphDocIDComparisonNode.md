@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CNmGraphDocIDComparisonNode
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmGraphDocIDComparisonNode
 
 # CNmGraphDocIDComparisonNode
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 288 bytes (`0x120`) · **Align:** 8 · **Module:** animdoclib
 
@@ -18,7 +20,7 @@ nav_exclude: true
 classDiagram
     CNmGraphDocFlowNode <|-- CNmGraphDocIDComparisonNode
     CNmGraphDocNode <|-- CNmGraphDocFlowNode
-    CNmGraphDocIDComparisonNode *-- Comparison_t
+    CNmGraphDocIDComparisonNode *-- `CNmIDComparisonNode::Comparison_t`
 ```
 
 ## Memory layout
@@ -35,7 +37,7 @@ classDiagram
 | `0x48` | `m_pSecondaryGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
 | `0x50` | `m_inputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 4 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0xd8` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
-| `0x100` | `m_comparison` | CNmIDComparisonNode::[Comparison_t](../animgraphdoclib/Comparison_t.md) |  |  |
+| `0x100` | `m_comparison` | [CNmIDComparisonNode::Comparison_t](../animlib/CNmIDComparisonNode.Comparison_t.md) |  |  |
 | `0x108` | `m_values` | CUtlVector< CGlobalSymbol > |  | `MPropertyAttributeEditor AnimGraphID()` `MPropertyAutoExpandSelf` |
 
 <details><summary>KV3 class defaults</summary>

@@ -1,17 +1,20 @@
 ---
-layout: default
-title: CPlayer_MovementServices
-nav_exclude: true
+title: CPlayer_MovementServices (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CPlayer_MovementServices
 
 # CPlayer_MovementServices
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 Base movement/input component: decoded button input and per-command move intent shared by all player pawns.
 
+**Kind:** class · **Size:** 600 bytes (`0x258`) · **Align:** n/a (unspecified) · **Module:** client
 
-**Kind:** class · **Size:** 600 bytes (`0x258`) · **Align:** 255 · **Module:** client
+**Twin:** [CPlayer_MovementServices (server)](../server/CPlayer_MovementServices.md)
 
 **Inherits from:** [CPlayerPawnComponent](../server/CPlayerPawnComponent.md)
 

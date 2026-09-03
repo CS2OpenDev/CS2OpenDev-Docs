@@ -1,11 +1,11 @@
 ---
-layout: default
 title: toolutils2
-parent: Schemas
-nav_exclude: true
+module: toolutils2
 ---
 
 # Module: toolutils2
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 [📊 View UML Diagram](../diagrams/toolutils2.md)
 

@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CAnimGraphDoc_MotionMetric
-nav_exclude: true
+module: animgraphdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphdoclib](../animgraphdoclib.md) / CAnimGraphDoc_MotionMetric
 
 # CAnimGraphDoc_MotionMetric
 
-**Kind:** class · **Size:** 40 bytes (`0x28`) · **Align:** 255 · **Module:** animgraphdoclib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 40 bytes (`0x28`) · **Align:** n/a (unspecified) · **Module:** animgraphdoclib
 
 **Derived by:** [CAnimGraphDoc_BlockSelectionMetric](../animgraphdoclib/CAnimGraphDoc_BlockSelectionMetric.md), [CAnimGraphDoc_BonePositionMetric](../animgraphdoclib/CAnimGraphDoc_BonePositionMetric.md), [CAnimGraphDoc_BoneVelocityMetric](../animgraphdoclib/CAnimGraphDoc_BoneVelocityMetric.md), [CAnimGraphDoc_CurrentRotationVelocityMetric](../animgraphdoclib/CAnimGraphDoc_CurrentRotationVelocityMetric.md), [CAnimGraphDoc_CurrentVelocityMetric](../animgraphdoclib/CAnimGraphDoc_CurrentVelocityMetric.md), [CAnimGraphDoc_DistanceRemainingMetric](../animgraphdoclib/CAnimGraphDoc_DistanceRemainingMetric.md), [CAnimGraphDoc_FootCycleMetric](../animgraphdoclib/CAnimGraphDoc_FootCycleMetric.md), [CAnimGraphDoc_FootPositionMetric](../animgraphdoclib/CAnimGraphDoc_FootPositionMetric.md), [CAnimGraphDoc_FutureFacingMetric](../animgraphdoclib/CAnimGraphDoc_FutureFacingMetric.md), [CAnimGraphDoc_FutureVelocityMetric](../animgraphdoclib/CAnimGraphDoc_FutureVelocityMetric.md), [CAnimGraphDoc_PathMetric](../animgraphdoclib/CAnimGraphDoc_PathMetric.md), [CAnimGraphDoc_StepsRemainingMetric](../animgraphdoclib/CAnimGraphDoc_StepsRemainingMetric.md), [CAnimGraphDoc_TimeRemainingMetric](../animgraphdoclib/CAnimGraphDoc_TimeRemainingMetric.md)
 
@@ -33,7 +35,7 @@ classDiagram
 
 ## Memory layout
 
-1 fields (1 declared here, 0 inherited). Offsets are absolute from the object base.
+1 field (1 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|

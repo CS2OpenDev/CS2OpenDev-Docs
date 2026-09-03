@@ -1,17 +1,20 @@
 ---
-layout: default
-title: CCSWeaponBaseVData
-nav_exclude: true
+title: CCSWeaponBaseVData (server)
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CCSWeaponBaseVData
 
 # CCSWeaponBaseVData
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 Static weapon definition (economy + ballistics) referenced by CCSWeaponBase — the per-weapon-type data that does not change at runtime.
 
-
 **Kind:** class · **Size:** 2216 bytes (`0x8a8`) · **Align:** 8 · **Module:** server
+
+**Twin:** [CCSWeaponBaseVData (client)](../client/CCSWeaponBaseVData.md)
 
 **Inherits from:** [CBasePlayerWeaponVData](../server/CBasePlayerWeaponVData.md)
 

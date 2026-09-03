@@ -1,12 +1,14 @@
 ---
-layout: default
 title: VMixGraphCommandID_t
-nav_exclude: true
+module: soundsystem_lowlevel
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [soundsystem_lowlevel](../soundsystem_lowlevel.md) / VMixGraphCommandID_t
 
 # VMixGraphCommandID_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** soundsystem_lowlevel
 
@@ -14,7 +16,7 @@ nav_exclude: true
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `CMD_INVALID` | -1 |  |
+| `CMD_INVALID` | -1 (`0xffffffff`) |  |
 | `CMD_CONTROL_INPUT_STORE` | 1 |  |
 | `CMD_CONTROL_INPUT_STORE_DB` | 2 |  |
 | `CMD_CONTROL_TRANSIENT_INPUT_STORE` | 3 |  |

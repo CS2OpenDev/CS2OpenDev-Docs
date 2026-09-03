@@ -1,0 +1,4691 @@
+{
+  "files": [
+    {
+      "description": "Demo-file container messages.",
+      "enums": [
+        {
+          "name": "EDemoCommands",
+          "parent": null,
+          "qualified": "EDemoCommands",
+          "values": [
+            {
+              "name": "DEM_Error",
+              "number": -1
+            },
+            {
+              "name": "DEM_Stop",
+              "number": 0
+            },
+            {
+              "name": "DEM_FileHeader",
+              "number": 1
+            },
+            {
+              "name": "DEM_FileInfo",
+              "number": 2
+            },
+            {
+              "name": "DEM_SyncTick",
+              "number": 3
+            },
+            {
+              "name": "DEM_SendTables",
+              "number": 4
+            },
+            {
+              "name": "DEM_ClassInfo",
+              "number": 5
+            },
+            {
+              "name": "DEM_StringTables",
+              "number": 6
+            },
+            {
+              "name": "DEM_Packet",
+              "number": 7
+            },
+            {
+              "name": "DEM_SignonPacket",
+              "number": 8
+            },
+            {
+              "name": "DEM_ConsoleCmd",
+              "number": 9
+            },
+            {
+              "name": "DEM_CustomData",
+              "number": 10
+            },
+            {
+              "name": "DEM_CustomDataCallbacks",
+              "number": 11
+            },
+            {
+              "name": "DEM_UserCmd",
+              "number": 12
+            },
+            {
+              "name": "DEM_FullPacket",
+              "number": 13
+            },
+            {
+              "name": "DEM_SaveGame",
+              "number": 14
+            },
+            {
+              "name": "DEM_SpawnGroups",
+              "number": 15
+            },
+            {
+              "name": "DEM_AnimationData",
+              "number": 16
+            },
+            {
+              "name": "DEM_AnimationHeader",
+              "number": 17
+            },
+            {
+              "name": "DEM_Recovery",
+              "number": 18
+            },
+            {
+              "name": "DEM_Max",
+              "number": 19
+            },
+            {
+              "name": "DEM_IsCompressed",
+              "number": 64
+            }
+          ]
+        }
+      ],
+      "imports": [],
+      "messages": [
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "required",
+              "name": "demo_file_stamp",
+              "notes": "",
+              "number": 1,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "patch_version",
+              "notes": "",
+              "number": 2,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "server_name",
+              "notes": "",
+              "number": 3,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "client_name",
+              "notes": "",
+              "number": 4,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "map_name",
+              "notes": "",
+              "number": 5,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "game_directory",
+              "notes": "",
+              "number": 6,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "fullpackets_version",
+              "notes": "",
+              "number": 7,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "allow_clientside_entities",
+              "notes": "",
+              "number": 8,
+              "type": "bool",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "allow_clientside_particles",
+              "notes": "",
+              "number": 9,
+              "type": "bool",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "addons",
+              "notes": "",
+              "number": 10,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "demo_version_name",
+              "notes": "",
+              "number": 11,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "demo_version_guid",
+              "notes": "",
+              "number": 12,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "build_num",
+              "notes": "",
+              "number": 13,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "game",
+              "notes": "",
+              "number": 14,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "server_start_tick",
+              "notes": "",
+              "number": 15,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CDemoFileHeader",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CDemoFileHeader",
+          "wire_ids": [
+            {
+              "constant": "DEM_FileHeader",
+              "enum": "EDemoCommands",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "dota",
+              "notes": "",
+              "number": 4,
+              "type": "CGameInfo.CDotaGameInfo",
+              "type_file": "demo.proto",
+              "type_kind": "message"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "cs",
+              "notes": "",
+              "number": 5,
+              "type": "CGameInfo.CCSGameInfo",
+              "type_file": "demo.proto",
+              "type_kind": "message"
+            }
+          ],
+          "name": "CGameInfo",
+          "nested_enums": [],
+          "nested_messages": [
+            "CGameInfo.CDotaGameInfo",
+            "CGameInfo.CCSGameInfo"
+          ],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CGameInfo",
+          "wire_ids": []
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "match_id",
+              "notes": "",
+              "number": 1,
+              "type": "uint64",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "game_mode",
+              "notes": "",
+              "number": 2,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "game_winner",
+              "notes": "",
+              "number": 3,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "repeated",
+              "name": "player_info",
+              "notes": "",
+              "number": 4,
+              "type": "CGameInfo.CDotaGameInfo.CPlayerInfo",
+              "type_file": "demo.proto",
+              "type_kind": "message"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "leagueid",
+              "notes": "",
+              "number": 5,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "repeated",
+              "name": "picks_bans",
+              "notes": "",
+              "number": 6,
+              "type": "CGameInfo.CDotaGameInfo.CHeroSelectEvent",
+              "type_file": "demo.proto",
+              "type_kind": "message"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "radiant_team_id",
+              "notes": "",
+              "number": 7,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "dire_team_id",
+              "notes": "",
+              "number": 8,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "radiant_team_tag",
+              "notes": "",
+              "number": 9,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "dire_team_tag",
+              "notes": "",
+              "number": 10,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "end_time",
+              "notes": "",
+              "number": 11,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CDotaGameInfo",
+          "nested_enums": [],
+          "nested_messages": [
+            "CGameInfo.CDotaGameInfo.CPlayerInfo",
+            "CGameInfo.CDotaGameInfo.CHeroSelectEvent"
+          ],
+          "notes": "",
+          "oneofs": [],
+          "parent": "CGameInfo",
+          "qualified": "CGameInfo.CDotaGameInfo",
+          "wire_ids": []
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "hero_name",
+              "notes": "",
+              "number": 1,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "player_name",
+              "notes": "",
+              "number": 2,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "is_fake_client",
+              "notes": "",
+              "number": 3,
+              "type": "bool",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "steamid",
+              "notes": "",
+              "number": 4,
+              "type": "uint64",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "game_team",
+              "notes": "",
+              "number": 5,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CPlayerInfo",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": "CGameInfo.CDotaGameInfo",
+          "qualified": "CGameInfo.CDotaGameInfo.CPlayerInfo",
+          "wire_ids": []
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "is_pick",
+              "notes": "",
+              "number": 1,
+              "type": "bool",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "team",
+              "notes": "",
+              "number": 2,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "hero_id",
+              "notes": "",
+              "number": 3,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CHeroSelectEvent",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": "CGameInfo.CDotaGameInfo",
+          "qualified": "CGameInfo.CDotaGameInfo.CHeroSelectEvent",
+          "wire_ids": []
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "repeated",
+              "name": "round_start_ticks",
+              "notes": "",
+              "number": 1,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CCSGameInfo",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": "CGameInfo",
+          "qualified": "CGameInfo.CCSGameInfo",
+          "wire_ids": []
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "playback_time",
+              "notes": "",
+              "number": 1,
+              "type": "float",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "playback_ticks",
+              "notes": "",
+              "number": 2,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "playback_frames",
+              "notes": "",
+              "number": 3,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "game_info",
+              "notes": "",
+              "number": 4,
+              "type": "CGameInfo",
+              "type_file": "demo.proto",
+              "type_kind": "message"
+            }
+          ],
+          "name": "CDemoFileInfo",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CDemoFileInfo",
+          "wire_ids": [
+            {
+              "constant": "DEM_FileInfo",
+              "enum": "EDemoCommands",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "data",
+              "notes": "",
+              "number": 3,
+              "type": "bytes",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CDemoPacket",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CDemoPacket",
+          "wire_ids": [
+            {
+              "constant": "DEM_Packet",
+              "enum": "EDemoCommands",
+              "value": 7
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "string_table",
+              "notes": "",
+              "number": 1,
+              "type": "CDemoStringTables",
+              "type_file": "demo.proto",
+              "type_kind": "message"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "packet",
+              "notes": "",
+              "number": 2,
+              "type": "CDemoPacket",
+              "type_file": "demo.proto",
+              "type_kind": "message"
+            }
+          ],
+          "name": "CDemoFullPacket",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CDemoFullPacket",
+          "wire_ids": [
+            {
+              "constant": "DEM_FullPacket",
+              "enum": "EDemoCommands",
+              "value": 13
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "data",
+              "notes": "",
+              "number": 1,
+              "type": "bytes",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "steam_id",
+              "notes": "",
+              "number": 2,
+              "type": "fixed64",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "signature",
+              "notes": "",
+              "number": 3,
+              "type": "fixed64",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "version",
+              "notes": "",
+              "number": 4,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CDemoSaveGame",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CDemoSaveGame",
+          "wire_ids": [
+            {
+              "constant": "DEM_SaveGame",
+              "enum": "EDemoCommands",
+              "value": 14
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [],
+          "name": "CDemoSyncTick",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CDemoSyncTick",
+          "wire_ids": [
+            {
+              "constant": "DEM_SyncTick",
+              "enum": "EDemoCommands",
+              "value": 3
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "cmdstring",
+              "notes": "",
+              "number": 1,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CDemoConsoleCmd",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CDemoConsoleCmd",
+          "wire_ids": [
+            {
+              "constant": "DEM_ConsoleCmd",
+              "enum": "EDemoCommands",
+              "value": 9
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "data",
+              "notes": "",
+              "number": 1,
+              "type": "bytes",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CDemoSendTables",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CDemoSendTables",
+          "wire_ids": [
+            {
+              "constant": "DEM_SendTables",
+              "enum": "EDemoCommands",
+              "value": 4
+            }
+          ]
+        },
+        {
+          "description": "Class id to network-class-name table.",
+          "fields": [
+            {
+              "default": "",
+              "description": "One entry per network class.",
+              "label": "repeated",
+              "name": "classes",
+              "notes": "",
+              "number": 1,
+              "type": "CDemoClassInfo.class_t",
+              "type_file": "demo.proto",
+              "type_kind": "message"
+            }
+          ],
+          "name": "CDemoClassInfo",
+          "nested_enums": [],
+          "nested_messages": [
+            "CDemoClassInfo.class_t"
+          ],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CDemoClassInfo",
+          "wire_ids": [
+            {
+              "constant": "DEM_ClassInfo",
+              "enum": "EDemoCommands",
+              "value": 5
+            }
+          ]
+        },
+        {
+          "description": "One class id to network-class-name row.",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "class_id",
+              "notes": "",
+              "number": 1,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "The network class name the id maps to.",
+              "label": "optional",
+              "name": "network_name",
+              "notes": "",
+              "number": 2,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "table_name",
+              "notes": "",
+              "number": 3,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "class_t",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": "CDemoClassInfo",
+          "qualified": "CDemoClassInfo.class_t",
+          "wire_ids": []
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "callback_index",
+              "notes": "",
+              "number": 1,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "data",
+              "notes": "",
+              "number": 2,
+              "type": "bytes",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CDemoCustomData",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CDemoCustomData",
+          "wire_ids": [
+            {
+              "constant": "DEM_CustomData",
+              "enum": "EDemoCommands",
+              "value": 10
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "repeated",
+              "name": "save_id",
+              "notes": "",
+              "number": 1,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CDemoCustomDataCallbacks",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CDemoCustomDataCallbacks",
+          "wire_ids": [
+            {
+              "constant": "DEM_CustomDataCallbacks",
+              "enum": "EDemoCommands",
+              "value": 11
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "entity_id",
+              "notes": "",
+              "number": 1,
+              "type": "sint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "tick",
+              "notes": "",
+              "number": 2,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "data",
+              "notes": "",
+              "number": 3,
+              "type": "bytes",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CDemoAnimationHeader",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CDemoAnimationHeader",
+          "wire_ids": [
+            {
+              "constant": "DEM_AnimationHeader",
+              "enum": "EDemoCommands",
+              "value": 17
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "entity_id",
+              "notes": "",
+              "number": 1,
+              "type": "sint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "start_tick",
+              "notes": "",
+              "number": 2,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "end_tick",
+              "notes": "",
+              "number": 3,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "data",
+              "notes": "",
+              "number": 4,
+              "type": "bytes",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "data_checksum",
+              "notes": "",
+              "number": 5,
+              "type": "int64",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CDemoAnimationData",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CDemoAnimationData",
+          "wire_ids": [
+            {
+              "constant": "DEM_AnimationData",
+              "enum": "EDemoCommands",
+              "value": 16
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "repeated",
+              "name": "tables",
+              "notes": "",
+              "number": 1,
+              "type": "CDemoStringTables.table_t",
+              "type_file": "demo.proto",
+              "type_kind": "message"
+            }
+          ],
+          "name": "CDemoStringTables",
+          "nested_enums": [],
+          "nested_messages": [
+            "CDemoStringTables.items_t",
+            "CDemoStringTables.table_t"
+          ],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CDemoStringTables",
+          "wire_ids": [
+            {
+              "constant": "DEM_StringTables",
+              "enum": "EDemoCommands",
+              "value": 6
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "str",
+              "notes": "",
+              "number": 1,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "data",
+              "notes": "",
+              "number": 2,
+              "type": "bytes",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "items_t",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": "CDemoStringTables",
+          "qualified": "CDemoStringTables.items_t",
+          "wire_ids": []
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "table_name",
+              "notes": "",
+              "number": 1,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "repeated",
+              "name": "items",
+              "notes": "",
+              "number": 2,
+              "type": "CDemoStringTables.items_t",
+              "type_file": "demo.proto",
+              "type_kind": "message"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "repeated",
+              "name": "items_clientside",
+              "notes": "",
+              "number": 3,
+              "type": "CDemoStringTables.items_t",
+              "type_file": "demo.proto",
+              "type_kind": "message"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "table_flags",
+              "notes": "",
+              "number": 4,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "table_t",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": "CDemoStringTables",
+          "qualified": "CDemoStringTables.table_t",
+          "wire_ids": []
+        },
+        {
+          "description": "",
+          "fields": [],
+          "name": "CDemoStop",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CDemoStop",
+          "wire_ids": [
+            {
+              "constant": "DEM_Stop",
+              "enum": "EDemoCommands",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "cmd_number",
+              "notes": "",
+              "number": 1,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "data",
+              "notes": "",
+              "number": 2,
+              "type": "bytes",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CDemoUserCmd",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CDemoUserCmd",
+          "wire_ids": [
+            {
+              "constant": "DEM_UserCmd",
+              "enum": "EDemoCommands",
+              "value": 12
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "repeated",
+              "name": "msgs",
+              "notes": "",
+              "number": 3,
+              "type": "bytes",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CDemoSpawnGroups",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CDemoSpawnGroups",
+          "wire_ids": [
+            {
+              "constant": "DEM_SpawnGroups",
+              "enum": "EDemoCommands",
+              "value": 15
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "data",
+              "notes": "",
+              "number": 1,
+              "type": "bytes",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CDemoSpawnGroupsHLTVBroadcast",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CDemoSpawnGroupsHLTVBroadcast",
+          "wire_ids": []
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "initial_spawn_group",
+              "notes": "",
+              "number": 1,
+              "type": "CDemoRecovery.DemoInitialSpawnGroupEntry",
+              "type_file": "demo.proto",
+              "type_kind": "message"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "spawn_group_message",
+              "notes": "",
+              "number": 2,
+              "type": "bytes",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CDemoRecovery",
+          "nested_enums": [],
+          "nested_messages": [
+            "CDemoRecovery.DemoInitialSpawnGroupEntry"
+          ],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CDemoRecovery",
+          "wire_ids": [
+            {
+              "constant": "DEM_Recovery",
+              "enum": "EDemoCommands",
+              "value": 18
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "spawngrouphandle",
+              "notes": "",
+              "number": 1,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "was_created",
+              "notes": "",
+              "number": 2,
+              "type": "bool",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "DemoInitialSpawnGroupEntry",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": "CDemoRecovery",
+          "qualified": "CDemoRecovery.DemoInitialSpawnGroupEntry",
+          "wire_ids": []
+        }
+      ],
+      "name": "demo.proto",
+      "notes": "",
+      "package": null,
+      "stem": "demo"
+    },
+    {
+      "description": "Source 2 base game-event protobuf messages.  Provides the Source 1-legacy game-event bridge (CMsgSource1LegacyGameEvent), sound-system events (SoS), and surface-decal events.  Identified by the EBaseGameEvents enum (200–212).",
+      "enums": [
+        {
+          "name": "EBaseGameEvents",
+          "parent": null,
+          "qualified": "EBaseGameEvents",
+          "values": [
+            {
+              "name": "GE_VDebugGameSessionIDEvent",
+              "number": 200
+            },
+            {
+              "name": "GE_PlaceDecalEvent",
+              "number": 201
+            },
+            {
+              "name": "GE_ClearWorldDecalsEvent",
+              "number": 202
+            },
+            {
+              "name": "GE_ClearEntityDecalsEvent",
+              "number": 203
+            },
+            {
+              "name": "GE_ClearDecalsForEntityEvent",
+              "number": 204
+            },
+            {
+              "name": "GE_Source1LegacyGameEventList",
+              "number": 205
+            },
+            {
+              "name": "GE_Source1LegacyListenEvents",
+              "number": 206
+            },
+            {
+              "name": "GE_Source1LegacyGameEvent",
+              "number": 207
+            },
+            {
+              "name": "GE_SosStartSoundEvent",
+              "number": 208
+            },
+            {
+              "name": "GE_SosStopSoundEvent",
+              "number": 209
+            },
+            {
+              "name": "GE_SosSetSoundEventParams",
+              "number": 210
+            },
+            {
+              "name": "GE_SosSetLibraryStackFields",
+              "number": 211
+            },
+            {
+              "name": "GE_SosStopSoundEventHash",
+              "number": 212
+            },
+            {
+              "name": "GE_ClothStiffenAnimEvent",
+              "number": 213
+            },
+            {
+              "name": "GE_ClothEffectAnimEvent",
+              "number": 214
+            }
+          ]
+        }
+      ],
+      "imports": [
+        "networkbasetypes.proto"
+      ],
+      "messages": [
+        {
+          "description": "Debug event that reports the current game-session ID string to a specific client.  Used during development to trace session continuity.",
+          "fields": [
+            {
+              "default": "",
+              "description": "Slot index of the client receiving the session-ID debug information.",
+              "label": "optional",
+              "name": "clientid",
+              "notes": "",
+              "number": 1,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Unique string identifier for the current game session.",
+              "label": "optional",
+              "name": "gamesessionid",
+              "notes": "",
+              "number": 2,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CMsgVDebugGameSessionIDEvent",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgVDebugGameSessionIDEvent",
+          "wire_ids": [
+            {
+              "constant": "GE_VDebugGameSessionIDEvent",
+              "enum": "EBaseGameEvents",
+              "value": 200
+            }
+          ]
+        },
+        {
+          "description": "Instructs clients to paint a decal (bullet hole, blood splatter, spray) onto a surface or entity in the world.",
+          "fields": [
+            {
+              "default": "",
+              "description": "World-space hit position where the decal should be placed.",
+              "label": "optional",
+              "name": "position",
+              "notes": "",
+              "number": 1,
+              "type": "CMsgVector",
+              "type_file": "networkbasetypes.proto",
+              "type_kind": "message"
+            },
+            {
+              "default": "",
+              "description": "Surface normal at the hit position; orients the decal correctly.",
+              "label": "optional",
+              "name": "normal",
+              "notes": "",
+              "number": 2,
+              "type": "CMsgVector",
+              "type_file": "networkbasetypes.proto",
+              "type_kind": "message"
+            },
+            {
+              "default": "",
+              "description": "Secondary axis vector for texture alignment.",
+              "label": "optional",
+              "name": "saxis",
+              "notes": "",
+              "number": 3,
+              "type": "CMsgVector",
+              "type_file": "networkbasetypes.proto",
+              "type_kind": "message"
+            },
+            {
+              "default": "",
+              "description": "Bone index when the decal is attached to an animated model (-1 for world surfaces).",
+              "label": "optional",
+              "name": "boneindex",
+              "notes": "",
+              "number": 4,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Decal flags bitmask (temporary, permanent, etc.).",
+              "label": "optional",
+              "name": "flags",
+              "notes": "",
+              "number": 5,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "RGBA colour tint applied to the decal texture.",
+              "label": "optional",
+              "name": "color",
+              "notes": "",
+              "number": 6,
+              "type": "fixed32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Random seed used to select from a decal group variant.",
+              "label": "optional",
+              "name": "random_seed",
+              "notes": "",
+              "number": 7,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Hash of the decal group name (e.g. 'BulletImpactConcrete').",
+              "label": "optional",
+              "name": "decal_group_name",
+              "notes": "",
+              "number": 8,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Override size in world units (0 = use default decal size).",
+              "label": "optional",
+              "name": "size_override",
+              "notes": "",
+              "number": 9,
+              "type": "float",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "16777215",
+              "description": "Entity handle to attach the decal to (0xFFFFFF = world).",
+              "label": "optional",
+              "name": "entityhandle",
+              "notes": "",
+              "number": 10,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Material ID of the surface at the hit point.",
+              "label": "optional",
+              "name": "material_id",
+              "notes": "",
+              "number": 11,
+              "type": "uint64",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Hash of the decal sequence name for animated decals.",
+              "label": "optional",
+              "name": "sequence_name",
+              "notes": "",
+              "number": 12,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Mesh triangle index for precise placement on complex geometry.",
+              "label": "optional",
+              "name": "triangleindex",
+              "notes": "",
+              "number": 13,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "position_objectspace",
+              "notes": "",
+              "number": 14,
+              "type": "CMsgVector",
+              "type_file": "networkbasetypes.proto",
+              "type_kind": "message"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "normal_objectspace",
+              "notes": "",
+              "number": 15,
+              "type": "CMsgVector",
+              "type_file": "networkbasetypes.proto",
+              "type_kind": "message"
+            }
+          ],
+          "name": "CMsgPlaceDecalEvent",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgPlaceDecalEvent",
+          "wire_ids": [
+            {
+              "constant": "GE_PlaceDecalEvent",
+              "enum": "EBaseGameEvents",
+              "value": 201
+            }
+          ]
+        },
+        {
+          "description": "Removes all world-surface decals matching the given flags (e.g. clears bullet holes at round start).",
+          "fields": [
+            {
+              "default": "",
+              "description": "Bitmask of decal flags; decals with any matching flag will be removed.",
+              "label": "optional",
+              "name": "flagstoclear",
+              "notes": "",
+              "number": 1,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CMsgClearWorldDecalsEvent",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgClearWorldDecalsEvent",
+          "wire_ids": [
+            {
+              "constant": "GE_ClearWorldDecalsEvent",
+              "enum": "EBaseGameEvents",
+              "value": 202
+            }
+          ]
+        },
+        {
+          "description": "Removes all decals painted on entity surfaces that match the given flags.",
+          "fields": [
+            {
+              "default": "",
+              "description": "Bitmask of decal flags to clear from all entity surfaces.",
+              "label": "optional",
+              "name": "flagstoclear",
+              "notes": "",
+              "number": 1,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CMsgClearEntityDecalsEvent",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgClearEntityDecalsEvent",
+          "wire_ids": [
+            {
+              "constant": "GE_ClearEntityDecalsEvent",
+              "enum": "EBaseGameEvents",
+              "value": 203
+            }
+          ]
+        },
+        {
+          "description": "Removes all decals on a specific entity that match the given flags.",
+          "fields": [
+            {
+              "default": "",
+              "description": "Bitmask of decal flags to clear.",
+              "label": "optional",
+              "name": "flagstoclear",
+              "notes": "",
+              "number": 1,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "16777215",
+              "description": "Handle of the specific entity whose decals should be cleared.",
+              "label": "optional",
+              "name": "entityhandle",
+              "notes": "",
+              "number": 2,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CMsgClearDecalsForEntityEvent",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgClearDecalsForEntityEvent",
+          "wire_ids": [
+            {
+              "constant": "GE_ClearDecalsForEntityEvent",
+              "enum": "EBaseGameEvents",
+              "value": 204
+            }
+          ]
+        },
+        {
+          "description": "Sent once at the start of a connection to register all Source 1 game-event schemas with the client.  The client uses this list to decode subsequent CMsgSource1LegacyGameEvent messages by ID.",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "repeated",
+              "name": "descriptors",
+              "notes": "",
+              "number": 1,
+              "type": "CMsgSource1LegacyGameEventList.descriptor_t",
+              "type_file": "gameevents.proto",
+              "type_kind": "message"
+            }
+          ],
+          "name": "CMsgSource1LegacyGameEventList",
+          "nested_enums": [],
+          "nested_messages": [
+            "CMsgSource1LegacyGameEventList.key_t",
+            "CMsgSource1LegacyGameEventList.descriptor_t"
+          ],
+          "notes": "This is the Source 2 equivalent of the Source 1 'svc_GameEventList' message. All classic CS:GO game events (player_death, bomb_planted, etc.) are transmitted through this bridge.",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgSource1LegacyGameEventList",
+          "wire_ids": [
+            {
+              "constant": "GE_Source1LegacyGameEventList",
+              "enum": "EBaseGameEvents",
+              "value": 205
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "type",
+              "notes": "",
+              "number": 1,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "name",
+              "notes": "",
+              "number": 2,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "key_t",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": "CMsgSource1LegacyGameEventList",
+          "qualified": "CMsgSource1LegacyGameEventList.key_t",
+          "wire_ids": []
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "eventid",
+              "notes": "",
+              "number": 1,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "name",
+              "notes": "",
+              "number": 2,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "repeated",
+              "name": "keys",
+              "notes": "",
+              "number": 3,
+              "type": "CMsgSource1LegacyGameEventList.key_t",
+              "type_file": "gameevents.proto",
+              "type_kind": "message"
+            }
+          ],
+          "name": "descriptor_t",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": "CMsgSource1LegacyGameEventList",
+          "qualified": "CMsgSource1LegacyGameEventList.descriptor_t",
+          "wire_ids": []
+        },
+        {
+          "description": "Registers which Source 1 game-events a specific client wishes to receive. Used by plugins and spectators to opt in to event streams.",
+          "fields": [
+            {
+              "default": "",
+              "description": "Player slot that is registering these event listeners.",
+              "label": "optional",
+              "name": "playerslot",
+              "notes": "",
+              "number": 1,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Packed bitmask array; bit N set means listen for game-event with ID N.",
+              "label": "repeated",
+              "name": "eventarraybits",
+              "notes": "",
+              "number": 2,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CMsgSource1LegacyListenEvents",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgSource1LegacyListenEvents",
+          "wire_ids": [
+            {
+              "constant": "GE_Source1LegacyListenEvents",
+              "enum": "EBaseGameEvents",
+              "value": 206
+            }
+          ]
+        },
+        {
+          "description": "Carries a single Source 1 game-event (player_death, weapon_fire, bomb_planted, etc.) over the Source 2 network layer.  The event-type name and all key–value pairs are encoded inside the keys list.",
+          "fields": [
+            {
+              "default": "",
+              "description": "String name of the game event (e.g. 'player_death', 'bomb_planted').",
+              "label": "optional",
+              "name": "event_name",
+              "notes": "",
+              "number": 1,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Numeric event ID assigned during registration via CMsgSource1LegacyGameEventList.",
+              "label": "optional",
+              "name": "eventid",
+              "notes": "",
+              "number": 2,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Typed key–value pairs carrying event-specific data (integers, floats, strings, booleans).",
+              "label": "repeated",
+              "name": "keys",
+              "notes": "",
+              "number": 3,
+              "type": "CMsgSource1LegacyGameEvent.key_t",
+              "type_file": "gameevents.proto",
+              "type_kind": "message"
+            },
+            {
+              "default": "",
+              "description": "Server tick on which the event was fired.",
+              "label": "optional",
+              "name": "server_tick",
+              "notes": "",
+              "number": 4,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Passthrough flag used internally by the event system.",
+              "label": "optional",
+              "name": "passthrough",
+              "notes": "",
+              "number": 5,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CMsgSource1LegacyGameEvent",
+          "nested_enums": [],
+          "nested_messages": [
+            "CMsgSource1LegacyGameEvent.key_t"
+          ],
+          "notes": "CS2 game events (player_death, round_start, bomb_exploded, etc.) are all transmitted as CMsgSource1LegacyGameEvent messages.  Use the event_name field to identify them and CMsgSource1LegacyGameEventList to decode keys.",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgSource1LegacyGameEvent",
+          "wire_ids": [
+            {
+              "constant": "GE_Source1LegacyGameEvent",
+              "enum": "EBaseGameEvents",
+              "value": 207
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "type",
+              "notes": "",
+              "number": 1,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "val_string",
+              "notes": "",
+              "number": 2,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "val_float",
+              "notes": "",
+              "number": 3,
+              "type": "float",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "val_long",
+              "notes": "",
+              "number": 4,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "val_short",
+              "notes": "",
+              "number": 5,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "val_byte",
+              "notes": "",
+              "number": 6,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "val_bool",
+              "notes": "",
+              "number": 7,
+              "type": "bool",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "val_uint64",
+              "notes": "",
+              "number": 8,
+              "type": "uint64",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "key_t",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": "CMsgSource1LegacyGameEvent",
+          "qualified": "CMsgSource1LegacyGameEvent.key_t",
+          "wire_ids": []
+        },
+        {
+          "description": "Starts a named sound event through the SoS (Sound Operating System) layer, associated with an optional source entity.",
+          "fields": [
+            {
+              "default": "",
+              "description": "Unique integer handle for this sound instance (used to stop or modify it later).",
+              "label": "optional",
+              "name": "soundevent_guid",
+              "notes": "",
+              "number": 1,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "CRC32 hash of the sound event name string.",
+              "label": "optional",
+              "name": "soundevent_hash",
+              "notes": "",
+              "number": 2,
+              "type": "fixed32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "-1",
+              "description": "Entity index of the sound source (-1 = world/positional).",
+              "label": "optional",
+              "name": "source_entity_index",
+              "notes": "",
+              "number": 3,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Random seed for sound variation selection.",
+              "label": "optional",
+              "name": "seed",
+              "notes": "",
+              "number": 4,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Packed binary parameters for the sound event (volume, pitch, position, etc.).",
+              "label": "optional",
+              "name": "packed_params",
+              "notes": "",
+              "number": 5,
+              "type": "bytes",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Game time at which the sound should start playing (allows latency compensation).",
+              "label": "optional",
+              "name": "start_time",
+              "notes": "",
+              "number": 6,
+              "type": "float",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CMsgSosStartSoundEvent",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgSosStartSoundEvent",
+          "wire_ids": [
+            {
+              "constant": "GE_SosStartSoundEvent",
+              "enum": "EBaseGameEvents",
+              "value": 208
+            }
+          ]
+        },
+        {
+          "description": "Stops a specific sound instance identified by its GUID.",
+          "fields": [
+            {
+              "default": "",
+              "description": "GUID of the sound instance to stop (matches soundevent_guid from CMsgSosStartSoundEvent).",
+              "label": "optional",
+              "name": "soundevent_guid",
+              "notes": "",
+              "number": 1,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CMsgSosStopSoundEvent",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgSosStopSoundEvent",
+          "wire_ids": [
+            {
+              "constant": "GE_SosStopSoundEvent",
+              "enum": "EBaseGameEvents",
+              "value": 209
+            }
+          ]
+        },
+        {
+          "description": "Stops all sound instances matching the given sound-event hash on the specified source entity.",
+          "fields": [
+            {
+              "default": "",
+              "description": "CRC32 hash of the sound event name to stop.",
+              "label": "optional",
+              "name": "soundevent_hash",
+              "notes": "",
+              "number": 1,
+              "type": "fixed32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "-1",
+              "description": "Entity index to restrict the stop to (-1 = stop all matching sounds).",
+              "label": "optional",
+              "name": "source_entity_index",
+              "notes": "",
+              "number": 2,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CMsgSosStopSoundEventHash",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgSosStopSoundEventHash",
+          "wire_ids": [
+            {
+              "constant": "GE_SosStopSoundEventHash",
+              "enum": "EBaseGameEvents",
+              "value": 212
+            }
+          ]
+        },
+        {
+          "description": "Updates runtime parameters of an active sound event without restarting it (e.g. volume fade, pitch shift on a looping ambient sound).",
+          "fields": [
+            {
+              "default": "",
+              "description": "GUID of the active sound instance to modify.",
+              "label": "optional",
+              "name": "soundevent_guid",
+              "notes": "",
+              "number": 1,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "New packed parameter values to apply to the running sound.",
+              "label": "optional",
+              "name": "packed_params",
+              "notes": "",
+              "number": 5,
+              "type": "bytes",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CMsgSosSetSoundEventParams",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgSosSetSoundEventParams",
+          "wire_ids": [
+            {
+              "constant": "GE_SosSetSoundEventParams",
+              "enum": "EBaseGameEvents",
+              "value": 210
+            }
+          ]
+        },
+        {
+          "description": "Modifies fields in a named sound library stack (a group of sound layers), allowing global sound-mix changes from the server.",
+          "fields": [
+            {
+              "default": "",
+              "description": "CRC32 hash of the sound library stack name to modify.",
+              "label": "optional",
+              "name": "stack_hash",
+              "notes": "",
+              "number": 1,
+              "type": "fixed32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Packed binary field values to apply to the stack.",
+              "label": "optional",
+              "name": "packed_fields",
+              "notes": "",
+              "number": 5,
+              "type": "bytes",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CMsgSosSetLibraryStackFields",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgSosSetLibraryStackFields",
+          "wire_ids": [
+            {
+              "constant": "GE_SosSetLibraryStackFields",
+              "enum": "EBaseGameEvents",
+              "value": 211
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "-1",
+              "description": "",
+              "label": "optional",
+              "name": "source_entity_index",
+              "notes": "",
+              "number": 1,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "vertex_set_hash",
+              "notes": "",
+              "number": 2,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "intensity",
+              "notes": "",
+              "number": 3,
+              "type": "float",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "length",
+              "notes": "",
+              "number": 4,
+              "type": "float",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "speed_in",
+              "notes": "",
+              "number": 5,
+              "type": "float",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "speed_out",
+              "notes": "",
+              "number": 6,
+              "type": "float",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CMsgClothStiffenAnimEvent",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgClothStiffenAnimEvent",
+          "wire_ids": [
+            {
+              "constant": "GE_ClothStiffenAnimEvent",
+              "enum": "EBaseGameEvents",
+              "value": 213
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "-1",
+              "description": "",
+              "label": "optional",
+              "name": "source_entity_index",
+              "notes": "",
+              "number": 1,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "effect_name_hash",
+              "notes": "",
+              "number": 2,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "operation",
+              "notes": "",
+              "number": 3,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "flags",
+              "notes": "",
+              "number": 4,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "tags",
+              "notes": "",
+              "number": 5,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "pte",
+              "notes": "",
+              "number": 6,
+              "type": "CMsgVector",
+              "type_file": "networkbasetypes.proto",
+              "type_kind": "message"
+            }
+          ],
+          "name": "CMsgClothEffectAnimEvent",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgClothEffectAnimEvent",
+          "wire_ids": [
+            {
+              "constant": "GE_ClothEffectAnimEvent",
+              "enum": "EBaseGameEvents",
+              "value": 214
+            }
+          ]
+        }
+      ],
+      "name": "gameevents.proto",
+      "notes": "",
+      "package": null,
+      "stem": "gameevents"
+    },
+    {
+      "description": "Foundational proto-type definitions shared across all CS2 network and game-event messages.  Provides compact vector, angle, quaternion, colour, and player-info structs used as fields in higher-level messages.",
+      "enums": [
+        {
+          "name": "SignonState_t",
+          "parent": null,
+          "qualified": "SignonState_t",
+          "values": [
+            {
+              "name": "SIGNONSTATE_NONE",
+              "number": 0
+            },
+            {
+              "name": "SIGNONSTATE_CHALLENGE",
+              "number": 1
+            },
+            {
+              "name": "SIGNONSTATE_CONNECTED",
+              "number": 2
+            },
+            {
+              "name": "SIGNONSTATE_NEW",
+              "number": 3
+            },
+            {
+              "name": "SIGNONSTATE_PRESPAWN",
+              "number": 4
+            },
+            {
+              "name": "SIGNONSTATE_SPAWN",
+              "number": 5
+            },
+            {
+              "name": "SIGNONSTATE_FULL",
+              "number": 6
+            },
+            {
+              "name": "SIGNONSTATE_CHANGELEVEL",
+              "number": 7
+            }
+          ]
+        },
+        {
+          "name": "NET_Messages",
+          "parent": null,
+          "qualified": "NET_Messages",
+          "values": [
+            {
+              "name": "net_NOP",
+              "number": 0
+            },
+            {
+              "name": "net_Disconnect_Legacy",
+              "number": 1
+            },
+            {
+              "name": "net_SplitScreenUser",
+              "number": 3
+            },
+            {
+              "name": "net_Tick",
+              "number": 4
+            },
+            {
+              "name": "net_StringCmd",
+              "number": 5
+            },
+            {
+              "name": "net_SetConVar",
+              "number": 6
+            },
+            {
+              "name": "net_SignonState",
+              "number": 7
+            },
+            {
+              "name": "net_SpawnGroup_Load",
+              "number": 8
+            },
+            {
+              "name": "net_SpawnGroup_ManifestUpdate",
+              "number": 9
+            },
+            {
+              "name": "net_SpawnGroup_SetCreationTick",
+              "number": 11
+            },
+            {
+              "name": "net_SpawnGroup_Unload",
+              "number": 12
+            },
+            {
+              "name": "net_SpawnGroup_LoadCompleted",
+              "number": 13
+            },
+            {
+              "name": "net_DebugOverlay",
+              "number": 15
+            }
+          ]
+        },
+        {
+          "name": "SpawnGroupFlags_t",
+          "parent": null,
+          "qualified": "SpawnGroupFlags_t",
+          "values": [
+            {
+              "name": "SPAWN_GROUP_LOAD_ENTITIES_FROM_SAVE",
+              "number": 1
+            },
+            {
+              "name": "SPAWN_GROUP_DONT_SPAWN_ENTITIES",
+              "number": 2
+            },
+            {
+              "name": "SPAWN_GROUP_SYNCHRONOUS_SPAWN",
+              "number": 4
+            },
+            {
+              "name": "SPAWN_GROUP_IS_INITIAL_SPAWN_GROUP",
+              "number": 8
+            },
+            {
+              "name": "SPAWN_GROUP_CREATE_CLIENT_ONLY_ENTITIES",
+              "number": 16
+            },
+            {
+              "name": "SPAWN_GROUP_BLOCK_UNTIL_LOADED",
+              "number": 64
+            },
+            {
+              "name": "SPAWN_GROUP_LOAD_STREAMING_DATA",
+              "number": 128
+            },
+            {
+              "name": "SPAWN_GROUP_CREATE_NEW_SCENE_WORLD",
+              "number": 256
+            }
+          ]
+        }
+      ],
+      "imports": [
+        "valveextensions.proto",
+        "google/protobuf/descriptor.proto",
+        "network_connection.proto"
+      ],
+      "messages": [
+        {
+          "description": "Compact three-component world-space position or direction vector transmitted over the CS2 network.  Used for shot origins, positions, normals, etc.",
+          "fields": [
+            {
+              "default": "",
+              "description": "X component of the vector (world units).",
+              "label": "optional",
+              "name": "x",
+              "notes": "",
+              "number": 1,
+              "type": "float",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Y component of the vector (world units).",
+              "label": "optional",
+              "name": "y",
+              "notes": "",
+              "number": 2,
+              "type": "float",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Z component of the vector (world units, positive = up).",
+              "label": "optional",
+              "name": "z",
+              "notes": "",
+              "number": 3,
+              "type": "float",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "w",
+              "notes": "",
+              "number": 4,
+              "type": "float",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CMsgVector",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgVector",
+          "wire_ids": []
+        },
+        {
+          "description": "Two-component vector for screen-space or 2D positions.",
+          "fields": [
+            {
+              "default": "",
+              "description": "X component.",
+              "label": "optional",
+              "name": "x",
+              "notes": "",
+              "number": 1,
+              "type": "float",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Y component.",
+              "label": "optional",
+              "name": "y",
+              "notes": "",
+              "number": 2,
+              "type": "float",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CMsgVector2D",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgVector2D",
+          "wire_ids": []
+        },
+        {
+          "description": "Euler angle triplet (pitch, yaw, roll) used to represent orientations in CS2 network messages.  Pitch = up/down, Yaw = left/right, Roll = tilt.",
+          "fields": [
+            {
+              "default": "",
+              "description": "Pitch angle in degrees (positive = look down).",
+              "label": "optional",
+              "name": "x",
+              "notes": "",
+              "number": 1,
+              "type": "float",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Yaw angle in degrees (positive = turn left).",
+              "label": "optional",
+              "name": "y",
+              "notes": "",
+              "number": 2,
+              "type": "float",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Roll angle in degrees.",
+              "label": "optional",
+              "name": "z",
+              "notes": "",
+              "number": 3,
+              "type": "float",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CMsgQAngle",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgQAngle",
+          "wire_ids": []
+        },
+        {
+          "description": "Unit quaternion representation of a 3D rotation, used when higher precision or gimbal-lock avoidance is needed.",
+          "fields": [
+            {
+              "default": "",
+              "description": "Quaternion X component.",
+              "label": "optional",
+              "name": "x",
+              "notes": "",
+              "number": 1,
+              "type": "float",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Quaternion Y component.",
+              "label": "optional",
+              "name": "y",
+              "notes": "",
+              "number": 2,
+              "type": "float",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Quaternion Z component.",
+              "label": "optional",
+              "name": "z",
+              "notes": "",
+              "number": 3,
+              "type": "float",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Quaternion W (scalar) component.",
+              "label": "optional",
+              "name": "w",
+              "notes": "",
+              "number": 4,
+              "type": "float",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CMsgQuaternion",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgQuaternion",
+          "wire_ids": []
+        },
+        {
+          "description": "Combined position and orientation transform message.",
+          "fields": [
+            {
+              "default": "",
+              "description": "World-space translation vector.",
+              "label": "optional",
+              "name": "position",
+              "notes": "",
+              "number": 1,
+              "type": "CMsgVector",
+              "type_file": "networkbasetypes.proto",
+              "type_kind": "message"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "scale",
+              "notes": "",
+              "number": 2,
+              "type": "float",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Rotation quaternion.",
+              "label": "optional",
+              "name": "orientation",
+              "notes": "",
+              "number": 3,
+              "type": "CMsgQuaternion",
+              "type_file": "networkbasetypes.proto",
+              "type_kind": "message"
+            }
+          ],
+          "name": "CMsgTransform",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgTransform",
+          "wire_ids": []
+        },
+        {
+          "description": "32-bit RGBA colour value transmitted as four separate byte-range integers.",
+          "fields": [
+            {
+              "default": "",
+              "description": "Red channel (0–255).",
+              "label": "optional",
+              "name": "r",
+              "notes": "",
+              "number": 1,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Green channel (0–255).",
+              "label": "optional",
+              "name": "g",
+              "notes": "",
+              "number": 2,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Blue channel (0–255).",
+              "label": "optional",
+              "name": "b",
+              "notes": "",
+              "number": 3,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Alpha channel (0 = fully transparent, 255 = fully opaque).",
+              "label": "optional",
+              "name": "a",
+              "notes": "",
+              "number": 4,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CMsgRGBA",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgRGBA",
+          "wire_ids": []
+        },
+        {
+          "description": "Compact player-identification record stored in the 'userinfo' string table.  Every connected client has an entry here; used to resolve entity handles to Steam IDs and display names in demo parsers.",
+          "fields": [
+            {
+              "default": "",
+              "description": "Steam display name of the player (UTF-8, up to 32 bytes).",
+              "label": "optional",
+              "name": "name",
+              "notes": "",
+              "number": 1,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Steam's internal 64-bit XUID (may differ from SteamID64 for certain account types).",
+              "label": "optional",
+              "name": "xuid",
+              "notes": "",
+              "number": 2,
+              "type": "fixed64",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Session-scoped integer user ID assigned by the server (unique per connection).",
+              "label": "optional",
+              "name": "userid",
+              "notes": "",
+              "number": 3,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "64-bit SteamID64 of the player.",
+              "label": "optional",
+              "name": "steamid",
+              "notes": "",
+              "number": 4,
+              "type": "fixed64",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "True when this slot is occupied by a bot rather than a human player.",
+              "label": "optional",
+              "name": "fakeplayer",
+              "notes": "",
+              "number": 5,
+              "type": "bool",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "True when this slot is a GOTV/HLTV proxy connection.",
+              "label": "optional",
+              "name": "ishltv",
+              "notes": "",
+              "number": 6,
+              "type": "bool",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CMsgPlayerInfo",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgPlayerInfo",
+          "wire_ids": []
+        },
+        {
+          "description": "Wrapper that targets an entity-specific message to a specific entity handle.",
+          "fields": [
+            {
+              "default": "16777215",
+              "description": "Packed entity handle of the target entity (0xFFFFFF = broadcast).",
+              "label": "optional",
+              "name": "target_entity",
+              "notes": "",
+              "number": 1,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CEntityMsg",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CEntityMsg",
+          "wire_ids": []
+        },
+        {
+          "description": "List of convar name–value pairs, used to synchronise convar state between client and server (e.g. in CNETMsg_SetConVar).",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "repeated",
+              "name": "cvars",
+              "notes": "",
+              "number": 1,
+              "type": "CMsg_CVars.CVar",
+              "type_file": "networkbasetypes.proto",
+              "type_kind": "message"
+            }
+          ],
+          "name": "CMsg_CVars",
+          "nested_enums": [],
+          "nested_messages": [
+            "CMsg_CVars.CVar"
+          ],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsg_CVars",
+          "wire_ids": []
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "name",
+              "notes": "",
+              "number": 1,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "value",
+              "notes": "",
+              "number": 2,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CVar",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": "CMsg_CVars",
+          "qualified": "CMsg_CVars.CVar",
+          "wire_ids": []
+        },
+        {
+          "description": "No-operation message; sent as a heartbeat or padding packet.",
+          "fields": [],
+          "name": "CNETMsg_NOP",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CNETMsg_NOP",
+          "wire_ids": [
+            {
+              "constant": "net_NOP",
+              "enum": "NET_Messages",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "slot",
+              "notes": "",
+              "number": 1,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CNETMsg_SplitScreenUser",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CNETMsg_SplitScreenUser",
+          "wire_ids": [
+            {
+              "constant": "net_SplitScreenUser",
+              "enum": "NET_Messages",
+              "value": 3
+            }
+          ]
+        },
+        {
+          "description": "Per-tick synchronisation heartbeat sent from the server to all clients. Carries host-performance metrics alongside the current tick number.",
+          "fields": [
+            {
+              "default": "",
+              "description": "Current server tick number.",
+              "label": "optional",
+              "name": "tick",
+              "notes": "",
+              "number": 1,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Server computation time for this tick in microseconds.",
+              "label": "optional",
+              "name": "host_computationtime",
+              "notes": "",
+              "number": 4,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Standard deviation of recent computation times in microseconds.",
+              "label": "optional",
+              "name": "host_computationtime_std_deviation",
+              "notes": "",
+              "number": 5,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "legacy_host_loss",
+              "notes": "",
+              "number": 7,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Unsmoothed frame time in microseconds.",
+              "label": "optional",
+              "name": "host_unfiltered_frametime",
+              "notes": "",
+              "number": 8,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "GOTV replay control flags.",
+              "label": "optional",
+              "name": "hltv_replay_flags",
+              "notes": "",
+              "number": 9,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Tick number that is expected to take longer than usual (pre-warned to clients).",
+              "label": "optional",
+              "name": "expected_long_tick",
+              "notes": "",
+              "number": 10,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "expected_long_tick_reason",
+              "notes": "",
+              "number": 11,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Percentage of server frames dropped, multiplied by 10 (e.g. 15 = 1.5%).",
+              "label": "optional",
+              "name": "host_frame_dropped_pct_x10",
+              "notes": "",
+              "number": 12,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "host_frame_irregular_arrival_pct_x10",
+              "notes": "",
+              "number": 13,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CNETMsg_Tick",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CNETMsg_Tick",
+          "wire_ids": [
+            {
+              "constant": "net_Tick",
+              "enum": "NET_Messages",
+              "value": 4
+            }
+          ]
+        },
+        {
+          "description": "Client→Server string command (e.g. 'joingame', 'spectate', 'changeteam'). The server whitelists valid commands; arbitrary console commands are not accepted.",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "command",
+              "notes": "",
+              "number": 1,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "prediction_sync",
+              "notes": "",
+              "number": 2,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CNETMsg_StringCmd",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CNETMsg_StringCmd",
+          "wire_ids": [
+            {
+              "constant": "net_StringCmd",
+              "enum": "NET_Messages",
+              "value": 5
+            }
+          ]
+        },
+        {
+          "description": "Pushes a list of convar values from the server to the client (or from client to server when the client is reporting user settings).",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "convars",
+              "notes": "",
+              "number": 1,
+              "type": "CMsg_CVars",
+              "type_file": "networkbasetypes.proto",
+              "type_kind": "message"
+            }
+          ],
+          "name": "CNETMsg_SetConVar",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CNETMsg_SetConVar",
+          "wire_ids": [
+            {
+              "constant": "net_SetConVar",
+              "enum": "NET_Messages",
+              "value": 6
+            }
+          ]
+        },
+        {
+          "description": "Reports the current connection stage of the client or server during the multi-step sign-on sequence.",
+          "fields": [
+            {
+              "default": "SIGNONSTATE_NONE",
+              "description": "SignonState_t enum: NONE=0, CHALLENGE=1, CONNECTED=2, NEW=3, PRESPAWN=4, SPAWN=5, FULL=6, CHANGELEVEL=7.",
+              "label": "optional",
+              "name": "signon_state",
+              "notes": "",
+              "number": 1,
+              "type": "SignonState_t",
+              "type_file": "networkbasetypes.proto",
+              "type_kind": "enum"
+            },
+            {
+              "default": "",
+              "description": "Incremented each map load; used to detect map changes.",
+              "label": "optional",
+              "name": "spawn_count",
+              "notes": "",
+              "number": 2,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Number of player slots currently occupied on the server.",
+              "label": "optional",
+              "name": "num_server_players",
+              "notes": "",
+              "number": 3,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "List of SteamID strings for currently connected players.",
+              "label": "repeated",
+              "name": "players_networkids",
+              "notes": "",
+              "number": 4,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Current map name.",
+              "label": "optional",
+              "name": "map_name",
+              "notes": "",
+              "number": 5,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "Comma-separated list of workshop addons loaded on this server.",
+              "label": "optional",
+              "name": "addons",
+              "notes": "",
+              "number": 6,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CNETMsg_SignonState",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CNETMsg_SignonState",
+          "wire_ids": [
+            {
+              "constant": "net_SignonState",
+              "enum": "NET_Messages",
+              "value": 7
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "event_name",
+              "notes": "",
+              "number": 1,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "eventid",
+              "notes": "",
+              "number": 2,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "repeated",
+              "name": "keys",
+              "notes": "",
+              "number": 3,
+              "type": "CSVCMsg_GameEvent.key_t",
+              "type_file": "networkbasetypes.proto",
+              "type_kind": "message"
+            }
+          ],
+          "name": "CSVCMsg_GameEvent",
+          "nested_enums": [],
+          "nested_messages": [
+            "CSVCMsg_GameEvent.key_t"
+          ],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CSVCMsg_GameEvent",
+          "wire_ids": []
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "type",
+              "notes": "",
+              "number": 1,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "val_string",
+              "notes": "",
+              "number": 2,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "val_float",
+              "notes": "",
+              "number": 3,
+              "type": "float",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "val_long",
+              "notes": "",
+              "number": 4,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "val_short",
+              "notes": "",
+              "number": 5,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "val_byte",
+              "notes": "",
+              "number": 6,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "val_bool",
+              "notes": "",
+              "number": 7,
+              "type": "bool",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "val_uint64",
+              "notes": "",
+              "number": 8,
+              "type": "uint64",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "key_t",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": "CSVCMsg_GameEvent",
+          "qualified": "CSVCMsg_GameEvent.key_t",
+          "wire_ids": []
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "repeated",
+              "name": "events",
+              "notes": "",
+              "number": 1,
+              "type": "CSVCMsgList_GameEvents.event_t",
+              "type_file": "networkbasetypes.proto",
+              "type_kind": "message"
+            }
+          ],
+          "name": "CSVCMsgList_GameEvents",
+          "nested_enums": [],
+          "nested_messages": [
+            "CSVCMsgList_GameEvents.event_t"
+          ],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CSVCMsgList_GameEvents",
+          "wire_ids": []
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "tick",
+              "notes": "",
+              "number": 1,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "event",
+              "notes": "",
+              "number": 2,
+              "type": "CSVCMsg_GameEvent",
+              "type_file": "networkbasetypes.proto",
+              "type_kind": "message"
+            }
+          ],
+          "name": "event_t",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": "CSVCMsgList_GameEvents",
+          "qualified": "CSVCMsgList_GameEvents.event_t",
+          "wire_ids": []
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "worldname",
+              "notes": "",
+              "number": 1,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "entitylumpname",
+              "notes": "",
+              "number": 2,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "entityfiltername",
+              "notes": "",
+              "number": 3,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "spawngrouphandle",
+              "notes": "",
+              "number": 4,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "spawngroupownerhandle",
+              "notes": "",
+              "number": 5,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "world_offset_pos",
+              "notes": "",
+              "number": 6,
+              "type": "CMsgVector",
+              "type_file": "networkbasetypes.proto",
+              "type_kind": "message"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "world_offset_angle",
+              "notes": "",
+              "number": 7,
+              "type": "CMsgQAngle",
+              "type_file": "networkbasetypes.proto",
+              "type_kind": "message"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "spawngroupmanifest",
+              "notes": "",
+              "number": 8,
+              "type": "bytes",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "flags",
+              "notes": "",
+              "number": 9,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "tickcount",
+              "notes": "",
+              "number": 10,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "manifestincomplete",
+              "notes": "",
+              "number": 11,
+              "type": "bool",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "localnamefixup",
+              "notes": "",
+              "number": 12,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "parentnamefixup",
+              "notes": "",
+              "number": 13,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "manifestloadpriority",
+              "notes": "",
+              "number": 14,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "worldgroupid",
+              "notes": "",
+              "number": 15,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "creationsequence",
+              "notes": "",
+              "number": 16,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "savegamefilename",
+              "notes": "",
+              "number": 17,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "spawngroupparenthandle",
+              "notes": "",
+              "number": 18,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "leveltransition",
+              "notes": "",
+              "number": 19,
+              "type": "bool",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "worldgroupname",
+              "notes": "",
+              "number": 20,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CNETMsg_SpawnGroup_Load",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CNETMsg_SpawnGroup_Load",
+          "wire_ids": [
+            {
+              "constant": "net_SpawnGroup_Load",
+              "enum": "NET_Messages",
+              "value": 8
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "spawngrouphandle",
+              "notes": "",
+              "number": 1,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "spawngroupmanifest",
+              "notes": "",
+              "number": 2,
+              "type": "bytes",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "manifestincomplete",
+              "notes": "",
+              "number": 3,
+              "type": "bool",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CNETMsg_SpawnGroup_ManifestUpdate",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CNETMsg_SpawnGroup_ManifestUpdate",
+          "wire_ids": [
+            {
+              "constant": "net_SpawnGroup_ManifestUpdate",
+              "enum": "NET_Messages",
+              "value": 9
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "spawngrouphandle",
+              "notes": "",
+              "number": 1,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "tickcount",
+              "notes": "",
+              "number": 2,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "creationsequence",
+              "notes": "",
+              "number": 3,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CNETMsg_SpawnGroup_SetCreationTick",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CNETMsg_SpawnGroup_SetCreationTick",
+          "wire_ids": [
+            {
+              "constant": "net_SpawnGroup_SetCreationTick",
+              "enum": "NET_Messages",
+              "value": 11
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "spawngrouphandle",
+              "notes": "",
+              "number": 1,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "flags",
+              "notes": "",
+              "number": 2,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "tickcount",
+              "notes": "",
+              "number": 3,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CNETMsg_SpawnGroup_Unload",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CNETMsg_SpawnGroup_Unload",
+          "wire_ids": [
+            {
+              "constant": "net_SpawnGroup_Unload",
+              "enum": "NET_Messages",
+              "value": 12
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "spawngrouphandle",
+              "notes": "",
+              "number": 1,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CNETMsg_SpawnGroup_LoadCompleted",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CNETMsg_SpawnGroup_LoadCompleted",
+          "wire_ids": [
+            {
+              "constant": "net_SpawnGroup_LoadCompleted",
+              "enum": "NET_Messages",
+              "value": 13
+            }
+          ]
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "is_multiplayer",
+              "notes": "",
+              "number": 1,
+              "type": "bool",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "is_loadsavegame",
+              "notes": "",
+              "number": 2,
+              "type": "bool",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "is_background_map",
+              "notes": "",
+              "number": 3,
+              "type": "bool",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "is_headless",
+              "notes": "",
+              "number": 4,
+              "type": "bool",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "min_client_limit",
+              "notes": "",
+              "number": 5,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "max_client_limit",
+              "notes": "",
+              "number": 6,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "max_clients",
+              "notes": "",
+              "number": 7,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "tick_interval",
+              "notes": "",
+              "number": 8,
+              "type": "fixed32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "hostname",
+              "notes": "",
+              "number": 9,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "savegamename",
+              "notes": "",
+              "number": 10,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "s1_mapname",
+              "notes": "",
+              "number": 11,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "gamemode",
+              "notes": "",
+              "number": 12,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "server_ip_address",
+              "notes": "",
+              "number": 13,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "data",
+              "notes": "",
+              "number": 14,
+              "type": "bytes",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "is_localonly",
+              "notes": "",
+              "number": 15,
+              "type": "bool",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "is_transition",
+              "notes": "",
+              "number": 16,
+              "type": "bool",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "previouslevel",
+              "notes": "",
+              "number": 17,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "landmarkname",
+              "notes": "",
+              "number": 18,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "no_steam_server",
+              "notes": "",
+              "number": 19,
+              "type": "bool",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CSVCMsg_GameSessionConfiguration",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CSVCMsg_GameSessionConfiguration",
+          "wire_ids": []
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "etype",
+              "notes": "",
+              "number": 1,
+              "type": "int32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "repeated",
+              "name": "vectors",
+              "notes": "",
+              "number": 2,
+              "type": "CMsgVector",
+              "type_file": "networkbasetypes.proto",
+              "type_kind": "message"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "repeated",
+              "name": "colors",
+              "notes": "",
+              "number": 3,
+              "type": "CMsgRGBA",
+              "type_file": "networkbasetypes.proto",
+              "type_kind": "message"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "repeated",
+              "name": "dimensions",
+              "notes": "",
+              "number": 4,
+              "type": "float",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "repeated",
+              "name": "times",
+              "notes": "",
+              "number": 5,
+              "type": "float",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "repeated",
+              "name": "bools",
+              "notes": "",
+              "number": 6,
+              "type": "bool",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "repeated",
+              "name": "uint64s",
+              "notes": "",
+              "number": 7,
+              "type": "uint64",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "repeated",
+              "name": "strings",
+              "notes": "",
+              "number": 8,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CNETMsg_DebugOverlay",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CNETMsg_DebugOverlay",
+          "wire_ids": [
+            {
+              "constant": "net_DebugOverlay",
+              "enum": "NET_Messages",
+              "value": 15
+            }
+          ]
+        }
+      ],
+      "name": "networkbasetypes.proto",
+      "notes": "",
+      "package": null,
+      "stem": "networkbasetypes"
+    }
+  ],
+  "referenced_by": {
+    "CDemoClassInfo.class_t": [
+      "CDemoClassInfo"
+    ],
+    "CDemoPacket": [
+      "CDemoFullPacket"
+    ],
+    "CDemoRecovery.DemoInitialSpawnGroupEntry": [
+      "CDemoRecovery"
+    ],
+    "CDemoStringTables": [
+      "CDemoFullPacket"
+    ],
+    "CDemoStringTables.items_t": [
+      "CDemoStringTables.table_t"
+    ],
+    "CDemoStringTables.table_t": [
+      "CDemoStringTables"
+    ],
+    "CGameInfo": [
+      "CDemoFileInfo"
+    ],
+    "CGameInfo.CCSGameInfo": [
+      "CGameInfo"
+    ],
+    "CGameInfo.CDotaGameInfo": [
+      "CGameInfo"
+    ],
+    "CGameInfo.CDotaGameInfo.CHeroSelectEvent": [
+      "CGameInfo.CDotaGameInfo"
+    ],
+    "CGameInfo.CDotaGameInfo.CPlayerInfo": [
+      "CGameInfo.CDotaGameInfo"
+    ],
+    "CMsgQAngle": [
+      "CNETMsg_SpawnGroup_Load"
+    ],
+    "CMsgQuaternion": [
+      "CMsgTransform"
+    ],
+    "CMsgRGBA": [
+      "CNETMsg_DebugOverlay"
+    ],
+    "CMsgSource1LegacyGameEvent.key_t": [
+      "CMsgSource1LegacyGameEvent"
+    ],
+    "CMsgSource1LegacyGameEventList.descriptor_t": [
+      "CMsgSource1LegacyGameEventList"
+    ],
+    "CMsgSource1LegacyGameEventList.key_t": [
+      "CMsgSource1LegacyGameEventList.descriptor_t"
+    ],
+    "CMsgVector": [
+      "CMsgClothEffectAnimEvent",
+      "CMsgPlaceDecalEvent",
+      "CMsgTransform",
+      "CNETMsg_DebugOverlay",
+      "CNETMsg_SpawnGroup_Load"
+    ],
+    "CMsg_CVars": [
+      "CNETMsg_SetConVar"
+    ],
+    "CMsg_CVars.CVar": [
+      "CMsg_CVars"
+    ],
+    "CSVCMsgList_GameEvents.event_t": [
+      "CSVCMsgList_GameEvents"
+    ],
+    "CSVCMsg_GameEvent": [
+      "CSVCMsgList_GameEvents.event_t"
+    ],
+    "CSVCMsg_GameEvent.key_t": [
+      "CSVCMsg_GameEvent"
+    ],
+    "SignonState_t": [
+      "CNETMsg_SignonState"
+    ]
+  },
+  "types": {
+    "CDemoAnimationData": "demo.proto",
+    "CDemoAnimationHeader": "demo.proto",
+    "CDemoClassInfo": "demo.proto",
+    "CDemoClassInfo.class_t": "demo.proto",
+    "CDemoConsoleCmd": "demo.proto",
+    "CDemoCustomData": "demo.proto",
+    "CDemoCustomDataCallbacks": "demo.proto",
+    "CDemoFileHeader": "demo.proto",
+    "CDemoFileInfo": "demo.proto",
+    "CDemoFullPacket": "demo.proto",
+    "CDemoPacket": "demo.proto",
+    "CDemoRecovery": "demo.proto",
+    "CDemoRecovery.DemoInitialSpawnGroupEntry": "demo.proto",
+    "CDemoSaveGame": "demo.proto",
+    "CDemoSendTables": "demo.proto",
+    "CDemoSpawnGroups": "demo.proto",
+    "CDemoSpawnGroupsHLTVBroadcast": "demo.proto",
+    "CDemoStop": "demo.proto",
+    "CDemoStringTables": "demo.proto",
+    "CDemoStringTables.items_t": "demo.proto",
+    "CDemoStringTables.table_t": "demo.proto",
+    "CDemoSyncTick": "demo.proto",
+    "CDemoUserCmd": "demo.proto",
+    "CEntityMsg": "networkbasetypes.proto",
+    "CGameInfo": "demo.proto",
+    "CGameInfo.CCSGameInfo": "demo.proto",
+    "CGameInfo.CDotaGameInfo": "demo.proto",
+    "CGameInfo.CDotaGameInfo.CHeroSelectEvent": "demo.proto",
+    "CGameInfo.CDotaGameInfo.CPlayerInfo": "demo.proto",
+    "CMsgClearDecalsForEntityEvent": "gameevents.proto",
+    "CMsgClearEntityDecalsEvent": "gameevents.proto",
+    "CMsgClearWorldDecalsEvent": "gameevents.proto",
+    "CMsgClothEffectAnimEvent": "gameevents.proto",
+    "CMsgClothStiffenAnimEvent": "gameevents.proto",
+    "CMsgPlaceDecalEvent": "gameevents.proto",
+    "CMsgPlayerInfo": "networkbasetypes.proto",
+    "CMsgQAngle": "networkbasetypes.proto",
+    "CMsgQuaternion": "networkbasetypes.proto",
+    "CMsgRGBA": "networkbasetypes.proto",
+    "CMsgSosSetLibraryStackFields": "gameevents.proto",
+    "CMsgSosSetSoundEventParams": "gameevents.proto",
+    "CMsgSosStartSoundEvent": "gameevents.proto",
+    "CMsgSosStopSoundEvent": "gameevents.proto",
+    "CMsgSosStopSoundEventHash": "gameevents.proto",
+    "CMsgSource1LegacyGameEvent": "gameevents.proto",
+    "CMsgSource1LegacyGameEvent.key_t": "gameevents.proto",
+    "CMsgSource1LegacyGameEventList": "gameevents.proto",
+    "CMsgSource1LegacyGameEventList.descriptor_t": "gameevents.proto",
+    "CMsgSource1LegacyGameEventList.key_t": "gameevents.proto",
+    "CMsgSource1LegacyListenEvents": "gameevents.proto",
+    "CMsgTransform": "networkbasetypes.proto",
+    "CMsgVDebugGameSessionIDEvent": "gameevents.proto",
+    "CMsgVector": "networkbasetypes.proto",
+    "CMsgVector2D": "networkbasetypes.proto",
+    "CMsg_CVars": "networkbasetypes.proto",
+    "CMsg_CVars.CVar": "networkbasetypes.proto",
+    "CNETMsg_DebugOverlay": "networkbasetypes.proto",
+    "CNETMsg_NOP": "networkbasetypes.proto",
+    "CNETMsg_SetConVar": "networkbasetypes.proto",
+    "CNETMsg_SignonState": "networkbasetypes.proto",
+    "CNETMsg_SpawnGroup_Load": "networkbasetypes.proto",
+    "CNETMsg_SpawnGroup_LoadCompleted": "networkbasetypes.proto",
+    "CNETMsg_SpawnGroup_ManifestUpdate": "networkbasetypes.proto",
+    "CNETMsg_SpawnGroup_SetCreationTick": "networkbasetypes.proto",
+    "CNETMsg_SpawnGroup_Unload": "networkbasetypes.proto",
+    "CNETMsg_SplitScreenUser": "networkbasetypes.proto",
+    "CNETMsg_StringCmd": "networkbasetypes.proto",
+    "CNETMsg_Tick": "networkbasetypes.proto",
+    "CSVCMsgList_GameEvents": "networkbasetypes.proto",
+    "CSVCMsgList_GameEvents.event_t": "networkbasetypes.proto",
+    "CSVCMsg_GameEvent": "networkbasetypes.proto",
+    "CSVCMsg_GameEvent.key_t": "networkbasetypes.proto",
+    "CSVCMsg_GameSessionConfiguration": "networkbasetypes.proto",
+    "EBaseGameEvents": "gameevents.proto",
+    "EDemoCommands": "demo.proto",
+    "NET_Messages": "networkbasetypes.proto",
+    "SignonState_t": "networkbasetypes.proto",
+    "SpawnGroupFlags_t": "networkbasetypes.proto"
+  }
+}

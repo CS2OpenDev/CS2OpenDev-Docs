@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmGraphEventConditionNode::CDefinition"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmGraphEventConditionNode::CDefinition
 
 # CNmGraphEventConditionNode::CDefinition
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 128 bytes (`0x80`) · **Align:** 8 · **Module:** animlib
 
@@ -16,10 +18,11 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmBoolValueNode::CDefinition" <|-- "CNmGraphEventConditionNode::CDefinition"
-    "CNmValueNode::CDefinition" <|-- "CNmBoolValueNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
-    "CNmGraphEventConditionNode::CDefinition" *-- CNmBitFlags
+    `CNmBoolValueNode::CDefinition` <|-- `CNmGraphEventConditionNode::CDefinition`
+    `CNmValueNode::CDefinition` <|-- `CNmBoolValueNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmValueNode::CDefinition`
+    `CNmGraphEventConditionNode::CDefinition` *-- CNmBitFlags
+    `CNmGraphEventConditionNode::CDefinition` *-- `CNmGraphEventConditionNode::Condition_t`
 ```
 
 ## Memory layout
@@ -31,7 +34,7 @@ classDiagram
 | `0x8` | `m_nNodeIdx` | int16 | [CNmGraphNode::CDefinition](../animlib/CNmGraphNode.CDefinition.md) |  |
 | `0x10` | `m_nSourceStateNodeIdx` | int16 |  |  |
 | `0x14` | `m_eventConditionRules` | [CNmBitFlags](../animlib/CNmBitFlags.md) |  |  |
-| `0x18` | `m_conditions` | CUtlVectorFixedGrowable< CNmGraphEventConditionNode::Condition_t, 5 > |  |  |
+| `0x18` | `m_conditions` | CUtlVectorFixedGrowable< [CNmGraphEventConditionNode::Condition_t](../animlib/CNmGraphEventConditionNode.Condition_t.md), 5 > |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

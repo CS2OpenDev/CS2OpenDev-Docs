@@ -1,14 +1,16 @@
 ---
-layout: default
 title: ToolsOptionsEditableData_t
-nav_exclude: true
+module: hammer
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [hammer](../hammer.md) / ToolsOptionsEditableData_t
 
 # ToolsOptionsEditableData_t
 
-**Kind:** class · **Size:** 9 bytes (`0x9`) · **Align:** 255 · **Module:** hammer
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 9 bytes (`0x9`) · **Align:** n/a (unspecified) · **Module:** hammer
 
 ## Memory layout
 

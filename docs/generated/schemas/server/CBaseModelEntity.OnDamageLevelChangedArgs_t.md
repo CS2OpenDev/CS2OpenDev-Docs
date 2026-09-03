@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CBaseModelEntity::OnDamageLevelChangedArgs_t"
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CBaseModelEntity::OnDamageLevelChangedArgs_t
 
 # CBaseModelEntity::OnDamageLevelChangedArgs_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** 4 · **Module:** server
 
@@ -14,7 +16,7 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CBaseModelEntity::OnDamageLevelChangedArgs_t" *-- HitGroup_t
+    `CBaseModelEntity::OnDamageLevelChangedArgs_t` *-- HitGroup_t
 ```
 
 ## Memory layout

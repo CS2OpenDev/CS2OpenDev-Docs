@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CNmGraphDocBlend1DNode
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmGraphDocBlend1DNode
 
 # CNmGraphDocBlend1DNode
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 288 bytes (`0x120`) · **Align:** 8 · **Module:** animdoclib
 
@@ -36,7 +38,7 @@ classDiagram
 | `0x50` | `m_inputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 4 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0xd8` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0x100` | `m_blendSpace` | [CNmBlendSpace1D](../animdoclib/CNmBlendSpace1D.md) |  | `MPropertyAttributeEditor BlendSpace1D()` |
-| `0x118` | `m_bAllowLooping` | bool |  | `MPropertyDescription When not being driven by a sync time, control looping behavior ` |
+| `0x118` | `m_bAllowLooping` | bool |  | `MPropertyDescription When not being driven by a sync time, control looping behavior` |
 
 <details><summary>KV3 class defaults</summary>
 

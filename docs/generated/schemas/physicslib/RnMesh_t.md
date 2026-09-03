@@ -1,12 +1,14 @@
 ---
-layout: default
 title: RnMesh_t
-nav_exclude: true
+module: physicslib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [physicslib](../physicslib.md) / RnMesh_t
 
 # RnMesh_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 192 bytes (`0xc0`) · **Align:** 8 · **Module:** physicslib
 

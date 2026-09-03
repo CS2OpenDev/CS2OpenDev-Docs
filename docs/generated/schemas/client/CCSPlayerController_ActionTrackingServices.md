@@ -1,17 +1,20 @@
 ---
-layout: default
-title: CCSPlayerController_ActionTrackingServices
-nav_exclude: true
+title: CCSPlayerController_ActionTrackingServices (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CCSPlayerController_ActionTrackingServices
 
 # CCSPlayerController_ActionTrackingServices
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 Scoreboard / stat-tracking component of CCSPlayerController: per-round and per-match kill and damage statistics.
 
+**Kind:** class · **Size:** 312 bytes (`0x138`) · **Align:** n/a (unspecified) · **Module:** client
 
-**Kind:** class · **Size:** 312 bytes (`0x138`) · **Align:** 255 · **Module:** client
+**Twin:** [CCSPlayerController_ActionTrackingServices (server)](../server/CCSPlayerController_ActionTrackingServices.md)
 
 **Inherits from:** [CPlayerControllerComponent](../server/CPlayerControllerComponent.md)
 

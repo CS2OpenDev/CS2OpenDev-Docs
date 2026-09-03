@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmOrientationWarpNode::CDefinition"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmOrientationWarpNode::CDefinition
 
 # CNmOrientationWarpNode::CDefinition
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 8 · **Module:** animlib
 
@@ -16,9 +18,9 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmPoseNode::CDefinition" <|-- "CNmOrientationWarpNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmPoseNode::CDefinition"
-    "CNmOrientationWarpNode::CDefinition" *-- CNmRootMotionData
+    `CNmPoseNode::CDefinition` <|-- `CNmOrientationWarpNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmPoseNode::CDefinition`
+    `CNmOrientationWarpNode::CDefinition` *-- `CNmRootMotionData::SamplingMode_t`
 ```
 
 ## Memory layout
@@ -33,7 +35,7 @@ classDiagram
 | `0x14` | `m_bIsOffsetNode` | bool |  |  |
 | `0x15` | `m_bIsOffsetRelativeToCharacter` | bool |  |  |
 | `0x16` | `m_bWarpTranslation` | bool |  |  |
-| `0x17` | `m_samplingMode` | [CNmRootMotionData](../animlib/CNmRootMotionData.md)::SamplingMode_t |  |  |
+| `0x17` | `m_samplingMode` | [CNmRootMotionData::SamplingMode_t](../animlib/CNmRootMotionData.SamplingMode_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

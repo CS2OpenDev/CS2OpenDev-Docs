@@ -1,0 +1,134 @@
+{
+  "game_types": [
+    {
+      "id": "classic",
+      "index": 0,
+      "modes": [
+        {
+          "convars": [],
+          "description_token": "#SFUI_GameModeCasualDesc",
+          "display_name": "",
+          "exhibit_game_type": "",
+          "game_mode": 0,
+          "game_type": 0,
+          "has_convar_overrides": false,
+          "id": "casual",
+          "map_groups": [
+            "template#include"
+          ],
+          "max_players": 20,
+          "name_token": "#SFUI_GameModeCasual",
+          "type_flags": 0
+        },
+        {
+          "convars": [],
+          "description_token": "#SFUI_GameModeCompetitiveDesc",
+          "display_name": "",
+          "exhibit_game_type": "",
+          "game_mode": 0,
+          "game_type": 0,
+          "has_convar_overrides": false,
+          "id": "competitive",
+          "map_groups": [
+            "template#include"
+          ],
+          "max_players": 10,
+          "name_token": "#SFUI_GameModeCompetitive",
+          "type_flags": 0
+        },
+        {
+          "convars": [],
+          "description_token": "#SFUI_GameModeCompetitiveDesc",
+          "display_name": "",
+          "exhibit_game_type": "",
+          "game_mode": 0,
+          "game_type": 0,
+          "has_convar_overrides": false,
+          "id": "new_user_training",
+          "map_groups": [
+            "mg_de_dust2"
+          ],
+          "max_players": 10,
+          "name_token": "#SFUI_GameModeCompetitive",
+          "type_flags": 0
+        },
+        {
+          "convars": [],
+          "description_token": "#SFUI_GameModeRetakesDesc",
+          "display_name": "",
+          "exhibit_game_type": "",
+          "game_mode": 0,
+          "game_type": 0,
+          "has_convar_overrides": false,
+          "id": "retakes",
+          "map_groups": [
+            "mg_casualalpha",
+            "mg_casualdelta"
+          ],
+          "max_players": 7,
+          "name_token": "#SFUI_GameModeRetakes",
+          "type_flags": 0
+        },
+        {
+          "convars": [],
+          "description_token": "#SFUI_GameModeScrimComp2v2Desc",
+          "display_name": "",
+          "exhibit_game_type": "",
+          "game_mode": 0,
+          "game_type": 0,
+          "has_convar_overrides": false,
+          "id": "scrimcomp2v2",
+          "map_groups": [
+            "template#include"
+          ],
+          "max_players": 4,
+          "name_token": "#SFUI_GameModeScrimComp2v2",
+          "type_flags": 0
+        },
+        {
+          "convars": [],
+          "description_token": "#SFUI_GameModeScrimComp5v5Desc",
+          "display_name": "",
+          "exhibit_game_type": "",
+          "game_mode": 0,
+          "game_type": 0,
+          "has_convar_overrides": false,
+          "id": "scrimcomp5v5",
+          "map_groups": [
+            "template#include"
+          ],
+          "max_players": 10,
+          "name_token": "#SFUI_GameModeScrimComp5v5",
+          "type_flags": 0
+        }
+      ]
+    }
+  ],
+  "map_groups": [
+    {
+      "id": "mg_active",
+      "maps": [
+        "de_dust2",
+        "de_inferno",
+        "de_mirage",
+        "de_nuke",
+        "de_overpass",
+        "de_train",
+        "de_vertigo"
+      ]
+    },
+    {
+      "id": "mg_ar_baggage",
+      "maps": [
+        "ar_baggage"
+      ]
+    },
+    {
+      "id": "mg_ar_dizzy",
+      "maps": [
+        "ar_dizzy"
+      ]
+    }
+  ],
+  "note": "game_type/game_mode are the numeric ids this build's gamemodes.txt carries per mode; every mode's convars list is empty upstream on this build, so has_convar_overrides is false throughout."
+}

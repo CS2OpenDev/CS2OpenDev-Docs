@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CNmGraphDocIDToFloatNode
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmGraphDocIDToFloatNode
 
 # CNmGraphDocIDToFloatNode
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 288 bytes (`0x120`) · **Align:** 8 · **Module:** animdoclib
 
@@ -18,6 +20,7 @@ nav_exclude: true
 classDiagram
     CNmGraphDocFlowNode <|-- CNmGraphDocIDToFloatNode
     CNmGraphDocNode <|-- CNmGraphDocFlowNode
+    CNmGraphDocIDToFloatNode *-- `CNmGraphDocIDToFloatNode::Mapping_t`
 ```
 
 ## Memory layout
@@ -35,7 +38,7 @@ classDiagram
 | `0x50` | `m_inputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 4 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0xd8` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0x100` | `m_defaultValue` | float32 |  |  |
-| `0x108` | `m_mappings` | CUtlVector< [CNmGraphDocIDToFloatNode](../animdoclib/CNmGraphDocIDToFloatNode.md)::Mapping_t > |  | `MPropertyAutoExpandSelf` |
+| `0x108` | `m_mappings` | CUtlVector< [CNmGraphDocIDToFloatNode::Mapping_t](../animdoclib/CNmGraphDocIDToFloatNode.Mapping_t.md) > |  | `MPropertyAutoExpandSelf` |
 
 <details><summary>KV3 class defaults</summary>
 

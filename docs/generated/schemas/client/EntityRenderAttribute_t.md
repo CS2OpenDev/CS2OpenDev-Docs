@@ -1,14 +1,18 @@
 ---
-layout: default
-title: EntityRenderAttribute_t
-nav_exclude: true
+title: EntityRenderAttribute_t (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / EntityRenderAttribute_t
 
 # EntityRenderAttribute_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** 8 · **Module:** client
+
+**Twin:** [EntityRenderAttribute_t (server)](../server/EntityRenderAttribute_t.md)
 
 ## Memory layout
 

@@ -1,12 +1,14 @@
 ---
-layout: default
 title: constraint_hingeparams_t
-nav_exclude: true
+module: vphysics2
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [vphysics2](../vphysics2.md) / constraint_hingeparams_t
 
 # constraint_hingeparams_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 64 bytes (`0x40`) · **Align:** 4 · **Module:** vphysics2
 

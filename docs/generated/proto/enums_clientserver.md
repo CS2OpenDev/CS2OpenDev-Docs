@@ -1,8 +1,6 @@
 ---
-layout: default
 title: enums_clientserver.proto
-parent: Protobufs
-nav_exclude: true
+proto: enums_clientserver.proto
 ---
 
 # `enums_clientserver.proto`

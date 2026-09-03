@@ -1,11 +1,19 @@
 ---
-layout: default
-title: CCSPlayerController_API
-nav_exclude: true
+title: CCSPlayerController_API (server)
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CCSPlayerController_API
 
 # CCSPlayerController_API
 
-**Kind:** class · **Size:** 8 bytes (`0x8`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 8 bytes (`0x8`) · **Align:** n/a (unspecified) · **Module:** server
+
+**Twin:** [CCSPlayerController_API (client)](../client/CCSPlayerController_API.md)
+
+## Memory layout
+
+No schema-visible fields (8 bytes of opaque storage).

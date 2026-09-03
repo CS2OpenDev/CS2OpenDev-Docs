@@ -1,12 +1,14 @@
 ---
-layout: default
 title: FeBuildTaperedCapsuleRigid_t
-nav_exclude: true
+module: physicslib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [physicslib](../physicslib.md) / FeBuildTaperedCapsuleRigid_t
 
 # FeBuildTaperedCapsuleRigid_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 64 bytes (`0x40`) · **Align:** 16 · **Module:** physicslib
 

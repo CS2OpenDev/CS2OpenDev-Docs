@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CMaterialDrawDescriptor
-nav_exclude: true
+module: modellib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [modellib](../modellib.md) / CMaterialDrawDescriptor
 
 # CMaterialDrawDescriptor
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 280 bytes (`0x118`) · **Align:** 8 · **Module:** modellib
 
@@ -14,6 +16,7 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
+    CMaterialDrawDescriptor *-- `CMaterialDrawDescriptor::RigidMeshPart_t`
     CMaterialDrawDescriptor *-- RenderPrimitiveType_t
     CMaterialDrawDescriptor *-- CRenderBufferBinding
     CMaterialDrawDescriptor *-- InfoForResourceTypeIMaterial2
@@ -33,7 +36,7 @@ classDiagram
 | `0x20` | `m_nAppliedIndexOffset` | uint32 |  |  |
 | `0x24` | `m_nDepthVertexBufferIndex` | uint8 |  |  |
 | `0x25` | `m_nMeshletPackedIVBIndex` | uint8 |  |  |
-| `0x28` | `m_rigidMeshParts` | CUtlLeanVector< [CMaterialDrawDescriptor](../modellib/CMaterialDrawDescriptor.md)::RigidMeshPart_t > |  |  |
+| `0x28` | `m_rigidMeshParts` | CUtlLeanVector< [CMaterialDrawDescriptor::RigidMeshPart_t](../modellib/CMaterialDrawDescriptor.RigidMeshPart_t.md) > |  |  |
 | `0x38` | `m_rootBvhNodes` | CUtlLeanVector< uint16 > |  |  |
 | `0x48` | `m_nPrimitiveType` | [RenderPrimitiveType_t](../modellib/RenderPrimitiveType_t.md) |  |  |
 | `0x4c` | `m_nBaseVertex` | int32 |  |  |

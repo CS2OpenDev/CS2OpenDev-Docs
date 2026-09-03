@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CNmSoundEvent
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmSoundEvent
 
 # CNmSoundEvent
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** 8 · **Module:** animlib
 
@@ -18,6 +20,7 @@ nav_exclude: true
 classDiagram
     CNmEvent <|-- CNmSoundEvent
     CNmSoundEvent *-- CNmEventRelevance_t
+    CNmSoundEvent *-- `CNmSoundEvent::Position_t`
 ```
 
 ## Memory layout
@@ -31,7 +34,7 @@ classDiagram
 | `0x10` | `m_syncID` | CGlobalSymbol | [CNmEvent](../animlib/CNmEvent.md) |  |
 | `0x18` | `m_relevance` | [CNmEventRelevance_t](../animlib/CNmEventRelevance_t.md) |  |  |
 | `0x20` | `m_name` | CUtlString |  |  |
-| `0x28` | `m_position` | [CNmSoundEvent](../animlib/CNmSoundEvent.md)::Position_t |  |  |
+| `0x28` | `m_position` | [CNmSoundEvent::Position_t](../animlib/CNmSoundEvent.Position_t.md) |  |  |
 | `0x30` | `m_attachmentName` | CUtlString |  |  |
 | `0x38` | `m_tags` | CUtlString |  |  |
 | `0x40` | `m_bContinuePlayingSoundAtDurationEnd` | bool |  |  |

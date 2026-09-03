@@ -1,0 +1,70 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { provenanceLine } from '../lib/provenance';
+import { loadSurfaceMaterials } from '../lib/data/surfaces';
+import { surfaceMaterialSlug } from '../lib/urls';
+
+const materials = loadSurfaceMaterials();
+
+const headings = materials.map((m) => ({
+	depth: 2,
+	slug: surfaceMaterialSlug(m.name),
+	text: m.name,
+}));
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Surfaces',
+		description: `Surface property rows for ${materials.length} materials in this build.`,
+	}}
+	headings={headings}
+>
+	<div>
+		<p>
+			Surface property records grouped by material: footstep sounds, penetration and impact
+			behavior, and the raw physics/audio coefficients CS2 keys off a surface's material. A
+			material with more than one row below has one row per scope (for example a player-footstep
+			override alongside the material's general row).
+		</p>
+
+		<p class="cs2-provenance">{provenanceLine()}</p>
+
+		{materials.map((m) => (
+			<>
+				<h2 id={surfaceMaterialSlug(m.name)}>{m.name}</h2>
+				<div class="cs2-table-wrap">
+					<table>
+						<thead>
+							<tr>
+								<th scope="col">Scope</th>
+								<th scope="col">Source file</th>
+								<th scope="col" class="ann">Properties</th>
+							</tr>
+						</thead>
+						<tbody>
+							{m.rows.map((row) => (
+								<tr>
+									<td>{row.scope === '' ? '-' : row.scope}</td>
+									<td><code>{row.source_file}</code></td>
+									<td class="ann">
+										{row.properties.map((p) =>
+											p.value.trim().startsWith('[') ? (
+												<details class="cs2-coefficients">
+													<summary><code>{p.name}</code></summary>
+													<code>{p.value}</code>
+												</details>
+											) : (
+												<div><code>{p.name}</code>: <code>{p.value}</code></div>
+											)
+										)}
+									</td>
+								</tr>
+							))}
+						</tbody>
+					</table>
+				</div>
+			</>
+		))}
+	</div>
+</StarlightPage>

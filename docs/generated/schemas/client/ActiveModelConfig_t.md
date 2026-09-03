@@ -1,14 +1,18 @@
 ---
-layout: default
-title: ActiveModelConfig_t
-nav_exclude: true
+title: ActiveModelConfig_t (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / ActiveModelConfig_t
 
 # ActiveModelConfig_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 112 bytes (`0x70`) · **Align:** 8 · **Module:** client
+
+**Twin:** [ActiveModelConfig_t (server)](../server/ActiveModelConfig_t.md)
 
 **Relationships:**
 

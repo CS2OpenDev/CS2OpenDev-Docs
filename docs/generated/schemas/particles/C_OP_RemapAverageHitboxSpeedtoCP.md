@@ -1,12 +1,14 @@
 ---
-layout: default
 title: C_OP_RemapAverageHitboxSpeedtoCP
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / C_OP_RemapAverageHitboxSpeedtoCP
 
 # C_OP_RemapAverageHitboxSpeedtoCP
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 3824 bytes (`0xef0`) · **Align:** 8 · **Module:** particles
 

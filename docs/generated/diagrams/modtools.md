@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: modtools"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: modtools

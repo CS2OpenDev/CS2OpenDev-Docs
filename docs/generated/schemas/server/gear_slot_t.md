@@ -1,12 +1,14 @@
 ---
-layout: default
 title: gear_slot_t
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / gear_slot_t
 
 # gear_slot_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 Gear slot a weapon occupies on the player (weapon-switch wheel grouping).
 
@@ -16,13 +18,13 @@ Gear slot a weapon occupies on the player (weapon-switch wheel grouping).
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `GEAR_SLOT_INVALID` | -1 |  |
+| `GEAR_SLOT_INVALID` | -1 (`0xffffffff`) |  |
 | `GEAR_SLOT_FIRST` | 0 |  |
-| `GEAR_SLOT_RIFLE` | 0 |  |
-| `GEAR_SLOT_PISTOL` | 1 |  |
-| `GEAR_SLOT_KNIFE` | 2 |  |
-| `GEAR_SLOT_GRENADES` | 3 |  |
-| `GEAR_SLOT_C4` | 4 |  |
+| `GEAR_SLOT_RIFLE` | 0 | Primary weapon slot (rifles, SMGs, shotguns, LMGs). |
+| `GEAR_SLOT_PISTOL` | 1 | Secondary weapon slot (pistols). |
+| `GEAR_SLOT_KNIFE` | 2 | Melee slot (knife). |
+| `GEAR_SLOT_GRENADES` | 3 | Grenade slot. |
+| `GEAR_SLOT_C4` | 4 | Bomb (C4) slot. |
 | `GEAR_SLOT_RESERVED_SLOT6` | 5 |  |
 | `GEAR_SLOT_RESERVED_SLOT7` | 6 |  |
 | `GEAR_SLOT_RESERVED_SLOT8` | 7 |  |

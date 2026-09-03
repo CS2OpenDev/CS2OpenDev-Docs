@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CAudioPhonemeTag
-nav_exclude: true
+module: soundsystem_voicecontainers
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [soundsystem_voicecontainers](../soundsystem_voicecontainers.md) / CAudioPhonemeTag
 
 # CAudioPhonemeTag
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 12 bytes (`0xc`) · **Align:** 4 · **Module:** soundsystem_voicecontainers
 

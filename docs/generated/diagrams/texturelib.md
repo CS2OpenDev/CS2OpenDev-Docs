@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: texturelib"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: texturelib

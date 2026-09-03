@@ -1,11 +1,11 @@
 ---
-layout: default
 title: mathlib_extended
-parent: Schemas
-nav_exclude: true
+module: mathlib_extended
 ---
 
 # Module: mathlib_extended
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 [📊 View UML Diagram](../diagrams/mathlib_extended.md)
 

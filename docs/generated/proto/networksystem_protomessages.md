@@ -1,8 +1,6 @@
 ---
-layout: default
 title: networksystem_protomessages.proto
-parent: Protobufs
-nav_exclude: true
+proto: networksystem_protomessages.proto
 ---
 
 # `networksystem_protomessages.proto`
@@ -39,24 +37,28 @@ direction LR
 
 ### `NetMessageSplitscreenUserChanged`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `slot` | 1 | uint32 | optional |  |
 
 ### `NetMessageConnectionClosed`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `reason` | 1 | uint32 | optional |  |
 | `message` | 2 | string | optional |  |
 
 ### `NetMessageConnectionCrashed`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `reason` | 1 | uint32 | optional |  |
 | `message` | 2 | string | optional |  |
 
 ### `NetMessagePacketStart`
 
+*(no fields)*
+
 ### `NetMessagePacketEnd`
+
+*(no fields)*

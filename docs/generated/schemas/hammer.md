@@ -1,11 +1,13 @@
 ---
-layout: default
 title: hammer
-parent: Schemas
-nav_exclude: true
+module: hammer
 ---
 
 # Module: hammer
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+[📊 View UML Diagram](../diagrams/hammer.md)
 
 10 types. Each links to its own page with the full field layout.
 

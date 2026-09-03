@@ -1,14 +1,16 @@
 ---
-layout: default
 title: constraint_breakableparams_t
-nav_exclude: true
+module: vphysics2
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [vphysics2](../vphysics2.md) / constraint_breakableparams_t
 
 # constraint_breakableparams_t
 
-**Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 255 · **Module:** vphysics2
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** n/a (unspecified) · **Module:** vphysics2
 
 ## Memory layout
 

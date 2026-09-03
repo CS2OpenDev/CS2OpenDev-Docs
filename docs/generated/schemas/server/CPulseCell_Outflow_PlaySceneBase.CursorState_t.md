@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CPulseCell_Outflow_PlaySceneBase::CursorState_t"
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CPulseCell_Outflow_PlaySceneBase::CursorState_t
 
 # CPulseCell_Outflow_PlaySceneBase::CursorState_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 40 bytes (`0x28`) · **Align:** 8 · **Module:** server
 
@@ -14,8 +16,8 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CPulseCell_Outflow_PlaySceneBase::CursorState_t" --> CBaseEntity
-    "CPulseCell_Outflow_PlaySceneBase::CursorState_t" *-- PulseCursorID_t
+    `CPulseCell_Outflow_PlaySceneBase::CursorState_t` --> CBaseEntity
+    `CPulseCell_Outflow_PlaySceneBase::CursorState_t` *-- PulseCursorID_t
 ```
 
 ## Memory layout

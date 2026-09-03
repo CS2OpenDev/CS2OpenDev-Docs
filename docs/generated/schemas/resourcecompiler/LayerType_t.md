@@ -1,12 +1,14 @@
 ---
-layout: default
 title: LayerType_t
-nav_exclude: true
+module: resourcecompiler
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [resourcecompiler](../resourcecompiler.md) / LayerType_t
 
 # LayerType_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** resourcecompiler
 

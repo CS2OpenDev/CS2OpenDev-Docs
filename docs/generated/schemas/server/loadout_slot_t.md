@@ -1,15 +1,16 @@
 ---
-layout: default
 title: loadout_slot_t
-nav_exclude: true
+module: server
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / loadout_slot_t
 
 # loadout_slot_t
 
-Full per-loadout equipment-slot enumeration (weapons, grenades, and cosmetic/agent slots).  Used to index CCSPlayerController_InventoryServices loadout data.
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
+Full per-loadout equipment-slot enumeration (weapons, grenades, and cosmetic/agent slots).  Used to index CCSPlayerController_InventoryServices loadout data.
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** server
 
@@ -17,8 +18,8 @@ Full per-loadout equipment-slot enumeration (weapons, grenades, and cosmetic/age
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `LOADOUT_SLOT_PROMOTED` | -2 |  |
-| `LOADOUT_SLOT_INVALID` | -1 |  |
+| `LOADOUT_SLOT_PROMOTED` | -2 (`0xfffffffe`) |  |
+| `LOADOUT_SLOT_INVALID` | -1 (`0xffffffff`) |  |
 | `LOADOUT_SLOT_FIRST_AUTO_BUY_WEAPON` | 0 |  |
 | `LOADOUT_SLOT_MELEE` | 0 |  |
 | `LOADOUT_SLOT_C4` | 1 |  |

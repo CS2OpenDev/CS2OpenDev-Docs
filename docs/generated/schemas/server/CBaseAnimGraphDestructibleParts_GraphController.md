@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CBaseAnimGraphDestructibleParts_GraphController
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CBaseAnimGraphDestructibleParts_GraphController
 
 # CBaseAnimGraphDestructibleParts_GraphController
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 136 bytes (`0x88`) · **Align:** 8 · **Module:** server
 
@@ -21,7 +23,7 @@ classDiagram
 
 ## Memory layout
 
-1 fields (0 declared here, 1 inherited). Offsets are absolute from the object base.
+1 field (0 declared here, 1 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|

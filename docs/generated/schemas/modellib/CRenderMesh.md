@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CRenderMesh
-nav_exclude: true
+module: modellib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [modellib](../modellib.md) / CRenderMesh
 
 # CRenderMesh
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 552 bytes (`0x228`) · **Align:** 8 · **Module:** modellib
 

@@ -1,13 +1,11 @@
 ---
-layout: default
 title: cs_prediction_events.proto
-parent: Protobufs
-nav_exclude: true
+proto: cs_prediction_events.proto
 ---
 
 # `cs_prediction_events.proto`
 
-**Imports:** `networkbasetypes.proto`, `prediction_events.proto`
+**Imports:** [`networkbasetypes.proto`](networkbasetypes.md), `prediction_events.proto`
 
 ## Diagram
 
@@ -49,17 +47,17 @@ direction LR
 
 ### `CCSPredictionEvent_DamageTag`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `flinch_mod_small` | 1 | float | optional |  |
 | `flinch_mod_large` | 2 | float | optional |  |
 | `friendly_fire_damage_reduction_ratio` | 3 | float | optional |  |
 
 ### `CCSPredictionEvent_PlayerTeleport`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `relative` | 1 | bool | optional |  |
-| `origin` | 2 | CMsgVector | optional |  |
-| `angles` | 3 | CMsgQAngle | optional |  |
-| `velocity` | 4 | CMsgVector | optional |  |
+| `origin` | 2 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `angles` | 3 | [CMsgQAngle](networkbasetypes.md#cmsgqangle) | optional |  |
+| `velocity` | 4 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |

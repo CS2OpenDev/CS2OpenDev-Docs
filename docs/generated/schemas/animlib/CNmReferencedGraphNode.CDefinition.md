@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmReferencedGraphNode::CDefinition"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmReferencedGraphNode::CDefinition
 
 # CNmReferencedGraphNode::CDefinition
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 8 · **Module:** animlib
 
@@ -16,8 +18,8 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmPoseNode::CDefinition" <|-- "CNmReferencedGraphNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmPoseNode::CDefinition"
+    `CNmPoseNode::CDefinition` <|-- `CNmReferencedGraphNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmPoseNode::CDefinition`
 ```
 
 ## Memory layout

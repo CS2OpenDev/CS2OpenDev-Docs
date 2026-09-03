@@ -1,0 +1,76 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { provenanceLine } from '../lib/provenance';
+import { loadGameModes } from '../lib/data/gamemodes';
+
+const { gameTypes, mapGroupsById } = loadGameModes();
+
+const totalModes = gameTypes.reduce((n, gt) => n + gt.modes.length, 0);
+
+const headings = gameTypes.flatMap((gt) => [
+	{ depth: 2, slug: `gt-${gt.id}`, text: gt.id },
+	...gt.modes.map((m) => ({ depth: 3, slug: m.id, text: m.id })),
+]);
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Game Modes',
+		description: `${totalModes} game modes across ${gameTypes.length} categories in this build.`,
+	}}
+	headings={headings}
+>
+	<div>
+		<p>
+			Every game mode this build's <code>gamemodes.txt</code> registers, grouped by category, with
+			the numeric <code>game_type</code> / <code>game_mode</code> ids a server config selects a mode
+			by, its map groups, and its player cap.
+		</p>
+		<p>
+			<code>game_type</code> and <code>game_mode</code> are <code>0</code> for every mode in this
+			build; the ids are still rendered per mode below since a future build's <code>gamemodes.txt</code>{' '}
+			could vary them.
+		</p>
+
+		<p class="cs2-provenance">{provenanceLine()}</p>
+
+		{gameTypes.map((gt) => (
+			<>
+				<h2 id={`gt-${gt.id}`}>{gt.id}</h2>
+				{gt.modes.map((mode) => (
+					<>
+						<h3 id={mode.id}>{mode.id}</h3>
+						<p class="cs2-stats">
+							<span><strong>game_type:</strong> {mode.game_type}</span>
+							<span><strong>game_mode:</strong> {mode.game_mode}</span>
+							<span><strong>Max players:</strong> {mode.max_players}</span>
+						</p>
+						{mode.has_convar_overrides ? (
+							<p>
+								This mode overrides {mode.convars.length} convar{mode.convars.length === 1 ? '' : 's'}{' '}
+								upstream.
+							</p>
+						) : (
+							<p class="cs2-note">Upstream carries no convar overrides for this mode in this build.</p>
+						)}
+						{mode.map_groups.length === 0 ? (
+							<p class="cs2-empty">No map group is assigned to this mode.</p>
+						) : (
+							<ul class="cs2-cols">
+								{mode.map_groups.map((gid) => {
+									const group = mapGroupsById.get(gid);
+									return (
+										<li>
+											<code>{gid}</code>
+											{group ? `: ${group.maps.join(', ')}` : ' (no maps recorded for this group)'}
+										</li>
+									);
+								})}
+							</ul>
+						)}
+					</>
+				))}
+			</>
+		))}
+	</div>
+</StarlightPage>

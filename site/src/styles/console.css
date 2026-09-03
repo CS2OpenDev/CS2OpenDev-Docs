@@ -1,0 +1,27 @@
+/* ---------------------------------------------------------------------------
+   ConVars, Commands and Game Events pages.
+   Scoped to the pages that import this file; nothing here touches custom.css's
+   shared .cs2-table-wrap rules, only adds to them.
+--------------------------------------------------------------------------- */
+
+/* Legend tables (convar/command flags, game-event field types): short enough
+   to sit at full density rather than the roomier row height on the big
+   reference tables. The compound selector (.cs2-table-wrap.cs2-legend-table)
+   is required to outrank custom.css's own .cs2-table-wrap rules, which tie
+   with a single-class selector on specificity. */
+.sl-markdown-content .cs2-table-wrap.cs2-legend-table :is(th, td) {
+	padding: 0.15rem 0.5rem;
+}
+
+.sl-markdown-content .cs2-table-wrap.cs2-legend-table {
+	max-height: none;
+}
+
+/* DataTable islands on these three pages: numbers in any column line up on
+   their digits, including compound cells like a convar's "0.1 to 60" range
+   or an event's field count. */
+#cv .dtbl-wrap,
+#cmd .dtbl-wrap,
+#ev .dtbl-wrap {
+	font-variant-numeric: tabular-nums;
+}

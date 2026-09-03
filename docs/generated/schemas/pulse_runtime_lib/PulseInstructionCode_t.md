@@ -1,12 +1,14 @@
 ---
-layout: default
 title: PulseInstructionCode_t
-nav_exclude: true
+module: pulse_runtime_lib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [pulse_runtime_lib](../pulse_runtime_lib.md) / PulseInstructionCode_t
 
 # PulseInstructionCode_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** enum · **Underlying:** `uint16_t` · **Module:** pulse_runtime_lib
 

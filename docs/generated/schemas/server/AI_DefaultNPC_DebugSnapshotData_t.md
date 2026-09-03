@@ -1,12 +1,14 @@
 ---
-layout: default
 title: AI_DefaultNPC_DebugSnapshotData_t
-nav_exclude: true
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / AI_DefaultNPC_DebugSnapshotData_t
 
 # AI_DefaultNPC_DebugSnapshotData_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 120 bytes (`0x78`) · **Align:** 8 · **Module:** server
 
@@ -19,6 +21,7 @@ nav_exclude: true
 ```mermaid
 classDiagram
     DebugSnapshotBaseStructuredData_t <|-- AI_DefaultNPC_DebugSnapshotData_t
+    AI_DefaultNPC_DebugSnapshotData_t *-- `AI_DefaultNPC_DebugSnapshotData_t::PathQuery_t`
 ```
 
 ## Memory layout
@@ -31,8 +34,8 @@ classDiagram
 | `0x10` | `s_npc_tactic_current` | CGlobalSymbol |  |  |
 | `0x18` | `s_npc_tactic_phase` | CGlobalSymbol |  |  |
 | `0x20` | `tactic_interrupt_conditions` | CUtlVector< CGlobalSymbol > |  |  |
-| `0x38` | `path_query` | [AI_DefaultNPC_DebugSnapshotData_t](../server/AI_DefaultNPC_DebugSnapshotData_t.md)::PathQuery_t |  |  |
-| `0x60` | `path_queries_speculative` | CUtlVector< [AI_DefaultNPC_DebugSnapshotData_t](../server/AI_DefaultNPC_DebugSnapshotData_t.md)::PathQuery_t > |  |  |
+| `0x38` | `path_query` | [AI_DefaultNPC_DebugSnapshotData_t::PathQuery_t](../server/AI_DefaultNPC_DebugSnapshotData_t.PathQuery_t.md) |  |  |
+| `0x60` | `path_queries_speculative` | CUtlVector< [AI_DefaultNPC_DebugSnapshotData_t::PathQuery_t](../server/AI_DefaultNPC_DebugSnapshotData_t.PathQuery_t.md) > |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

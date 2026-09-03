@@ -1,12 +1,14 @@
 ---
-layout: default
 title: C_OP_DecayOffscreen
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / C_OP_DecayOffscreen
 
 # C_OP_DecayOffscreen
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 840 bytes (`0x348`) · **Align:** 8 · **Module:** particles
 

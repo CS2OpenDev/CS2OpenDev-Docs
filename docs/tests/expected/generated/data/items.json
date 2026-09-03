@@ -1,0 +1,181 @@
+{
+  "items": [
+    {
+      "classname": "weapon_knife",
+      "def_index": 0,
+      "description_token": "",
+      "is_default": true,
+      "item_slot": "",
+      "item_type_name": "",
+      "name": "default",
+      "name_token": "#SFUI_WPNHUD_Knife",
+      "prefab_id": "",
+      "resolution": {
+        "classname": "own",
+        "descriptionToken": "unresolved",
+        "itemSlot": "unresolved",
+        "itemTypeName": "unresolved",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "",
+      "def_index": 7,
+      "description_token": "",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "",
+      "name": "weapon_ak47",
+      "name_token": "",
+      "prefab_id": "weapon_ak47_prefab",
+      "resolution": {
+        "classname": "unresolved",
+        "descriptionToken": "unresolved",
+        "itemSlot": "unresolved",
+        "itemTypeName": "unresolved",
+        "nameToken": "unresolved"
+      }
+    },
+    {
+      "classname": "",
+      "def_index": 1,
+      "description_token": "",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "",
+      "name": "weapon_deagle",
+      "name_token": "",
+      "prefab_id": "weapon_deagle_prefab",
+      "resolution": {
+        "classname": "unresolved",
+        "descriptionToken": "unresolved",
+        "itemSlot": "unresolved",
+        "itemTypeName": "unresolved",
+        "nameToken": "unresolved"
+      }
+    },
+    {
+      "classname": "",
+      "def_index": 2,
+      "description_token": "",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "",
+      "name": "weapon_elite",
+      "name_token": "",
+      "prefab_id": "weapon_elite_prefab",
+      "resolution": {
+        "classname": "unresolved",
+        "descriptionToken": "unresolved",
+        "itemSlot": "unresolved",
+        "itemTypeName": "unresolved",
+        "nameToken": "unresolved"
+      }
+    },
+    {
+      "classname": "",
+      "def_index": 3,
+      "description_token": "",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "",
+      "name": "weapon_fiveseven",
+      "name_token": "",
+      "prefab_id": "weapon_fiveseven_prefab",
+      "resolution": {
+        "classname": "unresolved",
+        "descriptionToken": "unresolved",
+        "itemSlot": "unresolved",
+        "itemTypeName": "unresolved",
+        "nameToken": "unresolved"
+      }
+    },
+    {
+      "classname": "",
+      "def_index": 4,
+      "description_token": "",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "",
+      "name": "weapon_glock",
+      "name_token": "",
+      "prefab_id": "weapon_glock_prefab",
+      "resolution": {
+        "classname": "unresolved",
+        "descriptionToken": "unresolved",
+        "itemSlot": "unresolved",
+        "itemTypeName": "unresolved",
+        "nameToken": "unresolved"
+      }
+    }
+  ],
+  "note": "item_definitions.json carries no per-item rarity or quality link upstream; only the rarities and qualities enumeration tables exist, so items[] has no rarity or quality field.",
+  "prefabs": [
+    {
+      "classname": "",
+      "id": "antwerp2022_signature_capsule_prefab",
+      "item_slot": "",
+      "item_type_name": "",
+      "name_token": "",
+      "parent_prefab": "weapon_case_base"
+    },
+    {
+      "classname": "",
+      "id": "antwerp2022_sticker_capsule_prefab",
+      "item_slot": "",
+      "item_type_name": "",
+      "name_token": "",
+      "parent_prefab": "weapon_case_base"
+    },
+    {
+      "classname": "",
+      "id": "antwerp2022_tournament_journal_prefab",
+      "item_slot": "",
+      "item_type_name": "",
+      "name_token": "",
+      "parent_prefab": "fan_shield"
+    },
+    {
+      "classname": "",
+      "id": "antwerp2022_tournament_pass_prefab",
+      "item_slot": "",
+      "item_type_name": "",
+      "name_token": "",
+      "parent_prefab": "fan_token"
+    }
+  ],
+  "qualities": [
+    {
+      "id": "community",
+      "value": 5
+    },
+    {
+      "id": "completed",
+      "value": 10
+    },
+    {
+      "id": "customized",
+      "value": 8
+    }
+  ],
+  "rarities": [
+    {
+      "id": "ancient",
+      "loc_key": "Rarity_Ancient",
+      "loc_key_weapon": "Rarity_Ancient_Weapon",
+      "value": 6
+    },
+    {
+      "id": "common",
+      "loc_key": "Rarity_Common",
+      "loc_key_weapon": "Rarity_Common_Weapon",
+      "value": 1
+    },
+    {
+      "id": "default",
+      "loc_key": "Rarity_Default",
+      "loc_key_weapon": "Rarity_Default_Weapon",
+      "value": 0
+    }
+  ]
+}

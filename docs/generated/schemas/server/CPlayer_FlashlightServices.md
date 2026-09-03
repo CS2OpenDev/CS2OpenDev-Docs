@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CPlayer_FlashlightServices
-nav_exclude: true
+title: CPlayer_FlashlightServices (server)
+module: server
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [server](../server.md) / CPlayer_FlashlightServices
 
 # CPlayer_FlashlightServices
 
-**Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** 255 · **Module:** server
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** n/a (unspecified) · **Module:** server
+
+**Twin:** [CPlayer_FlashlightServices (client)](../client/CPlayer_FlashlightServices.md)
 
 **Inherits from:** [CPlayerPawnComponent](../server/CPlayerPawnComponent.md)
 

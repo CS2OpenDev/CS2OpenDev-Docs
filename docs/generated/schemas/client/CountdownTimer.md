@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CountdownTimer
-nav_exclude: true
+title: CountdownTimer (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CountdownTimer
 
 # CountdownTimer
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 8 · **Module:** client
+
+**Twin:** [CountdownTimer (server)](../server/CountdownTimer.md)
 
 **Relationships:**
 

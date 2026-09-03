@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CEntityComponentHelper
-nav_exclude: true
+module: entity2
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [entity2](../entity2.md) / CEntityComponentHelper
 
 # CEntityComponentHelper
 
-**Kind:** class · **Size:** 40 bytes (`0x28`) · **Align:** 255 · **Module:** entity2
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 40 bytes (`0x28`) · **Align:** n/a (unspecified) · **Module:** entity2
 
 **Relationships:**
 

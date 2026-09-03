@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CNmClipDocEvent_Particle
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmClipDocEvent_Particle
 
 # CNmClipDocEvent_Particle
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 104 bytes (`0x68`) · **Align:** 8 · **Module:** animdoclib
 
@@ -18,7 +20,7 @@ nav_exclude: true
 classDiagram
     CNmClipDocEvent <|-- CNmClipDocEvent_Particle
     CNmClipDocEvent_Particle *-- CNmEventRelevance_t
-    CNmClipDocEvent_Particle *-- CNmParticleEvent
+    CNmClipDocEvent_Particle *-- `CNmParticleEvent::Type_t`
     CNmClipDocEvent_Particle *-- CNmEventTargetEntity_t
     CNmClipDocEvent_Particle *-- ParticleAttachment_t
 ```
@@ -32,7 +34,7 @@ classDiagram
 | `0x8` | `m_flStartTime` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
 | `0xc` | `m_flDuration` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
 | `0x10` | `m_relevance` | [CNmEventRelevance_t](../animlib/CNmEventRelevance_t.md) |  |  |
-| `0x14` | `m_type` | [CNmParticleEvent](../animlib/CNmParticleEvent.md)::Type_t |  |  |
+| `0x14` | `m_type` | [CNmParticleEvent::Type_t](../animlib/CNmParticleEvent.Type_t.md) |  |  |
 | `0x18` | `m_target` | [CNmEventTargetEntity_t](../animlib/CNmEventTargetEntity_t.md) |  |  |
 | `0x20` | `m_particleSystem` | CUtlString |  | `MPropertyAttributeEditor AssetBrowse( vpcf, *requiredoubleclick )` `MPropertyStartGroup +Particle` |
 | `0x28` | `m_bDetachFromOwner` | bool |  |  |

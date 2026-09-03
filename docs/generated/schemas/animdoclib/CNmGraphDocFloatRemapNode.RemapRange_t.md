@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmGraphDocFloatRemapNode::RemapRange_t"
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmGraphDocFloatRemapNode::RemapRange_t
 
 # CNmGraphDocFloatRemapNode::RemapRange_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 8 bytes (`0x8`) · **Align:** 4 · **Module:** animdoclib
 

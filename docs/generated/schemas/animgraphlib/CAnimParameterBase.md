@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CAnimParameterBase
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / CAnimParameterBase
 
 # CAnimParameterBase
 
-**Kind:** class · **Size:** 112 bytes (`0x70`) · **Align:** 255 · **Module:** animgraphlib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 112 bytes (`0x70`) · **Align:** n/a (unspecified) · **Module:** animgraphlib
 
 **Derived by:** [CConcreteAnimParameter](../animgraphlib/CConcreteAnimParameter.md), [CVirtualAnimParameter](../animgraphlib/CVirtualAnimParameter.md)
 

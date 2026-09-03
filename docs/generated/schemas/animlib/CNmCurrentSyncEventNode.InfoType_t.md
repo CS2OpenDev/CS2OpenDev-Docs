@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmCurrentSyncEventNode::InfoType_t"
-nav_exclude: true
+module: animlib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmCurrentSyncEventNode::InfoType_t
 
 # CNmCurrentSyncEventNode::InfoType_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** enum · **Underlying:** `uint8_t` · **Module:** animlib
 

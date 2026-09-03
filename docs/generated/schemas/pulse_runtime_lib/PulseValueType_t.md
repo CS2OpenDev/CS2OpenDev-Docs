@@ -1,12 +1,14 @@
 ---
-layout: default
 title: PulseValueType_t
-nav_exclude: true
+module: pulse_runtime_lib
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [pulse_runtime_lib](../pulse_runtime_lib.md) / PulseValueType_t
 
 # PulseValueType_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** pulse_runtime_lib
 
@@ -14,7 +16,7 @@ nav_exclude: true
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `PVAL_VOID` | -1 | Void |
+| `PVAL_VOID` | -1 (`0xffffffff`) | Void |
 | `PVAL_BOOL` | 0 | Boolean |
 | `PVAL_INT` | 1 | Integer |
 | `PVAL_FLOAT` | 2 | Float |

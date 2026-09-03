@@ -1,0 +1,44 @@
+{
+  "materials": [
+    {
+      "name": "Balloon",
+      "rows": [
+        {
+          "properties": [
+            {
+              "name": "walkleft",
+              "value": "CT_Default.StepLeft"
+            }
+          ],
+          "scope": "ct_player",
+          "source_file": "surfaceproperties_footsteps.txt"
+        }
+      ]
+    },
+    {
+      "name": "Metal_Box",
+      "rows": [
+        {
+          "properties": [],
+          "scope": "ct_player",
+          "source_file": "surfaceproperties_footsteps.txt"
+        },
+        {
+          "properties": [],
+          "scope": "t_player",
+          "source_file": "surfaceproperties_footsteps.txt"
+        },
+        {
+          "properties": [
+            {
+              "name": "bulletPenetrationDistanceModifier",
+              "value": "0.5"
+            }
+          ],
+          "scope": "",
+          "source_file": "surfaceproperties_game.txt"
+        }
+      ]
+    }
+  ]
+}

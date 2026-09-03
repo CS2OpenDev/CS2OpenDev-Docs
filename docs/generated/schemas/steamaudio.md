@@ -1,11 +1,11 @@
 ---
-layout: default
 title: steamaudio
-parent: Schemas
-nav_exclude: true
+module: steamaudio
 ---
 
 # Module: steamaudio
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 [📊 View UML Diagram](../diagrams/steamaudio.md)
 

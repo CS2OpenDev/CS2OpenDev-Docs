@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmFloatRemapNode::CDefinition"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmFloatRemapNode::CDefinition
 
 # CNmFloatRemapNode::CDefinition
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 40 bytes (`0x28`) · **Align:** 8 · **Module:** animlib
 
@@ -16,9 +18,10 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatRemapNode::CDefinition"
-    "CNmValueNode::CDefinition" <|-- "CNmFloatValueNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
+    `CNmFloatValueNode::CDefinition` <|-- `CNmFloatRemapNode::CDefinition`
+    `CNmValueNode::CDefinition` <|-- `CNmFloatValueNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmValueNode::CDefinition`
+    `CNmFloatRemapNode::CDefinition` *-- `CNmFloatRemapNode::RemapRange_t`
 ```
 
 ## Memory layout
@@ -29,8 +32,8 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `m_nNodeIdx` | int16 | [CNmGraphNode::CDefinition](../animlib/CNmGraphNode.CDefinition.md) |  |
 | `0x10` | `m_nInputValueNodeIdx` | int16 |  |  |
-| `0x14` | `m_inputRange` | CNmFloatRemapNode::RemapRange_t |  |  |
-| `0x1c` | `m_outputRange` | CNmFloatRemapNode::RemapRange_t |  |  |
+| `0x14` | `m_inputRange` | [CNmFloatRemapNode::RemapRange_t](../animlib/CNmFloatRemapNode.RemapRange_t.md) |  |  |
+| `0x1c` | `m_outputRange` | [CNmFloatRemapNode::RemapRange_t](../animlib/CNmFloatRemapNode.RemapRange_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

@@ -1,8 +1,5 @@
 ---
-layout: default
 title: Entity Hierarchy
-parent: Schemas
-nav_exclude: true
 ---
 
 # Entity Hierarchy Diagram
@@ -30,14 +27,14 @@ classDiagram
     CNavVolumeCalculatedVector <|-- CNavVolumeBreadthFirstSearch
     CNavVolume <|-- CNavVolumeCalculatedVector
     CNavVolume <|-- CNavVolumeMarkupVolume
-    "CNmPassthroughNode::CDefinition" <|-- "CNmAimCSNode::CDefinition"
+    `CNmPassthroughNode::CDefinition` <|-- `CNmAimCSNode::CDefinition`
     CNmPoseTask <|-- CNmAimCSTask
     CNmEventConsumer <|-- CNmEventConsumerAttributes
     CNmEventConsumer <|-- CNmEventConsumerLegacy
     CNmEventConsumer <|-- CNmEventConsumerParticle
     CNmEventConsumer <|-- CNmEventConsumerPulse
     CNmEventConsumer <|-- CNmEventConsumerSound
-    "CNmPassthroughNode::CDefinition" <|-- "CNmSnapWeaponNode::CDefinition"
+    `CNmPassthroughNode::CDefinition` <|-- `CNmSnapWeaponNode::CDefinition`
     CNmPoseTask <|-- CNmSnapWeaponTask
     CSimpleSimTimer <|-- CRandSimTimer
     CStopwatchBase <|-- CRandStopwatch
@@ -160,7 +157,7 @@ classDiagram
     CEntitySubclassVDataBase <|-- CPrecipitationVData
     CEntityComponent <|-- CPropDataComponent
     CPulseCell_BaseLerp <|-- CPulseCell_LerpCameraSettings
-    "CPulseCell_BaseLerp::CursorState_t" <|-- "CPulseCell_LerpCameraSettings::CursorState_t"
+    `CPulseCell_BaseLerp::CursorState_t` <|-- `CPulseCell_LerpCameraSettings::CursorState_t`
     CPulseCell_BaseYieldingInflow <|-- CPulseCell_PlaySequence
     CPulseCell_BaseFlow <|-- CPulseCell_Step_EntFire
     C_BaseEntity <|-- CPulseGameBlackboard

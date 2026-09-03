@@ -1,11 +1,11 @@
 ---
-layout: default
 title: engine2
-parent: Schemas
-nav_exclude: true
+module: engine2
 ---
 
 # Module: engine2
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 [📊 View UML Diagram](../diagrams/engine2.md)
 

@@ -1,16 +1,13 @@
 ---
-layout: default
 title: cstrike15_usermessages.proto
-parent: Protobufs
-nav_exclude: true
+proto: cstrike15_usermessages.proto
 ---
 
 # `cstrike15_usermessages.proto`
 
-**Imports:** `networkbasetypes.proto`, `cstrike15_gcmessages.proto`
+**Imports:** [`networkbasetypes.proto`](networkbasetypes.md), [`cstrike15_gcmessages.proto`](cstrike15_gcmessages.md)
 
 CS2 user-messages sent reliably from server to one or more clients.  These messages carry HUD feedback, audio triggers, economy updates, and kill-cam data.  They are identified by the ECstrike15UserMessages enum (IDs 301–388).
-
 
 ## Diagram
 
@@ -24,7 +21,7 @@ direction LR
     +List~CCSUsrMsg_VGUIMenu.Keys~ keys
   }
 
-  class Keys {
+  class CCSUsrMsg_VGUIMenu_Keys["CCSUsrMsg_VGUIMenu.Keys"] {
     +string name
     +string value
   }
@@ -103,7 +100,7 @@ direction LR
     +bool player_mod_enable
   }
 
-  class PlayerMask {
+  class CCSUsrMsg_VoiceMask_PlayerMask["CCSUsrMsg_VoiceMask.PlayerMask"] {
     +int32 game_rules_mask
     +int32 ban_masks
   }
@@ -134,7 +131,7 @@ direction LR
     +List~CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate~ entity_updates
   }
 
-  class SpottedEntityUpdate {
+  class CCSUsrMsg_ProcessSpottedEntityUpdate_SpottedEntityUpdate["CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate"] {
     +int32 entity_idx
     +int32 class_id
     +int32 origin_x
@@ -240,7 +237,7 @@ direction LR
     +int32 crc
   }
 
-  class Stat {
+  class CCSUsrMsg_PlayerStatsUpdate_Stat["CCSUsrMsg_PlayerStatsUpdate.Stat"] {
     +int32 idx
     +int32 delta
   }
@@ -316,7 +313,7 @@ direction LR
     +List~CCSUsrMsg_ServerRankUpdate.RankUpdate~ rank_update
   }
 
-  class RankUpdate {
+  class CCSUsrMsg_ServerRankUpdate_RankUpdate["CCSUsrMsg_ServerRankUpdate.RankUpdate"] {
     +int32 account_id
     +int32 rank_old
     +int32 rank_new
@@ -381,20 +378,20 @@ direction LR
     +int32 ticknumber
   }
 
-  class Fact {
+  class CCSUsrMsg_SurvivalStats_Fact["CCSUsrMsg_SurvivalStats.Fact"] {
     +int32 type
     +int32 display
     +int32 value
     +float interestingness
   }
 
-  class Placement {
+  class CCSUsrMsg_SurvivalStats_Placement["CCSUsrMsg_SurvivalStats.Placement"] {
     +uint64 xuid
     +int32 teamnumber
     +int32 placement
   }
 
-  class Damage {
+  class CCSUsrMsg_SurvivalStats_Damage["CCSUsrMsg_SurvivalStats.Damage"] {
     +uint64 xuid
     +int32 to
     +int32 to_hits
@@ -407,13 +404,13 @@ direction LR
     +int32 scene
   }
 
-  class Accolade {
+  class CCSUsrMsg_EndOfMatchAllPlayersData_Accolade["CCSUsrMsg_EndOfMatchAllPlayersData.Accolade"] {
     +int32 eaccolade
     +float value
     +int32 position
   }
 
-  class PlayerData {
+  class CCSUsrMsg_EndOfMatchAllPlayersData_PlayerData["CCSUsrMsg_EndOfMatchAllPlayersData.PlayerData"] {
     +int32 slot
     +uint64 xuid
     +string name
@@ -429,7 +426,7 @@ direction LR
     +List~CCSUsrMsg_RoundEndReportData.RerEvent~ all_rer_event_data
   }
 
-  class RerEvent {
+  class CCSUsrMsg_RoundEndReportData_RerEvent["CCSUsrMsg_RoundEndReportData.RerEvent"] {
     +float timestamp
     +int32 terrorist_odds
     +int32 ct_alive
@@ -439,7 +436,7 @@ direction LR
     +List~CCSUsrMsg_RoundEndReportData.RerEvent.Damage~ all_damage_data
   }
 
-  class Victim {
+  class CCSUsrMsg_RoundEndReportData_RerEvent_Victim["CCSUsrMsg_RoundEndReportData.RerEvent.Victim"] {
     +int32 team_number
     +int32 playerslot
     +uint64 xuid
@@ -448,11 +445,11 @@ direction LR
     +bool is_dead
   }
 
-  class Objective {
+  class CCSUsrMsg_RoundEndReportData_RerEvent_Objective["CCSUsrMsg_RoundEndReportData.RerEvent.Objective"] {
     +int32 type
   }
 
-  class Damage {
+  class CCSUsrMsg_RoundEndReportData_RerEvent_Damage["CCSUsrMsg_RoundEndReportData.RerEvent.Damage"] {
     +int32 other_playerslot
     +uint64 other_xuid
     +int32 health_removed
@@ -461,7 +458,7 @@ direction LR
     +int32 return_num_hits
   }
 
-  class InitialConditions {
+  class CCSUsrMsg_RoundEndReportData_InitialConditions["CCSUsrMsg_RoundEndReportData.InitialConditions"] {
     +int32 ct_equip_value
     +int32 t_equip_value
     +int32 terrorist_odds
@@ -553,28 +550,28 @@ direction LR
     +int32 playerslot
   }
 
-  class LoadoutItem {
+  class CCSUsrMsg_SendPlayerLoadout_LoadoutItem["CCSUsrMsg_SendPlayerLoadout.LoadoutItem"] {
     +CEconItemPreviewDataBlock econ_item
     +int32 team
     +int32 slot
   }
 
-  CCSUsrMsg_VGUIMenu --> Keys : keys[]
-  CCSUsrMsg_VoiceMask --> PlayerMask : player_masks[]
-  CCSUsrMsg_ProcessSpottedEntityUpdate --> SpottedEntityUpdate : entity_updates[]
-  CCSUsrMsg_PlayerStatsUpdate --> Stat : stats[]
-  CCSUsrMsg_ServerRankUpdate --> RankUpdate : rank_update[]
-  CCSUsrMsg_SurvivalStats --> Fact : facts[]
-  CCSUsrMsg_SurvivalStats --> Placement : users[]
-  CCSUsrMsg_SurvivalStats --> Damage : damages[]
-  CCSUsrMsg_EndOfMatchAllPlayersData --> PlayerData : allplayerdata[]
-  PlayerData --> Accolade : nomination
-  CCSUsrMsg_RoundEndReportData --> InitialConditions : init_conditions
-  CCSUsrMsg_RoundEndReportData --> RerEvent : all_rer_event_data[]
-  RerEvent --> Victim : victim_data
-  RerEvent --> Objective : objective_data
-  RerEvent --> Damage : all_damage_data[]
-  CCSUsrMsg_SendPlayerLoadout --> LoadoutItem : loadout[]
+  CCSUsrMsg_VGUIMenu --> CCSUsrMsg_VGUIMenu_Keys : keys[]
+  CCSUsrMsg_VoiceMask --> CCSUsrMsg_VoiceMask_PlayerMask : player_masks[]
+  CCSUsrMsg_ProcessSpottedEntityUpdate --> CCSUsrMsg_ProcessSpottedEntityUpdate_SpottedEntityUpdate : entity_updates[]
+  CCSUsrMsg_PlayerStatsUpdate --> CCSUsrMsg_PlayerStatsUpdate_Stat : stats[]
+  CCSUsrMsg_ServerRankUpdate --> CCSUsrMsg_ServerRankUpdate_RankUpdate : rank_update[]
+  CCSUsrMsg_SurvivalStats --> CCSUsrMsg_SurvivalStats_Fact : facts[]
+  CCSUsrMsg_SurvivalStats --> CCSUsrMsg_SurvivalStats_Placement : users[]
+  CCSUsrMsg_SurvivalStats --> CCSUsrMsg_SurvivalStats_Damage : damages[]
+  CCSUsrMsg_EndOfMatchAllPlayersData --> CCSUsrMsg_EndOfMatchAllPlayersData_PlayerData : allplayerdata[]
+  CCSUsrMsg_EndOfMatchAllPlayersData_PlayerData --> CCSUsrMsg_EndOfMatchAllPlayersData_Accolade : nomination
+  CCSUsrMsg_RoundEndReportData --> CCSUsrMsg_RoundEndReportData_InitialConditions : init_conditions
+  CCSUsrMsg_RoundEndReportData --> CCSUsrMsg_RoundEndReportData_RerEvent : all_rer_event_data[]
+  CCSUsrMsg_RoundEndReportData_RerEvent --> CCSUsrMsg_RoundEndReportData_RerEvent_Victim : victim_data
+  CCSUsrMsg_RoundEndReportData_RerEvent --> CCSUsrMsg_RoundEndReportData_RerEvent_Objective : objective_data
+  CCSUsrMsg_RoundEndReportData_RerEvent --> CCSUsrMsg_RoundEndReportData_RerEvent_Damage : all_damage_data[]
+  CCSUsrMsg_SendPlayerLoadout --> CCSUsrMsg_SendPlayerLoadout_LoadoutItem : loadout[]
 
   class ECstrike15UserMessages{
     <<enumeration>>
@@ -764,51 +761,53 @@ direction LR
 
 Opens or closes a VGUI panel on the client.  Used to trigger buy menus, team-selection screens, and other UI panels.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `name` | 1 | string | optional | Panel name string identifying which VGUI menu to show/hide. |
 | `show` | 2 | bool | optional | True to open the panel, false to close it. |
-| `keys` | 3 | CCSUsrMsg_VGUIMenu.Keys | repeated | Optional key-value pairs passed to the panel's initialization code. |
+| `keys` | 3 | [CCSUsrMsg_VGUIMenu.Keys](#ccsusrmsg_vguimenukeys) | repeated | Optional key-value pairs passed to the panel's initialization code. |
+
+#### `CCSUsrMsg_VGUIMenu.Keys`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `name` | 1 | string | optional |  |
+| `value` | 2 | string | optional |  |
 
 ### `CCSUsrMsg_Geiger`
 
 Legacy Geiger-counter sound message inherited from Half-Life; not used in CS2 gameplay but retained for protocol compatibility.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `range` | 1 | int32 | optional | Distance value that determined Geiger sound frequency in HL1. |
 
 ### `CCSUsrMsg_Train`
 
 Controls the on-screen train speed/direction indicator (legacy HL1 message).
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `train` | 1 | int32 | optional | Train-control state integer. |
 
 ### `CCSUsrMsg_HudText`
 
 Displays a plain text string in the centre of the HUD for a brief period.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `text` | 1 | string | optional | UTF-8 string to display on the HUD. |
 
 ### `CCSUsrMsg_HudMsg`
 
 Displays a richly formatted HUD message with custom position, colour, fade-in/out timing, and special effects.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `channel` | 1 | int32 | optional | HUD channel index (0–3); newer messages on the same channel replace older ones. |
-| `pos` | 2 | CMsgVector2D | optional | Normalised (0–1) screen-space position of the message. |
-| `clr1` | 3 | CMsgRGBA | optional | Primary text colour (RGBA). |
-| `clr2` | 4 | CMsgRGBA | optional | Secondary/effect colour (RGBA). |
+| `pos` | 2 | [CMsgVector2D](networkbasetypes.md#cmsgvector2d) | optional | Normalised (0–1) screen-space position of the message. |
+| `clr1` | 3 | [CMsgRGBA](networkbasetypes.md#cmsgrgba) | optional | Primary text colour (RGBA). |
+| `clr2` | 4 | [CMsgRGBA](networkbasetypes.md#cmsgrgba) | optional | Secondary/effect colour (RGBA). |
 | `effect` | 5 | int32 | optional | Text effect type (0 = none, 1 = flicker, 2 = fade-in). |
 | `fade_in_time` | 6 | float | optional | Time in seconds for the message to fade in. |
 | `fade_out_time` | 7 | float | optional | Time in seconds for the message to fade out. |
@@ -820,9 +819,8 @@ Displays a richly formatted HUD message with custom position, colour, fade-in/ou
 
 Applies a camera-shake effect on the receiving client.  Used for nearby explosions, heavy landing impacts, and environmental effects.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `command` | 1 | int32 | optional | Shake command: 0 = start, 1 = stop, 2 = amplitude (additive). |
 | `local_amplitude` | 2 | float | optional | Peak displacement of the shake in world units. |
 | `frequency` | 3 | float | optional | Oscillation frequency of the shake in Hz. |
@@ -832,21 +830,19 @@ Applies a camera-shake effect on the receiving client.  Used for nearby explosio
 
 Fades the client's screen to or from a solid colour.  Used for flash-bang recovery, level transitions, and damage feedback.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `duration` | 1 | int32 | optional | Duration of the fade in 1/100ths of a second. |
 | `hold_time` | 2 | int32 | optional | Time in 1/100ths of a second to hold the peak colour before fading back. |
 | `flags` | 3 | int32 | optional | Flags: 0x0001 = fade-in (screen → colour), 0x0002 = fade-out (colour → screen), 0x0004 = modulate (multiplicative), 0x0008 = stayout. |
-| `clr` | 4 | CMsgRGBA | optional | Target RGBA colour of the full-screen overlay. |
+| `clr` | 4 | [CMsgRGBA](networkbasetypes.md#cmsgrgba) | optional | Target RGBA colour of the full-screen overlay. |
 
 ### `CCSUsrMsg_Rumble`
 
 Triggers a gamepad rumble pattern on the receiving client.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `index` | 1 | int32 | optional | Rumble-effect preset index. |
 | `data` | 2 | int32 | optional | Additional data parameter for the rumble effect. |
 | `flags` | 3 | int32 | optional | Rumble control flags. |
@@ -855,9 +851,8 @@ Triggers a gamepad rumble pattern on the receiving client.
 
 Displays a closed-caption subtitle string on the client by localization token hash.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `hash` | 1 | uint32 | optional | CRC32 hash of the localization token for the caption string. |
 | `duration` | 2 | int32 | optional | Display duration in 1/10ths of a second. |
 | `from_player` | 3 | bool | optional | True when the caption originates from player speech (enables speaker indicator). |
@@ -865,8 +860,8 @@ Displays a closed-caption subtitle string on the client by localization token ha
 
 ### `CCSUsrMsg_CloseCaptionDirect`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `hash` | 1 | uint32 | optional |  |
 | `duration` | 2 | int32 | optional |  |
 | `from_player` | 3 | bool | optional |  |
@@ -875,18 +870,16 @@ Displays a closed-caption subtitle string on the client by localization token ha
 
 Plays a named radio-command audio file on the client (radio-wheel voice lines).
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `radio_sound` | 1 | string | optional | Sound event name or path of the radio voice-line to play. |
 
 ### `CCSUsrMsg_RawAudio`
 
 Streams raw voice audio from a player to a spectator or teammate.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `pitch` | 1 | int32 | optional | Playback pitch shift applied to the voice audio. |
 | `entidx` | 2 | int32 | optional | Entity index of the player speaking. *(default: `-1`)* |
 | `duration` | 3 | float | optional | Duration of the audio clip in seconds. |
@@ -896,30 +889,34 @@ Streams raw voice audio from a player to a spectator or teammate.
 
 Pushes the server's voice-mute state to clients so they know which players are muted globally.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `player_masks` | 1 | CCSUsrMsg_VoiceMask.PlayerMask | repeated | Per-player mute bitmasks; one entry per possible player slot. |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `player_masks` | 1 | [CCSUsrMsg_VoiceMask.PlayerMask](#ccsusrmsg_voicemaskplayermask) | repeated | Per-player mute bitmasks; one entry per possible player slot. |
 | `player_mod_enable` | 2 | bool | optional | True when the player-controlled muting overrides are active. |
+
+#### `CCSUsrMsg_VoiceMask.PlayerMask`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `game_rules_mask` | 1 | int32 | optional |  |
+| `ban_masks` | 2 | int32 | optional |  |
 
 ### `CCSUsrMsg_Damage`
 
 Notifies the receiving client about incoming damage so the directional damage indicator can be displayed.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `amount` | 1 | int32 | optional | Amount of damage dealt (used to scale the indicator intensity). |
-| `inflictor_world_pos` | 2 | CMsgVector | optional | World-space position of the damage source (used to compute indicator direction). |
+| `inflictor_world_pos` | 2 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional | World-space position of the damage source (used to compute indicator direction). |
 | `victim_entindex` | 3 | int32 | optional | Entity index of the player who received the damage. *(default: `-1`)* |
 
 ### `CCSUsrMsg_RadioText`
 
 Displays a radio-command message in the text chat area.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `msg_dst` | 1 | int32 | optional | Destination filter: 0 = team only, 1 = global. |
 | `client` | 2 | int32 | optional | Player slot index of the radio sender. *(default: `-1`)* |
 | `msg_name` | 3 | string | optional | Radio-command name/localization token. |
@@ -929,50 +926,60 @@ Displays a radio-command message in the text chat area.
 
 Displays a game-hint text in the hint area of the HUD (below the centre of the screen).
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `message` | 1 | string | optional | Localization token or plain string for the hint. |
 
 ### `CCSUsrMsg_KeyHintText`
 
 Displays multiple key-binding hint strings in the hint area (used for context-sensitive prompts like 'Press [USE] to pick up hostage').
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `messages` | 1 | string | repeated | List of localization tokens for each key-hint line. |
 
 ### `CCSUsrMsg_ProcessSpottedEntityUpdate`
 
 Pushes an incremental update to the client's radar entity-spotted list, keeping the minimap positions of spotted enemies and the bomb in sync.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `new_update` | 1 | bool | optional | True when this is a fresh full update rather than a delta update. |
-| `entity_updates` | 2 | CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate | repeated | List of spotted-entity records, each containing position, class, and equipment status. |
+| `entity_updates` | 2 | [CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate](#ccsusrmsg_processspottedentityupdatespottedentityupdate) | repeated | List of spotted-entity records, each containing position, class, and equipment status. |
+
+#### `CCSUsrMsg_ProcessSpottedEntityUpdate.SpottedEntityUpdate`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `entity_idx` | 1 | int32 | optional | *(default: `-1`)* |
+| `class_id` | 2 | int32 | optional |  |
+| `origin_x` | 3 | int32 | optional |  |
+| `origin_y` | 4 | int32 | optional |  |
+| `origin_z` | 5 | int32 | optional |  |
+| `angle_y` | 6 | int32 | optional |  |
+| `defuser` | 7 | bool | optional |  |
+| `player_has_defuser` | 8 | bool | optional |  |
+| `player_has_c4` | 9 | bool | optional |  |
 
 ### `CCSUsrMsg_SendPlayerItemDrops`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `entity_updates` | 1 | CEconItemPreviewDataBlock | repeated |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `entity_updates` | 1 | [CEconItemPreviewDataBlock](cstrike15_gcmessages.md#ceconitempreviewdatablock) | repeated |  |
 
 ### `CCSUsrMsg_SendPlayerItemFound`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `iteminfo` | 1 | CEconItemPreviewDataBlock | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `iteminfo` | 1 | [CEconItemPreviewDataBlock](cstrike15_gcmessages.md#ceconitempreviewdatablock) | optional |  |
 | `playerslot` | 2 | int32 | optional | *(default: `-1`)* |
 
 ### `CCSUsrMsg_ReloadEffect`
 
 Triggers a weapon-reload visual effect at the specified world position (shell casing eject, etc.) on remote clients.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `entidx` | 1 | int32 | optional | Entity index of the weapon being reloaded. *(default: `-1`)* |
 | `actanim` | 2 | int32 | optional | Activity/animation index that triggered the reload effect. |
 | `origin_x` | 3 | float | optional | X world-space coordinate of the effect origin. |
@@ -983,9 +990,8 @@ Triggers a weapon-reload visual effect at the specified world position (shell ca
 
 Plays a weapon sound at a specific world position; used for sounds that must be heard at a precise location (fire, reload, bolt action).
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `entidx` | 1 | int32 | optional | Entity index of the weapon producing the sound. *(default: `-1`)* |
 | `origin_x` | 2 | float | optional | X world-space coordinate of the sound origin. |
 | `origin_y` | 3 | float | optional | Y world-space coordinate of the sound origin. |
@@ -997,8 +1003,8 @@ Plays a weapon sound at a specific world position; used for sounds that must be 
 
 ### `CCSUsrMsg_WeaponMagDrop`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `entidx` | 1 | int32 | optional | *(default: `-1`)* |
 | `secondary_data` | 2 | int32 | optional |  |
 | `server_event` | 3 | bool | optional |  |
@@ -1007,9 +1013,8 @@ Plays a weapon sound at a specific world position; used for sounds that must be 
 
 Animates the target's health-bar indicator (the hitmarker health-bar and the bomb defuse progress ring) on the HUD.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `entidx` | 1 | int32 | optional | Entity index of the entity whose health bar to update. *(default: `-1`)* |
 | `healthratio_old` | 2 | float | optional | Previous health ratio (0.0–1.0) for the animation start point. |
 | `healthratio_new` | 3 | float | optional | New health ratio (0.0–1.0) for the animation end point. |
@@ -1019,9 +1024,8 @@ Animates the target's health-bar indicator (the hitmarker health-bar and the bom
 
 Enables or disables the outline-highlight (X-ray glow) on a specific entity for the receiving client (used by spectator tools and some convars).
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `entidx` | 1 | int32 | optional | Entity index to highlight or de-highlight. *(default: `-1`)* |
 | `removehighlight` | 2 | bool | optional | True to remove the highlight, false to add it. |
 
@@ -1029,18 +1033,16 @@ Enables or disables the outline-highlight (X-ray glow) on a specific entity for 
 
 Directly adjusts the player's in-game money by the given amount and triggers the buy-menu update animation.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `amount` | 1 | int32 | optional | Dollar amount to add (positive) or remove (negative) from the player's account. |
 
 ### `CCSUsrMsg_ReportHit`
 
 Sent to a player when their bullet registers a hit on an enemy; triggers the hit-confirmation sound and marker overlay.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `pos_x` | 1 | float | optional | Normalised screen-space X position of the hit marker. |
 | `pos_y` | 2 | float | optional | Normalised screen-space Y position of the hit marker. |
 | `pos_z` | 3 | float | optional | Normalised screen-space Z depth of the hit marker. |
@@ -1050,17 +1052,16 @@ Sent to a player when their bullet registers a hit on an enemy; triggers the hit
 
 Configures the kill-cam (death-replay) observer mode and targets for the receiving dead player.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `obs_mode` | 1 | int32 | optional | Observer mode to use (4 = in-eye, 5 = chase-cam, 6 = roaming). |
 | `first_target` | 2 | int32 | optional | Entity index of the primary observation target (usually the killer). *(default: `-1`)* |
 | `second_target` | 3 | int32 | optional | Entity index of an optional secondary target. *(default: `-1`)* |
 
 ### `CCSUsrMsg_DesiredTimescale`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `desired_timescale` | 1 | float | optional |  |
 | `duration_realtime_sec` | 2 | float | optional |  |
 | `interpolator_type` | 3 | int32 | optional |  |
@@ -1068,17 +1069,16 @@ Configures the kill-cam (death-replay) observer mode and targets for the receivi
 
 ### `CCSUsrMsg_CurrentTimescale`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `cur_timescale` | 1 | float | optional |  |
 
 ### `CCSUsrMsg_AchievementEvent`
 
 Triggers an achievement notification on the client.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `achievement` | 1 | int32 | optional | Achievement definition index. |
 | `count` | 2 | int32 | optional | Progress count toward the achievement. |
 | `user_id` | 3 | int32 | optional | User ID of the player who earned the achievement. |
@@ -1087,9 +1087,8 @@ Triggers an achievement notification on the client.
 
 Communicates the match-win conditions to the client HUD so it can display the correct round/kill/time-limit indicators.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `fraglimit` | 1 | int32 | optional | Kill-limit to end the match (0 = no limit; used in Deathmatch). |
 | `mp_maxrounds` | 2 | int32 | optional | Maximum number of rounds before the match ends. |
 | `mp_winlimit` | 3 | int32 | optional | Round-win count required to win the match. |
@@ -1099,21 +1098,26 @@ Communicates the match-win conditions to the client HUD so it can display the co
 
 Pushes an incremental update to the player's displayed match statistics (kills, deaths, assists, MVPs, etc.) so the scoreboard stays in sync.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `version` | 1 | int32 | optional | Protocol version of the stats message. |
-| `stats` | 4 | CCSUsrMsg_PlayerStatsUpdate.Stat | repeated | List of (stat index, delta) pairs to apply. |
+| `stats` | 4 | [CCSUsrMsg_PlayerStatsUpdate.Stat](#ccsusrmsg_playerstatsupdatestat) | repeated | List of (stat index, delta) pairs to apply. |
 | `ehandle` | 5 | uint32 | optional | Entity handle of the player whose stats are being updated. |
 | `crc` | 6 | int32 | optional | Checksum for integrity verification of the stats payload. |
+
+#### `CCSUsrMsg_PlayerStatsUpdate.Stat`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `idx` | 1 | int32 | optional |  |
+| `delta` | 2 | int32 | optional |  |
 
 ### `CCSUsrMsg_QuestProgress`
 
 Reports operation-mission progress earned by the player in the current match.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `quest_id` | 1 | uint32 | optional | Operation mission (quest) ID. |
 | `normal_points` | 2 | uint32 | optional | Normal points scored toward the quest objective. |
 | `bonus_points` | 3 | uint32 | optional | Bonus points scored toward the quest objective. |
@@ -1121,42 +1125,42 @@ Reports operation-mission progress earned by the player in the current match.
 
 ### `CCSUsrMsg_ScoreLeaderboardData`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `data` | 1 | ScoreLeaderboardData | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `data` | 1 | [ScoreLeaderboardData](cstrike15_gcmessages.md#scoreleaderboarddata) | optional |  |
 
 ### `CCSUsrMsg_PlayerDecalDigitalSignature`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `data` | 1 | PlayerDecalDigitalSignature | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `data` | 1 | [PlayerDecalDigitalSignature](cstrike15_gcmessages.md#playerdecaldigitalsignature) | optional |  |
 
 ### `CCSUsrMsg_XRankGet`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `mode_idx` | 1 | int32 | optional |  |
 | `controller` | 2 | int32 | optional |  |
 
 ### `CCSUsrMsg_XRankUpd`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `mode_idx` | 1 | int32 | optional |  |
 | `controller` | 2 | int32 | optional |  |
 | `ranking` | 3 | int32 | optional |  |
 
 ### `CCSUsrMsg_CallVoteFailed`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `reason` | 1 | int32 | optional |  |
 | `time` | 2 | int32 | optional |  |
 
 ### `CCSUsrMsg_VoteStart`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `team` | 1 | int32 | optional |  |
 | `player_slot` | 2 | int32 | optional | *(default: `-1`)* |
 | `vote_type` | 3 | int32 | optional |  |
@@ -1168,8 +1172,8 @@ Reports operation-mission progress earned by the player in the current match.
 
 ### `CCSUsrMsg_VotePass`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `team` | 1 | int32 | optional |  |
 | `vote_type` | 2 | int32 | optional |  |
 | `disp_str` | 3 | string | optional |  |
@@ -1177,24 +1181,23 @@ Reports operation-mission progress earned by the player in the current match.
 
 ### `CCSUsrMsg_VoteFailed`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `team` | 1 | int32 | optional |  |
 | `reason` | 2 | int32 | optional |  |
 
 ### `CCSUsrMsg_VoteSetup`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `potential_issues` | 1 | string | repeated |  |
 
 ### `CCSUsrMsg_SendLastKillerDamageToClient`
 
 Sends the full damage-dealt breakdown of the killing blow to the dead player's client so the death-screen can display 'you took X damage'.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `num_hits_given` | 1 | int32 | optional |  |
 | `damage_given` | 2 | int32 | optional |  |
 | `num_hits_taken` | 3 | int32 | optional |  |
@@ -1204,71 +1207,80 @@ Sends the full damage-dealt breakdown of the killing blow to the dead player's c
 
 ### `CCSUsrMsg_ServerRankUpdate`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `rank_update` | 1 | CCSUsrMsg_ServerRankUpdate.RankUpdate | repeated |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `rank_update` | 1 | [CCSUsrMsg_ServerRankUpdate.RankUpdate](#ccsusrmsg_serverrankupdaterankupdate) | repeated |  |
+
+#### `CCSUsrMsg_ServerRankUpdate.RankUpdate`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `account_id` | 1 | int32 | optional |  |
+| `rank_old` | 2 | int32 | optional |  |
+| `rank_new` | 3 | int32 | optional |  |
+| `num_wins` | 4 | int32 | optional |  |
+| `rank_change` | 5 | float | optional |  |
+| `rank_type_id` | 6 | int32 | optional |  |
 
 ### `CCSUsrMsg_XpUpdate`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `data` | 1 | CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `data` | 1 | [CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded](cstrike15_gcmessages.md#cmsggccstrike15_v2_gc2servernotifyxprewarded) | optional |  |
 
 ### `CCSUsrMsg_ItemPickup`
 
 Notifies the client that the player has picked up an item; triggers the weapon-pickup HUD indicator.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `item` | 1 | string | optional | Class name or item name of the picked-up weapon or equipment. |
 
 ### `CCSUsrMsg_ShowMenu`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `bits_valid_slots` | 1 | int32 | optional |  |
 | `display_time` | 2 | int32 | optional |  |
 | `menu_string` | 3 | string | optional |  |
 
 ### `CCSUsrMsg_BarTime`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `time` | 1 | string | optional |  |
 
 ### `CCSUsrMsg_AmmoDenied`
 
 Notifies the client that a reload or ammo pick-up was denied and shows the 'no ammo' indicator.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `ammoidx` | 1 | int32 | optional | Ammo-type index that was denied. |
 
 ### `CCSUsrMsg_MarkAchievement`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `achievement` | 1 | string | optional |  |
 
 ### `CCSUsrMsg_MatchStatsUpdate`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `update` | 1 | string | optional |  |
 
 ### `CCSUsrMsg_ItemDrop`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `itemid` | 1 | int64 | optional |  |
 | `death` | 2 | bool | optional |  |
 
 ### `CCSUsrMsg_RoundBackupFilenames`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `count` | 1 | int32 | optional |  |
 | `index` | 2 | int32 | optional |  |
 | `filename` | 3 | string | optional |  |
@@ -1276,40 +1288,136 @@ Notifies the client that a reload or ammo pick-up was denied and shows the 'no a
 
 ### `CCSUsrMsg_SSUI`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `show` | 1 | bool | optional |  |
 | `start_time` | 2 | float | optional |  |
 | `end_time` | 3 | float | optional |  |
 
 ### `CCSUsrMsg_SurvivalStats`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `xuid` | 1 | uint64 | optional |  |
-| `facts` | 2 | CCSUsrMsg_SurvivalStats.Fact | repeated |  |
-| `users` | 3 | CCSUsrMsg_SurvivalStats.Placement | repeated |  |
+| `facts` | 2 | [CCSUsrMsg_SurvivalStats.Fact](#ccsusrmsg_survivalstatsfact) | repeated |  |
+| `users` | 3 | [CCSUsrMsg_SurvivalStats.Placement](#ccsusrmsg_survivalstatsplacement) | repeated |  |
 | `ticknumber` | 4 | int32 | optional |  |
-| `damages` | 5 | CCSUsrMsg_SurvivalStats.Damage | repeated |  |
+| `damages` | 5 | [CCSUsrMsg_SurvivalStats.Damage](#ccsusrmsg_survivalstatsdamage) | repeated |  |
+
+#### `CCSUsrMsg_SurvivalStats.Fact`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `type` | 1 | int32 | optional |  |
+| `display` | 2 | int32 | optional |  |
+| `value` | 3 | int32 | optional |  |
+| `interestingness` | 4 | float | optional |  |
+
+#### `CCSUsrMsg_SurvivalStats.Placement`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `xuid` | 1 | uint64 | optional |  |
+| `teamnumber` | 2 | int32 | optional |  |
+| `placement` | 3 | int32 | optional |  |
+
+#### `CCSUsrMsg_SurvivalStats.Damage`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `xuid` | 1 | uint64 | optional |  |
+| `to` | 2 | int32 | optional |  |
+| `to_hits` | 3 | int32 | optional |  |
+| `from` | 4 | int32 | optional |  |
+| `from_hits` | 5 | int32 | optional |  |
 
 ### `CCSUsrMsg_EndOfMatchAllPlayersData`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `allplayerdata` | 1 | CCSUsrMsg_EndOfMatchAllPlayersData.PlayerData | repeated |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `allplayerdata` | 1 | [CCSUsrMsg_EndOfMatchAllPlayersData.PlayerData](#ccsusrmsg_endofmatchallplayersdataplayerdata) | repeated |  |
 | `scene` | 2 | int32 | optional |  |
+
+#### `CCSUsrMsg_EndOfMatchAllPlayersData.Accolade`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `eaccolade` | 1 | int32 | optional |  |
+| `value` | 2 | float | optional |  |
+| `position` | 3 | int32 | optional |  |
+
+#### `CCSUsrMsg_EndOfMatchAllPlayersData.PlayerData`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `slot` | 1 | int32 | optional | *(default: `-1`)* |
+| `xuid` | 2 | uint64 | optional |  |
+| `name` | 3 | string | optional |  |
+| `teamnumber` | 4 | int32 | optional |  |
+| `nomination` | 5 | [CCSUsrMsg_EndOfMatchAllPlayersData.Accolade](#ccsusrmsg_endofmatchallplayersdataaccolade) | optional |  |
+| `items` | 6 | [CEconItemPreviewDataBlock](cstrike15_gcmessages.md#ceconitempreviewdatablock) | repeated |  |
+| `playercolor` | 7 | int32 | optional |  |
+| `isbot` | 8 | bool | optional |  |
 
 ### `CCSUsrMsg_RoundEndReportData`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `init_conditions` | 1 | CCSUsrMsg_RoundEndReportData.InitialConditions | optional |  |
-| `all_rer_event_data` | 2 | CCSUsrMsg_RoundEndReportData.RerEvent | repeated |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `init_conditions` | 1 | [CCSUsrMsg_RoundEndReportData.InitialConditions](#ccsusrmsg_roundendreportdatainitialconditions) | optional |  |
+| `all_rer_event_data` | 2 | [CCSUsrMsg_RoundEndReportData.RerEvent](#ccsusrmsg_roundendreportdatarerevent) | repeated |  |
+
+#### `CCSUsrMsg_RoundEndReportData.RerEvent`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `timestamp` | 1 | float | optional |  |
+| `terrorist_odds` | 2 | int32 | optional |  |
+| `ct_alive` | 3 | int32 | optional |  |
+| `t_alive` | 4 | int32 | optional |  |
+| `victim_data` | 5 | [CCSUsrMsg_RoundEndReportData.RerEvent.Victim](#ccsusrmsg_roundendreportdatarereventvictim) | optional |  |
+| `objective_data` | 6 | [CCSUsrMsg_RoundEndReportData.RerEvent.Objective](#ccsusrmsg_roundendreportdatarereventobjective) | optional |  |
+| `all_damage_data` | 7 | [CCSUsrMsg_RoundEndReportData.RerEvent.Damage](#ccsusrmsg_roundendreportdatarereventdamage) | repeated |  |
+
+##### `CCSUsrMsg_RoundEndReportData.RerEvent.Victim`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `team_number` | 1 | int32 | optional |  |
+| `playerslot` | 2 | int32 | optional | *(default: `-1`)* |
+| `xuid` | 3 | uint64 | optional |  |
+| `color` | 4 | int32 | optional |  |
+| `is_bot` | 5 | bool | optional |  |
+| `is_dead` | 6 | bool | optional |  |
+
+##### `CCSUsrMsg_RoundEndReportData.RerEvent.Objective`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `type` | 1 | int32 | optional |  |
+
+##### `CCSUsrMsg_RoundEndReportData.RerEvent.Damage`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `other_playerslot` | 1 | int32 | optional | *(default: `-1`)* |
+| `other_xuid` | 2 | uint64 | optional |  |
+| `health_removed` | 3 | int32 | optional |  |
+| `num_hits` | 4 | int32 | optional |  |
+| `return_health_removed` | 5 | int32 | optional |  |
+| `return_num_hits` | 6 | int32 | optional |  |
+
+#### `CCSUsrMsg_RoundEndReportData.InitialConditions`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `ct_equip_value` | 1 | int32 | optional |  |
+| `t_equip_value` | 2 | int32 | optional |  |
+| `terrorist_odds` | 3 | int32 | optional |  |
 
 ### `CCSUsrMsg_PostRoundDamageReport`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `other_xuid` | 1 | uint64 | optional |  |
 | `given_kill_type` | 2 | int32 | optional |  |
 | `given_health_removed` | 3 | int32 | optional |  |
@@ -1320,80 +1428,80 @@ Notifies the client that a reload or ammo pick-up was denied and shows the 'no a
 
 ### `CCSUsrMsg_CurrentRoundOdds`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `odds` | 1 | int32 | optional |  |
 
 ### `CCSUsrMsg_DeepStats`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `stats` | 1 | CMsgGCCStrike15_ClientDeepStats | optional |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `stats` | 1 | [CMsgGCCStrike15_ClientDeepStats](cstrike15_gcmessages.md#cmsggccstrike15_clientdeepstats) | optional |  |
 
 ### `CCSUsrMsg_ShootInfo`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `frame_number` | 1 | int32 | optional |  |
-| `hitbox_transforms` | 2 | CMsgTransform | repeated |  |
-| `shoot_pos` | 3 | CMsgVector | optional |  |
-| `shoot_dir` | 4 | CMsgQAngle | optional |  |
+| `hitbox_transforms` | 2 | [CMsgTransform](networkbasetypes.md#cmsgtransform) | repeated |  |
+| `shoot_pos` | 3 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional |  |
+| `shoot_dir` | 4 | [CMsgQAngle](networkbasetypes.md#cmsgqangle) | optional |  |
 
 ### `CCSUsrMsg_ResetHud`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `reset` | 1 | bool | optional |  |
 
 ### `CCSUsrMsg_GameTitle`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `dummy` | 1 | int32 | optional |  |
 
 ### `CCSUsrMsg_RequestState`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `dummy` | 1 | int32 | optional |  |
 
 ### `CCSUsrMsg_StopSpectatorMode`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `dummy` | 1 | int32 | optional |  |
 
 ### `CCSUsrMsg_DisconnectToLobby`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `dummy` | 1 | int32 | optional |  |
 
 ### `CCSUsrMsg_ClientInfo`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `dummy` | 1 | int32 | optional |  |
 
 ### `CCSUsrMsg_ServerRankRevealAll`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `seconds_till_shutdown` | 1 | int32 | optional |  |
-| `reservation` | 2 | CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve | optional |  |
+| `reservation` | 2 | [CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve](cstrike15_gcmessages.md#cmsggccstrike15_v2_matchmakinggc2serverreserve) | optional |  |
 
 ### `CCSUsrMsgPreMatchSayText`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `account_id` | 1 | uint32 | optional |  |
 | `text` | 2 | string | optional |  |
 | `all_chat` | 3 | bool | optional |  |
 
 ### `CCSUsrMsg_CounterStrafe`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `press_to_release_ns` | 1 | int32 | optional |  |
 | `total_keys_down` | 2 | int32 | optional |  |
 
@@ -1401,28 +1509,35 @@ Notifies the client that a reload or ammo pick-up was denied and shows the 'no a
 
 Sent to the attacker to confirm or adjust predicted damage from a client-predicted hit so the client kill-feed and health can be reconciled.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `command_num` | 1 | int32 | optional | Client command number this prediction is aligned to. |
 | `pellet_idx` | 2 | int32 | optional | Shotgun pellet index (0 for single-bullet weapons). |
 | `victim_slot` | 3 | int32 | optional | Player slot of the hit victim. |
 | `victim_starting_health` | 4 | int32 | optional | Victim's health before this hit was applied. |
 | `victim_damage` | 5 | int32 | optional | Actual damage amount applied to the victim. |
-| `shoot_pos` | 6 | CMsgVector | optional | World-space position from which the shot originated. |
-| `shoot_dir` | 7 | CMsgQAngle | optional | Angle of the shot direction at fire time. |
-| `aim_punch` | 8 | CMsgQAngle | optional | Aim-punch angle active at fire time; used to reconcile punch-adjusted vs raw aim. |
+| `shoot_pos` | 6 | [CMsgVector](networkbasetypes.md#cmsgvector) | optional | World-space position from which the shot originated. |
+| `shoot_dir` | 7 | [CMsgQAngle](networkbasetypes.md#cmsgqangle) | optional | Angle of the shot direction at fire time. |
+| `aim_punch` | 8 | [CMsgQAngle](networkbasetypes.md#cmsgqangle) | optional | Aim-punch angle active at fire time; used to reconcile punch-adjusted vs raw aim. |
 
 ### `CCSUsrMsg_RecurringMissionSchema`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `period` | 1 | uint32 | optional |  |
 | `mission_schema` | 2 | bytes | optional |  |
 
 ### `CCSUsrMsg_SendPlayerLoadout`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `loadout` | 1 | CCSUsrMsg_SendPlayerLoadout.LoadoutItem | repeated |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `loadout` | 1 | [CCSUsrMsg_SendPlayerLoadout.LoadoutItem](#ccsusrmsg_sendplayerloadoutloadoutitem) | repeated |  |
 | `playerslot` | 2 | int32 | optional | *(default: `-1`)* |
+
+#### `CCSUsrMsg_SendPlayerLoadout.LoadoutItem`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `econ_item` | 1 | [CEconItemPreviewDataBlock](cstrike15_gcmessages.md#ceconitempreviewdatablock) | optional |  |
+| `team` | 2 | int32 | optional |  |
+| `slot` | 3 | int32 | optional |  |

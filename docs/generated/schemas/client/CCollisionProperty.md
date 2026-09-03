@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CCollisionProperty
-nav_exclude: true
+title: CCollisionProperty (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CCollisionProperty
 
 # CCollisionProperty
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 184 bytes (`0xb8`) · **Align:** 8 · **Module:** client
+
+**Twin:** [CCollisionProperty (server)](../server/CCollisionProperty.md)
 
 **Relationships:**
 

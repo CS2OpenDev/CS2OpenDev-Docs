@@ -1,0 +1,134 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { provenanceLine } from '../lib/provenance';
+import { loadChangelog } from '../lib/data/changelog';
+import { schemaHistoryTransitionAnchorHref } from '../lib/urls';
+import '../styles/content.css';
+
+const changelog = loadChangelog();
+
+const FAMILY_LABEL: Record<string, string> = {
+	classes: 'Classes',
+	enums: 'Enums',
+	convars: 'ConVars',
+	commands: 'Commands',
+	engine_constants: 'Engine constants',
+};
+
+function label(family: string): string {
+	return FAMILY_LABEL[family] ?? family;
+}
+
+const headings = [
+	{ depth: 2, slug: 'families', text: 'Families' },
+];
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Changelog',
+		description: `What changed between CS2 build ${changelog.from_build} and ${changelog.to_build}, by family.`,
+	}}
+	headings={headings}
+>
+	<div>
+		<p>
+			This is the one build-to-build transition the current artifact set carries: build{' '}
+			<code>{changelog.from_build}</code> to <code>{changelog.to_build}</code> on {changelog.platform}.
+			Every family SchemaTracker diffs is listed below with its added, removed and changed counts,
+			even when a family had no change, so a zero here reads as "checked, nothing moved" rather than
+			"not checked".
+		</p>
+
+		{changelog.no_changes && (
+			<p class="cs2-note">
+				<strong>No changes in this build.</strong> Every family below is 0 added, 0 removed, 0
+				changed for this transition.
+			</p>
+		)}
+
+		<p class="cs2-provenance">
+			{provenanceLine()} ·{' '}
+			<a href={schemaHistoryTransitionAnchorHref(changelog.schema_history_anchor)}>
+				matching transition in Schema History
+			</a>
+		</p>
+
+		<h2 id="families">Families</h2>
+
+		<div class="cs2-table-wrap">
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Family</th>
+						<th scope="col" class="value">Added</th>
+						<th scope="col" class="value">Removed</th>
+						<th scope="col" class="value">Changed</th>
+					</tr>
+				</thead>
+				<tbody>
+					{changelog.families.map((f) => (
+						<tr>
+							<td>{label(f.family)}</td>
+							<td class="value">{f.added_count}</td>
+							<td class="value">{f.removed_count}</td>
+							<td class="value">{f.changed_count}</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+
+		{changelog.families
+			.filter((f) => f.added_count + f.removed_count + f.changed_count > 0)
+			.map((f) => (
+				<details class="cs2-family-detail" data-pagefind-ignore>
+					<summary>{label(f.family)} detail</summary>
+					{f.truncated && (
+						<p class="cs2-note">This family's list was capped before rendering; some entries are omitted.</p>
+					)}
+					{f.added_count > 0 && (
+						<>
+							<p><strong>Added</strong> <span class="cs2-count">({f.added_count})</span></p>
+							<ul class="cs2-cols">{f.added.map((n) => <li><code>{n}</code></li>)}</ul>
+						</>
+					)}
+					{f.removed_count > 0 && (
+						<>
+							<p><strong>Removed</strong> <span class="cs2-count">({f.removed_count})</span></p>
+							<ul class="cs2-cols">{f.removed.map((n) => <li><code>{n}</code></li>)}</ul>
+						</>
+					)}
+					{f.changed_count > 0 && (
+						<>
+							<p><strong>Changed</strong> <span class="cs2-count">({f.changed_count})</span></p>
+							<div class="cs2-table-wrap">
+								<table>
+									<thead>
+										<tr>
+											<th scope="col">Name</th>
+											<th scope="col" class="ann">Field changes</th>
+										</tr>
+									</thead>
+									<tbody>
+										{f.changed.map((c) => (
+											<tr>
+												<td><code>{c.name}</code></td>
+												<td class="ann">
+													{c.field_changes.map((fc) => (
+														<div>
+															<code>{fc.field}</code>: <code>{fc.old_value}</code> to <code>{fc.new_value}</code>
+														</div>
+													))}
+												</td>
+											</tr>
+										))}
+									</tbody>
+								</table>
+							</div>
+						</>
+					)}
+				</details>
+			))}
+	</div>
+</StarlightPage>

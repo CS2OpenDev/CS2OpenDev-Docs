@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CParticleInput
-nav_exclude: true
+module: particleslib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particleslib](../particleslib.md) / CParticleInput
 
 # CParticleInput
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** 8 · **Module:** particleslib
 
@@ -21,6 +23,10 @@ classDiagram
     CParticleInput <|-- CParticleTransformInput
     CParticleInput <|-- CParticleVecInput
 ```
+
+## Memory layout
+
+No schema-visible fields (16 bytes of opaque storage).
 
 <details><summary>KV3 class defaults</summary>
 

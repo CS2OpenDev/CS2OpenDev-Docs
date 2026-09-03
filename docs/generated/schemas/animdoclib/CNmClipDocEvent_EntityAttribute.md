@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CNmClipDocEvent_EntityAttribute
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmClipDocEvent_EntityAttribute
 
 # CNmClipDocEvent_EntityAttribute
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 104 bytes (`0x68`) · **Align:** 8 · **Module:** animdoclib
 

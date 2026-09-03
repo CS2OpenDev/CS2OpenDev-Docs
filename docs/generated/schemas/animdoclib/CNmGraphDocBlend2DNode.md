@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CNmGraphDocBlend2DNode
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmGraphDocBlend2DNode
 
 # CNmGraphDocBlend2DNode
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 360 bytes (`0x168`) · **Align:** 8 · **Module:** animdoclib
 

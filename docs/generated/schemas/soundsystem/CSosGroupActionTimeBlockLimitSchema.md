@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CSosGroupActionTimeBlockLimitSchema
-nav_exclude: true
+module: soundsystem
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [soundsystem](../soundsystem.md) / CSosGroupActionTimeBlockLimitSchema
 
 # CSosGroupActionTimeBlockLimitSchema
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** 8 · **Module:** soundsystem
 

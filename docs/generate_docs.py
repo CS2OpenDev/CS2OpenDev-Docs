@@ -36,6 +36,7 @@ import argparse
 import copy
 import html
 import json
+import math
 import re
 import shutil
 import sys
@@ -65,13 +66,17 @@ except ImportError:
 # (COLLECTION_OF_T fixed-buffer capacity N, read from the binary's
 # m_nFixedBufferCount — previously only the two ATOMIC_I bit-vector types
 # carried a non-zero count). Additive → minor bump (SchemaTracker#8).
-SCHEMA_FORMAT_VERSION = "2.1"
+# 2.2: convars_schema.json gained the optional `value_type` key and the
+# always-present numeric `min` / `max` keys (null when unbounded), and
+# commands_schema.json gained `has_completion_callback`; all four were
+# already loaded from the artifact and only the emitters dropped them.
+# Additive → minor bump.
+SCHEMA_FORMAT_VERSION = "2.2"
 
-# Public GitHub Pages base for the generated reference, used to build
-# absolute cross-links (e.g. cs2_schema.json's diagram_url, issue #21.4) that
-# resolve for a consumer reading the JSON with no site context.  Matches the
-# URLs hand-listed in AGENTS.md.
-PAGES_GENERATED_BASE = "https://cs2opendev.github.io/CS2OpenDev-Docs/generated"
+# Public site base, used to build absolute cross-links (e.g. cs2_schema.json's
+# diagram_url, issue #21.4) that resolve for a consumer reading the JSON with
+# no site context.  Matches the URLs hand-listed in AGENTS.md.
+SITE_BASE = "https://cs2opendev.github.io/CS2OpenDev-Docs"
 
 # Canonical C# namespace injected into the normalised .proto overlays (issue
 # #21.3).  A single shared namespace puts every generated message type in one
@@ -668,6 +673,20 @@ def load_proto_descriptors(descriptorset_path: Path) -> list[dict[str, Any]]:
     return results
 
 
+def _bound_number(raw: Any) -> int | float | None:
+    """A convar bound as a JSON number: int when integral, else float; None
+    when blank or not finite (JSON has no Infinity)."""
+    if raw in (None, ""):
+        return None
+    try:
+        value = float(raw)
+    except (TypeError, ValueError):
+        return None
+    if not math.isfinite(value):
+        return None
+    return int(value) if value.is_integer() else value
+
+
 def load_convars_json(path: Path) -> list[dict]:
     """Load SchemaTracker's ``convars.json``.
 
@@ -770,6 +789,17 @@ def load_gameevents_json(path: Path) -> list[dict[str, Any]]:
 # Overlay loader
 # ---------------------------------------------------------------------------
 
+def _strip_overlay_strings(node: Any) -> Any:
+    """Strip surrounding whitespace from every string in an overlay tree."""
+    if isinstance(node, str):
+        return node.strip()
+    if isinstance(node, dict):
+        return {k: _strip_overlay_strings(v) for k, v in node.items()}
+    if isinstance(node, list):
+        return [_strip_overlay_strings(v) for v in node]
+    return node
+
+
 def load_overlays(overlays_root: Path) -> dict[str, dict]:
     """Walk overlays_root and load all YAML annotation files.
 
@@ -799,10 +829,16 @@ def load_overlays(overlays_root: Path) -> dict[str, dict]:
     for yml in sorted(overlays_root.rglob("*.yml")):
         try:
             data = yaml.safe_load(yml.read_text(encoding="utf-8"))
-        except Exception:
-            continue
+        except (yaml.YAMLError, OSError) as exc:
+            # A silent skip here removed every annotation of a module from the
+            # site and the scheduled job committed the result.
+            print(f"ERROR: {yml} failed to parse: {exc}", file=sys.stderr)
+            sys.exit(2)
         if not isinstance(data, dict):
             continue
+        # Block scalars (``description: >``) end in a newline that would land
+        # inside a table cell and split the row.
+        data = _strip_overlay_strings(data)
         rel = yml.relative_to(overlays_root).with_suffix("")
         key = str(rel).replace("\\", "/")
         parts = key.split("/")
@@ -842,21 +878,127 @@ def get_overlay(overlays: dict[str, dict], module: str, name: str) -> dict:
 
 
 
+# Markdown table cells are line-oriented: a raw newline ends the row and
+# GFM then rejects the whole block, and a bare `<word>` is parsed as an
+# HTML tag.  Everything that reaches a cell goes through one of the four
+# helpers below.  The split that matters is *who wrote the text*: upstream data
+# from the game binaries is escaped hard, overlay YAML is authored Markdown and
+# keeps its links and emphasis.
+
+_CELL_NEWLINE_RE = re.compile(r"\s*(?:\r\n|\r|\n)\s*")
+# Only a `<` that could open a tag; template types (`CUtlVector< int32 >`) keep
+# their angle brackets so the raw Markdown stays readable.
+_TAGLIKE_RE = re.compile(r"<(?=[A-Za-z/!?])")
+
+
+def _defuse_tags(text: str) -> str:
+    """Escape only the `<` characters that would start an HTML element."""
+    return _TAGLIKE_RE.sub("&lt;", text)
+
+
+def _md_cell(text: Any, newline: str = "<br>") -> str:
+    """One upstream free-text value, safe for a Markdown table cell.
+
+    HTML-escapes first (so `Test_LoopCount <count>` shows its arguments), then
+    escapes the pipe, then folds newlines.
+    """
+    s = "" if text is None else str(text)
+    s = s.strip()
+    if not s:
+        return ""
+    s = html.escape(s, quote=False)
+    s = s.replace("|", "\\|")
+    return _CELL_NEWLINE_RE.sub(newline, s)
+
+
+def _md_prose(text: Any, newline: str = "<br>") -> str:
+    """One overlay-authored value, safe for a Markdown table cell.
+
+    Overlay YAML is written by contributors as Markdown, so links and emphasis
+    survive; only the two characters that break the table are touched.  Block
+    scalars (``description: >``) end in a newline, hence the strip.
+    """
+    s = "" if text is None else str(text)
+    s = s.strip()
+    if not s:
+        return ""
+    s = s.replace("|", "\\|")
+    return _CELL_NEWLINE_RE.sub(newline, s)
+
+
+def _md_code_cell(text: Any) -> str:
+    """Body of a backticked table cell.
+
+    A code span renders its content literally, so HTML entities must *not* be
+    pre-escaped here; `&#124;` is the only pipe form GFM renders inside code.
+    """
+    s = "" if text is None else str(text)
+    s = s.strip()
+    if not s:
+        return ""
+    s = s.replace("|", "&#124;")
+    return _CELL_NEWLINE_RE.sub(" ", s)
+
+
+def _code(value: Any) -> str:
+    """A backticked cell, or an empty cell when the value is empty.
+
+    Two adjacent empty code spans used to merge into a single cell containing
+    a pipe and shift every following column left.
+    """
+    s = _md_code_cell(value)
+    return f"`{s}`" if s else ""
+
+
+def _md_escape(text: Any) -> str:
+    """Deprecated alias for :func:`_md_cell`."""
+    return _md_cell(text)
+
+
+# Schema type names may be nested (``CNmBlend1DNode::CDefinition``); the old
+# ``\b[A-Z_]\w+\b`` stopped at the first ``:`` and linked the outer class only.
+_TYPE_REF_RE = re.compile(r"\b[A-Z_]\w+(?:::\w+)*\b")
+
+
+def _longest_known_prefix(word: str, entities: dict[str, dict]) -> str | None:
+    """Longest ``A::B::C`` prefix of *word* that names a known entity."""
+    parts = word.split("::")
+    for n in range(len(parts), 0, -1):
+        cand = "::".join(parts[:n])
+        if cand in entities:
+            return cand
+    return None
+
+
 def _extract_type_refs(type_str: str, entities: dict[str, dict]) -> list[str]:
     """Return names of known schema entities referenced in a field type string."""
     seen: list[str] = []
-    for m in re.finditer(r"\b[A-Z_]\w+\b", type_str):
-        word = m.group(0)
-        if word in entities and word not in seen:
+    for m in _TYPE_REF_RE.finditer(type_str):
+        word = _longest_known_prefix(m.group(0), entities)
+        if word and word not in seen:
             seen.append(word)
     return seen
 
 
+_MERMAID_PLAIN_RE = re.compile(r"^[A-Za-z_]\w*$")
+_MERMAID_ID_RE = re.compile(r"\W")
+
+
 def _mermaid_safe(name: str) -> str:
-    """Make a name safe for Mermaid by quoting if needed."""
-    if re.match(r"^[A-Za-z_]\w*$", name):
+    """Make a name safe for Mermaid by quoting if needed.
+
+    Mermaid 10.9's classDiagram grammar rejects a double-quoted class name
+    (``"A::B"`` is a parse error); backticks parse in every position the
+    generator emits - edges, class blocks, labelled arrows, enumerations.
+    """
+    if _MERMAID_PLAIN_RE.match(name):
         return name
-    return f'"{name}"'
+    return f"`{name}`"
+
+
+def _mermaid_id(name: str) -> str:
+    """A plain-identifier node id for a qualified name."""
+    return _MERMAID_ID_RE.sub("_", name)
 
 
 # Proto primitive scalar types that do not get anchor-linked.
@@ -875,13 +1017,31 @@ def _proto_anchor(name: str) -> str:
     return slug.strip().replace(" ", "-")
 
 
-def _proto_link_type(ftype: str, local_names: set[str]) -> str:
-    """Return plain type text for primitives; an anchor link for known local types."""
+def _proto_link_type(
+    ftype: str,
+    local_names: dict[str, str],
+    global_names: dict[str, tuple[str, str]] | None = None,
+) -> str:
+    """Plain text for primitives, an anchor link for a type this build defines.
+
+    Descriptor field types arrive fully qualified (``CDemoClassInfo.class_t``),
+    so the qualified name is tried first; the simple name is only an alias when
+    it is unambiguous.  A type defined in another file links to that file's
+    page instead of a dead in-page anchor.
+    """
     raw = ftype.lstrip(".")
     simple = raw.split(".")[-1]
-    if simple in _PROTO_PRIMITIVES or simple not in local_names:
+    if simple in _PROTO_PRIMITIVES:
         return raw
-    return f"[{simple}](#{_proto_anchor(simple)})"
+    local = local_names.get(raw) or local_names.get(simple)
+    if local:
+        return f"[{raw}](#{_proto_anchor(local)})"
+    if global_names:
+        hit = global_names.get(raw) or global_names.get(simple)
+        if hit:
+            stem, qualified = hit
+            return f"[{raw}]({stem}.md#{_proto_anchor(qualified)})"
+    return _defuse_tags(raw)
 
 
 def _type_filename(name: str) -> str:
@@ -920,6 +1080,122 @@ def _schema_page_href(
     return f"../{mod}/{_type_filename(name)}.md"
 
 
+def _resolve_variant(
+    name: str,
+    entities: dict[str, dict],
+    prefer_module: str = "",
+    prefer_binary_module: str = "",
+) -> dict[str, Any] | None:
+    """Return the ``(module, name)`` variant of *name* that a caller in
+    *prefer_module* should read.
+
+    ``entities`` is keyed by bare name and the first registration wins, so for
+    the 189 client/server twins the client record is always the primary.  A
+    server class walking to ``CBaseEntity`` must get the server record or it
+    inherits the client layout and the client's offsets.  Preference order:
+    same ``projectName``, then same binary module (SchemaTracker records the
+    parent's binary in ``base_modules``), then the primary record.
+    """
+    primary = entities.get(name)
+    if primary is None:
+        return None
+    dups = primary.get("duplicates")
+    if not dups:
+        return primary
+    variants = [primary, *dups]
+    if prefer_module:
+        for v in variants:
+            if v.get("module") == prefer_module:
+                return v
+    if prefer_binary_module:
+        for v in variants:
+            if v.get("binary_module") == prefer_binary_module:
+                return v
+    return primary
+
+
+def _all_variants(name: str, entities: dict[str, dict]) -> list[dict[str, Any]]:
+    """Every ``(module, name)`` record registered under *name*."""
+    e = entities.get(name)
+    if not e:
+        return []
+    return [e, *e.get("duplicates", [])]
+
+
+def _base_variant_for(
+    child: dict[str, Any], base_name: str, entities: dict[str, dict]
+) -> dict[str, Any] | None:
+    """Return the variant of *base_name* that *child* actually derives from.
+
+    ``bases`` and ``base_modules`` are positionally paired, so the binary
+    module of the parent is read off the same index.
+    """
+    bases = child.get("bases", [])
+    bmods = child.get("base_modules", [])
+    for i, b in enumerate(bases):
+        if b == base_name:
+            return _resolve_variant(
+                b,
+                entities,
+                child.get("module", ""),
+                bmods[i] if i < len(bmods) else "",
+            )
+    return None
+
+
+def _own_children(
+    variant: dict[str, Any],
+    entities: dict[str, dict],
+    children: dict[str, list[dict]],
+) -> list[dict[str, Any]]:
+    """Children that derive from *this* variant, not from a same-named twin.
+
+    A client class listing ``CBaseAnimGraph`` as its base derives from the
+    client variant; without this filter it also shows up under the server
+    variant's Derived-by list and in its diagram.
+    """
+    name = variant["name"]
+    return [
+        c for c in children.get(name, [])
+        if _base_variant_for(c, name, entities) is variant
+    ]
+
+
+def _declaring_module(
+    row: dict[str, Any], entities: dict[str, dict], from_module: str
+) -> str:
+    """Grouping module of the class a layout row was declared in."""
+    return row.get("declaring_module") or from_module
+
+
+_BITFIELD_RE = re.compile(r"^bitfield:(\d+)$")
+
+
+def _annotate_bitfields(rows: list[dict[str, Any]]) -> None:
+    """Attach a ``bits`` (lo, hi) range to each run of bitfield rows.
+
+    Every member of a bitfield shares the byte offset; the bit position is
+    only recoverable by accumulating the declared widths in order, which the
+    offset sort preserves.
+    """
+    run_offset: Any = None
+    bit = 0
+    for r in rows:
+        fld = r["field"]
+        off = fld.get("offset")
+        m = _BITFIELD_RE.match(str(fld.get("type", "")))
+        if not m or not isinstance(off, int):
+            run_offset = None
+            bit = 0
+            continue
+        width = int(m.group(1))
+        if off != run_offset:
+            run_offset = off
+            bit = 0
+        r["bits"] = (bit, bit + width - 1)
+        bit += width
+
+
 def _flatten_layout(
     entity: dict[str, Any], entities: dict[str, dict]
 ) -> tuple[list[dict[str, Any]], list[str]]:
@@ -952,7 +1228,12 @@ def _flatten_layout(
             if fn in seen_fields:
                 continue
             seen_fields.add(fn)
-            rows.append({"field": f, "declaring": e["name"], "inherited": not is_self})
+            rows.append({
+                "field": f,
+                "declaring": e["name"],
+                "declaring_module": e.get("module", ""),
+                "inherited": not is_self,
+            })
 
     def walk_bases(e: dict[str, Any]) -> None:
         for i, b in enumerate(e.get("bases", [])):
@@ -960,7 +1241,7 @@ def _flatten_layout(
                 if b in visited:
                     continue
                 visited.add(b)
-                be = entities.get(b)
+                be = _base_variant_for(e, b, entities)
                 if be:
                     add_fields(be, False)
                     walk_bases(be)
@@ -974,7 +1255,47 @@ def _flatten_layout(
         if isinstance(r["field"].get("offset"), int)
         else (1, 0)
     )
+    _annotate_bitfields(rows)
     return rows, secondary
+
+
+def check_module_layout_consistency(
+    entities: dict[str, dict]
+) -> tuple[list[str], int]:
+    """Verify no page inherits a layout from a foreign-module twin.
+
+    Returns ``(violations, exempt)``.  A violation is an inherited row whose
+    declaring class sits in another module *while a same-module variant of
+    that class exists*, which is the client/server offset mixing this build
+    once shipped.  ``exempt`` counts the legitimate cross-module rows: bases such
+    as ``CPlayerPawnComponent`` that SchemaTracker only ever registers under
+    one projectName, so there is no same-module variant to prefer.
+    """
+    violations: list[str] = []
+    exempt = 0
+    for entity in entities.values():
+        for variant in (entity, *entity.get("duplicates", [])):
+            if variant.get("kind") == "enum":
+                continue
+            mod = variant.get("module", "")
+            rows, _ = _flatten_layout(variant, entities)
+            for r in rows:
+                if not r["inherited"]:
+                    continue
+                dname = r["declaring"]
+                dmod = r.get("declaring_module", "")
+                if dmod == mod:
+                    continue
+                dmods = {v.get("module", "") for v in _all_variants(dname, entities)}
+                if mod in dmods:
+                    violations.append(
+                        f"{mod}/{variant['name']}: field "
+                        f"`{r['field'].get('name', '')}` attributed to "
+                        f"{dmod or '?'}/{dname}"
+                    )
+                else:
+                    exempt += 1
+    return violations, exempt
 
 
 def _md_link_type(
@@ -990,17 +1311,44 @@ def _md_link_type(
     """
     def replace(m: re.Match) -> str:
         word = m.group(0)
-        if word in entities:
-            href = _schema_page_href(word, entities, current_module)
+        cand = _longest_known_prefix(word, entities)
+        if cand:
+            href = _schema_page_href(cand, entities, current_module)
             if href:
-                return f"[{word}]({href})"
+                rest = word[len(cand):]
+                return f"[{cand}]({href}){rest}"
         return word
 
-    return re.sub(r"\b[A-Z_]\w+\b", replace, type_str)
+    return _TYPE_REF_RE.sub(replace, _defuse_tags(type_str).replace("|", "\\|"))
+
+
+_UNSIGNED_UNDERLYING_RE = re.compile(r"^uint(\d+)_t$")
+
+
+def _enum_value_cell(value: Any, underlying: Any) -> str:
+    """Render an enum member's value.
+
+    SchemaTracker reports member values signed.  Under an unsigned underlying
+    type a `-1` is really the all-ones pattern, so the wrapped hex is shown
+    alongside it rather than leaving the reader to guess the width.
+    """
+    s = "" if value is None else str(value).strip()
+    if not s:
+        return ""
+    m = _UNSIGNED_UNDERLYING_RE.match(str(underlying or ""))
+    if m:
+        try:
+            n = int(s, 0)
+        except ValueError:
+            return _md_cell(s)
+        if n < 0:
+            bits = int(m.group(1))
+            return f"{s} (`0x{n & ((1 << bits) - 1):x}`)"
+    return _md_cell(s)
 
 
 def _md_front_matter(**kwargs: str) -> str:
-    """Render a YAML front matter block for Jekyll."""
+    """Render a small YAML front matter block for a generated page."""
     lines = ["---"]
     for key, val in kwargs.items():
         s = str(val)
@@ -1021,16 +1369,36 @@ def _md_front_matter(**kwargs: str) -> str:
     return "\n".join(lines)
 
 
+def _build_children_index(entities: dict[str, dict]) -> dict[str, list[dict]]:
+    """Map base-class name to the entities that list it in ``bases``.
+
+    Every ``(module, name)`` variant is indexed, not just the primary record,
+    so a server class's children include the server twins that ``_add_entity``
+    parked under ``duplicates``.  Callers narrow the list with
+    :func:`_own_children`.
+    """
+    children: dict[str, list[dict]] = defaultdict(list)
+    for e in entities.values():
+        for variant in (e, *e.get("duplicates", [])):
+            for b in dict.fromkeys(variant.get("bases", [])):
+                children[b].append(variant)
+    return children
+
+
 def _build_md_relationship_diagram(
     name: str,
     entity: dict,
     entities: dict[str, dict],
+    children: dict[str, list[dict]] | None = None,
 ) -> list[str]:
     """Build Mermaid classDiagram lines for an entity's relationships."""
+    if children is None:
+        children = _build_children_index(entities)
     lines: list[str] = []
     seen_edges: set[tuple[str, str]] = set()
 
-    # Walk up inheritance chain (up to 5 levels)
+    # Walk up inheritance chain (up to 5 levels), staying inside the module
+    # the page belongs to whenever the base has a same-module variant.
     chain: list[str] = [name]
     current = entity
     for _ in range(5):
@@ -1039,7 +1407,7 @@ def _build_md_relationship_diagram(
             break
         parent = bases[0]
         chain.append(parent)
-        current = entities.get(parent, {})
+        current = _base_variant_for(current, parent, entities) or {}
         if not current:
             break
 
@@ -1051,8 +1419,8 @@ def _build_md_relationship_diagram(
             lines.append(f"    {_mermaid_safe(parent)} <|-- {_mermaid_safe(child)}")
             seen_edges.add(edge)
 
-    for e in entities.values():
-        if name in e.get("bases", []) and e["name"] != name:
+    for e in _own_children(entity, entities, children):
+        if e["name"] != name:
             edge = (name, e["name"])
             if edge not in seen_edges:
                 lines.append(f"    {_mermaid_safe(name)} <|-- {_mermaid_safe(e['name'])}")
@@ -1081,6 +1449,8 @@ def _render_schema_type_page(
     mod: str,
     entities: dict[str, dict],
     overlays: dict[str, dict],
+    children: dict[str, list[dict]] | None = None,
+    source_info: dict[str, Any] | None = None,
 ) -> str:
     """Render one class/enum's standalone Markdown page (``schemas/<mod>/<Type>.md``).
 
@@ -1088,15 +1458,23 @@ def _render_schema_type_page(
     inherited along the primary-parent spine, each with its absolute offset —
     which the old single-file-per-module rendering never produced.
     """
+    if children is None:
+        children = _build_children_index(entities)
     name = e["name"]
     kind = e["kind"]
     overlay = get_overlay(overlays, mod, name)
     L: list[str] = []
-    L.append(_md_front_matter(layout="default", title=name, nav_exclude="true"))
+    # The 189 client/server twins share a bare name; the module goes in the
+    # title so a search result says which one it landed on.
+    twins = [v for v in _all_variants(name, entities) if v.get("module") != mod]
+    title = f"{name} ({mod})" if twins else name
+    L.append(_md_front_matter(title=title, module=mod, kind=kind))
 
     # Breadcrumb (this page lives at schemas/<mod>/<Type>.md).
     L.append(f"[Schemas](../../schemas.md) / [{mod}](../{mod}.md) / {name}\n")
     L.append(f"# {name}\n")
+    if source_info:
+        L.append(_provenance_block(source_info))
 
     if overlay.get("description"):
         L.append(f"{overlay['description']}\n")
@@ -1110,11 +1488,22 @@ def _render_schema_type_page(
     if isinstance(e.get("size"), int):
         stats.append(f"**Size:** {e['size']} bytes (`0x{e['size']:x}`)")
     if isinstance(e.get("alignment"), int):
-        stats.append(f"**Align:** {e['alignment']}")
+        # 0xFF is the schema system's "alignment unspecified" sentinel.
+        align = e["alignment"]
+        stats.append(
+            "**Align:** n/a (unspecified)" if align == 255 else f"**Align:** {align}"
+        )
     if kind == "enum" and e.get("enum_underlying"):
         stats.append(f"**Underlying:** `{e['enum_underlying']}`")
     stats.append(f"**Module:** {mod}")
     L.append(" · ".join(stats) + "\n")
+
+    if twins:
+        links = ", ".join(
+            f"[{name} ({v['module']})](../{v['module']}/{_type_filename(name)}.md)"
+            for v in sorted(twins, key=lambda v: v.get("module", ""))
+        )
+        L.append(f"**Twin:** {links}\n")
 
     # Inherits / derived.
     if e.get("bases"):
@@ -1123,10 +1512,7 @@ def _render_schema_type_page(
             href = _schema_page_href(b, entities, mod)
             base_links.append(f"[{b}]({href})" if href else b)
         L.append(f"**Inherits from:** {', '.join(base_links)}\n")
-    derived = sorted(
-        (d for d in entities.values() if name in d.get("bases", [])),
-        key=lambda x: x["name"],
-    )
+    derived = sorted(_own_children(e, entities, children), key=lambda x: x["name"])
     if derived:
         links = []
         for d in derived:
@@ -1138,7 +1524,7 @@ def _render_schema_type_page(
     # MGetKV3ClassDefaults blob (rendered separately as a collapsible below).
     if e.get("metadata"):
         tags = [
-            f"`{_format_metadata(m)}`" for m in e["metadata"]
+            _code(_format_metadata(m)) for m in e["metadata"]
             if isinstance(m, dict) and m.get("name")
             and not m["name"].startswith("MNetworkVarNames")
             and m["name"] != "MGetKV3ClassDefaults"
@@ -1147,7 +1533,7 @@ def _render_schema_type_page(
             L.append(f"**Metadata:** {', '.join(tags)}\n")
 
     # Relationship diagram.
-    diagram_lines = _build_md_relationship_diagram(name, e, entities)
+    diagram_lines = _build_md_relationship_diagram(name, e, entities, children)
     if diagram_lines:
         L.append("**Relationships:**\n")
         L.append("```mermaid")
@@ -1157,22 +1543,41 @@ def _render_schema_type_page(
 
     if kind == "enum":
         vals = e.get("fields", [])
+        underlying = e.get("enum_underlying") or ""
+        overlay_members = overlay.get("fields", {}) or {}
+        if not isinstance(overlay_members, dict):
+            overlay_members = {}
         if vals:
             L.append("## Values\n")
             L.append("| Name | Value | Description |")
             L.append("|------|-------|-------------|")
             for fld in vals:
-                desc = _metadata_friendly_text(fld.get("annotations")).replace("|", "\\|")
-                L.append(f"| `{fld['name']}` | {fld.get('value', '')} | {desc} |")
+                parts: list[str] = []
+                mover = overlay_members.get(fld["name"], {})
+                if isinstance(mover, dict):
+                    if mover.get("description"):
+                        parts.append(_md_prose(mover["description"]))
+                    if mover.get("notes"):
+                        parts.append(f"*{_md_prose(mover['notes'])}*")
+                upstream = _md_cell(_metadata_friendly_text(fld.get("annotations")))
+                if upstream:
+                    parts.append(upstream)
+                L.append(
+                    f"| {_code(fld['name'])} | {_enum_value_cell(fld.get('value', ''), underlying)} "
+                    f"| {' '.join(p for p in parts if p)} |"
+                )
             L.append("")
     else:
         rows, secondary = _flatten_layout(e, entities)
         overlay_fields = overlay.get("fields", {}) or {}
+        if not isinstance(overlay_fields, dict):
+            overlay_fields = {}
         if rows:
             own = sum(1 for r in rows if not r["inherited"])
             L.append("## Memory layout\n")
             L.append(
-                f"{len(rows)} fields ({own} declared here, {len(rows) - own} "
+                f"{len(rows)} {'field' if len(rows) == 1 else 'fields'} "
+                f"({own} declared here, {len(rows) - own} "
                 "inherited). Offsets are absolute from the object base.\n"
             )
             L.append("| Offset | Field | Type | From | Annotations |")
@@ -1182,6 +1587,10 @@ def _render_schema_type_page(
                 fname = fld.get("name", "")
                 off = fld.get("offset")
                 off_str = f"`0x{off:x}`" if isinstance(off, int) else "—"
+                bits = r.get("bits")
+                if bits and isinstance(off, int):
+                    lo, hi = bits
+                    off_str += f" bit {lo}" if hi == lo else f" bits {lo}..{hi}"
                 type_linked = _md_link_type(fld.get("type", ""), entities, mod)
                 if r["inherited"]:
                     dhref = _schema_page_href(r["declaring"], entities, mod)
@@ -1191,28 +1600,42 @@ def _render_schema_type_page(
                 else:
                     from_cell = ""
                 annot_str = " ".join(
-                    f"`{_format_metadata(a)}`"
+                    _code(_format_metadata(a))
                     for a in fld.get("annotations", [])
                     if isinstance(a, dict) and a.get("name")
                 )
                 desc_parts: list[str] = []
-                fover = (
-                    overlay_fields.get(fname, {})
-                    if not r["inherited"] and isinstance(overlay_fields, dict)
-                    else {}
-                )
+                # An inherited row carries the *declaring* class's annotation:
+                # 87% of the rows on this site are inherited copies, so looking
+                # only at this page's overlay hides almost all field prose.
+                if r["inherited"]:
+                    dover = get_overlay(
+                        overlays, _declaring_module(r, entities, mod), r["declaring"]
+                    )
+                    dfields = dover.get("fields", {}) if isinstance(dover, dict) else {}
+                    fover = (
+                        dfields.get(fname, {}) if isinstance(dfields, dict) else {}
+                    )
+                else:
+                    fover = overlay_fields.get(fname, {})
                 if fover and isinstance(fover, dict):
                     if fover.get("description"):
-                        desc_parts.append(str(fover["description"]))
+                        desc_parts.append(_md_prose(fover["description"]))
                     if fover.get("notes"):
-                        desc_parts.append(f"*{fover['notes']}*")
+                        desc_parts.append(f"*{_md_prose(fover['notes'])}*")
                 if annot_str:
                     desc_parts.append(annot_str)
-                ann_cell = " ".join(desc_parts).replace("|", "\\|")
+                ann_cell = " ".join(p for p in desc_parts if p)
                 L.append(
-                    f"| {off_str} | `{fname}` | {type_linked} | {from_cell} | {ann_cell} |"
+                    f"| {off_str} | {_code(fname)} | {type_linked} | {from_cell} "
+                    f"| {ann_cell} |"
                 )
             L.append("")
+        else:
+            L.append("## Memory layout\n")
+            size = e.get("size")
+            size_txt = f" ({size} bytes of opaque storage)" if isinstance(size, int) else ""
+            L.append(f"No schema-visible fields{size_txt}.\n")
         if secondary:
             sec_links = []
             for b in secondary:
@@ -1225,8 +1648,8 @@ def _render_schema_type_page(
             )
 
     # MGetKV3ClassDefaults — raw KV3 default block, collapsed to keep the page
-    # scannable.  Rendered as escaped <pre> so it survives regardless of the
-    # kramdown block-HTML setting.
+    # scannable.  Rendered as escaped <pre> since the raw value can itself
+    # contain angle brackets and quotes.
     kv3 = None
     for m in e.get("metadata", []) or []:
         if isinstance(m, dict) and m.get("name") == "MGetKV3ClassDefaults":
@@ -1245,6 +1668,7 @@ def generate_schemas_index_md(
     overlays: dict[str, dict],
     out_dir: Path,
     diagram_modules: set[str] | None = None,
+    source_info: dict[str, Any] | None = None,
 ) -> None:
     """Generate the schema reference: a master index, a slim per-module index
     page, and one standalone page per class/enum.
@@ -1262,10 +1686,16 @@ def generate_schemas_index_md(
         for dup in entity.get("duplicates", []):
             by_module[dup["module"]].append(dup)
 
+    # One base-name -> children index for the whole run; the per-page
+    # relationship diagram and the Derived-by list both read it.
+    children = _build_children_index(entities)
+
     # Master schemas.md
     lines: list[str] = []
-    lines.append(_md_front_matter(layout="default", title="Schemas", nav_order="2"))
+    lines.append(_md_front_matter(title="Schemas"))
     lines.append("# Schema Reference\n")
+    if source_info:
+        lines.append(_provenance_block(source_info))
     lines.append(
         "Every class, struct, and enum extracted from CS2's runtime schema, "
         "organised by module. Each module page lists its types; each type has "
@@ -1296,12 +1726,12 @@ def generate_schemas_index_md(
         # Slim module index.
         idx: list[str] = []
         idx.append(_md_front_matter(
-            layout="default",
             title=mod,
-            parent="Schemas",
-            nav_exclude="true",
+            module=mod,
         ))
         idx.append(f"# Module: {mod}\n")
+        if source_info:
+            idx.append(_provenance_block(source_info))
         if diagram_modules is None or mod in diagram_modules:
             idx.append(f"[📊 View UML Diagram](../diagrams/{mod}.md)\n")
         idx.append(
@@ -1338,7 +1768,9 @@ def generate_schemas_index_md(
 
         # One standalone page per type.
         for e in sorted_ents:
-            page = _render_schema_type_page(e, mod, entities, overlays)
+            page = _render_schema_type_page(
+                e, mod, entities, overlays, children, source_info
+            )
             (mod_dir / f"{_type_filename(e['name'])}.md").write_text(
                 page, encoding="utf-8"
             )
@@ -1397,10 +1829,7 @@ def generate_module_uml_md(entities: dict[str, dict], out_dir: Path) -> set[str]
 
         md_lines: list[str] = []
         md_lines.append(_md_front_matter(
-            layout="default",
             title=f"UML: {mod}",
-            parent="Schemas",
-            nav_exclude="true",
         ))
         md_lines.append(f"# UML: {mod}\n")
         md_lines.append(
@@ -1422,40 +1851,76 @@ def generate_module_uml_md(entities: dict[str, dict], out_dir: Path) -> set[str]
     return generated
 
 
+def _proto_flatten_messages(
+    msgs: list[dict], prefix: str = ""
+) -> list[tuple[str, dict]]:
+    """``(qualified name, message)`` for every message, nested included."""
+    out: list[tuple[str, dict]] = []
+    for m in msgs:
+        qualified = f"{prefix}{m['name']}"
+        out.append((qualified, m))
+        out.extend(_proto_flatten_messages(m.get("nested", []), f"{qualified}."))
+    return out
+
+
+def _proto_flatten_enums(proto: dict) -> list[tuple[str, dict]]:
+    """``(qualified name, enum)`` for top-level and message-nested enums."""
+    out: list[tuple[str, dict]] = [
+        (e["name"], e) for e in proto.get("enums", [])
+    ]
+    for qualified, msg in _proto_flatten_messages(proto.get("messages", [])):
+        for en in msg.get("enums", []):
+            out.append((f"{qualified}.{en['name']}", en))
+    return out
+
+
+def _proto_name_index(proto: dict) -> dict[str, str]:
+    """Map every way a field can name a local type to its qualified name.
+
+    A simple name is registered as an alias only when it is unambiguous in
+    this file: ``key_t`` exists under two different parents in
+    ``gameevents.proto``, and collapsing them merged two unrelated types.
+    """
+    qualified = [q for q, _ in _proto_flatten_messages(proto.get("messages", []))]
+    qualified += [q for q, _ in _proto_flatten_enums(proto)]
+    index: dict[str, str] = {q: q for q in qualified}
+    simple_counts: dict[str, int] = {}
+    for q in qualified:
+        simple_counts[q.split(".")[-1]] = simple_counts.get(q.split(".")[-1], 0) + 1
+    for q in qualified:
+        simple = q.split(".")[-1]
+        if simple_counts[simple] == 1:
+            index.setdefault(simple, q)
+    return index
+
+
 def _build_proto_mermaid(proto: dict) -> list[str]:
     """Build Mermaid classDiagram lines for a proto file.
 
     Returns a list of lines to be embedded inside a ``classDiagram`` block.
     Returns an empty list when there is nothing to diagram.
     """
-    _SCALARS = {
-        "double", "float", "int32", "int64", "uint32", "uint64",
-        "sint32", "sint64", "fixed32", "fixed64", "sfixed32", "sfixed64",
-        "bool", "string", "bytes",
-    }
-
-    def _flat_msgs(msgs: list) -> list:
-        result: list = []
-        for m in msgs:
-            result.append(m)
-            result.extend(_flat_msgs(m.get("nested", [])))
-        return result
-
-    all_msgs = _flat_msgs(proto.get("messages", []))
-    all_enums = list(proto.get("enums", []))
-    for msg in all_msgs:
-        all_enums.extend(msg.get("enums", []))
+    all_msgs = _proto_flatten_messages(proto.get("messages", []))
+    all_enums = _proto_flatten_enums(proto)
 
     if not all_msgs and not all_enums:
         return []
 
-    local_names: set[str] = {m["name"] for m in all_msgs} | {e["name"] for e in all_enums}
+    # Node ids are qualified so two nested types with the same simple name
+    # (``key_t`` under two parents) stay separate nodes.
+    names = _proto_name_index(proto)
+
+    def node(qualified: str) -> str:
+        return _mermaid_id(qualified)
+
+    def decl(qualified: str) -> str:
+        nid = _mermaid_id(qualified)
+        return f'{nid}["{qualified}"]' if nid != qualified else nid
 
     lines: list[str] = ["direction LR", ""]
 
-    for msg in all_msgs:
-        safe = _mermaid_safe(msg["name"])
-        lines.append(f"  class {safe} {{")
+    for qualified, msg in all_msgs:
+        lines.append(f"  class {decl(qualified)} {{")
         for fld in msg.get("fields", []):
             ftype = fld["type"].lstrip(".")
             type_str = f"List~{ftype}~" if fld.get("label") == "repeated" else ftype
@@ -1465,14 +1930,16 @@ def _build_proto_mermaid(proto: dict) -> list[str]:
 
     # Relationship arrows (message-type fields within the same file)
     seen_arrows: set[str] = set()
-    for msg in all_msgs:
-        src = _mermaid_safe(msg["name"])
+    for qualified, msg in all_msgs:
+        src = node(qualified)
         for fld in msg.get("fields", []):
             raw = fld["type"].lstrip(".")
-            simple = raw.split(".")[-1]
-            if simple not in local_names or simple in _SCALARS:
+            if raw.split(".")[-1] in _PROTO_PRIMITIVES:
                 continue
-            tgt = _mermaid_safe(simple)
+            target = names.get(raw) or names.get(raw.split(".")[-1])
+            if not target:
+                continue
+            tgt = node(target)
             arrow_key = f"{src}-->{tgt}"
             if arrow_key in seen_arrows:
                 continue
@@ -1482,9 +1949,8 @@ def _build_proto_mermaid(proto: dict) -> list[str]:
     if seen_arrows:
         lines.append("")
 
-    for en in all_enums:
-        safe = _mermaid_safe(en["name"])
-        lines.append(f"  class {safe}{{")
+    for qualified, en in all_enums:
+        lines.append(f"  class {decl(qualified)}{{")
         lines.append("    <<enumeration>>")
         for v in en.get("values", []):
             lines.append(f"    {v['name']}")
@@ -1492,6 +1958,41 @@ def _build_proto_mermaid(proto: dict) -> list[str]:
         lines.append("")
 
     return lines
+
+
+def _proto_global_index(protos: list[dict]) -> dict[str, tuple[str, str]]:
+    """Map a type name to ``(page stem, qualified name)`` across every file.
+
+    Files are walked in filename order and the first definition of a name
+    wins, so the 2 cross-file symbol collisions the decompiled set carries
+    resolve deterministically.
+    """
+    index: dict[str, tuple[str, str]] = {}
+    for proto in sorted(protos, key=lambda x: x["filename"]):
+        stem = proto["filename"].removesuffix(".proto")
+        for alias, qualified in _proto_name_index(proto).items():
+            index.setdefault(alias, (stem, qualified))
+    return index
+
+
+def _proto_field_desc(
+    fld: dict, fover: dict | None
+) -> str:
+    """The Description cell for one proto field row."""
+    parts: list[str] = []
+    if isinstance(fover, dict) and fover.get("description"):
+        parts.append(_md_prose(fover["description"]))
+    if fld.get("comment"):
+        parts.append(_md_cell(fld["comment"]))
+    if fld.get("oneof"):
+        parts.append(f"*(oneof: {_code(fld['oneof'])})*")
+    if fld.get("deprecated"):
+        parts.append("**deprecated**")
+    if fld.get("packed") is True:
+        parts.append("*(packed)*")
+    if fld.get("default", ""):
+        parts.append(f"*(default: {_code(fld['default'])})*")
+    return " ".join(p for p in parts if p)
 
 
 def generate_protobufs_md_page(
@@ -1502,9 +2003,12 @@ def generate_protobufs_md_page(
     """Generate protobufs.md and per-file proto Markdown pages."""
     (out_dir / "proto").mkdir(exist_ok=True)
 
+    global_names = _proto_global_index(protos)
+    stems = {p["filename"].removesuffix(".proto") for p in protos}
+
     # Master index
     idx_lines: list[str] = []
-    idx_lines.append(_md_front_matter(layout="default", title="Protobufs", nav_order="3"))
+    idx_lines.append(_md_front_matter(title="Protobufs"))
     idx_lines.append("# Protobuf Reference\n")
     idx_lines.append("Network message definitions and game event structures from CS2's Protobufs directory.\n")
     idx_lines.append("| File | Messages | Enums |")
@@ -1512,9 +2016,19 @@ def generate_protobufs_md_page(
     for proto in sorted(protos, key=lambda x: x["filename"]):
         fname = proto["filename"]
         stem = fname.removesuffix(".proto")
-        msg_count = len(proto.get("messages", []))
-        enum_count = len(proto.get("enums", []))
-        idx_lines.append(f"| [{fname}](proto/{stem}.md) | {msg_count} | {enum_count} |")
+        top_msgs = len(proto.get("messages", []))
+        all_msgs = len(_proto_flatten_messages(proto.get("messages", [])))
+        top_enums = len(proto.get("enums", []))
+        all_enums = len(_proto_flatten_enums(proto))
+        msg_cell = (
+            f"{top_msgs} (+{all_msgs - top_msgs} nested)"
+            if all_msgs > top_msgs else str(top_msgs)
+        )
+        enum_cell = (
+            f"{top_enums} (+{all_enums - top_enums} nested)"
+            if all_enums > top_enums else str(top_enums)
+        )
+        idx_lines.append(f"| [{fname}](proto/{stem}.md) | {msg_cell} | {enum_cell} |")
     idx_lines.append("")
     (out_dir / "protobufs.md").write_text("\n".join(idx_lines), encoding="utf-8")
 
@@ -1523,13 +2037,12 @@ def generate_protobufs_md_page(
         pfile = proto["filename"]
         stem = pfile.removesuffix(".proto")
         overlay = overlays.get(f"protobufs/{stem}", {})
+        local_names = _proto_name_index(proto)
 
         p_lines: list[str] = []
         p_lines.append(_md_front_matter(
-            layout="default",
             title=pfile,
-            parent="Protobufs",
-            nav_exclude="true",
+            proto=pfile,
         ))
         p_lines.append(f"# `{pfile}`\n")
 
@@ -1541,9 +2054,13 @@ def generate_protobufs_md_page(
         if proto.get("syntax"):
             meta_bits.append(f"**Syntax:** `{proto['syntax']}`")
         if proto.get("imports"):
-            meta_bits.append(
-                "**Imports:** " + ", ".join(f"`{imp}`" for imp in proto["imports"])
-            )
+            import_cells = []
+            for imp in proto["imports"]:
+                istem = imp.removesuffix(".proto")
+                import_cells.append(
+                    f"[`{imp}`]({istem}.md)" if istem in stems else f"`{imp}`"
+                )
+            meta_bits.append("**Imports:** " + ", ".join(import_cells))
         if meta_bits:
             p_lines.append("  ".join(meta_bits) + "\n")
 
@@ -1561,120 +2078,144 @@ def generate_protobufs_md_page(
             p_lines.extend(diagram)
             p_lines.append("```\n")
 
+        def _enum_section(qualified: str, en: dict, level: int) -> None:
+            p_lines.append(f"{'#' * level} `{qualified}`\n")
+            p_lines.append("| Name | Value |")
+            p_lines.append("|------|-------|")
+            for v in en.get("values", []):
+                p_lines.append(f"| {_code(v['name'])} | {v['number']} |")
+            p_lines.append("")
+
         if proto.get("enums"):
             p_lines.append("## Enums\n")
             for en in proto["enums"]:
-                p_lines.append(f"### `{en['name']}`\n")
-                p_lines.append("| Name | Value |")
-                p_lines.append("|------|-------|")
-                for v in en.get("values", []):
-                    p_lines.append(f"| `{v['name']}` | {v['number']} |")
-                p_lines.append("")
-
-        # Build a set of local type names (messages + enums) for anchor-linking.
-        local_names: set[str] = (
-            {m["name"] for m in proto.get("messages", [])}
-            | {e["name"] for e in proto.get("enums", [])}
-        )
+                _enum_section(en["name"], en, 3)
 
         overlay_msgs: dict = overlay.get("messages", {}) or {}
+        if not isinstance(overlay_msgs, dict):
+            overlay_msgs = {}
+
+        def _message_section(qualified: str, msg: dict, level: int) -> None:
+            mname = msg["name"]
+            # Overlay keys are written as the message name; a nested type can
+            # also be addressed by its qualified name.
+            mover = overlay_msgs.get(qualified) or overlay_msgs.get(mname) or {}
+            if not isinstance(mover, dict):
+                mover = {}
+            p_lines.append(f"{'#' * level} `{qualified}`\n")
+            if mover.get("description"):
+                p_lines.append(f"{mover['description']}\n")
+            if mover.get("notes"):
+                p_lines.append(f"> 📝 {mover['notes']}\n")
+
+            # Surface oneof groups before the fields table so readers
+            # know which fields are mutually exclusive.
+            nonempty_oneofs = [o for o in msg.get("oneofs", []) if o.get("fields")]
+            if nonempty_oneofs:
+                oneof_bits = ", ".join(
+                    f"`{o['name']}` ({', '.join(o['fields'])})"
+                    for o in nonempty_oneofs
+                )
+                p_lines.append(f"**Oneofs:** {oneof_bits}\n")
+
+            if msg.get("fields"):
+                overlay_flds = mover.get("fields", {}) or {}
+                if not isinstance(overlay_flds, dict):
+                    overlay_flds = {}
+                p_lines.append("| Field | Number | Type | Label | Description |")
+                p_lines.append("|-------|--------|------|-------|-------------|")
+                for fld in sorted(
+                    msg["fields"], key=lambda f: int(f.get("number", "0"))
+                ):
+                    ftype_display = _proto_link_type(
+                        fld["type"], local_names, global_names
+                    )
+                    p_lines.append(
+                        f"| {_code(fld['name'])} | {fld.get('number', '')} "
+                        f"| {ftype_display} | {fld.get('label', 'optional')} "
+                        f"| {_proto_field_desc(fld, overlay_flds.get(fld['name']))} |"
+                    )
+                p_lines.append("")
+            else:
+                p_lines.append("*(no fields)*\n")
+
+            for en in msg.get("enums", []):
+                _enum_section(f"{qualified}.{en['name']}", en, min(level + 1, 6))
+            for nested in msg.get("nested", []):
+                _message_section(
+                    f"{qualified}.{nested['name']}", nested, min(level + 1, 6)
+                )
+
         if proto.get("messages"):
             p_lines.append("## Messages\n")
             for msg in proto["messages"]:
-                mname = msg["name"]
-                mover = overlay_msgs.get(mname, {}) if isinstance(overlay_msgs, dict) else {}
-                p_lines.append(f"### `{mname}`\n")
-                if mover and isinstance(mover, dict) and mover.get("description"):
-                    p_lines.append(f"{mover['description']}\n")
-                if mover and isinstance(mover, dict) and mover.get("notes"):
-                    p_lines.append(f"> 📝 {mover['notes']}\n")
-
-                # Surface oneof groups before the fields table so readers
-                # know which fields are mutually exclusive.
-                if msg.get("oneofs"):
-                    nonempty_oneofs = [o for o in msg["oneofs"] if o.get("fields")]
-                    if nonempty_oneofs:
-                        oneof_bits = ", ".join(
-                            f"`{o['name']}` ({', '.join(o['fields'])})"
-                            for o in nonempty_oneofs
-                        )
-                        p_lines.append(f"**Oneofs:** {oneof_bits}\n")
-
-                if msg.get("fields"):
-                    overlay_flds: dict = (
-                        mover.get("fields", {}) or {}
-                        if mover and isinstance(mover, dict) else {}
-                    )
-                    p_lines.append("| Field | Ordinal | Type | Label | Description |")
-                    p_lines.append("|-------|---------|------|-------|-------------|")
-                    for fld in sorted(
-                        msg["fields"], key=lambda f: int(f.get("number", "0"))
-                    ):
-                        fname_fld = fld["name"]
-                        ftype = fld["type"]
-                        label = fld.get("label", "optional")
-                        fnum = fld.get("number", "")
-                        ftype_display = _proto_link_type(ftype, local_names)
-                        # Build description from overlay + proto inline comment + default
-                        desc_parts: list[str] = []
-                        fover = (
-                            overlay_flds.get(fname_fld, {})
-                            if isinstance(overlay_flds, dict) else {}
-                        )
-                        if fover and isinstance(fover, dict) and fover.get("description"):
-                            desc_parts.append(str(fover["description"]))
-                        comment = fld.get("comment", "")
-                        if comment:
-                            desc_parts.append(comment)
-                        # Field-level descriptor flags worth surfacing.
-                        if fld.get("oneof"):
-                            desc_parts.append(f"*(oneof: `{fld['oneof']}`)*")
-                        if fld.get("deprecated"):
-                            desc_parts.append("**deprecated**")
-                        if fld.get("packed") is True:
-                            desc_parts.append("*(packed)*")
-                        default = fld.get("default", "")
-                        if default:
-                            desc_parts.append(f"*(default: `{default}`)*")
-                        desc = " ".join(desc_parts).replace("|", "\\|")
-                        p_lines.append(
-                            f"| `{fname_fld}` | {fnum} | {ftype_display} | {label} | {desc} |"
-                        )
-                    p_lines.append("")
+                _message_section(msg["name"], msg, 3)
 
         (out_dir / "proto" / f"{stem}.md").write_text("\n".join(p_lines), encoding="utf-8")
 
 
-def generate_convars_md_page(convars: list[dict], out_dir: Path) -> None:
+def _convar_range(cv: dict) -> str:
+    """The `min .. max` bound cell for a convar, or an empty cell."""
+    lo = str(cv.get("min_value", "") or "") if cv.get("has_min") else ""
+    hi = str(cv.get("max_value", "") or "") if cv.get("has_max") else ""
+    if lo and hi:
+        return _code(f"{lo} .. {hi}")
+    if lo:
+        return _code(f">= {lo}")
+    if hi:
+        return _code(f"<= {hi}")
+    return ""
+
+
+def generate_convars_md_page(
+    convars: list[dict],
+    out_dir: Path,
+    source_info: dict[str, Any] | None = None,
+) -> None:
     """Generate convars.md."""
     lines: list[str] = []
-    lines.append(_md_front_matter(layout="default", title="ConVars", nav_order="4"))
+    lines.append(_md_front_matter(title="ConVars"))
     lines.append("# ConVar Reference\n")
-    lines.append("All console variables extracted from CS2.\n")
-    lines.append("| Name | Default | Flags | Description |")
-    lines.append("|------|---------|-------|-------------|")
+    if source_info:
+        lines.append(_provenance_block(source_info))
+    lines.append(
+        "All console variables extracted from CS2, with the value type and the "
+        "bounds the engine enforces where it declares them.\n"
+    )
+    lines.append("| Name | Type | Default | Range | Flags | Description |")
+    lines.append("|------|------|---------|-------|-------|-------------|")
     for cv in convars:
-        flags = " ".join(f"`{f}`" for f in cv["flags"])
-        desc = cv["description"] or ""
-        # Escape pipe characters in markdown table cells
-        desc = desc.replace("|", "\\|")
-        lines.append(f"| `{cv['name']}` | `{cv['default']}` | {flags} | {desc} |")
+        flags = " ".join(_code(f) for f in cv["flags"])
+        lines.append(
+            f"| {_code(cv['name'])} | {_code(cv.get('value_type'))} "
+            f"| {_code(cv['default'])} | {_convar_range(cv)} | {flags} "
+            f"| {_md_cell(cv['description'])} |"
+        )
     lines.append("")
     (out_dir / "convars.md").write_text("\n".join(lines), encoding="utf-8")
 
 
-def generate_commands_md_page(commands: list[dict], out_dir: Path) -> None:
+def generate_commands_md_page(
+    commands: list[dict],
+    out_dir: Path,
+    source_info: dict[str, Any] | None = None,
+) -> None:
     """Generate commands.md."""
     lines: list[str] = []
-    lines.append(_md_front_matter(layout="default", title="Commands", nav_order="5"))
+    lines.append(_md_front_matter(title="Commands"))
     lines.append("# Console Commands\n")
+    if source_info:
+        lines.append(_provenance_block(source_info))
     lines.append("All console commands extracted from CS2.\n")
     lines.append("| Command | Flags | Description |")
     lines.append("|---------|-------|-------------|")
     for cmd in commands:
-        flags = " ".join(f"`{f}`" for f in cmd["flags"])
-        desc = (cmd["description"] or "").replace("|", "\\|")
-        lines.append(f"| `{cmd['name']}` | {flags} | {desc} |")
+        flags = " ".join(_code(f) for f in cmd["flags"])
+        if cmd.get("has_completion_callback"):
+            flags = (flags + " " if flags else "") + "`autocomplete`"
+        lines.append(
+            f"| {_code(cmd['name'])} | {flags} | {_md_cell(cmd['description'])} |"
+        )
     lines.append("")
     (out_dir / "commands.md").write_text("\n".join(lines), encoding="utf-8")
 
@@ -1689,7 +2230,7 @@ def generate_gameevents_md_page(
     overlay_events: dict = overlay.get("events", {}) or {}
 
     lines: list[str] = []
-    lines.append(_md_front_matter(layout="default", title="Game Events", nav_order="6"))
+    lines.append(_md_front_matter(title="Game Events"))
     lines.append("# Game Events Reference\n")
     lines.append(
         "Game events extracted from CS2's `.gameevents` resource files. "
@@ -1707,7 +2248,7 @@ def generate_gameevents_md_page(
     lines.append("| Type | Description |")
     lines.append("|------|-------------|")
     for tname, tinfo in sorted(_GAMEEVENTS_TYPE_MAP.items()):
-        lines.append(f"| `{tname}` | {tinfo['description']} |")
+        lines.append(f"| {_code(tname)} | {_md_cell(tinfo['description'])} |")
     lines.append("")
 
     # Group events by source file
@@ -1728,24 +2269,38 @@ def generate_gameevents_md_page(
     lines.append("|--------|--------|-------------|")
     for src in sorted(by_source):
         label = source_labels.get(src, src)
-        lines.append(f"| `{src}` | {len(by_source[src])} | {label} |")
+        lines.append(f"| {_code(src)} | {len(by_source[src])} | {_md_cell(label)} |")
     lines.append("")
+
+    # Heading text per event, computed once so the index anchors and the
+    # section headings can never drift apart.  15 event names occur in two or
+    # three source files; a bare `#name` index link sent 16 rows to the wrong
+    # section.
+    duplicated = {
+        n for n in {ev["name"] for ev in gameevents}
+        if sum(1 for ev in gameevents if ev["name"] == n) > 1
+    }
+    headings: dict[int, str] = {
+        id(ev): (f"{ev['name']} ({ev['source']})" if ev["name"] in duplicated
+                 else ev["name"])
+        for ev in gameevents
+    }
 
     # Quick-reference index
     lines.append("## Event Index\n")
     lines.append("| Event | Source | Fields | Description |")
     lines.append("|-------|--------|--------|-------------|")
     for ev in gameevents:
-        anchor = ev["name"].lower().replace(" ", "-")
+        anchor = _proto_anchor(headings[id(ev)])
         eov = overlay_events.get(ev["name"], {}) if isinstance(overlay_events, dict) else {}
         desc = ""
         if eov and isinstance(eov, dict) and eov.get("description"):
-            desc = str(eov["description"])
+            desc = _md_prose(eov["description"])
         elif ev["comment"]:
-            desc = ev["comment"]
-        desc = desc.replace("|", "\\|")
+            desc = _md_cell(ev["comment"])
         lines.append(
-            f"| [{ev['name']}](#{anchor}) | `{ev['source']}` | {len(ev['fields'])} | {desc} |"
+            f"| [{ev['name']}](#{anchor}) | {_code(ev['source'])} "
+            f"| {len(ev['fields'])} | {desc} |"
         )
     lines.append("")
 
@@ -1760,7 +2315,7 @@ def generate_gameevents_md_page(
             ename = ev["name"]
             eov = overlay_events.get(ename, {}) if isinstance(overlay_events, dict) else {}
 
-            lines.append(f"### {ename}\n")
+            lines.append(f"### {headings[id(ev)]}\n")
 
             # Description from overlay, then from inline comment
             if eov and isinstance(eov, dict) and eov.get("description"):
@@ -1791,13 +2346,13 @@ def generate_gameevents_md_page(
                     fov = overlay_flds.get(fname, {}) if isinstance(overlay_flds, dict) else {}
                     desc_parts: list[str] = []
                     if fov and isinstance(fov, dict) and fov.get("description"):
-                        desc_parts.append(str(fov["description"]))
+                        desc_parts.append(_md_prose(fov["description"]))
                     if fld["comment"]:
-                        desc_parts.append(fld["comment"])
+                        desc_parts.append(_md_cell(fld["comment"]))
                     if fov and isinstance(fov, dict) and fov.get("notes"):
-                        desc_parts.append(f"*{fov['notes']}*")
-                    desc = " ".join(desc_parts).replace("|", "\\|")
-                    lines.append(f"| `{fname}` | `{ftype}` | {desc} |")
+                        desc_parts.append(f"*{_md_prose(fov['notes'])}*")
+                    desc = " ".join(p for p in desc_parts if p)
+                    lines.append(f"| {_code(fname)} | {_code(ftype)} | {desc} |")
                 lines.append("")
             else:
                 lines.append("*No fields — this event carries no additional data.*\n")
@@ -2111,7 +2666,7 @@ def generate_cs2_schema(
             record = _enrich_record(raw, variant, overlays)
             # Cross-link the UML diagram for classes whose module has one.
             if variant["kind"] != "enum" and module in diagram_modules:
-                record["diagram_url"] = f"{PAGES_GENERATED_BASE}/diagrams/{module}"
+                record["diagram_url"] = f"{SITE_BASE}/schemas/{module}/hierarchy/"
             (enums_out if variant["kind"] == "enum" else classes_out).append(record)
 
     out: dict[str, Any] = {"schema_format_version": SCHEMA_FORMAT_VERSION}
@@ -2137,30 +2692,38 @@ def generate_convars_schema(
     out_dir: Path,
     source_info: dict[str, Any] | None = None,
 ) -> None:
-    """Emit ``convars_schema.json`` — a structured projection of
-    DumpSource2/convars.txt.
+    """Emit ``convars_schema.json``, the structured projection of
+    SchemaTracker's ``convars.json``.
 
-    Each entry preserves the four fields ``parse_convars`` already
-    surfaces (``name``, ``default``, ``flags``, ``description``).  This
-    is the codegen-friendly counterpart to ``convars.md``; downstream
-    consumers wanting strongly-typed convar constants no longer need to
-    parse Markdown.  No overlay annotation pipeline is wired up yet —
-    add one if community-curated convar notes become a need.
+    Each entry carries ``name``, ``default``, ``flags``, ``description``,
+    ``value_type`` (when the artifact records one) and numeric ``min`` /
+    ``max`` (null on an unbounded side).  This is the codegen-friendly
+    counterpart to the ConVars page; downstream consumers wanting
+    strongly-typed convar constants no longer need to parse Markdown.  No
+    overlay annotation pipeline is wired up yet.
     """
     schema_dir = out_dir / "downstream-codegen-schemas"
     schema_dir.mkdir(parents=True, exist_ok=True)
 
     out: dict[str, Any] = {"schema_format_version": SCHEMA_FORMAT_VERSION}
     out.update(_schema_header(source_info))
-    out["convars"] = [
-        {
+    # value_type / min / max are additive (schema_format_version 2.2): the
+    # loader has carried them since the SchemaTracker switch and only the
+    # emitters dropped them.
+    records: list[dict[str, Any]] = []
+    for cv in convars:
+        rec: dict[str, Any] = {
             "name": cv["name"],
             "default": cv.get("default", ""),
             "flags": list(cv.get("flags", []) or []),
             "description": cv.get("description", ""),
         }
-        for cv in convars
-    ]
+        if cv.get("value_type"):
+            rec["value_type"] = cv["value_type"]
+        rec["min"] = _bound_number(cv.get("min_value")) if cv.get("has_min") else None
+        rec["max"] = _bound_number(cv.get("max_value")) if cv.get("has_max") else None
+        records.append(rec)
+    out["convars"] = records
     (schema_dir / "convars_schema.json").write_text(
         json.dumps(out, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
@@ -2186,6 +2749,7 @@ def generate_commands_schema(
             "name": cmd["name"],
             "flags": list(cmd.get("flags", []) or []),
             "description": cmd.get("description", ""),
+            "has_completion_callback": bool(cmd.get("has_completion_callback", False)),
         }
         for cmd in commands
     ]
@@ -2690,7 +3254,7 @@ source instead of a chain of third-party dumps.
 ## Files
 
 - **`cs2_schema.json`** — the entity schema in SchemaTracker's **native**
-  shape (`schema_format_version` `2.1`).  Top-level: `generator`, `build_id`,
+  shape (`schema_format_version` `{SCHEMA_FORMAT_VERSION}`).  Top-level: `generator`, `build_id`,
   `platform`, `revision`, `version_date`, `version_time`, `classes`, `enums`.
   Each class carries `name`, `module` (the binary it lives in), `projectName`,
   `cppName`, `size`, `alignment`, `flags` / `flags2`, `parents[]`, `fields[]`
@@ -2722,11 +3286,16 @@ source instead of a chain of third-party dumps.
 
 - **`convars_schema.json`** — the console-variable table.  Top-level:
   `convars` list; each entry has `name` / `default` / `flags` /
-  `description` (SchemaTracker additionally exposes `valueType` and min/max
-  in the source artifact).  Codegen-friendly counterpart to `convars.md`.
+  `description` / `value_type` (upstream's declared type, e.g. `Float32`,
+  `Int32`, `Bool`, `String`; omitted when the artifact records none) /
+  `min` / `max` (JSON numbers: an integer when the bound is integral, else
+  a float; `null` on a side upstream leaves unbounded).  Codegen-friendly
+  counterpart to the ConVars page.
 
 - **`commands_schema.json`** — the console-command table.  Top-level:
-  `commands` list; each entry has `name` / `flags` / `description`.
+  `commands` list; each entry has `name` / `flags` / `description` /
+  `has_completion_callback` (boolean: the command registers an argument
+  autocomplete callback).
 
 - **`well_known_constants.json`** — community-curated reference tables
   for integer / enum values downstream tooling needs but that the schema
@@ -2763,7 +3332,7 @@ source instead of a chain of third-party dumps.
   (`pairedEvidence` plus the unselected `pairCandidates` /
   `classPairCandidates` / `fieldMoveCandidates` lists) are **not**
   projected into this file — read them from the artifact itself; the
-  [Schema History](../schema-history.html) page documents them and serves
+  [Schema History](../schema-history.md) page documents them and serves
   as the human-readable break radar.  Serves alias resolution /
   forward-back schema migration for demo parsers and SDKs.
 
@@ -2818,7 +3387,7 @@ def generate_index_md(
     source_info: dict[str, Any] | None = None,
     extra_pages: list[tuple[str, str]] | None = None,
 ) -> None:
-    """Generate the Jekyll home page index.md."""
+    """Generate the site home page, index.md."""
     # Match generate_schemas_index_md's bucketing (primary + cross-module
     # duplicate variants) so the home-page module list links every page that
     # actually gets written.
@@ -2834,7 +3403,7 @@ def generate_index_md(
     extra_pages = extra_pages or []
 
     lines: list[str] = []
-    lines.append(_md_front_matter(layout="home", title="CS2 Developer Reference", nav_order="1", nav_exclude="true"))
+    lines.append(_md_front_matter(title="CS2 Developer Reference"))
     lines.append("# CS2 Developer Reference\n")
     lines.append(
         "Auto-generated reference for the **shipped CS2 runtime**, extracted "
@@ -2906,10 +3475,7 @@ def generate_global_diagram_md(entities: dict[str, dict], out_dir: Path) -> None
     (out_dir / "diagrams").mkdir(exist_ok=True)
     md_lines: list[str] = []
     md_lines.append(_md_front_matter(
-        layout="default",
         title="Entity Hierarchy",
-        parent="Schemas",
-        nav_exclude="true",
     ))
     md_lines.append("# Entity Hierarchy Diagram\n")
     md_lines.append(
@@ -2949,28 +3515,24 @@ def _load_content_json(build_dir: Path, name: str) -> dict[str, Any] | None:
 
 
 def _provenance_block(source_info: dict[str, Any]) -> str:
-    """A one-line provenance callout for the top of a generated page."""
+    """A one-line provenance blockquote for the top of a generated page."""
     build = source_info.get("build_id", "?")
     date = source_info.get("version_date", "")
     plat = source_info.get("platform", "")
     sv = source_info.get("schema_version", "")
-    bits = [f"CS2 build **{build}**"]
+    bits = [f"**Build {build}**"]
     if date:
         bits.append(date)
     if plat:
         bits.append(f"`{plat}`")
     if sv:
         bits.append(f"schema `{sv}`")
-    return f"{{: .note }}\n> Source: {' · '.join(bits)}\n"
-
-
-def _md_escape(text: Any) -> str:
-    return str(text or "").replace("|", "\\|").replace("\n", " ")
+    return f"> Source: {' · '.join(bits)}\n"
 
 
 def generate_items_md(data: dict[str, Any], source_info: dict[str, Any], out_dir: Path) -> None:
     """Economy items, prefabs, paint/sticker/music kits, rarities, qualities."""
-    lines = [_md_front_matter(layout="default", title="Items & Economy", nav_order="7")]
+    lines = [_md_front_matter(title="Items & Economy")]
     lines.append("# Items & Economy\n")
     lines.append(_provenance_block(source_info))
     lines.append(
@@ -2982,77 +3544,84 @@ def generate_items_md(data: dict[str, Any], source_info: dict[str, Any], out_dir
     )
 
     items = data.get("items", [])
-    lines.append(f"## Items ({len(items)})\n")
+    lines.append("## Items\n")
+    lines.append(f"{len(items)} item definitions.\n")
     lines.append("| defIndex | Name token | Classname | Prefab | Item type |")
     lines.append("|----------|------------|-----------|--------|-----------|")
     for it in items:
         lines.append(
-            f"| {it.get('defIndex','')} | `{_md_escape(it.get('nameToken'))}` "
-            f"| `{_md_escape(it.get('classname'))}` | `{_md_escape(it.get('prefab'))}` "
-            f"| {_md_escape(it.get('itemTypeName'))} |"
+            f"| {it.get('defIndex','')} | {_code(it.get('nameToken'))} "
+            f"| {_code(it.get('classname'))} | {_code(it.get('prefab'))} "
+            f"| {_md_cell(it.get('itemTypeName'))} |"
         )
     lines.append("")
 
     paint = data.get("paintKits", [])
-    lines.append(f"## Paint Kits — skins ({len(paint)})\n")
+    lines.append("## Paint Kits — skins\n")
+    lines.append(f"{len(paint)} paint kits.\n")
     lines.append("| defIndex | Name | Description tag |")
     lines.append("|----------|------|----------------|")
     for pk in paint:
         lines.append(
-            f"| {pk.get('defIndex','')} | `{_md_escape(pk.get('name'))}` "
-            f"| `{_md_escape(pk.get('descriptionTag'))}` |"
+            f"| {pk.get('defIndex','')} | {_code(pk.get('name'))} "
+            f"| {_code(pk.get('descriptionTag'))} |"
         )
     lines.append("")
 
     stickers = data.get("stickerKits", [])
-    lines.append(f"## Sticker Kits ({len(stickers)})\n")
+    lines.append("## Sticker Kits\n")
+    lines.append(f"{len(stickers)} sticker kits.\n")
     lines.append("| defIndex | Name | Item name token | Description |")
     lines.append("|----------|------|-----------------|-------------|")
     for sk in stickers:
         lines.append(
-            f"| {sk.get('defIndex','')} | `{_md_escape(sk.get('name'))}` "
-            f"| `{_md_escape(sk.get('itemName'))}` | `{_md_escape(sk.get('descriptionString'))}` |"
+            f"| {sk.get('defIndex','')} | {_code(sk.get('name'))} "
+            f"| {_code(sk.get('itemName'))} | {_code(sk.get('descriptionString'))} |"
         )
     lines.append("")
 
     music = data.get("musicDefinitions", [])
-    lines.append(f"## Music Kits ({len(music)})\n")
+    lines.append("## Music Kits\n")
+    lines.append(f"{len(music)} music kits.\n")
     lines.append("| defIndex | Name | Loc name |")
     lines.append("|----------|------|----------|")
     for m in music:
         lines.append(
-            f"| {m.get('defIndex','')} | `{_md_escape(m.get('name'))}` "
-            f"| `{_md_escape(m.get('locName'))}` |"
+            f"| {m.get('defIndex','')} | {_code(m.get('name'))} "
+            f"| {_code(m.get('locName'))} |"
         )
     lines.append("")
 
     prefabs = data.get("prefabs", [])
-    lines.append(f"## Prefabs ({len(prefabs)})\n")
+    lines.append("## Prefabs\n")
+    lines.append(f"{len(prefabs)} prefabs.\n")
     lines.append("| id | Parent prefab | Classname | Item type |")
     lines.append("|----|---------------|-----------|-----------|")
     for pf in prefabs:
         lines.append(
-            f"| `{_md_escape(pf.get('id'))}` | `{_md_escape(pf.get('prefab'))}` "
-            f"| `{_md_escape(pf.get('classname'))}` | {_md_escape(pf.get('itemTypeName'))} |"
+            f"| {_code(pf.get('id'))} | {_code(pf.get('prefab'))} "
+            f"| {_code(pf.get('classname'))} | {_md_cell(pf.get('itemTypeName'))} |"
         )
     lines.append("")
 
     rarities = data.get("rarities", [])
     qualities = data.get("qualities", [])
-    lines.append(f"## Rarities ({len(rarities)})\n")
+    lines.append("## Rarities\n")
+    lines.append(f"{len(rarities)} rarities.\n")
     lines.append("| id | Value | Loc key | Weapon loc key |")
     lines.append("|----|-------|---------|----------------|")
     for r in rarities:
         lines.append(
-            f"| `{_md_escape(r.get('id'))}` | {r.get('value','')} "
-            f"| `{_md_escape(r.get('locKey'))}` | `{_md_escape(r.get('locKeyWeapon'))}` |"
+            f"| {_code(r.get('id'))} | {r.get('value','')} "
+            f"| {_code(r.get('locKey'))} | {_code(r.get('locKeyWeapon'))} |"
         )
     lines.append("")
-    lines.append(f"## Qualities ({len(qualities)})\n")
+    lines.append("## Qualities\n")
+    lines.append(f"{len(qualities)} qualities.\n")
     lines.append("| id | Value |")
     lines.append("|----|-------|")
     for q in qualities:
-        lines.append(f"| `{_md_escape(q.get('id'))}` | {q.get('value','')} |")
+        lines.append(f"| {_code(q.get('id'))} | {q.get('value','')} |")
     lines.append("")
 
     (out_dir / "items.md").write_text("\n".join(lines), encoding="utf-8")
@@ -3067,24 +3636,28 @@ def generate_network_md(
 ) -> None:
     """Wire-protocol tables: message-ID → protobuf type, cross-linked to the proto pages."""
     # Build a message-name → proto file map for cross-linking.
-    msg_to_file: dict[str, str] = {}
+    # name -> (page stem, qualified name).  The qualified name is what the
+    # proto page uses for its heading, so the anchor computed here matches.
+    msg_to_file: dict[str, tuple[str, str]] = {}
 
-    def _index_messages(msgs: list[dict], filename: str) -> None:
+    def _index_messages(msgs: list[dict], filename: str, prefix: str = "") -> None:
         for m in msgs:
-            msg_to_file[m["name"]] = filename
-            _index_messages(m.get("nested", []), filename)
+            qualified = f"{prefix}{m['name']}"
+            msg_to_file[m["name"]] = (filename, qualified)
+            _index_messages(m.get("nested", []), filename, f"{qualified}.")
 
     for p in protos:
         stem = Path(p["filename"]).stem
         _index_messages(p.get("messages", []), stem)
 
     def _link(type_name: str) -> str:
-        stem = msg_to_file.get(type_name)
-        if stem:
-            return f"[`{type_name}`](proto/{stem}.md)"
-        return f"`{type_name}`"
+        entry = msg_to_file.get(type_name)
+        if entry:
+            stem, qualified = entry
+            return f"[`{type_name}`](proto/{stem}.md#{_proto_anchor(qualified)})"
+        return _code(type_name)
 
-    lines = [_md_front_matter(layout="default", title="Network Messages", nav_order="8")]
+    lines = [_md_front_matter(title="Network Messages")]
     lines.append("# Network & Demo Messages\n")
     lines.append(_provenance_block(source_info))
     lines.append(
@@ -3097,7 +3670,8 @@ def generate_network_md(
     if netmsgs:
         for ch in netmsgs.get("channels", []):
             msgs = ch.get("messages", [])
-            lines.append(f"## {ch.get('name','')} ({len(msgs)})\n")
+            lines.append(f"## {ch.get('name','')}\n")
+            lines.append(f"{len(msgs)} message ids.\n")
             lines.append("| ID | Message type |")
             lines.append("|----|--------------|")
             for m in msgs:
@@ -3106,7 +3680,8 @@ def generate_network_md(
 
     if demomsgs:
         msgs = demomsgs.get("messages", [])
-        lines.append(f"## Demo stream (`.dem`) messages ({len(msgs)})\n")
+        lines.append("## Demo stream messages\n")
+        lines.append(f"{len(msgs)} command ids in the `.dem` stream.\n")
         lines.append(
             "The command-ID table for demo playback — a flat id space where a "
             "single id can bind more than one message type.\n"
@@ -3122,7 +3697,7 @@ def generate_network_md(
 
 def generate_gamemodes_md(data: dict[str, Any], source_info: dict[str, Any], out_dir: Path) -> None:
     """Game types / modes and the map-group registry."""
-    lines = [_md_front_matter(layout="default", title="Game Modes", nav_order="9")]
+    lines = [_md_front_matter(title="Game Modes")]
     lines.append("# Game Modes & Map Groups\n")
     lines.append(_provenance_block(source_info))
     lines.append(
@@ -3132,10 +3707,11 @@ def generate_gamemodes_md(data: dict[str, Any], source_info: dict[str, Any], out
 
     for gt in data.get("gameTypes", []):
         modes = gt.get("gameModes", [])
-        lines.append(f"## Game type: `{gt.get('id','')}` ({len(modes)} modes)\n")
+        lines.append(f"## Game type: `{gt.get('id','')}`\n")
+        lines.append(f"{len(modes)} modes.\n")
         for gm in modes:
             lines.append(f"### `{gm.get('id','')}`\n")
-            lines.append(f"- **Name token:** `{_md_escape(gm.get('nameId'))}`")
+            lines.append(f"- **Name token:** {_code(gm.get('nameId'))}")
             lines.append(f"- **Max players:** {gm.get('maxPlayers','')}")
             mgs = gm.get("mapGroupsMp", [])
             if mgs:
@@ -3147,16 +3723,17 @@ def generate_gamemodes_md(data: dict[str, Any], source_info: dict[str, Any], out
                 lines.append("| ConVar | Value |")
                 lines.append("|--------|-------|")
                 for cv in convars:
-                    lines.append(f"| `{_md_escape(cv.get('name'))}` | `{_md_escape(cv.get('value'))}` |")
+                    lines.append(f"| {_code(cv.get('name'))} | {_code(cv.get('value'))} |")
             lines.append("")
 
     groups = data.get("mapGroups", [])
-    lines.append(f"## Map groups ({len(groups)})\n")
+    lines.append("## Map groups\n")
+    lines.append(f"{len(groups)} map groups.\n")
     lines.append("| id | Maps |")
     lines.append("|----|------|")
     for g in groups:
         maps = ", ".join(f"`{m}`" for m in g.get("maps", []))
-        lines.append(f"| `{_md_escape(g.get('id'))}` | {maps} |")
+        lines.append(f"| {_code(g.get('id'))} | {maps} |")
     lines.append("")
 
     (out_dir / "gamemodes.md").write_text("\n".join(lines), encoding="utf-8")
@@ -3164,7 +3741,7 @@ def generate_gamemodes_md(data: dict[str, Any], source_info: dict[str, Any], out
 
 def generate_changelog_md(data: dict[str, Any], source_info: dict[str, Any], out_dir: Path) -> None:
     """What changed between the previous committed build and this one."""
-    lines = [_md_front_matter(layout="default", title="Changelog", nav_order="10")]
+    lines = [_md_front_matter(title="Changelog")]
     lines.append("# Build Changelog\n")
     lines.append(_provenance_block(source_info))
     lines.append(
@@ -3173,7 +3750,25 @@ def generate_changelog_md(data: dict[str, Any], source_info: dict[str, Any], out
         "data family.\n"
     )
 
-    for fam in data.get("families", []):
+    families = data.get("families", []) or []
+    fam_names = [str(f.get("family", "")) for f in families if f.get("family")]
+    if fam_names:
+        lines.append(
+            "Families diffed: " + ", ".join(f"`{n}`" for n in fam_names) + ".\n"
+        )
+    if not any(
+        f.get("added") or f.get("removed") or f.get("changed") for f in families
+    ):
+        listed = ", ".join(fam_names) if fam_names else "any diffed family"
+        lines.append(
+            f"No changes in {listed} between build "
+            f"{data.get('fromBuild','?')} and {data.get('toBuild','?')}. "
+            "Field-level history for every build is on the "
+            "[Schema History](schema-history.md#transitions-with-structural-changes) "
+            "page.\n"
+        )
+
+    for fam in families:
         added, removed, changed = fam.get("added", []), fam.get("removed", []), fam.get("changed", [])
         if not (added or removed or changed):
             continue
@@ -3182,12 +3777,12 @@ def generate_changelog_md(data: dict[str, Any], source_info: dict[str, Any], out
             f"(+{len(added)} / −{len(removed)} / ~{len(changed)})\n"
         )
         if added:
-            lines.append("**Added:** " + ", ".join(f"`{_md_escape(a)}`" for a in added[:200]))
+            lines.append("**Added:** " + ", ".join(f"{_code(a)}" for a in added[:200]))
             if len(added) > 200:
                 lines.append(f"… and {len(added) - 200} more")
             lines.append("")
         if removed:
-            lines.append("**Removed:** " + ", ".join(f"`{_md_escape(r)}`" for r in removed[:200]))
+            lines.append("**Removed:** " + ", ".join(f"{_code(r)}" for r in removed[:200]))
             if len(removed) > 200:
                 lines.append(f"… and {len(removed) - 200} more")
             lines.append("")
@@ -3196,11 +3791,11 @@ def generate_changelog_md(data: dict[str, Any], source_info: dict[str, Any], out
             lines.append("|-------|---------------|")
             for ch in changed[:400]:
                 deltas = "; ".join(
-                    f"{_md_escape(fc.get('field'))}: `{_md_escape(fc.get('oldValue'))}` → "
-                    f"`{_md_escape(fc.get('newValue'))}`"
+                    f"{_md_cell(fc.get('field'))}: {_code(fc.get('oldValue'))} → "
+                    f"{_code(fc.get('newValue'))}"
                     for fc in ch.get("fields", [])
                 )
-                lines.append(f"| `{_md_escape(ch.get('name'))}` | {deltas} |")
+                lines.append(f"| {_code(ch.get('name'))} | {deltas} |")
             if len(changed) > 400:
                 lines.append(f"\n… and {len(changed) - 400} more changed entries")
             lines.append("")
@@ -3210,7 +3805,7 @@ def generate_changelog_md(data: dict[str, Any], source_info: dict[str, Any], out
 
 def generate_maps_md(data: dict[str, Any], source_info: dict[str, Any], out_dir: Path) -> None:
     """Per-map radar/overview metadata + maps inventory."""
-    lines = [_md_front_matter(layout="default", title="Maps", nav_order="11")]
+    lines = [_md_front_matter(title="Maps")]
     lines.append("# Maps & Radar Overviews\n")
     lines.append(_provenance_block(source_info))
     names = data.get("mapNames", [])
@@ -3221,7 +3816,7 @@ def generate_maps_md(data: dict[str, Any], source_info: dict[str, Any], out_dir:
     lines.append("|-----|----------|-----------|-------|----------|---------|")
     for m in data.get("maps", []):
         lines.append(
-            f"| `{_md_escape(m.get('name'))}` | `{_md_escape(m.get('material'))}` "
+            f"| {_code(m.get('name'))} | {_code(m.get('material'))} "
             f"| {m.get('posX','')}, {m.get('posY','')} | {m.get('scale','')} "
             f"| {m.get('ctSpawnX','')}, {m.get('ctSpawnY','')} "
             f"| {m.get('tSpawnX','')}, {m.get('tSpawnY','')} |"
@@ -3232,7 +3827,7 @@ def generate_maps_md(data: dict[str, Any], source_info: dict[str, Any], out_dir:
 
 def generate_surfaces_md(data: dict[str, Any], source_info: dict[str, Any], out_dir: Path) -> None:
     """Per-material surface physics / footstep table."""
-    lines = [_md_front_matter(layout="default", title="Surface Properties", nav_order="12")]
+    lines = [_md_front_matter(title="Surface Properties")]
     lines.append("# Surface Properties\n")
     lines.append(_provenance_block(source_info))
     surfaces = data.get("surfaces", [])
@@ -3245,12 +3840,12 @@ def generate_surfaces_md(data: dict[str, Any], source_info: dict[str, Any], out_
     lines.append("|---------|-------|--------|------------|")
     for s in surfaces:
         props = "; ".join(
-            f"{_md_escape(p.get('name'))}=`{_md_escape(p.get('value'))}`"
+            f"{_md_cell(p.get('name'))}={_code(p.get('value'))}"
             for p in s.get("properties", [])
         )
         lines.append(
-            f"| `{_md_escape(s.get('name'))}` | {_md_escape(s.get('scope'))} "
-            f"| `{_md_escape(s.get('sourceFile'))}` | {props} |"
+            f"| {_code(s.get('name'))} | {_md_cell(s.get('scope'))} "
+            f"| {_code(s.get('sourceFile'))} | {props} |"
         )
     lines.append("")
     (out_dir / "surfaces.md").write_text("\n".join(lines), encoding="utf-8")
@@ -3258,45 +3853,48 @@ def generate_surfaces_md(data: dict[str, Any], source_info: dict[str, Any], out_
 
 def generate_props_md(data: dict[str, Any], source_info: dict[str, Any], out_dir: Path) -> None:
     """Breakable-prop physics classes, gib groups, collision-group registry."""
-    lines = [_md_front_matter(layout="default", title="Prop Data", nav_order="13")]
+    lines = [_md_front_matter(title="Prop Data")]
     lines.append("# Prop & Collision Data\n")
     lines.append(_provenance_block(source_info))
 
     prop_classes = data.get("propClasses", [])
-    lines.append(f"## Prop classes ({len(prop_classes)})\n")
+    lines.append("## Prop classes\n")
+    lines.append(f"{len(prop_classes)} prop classes.\n")
     lines.append("| Class | Properties |")
     lines.append("|-------|------------|")
     for pc in prop_classes:
         props = "; ".join(
-            f"{_md_escape(p.get('name'))}=`{_md_escape(p.get('value'))}`"
+            f"{_md_cell(p.get('name'))}={_code(p.get('value'))}"
             for p in pc.get("properties", [])
         )
-        lines.append(f"| `{_md_escape(pc.get('id'))}` | {props} |")
+        lines.append(f"| {_code(pc.get('id'))} | {props} |")
     lines.append("")
 
     groups = data.get("collisionGroups", [])
-    lines.append(f"## Collision groups ({len(groups)})\n")
+    lines.append("## Collision groups\n")
+    lines.append(f"{len(groups)} collision groups.\n")
     lines.append("| Group | Description | Interacts as | Interacts with |")
     lines.append("|-------|-------------|--------------|----------------|")
     for g in groups:
         lines.append(
-            f"| `{_md_escape(g.get('collisionGroup'))}` | {_md_escape(g.get('description'))} "
+            f"| {_code(g.get('collisionGroup'))} | {_md_cell(g.get('description'))} "
             f"| {', '.join(f'`{x}`' for x in g.get('interactAs', []))} "
             f"| {', '.join(f'`{x}`' for x in g.get('interactWith', []))} |"
         )
     lines.append("")
 
     breakables = data.get("breakableModels", [])
-    lines.append(f"## Breakable gib groups ({len(breakables)})\n")
+    lines.append("## Breakable gib groups\n")
+    lines.append(f"{len(breakables)} gib groups.\n")
     for b in breakables:
-        lines.append(f"- **`{_md_escape(b.get('id'))}`**: {len(b.get('models', []))} models")
+        lines.append(f"- **{_code(b.get('id'))}**: {len(b.get('models', []))} models")
     lines.append("")
     (out_dir / "props.md").write_text("\n".join(lines), encoding="utf-8")
 
 
 def generate_modules_md(data: dict[str, Any], source_info: dict[str, Any], out_dir: Path) -> None:
     """Per-binary inventory: hashes, sizes, and resolved interface versions."""
-    lines = [_md_front_matter(layout="default", title="Modules", nav_order="14")]
+    lines = [_md_front_matter(title="Modules")]
     lines.append("# Binary Modules\n")
     lines.append(_provenance_block(source_info))
     modules = data.get("modules", [])
@@ -3310,7 +3908,7 @@ def generate_modules_md(data: dict[str, Any], source_info: dict[str, Any], out_d
     for m in modules:
         ifaces = ", ".join(f"`{i}`" for i in m.get("resolvedInterfaces", []))
         lines.append(
-            f"| `{_md_escape(m.get('path'))}` | {m.get('fileSize','')} "
+            f"| {_code(m.get('path'))} | {m.get('fileSize','')} "
             f"| {m.get('exportCount','')} | {m.get('schemaRegistrationCount','')} "
             f"| {ifaces} |"
         )
@@ -3405,7 +4003,7 @@ def generate_schema_history_md(
     summarised = [(tr, _transition_counts(tr)) for tr in transitions]
     non_empty = [(tr, c) for tr, c in summarised if not _transition_is_empty(c)]
 
-    lines = [_md_front_matter(layout="default", title="Schema History", nav_order="15")]
+    lines = [_md_front_matter(title="Schema History")]
     lines.append("# Schema History\n")
     lines.append(_provenance_block(source_info))
 
@@ -3416,12 +4014,12 @@ def generate_schema_history_md(
             "Field-precise, build-to-build evolution of the CS2 C++ entity schema, "
             "derived by diffing every committed `entity_schema.json` snapshot "
             "(SchemaTracker's cumulative `schema_evolution.json`, Layer A).  Unlike "
-            "the coarse [Changelog](changelog.html) — which only reports *that* a "
+            "the coarse [Changelog](changelog.md) — which only reports *that* a "
             "class changed — this reports *which field* was added, removed, retyped, "
             "or moved.\n"
         )
     if lens_overlay.get("notes"):
-        lines.append("{: .note }\n> " + str(lens_overlay["notes"]).strip().replace("\n", "\n> ") + "\n")
+        lines.append("> " + str(lens_overlay["notes"]).strip().replace("\n", "\n> ") + "\n")
 
     schema_version = evolution.get("schemaVersion", "")
     version_bullet = (
@@ -3520,8 +4118,8 @@ def generate_schema_history_md(
     for tr, c in reversed(non_empty):
         date = (tr.get("toManifestCreatedUtc", "") or "")[:10] or "—"
         lines.append(
-            f"| `{tr.get('fromBuild','')}` → `{tr.get('toBuild','')}` "
-            f"| {date} "
+            f"| {_code(tr.get('fromBuild',''))} → {_code(tr.get('toBuild',''))} "
+            f"| {_md_cell(date)} "
             f"| {c['class_added']} / {c['class_removed']} / {c['class_changed']} "
             f"| {c['enum_added']} / {c['enum_removed']} / {c['enum_changed']} "
             f"| {c['field_ops']} |"
@@ -3600,7 +4198,8 @@ def generate_schema_history_md(
                 if confirmed:
                     layout.append(f"✎{len(set(id(r) for r in confirmed))} rename")
                 lines.append(
-                    f"| `{cls_name}` | {ops_txt} | {', '.join(layout) or '—'} |"
+                    f"| {_code(cls_name)} | {_md_cell(ops_txt)} "
+                    f"| {_md_cell(', '.join(layout)) or '—'} |"
                 )
             if len(changed) > _HISTORY_DETAIL_CLASS_CAP:
                 lines.append(
@@ -3676,11 +4275,200 @@ def generate_field_history_json(
 
 
 # ---------------------------------------------------------------------------
+# Overlay validation
+# ---------------------------------------------------------------------------
+
+# Overlay files whose top-level shape is not a map of entity names.
+_NON_ENTITY_OVERLAYS = {"convar_flags", "gameevents", "schema-lens", "well_known_constants"}
+
+
+def _nearest(name: str, pool: Any) -> str:
+    """`(did you mean X?)` for an overlay key that resolved to nothing."""
+    import difflib
+
+    hits = difflib.get_close_matches(name, list(pool), n=1, cutoff=0.6)
+    return f" (nearest: {hits[0]})" if hits else ""
+
+
+def check_overlay_keys(
+    overlays: dict[str, dict],
+    entities: dict[str, dict],
+    protos: list[dict],
+    gameevents: list[dict[str, Any]],
+) -> tuple[list[str], list[str]]:
+    """Report overlay keys that name something this build does not have.
+
+    Returns ``(unresolved, module_mismatch)``.  Unresolved keys annotate
+    nothing at all.  A module mismatch still renders, through the name-only
+    fallback in :func:`get_overlay`, but the key is filed under a module the
+    entity does not live in and would attach to an unrelated class of the same
+    name if one ever appeared.
+    """
+    unresolved: list[str] = []
+    mismatched: list[str] = []
+
+    entity_names = set(entities)
+    schema_modules = {
+        v.get("module", "")
+        for e in entities.values()
+        for v in _all_variants(e["name"], entities)
+    }
+    # A file stem must be a schema module, a listed wrapper file or the
+    # protobufs directory; anything else annotates nothing, whatever it names.
+    known_stems = schema_modules | _NON_ENTITY_OVERLAYS | {"protobufs"}
+    for stem in sorted({k.split("/", 1)[0] for k in overlays}):
+        if stem not in known_stems:
+            unresolved.append(
+                f"{stem}: no such module or overlay file{_nearest(stem, known_stems)}"
+            )
+
+    def _member_names(name: str) -> set[str]:
+        out: set[str] = set()
+        for v in _all_variants(name, entities):
+            out |= {f.get("name", "") for f in v.get("fields", [])}
+        return out
+
+    for key, data in sorted(overlays.items()):
+        if "/" not in key or not isinstance(data, dict):
+            continue
+        module, name = key.split("/", 1)
+        if module not in schema_modules:
+            continue
+        if name not in entity_names:
+            unresolved.append(f"{key}: no such class or enum{_nearest(name, entity_names)}")
+            continue
+        modules = {v.get("module", "") for v in _all_variants(name, entities)}
+        if module not in modules:
+            mismatched.append(
+                f"{key}: {name} lives in {', '.join(sorted(modules))}"
+            )
+        members = _member_names(name)
+        fields = data.get("fields") or {}
+        if isinstance(fields, dict):
+            for fname in sorted(fields):
+                if fname not in members:
+                    unresolved.append(
+                        f"{key}.{fname}: no such field{_nearest(fname, members)}"
+                    )
+
+    # --- proto overlays ---
+    by_stem = {p["filename"].removesuffix(".proto"): p for p in protos}
+    for key, data in sorted(overlays.items()):
+        if not key.startswith("protobufs/") or not isinstance(data, dict):
+            continue
+        stem = key.split("/", 1)[1]
+        proto = by_stem.get(stem)
+        if proto is None:
+            unresolved.append(
+                f"{key}: no such proto file{_nearest(stem, by_stem)}"
+            )
+            continue
+        names = _proto_name_index(proto)
+        msgs = {q: m for q, m in _proto_flatten_messages(proto.get("messages", []))}
+        overlay_msgs = data.get("messages") or {}
+        if not isinstance(overlay_msgs, dict):
+            continue
+        for mname in sorted(overlay_msgs):
+            qualified = names.get(mname)
+            if qualified is None or qualified not in msgs:
+                unresolved.append(
+                    f"{key}.{mname}: no such message{_nearest(mname, msgs)}"
+                )
+                continue
+            mover = overlay_msgs[mname]
+            if not isinstance(mover, dict):
+                continue
+            have = {f["name"] for f in msgs[qualified].get("fields", [])}
+            fields = mover.get("fields") or {}
+            if isinstance(fields, dict):
+                for fname in sorted(fields):
+                    if fname not in have:
+                        unresolved.append(
+                            f"{key}.{mname}.{fname}: no such field"
+                            f"{_nearest(fname, have)}"
+                        )
+
+    # --- game-event overlays ---
+    ge_overlay = overlays.get("gameevents", {}) or {}
+    ge_events = ge_overlay.get("events") or {}
+    if isinstance(ge_events, dict):
+        by_name: dict[str, set[str]] = {}
+        for ev in gameevents:
+            by_name.setdefault(ev["name"], set()).update(
+                f["name"] for f in ev.get("fields", [])
+            )
+        for ename in sorted(ge_events):
+            if ename not in by_name:
+                unresolved.append(
+                    f"gameevents/{ename}: no such event{_nearest(ename, by_name)}"
+                )
+                continue
+            eov = ge_events[ename]
+            if not isinstance(eov, dict):
+                continue
+            fields = eov.get("fields") or {}
+            if isinstance(fields, dict):
+                for fname in sorted(fields):
+                    if fname not in by_name[ename]:
+                        unresolved.append(
+                            f"gameevents/{ename}.{fname}: no such field"
+                            f"{_nearest(fname, by_name[ename])}"
+                        )
+
+    return unresolved, mismatched
+
+
+# ---------------------------------------------------------------------------
+# Output self-checks
+# ---------------------------------------------------------------------------
+
+_TABLE_SEPARATOR_RE = re.compile(r"^\|[\s\-:|]+\|\s*$")
+
+
+def check_markdown_tables(root: Path) -> list[str]:
+    """Return ``file:line`` for every table row that does not start with `|`.
+
+    A newline inside a cell splits the row; GFM then rejects the whole
+    block and re-parses the rest of the page as one paragraph, which is how
+    convars.md and commands.md stopped rendering a table at all.
+    """
+    problems: list[str] = []
+    for path in sorted(root.rglob("*.md")):
+        in_fence = False
+        in_pre = False
+        in_table = False
+        for n, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+            stripped = line.strip()
+            if stripped.startswith("```") or stripped.startswith("~~~"):
+                in_fence = not in_fence
+                in_table = False
+                continue
+            if in_fence:
+                continue
+            if "<pre>" in stripped:
+                in_pre = True
+            if "</pre>" in stripped:
+                in_pre = False
+                continue
+            if in_pre:
+                continue
+            if in_table:
+                if not stripped:
+                    in_table = False
+                elif not stripped.startswith("|"):
+                    problems.append(f"{path}:{n}: {stripped[:80]}")
+                    in_table = False
+            elif _TABLE_SEPARATOR_RE.match(stripped):
+                in_table = True
+    return problems
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Generate CS2 Jekyll/Markdown documentation.")
+    parser = argparse.ArgumentParser(description="Generate the CS2 reference: Markdown, codegen JSON and the site data bundle.")
     parser.add_argument("--repo-root", default=".", help="Path to the repository root")
     parser.add_argument(
         "--artifacts-root",
@@ -3705,7 +4493,15 @@ def main(argv: list[str] | None = None) -> int:
         choices=["windows-x86_64", "linux-x86_64"],
         help="Which platform's artifact set to document (default: windows-x86_64).",
     )
-    parser.add_argument("--output", default="docs", help="Jekyll source directory (home page goes here; the rest goes under <output>/generated/)")
+    parser.add_argument("--output", default="docs", help="Output directory (home page goes here; everything else goes under <output>/generated/)")
+    parser.add_argument(
+        "--strict",
+        action="store_true",
+        help=(
+            "Fail the run when an overlay key names a class, field, message or "
+            "event this build does not have, or is filed under the wrong module."
+        ),
+    )
     args = parser.parse_args(argv)
 
     repo_root = Path(args.repo_root).resolve()
@@ -3783,9 +4579,24 @@ def main(argv: list[str] | None = None) -> int:
     print(f"  Generated {len(uml_md)} module UML Markdown pages.")
 
     print("Generating Markdown schema pages (per-type pages with memory layout)…")
-    generate_schemas_index_md(entities, overlays, generated_dir, diagram_modules=uml_md)
+    generate_schemas_index_md(
+        entities, overlays, generated_dir, diagram_modules=uml_md,
+        source_info=schema_source_info,
+    )
     print(f"  Generated {len({e['module'] for e in entities.values()})} module index pages "
           f"covering {len(entities)} entities (one page each).")
+
+    print("Checking inherited layouts resolve inside their own module…")
+    layout_violations, layout_exempt = check_module_layout_consistency(entities)
+    print(f"  {len(layout_violations)} cross-module inherited row(s); "
+          f"{layout_exempt} exempt (base exists in one module only).")
+    if layout_violations:
+        for v in layout_violations[:20]:
+            print(f"  ERROR: {v}", file=sys.stderr)
+        if len(layout_violations) > 20:
+            print(f"  ERROR: … and {len(layout_violations) - 20} more",
+                  file=sys.stderr)
+        return 3
 
     print("Generating Markdown protobuf pages…")
     generate_protobufs_md_page(protos, overlays, generated_dir)
@@ -3797,8 +4608,8 @@ def main(argv: list[str] | None = None) -> int:
           f"{_pc} cross-file symbol collision(s) documented).")
 
     print("Generating Markdown convar and command pages…")
-    generate_convars_md_page(convars, generated_dir)
-    generate_commands_md_page(commands, generated_dir)
+    generate_convars_md_page(convars, generated_dir, source_info=schema_source_info)
+    generate_commands_md_page(commands, generated_dir, source_info=schema_source_info)
 
     print("Generating convars_schema.json and commands_schema.json…")
     generate_convars_schema(convars, generated_dir, source_info=schema_source_info)
@@ -3898,6 +4709,47 @@ def main(argv: list[str] | None = None) -> int:
         entities, protos, convars, commands, out_dir,
         gameevents=gameevents, source_info=schema_source_info, extra_pages=extra_pages,
     )
+
+    print("Checking overlay keys against this build…")
+    overlay_unresolved, overlay_mismatched = check_overlay_keys(
+        overlays, entities, protos, gameevents
+    )
+    print(f"  {len(overlay_unresolved)} unresolved overlay key(s), "
+          f"{len(overlay_mismatched)} filed under the wrong module.")
+    for line in overlay_unresolved:
+        print(f"  UNRESOLVED {line}", file=sys.stderr)
+    for line in overlay_mismatched:
+        print(f"  MODULE     {line}", file=sys.stderr)
+    if (overlay_unresolved or overlay_mismatched) and args.strict:
+        print("  --strict: overlay keys must all resolve and sit under the module "
+              "that declares them.", file=sys.stderr)
+        return 5
+
+    print("Checking generated Markdown tables…")
+    table_problems = check_markdown_tables(out_dir)
+    print(f"  {len(table_problems)} broken table row(s).")
+    if table_problems:
+        for tp in table_problems[:20]:
+            print(f"  ERROR: {tp}", file=sys.stderr)
+        if len(table_problems) > 20:
+            print(f"  ERROR: … and {len(table_problems) - 20} more", file=sys.stderr)
+        return 4
+
+    print("Generating site data bundle…")
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import site_data
+    site_files = site_data.emit_site_data(
+        repo_root, artifacts_root=artifacts_root, build=args.build,
+        platform=args.platform, output=out_dir,
+    )
+    print(f"  {len(site_files)} file(s), {sum(site_files.values()) / 1024:.0f} KB under {generated_dir / 'data'}")
+    for i in site_data.INFOS:
+        print(f"  INFO {i}")
+    for w in site_data.WARNINGS:
+        print(f"  WARNING {w}", file=sys.stderr)
+    if site_data.WARNINGS and args.strict:
+        print("  --strict: site data warnings are fatal.", file=sys.stderr)
+        return 6
 
     print(f"\nDone!  Home page: {out_dir}/index.md")
     print(f"        Generated content: {generated_dir}")

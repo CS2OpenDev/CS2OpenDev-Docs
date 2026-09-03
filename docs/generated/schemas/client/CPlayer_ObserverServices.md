@@ -1,14 +1,18 @@
 ---
-layout: default
-title: CPlayer_ObserverServices
-nav_exclude: true
+title: CPlayer_ObserverServices (client)
+module: client
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [client](../client.md) / CPlayer_ObserverServices
 
 # CPlayer_ObserverServices
 
-**Kind:** class · **Size:** 96 bytes (`0x60`) · **Align:** 255 · **Module:** client
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 96 bytes (`0x60`) · **Align:** n/a (unspecified) · **Module:** client
+
+**Twin:** [CPlayer_ObserverServices (server)](../server/CPlayer_ObserverServices.md)
 
 **Inherits from:** [CPlayerPawnComponent](../server/CPlayerPawnComponent.md)
 

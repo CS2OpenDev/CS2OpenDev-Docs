@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmTransitionEventConditionNode::CDefinition"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmTransitionEventConditionNode::CDefinition
 
 # CNmTransitionEventConditionNode::CDefinition
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 32 bytes (`0x20`) · **Align:** 8 · **Module:** animlib
 
@@ -16,11 +18,11 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmBoolValueNode::CDefinition" <|-- "CNmTransitionEventConditionNode::CDefinition"
-    "CNmValueNode::CDefinition" <|-- "CNmBoolValueNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
-    "CNmTransitionEventConditionNode::CDefinition" *-- CNmBitFlags
-    "CNmTransitionEventConditionNode::CDefinition" *-- NmTransitionRuleCondition_t
+    `CNmBoolValueNode::CDefinition` <|-- `CNmTransitionEventConditionNode::CDefinition`
+    `CNmValueNode::CDefinition` <|-- `CNmBoolValueNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmValueNode::CDefinition`
+    `CNmTransitionEventConditionNode::CDefinition` *-- CNmBitFlags
+    `CNmTransitionEventConditionNode::CDefinition` *-- NmTransitionRuleCondition_t
 ```
 
 ## Memory layout

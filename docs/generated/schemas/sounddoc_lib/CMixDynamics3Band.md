@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CMixDynamics3Band
-nav_exclude: true
+module: sounddoc_lib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [sounddoc_lib](../sounddoc_lib.md) / CMixDynamics3Band
 
 # CMixDynamics3Band
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 184 bytes (`0xb8`) · **Align:** 8 · **Module:** sounddoc_lib
 

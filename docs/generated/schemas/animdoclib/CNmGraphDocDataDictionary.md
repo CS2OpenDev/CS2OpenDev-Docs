@@ -1,16 +1,26 @@
 ---
-layout: default
 title: CNmGraphDocDataDictionary
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmGraphDocDataDictionary
 
 # CNmGraphDocDataDictionary
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 48 bytes (`0x30`) · **Align:** 8 · **Module:** animdoclib
 
 **Metadata:** `MPropertyAutoExpandSelf`
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CNmGraphDocDataDictionary *-- `CNmGraphDocDataDictionary::ParameterSet_t`
+    CNmGraphDocDataDictionary *-- `CNmGraphDocDataDictionary::IDSet_t`
+```
 
 ## Memory layout
 
@@ -18,8 +28,8 @@ nav_exclude: true
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_parameterSets` | CUtlVector< [CNmGraphDocDataDictionary](../animdoclib/CNmGraphDocDataDictionary.md)::ParameterSet_t > |  | `MPropertyAutoExpandSelf` |
-| `0x18` | `m_IDSets` | CUtlVector< [CNmGraphDocDataDictionary](../animdoclib/CNmGraphDocDataDictionary.md)::IDSet_t > |  | `MPropertyAutoExpandSelf` |
+| `0x0` | `m_parameterSets` | CUtlVector< [CNmGraphDocDataDictionary::ParameterSet_t](../animdoclib/CNmGraphDocDataDictionary.ParameterSet_t.md) > |  | `MPropertyAutoExpandSelf` |
+| `0x18` | `m_IDSets` | CUtlVector< [CNmGraphDocDataDictionary::IDSet_t](../animdoclib/CNmGraphDocDataDictionary.IDSet_t.md) > |  | `MPropertyAutoExpandSelf` |
 
 <details><summary>KV3 class defaults</summary>
 

@@ -1,8 +1,5 @@
 ---
-layout: default
 title: "UML: animlib"
-parent: Schemas
-nav_exclude: true
 ---
 
 # UML: animlib
@@ -14,207 +11,237 @@ Class relationships (inheritance and composition) for the `animlib` module.
 ```mermaid
 classDiagram
     CNmBlendTaskBase <|-- CNmAdditiveBlendTask
-    "CNmBoolValueNode::CDefinition" <|-- "CNmAndNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmAnimationPoseNode::CDefinition"
-    "CNmParameterizedBlendNode::CDefinition" <|-- "CNmBlend1DNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmBlend2DNode::CDefinition"
+    `CNmBoolValueNode::CDefinition` <|-- `CNmAndNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmAnimationPoseNode::CDefinition`
+    `CNmParameterizedBlendNode::CDefinition` <|-- `CNmBlend1DNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmBlend2DNode::CDefinition`
     CNmBlendTaskBase <|-- CNmBlendTask
     CNmPoseTask <|-- CNmBlendTaskBase
     CNmEvent <|-- CNmBodyGroupEvent
-    "CNmBoneMaskValueNode::CDefinition" <|-- "CNmBoneMaskBlendNode::CDefinition"
-    "CNmBoneMaskValueNode::CDefinition" <|-- "CNmBoneMaskNode::CDefinition"
-    "CNmBoneMaskValueNode::CDefinition" <|-- "CNmBoneMaskSelectorNode::CDefinition"
-    "CNmBoneMaskValueNode::CDefinition" <|-- "CNmBoneMaskSwitchNode::CDefinition"
-    "CNmValueNode::CDefinition" <|-- "CNmBoneMaskValueNode::CDefinition"
-    "CNmValueNode::CDefinition" <|-- "CNmBoolValueNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmCachedBoolNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmCachedFloatNode::CDefinition"
-    "CNmIDValueNode::CDefinition" <|-- "CNmCachedIDNode::CDefinition"
+    `CNmBoneMaskValueNode::CDefinition` <|-- `CNmBoneMaskBlendNode::CDefinition`
+    `CNmBoneMaskValueNode::CDefinition` <|-- `CNmBoneMaskNode::CDefinition`
+    `CNmBoneMaskValueNode::CDefinition` <|-- `CNmBoneMaskSelectorNode::CDefinition`
+    `CNmBoneMaskValueNode::CDefinition` <|-- `CNmBoneMaskSwitchNode::CDefinition`
+    `CNmValueNode::CDefinition` <|-- `CNmBoneMaskValueNode::CDefinition`
+    `CNmValueNode::CDefinition` <|-- `CNmBoolValueNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmCachedBoolNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmCachedFloatNode::CDefinition`
+    `CNmIDValueNode::CDefinition` <|-- `CNmCachedIDNode::CDefinition`
     CNmPoseTask <|-- CNmCachedPoseReadTask
     CNmPoseTask <|-- CNmCachedPoseWriteTask
-    "CNmTargetValueNode::CDefinition" <|-- "CNmCachedTargetNode::CDefinition"
-    "CNmVectorValueNode::CDefinition" <|-- "CNmCachedVectorNode::CDefinition"
-    "CNmPassthroughNode::CDefinition" <|-- "CNmChainLookatNode::CDefinition"
+    `CNmTargetValueNode::CDefinition` <|-- `CNmCachedTargetNode::CDefinition`
+    `CNmVectorValueNode::CDefinition` <|-- `CNmCachedVectorNode::CDefinition`
+    `CNmPassthroughNode::CDefinition` <|-- `CNmChainLookatNode::CDefinition`
     CNmPoseTask <|-- CNmChainLookatTask
-    "CNmClipReferenceNode::CDefinition" <|-- "CNmClipNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmClipReferenceNode::CDefinition"
-    "CNmClipReferenceNode::CDefinition" <|-- "CNmClipSelectorNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmConstBoolNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmConstFloatNode::CDefinition"
-    "CNmIDValueNode::CDefinition" <|-- "CNmConstIDNode::CDefinition"
-    "CNmTargetValueNode::CDefinition" <|-- "CNmConstTargetNode::CDefinition"
-    "CNmVectorValueNode::CDefinition" <|-- "CNmConstVectorNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmControlParameterBoolNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmControlParameterFloatNode::CDefinition"
-    "CNmIDValueNode::CDefinition" <|-- "CNmControlParameterIDNode::CDefinition"
-    "CNmTargetValueNode::CDefinition" <|-- "CNmControlParameterTargetNode::CDefinition"
-    "CNmVectorValueNode::CDefinition" <|-- "CNmControlParameterVectorNode::CDefinition"
-    "CNmIDValueNode::CDefinition" <|-- "CNmCurrentSyncEventIDNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmCurrentSyncEventNode::CDefinition"
-    "CNmSpeedScaleBaseNode::CDefinition" <|-- "CNmDurationScaleNode::CDefinition"
+    `CNmClipReferenceNode::CDefinition` <|-- `CNmClipNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmClipReferenceNode::CDefinition`
+    `CNmClipReferenceNode::CDefinition` <|-- `CNmClipSelectorNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmConstBoolNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmConstFloatNode::CDefinition`
+    `CNmIDValueNode::CDefinition` <|-- `CNmConstIDNode::CDefinition`
+    `CNmTargetValueNode::CDefinition` <|-- `CNmConstTargetNode::CDefinition`
+    `CNmVectorValueNode::CDefinition` <|-- `CNmConstVectorNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmControlParameterBoolNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmControlParameterFloatNode::CDefinition`
+    `CNmIDValueNode::CDefinition` <|-- `CNmControlParameterIDNode::CDefinition`
+    `CNmTargetValueNode::CDefinition` <|-- `CNmControlParameterTargetNode::CDefinition`
+    `CNmVectorValueNode::CDefinition` <|-- `CNmControlParameterVectorNode::CDefinition`
+    `CNmIDValueNode::CDefinition` <|-- `CNmCurrentSyncEventIDNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmCurrentSyncEventNode::CDefinition`
+    `CNmSpeedScaleBaseNode::CDefinition` <|-- `CNmDurationScaleNode::CDefinition`
     CNmEvent <|-- CNmEntityAttributeEventBase
     CNmEntityAttributeEventBase <|-- CNmEntityAttributeFloatEvent
     CNmEntityAttributeEventBase <|-- CNmEntityAttributeIntEvent
-    "CNmPoseNode::CDefinition" <|-- "CNmExternalPoseNode::CDefinition"
-    "CNmBoneMaskValueNode::CDefinition" <|-- "CNmFixedWeightBoneMaskNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatAngleMathNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatClampNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmFloatComparisonNode::CDefinition"
+    `CNmPoseNode::CDefinition` <|-- `CNmExternalPoseNode::CDefinition`
+    `CNmBoneMaskValueNode::CDefinition` <|-- `CNmFixedWeightBoneMaskNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmFloatAngleMathNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmFloatClampNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmFloatComparisonNode::CDefinition`
     CNmEvent <|-- CNmFloatCurveEvent
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatCurveEventNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatCurveNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatEaseNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatMathNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmFloatRangeComparisonNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatRemapNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatSelectorNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatSpringNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFloatSwitchNode::CDefinition"
-    "CNmValueNode::CDefinition" <|-- "CNmFloatValueNode::CDefinition"
-    "CNmPassthroughNode::CDefinition" <|-- "CNmFollowBoneNode::CDefinition"
+    `CNmFloatValueNode::CDefinition` <|-- `CNmFloatCurveEventNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmFloatCurveNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmFloatEaseNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmFloatMathNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmFloatRangeComparisonNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmFloatRemapNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmFloatSelectorNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmFloatSpringNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmFloatSwitchNode::CDefinition`
+    `CNmValueNode::CDefinition` <|-- `CNmFloatValueNode::CDefinition`
+    `CNmPassthroughNode::CDefinition` <|-- `CNmFollowBoneNode::CDefinition`
     CNmPoseTask <|-- CNmFollowBoneTask
     CNmEvent <|-- CNmFootEvent
-    "CNmBoolValueNode::CDefinition" <|-- "CNmFootEventConditionNode::CDefinition"
-    "CNmPassthroughNode::CDefinition" <|-- "CNmFootIKNode::CDefinition"
+    `CNmBoolValueNode::CDefinition` <|-- `CNmFootEventConditionNode::CDefinition`
+    `CNmPassthroughNode::CDefinition` <|-- `CNmFootIKNode::CDefinition`
     CNmPoseTask <|-- CNmFootIKTask
-    "CNmIDValueNode::CDefinition" <|-- "CNmFootstepEventIDNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmFootstepEventPercentageThroughNode::CDefinition"
+    `CNmIDValueNode::CDefinition` <|-- `CNmFootstepEventIDNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmFootstepEventPercentageThroughNode::CDefinition`
     CNmEvent <|-- CNmFrameSnapEvent
-    "CNmBoolValueNode::CDefinition" <|-- "CNmGraphEventConditionNode::CDefinition"
-    "CNmClipReferenceNode::CDefinition" <|-- "CNmIDBasedClipSelectorNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmIDBasedSelectorNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmIDComparisonNode::CDefinition"
+    `CNmBoolValueNode::CDefinition` <|-- `CNmGraphEventConditionNode::CDefinition`
+    `CNmClipReferenceNode::CDefinition` <|-- `CNmIDBasedClipSelectorNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmIDBasedSelectorNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmIDComparisonNode::CDefinition`
     CNmEvent <|-- CNmIDEvent
-    "CNmBoolValueNode::CDefinition" <|-- "CNmIDEventConditionNode::CDefinition"
-    "CNmIDValueNode::CDefinition" <|-- "CNmIDEventNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmIDEventPercentageThroughNode::CDefinition"
-    "CNmIDValueNode::CDefinition" <|-- "CNmIDSelectorNode::CDefinition"
-    "CNmIDValueNode::CDefinition" <|-- "CNmIDSwitchNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmIDToFloatNode::CDefinition"
-    "CNmValueNode::CDefinition" <|-- "CNmIDValueNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmIsExternalGraphSlotFilledNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmIsExternalPoseSetNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmIsInactiveBranchConditionNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmIsTargetSetNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmLayerBlendNode::CDefinition"
+    `CNmBoolValueNode::CDefinition` <|-- `CNmIDEventConditionNode::CDefinition`
+    `CNmIDValueNode::CDefinition` <|-- `CNmIDEventNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmIDEventPercentageThroughNode::CDefinition`
+    `CNmIDValueNode::CDefinition` <|-- `CNmIDSelectorNode::CDefinition`
+    `CNmIDValueNode::CDefinition` <|-- `CNmIDSwitchNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmIDToFloatNode::CDefinition`
+    `CNmValueNode::CDefinition` <|-- `CNmIDValueNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmIsExternalGraphSlotFilledNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmIsExternalPoseSetNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmIsInactiveBranchConditionNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmIsTargetSetNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmLayerBlendNode::CDefinition`
     CNmEvent <|-- CNmLegacyEvent
     CNmEvent <|-- CNmMaterialAttributeEvent
     CNmBlendTaskBase <|-- CNmModelSpaceBlendTask
-    "CNmBoolValueNode::CDefinition" <|-- "CNmNotNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmOrNode::CDefinition"
+    `CNmBoolValueNode::CDefinition` <|-- `CNmNotNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmOrNode::CDefinition`
     CNmEvent <|-- CNmOrientationWarpEvent
-    "CNmPoseNode::CDefinition" <|-- "CNmOrientationWarpNode::CDefinition"
+    `CNmPoseNode::CDefinition` <|-- `CNmOrientationWarpNode::CDefinition`
     CNmBlendTaskBase <|-- CNmOverlayBlendTask
-    "CNmPoseNode::CDefinition" <|-- "CNmParameterizedBlendNode::CDefinition"
-    "CNmClipReferenceNode::CDefinition" <|-- "CNmParameterizedClipSelectorNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmParameterizedSelectorNode::CDefinition"
+    `CNmPoseNode::CDefinition` <|-- `CNmParameterizedBlendNode::CDefinition`
+    `CNmClipReferenceNode::CDefinition` <|-- `CNmParameterizedClipSelectorNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmParameterizedSelectorNode::CDefinition`
     CNmEvent <|-- CNmParticleEvent
-    "CNmPoseNode::CDefinition" <|-- "CNmPassthroughNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmPoseNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmReferencePoseNode::CDefinition"
+    `CNmPoseNode::CDefinition` <|-- `CNmPassthroughNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmPoseNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmReferencePoseNode::CDefinition`
     CNmPoseTask <|-- CNmReferencePoseTask
-    "CNmPoseNode::CDefinition" <|-- "CNmReferencedGraphNode::CDefinition"
+    `CNmPoseNode::CDefinition` <|-- `CNmReferencedGraphNode::CDefinition`
     CNmEvent <|-- CNmRootMotionEvent
-    "CNmPassthroughNode::CDefinition" <|-- "CNmRootMotionOverrideNode::CDefinition"
+    `CNmPassthroughNode::CDefinition` <|-- `CNmRootMotionOverrideNode::CDefinition`
     CNmPoseTask <|-- CNmSampleTask
-    "CNmPassthroughNode::CDefinition" <|-- "CNmScaleNode::CDefinition"
+    `CNmPassthroughNode::CDefinition` <|-- `CNmScaleNode::CDefinition`
     CNmPoseTask <|-- CNmScaleTask
-    "CNmPoseNode::CDefinition" <|-- "CNmSelectorNode::CDefinition"
+    `CNmPoseNode::CDefinition` <|-- `CNmSelectorNode::CDefinition`
     CNmEvent <|-- CNmSoundEvent
-    "CNmPassthroughNode::CDefinition" <|-- "CNmSpeedScaleBaseNode::CDefinition"
-    "CNmSpeedScaleBaseNode::CDefinition" <|-- "CNmSpeedScaleNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmStateCompletedConditionNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmStateMachineNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmStateNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmSyncEventIndexConditionNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmTargetInfoNode::CDefinition"
-    "CNmTargetValueNode::CDefinition" <|-- "CNmTargetOffsetNode::CDefinition"
-    "CNmVectorValueNode::CDefinition" <|-- "CNmTargetPointNode::CDefinition"
-    "CNmClipReferenceNode::CDefinition" <|-- "CNmTargetSelectorNode::CDefinition"
-    "CNmValueNode::CDefinition" <|-- "CNmTargetValueNode::CDefinition"
+    `CNmPassthroughNode::CDefinition` <|-- `CNmSpeedScaleBaseNode::CDefinition`
+    `CNmSpeedScaleBaseNode::CDefinition` <|-- `CNmSpeedScaleNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmStateCompletedConditionNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmStateMachineNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmStateNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmSyncEventIndexConditionNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmTargetInfoNode::CDefinition`
+    `CNmTargetValueNode::CDefinition` <|-- `CNmTargetOffsetNode::CDefinition`
+    `CNmVectorValueNode::CDefinition` <|-- `CNmTargetPointNode::CDefinition`
+    `CNmClipReferenceNode::CDefinition` <|-- `CNmTargetSelectorNode::CDefinition`
+    `CNmValueNode::CDefinition` <|-- `CNmTargetValueNode::CDefinition`
     CNmEvent <|-- CNmTargetWarpEvent
-    "CNmPoseNode::CDefinition" <|-- "CNmTargetWarpNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmTimeConditionNode::CDefinition"
+    `CNmPoseNode::CDefinition` <|-- `CNmTargetWarpNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmTimeConditionNode::CDefinition`
     CNmEvent <|-- CNmTransitionEvent
-    "CNmBoolValueNode::CDefinition" <|-- "CNmTransitionEventConditionNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmTransitionNode::CDefinition"
-    "CNmPassthroughNode::CDefinition" <|-- "CNmTwoBoneIKNode::CDefinition"
+    `CNmBoolValueNode::CDefinition` <|-- `CNmTransitionEventConditionNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmTransitionNode::CDefinition`
+    `CNmPassthroughNode::CDefinition` <|-- `CNmTwoBoneIKNode::CDefinition`
     CNmPoseTask <|-- CNmTwoBoneIKTask
-    "CNmGraphNode::CDefinition" <|-- "CNmValueNode::CDefinition"
-    "CNmVectorValueNode::CDefinition" <|-- "CNmVectorCreateNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmVectorInfoNode::CDefinition"
-    "CNmVectorValueNode::CDefinition" <|-- "CNmVectorNegateNode::CDefinition"
-    "CNmValueNode::CDefinition" <|-- "CNmVectorValueNode::CDefinition"
-    "CNmSpeedScaleBaseNode::CDefinition" <|-- "CNmVelocityBasedSpeedScaleNode::CDefinition"
-    "CNmParameterizedBlendNode::CDefinition" <|-- "CNmVelocityBlendNode::CDefinition"
-    "CNmBoneMaskValueNode::CDefinition" <|-- "CNmVirtualParameterBoneMaskNode::CDefinition"
-    "CNmBoolValueNode::CDefinition" <|-- "CNmVirtualParameterBoolNode::CDefinition"
-    "CNmFloatValueNode::CDefinition" <|-- "CNmVirtualParameterFloatNode::CDefinition"
-    "CNmIDValueNode::CDefinition" <|-- "CNmVirtualParameterIDNode::CDefinition"
-    "CNmTargetValueNode::CDefinition" <|-- "CNmVirtualParameterTargetNode::CDefinition"
-    "CNmVectorValueNode::CDefinition" <|-- "CNmVirtualParameterVectorNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmZeroPoseNode::CDefinition"
+    `CNmGraphNode::CDefinition` <|-- `CNmValueNode::CDefinition`
+    `CNmVectorValueNode::CDefinition` <|-- `CNmVectorCreateNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmVectorInfoNode::CDefinition`
+    `CNmVectorValueNode::CDefinition` <|-- `CNmVectorNegateNode::CDefinition`
+    `CNmValueNode::CDefinition` <|-- `CNmVectorValueNode::CDefinition`
+    `CNmSpeedScaleBaseNode::CDefinition` <|-- `CNmVelocityBasedSpeedScaleNode::CDefinition`
+    `CNmParameterizedBlendNode::CDefinition` <|-- `CNmVelocityBlendNode::CDefinition`
+    `CNmBoneMaskValueNode::CDefinition` <|-- `CNmVirtualParameterBoneMaskNode::CDefinition`
+    `CNmBoolValueNode::CDefinition` <|-- `CNmVirtualParameterBoolNode::CDefinition`
+    `CNmFloatValueNode::CDefinition` <|-- `CNmVirtualParameterFloatNode::CDefinition`
+    `CNmIDValueNode::CDefinition` <|-- `CNmVirtualParameterIDNode::CDefinition`
+    `CNmTargetValueNode::CDefinition` <|-- `CNmVirtualParameterTargetNode::CDefinition`
+    `CNmVectorValueNode::CDefinition` <|-- `CNmVirtualParameterVectorNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmZeroPoseNode::CDefinition`
     CNmPoseTask <|-- CNmZeroPoseTask
+    `CNmBlend1DNode::CDefinition` *-- `CNmParameterizedBlendNode::Parameterization_t`
     CNmBodyGroupEvent *-- CNmEventTargetEntity_t
-    "CNmCachedBoolNode::CDefinition" *-- NmCachedValueMode_t
-    "CNmCachedFloatNode::CDefinition" *-- NmCachedValueMode_t
-    "CNmCachedIDNode::CDefinition" *-- NmCachedValueMode_t
-    "CNmCachedTargetNode::CDefinition" *-- NmCachedValueMode_t
-    "CNmCachedVectorNode::CDefinition" *-- NmCachedValueMode_t
+    `CNmCachedBoolNode::CDefinition` *-- NmCachedValueMode_t
+    `CNmCachedFloatNode::CDefinition` *-- NmCachedValueMode_t
+    `CNmCachedIDNode::CDefinition` *-- NmCachedValueMode_t
+    `CNmCachedTargetNode::CDefinition` *-- NmCachedValueMode_t
+    `CNmCachedVectorNode::CDefinition` *-- NmCachedValueMode_t
     CNmClip *-- NmCompressionSettings_t
     CNmClip --> CNmFloatChannelData
     CNmClip *-- CNmSyncTrack
     CNmClip *-- CNmRootMotionData
-    "CNmConstTargetNode::CDefinition" *-- CNmTarget
+    CNmClip *-- `CNmClip::ModelSpaceSamplingChainLink_t`
+    `CNmConstTargetNode::CDefinition` *-- CNmTarget
+    `CNmCurrentSyncEventNode::CDefinition` *-- `CNmCurrentSyncEventNode::InfoType_t`
     CNmEntityAttributeEventBase *-- CNmEventTargetEntity_t
     CNmEvent *-- NmPercent_t
-    "CNmFloatChannelData::ChannelSettings_t" *-- NmCompressionSettings_t
-    "CNmFloatCurveEventNode::CDefinition" *-- CNmBitFlags
-    "CNmFloatEaseNode::CDefinition" *-- NmEasingOperation_t
-    "CNmFloatSelectorNode::CDefinition" *-- NmEasingOperation_t
-    "CNmFollowBoneNode::CDefinition" *-- NmFollowBoneMode_t
+    `CNmFloatAngleMathNode::CDefinition` *-- `CNmFloatAngleMathNode::Operation_t`
+    CNmFloatChannelData *-- `CNmFloatChannelData::ChannelSettings_t`
+    `CNmFloatChannelData::ChannelSettings_t` *-- `NmCompressionSettings_t::QuantizationRange_t`
+    `CNmFloatComparisonNode::CDefinition` *-- `CNmFloatComparisonNode::Comparison_t`
+    `CNmFloatCurveEventNode::CDefinition` *-- CNmBitFlags
+    `CNmFloatEaseNode::CDefinition` *-- NmEasingOperation_t
+    `CNmFloatMathNode::CDefinition` *-- `CNmFloatMathNode::Operator_t`
+    `CNmFloatRemapNode::CDefinition` *-- `CNmFloatRemapNode::RemapRange_t`
+    `CNmFloatSelectorNode::CDefinition` *-- NmEasingOperation_t
+    `CNmFollowBoneNode::CDefinition` *-- NmFollowBoneMode_t
     CNmFootEvent *-- NmFootPhase_t
-    "CNmFootEventConditionNode::CDefinition" *-- NmFootPhaseCondition_t
-    "CNmFootEventConditionNode::CDefinition" *-- CNmBitFlags
-    "CNmFootIKNode::CDefinition" *-- NmIKBlendMode_t
+    `CNmFootEventConditionNode::CDefinition` *-- NmFootPhaseCondition_t
+    `CNmFootEventConditionNode::CDefinition` *-- CNmBitFlags
+    `CNmFootIKNode::CDefinition` *-- NmIKBlendMode_t
     CNmFootIKTask *-- CNmTarget
     CNmFootIKTask *-- NmIKBlendMode_t
-    "CNmFootstepEventIDNode::CDefinition" *-- CNmBitFlags
-    "CNmFootstepEventPercentageThroughNode::CDefinition" *-- NmFootPhaseCondition_t
-    "CNmFootstepEventPercentageThroughNode::CDefinition" *-- CNmBitFlags
+    `CNmFootstepEventIDNode::CDefinition` *-- CNmBitFlags
+    `CNmFootstepEventPercentageThroughNode::CDefinition` *-- NmFootPhaseCondition_t
+    `CNmFootstepEventPercentageThroughNode::CDefinition` *-- CNmBitFlags
     CNmFrameSnapEvent *-- NmFrameSnapEventMode_t
     CNmGraphDefinition --> CNmGraphVariationUserData
-    "CNmGraphEventConditionNode::CDefinition" *-- CNmBitFlags
-    "CNmGraphEventConditionNode::Condition_t" *-- NmGraphEventTypeCondition_t
-    "CNmIDEventConditionNode::CDefinition" *-- CNmBitFlags
-    "CNmIDEventNode::CDefinition" *-- CNmBitFlags
-    "CNmIDEventPercentageThroughNode::CDefinition" *-- CNmBitFlags
-    "CNmLayerBlendNode::LayerDefinition_t" *-- NmPoseBlendMode_t
+    CNmGraphDefinition *-- `CNmGraphDefinition::ReferencedGraphSlot_t`
+    CNmGraphDefinition *-- `CNmGraphDefinition::ExternalGraphSlot_t`
+    CNmGraphDefinition *-- `CNmGraphDefinition::ExternalPoseSlot_t`
+    `CNmGraphEventConditionNode::CDefinition` *-- CNmBitFlags
+    `CNmGraphEventConditionNode::CDefinition` *-- `CNmGraphEventConditionNode::Condition_t`
+    `CNmGraphEventConditionNode::Condition_t` *-- NmGraphEventTypeCondition_t
+    `CNmIDComparisonNode::CDefinition` *-- `CNmIDComparisonNode::Comparison_t`
+    `CNmIDEventConditionNode::CDefinition` *-- CNmBitFlags
+    `CNmIDEventNode::CDefinition` *-- CNmBitFlags
+    `CNmIDEventPercentageThroughNode::CDefinition` *-- CNmBitFlags
+    `CNmLayerBlendNode::CDefinition` *-- `CNmLayerBlendNode::LayerDefinition_t`
+    `CNmLayerBlendNode::LayerDefinition_t` *-- NmPoseBlendMode_t
     CNmMaterialAttributeEvent *-- CNmEventTargetEntity_t
-    "CNmOrientationWarpNode::CDefinition" *-- CNmRootMotionData
+    `CNmOrientationWarpNode::CDefinition` *-- `CNmRootMotionData::SamplingMode_t`
+    `CNmParameterizedBlendNode::Parameterization_t` *-- `CNmParameterizedBlendNode::BlendRange_t`
     CNmParticleEvent *-- CNmEventRelevance_t
+    CNmParticleEvent *-- `CNmParticleEvent::Type_t`
     CNmParticleEvent *-- CNmEventTargetEntity_t
-    "CNmRootMotionOverrideNode::CDefinition" *-- CNmBitFlags
+    `CNmRootMotionOverrideNode::CDefinition` *-- CNmBitFlags
     CNmSkeleton *-- NmBoneMaskSetDefinition_t
+    CNmSkeleton *-- `CNmSkeleton::SecondarySkeleton_t`
     CNmSkeleton *-- CNmFloatChannelSet_t
     CNmSoundEvent *-- CNmEventRelevance_t
-    "CNmSyncTrack::EventMarker_t" *-- NmPercent_t
-    "CNmSyncTrack::Event_t" *-- NmPercent_t
+    CNmSoundEvent *-- `CNmSoundEvent::Position_t`
+    `CNmStateMachineNode::CDefinition` *-- `CNmStateMachineNode::StateDefinition_t`
+    `CNmStateMachineNode::StateDefinition_t` *-- `CNmStateMachineNode::TransitionDefinition_t`
+    `CNmStateNode::CDefinition` *-- `CNmStateNode::TimedEvent_t`
+    `CNmStateNode::TimedEvent_t` *-- `CNmStateNode::TimedEvent_t::Comparison_t`
+    `CNmSyncEventIndexConditionNode::CDefinition` *-- `CNmSyncEventIndexConditionNode::TriggerMode_t`
+    CNmSyncTrack *-- `CNmSyncTrack::Event_t`
+    `CNmSyncTrack::EventMarker_t` *-- NmPercent_t
+    `CNmSyncTrack::Event_t` *-- NmPercent_t
+    `CNmTargetInfoNode::CDefinition` *-- `CNmTargetInfoNode::Info_t`
     CNmTargetWarpEvent *-- NmTargetWarpRule_t
     CNmTargetWarpEvent *-- NmTargetWarpAlgorithm_t
-    "CNmTargetWarpNode::CDefinition" *-- CNmRootMotionData
+    `CNmTargetWarpNode::CDefinition` *-- `CNmRootMotionData::SamplingMode_t`
+    `CNmTargetWarpNode::CDefinition` *-- `CNmTargetWarpNode::TargetUpdateRule_t`
+    `CNmTimeConditionNode::CDefinition` *-- `CNmTimeConditionNode::ComparisonType_t`
+    `CNmTimeConditionNode::CDefinition` *-- `CNmTimeConditionNode::Operator_t`
     CNmTransitionEvent *-- NmTransitionRule_t
-    "CNmTransitionEventConditionNode::CDefinition" *-- CNmBitFlags
-    "CNmTransitionEventConditionNode::CDefinition" *-- NmTransitionRuleCondition_t
-    "CNmTransitionNode::CDefinition" *-- NmPercent_t
-    "CNmTransitionNode::CDefinition" *-- CNmBitFlags
-    "CNmTransitionNode::CDefinition" *-- NmEasingOperation_t
-    "CNmTransitionNode::CDefinition" *-- NmRootMotionBlendMode_t
-    "CNmTwoBoneIKNode::CDefinition" *-- NmIKBlendMode_t
+    `CNmTransitionEventConditionNode::CDefinition` *-- CNmBitFlags
+    `CNmTransitionEventConditionNode::CDefinition` *-- NmTransitionRuleCondition_t
+    `CNmTransitionNode::CDefinition` *-- NmPercent_t
+    `CNmTransitionNode::CDefinition` *-- CNmBitFlags
+    `CNmTransitionNode::CDefinition` *-- NmEasingOperation_t
+    `CNmTransitionNode::CDefinition` *-- NmRootMotionBlendMode_t
+    `CNmTwoBoneIKNode::CDefinition` *-- NmIKBlendMode_t
     CNmTwoBoneIKTask *-- CNmTarget
     CNmTwoBoneIKTask *-- NmIKBlendMode_t
+    `CNmVectorInfoNode::CDefinition` *-- `CNmVectorInfoNode::Info_t`
     NmBoneMaskSetDefinition_t *-- CNmBoneWeightList
-    NmFloatCurveCompressionSettings_t *-- NmCompressionSettings_t
+    NmCompressionSettings_t *-- `NmCompressionSettings_t::QuantizationRange_t`
+    NmFloatCurveCompressionSettings_t *-- `NmCompressionSettings_t::QuantizationRange_t`
     NmSyncTrackTimeRange_t *-- NmSyncTrackTime_t
     NmSyncTrackTime_t *-- NmPercent_t
 ```

@@ -1,12 +1,14 @@
 ---
-layout: default
 title: C_INIT_PositionPlaceOnGround
-nav_exclude: true
+module: particles
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [particles](../particles.md) / C_INIT_PositionPlaceOnGround
 
 # C_INIT_PositionPlaceOnGround
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 3120 bytes (`0xc30`) · **Align:** 8 · **Module:** particles
 
@@ -65,7 +67,7 @@ classDiagram
 | `0xc1c` | `m_bOffsetonColOnly` | bool |  | `MPropertyFriendlyName Offset only if trace hit` `MPropertySuppressExpr is_gpu_particle_system` |
 | `0xc20` | `m_flOffsetByRadiusFactor` | float32 |  | `MPropertyFriendlyName offset final position by this fraction of the particle radius` `MPropertySuppressExpr is_gpu_particle_system` |
 | `0xc24` | `m_nPreserveOffsetCP` | int32 |  | `MPropertyFriendlyName preserve initial Z-offset relative to cp` `MPropertySuppressExpr is_gpu_particle_system` |
-| `0xc28` | `m_nIgnoreCP` | int32 |  | `MPropertyFriendlyName CP Entity to Ignore for Collisions` `MPropertySuppressExpr is_gpu_particle_system \|\| m_nTraceSet == PARTICLE_TRACE_SET_STATIC` |
+| `0xc28` | `m_nIgnoreCP` | int32 |  | `MPropertyFriendlyName CP Entity to Ignore for Collisions` `MPropertySuppressExpr is_gpu_particle_system &#124;&#124; m_nTraceSet == PARTICLE_TRACE_SET_STATIC` |
 
 <details><summary>KV3 class defaults</summary>
 

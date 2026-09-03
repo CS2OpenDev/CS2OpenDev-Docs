@@ -1,13 +1,11 @@
 ---
-layout: default
 title: gcsdk_gcmessages.proto
-parent: Protobufs
-nav_exclude: true
+proto: gcsdk_gcmessages.proto
 ---
 
 # `gcsdk_gcmessages.proto`
 
-**Imports:** `steammessages.proto`
+**Imports:** [`steammessages.proto`](steammessages.md)
 
 ## Diagram
 
@@ -33,7 +31,7 @@ direction LR
     +CMsgSOIDOwner owner_soid
   }
 
-  class SingleObject {
+  class CMsgSOMultipleObjects_SingleObject["CMsgSOMultipleObjects.SingleObject"] {
     +int32 type_id
     +bytes object_data
   }
@@ -44,7 +42,7 @@ direction LR
     +CMsgSOIDOwner owner_soid
   }
 
-  class SubscribedType {
+  class CMsgSOCacheSubscribed_SubscribedType["CMsgSOCacheSubscribed.SubscribedType"] {
     +int32 type_id
     +List~bytes~ object_data
   }
@@ -177,7 +175,7 @@ direction LR
     +string txn_country_code
   }
 
-  class Location {
+  class CMsgClientWelcome_Location["CMsgClientWelcome.Location"] {
     +float latitude
     +float longitude
     +string country
@@ -197,13 +195,13 @@ direction LR
     +List~CWorkshop_PopulateItemDescriptions_Request.ItemDescriptionsLanguageBlock~ languages
   }
 
-  class SingleItemDescription {
+  class CWorkshop_PopulateItemDescriptions_Request_SingleItemDescription["CWorkshop_PopulateItemDescriptions_Request.SingleItemDescription"] {
     +uint32 gameitemid
     +string item_description
     +bool one_per_account
   }
 
-  class ItemDescriptionsLanguageBlock {
+  class CWorkshop_PopulateItemDescriptions_Request_ItemDescriptionsLanguageBlock["CWorkshop_PopulateItemDescriptions_Request.ItemDescriptionsLanguageBlock"] {
     +string language
     +List~CWorkshop_PopulateItemDescriptions_Request.SingleItemDescription~ descriptions
   }
@@ -227,19 +225,19 @@ direction LR
     +CWorkshop_SetItemPaymentRules_Request.WorkshopDirectPaymentRule associated_workshop_file_for_direct_payments
   }
 
-  class WorkshopItemPaymentRule {
+  class CWorkshop_SetItemPaymentRules_Request_WorkshopItemPaymentRule["CWorkshop_SetItemPaymentRules_Request.WorkshopItemPaymentRule"] {
     +uint64 workshop_file_id
     +float revenue_percentage
     +string rule_description
     +uint32 rule_type
   }
 
-  class WorkshopDirectPaymentRule {
+  class CWorkshop_SetItemPaymentRules_Request_WorkshopDirectPaymentRule["CWorkshop_SetItemPaymentRules_Request.WorkshopDirectPaymentRule"] {
     +uint64 workshop_file_id
     +string rule_description
   }
 
-  class PartnerItemPaymentRule {
+  class CWorkshop_SetItemPaymentRules_Request_PartnerItemPaymentRule["CWorkshop_SetItemPaymentRules_Request.PartnerItemPaymentRule"] {
     +uint32 account_id
     +float revenue_percentage
     +string rule_description
@@ -257,7 +255,7 @@ direction LR
     +List~CGameServers_AggregationQuery_Response.Group~ groups
   }
 
-  class Group {
+  class CGameServers_AggregationQuery_Response_Group["CGameServers_AggregationQuery_Response.Group"] {
     +List~string~ group_values
     +uint32 servers_empty
     +uint32 servers_full
@@ -284,12 +282,12 @@ direction LR
     +uint64 steamid
   }
 
-  class Token {
+  class CProductInfo_SetRichPresenceLocalization_Request_Token["CProductInfo_SetRichPresenceLocalization_Request.Token"] {
     +string token
     +string value
   }
 
-  class LanguageSection {
+  class CProductInfo_SetRichPresenceLocalization_Request_LanguageSection["CProductInfo_SetRichPresenceLocalization_Request.LanguageSection"] {
     +string language
     +List~CProductInfo_SetRichPresenceLocalization_Request.Token~ tokens
   }
@@ -303,28 +301,28 @@ direction LR
     +uint32 gc_socache_file_version
   }
 
-  class TypeCache {
+  class CMsgSerializedSOCache_TypeCache["CMsgSerializedSOCache.TypeCache"] {
     +uint32 type
     +List~bytes~ objects
     +uint32 service_id
   }
 
-  class Cache {
+  class CMsgSerializedSOCache_Cache["CMsgSerializedSOCache.Cache"] {
     +uint32 type
     +uint64 id
     +List~CMsgSerializedSOCache.Cache.Version~ versions
     +List~CMsgSerializedSOCache.TypeCache~ type_caches
   }
 
-  class Version {
+  class CMsgSerializedSOCache_Cache_Version["CMsgSerializedSOCache.Cache.Version"] {
     +uint32 service
     +uint64 version
   }
 
   CMsgSOSingleObject --> CMsgSOIDOwner : owner_soid
-  CMsgSOMultipleObjects --> SingleObject : objects_modified[]
+  CMsgSOMultipleObjects --> CMsgSOMultipleObjects_SingleObject : objects_modified[]
   CMsgSOMultipleObjects --> CMsgSOIDOwner : owner_soid
-  CMsgSOCacheSubscribed --> SubscribedType : objects[]
+  CMsgSOCacheSubscribed --> CMsgSOCacheSubscribed_SubscribedType : objects[]
   CMsgSOCacheSubscribed --> CMsgSOIDOwner : owner_soid
   CMsgSOCacheUnsubscribed --> CMsgSOIDOwner : owner_soid
   CMsgSOCacheSubscriptionCheck --> CMsgSOIDOwner : owner_soid
@@ -334,19 +332,19 @@ direction LR
   CMsgServerHello --> CMsgSOCacheHaveVersion : socache_have_versions[]
   CMsgClientWelcome --> CMsgSOCacheSubscribed : outofdate_subscribed_caches[]
   CMsgClientWelcome --> CMsgSOCacheSubscriptionCheck : uptodate_subscribed_caches[]
-  CMsgClientWelcome --> Location : location
+  CMsgClientWelcome --> CMsgClientWelcome_Location : location
   CMsgConnectionStatus --> GCConnectionStatus : status
-  CWorkshop_PopulateItemDescriptions_Request --> ItemDescriptionsLanguageBlock : languages[]
-  ItemDescriptionsLanguageBlock --> SingleItemDescription : descriptions[]
-  CWorkshop_SetItemPaymentRules_Request --> WorkshopItemPaymentRule : associated_workshop_files[]
-  CWorkshop_SetItemPaymentRules_Request --> PartnerItemPaymentRule : partner_accounts[]
-  CWorkshop_SetItemPaymentRules_Request --> WorkshopDirectPaymentRule : associated_workshop_file_for_direct_payments
-  CGameServers_AggregationQuery_Response --> Group : groups[]
-  CProductInfo_SetRichPresenceLocalization_Request --> LanguageSection : languages[]
-  LanguageSection --> Token : tokens[]
-  CMsgSerializedSOCache --> Cache : caches[]
-  Cache --> Version : versions[]
-  Cache --> TypeCache : type_caches[]
+  CWorkshop_PopulateItemDescriptions_Request --> CWorkshop_PopulateItemDescriptions_Request_ItemDescriptionsLanguageBlock : languages[]
+  CWorkshop_PopulateItemDescriptions_Request_ItemDescriptionsLanguageBlock --> CWorkshop_PopulateItemDescriptions_Request_SingleItemDescription : descriptions[]
+  CWorkshop_SetItemPaymentRules_Request --> CWorkshop_SetItemPaymentRules_Request_WorkshopItemPaymentRule : associated_workshop_files[]
+  CWorkshop_SetItemPaymentRules_Request --> CWorkshop_SetItemPaymentRules_Request_PartnerItemPaymentRule : partner_accounts[]
+  CWorkshop_SetItemPaymentRules_Request --> CWorkshop_SetItemPaymentRules_Request_WorkshopDirectPaymentRule : associated_workshop_file_for_direct_payments
+  CGameServers_AggregationQuery_Response --> CGameServers_AggregationQuery_Response_Group : groups[]
+  CProductInfo_SetRichPresenceLocalization_Request --> CProductInfo_SetRichPresenceLocalization_Request_LanguageSection : languages[]
+  CProductInfo_SetRichPresenceLocalization_Request_LanguageSection --> CProductInfo_SetRichPresenceLocalization_Request_Token : tokens[]
+  CMsgSerializedSOCache --> CMsgSerializedSOCache_Cache : caches[]
+  CMsgSerializedSOCache_Cache --> CMsgSerializedSOCache_Cache_Version : versions[]
+  CMsgSerializedSOCache_Cache --> CMsgSerializedSOCache_TypeCache : type_caches[]
 
   class GCClientLauncherType{
     <<enumeration>>
@@ -392,15 +390,15 @@ direction LR
 
 ### `CMsgSOIDOwner`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `type` | 1 | uint32 | optional |  |
 | `id` | 2 | uint64 | optional |  |
 
 ### `CMsgSOSingleObject`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `type_id` | 2 | int32 | optional |  |
 | `object_data` | 3 | bytes | optional |  |
 | `version` | 4 | fixed64 | optional |  |
@@ -408,49 +406,63 @@ direction LR
 
 ### `CMsgSOMultipleObjects`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `objects_modified` | 2 | CMsgSOMultipleObjects.SingleObject | repeated |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `objects_modified` | 2 | [CMsgSOMultipleObjects.SingleObject](#cmsgsomultipleobjectssingleobject) | repeated |  |
 | `version` | 3 | fixed64 | optional |  |
 | `owner_soid` | 6 | [CMsgSOIDOwner](#cmsgsoidowner) | optional |  |
 
+#### `CMsgSOMultipleObjects.SingleObject`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `type_id` | 1 | int32 | optional |  |
+| `object_data` | 2 | bytes | optional |  |
+
 ### `CMsgSOCacheSubscribed`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `objects` | 2 | CMsgSOCacheSubscribed.SubscribedType | repeated |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `objects` | 2 | [CMsgSOCacheSubscribed.SubscribedType](#cmsgsocachesubscribedsubscribedtype) | repeated |  |
 | `version` | 3 | fixed64 | optional |  |
 | `owner_soid` | 4 | [CMsgSOIDOwner](#cmsgsoidowner) | optional |  |
 
+#### `CMsgSOCacheSubscribed.SubscribedType`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `type_id` | 1 | int32 | optional |  |
+| `object_data` | 2 | bytes | repeated |  |
+
 ### `CMsgSOCacheUnsubscribed`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `owner_soid` | 2 | [CMsgSOIDOwner](#cmsgsoidowner) | optional |  |
 
 ### `CMsgSOCacheSubscriptionCheck`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `version` | 2 | fixed64 | optional |  |
 | `owner_soid` | 3 | [CMsgSOIDOwner](#cmsgsoidowner) | optional |  |
 
 ### `CMsgSOCacheSubscriptionRefresh`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `owner_soid` | 2 | [CMsgSOIDOwner](#cmsgsoidowner) | optional |  |
 
 ### `CMsgSOCacheVersion`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `version` | 1 | fixed64 | optional |  |
 
 ### `CMsgAccountDetails`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `valid` | 1 | bool | optional |  |
 | `account_name` | 2 | string | optional |  |
 | `public_profile` | 4 | bool | optional |  |
@@ -472,8 +484,8 @@ direction LR
 
 ### `CMsgGCMultiplexMessage`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `msgtype` | 1 | uint32 | optional |  |
 | `payload` | 2 | bytes | optional |  |
 | `steamids` | 3 | fixed64 | repeated |  |
@@ -481,29 +493,31 @@ direction LR
 
 ### `CMsgGCMultiplexMessage_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `msgtype` | 1 | uint32 | optional |  |
 
 ### `CGCToGCMsgMasterAck`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `dir_index` | 1 | uint32 | optional |  |
 | `gc_type` | 2 | uint32 | optional |  |
 
 ### `CGCToGCMsgMasterAck_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `eresult` | 1 | int32 | optional | *(default: `2`)* |
 
 ### `CGCToGCMsgMasterStartupComplete`
 
+*(no fields)*
+
 ### `CGCToGCMsgRouted`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `msg_type` | 1 | uint32 | optional |  |
 | `sender_id` | 2 | fixed64 | optional |  |
 | `net_message` | 3 | bytes | optional |  |
@@ -511,41 +525,41 @@ direction LR
 
 ### `CGCToGCMsgRoutedReply`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `msg_type` | 1 | uint32 | optional |  |
 | `net_message` | 2 | bytes | optional |  |
 
 ### `CMsgGCUpdateSessionIP`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `steamid` | 1 | fixed64 | optional |  |
 | `ip` | 2 | fixed32 | optional |  |
 
 ### `CMsgGCRequestSessionIP`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `steamid` | 1 | fixed64 | optional |  |
 
 ### `CMsgGCRequestSessionIPResponse`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `ip` | 1 | fixed32 | optional |  |
 
 ### `CMsgSOCacheHaveVersion`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `soid` | 1 | [CMsgSOIDOwner](#cmsgsoidowner) | optional |  |
 | `version` | 2 | fixed64 | optional |  |
 
 ### `CMsgClientHello`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `version` | 1 | uint32 | optional |  |
 | `socache_have_versions` | 2 | [CMsgSOCacheHaveVersion](#cmsgsocachehaveversion) | repeated |  |
 | `client_session_need` | 3 | uint32 | optional |  |
@@ -558,8 +572,8 @@ direction LR
 
 ### `CMsgServerHello`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `version` | 1 | uint32 | optional |  |
 | `socache_have_versions` | 2 | [CMsgSOCacheHaveVersion](#cmsgsocachehaveversion) | repeated |  |
 | `legacy_client_session_need` | 3 | uint32 | optional |  |
@@ -571,13 +585,13 @@ direction LR
 
 ### `CMsgClientWelcome`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `version` | 1 | uint32 | optional |  |
 | `game_data` | 2 | bytes | optional |  |
 | `outofdate_subscribed_caches` | 3 | [CMsgSOCacheSubscribed](#cmsgsocachesubscribed) | repeated |  |
 | `uptodate_subscribed_caches` | 4 | [CMsgSOCacheSubscriptionCheck](#cmsgsocachesubscriptioncheck) | repeated |  |
-| `location` | 5 | CMsgClientWelcome.Location | optional |  |
+| `location` | 5 | [CMsgClientWelcome.Location](#cmsgclientwelcomelocation) | optional |  |
 | `game_data2` | 6 | bytes | optional |  |
 | `rtime32_gc_welcome_timestamp` | 7 | uint32 | optional |  |
 | `currency` | 8 | uint32 | optional |  |
@@ -585,10 +599,18 @@ direction LR
 | `balance_url` | 10 | string | optional |  |
 | `txn_country_code` | 11 | string | optional |  |
 
+#### `CMsgClientWelcome.Location`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `latitude` | 1 | float | optional |  |
+| `longitude` | 2 | float | optional |  |
+| `country` | 3 | string | optional |  |
+
 ### `CMsgConnectionStatus`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `status` | 1 | [GCConnectionStatus](#gcconnectionstatus) | optional |  |
 | `client_session_need` | 2 | uint32 | optional |  |
 | `queue_position` | 3 | int32 | optional |  |
@@ -598,55 +620,108 @@ direction LR
 
 ### `CWorkshop_PopulateItemDescriptions_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `appid` | 1 | uint32 | optional |  |
-| `languages` | 2 | CWorkshop_PopulateItemDescriptions_Request.ItemDescriptionsLanguageBlock | repeated |  |
+| `languages` | 2 | [CWorkshop_PopulateItemDescriptions_Request.ItemDescriptionsLanguageBlock](#cworkshop_populateitemdescriptions_requestitemdescriptionslanguageblock) | repeated |  |
+
+#### `CWorkshop_PopulateItemDescriptions_Request.SingleItemDescription`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `gameitemid` | 1 | uint32 | optional |  |
+| `item_description` | 2 | string | optional |  |
+| `one_per_account` | 3 | bool | optional |  |
+
+#### `CWorkshop_PopulateItemDescriptions_Request.ItemDescriptionsLanguageBlock`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `language` | 1 | string | optional |  |
+| `descriptions` | 2 | [CWorkshop_PopulateItemDescriptions_Request.SingleItemDescription](#cworkshop_populateitemdescriptions_requestsingleitemdescription) | repeated |  |
 
 ### `CWorkshop_GetContributors_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `appid` | 1 | uint32 | optional |  |
 | `gameitemid` | 2 | uint32 | optional |  |
 
 ### `CWorkshop_GetContributors_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `contributors` | 1 | fixed64 | repeated |  |
 
 ### `CWorkshop_SetItemPaymentRules_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `appid` | 1 | uint32 | optional |  |
 | `gameitemid` | 2 | uint32 | optional |  |
-| `associated_workshop_files` | 3 | CWorkshop_SetItemPaymentRules_Request.WorkshopItemPaymentRule | repeated |  |
-| `partner_accounts` | 4 | CWorkshop_SetItemPaymentRules_Request.PartnerItemPaymentRule | repeated |  |
+| `associated_workshop_files` | 3 | [CWorkshop_SetItemPaymentRules_Request.WorkshopItemPaymentRule](#cworkshop_setitempaymentrules_requestworkshopitempaymentrule) | repeated |  |
+| `partner_accounts` | 4 | [CWorkshop_SetItemPaymentRules_Request.PartnerItemPaymentRule](#cworkshop_setitempaymentrules_requestpartneritempaymentrule) | repeated |  |
 | `validate_only` | 5 | bool | optional |  |
 | `make_workshop_files_subscribable` | 6 | bool | optional |  |
-| `associated_workshop_file_for_direct_payments` | 7 | CWorkshop_SetItemPaymentRules_Request.WorkshopDirectPaymentRule | optional |  |
+| `associated_workshop_file_for_direct_payments` | 7 | [CWorkshop_SetItemPaymentRules_Request.WorkshopDirectPaymentRule](#cworkshop_setitempaymentrules_requestworkshopdirectpaymentrule) | optional |  |
+
+#### `CWorkshop_SetItemPaymentRules_Request.WorkshopItemPaymentRule`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `workshop_file_id` | 1 | uint64 | optional |  |
+| `revenue_percentage` | 2 | float | optional |  |
+| `rule_description` | 3 | string | optional |  |
+| `rule_type` | 4 | uint32 | optional | *(default: `1`)* |
+
+#### `CWorkshop_SetItemPaymentRules_Request.WorkshopDirectPaymentRule`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `workshop_file_id` | 1 | uint64 | optional |  |
+| `rule_description` | 2 | string | optional |  |
+
+#### `CWorkshop_SetItemPaymentRules_Request.PartnerItemPaymentRule`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `account_id` | 1 | uint32 | optional |  |
+| `revenue_percentage` | 2 | float | optional |  |
+| `rule_description` | 3 | string | optional |  |
 
 ### `CWorkshop_SetItemPaymentRules_Response`
 
+*(no fields)*
+
 ### `CGameServers_AggregationQuery_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `filter` | 1 | string | optional |  |
 | `group_fields` | 3 | string | repeated |  |
 
 ### `CGameServers_AggregationQuery_Response`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `groups` | 1 | CGameServers_AggregationQuery_Response.Group | repeated |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `groups` | 1 | [CGameServers_AggregationQuery_Response.Group](#cgameservers_aggregationquery_responsegroup) | repeated |  |
+
+#### `CGameServers_AggregationQuery_Response.Group`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `group_values` | 1 | string | repeated |  |
+| `servers_empty` | 2 | uint32 | optional |  |
+| `servers_full` | 3 | uint32 | optional |  |
+| `servers_total` | 4 | uint32 | optional |  |
+| `players_humans` | 5 | uint32 | optional |  |
+| `players_bots` | 6 | uint32 | optional |  |
+| `player_capacity` | 7 | uint32 | optional |  |
 
 ### `CWorkshop_AddSpecialPayment_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `appid` | 1 | uint32 | optional |  |
 | `gameitemid` | 2 | uint32 | optional |  |
 | `date` | 3 | string | optional |  |
@@ -655,20 +730,62 @@ direction LR
 
 ### `CWorkshop_AddSpecialPayment_Response`
 
+*(no fields)*
+
 ### `CProductInfo_SetRichPresenceLocalization_Request`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `appid` | 1 | uint32 | optional |  |
-| `languages` | 2 | CProductInfo_SetRichPresenceLocalization_Request.LanguageSection | repeated |  |
+| `languages` | 2 | [CProductInfo_SetRichPresenceLocalization_Request.LanguageSection](#cproductinfo_setrichpresencelocalization_requestlanguagesection) | repeated |  |
 | `steamid` | 3 | uint64 | optional |  |
+
+#### `CProductInfo_SetRichPresenceLocalization_Request.Token`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `token` | 1 | string | optional |  |
+| `value` | 2 | string | optional |  |
+
+#### `CProductInfo_SetRichPresenceLocalization_Request.LanguageSection`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `language` | 1 | string | optional |  |
+| `tokens` | 2 | [CProductInfo_SetRichPresenceLocalization_Request.Token](#cproductinfo_setrichpresencelocalization_requesttoken) | repeated |  |
 
 ### `CProductInfo_SetRichPresenceLocalization_Response`
 
+*(no fields)*
+
 ### `CMsgSerializedSOCache`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `file_version` | 1 | uint32 | optional |  |
-| `caches` | 2 | CMsgSerializedSOCache.Cache | repeated |  |
+| `caches` | 2 | [CMsgSerializedSOCache.Cache](#cmsgserializedsocachecache) | repeated |  |
 | `gc_socache_file_version` | 3 | uint32 | optional |  |
+
+#### `CMsgSerializedSOCache.TypeCache`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `type` | 1 | uint32 | optional |  |
+| `objects` | 2 | bytes | repeated |  |
+| `service_id` | 3 | uint32 | optional |  |
+
+#### `CMsgSerializedSOCache.Cache`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `type` | 1 | uint32 | optional |  |
+| `id` | 2 | uint64 | optional |  |
+| `versions` | 3 | [CMsgSerializedSOCache.Cache.Version](#cmsgserializedsocachecacheversion) | repeated |  |
+| `type_caches` | 4 | [CMsgSerializedSOCache.TypeCache](#cmsgserializedsocachetypecache) | repeated |  |
+
+##### `CMsgSerializedSOCache.Cache.Version`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `service` | 1 | uint32 | optional |  |
+| `version` | 2 | uint64 | optional |  |

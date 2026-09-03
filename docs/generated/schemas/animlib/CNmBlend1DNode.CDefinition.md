@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmBlend1DNode::CDefinition"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmBlend1DNode::CDefinition
 
 # CNmBlend1DNode::CDefinition
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 128 bytes (`0x80`) · **Align:** 8 · **Module:** animlib
 
@@ -16,9 +18,10 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmParameterizedBlendNode::CDefinition" <|-- "CNmBlend1DNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmParameterizedBlendNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmPoseNode::CDefinition"
+    `CNmParameterizedBlendNode::CDefinition` <|-- `CNmBlend1DNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmParameterizedBlendNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmPoseNode::CDefinition`
+    `CNmBlend1DNode::CDefinition` *-- `CNmParameterizedBlendNode::Parameterization_t`
 ```
 
 ## Memory layout
@@ -31,7 +34,7 @@ classDiagram
 | `0x10` | `m_sourceNodeIndices` | CUtlLeanVectorFixedGrowable< int16, 5 > | [CNmParameterizedBlendNode::CDefinition](../animlib/CNmParameterizedBlendNode.CDefinition.md) |  |
 | `0x28` | `m_nInputParameterValueNodeIdx` | int16 | [CNmParameterizedBlendNode::CDefinition](../animlib/CNmParameterizedBlendNode.CDefinition.md) |  |
 | `0x2a` | `m_bAllowLooping` | bool | [CNmParameterizedBlendNode::CDefinition](../animlib/CNmParameterizedBlendNode.CDefinition.md) |  |
-| `0x30` | `m_parameterization` | CNmParameterizedBlendNode::Parameterization_t |  |  |
+| `0x30` | `m_parameterization` | [CNmParameterizedBlendNode::Parameterization_t](../animlib/CNmParameterizedBlendNode.Parameterization_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

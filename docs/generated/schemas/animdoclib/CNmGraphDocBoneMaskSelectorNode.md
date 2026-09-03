@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CNmGraphDocBoneMaskSelectorNode
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmGraphDocBoneMaskSelectorNode
 
 # CNmGraphDocBoneMaskSelectorNode
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 296 bytes (`0x128`) · **Align:** 8 · **Module:** animdoclib
 

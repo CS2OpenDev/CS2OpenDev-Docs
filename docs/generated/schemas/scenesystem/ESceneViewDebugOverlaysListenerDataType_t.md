@@ -1,12 +1,14 @@
 ---
-layout: default
 title: ESceneViewDebugOverlaysListenerDataType_t
-nav_exclude: true
+module: scenesystem
+kind: enum
 ---
 
 [Schemas](../../schemas.md) / [scenesystem](../scenesystem.md) / ESceneViewDebugOverlaysListenerDataType_t
 
 # ESceneViewDebugOverlaysListenerDataType_t
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** scenesystem
 

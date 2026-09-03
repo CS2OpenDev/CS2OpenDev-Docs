@@ -1,0 +1,52 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import HierarchyTree from '../../components/hierarchy/HierarchyTree.astro';
+import { buildForest, sortRootsBySize } from '../../components/hierarchy/forest';
+import { forestInheritanceDiagramTagged } from '../../components/hierarchy/diagram';
+import { schemasHref } from '../../lib/urls';
+import { loadSchemaIndex, type ClassEntity } from '../../lib/data/schema';
+
+/** The two projects a class page can be attributed to; every other module stays on its own page. */
+const COMBINED_MODULES = ['server', 'client'];
+/** Same cap the old Jekyll site used for its per-module UML page. */
+const DIAGRAM_EDGE_CAP = 300;
+
+const idx = loadSchemaIndex();
+const p = idx.provenance;
+
+const classes = COMBINED_MODULES.flatMap((m) =>
+	(idx.byModule.get(m) ?? []).filter((e): e is ClassEntity => e.kind === 'class')
+);
+const roots = sortRootsBySize(buildForest(idx, classes));
+const counts = COMBINED_MODULES.map((m) => ({ module: m, count: classes.filter((c) => c.module === m).length }));
+const diagram = forestInheritanceDiagramTagged(roots, DIAGRAM_EDGE_CAP);
+
+const headings = [{ depth: 2, slug: 'tree', text: 'Inheritance tree' }];
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Schema hierarchy',
+		description: `Combined server and client class inheritance tree for CS2 build ${p.buildId}.`,
+	}}
+	headings={headings}
+>
+	<div>
+		<nav class="cs2-breadcrumb" aria-label="Breadcrumb">
+			<a href={schemasHref()}>Schemas</a> / <span>Hierarchy</span>
+		</nav>
+
+		<p>
+			Every server and client class in one tree, replacing the old <code>server_hierarchy</code> diagram.
+			Each node not on the module you are browsing is tagged with its module, since the two projects
+			declare 189 identically named types with different layouts.
+		</p>
+
+		<h2 id="tree">Inheritance tree</h2>
+		<HierarchyTree
+			nodes={roots}
+			countLine={counts.map((c) => `${c.count} ${c.module}`).join(', ') + `, ${roots.length} root hierarchies.`}
+			diagram={diagram}
+		/>
+	</div>
+</StarlightPage>

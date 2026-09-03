@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CNmGraphDocFloatMathNode
-nav_exclude: true
+module: animdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animdoclib](../animdoclib.md) / CNmGraphDocFloatMathNode
 
 # CNmGraphDocFloatMathNode
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 264 bytes (`0x108`) · **Align:** 8 · **Module:** animdoclib
 
@@ -18,6 +20,7 @@ nav_exclude: true
 classDiagram
     CNmGraphDocFlowNode <|-- CNmGraphDocFloatMathNode
     CNmGraphDocNode <|-- CNmGraphDocFlowNode
+    CNmGraphDocFloatMathNode *-- `CNmFloatMathNode::Operator_t`
 ```
 
 ## Memory layout
@@ -36,7 +39,7 @@ classDiagram
 | `0xd8` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
 | `0x100` | `m_bReturnAbsoluteResult` | bool |  | `MPropertyDescription Should we apply an abs to the result (is performed before we take into account the negate option)` |
 | `0x101` | `m_bReturnNegatedResult` | bool |  | `MPropertyDescription Should we negate the result (absolute value will be performed before negation)` |
-| `0x102` | `m_operator` | CNmFloatMathNode::Operator_t |  |  |
+| `0x102` | `m_operator` | [CNmFloatMathNode::Operator_t](../animlib/CNmFloatMathNode.Operator_t.md) |  |  |
 | `0x104` | `m_flValueB` | float32 |  |  |
 
 <details><summary>KV3 class defaults</summary>

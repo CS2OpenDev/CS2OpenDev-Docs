@@ -1,14 +1,16 @@
 ---
-layout: default
 title: CAnimGraphDoc_Component
-nav_exclude: true
+module: animgraphdoclib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphdoclib](../animgraphdoclib.md) / CAnimGraphDoc_Component
 
 # CAnimGraphDoc_Component
 
-**Kind:** class · **Size:** 56 bytes (`0x38`) · **Align:** 255 · **Module:** animgraphdoclib
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
+**Kind:** class · **Size:** 56 bytes (`0x38`) · **Align:** n/a (unspecified) · **Module:** animgraphdoclib
 
 **Derived by:** [CActionComponent](../animgraphdoclib/CActionComponent.md), [CAnimScriptComponent](../animgraphdoclib/CAnimScriptComponent.md), [CCPPScriptComponent](../animgraphdoclib/CCPPScriptComponent.md), [CDampedValueComponent](../animgraphdoclib/CDampedValueComponent.md), [CDemoSettingsComponent](../animgraphdoclib/CDemoSettingsComponent.md), [CLODComponent](../animgraphdoclib/CLODComponent.md), [CLookComponent](../animgraphdoclib/CLookComponent.md), [CMovementComponent](../animgraphdoclib/CMovementComponent.md), [CPairedSequenceComponent](../animgraphdoclib/CPairedSequenceComponent.md), [CRagdollComponent](../animgraphdoclib/CRagdollComponent.md), [CRemapValueComponent](../animgraphdoclib/CRemapValueComponent.md), [CSlopeComponent](../animgraphdoclib/CSlopeComponent.md), [CStateMachineComponent](../animgraphdoclib/CStateMachineComponent.md)
 

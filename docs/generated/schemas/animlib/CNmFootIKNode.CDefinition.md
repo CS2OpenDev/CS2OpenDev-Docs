@@ -1,12 +1,14 @@
 ---
-layout: default
 title: "CNmFootIKNode::CDefinition"
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / CNmFootIKNode::CDefinition
 
 # CNmFootIKNode::CDefinition
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 56 bytes (`0x38`) · **Align:** 8 · **Module:** animlib
 
@@ -16,10 +18,10 @@ nav_exclude: true
 
 ```mermaid
 classDiagram
-    "CNmPassthroughNode::CDefinition" <|-- "CNmFootIKNode::CDefinition"
-    "CNmPoseNode::CDefinition" <|-- "CNmPassthroughNode::CDefinition"
-    "CNmGraphNode::CDefinition" <|-- "CNmPoseNode::CDefinition"
-    "CNmFootIKNode::CDefinition" *-- NmIKBlendMode_t
+    `CNmPassthroughNode::CDefinition` <|-- `CNmFootIKNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmPassthroughNode::CDefinition`
+    `CNmGraphNode::CDefinition` <|-- `CNmPoseNode::CDefinition`
+    `CNmFootIKNode::CDefinition` *-- NmIKBlendMode_t
 ```
 
 ## Memory layout

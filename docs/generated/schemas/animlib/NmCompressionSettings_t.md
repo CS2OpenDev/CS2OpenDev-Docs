@@ -1,14 +1,23 @@
 ---
-layout: default
 title: NmCompressionSettings_t
-nav_exclude: true
+module: animlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animlib](../animlib.md) / NmCompressionSettings_t
 
 # NmCompressionSettings_t
 
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+
 **Kind:** class · **Size:** 80 bytes (`0x50`) · **Align:** 16 · **Module:** animlib
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    NmCompressionSettings_t *-- `NmCompressionSettings_t::QuantizationRange_t`
+```
 
 ## Memory layout
 
@@ -16,10 +25,10 @@ nav_exclude: true
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_translationRangeX` | [NmCompressionSettings_t](../animlib/NmCompressionSettings_t.md)::QuantizationRange_t |  |  |
-| `0x8` | `m_translationRangeY` | [NmCompressionSettings_t](../animlib/NmCompressionSettings_t.md)::QuantizationRange_t |  |  |
-| `0x10` | `m_translationRangeZ` | [NmCompressionSettings_t](../animlib/NmCompressionSettings_t.md)::QuantizationRange_t |  |  |
-| `0x18` | `m_scaleRange` | [NmCompressionSettings_t](../animlib/NmCompressionSettings_t.md)::QuantizationRange_t |  |  |
+| `0x0` | `m_translationRangeX` | [NmCompressionSettings_t::QuantizationRange_t](../animlib/NmCompressionSettings_t.QuantizationRange_t.md) |  |  |
+| `0x8` | `m_translationRangeY` | [NmCompressionSettings_t::QuantizationRange_t](../animlib/NmCompressionSettings_t.QuantizationRange_t.md) |  |  |
+| `0x10` | `m_translationRangeZ` | [NmCompressionSettings_t::QuantizationRange_t](../animlib/NmCompressionSettings_t.QuantizationRange_t.md) |  |  |
+| `0x18` | `m_scaleRange` | [NmCompressionSettings_t::QuantizationRange_t](../animlib/NmCompressionSettings_t.QuantizationRange_t.md) |  |  |
 | `0x20` | `m_nTrackReadOffset` | int32 |  |  |
 | `0x30` | `m_constantRotation` | Quaternion |  |  |
 | `0x40` | `m_bIsRotationStatic` | bool |  |  |

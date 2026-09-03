@@ -1,12 +1,14 @@
 ---
-layout: default
 title: MovementData
-nav_exclude: true
+module: animgraphlib
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [animgraphlib](../animgraphlib.md) / MovementData
 
 # MovementData
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 232 bytes (`0xe8`) · **Align:** 4 · **Module:** animgraphlib
 

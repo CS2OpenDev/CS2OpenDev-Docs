@@ -1,16 +1,13 @@
 ---
-layout: default
 title: networkbasetypes.proto
-parent: Protobufs
-nav_exclude: true
+proto: networkbasetypes.proto
 ---
 
 # `networkbasetypes.proto`
 
-**Imports:** `valveextensions.proto`, `google/protobuf/descriptor.proto`, `network_connection.proto`
+**Imports:** [`valveextensions.proto`](valveextensions.md), `google/protobuf/descriptor.proto`, [`network_connection.proto`](network_connection.md)
 
 Foundational proto-type definitions shared across all CS2 network and game-event messages.  Provides compact vector, angle, quaternion, colour, and player-info structs used as fields in higher-level messages.
-
 
 ## Diagram
 
@@ -73,7 +70,7 @@ direction LR
     +List~CMsg_CVars.CVar~ cvars
   }
 
-  class CVar {
+  class CMsg_CVars_CVar["CMsg_CVars.CVar"] {
     +string name
     +string value
   }
@@ -122,7 +119,7 @@ direction LR
     +List~CSVCMsg_GameEvent.key_t~ keys
   }
 
-  class key_t {
+  class CSVCMsg_GameEvent_key_t["CSVCMsg_GameEvent.key_t"] {
     +int32 type
     +string val_string
     +float val_float
@@ -137,7 +134,7 @@ direction LR
     +List~CSVCMsgList_GameEvents.event_t~ events
   }
 
-  class event_t {
+  class CSVCMsgList_GameEvents_event_t["CSVCMsgList_GameEvents.event_t"] {
     +int32 tick
     +CSVCMsg_GameEvent event
   }
@@ -222,12 +219,12 @@ direction LR
 
   CMsgTransform --> CMsgVector : position
   CMsgTransform --> CMsgQuaternion : orientation
-  CMsg_CVars --> CVar : cvars[]
+  CMsg_CVars --> CMsg_CVars_CVar : cvars[]
   CNETMsg_SetConVar --> CMsg_CVars : convars
   CNETMsg_SignonState --> SignonState_t : signon_state
-  CSVCMsg_GameEvent --> key_t : keys[]
-  CSVCMsgList_GameEvents --> event_t : events[]
-  event_t --> CSVCMsg_GameEvent : event
+  CSVCMsg_GameEvent --> CSVCMsg_GameEvent_key_t : keys[]
+  CSVCMsgList_GameEvents --> CSVCMsgList_GameEvents_event_t : events[]
+  CSVCMsgList_GameEvents_event_t --> CSVCMsg_GameEvent : event
   CNETMsg_SpawnGroup_Load --> CMsgVector : world_offset_pos
   CNETMsg_SpawnGroup_Load --> CMsgQAngle : world_offset_angle
   CNETMsg_DebugOverlay --> CMsgVector : vectors[]
@@ -328,9 +325,8 @@ direction LR
 
 Compact three-component world-space position or direction vector transmitted over the CS2 network.  Used for shot origins, positions, normals, etc.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `x` | 1 | float | optional | X component of the vector (world units). |
 | `y` | 2 | float | optional | Y component of the vector (world units). |
 | `z` | 3 | float | optional | Z component of the vector (world units, positive = up). |
@@ -340,9 +336,8 @@ Compact three-component world-space position or direction vector transmitted ove
 
 Two-component vector for screen-space or 2D positions.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `x` | 1 | float | optional | X component. |
 | `y` | 2 | float | optional | Y component. |
 
@@ -350,9 +345,8 @@ Two-component vector for screen-space or 2D positions.
 
 Euler angle triplet (pitch, yaw, roll) used to represent orientations in CS2 network messages.  Pitch = up/down, Yaw = left/right, Roll = tilt.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `x` | 1 | float | optional | Pitch angle in degrees (positive = look down). |
 | `y` | 2 | float | optional | Yaw angle in degrees (positive = turn left). |
 | `z` | 3 | float | optional | Roll angle in degrees. |
@@ -361,9 +355,8 @@ Euler angle triplet (pitch, yaw, roll) used to represent orientations in CS2 net
 
 Unit quaternion representation of a 3D rotation, used when higher precision or gimbal-lock avoidance is needed.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `x` | 1 | float | optional | Quaternion X component. |
 | `y` | 2 | float | optional | Quaternion Y component. |
 | `z` | 3 | float | optional | Quaternion Z component. |
@@ -373,20 +366,18 @@ Unit quaternion representation of a 3D rotation, used when higher precision or g
 
 Combined position and orientation transform message.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `position` | 1 | [CMsgVector](#cmsgvector) | optional | World-space translation vector. |
 | `scale` | 2 | float | optional |  |
-| `orientation` | 3 | [CMsgQuaternion](#cmsgquaternion) | optional |  |
+| `orientation` | 3 | [CMsgQuaternion](#cmsgquaternion) | optional | Rotation quaternion. |
 
 ### `CMsgRGBA`
 
 32-bit RGBA colour value transmitted as four separate byte-range integers.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `r` | 1 | int32 | optional | Red channel (0–255). |
 | `g` | 2 | int32 | optional | Green channel (0–255). |
 | `b` | 3 | int32 | optional | Blue channel (0–255). |
@@ -396,9 +387,8 @@ Combined position and orientation transform message.
 
 Compact player-identification record stored in the 'userinfo' string table.  Every connected client has an entry here; used to resolve entity handles to Steam IDs and display names in demo parsers.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `name` | 1 | string | optional | Steam display name of the player (UTF-8, up to 32 bytes). |
 | `xuid` | 2 | fixed64 | optional | Steam's internal 64-bit XUID (may differ from SteamID64 for certain account types). |
 | `userid` | 3 | int32 | optional | Session-scoped integer user ID assigned by the server (unique per connection). |
@@ -410,38 +400,43 @@ Compact player-identification record stored in the 'userinfo' string table.  Eve
 
 Wrapper that targets an entity-specific message to a specific entity handle.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `target_entity` | 1 | uint32 | optional | Packed entity handle of the target entity (0xFFFFFF = broadcast). *(default: `16777215`)* |
 
 ### `CMsg_CVars`
 
 List of convar name–value pairs, used to synchronise convar state between client and server (e.g. in CNETMsg_SetConVar).
 
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `cvars` | 1 | [CMsg_CVars.CVar](#cmsg_cvarscvar) | repeated |  |
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `cvars` | 1 | CMsg_CVars.CVar | repeated |  |
+#### `CMsg_CVars.CVar`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `name` | 1 | string | optional |  |
+| `value` | 2 | string | optional |  |
 
 ### `CNETMsg_NOP`
 
 No-operation message; sent as a heartbeat or padding packet.
 
+*(no fields)*
 
 ### `CNETMsg_SplitScreenUser`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `slot` | 1 | int32 | optional |  |
 
 ### `CNETMsg_Tick`
 
 Per-tick synchronisation heartbeat sent from the server to all clients. Carries host-performance metrics alongside the current tick number.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `tick` | 1 | uint32 | optional | Current server tick number. |
 | `host_computationtime` | 4 | uint32 | optional | Server computation time for this tick in microseconds. |
 | `host_computationtime_std_deviation` | 5 | uint32 | optional | Standard deviation of recent computation times in microseconds. |
@@ -457,9 +452,8 @@ Per-tick synchronisation heartbeat sent from the server to all clients. Carries 
 
 Client→Server string command (e.g. 'joingame', 'spectate', 'changeteam'). The server whitelists valid commands; arbitrary console commands are not accepted.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `command` | 1 | string | optional |  |
 | `prediction_sync` | 2 | uint32 | optional |  |
 
@@ -467,18 +461,16 @@ Client→Server string command (e.g. 'joingame', 'spectate', 'changeteam'). The 
 
 Pushes a list of convar values from the server to the client (or from client to server when the client is reporting user settings).
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `convars` | 1 | [CMsg_CVars](#cmsg_cvars) | optional |  |
 
 ### `CNETMsg_SignonState`
 
 Reports the current connection stage of the client or server during the multi-step sign-on sequence.
 
-
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `signon_state` | 1 | [SignonState_t](#signonstate_t) | optional | SignonState_t enum: NONE=0, CHALLENGE=1, CONNECTED=2, NEW=3, PRESPAWN=4, SPAWN=5, FULL=6, CHANGELEVEL=7. *(default: `SIGNONSTATE_NONE`)* |
 | `spawn_count` | 2 | uint32 | optional | Incremented each map load; used to detect map changes. |
 | `num_server_players` | 3 | uint32 | optional | Number of player slots currently occupied on the server. |
@@ -488,22 +480,42 @@ Reports the current connection stage of the client or server during the multi-st
 
 ### `CSVCMsg_GameEvent`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `event_name` | 1 | string | optional |  |
 | `eventid` | 2 | int32 | optional |  |
-| `keys` | 3 | CSVCMsg_GameEvent.key_t | repeated |  |
+| `keys` | 3 | [CSVCMsg_GameEvent.key_t](#csvcmsg_gameeventkey_t) | repeated |  |
+
+#### `CSVCMsg_GameEvent.key_t`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `type` | 1 | int32 | optional |  |
+| `val_string` | 2 | string | optional |  |
+| `val_float` | 3 | float | optional |  |
+| `val_long` | 4 | int32 | optional |  |
+| `val_short` | 5 | int32 | optional |  |
+| `val_byte` | 6 | int32 | optional |  |
+| `val_bool` | 7 | bool | optional |  |
+| `val_uint64` | 8 | uint64 | optional |  |
 
 ### `CSVCMsgList_GameEvents`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
-| `events` | 1 | CSVCMsgList_GameEvents.event_t | repeated |  |
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `events` | 1 | [CSVCMsgList_GameEvents.event_t](#csvcmsglist_gameeventsevent_t) | repeated |  |
+
+#### `CSVCMsgList_GameEvents.event_t`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `tick` | 1 | int32 | optional |  |
+| `event` | 2 | [CSVCMsg_GameEvent](#csvcmsg_gameevent) | optional |  |
 
 ### `CNETMsg_SpawnGroup_Load`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `worldname` | 1 | string | optional |  |
 | `entitylumpname` | 2 | string | optional |  |
 | `entityfiltername` | 3 | string | optional |  |
@@ -527,38 +539,38 @@ Reports the current connection stage of the client or server during the multi-st
 
 ### `CNETMsg_SpawnGroup_ManifestUpdate`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `spawngrouphandle` | 1 | uint32 | optional |  |
 | `spawngroupmanifest` | 2 | bytes | optional |  |
 | `manifestincomplete` | 3 | bool | optional |  |
 
 ### `CNETMsg_SpawnGroup_SetCreationTick`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `spawngrouphandle` | 1 | uint32 | optional |  |
 | `tickcount` | 2 | int32 | optional |  |
 | `creationsequence` | 3 | uint32 | optional |  |
 
 ### `CNETMsg_SpawnGroup_Unload`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `spawngrouphandle` | 1 | uint32 | optional |  |
 | `flags` | 2 | uint32 | optional |  |
 | `tickcount` | 3 | int32 | optional |  |
 
 ### `CNETMsg_SpawnGroup_LoadCompleted`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `spawngrouphandle` | 1 | uint32 | optional |  |
 
 ### `CSVCMsg_GameSessionConfiguration`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `is_multiplayer` | 1 | bool | optional |  |
 | `is_loadsavegame` | 2 | bool | optional |  |
 | `is_background_map` | 3 | bool | optional |  |
@@ -581,8 +593,8 @@ Reports the current connection stage of the client or server during the multi-st
 
 ### `CNETMsg_DebugOverlay`
 
-| Field | Ordinal | Type | Label | Description |
-|-------|---------|------|-------|-------------|
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
 | `etype` | 1 | int32 | optional |  |
 | `vectors` | 2 | [CMsgVector](#cmsgvector) | repeated |  |
 | `colors` | 3 | [CMsgRGBA](#cmsgrgba) | repeated |  |

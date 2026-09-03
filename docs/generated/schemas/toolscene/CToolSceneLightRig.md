@@ -1,12 +1,14 @@
 ---
-layout: default
 title: CToolSceneLightRig
-nav_exclude: true
+module: toolscene
+kind: class
 ---
 
 [Schemas](../../schemas.md) / [toolscene](../toolscene.md) / CToolSceneLightRig
 
 # CToolSceneLightRig
+
+> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 360 bytes (`0x168`) · **Align:** 8 · **Module:** toolscene
 

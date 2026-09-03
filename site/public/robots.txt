@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cs2opendev.github.io/CS2OpenDev-Docs/sitemap-index.xml
