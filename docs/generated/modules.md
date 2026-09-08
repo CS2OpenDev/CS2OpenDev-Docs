@@ -4,7 +4,7 @@ title: Modules
 
 # Binary Modules
 
-> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
 
 139 binaries read for this build, each with its SHA-256, size, export / schema-registration counts, and the engine interface versions it resolved at load.
 
@@ -106,7 +106,7 @@ title: Modules
 | `game/bin/win64/tbbbind.dll` | 47744 | 7 | 0 |  |
 | `game/bin/win64/tbbbind_2_0.dll` | 47744 | 7 | 0 |  |
 | `game/bin/win64/tbbbind_2_5.dll` | 48768 | 7 | 0 |  |
-| `game/bin/win64/tier0.dll` | 3949720 | 2576 | 0 |  |
+| `game/bin/win64/tier0.dll` | 3948696 | 2576 | 0 |  |
 | `game/bin/win64/toolframework2.dll` | 13308568 | 6 | 0 |  |
 | `game/bin/win64/tools/cs2_item_editor.dll` | 6694040 | 6 | 0 |  |
 | `game/bin/win64/tools/cs2_workshop_manager.dll` | 2337944 | 6 | 0 |  |

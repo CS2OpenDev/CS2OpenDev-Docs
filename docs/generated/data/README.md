@@ -245,7 +245,7 @@ across the whole transition (which it is on this build), and
 `schema_history_anchor` links to the matching transition's anchor in
 `schema-history.json`.
 
-## schema-history.json (161.7 KB)
+## schema-history.json (162.1 KB)
 
 `transitions[]`: every recorded transition (from/to build, dates, op
 counts, `anchor`, `is_empty`). `detail[]`: full per-class field-op detail

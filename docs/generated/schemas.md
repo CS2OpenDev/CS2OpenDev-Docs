@@ -4,7 +4,7 @@ title: Schemas
 
 # Schema Reference
 
-> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
 
 Every class, struct, and enum extracted from CS2's runtime schema, organised by module. Each module page lists its types; each type has its own page carrying the full **memory layout** — field offsets, class size, and fields inherited from base classes.
 

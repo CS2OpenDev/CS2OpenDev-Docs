@@ -8,7 +8,7 @@ kind: class
 
 # CSprayedDataSettingsBlock
 
-> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 92 bytes (`0x5c`) · **Align:** 4 · **Module:** mapdoclib
 

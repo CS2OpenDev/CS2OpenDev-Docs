@@ -8,7 +8,7 @@ kind: class
 
 # C_OP_SetControlPointToCPVelocity
 
-> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 2224 bytes (`0x8b0`) · **Align:** 8 · **Module:** particles
 

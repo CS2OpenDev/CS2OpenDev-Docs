@@ -3,6 +3,49 @@
   "breaking": [],
   "detail": [
     {
+      "anchor": "25000182-25175329",
+      "class_pair_candidates_count": 0,
+      "classes_added": [],
+      "classes_changed": [
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/dynpitchvol_base_t",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/dynpitchvol_t",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        }
+      ],
+      "classes_changed_total": 2,
+      "classes_changed_truncated": false,
+      "classes_removed": [],
+      "field_move_candidates_count": 0,
+      "from_build": "25000182",
+      "from_date": "2026-08-28",
+      "to_build": "25175329",
+      "to_date": "2026-09-07"
+    },
+    {
       "anchor": "24934554-24957633",
       "class_pair_candidates_count": 0,
       "classes_added": [],
@@ -191,52 +234,9 @@
       "from_date": "2026-08-19",
       "to_build": "24916958",
       "to_date": "2026-08-24"
-    },
-    {
-      "anchor": "24701871-24828357",
-      "class_pair_candidates_count": 0,
-      "classes_added": [],
-      "classes_changed": [
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {},
-          "flags_changed": false,
-          "meta_ops": 1,
-          "metadata_only": false,
-          "name": "!GlobalTypes/dynpitchvol_base_t",
-          "pair_candidates": 0,
-          "paired_evidence": 0,
-          "realign": false,
-          "reparent": false,
-          "resize": null,
-          "static_field_ops": 0
-        },
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {},
-          "flags_changed": false,
-          "meta_ops": 1,
-          "metadata_only": false,
-          "name": "!GlobalTypes/dynpitchvol_t",
-          "pair_candidates": 0,
-          "paired_evidence": 0,
-          "realign": false,
-          "reparent": false,
-          "resize": null,
-          "static_field_ops": 0
-        }
-      ],
-      "classes_changed_total": 2,
-      "classes_changed_truncated": false,
-      "classes_removed": [],
-      "field_move_candidates_count": 0,
-      "from_build": "24701871",
-      "from_date": "2026-08-12",
-      "to_build": "24828357",
-      "to_date": "2026-08-19"
     }
   ],
-  "latest_build": "25000182",
+  "latest_build": "25175329",
   "platform": "windows-x86_64",
   "schema_version": "0.10.0",
   "transitions": [
@@ -6801,6 +6801,23 @@
       "is_empty": true,
       "to_build": "25000182",
       "to_date": "2026-08-28"
+    },
+    {
+      "anchor": "25000182-25175329",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 2,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 0
+      },
+      "from_build": "25000182",
+      "from_date": "2026-08-28",
+      "is_empty": false,
+      "to_build": "25175329",
+      "to_date": "2026-09-07"
     }
   ]
 }

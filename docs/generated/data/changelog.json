@@ -51,9 +51,9 @@
       "truncated": false
     }
   ],
-  "from_build": "24957633",
+  "from_build": "25000182",
   "no_changes": true,
   "platform": "windows-x86_64",
-  "schema_history_anchor": "24957633-25000182",
-  "to_build": "25000182"
+  "schema_history_anchor": "25000182-25175329",
+  "to_build": "25175329"
 }

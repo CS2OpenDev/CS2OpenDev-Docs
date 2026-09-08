@@ -8,7 +8,7 @@ kind: class
 
 # C_FootstepControl
 
-> Source: **Build 25000182** · 2026-08-28 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 4264 bytes (`0x10a8`) · **Align:** 8 · **Module:** client
 

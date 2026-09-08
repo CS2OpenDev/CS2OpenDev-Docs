@@ -148,7 +148,7 @@
       ],
       "schema_module": "engine2",
       "schema_registration_count": 4,
-      "sha256": "26dc9c5fee70312e7851d87c2383f70cc4d036247d8de04e3cf342ccc20773ac",
+      "sha256": "1fcf2920de28f625ee1ac5d6436c582ed381a4a913cfe2c9701b5551cc912d07",
       "stem": "engine2"
     },
     {
@@ -1007,12 +1007,12 @@
     },
     {
       "export_count": 2576,
-      "file_size": "3949720",
+      "file_size": "3948696",
       "path": "game/bin/win64/tier0.dll",
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "12a5a96b5ec15eee9cb592c52abe7969c5ef1dc0e7ad01963fbdf585c0051da3",
+      "sha256": "b9bf7c956bb31e11be649c31b096ea8813601748b9d984d39f10a9eb4458fb75",
       "stem": "tier0"
     },
     {
@@ -1321,7 +1321,7 @@
       ],
       "schema_module": "client",
       "schema_registration_count": 541,
-      "sha256": "b8e2c009763e8cefb88d89a2bdcf452db17501553d473db6da060df8e6769eb4",
+      "sha256": "809b62b2397e7849995ea427ed99fe2270d2f8ceae731e5ffa43c271e132f3ae",
       "stem": "client"
     },
     {
@@ -1373,7 +1373,7 @@
       ],
       "schema_module": "server",
       "schema_registration_count": 802,
-      "sha256": "9e5749d77dcb68883477feae751a3f28068d119ec145edcb0e4d48d15b538d36",
+      "sha256": "cb5936528177b6da79be5dadcda0192be05feec687cb07dda0cd0e618a8f4d7c",
       "stem": "server"
     },
     {
