@@ -8,7 +8,7 @@ kind: class
 
 # CSmartPropOperation_RotateTowards
 
-> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 528 bytes (`0x210`) · **Align:** 8 · **Module:** smartprops
 

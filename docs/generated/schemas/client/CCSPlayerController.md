@@ -8,7 +8,7 @@ kind: class
 
 # CCSPlayerController
 
-> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
 
 The server-side controller entity for a CS2 player.  One CCSPlayerController exists per connected client for the lifetime of the connection; it persists across rounds.  The controller owns a CCSPlayerPawn (the physical in-world representation) which may be recreated each round.
 

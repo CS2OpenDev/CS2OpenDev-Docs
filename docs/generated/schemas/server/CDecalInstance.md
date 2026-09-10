@@ -8,7 +8,7 @@ kind: class
 
 # CDecalInstance
 
-> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 192 bytes (`0xc0`) · **Align:** 16 · **Module:** server
 

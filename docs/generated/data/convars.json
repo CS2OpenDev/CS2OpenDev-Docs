@@ -5006,6 +5006,30 @@
       "value_type": "Bool"
     },
     {
+      "default": "",
+      "flags": [
+        "release"
+      ],
+      "help": "Key to decrypt encrypted GOTV messages",
+      "max": null,
+      "min": null,
+      "name": "cl_decryptdata_key",
+      "prefix": "cl",
+      "value_type": "String"
+    },
+    {
+      "default": "",
+      "flags": [
+        "release"
+      ],
+      "help": "Key to decrypt public encrypted GOTV messages",
+      "max": null,
+      "min": null,
+      "name": "cl_decryptdata_key_pub",
+      "prefix": "cl",
+      "value_type": "String"
+    },
+    {
       "default": "1",
       "flags": [
         "clientdll",
@@ -50945,6 +50969,30 @@
       "value_type": "Bool"
     },
     {
+      "default": "",
+      "flags": [
+        "release"
+      ],
+      "help": "When set to a valid key communication messages will be encrypted for GOTV",
+      "max": null,
+      "min": null,
+      "name": "tv_encryptdata_key",
+      "prefix": "tv",
+      "value_type": "String"
+    },
+    {
+      "default": "",
+      "flags": [
+        "release"
+      ],
+      "help": "When set to a valid key public communication messages will be encrypted for GOTV",
+      "max": null,
+      "min": null,
+      "name": "tv_encryptdata_key_pub",
+      "prefix": "tv",
+      "value_type": "String"
+    },
+    {
       "default": "false",
       "flags": [
         "defensive",
@@ -51447,6 +51495,19 @@
       "value_type": "Bool"
     },
     {
+      "default": "1",
+      "flags": [
+        "gamedll",
+        "release"
+      ],
+      "help": "Relay text chat data to GOTV: 0=off, 1=say, 2=say+say_team",
+      "max": null,
+      "min": null,
+      "name": "tv_relaytextchat",
+      "prefix": "tv",
+      "value_type": "Int32"
+    },
+    {
       "default": "true",
       "flags": [
         "release"
@@ -51480,19 +51541,6 @@
       "max": null,
       "min": null,
       "name": "tv_secure_bypass",
-      "prefix": "tv",
-      "value_type": "Bool"
-    },
-    {
-      "default": "true",
-      "flags": [
-        "gamedll",
-        "release"
-      ],
-      "help": "",
-      "max": null,
-      "min": null,
-      "name": "tv_show_allchat",
       "prefix": "tv",
       "value_type": "Bool"
     },
@@ -54145,7 +54193,7 @@
     },
     {
       "command_count": 198,
-      "convar_count": 1029,
+      "convar_count": 1033,
       "description": "Present in release/shipping builds, not just internal ones.",
       "name": "release"
     },

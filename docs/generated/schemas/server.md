@@ -5,11 +5,11 @@ module: server
 
 # Module: server
 
-> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
 
 [📊 View UML Diagram](../diagrams/server.md)
 
-1141 types. Each links to its own page with the full field layout.
+1143 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -110,9 +110,10 @@ module: server
 | [CCS2PawnGraphController](server/CCS2PawnGraphController.md) | class | 2088 | 28 | [CCS2WeaponGraphController](server/CCS2WeaponGraphController.md) |
 | [CCS2WeaponGraphController](server/CCS2WeaponGraphController.md) | class | 1416 | 20 | [CAnimGraphControllerBase](server/CAnimGraphControllerBase.md) |
 | [CCSBot](server/CCSBot.md) | class | 24128 | 140 | [CBot](server/CBot.md) |
-| [CCSCustomHudLayout](server/CCSCustomHudLayout.md) | class | 2024 | 6 | [CBaseEntity](server/CBaseEntity.md) |
+| [CCSCustomHudLayout](server/CCSCustomHudLayout.md) | class | 2032 | 7 | [CBaseEntity](server/CBaseEntity.md) |
 | [CCSCustomHudLayoutState](server/CCSCustomHudLayoutState.md) | class | 408 | 4 |  |
 | [CCSCustomHudLayout_API](server/CCSCustomHudLayout_API.md) | class | 8 | 0 |  |
+| [CCSCustomPlayerCamera](server/CCSCustomPlayerCamera.md) | class | 1248 | 8 | [CBaseEntity](server/CBaseEntity.md) |
 | [CCSGO_EndOfMatchLineupEnd](server/CCSGO_EndOfMatchLineupEnd.md) | class | 1192 | 0 | [CCSGO_EndOfMatchLineupEndpoint](server/CCSGO_EndOfMatchLineupEndpoint.md) |
 | [CCSGO_EndOfMatchLineupEndpoint](server/CCSGO_EndOfMatchLineupEndpoint.md) | class | 1192 | 0 | [CBaseEntity](server/CBaseEntity.md) |
 | [CCSGO_EndOfMatchLineupStart](server/CCSGO_EndOfMatchLineupStart.md) | class | 1192 | 0 | [CCSGO_EndOfMatchLineupEndpoint](server/CCSGO_EndOfMatchLineupEndpoint.md) |
@@ -145,7 +146,7 @@ module: server
 | [CCSPlace_API](server/CCSPlace_API.md) | class | 8 | 0 |  |
 | [CCSPlayerAnimationState](server/CCSPlayerAnimationState.md) | class | 224 | 16 |  |
 | [CCSPlayerBase_CameraServices](server/CCSPlayerBase_CameraServices.md) | class | 432 | 7 | [CPlayer_CameraServices](server/CPlayer_CameraServices.md) |
-| [CCSPlayerCamera](server/CCSPlayerCamera.md) | class | 1200 | 3 | [CBaseEntity](server/CBaseEntity.md) |
+| [CCSPlayerCamera](server/CCSPlayerCamera.md) | class | 1256 | 0 | [CCSCustomPlayerCamera](server/CCSCustomPlayerCamera.md) |
 | [CCSPlayerController](server/CCSPlayerController.md) | class | 2728 | 92 | [CBasePlayerController](server/CBasePlayerController.md) |
 | [CCSPlayerController_API](server/CCSPlayerController_API.md) | class | 8 | 0 |  |
 | [CCSPlayerController_ActionTrackingServices](server/CCSPlayerController_ActionTrackingServices.md) | class | 1072 | 5 | [CPlayerControllerComponent](server/CPlayerControllerComponent.md) |
@@ -970,6 +971,7 @@ module: server
 | [ChoreoLookAtSpeed_t](server/ChoreoLookAtSpeed_t.md) | enum | — | 4 |  |
 | [ChoreoStrafeMode_t](server/ChoreoStrafeMode_t.md) | enum | — | 3 |  |
 | [Class_T](server/Class_T.md) | enum | — | 14 |  |
+| [CustomCameraMode_t](server/CustomCameraMode_t.md) | enum | — | 4 |  |
 | [DIALOG_TYPE](server/DIALOG_TYPE.md) | enum | — | 5 |  |
 | [DamageTypes_t](server/DamageTypes_t.md) | enum | — | 22 |  |
 | [DebugOverlayBits_t](server/DebugOverlayBits_t.md) | enum | — | 43 |  |
@@ -1101,7 +1103,7 @@ module: server
 | [RequestPause_t](server/RequestPause_t.md) | enum | — | 3 |  |
 | [RotatorTargetSpace_t](server/RotatorTargetSpace_t.md) | enum | — | 2 |  |
 | [RumbleEffect_t](server/RumbleEffect_t.md) | enum | — | 27 |  |
-| [SVC_Messages](server/SVC_Messages.md) | enum | — | 31 |  |
+| [SVC_Messages](server/SVC_Messages.md) | enum | — | 32 |  |
 | [SVC_Messages_LowFrequency](server/SVC_Messages_LowFrequency.md) | enum | — | 1 |  |
 | [SaveRestoreTableFlags_t](server/SaveRestoreTableFlags_t.md) | enum | — | 22 |  |
 | [SceneOnPlayerDeath_t](server/SceneOnPlayerDeath_t.md) | enum | — | 2 |  |

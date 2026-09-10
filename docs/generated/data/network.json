@@ -1200,6 +1200,17 @@
       "type_exists": true
     },
     {
+      "binding": "rtti",
+      "constant": null,
+      "description": "No matching message in this build's descriptor set.",
+      "direction": "server_to_client",
+      "enum": null,
+      "group": "SvcMessages",
+      "id": 78,
+      "name": "CSVCMsg_EncryptedData",
+      "type_exists": false
+    },
+    {
       "binding": "both",
       "constant": "TE_EffectDispatchId",
       "description": "",

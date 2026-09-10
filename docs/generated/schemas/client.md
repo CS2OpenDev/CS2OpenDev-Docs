@@ -5,11 +5,11 @@ module: client
 
 # Module: client
 
-> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
 
 [📊 View UML Diagram](../diagrams/client.md)
 
-490 types. Each links to its own page with the full field layout.
+491 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -43,9 +43,10 @@ module: client
 | [CCS2PawnGraphController](client/CCS2PawnGraphController.md) | class | 1344 | 28 | [CCS2WeaponGraphController](client/CCS2WeaponGraphController.md) |
 | [CCS2UIPawnGraphController](client/CCS2UIPawnGraphController.md) | class | 472 | 14 | [CAnimGraphControllerBase](server/CAnimGraphControllerBase.md) |
 | [CCS2WeaponGraphController](client/CCS2WeaponGraphController.md) | class | 672 | 20 | [CAnimGraphControllerBase](server/CAnimGraphControllerBase.md) |
-| [CCSCustomHudLayout](client/CCSCustomHudLayout.md) | class | 2088 | 6 | [C_BaseEntity](client/C_BaseEntity.md) |
+| [CCSCustomHudLayout](client/CCSCustomHudLayout.md) | class | 2112 | 7 | [C_BaseEntity](client/C_BaseEntity.md) |
 | [CCSCustomHudLayoutState](client/CCSCustomHudLayoutState.md) | class | 264 | 4 |  |
 | [CCSCustomHudLayout_API](client/CCSCustomHudLayout_API.md) | class | 8 | 0 |  |
+| [CCSCustomPlayerCamera](client/CCSCustomPlayerCamera.md) | class | 1600 | 8 | [C_BaseEntity](client/C_BaseEntity.md) |
 | [CCSGO_EndOfMatchLineupEnd](client/CCSGO_EndOfMatchLineupEnd.md) | class | 1536 | 0 | [C_CSGO_EndOfMatchLineupEndpoint](client/C_CSGO_EndOfMatchLineupEndpoint.md) |
 | [CCSGO_TeamPreviewCharacterPosition_API](client/CCSGO_TeamPreviewCharacterPosition_API.md) | class | 8 | 0 |  |
 | [CCSGO_WingmanIntroCharacterPosition](client/CCSGO_WingmanIntroCharacterPosition.md) | class | 5024 | 0 | [C_CSGO_TeamIntroCharacterPosition](client/C_CSGO_TeamIntroCharacterPosition.md) |
@@ -60,7 +61,7 @@ module: client
 | [CCSObserver_ObserverServices](client/CCSObserver_ObserverServices.md) | class | 240 | 1 | [CPlayer_ObserverServices](client/CPlayer_ObserverServices.md) |
 | [CCSObserver_UseServices](client/CCSObserver_UseServices.md) | class | 72 | 0 | [CPlayer_UseServices](client/CPlayer_UseServices.md) |
 | [CCSPlayerBase_CameraServices](client/CCSPlayerBase_CameraServices.md) | class | 680 | 6 | [CPlayer_CameraServices](client/CPlayer_CameraServices.md) |
-| [CCSPlayerCamera](client/CCSPlayerCamera.md) | class | 1544 | 3 | [C_BaseEntity](client/C_BaseEntity.md) |
+| [CCSPlayerCamera](client/CCSPlayerCamera.md) | class | 1600 | 0 | [CCSCustomPlayerCamera](client/CCSCustomPlayerCamera.md) |
 | [CCSPlayerController](client/CCSPlayerController.md) | class | 2400 | 68 | [CBasePlayerController](client/CBasePlayerController.md) |
 | [CCSPlayerController_API](client/CCSPlayerController_API.md) | class | 8 | 0 |  |
 | [CCSPlayerController_ActionTrackingServices](client/CCSPlayerController_ActionTrackingServices.md) | class | 312 | 5 | [CPlayerControllerComponent](server/CPlayerControllerComponent.md) |

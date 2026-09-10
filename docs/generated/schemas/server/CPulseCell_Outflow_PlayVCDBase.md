@@ -8,7 +8,7 @@ kind: class
 
 # CPulseCell_Outflow_PlayVCDBase
 
-> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 312 bytes (`0x138`) · **Align:** 8 · **Module:** server
 

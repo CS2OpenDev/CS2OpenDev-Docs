@@ -3,6 +3,130 @@
   "breaking": [],
   "detail": [
     {
+      "anchor": "25175329-25218825",
+      "class_pair_candidates_count": 0,
+      "classes_added": [
+        "client.dll/CCSCustomPlayerCamera",
+        "server.dll/CCSCustomPlayerCamera"
+      ],
+      "classes_changed": [
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/dynpitchvol_base_t",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/dynpitchvol_t",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "ADD": 1,
+            "OFFSET_CHANGE": 6
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/CCSCustomHudLayout",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "2088",
+            "to": "2112"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "REMOVE": 3
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/CCSPlayerCamera",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": true,
+          "resize": {
+            "from": "1544",
+            "to": "1600"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "ADD": 1,
+            "OFFSET_CHANGE": 5
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "server.dll/CCSCustomHudLayout",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "2024",
+            "to": "2032"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "REMOVE": 3
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "server.dll/CCSPlayerCamera",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": true,
+          "resize": {
+            "from": "1200",
+            "to": "1256"
+          },
+          "static_field_ops": 0
+        }
+      ],
+      "classes_changed_total": 6,
+      "classes_changed_truncated": false,
+      "classes_removed": [],
+      "field_move_candidates_count": 0,
+      "from_build": "25175329",
+      "from_date": "2026-09-07",
+      "to_build": "25218825",
+      "to_date": "2026-09-09"
+    },
+    {
       "anchor": "25000182-25175329",
       "class_pair_candidates_count": 0,
       "classes_added": [],
@@ -163,80 +287,9 @@
       "from_date": "2026-08-25",
       "to_build": "24957633",
       "to_date": "2026-08-26"
-    },
-    {
-      "anchor": "24828357-24916958",
-      "class_pair_candidates_count": 0,
-      "classes_added": [
-        "!GlobalTypes/HUDPanelDialogVariableString_t",
-        "!GlobalTypes/HUDPanelHasClass_t",
-        "client.dll/CCSCustomHudLayout",
-        "client.dll/CCSCustomHudLayoutState",
-        "client.dll/CCSCustomHudLayout_API",
-        "client.dll/CCSPlayerCamera",
-        "server.dll/CCSCustomHudLayout",
-        "server.dll/CCSCustomHudLayoutState",
-        "server.dll/CCSCustomHudLayout_API",
-        "server.dll/CCSPlayerCamera"
-      ],
-      "classes_changed": [
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {},
-          "flags_changed": false,
-          "meta_ops": 1,
-          "metadata_only": false,
-          "name": "!GlobalTypes/dynpitchvol_base_t",
-          "pair_candidates": 0,
-          "paired_evidence": 0,
-          "realign": false,
-          "reparent": false,
-          "resize": null,
-          "static_field_ops": 0
-        },
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {},
-          "flags_changed": false,
-          "meta_ops": 1,
-          "metadata_only": false,
-          "name": "!GlobalTypes/dynpitchvol_t",
-          "pair_candidates": 0,
-          "paired_evidence": 0,
-          "realign": false,
-          "reparent": false,
-          "resize": null,
-          "static_field_ops": 0
-        },
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {},
-          "flags_changed": false,
-          "meta_ops": 0,
-          "metadata_only": false,
-          "name": "server.dll/CCSPointScriptEntity",
-          "pair_candidates": 0,
-          "paired_evidence": 0,
-          "realign": false,
-          "reparent": false,
-          "resize": {
-            "from": "1552",
-            "to": "1576"
-          },
-          "static_field_ops": 0
-        }
-      ],
-      "classes_changed_total": 3,
-      "classes_changed_truncated": false,
-      "classes_removed": [],
-      "field_move_candidates_count": 0,
-      "from_build": "24828357",
-      "from_date": "2026-08-19",
-      "to_build": "24916958",
-      "to_date": "2026-08-24"
     }
   ],
-  "latest_build": "25175329",
+  "latest_build": "25218825",
   "platform": "windows-x86_64",
   "schema_version": "0.10.0",
   "transitions": [
@@ -6818,6 +6871,23 @@
       "is_empty": false,
       "to_build": "25175329",
       "to_date": "2026-09-07"
+    },
+    {
+      "anchor": "25175329-25218825",
+      "counts": {
+        "class_added": 2,
+        "class_changed": 6,
+        "class_removed": 0,
+        "enum_added": 1,
+        "enum_changed": 2,
+        "enum_removed": 0,
+        "field_ops": 19
+      },
+      "from_build": "25175329",
+      "from_date": "2026-09-07",
+      "is_empty": false,
+      "to_build": "25218825",
+      "to_date": "2026-09-09"
     }
   ]
 }

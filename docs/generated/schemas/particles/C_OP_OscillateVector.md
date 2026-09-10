@@ -8,7 +8,7 @@ kind: class
 
 # C_OP_OscillateVector
 
-> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 1648 bytes (`0x670`) · **Align:** 8 · **Module:** particles
 

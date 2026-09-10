@@ -11547,7 +11547,7 @@
     },
     {
       "command_count": 198,
-      "convar_count": 1029,
+      "convar_count": 1033,
       "description": "Present in release/shipping builds, not just internal ones.",
       "name": "release"
     },

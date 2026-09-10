@@ -1,11 +1,11 @@
 {
   "schema_format_version": "2.2",
   "generator": "https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker",
-  "build_id": 25175329,
+  "build_id": 25218825,
   "platform": "windows-x86_64",
   "revision": "hl2sdk-cs2/5f891c9026230cce0fc0a3fc4b5fef1c467a1385/v1/3d1200e346019c59",
-  "version_date": "2026-09-07",
-  "version_time": "2026-09-07T21:44:07Z",
+  "version_date": "2026-09-09",
+  "version_time": "2026-09-09T22:31:50Z",
   "convars": [
     {
       "name": "CS_WarnFriendlyDamageInterval",
@@ -4693,6 +4693,28 @@
       ],
       "description": "Plots view angles yaw at various stages of the frame/tick in Tracy.",
       "value_type": "Bool",
+      "min": null,
+      "max": null
+    },
+    {
+      "name": "cl_decryptdata_key",
+      "default": "",
+      "flags": [
+        "release"
+      ],
+      "description": "Key to decrypt encrypted GOTV messages",
+      "value_type": "String",
+      "min": null,
+      "max": null
+    },
+    {
+      "name": "cl_decryptdata_key_pub",
+      "default": "",
+      "flags": [
+        "release"
+      ],
+      "description": "Key to decrypt public encrypted GOTV messages",
+      "value_type": "String",
       "min": null,
       "max": null
     },
@@ -47225,6 +47247,28 @@
       "max": null
     },
     {
+      "name": "tv_encryptdata_key",
+      "default": "",
+      "flags": [
+        "release"
+      ],
+      "description": "When set to a valid key communication messages will be encrypted for GOTV",
+      "value_type": "String",
+      "min": null,
+      "max": null
+    },
+    {
+      "name": "tv_encryptdata_key_pub",
+      "default": "",
+      "flags": [
+        "release"
+      ],
+      "description": "When set to a valid key public communication messages will be encrypted for GOTV",
+      "value_type": "String",
+      "min": null,
+      "max": null
+    },
+    {
       "name": "tv_extended_logging",
       "default": "false",
       "flags": [
@@ -47688,6 +47732,18 @@
       "max": null
     },
     {
+      "name": "tv_relaytextchat",
+      "default": "1",
+      "flags": [
+        "gamedll",
+        "release"
+      ],
+      "description": "Relay text chat data to GOTV: 0=off, 1=say, 2=say+say_team",
+      "value_type": "Int32",
+      "min": null,
+      "max": null
+    },
+    {
       "name": "tv_relayvoice",
       "default": "true",
       "flags": [
@@ -47717,18 +47773,6 @@
         "release"
       ],
       "description": "Bypass secure challenge on TV port",
-      "value_type": "Bool",
-      "min": null,
-      "max": null
-    },
-    {
-      "name": "tv_show_allchat",
-      "default": "true",
-      "flags": [
-        "gamedll",
-        "release"
-      ],
-      "description": "",
       "value_type": "Bool",
       "min": null,
       "max": null

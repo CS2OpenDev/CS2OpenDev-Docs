@@ -4,7 +4,7 @@ title: Modules
 
 # Binary Modules
 
-> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
 
 139 binaries read for this build, each with its SHA-256, size, export / schema-registration counts, and the engine interface versions it resolved at load.
 
@@ -34,7 +34,7 @@ title: Modules
 | `game/bin/win64/d3dcompiler_47.dll` | 4346120 | 29 | 0 |  |
 | `game/bin/win64/dbghelp.dll` | 1558912 | 203 | 0 |  |
 | `game/bin/win64/embree3.dll` | 21996904 | 117 | 0 |  |
-| `game/bin/win64/engine2.dll` | 6768792 | 43 | 4 | `EngineServiceMgr001`, `GameResourceServiceClientV001`, `HostStateMgr001`, `NetworkClientService_001`, `NetworkServerService_001`, `Source2EngineToClient001`, `Source2EngineToServer001` |
+| `game/bin/win64/engine2.dll` | 6776984 | 43 | 4 | `EngineServiceMgr001`, `GameResourceServiceClientV001`, `HostStateMgr001`, `NetworkClientService_001`, `NetworkServerService_001`, `Source2EngineToClient001`, `Source2EngineToServer001` |
 | `game/bin/win64/exportsystem.dll` | 3647640 | 6 | 0 |  |
 | `game/bin/win64/filesystem_stdio.dll` | 2253464 | 6 | 0 | `VAsyncFileSystem2_001`, `VFileSystem017` |
 | `game/bin/win64/gfsdk_aftermath_lib.x64.dll` | 5736000 | 43 | 0 |  |
@@ -62,7 +62,7 @@ title: Modules
 | `game/bin/win64/meshsystem.dll` | 1578136 | 6 | 0 |  |
 | `game/bin/win64/modeldoc_utils.dll` | 16483480 | 6 | 72 |  |
 | `game/bin/win64/navsystem.dll` | 1305240 | 6 | 0 |  |
-| `game/bin/win64/networksystem.dll` | 2790040 | 6 | 0 | `FlattenedSerializersVersion001`, `NetworkMessagesVersion001`, `NetworkSystemVersion001`, `SerializedEntitiesVersion001` |
+| `game/bin/win64/networksystem.dll` | 2792088 | 6 | 0 | `FlattenedSerializersVersion001`, `NetworkMessagesVersion001`, `NetworkSystemVersion001`, `SerializedEntitiesVersion001` |
 | `game/bin/win64/p4lib.dll` | 143000 | 3 | 0 |  |
 | `game/bin/win64/panorama.dll` | 5583512 | 7 | 0 | `PanoramaUIEngine001` |
 | `game/bin/win64/panorama_text_pango.dll` | 2985112 | 7 | 0 |  |
@@ -86,7 +86,7 @@ title: Modules
 | `game/bin/win64/rendersystemdx11.dll` | 4507800 | 49 | 0 | `RenderDeviceMgr001`, `RenderUtils_001` |
 | `game/bin/win64/rendersystemempty.dll` | 1746584 | 6 | 0 |  |
 | `game/bin/win64/rendersystemvulkan.dll` | 6148248 | 58 | 0 | `RenderDeviceMgr001`, `RenderUtils_001` |
-| `game/bin/win64/resourcecompiler.dll` | 56326296 | 6 | 101 |  |
+| `game/bin/win64/resourcecompiler.dll` | 56325784 | 6 | 101 |  |
 | `game/bin/win64/resourcesystem.dll` | 507544 | 6 | 0 | `ResourceSystem013` |
 | `game/bin/win64/scenefilecache.dll` | 1251480 | 6 | 0 |  |
 | `game/bin/win64/scenesystem.dll` | 7035544 | 6 | 0 | `SceneSystem_002`, `SceneUtils_001` |
@@ -136,11 +136,11 @@ title: Modules
 | `game/bin/win64/vrad3.dll` | 3146904 | 6 | 0 |  |
 | `game/bin/win64/vscript.dll` | 1347224 | 183 | 0 |  |
 | `game/bin/win64/worldrenderer.dll` | 2003096 | 6 | 4 | `WorldRendererMgr001` |
-| `game/csgo/bin/win64/client.dll` | 37560472 | 6 | 541 | `Source2Client002`, `Source2ClientConfig001`, `Source2ClientPrediction001`, `Source2ClientUI001` |
+| `game/csgo/bin/win64/client.dll` | 37585560 | 6 | 542 | `Source2Client002`, `Source2ClientConfig001`, `Source2ClientPrediction001`, `Source2ClientUI001` |
 | `game/csgo/bin/win64/host.dll` | 1381528 | 6 | 0 | `GameSystem2HostHook`, `Source2Host001` |
 | `game/csgo/bin/win64/matchmaking.dll` | 1883800 | 6 | 0 | `MATCHFRAMEWORK_001` |
 | `game/csgo/bin/win64/modtools.dll` | 17308824 | 6 | 0 | `Source2ModTools001` |
-| `game/csgo/bin/win64/server.dll` | 33002648 | 6 | 802 | `Source2GameClients001`, `Source2GameEntities001`, `Source2Server001`, `Source2ServerConfig001` |
+| `game/csgo/bin/win64/server.dll` | 33042584 | 6 | 803 | `Source2GameClients001`, `Source2GameEntities001`, `Source2Server001`, `Source2ServerConfig001` |
 | `game/csgo/import_scripts/bin/filesystem_stdio.dll` | 434176 | 1 | 0 | `VAsyncFileSystem2_001`, `VFileSystem017` |
 | `game/csgo/import_scripts/bin/materialsystem.dll` | 881664 | 1 | 0 |  |
 | `game/csgo/import_scripts/bin/shaderapiempty.dll` | 85504 | 1 | 0 |  |

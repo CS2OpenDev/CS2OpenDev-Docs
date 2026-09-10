@@ -1,12 +1,12 @@
 {
-  "build_id": "25175329",
+  "build_id": "25218825",
   "counts": {
-    "classes": 3590,
+    "classes": 3591,
     "commands": 1132,
-    "convars": 3955,
-    "enums": 611,
+    "convars": 3959,
+    "enums": 612,
     "events": 289,
-    "fields": 18549,
+    "fields": 18561,
     "game_modes": 15,
     "items": 2054,
     "maps": 22,
@@ -45,7 +45,7 @@
       "module": "animlib"
     },
     {
-      "classes": 487,
+      "classes": 488,
       "enums": 3,
       "module": "client"
     },
@@ -190,8 +190,8 @@
       "module": "schemasystem"
     },
     {
-      "classes": 910,
-      "enums": 231,
+      "classes": 911,
+      "enums": 232,
       "module": "server"
     },
     {
@@ -258,8 +258,8 @@
   "note": "classes/enums/fields count distinct top-level entity names and their own declared fields; the modules[] list additionally counts client/server twin records (duplicates), so summing its per-module classes/enums can exceed the top-level totals above.",
   "platform": "windows-x86_64",
   "schema_version": "0.10.0",
-  "steam_date": "2026-09-07",
-  "steam_manifest_utc": "2026-09-07T21:44:07Z",
+  "steam_date": "2026-09-09",
+  "steam_manifest_utc": "2026-09-09T22:31:50Z",
   "tool_commit": "d482acc25d170eb0c21f7f3ba217d27921e19aca",
   "tool_version": "0.10.0"
 }

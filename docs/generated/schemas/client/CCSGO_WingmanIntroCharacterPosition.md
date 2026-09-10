@@ -8,7 +8,7 @@ kind: class
 
 # CCSGO_WingmanIntroCharacterPosition
 
-> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 5024 bytes (`0x13a0`) · **Align:** n/a (unspecified) · **Module:** client
 

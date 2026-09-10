@@ -8,7 +8,7 @@ kind: class
 
 # CTriggerRemove
 
-> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 2304 bytes (`0x900`) · **Align:** 8 · **Module:** server
 

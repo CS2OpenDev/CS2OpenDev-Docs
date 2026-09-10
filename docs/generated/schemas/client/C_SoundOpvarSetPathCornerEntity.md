@@ -8,7 +8,7 @@ kind: class
 
 # C_SoundOpvarSetPathCornerEntity
 
-> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 1568 bytes (`0x620`) · **Align:** 8 · **Module:** client
 

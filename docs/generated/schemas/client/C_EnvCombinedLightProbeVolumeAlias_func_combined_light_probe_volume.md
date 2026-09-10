@@ -8,7 +8,7 @@ kind: class
 
 # C_EnvCombinedLightProbeVolumeAlias_func_combined_light_probe_volume
 
-> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 5960 bytes (`0x1748`) · **Align:** 8 · **Module:** client
 

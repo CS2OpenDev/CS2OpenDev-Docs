@@ -8,26 +8,26 @@ kind: class
 
 # CCSPlayerCamera
 
-> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
 
-**Kind:** class · **Size:** 1200 bytes (`0x4b0`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 1256 bytes (`0x4e8`) · **Align:** 8 · **Module:** server
 
 **Twin:** [CCSPlayerCamera (client)](../client/CCSPlayerCamera.md)
 
-**Inherits from:** [CBaseEntity](../server/CBaseEntity.md)
+**Inherits from:** [CCSCustomPlayerCamera](../server/CCSCustomPlayerCamera.md)
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CBaseEntity <|-- CCSPlayerCamera
+    CCSCustomPlayerCamera <|-- CCSPlayerCamera
+    CBaseEntity <|-- CCSCustomPlayerCamera
     CEntityInstance <|-- CBaseEntity
-    CCSPlayerCamera --> CCSPlayerPawnBase
 ```
 
 ## Memory layout
 
-91 fields (3 declared here, 88 inherited). Offsets are absolute from the object base.
+96 fields (0 declared here, 96 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -119,6 +119,11 @@ classDiagram
 | `0x498` | `m_flVPhysicsUpdateLocalTime` | float32 | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x49c` | `m_nBloodType` | [BloodType](../server/BloodType.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x4a0` | `m_pPulseGraphInstance` | [CPulseGraphInstance_ServerEntity](../server/CPulseGraphInstance_ServerEntity.md)* | [CBaseEntity](../server/CBaseEntity.md) | `MKV3TransferSaveOpsForField GetPulseInstanceSaveRestoreOps` |
-| `0x4a8` | `m_hPawn` | CHandle< [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) > |  |  |
-| `0x4ac` | `m_bEnabled` | bool |  |  |
-| `0x4ad` | `m_bIsControllingAngles` | bool |  |  |
+| `0x4a8` | `m_hPawn` | CHandle< [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) > | [CCSCustomPlayerCamera](../server/CCSCustomPlayerCamera.md) |  |
+| `0x4ac` | `m_nCameraMode` | [CustomCameraMode_t](../server/CustomCameraMode_t.md) | [CCSCustomPlayerCamera](../server/CCSCustomPlayerCamera.md) |  |
+| `0x4b0` | `m_hFollowEntity` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CCSCustomPlayerCamera](../server/CCSCustomPlayerCamera.md) |  |
+| `0x4b4` | `m_bFollowEyes` | bool | [CCSCustomPlayerCamera](../server/CCSCustomPlayerCamera.md) |  |
+| `0x4b8` | `m_vecFollowOffset` | Vector | [CCSCustomPlayerCamera](../server/CCSCustomPlayerCamera.md) |  |
+| `0x4c4` | `m_vecCameraOffset` | Vector | [CCSCustomPlayerCamera](../server/CCSCustomPlayerCamera.md) |  |
+| `0x4d0` | `m_bClipCameraOffset` | bool | [CCSCustomPlayerCamera](../server/CCSCustomPlayerCamera.md) |  |
+| `0x4d4` | `m_flCameraOffsetReturnStrength` | float32 | [CCSCustomPlayerCamera](../server/CCSCustomPlayerCamera.md) |  |

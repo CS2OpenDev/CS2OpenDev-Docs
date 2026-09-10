@@ -4,7 +4,7 @@ title: "UML: client"
 
 # UML: client
 
-Class relationships (inheritance and composition) for the `client` module (showing 300 of 384 relationships).
+Class relationships (inheritance and composition) for the `client` module (showing 300 of 385 relationships).
 
 **Arrow legend:** `<|--` inheritance &nbsp; `*--` composition &nbsp; `-->` association/pointer
 
@@ -29,6 +29,7 @@ classDiagram
     CCS2WeaponGraphController <|-- CCS2PawnGraphController
     CAnimGraphControllerBase <|-- CCS2WeaponGraphController
     C_BaseEntity <|-- CCSCustomHudLayout
+    C_BaseEntity <|-- CCSCustomPlayerCamera
     C_CSGO_EndOfMatchLineupEndpoint <|-- CCSGO_EndOfMatchLineupEnd
     C_CSGO_TeamIntroCharacterPosition <|-- CCSGO_WingmanIntroCharacterPosition
     CCSGO_WingmanIntroCharacterPosition <|-- CCSGO_WingmanIntroCounterTerroristPosition
@@ -41,7 +42,7 @@ classDiagram
     CPlayer_ObserverServices <|-- CCSObserver_ObserverServices
     CPlayer_UseServices <|-- CCSObserver_UseServices
     CPlayer_CameraServices <|-- CCSPlayerBase_CameraServices
-    C_BaseEntity <|-- CCSPlayerCamera
+    CCSCustomPlayerCamera <|-- CCSPlayerCamera
     CBasePlayerController <|-- CCSPlayerController
     CPlayerControllerComponent <|-- CCSPlayerController_ActionTrackingServices
     CPlayerControllerComponent <|-- CCSPlayerController_DamageServices
@@ -309,5 +310,4 @@ classDiagram
     C_BaseEntity <|-- C_PointValueRemapper
     C_ModelPointEntity <|-- C_PointWorldText
     C_BaseEntity <|-- C_PortraitWorldCallbackHandler
-    C_BaseTrigger <|-- C_PostProcessingVolume
 ```

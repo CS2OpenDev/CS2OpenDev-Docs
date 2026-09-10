@@ -8,7 +8,7 @@ kind: class
 
 # CTriggerFan
 
-> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 4352 bytes (`0x1100`) · **Align:** 16 · **Module:** client
 

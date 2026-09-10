@@ -4,7 +4,7 @@ title: Network Messages
 
 # Network & Demo Messages
 
-> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
 
 The wire-protocol tables: integer message IDs mapped to the protobuf message type carried, recovered from a static RTTI scan of the shipped binaries.  Each type links to its definition on the [protobuf pages](protobufs.md).
 
@@ -124,7 +124,7 @@ The wire-protocol tables: integer message IDs mapped to the protobuf message typ
 
 ## SvcMessages
 
-29 message ids.
+30 message ids.
 
 | ID | Message type |
 |----|--------------|
@@ -157,6 +157,7 @@ The wire-protocol tables: integer message IDs mapped to the protobuf message typ
 | 74 | [`CSVCMsg_HltvReplay`](proto/netmessages.md#csvcmsg_hltvreplay) |
 | 76 | [`CSVCMsg_UserCommands`](proto/netmessages.md#csvcmsg_usercommands) |
 | 77 | [`CSVCMsg_NextMsgPredicted`](proto/netmessages.md#csvcmsg_nextmsgpredicted) |
+| 78 | `CSVCMsg_EncryptedData` |
 
 ## TempEntities
 

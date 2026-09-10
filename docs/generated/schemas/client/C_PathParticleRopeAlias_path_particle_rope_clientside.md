@@ -8,7 +8,7 @@ kind: class
 
 # C_PathParticleRopeAlias_path_particle_rope_clientside
 
-> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 1808 bytes (`0x710`) · **Align:** 8 · **Module:** client
 

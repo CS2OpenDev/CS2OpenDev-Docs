@@ -4,7 +4,7 @@ title: ConVars
 
 # ConVar Reference
 
-> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
 
 All console variables extracted from CS2, with the value type and the bounds the engine enforces where it declares them.
 
@@ -367,6 +367,8 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `cl_debug_precipitation_surface_graph` | `Bool` | `false` |  | `clientdll` `replicated` `cheat` | When true, use the surface graph to pass in positions for rainfall. |
 | `cl_debug_round_stat_submission` | `Bool` | `false` |  | `developmentonly` `clientdll` |  |
 | `cl_debugviewangle` | `Bool` | `false` |  | `developmentonly` `clientdll` | Plots view angles yaw at various stages of the frame/tick in Tracy. |
+| `cl_decryptdata_key` | `String` |  |  | `release` | Key to decrypt encrypted GOTV messages |
+| `cl_decryptdata_key_pub` | `String` |  |  | `release` | Key to decrypt public encrypted GOTV messages |
 | `cl_demo_predict` | `Int32` | `1` |  | `clientdll` `release` | Enable 'TrueView' when watching a demo, which attempts to recreate the client's experience more accurately.  0=disable, 1=only if demo version match, 2=always |
 | `cl_demo_steadycam_blendframes` | `Int32` | `5` |  | `developmentonly` `clientdll` `defensive` | blend over this many frames |
 | `cl_demo_steadycam_deflection` | `Float32` | `5.000000` |  | `developmentonly` `clientdll` `defensive` | if camera orientation changes this much update orientation |
@@ -3737,6 +3739,8 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `tv_enable1` | `Bool` | `false` |  | `notify` `release` | Activates SourceTV[1] on server. |
 | `tv_enable_delta_frames` | `Bool` | `true` |  | `release` | Indicates whether or not the tv should use delta frames for storage of intermediate frames. This takes more CPU but significantly less memory. |
 | `tv_enable_dynamic` | `Bool` | `false` |  | `notify` `release` | When enabled, changes in tv_enable convars cause immediate startup or shutdown of hltv server |
+| `tv_encryptdata_key` | `String` |  |  | `release` | When set to a valid key communication messages will be encrypted for GOTV |
+| `tv_encryptdata_key_pub` | `String` |  |  | `release` | When set to a valid key public communication messages will be encrypted for GOTV |
 | `tv_extended_logging` | `Bool` | `false` |  | `developmentonly` `defensive` |  |
 | `tv_grouprelaydatareliable` | `Bool` | `false` |  | `developmentonly` `defensive` | When enabled, this will collect all information for relay sending into a single datagram to ensure that the data stays together through a potentially large number of relays |
 | `tv_grouprelaydataunreliable` | `Bool` | `false` |  | `developmentonly` `defensive` | When enabled, this will collect all information for relay sending into a single datagram to ensure that the data stays together through a potentially large number of relays |
@@ -3776,10 +3780,10 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `tv_relay_secret_code` | `Bool` | `true` |  | `developmentonly` `defensive` | When enabled, this will use a uniquely generated server code to authenticate relay to relay connections. This code is coordinated via the GC or some external means rather than by clients directly |
 | `tv_relaypassword` | `String` |  |  | `protected` `notify` `dontrecord` `release` | SourceTV password for relay proxies |
 | `tv_relayradio` | `Bool` | `false` |  | `gamedll` `release` | Relay team radio commands to TV: 0=off, 1=on |
+| `tv_relaytextchat` | `Int32` | `1` |  | `gamedll` `release` | Relay text chat data to GOTV: 0=off, 1=say, 2=say+say_team |
 | `tv_relayvoice` | `Bool` | `true` |  | `release` | Relay voice data: 0=off, 1=on |
 | `tv_secret_code` | `Bool` | `true` |  | `developmentonly` `defensive` | When enabled, this will use a uniquely generated server code to authenticate relay connections. This code is coordinated via the GC or some external means rather than by clients directly |
 | `tv_secure_bypass` | `Bool` | `false` |  | `release` | Bypass secure challenge on TV port |
-| `tv_show_allchat` | `Bool` | `true` |  | `gamedll` `release` |  |
 | `tv_spectator_port_offset` | `Int32` | `0` |  | `clientdll` `release` |  |
 | `tv_threaded_merge_entity_deltas` | `Bool` | `true` |  | `developmentonly` `defensive` | Enable SourceTV threading of delta merging |
 | `tv_timeout` | `Float32` | `20.000000` |  | `release` | SourceTV connection timeout in seconds. |

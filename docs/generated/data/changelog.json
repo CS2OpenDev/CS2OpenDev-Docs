@@ -1,33 +1,153 @@
 {
   "families": [
     {
-      "added": [],
-      "added_count": 0,
-      "changed": [],
-      "changed_count": 0,
+      "added": [
+        "client.dll/CCSCustomPlayerCamera",
+        "server.dll/CCSCustomPlayerCamera"
+      ],
+      "added_count": 2,
+      "changed": [
+        {
+          "field_changes": [
+            {
+              "field": "field_count",
+              "new_value": "7",
+              "old_value": "6"
+            }
+          ],
+          "name": "client.dll/CCSCustomHudLayout"
+        },
+        {
+          "field_changes": [
+            {
+              "field": "field_count",
+              "new_value": "0",
+              "old_value": "3"
+            },
+            {
+              "field": "parent",
+              "new_value": "CCSCustomPlayerCamera",
+              "old_value": "C_BaseEntity"
+            }
+          ],
+          "name": "client.dll/CCSPlayerCamera"
+        },
+        {
+          "field_changes": [
+            {
+              "field": "field_count",
+              "new_value": "7",
+              "old_value": "6"
+            }
+          ],
+          "name": "server.dll/CCSCustomHudLayout"
+        },
+        {
+          "field_changes": [
+            {
+              "field": "field_count",
+              "new_value": "0",
+              "old_value": "3"
+            },
+            {
+              "field": "parent",
+              "new_value": "CCSCustomPlayerCamera",
+              "old_value": "CBaseEntity"
+            }
+          ],
+          "name": "server.dll/CCSPlayerCamera"
+        }
+      ],
+      "changed_count": 4,
       "family": "classes",
       "removed": [],
       "removed_count": 0,
       "truncated": false
     },
     {
-      "added": [],
-      "added_count": 0,
-      "changed": [],
-      "changed_count": 0,
+      "added": [
+        "!GlobalTypes/CustomCameraMode_t"
+      ],
+      "added_count": 1,
+      "changed": [
+        {
+          "field_changes": [
+            {
+              "field": "member:CS_UM_SayText",
+              "new_value": "",
+              "old_value": "305"
+            },
+            {
+              "field": "member:CS_UM_SayText2",
+              "new_value": "",
+              "old_value": "306"
+            },
+            {
+              "field": "member:CS_UM_SayText2_CSGOLegacy",
+              "new_value": "306",
+              "old_value": ""
+            },
+            {
+              "field": "member:CS_UM_SayText_CSGOLegacy",
+              "new_value": "305",
+              "old_value": ""
+            },
+            {
+              "field": "member:CS_UM_TextMsg",
+              "new_value": "",
+              "old_value": "307"
+            },
+            {
+              "field": "member:CS_UM_TextMsg_CSGOLegacy",
+              "new_value": "307",
+              "old_value": ""
+            },
+            {
+              "field": "member:CS_UM_UpdateTeamMoney",
+              "new_value": "",
+              "old_value": "328"
+            },
+            {
+              "field": "member:CS_UM_UpdateTeamMoney_CSGOLegacy",
+              "new_value": "328",
+              "old_value": ""
+            }
+          ],
+          "name": "!GlobalTypes/ECstrike15UserMessages"
+        },
+        {
+          "field_changes": [
+            {
+              "field": "member:svc_EncryptedData",
+              "new_value": "78",
+              "old_value": ""
+            }
+          ],
+          "name": "!GlobalTypes/SVC_Messages"
+        }
+      ],
+      "changed_count": 2,
       "family": "enums",
       "removed": [],
       "removed_count": 0,
       "truncated": false
     },
     {
-      "added": [],
-      "added_count": 0,
+      "added": [
+        "cl_decryptdata_key",
+        "cl_decryptdata_key_pub",
+        "tv_encryptdata_key",
+        "tv_encryptdata_key_pub",
+        "tv_relaytextchat"
+      ],
+      "added_count": 5,
       "changed": [],
       "changed_count": 0,
       "family": "convars",
-      "removed": [],
-      "removed_count": 0,
+      "removed": [
+        "tv_show_allchat"
+      ],
+      "removed_count": 1,
       "truncated": false
     },
     {
@@ -41,19 +161,34 @@
       "truncated": false
     },
     {
-      "added": [],
-      "added_count": 0,
+      "added": [
+        "schema_enum:!GlobalTypes/CustomCameraMode_t/CustomCameraMode_t::CUSTOM_CAMERA_MODE_CONTROLLED",
+        "schema_enum:!GlobalTypes/CustomCameraMode_t/CustomCameraMode_t::CUSTOM_CAMERA_MODE_CONTROLLED_POSITION",
+        "schema_enum:!GlobalTypes/CustomCameraMode_t/CustomCameraMode_t::CUSTOM_CAMERA_MODE_DISABLED",
+        "schema_enum:!GlobalTypes/CustomCameraMode_t/CustomCameraMode_t::CUSTOM_CAMERA_MODE_FOLLOW_POSITION",
+        "schema_enum:!GlobalTypes/ECstrike15UserMessages/ECstrike15UserMessages::CS_UM_SayText2_CSGOLegacy",
+        "schema_enum:!GlobalTypes/ECstrike15UserMessages/ECstrike15UserMessages::CS_UM_SayText_CSGOLegacy",
+        "schema_enum:!GlobalTypes/ECstrike15UserMessages/ECstrike15UserMessages::CS_UM_TextMsg_CSGOLegacy",
+        "schema_enum:!GlobalTypes/ECstrike15UserMessages/ECstrike15UserMessages::CS_UM_UpdateTeamMoney_CSGOLegacy",
+        "schema_enum:!GlobalTypes/SVC_Messages/SVC_Messages::svc_EncryptedData"
+      ],
+      "added_count": 9,
       "changed": [],
       "changed_count": 0,
       "family": "engine_constants",
-      "removed": [],
-      "removed_count": 0,
+      "removed": [
+        "schema_enum:!GlobalTypes/ECstrike15UserMessages/ECstrike15UserMessages::CS_UM_SayText",
+        "schema_enum:!GlobalTypes/ECstrike15UserMessages/ECstrike15UserMessages::CS_UM_SayText2",
+        "schema_enum:!GlobalTypes/ECstrike15UserMessages/ECstrike15UserMessages::CS_UM_TextMsg",
+        "schema_enum:!GlobalTypes/ECstrike15UserMessages/ECstrike15UserMessages::CS_UM_UpdateTeamMoney"
+      ],
+      "removed_count": 4,
       "truncated": false
     }
   ],
-  "from_build": "25000182",
-  "no_changes": true,
+  "from_build": "25175329",
+  "no_changes": false,
   "platform": "windows-x86_64",
-  "schema_history_anchor": "25000182-25175329",
-  "to_build": "25175329"
+  "schema_history_anchor": "25175329-25218825",
+  "to_build": "25218825"
 }

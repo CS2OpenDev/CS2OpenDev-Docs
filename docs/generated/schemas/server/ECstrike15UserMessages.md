@@ -8,7 +8,7 @@ kind: enum
 
 # ECstrike15UserMessages
 
-> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** server
 
@@ -20,9 +20,9 @@ kind: enum
 | `CS_UM_Geiger` | 302 |  |
 | `CS_UM_Train` | 303 |  |
 | `CS_UM_HudText` | 304 |  |
-| `CS_UM_SayText` | 305 |  |
-| `CS_UM_SayText2` | 306 |  |
-| `CS_UM_TextMsg` | 307 |  |
+| `CS_UM_SayText_CSGOLegacy` | 305 |  |
+| `CS_UM_SayText2_CSGOLegacy` | 306 |  |
+| `CS_UM_TextMsg_CSGOLegacy` | 307 |  |
 | `CS_UM_HudMsg` | 308 |  |
 | `CS_UM_ResetHud` | 309 |  |
 | `CS_UM_GameTitle` | 310 |  |
@@ -42,7 +42,7 @@ kind: enum
 | `CS_UM_ProcessSpottedEntityUpdate` | 325 |  |
 | `CS_UM_ReloadEffect` | 326 |  |
 | `CS_UM_AdjustMoney` | 327 |  |
-| `CS_UM_UpdateTeamMoney` | 328 |  |
+| `CS_UM_UpdateTeamMoney_CSGOLegacy` | 328 |  |
 | `CS_UM_StopSpectatorMode` | 329 |  |
 | `CS_UM_KillCam` | 330 |  |
 | `CS_UM_DesiredTimescale` | 331 |  |

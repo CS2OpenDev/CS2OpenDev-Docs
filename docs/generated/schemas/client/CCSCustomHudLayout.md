@@ -8,9 +8,9 @@ kind: class
 
 # CCSCustomHudLayout
 
-> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
 
-**Kind:** class · **Size:** 2088 bytes (`0x828`) · **Align:** 8 · **Module:** client
+**Kind:** class · **Size:** 2112 bytes (`0x840`) · **Align:** 8 · **Module:** client
 
 **Twin:** [CCSCustomHudLayout (server)](../server/CCSCustomHudLayout.md)
 
@@ -27,7 +27,7 @@ classDiagram
 
 ## Memory layout
 
-91 fields (6 declared here, 85 inherited). Offsets are absolute from the object base.
+92 fields (7 declared here, 85 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -116,9 +116,10 @@ classDiagram
 | `0x5e2` | `m_bSimulationTimeChanged` | bool | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
 | `0x5f0` | `m_sUniqueHammerID` | CUtlString | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
 | `0x5f8` | `m_nBloodType` | [BloodType](../server/BloodType.md) | [C_BaseEntity](../client/C_BaseEntity.md) |  |
-| `0x608` | `m_strLayout` | CUtlSymbolLarge |  |  |
-| `0x610` | `m_vecPlayerLayoutStates` | C_UtlVectorEmbeddedNetworkVar< [CCSCustomHudLayoutState](../client/CCSCustomHudLayoutState.md) > |  |  |
-| `0x678` | `m_globalLayoutState` | [CCSCustomHudLayoutState](../client/CCSCustomHudLayoutState.md) |  |  |
-| `0x780` | `m_vecPanelIds` | C_NetworkUtlVectorBase< CUtlString > |  |  |
-| `0x798` | `m_vecClassNames` | C_NetworkUtlVectorBase< CUtlString > |  |  |
-| `0x7b0` | `m_vecDialogVariableNames` | C_NetworkUtlVectorBase< CUtlString > |  |  |
+| `0x618` | `m_strLayout` | CUtlSymbolLarge |  |  |
+| `0x620` | `m_bObservable` | bool |  |  |
+| `0x628` | `m_vecPlayerLayoutStates` | C_UtlVectorEmbeddedNetworkVar< [CCSCustomHudLayoutState](../client/CCSCustomHudLayoutState.md) > |  |  |
+| `0x690` | `m_globalLayoutState` | [CCSCustomHudLayoutState](../client/CCSCustomHudLayoutState.md) |  |  |
+| `0x798` | `m_vecPanelIds` | C_NetworkUtlVectorBase< CUtlString > |  |  |
+| `0x7b0` | `m_vecClassNames` | C_NetworkUtlVectorBase< CUtlString > |  |  |
+| `0x7c8` | `m_vecDialogVariableNames` | C_NetworkUtlVectorBase< CUtlString > |  |  |

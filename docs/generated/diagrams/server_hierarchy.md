@@ -66,6 +66,7 @@ classDiagram
     CCS2WeaponGraphController <|-- CCS2PawnGraphController
     CAnimGraphControllerBase <|-- CCS2WeaponGraphController
     C_BaseEntity <|-- CCSCustomHudLayout
+    C_BaseEntity <|-- CCSCustomPlayerCamera
     C_CSGO_EndOfMatchLineupEndpoint <|-- CCSGO_EndOfMatchLineupEnd
     C_CSGO_TeamIntroCharacterPosition <|-- CCSGO_WingmanIntroCharacterPosition
     CCSGO_WingmanIntroCharacterPosition <|-- CCSGO_WingmanIntroCounterTerroristPosition
@@ -78,7 +79,7 @@ classDiagram
     CPlayer_ObserverServices <|-- CCSObserver_ObserverServices
     CPlayer_UseServices <|-- CCSObserver_UseServices
     CPlayer_CameraServices <|-- CCSPlayerBase_CameraServices
-    C_BaseEntity <|-- CCSPlayerCamera
+    CCSCustomPlayerCamera <|-- CCSPlayerCamera
     CBasePlayerController <|-- CCSPlayerController
     CPlayerControllerComponent <|-- CCSPlayerController_ActionTrackingServices
     CPlayerControllerComponent <|-- CCSPlayerController_DamageServices
@@ -307,5 +308,4 @@ classDiagram
     C_CSWeaponBase <|-- C_Knife
     CBaseAnimGraph <|-- C_LateUpdatedAnimating
     C_LightEntity <|-- C_LightDirectionalEntity
-    C_BaseModelEntity <|-- C_LightEntity
 ```

@@ -20,7 +20,7 @@
       ],
       "schema_module": "animationsystem",
       "schema_registration_count": 73,
-      "sha256": "eec896282d13ee0d3c83a628c7e58b3788c38a28e5b128ec25d86e117177e24e",
+      "sha256": "d351d2be86559e7f65f42945a3802379970b88ec83b350e3786efb369964c111",
       "stem": "animationsystem"
     },
     {
@@ -30,7 +30,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 70,
-      "sha256": "eeb93ce111642027ffd91d6ae6bed4eae7973b70d29e74d64ba80ba9e714b3c8",
+      "sha256": "a47a94eeff6f3e3f777ebdcbe3e6b6f6cdf064e0c527e3a2928ca52c6bbfe2e6",
       "stem": "assetbrowser"
     },
     {
@@ -40,7 +40,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 94,
-      "sha256": "29c9b893441dab5d6e70817197ca36515f6a9cf86431f30c4348f13ec0090ada",
+      "sha256": "10f09951f4601f15fa959ed47f2393fac48fe5b4c63b035e70005b9205cae428",
       "stem": "assetpreview"
     },
     {
@@ -50,7 +50,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 101,
-      "sha256": "71adb6aad2097933dd9ea8b2d60115ecc36edaf56541797de05660efab68f6d6",
+      "sha256": "cc8cebb310f1bdb50ad0066c920ecf03cdde482e13ab1ba96225e3c5f192d2f0",
       "stem": "assetrename"
     },
     {
@@ -60,7 +60,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "d3ba6cb380c069bd45eb2d94ec38bab75e8ae31e7e300966eb80733f99c3b9c1",
+      "sha256": "a61afa8a79afa43f5c498c3b414a7262ae2e7caf58a609b2e885ec5d2934c882",
       "stem": "assetsystem"
     },
     {
@@ -90,7 +90,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "d9f9d7f25f4ff0b43f92f7dd2694efd82699b05dbffc625ea4a2d451fb905c9d",
+      "sha256": "1b9d6e81a1c57c13e90c4b35cd0752e6a02ab14d4589ec7918e941381c67bdd6",
       "stem": "bugreporter_filequeue"
     },
     {
@@ -100,7 +100,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "e78bae00e8b1ac9ff8b1eab639b9e92c7b0d77d07d17052e1b93386b60109bd1",
+      "sha256": "70d056b21ad1f939cb294ea8e8b2550ca611d4618da77133d5d6f1d3cd4f61f5",
       "stem": "cairo"
     },
     {
@@ -135,7 +135,7 @@
     },
     {
       "export_count": 43,
-      "file_size": "6768792",
+      "file_size": "6776984",
       "path": "game/bin/win64/engine2.dll",
       "resolved_interfaces": [
         "EngineServiceMgr001",
@@ -148,7 +148,7 @@
       ],
       "schema_module": "engine2",
       "schema_registration_count": 4,
-      "sha256": "1fcf2920de28f625ee1ac5d6436c582ed381a4a913cfe2c9701b5551cc912d07",
+      "sha256": "7a72cbb4b9239309627dd52f029d72a7a5b09bfb36a3f0b9af4411eb5f337e80",
       "stem": "engine2"
     },
     {
@@ -158,7 +158,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "6bc56798d58496e5ffb7d48558ac6f85ef0d60431ae3ab9dae8c5af2ca28b5f3",
+      "sha256": "fed1a9a28fc768911f5eb715dcb9da28a8a159ba0649a607defa01d28e9dfe22",
       "stem": "exportsystem"
     },
     {
@@ -171,7 +171,7 @@
       ],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "a68eb1d28191b3f5d68989198b06b1842dd5dfc54ae098532a75bfc37c83f7ef",
+      "sha256": "177cf48c16ed45514a1a9064e4d463700c5fdb4f0f3cb0ddb291773ceafcfb12",
       "stem": "filesystem_stdio"
     },
     {
@@ -191,7 +191,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "f17c7ed1e4e57372534dc2775c41300d9250edabb483b9fd1cfcad9620da6169",
+      "sha256": "2f43a7d6bc250576ce711693a07fe31baf62c3ebadafac11257a5e7cceca4b10",
       "stem": "helpsystem"
     },
     {
@@ -201,7 +201,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "bb118b2a2488885bb32a649de140f4718015eda093a4d8131276b008dd53e835",
+      "sha256": "08111109028e68733032317c928029546ebe6e475301ad5bf5e814c7c8646b73",
       "stem": "imemanager"
     },
     {
@@ -213,7 +213,7 @@
       ],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "3207fba71fc7e08f776d08b2c5c552bc5734493e148b0af594beedf2389c4b14",
+      "sha256": "91884aa7569a276ed4ad46f8a9bca60bd5f9f5d43a1f51293a1ff8e59c6aa817",
       "stem": "inputsystem"
     },
     {
@@ -383,7 +383,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "dffef09c91ce053d94d2ca19ef0036ad46576f5fa470d9c3993fd4341fbec88e",
+      "sha256": "ef6b4856832308cac271e2b5cc26f5deec76637c7058f5f77cd866a59e91fd01",
       "stem": "localize"
     },
     {
@@ -396,7 +396,7 @@
       ],
       "schema_module": "materialsystem2",
       "schema_registration_count": 0,
-      "sha256": "4df68eb3cfc4a0f447dd19eed8961ff652f1a36419bb6e3b42f06f47145d915c",
+      "sha256": "dfae3774e75036a3a81139772252fc1750f040b031f39ef6c7931c6ea2364782",
       "stem": "materialsystem2"
     },
     {
@@ -406,7 +406,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "9a5baf18bc401327d323052a935d0a0bba6d1dc64d00665da124e75dd1a9cac2",
+      "sha256": "735006671b68805018ae56974259c9b398eddd6aaae273e8dc9b0f8d7d0f4dd6",
       "stem": "meshsystem"
     },
     {
@@ -416,7 +416,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 72,
-      "sha256": "212ce67d9ddbc25468c66228efe3bab88cbd519ff5231afe39f617e1206e6fd6",
+      "sha256": "37affc0daeef9a2d66b2b3e1e15f11dd744e5c27e7ee783b84ed8cd4024dca98",
       "stem": "modeldoc_utils"
     },
     {
@@ -426,12 +426,12 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "d938602a7a139ebe2efa99078e2be8685b1c492bf18c2d8394025e7ad600e4d2",
+      "sha256": "a239fe44fa9b8075a227cc48dd506764c106a1cd01c7a499b1efed12ed556d96",
       "stem": "navsystem"
     },
     {
       "export_count": 6,
-      "file_size": "2790040",
+      "file_size": "2792088",
       "path": "game/bin/win64/networksystem.dll",
       "resolved_interfaces": [
         "FlattenedSerializersVersion001",
@@ -441,7 +441,7 @@
       ],
       "schema_module": "networksystem",
       "schema_registration_count": 0,
-      "sha256": "fc33c097eca4ab0049590985a772b5b2f556523933d0482f86217889e1283127",
+      "sha256": "4bc0fd1923c512ef6a4bc8744ce91f0d5c5b3a1dfbe7d1afc5f9a56e5062775f",
       "stem": "networksystem"
     },
     {
@@ -511,7 +511,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "0c6b4074328e6a2f596fe79cab2fd116936fa8aafa0a875479deb49c3c654473",
+      "sha256": "a86c3a09300ce9c89d96250be6811268f3c80023ca7f118971353da4740739ae",
       "stem": "p4lib"
     },
     {
@@ -523,7 +523,7 @@
       ],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "eb0ef025962c5f23875658b54ae8afa03c2139aad5bdbc1a696789784044986b",
+      "sha256": "a607e0e4a7fdd1cf3c7f828c7a0f56da6d84eee93010972a56a94ade92461c41",
       "stem": "panorama"
     },
     {
@@ -533,7 +533,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "63882d07ec693774bb18fd6063b6b66c0903284ed8740dee3ff6e77d5854e0b9",
+      "sha256": "d9c94494fb1d722df57d952afb2b40bb3e3387cfc3e12c99097cd9e2f39850eb",
       "stem": "panorama_text_pango"
     },
     {
@@ -545,7 +545,7 @@
       ],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "660fae6c76daf7d7f2743c8624ad7216ea0a9d68253a296cff806d7d144f1d7e",
+      "sha256": "9fea7ba25eab9b3944b3099877e270ecc5c97624c1c2e8700f8d7e4922dc3ea3",
       "stem": "panoramauiclient"
     },
     {
@@ -557,7 +557,7 @@
       ],
       "schema_module": "particles",
       "schema_registration_count": 72,
-      "sha256": "e54eef7de1039740d70a77718ae0a2f9d5e563563ff1f7777e237cc217338f3e",
+      "sha256": "13d0b5f6b064e2abda2cdf189bf3b3183d9d45b2198a44064870d96968200ddb",
       "stem": "particles"
     },
     {
@@ -587,7 +587,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "ff2424407568fcc1caace49fd115280c4be99bc1f5a2db8ab07d94f46fd61ebc",
+      "sha256": "9b14ac7cda724353e04ccf35543db258b97ba7a884a38f402d69f09c5f9e66a1",
       "stem": "physicsbuilder"
     },
     {
@@ -617,7 +617,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "86bd02ede4fef79f648d9ad487b82eafb9932f67d3a6e545436a806c1db4becc",
+      "sha256": "1053b34dc137b35c1e62cd9a9ee7573b8f23b39cf022a75bf5ad6379bd607d96",
       "stem": "propertyeditor"
     },
     {
@@ -629,7 +629,7 @@
       ],
       "schema_module": "pulse_system",
       "schema_registration_count": 111,
-      "sha256": "3e797df986a72a5fd417ab2c10cde731c8d4608147bf3f9cf53b73d6b2778f90",
+      "sha256": "8144a78137ec0d251ee2adbddcfbfa87a309ece63dfe1c68d002fb6c32c6329f",
       "stem": "pulse_system"
     },
     {
@@ -762,7 +762,7 @@
       ],
       "schema_module": "rendersystemdx11",
       "schema_registration_count": 0,
-      "sha256": "45b610ff89bb5adcb77a8d34b1f576b25e0ca389ffb3c4883f3243adfebf0500",
+      "sha256": "299ce092d9e74ccd69a10b92fd76e1cfa065969f72cb4747559840725f726863",
       "stem": "rendersystemdx11"
     },
     {
@@ -772,7 +772,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "e42a566f7ee18417c271dffd977c03f1482c5755a492dec5cdbfa930cb400af7",
+      "sha256": "c0fbb6a33ef0cdffeaae51b38baaa52dff4a2704937163f8f27b569a7f1f1979",
       "stem": "rendersystemempty"
     },
     {
@@ -785,17 +785,17 @@
       ],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "8c26593cc28a8cf03fb5e2ebd6cb19a58f54765d69ce0ad7d0802d24b1c80a12",
+      "sha256": "15222cff9e690bab7ac9957d4d295624971004fa9894bd2748b6e8e8cc088cf6",
       "stem": "rendersystemvulkan"
     },
     {
       "export_count": 6,
-      "file_size": "56326296",
+      "file_size": "56325784",
       "path": "game/bin/win64/resourcecompiler.dll",
       "resolved_interfaces": [],
       "schema_module": "resourcecompiler",
       "schema_registration_count": 101,
-      "sha256": "7f36431861b944256a433ce56fd3fe0b11c51d8aa7399c1fd007a69f5d8bb6cf",
+      "sha256": "f084328cb14b44ce26484d1b38c0be8cf8402350f8e8837465293216bb36703a",
       "stem": "resourcecompiler"
     },
     {
@@ -807,7 +807,7 @@
       ],
       "schema_module": "resourcesystem",
       "schema_registration_count": 0,
-      "sha256": "12f790afa0008eee80a562ddb7ce77f322452a5b04c8325f54b2c31603704774",
+      "sha256": "9d0b36be5381f74b51472c2b55327c52a1da5adb1c8f5acaac53c970df491662",
       "stem": "resourcesystem"
     },
     {
@@ -817,7 +817,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "8b336aaf12feb0e2ddcd89f67bcb31469ab7e22fd8b40b71016e0ddc73718b45",
+      "sha256": "3c738a193da0d24480b10ac9916f7531b435f8763e1dc33a3983d6b362b58c4f",
       "stem": "scenefilecache"
     },
     {
@@ -830,7 +830,7 @@
       ],
       "schema_module": "scenesystem",
       "schema_registration_count": 0,
-      "sha256": "9863e6c6538d7e817fdd4da8a1ff9a2aae3df50ab4436f897a7d19de6f81a918",
+      "sha256": "9cccf52cfd8eb3071838aada2b453276d0a85374c95e4735b1d2b0eb9d05105c",
       "stem": "scenesystem"
     },
     {
@@ -840,7 +840,7 @@
       "resolved_interfaces": [],
       "schema_module": "schemasystem",
       "schema_registration_count": 0,
-      "sha256": "e3cff9d0dd23639da5a4e4b0267c6cd64f44598d8a2fb087b02f14a5af028512",
+      "sha256": "a2d2eca5d07e01582ca315f297ecc49ad78773b3e7fb3a6ecc43421752ca7d24",
       "stem": "schemasystem"
     },
     {
@@ -862,7 +862,7 @@
       ],
       "schema_module": "soundsystem",
       "schema_registration_count": 0,
-      "sha256": "593f6c688d56beb59b666ec04ac99415f3ee1c5857972b9c1c4df22866ebcd30",
+      "sha256": "32d24cdf92828b9624aa7e3f6db4961b7b6971982ca0bd87034f1a53ae5d32a4",
       "stem": "soundsystem"
     },
     {
@@ -882,7 +882,7 @@
       "resolved_interfaces": [],
       "schema_module": "steamaudio",
       "schema_registration_count": 0,
-      "sha256": "f3eb8e00fbc33298abb9aa04928fbadb7f433e5f72b8fd76241e72cdf2fa0dd3",
+      "sha256": "5902b2737b0dcb8cd212c8c1615e875e0c58f6165e24587430f2d35aecdad679",
       "stem": "steamaudio"
     },
     {
@@ -902,7 +902,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "4d258e7ad1e18c9a133ba5f19086b0a08cd9074f9b9fd9d6cb85c6a4dff982aa",
+      "sha256": "bbbfdd30e3faa6988a5bde72447032bf04f22f3e11ba676b84c85f4656e9f2ea",
       "stem": "convarhelper_subtool"
     },
     {
@@ -912,7 +912,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "8dddf6cea13729b7a1ab80cfa752a4de82d739a16e2ac45bf4f02d5d39e91d14",
+      "sha256": "f96d4f6d59ccafe65cd2e8194844639910378ab9240a52d01983710da3bcb915",
       "stem": "dashboard_subtool"
     },
     {
@@ -922,7 +922,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "071b76fc3c67fe7fd0f2e6d4b0f9e7d238c9eb1fdee7011722e71ad964bbe5b0",
+      "sha256": "35b96d1863fdedbdd2fd8745c059f5da0a4f27a633f06e0c01f9af748d77437c",
       "stem": "netgraph_subtool"
     },
     {
@@ -932,7 +932,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "7e57b31a1bf85c48a1ed70b633aed98329018da5f3230393be0b732ae7722496",
+      "sha256": "07464bae64da4144f652c76ecdc69b5c5398efd72580da57f74c05fa70cf679f",
       "stem": "soundviewer_subtool"
     },
     {
@@ -942,7 +942,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "8774e9ad3d591ef072f0c76e0e333bb0a83d0084104a56e2966f778a530efd4a",
+      "sha256": "1c7f57cb9f65c4f4d661bf229da18affb7e5815219a0ddd05c13392deb6188d5",
       "stem": "vprof_subtool"
     },
     {
@@ -1012,7 +1012,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "b9bf7c956bb31e11be649c31b096ea8813601748b9d984d39f10a9eb4458fb75",
+      "sha256": "add398561b7831fc3b59356a3c3e48b87ba8d8db376b156c1b68c4d710136a8a",
       "stem": "tier0"
     },
     {
@@ -1022,7 +1022,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "e5894ceca215569f91527964a99407abb14dbf710acff6cd556d88da12a36503",
+      "sha256": "798f81cade191344e49067f60afff6752255f27a6fc7f74bddfd8d274798845c",
       "stem": "toolframework2"
     },
     {
@@ -1032,7 +1032,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "89ddb449e8695408b59f444083bf58f5831d4d1688fbc00377fd069bddd02f3b",
+      "sha256": "f785f545df3f68888f1e9db9f056d84fbab27348956cb6bde316b864b8dbfa10",
       "stem": "cs2_item_editor"
     },
     {
@@ -1042,7 +1042,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "f1fc122633850ee42a1628f6a4f0a5288d461c25e366dde063ef1b0544d35d7f",
+      "sha256": "6a4d02c0de1d3ce2064991405ee7bc5550fd573819dd7d00d3e7cd93eedb1f94",
       "stem": "cs2_workshop_manager"
     },
     {
@@ -1052,7 +1052,7 @@
       "resolved_interfaces": [],
       "schema_module": "hammer",
       "schema_registration_count": 100,
-      "sha256": "b4755b0a909d0d19ca35f14346643765b32eb4bc18951a777991549ce913dd78",
+      "sha256": "531c5ec19cac108337d4af66feaa7837fac5aabe42dcf51a490a5009f2996fff",
       "stem": "hammer"
     },
     {
@@ -1062,7 +1062,7 @@
       "resolved_interfaces": [],
       "schema_module": "met",
       "schema_registration_count": 70,
-      "sha256": "3bba5027cdadb7f9d9bc483a396b9c9881a7192972da5a6a84e9667186ea1b01",
+      "sha256": "679c3b7269af5154d5f9aa7ba0c6353a74af5b885231537c40ac9e8edf841e36",
       "stem": "met"
     },
     {
@@ -1072,7 +1072,7 @@
       "resolved_interfaces": [],
       "schema_module": "modeldoc_editor",
       "schema_registration_count": 70,
-      "sha256": "50d2f9d13862f85e94a29b3b0eb76c9d1786738cf94a478e3659a817dc14ba5f",
+      "sha256": "fd08524dbe03be3e1c9b299b308dcc68b300bc43d67c8b5ab28c9ea9663db615",
       "stem": "modeldoc_editor"
     },
     {
@@ -1082,7 +1082,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 72,
-      "sha256": "f87418c24aafd9756245cd6baf157b6f51551369aa2fd10a23a9ba8b501f5db7",
+      "sha256": "5d9751aa18d674991841c5e2505a5fb0c3580d34a7ab32347a83fba37f4bcd3e",
       "stem": "pet"
     },
     {
@@ -1092,7 +1092,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 70,
-      "sha256": "0b61f961d769720115b4511cf55fa9cf1f91cdd0a0f0d56527197471057925df",
+      "sha256": "711d1f07e03d070744cf670d04d235312b2c89b7098bc7df60bd9b0e205fb2e9",
       "stem": "postprocessingeditor"
     },
     {
@@ -1102,7 +1102,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 74,
-      "sha256": "cd18ceaf212a1e78c62e571afa7625454029c498111e963f6c84e3a3fd657129",
+      "sha256": "5f22037a57331dfc6692a5c7ed4dfcfd4e58fe8bf2b590e0b513d46a9492e043",
       "stem": "sfm"
     },
     {
@@ -1112,7 +1112,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "4013fc4b5e9dba49b9d78facddc2ae05097b4b1f7aa296f541ceeba6a8d55758",
+      "sha256": "5cf62b9be85325716edbde977194f9e230c80fcd23adfb32a0e379fdd14cc8f1",
       "stem": "subrecteditor"
     },
     {
@@ -1122,7 +1122,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 98,
-      "sha256": "fdef788042ac4bf71665ffc82d67678391abb39b5e2d8587bd6458f21181c171",
+      "sha256": "923771e54a8be18b3dc48e4cec139d510a8635379b2a4058da74ae79246392c1",
       "stem": "toolscenenodes"
     },
     {
@@ -1192,7 +1192,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "e643dc01dc8dcc1d230f96ef192beb362cbf44288292cd74f6fde2adb862e8cf",
+      "sha256": "9f426ed5889ecd692ec9275dae4e6fb653ab7483237bba1e337b7bc2e7ca07f3",
       "stem": "v8system"
     },
     {
@@ -1202,7 +1202,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "c88ec8e792520c08948dc69a640a7b2237a1adf329c03269c9f61cb6288f8f33",
+      "sha256": "f163fcadcc5b6c14ff4cebd85904398532c2f944987d2939e85b1e5bba4fa6a7",
       "stem": "valve_avi"
     },
     {
@@ -1212,7 +1212,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "4f36e77d64117fd1adc82911a1cb02fd420bb8b1adc8c8b29e3c606adef4b461",
+      "sha256": "5acc062a87d8bc4356f89b4748260ea27f6292e09cbf2fda5e355d3f3da1b46b",
       "stem": "valve_webm"
     },
     {
@@ -1222,7 +1222,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "effc8ee355a56d509b005c2c1662c3fb5767dd0753e5cea37ac8e6865a83c1f9",
+      "sha256": "7ab05e51e62781c810ce2f54ebb7ce163aea2bf7fb278af636b52af10d8b5f02",
       "stem": "valve_wmf"
     },
     {
@@ -1232,7 +1232,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "f23aa210d9186ab8d027e21f4cf612571b731cfb4df22636e91fd73d09f2ffd7",
+      "sha256": "3ec1d85925b56079360bb7fd05fc45c6f78b1fad32a93b0468975652c2009e50",
       "stem": "vconcomm"
     },
     {
@@ -1242,7 +1242,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "59a5387ca41de394929b1fe54d7a75841023b56d0bd9f86a52498e7ae9ce3626",
+      "sha256": "563208e2fd5e46600d59b773bed8cbe02fd259cefbd200810ed6fb3a63ebaa2c",
       "stem": "vfx_dx11"
     },
     {
@@ -1262,7 +1262,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "586ca2cd767c51aa8b007e926fdf34b0c14dbed8f33bba7a653c43b3338699c3",
+      "sha256": "582c2301c2ce7d9ce6bd1b1a414d10fc6308ffeca6310eda7e3500071f26255b",
       "stem": "visbuilder"
     },
     {
@@ -1274,7 +1274,7 @@
       ],
       "schema_module": "vphysics2",
       "schema_registration_count": 0,
-      "sha256": "e39313a48f591f3a141c121a59e499715502e6bdb6bd7e830dd983338131a0d6",
+      "sha256": "d3a76f86ed6d005620484134882efecb965702ca88b2bcbd8b3411fa17033045",
       "stem": "vphysics2"
     },
     {
@@ -1284,7 +1284,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "3007208d32322bc0572c4b6d67871c2a03381dcc65e1f397117f52ecd7f38eca",
+      "sha256": "e2caaa06e51b5661eeade53aa3e19b1b5c550e704341b2a6274c0b60ca8603ed",
       "stem": "vrad3"
     },
     {
@@ -1294,7 +1294,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "2ef79e68902797ccbe2e1bfa13e90239b618c5cf024525ddb690aeded6d3672e",
+      "sha256": "527f6da8d80bf610601865820515d23c512d76b7328aaba3f53e81e990129344",
       "stem": "vscript"
     },
     {
@@ -1306,12 +1306,12 @@
       ],
       "schema_module": "worldrenderer",
       "schema_registration_count": 4,
-      "sha256": "aad474ce6f0a255560ddd6c42bf5c1ed652e8fde97453ddf9369c947c9453ba4",
+      "sha256": "8c6a9c6597ba274b07121d76b31cf188a3933cacdba5ff652df775b459057b13",
       "stem": "worldrenderer"
     },
     {
       "export_count": 6,
-      "file_size": "37560472",
+      "file_size": "37585560",
       "path": "game/csgo/bin/win64/client.dll",
       "resolved_interfaces": [
         "Source2Client002",
@@ -1320,8 +1320,8 @@
         "Source2ClientUI001"
       ],
       "schema_module": "client",
-      "schema_registration_count": 541,
-      "sha256": "809b62b2397e7849995ea427ed99fe2270d2f8ceae731e5ffa43c271e132f3ae",
+      "schema_registration_count": 542,
+      "sha256": "a0c195f0b6ec00915ef08c548200a010ebbe7982d3a4bc468cad939b67c8c4e3",
       "stem": "client"
     },
     {
@@ -1334,7 +1334,7 @@
       ],
       "schema_module": "host",
       "schema_registration_count": 0,
-      "sha256": "04c812ccee63e34cd68396751685e201bed308e7a4cf542e87900328dc0ee99a",
+      "sha256": "082ad47bb9a78e8bd03a7238462441a221f32de711bbd4daaedbc99d829a3923",
       "stem": "host"
     },
     {
@@ -1346,7 +1346,7 @@
       ],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "956cbc0633cbb17c8d26d6864762e3a3ff7698dedac6eefc083cda17005f0594",
+      "sha256": "ed7dd769332e52536ebed995d1597ee4086a30de7258a38282b4c15a2c241b3e",
       "stem": "matchmaking"
     },
     {
@@ -1358,12 +1358,12 @@
       ],
       "schema_module": "modtools",
       "schema_registration_count": 0,
-      "sha256": "193376b0cd041ac2446dd2f64787a5bbc872be6e2c03d4f365eef13847c4c2b1",
+      "sha256": "c995b4d56997883f1aaee6965a41ee9977bb5a017345548407494c2f400abe69",
       "stem": "modtools"
     },
     {
       "export_count": 6,
-      "file_size": "33002648",
+      "file_size": "33042584",
       "path": "game/csgo/bin/win64/server.dll",
       "resolved_interfaces": [
         "Source2GameClients001",
@@ -1372,8 +1372,8 @@
         "Source2ServerConfig001"
       ],
       "schema_module": "server",
-      "schema_registration_count": 802,
-      "sha256": "cb5936528177b6da79be5dadcda0192be05feec687cb07dda0cd0e618a8f4d7c",
+      "schema_registration_count": 803,
+      "sha256": "1cac9113b10037c0ba8fb739e5538c21d7ddaee5529325ca4f7e9a241fad43cc",
       "stem": "server"
     },
     {

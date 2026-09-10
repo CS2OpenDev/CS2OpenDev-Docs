@@ -4,7 +4,7 @@ title: Schemas
 
 # Schema Reference
 
-> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
 
 Every class, struct, and enum extracted from CS2's runtime schema, organised by module. Each module page lists its types; each type has its own page carrying the full **memory layout** — field offsets, class size, and fields inherited from base classes.
 
@@ -17,7 +17,7 @@ Every class, struct, and enum extracted from CS2's runtime schema, organised by 
 | [animgraphdoclib](schemas/animgraphdoclib.md) | 172 | [📊 Diagram](diagrams/animgraphdoclib.md) |
 | [animgraphlib](schemas/animgraphlib.md) | 300 | [📊 Diagram](diagrams/animgraphlib.md) |
 | [animlib](schemas/animlib.md) | 217 | [📊 Diagram](diagrams/animlib.md) |
-| [client](schemas/client.md) | 490 | [📊 Diagram](diagrams/client.md) |
+| [client](schemas/client.md) | 491 | [📊 Diagram](diagrams/client.md) |
 | [compositematerialslib](schemas/compositematerialslib.md) | 17 | [📊 Diagram](diagrams/compositematerialslib.md) |
 | [engine2](schemas/engine2.md) | 42 | [📊 Diagram](diagrams/engine2.md) |
 | [entity2](schemas/entity2.md) | 18 | [📊 Diagram](diagrams/entity2.md) |
@@ -46,7 +46,7 @@ Every class, struct, and enum extracted from CS2's runtime schema, organised by 
 | [resourcesystem](schemas/resourcesystem.md) | 48 | [📊 Diagram](diagrams/resourcesystem.md) |
 | [scenesystem](schemas/scenesystem.md) | 15 | [📊 Diagram](diagrams/scenesystem.md) |
 | [schemasystem](schemas/schemasystem.md) | 3 | — |
-| [server](schemas/server.md) | 1141 | [📊 Diagram](diagrams/server.md) |
+| [server](schemas/server.md) | 1143 | [📊 Diagram](diagrams/server.md) |
 | [smartprops](schemas/smartprops.md) | 167 | [📊 Diagram](diagrams/smartprops.md) |
 | [sounddoc_lib](schemas/sounddoc_lib.md) | 141 | [📊 Diagram](diagrams/sounddoc_lib.md) |
 | [soundsystem](schemas/soundsystem.md) | 48 | [📊 Diagram](diagrams/soundsystem.md) |

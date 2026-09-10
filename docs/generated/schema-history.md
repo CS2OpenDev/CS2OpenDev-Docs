@@ -4,14 +4,14 @@ title: Schema History
 
 # Schema History
 
-> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
 
 Field-precise, build-to-build evolution of the CS2 C++ entity schema, derived by diffing every committed `entity_schema.json` snapshot (SchemaTracker's cumulative `schema_evolution.json`, Layer A).  Unlike the coarse [Changelog](changelog.md) — which only reports *that* a class changed — this reports *which field* was added, removed, retyped, or moved.
 
 - **Platform:** `windows-x86_64` (the canonical render; windows is a strict **superset** in class coverage — historical Windows-only tool binaries such as `hammer.dll` / `sfm.dll` have no Linux counterparts — while shared classes differ in offsets/sizes per platform)
-- **Baseline build:** `10832117` · **Latest build:** `25175329`
+- **Baseline build:** `10832117` · **Latest build:** `25218825`
 - **Artifact schema version:** `0.10.0` (SchemaTracker's `schemas/schema_evolution.proto` family)
-- **Transitions:** 387 total, **144 with structural changes** (243 no-op builds)
+- **Transitions:** 388 total, **145 with structural changes** (243 no-op builds)
 - **Full per-field history:** the portable [`field_history.json`](downstream-codegen-schemas/field_history.json) carries first/last-seen and the type history for every `(class, field)` across all builds.  Its `[firstSeenBuild, lastSeenBuild]` interval is a presence **hull**, not continuous presence — a field can be absent for intermediate builds with no trace there; exact presence replays from the transitions below.
 
 To bring an instance captured under build *X* forward to build *Y*, apply each transition in `[X, Y)` in order.  Every op carries both endpoints, so the same chain replays backward.
@@ -35,6 +35,7 @@ Later artifact revisions add further facts: **0.7.0** covers class-attribute cha
 
 | Transition | Date | Classes +/−/~ | Enums +/−/~ | Field ops |
 |------------|------|---------------|-------------|-----------|
+| `25175329` → `25218825` | 2026-09-09 | 2 / 0 / 6 | 1 / 0 / 2 | 19 |
 | `25000182` → `25175329` | 2026-09-07 | 0 / 0 / 2 | 0 / 0 / 0 | 0 |
 | `24934554` → `24957633` | 2026-08-26 | 0 / 0 / 6 | 0 / 0 / 0 | 10 |
 | `24828357` → `24916958` | 2026-08-24 | 10 / 0 / 3 | 1 / 0 / 1 | 0 |
@@ -182,6 +183,23 @@ Later artifact revisions add further facts: **0.7.0** covers class-attribute cha
 
 ## Most recent structural changes
 
+### `25175329` → `25218825`
+
+*Steam manifests created `2026-09-07T21:44:07Z` → `2026-09-09T22:31:50Z`*
+
+**Classes added (2):** `client.dll/CCSCustomPlayerCamera`, `server.dll/CCSCustomPlayerCamera`
+
+**Classes changed (6):**
+
+| Class | Field ops | Layout |
+|-------|-----------|--------|
+| `!GlobalTypes/dynpitchvol_base_t` | meta×1 | — |
+| `!GlobalTypes/dynpitchvol_t` | meta×1 | — |
+| `client.dll/CCSCustomHudLayout` | ＋field×1, ~offset×6 | resize 2088→2112 |
+| `client.dll/CCSPlayerCamera` | −field×3 | resize 1544→1600, reparent |
+| `server.dll/CCSCustomHudLayout` | ＋field×1, ~offset×5 | resize 2024→2032 |
+| `server.dll/CCSPlayerCamera` | −field×3 | resize 1200→1256, reparent |
+
 ### `25000182` → `25175329`
 
 *Steam manifests created `2026-08-28T20:16:08Z` → `2026-09-07T21:44:07Z`*
@@ -207,17 +225,3 @@ Later artifact revisions add further facts: **0.7.0** covers class-attribute cha
 | `client.dll/CCSCustomHudLayoutState` | ~offset×2 | resize 272→264 |
 | `server.dll/CCSCustomHudLayout` | ~offset×3 | resize 2032→2024 |
 | `server.dll/CCSCustomHudLayoutState` | ~offset×2 | resize 416→408 |
-
-### `24828357` → `24916958`
-
-*Steam manifests created `2026-08-19T23:16:48Z` → `2026-08-24T23:15:06Z`*
-
-**Classes added (10):** `!GlobalTypes/HUDPanelDialogVariableString_t`, `!GlobalTypes/HUDPanelHasClass_t`, `client.dll/CCSCustomHudLayout`, `client.dll/CCSCustomHudLayoutState`, `client.dll/CCSCustomHudLayout_API`, `client.dll/CCSPlayerCamera`, `server.dll/CCSCustomHudLayout`, `server.dll/CCSCustomHudLayoutState`, `server.dll/CCSCustomHudLayout_API`, `server.dll/CCSPlayerCamera`
-
-**Classes changed (3):**
-
-| Class | Field ops | Layout |
-|-------|-----------|--------|
-| `!GlobalTypes/dynpitchvol_base_t` | meta×1 | — |
-| `!GlobalTypes/dynpitchvol_t` | meta×1 | — |
-| `server.dll/CCSPointScriptEntity` | — | resize 1552→1576 |

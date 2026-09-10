@@ -8,7 +8,7 @@ kind: class
 
 # AI_Navigator_DebugSnapshotData_t::Waypoint_t
 
-> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
 
 **Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 4 · **Module:** server
 

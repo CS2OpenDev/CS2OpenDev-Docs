@@ -5,7 +5,7 @@ module: panorama_content
 
 # Module: panorama_content
 
-> Source: **Build 25175329** · 2026-09-07 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
 
 2 types. Each links to its own page with the full field layout.
 
