@@ -1,0 +1,416 @@
+---
+title: CS2DemoKit Technical Blog - Part 1 - Parser
+date: 2026-09-12
+excerpt: An introduction for CS2DemoKit, a new optimized high-performance .NET demo file parsing and analysis tool kit. Free Forever (no taksie-backsies) 
+---
+
+import Mermaid from '../../../components/Mermaid.astro';
+
+If you are interested in reading a more general, less technical overview of what CS2DemoKit has to offer please go to [Introducing CS2DemoKit - A High-Performance .NET Counter-Strike 2 Demo Toolkit](../cs2demokit-announcement/).
+
+## Some background on Counter-Strike 2 Demo Files
+
+The current contents of a CS2 demo file are rooted in the long history of Half-Life/Counter-Strike. Going all the way back to the original Counter-Strike (running on the GoldSrc engine) game replays have been available in roughly the same way, presented as `.dem` files that stored the state of the game and could be used for playback. Over time some conventions have changed, old bits and pieces have been removed and replaced with newer techniques. In the current iteration of Counter-Strike 2 demo files provide a deeply rich and powerful way to interact with the matches they represent. Valve themselves have a [pretty great page talking about the format of .dem files](https://developer.valvesoftware.com/wiki/DEM_(file_format)) and we provide a pretty detailed accounting of this ourselves in the CS2DemoKit repo documentation. Our [Parser Architecture](https://github.com/CS2OpenDev/CS2DemoKit/blob/main/docs/parser-architecture.md) document is a great complement to this blog post that dives even further into the specifics.
+
+At a high level a `.dem` file (demo file) can be simply described as a set of sequential `Frames` that each contain one or more `Message`, where each `Message` contains information about the state of the game at a given point in time. There are various types of `Messages` carrying information from user specific inputs, what the animation state of a given entity is in, where the chickens are located on the map, etc.
+
+Valve uses a number of different techniques to encode this information in a space efficient manner that can also be quickly and efficiently processed in-game. This is because the same messages that are stored in the demo files are sent from the game server to each of the clients during a live match, so performance and network bandwidth are major considerations.
+
+### Demo Parsing
+
+The story behind parsing demo files is not a new one, and there are MANY tools that do this well. One interesting thing to point out is that with CS2 running on the Source 2 game engine, its demo files are (for the most part) the same format as other Source 2 games like DotA 2 and Deadlock. The main differences between the demo files from each game comes down to the specific message types and entities that are encoded by the data they carry. Any of the tools out there that allow you to share/upload a demo file and get some statistics or other artifacts back is already doing this same task.
+
+In our case "parsing" would best be defined as:
+> Taking the raw (binary) input and converting it into a structured format that is usable by a system or application.
+
+## The format changes encoding twice on the way down
+
+Before any of our design decisions make sense, this is the thing to understand about a `.dem` file, and it is the thing most secondary documentation gets wrong: it is not one encoding. It is four levels of nesting using three different encodings, and each change of encoding is exactly where a naive reader goes astray.
+
+<Mermaid
+  code={`flowchart TD
+    F["File header: 16 raw bytes<br/>magic + two int32 offsets<br/>(not protobuf)"] --> FR
+    FR["Frame header: three ULEB128 varints<br/>raw_command, tick, size<br/>1 to 15 bytes, byte aligned"] --> PAY
+    PAY["Frame payload: size bytes<br/>Snappy-compressed iff raw_command has bit 0x40"] --> PROTO
+    PROTO["One protobuf message, type chosen by command<br/>CDemoFileHeader / CDemoPacket / CDemoFullPacket / ..."]
+    PROTO -->|"DEM_Packet, DEM_SignonPacket"| PKT
+    PKT["CDemoPacket.data (field 3, bytes)<br/>a BIT stream: not byte aligned"] --> IM
+    IM["Per inner message:<br/>UBitVar type_id (6 / 10 / 14 / 34 bits)<br/>UVarInt32 size (8-bit multiples, unaligned)<br/>then size bytes of protobuf"]
+    IM -->|"type_id 55"| PE["svc_PacketEntities.entity_data<br/>a third bit stream:<br/>Huffman field-path ops + per-field decoders"]
+    IM -->|"type_id 207"| GE["Source1LegacyGameEvent<br/>positional values against<br/>the per-demo descriptor table"]
+    IM -->|"type_id 76"| UC["svc_UserCmds<br/>diverted into the arena store"]`}
+  caption="The containment chain from file bytes down to entity deltas, and where the encoding changes."
+/>
+
+- The **file and frame** layer is byte-aligned ULEB128 varints. No bit packing.
+- The **inner-message** layer inside `CDemoPacket.data` is a bit stream. `type_id` is a Source `UBitVar` of 6, 10, 14 or 34 bits, so the `size` varint after it, and the payload bytes after that, are usually *not* byte-aligned.
+- The **entity** layer inside `svc_PacketEntities.entity_data` is a third bit stream with its own Huffman-coded field-path opcodes.
+
+Two specific traps are worth naming, because Source 1 documentation is still the first thing most searches return and CS2 differs on both.
+
+**There is no fixed frame header.** Source 1 used a fixed 9 bytes — one byte of command, a 4-byte tick, a 4-byte size. CS2 uses three ULEB128 varints of one to fifteen bytes. In the sample demo we test against, the first six frames have headers of 8, 7, 7, 9, 8 and 8 bytes. The pre-recording tick sentinel of `-1` costs a full five bytes as `0xFFFFFFFF`; mid-match ticks are smaller and the headers shrink with them.
+
+**The game-event message IDs moved.** In CS2 they are 205 (`GE_Source1LegacyGameEventList`) and 207 (`GE_Source1LegacyGameEvent`). A parser written off a Source 1 table looks at 18 and 19, which in CS2 are `bi_GameEvent_Deprecated` and `bi_PredictionEvent`, and silently finds nothing where the events actually are.
+
+### One frame, decoded by hand
+
+The clearest artifact in the whole format is a fourteen-byte frame from our committed sample. It demonstrates the unaligned inner-message header and a real payload in one read:
+
+```text
+offset 199 ── frame 2 header, 7 bytes
+  08                        raw_command  = 8   DEM_SignonPacket (uncompressed)
+  ff ff ff ff 0f            tick         = -1
+  0e                        size         = 14
+
+offset 206 ── frame 2 payload, 14 bytes, CDemoPacket
+  1a 0c                     field 3  data = 12 bytes, and those 12 bytes are a BIT stream:
+  d3 24 28 1c 90 95 7d b9 d5 ad 95 01
+```
+
+Reading those twelve bytes LSB-first within each byte: the first six bits give a seed of 19, whose selector bits say four more bits follow, which resolves `type_id` to 51 — `svc_ClearAllStringTables`. The `size` varint then *begins at bit offset 10*, straddling a byte boundary, and gives 9. The nine bytes that follow are a protobuf message carrying one string: `"de_nuke"`.
+
+Six plus four plus eight plus seventy-two is ninety bits consumed out of ninety-six, leaving six bits of padding. That is why the inner-message loop terminates on remaining bits rather than treating a short tail as an error.
+
+## CS2DemoKit.Parser
+
+CS2DemoKit ships as a set of libraries that build on each other to provide more developer friendly interfaces the further down the stack you go. CS2DemoKit.Parser is our foundational library that everything else is built on and is where the story begins.
+
+### Core Design
+
+From the start high-performance and optimized memory usage were our top priority. The choice of .NET is a bit limiting in terms of raw performance, but we believe that given the current state of CS2 Server Mod support and some of the other tooling available that C# (or other .NET languages) would serve the community well. Rust, Go, C++, or a number of other languages can likely be used to challenge or beat our performance numbers, but we have made things quite competitive. From day one we were exploring the rich language features that C#/.NET have to offer and ended up leveraging a number of techniques that have greatly improved the performance of CS2DemoKit.
+
+Beyond the language features we are using, the programming techniques and algorithms that we are using to approach demo parsing allow us to leverage each machine's hardware efficiently, reducing the time spent waiting for other operations to complete. We iterated on the design and approach for each area of the parser a number of times looking for ways we could improve performance and in the end we are extremely pleased with the design we landed on.
+
+CS2DemoKit.Parser is designed around a three (3) pass parsing strategy; 1: Frame Header Scanning, 2: Parallel Frame Decoding, and 3: Sequential Enrichment.
+
+<Mermaid
+  code={`flowchart TD
+  A["ParseCore input: the caller's byte buffer"] --> B["Pass 1 sequential scan<br/>three-varint frame headers<br/>FrameDescriptor list, zero-copy slices"]
+  B --> C["Pass 2 Parallel.For with per-worker state<br/>Snappy into a grow-only buffer<br/>ParseFrame writes results by index"]
+  C --> D["ParseInnerMessages<br/>bit reader over CDemoPacket.data"]
+  D -->|"svc_UserCmds"| E["arena append<br/>(no message object)"]
+  D -->|"known type"| F["NetMessage in the frame's list"]
+  D -->|"unknown / decode-fail"| G["drop + per-thread count"]
+  C --> H["Pass 3 Enrich (sequential)<br/>schema, events promoted in place,<br/>string tables, metadata"]
+  H --> I["ParsedDemo (immutable)<br/>warnings drained in the constructor"]`}
+  caption="The three-pass control flow, with the inner-message routing that diverts svc_UserCmds out of the message list."
+/>
+
+As we walk through what each pass is responsible for we will explore the language feature decisions and unique design decisions we made that get us to the point we are now.
+
+Here is the shape of the answer first, because it explains why the passes are split the way they are. Medians across fifty runs over five full-match demos, 288 to 294 MB each, on a ten-core machine:
+
+| pass | median | share of parse |
+|---|---|---|
+| 1 — header scan | 14.8 ms | 3.9% |
+| 2 — decompress + proto | 333.0 ms | 86.8% |
+| 3 — enrich | 36.5 ms | 9.5% |
+| **parse total** | **383.5 ms** | |
+
+Pass 2 is the whole cost. Passes 1 and 3 exist so that pass 2 can be embarrassingly parallel, and they are cheap enough that buying that with two extra walks over the file is obviously worth it.
+
+### Pass 1: Frame Header Scanning
+
+Each demo file is effectively a sequential collection of `Frames`, and as described above every frame starts with three LEB128 varints followed by its payload:
+
+```
+    varint  raw_command   // EDemoCommands, with 0x40 as a "payload is compressed" flag
+    varint  tick          // the game tick this frame belongs to
+    varint  size          // payload length in bytes, AS STORED (compressed when flagged)
+    byte[size] payload
+```
+
+Variable-length integers are great for file size and they are the reason this pass has to be sequential: you cannot know where frame *n+1* begins until you have decoded frame *n*'s header and skipped its payload. There is no index and no offset table to jump into the middle with.
+
+So pass 1 does exactly one thing: walk the file from byte 16 (past the eight-byte magic and eight bytes of fixed-offset fields) and write down where every frame is. For each one it records a `FrameDescriptor`:
+
+| Field | Purpose |
+|---|---|
+| `RawStart` | Byte offset of this frame in the `.dem` buffer |
+| `HeaderLength` | Bytes consumed by the three varints |
+| `Command` | `EDemoCommands` with the compressed flag stripped |
+| `Tick` | Frame tick |
+| `RawPayloadSize` | Payload size, compressed or not |
+| `IsCompressed` | True if bit `0x40` was set on the raw command varint |
+| `RawPayload` | A **zero-copy** `ReadOnlyMemory<byte>` slice of the caller's buffer |
+
+That last row is the first of the language decisions worth calling out. `DemoParser.Parse` takes a `ReadOnlyMemory<byte>` and the entire pipeline reads *through* it. A frame's payload is not copied anywhere — it is a slice, a struct holding a reference and two integers. For a 290 MB demo that is the difference between the parser owning a second copy of the file and owning nothing at all. It is also what makes it safe to dispose a memory-mapped source the moment `Parse` returns: Google.Protobuf copies everything it needs out of the input during decode, so no output aliases the input.
+
+The varint decoder itself is hand-unrolled. When five or more bytes remain in the buffer, one length check proves every read in the sequence safe and the JIT drops the per-byte bounds checks; near the tail it falls back to a slower, carefully-guarded path. 130,000 frame headers in about fifteen milliseconds.
+
+The rest of the pass is small, deliberate bookkeeping. The descriptor list is pre-sized with an estimate — `Math.Max(64, data.Length / 250)` — so a 290 MB file does not spend the scan repeatedly doubling and copying a `List<T>`. The scan stops cleanly on a `DEM_Stop` command, a truncated header, or a payload that would run past the end of the file. A size varint that decodes negative (larger than 2 GB once sign-cast) is rejected outright, because offsets chain and there is no recovering the next frame boundary from there.
+
+Every one of those exits is a warning and a `break`, not a throw. That policy gets its own section below.
+
+### Pass 2: Parallel Frame Decoding
+
+Once you know where every frame starts, decoding them is independent work. Nothing about frame 900's protobuf decode depends on frame 899. So:
+
+```csharp
+DemoFrame[] results = new DemoFrame[frameDescs.Count];
+Parallel.For(0, frameDescs.Count, i => {
+    // decompress if needed, parse proto, populate results[i]
+});
+```
+
+The output array is pre-sized, so workers write to disjoint indexes and never contend. There is no lock in this pass, no shared mutable state, and no ordering requirement — which is the only reason it scales.
+
+Each worker carries a small amount of thread-local state through the loop, and that detail matters more than it looks. The per-worker decompression buffer is grow-only: it is reused across every compressed frame that worker handles, so a 130,000-frame demo allocates on the order of one buffer per core rather than one per compressed frame. The decompressed output is then sliced to the exact written length, because handing the proto parser an oversized buffer would make it read trailing garbage from the previous frame.
+
+Frame dispatch falls into three shapes:
+
+| Category | Examples | Handling |
+|---|---|---|
+| Direct payload | `DEM_FileHeader`, `DEM_SendTables`, `DEM_ClassInfo`, `DEM_StringTables`, `DEM_FileInfo` | The whole payload is one proto message. |
+| Multiplexed | `DEM_Packet`, `DEM_SignonPacket` | The outer message is a `CDemoPacket` whose `.data` is the bit stream described above. |
+| Checkpoint | `DEM_FullPacket` | A string-table snapshot followed by a nested `CDemoPacket`, handled as above. |
+
+Inside the multiplexed case, every inner message's bytes are read into a rented buffer from `ArrayPool<byte>` and returned immediately after the parse. Wrapping a payload for the parser uses `ReadOnlySequence<byte>`, a pure struct construction that allocates nothing. The type-ID-to-name maps are `FrozenDictionary`, built once at class initialisation from reflection over the generated proto attributes.
+
+Three behaviours in this pass are the difference between a parser you can trust on real files and one you cannot.
+
+**Unknown message types are reported, not silently swallowed.** CS2 ships new builds; a demo recorded on a build newer than your parser contains type IDs the dispatch switch has never heard of. Those messages are dropped — there is nothing else to do with them — but the drop is surfaced, through a static event, a per-parse callback that does not cross-talk between concurrent parses, or a tally on the parse warnings.
+
+**One bad inner message does not fail the frame.** A protobuf decode that throws yields `null` for that slot and the pass keeps going.
+
+**The parallel pass is deterministic in its output, including its warnings.** Workers accumulate drop counts in thread-local dictionaries that merge after the join, and the merged tally is totally ordered before it is reported, ties included. Two runs over the same bytes produce byte-identical warnings, not warnings in whatever order the scheduler happened to finish in. There is a test that does nothing but assert that.
+
+#### The message we deliberately do not decode
+
+There is one decision in pass 2 that is more consequential than the rest, and it is a decision *not* to build something.
+
+`svc_UserCmds` — the per-tick record of what each player's client actually sent: buttons, view angles, movement, mouse deltas, weapon select, subtick move steps — is about 90% of the net messages in a demo. On a 290 MB file that is roughly 1.15 million messages. It is also read by almost nothing.
+
+So it never becomes a message object. Each payload bump-allocates into a shared one-mebibyte block as `[ordinal][length][bytes]`, and the frame keeps three integers and one reference:
+
+<Mermaid
+  code={`flowchart LR
+  subgraph Frame["DemoFrame: three ints and one reference"]
+    O1["UserCmdsBlock"]
+    O2["UserCmdsOffset"]
+    O3["UserCmdsCount"]
+  end
+  O1 --> BLK["shared 1 MiB block<br/>(over the large-object threshold,<br/>so it is never relocated)"]
+  BLK --> R0["ordinal | len | bytes"]
+  BLK --> R1["ordinal | len | bytes"]
+  BLK --> R2["ordinal | len | bytes"]
+  R0 -.-> S["GetUserCmdsPayload<br/>SubTickExtractor"]`}
+  caption="One shared block holds thousands of variable-length records; each frame carries three integers and one reference."
+/>
+
+The reason is the garbage collector, not decode speed. Workstation GC pause scales with the *number* of live objects rather than their total bytes, and one object per message for 90% of the messages made parsing GC-bound. Holding the same bytes in a few hundred large blocks instead of 1.15 million small objects is what took parsing from 34% of a full demo load down to 21%. The blocks are deliberately sized past the large-object-heap threshold so they are never relocated by a compacting collection.
+
+The part that makes it liveable is that the split is not visible unless you go looking. `DemoFrame.DecodedMessages` is the subset whose payloads were decoded during the parse — it excludes the stored ones, and it is the walk the analysis engine uses, because a stored payload can never match a `is CSomeMessage` type test anyway. `DemoFrame.InnerMessages` is the complete, ordered list: when a frame carries stored payloads it returns a view that reconstructs wire order from the ordinals, synthesizing entries only as you enumerate them.
+
+Those synthesized entries are deliberately *not* cached. A gen0 object that dies immediately is nearly free; caching them would reintroduce exactly the object-count problem the arena was built to solve.
+
+If you want the interpreted view of subtick input, `SubTickExtractor.Extract(demo.Frames)` reads the move steps out. If you want anything else in there, take the raw bytes:
+
+```csharp
+for (int i = 0; i < frame.UserCmdsPayloadCount; i++)
+{
+    var cmds = CSVCMsg_UserCommands.Parser.ParseFrom(frame.GetUserCmdsPayload(i));
+}
+```
+
+### Pass 3: Sequential Enrichment
+
+Pass 2 produces a populated array of frames, in order, with nothing tying them together. Pass 3 walks that array once, in order, and builds the demo-level view.
+
+It has to be sequential, and for three specific reasons rather than as a general precaution:
+
+- A game-event message cannot be decoded without the event *list* message that appeared earlier in the stream and defines every event's key schema. Order is load-bearing.
+- The entity schema is built lazily from the first `CDemoSendTables` frame and then reused.
+- Player team assignments come from `player_team` events and have to be applied last-write-wins in tick order, or a player who switched sides at half ends up on whichever team the scheduler happened to process last.
+
+What comes out of it:
+
+| Message type | Effect |
+|---|---|
+| `CDemoFileHeader` | Map name, server name, client name, build number, server start tick, patch version, addons. |
+| `CDemoFileInfo` | Authoritative tick count, when it has one. |
+| `CSVCMsg_ServerInfo` | Tick interval (overriding the `1/64` default), and map name if the header was missing it. |
+| `CDemoSendTables` | Builds the runtime schema — every networked entity class, its fields, their encoders and bit counts. |
+| The game event list | Loads the per-event-id key schema into the event decoder. |
+| A game event fire | Decoded into a typed `GameEvent` record. The raw message slot is **replaced in place** with one carrying both the raw payload and the decoded event, so a byte-level viewer and a stats consumer read the same object. |
+| String table messages | Fed into the string-table processor, which is where the player list comes from. |
+
+This is also where the demo gets classified. The header strings decide whether this is a GOTV matchmaking recording, an HLTV pro broadcast, or something unrecognised — and the classifier is deliberately conservative, returning an `Unknown` profile with a GOTV-leaning feature set rather than guessing. That matters more than it sounds, and Part 2 has the story of what happens when the header is not enough.
+
+One naming note that trips people up: after pass 3, `frame.GameTick` and `frame.ServerTick` hold the same value. In CS2 demos the per-frame tick varint already *is* the game tick. The alias exists for clarity downstream, not because a conversion happened.
+
+## What the parser deliberately does not do
+
+The largest single thing in a CS2 demo is entity state — the per-tick, bit-packed deltas describing where everyone is, what they are holding, how much health they have. `svc_PacketEntities.entity_data` is left as **opaque bytes** by all three passes.
+
+That is the design decision the whole pipeline hangs on. Entity decoding is sequential by nature — every delta is relative to that entity's previous state — and it is CPU-intensive, with tens to hundreds of bit-level fields per entity per tick. Putting it in the parse path would serialise pass 2 and throw away the parallelism that makes the parse fast in the first place.
+
+So it lives behind its own namespace boundary, in an opt-in layer:
+
+```csharp
+EntityTracker tracker = EntityTrackerFactory.CreateCurated();
+tracker.Replay(demo.Frames);
+```
+
+`DemoParser.Parse` never constructs one. A batch tool that only wants game events never pays for entity replay. An interactive viewer replays only as far as the frame it is showing. And when entity decoding *does* go wrong on an unusual recording — which happens, particularly on POV demos — every typed game event is still correct, because game events come from a completely separate message stream that does not depend on entity tracking at all.
+
+### Absent is not zero
+
+Entity state is stored as three typed lanes per entity — an `int[]`, a `float[]`, an `object?[]` — addressed by a shared immutable per-class shape, with a lazy dictionary behind them for the paths that do not map to a slot. Alongside each lane sits a bitvector recording which slots have actually been *received*.
+
+<Mermaid
+  code={`flowchart LR
+    subgraph EntityState
+        IL["int lane"] --- IS["int seen bits"]
+        FL["float lane"] --- FS["float seen bits"]
+        OL["object lane"] --- OS["object seen bits"]
+        FB["fallback dictionary<br/>(array elements, unmapped paths)"]
+    end
+    SHAPE["ClassShape: wire path to (lane, slot)<br/>immutable, shared per class"] --> IL
+    SHAPE --> FL
+    SHAPE --> OL
+    IL --> PROJ["Fields projection (display only):<br/>fallback merged first,<br/>seen lane slots overwrite"]
+    FB --> PROJ`}
+  caption="One shared per-class shape addresses three typed arrays whose seen bits gate every read surface."
+/>
+
+Those seen bits are not a micro-optimisation, they are a correctness feature, and the cleanest way to explain why is a position read. A pawn's world position is not a vector on the wire; it is a cell index plus an in-cell offset, reconstructed as `(cell - 32) * 512 + offset`. Cell `0` is a perfectly legal world cell. If a never-received field defaulted to zero, that zero would arithmetic straight into a phantom coordinate near -16,384 and look exactly like a real position.
+
+So the storage distinguishes "we received 0" from "we never received this", every read surface is gated on the bit, and growing the set of fields that participate is treated as a breaking change rather than a tidy-up. `m_lifeState = 0` means the player is alive. The absence of `m_lifeState` means we know nothing about them.
+
+### When decode goes wrong, it goes wrong reproducibly
+
+Entity decode is a pure function of the demo bytes. That sounds like a truism and it is the single most useful property the layer has, because it means a failure reproduces *exactly* — same bit offset, same field, every run.
+
+The tracker leans on that. With tracing enabled it keeps a per-packet record of every field-path operation and every field read with its bit positions, and on the first error it dumps the tail of that trace plus an "outliers" view ranking reads by how far the bits they consumed diverged from the bits they should have. That ranking is the whole point: in a misaligned bit stream the read that *throws* is thousands of bits downstream of the read that actually went wrong. Ranking by divergence points at the perpetrator instead of the victim.
+
+The rest of the failure surface is deliberately visible rather than fatal. A POV demo sends deltas for entities the recording client never received a full update for; the tracker skips those and increments a public counter rather than throwing, and the documentation calls that skip "the pragmatic choice, not a proof of safety" — which is precisely why the counter exists. Read it before trusting per-tick entity values from a recording you did not classify.
+
+### Typed wrappers as a portable contract
+
+One more layer sits on top, and it is the part of the design we are most pleased with.
+
+The typed entity wrappers — `CCSPlayerPawn` and friends, the classes you actually want to program against — are not in this repository. They are generated from the game schema and shipped as a separate package, and they read our storage through two small frozen interfaces. The entire adapter on our side is three classes.
+
+The consequence is that the churny artifact depends on the frozen one. Wrapper classes regenerate every time the game schema moves; the read contract is versioned on a human clock. Any entity runtime that implements those two interfaces over its own storage can run the same wrappers unchanged.
+
+It also turns schema renames from a code problem into a data problem. A wrapper property resolves to a canonical schema path, which resolves to a *candidate list* of spellings — canonical first, then historical aliases — which resolves to a lane and a slot. That resolution happens once per class binding; the read itself is two array indexes and a bit test. A current demo hits the canonical spelling, a demo from before a Valve rename hits an alias, and no per-read string work happens in either case.
+
+## Malformed demos
+
+Demos arrive truncated, corrupted mid-stream, and occasionally hostile. The policy is one rule:
+
+**The parser throws only when the input is not a CS2 demo.** Bad magic bytes, or a file too short to hold a header, get an `InvalidDataException`, because there is no partial result worth returning. Everything else degrades — you get the frames that decoded, plus a warning saying what was lost.
+
+The interesting part is not that warnings exist. It is that every warning carries a verdict about *whose fault it is*:
+
+| `ParsedDemo.Health` | Meaning |
+|---|---|
+| `Clean` | Every byte the parser looked at decoded. |
+| `Degraded` | Something was lost on *our* side — a message type this parser has no case for. The demo is not implicated. |
+| `Damaged` | Part of the demo's own data did not decode, or the recording is incomplete. |
+
+A dropped net message indicts the parser. A failed string-table create indicts the demo. Codes that have not been graded default to `Damaged`, so a forgotten grading surfaces as pessimism rather than as silence.
+
+That distinction is load-bearing rather than decorative. A demo recorded on a build newer than your parser drops net messages and reports `Degraded` while being a perfectly good file. Gating a "this demo may be damaged" banner on `Warnings.Count > 0` therefore fires on every new-build demo, which trains users to ignore it, which is worse than not having the banner at all.
+
+<Mermaid
+  code={`flowchart TB
+    subgraph P1["orchestrating thread (Pass 1 and Pass 3)"]
+        scan["frame scan warnings"]
+        stp["string table warnings"]
+        emit["Enrich: drop tallies,<br/>top 8 types plus a remainder"]
+    end
+    subgraph P2["Pass 2 workers"]
+        w1["thread-local drop dict"]
+        w2["thread-local drop dict"]
+    end
+    store["warning store<br/>cap 256, reset at parse entry"]
+    merge["merge after join,<br/>total order over ties"]
+    demo["ParsedDemo constructor: drain"]
+    health["Health = worst severity seen"]
+    tracker["EntityTracker (replays after the drain)<br/>LastEntityError"]
+    scan --> store
+    stp --> store
+    w1 --> merge
+    w2 --> merge
+    merge --> emit --> store --> demo --> health
+    tracker -. "cannot reach the drained store" .-> store`}
+  caption="Why there are three channels: the warning store is reachable only from the orchestrating thread, and only before the drain."
+/>
+
+Even the error channel has a threat model. It caps at 256 warnings and then emits a truncation summary graded `Degraded`, because running out of warning budget does not indict the demo. Drop tallies cap at the top eight types plus a remainder and are emitted *after* the structural warnings, because a corrupt bit stream can synthesize hundreds of garbage type IDs and starve the warnings that actually matter out of the budget.
+
+### Bounds with the attack written next to them
+
+Untrusted input is not allowed to make us allocate without limit. The bounds themselves are ordinary — a 16 MiB ceiling on a declared decompressed size, 4,096 entries per string table, a cap on field-path decode depth. What is unusual is that the arithmetic justifying each one is written in the source beside it.
+
+The string-table entry cap, for instance, carries its own derivation: the cheapest possible entry is three bits, Snappy amplification was measured at 21.3x on this data, so roughly 768 KiB of file reaches the 16 MiB ceiling while declaring about 44.7 million entries — which is about 1.6 GiB of dictionary. That is the number the 4,096 cap exists to stop, and a reader who wants to change the cap can check the reasoning instead of guessing at the intent.
+
+Exceeding a bound is never fatal: the structure is rejected, a warning is recorded, and the parse continues. The guards are deliberately reachable from tests so that a test can watch each one fire.
+
+One honest caveat, because this is exactly the kind of claim that should not be stated more broadly than it holds: the declared-size check before decompression is the string-table path. The frame-level Snappy path in pass 2 sizes its buffer from the declared uncompressed length without a ceiling, which is a gap we know about rather than one we have closed.
+
+The best argument for all of this is a postmortem sitting in the source. Reading a length as a byte-aligned varint where the wire uses a `UBitVar` desynchronised the string-table stream and silently discarded the `userinfo` table — the player list — on every CS2 demo. The only symptom was a spurious damaged-demo warning. Loud degradation is what turns that from a mystery into a bug report.
+
+## How this compares to other parsers
+
+{/* ─────────────────────────────────────────────────────────────────────────
+    PLACEHOLDER. Results tables below are unfilled on purpose.
+    Methodology, target set and harness design:
+      CS2DemoKit repo -> docs/perf/cross-parser-comparison.md
+    Fill the tables only after the correctness gate passes for every arm.
+    Do not publish a ratio taken from a single sample per arm.
+   ───────────────────────────────────────────────────────────────────────── */}
+
+Every number in this post is CS2DemoKit measured against itself. That is the right instrument for telling whether a change helped, and it tells you *nothing whatsoever* about whether this is a fast parser.
+
+We have not published a head-to-head yet. We would rather say that plainly than quote a comparison we have not earned — and the honest reason it has not happened is that doing it fairly is harder than it looks.
+
+**The scopes do not line up.** "Parse time" is not one measurement. CS2DemoKit's three passes deliberately leave `entity_data` as opaque bytes; entity replay is a separate opt-in layer. Several other parsers decode entities as they go. Timing our parse against their parse compares a subset to a superset and flatters us by exactly the amount of work we deferred.
+
+**Holding is not the same as streaming.** We materialise an immutable `ParsedDemo` and keep it — about 602 MB retained on a 290 MB demo — because random access to frames and byte ranges is what the interactive and analysis layers are built on. A callback-driven parser that hands you each event and forgets it holds almost nothing. That is a design trade in both directions: it costs us memory and it costs them the ability to seek. A comparison that reports peak memory without saying which model each arm uses is not measuring what it appears to measure.
+
+**Runtimes are not interchangeable.** A Rust parser has no garbage collector at all. The collector is roughly a third of our pipeline, which is a structural gap and not a tuning problem. Managed runtimes need warm-up rounds that native ones do not. Whatever we publish has to name the runtime and the GC mode on every row.
+
+**Thread count is not a property of the parser.** We already learned this one expensively, in the geometry engine: a serial arm against an all-cores arm produces a ratio that moves with the core count of whoever ran it. Every workload below gets a serial column and a parallel column, reported separately and never multiplied together.
+
+So the shape of what we will publish is fixed before the numbers exist.
+
+### Correctness first, timing second
+
+No timing figure gets published for an arm that has not first been shown to be doing the same work. Frame counts agree, per-type game-event counts agree, kill and death totals agree, the player roster agrees. An arm that is fast because it dropped messages is not fast, and "same answer" has to be demonstrated rather than assumed.
+
+### The workloads
+
+| | Workload | What it isolates |
+|---|---|---|
+| **W1** | Walk every frame, count messages by type | Header scanning and message demultiplexing, nothing else |
+| **W2** | Decode all game events, tally kills / deaths / damage | The event path, which is where most tools actually live |
+| **W3** | Full entity replay, sample per-tick player state | The expensive path, and the one with the widest scope differences |
+| **W4** | End-to-end: demo file to a finished scoreboard | What a user actually waits for |
+
+### Results
+
+{/* TBD — one table per workload. Columns:
+    parser | version | language/runtime | model (stream|hold) | threads | median ms | spread | MB/s | peak RSS
+    Include the correctness-gate verdict per arm. Report losses in the same table as wins. */}
+
+Not measured yet. When it is, the harness and the raw rows ship with it, the way everything else in `docs/perf/` does, and we will report where we lose in the same table as where we win.
+
+## Where this leaves us
+
+Three passes, one file walk each, and a hard boundary around the expensive stateful part:
+
+```
+ bytes ──► pass 1 ──► pass 2 ──► pass 3 ──► ParsedDemo
+           (14.8ms)  (333ms)    (36.5ms)
+           find      decode     assemble
+           frames    parallel   in order
+
+                                      └──► EntityTracker (opt-in, sequential)
+```
+
+Parsing used to be 34% of a full demo load. After the user-command work described above it is 21%, and the remaining cost is spread thinly enough across the three passes that there is no obvious next lever. The headroom has moved downstream — evaluation is now 72 to 81% of a load, and about a third of *that* is the garbage collector.
+
+Which is where the next post goes. [Part 2](../cs2demokit-analysisengine/) covers `CS2DemoKit.Analysis`: the state-graph evaluator, how a strictly sequential entity decoder gets parallelised anyway, why the event every stats tool needs does not actually exist in a CS2 demo, and an honest accounting of which of our published speedups were real and which were the core count in disguise.

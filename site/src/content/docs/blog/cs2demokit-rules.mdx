@@ -1,0 +1,330 @@
+---
+title: CS2DemoKit Technical Blog - Part 3 - The Rules Language
+date: 2026-09-13
+excerpt: A YAML DSL for describing what to measure in a Counter-Strike 2 demo, why its new compiler deliberately reuses the old one, and the design decisions that exist to stop a rule from quietly producing a wrong number.
+---
+
+import Mermaid from '../../../components/Mermaid.astro';
+
+This is Part 3. [Part 1](../cs2demokit-parser/) covers the parser, [Part 2](../cs2demokit-analysisengine/) covers the analysis engine that runs rules against a demo. This post is about the rules themselves.
+
+## Why a language at all
+
+The obvious design is an interface. You implement `IStatCalculator`, we call it per event, you keep a counter. That works, and we did not do it, for three reasons.
+
+**Rules change far more often than the engine does.** "Count opening duels won on the T side when your team was out-bought" is not a feature request, it is a Tuesday. Every one of those as a code change is a build, a package version, and a deploy.
+
+**The people with the best questions are not always the people who write C#.** Analysts, coaches and content creators know precisely what they want measured. The gap between that and a compiled plugin is most of why the question never gets asked.
+
+**An interface has no idea what you meant.** A `for` loop that sums the wrong column is a correct program. There is nothing for a compiler to object to. A declarative description, on the other hand, can be checked — against a vocabulary, against a type system, and against the specific ways this particular domain lets you fool yourself.
+
+So: rules are YAML documents, they compile to the state graph from Part 2, and you cannot crash the parser from one. The worst outcome is a validation error naming the file, the stat, the offending text, a line and column inside the expression, and a ranked list of what you probably meant.
+
+## The mental model
+
+A **ruleset** is a named bundle of **stats**. Each stat is one measurement, and you choose four things:
+
+- **`for:`** — per player (`each_player`) or for the whole match (`match`)
+- **the kind** — *how* to measure: count events, sum a value, keep a max, compute a formula
+- **the source** — *what* to measure: a view like `kill`, or another of your stats
+- **`per:`** — the window it resets over: `round` or `match`
+
+That is the whole idea. Everything else is refinement.
+
+```yaml
+ruleset: my_first
+for: each_player
+stats:
+  kills:
+    count: kill
+    per: match
+show:
+  scoreboard:
+    - { stat: kills, label: Kills, group: game }
+```
+
+Validate that and you have a working stat. Validation needs no demo at all — `DemoAnalysis.ValidateRulesets` composes your documents and reports everything wrong with them as data, which is what makes an upload-validation endpoint or an editor extension straightforward to build.
+
+## Views, not wire events
+
+You do not reference raw game events. You trigger on **views** — author-friendly verbs that already know the CS2 conventions:
+
+`kill` · `death` · `assist` · `damage_dealt` · `damage_taken` · `shot` · `shot_landed` · `blinded` · `blinded_enemy` · `bomb_planted` · `bomb_defused` · `he_grenade` · `flash_grenade` · `smoke_grenade` · `molotov` · `round_won` · `round_lost` · `enemy_spotted`
+
+Eighteen of them at the moment, sitting on top of 67 catalogued events and 48 enrichments. The gap between those numbers is the point: `kill`, `death` and `assist` are all the same wire event (`player_death`) viewed from three different subjects, with the role bindings already worked out. `molotov` and `enemy_spotted` are not wire events at all — one is synthesised from entity state because GOTV emits no usable molotov event, the other from recomputed visibility.
+
+And as Part 2 describes, `round_won` and `round_lost` sit on top of a *logical* round-end event that each recording dialect expands differently, because the concrete event a rule would obviously reach for does not fire in the demos we have studied. That is the kind of thing a view is for.
+
+Each view carries **facets**: typed attributes you filter on. The `kill` view has nine (`enemy`, `teamkill`, `headshot`, `no_scope`, `through_smoke`, `trade`, `flash_assisted`, `weapon`, `ticks_since_spot`). The `shot` view has sixteen and `shot_landed` has twenty-one, which is where the aim work lives.
+
+```yaml
+stats:
+  headshot_kills:
+    count: kill
+    match: { enemy: true, headshot: true }
+    per: round
+```
+
+Under `for: each_player`, a view binds automatically to *this* player. Under `for: match` there is no subject, so `count: kill` is a match total. If you genuinely need a raw event with no view over it, `raw.<event>` is there — but views are almost always what you want, because the view is where the conventions live.
+
+## The nine kinds
+
+One kind per stat. Two kinds on one stat is an error.
+
+| kind | what it does |
+|---|---|
+| `count:` | +1 per event |
+| `sum:` | add a value per event |
+| `capture:` | remember value(s) — `first`, `last`, `list`, `min`, `max` |
+| `compute:` | a formula over your other stats |
+| `tally:` | bucket a value into thresholds (the 2K/3K/4K/5K idiom) |
+| `streak:` | a windowed streak of events |
+| `bucket:` | one sub-count per key (per weapon, per site) |
+| `rate:` | a per-key ratio between two same-keyed buckets |
+| `flag:` | a per-round boolean |
+
+```yaml
+adr:          { compute: "damage / round.number" }
+rapid_kills:  { streak: kill, window: "10s", min_streak: 2 }
+kills_by_gun: { bucket: kill, key: event.Weapon, match: { enemy: true } }
+```
+
+Expressions support the usual arithmetic and comparisons, `and`/`or`/`not`, six functions (`min max abs floor contains startswith`), and duration literals — `10s`, `500ms`, `"1:30"`. There is no chained comparison: `1 < x < 5` is a diagnostic, not a silently-wrong expression. Formulas evaluate at round end by default; `live: true` re-evaluates them during the loop, wired up as Part 2 describes.
+
+Each kind lowers to specific graph machinery, and a couple of the lowerings are load-bearing rather than mechanical. A `count:` gets an increment edge *and* a write-once companion recording the tick it first fired — that companion is what clip reach-back reads, so a multi-kill clip can start at the first kill instead of the last. A `capture:` with `keep: min` or `keep: max` synthesizes a guard flag so that an empty window reduces against nothing rather than against a phantom zero, which would otherwise make "your worst round" always read zero.
+
+<Mermaid
+  code={`flowchart TD
+    A["a .rules.yaml document"] --> B["document loader<br/>(keeps source positions)"]
+    B --> C["YAML mapper<br/>raw expression slots"]
+    C --> D["for-each expansion"]
+    D --> E["structural validation"]
+    E --> F["composition<br/>fix-point export typing"]
+    F --> G["cross-ruleset reference validation<br/>4 attributed error classes"]
+    F --> H["resolver<br/>match lowering, param inlining,<br/>expression pipeline per slot"]
+    H --> I["cycle detection"]
+    I --> J["checked ruleset IR"]
+    J --> K["hashers<br/>dedup key + cache fingerprint"]
+    J --> L["v1 expression writer<br/>to the existing compiler"]`}
+  caption="From YAML text to the checked IR, and the IR's two exits: identity hashing and runtime lowering."
+/>
+
+## Four ways to narrow a measurement
+
+From coarsest to finest:
+
+- **`match:`** filters on a view's typed facets — `match: { enemy: true, headshot: true }`
+- **`where:`** is a free-form condition over the event, its enrichments, contexts and entity state — `where: 'event.Weapon == "awp"'`
+- **`while:`** gates on the player's live state — `while: player.alive`
+- **`when:`** composes your *sibling stats* — `when: kills >= 2`
+
+```yaml
+eco_kills:
+  count: kill
+  match: { enemy: true }
+  where: "round.team.equipment < round.enemies.equipment"   # your team was out-bought
+  per: round
+```
+
+## Reading live game state
+
+Inside `when:` / `where:` / `compute:` you can read the game. Twenty-two contexts and twenty-one entity providers, covering round facts (`round.number`, `round.bomb.was_planted`, `round.clutch.size`), match facts (`match.map`, `match.phase`, `match.freeze_period`), subject-relative team aggregates (`round.team.alive` against `round.enemies.alive`), and the pawn's own state (`player.health`, `player.armor`, `player.place`, `player.max_speed`, `player.is_scoped`).
+
+Two details here are load-bearing.
+
+**Entity reads cost, and they are gated by name.** Each provider a ruleset references costs the per-pawn digest a column. A ruleset reading none of them pays nothing. The three position axes are the expensive case, for the reasons Part 2 goes into.
+
+**Where you read matters as much as what.** In an event-gated site — a `where:`, a `sum:` value, a `while:` — an entity read is the value *at the moment of the event*: the victim's HP at the kill. In a node-logic site — a `compute:`, a `flag: when:` — it is the value at round end. Both are useful; they answer different questions. Under an event view you can also read another role's state by name, so `victim.health` works in a `kill`-view `where:`.
+
+## Two types that are the same type at runtime
+
+The checker's type vocabulary is `bool`, `int`, `float`, `string`, `duration` and `instant`, plus lists and maps of scalars. The last two are the interesting ones, because at runtime they are both just integer ticks — and the checker keeps them apart anyway.
+
+The algebra is the one you would write on a whiteboard. An instant minus an instant is a duration. An instant plus a duration is an instant. An instant plus an instant is an error, and the diagnostic says why rather than just refusing.
+
+This costs nothing at runtime and catches a class of mistake that is otherwise invisible, because the wrong answer is a plausible integer. Adding two timestamps together produces a number. It is never a number you wanted.
+
+## The part this language is actually for
+
+Everything above is table stakes. Any DSL can count things. The reason this one exists in the shape it does is everything below, all of which is about the same failure: a rule that produces a *plausible* number instead of an error.
+
+That failure is worse than a crash by a wide margin. A crash gets fixed. A plausible number gets published.
+
+### Sentinels, and the aggregate that must be gated
+
+Some facets have no meaningful zero. "How long since this player first saw an enemy" has no answer at all for a shot fired at nobody. Zero would mean "spotted this very tick", which is the exact opposite of the truth.
+
+So those facets read a **sentinel** — `1000000` for the tick-gap family, `-1` for `travel_from_spot_deg`, `-1000` for `flick_error_deg`. And a sentinel is fine right up until you sum it, at which point every unmeasured event contributes a million and the total looks like a number.
+
+The checker refuses:
+
+```yaml
+# rejected: resolve.ungated-sentinel-aggregate
+burst_gaps:
+  sum: enrich.shot.ticks_since_last_shot
+  on: shot
+  per: round
+```
+
+```yaml
+# accepted: the bound is the gate
+burst_gaps:
+  sum: enrich.shot.ticks_since_last_shot
+  on: shot
+  where: "enrich.shot.ticks_since_last_shot <= 64"
+  per: round
+```
+
+A `sum:`, a reducing `bucket:`, or a `capture: keep: min|max` over a sentinel-carrying facet must gate on it — in `match:`, in `where:`, or on another facet the catalogue declares proves it measured. A `count:` and a `capture: keep: first|last|list` are not aggregates and need nothing.
+
+This turned a working ruleset into a failing one in 0.11.0, for anyone who had been summing `ticks_since_last_shot` ungated. That is a deliberate trade and it is written up in the release notes with the fix, because "your rules stopped loading" is a much better morning than "your reaction-time column has been wrong for six months".
+
+### Two clocks
+
+CS2 demos carry a frame clock and an absolute server tick, about twenty thousand ticks apart on a typical GOTV recording.
+
+`event.tick` is not the same clock across views. On a wire event it is the absolute server tick. On the two views the engine synthesises from entity state — `enemy_spotted` and `molotov` — there is no wire stamp, so it is the frame clock. A `where:` that differences a molotov tick against a kill tick is off by twenty thousand and *nothing reports it*, because both are perfectly valid numbers.
+
+The answer is not a warning. It is that for timing across views you use the `ticks_since_*` facets, which the engine computes on one clock, on purpose, so the question cannot be asked the wrong way.
+
+### Angles wrap at 360
+
+`eye_pitch`, `eye_yaw`, `punch_pitch` and `punch_yaw` are raw engine angle components over `[0, 360)`. A -2 degree kick arrives as `358`.
+
+So `abs(a - b)` is wrong across the wrap: two angles one degree apart read as 359 degrees apart when one is just below zero. Difference them through the modulo instead:
+
+```yaml
+# Killed from behind: the victim was facing the way the killer was.
+back_kills:
+  count: kill
+  match: { enemy: true }
+  where: "abs(((player.eye_yaw - victim.eye_yaw + 180.0) % 360.0 + 360.0) % 360.0 - 180.0) <= 60.0"
+  per: round
+```
+
+That is ugly, and it is documented rather than hidden, because the alternative is a `back_kills` column that is subtly wrong for every engagement near north.
+
+### A column key is global, so a collision is a load error
+
+A scoreboard `label:` is the value-column key of the per-player metric table, and it is matched across *every* ruleset loaded together — not just yours. Two entries claiming one label on one board fought over a single column, and the loser silently read zero.
+
+That is now a hard load error naming both rulesets. It rejects directories that loaded (wrongly) before. The round board and the match board are separate namespaces, so the same label on a per-round stat and a match total is still fine.
+
+### When a correct rule legitimately cannot measure
+
+There are two ways a rule that is entirely correct reports zero: a view that does not bind on this demo's recording source, and a visibility-derived facet on a run with no map bake.
+
+Neither is an error, and neither should be silent. Both produce a **coverage row** on the build result, naming the stat, the facet, and which prerequisite is missing. Those are the two cases you want to *read* rather than discover from the numbers three weeks later.
+
+The visibility case has a second prerequisite that catches people: the contact scan is expensive, so it runs only when some rule subscribes to the `enemy_spotted` view. Merely *reading* a spot-derived facet is not subscribing. The working shape is a subscriber sitting next to the readers:
+
+```yaml
+stats:
+  contacts:                 # this is what turns the scan on
+    count: enemy_spotted
+    per: round
+  reaction_ticks:
+    sum: enrich.shot.ticks_since_spot
+    on: shot
+    match: { first_after_spot: true, ticks_since_spot: "<= 320" }
+    per: round
+```
+
+### And when the data itself is not trustworthy
+
+The aim-punch columns do not currently decode to a real recoil kick. On the bundled sample they come back clustered near -94 and +89 degrees; a real recoil kick is a couple of degrees.
+
+The framework's own consumer treats anything past 45 degrees as unreal and **rejects every value that column produces**, which is why `spray_residual_measured` reports `false` on that demo rather than reporting a 300-degree residual as data. Until the column decodes, a rule averaging or thresholding those two is measuring the decode, not the player, and the documentation says so in those words.
+
+## The new compiler's back end is the old compiler, on purpose
+
+Rulesets v2 replaced an earlier rule format, and the migration strategy is the design decision we would most like other people to steal.
+
+A new language needs a new front end: lexer, parser, resolver, type checker. It does not necessarily need a new *back end*, and a new back end is where the risk lives, because "the numbers changed" is a much harder bug to find than "it did not compile".
+
+So v2 does not get one. A checked v2 stat is serialized back out into the old grammar as a string, and that string goes through the same expression compiler and the same edge factories the old format used. The runtime underneath is not merely equivalent, it is identical.
+
+What that buys is a testable migration claim. "The new format produces the same numbers as the old one on real demos" stops being a hope and becomes a pilot test that runs both and compares. The old interpreter did not need re-verifying, because it was not replaced.
+
+The cost is real and we would pay it again: the v2 front end can only express things the old grammar can represent, and there is a string round-trip in the build path that a direct lowering would not need. Build is 21 milliseconds. That is an excellent price for deleting an entire category of migration bug.
+
+## Two expressions that ask the same question get one node
+
+Every stat gets a 32-byte identity hash, and stats with equal hashes share a single graph node. Two rulesets that both want "enemy kills this round" compute it once.
+
+The interesting part is what goes into the hash. Stat *references* are replaced by the referenced stat's own hash, never by its name — computed bottom-up, with reference cycles already rejected as a build error so the recursion terminates. So `kills > 1` in your ruleset and `kast.kills > 1` in mine hash **together** when they point at the same node, and identical text pointing at different nodes hashes **apart**.
+
+<Mermaid
+  code={`flowchart TD
+    subgraph P["identity preimage: version tag, then row : length : payload"]
+        R1["1 kind"] --> R2["2 value type"] --> R3["3 scope axis (for x per)"]
+        R3 --> R4["4 events, sorted and deduped"]
+        R4 --> R5["5 expression canonical form"]
+        R5 --> R7["7 gate hash (while:)"]
+        R7 --> R8["8 keep mode and kind arguments"]
+        R8 --> R9["9 id salt, only for input-less nodes"]
+        R9 --> R10["10 actor token, row absent when null"]
+    end
+    K["referenced stat node,<br/>hashed first, bottom-up"] -.->|"its 32-byte hash is embedded<br/>inside row 5; the name never appears"| R5`}
+  caption="The row layout of a node's identity preimage."
+/>
+
+The preimage is defended like a wire format — length-prefixed rows, an explicit separator for key/value payloads, additive rows appended rather than inserted so old hashes stay byte-stable — and the reason for that paranoia is that **a false merge is a data-corruption class, not a performance bug**.
+
+Every row on that diagram exists because of a specific way two different stats could otherwise collide. Collapse the scope axis and a `per: round` stat merges with its `per: match` twin, and both report whichever one the planner built first. `count: kill` and `count: assist` share rows 1 through 9 *entirely*, because they differ only in which role of `player_death` they bind to — which is why the view's actor token is its own row.
+
+### Which is also why the normalizer is deliberately weak
+
+Before hashing, expressions are normalized into a canonical form. It does very little on purpose: duration literals fold to ticks, `define:`d names inline, `match:` sugar lowers to the same comparison tree a hand-written `where:` would produce, and signs fold. That is close to all of it.
+
+No constant arithmetic. No operand reordering. No De Morgan rewrites.
+
+Every one of those would make more expressions hash alike, which under dedup means more sharing, which sounds like an unambiguous win. It is not, because hash-equal means *behaviourally interchangeable*, and a rewrite that changed semantics even subtly would not produce a wrong answer in one stat — it would silently hand two different stats the same shared node.
+
+The normalizer's job is to make spellings of the same thing agree. The moment it starts making *similar* things agree, dedup becomes a corruption mechanism. So it stops well short of what it could do.
+
+There is a pleasant corollary: sugar provably costs nothing at the identity layer. `match: { enemy: true, headshot: true }` lowers to exactly the tree a hand-written conjunction produces, conjoined in a fixed facet order, so the convenient spelling and the explicit one share a node.
+
+### What the hash is for besides dedup
+
+Renaming a stat does not invalidate a cached result. Changing one invalidates exactly the results downstream of it. For anything caching analysis output across a rule library that people edit, that is the difference between a usable cache and a cache you clear on every deploy.
+
+## Three layers, one vocabulary
+
+The language is split across the packages deliberately.
+
+**`CS2DemoKit.Analysis.Rules`** is the semantic core: lexer, parser, canonical AST, normalizer, resolver, typed checker, canonical hashing. Its project file says, in as many words, not to add project or package references to it. It validates and hashes one expression at a time against a scope you hand it, and every stage is public — an editor that only needs token spans for syntax highlighting has no reason to run the full pipeline. If you are building a linter or a validation service, this is the whole dependency.
+
+**`CS2DemoKit.Analysis`** owns everything above one expression: composing documents, cross-ruleset references, resolving names against the shipped catalogue, and lowering to the state graph.
+
+**`catalog.json`** is generated from the engine's own registries — not written by hand, and not derived from the rule files — by constructing the real enrichment infrastructure against a throwaway graph and enumerating what it produces. 18 views, 48 enrichments, 22 contexts, 21 providers, 67 events, 5 recording profiles. It is committed, and CI byte-compares a regeneration against the committed copy. The same generator emits the editor JSON schema, so one line at the top of your rules file gets you validation and autocompletion against exactly what the engine supports:
+
+```yaml
+# yaml-language-server: $schema=./cs2demokit-rules.schema.json
+```
+
+That chain — registries to catalogue to schema to editor — is why the vocabulary in your editor cannot drift from the vocabulary in the engine. There is no hand-maintained list in the middle to go stale. The autocomplete list comes from the same tables the engine executes.
+
+## Errors as data, never exceptions
+
+No stage of the pipeline throws on bad user input. Lexer, parser, normalizer, checker — each returns a result carrying a diagnostic list, and each diagnostic has a stable machine-readable code, the offending text, an in-expression line and column, and ranked "did you mean" suggestions for unresolved names.
+
+The one thing that throws is calling `Require()` on a failed result, which is a programmer error rather than a user one.
+
+Cross-ruleset reads get their own treatment. When `player_stats` reads `kast.kast_pct`, that resolves through a fix-point-typed export graph with four attributed error classes — unknown ruleset, unknown stat, not exported, not declared in `use:` — checked *before* the noisy full resolve, so the error you see is the one you caused rather than sixty downstream consequences of it.
+
+Two subtleties people hit:
+
+**A file that fails to parse contributes an error and no ruleset**, and the surviving documents then compose cleanly. So `result.Success` alone comes back `true` for a directory containing a broken file. `loaded.Success && result.Success` is the actual question.
+
+**Pass every document sharing the id namespace.** If you are layering rules over the shipped ones, validate the composed set. Otherwise a cross-ruleset reference into a shipped ruleset reports a false unknown-ruleset error and you go looking for a bug in a file that is fine.
+
+## Where to start
+
+The four baseline rulesets in `src/CS2DemoKit.Analysis/Rules/` double as the authoring samples and as the validation corpus — each has a pinned golden fixture, so they cannot drift from working. `weapon_stats` is the bucket example, `kast` is counters plus a tally plus a highlight plus a compute and is the one ruleset that exports, `post_plant_double` is a narrow gated highlight, and `player_stats` is the big one — computes, entity reads, and a cross-ruleset reference into `kast`.
+
+Worth knowing that this is not a thin veneer over a C# implementation: the entire rating stack lives in those files, coefficients included. If you disagree with how a number is computed, you extract the shipped rules to disk, edit the YAML, and load your copy back. There is no compiled formula underneath to argue with.
+
+`docs/RULES_AUTHORING.md` is the step-by-step guide, written as a learning path rather than a reference. The reference — every view, facet, enrichment, context and provider the engine knows — is the generated catalogue.
+
+Author small, check often, grow the file a stat at a time.

@@ -1,0 +1,305 @@
+---
+title: CS2DemoKit Technical Blog - Part 2 - The Analysis Engine
+date: 2026-09-13
+excerpt: How CS2DemoKit turns a parsed demo into numbers - parallelising a sequential decoder, the event that does not exist, and an honest accounting of the geometry engine's published speedups.
+---
+
+import Mermaid from '../../../components/Mermaid.astro';
+
+This is Part 2. [Part 1](../cs2demokit-parser/) covers the parser — how a `.dem` file becomes frames, messages and typed game events. If you want the non-technical version of the whole project first, start with [the announcement](../cs2demokit-announcement/).
+
+Part 1 ended on a number: parsing is 21% of a demo load, and evaluation is 72 to 81%. This post is about that 72 to 81%.
+
+## What the analysis engine actually is
+
+`CS2DemoKit.Analysis` takes a `ParsedDemo` and a set of rulesets and produces an `AnalysisRun` — per-player stats, per-round tables, and highlights stamped with the tick they happened on.
+
+```csharp
+ParsedDemo demo = MemoryMappedDemoSource.ParseFile("match.dem");
+RuleConfigLoadResult rules = YamlConfigLoader.LoadShippedEmbedded();
+AnalysisRun run = DemoAnalysis.Run(demo, rules.Rulesets);
+```
+
+`Run` is `Build` then `Evaluate`, and they split for a reason:
+
+```csharp
+BuildResult build = DemoAnalysis.Build(demo, rules.Rulesets);   // ~21 ms
+AnalysisRun run = DemoAnalysis.Evaluate(demo, build);           // ~1.4 s
+```
+
+Build compiles rulesets into a graph. Evaluate walks the demo. On a full match those are 21 milliseconds and 1.4 seconds respectively, which means an application can compile the graph, render a skeleton scoreboard with the right columns in it, and *then* start the multi-second work. It also means you can compile once and evaluate against a hundred demos.
+
+The mental model that fits best is not "a loop over events". It is a spreadsheet. Rules compile to a dataflow graph; a message arriving dirties some cells; the engine settles the dependents and moves on. Per-frame work is proportional to what actually changed, which on the shipped provider set is about one cell in a thousand.
+
+## The state graph
+
+The pieces are small and deliberately boring. An **edge** fires on something — a game event type, a net message, an entity-state change. A **node** holds a value: a counter, a captured value, a computed formula, a flag. **Conjunction** and **disjunction** nodes compose other nodes. A **per-player template** materialises a whole subgraph per player slot the first time that player appears, which is how one rule file written in the singular ("count *this player's* kills") becomes ten live subgraphs.
+
+Rule expressions are not interpreted at evaluation time. They compile to LINQ expression trees and then to delegates during `Build`, and event field reads bind to cached compiled getters. By the time the frame loop starts there is no expression tree left to walk.
+
+<Mermaid
+  code={`flowchart TD
+    A["EvaluateCore"] --> B["precompute entity digests<br/>(the parallel phase, ~70% of eval)"]
+    B --> C["plan chunks:<br/>split at DEM_FullPacket checkpoints"]
+    C --> D["worker: prime from checkpoint,<br/>build a digest per frame"]
+    D --> E["per-frame digests"]
+    A --> F["per-frame loop (sequential)"]
+    F --> G["consume digest N, fold N-1 into the pre-frame snapshot,<br/>synthesize entity-change and molotov events"]
+    G --> H["per message: dispatch filter,<br/>edges in topological order"]
+    H --> I["route dirty nodes:<br/>liveness, logic, live computes, snapshot bits"]
+    I --> J["recompute logic to fixpoint"]
+    J --> K["drain live computes<br/>(bounded: one recompute per compute per message)"]
+    K --> L["capture the snapshot row<br/>(chunk-shared)"]`}
+  caption="One evaluation, from the checkpoint-parallel entity decode through the per-message dirty-settle pipeline."
+/>
+
+Three behaviours in the evaluator are worth naming because they are where the design earns its keep.
+
+**Rising edges, not levels.** A conjunction node firing is an event, recorded on a timeline with the tick and the player it is attributed to. That is what a highlight *is*, and it is why a highlight comes back with a frame-clock tick you can hand to a clip planner rather than a boolean you then have to go hunting for the timestamp of.
+
+**Ordering inside one message is decided, not left to chance.** Two edges reacting to the same event can read each other's outputs, so the engine topologically sorts the edges for each dispatch key using their declared effects and declared reads. When that sort finds a genuine cycle it does not fall back to source order and hope — it throws, and the error tells the rule author the exact `after: <stat>` line that fixes it, in their vocabulary rather than the engine's.
+
+**Live computes are registered, not polled.** A formula normally evaluates at round end. Marking it `live: true` re-evaluates it during the loop instead — but not by re-running every formula on every message. The graph maps each node a formula *reads* back to the formula, so a write to any input schedules exactly one recompute. That cap is simultaneously the duplicate-fire guard and the proof that the per-message fixpoint terminates. Graphs with no live computes take a byte-identical legacy path, which is how the feature landed without moving a single golden file.
+
+## Parallelising something that is sequential by definition
+
+The precompute in that diagram is about 70% of evaluation wall time, and it is a genuinely interesting problem, because what it is decoding cannot be decoded out of order.
+
+Entity state is a delta stream. Frame *n*'s entity data is meaningless without frame *n-1*'s result. That is as sequential as a data structure gets.
+
+The way out is that a CS2 demo periodically contains a `DEM_FullPacket` — a complete snapshot rather than a delta. A worker that starts at a checkpoint does not need any history before it. So the planner splits the frame range at checkpoint boundaries, coarsens the result to roughly the core count, and excludes any checkpoint the primer cannot faithfully represent. Each worker primes itself from its checkpoint and decodes forward independently.
+
+The part worth stealing is how that gets proven correct.
+
+Workers emit *per-pawn deltas*, and a worker's first frame necessarily re-emits every live cell — it has no previous frame to diff against. So the parallel output is not row-for-row identical to the sequential output. It has extra rows in it.
+
+The consumer, though, folds every row into a last-value-per-(provider, slot) map. Under that fold, re-emitting a cell with the value it already holds is a no-op. So the rows differ and the fold does not, and the test asserts the thing that actually matters: **fold equivalence, not row equality.** The golden outputs are byte-identical either way.
+
+That framing is what makes the optimisation safe to have. Chasing row-for-row equality would have meant either teaching workers to suppress their first-frame re-emission — reintroducing a dependency on history, which is the thing being avoided — or accepting a weaker test. Proving the folds equal costs nothing and is the stronger claim.
+
+## Two ways to build a context
+
+```csharp
+DemoAnalyzer.BuildContext(demo)       // full entity replay
+DemoAnalyzer.BuildEventContext(demo)  // no entity replay, much faster
+```
+
+If no rule in your set reads entity state, you do not pay for entity state. The engine works out which it needs from what the rules actually reference: v1 rules are scanned with an identifier-boundary matcher, v2 rules declare their reads exactly, and the union decides what the replay records. The rules you wrote decide which entity columns get decoded at all — dead-code elimination, applied to a demo replay.
+
+That gating is enforced rather than advisory. Reading a provider that was not gated in throws rather than returning a default, and every gated-in provider has its field path and declared type validated against *this demo's* wire schema at the first full packet — so a CS2 schema change that moves a field fails loudly at the start of the run instead of producing plausible values for forty minutes.
+
+## The per-pawn digest, and the 99.9%
+
+For rules that do read entity state, the precompute produces a per-frame readout: for every live player pawn, the current value of every gated-in provider.
+
+The original version built that readout for every frame and held the whole stream until evaluation consumed it. On a 123,283-frame demo that is **2.7 million boxed cells**.
+
+Of which **2,874 differ from the previous frame.**
+
+The consumer was folding all 2.7 million into a last-value map, which means 99.9% of the work was writing a key the value it already held. Carrying only the changed cells reproduces the fold exactly.
+
+Measured as an interleaved A/B over fifteen demos spanning 40 to 524 MB and thirteen maps, three rounds per arm, order flipped each round:
+
+| metric | median change | range | demos improved |
+|---|---|---|---|
+| **evaluate** | **-22.1%** | -11.6% to -33.4% | 15/15 |
+| evaluate allocation | -13.0% | -4.3% to -14.5% | 15/15 |
+| **total load** | **-17.2%** | -6.2% to -26.3% | 15/15 |
+| parse (control) | +0.1% | | |
+| retained (control) | +0.3% | | |
+
+Two things about that table matter more than the numbers in it.
+
+**The corpus was widened on purpose, and it changed the answer.** An earlier version of this measurement reported -31.2% evaluate and -24.9% load. That was taken on a five-demo corpus which happened to hold three demos in the high-gain group, and all five sat within six megabytes of each other at the library's median size — a set that cannot possibly detect a result which only holds at one scale. The wider number is the one we publish, and the narrower one stays written down beside it so nobody re-derives it and thinks they have found something.
+
+**The allocation column carries the mechanism.** The saving scales with the retained digest stream, so the 36,000-frame demo gains 4.3% while the 229,000-frame demos gain 14.2%. A win that did *not* scale that way would not be the win this change claims to be — it would be something else wearing its clothes.
+
+It is a collector win rather than a decode win. Every provider is still read for every live pawn on every frame; what changed is how much of that survives to be collected later. And it depends on the shipped providers changing rarely, which brings us to the case where that stops being true.
+
+### Position is expensive, and it is expensive on purpose
+
+Rules read a pawn's world position as three scalars: `player.pos_x`, `player.pos_y`, `player.pos_z`. As Part 1 describes, there is no position vector to read — it is a cell index plus an in-cell offset.
+
+A moving player changes their position every single frame, which defeats the delta encoding completely for that column. Counting cells the digest actually emits on the same 123,283-frame demo:
+
+| provider set | cells emitted |
+|---|---|
+| the six shipped providers | 14,455 |
+| plus `pos_z` | 379,576 |
+| plus all three axes | 1,442,280 |
+
+One axis is 26x. Three are 100x.
+
+Providers are gated in by name, so a ruleset that reads no axis pays none of this, and a ruleset that reads one should read only the one it needs.
+
+The three-scalar split is forced rather than preferred, and the cost of that is measurable too. The rules type vocabulary is `bool`/`int`/`float`/`string`/`duration`/`instant` plus lists and maps of *scalar* elements. There is no type a `Vector3` could be declared as and no member access to read `.z` off one. A single vector-valued column would emit 548,787 cells against the split's 1,442,280 on the same demo, because it boxes once per pawn-frame rather than about 2.7 times. So a ruleset reading all three axes pays 2.6x for the language's scalar type system. That is a real cost, written down as one; fixing it means a new type kind reaching the checker, the normaliser and canonical rule hashing, which is not worth it until positional rules are common.
+
+## The event every stats tool needs does not exist
+
+This one is our favourite finding in the whole project, and it is not a performance story.
+
+If you want per-round statistics you need to know when rounds end. The obvious answer is the `round_end` game event. In the CS2 demos we have studied, across both recording sources, `round_end` fires **zero times**. Its sibling `round_officially_ended` fires — but only on Valve matchmaking recordings.
+
+Tournament demos are the problem. ESL and BLAST record through SourceTV, which means their file header carries the client name `SourceTV Demo` — byte-identical to what Valve matchmaking writes. There is nothing in the header to tell them apart. And they never emit `round_officially_ended`; their round marker is `cs_pre_restart` instead.
+
+The failure mode is not a crash. It is a 16-round match scoring 26-6 across 32 "rounds", which looks like a plausible scoreboard until you check it against reality.
+
+So classification happens twice. The header gives a first guess, and then the *observed event vocabulary* of the demo gets a vote: a recording that never emits `round_officially_ended` but does emit `cs_pre_restart` is re-resolved onto a tournament profile. Rules do not subscribe to `round_end` at all. They subscribe to a **logical** `$round_end`, which each profile expands into whichever concrete events that dialect actually uses — with synthesized per-round first-wins guards on anything that must not fire twice.
+
+**The header lies about where a demo came from. The event vocabulary does not.**
+
+A logical event that no loaded profile can bind is a loud build error, not a silent zero, and unknown trigger names get ranked did-you-mean candidates. There is a related class of bug in the same family that we fix the same way: a knife round before a match restart scoring 14-11 across 25 rounds, because the restart has to roll per-match state back and nothing was doing it.
+
+One honest scoping note: these are observations across the demos we have studied, not a proof about every CS2 recording that exists. That is exactly why the resolution is evidence-driven at run time rather than a table we maintain by hand.
+
+## Line of sight
+
+The other substantial piece of `CS2DemoKit.Analysis` is a 3D visibility engine, and it exists because there is no usable answer on the wire. The demo's own `spotted` bit is coarse, server-driven and gameplay-gated. If you want to know when one player could actually see another, you recompute it from map geometry.
+
+```csharp
+string? bake = CollisionAssetLocator.FindCollisionTris(demo.MapName);
+AnalysisOptions options = new()
+{
+    VisibilityEngine = bake is null ? null : VisibilityEngine.Load(bake)
+};
+```
+
+The geometry comes from an offline bake — a triangle soup in world space plus a manifest — so the runtime needs no game install and no Valve file formats. `VisibilityEngine.Load` builds a bounding-volume hierarchy over it. The engine is immutable after construction and safe to share across every run on that map, so build it once and keep it.
+
+### Exposed is not the same as seen
+
+The headline measurement is two durations per directed pair of enemies, and keeping them separate is the whole design:
+
+- **exposed** — there is a clear geometric line from this player's eye to some part of that player's body.
+- **could-see** — exposed, *and* inside the viewer's field of view, *and* not through smoke.
+
+Could-see is a subset of exposed by construction. Smoke is modelled as a solid sphere of 144 units centred on the detonation position, and it is consulted only on the could-see branch: smoke blocks sight, not bullets, and the exposure raycast runs against static collision in which smoke does not exist at all.
+
+The observable consequence is that a smoked-off enemy reads as **exposed but not seen**. That is not a bug to be reconciled. It is exactly why through-smoke kills happen, and having both numbers is what lets a rule ask about one without accidentally asking about the other.
+
+<Mermaid
+  code={`flowchart TD
+    START["anchor i of up to 6, chest first"] --> FOV{"in field of view?"}
+    FOV --> SKIP{"already exposed and out of view,<br/>or already could-see?"}
+    SKIP -- yes --> NEXT["next anchor"]
+    SKIP -- no --> RAY["raycast eye to anchor<br/>(BVH any-hit)"]
+    RAY -- blocked --> NEXT
+    RAY -- clear --> EXP["exposed = true"]
+    EXP --> SMOKE{"in view and not through smoke?"}
+    SMOKE -- yes --> SEE["could-see = true, stop"]
+    SMOKE -- no --> NEXT`}
+  caption="Rays are cast only when they can change a verdict, and smoke gates vision without gating exposure."
+/>
+
+Two details in there took more thought than they look like.
+
+**Up to six anchors per target, chest first.** A single point-to-point ray between two eye positions answers a different question from the one players experience, because a sliver of shoulder around a corner is visible long before the head is. So the target is sampled at several body points, with the chest tested first because it is both the most likely hit and the cheapest early exit. The shoulder anchors are offset *perpendicular to the horizontal viewer sightline* — one dot product of thinking that puts the lateral samples exactly on the axis a corner peek appears along, rather than on a fixed world axis that would be wrong for most angles.
+
+**The field of view is a rectangle, not a cone,** and the reason is written into the source. CS2's 16:9 horizontal FOV is about 106 degrees, but its vertical FOV is about 73. A cone sized to fit the horizontal figure implicitly claims 106 degrees vertically too, which over-counts vertical sightlines badly on maps like Nuke and Vertigo where the interesting engagements are above and below you. The frustum is a yaw-by-pitch box of 106 by 74 degrees.
+
+Smoke timing comes from the projectile entity's own lifetime rather than a hardcoded duration, because the entity's tick fields use a different origin from the frame clock and cross-domain tick arithmetic is exactly the class of bug Part 1's "two clocks" warning is about.
+
+Finally, every result carries the identity of the bake it was computed against — a content hash plus a baker version. Bakes are selected by map name alone, so after a Valve map update that identity is the only way to tell a stale bake from a current one. Persist it with any stored result.
+
+### The scan only runs when a rule asks for it
+
+Sampling every fourth tick over a forty-minute demo is roughly 38,000 sampled ticks at up to about 300 rays each: order 10⁷ rays, minutes of work, cancellable.
+
+So it is opt-in at the rule level, and the subtlety that catches people is that *reading* a visibility-derived attribute is not the same as *subscribing* to the contact event that produces it. Some rule has to actually count `enemy_spotted`. Get that wrong and every reader falls back to its sentinel, which sums to a plausible number rather than failing — so the build emits a coverage row naming the stat, the attribute, and which of the two prerequisites is missing. Silence would be the worst outcome here and it is the one we spent the most effort avoiding.
+
+### The eight-wide tree
+
+The BVH is built with a binned surface-area heuristic and then collapsed into eight-wide nodes. A node is eight lanes, each holding a child box and a child reference, and the boxes are stored structure-of-arrays — six float arrays, one per axis-and-extreme — so one node's eight lanes are eight consecutive entries and a SIMD tier can load an entire node's boxes as one register per array. Lanes are assigned by octant, so a ray's nearest child is a direct function of its direction sign mask, and the traversal pushes lanes far-to-near so the near one pops first.
+
+Empty lanes carry an *inverted* box — positive infinity as minimum, negative infinity as maximum — which fails the slab test for every ray without needing a branch. That is elegant right up until you feed it a ray that is not finite. A direction that is infinite on all three axes makes every product NaN, no axis constrains the window, and every lane is admitted including the empty ones. Both traversals now reject a non-finite ray up front, which is a one-line guard protecting a whole class of input that arrives from ordinary arithmetic: normalising a direction whose length-squared underflows hands you infinities, and nothing upstream of that looks wrong.
+
+### The part where we correct our own numbers
+
+The eight-wide tree changed two things at once: the topology went from binary median-split to eight-wide, and the builder gained a parallel path. Those are two separate wins, they multiply, and on a machine with enough cores either one can be dressed up as the whole of it.
+
+Measured apart, on a 32-logical-core machine, medians of nine warm rounds per arm:
+
+| bake | triangles | binary, 1 thread | wide, 1 thread | topology | wide, 32 threads | parallelism |
+|---|---|---|---|---|---|---|
+| de_nuke | 191,628 | 143.5 ms | 121.9 ms | 1.18x | 27.0 ms | 4.52x |
+| de_dust2 | 435,649 | 391.9 ms | 337.2 ms | 1.16x | 50.7 ms | 6.64x |
+| de_overpass | 713,341 | 784.4 ms | 708.2 ms | 1.11x | 88.9 ms | 7.97x |
+| de_ancient | 967,742 | 1137.8 ms | 1072.9 ms | 1.06x | 126.6 ms | 8.47x |
+
+**The topology is worth 1.06 to 1.18x, and it shrinks as the bake grows. Everything else is the thread count.**
+
+An earlier set of figures circulated internally claiming 5.9x to 7.9x build speedups. Those were the *product* — a serial run of the old builder against a default all-cores run of the new one — which charges the topology with the parallel build's win and moves with the core count of whoever ran it. The same comparison on this machine gives 5.3x to 9.0x, which is how we know that is what those numbers were.
+
+A claimed memory figure did not survive either. The story was 182.4 MB down to 75.4 MB on the largest bake. The 75.4 MB reproduces exactly, on the nose, at one thread. The 182.4 MB does not reproduce at any thread count: the old builder's live peak on that bake is 96.0 MB and its *total allocation* over the whole build is 169.1 MB. So the saving is 20.6 MB, or 1.27x, not 107 MB.
+
+And the saving is entirely transient. The eight-wide builder's live peak sits within 1.7 MB of its finished size on every bake — segment pooling doing exactly what it claims, never holding much more than the tree it is building. The binary builder peaks at 2.8 to 3.5x its retained size in intermediates. But the *finished* trees are 62.2 MB and 75.4 MB counting the triangle soup on both sides, because the binary tree holds the caller's soup by reference while the eight-wide one copies what it needs and lets the soup go. **The eight-wide tree is the larger object.** The win is in the builder's peak, not in what it leaves behind.
+
+Nine rounds is a floor, not a luxury, and this is the measurement that taught us so. At five rounds, one bake's binary arm read 674 / 1300 / 1701 / 1257 / 1425 ms and put the topology at 1.72x and the product at 12.95x. At nine rounds it settles to 1.11x and 8.82x with every round inside 670 to 801 ms. A single wall-clock sample per arm — which is what this measurement used to take — cannot separate a 1.1x effect from that kind of noise.
+
+Two things did hold up under attack. The tree's structural digest is identical at one thread and at thirty-two on all four bakes, so the parallel column is the same tree built faster rather than a different tree built sloppily. And the memory instrument was checked against itself: large-object-heap compaction before every live-set reading turned out to change nothing on that machine, and it stays anyway, because without it the difference between two builders with different large-array habits is part fragmentation and part live set with no way to size the shares after the fact.
+
+## Highlights and clips
+
+A highlight is a per-round "did this happen", and its match-scoped `.count` is how many rounds it fired — the idiomatic way to turn "this round I did X" into a match total.
+
+Every firing comes back on `AnalysisRun.Highlights` stamped with a frame-clock tick, and `CS2DemoKit.Analysis.Clips` turns those into clip windows: a frame-clock round authority, a surfacing step that drops hidden firings and collapses grouped families to their top tier (you want the 4K, not the 4K *and* the three 2Ks inside it), and per-round window computation with reach-back and coalescing.
+
+A multi-kill sequence longer than the lead-in reaches back to the tick of the *first* kill in the sequence rather than clipping from the last one — and that reach-back applies before the round-start floor, so a clip can never bleed into the previous round. Coalescing is order-independent and translation-invariant by construction.
+
+The discipline that keeps this from becoming a nightmare is that everything stays in frame clock, start to finish. Any tick-space offset a downstream renderer needs is applied exactly once, at emission, never inside the plan. Double-applied tick offsets are endemic in demo tooling and they produce clips that are plausibly-but-wrongly placed, which is the hardest kind of wrong to notice.
+
+## How this compares to other tools
+
+{/* ─────────────────────────────────────────────────────────────────────────
+    PLACEHOLDER. See docs/perf/cross-parser-comparison.md in the CS2DemoKit
+    repo for methodology. This post owns workload W4 (demo to scoreboard) and
+    the line-of-sight comparison; Part 1 owns W1 to W3.
+   ───────────────────────────────────────────────────────────────────────── */}
+
+Part 1 explains why we have not published a parser head-to-head yet and what it will take to do one fairly. The analysis engine is a harder case still, because most of it has nothing to compare against.
+
+A rule-driven evaluator over a declarative stat language is not a thing other CS2 tools have. Benchmarking it against a hand-written stats script measures which numbers each project happened to implement, not which engine is faster — and we could pick the workload to win that every time, which is exactly why it would be worthless.
+
+Two things in here *are* comparable, and both are on the list.
+
+**End-to-end: demo file to a finished scoreboard.** This is what a user actually waits for, it is the workload where the analysis layer's cost shows up honestly, and several tools do exactly it. The awkwardness is defining a common output — two tools that both produce "a scoreboard" may compute ADR over different denominators. The plan is to compare only the columns that are unambiguous (kills, deaths, assists, headshot counts, damage) and to gate on those agreeing before any clock is read.
+
+**Line of sight.** Geometric visibility recomputed from map geometry is rare in demo tooling, and where it exists it is usually point-to-point between two eye positions. Ours samples up to six body anchors with viewer-relative shoulder offsets and splits exposure from vision. Those are different answers, not just different speeds, so the comparison has to report both: rays per second *and* how often the two approaches disagree on a verdict. A faster engine that answers a coarser question is not faster.
+
+{/* TBD — W4 table and the LOS comparison. Same column shape as Part 1.
+    LOS needs an extra column: verdict-disagreement rate against the anchor-sampling
+    reference, otherwise a point-to-point arm looks fast for the wrong reason. */}
+
+Not measured yet. Same rules as everywhere else in this project: the harness ships with the numbers, and the losses go in the same table as the wins.
+
+## Golden tests that cannot lie
+
+One practice deserves its own section, because we got it wrong first and the failure is instructive.
+
+Regression for the whole stats stack is anchored by golden files: a provider-neutral document per demo, committed, compared at zero tolerance against a fresh full engine run.
+
+The previous design compared two committed files. Both were produced by the same pipeline, so they agreed *by construction*. The suite reported green for six weeks across a real regression, because there was no way for it to do anything else.
+
+The fix is a posture rather than a clever mechanism. Only `expected` is ever committed. `ours` is always recomputed from a full engine run, every time. And a re-pin run — regenerating the expectation after an intentional change — deliberately ends in a *skip* rather than a pass, so a regeneration can never be mistaken for a test that asserted something.
+
+The same instinct shows up elsewhere. Corpus goldens commit structural counts plus a SHA-256 of the full rendering, which pins every value without putting real players' names in a public repository. An external parser's entity-field readings are frozen into a fixture rather than called live, so the oracle never becomes a build dependency.
+
+A regression gate is only real if one side of the diff is computed fresh. That sounds obvious written down. It was not obvious while the suite was green.
+
+## What else we check
+
+Briefly, because it is the reason the numbers above can be stated as facts rather than impressions.
+
+**Generated artifacts are committed and gated.** The rules catalogue and editor schema are generated from the engine's own registries, then committed — and a test fails the build if the committed copy is stale.
+
+**Determinism is tested, not assumed.** Parallel tree builds are checked for digest identity against serial ones. The parallel digest fold is checked against the sequential fold. The eight-wide traversal is checked against a brute-force oracle, including the degenerate cases: zero-length directions, negative zero, origins exactly on a box face, zero-extent boxes.
+
+**The benchmark harness refuses to mix incomparable data.** One process per measurement, a discarded warm-up per process, the machine's one-minute load average stamped on every row, and workstation GC on purpose — because server GC hides the collector and the collector is roughly a third of this pipeline. When the row shape changed to add the ray columns, the comparison tool started refusing to file old rows beside new ones rather than averaging across a schema change.
+
+None of that is glamorous. All of it is why the section above could say "this number does not reproduce" with confidence rather than with a shrug.
+
+## Next
+
+[Part 3](../cs2demokit-rules/) covers the rules language itself — the vocabulary, how a YAML file becomes a compiled graph, why the new compiler's back end is deliberately the old compiler, and the specific design choices that exist to stop a rule from quietly producing a wrong number instead of loudly failing.
+
+In the meantime, `docs/RULES_AUTHORING.md` in the repo is the hands-on guide, and `docs/perf/baseline.md` has every measurement quoted here with its raw rows beside it.
