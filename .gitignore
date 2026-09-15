@@ -14,3 +14,6 @@ site/node_modules/
 site/dist/
 site/.astro/
 site/public/generated/
+
+# Local research / scratch notes and diagram sources. Never committed.
+.scratch/
