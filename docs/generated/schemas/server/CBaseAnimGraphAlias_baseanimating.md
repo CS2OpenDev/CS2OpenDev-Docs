@@ -8,7 +8,7 @@ kind: class
 
 # CBaseAnimGraphAlias_baseanimating
 
-> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 2624 bytes (`0xa40`) · **Align:** 16 · **Module:** server
 

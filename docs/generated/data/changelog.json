@@ -3,19 +3,8 @@
     {
       "added": [],
       "added_count": 0,
-      "changed": [
-        {
-          "field_changes": [
-            {
-              "field": "field_count",
-              "new_value": "106",
-              "old_value": "108"
-            }
-          ],
-          "name": "server.dll/CCSPlayerPawn"
-        }
-      ],
-      "changed_count": 1,
+      "changed": [],
+      "changed_count": 0,
       "family": "classes",
       "removed": [],
       "removed_count": 0,
@@ -32,18 +21,13 @@
       "truncated": false
     },
     {
-      "added": [
-        "cl_demo_freecam",
-        "r_csgo_sky_occluder"
-      ],
-      "added_count": 2,
+      "added": [],
+      "added_count": 0,
       "changed": [],
       "changed_count": 0,
       "family": "convars",
-      "removed": [
-        "demo_mouse_enable_binding"
-      ],
-      "removed_count": 1,
+      "removed": [],
+      "removed_count": 0,
       "truncated": false
     },
     {
@@ -67,9 +51,9 @@
       "truncated": false
     }
   ],
-  "from_build": "25815307",
-  "no_changes": false,
+  "from_build": "25947352",
+  "no_changes": true,
   "platform": "windows-x86_64",
-  "schema_history_anchor": "25815307-25947352",
-  "to_build": "25947352"
+  "schema_history_anchor": "25947352-25966348",
+  "to_build": "25966348"
 }

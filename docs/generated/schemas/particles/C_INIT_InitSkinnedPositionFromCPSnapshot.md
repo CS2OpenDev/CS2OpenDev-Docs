@@ -8,7 +8,7 @@ kind: class
 
 # C_INIT_InitSkinnedPositionFromCPSnapshot
 
-> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 920 bytes (`0x398`) · **Align:** 8 · **Module:** particles
 

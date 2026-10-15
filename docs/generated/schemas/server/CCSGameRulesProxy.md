@@ -8,7 +8,7 @@ kind: class
 
 # CCSGameRulesProxy
 
-> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 Networked proxy entity that carries CCSGameRules to clients.  Clients and demo parsers read round state via this entity's game-rules pointer (see AGENTS.md).
 

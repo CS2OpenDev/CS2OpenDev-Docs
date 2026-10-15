@@ -8,7 +8,7 @@ kind: class
 
 # CBodyComponentBaseAnimGraph
 
-> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 2992 bytes (`0xbb0`) · **Align:** n/a (unspecified) · **Module:** client
 

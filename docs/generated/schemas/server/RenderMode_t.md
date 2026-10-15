@@ -8,7 +8,7 @@ kind: enum
 
 # RenderMode_t
 
-> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 Transparency / rendering method for a model entity (m_nRenderMode).
 

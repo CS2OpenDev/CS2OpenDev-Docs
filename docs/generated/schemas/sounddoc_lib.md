@@ -5,7 +5,7 @@ module: sounddoc_lib
 
 # Module: sounddoc_lib
 
-> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 [📊 View UML Diagram](../diagrams/sounddoc_lib.md)
 

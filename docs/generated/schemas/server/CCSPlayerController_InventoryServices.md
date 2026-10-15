@@ -8,7 +8,7 @@ kind: class
 
 # CCSPlayerController_InventoryServices
 
-> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 Loadout and persona component of CCSPlayerController: equipped items, music kit, rank, and public-profile data.
 

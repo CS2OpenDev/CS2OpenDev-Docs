@@ -8,7 +8,7 @@ kind: class
 
 # CVoiceContainerVsndTrigger
 
-> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 2296 bytes (`0x8f8`) · **Align:** 8 · **Module:** soundsystem_voicecontainers
 

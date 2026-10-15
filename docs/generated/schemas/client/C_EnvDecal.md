@@ -8,7 +8,7 @@ kind: class
 
 # C_EnvDecal
 
-> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 4304 bytes (`0x10d0`) · **Align:** 8 · **Module:** client
 

@@ -8,7 +8,7 @@ kind: enum
 
 # loadout_slot_t
 
-> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 Full per-loadout equipment-slot enumeration (weapons, grenades, and cosmetic/agent slots).  Used to index CCSPlayerController_InventoryServices loadout data.
 

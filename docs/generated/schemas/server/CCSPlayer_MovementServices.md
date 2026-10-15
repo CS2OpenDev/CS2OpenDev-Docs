@@ -8,7 +8,7 @@ kind: class
 
 # CCSPlayer_MovementServices
 
-> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 CS2-specific movement state layered on CPlayer_MovementServices: crouch / duck, ladder, and water state used by movement prediction.
 

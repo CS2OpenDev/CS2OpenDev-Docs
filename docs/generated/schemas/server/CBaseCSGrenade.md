@@ -8,7 +8,7 @@ kind: class
 
 # CBaseCSGrenade
 
-> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 Base class for a held (in-hand) grenade weapon before it is thrown — pin/throw state.  The thrown object is a CBaseCSGrenadeProjectile.
 

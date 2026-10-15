@@ -8,7 +8,7 @@ kind: class
 
 # CEnvSky
 
-> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 2224 bytes (`0x8b0`) · **Align:** 8 · **Module:** server
 

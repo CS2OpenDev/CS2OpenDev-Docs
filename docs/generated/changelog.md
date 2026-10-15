@@ -4,20 +4,10 @@ title: Changelog
 
 # Build Changelog
 
-> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-Difference between build **25815307** and **25947352** (`windows-x86_64`), grouped by data family.
+Difference between build **25947352** and **25966348** (`windows-x86_64`), grouped by data family.
 
 Families diffed: `classes`, `enums`, `convars`, `commands`, `engine_constants`.
 
-## classes (+0 / −0 / ~1)
-
-| Entry | Field changes |
-|-------|---------------|
-| `server.dll/CCSPlayerPawn` | field_count: `108` → `106` |
-
-## convars (+2 / −1 / ~0)
-
-**Added:** `cl_demo_freecam`, `r_csgo_sky_occluder`
-
-**Removed:** `demo_mouse_enable_binding`
+No changes in classes, enums, convars, commands, engine_constants between build 25947352 and 25966348. Field-level history for every build is on the [Schema History](schema-history.md#transitions-with-structural-changes) page.

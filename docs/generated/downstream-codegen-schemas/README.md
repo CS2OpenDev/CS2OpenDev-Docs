@@ -9,7 +9,7 @@ source instead of a chain of third-party dumps.
 ## Platform & provenance
 
 Every file here projects **one** `(build, platform)` artifact set:
-`windows-x86_64` (CS2 build `25947352`).  The `build_id` (the Steam CS2 game build,
+`windows-x86_64` (CS2 build `25966348`).  The `build_id` (the Steam CS2 game build,
 numeric and monotonic) and `platform` are stamped into each schema's header
 alongside the walker `revision` and the build timestamps — read them there
 rather than assuming.

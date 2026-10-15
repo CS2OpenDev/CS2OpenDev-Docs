@@ -4,7 +4,7 @@ title: Game Modes
 
 # Game Modes & Map Groups
 
-> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 Game types and their nested game modes (from `gamemodes.txt`): max players, map groups, and per-mode convar overrides.
 

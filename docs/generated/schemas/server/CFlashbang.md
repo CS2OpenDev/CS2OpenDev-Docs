@@ -8,7 +8,7 @@ kind: class
 
 # CFlashbang
 
-> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 The flashbang grenade weapon (held form).  Detonation blinds nearby players; the resulting blind duration is applied to the affected pawns.
 
