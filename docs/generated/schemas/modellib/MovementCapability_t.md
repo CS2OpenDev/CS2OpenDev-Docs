@@ -8,7 +8,7 @@ kind: enum
 
 # MovementCapability_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** modellib
 
@@ -25,4 +25,5 @@ kind: enum
 | `ePlantedTurn` | 6 | Planted Turn |
 | `eUseStartAsPlantedTurn` | 7 | Stop/Start Planted Turn |
 | `eLean` | 8 | Lean |
-| `eCount` | 9 |  |
+| `eForwardStartOnly` | 9 | Forward Start Only |
+| `eCount` | 10 |  |

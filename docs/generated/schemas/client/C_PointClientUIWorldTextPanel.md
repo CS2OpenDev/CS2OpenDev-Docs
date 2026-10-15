@@ -8,9 +8,9 @@ kind: class
 
 # C_PointClientUIWorldTextPanel
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 5136 bytes (`0x1410`) · **Align:** 16 · **Module:** client
+**Kind:** class · **Size:** 5376 bytes (`0x1500`) · **Align:** 16 · **Module:** client
 
 **Inherits from:** [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md)
 
@@ -27,7 +27,7 @@ classDiagram
 
 ## Memory layout
 
-164 fields (1 declared here, 163 inherited). Offsets are absolute from the object base.
+168 fields (1 declared here, 167 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -116,82 +116,86 @@ classDiagram
 | `0x5e2` | `m_bSimulationTimeChanged` | bool | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
 | `0x5f0` | `m_sUniqueHammerID` | CUtlString | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
 | `0x5f8` | `m_nBloodType` | [BloodType](../server/BloodType.md) | [C_BaseEntity](../client/C_BaseEntity.md) |  |
-| `0xaf0` | `m_CRenderComponent` | [CRenderComponent](../client/CRenderComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xaf8` | `m_CHitboxComponent` | [CHitboxComponent](../client/CHitboxComponent.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb10` | `m_pChoreoComponent` | [CChoreoComponent](../client/CChoreoComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb18` | `m_nDestructiblePartInitialStateDestructed0` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb1c` | `m_nDestructiblePartInitialStateDestructed1` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb20` | `m_nDestructiblePartInitialStateDestructed2` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb24` | `m_nDestructiblePartInitialStateDestructed3` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb28` | `m_nDestructiblePartInitialStateDestructed4` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb2c` | `m_nDestructiblePartInitialStateDestructed0_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb30` | `m_nDestructiblePartInitialStateDestructed1_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb34` | `m_nDestructiblePartInitialStateDestructed2_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb38` | `m_nDestructiblePartInitialStateDestructed3_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb3c` | `m_nDestructiblePartInitialStateDestructed4_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb40` | `m_bDestructiblePartInitialStateDestructed0_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb41` | `m_bDestructiblePartInitialStateDestructed1_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb42` | `m_bDestructiblePartInitialStateDestructed2_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb43` | `m_bDestructiblePartInitialStateDestructed3_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb44` | `m_bDestructiblePartInitialStateDestructed4_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb48` | `m_pDestructiblePartsSystemComponent` | [CDestructiblePartsComponent](../client/CDestructiblePartsComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xc70` | `m_bInitModelEffects` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xc71` | `m_bDoingModelEffects` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xc74` | `m_iOldHealth` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xc78` | `m_nRenderMode` | [RenderMode_t](../server/RenderMode_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xc79` | `m_nRenderFX` | [RenderFx_t](../server/RenderFx_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xc7a` | `m_bAllowFadeInView` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xc98` | `m_clrRender` | Color | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xca0` | `m_vecRenderAttributes` | C_UtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../client/EntityRenderAttribute_t.md) > | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xd20` | `m_bRenderToCubemaps` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xd21` | `m_bNoInterpolate` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xd28` | `m_Collision` | [CCollisionProperty](../client/CCollisionProperty.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xde0` | `m_Glow` | [CGlowProperty](../client/CGlowProperty.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe38` | `m_flGlowBackfaceMult` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe3c` | `m_fadeMinDist` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe40` | `m_fadeMaxDist` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe44` | `m_flFadeScale` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe48` | `m_flShadowStrength` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe4c` | `m_nObjectCulling` | uint8 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe4d` | `m_nRequiredDecalRtEncoding` | [DecalRtEncoding_t](../scenesystem/DecalRtEncoding_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe50` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe78` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xf58` | `m_pClientAlphaProperty` | [CClientAlphaProperty](../client/CClientAlphaProperty.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xf60` | `m_ClientOverrideTint` | Color | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xf64` | `m_bUseClientOverrideTint` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xfa0` | `m_bvDisabledHitGroups` | uint32[1] | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
-| `0xfb8` | `m_bEnabled` | bool | [C_BaseClientUIEntity](../client/C_BaseClientUIEntity.md) |  |
-| `0xfc0` | `m_DialogXMLName` | CUtlSymbolLarge | [C_BaseClientUIEntity](../client/C_BaseClientUIEntity.md) |  |
-| `0xfc8` | `m_PanelClassName` | CUtlSymbolLarge | [C_BaseClientUIEntity](../client/C_BaseClientUIEntity.md) |  |
-| `0xfd0` | `m_PanelID` | CUtlSymbolLarge | [C_BaseClientUIEntity](../client/C_BaseClientUIEntity.md) |  |
-| `0xfe8` | `m_bForceRecreateNextUpdate` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) | `MNotSaved` |
-| `0xfe9` | `m_bMoveViewToPlayerNextThink` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) | `MNotSaved` |
-| `0xfea` | `m_bCheckCSSClasses` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) | `MNotSaved` |
-| `0xff0` | `m_anchorDeltaTransform` | CTransform | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) | `MNotSaved` |
-| `0x1180` | `m_pOffScreenIndicator` | [CPointOffScreenIndicatorUi](../client/CPointOffScreenIndicatorUi.md)* | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) | `MNotSaved` |
-| `0x11a8` | `m_bIgnoreInput` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
-| `0x11a9` | `m_bLit` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
-| `0x11aa` | `m_bFollowPlayerAcrossTeleport` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
-| `0x11ac` | `m_flWidth` | float32 | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
-| `0x11b0` | `m_flHeight` | float32 | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
-| `0x11b4` | `m_flDPI` | float32 | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
-| `0x11b8` | `m_flInteractDistance` | float32 | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
-| `0x11bc` | `m_flDepthOffset` | float32 | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
-| `0x11c0` | `m_unOwnerContext` | uint32 | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
-| `0x11c4` | `m_unHorizontalAlign` | uint32 | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
-| `0x11c8` | `m_unVerticalAlign` | uint32 | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
-| `0x11cc` | `m_unOrientation` | uint32 | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
-| `0x11d0` | `m_bAllowInteractionFromAllSceneWorlds` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
-| `0x11d8` | `m_vecCSSClasses` | C_NetworkUtlVectorBase< CUtlSymbolLarge > | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
-| `0x11f0` | `m_bOpaque` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
-| `0x11f1` | `m_bNoDepth` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
-| `0x11f2` | `m_bVisibleWhenParentNoDraw` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
-| `0x11f3` | `m_bRenderBackface` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
-| `0x11f4` | `m_bUseOffScreenIndicator` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
-| `0x11f5` | `m_bExcludeFromSaveGames` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
-| `0x11f6` | `m_bGrabbable` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
-| `0x11f7` | `m_bOnlyRenderToTexture` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
-| `0x11f8` | `m_bDisableMipGen` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
-| `0x11fc` | `m_nExplicitImageLayout` | int32 | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
-| `0x1200` | `m_bIgnoreParentOrientation` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
-| `0x1210` | `m_messageText` | char[512] |  |  |
+| `0xaf8` | `m_CRenderComponent` | [CRenderComponent](../client/CRenderComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0xb00` | `m_CHitboxComponent` | [CHitboxComponent](../client/CHitboxComponent.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb18` | `m_pChoreoComponent` | [CChoreoComponent](../client/CChoreoComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb20` | `m_nDestructiblePartInitialStateDestructed0` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb24` | `m_nDestructiblePartInitialStateDestructed1` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb28` | `m_nDestructiblePartInitialStateDestructed2` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb2c` | `m_nDestructiblePartInitialStateDestructed3` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb30` | `m_nDestructiblePartInitialStateDestructed4` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb34` | `m_nDestructiblePartInitialStateDestructed0_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb38` | `m_nDestructiblePartInitialStateDestructed1_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb3c` | `m_nDestructiblePartInitialStateDestructed2_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb40` | `m_nDestructiblePartInitialStateDestructed3_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb44` | `m_nDestructiblePartInitialStateDestructed4_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb48` | `m_bDestructiblePartInitialStateDestructed0_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb49` | `m_bDestructiblePartInitialStateDestructed1_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb4a` | `m_bDestructiblePartInitialStateDestructed2_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb4b` | `m_bDestructiblePartInitialStateDestructed3_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb4c` | `m_bDestructiblePartInitialStateDestructed4_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb50` | `m_pDestructiblePartsSystemComponent` | [CDestructiblePartsComponent](../client/CDestructiblePartsComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xc78` | `m_bInitModelEffects` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0xc79` | `m_bDoingModelEffects` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0xc7c` | `m_iOldHealth` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0xc80` | `m_nRenderMode` | [RenderMode_t](../server/RenderMode_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xc81` | `m_nRenderFX` | [RenderFx_t](../server/RenderFx_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xc82` | `m_bAllowFadeInView` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xca0` | `m_clrRender` | Color | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xca8` | `m_vecRenderAttributes` | C_UtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../client/EntityRenderAttribute_t.md) > | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xd28` | `m_bRenderToCubemaps` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xd29` | `m_bExpandRenderBoundsToIncludeCloth` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xd2a` | `m_bNoInterpolate` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xd30` | `m_Collision` | [CCollisionProperty](../client/CCollisionProperty.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xde8` | `m_Glow` | [CGlowProperty](../client/CGlowProperty.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe40` | `m_flGlowBackfaceMult` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe44` | `m_fadeMinDist` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe48` | `m_fadeMaxDist` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe4c` | `m_flFadeScale` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe50` | `m_flShadowStrength` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe54` | `m_nObjectCulling` | uint8 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe55` | `m_nRequiredDecalRtEncoding` | [DecalRtEncoding_t](../scenesystem/DecalRtEncoding_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe58` | `m_bodyGroupTotalRequestCount` | uint32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe60` | `m_bodyGroupRequests` | CUtlVectorFixedGrowable< [C_BaseModelEntity::BodyGroupRequest_t](../client/C_BaseModelEntity.BodyGroupRequest_t.md), 8 > | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xf38` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xf60` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0x1040` | `m_pClientAlphaProperty` | [CClientAlphaProperty](../client/CClientAlphaProperty.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0x1048` | `m_ClientOverrideTint` | Color | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0x104c` | `m_bUseClientOverrideTint` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0x1088` | `m_bvDisabledHitGroups` | uint32[1] | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
+| `0x10a0` | `m_bEnabled` | bool | [C_BaseClientUIEntity](../client/C_BaseClientUIEntity.md) |  |
+| `0x10a8` | `m_DialogXMLName` | CUtlSymbolLarge | [C_BaseClientUIEntity](../client/C_BaseClientUIEntity.md) |  |
+| `0x10b0` | `m_PanelClassName` | CUtlSymbolLarge | [C_BaseClientUIEntity](../client/C_BaseClientUIEntity.md) |  |
+| `0x10b8` | `m_PanelID` | CUtlSymbolLarge | [C_BaseClientUIEntity](../client/C_BaseClientUIEntity.md) |  |
+| `0x10d0` | `m_bForceRecreateNextUpdate` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) | `MNotSaved` |
+| `0x10d1` | `m_bMoveViewToPlayerNextThink` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) | `MNotSaved` |
+| `0x10d2` | `m_bCheckCSSClasses` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) | `MNotSaved` |
+| `0x10e0` | `m_anchorDeltaTransform` | CTransform | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) | `MNotSaved` |
+| `0x1270` | `m_pOffScreenIndicator` | [CPointOffScreenIndicatorUi](../client/CPointOffScreenIndicatorUi.md)* | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) | `MNotSaved` |
+| `0x1298` | `m_bIgnoreInput` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x1299` | `m_bLit` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x129a` | `m_bFollowPlayerAcrossTeleport` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x129c` | `m_flWidth` | float32 | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x12a0` | `m_flHeight` | float32 | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x12a4` | `m_flDPI` | float32 | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x12a8` | `m_flWindowUIScale` | float32 | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x12ac` | `m_flInteractDistance` | float32 | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x12b0` | `m_flDepthOffset` | float32 | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x12b4` | `m_unOwnerContext` | uint32 | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x12b8` | `m_unHorizontalAlign` | uint32 | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x12bc` | `m_unVerticalAlign` | uint32 | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x12c0` | `m_unOrientation` | uint32 | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x12c4` | `m_bAllowInteractionFromAllSceneWorlds` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x12c8` | `m_vecCSSClasses` | C_NetworkUtlVectorBase< CUtlSymbolLarge > | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x12e0` | `m_bOpaque` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x12e1` | `m_bNoDepth` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x12e2` | `m_bVisibleWhenParentNoDraw` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x12e3` | `m_bRenderBackface` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x12e4` | `m_bUseOffScreenIndicator` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x12e5` | `m_bExcludeFromSaveGames` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x12e6` | `m_bGrabbable` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x12e7` | `m_bOnlyRenderToTexture` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x12e8` | `m_bDisableMipGen` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x12ec` | `m_nExplicitImageLayout` | int32 | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x12f0` | `m_bIgnoreParentOrientation` | bool | [C_PointClientUIWorldPanel](../client/C_PointClientUIWorldPanel.md) |  |
+| `0x1300` | `m_messageText` | char[512] |  |  |

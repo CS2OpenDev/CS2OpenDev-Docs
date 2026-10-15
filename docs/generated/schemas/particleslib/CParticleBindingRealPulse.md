@@ -8,9 +8,9 @@ kind: class
 
 # CParticleBindingRealPulse
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 304 bytes (`0x130`) · **Align:** n/a (unspecified) · **Module:** particleslib
+**Kind:** class · **Size:** 168 bytes (`0xa8`) · **Align:** n/a (unspecified) · **Module:** particleslib
 
 **Inherits from:** [CParticleCollectionBindingInstance](../particleslib/CParticleCollectionBindingInstance.md)
 
@@ -24,4 +24,4 @@ classDiagram
 
 ## Memory layout
 
-No schema-visible fields (304 bytes of opaque storage).
+No schema-visible fields (168 bytes of opaque storage).

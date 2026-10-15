@@ -8,9 +8,9 @@ kind: class
 
 # CSceneEntity
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 2032 bytes (`0x7f0`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 2048 bytes (`0x800`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CPointEntity](../server/CPointEntity.md)
 
@@ -28,6 +28,7 @@ classDiagram
     CSceneEntity --> CBaseEntity
     CSceneEntity --> CBaseModelEntity
     CSceneEntity *-- CEntityIOOutput
+    CSceneEntity *-- ActorClipEntry_t
     CSceneEntity *-- ActorMapping_t
     CSceneEntity --> CSceneListManager
     CSceneEntity *-- SceneOnPlayerDeath_t
@@ -35,7 +36,7 @@ classDiagram
 
 ## Memory layout
 
-153 fields (65 declared here, 88 inherited). Offsets are absolute from the object base.
+160 fields (72 declared here, 88 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -154,6 +155,7 @@ classDiagram
 | `0x530` | `m_flCurrentTime` | float32 |  |  |
 | `0x534` | `m_flFrameTime` | float32 |  |  |
 | `0x538` | `m_bCancelAtNextInterrupt` | bool |  |  |
+| `0x539` | `m_bRemoveOnCompletion` | bool |  |  |
 | `0x53c` | `m_fPitch` | float32 |  |  |
 | `0x540` | `m_bAutomated` | bool |  |  |
 | `0x544` | `m_nAutomatedAction` | int32 |  |  |
@@ -176,19 +178,25 @@ classDiagram
 | `0x610` | `m_OnPaused` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
 | `0x628` | `m_OnResumed` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
 | `0x640` | `m_OnPulseRequirement` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
-| `0x748` | `m_ActorMap` | CUtlVector< [ActorMapping_t](../server/ActorMapping_t.md) > |  |  |
+| `0x6d0` | `m_TargetNameMap` | CUtlDict< CUtlSymbolLarge > |  |  |
+| `0x6f8` | `m_AnchorNameMap` | CUtlDict< CUtlSymbolLarge > |  |  |
+| `0x720` | `m_ActorGraphMap` | CUtlDict< CUtlSymbolLarge > |  |  |
+| `0x748` | `m_ActorClipMap` | CUtlDict< [ActorClipEntry_t](../server/ActorClipEntry_t.md) > |  |  |
+| `0x770` | `m_ActorMap` | CUtlVector< [ActorMapping_t](../server/ActorMapping_t.md) > |  |  |
 | `0x788` | `m_hInterruptScene` | CHandle< [CSceneEntity](../server/CSceneEntity.md) > |  |  |
 | `0x78c` | `m_nInterruptCount` | int32 |  |  |
-| `0x790` | `m_bSceneMissing` | bool |  | `MNotSaved` |
-| `0x791` | `m_bInterrupted` | bool |  |  |
-| `0x792` | `m_bCompletedEarly` | bool |  |  |
-| `0x793` | `m_bInterruptSceneFinished` | bool |  |  |
-| `0x794` | `m_bRestoring` | bool |  | `MNotSaved` |
-| `0x798` | `m_hNotifySceneCompletion` | CUtlVector< CHandle< [CSceneEntity](../server/CSceneEntity.md) > > |  |  |
-| `0x7b0` | `m_hListManagers` | CUtlVector< CHandle< [CSceneListManager](../server/CSceneListManager.md) > > |  |  |
-| `0x7c8` | `m_iszSoundName` | CUtlSymbolLarge |  |  |
-| `0x7d0` | `m_iszSequenceName` | CUtlSymbolLarge |  |  |
-| `0x7d8` | `m_hActor` | CHandle< [CBaseModelEntity](../server/CBaseModelEntity.md) > |  |  |
-| `0x7dc` | `m_hActivator` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
-| `0x7e0` | `m_BusyActor` | int32 |  |  |
-| `0x7e4` | `m_iPlayerDeathBehavior` | [SceneOnPlayerDeath_t](../server/SceneOnPlayerDeath_t.md) |  |  |
+| `0x790` | `m_responseConcept` | CUtlString |  |  |
+| `0x798` | `m_responseCriteria` | CUtlString |  |  |
+| `0x7a0` | `m_bSceneMissing` | bool |  | `MNotSaved` |
+| `0x7a1` | `m_bInterrupted` | bool |  |  |
+| `0x7a2` | `m_bCompletedEarly` | bool |  |  |
+| `0x7a3` | `m_bInterruptSceneFinished` | bool |  |  |
+| `0x7a4` | `m_bRestoring` | bool |  | `MNotSaved` |
+| `0x7a8` | `m_hNotifySceneCompletion` | CUtlVector< CHandle< [CSceneEntity](../server/CSceneEntity.md) > > |  |  |
+| `0x7c0` | `m_hListManagers` | CUtlVector< CHandle< [CSceneListManager](../server/CSceneListManager.md) > > |  |  |
+| `0x7d8` | `m_iszSoundName` | CUtlSymbolLarge |  |  |
+| `0x7e0` | `m_iszSequenceName` | CUtlSymbolLarge |  |  |
+| `0x7e8` | `m_hActor` | CHandle< [CBaseModelEntity](../server/CBaseModelEntity.md) > |  |  |
+| `0x7ec` | `m_hActivator` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
+| `0x7f0` | `m_BusyActor` | int32 |  |  |
+| `0x7f4` | `m_iPlayerDeathBehavior` | [SceneOnPlayerDeath_t](../server/SceneOnPlayerDeath_t.md) |  |  |

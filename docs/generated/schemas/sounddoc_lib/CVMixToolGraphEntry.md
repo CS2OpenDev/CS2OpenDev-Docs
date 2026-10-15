@@ -8,49 +8,61 @@ kind: class
 
 # CVMixToolGraphEntry
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 152 bytes (`0x98`) · **Align:** 8 · **Module:** sounddoc_lib
+
+**Inherits from:** [CVMixToolGraph](../sounddoc_lib/CVMixToolGraph.md)
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CVMixToolGraphEntry *-- CVMixToolGraph
-    CVMixToolGraphEntry *-- CGraphEditorState
+    CVMixToolGraph <|-- CVMixToolGraphEntry
     CVMixToolGraphEntry *-- CGraphPreviewList
+    CVMixToolGraphEntry *-- CGraphEditorState
 ```
 
 ## Memory layout
 
-3 fields (3 declared here, 0 inherited). Offsets are absolute from the object base.
+8 fields (2 declared here, 6 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_graph` | [CVMixToolGraph](../sounddoc_lib/CVMixToolGraph.md) |  |  |
-| `0x48` | `m_editorState` | [CGraphEditorState](../sounddoc_lib/CGraphEditorState.md) |  |  |
-| `0x70` | `m_graphPreview` | [CGraphPreviewList](../sounddoc_lib/CGraphPreviewList.md) |  |  |
+| `0x0` | `m_name` | CUtlString | [CVMixToolGraph](../sounddoc_lib/CVMixToolGraph.md) | `MKV3TransferName Name` |
+| `0x8` | `m_nGraphOutputChannels` | int32 | [CVMixToolGraph](../sounddoc_lib/CVMixToolGraph.md) |  |
+| `0xc` | `m_bIsMainGraph` | bool | [CVMixToolGraph](../sounddoc_lib/CVMixToolGraph.md) |  |
+| `0x10` | `m_nPreviewNode` | int32 | [CVMixToolGraph](../sounddoc_lib/CVMixToolGraph.md) |  |
+| `0x18` | `m_editorNodes` | CUtlVector< [CVMixEditorNode](../sounddoc_lib/CVMixEditorNode.md) > | [CVMixToolGraph](../sounddoc_lib/CVMixToolGraph.md) | `MKV3TransferName m_EditorNodes` |
+| `0x30` | `m_editorEdges` | CUtlVector< [CVMixEditorEdge](../sounddoc_lib/CVMixEditorEdge.md) > | [CVMixToolGraph](../sounddoc_lib/CVMixToolGraph.md) | `MKV3TransferName m_EditorEdges` |
+| `0x48` | `m_graphPreview` | [CGraphPreviewList](../sounddoc_lib/CGraphPreviewList.md) |  |  |
+| `0x70` | `m_editorState` | [CGraphEditorState](../sounddoc_lib/CGraphEditorState.md) |  | `MKV3TransferName m_EditorState` |
 
 <details><summary>KV3 class defaults</summary>
 
 <pre>{
-	&quot;m_graph&quot;:
+	&quot;Name&quot;: &quot;&quot;,
+	&quot;m_nGraphOutputChannels&quot;: -1,
+	&quot;m_bIsMainGraph&quot;: false,
+	&quot;m_nPreviewNode&quot;: 0,
+	&quot;m_EditorNodes&quot;:
+	[
+	],
+	&quot;m_EditorEdges&quot;:
+	[
+	],
+	&quot;m_graphPreview&quot;:
 	{
-		&quot;m_graphDescData&quot;:
+		&quot;m_flVolume&quot;: 1.000000,
+		&quot;m_previewList&quot;:
 		{
-			&quot;Name&quot;: &quot;&quot;,
-			&quot;m_nGraphOutputChannels&quot;: -1,
-			&quot;m_bIsMainGraph&quot;: false
-		},
-		&quot;m_editorNodes&quot;:
-		[
-		],
-		&quot;m_editorEdges&quot;:
-		[
-		],
-		&quot;m_nPreviewNode&quot;: 0
+			&quot;m_sounds&quot;:
+			[
+			],
+			&quot;m_bPreviewInGame&quot;: false
+		}
 	},
-	&quot;m_editorState&quot;:
+	&quot;m_EditorState&quot;:
 	{
 		&quot;m_viewConfig&quot;:
 		{
@@ -70,17 +82,6 @@ classDiagram
 				&quot;max&quot;: 1.000000,
 				&quot;scale&quot;: 1.000000
 			}
-		}
-	},
-	&quot;m_graphPreview&quot;:
-	{
-		&quot;m_flVolume&quot;: 1.000000,
-		&quot;m_previewList&quot;:
-		{
-			&quot;m_sounds&quot;:
-			[
-			],
-			&quot;m_bPreviewInGame&quot;: false
 		}
 	}
 }</pre>

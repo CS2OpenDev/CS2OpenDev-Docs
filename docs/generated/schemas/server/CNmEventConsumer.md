@@ -8,17 +8,21 @@ kind: class
 
 # CNmEventConsumer
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 176 bytes (`0xb0`) · **Align:** n/a (unspecified) · **Module:** server
 
-**Derived by:** [CNmEventConsumerAttributes](../server/CNmEventConsumerAttributes.md), [CNmEventConsumerLegacy](../server/CNmEventConsumerLegacy.md), [CNmEventConsumerParticle](../server/CNmEventConsumerParticle.md), [CNmEventConsumerPulse](../server/CNmEventConsumerPulse.md), [CNmEventConsumerSound](../server/CNmEventConsumerSound.md)
+**Derived by:** [CNmEventConsumerAttributes](../server/CNmEventConsumerAttributes.md), [CNmEventConsumerBodyGroup](../server/CNmEventConsumerBodyGroup.md), [CNmEventConsumerCamera](../server/CNmEventConsumerCamera.md), [CNmEventConsumerCloth](../server/CNmEventConsumerCloth.md), [CNmEventConsumerContact](../server/CNmEventConsumerContact.md), [CNmEventConsumerLegacy](../server/CNmEventConsumerLegacy.md), [CNmEventConsumerParticle](../server/CNmEventConsumerParticle.md), [CNmEventConsumerPulse](../server/CNmEventConsumerPulse.md), [CNmEventConsumerSound](../server/CNmEventConsumerSound.md)
 
 **Relationships:**
 
 ```mermaid
 classDiagram
     CNmEventConsumer <|-- CNmEventConsumerAttributes
+    CNmEventConsumer <|-- CNmEventConsumerBodyGroup
+    CNmEventConsumer <|-- CNmEventConsumerCamera
+    CNmEventConsumer <|-- CNmEventConsumerCloth
+    CNmEventConsumer <|-- CNmEventConsumerContact
     CNmEventConsumer <|-- CNmEventConsumerLegacy
     CNmEventConsumer <|-- CNmEventConsumerParticle
     CNmEventConsumer <|-- CNmEventConsumerPulse

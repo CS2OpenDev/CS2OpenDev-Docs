@@ -8,15 +8,15 @@ kind: class
 
 # CBaseModelEntity
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 Extends CBaseEntity with a visible model, collision, glow, and render properties.  Base class for all entities that have a mesh in the world.
 
-**Kind:** class · **Size:** 1904 bytes (`0x770`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 2128 bytes (`0x850`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CBaseEntity](../server/CBaseEntity.md)
 
-**Derived by:** [CBarnLight](../server/CBarnLight.md), [CBaseAnimGraph](../server/CBaseAnimGraph.md), [CBaseClientUIEntity](../server/CBaseClientUIEntity.md), [CBaseToggle](../server/CBaseToggle.md), [CBeam](../server/CBeam.md), [CBreakable](../server/CBreakable.md), [CCashStack](../server/CCashStack.md), [CDynamicLight](../server/CDynamicLight.md), [CEntityBlocker](../server/CEntityBlocker.md), [CEntityDissolve](../server/CEntityDissolve.md), [CEnvDecal](../server/CEnvDecal.md), [CEnvSky](../server/CEnvSky.md), [CFuncBrush](../server/CFuncBrush.md), [CFuncConveyor](../server/CFuncConveyor.md), [CFuncIllusionary](../server/CFuncIllusionary.md), [CFuncInteractionLayerClip](../server/CFuncInteractionLayerClip.md), [CFuncLadder](../server/CFuncLadder.md), [CFuncMover](../server/CFuncMover.md), [CFuncNavBlocker](../server/CFuncNavBlocker.md), [CFuncNavObstruction](../server/CFuncNavObstruction.md), [CFuncRotating](../server/CFuncRotating.md), [CFuncRotator](../server/CFuncRotator.md), [CFuncShatterglass](../server/CFuncShatterglass.md), [CFuncTrackTrain](../server/CFuncTrackTrain.md), [CFuncTrainControls](../server/CFuncTrainControls.md), [CFuncVPhysicsClip](../server/CFuncVPhysicsClip.md), [CFuncVehicleClip](../server/CFuncVehicleClip.md), [CFuncWall](../server/CFuncWall.md), [CFuncWater](../server/CFuncWater.md), [CInferno](../server/CInferno.md), [CItemGenericTriggerHelper](../server/CItemGenericTriggerHelper.md), [CLightEntity](../server/CLightEntity.md), [CMarkupVolume](../server/CMarkupVolume.md), [CModelPointEntity](../server/CModelPointEntity.md), [CParticleSystem](../server/CParticleSystem.md), [CPlatTrigger](../server/CPlatTrigger.md), [CPrecipitationBlocker](../server/CPrecipitationBlocker.md), [CRopeKeyframe](../server/CRopeKeyframe.md), [CRuleEntity](../server/CRuleEntity.md), [CServerOnlyModelEntity](../server/CServerOnlyModelEntity.md), [CShatterGlassShardPhysics](../server/CShatterGlassShardPhysics.md), [CSpotlightEnd](../server/CSpotlightEnd.md), [CSprite](../server/CSprite.md), [CTextureBasedAnimatable](../server/CTextureBasedAnimatable.md), [CTriggerBrush](../server/CTriggerBrush.md), [CTriggerVolume](../server/CTriggerVolume.md), [CWorld](../server/CWorld.md)
+**Derived by:** [CBarnLight](../server/CBarnLight.md), [CBaseAnimGraph](../server/CBaseAnimGraph.md), [CBaseClientUIEntity](../server/CBaseClientUIEntity.md), [CBaseToggle](../server/CBaseToggle.md), [CBeam](../server/CBeam.md), [CBreakable](../server/CBreakable.md), [CBrokenGlassTrap](../server/CBrokenGlassTrap.md), [CCashStack](../server/CCashStack.md), [CDynamicLight](../server/CDynamicLight.md), [CEntityBlocker](../server/CEntityBlocker.md), [CEntityDissolve](../server/CEntityDissolve.md), [CEnvDecal](../server/CEnvDecal.md), [CEnvSky](../server/CEnvSky.md), [CFuncBrush](../server/CFuncBrush.md), [CFuncConveyor](../server/CFuncConveyor.md), [CFuncIllusionary](../server/CFuncIllusionary.md), [CFuncInteractionLayerClip](../server/CFuncInteractionLayerClip.md), [CFuncLadder](../server/CFuncLadder.md), [CFuncMover](../server/CFuncMover.md), [CFuncNavBlocker](../server/CFuncNavBlocker.md), [CFuncNavObstruction](../server/CFuncNavObstruction.md), [CFuncRotating](../server/CFuncRotating.md), [CFuncRotator](../server/CFuncRotator.md), [CFuncShatterglass](../server/CFuncShatterglass.md), [CFuncTrackTrain](../server/CFuncTrackTrain.md), [CFuncTrainControls](../server/CFuncTrainControls.md), [CFuncVPhysicsClip](../server/CFuncVPhysicsClip.md), [CFuncVehicleClip](../server/CFuncVehicleClip.md), [CFuncWall](../server/CFuncWall.md), [CFuncWater](../server/CFuncWater.md), [CInferno](../server/CInferno.md), [CItemGenericTriggerHelper](../server/CItemGenericTriggerHelper.md), [CLightEntity](../server/CLightEntity.md), [CMarkupVolume](../server/CMarkupVolume.md), [CModelPointEntity](../server/CModelPointEntity.md), [CParticleSystem](../server/CParticleSystem.md), [CPlatTrigger](../server/CPlatTrigger.md), [CPrecipitationBlocker](../server/CPrecipitationBlocker.md), [CRopeKeyframe](../server/CRopeKeyframe.md), [CRuleEntity](../server/CRuleEntity.md), [CServerOnlyModelEntity](../server/CServerOnlyModelEntity.md), [CShatterGlassShardPhysics](../server/CShatterGlassShardPhysics.md), [CSpotlightEnd](../server/CSpotlightEnd.md), [CSprite](../server/CSprite.md), [CTextureBasedAnimatable](../server/CTextureBasedAnimatable.md), [CTriggerBrush](../server/CTriggerBrush.md), [CTriggerVolume](../server/CTriggerVolume.md), [CWorld](../server/CWorld.md)
 
 **Relationships:**
 
@@ -25,6 +25,7 @@ classDiagram
     CBaseEntity <|-- CBaseModelEntity
     CEntityInstance <|-- CBaseEntity
     CBaseModelEntity <|-- CBaseAnimGraph
+    CBaseModelEntity <|-- CBrokenGlassTrap
     CBaseModelEntity <|-- CCashStack
     CBaseModelEntity <|-- CFuncWater
     CBaseModelEntity <|-- CServerOnlyModelEntity
@@ -85,7 +86,7 @@ classDiagram
 
 ## Memory layout
 
-128 fields (40 declared here, 88 inherited). Offsets are absolute from the object base.
+131 fields (43 declared here, 88 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -205,7 +206,8 @@ classDiagram
 | `0x570` | `m_clrRender` | Color |  | RGBA tint colour multiplied onto the entity's diffuse texture. |
 | `0x578` | `m_vecRenderAttributes` | CUtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../server/EntityRenderAttribute_t.md) > |  |  |
 | `0x5e0` | `m_bRenderToCubemaps` | bool |  |  |
-| `0x5e1` | `m_bNoInterpolate` | bool |  |  |
+| `0x5e1` | `m_bExpandRenderBoundsToIncludeCloth` | bool |  |  |
+| `0x5e2` | `m_bNoInterpolate` | bool |  |  |
 | `0x5e8` | `m_Collision` | [CCollisionProperty](../server/CCollisionProperty.md) |  | CCollisionProperty struct encoding the entity's collision bounding box shape and flags. |
 | `0x6a0` | `m_Glow` | [CGlowProperty](../server/CGlowProperty.md) |  | CGlowProperty struct controlling the entity's glow outline (colour, radius, visibility rules). |
 | `0x6f8` | `m_flGlowBackfaceMult` | float32 |  | Multiplier for the glow effect on back-facing surfaces of the model. |
@@ -214,6 +216,8 @@ classDiagram
 | `0x704` | `m_flFadeScale` | float32 |  | Scale factor applied to fade distances; 0 disables distance fading. |
 | `0x708` | `m_flShadowStrength` | float32 |  | Opacity of this entity's cast shadow (0 = no shadow, 1 = full shadow). |
 | `0x70c` | `m_nObjectCulling` | uint8 |  |  |
-| `0x710` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > |  |  |
-| `0x738` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) |  | Offset from the entity origin to the player's view position (eye height). |
-| `0x768` | `m_bvDisabledHitGroups` | uint32[1] |  | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
+| `0x710` | `m_bodyGroupTotalRequestCount` | uint32 |  |  |
+| `0x718` | `m_bodyGroupRequests` | CUtlVectorFixedGrowable< [CBaseModelEntity::BodyGroupRequest_t](../server/CBaseModelEntity.BodyGroupRequest_t.md), 8 > |  |  |
+| `0x7f0` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > |  |  |
+| `0x818` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) |  | Offset from the entity origin to the player's view position (eye height). |
+| `0x848` | `m_bvDisabledHitGroups` | uint32[1] |  | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |

@@ -8,7 +8,7 @@ kind: enum
 
 # ParticleFloatMapType_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** particleslib
 
@@ -24,4 +24,7 @@ kind: enum
 | `PF_MAP_TYPE_CURVE` | 4 |  |
 | `PF_MAP_TYPE_NOTCHED` | 5 |  |
 | `PF_MAP_TYPE_ROUND` | 6 |  |
-| `PF_MAP_TYPE_COUNT` | 7 |  |
+| `PF_MAP_TYPE_MIN` | 7 |  |
+| `PF_MAP_TYPE_MAX` | 8 |  |
+| `PF_MAP_TYPE_MOD` | 9 |  |
+| `PF_MAP_TYPE_COUNT` | 10 |  |

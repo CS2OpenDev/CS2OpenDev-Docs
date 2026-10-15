@@ -8,9 +8,9 @@ kind: class
 
 # CInstancedSceneEntity
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 2056 bytes (`0x808`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 2072 bytes (`0x818`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CSceneEntity](../server/CSceneEntity.md)
 
@@ -27,7 +27,7 @@ classDiagram
 
 ## Memory layout
 
-160 fields (7 declared here, 153 inherited). Offsets are absolute from the object base.
+166 fields (6 declared here, 160 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -146,6 +146,7 @@ classDiagram
 | `0x530` | `m_flCurrentTime` | float32 | [CSceneEntity](../server/CSceneEntity.md) |  |
 | `0x534` | `m_flFrameTime` | float32 | [CSceneEntity](../server/CSceneEntity.md) |  |
 | `0x538` | `m_bCancelAtNextInterrupt` | bool | [CSceneEntity](../server/CSceneEntity.md) |  |
+| `0x539` | `m_bRemoveOnCompletion` | bool | [CSceneEntity](../server/CSceneEntity.md) |  |
 | `0x53c` | `m_fPitch` | float32 | [CSceneEntity](../server/CSceneEntity.md) |  |
 | `0x540` | `m_bAutomated` | bool | [CSceneEntity](../server/CSceneEntity.md) |  |
 | `0x544` | `m_nAutomatedAction` | int32 | [CSceneEntity](../server/CSceneEntity.md) |  |
@@ -168,26 +169,31 @@ classDiagram
 | `0x610` | `m_OnPaused` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CSceneEntity](../server/CSceneEntity.md) |  |
 | `0x628` | `m_OnResumed` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CSceneEntity](../server/CSceneEntity.md) |  |
 | `0x640` | `m_OnPulseRequirement` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CSceneEntity](../server/CSceneEntity.md) |  |
-| `0x748` | `m_ActorMap` | CUtlVector< [ActorMapping_t](../server/ActorMapping_t.md) > | [CSceneEntity](../server/CSceneEntity.md) |  |
+| `0x6d0` | `m_TargetNameMap` | CUtlDict< CUtlSymbolLarge > | [CSceneEntity](../server/CSceneEntity.md) |  |
+| `0x6f8` | `m_AnchorNameMap` | CUtlDict< CUtlSymbolLarge > | [CSceneEntity](../server/CSceneEntity.md) |  |
+| `0x720` | `m_ActorGraphMap` | CUtlDict< CUtlSymbolLarge > | [CSceneEntity](../server/CSceneEntity.md) |  |
+| `0x748` | `m_ActorClipMap` | CUtlDict< [ActorClipEntry_t](../server/ActorClipEntry_t.md) > | [CSceneEntity](../server/CSceneEntity.md) |  |
+| `0x770` | `m_ActorMap` | CUtlVector< [ActorMapping_t](../server/ActorMapping_t.md) > | [CSceneEntity](../server/CSceneEntity.md) |  |
 | `0x788` | `m_hInterruptScene` | CHandle< [CSceneEntity](../server/CSceneEntity.md) > | [CSceneEntity](../server/CSceneEntity.md) |  |
 | `0x78c` | `m_nInterruptCount` | int32 | [CSceneEntity](../server/CSceneEntity.md) |  |
-| `0x790` | `m_bSceneMissing` | bool | [CSceneEntity](../server/CSceneEntity.md) | `MNotSaved` |
-| `0x791` | `m_bInterrupted` | bool | [CSceneEntity](../server/CSceneEntity.md) |  |
-| `0x792` | `m_bCompletedEarly` | bool | [CSceneEntity](../server/CSceneEntity.md) |  |
-| `0x793` | `m_bInterruptSceneFinished` | bool | [CSceneEntity](../server/CSceneEntity.md) |  |
-| `0x794` | `m_bRestoring` | bool | [CSceneEntity](../server/CSceneEntity.md) | `MNotSaved` |
-| `0x798` | `m_hNotifySceneCompletion` | CUtlVector< CHandle< [CSceneEntity](../server/CSceneEntity.md) > > | [CSceneEntity](../server/CSceneEntity.md) |  |
-| `0x7b0` | `m_hListManagers` | CUtlVector< CHandle< [CSceneListManager](../server/CSceneListManager.md) > > | [CSceneEntity](../server/CSceneEntity.md) |  |
-| `0x7c8` | `m_iszSoundName` | CUtlSymbolLarge | [CSceneEntity](../server/CSceneEntity.md) |  |
-| `0x7d0` | `m_iszSequenceName` | CUtlSymbolLarge | [CSceneEntity](../server/CSceneEntity.md) |  |
-| `0x7d8` | `m_hActor` | CHandle< [CBaseModelEntity](../server/CBaseModelEntity.md) > | [CSceneEntity](../server/CSceneEntity.md) |  |
-| `0x7dc` | `m_hActivator` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CSceneEntity](../server/CSceneEntity.md) |  |
-| `0x7e0` | `m_BusyActor` | int32 | [CSceneEntity](../server/CSceneEntity.md) |  |
-| `0x7e4` | `m_iPlayerDeathBehavior` | [SceneOnPlayerDeath_t](../server/SceneOnPlayerDeath_t.md) | [CSceneEntity](../server/CSceneEntity.md) |  |
-| `0x7f0` | `m_hOwner` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
-| `0x7f4` | `m_bHadOwner` | bool |  |  |
-| `0x7f8` | `m_flPostSpeakDelay` | float32 |  |  |
-| `0x7fc` | `m_flPreDelay` | float32 |  |  |
-| `0x800` | `m_bIsBackground` | bool |  |  |
-| `0x801` | `m_bRemoveOnCompletion` | bool |  |  |
-| `0x804` | `m_hTarget` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
+| `0x790` | `m_responseConcept` | CUtlString | [CSceneEntity](../server/CSceneEntity.md) |  |
+| `0x798` | `m_responseCriteria` | CUtlString | [CSceneEntity](../server/CSceneEntity.md) |  |
+| `0x7a0` | `m_bSceneMissing` | bool | [CSceneEntity](../server/CSceneEntity.md) | `MNotSaved` |
+| `0x7a1` | `m_bInterrupted` | bool | [CSceneEntity](../server/CSceneEntity.md) |  |
+| `0x7a2` | `m_bCompletedEarly` | bool | [CSceneEntity](../server/CSceneEntity.md) |  |
+| `0x7a3` | `m_bInterruptSceneFinished` | bool | [CSceneEntity](../server/CSceneEntity.md) |  |
+| `0x7a4` | `m_bRestoring` | bool | [CSceneEntity](../server/CSceneEntity.md) | `MNotSaved` |
+| `0x7a8` | `m_hNotifySceneCompletion` | CUtlVector< CHandle< [CSceneEntity](../server/CSceneEntity.md) > > | [CSceneEntity](../server/CSceneEntity.md) |  |
+| `0x7c0` | `m_hListManagers` | CUtlVector< CHandle< [CSceneListManager](../server/CSceneListManager.md) > > | [CSceneEntity](../server/CSceneEntity.md) |  |
+| `0x7d8` | `m_iszSoundName` | CUtlSymbolLarge | [CSceneEntity](../server/CSceneEntity.md) |  |
+| `0x7e0` | `m_iszSequenceName` | CUtlSymbolLarge | [CSceneEntity](../server/CSceneEntity.md) |  |
+| `0x7e8` | `m_hActor` | CHandle< [CBaseModelEntity](../server/CBaseModelEntity.md) > | [CSceneEntity](../server/CSceneEntity.md) |  |
+| `0x7ec` | `m_hActivator` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CSceneEntity](../server/CSceneEntity.md) |  |
+| `0x7f0` | `m_BusyActor` | int32 | [CSceneEntity](../server/CSceneEntity.md) |  |
+| `0x7f4` | `m_iPlayerDeathBehavior` | [SceneOnPlayerDeath_t](../server/SceneOnPlayerDeath_t.md) | [CSceneEntity](../server/CSceneEntity.md) |  |
+| `0x800` | `m_hOwner` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
+| `0x804` | `m_bHadOwner` | bool |  |  |
+| `0x808` | `m_flPostSpeakDelay` | float32 |  |  |
+| `0x80c` | `m_flPreDelay` | float32 |  |  |
+| `0x810` | `m_bIsBackground` | bool |  |  |
+| `0x814` | `m_hTarget` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |

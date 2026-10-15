@@ -8,7 +8,7 @@ kind: enum
 
 # EventTypeSelection_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** particles
 
@@ -27,4 +27,5 @@ kind: enum
 | `PARTICLE_EVENT_TYPE_MASK_USER_2` | 128 | User Event 2 |
 | `PARTICLE_EVENT_TYPE_MASK_USER_3` | 256 | User Event 3 |
 | `PARTICLE_EVENT_TYPE_MASK_USER_4` | 512 | User Event 4 |
-| `PARTICLE_EVENT_TYPE_MASK_KILLED_ON_CULL` | 1024 | Killed on Cull |
+| `PARTICLE_EVENT_TYPE_MASK_KILLED_ON_CULL` | 1024 | Killed by Cull |
+| `PARTICLE_EVENT_TYPE_MASK_CULLED_ON_SPAWN` | 2048 | Culled on Spawn |

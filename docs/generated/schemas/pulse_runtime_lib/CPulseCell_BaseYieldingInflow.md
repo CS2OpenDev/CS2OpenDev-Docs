@@ -8,13 +8,13 @@ kind: class
 
 # CPulseCell_BaseYieldingInflow
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 216 bytes (`0xd8`) · **Align:** n/a (unspecified) · **Module:** pulse_runtime_lib
 
 **Inherits from:** [CPulseCell_BaseFlow](../pulse_runtime_lib/CPulseCell_BaseFlow.md)
 
-**Derived by:** [CPulseCell_BaseLerp](../pulse_runtime_lib/CPulseCell_BaseLerp.md), [CPulseCell_BaseState](../pulse_runtime_lib/CPulseCell_BaseState.md), [CPulseCell_FireCursors](../pulse_runtime_lib/CPulseCell_FireCursors.md), [CPulseCell_Inflow_Wait](../pulse_runtime_lib/CPulseCell_Inflow_Wait.md), [CPulseCell_Inflow_Yield](../pulse_runtime_lib/CPulseCell_Inflow_Yield.md), [CPulseCell_IntervalTimer](../pulse_runtime_lib/CPulseCell_IntervalTimer.md), [CPulseCell_Outflow_ListenForAnimgraphTag](../server/CPulseCell_Outflow_ListenForAnimgraphTag.md), [CPulseCell_Outflow_ListenForEntityOutput](../server/CPulseCell_Outflow_ListenForEntityOutput.md), [CPulseCell_Outflow_PlaySceneBase](../server/CPulseCell_Outflow_PlaySceneBase.md), [CPulseCell_Outflow_PlayVOLine](../server/CPulseCell_Outflow_PlayVOLine.md), [CPulseCell_Outflow_ScriptedSequence](../server/CPulseCell_Outflow_ScriptedSequence.md), [CPulseCell_PlaySequence](../client/CPulseCell_PlaySequence.md), [CPulseCell_PlaySequence](../client/CPulseCell_PlaySequence.md), [CPulseCell_Step_CallExternalMethod](../pulse_runtime_lib/CPulseCell_Step_CallExternalMethod.md), [CPulseCell_TestWaitWithAutoTracepoints](../pulse_system/CPulseCell_TestWaitWithAutoTracepoints.md), [CPulseCell_TestWaitWithCursorState](../pulse_system/CPulseCell_TestWaitWithCursorState.md), [CPulseCell_TestYieldForever](../pulse_system/CPulseCell_TestYieldForever.md), [CPulseCell_TestYieldWithObservables](../pulse_system/CPulseCell_TestYieldWithObservables.md), [CPulseCell_Test_MultiOutflow_WithParams_Yielding](../pulse_system/CPulseCell_Test_MultiOutflow_WithParams_Yielding.md), [CPulseCell_Timeline](../pulse_runtime_lib/CPulseCell_Timeline.md), [CPulseCell_WaitForCursorsWithTagBase](../pulse_runtime_lib/CPulseCell_WaitForCursorsWithTagBase.md), [CPulseCell_WaitForObservable](../pulse_runtime_lib/CPulseCell_WaitForObservable.md)
+**Derived by:** [CPulseCell_ApplyAnimGraphParam](../server/CPulseCell_ApplyAnimGraphParam.md), [CPulseCell_ApplyDynamicAttributeBase](../server/CPulseCell_ApplyDynamicAttributeBase.md), [CPulseCell_ApplyEntityFlags](../server/CPulseCell_ApplyEntityFlags.md), [CPulseCell_ApplyParent](../server/CPulseCell_ApplyParent.md), [CPulseCell_BaseLerp](../pulse_runtime_lib/CPulseCell_BaseLerp.md), [CPulseCell_BaseState](../pulse_runtime_lib/CPulseCell_BaseState.md), [CPulseCell_FireCursors](../pulse_runtime_lib/CPulseCell_FireCursors.md), [CPulseCell_Inflow_Wait](../pulse_runtime_lib/CPulseCell_Inflow_Wait.md), [CPulseCell_Inflow_Yield](../pulse_runtime_lib/CPulseCell_Inflow_Yield.md), [CPulseCell_IntervalTimer](../pulse_runtime_lib/CPulseCell_IntervalTimer.md), [CPulseCell_Outflow_ListenForAnimgraphTag](../server/CPulseCell_Outflow_ListenForAnimgraphTag.md), [CPulseCell_Outflow_ListenForEntityOutput](../server/CPulseCell_Outflow_ListenForEntityOutput.md), [CPulseCell_Outflow_PlaySceneBase](../server/CPulseCell_Outflow_PlaySceneBase.md), [CPulseCell_Outflow_PlayVOLine](../server/CPulseCell_Outflow_PlayVOLine.md), [CPulseCell_Outflow_ScriptedSequence](../server/CPulseCell_Outflow_ScriptedSequence.md), [CPulseCell_PlaySequence](../client/CPulseCell_PlaySequence.md), [CPulseCell_PlaySequence](../client/CPulseCell_PlaySequence.md), [CPulseCell_RaceCursors](../pulse_runtime_lib/CPulseCell_RaceCursors.md), [CPulseCell_Step_CallExternalMethod](../pulse_runtime_lib/CPulseCell_Step_CallExternalMethod.md), [CPulseCell_TestWaitWithAutoTracepoints](../pulse_system/CPulseCell_TestWaitWithAutoTracepoints.md), [CPulseCell_TestWaitWithCursorState](../pulse_system/CPulseCell_TestWaitWithCursorState.md), [CPulseCell_TestYieldForever](../pulse_system/CPulseCell_TestYieldForever.md), [CPulseCell_TestYieldWithObservables](../pulse_system/CPulseCell_TestYieldWithObservables.md), [CPulseCell_Test_MultiOutflow_WithParams_Yielding](../pulse_system/CPulseCell_Test_MultiOutflow_WithParams_Yielding.md), [CPulseCell_Timeline](../pulse_runtime_lib/CPulseCell_Timeline.md), [CPulseCell_WaitForCursorsWithTagBase](../pulse_runtime_lib/CPulseCell_WaitForCursorsWithTagBase.md), [CPulseCell_WaitForObservable](../pulse_runtime_lib/CPulseCell_WaitForObservable.md)
 
 **Metadata:** `MCustomFGDMetadata { standard_yielding_flow = true }`
 
@@ -30,6 +30,7 @@ classDiagram
     CPulseCell_BaseYieldingInflow <|-- CPulseCell_Inflow_Wait
     CPulseCell_BaseYieldingInflow <|-- CPulseCell_Inflow_Yield
     CPulseCell_BaseYieldingInflow <|-- CPulseCell_IntervalTimer
+    CPulseCell_BaseYieldingInflow <|-- CPulseCell_RaceCursors
     CPulseCell_BaseYieldingInflow <|-- CPulseCell_Step_CallExternalMethod
     CPulseCell_BaseYieldingInflow <|-- CPulseCell_Timeline
     CPulseCell_BaseYieldingInflow <|-- CPulseCell_WaitForCursorsWithTagBase
@@ -40,6 +41,10 @@ classDiagram
     CPulseCell_BaseYieldingInflow <|-- CPulseCell_TestYieldForever
     CPulseCell_BaseYieldingInflow <|-- CPulseCell_TestYieldWithObservables
     CPulseCell_BaseYieldingInflow <|-- CPulseCell_Test_MultiOutflow_WithParams_Yielding
+    CPulseCell_BaseYieldingInflow <|-- CPulseCell_ApplyAnimGraphParam
+    CPulseCell_BaseYieldingInflow <|-- CPulseCell_ApplyDynamicAttributeBase
+    CPulseCell_BaseYieldingInflow <|-- CPulseCell_ApplyEntityFlags
+    CPulseCell_BaseYieldingInflow <|-- CPulseCell_ApplyParent
     CPulseCell_BaseYieldingInflow <|-- CPulseCell_Outflow_ListenForAnimgraphTag
     CPulseCell_BaseYieldingInflow <|-- CPulseCell_Outflow_ListenForEntityOutput
     CPulseCell_BaseYieldingInflow <|-- CPulseCell_Outflow_PlaySceneBase

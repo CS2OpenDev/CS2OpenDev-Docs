@@ -8,9 +8,9 @@ kind: class
 
 # CNmClipDocEvent_ID
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 32 bytes (`0x20`) · **Align:** 8 · **Module:** animdoclib
+**Kind:** class · **Size:** 40 bytes (`0x28`) · **Align:** 8 · **Module:** animdoclib
 
 **Inherits from:** [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md)
 
@@ -29,8 +29,8 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flStartTime` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
 | `0xc` | `m_flDuration` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
-| `0x10` | `m_ID` | CGlobalSymbol |  |  |
-| `0x18` | `m_secondaryID` | CGlobalSymbol |  | `MPropertyGroupName +Optional` |
+| `0x18` | `m_ID` | CGlobalSymbol |  | `MPropertyAttributeEditor AnimEventID()` |
+| `0x20` | `m_secondaryID` | CGlobalSymbol |  | `MPropertyGroupName +Optional` |
 
 <details><summary>KV3 class defaults</summary>
 

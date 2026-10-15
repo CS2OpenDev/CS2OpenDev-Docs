@@ -8,7 +8,7 @@ kind: class
 
 # RnMesh_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 192 bytes (`0xc0`) · **Align:** 8 · **Module:** physicslib
 
@@ -23,7 +23,7 @@ classDiagram
 
 ## Memory layout
 
-11 fields (11 declared here, 0 inherited). Offsets are absolute from the object base.
+12 fields (12 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -38,6 +38,7 @@ classDiagram
 | `0xa8` | `m_vOrthographicAreas` | Vector |  |  |
 | `0xb4` | `m_nFlags` | uint32 |  |  |
 | `0xb8` | `m_nDebugFlags` | uint32 |  |  |
+| `0xbc` | `m_flSurfaceArea` | float32 |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -65,6 +66,7 @@ classDiagram
 	],
 	&quot;m_nFlags&quot;: 0,
 	&quot;m_nDebugFlags&quot;: 0,
+	&quot;m_flSurfaceArea&quot;: 0.000000,
 	&quot;m_Nodes&quot;: &quot;[BINARY BLOB]&quot;,
 	&quot;m_Triangles&quot;: &quot;[BINARY BLOB]&quot;,
 	&quot;m_Vertices&quot;: &quot;[BINARY BLOB]&quot;

@@ -8,9 +8,9 @@ kind: class
 
 # CSAdditionalMatchStats_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 296 bytes (`0x128`) · **Align:** n/a (unspecified) · **Module:** server
+**Kind:** class · **Size:** 320 bytes (`0x140`) · **Align:** n/a (unspecified) · **Module:** server
 
 **Inherits from:** [CSAdditionalPerRoundStats_t](../server/CSAdditionalPerRoundStats_t.md)
 
@@ -39,15 +39,15 @@ classDiagram
 | `0x20` | `m_nHostagePickUps` | int32 | [CSAdditionalPerRoundStats_t](../server/CSAdditionalPerRoundStats_t.md) |  |
 | `0x24` | `m_numTeammatesFlashed` | int32 | [CSAdditionalPerRoundStats_t](../server/CSAdditionalPerRoundStats_t.md) |  |
 | `0x28` | `m_strAnnotationsWorkshopId` | CUtlString | [CSAdditionalPerRoundStats_t](../server/CSAdditionalPerRoundStats_t.md) |  |
-| `0xf8` | `m_numRoundsSurvivedStreak` | int32 |  |  |
-| `0xfc` | `m_maxNumRoundsSurvivedStreak` | int32 |  |  |
-| `0x100` | `m_numRoundsSurvivedTotal` | int32 |  |  |
-| `0x104` | `m_iRoundsWonWithoutPurchase` | int32 |  |  |
-| `0x108` | `m_iRoundsWonWithoutPurchaseTotal` | int32 |  |  |
-| `0x10c` | `m_numFirstKills` | int32 |  |  |
-| `0x110` | `m_numClutchKills` | int32 |  |  |
-| `0x114` | `m_numPistolKills` | int32 |  |  |
-| `0x118` | `m_numSniperKills` | int32 |  |  |
-| `0x11c` | `m_iNumSuicides` | int32 |  |  |
-| `0x120` | `m_iNumTeamKills` | int32 |  |  |
-| `0x124` | `m_flTeamDamage` | float32 |  |  |
+| `0x110` | `m_numRoundsSurvivedStreak` | int32 |  |  |
+| `0x114` | `m_maxNumRoundsSurvivedStreak` | int32 |  |  |
+| `0x118` | `m_numRoundsSurvivedTotal` | int32 |  |  |
+| `0x11c` | `m_iRoundsWonWithoutPurchase` | int32 |  |  |
+| `0x120` | `m_iRoundsWonWithoutPurchaseTotal` | int32 |  |  |
+| `0x124` | `m_numFirstKills` | int32 |  |  |
+| `0x128` | `m_numClutchKills` | int32 |  |  |
+| `0x12c` | `m_numPistolKills` | int32 |  |  |
+| `0x130` | `m_numSniperKills` | int32 |  |  |
+| `0x134` | `m_iNumSuicides` | int32 |  |  |
+| `0x138` | `m_iNumTeamKills` | int32 |  |  |
+| `0x13c` | `m_flTeamDamage` | float32 |  |  |

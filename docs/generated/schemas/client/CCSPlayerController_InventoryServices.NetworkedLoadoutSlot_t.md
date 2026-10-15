@@ -8,9 +8,9 @@ kind: class
 
 # CCSPlayerController_InventoryServices::NetworkedLoadoutSlot_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 200 bytes (`0xc8`) · **Align:** n/a (unspecified) · **Module:** client
+**Kind:** class · **Size:** 232 bytes (`0xe8`) · **Align:** n/a (unspecified) · **Module:** client
 
 **Twin:** [CCSPlayerController_InventoryServices::NetworkedLoadoutSlot_t (server)](../server/CCSPlayerController_InventoryServices.NetworkedLoadoutSlot_t.md)
 

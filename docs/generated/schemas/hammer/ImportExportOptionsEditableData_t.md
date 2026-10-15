@@ -8,9 +8,9 @@ kind: class
 
 # ImportExportOptionsEditableData_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** n/a (unspecified) · **Module:** hammer
+**Kind:** class · **Size:** 20 bytes (`0x14`) · **Align:** n/a (unspecified) · **Module:** hammer
 
 **Relationships:**
 
@@ -23,13 +23,15 @@ classDiagram
 
 ## Memory layout
 
-6 fields (6 declared here, 0 inherited). Offsets are absolute from the object base.
+8 fields (8 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `bExportProps` | bool |  | `MPropertyFriendlyName Export Props` |
 | `0x1` | `bExportHidden` | bool |  | `MPropertyFriendlyName Export Hidden Objects` |
-| `0x2` | `bExportFbxEmbedTextures` | bool |  | `MPropertyFriendlyName Export FBX Embed Textures From Content If Available` `MPropertySuppressField` |
-| `0x4` | `nExportFbxUnit` | [ImportExportOptionsEditableData_t::ExportFbxUnit_t](../hammer/ImportExportOptionsEditableData_t.ExportFbxUnit_t.md) |  | `MPropertyFriendlyName Export Hammer Units To FBX Units` |
-| `0x8` | `nExportDefaultFormat` | [ImportExportOptionsEditableData_t::ExportDefaultFormat_t](../hammer/ImportExportOptionsEditableData_t.ExportDefaultFormat_t.md) |  | `MPropertyFriendlyName Export Default Format` |
-| `0xc` | `nExportEncoding` | [ImportExportOptionsEditableData_t::ExportEncoding_t](../hammer/ImportExportOptionsEditableData_t.ExportEncoding_t.md) |  | `MPropertyFriendlyName Export Encoding` |
+| `0x2` | `bExportBones` | bool |  | `MPropertyDescription Export the bones of models. Only supported by FBX export` `MPropertyFriendlyName Export Bones (FBX only)` |
+| `0x3` | `bExportSkinning` | bool |  | `MPropertyDescription Export the skinning of models. Only supported by FBX export, Requires exporting bones. NOTE: exporting skinning can generate an FBX with skinned and un-skinned objects, which can cause problems if referenced by a vmdl.` `MPropertyFriendlyName Export Skinning (FBX only)` |
+| `0x4` | `bExportFbxEmbedTextures` | bool |  | `MPropertyFriendlyName Export FBX Embed Textures From Content If Available` `MPropertySuppressField` |
+| `0x8` | `nExportFbxUnit` | [ImportExportOptionsEditableData_t::ExportFbxUnit_t](../hammer/ImportExportOptionsEditableData_t.ExportFbxUnit_t.md) |  | `MPropertyFriendlyName Export Hammer Units To FBX Units` |
+| `0xc` | `nExportDefaultFormat` | [ImportExportOptionsEditableData_t::ExportDefaultFormat_t](../hammer/ImportExportOptionsEditableData_t.ExportDefaultFormat_t.md) |  | `MPropertyFriendlyName Export Default Format` |
+| `0x10` | `nExportEncoding` | [ImportExportOptionsEditableData_t::ExportEncoding_t](../hammer/ImportExportOptionsEditableData_t.ExportEncoding_t.md) |  | `MPropertyFriendlyName Export Encoding` |

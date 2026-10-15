@@ -8,9 +8,9 @@ kind: class
 
 # CPathMoverEntitySpawner
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 1384 bytes (`0x568`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 1456 bytes (`0x5b0`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CLogicalEntity](../server/CLogicalEntity.md)
 
@@ -22,6 +22,7 @@ classDiagram
     CServerOnlyEntity <|-- CLogicalEntity
     CBaseEntity <|-- CServerOnlyEntity
     CEntityInstance <|-- CBaseEntity
+    CPathMoverEntitySpawner *-- `CPathMoverEntitySpawner::TemplateChoiceStrategy_t`
     CPathMoverEntitySpawner --> CPathMover
     CPathMoverEntitySpawner --> CFuncMover
     CPathMoverEntitySpawner --> PathMoverEntitySpawn
@@ -31,7 +32,7 @@ classDiagram
 
 ## Memory layout
 
-104 fields (16 declared here, 88 inherited). Offsets are absolute from the object base.
+110 fields (22 declared here, 88 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -123,19 +124,25 @@ classDiagram
 | `0x498` | `m_flVPhysicsUpdateLocalTime` | float32 | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x49c` | `m_nBloodType` | [BloodType](../server/BloodType.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x4a0` | `m_pPulseGraphInstance` | [CPulseGraphInstance_ServerEntity](../server/CPulseGraphInstance_ServerEntity.md)* | [CBaseEntity](../server/CBaseEntity.md) | `MKV3TransferSaveOpsForField GetPulseInstanceSaveRestoreOps` |
-| `0x4a8` | `m_szSpawnTemplates` | CUtlSymbolLarge[4] |  |  |
-| `0x4c8` | `m_nSpawnIndex` | int32 |  |  |
-| `0x4cc` | `m_hPathMover` | CHandle< [CPathMover](../server/CPathMover.md) > |  |  |
-| `0x4d0` | `m_flSpawnFrequencySeconds` | float32 |  |  |
-| `0x4d4` | `m_flSpawnFrequencyDistToNearestMover` | float32 |  |  |
-| `0x4d8` | `m_mapSpawnedMoverTemplates` | CUtlHashtable< CHandle< [CFuncMover](../server/CFuncMover.md) >, [PathMoverEntitySpawn](../server/PathMoverEntitySpawn.md) > |  |  |
-| `0x4f8` | `m_nMaxActive` | int32 |  |  |
-| `0x4fc` | `m_nSpawnNum` | int32 |  |  |
-| `0x500` | `m_flLastSpawnTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0x504` | `m_bEnabled` | bool |  |  |
-| `0x505` | `m_bDestroyMoverOnArrivedAtEnd` | bool |  |  |
-| `0x508` | `m_vecQueuedRemovals` | CUtlVector< CHandle< [CFuncMover](../server/CFuncMover.md) > > |  |  |
-| `0x520` | `m_OnTemplateSpawned` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
-| `0x538` | `m_OnTemplateGroupSpawned` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
-| `0x550` | `m_iszPathMoverName` | CUtlSymbolLarge |  |  |
-| `0x558` | `m_bPrepopulateOnSpawn` | bool |  |  |
+| `0x4a8` | `m_eTemplateChoiceStrategy` | [CPathMoverEntitySpawner::TemplateChoiceStrategy_t](../server/CPathMoverEntitySpawner.TemplateChoiceStrategy_t.md) |  |  |
+| `0x4b0` | `m_szSpawnTemplates` | CUtlSymbolLarge[4] |  |  |
+| `0x4d0` | `m_szSpawnTemplateParams` | int32[4] |  |  |
+| `0x4e0` | `m_szSpawnTemplateCount` | int32[4] |  |  |
+| `0x4f0` | `m_nSpawnIndex` | int32 |  |  |
+| `0x4f4` | `m_hPathMover` | CHandle< [CPathMover](../server/CPathMover.md) > |  |  |
+| `0x4f8` | `m_flSpawnFrequencySeconds` | float32 |  |  |
+| `0x4fc` | `m_flSpawnFrequencyDistToNearestMover` | float32 |  |  |
+| `0x500` | `m_mapSpawnedMoverTemplates` | CUtlHashtable< CHandle< [CFuncMover](../server/CFuncMover.md) >, [PathMoverEntitySpawn](../server/PathMoverEntitySpawn.md) > |  |  |
+| `0x520` | `m_nMaxActive` | int32 |  |  |
+| `0x524` | `m_nSpawnNum` | int32 |  |  |
+| `0x528` | `m_flLastSpawnTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0x52c` | `m_bEnabled` | bool |  |  |
+| `0x52d` | `m_bDestroyMoverOnArrivedAtEnd` | bool |  |  |
+| `0x530` | `m_vecQueuedRemovals` | CUtlVector< CHandle< [CFuncMover](../server/CFuncMover.md) > > |  |  |
+| `0x548` | `m_OnTemplateSpawned` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
+| `0x560` | `m_OnTemplateGroupSpawned` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
+| `0x578` | `m_iszPathMoverName` | CUtlSymbolLarge |  |  |
+| `0x580` | `m_bPrepopulateOnSpawn` | bool |  |  |
+| `0x588` | `m_iszPathNodeStartName` | CUtlSymbolLarge |  |  |
+| `0x59c` | `m_vMoverSpawnPos` | VectorWS |  |  |
+| `0x5a8` | `m_bRunningDebugThink` | bool |  |  |

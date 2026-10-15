@@ -8,9 +8,9 @@ kind: class
 
 # CCSObserver_CameraServices
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 688 bytes (`0x2b0`) · **Align:** n/a (unspecified) · **Module:** client
+**Kind:** class · **Size:** 696 bytes (`0x2b8`) · **Align:** n/a (unspecified) · **Module:** client
 
 **Twin:** [CCSObserver_CameraServices (server)](../server/CCSObserver_CameraServices.md)
 
@@ -48,16 +48,16 @@ classDiagram
 | `0x148` | `m_CurrentFog` | fogparams_t | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
 | `0x1b0` | `m_hOldFogController` | CHandle< [C_FogController](../client/C_FogController.md) > | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
 | `0x1b4` | `m_bOverrideFogColor` | bool[5] | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
-| `0x1b9` | `m_OverrideFogColor` | Color[5] | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
-| `0x1cd` | `m_bOverrideFogStartEnd` | bool[5] | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
-| `0x1d4` | `m_fOverrideFogStart` | float32[5] | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
-| `0x1e8` | `m_fOverrideFogEnd` | float32[5] | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
-| `0x1fc` | `m_hActivePostProcessingVolume` | CHandle< [C_PostProcessingVolume](../client/C_PostProcessingVolume.md) > | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
-| `0x200` | `m_angDemoViewAngles` | QAngle | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
-| `0x290` | `m_iFOV` | uint32 | [CCSPlayerBase_CameraServices](../client/CCSPlayerBase_CameraServices.md) |  |
-| `0x294` | `m_iFOVStart` | uint32 | [CCSPlayerBase_CameraServices](../client/CCSPlayerBase_CameraServices.md) |  |
-| `0x298` | `m_flFOVTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSPlayerBase_CameraServices](../client/CCSPlayerBase_CameraServices.md) |  |
-| `0x29c` | `m_flFOVRate` | float32 | [CCSPlayerBase_CameraServices](../client/CCSPlayerBase_CameraServices.md) |  |
-| `0x2a0` | `m_hZoomOwner` | CHandle< [C_BaseEntity](../client/C_BaseEntity.md) > | [CCSPlayerBase_CameraServices](../client/CCSPlayerBase_CameraServices.md) |  |
-| `0x2a4` | `m_flLastShotFOV` | float32 | [CCSPlayerBase_CameraServices](../client/CCSPlayerBase_CameraServices.md) |  |
-| `0x2a8` | `m_hPrevPostProcessingVolume` | CHandle< [C_PostProcessingVolume](../client/C_PostProcessingVolume.md) > |  |  |
+| `0x1bc` | `m_OverrideFogColor` | Color[5] | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
+| `0x1d0` | `m_bOverrideFogStartEnd` | bool[5] | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
+| `0x1d8` | `m_fOverrideFogStart` | float32[5] | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
+| `0x1ec` | `m_fOverrideFogEnd` | float32[5] | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
+| `0x200` | `m_hActivePostProcessingVolume` | CHandle< [C_PostProcessingVolume](../client/C_PostProcessingVolume.md) > | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
+| `0x208` | `m_angDemoViewAngles` | QAngle | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
+| `0x298` | `m_iFOV` | uint32 | [CCSPlayerBase_CameraServices](../client/CCSPlayerBase_CameraServices.md) |  |
+| `0x29c` | `m_iFOVStart` | uint32 | [CCSPlayerBase_CameraServices](../client/CCSPlayerBase_CameraServices.md) |  |
+| `0x2a0` | `m_flFOVTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSPlayerBase_CameraServices](../client/CCSPlayerBase_CameraServices.md) |  |
+| `0x2a4` | `m_flFOVRate` | float32 | [CCSPlayerBase_CameraServices](../client/CCSPlayerBase_CameraServices.md) |  |
+| `0x2a8` | `m_hZoomOwner` | CHandle< [C_BaseEntity](../client/C_BaseEntity.md) > | [CCSPlayerBase_CameraServices](../client/CCSPlayerBase_CameraServices.md) |  |
+| `0x2ac` | `m_flLastShotFOV` | float32 | [CCSPlayerBase_CameraServices](../client/CCSPlayerBase_CameraServices.md) |  |
+| `0x2b0` | `m_hPrevPostProcessingVolume` | CHandle< [C_PostProcessingVolume](../client/C_PostProcessingVolume.md) > |  |  |

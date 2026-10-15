@@ -8,9 +8,9 @@ kind: class
 
 # CVoiceContainerVMixSnd
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 472 bytes (`0x1d8`) · **Align:** 8 · **Module:** soundsystem
+**Kind:** class · **Size:** 384 bytes (`0x180`) · **Align:** 8 · **Module:** soundsystem
 
 **Inherits from:** [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md)
 

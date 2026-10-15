@@ -8,9 +8,9 @@ kind: class
 
 # CAttributeContainer
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 760 bytes (`0x2f8`) · **Align:** n/a (unspecified) · **Module:** server
+**Kind:** class · **Size:** 1080 bytes (`0x438`) · **Align:** n/a (unspecified) · **Module:** server
 
 **Inherits from:** [CAttributeManager](../server/CAttributeManager.md)
 

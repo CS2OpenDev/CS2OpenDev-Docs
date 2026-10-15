@@ -8,9 +8,9 @@ kind: class
 
 # CPlayer_CameraServices
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 656 bytes (`0x290`) · **Align:** n/a (unspecified) · **Module:** client
+**Kind:** class · **Size:** 664 bytes (`0x298`) · **Align:** n/a (unspecified) · **Module:** client
 
 **Twin:** [CPlayer_CameraServices (server)](../server/CPlayer_CameraServices.md)
 
@@ -55,9 +55,9 @@ classDiagram
 | `0x148` | `m_CurrentFog` | fogparams_t |  |  |
 | `0x1b0` | `m_hOldFogController` | CHandle< [C_FogController](../client/C_FogController.md) > |  |  |
 | `0x1b4` | `m_bOverrideFogColor` | bool[5] |  |  |
-| `0x1b9` | `m_OverrideFogColor` | Color[5] |  |  |
-| `0x1cd` | `m_bOverrideFogStartEnd` | bool[5] |  |  |
-| `0x1d4` | `m_fOverrideFogStart` | float32[5] |  |  |
-| `0x1e8` | `m_fOverrideFogEnd` | float32[5] |  |  |
-| `0x1fc` | `m_hActivePostProcessingVolume` | CHandle< [C_PostProcessingVolume](../client/C_PostProcessingVolume.md) > |  |  |
-| `0x200` | `m_angDemoViewAngles` | QAngle |  |  |
+| `0x1bc` | `m_OverrideFogColor` | Color[5] |  |  |
+| `0x1d0` | `m_bOverrideFogStartEnd` | bool[5] |  |  |
+| `0x1d8` | `m_fOverrideFogStart` | float32[5] |  |  |
+| `0x1ec` | `m_fOverrideFogEnd` | float32[5] |  |  |
+| `0x200` | `m_hActivePostProcessingVolume` | CHandle< [C_PostProcessingVolume](../client/C_PostProcessingVolume.md) > |  |  |
+| `0x208` | `m_angDemoViewAngles` | QAngle |  |  |

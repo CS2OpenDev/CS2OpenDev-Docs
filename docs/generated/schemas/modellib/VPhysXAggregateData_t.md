@@ -8,7 +8,7 @@ kind: class
 
 # VPhysXAggregateData_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 336 bytes (`0x150`) · **Align:** 8 · **Module:** modellib
 
@@ -26,12 +26,13 @@ classDiagram
 
 ## Memory layout
 
-17 fields (17 declared here, 0 inherited). Offsets are absolute from the object base.
+18 fields (18 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_nFlags` | uint16 |  |  |
 | `0x2` | `m_nRefCounter` | uint16 |  |  |
+| `0x4` | `m_bCompoundsPacked` | bool |  |  |
 | `0x8` | `m_bonesHash` | CUtlVector< uint32 > |  |  |
 | `0x20` | `m_boneNames` | CUtlVector< CUtlString > |  |  |
 | `0x38` | `m_indexNames` | CUtlVector< uint16 > |  |  |
@@ -53,6 +54,7 @@ classDiagram
 <pre>{
 	&quot;m_nFlags&quot;: 0,
 	&quot;m_nRefCounter&quot;: 0,
+	&quot;m_bCompoundsPacked&quot;: false,
 	&quot;m_bonesHash&quot;:
 	[
 	],

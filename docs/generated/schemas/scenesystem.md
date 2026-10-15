@@ -5,11 +5,11 @@ module: scenesystem
 
 # Module: scenesystem
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 [📊 View UML Diagram](../diagrams/scenesystem.md)
 
-15 types. Each links to its own page with the full field layout.
+16 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -28,3 +28,4 @@ module: scenesystem
 | [ESceneObjectVisualization](scenesystem/ESceneObjectVisualization.md) | enum | — | 6 |  |
 | [ESceneViewDebugOverlaysListenerDataType_t](scenesystem/ESceneViewDebugOverlaysListenerDataType_t.md) | enum | — | 7 |  |
 | [ESilhouetteType_t](scenesystem/ESilhouetteType_t.md) | enum | — | 4 |  |
+| [SceneStatsSections_t](scenesystem/SceneStatsSections_t.md) | enum | — | 11 |  |

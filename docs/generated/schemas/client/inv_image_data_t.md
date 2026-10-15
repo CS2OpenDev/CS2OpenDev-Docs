@@ -8,9 +8,9 @@ kind: class
 
 # inv_image_data_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 232 bytes (`0xe8`) · **Align:** 8 · **Module:** client
+**Kind:** class · **Size:** 240 bytes (`0xf0`) · **Align:** 8 · **Module:** client
 
 ## Memory layout
 
@@ -21,11 +21,11 @@ kind: class
 | `0x0` | `map` | inv_image_map_t |  | `MPropertyAutoExpandSelf` `MPropertyFriendlyName Map` |
 | `0x10` | `item` | inv_image_item_t |  | `MPropertyAutoExpandSelf` `MPropertyFriendlyName Item` |
 | `0x30` | `camera` | inv_image_camera_t |  | `MPropertyAutoExpandSelf` `MPropertyFriendlyName Camera` |
-| `0x64` | `lightsun` | inv_image_light_sun_t |  | `MPropertyAutoExpandSelf` `MPropertyDescription Shadowed.` `MPropertyFriendlyName Sun light` |
-| `0x80` | `lightfill` | inv_image_light_fill_t |  | `MPropertyAutoExpandSelf` `MPropertyDescription No Shadows.` `MPropertyFriendlyName Fill light` |
-| `0x9c` | `light0` | inv_image_light_barn_t |  | `MPropertyAutoExpandSelf` `MPropertyDescription Shadowed.` `MPropertyFriendlyName Barn light 0` |
-| `0xbc` | `light1` | inv_image_light_barn_t |  | `MPropertyAutoExpandSelf` `MPropertyDescription Shadowed.` `MPropertyFriendlyName Barn light 1` |
-| `0xdc` | `clearcolor` | inv_image_clearcolor_t |  | `MPropertyAutoExpandSelf` `MPropertyDescription` `MPropertyFriendlyName Clear Color` |
+| `0x68` | `lightsun` | inv_image_light_sun_t |  | `MPropertyAutoExpandSelf` `MPropertyDescription Shadowed.` `MPropertyFriendlyName Sun light` |
+| `0x84` | `lightfill` | inv_image_light_fill_t |  | `MPropertyAutoExpandSelf` `MPropertyDescription No Shadows.` `MPropertyFriendlyName Fill light` |
+| `0xa0` | `light0` | inv_image_light_barn_t |  | `MPropertyAutoExpandSelf` `MPropertyDescription Shadowed.` `MPropertyFriendlyName Barn light 0` |
+| `0xc0` | `light1` | inv_image_light_barn_t |  | `MPropertyAutoExpandSelf` `MPropertyDescription Shadowed.` `MPropertyFriendlyName Barn light 1` |
+| `0xe0` | `clearcolor` | inv_image_clearcolor_t |  | `MPropertyAutoExpandSelf` `MPropertyDescription` `MPropertyFriendlyName Clear Color` |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -59,7 +59,8 @@ kind: class
 			0.000000,
 			0.000000
 		],
-		&quot;fov&quot;: 45.000000,
+		&quot;fov_h&quot;: 0.000000,
+		&quot;fov_v&quot;: 45.000000,
 		&quot;znear&quot;: 4.000000,
 		&quot;zfar&quot;: 1000.000000,
 		&quot;target&quot;:

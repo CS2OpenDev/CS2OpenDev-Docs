@@ -8,13 +8,13 @@ kind: class
 
 # VMixDynamicsCompressorDesc_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 36 bytes (`0x24`) · **Align:** 4 · **Module:** soundsystem_lowlevel
+**Kind:** class · **Size:** 40 bytes (`0x28`) · **Align:** 4 · **Module:** soundsystem_lowlevel
 
 ## Memory layout
 
-9 fields (9 declared here, 0 inherited). Offsets are absolute from the object base.
+11 fields (11 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -26,7 +26,9 @@ kind: class
 | `0x14` | `m_flReleaseTimeMS` | float32 |  | `MPropertyFriendlyName Release time (ms)` |
 | `0x18` | `m_flRMSTimeMS` | float32 |  | `MPropertyFriendlyName Threshold detection time (ms)` |
 | `0x1c` | `m_flWetMix` | float32 |  | `MPropertyFriendlyName Dry/Wet` |
-| `0x20` | `m_bPeakMode` | bool |  | `MPropertyFriendlyName Peak mode` |
+| `0x20` | `m_flSCHighPassFreq` | float32 |  | `MPropertyFriendlyName SideChain Highpass` |
+| `0x24` | `m_bPeakMode` | bool |  | `MPropertyFriendlyName Peak mode` |
+| `0x25` | `m_bAutoMakeupGain` | bool |  | `MPropertyFriendlyName Auto Make-up Gain` |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -39,6 +41,8 @@ kind: class
 	&quot;m_flReleaseTimeMS&quot;: 400.000000,
 	&quot;m_flRMSTimeMS&quot;: 300.000000,
 	&quot;m_flWetMix&quot;: 1.000000,
-	&quot;m_bPeakMode&quot;: false
+	&quot;m_flSCHighPassFreq&quot;: 0.000000,
+	&quot;m_bPeakMode&quot;: false,
+	&quot;m_bAutoMakeupGain&quot;: false
 }</pre>
 </details>

@@ -8,9 +8,9 @@ kind: class
 
 # CNmSkeletonDocument
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 288 bytes (`0x120`) · **Align:** 8 · **Module:** animdoclib
+**Kind:** class · **Size:** 312 bytes (`0x138`) · **Align:** 8 · **Module:** animdoclib
 
 **Inherits from:** [CNmAnimDocument](../animdoclib/CNmAnimDocument.md)
 
@@ -19,6 +19,7 @@ kind: class
 ```mermaid
 classDiagram
     CNmAnimDocument <|-- CNmSkeletonDocument
+    CNmSkeletonDocument *-- `CNmSkeletonDocument::ContactConfig_t`
     CNmSkeletonDocument *-- `CNmSkeletonDocument::SecondarySkeleton_t`
     CNmSkeletonDocument *-- NmBoneMaskSetDefinition_t
     CNmSkeletonDocument *-- CNmFloatChannelSet_t
@@ -26,7 +27,7 @@ classDiagram
 
 ## Memory layout
 
-12 fields (11 declared here, 1 inherited). Offsets are absolute from the object base.
+13 fields (12 declared here, 1 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -36,12 +37,13 @@ classDiagram
 | `0x80` | `m_flGlobalScale` | float32 |  |  |
 | `0x84` | `m_bIsAttachableProp` | bool |  |  |
 | `0x85` | `m_bIsCS_HACK` | bool |  |  |
-| `0x88` | `m_secondarySkeletons` | CUtlVector< [CNmSkeletonDocument::SecondarySkeleton_t](../animdoclib/CNmSkeletonDocument.SecondarySkeleton_t.md) > |  | `MPropertyAutoExpandSelf` `MPropertyFriendlyName Expected secondary skeletons` |
-| `0xa0` | `m_gameplayRelevantBones` | CUtlVector< CGlobalSymbol > |  | `MPropertyDescription The set of bones that need to be converted at import to match the S2 coordinate system (Z-up, X-forward)` |
-| `0xb8` | `m_highLODBones` | CUtlVector< CGlobalSymbol > |  | `MPropertySuppressField` |
-| `0xd0` | `m_boneMaskSetDefinitions` | CUtlVector< [NmBoneMaskSetDefinition_t](../animlib/NmBoneMaskSetDefinition_t.md) > |  | `MPropertySuppressField` |
-| `0xe8` | `m_floatChannelSets` | CUtlVector< [CNmFloatChannelSet_t](../animlib/CNmFloatChannelSet_t.md) > |  | `MPropertySuppressField` |
-| `0x100` | `m_previewModelName` | CUtlString |  | `MPropertyAttributeEditor AssetBrowse( vmdl, *requiredoubleclick )` `MPropertyGroupName +Preview` |
+| `0x88` | `m_contactConfigs` | CUtlVector< [CNmSkeletonDocument::ContactConfig_t](../animdoclib/CNmSkeletonDocument.ContactConfig_t.md) > |  |  |
+| `0xa0` | `m_secondarySkeletons` | CUtlVector< [CNmSkeletonDocument::SecondarySkeleton_t](../animdoclib/CNmSkeletonDocument.SecondarySkeleton_t.md) > |  | `MPropertyAutoExpandSelf` `MPropertyFriendlyName Expected secondary skeletons` |
+| `0xb8` | `m_gameplayRelevantBones` | CUtlVector< CGlobalSymbol > |  | `MPropertyDescription The set of bones that need to be converted at import to match the S2 coordinate system (Z-up, X-forward)` |
+| `0xd0` | `m_highLODBones` | CUtlVector< CGlobalSymbol > |  | `MPropertySuppressField` |
+| `0xe8` | `m_boneMaskSetDefinitions` | CUtlVector< [NmBoneMaskSetDefinition_t](../animlib/NmBoneMaskSetDefinition_t.md) > |  | `MPropertySuppressField` |
+| `0x100` | `m_floatChannelSets` | CUtlVector< [CNmFloatChannelSet_t](../animlib/CNmFloatChannelSet_t.md) > |  | `MPropertySuppressField` |
+| `0x118` | `m_previewModelName` | CUtlString |  | `MPropertyAttributeEditor AssetBrowse( vmdl, *requiredoubleclick )` `MPropertyGroupName +Preview` |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -53,6 +55,9 @@ classDiagram
 	&quot;m_flGlobalScale&quot;: 1.000000,
 	&quot;m_bIsAttachableProp&quot;: false,
 	&quot;m_bIsCS_HACK&quot;: false,
+	&quot;m_contactConfigs&quot;:
+	[
+	],
 	&quot;m_secondarySkeletons&quot;:
 	[
 	],

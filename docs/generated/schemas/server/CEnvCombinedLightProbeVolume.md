@@ -8,9 +8,9 @@ kind: class
 
 # CEnvCombinedLightProbeVolume
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 5616 bytes (`0x15f0`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 1664 bytes (`0x680`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CBaseEntity](../server/CBaseEntity.md)
 
@@ -30,7 +30,7 @@ classDiagram
 
 ## Memory layout
 
-117 fields (29 declared here, 88 inherited). Offsets are absolute from the object base.
+115 fields (27 declared here, 88 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -122,32 +122,30 @@ classDiagram
 | `0x498` | `m_flVPhysicsUpdateLocalTime` | float32 | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x49c` | `m_nBloodType` | [BloodType](../server/BloodType.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x4a0` | `m_pPulseGraphInstance` | [CPulseGraphInstance_ServerEntity](../server/CPulseGraphInstance_ServerEntity.md)* | [CBaseEntity](../server/CBaseEntity.md) | `MKV3TransferSaveOpsForField GetPulseInstanceSaveRestoreOps` |
-| `0x1520` | `m_Entity_Color` | Color |  |  |
-| `0x1524` | `m_Entity_flBrightness` | float32 |  |  |
-| `0x1528` | `m_Entity_hCubemapTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
-| `0x1530` | `m_Entity_bCustomCubemapTexture` | bool |  |  |
-| `0x1538` | `m_Entity_hLightProbeTexture_AmbientCube` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
-| `0x1540` | `m_Entity_hLightProbeTexture_SDF` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
-| `0x1548` | `m_Entity_hLightProbeTexture_SH2_DC` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
-| `0x1550` | `m_Entity_hLightProbeTexture_SH2_R` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
-| `0x1558` | `m_Entity_hLightProbeTexture_SH2_G` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
-| `0x1560` | `m_Entity_hLightProbeTexture_SH2_B` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
-| `0x1568` | `m_Entity_hLightProbeDirectLightIndicesTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
-| `0x1570` | `m_Entity_hLightProbeDirectLightScalarsTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
-| `0x1578` | `m_Entity_hLightProbeDirectLightShadowsTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
-| `0x1580` | `m_Entity_vBoxMins` | Vector |  |  |
-| `0x158c` | `m_Entity_vBoxMaxs` | Vector |  |  |
-| `0x1598` | `m_Entity_bMoveable` | bool |  |  |
-| `0x159c` | `m_Entity_nHandshake` | int32 |  |  |
-| `0x15a0` | `m_Entity_nEnvCubeMapArrayIndex` | int32 |  |  |
-| `0x15a4` | `m_Entity_nPriority` | int32 |  |  |
-| `0x15a8` | `m_Entity_bStartDisabled` | bool |  |  |
-| `0x15ac` | `m_Entity_flEdgeFadeDist` | float32 |  |  |
-| `0x15b0` | `m_Entity_vEdgeFadeDists` | Vector |  |  |
-| `0x15bc` | `m_Entity_nLightProbeSizeX` | int32 |  |  |
-| `0x15c0` | `m_Entity_nLightProbeSizeY` | int32 |  |  |
-| `0x15c4` | `m_Entity_nLightProbeSizeZ` | int32 |  |  |
-| `0x15c8` | `m_Entity_nLightProbeAtlasX` | int32 |  |  |
-| `0x15cc` | `m_Entity_nLightProbeAtlasY` | int32 |  |  |
-| `0x15d0` | `m_Entity_nLightProbeAtlasZ` | int32 |  |  |
-| `0x15e9` | `m_Entity_bEnabled` | bool |  |  |
+| `0x5c0` | `m_Entity_Color` | Color |  |  |
+| `0x5c4` | `m_Entity_flBrightness` | float32 |  |  |
+| `0x5c8` | `m_Entity_hCubemapTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
+| `0x5d0` | `m_Entity_bCustomCubemapTexture` | bool |  |  |
+| `0x5d8` | `m_Entity_hLightProbeTexture_AmbientCube` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
+| `0x5e0` | `m_Entity_hLightProbeTexture_SDF` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
+| `0x5e8` | `m_Entity_hLightProbeTexture_SH2_DC` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
+| `0x5f0` | `m_Entity_hLightProbeTexture_SH2_L1` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
+| `0x5f8` | `m_Entity_hLightProbeDirectLightIndicesTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
+| `0x600` | `m_Entity_hLightProbeDirectLightScalarsTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
+| `0x608` | `m_Entity_hLightProbeDirectLightShadowsTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
+| `0x610` | `m_Entity_vBoxMins` | Vector |  |  |
+| `0x61c` | `m_Entity_vBoxMaxs` | Vector |  |  |
+| `0x628` | `m_Entity_bMoveable` | bool |  |  |
+| `0x62c` | `m_Entity_nHandshake` | int32 |  |  |
+| `0x630` | `m_Entity_nEnvCubeMapArrayIndex` | int32 |  |  |
+| `0x634` | `m_Entity_nPriority` | int32 |  |  |
+| `0x638` | `m_Entity_bStartDisabled` | bool |  |  |
+| `0x63c` | `m_Entity_flEdgeFadeDist` | float32 |  |  |
+| `0x640` | `m_Entity_vEdgeFadeDists` | Vector |  |  |
+| `0x64c` | `m_Entity_nLightProbeSizeX` | int32 |  |  |
+| `0x650` | `m_Entity_nLightProbeSizeY` | int32 |  |  |
+| `0x654` | `m_Entity_nLightProbeSizeZ` | int32 |  |  |
+| `0x658` | `m_Entity_nLightProbeAtlasX` | int32 |  |  |
+| `0x65c` | `m_Entity_nLightProbeAtlasY` | int32 |  |  |
+| `0x660` | `m_Entity_nLightProbeAtlasZ` | int32 |  |  |
+| `0x679` | `m_Entity_bEnabled` | bool |  |  |

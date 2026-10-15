@@ -1,0 +1,45 @@
+---
+title: CVMixGraphInput
+module: soundsystem_lowlevel
+kind: class
+---
+
+[Schemas](../../schemas.md) / [soundsystem_lowlevel](../soundsystem_lowlevel.md) / CVMixGraphInput
+
+# CVMixGraphInput
+
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+
+**Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 8 · **Module:** soundsystem_lowlevel
+
+**Inherits from:** [CVMixInputBase](../soundsystem_lowlevel/CVMixInputBase.md)
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CVMixInputBase <|-- CVMixGraphInput
+    CVMixGraphInput *-- CVMixDataOffset
+```
+
+## Memory layout
+
+2 fields (1 declared here, 1 inherited). Offsets are absolute from the object base.
+
+| Offset | Field | Type | From | Annotations |
+|--------|-------|------|------|-------------|
+| `0x0` | `m_name` | CUtlString | [CVMixInputBase](../soundsystem_lowlevel/CVMixInputBase.md) |  |
+| `0x10` | `m_nOffset` | [CVMixDataOffset](../soundsystem_lowlevel/CVMixDataOffset.md) |  |  |
+
+<details><summary>KV3 class defaults</summary>
+
+<pre>{
+	&quot;m_name&quot;: &quot;GameInput&quot;,
+	&quot;m_nOffset&quot;:
+	{
+		&quot;category&quot;: &quot;NULL_POINTER&quot;,
+		&quot;type&quot;: &quot;VO_CHAR&quot;,
+		&quot;index&quot;: 0
+	}
+}</pre>
+</details>

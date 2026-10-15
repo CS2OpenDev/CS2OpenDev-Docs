@@ -8,9 +8,9 @@ kind: class
 
 # C_OmniLight
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 4816 bytes (`0x12d0`) · **Align:** 8 · **Module:** client
+**Kind:** class · **Size:** 5048 bytes (`0x13b8`) · **Align:** 8 · **Module:** client
 
 **Inherits from:** [C_BarnLight](../client/C_BarnLight.md)
 
@@ -26,7 +26,7 @@ classDiagram
 
 ## Memory layout
 
-208 fields (3 declared here, 205 inherited). Offsets are absolute from the object base.
+211 fields (3 declared here, 208 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -115,126 +115,129 @@ classDiagram
 | `0x5e2` | `m_bSimulationTimeChanged` | bool | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
 | `0x5f0` | `m_sUniqueHammerID` | CUtlString | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
 | `0x5f8` | `m_nBloodType` | [BloodType](../server/BloodType.md) | [C_BaseEntity](../client/C_BaseEntity.md) |  |
-| `0xaf0` | `m_CRenderComponent` | [CRenderComponent](../client/CRenderComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xaf8` | `m_CHitboxComponent` | [CHitboxComponent](../client/CHitboxComponent.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb10` | `m_pChoreoComponent` | [CChoreoComponent](../client/CChoreoComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb18` | `m_nDestructiblePartInitialStateDestructed0` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb1c` | `m_nDestructiblePartInitialStateDestructed1` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb20` | `m_nDestructiblePartInitialStateDestructed2` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb24` | `m_nDestructiblePartInitialStateDestructed3` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb28` | `m_nDestructiblePartInitialStateDestructed4` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb2c` | `m_nDestructiblePartInitialStateDestructed0_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb30` | `m_nDestructiblePartInitialStateDestructed1_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb34` | `m_nDestructiblePartInitialStateDestructed2_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb38` | `m_nDestructiblePartInitialStateDestructed3_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb3c` | `m_nDestructiblePartInitialStateDestructed4_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb40` | `m_bDestructiblePartInitialStateDestructed0_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb41` | `m_bDestructiblePartInitialStateDestructed1_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb42` | `m_bDestructiblePartInitialStateDestructed2_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb43` | `m_bDestructiblePartInitialStateDestructed3_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb44` | `m_bDestructiblePartInitialStateDestructed4_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb48` | `m_pDestructiblePartsSystemComponent` | [CDestructiblePartsComponent](../client/CDestructiblePartsComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xc70` | `m_bInitModelEffects` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xc71` | `m_bDoingModelEffects` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xc74` | `m_iOldHealth` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xc78` | `m_nRenderMode` | [RenderMode_t](../server/RenderMode_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xc79` | `m_nRenderFX` | [RenderFx_t](../server/RenderFx_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xc7a` | `m_bAllowFadeInView` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xc98` | `m_clrRender` | Color | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xca0` | `m_vecRenderAttributes` | C_UtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../client/EntityRenderAttribute_t.md) > | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xd20` | `m_bRenderToCubemaps` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xd21` | `m_bNoInterpolate` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xd28` | `m_Collision` | [CCollisionProperty](../client/CCollisionProperty.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xde0` | `m_Glow` | [CGlowProperty](../client/CGlowProperty.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe38` | `m_flGlowBackfaceMult` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe3c` | `m_fadeMinDist` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe40` | `m_fadeMaxDist` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe44` | `m_flFadeScale` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe48` | `m_flShadowStrength` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe4c` | `m_nObjectCulling` | uint8 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe4d` | `m_nRequiredDecalRtEncoding` | [DecalRtEncoding_t](../scenesystem/DecalRtEncoding_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe50` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe78` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xf58` | `m_pClientAlphaProperty` | [CClientAlphaProperty](../client/CClientAlphaProperty.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xf60` | `m_ClientOverrideTint` | Color | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xf64` | `m_bUseClientOverrideTint` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xfa0` | `m_bvDisabledHitGroups` | uint32[1] | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
-| `0xfb0` | `m_bEnabled` | bool | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0xfb4` | `m_nColorMode` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0xfb8` | `m_Color` | Color | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0xfbc` | `m_flColorTemperature` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0xfc0` | `m_flBrightness` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0xfc4` | `m_flBrightnessScale` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0xfc8` | `m_nDirectLight` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0xfcc` | `m_nBakedShadowIndex` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0xfd0` | `m_nLightPathUniqueId` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0xfd4` | `m_nLightMapUniqueId` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0xfd8` | `m_nLuminaireShape` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0xfdc` | `m_flLuminaireSize` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0xfe0` | `m_flLuminaireAnisotropy` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0xfe8` | `m_LightStyleString` | CUtlString | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0xff0` | `m_flLightStyleStartTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0xff8` | `m_QueuedLightStyleStrings` | C_NetworkUtlVectorBase< CUtlString > | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1010` | `m_LightStyleEvents` | C_NetworkUtlVectorBase< CUtlString > | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1028` | `m_LightStyleTargets` | C_NetworkUtlVectorBase< CHandle< [C_BaseModelEntity](../client/C_BaseModelEntity.md) > > | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1040` | `m_StyleEvent` | [CEntityIOOutput](../entity2/CEntityIOOutput.md)[4] | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x10a0` | `m_hLightCookie` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x10a8` | `m_flShape` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x10ac` | `m_flSoftX` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x10b0` | `m_flSoftY` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x10b4` | `m_flSkirt` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x10b8` | `m_flSkirtNear` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x10bc` | `m_vSizeParams` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x10c8` | `m_flRange` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x10cc` | `m_vShear` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x10d8` | `m_nBakeSpecularToCubemaps` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x10dc` | `m_vBakeSpecularToCubemapsSize` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x10e8` | `m_flBakeSpecularToCubemapsScale` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x10ec` | `m_nCastShadows` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x10f0` | `m_nShadowMapSize` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x10f4` | `m_nShadowPriority` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x10f8` | `m_bContactShadow` | bool | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x10f9` | `m_bForceShadowsEnabled` | bool | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x10fc` | `m_nBounceLight` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1100` | `m_flBounceScale` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1104` | `m_flMinRoughness` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1108` | `m_vAlternateColor` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1114` | `m_fAlternateColorBrightness` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1118` | `m_nFog` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x111c` | `m_flFogStrength` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1120` | `m_nFogShadows` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1124` | `m_flFogScale` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1128` | `m_flFadeSizeStart` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x112c` | `m_flFadeSizeEnd` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1130` | `m_flShadowFadeSizeStart` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1134` | `m_flShadowFadeSizeEnd` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1138` | `m_bPrecomputedFieldsValid` | bool | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x113c` | `m_vPrecomputedBoundsMins` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1148` | `m_vPrecomputedBoundsMaxs` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1154` | `m_vPrecomputedOBBOrigin` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1160` | `m_vPrecomputedOBBAngles` | QAngle | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x116c` | `m_vPrecomputedOBBExtent` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1178` | `m_nPrecomputedSubFrusta` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x117c` | `m_vPrecomputedOBBOrigin0` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1188` | `m_vPrecomputedOBBAngles0` | QAngle | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1194` | `m_vPrecomputedOBBExtent0` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x11a0` | `m_vPrecomputedOBBOrigin1` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x11ac` | `m_vPrecomputedOBBAngles1` | QAngle | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x11b8` | `m_vPrecomputedOBBExtent1` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x11c4` | `m_vPrecomputedOBBOrigin2` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x11d0` | `m_vPrecomputedOBBAngles2` | QAngle | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x11dc` | `m_vPrecomputedOBBExtent2` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x11e8` | `m_vPrecomputedOBBOrigin3` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x11f4` | `m_vPrecomputedOBBAngles3` | QAngle | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1200` | `m_vPrecomputedOBBExtent3` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x120c` | `m_vPrecomputedOBBOrigin4` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1218` | `m_vPrecomputedOBBAngles4` | QAngle | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1224` | `m_vPrecomputedOBBExtent4` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1230` | `m_vPrecomputedOBBOrigin5` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x123c` | `m_vPrecomputedOBBAngles5` | QAngle | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1248` | `m_vPrecomputedOBBExtent5` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x1298` | `m_bInitialBoneSetup` | bool | [C_BarnLight](../client/C_BarnLight.md) | `MNotSaved` |
-| `0x12a0` | `m_VisClusters` | C_NetworkUtlVectorBase< uint16 > | [C_BarnLight](../client/C_BarnLight.md) |  |
-| `0x12c0` | `m_flInnerAngle` | float32 |  |  |
-| `0x12c4` | `m_flOuterAngle` | float32 |  |  |
-| `0x12c8` | `m_bShowLight` | bool |  |  |
+| `0xaf8` | `m_CRenderComponent` | [CRenderComponent](../client/CRenderComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0xb00` | `m_CHitboxComponent` | [CHitboxComponent](../client/CHitboxComponent.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb18` | `m_pChoreoComponent` | [CChoreoComponent](../client/CChoreoComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb20` | `m_nDestructiblePartInitialStateDestructed0` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb24` | `m_nDestructiblePartInitialStateDestructed1` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb28` | `m_nDestructiblePartInitialStateDestructed2` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb2c` | `m_nDestructiblePartInitialStateDestructed3` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb30` | `m_nDestructiblePartInitialStateDestructed4` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb34` | `m_nDestructiblePartInitialStateDestructed0_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb38` | `m_nDestructiblePartInitialStateDestructed1_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb3c` | `m_nDestructiblePartInitialStateDestructed2_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb40` | `m_nDestructiblePartInitialStateDestructed3_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb44` | `m_nDestructiblePartInitialStateDestructed4_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb48` | `m_bDestructiblePartInitialStateDestructed0_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb49` | `m_bDestructiblePartInitialStateDestructed1_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb4a` | `m_bDestructiblePartInitialStateDestructed2_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb4b` | `m_bDestructiblePartInitialStateDestructed3_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb4c` | `m_bDestructiblePartInitialStateDestructed4_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb50` | `m_pDestructiblePartsSystemComponent` | [CDestructiblePartsComponent](../client/CDestructiblePartsComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xc78` | `m_bInitModelEffects` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0xc79` | `m_bDoingModelEffects` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0xc7c` | `m_iOldHealth` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0xc80` | `m_nRenderMode` | [RenderMode_t](../server/RenderMode_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xc81` | `m_nRenderFX` | [RenderFx_t](../server/RenderFx_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xc82` | `m_bAllowFadeInView` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xca0` | `m_clrRender` | Color | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xca8` | `m_vecRenderAttributes` | C_UtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../client/EntityRenderAttribute_t.md) > | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xd28` | `m_bRenderToCubemaps` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xd29` | `m_bExpandRenderBoundsToIncludeCloth` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xd2a` | `m_bNoInterpolate` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xd30` | `m_Collision` | [CCollisionProperty](../client/CCollisionProperty.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xde8` | `m_Glow` | [CGlowProperty](../client/CGlowProperty.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe40` | `m_flGlowBackfaceMult` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe44` | `m_fadeMinDist` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe48` | `m_fadeMaxDist` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe4c` | `m_flFadeScale` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe50` | `m_flShadowStrength` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe54` | `m_nObjectCulling` | uint8 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe55` | `m_nRequiredDecalRtEncoding` | [DecalRtEncoding_t](../scenesystem/DecalRtEncoding_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe58` | `m_bodyGroupTotalRequestCount` | uint32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe60` | `m_bodyGroupRequests` | CUtlVectorFixedGrowable< [C_BaseModelEntity::BodyGroupRequest_t](../client/C_BaseModelEntity.BodyGroupRequest_t.md), 8 > | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xf38` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xf60` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0x1040` | `m_pClientAlphaProperty` | [CClientAlphaProperty](../client/CClientAlphaProperty.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0x1048` | `m_ClientOverrideTint` | Color | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0x104c` | `m_bUseClientOverrideTint` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0x1088` | `m_bvDisabledHitGroups` | uint32[1] | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
+| `0x1098` | `m_bEnabled` | bool | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x109c` | `m_nColorMode` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x10a0` | `m_Color` | Color | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x10a4` | `m_flColorTemperature` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x10a8` | `m_flBrightness` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x10ac` | `m_flBrightnessScale` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x10b0` | `m_nDirectLight` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x10b4` | `m_nBakedShadowIndex` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x10b8` | `m_nLightPathUniqueId` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x10bc` | `m_nLightMapUniqueId` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x10c0` | `m_nLuminaireShape` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x10c4` | `m_flLuminaireSize` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x10c8` | `m_flLuminaireAnisotropy` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x10d0` | `m_LightStyleString` | CUtlString | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x10d8` | `m_flLightStyleStartTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x10e0` | `m_QueuedLightStyleStrings` | C_NetworkUtlVectorBase< CUtlString > | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x10f8` | `m_LightStyleEvents` | C_NetworkUtlVectorBase< CUtlString > | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1110` | `m_LightStyleTargets` | C_NetworkUtlVectorBase< CHandle< [C_BaseModelEntity](../client/C_BaseModelEntity.md) > > | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1128` | `m_StyleEvent` | [CEntityIOOutput](../entity2/CEntityIOOutput.md)[4] | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1188` | `m_hLightCookie` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1190` | `m_flShape` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1194` | `m_flSoftX` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1198` | `m_flSoftY` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x119c` | `m_flSkirt` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x11a0` | `m_flSkirtNear` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x11a4` | `m_vSizeParams` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x11b0` | `m_flRange` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x11b4` | `m_vShear` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x11c0` | `m_nBakeSpecularToCubemaps` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x11c4` | `m_vBakeSpecularToCubemapsSize` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x11d0` | `m_flBakeSpecularToCubemapsScale` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x11d4` | `m_nCastShadows` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x11d8` | `m_nShadowMapSize` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x11dc` | `m_nShadowPriority` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x11e0` | `m_bContactShadow` | bool | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x11e1` | `m_bForceShadowsEnabled` | bool | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x11e4` | `m_nBounceLight` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x11e8` | `m_flBounceScale` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x11ec` | `m_flMinRoughness` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x11f0` | `m_vAlternateColor` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x11fc` | `m_fAlternateColorBrightness` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1200` | `m_nFog` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1204` | `m_flFogStrength` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1208` | `m_nFogShadows` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x120c` | `m_flFogScale` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1210` | `m_flFadeSizeStart` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1214` | `m_flFadeSizeEnd` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1218` | `m_flShadowFadeSizeStart` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x121c` | `m_flShadowFadeSizeEnd` | float32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1220` | `m_bPrecomputedFieldsValid` | bool | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1224` | `m_vPrecomputedBoundsMins` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1230` | `m_vPrecomputedBoundsMaxs` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x123c` | `m_vPrecomputedOBBOrigin` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1248` | `m_vPrecomputedOBBAngles` | QAngle | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1254` | `m_vPrecomputedOBBExtent` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1260` | `m_nPrecomputedSubFrusta` | int32 | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1264` | `m_vPrecomputedOBBOrigin0` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1270` | `m_vPrecomputedOBBAngles0` | QAngle | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x127c` | `m_vPrecomputedOBBExtent0` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1288` | `m_vPrecomputedOBBOrigin1` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1294` | `m_vPrecomputedOBBAngles1` | QAngle | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x12a0` | `m_vPrecomputedOBBExtent1` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x12ac` | `m_vPrecomputedOBBOrigin2` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x12b8` | `m_vPrecomputedOBBAngles2` | QAngle | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x12c4` | `m_vPrecomputedOBBExtent2` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x12d0` | `m_vPrecomputedOBBOrigin3` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x12dc` | `m_vPrecomputedOBBAngles3` | QAngle | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x12e8` | `m_vPrecomputedOBBExtent3` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x12f4` | `m_vPrecomputedOBBOrigin4` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1300` | `m_vPrecomputedOBBAngles4` | QAngle | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x130c` | `m_vPrecomputedOBBExtent4` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1318` | `m_vPrecomputedOBBOrigin5` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1324` | `m_vPrecomputedOBBAngles5` | QAngle | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1330` | `m_vPrecomputedOBBExtent5` | Vector | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x1380` | `m_bInitialBoneSetup` | bool | [C_BarnLight](../client/C_BarnLight.md) | `MNotSaved` |
+| `0x1388` | `m_VisClusters` | C_NetworkUtlVectorBase< uint16 > | [C_BarnLight](../client/C_BarnLight.md) |  |
+| `0x13a8` | `m_flInnerAngle` | float32 |  |  |
+| `0x13ac` | `m_flOuterAngle` | float32 |  |  |
+| `0x13b0` | `m_bShowLight` | bool |  |  |

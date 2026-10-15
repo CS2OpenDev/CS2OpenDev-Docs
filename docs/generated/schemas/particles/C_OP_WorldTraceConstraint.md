@@ -8,9 +8,9 @@ kind: class
 
 # C_OP_WorldTraceConstraint
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 2520 bytes (`0x9d8`) · **Align:** 8 · **Module:** particles
+**Kind:** class · **Size:** 2568 bytes (`0xa08`) · **Align:** 8 · **Module:** particles
 
 **Inherits from:** [CParticleFunctionConstraint](../particles/CParticleFunctionConstraint.md)
 
@@ -30,54 +30,55 @@ classDiagram
 
 ## Memory layout
 
-44 fields (27 declared here, 17 inherited). Offsets are absolute from the object base.
+45 fields (28 declared here, 17 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flOpStrength` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator strength` `MPropertySortPriority -100` |
-| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
-| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
-| `0x180` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
-| `0x184` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
-| `0x188` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
-| `0x18c` | `m_flOpEndFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadeout` `MPropertySortPriority -100` |
-| `0x190` | `m_flOpFadeOscillatePeriod` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade oscillate` `MPropertySortPriority -100` |
-| `0x194` | `m_bNormalizeToStopTime` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName normalize fade times to endcap` `MPropertySortPriority -100` |
-| `0x198` | `m_flOpTimeOffsetMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset min` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Time Offset` |
-| `0x19c` | `m_flOpTimeOffsetMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset max` `MPropertySortPriority -100` |
-| `0x1a0` | `m_nOpTimeOffsetSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset seed` `MPropertySortPriority -100` |
-| `0x1a4` | `m_nOpTimeScaleSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale seed` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Timescale Modifiers` |
-| `0x1a8` | `m_flOpTimeScaleMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale min` `MPropertySortPriority -100` |
-| `0x1ac` | `m_flOpTimeScaleMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale max` `MPropertySortPriority -100` |
-| `0x1b2` | `m_bDisableOperator` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyStartGroup` `MPropertySuppressField` |
-| `0x1b8` | `m_Notes` | CUtlString | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleHelpField` `MPropertyFriendlyName operator help and notes` `MPropertySortPriority -100` |
-| `0x1d8` | `m_nCP` | int32 |  | `MPropertyFriendlyName control point for fast collision tests` |
-| `0x1dc` | `m_vecCpOffset` | Vector |  | `MPropertyFriendlyName control point offset for fast collisions` `MVectorIsCoordinate` |
-| `0x1e8` | `m_nCollisionMode` | [ParticleCollisionMode_t](../particles/ParticleCollisionMode_t.md) |  | `MPropertyFriendlyName collision mode` |
-| `0x1ec` | `m_nCollisionModeMin` | [ParticleCollisionMode_t](../particles/ParticleCollisionMode_t.md) |  | `MPropertyFriendlyName minimum detail collision mode` |
-| `0x1f0` | `m_nTraceSet` | [ParticleTraceSet_t](../particles/ParticleTraceSet_t.md) |  | `MPropertyFriendlyName Trace Set` `MPropertyStartGroup Collision Options` |
-| `0x1f4` | `m_CollisionGroupName` | char[128] |  | `MPropertyFriendlyName collision group` |
-| `0x274` | `m_bWorldOnly` | bool |  | `MPropertyFriendlyName World Only` |
-| `0x275` | `m_bBrushOnly` | bool |  | `MPropertyFriendlyName brush only` |
-| `0x276` | `m_bIncludeWater` | bool |  | `MPropertyFriendlyName include water` `MPropertySuppressExpr m_nTraceSet == PARTICLE_TRACE_SET_STATIC` |
-| `0x278` | `m_nIgnoreCP` | int32 |  | `MPropertyFriendlyName CP Entity to Ignore for Collisions` `MPropertySuppressExpr m_nTraceSet == PARTICLE_TRACE_SET_STATIC` |
-| `0x27c` | `m_flCpMovementTolerance` | float32 |  | `MPropertyFriendlyName control point movement distance tolerance` `MPropertySuppressExpr m_nCollisionMode == COLLISION_MODE_PER_PARTICLE_TRACE` |
-| `0x280` | `m_flRetestRate` | float32 |  | `MPropertyFriendlyName plane cache retest rate` `MPropertySuppressExpr m_nCollisionMode != COLLISION_MODE_PER_FRAME_PLANESET` |
-| `0x284` | `m_flTraceTolerance` | float32 |  | `MPropertyFriendlyName trace accuracy tolerance` `MPropertySuppressExpr m_nCollisionMode != COLLISION_MODE_USE_NEAREST_TRACE` |
-| `0x288` | `m_flCollisionConfirmationSpeed` | float32 |  | `MPropertyFriendlyName Confirm Collision Speed Threshold` `MPropertySuppressExpr m_nCollisionMode == COLLISION_MODE_PER_PARTICLE_TRACE` |
-| `0x28c` | `m_nMaxTracesPerFrame` | float32 |  | `MPropertyFriendlyName Max Confirmation Traces Per Fame` `MPropertySuppressExpr m_nCollisionMode == COLLISION_MODE_PER_PARTICLE_TRACE` |
-| `0x290` | `m_flRadiusScale` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName radius scale` `MPropertyStartGroup Impact Options` |
-| `0x400` | `m_flBounceAmount` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName amount of bounce` |
-| `0x570` | `m_flSlideAmount` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName amount of slide` |
-| `0x6e0` | `m_flRandomDirScale` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Random Direction scale` |
-| `0x850` | `m_bDecayBounce` | bool |  | `MPropertyFriendlyName Add Decay to Bounce` |
-| `0x851` | `m_bKillonContact` | bool |  | `MPropertyFriendlyName kill particle on collision` |
-| `0x854` | `m_flMinSpeed` | float32 |  | `MPropertyFriendlyName minimum speed to kill on collision` |
-| `0x858` | `m_bSetNormal` | bool |  | `MPropertyFriendlyName Set Normal` |
-| `0x85c` | `m_nStickOnCollisionField` | [ParticleAttributeIndex_t](../particles/ParticleAttributeIndex_t.md) |  | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Stick On Collision Cache Field` |
-| `0x860` | `m_flStopSpeed` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Speed to stop when sticking` |
-| `0x9d0` | `m_nEntityStickDataField` | [ParticleAttributeIndex_t](../particles/ParticleAttributeIndex_t.md) |  | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Entity Hitbox Cache Field (Requires Stick on Collision)` |
-| `0x9d4` | `m_nEntityStickNormalField` | [ParticleAttributeIndex_t](../particles/ParticleAttributeIndex_t.md) |  | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Entity Normal Cache Field (Requires Stick on Collision)` |
+| `0x180` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
+| `0x184` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
+| `0x188` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
+| `0x18c` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
+| `0x190` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
+| `0x194` | `m_flOpEndFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadeout` `MPropertySortPriority -100` |
+| `0x198` | `m_flOpFadeOscillatePeriod` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade oscillate` `MPropertySortPriority -100` |
+| `0x19c` | `m_bNormalizeToStopTime` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName normalize fade times to endcap` `MPropertySortPriority -100` |
+| `0x1a0` | `m_flOpTimeOffsetMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset min` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Time Offset` |
+| `0x1a4` | `m_flOpTimeOffsetMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset max` `MPropertySortPriority -100` |
+| `0x1a8` | `m_nOpTimeOffsetSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset seed` `MPropertySortPriority -100` |
+| `0x1ac` | `m_nOpTimeScaleSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale seed` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Timescale Modifiers` |
+| `0x1b0` | `m_flOpTimeScaleMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale min` `MPropertySortPriority -100` |
+| `0x1b4` | `m_flOpTimeScaleMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale max` `MPropertySortPriority -100` |
+| `0x1ba` | `m_bDisableOperator` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyStartGroup` `MPropertySuppressField` |
+| `0x1c0` | `m_Notes` | CUtlString | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleHelpField` `MPropertyAttributeEditor TextBlock()` `MPropertyFriendlyName operator help and notes` `MPropertySortPriority -100` |
+| `0x1e0` | `m_nCP` | int32 |  | `MPropertyFriendlyName control point for fast collision tests` |
+| `0x1e4` | `m_vecCpOffset` | Vector |  | `MPropertyFriendlyName control point offset for fast collisions` `MVectorIsCoordinate` |
+| `0x1f0` | `m_nCollisionMode` | [ParticleCollisionMode_t](../particles/ParticleCollisionMode_t.md) |  | `MPropertyFriendlyName collision mode` |
+| `0x1f4` | `m_nCollisionModeMin` | [ParticleCollisionMode_t](../particles/ParticleCollisionMode_t.md) |  | `MPropertyFriendlyName minimum detail collision mode` |
+| `0x1f8` | `m_nTraceSet` | [ParticleTraceSet_t](../particles/ParticleTraceSet_t.md) |  | `MPropertyFriendlyName Trace Set` `MPropertyStartGroup Collision Options` |
+| `0x1fc` | `m_CollisionGroupName` | char[128] |  | `MPropertyFriendlyName collision group` |
+| `0x27c` | `m_bWorldOnly` | bool |  | `MPropertyFriendlyName World Only` |
+| `0x27d` | `m_bBrushOnly` | bool |  | `MPropertyFriendlyName brush only` |
+| `0x27e` | `m_bIncludeWater` | bool |  | `MPropertyFriendlyName include water` `MPropertySuppressExpr m_nTraceSet == PARTICLE_TRACE_SET_STATIC` |
+| `0x280` | `m_nIgnoreCP` | int32 |  | `MPropertyFriendlyName CP Entity to Ignore for Collisions` `MPropertySuppressExpr m_nTraceSet == PARTICLE_TRACE_SET_STATIC` |
+| `0x284` | `m_flCpMovementTolerance` | float32 |  | `MPropertyFriendlyName control point movement distance tolerance` `MPropertySuppressExpr m_nCollisionMode == COLLISION_MODE_PER_PARTICLE_TRACE` |
+| `0x288` | `m_flRetestRate` | float32 |  | `MPropertyFriendlyName plane cache retest rate` `MPropertySuppressExpr m_nCollisionMode != COLLISION_MODE_PER_FRAME_PLANESET` |
+| `0x28c` | `m_flTraceTolerance` | float32 |  | `MPropertyFriendlyName trace accuracy tolerance` `MPropertySuppressExpr m_nCollisionMode != COLLISION_MODE_USE_NEAREST_TRACE` |
+| `0x290` | `m_flCollisionConfirmationSpeed` | float32 |  | `MPropertyFriendlyName Confirm Collision Speed Threshold` `MPropertySuppressExpr m_nCollisionMode == COLLISION_MODE_PER_PARTICLE_TRACE` |
+| `0x294` | `m_nMaxTracesPerFrame` | float32 |  | `MPropertyFriendlyName Max Confirmation Traces Per Fame` `MPropertySuppressExpr m_nCollisionMode == COLLISION_MODE_PER_PARTICLE_TRACE` |
+| `0x298` | `m_flRadiusScale` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName radius scale` `MPropertyStartGroup Impact Options` |
+| `0x410` | `m_flBounceAmount` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName amount of bounce` |
+| `0x588` | `m_flSlideAmount` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName amount of slide` |
+| `0x700` | `m_flRandomDirScale` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Random Direction scale` |
+| `0x878` | `m_bDecayBounce` | bool |  | `MPropertyFriendlyName Add Decay to Bounce` |
+| `0x879` | `m_bKillonContact` | bool |  | `MPropertyFriendlyName kill particle on collision` |
+| `0x87c` | `m_flMinSpeed` | float32 |  | `MPropertyFriendlyName minimum speed to kill on collision` |
+| `0x880` | `m_bKillonContactBounce` | bool |  | `MPropertyFriendlyName calculate bounce on killed particles (for child events)` `MPropertySuppressExpr m_bKillonContact == false` |
+| `0x881` | `m_bSetNormal` | bool |  | `MPropertyFriendlyName Set Normal` |
+| `0x884` | `m_nStickOnCollisionField` | [ParticleAttributeIndex_t](../particleslib/ParticleAttributeIndex_t.md) |  | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Stick On Collision Cache Field` |
+| `0x888` | `m_flStopSpeed` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Speed to stop when sticking` |
+| `0xa00` | `m_nEntityStickDataField` | [ParticleAttributeIndex_t](../particleslib/ParticleAttributeIndex_t.md) |  | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Entity Hitbox Cache Field (Requires Stick on Collision)` |
+| `0xa04` | `m_nEntityStickNormalField` | [ParticleAttributeIndex_t](../particleslib/ParticleAttributeIndex_t.md) |  | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Entity Normal Cache Field (Requires Stick on Collision)` |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -156,7 +157,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_nOpEndCapState&quot;: &quot;PARTICLE_ENDCAP_ALWAYS_ON&quot;,
 	&quot;m_nToolsState&quot;: &quot;PARTICLE_TOOLS_STATE_ALWAYS_ON&quot;,
@@ -267,7 +269,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flBounceAmount&quot;:
 	{
@@ -342,7 +345,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flSlideAmount&quot;:
 	{
@@ -417,7 +421,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flRandomDirScale&quot;:
 	{
@@ -492,11 +497,13 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_bDecayBounce&quot;: false,
 	&quot;m_bKillonContact&quot;: false,
 	&quot;m_flMinSpeed&quot;: -1.000000,
+	&quot;m_bKillonContactBounce&quot;: false,
 	&quot;m_bSetNormal&quot;: false,
 	&quot;m_nStickOnCollisionField&quot;: 19,
 	&quot;m_flStopSpeed&quot;:
@@ -572,7 +579,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_nEntityStickDataField&quot;: 19,
 	&quot;m_nEntityStickNormalField&quot;: 19

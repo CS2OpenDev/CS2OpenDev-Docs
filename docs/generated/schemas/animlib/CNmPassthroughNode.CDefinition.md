@@ -8,13 +8,13 @@ kind: class
 
 # CNmPassthroughNode::CDefinition
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 8 · **Module:** animlib
 
 **Inherits from:** [CNmPoseNode::CDefinition](../animlib/CNmPoseNode.CDefinition.md)
 
-**Derived by:** [CNmAimCSNode::CDefinition](../server/CNmAimCSNode.CDefinition.md), [CNmChainLookatNode::CDefinition](../animlib/CNmChainLookatNode.CDefinition.md), [CNmFollowBoneNode::CDefinition](../animlib/CNmFollowBoneNode.CDefinition.md), [CNmFootIKNode::CDefinition](../animlib/CNmFootIKNode.CDefinition.md), [CNmRootMotionOverrideNode::CDefinition](../animlib/CNmRootMotionOverrideNode.CDefinition.md), [CNmScaleNode::CDefinition](../animlib/CNmScaleNode.CDefinition.md), [CNmSnapWeaponNode::CDefinition](../server/CNmSnapWeaponNode.CDefinition.md), [CNmSpeedScaleBaseNode::CDefinition](../animlib/CNmSpeedScaleBaseNode.CDefinition.md), [CNmTwoBoneIKNode::CDefinition](../animlib/CNmTwoBoneIKNode.CDefinition.md)
+**Derived by:** [CNmAimCSNode::CDefinition](../server/CNmAimCSNode.CDefinition.md), [CNmBodyGroupNode::CDefinition](../animlib/CNmBodyGroupNode.CDefinition.md), [CNmChainLookatNode::CDefinition](../animlib/CNmChainLookatNode.CDefinition.md), [CNmFollowBoneNode::CDefinition](../animlib/CNmFollowBoneNode.CDefinition.md), [CNmFootIKNode::CDefinition](../animlib/CNmFootIKNode.CDefinition.md), [CNmRootMotionOverrideNode::CDefinition](../animlib/CNmRootMotionOverrideNode.CDefinition.md), [CNmScaleNode::CDefinition](../animlib/CNmScaleNode.CDefinition.md), [CNmSnapWeaponNode::CDefinition](../server/CNmSnapWeaponNode.CDefinition.md), [CNmSpeedScaleBaseNode::CDefinition](../animlib/CNmSpeedScaleBaseNode.CDefinition.md), [CNmTwoBoneIKNode::CDefinition](../animlib/CNmTwoBoneIKNode.CDefinition.md)
 
 **Relationships:**
 
@@ -23,6 +23,7 @@ classDiagram
     `CNmPoseNode::CDefinition` <|-- `CNmPassthroughNode::CDefinition`
     `CNmGraphNode::CDefinition` <|-- `CNmPoseNode::CDefinition`
     `CNmPassthroughNode::CDefinition` <|-- `CNmAimCSNode::CDefinition`
+    `CNmPassthroughNode::CDefinition` <|-- `CNmBodyGroupNode::CDefinition`
     `CNmPassthroughNode::CDefinition` <|-- `CNmChainLookatNode::CDefinition`
     `CNmPassthroughNode::CDefinition` <|-- `CNmFollowBoneNode::CDefinition`
     `CNmPassthroughNode::CDefinition` <|-- `CNmFootIKNode::CDefinition`

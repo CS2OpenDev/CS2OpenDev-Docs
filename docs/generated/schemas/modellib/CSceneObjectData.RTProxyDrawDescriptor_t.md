@@ -8,9 +8,9 @@ kind: class
 
 # CSceneObjectData::RTProxyDrawDescriptor_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 352 bytes (`0x160`) · **Align:** 8 · **Module:** modellib
+**Kind:** class · **Size:** 360 bytes (`0x168`) · **Align:** 8 · **Module:** modellib
 
 **Relationships:**
 
@@ -29,16 +29,16 @@ classDiagram
 | `0x0` | `m_materialGroupToken` | uint32 |  |  |
 | `0x4` | `m_nSrcDrawIndex` | int32 |  |  |
 | `0x8` | `m_drawDesc` | [CMaterialDrawDescriptor](../modellib/CMaterialDrawDescriptor.md) |  |  |
-| `0x120` | `m_mWorldFromLocal` | matrix3x4_t |  |  |
-| `0x150` | `m_nVertexAlbedoFormat` | [VertexAlbedoFormat_t](../modellib/VertexAlbedoFormat_t.md) |  |  |
-| `0x151` | `m_nVertexAlbedoVB` | int8 |  |  |
-| `0x152` | `m_nVertexAlbedoOffset` | uint16 |  |  |
-| `0x154` | `m_nVertexAlbedoStride` | uint16 |  |  |
-| `0x156` | `m_nVertexEmissiveFormat` | [VertexAlbedoFormat_t](../modellib/VertexAlbedoFormat_t.md) |  |  |
-| `0x157` | `m_nVertexEmissiveVB` | int8 |  |  |
-| `0x158` | `m_nVertexEmissiveOffset` | uint16 |  |  |
-| `0x15a` | `m_nVertexEmissiveStride` | uint16 |  |  |
-| `0x15c` | `m_fEmissiveFactor` | float32 |  |  |
+| `0x128` | `m_mWorldFromLocal` | matrix3x4_t |  |  |
+| `0x158` | `m_nVertexAlbedoFormat` | [VertexAlbedoFormat_t](../modellib/VertexAlbedoFormat_t.md) |  |  |
+| `0x159` | `m_nVertexAlbedoVB` | int8 |  |  |
+| `0x15a` | `m_nVertexAlbedoOffset` | uint16 |  |  |
+| `0x15c` | `m_nVertexAlbedoStride` | uint16 |  |  |
+| `0x15e` | `m_nVertexEmissiveFormat` | [VertexAlbedoFormat_t](../modellib/VertexAlbedoFormat_t.md) |  |  |
+| `0x15f` | `m_nVertexEmissiveVB` | int8 |  |  |
+| `0x160` | `m_nVertexEmissiveOffset` | uint16 |  |  |
+| `0x162` | `m_nVertexEmissiveStride` | uint16 |  |  |
+| `0x164` | `m_fEmissiveFactor` | float32 |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -58,6 +58,7 @@ classDiagram
 		&quot;m_nNumMeshlets&quot;: 0,
 		&quot;m_nFirstMeshlet&quot;: 0,
 		&quot;m_nAppliedIndexOffset&quot;: 0,
+		&quot;m_nEmissivePrimitiveCount&quot;: -1,
 		&quot;m_nDepthVertexBufferIndex&quot;: 255,
 		&quot;m_nMeshletPackedIVBIndex&quot;: 255,
 		&quot;m_rigidMeshParts&quot;:

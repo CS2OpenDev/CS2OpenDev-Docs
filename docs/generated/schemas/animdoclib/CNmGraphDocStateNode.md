@@ -8,9 +8,9 @@ kind: class
 
 # CNmGraphDocStateNode
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 304 bytes (`0x130`) · **Align:** 8 · **Module:** animdoclib
+**Kind:** class · **Size:** 328 bytes (`0x148`) · **Align:** 8 · **Module:** animdoclib
 
 **Inherits from:** [CNmGraphDocStateMachineGraphNode](../animdoclib/CNmGraphDocStateMachineGraphNode.md)
 
@@ -27,7 +27,7 @@ classDiagram
 
 ## Memory layout
 
-17 fields (11 declared here, 6 inherited). Offsets are absolute from the object base.
+18 fields (12 declared here, 6 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -35,19 +35,20 @@ classDiagram
 | `0x18` | `m_name` | CUtlString | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertyHideField` |
 | `0x20` | `m_floatingComment` | CUtlString | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertyAttributeEditor TextBlock()` |
 | `0x28` | `m_position` | Vector2D | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
-| `0x40` | `m_pChildGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
-| `0x48` | `m_pSecondaryGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
-| `0x50` | `m_type` | [CNmGraphDocStateNode::StateType_t](../animdoclib/CNmGraphDocStateNode.StateType_t.md) |  | `MPropertyHideField` |
-| `0x54` | `m_cloneSourceStateID` | V_uuid_t |  | `MPropertySuppressField` |
-| `0x68` | `m_stateEvents` | CUtlVector< [CNmGraphDocStateNode::StateEvent_t](../animdoclib/CNmGraphDocStateNode.StateEvent_t.md) > |  | `MPropertyAutoExpandSelf` |
-| `0x80` | `m_timedStateEvents` | CUtlVector< [CNmGraphDocStateNode::TimedStateEvent_t](../animdoclib/CNmGraphDocStateNode.TimedStateEvent_t.md) > |  | `MPropertyAutoExpandSelf` |
-| `0x98` | `m_events` | CUtlVector< CGlobalSymbol > |  | `MPropertySuppressField` |
-| `0xb0` | `m_entryEvents` | CUtlVector< CGlobalSymbol > |  | `MPropertySuppressField` |
-| `0xc8` | `m_executeEvents` | CUtlVector< CGlobalSymbol > |  | `MPropertySuppressField` |
-| `0xe0` | `m_exitEvents` | CUtlVector< CGlobalSymbol > |  | `MPropertySuppressField` |
-| `0xf8` | `m_timeRemainingEvents` | CUtlVector< [CNmGraphDocStateNode::TimedStateEvent_t](../animdoclib/CNmGraphDocStateNode.TimedStateEvent_t.md) > |  | `MPropertySuppressField` |
-| `0x110` | `m_timeElapsedEvents` | CUtlVector< [CNmGraphDocStateNode::TimedStateEvent_t](../animdoclib/CNmGraphDocStateNode.TimedStateEvent_t.md) > |  | `MPropertySuppressField` |
-| `0x128` | `m_bUseActualElapsedTimeInStateForTimedEvents` | bool |  | `MPropertyGroupName Advanced` |
+| `0x48` | `m_pChildGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
+| `0x50` | `m_pSecondaryGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
+| `0x58` | `m_type` | [CNmGraphDocStateNode::StateType_t](../animdoclib/CNmGraphDocStateNode.StateType_t.md) |  | `MPropertyHideField` |
+| `0x5c` | `m_cloneSourceStateID` | V_uuid_t |  | `MPropertySuppressField` |
+| `0x6c` | `m_cloneStateVersion` | V_uuid_t |  | `MPropertySuppressField` |
+| `0x80` | `m_stateEvents` | CUtlVector< [CNmGraphDocStateNode::StateEvent_t](../animdoclib/CNmGraphDocStateNode.StateEvent_t.md) > |  | `MPropertyAutoExpandSelf` |
+| `0x98` | `m_timedStateEvents` | CUtlVector< [CNmGraphDocStateNode::TimedStateEvent_t](../animdoclib/CNmGraphDocStateNode.TimedStateEvent_t.md) > |  | `MPropertyAutoExpandSelf` |
+| `0xb0` | `m_events` | CUtlVector< CGlobalSymbol > |  | `MPropertySuppressField` |
+| `0xc8` | `m_entryEvents` | CUtlVector< CGlobalSymbol > |  | `MPropertySuppressField` |
+| `0xe0` | `m_executeEvents` | CUtlVector< CGlobalSymbol > |  | `MPropertySuppressField` |
+| `0xf8` | `m_exitEvents` | CUtlVector< CGlobalSymbol > |  | `MPropertySuppressField` |
+| `0x110` | `m_timeRemainingEvents` | CUtlVector< [CNmGraphDocStateNode::TimedStateEvent_t](../animdoclib/CNmGraphDocStateNode.TimedStateEvent_t.md) > |  | `MPropertySuppressField` |
+| `0x128` | `m_timeElapsedEvents` | CUtlVector< [CNmGraphDocStateNode::TimedStateEvent_t](../animdoclib/CNmGraphDocStateNode.TimedStateEvent_t.md) > |  | `MPropertySuppressField` |
+| `0x140` | `m_bUseActualElapsedTimeInStateForTimedEvents` | bool |  | `MPropertyGroupName Advanced` |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -167,6 +168,7 @@ classDiagram
 	},
 	&quot;m_type&quot;: &quot;BlendTreeState&quot;,
 	&quot;m_cloneSourceStateID&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
+	&quot;m_cloneStateVersion&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;,
 	&quot;m_stateEvents&quot;:
 	[
 	],

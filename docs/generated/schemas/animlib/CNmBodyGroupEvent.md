@@ -8,7 +8,7 @@ kind: class
 
 # CNmBodyGroupEvent
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 48 bytes (`0x30`) · **Align:** 8 · **Module:** animlib
 
@@ -33,7 +33,7 @@ classDiagram
 | `0x10` | `m_syncID` | CGlobalSymbol | [CNmEvent](../animlib/CNmEvent.md) |  |
 | `0x18` | `m_target` | [CNmEventTargetEntity_t](../animlib/CNmEventTargetEntity_t.md) |  |  |
 | `0x20` | `m_groupName` | CUtlString |  |  |
-| `0x28` | `m_nGroupValue` | int32 |  |  |
+| `0x28` | `m_choiceName` | CUtlString |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -50,6 +50,6 @@ classDiagram
 	&quot;m_syncID&quot;: &quot;&quot;,
 	&quot;m_target&quot;: &quot;Self&quot;,
 	&quot;m_groupName&quot;: &quot;&quot;,
-	&quot;m_nGroupValue&quot;: 0
+	&quot;m_choiceName&quot;: &quot;&quot;
 }</pre>
 </details>

@@ -8,9 +8,9 @@ kind: class
 
 # CNmOrientationWarpNode::CDefinition
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 8 · **Module:** animlib
+**Kind:** class · **Size:** 32 bytes (`0x20`) · **Align:** 8 · **Module:** animlib
 
 **Inherits from:** [CNmPoseNode::CDefinition](../animlib/CNmPoseNode.CDefinition.md)
 
@@ -20,12 +20,13 @@ kind: class
 classDiagram
     `CNmPoseNode::CDefinition` <|-- `CNmOrientationWarpNode::CDefinition`
     `CNmGraphNode::CDefinition` <|-- `CNmPoseNode::CDefinition`
+    `CNmOrientationWarpNode::CDefinition` *-- `CNmOrientationWarpNode::AlignmentMode_t`
     `CNmOrientationWarpNode::CDefinition` *-- `CNmRootMotionData::SamplingMode_t`
 ```
 
 ## Memory layout
 
-7 fields (6 declared here, 1 inherited). Offsets are absolute from the object base.
+8 fields (7 declared here, 1 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -35,7 +36,8 @@ classDiagram
 | `0x14` | `m_bIsOffsetNode` | bool |  |  |
 | `0x15` | `m_bIsOffsetRelativeToCharacter` | bool |  |  |
 | `0x16` | `m_bWarpTranslation` | bool |  |  |
-| `0x17` | `m_samplingMode` | [CNmRootMotionData::SamplingMode_t](../animlib/CNmRootMotionData.SamplingMode_t.md) |  |  |
+| `0x17` | `m_alignmentMode` | [CNmOrientationWarpNode::AlignmentMode_t](../animlib/CNmOrientationWarpNode.AlignmentMode_t.md) |  |  |
+| `0x18` | `m_samplingMode` | [CNmRootMotionData::SamplingMode_t](../animlib/CNmRootMotionData.SamplingMode_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -47,6 +49,7 @@ classDiagram
 	&quot;m_bIsOffsetNode&quot;: false,
 	&quot;m_bIsOffsetRelativeToCharacter&quot;: true,
 	&quot;m_bWarpTranslation&quot;: false,
+	&quot;m_alignmentMode&quot;: &quot;MovementDirection&quot;,
 	&quot;m_samplingMode&quot;: &quot;WorldSpace&quot;
 }</pre>
 </details>

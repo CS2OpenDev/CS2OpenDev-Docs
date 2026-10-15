@@ -8,9 +8,9 @@ kind: class
 
 # CModelConfigElement_AttachedModel
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 232 bytes (`0xe8`) · **Align:** 8 · **Module:** modellib
+**Kind:** class · **Size:** 240 bytes (`0xf0`) · **Align:** 8 · **Module:** modellib
 
 **Inherits from:** [CModelConfigElement](../modellib/CModelConfigElement.md)
 
@@ -25,7 +25,7 @@ classDiagram
 
 ## Memory layout
 
-15 fields (13 declared here, 2 inherited). Offsets are absolute from the object base.
+17 fields (15 declared here, 2 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -44,6 +44,8 @@ classDiagram
 | `0x8e` | `m_bUserSpecifiedMaterialGroup` | bool |  |  |
 | `0x90` | `m_BodygroupOnOtherModels` | CUtlString |  |  |
 | `0x98` | `m_MaterialGroupOnOtherModels` | CUtlString |  |  |
+| `0xa0` | `m_bCollideWithHierarchy` | bool |  |  |
+| `0xa1` | `m_bCollideOutsideHierarchy` | bool |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -75,6 +77,8 @@ classDiagram
 	&quot;m_bUserSpecifiedColor&quot;: false,
 	&quot;m_bUserSpecifiedMaterialGroup&quot;: false,
 	&quot;m_BodygroupOnOtherModels&quot;: &quot;&quot;,
-	&quot;m_MaterialGroupOnOtherModels&quot;: &quot;&quot;
+	&quot;m_MaterialGroupOnOtherModels&quot;: &quot;&quot;,
+	&quot;m_bCollideWithHierarchy&quot;: false,
+	&quot;m_bCollideOutsideHierarchy&quot;: true
 }</pre>
 </details>

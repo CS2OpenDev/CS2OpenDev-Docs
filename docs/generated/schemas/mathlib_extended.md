@@ -5,11 +5,11 @@ module: mathlib_extended
 
 # Module: mathlib_extended
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 [📊 View UML Diagram](../diagrams/mathlib_extended.md)
 
-13 types. Each links to its own page with the full field layout.
+18 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -22,7 +22,12 @@ module: mathlib_extended
 | [FunctionInfo_t](mathlib_extended/FunctionInfo_t.md) | class | 32 | 5 |  |
 | [FuseFunctionIndex_t](mathlib_extended/FuseFunctionIndex_t.md) | class | 2 | 1 |  |
 | [FuseVariableIndex_t](mathlib_extended/FuseVariableIndex_t.md) | class | 2 | 1 |  |
+| [NoiseOscillatorDef_t](mathlib_extended/NoiseOscillatorDef_t.md) | class | 12 | 3 |  |
+| [NoiseStreamDef_t](mathlib_extended/NoiseStreamDef_t.md) | class | 80 | 12 |  |
 | [PackedAABB_t](mathlib_extended/PackedAABB_t.md) | class | 8 | 2 |  |
 | [VariableInfo_t](mathlib_extended/VariableInfo_t.md) | class | 24 | 6 |  |
 | [FuseVariableAccess_t](mathlib_extended/FuseVariableAccess_t.md) | enum | — | 2 |  |
 | [FuseVariableType_t](mathlib_extended/FuseVariableType_t.md) | enum | — | 9 |  |
+| [NoiseStreamModifier_t](mathlib_extended/NoiseStreamModifier_t.md) | enum | — | 4 |  |
+| [NoiseStreamTurbulence_t](mathlib_extended/NoiseStreamTurbulence_t.md) | enum | — | 6 |  |
+| [NoiseStreamType_t](mathlib_extended/NoiseStreamType_t.md) | enum | — | 5 |  |

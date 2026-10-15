@@ -8,23 +8,24 @@ kind: class
 
 # CNmGraphDocTargetSelectorNode
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 296 bytes (`0x128`) · **Align:** 8 · **Module:** animdoclib
+**Kind:** class · **Size:** 560 bytes (`0x230`) · **Align:** 8 · **Module:** animdoclib
 
-**Inherits from:** [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md)
+**Inherits from:** [CNmGraphDocVariationDataNode](../animdoclib/CNmGraphDocVariationDataNode.md)
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CNmGraphDocFlowNode <|-- CNmGraphDocTargetSelectorNode
+    CNmGraphDocVariationDataNode <|-- CNmGraphDocTargetSelectorNode
+    CNmGraphDocFlowNode <|-- CNmGraphDocVariationDataNode
     CNmGraphDocNode <|-- CNmGraphDocFlowNode
 ```
 
 ## Memory layout
 
-13 fields (5 declared here, 8 inherited). Offsets are absolute from the object base.
+16 fields (5 declared here, 11 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -32,15 +33,18 @@ classDiagram
 | `0x18` | `m_name` | CUtlString | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertyHideField` |
 | `0x20` | `m_floatingComment` | CUtlString | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertyAttributeEditor TextBlock()` |
 | `0x28` | `m_position` | Vector2D | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
-| `0x40` | `m_pChildGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
-| `0x48` | `m_pSecondaryGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
-| `0x50` | `m_inputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 4 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
-| `0xd8` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
-| `0x100` | `m_optionLabels` | CUtlVector< CUtlString > |  | `MPropertyAutoExpandSelf` `MPropertyResizable` |
-| `0x118` | `m_flOrientationScoreWeight` | float32 |  |  |
-| `0x11c` | `m_flPositionScoreWeight` | float32 |  |  |
-| `0x120` | `m_bIsWorldSpaceTarget` | bool |  |  |
-| `0x121` | `m_bIgnoreInvalidOptions` | bool |  | `MPropertyDescription Should we ignore any invalid option and remove them from the selection. This is useful if different variations has different sets of options filled` `MPropertyGroupName Advanced` |
+| `0x48` | `m_pChildGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
+| `0x50` | `m_pSecondaryGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
+| `0x58` | `m_inputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 4 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
+| `0xe0` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
+| `0x108` | `m_pDefaultVariationData` | [CNmGraphDocVariationDataNode::CData](../animdoclib/CNmGraphDocVariationDataNode.CData.md)* | [CNmGraphDocVariationDataNode](../animdoclib/CNmGraphDocVariationDataNode.md) | `MPropertySuppressField` |
+| `0x110` | `m_overrides` | CUtlVector< [CNmGraphDocVariationDataNode::OverrideValue_t](../animdoclib/CNmGraphDocVariationDataNode.OverrideValue_t.md) > | [CNmGraphDocVariationDataNode](../animdoclib/CNmGraphDocVariationDataNode.md) | `MPropertySuppressField` |
+| `0x128` | `m_defaultResourceName` | CResourceName | [CNmGraphDocVariationDataNode](../animdoclib/CNmGraphDocVariationDataNode.md) | `MPropertySuppressField` |
+| `0x208` | `m_optionLabels` | CUtlVector< CUtlString > |  | `MPropertyAutoExpandSelf` `MPropertyResizable` |
+| `0x220` | `m_flOrientationScoreWeight` | float32 |  |  |
+| `0x224` | `m_flPositionScoreWeight` | float32 |  |  |
+| `0x228` | `m_bIsWorldSpaceTarget` | bool |  |  |
+| `0x229` | `m_bIgnoreInvalidOptions` | bool |  | `MPropertyDescription Should we ignore any invalid option and remove them from the selection. This is useful if different variations has different sets of options filled` `MPropertyGroupName Advanced` |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -90,6 +94,15 @@ classDiagram
 			&quot;m_bAllowMultipleOutConnections&quot;: false
 		}
 	],
+	&quot;m_pDefaultVariationData&quot;:
+	{
+		&quot;_class&quot;: &quot;CNmGraphDocTargetSelectorNode::CData&quot;,
+		&quot;m_strAlignmentBoneName&quot;: &quot;&quot;
+	},
+	&quot;m_overrides&quot;:
+	[
+	],
+	&quot;m_defaultResourceName&quot;: &quot;&quot;,
 	&quot;m_optionLabels&quot;:
 	[
 		&quot;Option&quot;,

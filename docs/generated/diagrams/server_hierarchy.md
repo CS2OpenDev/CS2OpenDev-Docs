@@ -11,6 +11,7 @@ classDiagram
     DebugSnapshotBaseStructuredData_t <|-- AI_BaseNPC_DebugSnapshotData_t
     DebugSnapshotBaseStructuredData_t <|-- AI_DefaultNPC_DebugSnapshotData_t
     DebugSnapshotBaseStructuredData_t <|-- AI_GroundRootMotionMotor_DebugSnapshotData_t
+    CNavPathCost <|-- ApproachAreaCost
     CAI_Expresser <|-- CAI_ExpresserWithFollowup
     CAnimGraphControllerBase <|-- CBaseAnimGraphDestructibleParts_GraphController
     CNmGraphVariationUserData <|-- CBaseAnimGraphVariationUserData
@@ -20,16 +21,22 @@ classDiagram
     CAnimGraphControllerBase <|-- CCS2UIPawnGraphController
     CAnimGraphControllerBase <|-- CChoreo_GraphController
     IClientAlphaProperty <|-- CClientAlphaProperty
+    CAnimGraphControllerBase <|-- CDynamicPropGraphController
     CAnimGraphControllerBase <|-- CEmptyGraphController
     IChoreoServices <|-- CGameChoreoServices
     INavPathCostAreaFilter <|-- CMarkupSearch_PathCostAreaFilter
     CAI_ExpresserWithFollowup <|-- CMultiplayer_Expresser
+    CNavPathCost <|-- CNavPathCostForTests
     CNavVolumeCalculatedVector <|-- CNavVolumeBreadthFirstSearch
     CNavVolume <|-- CNavVolumeCalculatedVector
     CNavVolume <|-- CNavVolumeMarkupVolume
     `CNmPassthroughNode::CDefinition` <|-- `CNmAimCSNode::CDefinition`
     CNmPoseTask <|-- CNmAimCSTask
     CNmEventConsumer <|-- CNmEventConsumerAttributes
+    CNmEventConsumer <|-- CNmEventConsumerBodyGroup
+    CNmEventConsumer <|-- CNmEventConsumerCamera
+    CNmEventConsumer <|-- CNmEventConsumerCloth
+    CNmEventConsumer <|-- CNmEventConsumerContact
     CNmEventConsumer <|-- CNmEventConsumerLegacy
     CNmEventConsumer <|-- CNmEventConsumerParticle
     CNmEventConsumer <|-- CNmEventConsumerPulse
@@ -45,8 +52,11 @@ classDiagram
     CStopwatchBase <|-- CStopwatch
     CSimpleSimTimer <|-- CStopwatchBase
     CTestPulseIOComponent <|-- CTestPulseIOComponent_Derived
+    CNavPathCost <|-- ChickenPathCost
     DebugSnapshotBaseStructuredData_t <|-- DebugDrawBoneTransforms_t
     AmmoTypeInfo_t <|-- GameAmmoTypeInfo_t
+    CNavPathCost <|-- HostagePathCost
+    CNavPathCost <|-- PathCost
     Relationship_t <|-- RelationshipOverride_t
     dynpitchvol_base_t <|-- dynpitchvol_t
     C_BaseModelEntity <|-- CBaseAnimGraph
@@ -63,23 +73,28 @@ classDiagram
     CBodyComponent <|-- CBodyComponentPoint
     CBodyComponent <|-- CBodyComponentSkeletonInstance
     C_BaseTrigger <|-- CBombTarget
+    C_BaseModelEntity <|-- CBrokenGlassTrap
     CCS2WeaponGraphController <|-- CCS2PawnGraphController
     CAnimGraphControllerBase <|-- CCS2WeaponGraphController
     C_BaseEntity <|-- CCSCustomHudLayout
     C_BaseEntity <|-- CCSCustomPlayerCamera
     C_CSGO_EndOfMatchLineupEndpoint <|-- CCSGO_EndOfMatchLineupEnd
+    C_CSGO_TeamIntroCharacterPosition <|-- CCSGO_RushIntroCharacterPosition
+    CCSGO_RushIntroCharacterPosition <|-- CCSGO_RushIntroCounterTerroristPosition
+    CCSGO_RushIntroCharacterPosition <|-- CCSGO_RushIntroTerroristPosition
     C_CSGO_TeamIntroCharacterPosition <|-- CCSGO_WingmanIntroCharacterPosition
     CCSGO_WingmanIntroCharacterPosition <|-- CCSGO_WingmanIntroCounterTerroristPosition
     CCSGO_WingmanIntroCharacterPosition <|-- CCSGO_WingmanIntroTerroristPosition
     CCSGameModeRules <|-- CCSGameModeRules_ArmsRace
     CCSGameModeRules <|-- CCSGameModeRules_Deathmatch
     CCSGameModeRules <|-- CCSGameModeRules_Noop
+    C_BaseTrigger <|-- CCSMinimapVolume
+    C_BaseEntity <|-- CCSObservableElement
     CCSPlayerBase_CameraServices <|-- CCSObserver_CameraServices
     CPlayer_MovementServices <|-- CCSObserver_MovementServices
     CPlayer_ObserverServices <|-- CCSObserver_ObserverServices
     CPlayer_UseServices <|-- CCSObserver_UseServices
     CPlayer_CameraServices <|-- CCSPlayerBase_CameraServices
-    CCSCustomPlayerCamera <|-- CCSPlayerCamera
     CBasePlayerController <|-- CCSPlayerController
     CPlayerControllerComponent <|-- CCSPlayerController_ActionTrackingServices
     CPlayerControllerComponent <|-- CCSPlayerController_DamageServices
@@ -99,6 +114,7 @@ classDiagram
     CPlayer_UseServices <|-- CCSPlayer_UseServices
     CPlayer_WaterServices <|-- CCSPlayer_WaterServices
     CPlayer_WeaponServices <|-- CCSPlayer_WeaponServices
+    C_BaseEntity <|-- CCSRadarElement
     CBasePlayerWeaponVData <|-- CCSWeaponBaseVData
     C_BaseEntity <|-- CCS_PortraitWorldCallbackHandler
     C_BaseModelEntity <|-- CCashStack
@@ -200,6 +216,7 @@ classDiagram
     C_LateUpdatedAnimating <|-- C_CS2HudModelBase
     C_CS2HudModelBase <|-- C_CS2HudModelWeapon
     CBaseAnimGraph <|-- C_CS2WeaponModuleBase
+    C_CSGO_TeamPreviewCameraBone <|-- C_CSGO_CounterTerroristRushIntroCamera
     C_CSGO_TeamPreviewCamera <|-- C_CSGO_CounterTerroristTeamIntroCamera
     C_CSGO_TeamPreviewCamera <|-- C_CSGO_CounterTerroristWingmanIntroCamera
     C_CSGO_TeamPreviewCamera <|-- C_CSGO_EndOfMatchCamera
@@ -216,12 +233,14 @@ classDiagram
     C_CSGO_TeamIntroCharacterPosition <|-- C_CSGO_TeamIntroCounterTerroristPosition
     C_CSGO_TeamIntroCharacterPosition <|-- C_CSGO_TeamIntroTerroristPosition
     C_CSGO_MapPreviewCameraPath <|-- C_CSGO_TeamPreviewCamera
+    C_CSGO_TeamPreviewCamera <|-- C_CSGO_TeamPreviewCameraBone
     C_BaseEntity <|-- C_CSGO_TeamPreviewCharacterPosition
     C_CSGO_PreviewPlayer <|-- C_CSGO_TeamPreviewModel
     C_CSGO_TeamPreviewCamera <|-- C_CSGO_TeamSelectCamera
     C_CSGO_TeamPreviewCharacterPosition <|-- C_CSGO_TeamSelectCharacterPosition
     C_CSGO_TeamSelectCharacterPosition <|-- C_CSGO_TeamSelectCounterTerroristPosition
     C_CSGO_TeamSelectCharacterPosition <|-- C_CSGO_TeamSelectTerroristPosition
+    C_CSGO_TeamPreviewCameraBone <|-- C_CSGO_TerroristRushIntroCamera
     C_CSGO_TeamPreviewCamera <|-- C_CSGO_TerroristTeamIntroCamera
     C_CSGO_TeamPreviewCamera <|-- C_CSGO_TerroristWingmanIntroCamera
     C_TeamplayRules <|-- C_CSGameRules
@@ -265,13 +284,12 @@ classDiagram
     C_BaseEntity <|-- C_EnvDetailController
     C_BaseEntity <|-- C_EnvLightProbeVolume
     C_ParticleSystem <|-- C_EnvParticleGlow
+    C_BaseEntity <|-- C_EnvShakeVolume
     C_BaseModelEntity <|-- C_EnvSky
     C_BaseEntity <|-- C_EnvVolumetricFogController
     C_BaseEntity <|-- C_EnvVolumetricFogVolume
     C_BaseEntity <|-- C_EnvWind
     C_BaseEntity <|-- C_EnvWindClientside
-    C_BaseEntity <|-- C_EnvWindController
-    C_BaseEntity <|-- C_EnvWindVolume
     C_Inferno <|-- C_FireCrackerBlast
     CBaseAnimGraph <|-- C_Fish
     C_BaseCSGrenade <|-- C_Flashbang
@@ -290,22 +308,4 @@ classDiagram
     C_BaseEntity <|-- C_GameRulesProxy
     C_BaseEntity <|-- C_GlobalLight
     CGlobalLightBase <|-- C_GlobalLight
-    C_BaseEntity <|-- C_GradientFog
-    C_BaseCSGrenade <|-- C_HEGrenade
-    C_BaseCSGrenadeProjectile <|-- C_HEGrenadeProjectile
-    C_BaseEntity <|-- C_HandleTest
-    C_BaseCombatCharacter <|-- C_Hostage
-    CBaseAnimGraph <|-- C_HostageCarriableProp
-    C_MolotovGrenade <|-- C_IncendiaryGrenade
-    C_BaseModelEntity <|-- C_Inferno
-    C_PointEntity <|-- C_InfoInstructorHintHostageRescueZone
-    C_BaseEntity <|-- C_InfoLadderDismount
-    C_BaseEntity <|-- C_InfoVisibilityBox
-    C_EconEntity <|-- C_Item
-    C_Item <|-- C_ItemDogtags
-    C_WeaponBaseItem <|-- C_Item_Healthshot
-    C_CS2WeaponModuleBase <|-- C_KeychainModule
-    C_CSWeaponBase <|-- C_Knife
-    CBaseAnimGraph <|-- C_LateUpdatedAnimating
-    C_LightEntity <|-- C_LightDirectionalEntity
 ```

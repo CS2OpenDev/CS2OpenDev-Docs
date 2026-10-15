@@ -8,9 +8,9 @@ kind: class
 
 # AI_BaseNPC_DebugSnapshotData_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 376 bytes (`0x178`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 392 bytes (`0x188`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [DebugSnapshotBaseStructuredData_t](../server/DebugSnapshotBaseStructuredData_t.md)
 
@@ -44,9 +44,9 @@ classDiagram
 | `0x40` | `conditions` | CUtlVector< CGlobalSymbol > |  |  |
 | `0x58` | `anim_events` | CUtlVector< CGlobalSymbol > |  |  |
 | `0x70` | `animgraph` | [AI_BaseNPCAnimGraph_DebugSnapshotData_t](../server/AI_BaseNPCAnimGraph_DebugSnapshotData_t.md) |  |  |
-| `0xb0` | `navigator` | [AI_Navigator_DebugSnapshotData_t](../server/AI_Navigator_DebugSnapshotData_t.md) |  |  |
-| `0x100` | `motorServices` | [AI_MotorServices_DebugSnapshotData_t](../server/AI_MotorServices_DebugSnapshotData_t.md) |  |  |
-| `0x130` | `facingServices` | [AI_FacingServices_DebugSnapshotData_t](../server/AI_FacingServices_DebugSnapshotData_t.md) |  |  |
+| `0xb8` | `navigator` | [AI_Navigator_DebugSnapshotData_t](../server/AI_Navigator_DebugSnapshotData_t.md) |  |  |
+| `0x108` | `motorServices` | [AI_MotorServices_DebugSnapshotData_t](../server/AI_MotorServices_DebugSnapshotData_t.md) |  |  |
+| `0x140` | `facingServices` | [AI_FacingServices_DebugSnapshotData_t](../server/AI_FacingServices_DebugSnapshotData_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -67,6 +67,7 @@ classDiagram
 	],
 	&quot;animgraph&quot;:
 	{
+		&quot;ag2_update_id&quot;: -1,
 		&quot;e_action_desired&quot;: &quot;&quot;,
 		&quot;e_action_handshake_restart&quot;: &quot;&quot;,
 		&quot;e_action_handshake_body_authority_current&quot;: &quot;&quot;,
@@ -100,7 +101,8 @@ classDiagram
 		],
 		&quot;motor_path&quot;:
 		[
-		]
+		],
+		&quot;ground_entity_debug_name&quot;: &quot;&quot;
 	},
 	&quot;facingServices&quot;:
 	{

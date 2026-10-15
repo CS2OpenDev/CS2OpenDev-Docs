@@ -4,13 +4,13 @@ title: Game Modes
 
 # Game Modes & Map Groups
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 Game types and their nested game modes (from `gamemodes.txt`): max players, map groups, and per-mode convar overrides.
 
 ## Game type: `classic`
 
-6 modes.
+7 modes.
 
 ### `casual`
 
@@ -35,6 +35,12 @@ Game types and their nested game modes (from `gamemodes.txt`): max players, map 
 - **Name token:** `#SFUI_GameModeRetakes`
 - **Max players:** 7
 - **Map groups:** `mg_casualalpha`, `mg_casualdelta`
+
+### `rush`
+
+- **Name token:** `#SFUI_GameModeRush`
+- **Max players:** 6
+- **Map groups:** `mg_rush_001`
 
 ### `scrimcomp2v2`
 
@@ -124,7 +130,7 @@ Game types and their nested game modes (from `gamemodes.txt`): max players, map 
 
 ## Map groups
 
-185 map groups.
+186 map groups.
 
 | id | Maps |
 |----|------|
@@ -299,6 +305,7 @@ Game types and their nested game modes (from `gamemodes.txt`): max players, map 
 | `mg_op_op07` | `cs_cruise`, `de_coast`, `de_empire`, `de_mikla`, `de_royal`, `de_santorini`, `de_tulip` |
 | `mg_op_op08` | `cs_agency`, `cs_insertion`, `de_austria`, `de_blackgold`, `de_lite`, `de_shipped`, `de_thrill` |
 | `mg_reserves` | `de_canals`, `de_dust` |
+| `mg_rush_001` | `rush_001` |
 | `mg_skirmish_armsrace` | `ar_baggage`, `ar_pool_day`, `ar_shoots`, `ar_shoots_night` |
 | `mg_skirmish_demolition` | `de_bank`, `de_safehouse`, `de_shortdust`, `de_stmarc`, `de_sugarcane` |
 | `mg_skirmish_dm_freeforall` | `cs_assault`, `cs_italy`, `cs_militia`, `cs_office`, `de_ancient`, `de_cbble`, `de_dust2`, `de_inferno`, `de_mirage`, `de_nuke`, `de_overpass`, `de_stmarc`, `de_vertigo` |

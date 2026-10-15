@@ -8,9 +8,9 @@ kind: class
 
 # C_INIT_InitSkinnedPositionFromCPSnapshot
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 904 bytes (`0x388`) · **Align:** 8 · **Module:** particles
+**Kind:** class · **Size:** 920 bytes (`0x398`) · **Align:** 8 · **Module:** particles
 
 **Inherits from:** [CParticleFunctionInitializer](../particles/CParticleFunctionInitializer.md)
 
@@ -31,42 +31,42 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flOpStrength` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator strength` `MPropertySortPriority -100` |
-| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
-| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
-| `0x180` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
-| `0x184` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
-| `0x188` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
-| `0x18c` | `m_flOpEndFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadeout` `MPropertySortPriority -100` |
-| `0x190` | `m_flOpFadeOscillatePeriod` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade oscillate` `MPropertySortPriority -100` |
-| `0x194` | `m_bNormalizeToStopTime` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName normalize fade times to endcap` `MPropertySortPriority -100` |
-| `0x198` | `m_flOpTimeOffsetMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset min` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Time Offset` |
-| `0x19c` | `m_flOpTimeOffsetMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset max` `MPropertySortPriority -100` |
-| `0x1a0` | `m_nOpTimeOffsetSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset seed` `MPropertySortPriority -100` |
-| `0x1a4` | `m_nOpTimeScaleSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale seed` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Timescale Modifiers` |
-| `0x1a8` | `m_flOpTimeScaleMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale min` `MPropertySortPriority -100` |
-| `0x1ac` | `m_flOpTimeScaleMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale max` `MPropertySortPriority -100` |
-| `0x1b2` | `m_bDisableOperator` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyStartGroup` `MPropertySuppressField` |
-| `0x1b8` | `m_Notes` | CUtlString | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleHelpField` `MPropertyFriendlyName operator help and notes` `MPropertySortPriority -100` |
-| `0x1d8` | `m_nAssociatedEmitterIndex` | int32 | [CParticleFunctionInitializer](../particles/CParticleFunctionInitializer.md) | `MPropertyFriendlyName Associated emitter Index` |
-| `0x1e0` | `m_nSnapshotControlPointNumber` | int32 |  | `MPropertyFriendlyName snapshot control point number` |
-| `0x1e4` | `m_nControlPointNumber` | int32 |  | `MPropertyFriendlyName control point number` |
-| `0x1e8` | `m_bRandom` | bool |  | `MPropertyFriendlyName random order` `MPropertySuppressExpr m_nIndexType != SNAPSHOT_INDEX_INCREMENT` |
-| `0x1ec` | `m_nRandomSeed` | int32 |  | `MPropertyFriendlyName random seed` `MPropertySuppressExpr m_nIndexType != SNAPSHOT_INDEX_INCREMENT` |
-| `0x1f0` | `m_bRigid` | bool |  | `MPropertyFriendlyName prepare for rigid lock` |
-| `0x1f1` | `m_bSetNormal` | bool |  | `MPropertyFriendlyName set normal` |
-| `0x1f2` | `m_bIgnoreDt` | bool |  | `MPropertyFriendlyName normal velocity ignore delta time` |
-| `0x1f4` | `m_flMinNormalVelocity` | float32 |  | `MPropertyFriendlyName normal velocity min` |
-| `0x1f8` | `m_flMaxNormalVelocity` | float32 |  | `MPropertyFriendlyName normal velocity max` |
-| `0x1fc` | `m_nIndexType` | [SnapshotIndexType_t](../particles/SnapshotIndexType_t.md) |  | `MPropertyFriendlyName Snapshot Read Type` |
-| `0x200` | `m_flReadIndex` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Snapshot Index` `MPropertySuppressExpr m_nIndexType != SNAPSHOT_INDEX_DIRECT` |
-| `0x370` | `m_flIncrement` | float32 |  | `MPropertyFriendlyName particle increment amount` `MPropertySuppressExpr m_nIndexType != SNAPSHOT_INDEX_INCREMENT` |
-| `0x374` | `m_nFullLoopIncrement` | int32 |  | `MPropertyFriendlyName Full Loop Increment Amount` `MPropertySuppressExpr m_nIndexType != SNAPSHOT_INDEX_INCREMENT` |
-| `0x378` | `m_nSnapShotStartPoint` | int32 |  | `MPropertyFriendlyName Snapshot start point` `MPropertySuppressExpr m_nIndexType != SNAPSHOT_INDEX_INCREMENT` |
-| `0x37c` | `m_flBoneVelocity` | float32 |  | `MPropertyFriendlyName inherited bone velocity` |
-| `0x380` | `m_flBoneVelocityMax` | float32 |  | `MPropertyFriendlyName max inherited bone velocity` |
-| `0x384` | `m_bCopyColor` | bool |  | `MPropertyFriendlyName Set Color` |
-| `0x385` | `m_bCopyAlpha` | bool |  | `MPropertyFriendlyName Set Alpha` |
-| `0x386` | `m_bSetRadius` | bool |  | `MPropertyFriendlyName Set Radius` |
+| `0x180` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
+| `0x184` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
+| `0x188` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
+| `0x18c` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
+| `0x190` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
+| `0x194` | `m_flOpEndFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadeout` `MPropertySortPriority -100` |
+| `0x198` | `m_flOpFadeOscillatePeriod` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade oscillate` `MPropertySortPriority -100` |
+| `0x19c` | `m_bNormalizeToStopTime` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName normalize fade times to endcap` `MPropertySortPriority -100` |
+| `0x1a0` | `m_flOpTimeOffsetMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset min` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Time Offset` |
+| `0x1a4` | `m_flOpTimeOffsetMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset max` `MPropertySortPriority -100` |
+| `0x1a8` | `m_nOpTimeOffsetSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset seed` `MPropertySortPriority -100` |
+| `0x1ac` | `m_nOpTimeScaleSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale seed` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Timescale Modifiers` |
+| `0x1b0` | `m_flOpTimeScaleMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale min` `MPropertySortPriority -100` |
+| `0x1b4` | `m_flOpTimeScaleMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale max` `MPropertySortPriority -100` |
+| `0x1ba` | `m_bDisableOperator` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyStartGroup` `MPropertySuppressField` |
+| `0x1c0` | `m_Notes` | CUtlString | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleHelpField` `MPropertyAttributeEditor TextBlock()` `MPropertyFriendlyName operator help and notes` `MPropertySortPriority -100` |
+| `0x1e0` | `m_nAssociatedEmitterIndex` | int32 | [CParticleFunctionInitializer](../particles/CParticleFunctionInitializer.md) | `MPropertyFriendlyName Associated emitter Index` |
+| `0x1e8` | `m_nSnapshotControlPointNumber` | int32 |  | `MPropertyFriendlyName snapshot control point number` |
+| `0x1ec` | `m_nControlPointNumber` | int32 |  | `MPropertyFriendlyName control point number` |
+| `0x1f0` | `m_bRandom` | bool |  | `MPropertyFriendlyName random order` `MPropertySuppressExpr m_nIndexType != SNAPSHOT_INDEX_INCREMENT` |
+| `0x1f4` | `m_nRandomSeed` | int32 |  | `MPropertyFriendlyName random seed` `MPropertySuppressExpr m_nIndexType != SNAPSHOT_INDEX_INCREMENT` |
+| `0x1f8` | `m_bRigid` | bool |  | `MPropertyFriendlyName prepare for rigid lock` |
+| `0x1f9` | `m_bSetNormal` | bool |  | `MPropertyFriendlyName set normal` |
+| `0x1fa` | `m_bIgnoreDt` | bool |  | `MPropertyFriendlyName normal velocity ignore delta time` |
+| `0x1fc` | `m_flMinNormalVelocity` | float32 |  | `MPropertyFriendlyName normal velocity min` |
+| `0x200` | `m_flMaxNormalVelocity` | float32 |  | `MPropertyFriendlyName normal velocity max` |
+| `0x204` | `m_nIndexType` | [SnapshotIndexType_t](../particles/SnapshotIndexType_t.md) |  | `MPropertyFriendlyName Snapshot Read Type` |
+| `0x208` | `m_flReadIndex` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Snapshot Index` `MPropertySuppressExpr m_nIndexType != SNAPSHOT_INDEX_DIRECT` |
+| `0x380` | `m_flIncrement` | float32 |  | `MPropertyFriendlyName particle increment amount` `MPropertySuppressExpr m_nIndexType != SNAPSHOT_INDEX_INCREMENT` |
+| `0x384` | `m_nFullLoopIncrement` | int32 |  | `MPropertyFriendlyName Full Loop Increment Amount` `MPropertySuppressExpr m_nIndexType != SNAPSHOT_INDEX_INCREMENT` |
+| `0x388` | `m_nSnapShotStartPoint` | int32 |  | `MPropertyFriendlyName Snapshot start point` `MPropertySuppressExpr m_nIndexType != SNAPSHOT_INDEX_INCREMENT` |
+| `0x38c` | `m_flBoneVelocity` | float32 |  | `MPropertyFriendlyName inherited bone velocity` |
+| `0x390` | `m_flBoneVelocityMax` | float32 |  | `MPropertyFriendlyName max inherited bone velocity` |
+| `0x394` | `m_bCopyColor` | bool |  | `MPropertyFriendlyName Set Color` |
+| `0x395` | `m_bCopyAlpha` | bool |  | `MPropertyFriendlyName Set Alpha` |
+| `0x396` | `m_bSetRadius` | bool |  | `MPropertyFriendlyName Set Radius` |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -145,7 +145,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_nOpEndCapState&quot;: &quot;PARTICLE_ENDCAP_ALWAYS_ON&quot;,
 	&quot;m_nToolsState&quot;: &quot;PARTICLE_TOOLS_STATE_ALWAYS_ON&quot;,
@@ -247,7 +248,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flIncrement&quot;: 1.000000,
 	&quot;m_nFullLoopIncrement&quot;: 0,

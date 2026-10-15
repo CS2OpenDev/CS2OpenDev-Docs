@@ -8,9 +8,9 @@ kind: class
 
 # C_OP_RenderStandardLight
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 6064 bytes (`0x17b0`) · **Align:** 8 · **Module:** particles
+**Kind:** class · **Size:** 6184 bytes (`0x1828`) · **Align:** 8 · **Module:** particles
 
 **Inherits from:** [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md)
 
@@ -34,64 +34,63 @@ classDiagram
 
 ## Memory layout
 
-54 fields (34 declared here, 20 inherited). Offsets are absolute from the object base.
+53 fields (34 declared here, 19 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flOpStrength` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator strength` `MPropertySortPriority -100` |
-| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
-| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
-| `0x180` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
-| `0x184` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
-| `0x188` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
-| `0x18c` | `m_flOpEndFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadeout` `MPropertySortPriority -100` |
-| `0x190` | `m_flOpFadeOscillatePeriod` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade oscillate` `MPropertySortPriority -100` |
-| `0x194` | `m_bNormalizeToStopTime` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName normalize fade times to endcap` `MPropertySortPriority -100` |
-| `0x198` | `m_flOpTimeOffsetMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset min` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Time Offset` |
-| `0x19c` | `m_flOpTimeOffsetMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset max` `MPropertySortPriority -100` |
-| `0x1a0` | `m_nOpTimeOffsetSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset seed` `MPropertySortPriority -100` |
-| `0x1a4` | `m_nOpTimeScaleSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale seed` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Timescale Modifiers` |
-| `0x1a8` | `m_flOpTimeScaleMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale min` `MPropertySortPriority -100` |
-| `0x1ac` | `m_flOpTimeScaleMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale max` `MPropertySortPriority -100` |
-| `0x1b2` | `m_bDisableOperator` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyStartGroup` `MPropertySuppressField` |
-| `0x1b8` | `m_Notes` | CUtlString | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleHelpField` `MPropertyFriendlyName operator help and notes` `MPropertySortPriority -100` |
-| `0x1d8` | `VisibilityInputs` | [CParticleVisibilityInputs](../particles/CParticleVisibilityInputs.md) | [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md) | `MPropertySortPriority -1` |
-| `0x220` | `m_bCannotBeRefracted` | bool | [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md) | `MPropertyFriendlyName I cannot be refracted through refracting objects like water` `MPropertySortPriority -1` `MPropertyStartGroup Rendering filter` |
-| `0x221` | `m_bSkipRenderingOnMobile` | bool | [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md) | `MPropertyFriendlyName Skip rendering on mobile` `MPropertySortPriority -1` |
-| `0x228` | `m_nLightType` | [ParticleLightTypeChoiceList_t](../particles/ParticleLightTypeChoiceList_t.md) |  | `MPropertyFriendlyName light type` |
-| `0x22c` | `m_nMaxAllowed` | uint16 |  | `MPropertyAttributeRange 1 512` `MPropertyFriendlyName maximum light count` |
-| `0x230` | `m_vecColorScale` | [CParticleCollectionVecInput](../particleslib/CParticleCollectionVecInput.md) |  | `MPropertyFriendlyName color blend` |
-| `0x8e8` | `m_nColorBlendType` | [ParticleColorBlendType_t](../particleslib/ParticleColorBlendType_t.md) |  | `MPropertyFriendlyName color blend type` |
-| `0x8f0` | `m_strLightStyle` | CUtlString |  | `MPropertyAttributeEditor VDataChoice( scripts/light_styles.vdata )` `MPropertyFriendlyName light style` |
-| `0x8f8` | `m_flLightStyleTime` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName light style time` `MPropertySuppressExpr m_strLightStyle == ''` |
-| `0xa68` | `m_flIntensity` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName intensity` |
-| `0xbd8` | `m_bCastShadows` | bool |  | `MPropertyFriendlyName cast shadows` `MPropertySuppressExpr m_nLightType == PARTICLE_LIGHT_TYPE_FX` |
-| `0xbd9` | `m_bDynamicBounce` | bool |  | `MPropertyFriendlyName dynamic bounce (RTGI)` `MPropertySuppressExpr !m_bCastShadows &#124;&#124; m_nLightType == PARTICLE_LIGHT_TYPE_FX &#124;&#124; mod == csgo` |
-| `0xbe0` | `m_flBounceScale` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName bounce scale` `MPropertySuppressExpr !m_bDynamicBounce` |
-| `0xd50` | `m_flTheta` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName inner cone angle` `MPropertySuppressExpr m_nLightType != PARTICLE_LIGHT_TYPE_SPOT` |
-| `0xec0` | `m_flPhi` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName outer cone angle` `MPropertySuppressExpr m_nLightType != PARTICLE_LIGHT_TYPE_SPOT` |
-| `0x1030` | `m_flRadiusMultiplier` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName light radius multiplier` |
-| `0x11a0` | `m_nAttenuationStyle` | [StandardLightingAttenuationStyle_t](../particles/StandardLightingAttenuationStyle_t.md) |  | `MPropertyFriendlyName attenuation type` |
-| `0x11a8` | `m_flFalloffLinearity` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName falloff linearity` `MPropertySuppressExpr m_nAttenuationStyle == LIGHT_STYLE_NEW &#124;&#124; ( m_nAttenuationStyle == LIGHT_STYLE_OLD && m_nLightType == PARTICLE_LIGHT_TYPE_FX )` |
-| `0x1318` | `m_flFiftyPercentFalloff` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName falloff fifty percent` `MPropertySuppressExpr m_nAttenuationStyle == LIGHT_STYLE_OLD` |
-| `0x1488` | `m_flZeroPercentFalloff` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName falloff zero percent` `MPropertySuppressExpr m_nAttenuationStyle == LIGHT_STYLE_OLD` |
-| `0x15f8` | `m_bRenderDiffuse` | bool |  | `MPropertyFriendlyName render diffuse` `MPropertySuppressExpr m_nLightType == PARTICLE_LIGHT_TYPE_FX` |
-| `0x15f9` | `m_bRenderSpecular` | bool |  | `MPropertyFriendlyName render specular` `MPropertySuppressExpr m_nLightType == PARTICLE_LIGHT_TYPE_FX` |
-| `0x1600` | `m_lightCookie` | CUtlString |  | `MPropertyFriendlyName light cookie string` |
-| `0x1608` | `m_nPriority` | int32 |  | `MPropertyFriendlyName light priority` |
-| `0x160c` | `m_nFogLightingMode` | [ParticleLightFogLightingMode_t](../particles/ParticleLightFogLightingMode_t.md) |  | `MPropertyFriendlyName fog lighting mode` `MPropertySuppressExpr m_nLightType == PARTICLE_LIGHT_TYPE_FX` |
-| `0x1610` | `m_flFogContribution` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) |  | `MPropertyFriendlyName fog contribution` `MPropertySuppressExpr m_nLightType == PARTICLE_LIGHT_TYPE_FX` |
-| `0x1780` | `m_nCapsuleLightBehavior` | [ParticleLightBehaviorChoiceList_t](../particles/ParticleLightBehaviorChoiceList_t.md) |  | `MPropertyFriendlyName capsule behavior` |
-| `0x1784` | `m_flCapsuleLength` | float32 |  | `MPropertyFriendlyName capsule length` `MPropertyStartGroup Capsule Light Controls` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_TRAILS` |
-| `0x1788` | `m_bReverseOrder` | bool |  | `MPropertyFriendlyName reverse point order` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_TRAILS` |
-| `0x1789` | `m_bClosedLoop` | bool |  | `MPropertyFriendlyName Closed loop` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_TRAILS` |
-| `0x178c` | `m_nPrevPntSource` | [ParticleAttributeIndex_t](../particles/ParticleAttributeIndex_t.md) |  | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Anchor point source` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
-| `0x1790` | `m_flMaxLength` | float32 |  | `MPropertyFriendlyName max length` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
-| `0x1794` | `m_flMinLength` | float32 |  | `MPropertyFriendlyName min length` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
-| `0x1798` | `m_bIgnoreDT` | bool |  | `MPropertyFriendlyName ignore delta time` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
-| `0x179c` | `m_flConstrainRadiusToLengthRatio` | float32 |  | `MPropertyFriendlyName constrain radius to no more than this times the length` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
-| `0x17a0` | `m_flLengthScale` | float32 |  | `MPropertyFriendlyName amount to scale trail length by` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
-| `0x17a4` | `m_flLengthFadeInTime` | float32 |  | `MPropertyFriendlyName how long before a trail grows to its full length` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
+| `0x180` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
+| `0x184` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
+| `0x188` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
+| `0x18c` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
+| `0x190` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
+| `0x194` | `m_flOpEndFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadeout` `MPropertySortPriority -100` |
+| `0x198` | `m_flOpFadeOscillatePeriod` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade oscillate` `MPropertySortPriority -100` |
+| `0x19c` | `m_bNormalizeToStopTime` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName normalize fade times to endcap` `MPropertySortPriority -100` |
+| `0x1a0` | `m_flOpTimeOffsetMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset min` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Time Offset` |
+| `0x1a4` | `m_flOpTimeOffsetMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset max` `MPropertySortPriority -100` |
+| `0x1a8` | `m_nOpTimeOffsetSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset seed` `MPropertySortPriority -100` |
+| `0x1ac` | `m_nOpTimeScaleSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale seed` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Timescale Modifiers` |
+| `0x1b0` | `m_flOpTimeScaleMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale min` `MPropertySortPriority -100` |
+| `0x1b4` | `m_flOpTimeScaleMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale max` `MPropertySortPriority -100` |
+| `0x1ba` | `m_bDisableOperator` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyStartGroup` `MPropertySuppressField` |
+| `0x1c0` | `m_Notes` | CUtlString | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleHelpField` `MPropertyAttributeEditor TextBlock()` `MPropertyFriendlyName operator help and notes` `MPropertySortPriority -100` |
+| `0x1e0` | `VisibilityInputs` | [CParticleVisibilityInputs](../particles/CParticleVisibilityInputs.md) | [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md) | `MPropertySortPriority -1` |
+| `0x228` | `m_bCannotBeRefracted` | bool | [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md) | `MPropertyFriendlyName I cannot be refracted through refracting objects like water` `MPropertySortPriority -1` `MPropertyStartGroup Rendering filter` |
+| `0x230` | `m_nLightType` | [ParticleLightTypeChoiceList_t](../particles/ParticleLightTypeChoiceList_t.md) |  | `MPropertyFriendlyName light type` |
+| `0x234` | `m_nMaxAllowed` | uint16 |  | `MPropertyAttributeRange 1 512` `MPropertyFriendlyName maximum light count` |
+| `0x238` | `m_vecColorScale` | [CParticleCollectionVecInput](../particleslib/CParticleCollectionVecInput.md) |  | `MPropertyFriendlyName color blend` |
+| `0x910` | `m_nColorBlendType` | [ParticleColorBlendType_t](../particleslib/ParticleColorBlendType_t.md) |  | `MPropertyFriendlyName color blend type` |
+| `0x918` | `m_strLightStyle` | CUtlString |  | `MPropertyAttributeEditor VDataChoice( scripts/light_styles.vdata )` `MPropertyFriendlyName light style` |
+| `0x920` | `m_flLightStyleTime` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName light style time` `MPropertySuppressExpr m_strLightStyle == ''` |
+| `0xa98` | `m_flIntensity` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName intensity` |
+| `0xc10` | `m_bCastShadows` | bool |  | `MPropertyFriendlyName cast shadows` `MPropertySuppressExpr m_nLightType == PARTICLE_LIGHT_TYPE_FX` |
+| `0xc11` | `m_bDynamicBounce` | bool |  | `MPropertyFriendlyName dynamic bounce (RTGI)` `MPropertySuppressExpr !m_bCastShadows &#124;&#124; m_nLightType == PARTICLE_LIGHT_TYPE_FX &#124;&#124; mod == csgo` |
+| `0xc18` | `m_flBounceScale` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName bounce scale` `MPropertySuppressExpr !m_bDynamicBounce` |
+| `0xd90` | `m_flTheta` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName inner cone angle` `MPropertySuppressExpr m_nLightType != PARTICLE_LIGHT_TYPE_SPOT` |
+| `0xf08` | `m_flPhi` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName outer cone angle` `MPropertySuppressExpr m_nLightType != PARTICLE_LIGHT_TYPE_SPOT` |
+| `0x1080` | `m_flRadiusMultiplier` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName light radius multiplier` |
+| `0x11f8` | `m_nAttenuationStyle` | [StandardLightingAttenuationStyle_t](../particles/StandardLightingAttenuationStyle_t.md) |  | `MPropertyFriendlyName attenuation type` |
+| `0x1200` | `m_flFalloffLinearity` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName falloff linearity` `MPropertySuppressExpr m_nAttenuationStyle == LIGHT_STYLE_NEW &#124;&#124; ( m_nAttenuationStyle == LIGHT_STYLE_OLD && m_nLightType == PARTICLE_LIGHT_TYPE_FX )` |
+| `0x1378` | `m_flFiftyPercentFalloff` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName falloff fifty percent` `MPropertySuppressExpr m_nAttenuationStyle == LIGHT_STYLE_OLD` |
+| `0x14f0` | `m_flZeroPercentFalloff` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName falloff zero percent` `MPropertySuppressExpr m_nAttenuationStyle == LIGHT_STYLE_OLD` |
+| `0x1668` | `m_bRenderDiffuse` | bool |  | `MPropertyFriendlyName render diffuse` `MPropertySuppressExpr m_nLightType == PARTICLE_LIGHT_TYPE_FX` |
+| `0x1669` | `m_bRenderSpecular` | bool |  | `MPropertyFriendlyName render specular` `MPropertySuppressExpr m_nLightType == PARTICLE_LIGHT_TYPE_FX` |
+| `0x1670` | `m_lightCookie` | CUtlString |  | `MPropertyFriendlyName light cookie string` |
+| `0x1678` | `m_nPriority` | int32 |  | `MPropertyFriendlyName light priority` |
+| `0x167c` | `m_nFogLightingMode` | [ParticleLightFogLightingMode_t](../particles/ParticleLightFogLightingMode_t.md) |  | `MPropertyFriendlyName fog lighting mode` `MPropertySuppressExpr m_nLightType == PARTICLE_LIGHT_TYPE_FX` |
+| `0x1680` | `m_flFogContribution` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) |  | `MPropertyFriendlyName fog contribution` `MPropertySuppressExpr m_nLightType == PARTICLE_LIGHT_TYPE_FX` |
+| `0x17f8` | `m_nCapsuleLightBehavior` | [ParticleLightBehaviorChoiceList_t](../particles/ParticleLightBehaviorChoiceList_t.md) |  | `MPropertyFriendlyName capsule behavior` |
+| `0x17fc` | `m_flCapsuleLength` | float32 |  | `MPropertyFriendlyName capsule length` `MPropertyStartGroup Capsule Light Controls` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_TRAILS` |
+| `0x1800` | `m_bReverseOrder` | bool |  | `MPropertyFriendlyName reverse point order` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_TRAILS` |
+| `0x1801` | `m_bClosedLoop` | bool |  | `MPropertyFriendlyName Closed loop` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_TRAILS` |
+| `0x1804` | `m_nPrevPntSource` | [ParticleAttributeIndex_t](../particleslib/ParticleAttributeIndex_t.md) |  | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName Anchor point source` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
+| `0x1808` | `m_flMaxLength` | float32 |  | `MPropertyFriendlyName max length` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
+| `0x180c` | `m_flMinLength` | float32 |  | `MPropertyFriendlyName min length` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
+| `0x1810` | `m_bIgnoreDT` | bool |  | `MPropertyFriendlyName ignore delta time` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
+| `0x1814` | `m_flConstrainRadiusToLengthRatio` | float32 |  | `MPropertyFriendlyName constrain radius to no more than this times the length` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
+| `0x1818` | `m_flLengthScale` | float32 |  | `MPropertyFriendlyName amount to scale trail length by` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
+| `0x181c` | `m_flLengthFadeInTime` | float32 |  | `MPropertyFriendlyName how long before a trail grows to its full length` `MPropertySuppressExpr m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION &#124;&#124; m_nCapsuleLightBehavior == PARTICLE_LIGHT_BEHAVIOR_ROPE` |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -170,7 +169,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_nOpEndCapState&quot;: &quot;PARTICLE_ENDCAP_ALWAYS_ON&quot;,
 	&quot;m_nToolsState&quot;: &quot;PARTICLE_TOOLS_STATE_ALWAYS_ON&quot;,
@@ -211,7 +211,6 @@ classDiagram
 		&quot;m_bRightEye&quot;: false
 	},
 	&quot;m_bCannotBeRefracted&quot;: true,
-	&quot;m_bSkipRenderingOnMobile&quot;: false,
 	&quot;m_nLightType&quot;: &quot;PARTICLE_LIGHT_TYPE_POINT&quot;,
 	&quot;m_nMaxAllowed&quot;: 32,
 	&quot;m_vecColorScale&quot;:
@@ -331,7 +330,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_FloatComponentY&quot;:
 		{
@@ -406,7 +406,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_FloatComponentZ&quot;:
 		{
@@ -481,7 +482,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_FloatInterp&quot;:
 		{
@@ -556,7 +558,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_flInterpInput0&quot;: 0.000000,
 		&quot;m_flInterpInput1&quot;: 1.000000,
@@ -666,7 +669,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flIntensity&quot;:
 	{
@@ -741,7 +745,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_bCastShadows&quot;: false,
 	&quot;m_bDynamicBounce&quot;: false,
@@ -818,7 +823,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flTheta&quot;:
 	{
@@ -893,7 +899,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flPhi&quot;:
 	{
@@ -968,7 +975,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flRadiusMultiplier&quot;:
 	{
@@ -1043,7 +1051,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_nAttenuationStyle&quot;: &quot;LIGHT_STYLE_OLD&quot;,
 	&quot;m_flFalloffLinearity&quot;:
@@ -1119,7 +1128,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flFiftyPercentFalloff&quot;:
 	{
@@ -1194,7 +1204,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flZeroPercentFalloff&quot;:
 	{
@@ -1269,7 +1280,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_bRenderDiffuse&quot;: true,
 	&quot;m_bRenderSpecular&quot;: true,
@@ -1349,7 +1361,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_nCapsuleLightBehavior&quot;: &quot;PARTICLE_LIGHT_BEHAVIOR_FOLLOW_DIRECTION&quot;,
 	&quot;m_flCapsuleLength&quot;: 100.000000,

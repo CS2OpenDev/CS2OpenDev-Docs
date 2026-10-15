@@ -8,7 +8,7 @@ kind: class
 
 # CMeshletDescriptor
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 4 · **Module:** modellib
 
@@ -22,7 +22,7 @@ classDiagram
 
 ## Memory layout
 
-6 fields (6 declared here, 0 inherited). Offsets are absolute from the object base.
+7 fields (7 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -32,6 +32,7 @@ classDiagram
 | `0x10` | `m_nTriangleOffset` | uint32 |  |  |
 | `0x14` | `m_nVertexCount` | uint8 |  |  |
 | `0x15` | `m_nTriangleCount` | uint8 |  |  |
+| `0x16` | `m_nBoneIndex` | uint16 |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -54,6 +55,7 @@ classDiagram
 	&quot;m_nVertexOffset&quot;: 0,
 	&quot;m_nTriangleOffset&quot;: 0,
 	&quot;m_nVertexCount&quot;: 0,
-	&quot;m_nTriangleCount&quot;: 0
+	&quot;m_nTriangleCount&quot;: 0,
+	&quot;m_nBoneIndex&quot;: 65534
 }</pre>
 </details>

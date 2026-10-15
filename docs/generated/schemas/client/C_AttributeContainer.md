@@ -8,9 +8,9 @@ kind: class
 
 # C_AttributeContainer
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 1232 bytes (`0x4d0`) · **Align:** n/a (unspecified) · **Module:** client
+**Kind:** class · **Size:** 1552 bytes (`0x610`) · **Align:** n/a (unspecified) · **Module:** client
 
 **Inherits from:** [CAttributeManager](../client/CAttributeManager.md)
 
@@ -35,5 +35,5 @@ classDiagram
 | `0x2c` | `m_ProviderType` | attributeprovidertypes_t | [CAttributeManager](../client/CAttributeManager.md) |  |
 | `0x30` | `m_CachedResults` | CUtlVector< [CAttributeManager::cached_attribute_float_t](../client/CAttributeManager.cached_attribute_float_t.md) > | [CAttributeManager](../client/CAttributeManager.md) |  |
 | `0x50` | `m_Item` | [C_EconItemView](../client/C_EconItemView.md) |  |  |
-| `0x4c0` | `m_iExternalItemProviderRegisteredToken` | int32 |  |  |
-| `0x4c8` | `m_ullRegisteredAsItemID` | uint64 |  |  |
+| `0x600` | `m_iExternalItemProviderRegisteredToken` | int32 |  |  |
+| `0x608` | `m_ullRegisteredAsItemID` | uint64 |  |  |

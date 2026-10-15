@@ -8,9 +8,9 @@ kind: class
 
 # SceneObject_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 136 bytes (`0x88`) · **Align:** 8 · **Module:** worldrenderer
+**Kind:** class · **Size:** 144 bytes (`0x90`) · **Align:** 8 · **Module:** worldrenderer
 
 **Relationships:**
 
@@ -23,7 +23,7 @@ classDiagram
 
 ## Memory layout
 
-14 fields (14 declared here, 0 inherited). Offsets are absolute from the object base.
+15 fields (15 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -39,8 +39,9 @@ classDiagram
 | `0x6a` | `m_nLODOverride` | int16 |  |  |
 | `0x6c` | `m_nCubeMapPrecomputedHandshake` | int32 |  |  |
 | `0x70` | `m_nLightProbeVolumePrecomputedHandshake` | int32 |  |  |
-| `0x78` | `m_renderableModel` | CStrongHandle< [InfoForResourceTypeCModel](../resourcesystem/InfoForResourceTypeCModel.md) > |  |  |
-| `0x80` | `m_renderable` | CStrongHandle< [InfoForResourceTypeCRenderMesh](../resourcesystem/InfoForResourceTypeCRenderMesh.md) > |  |  |
+| `0x74` | `m_flEmissiveLightingBoost` | float32 |  |  |
+| `0x80` | `m_renderableModel` | CStrongHandle< [InfoForResourceTypeCModel](../resourcesystem/InfoForResourceTypeCModel.md) > |  |  |
+| `0x88` | `m_renderable` | CStrongHandle< [InfoForResourceTypeCRenderMesh](../resourcesystem/InfoForResourceTypeCRenderMesh.md) > |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -88,6 +89,7 @@ classDiagram
 	&quot;m_nLODOverride&quot;: -1,
 	&quot;m_nCubeMapPrecomputedHandshake&quot;: 0,
 	&quot;m_nLightProbeVolumePrecomputedHandshake&quot;: 0,
+	&quot;m_flEmissiveLightingBoost&quot;: 1.000000,
 	&quot;m_renderableModel&quot;: &quot;&quot;,
 	&quot;m_renderable&quot;: &quot;&quot;
 }</pre>

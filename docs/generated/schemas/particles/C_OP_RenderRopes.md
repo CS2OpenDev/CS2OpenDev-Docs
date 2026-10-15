@@ -8,9 +8,9 @@ kind: class
 
 # C_OP_RenderRopes
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 13344 bytes (`0x3420`) · **Align:** 8 · **Module:** particles
+**Kind:** class · **Size:** 13608 bytes (`0x3528`) · **Align:** 8 · **Module:** particles
 
 **Inherits from:** [CBaseRendererSource2](../particles/CBaseRendererSource2.md)
 
@@ -28,128 +28,127 @@ classDiagram
 
 ## Memory layout
 
-118 fields (33 declared here, 85 inherited). Offsets are absolute from the object base.
+117 fields (33 declared here, 84 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flOpStrength` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator strength` `MPropertySortPriority -100` |
-| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
-| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
-| `0x180` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
-| `0x184` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
-| `0x188` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
-| `0x18c` | `m_flOpEndFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadeout` `MPropertySortPriority -100` |
-| `0x190` | `m_flOpFadeOscillatePeriod` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade oscillate` `MPropertySortPriority -100` |
-| `0x194` | `m_bNormalizeToStopTime` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName normalize fade times to endcap` `MPropertySortPriority -100` |
-| `0x198` | `m_flOpTimeOffsetMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset min` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Time Offset` |
-| `0x19c` | `m_flOpTimeOffsetMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset max` `MPropertySortPriority -100` |
-| `0x1a0` | `m_nOpTimeOffsetSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset seed` `MPropertySortPriority -100` |
-| `0x1a4` | `m_nOpTimeScaleSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale seed` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Timescale Modifiers` |
-| `0x1a8` | `m_flOpTimeScaleMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale min` `MPropertySortPriority -100` |
-| `0x1ac` | `m_flOpTimeScaleMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale max` `MPropertySortPriority -100` |
-| `0x1b2` | `m_bDisableOperator` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyStartGroup` `MPropertySuppressField` |
-| `0x1b8` | `m_Notes` | CUtlString | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleHelpField` `MPropertyFriendlyName operator help and notes` `MPropertySortPriority -100` |
-| `0x1d8` | `VisibilityInputs` | [CParticleVisibilityInputs](../particles/CParticleVisibilityInputs.md) | [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md) | `MPropertySortPriority -1` |
-| `0x220` | `m_bCannotBeRefracted` | bool | [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md) | `MPropertyFriendlyName I cannot be refracted through refracting objects like water` `MPropertySortPriority -1` `MPropertyStartGroup Rendering filter` |
-| `0x221` | `m_bSkipRenderingOnMobile` | bool | [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md) | `MPropertyFriendlyName Skip rendering on mobile` `MPropertySortPriority -1` |
-| `0x228` | `m_flRadiusScale` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName radius scale` `MPropertySortPriority 700` `MPropertyStartGroup +Renderer Modifiers` |
-| `0x398` | `m_flAlphaScale` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName alpha scale` `MPropertySortPriority 700` |
-| `0x508` | `m_flRollScale` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName rotation roll scale` `MPropertySortPriority 700` |
-| `0x678` | `m_nAlpha2Field` | [ParticleAttributeIndex_t](../particles/ParticleAttributeIndex_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName per-particle alpha scale attribute` `MPropertySortPriority 700` |
-| `0x680` | `m_vecColorScale` | [CParticleCollectionRendererVecInput](../particleslib/CParticleCollectionRendererVecInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName color blend` `MPropertySortPriority 700` |
-| `0xd38` | `m_nColorBlendType` | [ParticleColorBlendType_t](../particleslib/ParticleColorBlendType_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName color blend type` `MPropertySortPriority 700` |
-| `0xd3c` | `m_nShaderType` | [SpriteCardShaderType_t](../particles/SpriteCardShaderType_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Shader` `MPropertySortPriority 600` `MPropertyStartGroup +Material` |
-| `0xd40` | `m_strShaderOverride` | CUtlString | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Custom Shader` `MPropertySortPriority 600` `MPropertySuppressExpr m_nShaderType != SPRITECARD_SHADER_CUSTOM` |
-| `0xd48` | `m_flCenterXOffset` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName X offset of center point` `MPropertySortPriority 600` |
-| `0xeb8` | `m_flCenterYOffset` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Y offset of center point` `MPropertySortPriority 600` |
-| `0x1028` | `m_flBumpStrength` | float32 | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Bump Strength` `MPropertySortPriority 600` |
-| `0x102c` | `m_nCropTextureOverride` | [ParticleSequenceCropOverride_t](../particles/ParticleSequenceCropOverride_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Sheet Crop Behavior` `MPropertySortPriority 600` |
-| `0x1030` | `m_vecTexturesInput` | CUtlLeanVector< [TextureGroup_t](../particles/TextureGroup_t.md) > | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MParticleRequireDefaultArrayEntry` `MPropertyAutoExpandSelf` `MPropertyFriendlyName Textures` `MPropertySortPriority 600` |
-| `0x1040` | `m_flAnimationRate` | float32 | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyAttributeRange 0 5` `MPropertyFriendlyName animation rate` `MPropertySortPriority 500` `MPropertyStartGroup Animation` |
-| `0x1044` | `m_nAnimationType` | [AnimationType_t](../particleslib/AnimationType_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName animation type` `MPropertySortPriority 500` |
-| `0x1048` | `m_bAnimateInFPS` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName set animation value in FPS` `MPropertySortPriority 500` |
-| `0x1050` | `m_flMotionVectorScaleU` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName motion vector scale U` `MPropertySortPriority 500` |
-| `0x11c0` | `m_flMotionVectorScaleV` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName motion vector scale V` `MPropertySortPriority 500` |
-| `0x1330` | `m_flSelfIllumAmount` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyAttributeRange 0 2` `MPropertyFriendlyName self illum amount` `MPropertySortPriority 400` `MPropertyStartGroup Lighting and Shadows` |
-| `0x14a0` | `m_flDiffuseAmount` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName diffuse lighting amount` `MPropertySortPriority 400` |
-| `0x1610` | `m_flDiffuseClamp` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName diffuse max contribution clamp` `MPropertySortPriority 400` `MPropertySuppressExpr mod != hlx` |
-| `0x1780` | `m_nLightingControlPoint` | int32 | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName diffuse lighting origin Control Point` `MPropertySortPriority 400` |
-| `0x1784` | `m_nOutputBlendMode` | [ParticleOutputBlendMode_t](../particles/ParticleOutputBlendMode_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName output blend mode` `MPropertySortPriority 300` `MPropertyStartGroup +Color and alpha adjustments` |
-| `0x1788` | `m_bGammaCorrectVertexColors` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Gamma-correct vertex colors` `MPropertySortPriority 300` |
-| `0x1789` | `m_bSaturateColorPreAlphaBlend` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Saturate color pre alphablend` `MPropertySortPriority 300` `MPropertySuppressExpr mod != dota && mod != hlx` |
-| `0x1790` | `m_flAddSelfAmount` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName add self amount over alphablend` `MPropertySortPriority 300` |
-| `0x1900` | `m_flDesaturation` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName desaturation amount` `MPropertySortPriority 300` |
-| `0x1a70` | `m_flOverbrightFactor` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName overbright factor` `MPropertySortPriority 300` |
-| `0x1be0` | `m_nHSVShiftControlPoint` | int32 | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName HSV Shift Control Point` `MPropertySortPriority 300` |
-| `0x1be4` | `m_nFogType` | [ParticleFogType_t](../particles/ParticleFogType_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Apply fog to particle` `MPropertySortPriority 300` |
-| `0x1be8` | `m_flFogAmount` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Fog Scale` `MPropertySortPriority 300` `MPropertySuppressExpr mod != hlx` |
-| `0x1d58` | `m_bTintByFOW` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Apply fog of war to color` `MPropertySortPriority 300` `MPropertySuppressExpr mod != dota` |
-| `0x1d59` | `m_bTintByGlobalLight` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Apply global light to color` `MPropertySortPriority 300` `MPropertySuppressExpr mod != dota` |
-| `0x1d5c` | `m_nPerParticleAlphaReference` | [SpriteCardPerParticleScale_t](../particles/SpriteCardPerParticleScale_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName alpha reference` `MPropertySortPriority 300` `MPropertyStartGroup Color and alpha adjustments/Alpha Reference` |
-| `0x1d60` | `m_nPerParticleAlphaRefWindow` | [SpriteCardPerParticleScale_t](../particles/SpriteCardPerParticleScale_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName alpha reference window size` `MPropertySortPriority 300` |
-| `0x1d64` | `m_nAlphaReferenceType` | [ParticleAlphaReferenceType_t](../particles/ParticleAlphaReferenceType_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName alpha reference type` `MPropertySortPriority 300` |
-| `0x1d68` | `m_flAlphaReferenceSoftness` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName alpha reference softness` `MPropertySortPriority 300` |
-| `0x1ed8` | `m_flSourceAlphaValueToMapToZero` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName source alpha value to map to alpha of zero` `MPropertySortPriority 300` |
-| `0x2048` | `m_flSourceAlphaValueToMapToOne` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName source alpha value to map to alpha of 1` `MPropertySortPriority 300` |
-| `0x21b8` | `m_bRefract` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName refract background` `MPropertySortPriority 200` `MPropertyStartGroup Refraction` |
-| `0x21b9` | `m_bRefractSolid` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName refract draws opaque - alpha scales refraction` `MPropertySortPriority 200` `MPropertySuppressExpr !m_bRefract` |
-| `0x21ba` | `m_bRefract2Passes` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName refract in 2 passes - can refract particles behind, requires (MBOIT!)` `MPropertySortPriority 200` `MPropertySuppressExpr mod != hlx &#124;&#124; !m_bRefract` |
-| `0x21c0` | `m_flRefractAmount` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyAttributeRange -2 2` `MPropertyFriendlyName refract amount` `MPropertySortPriority 200` `MPropertySuppressExpr !m_bRefract` |
-| `0x2330` | `m_nRefractBlurRadius` | int32 | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName refract blur radius` `MPropertySortPriority 200` `MPropertySuppressExpr !m_bRefract` |
-| `0x2334` | `m_nRefractBlurType` | [BlurFilterType_t](../particles/BlurFilterType_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName refract blur type` `MPropertySortPriority 200` `MPropertySuppressExpr !m_bRefract` |
-| `0x2338` | `m_bOnlyRenderInEffectsBloomPass` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Only Render in effects bloom pass` `MPropertySortPriority 1100` `MPropertyStartGroup` |
-| `0x2339` | `m_bOnlyRenderInEffectsWaterPass` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Only Render in effects water pass` `MPropertySortPriority 1050` `MPropertySuppressExpr mod != csgo && mod != hlx` |
-| `0x233a` | `m_bUseMixedResolutionRendering` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Use Mixed Resolution Rendering` `MPropertySortPriority 1200` |
-| `0x233b` | `m_bOnlyRenderInEffecsGameOverlay` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Only Render in effects game overlay pass` `MPropertySortPriority 1210` `MPropertySuppressExpr mod != csgo` |
-| `0x233c` | `m_stencilTestID` | char[128] | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName stencil test ID` `MPropertySortPriority 0` `MPropertyStartGroup Stencil` |
-| `0x23bc` | `m_bStencilTestExclude` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName only write where stencil is NOT stencil test ID` `MPropertySortPriority 0` |
-| `0x23bd` | `m_stencilWriteID` | char[128] | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName stencil write ID` `MPropertySortPriority 0` |
-| `0x243d` | `m_bWriteStencilOnDepthPass` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName write stencil on z-buffer test success` `MPropertySortPriority 0` |
-| `0x243e` | `m_bWriteStencilOnDepthFail` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName write stencil on z-buffer test failure` `MPropertySortPriority 0` |
-| `0x243f` | `m_bReverseZBuffering` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName reverse z-buffer test` `MPropertySortPriority 900` `MPropertyStartGroup Depth buffer control and effects` |
-| `0x2440` | `m_bDisableZBuffering` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName disable z-buffer test` `MPropertySortPriority 900` |
-| `0x2444` | `m_nFeatheringMode` | [ParticleDepthFeatheringMode_t](../particles/ParticleDepthFeatheringMode_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Depth feathering mode` `MPropertySortPriority 900` |
-| `0x2448` | `m_flFeatheringMinDist` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName particle feathering closest distance to surface` `MPropertySortPriority 900` |
-| `0x25b8` | `m_flFeatheringMaxDist` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName particle feathering farthest distance to surface` `MPropertySortPriority 900` |
-| `0x2728` | `m_flFeatheringFilter` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName particle feathering alpha filter` `MPropertySortPriority 900` |
-| `0x2898` | `m_flFeatheringDepthMapFilter` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName particle feathering depthmap layer filter` `MPropertySortPriority 900` `MPropertySuppressExpr mod != hlx` |
-| `0x2a08` | `m_flDepthBias` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName depth comparison bias` `MPropertySortPriority 900` |
-| `0x2b78` | `m_nSortMethod` | [ParticleSortingChoiceList_t](../particles/ParticleSortingChoiceList_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Sort Method` `MPropertySortPriority 900` |
-| `0x2b7c` | `m_bBlendFramesSeq0` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName blend sequence animation frames` `MPropertySortPriority 500` `MPropertyStartGroup Animation` |
-| `0x2b7d` | `m_bMaxLuminanceBlendingSequence0` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName use max-luminance blending for sequence` `MPropertySortPriority 500` `MPropertySuppressExpr !m_bBlendFramesSeq0` |
-| `0x2df0` | `m_bEnableFadingAndClamping` | bool |  | `MPropertyFriendlyName enable fading and clamping` `MPropertySortPriority 1000` `MPropertyStartGroup Screenspace Fading and culling` |
-| `0x2df4` | `m_flMinSize` | float32 |  | `MPropertyFriendlyName minimum visual screen-size` `MPropertySuppressExpr !m_bEnableFadingAndClamping` |
-| `0x2df8` | `m_flMaxSize` | float32 |  | `MPropertyFriendlyName maximum visual screen-size` `MPropertySuppressExpr !m_bEnableFadingAndClamping` |
-| `0x2dfc` | `m_flStartFadeSize` | float32 |  | `MPropertyFriendlyName start fade screen-size` `MPropertySuppressExpr !m_bEnableFadingAndClamping` |
-| `0x2e00` | `m_flEndFadeSize` | float32 |  | `MPropertyFriendlyName end fade and cull screen-size` `MPropertySuppressExpr !m_bEnableFadingAndClamping` |
-| `0x2e04` | `m_flStartFadeDot` | float32 |  | `MPropertyFriendlyName start fade dot product of normal vs view` `MPropertySortPriority 1000` |
-| `0x2e08` | `m_flEndFadeDot` | float32 |  | `MPropertyFriendlyName end fade dot product of normal vs view` `MPropertySortPriority 1000` |
-| `0x2e10` | `m_flSubPixelAAScale` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) |  | `MPropertyFriendlyName sub-pixel AA scale` `MPropertySortPriority 1000` `MPropertySuppressExpr mod != hlx` |
-| `0x2f80` | `m_flRadiusTaper` | float32 |  | `MPropertyFriendlyName amount to taper the width of the trail end by` `MPropertyStartGroup Rope Tesselation` |
-| `0x2f84` | `m_nMinTesselation` | int32 |  | `MPropertyFriendlyName minium number of quads per render segment` `MPropertySortPriority 850` |
-| `0x2f88` | `m_nMaxTesselation` | int32 |  | `MPropertyFriendlyName maximum number of quads per render segment` |
-| `0x2f8c` | `m_flTessScale` | float32 |  | `MPropertyFriendlyName tesselation resolution scale factor` |
-| `0x2f90` | `m_flTextureVWorldSize` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) |  | `MPropertyFriendlyName global texture V World Size` `MPropertySortPriority 800` `MPropertyStartGroup +Rope Global UV Controls` |
-| `0x3100` | `m_flTextureVScrollRate` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) |  | `MPropertyFriendlyName global texture V Scroll Rate` |
-| `0x3270` | `m_flTextureVOffset` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) |  | `MPropertyFriendlyName global texture V Offset` |
-| `0x33e0` | `m_nTextureVParamsCP` | int32 |  | `MPropertyFriendlyName global texture V Params CP` |
-| `0x33e4` | `m_bClampV` | bool |  | `MPropertyFriendlyName Clamp Non-Sheet texture V coords` |
-| `0x33e8` | `m_nScaleCP1` | int32 |  | `MPropertyFriendlyName scale CP start` `MPropertyStartGroup Rope Global UV Controls/CP Scaling` |
-| `0x33ec` | `m_nScaleCP2` | int32 |  | `MPropertyFriendlyName scale CP end` |
-| `0x33f0` | `m_flScaleVSizeByControlPointDistance` | float32 |  | `MPropertyFriendlyName scale V world size by CP distance` |
-| `0x33f4` | `m_flScaleVScrollByControlPointDistance` | float32 |  | `MPropertyFriendlyName scale V scroll rate by CP distance` |
-| `0x33f8` | `m_flScaleVOffsetByControlPointDistance` | float32 |  | `MPropertyFriendlyName scale V offset by CP distance` |
-| `0x33fd` | `m_bUseScalarForTextureCoordinate` | bool |  | `MPropertyFriendlyName Use scalar attribute for texture coordinate` `MPropertyStartGroup Rope Global UV Controls` |
-| `0x3400` | `m_nScalarFieldForTextureCoordinate` | [ParticleAttributeIndex_t](../particles/ParticleAttributeIndex_t.md) |  | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName scalar to use for texture coordinate` `MPropertySuppressExpr !m_bUseScalarForTextureCoordinate` |
-| `0x3404` | `m_flScalarAttributeTextureCoordScale` | float32 |  | `MPropertyFriendlyName scale value to map attribute to texture coordinate` `MPropertySuppressExpr !m_bUseScalarForTextureCoordinate` |
-| `0x3408` | `m_bReverseOrder` | bool |  | `MPropertyFriendlyName reverse point order` `MPropertySortPriority 800` `MPropertyStartGroup Rope Order Controls` |
-| `0x3409` | `m_bClosedLoop` | bool |  | `MPropertyFriendlyName Closed loop` |
-| `0x340c` | `m_nSplitField` | [ParticleAttributeIndex_t](../particles/ParticleAttributeIndex_t.md) |  | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName attribute to use for rope segment id` |
-| `0x3410` | `m_bSortBySegmentID` | bool |  | `MPropertyFriendlyName sort by rope segment id` `MPropertySuppressExpr m_nSplitField == PARTICLE_ATTRIBUTE_UNUSED` |
-| `0x3414` | `m_nOrientationType` | [ParticleOrientationChoiceList_t](../particles/ParticleOrientationChoiceList_t.md) |  | `MPropertyFriendlyName orientation_type` `MPropertySortPriority 750` `MPropertyStartGroup Orientation` |
-| `0x3418` | `m_nVectorFieldForOrientation` | [ParticleAttributeIndex_t](../particles/ParticleAttributeIndex_t.md) |  | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName attribute to use for normal` `MPropertySortPriority 750` `MPropertySuppressExpr m_nOrientationType != PARTICLE_ORIENTATION_ALIGN_TO_PARTICLE_NORMAL && m_nOrientationType != PARTICLE_ORIENTATION_SCREENALIGN_TO_PARTICLE_NORMAL` |
-| `0x341c` | `m_bDrawAsOpaque` | bool |  | `MPropertyFriendlyName draw as opaque` `MPropertyStartGroup Material` |
-| `0x341d` | `m_bGenerateNormals` | bool |  | `MPropertyFriendlyName generate normals for cylinder` `MPropertyStartGroup Orientation` |
+| `0x180` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
+| `0x184` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
+| `0x188` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
+| `0x18c` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
+| `0x190` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
+| `0x194` | `m_flOpEndFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadeout` `MPropertySortPriority -100` |
+| `0x198` | `m_flOpFadeOscillatePeriod` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade oscillate` `MPropertySortPriority -100` |
+| `0x19c` | `m_bNormalizeToStopTime` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName normalize fade times to endcap` `MPropertySortPriority -100` |
+| `0x1a0` | `m_flOpTimeOffsetMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset min` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Time Offset` |
+| `0x1a4` | `m_flOpTimeOffsetMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset max` `MPropertySortPriority -100` |
+| `0x1a8` | `m_nOpTimeOffsetSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset seed` `MPropertySortPriority -100` |
+| `0x1ac` | `m_nOpTimeScaleSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale seed` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Timescale Modifiers` |
+| `0x1b0` | `m_flOpTimeScaleMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale min` `MPropertySortPriority -100` |
+| `0x1b4` | `m_flOpTimeScaleMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale max` `MPropertySortPriority -100` |
+| `0x1ba` | `m_bDisableOperator` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyStartGroup` `MPropertySuppressField` |
+| `0x1c0` | `m_Notes` | CUtlString | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleHelpField` `MPropertyAttributeEditor TextBlock()` `MPropertyFriendlyName operator help and notes` `MPropertySortPriority -100` |
+| `0x1e0` | `VisibilityInputs` | [CParticleVisibilityInputs](../particles/CParticleVisibilityInputs.md) | [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md) | `MPropertySortPriority -1` |
+| `0x228` | `m_bCannotBeRefracted` | bool | [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md) | `MPropertyFriendlyName I cannot be refracted through refracting objects like water` `MPropertySortPriority -1` `MPropertyStartGroup Rendering filter` |
+| `0x230` | `m_flRadiusScale` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName radius scale` `MPropertySortPriority 700` `MPropertyStartGroup +Renderer Modifiers` |
+| `0x3a8` | `m_flAlphaScale` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName alpha scale` `MPropertySortPriority 700` |
+| `0x520` | `m_flRollScale` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName rotation roll scale` `MPropertySortPriority 700` |
+| `0x698` | `m_nAlpha2Field` | [ParticleAttributeIndex_t](../particleslib/ParticleAttributeIndex_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName per-particle alpha scale attribute` `MPropertySortPriority 700` |
+| `0x6a0` | `m_vecColorScale` | [CParticleCollectionRendererVecInput](../particleslib/CParticleCollectionRendererVecInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName color blend` `MPropertySortPriority 700` |
+| `0xd78` | `m_nColorBlendType` | [ParticleColorBlendType_t](../particleslib/ParticleColorBlendType_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName color blend type` `MPropertySortPriority 700` |
+| `0xd7c` | `m_nShaderType` | [SpriteCardShaderType_t](../particles/SpriteCardShaderType_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Shader` `MPropertySortPriority 600` `MPropertyStartGroup +Material` |
+| `0xd80` | `m_strShaderOverride` | CUtlString | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Custom Shader` `MPropertySortPriority 600` `MPropertySuppressExpr m_nShaderType != SPRITECARD_SHADER_CUSTOM` |
+| `0xd88` | `m_flCenterXOffset` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName X offset of center point` `MPropertySortPriority 600` |
+| `0xf00` | `m_flCenterYOffset` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Y offset of center point` `MPropertySortPriority 600` |
+| `0x1078` | `m_flBumpStrength` | float32 | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Bump Strength` `MPropertySortPriority 600` |
+| `0x107c` | `m_nCropTextureOverride` | [ParticleSequenceCropOverride_t](../particles/ParticleSequenceCropOverride_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Sheet Crop Behavior` `MPropertySortPriority 600` |
+| `0x1080` | `m_vecTexturesInput` | CUtlLeanVector< [TextureGroup_t](../particles/TextureGroup_t.md) > | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MParticleRequireDefaultArrayEntry` `MPropertyAutoExpandSelf` `MPropertyFriendlyName Textures` `MPropertySortPriority 600` |
+| `0x1090` | `m_flAnimationRate` | float32 | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyAttributeRange 0 5` `MPropertyFriendlyName animation rate` `MPropertySortPriority 500` `MPropertyStartGroup Animation` |
+| `0x1094` | `m_nAnimationType` | [AnimationType_t](../particleslib/AnimationType_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName animation type` `MPropertySortPriority 500` |
+| `0x1098` | `m_bAnimateInFPS` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName set animation value in FPS` `MPropertySortPriority 500` |
+| `0x10a0` | `m_flMotionVectorScaleU` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName motion vector scale U` `MPropertySortPriority 500` |
+| `0x1218` | `m_flMotionVectorScaleV` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName motion vector scale V` `MPropertySortPriority 500` |
+| `0x1390` | `m_flSelfIllumAmount` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyAttributeRange 0 2` `MPropertyFriendlyName self illum amount` `MPropertySortPriority 400` `MPropertyStartGroup Lighting and Shadows` |
+| `0x1508` | `m_flDiffuseAmount` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName diffuse lighting amount` `MPropertySortPriority 400` |
+| `0x1680` | `m_flDiffuseClamp` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName diffuse max contribution clamp` `MPropertySortPriority 400` `MPropertySuppressExpr mod != hlx` |
+| `0x17f8` | `m_nLightingControlPoint` | int32 | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName diffuse lighting origin Control Point` `MPropertySortPriority 400` |
+| `0x17fc` | `m_nOutputBlendMode` | [ParticleOutputBlendMode_t](../particles/ParticleOutputBlendMode_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName output blend mode` `MPropertySortPriority 300` `MPropertyStartGroup +Color and alpha adjustments` |
+| `0x1800` | `m_bGammaCorrectVertexColors` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Gamma-correct vertex colors` `MPropertySortPriority 300` |
+| `0x1801` | `m_bSaturateColorPreAlphaBlend` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Saturate color pre alphablend` `MPropertySortPriority 300` `MPropertySuppressExpr mod != dota && mod != hlx` |
+| `0x1808` | `m_flAddSelfAmount` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName add self amount over alphablend` `MPropertySortPriority 300` |
+| `0x1980` | `m_flDesaturation` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName desaturation amount` `MPropertySortPriority 300` |
+| `0x1af8` | `m_flOverbrightFactor` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName overbright factor` `MPropertySortPriority 300` |
+| `0x1c70` | `m_nHSVShiftControlPoint` | int32 | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName HSV Shift Control Point` `MPropertySortPriority 300` |
+| `0x1c74` | `m_nFogType` | [ParticleFogType_t](../particles/ParticleFogType_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Apply fog to particle` `MPropertySortPriority 300` |
+| `0x1c78` | `m_flFogAmount` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Fog Scale` `MPropertySortPriority 300` `MPropertySuppressExpr mod != hlx` |
+| `0x1df0` | `m_bTintByFOW` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Apply fog of war to color` `MPropertySortPriority 300` `MPropertySuppressExpr mod != dota` |
+| `0x1df1` | `m_bTintByGlobalLight` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Apply global light to color` `MPropertySortPriority 300` `MPropertySuppressExpr mod != dota` |
+| `0x1df4` | `m_nPerParticleAlphaReference` | [SpriteCardPerParticleScale_t](../particles/SpriteCardPerParticleScale_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName alpha reference` `MPropertySortPriority 300` `MPropertyStartGroup Color and alpha adjustments/Alpha Reference` |
+| `0x1df8` | `m_nPerParticleAlphaRefWindow` | [SpriteCardPerParticleScale_t](../particles/SpriteCardPerParticleScale_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName alpha reference window size` `MPropertySortPriority 300` |
+| `0x1dfc` | `m_nAlphaReferenceType` | [ParticleAlphaReferenceType_t](../particles/ParticleAlphaReferenceType_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName alpha reference type` `MPropertySortPriority 300` |
+| `0x1e00` | `m_flAlphaReferenceSoftness` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName alpha reference softness` `MPropertySortPriority 300` |
+| `0x1f78` | `m_flSourceAlphaValueToMapToZero` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName source alpha value to map to alpha of zero` `MPropertySortPriority 300` |
+| `0x20f0` | `m_flSourceAlphaValueToMapToOne` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName source alpha value to map to alpha of 1` `MPropertySortPriority 300` |
+| `0x2268` | `m_bRefract` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName refract background` `MPropertySortPriority 200` `MPropertyStartGroup Refraction` |
+| `0x2269` | `m_bRefractSolid` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName refract draws opaque - alpha scales refraction` `MPropertySortPriority 200` `MPropertySuppressExpr !m_bRefract` |
+| `0x226a` | `m_bRefract2Passes` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName refract in 2 passes - can refract particles behind, requires (MBOIT!)` `MPropertySortPriority 200` `MPropertySuppressExpr mod != hlx &#124;&#124; !m_bRefract` |
+| `0x2270` | `m_flRefractAmount` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyAttributeRange -2 2` `MPropertyFriendlyName refract amount` `MPropertySortPriority 200` `MPropertySuppressExpr !m_bRefract` |
+| `0x23e8` | `m_nRefractBlurRadius` | int32 | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName refract blur radius` `MPropertySortPriority 200` `MPropertySuppressExpr !m_bRefract` |
+| `0x23ec` | `m_nRefractBlurType` | [BlurFilterType_t](../particles/BlurFilterType_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName refract blur type` `MPropertySortPriority 200` `MPropertySuppressExpr !m_bRefract` |
+| `0x23f0` | `m_bOnlyRenderInEffectsBloomPass` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Only Render in effects bloom pass` `MPropertySortPriority 1100` `MPropertyStartGroup` |
+| `0x23f1` | `m_bOnlyRenderInEffectsWaterPass` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Only Render in effects water pass` `MPropertySortPriority 1050` `MPropertySuppressExpr mod != csgo && mod != hlx` |
+| `0x23f2` | `m_bUseMixedResolutionRendering` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Use Mixed Resolution Rendering` `MPropertySortPriority 1200` |
+| `0x23f3` | `m_bOnlyRenderInEffecsGameOverlay` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Only Render in effects game overlay pass` `MPropertySortPriority 1210` `MPropertySuppressExpr mod != csgo` |
+| `0x23f4` | `m_stencilTestID` | char[128] | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName stencil test ID` `MPropertySortPriority 0` `MPropertyStartGroup Stencil` |
+| `0x2474` | `m_bStencilTestExclude` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName only write where stencil is NOT stencil test ID` `MPropertySortPriority 0` |
+| `0x2475` | `m_stencilWriteID` | char[128] | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName stencil write ID` `MPropertySortPriority 0` |
+| `0x24f5` | `m_bWriteStencilOnDepthPass` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName write stencil on z-buffer test success` `MPropertySortPriority 0` |
+| `0x24f6` | `m_bWriteStencilOnDepthFail` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName write stencil on z-buffer test failure` `MPropertySortPriority 0` |
+| `0x24f7` | `m_bReverseZBuffering` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName reverse z-buffer test` `MPropertySortPriority 900` `MPropertyStartGroup Depth buffer control and effects` |
+| `0x24f8` | `m_bDisableZBuffering` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName disable z-buffer test` `MPropertySortPriority 900` |
+| `0x24fc` | `m_nFeatheringMode` | [ParticleDepthFeatheringMode_t](../particles/ParticleDepthFeatheringMode_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Depth feathering mode` `MPropertySortPriority 900` |
+| `0x2500` | `m_flFeatheringMinDist` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName particle feathering closest distance to surface` `MPropertySortPriority 900` |
+| `0x2678` | `m_flFeatheringMaxDist` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName particle feathering farthest distance to surface` `MPropertySortPriority 900` |
+| `0x27f0` | `m_flFeatheringFilter` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName particle feathering alpha filter` `MPropertySortPriority 900` |
+| `0x2968` | `m_flFeatheringDepthMapFilter` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName particle feathering depthmap layer filter` `MPropertySortPriority 900` `MPropertySuppressExpr mod != hlx` |
+| `0x2ae0` | `m_flDepthBias` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName depth comparison bias` `MPropertySortPriority 900` |
+| `0x2c58` | `m_nSortMethod` | [ParticleSortingChoiceList_t](../particles/ParticleSortingChoiceList_t.md) | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName Sort Method` `MPropertySortPriority 900` |
+| `0x2c5c` | `m_bBlendFramesSeq0` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName blend sequence animation frames` `MPropertySortPriority 500` `MPropertyStartGroup Animation` |
+| `0x2c5d` | `m_bMaxLuminanceBlendingSequence0` | bool | [CBaseRendererSource2](../particles/CBaseRendererSource2.md) | `MPropertyFriendlyName use max-luminance blending for sequence` `MPropertySortPriority 500` `MPropertySuppressExpr !m_bBlendFramesSeq0` |
+| `0x2ed8` | `m_bEnableFadingAndClamping` | bool |  | `MPropertyFriendlyName enable fading and clamping` `MPropertySortPriority 1000` `MPropertyStartGroup Screenspace Fading and culling` |
+| `0x2edc` | `m_flMinSize` | float32 |  | `MPropertyFriendlyName minimum visual screen-size` `MPropertySuppressExpr !m_bEnableFadingAndClamping` |
+| `0x2ee0` | `m_flMaxSize` | float32 |  | `MPropertyFriendlyName maximum visual screen-size` `MPropertySuppressExpr !m_bEnableFadingAndClamping` |
+| `0x2ee4` | `m_flStartFadeSize` | float32 |  | `MPropertyFriendlyName start fade screen-size` `MPropertySuppressExpr !m_bEnableFadingAndClamping` |
+| `0x2ee8` | `m_flEndFadeSize` | float32 |  | `MPropertyFriendlyName end fade and cull screen-size` `MPropertySuppressExpr !m_bEnableFadingAndClamping` |
+| `0x2eec` | `m_flStartFadeDot` | float32 |  | `MPropertyFriendlyName start fade dot product of normal vs view` `MPropertySortPriority 1000` |
+| `0x2ef0` | `m_flEndFadeDot` | float32 |  | `MPropertyFriendlyName end fade dot product of normal vs view` `MPropertySortPriority 1000` |
+| `0x2ef8` | `m_flSubPixelAAScale` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) |  | `MPropertyFriendlyName sub-pixel AA scale` `MPropertySortPriority 1000` `MPropertySuppressExpr mod != hlx` |
+| `0x3070` | `m_flRadiusTaper` | float32 |  | `MPropertyFriendlyName amount to taper the width of the trail end by` `MPropertyStartGroup Rope Tesselation` |
+| `0x3074` | `m_nMinTesselation` | int32 |  | `MPropertyFriendlyName minium number of quads per render segment` `MPropertySortPriority 850` |
+| `0x3078` | `m_nMaxTesselation` | int32 |  | `MPropertyFriendlyName maximum number of quads per render segment` |
+| `0x307c` | `m_flTessScale` | float32 |  | `MPropertyFriendlyName tesselation resolution scale factor` |
+| `0x3080` | `m_flTextureVWorldSize` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) |  | `MPropertyFriendlyName global texture V World Size` `MPropertySortPriority 800` `MPropertyStartGroup +Rope Global UV Controls` |
+| `0x31f8` | `m_flTextureVScrollRate` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) |  | `MPropertyFriendlyName global texture V Scroll Rate` |
+| `0x3370` | `m_flTextureVOffset` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) |  | `MPropertyFriendlyName global texture V Offset` |
+| `0x34e8` | `m_nTextureVParamsCP` | int32 |  | `MPropertyFriendlyName global texture V Params CP` |
+| `0x34ec` | `m_bClampV` | bool |  | `MPropertyFriendlyName Clamp Non-Sheet texture V coords` |
+| `0x34f0` | `m_nScaleCP1` | int32 |  | `MPropertyFriendlyName scale CP start` `MPropertyStartGroup Rope Global UV Controls/CP Scaling` |
+| `0x34f4` | `m_nScaleCP2` | int32 |  | `MPropertyFriendlyName scale CP end` |
+| `0x34f8` | `m_flScaleVSizeByControlPointDistance` | float32 |  | `MPropertyFriendlyName scale V world size by CP distance` |
+| `0x34fc` | `m_flScaleVScrollByControlPointDistance` | float32 |  | `MPropertyFriendlyName scale V scroll rate by CP distance` |
+| `0x3500` | `m_flScaleVOffsetByControlPointDistance` | float32 |  | `MPropertyFriendlyName scale V offset by CP distance` |
+| `0x3505` | `m_bUseScalarForTextureCoordinate` | bool |  | `MPropertyFriendlyName Use scalar attribute for texture coordinate` `MPropertyStartGroup Rope Global UV Controls` |
+| `0x3508` | `m_nScalarFieldForTextureCoordinate` | [ParticleAttributeIndex_t](../particleslib/ParticleAttributeIndex_t.md) |  | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName scalar to use for texture coordinate` `MPropertySuppressExpr !m_bUseScalarForTextureCoordinate` |
+| `0x350c` | `m_flScalarAttributeTextureCoordScale` | float32 |  | `MPropertyFriendlyName scale value to map attribute to texture coordinate` `MPropertySuppressExpr !m_bUseScalarForTextureCoordinate` |
+| `0x3510` | `m_bReverseOrder` | bool |  | `MPropertyFriendlyName reverse point order` `MPropertySortPriority 800` `MPropertyStartGroup Rope Order Controls` |
+| `0x3511` | `m_bClosedLoop` | bool |  | `MPropertyFriendlyName Closed loop` |
+| `0x3514` | `m_nSplitField` | [ParticleAttributeIndex_t](../particleslib/ParticleAttributeIndex_t.md) |  | `MPropertyAttributeChoiceName particlefield_scalar` `MPropertyFriendlyName attribute to use for rope segment id` |
+| `0x3518` | `m_bSortBySegmentID` | bool |  | `MPropertyFriendlyName sort by rope segment id` `MPropertySuppressExpr m_nSplitField == PARTICLE_ATTRIBUTE_UNUSED` |
+| `0x351c` | `m_nOrientationType` | [ParticleOrientationChoiceList_t](../particles/ParticleOrientationChoiceList_t.md) |  | `MPropertyFriendlyName orientation_type` `MPropertySortPriority 750` `MPropertyStartGroup Orientation` |
+| `0x3520` | `m_nVectorFieldForOrientation` | [ParticleAttributeIndex_t](../particleslib/ParticleAttributeIndex_t.md) |  | `MPropertyAttributeChoiceName particlefield_vector` `MPropertyFriendlyName attribute to use for normal` `MPropertySortPriority 750` `MPropertySuppressExpr m_nOrientationType != PARTICLE_ORIENTATION_ALIGN_TO_PARTICLE_NORMAL && m_nOrientationType != PARTICLE_ORIENTATION_SCREENALIGN_TO_PARTICLE_NORMAL` |
+| `0x3524` | `m_bDrawAsOpaque` | bool |  | `MPropertyFriendlyName draw as opaque` `MPropertyStartGroup Material` |
+| `0x3525` | `m_bGenerateNormals` | bool |  | `MPropertyFriendlyName generate normals for cylinder` `MPropertyStartGroup Orientation` |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -228,7 +227,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_nOpEndCapState&quot;: &quot;PARTICLE_ENDCAP_ALWAYS_ON&quot;,
 	&quot;m_nToolsState&quot;: &quot;PARTICLE_TOOLS_STATE_ALWAYS_ON&quot;,
@@ -269,7 +269,6 @@ classDiagram
 		&quot;m_bRightEye&quot;: false
 	},
 	&quot;m_bCannotBeRefracted&quot;: true,
-	&quot;m_bSkipRenderingOnMobile&quot;: false,
 	&quot;m_flRadiusScale&quot;:
 	{
 		&quot;m_nType&quot;: &quot;PF_TYPE_LITERAL&quot;,
@@ -343,7 +342,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flAlphaScale&quot;:
 	{
@@ -418,7 +418,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flRollScale&quot;:
 	{
@@ -493,7 +494,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_nAlpha2Field&quot;: 16,
 	&quot;m_vecColorScale&quot;:
@@ -613,7 +615,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_FloatComponentY&quot;:
 		{
@@ -688,7 +691,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_FloatComponentZ&quot;:
 		{
@@ -763,7 +767,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_FloatInterp&quot;:
 		{
@@ -838,7 +843,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_flInterpInput0&quot;: 0.000000,
 		&quot;m_flInterpInput1&quot;: 1.000000,
@@ -949,7 +955,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flCenterYOffset&quot;:
 	{
@@ -1024,7 +1031,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flBumpStrength&quot;: 1.000000,
 	&quot;m_nCropTextureOverride&quot;: &quot;PARTICLE_SEQUENCE_CROP_OVERRIDE_DEFAULT&quot;,
@@ -1107,7 +1115,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flMotionVectorScaleV&quot;:
 	{
@@ -1182,7 +1191,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flSelfIllumAmount&quot;:
 	{
@@ -1257,7 +1267,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flDiffuseAmount&quot;:
 	{
@@ -1332,7 +1343,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flDiffuseClamp&quot;:
 	{
@@ -1407,7 +1419,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_nLightingControlPoint&quot;: -1,
 	&quot;m_nOutputBlendMode&quot;: &quot;PARTICLE_OUTPUT_BLEND_MODE_ALPHA&quot;,
@@ -1486,7 +1499,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flDesaturation&quot;:
 	{
@@ -1561,7 +1575,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flOverbrightFactor&quot;:
 	{
@@ -1636,7 +1651,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_nHSVShiftControlPoint&quot;: -1,
 	&quot;m_nFogType&quot;: &quot;PARTICLE_FOG_GAME_DEFAULT&quot;,
@@ -1713,7 +1729,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_bTintByFOW&quot;: false,
 	&quot;m_bTintByGlobalLight&quot;: false,
@@ -1793,7 +1810,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flSourceAlphaValueToMapToZero&quot;:
 	{
@@ -1868,7 +1886,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flSourceAlphaValueToMapToOne&quot;:
 	{
@@ -1943,7 +1962,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_bRefract&quot;: false,
 	&quot;m_bRefractSolid&quot;: false,
@@ -2021,7 +2041,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_nRefractBlurRadius&quot;: 0,
 	&quot;m_nRefractBlurType&quot;: &quot;BLURFILTER_GAUSSIAN&quot;,
@@ -2110,7 +2131,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flFeatheringMaxDist&quot;:
 	{
@@ -2185,7 +2207,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flFeatheringFilter&quot;:
 	{
@@ -2260,7 +2283,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flFeatheringDepthMapFilter&quot;:
 	{
@@ -2335,7 +2359,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flDepthBias&quot;:
 	{
@@ -2410,7 +2435,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_nSortMethod&quot;: &quot;PARTICLE_SORTING_NEAREST&quot;,
 	&quot;m_bBlendFramesSeq0&quot;: true,
@@ -2495,7 +2521,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flRadiusTaper&quot;: 1.000000,
 	&quot;m_nMinTesselation&quot;: 1,
@@ -2574,7 +2601,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flTextureVScrollRate&quot;:
 	{
@@ -2649,7 +2677,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flTextureVOffset&quot;:
 	{
@@ -2724,7 +2753,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_nTextureVParamsCP&quot;: -1,
 	&quot;m_bClampV&quot;: false,

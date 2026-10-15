@@ -8,18 +8,17 @@ kind: class
 
 # CBasePulseGraphInstance
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 272 bytes (`0x110`) · **Align:** n/a (unspecified) · **Module:** pulse_runtime_lib
+**Kind:** class · **Size:** 136 bytes (`0x88`) · **Align:** n/a (unspecified) · **Module:** pulse_runtime_lib
 
-**Derived by:** [CParticleCollectionBindingInstance](../particleslib/CParticleCollectionBindingInstance.md), [CPulseGraphInstance_ServerEntity](../server/CPulseGraphInstance_ServerEntity.md), [CPulseGraphInstance_SmartPropEval](../smartprops/CPulseGraphInstance_SmartPropEval.md), [CPulseGraphInstance_TestDomain](../pulse_system/CPulseGraphInstance_TestDomain.md), [CPulseGraphInstance_TestDomain_FakeEntityOwner](../pulse_system/CPulseGraphInstance_TestDomain_FakeEntityOwner.md), [CPulseGraphInstance_TurtleGraphics](../pulse_system/CPulseGraphInstance_TurtleGraphics.md)
+**Derived by:** [CParticleCollectionBindingInstance](../particleslib/CParticleCollectionBindingInstance.md), [CPulseGraphInstance_ServerEntity](../server/CPulseGraphInstance_ServerEntity.md), [CPulseGraphInstance_TestDomain](../pulse_system/CPulseGraphInstance_TestDomain.md), [CPulseGraphInstance_TestDomain_FakeEntityOwner](../pulse_system/CPulseGraphInstance_TestDomain_FakeEntityOwner.md), [CPulseGraphInstance_TurtleGraphics](../pulse_system/CPulseGraphInstance_TurtleGraphics.md)
 
 **Relationships:**
 
 ```mermaid
 classDiagram
     CBasePulseGraphInstance <|-- CParticleCollectionBindingInstance
-    CBasePulseGraphInstance <|-- CPulseGraphInstance_SmartPropEval
     CBasePulseGraphInstance <|-- CPulseGraphInstance_TestDomain
     CBasePulseGraphInstance <|-- CPulseGraphInstance_TestDomain_FakeEntityOwner
     CBasePulseGraphInstance <|-- CPulseGraphInstance_TurtleGraphics
@@ -28,4 +27,4 @@ classDiagram
 
 ## Memory layout
 
-No schema-visible fields (272 bytes of opaque storage).
+No schema-visible fields (136 bytes of opaque storage).

@@ -1,11 +1,11 @@
 {
   "schema_format_version": "2.2",
   "generator": "https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker",
-  "build_id": 25218825,
+  "build_id": 25947352,
   "platform": "windows-x86_64",
   "revision": "hl2sdk-cs2/5f891c9026230cce0fc0a3fc4b5fef1c467a1385/v1/3d1200e346019c59",
-  "version_date": "2026-09-09",
-  "version_time": "2026-09-09T22:31:50Z",
+  "version_date": "2026-10-15",
+  "version_time": "2026-10-15T00:07:09Z",
   "commands": [
     {
       "name": "+bugvoice",
@@ -2758,6 +2758,15 @@
       "has_completion_callback": false
     },
     {
+      "name": "create_explosion_damage",
+      "flags": [
+        "gamedll",
+        "cheat"
+      ],
+      "description": "Explosion where you're looking, or at x y z, with a real explosion's physics force (unlike create_radius_damage).",
+      "has_completion_callback": false
+    },
+    {
       "name": "create_radius_damage",
       "flags": [
         "gamedll",
@@ -3528,7 +3537,17 @@
         "cheat",
         "vconsole_fuzzy_matching"
       ],
-      "description": "Usage:\n   ent_fire <target> [action] [value] [delay]\n",
+      "description": "Usage:\n   ent_fire <target> [action] [value0] [value1] ... [valueN]\n",
+      "has_completion_callback": true
+    },
+    {
+      "name": "ent_fire_delay",
+      "flags": [
+        "gamedll",
+        "cheat",
+        "vconsole_fuzzy_matching"
+      ],
+      "description": "Usage:\n   ent_fire_delay <target> [action] [value0] [value1] ... [valueN] [delay]\n",
       "has_completion_callback": true
     },
     {
@@ -3538,7 +3557,17 @@
         "cheat",
         "vconsole_fuzzy_matching"
       ],
-      "description": "Usage:\n   ent_fire_output <target> [output name] [value] [delay]\n",
+      "description": "Usage:\n   ent_fire_output <target> [output name] [value0] [value1] ... [valueN]\n",
+      "has_completion_callback": true
+    },
+    {
+      "name": "ent_fire_output_delay",
+      "flags": [
+        "gamedll",
+        "cheat",
+        "vconsole_fuzzy_matching"
+      ],
+      "description": "Usage:\n   ent_fire_output_delay <target> [output name] [value0] [value1] ... [valueN] [delay]\n",
       "has_completion_callback": true
     },
     {
@@ -4151,14 +4180,6 @@
       "has_completion_callback": false
     },
     {
-      "name": "force_hibernate",
-      "flags": [
-        "developmentonly"
-      ],
-      "description": "Force toggle hibernation state",
-      "has_completion_callback": false
-    },
-    {
       "name": "fs_clear_open_duplicate_times",
       "flags": [
         "developmentonly",
@@ -4187,6 +4208,15 @@
     },
     {
       "name": "func_mover_enable_debug_all",
+      "flags": [
+        "gamedll",
+        "cheat"
+      ],
+      "description": "",
+      "has_completion_callback": false
+    },
+    {
+      "name": "func_mover_step_movement",
       "flags": [
         "gamedll",
         "cheat"
@@ -6395,7 +6425,7 @@
         "gamedll",
         "cheat"
       ],
-      "description": "Creates the named particle system where the player is looking.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}",
+      "description": "Creates the named particle system where the player is looking.  Can be used on an entity if pointed at the entity.  Optionally takes a particle config name.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}",
       "has_completion_callback": false
     },
     {
@@ -7791,6 +7821,15 @@
       "has_completion_callback": false
     },
     {
+      "name": "set_server_cvar",
+      "flags": [
+        "developmentonly",
+        "clientdll"
+      ],
+      "description": "Change a server convar if allowed",
+      "has_completion_callback": false
+    },
+    {
       "name": "setang",
       "flags": [
         "gamedll",
@@ -8915,6 +8954,16 @@
       "has_completion_callback": false
     },
     {
+      "name": "spawnBrokenGlass",
+      "flags": [
+        "developmentonly",
+        "gamedll",
+        "cheat"
+      ],
+      "description": "",
+      "has_completion_callback": false
+    },
+    {
       "name": "spawnCashStack",
       "flags": [
         "developmentonly",
@@ -9390,6 +9439,15 @@
         "release"
       ],
       "description": "Sets the server to shutdown when all games have completed",
+      "has_completion_callback": false
+    },
+    {
+      "name": "sv_smoke_lighting_changed",
+      "flags": [
+        "gamedll",
+        "release"
+      ],
+      "description": "Recompute smoke volume LPV caches",
       "has_completion_callback": false
     },
     {

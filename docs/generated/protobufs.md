@@ -8,7 +8,7 @@ Network message definitions and game event structures from CS2's Protobufs direc
 
 | File | Messages | Enums |
 |------|----------|-------|
-| [base_gcmessages.proto](proto/base_gcmessages.md) | 80 (+1 nested) | 3 (+1 nested) |
+| [base_gcmessages.proto](proto/base_gcmessages.md) | 77 (+1 nested) | 3 (+1 nested) |
 | [c_peer2peer_netmessages.proto](proto/c_peer2peer_netmessages.md) | 6 (+1 nested) | 1 (+1 nested) |
 | [clientmessages.proto](proto/clientmessages.md) | 6 | 2 |
 | [connectionless_netmessages.proto](proto/connectionless_netmessages.md) | 3 | 0 |
@@ -18,7 +18,7 @@ Network message definitions and game event structures from CS2's Protobufs direc
 | [cstrike15_gcmessages.proto](proto/cstrike15_gcmessages.md) | 17 (+8 nested) | 0 |
 | [cstrike15_usermessages.proto](proto/cstrike15_usermessages.md) | 74 (+16 nested) | 2 |
 | [demo.proto](proto/demo.md) | 20 (+8 nested) | 1 |
-| [econ_gcmessages.proto](proto/econ_gcmessages.md) | 5 | 4 |
+| [econ_gcmessages.proto](proto/econ_gcmessages.md) | 5 | 3 |
 | [engine_gcmessages.proto](proto/engine_gcmessages.md) | 1 | 0 |
 | [enums_clientserver.proto](proto/enums_clientserver.md) | 0 | 4 |
 | [gameevents.proto](proto/gameevents.md) | 15 (+3 nested) | 1 |
@@ -28,6 +28,7 @@ Network message definitions and game event structures from CS2's Protobufs direc
 | [network_connection.proto](proto/network_connection.md) | 0 | 1 |
 | [networkbasetypes.proto](proto/networkbasetypes.md) | 24 (+3 nested) | 3 |
 | [networksystem_protomessages.proto](proto/networksystem_protomessages.md) | 5 | 0 |
+| [pet_gcmessages.proto](proto/pet_gcmessages.md) | 1 | 1 |
 | [source2_steam_stats.proto](proto/source2_steam_stats.md) | 11 (+5 nested) | 1 |
 | [steamdatagram_messages_auth.proto](proto/steamdatagram_messages_auth.md) | 6 (+1 nested) | 0 |
 | [steamdatagram_messages_sdr.proto](proto/steamdatagram_messages_sdr.md) | 33 (+9 nested) | 1 (+9 nested) |

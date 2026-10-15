@@ -8,9 +8,9 @@ kind: class
 
 # CPulseGraphInstance_TestDomain
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 344 bytes (`0x158`) · **Align:** n/a (unspecified) · **Module:** pulse_system
+**Kind:** class · **Size:** 208 bytes (`0xd0`) · **Align:** n/a (unspecified) · **Module:** pulse_system
 
 **Inherits from:** [CBasePulseGraphInstance](../pulse_runtime_lib/CBasePulseGraphInstance.md)
 
@@ -31,12 +31,12 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x128` | `m_bIsRunningUnitTests` | bool |  |  |
-| `0x129` | `m_bExplicitTimeStepping` | bool |  |  |
-| `0x12a` | `m_bExpectingToDestroyWithYieldedCursors` | bool |  |  |
-| `0x12b` | `m_bQuietTracepoints` | bool |  |  |
-| `0x12c` | `m_bExpectingCursorTerminatedDueToMaxInstructions` | bool |  |  |
-| `0x130` | `m_nCursorsTerminatedDueToMaxInstructions` | int32 |  |  |
-| `0x134` | `m_nNextValidateIndex` | int32 |  |  |
-| `0x138` | `m_Tracepoints` | CUtlVector< CUtlString > |  |  |
-| `0x150` | `m_bTestYesOrNoPath` | bool |  |  |
+| `0xa0` | `m_bIsRunningUnitTests` | bool |  |  |
+| `0xa1` | `m_bExplicitTimeStepping` | bool |  |  |
+| `0xa2` | `m_bExpectingToDestroyWithYieldedCursors` | bool |  |  |
+| `0xa3` | `m_bQuietTracepoints` | bool |  |  |
+| `0xa4` | `m_bExpectingCursorTerminatedDueToMaxInstructions` | bool |  |  |
+| `0xa8` | `m_nCursorsTerminatedDueToMaxInstructions` | int32 |  |  |
+| `0xac` | `m_nNextValidateIndex` | int32 |  |  |
+| `0xb0` | `m_Tracepoints` | CUtlVector< CUtlString > |  |  |
+| `0xc8` | `m_bTestYesOrNoPath` | bool |  |  |

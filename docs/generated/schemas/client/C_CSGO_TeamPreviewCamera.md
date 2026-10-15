@@ -8,13 +8,13 @@ kind: class
 
 # C_CSGO_TeamPreviewCamera
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 1680 bytes (`0x690`) · **Align:** n/a (unspecified) · **Module:** client
 
 **Inherits from:** [C_CSGO_MapPreviewCameraPath](../client/C_CSGO_MapPreviewCameraPath.md)
 
-**Derived by:** [C_CSGO_CounterTerroristTeamIntroCamera](../client/C_CSGO_CounterTerroristTeamIntroCamera.md), [C_CSGO_CounterTerroristWingmanIntroCamera](../client/C_CSGO_CounterTerroristWingmanIntroCamera.md), [C_CSGO_EndOfMatchCamera](../client/C_CSGO_EndOfMatchCamera.md), [C_CSGO_TeamSelectCamera](../client/C_CSGO_TeamSelectCamera.md), [C_CSGO_TerroristTeamIntroCamera](../client/C_CSGO_TerroristTeamIntroCamera.md), [C_CSGO_TerroristWingmanIntroCamera](../client/C_CSGO_TerroristWingmanIntroCamera.md)
+**Derived by:** [C_CSGO_CounterTerroristTeamIntroCamera](../client/C_CSGO_CounterTerroristTeamIntroCamera.md), [C_CSGO_CounterTerroristWingmanIntroCamera](../client/C_CSGO_CounterTerroristWingmanIntroCamera.md), [C_CSGO_EndOfMatchCamera](../client/C_CSGO_EndOfMatchCamera.md), [C_CSGO_TeamPreviewCameraBone](../client/C_CSGO_TeamPreviewCameraBone.md), [C_CSGO_TeamSelectCamera](../client/C_CSGO_TeamSelectCamera.md), [C_CSGO_TerroristTeamIntroCamera](../client/C_CSGO_TerroristTeamIntroCamera.md), [C_CSGO_TerroristWingmanIntroCamera](../client/C_CSGO_TerroristWingmanIntroCamera.md)
 
 **Relationships:**
 
@@ -26,6 +26,7 @@ classDiagram
     C_CSGO_TeamPreviewCamera <|-- C_CSGO_CounterTerroristTeamIntroCamera
     C_CSGO_TeamPreviewCamera <|-- C_CSGO_CounterTerroristWingmanIntroCamera
     C_CSGO_TeamPreviewCamera <|-- C_CSGO_EndOfMatchCamera
+    C_CSGO_TeamPreviewCamera <|-- C_CSGO_TeamPreviewCameraBone
     C_CSGO_TeamPreviewCamera <|-- C_CSGO_TeamSelectCamera
     C_CSGO_TeamPreviewCamera <|-- C_CSGO_TerroristTeamIntroCamera
     C_CSGO_TeamPreviewCamera <|-- C_CSGO_TerroristWingmanIntroCamera

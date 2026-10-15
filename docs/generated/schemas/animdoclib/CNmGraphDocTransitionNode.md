@@ -8,9 +8,9 @@ kind: class
 
 # CNmGraphDocTransitionNode
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 288 bytes (`0x120`) · **Align:** 8 · **Module:** animdoclib
+**Kind:** class · **Size:** 296 bytes (`0x128`) · **Align:** 8 · **Module:** animdoclib
 
 **Inherits from:** [CNmGraphDocResultNode](../animdoclib/CNmGraphDocResultNode.md)
 
@@ -39,19 +39,19 @@ classDiagram
 | `0x18` | `m_name` | CUtlString | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertyHideField` |
 | `0x20` | `m_floatingComment` | CUtlString | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertyAttributeEditor TextBlock()` |
 | `0x28` | `m_position` | Vector2D | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
-| `0x40` | `m_pChildGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
-| `0x48` | `m_pSecondaryGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
-| `0x50` | `m_inputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 4 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
-| `0xd8` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
-| `0x100` | `m_resultType` | [NmGraphValueType_t](../animlib/NmGraphValueType_t.md) | [CNmGraphDocResultNode](../animdoclib/CNmGraphDocResultNode.md) |  |
-| `0x108` | `m_flDurationSeconds` | float32 |  | `MPropertyGroupName +Transition` |
-| `0x10c` | `m_bClampDurationToSource` | bool |  | `MPropertyGroupName +Transition` |
-| `0x10d` | `m_rootMotionBlend` | [NmRootMotionBlendMode_t](../animlib/NmRootMotionBlendMode_t.md) |  | `MPropertyGroupName +Transition` |
-| `0x10e` | `m_blendWeightEasing` | [NmEasingOperation_t](../animlib/NmEasingOperation_t.md) |  | `MPropertyGroupName +Transition` |
-| `0x110` | `m_flBoneMaskBlendInTimePercentage` | float32 |  | `MPropertyGroupName +Transition` |
-| `0x114` | `m_timeMatchMode` | [CNmGraphDocTransitionNode::TimeMatchMode_t](../animdoclib/CNmGraphDocTransitionNode.TimeMatchMode_t.md) |  | `MPropertyGroupName +Target Time` |
-| `0x118` | `m_flTimeOffset` | float32 |  | `MPropertyGroupName +Target Time` |
-| `0x11c` | `m_bCanBeForced` | bool |  | `MPropertyGroupName Advanced` |
+| `0x48` | `m_pChildGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
+| `0x50` | `m_pSecondaryGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
+| `0x58` | `m_inputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 4 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
+| `0xe0` | `m_outputPins` | CUtlLeanVectorFixedGrowable< [NmGraphDocPin_t](../animdoclib/NmGraphDocPin_t.md), 1 > | [CNmGraphDocFlowNode](../animdoclib/CNmGraphDocFlowNode.md) |  |
+| `0x108` | `m_resultType` | [NmGraphValueType_t](../animlib/NmGraphValueType_t.md) | [CNmGraphDocResultNode](../animdoclib/CNmGraphDocResultNode.md) |  |
+| `0x110` | `m_flDurationSeconds` | float32 |  | `MPropertyGroupName +Transition` |
+| `0x114` | `m_bClampDurationToSource` | bool |  | `MPropertyGroupName +Transition` |
+| `0x115` | `m_rootMotionBlend` | [NmRootMotionBlendMode_t](../animlib/NmRootMotionBlendMode_t.md) |  | `MPropertyGroupName +Transition` |
+| `0x116` | `m_blendWeightEasing` | [NmEasingOperation_t](../animlib/NmEasingOperation_t.md) |  | `MPropertyGroupName +Transition` |
+| `0x118` | `m_flBoneMaskBlendInTimePercentage` | float32 |  | `MPropertyGroupName +Transition` |
+| `0x11c` | `m_timeMatchMode` | [CNmGraphDocTransitionNode::TimeMatchMode_t](../animdoclib/CNmGraphDocTransitionNode.TimeMatchMode_t.md) |  | `MPropertyGroupName +Target Time` |
+| `0x120` | `m_flTimeOffset` | float32 |  | `MPropertyGroupName +Target Time` |
+| `0x124` | `m_bCanBeForced` | bool |  | `MPropertyGroupName Advanced` |
 
 <details><summary>KV3 class defaults</summary>
 

@@ -8,9 +8,9 @@ kind: class
 
 # CCSCustomHudLayout
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 2032 bytes (`0x7f0`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 2072 bytes (`0x818`) · **Align:** 8 · **Module:** server
 
 **Twin:** [CCSCustomHudLayout (client)](../client/CCSCustomHudLayout.md)
 
@@ -119,10 +119,10 @@ classDiagram
 | `0x498` | `m_flVPhysicsUpdateLocalTime` | float32 | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x49c` | `m_nBloodType` | [BloodType](../server/BloodType.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x4a0` | `m_pPulseGraphInstance` | [CPulseGraphInstance_ServerEntity](../server/CPulseGraphInstance_ServerEntity.md)* | [CBaseEntity](../server/CBaseEntity.md) | `MKV3TransferSaveOpsForField GetPulseInstanceSaveRestoreOps` |
-| `0x4a8` | `m_strLayout` | CUtlSymbolLarge |  |  |
-| `0x4b0` | `m_bObservable` | bool |  |  |
-| `0x4b8` | `m_vecPlayerLayoutStates` | CUtlVectorEmbeddedNetworkVar< [CCSCustomHudLayoutState](../server/CCSCustomHudLayoutState.md) > |  |  |
-| `0x520` | `m_globalLayoutState` | [CCSCustomHudLayoutState](../server/CCSCustomHudLayoutState.md) |  |  |
-| `0x6b8` | `m_vecPanelIds` | CNetworkUtlVectorBase< CUtlString > |  |  |
-| `0x6d0` | `m_vecClassNames` | CNetworkUtlVectorBase< CUtlString > |  |  |
-| `0x6e8` | `m_vecDialogVariableNames` | CNetworkUtlVectorBase< CUtlString > |  |  |
+| `0x4b8` | `m_strLayout` | CUtlSymbolLarge |  |  |
+| `0x4c0` | `m_bObservable` | bool |  |  |
+| `0x4c8` | `m_vecPlayerLayoutStates` | CUtlVectorEmbeddedNetworkVar< [CCSCustomHudLayoutState](../server/CCSCustomHudLayoutState.md) > |  |  |
+| `0x530` | `m_globalLayoutState` | [CCSCustomHudLayoutState](../server/CCSCustomHudLayoutState.md) |  |  |
+| `0x6c8` | `m_vecPanelIds` | CNetworkUtlVectorBase< CUtlString > |  |  |
+| `0x6e0` | `m_vecClassNames` | CNetworkUtlVectorBase< CUtlString > |  |  |
+| `0x6f8` | `m_vecDialogVariableNames` | CNetworkUtlVectorBase< CUtlString > |  |  |

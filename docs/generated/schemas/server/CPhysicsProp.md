@@ -8,9 +8,9 @@ kind: class
 
 # CPhysicsProp
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 3120 bytes (`0xc30`) · **Align:** 16 · **Module:** server
+**Kind:** class · **Size:** 3344 bytes (`0xd10`) · **Align:** 16 · **Module:** server
 
 **Inherits from:** [CBreakableProp](../server/CBreakableProp.md)
 
@@ -37,7 +37,7 @@ classDiagram
 
 ## Memory layout
 
-222 fields (42 declared here, 180 inherited). Offsets are absolute from the object base.
+224 fields (40 declared here, 184 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -157,7 +157,8 @@ classDiagram
 | `0x570` | `m_clrRender` | Color | [CBaseModelEntity](../server/CBaseModelEntity.md) | RGBA tint colour multiplied onto the entity's diffuse texture. |
 | `0x578` | `m_vecRenderAttributes` | CUtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../server/EntityRenderAttribute_t.md) > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e0` | `m_bRenderToCubemaps` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x5e1` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e1` | `m_bExpandRenderBoundsToIncludeCloth` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e2` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e8` | `m_Collision` | [CCollisionProperty](../server/CCollisionProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CCollisionProperty struct encoding the entity's collision bounding box shape and flags. |
 | `0x6a0` | `m_Glow` | [CGlowProperty](../server/CGlowProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CGlowProperty struct controlling the entity's glow outline (colour, radius, visibility rules). |
 | `0x6f8` | `m_flGlowBackfaceMult` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Multiplier for the glow effect on back-facing surfaces of the model. |
@@ -166,100 +167,101 @@ classDiagram
 | `0x704` | `m_flFadeScale` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Scale factor applied to fade distances; 0 disables distance fading. |
 | `0x708` | `m_flShadowStrength` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Opacity of this entity's cast shadow (0 = no shadow, 1 = full shadow). |
 | `0x70c` | `m_nObjectCulling` | uint8 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x710` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x738` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
-| `0x768` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
-| `0x770` | `m_graphControllerManager` | [CAnimGraphControllerManager](../server/CAnimGraphControllerManager.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x808` | `m_pMainGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | The primary animation-graph controller instance for this entity. |
-| `0x810` | `m_bInitiallyPopulateInterpHistory` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x818` | `m_OnLayerCycleUpdated` | CEntityOutputTemplate< float32 > | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x838` | `m_OnExternalChoreoGraphChanged` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x850` | `m_pChoreoServices` | [IChoreoServices](../server/IChoreoServices.md)* | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MKV3TransferSaveOpsForField GetChoreoServicesSaveRestoreOps` |
-| `0x858` | `m_bAnimGraphUpdateEnabled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x859` | `m_bAnimationUpdateScheduled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x85c` | `m_vecForce` | Vector | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x868` | `m_nForceBone` | int32 | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x878` | `m_pRagdollControl` | [IPhysicsRagdollControl](../vphysics2/IPhysicsRagdollControl.md)* | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MPhysPtr` |
-| `0x880` | `m_RagdollPose` | [PhysicsRagdollPose_t](../server/PhysicsRagdollPose_t.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x8a8` | `m_bRagdollEnabled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | True while the entity is simulated as a ragdoll rather than animated. |
-| `0x8a9` | `m_bRagdollClientSide` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x8b0` | `m_xParentedRagdollRootInEntitySpace` | CTransform | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x960` | `m_bModelOverrodeBlockLOS` | bool | [CBaseProp](../server/CBaseProp.md) |  |
-| `0x964` | `m_iShapeType` | int32 | [CBaseProp](../server/CBaseProp.md) |  |
-| `0x968` | `m_bConformToCollisionBounds` | bool | [CBaseProp](../server/CBaseProp.md) |  |
-| `0x970` | `m_mPreferredCatchTransform` | CTransform | [CBaseProp](../server/CBaseProp.md) |  |
-| `0x998` | `m_CPropDataComponent` | [CPropDataComponent](../server/CPropDataComponent.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0x9d8` | `m_OnStartDeath` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0x9f0` | `m_OnBreak` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa08` | `m_OnHealthChanged` | CEntityOutputTemplate< float32 > | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa28` | `m_OnTakeDamage` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa40` | `m_impactEnergyScale` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa44` | `m_iMinHealthDmg` | int32 | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa48` | `m_preferredCarryAngles` | QAngle | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa54` | `m_flPressureDelay` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa58` | `m_flDefBurstScale` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa5c` | `m_vDefBurstOffset` | Vector | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa68` | `m_hBreaker` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa6c` | `m_PerformanceMode` | [PerformanceMode_t](../server/PerformanceMode_t.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa70` | `m_flPreventDamageBeforeTime` | [GameTime_t](../entity2/GameTime_t.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa74` | `m_BreakableContentsType` | [BreakableContentsType_t](../server/BreakableContentsType_t.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa78` | `m_strBreakableContentsPropGroupOverride` | CUtlString | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa80` | `m_strBreakableContentsParticleOverride` | CUtlString | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa88` | `m_bHasBreakPiecesOrCommands` | bool | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa8c` | `m_explodeDamage` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa90` | `m_explodeRadius` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa98` | `m_sExplosionType` | CGlobalSymbol | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xaa0` | `m_explosionDelay` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xaa8` | `m_explosionBuildupSound` | CUtlSymbolLarge | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xab0` | `m_explosionCustomEffect` | CUtlSymbolLarge | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xab8` | `m_explosionCustomSound` | CUtlSymbolLarge | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xac0` | `m_explosionModifier` | CUtlSymbolLarge | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xac8` | `m_hPhysicsAttacker` | CHandle< [CBasePlayerPawn](../server/CBasePlayerPawn.md) > | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xacc` | `m_flLastPhysicsInfluenceTime` | [GameTime_t](../entity2/GameTime_t.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xad0` | `m_flDefaultFadeScale` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xad4` | `m_hLastAttacker` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xad8` | `m_iszPuntSound` | CUtlSymbolLarge | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xae0` | `m_bUsePuntSound` | bool | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xae1` | `m_bOriginalBlockLOS` | bool | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xb00` | `m_MotionEnabled` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
-| `0xb18` | `m_OnAwakened` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
-| `0xb30` | `m_OnAwake` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
-| `0xb48` | `m_OnAsleep` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
-| `0xb60` | `m_OnPlayerUse` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
-| `0xb78` | `m_OnOutOfWorld` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
-| `0xb90` | `m_OnPlayerPickup` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
-| `0xba8` | `m_bForceNavIgnore` | bool |  |  |
-| `0xba9` | `m_bNoNavmeshBlocker` | bool |  |  |
-| `0xbaa` | `m_bForceNpcExclude` | bool |  |  |
-| `0xbac` | `m_massScale` | float32 |  |  |
-| `0xbb0` | `m_buoyancyScale` | float32 |  |  |
-| `0xbb4` | `m_damageType` | int32 |  |  |
-| `0xbb8` | `m_damageToEnableMotion` | int32 |  |  |
-| `0xbbc` | `m_flForceToEnableMotion` | float32 |  |  |
-| `0xbc0` | `m_bThrownByPlayer` | bool |  |  |
-| `0xbc1` | `m_bDroppedByPlayer` | bool |  |  |
-| `0xbc2` | `m_bTouchedByPlayer` | bool |  |  |
-| `0xbc3` | `m_bFirstCollisionAfterLaunch` | bool |  |  |
-| `0xbc4` | `m_bHasBeenAwakened` | bool |  | `MNotSaved` |
-| `0xbc5` | `m_bIsOverrideProp` | bool |  | `MNotSaved` |
-| `0xbc8` | `m_flLastBurn` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0xbcc` | `m_nDynamicContinuousContactBehavior` | [DynamicContinuousContactBehavior_t](../physicslib/DynamicContinuousContactBehavior_t.md) |  |  |
-| `0xbd0` | `m_fNextCheckDisableMotionContactsTime` | [GameTime_t](../entity2/GameTime_t.md) |  | `MNotSaved` |
-| `0xbd4` | `m_iInitialGlowState` | int32 |  |  |
-| `0xbd8` | `m_nGlowRange` | int32 |  |  |
-| `0xbdc` | `m_nGlowRangeMin` | int32 |  |  |
-| `0xbe0` | `m_glowColor` | Color |  |  |
-| `0xbe4` | `m_bShouldAutoConvertBackFromDebris` | bool |  |  |
-| `0xbe5` | `m_bMuteImpactEffects` | bool |  |  |
-| `0xbe8` | `m_nNavObstacleType` | [INavObstacle::NavObstacleType_t](../server/INavObstacle.NavObstacleType_t.md) |  |  |
-| `0xbec` | `m_bUpdateNavWhenMoving` | bool |  |  |
-| `0xbed` | `m_bForceNavObstacleCut` | bool |  |  |
-| `0xbee` | `m_bAllowObstacleConvexHullMerging` | bool |  |  |
-| `0xbef` | `m_bAcceptDamageFromHeldObjects` | bool |  |  |
-| `0xbf0` | `m_bEnableUseOutput` | bool |  |  |
-| `0xbf4` | `m_CrateType` | [CPhysicsProp::CrateType_t](../server/CPhysicsProp.CrateType_t.md) |  |  |
-| `0xbf8` | `m_strItemClass` | CUtlSymbolLarge[4] |  |  |
-| `0xc18` | `m_nItemCount` | int32[4] |  |  |
-| `0xc28` | `m_bRemovableForAmmoBalancing` | bool |  |  |
-| `0xc29` | `m_bAwake` | bool |  |  |
-| `0xc2a` | `m_bAttachedToReferenceFrame` | bool |  |  |
+| `0x710` | `m_bodyGroupTotalRequestCount` | uint32 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x718` | `m_bodyGroupRequests` | CUtlVectorFixedGrowable< [CBaseModelEntity::BodyGroupRequest_t](../server/CBaseModelEntity.BodyGroupRequest_t.md), 8 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x7f0` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x818` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
+| `0x848` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
+| `0x850` | `m_graphControllerManager` | [CAnimGraphControllerManager](../server/CAnimGraphControllerManager.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x8e8` | `m_pMainGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | The primary animation-graph controller instance for this entity. |
+| `0x8f0` | `m_bInitiallyPopulateInterpHistory` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x8f8` | `m_OnLayerCycleUpdated` | CEntityOutputTemplate< float32 > | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x918` | `m_OnExternalChoreoGraphChanged` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x930` | `m_pChoreoServices` | [IChoreoServices](../server/IChoreoServices.md)* | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MKV3TransferSaveOpsForField GetChoreoServicesSaveRestoreOps` |
+| `0x938` | `m_bAnimGraphUpdateEnabled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x939` | `m_bAnimationUpdateScheduled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x93c` | `m_vecForce` | Vector | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x948` | `m_nForceBone` | int32 | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x958` | `m_pRagdollControl` | [IPhysicsRagdollControl](../vphysics2/IPhysicsRagdollControl.md)* | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MPhysPtr` |
+| `0x960` | `m_RagdollPose` | [PhysicsRagdollPose_t](../server/PhysicsRagdollPose_t.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x988` | `m_bRagdollEnabled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | True while the entity is simulated as a ragdoll rather than animated. |
+| `0x989` | `m_bRagdollClientSide` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x98a` | `m_bShouldUpdateTransformations` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x990` | `m_xParentedRagdollRootInEntitySpace` | CTransform | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0xa40` | `m_bModelOverrodeBlockLOS` | bool | [CBaseProp](../server/CBaseProp.md) |  |
+| `0xa44` | `m_iShapeType` | int32 | [CBaseProp](../server/CBaseProp.md) |  |
+| `0xa48` | `m_bConformToCollisionBounds` | bool | [CBaseProp](../server/CBaseProp.md) |  |
+| `0xa50` | `m_mPreferredCatchTransform` | CTransform | [CBaseProp](../server/CBaseProp.md) |  |
+| `0xa78` | `m_CPropDataComponent` | [CPropDataComponent](../server/CPropDataComponent.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xab8` | `m_OnStartDeath` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xad0` | `m_OnBreak` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xae8` | `m_OnHealthChanged` | CEntityOutputTemplate< float32 > | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb08` | `m_OnTakeDamage` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb20` | `m_impactEnergyScale` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb24` | `m_iMinHealthDmg` | int32 | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb28` | `m_preferredCarryAngles` | QAngle | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb34` | `m_flPressureDelay` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb38` | `m_flDefBurstScale` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb3c` | `m_vDefBurstOffset` | Vector | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb48` | `m_hBreaker` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb4c` | `m_PerformanceMode` | [PerformanceMode_t](../server/PerformanceMode_t.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb50` | `m_flPreventDamageBeforeTime` | [GameTime_t](../entity2/GameTime_t.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb54` | `m_BreakableContentsType` | [BreakableContentsType_t](../server/BreakableContentsType_t.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb58` | `m_strBreakableContentsPropGroupOverride` | CUtlString | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb60` | `m_strBreakableContentsParticleOverride` | CUtlString | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb68` | `m_bHasBreakPiecesOrCommands` | bool | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb6c` | `m_explodeDamage` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb70` | `m_explodeRadius` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb78` | `m_sExplosionType` | CGlobalSymbol | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb80` | `m_explosionDelay` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb88` | `m_explosionBuildupSound` | CUtlSymbolLarge | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb90` | `m_explosionCustomEffect` | CUtlSymbolLarge | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb98` | `m_explosionCustomSound` | CUtlSymbolLarge | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xba0` | `m_explosionModifier` | CUtlSymbolLarge | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xba8` | `m_hPhysicsAttacker` | CHandle< [CBasePlayerPawn](../server/CBasePlayerPawn.md) > | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xbac` | `m_flLastPhysicsInfluenceTime` | [GameTime_t](../entity2/GameTime_t.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xbb0` | `m_flDefaultFadeScale` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xbb4` | `m_hLastAttacker` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xbb8` | `m_iszPuntSound` | CUtlSymbolLarge | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xbc0` | `m_bUsePuntSound` | bool | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xbc1` | `m_bOriginalBlockLOS` | bool | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xbe0` | `m_MotionEnabled` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
+| `0xbf8` | `m_OnAwakened` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
+| `0xc10` | `m_OnAwake` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
+| `0xc28` | `m_OnAsleep` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
+| `0xc40` | `m_OnPlayerUse` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
+| `0xc58` | `m_OnOutOfWorld` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
+| `0xc70` | `m_OnPlayerPickup` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
+| `0xc88` | `m_bForceNavIgnore` | bool |  |  |
+| `0xc89` | `m_bNoNavmeshBlocker` | bool |  |  |
+| `0xc8a` | `m_bForceNpcExclude` | bool |  |  |
+| `0xc8c` | `m_massScale` | float32 |  |  |
+| `0xc90` | `m_buoyancyScale` | float32 |  |  |
+| `0xc94` | `m_damageType` | int32 |  |  |
+| `0xc98` | `m_damageToEnableMotion` | int32 |  |  |
+| `0xc9c` | `m_flForceToEnableMotion` | float32 |  |  |
+| `0xca0` | `m_bDroppedByPlayer` | bool |  |  |
+| `0xca1` | `m_bTouchedByPlayer` | bool |  |  |
+| `0xca2` | `m_bFirstCollisionAfterLaunch` | bool |  |  |
+| `0xca3` | `m_bHasBeenAwakened` | bool |  | `MNotSaved` |
+| `0xca4` | `m_bIsOverrideProp` | bool |  | `MNotSaved` |
+| `0xca8` | `m_flLastBurn` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0xcac` | `m_nDynamicContinuousContactBehavior` | [DynamicContinuousContactBehavior_t](../physicslib/DynamicContinuousContactBehavior_t.md) |  |  |
+| `0xcb0` | `m_fNextCheckDisableMotionContactsTime` | [GameTime_t](../entity2/GameTime_t.md) |  | `MNotSaved` |
+| `0xcb4` | `m_iInitialGlowState` | int32 |  |  |
+| `0xcb8` | `m_nGlowRange` | int32 |  |  |
+| `0xcbc` | `m_nGlowRangeMin` | int32 |  |  |
+| `0xcc0` | `m_glowColor` | Color |  |  |
+| `0xcc4` | `m_bShouldAutoConvertBackFromDebris` | bool |  |  |
+| `0xcc5` | `m_bMuteImpactEffects` | bool |  |  |
+| `0xcc8` | `m_nNavObstacleType` | [INavObstacle::NavObstacleType_t](../server/INavObstacle.NavObstacleType_t.md) |  |  |
+| `0xccc` | `m_bUpdateNavWhenMoving` | bool |  |  |
+| `0xccd` | `m_bForceNavObstacleCut` | bool |  |  |
+| `0xcce` | `m_bAcceptDamageFromHeldObjects` | bool |  |  |
+| `0xccf` | `m_bEnableUseOutput` | bool |  |  |
+| `0xcd0` | `m_CrateType` | [CPhysicsProp::CrateType_t](../server/CPhysicsProp.CrateType_t.md) |  |  |
+| `0xcd8` | `m_strItemClass` | CUtlSymbolLarge[4] |  |  |
+| `0xcf8` | `m_nItemCount` | int32[4] |  |  |
+| `0xd08` | `m_bRemovableForAmmoBalancing` | bool |  |  |
+| `0xd09` | `m_bAwake` | bool |  |  |
+| `0xd0a` | `m_bAttachedToReferenceFrame` | bool |  |  |

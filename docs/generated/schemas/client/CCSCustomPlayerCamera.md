@@ -8,7 +8,7 @@ kind: class
 
 # CCSCustomPlayerCamera
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 1600 bytes (`0x640`) · **Align:** 8 · **Module:** client
 
@@ -16,15 +16,12 @@ kind: class
 
 **Inherits from:** [C_BaseEntity](../client/C_BaseEntity.md)
 
-**Derived by:** [CCSPlayerCamera](../client/CCSPlayerCamera.md)
-
 **Relationships:**
 
 ```mermaid
 classDiagram
     C_BaseEntity <|-- CCSCustomPlayerCamera
     CEntityInstance <|-- C_BaseEntity
-    CCSCustomPlayerCamera <|-- CCSPlayerCamera
     CCSCustomPlayerCamera --> C_CSPlayerPawnBase
     CCSCustomPlayerCamera *-- CustomCameraMode_t
     CCSCustomPlayerCamera --> C_BaseEntity

@@ -8,9 +8,9 @@ kind: class
 
 # CInventoryImageData
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 248 bytes (`0xf8`) · **Align:** 8 · **Module:** client
+**Kind:** class · **Size:** 256 bytes (`0x100`) · **Align:** 8 · **Module:** client
 
 **Metadata:** `MVDataHideNodeClass`, `MVDataOutlinerDetailExpr name`, `MVDataOutlinerLeafColorFn`, `MVDataOutlinerLeafDetailFn`, `MVDataOutlinerLeafNameFn`, `MVDataOverlayType 1`, `MVDataPostSaveFixupFn`, `MVDataPreLoadFixupFn`, `MVDataPreviewWidget csgo_inv_image_preview`, `MVDataRoot`, `MVDataVirtualNodeFactoryFn`
 
@@ -67,7 +67,8 @@ classDiagram
 				0.000000,
 				0.000000
 			],
-			&quot;fov&quot;: 45.000000,
+			&quot;fov_h&quot;: 0.000000,
+			&quot;fov_v&quot;: 45.000000,
 			&quot;znear&quot;: 4.000000,
 			&quot;zfar&quot;: 1000.000000,
 			&quot;target&quot;:

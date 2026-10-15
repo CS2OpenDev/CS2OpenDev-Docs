@@ -4,14 +4,14 @@ title: Schema History
 
 # Schema History
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 Field-precise, build-to-build evolution of the CS2 C++ entity schema, derived by diffing every committed `entity_schema.json` snapshot (SchemaTracker's cumulative `schema_evolution.json`, Layer A).  Unlike the coarse [Changelog](changelog.md) — which only reports *that* a class changed — this reports *which field* was added, removed, retyped, or moved.
 
 - **Platform:** `windows-x86_64` (the canonical render; windows is a strict **superset** in class coverage — historical Windows-only tool binaries such as `hammer.dll` / `sfm.dll` have no Linux counterparts — while shared classes differ in offsets/sizes per platform)
-- **Baseline build:** `10832117` · **Latest build:** `25218825`
-- **Artifact schema version:** `0.10.0` (SchemaTracker's `schemas/schema_evolution.proto` family)
-- **Transitions:** 388 total, **145 with structural changes** (243 no-op builds)
+- **Baseline build:** `10832117` · **Latest build:** `25947352`
+- **Artifact schema version:** `0.12.0` (SchemaTracker's `schemas/schema_evolution.proto` family)
+- **Transitions:** 398 total, **151 with structural changes** (247 no-op builds)
 - **Full per-field history:** the portable [`field_history.json`](downstream-codegen-schemas/field_history.json) carries first/last-seen and the type history for every `(class, field)` across all builds.  Its `[firstSeenBuild, lastSeenBuild]` interval is a presence **hull**, not continuous presence — a field can be absent for intermediate builds with no trace there; exact presence replays from the transitions below.
 
 To bring an instance captured under build *X* forward to build *Y*, apply each transition in `[X, Y)` in order.  Every op carries both endpoints, so the same chain replays backward.
@@ -35,6 +35,12 @@ Later artifact revisions add further facts: **0.7.0** covers class-attribute cha
 
 | Transition | Date | Classes +/−/~ | Enums +/−/~ | Field ops |
 |------------|------|---------------|-------------|-----------|
+| `25815307` → `25947352` | 2026-10-15 | 0 / 0 / 5 | 0 / 0 / 0 | 116 |
+| `25738536` → `25815307` | 2026-10-08 | 0 / 0 / 5 | 0 / 1 / 2 | 122 |
+| `25588766` → `25640462` | 2026-09-30 | 0 / 0 / 50 | 0 / 1 / 1 | 88 |
+| `25515854` → `25537370` | 2026-09-25 | 0 / 0 / 3 | 0 / 0 / 0 | 9 |
+| `25492732` → `25515854` | 2026-09-24 | 0 / 0 / 50 | 0 / 0 / 0 | 69 |
+| `25218825` → `25472966` | 2026-09-23 | 154 / 467 / 1438 | 27 / 21 / 25 | 7708 |
 | `25175329` → `25218825` | 2026-09-09 | 2 / 0 / 6 | 1 / 0 / 2 | 19 |
 | `25000182` → `25175329` | 2026-09-07 | 0 / 0 / 2 | 0 / 0 / 0 | 0 |
 | `24934554` → `24957633` | 2026-08-26 | 0 / 0 / 6 | 0 / 0 / 0 | 10 |
@@ -183,45 +189,89 @@ Later artifact revisions add further facts: **0.7.0** covers class-attribute cha
 
 ## Most recent structural changes
 
-### `25175329` → `25218825`
+### `25815307` → `25947352`
 
-*Steam manifests created `2026-09-07T21:44:07Z` → `2026-09-09T22:31:50Z`*
+*Steam manifests created `2026-10-08T22:02:30Z` → `2026-10-15T00:07:09Z`*
 
-**Classes added (2):** `client.dll/CCSCustomPlayerCamera`, `server.dll/CCSCustomPlayerCamera`
-
-**Classes changed (6):**
+**Classes changed (5):**
 
 | Class | Field ops | Layout |
 |-------|-----------|--------|
-| `!GlobalTypes/dynpitchvol_base_t` | meta×1 | — |
-| `!GlobalTypes/dynpitchvol_t` | meta×1 | — |
-| `client.dll/CCSCustomHudLayout` | ＋field×1, ~offset×6 | resize 2088→2112 |
-| `client.dll/CCSPlayerCamera` | −field×3 | resize 1544→1600, reparent |
-| `server.dll/CCSCustomHudLayout` | ＋field×1, ~offset×5 | resize 2024→2032 |
-| `server.dll/CCSPlayerCamera` | −field×3 | resize 1200→1256, reparent |
+| `client.dll/CCSMinimapVolume` | ~offset×1 | resize 4488→4520 |
+| `client.dll/CCSObserver_ObserverServices` | ~offset×1 | resize 240→256 |
+| `client.dll/C_CSPlayerPawn` | ＋field×1, ~offset×43, −field×1 | — |
+| `server.dll/CCSMinimapVolume` | ~offset×1 | resize 2512→2536 |
+| `server.dll/CCSPlayerPawn` | ~offset×66, −field×2 | resize 5600→5568 |
 
-### `25000182` → `25175329`
+### `25738536` → `25815307`
 
-*Steam manifests created `2026-08-28T20:16:08Z` → `2026-09-07T21:44:07Z`*
+*Steam manifests created `2026-10-05T22:27:25Z` → `2026-10-08T22:02:30Z`*
 
-**Classes changed (2):**
-
-| Class | Field ops | Layout |
-|-------|-----------|--------|
-| `!GlobalTypes/dynpitchvol_base_t` | meta×1 | — |
-| `!GlobalTypes/dynpitchvol_t` | meta×1 | — |
-
-### `24934554` → `24957633`
-
-*Steam manifests created `2026-08-25T18:35:52Z` → `2026-08-26T20:58:46Z`*
-
-**Classes changed (6):**
+**Classes changed (5):**
 
 | Class | Field ops | Layout |
 |-------|-----------|--------|
-| `!GlobalTypes/dynpitchvol_base_t` | meta×1 | — |
-| `!GlobalTypes/dynpitchvol_t` | meta×1 | — |
-| `client.dll/CCSCustomHudLayout` | ~offset×3 | resize 2096→2088 |
-| `client.dll/CCSCustomHudLayoutState` | ~offset×2 | resize 272→264 |
-| `server.dll/CCSCustomHudLayout` | ~offset×3 | resize 2032→2024 |
-| `server.dll/CCSCustomHudLayoutState` | ~offset×2 | resize 416→408 |
+| `client.dll/C_CSGO_PreviewPlayer` | ~offset×2 | resize 14272→14288 |
+| `client.dll/C_CSGO_PreviewPlayerAlias_csgo_player_previewmodel` | — | resize 14272→14288 |
+| `client.dll/C_CSGO_TeamPreviewModel` | — | resize 14272→14288 |
+| `client.dll/C_CSPlayerPawn` | ＋field×1, ~offset×11 | resize 14096→14112 |
+| `server.dll/CCSPlayerPawn` | ＋field×1, ~offset×107 | resize 5584→5600 |
+
+### `25588766` → `25640462`
+
+*Steam manifests created `2026-09-28T21:47:18Z` → `2026-09-30T23:39:13Z`*
+
+**Classes changed (50):**
+
+| Class | Field ops | Layout |
+|-------|-----------|--------|
+| `client.dll/C_CSWeaponBase` | ＋field×1, ~offset×13 | — |
+| `server.dll/CAK47` | — | resize 4752→4768 |
+| `server.dll/CBaseCSGrenade` | ~offset×13 | resize 4784→4800 |
+| `server.dll/CC4` | ~offset×11 | resize 4848→4864 |
+| `server.dll/CCSWeaponBase` | ＋field×1, ~offset×33 | resize 4720→4736 |
+| `server.dll/CCSWeaponBaseGun` | ~offset×10 | resize 4752→4768 |
+| `server.dll/CCSWeaponBaseShotgun` | — | resize 4720→4736 |
+| `server.dll/CDEagle` | — | resize 4752→4768 |
+| `server.dll/CDecoyGrenade` | — | resize 4784→4800 |
+| `server.dll/CFlashbang` | — | resize 4784→4800 |
+| `server.dll/CHEGrenade` | — | resize 4784→4800 |
+| `server.dll/CIncendiaryGrenade` | — | resize 4784→4800 |
+| `server.dll/CItem_Healthshot` | — | resize 4736→4752 |
+| `server.dll/CKnife` | ~offset×1 | resize 4736→4752 |
+| `server.dll/CMolotovGrenade` | — | resize 4784→4800 |
+| `server.dll/CSmokeGrenade` | — | resize 4800→4816 |
+| `server.dll/CWeaponAWP` | — | resize 4752→4768 |
+| `server.dll/CWeaponAug` | — | resize 4752→4768 |
+| `server.dll/CWeaponBaseItem` | ~offset×2 | resize 4736→4752 |
+| `server.dll/CWeaponBizon` | — | resize 4752→4768 |
+| `server.dll/CWeaponCZ75a` | ~offset×1 | resize 4768→4784 |
+| `server.dll/CWeaponElite` | — | resize 4752→4768 |
+| `server.dll/CWeaponFamas` | — | resize 4752→4768 |
+| `server.dll/CWeaponFiveSeven` | — | resize 4752→4768 |
+| `server.dll/CWeaponG3SG1` | — | resize 4752→4768 |
+| `server.dll/CWeaponGalilAR` | — | resize 4752→4768 |
+| `server.dll/CWeaponGlock` | — | resize 4752→4768 |
+| `server.dll/CWeaponHKP2000` | — | resize 4752→4768 |
+| `server.dll/CWeaponM249` | — | resize 4752→4768 |
+| `server.dll/CWeaponM4A1` | — | resize 4752→4768 |
+| `server.dll/CWeaponM4A1Silencer` | — | resize 4752→4768 |
+| `server.dll/CWeaponMAC10` | — | resize 4752→4768 |
+| `server.dll/CWeaponMP5SD` | — | resize 4752→4768 |
+| `server.dll/CWeaponMP7` | — | resize 4752→4768 |
+| `server.dll/CWeaponMP9` | — | resize 4752→4768 |
+| `server.dll/CWeaponMag7` | — | resize 4752→4768 |
+| `server.dll/CWeaponNOVA` | — | resize 4720→4736 |
+| `server.dll/CWeaponNegev` | — | resize 4752→4768 |
+| `server.dll/CWeaponP250` | — | resize 4752→4768 |
+| `server.dll/CWeaponP90` | — | resize 4752→4768 |
+| `server.dll/CWeaponRevolver` | — | resize 4752→4768 |
+| `server.dll/CWeaponSCAR20` | — | resize 4752→4768 |
+| `server.dll/CWeaponSG556` | — | resize 4752→4768 |
+| `server.dll/CWeaponSSG08` | — | resize 4752→4768 |
+| `server.dll/CWeaponSawedoff` | — | resize 4720→4736 |
+| `server.dll/CWeaponTaser` | ~offset×2 | resize 4768→4784 |
+| `server.dll/CWeaponTec9` | — | resize 4752→4768 |
+| `server.dll/CWeaponUMP45` | — | resize 4752→4768 |
+| `server.dll/CWeaponUSPSilencer` | — | resize 4752→4768 |
+| `server.dll/CWeaponXM1014` | — | resize 4720→4736 |

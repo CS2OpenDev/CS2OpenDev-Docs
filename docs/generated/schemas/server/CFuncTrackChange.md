@@ -8,9 +8,9 @@ kind: class
 
 # CFuncTrackChange
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 2168 bytes (`0x878`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 2392 bytes (`0x958`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CFuncPlatRot](../server/CFuncPlatRot.md)
 
@@ -33,7 +33,7 @@ classDiagram
 
 ## Memory layout
 
-162 fields (9 declared here, 153 inherited). Offsets are absolute from the object base.
+165 fields (9 declared here, 156 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -153,7 +153,8 @@ classDiagram
 | `0x570` | `m_clrRender` | Color | [CBaseModelEntity](../server/CBaseModelEntity.md) | RGBA tint colour multiplied onto the entity's diffuse texture. |
 | `0x578` | `m_vecRenderAttributes` | CUtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../server/EntityRenderAttribute_t.md) > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e0` | `m_bRenderToCubemaps` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x5e1` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e1` | `m_bExpandRenderBoundsToIncludeCloth` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e2` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e8` | `m_Collision` | [CCollisionProperty](../server/CCollisionProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CCollisionProperty struct encoding the entity's collision bounding box shape and flags. |
 | `0x6a0` | `m_Glow` | [CGlowProperty](../server/CGlowProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CGlowProperty struct controlling the entity's glow outline (colour, radius, visibility rules). |
 | `0x6f8` | `m_flGlowBackfaceMult` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Multiplier for the glow effect on back-facing surfaces of the model. |
@@ -162,40 +163,42 @@ classDiagram
 | `0x704` | `m_flFadeScale` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Scale factor applied to fade distances; 0 disables distance fading. |
 | `0x708` | `m_flShadowStrength` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Opacity of this entity's cast shadow (0 = no shadow, 1 = full shadow). |
 | `0x70c` | `m_nObjectCulling` | uint8 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x710` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x738` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
-| `0x768` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
-| `0x770` | `m_toggle_state` | [TOGGLE_STATE](../server/TOGGLE_STATE.md) | [CBaseToggle](../server/CBaseToggle.md) |  |
-| `0x774` | `m_flMoveDistance` | float32 | [CBaseToggle](../server/CBaseToggle.md) |  |
-| `0x778` | `m_flWait` | float32 | [CBaseToggle](../server/CBaseToggle.md) |  |
-| `0x77c` | `m_flLip` | float32 | [CBaseToggle](../server/CBaseToggle.md) |  |
-| `0x780` | `m_bAlwaysFireBlockedOutputs` | bool | [CBaseToggle](../server/CBaseToggle.md) |  |
-| `0x784` | `m_vecPosition1` | Vector | [CBaseToggle](../server/CBaseToggle.md) |  |
-| `0x790` | `m_vecPosition2` | Vector | [CBaseToggle](../server/CBaseToggle.md) |  |
-| `0x79c` | `m_vecMoveAng` | QAngle | [CBaseToggle](../server/CBaseToggle.md) |  |
-| `0x7a8` | `m_vecAngle1` | QAngle | [CBaseToggle](../server/CBaseToggle.md) |  |
-| `0x7b4` | `m_vecAngle2` | QAngle | [CBaseToggle](../server/CBaseToggle.md) |  |
-| `0x7c0` | `m_flHeight` | float32 | [CBaseToggle](../server/CBaseToggle.md) |  |
-| `0x7c4` | `m_hActivator` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CBaseToggle](../server/CBaseToggle.md) |  |
-| `0x7c8` | `m_vecFinalDest` | Vector | [CBaseToggle](../server/CBaseToggle.md) |  |
-| `0x7d4` | `m_vecFinalAngle` | QAngle | [CBaseToggle](../server/CBaseToggle.md) |  |
-| `0x7e0` | `m_movementType` | int32 | [CBaseToggle](../server/CBaseToggle.md) |  |
-| `0x7e8` | `m_sMaster` | CUtlSymbolLarge | [CBaseToggle](../server/CBaseToggle.md) |  |
-| `0x7f0` | `m_NoiseMoving` | CGameSoundEventName | [CBasePlatTrain](../server/CBasePlatTrain.md) |  |
-| `0x7f8` | `m_NoiseArrived` | CGameSoundEventName | [CBasePlatTrain](../server/CBasePlatTrain.md) |  |
-| `0x808` | `m_volume` | float32 | [CBasePlatTrain](../server/CBasePlatTrain.md) |  |
-| `0x80c` | `m_flTWidth` | float32 | [CBasePlatTrain](../server/CBasePlatTrain.md) |  |
-| `0x810` | `m_flTLength` | float32 | [CBasePlatTrain](../server/CBasePlatTrain.md) |  |
-| `0x818` | `m_flSpeed` | float32 | [CFuncPlat](../server/CFuncPlat.md) |  |
-| `0x820` | `m_sNoise` | CUtlSymbolLarge | [CFuncPlat](../server/CFuncPlat.md) |  |
-| `0x828` | `m_end` | QAngle | [CFuncPlatRot](../server/CFuncPlatRot.md) |  |
-| `0x834` | `m_start` | QAngle | [CFuncPlatRot](../server/CFuncPlatRot.md) |  |
-| `0x840` | `m_trackTop` | CHandle< [CPathTrack](../server/CPathTrack.md) > |  | `MSaveBehavior` |
-| `0x844` | `m_trackBottom` | CHandle< [CPathTrack](../server/CPathTrack.md) > |  | `MSaveBehavior` |
-| `0x848` | `m_train` | CHandle< [CFuncTrackTrain](../server/CFuncTrackTrain.md) > |  | `MSaveBehavior` |
-| `0x850` | `m_trackTopName` | CUtlSymbolLarge |  | `MSaveBehavior` |
-| `0x858` | `m_trackBottomName` | CUtlSymbolLarge |  | `MSaveBehavior` |
-| `0x860` | `m_trainName` | CUtlSymbolLarge |  | `MSaveBehavior` |
-| `0x868` | `m_code` | [TRAIN_CODE](../server/TRAIN_CODE.md) |  |  |
-| `0x86c` | `m_targetState` | int32 |  |  |
-| `0x870` | `m_use` | int32 |  |  |
+| `0x710` | `m_bodyGroupTotalRequestCount` | uint32 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x718` | `m_bodyGroupRequests` | CUtlVectorFixedGrowable< [CBaseModelEntity::BodyGroupRequest_t](../server/CBaseModelEntity.BodyGroupRequest_t.md), 8 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x7f0` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x818` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
+| `0x848` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
+| `0x850` | `m_toggle_state` | [TOGGLE_STATE](../server/TOGGLE_STATE.md) | [CBaseToggle](../server/CBaseToggle.md) |  |
+| `0x854` | `m_flMoveDistance` | float32 | [CBaseToggle](../server/CBaseToggle.md) |  |
+| `0x858` | `m_flWait` | float32 | [CBaseToggle](../server/CBaseToggle.md) |  |
+| `0x85c` | `m_flLip` | float32 | [CBaseToggle](../server/CBaseToggle.md) |  |
+| `0x860` | `m_bAlwaysFireBlockedOutputs` | bool | [CBaseToggle](../server/CBaseToggle.md) |  |
+| `0x864` | `m_vecPosition1` | Vector | [CBaseToggle](../server/CBaseToggle.md) |  |
+| `0x870` | `m_vecPosition2` | Vector | [CBaseToggle](../server/CBaseToggle.md) |  |
+| `0x87c` | `m_vecMoveAng` | QAngle | [CBaseToggle](../server/CBaseToggle.md) |  |
+| `0x888` | `m_vecAngle1` | QAngle | [CBaseToggle](../server/CBaseToggle.md) |  |
+| `0x894` | `m_vecAngle2` | QAngle | [CBaseToggle](../server/CBaseToggle.md) |  |
+| `0x8a0` | `m_flHeight` | float32 | [CBaseToggle](../server/CBaseToggle.md) |  |
+| `0x8a4` | `m_hActivator` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CBaseToggle](../server/CBaseToggle.md) |  |
+| `0x8a8` | `m_vecFinalDest` | Vector | [CBaseToggle](../server/CBaseToggle.md) |  |
+| `0x8b4` | `m_vecFinalAngle` | QAngle | [CBaseToggle](../server/CBaseToggle.md) |  |
+| `0x8c0` | `m_movementType` | int32 | [CBaseToggle](../server/CBaseToggle.md) |  |
+| `0x8c8` | `m_sMaster` | CUtlSymbolLarge | [CBaseToggle](../server/CBaseToggle.md) |  |
+| `0x8d0` | `m_NoiseMoving` | CGameSoundEventName | [CBasePlatTrain](../server/CBasePlatTrain.md) |  |
+| `0x8d8` | `m_NoiseArrived` | CGameSoundEventName | [CBasePlatTrain](../server/CBasePlatTrain.md) |  |
+| `0x8e8` | `m_volume` | float32 | [CBasePlatTrain](../server/CBasePlatTrain.md) |  |
+| `0x8ec` | `m_flTWidth` | float32 | [CBasePlatTrain](../server/CBasePlatTrain.md) |  |
+| `0x8f0` | `m_flTLength` | float32 | [CBasePlatTrain](../server/CBasePlatTrain.md) |  |
+| `0x8f8` | `m_flSpeed` | float32 | [CFuncPlat](../server/CFuncPlat.md) |  |
+| `0x900` | `m_sNoise` | CUtlSymbolLarge | [CFuncPlat](../server/CFuncPlat.md) |  |
+| `0x908` | `m_end` | QAngle | [CFuncPlatRot](../server/CFuncPlatRot.md) |  |
+| `0x914` | `m_start` | QAngle | [CFuncPlatRot](../server/CFuncPlatRot.md) |  |
+| `0x920` | `m_trackTop` | CHandle< [CPathTrack](../server/CPathTrack.md) > |  | `MSaveBehavior` |
+| `0x924` | `m_trackBottom` | CHandle< [CPathTrack](../server/CPathTrack.md) > |  | `MSaveBehavior` |
+| `0x928` | `m_train` | CHandle< [CFuncTrackTrain](../server/CFuncTrackTrain.md) > |  | `MSaveBehavior` |
+| `0x930` | `m_trackTopName` | CUtlSymbolLarge |  | `MSaveBehavior` |
+| `0x938` | `m_trackBottomName` | CUtlSymbolLarge |  | `MSaveBehavior` |
+| `0x940` | `m_trainName` | CUtlSymbolLarge |  | `MSaveBehavior` |
+| `0x948` | `m_code` | [TRAIN_CODE](../server/TRAIN_CODE.md) |  |  |
+| `0x94c` | `m_targetState` | int32 |  |  |
+| `0x950` | `m_use` | int32 |  |  |

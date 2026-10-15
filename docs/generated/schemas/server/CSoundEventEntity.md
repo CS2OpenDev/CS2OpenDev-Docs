@@ -8,13 +8,13 @@ kind: class
 
 # CSoundEventEntity
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 1384 bytes (`0x568`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CBaseEntity](../server/CBaseEntity.md)
 
-**Derived by:** [CSoundEventAABBEntity](../server/CSoundEventAABBEntity.md), [CSoundEventConeEntity](../server/CSoundEventConeEntity.md), [CSoundEventEntityAlias_snd_event_point](../server/CSoundEventEntityAlias_snd_event_point.md), [CSoundEventOBBEntity](../server/CSoundEventOBBEntity.md), [CSoundEventPathCornerEntity](../server/CSoundEventPathCornerEntity.md), [CSoundEventSphereEntity](../server/CSoundEventSphereEntity.md)
+**Derived by:** [CSoundEventAABBEntity](../server/CSoundEventAABBEntity.md), [CSoundEventConeEntity](../server/CSoundEventConeEntity.md), [CSoundEventEntityAlias_snd_event_point](../server/CSoundEventEntityAlias_snd_event_point.md), [CSoundEventMultiPointEntity](../server/CSoundEventMultiPointEntity.md), [CSoundEventOBBEntity](../server/CSoundEventOBBEntity.md), [CSoundEventSphereEntity](../server/CSoundEventSphereEntity.md)
 
 **Relationships:**
 
@@ -25,8 +25,8 @@ classDiagram
     CSoundEventEntity <|-- CSoundEventAABBEntity
     CSoundEventEntity <|-- CSoundEventConeEntity
     CSoundEventEntity <|-- CSoundEventEntityAlias_snd_event_point
+    CSoundEventEntity <|-- CSoundEventMultiPointEntity
     CSoundEventEntity <|-- CSoundEventOBBEntity
-    CSoundEventEntity <|-- CSoundEventPathCornerEntity
     CSoundEventEntity <|-- CSoundEventSphereEntity
     CSoundEventEntity *-- CEntityIOOutput
 ```

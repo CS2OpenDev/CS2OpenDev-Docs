@@ -5,7 +5,7 @@ module: soundsystem_voicecontainers
 
 # Module: soundsystem_voicecontainers
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 [📊 View UML Diagram](../diagrams/soundsystem_voicecontainers.md)
 
@@ -32,7 +32,7 @@ module: soundsystem_voicecontainers
 | [CVoiceContainerEnum](soundsystem_voicecontainers/CVoiceContainerEnum.md) | class | 176 | 3 | [CVoiceContainerBase](soundsystem_voicecontainers/CVoiceContainerBase.md) |
 | [CVoiceContainerEnvelopeAnalyzer](soundsystem_voicecontainers/CVoiceContainerEnvelopeAnalyzer.md) | class | 88 | 3 | [CVoiceContainerAnalysisBase](soundsystem_voicecontainers/CVoiceContainerAnalysisBase.md) |
 | [CVoiceContainerGenerator](soundsystem_voicecontainers/CVoiceContainerGenerator.md) | class | 112 | 0 | [CVoiceContainerBase](soundsystem_voicecontainers/CVoiceContainerBase.md) |
-| [CVoiceContainerGranulator](soundsystem_voicecontainers/CVoiceContainerGranulator.md) | class | 344 | 6 | [CVoiceContainerAsyncGenerator](soundsystem_voicecontainers/CVoiceContainerAsyncGenerator.md) |
+| [CVoiceContainerGranulator](soundsystem_voicecontainers/CVoiceContainerGranulator.md) | class | 368 | 8 | [CVoiceContainerAsyncGenerator](soundsystem_voicecontainers/CVoiceContainerAsyncGenerator.md) |
 | [CVoiceContainerLoopTrigger](soundsystem_voicecontainers/CVoiceContainerLoopTrigger.md) | class | 160 | 5 | [CVoiceContainerBase](soundsystem_voicecontainers/CVoiceContainerBase.md) |
 | [CVoiceContainerLoopTriggerWithRandomPanner](soundsystem_voicecontainers/CVoiceContainerLoopTriggerWithRandomPanner.md) | class | 192 | 1 | [CVoiceContainerLoopTrigger](soundsystem_voicecontainers/CVoiceContainerLoopTrigger.md) |
 | [CVoiceContainerLoopXFade](soundsystem_voicecontainers/CVoiceContainerLoopXFade.md) | class | 168 | 8 | [CVoiceContainerBase](soundsystem_voicecontainers/CVoiceContainerBase.md) |
@@ -50,7 +50,7 @@ module: soundsystem_voicecontainers
 | [CVoiceContainerStaticAdditiveSynth::CHarmonic](soundsystem_voicecontainers/CVoiceContainerStaticAdditiveSynth.CHarmonic.md) | class | 104 | 7 |  |
 | [CVoiceContainerStaticAdditiveSynth::CTone](soundsystem_voicecontainers/CVoiceContainerStaticAdditiveSynth.CTone.md) | class | 96 | 3 |  |
 | [CVoiceContainerSwitch](soundsystem_voicecontainers/CVoiceContainerSwitch.md) | class | 136 | 1 | [CVoiceContainerBase](soundsystem_voicecontainers/CVoiceContainerBase.md) |
-| [CVoiceContainerTapePlayer](soundsystem_voicecontainers/CVoiceContainerTapePlayer.md) | class | 192 | 4 | [CVoiceContainerAsyncGenerator](soundsystem_voicecontainers/CVoiceContainerAsyncGenerator.md) |
+| [CVoiceContainerTapePlayer](soundsystem_voicecontainers/CVoiceContainerTapePlayer.md) | class | 208 | 4 | [CVoiceContainerAsyncGenerator](soundsystem_voicecontainers/CVoiceContainerAsyncGenerator.md) |
 | [CVoiceContainerVsndRadioButton](soundsystem_voicecontainers/CVoiceContainerVsndRadioButton.md) | class | 2296 | 17 | [CVoiceContainerBase](soundsystem_voicecontainers/CVoiceContainerBase.md) |
 | [CVoiceContainerVsndTrigger](soundsystem_voicecontainers/CVoiceContainerVsndTrigger.md) | class | 2296 | 17 | [CVoiceContainerBase](soundsystem_voicecontainers/CVoiceContainerBase.md) |
 | [CVsndRadioButtonSlot](soundsystem_voicecontainers/CVsndRadioButtonSlot.md) | class | 136 | 10 |  |

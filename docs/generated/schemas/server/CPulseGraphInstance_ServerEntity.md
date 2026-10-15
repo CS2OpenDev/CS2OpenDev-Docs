@@ -8,9 +8,9 @@ kind: class
 
 # CPulseGraphInstance_ServerEntity
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 456 bytes (`0x1c8`) · **Align:** n/a (unspecified) · **Module:** server
+**Kind:** class · **Size:** 320 bytes (`0x140`) · **Align:** n/a (unspecified) · **Module:** server
 
 **Inherits from:** [CBasePulseGraphInstance](../pulse_runtime_lib/CBasePulseGraphInstance.md)
 
@@ -31,9 +31,9 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x1a0` | `m_hOwner` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
-| `0x1a4` | `m_bActivated` | bool |  |  |
-| `0x1a8` | `m_sNameFixupStaticPrefix` | CUtlSymbolLarge |  |  |
-| `0x1b0` | `m_sNameFixupParent` | CUtlSymbolLarge |  |  |
-| `0x1b8` | `m_sNameFixupLocal` | CUtlSymbolLarge |  |  |
-| `0x1c0` | `m_sProceduralWorldNameForRelays` | CUtlSymbolLarge |  |  |
+| `0x118` | `m_hOwner` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
+| `0x11c` | `m_bActivated` | bool |  |  |
+| `0x120` | `m_sNameFixupStaticPrefix` | CUtlSymbolLarge |  |  |
+| `0x128` | `m_sNameFixupParent` | CUtlSymbolLarge |  |  |
+| `0x130` | `m_sNameFixupLocal` | CUtlSymbolLarge |  |  |
+| `0x138` | `m_sProceduralWorldNameForRelays` | CUtlSymbolLarge |  |  |

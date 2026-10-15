@@ -8,9 +8,9 @@ kind: class
 
 # CPulseCell_WaitForObservable
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 408 bytes (`0x198`) · **Align:** 8 · **Module:** pulse_runtime_lib
+**Kind:** class · **Size:** 432 bytes (`0x1b0`) · **Align:** 8 · **Module:** pulse_runtime_lib
 
 **Inherits from:** [CPulseCell_BaseYieldingInflow](../pulse_runtime_lib/CPulseCell_BaseYieldingInflow.md)
 
@@ -36,7 +36,7 @@ classDiagram
 | `0x48` | `m_BaseFlow_OnAfterCancel` | [CPulse_ResumePoint](../pulse_runtime_lib/CPulse_ResumePoint.md) | [CPulseCell_BaseYieldingInflow](../pulse_runtime_lib/CPulseCell_BaseYieldingInflow.md) | `MPulseFGDSkipField` |
 | `0x90` | `m_BaseFlow_WhileActive` | [CPulse_ResumePoint](../pulse_runtime_lib/CPulse_ResumePoint.md) | [CPulseCell_BaseYieldingInflow](../pulse_runtime_lib/CPulseCell_BaseYieldingInflow.md) | `MPulseFGDSkipField` |
 | `0xd8` | `m_Condition` | CPulseObservableExpression< bool > |  | `MPropertyDescription Condition to evaluate when any of its dependent values change.` `MPropertyFriendlyName Observable` |
-| `0x150` | `m_OnTrue` | [CPulse_ResumePoint](../pulse_runtime_lib/CPulse_ResumePoint.md) |  |  |
+| `0x168` | `m_OnTrue` | [CPulse_ResumePoint](../pulse_runtime_lib/CPulse_ResumePoint.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -67,6 +67,9 @@ classDiagram
 		[
 		],
 		&quot;m_DependentObservableBlackboardReferences&quot;:
+		[
+		],
+		&quot;m_DependentObservableTempVars&quot;:
 		[
 		]
 	},

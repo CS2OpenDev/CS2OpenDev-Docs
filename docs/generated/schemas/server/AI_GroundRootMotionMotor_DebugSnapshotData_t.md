@@ -8,9 +8,9 @@ kind: class
 
 # AI_GroundRootMotionMotor_DebugSnapshotData_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 136 bytes (`0x88`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 144 bytes (`0x90`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [DebugSnapshotBaseStructuredData_t](../server/DebugSnapshotBaseStructuredData_t.md)
 
@@ -26,7 +26,7 @@ classDiagram
 
 ## Memory layout
 
-18 fields (18 declared here, 0 inherited). Offsets are absolute from the object base.
+19 fields (19 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -45,9 +45,10 @@ classDiagram
 | `0x58` | `move_type` | CGlobalSymbol |  |  |
 | `0x60` | `f_forward_strafing_angle_actual` | float32 |  |  |
 | `0x64` | `f_forward_strafing_angle_desired` | float32 |  |  |
-| `0x68` | `f_current_lean` | float32 |  |  |
-| `0x6c` | `f_target_lean` | float32 |  |  |
-| `0x70` | `vec_events` | CUtlVector< [AI_GroundRootMotionMotor_DebugSnapshotData_t::Event_t](../server/AI_GroundRootMotionMotor_DebugSnapshotData_t.Event_t.md) > |  |  |
+| `0x68` | `f_forward_strafing_angle_committed` | float32 |  |  |
+| `0x6c` | `f_current_lean` | float32 |  |  |
+| `0x70` | `f_target_lean` | float32 |  |  |
+| `0x78` | `vec_events` | CUtlVector< [AI_GroundRootMotionMotor_DebugSnapshotData_t::Event_t](../server/AI_GroundRootMotionMotor_DebugSnapshotData_t.Event_t.md) > |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -68,6 +69,7 @@ classDiagram
 	&quot;move_type&quot;: &quot;&quot;,
 	&quot;f_forward_strafing_angle_actual&quot;: -1.000000,
 	&quot;f_forward_strafing_angle_desired&quot;: -1.000000,
+	&quot;f_forward_strafing_angle_committed&quot;: -1.000000,
 	&quot;f_current_lean&quot;: 0.000000,
 	&quot;f_target_lean&quot;: 0.000000,
 	&quot;vec_events&quot;:

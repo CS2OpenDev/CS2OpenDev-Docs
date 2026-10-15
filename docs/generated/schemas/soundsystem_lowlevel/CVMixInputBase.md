@@ -8,24 +8,22 @@ kind: class
 
 # CVMixInputBase
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** 8 · **Module:** soundsystem_lowlevel
 
-**Derived by:** [CVMixControlInput](../soundsystem_lowlevel/CVMixControlInput.md), [CVMixControlInputArray](../soundsystem_lowlevel/CVMixControlInputArray.md), [CVMixControlMeter](../soundsystem_lowlevel/CVMixControlMeter.md), [CVMixControlOutput](../soundsystem_lowlevel/CVMixControlOutput.md), [CVMixImpulseResponseInput](../soundsystem_lowlevel/CVMixImpulseResponseInput.md), [CVMixNameInput](../soundsystem_lowlevel/CVMixNameInput.md), [CVMixNameInputMeter](../soundsystem_lowlevel/CVMixNameInputMeter.md), [CVMixVsndInput](../soundsystem_lowlevel/CVMixVsndInput.md)
+**Derived by:** [CVMixControlInput](../soundsystem_lowlevel/CVMixControlInput.md), [CVMixControlMeter](../soundsystem_lowlevel/CVMixControlMeter.md), [CVMixControlOutput](../soundsystem_lowlevel/CVMixControlOutput.md), [CVMixGraphInput](../soundsystem_lowlevel/CVMixGraphInput.md), [CVMixImpulseResponseInput](../soundsystem_lowlevel/CVMixImpulseResponseInput.md), [CVMixNameInputMeter](../soundsystem_lowlevel/CVMixNameInputMeter.md)
 
 **Relationships:**
 
 ```mermaid
 classDiagram
     CVMixInputBase <|-- CVMixControlInput
-    CVMixInputBase <|-- CVMixControlInputArray
     CVMixInputBase <|-- CVMixControlMeter
     CVMixInputBase <|-- CVMixControlOutput
+    CVMixInputBase <|-- CVMixGraphInput
     CVMixInputBase <|-- CVMixImpulseResponseInput
-    CVMixInputBase <|-- CVMixNameInput
     CVMixInputBase <|-- CVMixNameInputMeter
-    CVMixInputBase <|-- CVMixVsndInput
 ```
 
 ## Memory layout

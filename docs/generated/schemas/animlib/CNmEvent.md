@@ -8,17 +8,21 @@ kind: class
 
 # CNmEvent
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** n/a (unspecified) · **Module:** animlib
 
-**Derived by:** [CNmBodyGroupEvent](../animlib/CNmBodyGroupEvent.md), [CNmEntityAttributeEventBase](../animlib/CNmEntityAttributeEventBase.md), [CNmFloatCurveEvent](../animlib/CNmFloatCurveEvent.md), [CNmFootEvent](../animlib/CNmFootEvent.md), [CNmFrameSnapEvent](../animlib/CNmFrameSnapEvent.md), [CNmIDEvent](../animlib/CNmIDEvent.md), [CNmLegacyEvent](../animlib/CNmLegacyEvent.md), [CNmMaterialAttributeEvent](../animlib/CNmMaterialAttributeEvent.md), [CNmOrientationWarpEvent](../animlib/CNmOrientationWarpEvent.md), [CNmParticleEvent](../animlib/CNmParticleEvent.md), [CNmRootMotionEvent](../animlib/CNmRootMotionEvent.md), [CNmSoundEvent](../animlib/CNmSoundEvent.md), [CNmTargetWarpEvent](../animlib/CNmTargetWarpEvent.md), [CNmTransitionEvent](../animlib/CNmTransitionEvent.md)
+**Derived by:** [CNmBodyGroupEvent](../animlib/CNmBodyGroupEvent.md), [CNmCameraDOFEvent](../animlib/CNmCameraDOFEvent.md), [CNmCameraFOVEvent](../animlib/CNmCameraFOVEvent.md), [CNmClothEvent](../animlib/CNmClothEvent.md), [CNmContactEvent](../animlib/CNmContactEvent.md), [CNmEntityAttributeEventBase](../animlib/CNmEntityAttributeEventBase.md), [CNmFloatCurveEvent](../animlib/CNmFloatCurveEvent.md), [CNmFootEvent](../animlib/CNmFootEvent.md), [CNmFrameSnapEvent](../animlib/CNmFrameSnapEvent.md), [CNmIDEvent](../animlib/CNmIDEvent.md), [CNmLegacyEvent](../animlib/CNmLegacyEvent.md), [CNmMaterialAttributeEvent](../animlib/CNmMaterialAttributeEvent.md), [CNmOrientationWarpEvent](../animlib/CNmOrientationWarpEvent.md), [CNmParticleEvent](../animlib/CNmParticleEvent.md), [CNmRootMotionEvent](../animlib/CNmRootMotionEvent.md), [CNmSoundEvent](../animlib/CNmSoundEvent.md), [CNmTargetWarpEvent](../animlib/CNmTargetWarpEvent.md), [CNmTransitionEvent](../animlib/CNmTransitionEvent.md)
 
 **Relationships:**
 
 ```mermaid
 classDiagram
     CNmEvent <|-- CNmBodyGroupEvent
+    CNmEvent <|-- CNmCameraDOFEvent
+    CNmEvent <|-- CNmCameraFOVEvent
+    CNmEvent <|-- CNmClothEvent
+    CNmEvent <|-- CNmContactEvent
     CNmEvent <|-- CNmEntityAttributeEventBase
     CNmEvent <|-- CNmFloatCurveEvent
     CNmEvent <|-- CNmFootEvent

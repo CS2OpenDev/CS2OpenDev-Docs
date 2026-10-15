@@ -8,7 +8,7 @@ kind: class
 
 # CBasePlayerWeaponVData
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 1312 bytes (`0x520`) · **Align:** 8 · **Module:** server
 
@@ -34,7 +34,7 @@ classDiagram
 
 ## Memory layout
 
-32 fields (32 declared here, 0 inherited). Offsets are absolute from the object base.
+33 fields (33 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -51,8 +51,9 @@ classDiagram
 | `0x4bc` | `m_flMuzzleSmokeTimeout` | float32 |  | `MPropertyDescription Barrel smoke shot timeout` |
 | `0x4c0` | `m_flMuzzleSmokeDecrementRate` | float32 |  | `MPropertyDescription Barrel smoke decrement rate when not firing` |
 | `0x4c4` | `m_bGenerateMuzzleLight` | bool |  |  |
-| `0x4c5` | `m_bLinkedCooldowns` | bool |  | `MPropertyDescription Should both primary and secondary attacks be cooled down together (so cooling down primary attack would cooldown both primary + secondary attacks)?` `MPropertyStartGroup Behavior` |
-| `0x4c6` | `m_iFlags` | [ItemFlagTypes_t](../server/ItemFlagTypes_t.md) |  |  |
+| `0x4c5` | `m_bShouldAnimateInWorld` | bool |  | `MPropertyDescription Was the weapon was built right-handed?` |
+| `0x4c6` | `m_bLinkedCooldowns` | bool |  | `MPropertyDescription Should both primary and secondary attacks be cooled down together (so cooling down primary attack would cooldown both primary + secondary attacks)?` `MPropertyStartGroup Behavior` |
+| `0x4c7` | `m_iFlags` | [ItemFlagTypes_t](../server/ItemFlagTypes_t.md) |  |  |
 | `0x4c8` | `m_iWeight` | int32 |  | `MPropertyDescription This value used to determine this weapon's importance in autoselection` |
 | `0x4cc` | `m_bAutoSwitchTo` | bool |  | `MPropertyDescription Whether this weapon is safe to automatically switch to (should be false for eg. explosives that can the player may accidentally hurt themselves with)` `MPropertyFriendlyName Safe To Auto-Switch To` |
 | `0x4cd` | `m_bAutoSwitchFrom` | bool |  | `MPropertyFriendlyName Safe To Auto-Switch Away From` |
@@ -88,6 +89,7 @@ classDiagram
 	&quot;m_flMuzzleSmokeTimeout&quot;: 0.250000,
 	&quot;m_flMuzzleSmokeDecrementRate&quot;: 1.000000,
 	&quot;m_bGenerateMuzzleLight&quot;: true,
+	&quot;m_bShouldAnimateInWorld&quot;: false,
 	&quot;m_bLinkedCooldowns&quot;: false,
 	&quot;m_iFlags&quot;: &quot;&quot;,
 	&quot;m_iWeight&quot;: 0,

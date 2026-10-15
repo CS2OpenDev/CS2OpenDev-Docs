@@ -5,11 +5,11 @@ module: physicslib
 
 # Module: physicslib
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 [📊 View UML Diagram](../diagrams/physicslib.md)
 
-103 types. Each links to its own page with the full field layout.
+107 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -57,6 +57,7 @@ module: physicslib
 | [FeNodeReverseOffset_t](physicslib/FeNodeReverseOffset_t.md) | class | 16 | 3 |  |
 | [FeNodeStrayBox_t](physicslib/FeNodeStrayBox_t.md) | class | 32 | 4 |  |
 | [FeNodeWindBase_t](physicslib/FeNodeWindBase_t.md) | class | 8 | 4 |  |
+| [FePrism_t](physicslib/FePrism_t.md) | class | 16 | 2 |  |
 | [FeProxyVertexMap_t](physicslib/FeProxyVertexMap_t.md) | class | 16 | 2 |  |
 | [FeQuad_t](physicslib/FeQuad_t.md) | class | 76 | 3 |  |
 | [FeRigidColliderIndices_t](physicslib/FeRigidColliderIndices_t.md) | class | 10 | 5 |  |
@@ -64,6 +65,7 @@ module: physicslib
 | [FeSDFRigid_t](physicslib/FeSDFRigid_t.md) | class | 80 | 11 |  |
 | [FeSimdAnimStrayRadius_t](physicslib/FeSimdAnimStrayRadius_t.md) | class | 48 | 3 |  |
 | [FeSimdNodeBase_t](physicslib/FeSimdNodeBase_t.md) | class | 112 | 7 |  |
+| [FeSimdPrism_t](physicslib/FeSimdPrism_t.md) | class | 64 | 2 |  |
 | [FeSimdQuad_t](physicslib/FeSimdQuad_t.md) | class | 304 | 4 |  |
 | [FeSimdRodConstraintAnim_t](physicslib/FeSimdRodConstraintAnim_t.md) | class | 48 | 3 |  |
 | [FeSimdRodConstraint_t](physicslib/FeSimdRodConstraint_t.md) | class | 80 | 5 |  |
@@ -86,20 +88,22 @@ module: physicslib
 | [FourCovMatrices3](physicslib/FourCovMatrices3.md) | class | 96 | 4 |  |
 | [FourVectors2D](physicslib/FourVectors2D.md) | class | 32 | 2 |  |
 | [OldFeEdge_t](physicslib/OldFeEdge_t.md) | class | 72 | 12 |  |
-| [PhysFeModelDesc_t](physicslib/PhysFeModelDesc_t.md) | class | 1784 | 111 |  |
+| [PhysFeModelDesc_t](physicslib/PhysFeModelDesc_t.md) | class | 1832 | 113 |  |
 | [PhysicsParticleId_t](physicslib/PhysicsParticleId_t.md) | class | 4 | 1 |  |
 | [RnBlendVertex_t](physicslib/RnBlendVertex_t.md) | class | 16 | 8 |  |
 | [RnBodyDesc_t](physicslib/RnBodyDesc_t.md) | class | 224 | 36 |  |
 | [RnCapsuleDesc_t](physicslib/RnCapsuleDesc_t.md) | class | 56 | 1 | [RnShapeDesc_t](physicslib/RnShapeDesc_t.md) |
 | [RnCapsule_t](physicslib/RnCapsule_t.md) | class | 28 | 2 |  |
-| [RnCompoundDesc_t](physicslib/RnCompoundDesc_t.md) | class | 168 | 1 | [RnShapeDesc_t](physicslib/RnShapeDesc_t.md) |
-| [RnCompound_t](physicslib/RnCompound_t.md) | class | 144 | 8 |  |
+| [RnCompoundDesc_t](physicslib/RnCompoundDesc_t.md) | class | 376 | 1 | [RnShapeDesc_t](physicslib/RnShapeDesc_t.md) |
+| [RnCompoundTreeNode_t](physicslib/RnCompoundTreeNode_t.md) | class | 28 | 4 |  |
+| [RnCompoundTree_t](physicslib/RnCompoundTree_t.md) | class | 24 | 2 |  |
+| [RnCompound_t](physicslib/RnCompound_t.md) | class | 352 | 13 |  |
 | [RnFace_t](physicslib/RnFace_t.md) | class | 1 | 1 |  |
 | [RnHalfEdge_t](physicslib/RnHalfEdge_t.md) | class | 4 | 4 |  |
 | [RnHullDesc_t](physicslib/RnHullDesc_t.md) | class | 272 | 1 | [RnShapeDesc_t](physicslib/RnShapeDesc_t.md) |
-| [RnHull_t](physicslib/RnHull_t.md) | class | 248 | 14 |  |
+| [RnHull_t](physicslib/RnHull_t.md) | class | 248 | 15 |  |
 | [RnMeshDesc_t](physicslib/RnMeshDesc_t.md) | class | 216 | 1 | [RnShapeDesc_t](physicslib/RnShapeDesc_t.md) |
-| [RnMesh_t](physicslib/RnMesh_t.md) | class | 192 | 11 |  |
+| [RnMesh_t](physicslib/RnMesh_t.md) | class | 192 | 12 |  |
 | [RnNode_t](physicslib/RnNode_t.md) | class | 32 | 4 |  |
 | [RnPlane_t](physicslib/RnPlane_t.md) | class | 16 | 2 |  |
 | [RnShapeDesc_t](physicslib/RnShapeDesc_t.md) | class | 24 | 6 |  |

@@ -8,7 +8,7 @@ kind: enum
 
 # EPulseGraphExecutionHistoryFlag
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** pulse_runtime_lib
 
@@ -20,5 +20,8 @@ kind: enum
 | `CURSOR_ADD_TAG` | 1 |  |
 | `CURSOR_REMOVE_TAG` | 2 |  |
 | `CURSOR_RETIRED` | 4 |  |
-| `REQUIREMENT_PASS` | 8 |  |
-| `REQUIREMENT_FAIL` | 16 |  |
+| `CURSOR_CREATE_CHILD` | 8 |  |
+| `REQUIREMENT_PASS` | 16 |  |
+| `REQUIREMENT_FAIL` | 32 |  |
+| `CALL_TO_PULSE` | 64 |  |
+| `RETURN` | 128 |  |

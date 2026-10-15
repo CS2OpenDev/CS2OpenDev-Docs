@@ -8,9 +8,9 @@ kind: class
 
 # CParticleSystemDefinition
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 1088 bytes (`0x440`) · **Align:** 16 · **Module:** particles
+**Kind:** class · **Size:** 1424 bytes (`0x590`) · **Align:** 16 · **Module:** particles
 
 **Inherits from:** [IParticleSystemDefinition](../particles/IParticleSystemDefinition.md)
 

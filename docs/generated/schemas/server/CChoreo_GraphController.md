@@ -8,9 +8,9 @@ kind: class
 
 # CChoreo_GraphController
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 272 bytes (`0x110`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 264 bytes (`0x108`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CAnimGraphControllerBase](../server/CAnimGraphControllerBase.md)
 
@@ -27,10 +27,10 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x10` | `m_hExternalGraph` | [ExternalAnimGraphHandle_t](../server/ExternalAnimGraphHandle_t.md) | [CAnimGraphControllerBase](../server/CAnimGraphControllerBase.md) |  |
-| `0x88` | `m_eChoreoState` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
-| `0xa0` | `m_tChoreoTargetWarp` | CAnimGraph2ParamOptionalRef< CTransform > |  |  |
-| `0xb8` | `m_tChoreoExitWarp` | CAnimGraph2ParamOptionalRef< CTransform > |  |  |
+| `0x4c` | `m_hExternalGraph` | [ExternalAnimGraphHandle_t](../server/ExternalAnimGraphHandle_t.md) | [CAnimGraphControllerBase](../server/CAnimGraphControllerBase.md) |  |
+| `0xc0` | `m_eChoreoState` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
+| `0xd8` | `m_tChoreoTargetWarp` | CAnimGraph2ParamOptionalRef< CTransform > |  |  |
+| `0xf0` | `m_tChoreoExitWarp` | CAnimGraph2ParamOptionalRef< CTransform > |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

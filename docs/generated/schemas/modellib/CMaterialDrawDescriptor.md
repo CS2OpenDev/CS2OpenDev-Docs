@@ -8,9 +8,9 @@ kind: class
 
 # CMaterialDrawDescriptor
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 280 bytes (`0x118`) · **Align:** 8 · **Module:** modellib
+**Kind:** class · **Size:** 288 bytes (`0x120`) · **Align:** 8 · **Module:** modellib
 
 **Relationships:**
 
@@ -24,28 +24,29 @@ classDiagram
 
 ## Memory layout
 
-18 fields (18 declared here, 0 inherited). Offsets are absolute from the object base.
+19 fields (19 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_flUvDensity` | float32 |  |  |
 | `0x4` | `m_vTintColor` | Vector |  |  |
 | `0x10` | `m_flAlpha` | float32 |  |  |
-| `0x16` | `m_nNumMeshlets` | uint16 |  |  |
-| `0x1c` | `m_nFirstMeshlet` | uint32 |  |  |
-| `0x20` | `m_nAppliedIndexOffset` | uint32 |  |  |
-| `0x24` | `m_nDepthVertexBufferIndex` | uint8 |  |  |
-| `0x25` | `m_nMeshletPackedIVBIndex` | uint8 |  |  |
-| `0x28` | `m_rigidMeshParts` | CUtlLeanVector< [CMaterialDrawDescriptor::RigidMeshPart_t](../modellib/CMaterialDrawDescriptor.RigidMeshPart_t.md) > |  |  |
-| `0x38` | `m_rootBvhNodes` | CUtlLeanVector< uint16 > |  |  |
-| `0x48` | `m_nPrimitiveType` | [RenderPrimitiveType_t](../modellib/RenderPrimitiveType_t.md) |  |  |
-| `0x4c` | `m_nBaseVertex` | int32 |  |  |
-| `0x50` | `m_nVertexCount` | int32 |  |  |
-| `0x54` | `m_nStartIndex` | int32 |  |  |
-| `0x58` | `m_nIndexCount` | int32 |  |  |
-| `0xc0` | `m_indexBuffer` | [CRenderBufferBinding](../modellib/CRenderBufferBinding.md) |  |  |
-| `0xe0` | `m_meshletPackedIVB` | [CRenderBufferBinding](../modellib/CRenderBufferBinding.md) |  |  |
-| `0x110` | `m_material` | CStrongHandle< [InfoForResourceTypeIMaterial2](../resourcesystem/InfoForResourceTypeIMaterial2.md) > |  |  |
+| `0x18` | `m_nNumMeshlets` | uint32 |  |  |
+| `0x20` | `m_nFirstMeshlet` | uint32 |  |  |
+| `0x24` | `m_nAppliedIndexOffset` | uint32 |  |  |
+| `0x28` | `m_nEmissivePrimitiveCount` | int32 |  |  |
+| `0x2c` | `m_nDepthVertexBufferIndex` | uint8 |  |  |
+| `0x2d` | `m_nMeshletPackedIVBIndex` | uint8 |  |  |
+| `0x30` | `m_rigidMeshParts` | CUtlLeanVector< [CMaterialDrawDescriptor::RigidMeshPart_t](../modellib/CMaterialDrawDescriptor.RigidMeshPart_t.md) > |  |  |
+| `0x40` | `m_rootBvhNodes` | CUtlLeanVector< uint16 > |  |  |
+| `0x50` | `m_nPrimitiveType` | [RenderPrimitiveType_t](../modellib/RenderPrimitiveType_t.md) |  |  |
+| `0x54` | `m_nBaseVertex` | int32 |  |  |
+| `0x58` | `m_nVertexCount` | int32 |  |  |
+| `0x5c` | `m_nStartIndex` | int32 |  |  |
+| `0x60` | `m_nIndexCount` | int32 |  |  |
+| `0xc8` | `m_indexBuffer` | [CRenderBufferBinding](../modellib/CRenderBufferBinding.md) |  |  |
+| `0xe8` | `m_meshletPackedIVB` | [CRenderBufferBinding](../modellib/CRenderBufferBinding.md) |  |  |
+| `0x118` | `m_material` | CStrongHandle< [InfoForResourceTypeIMaterial2](../resourcesystem/InfoForResourceTypeIMaterial2.md) > |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -61,6 +62,7 @@ classDiagram
 	&quot;m_nNumMeshlets&quot;: 0,
 	&quot;m_nFirstMeshlet&quot;: 0,
 	&quot;m_nAppliedIndexOffset&quot;: 0,
+	&quot;m_nEmissivePrimitiveCount&quot;: -1,
 	&quot;m_nDepthVertexBufferIndex&quot;: 255,
 	&quot;m_nMeshletPackedIVBIndex&quot;: 255,
 	&quot;m_rigidMeshParts&quot;:

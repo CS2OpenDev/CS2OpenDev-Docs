@@ -8,9 +8,9 @@ kind: class
 
 # CPathWithDynamicNodes
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 1520 bytes (`0x5f0`) · **Align:** 16 · **Module:** server
+**Kind:** class · **Size:** 1536 bytes (`0x600`) · **Align:** 16 · **Module:** server
 
 **Twin:** [CPathWithDynamicNodes (client)](../client/CPathWithDynamicNodes.md)
 
@@ -27,11 +27,12 @@ classDiagram
     CEntityInstance <|-- CBaseEntity
     CPathWithDynamicNodes <|-- CPathMover
     CPathWithDynamicNodes --> CPathNode
+    CPathWithDynamicNodes *-- DirectionAlongSimplePath_t
 ```
 
 ## Memory layout
 
-93 fields (2 declared here, 91 inherited). Offsets are absolute from the object base.
+95 fields (4 declared here, 91 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -128,3 +129,5 @@ classDiagram
 | `0x5a8` | `m_bClosedLoop` | bool | [CPathSimple](../server/CPathSimple.md) |  |
 | `0x5b0` | `m_vecPathNodes` | CNetworkUtlVectorBase< CHandle< [CPathNode](../server/CPathNode.md) > > |  |  |
 | `0x5d0` | `m_xInitialPathWorldToLocal` | CTransform |  |  |
+| `0x5f0` | `m_eDesiredDirection` | [DirectionAlongSimplePath_t](../server/DirectionAlongSimplePath_t.md) |  |  |
+| `0x5f4` | `m_bIgnoreParentRotation` | bool |  |  |

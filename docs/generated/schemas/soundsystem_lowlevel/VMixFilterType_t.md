@@ -8,15 +8,15 @@ kind: enum
 
 # VMixFilterType_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** enum · **Underlying:** `uint16_t` · **Module:** soundsystem_lowlevel
+**Kind:** enum · **Underlying:** `uint8_t` · **Module:** soundsystem_lowlevel
 
 ## Values
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `FILTER_UNKNOWN` | -1 (`0xffff`) |  |
+| `FILTER_UNKNOWN` | -1 (`0xff`) |  |
 | `FILTER_LOWPASS` | 0 |  |
 | `FILTER_HIGHPASS` | 1 |  |
 | `FILTER_BANDPASS` | 2 |  |

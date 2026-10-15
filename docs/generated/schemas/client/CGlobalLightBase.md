@@ -8,7 +8,7 @@ kind: class
 
 # CGlobalLightBase
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 1216 bytes (`0x4c0`) · **Align:** n/a (unspecified) · **Module:** client
 
@@ -40,10 +40,10 @@ classDiagram
 | `0x64` | `m_SpecularColor` | Color |  |  |
 | `0x68` | `m_bStartDisabled` | bool |  |  |
 | `0x69` | `m_bEnabled` | bool |  |  |
-| `0x6a` | `m_LightColor` | Color |  |  |
-| `0x6e` | `m_AmbientColor1` | Color |  |  |
-| `0x72` | `m_AmbientColor2` | Color |  |  |
-| `0x76` | `m_AmbientColor3` | Color |  |  |
+| `0x6c` | `m_LightColor` | Color |  |  |
+| `0x70` | `m_AmbientColor1` | Color |  |  |
+| `0x74` | `m_AmbientColor2` | Color |  |  |
+| `0x78` | `m_AmbientColor3` | Color |  |  |
 | `0x7c` | `m_flSunDistance` | float32 |  |  |
 | `0x80` | `m_flFOV` | float32 |  |  |
 | `0x84` | `m_flNearZ` | float32 |  |  |

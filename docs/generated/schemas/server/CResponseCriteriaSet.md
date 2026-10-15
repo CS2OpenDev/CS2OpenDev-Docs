@@ -8,15 +8,14 @@ kind: class
 
 # CResponseCriteriaSet
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 56 bytes (`0x38`) · **Align:** n/a (unspecified) · **Module:** server
 
 ## Memory layout
 
-2 fields (2 declared here, 0 inherited). Offsets are absolute from the object base.
+1 field (1 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x30` | `m_nNumPrefixedContexts` | int32 |  |  |
-| `0x34` | `m_bOverrideOnAppend` | bool |  |  |
+| `0x30` | `m_bOverrideOnAppend` | bool |  |  |

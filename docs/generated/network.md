@@ -4,7 +4,7 @@ title: Network Messages
 
 # Network & Demo Messages
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 The wire-protocol tables: integer message IDs mapped to the protobuf message type carried, recovered from a static RTTI scan of the shipped binaries.  Each type links to its definition on the [protobuf pages](protobufs.md).
 
@@ -191,7 +191,7 @@ The wire-protocol tables: integer message IDs mapped to the protobuf message typ
 
 ## UserMessages
 
-90 message ids.
+91 message ids.
 
 | ID | Message type |
 |----|--------------|
@@ -239,6 +239,7 @@ The wire-protocol tables: integer message IDs mapped to the protobuf message typ
 | 162 | [`CUserMessageRequestDiagnostic`](proto/usermessages.md#cusermessagerequestdiagnostic) |
 | 165 | [`CUserMessage_NotifyResponseFound`](proto/usermessages.md#cusermessage_notifyresponsefound) |
 | 166 | [`CUserMessage_PlayResponseConditional`](proto/usermessages.md#cusermessage_playresponseconditional) |
+| 170 | `CUserMessageRemoteServerResponse` |
 | 301 | [`CCSUsrMsg_VGUIMenu`](proto/cstrike15_usermessages.md#ccsusrmsg_vguimenu) |
 | 317 | [`CCSUsrMsg_SendAudio`](proto/cstrike15_usermessages.md#ccsusrmsg_sendaudio) |
 | 318 | [`CCSUsrMsg_RawAudio`](proto/cstrike15_usermessages.md#ccsusrmsg_rawaudio) |

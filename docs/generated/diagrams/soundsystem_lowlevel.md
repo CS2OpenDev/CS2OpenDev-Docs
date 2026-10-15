@@ -14,7 +14,6 @@ classDiagram
     CVMixBaseProcessorDesc <|-- CVMixBoxverb2ProcessorDesc
     CVMixBaseProcessorDesc <|-- CVMixBoxverbProcessorDesc
     CVMixInputBase <|-- CVMixControlInput
-    CVMixInputBase <|-- CVMixControlInputArray
     CVMixInputBase <|-- CVMixControlMeter
     CVMixInputBase <|-- CVMixControlOutput
     CVMixBaseProcessorDesc <|-- CVMixConvolutionProcessorDesc
@@ -30,15 +29,16 @@ classDiagram
     CVMixBaseProcessorDesc <|-- CVMixFilterProcessorDesc
     CVMixBaseProcessorDesc <|-- CVMixFlangerProcessorDesc
     CVMixBaseProcessorDesc <|-- CVMixFreeverbProcessorDesc
+    CVMixInputBase <|-- CVMixGraphInput
     CVMixInputBase <|-- CVMixImpulseResponseInput
     CVMixBaseProcessorDesc <|-- CVMixModDelayProcessorDesc
-    CVMixInputBase <|-- CVMixNameInput
     CVMixInputBase <|-- CVMixNameInputMeter
     CVMixBaseProcessorDesc <|-- CVMixOscProcessorDesc
     CVMixBaseProcessorDesc <|-- CVMixPannerProcessorDesc
     CVMixBaseProcessorDesc <|-- CVMixPitchShiftProcessorDesc
     CVMixBaseProcessorDesc <|-- CVMixPlateReverbProcessorDesc
     CVMixBaseProcessorDesc <|-- CVMixPresetDSPProcessorDesc
+    CVMixBaseGraphDescription <|-- CVMixRuntimeGraph
     CVMixBaseProcessorDesc <|-- CVMixShaperProcessorDesc
     CVMixBaseProcessorDesc <|-- CVMixSteamAudioDirectProcessorDesc
     CVMixBaseProcessorDesc <|-- CVMixSteamAudioHRTFProcessorDesc
@@ -48,46 +48,100 @@ classDiagram
     CVMixBaseProcessorDesc <|-- CVMixSubgraphSwitchProcessorDesc
     CVMixBaseProcessorDesc <|-- CVMixUtilityProcessorDesc
     CVMixBaseProcessorDesc <|-- CVMixVocoderProcessorDesc
-    CVMixInputBase <|-- CVMixVsndInput
+    VMixFilterDesc_t <|-- VMixEQFilterDesc_t
     CVMixAutoFilterProcessorDesc *-- VMixAutoFilterDesc_t
+    CVMixAutomaticControlInput *-- VMixAutoControlType_t
+    CVMixBaseGraphDescription *-- CVMixBaseProcessorDesc
+    CVMixBaseGraphDescription *-- CVMixGraphInput
+    CVMixBaseGraphDescription *-- CVMixControlInput
+    CVMixBaseGraphDescription *-- CVMixControlOutput
+    CVMixBaseGraphDescription *-- CVMixImpulseResponseInput
+    CVMixBaseGraphDescription *-- CVMixCommand
+    CVMixBaseGraphDescription *-- CVMixHeap
+    CVMixBaseGraphDescription *-- CVMixAudioMeter
+    CVMixBaseGraphDescription *-- CVMixControlMeter
+    CVMixBaseGraphDescription *-- CVMixNameInputMeter
+    CVMixBaseGraphDescription *-- CVMixAdditionalOutput
+    CVMixBaseGraphDescription *-- CVMixAutomaticControlInput
+    CVMixBaseProcessorDesc *-- CVMixParameterFloat
     CVMixBoxverb2ProcessorDesc *-- VMixBoxverbDesc_t
     CVMixBoxverbProcessorDesc *-- VMixBoxverbDesc_t
     CVMixCommand *-- VMixGraphCommandID_t
+    CVMixCommand *-- CVMixDataOffset
+    CVMixControlMeter *-- CVMixDataOffset
     CVMixConvolutionProcessorDesc *-- VMixConvolutionDesc_t
+    CVMixConvolutionProcessorDesc *-- CVMixDataOffset
     CVMixDelayProcessorDesc *-- VMixDelayDesc_t
+    CVMixDelayProcessorDesc *-- CVMixParameterFloat
     CVMixDiffusorProcessorDesc *-- VMixDiffusorDesc_t
     CVMixDualCompressorProcessorDesc *-- VMixDualCompressorDesc_t
+    CVMixDualCompressorProcessorDesc *-- CVMixParameterFloat
     CVMixDynamics3BandProcessorDesc *-- VMixDynamics3BandDesc_t
     CVMixDynamicsCompressorProcessorDesc *-- VMixDynamicsCompressorDesc_t
+    CVMixDynamicsCompressorProcessorDesc *-- CVMixParameterFloat
     CVMixDynamicsProcessorDesc *-- VMixDynamicsDesc_t
+    CVMixDynamicsProcessorDesc *-- CVMixParameterFloat
     CVMixEQ8ProcessorDesc *-- VMixEQ8Desc_t
+    CVMixEQ8ProcessorDesc *-- CVMixParameterFloat
     CVMixEffectChainProcessorDesc *-- VMixEffectChainDesc_t
+    CVMixEffectChainProcessorDesc *-- CVMixParameterEffectName
     CVMixEnvelopeProcessorDesc *-- VMixEnvelopeDesc_t
+    CVMixEnvelopeProcessorDesc *-- CVMixParameterFloat
     CVMixFilterProcessorDesc *-- VMixFilterDesc_t
+    CVMixFilterProcessorDesc *-- CVMixParameterFloat
     CVMixFlangerProcessorDesc *-- VMixFlangerDesc_t
+    CVMixFlangerProcessorDesc *-- CVMixParameterFloat
     CVMixFreeverbProcessorDesc *-- VMixFreeverbDesc_t
+    CVMixGraphInput *-- CVMixDataOffset
     CVMixModDelayProcessorDesc *-- VMixModDelayDesc_t
+    CVMixModDelayProcessorDesc *-- CVMixParameterFloat
+    CVMixNameInputMeter *-- CVMixDataOffset
     CVMixOscProcessorDesc *-- VMixOscDesc_t
+    CVMixOscProcessorDesc *-- CVMixParameterFloat
     CVMixPannerProcessorDesc *-- VMixPannerDesc_t
+    CVMixPannerProcessorDesc *-- CVMixParameterFloat
+    CVMixParameterBool *-- CVMixDataOffset
+    CVMixParameterEffectName *-- CVMixDataOffset
+    CVMixParameterFloat *-- CVMixDataOffset
     CVMixPitchShiftProcessorDesc *-- VMixPitchShiftDesc_t
+    CVMixPitchShiftProcessorDesc *-- CVMixParameterFloat
     CVMixPlateReverbProcessorDesc *-- VMixPlateverbDesc_t
     CVMixPresetDSPProcessorDesc *-- VMixPresetDSPDesc_t
+    CVMixPresetDSPProcessorDesc *-- CVMixParameterEffectName
+    CVMixRuntimeGraph *-- CVMixSubmix
+    CVMixRuntimeGraph *-- VMixPointerFixupEntry_t
     CVMixShaperProcessorDesc *-- VMixShaperDesc_t
+    CVMixShaperProcessorDesc *-- CVMixParameterFloat
+    CVMixSteamAudioDirectProcessorDesc *-- CVMixParameterFloat
+    CVMixSteamAudioDirectProcessorDesc *-- CVMixDataOffset
+    CVMixSteamAudioHRTFProcessorDesc *-- CVMixParameterFloat
+    CVMixSteamAudioHybridReverbProcessorDesc *-- CVMixParameterFloat
+    CVMixSteamAudioHybridReverbProcessorDesc *-- CVMixDataOffset
+    CVMixSteamAudioPathingProcessorDesc *-- CVMixParameterFloat
+    CVMixSteamAudioPathingProcessorDesc *-- CVMixDataOffset
+    CVMixStereoDelayProcessorDesc *-- CVMixParameterFloat
     CVMixSubgraphSwitchProcessorDesc *-- VMixSubgraphSwitchDesc_t
+    CVMixSubgraphSwitchProcessorDesc *-- CVMixParameterEffectName
+    CVMixSubgraphSwitchProcessorDesc *-- CVMixParameterFloat
+    CVMixSubmix *-- VMixSendOperator_t
+    CVMixSubmix *-- VMixMixDownRule_t
     CVMixUtilityProcessorDesc *-- VMixUtilityDesc_t
     CVMixVocoderProcessorDesc *-- VMixVocoderDesc_t
+    CVMixVocoderProcessorDesc *-- CVMixParameterFloat
     VMixAutoFilterDesc_t *-- VMixFilterDesc_t
     VMixAutoFilterDesc_t *-- VMixLFOShape_t
     VMixBoxverbDesc_t *-- VMixFilterDesc_t
     VMixDelayDesc_t *-- VMixFilterDesc_t
     VMixDualCompressorDesc_t *-- VMixDynamicsBand_t
     VMixDynamics3BandDesc_t *-- VMixDynamicsBand_t
-    VMixEQ8Desc_t *-- VMixFilterDesc_t
+    VMixEQ8Desc_t *-- VMixEQFilterDesc_t
+    VMixEQFilterDesc_t *-- VMixFilterChannelSet_t
     VMixFilterDesc_t *-- VMixFilterType_t
     VMixFilterDesc_t *-- VMixFilterSlope_t
     VMixModDelayDesc_t *-- VMixFilterDesc_t
     VMixOscDesc_t *-- VMixLFOShape_t
     VMixPannerDesc_t *-- VMixPannerType_t
+    VMixPointerFixupEntry_t *-- CVMixDataOffset
     VMixSubgraphSwitchDesc_t *-- VMixSubgraphSwitchInterpolationType_t
     VMixUtilityDesc_t *-- VMixChannelOperation_t
 ```

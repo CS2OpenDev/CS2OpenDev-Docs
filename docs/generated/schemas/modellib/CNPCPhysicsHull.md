@@ -8,11 +8,11 @@ kind: class
 
 # CNPCPhysicsHull
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 64 bytes (`0x40`) · **Align:** 8 · **Module:** modellib
 
-**Metadata:** `MFgdHelper game_data_list{ key = 'CNPCPhysicsHull' }`, `MFgdHelper npcphysicshull{}`, `MModelGameData`
+**Metadata:** `MCustomFGDMetadata { node_name_key = 'm_sName' }`, `MFgdHelper game_data_list{ key = 'CNPCPhysicsHull' }`, `MFgdHelper npcphysicshull{}`, `MModelGameData`
 
 **Relationships:**
 

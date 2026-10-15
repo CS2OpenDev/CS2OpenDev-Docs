@@ -8,17 +8,18 @@ kind: class
 
 # C_SoundEventPathCornerEntity
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 1752 bytes (`0x6d8`) · **Align:** 8 · **Module:** client
 
-**Inherits from:** [C_SoundEventEntity](../client/C_SoundEventEntity.md)
+**Inherits from:** [C_SoundEventMultiPointEntity](../client/C_SoundEventMultiPointEntity.md)
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    C_SoundEventEntity <|-- C_SoundEventPathCornerEntity
+    C_SoundEventMultiPointEntity <|-- C_SoundEventPathCornerEntity
+    C_SoundEventEntity <|-- C_SoundEventMultiPointEntity
     C_BaseEntity <|-- C_SoundEventEntity
     CEntityInstance <|-- C_BaseEntity
     C_SoundEventPathCornerEntity *-- SoundeventPathCornerPairNetworked_t

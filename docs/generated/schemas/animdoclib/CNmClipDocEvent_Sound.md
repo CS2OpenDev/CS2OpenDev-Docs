@@ -8,9 +8,9 @@ kind: class
 
 # CNmClipDocEvent_Sound
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 64 bytes (`0x40`) · **Align:** 8 · **Module:** animdoclib
+**Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** 8 · **Module:** animdoclib
 
 **Inherits from:** [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md)
 
@@ -31,13 +31,13 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flStartTime` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
 | `0xc` | `m_flDuration` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
-| `0x10` | `m_relevance` | [CNmEventRelevance_t](../animlib/CNmEventRelevance_t.md) |  |  |
-| `0x14` | `m_bContinuePlayingSoundAtDurationEnd` | bool |  | `MPropertyAttrStateCallback` |
-| `0x18` | `m_flDurationInterruptionThreshold` | float32 |  | `MPropertyAttrStateCallback` |
-| `0x20` | `m_name` | CUtlString |  | `MPropertyAttributeEditor SoundPicker()` `MPropertyStartGroup +Sound` |
-| `0x28` | `m_position` | [CNmSoundEvent::Position_t](../animlib/CNmSoundEvent.Position_t.md) |  | `MPropertyStartGroup +Position` |
-| `0x30` | `m_attachmentName` | CUtlString |  |  |
-| `0x38` | `m_tags` | CUtlString |  | `MPropertyStartGroup +Metadata` |
+| `0x18` | `m_relevance` | [CNmEventRelevance_t](../animlib/CNmEventRelevance_t.md) |  |  |
+| `0x1c` | `m_bContinuePlayingSoundAtDurationEnd` | bool |  | `MPropertyAttrStateCallback` |
+| `0x20` | `m_flDurationInterruptionThreshold` | float32 |  | `MPropertyAttrStateCallback` |
+| `0x28` | `m_name` | CUtlString |  | `MPropertyAttributeEditor SoundPicker()` `MPropertyStartGroup +Sound` |
+| `0x30` | `m_position` | [CNmSoundEvent::Position_t](../animlib/CNmSoundEvent.Position_t.md) |  | `MPropertyStartGroup +Position` |
+| `0x38` | `m_attachmentName` | CUtlString |  |  |
+| `0x40` | `m_tags` | CUtlString |  | `MPropertyStartGroup +Metadata` |
 
 <details><summary>KV3 class defaults</summary>
 

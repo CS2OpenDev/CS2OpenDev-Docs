@@ -8,9 +8,9 @@ kind: class
 
 # CNmClipDocEvent_EntityAttribute
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 104 bytes (`0x68`) · **Align:** 8 · **Module:** animdoclib
+**Kind:** class · **Size:** 112 bytes (`0x70`) · **Align:** 8 · **Module:** animdoclib
 
 **Inherits from:** [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md)
 
@@ -31,11 +31,11 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flStartTime` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
 | `0xc` | `m_flDuration` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
-| `0x10` | `m_target` | [CNmEventTargetEntity_t](../animlib/CNmEventTargetEntity_t.md) |  |  |
-| `0x18` | `m_attributeName` | CUtlString |  |  |
-| `0x20` | `m_nValueType` | [CNmClipDocEvent_EntityAttribute_Type_t](../animdoclib/CNmClipDocEvent_EntityAttribute_Type_t.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Type` |
-| `0x24` | `m_nIntValue` | int32 |  | `MPropertyAttrStateCallback` |
-| `0x28` | `m_FloatValue` | CPiecewiseCurve |  | `MPropertyAttrStateCallback` |
+| `0x18` | `m_target` | [CNmEventTargetEntity_t](../animlib/CNmEventTargetEntity_t.md) |  |  |
+| `0x20` | `m_attributeName` | CUtlString |  |  |
+| `0x28` | `m_nValueType` | [CNmClipDocEvent_EntityAttribute_Type_t](../animdoclib/CNmClipDocEvent_EntityAttribute_Type_t.md) |  | `MPropertyAutoRebuildOnChange` `MPropertyFriendlyName Type` |
+| `0x2c` | `m_nIntValue` | int32 |  | `MPropertyAttrStateCallback` |
+| `0x30` | `m_FloatValue` | CPiecewiseCurve |  | `MPropertyAttrStateCallback` |
 
 <details><summary>KV3 class defaults</summary>
 

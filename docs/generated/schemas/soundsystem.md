@@ -5,18 +5,18 @@ module: soundsystem
 
 # Module: soundsystem
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 [📊 View UML Diagram](../diagrams/soundsystem.md)
 
-48 types. Each links to its own page with the full field layout.
+50 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
 | [CDSPMixgroupModifier](soundsystem/CDSPMixgroupModifier.md) | class | 32 | 6 |  |
 | [CDSPPresetMixgroupModifierTable](soundsystem/CDSPPresetMixgroupModifierTable.md) | class | 24 | 1 |  |
 | [CDspPresetModifierList](soundsystem/CDspPresetModifierList.md) | class | 32 | 2 |  |
-| [CSndBeatPattern](soundsystem/CSndBeatPattern.md) | class | 152 | 15 |  |
+| [CSndBeatPattern](soundsystem/CSndBeatPattern.md) | class | 184 | 17 |  |
 | [CSndBeatPatternManager](soundsystem/CSndBeatPatternManager.md) | class | 144 | 2 |  |
 | [CSndBeatTrack](soundsystem/CSndBeatTrack.md) | class | 152 | 5 |  |
 | [CSndSeqInstBaseSchema](soundsystem/CSndSeqInstBaseSchema.md) | class | 32 | 5 |  |
@@ -35,8 +35,9 @@ module: soundsystem
 | [CSosGroupActionTimeBlockLimitSchema](soundsystem/CSosGroupActionTimeBlockLimitSchema.md) | class | 16 | 2 | [CSosGroupActionSchema](soundsystem/CSosGroupActionSchema.md) |
 | [CSosGroupActionTimeLimitSchema](soundsystem/CSosGroupActionTimeLimitSchema.md) | class | 16 | 1 | [CSosGroupActionSchema](soundsystem/CSosGroupActionSchema.md) |
 | [CSosSoundEventGroupSchema](soundsystem/CSosSoundEventGroupSchema.md) | class | 112 | 16 |  |
-| [CSoundEventMetaData](soundsystem/CSoundEventMetaData.md) | class | 8 | 1 |  |
-| [CVoiceContainerVMixSnd](soundsystem/CVoiceContainerVMixSnd.md) | class | 472 | 0 | [CVoiceContainerBase](soundsystem_voicecontainers/CVoiceContainerBase.md) |
+| [CSubmix](soundsystem/CSubmix.md) | class | 80 | 0 | [CVMixSubmix](soundsystem_lowlevel/CVMixSubmix.md) |
+| [CVMixDescription](soundsystem/CVMixDescription.md) | class | 272 | 4 | [CVMixBaseGraphDescription](soundsystem_lowlevel/CVMixBaseGraphDescription.md) |
+| [CVoiceContainerVMixSnd](soundsystem/CVoiceContainerVMixSnd.md) | class | 384 | 0 | [CVoiceContainerBase](soundsystem_voicecontainers/CVoiceContainerBase.md) |
 | [ISndSeqInstruments](soundsystem/ISndSeqInstruments.md) | class | 8 | 0 |  |
 | [KeyGroup_t](soundsystem/KeyGroup_t.md) | class | 16 | 5 |  |
 | [SamplerVoice_t](soundsystem/SamplerVoice_t.md) | class | 8 | 1 |  |
@@ -50,8 +51,9 @@ module: soundsystem
 | [VelocityZone_t](soundsystem/VelocityZone_t.md) | class | 20 | 4 |  |
 | [SndBeatEventType_t](soundsystem/SndBeatEventType_t.md) | enum | — | 6 |  |
 | [SndBeatKeyType_t](soundsystem/SndBeatKeyType_t.md) | enum | — | 5 |  |
-| [SndBeatLaunchSyncType_t](soundsystem/SndBeatLaunchSyncType_t.md) | enum | — | 4 |  |
 | [SndBeatMidiStatusType_t](soundsystem/SndBeatMidiStatusType_t.md) | enum | — | 7 |  |
+| [SndBeatSyncStartType_t](soundsystem/SndBeatSyncStartType_t.md) | enum | — | 3 |  |
+| [SndBeatSyncType_t](soundsystem/SndBeatSyncType_t.md) | enum | — | 3 |  |
 | [SndBeatTrackPlaybackType_t](soundsystem/SndBeatTrackPlaybackType_t.md) | enum | — | 2 |  |
 | [SndSeqInstrumentType_t](soundsystem/SndSeqInstrumentType_t.md) | enum | — | 3 |  |
 | [SosActionLimitSortType_t](soundsystem/SosActionLimitSortType_t.md) | enum | — | 2 |  |

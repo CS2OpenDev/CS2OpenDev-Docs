@@ -8,13 +8,11 @@ kind: class
 
 # CPathKeyFrame
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 1264 bytes (`0x4f0`) · **Align:** 16 · **Module:** server
 
 **Inherits from:** [CLogicalEntity](../server/CLogicalEntity.md)
-
-**Derived by:** [CBaseMoveBehavior](../server/CBaseMoveBehavior.md)
 
 **Relationships:**
 
@@ -24,7 +22,6 @@ classDiagram
     CServerOnlyEntity <|-- CLogicalEntity
     CBaseEntity <|-- CServerOnlyEntity
     CEntityInstance <|-- CBaseEntity
-    CPathKeyFrame <|-- CBaseMoveBehavior
 ```
 
 ## Memory layout

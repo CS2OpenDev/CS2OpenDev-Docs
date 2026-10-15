@@ -8,9 +8,9 @@ kind: class
 
 # CEnvParticleGlow
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 3344 bytes (`0xd10`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 3568 bytes (`0xdf0`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CParticleSystem](../server/CParticleSystem.md)
 
@@ -27,7 +27,7 @@ classDiagram
 
 ## Memory layout
 
-157 fields (5 declared here, 152 inherited). Offsets are absolute from the object base.
+160 fields (5 declared here, 155 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -147,7 +147,8 @@ classDiagram
 | `0x570` | `m_clrRender` | Color | [CBaseModelEntity](../server/CBaseModelEntity.md) | RGBA tint colour multiplied onto the entity's diffuse texture. |
 | `0x578` | `m_vecRenderAttributes` | CUtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../server/EntityRenderAttribute_t.md) > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e0` | `m_bRenderToCubemaps` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x5e1` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e1` | `m_bExpandRenderBoundsToIncludeCloth` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e2` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e8` | `m_Collision` | [CCollisionProperty](../server/CCollisionProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CCollisionProperty struct encoding the entity's collision bounding box shape and flags. |
 | `0x6a0` | `m_Glow` | [CGlowProperty](../server/CGlowProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CGlowProperty struct controlling the entity's glow outline (colour, radius, visibility rules). |
 | `0x6f8` | `m_flGlowBackfaceMult` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Multiplier for the glow effect on back-facing surfaces of the model. |
@@ -156,35 +157,37 @@ classDiagram
 | `0x704` | `m_flFadeScale` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Scale factor applied to fade distances; 0 disables distance fading. |
 | `0x708` | `m_flShadowStrength` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Opacity of this entity's cast shadow (0 = no shadow, 1 = full shadow). |
 | `0x70c` | `m_nObjectCulling` | uint8 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x710` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x738` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
-| `0x768` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
-| `0x770` | `m_szSnapshotFileName` | char[512] | [CParticleSystem](../server/CParticleSystem.md) |  |
-| `0x970` | `m_bActive` | bool | [CParticleSystem](../server/CParticleSystem.md) |  |
-| `0x971` | `m_bFrozen` | bool | [CParticleSystem](../server/CParticleSystem.md) |  |
-| `0x974` | `m_flFreezeTransitionDuration` | float32 | [CParticleSystem](../server/CParticleSystem.md) |  |
-| `0x978` | `m_nStopType` | int32 | [CParticleSystem](../server/CParticleSystem.md) | `MNotSaved` |
-| `0x97c` | `m_bAnimateDuringGameplayPause` | bool | [CParticleSystem](../server/CParticleSystem.md) |  |
-| `0x980` | `m_iEffectIndex` | CStrongHandle< [InfoForResourceTypeIParticleSystemDefinition](../resourcesystem/InfoForResourceTypeIParticleSystemDefinition.md) > | [CParticleSystem](../server/CParticleSystem.md) | `MNotSaved` |
-| `0x988` | `m_flStartTime` | [GameTime_t](../entity2/GameTime_t.md) | [CParticleSystem](../server/CParticleSystem.md) |  |
-| `0x98c` | `m_flPreSimTime` | float32 | [CParticleSystem](../server/CParticleSystem.md) |  |
-| `0x990` | `m_vServerControlPoints` | Vector[4] | [CParticleSystem](../server/CParticleSystem.md) |  |
-| `0x9c0` | `m_iServerControlPointAssignments` | uint8[4] | [CParticleSystem](../server/CParticleSystem.md) |  |
-| `0x9c4` | `m_hControlPointEnts` | CHandle< [CBaseEntity](../server/CBaseEntity.md) >[64] | [CParticleSystem](../server/CParticleSystem.md) |  |
-| `0xac4` | `m_bDataStringLocalized` | bool | [CParticleSystem](../server/CParticleSystem.md) |  |
-| `0xac8` | `m_strDataString` | CUtlString | [CParticleSystem](../server/CParticleSystem.md) |  |
-| `0xad0` | `m_bNoSave` | bool | [CParticleSystem](../server/CParticleSystem.md) |  |
-| `0xad1` | `m_bNoFreeze` | bool | [CParticleSystem](../server/CParticleSystem.md) |  |
-| `0xad2` | `m_bNoRamp` | bool | [CParticleSystem](../server/CParticleSystem.md) |  |
-| `0xad3` | `m_bStartActive` | bool | [CParticleSystem](../server/CParticleSystem.md) |  |
-| `0xad8` | `m_iszEffectName` | CUtlSymbolLarge | [CParticleSystem](../server/CParticleSystem.md) |  |
-| `0xae0` | `m_iszControlPointNames` | CUtlSymbolLarge[64] | [CParticleSystem](../server/CParticleSystem.md) |  |
-| `0xce0` | `m_nDataCP` | int32 | [CParticleSystem](../server/CParticleSystem.md) |  |
-| `0xce4` | `m_vecDataCPValue` | Vector | [CParticleSystem](../server/CParticleSystem.md) |  |
-| `0xcf0` | `m_nTintCP` | int32 | [CParticleSystem](../server/CParticleSystem.md) |  |
-| `0xcf4` | `m_clrTint` | Color | [CParticleSystem](../server/CParticleSystem.md) |  |
-| `0xcf8` | `m_flAlphaScale` | float32 |  |  |
-| `0xcfc` | `m_flRadiusScale` | float32 |  |  |
-| `0xd00` | `m_flSelfIllumScale` | float32 |  |  |
-| `0xd04` | `m_ColorTint` | Color |  |  |
-| `0xd08` | `m_hTextureOverride` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
+| `0x710` | `m_bodyGroupTotalRequestCount` | uint32 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x718` | `m_bodyGroupRequests` | CUtlVectorFixedGrowable< [CBaseModelEntity::BodyGroupRequest_t](../server/CBaseModelEntity.BodyGroupRequest_t.md), 8 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x7f0` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x818` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
+| `0x848` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
+| `0x850` | `m_szSnapshotFileName` | char[512] | [CParticleSystem](../server/CParticleSystem.md) |  |
+| `0xa50` | `m_bActive` | bool | [CParticleSystem](../server/CParticleSystem.md) |  |
+| `0xa51` | `m_bFrozen` | bool | [CParticleSystem](../server/CParticleSystem.md) |  |
+| `0xa54` | `m_flFreezeTransitionDuration` | float32 | [CParticleSystem](../server/CParticleSystem.md) |  |
+| `0xa58` | `m_nStopType` | int32 | [CParticleSystem](../server/CParticleSystem.md) | `MNotSaved` |
+| `0xa5c` | `m_bAnimateDuringGameplayPause` | bool | [CParticleSystem](../server/CParticleSystem.md) |  |
+| `0xa60` | `m_iEffectIndex` | CStrongHandle< [InfoForResourceTypeIParticleSystemDefinition](../resourcesystem/InfoForResourceTypeIParticleSystemDefinition.md) > | [CParticleSystem](../server/CParticleSystem.md) | `MNotSaved` |
+| `0xa68` | `m_flStartTime` | [GameTime_t](../entity2/GameTime_t.md) | [CParticleSystem](../server/CParticleSystem.md) |  |
+| `0xa6c` | `m_flPreSimTime` | float32 | [CParticleSystem](../server/CParticleSystem.md) |  |
+| `0xa70` | `m_vServerControlPoints` | Vector[4] | [CParticleSystem](../server/CParticleSystem.md) |  |
+| `0xaa0` | `m_iServerControlPointAssignments` | uint8[4] | [CParticleSystem](../server/CParticleSystem.md) |  |
+| `0xaa4` | `m_hControlPointEnts` | CHandle< [CBaseEntity](../server/CBaseEntity.md) >[64] | [CParticleSystem](../server/CParticleSystem.md) |  |
+| `0xba4` | `m_bDataStringLocalized` | bool | [CParticleSystem](../server/CParticleSystem.md) |  |
+| `0xba8` | `m_strDataString` | CUtlString | [CParticleSystem](../server/CParticleSystem.md) |  |
+| `0xbb0` | `m_bNoSave` | bool | [CParticleSystem](../server/CParticleSystem.md) |  |
+| `0xbb1` | `m_bNoFreeze` | bool | [CParticleSystem](../server/CParticleSystem.md) |  |
+| `0xbb2` | `m_bNoRamp` | bool | [CParticleSystem](../server/CParticleSystem.md) |  |
+| `0xbb3` | `m_bStartActive` | bool | [CParticleSystem](../server/CParticleSystem.md) |  |
+| `0xbb8` | `m_iszEffectName` | CUtlSymbolLarge | [CParticleSystem](../server/CParticleSystem.md) |  |
+| `0xbc0` | `m_iszControlPointNames` | CUtlSymbolLarge[64] | [CParticleSystem](../server/CParticleSystem.md) |  |
+| `0xdc0` | `m_nDataCP` | int32 | [CParticleSystem](../server/CParticleSystem.md) |  |
+| `0xdc4` | `m_vecDataCPValue` | Vector | [CParticleSystem](../server/CParticleSystem.md) |  |
+| `0xdd0` | `m_nTintCP` | int32 | [CParticleSystem](../server/CParticleSystem.md) |  |
+| `0xdd4` | `m_clrTint` | Color | [CParticleSystem](../server/CParticleSystem.md) |  |
+| `0xdd8` | `m_flAlphaScale` | float32 |  |  |
+| `0xddc` | `m_flRadiusScale` | float32 |  |  |
+| `0xde0` | `m_flSelfIllumScale` | float32 |  |  |
+| `0xde4` | `m_ColorTint` | Color |  |  |
+| `0xde8` | `m_hTextureOverride` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |

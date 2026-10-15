@@ -18,6 +18,7 @@ classDiagram
     CNmBlendTaskBase <|-- CNmBlendTask
     CNmPoseTask <|-- CNmBlendTaskBase
     CNmEvent <|-- CNmBodyGroupEvent
+    `CNmPassthroughNode::CDefinition` <|-- `CNmBodyGroupNode::CDefinition`
     `CNmBoneMaskValueNode::CDefinition` <|-- `CNmBoneMaskBlendNode::CDefinition`
     `CNmBoneMaskValueNode::CDefinition` <|-- `CNmBoneMaskNode::CDefinition`
     `CNmBoneMaskValueNode::CDefinition` <|-- `CNmBoneMaskSelectorNode::CDefinition`
@@ -31,16 +32,20 @@ classDiagram
     CNmPoseTask <|-- CNmCachedPoseWriteTask
     `CNmTargetValueNode::CDefinition` <|-- `CNmCachedTargetNode::CDefinition`
     `CNmVectorValueNode::CDefinition` <|-- `CNmCachedVectorNode::CDefinition`
+    CNmEvent <|-- CNmCameraDOFEvent
+    CNmEvent <|-- CNmCameraFOVEvent
     `CNmPassthroughNode::CDefinition` <|-- `CNmChainLookatNode::CDefinition`
     CNmPoseTask <|-- CNmChainLookatTask
     `CNmClipReferenceNode::CDefinition` <|-- `CNmClipNode::CDefinition`
     `CNmPoseNode::CDefinition` <|-- `CNmClipReferenceNode::CDefinition`
     `CNmClipReferenceNode::CDefinition` <|-- `CNmClipSelectorNode::CDefinition`
+    CNmEvent <|-- CNmClothEvent
     `CNmBoolValueNode::CDefinition` <|-- `CNmConstBoolNode::CDefinition`
     `CNmFloatValueNode::CDefinition` <|-- `CNmConstFloatNode::CDefinition`
     `CNmIDValueNode::CDefinition` <|-- `CNmConstIDNode::CDefinition`
     `CNmTargetValueNode::CDefinition` <|-- `CNmConstTargetNode::CDefinition`
     `CNmVectorValueNode::CDefinition` <|-- `CNmConstVectorNode::CDefinition`
+    CNmEvent <|-- CNmContactEvent
     `CNmBoolValueNode::CDefinition` <|-- `CNmControlParameterBoolNode::CDefinition`
     `CNmFloatValueNode::CDefinition` <|-- `CNmControlParameterFloatNode::CDefinition`
     `CNmIDValueNode::CDefinition` <|-- `CNmControlParameterIDNode::CDefinition`
@@ -132,6 +137,7 @@ classDiagram
     CNmEvent <|-- CNmTargetWarpEvent
     `CNmPoseNode::CDefinition` <|-- `CNmTargetWarpNode::CDefinition`
     `CNmBoolValueNode::CDefinition` <|-- `CNmTimeConditionNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmTimeControlledClipNode::CDefinition`
     CNmEvent <|-- CNmTransitionEvent
     `CNmBoolValueNode::CDefinition` <|-- `CNmTransitionEventConditionNode::CDefinition`
     `CNmPoseNode::CDefinition` <|-- `CNmTransitionNode::CDefinition`
@@ -154,6 +160,7 @@ classDiagram
     CNmPoseTask <|-- CNmZeroPoseTask
     `CNmBlend1DNode::CDefinition` *-- `CNmParameterizedBlendNode::Parameterization_t`
     CNmBodyGroupEvent *-- CNmEventTargetEntity_t
+    `CNmBodyGroupNode::CDefinition` *-- CNmBodyGroupEvent
     `CNmCachedBoolNode::CDefinition` *-- NmCachedValueMode_t
     `CNmCachedFloatNode::CDefinition` *-- NmCachedValueMode_t
     `CNmCachedIDNode::CDefinition` *-- NmCachedValueMode_t
@@ -164,7 +171,9 @@ classDiagram
     CNmClip *-- CNmSyncTrack
     CNmClip *-- CNmRootMotionData
     CNmClip *-- `CNmClip::ModelSpaceSamplingChainLink_t`
+    CNmClothEvent *-- `CNmClothEvent::Type_t`
     `CNmConstTargetNode::CDefinition` *-- CNmTarget
+    CNmContactEvent *-- NmContactAudioInfo_t
     `CNmCurrentSyncEventNode::CDefinition` *-- `CNmCurrentSyncEventNode::InfoType_t`
     CNmEntityAttributeEventBase *-- CNmEventTargetEntity_t
     CNmEvent *-- NmPercent_t
@@ -202,6 +211,7 @@ classDiagram
     `CNmLayerBlendNode::CDefinition` *-- `CNmLayerBlendNode::LayerDefinition_t`
     `CNmLayerBlendNode::LayerDefinition_t` *-- NmPoseBlendMode_t
     CNmMaterialAttributeEvent *-- CNmEventTargetEntity_t
+    `CNmOrientationWarpNode::CDefinition` *-- `CNmOrientationWarpNode::AlignmentMode_t`
     `CNmOrientationWarpNode::CDefinition` *-- `CNmRootMotionData::SamplingMode_t`
     `CNmParameterizedBlendNode::Parameterization_t` *-- `CNmParameterizedBlendNode::BlendRange_t`
     CNmParticleEvent *-- CNmEventRelevance_t
@@ -211,6 +221,8 @@ classDiagram
     CNmSkeleton *-- NmBoneMaskSetDefinition_t
     CNmSkeleton *-- `CNmSkeleton::SecondarySkeleton_t`
     CNmSkeleton *-- CNmFloatChannelSet_t
+    CNmSkeleton *-- `CNmSkeleton::ContactConfig_t`
+    `CNmSkeleton::ContactConfig_t` *-- NmContactAudioInfo_t
     CNmSoundEvent *-- CNmEventRelevance_t
     CNmSoundEvent *-- `CNmSoundEvent::Position_t`
     `CNmStateMachineNode::CDefinition` *-- `CNmStateMachineNode::StateDefinition_t`
@@ -236,8 +248,6 @@ classDiagram
     `CNmTransitionNode::CDefinition` *-- NmEasingOperation_t
     `CNmTransitionNode::CDefinition` *-- NmRootMotionBlendMode_t
     `CNmTwoBoneIKNode::CDefinition` *-- NmIKBlendMode_t
-    CNmTwoBoneIKTask *-- CNmTarget
-    CNmTwoBoneIKTask *-- NmIKBlendMode_t
     `CNmVectorInfoNode::CDefinition` *-- `CNmVectorInfoNode::Info_t`
     NmBoneMaskSetDefinition_t *-- CNmBoneWeightList
     NmCompressionSettings_t *-- `NmCompressionSettings_t::QuantizationRange_t`

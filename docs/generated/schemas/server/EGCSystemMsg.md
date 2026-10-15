@@ -8,7 +8,7 @@ kind: enum
 
 # EGCSystemMsg
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** server
 
@@ -38,7 +38,7 @@ kind: enum
 | `k_EGCMsgLookupAccountFromInput` | 66 |  |
 | `k_EGCMsgSendHTTPRequest` | 67 |  |
 | `k_EGCMsgSendHTTPRequestResponse` | 68 |  |
-| `k_EGCMsgPreTestSetup` | 69 |  |
+| `k_EGCMsgPreTestSetup_DEPRECATED` | 69 |  |
 | `k_EGCMsgRecordSupportAction` | 70 |  |
 | `k_EGCMsgGetAccountDetails_DEPRECATED` | 71 |  |
 | `k_EGCMsgReceiveInterAppMessage` | 73 |  |
@@ -108,3 +108,10 @@ kind: enum
 | `k_EGCMsgRecurringSubscriptionStatusChange` | 530 |  |
 | `k_EGCMsgDirectServiceMethod` | 531 |  |
 | `k_EGCMsgDirectServiceMethodResponse` | 532 |  |
+| `k_EGCMsgAppCheersReceived` | 533 |  |
+| `k_EGCMsgAppCheersGetAllowedTypes` | 534 |  |
+| `k_EGCMsgAppCheersGetAllowedTypesResponse` | 535 |  |
+| `k_EGCMsgReportMetrics` | 536 |  |
+| `k_EGCMsgReportMetricsResponse` | 537 |  |
+| `k_EGCMsgGetClanDetails` | 538 |  |
+| `k_EGCMsgGetClanDetailsResponse` | 539 |  |

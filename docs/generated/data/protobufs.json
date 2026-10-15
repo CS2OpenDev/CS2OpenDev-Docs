@@ -1471,111 +1471,6 @@
               "default": "",
               "description": "",
               "label": "optional",
-              "name": "strange_part_item_id",
-              "notes": "",
-              "number": 1,
-              "type": "uint64",
-              "type_file": null,
-              "type_kind": "scalar"
-            },
-            {
-              "default": "",
-              "description": "",
-              "label": "optional",
-              "name": "item_item_id",
-              "notes": "",
-              "number": 2,
-              "type": "uint64",
-              "type_file": null,
-              "type_kind": "scalar"
-            }
-          ],
-          "name": "CMsgApplyStrangePart",
-          "nested_enums": [],
-          "nested_messages": [],
-          "notes": "",
-          "oneofs": [],
-          "parent": null,
-          "qualified": "CMsgApplyStrangePart",
-          "wire_ids": []
-        },
-        {
-          "description": "",
-          "fields": [
-            {
-              "default": "",
-              "description": "",
-              "label": "optional",
-              "name": "upgrade_item_id",
-              "notes": "",
-              "number": 1,
-              "type": "uint64",
-              "type_file": null,
-              "type_kind": "scalar"
-            },
-            {
-              "default": "",
-              "description": "",
-              "label": "optional",
-              "name": "pennant_item_id",
-              "notes": "",
-              "number": 2,
-              "type": "uint64",
-              "type_file": null,
-              "type_kind": "scalar"
-            }
-          ],
-          "name": "CMsgApplyPennantUpgrade",
-          "nested_enums": [],
-          "nested_messages": [],
-          "notes": "",
-          "oneofs": [],
-          "parent": null,
-          "qualified": "CMsgApplyPennantUpgrade",
-          "wire_ids": []
-        },
-        {
-          "description": "",
-          "fields": [
-            {
-              "default": "",
-              "description": "",
-              "label": "optional",
-              "name": "essence_item_id",
-              "notes": "",
-              "number": 1,
-              "type": "uint64",
-              "type_file": null,
-              "type_kind": "scalar"
-            },
-            {
-              "default": "",
-              "description": "",
-              "label": "optional",
-              "name": "egg_item_id",
-              "notes": "",
-              "number": 2,
-              "type": "uint64",
-              "type_file": null,
-              "type_kind": "scalar"
-            }
-          ],
-          "name": "CMsgApplyEggEssence",
-          "nested_enums": [],
-          "nested_messages": [],
-          "notes": "",
-          "oneofs": [],
-          "parent": null,
-          "qualified": "CMsgApplyEggEssence",
-          "wire_ids": []
-        },
-        {
-          "description": "",
-          "fields": [
-            {
-              "default": "",
-              "description": "",
-              "label": "optional",
               "name": "def_index",
               "notes": "",
               "number": 1,
@@ -1892,6 +1787,122 @@
               "default": "",
               "description": "",
               "label": "optional",
+              "name": "item_id",
+              "notes": "",
+              "number": 1,
+              "type": "uint64",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CMsgDeleteItem",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgDeleteItem",
+          "wire_ids": []
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "tool_item_id",
+              "notes": "",
+              "number": 1,
+              "type": "uint64",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "subject_item_id",
+              "notes": "",
+              "number": 2,
+              "type": "uint64",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "attr_def",
+              "notes": "",
+              "number": 3,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "attr_value",
+              "notes": "",
+              "number": 4,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CMsgModifyItemStringAttr",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgModifyItemStringAttr",
+          "wire_ids": []
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "recipe_def",
+              "notes": "",
+              "number": 1,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "repeated",
+              "name": "craft_items",
+              "notes": "",
+              "number": 2,
+              "type": "uint64",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CMsgCraftItemsRequest",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgCraftItemsRequest",
+          "wire_ids": []
+        },
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
               "name": "account_id",
               "notes": "",
               "number": 1,
@@ -2159,17 +2170,6 @@
               "name": "gift__potential_targets",
               "notes": "",
               "number": 3,
-              "type": "uint32",
-              "type_file": null,
-              "type_kind": "scalar"
-            },
-            {
-              "default": "",
-              "description": "",
-              "label": "optional",
-              "name": "duel__class_lock",
-              "notes": "",
-              "number": 4,
               "type": "uint32",
               "type_file": null,
               "type_kind": "scalar"
@@ -2616,63 +2616,6 @@
               "default": "",
               "description": "",
               "label": "optional",
-              "name": "notification_title_localization_key",
-              "notes": "",
-              "number": 1,
-              "type": "string",
-              "type_file": null,
-              "type_kind": "scalar"
-            },
-            {
-              "default": "",
-              "description": "",
-              "label": "optional",
-              "name": "notification_body_localization_key",
-              "notes": "",
-              "number": 2,
-              "type": "string",
-              "type_file": null,
-              "type_kind": "scalar"
-            },
-            {
-              "default": "",
-              "description": "",
-              "label": "repeated",
-              "name": "body_substring_keys",
-              "notes": "",
-              "number": 3,
-              "type": "string",
-              "type_file": null,
-              "type_kind": "scalar"
-            },
-            {
-              "default": "",
-              "description": "",
-              "label": "repeated",
-              "name": "body_substring_values",
-              "notes": "",
-              "number": 4,
-              "type": "string",
-              "type_file": null,
-              "type_kind": "scalar"
-            }
-          ],
-          "name": "CMsgGCClientDisplayNotification",
-          "nested_enums": [],
-          "nested_messages": [],
-          "notes": "",
-          "oneofs": [],
-          "parent": null,
-          "qualified": "CMsgGCClientDisplayNotification",
-          "wire_ids": []
-        },
-        {
-          "description": "",
-          "fields": [
-            {
-              "default": "",
-              "description": "",
-              "label": "optional",
               "name": "player_steamid",
               "notes": "",
               "number": 1,
@@ -2927,30 +2870,6 @@
           "oneofs": [],
           "parent": null,
           "qualified": "CSOEconItemEventTicket",
-          "wire_ids": []
-        },
-        {
-          "description": "",
-          "fields": [
-            {
-              "default": "",
-              "description": "",
-              "label": "optional",
-              "name": "item_def_index",
-              "notes": "",
-              "number": 1,
-              "type": "uint32",
-              "type_file": null,
-              "type_kind": "scalar"
-            }
-          ],
-          "name": "CMsgGCItemPreviewItemBoughtNotification",
-          "nested_enums": [],
-          "nested_messages": [],
-          "notes": "",
-          "oneofs": [],
-          "parent": null,
-          "qualified": "CMsgGCItemPreviewItemBoughtNotification",
           "wire_ids": []
         },
         {
@@ -3361,41 +3280,6 @@
           "oneofs": [],
           "parent": null,
           "qualified": "CMsgGCToGCDirtyMultipleSDOCache",
-          "wire_ids": []
-        },
-        {
-          "description": "",
-          "fields": [
-            {
-              "default": "",
-              "description": "",
-              "label": "optional",
-              "name": "collection_item_id",
-              "notes": "",
-              "number": 1,
-              "type": "uint64",
-              "type_file": null,
-              "type_kind": "scalar"
-            },
-            {
-              "default": "",
-              "description": "",
-              "label": "optional",
-              "name": "subject_item_id",
-              "notes": "",
-              "number": 2,
-              "type": "uint64",
-              "type_file": null,
-              "type_kind": "scalar"
-            }
-          ],
-          "name": "CMsgGCCollectItem",
-          "nested_enums": [],
-          "nested_messages": [],
-          "notes": "",
-          "oneofs": [],
-          "parent": null,
-          "qualified": "CMsgGCCollectItem",
           "wire_ids": []
         },
         {
@@ -4829,7 +4713,8 @@
       "description": "",
       "enums": [],
       "imports": [
-        "netmessages.proto"
+        "netmessages.proto",
+        "networkbasetypes.proto"
       ],
       "messages": [
         {
@@ -7976,6 +7861,17 @@
               "type": "uint32",
               "type_file": null,
               "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "repeated",
+              "name": "clan_tags",
+              "notes": "",
+              "number": 23,
+              "type": "string",
+              "type_file": null,
+              "type_kind": "scalar"
             }
           ],
           "name": "CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve",
@@ -8356,8 +8252,8 @@
             {
               "default": "",
               "description": "",
-              "label": "optional",
-              "name": "customname",
+              "label": "repeated",
+              "name": "customnames",
               "notes": "",
               "number": 11,
               "type": "string",
@@ -8493,6 +8389,28 @@
               "notes": "",
               "number": 23,
               "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "pet_food_expiration_date",
+              "notes": "",
+              "number": 24,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "blobdata",
+              "notes": "",
+              "number": 25,
+              "type": "bytes",
               "type_file": null,
               "type_kind": "scalar"
             }
@@ -15289,7 +15207,7 @@
               "number": 1004
             },
             {
-              "name": "k_EMsgGCVerifyCacheSubscription",
+              "name": "k_EMsgGCVerifyCacheSubscription_DEPRECATED",
               "number": 1005
             },
             {
@@ -15305,23 +15223,23 @@
               "number": 1008
             },
             {
-              "name": "k_EMsgGCPaintItem",
+              "name": "k_EMsgGCPaintItem_DEPRECATED",
               "number": 1009
             },
             {
-              "name": "k_EMsgGCPaintItemResponse",
+              "name": "k_EMsgGCPaintItemResponse_DEPRECATED",
               "number": 1010
             },
             {
-              "name": "k_EMsgGCGoldenWrenchBroadcast",
+              "name": "k_EMsgGCGoldenWrenchBroadcast_DEPRECATED",
               "number": 1011
             },
             {
-              "name": "k_EMsgGCMOTDRequest",
+              "name": "k_EMsgGCMOTDRequest_DEPRECATED",
               "number": 1012
             },
             {
-              "name": "k_EMsgGCMOTDRequestResponse",
+              "name": "k_EMsgGCMOTDRequestResponse_DEPRECATED",
               "number": 1013
             },
             {
@@ -15361,11 +15279,11 @@
               "number": 1022
             },
             {
-              "name": "k_EMsgGCCustomizeItemTexture",
+              "name": "k_EMsgGCCustomizeItemTexture_DEPRECATED",
               "number": 1023
             },
             {
-              "name": "k_EMsgGCCustomizeItemTextureResponse",
+              "name": "k_EMsgGCCustomizeItemTextureResponse_DEPRECATED",
               "number": 1024
             },
             {
@@ -15385,43 +15303,43 @@
               "number": 1030
             },
             {
-              "name": "k_EMsgGCRemoveItemPaint",
+              "name": "k_EMsgGCRemoveItemPaint_DEPRECATED",
               "number": 1031
             },
             {
-              "name": "k_EMsgGCGiftWrapItem",
+              "name": "k_EMsgGCGiftWrapItem_DEPRECATED",
               "number": 1032
             },
             {
-              "name": "k_EMsgGCGiftWrapItemResponse",
+              "name": "k_EMsgGCGiftWrapItemResponse_DEPRECATED",
               "number": 1033
             },
             {
-              "name": "k_EMsgGCDeliverGift",
+              "name": "k_EMsgGCDeliverGift_DEPRECATED",
               "number": 1034
             },
             {
-              "name": "k_EMsgGCDeliverGiftResponseGiver",
+              "name": "k_EMsgGCDeliverGiftResponseGiver_DEPRECATED",
               "number": 1035
             },
             {
-              "name": "k_EMsgGCDeliverGiftResponseReceiver",
+              "name": "k_EMsgGCDeliverGiftResponseReceiver_DEPRECATED",
               "number": 1036
             },
             {
-              "name": "k_EMsgGCUnwrapGiftRequest",
+              "name": "k_EMsgGCUnwrapGiftRequest_DEPRECATED",
               "number": 1037
             },
             {
-              "name": "k_EMsgGCUnwrapGiftResponse",
+              "name": "k_EMsgGCUnwrapGiftResponse_DEPRECATED",
               "number": 1038
             },
             {
-              "name": "k_EMsgGCSetItemStyle",
+              "name": "k_EMsgGCSetItemStyle_DEPRECATED",
               "number": 1039
             },
             {
-              "name": "k_EMsgGCUsedClaimCodeItem",
+              "name": "k_EMsgGCUsedClaimCodeItem_DEPRECATED",
               "number": 1040
             },
             {
@@ -15433,19 +15351,19 @@
               "number": 1042
             },
             {
-              "name": "k_EMsgGCLookupAccount",
+              "name": "k_EMsgGCLookupAccount_DEPRECATED",
               "number": 1043
             },
             {
-              "name": "k_EMsgGCLookupAccountResponse",
+              "name": "k_EMsgGCLookupAccountResponse_DEPRECATED",
               "number": 1044
             },
             {
-              "name": "k_EMsgGCLookupAccountName",
+              "name": "k_EMsgGCLookupAccountName_DEPRECATED",
               "number": 1045
             },
             {
-              "name": "k_EMsgGCLookupAccountNameResponse",
+              "name": "k_EMsgGCLookupAccountNameResponse_DEPRECATED",
               "number": 1046
             },
             {
@@ -15453,27 +15371,27 @@
               "number": 1049
             },
             {
-              "name": "k_EMsgGCRemoveCustomTexture",
+              "name": "k_EMsgGCRemoveCustomTexture_DEPRECATED",
               "number": 1051
             },
             {
-              "name": "k_EMsgGCRemoveCustomTextureResponse",
+              "name": "k_EMsgGCRemoveCustomTextureResponse_DEPRECATED",
               "number": 1052
             },
             {
-              "name": "k_EMsgGCRemoveMakersMark",
+              "name": "k_EMsgGCRemoveMakersMark_DEPRECATED",
               "number": 1053
             },
             {
-              "name": "k_EMsgGCRemoveMakersMarkResponse",
+              "name": "k_EMsgGCRemoveMakersMarkResponse_DEPRECATED",
               "number": 1054
             },
             {
-              "name": "k_EMsgGCRemoveUniqueCraftIndex",
+              "name": "k_EMsgGCRemoveUniqueCraftIndex_DEPRECATED",
               "number": 1055
             },
             {
-              "name": "k_EMsgGCRemoveUniqueCraftIndexResponse",
+              "name": "k_EMsgGCRemoveUniqueCraftIndexResponse_DEPRECATED",
               "number": 1056
             },
             {
@@ -15485,7 +15403,7 @@
               "number": 1058
             },
             {
-              "name": "k_EMsgGCCollectItem",
+              "name": "k_EMsgGCCollectItem_DEPRECATED",
               "number": 1061
             },
             {
@@ -15505,7 +15423,7 @@
               "number": 1068
             },
             {
-              "name": "k_EMsgGCApplyConsumableEffects",
+              "name": "k_EMsgGCApplyConsumableEffects_DEPRECATED",
               "number": 1069
             },
             {
@@ -15517,11 +15435,11 @@
               "number": 1071
             },
             {
-              "name": "k_EMsgGCClientDisplayNotification",
+              "name": "k_EMsgGCClientDisplayNotification_DEPRECATED",
               "number": 1072
             },
             {
-              "name": "k_EMsgGCApplyStrangePart",
+              "name": "k_EMsgGCApplyStrangePart_DEPRECATED",
               "number": 1073
             },
             {
@@ -15533,7 +15451,7 @@
               "number": 1075
             },
             {
-              "name": "k_EMsgGCApplyPennantUpgrade",
+              "name": "k_EMsgGCApplyPennantUpgrade_DEPRECATED",
               "number": 1076
             },
             {
@@ -15541,23 +15459,23 @@
               "number": 1077
             },
             {
-              "name": "k_EMsgGCApplyEggEssence",
+              "name": "k_EMsgGCApplyEggEssence_DEPRECATED",
               "number": 1078
             },
             {
-              "name": "k_EMsgGCNameEggEssenceResponse",
+              "name": "k_EMsgGCNameEggEssenceResponse_DEPRECATED",
               "number": 1079
             },
             {
-              "name": "k_EMsgGCPaintKitItem",
+              "name": "k_EMsgGCPaintKitItem_DEPRECATED",
               "number": 1080
             },
             {
-              "name": "k_EMsgGCPaintKitBaseItem",
+              "name": "k_EMsgGCPaintKitBaseItem_DEPRECATED",
               "number": 1081
             },
             {
-              "name": "k_EMsgGCPaintKitItemResponse",
+              "name": "k_EMsgGCPaintKitItemResponse_DEPRECATED",
               "number": 1082
             },
             {
@@ -15565,11 +15483,11 @@
               "number": 1083
             },
             {
-              "name": "k_EMsgGCUnlockItemStyle",
+              "name": "k_EMsgGCUnlockItemStyle_DEPRECATED",
               "number": 1084
             },
             {
-              "name": "k_EMsgGCUnlockItemStyleResponse",
+              "name": "k_EMsgGCUnlockItemStyleResponse_DEPRECATED",
               "number": 1085
             },
             {
@@ -15609,43 +15527,43 @@
               "number": 1094
             },
             {
-              "name": "k_EMsgGCServerBrowser_FavoriteServer",
+              "name": "k_EMsgGCServerBrowser_FavoriteServer_DEPRECATED",
               "number": 1601
             },
             {
-              "name": "k_EMsgGCServerBrowser_BlacklistServer",
+              "name": "k_EMsgGCServerBrowser_BlacklistServer_DEPRECATED",
               "number": 1602
             },
             {
-              "name": "k_EMsgGCServerRentalsBase",
+              "name": "k_EMsgGCServerRentalsBase_DEPRECATED",
               "number": 1700
             },
             {
-              "name": "k_EMsgGCItemPreviewCheckStatus",
+              "name": "k_EMsgGCItemPreviewCheckStatus_DEPRECATED",
               "number": 1701
             },
             {
-              "name": "k_EMsgGCItemPreviewStatusResponse",
+              "name": "k_EMsgGCItemPreviewStatusResponse_DEPRECATED",
               "number": 1702
             },
             {
-              "name": "k_EMsgGCItemPreviewRequest",
+              "name": "k_EMsgGCItemPreviewRequest_DEPRECATED",
               "number": 1703
             },
             {
-              "name": "k_EMsgGCItemPreviewRequestResponse",
+              "name": "k_EMsgGCItemPreviewRequestResponse_DEPRECATED",
               "number": 1704
             },
             {
-              "name": "k_EMsgGCItemPreviewExpire",
+              "name": "k_EMsgGCItemPreviewExpire_DEPRECATED",
               "number": 1705
             },
             {
-              "name": "k_EMsgGCItemPreviewExpireNotification",
+              "name": "k_EMsgGCItemPreviewExpireNotification_DEPRECATED",
               "number": 1706
             },
             {
-              "name": "k_EMsgGCItemPreviewItemBoughtNotification",
+              "name": "k_EMsgGCItemPreviewItemBoughtNotification_DEPRECATED",
               "number": 1707
             },
             {
@@ -15657,7 +15575,7 @@
               "number": 2002
             },
             {
-              "name": "k_EMsgGCDev_PaintKitDropItem",
+              "name": "k_EMsgGCDev_PaintKitDropItem_DEPRECATED",
               "number": 2003
             },
             {
@@ -15697,11 +15615,11 @@
               "number": 2507
             },
             {
-              "name": "k_EMsgGCStorePurchaseQueryTxn",
+              "name": "k_EMsgGCStorePurchaseQueryTxn_DEPRECATED",
               "number": 2508
             },
             {
-              "name": "k_EMsgGCStorePurchaseQueryTxnResponse",
+              "name": "k_EMsgGCStorePurchaseQueryTxnResponse_DEPRECATED",
               "number": 2509
             },
             {
@@ -15850,37 +15768,6 @@
             {
               "name": "k_EGCMsgCommitUnfinalized",
               "number": 10
-            }
-          ]
-        },
-        {
-          "name": "EUnlockStyle",
-          "parent": null,
-          "qualified": "EUnlockStyle",
-          "values": [
-            {
-              "name": "k_UnlockStyle_Succeeded",
-              "number": 0
-            },
-            {
-              "name": "k_UnlockStyle_Failed_PreReq",
-              "number": 1
-            },
-            {
-              "name": "k_UnlockStyle_Failed_CantAfford",
-              "number": 2
-            },
-            {
-              "name": "k_UnlockStyle_Failed_CantCommit",
-              "number": 3
-            },
-            {
-              "name": "k_UnlockStyle_Failed_CantLockCache",
-              "number": 4
-            },
-            {
-              "name": "k_UnlockStyle_Failed_CantAffordAttrib",
-              "number": 5
             }
           ]
         },
@@ -26168,7 +26055,7 @@
               "number": 68
             },
             {
-              "name": "k_EGCMsgPreTestSetup",
+              "name": "k_EGCMsgPreTestSetup_DEPRECATED",
               "number": 69
             },
             {
@@ -26446,6 +26333,34 @@
             {
               "name": "k_EGCMsgDirectServiceMethodResponse",
               "number": 532
+            },
+            {
+              "name": "k_EGCMsgAppCheersReceived",
+              "number": 533
+            },
+            {
+              "name": "k_EGCMsgAppCheersGetAllowedTypes",
+              "number": 534
+            },
+            {
+              "name": "k_EGCMsgAppCheersGetAllowedTypesResponse",
+              "number": 535
+            },
+            {
+              "name": "k_EGCMsgReportMetrics",
+              "number": 536
+            },
+            {
+              "name": "k_EGCMsgReportMetricsResponse",
+              "number": 537
+            },
+            {
+              "name": "k_EGCMsgGetClanDetails",
+              "number": 538
+            },
+            {
+              "name": "k_EGCMsgGetClanDetailsResponse",
+              "number": 539
             }
           ]
         },
@@ -34869,6 +34784,53 @@
       "description": "",
       "enums": [
         {
+          "name": "EGCPetMsg",
+          "parent": null,
+          "qualified": "EGCPetMsg",
+          "values": [
+            {
+              "name": "k_EMsgGCAckPetEvent",
+              "number": 2538
+            }
+          ]
+        }
+      ],
+      "imports": [],
+      "messages": [
+        {
+          "description": "",
+          "fields": [
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "pet_item_id",
+              "notes": "",
+              "number": 1,
+              "type": "uint64",
+              "type_file": null,
+              "type_kind": "scalar"
+            }
+          ],
+          "name": "CMsgAckPetEvent",
+          "nested_enums": [],
+          "nested_messages": [],
+          "notes": "",
+          "oneofs": [],
+          "parent": null,
+          "qualified": "CMsgAckPetEvent",
+          "wire_ids": []
+        }
+      ],
+      "name": "pet_gcmessages.proto",
+      "notes": "",
+      "package": null,
+      "stem": "pet_gcmessages"
+    },
+    {
+      "description": "",
+      "enums": [
+        {
           "name": "ESource2PlayStatsFieldType",
           "parent": null,
           "qualified": "ESource2PlayStatsFieldType",
@@ -35447,6 +35409,94 @@
               "default": "",
               "description": "",
               "label": "optional",
+              "name": "netframes_size_uncompressed_p50",
+              "notes": "",
+              "number": 12,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "netframes_size_uncompressed_p95",
+              "notes": "",
+              "number": 13,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "netframes_size_uncompressed_p99",
+              "notes": "",
+              "number": 14,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "netframes_size_uncompressed_max",
+              "notes": "",
+              "number": 15,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "netframes_msgs_p50",
+              "notes": "",
+              "number": 16,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "netframes_msgs_p95",
+              "notes": "",
+              "number": 17,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "netframes_msgs_p99",
+              "notes": "",
+              "number": 18,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "netframes_msgs_max",
+              "notes": "",
+              "number": 19,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
               "name": "enginemsgs_total",
               "notes": "",
               "number": 20,
@@ -35857,6 +35907,138 @@
               "name": "net_ping_p95",
               "notes": "",
               "number": 82,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "msgproc_usec_p50",
+              "notes": "",
+              "number": 90,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "msgproc_usec_p95",
+              "notes": "",
+              "number": 91,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "msgproc_usec_p99",
+              "notes": "",
+              "number": 92,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "msgproc_usec_max",
+              "notes": "",
+              "number": 93,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "msgproc_usec_avg_p50",
+              "notes": "",
+              "number": 94,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "msgproc_usec_avg_p95",
+              "notes": "",
+              "number": 95,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "msgproc_usec_avg_p99",
+              "notes": "",
+              "number": 96,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "msgproc_usec_avg_max",
+              "notes": "",
+              "number": 97,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "queuedmsgs_p50",
+              "notes": "",
+              "number": 100,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "queuedmsgs_p95",
+              "notes": "",
+              "number": 101,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "queuedmsgs_p99",
+              "notes": "",
+              "number": 102,
+              "type": "uint32",
+              "type_file": null,
+              "type_kind": "scalar"
+            },
+            {
+              "default": "",
+              "description": "",
+              "label": "optional",
+              "name": "queuedmsgs_max",
+              "notes": "",
+              "number": 103,
               "type": "uint32",
               "type_file": null,
               "type_kind": "scalar"
@@ -61180,15 +61362,13 @@
     "CLC_Messages": "netmessages.proto",
     "CLocalizationToken": "steammessages_base.proto",
     "CMsgAccountDetails": "gcsdk_gcmessages.proto",
+    "CMsgAckPetEvent": "pet_gcmessages.proto",
     "CMsgAcknowledgeRentalExpiration": "base_gcmessages.proto",
     "CMsgAdjustEquipSlot": "base_gcmessages.proto",
     "CMsgAdjustEquipSlots": "base_gcmessages.proto",
     "CMsgAppRights": "steammessages_base.proto",
-    "CMsgApplyEggEssence": "base_gcmessages.proto",
-    "CMsgApplyPennantUpgrade": "base_gcmessages.proto",
     "CMsgApplyStatTrakSwap": "base_gcmessages.proto",
     "CMsgApplySticker": "base_gcmessages.proto",
-    "CMsgApplyStrangePart": "base_gcmessages.proto",
     "CMsgAuthTicket": "steammessages_base.proto",
     "CMsgCasketItem": "econ_gcmessages.proto",
     "CMsgClearDecalsForEntityEvent": "gameevents.proto",
@@ -61201,6 +61381,8 @@
     "CMsgClothStiffenAnimEvent": "gameevents.proto",
     "CMsgConnectionStatus": "gcsdk_gcmessages.proto",
     "CMsgConsumableExhausted": "base_gcmessages.proto",
+    "CMsgCraftItemsRequest": "base_gcmessages.proto",
+    "CMsgDeleteItem": "base_gcmessages.proto",
     "CMsgDevNewItemRequest": "base_gcmessages.proto",
     "CMsgEffectData": "te.proto",
     "CMsgGCBannedWord": "base_gcmessages.proto",
@@ -61210,9 +61392,7 @@
     "CMsgGCCStrike15_ClientDeepStats.DeepStatsMatch": "cstrike15_gcmessages.proto",
     "CMsgGCCStrike15_ClientDeepStats.DeepStatsRange": "cstrike15_gcmessages.proto",
     "CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve": "cstrike15_gcmessages.proto",
-    "CMsgGCClientDisplayNotification": "base_gcmessages.proto",
     "CMsgGCClientVersionUpdated": "base_gcmessages.proto",
-    "CMsgGCCollectItem": "base_gcmessages.proto",
     "CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded": "cstrike15_gcmessages.proto",
     "CMsgGCDev_SchemaReservationRequest": "econ_gcmessages.proto",
     "CMsgGCError": "base_gcmessages.proto",
@@ -61223,7 +61403,6 @@
     "CMsgGCHVacVerificationChange": "gcsystemmsgs.proto",
     "CMsgGCIncrementKillCountResponse": "base_gcmessages.proto",
     "CMsgGCItemCustomizationNotification": "econ_gcmessages.proto",
-    "CMsgGCItemPreviewItemBoughtNotification": "base_gcmessages.proto",
     "CMsgGCMultiplexMessage": "gcsdk_gcmessages.proto",
     "CMsgGCMultiplexMessage_Response": "gcsdk_gcmessages.proto",
     "CMsgGCNameItemNotification": "base_gcmessages.proto",
@@ -61271,6 +61450,7 @@
     "CMsgLANServerAvailable": "base_gcmessages.proto",
     "CMsgLeaveParty": "base_gcmessages.proto",
     "CMsgModifyItemAttribute": "base_gcmessages.proto",
+    "CMsgModifyItemStringAttr": "base_gcmessages.proto",
     "CMsgMulti": "steammessages_base.proto",
     "CMsgOpenCrate": "base_gcmessages.proto",
     "CMsgPartyInviteResponse": "base_gcmessages.proto",
@@ -61757,6 +61937,7 @@
     "EGCItemCustomizationNotification": "econ_gcmessages.proto",
     "EGCItemMsg": "econ_gcmessages.proto",
     "EGCMsgResponse": "econ_gcmessages.proto",
+    "EGCPetMsg": "pet_gcmessages.proto",
     "EGCSystemMsg": "gcsystemmsgs.proto",
     "EGCToGCMsg": "gcsystemmsgs.proto",
     "EHapticPulseType": "usermessages.proto",
@@ -61776,7 +61957,6 @@
     "ESteamNetworkingUDPMsgID": "steamnetworkingsockets_messages_udp.proto",
     "ESteamReviewScore": "enums_clientserver.proto",
     "ETEProtobufIds": "te.proto",
-    "EUnlockStyle": "econ_gcmessages.proto",
     "GCClientLauncherType": "gcsdk_gcmessages.proto",
     "GCConnectionStatus": "gcsdk_gcmessages.proto",
     "GCProtoBufMsgSrc": "steammessages.proto",

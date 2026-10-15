@@ -8,7 +8,7 @@ kind: enum
 
 # ChoreoExternalAnimgraphControlState_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** server
 
@@ -16,11 +16,13 @@ kind: enum
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `eNone` | 0 | None |
-| `eExit` | 1 | Exit |
-| `eState01` | 2 | State_01 |
-| `eState02` | 3 | State_02 |
-| `eState03` | 4 | State_03 |
-| `eState04` | 5 | State_04 |
-| `eState05` | 6 | State_05 |
-| `eCount` | 7 |  |
+| `eNone` | 0 | eNone |
+| `eExit` | 1 | eExit |
+| `eFallbackExit` | 2 | eFallbackExit |
+| `eState01` | 3 | eState01 |
+| `eState02` | 4 | eState02 |
+| `eState03` | 5 | eState03 |
+| `eState04` | 6 | eState04 |
+| `eState05` | 7 | eState05 |
+| `eLooping` | 8 | eLooping |
+| `eCount` | 9 |  |

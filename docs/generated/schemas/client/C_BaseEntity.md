@@ -8,13 +8,13 @@ kind: class
 
 # C_BaseEntity
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 1536 bytes (`0x600`) · **Align:** 8 · **Module:** client
 
 **Inherits from:** [CEntityInstance](../entity2/CEntityInstance.md)
 
-**Derived by:** [CBasePlayerController](../client/CBasePlayerController.md), [CCSCustomHudLayout](../client/CCSCustomHudLayout.md), [CCSCustomPlayerCamera](../client/CCSCustomPlayerCamera.md), [CCS_PortraitWorldCallbackHandler](../client/CCS_PortraitWorldCallbackHandler.md), [CCitadelSoundOpvarSetOBB](../client/CCitadelSoundOpvarSetOBB.md), [CEnvSoundscape](../client/CEnvSoundscape.md), [CInfoWorldLayer](../client/CInfoWorldLayer.md), [CLogicalEntity](../client/CLogicalEntity.md), [CPathSimple](../client/CPathSimple.md), [CPointOrient](../client/CPointOrient.md), [CPulseGameBlackboard](../client/CPulseGameBlackboard.md), [CRagdollManager](../client/CRagdollManager.md), [CSkyboxReference](../client/CSkyboxReference.md), [C_BaseModelEntity](../client/C_BaseModelEntity.md), [C_CSGO_EndOfMatchLineupEndpoint](../client/C_CSGO_EndOfMatchLineupEndpoint.md), [C_CSGO_MapPreviewCameraPath](../client/C_CSGO_MapPreviewCameraPath.md), [C_CSGO_MapPreviewCameraPathNode](../client/C_CSGO_MapPreviewCameraPathNode.md), [C_CSGO_TeamPreviewCharacterPosition](../client/C_CSGO_TeamPreviewCharacterPosition.md), [C_CSMinimapBoundary](../client/C_CSMinimapBoundary.md), [C_CSPetPlacement](../client/C_CSPetPlacement.md), [C_CSPlayerResource](../client/C_CSPlayerResource.md), [C_ColorCorrection](../client/C_ColorCorrection.md), [C_CsmFovOverride](../client/C_CsmFovOverride.md), [C_EntityFlame](../client/C_EntityFlame.md), [C_EnvCombinedLightProbeVolume](../client/C_EnvCombinedLightProbeVolume.md), [C_EnvCubemap](../client/C_EnvCubemap.md), [C_EnvCubemapFog](../client/C_EnvCubemapFog.md), [C_EnvDetailController](../client/C_EnvDetailController.md), [C_EnvLightProbeVolume](../client/C_EnvLightProbeVolume.md), [C_EnvVolumetricFogController](../client/C_EnvVolumetricFogController.md), [C_EnvVolumetricFogVolume](../client/C_EnvVolumetricFogVolume.md), [C_EnvWind](../client/C_EnvWind.md), [C_EnvWindClientside](../client/C_EnvWindClientside.md), [C_EnvWindController](../client/C_EnvWindController.md), [C_EnvWindVolume](../client/C_EnvWindVolume.md), [C_FogController](../client/C_FogController.md), [C_GameRulesProxy](../client/C_GameRulesProxy.md), [C_GlobalLight](../client/C_GlobalLight.md), [C_GradientFog](../client/C_GradientFog.md), [C_HandleTest](../client/C_HandleTest.md), [C_InfoLadderDismount](../client/C_InfoLadderDismount.md), [C_InfoVisibilityBox](../client/C_InfoVisibilityBox.md), [C_MapVetoPickController](../client/C_MapVetoPickController.md), [C_PathParticleRope](../client/C_PathParticleRope.md), [C_PlayerPing](../client/C_PlayerPing.md), [C_PlayerVisibility](../client/C_PlayerVisibility.md), [C_PointCamera](../client/C_PointCamera.md), [C_PointEntity](../client/C_PointEntity.md), [C_PointValueRemapper](../client/C_PointValueRemapper.md), [C_PortraitWorldCallbackHandler](../client/C_PortraitWorldCallbackHandler.md), [C_SkyCamera](../client/C_SkyCamera.md), [C_SoundAreaEntityBase](../client/C_SoundAreaEntityBase.md), [C_SoundEventEntity](../client/C_SoundEventEntity.md), [C_SoundOpvarSetPointBase](../client/C_SoundOpvarSetPointBase.md), [C_Team](../client/C_Team.md), [C_TintController](../client/C_TintController.md), [C_TonemapController2](../client/C_TonemapController2.md), [C_VoteController](../client/C_VoteController.md)
+**Derived by:** [CBasePlayerController](../client/CBasePlayerController.md), [CCSCustomHudLayout](../client/CCSCustomHudLayout.md), [CCSCustomPlayerCamera](../client/CCSCustomPlayerCamera.md), [CCSObservableElement](../client/CCSObservableElement.md), [CCSRadarElement](../client/CCSRadarElement.md), [CCS_PortraitWorldCallbackHandler](../client/CCS_PortraitWorldCallbackHandler.md), [CCitadelSoundOpvarSetOBB](../client/CCitadelSoundOpvarSetOBB.md), [CEnvSoundscape](../client/CEnvSoundscape.md), [CInfoWorldLayer](../client/CInfoWorldLayer.md), [CLogicalEntity](../client/CLogicalEntity.md), [CPathSimple](../client/CPathSimple.md), [CPointOrient](../client/CPointOrient.md), [CPulseGameBlackboard](../client/CPulseGameBlackboard.md), [CRagdollManager](../client/CRagdollManager.md), [CSkyboxReference](../client/CSkyboxReference.md), [C_BaseModelEntity](../client/C_BaseModelEntity.md), [C_CSGO_EndOfMatchLineupEndpoint](../client/C_CSGO_EndOfMatchLineupEndpoint.md), [C_CSGO_MapPreviewCameraPath](../client/C_CSGO_MapPreviewCameraPath.md), [C_CSGO_MapPreviewCameraPathNode](../client/C_CSGO_MapPreviewCameraPathNode.md), [C_CSGO_TeamPreviewCharacterPosition](../client/C_CSGO_TeamPreviewCharacterPosition.md), [C_CSMinimapBoundary](../client/C_CSMinimapBoundary.md), [C_CSPetPlacement](../client/C_CSPetPlacement.md), [C_CSPlayerResource](../client/C_CSPlayerResource.md), [C_ColorCorrection](../client/C_ColorCorrection.md), [C_CsmFovOverride](../client/C_CsmFovOverride.md), [C_EntityFlame](../client/C_EntityFlame.md), [C_EnvCombinedLightProbeVolume](../client/C_EnvCombinedLightProbeVolume.md), [C_EnvCubemap](../client/C_EnvCubemap.md), [C_EnvCubemapFog](../client/C_EnvCubemapFog.md), [C_EnvDetailController](../client/C_EnvDetailController.md), [C_EnvLightProbeVolume](../client/C_EnvLightProbeVolume.md), [C_EnvShakeVolume](../client/C_EnvShakeVolume.md), [C_EnvVolumetricFogController](../client/C_EnvVolumetricFogController.md), [C_EnvVolumetricFogVolume](../client/C_EnvVolumetricFogVolume.md), [C_EnvWind](../client/C_EnvWind.md), [C_EnvWindClientside](../client/C_EnvWindClientside.md), [C_FogController](../client/C_FogController.md), [C_GameRulesProxy](../client/C_GameRulesProxy.md), [C_GlobalLight](../client/C_GlobalLight.md), [C_GradientFog](../client/C_GradientFog.md), [C_HandleTest](../client/C_HandleTest.md), [C_InfoLadderDismount](../client/C_InfoLadderDismount.md), [C_InfoVisibilityBox](../client/C_InfoVisibilityBox.md), [C_MapVetoPickController](../client/C_MapVetoPickController.md), [C_PathParticleRope](../client/C_PathParticleRope.md), [C_PlayerPing](../client/C_PlayerPing.md), [C_PlayerVisibility](../client/C_PlayerVisibility.md), [C_PointCamera](../client/C_PointCamera.md), [C_PointDeathcamBounds](../client/C_PointDeathcamBounds.md), [C_PointEntity](../client/C_PointEntity.md), [C_PointValueRemapper](../client/C_PointValueRemapper.md), [C_PortraitWorldCallbackHandler](../client/C_PortraitWorldCallbackHandler.md), [C_SkyCamera](../client/C_SkyCamera.md), [C_SkyCameraVolume](../client/C_SkyCameraVolume.md), [C_SkyCameraVolumeTarget](../client/C_SkyCameraVolumeTarget.md), [C_SoundAreaEntityBase](../client/C_SoundAreaEntityBase.md), [C_SoundEventBoxHelper](../client/C_SoundEventBoxHelper.md), [C_SoundEventEntity](../client/C_SoundEventEntity.md), [C_SoundOpvarSetPointBase](../client/C_SoundOpvarSetPointBase.md), [C_Team](../client/C_Team.md), [C_TintController](../client/C_TintController.md), [C_TonemapController2](../client/C_TonemapController2.md), [C_VoteController](../client/C_VoteController.md)
 
 **Relationships:**
 
@@ -24,6 +24,8 @@ classDiagram
     C_BaseEntity <|-- CBasePlayerController
     C_BaseEntity <|-- CCSCustomHudLayout
     C_BaseEntity <|-- CCSCustomPlayerCamera
+    C_BaseEntity <|-- CCSObservableElement
+    C_BaseEntity <|-- CCSRadarElement
     C_BaseEntity <|-- CCS_PortraitWorldCallbackHandler
     C_BaseEntity <|-- CCitadelSoundOpvarSetOBB
     C_BaseEntity <|-- CEnvSoundscape
@@ -50,12 +52,11 @@ classDiagram
     C_BaseEntity <|-- C_EnvCubemapFog
     C_BaseEntity <|-- C_EnvDetailController
     C_BaseEntity <|-- C_EnvLightProbeVolume
+    C_BaseEntity <|-- C_EnvShakeVolume
     C_BaseEntity <|-- C_EnvVolumetricFogController
     C_BaseEntity <|-- C_EnvVolumetricFogVolume
     C_BaseEntity <|-- C_EnvWind
     C_BaseEntity <|-- C_EnvWindClientside
-    C_BaseEntity <|-- C_EnvWindController
-    C_BaseEntity <|-- C_EnvWindVolume
     C_BaseEntity <|-- C_FogController
     C_BaseEntity <|-- C_GameRulesProxy
     C_BaseEntity <|-- C_GlobalLight
@@ -68,11 +69,15 @@ classDiagram
     C_BaseEntity <|-- C_PlayerPing
     C_BaseEntity <|-- C_PlayerVisibility
     C_BaseEntity <|-- C_PointCamera
+    C_BaseEntity <|-- C_PointDeathcamBounds
     C_BaseEntity <|-- C_PointEntity
     C_BaseEntity <|-- C_PointValueRemapper
     C_BaseEntity <|-- C_PortraitWorldCallbackHandler
     C_BaseEntity <|-- C_SkyCamera
+    C_BaseEntity <|-- C_SkyCameraVolume
+    C_BaseEntity <|-- C_SkyCameraVolumeTarget
     C_BaseEntity <|-- C_SoundAreaEntityBase
+    C_BaseEntity <|-- C_SoundEventBoxHelper
     C_BaseEntity <|-- C_SoundEventEntity
     C_BaseEntity <|-- C_SoundOpvarSetPointBase
     C_BaseEntity <|-- C_Team

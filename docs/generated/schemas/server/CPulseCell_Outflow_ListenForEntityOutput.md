@@ -8,13 +8,13 @@ kind: class
 
 # CPulseCell_Outflow_ListenForEntityOutput
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 312 bytes (`0x138`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 304 bytes (`0x130`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CPulseCell_BaseYieldingInflow](../pulse_runtime_lib/CPulseCell_BaseYieldingInflow.md)
 
-**Metadata:** `MPropertyDescription Waits for the entity to fire a specific output. By default, this listens once, but can be configured to listen until canceled.`, `MPropertyFriendlyName Wait for Entity Output`, `MPulseEditorHeaderIcon tools/images/pulse_editor/inflow_wait.png`, `MPulseEditorSubHeaderText { 'Output'='m_strEntityOutput' 'Param'='m_strEntityOutputParam' 'Until Canceled'='m_bListenUntilCanceled' }`
+**Metadata:** `MPropertyDescription Waits for the entity to fire a specific output. By default, this listens once, but can be configured to listen until canceled.`, `MPropertyFriendlyName Wait for Entity Output`, `MPulseEditorHeaderIcon tools/images/pulse_editor/inflow_wait.png`, `MPulseEditorSubHeaderText { 'Output'='m_strEntityOutput' 'Until Canceled'='m_bListenUntilCanceled' }`
 
 **Relationships:**
 
@@ -28,7 +28,7 @@ classDiagram
 
 ## Memory layout
 
-7 fields (4 declared here, 3 inherited). Offsets are absolute from the object base.
+6 fields (3 declared here, 3 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -37,8 +37,7 @@ classDiagram
 | `0x90` | `m_BaseFlow_WhileActive` | [CPulse_ResumePoint](../pulse_runtime_lib/CPulse_ResumePoint.md) | [CPulseCell_BaseYieldingInflow](../pulse_runtime_lib/CPulseCell_BaseYieldingInflow.md) | `MPulseFGDSkipField` |
 | `0xd8` | `m_OnFired` | [SignatureOutflow_Resume](../pulse_runtime_lib/SignatureOutflow_Resume.md) |  |  |
 | `0x120` | `m_strEntityOutput` | CGlobalSymbol |  |  |
-| `0x128` | `m_strEntityOutputParam` | CUtlString |  | `MPropertyDescription Optional output value to match if applicable. Leave empty to match any possible value for the output param.` |
-| `0x130` | `m_bListenUntilCanceled` | bool |  | `MPropertyDescription Continue listening for the output until canceled.` |
+| `0x128` | `m_bListenUntilCanceled` | bool |  | `MPropertyDescription Continue listening for the output until canceled.` |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -64,7 +63,6 @@ classDiagram
 		&quot;m_nInstruction&quot;: -1
 	},
 	&quot;m_strEntityOutput&quot;: &quot;&quot;,
-	&quot;m_strEntityOutputParam&quot;: &quot;&quot;,
 	&quot;m_bListenUntilCanceled&quot;: false
 }</pre>
 </details>

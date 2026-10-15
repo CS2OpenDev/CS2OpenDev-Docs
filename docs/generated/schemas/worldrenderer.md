@@ -5,7 +5,7 @@ module: worldrenderer
 
 # Module: worldrenderer
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 [📊 View UML Diagram](../diagrams/worldrenderer.md)
 
@@ -20,7 +20,7 @@ module: worldrenderer
 | [AggregateSceneObject_t](worldrenderer/AggregateSceneObject_t.md) | class | 120 | 11 |  |
 | [AggregateVertexAlbedoStreamOnDiskData_t](worldrenderer/AggregateVertexAlbedoStreamOnDiskData_t.md) | class | 16 | 1 |  |
 | [AggregateVertexEmissiveStreamOnDiskData_t](worldrenderer/AggregateVertexEmissiveStreamOnDiskData_t.md) | class | 16 | 1 |  |
-| [BakedLightingInfo_t](worldrenderer/BakedLightingInfo_t.md) | class | 72 | 11 |  |
+| [BakedLightingInfo_t](worldrenderer/BakedLightingInfo_t.md) | class | 72 | 12 |  |
 | [BakedLightingInfo_t::BakedShadowAssignment_t](worldrenderer/BakedLightingInfo_t.BakedShadowAssignment_t.md) | class | 12 | 3 |  |
 | [BaseSceneObjectOverride_t](worldrenderer/BaseSceneObjectOverride_t.md) | class | 4 | 1 |  |
 | [CVoxelVisibility](worldrenderer/CVoxelVisibility.md) | class | 160 | 13 |  |
@@ -31,11 +31,11 @@ module: worldrenderer
 | [ExtraVertexStreamOverride_t](worldrenderer/ExtraVertexStreamOverride_t.md) | class | 48 | 4 | [BaseSceneObjectOverride_t](worldrenderer/BaseSceneObjectOverride_t.md) |
 | [InfoForResourceTypeVMapResourceData_t](worldrenderer/InfoForResourceTypeVMapResourceData_t.md) | class | 1 | 0 |  |
 | [MaterialOverride_t](worldrenderer/MaterialOverride_t.md) | class | 40 | 4 | [BaseSceneObjectOverride_t](worldrenderer/BaseSceneObjectOverride_t.md) |
-| [NodeData_t](worldrenderer/NodeData_t.md) | class | 80 | 7 |  |
+| [NodeData_t](worldrenderer/NodeData_t.md) | class | 48 | 4 |  |
 | [PermEntityLumpData_t](worldrenderer/PermEntityLumpData_t.md) | class | 56 | 3 |  |
 | [RTProxyBLAS_t](worldrenderer/RTProxyBLAS_t.md) | class | 68 | 9 |  |
-| [RTProxyInstanceInfo_t](worldrenderer/RTProxyInstanceInfo_t.md) | class | 72 | 9 |  |
-| [SceneObject_t](worldrenderer/SceneObject_t.md) | class | 136 | 14 |  |
+| [RTProxyInstanceInfo_t](worldrenderer/RTProxyInstanceInfo_t.md) | class | 76 | 10 |  |
+| [SceneObject_t](worldrenderer/SceneObject_t.md) | class | 144 | 15 |  |
 | [VMapResourceData_t](worldrenderer/VMapResourceData_t.md) | class | 1 | 0 |  |
 | [VoxelVisBlockOffset_t](worldrenderer/VoxelVisBlockOffset_t.md) | class | 8 | 2 |  |
 | [WorldBuilderParams_t](worldrenderer/WorldBuilderParams_t.md) | class | 96 | 6 |  |
@@ -43,5 +43,5 @@ module: worldrenderer
 | [WorldNode_t](worldrenderer/WorldNode_t.md) | class | 400 | 16 |  |
 | [World_t](worldrenderer/World_t.md) | class | 216 | 4 |  |
 | [AggregateInstanceStream_t](worldrenderer/AggregateInstanceStream_t.md) | enum | — | 4 |  |
-| [ObjectTypeFlags_t](worldrenderer/ObjectTypeFlags_t.md) | enum | — | 16 |  |
+| [ObjectTypeFlags_t](worldrenderer/ObjectTypeFlags_t.md) | enum | — | 17 |  |
 | [RTProxyInstanceFlags_t](worldrenderer/RTProxyInstanceFlags_t.md) | enum | — | 2 |  |

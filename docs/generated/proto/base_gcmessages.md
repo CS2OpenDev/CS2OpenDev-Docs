@@ -175,21 +175,6 @@ direction LR
     +uint64 item_2_item_id
   }
 
-  class CMsgApplyStrangePart {
-    +uint64 strange_part_item_id
-    +uint64 item_item_id
-  }
-
-  class CMsgApplyPennantUpgrade {
-    +uint64 upgrade_item_id
-    +uint64 pennant_item_id
-  }
-
-  class CMsgApplyEggEssence {
-    +uint64 essence_item_id
-    +uint64 egg_item_id
-  }
-
   class CSOEconItemAttribute {
     +uint32 def_index
     +uint32 value
@@ -224,6 +209,22 @@ direction LR
 
   class CMsgSortItems {
     +uint32 sort_type
+  }
+
+  class CMsgDeleteItem {
+    +uint64 item_id
+  }
+
+  class CMsgModifyItemStringAttr {
+    +uint64 tool_item_id
+    +uint64 subject_item_id
+    +uint32 attr_def
+    +string attr_value
+  }
+
+  class CMsgCraftItemsRequest {
+    +uint32 recipe_def
+    +List~uint64~ craft_items
   }
 
   class CSOEconClaimCode {
@@ -263,7 +264,6 @@ direction LR
     +uint64 item_id
     +fixed64 target_steam_id
     +List~uint32~ gift__potential_targets
-    +uint32 duel__class_lock
     +fixed64 initiator_steam_id
   }
 
@@ -319,13 +319,6 @@ direction LR
     +string item_name_custom
   }
 
-  class CMsgGCClientDisplayNotification {
-    +string notification_title_localization_key
-    +string notification_body_localization_key
-    +List~string~ body_substring_keys
-    +List~string~ body_substring_values
-  }
-
   class CMsgGCShowItemsPickedUp {
     +fixed64 player_steamid
   }
@@ -357,10 +350,6 @@ direction LR
     +uint32 account_id
     +uint32 event_id
     +uint64 item_id
-  }
-
-  class CMsgGCItemPreviewItemBoughtNotification {
-    +uint32 item_def_index
   }
 
   class CMsgGCStorePurchaseCancel {
@@ -422,11 +411,6 @@ direction LR
   class CMsgGCToGCDirtyMultipleSDOCache {
     +uint32 sdo_type
     +List~uint64~ key_uint64
-  }
-
-  class CMsgGCCollectItem {
-    +uint64 collection_item_id
-    +uint64 subject_item_id
   }
 
   class CMsgSDONoMemcached {
@@ -821,27 +805,6 @@ direction LR
 | `item_1_item_id` | 2 | uint64 | optional |  |
 | `item_2_item_id` | 3 | uint64 | optional |  |
 
-### `CMsgApplyStrangePart`
-
-| Field | Number | Type | Label | Description |
-|-------|--------|------|-------|-------------|
-| `strange_part_item_id` | 1 | uint64 | optional |  |
-| `item_item_id` | 2 | uint64 | optional |  |
-
-### `CMsgApplyPennantUpgrade`
-
-| Field | Number | Type | Label | Description |
-|-------|--------|------|-------|-------------|
-| `upgrade_item_id` | 1 | uint64 | optional |  |
-| `pennant_item_id` | 2 | uint64 | optional |  |
-
-### `CMsgApplyEggEssence`
-
-| Field | Number | Type | Label | Description |
-|-------|--------|------|-------|-------------|
-| `essence_item_id` | 1 | uint64 | optional |  |
-| `egg_item_id` | 2 | uint64 | optional |  |
-
 ### `CSOEconItemAttribute`
 
 | Field | Number | Type | Label | Description |
@@ -885,6 +848,28 @@ direction LR
 | Field | Number | Type | Label | Description |
 |-------|--------|------|-------|-------------|
 | `sort_type` | 1 | uint32 | optional |  |
+
+### `CMsgDeleteItem`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `item_id` | 1 | uint64 | optional |  |
+
+### `CMsgModifyItemStringAttr`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `tool_item_id` | 1 | uint64 | optional |  |
+| `subject_item_id` | 2 | uint64 | optional |  |
+| `attr_def` | 3 | uint32 | optional |  |
+| `attr_value` | 4 | string | optional |  |
+
+### `CMsgCraftItemsRequest`
+
+| Field | Number | Type | Label | Description |
+|-------|--------|------|-------|-------------|
+| `recipe_def` | 1 | uint32 | optional |  |
+| `craft_items` | 2 | uint64 | repeated |  |
 
 ### `CSOEconClaimCode`
 
@@ -937,7 +922,6 @@ direction LR
 | `item_id` | 1 | uint64 | optional |  |
 | `target_steam_id` | 2 | fixed64 | optional |  |
 | `gift__potential_targets` | 3 | uint32 | repeated |  |
-| `duel__class_lock` | 4 | uint32 | optional |  |
 | `initiator_steam_id` | 5 | fixed64 | optional |  |
 
 ### `CMsgReplayUploadedToYouTube`
@@ -1008,15 +992,6 @@ direction LR
 | `item_def_index` | 2 | uint32 | optional |  |
 | `item_name_custom` | 3 | string | optional |  |
 
-### `CMsgGCClientDisplayNotification`
-
-| Field | Number | Type | Label | Description |
-|-------|--------|------|-------|-------------|
-| `notification_title_localization_key` | 1 | string | optional |  |
-| `notification_body_localization_key` | 2 | string | optional |  |
-| `body_substring_keys` | 3 | string | repeated |  |
-| `body_substring_values` | 4 | string | repeated |  |
-
 ### `CMsgGCShowItemsPickedUp`
 
 | Field | Number | Type | Label | Description |
@@ -1059,12 +1034,6 @@ direction LR
 | `account_id` | 1 | uint32 | optional |  |
 | `event_id` | 2 | uint32 | optional |  |
 | `item_id` | 3 | uint64 | optional |  |
-
-### `CMsgGCItemPreviewItemBoughtNotification`
-
-| Field | Number | Type | Label | Description |
-|-------|--------|------|-------|-------------|
-| `item_def_index` | 1 | uint32 | optional |  |
 
 ### `CMsgGCStorePurchaseCancel`
 
@@ -1151,13 +1120,6 @@ direction LR
 |-------|--------|------|-------|-------------|
 | `sdo_type` | 1 | uint32 | optional |  |
 | `key_uint64` | 2 | uint64 | repeated |  |
-
-### `CMsgGCCollectItem`
-
-| Field | Number | Type | Label | Description |
-|-------|--------|------|-------|-------------|
-| `collection_item_id` | 1 | uint64 | optional |  |
-| `subject_item_id` | 2 | uint64 | optional |  |
 
 ### `CMsgSDONoMemcached`
 

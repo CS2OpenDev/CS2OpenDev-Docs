@@ -8,7 +8,7 @@ kind: class
 
 # CLightComponent
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 496 bytes (`0x1f0`) · **Align:** n/a (unspecified) · **Module:** client
 
@@ -24,17 +24,18 @@ classDiagram
     CLightComponent *-- CNetworkVarChainer
     CLightComponent *-- InfoForResourceTypeCTextureBase
     CLightComponent *-- GameTime_t
+    CLightComponent --> C_BaseEntity
 ```
 
 ## Memory layout
 
-70 fields (70 declared here, 0 inherited). Offsets are absolute from the object base.
+84 fields (84 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x38` | `__m_pChainEntity` | [CNetworkVarChainer](../entity2/CNetworkVarChainer.md) |  | `MNotSaved` |
-| `0x75` | `m_Color` | Color |  |  |
-| `0x79` | `m_SecondaryColor` | Color |  |  |
+| `0x78` | `m_Color` | Color |  |  |
+| `0x7c` | `m_SecondaryColor` | Color |  |  |
 | `0x80` | `m_flBrightness` | float32 |  |  |
 | `0x84` | `m_flBrightnessScale` | float32 |  |  |
 | `0x88` | `m_flBrightnessMult` | float32 |  |  |
@@ -102,6 +103,20 @@ classDiagram
 | `0x1a0` | `m_flLightStyleStartTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
 | `0x1a4` | `m_flCapsuleLength` | float32 |  |  |
 | `0x1a8` | `m_flMinRoughness` | float32 |  |  |
+| `0x1ac` | `m_bAmbientOcclusionProxyOverride` | bool |  |  |
+| `0x1b0` | `m_hAmbientOcclusionProxyPosition0` | CHandle< [C_BaseEntity](../client/C_BaseEntity.md) > |  |  |
+| `0x1b4` | `m_hAmbientOcclusionProxyPosition1` | CHandle< [C_BaseEntity](../client/C_BaseEntity.md) > |  |  |
+| `0x1b8` | `m_hAmbientOcclusionProxyPosition2` | CHandle< [C_BaseEntity](../client/C_BaseEntity.md) > |  |  |
+| `0x1bc` | `m_hAmbientOcclusionProxyPosition3` | CHandle< [C_BaseEntity](../client/C_BaseEntity.md) > |  |  |
+| `0x1c0` | `m_flAmbientOcclusionProxyStrength0` | float32 |  |  |
+| `0x1c4` | `m_flAmbientOcclusionProxyStrength1` | float32 |  |  |
+| `0x1c8` | `m_flAmbientOcclusionProxyStrength2` | float32 |  |  |
+| `0x1cc` | `m_flAmbientOcclusionProxyStrength3` | float32 |  |  |
+| `0x1d0` | `m_flAmbientOcclusionProxyAmbientStrength` | float32 |  |  |
+| `0x1d4` | `m_flAmbientOcclusionProxyConeAngle0` | float32 |  |  |
+| `0x1d8` | `m_flAmbientOcclusionProxyConeAngle1` | float32 |  |  |
+| `0x1dc` | `m_flAmbientOcclusionProxyConeAngle2` | float32 |  |  |
+| `0x1e0` | `m_flAmbientOcclusionProxyConeAngle3` | float32 |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -223,6 +238,20 @@ classDiagram
 	&quot;m_bUseSecondaryColor&quot;: false,
 	&quot;m_flLightStyleStartTime&quot;: null,
 	&quot;m_flCapsuleLength&quot;: 0.000000,
-	&quot;m_flMinRoughness&quot;: 0.000000
+	&quot;m_flMinRoughness&quot;: 0.000000,
+	&quot;m_bAmbientOcclusionProxyOverride&quot;: false,
+	&quot;m_hAmbientOcclusionProxyPosition0&quot;: null,
+	&quot;m_hAmbientOcclusionProxyPosition1&quot;: null,
+	&quot;m_hAmbientOcclusionProxyPosition2&quot;: null,
+	&quot;m_hAmbientOcclusionProxyPosition3&quot;: null,
+	&quot;m_flAmbientOcclusionProxyStrength0&quot;: 0.000000,
+	&quot;m_flAmbientOcclusionProxyStrength1&quot;: 0.000000,
+	&quot;m_flAmbientOcclusionProxyStrength2&quot;: 0.000000,
+	&quot;m_flAmbientOcclusionProxyStrength3&quot;: 0.000000,
+	&quot;m_flAmbientOcclusionProxyAmbientStrength&quot;: 0.000000,
+	&quot;m_flAmbientOcclusionProxyConeAngle0&quot;: 0.000000,
+	&quot;m_flAmbientOcclusionProxyConeAngle1&quot;: 0.000000,
+	&quot;m_flAmbientOcclusionProxyConeAngle2&quot;: 0.000000,
+	&quot;m_flAmbientOcclusionProxyConeAngle3&quot;: 0.000000
 }</pre>
 </details>

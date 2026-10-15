@@ -8,7 +8,7 @@ kind: class
 
 # VMixModDelayDesc_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 48 bytes (`0x30`) · **Align:** 4 · **Module:** soundsystem_lowlevel
 
@@ -40,12 +40,12 @@ classDiagram
 <pre>{
 	&quot;m_feedbackFilter&quot;:
 	{
-		&quot;m_nFilterType&quot;: &quot;FILTER_UNKNOWN&quot;,
-		&quot;m_nFilterSlope&quot;: &quot;FILTER_SLOPE_12dB&quot;,
-		&quot;m_bEnabled&quot;: true,
 		&quot;m_fldbGain&quot;: 0.000000,
 		&quot;m_flCutoffFreq&quot;: 1000.000000,
-		&quot;m_flQ&quot;: 0.707107
+		&quot;m_flQ&quot;: 0.707107,
+		&quot;m_nFilterType&quot;: &quot;FILTER_UNKNOWN&quot;,
+		&quot;m_nFilterSlope&quot;: &quot;FILTER_SLOPE_12dB&quot;,
+		&quot;m_bEnabled&quot;: true
 	},
 	&quot;m_bPhaseInvert&quot;: false,
 	&quot;m_flGlideTime&quot;: 0.000000,

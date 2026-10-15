@@ -8,9 +8,9 @@ kind: class
 
 # VPhysXBodyPart_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 168 bytes (`0xa8`) · **Align:** 8 · **Module:** modellib
+**Kind:** class · **Size:** 152 bytes (`0x98`) · **Align:** 8 · **Module:** modellib
 
 **Relationships:**
 
@@ -28,15 +28,15 @@ classDiagram
 | `0x0` | `m_nFlags` | uint32 |  |  |
 | `0x4` | `m_flMass` | float32 |  |  |
 | `0x8` | `m_rnShape` | [VPhysics2ShapeDef_t](../modellib/VPhysics2ShapeDef_t.md) |  |  |
-| `0x80` | `m_nCollisionAttributeIndex` | uint16 |  |  |
-| `0x82` | `m_nReserved` | uint16 |  |  |
-| `0x84` | `m_flInertiaScale` | float32 |  |  |
-| `0x88` | `m_flLinearDamping` | float32 |  |  |
-| `0x8c` | `m_flAngularDamping` | float32 |  |  |
-| `0x90` | `m_flLinearDrag` | float32 |  |  |
-| `0x94` | `m_flAngularDrag` | float32 |  |  |
-| `0x98` | `m_bOverrideMassCenter` | bool |  |  |
-| `0x9c` | `m_vMassCenterOverride` | Vector |  |  |
+| `0x70` | `m_nCollisionAttributeIndex` | uint16 |  |  |
+| `0x72` | `m_nReserved` | uint16 |  |  |
+| `0x74` | `m_flInertiaScale` | float32 |  |  |
+| `0x78` | `m_flLinearDamping` | float32 |  |  |
+| `0x7c` | `m_flAngularDamping` | float32 |  |  |
+| `0x80` | `m_flLinearDrag` | float32 |  |  |
+| `0x84` | `m_flAngularDrag` | float32 |  |  |
+| `0x88` | `m_bOverrideMassCenter` | bool |  |  |
+| `0x8c` | `m_vMassCenterOverride` | Vector |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -55,6 +55,9 @@ classDiagram
 		[
 		],
 		&quot;m_meshes&quot;:
+		[
+		],
+		&quot;m_compounds&quot;:
 		[
 		],
 		&quot;m_CollisionAttributeIndices&quot;:

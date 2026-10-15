@@ -8,9 +8,9 @@ kind: class
 
 # RTProxyInstanceInfo_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** 4 · **Module:** worldrenderer
+**Kind:** class · **Size:** 76 bytes (`0x4c`) · **Align:** 4 · **Module:** worldrenderer
 
 **Relationships:**
 
@@ -22,7 +22,7 @@ classDiagram
 
 ## Memory layout
 
-9 fields (9 declared here, 0 inherited). Offsets are absolute from the object base.
+10 fields (10 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -35,6 +35,7 @@ classDiagram
 | `0x10` | `m_nVertexEmissiveByteOffset` | uint32 |  |  |
 | `0x14` | `m_fEmissiveFactor` | float32 |  |  |
 | `0x18` | `m_mWorldFromLocal` | matrix3x4_t |  |  |
+| `0x48` | `m_vTintColorSRGB` | Color |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -61,6 +62,12 @@ classDiagram
 		0.000000,
 		0.000000,
 		0.000000
+	],
+	&quot;m_vTintColorSRGB&quot;:
+	[
+		255,
+		255,
+		255
 	]
 }</pre>
 </details>

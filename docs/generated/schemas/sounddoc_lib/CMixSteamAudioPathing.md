@@ -8,7 +8,7 @@ kind: class
 
 # CMixSteamAudioPathing
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 96 bytes (`0x60`) · **Align:** 8 · **Module:** sounddoc_lib
 
@@ -25,7 +25,7 @@ classDiagram
 
 ## Memory layout
 
-9 fields (4 declared here, 5 inherited). Offsets are absolute from the object base.
+10 fields (4 declared here, 6 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -34,6 +34,7 @@ classDiagram
 | `0x18` | `m_bActive` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x19` | `m_bSolo` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x1a` | `m_bEditProperties` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
+| `0x1c` | `m_nGenerationId` | int32 | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x20` | `m_flPathingMixLevel` | float32 |  | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName Pathing Mix Level` |
 | `0x24` | `m_vPathingEQ` | float32[3] |  | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName Pathing EQ` |
 | `0x30` | `m_vPathingCoeffs` | CUtlVector< float32 > |  | `MPropertyAttributeRange -1 1` `MPropertyFriendlyName Pathing Coefficients` |
@@ -48,6 +49,7 @@ classDiagram
 	&quot;m_bActive&quot;: true,
 	&quot;m_bSolo&quot;: false,
 	&quot;m_bEditProperties&quot;: false,
+	&quot;m_nGenerationId&quot;: 0,
 	&quot;m_flPathingMixLevel&quot;: 1.000000,
 	&quot;m_vPathingEQ&quot;:
 	[

@@ -8,7 +8,7 @@ kind: class
 
 # CMixBoxverb
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 112 bytes (`0x70`) · **Align:** 8 · **Module:** sounddoc_lib
 
@@ -26,7 +26,7 @@ classDiagram
 
 ## Memory layout
 
-21 fields (16 declared here, 5 inherited). Offsets are absolute from the object base.
+22 fields (16 declared here, 6 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -35,6 +35,7 @@ classDiagram
 | `0x18` | `m_bActive` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x19` | `m_bSolo` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x1a` | `m_bEditProperties` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
+| `0x1c` | `m_nGenerationId` | int32 | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x20` | `m_flSizeMax` | float32 |  | `MPropertyAttributeRange 0.0 1000.0` `MPropertyDescription The reverb can be parameterized either by a delay range (min/max delay in milliseconds) OR by a delay size for each dimension of a box (width/height/depth).<br>If you set width, height, or depth to anything other than zero, these min/max fields will not be used.` `MPropertyFriendlyName Max Size (milliseconds)` |
 | `0x24` | `m_flSizeMin` | float32 |  | `MPropertyAttributeRange 0.0 1000.0` `MPropertyDescription The reverb can be parameterized either by a delay range (min/max delay in milliseconds) OR by a delay size for each dimension of a box (width/height/depth).<br>If you set width, height, or depth to anything other than zero, these min/max fields will not be used.` `MPropertyFriendlyName Min Size (milliseconds)` |
 | `0x28` | `m_flComplexity` | float32 |  | `MPropertyAttributeRange 1.01 12.0` `MPropertyDescription The complexity is how many delays are spread along the total delay length.  Max is 12.  More delays will give your space more reflections (more geometric complexity).` `MPropertyFriendlyName Complexity` |
@@ -61,6 +62,7 @@ classDiagram
 	&quot;m_bActive&quot;: true,
 	&quot;m_bSolo&quot;: false,
 	&quot;m_bEditProperties&quot;: false,
+	&quot;m_nGenerationId&quot;: 0,
 	&quot;m_flSizeMax&quot;: 100.000000,
 	&quot;m_flSizeMin&quot;: 0.000000,
 	&quot;m_flComplexity&quot;: 4.000000,
@@ -69,12 +71,12 @@ classDiagram
 	&quot;m_bParallel&quot;: false,
 	&quot;m_filterType&quot;:
 	{
-		&quot;m_nFilterType&quot;: &quot;FILTER_LOWPASS&quot;,
-		&quot;m_nFilterSlope&quot;: &quot;FILTER_SLOPE_12dB&quot;,
-		&quot;m_bEnabled&quot;: true,
 		&quot;m_fldbGain&quot;: 0.000000,
 		&quot;m_flCutoffFreq&quot;: 1000.000000,
-		&quot;m_flQ&quot;: 0.707107
+		&quot;m_flQ&quot;: 0.707107,
+		&quot;m_nFilterType&quot;: &quot;FILTER_LOWPASS&quot;,
+		&quot;m_nFilterSlope&quot;: &quot;FILTER_SLOPE_12dB&quot;,
+		&quot;m_bEnabled&quot;: true
 	},
 	&quot;m_flWidth&quot;: 20.000000,
 	&quot;m_flHeight&quot;: 23.000000,

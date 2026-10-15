@@ -8,9 +8,9 @@ kind: class
 
 # CPropDoorRotatingBreakable
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 3680 bytes (`0xe60`) · **Align:** 16 · **Module:** server
+**Kind:** class · **Size:** 3920 bytes (`0xf50`) · **Align:** 16 · **Module:** server
 
 **Inherits from:** [CPropDoorRotating](../server/CPropDoorRotating.md)
 
@@ -27,7 +27,7 @@ classDiagram
 
 ## Memory layout
 
-264 fields (4 declared here, 260 inherited). Offsets are absolute from the object base.
+269 fields (4 declared here, 265 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -147,7 +147,8 @@ classDiagram
 | `0x570` | `m_clrRender` | Color | [CBaseModelEntity](../server/CBaseModelEntity.md) | RGBA tint colour multiplied onto the entity's diffuse texture. |
 | `0x578` | `m_vecRenderAttributes` | CUtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../server/EntityRenderAttribute_t.md) > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e0` | `m_bRenderToCubemaps` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x5e1` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e1` | `m_bExpandRenderBoundsToIncludeCloth` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e2` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e8` | `m_Collision` | [CCollisionProperty](../server/CCollisionProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CCollisionProperty struct encoding the entity's collision bounding box shape and flags. |
 | `0x6a0` | `m_Glow` | [CGlowProperty](../server/CGlowProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CGlowProperty struct controlling the entity's glow outline (colour, radius, visibility rules). |
 | `0x6f8` | `m_flGlowBackfaceMult` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Multiplier for the glow effect on back-facing surfaces of the model. |
@@ -156,142 +157,146 @@ classDiagram
 | `0x704` | `m_flFadeScale` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Scale factor applied to fade distances; 0 disables distance fading. |
 | `0x708` | `m_flShadowStrength` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Opacity of this entity's cast shadow (0 = no shadow, 1 = full shadow). |
 | `0x70c` | `m_nObjectCulling` | uint8 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x710` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x738` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
-| `0x768` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
-| `0x770` | `m_graphControllerManager` | [CAnimGraphControllerManager](../server/CAnimGraphControllerManager.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x808` | `m_pMainGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | The primary animation-graph controller instance for this entity. |
-| `0x810` | `m_bInitiallyPopulateInterpHistory` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x818` | `m_OnLayerCycleUpdated` | CEntityOutputTemplate< float32 > | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x838` | `m_OnExternalChoreoGraphChanged` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x850` | `m_pChoreoServices` | [IChoreoServices](../server/IChoreoServices.md)* | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MKV3TransferSaveOpsForField GetChoreoServicesSaveRestoreOps` |
-| `0x858` | `m_bAnimGraphUpdateEnabled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x859` | `m_bAnimationUpdateScheduled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x85c` | `m_vecForce` | Vector | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x868` | `m_nForceBone` | int32 | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x878` | `m_pRagdollControl` | [IPhysicsRagdollControl](../vphysics2/IPhysicsRagdollControl.md)* | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MPhysPtr` |
-| `0x880` | `m_RagdollPose` | [PhysicsRagdollPose_t](../server/PhysicsRagdollPose_t.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x8a8` | `m_bRagdollEnabled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | True while the entity is simulated as a ragdoll rather than animated. |
-| `0x8a9` | `m_bRagdollClientSide` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x8b0` | `m_xParentedRagdollRootInEntitySpace` | CTransform | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x960` | `m_bModelOverrodeBlockLOS` | bool | [CBaseProp](../server/CBaseProp.md) |  |
-| `0x964` | `m_iShapeType` | int32 | [CBaseProp](../server/CBaseProp.md) |  |
-| `0x968` | `m_bConformToCollisionBounds` | bool | [CBaseProp](../server/CBaseProp.md) |  |
-| `0x970` | `m_mPreferredCatchTransform` | CTransform | [CBaseProp](../server/CBaseProp.md) |  |
-| `0x998` | `m_CPropDataComponent` | [CPropDataComponent](../server/CPropDataComponent.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0x9d8` | `m_OnStartDeath` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0x9f0` | `m_OnBreak` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa08` | `m_OnHealthChanged` | CEntityOutputTemplate< float32 > | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa28` | `m_OnTakeDamage` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa40` | `m_impactEnergyScale` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa44` | `m_iMinHealthDmg` | int32 | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa48` | `m_preferredCarryAngles` | QAngle | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa54` | `m_flPressureDelay` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa58` | `m_flDefBurstScale` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa5c` | `m_vDefBurstOffset` | Vector | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa68` | `m_hBreaker` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa6c` | `m_PerformanceMode` | [PerformanceMode_t](../server/PerformanceMode_t.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa70` | `m_flPreventDamageBeforeTime` | [GameTime_t](../entity2/GameTime_t.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa74` | `m_BreakableContentsType` | [BreakableContentsType_t](../server/BreakableContentsType_t.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa78` | `m_strBreakableContentsPropGroupOverride` | CUtlString | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa80` | `m_strBreakableContentsParticleOverride` | CUtlString | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa88` | `m_bHasBreakPiecesOrCommands` | bool | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa8c` | `m_explodeDamage` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa90` | `m_explodeRadius` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xa98` | `m_sExplosionType` | CGlobalSymbol | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xaa0` | `m_explosionDelay` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xaa8` | `m_explosionBuildupSound` | CUtlSymbolLarge | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xab0` | `m_explosionCustomEffect` | CUtlSymbolLarge | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xab8` | `m_explosionCustomSound` | CUtlSymbolLarge | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xac0` | `m_explosionModifier` | CUtlSymbolLarge | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xac8` | `m_hPhysicsAttacker` | CHandle< [CBasePlayerPawn](../server/CBasePlayerPawn.md) > | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xacc` | `m_flLastPhysicsInfluenceTime` | [GameTime_t](../entity2/GameTime_t.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xad0` | `m_flDefaultFadeScale` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xad4` | `m_hLastAttacker` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xad8` | `m_iszPuntSound` | CUtlSymbolLarge | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xae0` | `m_bUsePuntSound` | bool | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xae1` | `m_bOriginalBlockLOS` | bool | [CBreakableProp](../server/CBreakableProp.md) |  |
-| `0xaf8` | `m_bCreateNavObstacle` | bool | [CDynamicProp](../server/CDynamicProp.md) |  |
-| `0xaf9` | `m_bNavObstacleUpdatesOverridden` | bool | [CDynamicProp](../server/CDynamicProp.md) |  |
-| `0xafa` | `m_bUseHitboxesForRenderBox` | bool | [CDynamicProp](../server/CDynamicProp.md) |  |
-| `0xafb` | `m_bUseAnimGraph` | bool | [CDynamicProp](../server/CDynamicProp.md) |  |
-| `0xb00` | `m_pOutputAnimBegun` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CDynamicProp](../server/CDynamicProp.md) |  |
-| `0xb18` | `m_pOutputAnimOver` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CDynamicProp](../server/CDynamicProp.md) |  |
-| `0xb30` | `m_pOutputAnimLoopCycleOver` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CDynamicProp](../server/CDynamicProp.md) |  |
-| `0xb48` | `m_OnAnimReachedStart` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CDynamicProp](../server/CDynamicProp.md) |  |
-| `0xb60` | `m_OnAnimReachedEnd` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CDynamicProp](../server/CDynamicProp.md) |  |
-| `0xb78` | `m_iszIdleAnim` | CUtlSymbolLarge | [CDynamicProp](../server/CDynamicProp.md) |  |
-| `0xb80` | `m_nIdleAnimLoopMode` | [AnimLoopMode_t](../server/AnimLoopMode_t.md) | [CDynamicProp](../server/CDynamicProp.md) |  |
-| `0xb84` | `m_bRandomizeCycle` | bool | [CDynamicProp](../server/CDynamicProp.md) |  |
-| `0xb85` | `m_bStartDisabled` | bool | [CDynamicProp](../server/CDynamicProp.md) |  |
-| `0xb86` | `m_bFiredStartEndOutput` | bool | [CDynamicProp](../server/CDynamicProp.md) |  |
-| `0xb87` | `m_bForceNpcExclude` | bool | [CDynamicProp](../server/CDynamicProp.md) | `MNotSaved` |
-| `0xb88` | `m_bCreateMovableSurfaceGraph` | bool | [CDynamicProp](../server/CDynamicProp.md) |  |
-| `0xb89` | `m_bCreateNonSolid` | bool | [CDynamicProp](../server/CDynamicProp.md) | `MNotSaved` |
-| `0xb8a` | `m_bIsOverrideProp` | bool | [CDynamicProp](../server/CDynamicProp.md) | `MNotSaved` |
-| `0xb8c` | `m_iInitialGlowState` | int32 | [CDynamicProp](../server/CDynamicProp.md) |  |
-| `0xb90` | `m_nGlowRange` | int32 | [CDynamicProp](../server/CDynamicProp.md) |  |
-| `0xb94` | `m_nGlowRangeMin` | int32 | [CDynamicProp](../server/CDynamicProp.md) |  |
-| `0xb98` | `m_glowColor` | Color | [CDynamicProp](../server/CDynamicProp.md) |  |
-| `0xb9c` | `m_nGlowTeam` | int32 | [CDynamicProp](../server/CDynamicProp.md) |  |
-| `0xbb0` | `m_flAutoReturnDelay` | float32 | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xbb8` | `m_hDoorList` | CUtlVector< CHandle< [CBasePropDoor](../server/CBasePropDoor.md) > > | [CBasePropDoor](../server/CBasePropDoor.md) | `MNotSaved` |
-| `0xbd0` | `m_nHardwareType` | int32 | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xbd4` | `m_bNeedsHardware` | bool | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xbd8` | `m_eDoorState` | [DoorState_t](../server/DoorState_t.md) | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xbdc` | `m_bLocked` | bool | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xbdd` | `m_bNoNPCs` | bool | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xbe0` | `m_closedPosition` | VectorWS | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xbec` | `m_closedAngles` | QAngle | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xbf8` | `m_hBlocker` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xbfc` | `m_bFirstBlocked` | bool | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xc00` | `m_ls` | locksound_t | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xc20` | `m_bForceClosed` | bool | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xc24` | `m_vecLatchWorldPosition` | VectorWS | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xc30` | `m_hActivator` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xc34` | `m_flSpeed` | float32 | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xc50` | `m_SoundMoving` | CGameSoundEventName | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xc58` | `m_SoundOpen` | CGameSoundEventName | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xc60` | `m_SoundClose` | CGameSoundEventName | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xc68` | `m_SoundLock` | CGameSoundEventName | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xc70` | `m_SoundUnlock` | CGameSoundEventName | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xc78` | `m_SoundLatch` | CGameSoundEventName | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xc80` | `m_SoundPound` | CGameSoundEventName | [CBasePropDoor](../server/CBasePropDoor.md) | `MNotSaved` |
-| `0xc88` | `m_SoundJiggle` | CGameSoundEventName | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xc90` | `m_SoundLockedAnim` | CGameSoundEventName | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xc98` | `m_numCloseAttempts` | int32 | [CBasePropDoor](../server/CBasePropDoor.md) | `MNotSaved` |
-| `0xc9c` | `m_nPhysicsMaterial` | CUtlStringToken | [CBasePropDoor](../server/CBasePropDoor.md) | `MNotSaved` |
-| `0xca0` | `m_SlaveName` | CUtlSymbolLarge | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xca8` | `m_hMaster` | CHandle< [CBasePropDoor](../server/CBasePropDoor.md) > | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xcb0` | `m_OnBlockedClosing` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xcc8` | `m_OnBlockedOpening` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xce0` | `m_OnUnblockedClosing` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xcf8` | `m_OnUnblockedOpening` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xd10` | `m_OnFullyClosed` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xd28` | `m_OnFullyOpen` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xd40` | `m_OnClose` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xd58` | `m_OnOpen` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xd70` | `m_OnLockedUse` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xd88` | `m_OnAjarOpen` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBasePropDoor](../server/CBasePropDoor.md) |  |
-| `0xda0` | `m_vecAxis` | Vector | [CPropDoorRotating](../server/CPropDoorRotating.md) |  |
-| `0xdac` | `m_flDistance` | float32 | [CPropDoorRotating](../server/CPropDoorRotating.md) |  |
-| `0xdb0` | `m_eSpawnPosition` | [PropDoorRotatingSpawnPos_t](../server/PropDoorRotatingSpawnPos_t.md) | [CPropDoorRotating](../server/CPropDoorRotating.md) |  |
-| `0xdb4` | `m_eOpenDirection` | [PropDoorRotatingOpenDirection_e](../server/PropDoorRotatingOpenDirection_e.md) | [CPropDoorRotating](../server/CPropDoorRotating.md) |  |
-| `0xdb8` | `m_eCurrentOpenDirection` | [PropDoorRotatingOpenDirection_e](../server/PropDoorRotatingOpenDirection_e.md) | [CPropDoorRotating](../server/CPropDoorRotating.md) | `MNotSaved` |
-| `0xdbc` | `m_eDefaultCheckDirection` | doorCheck_e | [CPropDoorRotating](../server/CPropDoorRotating.md) | `MNotSaved` |
-| `0xdc0` | `m_flAjarAngle` | float32 | [CPropDoorRotating](../server/CPropDoorRotating.md) |  |
-| `0xdc4` | `m_angRotationAjarDeprecated` | QAngle | [CPropDoorRotating](../server/CPropDoorRotating.md) |  |
-| `0xdd0` | `m_angRotationClosed` | QAngle | [CPropDoorRotating](../server/CPropDoorRotating.md) |  |
-| `0xddc` | `m_angRotationOpenForward` | QAngle | [CPropDoorRotating](../server/CPropDoorRotating.md) |  |
-| `0xde8` | `m_angRotationOpenBack` | QAngle | [CPropDoorRotating](../server/CPropDoorRotating.md) |  |
-| `0xdf4` | `m_angGoal` | QAngle | [CPropDoorRotating](../server/CPropDoorRotating.md) |  |
-| `0xe00` | `m_vecForwardBoundsMin` | Vector | [CPropDoorRotating](../server/CPropDoorRotating.md) | `MNotSaved` |
-| `0xe0c` | `m_vecForwardBoundsMax` | Vector | [CPropDoorRotating](../server/CPropDoorRotating.md) | `MNotSaved` |
-| `0xe18` | `m_vecBackBoundsMin` | Vector | [CPropDoorRotating](../server/CPropDoorRotating.md) | `MNotSaved` |
-| `0xe24` | `m_vecBackBoundsMax` | Vector | [CPropDoorRotating](../server/CPropDoorRotating.md) | `MNotSaved` |
-| `0xe30` | `m_bAjarDoorShouldntAlwaysOpen` | bool | [CPropDoorRotating](../server/CPropDoorRotating.md) |  |
-| `0xe34` | `m_hEntityBlocker` | CHandle< [CEntityBlocker](../server/CEntityBlocker.md) > | [CPropDoorRotating](../server/CPropDoorRotating.md) |  |
-| `0xe40` | `m_bBreakable` | bool |  | `MNotSaved` |
-| `0xe41` | `m_isAbleToCloseAreaPortals` | bool |  | `MNotSaved` |
-| `0xe44` | `m_currentDamageState` | int32 |  | `MNotSaved` |
-| `0xe48` | `m_damageStates` | CUtlVector< CUtlSymbolLarge > |  | `MNotSaved` |
+| `0x710` | `m_bodyGroupTotalRequestCount` | uint32 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x718` | `m_bodyGroupRequests` | CUtlVectorFixedGrowable< [CBaseModelEntity::BodyGroupRequest_t](../server/CBaseModelEntity.BodyGroupRequest_t.md), 8 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x7f0` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x818` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
+| `0x848` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
+| `0x850` | `m_graphControllerManager` | [CAnimGraphControllerManager](../server/CAnimGraphControllerManager.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x8e8` | `m_pMainGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | The primary animation-graph controller instance for this entity. |
+| `0x8f0` | `m_bInitiallyPopulateInterpHistory` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x8f8` | `m_OnLayerCycleUpdated` | CEntityOutputTemplate< float32 > | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x918` | `m_OnExternalChoreoGraphChanged` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x930` | `m_pChoreoServices` | [IChoreoServices](../server/IChoreoServices.md)* | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MKV3TransferSaveOpsForField GetChoreoServicesSaveRestoreOps` |
+| `0x938` | `m_bAnimGraphUpdateEnabled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x939` | `m_bAnimationUpdateScheduled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x93c` | `m_vecForce` | Vector | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x948` | `m_nForceBone` | int32 | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x958` | `m_pRagdollControl` | [IPhysicsRagdollControl](../vphysics2/IPhysicsRagdollControl.md)* | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MPhysPtr` |
+| `0x960` | `m_RagdollPose` | [PhysicsRagdollPose_t](../server/PhysicsRagdollPose_t.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x988` | `m_bRagdollEnabled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | True while the entity is simulated as a ragdoll rather than animated. |
+| `0x989` | `m_bRagdollClientSide` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x98a` | `m_bShouldUpdateTransformations` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x990` | `m_xParentedRagdollRootInEntitySpace` | CTransform | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0xa40` | `m_bModelOverrodeBlockLOS` | bool | [CBaseProp](../server/CBaseProp.md) |  |
+| `0xa44` | `m_iShapeType` | int32 | [CBaseProp](../server/CBaseProp.md) |  |
+| `0xa48` | `m_bConformToCollisionBounds` | bool | [CBaseProp](../server/CBaseProp.md) |  |
+| `0xa50` | `m_mPreferredCatchTransform` | CTransform | [CBaseProp](../server/CBaseProp.md) |  |
+| `0xa78` | `m_CPropDataComponent` | [CPropDataComponent](../server/CPropDataComponent.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xab8` | `m_OnStartDeath` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xad0` | `m_OnBreak` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xae8` | `m_OnHealthChanged` | CEntityOutputTemplate< float32 > | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb08` | `m_OnTakeDamage` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb20` | `m_impactEnergyScale` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb24` | `m_iMinHealthDmg` | int32 | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb28` | `m_preferredCarryAngles` | QAngle | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb34` | `m_flPressureDelay` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb38` | `m_flDefBurstScale` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb3c` | `m_vDefBurstOffset` | Vector | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb48` | `m_hBreaker` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb4c` | `m_PerformanceMode` | [PerformanceMode_t](../server/PerformanceMode_t.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb50` | `m_flPreventDamageBeforeTime` | [GameTime_t](../entity2/GameTime_t.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb54` | `m_BreakableContentsType` | [BreakableContentsType_t](../server/BreakableContentsType_t.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb58` | `m_strBreakableContentsPropGroupOverride` | CUtlString | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb60` | `m_strBreakableContentsParticleOverride` | CUtlString | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb68` | `m_bHasBreakPiecesOrCommands` | bool | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb6c` | `m_explodeDamage` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb70` | `m_explodeRadius` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb78` | `m_sExplosionType` | CGlobalSymbol | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb80` | `m_explosionDelay` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb88` | `m_explosionBuildupSound` | CUtlSymbolLarge | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb90` | `m_explosionCustomEffect` | CUtlSymbolLarge | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xb98` | `m_explosionCustomSound` | CUtlSymbolLarge | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xba0` | `m_explosionModifier` | CUtlSymbolLarge | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xba8` | `m_hPhysicsAttacker` | CHandle< [CBasePlayerPawn](../server/CBasePlayerPawn.md) > | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xbac` | `m_flLastPhysicsInfluenceTime` | [GameTime_t](../entity2/GameTime_t.md) | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xbb0` | `m_flDefaultFadeScale` | float32 | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xbb4` | `m_hLastAttacker` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xbb8` | `m_iszPuntSound` | CUtlSymbolLarge | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xbc0` | `m_bUsePuntSound` | bool | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xbc1` | `m_bOriginalBlockLOS` | bool | [CBreakableProp](../server/CBreakableProp.md) |  |
+| `0xbd0` | `m_bGraphControllerEnabled` | bool | [CDynamicProp](../server/CDynamicProp.md) |  |
+| `0xbe0` | `m_bCreateNavObstacle` | bool | [CDynamicProp](../server/CDynamicProp.md) |  |
+| `0xbe1` | `m_bNavObstacleUpdatesOverridden` | bool | [CDynamicProp](../server/CDynamicProp.md) |  |
+| `0xbe2` | `m_bUseHitboxesForRenderBox` | bool | [CDynamicProp](../server/CDynamicProp.md) |  |
+| `0xbe3` | `m_bUseAnimGraph` | bool | [CDynamicProp](../server/CDynamicProp.md) |  |
+| `0xbe8` | `m_pOutputAnimBegun` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CDynamicProp](../server/CDynamicProp.md) |  |
+| `0xc00` | `m_pOutputAnimOver` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CDynamicProp](../server/CDynamicProp.md) |  |
+| `0xc18` | `m_pOutputAnimLoopCycleOver` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CDynamicProp](../server/CDynamicProp.md) |  |
+| `0xc30` | `m_OnAnimReachedStart` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CDynamicProp](../server/CDynamicProp.md) |  |
+| `0xc48` | `m_OnAnimReachedEnd` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CDynamicProp](../server/CDynamicProp.md) |  |
+| `0xc60` | `m_iszIdleAnim` | CUtlSymbolLarge | [CDynamicProp](../server/CDynamicProp.md) |  |
+| `0xc68` | `m_nIdleAnimLoopMode` | [AnimLoopMode_t](../server/AnimLoopMode_t.md) | [CDynamicProp](../server/CDynamicProp.md) |  |
+| `0xc6c` | `m_bRandomizeCycle` | bool | [CDynamicProp](../server/CDynamicProp.md) |  |
+| `0xc6d` | `m_bStartDisabled` | bool | [CDynamicProp](../server/CDynamicProp.md) |  |
+| `0xc6e` | `m_bFiredStartEndOutput` | bool | [CDynamicProp](../server/CDynamicProp.md) |  |
+| `0xc6f` | `m_bForceNpcExclude` | bool | [CDynamicProp](../server/CDynamicProp.md) | `MNotSaved` |
+| `0xc70` | `m_bCreateMovableSurfaceGraph` | bool | [CDynamicProp](../server/CDynamicProp.md) |  |
+| `0xc71` | `m_bCreateNonSolid` | bool | [CDynamicProp](../server/CDynamicProp.md) | `MNotSaved` |
+| `0xc72` | `m_bIsOverrideProp` | bool | [CDynamicProp](../server/CDynamicProp.md) | `MNotSaved` |
+| `0xc74` | `m_iInitialGlowState` | int32 | [CDynamicProp](../server/CDynamicProp.md) |  |
+| `0xc78` | `m_nGlowRange` | int32 | [CDynamicProp](../server/CDynamicProp.md) |  |
+| `0xc7c` | `m_nGlowRangeMin` | int32 | [CDynamicProp](../server/CDynamicProp.md) |  |
+| `0xc80` | `m_glowColor` | Color | [CDynamicProp](../server/CDynamicProp.md) |  |
+| `0xc84` | `m_nGlowTeam` | int32 | [CDynamicProp](../server/CDynamicProp.md) |  |
+| `0xca0` | `m_flAutoReturnDelay` | float32 | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xca8` | `m_hDoorList` | CUtlVector< CHandle< [CBasePropDoor](../server/CBasePropDoor.md) > > | [CBasePropDoor](../server/CBasePropDoor.md) | `MNotSaved` |
+| `0xcc0` | `m_nHardwareType` | int32 | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xcc4` | `m_bNeedsHardware` | bool | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xcc8` | `m_eDoorState` | [DoorState_t](../server/DoorState_t.md) | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xccc` | `m_bLocked` | bool | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xccd` | `m_bNoNPCs` | bool | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xcd0` | `m_closedPosition` | VectorWS | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xcdc` | `m_closedAngles` | QAngle | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xce8` | `m_hBlocker` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xcec` | `m_bFirstBlocked` | bool | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xcf0` | `m_ls` | locksound_t | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xd10` | `m_bForceClosed` | bool | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xd14` | `m_vecLatchWorldPosition` | VectorWS | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xd20` | `m_hActivator` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xd24` | `m_flSpeed` | float32 | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xd40` | `m_SoundMoving` | CGameSoundEventName | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xd48` | `m_SoundOpen` | CGameSoundEventName | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xd50` | `m_SoundClose` | CGameSoundEventName | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xd58` | `m_SoundLock` | CGameSoundEventName | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xd60` | `m_SoundUnlock` | CGameSoundEventName | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xd68` | `m_SoundLatch` | CGameSoundEventName | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xd70` | `m_SoundPound` | CGameSoundEventName | [CBasePropDoor](../server/CBasePropDoor.md) | `MNotSaved` |
+| `0xd78` | `m_SoundJiggle` | CGameSoundEventName | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xd80` | `m_SoundLockedAnim` | CGameSoundEventName | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xd88` | `m_numCloseAttempts` | int32 | [CBasePropDoor](../server/CBasePropDoor.md) | `MNotSaved` |
+| `0xd8c` | `m_nPhysicsMaterial` | CUtlStringToken | [CBasePropDoor](../server/CBasePropDoor.md) | `MNotSaved` |
+| `0xd90` | `m_SlaveName` | CUtlSymbolLarge | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xd98` | `m_hMaster` | CHandle< [CBasePropDoor](../server/CBasePropDoor.md) > | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xda0` | `m_OnBlockedClosing` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xdb8` | `m_OnBlockedOpening` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xdd0` | `m_OnUnblockedClosing` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xde8` | `m_OnUnblockedOpening` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xe00` | `m_OnFullyClosed` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xe18` | `m_OnFullyOpen` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xe30` | `m_OnClose` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xe48` | `m_OnOpen` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xe60` | `m_OnLockedUse` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xe78` | `m_OnAjarOpen` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBasePropDoor](../server/CBasePropDoor.md) |  |
+| `0xe90` | `m_vecAxis` | Vector | [CPropDoorRotating](../server/CPropDoorRotating.md) |  |
+| `0xe9c` | `m_flDistance` | float32 | [CPropDoorRotating](../server/CPropDoorRotating.md) |  |
+| `0xea0` | `m_eSpawnPosition` | [PropDoorRotatingSpawnPos_t](../server/PropDoorRotatingSpawnPos_t.md) | [CPropDoorRotating](../server/CPropDoorRotating.md) |  |
+| `0xea4` | `m_eOpenDirection` | [PropDoorRotatingOpenDirection_e](../server/PropDoorRotatingOpenDirection_e.md) | [CPropDoorRotating](../server/CPropDoorRotating.md) |  |
+| `0xea8` | `m_eCurrentOpenDirection` | [PropDoorRotatingOpenDirection_e](../server/PropDoorRotatingOpenDirection_e.md) | [CPropDoorRotating](../server/CPropDoorRotating.md) | `MNotSaved` |
+| `0xeac` | `m_eDefaultCheckDirection` | doorCheck_e | [CPropDoorRotating](../server/CPropDoorRotating.md) | `MNotSaved` |
+| `0xeb0` | `m_flAjarAngle` | float32 | [CPropDoorRotating](../server/CPropDoorRotating.md) |  |
+| `0xeb4` | `m_angRotationAjarDeprecated` | QAngle | [CPropDoorRotating](../server/CPropDoorRotating.md) |  |
+| `0xec0` | `m_angRotationClosed` | QAngle | [CPropDoorRotating](../server/CPropDoorRotating.md) |  |
+| `0xecc` | `m_angRotationOpenForward` | QAngle | [CPropDoorRotating](../server/CPropDoorRotating.md) |  |
+| `0xed8` | `m_angRotationOpenBack` | QAngle | [CPropDoorRotating](../server/CPropDoorRotating.md) |  |
+| `0xee4` | `m_angGoal` | QAngle | [CPropDoorRotating](../server/CPropDoorRotating.md) |  |
+| `0xef0` | `m_vecForwardBoundsMin` | Vector | [CPropDoorRotating](../server/CPropDoorRotating.md) | `MNotSaved` |
+| `0xefc` | `m_vecForwardBoundsMax` | Vector | [CPropDoorRotating](../server/CPropDoorRotating.md) | `MNotSaved` |
+| `0xf08` | `m_vecBackBoundsMin` | Vector | [CPropDoorRotating](../server/CPropDoorRotating.md) | `MNotSaved` |
+| `0xf14` | `m_vecBackBoundsMax` | Vector | [CPropDoorRotating](../server/CPropDoorRotating.md) | `MNotSaved` |
+| `0xf20` | `m_bAjarDoorShouldntAlwaysOpen` | bool | [CPropDoorRotating](../server/CPropDoorRotating.md) |  |
+| `0xf24` | `m_hEntityBlocker` | CHandle< [CEntityBlocker](../server/CEntityBlocker.md) > | [CPropDoorRotating](../server/CPropDoorRotating.md) |  |
+| `0xf30` | `m_bBreakable` | bool |  | `MNotSaved` |
+| `0xf31` | `m_isAbleToCloseAreaPortals` | bool |  | `MNotSaved` |
+| `0xf34` | `m_currentDamageState` | int32 |  | `MNotSaved` |
+| `0xf38` | `m_damageStates` | CUtlVector< CUtlSymbolLarge > |  | `MNotSaved` |

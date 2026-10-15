@@ -8,17 +8,21 @@ kind: class
 
 # CNmClipDocEvent
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** 8 · **Module:** animdoclib
+**Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 8 · **Module:** animdoclib
 
-**Derived by:** [CNmClipDocEvent_BodyGroup](../animdoclib/CNmClipDocEvent_BodyGroup.md), [CNmClipDocEvent_EntityAttribute](../animdoclib/CNmClipDocEvent_EntityAttribute.md), [CNmClipDocEvent_FloatCurve](../animdoclib/CNmClipDocEvent_FloatCurve.md), [CNmClipDocEvent_Foot](../animdoclib/CNmClipDocEvent_Foot.md), [CNmClipDocEvent_FrameSnap](../animdoclib/CNmClipDocEvent_FrameSnap.md), [CNmClipDocEvent_ID](../animdoclib/CNmClipDocEvent_ID.md), [CNmClipDocEvent_Legacy](../animdoclib/CNmClipDocEvent_Legacy.md), [CNmClipDocEvent_MaterialAttribute](../animdoclib/CNmClipDocEvent_MaterialAttribute.md), [CNmClipDocEvent_OrientationWarp](../animdoclib/CNmClipDocEvent_OrientationWarp.md), [CNmClipDocEvent_Particle](../animdoclib/CNmClipDocEvent_Particle.md), [CNmClipDocEvent_RootMotion](../animdoclib/CNmClipDocEvent_RootMotion.md), [CNmClipDocEvent_Sound](../animdoclib/CNmClipDocEvent_Sound.md), [CNmClipDocEvent_TargetWarp](../animdoclib/CNmClipDocEvent_TargetWarp.md), [CNmClipDocEvent_Transition](../animdoclib/CNmClipDocEvent_Transition.md)
+**Derived by:** [CNmClipDocEvent_BodyGroup](../animdoclib/CNmClipDocEvent_BodyGroup.md), [CNmClipDocEvent_CameraDOF](../animdoclib/CNmClipDocEvent_CameraDOF.md), [CNmClipDocEvent_CameraFOV](../animdoclib/CNmClipDocEvent_CameraFOV.md), [CNmClipDocEvent_Cloth](../animdoclib/CNmClipDocEvent_Cloth.md), [CNmClipDocEvent_Contact](../animdoclib/CNmClipDocEvent_Contact.md), [CNmClipDocEvent_EntityAttribute](../animdoclib/CNmClipDocEvent_EntityAttribute.md), [CNmClipDocEvent_FloatCurve](../animdoclib/CNmClipDocEvent_FloatCurve.md), [CNmClipDocEvent_Foot](../animdoclib/CNmClipDocEvent_Foot.md), [CNmClipDocEvent_FrameSnap](../animdoclib/CNmClipDocEvent_FrameSnap.md), [CNmClipDocEvent_ID](../animdoclib/CNmClipDocEvent_ID.md), [CNmClipDocEvent_Legacy](../animdoclib/CNmClipDocEvent_Legacy.md), [CNmClipDocEvent_MaterialAttribute](../animdoclib/CNmClipDocEvent_MaterialAttribute.md), [CNmClipDocEvent_OrientationWarp](../animdoclib/CNmClipDocEvent_OrientationWarp.md), [CNmClipDocEvent_Particle](../animdoclib/CNmClipDocEvent_Particle.md), [CNmClipDocEvent_RootMotion](../animdoclib/CNmClipDocEvent_RootMotion.md), [CNmClipDocEvent_Sound](../animdoclib/CNmClipDocEvent_Sound.md), [CNmClipDocEvent_TargetWarp](../animdoclib/CNmClipDocEvent_TargetWarp.md), [CNmClipDocEvent_Transition](../animdoclib/CNmClipDocEvent_Transition.md)
 
 **Relationships:**
 
 ```mermaid
 classDiagram
     CNmClipDocEvent <|-- CNmClipDocEvent_BodyGroup
+    CNmClipDocEvent <|-- CNmClipDocEvent_CameraDOF
+    CNmClipDocEvent <|-- CNmClipDocEvent_CameraFOV
+    CNmClipDocEvent <|-- CNmClipDocEvent_Cloth
+    CNmClipDocEvent <|-- CNmClipDocEvent_Contact
     CNmClipDocEvent <|-- CNmClipDocEvent_EntityAttribute
     CNmClipDocEvent <|-- CNmClipDocEvent_FloatCurve
     CNmClipDocEvent <|-- CNmClipDocEvent_Foot

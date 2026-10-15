@@ -8,9 +8,9 @@ kind: class
 
 # CNmClipDocEvent_FloatCurve
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 88 bytes (`0x58`) · **Align:** 8 · **Module:** animdoclib
+**Kind:** class · **Size:** 96 bytes (`0x60`) · **Align:** 8 · **Module:** animdoclib
 
 **Inherits from:** [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md)
 
@@ -29,8 +29,8 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flStartTime` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
 | `0xc` | `m_flDuration` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
-| `0x10` | `m_ID` | CUtlString |  |  |
-| `0x18` | `m_curve` | CPiecewiseCurve |  |  |
+| `0x18` | `m_ID` | CUtlString |  |  |
+| `0x20` | `m_curve` | CPiecewiseCurve |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

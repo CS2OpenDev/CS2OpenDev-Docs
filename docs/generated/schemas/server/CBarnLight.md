@@ -8,9 +8,9 @@ kind: class
 
 # CBarnLight
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 2648 bytes (`0xa58`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 2872 bytes (`0xb38`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CBaseModelEntity](../server/CBaseModelEntity.md)
 
@@ -35,7 +35,7 @@ classDiagram
 
 ## Memory layout
 
-205 fields (77 declared here, 128 inherited). Offsets are absolute from the object base.
+208 fields (77 declared here, 131 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -155,7 +155,8 @@ classDiagram
 | `0x570` | `m_clrRender` | Color | [CBaseModelEntity](../server/CBaseModelEntity.md) | RGBA tint colour multiplied onto the entity's diffuse texture. |
 | `0x578` | `m_vecRenderAttributes` | CUtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../server/EntityRenderAttribute_t.md) > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e0` | `m_bRenderToCubemaps` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x5e1` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e1` | `m_bExpandRenderBoundsToIncludeCloth` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e2` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e8` | `m_Collision` | [CCollisionProperty](../server/CCollisionProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CCollisionProperty struct encoding the entity's collision bounding box shape and flags. |
 | `0x6a0` | `m_Glow` | [CGlowProperty](../server/CGlowProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CGlowProperty struct controlling the entity's glow outline (colour, radius, visibility rules). |
 | `0x6f8` | `m_flGlowBackfaceMult` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Multiplier for the glow effect on back-facing surfaces of the model. |
@@ -164,83 +165,85 @@ classDiagram
 | `0x704` | `m_flFadeScale` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Scale factor applied to fade distances; 0 disables distance fading. |
 | `0x708` | `m_flShadowStrength` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Opacity of this entity's cast shadow (0 = no shadow, 1 = full shadow). |
 | `0x70c` | `m_nObjectCulling` | uint8 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x710` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x738` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
-| `0x768` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
-| `0x770` | `m_bEnabled` | bool |  |  |
-| `0x774` | `m_nColorMode` | int32 |  |  |
-| `0x778` | `m_Color` | Color |  |  |
-| `0x77c` | `m_flColorTemperature` | float32 |  |  |
-| `0x780` | `m_flBrightness` | float32 |  |  |
-| `0x784` | `m_flBrightnessScale` | float32 |  |  |
-| `0x788` | `m_nDirectLight` | int32 |  |  |
-| `0x78c` | `m_nBakedShadowIndex` | int32 |  |  |
-| `0x790` | `m_nLightPathUniqueId` | int32 |  |  |
-| `0x794` | `m_nLightMapUniqueId` | int32 |  |  |
-| `0x798` | `m_nLuminaireShape` | int32 |  |  |
-| `0x79c` | `m_flLuminaireSize` | float32 |  |  |
-| `0x7a0` | `m_flLuminaireAnisotropy` | float32 |  |  |
-| `0x7a8` | `m_LightStyleString` | CUtlString |  |  |
-| `0x7b0` | `m_flLightStyleStartTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0x7b8` | `m_QueuedLightStyleStrings` | CNetworkUtlVectorBase< CUtlString > |  |  |
-| `0x7d0` | `m_LightStyleEvents` | CNetworkUtlVectorBase< CUtlString > |  |  |
-| `0x7e8` | `m_LightStyleTargets` | CNetworkUtlVectorBase< CHandle< [CBaseModelEntity](../server/CBaseModelEntity.md) > > |  |  |
-| `0x800` | `m_StyleEvent` | [CEntityIOOutput](../entity2/CEntityIOOutput.md)[4] |  |  |
-| `0x880` | `m_hLightCookie` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
-| `0x888` | `m_flShape` | float32 |  |  |
-| `0x88c` | `m_flSoftX` | float32 |  |  |
-| `0x890` | `m_flSoftY` | float32 |  |  |
-| `0x894` | `m_flSkirt` | float32 |  |  |
-| `0x898` | `m_flSkirtNear` | float32 |  |  |
-| `0x89c` | `m_vSizeParams` | Vector |  |  |
-| `0x8a8` | `m_flRange` | float32 |  |  |
-| `0x8ac` | `m_vShear` | Vector |  |  |
-| `0x8b8` | `m_nBakeSpecularToCubemaps` | int32 |  |  |
-| `0x8bc` | `m_vBakeSpecularToCubemapsSize` | Vector |  |  |
-| `0x8c8` | `m_flBakeSpecularToCubemapsScale` | float32 |  |  |
-| `0x8cc` | `m_nCastShadows` | int32 |  |  |
-| `0x8d0` | `m_nShadowMapSize` | int32 |  |  |
-| `0x8d4` | `m_nShadowPriority` | int32 |  |  |
-| `0x8d8` | `m_bContactShadow` | bool |  |  |
-| `0x8d9` | `m_bForceShadowsEnabled` | bool |  |  |
-| `0x8dc` | `m_nBounceLight` | int32 |  |  |
-| `0x8e0` | `m_flBounceScale` | float32 |  |  |
-| `0x8e4` | `m_flMinRoughness` | float32 |  |  |
-| `0x8e8` | `m_vAlternateColor` | Vector |  |  |
-| `0x8f4` | `m_fAlternateColorBrightness` | float32 |  |  |
-| `0x8f8` | `m_nFog` | int32 |  |  |
-| `0x8fc` | `m_flFogStrength` | float32 |  |  |
-| `0x900` | `m_nFogShadows` | int32 |  |  |
-| `0x904` | `m_flFogScale` | float32 |  |  |
-| `0x908` | `m_flFadeSizeStart` | float32 |  |  |
-| `0x90c` | `m_flFadeSizeEnd` | float32 |  |  |
-| `0x910` | `m_flShadowFadeSizeStart` | float32 |  |  |
-| `0x914` | `m_flShadowFadeSizeEnd` | float32 |  |  |
-| `0x918` | `m_bPrecomputedFieldsValid` | bool |  |  |
-| `0x91c` | `m_vPrecomputedBoundsMins` | Vector |  |  |
-| `0x928` | `m_vPrecomputedBoundsMaxs` | Vector |  |  |
-| `0x934` | `m_vPrecomputedOBBOrigin` | Vector |  |  |
-| `0x940` | `m_vPrecomputedOBBAngles` | QAngle |  |  |
-| `0x94c` | `m_vPrecomputedOBBExtent` | Vector |  |  |
-| `0x958` | `m_nPrecomputedSubFrusta` | int32 |  |  |
-| `0x95c` | `m_vPrecomputedOBBOrigin0` | Vector |  |  |
-| `0x968` | `m_vPrecomputedOBBAngles0` | QAngle |  |  |
-| `0x974` | `m_vPrecomputedOBBExtent0` | Vector |  |  |
-| `0x980` | `m_vPrecomputedOBBOrigin1` | Vector |  |  |
-| `0x98c` | `m_vPrecomputedOBBAngles1` | QAngle |  |  |
-| `0x998` | `m_vPrecomputedOBBExtent1` | Vector |  |  |
-| `0x9a4` | `m_vPrecomputedOBBOrigin2` | Vector |  |  |
-| `0x9b0` | `m_vPrecomputedOBBAngles2` | QAngle |  |  |
-| `0x9bc` | `m_vPrecomputedOBBExtent2` | Vector |  |  |
-| `0x9c8` | `m_vPrecomputedOBBOrigin3` | Vector |  |  |
-| `0x9d4` | `m_vPrecomputedOBBAngles3` | QAngle |  |  |
-| `0x9e0` | `m_vPrecomputedOBBExtent3` | Vector |  |  |
-| `0x9ec` | `m_vPrecomputedOBBOrigin4` | Vector |  |  |
-| `0x9f8` | `m_vPrecomputedOBBAngles4` | QAngle |  |  |
-| `0xa04` | `m_vPrecomputedOBBExtent4` | Vector |  |  |
-| `0xa10` | `m_vPrecomputedOBBOrigin5` | Vector |  |  |
-| `0xa1c` | `m_vPrecomputedOBBAngles5` | QAngle |  |  |
-| `0xa28` | `m_vPrecomputedOBBExtent5` | Vector |  |  |
-| `0xa34` | `m_bPvsModifyEntity` | bool |  |  |
-| `0xa35` | `m_bTransmitAlways` | bool |  |  |
-| `0xa38` | `m_VisClusters` | CNetworkUtlVectorBase< uint16 > |  |  |
+| `0x710` | `m_bodyGroupTotalRequestCount` | uint32 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x718` | `m_bodyGroupRequests` | CUtlVectorFixedGrowable< [CBaseModelEntity::BodyGroupRequest_t](../server/CBaseModelEntity.BodyGroupRequest_t.md), 8 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x7f0` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x818` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
+| `0x848` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
+| `0x850` | `m_bEnabled` | bool |  |  |
+| `0x854` | `m_nColorMode` | int32 |  |  |
+| `0x858` | `m_Color` | Color |  |  |
+| `0x85c` | `m_flColorTemperature` | float32 |  |  |
+| `0x860` | `m_flBrightness` | float32 |  |  |
+| `0x864` | `m_flBrightnessScale` | float32 |  |  |
+| `0x868` | `m_nDirectLight` | int32 |  |  |
+| `0x86c` | `m_nBakedShadowIndex` | int32 |  |  |
+| `0x870` | `m_nLightPathUniqueId` | int32 |  |  |
+| `0x874` | `m_nLightMapUniqueId` | int32 |  |  |
+| `0x878` | `m_nLuminaireShape` | int32 |  |  |
+| `0x87c` | `m_flLuminaireSize` | float32 |  |  |
+| `0x880` | `m_flLuminaireAnisotropy` | float32 |  |  |
+| `0x888` | `m_LightStyleString` | CUtlString |  |  |
+| `0x890` | `m_flLightStyleStartTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0x898` | `m_QueuedLightStyleStrings` | CNetworkUtlVectorBase< CUtlString > |  |  |
+| `0x8b0` | `m_LightStyleEvents` | CNetworkUtlVectorBase< CUtlString > |  |  |
+| `0x8c8` | `m_LightStyleTargets` | CNetworkUtlVectorBase< CHandle< [CBaseModelEntity](../server/CBaseModelEntity.md) > > |  |  |
+| `0x8e0` | `m_StyleEvent` | [CEntityIOOutput](../entity2/CEntityIOOutput.md)[4] |  |  |
+| `0x960` | `m_hLightCookie` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
+| `0x968` | `m_flShape` | float32 |  |  |
+| `0x96c` | `m_flSoftX` | float32 |  |  |
+| `0x970` | `m_flSoftY` | float32 |  |  |
+| `0x974` | `m_flSkirt` | float32 |  |  |
+| `0x978` | `m_flSkirtNear` | float32 |  |  |
+| `0x97c` | `m_vSizeParams` | Vector |  |  |
+| `0x988` | `m_flRange` | float32 |  |  |
+| `0x98c` | `m_vShear` | Vector |  |  |
+| `0x998` | `m_nBakeSpecularToCubemaps` | int32 |  |  |
+| `0x99c` | `m_vBakeSpecularToCubemapsSize` | Vector |  |  |
+| `0x9a8` | `m_flBakeSpecularToCubemapsScale` | float32 |  |  |
+| `0x9ac` | `m_nCastShadows` | int32 |  |  |
+| `0x9b0` | `m_nShadowMapSize` | int32 |  |  |
+| `0x9b4` | `m_nShadowPriority` | int32 |  |  |
+| `0x9b8` | `m_bContactShadow` | bool |  |  |
+| `0x9b9` | `m_bForceShadowsEnabled` | bool |  |  |
+| `0x9bc` | `m_nBounceLight` | int32 |  |  |
+| `0x9c0` | `m_flBounceScale` | float32 |  |  |
+| `0x9c4` | `m_flMinRoughness` | float32 |  |  |
+| `0x9c8` | `m_vAlternateColor` | Vector |  |  |
+| `0x9d4` | `m_fAlternateColorBrightness` | float32 |  |  |
+| `0x9d8` | `m_nFog` | int32 |  |  |
+| `0x9dc` | `m_flFogStrength` | float32 |  |  |
+| `0x9e0` | `m_nFogShadows` | int32 |  |  |
+| `0x9e4` | `m_flFogScale` | float32 |  |  |
+| `0x9e8` | `m_flFadeSizeStart` | float32 |  |  |
+| `0x9ec` | `m_flFadeSizeEnd` | float32 |  |  |
+| `0x9f0` | `m_flShadowFadeSizeStart` | float32 |  |  |
+| `0x9f4` | `m_flShadowFadeSizeEnd` | float32 |  |  |
+| `0x9f8` | `m_bPrecomputedFieldsValid` | bool |  |  |
+| `0x9fc` | `m_vPrecomputedBoundsMins` | Vector |  |  |
+| `0xa08` | `m_vPrecomputedBoundsMaxs` | Vector |  |  |
+| `0xa14` | `m_vPrecomputedOBBOrigin` | Vector |  |  |
+| `0xa20` | `m_vPrecomputedOBBAngles` | QAngle |  |  |
+| `0xa2c` | `m_vPrecomputedOBBExtent` | Vector |  |  |
+| `0xa38` | `m_nPrecomputedSubFrusta` | int32 |  |  |
+| `0xa3c` | `m_vPrecomputedOBBOrigin0` | Vector |  |  |
+| `0xa48` | `m_vPrecomputedOBBAngles0` | QAngle |  |  |
+| `0xa54` | `m_vPrecomputedOBBExtent0` | Vector |  |  |
+| `0xa60` | `m_vPrecomputedOBBOrigin1` | Vector |  |  |
+| `0xa6c` | `m_vPrecomputedOBBAngles1` | QAngle |  |  |
+| `0xa78` | `m_vPrecomputedOBBExtent1` | Vector |  |  |
+| `0xa84` | `m_vPrecomputedOBBOrigin2` | Vector |  |  |
+| `0xa90` | `m_vPrecomputedOBBAngles2` | QAngle |  |  |
+| `0xa9c` | `m_vPrecomputedOBBExtent2` | Vector |  |  |
+| `0xaa8` | `m_vPrecomputedOBBOrigin3` | Vector |  |  |
+| `0xab4` | `m_vPrecomputedOBBAngles3` | QAngle |  |  |
+| `0xac0` | `m_vPrecomputedOBBExtent3` | Vector |  |  |
+| `0xacc` | `m_vPrecomputedOBBOrigin4` | Vector |  |  |
+| `0xad8` | `m_vPrecomputedOBBAngles4` | QAngle |  |  |
+| `0xae4` | `m_vPrecomputedOBBExtent4` | Vector |  |  |
+| `0xaf0` | `m_vPrecomputedOBBOrigin5` | Vector |  |  |
+| `0xafc` | `m_vPrecomputedOBBAngles5` | QAngle |  |  |
+| `0xb08` | `m_vPrecomputedOBBExtent5` | Vector |  |  |
+| `0xb14` | `m_bPvsModifyEntity` | bool |  |  |
+| `0xb15` | `m_bTransmitAlways` | bool |  |  |
+| `0xb18` | `m_VisClusters` | CNetworkUtlVectorBase< uint16 > |  |  |

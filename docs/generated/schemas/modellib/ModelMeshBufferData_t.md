@@ -8,7 +8,7 @@ kind: class
 
 # ModelMeshBufferData_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 48 bytes (`0x30`) · **Align:** 8 · **Module:** modellib
 
@@ -36,7 +36,7 @@ classDiagram
 | `0x11` | `m_bCreateBufferUAV` | bool |  |  |
 | `0x12` | `m_bCreateRawBuffer` | bool |  |  |
 | `0x13` | `m_bCreatePooledBuffer` | bool |  |  |
-| `0x14` | `m_nBufferUsage` | uint8 |  |  |
+| `0x14` | `m_nBufferUsage` | uint16 |  |  |
 | `0x18` | `m_inputLayoutFields` | CUtlVector< [RenderInputLayoutField_t](../modellib/RenderInputLayoutField_t.md) > |  |  |
 
 <details><summary>KV3 class defaults</summary>

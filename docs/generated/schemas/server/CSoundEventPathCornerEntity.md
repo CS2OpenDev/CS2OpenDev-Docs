@@ -8,17 +8,18 @@ kind: class
 
 # CSoundEventPathCornerEntity
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 1544 bytes (`0x608`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 1568 bytes (`0x620`) · **Align:** 8 · **Module:** server
 
-**Inherits from:** [CSoundEventEntity](../server/CSoundEventEntity.md)
+**Inherits from:** [CSoundEventMultiPointEntity](../server/CSoundEventMultiPointEntity.md)
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CSoundEventEntity <|-- CSoundEventPathCornerEntity
+    CSoundEventMultiPointEntity <|-- CSoundEventPathCornerEntity
+    CSoundEventEntity <|-- CSoundEventMultiPointEntity
     CBaseEntity <|-- CSoundEventEntity
     CEntityInstance <|-- CBaseEntity
     CSoundEventPathCornerEntity *-- SoundeventPathCornerPairNetworked_t
@@ -26,7 +27,7 @@ classDiagram
 
 ## Memory layout
 
-109 fields (7 declared here, 102 inherited). Offsets are absolute from the object base.
+109 fields (2 declared here, 107 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -132,10 +133,10 @@ classDiagram
 | `0x540` | `m_iszSoundName` | CUtlSymbolLarge | [CSoundEventEntity](../server/CSoundEventEntity.md) |  |
 | `0x55c` | `m_hSource` | CEntityHandle | [CSoundEventEntity](../server/CSoundEventEntity.md) |  |
 | `0x560` | `m_nEntityIndexSelection` | int32 | [CSoundEventEntity](../server/CSoundEventEntity.md) |  |
-| `0x568` | `m_iszPathCorner` | CUtlSymbolLarge |  |  |
-| `0x570` | `m_iCountMax` | int32 |  |  |
-| `0x574` | `m_flDistanceMax` | float32 |  |  |
-| `0x578` | `m_flDistMaxSqr` | float32 |  |  |
-| `0x57c` | `m_flDotProductMax` | float32 |  |  |
-| `0x580` | `m_bPlaying` | bool |  |  |
-| `0x5a8` | `m_vecCornerPairsNetworked` | CNetworkUtlVectorBase< [SoundeventPathCornerPairNetworked_t](../server/SoundeventPathCornerPairNetworked_t.md) > |  | `MNotSaved` |
+| `0x568` | `m_iCountMax` | int32 | [CSoundEventMultiPointEntity](../server/CSoundEventMultiPointEntity.md) |  |
+| `0x56c` | `m_flDistanceMax` | float32 | [CSoundEventMultiPointEntity](../server/CSoundEventMultiPointEntity.md) |  |
+| `0x570` | `m_flDistMaxSqr` | float32 | [CSoundEventMultiPointEntity](../server/CSoundEventMultiPointEntity.md) |  |
+| `0x574` | `m_flDotProductMax` | float32 | [CSoundEventMultiPointEntity](../server/CSoundEventMultiPointEntity.md) |  |
+| `0x578` | `m_bPlaying` | bool | [CSoundEventMultiPointEntity](../server/CSoundEventMultiPointEntity.md) |  |
+| `0x5a0` | `m_iszPathCorner` | CUtlSymbolLarge |  |  |
+| `0x5c0` | `m_vecCornerPairsNetworked` | CNetworkUtlVectorBase< [SoundeventPathCornerPairNetworked_t](../server/SoundeventPathCornerPairNetworked_t.md) > |  | `MNotSaved` |

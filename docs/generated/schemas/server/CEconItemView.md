@@ -8,9 +8,9 @@ kind: class
 
 # CEconItemView
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 680 bytes (`0x2a8`) · **Align:** n/a (unspecified) · **Module:** server
+**Kind:** class · **Size:** 1000 bytes (`0x3e8`) · **Align:** n/a (unspecified) · **Module:** server
 
 **Inherits from:** [IEconItemInterface](../server/IEconItemInterface.md)
 
@@ -24,7 +24,7 @@ classDiagram
 
 ## Memory layout
 
-13 fields (13 declared here, 0 inherited). Offsets are absolute from the object base.
+15 fields (15 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -41,3 +41,5 @@ classDiagram
 | `0xe8` | `m_NetworkedDynamicAttributes` | [CAttributeList](../server/CAttributeList.md) |  |  |
 | `0x160` | `m_szCustomName` | char[161] |  |  |
 | `0x201` | `m_szCustomNameOverride` | char[161] |  |  |
+| `0x2a2` | `m_szCustomNameOverride2` | char[161] |  |  |
+| `0x343` | `m_szCustomNameOverride3` | char[161] |  |  |

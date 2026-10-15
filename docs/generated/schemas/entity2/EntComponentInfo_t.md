@@ -8,9 +8,9 @@ kind: class
 
 # EntComponentInfo_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 104 bytes (`0x68`) · **Align:** n/a (unspecified) · **Module:** entity2
+**Kind:** class · **Size:** 96 bytes (`0x60`) · **Align:** n/a (unspecified) · **Module:** entity2
 
 **Relationships:**
 
@@ -31,4 +31,4 @@ classDiagram
 | `0x18` | `m_pNetworkDataReferencedPtrPropDescription` | char* |  |  |
 | `0x20` | `m_nRuntimeIndex` | int32 |  |  |
 | `0x24` | `m_nFlags` | uint32 |  |  |
-| `0x60` | `m_pBaseClassComponentHelper` | [CEntityComponentHelper](../entity2/CEntityComponentHelper.md)* |  |  |
+| `0x58` | `m_pBaseClassComponentHelper` | [CEntityComponentHelper](../entity2/CEntityComponentHelper.md)* |  |  |

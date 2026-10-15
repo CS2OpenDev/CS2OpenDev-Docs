@@ -8,7 +8,7 @@ kind: class
 
 # CInfoOffscreenPanoramaTexture
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 1320 bytes (`0x528`) · **Align:** 8 · **Module:** server
 
@@ -30,7 +30,7 @@ classDiagram
 
 ## Memory layout
 
-99 fields (11 declared here, 88 inherited). Offsets are absolute from the object base.
+100 fields (12 declared here, 88 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -123,6 +123,7 @@ classDiagram
 | `0x49c` | `m_nBloodType` | [BloodType](../server/BloodType.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x4a0` | `m_pPulseGraphInstance` | [CPulseGraphInstance_ServerEntity](../server/CPulseGraphInstance_ServerEntity.md)* | [CBaseEntity](../server/CBaseEntity.md) | `MKV3TransferSaveOpsForField GetPulseInstanceSaveRestoreOps` |
 | `0x4a8` | `m_bDisabled` | bool |  |  |
+| `0x4a9` | `m_bEnableMipGen` | bool |  |  |
 | `0x4ac` | `m_nResolutionX` | int32 |  |  |
 | `0x4b0` | `m_nResolutionY` | int32 |  |  |
 | `0x4b8` | `m_szPanelType` | CUtlSymbolLarge |  |  |

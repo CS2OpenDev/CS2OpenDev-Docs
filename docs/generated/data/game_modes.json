@@ -71,6 +71,22 @@
         },
         {
           "convars": [],
+          "description_token": "#SFUI_GameModeRushDesc",
+          "display_name": "",
+          "exhibit_game_type": "",
+          "game_mode": 0,
+          "game_type": 0,
+          "has_convar_overrides": false,
+          "id": "rush",
+          "map_groups": [
+            "mg_rush_001"
+          ],
+          "max_players": 6,
+          "name_token": "#SFUI_GameModeRush",
+          "type_flags": 0
+        },
+        {
+          "convars": [],
           "description_token": "#SFUI_GameModeScrimComp2v2Desc",
           "display_name": "",
           "exhibit_game_type": "",
@@ -1377,6 +1393,12 @@
       "maps": [
         "de_canals",
         "de_dust"
+      ]
+    },
+    {
+      "id": "mg_rush_001",
+      "maps": [
+        "rush_001"
       ]
     },
     {

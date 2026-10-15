@@ -8,7 +8,7 @@ kind: class
 
 # ConfigIndex
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 4 bytes (`0x4`) · **Align:** 2 · **Module:** animgraphlib
 

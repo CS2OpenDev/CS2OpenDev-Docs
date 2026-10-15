@@ -8,7 +8,7 @@ kind: class
 
 # CInfoOffscreenPanoramaTexture
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 2056 bytes (`0x808`) · **Align:** 8 · **Module:** client
 
@@ -30,7 +30,7 @@ classDiagram
 
 ## Memory layout
 
-97 fields (12 declared here, 85 inherited). Offsets are absolute from the object base.
+98 fields (13 declared here, 85 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -120,6 +120,7 @@ classDiagram
 | `0x5f0` | `m_sUniqueHammerID` | CUtlString | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
 | `0x5f8` | `m_nBloodType` | [BloodType](../server/BloodType.md) | [C_BaseEntity](../client/C_BaseEntity.md) |  |
 | `0x600` | `m_bDisabled` | bool |  |  |
+| `0x601` | `m_bEnableMipGen` | bool |  |  |
 | `0x604` | `m_nResolutionX` | int32 |  |  |
 | `0x608` | `m_nResolutionY` | int32 |  |  |
 | `0x610` | `m_szPanelType` | CUtlSymbolLarge |  |  |

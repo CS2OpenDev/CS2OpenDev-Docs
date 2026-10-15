@@ -5,7 +5,7 @@ module: vphysics2
 
 # Module: vphysics2
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 [📊 View UML Diagram](../diagrams/vphysics2.md)
 

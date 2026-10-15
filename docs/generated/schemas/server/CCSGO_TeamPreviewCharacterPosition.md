@@ -8,9 +8,9 @@ kind: class
 
 # CCSGO_TeamPreviewCharacterPosition
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 3264 bytes (`0xcc0`) · **Align:** n/a (unspecified) · **Module:** server
+**Kind:** class · **Size:** 5224 bytes (`0x1468`) · **Align:** n/a (unspecified) · **Module:** server
 
 **Inherits from:** [CBaseEntity](../server/CBaseEntity.md)
 
@@ -29,7 +29,7 @@ classDiagram
 
 ## Memory layout
 
-96 fields (8 declared here, 88 inherited). Offsets are absolute from the object base.
+97 fields (9 declared here, 88 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -127,5 +127,6 @@ classDiagram
 | `0x4b8` | `m_sWeaponName` | CUtlString |  |  |
 | `0x4c0` | `m_xuid` | uint64 |  |  |
 | `0x4c8` | `m_agentItem` | [CEconItemView](../server/CEconItemView.md) |  |  |
-| `0x770` | `m_glovesItem` | [CEconItemView](../server/CEconItemView.md) |  |  |
-| `0xa18` | `m_weaponItem` | [CEconItemView](../server/CEconItemView.md) |  |  |
+| `0x8b0` | `m_glovesItem` | [CEconItemView](../server/CEconItemView.md) |  |  |
+| `0xc98` | `m_weaponItem` | [CEconItemView](../server/CEconItemView.md) |  |  |
+| `0x1080` | `m_petItem` | [CEconItemView](../server/CEconItemView.md) |  |  |

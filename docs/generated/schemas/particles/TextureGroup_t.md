@@ -8,9 +8,9 @@ kind: class
 
 # TextureGroup_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 3032 bytes (`0xbd8`) · **Align:** 8 · **Module:** particles
+**Kind:** class · **Size:** 3096 bytes (`0xc18`) · **Align:** 8 · **Module:** particles
 
 **Relationships:**
 
@@ -38,7 +38,7 @@ classDiagram
 | `0x2c` | `m_nTextureChannels` | [SpriteCardTextureChannel_t](../particles/SpriteCardTextureChannel_t.md) |  | `MPropertyFriendlyName Channel Mix` `MPropertySuppressExpr ( m_nTextureType == SPRITECARD_TEXTURE_NORMALMAP &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_ANIMMOTIONVEC &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_6POINT_XYZ_A &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_6POINT_NEGXYZ_E &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_A &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_B &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_C &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_ILLUMINATION_GRADIENT &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_DEPTH )` |
 | `0x30` | `m_nTextureBlendMode` | [ParticleTextureLayerBlendType_t](../particles/ParticleTextureLayerBlendType_t.md) |  | `MPropertyFriendlyName Mix Blend Mode` `MPropertySuppressExpr ( m_nTextureType == SPRITECARD_TEXTURE_NORMALMAP &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_ANIMMOTIONVEC &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_6POINT_XYZ_A &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_6POINT_NEGXYZ_E &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_A &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_B &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_C &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_ILLUMINATION_GRADIENT &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_DEPTH )` |
 | `0x38` | `m_flTextureBlend` | [CParticleCollectionRendererFloatInput](../particleslib/CParticleCollectionRendererFloatInput.md) |  | `MPropertyFriendlyName Blend Amount` `MPropertySuppressExpr ( m_nTextureType == SPRITECARD_TEXTURE_NORMALMAP &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_ANIMMOTIONVEC &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_6POINT_XYZ_A &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_6POINT_NEGXYZ_E &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_A &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_B &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_C &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_ILLUMINATION_GRADIENT &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_DEPTH )` |
-| `0x1a8` | `m_TextureControls` | [TextureControls_t](../particles/TextureControls_t.md) |  | `MPropertyFriendlyName Texture Controls` `MPropertySuppressExpr ( m_nTextureType == SPRITECARD_TEXTURE_NORMALMAP &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_ANIMMOTIONVEC &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_6POINT_XYZ_A &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_6POINT_NEGXYZ_E &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_A &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_B &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_C &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_ILLUMINATION_GRADIENT &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_DEPTH )` |
+| `0x1b0` | `m_TextureControls` | [TextureControls_t](../particles/TextureControls_t.md) |  | `MPropertyFriendlyName Texture Controls` `MPropertySuppressExpr ( m_nTextureType == SPRITECARD_TEXTURE_NORMALMAP &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_ANIMMOTIONVEC &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_6POINT_XYZ_A &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_6POINT_NEGXYZ_E &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_A &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_B &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_SPHERICAL_HARMONICS_C &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_ILLUMINATION_GRADIENT &#124;&#124; m_nTextureType == SPRITECARD_TEXTURE_DEPTH )` |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -128,7 +128,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_TextureControls&quot;:
 	{
@@ -205,7 +206,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_flFinalTextureScaleV&quot;:
 		{
@@ -280,7 +282,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_flFinalTextureOffsetU&quot;:
 		{
@@ -355,7 +358,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_flFinalTextureOffsetV&quot;:
 		{
@@ -430,7 +434,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_flFinalTextureUVRotation&quot;:
 		{
@@ -505,7 +510,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_flZoomScale&quot;:
 		{
@@ -580,7 +586,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_flDistortion&quot;:
 		{
@@ -655,7 +662,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_bRandomizeOffsets&quot;: false,
 		&quot;m_bClampUVs&quot;: false,

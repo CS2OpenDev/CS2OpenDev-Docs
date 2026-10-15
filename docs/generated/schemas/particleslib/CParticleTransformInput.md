@@ -8,13 +8,13 @@ kind: class
 
 # CParticleTransformInput
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 104 bytes (`0x68`) · **Align:** 8 · **Module:** particleslib
 
 **Inherits from:** [CParticleInput](../particleslib/CParticleInput.md)
 
-**Metadata:** `MCustomFGDMetadata { KV3DefaultTestFnName = 'CParticleTransformInputDefaultTestFunc' }`, `MPropertyCustomEditor TransformInput()`
+**Metadata:** `MCustomFGDMetadata { SkipImprintFGDClassOnKV3 = true SkipRemoveKeysInKV3AtFGDDefault = true KV3DefaultTestFnName = 'CParticleTransformInputDefaultTestFunc' }`, `MPropertyCustomEditor TransformInput()`
 
 **Relationships:**
 

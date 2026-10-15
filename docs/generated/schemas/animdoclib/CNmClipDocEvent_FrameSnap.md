@@ -8,9 +8,9 @@ kind: class
 
 # CNmClipDocEvent_FrameSnap
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 8 · **Module:** animdoclib
+**Kind:** class · **Size:** 32 bytes (`0x20`) · **Align:** 8 · **Module:** animdoclib
 
 **Inherits from:** [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md)
 
@@ -30,7 +30,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flStartTime` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
 | `0xc` | `m_flDuration` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
-| `0x10` | `m_frameSnapMode` | [NmFrameSnapEventMode_t](../animlib/NmFrameSnapEventMode_t.md) |  |  |
+| `0x18` | `m_frameSnapMode` | [NmFrameSnapEventMode_t](../animlib/NmFrameSnapEventMode_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

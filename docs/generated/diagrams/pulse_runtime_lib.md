@@ -35,6 +35,8 @@ classDiagram
     CPulseCell_BaseFlow <|-- CPulseCell_Outflow_CycleRandom
     CPulseCell_BaseFlow <|-- CPulseCell_Outflow_CycleShuffled
     CPulseCell_BaseFlow <|-- CPulseCell_PickBestOutflowSelector
+    CPulseCell_BaseYieldingInflow <|-- CPulseCell_RaceCursors
+    CPulseCell_BaseFlow <|-- CPulseCell_ReturnValues
     CPulseCell_BaseYieldingInflow <|-- CPulseCell_Step_CallExternalMethod
     CPulseCell_BaseFlow <|-- CPulseCell_Step_DebugLog
     CPulseCell_BaseFlow <|-- CPulseCell_Step_PublicOutput
@@ -60,10 +62,13 @@ classDiagram
     CPulse_Chunk *-- PGDInstruction_t
     CPulse_Chunk *-- CPulse_RegisterInfo
     CPulse_Chunk *-- CPulse_InstructionDebug
+    CPulse_Chunk *-- PulseRuntimeTempVarBankIndex_t
     CPulse_DomainValue *-- PulseDomainValueType_t
     CPulse_InstructionDebug *-- PulseDocNodeID_t
     CPulse_PublicOutput *-- CPulseRuntimeMethodArg
     CPulse_RegisterInfo *-- PulseRuntimeRegisterIndex_t
+    CPulse_TempVarBankDefinition *-- CPulse_TempVarInfo
+    CPulse_TempVarInfo *-- PulseDocNodeID_t
     CPulse_Variable *-- PulseVariableKeysSource_t
     CPulse_Variable *-- PulseDocNodeID_t
     PGDInstruction_t *-- PulseInstructionCode_t
@@ -75,6 +80,7 @@ classDiagram
     PGDInstruction_t *-- PulseRuntimeConstantIndex_t
     PGDInstruction_t *-- PulseRuntimeDomainValueIndex_t
     PGDInstruction_t *-- PulseRuntimeBlackboardReferenceIndex_t
+    PGDInstruction_t *-- PulseRuntimeTempVarIndex_t
     PulseGraphExecutionHistoryCursorDesc_t *-- PulseCursorID_t
     PulseGraphExecutionHistoryCursorDesc_t *-- PulseDocNodeID_t
     PulseGraphExecutionHistoryEntry_t *-- PulseCursorID_t
@@ -101,6 +107,8 @@ classDiagram
     CPulseCell_Outflow_CycleShuffled *-- CPulse_OutflowConnection
     CPulseCell_PickBestOutflowSelector *-- PulseBestOutflowRules_t
     CPulseCell_PickBestOutflowSelector *-- PulseSelectorOutflowList_t
+    CPulseCell_RaceCursors *-- CPulse_OutflowConnection
+    CPulseCell_RaceCursors *-- CPulse_ResumePoint
     CPulseCell_Step_CallExternalMethod *-- PulseRuntimeBlackboardReferenceIndex_t
     CPulseCell_Step_CallExternalMethod *-- CPulseRuntimeMethodArg
     CPulseCell_Step_CallExternalMethod *-- PulseMethodCallMode_t
@@ -115,6 +123,7 @@ classDiagram
     CPulseGraphDef --> CPulse_Chunk
     CPulseGraphDef --> CPulseCell_Base
     CPulseGraphDef *-- CPulse_Variable
+    CPulseGraphDef --> CPulse_TempVarBankDefinition
     CPulseGraphDef *-- CPulse_PublicOutput
     CPulseGraphDef --> CPulse_InvokeBinding
     CPulseGraphDef --> CPulse_CallInfo

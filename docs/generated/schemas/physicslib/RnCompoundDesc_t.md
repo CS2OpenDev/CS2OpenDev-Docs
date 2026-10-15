@@ -8,9 +8,9 @@ kind: class
 
 # RnCompoundDesc_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 168 bytes (`0xa8`) · **Align:** 8 · **Module:** physicslib
+**Kind:** class · **Size:** 376 bytes (`0x178`) · **Align:** 8 · **Module:** physicslib
 
 **Inherits from:** [RnShapeDesc_t](../physicslib/RnShapeDesc_t.md)
 
@@ -47,16 +47,29 @@ classDiagram
 	&quot;m_nToolMaterialHash&quot;: 0,
 	&quot;m_Compound&quot;:
 	{
-		&quot;m_Spheres&quot;:
-		[
-		],
-		&quot;m_Capsules&quot;:
+		&quot;m_Tree&quot;:
+		{
+			&quot;m_Nodes&quot;:
+			[
+			],
+			&quot;m_nStartIterationIndex&quot;: 0
+		},
+		&quot;m_nHullBaseIndex&quot;: 0,
+		&quot;m_nMeshBaseIndex&quot;: 0,
+		&quot;m_nShapeCount&quot;: 0,
+		&quot;m_Meshes&quot;:
 		[
 		],
 		&quot;m_Hulls&quot;:
 		[
 		],
-		&quot;m_Meshes&quot;:
+		&quot;m_Capsules&quot;:
+		[
+		],
+		&quot;m_Spheres&quot;:
+		[
+		],
+		&quot;m_CompoundMaterialIndices&quot;:
 		[
 		],
 		&quot;m_Bounds&quot;:

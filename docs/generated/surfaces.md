@@ -4,7 +4,7 @@ title: Surface Properties
 
 # Surface Properties
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 303 surface records — footstep sounds, physics, and bullet-penetration modifiers per material.  The same material can appear more than once, keyed by source file / scope.
 
@@ -127,7 +127,7 @@ title: Surface Properties
 | `glass` |  | `surfaceproperties_steamaudio.txt` | absorptionCoefficients=`[0, 0.01, 0.05, 0.1, 0.06, 0.04, 0.03, 0.02, 0.02, 0.02, 0.02]`; scatteringCoefficients=`[0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.05, 0.07, 0.1, 0.1, 0.1]`; transmissionCoefficients=`[0.98, 0.25, 0.06, 0.003, 0.001, 0.001, 0, 0, 0, 0, 0]` |
 | `glassbottle` | ct_player | `surfaceproperties_footsteps.txt` | walkleft=`CT_GlassBottle.StepLeft`; walkright=`CT_GlassBottle.StepLeft` |
 | `glassbottle` | t_player | `surfaceproperties_footsteps.txt` | walkleft=`T_GlassBottle.StepLeft`; walkright=`T_GlassBottle.StepLeft` |
-| `glassbottle` |  | `surfaceproperties_game.txt` | bulletPenetrationDistanceModifier=`0.99` |
+| `glassbottle` |  | `surfaceproperties_game.txt` | bulletPenetrationDamageModifier=`0`; bulletPenetrationDistanceModifier=`0.99` |
 | `glassfloor` | ct_player | `surfaceproperties_footsteps.txt` | walkleft=`CT_Glass.StepLeft`; walkright=`CT_Glass.StepLeft` |
 | `glassfloor` | t_player | `surfaceproperties_footsteps.txt` | walkleft=`T_Glass.StepLeft`; walkright=`T_Glass.StepLeft` |
 | `glassfloor` |  | `surfaceproperties_game.txt` | bulletPenetrationDistanceModifier=`0.99`; gamematerial=`Y` |

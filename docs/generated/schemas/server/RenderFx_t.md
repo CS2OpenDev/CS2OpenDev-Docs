@@ -8,7 +8,7 @@ kind: enum
 
 # RenderFx_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 Special render effect applied to an entity (pulse / fade / strobe / glow variants; m_nRenderFX).
 

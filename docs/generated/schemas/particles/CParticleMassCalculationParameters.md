@@ -8,9 +8,9 @@ kind: class
 
 # CParticleMassCalculationParameters
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 1112 bytes (`0x458`) · **Align:** 8 · **Module:** particles
+**Kind:** class · **Size:** 1136 bytes (`0x470`) · **Align:** 8 · **Module:** particles
 
 **Relationships:**
 
@@ -28,8 +28,8 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x0` | `m_nMassMode` | [ParticleMassMode_t](../particles/ParticleMassMode_t.md) |  | `MPropertyFriendlyName Radius calculation mode` |
 | `0x8` | `m_flRadius` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Radius input` |
-| `0x178` | `m_flNominalRadius` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Nominal radius value` |
-| `0x2e8` | `m_flScale` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Scale to apply to result` |
+| `0x180` | `m_flNominalRadius` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Nominal radius value` |
+| `0x2f8` | `m_flScale` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Scale to apply to result` |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -108,7 +108,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flNominalRadius&quot;:
 	{
@@ -183,7 +184,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flScale&quot;:
 	{
@@ -258,7 +260,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	}
 }</pre>
 </details>

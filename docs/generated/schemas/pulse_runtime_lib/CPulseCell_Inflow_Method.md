@@ -8,9 +8,9 @@ kind: class
 
 # CPulseCell_Inflow_Method
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 200 bytes (`0xc8`) · **Align:** 8 · **Module:** pulse_runtime_lib
+**Kind:** class · **Size:** 192 bytes (`0xc0`) · **Align:** 8 · **Module:** pulse_runtime_lib
 
 **Inherits from:** [CPulseCell_Inflow_BaseEntrypoint](../pulse_runtime_lib/CPulseCell_Inflow_BaseEntrypoint.md)
 
@@ -36,8 +36,8 @@ classDiagram
 | `0x80` | `m_MethodName` | PulseSymbol_t |  |  |
 | `0x90` | `m_Description` | CUtlString |  |  |
 | `0x98` | `m_bIsPublic` | bool |  |  |
-| `0xa0` | `m_ReturnType` | CPulseValueFullType |  |  |
-| `0xb8` | `m_Args` | CUtlLeanVector< [CPulseRuntimeMethodArg](../pulse_runtime_lib/CPulseRuntimeMethodArg.md) > |  |  |
+| `0xa0` | `m_Args` | CUtlLeanVector< [CPulseRuntimeMethodArg](../pulse_runtime_lib/CPulseRuntimeMethodArg.md) > |  |  |
+| `0xb0` | `m_ReturnValues` | CUtlLeanVector< [CPulseRuntimeMethodArg](../pulse_runtime_lib/CPulseRuntimeMethodArg.md) > |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -53,8 +53,10 @@ classDiagram
 	&quot;m_MethodName&quot;: &quot;&quot;,
 	&quot;m_Description&quot;: &quot;&quot;,
 	&quot;m_bIsPublic&quot;: false,
-	&quot;m_ReturnType&quot;: &quot;PVAL_VOID&quot;,
 	&quot;m_Args&quot;:
+	[
+	],
+	&quot;m_ReturnValues&quot;:
 	[
 	]
 }</pre>

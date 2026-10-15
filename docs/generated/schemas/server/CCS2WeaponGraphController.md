@@ -8,9 +8,9 @@ kind: class
 
 # CCS2WeaponGraphController
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 1416 bytes (`0x588`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 1472 bytes (`0x5c0`) · **Align:** 8 · **Module:** server
 
 **Twin:** [CCS2WeaponGraphController (client)](../client/CCS2WeaponGraphController.md)
 
@@ -32,27 +32,27 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x10` | `m_hExternalGraph` | [ExternalAnimGraphHandle_t](../server/ExternalAnimGraphHandle_t.md) | [CAnimGraphControllerBase](../server/CAnimGraphControllerBase.md) |  |
-| `0x88` | `m_action` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
-| `0xa0` | `m_bActionReset` | CAnimGraph2ParamOptionalRef< bool > |  |  |
-| `0xb8` | `m_flWeaponActionSpeedScale` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
-| `0xd0` | `m_weaponCategory` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
-| `0xe8` | `m_weaponType` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
-| `0x100` | `m_weaponExtraInfo` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
-| `0x118` | `m_flWeaponAmmo` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
-| `0x130` | `m_flWeaponAmmoMax` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
-| `0x148` | `m_flWeaponAmmoReserve` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
-| `0x160` | `m_bWeaponIsSilenced` | CAnimGraph2ParamOptionalRef< bool > |  |  |
-| `0x178` | `m_flWeaponIronsightAmount` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
-| `0x190` | `m_bIsUsingLegacyModel` | CAnimGraph2ParamOptionalRef< bool > |  |  |
-| `0x1a8` | `m_idleVariation` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
-| `0x1c0` | `m_deployVariation` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
-| `0x1d8` | `m_attackType` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
-| `0x1f0` | `m_attackThrowStrength` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
-| `0x208` | `m_flAttackVariation` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
-| `0x220` | `m_inspectVariation` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
-| `0x238` | `m_inspectExtraInfo` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
-| `0x250` | `m_reloadStage` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
+| `0x4c` | `m_hExternalGraph` | [ExternalAnimGraphHandle_t](../server/ExternalAnimGraphHandle_t.md) | [CAnimGraphControllerBase](../server/CAnimGraphControllerBase.md) |  |
+| `0xc0` | `m_action` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
+| `0xd8` | `m_bActionReset` | CAnimGraph2ParamOptionalRef< bool > |  |  |
+| `0xf0` | `m_flWeaponActionSpeedScale` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
+| `0x108` | `m_weaponCategory` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
+| `0x120` | `m_weaponType` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
+| `0x138` | `m_weaponExtraInfo` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
+| `0x150` | `m_flWeaponAmmo` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
+| `0x168` | `m_flWeaponAmmoMax` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
+| `0x180` | `m_flWeaponAmmoReserve` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
+| `0x198` | `m_bWeaponIsSilenced` | CAnimGraph2ParamOptionalRef< bool > |  |  |
+| `0x1b0` | `m_flWeaponIronsightAmount` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
+| `0x1c8` | `m_bIsUsingLegacyModel` | CAnimGraph2ParamOptionalRef< bool > |  |  |
+| `0x1e0` | `m_idleVariation` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
+| `0x1f8` | `m_deployVariation` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
+| `0x210` | `m_attackType` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
+| `0x228` | `m_attackThrowStrength` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
+| `0x240` | `m_flAttackVariation` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
+| `0x258` | `m_inspectVariation` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
+| `0x270` | `m_inspectExtraInfo` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
+| `0x288` | `m_reloadStage` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

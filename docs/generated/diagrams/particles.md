@@ -4,7 +4,7 @@ title: "UML: particles"
 
 # UML: particles
 
-Class relationships (inheritance and composition) for the `particles` module (showing 300 of 419 relationships).
+Class relationships (inheritance and composition) for the `particles` module (showing 300 of 421 relationships).
 
 **Arrow legend:** `<|--` inheritance &nbsp; `*--` composition &nbsp; `-->` association/pointer
 
@@ -43,6 +43,7 @@ classDiagram
     CParticleFunctionInitializer <|-- C_INIT_CreateSpiralSphere
     CParticleFunctionInitializer <|-- C_INIT_CreateWithinBox
     CParticleFunctionInitializer <|-- C_INIT_CreateWithinCapsuleTransform
+    CParticleFunctionInitializer <|-- C_INIT_CreateWithinCone
     CParticleFunctionInitializer <|-- C_INIT_CreateWithinSphereTransform
     CParticleFunctionInitializer <|-- C_INIT_CreationNoise
     CParticleFunctionInitializer <|-- C_INIT_DistanceCull
@@ -130,6 +131,7 @@ classDiagram
     CParticleFunctionInitializer <|-- C_INIT_SkyVisCull
     CParticleFunctionInitializer <|-- C_INIT_StatusEffect
     CParticleFunctionInitializer <|-- C_INIT_StatusEffectCitadel
+    CParticleFunctionInitializer <|-- C_INIT_StatusEffectTf
     CParticleFunctionInitializer <|-- C_INIT_VelocityFromCP
     CParticleFunctionInitializer <|-- C_INIT_VelocityFromNormal
     CParticleFunctionInitializer <|-- C_INIT_VelocityRadialRandom
@@ -308,6 +310,4 @@ classDiagram
     CParticleFunctionOperator <|-- C_OP_RemapTransformOrientationToYaw
     CParticleFunctionOperator <|-- C_OP_RemapTransformToVelocity
     CParticleFunctionOperator <|-- C_OP_RemapTransformVisibilityToScalar
-    CParticleFunctionOperator <|-- C_OP_RemapTransformVisibilityToVector
-    CParticleFunctionOperator <|-- C_OP_RemapVectorComponentToScalar
 ```

@@ -8,9 +8,9 @@ kind: class
 
 # C_CSGO_TeamPreviewModel
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25947352** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 13584 bytes (`0x3510`) · **Align:** 16 · **Module:** client
+**Kind:** class · **Size:** 14288 bytes (`0x37d0`) · **Align:** 16 · **Module:** client
 
 **Inherits from:** [C_CSGO_PreviewPlayer](../client/C_CSGO_PreviewPlayer.md)
 
@@ -27,7 +27,7 @@ classDiagram
 
 ## Memory layout
 
-310 fields (0 declared here, 310 inherited). Offsets are absolute from the object base.
+317 fields (0 declared here, 317 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -116,228 +116,235 @@ classDiagram
 | `0x5e2` | `m_bSimulationTimeChanged` | bool | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
 | `0x5f0` | `m_sUniqueHammerID` | CUtlString | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
 | `0x5f8` | `m_nBloodType` | [BloodType](../server/BloodType.md) | [C_BaseEntity](../client/C_BaseEntity.md) |  |
-| `0xaf0` | `m_CRenderComponent` | [CRenderComponent](../client/CRenderComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xaf8` | `m_CHitboxComponent` | [CHitboxComponent](../client/CHitboxComponent.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb10` | `m_pChoreoComponent` | [CChoreoComponent](../client/CChoreoComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb18` | `m_nDestructiblePartInitialStateDestructed0` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb1c` | `m_nDestructiblePartInitialStateDestructed1` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb20` | `m_nDestructiblePartInitialStateDestructed2` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb24` | `m_nDestructiblePartInitialStateDestructed3` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb28` | `m_nDestructiblePartInitialStateDestructed4` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb2c` | `m_nDestructiblePartInitialStateDestructed0_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb30` | `m_nDestructiblePartInitialStateDestructed1_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb34` | `m_nDestructiblePartInitialStateDestructed2_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb38` | `m_nDestructiblePartInitialStateDestructed3_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb3c` | `m_nDestructiblePartInitialStateDestructed4_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb40` | `m_bDestructiblePartInitialStateDestructed0_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb41` | `m_bDestructiblePartInitialStateDestructed1_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb42` | `m_bDestructiblePartInitialStateDestructed2_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb43` | `m_bDestructiblePartInitialStateDestructed3_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb44` | `m_bDestructiblePartInitialStateDestructed4_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb48` | `m_pDestructiblePartsSystemComponent` | [CDestructiblePartsComponent](../client/CDestructiblePartsComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xc70` | `m_bInitModelEffects` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xc71` | `m_bDoingModelEffects` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xc74` | `m_iOldHealth` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xc78` | `m_nRenderMode` | [RenderMode_t](../server/RenderMode_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xc79` | `m_nRenderFX` | [RenderFx_t](../server/RenderFx_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xc7a` | `m_bAllowFadeInView` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xc98` | `m_clrRender` | Color | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xca0` | `m_vecRenderAttributes` | C_UtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../client/EntityRenderAttribute_t.md) > | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xd20` | `m_bRenderToCubemaps` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xd21` | `m_bNoInterpolate` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xd28` | `m_Collision` | [CCollisionProperty](../client/CCollisionProperty.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xde0` | `m_Glow` | [CGlowProperty](../client/CGlowProperty.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe38` | `m_flGlowBackfaceMult` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe3c` | `m_fadeMinDist` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe40` | `m_fadeMaxDist` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe44` | `m_flFadeScale` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe48` | `m_flShadowStrength` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe4c` | `m_nObjectCulling` | uint8 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe4d` | `m_nRequiredDecalRtEncoding` | [DecalRtEncoding_t](../scenesystem/DecalRtEncoding_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe50` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe78` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xf58` | `m_pClientAlphaProperty` | [CClientAlphaProperty](../client/CClientAlphaProperty.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xf60` | `m_ClientOverrideTint` | Color | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xf64` | `m_bUseClientOverrideTint` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xfa0` | `m_bvDisabledHitGroups` | uint32[1] | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
-| `0xfb0` | `m_graphControllerManager` | [CAnimGraphControllerManager](../server/CAnimGraphControllerManager.md) | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
-| `0x1048` | `m_pMainGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | The primary animation-graph controller instance for this entity. |
-| `0x1050` | `m_bInitiallyPopulateInterpHistory` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
-| `0x1052` | `m_bSuppressAnimEventSounds` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
-| `0x1058` | `m_OnLayerCycleUpdated` | CEntityOutputTemplate< float32 > | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
-| `0x1078` | `m_OnExternalChoreoGraphChanged` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
-| `0x1098` | `m_bAnimGraphUpdateEnabled` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
-| `0x1099` | `m_bAnimationUpdateScheduled` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x109c` | `m_vecForce` | Vector | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x10a8` | `m_nForceBone` | int32 | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x10b0` | `m_pClientsideRagdoll` | [CBaseAnimGraph](../client/CBaseAnimGraph.md)* | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x10b8` | `m_bBuiltRagdoll` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x10c8` | `m_pRagdollControl` | [IPhysicsRagdollControl](../vphysics2/IPhysicsRagdollControl.md)* | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MPhysPtr` |
-| `0x10d0` | `m_RagdollPose` | [PhysicsRagdollPose_t](../client/PhysicsRagdollPose_t.md) | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
-| `0x1118` | `m_bRagdollEnabled` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | True while the entity is simulated as a ragdoll rather than animated. |
-| `0x1119` | `m_bRagdollClientSide` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x1128` | `m_bHasAnimatedMaterialAttributes` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x1180` | `m_hMyWearables` | C_NetworkUtlVectorBase< CHandle< [C_EconWearable](../client/C_EconWearable.md) > > | [C_BaseCombatCharacter](../client/C_BaseCombatCharacter.md) | `MNotSaved` |
-| `0x1198` | `m_leftFootAttachment` | [AttachmentHandle_t](../modellib/AttachmentHandle_t.md) | [C_BaseCombatCharacter](../client/C_BaseCombatCharacter.md) | `MNotSaved` |
-| `0x1199` | `m_rightFootAttachment` | [AttachmentHandle_t](../modellib/AttachmentHandle_t.md) | [C_BaseCombatCharacter](../client/C_BaseCombatCharacter.md) | `MNotSaved` |
-| `0x119c` | `m_nWaterWakeMode` | [C_BaseCombatCharacter::WaterWakeMode_t](../client/C_BaseCombatCharacter.WaterWakeMode_t.md) | [C_BaseCombatCharacter](../client/C_BaseCombatCharacter.md) | `MNotSaved` |
-| `0x11a0` | `m_flWaterWorldZ` | float32 | [C_BaseCombatCharacter](../client/C_BaseCombatCharacter.md) | `MNotSaved` |
-| `0x11a4` | `m_flWaterNextTraceTime` | float32 | [C_BaseCombatCharacter](../client/C_BaseCombatCharacter.md) | `MNotSaved` |
-| `0x1208` | `m_pWeaponServices` | [CPlayer_WeaponServices](../client/CPlayer_WeaponServices.md)* | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
-| `0x1210` | `m_pItemServices` | [CPlayer_ItemServices](../client/CPlayer_ItemServices.md)* | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
-| `0x1218` | `m_pAutoaimServices` | [CPlayer_AutoaimServices](../client/CPlayer_AutoaimServices.md)* | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
-| `0x1220` | `m_pObserverServices` | [CPlayer_ObserverServices](../client/CPlayer_ObserverServices.md)* | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
-| `0x1228` | `m_pWaterServices` | [CPlayer_WaterServices](../client/CPlayer_WaterServices.md)* | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
-| `0x1230` | `m_pUseServices` | [CPlayer_UseServices](../client/CPlayer_UseServices.md)* | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
-| `0x1238` | `m_pFlashlightServices` | [CPlayer_FlashlightServices](../client/CPlayer_FlashlightServices.md)* | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
-| `0x1240` | `m_pCameraServices` | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md)* | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
-| `0x1248` | `m_pMovementServices` | [CPlayer_MovementServices](../client/CPlayer_MovementServices.md)* | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
-| `0x1258` | `m_ServerViewAngleChanges` | C_UtlVectorEmbeddedNetworkVar< [ViewAngleServerChange_t](../client/ViewAngleServerChange_t.md) > | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) | `MNotSaved` |
-| `0x12c0` | `v_angle` | QAngle | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
-| `0x12cc` | `v_anglePrevious` | QAngle | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
-| `0x12d8` | `m_iHideHUD` | uint32 | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
-| `0x12e0` | `m_skybox3d` | sky3dparams_t | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
-| `0x1370` | `m_flDeathTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
-| `0x1374` | `m_vecPredictionError` | Vector | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) | `MNotSaved` |
-| `0x1380` | `m_flPredictionErrorTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) | `MNotSaved` |
-| `0x13a0` | `m_vecLastCameraSetupLocalOrigin` | Vector | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) | `MNotSaved` |
-| `0x13ac` | `m_flLastCameraSetupTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) | `MNotSaved` |
-| `0x13b0` | `m_flFOVSensitivityAdjust` | float32 | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) | `MNotSaved` |
-| `0x13b4` | `m_flMouseSensitivity` | float32 | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) | `MNotSaved` |
-| `0x13b8` | `m_vOldOrigin` | Vector | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) | `MNotSaved` |
-| `0x13c4` | `m_flOldSimulationTime` | float32 | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) | `MNotSaved` |
-| `0x13c8` | `m_nLastExecutedCommandNumber` | int32 | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) | `MNotSaved` |
-| `0x13cc` | `m_nLastExecutedCommandTick` | int32 | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) | `MNotSaved` |
-| `0x13d0` | `m_hController` | CHandle< [CBasePlayerController](../client/CBasePlayerController.md) > | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
-| `0x13d4` | `m_hDefaultController` | CHandle< [CBasePlayerController](../client/CBasePlayerController.md) > | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
-| `0x13d8` | `m_bIsSwappingToPredictableController` | bool | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) | `MNotSaved` |
-| `0x13f0` | `m_pPingServices` | [CCSPlayer_PingServices](../client/CCSPlayer_PingServices.md)* | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x13f8` | `m_previousPlayerState` | [CSPlayerState](../server/CSPlayerState.md) | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x13fc` | `m_iPlayerState` | [CSPlayerState](../server/CSPlayerState.md) | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x1400` | `m_bHasMovedSinceSpawn` | bool | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x1404` | `m_flLastSpawnTimeIndex` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x1408` | `m_iProgressBarDuration` | int32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x140c` | `m_flProgressBarStartTime` | float32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x1410` | `m_flClientDeathTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x1414` | `m_flFlashBangTime` | float32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x1418` | `m_flFlashScreenshotAlpha` | float32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x141c` | `m_flFlashOverlayAlpha` | float32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x1420` | `m_bFlashBuildUp` | bool | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x1421` | `m_bFlashDspHasBeenCleared` | bool | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x1422` | `m_bFlashScreenshotHasBeenGrabbed` | bool | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x1424` | `m_flFlashMaxAlpha` | float32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x1428` | `m_flFlashDuration` | float32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x142c` | `m_flClientHealthFadeChangeTimestamp` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x1430` | `m_nClientHealthFadeParityValue` | int32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x1434` | `m_fNextThinkPushAway` | float32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x143c` | `m_flCurrentMusicStartTime` | float32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x1440` | `m_flMusicRoundStartTime` | float32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x1444` | `m_bDeferStartMusicOnWarmup` | bool | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x1448` | `m_flLastSmokeOverlayAlpha` | float32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x144c` | `m_flLastSmokeAge` | float32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x1450` | `m_vLastSmokeOverlayColor` | Vector | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x1478` | `m_hOriginalController` | CHandle< [CCSPlayerController](../client/CCSPlayerController.md) > | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
-| `0x1490` | `m_pBulletServices` | [CCSPlayer_BulletServices](../client/CCSPlayer_BulletServices.md)* | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1498` | `m_pHostageServices` | [CCSPlayer_HostageServices](../client/CCSPlayer_HostageServices.md)* | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x14a0` | `m_pBuyServices` | [CCSPlayer_BuyServices](../client/CCSPlayer_BuyServices.md)* | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x14a8` | `m_pGlowServices` | [CCSPlayer_GlowServices](../client/CCSPlayer_GlowServices.md)* | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x14b0` | `m_pActionTrackingServices` | [CCSPlayer_ActionTrackingServices](../client/CCSPlayer_ActionTrackingServices.md)* | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x14b8` | `m_pAimPunchServices` | [CCSPlayer_AimPunchServices](../client/CCSPlayer_AimPunchServices.md)* | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x14c0` | `m_pDamageReactServices` | [CCSPlayer_DamageReactServices](../client/CCSPlayer_DamageReactServices.md)* | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x14c8` | `m_flHealthShotBoostExpirationTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x14cc` | `m_flLastFiredWeaponTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x14d0` | `m_bHasFemaleVoice` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x14d4` | `m_flLandingTimeSeconds` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x14d8` | `m_flOldFallVelocity` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x14dc` | `m_szLastPlaceName` | char[18] | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x14ee` | `m_bPrevDefuser` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x14ef` | `m_bPrevHelmet` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x14f0` | `m_nPrevArmorVal` | int32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x14f4` | `m_nPrevGrenadeAmmoCount` | int32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x14f8` | `m_unPreviousWeaponHash` | uint32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x14fc` | `m_unWeaponHash` | uint32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1500` | `m_bInBuyZone` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1501` | `m_bPreviouslyInBuyZone` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1502` | `m_bInLanding` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1504` | `m_flLandingStartTime` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1508` | `m_bInHostageRescueZone` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1509` | `m_bInBombZone` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x150a` | `m_bIsBuyMenuOpen` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x150c` | `m_flTimeOfLastInjury` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1510` | `m_flNextSprayDecalTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1678` | `m_iRetakesOffering` | int32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x167c` | `m_iRetakesOfferingCard` | int32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1680` | `m_bRetakesHasDefuseKit` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1681` | `m_bRetakesMVPLastRound` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1684` | `m_iRetakesMVPBoostItem` | int32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1688` | `m_RetakesMVPBoostExtraUtility` | loadout_slot_t | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x168d` | `m_bNeedToReApplyGloves` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1690` | `m_EconGloves` | [C_EconItemView](../client/C_EconItemView.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1b00` | `m_nEconGlovesChanged` | uint8 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1b01` | `m_bMustSyncRagdollState` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1b04` | `m_nRagdollDamageBone` | int32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1b08` | `m_vRagdollDamageForce` | Vector | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1b14` | `m_szRagdollDamageWeaponName` | char[64] | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1b54` | `m_bRagdollDamageHeadshot` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1b58` | `m_vRagdollServerOrigin` | VectorWS | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1b64` | `m_lastLandTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1b68` | `m_bOnGroundLastTick` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1b84` | `m_hHudModelArms` | CHandle< [C_CS2HudModelArms](../client/C_CS2HudModelArms.md) > | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1b88` | `m_qDeathEyeAngles` | QAngle | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1b94` | `m_bLeftHanded` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1b98` | `m_fSwitchedHandednessTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1b9c` | `m_flViewmodelOffsetX` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1ba0` | `m_flViewmodelOffsetY` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1ba4` | `m_flViewmodelOffsetZ` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1ba8` | `m_flViewmodelFOV` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1bac` | `m_vecPlayerPatchEconIndices` | uint32[5] | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1bf0` | `m_GunGameImmunityColor` | Color | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1c40` | `m_vecBulletHitModels` | CUtlVector< [C_BulletHitModel](../client/C_BulletHitModel.md)* > | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1c58` | `m_bIsWalking` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1c60` | `m_entitySpottedState` | [EntitySpottedState_t](../client/EntitySpottedState_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1c78` | `m_bIsScoped` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1c79` | `m_bResumeZoom` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1c7a` | `m_bIsDefusing` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1c7b` | `m_bIsGrabbingHostage` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1c7c` | `m_iBlockingUseActionInProgress` | [CSPlayerBlockingUseAction_t](../server/CSPlayerBlockingUseAction_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1c80` | `m_flEmitSoundTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1c84` | `m_bInNoDefuseArea` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1c88` | `m_nWhichBombZone` | int32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1c8c` | `m_iShotsFired` | int32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1c90` | `m_flFlinchStack` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1c94` | `m_flVelocityModifier` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1c98` | `m_bWaitForNoAttack` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1c9c` | `m_ignoreLadderJumpTime` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1ca1` | `m_bKilledByHeadshot` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1ca4` | `m_ArmorValue` | int32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1ca8` | `m_unCurrentEquipmentValue` | uint16 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1caa` | `m_unRoundStartEquipmentValue` | uint16 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1cac` | `m_unFreezetimeEndEquipmentValue` | uint16 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1cb0` | `m_nLastKillerIndex` | CEntityIndex | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1cb4` | `m_bOldIsScoped` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1cb5` | `m_bHasDeathInfo` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1cb8` | `m_flDeathInfoTime` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1cbc` | `m_vecDeathInfoOrigin` | VectorWS | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1cf8` | `m_grenadeParameterStashTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1cfc` | `m_bGrenadeParametersStashed` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1d00` | `m_angStashedShootAngles` | QAngle | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1d0c` | `m_vecStashedGrenadeThrowPosition` | VectorWS | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1d18` | `m_vecStashedGrenadeThrowPawnCenter` | VectorWS | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x1d24` | `m_vecStashedVelocity` | Vector | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x3260` | `m_bShouldAutobuyDMWeapons` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x3264` | `m_fImmuneToGunGameDamageTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x3268` | `m_bGunGameImmunity` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x326c` | `m_fImmuneToGunGameDamageTimeLast` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x3270` | `m_fMolotovDamageTime` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x32dc` | `m_nPlayerInfernoBodyFx` | [ParticleIndex_t](../server/ParticleIndex_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x3350` | `m_angEyeAngles` | QAngle | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x33e0` | `m_arrOldEyeAnglesTimes` | [GameTime_t](../entity2/GameTime_t.md)[4] | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x33f0` | `m_arrOldEyeAngles` | QAngle[4] | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x3420` | `m_angEyeAnglesVelocity` | QAngle | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x342c` | `m_iIDEntIndex` | CEntityIndex | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x3430` | `m_delayTargetIDTimer` | [CountdownTimer](../client/CountdownTimer.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x3448` | `m_iTargetItemEntIdx` | CEntityIndex | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x344c` | `m_iOldIDEntIndex` | CEntityIndex | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x3450` | `m_holdTargetIDTimer` | [CountdownTimer](../client/CountdownTimer.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
-| `0x3470` | `m_animgraphCharacterModeString` | CGlobalSymbol | [C_CSGO_PreviewPlayer](../client/C_CSGO_PreviewPlayer.md) |  |
-| `0x3478` | `m_flInitialModelScale` | float32 | [C_CSGO_PreviewPlayer](../client/C_CSGO_PreviewPlayer.md) |  |
+| `0xaf8` | `m_CRenderComponent` | [CRenderComponent](../client/CRenderComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0xb00` | `m_CHitboxComponent` | [CHitboxComponent](../client/CHitboxComponent.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb18` | `m_pChoreoComponent` | [CChoreoComponent](../client/CChoreoComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb20` | `m_nDestructiblePartInitialStateDestructed0` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb24` | `m_nDestructiblePartInitialStateDestructed1` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb28` | `m_nDestructiblePartInitialStateDestructed2` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb2c` | `m_nDestructiblePartInitialStateDestructed3` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb30` | `m_nDestructiblePartInitialStateDestructed4` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb34` | `m_nDestructiblePartInitialStateDestructed0_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb38` | `m_nDestructiblePartInitialStateDestructed1_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb3c` | `m_nDestructiblePartInitialStateDestructed2_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb40` | `m_nDestructiblePartInitialStateDestructed3_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb44` | `m_nDestructiblePartInitialStateDestructed4_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb48` | `m_bDestructiblePartInitialStateDestructed0_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb49` | `m_bDestructiblePartInitialStateDestructed1_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb4a` | `m_bDestructiblePartInitialStateDestructed2_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb4b` | `m_bDestructiblePartInitialStateDestructed3_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb4c` | `m_bDestructiblePartInitialStateDestructed4_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb50` | `m_pDestructiblePartsSystemComponent` | [CDestructiblePartsComponent](../client/CDestructiblePartsComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xc78` | `m_bInitModelEffects` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0xc79` | `m_bDoingModelEffects` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0xc7c` | `m_iOldHealth` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0xc80` | `m_nRenderMode` | [RenderMode_t](../server/RenderMode_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xc81` | `m_nRenderFX` | [RenderFx_t](../server/RenderFx_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xc82` | `m_bAllowFadeInView` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xca0` | `m_clrRender` | Color | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xca8` | `m_vecRenderAttributes` | C_UtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../client/EntityRenderAttribute_t.md) > | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xd28` | `m_bRenderToCubemaps` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xd29` | `m_bExpandRenderBoundsToIncludeCloth` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xd2a` | `m_bNoInterpolate` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xd30` | `m_Collision` | [CCollisionProperty](../client/CCollisionProperty.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xde8` | `m_Glow` | [CGlowProperty](../client/CGlowProperty.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe40` | `m_flGlowBackfaceMult` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe44` | `m_fadeMinDist` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe48` | `m_fadeMaxDist` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe4c` | `m_flFadeScale` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe50` | `m_flShadowStrength` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe54` | `m_nObjectCulling` | uint8 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe55` | `m_nRequiredDecalRtEncoding` | [DecalRtEncoding_t](../scenesystem/DecalRtEncoding_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe58` | `m_bodyGroupTotalRequestCount` | uint32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe60` | `m_bodyGroupRequests` | CUtlVectorFixedGrowable< [C_BaseModelEntity::BodyGroupRequest_t](../client/C_BaseModelEntity.BodyGroupRequest_t.md), 8 > | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xf38` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xf60` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0x1040` | `m_pClientAlphaProperty` | [CClientAlphaProperty](../client/CClientAlphaProperty.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0x1048` | `m_ClientOverrideTint` | Color | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0x104c` | `m_bUseClientOverrideTint` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0x1088` | `m_bvDisabledHitGroups` | uint32[1] | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
+| `0x1098` | `m_graphControllerManager` | [CAnimGraphControllerManager](../server/CAnimGraphControllerManager.md) | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
+| `0x1130` | `m_pMainGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | The primary animation-graph controller instance for this entity. |
+| `0x1138` | `m_bInitiallyPopulateInterpHistory` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
+| `0x113a` | `m_bSuppressAnimEventSounds` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
+| `0x1140` | `m_OnLayerCycleUpdated` | CEntityOutputTemplate< float32 > | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
+| `0x1160` | `m_OnExternalChoreoGraphChanged` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
+| `0x1180` | `m_bAnimGraphUpdateEnabled` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
+| `0x1181` | `m_bAnimationUpdateScheduled` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x1184` | `m_vecForce` | Vector | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x1190` | `m_nForceBone` | int32 | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x1198` | `m_pClientsideRagdoll` | [CBaseAnimGraph](../client/CBaseAnimGraph.md)* | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x11a0` | `m_bBuiltRagdoll` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x11b0` | `m_pRagdollControl` | [IPhysicsRagdollControl](../vphysics2/IPhysicsRagdollControl.md)* | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MPhysPtr` |
+| `0x11b8` | `m_RagdollPose` | [PhysicsRagdollPose_t](../client/PhysicsRagdollPose_t.md) | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
+| `0x1200` | `m_bRagdollEnabled` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | True while the entity is simulated as a ragdoll rather than animated. |
+| `0x1201` | `m_bRagdollClientSide` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x1202` | `m_bShouldUpdateTransformations` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
+| `0x1210` | `m_bHasAnimatedMaterialAttributes` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x1268` | `m_hMyWearables` | C_NetworkUtlVectorBase< CHandle< [C_EconWearable](../client/C_EconWearable.md) > > | [C_BaseCombatCharacter](../client/C_BaseCombatCharacter.md) | `MNotSaved` |
+| `0x1280` | `m_leftFootAttachment` | [AttachmentHandle_t](../modellib/AttachmentHandle_t.md) | [C_BaseCombatCharacter](../client/C_BaseCombatCharacter.md) | `MNotSaved` |
+| `0x1281` | `m_rightFootAttachment` | [AttachmentHandle_t](../modellib/AttachmentHandle_t.md) | [C_BaseCombatCharacter](../client/C_BaseCombatCharacter.md) | `MNotSaved` |
+| `0x1284` | `m_nWaterWakeMode` | [C_BaseCombatCharacter::WaterWakeMode_t](../client/C_BaseCombatCharacter.WaterWakeMode_t.md) | [C_BaseCombatCharacter](../client/C_BaseCombatCharacter.md) | `MNotSaved` |
+| `0x1288` | `m_flWaterWorldZ` | float32 | [C_BaseCombatCharacter](../client/C_BaseCombatCharacter.md) | `MNotSaved` |
+| `0x128c` | `m_flWaterNextTraceTime` | float32 | [C_BaseCombatCharacter](../client/C_BaseCombatCharacter.md) | `MNotSaved` |
+| `0x12f0` | `m_pWeaponServices` | [CPlayer_WeaponServices](../client/CPlayer_WeaponServices.md)* | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
+| `0x12f8` | `m_pItemServices` | [CPlayer_ItemServices](../client/CPlayer_ItemServices.md)* | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
+| `0x1300` | `m_pAutoaimServices` | [CPlayer_AutoaimServices](../client/CPlayer_AutoaimServices.md)* | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
+| `0x1308` | `m_pObserverServices` | [CPlayer_ObserverServices](../client/CPlayer_ObserverServices.md)* | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
+| `0x1310` | `m_pWaterServices` | [CPlayer_WaterServices](../client/CPlayer_WaterServices.md)* | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
+| `0x1318` | `m_pUseServices` | [CPlayer_UseServices](../client/CPlayer_UseServices.md)* | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
+| `0x1320` | `m_pFlashlightServices` | [CPlayer_FlashlightServices](../client/CPlayer_FlashlightServices.md)* | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
+| `0x1328` | `m_pCameraServices` | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md)* | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
+| `0x1330` | `m_pMovementServices` | [CPlayer_MovementServices](../client/CPlayer_MovementServices.md)* | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
+| `0x1340` | `m_ServerViewAngleChanges` | C_UtlVectorEmbeddedNetworkVar< [ViewAngleServerChange_t](../client/ViewAngleServerChange_t.md) > | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) | `MNotSaved` |
+| `0x13a8` | `v_angle` | QAngle | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
+| `0x13b4` | `v_anglePrevious` | QAngle | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
+| `0x13c0` | `m_iHideHUD` | uint32 | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
+| `0x13c8` | `m_skybox3d` | sky3dparams_t | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
+| `0x1458` | `m_flDeathTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
+| `0x1460` | `m_vecPredictionError` | Vector | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) | `MNotSaved` |
+| `0x146c` | `m_flPredictionErrorTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) | `MNotSaved` |
+| `0x148c` | `m_vecLastCameraSetupLocalOrigin` | Vector | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) | `MNotSaved` |
+| `0x1498` | `m_flLastCameraSetupTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) | `MNotSaved` |
+| `0x149c` | `m_flFOVSensitivityAdjust` | float32 | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) | `MNotSaved` |
+| `0x14a0` | `m_flMouseSensitivity` | float32 | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) | `MNotSaved` |
+| `0x14a4` | `m_vOldOrigin` | Vector | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) | `MNotSaved` |
+| `0x14b0` | `m_flOldSimulationTime` | float32 | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) | `MNotSaved` |
+| `0x14b4` | `m_nLastExecutedCommandNumber` | int32 | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) | `MNotSaved` |
+| `0x14b8` | `m_nLastExecutedCommandTick` | int32 | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) | `MNotSaved` |
+| `0x14bc` | `m_hController` | CHandle< [CBasePlayerController](../client/CBasePlayerController.md) > | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
+| `0x14c0` | `m_hDefaultController` | CHandle< [CBasePlayerController](../client/CBasePlayerController.md) > | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) |  |
+| `0x14c4` | `m_bIsSwappingToPredictableController` | bool | [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) | `MNotSaved` |
+| `0x14d8` | `m_pPingServices` | [CCSPlayer_PingServices](../client/CCSPlayer_PingServices.md)* | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x14e0` | `m_previousPlayerState` | [CSPlayerState](../server/CSPlayerState.md) | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x14e4` | `m_iPlayerState` | [CSPlayerState](../server/CSPlayerState.md) | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x14e8` | `m_bHasMovedSinceSpawn` | bool | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x14ec` | `m_flLastSpawnTimeIndex` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x14f0` | `m_iProgressBarDuration` | int32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x14f4` | `m_flProgressBarStartTime` | float32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x14f8` | `m_flClientDeathTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x14fc` | `m_flFlashBangTime` | float32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x1500` | `m_flFlashScreenshotAlpha` | float32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x1504` | `m_flFlashOverlayAlpha` | float32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x1508` | `m_bFlashBuildUp` | bool | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x1509` | `m_bFlashDspHasBeenCleared` | bool | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x150a` | `m_bFlashScreenshotHasBeenGrabbed` | bool | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x150c` | `m_flFlashMaxAlpha` | float32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x1510` | `m_flFlashDuration` | float32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x1514` | `m_flClientHealthFadeChangeTimestamp` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x1518` | `m_nClientHealthFadeParityValue` | int32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x151c` | `m_fNextThinkPushAway` | float32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x1524` | `m_flCurrentMusicStartTime` | float32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x1528` | `m_flMusicRoundStartTime` | float32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x152c` | `m_bDeferStartMusicOnWarmup` | bool | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x1530` | `m_flLastSmokeOverlayAlpha` | float32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x1534` | `m_flLastSmokeAge` | float32 | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x1538` | `m_vLastSmokeOverlayColor` | Vector | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x1560` | `m_hOriginalController` | CHandle< [CCSPlayerController](../client/CCSPlayerController.md) > | [C_CSPlayerPawnBase](../client/C_CSPlayerPawnBase.md) |  |
+| `0x1570` | `m_pBulletServices` | [CCSPlayer_BulletServices](../client/CCSPlayer_BulletServices.md)* | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1578` | `m_pHostageServices` | [CCSPlayer_HostageServices](../client/CCSPlayer_HostageServices.md)* | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1580` | `m_pBuyServices` | [CCSPlayer_BuyServices](../client/CCSPlayer_BuyServices.md)* | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1588` | `m_pGlowServices` | [CCSPlayer_GlowServices](../client/CCSPlayer_GlowServices.md)* | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1590` | `m_pActionTrackingServices` | [CCSPlayer_ActionTrackingServices](../client/CCSPlayer_ActionTrackingServices.md)* | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1598` | `m_pAimPunchServices` | [CCSPlayer_AimPunchServices](../client/CCSPlayer_AimPunchServices.md)* | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x15a0` | `m_pDamageReactServices` | [CCSPlayer_DamageReactServices](../client/CCSPlayer_DamageReactServices.md)* | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x15a8` | `m_flHealthShotBoostExpirationTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x15ac` | `m_flLastFiredWeaponTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x15b0` | `m_bHasFemaleVoice` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x15b4` | `m_flLandingTimeSeconds` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x15b8` | `m_flOldFallVelocity` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x15bc` | `m_szLastPlaceName` | char[18] | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x15ce` | `m_bPrevDefuser` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x15cf` | `m_bPrevHelmet` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x15d0` | `m_nPrevArmorVal` | int32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x15d4` | `m_nPrevGrenadeAmmoCount` | int32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x15d8` | `m_unPreviousWeaponHash` | uint32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x15dc` | `m_unWeaponHash` | uint32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x15e0` | `m_bInBuyZone` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x15e1` | `m_bPreviouslyInBuyZone` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x15e2` | `m_bInLanding` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x15e4` | `m_flLandingStartTime` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x15e8` | `m_bInHostageRescueZone` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x15e9` | `m_bInBombZone` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x15ea` | `m_bIsBuyMenuOpen` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x15ec` | `m_flTimeOfLastInjury` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x15f0` | `m_flNextSprayDecalTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1758` | `m_iRetakesOffering` | int32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x175c` | `m_iRetakesOfferingCard` | int32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1760` | `m_bRetakesHasDefuseKit` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1761` | `m_bRetakesMVPLastRound` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1764` | `m_iRetakesMVPBoostItem` | int32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1768` | `m_RetakesMVPBoostExtraUtility` | loadout_slot_t | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x176d` | `m_bNeedToReApplyGloves` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1770` | `m_EconGloves` | [C_EconItemView](../client/C_EconItemView.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1d20` | `m_nEconGlovesChanged` | uint8 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1d21` | `m_bMustSyncRagdollState` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1d24` | `m_nRagdollDamageBone` | int32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1d28` | `m_vRagdollDamageForce` | Vector | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1d34` | `m_szRagdollDamageWeaponName` | char[64] | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1d74` | `m_bRagdollDamageHeadshot` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1d78` | `m_vRagdollServerOrigin` | VectorWS | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1d84` | `m_lastLandTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1d88` | `m_bOnGroundLastTick` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1da4` | `m_hHudModelArms` | CHandle< [C_CS2HudModelArms](../client/C_CS2HudModelArms.md) > | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1da8` | `m_qDeathEyeAngles` | QAngle | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1db4` | `m_bLeftHanded` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1db8` | `m_fSwitchedHandednessTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1dbc` | `m_flViewmodelOffsetX` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1dc0` | `m_flViewmodelOffsetY` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1dc4` | `m_flViewmodelOffsetZ` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1dc8` | `m_flViewmodelFOV` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1dcc` | `m_vecPlayerPatchEconIndices` | uint32[5] | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1e10` | `m_GunGameImmunityColor` | Color | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1e60` | `m_vecBulletHitModels` | CUtlVector< [C_BulletHitModel](../client/C_BulletHitModel.md)* > | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1e78` | `m_bIsWalking` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1e80` | `m_entitySpottedState` | [EntitySpottedState_t](../client/EntitySpottedState_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1e98` | `m_bIsScoped` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1e99` | `m_bResumeZoom` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1e9a` | `m_bIsDefusing` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1e9b` | `m_bIsGrabbingHostage` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1e9c` | `m_iBlockingUseActionInProgress` | [CSPlayerBlockingUseAction_t](../server/CSPlayerBlockingUseAction_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1ea0` | `m_flEmitSoundTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1ea4` | `m_flEmitSoundTime_Client` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1ea8` | `m_bInNoDefuseArea` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1eac` | `m_nWhichBombZone` | int32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1eb0` | `m_iShotsFired` | int32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1eb4` | `m_flFlinchStack` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1eb8` | `m_flVelocityModifier` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1ebc` | `m_bWaitForNoAttack` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1ec0` | `m_ignoreLadderJumpTime` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1ec5` | `m_bKilledByHeadshot` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1ec8` | `m_ArmorValue` | int32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1ecc` | `m_unCurrentEquipmentValue` | uint16 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1ece` | `m_unRoundStartEquipmentValue` | uint16 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1ed0` | `m_unFreezetimeEndEquipmentValue` | uint16 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1ed4` | `m_nLastKillerIndex` | CEntityIndex | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1ed8` | `m_bOldIsScoped` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1ed9` | `m_bHasDeathInfo` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1edc` | `m_flDeathInfoTime` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1ee0` | `m_vecDeathInfoOrigin` | VectorWS | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1f18` | `m_grenadeParameterStashTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1f1c` | `m_bGrenadeParametersStashed` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1f20` | `m_angStashedShootAngles` | QAngle | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1f2c` | `m_vecStashedGrenadeThrowPosition` | VectorWS | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1f38` | `m_vecStashedGrenadeThrowPawnCenter` | VectorWS | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1f44` | `m_vecStashedVelocity` | Vector | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x1f50` | `m_flInterpolatedInaccuracy` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x3500` | `m_bShouldAutobuyDMWeapons` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x3504` | `m_fImmuneToGunGameDamageTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x3508` | `m_bGunGameImmunity` | bool | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x350c` | `m_fImmuneToGunGameDamageTimeLast` | [GameTime_t](../entity2/GameTime_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x3510` | `m_flModifier0` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x3514` | `m_fMolotovDamageTime` | float32 | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x3580` | `m_nPlayerInfernoBodyFx` | [ParticleIndex_t](../server/ParticleIndex_t.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x3600` | `m_angEyeAngles` | QAngle | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x3690` | `m_arrOldEyeAnglesTimes` | [GameTime_t](../entity2/GameTime_t.md)[4] | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x36a0` | `m_arrOldEyeAngles` | QAngle[4] | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x36d0` | `m_angEyeAnglesVelocity` | QAngle | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x36dc` | `m_iIDEntIndex` | CEntityIndex | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x36e0` | `m_delayTargetIDTimer` | [CountdownTimer](../client/CountdownTimer.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x36f8` | `m_iTargetItemEntIdx` | CEntityIndex | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x36fc` | `m_iOldIDEntIndex` | CEntityIndex | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x3700` | `m_holdTargetIDTimer` | [CountdownTimer](../client/CountdownTimer.md) | [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) |  |
+| `0x3720` | `m_animgraphCharacterModeString` | CGlobalSymbol | [C_CSGO_PreviewPlayer](../client/C_CSGO_PreviewPlayer.md) |  |
+| `0x3728` | `m_flInitialModelScale` | float32 | [C_CSGO_PreviewPlayer](../client/C_CSGO_PreviewPlayer.md) |  |
