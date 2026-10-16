@@ -8,9 +8,9 @@ kind: class
 
 # CFuncMoverRouter
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 1256 bytes (`0x4e8`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 1216 bytes (`0x4c0`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CLogicalEntity](../server/CLogicalEntity.md)
 
@@ -119,7 +119,7 @@ classDiagram
 | `0x498` | `m_flVPhysicsUpdateLocalTime` | float32 | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x49c` | `m_nBloodType` | [BloodType](../server/BloodType.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x4a0` | `m_pPulseGraphInstance` | [CPulseGraphInstance_ServerEntity](../server/CPulseGraphInstance_ServerEntity.md)* | [CBaseEntity](../server/CBaseEntity.md) | `MKV3TransferSaveOpsForField GetPulseInstanceSaveRestoreOps` |
-| `0x4b0` | `m_nMoverIndex` | int32 |  |  |
-| `0x4b4` | `m_bRouteToAllMovers` | bool |  |  |
-| `0x4b8` | `m_hPathMover` | CHandle< [CPathMover](../server/CPathMover.md) > |  |  |
-| `0x4c0` | `m_iszPathMoverName` | CUtlSymbolLarge |  |  |
+| `0x4a8` | `m_nMoverIndex` | int32 |  |  |
+| `0x4ac` | `m_bRouteToAllMovers` | bool |  |  |
+| `0x4b0` | `m_hPathMover` | CHandle< [CPathMover](../server/CPathMover.md) > |  |  |
+| `0x4b8` | `m_iszPathMoverName` | CUtlSymbolLarge |  |  |

@@ -215,6 +215,7 @@ direction LR
     +uint32 socache_control
     +List~int32~ teammate_colors
     +uint32 match_id_additional
+    +List~string~ clan_tags
   }
 
   class CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded {
@@ -258,7 +259,7 @@ direction LR
     +uint32 paintseed
     +uint32 killeaterscoretype
     +uint32 killeatervalue
-    +string customname
+    +List~string~ customnames
     +List~CEconItemPreviewDataBlock.Sticker~ stickers
     +uint32 inventory
     +uint32 origin
@@ -271,6 +272,8 @@ direction LR
     +uint32 style
     +List~CEconItemPreviewDataBlock.Sticker~ variations
     +uint32 upgrade_level
+    +uint32 pet_food_expiration_date
+    +bytes blobdata
   }
 
   class CEconItemPreviewDataBlock_Sticker["CEconItemPreviewDataBlock.Sticker"] {
@@ -571,6 +574,7 @@ direction LR
 | `socache_control` | 20 | uint32 | optional |  |
 | `teammate_colors` | 21 | int32 | repeated |  |
 | `match_id_additional` | 22 | uint32 | optional |  |
+| `clan_tags` | 23 | string | repeated |  |
 
 ### `CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded`
 
@@ -624,7 +628,7 @@ direction LR
 | `paintseed` | 8 | uint32 | optional |  |
 | `killeaterscoretype` | 9 | uint32 | optional |  |
 | `killeatervalue` | 10 | uint32 | optional |  |
-| `customname` | 11 | string | optional |  |
+| `customnames` | 11 | string | repeated |  |
 | `stickers` | 12 | [CEconItemPreviewDataBlock.Sticker](#ceconitempreviewdatablocksticker) | repeated |  |
 | `inventory` | 13 | uint32 | optional |  |
 | `origin` | 14 | uint32 | optional |  |
@@ -637,6 +641,8 @@ direction LR
 | `style` | 21 | uint32 | optional |  |
 | `variations` | 22 | [CEconItemPreviewDataBlock.Sticker](#ceconitempreviewdatablocksticker) | repeated |  |
 | `upgrade_level` | 23 | uint32 | optional |  |
+| `pet_food_expiration_date` | 24 | uint32 | optional |  |
+| `blobdata` | 25 | bytes | optional |  |
 
 #### `CEconItemPreviewDataBlock.Sticker`
 

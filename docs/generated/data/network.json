@@ -2113,6 +2113,17 @@
       "type_exists": false
     },
     {
+      "binding": "rtti",
+      "constant": null,
+      "description": "No matching message in this build's descriptor set.",
+      "direction": "server_to_client",
+      "enum": null,
+      "group": "UserMessages",
+      "id": 170,
+      "name": "CUserMessageRemoteServerResponse",
+      "type_exists": false
+    },
+    {
       "binding": "enum",
       "constant": "UM_MAX_BASE",
       "description": "Declared in EBaseUserMessages; not present in this build's RTTI-bound message table. No matching message in this build's descriptor set.",

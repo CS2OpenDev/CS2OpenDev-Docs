@@ -8,11 +8,13 @@ kind: class
 
 # C_OP_EndCapTimedDecay
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 480 bytes (`0x1e0`) · **Align:** 8 · **Module:** particles
+**Kind:** class · **Size:** 856 bytes (`0x358`) · **Align:** 8 · **Module:** particles
 
 **Inherits from:** [CParticleFunctionOperator](../particles/CParticleFunctionOperator.md)
+
+**Metadata:** `MGPUParticleFunction`
 
 **Relationships:**
 
@@ -20,6 +22,7 @@ kind: class
 classDiagram
     CParticleFunctionOperator <|-- C_OP_EndCapTimedDecay
     CParticleFunction <|-- CParticleFunctionOperator
+    C_OP_EndCapTimedDecay *-- CParticleCollectionFloatInput
 ```
 
 ## Memory layout
@@ -29,23 +32,23 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flOpStrength` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator strength` `MPropertySortPriority -100` |
-| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
-| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
-| `0x180` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
-| `0x184` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
-| `0x188` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
-| `0x18c` | `m_flOpEndFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadeout` `MPropertySortPriority -100` |
-| `0x190` | `m_flOpFadeOscillatePeriod` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade oscillate` `MPropertySortPriority -100` |
-| `0x194` | `m_bNormalizeToStopTime` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName normalize fade times to endcap` `MPropertySortPriority -100` |
-| `0x198` | `m_flOpTimeOffsetMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset min` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Time Offset` |
-| `0x19c` | `m_flOpTimeOffsetMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset max` `MPropertySortPriority -100` |
-| `0x1a0` | `m_nOpTimeOffsetSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset seed` `MPropertySortPriority -100` |
-| `0x1a4` | `m_nOpTimeScaleSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale seed` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Timescale Modifiers` |
-| `0x1a8` | `m_flOpTimeScaleMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale min` `MPropertySortPriority -100` |
-| `0x1ac` | `m_flOpTimeScaleMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale max` `MPropertySortPriority -100` |
-| `0x1b2` | `m_bDisableOperator` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyStartGroup` `MPropertySuppressField` |
-| `0x1b8` | `m_Notes` | CUtlString | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleHelpField` `MPropertyFriendlyName operator help and notes` `MPropertySortPriority -100` |
-| `0x1d8` | `m_flDecayTime` | float32 |  | `MPropertyFriendlyName decay time` |
+| `0x180` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
+| `0x184` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
+| `0x188` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
+| `0x18c` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
+| `0x190` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
+| `0x194` | `m_flOpEndFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadeout` `MPropertySortPriority -100` |
+| `0x198` | `m_flOpFadeOscillatePeriod` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade oscillate` `MPropertySortPriority -100` |
+| `0x19c` | `m_bNormalizeToStopTime` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName normalize fade times to endcap` `MPropertySortPriority -100` |
+| `0x1a0` | `m_flOpTimeOffsetMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset min` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Time Offset` |
+| `0x1a4` | `m_flOpTimeOffsetMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset max` `MPropertySortPriority -100` |
+| `0x1a8` | `m_nOpTimeOffsetSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset seed` `MPropertySortPriority -100` |
+| `0x1ac` | `m_nOpTimeScaleSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale seed` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Timescale Modifiers` |
+| `0x1b0` | `m_flOpTimeScaleMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale min` `MPropertySortPriority -100` |
+| `0x1b4` | `m_flOpTimeScaleMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale max` `MPropertySortPriority -100` |
+| `0x1ba` | `m_bDisableOperator` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyStartGroup` `MPropertySuppressField` |
+| `0x1c0` | `m_Notes` | CUtlString | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleHelpField` `MPropertyAttributeEditor TextBlock()` `MPropertyFriendlyName operator help and notes` `MPropertySortPriority -100` |
+| `0x1e0` | `m_flDecayTime` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName decay time` |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -124,7 +127,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_nOpEndCapState&quot;: &quot;PARTICLE_ENDCAP_ALWAYS_ON&quot;,
 	&quot;m_nToolsState&quot;: &quot;PARTICLE_TOOLS_STATE_ALWAYS_ON&quot;,
@@ -142,6 +146,81 @@ classDiagram
 	&quot;m_flOpTimeScaleMax&quot;: 1.000000,
 	&quot;m_bDisableOperator&quot;: false,
 	&quot;m_Notes&quot;: &quot;&quot;,
-	&quot;m_flDecayTime&quot;: 0.000000
+	&quot;m_flDecayTime&quot;:
+	{
+		&quot;m_nType&quot;: &quot;PF_TYPE_LITERAL&quot;,
+		&quot;m_nMapType&quot;: &quot;PF_MAP_TYPE_DIRECT&quot;,
+		&quot;m_flLiteralValue&quot;: 0.000000,
+		&quot;m_NamedValue&quot;: &quot;&quot;,
+		&quot;m_nControlPoint&quot;: 0,
+		&quot;m_nScalarAttribute&quot;: 3,
+		&quot;m_nVectorAttribute&quot;: 6,
+		&quot;m_nVectorComponent&quot;: 0,
+		&quot;m_bReverseOrder&quot;: false,
+		&quot;m_flRandomMin&quot;: 0.000000,
+		&quot;m_flRandomMax&quot;: 1.000000,
+		&quot;m_bHasRandomSignFlip&quot;: false,
+		&quot;m_nRandomSeed&quot;: &lt;HIDDEN FOR DIFF&gt;,
+		&quot;m_nRandomMode&quot;: &quot;PF_RANDOM_MODE_CONSTANT&quot;,
+		&quot;m_strSnapshotSubset&quot;: &quot;&quot;,
+		&quot;m_flLOD0&quot;: 0.000000,
+		&quot;m_flLOD1&quot;: 0.000000,
+		&quot;m_flLOD2&quot;: 0.000000,
+		&quot;m_flLOD3&quot;: 0.000000,
+		&quot;m_nNoiseInputVectorAttribute&quot;: 0,
+		&quot;m_flNoiseOutputMin&quot;: 0.000000,
+		&quot;m_flNoiseOutputMax&quot;: 1.000000,
+		&quot;m_flNoiseScale&quot;: 0.100000,
+		&quot;m_vecNoiseOffsetRate&quot;:
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		&quot;m_flNoiseOffset&quot;: 0.000000,
+		&quot;m_nNoiseOctaves&quot;: 1,
+		&quot;m_nNoiseTurbulence&quot;: &quot;PF_NOISE_TURB_NONE&quot;,
+		&quot;m_nNoiseType&quot;: &quot;PF_NOISE_TYPE_PERLIN&quot;,
+		&quot;m_nNoiseModifier&quot;: &quot;PF_NOISE_MODIFIER_NONE&quot;,
+		&quot;m_flNoiseTurbulenceScale&quot;: 1.000000,
+		&quot;m_flNoiseTurbulenceMix&quot;: 0.500000,
+		&quot;m_flNoiseImgPreviewScale&quot;: 1.000000,
+		&quot;m_bNoiseImgPreviewLive&quot;: true,
+		&quot;m_flNoCameraFallback&quot;: 0.000000,
+		&quot;m_bUseBoundsCenter&quot;: false,
+		&quot;m_nInputMode&quot;: &quot;PF_INPUT_MODE_CLAMPED&quot;,
+		&quot;m_flMultFactor&quot;: 1.000000,
+		&quot;m_flInput0&quot;: 0.000000,
+		&quot;m_flInput1&quot;: 1.000000,
+		&quot;m_flOutput0&quot;: 0.000000,
+		&quot;m_flOutput1&quot;: 1.000000,
+		&quot;m_flNotchedRangeMin&quot;: 0.000000,
+		&quot;m_flNotchedRangeMax&quot;: 1.000000,
+		&quot;m_flNotchedOutputOutside&quot;: 0.000000,
+		&quot;m_flNotchedOutputInside&quot;: 1.000000,
+		&quot;m_nRoundType&quot;: &quot;PF_ROUND_TYPE_NEAREST&quot;,
+		&quot;m_nBiasType&quot;: &quot;PF_BIAS_TYPE_STANDARD&quot;,
+		&quot;m_flBiasParameter&quot;: 0.000000,
+		&quot;m_Curve&quot;:
+		{
+			&quot;m_spline&quot;:
+			[
+			],
+			&quot;m_tangents&quot;:
+			[
+			],
+			&quot;m_vDomainMins&quot;:
+			[
+				0.000000,
+				0.000000
+			],
+			&quot;m_vDomainMaxs&quot;:
+			[
+				0.000000,
+				0.000000
+			]
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
+	}
 }</pre>
 </details>

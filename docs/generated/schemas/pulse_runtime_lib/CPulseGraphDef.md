@@ -8,9 +8,9 @@ kind: class
 
 # CPulseGraphDef
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 432 bytes (`0x1b0`) · **Align:** 8 · **Module:** pulse_runtime_lib
+**Kind:** class · **Size:** 448 bytes (`0x1c0`) · **Align:** 8 · **Module:** pulse_runtime_lib
 
 **Relationships:**
 
@@ -19,18 +19,18 @@ classDiagram
     CPulseGraphDef --> CPulse_Chunk
     CPulseGraphDef --> CPulseCell_Base
     CPulseGraphDef *-- CPulse_Variable
+    CPulseGraphDef --> CPulse_TempVarBankDefinition
     CPulseGraphDef *-- CPulse_PublicOutput
     CPulseGraphDef --> CPulse_InvokeBinding
     CPulseGraphDef --> CPulse_CallInfo
     CPulseGraphDef *-- CPulse_Constant
     CPulseGraphDef *-- CPulse_DomainValue
     CPulseGraphDef *-- CPulse_BlackboardReference
-    CPulseGraphDef --> CPulse_OutputConnection
 ```
 
 ## Memory layout
 
-14 fields (14 declared here, 0 inherited). Offsets are absolute from the object base.
+15 fields (15 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -41,13 +41,14 @@ classDiagram
 | `0x50` | `m_Chunks` | CUtlVector< [CPulse_Chunk](../pulse_runtime_lib/CPulse_Chunk.md)* > |  |  |
 | `0x68` | `m_Cells` | CUtlVector< [CPulseCell_Base](../pulse_runtime_lib/CPulseCell_Base.md)* > |  |  |
 | `0x80` | `m_Vars` | CUtlVector< [CPulse_Variable](../pulse_runtime_lib/CPulse_Variable.md) > |  |  |
-| `0x98` | `m_PublicOutputs` | CUtlVector< [CPulse_PublicOutput](../pulse_runtime_lib/CPulse_PublicOutput.md) > |  |  |
-| `0xb0` | `m_InvokeBindings` | CUtlVector< [CPulse_InvokeBinding](../pulse_runtime_lib/CPulse_InvokeBinding.md)* > |  |  |
-| `0xc8` | `m_CallInfos` | CUtlVector< [CPulse_CallInfo](../pulse_runtime_lib/CPulse_CallInfo.md)* > |  |  |
-| `0xe0` | `m_Constants` | CUtlVector< [CPulse_Constant](../pulse_runtime_lib/CPulse_Constant.md) > |  |  |
-| `0xf8` | `m_DomainValues` | CUtlVector< [CPulse_DomainValue](../pulse_runtime_lib/CPulse_DomainValue.md) > |  |  |
-| `0x110` | `m_BlackboardReferences` | CUtlVector< [CPulse_BlackboardReference](../pulse_runtime_lib/CPulse_BlackboardReference.md) > |  |  |
-| `0x128` | `m_OutputConnections` | CUtlVector< [CPulse_OutputConnection](../pulse_runtime_lib/CPulse_OutputConnection.md)* > |  |  |
+| `0x98` | `m_TempVarBanks` | CUtlVector< [CPulse_TempVarBankDefinition](../pulse_runtime_lib/CPulse_TempVarBankDefinition.md)* > |  |  |
+| `0xb0` | `m_PublicOutputs` | CUtlVector< [CPulse_PublicOutput](../pulse_runtime_lib/CPulse_PublicOutput.md) > |  |  |
+| `0xc8` | `m_InvokeBindings` | CUtlVector< [CPulse_InvokeBinding](../pulse_runtime_lib/CPulse_InvokeBinding.md)* > |  |  |
+| `0xe0` | `m_CallInfos` | CUtlVector< [CPulse_CallInfo](../pulse_runtime_lib/CPulse_CallInfo.md)* > |  |  |
+| `0xf8` | `m_Constants` | CUtlVector< [CPulse_Constant](../pulse_runtime_lib/CPulse_Constant.md) > |  |  |
+| `0x110` | `m_DomainValues` | CUtlVector< [CPulse_DomainValue](../pulse_runtime_lib/CPulse_DomainValue.md) > |  |  |
+| `0x128` | `m_BlackboardReferences` | CUtlVector< [CPulse_BlackboardReference](../pulse_runtime_lib/CPulse_BlackboardReference.md) > |  |  |
+| `0x140` | `m_OutputConnections` | CUtlVector< [CPulse_OutputConnection](../pulse_runtime_lib/CPulse_OutputConnection.md)* > |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -63,6 +64,9 @@ classDiagram
 	[
 	],
 	&quot;m_Vars&quot;:
+	[
+	],
+	&quot;m_TempVarBanks&quot;:
 	[
 	],
 	&quot;m_PublicOutputs&quot;:

@@ -8,9 +8,9 @@ kind: class
 
 # CCSPlayer_CameraServices
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 832 bytes (`0x340`) · **Align:** n/a (unspecified) · **Module:** client
+**Kind:** class · **Size:** 848 bytes (`0x350`) · **Align:** n/a (unspecified) · **Module:** client
 
 **Twin:** [CCSPlayer_CameraServices (server)](../server/CCSPlayer_CameraServices.md)
 
@@ -23,11 +23,12 @@ classDiagram
     CCSPlayerBase_CameraServices <|-- CCSPlayer_CameraServices
     CPlayer_CameraServices <|-- CCSPlayerBase_CameraServices
     CPlayerPawnComponent <|-- CPlayer_CameraServices
+    CCSPlayer_CameraServices --> C_PointDeathcamBounds
 ```
 
 ## Memory layout
 
-30 fields (2 declared here, 28 inherited). Offsets are absolute from the object base.
+32 fields (4 declared here, 28 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -47,17 +48,19 @@ classDiagram
 | `0x148` | `m_CurrentFog` | fogparams_t | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
 | `0x1b0` | `m_hOldFogController` | CHandle< [C_FogController](../client/C_FogController.md) > | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
 | `0x1b4` | `m_bOverrideFogColor` | bool[5] | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
-| `0x1b9` | `m_OverrideFogColor` | Color[5] | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
-| `0x1cd` | `m_bOverrideFogStartEnd` | bool[5] | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
-| `0x1d4` | `m_fOverrideFogStart` | float32[5] | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
-| `0x1e8` | `m_fOverrideFogEnd` | float32[5] | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
-| `0x1fc` | `m_hActivePostProcessingVolume` | CHandle< [C_PostProcessingVolume](../client/C_PostProcessingVolume.md) > | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
-| `0x200` | `m_angDemoViewAngles` | QAngle | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
-| `0x290` | `m_iFOV` | uint32 | [CCSPlayerBase_CameraServices](../client/CCSPlayerBase_CameraServices.md) |  |
-| `0x294` | `m_iFOVStart` | uint32 | [CCSPlayerBase_CameraServices](../client/CCSPlayerBase_CameraServices.md) |  |
-| `0x298` | `m_flFOVTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSPlayerBase_CameraServices](../client/CCSPlayerBase_CameraServices.md) |  |
-| `0x29c` | `m_flFOVRate` | float32 | [CCSPlayerBase_CameraServices](../client/CCSPlayerBase_CameraServices.md) |  |
-| `0x2a0` | `m_hZoomOwner` | CHandle< [C_BaseEntity](../client/C_BaseEntity.md) > | [CCSPlayerBase_CameraServices](../client/CCSPlayerBase_CameraServices.md) |  |
-| `0x2a4` | `m_flLastShotFOV` | float32 | [CCSPlayerBase_CameraServices](../client/CCSPlayerBase_CameraServices.md) |  |
-| `0x2a8` | `m_flDeathCamTilt` | float32 |  |  |
-| `0x2b0` | `m_vClientScopeInaccuracy` | Vector |  |  |
+| `0x1bc` | `m_OverrideFogColor` | Color[5] | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
+| `0x1d0` | `m_bOverrideFogStartEnd` | bool[5] | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
+| `0x1d8` | `m_fOverrideFogStart` | float32[5] | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
+| `0x1ec` | `m_fOverrideFogEnd` | float32[5] | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
+| `0x200` | `m_hActivePostProcessingVolume` | CHandle< [C_PostProcessingVolume](../client/C_PostProcessingVolume.md) > | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
+| `0x208` | `m_angDemoViewAngles` | QAngle | [CPlayer_CameraServices](../client/CPlayer_CameraServices.md) |  |
+| `0x298` | `m_iFOV` | uint32 | [CCSPlayerBase_CameraServices](../client/CCSPlayerBase_CameraServices.md) |  |
+| `0x29c` | `m_iFOVStart` | uint32 | [CCSPlayerBase_CameraServices](../client/CCSPlayerBase_CameraServices.md) |  |
+| `0x2a0` | `m_flFOVTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSPlayerBase_CameraServices](../client/CCSPlayerBase_CameraServices.md) |  |
+| `0x2a4` | `m_flFOVRate` | float32 | [CCSPlayerBase_CameraServices](../client/CCSPlayerBase_CameraServices.md) |  |
+| `0x2a8` | `m_hZoomOwner` | CHandle< [C_BaseEntity](../client/C_BaseEntity.md) > | [CCSPlayerBase_CameraServices](../client/CCSPlayerBase_CameraServices.md) |  |
+| `0x2ac` | `m_flLastShotFOV` | float32 | [CCSPlayerBase_CameraServices](../client/CCSPlayerBase_CameraServices.md) |  |
+| `0x2b0` | `m_flDeathCamTilt` | float32 |  |  |
+| `0x2b4` | `m_hDeathCamBounds` | CHandle< [C_PointDeathcamBounds](../client/C_PointDeathcamBounds.md) > |  |  |
+| `0x2b8` | `m_bDeathCamBoundsSearched` | bool |  |  |
+| `0x2c0` | `m_vClientScopeInaccuracy` | Vector |  |  |

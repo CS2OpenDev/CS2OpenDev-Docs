@@ -8,9 +8,9 @@ kind: class
 
 # CWeaponSCAR20
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 4208 bytes (`0x1070`) · **Align:** 16 · **Module:** server
+**Kind:** class · **Size:** 4768 bytes (`0x12a0`) · **Align:** 16 · **Module:** server
 
 **Inherits from:** [CCSWeaponBaseGun](../server/CCSWeaponBaseGun.md)
 
@@ -27,7 +27,7 @@ classDiagram
 
 ## Memory layout
 
-222 fields (0 declared here, 222 inherited). Offsets are absolute from the object base.
+233 fields (0 declared here, 233 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -147,7 +147,8 @@ classDiagram
 | `0x570` | `m_clrRender` | Color | [CBaseModelEntity](../server/CBaseModelEntity.md) | RGBA tint colour multiplied onto the entity's diffuse texture. |
 | `0x578` | `m_vecRenderAttributes` | CUtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../server/EntityRenderAttribute_t.md) > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e0` | `m_bRenderToCubemaps` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x5e1` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e1` | `m_bExpandRenderBoundsToIncludeCloth` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e2` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e8` | `m_Collision` | [CCollisionProperty](../server/CCollisionProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CCollisionProperty struct encoding the entity's collision bounding box shape and flags. |
 | `0x6a0` | `m_Glow` | [CGlowProperty](../server/CGlowProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CGlowProperty struct controlling the entity's glow outline (colour, radius, visibility rules). |
 | `0x6f8` | `m_flGlowBackfaceMult` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Multiplier for the glow effect on back-facing surfaces of the model. |
@@ -156,102 +157,112 @@ classDiagram
 | `0x704` | `m_flFadeScale` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Scale factor applied to fade distances; 0 disables distance fading. |
 | `0x708` | `m_flShadowStrength` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Opacity of this entity's cast shadow (0 = no shadow, 1 = full shadow). |
 | `0x70c` | `m_nObjectCulling` | uint8 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x710` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x738` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
-| `0x768` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
-| `0x770` | `m_graphControllerManager` | [CAnimGraphControllerManager](../server/CAnimGraphControllerManager.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x808` | `m_pMainGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | The primary animation-graph controller instance for this entity. |
-| `0x810` | `m_bInitiallyPopulateInterpHistory` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x818` | `m_OnLayerCycleUpdated` | CEntityOutputTemplate< float32 > | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x838` | `m_OnExternalChoreoGraphChanged` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x850` | `m_pChoreoServices` | [IChoreoServices](../server/IChoreoServices.md)* | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MKV3TransferSaveOpsForField GetChoreoServicesSaveRestoreOps` |
-| `0x858` | `m_bAnimGraphUpdateEnabled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x859` | `m_bAnimationUpdateScheduled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x85c` | `m_vecForce` | Vector | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x868` | `m_nForceBone` | int32 | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x878` | `m_pRagdollControl` | [IPhysicsRagdollControl](../vphysics2/IPhysicsRagdollControl.md)* | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MPhysPtr` |
-| `0x880` | `m_RagdollPose` | [PhysicsRagdollPose_t](../server/PhysicsRagdollPose_t.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x8a8` | `m_bRagdollEnabled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | True while the entity is simulated as a ragdoll rather than animated. |
-| `0x8a9` | `m_bRagdollClientSide` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x8b0` | `m_xParentedRagdollRootInEntitySpace` | CTransform | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x978` | `m_AttributeManager` | [CAttributeContainer](../server/CAttributeContainer.md) | [CEconEntity](../server/CEconEntity.md) |  |
-| `0xc70` | `m_OriginalOwnerXuidLow` | uint32 | [CEconEntity](../server/CEconEntity.md) | Low 32 bits of the item's original-owner SteamID. |
-| `0xc74` | `m_OriginalOwnerXuidHigh` | uint32 | [CEconEntity](../server/CEconEntity.md) | High 32 bits of the item's original-owner SteamID. |
-| `0xc78` | `m_nFallbackPaintKit` | int32 | [CEconEntity](../server/CEconEntity.md) | Paint-kit (skin) id used when full econ item data isn't attached. |
-| `0xc7c` | `m_nFallbackSeed` | int32 | [CEconEntity](../server/CEconEntity.md) |  |
-| `0xc80` | `m_flFallbackWear` | float32 | [CEconEntity](../server/CEconEntity.md) | Skin wear / float value (0 = factory new … 1 = battle-scarred). |
-| `0xc84` | `m_nFallbackStatTrak` | int32 | [CEconEntity](../server/CEconEntity.md) | StatTrak kill-counter value. |
-| `0xc88` | `m_hOldProvidee` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CEconEntity](../server/CEconEntity.md) |  |
-| `0xc8c` | `m_iOldOwnerClass` | int32 | [CEconEntity](../server/CEconEntity.md) |  |
-| `0xc90` | `m_nNextPrimaryAttackTick` | [GameTick_t](../entity2/GameTick_t.md) | [CBasePlayerWeapon](../server/CBasePlayerWeapon.md) | Server game-tick after which the next primary fire is permitted. *Only sent to the owning player (LocalWeaponExclusive). Pair with m_flNextPrimaryAttackTickRatio for sub-tick precision.* |
-| `0xc94` | `m_flNextPrimaryAttackTickRatio` | float32 | [CBasePlayerWeapon](../server/CBasePlayerWeapon.md) | Fractional sub-tick ratio for m_nNextPrimaryAttackTick; together they encode the exact fire-rate timing. |
-| `0xc98` | `m_nNextSecondaryAttackTick` | [GameTick_t](../entity2/GameTick_t.md) | [CBasePlayerWeapon](../server/CBasePlayerWeapon.md) | Server game-tick after which the next secondary fire is permitted. *Only sent to the owning player (LocalWeaponExclusive).* |
-| `0xc9c` | `m_flNextSecondaryAttackTickRatio` | float32 | [CBasePlayerWeapon](../server/CBasePlayerWeapon.md) | Fractional sub-tick ratio for m_nNextSecondaryAttackTick. |
-| `0xca0` | `m_iClip1` | int32 | [CBasePlayerWeapon](../server/CBasePlayerWeapon.md) | Current ammunition in the primary clip/magazine. *Serialized with the 'minusone' encoder so -1 means 'use weapon max-clip'. Sent to all clients.* |
-| `0xca4` | `m_iClip2` | int32 | [CBasePlayerWeapon](../server/CBasePlayerWeapon.md) | Current ammunition in the secondary clip (unused by most weapons; grenade count for grenade weapons). *Only sent to the owning player (LocalWeaponExclusive).* |
-| `0xca8` | `m_pReserveAmmo` | int32[2] | [CBasePlayerWeapon](../server/CBasePlayerWeapon.md) | Array of 2 reserve-ammo counts; index 0 = primary ammo type, index 1 = secondary ammo type. *Only sent to the owning player (LocalWeaponExclusive).* |
-| `0xcb0` | `m_OnPlayerUse` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBasePlayerWeapon](../server/CBasePlayerWeapon.md) |  |
-| `0xcd8` | `m_bRemoveable` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xcd9` | `m_bPlayerAmmoStockOnPickup` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xcda` | `m_bRequireUseToTouch` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xcdc` | `m_iWeaponGameplayAnimState` | [WeaponGameplayAnimState](../server/WeaponGameplayAnimState.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) | WeaponGameplayAnimState enum controlling the weapon's anim-graph state (idle, firing, reloading, inspecting, etc.). |
-| `0xce0` | `m_flWeaponGameplayAnimStateTimestamp` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xce4` | `m_flInspectCancelCompleteTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) | GameTime at which an in-progress inspect cancel animation will finish. |
-| `0xce8` | `m_bInspectPending` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) | True when an inspect animation has been queued but not yet started. |
-| `0xce9` | `m_bInspectShouldLoop` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) | True when the inspect animation should loop (held-inspect mode). |
-| `0xd14` | `m_nLastEmptySoundCmdNum` | int32 | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xd30` | `m_bFireOnEmpty` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xd38` | `m_OnPlayerPickup` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xd50` | `m_weaponMode` | [CSWeaponMode](../server/CSWeaponMode.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) | CSWeaponMode enum: Primary_Mode = 0, Secondary_Mode = 1. Governs which attack function runs on fire. |
-| `0xd54` | `m_flTurningInaccuracyDelta` | float32 | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xd58` | `m_vecTurningInaccuracyEyeDirLast` | Vector | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xd64` | `m_flTurningInaccuracy` | float32 | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xd68` | `m_fAccuracyPenalty` | float32 | [CCSWeaponBase](../server/CCSWeaponBase.md) | Additive inaccuracy penalty accumulated by recent shots; decays over time. Feeds into the cone-spread calculation. |
-| `0xd6c` | `m_flLastAccuracyUpdateTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xd70` | `m_fAccuracySmoothedForZoom` | float32 | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xd74` | `m_iRecoilIndex` | int32 | [CCSWeaponBase](../server/CCSWeaponBase.md) | Integer index into the weapon's recoil table; incremented with each shot, decays when not firing. |
-| `0xd78` | `m_flRecoilIndex` | float32 | [CCSWeaponBase](../server/CCSWeaponBase.md) | Fractional recoil index for sub-step interpolation of the recoil pattern table. *Demo parsers often use this to reproduce exact spray patterns.* |
-| `0xd7c` | `m_bBurstMode` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) | True when the weapon is in burst-fire mode (e.g. Famas burst, Glock18 burst). |
-| `0xd80` | `m_nPostponeFireReadyTicks` | [GameTick_t](../entity2/GameTick_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) | Tick after which a postponed shot will fire (used for the tick-aligned fire mechanism in sub-tick shooting). |
-| `0xd84` | `m_flPostponeFireReadyFrac` | float32 | [CCSWeaponBase](../server/CCSWeaponBase.md) | Fractional tick ratio for m_nPostponeFireReadyTicks. |
-| `0xd88` | `m_bInReload` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) | True while the weapon is performing its reload animation. |
-| `0xd8c` | `m_nDeployTick` | [GameTick_t](../entity2/GameTick_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xd90` | `m_flDroppedAtTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) | GameTime at which this weapon was dropped onto the ground. |
-| `0xd98` | `m_bIsHauledBack` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) | True while the player is winding up to throw a grenade (held throw). |
-| `0xd99` | `m_bSilencerOn` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) | True when the suppressor is attached (M4A1-S / USP-S). |
-| `0xd9c` | `m_flTimeSilencerSwitchComplete` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) | GameTime at which the suppressor attach/detach animation completes. |
-| `0xda0` | `m_flWeaponActionPlaybackRate` | float32 | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xda4` | `m_iOriginalTeamNumber` | int32 | [CCSWeaponBase](../server/CCSWeaponBase.md) | Team that originally spawned this weapon; buy-zone weapon pools are filtered by this. |
-| `0xda8` | `m_iMostRecentTeamNumber` | int32 | [CCSWeaponBase](../server/CCSWeaponBase.md) | Team of the player most recently holding this weapon. |
-| `0xdac` | `m_bDroppedNearBuyZone` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) | True if the weapon was dropped close to a buy zone (affects whether bots will pick it up). |
-| `0xdb0` | `m_flNextAttackRenderTimeOffset` | float32 | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xdc8` | `m_bCanBePickedUp` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xdc9` | `m_bUseCanOverrideNextOwnerTouchTime` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xdcc` | `m_nextOwnerTouchTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xdd0` | `m_nextPrevOwnerTouchTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xdd8` | `m_nextPrevOwnerUseTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) | GameTime before which the previous owner cannot pick this weapon back up (prevents instant re-pickup after dropping). |
-| `0xddc` | `m_hPrevOwner` | CHandle< [CCSPlayerPawn](../server/CCSPlayerPawn.md) > | [CCSWeaponBase](../server/CCSWeaponBase.md) | CHandle to the CCSPlayerPawn that most recently owned this weapon before it was dropped. |
-| `0xde0` | `m_nDropTick` | [GameTick_t](../entity2/GameTick_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) | Server tick on which the weapon was most recently dropped. |
-| `0xde4` | `m_bWasActiveWeaponWhenDropped` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) | True if the weapon was the active weapon at the moment it was dropped. |
-| `0xe04` | `m_donated` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xe08` | `m_fLastShotTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) | GameTime of the most recent shot fired from this weapon. |
-| `0xe0c` | `m_bWasOwnedByCT` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xe0d` | `m_bWasOwnedByTerrorist` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xe10` | `m_numRemoveUnownedWeaponThink` | int32 | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xe70` | `m_IronSightController` | [CIronSightController](../server/CIronSightController.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xe88` | `m_iIronSightMode` | int32 | [CCSWeaponBase](../server/CCSWeaponBase.md) | Iron-sight zoom state (0 = none, 1 = iron-sighted). |
-| `0xe8c` | `m_flLastLOSTraceFailureTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xe90` | `m_flWatTickOffset` | float32 | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xea0` | `m_flLastShakeTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0x1050` | `m_zoomLevel` | int32 | [CCSWeaponBaseGun](../server/CCSWeaponBaseGun.md) | Current scope zoom level (0 = unscoped). |
-| `0x1054` | `m_iBurstShotsRemaining` | int32 | [CCSWeaponBaseGun](../server/CCSWeaponBaseGun.md) | Shots left in the current burst, for burst-fire weapons. |
-| `0x1060` | `m_silencedModelIndex` | int32 | [CCSWeaponBaseGun](../server/CCSWeaponBaseGun.md) | Model index used while the silencer is attached. |
-| `0x1064` | `m_inPrecache` | bool | [CCSWeaponBaseGun](../server/CCSWeaponBaseGun.md) |  |
-| `0x1065` | `m_bNeedsBoltAction` | bool | [CCSWeaponBaseGun](../server/CCSWeaponBaseGun.md) |  |
-| `0x1068` | `m_nRevolverCylinderIdx` | int32 | [CCSWeaponBaseGun](../server/CCSWeaponBaseGun.md) |  |
-| `0x106c` | `m_bSkillReloadAvailable` | bool | [CCSWeaponBaseGun](../server/CCSWeaponBaseGun.md) |  |
-| `0x106d` | `m_bSkillReloadLiftedReloadKey` | bool | [CCSWeaponBaseGun](../server/CCSWeaponBaseGun.md) |  |
-| `0x106e` | `m_bSkillBoltInterruptAvailable` | bool | [CCSWeaponBaseGun](../server/CCSWeaponBaseGun.md) |  |
-| `0x106f` | `m_bSkillBoltLiftedFireKey` | bool | [CCSWeaponBaseGun](../server/CCSWeaponBaseGun.md) |  |
+| `0x710` | `m_bodyGroupTotalRequestCount` | uint32 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x718` | `m_bodyGroupRequests` | CUtlVectorFixedGrowable< [CBaseModelEntity::BodyGroupRequest_t](../server/CBaseModelEntity.BodyGroupRequest_t.md), 8 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x7f0` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x818` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
+| `0x848` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
+| `0x850` | `m_graphControllerManager` | [CAnimGraphControllerManager](../server/CAnimGraphControllerManager.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x8e8` | `m_pMainGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | The primary animation-graph controller instance for this entity. |
+| `0x8f0` | `m_bInitiallyPopulateInterpHistory` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x8f8` | `m_OnLayerCycleUpdated` | CEntityOutputTemplate< float32 > | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x918` | `m_OnExternalChoreoGraphChanged` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x930` | `m_pChoreoServices` | [IChoreoServices](../server/IChoreoServices.md)* | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MKV3TransferSaveOpsForField GetChoreoServicesSaveRestoreOps` |
+| `0x938` | `m_bAnimGraphUpdateEnabled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x939` | `m_bAnimationUpdateScheduled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x93c` | `m_vecForce` | Vector | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x948` | `m_nForceBone` | int32 | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x958` | `m_pRagdollControl` | [IPhysicsRagdollControl](../vphysics2/IPhysicsRagdollControl.md)* | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MPhysPtr` |
+| `0x960` | `m_RagdollPose` | [PhysicsRagdollPose_t](../server/PhysicsRagdollPose_t.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x988` | `m_bRagdollEnabled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | True while the entity is simulated as a ragdoll rather than animated. |
+| `0x989` | `m_bRagdollClientSide` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x98a` | `m_bShouldUpdateTransformations` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x990` | `m_xParentedRagdollRootInEntitySpace` | CTransform | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0xa58` | `m_AttributeManager` | [CAttributeContainer](../server/CAttributeContainer.md) | [CEconEntity](../server/CEconEntity.md) |  |
+| `0xe90` | `m_OriginalOwnerXuidLow` | uint32 | [CEconEntity](../server/CEconEntity.md) | Low 32 bits of the item's original-owner SteamID. |
+| `0xe94` | `m_OriginalOwnerXuidHigh` | uint32 | [CEconEntity](../server/CEconEntity.md) | High 32 bits of the item's original-owner SteamID. |
+| `0xe98` | `m_nFallbackPaintKit` | int32 | [CEconEntity](../server/CEconEntity.md) | Paint-kit (skin) id used when full econ item data isn't attached. |
+| `0xe9c` | `m_nFallbackSeed` | int32 | [CEconEntity](../server/CEconEntity.md) |  |
+| `0xea0` | `m_flFallbackWear` | float32 | [CEconEntity](../server/CEconEntity.md) | Skin wear / float value (0 = factory new … 1 = battle-scarred). |
+| `0xea4` | `m_nFallbackStatTrak` | int32 | [CEconEntity](../server/CEconEntity.md) | StatTrak kill-counter value. |
+| `0xea8` | `m_hOldProvidee` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CEconEntity](../server/CEconEntity.md) |  |
+| `0xeac` | `m_iOldOwnerClass` | int32 | [CEconEntity](../server/CEconEntity.md) |  |
+| `0xeb0` | `m_nNextPrimaryAttackTick` | [GameTick_t](../entity2/GameTick_t.md) | [CBasePlayerWeapon](../server/CBasePlayerWeapon.md) | Server game-tick after which the next primary fire is permitted. *Only sent to the owning player (LocalWeaponExclusive). Pair with m_flNextPrimaryAttackTickRatio for sub-tick precision.* |
+| `0xeb4` | `m_flNextPrimaryAttackTickRatio` | float32 | [CBasePlayerWeapon](../server/CBasePlayerWeapon.md) | Fractional sub-tick ratio for m_nNextPrimaryAttackTick; together they encode the exact fire-rate timing. |
+| `0xeb8` | `m_nNextSecondaryAttackTick` | [GameTick_t](../entity2/GameTick_t.md) | [CBasePlayerWeapon](../server/CBasePlayerWeapon.md) | Server game-tick after which the next secondary fire is permitted. *Only sent to the owning player (LocalWeaponExclusive).* |
+| `0xebc` | `m_flNextSecondaryAttackTickRatio` | float32 | [CBasePlayerWeapon](../server/CBasePlayerWeapon.md) | Fractional sub-tick ratio for m_nNextSecondaryAttackTick. |
+| `0xec0` | `m_iClip1` | int32 | [CBasePlayerWeapon](../server/CBasePlayerWeapon.md) | Current ammunition in the primary clip/magazine. *Serialized with the 'minusone' encoder so -1 means 'use weapon max-clip'. Sent to all clients.* |
+| `0xec4` | `m_iClip2` | int32 | [CBasePlayerWeapon](../server/CBasePlayerWeapon.md) | Current ammunition in the secondary clip (unused by most weapons; grenade count for grenade weapons). *Only sent to the owning player (LocalWeaponExclusive).* |
+| `0xec8` | `m_pReserveAmmo` | int32[2] | [CBasePlayerWeapon](../server/CBasePlayerWeapon.md) | Array of 2 reserve-ammo counts; index 0 = primary ammo type, index 1 = secondary ammo type. *Only sent to the owning player (LocalWeaponExclusive).* |
+| `0xed0` | `m_OnPlayerUse` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBasePlayerWeapon](../server/CBasePlayerWeapon.md) |  |
+| `0xef8` | `m_bRemoveable` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xef9` | `m_bPlayerAmmoStockOnPickup` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xefa` | `m_bRequireUseToTouch` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xefc` | `m_iWeaponGameplayAnimState` | [WeaponGameplayAnimState](../server/WeaponGameplayAnimState.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) | WeaponGameplayAnimState enum controlling the weapon's anim-graph state (idle, firing, reloading, inspecting, etc.). |
+| `0xf00` | `m_flWeaponGameplayAnimStateTimestamp` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xf04` | `m_flInspectCancelCompleteTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) | GameTime at which an in-progress inspect cancel animation will finish. |
+| `0xf08` | `m_bInspectPending` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) | True when an inspect animation has been queued but not yet started. |
+| `0xf09` | `m_bInspectShouldLoop` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) | True when the inspect animation should loop (held-inspect mode). |
+| `0xf34` | `m_nLastEmptySoundCmdNum` | int32 | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xf50` | `m_bFireOnEmpty` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xf58` | `m_OnPlayerPickup` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xf70` | `m_weaponMode` | [CSWeaponMode](../server/CSWeaponMode.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) | CSWeaponMode enum: Primary_Mode = 0, Secondary_Mode = 1. Governs which attack function runs on fire. |
+| `0xf74` | `m_flTurningInaccuracyDelta` | float32 | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xf78` | `m_vecTurningInaccuracyEyeDirLast` | Vector | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xf84` | `m_flTurningInaccuracy` | float32 | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xf88` | `m_fAccuracyPenalty` | float32 | [CCSWeaponBase](../server/CCSWeaponBase.md) | Additive inaccuracy penalty accumulated by recent shots; decays over time. Feeds into the cone-spread calculation. |
+| `0xf8c` | `m_flLastAccuracyUpdateTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xf90` | `m_fAccuracySmoothedForZoom` | float32 | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xf94` | `m_iRecoilIndex` | int32 | [CCSWeaponBase](../server/CCSWeaponBase.md) | Integer index into the weapon's recoil table; incremented with each shot, decays when not firing. |
+| `0xf98` | `m_flRecoilIndex` | float32 | [CCSWeaponBase](../server/CCSWeaponBase.md) | Fractional recoil index for sub-step interpolation of the recoil pattern table. *Demo parsers often use this to reproduce exact spray patterns.* |
+| `0xf9c` | `m_bBurstMode` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) | True when the weapon is in burst-fire mode (e.g. Famas burst, Glock18 burst). |
+| `0xfa0` | `m_nPostponeFireReadyTicks` | [GameTick_t](../entity2/GameTick_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) | Tick after which a postponed shot will fire (used for the tick-aligned fire mechanism in sub-tick shooting). |
+| `0xfa4` | `m_flPostponeFireReadyFrac` | float32 | [CCSWeaponBase](../server/CCSWeaponBase.md) | Fractional tick ratio for m_nPostponeFireReadyTicks. |
+| `0xfa8` | `m_bInReload` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) | True while the weapon is performing its reload animation. |
+| `0xfac` | `m_nDeployTick` | [GameTick_t](../entity2/GameTick_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xfb0` | `m_flAttackHoldStartTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xfb4` | `m_flDroppedAtTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) | GameTime at which this weapon was dropped onto the ground. |
+| `0xfbc` | `m_bIsHauledBack` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) | True while the player is winding up to throw a grenade (held throw). |
+| `0xfbd` | `m_bSilencerOn` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) | True when the suppressor is attached (M4A1-S / USP-S). |
+| `0xfc0` | `m_flTimeSilencerSwitchComplete` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) | GameTime at which the suppressor attach/detach animation completes. |
+| `0xfc4` | `m_bStealthy` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xfc5` | `m_bInSilentReloadSection` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xfc6` | `m_bSilentReloadStatCounted` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xfc7` | `m_bSilentReloadStatPending` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xfc8` | `m_flStealthHoldStartTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xfcc` | `m_bReloadHeldSinceStart` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xfd0` | `m_flWeaponActionPlaybackRate` | float32 | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xfd4` | `m_iOriginalTeamNumber` | int32 | [CCSWeaponBase](../server/CCSWeaponBase.md) | Team that originally spawned this weapon; buy-zone weapon pools are filtered by this. |
+| `0xfd8` | `m_iMostRecentTeamNumber` | int32 | [CCSWeaponBase](../server/CCSWeaponBase.md) | Team of the player most recently holding this weapon. |
+| `0xfdc` | `m_bDroppedNearBuyZone` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) | True if the weapon was dropped close to a buy zone (affects whether bots will pick it up). |
+| `0xfe0` | `m_flNextAttackRenderTimeOffset` | float32 | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xff8` | `m_bCanBePickedUp` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xff9` | `m_bUseCanOverrideNextOwnerTouchTime` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xffc` | `m_nextOwnerTouchTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0x1000` | `m_nextPrevOwnerTouchTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0x1008` | `m_nextPrevOwnerUseTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) | GameTime before which the previous owner cannot pick this weapon back up (prevents instant re-pickup after dropping). |
+| `0x100c` | `m_hPrevOwner` | CHandle< [CCSPlayerPawn](../server/CCSPlayerPawn.md) > | [CCSWeaponBase](../server/CCSWeaponBase.md) | CHandle to the CCSPlayerPawn that most recently owned this weapon before it was dropped. |
+| `0x1010` | `m_nDropTick` | [GameTick_t](../entity2/GameTick_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) | Server tick on which the weapon was most recently dropped. |
+| `0x1014` | `m_bWasActiveWeaponWhenDropped` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) | True if the weapon was the active weapon at the moment it was dropped. |
+| `0x1034` | `m_donated` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0x1038` | `m_fLastShotTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) | GameTime of the most recent shot fired from this weapon. |
+| `0x103c` | `m_bWasOwnedByCT` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0x103d` | `m_bWasOwnedByTerrorist` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0x1040` | `m_numRemoveUnownedWeaponThink` | int32 | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0x10a0` | `m_IronSightController` | [CIronSightController](../server/CIronSightController.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0x10b8` | `m_iIronSightMode` | int32 | [CCSWeaponBase](../server/CCSWeaponBase.md) | Iron-sight zoom state (0 = none, 1 = iron-sighted). |
+| `0x10bc` | `m_flLastLOSTraceFailureTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0x10c0` | `m_flWatTickOffset` | float32 | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0x10d0` | `m_flLastShakeTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0x1280` | `m_zoomLevel` | int32 | [CCSWeaponBaseGun](../server/CCSWeaponBaseGun.md) | Current scope zoom level (0 = unscoped). |
+| `0x1284` | `m_iBurstShotsRemaining` | int32 | [CCSWeaponBaseGun](../server/CCSWeaponBaseGun.md) | Shots left in the current burst, for burst-fire weapons. |
+| `0x1290` | `m_silencedModelIndex` | int32 | [CCSWeaponBaseGun](../server/CCSWeaponBaseGun.md) | Model index used while the silencer is attached. |
+| `0x1294` | `m_inPrecache` | bool | [CCSWeaponBaseGun](../server/CCSWeaponBaseGun.md) |  |
+| `0x1295` | `m_bNeedsBoltAction` | bool | [CCSWeaponBaseGun](../server/CCSWeaponBaseGun.md) |  |
+| `0x1298` | `m_nRevolverCylinderIdx` | int32 | [CCSWeaponBaseGun](../server/CCSWeaponBaseGun.md) |  |
+| `0x129c` | `m_bSkillReloadAvailable` | bool | [CCSWeaponBaseGun](../server/CCSWeaponBaseGun.md) |  |
+| `0x129d` | `m_bSkillReloadLiftedReloadKey` | bool | [CCSWeaponBaseGun](../server/CCSWeaponBaseGun.md) |  |
+| `0x129e` | `m_bSkillBoltInterruptAvailable` | bool | [CCSWeaponBaseGun](../server/CCSWeaponBaseGun.md) |  |
+| `0x129f` | `m_bSkillBoltLiftedFireKey` | bool | [CCSWeaponBaseGun](../server/CCSWeaponBaseGun.md) |  |
 
 **Also inherits (secondary base classes):** [IHasAttributes](../server/IHasAttributes.md) — additional-base fields sit at a shifted offset the schema does not record; see each base's own page for its layout.

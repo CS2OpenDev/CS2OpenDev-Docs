@@ -8,11 +8,11 @@ kind: class
 
 # CAnimGraphControllerBase
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 136 bytes (`0x88`) · **Align:** n/a (unspecified) · **Module:** server
+**Kind:** class · **Size:** 192 bytes (`0xc0`) · **Align:** n/a (unspecified) · **Module:** server
 
-**Derived by:** [CBaseAnimGraphDestructibleParts_GraphController](../server/CBaseAnimGraphDestructibleParts_GraphController.md), [CCS2ChickenGraphController](../server/CCS2ChickenGraphController.md), [CCS2UIPawnGraphController](../client/CCS2UIPawnGraphController.md), [CCS2WeaponGraphController](../server/CCS2WeaponGraphController.md), [CCS2WeaponGraphController](../server/CCS2WeaponGraphController.md), [CChoreo_GraphController](../server/CChoreo_GraphController.md), [CEmptyGraphController](../server/CEmptyGraphController.md)
+**Derived by:** [CBaseAnimGraphDestructibleParts_GraphController](../server/CBaseAnimGraphDestructibleParts_GraphController.md), [CCS2ChickenGraphController](../server/CCS2ChickenGraphController.md), [CCS2UIPawnGraphController](../client/CCS2UIPawnGraphController.md), [CCS2WeaponGraphController](../server/CCS2WeaponGraphController.md), [CCS2WeaponGraphController](../server/CCS2WeaponGraphController.md), [CChoreo_GraphController](../server/CChoreo_GraphController.md), [CDynamicPropGraphController](../server/CDynamicPropGraphController.md), [CEmptyGraphController](../server/CEmptyGraphController.md)
 
 **Relationships:**
 
@@ -22,6 +22,7 @@ classDiagram
     CAnimGraphControllerBase <|-- CCS2ChickenGraphController
     CAnimGraphControllerBase <|-- CCS2UIPawnGraphController
     CAnimGraphControllerBase <|-- CChoreo_GraphController
+    CAnimGraphControllerBase <|-- CDynamicPropGraphController
     CAnimGraphControllerBase <|-- CEmptyGraphController
     CAnimGraphControllerBase <|-- CCS2WeaponGraphController
     CAnimGraphControllerBase *-- ExternalAnimGraphHandle_t
@@ -33,4 +34,4 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x10` | `m_hExternalGraph` | [ExternalAnimGraphHandle_t](../server/ExternalAnimGraphHandle_t.md) |  |  |
+| `0x4c` | `m_hExternalGraph` | [ExternalAnimGraphHandle_t](../server/ExternalAnimGraphHandle_t.md) |  |  |

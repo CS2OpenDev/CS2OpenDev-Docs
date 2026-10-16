@@ -4,7 +4,7 @@ title: ConVars
 
 # ConVar Reference
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 All console variables extracted from CS2, with the value type and the bounds the engine enforces where it declares them.
 
@@ -136,7 +136,6 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `audio_input_test_signal` | `Bool` | `false` |  | `developmentonly` | For testing the audio input pathway with a sine tone instead of SDL3. |
 | `audio_input_use_sdl_roles` | `Bool` | `false` |  | `developmentonly` |  |
 | `autosave_fully_async` | `Bool` | `true` |  | `developmentonly` `gamedll` `defensive` | Set to 1 to have autosaves execute completely on the save thread, forces 'render only' mode while the save completes |
-| `battery_saver` | `Bool` | `false` |  | `archive` | OBSOLETE replaced by mobile_fps_* - Battery saver mode. 0=off, 1=on |
 | `bot_allow_grenades` | `Bool` | `true` |  | `gamedll` `release` | If nonzero, bots may use grenades. |
 | `bot_allow_machine_guns` | `Bool` | `true` |  | `gamedll` `release` | If nonzero, bots may use the machine gun. |
 | `bot_allow_pistols` | `Bool` | `true` |  | `gamedll` `release` | If nonzero, bots may use pistols. |
@@ -177,6 +176,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `bot_mimic` | `Int32` | `0` |  | `gamedll` `clientdll` `replicated` `cheat` | Bot uses usercmd of player by index. |
 | `bot_mimic_spec_buttons` | `Bool` | `true` |  | `clientdll` `cheat` | +attack, +jump etc are used for spectator control instead of being passed on to spectated bot |
 | `bot_mimic_yaw_offset` | `Float32` | `180.000000` |  | `gamedll` `cheat` |  |
+| `bot_path_require_reachable_goal` | `Bool` | `true` |  | `gamedll` `release` | If nonzero, bots refuse to path to a nav area that the nav build did not reach from a player spawn. |
 | `bot_prefix` | `String` |  |  | `gamedll` `release` | This string is prefixed to the name of all bots that join the game.<br>&lt;difficulty&gt; will be replaced with the bot's difficulty.<br>&lt;weaponclass&gt; will be replaced with the bot's desired weapon class.<br>&lt;skill&gt; will be replaced with a 0-100 representation of the bot's skill. |
 | `bot_quota` | `Int32` | `10` |  | `gamedll` `release` `commandline_enforced` | Determines the total number of bots in the game. |
 | `bot_quota_mode` | `String` | `normal` |  | `gamedll` `release` `commandline_enforced` | Determines the type of quota.<br>Allowed values: 'normal', 'fill', and 'match'.<br>If 'fill', the server will adjust bots to keep N players in the game, where N is bot_quota.<br>If 'match', the server will maintain a 1:N ratio of humans to bots, where N is bot_quota. |
@@ -307,7 +307,6 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `cl_cameraoverride_shadow_end` | `Float32` | `0.800000` |  | `developmentonly` `clientdll` `defensive` |  |
 | `cl_change_callback_limit` | `Float32` | `0.200000` |  | `clientdll` `release` | change callback msec warning limit |
 | `cl_chat_active` | `Int32` | `0` |  | `developmentonly` `clientdll` `defensive` |  |
-| `cl_clanid` | `String` | `0` |  | `clientdll` `hidden` `archive` `userinfo` | Current clan ID for name decoration |
 | `cl_clock_buffer_ticks` | `Float32` | `0.000000` |  | `developmentonly` | Clock sync will try to maintain an additional margin of N ticks.  This is intended to smooth over packet loss, and is a replacement for cl_interp_ratio / cl_interp.  This value is simply added to cl_clock_recvmargin_desired |
 | `cl_clock_buffer_ticks_spectator` | `Float32` | `2.000000` |  | `developmentonly` | Additional margin (in ticks) to apply when spectating. |
 | `cl_clock_correction` | `Bool` | `true` |  | `cheat` | Enable/disable clock correction on the client. |
@@ -324,29 +323,33 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `cl_color` | `Int32` | `1` | `0 .. 4` | `clientdll` `archive` `userinfo` | Preferred teammate color |
 | `cl_connectionretrytime_p2p` | `Float32` | `20.000000` |  | `release` | Number of seconds over which to spread retry attempts for P2P. |
 | `cl_cq_min_queue` | `Int32` | `0` |  | `userinfo` | Used by the client to inform the server of their desired queue length.  Derived from cl_tickpacket_recvmargin_desired and cl_tickpacket_desired_queuelength |
-| `cl_crosshair_drawoutline` | `Bool` | `true` |  | `clientdll` `archive` `per_user` | Draws a black outline around the crosshair for better visibility |
-| `cl_crosshair_dynamic_maxdist_splitratio` | `Float32` | `1.000000` | `0.000000 .. 1.000000` | `clientdll` `archive` `per_user` | If using cl_crosshairstyle 2, this is the ratio used to determine how long the inner and outer xhair pips will be. [inner = cl_crosshairsize*(1-cl_crosshair_dynamic_maxdist_splitratio), outer = cl_crosshairsize*cl_crosshair_dynamic_maxdist_splitratio]  [0 - 1] |
-| `cl_crosshair_dynamic_splitalpha_innermod` | `Float32` | `0.000000` | `0.000000 .. 1.000000` | `clientdll` `archive` `per_user` | If using cl_crosshairstyle 2, this is the alpha modification that will be used for the INNER crosshair pips once they've split. [0 - 1] |
-| `cl_crosshair_dynamic_splitalpha_outermod` | `Float32` | `1.000000` | `0.300000 .. 1.000000` | `clientdll` `archive` `per_user` | If using cl_crosshairstyle 2, this is the alpha modification that will be used for the OUTER crosshair pips once they've split. [0.3 - 1] |
-| `cl_crosshair_dynamic_splitdist` | `Int32` | `3` |  | `clientdll` `archive` `per_user` | If using cl_crosshairstyle 2, this is the distance that the crosshair pips will split into 2. (default is 7) |
+| `cl_crosshair_drawoutline` | `Int32` | `1` | `0 .. 2` | `clientdll` `archive` `per_user` | Draw a black outline around the crosshair for better visibility. 0 = No outline, 1 = Full outline, 2 = Half outline |
+| `cl_crosshair_dynamic_maxdist_splitratio` | `Float32` | `1.000000` | `0.000000 .. 1.000000` | `clientdll` `archive` `per_user` | Style 2 only: how the bar length is divided between inner and outer bars once split. inner = cl_crosshairsize * (1 - ratio), outer = cl_crosshairsize * ratio. [0 - 1] |
+| `cl_crosshair_dynamic_splitalpha_innermod` | `Float32` | `0.000000` | `0.000000 .. 1.000000` | `clientdll` `archive` `per_user` | Style 2 only: alpha multiplier for the INNER crosshair bars once they have split. [0 - 1] |
+| `cl_crosshair_dynamic_splitalpha_outermod` | `Float32` | `1.000000` | `0.300000 .. 1.000000` | `clientdll` `archive` `per_user` | Style 2 only: alpha multiplier for the OUTER crosshair bars once they have split. [0.3 - 1] |
+| `cl_crosshair_dynamic_splitdist` | `Int32` | `3` | `0 .. 127` | `clientdll` `archive` `per_user` | Style 2: distance at which the crosshair bars split in two. |
+| `cl_crosshair_dynamic_spread_limit` | `Int32` | `255` | `0 .. 255` | `clientdll` `archive` `per_user` | The additional distance the dynamic elements are allowed to spread out to from the baseline of 128 pixels. |
 | `cl_crosshair_friendly_warning` | `Int32` | `1` | `0 .. 1` | `clientdll` `archive` `release` | 0: off, 1: on |
-| `cl_crosshair_outlinethickness` | `Float32` | `1.000000` | `0.000000 .. 3.000000` | `clientdll` `archive` `per_user` | Set how thick you want your crosshair outline to draw (0-3) |
-| `cl_crosshair_recoil` | `Bool` | `true` |  | `clientdll` `archive` `per_user` |  |
-| `cl_crosshair_show_desynced_seeds_marker` | `Bool` | `true` |  | `developmentonly` `clientdll` |  |
+| `cl_crosshair_gap` | `Int32` | `4` | `-3840 .. 3840` | `clientdll` `archive` `per_user` | Offset added to the gap between the crosshair center and the bars. |
+| `cl_crosshair_length` | `Int32` | `8` | `0 .. 255` | `clientdll` `archive` `per_user` | Length of each crosshair bar, scaled with screen resolution |
+| `cl_crosshair_recoil` | `Bool` | `true` |  | `clientdll` `archive` `per_user` | Crosshair follows the weapon's predicted recoil (aim punch) |
+| `cl_crosshair_screen_height` | `Int32` | `1080` | `>= 240` | `clientdll` `hidden` `archive` `per_user` | The res at which the user authored their size settings at - changes whenever a size setting is updated |
 | `cl_crosshair_sniper_width` | `Int32` | `1` |  | `clientdll` `archive` `per_user` | If &gt;1 sniper scope cross lines gain extra width (1 for single-pixel hairline) |
-| `cl_crosshair_t` | `Bool` | `false` |  | `clientdll` `archive` `per_user` | T style crosshair |
-| `cl_crosshairalpha` | `Int32` | `200` | `0 .. 255` | `clientdll` `archive` `per_user` |  |
-| `cl_crosshaircolor` | `Int32` | `5` |  | `clientdll` `archive` `per_user` | Set crosshair color as defined in game_options.consoles.txt |
-| `cl_crosshaircolor_b` | `Int32` | `0` | `0 .. 255` | `clientdll` `archive` `per_user` |  |
-| `cl_crosshaircolor_g` | `Int32` | `255` | `0 .. 255` | `clientdll` `archive` `per_user` |  |
-| `cl_crosshaircolor_r` | `Int32` | `0` | `0 .. 255` | `clientdll` `archive` `per_user` |  |
-| `cl_crosshairdot` | `Bool` | `false` |  | `clientdll` `archive` `per_user` |  |
-| `cl_crosshairgap` | `Float32` | `-2.200000` |  | `clientdll` `archive` `per_user` |  |
-| `cl_crosshairgap_useweaponvalue` | `Bool` | `true` |  | `clientdll` `archive` `per_user` | If set to 1, the gap will update dynamically based on which weapon is currently equipped |
-| `cl_crosshairsize` | `Float32` | `3.900000` |  | `clientdll` `archive` `per_user` |  |
-| `cl_crosshairstyle` | `Int32` | `2` |  | `clientdll` `archive` `per_user` | 0 = DEFAULT (DISABLED), 1 = DEFAULT STATIC (DISABLED), 2 = DEFAULT (accurate recoil/spread feedback with a fixed inner part), 3 = ACCURATE DYNAMIC (DISABLED) (accurate recoil/spread feedback), 4 = DEFAULT STATIC, 5 = LEGACY (fake recoil - inaccurate feedback) |
-| `cl_crosshairthickness` | `Float32` | `0.600000` |  | `clientdll` `archive` `per_user` |  |
-| `cl_crosshairusealpha` | `Bool` | `true` |  | `clientdll` `archive` `per_user` |  |
+| `cl_crosshair_t` | `Bool` | `false` |  | `clientdll` `archive` `per_user` | T-style crosshair: hide the top bar |
+| `cl_crosshair_thickness` | `Int32` | `2` | `0 .. 32` | `clientdll` `archive` `per_user` | Thickness of the crosshair bars and circle, scaled with screen resolution (minimum 1 pixel) |
+| `cl_crosshairalpha` | `Int32` | `200` | `0 .. 255` | `clientdll` `hidden` `archive` `per_user` |  |
+| `cl_crosshaircolor_a` | `Int32` | `255` | `0 .. 255` | `clientdll` `archive` `per_user` | Crosshair opacity. 0 = fully transparent, 255 = fully opaque |
+| `cl_crosshaircolor_b` | `Int32` | `0` | `0 .. 255` | `clientdll` `archive` `per_user` | Crosshair color, blue component |
+| `cl_crosshaircolor_g` | `Int32` | `255` | `0 .. 255` | `clientdll` `archive` `per_user` | Crosshair color, green component |
+| `cl_crosshaircolor_r` | `Int32` | `0` | `0 .. 255` | `clientdll` `archive` `per_user` | Crosshair color, red component |
+| `cl_crosshairdot` | `Bool` | `false` |  | `clientdll` `archive` `per_user` | Draw a dot at the center of the crosshair |
+| `cl_crosshairoutline_a` | `Int32` | `255` | `0 .. 255` | `clientdll` `archive` `per_user` | Crosshair outline opacity. 0 = fully transparent, 255 = fully opaque |
+| `cl_crosshairoutline_b` | `Int32` | `0` | `0 .. 255` | `clientdll` `archive` `per_user` | Crosshair outline color, blue component |
+| `cl_crosshairoutline_g` | `Int32` | `0` | `0 .. 255` | `clientdll` `archive` `per_user` | Crosshair outline color, green component |
+| `cl_crosshairoutline_r` | `Int32` | `0` | `0 .. 255` | `clientdll` `archive` `per_user` | Crosshair outline color, red component |
+| `cl_crosshairsize` | `Float32` | `3.900000` |  | `clientdll` `hidden` `archive` `per_user` |  |
+| `cl_crosshairstyle` | `Int32` | `7` | `0 .. 9` | `clientdll` `archive` `per_user` | Crosshair style. 0 = Dynamic Cross, 1 = Dynamic Circle, 2 = Dynamic Cross (Legacy), 3 = Static Circle, 4 = Static Cross, 5 = Static Cross (Shot Feedback), 6 = Dot Only, 7 = Dynamic Quad, 8 = Static Square, 9 = Static Quad. |
+| `cl_crosshairthickness` | `Float32` | `0.600000` |  | `clientdll` `hidden` `archive` `per_user` |  |
 | `cl_csgo_shoot_debugvis_rdp_text_l` | `Int32` | `10` |  | `developmentonly` `clientdll` |  |
 | `cl_csgo_shoot_debugvis_rdp_text_x` | `Int32` | `45` |  | `developmentonly` `clientdll` |  |
 | `cl_csgo_shoot_debugvis_show_los` | `Bool` | `false` |  | `developmentonly` `clientdll` | Show line of last shot. |
@@ -369,6 +372,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `cl_debugviewangle` | `Bool` | `false` |  | `developmentonly` `clientdll` | Plots view angles yaw at various stages of the frame/tick in Tracy. |
 | `cl_decryptdata_key` | `String` |  |  | `release` | Key to decrypt encrypted GOTV messages |
 | `cl_decryptdata_key_pub` | `String` |  |  | `release` | Key to decrypt public encrypted GOTV messages |
+| `cl_demo_freecam` | `Bool` | `true` |  | `clientdll` `release` | During demo playback, roaming spectator movement runs on real time so it works while paused and at any playback rate. |
 | `cl_demo_predict` | `Int32` | `1` |  | `clientdll` `release` | Enable 'TrueView' when watching a demo, which attempts to recreate the client's experience more accurately.  0=disable, 1=only if demo version match, 2=always |
 | `cl_demo_steadycam_blendframes` | `Int32` | `5` |  | `developmentonly` `clientdll` `defensive` | blend over this many frames |
 | `cl_demo_steadycam_deflection` | `Float32` | `5.000000` |  | `developmentonly` `clientdll` `defensive` | if camera orientation changes this much update orientation |
@@ -421,7 +425,6 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `cl_fasttempentcollision` | `Int32` | `5` |  | `developmentonly` `clientdll` `defensive` |  |
 | `cl_firstperson_legs` | `Bool` | `true` |  | `developmentonly` `clientdll` `defensive` |  |
 | `cl_firstperson_legs_aoproxy` | `Bool` | `true` |  | `developmentonly` `clientdll` `defensive` |  |
-| `cl_fixedcrosshairgap` | `Float32` | `3.000000` |  | `clientdll` `archive` `per_user` | For crosshair style 1: How big to make the gap between the pips in the fixed crosshair |
 | `cl_flushentitypacket` | `Int32` | `0` |  | `cheat` | For debugging. Force the engine to flush an entity packet. |
 | `cl_force_next_signon_to_reset` | `Bool` | `false` |  | `developmentonly` |  |
 | `cl_force_spec_hud_color_to_team` | `Bool` | `true` |  | `clientdll` `archive` | Spec hud color setting is always team/teammate |
@@ -448,16 +451,15 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `cl_grenadecrosshair_explosive` | `Bool` | `true` |  | `clientdll` `archive` `per_user` | Is the grenade crosshair enabled |
 | `cl_grenadecrosshair_fire` | `Bool` | `true` |  | `clientdll` `archive` `per_user` | Is the grenade crosshair enabled |
 | `cl_grenadecrosshair_flash` | `Bool` | `true` |  | `clientdll` `archive` `per_user` | Is the grenade crosshair enabled |
-| `cl_grenadecrosshair_keepusercrosshair` | `Bool` | `true` |  | `clientdll` `archive` `per_user` | Keep the user's crosshair when the grenade crosshair is enabled |
+| `cl_grenadecrosshair_keepusercrosshair` | `Bool` | `true` |  | `clientdll` `archive` `per_user` | Keep drawing the user's crosshair while the grenade throw crosshair is shown |
 | `cl_grenadecrosshair_smoke` | `Bool` | `true` |  | `clientdll` `archive` `per_user` | Is the grenade crosshair enabled |
-| `cl_grenadecrosshair_tickinterval` | `Float32` | `10.000000` | `1.000000 .. 45.000000` | `developmentonly` `clientdll` |  |
-| `cl_grenadecrosshair_ticklabels` | `Bool` | `true` |  | `developmentonly` `clientdll` |  |
-| `cl_grenadecrosshair_tickscaling` | `Float32` | `1.100000` | `0.500000 .. 2.000000` | `developmentonly` `clientdll` |  |
-| `cl_grenadecrosshairdelay_decoy` | `Float32` | `2.000000` |  | `clientdll` `archive` `per_user` | How long should the pin be pulled for before showing the grenade crosshair |
-| `cl_grenadecrosshairdelay_explosive` | `Float32` | `2.000000` |  | `clientdll` `archive` `per_user` | How long should the pin be pulled for before showing the grenade crosshair |
-| `cl_grenadecrosshairdelay_fire` | `Float32` | `2.000000` |  | `clientdll` `archive` `per_user` | How long should the pin be pulled for before showing the grenade crosshair |
-| `cl_grenadecrosshairdelay_flash` | `Float32` | `2.000000` |  | `clientdll` `archive` `per_user` | How long should the pin be pulled for before showing the grenade crosshair |
-| `cl_grenadecrosshairdelay_smoke` | `Float32` | `2.000000` |  | `clientdll` `archive` `per_user` | How long should the pin be pulled for before showing the grenade crosshair |
+| `cl_grenadecrosshair_ticklabels` | `Bool` | `true` |  | `developmentonly` `clientdll` | Draw labels on grenade throw crosshair ticks |
+| `cl_grenadecrosshair_tickscaling` | `Float32` | `1.100000` | `0.500000 .. 2.000000` | `developmentonly` `clientdll` | Scale applied to grenade throw crosshair ticks |
+| `cl_grenadecrosshairdelay_decoy` | `Float32` | `2.000000` | `0.000000 .. 5.000000` | `clientdll` `archive` `per_user` | How long should the pin be pulled for before showing the grenade crosshair |
+| `cl_grenadecrosshairdelay_explosive` | `Float32` | `2.000000` | `0.000000 .. 5.000000` | `clientdll` `archive` `per_user` | How long should the pin be pulled for before showing the grenade crosshair |
+| `cl_grenadecrosshairdelay_fire` | `Float32` | `2.000000` | `0.000000 .. 5.000000` | `clientdll` `archive` `per_user` | How long should the pin be pulled for before showing the grenade crosshair |
+| `cl_grenadecrosshairdelay_flash` | `Float32` | `2.000000` | `0.000000 .. 5.000000` | `clientdll` `archive` `per_user` | How long should the pin be pulled for before showing the grenade crosshair |
+| `cl_grenadecrosshairdelay_smoke` | `Float32` | `2.000000` | `0.000000 .. 5.000000` | `clientdll` `archive` `per_user` | How long should the pin be pulled for before showing the grenade crosshair |
 | `cl_hide_avatar_images` | `Int32` | `0` |  | `clientdll` `archive` | Hide avatar images for other players.<br>0 - Off.<br>1 - Block All<br>2 - Block all but friends |
 | `cl_highlights_hud_playback` | `Int32` | `0` |  | `clientdll` `hidden` `release` | Highlights hud playback |
 | `cl_hitbox_debug` | `Bool` | `false` |  | `developmentonly` `clientdll` `defensive` |  |
@@ -502,7 +504,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `cl_inventory_saved_sort2` | `String` | `inv_sort_age` |  | `clientdll` `archive` `release` |  |
 | `cl_invites_only_friends` | `Bool` | `false` |  | `clientdll` `archive` `release` | If turned on, will ignore in-game invites from recent teammates or other non-friends |
 | `cl_invites_only_mainmenu` | `Bool` | `false` |  | `clientdll` `archive` `release` | If turned on, will ignore all invites when user is playing a match |
-| `cl_ironsight_dot_scale` | `Float32` | `1.000000` | `0.100000 .. 2.000000` | `clientdll` `archive` `per_user` | Ironsight dot scale |
+| `cl_ironsight_dot_scale` | `Float32` | `1.000000` | `0.100000 .. 2.000000` | `clientdll` `archive` `per_user` | Scope dot scale |
 | `cl_ironsight_filter_alpha` | `Float32` | `1.000000` | `0.000000 .. 1.000000` | `developmentonly` `clientdll` | Ironsight filter alpha |
 | `cl_ironsight_min_channel_color` | `Float32` | `0.300000` | `0.000000 .. 1.000000` | `developmentonly` `clientdll` | Ironsight min channel color value |
 | `cl_ironsight_usecrosshaircolor` | `Bool` | `false` |  | `clientdll` `archive` `per_user` | Should the scope dot match the user's crosshair color |
@@ -538,7 +540,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `cl_new_user_phase` | `Int32` | `0` |  | `clientdll` `archive` `release` | 0: Not Started, 1: Needs Training, 2: Training Complete, -1: Disabled |
 | `cl_obs_interp_enable` | `Bool` | `true` |  | `clientdll` `archive` | Enables interpolation between observer targets |
 | `cl_obs_interp_speed` | `Float32` | `1.000000` | `0.250000 .. 2.500000` | `clientdll` `archive` | Spectator camera interpolation speed |
-| `cl_observed_bot_crosshair` | `Int32` | `2` |  | `clientdll` `archive` `release` | Control the crosshair shown when observing a bot. 0: Show player crosshair. 1: Show player crosshair only when bot can be taken over, otherwise show default.. 2: Always show default crosshair for bots. |
+| `cl_observed_bot_crosshair` | `Int32` | `2` |  | `clientdll` `archive` `release` | Crosshair shown when observing a bot. 0 = show your crosshair, 1 = show your crosshair only when the bot can be taken over (otherwise default), 2 = always show the default crosshair |
 | `cl_paintkit_override` | `String` |  |  | `clientdll` `cheat` `release` |  |
 | `cl_panel_freeze_time_after_press` | `Float32` | `0.500000` |  | `developmentonly` `clientdll` `defensive` | time to freeze mouse/pointer motion after a mouse button press |
 | `cl_parallel_readpacketentities` | `Bool` | `true` |  | `developmentonly` `defensive` | Set to 1 to use threading snapshot reading (if game supports and server is sending bitcounts). |
@@ -686,7 +688,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `cl_show_equipped_character_for_player_avatars` | `Bool` | `false` |  | `clientdll` `archive` |  |
 | `cl_show_head_trajectory` | `Float32` | `0.000000` |  | `developmentonly` `clientdll` |  |
 | `cl_show_matchmaking_stat_spew` | `Bool` | `false` |  | `developmentonly` `clientdll` `defensive` |  |
-| `cl_show_observer_crosshair` | `Int32` | `2` |  | `clientdll` `archive` `release` | Show the crosshair of the player being observed. 0: off 1: friends and party 2: everyone |
+| `cl_show_observer_crosshair` | `Int32` | `2` |  | `clientdll` `archive` `release` | Show the crosshair of the player being observed. 0 = off, 1 = friends and party only, 2 = everyone |
 | `cl_show_playernames_max_chars_console` | `Bool` | `false` |  | `developmentonly` `clientdll` | Shows all player names (including bots) as 16 W's. |
 | `cl_show_quest_info` | `Bool` | `false` |  | `developmentonly` `clientdll` |  |
 | `cl_show_splashes` | `Bool` | `true` |  | `developmentonly` `clientdll` |  |
@@ -732,6 +734,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `cl_spec_show_bindings` | `Bool` | `true` |  | `clientdll` `release` `clientcmd_can_execute` | Toggle the visibility of the spectator bindings. |
 | `cl_spec_stats` | `Bool` | `true` |  | `clientdll` `release` |  |
 | `cl_spec_use_tournament_content_standards` | `Bool` | `false` |  | `clientdll` `release` |  |
+| `cl_spectator_predict` | `Bool` | `false` |  | `clientdll` `release` | Enable 'TrueView' when spectating another player, which attempts to recreate the client's experience more accurately.  The server may not allow this at certain times. |
 | `cl_streams_image_sfurl` | `String` | `img://loadjpeg:(640x360):` |  | `developmentonly` `clientdll` | Format of Scaleform image representing the stream |
 | `cl_streams_mytwitchtv_channel` | `String` | `http://www.twitch.tv/` |  | `developmentonly` `clientdll` | Twitch.tv account channel URL |
 | `cl_streams_mytwitchtv_nolink` | `String` | `http://www.twitch.tv/settings/connections` |  | `developmentonly` `clientdll` | Twitch.tv account linking URL |
@@ -775,6 +778,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `cl_use_last_selected_weapon_slot_position` | `Bool` | `false` |  | `clientdll` `archive` `release` | Use the last selected weapon slot position when switching back to a weapon slot. |
 | `cl_use_old_wearable_shoulddraw` | `Bool` | `false` |  | `developmentonly` `clientdll` `defensive` |  |
 | `cl_use_opens_buy_menu` | `Bool` | `false` |  | `clientdll` `archive` `userinfo` `per_user` | Pressing the +use key will open the buy menu if in a buy zone (just as if you pressed the 'buy' key). |
+| `cl_use_prompt_smoke_density` | `Float32` | `0.030000` |  | `clientdll` `cheat` | Smoke density at the eye position above which a button's use prompt is suppressed. |
 | `cl_usercmd_dbg` | `Int32` | `0` |  | `developmentonly` | show usercmd payload sizing info for packets with more than this many usercmds |
 | `cl_usercmd_max_per_movemsg` | `Int32` | `4` | `>= 4` | `release` | max number of CUserCmds to send in one client move message |
 | `cl_usercmd_showsize` | `Bool` | `false` |  | `developmentonly` |  |
@@ -799,7 +803,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `cl_yawspeed` | `Float32` | `210.000000` |  | `developmentonly` `clientdll` `defensive` |  |
 | `clear_debug_flags_on_death` | `Bool` | `true` |  | `developmentonly` `gamedll` `defensive` |  |
 | `clientport` | `Int32` | `0` |  | `release` | If non-zero, client binds port to specific address.  Usually you should leave this blank to use a different random system-assigned port for each connection. |
-| `closecaption` | `Bool` | `false` |  | `clientdll` `archive` `userinfo` | Enable close captioning. |
+| `closecaption` | `Bool` | `false` |  | `clientdll` `archive` `userinfo` `per_user` | Enable close captioning. |
 | `cloth_debug_draw` | `Int32` | `0` |  | `developmentonly` `clientdll` |  |
 | `cloth_filter_transform_stateless` | `Bool` | `false` |  | `developmentonly` `defensive` | Enable the new, stateless version of FilterTransform |
 | `cloth_ground_plane_thickness` | `Float32` | `3.000000` |  | `developmentonly` `defensive` | Raise ground by this much for all cloth that traces the ground; should be 0 ideally |
@@ -903,9 +907,10 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `csm_shadow_worldview_shear_align_z_to_v` | `Bool` | `false` |  | `clientdll` `cheat` |  |
 | `csm_sst_max_visible_dist` | `Float32` | `2000.000000` |  | `clientdll` `cheat` |  |
 | `csm_sst_pushback_distance` | `Float32` | `1500.000000` |  | `clientdll` `cheat` | default pushback |
+| `csm_sst_shadow_focus_region_caster_headroom` | `Float32` | `256.000000` |  | `clientdll` `cheat` |  |
 | `csm_sst_shadow_focus_region_maxz` | `Float32` | `2000.000000` |  | `clientdll` `cheat` |  |
 | `csm_sst_shadow_focus_region_minz` | `Float32` | `-2000.000000` |  | `clientdll` `cheat` |  |
-| `csm_sst_shadow_focus_region_thin_compensation` | `Float32` | `1500.000000` |  | `clientdll` `cheat` |  |
+| `csm_sst_vertical_depth_shear_enable` | `Bool` | `true` |  | `clientdll` `cheat` |  |
 | `csm_viewdir_shadow_bias` | `Float32` | `0.000000` |  | `clientdll` `cheat` |  |
 | `csm_viewmodel_max_shadow_dist` | `Float32` | `21.000000` |  | `clientdll` `cheat` |  |
 | `csm_viewmodel_max_visible_dist` | `Float32` | `1000.000000` |  | `clientdll` `cheat` |  |
@@ -953,7 +958,6 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `demo_highlight_seconds_after` | `Float32` | `2.000000` |  | `clientdll` `release` | How many seconds after the actual highlight event to show when viewing highlights. |
 | `demo_highlight_seconds_before` | `Float32` | `6.000000` |  | `clientdll` `release` | How many seconds before the actual highlight event to show when viewing highlights. |
 | `demo_max_consecutive_skip_packets` | `Int32` | `100` |  | `developmentonly` `defensive` | Don't skip more than N messages in a row when skipping in a demo file. |
-| `demo_mouse_enable_binding` | `String` | `drop` |  | `clientdll` `archive` | Name of the binding to enable mouse on demo playback UI |
 | `demo_pause_at_end` | `Bool` | `true` |  | `clientdll` `release` | Pause demo playback when the end of the file is reached, otherwise quit to main menu. |
 | `demo_playback_override_settings` | `Bool` | `false` |  | `developmentonly` `clientdll` `defensive` |  |
 | `demo_quitafterplayback` | `Bool` | `false` |  | `release` | Quits game after demo playback. |
@@ -1058,7 +1062,6 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `ent_showonlyattachment` | `String` |  |  | `gamedll` `cheat` |  |
 | `ent_skeleton_duration` | `Float32` | `0.000000` |  | `gamedll` `clientdll` `replicated` `cheat` | Duration of ent_skeleton display |
 | `ent_skeleton_only_ik_joints` | `Bool` | `false` |  | `developmentonly` `gamedll` `defensive` |  |
-| `ent_skeleton_snapshot` | `Bool` | `false` |  | `developmentonly` `gamedll` |  |
 | `ent_steadystate_batchsize` | `Int32` | `20` |  | `developmentonly` `gamedll` `defensive` | Max number of entities to transmit to player |
 | `ent_steadystate_delay` | `Float32` | `5.000000` |  | `developmentonly` `gamedll` `defensive` | Time in seconds without network state changes until an entity is considered for trickle updates |
 | `ent_steadystate_enable` | `Bool` | `false` |  | `developmentonly` `gamedll` `defensive` |  |
@@ -1067,6 +1070,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `ent_text_flags_active` | `Int32` | `-1` |  | `gamedll` `archive` `cheat` |  |
 | `ent_text_no_name_really_i_mean_it` | `Bool` | `false` |  | `gamedll` `cheat` |  |
 | `entity_log_load_unserialize` | `Int32` | `0` |  | `gamedll` `clientdll` `replicated` `cheat` | Output unserialization of entities on map load. 0 - off, 1 - client/server, 2 - server, 3 - client |
+| `env_shake_debug` | `Bool` | `false` |  | `developmentonly` `gamedll` | Draw debug info for active env_shakes: query radius, affected physics bodies/particles, and the forces/velocity deltas applied to them. |
 | `eom_local_player_defeat_anim_enabled` | `Bool` | `true` |  | `clientdll` `archive` `release` |  |
 | `execute_command_every_frame` | `String` |  |  | `cheat` |  |
 | `fade_debug_splitscreen_slot` | `Int32` | `-1` |  | `developmentonly` `clientdll` `defensive` |  |
@@ -1143,6 +1147,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `func_mover_debug_parallel` | `Bool` | `false` |  | `developmentonly` `gamedll` `defensive` |  |
 | `func_mover_debug_showtext` | `Bool` | `false` |  | `developmentonly` `gamedll` `defensive` |  |
 | `func_mover_debug_verbose` | `Bool` | `false` |  | `developmentonly` `gamedll` `defensive` |  |
+| `func_mover_disable_movement` | `Bool` | `false` |  | `developmentonly` `gamedll` `defensive` |  |
 | `func_mover_force_transition_start_direction` | `Bool` | `false` |  | `developmentonly` `gamedll` `defensive` |  |
 | `func_mover_get_speed_override` | `Float32` | `0.000000` |  | `developmentonly` `gamedll` `defensive` |  |
 | `func_mover_imgui_log_count` | `Int32` | `30` |  | `developmentonly` `gamedll` `defensive` |  |
@@ -1172,7 +1177,6 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `gameinstructor_verbose` | `Int32` | `0` |  | `clientdll` `cheat` | Set to 1 for standard debugging or 2 (in combo with gameinstructor_verbose_lesson) to show update actions. |
 | `gameinstructor_verbose_lesson` | `String` |  |  | `clientdll` `cheat` | Display more verbose information for lessons have this name. |
 | `gamestats_file_output_directory` | `String` |  |  | `developmentonly` `gamedll` `defensive` | When -gamestatsfileoutputonly is specified, file will be emitted here instead of to modpath |
-| `gc_secret_key` | `String` |  |  | `developmentonly` `gamedll` `protected` `defensive` | Secret key for authenticating with the GC |
 | `gl_clear` | `Bool` | `true` |  | `developmentonly` `clientdll` `defensive` |  |
 | `glow_chickens` | `Bool` | `false` |  | `developmentonly` `gamedll` | Glow chickens with a green outline. |
 | `glow_outline_width` | `Float32` | `6.000000` |  | `clientdll` `cheat` | Width of glow outline effect in screen space. |
@@ -1423,9 +1427,8 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `lb_timesliced_shadows_dynamic_size` | `Bool` | `true` |  | `developmentonly` `defensive` |  |
 | `lb_use_ellipsoid_bounds` | `Bool` | `true` |  | `developmentonly` `cheat` |  |
 | `lb_use_illumination_silhouette` | `Bool` | `true` |  | `developmentonly` `cheat` `menubar_item` | SceneSystem/LightBinner/Use Illumination Bounds |
+| `lb_use_illumination_volume` | `Bool` | `true` |  | `developmentonly` `cheat` | Disables use of illumination volume (may cause precomputed lighting errors) |
 | `leaderboards_cache_duration` | `Int32` | `600` |  | `developmentonly` `clientdll` |  |
-| `lightquery_debug_direct_lighting` | `Bool` | `true` |  | `gamedll` `clientdll` `replicated` `cheat` |  |
-| `lightquery_debug_indirect_lighting` | `Bool` | `true` |  | `gamedll` `clientdll` `replicated` `cheat` |  |
 | `lobby_default_privacy_bits2` | `String` | `1` |  | `clientdll` `archive` `release` | Lobby default permissions (0: private, 1: public) |
 | `lobby_gamesearch_fake` | `Int32` | `0` |  | `developmentonly` `clientdll` |  |
 | `lobby_stats_fake` | `Bool` | `false` |  | `developmentonly` `clientdll` |  |
@@ -1529,11 +1532,8 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `mm_title_debug_version` | `Int32` | `0` |  | `developmentonly` | This matchmaking version will override .res file version for isolating matchmaking |
 | `mm_tu_string` | `String` | `00000000` |  | `developmentonly` `defensive` |  |
 | `mm_use_p2p_for_listen_server` | `Bool` | `true` |  | `developmentonly` `defensive` |  |
-| `mobile_fps_increase_during_charging` | `Bool` | `false` |  | `archive` | MOBILE_FPS_CONTROL: If true we increase framerate limit while charging |
-| `mobile_fps_increase_during_hfr_animations` | `Bool` | `true` |  | `developmentonly` `hidden` `defensive` | MOBILE_FPS_CONTROL: If true we increase framerate limit during HFR-tagged animations and transitions. |
-| `mobile_fps_increase_during_touch` | `Bool` | `true` |  | `archive` | MOBILE_FPS_CONTROL: If true we increase framerate limit during touch |
-| `mobile_fps_limit` | `Float32` | `30.000000` |  | `archive` | MOBILE_FPS_CONTROL: Mobile FPS limit - 15, 30, 60 |
 | `model_default_preview_sequence_name` | `String` |  |  | `gamedll` `clientdll` `archive` `replicated` |  |
+| `modeldoc_fgd_debug_path` | `String` |  |  | `developmentonly` |  |
 | `molotov_throw_detonate_time` | `Float32` | `2.000000` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` |  |
 | `molotov_usethrow_direction` | `Bool` | `false` |  | `gamedll` `cheat` |  |
 | `motdfile` | `String` | `motd.txt` |  | `gamedll` `release` | The MOTD file to load. |
@@ -1577,7 +1577,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `mp_death_drop_c4` | `Bool` | `true` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Whether c4 is droppable |
 | `mp_death_drop_defuser` | `Bool` | `true` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Drop defuser on player death |
 | `mp_death_drop_grenade` | `Int32` | `2` | `0 .. 2` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Which grenade to drop on player death: 0=none, 1=best, 2=current or best, 3=all grenades |
-| `mp_death_drop_gun` | `Int32` | `1` | `0 .. 2` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Which gun to drop on player death: 0=none, 1=best, 2=current or best |
+| `mp_death_drop_gun` | `Int32` | `1` | `0 .. 3` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Which gun to drop on player death: 0=none, 1=best, 2=current or best, 3=both |
 | `mp_death_drop_healthshot` | `Bool` | `true` |  | `gamedll` `clientdll` `replicated` `release` | Drop healthshot on player death |
 | `mp_death_drop_taser` | `Bool` | `true` |  | `gamedll` `clientdll` `replicated` `release` | Drop taser on player death |
 | `mp_deathcam_skippable` | `Bool` | `true` |  | `gamedll` `replicated` `release` `commandline_enforced` | Determines whether a player can early-out of the deathcam. |
@@ -1642,7 +1642,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `mp_hostages_spawn_same_every_round` | `Bool` | `true` |  | `gamedll` `replicated` `release` `commandline_enforced` | 0 = spawn hostages randomly every round, 1 = same spawns for entire match. |
 | `mp_hostages_takedamage` | `Bool` | `false` |  | `gamedll` `clientdll` `replicated` `release` | Whether or not hostages can be hurt. |
 | `mp_humanteam` | `String` | `any` |  | `gamedll` `replicated` `release` | Restricts human players to a single team {any, CT, T} |
-| `mp_ignore_round_win_conditions` | `Bool` | `false` |  | `gamedll` `replicated` `release` | Ignore conditions which would end the current round |
+| `mp_ignore_round_win_conditions` | `Bool` | `false` |  | `gamedll` `replicated` `release` `commandline_enforced` | Ignore conditions which would end the current round |
 | `mp_items_prohibited` | `String` |  |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Set this convar to a comma-delimited list of definition indices of weapons that should be prohibited from use. |
 | `mp_join_grace_time` | `Float32` | `0.000000` | `0.000000 .. 30.000000` | `gamedll` `clientdll` `replicated` `release` | Number of seconds after round start to allow a player to join a game |
 | `mp_limitteams` | `Int32` | `2` | `0 .. 30` | `gamedll` `notify` `replicated` `release` `commandline_enforced` | Max # of players 1 team can have over another (0 disables check) |
@@ -1668,7 +1668,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `mp_playerid` | `Int32` | `0` | `0 .. 2` | `gamedll` `clientdll` `replicated` `release` | Controls what information player see in the status bar: 0 all names; 1 team names; 2 no names |
 | `mp_playerid_delay` | `Float32` | `0.400000` | `0.000000 .. 1.000000` | `gamedll` `clientdll` `replicated` `release` | Number of seconds to delay showing information in the status bar |
 | `mp_playerid_hold` | `Float32` | `0.100000` | `0.000000 .. 1.000000` | `gamedll` `clientdll` `replicated` `release` | Number of seconds to keep showing old information in the status bar |
-| `mp_promoted_item_enabled` | `Bool` | `false` |  | `gamedll` `clientdll` `notify` `replicated` `release` | Allow the purchasing of the promoted item. |
+| `mp_promoted_item_enabled` | `Bool` | `true` |  | `gamedll` `clientdll` `notify` `replicated` `release` | Allow the purchasing of the promoted item. |
 | `mp_randomspawn` | `Int32` | `0` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Determines whether players are to spawn. 0 = default; 1 = both teams; 2 = Terrorists; 3 = CTs. |
 | `mp_randomspawn_dist` | `Int32` | `0` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | If using mp_randomspawn, determines whether to test distance when selecting this spot. |
 | `mp_randomspawn_los` | `Bool` | `true` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | If using mp_randomspawn, determines whether to test Line of Sight when spawning. |
@@ -1705,7 +1705,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `mp_shorthanded_cash_bonus_round_delay` | `Int32` | `2` |  | `gamedll` `clientdll` `replicated` `release` | number of previous rounds that a team needs to have been shorthanded before they are eligible for the short-handed bonus |
 | `mp_solid_enemies` | `Int32` | `1` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | How solid are enemies: 0 = transparent; 1 = fully solid |
 | `mp_solid_teammates` | `Int32` | `1` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | How solid are teammates: 0 = transparent; 1 = fully solid; 2 = can stand on top of heads |
-| `mp_spawnprotectiontime` | `Int32` | `5` |  | `gamedll` `replicated` `release` | Kick players who team-kill within this many seconds of a round restart. |
+| `mp_spawnprotectiontime` | `Int32` | `5` |  | `gamedll` `release` `commandline_enforced` | Kick players who team-kill within this many seconds of a round restart. |
 | `mp_spectators_max` | `Int32` | `2` | `>= 0` | `gamedll` `clientdll` `replicated` `release` | How many spectators are allowed in a match. |
 | `mp_starting_losses` | `Int32` | `0` | `>= 0` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Determines what the initial loss streak is. |
 | `mp_startmoney` | `Int32` | `800` | `>= 0` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | amount of money each player gets when they reset |
@@ -1716,10 +1716,11 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `mp_t_default_secondary` | `String` | `weapon_glock` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | The default secondary (pistol) weapon that the Ts will spawn with |
 | `mp_tagging_scale` | `Float32` | `1.000000` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Scalar for player tagging modifier when hit. Lower values for greater tagging. |
 | `mp_taser_recharge_time` | `Float32` | `30.000000` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Determines recharge time for taser. -1 = disabled. |
-| `mp_td_dmgtokick` | `Int32` | `300` |  | `gamedll` `replicated` `release` | The damage threshhold players have to exceed in a match to get kicked. |
-| `mp_td_dmgtowarn` | `Int32` | `200` |  | `gamedll` `replicated` `release` | The damage threshhold players have to exceed in a match to get warned that they are about to be kicked. |
-| `mp_td_spawndmgthreshold` | `Int32` | `50` |  | `gamedll` `replicated` `release` | The damage threshold players have to exceed at the start of the round to be warned/kick. |
+| `mp_td_dmgtokick` | `Int32` | `300` |  | `gamedll` `release` `commandline_enforced` | The damage threshhold players have to exceed in a match to get kicked. |
+| `mp_td_dmgtowarn` | `Int32` | `200` |  | `gamedll` `release` `commandline_enforced` | The damage threshhold players have to exceed in a match to get warned that they are about to be kicked. |
+| `mp_td_spawndmgthreshold` | `Int32` | `50` |  | `gamedll` `release` `commandline_enforced` | The damage threshold players have to exceed at the start of the round to be warned/kick. |
 | `mp_team_intro_time` | `Float32` | `6.500000` | `>= 0.000000` | `gamedll` `notify` `replicated` `release` `commandline_enforced` | How many seconds for team intro |
+| `mp_team_intro_type` | `String` | `auto` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | none, normal, wingman, rush, or auto (implies normal if mp_halftime is set, none otherwise) |
 | `mp_team_timeout_max` | `Int32` | `1` |  | `gamedll` `clientdll` `replicated` `release` | Number of timeouts each team gets per match. |
 | `mp_team_timeout_ot_add_each` | `Int32` | `0` |  | `gamedll` `clientdll` `replicated` `release` | Number of timeouts to add for each team when match goes to 2nd and each next overtime. |
 | `mp_team_timeout_ot_add_once` | `Int32` | `0` |  | `gamedll` `clientdll` `replicated` `release` | Number of timeouts to add for each team when regulation time ends and match goes to overtime. |
@@ -1794,8 +1795,9 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `nav_curve_set` | `Int32` | `-1` |  | `gamedll` `cheat` |  |
 | `nav_curve_step` | `Float32` | `0.020000` |  | `gamedll` `cheat` |  |
 | `nav_debug_blocked` | `Bool` | `false` |  | `gamedll` `cheat` |  |
-| `nav_drag_selection_volume_zmax_offset` | `Int32` | `32` |  | `developmentonly` `gamedll` `replicated` `defensive` | The offset of the nav drag volume top from center |
-| `nav_drag_selection_volume_zmin_offset` | `Int32` | `32` |  | `developmentonly` `gamedll` `replicated` `defensive` | The offset of the nav drag volume bottom from center |
+| `nav_drag_selection_volume_zmax_offset` | `Int32` | `32` |  | `developmentonly` `gamedll` | The offset of the nav drag volume top from center |
+| `nav_drag_selection_volume_zmin_offset` | `Int32` | `32` |  | `developmentonly` `gamedll` | The offset of the nav drag volume bottom from center |
+| `nav_draw_area_color_by_game_attribute` | `Bool` | `false` |  | `gamedll` `cheat` |  |
 | `nav_draw_area_connections` | `Bool` | `false` |  | `gamedll` `cheat` |  |
 | `nav_draw_area_filled` | `Bool` | `true` |  | `gamedll` `cheat` |  |
 | `nav_draw_area_gravity` | `Bool` | `false` |  | `gamedll` `cheat` |  |
@@ -1817,13 +1819,13 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `nav_draw_dangerareas` | `Bool` | `false` |  | `gamedll` `cheat` |  |
 | `nav_draw_dormant_movable_meshes` | `Bool` | `false` |  | `gamedll` `cheat` | Draw dormant movable meshes. |
 | `nav_draw_externally_created` | `Bool` | `false` |  | `gamedll` `cheat` |  |
-| `nav_draw_flow_map` | `Bool` | `false` |  | `gamedll` `cheat` |  |
+| `nav_draw_flow_map` | `Bool` | `false` |  | `developmentonly` `gamedll` |  |
 | `nav_draw_hidingspots` | `Bool` | `false` |  | `gamedll` `cheat` |  |
-| `nav_draw_indirect_connections` | `Bool` | `false` |  | `gamedll` `cheat` |  |
+| `nav_draw_indirect_connections` | `Bool` | `false` |  | `developmentonly` `gamedll` |  |
 | `nav_draw_jump_links` | `Bool` | `false` |  | `gamedll` `cheat` |  |
-| `nav_draw_limit` | `Int32` | `300` |  | `gamedll` `cheat` | The maximum number of areas to draw in edit mode |
-| `nav_draw_link_alignment` | `Bool` | `false` |  | `gamedll` `cheat` |  |
-| `nav_draw_links` | `Bool` | `false` |  | `gamedll` `cheat` |  |
+| `nav_draw_limit` | `Int32` | `300` |  | `developmentonly` `gamedll` | The maximum number of areas to draw in edit mode |
+| `nav_draw_link_alignment` | `Bool` | `false` |  | `developmentonly` `gamedll` |  |
+| `nav_draw_links` | `Bool` | `false` |  | `developmentonly` `gamedll` |  |
 | `nav_draw_markup` | `Bool` | `true` |  | `gamedll` `cheat` |  |
 | `nav_draw_mesh` | `Bool` | `true` |  | `gamedll` `cheat` |  |
 | `nav_draw_mesh_grid` | `Bool` | `false` |  | `gamedll` `cheat` | Draw the mesh's spatial grid structure around the edit cursor position. |
@@ -1921,21 +1923,26 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `nav_pathfind_multithread` | `Bool` | `false` |  | `gamedll` `cheat` |  |
 | `nav_potentially_visible_dot_tolerance` | `Float32` | `0.980000` |  | `gamedll` `cheat` |  |
 | `nav_recorder_enabled` | `Bool` | `true` |  | `gamedll` `cheat` |  |
-| `nav_select_allow_blocked` | `Bool` | `true` |  | `gamedll` `cheat` | When selecting an area under nav_edit, allow area marked as blocked. |
-| `nav_select_area_id` | `Int32` | `-1` |  | `gamedll` `cheat` | Select nav area with matching ID. |
-| `nav_select_block_id` | `Int32` | `-1` |  | `gamedll` `cheat` | Select nav space block with matching ID. |
-| `nav_select_hull` | `Int32` | `0` |  | `gamedll` `cheat` | Restrict area selection to areas that can support a hull of the given category |
-| `nav_show_area_connections` | `Bool` | `true` |  | `gamedll` `cheat` | Show connections to selected area when true |
-| `nav_show_area_verts` | `Bool` | `true` |  | `gamedll` `cheat` | Show area vertex positions |
-| `nav_show_area_water_info` | `Bool` | `true` |  | `gamedll` `cheat` |  |
-| `nav_show_elem_info` | `Bool` | `true` |  | `gamedll` `cheat` |  |
-| `nav_show_elem_info_font` | `String` | `Consolas` |  | `gamedll` `cheat` |  |
-| `nav_show_elem_info_font_size` | `Float32` | `-1.000000` |  | `gamedll` `cheat` |  |
-| `nav_show_elem_info_font_voffset` | `Float32` | `-11.000000` |  | `gamedll` `cheat` |  |
+| `nav_select_allow_blocked` | `Bool` | `true` |  | `developmentonly` `gamedll` | When selecting an area under nav_edit, allow area marked as blocked. |
+| `nav_select_area_id` | `Int32` | `-1` |  | `developmentonly` `gamedll` | Select nav area with matching ID. |
+| `nav_select_block_id` | `Int32` | `-1` |  | `developmentonly` `gamedll` | Select nav space block with matching ID. |
+| `nav_select_hull` | `Int32` | `0` |  | `developmentonly` `gamedll` | Restrict area selection to areas that can support a hull of the given category |
+| `nav_show_area_connections` | `Bool` | `true` |  | `developmentonly` `gamedll` | Show connections to selected area when true |
+| `nav_show_area_verts` | `Bool` | `true` |  | `developmentonly` `gamedll` | Show area vertex positions |
+| `nav_show_area_water_info` | `Bool` | `true` |  | `developmentonly` `gamedll` |  |
+| `nav_show_elem_info` | `Bool` | `true` |  | `developmentonly` `gamedll` |  |
+| `nav_show_elem_info_font` | `String` | `Consolas` |  | `developmentonly` `gamedll` |  |
+| `nav_show_elem_info_font_size` | `Float32` | `-1.000000` |  | `developmentonly` `gamedll` |  |
+| `nav_show_elem_info_font_voffset` | `Float32` | `-11.000000` |  | `developmentonly` `gamedll` |  |
+| `nav_smooth_arrival_enable` | `Bool` | `false` |  | `gamedll` `cheat` |  |
+| `nav_smooth_arrival_handle_scale` | `Float32` | `3.000000` |  | `gamedll` `cheat` |  |
+| `nav_smooth_arrival_spline` | `Bool` | `true` |  | `gamedll` `cheat` |  |
+| `nav_smooth_arrival_spring` | `Bool` | `false` |  | `gamedll` `cheat` |  |
 | `nav_smooth_constrain_spline` | `Bool` | `true` |  | `gamedll` `cheat` |  |
 | `nav_smooth_constrain_spline_relax` | `Float32` | `0.006000` |  | `gamedll` `cheat` |  |
 | `nav_smooth_constrain_spring` | `Int32` | `2` |  | `gamedll` `cheat` |  |
 | `nav_smooth_constrain_spring_relax` | `Float32` | `0.010000` |  | `gamedll` `cheat` |  |
+| `nav_smooth_draw_arrival_calc` | `Bool` | `false` |  | `gamedll` `cheat` |  |
 | `nav_smooth_draw_boundary` | `Float32` | `0.000000` |  | `gamedll` `cheat` |  |
 | `nav_smooth_draw_calc` | `Int32` | `0` |  | `gamedll` `cheat` |  |
 | `nav_smooth_draw_constraint_spline` | `Bool` | `false` |  | `gamedll` `cheat` |  |
@@ -1982,7 +1989,6 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `nav_test_boundary_zone_rays_random` | `Bool` | `false` |  | `gamedll` `cheat` |  |
 | `nav_test_boundary_zone_sphere` | `Float32` | `0.000000` |  | `gamedll` `cheat` |  |
 | `nav_test_curve_opt` | `Int32` | `0` |  | `gamedll` `cheat` |  |
-| `nav_test_detour` | `Bool` | `false` |  | `gamedll` `cheat` |  |
 | `nav_test_find_nearest` | `Bool` | `false` |  | `gamedll` `cheat` | Calculate the nearest point on the navmesh to the trace point.  Uses selection from nav_select_hull. |
 | `nav_test_find_nearest_clear` | `Bool` | `false` |  | `gamedll` `cheat` | Calculate the nearest point on the navmesh to the trace point.  Uses selection from nav_select_hull. |
 | `nav_test_find_random_connected` | `Bool` | `false` |  | `gamedll` `cheat` | Demonstrates finding random points that are connected in the nav mesh to the start point. |
@@ -2001,16 +2007,18 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `nav_test_npc_collision` | `Int32` | `0` |  | `gamedll` `cheat` |  |
 | `nav_test_npc_collision_range` | `Float32` | `250.000000` |  | `gamedll` `cheat` |  |
 | `nav_test_npc_collision_show_geometry` | `Bool` | `false` |  | `gamedll` `cheat` |  |
-| `nav_test_path` | `Bool` | `false` |  | `gamedll` `cheat` | Calculate and draw a path from player/camera position to the test position. |
-| `nav_test_path_lock_goal` | `Bool` | `false` |  | `gamedll` `cheat` | Lock the pathfinding goal to the current intersection point. |
-| `nav_test_path_lock_start` | `Bool` | `false` |  | `gamedll` `cheat` | Lock the pathfinding start to the current intersection point. |
-| `nav_test_path_move` | `Bool` | `false` |  | `gamedll` `cheat` |  |
-| `nav_test_path_opt` | `Bool` | `true` |  | `gamedll` `cheat` | Enable path optimization for nav_edit_path paths. |
-| `nav_test_path_opt_transitions` | `Bool` | `false` |  | `gamedll` `cheat` |  |
-| `nav_test_path_return` | `Bool` | `false` |  | `gamedll` `cheat` | Calculate a return path from cursor position to the path calculated by nav_test_path. |
-| `nav_test_path_space` | `Int32` | `0` |  | `gamedll` `cheat` | Should nav_test_path test 3d navigation?  1 = space to space, 2 = multi-modal space/ground |
-| `nav_test_path_space_fly` | `Bool` | `true` |  | `gamedll` `cheat` | Test flight paths |
-| `nav_test_path_space_swim` | `Bool` | `true` |  | `gamedll` `cheat` | Test swim paths |
+| `nav_test_path` | `Bool` | `false` |  | `developmentonly` `gamedll` | Calculate and draw a path from player/camera position to the test position. |
+| `nav_test_path_lock_goal` | `Bool` | `false` |  | `developmentonly` `gamedll` | Lock the pathfinding goal to the current intersection point. |
+| `nav_test_path_lock_start` | `Bool` | `false` |  | `developmentonly` `gamedll` | Lock the pathfinding start to the current intersection point. |
+| `nav_test_path_move` | `Bool` | `false` |  | `developmentonly` `gamedll` |  |
+| `nav_test_path_npc` | `Bool` | `false` |  | `developmentonly` `gamedll` | Calculate and draw a path for the selected NPC to the test position. |
+| `nav_test_path_npc_success_radius_when_blocked` | `Float32` | `-1.000000` |  | `developmentonly` `gamedll` | Calculate and draw a path for the selected NPC to the test position. |
+| `nav_test_path_opt` | `Bool` | `true` |  | `developmentonly` `gamedll` | Enable path optimization for nav_edit_path paths. |
+| `nav_test_path_opt_transitions` | `Bool` | `false` |  | `developmentonly` `gamedll` |  |
+| `nav_test_path_return` | `Bool` | `false` |  | `developmentonly` `gamedll` | Calculate a return path from cursor position to the path calculated by nav_test_path. |
+| `nav_test_path_space` | `Int32` | `0` |  | `developmentonly` `gamedll` | Should nav_test_path test 3d navigation?  1 = space to space, 2 = multi-modal space/ground |
+| `nav_test_path_space_fly` | `Bool` | `true` |  | `developmentonly` `gamedll` | Test flight paths |
+| `nav_test_path_space_swim` | `Bool` | `true` |  | `developmentonly` `gamedll` | Test swim paths |
 | `nav_test_pos_name` | `String` |  |  | `developmentonly` `gamedll` `defensive` |  |
 | `nav_test_pos_place` | `Int32` | `-1` |  | `developmentonly` `gamedll` `defensive` |  |
 | `nav_test_ray_space` | `Int32` | `0` |  | `gamedll` `cheat` |  |
@@ -2035,6 +2043,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `nav_test_split_obstacle_update_pos` | `Bool` | `true` |  | `gamedll` `cheat` |  |
 | `nav_volume_debug` | `Int32` | `0` |  | `gamedll` `cheat` | Draw or print debug information about nav volume queries. |
 | `navspace_create_water_smooth_connections` | `Bool` | `true` |  | `gamedll` `cheat` |  |
+| `navspace_create_water_surface_connections` | `Bool` | `true` |  | `gamedll` `cheat` |  |
 | `navspace_create_water_transition_connections` | `Bool` | `true` |  | `gamedll` `cheat` |  |
 | `navspace_debug_pathfind` | `Float32` | `-1.000000` |  | `gamedll` `cheat` |  |
 | `navspace_debug_stringpull` | `Float32` | `1.000000` |  | `gamedll` `cheat` |  |
@@ -2053,6 +2062,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `nextmap_print_enabled` | `Bool` | `false` |  | `gamedll` `release` | When enabled prints next map to clients |
 | `nextmode` | `String` |  |  | `gamedll` `notify` `replicated` `release` | Sets the game mode to be played when the next level loads |
 | `noclip_fixup` | `Bool` | `true` |  | `gamedll` `cheat` |  |
+| `npc_record_skeleton_snapshot` | `Bool` | `false` |  | `developmentonly` `gamedll` |  |
 | `npc_record_snapshot_data` | `Bool` | `false` |  | `developmentonly` `gamedll` |  |
 | `npcsolve_attract_draw` | `Bool` | `false` |  | `developmentonly` `gamedll` `defensive` |  |
 | `npcsolve_constraint_nav` | `Bool` | `true` |  | `developmentonly` `gamedll` `defensive` |  |
@@ -2129,6 +2139,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `panorama_enable_secondary_layout_pass` | `Bool` | `true` |  | `developmentonly` `hidden` `defensive` |  |
 | `panorama_focus_world_panels` | `Bool` | `false` |  | `clientdll` `archive` | when set request key focus when a world panel is enabled |
 | `panorama_force_active_controller_type` | `Int32` | `-1` |  | `developmentonly` `hidden` `defensive` |  |
+| `panorama_force_atlas_clear` | `Bool` | `false` |  | `developmentonly` `hidden` `defensive` |  |
 | `panorama_force_desired_layout_traverse` | `Bool` | `false` |  | `developmentonly` `hidden` `defensive` | Force desired layout traverse, even if the cached values are up to date. |
 | `panorama_highlight_bad_opacity_masks` | `Bool` | `false` |  | `developmentonly` `hidden` `defensive` |  |
 | `panorama_highlight_composition_layers` | `Bool` | `false` |  | `developmentonly` `hidden` `defensive` |  |
@@ -2170,8 +2181,6 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `panorama_temp_comp_layer_min_dimension` | `Float32` | `512.000000` |  | `developmentonly` `hidden` `defensive` |  |
 | `panorama_toggledebugger_mode` | `Int32` | `0` | `0 .. 1` | `hidden` `archive` | Toggledebugger key operation : 0 = open/inspect, 1 = open/close |
 | `panorama_track_render_commands` | `Bool` | `false` |  | `developmentonly` `hidden` `defensive` |  |
-| `panorama_transform_parents_no_layer_for_perspective` | `Bool` | `false` |  | `developmentonly` `hidden` `defensive` |  |
-| `panorama_transforms_no_comp_layer` | `Bool` | `false` |  | `developmentonly` `hidden` `defensive` |  |
 | `panorama_transition_time_factor` | `Float32` | `1.000000` |  | `developmentonly` `hidden` `defensive` | A float representing a scale factor for transitions. 1.0 is normal, 2.0 would be twice as fast as normal, 0.5 half as fast |
 | `panorama_unlink_from_render_tree` | `Bool` | `true` |  | `developmentonly` `hidden` `defensive` |  |
 | `panorama_use_backbuffer_directly` | `Bool` | `true` |  | `developmentonly` `hidden` `defensive` |  |
@@ -2182,6 +2191,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `panorama_worldpanel_update_culling` | `Bool` | `false` |  | `developmentonly` `clientdll` `defensive` |  |
 | `parallel_perform_invalidate_physics` | `Bool` | `false` |  | `developmentonly` `gamedll` `clientdll` `replicated` |  |
 | `parallel_update_surrounding_bounds_in_spatial_partition_update` | `Bool` | `false` |  | `developmentonly` `gamedll` `clientdll` `replicated` |  |
+| `particle_cluster_bounds_debug` | `Int32` | `0` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `particle_cluster_debug` | `Int32` | `0` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `particle_cluster_manager_search_dist` | `Float32` | `256.000000` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `particle_cluster_nodraw` | `Bool` | `false` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
@@ -2198,11 +2208,14 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `partybrowser_timeout` | `Float32` | `15.000000` |  | `developmentonly` `clientdll` |  |
 | `password` | `String` |  |  | `archive` `dontrecord` `server_cannot_query` | Current server access password |
 | `path_closest_point_debug` | `Bool` | `false` |  | `developmentonly` `gamedll` `clientdll` `replicated` |  |
+| `path_mover_enable_high_resolution_debug_rendering` | `Bool` | `false` |  | `developmentonly` `gamedll` `defensive` |  |
+| `path_mover_entity_spawner_debug` | `Bool` | `false` |  | `developmentonly` `gamedll` `defensive` |  |
 | `path_node_evaluation_debug` | `Float32` | `0.000000` |  | `developmentonly` `gamedll` `clientdll` `replicated` |  |
 | `pawn_mimic_all` | `Bool` | `false` |  | `developmentonly` `gamedll` `clientdll` `replicated` |  |
 | `phonemedelay` | `Float32` | `0.000000` |  | `developmentonly` `clientdll` `defensive` | Phoneme delay to account for sound system latency. |
 | `phonemefilter` | `Float32` | `0.080000` |  | `developmentonly` `clientdll` `defensive` | Time duration of box filter to pass over phonemes. |
 | `phonemesnap` | `Int32` | `2` |  | `developmentonly` `clientdll` `defensive` | Lod at level at which visemes stops always considering two phonemes, regardless of duration. |
+| `phys_agg_world_compounds` | `Bool` | `false` |  | `developmentonly` `gamedll` `clientdll` `replicated` |  |
 | `phys_batch_ray_test` | `Int32` | `0` |  | `developmentonly` `clientdll` `defensive` |  |
 | `phys_continuous_kinematic_update` | `Float32` | `1.000000` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `phys_cull_internal_mesh_contacts` | `Bool` | `false` |  | `developmentonly` `replicated` `defensive` |  |
@@ -2238,7 +2251,6 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `phys_vehicleimpactforcescale` | `Float32` | `1.500000` |  | `developmentonly` `gamedll` `defensive` |  |
 | `phys_visualize_awake_dynamic_only` | `Bool` | `false` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `phys_visualize_awake_unattached_only` | `Bool` | `false` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
-| `phys_wind_force_scale` | `Float32` | `1.000000` |  | `developmentonly` `gamedll` `clientdll` `replicated` | Scale on the force wind applies to physics bodies |
 | `pickup_check_period` | `Float32` | `0.250000` |  | `developmentonly` `gamedll` `defensive` |  |
 | `player0_using_joystick` | `Bool` | `false` |  | `archive` |  |
 | `player_botdifflast_s` | `String` | `2` |  | `clientdll` `archive` `release` |  |
@@ -2277,6 +2289,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `props_break_apply_radial_forces` | `Bool` | `true` |  | `developmentonly` `gamedll` `clientdll` `replicated` |  |
 | `props_break_max_pieces_perframe` | `Int32` | `16` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | Maximum prop breakable piece count per frame (-1 = model default) |
 | `props_break_radial_force_ratio` | `Float32` | `0.330000` |  | `developmentonly` `gamedll` `clientdll` `replicated` |  |
+| `pulse_cursor_infinite_loop_detection_threshold` | `Int32` | `20000` |  | `developmentonly` `gamedll` `clientdll` `replicated` |  |
 | `pulse_save_execution_history` | `Bool` | `true` |  | `developmentonly` `gamedll` `clientdll` `replicated` | Keep a history of all instructions run on a per graph basis. |
 | `pulse_save_execution_history_limit` | `Int32` | `10000` |  | `developmentonly` `gamedll` `clientdll` `replicated` | Keep a history of all instructions run on a per graph basis. |
 | `pvs_debugentity` | `Int32` | `-1` |  | `gamedll` `release` | Verbose spew for this entity when doing IsInPVS computation. |
@@ -2295,6 +2308,8 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `r_allow_low_gpu_memory_mode` | `Bool` | `true` |  | `release` | Allow Low GPU Memory mode (i.e. when building maps). |
 | `r_allow_onesweep_gpusort` | `Bool` | `true` |  | `developmentonly` `defensive` |  |
 | `r_always_render_all_windows` | `Bool` | `false` |  | `developmentonly` `defensive` | Always force all engine &amp; tools to render |
+| `r_animatable_mesh_shaders` | `Bool` | `false` |  | `cheat` |  |
+| `r_animatable_mesh_shaders_visualize_bounds` | `Bool` | `false` |  | `cheat` |  |
 | `r_aoproxy_cull_dist` | `Float32` | `12.000000` |  | `developmentonly` `defensive` | Distance to cull the AO proxy as a factor of size |
 | `r_aoproxy_debug` | `Bool` | `false` |  | `clientdll` `cheat` |  |
 | `r_aoproxy_default_ambient_strength` | `Float32` | `1.000000` |  | `developmentonly` `defensive` |  |
@@ -2325,6 +2340,9 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `r_csgo_cmaa_enable` | `Bool` | `false` |  | `developmentonly` `clientdll` `defensive` |  |
 | `r_csgo_cmaa_extra_sharp` | `Bool` | `false` |  | `developmentonly` `clientdll` `defensive` | trade more sharpness for reduced antialiasing |
 | `r_csgo_cmaa_quality` | `Int32` | `3` |  | `developmentonly` `clientdll` `defensive` | 0=low, 1=medium, 2=high, 3=ultra |
+| `r_csgo_crosshair_debug_tiles` | `Bool` | `false` |  | `developmentonly` `clientdll` |  |
+| `r_csgo_crosshair_debug_tiles_count_red` | `Int32` | `8` |  | `developmentonly` `clientdll` |  |
+| `r_csgo_crosshair_tile_size` | `Int32` | `128` |  | `developmentonly` `clientdll` |  |
 | `r_csgo_csm_max_visible_distance` | `Float32` | `7500.000000` |  | `developmentonly` `clientdll` |  |
 | `r_csgo_csm_max_visible_distance_preview` | `Float32` | `2000.000000` |  | `developmentonly` `clientdll` |  |
 | `r_csgo_csm_override_staticgeo_cascades_alphatest` | `Bool` | `false` |  | `developmentonly` `clientdll` `defensive` | If lb_csm_override_staticgeo_cascades true, ensure objects with SCENEOBJECTFLAG_ALPHA_TESTED flag will be rendered into cascade. |
@@ -2423,6 +2441,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `r_csgo_shader_perf_test` | `Bool` | `false` |  | `developmentonly` `clientdll` |  |
 | `r_csgo_shadow_map_allocation_failure_policy` | `Int32` | `1` |  | `developmentonly` `clientdll` `cheat` | What happens when a shadow map fails allocation? 0 = don't render, 1 = render unshadowed |
 | `r_csgo_shadows_debug` | `Int32` | `0` |  | `clientdll` `cheat` |  |
+| `r_csgo_sky_occluder` | `Bool` | `true` |  | `clientdll` `cheat` |  |
 | `r_csgo_smoke_avoid_flat` | `Bool` | `true` |  | `developmentonly` `clientdll` |  |
 | `r_csgo_smoke_clip_sniper` | `Bool` | `true` |  | `developmentonly` `clientdll` |  |
 | `r_csgo_smoke_fullres_enhance` | `Bool` | `false` |  | `developmentonly` `clientdll` | Enhance edges of smokes to eliminate bad pixels |
@@ -2444,10 +2463,10 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `r_csgo_water_effects` | `Bool` | `true` |  | `clientdll` `cheat` |  |
 | `r_csgo_water_refraction` | `Bool` | `true` |  | `clientdll` `cheat` |  |
 | `r_csgo_water_skybox_depth` | `Bool` | `true` |  | `developmentonly` `clientdll` |  |
+| `r_csgo_world_receives_skybox_csm` | `Bool` | `true` |  | `developmentonly` `clientdll` |  |
 | `r_cubemap_debug_colors` | `Int32` | `0` |  | `cheat` |  |
 | `r_dashboard_render_quality` | `Bool` | `true` |  | `developmentonly` `clientdll` `defensive` |  |
 | `r_debug_depth_holes` | `Bool` | `false` |  | `clientdll` `cheat` |  |
-| `r_debug_draw_safe_area_insets` | `Bool` | `false` |  | `developmentonly` | Render safe area insets as wireframe. |
 | `r_debug_particle_shadows` | `Bool` | `false` |  | `clientdll` `cheat` |  |
 | `r_debug_precipitation` | `Bool` | `false` |  | `clientdll` `cheat` | Show precipitation volumes |
 | `r_decal_hit_confirmation` | `Bool` | `false` |  | `developmentonly` `gamedll` `clientdll` `replicated` |  |
@@ -2455,9 +2474,13 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `r_decals_additional_offset` | `Float32` | `0.010000` |  | `developmentonly` `gamedll` `clientdll` `replicated` |  |
 | `r_decals_default_fade_duration` | `Float32` | `3.000000` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `r_decals_default_start_fade` | `Float32` | `30.000000` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
-| `r_decals_max_on_deformables` | `Int32` | `512` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
+| `r_decals_distance_scale` | `Float32` | `1.350000` |  | `gamedll` `clientdll` `replicated` `cheat` | Size multiplier applied to decals placed at r_decals_distance_scale_end or further from the local player. 1.0 disables distance scaling. |
+| `r_decals_distance_scale_end` | `Float32` | `1536.000000` |  | `gamedll` `clientdll` `replicated` `cheat` | Distance from the local player at which decals reach r_decals_distance_scale. |
+| `r_decals_distance_scale_start` | `Float32` | `256.000000` |  | `gamedll` `clientdll` `replicated` `cheat` | Distance from the local player at which decals start scaling toward r_decals_distance_scale. |
+| `r_decals_max_triangle_anchored` | `Int32` | `512` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `r_decals_overide_fadestarttime_params` | `Float32` | `-1.000000` |  | `developmentonly` `gamedll` `clientdll` `replicated` `commandline_enforced` `defensive` |  |
 | `r_decals_overlap_threshold` | `Int32` | `6` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
+| `r_decals_triangle_max_stretch` | `Float32` | `1.250000` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | Max stretch (and 1/x compression) ratio a triangle-anchored decal may show relative to its shape at placement. 1 = rigid follow, &lt;= 0 = unlimited. |
 | `r_depth_of_field` | `Int32` | `1` |  | `developmentonly` `clientdll` | 0 = off, 1 = enabled (high quality, circular bokeh, HDR) |
 | `r_directional_lightmaps` | `Bool` | `true` |  | `developmentonly` `defensive` |  |
 | `r_directlighting` | `Bool` | `true` |  | `cheat` | Set to use direct lighting |
@@ -2474,7 +2497,6 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `r_draw3dskybox` | `Bool` | `true` |  | `developmentonly` `clientdll` `defensive` |  |
 | `r_draw_first_tri_only` | `Bool` | `false` |  | `cheat` |  |
 | `r_draw_instances` | `Bool` | `true` |  | `cheat` |  |
-| `r_draw_overlays` | `Bool` | `true` |  | `developmentonly` `defensive` |  |
 | `r_draw_particle_children_with_parents` | `Int32` | `-1` |  | `cheat` | Draw particle children with parents (-1=use gameinfo, 0=no, 1=yes) |
 | `r_drawblankworld` | `Bool` | `false` |  | `cheat` | Render blank instead of the game world |
 | `r_drawchickens` | `Bool` | `true` |  | `clientdll` `cheat` | Render chickens |
@@ -2665,10 +2687,10 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `r_propsmaxdist` | `Float32` | `1200.000000` |  | `developmentonly` `clientdll` `defensive` | Maximum visible distance |
 | `r_render_hair` | `Bool` | `true` |  | `developmentonly` `cheat` |  |
 | `r_render_to_cubemap_begin_mixing_roughness` | `Float32` | `0.250000` |  | `developmentonly` `clientdll` `defensive` |  |
-| `r_render_to_cubemap_debug` | `Bool` | `false` |  | `developmentonly` `clientdll` `defensive` |  |
-| `r_render_world_node_bounds` | `Bool` | `false` |  | `cheat` | Render world node bounds |
+| `r_render_to_cubemap_debug` | `Bool` | `false` |  | `clientdll` `cheat` |  |
 | `r_renderdoc_auto_shader_pdbs` | `Bool` | `true` |  | `developmentonly` `defensive` | Automatically generate shader debug info on capture |
 | `r_renderdoc_open_captures` | `Bool` | `true` |  | `developmentonly` `defensive` |  |
+| `r_renderdoc_show_overlay` | `Bool` | `true` |  | `developmentonly` `defensive` | Show RenderDoc overlay |
 | `r_renderdoc_validation_error_capture_limit` | `Int32` | `5` |  | `developmentonly` `defensive` |  |
 | `r_rendersun` | `Bool` | `true` |  | `cheat` | Render sun lighting |
 | `r_replay_post_effect` | `Int32` | `-1` |  | `clientdll` `cheat` |  |
@@ -2734,6 +2756,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `r_vma_defrag_max_allocation_size_per_pass` | `Int32` | `32` |  | `developmentonly` | During a VMA defrag, number of MB in moves per pass. |
 | `r_vma_defrag_moves_per_frame` | `Int32` | `20` |  | `developmentonly` | During a VMA defrag, number of moves to process for a pass in a single frame update. |
 | `r_vma_defrag_threshold_mb` | `Int32` | `256` |  | `release` |  |
+| `r_vulkan_accurate_renderarea` | `Bool` | `true` |  | `release` | Sets the renderArea of a render pass to its viewport bounds (false will use RT size). More accurate renderArea, but results in more render passes. |
 | `r_vulkan_force_sync1` | `Bool` | `false` |  | `developmentonly` |  |
 | `r_vulkan_sw_cmd_lists` | `Bool` | `true` |  | `release` | Enable Software Command lists for Vulkan |
 | `r_vulkan_validation_filter_in` | `String` |  |  | `developmentonly` | Comma delimited list of stristr filters for including validation messages.  Only messages matching filter will be included. |
@@ -2798,6 +2821,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `rr_debugresponseconcept` | `String` |  |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | If set, rr_debugresponseconcept will print only responses testing for the specified concept |
 | `rr_debugresponses` | `Int32` | `0` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | Show verbose matching output (1 for simple, 2 for rule scoring, 3 for noisy). If set to 4, it will only show response success/failure for npc_selected NPCs. |
 | `rr_debugrule` | `String` |  |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | If set to the name of the rule, that rule's score will be shown whenever a concept is passed into the response rules system. |
+| `rr_dumpresponses` | `Bool` | `false` |  | `developmentonly` `gamedll` `clientdll` `replicated` |  |
 | `rr_followup_maxdist` | `Float32` | `1800.000000` |  | `gamedll` `cheat` | 'then ANY' or 'then ALL' response followups will be dispatched only to characters within this distance. |
 | `rr_thenany_score_slop` | `Float32` | `0.000000` |  | `gamedll` `archive` `cheat` | When computing respondents for a 'THEN ANY' rule, all rule-matching scores within this much of the best score will be considered. |
 | `rtx_allow_blas_compact` | `Bool` | `true` |  | `developmentonly` `defensive` |  |
@@ -2810,7 +2834,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `safezonex` | `Float32` | `1.000000` | `0.000000 .. 1.000000` | `clientdll` `archive` | The percentage of the screen width that is considered safe from overscan. Cannot result in a width less than the height. |
 | `safezoney` | `Float32` | `1.000000` | `0.800000 .. 1.000000` | `clientdll` `archive` | The percentage of the screen height that is considered safe from overscan |
 | `save_async` | `Bool` | `true` |  | `developmentonly` `gamedll` `defensive` |  |
-| `save_debug_snapshots` | `Bool` | `false` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | Save/Load debug snapshot data |
+| `save_debug_snapshots` | `Bool` | `true` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | Save/Load debug snapshot data |
 | `save_fake_hitch` | `Int32` | `0` |  | `developmentonly` `gamedll` `defensive` | Force a busy wait for the specified number of milliseconds during save to simulate a hitch |
 | `save_history_count` | `Int32` | `1` |  | `developmentonly` `gamedll` `defensive` | Keep this many old copies in history of autosaves and quicksaves. |
 | `save_maxarray_spew` | `Int32` | `10` |  | `gamedll` `release` | Max number of array entries to spew when using SaveRestoreIO spewing. |
@@ -2824,6 +2848,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `sc_aggregate_debug_draw_meshlets` | `UInt32` | `0` |  | `developmentonly` `menubar_item` | SceneSystem/Aggregates/Visualize Meshlets |
 | `sc_aggregate_debug_draw_meshlets_bounds` | `Bool` | `false` |  | `developmentonly` | Visualize meshlet bounds and cone axis. Mesh shader only. |
 | `sc_aggregate_debug_visualizer` | `Bool` | `false` |  | `developmentonly` `cheat` `menubar_item` | SceneSystem/Aggregates/Debug Visualizer |
+| `sc_aggregate_fragment_culling_boxes` | `Bool` | `true` |  | `cheat` | Test aggregate fragments against culling boxes individually instead of per aggregate. |
 | `sc_aggregate_fragment_merging` | `Bool` | `true` |  | `developmentonly` |  |
 | `sc_aggregate_gpu_culling` | `Bool` | `true` |  | `developmentonly` `defensive` | Toggles GPU culling of aggregate meshes |
 | `sc_aggregate_gpu_culling_conservative_bounds` | `Bool` | `false` |  | `developmentonly` |  |
@@ -2864,6 +2889,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `sc_enable_discard` | `Bool` | `true` |  | `developmentonly` `defensive` |  |
 | `sc_extended_stats` | `Bool` | `false` |  | `cheat` |  |
 | `sc_fade_distance_scale_override` | `Float32` | `-1.000000` |  | `cheat` |  |
+| `sc_fog_cull` | `Bool` | `true` |  | `cheat` |  |
 | `sc_force_lod_level` | `Int32` | `-1` |  | `cheat` |  |
 | `sc_force_materials_batchable` | `Bool` | `false` |  | `cheat` |  |
 | `sc_force_single_display_list_per_layer` | `Bool` | `false` |  | `developmentonly` `defensive` |  |
@@ -2877,6 +2903,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `sc_instanced_material_solo` | `String` |  |  | `developmentonly` `cheat` |  |
 | `sc_instanced_mesh_enable` | `Bool` | `true` |  | `developmentonly` `cheat` `menubar_item` | SceneSystem/Instanced/Draw Instanced |
 | `sc_instanced_mesh_gpu_culling` | `Bool` | `true` |  | `developmentonly` `defensive` | Toggles GPU culling of instanced meshes |
+| `sc_instanced_mesh_gpu_culling_boxes` | `Bool` | `true` |  | `cheat` | Test instanced mesh instances against info_visibility_box culling boxes. |
 | `sc_instanced_mesh_gpu_density_culling` | `Bool` | `true` |  | `developmentonly` `defensive` | Toggles density culling (if enabled) |
 | `sc_instanced_mesh_gpu_occlusion_culling` | `Bool` | `true` |  | `developmentonly` `defensive` | Toggles GPU occlusion of instanced meshes |
 | `sc_instanced_mesh_gpu_vis_culling` | `Bool` | `true` |  | `developmentonly` `defensive` | Toggles GPU vis of instanced meshes |
@@ -2884,6 +2911,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `sc_instanced_mesh_lod_bias_shadow` | `Float32` | `1.750000` |  | `developmentonly` `defensive` | Bias for LOD selection of instanced meshes in shadowmaps |
 | `sc_instanced_mesh_motion_vectors` | `Bool` | `true` |  | `developmentonly` `defensive` | Toggles motion vector support for instanced meshes |
 | `sc_instanced_mesh_opaque_fade` | `Bool` | `true` |  | `developmentonly` `defensive` | Toggles fade support for instanced meshes |
+| `sc_instanced_mesh_shadows_batch_across_materials` | `Bool` | `false` |  | `developmentonly` `defensive` | Toggles whether mesh shader instanced can batch on reflectivity |
 | `sc_instanced_mesh_size_cull_bias` | `Float32` | `1.500000` |  | `developmentonly` `defensive` | Bias for size culling of instanced meshes |
 | `sc_instanced_mesh_size_cull_bias_shadow` | `Float32` | `2.000000` |  | `developmentonly` `defensive` | Bias for size culling instanced meshes in shadowmaps |
 | `sc_instanced_mesh_solo` | `String` |  |  | `developmentonly` `cheat` |  |
@@ -2891,12 +2919,12 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `sc_layer_batch_threshold` | `Int32` | `128` |  | `developmentonly` `defensive` |  |
 | `sc_layer_batch_threshold_fullsort` | `Int32` | `80` |  | `developmentonly` `defensive` |  |
 | `sc_max_framebuffer_copies_per_layer` | `Int32` | `1` |  | `developmentonly` `defensive` |  |
+| `sc_mesh_allow_batch_across_primitives` | `Bool` | `true` |  | `developmentonly` `defensive` |  |
 | `sc_mesh_backface_culling` | `Bool` | `true` |  | `developmentonly` `defensive` |  |
 | `sc_mesh_gpu_occlusion_culling` | `Bool` | `true` |  | `developmentonly` `defensive` |  |
 | `sc_mesh_gpu_volume_culling` | `Bool` | `true` |  | `developmentonly` `defensive` |  |
 | `sc_mesh_mesh_shaders` | `Bool` | `false` |  | `developmentonly` `defensive` |  |
 | `sc_mesh_shadows_batch_across_materials` | `Bool` | `true` |  | `developmentonly` `defensive` |  |
-| `sc_mesh_use_pmb` | `Bool` | `false` |  | `developmentonly` `defensive` |  |
 | `sc_no_cull` | `Bool` | `false` |  | `developmentonly` `defensive` |  |
 | `sc_no_vis` | `Bool` | `false` |  | `developmentonly` `defensive` |  |
 | `sc_only_render_opaque` | `Bool` | `false` |  | `cheat` |  |
@@ -2917,6 +2945,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `sc_show_view_profiler` | `Bool` | `false` |  | `developmentonly` `cheat` `menubar_item` | SceneSystem/View Profiler |
 | `sc_skip_traversal` | `Bool` | `false` |  | `cheat` |  |
 | `sc_spew_cmt_usage` | `Bool` | `false` |  | `developmentonly` `defensive` |  |
+| `sc_stats_sections` | `String` | `SCENE_STATS_FRAME&#124;SCENE_STATS_GEOMETRY&#124;SCENE_STATS_CULLING&#124;SCENE_STATS_MATERIALS&#124;SCENE_STATS_LIGHTING&#124;SCENE_STATS_RAYTRACING&#124;SCENE_STATS_INTERNALS` |  | `developmentonly` `archive` `cheat` | Which stats groups to show |
 | `sc_throw_away_all_layers` | `Bool` | `false` |  | `developmentonly` `defensive` |  |
 | `sc_use_clear_subrect` | `Bool` | `false` |  | `developmentonly` `defensive` |  |
 | `sc_view_profiler_frame_averaging` | `Int32` | `10` |  | `developmentonly` `defensive` |  |
@@ -2959,6 +2988,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `skeleton_instance_smear_boneflags` | `Bool` | `false` |  | `gamedll` `cheat` | Smear boneflags across the model.  Costs computation, but tests to make sure your bone flags are consistent. |
 | `skeleton_physics_joint_fixup` | `Bool` | `true` |  | `developmentonly` `gamedll` `clientdll` `replicated` `cheat` |  |
 | `skill` | `Int32` | `1` | `1 .. 3` | `gamedll` `clientdll` `archive` `replicated` `per_user` | Game skill level. |
+| `sky_camera_volume_debug` | `Bool` | `false` |  | `clientdll` `cheat` | Draw sky_camera_volume bounds and their target links. |
 | `slope_drop_enable` | `Bool` | `true` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | Toggles a test dropping the view offset based on the slope |
 | `slope_drop_max_offset` | `Float32` | `16.000000` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | The maximum distance to adjust the view height |
 | `slope_drop_off_ground_blend_speed` | `Float32` | `160.000000` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | The speed with which the slope drop is blended out when the entity leaves the ground |
@@ -2981,8 +3011,13 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `snd_boxverb_simd` | `Bool` | `true` |  | `developmentonly` `defensive` | Enable SIMD code path for shoebox reverb processor. |
 | `snd_boxverb_simd_svf` | `Int32` | `1` |  | `developmentonly` `defensive` | 0 = use biquad instead of svf, 1 = use vectorized svf, 2 = use scalar svf |
 | `snd_break_on_start_soundevent` | `String` |  |  | `gamedll` `clientdll` `replicated` `cheat` | Use to debug break on any soundevent that is started matching this name |
+| `snd_chicken_obscured_fade_time` | `Float32` | `0.250000` |  | `developmentonly` `clientdll` `defensive` | Seconds to fade the ChickensObscuredLayer mix layer in and out. |
 | `snd_compare_KV_convert` | `Bool` | `false` |  | `developmentonly` `defensive` |  |
 | `snd_deathcamera_volume` | `Float32` | `0.160000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Volume of Deathcam Timers |
+| `snd_deathcamera_volume_armsrace` | `Float32` | `0.160000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Arms Race volume of Deathcam Timers |
+| `snd_deathcamera_volume_casual` | `Float32` | `0.160000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Casual volume of Deathcam Timers |
+| `snd_deathcamera_volume_deathmatch` | `Float32` | `0.160000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Deathmatch volume of Deathcam Timers |
+| `snd_deathcamera_volume_rush` | `Float32` | `0.160000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Rush volume of Deathcam Timers |
 | `snd_delay_sound_ms_max` | `Float32` | `250.000000` | `0.000000 .. 250.000000` | `developmentonly` `defensive` | Sound device synchronization max delay (ms) |
 | `snd_delay_sound_ms_shift` | `Float32` | `23.000000` | `0.000000 .. 50.000000` | `developmentonly` `defensive` | Sound device synchronization shift (ms) |
 | `snd_diffusor_simd` | `Bool` | `false` |  | `developmentonly` `defensive` | Enable SIMD code path for diffusor processor. |
@@ -3016,6 +3051,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `snd_gain_min` | `Float32` | `0.010000` |  | `cheat` |  |
 | `snd_gamevoicevolume` | `Float32` | `1.000000` | `0.000000 .. 1.000000` | `archive` | Game v.o. volume |
 | `snd_gamevolume` | `Float32` | `1.000000` | `0.000000 .. 1.000000` | `archive` | Game volume |
+| `snd_granulator_imgui` | `Bool` | `false` |  | `developmentonly` `archive` `cheat` `menubar_item` | Game/Granulator Debugger |
 | `snd_group_cluster_debug` | `Bool` | `false` |  | `replicated` `cheat` |  |
 | `snd_group_occlusion_debug` | `Bool` | `false` |  | `developmentonly` |  |
 | `snd_group_priority_debug` | `Bool` | `false` |  | `replicated` `cheat` |  |
@@ -3028,19 +3064,33 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `snd_mainmenu_music_break_time_max` | `Int32` | `0` |  | `clientdll` `cheat` | Maximum amount of time to pause between playing main menu music |
 | `snd_mainmenu_music_break_time_min` | `Int32` | `0` |  | `clientdll` `cheat` | Minimum amount of time to pause between playing main menu music |
 | `snd_mapobjective_volume` | `Float32` | `0.040000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Volume of Map Objective Music |
+| `snd_mapobjective_volume_armsrace` | `Float32` | `0.010000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Arms Race volume of Map Objective Music |
+| `snd_mapobjective_volume_casual` | `Float32` | `0.010000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Casual volume of Map Objective Music |
+| `snd_mapobjective_volume_deathmatch` | `Float32` | `0.010000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Deathmatch volume of Map Objective Music |
+| `snd_mapobjective_volume_rush` | `Float32` | `0.010000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Rush volume of Map Objective Music |
 | `snd_max_pitch_shift_inaccuracy` | `Float32` | `0.080000` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `snd_menumap_volume` | `Float32` | `1.000000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Volume of background sounds for maps |
 | `snd_menumusic_volume` | `Float32` | `0.040000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Volume of Menu / Non-gameplay music |
+| `snd_menumusic_volume_armsrace` | `Float32` | `0.040000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Arms Race volume of Menu / Non-gameplay music |
+| `snd_menumusic_volume_casual` | `Float32` | `0.040000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Casual volume of Menu / Non-gameplay music |
+| `snd_menumusic_volume_deathmatch` | `Float32` | `0.040000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Deathmatch volume of Menu / Non-gameplay music |
+| `snd_menumusic_volume_rush` | `Float32` | `0.040000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Rush volume of Menu / Non-gameplay music |
 | `snd_mergemethod` | `Int32` | `1` |  | `developmentonly` `defensive` | Sound merge method (0 == sum and clip, 1 == max, 2 == avg). |
 | `snd_min_latency` | `Bool` | `false` |  | `developmentonly` `cheat` |  |
 | `snd_mix_async` | `Bool` | `true` |  | `developmentonly` `cheat` |  |
 | `snd_mixahead` | `Float32` | `0.001000` |  | `archive` |  |
 | `snd_mixer_master_dsp` | `Float32` | `1.000000` |  | `cheat` |  |
 | `snd_mixer_master_level` | `Float32` | `1.000000` |  | `cheat` |  |
+| `snd_music_mode` | `Float32` | `1.000000` |  | `clientdll` `release` | Selects which per-game-mode set of music volume convars is live |
+| `snd_music_settings_mode` | `Int32` | `0` |  | `clientdll` `archive` `release` | Which game mode's music volumes the audio settings screen is editing |
 | `snd_musicvolume` | `Float32` | `1.000000` | `0.000000 .. 1.000000` | `archive` | Music volume |
 | `snd_mute_losefocus` | `Bool` | `true` |  | `archive` |  |
 | `snd_mute_mvp_music_live_players` | `Bool` | `false` |  | `clientdll` `archive` `release` | If set, MVP music is muted if players from both teams are still alive. |
 | `snd_mvp_volume` | `Float32` | `0.160000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Volume of MVP Music |
+| `snd_mvp_volume_armsrace` | `Float32` | `0.160000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Arms Race volume of MVP Music |
+| `snd_mvp_volume_casual` | `Float32` | `0.160000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Casual volume of MVP Music |
+| `snd_mvp_volume_deathmatch` | `Float32` | `0.160000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Deathmatch volume of MVP Music |
+| `snd_mvp_volume_rush` | `Float32` | `0.160000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Rush volume of MVP Music |
 | `snd_new_visualize` | `Bool` | `false` |  | `gamedll` `cheat` | Displays soundevent name played at it's 3d position |
 | `snd_occlusion_bounces` | `Int32` | `1` |  | `replicated` `cheat` |  |
 | `snd_occlusion_debug` | `Bool` | `false` |  | `gamedll` `clientdll` `replicated` `cheat` |  |
@@ -3054,6 +3104,10 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `snd_occlusion_report` | `Bool` | `false` |  | `developmentonly` `cheat` |  |
 | `snd_occlusion_visualize` | `Bool` | `false` |  | `developmentonly` `cheat` |  |
 | `snd_op_test_convar` | `Float32` | `720.000000` |  | `cheat` |  |
+| `snd_opvar_set_dome_catchup_distance` | `Float32` | `64.000000` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
+| `snd_opvar_set_dome_catchup_rate` | `Float32` | `1.000000` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
+| `snd_opvar_set_dome_churn_fraction` | `Float32` | `0.250000` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
+| `snd_opvar_set_dome_cluster_steps_per_think` | `Int32` | `32` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `snd_opvar_set_point_debug` | `Bool` | `false` |  | `gamedll` `clientdll` `replicated` `cheat` |  |
 | `snd_opvar_set_point_update_interval` | `Float32` | `0.200000` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
 | `snd_opvar_set_point_update_interval_fast` | `Float32` | `0.033300` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
@@ -3064,8 +3118,20 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `snd_report_c4_sounds` | `Bool` | `false` |  | `developmentonly` `clientdll` `cheat` |  |
 | `snd_report_verbose_error` | `Bool` | `false` |  | `cheat` | If set to 1, report more error found when playing sounds. |
 | `snd_roundaction_volume` | `Float32` | `0.000000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Volume of Move Action Music |
+| `snd_roundaction_volume_armsrace` | `Float32` | `0.000000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Arms Race volume of Move Action Music |
+| `snd_roundaction_volume_casual` | `Float32` | `0.000000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Casual volume of Move Action Music |
+| `snd_roundaction_volume_deathmatch` | `Float32` | `0.000000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Deathmatch volume of Move Action Music |
+| `snd_roundaction_volume_rush` | `Float32` | `0.006400` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Rush volume of Move Action Music |
 | `snd_roundend_volume` | `Float32` | `0.160000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Volume of Won/Lost Music |
+| `snd_roundend_volume_armsrace` | `Float32` | `0.160000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Arms Race volume of Won/Lost Music |
+| `snd_roundend_volume_casual` | `Float32` | `0.160000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Casual volume of Won/Lost Music |
+| `snd_roundend_volume_deathmatch` | `Float32` | `0.160000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Deathmatch volume of Won/Lost Music |
+| `snd_roundend_volume_rush` | `Float32` | `0.160000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Rush volume of Won/Lost Music |
 | `snd_roundstart_volume` | `Float32` | `0.000000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Volume of Round Start Music |
+| `snd_roundstart_volume_armsrace` | `Float32` | `0.022500` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Arms Race volume of Round Start Music |
+| `snd_roundstart_volume_casual` | `Float32` | `0.022500` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Casual volume of Round Start Music |
+| `snd_roundstart_volume_deathmatch` | `Float32` | `0.022500` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Deathmatch volume of Round Start Music |
+| `snd_roundstart_volume_rush` | `Float32` | `0.022500` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Rush volume of Round Start Music |
 | `snd_showclassname` | `Int32` | `0` |  | `cheat` |  |
 | `snd_showstart` | `Int32` | `0` |  | `cheat` |  |
 | `snd_sos_beatpattern_show_operator_updates` | `Bool` | `false` |  | `developmentonly` `defensive` |  |
@@ -3141,6 +3207,10 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `snd_surf_volume_map` | `Float32` | `0.300000` |  | `clientdll` `archive` `release` | The volume of ambient sounds when surfing is enabled. |
 | `snd_surf_volume_slide` | `Float32` | `0.500000` |  | `clientdll` `archive` `release` | The volume of sliding along surfaces when surfing. |
 | `snd_tensecondwarning_volume` | `Float32` | `0.040000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Volume of Ten Second Warnings |
+| `snd_tensecondwarning_volume_armsrace` | `Float32` | `0.010000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Arms Race volume of Ten Second Warnings |
+| `snd_tensecondwarning_volume_casual` | `Float32` | `0.010000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Casual volume of Ten Second Warnings |
+| `snd_tensecondwarning_volume_deathmatch` | `Float32` | `0.010000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Deathmatch volume of Ten Second Warnings |
+| `snd_tensecondwarning_volume_rush` | `Float32` | `0.010000` | `0.000000 .. 1.000000` | `clientdll` `archive` `release` | Rush volume of Ten Second Warnings |
 | `snd_toolvolume` | `Float32` | `1.000000` | `0.000000 .. 1.000000` | `archive` | Volume of sounds in tools (e.g. Hammer, SFM) |
 | `snd_ui_positional` | `Bool` | `false` |  | `developmentonly` `cheat` |  |
 | `snd_ui_spatialization_spread` | `Float32` | `1.000000` |  | `developmentonly` `cheat` |  |
@@ -3246,9 +3316,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `steamworks_sessionid_client` | `String` | `0` |  | `clientdll` `hidden` `userinfo` | The client session ID for the new steamworks gamestats. |
 | `steamworks_sessionid_server` | `String` | `0` |  | `developmentonly` `gamedll` `clientdll` `hidden` `replicated` `defensive` | The server session ID for the new steamworks gamestats. |
 | `sticky_tooltips` | `Bool` | `false` |  | `developmentonly` `clientdll` `hidden` `defensive` | Don't ever hide tooltips. Helpful when debugging complicated tooltip layouts. |
-| `surf_speed_fast` | `Float32` | `3000.000000` |  | `gamedll` `clientdll` `replicated` `release` | Speed above which a player is considered to be going fast. |
-| `surf_speed_med` | `Float32` | `2000.000000` |  | `gamedll` `clientdll` `replicated` `release` | Speed above which a player is considered to be going medium. |
-| `surf_speed_slow` | `Float32` | `50.000000` |  | `gamedll` `clientdll` `replicated` `release` | Speed above which a player is considered to be going slow. |
+| `surf_speed_slow` | `Float32` | `50.000000` |  | `gamedll` `clientdll` `replicated` `release` | Speed above which surf sounds are played. |
 | `suspicious_hit_odds_threshold` | `Float32` | `0.010000` |  | `gamedll` `release` |  |
 | `suspicious_hit_player_radius` | `Float32` | `8.000000` |  | `gamedll` `release` |  |
 | `suspicious_hit_strategy` | `UInt32` | `0` |  | `gamedll` `release` | What to do about suspicious hits. 0: Nothing. 1: Skip the bullet. 2: Skip the bullet and re-roll a new bullet. |
@@ -3260,6 +3328,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `sv_airaccelerate` | `Float32` | `12.000000` |  | `gamedll` `clientdll` `notify` `replicated` `release` |  |
 | `sv_allchat` | `Bool` | `true` |  | `gamedll` `notify` `release` | Players can receive all other players' text chat, no death restrictions |
 | `sv_allow_annotations_access_level` | `Int32` | `0` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | 0:off \| 1: view-only \| 2: edit. |
+| `sv_allow_approximate_spawns` | `Bool` | `false` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Test spawn points for occupancy. Fall back to placing players in the nearest empty space instead of overlapping. |
 | `sv_allow_ground_weapon_pickup` | `Bool` | `true` |  | `developmentonly` `gamedll` `clientdll` `replicated` |  |
 | `sv_allow_switching_weapon_handedness` | `Bool` | `true` |  | `developmentonly` `gamedll` `clientdll` `replicated` |  |
 | `sv_allow_votes` | `Bool` | `true` |  | `gamedll` `release` `commandline_enforced` | Allow voting? |
@@ -3299,6 +3368,9 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `sv_c4_upright_constraint_strength` | `Float32` | `0.600000` |  | `developmentonly` `gamedll` `defensive` | How quickly the constraint converges |
 | `sv_chat_proximity` | `Float32` | `-1.000000` |  | `gamedll` `clientdll` `replicated` `release` |  |
 | `sv_cheats` | `Bool` | `false` |  | `notify` `replicated` `release` | Allow cheats on server |
+| `sv_clanid` | `UInt32` | `0` |  | `developmentonly` `gamedll` | Steam clan ID to allow members to set some convars |
+| `sv_clanserver_gms` | `Bool` | `false` |  | `developmentonly` |  |
+| `sv_clantags_enabled` | `Bool` | `true` |  | `gamedll` `clientdll` `replicated` `release` | Show players' clan tags in their names. |
 | `sv_client_max_interp_ratio` | `Float32` | `5.000000` | `0.000000 .. 19.000000` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | This can be used to limit the value of cl_interp_ratio for connected clients (only while they are connected). |
 | `sv_client_min_interp_ratio` | `Float32` | `0.000000` | `0.000000 .. 19.000000` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | This can be used to limit the value of cl_interp_ratio for connected clients (only while they are connected). |
 | `sv_clip_penetration_traces_to_players` | `Bool` | `true` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` |  |
@@ -3374,6 +3446,8 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `sv_force_team_intro_variant` | `Int32` | `0` |  | `developmentonly` `gamedll` |  |
 | `sv_force_transmit_ents` | `Bool` | `false` |  | `developmentonly` `gamedll` | Will transmit all entities to client, regardless of PVS conditions (will still skip based on transmit flags, however). |
 | `sv_fps_max` | `Float32` | `0.000000` |  | `developmentonly` `hidden` `defensive` | Dedicated server frame rate limiter. 0=tick rate. Only applies to the dedicated server. |
+| `sv_frame_snapshot_async_delete` | `Bool` | `false` |  | `developmentonly` |  |
+| `sv_frame_snapshot_sort_entities` | `Bool` | `true` |  | `developmentonly` |  |
 | `sv_freeze_camera_angles` | `Vector3` | `0.000000 0.000000 0.000000` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` |  |
 | `sv_freeze_camera_enabled` | `Bool` | `false` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` |  |
 | `sv_freeze_camera_min_remaining` | `Int32` | `3` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` |  |
@@ -3441,8 +3515,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `sv_logsdir` | `String` | `logs` |  | `archive` `release` | Folder in the game directory where server logs will be stored. |
 | `sv_long_frame_ms` | `Float32` | `0.000000` |  | `developmentonly` `defensive` | If a server frame takes longer than N ms, complain about it.  (Dedicated server only.)  See also engine_frametime_warnings_enable. |
 | `sv_mapvetopickvote_maps` | `String` | `de_cache,de_anubis,de_inferno,de_mirage,de_dust2,de_nuke,de_ancient` |  | `gamedll` `release` | Which maps are used for map veto pick sequence |
-| `sv_mapvetopickvote_phase_duration` | `String` | `[1:5][2:15][3:20][4:10][5:10][6:5]` |  | `gamedll` `release` | How many seconds each phase lasts |
-| `sv_mapvetopickvote_rnd` | `Bool` | `false` |  | `gamedll` `release` | When enabled will shuffle veto pick maps list order every time |
+| `sv_mapvetopickvote_phase_duration` | `String` | `[1:5][2:15][3:15][4:10][5:5][6:5][7:5]` |  | `gamedll` `release` | How many seconds each phase lasts |
 | `sv_massreport` | `Bool` | `false` |  | `developmentonly` `gamedll` `defensive` |  |
 | `sv_matchend_drops_enabled` | `Bool` | `true` |  | `gamedll` `release` | Rewards gameplay time is always accumulated for players, but drops at the end of the match can be prevented |
 | `sv_matchpause_auto_5v5` | `Bool` | `false` |  | `gamedll` `clientdll` `replicated` `release` | When enabled will automatically pause the match at next freeze time if less than 5 players are connected on each team. |
@@ -3469,10 +3542,12 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `sv_mmqueue_reservation` | `String` |  |  | `developmentonly` `dontrecord` | Server queue reservation |
 | `sv_mmqueue_reservation_extended_timeout` | `Int32` | `21` | `5 .. 180` | `developmentonly` | Extended time in seconds before mmqueue reservation expires. |
 | `sv_mmqueue_reservation_timeout` | `Int32` | `21` | `5 .. 180` | `developmentonly` | Time in seconds before mmqueue reservation expires. |
+| `sv_molotov_broken_glass_trap` | `Bool` | `false` |  | `gamedll` `release` |  |
 | `sv_mover_maxslope` | `Float32` | `0.700000` |  | `developmentonly` `gamedll` `clientdll` `notify` `replicated` `defensive` | The maximum slope the player can overcome [-] |
 | `sv_mover_pogodampingratio` | `Float32` | `1.000000` |  | `developmentonly` `gamedll` `clientdll` `notify` `replicated` `defensive` | The capsule pogo stick damping ratio [-] |
 | `sv_mover_pogofrequency` | `Float32` | `10.000000` |  | `developmentonly` `gamedll` `clientdll` `notify` `replicated` `defensive` | The capsule pogo stick frequency [hz]. |
 | `sv_mute_players_with_social_penalties` | `Bool` | `true` |  | `developmentonly` `gamedll` `defensive` |  |
+| `sv_netprof_delta_sharing_temp` | `Bool` | `false` |  | `release` | Temp counter for measuring performance impact of some network changes. To be removed by the end of Sept 2026 |
 | `sv_networkvar_log_fullchanges` | `Bool` | `false` |  | `developmentonly` `gamedll` | Log FUL_FULL_EDICT_CHANGED calls. |
 | `sv_networkvar_perfieldtracking` | `Bool` | `true` |  | `release` | Track individual field offset changes, rather than a single dirty flag for the whole entity. |
 | `sv_no_navmesh` | `Bool` | `false` |  | `developmentonly` `gamedll` `cheat` | Block loading of the navmesh. Unplayable, only used for memory sampling. |
@@ -3585,6 +3660,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `sv_sniper_tracer_innacuracy_length` | `Float32` | `200.000000` |  | `developmentonly` `gamedll` `clientdll` `replicated` | How far should the tracer draw if we trip sv_sniper_tracer_mode behavior. |
 | `sv_sniper_tracer_mode` | `Int32` | `1` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | Mode for sniper tracers. 0: legacy, 1: hide when more than sv_sniper_tracer_innacuracy inaccurate. |
 | `sv_spawn_afk_bomb_drop_time` | `Float32` | `15.000000` |  | `gamedll` `replicated` `release` | Players that have never moved since they spawned will drop the bomb after this amount of time. |
+| `sv_spawn_random_nudge_offset` | `Float32` | `0.000000` | `0.000000 .. 512.000000` | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | Max distance in X and Y to randomly offset a player from their spawn position, for procedural spawn variation. 0 to disable. |
 | `sv_spec_hear` | `Int32` | `3` |  | `gamedll` `clientdll` `notify` `replicated` `release` | Determines who spectators can hear: 0: only spectators; 1: all players; 2: spectated team; 3: self only; 4: nobody |
 | `sv_spec_use_tournament_content_standards` | `Bool` | `false` |  | `gamedll` `clientdll` `replicated` `release` |  |
 | `sv_specaccelerate` | `Float32` | `5.000000` |  | `gamedll` `clientdll` `archive` `notify` `replicated` |  |
@@ -3623,7 +3699,6 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `sv_teamid_overhead_maxdist_spec` | `Int32` | `0` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | If &gt;0, server will override cl_teamid_overhead_maxdist_spec |
 | `sv_temp_baseline_string_table_buffer_size` | `Int32` | `524288` |  | `developmentonly` `defensive` | Buffer size for writing string table baselines |
 | `sv_tick_parallel_with_client` | `Bool` | `false` |  | `developmentonly` | Runs the final server tick of the frame in parallel with client work |
-| `sv_tick_snapshot_sort_entities` | `Bool` | `true` |  | `developmentonly` |  |
 | `sv_timebetweenducks` | `Float32` | `0.400000` | `0.000000 .. 2.000000` | `gamedll` `clientdll` `replicated` `release` | Minimum time before recognizing consecutive duck key |
 | `sv_timeout` | `Float32` | `20.000000` |  | `developmentonly` `defensive` | After this many seconds without a message from fully connected client, the client is dropped |
 | `sv_turbophysics` | `Bool` | `false` |  | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | Turns on turbo physics |
@@ -3702,6 +3777,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `tools_stall_monitor_break_on_unknown_cause` | `Bool` | `false` |  | `developmentonly` | Break on unknown stall cause |
 | `trigger_fan_debug` | `Bool` | `false` |  | `developmentonly` `gamedll` `clientdll` `replicated` |  |
 | `trigger_fan_player_windblock_debug` | `Bool` | `false` |  | `developmentonly` `gamedll` `clientdll` `replicated` |  |
+| `trigger_physics_debug` | `Bool` | `false` |  | `developmentonly` `gamedll` `cheat` | Toggle trigger_physics debug visualization. |
 | `trusted_launch` | `Int32` | `0` |  | `clientdll` `archive` | Trusted launch status |
 | `tv_advertise_watchable` | `Bool` | `false` |  | `protected` `notify` `dontrecord` `release` | GOTV advertises the match as watchable via game UI, clients watching via UI will not need to type password |
 | `tv_allow_autorecording_index` | `Int32` | `-1` |  | `gamedll` `release` | When &gt;=0 restricts autorecording only to the specified TV index |
@@ -3769,6 +3845,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `tv_playcast_origin_auth` | `String` |  |  | `hidden` `release` | Get request X-Origin-Auth string |
 | `tv_playcast_retry_timeout` | `Float32` | `25.000000` |  | `release` | In case of intermittent network problems, how long should playcast retry fragment retrieval before resorting to resync |
 | `tv_playcast_showerrors` | `String` |  |  | `hidden` `release` | Set to display headers upon error (e.g. "CF-Ray,CF-Cache-Status,Body" ) |
+| `tv_playcast_slow_playback_fragment_count` | `Int32` | `3` |  | `hidden` `release` | Number of fragments we need to have in the buffer before slowing down playback. For use with tv_playcast_slow_playback_when_fragment_requests_fail |
 | `tv_playcast_slow_playback_when_fragment_requests_fail` | `Bool` | `true` |  | `hidden` `release` | Whether or not we slow playback rate if we start running out of buffered stream fragments. |
 | `tv_port` | `Int32` | `27020` |  | `release` | Host SourceTV[0] port |
 | `tv_port1` | `Int32` | `27021` |  | `release` | Host SourceTV[1] port |
@@ -3813,6 +3890,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `ui_playsettings_flags_listen_cooperative` | `String` | `0` |  | `clientdll` `archive` `release` |  |
 | `ui_playsettings_flags_listen_deathmatch` | `String` | `32` |  | `clientdll` `archive` `release` |  |
 | `ui_playsettings_flags_listen_retakes` | `String` | `0` |  | `clientdll` `archive` `release` |  |
+| `ui_playsettings_flags_listen_rush` | `String` | `0` |  | `clientdll` `archive` `release` |  |
 | `ui_playsettings_flags_listen_scrimcomp2v2` | `String` | `0` |  | `clientdll` `archive` `release` |  |
 | `ui_playsettings_flags_listen_skirmish` | `String` | `0` |  | `clientdll` `archive` `release` |  |
 | `ui_playsettings_flags_listen_survival` | `String` | `0` |  | `clientdll` `archive` `release` |  |
@@ -3821,6 +3899,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `ui_playsettings_flags_official_cooperative` | `String` | `0` |  | `clientdll` `archive` `release` |  |
 | `ui_playsettings_flags_official_deathmatch` | `String` | `32` |  | `clientdll` `archive` `release` |  |
 | `ui_playsettings_flags_official_retakes` | `String` | `0` |  | `clientdll` `archive` `release` |  |
+| `ui_playsettings_flags_official_rush` | `String` | `0` |  | `clientdll` `archive` `release` |  |
 | `ui_playsettings_flags_official_scrimcomp2v2` | `String` | `0` |  | `clientdll` `archive` `release` |  |
 | `ui_playsettings_flags_official_skirmish` | `String` | `0` |  | `clientdll` `archive` `release` |  |
 | `ui_playsettings_flags_official_survival` | `String` | `0` |  | `clientdll` `archive` `release` |  |
@@ -3833,11 +3912,13 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `ui_playsettings_maps_listen_deathmatch` | `String` | `mg_de_dust2` |  | `clientdll` `archive` `release` |  |
 | `ui_playsettings_maps_listen_gungameprogressive` | `String` | `mg_ar_baggage` |  | `clientdll` `archive` `release` |  |
 | `ui_playsettings_maps_listen_retakes` | `String` | `mg_de_dust2` |  | `clientdll` `archive` `release` |  |
+| `ui_playsettings_maps_listen_rush` | `String` | `mg_rush_001` |  | `clientdll` `archive` `release` |  |
 | `ui_playsettings_maps_listen_scrimcomp2v2` | `String` | `mg_de_inferno` |  | `clientdll` `archive` `release` |  |
 | `ui_playsettings_maps_official_casual` | `String` | `mg_casualalpha` |  | `clientdll` `archive` `release` |  |
 | `ui_playsettings_maps_official_deathmatch` | `String` | `mg_casualalpha` |  | `clientdll` `archive` `release` |  |
 | `ui_playsettings_maps_official_gungameprogressive` | `String` | `mg_armsrace` |  | `clientdll` `archive` `release` |  |
 | `ui_playsettings_maps_official_retakes` | `String` | `mg_casualalpha` |  | `clientdll` `archive` `release` |  |
+| `ui_playsettings_maps_official_rush` | `String` | `mg_rush_001` |  | `clientdll` `archive` `release` |  |
 | `ui_playsettings_maps_workshop` | `String` |  |  | `clientdll` `archive` `release` |  |
 | `ui_playsettings_mode_listen` | `String` | `deathmatch` |  | `clientdll` `archive` `release` |  |
 | `ui_playsettings_mode_official_v20` | `String` | `deathmatch` |  | `clientdll` `archive` `release` |  |
@@ -3924,6 +4005,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `volume_fog_temporal_filter` | `Bool` | `true` |  | `developmentonly` `defensive` |  |
 | `volume_fog_temporal_weight` | `Float32` | `0.900000` | `0.100000 .. 0.990000` | `developmentonly` `defensive` | Temporal filtering weight |
 | `volume_fog_width` | `Int32` | `240` | `64 .. 1024` | `developmentonly` `defensive` | Width of volume fog texture |
+| `vprof_all_threads` | `Bool` | `false` |  | `developmentonly` | Capture VProf scopes on background threads as well as the target thread. Same option as the All Threads checkbox in the VProf tools -- setting either one updates the other |
 | `vprof_counters` | `Int32` | `0` |  | `developmentonly` `defensive` |  |
 | `vprof_counters_show_minmax` | `Bool` | `false` |  | `developmentonly` `defensive` |  |
 | `vprof_scope_entity_clientthink` | `Bool` | `false` |  | `developmentonly` `clientdll` `hidden` `defensive` | Does nothing whatsoever. |
@@ -3949,8 +4031,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `weapon_auto_cleanup_time` | `Float32` | `0.000000` |  | `gamedll` `clientdll` `replicated` `release` | If set to non-zero, weapons will delete themselves after the specified time (in seconds) if no players are near. |
 | `weapon_debug_inaccuracy_only_up` | `Bool` | `false` |  | `developmentonly` `gamedll` `clientdll` `replicated` `cheat` | Force weapon inaccuracy to be in exactly the up direction |
 | `weapon_debug_max_inaccuracy` | `Bool` | `false` |  | `developmentonly` `gamedll` `clientdll` `replicated` `cheat` | Force all shots to have maximum inaccuracy |
-| `weapon_debug_spread_gap` | `Float32` | `0.670000` |  | `clientdll` `cheat` `per_user` |  |
-| `weapon_debug_spread_show` | `Int32` | `0` |  | `clientdll` `cheat` `per_user` | Enables display of weapon accuracy; 1: show accuracy box, 3: show accuracy with dynamic crosshair |
+| `weapon_debug_spread_show` | `Bool` | `false` |  | `clientdll` `cheat` `per_user` | Draws the current weapon's true inaccuracy + spread radius around the crosshair |
 | `weapon_land_dip_amt` | `Float32` | `20.000000` |  | `developmentonly` `gamedll` `clientdll` `replicated` `cheat` | The amount the gun should dip when the player lands after a jump. |
 | `weapon_max_before_cleanup` | `Int32` | `0` |  | `gamedll` `clientdll` `replicated` `release` `commandline_enforced` | If set to non-zero, will remove the oldest dropped weapon to maintain the specified number of dropped weapons in the world. |
 | `weapon_molotov_maxdetonateslope` | `Float32` | `30.000000` | `0.000000 .. 90.000000` | `developmentonly` `gamedll` `clientdll` `replicated` `defensive` | Maximum angle of slope on which the molotov will detonate |
@@ -3963,7 +4044,6 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `weapon_sound_falloff_multiplier` | `Float32` | `1.000000` |  | `gamedll` `clientdll` `replicated` `cheat` `release` `commandline_enforced` | Scaling for falloff of weapon firing sounds |
 | `webapi_values_init_buffer_size` | `Int32` | `65536` |  | `developmentonly` `clientdll` `defensive` | Initial buffer size for buffers in the WebAPIValues buffer pool |
 | `webapi_values_max_pool_size_mb` | `UInt32` | `400` |  | `developmentonly` `clientdll` `defensive` | Maximum size in bytes of the WebAPIValues buffer pool |
-| `wind_system_debug_volumes` | `Bool` | `false` |  | `developmentonly` `defensive` |  |
 | `wind_system_default_resolution_xy` | `Int32` | `256` |  | `developmentonly` `defensive` |  |
 | `wind_system_default_resolution_z` | `Int32` | `32` |  | `developmentonly` `defensive` |  |
 | `wind_system_default_sample_min_spacing` | `Float32` | `12.000000` |  | `developmentonly` `defensive` |  |

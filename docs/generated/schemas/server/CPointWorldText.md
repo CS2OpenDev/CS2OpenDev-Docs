@@ -8,9 +8,9 @@ kind: class
 
 # CPointWorldText
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 2592 bytes (`0xa20`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 2816 bytes (`0xb00`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CModelPointEntity](../server/CModelPointEntity.md)
 
@@ -29,7 +29,7 @@ classDiagram
 
 ## Memory layout
 
-144 fields (16 declared here, 128 inherited). Offsets are absolute from the object base.
+147 fields (16 declared here, 131 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -149,7 +149,8 @@ classDiagram
 | `0x570` | `m_clrRender` | Color | [CBaseModelEntity](../server/CBaseModelEntity.md) | RGBA tint colour multiplied onto the entity's diffuse texture. |
 | `0x578` | `m_vecRenderAttributes` | CUtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../server/EntityRenderAttribute_t.md) > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e0` | `m_bRenderToCubemaps` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x5e1` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e1` | `m_bExpandRenderBoundsToIncludeCloth` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e2` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e8` | `m_Collision` | [CCollisionProperty](../server/CCollisionProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CCollisionProperty struct encoding the entity's collision bounding box shape and flags. |
 | `0x6a0` | `m_Glow` | [CGlowProperty](../server/CGlowProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CGlowProperty struct controlling the entity's glow outline (colour, radius, visibility rules). |
 | `0x6f8` | `m_flGlowBackfaceMult` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Multiplier for the glow effect on back-facing surfaces of the model. |
@@ -158,22 +159,24 @@ classDiagram
 | `0x704` | `m_flFadeScale` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Scale factor applied to fade distances; 0 disables distance fading. |
 | `0x708` | `m_flShadowStrength` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Opacity of this entity's cast shadow (0 = no shadow, 1 = full shadow). |
 | `0x70c` | `m_nObjectCulling` | uint8 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x710` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x738` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
-| `0x768` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
-| `0x770` | `m_messageText` | char[512] |  |  |
-| `0x970` | `m_FontName` | char[64] |  | `MNotSaved` |
-| `0x9b0` | `m_BackgroundMaterialName` | char[64] |  | `MNotSaved` |
-| `0x9f0` | `m_bEnabled` | bool |  | `MNotSaved` |
-| `0x9f1` | `m_bFullbright` | bool |  | `MNotSaved` |
-| `0x9f4` | `m_flWorldUnitsPerPx` | float32 |  | `MNotSaved` |
-| `0x9f8` | `m_flFontSize` | float32 |  | `MNotSaved` |
-| `0x9fc` | `m_flDepthOffset` | float32 |  | `MNotSaved` |
-| `0xa00` | `m_bDrawBackground` | bool |  | `MNotSaved` |
-| `0xa04` | `m_flBackgroundBorderWidth` | float32 |  | `MNotSaved` |
-| `0xa08` | `m_flBackgroundBorderHeight` | float32 |  | `MNotSaved` |
-| `0xa0c` | `m_flBackgroundWorldToUV` | float32 |  | `MNotSaved` |
-| `0xa10` | `m_Color` | Color |  | `MNotSaved` |
-| `0xa14` | `m_nJustifyHorizontal` | [PointWorldTextJustifyHorizontal_t](../server/PointWorldTextJustifyHorizontal_t.md) |  | `MNotSaved` |
-| `0xa18` | `m_nJustifyVertical` | [PointWorldTextJustifyVertical_t](../server/PointWorldTextJustifyVertical_t.md) |  | `MNotSaved` |
-| `0xa1c` | `m_nReorientMode` | [PointWorldTextReorientMode_t](../server/PointWorldTextReorientMode_t.md) |  | `MNotSaved` |
+| `0x710` | `m_bodyGroupTotalRequestCount` | uint32 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x718` | `m_bodyGroupRequests` | CUtlVectorFixedGrowable< [CBaseModelEntity::BodyGroupRequest_t](../server/CBaseModelEntity.BodyGroupRequest_t.md), 8 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x7f0` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x818` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
+| `0x848` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
+| `0x850` | `m_messageText` | char[512] |  |  |
+| `0xa50` | `m_FontName` | char[64] |  | `MNotSaved` |
+| `0xa90` | `m_BackgroundMaterialName` | char[64] |  | `MNotSaved` |
+| `0xad0` | `m_bEnabled` | bool |  | `MNotSaved` |
+| `0xad1` | `m_bFullbright` | bool |  | `MNotSaved` |
+| `0xad4` | `m_flWorldUnitsPerPx` | float32 |  | `MNotSaved` |
+| `0xad8` | `m_flFontSize` | float32 |  | `MNotSaved` |
+| `0xadc` | `m_flDepthOffset` | float32 |  | `MNotSaved` |
+| `0xae0` | `m_bDrawBackground` | bool |  | `MNotSaved` |
+| `0xae4` | `m_flBackgroundBorderWidth` | float32 |  | `MNotSaved` |
+| `0xae8` | `m_flBackgroundBorderHeight` | float32 |  | `MNotSaved` |
+| `0xaec` | `m_flBackgroundWorldToUV` | float32 |  | `MNotSaved` |
+| `0xaf0` | `m_Color` | Color |  | `MNotSaved` |
+| `0xaf4` | `m_nJustifyHorizontal` | [PointWorldTextJustifyHorizontal_t](../server/PointWorldTextJustifyHorizontal_t.md) |  | `MNotSaved` |
+| `0xaf8` | `m_nJustifyVertical` | [PointWorldTextJustifyVertical_t](../server/PointWorldTextJustifyVertical_t.md) |  | `MNotSaved` |
+| `0xafc` | `m_nReorientMode` | [PointWorldTextReorientMode_t](../server/PointWorldTextReorientMode_t.md) |  | `MNotSaved` |

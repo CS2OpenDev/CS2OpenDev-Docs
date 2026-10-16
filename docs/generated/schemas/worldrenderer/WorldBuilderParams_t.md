@@ -8,7 +8,7 @@ kind: class
 
 # WorldBuilderParams_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 96 bytes (`0x60`) · **Align:** 8 · **Module:** worldrenderer
 
@@ -50,7 +50,8 @@ classDiagram
 		&quot;m_bHasLightmaps&quot;: false,
 		&quot;m_bBakedShadowsGamma20&quot;: false,
 		&quot;m_bCompressionEnabled&quot;: false,
-		&quot;m_bSHLightmaps&quot;: false,
+		&quot;m_nLPVEncoding&quot;: -1,
+		&quot;m_nLightmapEncoding&quot;: -1,
 		&quot;m_nChartPackIterations&quot;: 0,
 		&quot;m_nVradQuality&quot;: 0,
 		&quot;m_lightMaps&quot;:

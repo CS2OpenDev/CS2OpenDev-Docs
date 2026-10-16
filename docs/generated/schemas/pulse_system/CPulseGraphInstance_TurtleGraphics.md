@@ -8,9 +8,9 @@ kind: class
 
 # CPulseGraphInstance_TurtleGraphics
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 312 bytes (`0x138`) · **Align:** n/a (unspecified) · **Module:** pulse_system
+**Kind:** class · **Size:** 176 bytes (`0xb0`) · **Align:** n/a (unspecified) · **Module:** pulse_system
 
 **Inherits from:** [CBasePulseGraphInstance](../pulse_runtime_lib/CBasePulseGraphInstance.md)
 
@@ -23,4 +23,4 @@ classDiagram
 
 ## Memory layout
 
-No schema-visible fields (312 bytes of opaque storage).
+No schema-visible fields (176 bytes of opaque storage).

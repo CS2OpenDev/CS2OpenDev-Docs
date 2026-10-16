@@ -8,9 +8,9 @@ kind: class
 
 # C_EnvLightProbeVolume
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 5776 bytes (`0x1690`) · **Align:** 8 · **Module:** client
+**Kind:** class · **Size:** 1824 bytes (`0x720`) · **Align:** 8 · **Module:** client
 
 **Inherits from:** [C_BaseEntity](../client/C_BaseEntity.md)
 
@@ -25,7 +25,7 @@ classDiagram
 
 ## Memory layout
 
-107 fields (22 declared here, 85 inherited). Offsets are absolute from the object base.
+105 fields (20 declared here, 85 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -114,25 +114,23 @@ classDiagram
 | `0x5e2` | `m_bSimulationTimeChanged` | bool | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
 | `0x5f0` | `m_sUniqueHammerID` | CUtlString | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
 | `0x5f8` | `m_nBloodType` | [BloodType](../server/BloodType.md) | [C_BaseEntity](../client/C_BaseEntity.md) |  |
-| `0x15f8` | `m_Entity_hLightProbeTexture_AmbientCube` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
-| `0x1600` | `m_Entity_hLightProbeTexture_SDF` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
-| `0x1608` | `m_Entity_hLightProbeTexture_SH2_DC` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
-| `0x1610` | `m_Entity_hLightProbeTexture_SH2_R` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
-| `0x1618` | `m_Entity_hLightProbeTexture_SH2_G` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
-| `0x1620` | `m_Entity_hLightProbeTexture_SH2_B` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
-| `0x1628` | `m_Entity_hLightProbeDirectLightIndicesTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
-| `0x1630` | `m_Entity_hLightProbeDirectLightScalarsTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
-| `0x1638` | `m_Entity_hLightProbeDirectLightShadowsTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
-| `0x1640` | `m_Entity_vBoxMins` | Vector |  |  |
-| `0x164c` | `m_Entity_vBoxMaxs` | Vector |  |  |
-| `0x1658` | `m_Entity_bMoveable` | bool |  |  |
-| `0x165c` | `m_Entity_nHandshake` | int32 |  |  |
-| `0x1660` | `m_Entity_nPriority` | int32 |  |  |
-| `0x1664` | `m_Entity_bStartDisabled` | bool |  |  |
-| `0x1668` | `m_Entity_nLightProbeSizeX` | int32 |  |  |
-| `0x166c` | `m_Entity_nLightProbeSizeY` | int32 |  |  |
-| `0x1670` | `m_Entity_nLightProbeSizeZ` | int32 |  |  |
-| `0x1674` | `m_Entity_nLightProbeAtlasX` | int32 |  |  |
-| `0x1678` | `m_Entity_nLightProbeAtlasY` | int32 |  |  |
-| `0x167c` | `m_Entity_nLightProbeAtlasZ` | int32 |  |  |
-| `0x1689` | `m_Entity_bEnabled` | bool |  |  |
+| `0x698` | `m_Entity_hLightProbeTexture_AmbientCube` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
+| `0x6a0` | `m_Entity_hLightProbeTexture_SDF` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
+| `0x6a8` | `m_Entity_hLightProbeTexture_SH2_DC` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
+| `0x6b0` | `m_Entity_hLightProbeTexture_SH2_L1` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
+| `0x6b8` | `m_Entity_hLightProbeDirectLightIndicesTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
+| `0x6c0` | `m_Entity_hLightProbeDirectLightScalarsTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
+| `0x6c8` | `m_Entity_hLightProbeDirectLightShadowsTexture` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  |  |
+| `0x6d0` | `m_Entity_vBoxMins` | Vector |  |  |
+| `0x6dc` | `m_Entity_vBoxMaxs` | Vector |  |  |
+| `0x6e8` | `m_Entity_bMoveable` | bool |  |  |
+| `0x6ec` | `m_Entity_nHandshake` | int32 |  |  |
+| `0x6f0` | `m_Entity_nPriority` | int32 |  |  |
+| `0x6f4` | `m_Entity_bStartDisabled` | bool |  |  |
+| `0x6f8` | `m_Entity_nLightProbeSizeX` | int32 |  |  |
+| `0x6fc` | `m_Entity_nLightProbeSizeY` | int32 |  |  |
+| `0x700` | `m_Entity_nLightProbeSizeZ` | int32 |  |  |
+| `0x704` | `m_Entity_nLightProbeAtlasX` | int32 |  |  |
+| `0x708` | `m_Entity_nLightProbeAtlasY` | int32 |  |  |
+| `0x70c` | `m_Entity_nLightProbeAtlasZ` | int32 |  |  |
+| `0x719` | `m_Entity_bEnabled` | bool |  |  |

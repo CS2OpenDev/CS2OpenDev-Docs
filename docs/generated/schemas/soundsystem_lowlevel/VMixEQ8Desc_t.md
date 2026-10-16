@@ -8,15 +8,15 @@ kind: class
 
 # VMixEQ8Desc_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 128 bytes (`0x80`) · **Align:** 4 · **Module:** soundsystem_lowlevel
+**Kind:** class · **Size:** 160 bytes (`0xa0`) · **Align:** 4 · **Module:** soundsystem_lowlevel
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    VMixEQ8Desc_t *-- VMixFilterDesc_t
+    VMixEQ8Desc_t *-- VMixEQFilterDesc_t
 ```
 
 ## Memory layout
@@ -25,7 +25,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_stages` | [VMixFilterDesc_t](../soundsystem_lowlevel/VMixFilterDesc_t.md)[8] |  |  |
+| `0x0` | `m_stages` | [VMixEQFilterDesc_t](../soundsystem_lowlevel/VMixEQFilterDesc_t.md)[8] |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -33,68 +33,76 @@ classDiagram
 	&quot;m_stages&quot;:
 	[
 		{
+			&quot;m_fldbGain&quot;: 0.000000,
+			&quot;m_flCutoffFreq&quot;: 1000.000000,
+			&quot;m_flQ&quot;: 0.707107,
 			&quot;m_nFilterType&quot;: &quot;FILTER_UNKNOWN&quot;,
 			&quot;m_nFilterSlope&quot;: &quot;FILTER_SLOPE_12dB&quot;,
 			&quot;m_bEnabled&quot;: true,
-			&quot;m_fldbGain&quot;: 0.000000,
-			&quot;m_flCutoffFreq&quot;: 1000.000000,
-			&quot;m_flQ&quot;: 0.707107
+			&quot;m_nChannelSet&quot;: &quot;FILTER_ALL_CHANNELS&quot;
 		},
 		{
+			&quot;m_fldbGain&quot;: 0.000000,
+			&quot;m_flCutoffFreq&quot;: 1000.000000,
+			&quot;m_flQ&quot;: 0.707107,
 			&quot;m_nFilterType&quot;: &quot;FILTER_UNKNOWN&quot;,
 			&quot;m_nFilterSlope&quot;: &quot;FILTER_SLOPE_12dB&quot;,
 			&quot;m_bEnabled&quot;: true,
-			&quot;m_fldbGain&quot;: 0.000000,
-			&quot;m_flCutoffFreq&quot;: 1000.000000,
-			&quot;m_flQ&quot;: 0.707107
+			&quot;m_nChannelSet&quot;: &quot;FILTER_ALL_CHANNELS&quot;
 		},
 		{
+			&quot;m_fldbGain&quot;: 0.000000,
+			&quot;m_flCutoffFreq&quot;: 1000.000000,
+			&quot;m_flQ&quot;: 0.707107,
 			&quot;m_nFilterType&quot;: &quot;FILTER_UNKNOWN&quot;,
 			&quot;m_nFilterSlope&quot;: &quot;FILTER_SLOPE_12dB&quot;,
 			&quot;m_bEnabled&quot;: true,
-			&quot;m_fldbGain&quot;: 0.000000,
-			&quot;m_flCutoffFreq&quot;: 1000.000000,
-			&quot;m_flQ&quot;: 0.707107
+			&quot;m_nChannelSet&quot;: &quot;FILTER_ALL_CHANNELS&quot;
 		},
 		{
+			&quot;m_fldbGain&quot;: 0.000000,
+			&quot;m_flCutoffFreq&quot;: 1000.000000,
+			&quot;m_flQ&quot;: 0.707107,
 			&quot;m_nFilterType&quot;: &quot;FILTER_UNKNOWN&quot;,
 			&quot;m_nFilterSlope&quot;: &quot;FILTER_SLOPE_12dB&quot;,
 			&quot;m_bEnabled&quot;: true,
-			&quot;m_fldbGain&quot;: 0.000000,
-			&quot;m_flCutoffFreq&quot;: 1000.000000,
-			&quot;m_flQ&quot;: 0.707107
+			&quot;m_nChannelSet&quot;: &quot;FILTER_ALL_CHANNELS&quot;
 		},
 		{
+			&quot;m_fldbGain&quot;: 0.000000,
+			&quot;m_flCutoffFreq&quot;: 1000.000000,
+			&quot;m_flQ&quot;: 0.707107,
 			&quot;m_nFilterType&quot;: &quot;FILTER_UNKNOWN&quot;,
 			&quot;m_nFilterSlope&quot;: &quot;FILTER_SLOPE_12dB&quot;,
 			&quot;m_bEnabled&quot;: true,
-			&quot;m_fldbGain&quot;: 0.000000,
-			&quot;m_flCutoffFreq&quot;: 1000.000000,
-			&quot;m_flQ&quot;: 0.707107
+			&quot;m_nChannelSet&quot;: &quot;FILTER_ALL_CHANNELS&quot;
 		},
 		{
+			&quot;m_fldbGain&quot;: 0.000000,
+			&quot;m_flCutoffFreq&quot;: 1000.000000,
+			&quot;m_flQ&quot;: 0.707107,
 			&quot;m_nFilterType&quot;: &quot;FILTER_UNKNOWN&quot;,
 			&quot;m_nFilterSlope&quot;: &quot;FILTER_SLOPE_12dB&quot;,
 			&quot;m_bEnabled&quot;: true,
-			&quot;m_fldbGain&quot;: 0.000000,
-			&quot;m_flCutoffFreq&quot;: 1000.000000,
-			&quot;m_flQ&quot;: 0.707107
+			&quot;m_nChannelSet&quot;: &quot;FILTER_ALL_CHANNELS&quot;
 		},
 		{
+			&quot;m_fldbGain&quot;: 0.000000,
+			&quot;m_flCutoffFreq&quot;: 1000.000000,
+			&quot;m_flQ&quot;: 0.707107,
 			&quot;m_nFilterType&quot;: &quot;FILTER_UNKNOWN&quot;,
 			&quot;m_nFilterSlope&quot;: &quot;FILTER_SLOPE_12dB&quot;,
 			&quot;m_bEnabled&quot;: true,
-			&quot;m_fldbGain&quot;: 0.000000,
-			&quot;m_flCutoffFreq&quot;: 1000.000000,
-			&quot;m_flQ&quot;: 0.707107
+			&quot;m_nChannelSet&quot;: &quot;FILTER_ALL_CHANNELS&quot;
 		},
 		{
+			&quot;m_fldbGain&quot;: 0.000000,
+			&quot;m_flCutoffFreq&quot;: 1000.000000,
+			&quot;m_flQ&quot;: 0.707107,
 			&quot;m_nFilterType&quot;: &quot;FILTER_UNKNOWN&quot;,
 			&quot;m_nFilterSlope&quot;: &quot;FILTER_SLOPE_12dB&quot;,
 			&quot;m_bEnabled&quot;: true,
-			&quot;m_fldbGain&quot;: 0.000000,
-			&quot;m_flCutoffFreq&quot;: 1000.000000,
-			&quot;m_flQ&quot;: 0.707107
+			&quot;m_nChannelSet&quot;: &quot;FILTER_ALL_CHANNELS&quot;
 		}
 	]
 }</pre>

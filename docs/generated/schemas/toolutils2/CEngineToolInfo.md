@@ -8,7 +8,7 @@ kind: class
 
 # CEngineToolInfo
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 136 bytes (`0x88`) · **Align:** 8 · **Module:** toolutils2
 
@@ -23,7 +23,7 @@ classDiagram
 
 ## Memory layout
 
-15 fields (11 declared here, 4 inherited). Offsets are absolute from the object base.
+16 fields (12 declared here, 4 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -34,11 +34,12 @@ classDiagram
 | `0x20` | `m_Library` | CUtlString |  |  |
 | `0x28` | `m_InterfaceName` | CUtlString |  |  |
 | `0x30` | `m_bShowInRevisionSubMenu` | bool |  |  |
-| `0x31` | `m_bIsSecondaryTool` | bool |  |  |
-| `0x32` | `m_bDoNotWarnAboutLargeAssetBatches` | bool |  |  |
-| `0x33` | `m_bIsWorkshopManagerTool` | bool |  |  |
-| `0x34` | `m_bIsWorkshopItemTool` | bool |  |  |
-| `0x35` | `m_bCanHighlightSubassets` | bool |  |  |
+| `0x31` | `m_bShowInToolsMenu` | bool |  |  |
+| `0x32` | `m_bIsSecondaryTool` | bool |  |  |
+| `0x33` | `m_bDoNotWarnAboutLargeAssetBatches` | bool |  |  |
+| `0x34` | `m_bIsWorkshopManagerTool` | bool |  |  |
+| `0x35` | `m_bIsWorkshopItemTool` | bool |  |  |
+| `0x36` | `m_bCanHighlightSubassets` | bool |  |  |
 | `0x38` | `m_AssetTypes` | CUtlVector< CUtlString > |  |  |
 | `0x50` | `m_LimitToMods` | CUtlVector< CUtlString > |  |  |
 | `0x68` | `m_ExcludeFromMods` | CUtlVector< CUtlString > |  |  |
@@ -53,6 +54,7 @@ classDiagram
 	&quot;m_Library&quot;: &quot;&quot;,
 	&quot;m_InterfaceName&quot;: &quot;&quot;,
 	&quot;m_bShowInRevisionSubMenu&quot;: false,
+	&quot;m_bShowInToolsMenu&quot;: true,
 	&quot;m_bIsSecondaryTool&quot;: false,
 	&quot;m_bDoNotWarnAboutLargeAssetBatches&quot;: false,
 	&quot;m_bIsWorkshopManagerTool&quot;: false,

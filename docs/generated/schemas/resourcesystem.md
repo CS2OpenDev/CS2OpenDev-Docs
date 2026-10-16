@@ -5,11 +5,11 @@ module: resourcesystem
 
 # Module: resourcesystem
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 [📊 View UML Diagram](../diagrams/resourcesystem.md)
 
-48 types. Each links to its own page with the full field layout.
+49 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -37,11 +37,11 @@ module: resourcesystem
 | [InfoForResourceTypeCRenderMesh](resourcesystem/InfoForResourceTypeCRenderMesh.md) | class | 1 | 0 |  |
 | [InfoForResourceTypeCResponseRulesList](resourcesystem/InfoForResourceTypeCResponseRulesList.md) | class | 1 | 0 |  |
 | [InfoForResourceTypeCSequenceGroupData](resourcesystem/InfoForResourceTypeCSequenceGroupData.md) | class | 1 | 0 |  |
-| [InfoForResourceTypeCSmartProp](resourcesystem/InfoForResourceTypeCSmartProp.md) | class | 1 | 0 |  |
 | [InfoForResourceTypeCSurfaceGraph](resourcesystem/InfoForResourceTypeCSurfaceGraph.md) | class | 1 | 0 |  |
 | [InfoForResourceTypeCTestResourceData](resourcesystem/InfoForResourceTypeCTestResourceData.md) | class | 1 | 0 |  |
 | [InfoForResourceTypeCTextureBase](resourcesystem/InfoForResourceTypeCTextureBase.md) | class | 1 | 0 |  |
 | [InfoForResourceTypeCTypeScriptResource](resourcesystem/InfoForResourceTypeCTypeScriptResource.md) | class | 1 | 0 |  |
+| [InfoForResourceTypeCVDSPResource](resourcesystem/InfoForResourceTypeCVDSPResource.md) | class | 1 | 0 |  |
 | [InfoForResourceTypeCVDataItemDefs](resourcesystem/InfoForResourceTypeCVDataItemDefs.md) | class | 1 | 0 |  |
 | [InfoForResourceTypeCVDataResource](resourcesystem/InfoForResourceTypeCVDataResource.md) | class | 1 | 0 |  |
 | [InfoForResourceTypeCVMixListResource](resourcesystem/InfoForResourceTypeCVMixListResource.md) | class | 1 | 0 |  |
@@ -56,6 +56,7 @@ module: resourcesystem
 | [InfoForResourceTypeIParticleSnapshot](resourcesystem/InfoForResourceTypeIParticleSnapshot.md) | class | 1 | 0 |  |
 | [InfoForResourceTypeIParticleSystemDefinition](resourcesystem/InfoForResourceTypeIParticleSystemDefinition.md) | class | 1 | 0 |  |
 | [InfoForResourceTypeIPulseGraphDef](resourcesystem/InfoForResourceTypeIPulseGraphDef.md) | class | 1 | 0 |  |
+| [InfoForResourceTypeISmartProp](resourcesystem/InfoForResourceTypeISmartProp.md) | class | 1 | 0 |  |
 | [InfoForResourceTypeIVectorGraphic](resourcesystem/InfoForResourceTypeIVectorGraphic.md) | class | 1 | 0 |  |
 | [InfoForResourceTypeManifestTestResource_t](resourcesystem/InfoForResourceTypeManifestTestResource_t.md) | class | 1 | 0 |  |
 | [InfoForResourceTypeProceduralTestResource_t](resourcesystem/InfoForResourceTypeProceduralTestResource_t.md) | class | 1 | 0 |  |

@@ -8,9 +8,9 @@ kind: class
 
 # CPathCornerCrash
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 1232 bytes (`0x4d0`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 1248 bytes (`0x4e0`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CPathCorner](../server/CPathCorner.md)
 
@@ -26,7 +26,7 @@ classDiagram
 
 ## Memory layout
 
-92 fields (0 declared here, 92 inherited). Offsets are absolute from the object base.
+98 fields (0 declared here, 98 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -118,7 +118,13 @@ classDiagram
 | `0x498` | `m_flVPhysicsUpdateLocalTime` | float32 | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x49c` | `m_nBloodType` | [BloodType](../server/BloodType.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x4a0` | `m_pPulseGraphInstance` | [CPulseGraphInstance_ServerEntity](../server/CPulseGraphInstance_ServerEntity.md)* | [CBaseEntity](../server/CBaseEntity.md) | `MKV3TransferSaveOpsForField GetPulseInstanceSaveRestoreOps` |
-| `0x4a8` | `m_flSpeed` | float32 | [CPathCorner](../server/CPathCorner.md) |  |
+| `0x4a8` | `m_bTriggerLocomotionStop` | bool | [CPathCorner](../server/CPathCorner.md) |  |
+| `0x4a9` | `m_bSmoothArrival` | bool | [CPathCorner](../server/CPathCorner.md) |  |
+| `0x4aa` | `m_bExactPositioning` | bool | [CPathCorner](../server/CPathCorner.md) |  |
 | `0x4ac` | `m_flWait` | float32 | [CPathCorner](../server/CPathCorner.md) |  |
 | `0x4b0` | `m_flRadius` | float32 | [CPathCorner](../server/CPathCorner.md) |  |
-| `0x4b8` | `m_OnPass` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CPathCorner](../server/CPathCorner.md) |  |
+| `0x4b4` | `m_flWaypointSuccessRadiusWhenBlocked` | float32 | [CPathCorner](../server/CPathCorner.md) |  |
+| `0x4b8` | `m_flWaypointSuccessRadius` | float32 | [CPathCorner](../server/CPathCorner.md) |  |
+| `0x4bc` | `m_flPathEndDistanceFromGoal` | float32 | [CPathCorner](../server/CPathCorner.md) |  |
+| `0x4c0` | `m_flSpeed` | float32 | [CPathCorner](../server/CPathCorner.md) |  |
+| `0x4c8` | `m_OnPass` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CPathCorner](../server/CPathCorner.md) |  |

@@ -8,7 +8,7 @@ kind: class
 
 # CMixAutoFilter
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 80 bytes (`0x50`) · **Align:** 8 · **Module:** sounddoc_lib
 
@@ -26,7 +26,7 @@ classDiagram
 
 ## Memory layout
 
-6 fields (1 declared here, 5 inherited). Offsets are absolute from the object base.
+7 fields (1 declared here, 6 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -35,6 +35,7 @@ classDiagram
 | `0x18` | `m_bActive` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x19` | `m_bSolo` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x1a` | `m_bEditProperties` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
+| `0x1c` | `m_nGenerationId` | int32 | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x20` | `m_desc` | [VMixAutoFilterDesc_t](../soundsystem_lowlevel/VMixAutoFilterDesc_t.md) |  | `MPropertyAutoExpandSelf` |
 
 <details><summary>KV3 class defaults</summary>
@@ -46,6 +47,7 @@ classDiagram
 	&quot;m_bActive&quot;: true,
 	&quot;m_bSolo&quot;: false,
 	&quot;m_bEditProperties&quot;: false,
+	&quot;m_nGenerationId&quot;: 0,
 	&quot;m_desc&quot;:
 	{
 		&quot;m_flEnvelopeAmount&quot;: 0.000000,
@@ -53,12 +55,12 @@ classDiagram
 		&quot;m_flReleaseTimeMS&quot;: 200.000000,
 		&quot;m_filter&quot;:
 		{
-			&quot;m_nFilterType&quot;: &quot;FILTER_LOWPASS&quot;,
-			&quot;m_nFilterSlope&quot;: &quot;FILTER_SLOPE_12dB&quot;,
-			&quot;m_bEnabled&quot;: true,
 			&quot;m_fldbGain&quot;: 0.000000,
 			&quot;m_flCutoffFreq&quot;: 1000.000000,
-			&quot;m_flQ&quot;: 0.707107
+			&quot;m_flQ&quot;: 0.707107,
+			&quot;m_nFilterType&quot;: &quot;FILTER_LOWPASS&quot;,
+			&quot;m_nFilterSlope&quot;: &quot;FILTER_SLOPE_12dB&quot;,
+			&quot;m_bEnabled&quot;: true
 		},
 		&quot;m_flLFOAmount&quot;: 0.000000,
 		&quot;m_flLFORate&quot;: 0.000000,

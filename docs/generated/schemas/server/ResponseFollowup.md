@@ -8,13 +8,13 @@ kind: class
 
 # ResponseFollowup
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 49 bytes (`0x31`) · **Align:** n/a (unspecified) · **Module:** server
+**Kind:** class · **Size:** 28 bytes (`0x1c`) · **Align:** n/a (unspecified) · **Module:** server
 
 ## Memory layout
 
-8 fields (8 declared here, 0 inherited). Offsets are absolute from the object base.
+4 fields (4 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -22,7 +22,3 @@ kind: class
 | `0x8` | `followup_contexts` | char* |  |  |
 | `0x10` | `followup_delay` | float32 |  |  |
 | `0x14` | `followup_target` | char* |  |  |
-| `0x1c` | `followup_entityiotarget` | char* |  |  |
-| `0x24` | `followup_entityioinput` | char* |  |  |
-| `0x2c` | `followup_entityiodelay` | float32 |  |  |
-| `0x30` | `bFired` | bool |  |  |

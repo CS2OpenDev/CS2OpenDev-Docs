@@ -8,7 +8,7 @@ kind: class
 
 # CNmGraphDocTargetWarpNode::CData
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** 8 · **Module:** animdoclib
 
@@ -27,7 +27,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x8` | `m_strAlignmentBoneName` | CUtlString |  |  |
+| `0x8` | `m_strAlignmentBoneName` | CGlobalSymbol |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

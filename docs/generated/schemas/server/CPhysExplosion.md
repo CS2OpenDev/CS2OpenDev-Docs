@@ -8,9 +8,9 @@ kind: class
 
 # CPhysExplosion
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 1256 bytes (`0x4e8`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 1264 bytes (`0x4f0`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CPointEntity](../server/CPointEntity.md)
 
@@ -26,7 +26,7 @@ classDiagram
 
 ## Memory layout
 
-99 fields (11 declared here, 88 inherited). Offsets are absolute from the object base.
+100 fields (12 declared here, 88 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -123,9 +123,10 @@ classDiagram
 | `0x4b0` | `m_flDamage` | float32 |  |  |
 | `0x4b4` | `m_radius` | float32 |  |  |
 | `0x4b8` | `m_targetEntityName` | CUtlSymbolLarge |  |  |
-| `0x4c0` | `m_flInnerRadius` | float32 |  |  |
-| `0x4c4` | `m_flPushScale` | float32 |  |  |
-| `0x4c8` | `m_bConvertToDebrisWhenPossible` | bool |  |  |
-| `0x4c9` | `m_bAffectInvulnerableEnts` | bool |  |  |
-| `0x4ca` | `m_bDisablePushClamp` | bool |  |  |
-| `0x4d0` | `m_OnPushedPlayer` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
+| `0x4c0` | `m_ignoreEntityName` | CUtlSymbolLarge |  |  |
+| `0x4c8` | `m_flInnerRadius` | float32 |  |  |
+| `0x4cc` | `m_flPushScale` | float32 |  |  |
+| `0x4d0` | `m_bConvertToDebrisWhenPossible` | bool |  |  |
+| `0x4d1` | `m_bAffectInvulnerableEnts` | bool |  |  |
+| `0x4d2` | `m_bDisablePushClamp` | bool |  |  |
+| `0x4d8` | `m_OnPushedPlayer` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |

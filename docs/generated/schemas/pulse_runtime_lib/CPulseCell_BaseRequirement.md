@@ -8,13 +8,13 @@ kind: class
 
 # CPulseCell_BaseRequirement
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** 8 · **Module:** pulse_runtime_lib
 
 **Inherits from:** [CPulseCell_Base](../pulse_runtime_lib/CPulseCell_Base.md)
 
-**Derived by:** [CPulseCell_ExampleCriteria](../pulse_system/CPulseCell_ExampleCriteria.md), [CPulseCell_IsRequirementValid](../pulse_runtime_lib/CPulseCell_IsRequirementValid.md), [CPulseCell_LimitCount](../pulse_runtime_lib/CPulseCell_LimitCount.md), [CSmartPropPulse_CriteriaPathPosition](../smartprops/CSmartPropPulse_CriteriaPathPosition.md), [CSmartPropPulse_SelectionChoiceWeight](../smartprops/CSmartPropPulse_SelectionChoiceWeight.md), [CSmartPropPulse_SelectionEndCap](../smartprops/CSmartPropPulse_SelectionEndCap.md), [CSmartPropPulse_SelectionLinearLength](../smartprops/CSmartPropPulse_SelectionLinearLength.md)
+**Derived by:** [CPulseCell_ExampleCriteria](../pulse_system/CPulseCell_ExampleCriteria.md), [CPulseCell_IsRequirementValid](../pulse_runtime_lib/CPulseCell_IsRequirementValid.md), [CPulseCell_LimitCount](../pulse_runtime_lib/CPulseCell_LimitCount.md)
 
 **Relationships:**
 
@@ -23,10 +23,6 @@ classDiagram
     CPulseCell_Base <|-- CPulseCell_BaseRequirement
     CPulseCell_BaseRequirement <|-- CPulseCell_IsRequirementValid
     CPulseCell_BaseRequirement <|-- CPulseCell_LimitCount
-    CPulseCell_BaseRequirement <|-- CSmartPropPulse_CriteriaPathPosition
-    CPulseCell_BaseRequirement <|-- CSmartPropPulse_SelectionChoiceWeight
-    CPulseCell_BaseRequirement <|-- CSmartPropPulse_SelectionEndCap
-    CPulseCell_BaseRequirement <|-- CSmartPropPulse_SelectionLinearLength
     CPulseCell_BaseRequirement <|-- CPulseCell_ExampleCriteria
 ```
 

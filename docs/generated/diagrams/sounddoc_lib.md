@@ -134,6 +134,7 @@ classDiagram
     CVAudioNodeBaseDesc <|-- CStereoDelayNodeDesc
     CVNodeTypeDesc <|-- CVAudioNodeBaseDesc
     CVNodeTypeDesc <|-- CVControlNodeBaseDesc
+    CVMixToolGraph <|-- CVMixToolGraphEntry
     CVNodeTypeDesc <|-- CVsndInputNodeDesc
     CEffectsPreviewList *-- CPreviewList
     CGraphPreviewList *-- CPreviewList
@@ -141,9 +142,12 @@ classDiagram
     CMixSteamAudioSource *-- SteamAudioHRTFInterpolationType_t
     CMixSubgraphSwitch *-- CSelectableSubgraph
     CPreviewList *-- CPreviewEntry
+    CVMixToolDoc *-- CVMixToolEffectsList
+    CVMixToolDoc *-- CEffectsPreviewList
+    CVMixToolDoc *-- CVMixToolGraphEntry
+    CVMixToolDoc *-- CVMixToolEditorData
     CVMixToolGraph *-- CVMixEditorNode
     CVMixToolGraph *-- CVMixEditorEdge
-    CVMixToolGraphEntry *-- CVMixToolGraph
-    CVMixToolGraphEntry *-- CGraphEditorState
     CVMixToolGraphEntry *-- CGraphPreviewList
+    CVMixToolGraphEntry *-- CGraphEditorState
 ```

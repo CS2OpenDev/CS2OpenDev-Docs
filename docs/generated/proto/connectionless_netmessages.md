@@ -5,7 +5,7 @@ proto: connectionless_netmessages.proto
 
 # `connectionless_netmessages.proto`
 
-**Imports:** [`netmessages.proto`](netmessages.md)
+**Imports:** [`netmessages.proto`](netmessages.md), [`networkbasetypes.proto`](networkbasetypes.md)
 
 ## Diagram
 

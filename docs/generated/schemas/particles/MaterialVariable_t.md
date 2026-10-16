@@ -8,7 +8,7 @@ kind: class
 
 # MaterialVariable_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** 8 · **Module:** particles
 
@@ -26,7 +26,7 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_strVariable` | CUtlString |  | `MPropertyFriendlyName material variable` |
-| `0x8` | `m_nVariableField` | [ParticleAttributeIndex_t](../particles/ParticleAttributeIndex_t.md) |  | `MPropertyAttributeChoiceName particlefield` `MPropertyFriendlyName particle field` |
+| `0x8` | `m_nVariableField` | [ParticleAttributeIndex_t](../particleslib/ParticleAttributeIndex_t.md) |  | `MPropertyAttributeChoiceName particlefield` `MPropertyFriendlyName particle field` |
 | `0xc` | `m_flScale` | float32 |  | `MPropertyFriendlyName scale` |
 
 <details><summary>KV3 class defaults</summary>

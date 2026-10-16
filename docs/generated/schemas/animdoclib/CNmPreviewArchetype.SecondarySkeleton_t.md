@@ -8,7 +8,7 @@ kind: class
 
 # CNmPreviewArchetype::SecondarySkeleton_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 32 bytes (`0x20`) · **Align:** 8 · **Module:** animdoclib
 
@@ -21,7 +21,7 @@ kind: class
 | `0x0` | `m_skeleton` | CUtlString |  | `MPropertyAttributeEditor AssetBrowse( vnmskel, *requiredoubleclick )` |
 | `0x8` | `m_previewModel` | CUtlString |  | `MPropertyAttributeEditor AssetBrowse( vmdl, *requiredoubleclick )` |
 | `0x10` | `m_bodyPartChoiceName` | CUtlString |  |  |
-| `0x18` | `m_attachToBoneName` | CUtlString |  |  |
+| `0x18` | `m_attachToBoneName` | CUtlString |  | `MPropertyFriendlyName Attach to Bone/Attachment` |
 
 <details><summary>KV3 class defaults</summary>
 

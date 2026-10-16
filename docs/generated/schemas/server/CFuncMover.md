@@ -8,9 +8,9 @@ kind: class
 
 # CFuncMover
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 2608 bytes (`0xa30`) · **Align:** 16 · **Module:** server
+**Kind:** class · **Size:** 2880 bytes (`0xb40`) · **Align:** 16 · **Module:** server
 
 **Inherits from:** [CBaseModelEntity](../server/CBaseModelEntity.md)
 
@@ -35,7 +35,7 @@ classDiagram
 
 ## Memory layout
 
-226 fields (98 declared here, 128 inherited). Offsets are absolute from the object base.
+238 fields (107 declared here, 131 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -155,7 +155,8 @@ classDiagram
 | `0x570` | `m_clrRender` | Color | [CBaseModelEntity](../server/CBaseModelEntity.md) | RGBA tint colour multiplied onto the entity's diffuse texture. |
 | `0x578` | `m_vecRenderAttributes` | CUtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../server/EntityRenderAttribute_t.md) > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e0` | `m_bRenderToCubemaps` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x5e1` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e1` | `m_bExpandRenderBoundsToIncludeCloth` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e2` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e8` | `m_Collision` | [CCollisionProperty](../server/CCollisionProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CCollisionProperty struct encoding the entity's collision bounding box shape and flags. |
 | `0x6a0` | `m_Glow` | [CGlowProperty](../server/CGlowProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CGlowProperty struct controlling the entity's glow outline (colour, radius, visibility rules). |
 | `0x6f8` | `m_flGlowBackfaceMult` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Multiplier for the glow effect on back-facing surfaces of the model. |
@@ -164,104 +165,115 @@ classDiagram
 | `0x704` | `m_flFadeScale` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Scale factor applied to fade distances; 0 disables distance fading. |
 | `0x708` | `m_flShadowStrength` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Opacity of this entity's cast shadow (0 = no shadow, 1 = full shadow). |
 | `0x70c` | `m_nObjectCulling` | uint8 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x710` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x738` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
-| `0x768` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
-| `0x770` | `m_iszPathName` | CUtlSymbolLarge |  |  |
-| `0x778` | `m_hPathMover` | CHandle< [CPathMover](../server/CPathMover.md) > |  |  |
-| `0x77c` | `m_hPrevPathMover` | CHandle< [CPathMover](../server/CPathMover.md) > |  |  |
-| `0x780` | `m_iszPathNodeStart` | CUtlSymbolLarge |  |  |
-| `0x788` | `m_iszPathNodeEnd` | CUtlSymbolLarge |  |  |
-| `0x790` | `m_bIgnoreEndNode` | bool |  |  |
-| `0x794` | `m_eMoveType` | [CFuncMover::Move_t](../server/CFuncMover.Move_t.md) |  |  |
-| `0x798` | `m_bIsReversing` | bool |  |  |
-| `0x79c` | `m_flStartSpeed` | float32 |  |  |
-| `0x7a0` | `m_flPathLocation` | float32 |  |  |
-| `0x7a4` | `m_flT` | float32 |  |  |
-| `0x7a8` | `m_nCurrentNodeIndex` | int32 |  |  |
-| `0x7ac` | `m_nPreviousNodeIndex` | int32 |  |  |
-| `0x7b0` | `m_eSolidType` | [SolidType_t](../server/SolidType_t.md) |  |  |
-| `0x7b1` | `m_bIsMoving` | bool |  |  |
-| `0x7b4` | `m_flTimeToReachMaxSpeed` | float32 |  |  |
-| `0x7b8` | `m_flDistanceToReachMaxSpeed` | float32 |  |  |
-| `0x7bc` | `m_flTimeToReachZeroSpeed` | float32 |  |  |
-| `0x7c0` | `m_flComputedDistanceToReachMaxSpeed` | float32 |  |  |
-| `0x7c4` | `m_flComputedDistanceToReachZeroSpeed` | float32 |  |  |
-| `0x7c8` | `m_flStartCurveScale` | float32 |  |  |
-| `0x7cc` | `m_flStopCurveScale` | float32 |  |  |
-| `0x7d0` | `m_flDistanceToReachZeroSpeed` | float32 |  |  |
-| `0x7d4` | `m_flTimeMovementStart` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0x7d8` | `m_flTimeMovementStop` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0x7dc` | `m_hStopAtNode` | CHandle< [CMoverPathNode](../server/CMoverPathNode.md) > |  |  |
-| `0x7e0` | `m_flPathLocationToBeginStop` | float32 |  |  |
-| `0x7e4` | `m_flPathLocationStart` | float32 |  |  |
-| `0x7e8` | `m_flBeginStopT` | float32 |  |  |
-| `0x7f0` | `m_iszStartForwardSound` | CGameSoundEventName |  |  |
-| `0x7f8` | `m_iszLoopForwardSound` | CGameSoundEventName |  |  |
-| `0x800` | `m_iszStopForwardSound` | CGameSoundEventName |  |  |
-| `0x808` | `m_iszStartReverseSound` | CGameSoundEventName |  |  |
-| `0x810` | `m_iszLoopReverseSound` | CGameSoundEventName |  |  |
-| `0x818` | `m_iszStopReverseSound` | CGameSoundEventName |  |  |
-| `0x820` | `m_iszArriveAtDestinationSound` | CGameSoundEventName |  |  |
-| `0x840` | `m_OnMovementEnd` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
-| `0x858` | `m_bStartAtClosestPoint` | bool |  |  |
-| `0x859` | `m_bStartAtEnd` | bool |  |  |
-| `0x85a` | `m_bStartFollowingClosestMover` | bool |  |  |
-| `0x85c` | `m_eOrientationUpdate` | [CFuncMover::OrientationUpdate_t](../server/CFuncMover.OrientationUpdate_t.md) |  |  |
-| `0x860` | `m_flTimeStartOrientationChange` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0x864` | `m_flTimeToBlendToNewOrientation` | float32 |  |  |
-| `0x868` | `m_flDurationBlendToNewOrientationRan` | float32 |  |  |
-| `0x86c` | `m_bCreateMovableNavMesh` | bool |  |  |
-| `0x86d` | `m_bCreateMovableSurfaceGraph` | bool |  |  |
-| `0x86e` | `m_bAllowMovableNavMeshDockingOnEntireEntity` | bool |  |  |
-| `0x870` | `m_OnNodePassed` | CEntityOutputTemplate< CUtlString > |  |  |
-| `0x890` | `m_iszOrientationMatchEntityName` | CUtlSymbolLarge |  |  |
-| `0x898` | `m_hOrientationMatchEntity` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
-| `0x89c` | `m_flTimeToTraverseToNextNode` | float32 |  |  |
-| `0x8a0` | `m_vLerpToNewPosStartInPathEntitySpace` | Vector |  |  |
-| `0x8ac` | `m_vLerpToNewPosEndInPathEntitySpace` | Vector |  |  |
-| `0x8b8` | `m_flLerpToPositionT` | float32 |  |  |
-| `0x8bc` | `m_flLerpToPositionDeltaT` | float32 |  |  |
-| `0x8c0` | `m_OnLerpToPositionComplete` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
-| `0x8d8` | `m_bIsPaused` | bool |  |  |
-| `0x8dc` | `m_eTransitionedToPathNodeAction` | [CFuncMover::TransitionToPathNodeAction_t](../server/CFuncMover.TransitionToPathNodeAction_t.md) |  |  |
-| `0x8e0` | `m_qTransitionSourceOrientation` | Quaternion |  |  |
-| `0x8f0` | `m_nDelayedTeleportToNode` | int32 |  |  |
-| `0x8f4` | `m_bIsImGuiLogging` | bool |  |  |
-| `0x8f5` | `m_bIsImGuiEntTextLogging` | bool |  |  |
-| `0x8f8` | `m_flSpeed` | float32 |  |  |
-| `0x8fc` | `m_hFollowEntity` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
-| `0x900` | `m_flFollowDistance` | float32 |  |  |
-| `0x904` | `m_flFollowMinimumSpeed` | float32 |  |  |
-| `0x908` | `m_flCurFollowEntityT` | float32 |  |  |
-| `0x90c` | `m_flCurFollowSpeed` | float32 |  |  |
-| `0x910` | `m_strOrientationFaceEntityName` | CUtlSymbolLarge |  |  |
-| `0x918` | `m_hOrientationFaceEntity` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
-| `0x920` | `m_OnStart` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
-| `0x938` | `m_OnStartForward` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
-| `0x950` | `m_OnStartReverse` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
-| `0x968` | `m_OnStop` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
-| `0x980` | `m_OnStopped` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
-| `0x998` | `m_bNextNodeReturnsCurrent` | bool |  |  |
-| `0x999` | `m_bStartedMoving` | bool |  |  |
-| `0x9b8` | `m_eFollowEntityDirection` | [CFuncMover::FollowEntityDirection_t](../server/CFuncMover.FollowEntityDirection_t.md) |  |  |
-| `0x9bc` | `m_hFollowMover` | CHandle< [CFuncMover](../server/CFuncMover.md) > |  |  |
-| `0x9c0` | `m_iszFollowEntityName` | CUtlSymbolLarge |  |  |
-| `0x9c8` | `m_iszFollowMoverEntityName` | CUtlSymbolLarge |  |  |
-| `0x9d0` | `m_flFollowMoverDistance` | float32 |  |  |
-| `0x9d4` | `m_flFollowMoverRatio` | float32 |  |  |
-| `0x9d8` | `m_flFollowMoverCalculatedDistance` | float32 |  |  |
-| `0x9dc` | `m_flFollowMoverSpringStrength` | float32 |  |  |
-| `0x9e0` | `m_nFollowMoverConstraintPriority` | int32 |  |  |
-| `0x9e4` | `m_vecFollowMoverCouplerRange` | Vector2D |  |  |
-| `0x9ec` | `m_bFollowConstraintsInitialized` | bool |  |  |
-| `0x9f0` | `m_eFollowConstraint` | [CFuncMover::FollowConstraint_t](../server/CFuncMover.FollowConstraint_t.md) |  |  |
-| `0x9f4` | `m_flFollowMoverSpeed` | float32 |  |  |
-| `0x9f8` | `m_flFollowMoverVelocity` | float32 |  |  |
-| `0x9fc` | `m_nTickMovementRan` | [GameTick_t](../entity2/GameTick_t.md) |  |  |
-| `0xa00` | `m_movementSummary` | [FuncMoverMovementSummary_t](../server/FuncMoverMovementSummary_t.md) |  |  |
-| `0xa20` | `m_bStopFromBeginStopTarget` | bool |  |  |
-| `0xa21` | `m_bQueueStop` | bool |  |  |
-| `0xa22` | `m_bQueueStopMoving` | bool |  |  |
-| `0xa23` | `m_bQueueSetupPathMover` | bool |  |  |
-| `0xa24` | `m_ePathRebuildStrategy` | [CFuncMover::PathRebuildStrategy_t](../server/CFuncMover.PathRebuildStrategy_t.md) |  |  |
+| `0x710` | `m_bodyGroupTotalRequestCount` | uint32 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x718` | `m_bodyGroupRequests` | CUtlVectorFixedGrowable< [CBaseModelEntity::BodyGroupRequest_t](../server/CBaseModelEntity.BodyGroupRequest_t.md), 8 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x7f0` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x818` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
+| `0x848` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
+| `0x850` | `m_iszPathName` | CUtlSymbolLarge |  |  |
+| `0x858` | `m_hPathMover` | CHandle< [CPathMover](../server/CPathMover.md) > |  |  |
+| `0x85c` | `m_hPrevPathMover` | CHandle< [CPathMover](../server/CPathMover.md) > |  |  |
+| `0x860` | `m_iszPathNodeStart` | CUtlSymbolLarge |  |  |
+| `0x868` | `m_iszPathNodeEnd` | CUtlSymbolLarge |  |  |
+| `0x870` | `m_bIgnoreEndNode` | bool |  |  |
+| `0x874` | `m_eMoveType` | [CFuncMover::Move_t](../server/CFuncMover.Move_t.md) |  |  |
+| `0x878` | `m_bIsReversing` | bool |  |  |
+| `0x87c` | `m_flStartSpeed` | float32 |  |  |
+| `0x880` | `m_flPathLocation` | float32 |  |  |
+| `0x884` | `m_flT` | float32 |  |  |
+| `0x888` | `m_nCurrentNodeIndex` | int32 |  |  |
+| `0x88c` | `m_nPreviousNodeIndex` | int32 |  |  |
+| `0x890` | `m_eSolidType` | [SolidType_t](../server/SolidType_t.md) |  |  |
+| `0x891` | `m_bIsMoving` | bool |  |  |
+| `0x894` | `m_flTimeToReachMaxSpeed` | float32 |  |  |
+| `0x898` | `m_flDistanceToReachMaxSpeed` | float32 |  |  |
+| `0x89c` | `m_flTimeToReachZeroSpeed` | float32 |  |  |
+| `0x8a0` | `m_flComputedDistanceToReachMaxSpeed` | float32 |  |  |
+| `0x8a4` | `m_flComputedDistanceToReachZeroSpeed` | float32 |  |  |
+| `0x8a8` | `m_flStartCurveScale` | float32 |  |  |
+| `0x8ac` | `m_flStopCurveScale` | float32 |  |  |
+| `0x8b0` | `m_flDistanceToReachZeroSpeed` | float32 |  |  |
+| `0x8b4` | `m_flTimeMovementStart` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0x8b8` | `m_flTimeMovementStop` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0x8bc` | `m_hStopAtNode` | CHandle< [CMoverPathNode](../server/CMoverPathNode.md) > |  |  |
+| `0x8c0` | `m_flPathLocationToBeginStop` | float32 |  |  |
+| `0x8c4` | `m_flPathLocationStart` | float32 |  |  |
+| `0x8c8` | `m_flBeginStopT` | float32 |  |  |
+| `0x8d0` | `m_iszStartForwardSound` | CGameSoundEventName |  |  |
+| `0x8d8` | `m_iszLoopForwardSound` | CGameSoundEventName |  |  |
+| `0x8e0` | `m_iszStopForwardSound` | CGameSoundEventName |  |  |
+| `0x8e8` | `m_iszStartReverseSound` | CGameSoundEventName |  |  |
+| `0x8f0` | `m_iszLoopReverseSound` | CGameSoundEventName |  |  |
+| `0x8f8` | `m_iszStopReverseSound` | CGameSoundEventName |  |  |
+| `0x900` | `m_iszArriveAtDestinationSound` | CGameSoundEventName |  |  |
+| `0x920` | `m_OnMovementEnd` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
+| `0x938` | `m_bStartAtClosestPoint` | bool |  |  |
+| `0x939` | `m_bStartAtEnd` | bool |  |  |
+| `0x93a` | `m_bStartFollowingClosestMover` | bool |  |  |
+| `0x93c` | `m_flStartFollowingClosestMoverWhenWithinDistance` | float32 |  |  |
+| `0x940` | `m_flStartFollowingClosestMoverWhenOutsideDistance` | float32 |  |  |
+| `0x944` | `m_eOrientationUpdate` | [CFuncMover::OrientationUpdate_t](../server/CFuncMover.OrientationUpdate_t.md) |  |  |
+| `0x948` | `m_flTimeStartOrientationChange` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0x94c` | `m_flTimeToBlendToNewOrientation` | float32 |  |  |
+| `0x950` | `m_flDurationBlendToNewOrientationRan` | float32 |  |  |
+| `0x954` | `m_bCreateMovableNavMesh` | bool |  |  |
+| `0x955` | `m_bCreateMovableSurfaceGraph` | bool |  |  |
+| `0x956` | `m_bAllowMovableNavMeshDockingOnEntireEntity` | bool |  |  |
+| `0x958` | `m_OnNodePassed` | CEntityOutputTemplate< CUtlString > |  |  |
+| `0x978` | `m_iszOrientationMatchEntityName` | CUtlSymbolLarge |  |  |
+| `0x980` | `m_hOrientationMatchEntity` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
+| `0x984` | `m_vLerpToNewPosStartWS` | VectorWS |  |  |
+| `0x990` | `m_flLerpToPositionTargetT` | float32 |  |  |
+| `0x994` | `m_flLerpToPositionT` | float32 |  |  |
+| `0x998` | `m_flLerpToPositionDeltaT` | float32 |  |  |
+| `0x99c` | `m_hTransitionSourcePath` | CHandle< [CPathMover](../server/CPathMover.md) > |  |  |
+| `0x9a0` | `m_flTransitionSourceT` | float32 |  |  |
+| `0x9a4` | `m_flTransitionSourcePathLocation` | float32 |  |  |
+| `0x9a8` | `m_iszTransitionSourcePathNodeStart` | CUtlSymbolLarge |  |  |
+| `0x9b0` | `m_bStoppedDuringTransition` | bool |  |  |
+| `0x9b8` | `m_OnLerpToPositionComplete` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
+| `0x9d0` | `m_bIsPaused` | bool |  |  |
+| `0x9d4` | `m_eTransitionedToPathNodeAction` | [CFuncMover::TransitionToPathNodeAction_t](../server/CFuncMover.TransitionToPathNodeAction_t.md) |  |  |
+| `0x9e0` | `m_qTransitionSourceOrientation` | Quaternion |  |  |
+| `0x9f0` | `m_nDelayedTeleportToNode` | int32 |  |  |
+| `0x9f4` | `m_bIsImGuiLogging` | bool |  |  |
+| `0x9f5` | `m_bIsImGuiEntTextLogging` | bool |  |  |
+| `0x9f8` | `m_flSpeed` | float32 |  |  |
+| `0x9fc` | `m_hFollowEntity` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
+| `0xa00` | `m_flFollowDistance` | float32 |  |  |
+| `0xa04` | `m_flFollowMinimumSpeed` | float32 |  |  |
+| `0xa08` | `m_flCurFollowEntityT` | float32 |  |  |
+| `0xa0c` | `m_flCurFollowSpeed` | float32 |  |  |
+| `0xa10` | `m_strOrientationFaceEntityName` | CUtlSymbolLarge |  |  |
+| `0xa18` | `m_hOrientationFaceEntity` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
+| `0xa20` | `m_OnStart` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
+| `0xa38` | `m_OnStartForward` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
+| `0xa50` | `m_OnStartReverse` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
+| `0xa68` | `m_OnStop` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
+| `0xa80` | `m_OnStopped` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
+| `0xa98` | `m_bNextNodeReturnsCurrent` | bool |  |  |
+| `0xa99` | `m_bStartedMoving` | bool |  |  |
+| `0xab8` | `m_eFollowEntityDirection` | [CFuncMover::FollowEntityDirection_t](../server/CFuncMover.FollowEntityDirection_t.md) |  |  |
+| `0xabc` | `m_hFollowMover` | CHandle< [CFuncMover](../server/CFuncMover.md) > |  |  |
+| `0xac0` | `m_iszFollowEntityName` | CUtlSymbolLarge |  |  |
+| `0xac8` | `m_iszFollowMoverEntityName` | CUtlSymbolLarge |  |  |
+| `0xad0` | `m_flFollowMoverDistance` | float32 |  |  |
+| `0xad4` | `m_flFollowMoverRatio` | float32 |  |  |
+| `0xad8` | `m_flFollowMoverCalculatedDistance` | float32 |  |  |
+| `0xadc` | `m_flFollowMoverSpringStrength` | float32 |  |  |
+| `0xae0` | `m_nFollowMoverConstraintPriority` | int32 |  |  |
+| `0xae4` | `m_vecFollowMoverCouplerRange` | Vector2D |  |  |
+| `0xaec` | `m_bFollowConstraintsInitialized` | bool |  |  |
+| `0xaf0` | `m_eFollowConstraint` | [CFuncMover::FollowConstraint_t](../server/CFuncMover.FollowConstraint_t.md) |  |  |
+| `0xaf4` | `m_flFollowMoverSpeed` | float32 |  |  |
+| `0xaf8` | `m_flFollowMoverVelocity` | float32 |  |  |
+| `0xafc` | `m_nTickMovementRan` | [GameTick_t](../entity2/GameTick_t.md) |  |  |
+| `0xb00` | `m_movementSummary` | [FuncMoverMovementSummary_t](../server/FuncMoverMovementSummary_t.md) |  |  |
+| `0xb20` | `m_bStopFromBeginStopTarget` | bool |  |  |
+| `0xb21` | `m_bQueueStop` | bool |  |  |
+| `0xb22` | `m_bQueueStopMoving` | bool |  |  |
+| `0xb23` | `m_bQueueSetupPathMover` | bool |  |  |
+| `0xb24` | `m_ePathRebuildStrategy` | [CFuncMover::PathRebuildStrategy_t](../server/CFuncMover.PathRebuildStrategy_t.md) |  |  |
+| `0xb28` | `m_eFindFollowMoverStrategy` | [CFuncMover::FindFollowMoverStrategy_t](../server/CFuncMover.FindFollowMoverStrategy_t.md) |  |  |
+| `0xb2c` | `m_bDisableDecelerationToStop` | bool |  |  |
+| `0xb30` | `m_vOffsetFromPath` | Vector |  |  |

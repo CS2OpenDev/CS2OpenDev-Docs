@@ -8,9 +8,9 @@ kind: class
 
 # CToolSceneLightRig
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 360 bytes (`0x168`) · **Align:** 8 · **Module:** toolscene
+**Kind:** class · **Size:** 368 bytes (`0x170`) · **Align:** 8 · **Module:** toolscene
 
 **Metadata:** `MVDataAssociatedFile toolscenelightrigs.vdata`, `MVDataRoot`
 
@@ -41,11 +41,11 @@ classDiagram
 | `0x28` | `m_PointLights` | CUtlVector< [CLightRigPointLight](../toolscene/CLightRigPointLight.md) > |  |  |
 | `0x40` | `m_SpotLights` | CUtlVector< [CLightRigSpotLight](../toolscene/CLightRigSpotLight.md) > |  |  |
 | `0x58` | `m_Background` | [CLightRigBackground](../toolscene/CLightRigBackground.md) |  |  |
-| `0x5d` | `m_Grid` | [CLightRigGrid](../toolscene/CLightRigGrid.md) |  |  |
-| `0x64` | `m_Exposure` | [CLightRigExposure](../toolscene/CLightRigExposure.md) |  |  |
-| `0x70` | `m_PostProcessing` | [CLightRigPostProcessing](../toolscene/CLightRigPostProcessing.md) |  |  |
-| `0x78` | `m_Sky` | [CLightRigSky](../toolscene/CLightRigSky.md) |  |  |
-| `0x80` | `m_BackgroundMap` | [CLightRigVMap](../toolscene/CLightRigVMap.md) |  |  |
+| `0x60` | `m_Grid` | [CLightRigGrid](../toolscene/CLightRigGrid.md) |  |  |
+| `0x68` | `m_Exposure` | [CLightRigExposure](../toolscene/CLightRigExposure.md) |  |  |
+| `0x78` | `m_PostProcessing` | [CLightRigPostProcessing](../toolscene/CLightRigPostProcessing.md) |  |  |
+| `0x80` | `m_Sky` | [CLightRigSky](../toolscene/CLightRigSky.md) |  |  |
+| `0x88` | `m_BackgroundMap` | [CLightRigVMap](../toolscene/CLightRigVMap.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

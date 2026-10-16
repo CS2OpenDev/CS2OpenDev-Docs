@@ -8,13 +8,13 @@ kind: class
 
 # CCSPlayerPawn
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 The physical in-world representation of a CS2 player.  Carries per-round state: health, armor, position, animations, and weapon inventory.  A new CCSPlayerPawn is created each round on (re)spawn; the corresponding CCSPlayerController persists across rounds.
 
 > 📝 Source 2 architecture separates the controller (session/connection state) from the pawn (physics/animation state).  Demo parsers must follow m_hController → CCSPlayerController to resolve name, team, and stats.
 
-**Kind:** class · **Size:** 4992 bytes (`0x1380`) · **Align:** 16 · **Module:** server
+**Kind:** class · **Size:** 5568 bytes (`0x15c0`) · **Align:** 16 · **Module:** server
 
 **Inherits from:** [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md)
 
@@ -41,7 +41,7 @@ classDiagram
 
 ## Memory layout
 
-298 fields (105 declared here, 193 inherited). Offsets are absolute from the object base.
+303 fields (106 declared here, 197 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -161,7 +161,8 @@ classDiagram
 | `0x570` | `m_clrRender` | Color | [CBaseModelEntity](../server/CBaseModelEntity.md) | RGBA tint colour multiplied onto the entity's diffuse texture. |
 | `0x578` | `m_vecRenderAttributes` | CUtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../server/EntityRenderAttribute_t.md) > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e0` | `m_bRenderToCubemaps` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x5e1` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e1` | `m_bExpandRenderBoundsToIncludeCloth` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e2` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e8` | `m_Collision` | [CCollisionProperty](../server/CCollisionProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CCollisionProperty struct encoding the entity's collision bounding box shape and flags. |
 | `0x6a0` | `m_Glow` | [CGlowProperty](../server/CGlowProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CGlowProperty struct controlling the entity's glow outline (colour, radius, visibility rules). |
 | `0x6f8` | `m_flGlowBackfaceMult` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Multiplier for the glow effect on back-facing surfaces of the model. |
@@ -170,176 +171,180 @@ classDiagram
 | `0x704` | `m_flFadeScale` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Scale factor applied to fade distances; 0 disables distance fading. |
 | `0x708` | `m_flShadowStrength` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Opacity of this entity's cast shadow (0 = no shadow, 1 = full shadow). |
 | `0x70c` | `m_nObjectCulling` | uint8 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x710` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x738` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
-| `0x768` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
-| `0x770` | `m_graphControllerManager` | [CAnimGraphControllerManager](../server/CAnimGraphControllerManager.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x808` | `m_pMainGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | The primary animation-graph controller instance for this entity. |
-| `0x810` | `m_bInitiallyPopulateInterpHistory` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x818` | `m_OnLayerCycleUpdated` | CEntityOutputTemplate< float32 > | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x838` | `m_OnExternalChoreoGraphChanged` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x850` | `m_pChoreoServices` | [IChoreoServices](../server/IChoreoServices.md)* | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MKV3TransferSaveOpsForField GetChoreoServicesSaveRestoreOps` |
-| `0x858` | `m_bAnimGraphUpdateEnabled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x859` | `m_bAnimationUpdateScheduled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x85c` | `m_vecForce` | Vector | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x868` | `m_nForceBone` | int32 | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x878` | `m_pRagdollControl` | [IPhysicsRagdollControl](../vphysics2/IPhysicsRagdollControl.md)* | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MPhysPtr` |
-| `0x880` | `m_RagdollPose` | [PhysicsRagdollPose_t](../server/PhysicsRagdollPose_t.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x8a8` | `m_bRagdollEnabled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | True while the entity is simulated as a ragdoll rather than animated. |
-| `0x8a9` | `m_bRagdollClientSide` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x8b0` | `m_xParentedRagdollRootInEntitySpace` | CTransform | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x960` | `m_bForceServerRagdoll` | bool | [CBaseCombatCharacter](../server/CBaseCombatCharacter.md) |  |
-| `0x968` | `m_hMyWearables` | CNetworkUtlVectorBase< CHandle< [CEconWearable](../server/CEconWearable.md) > > | [CBaseCombatCharacter](../server/CBaseCombatCharacter.md) | Handles to the character's equipped wearable items (gloves, agent model pieces). `MNotSaved` |
-| `0x980` | `m_impactEnergyScale` | float32 | [CBaseCombatCharacter](../server/CBaseCombatCharacter.md) | Scale applied to impact-damage energy for this character. |
-| `0x984` | `m_bApplyStressDamage` | bool | [CBaseCombatCharacter](../server/CBaseCombatCharacter.md) |  |
-| `0x985` | `m_bDeathEventsDispatched` | bool | [CBaseCombatCharacter](../server/CBaseCombatCharacter.md) |  |
-| `0x9c8` | `m_vecRelationships` | CUtlVector< [RelationshipOverride_t](../server/RelationshipOverride_t.md) > | [CBaseCombatCharacter](../server/CBaseCombatCharacter.md) |  |
-| `0x9e0` | `m_strRelationships` | CUtlSymbolLarge | [CBaseCombatCharacter](../server/CBaseCombatCharacter.md) |  |
-| `0x9e8` | `m_eHull` | [Hull_t](../server/Hull_t.md) | [CBaseCombatCharacter](../server/CBaseCombatCharacter.md) |  |
-| `0x9ec` | `m_nNavHullIdx` | uint32 | [CBaseCombatCharacter](../server/CBaseCombatCharacter.md) |  |
-| `0x9f0` | `m_movementStats` | [CMovementStatsProperty](../server/CMovementStatsProperty.md) | [CBaseCombatCharacter](../server/CBaseCombatCharacter.md) |  |
-| `0xa30` | `m_pWeaponServices` | [CPlayer_WeaponServices](../server/CPlayer_WeaponServices.md)* | [CBasePlayerPawn](../server/CBasePlayerPawn.md) | Weapon-handling component (active weapon, switch timing). |
-| `0xa38` | `m_pItemServices` | [CPlayer_ItemServices](../server/CPlayer_ItemServices.md)* | [CBasePlayerPawn](../server/CBasePlayerPawn.md) | Carried-item component (defuser, helmet). |
-| `0xa40` | `m_pAutoaimServices` | [CPlayer_AutoaimServices](../server/CPlayer_AutoaimServices.md)* | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
-| `0xa48` | `m_pObserverServices` | [CPlayer_ObserverServices](../server/CPlayer_ObserverServices.md)* | [CBasePlayerPawn](../server/CBasePlayerPawn.md) | Spectator component, active while the pawn is dead or observing. |
-| `0xa50` | `m_pWaterServices` | [CPlayer_WaterServices](../server/CPlayer_WaterServices.md)* | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
-| `0xa58` | `m_pUseServices` | [CPlayer_UseServices](../server/CPlayer_UseServices.md)* | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
-| `0xa60` | `m_pFlashlightServices` | [CPlayer_FlashlightServices](../server/CPlayer_FlashlightServices.md)* | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
-| `0xa68` | `m_pCameraServices` | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md)* | [CBasePlayerPawn](../server/CBasePlayerPawn.md) | View / camera component. |
-| `0xa70` | `m_pMovementServices` | [CPlayer_MovementServices](../server/CPlayer_MovementServices.md)* | [CBasePlayerPawn](../server/CBasePlayerPawn.md) | Movement / input component. |
-| `0xa80` | `m_ServerViewAngleChanges` | CUtlVectorEmbeddedNetworkVar< [ViewAngleServerChange_t](../server/ViewAngleServerChange_t.md) > | [CBasePlayerPawn](../server/CBasePlayerPawn.md) | `MNotSaved` |
-| `0xae8` | `v_angle` | QAngle | [CBasePlayerPawn](../server/CBasePlayerPawn.md) | Current view (eye) angles of the pawn. |
-| `0xaf4` | `v_anglePrevious` | QAngle | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
-| `0xb00` | `m_iHideHUD` | uint32 | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
-| `0xb08` | `m_skybox3d` | sky3dparams_t | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
-| `0xb98` | `m_fTimeLastHurt` | [GameTime_t](../entity2/GameTime_t.md) | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
-| `0xb9c` | `m_flDeathTime` | [GameTime_t](../entity2/GameTime_t.md) | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
-| `0xba0` | `m_fNextSuicideTime` | [GameTime_t](../entity2/GameTime_t.md) | [CBasePlayerPawn](../server/CBasePlayerPawn.md) | `MNotSaved` |
-| `0xba4` | `m_fInitHUD` | bool | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
-| `0xba8` | `m_pExpresser` | [CAI_Expresser](../server/CAI_Expresser.md)* | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
-| `0xbb0` | `m_hController` | CHandle< [CBasePlayerController](../server/CBasePlayerController.md) > | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
-| `0xbb4` | `m_hDefaultController` | CHandle< [CBasePlayerController](../server/CBasePlayerController.md) > | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
-| `0xbbc` | `m_fHltvReplayDelay` | float32 | [CBasePlayerPawn](../server/CBasePlayerPawn.md) | `MNotSaved` |
-| `0xbc0` | `m_fHltvReplayEnd` | float32 | [CBasePlayerPawn](../server/CBasePlayerPawn.md) | `MNotSaved` |
-| `0xbc4` | `m_iHltvReplayEntity` | CEntityIndex | [CBasePlayerPawn](../server/CBasePlayerPawn.md) | `MNotSaved` |
-| `0xbc8` | `m_sndOpvarLatchData` | CUtlVector< sndopvarlatchdata_t > | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
-| `0xbf0` | `m_CTouchExpansionComponent` | [CTouchExpansionComponent](../server/CTouchExpansionComponent.md) | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) |  |
-| `0xc40` | `m_pPingServices` | [CCSPlayer_PingServices](../server/CCSPlayer_PingServices.md)* | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) | Pointer to CCSPlayer_PingServices managing the in-game map-ping system. |
-| `0xc48` | `m_blindUntilTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) |  |
-| `0xc4c` | `m_blindStartTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) |  |
-| `0xc50` | `m_iPlayerState` | [CSPlayerState](../server/CSPlayerState.md) | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) | CSPlayerState enum: STATE_ACTIVE = 0 (alive), STATE_WELCOME = 1, STATE_PICKINGTEAM = 2, STATE_PICKINGCLASS = 3, STATE_DEATH_ANIM = 4, STATE_DEATH_WAIT_FOR_KEY = 5, STATE_OBSERVER_MODE = 6. |
-| `0xd00` | `m_bRespawning` | bool | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) |  |
-| `0xd01` | `m_bHasMovedSinceSpawn` | bool | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) | True once the player moves after spawning; prevents accidental movement-triggered events. |
-| `0xd04` | `m_iNumSpawns` | int32 | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) |  |
-| `0xd0c` | `m_flIdleTimeSinceLastAction` | float32 | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) |  |
-| `0xd10` | `m_fNextRadarUpdateTime` | float32 | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) |  |
-| `0xd14` | `m_flFlashDuration` | float32 | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) | Total duration in seconds of the current flash-bang blind effect (0 when not flashed). |
-| `0xd18` | `m_flFlashMaxAlpha` | float32 | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) | Peak screen-overlay alpha (0–255) of the current flash bang; scales with proximity and facing angle. |
-| `0xd1c` | `m_flProgressBarStartTime` | float32 | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) | GameTime at which the current progress bar (defuse/pickup) started. |
-| `0xd20` | `m_iProgressBarDuration` | int32 | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) | Duration in seconds of the current progress bar interaction. |
-| `0xd24` | `m_hOriginalController` | CHandle< [CCSPlayerController](../server/CCSPlayerController.md) > | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) | CHandle back to the CCSPlayerController that owns this pawn, even when a bot has taken over. *Use this to map a pawn to its player for demo parsing.* |
-| `0xd38` | `m_pBulletServices` | [CCSPlayer_BulletServices](../server/CCSPlayer_BulletServices.md)* |  | Pointer to CCSPlayer_BulletServices which tracks hit counts registered on the server. |
-| `0xd40` | `m_pHostageServices` | [CCSPlayer_HostageServices](../server/CCSPlayer_HostageServices.md)* |  | Pointer to CCSPlayer_HostageServices which tracks which hostage entity this player is currently carrying. |
-| `0xd48` | `m_pBuyServices` | [CCSPlayer_BuyServices](../server/CCSPlayer_BuyServices.md)* |  | Pointer to CCSPlayer_BuyServices which tracks sellback purchase history for the current round. |
-| `0xd50` | `m_pActionTrackingServices` | [CCSPlayer_ActionTrackingServices](../server/CCSPlayer_ActionTrackingServices.md)* |  | Pointer to CCSPlayer_ActionTrackingServices which tracks weapon purchases and rescue state for stats/scoring. |
-| `0xd58` | `m_pAimPunchServices` | [CCSPlayer_AimPunchServices](../server/CCSPlayer_AimPunchServices.md)* |  |  |
-| `0xd60` | `m_pRadioServices` | [CCSPlayer_RadioServices](../server/CCSPlayer_RadioServices.md)* |  |  |
-| `0xd68` | `m_pDamageReactServices` | [CCSPlayer_DamageReactServices](../server/CCSPlayer_DamageReactServices.md)* |  |  |
-| `0xd70` | `m_nCharacterDefIndex` | uint16 |  |  |
-| `0xd72` | `m_bHasFemaleVoice` | bool |  | True when the equipped agent skin uses a female voice pack. |
-| `0xd78` | `m_strVOPrefix` | CUtlString |  |  |
-| `0xd80` | `m_szLastPlaceName` | char[18] |  | Human-readable area/landmark name from the nav mesh where the player was last located (e.g. 'CTSpawn', 'BombsiteA'). |
-| `0xe70` | `m_bInHostageResetZone` | bool |  |  |
-| `0xe71` | `m_bInBuyZone` | bool |  | True while the player is standing inside a buy zone. |
-| `0xe78` | `m_TouchingBuyZones` | CUtlVector< CHandle< [CBaseEntity](../server/CBaseEntity.md) > > |  |  |
-| `0xe90` | `m_bWasInBuyZone` | bool |  |  |
-| `0xe91` | `m_bInHostageRescueZone` | bool |  | True while the player is inside a hostage rescue zone. |
-| `0xe92` | `m_bInBombZone` | bool |  | True while the player is standing inside a bomb-plant zone (bombsite trigger). *m_nWhichBombZone indicates which site (0 = not in any, 1 = A, 2 = B).* |
-| `0xe93` | `m_bWasInHostageRescueZone` | bool |  |  |
-| `0xe94` | `m_iRetakesOffering` | int32 |  | Retakes-mode offering index: which weapon/utility load-out this player was offered for the retake. |
-| `0xe98` | `m_iRetakesOfferingCard` | int32 |  | Card index the player selected in the retakes offering interface. |
-| `0xe9c` | `m_bRetakesHasDefuseKit` | bool |  | True when the retakes system has granted this player a defuse kit for the retake round. |
-| `0xe9d` | `m_bRetakesMVPLastRound` | bool |  | True if this player earned the retakes MVP award in the previous round. |
-| `0xea0` | `m_iRetakesMVPBoostItem` | int32 |  | Item definition index of the bonus item awarded to the retakes MVP. |
-| `0xea4` | `m_RetakesMVPBoostExtraUtility` | loadout_slot_t |  |  |
-| `0xea8` | `m_flHealthShotBoostExpirationTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime at which the health-shot (medshot) movement speed boost expires. |
-| `0xeac` | `m_flLandingTimeSeconds` | float32 |  |  |
-| `0xeb0` | `m_bIsBuyMenuOpen` | bool |  | True while the player's buy menu is open. |
-| `0xee8` | `m_lastLandTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0xeec` | `m_bOnGroundLastTick` | bool |  |  |
-| `0xef0` | `m_iPlayerLocked` | int32 |  |  |
-| `0xef8` | `m_flTimeOfLastInjury` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime of the most-recent damage event that reduced this player's health. |
-| `0xefc` | `m_flNextSprayDecalTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0xf00` | `m_bNextSprayDecalTimeExpedited` | bool |  |  |
-| `0xf04` | `m_nRagdollDamageBone` | int32 |  | Bone index of the last hit that caused a ragdoll impulse. |
-| `0xf08` | `m_vRagdollDamageForce` | Vector |  | World-space impulse vector applied to the ragdoll bone on death. |
-| `0xf14` | `m_szRagdollDamageWeaponName` | char[64] |  | Class name of the weapon that killed this player (used to select the correct death ragdoll). |
-| `0xf54` | `m_bRagdollDamageHeadshot` | bool |  | True if the fatal blow was a headshot, used to trigger headshot-specific ragdoll animation. |
-| `0xf58` | `m_vRagdollServerOrigin` | VectorWS |  | World-space position of the player's origin at the moment of death. |
-| `0xf68` | `m_EconGloves` | [CEconItemView](../server/CEconItemView.md) |  | CEconItemView describing the glove skin equipped on this player. |
-| `0x1210` | `m_nEconGlovesChanged` | uint8 |  | Incremented each time the glove loadout changes, so the client can refresh the glove model. |
-| `0x1214` | `m_qDeathEyeAngles` | QAngle |  | Eye angles at the moment of death, used to pose the ragdoll's head correctly. |
-| `0x1220` | `m_bLeftHanded` | bool |  | True when the player has switched the weapon to the left hand (cl_lefthand 1). |
-| `0x1224` | `m_fSwitchedHandednessTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime at which the player last toggled handedness (prevents rapid toggling). |
-| `0x1228` | `m_flViewmodelOffsetX` | float32 |  | Custom viewmodel X offset in world units (cl_viewmodel_offset_x). |
-| `0x122c` | `m_flViewmodelOffsetY` | float32 |  | Custom viewmodel Y offset in world units (cl_viewmodel_offset_y). |
-| `0x1230` | `m_flViewmodelOffsetZ` | float32 |  | Custom viewmodel Z offset in world units (cl_viewmodel_offset_z). |
-| `0x1234` | `m_flViewmodelFOV` | float32 |  | Custom viewmodel FOV in degrees (cl_viewmodel_fov; clamped to 60–68). |
-| `0x1238` | `m_bIsWalking` | bool |  | True while the player is in walk mode (shift-walk / cl_showpos = 1 walking). |
-| `0x123c` | `m_fLastGivenDefuserTime` | float32 |  |  |
-| `0x1240` | `m_fLastGivenBombTime` | float32 |  |  |
-| `0x1244` | `m_flDealtDamageToEnemyMostRecentTimestamp` | float32 |  |  |
-| `0x1248` | `m_iDisplayHistoryBits` | uint32 |  |  |
-| `0x124c` | `m_flLastAttackedTeammate` | float32 |  |  |
-| `0x1250` | `m_allowAutoFollowTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0x1254` | `m_bResetArmorNextSpawn` | bool |  |  |
-| `0x1258` | `m_nLastKillerIndex` | CEntityIndex |  | Entity index of the player or entity that last killed this pawn. |
-| `0x1260` | `m_entitySpottedState` | [EntitySpottedState_t](../server/EntitySpottedState_t.md) |  | EntitySpottedState_t struct tracking which players have spotted (ESP-radar dot) this entity. *See also m_bSpotted and the spotted bitmask used by the minimap.* |
-| `0x1278` | `m_nSpotRules` | int32 |  |  |
-| `0x127c` | `m_bIsScoped` | bool |  | True while the player is looking through a weapon scope. |
-| `0x127d` | `m_bResumeZoom` | bool |  | True when the scope should be re-engaged automatically after the next shot (AWP/SSG 08 bolt-action mechanic). |
-| `0x127e` | `m_bIsDefusing` | bool |  | True while the player is actively defusing the planted bomb. |
-| `0x127f` | `m_bIsGrabbingHostage` | bool |  | True while the player is picking up a hostage entity. |
-| `0x1280` | `m_iBlockingUseActionInProgress` | [CSPlayerBlockingUseAction_t](../server/CSPlayerBlockingUseAction_t.md) |  | CSPlayerBlockingUseAction_t enum indicating a use-action in progress that blocks other actions (e.g. defuse, hostage grab). |
-| `0x1284` | `m_flEmitSoundTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime of the next footstep sound emission; controls footstep sound spacing. |
-| `0x1288` | `m_bInNoDefuseArea` | bool |  | True when the player is in a location where defusing is not permitted. |
-| `0x128c` | `m_iBombSiteIndex` | CEntityIndex |  |  |
-| `0x1290` | `m_nWhichBombZone` | int32 |  | Indicates which bomb site the player is currently inside (0 = none, 1 = A, 2 = B). |
-| `0x1294` | `m_bInBombZoneTrigger` | bool |  |  |
-| `0x1295` | `m_bWasInBombZoneTrigger` | bool |  |  |
-| `0x1298` | `m_iShotsFired` | int32 |  | Number of bullets fired since the player last stopped firing (resets when trigger is released or weapon changes). *Used to drive the walk-run bobbing animation state.* |
-| `0x129c` | `m_flFlinchStack` | float32 |  | Accumulated flinch value from recent damage; drives the camera-shake magnitude. *Only sent to the owning player (LocalPlayerExclusive).* |
-| `0x12a0` | `m_flVelocityModifier` | float32 |  | Multiplicative speed modifier applied on top of base movement speed (0.0–1.0 typically; reduced while injured or tased). |
-| `0x12a4` | `m_vecTotalBulletForce` | Vector |  |  |
-| `0x12b0` | `m_bWaitForNoAttack` | bool |  | True when the weapon's fire input must be fully released before the next shot is accepted (prevents auto-fire on re-deploy). |
-| `0x12b4` | `m_ignoreLadderJumpTime` | float32 |  |  |
-| `0x12b8` | `m_bKilledByHeadshot` | bool |  | True if the killing blow on this player was a headshot. |
-| `0x12bc` | `m_LastHitBox` | int32 |  |  |
-| `0x12c0` | `m_pBot` | [CCSBot](../server/CCSBot.md)* |  |  |
-| `0x12c8` | `m_bBotAllowActive` | bool |  |  |
-| `0x12cc` | `m_nLastPickupPriority` | int32 |  |  |
-| `0x12d0` | `m_flLastPickupPriorityTime` | float32 |  |  |
-| `0x12d4` | `m_ArmorValue` | int32 |  | Current armor HP (0–100). Combined-arms note: vest+helmet does not exceed 100 armor points. |
-| `0x12d8` | `m_unCurrentEquipmentValue` | uint16 |  | Total buy value (in dollars) of equipment currently held by the player. |
-| `0x12da` | `m_unRoundStartEquipmentValue` | uint16 |  | Equipment value at the start of the current round (after freeze-time buy phase ends). |
-| `0x12dc` | `m_unFreezetimeEndEquipmentValue` | uint16 |  | Equipment value at the moment freeze time ended. |
-| `0x12e0` | `m_iLastWeaponFireUsercmd` | int32 |  |  |
-| `0x12e4` | `m_bIsSpawning` | bool |  |  |
-| `0x12f0` | `m_iDeathFlags` | int32 |  |  |
-| `0x12f4` | `m_bHasDeathInfo` | bool |  |  |
-| `0x12f8` | `m_flDeathInfoTime` | float32 |  |  |
-| `0x12fc` | `m_vecDeathInfoOrigin` | VectorWS |  |  |
-| `0x1308` | `m_vecPlayerPatchEconIndices` | uint32[5] |  | Array of 5 item-definition indices for the agent patch slots (team patches worn on the uniform). |
-| `0x131c` | `m_GunGameImmunityColor` | Color |  | Color applied to the player model while gun-game immunity is active. |
-| `0x1320` | `m_grenadeParameterStashTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0x1324` | `m_bGrenadeParametersStashed` | bool |  |  |
-| `0x1328` | `m_angStashedShootAngles` | QAngle |  |  |
-| `0x1334` | `m_vecStashedGrenadeThrowPosition` | VectorWS |  |  |
-| `0x1340` | `m_vecStashedGrenadeThrowPawnCenter` | VectorWS |  |  |
-| `0x134c` | `m_vecStashedVelocity` | Vector |  |  |
-| `0x1360` | `m_bCommittingSuicideOnTeamChange` | bool |  |  |
-| `0x1361` | `m_wasNotKilledNaturally` | bool |  |  |
-| `0x1364` | `m_fImmuneToGunGameDamageTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime until which the player is immune to damage in Gun Game / Arms Race mode. |
-| `0x1368` | `m_bGunGameImmunity` | bool |  | True while the player has gun-game spawn immunity (brief invincibility after spawning in Arms Race mode). |
-| `0x136c` | `m_fMolotovDamageTime` | float32 |  | GameTime at which molotov/incendiary damage will next be applied to this player. |
-| `0x1370` | `m_angEyeAngles` | QAngle |  | Server-authoritative eye angles (pitch, yaw, roll) used for hit-box calculation and third-person rendering. *Encoded at full qangle_precise precision. The definitive source for a player's look direction.* |
+| `0x710` | `m_bodyGroupTotalRequestCount` | uint32 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x718` | `m_bodyGroupRequests` | CUtlVectorFixedGrowable< [CBaseModelEntity::BodyGroupRequest_t](../server/CBaseModelEntity.BodyGroupRequest_t.md), 8 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x7f0` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x818` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
+| `0x848` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
+| `0x850` | `m_graphControllerManager` | [CAnimGraphControllerManager](../server/CAnimGraphControllerManager.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x8e8` | `m_pMainGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | The primary animation-graph controller instance for this entity. |
+| `0x8f0` | `m_bInitiallyPopulateInterpHistory` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x8f8` | `m_OnLayerCycleUpdated` | CEntityOutputTemplate< float32 > | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x918` | `m_OnExternalChoreoGraphChanged` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x930` | `m_pChoreoServices` | [IChoreoServices](../server/IChoreoServices.md)* | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MKV3TransferSaveOpsForField GetChoreoServicesSaveRestoreOps` |
+| `0x938` | `m_bAnimGraphUpdateEnabled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x939` | `m_bAnimationUpdateScheduled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x93c` | `m_vecForce` | Vector | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x948` | `m_nForceBone` | int32 | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x958` | `m_pRagdollControl` | [IPhysicsRagdollControl](../vphysics2/IPhysicsRagdollControl.md)* | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MPhysPtr` |
+| `0x960` | `m_RagdollPose` | [PhysicsRagdollPose_t](../server/PhysicsRagdollPose_t.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x988` | `m_bRagdollEnabled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | True while the entity is simulated as a ragdoll rather than animated. |
+| `0x989` | `m_bRagdollClientSide` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x98a` | `m_bShouldUpdateTransformations` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x990` | `m_xParentedRagdollRootInEntitySpace` | CTransform | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0xa40` | `m_bForceServerRagdoll` | bool | [CBaseCombatCharacter](../server/CBaseCombatCharacter.md) |  |
+| `0xa48` | `m_hMyWearables` | CNetworkUtlVectorBase< CHandle< [CEconWearable](../server/CEconWearable.md) > > | [CBaseCombatCharacter](../server/CBaseCombatCharacter.md) | Handles to the character's equipped wearable items (gloves, agent model pieces). `MNotSaved` |
+| `0xa60` | `m_impactEnergyScale` | float32 | [CBaseCombatCharacter](../server/CBaseCombatCharacter.md) | Scale applied to impact-damage energy for this character. |
+| `0xa64` | `m_bApplyStressDamage` | bool | [CBaseCombatCharacter](../server/CBaseCombatCharacter.md) |  |
+| `0xa65` | `m_bDeathEventsDispatched` | bool | [CBaseCombatCharacter](../server/CBaseCombatCharacter.md) |  |
+| `0xaa8` | `m_vecRelationships` | CUtlVector< [RelationshipOverride_t](../server/RelationshipOverride_t.md) > | [CBaseCombatCharacter](../server/CBaseCombatCharacter.md) |  |
+| `0xac0` | `m_strRelationships` | CUtlSymbolLarge | [CBaseCombatCharacter](../server/CBaseCombatCharacter.md) |  |
+| `0xac8` | `m_eHull` | [Hull_t](../server/Hull_t.md) | [CBaseCombatCharacter](../server/CBaseCombatCharacter.md) |  |
+| `0xacc` | `m_nNavHullIdx` | uint32 | [CBaseCombatCharacter](../server/CBaseCombatCharacter.md) |  |
+| `0xad0` | `m_movementStats` | [CMovementStatsProperty](../server/CMovementStatsProperty.md) | [CBaseCombatCharacter](../server/CBaseCombatCharacter.md) |  |
+| `0xb10` | `m_pWeaponServices` | [CPlayer_WeaponServices](../server/CPlayer_WeaponServices.md)* | [CBasePlayerPawn](../server/CBasePlayerPawn.md) | Weapon-handling component (active weapon, switch timing). |
+| `0xb18` | `m_pItemServices` | [CPlayer_ItemServices](../server/CPlayer_ItemServices.md)* | [CBasePlayerPawn](../server/CBasePlayerPawn.md) | Carried-item component (defuser, helmet). |
+| `0xb20` | `m_pAutoaimServices` | [CPlayer_AutoaimServices](../server/CPlayer_AutoaimServices.md)* | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
+| `0xb28` | `m_pObserverServices` | [CPlayer_ObserverServices](../server/CPlayer_ObserverServices.md)* | [CBasePlayerPawn](../server/CBasePlayerPawn.md) | Spectator component, active while the pawn is dead or observing. |
+| `0xb30` | `m_pWaterServices` | [CPlayer_WaterServices](../server/CPlayer_WaterServices.md)* | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
+| `0xb38` | `m_pUseServices` | [CPlayer_UseServices](../server/CPlayer_UseServices.md)* | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
+| `0xb40` | `m_pFlashlightServices` | [CPlayer_FlashlightServices](../server/CPlayer_FlashlightServices.md)* | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
+| `0xb48` | `m_pCameraServices` | [CPlayer_CameraServices](../server/CPlayer_CameraServices.md)* | [CBasePlayerPawn](../server/CBasePlayerPawn.md) | View / camera component. |
+| `0xb50` | `m_pMovementServices` | [CPlayer_MovementServices](../server/CPlayer_MovementServices.md)* | [CBasePlayerPawn](../server/CBasePlayerPawn.md) | Movement / input component. |
+| `0xb60` | `m_ServerViewAngleChanges` | CUtlVectorEmbeddedNetworkVar< [ViewAngleServerChange_t](../server/ViewAngleServerChange_t.md) > | [CBasePlayerPawn](../server/CBasePlayerPawn.md) | `MNotSaved` |
+| `0xbc8` | `v_angle` | QAngle | [CBasePlayerPawn](../server/CBasePlayerPawn.md) | Current view (eye) angles of the pawn. |
+| `0xbd4` | `v_anglePrevious` | QAngle | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
+| `0xbe0` | `m_iHideHUD` | uint32 | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
+| `0xbe8` | `m_skybox3d` | sky3dparams_t | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
+| `0xc78` | `m_fTimeLastHurt` | [GameTime_t](../entity2/GameTime_t.md) | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
+| `0xc7c` | `m_flDeathTime` | [GameTime_t](../entity2/GameTime_t.md) | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
+| `0xc80` | `m_fNextSuicideTime` | [GameTime_t](../entity2/GameTime_t.md) | [CBasePlayerPawn](../server/CBasePlayerPawn.md) | `MNotSaved` |
+| `0xc88` | `m_fInitHUD` | bool | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
+| `0xc90` | `m_pExpresser` | [CAI_Expresser](../server/CAI_Expresser.md)* | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
+| `0xc98` | `m_hController` | CHandle< [CBasePlayerController](../server/CBasePlayerController.md) > | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
+| `0xc9c` | `m_hDefaultController` | CHandle< [CBasePlayerController](../server/CBasePlayerController.md) > | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
+| `0xca4` | `m_fHltvReplayDelay` | float32 | [CBasePlayerPawn](../server/CBasePlayerPawn.md) | `MNotSaved` |
+| `0xca8` | `m_fHltvReplayEnd` | float32 | [CBasePlayerPawn](../server/CBasePlayerPawn.md) | `MNotSaved` |
+| `0xcac` | `m_iHltvReplayEntity` | CEntityIndex | [CBasePlayerPawn](../server/CBasePlayerPawn.md) | `MNotSaved` |
+| `0xcb0` | `m_sndOpvarLatchData` | CUtlVector< sndopvarlatchdata_t > | [CBasePlayerPawn](../server/CBasePlayerPawn.md) |  |
+| `0xce0` | `m_CTouchExpansionComponent` | [CTouchExpansionComponent](../server/CTouchExpansionComponent.md) | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) |  |
+| `0xd30` | `m_pPingServices` | [CCSPlayer_PingServices](../server/CCSPlayer_PingServices.md)* | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) | Pointer to CCSPlayer_PingServices managing the in-game map-ping system. |
+| `0xd38` | `m_blindUntilTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) |  |
+| `0xd3c` | `m_blindStartTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) |  |
+| `0xd40` | `m_iPlayerState` | [CSPlayerState](../server/CSPlayerState.md) | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) | CSPlayerState enum: STATE_ACTIVE = 0 (alive), STATE_WELCOME = 1, STATE_PICKINGTEAM = 2, STATE_PICKINGCLASS = 3, STATE_DEATH_ANIM = 4, STATE_DEATH_WAIT_FOR_KEY = 5, STATE_OBSERVER_MODE = 6. |
+| `0xdf0` | `m_bRespawning` | bool | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) |  |
+| `0xdf1` | `m_bHasMovedSinceSpawn` | bool | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) | True once the player moves after spawning; prevents accidental movement-triggered events. |
+| `0xdf4` | `m_iNumSpawns` | int32 | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) |  |
+| `0xdfc` | `m_flIdleTimeSinceLastAction` | float32 | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) |  |
+| `0xe00` | `m_fNextRadarUpdateTime` | float32 | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) |  |
+| `0xe04` | `m_flFlashDuration` | float32 | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) | Total duration in seconds of the current flash-bang blind effect (0 when not flashed). |
+| `0xe08` | `m_flFlashMaxAlpha` | float32 | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) | Peak screen-overlay alpha (0–255) of the current flash bang; scales with proximity and facing angle. |
+| `0xe0c` | `m_flProgressBarStartTime` | float32 | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) | GameTime at which the current progress bar (defuse/pickup) started. |
+| `0xe10` | `m_iProgressBarDuration` | int32 | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) | Duration in seconds of the current progress bar interaction. |
+| `0xe14` | `m_hOriginalController` | CHandle< [CCSPlayerController](../server/CCSPlayerController.md) > | [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md) | CHandle back to the CCSPlayerController that owns this pawn, even when a bot has taken over. *Use this to map a pawn to its player for demo parsing.* |
+| `0xe30` | `m_pBulletServices` | [CCSPlayer_BulletServices](../server/CCSPlayer_BulletServices.md)* |  | Pointer to CCSPlayer_BulletServices which tracks hit counts registered on the server. |
+| `0xe38` | `m_pHostageServices` | [CCSPlayer_HostageServices](../server/CCSPlayer_HostageServices.md)* |  | Pointer to CCSPlayer_HostageServices which tracks which hostage entity this player is currently carrying. |
+| `0xe40` | `m_pBuyServices` | [CCSPlayer_BuyServices](../server/CCSPlayer_BuyServices.md)* |  | Pointer to CCSPlayer_BuyServices which tracks sellback purchase history for the current round. |
+| `0xe48` | `m_pActionTrackingServices` | [CCSPlayer_ActionTrackingServices](../server/CCSPlayer_ActionTrackingServices.md)* |  | Pointer to CCSPlayer_ActionTrackingServices which tracks weapon purchases and rescue state for stats/scoring. |
+| `0xe50` | `m_pAimPunchServices` | [CCSPlayer_AimPunchServices](../server/CCSPlayer_AimPunchServices.md)* |  |  |
+| `0xe58` | `m_pRadioServices` | [CCSPlayer_RadioServices](../server/CCSPlayer_RadioServices.md)* |  |  |
+| `0xe60` | `m_pDamageReactServices` | [CCSPlayer_DamageReactServices](../server/CCSPlayer_DamageReactServices.md)* |  |  |
+| `0xe68` | `m_nCharacterDefIndex` | uint16 |  |  |
+| `0xe6a` | `m_bHasFemaleVoice` | bool |  | True when the equipped agent skin uses a female voice pack. |
+| `0xe70` | `m_strVOPrefix` | CUtlString |  |  |
+| `0xe78` | `m_szLastPlaceName` | char[18] |  | Human-readable area/landmark name from the nav mesh where the player was last located (e.g. 'CTSpawn', 'BombsiteA'). |
+| `0xf68` | `m_bInHostageResetZone` | bool |  |  |
+| `0xf69` | `m_bInBuyZone` | bool |  | True while the player is standing inside a buy zone. |
+| `0xf70` | `m_TouchingBuyZones` | CUtlVector< CHandle< [CBaseEntity](../server/CBaseEntity.md) > > |  |  |
+| `0xf88` | `m_bWasInBuyZone` | bool |  |  |
+| `0xf89` | `m_bInHostageRescueZone` | bool |  | True while the player is inside a hostage rescue zone. |
+| `0xf8a` | `m_bInBombZone` | bool |  | True while the player is standing inside a bomb-plant zone (bombsite trigger). *m_nWhichBombZone indicates which site (0 = not in any, 1 = A, 2 = B).* |
+| `0xf8b` | `m_bWasInHostageRescueZone` | bool |  |  |
+| `0xf8c` | `m_iRetakesOffering` | int32 |  | Retakes-mode offering index: which weapon/utility load-out this player was offered for the retake. |
+| `0xf90` | `m_iRetakesOfferingCard` | int32 |  | Card index the player selected in the retakes offering interface. |
+| `0xf94` | `m_bRetakesHasDefuseKit` | bool |  | True when the retakes system has granted this player a defuse kit for the retake round. |
+| `0xf95` | `m_bRetakesMVPLastRound` | bool |  | True if this player earned the retakes MVP award in the previous round. |
+| `0xf98` | `m_iRetakesMVPBoostItem` | int32 |  | Item definition index of the bonus item awarded to the retakes MVP. |
+| `0xf9c` | `m_RetakesMVPBoostExtraUtility` | loadout_slot_t |  |  |
+| `0xfa0` | `m_flHealthShotBoostExpirationTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime at which the health-shot (medshot) movement speed boost expires. |
+| `0xfa4` | `m_flLandingTimeSeconds` | float32 |  |  |
+| `0xfa8` | `m_bIsBuyMenuOpen` | bool |  | True while the player's buy menu is open. |
+| `0xfe0` | `m_lastLandTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0xfe4` | `m_bOnGroundLastTick` | bool |  |  |
+| `0xfe8` | `m_iPlayerLocked` | int32 |  |  |
+| `0xff0` | `m_flTimeOfLastInjury` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime of the most-recent damage event that reduced this player's health. |
+| `0xff4` | `m_flNextSprayDecalTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0xff8` | `m_bNextSprayDecalTimeExpedited` | bool |  |  |
+| `0xffc` | `m_nRagdollDamageBone` | int32 |  | Bone index of the last hit that caused a ragdoll impulse. |
+| `0x1000` | `m_vRagdollDamageForce` | Vector |  | World-space impulse vector applied to the ragdoll bone on death. |
+| `0x100c` | `m_szRagdollDamageWeaponName` | char[64] |  | Class name of the weapon that killed this player (used to select the correct death ragdoll). |
+| `0x104c` | `m_bRagdollDamageHeadshot` | bool |  | True if the fatal blow was a headshot, used to trigger headshot-specific ragdoll animation. |
+| `0x1050` | `m_vRagdollServerOrigin` | VectorWS |  | World-space position of the player's origin at the moment of death. |
+| `0x1060` | `m_EconGloves` | [CEconItemView](../server/CEconItemView.md) |  | CEconItemView describing the glove skin equipped on this player. |
+| `0x1448` | `m_nEconGlovesChanged` | uint8 |  | Incremented each time the glove loadout changes, so the client can refresh the glove model. |
+| `0x144c` | `m_qDeathEyeAngles` | QAngle |  | Eye angles at the moment of death, used to pose the ragdoll's head correctly. |
+| `0x1458` | `m_bLeftHanded` | bool |  | True when the player has switched the weapon to the left hand (cl_lefthand 1). |
+| `0x145c` | `m_fSwitchedHandednessTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime at which the player last toggled handedness (prevents rapid toggling). |
+| `0x1460` | `m_flViewmodelOffsetX` | float32 |  | Custom viewmodel X offset in world units (cl_viewmodel_offset_x). |
+| `0x1464` | `m_flViewmodelOffsetY` | float32 |  | Custom viewmodel Y offset in world units (cl_viewmodel_offset_y). |
+| `0x1468` | `m_flViewmodelOffsetZ` | float32 |  | Custom viewmodel Z offset in world units (cl_viewmodel_offset_z). |
+| `0x146c` | `m_flViewmodelFOV` | float32 |  | Custom viewmodel FOV in degrees (cl_viewmodel_fov; clamped to 60–68). |
+| `0x1470` | `m_bIsWalking` | bool |  | True while the player is in walk mode (shift-walk / cl_showpos = 1 walking). |
+| `0x1474` | `m_fLastGivenDefuserTime` | float32 |  |  |
+| `0x1478` | `m_fLastGivenBombTime` | float32 |  |  |
+| `0x147c` | `m_flDealtDamageToEnemyMostRecentTimestamp` | float32 |  |  |
+| `0x1480` | `m_iDisplayHistoryBits` | uint32 |  |  |
+| `0x1484` | `m_flLastAttackedTeammate` | float32 |  |  |
+| `0x1488` | `m_allowAutoFollowTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0x148c` | `m_bResetArmorNextSpawn` | bool |  |  |
+| `0x1490` | `m_nLastKillerIndex` | CEntityIndex |  | Entity index of the player or entity that last killed this pawn. |
+| `0x1498` | `m_entitySpottedState` | [EntitySpottedState_t](../server/EntitySpottedState_t.md) |  | EntitySpottedState_t struct tracking which players have spotted (ESP-radar dot) this entity. *See also m_bSpotted and the spotted bitmask used by the minimap.* |
+| `0x14b0` | `m_nSpotRules` | int32 |  |  |
+| `0x14b4` | `m_bIsScoped` | bool |  | True while the player is looking through a weapon scope. |
+| `0x14b5` | `m_bResumeZoom` | bool |  | True when the scope should be re-engaged automatically after the next shot (AWP/SSG 08 bolt-action mechanic). |
+| `0x14b6` | `m_bIsDefusing` | bool |  | True while the player is actively defusing the planted bomb. |
+| `0x14b7` | `m_bIsGrabbingHostage` | bool |  | True while the player is picking up a hostage entity. |
+| `0x14b8` | `m_iBlockingUseActionInProgress` | [CSPlayerBlockingUseAction_t](../server/CSPlayerBlockingUseAction_t.md) |  | CSPlayerBlockingUseAction_t enum indicating a use-action in progress that blocks other actions (e.g. defuse, hostage grab). |
+| `0x14bc` | `m_flEmitSoundTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime of the next footstep sound emission; controls footstep sound spacing. |
+| `0x14c0` | `m_bInNoDefuseArea` | bool |  | True when the player is in a location where defusing is not permitted. |
+| `0x14c4` | `m_iBombSiteIndex` | CEntityIndex |  |  |
+| `0x14c8` | `m_nWhichBombZone` | int32 |  | Indicates which bomb site the player is currently inside (0 = none, 1 = A, 2 = B). |
+| `0x14cc` | `m_bInBombZoneTrigger` | bool |  |  |
+| `0x14cd` | `m_bWasInBombZoneTrigger` | bool |  |  |
+| `0x14d0` | `m_iShotsFired` | int32 |  | Number of bullets fired since the player last stopped firing (resets when trigger is released or weapon changes). *Used to drive the walk-run bobbing animation state.* |
+| `0x14d4` | `m_flFlinchStack` | float32 |  | Accumulated flinch value from recent damage; drives the camera-shake magnitude. *Only sent to the owning player (LocalPlayerExclusive).* |
+| `0x14d8` | `m_flVelocityModifier` | float32 |  | Multiplicative speed modifier applied on top of base movement speed (0.0–1.0 typically; reduced while injured or tased). |
+| `0x14dc` | `m_vecTotalBulletForce` | Vector |  |  |
+| `0x14e8` | `m_bWaitForNoAttack` | bool |  | True when the weapon's fire input must be fully released before the next shot is accepted (prevents auto-fire on re-deploy). |
+| `0x14ec` | `m_ignoreLadderJumpTime` | float32 |  |  |
+| `0x14f0` | `m_bKilledByHeadshot` | bool |  | True if the killing blow on this player was a headshot. |
+| `0x14f4` | `m_LastHitBox` | int32 |  |  |
+| `0x14f8` | `m_pBot` | [CCSBot](../server/CCSBot.md)* |  |  |
+| `0x1500` | `m_bBotAllowActive` | bool |  |  |
+| `0x1504` | `m_nLastPickupPriority` | int32 |  |  |
+| `0x1508` | `m_flLastPickupPriorityTime` | float32 |  |  |
+| `0x150c` | `m_ArmorValue` | int32 |  | Current armor HP (0–100). Combined-arms note: vest+helmet does not exceed 100 armor points. |
+| `0x1510` | `m_unCurrentEquipmentValue` | uint16 |  | Total buy value (in dollars) of equipment currently held by the player. |
+| `0x1512` | `m_unRoundStartEquipmentValue` | uint16 |  | Equipment value at the start of the current round (after freeze-time buy phase ends). |
+| `0x1514` | `m_unFreezetimeEndEquipmentValue` | uint16 |  | Equipment value at the moment freeze time ended. |
+| `0x1518` | `m_iLastWeaponFireUsercmd` | int32 |  |  |
+| `0x151c` | `m_bIsSpawning` | bool |  |  |
+| `0x1528` | `m_iDeathFlags` | int32 |  |  |
+| `0x152c` | `m_bHasDeathInfo` | bool |  |  |
+| `0x1530` | `m_flDeathInfoTime` | float32 |  |  |
+| `0x1534` | `m_vecDeathInfoOrigin` | VectorWS |  |  |
+| `0x1540` | `m_vecPlayerPatchEconIndices` | uint32[5] |  | Array of 5 item-definition indices for the agent patch slots (team patches worn on the uniform). |
+| `0x1554` | `m_GunGameImmunityColor` | Color |  | Color applied to the player model while gun-game immunity is active. |
+| `0x1558` | `m_grenadeParameterStashTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0x155c` | `m_bGrenadeParametersStashed` | bool |  |  |
+| `0x1560` | `m_angStashedShootAngles` | QAngle |  |  |
+| `0x156c` | `m_vecStashedGrenadeThrowPosition` | VectorWS |  |  |
+| `0x1578` | `m_vecStashedGrenadeThrowPawnCenter` | VectorWS |  |  |
+| `0x1584` | `m_vecStashedVelocity` | Vector |  |  |
+| `0x1598` | `m_bCommittingSuicideOnTeamChange` | bool |  |  |
+| `0x1599` | `m_wasNotKilledNaturally` | bool |  |  |
+| `0x159c` | `m_fImmuneToGunGameDamageTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime until which the player is immune to damage in Gun Game / Arms Race mode. |
+| `0x15a0` | `m_bGunGameImmunity` | bool |  | True while the player has gun-game spawn immunity (brief invincibility after spawning in Arms Race mode). |
+| `0x15a4` | `m_flModifier0` | float32 |  |  |
+| `0x15a8` | `m_fMolotovDamageTime` | float32 |  | GameTime at which molotov/incendiary damage will next be applied to this player. |
+| `0x15ac` | `m_angEyeAngles` | QAngle |  | Server-authoritative eye angles (pitch, yaw, roll) used for hit-box calculation and third-person rendering. *Encoded at full qangle_precise precision. The definitive source for a player's look direction.* |

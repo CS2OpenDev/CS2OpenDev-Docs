@@ -8,9 +8,9 @@ kind: class
 
 # CParticleCollectionRendererFloatInput
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 368 bytes (`0x170`) · **Align:** 8 · **Module:** particleslib
+**Kind:** class · **Size:** 376 bytes (`0x178`) · **Align:** 8 · **Module:** particleslib
 
 **Inherits from:** [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md)
 
@@ -27,7 +27,7 @@ classDiagram
 
 ## Memory layout
 
-49 fields (0 declared here, 49 inherited). Offsets are absolute from the object base.
+50 fields (0 declared here, 50 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -36,8 +36,8 @@ classDiagram
 | `0x18` | `m_flLiteralValue` | float32 | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) |  |
 | `0x20` | `m_NamedValue` | CParticleNamedValueRef | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) |  |
 | `0x60` | `m_nControlPoint` | int32 | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) |  |
-| `0x64` | `m_nScalarAttribute` | [ParticleAttributeIndex_t](../particles/ParticleAttributeIndex_t.md) | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) |  |
-| `0x68` | `m_nVectorAttribute` | [ParticleAttributeIndex_t](../particles/ParticleAttributeIndex_t.md) | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) |  |
+| `0x64` | `m_nScalarAttribute` | [ParticleAttributeIndex_t](../particleslib/ParticleAttributeIndex_t.md) | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) |  |
+| `0x68` | `m_nVectorAttribute` | [ParticleAttributeIndex_t](../particleslib/ParticleAttributeIndex_t.md) | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) |  |
 | `0x6c` | `m_nVectorComponent` | int32 | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) |  |
 | `0x70` | `m_bReverseOrder` | bool | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) |  |
 | `0x74` | `m_flRandomMin` | float32 | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) |  |
@@ -50,7 +50,7 @@ classDiagram
 | `0x9c` | `m_flLOD1` | float32 | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) |  |
 | `0xa0` | `m_flLOD2` | float32 | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) |  |
 | `0xa4` | `m_flLOD3` | float32 | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) |  |
-| `0xa8` | `m_nNoiseInputVectorAttribute` | [ParticleAttributeIndex_t](../particles/ParticleAttributeIndex_t.md) | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) |  |
+| `0xa8` | `m_nNoiseInputVectorAttribute` | [ParticleAttributeIndex_t](../particleslib/ParticleAttributeIndex_t.md) | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) |  |
 | `0xac` | `m_flNoiseOutputMin` | float32 | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) |  |
 | `0xb0` | `m_flNoiseOutputMax` | float32 | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) |  |
 | `0xb4` | `m_flNoiseScale` | float32 | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) |  |
@@ -80,6 +80,7 @@ classDiagram
 | `0x124` | `m_nBiasType` | [ParticleFloatBiasType_t](../particleslib/ParticleFloatBiasType_t.md) | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) |  |
 | `0x128` | `m_flBiasParameter` | float32 | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) |  |
 | `0x130` | `m_Curve` | CPiecewiseCurve | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) |  |
+| `0x170` | `m_flCompareValue` | float32 | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -155,6 +156,7 @@ classDiagram
 			0.000000,
 			0.000000
 		]
-	}
+	},
+	&quot;m_flCompareValue&quot;: 0.000000
 }</pre>
 </details>

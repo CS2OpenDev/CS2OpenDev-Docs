@@ -8,9 +8,9 @@ kind: class
 
 # C_OP_ControlpointLight
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 1760 bytes (`0x6e0`) · **Align:** 16 · **Module:** particles
+**Kind:** class · **Size:** 1776 bytes (`0x6f0`) · **Align:** 16 · **Module:** particles
 
 **Inherits from:** [CParticleFunctionOperator](../particles/CParticleFunctionOperator.md)
 
@@ -29,55 +29,55 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flOpStrength` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator strength` `MPropertySortPriority -100` |
-| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
-| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
-| `0x180` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
-| `0x184` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
-| `0x188` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
-| `0x18c` | `m_flOpEndFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadeout` `MPropertySortPriority -100` |
-| `0x190` | `m_flOpFadeOscillatePeriod` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade oscillate` `MPropertySortPriority -100` |
-| `0x194` | `m_bNormalizeToStopTime` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName normalize fade times to endcap` `MPropertySortPriority -100` |
-| `0x198` | `m_flOpTimeOffsetMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset min` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Time Offset` |
-| `0x19c` | `m_flOpTimeOffsetMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset max` `MPropertySortPriority -100` |
-| `0x1a0` | `m_nOpTimeOffsetSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset seed` `MPropertySortPriority -100` |
-| `0x1a4` | `m_nOpTimeScaleSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale seed` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Timescale Modifiers` |
-| `0x1a8` | `m_flOpTimeScaleMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale min` `MPropertySortPriority -100` |
-| `0x1ac` | `m_flOpTimeScaleMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale max` `MPropertySortPriority -100` |
-| `0x1b2` | `m_bDisableOperator` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyStartGroup` `MPropertySuppressField` |
-| `0x1b8` | `m_Notes` | CUtlString | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleHelpField` `MPropertyFriendlyName operator help and notes` `MPropertySortPriority -100` |
-| `0x1d8` | `m_flScale` | float32 |  | `MPropertyFriendlyName initial color bias` |
-| `0x660` | `m_nControlPoint1` | int32 |  | `MPropertyFriendlyName light 1 control point` |
-| `0x664` | `m_nControlPoint2` | int32 |  | `MPropertyFriendlyName light 2 control point` |
-| `0x668` | `m_nControlPoint3` | int32 |  | `MPropertyFriendlyName light 3 control point` |
-| `0x66c` | `m_nControlPoint4` | int32 |  | `MPropertyFriendlyName light 4 control point` |
-| `0x670` | `m_vecCPOffset1` | Vector |  | `MPropertyFriendlyName light 1 control point offset` |
-| `0x67c` | `m_vecCPOffset2` | Vector |  | `MPropertyFriendlyName light 2 control point offset` |
-| `0x688` | `m_vecCPOffset3` | Vector |  | `MPropertyFriendlyName light 3 control point offset` |
-| `0x694` | `m_vecCPOffset4` | Vector |  | `MPropertyFriendlyName light 4 control point offset` |
-| `0x6a0` | `m_LightFiftyDist1` | float32 |  | `MPropertyFriendlyName light 1 50% distance` |
-| `0x6a4` | `m_LightZeroDist1` | float32 |  | `MPropertyFriendlyName light 1 0% distance` |
-| `0x6a8` | `m_LightFiftyDist2` | float32 |  | `MPropertyFriendlyName light 2 50% distance` |
-| `0x6ac` | `m_LightZeroDist2` | float32 |  | `MPropertyFriendlyName light 2 0% distance` |
-| `0x6b0` | `m_LightFiftyDist3` | float32 |  | `MPropertyFriendlyName light 3 50% distance` |
-| `0x6b4` | `m_LightZeroDist3` | float32 |  | `MPropertyFriendlyName light 3 0% distance` |
-| `0x6b8` | `m_LightFiftyDist4` | float32 |  | `MPropertyFriendlyName light 4 50% distance` |
-| `0x6bc` | `m_LightZeroDist4` | float32 |  | `MPropertyFriendlyName light 4 0% distance` |
-| `0x6c0` | `m_LightColor1` | Color |  | `MPropertyFriendlyName light 1 color` |
-| `0x6c4` | `m_LightColor2` | Color |  | `MPropertyFriendlyName light 2 color` |
-| `0x6c8` | `m_LightColor3` | Color |  | `MPropertyFriendlyName light 3 color` |
-| `0x6cc` | `m_LightColor4` | Color |  | `MPropertyFriendlyName light 4 color` |
-| `0x6d0` | `m_bLightType1` | bool |  | `MPropertyFriendlyName light 1 type 0=point 1=spot` |
-| `0x6d1` | `m_bLightType2` | bool |  | `MPropertyFriendlyName light 2 type 0=point 1=spot` |
-| `0x6d2` | `m_bLightType3` | bool |  | `MPropertyFriendlyName light 3 type 0=point 1=spot` |
-| `0x6d3` | `m_bLightType4` | bool |  | `MPropertyFriendlyName light 4 type 0=point 1=spot` |
-| `0x6d4` | `m_bLightDynamic1` | bool |  | `MPropertyFriendlyName light 1 dynamic light` |
-| `0x6d5` | `m_bLightDynamic2` | bool |  | `MPropertyFriendlyName light 2 dynamic light` |
-| `0x6d6` | `m_bLightDynamic3` | bool |  | `MPropertyFriendlyName light 3 dynamic light` |
-| `0x6d7` | `m_bLightDynamic4` | bool |  | `MPropertyFriendlyName light 4 dynamic light` |
-| `0x6d8` | `m_bUseNormal` | bool |  | `MPropertyFriendlyName compute normals from control points` |
-| `0x6d9` | `m_bUseHLambert` | bool |  | `MPropertyFriendlyName half-lambert normals` |
-| `0x6de` | `m_bClampLowerRange` | bool |  | `MPropertyFriendlyName clamp minimum light value to initial color` |
-| `0x6df` | `m_bClampUpperRange` | bool |  | `MPropertyFriendlyName clamp maximum light value to initial color` |
+| `0x180` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
+| `0x184` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
+| `0x188` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
+| `0x18c` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
+| `0x190` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
+| `0x194` | `m_flOpEndFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadeout` `MPropertySortPriority -100` |
+| `0x198` | `m_flOpFadeOscillatePeriod` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade oscillate` `MPropertySortPriority -100` |
+| `0x19c` | `m_bNormalizeToStopTime` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName normalize fade times to endcap` `MPropertySortPriority -100` |
+| `0x1a0` | `m_flOpTimeOffsetMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset min` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Time Offset` |
+| `0x1a4` | `m_flOpTimeOffsetMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset max` `MPropertySortPriority -100` |
+| `0x1a8` | `m_nOpTimeOffsetSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset seed` `MPropertySortPriority -100` |
+| `0x1ac` | `m_nOpTimeScaleSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale seed` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Timescale Modifiers` |
+| `0x1b0` | `m_flOpTimeScaleMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale min` `MPropertySortPriority -100` |
+| `0x1b4` | `m_flOpTimeScaleMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale max` `MPropertySortPriority -100` |
+| `0x1ba` | `m_bDisableOperator` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyStartGroup` `MPropertySuppressField` |
+| `0x1c0` | `m_Notes` | CUtlString | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleHelpField` `MPropertyAttributeEditor TextBlock()` `MPropertyFriendlyName operator help and notes` `MPropertySortPriority -100` |
+| `0x1e0` | `m_flScale` | float32 |  | `MPropertyFriendlyName initial color bias` |
+| `0x670` | `m_nControlPoint1` | int32 |  | `MPropertyFriendlyName light 1 control point` |
+| `0x674` | `m_nControlPoint2` | int32 |  | `MPropertyFriendlyName light 2 control point` |
+| `0x678` | `m_nControlPoint3` | int32 |  | `MPropertyFriendlyName light 3 control point` |
+| `0x67c` | `m_nControlPoint4` | int32 |  | `MPropertyFriendlyName light 4 control point` |
+| `0x680` | `m_vecCPOffset1` | Vector |  | `MPropertyFriendlyName light 1 control point offset` |
+| `0x68c` | `m_vecCPOffset2` | Vector |  | `MPropertyFriendlyName light 2 control point offset` |
+| `0x698` | `m_vecCPOffset3` | Vector |  | `MPropertyFriendlyName light 3 control point offset` |
+| `0x6a4` | `m_vecCPOffset4` | Vector |  | `MPropertyFriendlyName light 4 control point offset` |
+| `0x6b0` | `m_LightFiftyDist1` | float32 |  | `MPropertyFriendlyName light 1 50% distance` |
+| `0x6b4` | `m_LightZeroDist1` | float32 |  | `MPropertyFriendlyName light 1 0% distance` |
+| `0x6b8` | `m_LightFiftyDist2` | float32 |  | `MPropertyFriendlyName light 2 50% distance` |
+| `0x6bc` | `m_LightZeroDist2` | float32 |  | `MPropertyFriendlyName light 2 0% distance` |
+| `0x6c0` | `m_LightFiftyDist3` | float32 |  | `MPropertyFriendlyName light 3 50% distance` |
+| `0x6c4` | `m_LightZeroDist3` | float32 |  | `MPropertyFriendlyName light 3 0% distance` |
+| `0x6c8` | `m_LightFiftyDist4` | float32 |  | `MPropertyFriendlyName light 4 50% distance` |
+| `0x6cc` | `m_LightZeroDist4` | float32 |  | `MPropertyFriendlyName light 4 0% distance` |
+| `0x6d0` | `m_LightColor1` | Color |  | `MPropertyFriendlyName light 1 color` |
+| `0x6d4` | `m_LightColor2` | Color |  | `MPropertyFriendlyName light 2 color` |
+| `0x6d8` | `m_LightColor3` | Color |  | `MPropertyFriendlyName light 3 color` |
+| `0x6dc` | `m_LightColor4` | Color |  | `MPropertyFriendlyName light 4 color` |
+| `0x6e0` | `m_bLightType1` | bool |  | `MPropertyFriendlyName light 1 type 0=point 1=spot` |
+| `0x6e1` | `m_bLightType2` | bool |  | `MPropertyFriendlyName light 2 type 0=point 1=spot` |
+| `0x6e2` | `m_bLightType3` | bool |  | `MPropertyFriendlyName light 3 type 0=point 1=spot` |
+| `0x6e3` | `m_bLightType4` | bool |  | `MPropertyFriendlyName light 4 type 0=point 1=spot` |
+| `0x6e4` | `m_bLightDynamic1` | bool |  | `MPropertyFriendlyName light 1 dynamic light` |
+| `0x6e5` | `m_bLightDynamic2` | bool |  | `MPropertyFriendlyName light 2 dynamic light` |
+| `0x6e6` | `m_bLightDynamic3` | bool |  | `MPropertyFriendlyName light 3 dynamic light` |
+| `0x6e7` | `m_bLightDynamic4` | bool |  | `MPropertyFriendlyName light 4 dynamic light` |
+| `0x6e8` | `m_bUseNormal` | bool |  | `MPropertyFriendlyName compute normals from control points` |
+| `0x6e9` | `m_bUseHLambert` | bool |  | `MPropertyFriendlyName half-lambert normals` |
+| `0x6ee` | `m_bClampLowerRange` | bool |  | `MPropertyFriendlyName clamp minimum light value to initial color` |
+| `0x6ef` | `m_bClampUpperRange` | bool |  | `MPropertyFriendlyName clamp maximum light value to initial color` |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -156,7 +156,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_nOpEndCapState&quot;: &quot;PARTICLE_ENDCAP_ALWAYS_ON&quot;,
 	&quot;m_nToolsState&quot;: &quot;PARTICLE_TOOLS_STATE_ALWAYS_ON&quot;,

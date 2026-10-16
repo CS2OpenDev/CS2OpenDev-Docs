@@ -5,11 +5,11 @@ module: pulse_system
 
 # Module: pulse_system
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 [📊 View UML Diagram](../diagrams/pulse_system.md)
 
-42 types. Each links to its own page with the full field layout.
+37 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -28,7 +28,7 @@ module: pulse_system
 | [CPulseCell_TestWaitWithCursorState::CursorState_t](pulse_system/CPulseCell_TestWaitWithCursorState.CursorState_t.md) | class | 36 | 5 |  |
 | [CPulseCell_TestWaitWithCursorState::InstanceState_t](pulse_system/CPulseCell_TestWaitWithCursorState.InstanceState_t.md) | class | 4 | 1 |  |
 | [CPulseCell_TestYieldForever](pulse_system/CPulseCell_TestYieldForever.md) | class | 216 | 0 | [CPulseCell_BaseYieldingInflow](pulse_runtime_lib/CPulseCell_BaseYieldingInflow.md) |
-| [CPulseCell_TestYieldWithObservables](pulse_system/CPulseCell_TestYieldWithObservables.md) | class | 544 | 5 | [CPulseCell_BaseYieldingInflow](pulse_runtime_lib/CPulseCell_BaseYieldingInflow.md) |
+| [CPulseCell_TestYieldWithObservables](pulse_system/CPulseCell_TestYieldWithObservables.md) | class | 592 | 5 | [CPulseCell_BaseYieldingInflow](pulse_runtime_lib/CPulseCell_BaseYieldingInflow.md) |
 | [CPulseCell_Test_MultiInflow_NoDefault](pulse_system/CPulseCell_Test_MultiInflow_NoDefault.md) | class | 72 | 0 | [CPulseCell_BaseFlow](pulse_runtime_lib/CPulseCell_BaseFlow.md) |
 | [CPulseCell_Test_MultiInflow_WithDefault](pulse_system/CPulseCell_Test_MultiInflow_WithDefault.md) | class | 72 | 0 | [CPulseCell_BaseFlow](pulse_runtime_lib/CPulseCell_BaseFlow.md) |
 | [CPulseCell_Test_MultiOutflow_WithParams](pulse_system/CPulseCell_Test_MultiOutflow_WithParams.md) | class | 216 | 2 | [CPulseCell_BaseFlow](pulse_runtime_lib/CPulseCell_BaseFlow.md) |
@@ -38,19 +38,14 @@ module: pulse_system
 | [CPulseCell_Val_TestDomainFindEntityByName](pulse_system/CPulseCell_Val_TestDomainFindEntityByName.md) | class | 72 | 0 | [CPulseCell_BaseValue](pulse_runtime_lib/CPulseCell_BaseValue.md) |
 | [CPulseCell_Val_TestDomainGetEntityName](pulse_system/CPulseCell_Val_TestDomainGetEntityName.md) | class | 72 | 0 | [CPulseCell_BaseValue](pulse_runtime_lib/CPulseCell_BaseValue.md) |
 | [CPulseCell_Value_TestValue50](pulse_system/CPulseCell_Value_TestValue50.md) | class | 72 | 0 | [CPulseCell_BaseValue](pulse_runtime_lib/CPulseCell_BaseValue.md) |
-| [CPulseGraphInstance_TestDomain](pulse_system/CPulseGraphInstance_TestDomain.md) | class | 344 | 9 | [CBasePulseGraphInstance](pulse_runtime_lib/CBasePulseGraphInstance.md) |
-| [CPulseGraphInstance_TestDomain_Derived](pulse_system/CPulseGraphInstance_TestDomain_Derived.md) | class | 352 | 1 | [CPulseGraphInstance_TestDomain](pulse_system/CPulseGraphInstance_TestDomain.md) |
-| [CPulseGraphInstance_TestDomain_FakeEntityOwner](pulse_system/CPulseGraphInstance_TestDomain_FakeEntityOwner.md) | class | 272 | 0 | [CBasePulseGraphInstance](pulse_runtime_lib/CBasePulseGraphInstance.md) |
-| [CPulseGraphInstance_TestDomain_UseReadOnlyBlackboardView](pulse_system/CPulseGraphInstance_TestDomain_UseReadOnlyBlackboardView.md) | class | 344 | 0 | [CPulseGraphInstance_TestDomain](pulse_system/CPulseGraphInstance_TestDomain.md) |
-| [CPulseGraphInstance_TurtleGraphics](pulse_system/CPulseGraphInstance_TurtleGraphics.md) | class | 312 | 0 | [CBasePulseGraphInstance](pulse_runtime_lib/CBasePulseGraphInstance.md) |
-| [CPulseTestFuncs_LibraryA](pulse_system/CPulseTestFuncs_LibraryA.md) | class | 1 | 0 |  |
+| [CPulseGraphInstance_TestDomain](pulse_system/CPulseGraphInstance_TestDomain.md) | class | 208 | 9 | [CBasePulseGraphInstance](pulse_runtime_lib/CBasePulseGraphInstance.md) |
+| [CPulseGraphInstance_TestDomain_Derived](pulse_system/CPulseGraphInstance_TestDomain_Derived.md) | class | 216 | 1 | [CPulseGraphInstance_TestDomain](pulse_system/CPulseGraphInstance_TestDomain.md) |
+| [CPulseGraphInstance_TestDomain_FakeEntityOwner](pulse_system/CPulseGraphInstance_TestDomain_FakeEntityOwner.md) | class | 136 | 0 | [CBasePulseGraphInstance](pulse_runtime_lib/CBasePulseGraphInstance.md) |
+| [CPulseGraphInstance_TestDomain_UseReadOnlyBlackboardView](pulse_system/CPulseGraphInstance_TestDomain_UseReadOnlyBlackboardView.md) | class | 208 | 0 | [CPulseGraphInstance_TestDomain](pulse_system/CPulseGraphInstance_TestDomain.md) |
+| [CPulseGraphInstance_TurtleGraphics](pulse_system/CPulseGraphInstance_TurtleGraphics.md) | class | 176 | 0 | [CBasePulseGraphInstance](pulse_runtime_lib/CBasePulseGraphInstance.md) |
 | [CPulseTurtleGraphicsCursor](pulse_system/CPulseTurtleGraphicsCursor.md) | class | 240 | 4 | [CPulseExecCursor](pulse_runtime_lib/CPulseExecCursor.md) |
 | [CTestDomainDerived_Cursor](pulse_system/CTestDomainDerived_Cursor.md) | class | 224 | 2 | [CPulseExecCursor](pulse_runtime_lib/CPulseExecCursor.md) |
-| [FakeEntityDerivedA_tAPI](pulse_system/FakeEntityDerivedA_tAPI.md) | class | 8 | 0 |  |
-| [FakeEntityDerivedB_tAPI](pulse_system/FakeEntityDerivedB_tAPI.md) | class | 8 | 0 |  |
-| [FakeEntity_tAPI](pulse_system/FakeEntity_tAPI.md) | class | 8 | 0 |  |
 | [TestComponent_t](pulse_system/TestComponent_t.md) | class | 16 | 1 |  |
-| [TestComponent_tAPI](pulse_system/TestComponent_tAPI.md) | class | 8 | 0 |  |
 | [PulseTestEnumColor_t](pulse_system/PulseTestEnumColor_t.md) | enum | — | 5 |  |
 | [PulseTestEnumFlagsAlt_t](pulse_system/PulseTestEnumFlagsAlt_t.md) | enum | — | 2 |  |
 | [PulseTestEnumFlags_t](pulse_system/PulseTestEnumFlags_t.md) | enum | — | 4 |  |

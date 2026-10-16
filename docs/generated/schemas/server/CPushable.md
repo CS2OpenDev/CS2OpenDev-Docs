@@ -8,9 +8,9 @@ kind: class
 
 # CPushable
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 2120 bytes (`0x848`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 2344 bytes (`0x928`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CBreakable](../server/CBreakable.md)
 
@@ -26,7 +26,7 @@ classDiagram
 
 ## Memory layout
 
-144 fields (0 declared here, 144 inherited). Offsets are absolute from the object base.
+147 fields (0 declared here, 147 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -146,7 +146,8 @@ classDiagram
 | `0x570` | `m_clrRender` | Color | [CBaseModelEntity](../server/CBaseModelEntity.md) | RGBA tint colour multiplied onto the entity's diffuse texture. |
 | `0x578` | `m_vecRenderAttributes` | CUtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../server/EntityRenderAttribute_t.md) > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e0` | `m_bRenderToCubemaps` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x5e1` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e1` | `m_bExpandRenderBoundsToIncludeCloth` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e2` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e8` | `m_Collision` | [CCollisionProperty](../server/CCollisionProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CCollisionProperty struct encoding the entity's collision bounding box shape and flags. |
 | `0x6a0` | `m_Glow` | [CGlowProperty](../server/CGlowProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CGlowProperty struct controlling the entity's glow outline (colour, radius, visibility rules). |
 | `0x6f8` | `m_flGlowBackfaceMult` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Multiplier for the glow effect on back-facing surfaces of the model. |
@@ -155,22 +156,24 @@ classDiagram
 | `0x704` | `m_flFadeScale` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Scale factor applied to fade distances; 0 disables distance fading. |
 | `0x708` | `m_flShadowStrength` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Opacity of this entity's cast shadow (0 = no shadow, 1 = full shadow). |
 | `0x70c` | `m_nObjectCulling` | uint8 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x710` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x738` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
-| `0x768` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
-| `0x778` | `m_CPropDataComponent` | [CPropDataComponent](../server/CPropDataComponent.md) | [CBreakable](../server/CBreakable.md) |  |
-| `0x7b8` | `m_Material` | [Materials](../server/Materials.md) | [CBreakable](../server/CBreakable.md) |  |
-| `0x7bc` | `m_hBreaker` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CBreakable](../server/CBreakable.md) |  |
-| `0x7c0` | `m_Explosion` | [Explosions](../server/Explosions.md) | [CBreakable](../server/CBreakable.md) |  |
-| `0x7c8` | `m_iszSpawnObject` | CUtlSymbolLarge | [CBreakable](../server/CBreakable.md) |  |
-| `0x7d0` | `m_flPressureDelay` | float32 | [CBreakable](../server/CBreakable.md) |  |
-| `0x7d4` | `m_iMinHealthDmg` | int32 | [CBreakable](../server/CBreakable.md) |  |
-| `0x7d8` | `m_iszPropData` | CUtlSymbolLarge | [CBreakable](../server/CBreakable.md) |  |
-| `0x7e0` | `m_impactEnergyScale` | float32 | [CBreakable](../server/CBreakable.md) |  |
-| `0x7e4` | `m_nOverrideBlockLOS` | [EOverrideBlockLOS_t](../server/EOverrideBlockLOS_t.md) | [CBreakable](../server/CBreakable.md) |  |
-| `0x7e8` | `m_OnStartDeath` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBreakable](../server/CBreakable.md) |  |
-| `0x800` | `m_OnBreak` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBreakable](../server/CBreakable.md) |  |
-| `0x818` | `m_OnHealthChanged` | CEntityOutputTemplate< float32 > | [CBreakable](../server/CBreakable.md) |  |
-| `0x838` | `m_PerformanceMode` | [PerformanceMode_t](../server/PerformanceMode_t.md) | [CBreakable](../server/CBreakable.md) |  |
-| `0x83c` | `m_hPhysicsAttacker` | CHandle< [CBasePlayerPawn](../server/CBasePlayerPawn.md) > | [CBreakable](../server/CBreakable.md) |  |
-| `0x840` | `m_flLastPhysicsInfluenceTime` | [GameTime_t](../entity2/GameTime_t.md) | [CBreakable](../server/CBreakable.md) |  |
+| `0x710` | `m_bodyGroupTotalRequestCount` | uint32 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x718` | `m_bodyGroupRequests` | CUtlVectorFixedGrowable< [CBaseModelEntity::BodyGroupRequest_t](../server/CBaseModelEntity.BodyGroupRequest_t.md), 8 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x7f0` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x818` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
+| `0x848` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
+| `0x858` | `m_CPropDataComponent` | [CPropDataComponent](../server/CPropDataComponent.md) | [CBreakable](../server/CBreakable.md) |  |
+| `0x898` | `m_Material` | [Materials](../server/Materials.md) | [CBreakable](../server/CBreakable.md) |  |
+| `0x89c` | `m_hBreaker` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CBreakable](../server/CBreakable.md) |  |
+| `0x8a0` | `m_Explosion` | [Explosions](../server/Explosions.md) | [CBreakable](../server/CBreakable.md) |  |
+| `0x8a8` | `m_iszSpawnObject` | CUtlSymbolLarge | [CBreakable](../server/CBreakable.md) |  |
+| `0x8b0` | `m_flPressureDelay` | float32 | [CBreakable](../server/CBreakable.md) |  |
+| `0x8b4` | `m_iMinHealthDmg` | int32 | [CBreakable](../server/CBreakable.md) |  |
+| `0x8b8` | `m_iszPropData` | CUtlSymbolLarge | [CBreakable](../server/CBreakable.md) |  |
+| `0x8c0` | `m_impactEnergyScale` | float32 | [CBreakable](../server/CBreakable.md) |  |
+| `0x8c4` | `m_nOverrideBlockLOS` | [EOverrideBlockLOS_t](../server/EOverrideBlockLOS_t.md) | [CBreakable](../server/CBreakable.md) |  |
+| `0x8c8` | `m_OnStartDeath` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBreakable](../server/CBreakable.md) |  |
+| `0x8e0` | `m_OnBreak` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBreakable](../server/CBreakable.md) |  |
+| `0x8f8` | `m_OnHealthChanged` | CEntityOutputTemplate< float32 > | [CBreakable](../server/CBreakable.md) |  |
+| `0x918` | `m_PerformanceMode` | [PerformanceMode_t](../server/PerformanceMode_t.md) | [CBreakable](../server/CBreakable.md) |  |
+| `0x91c` | `m_hPhysicsAttacker` | CHandle< [CBasePlayerPawn](../server/CBasePlayerPawn.md) > | [CBreakable](../server/CBreakable.md) |  |
+| `0x920` | `m_flLastPhysicsInfluenceTime` | [GameTime_t](../entity2/GameTime_t.md) | [CBreakable](../server/CBreakable.md) |  |

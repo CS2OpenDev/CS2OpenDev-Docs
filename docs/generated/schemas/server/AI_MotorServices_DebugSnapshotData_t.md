@@ -8,9 +8,9 @@ kind: class
 
 # AI_MotorServices_DebugSnapshotData_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 48 bytes (`0x30`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 56 bytes (`0x38`) · **Align:** 8 · **Module:** server
 
 **Metadata:** `MDebugSnapshotDataRenderFn`, `MPropertyFriendlyName Motor Services`
 
@@ -23,7 +23,7 @@ classDiagram
 
 ## Memory layout
 
-4 fields (4 declared here, 0 inherited). Offsets are absolute from the object base.
+5 fields (5 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -31,6 +31,7 @@ classDiagram
 | `0x8` | `desired_speed` | float32 |  |  |
 | `0xc` | `motor_velocity` | Vector |  |  |
 | `0x18` | `motor_path` | CUtlVector< [AI_MotorServices_DebugSnapshotData_t::MotorPathWaypoint_t](../server/AI_MotorServices_DebugSnapshotData_t.MotorPathWaypoint_t.md) > |  |  |
+| `0x30` | `ground_entity_debug_name` | CUtlString |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -45,6 +46,7 @@ classDiagram
 	],
 	&quot;motor_path&quot;:
 	[
-	]
+	],
+	&quot;ground_entity_debug_name&quot;: &quot;&quot;
 }</pre>
 </details>

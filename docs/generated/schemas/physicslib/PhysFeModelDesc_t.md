@@ -8,9 +8,9 @@ kind: class
 
 # PhysFeModelDesc_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 1784 bytes (`0x6f8`) · **Align:** 8 · **Module:** physicslib
+**Kind:** class · **Size:** 1832 bytes (`0x728`) · **Align:** 8 · **Module:** physicslib
 
 **Relationships:**
 
@@ -21,16 +21,16 @@ classDiagram
     PhysFeModelDesc_t *-- FeQuad_t
     PhysFeModelDesc_t *-- FeSimdQuad_t
     PhysFeModelDesc_t *-- FeSimdTri_t
+    PhysFeModelDesc_t *-- FePrism_t
+    PhysFeModelDesc_t *-- FeSimdPrism_t
     PhysFeModelDesc_t *-- FeSimdRodConstraint_t
     PhysFeModelDesc_t *-- FeSimdRodConstraintAnim_t
     PhysFeModelDesc_t *-- FeRodConstraint_t
-    PhysFeModelDesc_t *-- FeTwistConstraint_t
-    PhysFeModelDesc_t *-- FeHingeLimit_t
 ```
 
 ## Memory layout
 
-111 fields (111 declared here, 0 inherited). Offsets are absolute from the object base.
+113 fields (113 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -59,92 +59,94 @@ classDiagram
 | `0xa8` | `m_Quads` | CUtlVector< [FeQuad_t](../physicslib/FeQuad_t.md) > |  |  |
 | `0xc0` | `m_SimdQuads` | CUtlVector< [FeSimdQuad_t](../physicslib/FeSimdQuad_t.md) > |  |  |
 | `0xd8` | `m_SimdTris` | CUtlVector< [FeSimdTri_t](../physicslib/FeSimdTri_t.md) > |  |  |
-| `0xf0` | `m_SimdRods` | CUtlVector< [FeSimdRodConstraint_t](../physicslib/FeSimdRodConstraint_t.md) > |  |  |
-| `0x108` | `m_SimdRodsAnim` | CUtlVector< [FeSimdRodConstraintAnim_t](../physicslib/FeSimdRodConstraintAnim_t.md) > |  |  |
-| `0x120` | `m_InitPose` | CUtlVector< CTransform > |  |  |
-| `0x138` | `m_Rods` | CUtlVector< [FeRodConstraint_t](../physicslib/FeRodConstraint_t.md) > |  |  |
-| `0x150` | `m_Twists` | CUtlVector< [FeTwistConstraint_t](../physicslib/FeTwistConstraint_t.md) > |  |  |
-| `0x168` | `m_HingeLimits` | CUtlVector< [FeHingeLimit_t](../physicslib/FeHingeLimit_t.md) > |  |  |
-| `0x180` | `m_AntiTunnelBytecode` | CUtlVector< uint32 > |  |  |
-| `0x198` | `m_DynKinLinks` | CUtlVector< [FeDynKinLink_t](../physicslib/FeDynKinLink_t.md) > |  |  |
-| `0x1b0` | `m_BoneMergeLinks` | CUtlVector< [FeBoneMergeLink_t](../physicslib/FeBoneMergeLink_t.md) > |  |  |
-| `0x1c8` | `m_AntiTunnelProbes` | CUtlVector< [FeAntiTunnelProbe_t](../physicslib/FeAntiTunnelProbe_t.md) > |  |  |
-| `0x1e0` | `m_AntiTunnelTargetNodes` | CUtlVector< uint16 > |  |  |
-| `0x1f8` | `m_NodeStrayBoxes` | CUtlVector< [FeNodeStrayBox_t](../physicslib/FeNodeStrayBox_t.md) > |  |  |
-| `0x210` | `m_AxialEdges` | CUtlVector< [FeAxialEdgeBend_t](../physicslib/FeAxialEdgeBend_t.md) > |  |  |
-| `0x228` | `m_NodeInvMasses` | CUtlVector< float32 > |  |  |
-| `0x240` | `m_CtrlOffsets` | CUtlVector< [FeCtrlOffset_t](../physicslib/FeCtrlOffset_t.md) > |  |  |
-| `0x258` | `m_CtrlOsOffsets` | CUtlVector< [FeCtrlOsOffset_t](../physicslib/FeCtrlOsOffset_t.md) > |  |  |
-| `0x270` | `m_FollowNodes` | CUtlVector< [FeFollowNode_t](../physicslib/FeFollowNode_t.md) > |  |  |
-| `0x288` | `m_CollisionPlanes` | CUtlVector< [FeCollisionPlane_t](../physicslib/FeCollisionPlane_t.md) > |  |  |
-| `0x2a0` | `m_NodeIntegrator` | CUtlVector< [FeNodeIntegrator_t](../physicslib/FeNodeIntegrator_t.md) > |  |  |
-| `0x2b8` | `m_SpringIntegrator` | CUtlVector< [FeSpringIntegrator_t](../physicslib/FeSpringIntegrator_t.md) > |  |  |
-| `0x2d0` | `m_SimdSpringIntegrator` | CUtlVector< [FeSimdSpringIntegrator_t](../physicslib/FeSimdSpringIntegrator_t.md) > |  |  |
-| `0x2e8` | `m_WorldCollisionParams` | CUtlVector< [FeWorldCollisionParams_t](../physicslib/FeWorldCollisionParams_t.md) > |  |  |
-| `0x300` | `m_LegacyStretchForce` | CUtlVector< float32 > |  |  |
-| `0x318` | `m_NodeCollisionRadii` | CUtlVector< float32 > |  |  |
-| `0x330` | `m_DynNodeFriction` | CUtlVector< float32 > |  |  |
-| `0x348` | `m_LocalRotation` | CUtlVector< float32 > |  |  |
-| `0x360` | `m_LocalForce` | CUtlVector< float32 > |  |  |
-| `0x378` | `m_TaperedCapsuleStretches` | CUtlVector< [FeTaperedCapsuleStretch_t](../physicslib/FeTaperedCapsuleStretch_t.md) > |  |  |
-| `0x390` | `m_TaperedCapsuleRigids` | CUtlVector< [FeTaperedCapsuleRigid_t](../physicslib/FeTaperedCapsuleRigid_t.md) > |  |  |
-| `0x3a8` | `m_SphereRigids` | CUtlVector< [FeSphereRigid_t](../physicslib/FeSphereRigid_t.md) > |  |  |
-| `0x3c0` | `m_WorldCollisionNodes` | CUtlVector< uint16 > |  |  |
-| `0x3d8` | `m_TreeParents` | CUtlVector< uint16 > |  |  |
-| `0x3f0` | `m_TreeCollisionMasks` | CUtlVector< uint16 > |  |  |
-| `0x408` | `m_TreeChildren` | CUtlVector< [FeTreeChildren_t](../physicslib/FeTreeChildren_t.md) > |  |  |
-| `0x420` | `m_FreeNodes` | CUtlVector< uint16 > |  |  |
-| `0x438` | `m_FitMatrices` | CUtlVector< [FeFitMatrix_t](../physicslib/FeFitMatrix_t.md) > |  |  |
-| `0x450` | `m_FitWeights` | CUtlVector< [FeFitWeight_t](../physicslib/FeFitWeight_t.md) > |  |  |
-| `0x468` | `m_ReverseOffsets` | CUtlVector< [FeNodeReverseOffset_t](../physicslib/FeNodeReverseOffset_t.md) > |  |  |
-| `0x480` | `m_AnimStrayRadii` | CUtlVector< [FeAnimStrayRadius_t](../physicslib/FeAnimStrayRadius_t.md) > |  |  |
-| `0x498` | `m_SimdAnimStrayRadii` | CUtlVector< [FeSimdAnimStrayRadius_t](../physicslib/FeSimdAnimStrayRadius_t.md) > |  |  |
-| `0x4b0` | `m_KelagerBends` | CUtlVector< [FeKelagerBend2_t](../physicslib/FeKelagerBend2_t.md) > |  |  |
-| `0x4c8` | `m_CtrlSoftOffsets` | CUtlVector< [FeCtrlSoftOffset_t](../physicslib/FeCtrlSoftOffset_t.md) > |  |  |
-| `0x4e0` | `m_JiggleBones` | CUtlVector< [CFeIndexedJiggleBone](../physicslib/CFeIndexedJiggleBone.md) > |  |  |
-| `0x4f8` | `m_SourceElems` | CUtlVector< uint16 > |  |  |
-| `0x510` | `m_GoalDampedSpringIntegrators` | CUtlVector< uint32 > |  |  |
-| `0x528` | `m_Tris` | CUtlVector< [FeTri_t](../physicslib/FeTri_t.md) > |  |  |
-| `0x540` | `m_nTriCount1` | uint16 |  |  |
-| `0x542` | `m_nTriCount2` | uint16 |  |  |
-| `0x544` | `m_nReservedUint8` | uint8 |  |  |
-| `0x545` | `m_nExtraPressureIterations` | uint8 |  |  |
-| `0x546` | `m_nExtraGoalIterations` | uint8 |  |  |
-| `0x547` | `m_nExtraIterations` | uint8 |  |  |
-| `0x548` | `m_SDFRigids` | CUtlVector< [FeSDFRigid_t](../physicslib/FeSDFRigid_t.md) > |  |  |
-| `0x560` | `m_BoxRigids` | CUtlVector< [FeBoxRigid_t](../physicslib/FeBoxRigid_t.md) > |  |  |
-| `0x578` | `m_DynNodeVertexSet` | CUtlVector< uint8 > |  |  |
-| `0x590` | `m_VertexSetNames` | CUtlVector< uint32 > |  |  |
-| `0x5a8` | `m_RigidColliderPriorities` | CUtlVector< [FeRigidColliderIndices_t](../physicslib/FeRigidColliderIndices_t.md) > |  |  |
-| `0x5c0` | `m_MorphLayers` | CUtlVector< [FeMorphLayerDepr_t](../physicslib/FeMorphLayerDepr_t.md) > |  |  |
-| `0x5d8` | `m_MorphSetData` | CUtlVector< uint8 > |  |  |
-| `0x5f0` | `m_VertexMaps` | CUtlVector< [FeVertexMapDesc_t](../physicslib/FeVertexMapDesc_t.md) > |  |  |
-| `0x608` | `m_VertexMapValues` | CUtlVector< uint8 > |  |  |
-| `0x620` | `m_Effects` | CUtlVector< [FeEffectDesc_t](../physicslib/FeEffectDesc_t.md) > |  |  |
-| `0x638` | `m_LockToParent` | CUtlVector< [FeCtrlOffset_t](../physicslib/FeCtrlOffset_t.md) > |  |  |
-| `0x650` | `m_LockToGoal` | CUtlVector< uint16 > |  |  |
-| `0x668` | `m_SkelParents` | CUtlVector< int16 > |  |  |
-| `0x680` | `m_DynNodeWindBases` | CUtlVector< [FeNodeWindBase_t](../physicslib/FeNodeWindBase_t.md) > |  |  |
-| `0x698` | `m_SelfCollisionLayers` | CUtlVector< [FeModelSelfCollisionLayer_t](../physicslib/FeModelSelfCollisionLayer_t.md) > |  |  |
-| `0x6b0` | `m_flInternalPressure` | float32 |  |  |
-| `0x6b4` | `m_flDefaultTimeDilation` | float32 |  |  |
-| `0x6b8` | `m_flWindage` | float32 |  |  |
-| `0x6bc` | `m_flWindDrag` | float32 |  |  |
-| `0x6c0` | `m_flDefaultSurfaceStretch` | float32 |  |  |
-| `0x6c4` | `m_flDefaultThreadStretch` | float32 |  |  |
-| `0x6c8` | `m_flDefaultGravityScale` | float32 |  |  |
-| `0x6cc` | `m_flDefaultVelAirDrag` | float32 |  |  |
-| `0x6d0` | `m_flDefaultExpAirDrag` | float32 |  |  |
-| `0x6d4` | `m_flDefaultVelQuadAirDrag` | float32 |  |  |
-| `0x6d8` | `m_flDefaultExpQuadAirDrag` | float32 |  |  |
-| `0x6dc` | `m_flRodVelocitySmoothRate` | float32 |  |  |
-| `0x6e0` | `m_flQuadVelocitySmoothRate` | float32 |  |  |
-| `0x6e4` | `m_flAddWorldCollisionRadius` | float32 |  |  |
-| `0x6e8` | `m_flDefaultVolumetricSolveAmount` | float32 |  |  |
-| `0x6ec` | `m_flMotionSmoothCDT` | float32 |  |  |
-| `0x6f0` | `m_flLocalDrag1` | float32 |  |  |
-| `0x6f4` | `m_nRodVelocitySmoothIterations` | uint16 |  |  |
-| `0x6f6` | `m_nQuadVelocitySmoothIterations` | uint16 |  |  |
+| `0xf0` | `m_Prisms` | CUtlVector< [FePrism_t](../physicslib/FePrism_t.md) > |  |  |
+| `0x108` | `m_SimdPrisms` | CUtlVector< [FeSimdPrism_t](../physicslib/FeSimdPrism_t.md) > |  |  |
+| `0x120` | `m_SimdRods` | CUtlVector< [FeSimdRodConstraint_t](../physicslib/FeSimdRodConstraint_t.md) > |  |  |
+| `0x138` | `m_SimdRodsAnim` | CUtlVector< [FeSimdRodConstraintAnim_t](../physicslib/FeSimdRodConstraintAnim_t.md) > |  |  |
+| `0x150` | `m_InitPose` | CUtlVector< CTransform > |  |  |
+| `0x168` | `m_Rods` | CUtlVector< [FeRodConstraint_t](../physicslib/FeRodConstraint_t.md) > |  |  |
+| `0x180` | `m_Twists` | CUtlVector< [FeTwistConstraint_t](../physicslib/FeTwistConstraint_t.md) > |  |  |
+| `0x198` | `m_HingeLimits` | CUtlVector< [FeHingeLimit_t](../physicslib/FeHingeLimit_t.md) > |  |  |
+| `0x1b0` | `m_AntiTunnelBytecode` | CUtlVector< uint32 > |  |  |
+| `0x1c8` | `m_DynKinLinks` | CUtlVector< [FeDynKinLink_t](../physicslib/FeDynKinLink_t.md) > |  |  |
+| `0x1e0` | `m_BoneMergeLinks` | CUtlVector< [FeBoneMergeLink_t](../physicslib/FeBoneMergeLink_t.md) > |  |  |
+| `0x1f8` | `m_AntiTunnelProbes` | CUtlVector< [FeAntiTunnelProbe_t](../physicslib/FeAntiTunnelProbe_t.md) > |  |  |
+| `0x210` | `m_AntiTunnelTargetNodes` | CUtlVector< uint16 > |  |  |
+| `0x228` | `m_NodeStrayBoxes` | CUtlVector< [FeNodeStrayBox_t](../physicslib/FeNodeStrayBox_t.md) > |  |  |
+| `0x240` | `m_AxialEdges` | CUtlVector< [FeAxialEdgeBend_t](../physicslib/FeAxialEdgeBend_t.md) > |  |  |
+| `0x258` | `m_NodeInvMasses` | CUtlVector< float32 > |  |  |
+| `0x270` | `m_CtrlOffsets` | CUtlVector< [FeCtrlOffset_t](../physicslib/FeCtrlOffset_t.md) > |  |  |
+| `0x288` | `m_CtrlOsOffsets` | CUtlVector< [FeCtrlOsOffset_t](../physicslib/FeCtrlOsOffset_t.md) > |  |  |
+| `0x2a0` | `m_FollowNodes` | CUtlVector< [FeFollowNode_t](../physicslib/FeFollowNode_t.md) > |  |  |
+| `0x2b8` | `m_CollisionPlanes` | CUtlVector< [FeCollisionPlane_t](../physicslib/FeCollisionPlane_t.md) > |  |  |
+| `0x2d0` | `m_NodeIntegrator` | CUtlVector< [FeNodeIntegrator_t](../physicslib/FeNodeIntegrator_t.md) > |  |  |
+| `0x2e8` | `m_SpringIntegrator` | CUtlVector< [FeSpringIntegrator_t](../physicslib/FeSpringIntegrator_t.md) > |  |  |
+| `0x300` | `m_SimdSpringIntegrator` | CUtlVector< [FeSimdSpringIntegrator_t](../physicslib/FeSimdSpringIntegrator_t.md) > |  |  |
+| `0x318` | `m_WorldCollisionParams` | CUtlVector< [FeWorldCollisionParams_t](../physicslib/FeWorldCollisionParams_t.md) > |  |  |
+| `0x330` | `m_LegacyStretchForce` | CUtlVector< float32 > |  |  |
+| `0x348` | `m_NodeCollisionRadii` | CUtlVector< float32 > |  |  |
+| `0x360` | `m_DynNodeFriction` | CUtlVector< float32 > |  |  |
+| `0x378` | `m_LocalRotation` | CUtlVector< float32 > |  |  |
+| `0x390` | `m_LocalForce` | CUtlVector< float32 > |  |  |
+| `0x3a8` | `m_TaperedCapsuleStretches` | CUtlVector< [FeTaperedCapsuleStretch_t](../physicslib/FeTaperedCapsuleStretch_t.md) > |  |  |
+| `0x3c0` | `m_TaperedCapsuleRigids` | CUtlVector< [FeTaperedCapsuleRigid_t](../physicslib/FeTaperedCapsuleRigid_t.md) > |  |  |
+| `0x3d8` | `m_SphereRigids` | CUtlVector< [FeSphereRigid_t](../physicslib/FeSphereRigid_t.md) > |  |  |
+| `0x3f0` | `m_WorldCollisionNodes` | CUtlVector< uint16 > |  |  |
+| `0x408` | `m_TreeParents` | CUtlVector< uint16 > |  |  |
+| `0x420` | `m_TreeCollisionMasks` | CUtlVector< uint16 > |  |  |
+| `0x438` | `m_TreeChildren` | CUtlVector< [FeTreeChildren_t](../physicslib/FeTreeChildren_t.md) > |  |  |
+| `0x450` | `m_FreeNodes` | CUtlVector< uint16 > |  |  |
+| `0x468` | `m_FitMatrices` | CUtlVector< [FeFitMatrix_t](../physicslib/FeFitMatrix_t.md) > |  |  |
+| `0x480` | `m_FitWeights` | CUtlVector< [FeFitWeight_t](../physicslib/FeFitWeight_t.md) > |  |  |
+| `0x498` | `m_ReverseOffsets` | CUtlVector< [FeNodeReverseOffset_t](../physicslib/FeNodeReverseOffset_t.md) > |  |  |
+| `0x4b0` | `m_AnimStrayRadii` | CUtlVector< [FeAnimStrayRadius_t](../physicslib/FeAnimStrayRadius_t.md) > |  |  |
+| `0x4c8` | `m_SimdAnimStrayRadii` | CUtlVector< [FeSimdAnimStrayRadius_t](../physicslib/FeSimdAnimStrayRadius_t.md) > |  |  |
+| `0x4e0` | `m_KelagerBends` | CUtlVector< [FeKelagerBend2_t](../physicslib/FeKelagerBend2_t.md) > |  |  |
+| `0x4f8` | `m_CtrlSoftOffsets` | CUtlVector< [FeCtrlSoftOffset_t](../physicslib/FeCtrlSoftOffset_t.md) > |  |  |
+| `0x510` | `m_JiggleBones` | CUtlVector< [CFeIndexedJiggleBone](../physicslib/CFeIndexedJiggleBone.md) > |  |  |
+| `0x528` | `m_SourceElems` | CUtlVector< uint16 > |  |  |
+| `0x540` | `m_GoalDampedSpringIntegrators` | CUtlVector< uint32 > |  |  |
+| `0x558` | `m_Tris` | CUtlVector< [FeTri_t](../physicslib/FeTri_t.md) > |  |  |
+| `0x570` | `m_nTriCount1` | uint16 |  |  |
+| `0x572` | `m_nTriCount2` | uint16 |  |  |
+| `0x574` | `m_nReservedUint8` | uint8 |  |  |
+| `0x575` | `m_nExtraPressureIterations` | uint8 |  |  |
+| `0x576` | `m_nExtraGoalIterations` | uint8 |  |  |
+| `0x577` | `m_nExtraIterations` | uint8 |  |  |
+| `0x578` | `m_SDFRigids` | CUtlVector< [FeSDFRigid_t](../physicslib/FeSDFRigid_t.md) > |  |  |
+| `0x590` | `m_BoxRigids` | CUtlVector< [FeBoxRigid_t](../physicslib/FeBoxRigid_t.md) > |  |  |
+| `0x5a8` | `m_DynNodeVertexSet` | CUtlVector< uint8 > |  |  |
+| `0x5c0` | `m_VertexSetNames` | CUtlVector< uint32 > |  |  |
+| `0x5d8` | `m_RigidColliderPriorities` | CUtlVector< [FeRigidColliderIndices_t](../physicslib/FeRigidColliderIndices_t.md) > |  |  |
+| `0x5f0` | `m_MorphLayers` | CUtlVector< [FeMorphLayerDepr_t](../physicslib/FeMorphLayerDepr_t.md) > |  |  |
+| `0x608` | `m_MorphSetData` | CUtlVector< uint8 > |  |  |
+| `0x620` | `m_VertexMaps` | CUtlVector< [FeVertexMapDesc_t](../physicslib/FeVertexMapDesc_t.md) > |  |  |
+| `0x638` | `m_VertexMapValues` | CUtlVector< uint8 > |  |  |
+| `0x650` | `m_Effects` | CUtlVector< [FeEffectDesc_t](../physicslib/FeEffectDesc_t.md) > |  |  |
+| `0x668` | `m_LockToParent` | CUtlVector< [FeCtrlOffset_t](../physicslib/FeCtrlOffset_t.md) > |  |  |
+| `0x680` | `m_LockToGoal` | CUtlVector< uint16 > |  |  |
+| `0x698` | `m_SkelParents` | CUtlVector< int16 > |  |  |
+| `0x6b0` | `m_DynNodeWindBases` | CUtlVector< [FeNodeWindBase_t](../physicslib/FeNodeWindBase_t.md) > |  |  |
+| `0x6c8` | `m_SelfCollisionLayers` | CUtlVector< [FeModelSelfCollisionLayer_t](../physicslib/FeModelSelfCollisionLayer_t.md) > |  |  |
+| `0x6e0` | `m_flInternalPressure` | float32 |  |  |
+| `0x6e4` | `m_flDefaultTimeDilation` | float32 |  |  |
+| `0x6e8` | `m_flWindage` | float32 |  |  |
+| `0x6ec` | `m_flWindDrag` | float32 |  |  |
+| `0x6f0` | `m_flDefaultSurfaceStretch` | float32 |  |  |
+| `0x6f4` | `m_flDefaultThreadStretch` | float32 |  |  |
+| `0x6f8` | `m_flDefaultGravityScale` | float32 |  |  |
+| `0x6fc` | `m_flDefaultVelAirDrag` | float32 |  |  |
+| `0x700` | `m_flDefaultExpAirDrag` | float32 |  |  |
+| `0x704` | `m_flDefaultVelQuadAirDrag` | float32 |  |  |
+| `0x708` | `m_flDefaultExpQuadAirDrag` | float32 |  |  |
+| `0x70c` | `m_flRodVelocitySmoothRate` | float32 |  |  |
+| `0x710` | `m_flQuadVelocitySmoothRate` | float32 |  |  |
+| `0x714` | `m_flAddWorldCollisionRadius` | float32 |  |  |
+| `0x718` | `m_flDefaultVolumetricSolveAmount` | float32 |  |  |
+| `0x71c` | `m_flMotionSmoothCDT` | float32 |  |  |
+| `0x720` | `m_flLocalDrag1` | float32 |  |  |
+| `0x724` | `m_nRodVelocitySmoothIterations` | uint16 |  |  |
+| `0x726` | `m_nQuadVelocitySmoothIterations` | uint16 |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -188,6 +190,12 @@ classDiagram
 	[
 	],
 	&quot;m_SimdTris&quot;:
+	[
+	],
+	&quot;m_Prisms&quot;:
+	[
+	],
+	&quot;m_SimdPrisms&quot;:
 	[
 	],
 	&quot;m_SimdRods&quot;:

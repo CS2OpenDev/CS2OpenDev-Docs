@@ -15,6 +15,10 @@ classDiagram
     CFuseSymbolTable *-- VariableInfo_t
     CFuseSymbolTable *-- FunctionInfo_t
     FunctionInfo_t *-- FuseFunctionIndex_t
+    NoiseStreamDef_t *-- NoiseStreamType_t
+    NoiseStreamDef_t *-- NoiseStreamModifier_t
+    NoiseStreamDef_t *-- NoiseStreamTurbulence_t
+    NoiseStreamDef_t *-- NoiseOscillatorDef_t
     VariableInfo_t *-- FuseVariableIndex_t
     VariableInfo_t *-- FuseVariableType_t
     VariableInfo_t *-- FuseVariableAccess_t

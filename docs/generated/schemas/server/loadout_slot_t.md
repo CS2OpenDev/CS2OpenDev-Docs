@@ -8,7 +8,7 @@ kind: enum
 
 # loadout_slot_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 Full per-loadout equipment-slot enumeration (weapons, grenades, and cosmetic/agent slots).  Used to index CCSPlayerController_InventoryServices loadout data.
 
@@ -89,6 +89,7 @@ Full per-loadout equipment-slot enumeration (weapons, grenades, and cosmetic/age
 | `LOADOUT_SLOT_FIRST_ALL_CHARACTER` | 54 |  |
 | `LOADOUT_SLOT_MUSICKIT` | 54 |  |
 | `LOADOUT_SLOT_FLAIR0` | 55 |  |
-| `LOADOUT_SLOT_LAST_ALL_CHARACTER` | 56 |  |
 | `LOADOUT_SLOT_SPRAY0` | 56 |  |
-| `LOADOUT_SLOT_COUNT` | 57 |  |
+| `LOADOUT_SLOT_LAST_ALL_CHARACTER` | 57 |  |
+| `LOADOUT_SLOT_PET` | 57 |  |
+| `LOADOUT_SLOT_COUNT` | 58 |  |

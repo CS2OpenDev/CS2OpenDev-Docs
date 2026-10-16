@@ -8,9 +8,9 @@ kind: enum
 
 # ModelMeshBufferUsage_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** enum · **Underlying:** `uint8_t` · **Module:** modellib
+**Kind:** enum · **Underlying:** `uint16_t` · **Module:** modellib
 
 ## Values
 
@@ -24,3 +24,5 @@ kind: enum
 | `MESH_BUFFER_USAGE_RT_PROXY` | 16 |  |
 | `MESH_BUFFER_USAGE_VERTEX_ALBEDO` | 32 |  |
 | `MESH_BUFFER_USAGE_VERTEX_EMISSIVE` | 64 |  |
+| `MESH_BUFFER_USAGE_MESHLETS` | 128 |  |
+| `MESH_BUFFER_USAGE_ALIAS_TABLE` | 256 |  |

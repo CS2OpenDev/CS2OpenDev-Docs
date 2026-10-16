@@ -8,9 +8,9 @@ kind: class
 
 # CCSGO_WingmanIntroCounterTerroristPosition
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 3264 bytes (`0xcc0`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 5224 bytes (`0x1468`) · **Align:** 8 · **Module:** server
 
 **Twin:** [CCSGO_WingmanIntroCounterTerroristPosition (client)](../client/CCSGO_WingmanIntroCounterTerroristPosition.md)
 
@@ -29,7 +29,7 @@ classDiagram
 
 ## Memory layout
 
-96 fields (0 declared here, 96 inherited). Offsets are absolute from the object base.
+97 fields (0 declared here, 97 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -127,5 +127,6 @@ classDiagram
 | `0x4b8` | `m_sWeaponName` | CUtlString | [CCSGO_TeamPreviewCharacterPosition](../server/CCSGO_TeamPreviewCharacterPosition.md) |  |
 | `0x4c0` | `m_xuid` | uint64 | [CCSGO_TeamPreviewCharacterPosition](../server/CCSGO_TeamPreviewCharacterPosition.md) |  |
 | `0x4c8` | `m_agentItem` | [CEconItemView](../server/CEconItemView.md) | [CCSGO_TeamPreviewCharacterPosition](../server/CCSGO_TeamPreviewCharacterPosition.md) |  |
-| `0x770` | `m_glovesItem` | [CEconItemView](../server/CEconItemView.md) | [CCSGO_TeamPreviewCharacterPosition](../server/CCSGO_TeamPreviewCharacterPosition.md) |  |
-| `0xa18` | `m_weaponItem` | [CEconItemView](../server/CEconItemView.md) | [CCSGO_TeamPreviewCharacterPosition](../server/CCSGO_TeamPreviewCharacterPosition.md) |  |
+| `0x8b0` | `m_glovesItem` | [CEconItemView](../server/CEconItemView.md) | [CCSGO_TeamPreviewCharacterPosition](../server/CCSGO_TeamPreviewCharacterPosition.md) |  |
+| `0xc98` | `m_weaponItem` | [CEconItemView](../server/CEconItemView.md) | [CCSGO_TeamPreviewCharacterPosition](../server/CCSGO_TeamPreviewCharacterPosition.md) |  |
+| `0x1080` | `m_petItem` | [CEconItemView](../server/CEconItemView.md) | [CCSGO_TeamPreviewCharacterPosition](../server/CCSGO_TeamPreviewCharacterPosition.md) |  |

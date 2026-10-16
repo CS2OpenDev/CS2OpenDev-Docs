@@ -1954,6 +1954,10 @@
         {
           "properties": [
             {
+              "name": "bulletPenetrationDamageModifier",
+              "value": "0"
+            },
+            {
               "name": "bulletPenetrationDistanceModifier",
               "value": "0.99"
             }

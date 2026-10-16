@@ -8,13 +8,13 @@ kind: class
 
 # CSoundOpvarSetPointEntity
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 1600 bytes (`0x640`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CSoundOpvarSetPointBase](../server/CSoundOpvarSetPointBase.md)
 
-**Derived by:** [CSoundOpvarSetAutoRoomEntity](../server/CSoundOpvarSetAutoRoomEntity.md), [CSoundOpvarSetBoxEntity](../server/CSoundOpvarSetBoxEntity.md), [CSoundOpvarSetPathCornerEntity](../server/CSoundOpvarSetPathCornerEntity.md)
+**Derived by:** [CSoundOpvarSetAutoRoomEntity](../server/CSoundOpvarSetAutoRoomEntity.md), [CSoundOpvarSetBoxEntity](../server/CSoundOpvarSetBoxEntity.md), [CSoundOpvarSetDomeEntity](../server/CSoundOpvarSetDomeEntity.md), [CSoundOpvarSetPathCornerEntity](../server/CSoundOpvarSetPathCornerEntity.md)
 
 **Relationships:**
 
@@ -25,6 +25,7 @@ classDiagram
     CEntityInstance <|-- CBaseEntity
     CSoundOpvarSetPointEntity <|-- CSoundOpvarSetBoxEntity
     CSoundOpvarSetPointEntity <|-- CSoundOpvarSetAutoRoomEntity
+    CSoundOpvarSetPointEntity <|-- CSoundOpvarSetDomeEntity
     CSoundOpvarSetPointEntity <|-- CSoundOpvarSetPathCornerEntity
     CSoundOpvarSetPointEntity *-- CEntityIOOutput
 ```

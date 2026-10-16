@@ -8,11 +8,11 @@ kind: class
 
 # CCSPlayer_WeaponServices
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 Component attached to CCSPlayerPawn that manages the active weapon and weapon-switch timing for a CS2 player.
 
-**Kind:** class · **Size:** 5584 bytes (`0x15d0`) · **Align:** n/a (unspecified) · **Module:** client
+**Kind:** class · **Size:** 5640 bytes (`0x1608`) · **Align:** n/a (unspecified) · **Module:** client
 
 **Twin:** [CCSPlayer_WeaponServices (server)](../server/CCSPlayer_WeaponServices.md)
 
@@ -42,5 +42,5 @@ classDiagram
 | `0xd0` | `m_flNextAttack` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime before which no weapon switch is permitted (e.g. after throwing a grenade). *Only sent to the owning player (LocalPlayerExclusive).* |
 | `0xd4` | `m_nOldTotalShootPositionHistoryCount` | uint32 |  |  |
 | `0x370` | `m_nOldTotalInputHistoryCount` | uint32 |  |  |
-| `0x1588` | `m_networkAnimTiming` | C_NetworkUtlVectorBase< uint8 > |  | Byte array encoding animation transition timing for the active weapon, used to synchronise viewmodel animations across client and server. |
-| `0x15a0` | `m_bBlockInspectUntilNextGraphUpdate` | bool |  | True when the inspect animation is suppressed until the animation graph ticks again (prevents stutter). |
+| `0x15c0` | `m_networkAnimTiming` | C_NetworkUtlVectorBase< uint8 > |  | Byte array encoding animation transition timing for the active weapon, used to synchronise viewmodel animations across client and server. |
+| `0x15d8` | `m_bBlockInspectUntilNextGraphUpdate` | bool |  | True when the inspect animation is suppressed until the animation graph ticks again (prevents stutter). |

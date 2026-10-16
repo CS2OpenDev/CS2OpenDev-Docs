@@ -8,9 +8,9 @@ kind: class
 
 # CNmClipDocEvent_Particle
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 104 bytes (`0x68`) · **Align:** 8 · **Module:** animdoclib
+**Kind:** class · **Size:** 112 bytes (`0x70`) · **Align:** 8 · **Module:** animdoclib
 
 **Inherits from:** [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md)
 
@@ -33,20 +33,20 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flStartTime` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
 | `0xc` | `m_flDuration` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
-| `0x10` | `m_relevance` | [CNmEventRelevance_t](../animlib/CNmEventRelevance_t.md) |  |  |
-| `0x14` | `m_type` | [CNmParticleEvent::Type_t](../animlib/CNmParticleEvent.Type_t.md) |  |  |
-| `0x18` | `m_target` | [CNmEventTargetEntity_t](../animlib/CNmEventTargetEntity_t.md) |  |  |
-| `0x20` | `m_particleSystem` | CUtlString |  | `MPropertyAttributeEditor AssetBrowse( vpcf, *requiredoubleclick )` `MPropertyStartGroup +Particle` |
-| `0x28` | `m_bDetachFromOwner` | bool |  |  |
-| `0x29` | `m_bStopImmediately` | bool |  |  |
-| `0x2a` | `m_bPlayEndCap` | bool |  |  |
-| `0x30` | `m_attachmentPoint0` | CUtlString |  | `MPropertyAttrStateCallback` `MPropertyStartGroup +Attachment` |
-| `0x38` | `m_attachmentType0` | [ParticleAttachment_t](../animationsystem/ParticleAttachment_t.md) |  | `MPropertyAttrStateCallback` |
-| `0x40` | `m_attachmentPoint1` | CUtlString |  | `MPropertyAttrStateCallback` |
-| `0x48` | `m_attachmentType1` | [ParticleAttachment_t](../animationsystem/ParticleAttachment_t.md) |  | `MPropertyAttrStateCallback` |
-| `0x50` | `m_config` | CUtlString |  | `MPropertyAttrStateCallback` `MPropertyStartGroup +Config` |
-| `0x58` | `m_effectForConfig` | CUtlString |  | `MPropertyAttrStateCallback` |
-| `0x60` | `m_tags` | CUtlString |  | `MPropertyStartGroup +Metadata` |
+| `0x18` | `m_relevance` | [CNmEventRelevance_t](../animlib/CNmEventRelevance_t.md) |  |  |
+| `0x1c` | `m_type` | [CNmParticleEvent::Type_t](../animlib/CNmParticleEvent.Type_t.md) |  | `MPropertyAutoRebuildOnChange` |
+| `0x20` | `m_target` | [CNmEventTargetEntity_t](../animlib/CNmEventTargetEntity_t.md) |  |  |
+| `0x28` | `m_particleSystem` | CUtlString |  | `MPropertyAttributeEditor AssetBrowse( vpcf, *requiredoubleclick )` `MPropertyStartGroup +Particle` |
+| `0x30` | `m_bDetachFromOwner` | bool |  |  |
+| `0x31` | `m_bStopImmediately` | bool |  |  |
+| `0x32` | `m_bPlayEndCap` | bool |  |  |
+| `0x38` | `m_attachmentPoint0` | CUtlString |  | `MPropertyAttrStateCallback` `MPropertyStartGroup +Attachment` |
+| `0x40` | `m_attachmentType0` | [ParticleAttachment_t](../animationsystem/ParticleAttachment_t.md) |  | `MPropertyAttrStateCallback` |
+| `0x48` | `m_attachmentPoint1` | CUtlString |  | `MPropertyAttrStateCallback` |
+| `0x50` | `m_attachmentType1` | [ParticleAttachment_t](../animationsystem/ParticleAttachment_t.md) |  | `MPropertyAttrStateCallback` |
+| `0x58` | `m_config` | CUtlString |  | `MPropertyAttrStateCallback` `MPropertyStartGroup +Config` |
+| `0x60` | `m_effectForConfig` | CUtlString |  | `MPropertyAttrStateCallback` |
+| `0x68` | `m_tags` | CUtlString |  | `MPropertyStartGroup +Metadata` |
 
 <details><summary>KV3 class defaults</summary>
 

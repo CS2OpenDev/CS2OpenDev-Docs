@@ -8,7 +8,7 @@ kind: class
 
 # CLogicalEntity
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 1192 bytes (`0x4a8`) · **Align:** 8 · **Module:** server
 
@@ -16,7 +16,7 @@ kind: class
 
 **Inherits from:** [CServerOnlyEntity](../server/CServerOnlyEntity.md)
 
-**Derived by:** [CBaseFilter](../server/CBaseFilter.md), [CEnvFade](../server/CEnvFade.md), [CEnvGlobal](../server/CEnvGlobal.md), [CFuncMoverRouter](../server/CFuncMoverRouter.md), [CInfoSpawnGroupLoadUnload](../server/CInfoSpawnGroupLoadUnload.md), [CLogicAchievement](../server/CLogicAchievement.md), [CLogicActivityEvent](../server/CLogicActivityEvent.md), [CLogicAutosave](../server/CLogicAutosave.md), [CLogicBranch](../server/CLogicBranch.md), [CLogicBranchList](../server/CLogicBranchList.md), [CLogicCase](../server/CLogicCase.md), [CLogicCollisionPair](../server/CLogicCollisionPair.md), [CLogicCompare](../server/CLogicCompare.md), [CLogicDistanceAutosave](../server/CLogicDistanceAutosave.md), [CLogicDistanceCheck](../server/CLogicDistanceCheck.md), [CLogicEventListener](../server/CLogicEventListener.md), [CLogicGameEvent](../server/CLogicGameEvent.md), [CLogicGameEventListener](../server/CLogicGameEventListener.md), [CLogicLineToEntity](../server/CLogicLineToEntity.md), [CLogicMeasureMovement](../server/CLogicMeasureMovement.md), [CLogicNavigation](../server/CLogicNavigation.md), [CLogicPlayerProxy](../server/CLogicPlayerProxy.md), [CLogicRelay](../server/CLogicRelay.md), [CMapSharedEnvironment](../server/CMapSharedEnvironment.md), [CMathColorBlend](../server/CMathColorBlend.md), [CMathCounter](../server/CMathCounter.md), [CMathRemap](../server/CMathRemap.md), [CMultiLightProxy](../server/CMultiLightProxy.md), [CMultiSource](../server/CMultiSource.md), [CPathKeyFrame](../server/CPathKeyFrame.md), [CPathMoverEntitySpawner](../server/CPathMoverEntitySpawner.md), [CPhysConstraint](../server/CPhysConstraint.md), [CPhysMotor](../server/CPhysMotor.md), [CPhysicsEntitySolver](../server/CPhysicsEntitySolver.md), [CPointTemplate](../server/CPointTemplate.md), [CSceneListManager](../server/CSceneListManager.md), [CSoundStackSave](../server/CSoundStackSave.md), [CTestPulseIO](../server/CTestPulseIO.md), [CTimerEntity](../server/CTimerEntity.md)
+**Derived by:** [CBaseFilter](../server/CBaseFilter.md), [CEnvFade](../server/CEnvFade.md), [CEnvGlobal](../server/CEnvGlobal.md), [CFuncMoverRouter](../server/CFuncMoverRouter.md), [CInfoSpawnGroupLoadUnload](../server/CInfoSpawnGroupLoadUnload.md), [CLogicAchievement](../server/CLogicAchievement.md), [CLogicActivityEvent](../server/CLogicActivityEvent.md), [CLogicAutosave](../server/CLogicAutosave.md), [CLogicBranch](../server/CLogicBranch.md), [CLogicBranchList](../server/CLogicBranchList.md), [CLogicCase](../server/CLogicCase.md), [CLogicCollisionPair](../server/CLogicCollisionPair.md), [CLogicCompare](../server/CLogicCompare.md), [CLogicDistanceAutosave](../server/CLogicDistanceAutosave.md), [CLogicDistanceCheck](../server/CLogicDistanceCheck.md), [CLogicEventListener](../server/CLogicEventListener.md), [CLogicGameEvent](../server/CLogicGameEvent.md), [CLogicGameEventListener](../server/CLogicGameEventListener.md), [CLogicLineToEntity](../server/CLogicLineToEntity.md), [CLogicMeasureMovement](../server/CLogicMeasureMovement.md), [CLogicNavigation](../server/CLogicNavigation.md), [CLogicPlayerProxyBase](../server/CLogicPlayerProxyBase.md), [CLogicRelay](../server/CLogicRelay.md), [CMapSharedEnvironment](../server/CMapSharedEnvironment.md), [CMathColorBlend](../server/CMathColorBlend.md), [CMathCounter](../server/CMathCounter.md), [CMathRemap](../server/CMathRemap.md), [CMultiLightProxy](../server/CMultiLightProxy.md), [CMultiSource](../server/CMultiSource.md), [CPathKeyFrame](../server/CPathKeyFrame.md), [CPathMoverEntitySpawner](../server/CPathMoverEntitySpawner.md), [CPhysConstraint](../server/CPhysConstraint.md), [CPhysMotor](../server/CPhysMotor.md), [CPhysicsEntitySolver](../server/CPhysicsEntitySolver.md), [CPointTemplate](../server/CPointTemplate.md), [CSceneListManager](../server/CSceneListManager.md), [CSoundStackSave](../server/CSoundStackSave.md), [CTestPulseIO](../server/CTestPulseIO.md), [CTimerEntity](../server/CTimerEntity.md)
 
 **Relationships:**
 
@@ -48,7 +48,7 @@ classDiagram
     CLogicalEntity <|-- CLogicLineToEntity
     CLogicalEntity <|-- CLogicMeasureMovement
     CLogicalEntity <|-- CLogicNavigation
-    CLogicalEntity <|-- CLogicPlayerProxy
+    CLogicalEntity <|-- CLogicPlayerProxyBase
     CLogicalEntity <|-- CMapSharedEnvironment
     CLogicalEntity <|-- CMathColorBlend
     CLogicalEntity <|-- CMathCounter

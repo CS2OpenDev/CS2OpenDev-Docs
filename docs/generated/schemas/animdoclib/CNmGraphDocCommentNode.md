@@ -8,9 +8,9 @@ kind: class
 
 # CNmGraphDocCommentNode
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 104 bytes (`0x68`) · **Align:** 8 · **Module:** animdoclib
+**Kind:** class · **Size:** 112 bytes (`0x70`) · **Align:** 8 · **Module:** animdoclib
 
 **Inherits from:** [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md)
 
@@ -31,11 +31,11 @@ classDiagram
 | `0x18` | `m_name` | CUtlString | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertyHideField` |
 | `0x20` | `m_floatingComment` | CUtlString | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertyAttributeEditor TextBlock()` |
 | `0x28` | `m_position` | Vector2D | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
-| `0x40` | `m_pChildGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
-| `0x48` | `m_pSecondaryGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
-| `0x50` | `m_size` | Vector2D |  |  |
-| `0x58` | `m_comment` | CUtlString |  |  |
-| `0x60` | `m_nodeColor` | Color |  |  |
+| `0x48` | `m_pChildGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
+| `0x50` | `m_pSecondaryGraph` | [CNmGraphDocGraph](../animdoclib/CNmGraphDocGraph.md)* | [CNmGraphDocNode](../animdoclib/CNmGraphDocNode.md) | `MPropertySuppressField` |
+| `0x58` | `m_size` | Vector2D |  |  |
+| `0x60` | `m_comment` | CUtlString |  |  |
+| `0x68` | `m_nodeColor` | Color |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

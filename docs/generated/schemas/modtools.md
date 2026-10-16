@@ -5,7 +5,7 @@ module: modtools
 
 # Module: modtools
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 [📊 View UML Diagram](../diagrams/modtools.md)
 
@@ -13,5 +13,5 @@ module: modtools
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
-| [CNmGraphDocAimCSNode](modtools/CNmGraphDocAimCSNode.md) | class | 272 | 3 | [CNmGraphDocFlowNode](animdoclib/CNmGraphDocFlowNode.md) |
-| [CnmGraphDocSnapWeaponNode](modtools/CnmGraphDocSnapWeaponNode.md) | class | 256 | 0 | [CNmGraphDocFlowNode](animdoclib/CNmGraphDocFlowNode.md) |
+| [CNmGraphDocAimCSNode](modtools/CNmGraphDocAimCSNode.md) | class | 280 | 3 | [CNmGraphDocFlowNode](animdoclib/CNmGraphDocFlowNode.md) |
+| [CnmGraphDocSnapWeaponNode](modtools/CnmGraphDocSnapWeaponNode.md) | class | 264 | 0 | [CNmGraphDocFlowNode](animdoclib/CNmGraphDocFlowNode.md) |

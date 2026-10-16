@@ -8,9 +8,9 @@ kind: class
 
 # CMixDynamicsCompressor
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 80 bytes (`0x50`) · **Align:** 8 · **Module:** sounddoc_lib
+**Kind:** class · **Size:** 88 bytes (`0x58`) · **Align:** 8 · **Module:** sounddoc_lib
 
 **Inherits from:** [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md)
 
@@ -26,7 +26,7 @@ classDiagram
 
 ## Memory layout
 
-9 fields (4 declared here, 5 inherited). Offsets are absolute from the object base.
+10 fields (4 declared here, 6 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -35,10 +35,11 @@ classDiagram
 | `0x18` | `m_bActive` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x19` | `m_bSolo` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x1a` | `m_bEditProperties` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
+| `0x1c` | `m_nGenerationId` | int32 | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x20` | `m_nChannels` | int32 |  | `MPropertyAttributeChoiceName processor_channels` `MPropertyFriendlyName Channels` |
 | `0x24` | `m_desc` | [VMixDynamicsCompressorDesc_t](../soundsystem_lowlevel/VMixDynamicsCompressorDesc_t.md) |  | `MPropertyAutoExpandSelf` |
-| `0x48` | `m_nUIPage` | int32 |  |  |
-| `0x4c` | `m_bIsLimiter` | bool |  |  |
+| `0x4c` | `m_nUIPage` | int32 |  |  |
+| `0x50` | `m_bIsLimiter` | bool |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -49,6 +50,7 @@ classDiagram
 	&quot;m_bActive&quot;: true,
 	&quot;m_bSolo&quot;: false,
 	&quot;m_bEditProperties&quot;: false,
+	&quot;m_nGenerationId&quot;: 0,
 	&quot;m_nChannels&quot;: -1,
 	&quot;m_desc&quot;:
 	{
@@ -60,7 +62,9 @@ classDiagram
 		&quot;m_flReleaseTimeMS&quot;: 400.000000,
 		&quot;m_flRMSTimeMS&quot;: 300.000000,
 		&quot;m_flWetMix&quot;: 1.000000,
-		&quot;m_bPeakMode&quot;: false
+		&quot;m_flSCHighPassFreq&quot;: 0.000000,
+		&quot;m_bPeakMode&quot;: false,
+		&quot;m_bAutoMakeupGain&quot;: false
 	},
 	&quot;m_nUIPage&quot;: 1,
 	&quot;m_bIsLimiter&quot;: false

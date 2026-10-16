@@ -4,13 +4,13 @@ title: Items & Economy
 
 # Items & Economy
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 Economy definitions extracted from the content pack's `items_game.txt`: weapon / equipment items, their prefabs, paint kits (skins), sticker kits, music kits, and the rarity / quality scales.  Name tokens (`#SFUI_*`, `#PaintKit_*`, …) resolve to display strings via the localization table.
 
 ## Items
 
-2054 item definitions.
+2060 item definitions.
 
 | defIndex | Name token | Classname | Prefab | Item type |
 |----------|------------|-----------|--------|-----------|
@@ -304,6 +304,7 @@ Economy definitions extracted from the content pack's `items_game.txt`: weapon /
 | 1089 | `#CSGO_Collectible_MapTokenChalice` |  | `map_token` |  |
 | 1200 | `#CSGO_Tool_Name_Tag` |  | `valve csgo_tool` | #CSGO_Tool_Name_TagTag |
 | 1201 | `#CSGO_Tool_Casket_Tag` |  | `valve csgo_tool` |  |
+| 1202 | `#expired_itemdef` | `expired_itemdef` |  | #expired_itemdef |
 | 1203 |  |  | `valve weapon_case_key` |  |
 | 1204 | `#CSGO_esports_crate_key_1` |  | `valve weapon_case_key` |  |
 | 1209 | `#CSGO_Tool_Sticker` |  | `csgo_tool` | #CSGO_Tool_Sticker |
@@ -438,7 +439,7 @@ Economy definitions extracted from the content pack's `items_game.txt`: weapon /
 | 4037 | `#CSGO_crate_dhw14_promo_de_overpass` |  | `weapon_case_souvenirpkg` |  |
 | 4038 | `#StickerKit_dhw2014_fnatic` |  | `dhw14_sticker_capsule_prefab` |  |
 | 4039 | `#StickerKit_dhw2014_cloud9` |  | `dhw14_sticker_capsule_prefab` |  |
-| 4040 | `#CSGO_crate_sticker_pack_cologne2026_all` |  | `cologne2026_sticker_capsule_prefab volatile_pricing_stickercap1` |  |
+| 4040 | `#CSGO_crate_sticker_pack_cologne2026_all` |  | `cologne2026_sticker_capsule_prefab_volatile volatile_pricing_stickercap1 volatile_pricing_fixed` |  |
 | 4041 | `#StickerKit_dhw2014_ninjasinpyjamas` |  | `dhw14_sticker_capsule_prefab` |  |
 | 4042 | `#StickerKit_dhw2014_virtuspro` |  | `dhw14_sticker_capsule_prefab` |  |
 | 4043 | `#StickerKit_dhw2014_navi` |  | `dhw14_sticker_capsule_prefab` |  |
@@ -1078,6 +1079,7 @@ Economy definitions extracted from the content pack's `items_game.txt`: weapon /
 | 4678 | `#CSGO_Collectible_GlobalGeneral2020` |  | `prestige_coin` |  |
 | 4679 | `#CSGO_Collectible_GlobalGeneral2020` |  | `prestige_coin` |  |
 | 4680 | `#CSGO_CustomPlayer_ctm_st6_variantl` |  | `customplayertradable` |  |
+| 4681 |  | `pet` |  | #CSGO_Type_Pet |
 | 4682 | `#CSGO_Collectible_Pin_alyx_04` |  | `commodity_pin` |  |
 | 4683 | `#CSGO_Collectible_Pin_alyx_07` |  | `commodity_pin` |  |
 | 4684 | `#CSGO_Collectible_Pin_alyx_09` |  | `commodity_pin` |  |
@@ -1341,6 +1343,8 @@ Economy definitions extracted from the content pack's `items_game.txt`: weapon /
 | 4945 | `#CSGO_Collectible_MapTokenPoolDay` |  | `map_token` |  |
 | 4946 | `#CSGO_crate_musickit_masterminds2_capsule` |  | `weapon_case_base` |  |
 | 4947 | `#CSGO_crate_musickit_masterminds2_stattrak_capsule` |  | `weapon_case_base` |  |
+| 4948 | `#chicken_egg` | `chicken_egg` |  | #chicken_egg |
+| 4949 | `#chicken_feed` | `chicken_feed` |  | #chicken_feed |
 | 4950 | `#CSGO_RemoveKeychainToolCharges_Title` |  | `valve csgo_tool` |  |
 | 4951 | `#CSGO_Collectible_GlobalGeneral2025` |  | `prestige_coin` |  |
 | 4952 | `#CSGO_Collectible_GlobalGeneral2025` |  | `prestige_coin` |  |
@@ -1669,20 +1673,20 @@ Economy definitions extracted from the content pack's `items_game.txt`: weapon /
 | 5313 | `#CSGO_TournamentJournal_cologne2026_Silver` |  | `cologne2026_tournament_journal_prefab` |  |
 | 5314 | `#CSGO_TournamentJournal_cologne2026_Gold` |  | `cologne2026_tournament_journal_prefab` |  |
 | 5315 | `#CSGO_TournamentJournal_cologne2026_Crystal` |  | `cologne2026_tournament_journal_prefab` |  |
-| 5316 | `#CSGO_crate_sticker_pack_cologne2026_all` |  | `cologne2026_sticker_capsule_prefab volatile_pricing_stickercap1` |  |
+| 5316 | `#CSGO_crate_sticker_pack_cologne2026_all` |  | `cologne2026_sticker_capsule_prefab_volatile volatile_pricing_stickercap1` |  |
 | 5317 | `#CSGO_crate_sticker_pack_cologne2026_orgs` |  | `cologne2026_sticker_capsule_prefab` |  |
 | 5318 | `#CSGO_crate_signature_pack_cologne2026_group_players` |  | `cologne2026_signature_capsule_prefab` |  |
 | 5319 | `#CSGO_CollectibleCoin_cologne2026_Champion` |  | `majors_trophy` |  |
 | 5320 | `#CSGO_CollectibleCoin_cologne2026_Finalist` |  | `majors_trophy` |  |
 | 5321 | `#CSGO_CollectibleCoin_cologne2026_Semifinalist` |  | `majors_trophy` |  |
 | 5322 | `#CSGO_CollectibleCoin_cologne2026_Quarterfinalist` |  | `majors_trophy` |  |
-| 5323 | `#keychain_kc_cologne2026` |  | `cologne2026_sticker_capsule_prefab volatile_pricing_uniform1` |  |
-| 5324 | `#keychain_kc_cologne2026` |  | `cologne2026_sticker_capsule_prefab volatile_pricing_uniform1` |  |
-| 5325 | `#keychain_kc_cologne2026` |  | `cologne2026_sticker_capsule_prefab volatile_pricing_uniform1` |  |
-| 5326 | `#keychain_kc_cologne2026` |  | `cologne2026_sticker_capsule_prefab volatile_pricing_uniform1` |  |
-| 5327 | `#keychain_kc_cologne2026` |  | `cologne2026_sticker_capsule_prefab volatile_pricing_uniform1` |  |
-| 5328 | `#keychain_kc_cologne2026` |  | `cologne2026_sticker_capsule_prefab volatile_pricing_uniform1` |  |
-| 5329 | `#CSGO_crate_sticker_pack_cologne2026_all` |  | `cologne2026_sticker_capsule_prefab volatile_pricing_stickercap1` |  |
+| 5323 | `#keychain_kc_cologne2026` |  | `cologne2026_sticker_capsule_prefab_volatile volatile_pricing_uniform1` |  |
+| 5324 | `#keychain_kc_cologne2026` |  | `cologne2026_sticker_capsule_prefab_volatile volatile_pricing_uniform1` |  |
+| 5325 | `#keychain_kc_cologne2026` |  | `cologne2026_sticker_capsule_prefab_volatile volatile_pricing_uniform1` |  |
+| 5326 | `#keychain_kc_cologne2026` |  | `cologne2026_sticker_capsule_prefab_volatile volatile_pricing_uniform1` |  |
+| 5327 | `#keychain_kc_cologne2026` |  | `cologne2026_sticker_capsule_prefab_volatile volatile_pricing_uniform1` |  |
+| 5328 | `#keychain_kc_cologne2026` |  | `cologne2026_sticker_capsule_prefab_volatile volatile_pricing_uniform1` |  |
+| 5329 | `#CSGO_crate_sticker_pack_cologne2026_all` |  | `cologne2026_sticker_capsule_prefab_volatile volatile_pricing_stickercap1` |  |
 | 5330 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
 | 5331 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
 | 5332 | `#CSGO_Collectible_PremierSeason5Coin` |  | `premier_season_coin` |  |
@@ -1880,6 +1884,8 @@ Economy definitions extracted from the content pack's `items_game.txt`: weapon /
 | 7040 | `#coupon_shockone_01` |  | `coupon_prefab` |  |
 | 7041 | `CSGO_crate_sticker_pack_jackass_capsule` |  | `sticker_capsule` |  |
 | 7042 | `#coupon_jackass_sticker_capsule` |  | `coupon_jackass_capsule_prefab` |  |
+| 7043 | `#coupon_starjunk95_01` |  | `coupon_prefab` |  |
+| 7044 | `#coupon_starjunk95_01_stattrak` |  | `coupon_prefab` |  |
 | 20000 | `#coupon_bossyburger` |  | `coupon_prefab` |  |
 | 20001 | `#coupon_catcall` |  | `coupon_prefab` |  |
 | 20002 | `#coupon_chickenstrike` |  | `coupon_prefab` |  |
@@ -15355,7 +15361,7 @@ Economy definitions extracted from the content pack's `items_game.txt`: weapon /
 
 ## Music Kits
 
-101 music kits.
+102 music kits.
 
 | defIndex | Name | Loc name |
 |----------|------|----------|
@@ -15460,10 +15466,11 @@ Economy definitions extracted from the content pack's `items_game.txt`: weapon /
 | 101 | `pirapus_01` | `#MusicKit_pirapus_01` |
 | 102 | `repiet_01` | `#MusicKit_repiet_01` |
 | 103 | `shockone_01` | `#MusicKit_shockone_01` |
+| 104 | `starjunk95_01` | `#MusicKit_starjunk95_01` |
 
 ## Prefabs
 
-213 prefabs.
+214 prefabs.
 
 | id | Parent prefab | Classname | Item type |
 |----|---------------|-----------|-----------|
@@ -15491,7 +15498,7 @@ Economy definitions extracted from the content pack's `items_game.txt`: weapon /
 | `bud2025_tournament_journal_prefab` | `fan_shield` |  |  |
 | `bud2025_tournament_pass_prefab` | `fan_token` |  |  |
 | `bundle_base` |  | `bundle` | #CSGO_Type_StoreBundle |
-| `c4` | `weapon_base weapon_supports_keychains` | `weapon_c4` | #CSGO_Type_C4 |
+| `c4` | `weapon_base weapon_supports_stickers weapon_supports_keychains` | `weapon_c4` | #CSGO_Type_C4 |
 | `campaign_prefab` |  | `collectible_item` | #campaign |
 | `cluj2015_sticker_capsule_prefab` | `weapon_case_base` |  |  |
 | `collectible` |  | `collectible_item` | #CSGO_Type_Collectible |
@@ -15502,6 +15509,7 @@ Economy definitions extracted from the content pack's `items_game.txt`: weapon /
 | `cologne2026_sellable_item1` | `cologne2026_sellable_item0` |  |  |
 | `cologne2026_signature_capsule_prefab` | `cologne2026_sticker_capsule_prefab` |  |  |
 | `cologne2026_sticker_capsule_prefab` | `weapon_case_base` |  |  |
+| `cologne2026_sticker_capsule_prefab_volatile` | `cologne2026_sticker_capsule_prefab` |  |  |
 | `cologne2026_tournament_credits_prefab` | `season_tiers` |  |  |
 | `cologne2026_tournament_journal_prefab` | `fan_shield` |  |  |
 | `cologne2026_tournament_pass_prefab` | `fan_token cologne2026_sellable_item1` |  |  |

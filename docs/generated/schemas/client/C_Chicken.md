@@ -8,9 +8,9 @@ kind: class
 
 # C_Chicken
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 6320 bytes (`0x18b0`) · **Align:** 16 · **Module:** client
+**Kind:** class · **Size:** 7072 bytes (`0x1ba0`) · **Align:** 16 · **Module:** client
 
 **Inherits from:** [C_DynamicProp](../client/C_DynamicProp.md), [IHasAttributes](../server/IHasAttributes.md)
 
@@ -24,13 +24,14 @@ classDiagram
     CBaseAnimGraph <|-- CBaseProp
     C_BaseModelEntity <|-- CBaseAnimGraph
     C_Chicken --> C_CSPlayerPawn
+    C_Chicken --> CCSPlayerController
     C_Chicken *-- C_AttributeContainer
     C_Chicken *-- ParticleIndex_t
 ```
 
 ## Memory layout
 
-208 fields (5 declared here, 203 inherited). Offsets are absolute from the object base.
+215 fields (7 declared here, 208 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -119,128 +120,135 @@ classDiagram
 | `0x5e2` | `m_bSimulationTimeChanged` | bool | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
 | `0x5f0` | `m_sUniqueHammerID` | CUtlString | [C_BaseEntity](../client/C_BaseEntity.md) | `MNotSaved` |
 | `0x5f8` | `m_nBloodType` | [BloodType](../server/BloodType.md) | [C_BaseEntity](../client/C_BaseEntity.md) |  |
-| `0xaf0` | `m_CRenderComponent` | [CRenderComponent](../client/CRenderComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xaf8` | `m_CHitboxComponent` | [CHitboxComponent](../client/CHitboxComponent.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb10` | `m_pChoreoComponent` | [CChoreoComponent](../client/CChoreoComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb18` | `m_nDestructiblePartInitialStateDestructed0` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb1c` | `m_nDestructiblePartInitialStateDestructed1` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb20` | `m_nDestructiblePartInitialStateDestructed2` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb24` | `m_nDestructiblePartInitialStateDestructed3` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb28` | `m_nDestructiblePartInitialStateDestructed4` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb2c` | `m_nDestructiblePartInitialStateDestructed0_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb30` | `m_nDestructiblePartInitialStateDestructed1_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb34` | `m_nDestructiblePartInitialStateDestructed2_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb38` | `m_nDestructiblePartInitialStateDestructed3_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb3c` | `m_nDestructiblePartInitialStateDestructed4_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb40` | `m_bDestructiblePartInitialStateDestructed0_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb41` | `m_bDestructiblePartInitialStateDestructed1_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb42` | `m_bDestructiblePartInitialStateDestructed2_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb43` | `m_bDestructiblePartInitialStateDestructed3_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb44` | `m_bDestructiblePartInitialStateDestructed4_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xb48` | `m_pDestructiblePartsSystemComponent` | [CDestructiblePartsComponent](../client/CDestructiblePartsComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xc70` | `m_bInitModelEffects` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xc71` | `m_bDoingModelEffects` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xc74` | `m_iOldHealth` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xc78` | `m_nRenderMode` | [RenderMode_t](../server/RenderMode_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xc79` | `m_nRenderFX` | [RenderFx_t](../server/RenderFx_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xc7a` | `m_bAllowFadeInView` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xc98` | `m_clrRender` | Color | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xca0` | `m_vecRenderAttributes` | C_UtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../client/EntityRenderAttribute_t.md) > | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xd20` | `m_bRenderToCubemaps` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xd21` | `m_bNoInterpolate` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xd28` | `m_Collision` | [CCollisionProperty](../client/CCollisionProperty.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xde0` | `m_Glow` | [CGlowProperty](../client/CGlowProperty.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe38` | `m_flGlowBackfaceMult` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe3c` | `m_fadeMinDist` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe40` | `m_fadeMaxDist` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe44` | `m_flFadeScale` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe48` | `m_flShadowStrength` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe4c` | `m_nObjectCulling` | uint8 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe4d` | `m_nRequiredDecalRtEncoding` | [DecalRtEncoding_t](../scenesystem/DecalRtEncoding_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe50` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xe78` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
-| `0xf58` | `m_pClientAlphaProperty` | [CClientAlphaProperty](../client/CClientAlphaProperty.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xf60` | `m_ClientOverrideTint` | Color | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xf64` | `m_bUseClientOverrideTint` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
-| `0xfa0` | `m_bvDisabledHitGroups` | uint32[1] | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
-| `0xfb0` | `m_graphControllerManager` | [CAnimGraphControllerManager](../server/CAnimGraphControllerManager.md) | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
-| `0x1048` | `m_pMainGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | The primary animation-graph controller instance for this entity. |
-| `0x1050` | `m_bInitiallyPopulateInterpHistory` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
-| `0x1052` | `m_bSuppressAnimEventSounds` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
-| `0x1058` | `m_OnLayerCycleUpdated` | CEntityOutputTemplate< float32 > | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
-| `0x1078` | `m_OnExternalChoreoGraphChanged` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
-| `0x1098` | `m_bAnimGraphUpdateEnabled` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
-| `0x1099` | `m_bAnimationUpdateScheduled` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x109c` | `m_vecForce` | Vector | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x10a8` | `m_nForceBone` | int32 | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x10b0` | `m_pClientsideRagdoll` | [CBaseAnimGraph](../client/CBaseAnimGraph.md)* | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x10b8` | `m_bBuiltRagdoll` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x10c8` | `m_pRagdollControl` | [IPhysicsRagdollControl](../vphysics2/IPhysicsRagdollControl.md)* | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MPhysPtr` |
-| `0x10d0` | `m_RagdollPose` | [PhysicsRagdollPose_t](../client/PhysicsRagdollPose_t.md) | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
-| `0x1118` | `m_bRagdollEnabled` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | True while the entity is simulated as a ragdoll rather than animated. |
-| `0x1119` | `m_bRagdollClientSide` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x1128` | `m_bHasAnimatedMaterialAttributes` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x1180` | `m_bModelOverrodeBlockLOS` | bool | [CBaseProp](../client/CBaseProp.md) |  |
-| `0x1184` | `m_iShapeType` | int32 | [CBaseProp](../client/CBaseProp.md) |  |
-| `0x1188` | `m_bConformToCollisionBounds` | bool | [CBaseProp](../client/CBaseProp.md) |  |
-| `0x1190` | `m_mPreferredCatchTransform` | CTransform | [CBaseProp](../client/CBaseProp.md) |  |
-| `0x11b0` | `m_CPropDataComponent` | [CPropDataComponent](../client/CPropDataComponent.md) | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x11f0` | `m_OnStartDeath` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x1208` | `m_OnBreak` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x1220` | `m_OnHealthChanged` | CEntityOutputTemplate< float32 > | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x1240` | `m_OnTakeDamage` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x1258` | `m_impactEnergyScale` | float32 | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x125c` | `m_iMinHealthDmg` | int32 | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x1260` | `m_flPressureDelay` | float32 | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x1264` | `m_flDefBurstScale` | float32 | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x1268` | `m_vDefBurstOffset` | Vector | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x1274` | `m_hBreaker` | CHandle< [C_BaseEntity](../client/C_BaseEntity.md) > | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x1278` | `m_PerformanceMode` | [PerformanceMode_t](../server/PerformanceMode_t.md) | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x127c` | `m_flPreventDamageBeforeTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x1280` | `m_BreakableContentsType` | [BreakableContentsType_t](../server/BreakableContentsType_t.md) | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x1288` | `m_strBreakableContentsPropGroupOverride` | CUtlString | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x1290` | `m_strBreakableContentsParticleOverride` | CUtlString | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x1298` | `m_bHasBreakPiecesOrCommands` | bool | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x129c` | `m_explodeDamage` | float32 | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x12a0` | `m_explodeRadius` | float32 | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x12a8` | `m_sExplosionType` | CGlobalSymbol | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x12b0` | `m_explosionDelay` | float32 | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x12b8` | `m_explosionBuildupSound` | CUtlSymbolLarge | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x12c0` | `m_explosionCustomEffect` | CUtlSymbolLarge | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x12c8` | `m_explosionCustomSound` | CUtlSymbolLarge | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x12d0` | `m_explosionModifier` | CUtlSymbolLarge | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x12d8` | `m_hPhysicsAttacker` | CHandle< [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) > | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x12dc` | `m_flLastPhysicsInfluenceTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x12e0` | `m_flDefaultFadeScale` | float32 | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x12e4` | `m_hLastAttacker` | CHandle< [C_BaseEntity](../client/C_BaseEntity.md) > | [C_BreakableProp](../client/C_BreakableProp.md) |  |
-| `0x12f0` | `m_bUseHitboxesForRenderBox` | bool | [C_DynamicProp](../client/C_DynamicProp.md) |  |
-| `0x12f1` | `m_bUseAnimGraph` | bool | [C_DynamicProp](../client/C_DynamicProp.md) |  |
-| `0x12f8` | `m_pOutputAnimBegun` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [C_DynamicProp](../client/C_DynamicProp.md) |  |
-| `0x1310` | `m_pOutputAnimOver` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [C_DynamicProp](../client/C_DynamicProp.md) |  |
-| `0x1328` | `m_pOutputAnimLoopCycleOver` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [C_DynamicProp](../client/C_DynamicProp.md) |  |
-| `0x1340` | `m_OnAnimReachedStart` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [C_DynamicProp](../client/C_DynamicProp.md) |  |
-| `0x1358` | `m_OnAnimReachedEnd` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [C_DynamicProp](../client/C_DynamicProp.md) |  |
-| `0x1370` | `m_iszIdleAnim` | CUtlSymbolLarge | [C_DynamicProp](../client/C_DynamicProp.md) |  |
-| `0x1378` | `m_nIdleAnimLoopMode` | [AnimLoopMode_t](../server/AnimLoopMode_t.md) | [C_DynamicProp](../client/C_DynamicProp.md) |  |
-| `0x137c` | `m_bRandomizeCycle` | bool | [C_DynamicProp](../client/C_DynamicProp.md) |  |
-| `0x137d` | `m_bStartDisabled` | bool | [C_DynamicProp](../client/C_DynamicProp.md) |  |
-| `0x137e` | `m_bFiredStartEndOutput` | bool | [C_DynamicProp](../client/C_DynamicProp.md) |  |
-| `0x137f` | `m_bForceNpcExclude` | bool | [C_DynamicProp](../client/C_DynamicProp.md) | `MNotSaved` |
-| `0x1380` | `m_bCreateMovableSurfaceGraph` | bool | [C_DynamicProp](../client/C_DynamicProp.md) |  |
-| `0x1381` | `m_bCreateNonSolid` | bool | [C_DynamicProp](../client/C_DynamicProp.md) | `MNotSaved` |
-| `0x1382` | `m_bIsOverrideProp` | bool | [C_DynamicProp](../client/C_DynamicProp.md) | `MNotSaved` |
-| `0x1384` | `m_iInitialGlowState` | int32 | [C_DynamicProp](../client/C_DynamicProp.md) |  |
-| `0x1388` | `m_nGlowRange` | int32 | [C_DynamicProp](../client/C_DynamicProp.md) |  |
-| `0x138c` | `m_nGlowRangeMin` | int32 | [C_DynamicProp](../client/C_DynamicProp.md) |  |
-| `0x1390` | `m_glowColor` | Color | [C_DynamicProp](../client/C_DynamicProp.md) |  |
-| `0x1394` | `m_nGlowTeam` | int32 | [C_DynamicProp](../client/C_DynamicProp.md) |  |
-| `0x1398` | `m_iCachedFrameCount` | int32 | [C_DynamicProp](../client/C_DynamicProp.md) | `MNotSaved` |
-| `0x139c` | `m_vecCachedRenderMins` | Vector | [C_DynamicProp](../client/C_DynamicProp.md) | `MNotSaved` |
-| `0x13a8` | `m_vecCachedRenderMaxs` | Vector | [C_DynamicProp](../client/C_DynamicProp.md) | `MNotSaved` |
-| `0x13c8` | `m_leader` | CHandle< [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) > |  |  |
-| `0x13d0` | `m_AttributeManager` | [C_AttributeContainer](../client/C_AttributeContainer.md) |  |  |
-| `0x18a0` | `m_bAttributesInitialized` | bool |  |  |
-| `0x18a4` | `m_hWaterWakeParticles` | [ParticleIndex_t](../server/ParticleIndex_t.md) |  |  |
-| `0x18a8` | `m_bIsPreviewModel` | bool |  |  |
+| `0xaf8` | `m_CRenderComponent` | [CRenderComponent](../client/CRenderComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0xb00` | `m_CHitboxComponent` | [CHitboxComponent](../client/CHitboxComponent.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb18` | `m_pChoreoComponent` | [CChoreoComponent](../client/CChoreoComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb20` | `m_nDestructiblePartInitialStateDestructed0` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb24` | `m_nDestructiblePartInitialStateDestructed1` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb28` | `m_nDestructiblePartInitialStateDestructed2` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb2c` | `m_nDestructiblePartInitialStateDestructed3` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb30` | `m_nDestructiblePartInitialStateDestructed4` | [HitGroup_t](../server/HitGroup_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb34` | `m_nDestructiblePartInitialStateDestructed0_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb38` | `m_nDestructiblePartInitialStateDestructed1_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb3c` | `m_nDestructiblePartInitialStateDestructed2_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb40` | `m_nDestructiblePartInitialStateDestructed3_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb44` | `m_nDestructiblePartInitialStateDestructed4_PartIndex` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb48` | `m_bDestructiblePartInitialStateDestructed0_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb49` | `m_bDestructiblePartInitialStateDestructed1_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb4a` | `m_bDestructiblePartInitialStateDestructed2_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb4b` | `m_bDestructiblePartInitialStateDestructed3_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb4c` | `m_bDestructiblePartInitialStateDestructed4_GenerateBreakpieces` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xb50` | `m_pDestructiblePartsSystemComponent` | [CDestructiblePartsComponent](../client/CDestructiblePartsComponent.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xc78` | `m_bInitModelEffects` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0xc79` | `m_bDoingModelEffects` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0xc7c` | `m_iOldHealth` | int32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0xc80` | `m_nRenderMode` | [RenderMode_t](../server/RenderMode_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xc81` | `m_nRenderFX` | [RenderFx_t](../server/RenderFx_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xc82` | `m_bAllowFadeInView` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xca0` | `m_clrRender` | Color | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xca8` | `m_vecRenderAttributes` | C_UtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../client/EntityRenderAttribute_t.md) > | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xd28` | `m_bRenderToCubemaps` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xd29` | `m_bExpandRenderBoundsToIncludeCloth` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xd2a` | `m_bNoInterpolate` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xd30` | `m_Collision` | [CCollisionProperty](../client/CCollisionProperty.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xde8` | `m_Glow` | [CGlowProperty](../client/CGlowProperty.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe40` | `m_flGlowBackfaceMult` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe44` | `m_fadeMinDist` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe48` | `m_fadeMaxDist` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe4c` | `m_flFadeScale` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe50` | `m_flShadowStrength` | float32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe54` | `m_nObjectCulling` | uint8 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe55` | `m_nRequiredDecalRtEncoding` | [DecalRtEncoding_t](../scenesystem/DecalRtEncoding_t.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe58` | `m_bodyGroupTotalRequestCount` | uint32 | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xe60` | `m_bodyGroupRequests` | CUtlVectorFixedGrowable< [C_BaseModelEntity::BodyGroupRequest_t](../client/C_BaseModelEntity.BodyGroupRequest_t.md), 8 > | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xf38` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0xf60` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [C_BaseModelEntity](../client/C_BaseModelEntity.md) |  |
+| `0x1040` | `m_pClientAlphaProperty` | [CClientAlphaProperty](../client/CClientAlphaProperty.md)* | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0x1048` | `m_ClientOverrideTint` | Color | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0x104c` | `m_bUseClientOverrideTint` | bool | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MNotSaved` |
+| `0x1088` | `m_bvDisabledHitGroups` | uint32[1] | [C_BaseModelEntity](../client/C_BaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
+| `0x1098` | `m_graphControllerManager` | [CAnimGraphControllerManager](../server/CAnimGraphControllerManager.md) | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
+| `0x1130` | `m_pMainGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | The primary animation-graph controller instance for this entity. |
+| `0x1138` | `m_bInitiallyPopulateInterpHistory` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
+| `0x113a` | `m_bSuppressAnimEventSounds` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
+| `0x1140` | `m_OnLayerCycleUpdated` | CEntityOutputTemplate< float32 > | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
+| `0x1160` | `m_OnExternalChoreoGraphChanged` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
+| `0x1180` | `m_bAnimGraphUpdateEnabled` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
+| `0x1181` | `m_bAnimationUpdateScheduled` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x1184` | `m_vecForce` | Vector | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x1190` | `m_nForceBone` | int32 | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x1198` | `m_pClientsideRagdoll` | [CBaseAnimGraph](../client/CBaseAnimGraph.md)* | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x11a0` | `m_bBuiltRagdoll` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x11b0` | `m_pRagdollControl` | [IPhysicsRagdollControl](../vphysics2/IPhysicsRagdollControl.md)* | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MPhysPtr` |
+| `0x11b8` | `m_RagdollPose` | [PhysicsRagdollPose_t](../client/PhysicsRagdollPose_t.md) | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
+| `0x1200` | `m_bRagdollEnabled` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | True while the entity is simulated as a ragdoll rather than animated. |
+| `0x1201` | `m_bRagdollClientSide` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x1202` | `m_bShouldUpdateTransformations` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) |  |
+| `0x1210` | `m_bHasAnimatedMaterialAttributes` | bool | [CBaseAnimGraph](../client/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x1268` | `m_bModelOverrodeBlockLOS` | bool | [CBaseProp](../client/CBaseProp.md) |  |
+| `0x126c` | `m_iShapeType` | int32 | [CBaseProp](../client/CBaseProp.md) |  |
+| `0x1270` | `m_bConformToCollisionBounds` | bool | [CBaseProp](../client/CBaseProp.md) |  |
+| `0x1280` | `m_mPreferredCatchTransform` | CTransform | [CBaseProp](../client/CBaseProp.md) |  |
+| `0x12a0` | `m_CPropDataComponent` | [CPropDataComponent](../client/CPropDataComponent.md) | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x12e0` | `m_OnStartDeath` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x12f8` | `m_OnBreak` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x1310` | `m_OnHealthChanged` | CEntityOutputTemplate< float32 > | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x1330` | `m_OnTakeDamage` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x1348` | `m_impactEnergyScale` | float32 | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x134c` | `m_iMinHealthDmg` | int32 | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x1350` | `m_flPressureDelay` | float32 | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x1354` | `m_flDefBurstScale` | float32 | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x1358` | `m_vDefBurstOffset` | Vector | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x1364` | `m_hBreaker` | CHandle< [C_BaseEntity](../client/C_BaseEntity.md) > | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x1368` | `m_PerformanceMode` | [PerformanceMode_t](../server/PerformanceMode_t.md) | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x136c` | `m_flPreventDamageBeforeTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x1370` | `m_BreakableContentsType` | [BreakableContentsType_t](../server/BreakableContentsType_t.md) | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x1378` | `m_strBreakableContentsPropGroupOverride` | CUtlString | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x1380` | `m_strBreakableContentsParticleOverride` | CUtlString | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x1388` | `m_bHasBreakPiecesOrCommands` | bool | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x138c` | `m_explodeDamage` | float32 | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x1390` | `m_explodeRadius` | float32 | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x1398` | `m_sExplosionType` | CGlobalSymbol | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x13a0` | `m_explosionDelay` | float32 | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x13a8` | `m_explosionBuildupSound` | CUtlSymbolLarge | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x13b0` | `m_explosionCustomEffect` | CUtlSymbolLarge | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x13b8` | `m_explosionCustomSound` | CUtlSymbolLarge | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x13c0` | `m_explosionModifier` | CUtlSymbolLarge | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x13c8` | `m_hPhysicsAttacker` | CHandle< [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) > | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x13cc` | `m_flLastPhysicsInfluenceTime` | [GameTime_t](../entity2/GameTime_t.md) | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x13d0` | `m_flDefaultFadeScale` | float32 | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x13d4` | `m_hLastAttacker` | CHandle< [C_BaseEntity](../client/C_BaseEntity.md) > | [C_BreakableProp](../client/C_BreakableProp.md) |  |
+| `0x13e0` | `m_bGraphControllerEnabled` | bool | [C_DynamicProp](../client/C_DynamicProp.md) |  |
+| `0x13e1` | `m_bUseHitboxesForRenderBox` | bool | [C_DynamicProp](../client/C_DynamicProp.md) |  |
+| `0x13e2` | `m_bUseAnimGraph` | bool | [C_DynamicProp](../client/C_DynamicProp.md) |  |
+| `0x13e8` | `m_pOutputAnimBegun` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [C_DynamicProp](../client/C_DynamicProp.md) |  |
+| `0x1400` | `m_pOutputAnimOver` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [C_DynamicProp](../client/C_DynamicProp.md) |  |
+| `0x1418` | `m_pOutputAnimLoopCycleOver` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [C_DynamicProp](../client/C_DynamicProp.md) |  |
+| `0x1430` | `m_OnAnimReachedStart` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [C_DynamicProp](../client/C_DynamicProp.md) |  |
+| `0x1448` | `m_OnAnimReachedEnd` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [C_DynamicProp](../client/C_DynamicProp.md) |  |
+| `0x1460` | `m_iszIdleAnim` | CUtlSymbolLarge | [C_DynamicProp](../client/C_DynamicProp.md) |  |
+| `0x1468` | `m_nIdleAnimLoopMode` | [AnimLoopMode_t](../server/AnimLoopMode_t.md) | [C_DynamicProp](../client/C_DynamicProp.md) |  |
+| `0x146c` | `m_bRandomizeCycle` | bool | [C_DynamicProp](../client/C_DynamicProp.md) |  |
+| `0x146d` | `m_bStartDisabled` | bool | [C_DynamicProp](../client/C_DynamicProp.md) |  |
+| `0x146e` | `m_bFiredStartEndOutput` | bool | [C_DynamicProp](../client/C_DynamicProp.md) |  |
+| `0x146f` | `m_bForceNpcExclude` | bool | [C_DynamicProp](../client/C_DynamicProp.md) | `MNotSaved` |
+| `0x1470` | `m_bCreateMovableSurfaceGraph` | bool | [C_DynamicProp](../client/C_DynamicProp.md) |  |
+| `0x1471` | `m_bCreateNonSolid` | bool | [C_DynamicProp](../client/C_DynamicProp.md) | `MNotSaved` |
+| `0x1472` | `m_bIsOverrideProp` | bool | [C_DynamicProp](../client/C_DynamicProp.md) | `MNotSaved` |
+| `0x1474` | `m_iInitialGlowState` | int32 | [C_DynamicProp](../client/C_DynamicProp.md) |  |
+| `0x1478` | `m_nGlowRange` | int32 | [C_DynamicProp](../client/C_DynamicProp.md) |  |
+| `0x147c` | `m_nGlowRangeMin` | int32 | [C_DynamicProp](../client/C_DynamicProp.md) |  |
+| `0x1480` | `m_glowColor` | Color | [C_DynamicProp](../client/C_DynamicProp.md) |  |
+| `0x1484` | `m_nGlowTeam` | int32 | [C_DynamicProp](../client/C_DynamicProp.md) |  |
+| `0x1488` | `m_iCachedFrameCount` | int32 | [C_DynamicProp](../client/C_DynamicProp.md) | `MNotSaved` |
+| `0x148c` | `m_vecCachedRenderMins` | Vector | [C_DynamicProp](../client/C_DynamicProp.md) | `MNotSaved` |
+| `0x1498` | `m_vecCachedRenderMaxs` | Vector | [C_DynamicProp](../client/C_DynamicProp.md) | `MNotSaved` |
+| `0x14c0` | `m_leader` | CHandle< [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) > |  |  |
+| `0x14c4` | `m_owner` | CHandle< [CCSPlayerController](../client/CCSPlayerController.md) > |  |  |
+| `0x14c8` | `m_AttributeManager` | [C_AttributeContainer](../client/C_AttributeContainer.md) |  |  |
+| `0x1ad8` | `m_bAttributesInitialized` | bool |  |  |
+| `0x1adc` | `m_hWaterWakeParticles` | [ParticleIndex_t](../server/ParticleIndex_t.md) |  |  |
+| `0x1ae0` | `m_bIsPreviewModel` | bool |  |  |
+| `0x1b68` | `m_bSpawnDyingParticles` | bool |  |  |
 
 **Also inherits (secondary base classes):** [IHasAttributes](../server/IHasAttributes.md) — additional-base fields sit at a shifted offset the schema does not record; see each base's own page for its layout.

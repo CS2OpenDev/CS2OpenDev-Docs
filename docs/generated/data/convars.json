@@ -1813,18 +1813,6 @@
       "value_type": "Bool"
     },
     {
-      "default": "false",
-      "flags": [
-        "archive"
-      ],
-      "help": "OBSOLETE replaced by mobile_fps_* - Battery saver mode. 0=off, 1=on",
-      "max": null,
-      "min": null,
-      "name": "battery_saver",
-      "prefix": "battery",
-      "value_type": "Bool"
-    },
-    {
       "default": "true",
       "flags": [
         "gamedll",
@@ -2365,6 +2353,19 @@
       "name": "bot_mimic_yaw_offset",
       "prefix": "bot",
       "value_type": "Float32"
+    },
+    {
+      "default": "true",
+      "flags": [
+        "gamedll",
+        "release"
+      ],
+      "help": "If nonzero, bots refuse to path to a nav area that the nav build did not reach from a player spawn.",
+      "max": null,
+      "min": null,
+      "name": "bot_path_require_reachable_goal",
+      "prefix": "bot",
+      "value_type": "Bool"
     },
     {
       "default": "",
@@ -4210,21 +4211,6 @@
       "value_type": "Int32"
     },
     {
-      "default": "0",
-      "flags": [
-        "archive",
-        "clientdll",
-        "hidden",
-        "userinfo"
-      ],
-      "help": "Current clan ID for name decoration",
-      "max": null,
-      "min": null,
-      "name": "cl_clanid",
-      "prefix": "cl",
-      "value_type": "String"
-    },
-    {
       "default": "0.000000",
       "flags": [
         "developmentonly"
@@ -4422,18 +4408,18 @@
       "value_type": "Int32"
     },
     {
-      "default": "true",
+      "default": "1",
       "flags": [
         "archive",
         "clientdll",
         "per_user"
       ],
-      "help": "Draws a black outline around the crosshair for better visibility",
-      "max": null,
-      "min": null,
+      "help": "Draw a black outline around the crosshair for better visibility. 0 = No outline, 1 = Full outline, 2 = Half outline",
+      "max": 2,
+      "min": 0,
       "name": "cl_crosshair_drawoutline",
       "prefix": "cl",
-      "value_type": "Bool"
+      "value_type": "Int32"
     },
     {
       "default": "1.000000",
@@ -4442,7 +4428,7 @@
         "clientdll",
         "per_user"
       ],
-      "help": "If using cl_crosshairstyle 2, this is the ratio used to determine how long the inner and outer xhair pips will be. [inner = cl_crosshairsize*(1-cl_crosshair_dynamic_maxdist_splitratio), outer = cl_crosshairsize*cl_crosshair_dynamic_maxdist_splitratio]  [0 - 1]",
+      "help": "Style 2 only: how the bar length is divided between inner and outer bars once split. inner = cl_crosshairsize * (1 - ratio), outer = cl_crosshairsize * ratio. [0 - 1]",
       "max": 1,
       "min": 0,
       "name": "cl_crosshair_dynamic_maxdist_splitratio",
@@ -4456,7 +4442,7 @@
         "clientdll",
         "per_user"
       ],
-      "help": "If using cl_crosshairstyle 2, this is the alpha modification that will be used for the INNER crosshair pips once they've split. [0 - 1]",
+      "help": "Style 2 only: alpha multiplier for the INNER crosshair bars once they have split. [0 - 1]",
       "max": 1,
       "min": 0,
       "name": "cl_crosshair_dynamic_splitalpha_innermod",
@@ -4470,7 +4456,7 @@
         "clientdll",
         "per_user"
       ],
-      "help": "If using cl_crosshairstyle 2, this is the alpha modification that will be used for the OUTER crosshair pips once they've split. [0.3 - 1]",
+      "help": "Style 2 only: alpha multiplier for the OUTER crosshair bars once they have split. [0.3 - 1]",
       "max": 1,
       "min": 0.3,
       "name": "cl_crosshair_dynamic_splitalpha_outermod",
@@ -4484,10 +4470,24 @@
         "clientdll",
         "per_user"
       ],
-      "help": "If using cl_crosshairstyle 2, this is the distance that the crosshair pips will split into 2. (default is 7)",
-      "max": null,
-      "min": null,
+      "help": "Style 2: distance at which the crosshair bars split in two.",
+      "max": 127,
+      "min": 0,
       "name": "cl_crosshair_dynamic_splitdist",
+      "prefix": "cl",
+      "value_type": "Int32"
+    },
+    {
+      "default": "255",
+      "flags": [
+        "archive",
+        "clientdll",
+        "per_user"
+      ],
+      "help": "The additional distance the dynamic elements are allowed to spread out to from the baseline of 128 pixels.",
+      "max": 255,
+      "min": 0,
+      "name": "cl_crosshair_dynamic_spread_limit",
       "prefix": "cl",
       "value_type": "Int32"
     },
@@ -4506,18 +4506,32 @@
       "value_type": "Int32"
     },
     {
-      "default": "1.000000",
+      "default": "4",
       "flags": [
         "archive",
         "clientdll",
         "per_user"
       ],
-      "help": "Set how thick you want your crosshair outline to draw (0-3)",
-      "max": 3,
-      "min": 0,
-      "name": "cl_crosshair_outlinethickness",
+      "help": "Offset added to the gap between the crosshair center and the bars.",
+      "max": 3840,
+      "min": -3840,
+      "name": "cl_crosshair_gap",
       "prefix": "cl",
-      "value_type": "Float32"
+      "value_type": "Int32"
+    },
+    {
+      "default": "8",
+      "flags": [
+        "archive",
+        "clientdll",
+        "per_user"
+      ],
+      "help": "Length of each crosshair bar, scaled with screen resolution",
+      "max": 255,
+      "min": 0,
+      "name": "cl_crosshair_length",
+      "prefix": "cl",
+      "value_type": "Int32"
     },
     {
       "default": "true",
@@ -4526,7 +4540,7 @@
         "clientdll",
         "per_user"
       ],
-      "help": "",
+      "help": "Crosshair follows the weapon's predicted recoil (aim punch)",
       "max": null,
       "min": null,
       "name": "cl_crosshair_recoil",
@@ -4534,17 +4548,19 @@
       "value_type": "Bool"
     },
     {
-      "default": "true",
+      "default": "1080",
       "flags": [
+        "archive",
         "clientdll",
-        "developmentonly"
+        "hidden",
+        "per_user"
       ],
-      "help": "",
+      "help": "The res at which the user authored their size settings at - changes whenever a size setting is updated",
       "max": null,
-      "min": null,
-      "name": "cl_crosshair_show_desynced_seeds_marker",
+      "min": 240,
+      "name": "cl_crosshair_screen_height",
       "prefix": "cl",
-      "value_type": "Bool"
+      "value_type": "Int32"
     },
     {
       "default": "1",
@@ -4567,7 +4583,7 @@
         "clientdll",
         "per_user"
       ],
-      "help": "T style crosshair",
+      "help": "T-style crosshair: hide the top bar",
       "max": null,
       "min": null,
       "name": "cl_crosshair_t",
@@ -4575,10 +4591,25 @@
       "value_type": "Bool"
     },
     {
+      "default": "2",
+      "flags": [
+        "archive",
+        "clientdll",
+        "per_user"
+      ],
+      "help": "Thickness of the crosshair bars and circle, scaled with screen resolution (minimum 1 pixel)",
+      "max": 32,
+      "min": 0,
+      "name": "cl_crosshair_thickness",
+      "prefix": "cl",
+      "value_type": "Int32"
+    },
+    {
       "default": "200",
       "flags": [
         "archive",
         "clientdll",
+        "hidden",
         "per_user"
       ],
       "help": "",
@@ -4589,16 +4620,16 @@
       "value_type": "Int32"
     },
     {
-      "default": "5",
+      "default": "255",
       "flags": [
         "archive",
         "clientdll",
         "per_user"
       ],
-      "help": "Set crosshair color as defined in game_options.consoles.txt",
-      "max": null,
-      "min": null,
-      "name": "cl_crosshaircolor",
+      "help": "Crosshair opacity. 0 = fully transparent, 255 = fully opaque",
+      "max": 255,
+      "min": 0,
+      "name": "cl_crosshaircolor_a",
       "prefix": "cl",
       "value_type": "Int32"
     },
@@ -4609,7 +4640,7 @@
         "clientdll",
         "per_user"
       ],
-      "help": "",
+      "help": "Crosshair color, blue component",
       "max": 255,
       "min": 0,
       "name": "cl_crosshaircolor_b",
@@ -4623,7 +4654,7 @@
         "clientdll",
         "per_user"
       ],
-      "help": "",
+      "help": "Crosshair color, green component",
       "max": 255,
       "min": 0,
       "name": "cl_crosshaircolor_g",
@@ -4637,7 +4668,7 @@
         "clientdll",
         "per_user"
       ],
-      "help": "",
+      "help": "Crosshair color, red component",
       "max": 255,
       "min": 0,
       "name": "cl_crosshaircolor_r",
@@ -4651,7 +4682,7 @@
         "clientdll",
         "per_user"
       ],
-      "help": "",
+      "help": "Draw a dot at the center of the crosshair",
       "max": null,
       "min": null,
       "name": "cl_crosshairdot",
@@ -4659,38 +4690,67 @@
       "value_type": "Bool"
     },
     {
-      "default": "-2.200000",
+      "default": "255",
       "flags": [
         "archive",
         "clientdll",
         "per_user"
       ],
-      "help": "",
-      "max": null,
-      "min": null,
-      "name": "cl_crosshairgap",
+      "help": "Crosshair outline opacity. 0 = fully transparent, 255 = fully opaque",
+      "max": 255,
+      "min": 0,
+      "name": "cl_crosshairoutline_a",
       "prefix": "cl",
-      "value_type": "Float32"
+      "value_type": "Int32"
     },
     {
-      "default": "true",
+      "default": "0",
       "flags": [
         "archive",
         "clientdll",
         "per_user"
       ],
-      "help": "If set to 1, the gap will update dynamically based on which weapon is currently equipped",
-      "max": null,
-      "min": null,
-      "name": "cl_crosshairgap_useweaponvalue",
+      "help": "Crosshair outline color, blue component",
+      "max": 255,
+      "min": 0,
+      "name": "cl_crosshairoutline_b",
       "prefix": "cl",
-      "value_type": "Bool"
+      "value_type": "Int32"
+    },
+    {
+      "default": "0",
+      "flags": [
+        "archive",
+        "clientdll",
+        "per_user"
+      ],
+      "help": "Crosshair outline color, green component",
+      "max": 255,
+      "min": 0,
+      "name": "cl_crosshairoutline_g",
+      "prefix": "cl",
+      "value_type": "Int32"
+    },
+    {
+      "default": "0",
+      "flags": [
+        "archive",
+        "clientdll",
+        "per_user"
+      ],
+      "help": "Crosshair outline color, red component",
+      "max": 255,
+      "min": 0,
+      "name": "cl_crosshairoutline_r",
+      "prefix": "cl",
+      "value_type": "Int32"
     },
     {
       "default": "3.900000",
       "flags": [
         "archive",
         "clientdll",
+        "hidden",
         "per_user"
       ],
       "help": "",
@@ -4701,15 +4761,15 @@
       "value_type": "Float32"
     },
     {
-      "default": "2",
+      "default": "7",
       "flags": [
         "archive",
         "clientdll",
         "per_user"
       ],
-      "help": "0 = DEFAULT (DISABLED), 1 = DEFAULT STATIC (DISABLED), 2 = DEFAULT (accurate recoil/spread feedback with a fixed inner part), 3 = ACCURATE DYNAMIC (DISABLED) (accurate recoil/spread feedback), 4 = DEFAULT STATIC, 5 = LEGACY (fake recoil - inaccurate feedback)",
-      "max": null,
-      "min": null,
+      "help": "Crosshair style. 0 = Dynamic Cross, 1 = Dynamic Circle, 2 = Dynamic Cross (Legacy), 3 = Static Circle, 4 = Static Cross, 5 = Static Cross (Shot Feedback), 6 = Dot Only, 7 = Dynamic Quad, 8 = Static Square, 9 = Static Quad.",
+      "max": 9,
+      "min": 0,
       "name": "cl_crosshairstyle",
       "prefix": "cl",
       "value_type": "Int32"
@@ -4719,6 +4779,7 @@
       "flags": [
         "archive",
         "clientdll",
+        "hidden",
         "per_user"
       ],
       "help": "",
@@ -4727,20 +4788,6 @@
       "name": "cl_crosshairthickness",
       "prefix": "cl",
       "value_type": "Float32"
-    },
-    {
-      "default": "true",
-      "flags": [
-        "archive",
-        "clientdll",
-        "per_user"
-      ],
-      "help": "",
-      "max": null,
-      "min": null,
-      "name": "cl_crosshairusealpha",
-      "prefix": "cl",
-      "value_type": "Bool"
     },
     {
       "default": "10",
@@ -5028,6 +5075,19 @@
       "name": "cl_decryptdata_key_pub",
       "prefix": "cl",
       "value_type": "String"
+    },
+    {
+      "default": "true",
+      "flags": [
+        "clientdll",
+        "release"
+      ],
+      "help": "During demo playback, roaming spectator movement runs on real time so it works while paused and at any playback rate.",
+      "max": null,
+      "min": null,
+      "name": "cl_demo_freecam",
+      "prefix": "cl",
+      "value_type": "Bool"
     },
     {
       "default": "1",
@@ -5730,20 +5790,6 @@
       "value_type": "Bool"
     },
     {
-      "default": "3.000000",
-      "flags": [
-        "archive",
-        "clientdll",
-        "per_user"
-      ],
-      "help": "For crosshair style 1: How big to make the gap between the pips in the fixed crosshair",
-      "max": null,
-      "min": null,
-      "name": "cl_fixedcrosshairgap",
-      "prefix": "cl",
-      "value_type": "Float32"
-    },
-    {
       "default": "0",
       "flags": [
         "cheat"
@@ -6102,7 +6148,7 @@
         "clientdll",
         "per_user"
       ],
-      "help": "Keep the user's crosshair when the grenade crosshair is enabled",
+      "help": "Keep drawing the user's crosshair while the grenade throw crosshair is shown",
       "max": null,
       "min": null,
       "name": "cl_grenadecrosshair_keepusercrosshair",
@@ -6124,25 +6170,12 @@
       "value_type": "Bool"
     },
     {
-      "default": "10.000000",
-      "flags": [
-        "clientdll",
-        "developmentonly"
-      ],
-      "help": "",
-      "max": 45,
-      "min": 1,
-      "name": "cl_grenadecrosshair_tickinterval",
-      "prefix": "cl",
-      "value_type": "Float32"
-    },
-    {
       "default": "true",
       "flags": [
         "clientdll",
         "developmentonly"
       ],
-      "help": "",
+      "help": "Draw labels on grenade throw crosshair ticks",
       "max": null,
       "min": null,
       "name": "cl_grenadecrosshair_ticklabels",
@@ -6155,7 +6188,7 @@
         "clientdll",
         "developmentonly"
       ],
-      "help": "",
+      "help": "Scale applied to grenade throw crosshair ticks",
       "max": 2,
       "min": 0.5,
       "name": "cl_grenadecrosshair_tickscaling",
@@ -6170,8 +6203,8 @@
         "per_user"
       ],
       "help": "How long should the pin be pulled for before showing the grenade crosshair",
-      "max": null,
-      "min": null,
+      "max": 5,
+      "min": 0,
       "name": "cl_grenadecrosshairdelay_decoy",
       "prefix": "cl",
       "value_type": "Float32"
@@ -6184,8 +6217,8 @@
         "per_user"
       ],
       "help": "How long should the pin be pulled for before showing the grenade crosshair",
-      "max": null,
-      "min": null,
+      "max": 5,
+      "min": 0,
       "name": "cl_grenadecrosshairdelay_explosive",
       "prefix": "cl",
       "value_type": "Float32"
@@ -6198,8 +6231,8 @@
         "per_user"
       ],
       "help": "How long should the pin be pulled for before showing the grenade crosshair",
-      "max": null,
-      "min": null,
+      "max": 5,
+      "min": 0,
       "name": "cl_grenadecrosshairdelay_fire",
       "prefix": "cl",
       "value_type": "Float32"
@@ -6212,8 +6245,8 @@
         "per_user"
       ],
       "help": "How long should the pin be pulled for before showing the grenade crosshair",
-      "max": null,
-      "min": null,
+      "max": 5,
+      "min": 0,
       "name": "cl_grenadecrosshairdelay_flash",
       "prefix": "cl",
       "value_type": "Float32"
@@ -6226,8 +6259,8 @@
         "per_user"
       ],
       "help": "How long should the pin be pulled for before showing the grenade crosshair",
-      "max": null,
-      "min": null,
+      "max": 5,
+      "min": 0,
       "name": "cl_grenadecrosshairdelay_smoke",
       "prefix": "cl",
       "value_type": "Float32"
@@ -6843,7 +6876,7 @@
         "clientdll",
         "per_user"
       ],
-      "help": "Ironsight dot scale",
+      "help": "Scope dot scale",
       "max": 2,
       "min": 0.1,
       "name": "cl_ironsight_dot_scale",
@@ -7321,7 +7354,7 @@
         "clientdll",
         "release"
       ],
-      "help": "Control the crosshair shown when observing a bot. 0: Show player crosshair. 1: Show player crosshair only when bot can be taken over, otherwise show default.. 2: Always show default crosshair for bots.",
+      "help": "Crosshair shown when observing a bot. 0 = show your crosshair, 1 = show your crosshair only when the bot can be taken over (otherwise default), 2 = always show the default crosshair",
       "max": null,
       "min": null,
       "name": "cl_observed_bot_crosshair",
@@ -9328,7 +9361,7 @@
         "clientdll",
         "release"
       ],
-      "help": "Show the crosshair of the player being observed. 0: off 1: friends and party 2: everyone ",
+      "help": "Show the crosshair of the player being observed. 0 = off, 1 = friends and party only, 2 = everyone",
       "max": null,
       "min": null,
       "name": "cl_show_observer_crosshair",
@@ -9961,6 +9994,19 @@
       "value_type": "Bool"
     },
     {
+      "default": "false",
+      "flags": [
+        "clientdll",
+        "release"
+      ],
+      "help": "Enable 'TrueView' when spectating another player, which attempts to recreate the client's experience more accurately.  The server may not allow this at certain times.",
+      "max": null,
+      "min": null,
+      "name": "cl_spectator_predict",
+      "prefix": "cl",
+      "value_type": "Bool"
+    },
+    {
       "default": "img://loadjpeg:(640x360):",
       "flags": [
         "clientdll",
@@ -10529,6 +10575,19 @@
       "value_type": "Bool"
     },
     {
+      "default": "0.030000",
+      "flags": [
+        "cheat",
+        "clientdll"
+      ],
+      "help": "Smoke density at the eye position above which a button's use prompt is suppressed.",
+      "max": null,
+      "min": null,
+      "name": "cl_use_prompt_smoke_density",
+      "prefix": "cl",
+      "value_type": "Float32"
+    },
+    {
       "default": "0",
       "flags": [
         "developmentonly"
@@ -10857,6 +10916,7 @@
       "flags": [
         "archive",
         "clientdll",
+        "per_user",
         "userinfo"
       ],
       "help": "Enable close captioning.",
@@ -12285,6 +12345,19 @@
       "value_type": "Float32"
     },
     {
+      "default": "256.000000",
+      "flags": [
+        "cheat",
+        "clientdll"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "csm_sst_shadow_focus_region_caster_headroom",
+      "prefix": "csm",
+      "value_type": "Float32"
+    },
+    {
       "default": "2000.000000",
       "flags": [
         "cheat",
@@ -12311,7 +12384,7 @@
       "value_type": "Float32"
     },
     {
-      "default": "1500.000000",
+      "default": "true",
       "flags": [
         "cheat",
         "clientdll"
@@ -12319,9 +12392,9 @@
       "help": "",
       "max": null,
       "min": null,
-      "name": "csm_sst_shadow_focus_region_thin_compensation",
+      "name": "csm_sst_vertical_depth_shear_enable",
       "prefix": "csm",
-      "value_type": "Float32"
+      "value_type": "Bool"
     },
     {
       "default": "0.000000",
@@ -12961,19 +13034,6 @@
       "name": "demo_max_consecutive_skip_packets",
       "prefix": "demo",
       "value_type": "Int32"
-    },
-    {
-      "default": "drop",
-      "flags": [
-        "archive",
-        "clientdll"
-      ],
-      "help": "Name of the binding to enable mouse on demo playback UI",
-      "max": null,
-      "min": null,
-      "name": "demo_mouse_enable_binding",
-      "prefix": "demo",
-      "value_type": "String"
     },
     {
       "default": "true",
@@ -14378,19 +14438,6 @@
       "value_type": "Bool"
     },
     {
-      "default": "false",
-      "flags": [
-        "developmentonly",
-        "gamedll"
-      ],
-      "help": "",
-      "max": null,
-      "min": null,
-      "name": "ent_skeleton_snapshot",
-      "prefix": "ent",
-      "value_type": "Bool"
-    },
-    {
       "default": "20",
       "flags": [
         "defensive",
@@ -14501,6 +14548,19 @@
       "name": "entity_log_load_unserialize",
       "prefix": "entity",
       "value_type": "Int32"
+    },
+    {
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "gamedll"
+      ],
+      "help": "Draw debug info for active env_shakes: query radius, affected physics bodies/particles, and the forces/velocity deltas applied to them.",
+      "max": null,
+      "min": null,
+      "name": "env_shake_debug",
+      "prefix": "env",
+      "value_type": "Bool"
     },
     {
       "default": "true",
@@ -15551,6 +15611,20 @@
       "help": "",
       "max": null,
       "min": null,
+      "name": "func_mover_disable_movement",
+      "prefix": "func",
+      "value_type": "Bool"
+    },
+    {
+      "default": "false",
+      "flags": [
+        "defensive",
+        "developmentonly",
+        "gamedll"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
       "name": "func_mover_force_transition_start_direction",
       "prefix": "func",
       "value_type": "Bool"
@@ -15948,21 +16022,6 @@
       "min": null,
       "name": "gamestats_file_output_directory",
       "prefix": "gamestats",
-      "value_type": "String"
-    },
-    {
-      "default": "",
-      "flags": [
-        "defensive",
-        "developmentonly",
-        "gamedll",
-        "protected"
-      ],
-      "help": "Secret key for authenticating with the GC\n",
-      "max": null,
-      "min": null,
-      "name": "gc_secret_key",
-      "prefix": "gc",
       "value_type": "String"
     },
     {
@@ -19403,6 +19462,19 @@
       "value_type": "Bool"
     },
     {
+      "default": "true",
+      "flags": [
+        "cheat",
+        "developmentonly"
+      ],
+      "help": "Disables use of illumination volume (may cause precomputed lighting errors)",
+      "max": null,
+      "min": null,
+      "name": "lb_use_illumination_volume",
+      "prefix": "lb",
+      "value_type": "Bool"
+    },
+    {
       "default": "600",
       "flags": [
         "clientdll",
@@ -19414,36 +19486,6 @@
       "name": "leaderboards_cache_duration",
       "prefix": "leaderboards",
       "value_type": "Int32"
-    },
-    {
-      "default": "true",
-      "flags": [
-        "cheat",
-        "clientdll",
-        "gamedll",
-        "replicated"
-      ],
-      "help": "",
-      "max": null,
-      "min": null,
-      "name": "lightquery_debug_direct_lighting",
-      "prefix": "lightquery",
-      "value_type": "Bool"
-    },
-    {
-      "default": "true",
-      "flags": [
-        "cheat",
-        "clientdll",
-        "gamedll",
-        "replicated"
-      ],
-      "help": "",
-      "max": null,
-      "min": null,
-      "name": "lightquery_debug_indirect_lighting",
-      "prefix": "lightquery",
-      "value_type": "Bool"
     },
     {
       "default": "1",
@@ -20743,56 +20785,6 @@
       "value_type": "Bool"
     },
     {
-      "default": "false",
-      "flags": [
-        "archive"
-      ],
-      "help": "MOBILE_FPS_CONTROL: If true we increase framerate limit while charging",
-      "max": null,
-      "min": null,
-      "name": "mobile_fps_increase_during_charging",
-      "prefix": "mobile",
-      "value_type": "Bool"
-    },
-    {
-      "default": "true",
-      "flags": [
-        "defensive",
-        "developmentonly",
-        "hidden"
-      ],
-      "help": "MOBILE_FPS_CONTROL: If true we increase framerate limit during HFR-tagged animations and transitions.",
-      "max": null,
-      "min": null,
-      "name": "mobile_fps_increase_during_hfr_animations",
-      "prefix": "mobile",
-      "value_type": "Bool"
-    },
-    {
-      "default": "true",
-      "flags": [
-        "archive"
-      ],
-      "help": "MOBILE_FPS_CONTROL: If true we increase framerate limit during touch",
-      "max": null,
-      "min": null,
-      "name": "mobile_fps_increase_during_touch",
-      "prefix": "mobile",
-      "value_type": "Bool"
-    },
-    {
-      "default": "30.000000",
-      "flags": [
-        "archive"
-      ],
-      "help": "MOBILE_FPS_CONTROL: Mobile FPS limit - 15, 30, 60",
-      "max": null,
-      "min": null,
-      "name": "mobile_fps_limit",
-      "prefix": "mobile",
-      "value_type": "Float32"
-    },
-    {
       "default": "",
       "flags": [
         "archive",
@@ -20805,6 +20797,18 @@
       "min": null,
       "name": "model_default_preview_sequence_name",
       "prefix": "model",
+      "value_type": "String"
+    },
+    {
+      "default": "",
+      "flags": [
+        "developmentonly"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "modeldoc_fgd_debug_path",
+      "prefix": "modeldoc",
       "value_type": "String"
     },
     {
@@ -21465,8 +21469,8 @@
         "release",
         "replicated"
       ],
-      "help": "Which gun to drop on player death: 0=none, 1=best, 2=current or best",
-      "max": 2,
+      "help": "Which gun to drop on player death: 0=none, 1=best, 2=current or best, 3=both",
+      "max": 3,
       "min": 0,
       "name": "mp_death_drop_gun",
       "prefix": "mp",
@@ -22442,6 +22446,7 @@
     {
       "default": "false",
       "flags": [
+        "commandline_enforced",
         "gamedll",
         "release",
         "replicated"
@@ -22834,7 +22839,7 @@
       "value_type": "Float32"
     },
     {
-      "default": "false",
+      "default": "true",
       "flags": [
         "clientdll",
         "gamedll",
@@ -23418,9 +23423,9 @@
     {
       "default": "5",
       "flags": [
+        "commandline_enforced",
         "gamedll",
-        "release",
-        "replicated"
+        "release"
       ],
       "help": "Kick players who team-kill within this many seconds of a round restart.",
       "max": null,
@@ -23589,9 +23594,9 @@
     {
       "default": "300",
       "flags": [
+        "commandline_enforced",
         "gamedll",
-        "release",
-        "replicated"
+        "release"
       ],
       "help": "The damage threshhold players have to exceed in a match to get kicked.",
       "max": null,
@@ -23603,9 +23608,9 @@
     {
       "default": "200",
       "flags": [
+        "commandline_enforced",
         "gamedll",
-        "release",
-        "replicated"
+        "release"
       ],
       "help": "The damage threshhold players have to exceed in a match to get warned that they are about to be kicked.",
       "max": null,
@@ -23617,9 +23622,9 @@
     {
       "default": "50",
       "flags": [
+        "commandline_enforced",
         "gamedll",
-        "release",
-        "replicated"
+        "release"
       ],
       "help": "The damage threshold players have to exceed at the start of the round to be warned/kick.",
       "max": null,
@@ -23643,6 +23648,22 @@
       "name": "mp_team_intro_time",
       "prefix": "mp",
       "value_type": "Float32"
+    },
+    {
+      "default": "auto",
+      "flags": [
+        "clientdll",
+        "commandline_enforced",
+        "gamedll",
+        "release",
+        "replicated"
+      ],
+      "help": "none, normal, wingman, rush, or auto (implies normal if mp_halftime is set, none otherwise)",
+      "max": null,
+      "min": null,
+      "name": "mp_team_intro_type",
+      "prefix": "mp",
+      "value_type": "String"
     },
     {
       "default": "1",
@@ -24715,10 +24736,8 @@
     {
       "default": "32",
       "flags": [
-        "defensive",
         "developmentonly",
-        "gamedll",
-        "replicated"
+        "gamedll"
       ],
       "help": "The offset of the nav drag volume top from center",
       "max": null,
@@ -24730,10 +24749,8 @@
     {
       "default": "32",
       "flags": [
-        "defensive",
         "developmentonly",
-        "gamedll",
-        "replicated"
+        "gamedll"
       ],
       "help": "The offset of the nav drag volume bottom from center",
       "max": null,
@@ -24741,6 +24758,19 @@
       "name": "nav_drag_selection_volume_zmin_offset",
       "prefix": "nav",
       "value_type": "Int32"
+    },
+    {
+      "default": "false",
+      "flags": [
+        "cheat",
+        "gamedll"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "nav_draw_area_color_by_game_attribute",
+      "prefix": "nav",
+      "value_type": "Bool"
     },
     {
       "default": "false",
@@ -25018,7 +25048,7 @@
     {
       "default": "false",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "",
@@ -25044,7 +25074,7 @@
     {
       "default": "false",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "",
@@ -25070,7 +25100,7 @@
     {
       "default": "300",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "The maximum number of areas to draw in edit mode",
@@ -25083,7 +25113,7 @@
     {
       "default": "false",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "",
@@ -25096,7 +25126,7 @@
     {
       "default": "false",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "",
@@ -26370,7 +26400,7 @@
     {
       "default": "true",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "When selecting an area under nav_edit, allow area marked as blocked.",
@@ -26383,7 +26413,7 @@
     {
       "default": "-1",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "Select nav area with matching ID.",
@@ -26396,7 +26426,7 @@
     {
       "default": "-1",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "Select nav space block with matching ID.",
@@ -26409,7 +26439,7 @@
     {
       "default": "0",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "Restrict area selection to areas that can support a hull of the given category",
@@ -26422,7 +26452,7 @@
     {
       "default": "true",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "Show connections to selected area when true",
@@ -26435,7 +26465,7 @@
     {
       "default": "true",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "Show area vertex positions",
@@ -26448,7 +26478,7 @@
     {
       "default": "true",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "",
@@ -26461,7 +26491,7 @@
     {
       "default": "true",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "",
@@ -26474,7 +26504,7 @@
     {
       "default": "Consolas",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "",
@@ -26487,7 +26517,7 @@
     {
       "default": "-1.000000",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "",
@@ -26500,7 +26530,7 @@
     {
       "default": "-11.000000",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "",
@@ -26509,6 +26539,58 @@
       "name": "nav_show_elem_info_font_voffset",
       "prefix": "nav",
       "value_type": "Float32"
+    },
+    {
+      "default": "false",
+      "flags": [
+        "cheat",
+        "gamedll"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "nav_smooth_arrival_enable",
+      "prefix": "nav",
+      "value_type": "Bool"
+    },
+    {
+      "default": "3.000000",
+      "flags": [
+        "cheat",
+        "gamedll"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "nav_smooth_arrival_handle_scale",
+      "prefix": "nav",
+      "value_type": "Float32"
+    },
+    {
+      "default": "true",
+      "flags": [
+        "cheat",
+        "gamedll"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "nav_smooth_arrival_spline",
+      "prefix": "nav",
+      "value_type": "Bool"
+    },
+    {
+      "default": "false",
+      "flags": [
+        "cheat",
+        "gamedll"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "nav_smooth_arrival_spring",
+      "prefix": "nav",
+      "value_type": "Bool"
     },
     {
       "default": "true",
@@ -26561,6 +26643,19 @@
       "name": "nav_smooth_constrain_spring_relax",
       "prefix": "nav",
       "value_type": "Float32"
+    },
+    {
+      "default": "false",
+      "flags": [
+        "cheat",
+        "gamedll"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "nav_smooth_draw_arrival_calc",
+      "prefix": "nav",
+      "value_type": "Bool"
     },
     {
       "default": "0.000000",
@@ -27166,19 +27261,6 @@
         "cheat",
         "gamedll"
       ],
-      "help": "",
-      "max": null,
-      "min": null,
-      "name": "nav_test_detour",
-      "prefix": "nav",
-      "value_type": "Bool"
-    },
-    {
-      "default": "false",
-      "flags": [
-        "cheat",
-        "gamedll"
-      ],
       "help": "Calculate the nearest point on the navmesh to the trace point.  Uses selection from nav_select_hull.",
       "max": null,
       "min": null,
@@ -27410,7 +27492,7 @@
     {
       "default": "false",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "Calculate and draw a path from player/camera position to the test position.",
@@ -27423,7 +27505,7 @@
     {
       "default": "false",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "Lock the pathfinding goal to the current intersection point.",
@@ -27436,7 +27518,7 @@
     {
       "default": "false",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "Lock the pathfinding start to the current intersection point.",
@@ -27449,7 +27531,7 @@
     {
       "default": "false",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "",
@@ -27460,9 +27542,35 @@
       "value_type": "Bool"
     },
     {
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "gamedll"
+      ],
+      "help": "Calculate and draw a path for the selected NPC to the test position.",
+      "max": null,
+      "min": null,
+      "name": "nav_test_path_npc",
+      "prefix": "nav",
+      "value_type": "Bool"
+    },
+    {
+      "default": "-1.000000",
+      "flags": [
+        "developmentonly",
+        "gamedll"
+      ],
+      "help": "Calculate and draw a path for the selected NPC to the test position.",
+      "max": null,
+      "min": null,
+      "name": "nav_test_path_npc_success_radius_when_blocked",
+      "prefix": "nav",
+      "value_type": "Float32"
+    },
+    {
       "default": "true",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "Enable path optimization for nav_edit_path paths.",
@@ -27475,7 +27583,7 @@
     {
       "default": "false",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "",
@@ -27488,7 +27596,7 @@
     {
       "default": "false",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "Calculate a return path from cursor position to the path calculated by nav_test_path.",
@@ -27501,7 +27609,7 @@
     {
       "default": "0",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "Should nav_test_path test 3d navigation?  1 = space to space, 2 = multi-modal space/ground",
@@ -27514,7 +27622,7 @@
     {
       "default": "true",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "Test flight paths",
@@ -27527,7 +27635,7 @@
     {
       "default": "true",
       "flags": [
-        "cheat",
+        "developmentonly",
         "gamedll"
       ],
       "help": "Test swim paths",
@@ -27860,6 +27968,19 @@
       "help": "",
       "max": null,
       "min": null,
+      "name": "navspace_create_water_surface_connections",
+      "prefix": "navspace",
+      "value_type": "Bool"
+    },
+    {
+      "default": "true",
+      "flags": [
+        "cheat",
+        "gamedll"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
       "name": "navspace_create_water_transition_connections",
       "prefix": "navspace",
       "value_type": "Bool"
@@ -28089,6 +28210,19 @@
       "min": null,
       "name": "noclip_fixup",
       "prefix": "noclip",
+      "value_type": "Bool"
+    },
+    {
+      "default": "false",
+      "flags": [
+        "developmentonly",
+        "gamedll"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "npc_record_skeleton_snapshot",
+      "prefix": "npc",
       "value_type": "Bool"
     },
     {
@@ -29158,6 +29292,20 @@
         "developmentonly",
         "hidden"
       ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "panorama_force_atlas_clear",
+      "prefix": "panorama",
+      "value_type": "Bool"
+    },
+    {
+      "default": "false",
+      "flags": [
+        "defensive",
+        "developmentonly",
+        "hidden"
+      ],
       "help": "Force desired layout traverse, even if the cached values are up to date.",
       "max": null,
       "min": null,
@@ -29725,34 +29873,6 @@
       "value_type": "Bool"
     },
     {
-      "default": "false",
-      "flags": [
-        "defensive",
-        "developmentonly",
-        "hidden"
-      ],
-      "help": "",
-      "max": null,
-      "min": null,
-      "name": "panorama_transform_parents_no_layer_for_perspective",
-      "prefix": "panorama",
-      "value_type": "Bool"
-    },
-    {
-      "default": "false",
-      "flags": [
-        "defensive",
-        "developmentonly",
-        "hidden"
-      ],
-      "help": "",
-      "max": null,
-      "min": null,
-      "name": "panorama_transforms_no_comp_layer",
-      "prefix": "panorama",
-      "value_type": "Bool"
-    },
-    {
       "default": "1.000000",
       "flags": [
         "defensive",
@@ -29893,6 +30013,22 @@
       "name": "parallel_update_surrounding_bounds_in_spatial_partition_update",
       "prefix": "parallel",
       "value_type": "Bool"
+    },
+    {
+      "default": "0",
+      "flags": [
+        "clientdll",
+        "defensive",
+        "developmentonly",
+        "gamedll",
+        "replicated"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "particle_cluster_bounds_debug",
+      "prefix": "particle",
+      "value_type": "Int32"
     },
     {
       "default": "0",
@@ -30119,6 +30255,34 @@
       "value_type": "Bool"
     },
     {
+      "default": "false",
+      "flags": [
+        "defensive",
+        "developmentonly",
+        "gamedll"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "path_mover_enable_high_resolution_debug_rendering",
+      "prefix": "path",
+      "value_type": "Bool"
+    },
+    {
+      "default": "false",
+      "flags": [
+        "defensive",
+        "developmentonly",
+        "gamedll"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "path_mover_entity_spawner_debug",
+      "prefix": "path",
+      "value_type": "Bool"
+    },
+    {
       "default": "0.000000",
       "flags": [
         "clientdll",
@@ -30189,6 +30353,21 @@
       "name": "phonemesnap",
       "prefix": "phonemesnap",
       "value_type": "Int32"
+    },
+    {
+      "default": "false",
+      "flags": [
+        "clientdll",
+        "developmentonly",
+        "gamedll",
+        "replicated"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "phys_agg_world_compounds",
+      "prefix": "phys",
+      "value_type": "Bool"
     },
     {
       "default": "0",
@@ -30697,21 +30876,6 @@
       "name": "phys_visualize_awake_unattached_only",
       "prefix": "phys",
       "value_type": "Bool"
-    },
-    {
-      "default": "1.000000",
-      "flags": [
-        "clientdll",
-        "developmentonly",
-        "gamedll",
-        "replicated"
-      ],
-      "help": "Scale on the force wind applies to physics bodies",
-      "max": null,
-      "min": null,
-      "name": "phys_wind_force_scale",
-      "prefix": "phys",
-      "value_type": "Float32"
     },
     {
       "default": "0.250000",
@@ -31234,6 +31398,21 @@
       "value_type": "Float32"
     },
     {
+      "default": "20000",
+      "flags": [
+        "clientdll",
+        "developmentonly",
+        "gamedll",
+        "replicated"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "pulse_cursor_infinite_loop_detection_threshold",
+      "prefix": "pulse",
+      "value_type": "Int32"
+    },
+    {
       "default": "true",
       "flags": [
         "clientdll",
@@ -31412,6 +31591,30 @@
       "max": null,
       "min": null,
       "name": "r_always_render_all_windows",
+      "prefix": "r",
+      "value_type": "Bool"
+    },
+    {
+      "default": "false",
+      "flags": [
+        "cheat"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "r_animatable_mesh_shaders",
+      "prefix": "r",
+      "value_type": "Bool"
+    },
+    {
+      "default": "false",
+      "flags": [
+        "cheat"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "r_animatable_mesh_shaders_visualize_bounds",
       "prefix": "r",
       "value_type": "Bool"
     },
@@ -31804,6 +32007,45 @@
       "max": null,
       "min": null,
       "name": "r_csgo_cmaa_quality",
+      "prefix": "r",
+      "value_type": "Int32"
+    },
+    {
+      "default": "false",
+      "flags": [
+        "clientdll",
+        "developmentonly"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "r_csgo_crosshair_debug_tiles",
+      "prefix": "r",
+      "value_type": "Bool"
+    },
+    {
+      "default": "8",
+      "flags": [
+        "clientdll",
+        "developmentonly"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "r_csgo_crosshair_debug_tiles_count_red",
+      "prefix": "r",
+      "value_type": "Int32"
+    },
+    {
+      "default": "128",
+      "flags": [
+        "clientdll",
+        "developmentonly"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "r_csgo_crosshair_tile_size",
       "prefix": "r",
       "value_type": "Int32"
     },
@@ -33102,6 +33344,19 @@
     {
       "default": "true",
       "flags": [
+        "cheat",
+        "clientdll"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "r_csgo_sky_occluder",
+      "prefix": "r",
+      "value_type": "Bool"
+    },
+    {
+      "default": "true",
+      "flags": [
         "clientdll",
         "developmentonly"
       ],
@@ -33376,6 +33631,19 @@
       "value_type": "Bool"
     },
     {
+      "default": "true",
+      "flags": [
+        "clientdll",
+        "developmentonly"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "r_csgo_world_receives_skybox_csm",
+      "prefix": "r",
+      "value_type": "Bool"
+    },
+    {
       "default": "0",
       "flags": [
         "cheat"
@@ -33411,18 +33679,6 @@
       "max": null,
       "min": null,
       "name": "r_debug_depth_holes",
-      "prefix": "r",
-      "value_type": "Bool"
-    },
-    {
-      "default": "false",
-      "flags": [
-        "developmentonly"
-      ],
-      "help": "Render safe area insets as wireframe.",
-      "max": null,
-      "min": null,
-      "name": "r_debug_draw_safe_area_insets",
       "prefix": "r",
       "value_type": "Bool"
     },
@@ -33531,6 +33787,51 @@
       "value_type": "Float32"
     },
     {
+      "default": "1.350000",
+      "flags": [
+        "cheat",
+        "clientdll",
+        "gamedll",
+        "replicated"
+      ],
+      "help": "Size multiplier applied to decals placed at r_decals_distance_scale_end or further from the local player. 1.0 disables distance scaling.",
+      "max": null,
+      "min": null,
+      "name": "r_decals_distance_scale",
+      "prefix": "r",
+      "value_type": "Float32"
+    },
+    {
+      "default": "1536.000000",
+      "flags": [
+        "cheat",
+        "clientdll",
+        "gamedll",
+        "replicated"
+      ],
+      "help": "Distance from the local player at which decals reach r_decals_distance_scale.",
+      "max": null,
+      "min": null,
+      "name": "r_decals_distance_scale_end",
+      "prefix": "r",
+      "value_type": "Float32"
+    },
+    {
+      "default": "256.000000",
+      "flags": [
+        "cheat",
+        "clientdll",
+        "gamedll",
+        "replicated"
+      ],
+      "help": "Distance from the local player at which decals start scaling toward r_decals_distance_scale.",
+      "max": null,
+      "min": null,
+      "name": "r_decals_distance_scale_start",
+      "prefix": "r",
+      "value_type": "Float32"
+    },
+    {
       "default": "512",
       "flags": [
         "clientdll",
@@ -33542,7 +33843,7 @@
       "help": "",
       "max": null,
       "min": null,
-      "name": "r_decals_max_on_deformables",
+      "name": "r_decals_max_triangle_anchored",
       "prefix": "r",
       "value_type": "Int32"
     },
@@ -33578,6 +33879,22 @@
       "name": "r_decals_overlap_threshold",
       "prefix": "r",
       "value_type": "Int32"
+    },
+    {
+      "default": "1.250000",
+      "flags": [
+        "clientdll",
+        "defensive",
+        "developmentonly",
+        "gamedll",
+        "replicated"
+      ],
+      "help": "Max stretch (and 1/x compression) ratio a triangle-anchored decal may show relative to its shape at placement. 1 = rigid follow, <= 0 = unlimited.",
+      "max": null,
+      "min": null,
+      "name": "r_decals_triangle_max_stretch",
+      "prefix": "r",
+      "value_type": "Float32"
     },
     {
       "default": "1",
@@ -33775,19 +34092,6 @@
       "max": null,
       "min": null,
       "name": "r_draw_instances",
-      "prefix": "r",
-      "value_type": "Bool"
-    },
-    {
-      "default": "true",
-      "flags": [
-        "defensive",
-        "developmentonly"
-      ],
-      "help": "",
-      "max": null,
-      "min": null,
-      "name": "r_draw_overlays",
       "prefix": "r",
       "value_type": "Bool"
     },
@@ -36341,26 +36645,13 @@
     {
       "default": "false",
       "flags": [
-        "clientdll",
-        "defensive",
-        "developmentonly"
+        "cheat",
+        "clientdll"
       ],
       "help": "",
       "max": null,
       "min": null,
       "name": "r_render_to_cubemap_debug",
-      "prefix": "r",
-      "value_type": "Bool"
-    },
-    {
-      "default": "false",
-      "flags": [
-        "cheat"
-      ],
-      "help": "Render world node bounds",
-      "max": null,
-      "min": null,
-      "name": "r_render_world_node_bounds",
       "prefix": "r",
       "value_type": "Bool"
     },
@@ -36387,6 +36678,19 @@
       "max": null,
       "min": null,
       "name": "r_renderdoc_open_captures",
+      "prefix": "r",
+      "value_type": "Bool"
+    },
+    {
+      "default": "true",
+      "flags": [
+        "defensive",
+        "developmentonly"
+      ],
+      "help": "Show RenderDoc overlay",
+      "max": null,
+      "min": null,
+      "name": "r_renderdoc_show_overlay",
       "prefix": "r",
       "value_type": "Bool"
     },
@@ -37223,6 +37527,18 @@
       "name": "r_vma_defrag_threshold_mb",
       "prefix": "r",
       "value_type": "Int32"
+    },
+    {
+      "default": "true",
+      "flags": [
+        "release"
+      ],
+      "help": "Sets the renderArea of a render pass to its viewport bounds (false will use RT size). More accurate renderArea, but results in more render passes.",
+      "max": null,
+      "min": null,
+      "name": "r_vulkan_accurate_renderarea",
+      "prefix": "r",
+      "value_type": "Bool"
     },
     {
       "default": "false",
@@ -38119,6 +38435,21 @@
       "value_type": "String"
     },
     {
+      "default": "false",
+      "flags": [
+        "clientdll",
+        "developmentonly",
+        "gamedll",
+        "replicated"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "rr_dumpresponses",
+      "prefix": "rr",
+      "value_type": "Bool"
+    },
+    {
       "default": "1800.000000",
       "flags": [
         "cheat",
@@ -38276,7 +38607,7 @@
       "value_type": "Bool"
     },
     {
-      "default": "false",
+      "default": "true",
       "flags": [
         "clientdll",
         "defensive",
@@ -38469,6 +38800,18 @@
       "max": null,
       "min": null,
       "name": "sc_aggregate_debug_visualizer",
+      "prefix": "sc",
+      "value_type": "Bool"
+    },
+    {
+      "default": "true",
+      "flags": [
+        "cheat"
+      ],
+      "help": "Test aggregate fragments against culling boxes individually instead of per aggregate.",
+      "max": null,
+      "min": null,
+      "name": "sc_aggregate_fragment_culling_boxes",
       "prefix": "sc",
       "value_type": "Bool"
     },
@@ -38977,6 +39320,18 @@
       "value_type": "Float32"
     },
     {
+      "default": "true",
+      "flags": [
+        "cheat"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "sc_fog_cull",
+      "prefix": "sc",
+      "value_type": "Bool"
+    },
+    {
       "default": "-1",
       "flags": [
         "cheat"
@@ -39151,6 +39506,18 @@
     {
       "default": "true",
       "flags": [
+        "cheat"
+      ],
+      "help": "Test instanced mesh instances against info_visibility_box culling boxes.",
+      "max": null,
+      "min": null,
+      "name": "sc_instanced_mesh_gpu_culling_boxes",
+      "prefix": "sc",
+      "value_type": "Bool"
+    },
+    {
+      "default": "true",
+      "flags": [
         "defensive",
         "developmentonly"
       ],
@@ -39236,6 +39603,19 @@
       "max": null,
       "min": null,
       "name": "sc_instanced_mesh_opaque_fade",
+      "prefix": "sc",
+      "value_type": "Bool"
+    },
+    {
+      "default": "false",
+      "flags": [
+        "defensive",
+        "developmentonly"
+      ],
+      "help": "Toggles whether mesh shader instanced can batch on reflectivity",
+      "max": null,
+      "min": null,
+      "name": "sc_instanced_mesh_shadows_batch_across_materials",
       "prefix": "sc",
       "value_type": "Bool"
     },
@@ -39339,6 +39719,19 @@
       "help": "",
       "max": null,
       "min": null,
+      "name": "sc_mesh_allow_batch_across_primitives",
+      "prefix": "sc",
+      "value_type": "Bool"
+    },
+    {
+      "default": "true",
+      "flags": [
+        "defensive",
+        "developmentonly"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
       "name": "sc_mesh_backface_culling",
       "prefix": "sc",
       "value_type": "Bool"
@@ -39392,19 +39785,6 @@
       "max": null,
       "min": null,
       "name": "sc_mesh_shadows_batch_across_materials",
-      "prefix": "sc",
-      "value_type": "Bool"
-    },
-    {
-      "default": "false",
-      "flags": [
-        "defensive",
-        "developmentonly"
-      ],
-      "help": "",
-      "max": null,
-      "min": null,
-      "name": "sc_mesh_use_pmb",
       "prefix": "sc",
       "value_type": "Bool"
     },
@@ -39669,6 +40049,20 @@
       "name": "sc_spew_cmt_usage",
       "prefix": "sc",
       "value_type": "Bool"
+    },
+    {
+      "default": "SCENE_STATS_FRAME|SCENE_STATS_GEOMETRY|SCENE_STATS_CULLING|SCENE_STATS_MATERIALS|SCENE_STATS_LIGHTING|SCENE_STATS_RAYTRACING|SCENE_STATS_INTERNALS",
+      "flags": [
+        "archive",
+        "cheat",
+        "developmentonly"
+      ],
+      "help": "Which stats groups to show",
+      "max": null,
+      "min": null,
+      "name": "sc_stats_sections",
+      "prefix": "sc",
+      "value_type": "String"
     },
     {
       "default": "false",
@@ -40264,6 +40658,19 @@
       "value_type": "Int32"
     },
     {
+      "default": "false",
+      "flags": [
+        "cheat",
+        "clientdll"
+      ],
+      "help": "Draw sky_camera_volume bounds and their target links.",
+      "max": null,
+      "min": null,
+      "name": "sky_camera_volume_debug",
+      "prefix": "sky",
+      "value_type": "Bool"
+    },
+    {
       "default": "true",
       "flags": [
         "clientdll",
@@ -40579,6 +40986,20 @@
       "value_type": "String"
     },
     {
+      "default": "0.250000",
+      "flags": [
+        "clientdll",
+        "defensive",
+        "developmentonly"
+      ],
+      "help": "Seconds to fade the ChickensObscuredLayer mix layer in and out.",
+      "max": null,
+      "min": null,
+      "name": "snd_chicken_obscured_fade_time",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
       "default": "false",
       "flags": [
         "defensive",
@@ -40602,6 +41023,62 @@
       "max": 1,
       "min": 0,
       "name": "snd_deathcamera_volume",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.160000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Arms Race volume of Deathcam Timers",
+      "max": 1,
+      "min": 0,
+      "name": "snd_deathcamera_volume_armsrace",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.160000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Casual volume of Deathcam Timers",
+      "max": 1,
+      "min": 0,
+      "name": "snd_deathcamera_volume_casual",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.160000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Deathmatch volume of Deathcam Timers",
+      "max": 1,
+      "min": 0,
+      "name": "snd_deathcamera_volume_deathmatch",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.160000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Rush volume of Deathcam Timers",
+      "max": 1,
+      "min": 0,
+      "name": "snd_deathcamera_volume_rush",
       "prefix": "snd",
       "value_type": "Float32"
     },
@@ -41045,6 +41522,21 @@
     {
       "default": "false",
       "flags": [
+        "archive",
+        "cheat",
+        "developmentonly",
+        "menubar_item"
+      ],
+      "help": "Game/Granulator Debugger",
+      "max": null,
+      "min": null,
+      "name": "snd_granulator_imgui",
+      "prefix": "snd",
+      "value_type": "Bool"
+    },
+    {
+      "default": "false",
+      "flags": [
         "cheat",
         "replicated"
       ],
@@ -41199,6 +41691,62 @@
       "value_type": "Float32"
     },
     {
+      "default": "0.010000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Arms Race volume of Map Objective Music",
+      "max": 1,
+      "min": 0,
+      "name": "snd_mapobjective_volume_armsrace",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.010000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Casual volume of Map Objective Music",
+      "max": 1,
+      "min": 0,
+      "name": "snd_mapobjective_volume_casual",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.010000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Deathmatch volume of Map Objective Music",
+      "max": 1,
+      "min": 0,
+      "name": "snd_mapobjective_volume_deathmatch",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.010000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Rush volume of Map Objective Music",
+      "max": 1,
+      "min": 0,
+      "name": "snd_mapobjective_volume_rush",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
       "default": "0.080000",
       "flags": [
         "clientdll",
@@ -41239,6 +41787,62 @@
       "max": 1,
       "min": 0,
       "name": "snd_menumusic_volume",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.040000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Arms Race volume of Menu / Non-gameplay music",
+      "max": 1,
+      "min": 0,
+      "name": "snd_menumusic_volume_armsrace",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.040000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Casual volume of Menu / Non-gameplay music",
+      "max": 1,
+      "min": 0,
+      "name": "snd_menumusic_volume_casual",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.040000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Deathmatch volume of Menu / Non-gameplay music",
+      "max": 1,
+      "min": 0,
+      "name": "snd_menumusic_volume_deathmatch",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.040000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Rush volume of Menu / Non-gameplay music",
+      "max": 1,
+      "min": 0,
+      "name": "snd_menumusic_volume_rush",
       "prefix": "snd",
       "value_type": "Float32"
     },
@@ -41320,6 +41924,33 @@
     {
       "default": "1.000000",
       "flags": [
+        "clientdll",
+        "release"
+      ],
+      "help": "Selects which per-game-mode set of music volume convars is live",
+      "max": null,
+      "min": null,
+      "name": "snd_music_mode",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Which game mode's music volumes the audio settings screen is editing",
+      "max": null,
+      "min": null,
+      "name": "snd_music_settings_mode",
+      "prefix": "snd",
+      "value_type": "Int32"
+    },
+    {
+      "default": "1.000000",
+      "flags": [
         "archive"
       ],
       "help": "Music volume",
@@ -41366,6 +41997,62 @@
       "max": 1,
       "min": 0,
       "name": "snd_mvp_volume",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.160000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Arms Race volume of MVP Music",
+      "max": 1,
+      "min": 0,
+      "name": "snd_mvp_volume_armsrace",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.160000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Casual volume of MVP Music",
+      "max": 1,
+      "min": 0,
+      "name": "snd_mvp_volume_casual",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.160000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Deathmatch volume of MVP Music",
+      "max": 1,
+      "min": 0,
+      "name": "snd_mvp_volume_deathmatch",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.160000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Rush volume of MVP Music",
+      "max": 1,
+      "min": 0,
+      "name": "snd_mvp_volume_rush",
       "prefix": "snd",
       "value_type": "Float32"
     },
@@ -41541,6 +42228,70 @@
       "value_type": "Float32"
     },
     {
+      "default": "64.000000",
+      "flags": [
+        "clientdll",
+        "defensive",
+        "developmentonly",
+        "gamedll",
+        "replicated"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "snd_opvar_set_dome_catchup_distance",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "1.000000",
+      "flags": [
+        "clientdll",
+        "defensive",
+        "developmentonly",
+        "gamedll",
+        "replicated"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "snd_opvar_set_dome_catchup_rate",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.250000",
+      "flags": [
+        "clientdll",
+        "defensive",
+        "developmentonly",
+        "gamedll",
+        "replicated"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "snd_opvar_set_dome_churn_fraction",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "32",
+      "flags": [
+        "clientdll",
+        "defensive",
+        "developmentonly",
+        "gamedll",
+        "replicated"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "snd_opvar_set_dome_cluster_steps_per_think",
+      "prefix": "snd",
+      "value_type": "Int32"
+    },
+    {
       "default": "false",
       "flags": [
         "cheat",
@@ -41677,6 +42428,62 @@
       "value_type": "Float32"
     },
     {
+      "default": "0.000000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Arms Race volume of Move Action Music",
+      "max": 1,
+      "min": 0,
+      "name": "snd_roundaction_volume_armsrace",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.000000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Casual volume of Move Action Music",
+      "max": 1,
+      "min": 0,
+      "name": "snd_roundaction_volume_casual",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.000000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Deathmatch volume of Move Action Music",
+      "max": 1,
+      "min": 0,
+      "name": "snd_roundaction_volume_deathmatch",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.006400",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Rush volume of Move Action Music",
+      "max": 1,
+      "min": 0,
+      "name": "snd_roundaction_volume_rush",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
       "default": "0.160000",
       "flags": [
         "archive",
@@ -41691,6 +42498,62 @@
       "value_type": "Float32"
     },
     {
+      "default": "0.160000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Arms Race volume of Won/Lost Music",
+      "max": 1,
+      "min": 0,
+      "name": "snd_roundend_volume_armsrace",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.160000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Casual volume of Won/Lost Music",
+      "max": 1,
+      "min": 0,
+      "name": "snd_roundend_volume_casual",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.160000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Deathmatch volume of Won/Lost Music",
+      "max": 1,
+      "min": 0,
+      "name": "snd_roundend_volume_deathmatch",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.160000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Rush volume of Won/Lost Music",
+      "max": 1,
+      "min": 0,
+      "name": "snd_roundend_volume_rush",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
       "default": "0.000000",
       "flags": [
         "archive",
@@ -41701,6 +42564,62 @@
       "max": 1,
       "min": 0,
       "name": "snd_roundstart_volume",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.022500",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Arms Race volume of Round Start Music",
+      "max": 1,
+      "min": 0,
+      "name": "snd_roundstart_volume_armsrace",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.022500",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Casual volume of Round Start Music",
+      "max": 1,
+      "min": 0,
+      "name": "snd_roundstart_volume_casual",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.022500",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Deathmatch volume of Round Start Music",
+      "max": 1,
+      "min": 0,
+      "name": "snd_roundstart_volume_deathmatch",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.022500",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Rush volume of Round Start Music",
+      "max": 1,
+      "min": 0,
+      "name": "snd_roundstart_volume_rush",
       "prefix": "snd",
       "value_type": "Float32"
     },
@@ -42655,6 +43574,62 @@
       "max": 1,
       "min": 0,
       "name": "snd_tensecondwarning_volume",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.010000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Arms Race volume of Ten Second Warnings",
+      "max": 1,
+      "min": 0,
+      "name": "snd_tensecondwarning_volume_armsrace",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.010000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Casual volume of Ten Second Warnings",
+      "max": 1,
+      "min": 0,
+      "name": "snd_tensecondwarning_volume_casual",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.010000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Deathmatch volume of Ten Second Warnings",
+      "max": 1,
+      "min": 0,
+      "name": "snd_tensecondwarning_volume_deathmatch",
+      "prefix": "snd",
+      "value_type": "Float32"
+    },
+    {
+      "default": "0.010000",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "Rush volume of Ten Second Warnings",
+      "max": 1,
+      "min": 0,
+      "name": "snd_tensecondwarning_volume_rush",
       "prefix": "snd",
       "value_type": "Float32"
     },
@@ -44049,36 +45024,6 @@
       "value_type": "Bool"
     },
     {
-      "default": "3000.000000",
-      "flags": [
-        "clientdll",
-        "gamedll",
-        "release",
-        "replicated"
-      ],
-      "help": "Speed above which a player is considered to be going fast.",
-      "max": null,
-      "min": null,
-      "name": "surf_speed_fast",
-      "prefix": "surf",
-      "value_type": "Float32"
-    },
-    {
-      "default": "2000.000000",
-      "flags": [
-        "clientdll",
-        "gamedll",
-        "release",
-        "replicated"
-      ],
-      "help": "Speed above which a player is considered to be going medium.",
-      "max": null,
-      "min": null,
-      "name": "surf_speed_med",
-      "prefix": "surf",
-      "value_type": "Float32"
-    },
-    {
       "default": "50.000000",
       "flags": [
         "clientdll",
@@ -44086,7 +45031,7 @@
         "release",
         "replicated"
       ],
-      "help": "Speed above which a player is considered to be going slow.",
+      "help": "Speed above which surf sounds are played.",
       "max": null,
       "min": null,
       "name": "surf_speed_slow",
@@ -44253,6 +45198,22 @@
       "name": "sv_allow_annotations_access_level",
       "prefix": "sv",
       "value_type": "Int32"
+    },
+    {
+      "default": "false",
+      "flags": [
+        "clientdll",
+        "commandline_enforced",
+        "gamedll",
+        "release",
+        "replicated"
+      ],
+      "help": "Test spawn points for occupancy. Fall back to placing players in the nearest empty space instead of overlapping.",
+      "max": null,
+      "min": null,
+      "name": "sv_allow_approximate_spawns",
+      "prefix": "sv",
+      "value_type": "Bool"
     },
     {
       "default": "true",
@@ -44799,6 +45760,46 @@
       "max": null,
       "min": null,
       "name": "sv_cheats",
+      "prefix": "sv",
+      "value_type": "Bool"
+    },
+    {
+      "default": "0",
+      "flags": [
+        "developmentonly",
+        "gamedll"
+      ],
+      "help": "Steam clan ID to allow members to set some convars",
+      "max": null,
+      "min": null,
+      "name": "sv_clanid",
+      "prefix": "sv",
+      "value_type": "UInt32"
+    },
+    {
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "sv_clanserver_gms",
+      "prefix": "sv",
+      "value_type": "Bool"
+    },
+    {
+      "default": "true",
+      "flags": [
+        "clientdll",
+        "gamedll",
+        "release",
+        "replicated"
+      ],
+      "help": "Show players' clan tags in their names.",
+      "max": null,
+      "min": null,
+      "name": "sv_clantags_enabled",
       "prefix": "sv",
       "value_type": "Bool"
     },
@@ -45876,6 +46877,30 @@
       "value_type": "Float32"
     },
     {
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "sv_frame_snapshot_async_delete",
+      "prefix": "sv",
+      "value_type": "Bool"
+    },
+    {
+      "default": "true",
+      "flags": [
+        "developmentonly"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "sv_frame_snapshot_sort_entities",
+      "prefix": "sv",
+      "value_type": "Bool"
+    },
+    {
       "default": "0.000000 0.000000 0.000000",
       "flags": [
         "clientdll",
@@ -46835,7 +47860,7 @@
       "value_type": "String"
     },
     {
-      "default": "[1:5][2:15][3:20][4:10][5:10][6:5]",
+      "default": "[1:5][2:15][3:15][4:10][5:5][6:5][7:5]",
       "flags": [
         "gamedll",
         "release"
@@ -46846,19 +47871,6 @@
       "name": "sv_mapvetopickvote_phase_duration",
       "prefix": "sv",
       "value_type": "String"
-    },
-    {
-      "default": "false",
-      "flags": [
-        "gamedll",
-        "release"
-      ],
-      "help": "When enabled will shuffle veto pick maps list order every time",
-      "max": null,
-      "min": null,
-      "name": "sv_mapvetopickvote_rnd",
-      "prefix": "sv",
-      "value_type": "Bool"
     },
     {
       "default": "false",
@@ -47211,6 +48223,19 @@
       "value_type": "Int32"
     },
     {
+      "default": "false",
+      "flags": [
+        "gamedll",
+        "release"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "sv_molotov_broken_glass_trap",
+      "prefix": "sv",
+      "value_type": "Bool"
+    },
+    {
       "default": "0.700000",
       "flags": [
         "clientdll",
@@ -47272,6 +48297,18 @@
       "max": null,
       "min": null,
       "name": "sv_mute_players_with_social_penalties",
+      "prefix": "sv",
+      "value_type": "Bool"
+    },
+    {
+      "default": "false",
+      "flags": [
+        "release"
+      ],
+      "help": "Temp counter for measuring performance impact of some network changes. To be removed by the end of Sept 2026",
+      "max": null,
+      "min": null,
+      "name": "sv_netprof_delta_sharing_temp",
       "prefix": "sv",
       "value_type": "Bool"
     },
@@ -48848,6 +49885,22 @@
       "value_type": "Float32"
     },
     {
+      "default": "0.000000",
+      "flags": [
+        "clientdll",
+        "commandline_enforced",
+        "gamedll",
+        "release",
+        "replicated"
+      ],
+      "help": "Max distance in X and Y to randomly offset a player from their spawn position, for procedural spawn variation. 0 to disable.",
+      "max": 512,
+      "min": 0,
+      "name": "sv_spawn_random_nudge_offset",
+      "prefix": "sv",
+      "value_type": "Float32"
+    },
+    {
       "default": "3",
       "flags": [
         "clientdll",
@@ -49404,18 +50457,6 @@
       "max": null,
       "min": null,
       "name": "sv_tick_parallel_with_client",
-      "prefix": "sv",
-      "value_type": "Bool"
-    },
-    {
-      "default": "true",
-      "flags": [
-        "developmentonly"
-      ],
-      "help": "",
-      "max": null,
-      "min": null,
-      "name": "sv_tick_snapshot_sort_entities",
       "prefix": "sv",
       "value_type": "Bool"
     },
@@ -50501,6 +51542,20 @@
       "value_type": "Bool"
     },
     {
+      "default": "false",
+      "flags": [
+        "cheat",
+        "developmentonly",
+        "gamedll"
+      ],
+      "help": "Toggle trigger_physics debug visualization.",
+      "max": null,
+      "min": null,
+      "name": "trigger_physics_debug",
+      "prefix": "trigger",
+      "value_type": "Bool"
+    },
+    {
       "default": "0",
       "flags": [
         "archive",
@@ -51353,6 +52408,19 @@
       "value_type": "String"
     },
     {
+      "default": "3",
+      "flags": [
+        "hidden",
+        "release"
+      ],
+      "help": "Number of fragments we need to have in the buffer before slowing down playback. For use with tv_playcast_slow_playback_when_fragment_requests_fail",
+      "max": null,
+      "min": null,
+      "name": "tv_playcast_slow_playback_fragment_count",
+      "prefix": "tv",
+      "value_type": "Int32"
+    },
+    {
       "default": "true",
       "flags": [
         "hidden",
@@ -51949,6 +53017,20 @@
       "help": "",
       "max": null,
       "min": null,
+      "name": "ui_playsettings_flags_listen_rush",
+      "prefix": "ui",
+      "value_type": "String"
+    },
+    {
+      "default": "0",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
       "name": "ui_playsettings_flags_listen_scrimcomp2v2",
       "prefix": "ui",
       "value_type": "String"
@@ -52048,6 +53130,20 @@
       "max": null,
       "min": null,
       "name": "ui_playsettings_flags_official_retakes",
+      "prefix": "ui",
+      "value_type": "String"
+    },
+    {
+      "default": "0",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "ui_playsettings_flags_official_rush",
       "prefix": "ui",
       "value_type": "String"
     },
@@ -52220,6 +53316,20 @@
       "value_type": "String"
     },
     {
+      "default": "mg_rush_001",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "ui_playsettings_maps_listen_rush",
+      "prefix": "ui",
+      "value_type": "String"
+    },
+    {
       "default": "mg_de_inferno",
       "flags": [
         "archive",
@@ -52286,6 +53396,20 @@
       "max": null,
       "min": null,
       "name": "ui_playsettings_maps_official_retakes",
+      "prefix": "ui",
+      "value_type": "String"
+    },
+    {
+      "default": "mg_rush_001",
+      "flags": [
+        "archive",
+        "clientdll",
+        "release"
+      ],
+      "help": "",
+      "max": null,
+      "min": null,
+      "name": "ui_playsettings_maps_official_rush",
       "prefix": "ui",
       "value_type": "String"
     },
@@ -53430,6 +54554,18 @@
       "value_type": "Int32"
     },
     {
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "help": "Capture VProf scopes on background threads as well as the target thread. Same option as the All Threads checkbox in the VProf tools -- setting either one updates the other",
+      "max": null,
+      "min": null,
+      "name": "vprof_all_threads",
+      "prefix": "vprof",
+      "value_type": "Bool"
+    },
+    {
       "default": "0",
       "flags": [
         "defensive",
@@ -53785,32 +54921,18 @@
       "value_type": "Bool"
     },
     {
-      "default": "0.670000",
+      "default": "false",
       "flags": [
         "cheat",
         "clientdll",
         "per_user"
       ],
-      "help": "",
-      "max": null,
-      "min": null,
-      "name": "weapon_debug_spread_gap",
-      "prefix": "weapon",
-      "value_type": "Float32"
-    },
-    {
-      "default": "0",
-      "flags": [
-        "cheat",
-        "clientdll",
-        "per_user"
-      ],
-      "help": "Enables display of weapon accuracy; 1: show accuracy box, 3: show accuracy with dynamic crosshair",
+      "help": "Draws the current weapon's true inaccuracy + spread radius around the crosshair",
       "max": null,
       "min": null,
       "name": "weapon_debug_spread_show",
       "prefix": "weapon",
-      "value_type": "Int32"
+      "value_type": "Bool"
     },
     {
       "default": "20.000000",
@@ -53991,19 +55113,6 @@
       "value_type": "UInt32"
     },
     {
-      "default": "false",
-      "flags": [
-        "defensive",
-        "developmentonly"
-      ],
-      "help": "",
-      "max": null,
-      "min": null,
-      "name": "wind_system_debug_volumes",
-      "prefix": "wind",
-      "value_type": "Bool"
-    },
-    {
       "default": "256",
       "flags": [
         "defensive",
@@ -54073,13 +55182,13 @@
   "flags": [
     {
       "command_count": 0,
-      "convar_count": 466,
+      "convar_count": 503,
       "description": "Value is written to config.cfg on shutdown and reloaded on startup.",
       "name": "archive"
     },
     {
-      "command_count": 449,
-      "convar_count": 982,
+      "command_count": 454,
+      "convar_count": 975,
       "description": "Requires sv_cheats 1 to change; reset when cheats are disabled.",
       "name": "cheat"
     },
@@ -54096,20 +55205,20 @@
       "name": "clientcmd_can_execute"
     },
     {
-      "command_count": 343,
-      "convar_count": 1858,
+      "command_count": 344,
+      "convar_count": 1917,
       "description": "Registered by the client binary (client.dll).",
       "name": "clientdll"
     },
     {
       "command_count": 0,
-      "convar_count": 270,
+      "convar_count": 278,
       "description": "Can be forced from the command line; a command-line value locks out later changes.",
       "name": "commandline_enforced"
     },
     {
       "command_count": 333,
-      "convar_count": 1153,
+      "convar_count": 1157,
       "description": "",
       "name": "defensive"
     },
@@ -54120,8 +55229,8 @@
       "name": "demo"
     },
     {
-      "command_count": 442,
-      "convar_count": 1858,
+      "command_count": 443,
+      "convar_count": 1905,
       "description": "Present only in development builds; stripped or inert in shipping builds.",
       "name": "developmentonly"
     },
@@ -54138,14 +55247,14 @@
       "name": "execute_per_tick"
     },
     {
-      "command_count": 361,
-      "convar_count": 1530,
+      "command_count": 367,
+      "convar_count": 1555,
       "description": "Registered by the game server binary (server.dll).",
       "name": "gamedll"
     },
     {
       "command_count": 40,
-      "convar_count": 138,
+      "convar_count": 140,
       "description": "Omitted from cvarlist/find output; still usable directly by name.",
       "name": "hidden"
     },
@@ -54157,7 +55266,7 @@
     },
     {
       "command_count": 0,
-      "convar_count": 54,
+      "convar_count": 55,
       "description": "Exposed as an item in the in-game menu bar / options UI.",
       "name": "menubar_item"
     },
@@ -54169,7 +55278,7 @@
     },
     {
       "command_count": 0,
-      "convar_count": 96,
+      "convar_count": 100,
       "description": "Tracked per split-screen/local user rather than as one global value.",
       "name": "per_user"
     },
@@ -54181,7 +55290,7 @@
     },
     {
       "command_count": 0,
-      "convar_count": 6,
+      "convar_count": 5,
       "description": "Value is withheld from clients (e.g. never sent over rcon output).",
       "name": "protected"
     },
@@ -54192,14 +55301,14 @@
       "name": "reference"
     },
     {
-      "command_count": 198,
-      "convar_count": 1033,
+      "command_count": 199,
+      "convar_count": 1079,
       "description": "Present in release/shipping builds, not just internal ones.",
       "name": "release"
     },
     {
       "command_count": 2,
-      "convar_count": 883,
+      "convar_count": 888,
       "description": "Server's value is sent to and enforced on connected clients.",
       "name": "replicated"
     },
@@ -54223,12 +55332,12 @@
     },
     {
       "command_count": 0,
-      "convar_count": 37,
+      "convar_count": 36,
       "description": "Part of the player's userinfo string, sent to the server on change.",
       "name": "userinfo"
     },
     {
-      "command_count": 21,
+      "command_count": 23,
       "convar_count": 0,
       "description": "",
       "name": "vconsole_fuzzy_matching"

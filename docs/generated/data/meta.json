@@ -1,20 +1,20 @@
 {
-  "build_id": "25218825",
+  "build_id": "25966348",
   "counts": {
-    "classes": 3591,
-    "commands": 1132,
-    "convars": 3959,
-    "enums": 612,
+    "classes": 3459,
+    "commands": 1138,
+    "convars": 4039,
+    "enums": 616,
     "events": 289,
-    "fields": 18561,
-    "game_modes": 15,
-    "items": 2054,
-    "maps": 22,
-    "messages": 775,
-    "modules": 139,
-    "music_kits": 101,
+    "fields": 18686,
+    "game_modes": 16,
+    "items": 2060,
+    "maps": 23,
+    "messages": 773,
+    "modules": 140,
+    "music_kits": 102,
     "paint_kits": 1481,
-    "proto_files": 40,
+    "proto_files": 41,
     "sticker_kits": 11789,
     "surfaces": 303
   },
@@ -25,8 +25,8 @@
       "module": "animationsystem"
     },
     {
-      "classes": 197,
-      "enums": 12,
+      "classes": 211,
+      "enums": 14,
       "module": "animdoclib"
     },
     {
@@ -40,12 +40,12 @@
       "module": "animgraphlib"
     },
     {
-      "classes": 180,
-      "enums": 37,
+      "classes": 190,
+      "enums": 39,
       "module": "animlib"
     },
     {
-      "classes": 488,
+      "classes": 466,
       "enums": 3,
       "module": "client"
     },
@@ -60,7 +60,7 @@
       "module": "engine2"
     },
     {
-      "classes": 16,
+      "classes": 15,
       "enums": 2,
       "module": "entity2"
     },
@@ -76,7 +76,7 @@
     },
     {
       "classes": 3,
-      "enums": 0,
+      "enums": 2,
       "module": "mapdoclib"
     },
     {
@@ -85,8 +85,8 @@
       "module": "materialsystem2"
     },
     {
-      "classes": 11,
-      "enums": 2,
+      "classes": 13,
+      "enums": 5,
       "module": "mathlib_extended"
     },
     {
@@ -95,8 +95,8 @@
       "module": "met"
     },
     {
-      "classes": 3,
-      "enums": 1,
+      "classes": 4,
+      "enums": 2,
       "module": "modeldoc_editor"
     },
     {
@@ -125,17 +125,17 @@
       "module": "panorama_content"
     },
     {
-      "classes": 434,
+      "classes": 435,
       "enums": 73,
       "module": "particles"
     },
     {
-      "classes": 21,
+      "classes": 22,
       "enums": 18,
       "module": "particleslib"
     },
     {
-      "classes": 99,
+      "classes": 103,
       "enums": 4,
       "module": "physicslib"
     },
@@ -145,7 +145,7 @@
       "module": "pulse_runtime_lib"
     },
     {
-      "classes": 38,
+      "classes": 33,
       "enums": 4,
       "module": "pulse_system"
     },
@@ -175,13 +175,13 @@
       "module": "resourcefile"
     },
     {
-      "classes": 48,
+      "classes": 49,
       "enums": 0,
       "module": "resourcesystem"
     },
     {
       "classes": 9,
-      "enums": 6,
+      "enums": 7,
       "module": "scenesystem"
     },
     {
@@ -190,28 +190,23 @@
       "module": "schemasystem"
     },
     {
-      "classes": 911,
-      "enums": 232,
+      "classes": 887,
+      "enums": 236,
       "module": "server"
     },
     {
-      "classes": 149,
-      "enums": 18,
-      "module": "smartprops"
-    },
-    {
-      "classes": 139,
+      "classes": 141,
       "enums": 2,
       "module": "sounddoc_lib"
     },
     {
-      "classes": 35,
-      "enums": 13,
+      "classes": 36,
+      "enums": 14,
       "module": "soundsystem"
     },
     {
-      "classes": 73,
-      "enums": 7,
+      "classes": 80,
+      "enums": 13,
       "module": "soundsystem_lowlevel"
     },
     {
@@ -225,7 +220,7 @@
       "module": "steamaudio"
     },
     {
-      "classes": 4,
+      "classes": 8,
       "enums": 6,
       "module": "texturelib"
     },
@@ -257,9 +252,9 @@
   ],
   "note": "classes/enums/fields count distinct top-level entity names and their own declared fields; the modules[] list additionally counts client/server twin records (duplicates), so summing its per-module classes/enums can exceed the top-level totals above.",
   "platform": "windows-x86_64",
-  "schema_version": "0.10.0",
-  "steam_date": "2026-09-09",
-  "steam_manifest_utc": "2026-09-09T22:31:50Z",
-  "tool_commit": "d482acc25d170eb0c21f7f3ba217d27921e19aca",
-  "tool_version": "0.10.0"
+  "schema_version": "0.12.0",
+  "steam_date": "2026-10-15",
+  "steam_manifest_utc": "2026-10-15T17:24:20Z",
+  "tool_commit": "8428d765665bbbf77191e47feb182332e54c0477",
+  "tool_version": "0.12.0"
 }

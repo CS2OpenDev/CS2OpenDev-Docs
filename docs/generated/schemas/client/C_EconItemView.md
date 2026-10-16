@@ -8,9 +8,9 @@ kind: class
 
 # C_EconItemView
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 1136 bytes (`0x470`) · **Align:** n/a (unspecified) · **Module:** client
+**Kind:** class · **Size:** 1456 bytes (`0x5b0`) · **Align:** n/a (unspecified) · **Module:** client
 
 **Inherits from:** [IEconItemInterface](../server/IEconItemInterface.md)
 
@@ -24,7 +24,7 @@ classDiagram
 
 ## Memory layout
 
-29 fields (29 declared here, 0 inherited). Offsets are absolute from the object base.
+31 fields (31 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -56,4 +56,6 @@ classDiagram
 | `0x280` | `m_NetworkedDynamicAttributes` | [CAttributeList](../client/CAttributeList.md) |  |  |
 | `0x2f8` | `m_szCustomName` | char[161] |  |  |
 | `0x399` | `m_szCustomNameOverride` | char[161] |  |  |
-| `0x468` | `m_bInitializedTags` | bool |  |  |
+| `0x43a` | `m_szCustomNameOverride2` | char[161] |  |  |
+| `0x4db` | `m_szCustomNameOverride3` | char[161] |  |  |
+| `0x5a8` | `m_bInitializedTags` | bool |  |  |
