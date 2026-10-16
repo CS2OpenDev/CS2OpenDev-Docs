@@ -6,7 +6,7 @@
 --------------------------------------------------------------------------- */
 
 :root {
-	--sl-content-width: 80rem;
+	--sl-content-width: 120rem;
 	--sl-sidebar-width: 17rem;
 	--sl-sidebar-pad-x: 0.75rem;
 
@@ -56,20 +56,18 @@
 		max-width: none;
 	}
 
+	/* Starlight right-aligns the content (margin-inline: auto 0) and relies on
+	   its own min() width to keep the pane barely wider than the content. With
+	   the full-width pane below, that pushes everything past --sl-content-width
+	   into a left gutter, so center it instead. */
 	[data-has-toc] .main-pane {
+		--sl-content-margin-inline: auto;
 		width: calc(100% - var(--cs2-toc-width));
 	}
 }
 
 .right-sidebar-panel a {
 	--pad-inline: 0.375rem;
-}
-
-/* Prose keeps a readable measure; tables and the cs2-* blocks take the lot. */
-.sl-markdown-content
-	> p:not(.cs2-breadcrumb, .cs2-provenance, .cs2-stats, .cs2-rel, .cs2-note, .cs2-empty),
-.sl-markdown-content > blockquote {
-	max-width: 74ch;
 }
 
 /* ---------------------------------------------------------------------------
