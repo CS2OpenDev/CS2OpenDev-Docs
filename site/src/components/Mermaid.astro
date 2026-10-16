@@ -406,6 +406,10 @@ const { code, caption } = Astro.props;
 			// which would pass the "has an svg" check below.
 			suppressErrorRendering: true,
 			theme: themeName(),
+			// mermaid 12 defaults to ELK and the `neo` look, which re-lays out and
+			// recolours the hierarchy class diagrams. Keep the v11 output.
+			layout: 'dagre',
+			look: 'classic',
 		});
 		await mermaid.run({ nodes, suppressErrors: true });
 		for (const node of nodes) {
