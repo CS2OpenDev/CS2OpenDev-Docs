@@ -8,7 +8,7 @@ kind: class
 
 # RnMeshDesc_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 216 bytes (`0xd8`) · **Align:** 8 · **Module:** physicslib
 
@@ -70,6 +70,7 @@ classDiagram
 		],
 		&quot;m_nFlags&quot;: 0,
 		&quot;m_nDebugFlags&quot;: 0,
+		&quot;m_flSurfaceArea&quot;: 0.000000,
 		&quot;m_Nodes&quot;: &quot;[BINARY BLOB]&quot;,
 		&quot;m_Triangles&quot;: &quot;[BINARY BLOB]&quot;,
 		&quot;m_Vertices&quot;: &quot;[BINARY BLOB]&quot;

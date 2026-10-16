@@ -5,6 +5,7 @@ syntax = "proto2";
 option csharp_namespace = "CS2OpenDev.Protobuf";
 
 import "netmessages.proto";
+import "networkbasetypes.proto";
 
 message C2S_CONNECT_SameProcessCheck {
   optional uint64 localhost_process_id = 1;

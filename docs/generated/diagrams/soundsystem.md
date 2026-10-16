@@ -23,13 +23,16 @@ classDiagram
     CSosGroupActionSchema <|-- CSosGroupActionSoundeventPrioritySchema
     CSosGroupActionSchema <|-- CSosGroupActionTimeBlockLimitSchema
     CSosGroupActionSchema <|-- CSosGroupActionTimeLimitSchema
+    CVMixSubmix <|-- CSubmix
+    CVMixBaseGraphDescription <|-- CVMixDescription
     CVoiceContainerBase <|-- CVoiceContainerVMixSnd
     SndBeatEventKeys_t <|-- SndBeatEventKeyedFloats_t
     SndBeatEventKeys_t <|-- SndBeatEventKeyedMidiNotes_t
     SndBeatEventKeys_t <|-- SndBeatEventKeyedSndEvts_t
     CDSPPresetMixgroupModifierTable *-- CDspPresetModifierList
     CDspPresetModifierList *-- CDSPMixgroupModifier
-    CSndBeatPattern *-- SndBeatLaunchSyncType_t
+    CSndBeatPattern *-- SndBeatSyncStartType_t
+    CSndBeatPattern *-- SndBeatSyncType_t
     CSndBeatPattern *-- SndBeatTimeSignature_t
     CSndBeatPattern *-- SndBeatEventType_t
     CSndBeatPattern *-- SndBeatKeyType_t
@@ -47,6 +50,7 @@ classDiagram
     CSosSoundEventGroupSchema *-- SosGroupType_t
     CSosSoundEventGroupSchema *-- SosGroupFieldBehavior_t
     CSosSoundEventGroupSchema --> CSosGroupActionSchema
+    CVMixDescription *-- CSubmix
     KeyGroup_t --> VelocityZone_t
     SelectedEditItemInfo_t *-- SosEditItemInfo_t
     SosEditItemInfo_t *-- SosEditItemType_t

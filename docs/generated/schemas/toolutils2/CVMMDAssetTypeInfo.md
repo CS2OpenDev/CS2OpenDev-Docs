@@ -8,9 +8,9 @@ kind: class
 
 # CVMMDAssetTypeInfo
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 256 bytes (`0x100`) · **Align:** 8 · **Module:** toolutils2
+**Kind:** class · **Size:** 264 bytes (`0x108`) · **Align:** 8 · **Module:** toolutils2
 
 **Inherits from:** [CSimpleAssetTypeInfo](../toolutils2/CSimpleAssetTypeInfo.md)
 
@@ -23,7 +23,7 @@ classDiagram
 
 ## Memory layout
 
-24 fields (0 declared here, 24 inherited). Offsets are absolute from the object base.
+25 fields (0 declared here, 25 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -50,7 +50,8 @@ classDiagram
 | `0xef` | `m_bPresentInGameTree` | bool | [CSimpleAssetTypeInfo](../toolutils2/CSimpleAssetTypeInfo.md) |  |
 | `0xf0` | `m_bShouldCompileErrorFallbackToDisk` | bool | [CSimpleAssetTypeInfo](../toolutils2/CSimpleAssetTypeInfo.md) |  |
 | `0xf4` | `m_nAssetTypeVersion` | int32 | [CSimpleAssetTypeInfo](../toolutils2/CSimpleAssetTypeInfo.md) |  |
-| `0xf8` | `m_Test_InjectSearchable` | CUtlString | [CSimpleAssetTypeInfo](../toolutils2/CSimpleAssetTypeInfo.md) |  |
+| `0xf8` | `m_nAssetThumbnailVersion` | int32 | [CSimpleAssetTypeInfo](../toolutils2/CSimpleAssetTypeInfo.md) |  |
+| `0x100` | `m_Test_InjectSearchable` | CUtlString | [CSimpleAssetTypeInfo](../toolutils2/CSimpleAssetTypeInfo.md) |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -93,6 +94,7 @@ classDiagram
 	&quot;m_bPresentInGameTree&quot;: false,
 	&quot;m_bShouldCompileErrorFallbackToDisk&quot;: false,
 	&quot;m_nAssetTypeVersion&quot;: 0,
+	&quot;m_nAssetThumbnailVersion&quot;: 0,
 	&quot;m_Test_InjectSearchable&quot;: &quot;&quot;
 }</pre>
 </details>

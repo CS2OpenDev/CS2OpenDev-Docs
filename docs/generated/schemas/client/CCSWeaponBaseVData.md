@@ -8,11 +8,11 @@ kind: class
 
 # CCSWeaponBaseVData
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 Static weapon definition (economy + ballistics) referenced by CCSWeaponBase — the per-weapon-type data that does not change at runtime.
 
-**Kind:** class · **Size:** 2216 bytes (`0x8a8`) · **Align:** 8 · **Module:** client
+**Kind:** class · **Size:** 2208 bytes (`0x8a0`) · **Align:** 8 · **Module:** client
 
 **Twin:** [CCSWeaponBaseVData (server)](../server/CCSWeaponBaseVData.md)
 
@@ -37,7 +37,7 @@ classDiagram
 
 ## Memory layout
 
-116 fields (84 declared here, 32 inherited). Offsets are absolute from the object base.
+116 fields (83 declared here, 33 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -54,8 +54,9 @@ classDiagram
 | `0x4bc` | `m_flMuzzleSmokeTimeout` | float32 | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) | `MPropertyDescription Barrel smoke shot timeout` |
 | `0x4c0` | `m_flMuzzleSmokeDecrementRate` | float32 | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) | `MPropertyDescription Barrel smoke decrement rate when not firing` |
 | `0x4c4` | `m_bGenerateMuzzleLight` | bool | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) |  |
-| `0x4c5` | `m_bLinkedCooldowns` | bool | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) | `MPropertyDescription Should both primary and secondary attacks be cooled down together (so cooling down primary attack would cooldown both primary + secondary attacks)?` `MPropertyStartGroup Behavior` |
-| `0x4c6` | `m_iFlags` | [ItemFlagTypes_t](../server/ItemFlagTypes_t.md) | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) |  |
+| `0x4c5` | `m_bShouldAnimateInWorld` | bool | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) | `MPropertyDescription Was the weapon was built right-handed?` |
+| `0x4c6` | `m_bLinkedCooldowns` | bool | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) | `MPropertyDescription Should both primary and secondary attacks be cooled down together (so cooling down primary attack would cooldown both primary + secondary attacks)?` `MPropertyStartGroup Behavior` |
+| `0x4c7` | `m_iFlags` | [ItemFlagTypes_t](../server/ItemFlagTypes_t.md) | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) |  |
 | `0x4c8` | `m_iWeight` | int32 | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) | `MPropertyDescription This value used to determine this weapon's importance in autoselection` |
 | `0x4cc` | `m_bAutoSwitchTo` | bool | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) | `MPropertyDescription Whether this weapon is safe to automatically switch to (should be false for eg. explosives that can the player may accidentally hurt themselves with)` `MPropertyFriendlyName Safe To Auto-Switch To` |
 | `0x4cd` | `m_bAutoSwitchFrom` | bool | [CBasePlayerWeaponVData](../client/CBasePlayerWeaponVData.md) | `MPropertyFriendlyName Safe To Auto-Switch Away From` |
@@ -92,71 +93,70 @@ classDiagram
 | `0x71f` | `m_bCannotShootUnderwater` | bool |  |  |
 | `0x720` | `m_szName` | CGlobalSymbol |  | `MPropertyFriendlyName In-Code weapon name` |
 | `0x728` | `m_eSilencerType` | [CSWeaponSilencerType](../server/CSWeaponSilencerType.md) |  |  |
-| `0x72c` | `m_nCrosshairMinDistance` | int32 |  |  |
-| `0x730` | `m_nCrosshairDeltaDistance` | int32 |  |  |
-| `0x734` | `m_bIsFullAuto` | bool |  | True if the weapon fires fully automatically while the trigger is held. |
-| `0x738` | `m_nNumBullets` | int32 |  | Projectiles fired per shot (greater than 1 for shotguns). |
-| `0x73c` | `m_bReloadsSingleShells` | bool |  |  |
-| `0x740` | `m_flCycleTime` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  | `MPropertyStartGroup Firing Mode Data` |
-| `0x748` | `m_flCycleTimeWhenInBurstMode` | float32 |  |  |
-| `0x74c` | `m_flTimeBetweenBurstShots` | float32 |  |  |
-| `0x750` | `m_flMaxSpeed` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
-| `0x758` | `m_flSpread` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
-| `0x760` | `m_flInaccuracyCrouch` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
-| `0x768` | `m_flInaccuracyStand` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
-| `0x770` | `m_flInaccuracyJump` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
-| `0x778` | `m_flInaccuracyLand` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
-| `0x780` | `m_flInaccuracyLadder` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
-| `0x788` | `m_flInaccuracyFire` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
-| `0x790` | `m_flInaccuracyMove` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
-| `0x798` | `m_flRecoilAngle` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
-| `0x7a0` | `m_flRecoilAngleVariance` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
-| `0x7a8` | `m_flRecoilMagnitude` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
-| `0x7b0` | `m_flRecoilMagnitudeVariance` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
-| `0x7b8` | `m_nTracerFrequency` | [CFiringModeInt](../server/CFiringModeInt.md) |  |  |
-| `0x7c0` | `m_flInaccuracyJumpInitial` | float32 |  |  |
-| `0x7c4` | `m_flInaccuracyJumpApex` | float32 |  |  |
-| `0x7c8` | `m_flInaccuracyReload` | float32 |  |  |
-| `0x7cc` | `m_flDeployDuration` | float32 |  |  |
-| `0x7d0` | `m_flDisallowAttackAfterReloadStartDuration` | float32 |  |  |
-| `0x7d4` | `m_nBurstShotCount` | int32 |  |  |
-| `0x7d8` | `m_bAllowBurstHolster` | bool |  |  |
-| `0x7dc` | `m_nRecoilSeed` | int32 |  | `MPropertyStartGroup Firing` |
-| `0x7e0` | `m_nSpreadSeed` | int32 |  |  |
-| `0x7e4` | `m_flAttackMovespeedFactor` | float32 |  |  |
-| `0x7e8` | `m_flInaccuracyPitchShift` | float32 |  |  |
-| `0x7ec` | `m_flInaccuracyAltSoundThreshold` | float32 |  |  |
-| `0x7f0` | `m_szUseRadioSubtitle` | CUtlString |  |  |
-| `0x7f8` | `m_bUnzoomsAfterShot` | bool |  | `MPropertyStartGroup Zooming` |
-| `0x7f9` | `m_bHideViewModelWhenZoomed` | bool |  |  |
-| `0x7fc` | `m_nZoomLevels` | int32 |  |  |
-| `0x800` | `m_nZoomFOV1` | int32 |  |  |
-| `0x804` | `m_nZoomFOV2` | int32 |  |  |
-| `0x808` | `m_flZoomTime0` | float32 |  |  |
-| `0x80c` | `m_flZoomTime1` | float32 |  |  |
-| `0x810` | `m_flZoomTime2` | float32 |  |  |
-| `0x814` | `m_flIronSightPullUpSpeed` | float32 |  | `MPropertyStartGroup Iron Sights` |
-| `0x818` | `m_flIronSightPutDownSpeed` | float32 |  |  |
-| `0x81c` | `m_flIronSightFOV` | float32 |  |  |
-| `0x820` | `m_flIronSightPivotForward` | float32 |  |  |
-| `0x824` | `m_flIronSightLooseness` | float32 |  |  |
-| `0x828` | `m_nDamage` | int32 |  | `MPropertyStartGroup Damage` |
-| `0x82c` | `m_flHeadshotMultiplier` | float32 |  |  |
-| `0x830` | `m_flArmorRatio` | float32 |  |  |
-| `0x834` | `m_flPenetration` | float32 |  |  |
-| `0x838` | `m_flRange` | float32 |  |  |
-| `0x83c` | `m_flRangeModifier` | float32 |  |  |
-| `0x840` | `m_flFlinchVelocityModifierLarge` | float32 |  |  |
-| `0x844` | `m_flFlinchVelocityModifierSmall` | float32 |  |  |
-| `0x848` | `m_flRecoveryTimeCrouch` | float32 |  | `MPropertyStartGroup Recovery` |
-| `0x84c` | `m_flRecoveryTimeStand` | float32 |  |  |
-| `0x850` | `m_flRecoveryTimeCrouchFinal` | float32 |  |  |
-| `0x854` | `m_flRecoveryTimeStandFinal` | float32 |  |  |
-| `0x858` | `m_nRecoveryTransitionStartBullet` | int32 |  |  |
-| `0x85c` | `m_nRecoveryTransitionEndBullet` | int32 |  |  |
-| `0x860` | `m_flThrowVelocity` | float32 |  | `MPropertyStartGroup Grenade Data` |
-| `0x864` | `m_vSmokeColor` | Vector |  |  |
-| `0x870` | `m_szAnimClass` | CGlobalSymbol |  |  |
+| `0x72c` | `m_bShowCrosshair` | bool |  |  |
+| `0x72d` | `m_bIsFullAuto` | bool |  | True if the weapon fires fully automatically while the trigger is held. |
+| `0x730` | `m_nNumBullets` | int32 |  | Projectiles fired per shot (greater than 1 for shotguns). |
+| `0x734` | `m_bReloadsSingleShells` | bool |  |  |
+| `0x738` | `m_flCycleTime` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  | `MPropertyStartGroup Firing Mode Data` |
+| `0x740` | `m_flCycleTimeWhenInBurstMode` | float32 |  |  |
+| `0x744` | `m_flTimeBetweenBurstShots` | float32 |  |  |
+| `0x748` | `m_flMaxSpeed` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
+| `0x750` | `m_flSpread` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
+| `0x758` | `m_flInaccuracyCrouch` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
+| `0x760` | `m_flInaccuracyStand` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
+| `0x768` | `m_flInaccuracyJump` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
+| `0x770` | `m_flInaccuracyLand` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
+| `0x778` | `m_flInaccuracyLadder` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
+| `0x780` | `m_flInaccuracyFire` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
+| `0x788` | `m_flInaccuracyMove` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
+| `0x790` | `m_flRecoilAngle` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
+| `0x798` | `m_flRecoilAngleVariance` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
+| `0x7a0` | `m_flRecoilMagnitude` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
+| `0x7a8` | `m_flRecoilMagnitudeVariance` | [CFiringModeFloat](../server/CFiringModeFloat.md) |  |  |
+| `0x7b0` | `m_nTracerFrequency` | [CFiringModeInt](../server/CFiringModeInt.md) |  |  |
+| `0x7b8` | `m_flInaccuracyJumpInitial` | float32 |  |  |
+| `0x7bc` | `m_flInaccuracyJumpApex` | float32 |  |  |
+| `0x7c0` | `m_flInaccuracyReload` | float32 |  |  |
+| `0x7c4` | `m_flDeployDuration` | float32 |  |  |
+| `0x7c8` | `m_flDisallowAttackAfterReloadStartDuration` | float32 |  |  |
+| `0x7cc` | `m_nBurstShotCount` | int32 |  |  |
+| `0x7d0` | `m_bAllowBurstHolster` | bool |  |  |
+| `0x7d4` | `m_nRecoilSeed` | int32 |  | `MPropertyStartGroup Firing` |
+| `0x7d8` | `m_nSpreadSeed` | int32 |  |  |
+| `0x7dc` | `m_flAttackMovespeedFactor` | float32 |  |  |
+| `0x7e0` | `m_flInaccuracyPitchShift` | float32 |  |  |
+| `0x7e4` | `m_flInaccuracyAltSoundThreshold` | float32 |  |  |
+| `0x7e8` | `m_szUseRadioSubtitle` | CUtlString |  |  |
+| `0x7f0` | `m_bUnzoomsAfterShot` | bool |  | `MPropertyStartGroup Zooming` |
+| `0x7f1` | `m_bHideViewModelWhenZoomed` | bool |  |  |
+| `0x7f4` | `m_nZoomLevels` | int32 |  |  |
+| `0x7f8` | `m_nZoomFOV1` | int32 |  |  |
+| `0x7fc` | `m_nZoomFOV2` | int32 |  |  |
+| `0x800` | `m_flZoomTime0` | float32 |  |  |
+| `0x804` | `m_flZoomTime1` | float32 |  |  |
+| `0x808` | `m_flZoomTime2` | float32 |  |  |
+| `0x80c` | `m_flIronSightPullUpSpeed` | float32 |  | `MPropertyStartGroup Iron Sights` |
+| `0x810` | `m_flIronSightPutDownSpeed` | float32 |  |  |
+| `0x814` | `m_flIronSightFOV` | float32 |  |  |
+| `0x818` | `m_flIronSightPivotForward` | float32 |  |  |
+| `0x81c` | `m_flIronSightLooseness` | float32 |  |  |
+| `0x820` | `m_nDamage` | int32 |  | `MPropertyStartGroup Damage` |
+| `0x824` | `m_flHeadshotMultiplier` | float32 |  |  |
+| `0x828` | `m_flArmorRatio` | float32 |  |  |
+| `0x82c` | `m_flPenetration` | float32 |  |  |
+| `0x830` | `m_flRange` | float32 |  |  |
+| `0x834` | `m_flRangeModifier` | float32 |  |  |
+| `0x838` | `m_flFlinchVelocityModifierLarge` | float32 |  |  |
+| `0x83c` | `m_flFlinchVelocityModifierSmall` | float32 |  |  |
+| `0x840` | `m_flRecoveryTimeCrouch` | float32 |  | `MPropertyStartGroup Recovery` |
+| `0x844` | `m_flRecoveryTimeStand` | float32 |  |  |
+| `0x848` | `m_flRecoveryTimeCrouchFinal` | float32 |  |  |
+| `0x84c` | `m_flRecoveryTimeStandFinal` | float32 |  |  |
+| `0x850` | `m_nRecoveryTransitionStartBullet` | int32 |  |  |
+| `0x854` | `m_nRecoveryTransitionEndBullet` | int32 |  |  |
+| `0x858` | `m_flThrowVelocity` | float32 |  | `MPropertyStartGroup Grenade Data` |
+| `0x85c` | `m_vSmokeColor` | Vector |  |  |
+| `0x868` | `m_szAnimClass` | CGlobalSymbol |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -175,6 +175,7 @@ classDiagram
 	&quot;m_flMuzzleSmokeTimeout&quot;: 0.250000,
 	&quot;m_flMuzzleSmokeDecrementRate&quot;: 1.000000,
 	&quot;m_bGenerateMuzzleLight&quot;: true,
+	&quot;m_bShouldAnimateInWorld&quot;: false,
 	&quot;m_bLinkedCooldowns&quot;: false,
 	&quot;m_iFlags&quot;: &quot;&quot;,
 	&quot;m_iWeight&quot;: 0,
@@ -225,8 +226,7 @@ classDiagram
 	&quot;m_bCannotShootUnderwater&quot;: false,
 	&quot;m_szName&quot;: &quot;&quot;,
 	&quot;m_eSilencerType&quot;: &quot;WEAPONSILENCER_NONE&quot;,
-	&quot;m_nCrosshairMinDistance&quot;: 0,
-	&quot;m_nCrosshairDeltaDistance&quot;: 0,
+	&quot;m_bShowCrosshair&quot;: true,
 	&quot;m_bIsFullAuto&quot;: false,
 	&quot;m_nNumBullets&quot;: 0,
 	&quot;m_bReloadsSingleShells&quot;: false,

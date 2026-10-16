@@ -8,7 +8,7 @@ kind: class
 
 # CFilterStage
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 24 bytes (`0x18`) · **Align:** 8 · **Module:** sounddoc_lib
 
@@ -17,11 +17,12 @@ kind: class
 ```mermaid
 classDiagram
     CFilterStage *-- VMixFilterSlope_t
+    CFilterStage *-- VMixFilterChannelSet_t
 ```
 
 ## Memory layout
 
-6 fields (6 declared here, 0 inherited). Offsets are absolute from the object base.
+7 fields (7 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -30,7 +31,8 @@ classDiagram
 | `0xc` | `m_flQ` | float32 |  | `MPropertyAttributeRange 0.1 12` `MPropertyFriendlyName Q` |
 | `0x10` | `m_fldbGain` | float32 |  | `MPropertyAttributeRange -24 24` `MPropertyFriendlyName Gain (dB)` |
 | `0x14` | `m_nFilterSlope` | [VMixFilterSlope_t](../soundsystem_lowlevel/VMixFilterSlope_t.md) |  | `MPropertyFriendlyName Slope` |
-| `0x15` | `m_bEnable` | bool |  | `MPropertyFriendlyName Enabled` |
+| `0x15` | `m_nChannelSet` | [VMixFilterChannelSet_t](../soundsystem_lowlevel/VMixFilterChannelSet_t.md) |  | `MPropertyFriendlyName Channel Set` |
+| `0x16` | `m_bEnable` | bool |  | `MPropertyFriendlyName Enabled` |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -40,6 +42,7 @@ classDiagram
 	&quot;m_flQ&quot;: 0.707000,
 	&quot;m_fldbGain&quot;: 1.000000,
 	&quot;m_nFilterSlope&quot;: &quot;FILTER_SLOPE_12dB&quot;,
+	&quot;m_nChannelSet&quot;: &quot;FILTER_ALL_CHANNELS&quot;,
 	&quot;m_bEnable&quot;: true
 }</pre>
 </details>

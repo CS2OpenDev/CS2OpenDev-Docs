@@ -124,7 +124,7 @@ direction LR
     k_EGCMsgLookupAccountFromInput
     k_EGCMsgSendHTTPRequest
     k_EGCMsgSendHTTPRequestResponse
-    k_EGCMsgPreTestSetup
+    k_EGCMsgPreTestSetup_DEPRECATED
     k_EGCMsgRecordSupportAction
     k_EGCMsgGetAccountDetails_DEPRECATED
     k_EGCMsgReceiveInterAppMessage
@@ -194,6 +194,13 @@ direction LR
     k_EGCMsgRecurringSubscriptionStatusChange
     k_EGCMsgDirectServiceMethod
     k_EGCMsgDirectServiceMethodResponse
+    k_EGCMsgAppCheersReceived
+    k_EGCMsgAppCheersGetAllowedTypes
+    k_EGCMsgAppCheersGetAllowedTypesResponse
+    k_EGCMsgReportMetrics
+    k_EGCMsgReportMetricsResponse
+    k_EGCMsgGetClanDetails
+    k_EGCMsgGetClanDetailsResponse
   }
 
   class ESOMsg{
@@ -294,7 +301,7 @@ direction LR
 | `k_EGCMsgLookupAccountFromInput` | 66 |
 | `k_EGCMsgSendHTTPRequest` | 67 |
 | `k_EGCMsgSendHTTPRequestResponse` | 68 |
-| `k_EGCMsgPreTestSetup` | 69 |
+| `k_EGCMsgPreTestSetup_DEPRECATED` | 69 |
 | `k_EGCMsgRecordSupportAction` | 70 |
 | `k_EGCMsgGetAccountDetails_DEPRECATED` | 71 |
 | `k_EGCMsgReceiveInterAppMessage` | 73 |
@@ -364,6 +371,13 @@ direction LR
 | `k_EGCMsgRecurringSubscriptionStatusChange` | 530 |
 | `k_EGCMsgDirectServiceMethod` | 531 |
 | `k_EGCMsgDirectServiceMethodResponse` | 532 |
+| `k_EGCMsgAppCheersReceived` | 533 |
+| `k_EGCMsgAppCheersGetAllowedTypes` | 534 |
+| `k_EGCMsgAppCheersGetAllowedTypesResponse` | 535 |
+| `k_EGCMsgReportMetrics` | 536 |
+| `k_EGCMsgReportMetricsResponse` | 537 |
+| `k_EGCMsgGetClanDetails` | 538 |
+| `k_EGCMsgGetClanDetailsResponse` | 539 |
 
 ### `ESOMsg`
 

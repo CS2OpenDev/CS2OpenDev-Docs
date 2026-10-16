@@ -8,9 +8,9 @@ kind: class
 
 # ColorOptionsEditableData_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 30 bytes (`0x1e`) · **Align:** n/a (unspecified) · **Module:** hammer
+**Kind:** class · **Size:** 32 bytes (`0x20`) · **Align:** n/a (unspecified) · **Module:** hammer
 
 ## Memory layout
 
@@ -20,10 +20,10 @@ kind: class
 |--------|-------|------|------|-------------|
 | `0x0` | `bUseCustom` | bool |  | `MPropertyFriendlyName Use Custom Colors` |
 | `0x1` | `bWhiteOnBlack` | bool |  | `MPropertyFriendlyName White on black` |
-| `0x2` | `clrGrid` | Color |  | `MPropertyFriendlyName Grid Color` |
-| `0x6` | `clrGridFractional` | Color |  | `MPropertyFriendlyName Grid Color for sub 1-unit lines` |
-| `0xa` | `clrGrid10` | Color |  | `MPropertyFriendlyName Grid Color for every 10th line` |
-| `0xe` | `clrGrid1024` | Color |  | `MPropertyFriendlyName Grid Color for every 1024 units line` |
-| `0x12` | `clrBrush` | Color |  | `MPropertyFriendlyName Brush Color` |
-| `0x16` | `clrSelection` | Color |  | `MPropertyFriendlyName Color of the selected brushes` |
-| `0x1a` | `clrToolSelection` | Color |  | `MPropertyFriendlyName Color of the selection tool` |
+| `0x4` | `clrGrid` | Color |  | `MPropertyFriendlyName Grid Color` |
+| `0x8` | `clrGridFractional` | Color |  | `MPropertyFriendlyName Grid Color for sub 1-unit lines` |
+| `0xc` | `clrGrid10` | Color |  | `MPropertyFriendlyName Grid Color for every 10th line` |
+| `0x10` | `clrGrid1024` | Color |  | `MPropertyFriendlyName Grid Color for every 1024 units line` |
+| `0x14` | `clrBrush` | Color |  | `MPropertyFriendlyName Brush Color` |
+| `0x18` | `clrSelection` | Color |  | `MPropertyFriendlyName Color of the selected brushes` |
+| `0x1c` | `clrToolSelection` | Color |  | `MPropertyFriendlyName Color of the selection tool` |

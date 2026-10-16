@@ -8,9 +8,9 @@ kind: class
 
 # CNmClipDocEvent_MaterialAttribute
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 288 bytes (`0x120`) · **Align:** 8 · **Module:** animdoclib
+**Kind:** class · **Size:** 296 bytes (`0x128`) · **Align:** 8 · **Module:** animdoclib
 
 **Inherits from:** [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md)
 
@@ -30,12 +30,12 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flStartTime` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
 | `0xc` | `m_flDuration` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
-| `0x10` | `m_target` | [CNmEventTargetEntity_t](../animlib/CNmEventTargetEntity_t.md) |  |  |
-| `0x18` | `m_attributeName` | CUtlString |  |  |
-| `0x20` | `m_x` | CPiecewiseCurve |  |  |
-| `0x60` | `m_y` | CPiecewiseCurve |  |  |
-| `0xa0` | `m_z` | CPiecewiseCurve |  |  |
-| `0xe0` | `m_w` | CPiecewiseCurve |  |  |
+| `0x18` | `m_target` | [CNmEventTargetEntity_t](../animlib/CNmEventTargetEntity_t.md) |  |  |
+| `0x20` | `m_attributeName` | CUtlString |  |  |
+| `0x28` | `m_x` | CPiecewiseCurve |  |  |
+| `0x68` | `m_y` | CPiecewiseCurve |  |  |
+| `0xa8` | `m_z` | CPiecewiseCurve |  |  |
+| `0xe8` | `m_w` | CPiecewiseCurve |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

@@ -8,7 +8,7 @@ kind: enum
 
 # BBoxVolumeType_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** particles
 
@@ -20,3 +20,4 @@ kind: enum
 | `BBOX_DIMENSIONS` | 1 | Bounding Box Dimensions |
 | `BBOX_MINS_MAXS` | 2 | Bounding Box Mins/Maxs |
 | `BBOX_RADIUS` | 3 | Bounding Box Radius |
+| `BBOX_SURFACE_AREA` | 4 | Bounding Surface Area |

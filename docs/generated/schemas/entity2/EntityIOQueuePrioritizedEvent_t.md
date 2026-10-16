@@ -8,9 +8,9 @@ kind: class
 
 # EntityIOQueuePrioritizedEvent_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 112 bytes (`0x70`) · **Align:** 8 · **Module:** entity2
+**Kind:** class · **Size:** 248 bytes (`0xf8`) · **Align:** 8 · **Module:** entity2
 
 **Relationships:**
 
@@ -23,7 +23,7 @@ classDiagram
 
 ## Memory layout
 
-8 fields (8 declared here, 0 inherited). Offsets are absolute from the object base.
+10 fields (10 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -35,6 +35,8 @@ classDiagram
 | `0x24` | `m_hCaller` | CEntityHandle |  |  |
 | `0x28` | `m_hEntTarget` | CEntityHandle |  |  |
 | `0x30` | `m_variantValue` | CVariantBase< [CVariantDefaultAllocator](../entity2/CVariantDefaultAllocator.md) > |  | `MKV3TransferSaveOpsForField GetVariantSaveDataOps` |
+| `0x40` | `m_PulseArguments` | CPulseArgumentPack |  |  |
+| `0xd0` | `m_paramMap` | CPulseInputParamMap |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -45,6 +47,13 @@ classDiagram
 	&quot;m_pTargetInput&quot;: &quot;&quot;,
 	&quot;m_hActivator&quot;: null,
 	&quot;m_hCaller&quot;: null,
-	&quot;m_hEntTarget&quot;: null
+	&quot;m_hEntTarget&quot;: null,
+	&quot;m_PulseArguments&quot;:
+	{
+	},
+	&quot;m_paramMap&quot;:
+	{
+		&quot;--forward-all-args--&quot;: false
+	}
 }</pre>
 </details>

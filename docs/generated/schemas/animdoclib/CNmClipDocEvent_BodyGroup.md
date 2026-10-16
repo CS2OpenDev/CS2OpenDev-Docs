@@ -8,9 +8,9 @@ kind: class
 
 # CNmClipDocEvent_BodyGroup
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 40 bytes (`0x28`) · **Align:** 8 · **Module:** animdoclib
+**Kind:** class · **Size:** 48 bytes (`0x30`) · **Align:** 8 · **Module:** animdoclib
 
 **Inherits from:** [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md)
 
@@ -30,9 +30,9 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flStartTime` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
 | `0xc` | `m_flDuration` | float32 | [CNmClipDocEvent](../animdoclib/CNmClipDocEvent.md) |  |
-| `0x10` | `m_target` | [CNmEventTargetEntity_t](../animlib/CNmEventTargetEntity_t.md) |  |  |
-| `0x18` | `bodygroup` | CUtlString |  | `MPropertyFriendlyName Body Group` |
-| `0x20` | `value` | int32 |  | `MPropertyFriendlyName Value` |
+| `0x18` | `m_target` | [CNmEventTargetEntity_t](../animlib/CNmEventTargetEntity_t.md) |  |  |
+| `0x20` | `m_bodygroup` | CUtlString |  | `MPropertyFriendlyName Body Group` |
+| `0x28` | `m_choice` | CUtlString |  | `MPropertyFriendlyName Choice Name` |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -41,7 +41,7 @@ classDiagram
 	&quot;m_flStartTime&quot;: 0.000000,
 	&quot;m_flDuration&quot;: 0.000000,
 	&quot;m_target&quot;: &quot;Self&quot;,
-	&quot;bodygroup&quot;: &quot;&quot;,
-	&quot;value&quot;: 0
+	&quot;m_bodygroup&quot;: &quot;&quot;,
+	&quot;m_choice&quot;: &quot;&quot;
 }</pre>
 </details>

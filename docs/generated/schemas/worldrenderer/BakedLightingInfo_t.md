@@ -8,7 +8,7 @@ kind: class
 
 # BakedLightingInfo_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** 8 · **Module:** worldrenderer
 
@@ -22,7 +22,7 @@ classDiagram
 
 ## Memory layout
 
-11 fields (11 declared here, 0 inherited). Offsets are absolute from the object base.
+12 fields (12 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -32,9 +32,10 @@ classDiagram
 | `0x10` | `m_bHasLightmaps` | bool |  |  |
 | `0x11` | `m_bBakedShadowsGamma20` | bool |  |  |
 | `0x12` | `m_bCompressionEnabled` | bool |  |  |
-| `0x13` | `m_bSHLightmaps` | bool |  |  |
-| `0x14` | `m_nChartPackIterations` | uint8 |  |  |
-| `0x15` | `m_nVradQuality` | uint8 |  |  |
+| `0x13` | `m_nLPVEncoding` | int8 |  |  |
+| `0x14` | `m_nLightmapEncoding` | int8 |  |  |
+| `0x15` | `m_nChartPackIterations` | uint8 |  |  |
+| `0x16` | `m_nVradQuality` | uint8 |  |  |
 | `0x18` | `m_lightMaps` | CUtlVector< CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > > |  |  |
 | `0x30` | `m_bakedShadows` | CUtlVector< [BakedLightingInfo_t::BakedShadowAssignment_t](../worldrenderer/BakedLightingInfo_t.BakedShadowAssignment_t.md) > |  |  |
 
@@ -51,7 +52,8 @@ classDiagram
 	&quot;m_bHasLightmaps&quot;: false,
 	&quot;m_bBakedShadowsGamma20&quot;: false,
 	&quot;m_bCompressionEnabled&quot;: false,
-	&quot;m_bSHLightmaps&quot;: false,
+	&quot;m_nLPVEncoding&quot;: -1,
+	&quot;m_nLightmapEncoding&quot;: -1,
 	&quot;m_nChartPackIterations&quot;: 0,
 	&quot;m_nVradQuality&quot;: 0,
 	&quot;m_lightMaps&quot;:

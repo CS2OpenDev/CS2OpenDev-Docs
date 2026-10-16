@@ -10,6 +10,8 @@ Class relationships (inheritance and composition) for the `texturelib` module.
 
 ```mermaid
 classDiagram
+    CInputTexture *-- CImageProcessor
+    CTextureOutputChannel *-- CImageProcessor
     CTextureSheetDoc *-- PackingMode_t
     CTextureSheetDoc --> CTextureSheetDoc_Sequence
     CTextureSheetDoc_Sequence *-- SequenceChannelMode_t
@@ -17,4 +19,6 @@ classDiagram
     CTextureSheetDoc_Sequence *-- SequenceAlphaCropMode_t
     CTextureSheetDoc_Sequence *-- CTextureSheetDoc_SequenceDecalParams
     CTextureSheetDoc_Sequence *-- CTextureSheetDoc_Frame
+    CVtex *-- CInputTexture
+    CVtex *-- CTextureOutputChannel
 ```

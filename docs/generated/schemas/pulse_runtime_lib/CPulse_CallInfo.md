@@ -8,9 +8,9 @@ kind: class
 
 # CPulse_CallInfo
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 88 bytes (`0x58`) · **Align:** 8 · **Module:** pulse_runtime_lib
+**Kind:** class · **Size:** 96 bytes (`0x60`) · **Align:** 8 · **Module:** pulse_runtime_lib
 
 **Relationships:**
 
@@ -23,7 +23,7 @@ classDiagram
 
 ## Memory layout
 
-6 fields (6 declared here, 0 inherited). Offsets are absolute from the object base.
+8 fields (8 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -33,6 +33,8 @@ classDiagram
 | `0x48` | `m_CallMethodID` | [PulseDocNodeID_t](../pulse_runtime_lib/PulseDocNodeID_t.md) |  |  |
 | `0x4c` | `m_nSrcChunk` | [PulseRuntimeChunkIndex_t](../pulse_runtime_lib/PulseRuntimeChunkIndex_t.md) |  |  |
 | `0x50` | `m_nSrcInstruction` | int32 |  |  |
+| `0x54` | `m_nBreakDestChunk` | [PulseRuntimeChunkIndex_t](../pulse_runtime_lib/PulseRuntimeChunkIndex_t.md) |  |  |
+| `0x58` | `m_nBreakDestInstruction` | int32 |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -46,6 +48,8 @@ classDiagram
 	},
 	&quot;m_CallMethodID&quot;: -1,
 	&quot;m_nSrcChunk&quot;: -1,
-	&quot;m_nSrcInstruction&quot;: -1
+	&quot;m_nSrcInstruction&quot;: -1,
+	&quot;m_nBreakDestChunk&quot;: -1,
+	&quot;m_nBreakDestInstruction&quot;: -1
 }</pre>
 </details>

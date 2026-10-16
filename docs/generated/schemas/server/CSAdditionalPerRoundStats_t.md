@@ -8,9 +8,9 @@ kind: class
 
 # CSAdditionalPerRoundStats_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 248 bytes (`0xf8`) · **Align:** n/a (unspecified) · **Module:** server
+**Kind:** class · **Size:** 272 bytes (`0x110`) · **Align:** n/a (unspecified) · **Module:** server
 
 **Derived by:** [CSAdditionalMatchStats_t](../server/CSAdditionalMatchStats_t.md)
 

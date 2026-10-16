@@ -5,11 +5,11 @@ module: entity2
 
 # Module: entity2
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 [📊 View UML Diagram](../diagrams/entity2.md)
 
-18 types. Each links to its own page with the full field layout.
+17 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -24,9 +24,8 @@ module: entity2
 | [CNetworkVarChainer](entity2/CNetworkVarChainer.md) | class | 40 | 1 |  |
 | [CScriptComponent](entity2/CScriptComponent.md) | class | 56 | 1 | [CEntityComponent](entity2/CEntityComponent.md) |
 | [CVariantDefaultAllocator](entity2/CVariantDefaultAllocator.md) | class | 1 | 0 |  |
-| [EntComponentInfo_t](entity2/EntComponentInfo_t.md) | class | 104 | 7 |  |
-| [EntInput_t](entity2/EntInput_t.md) | class | 48 | 0 |  |
-| [EntityIOQueuePrioritizedEvent_t](entity2/EntityIOQueuePrioritizedEvent_t.md) | class | 112 | 8 |  |
+| [EntComponentInfo_t](entity2/EntComponentInfo_t.md) | class | 96 | 7 |  |
+| [EntityIOQueuePrioritizedEvent_t](entity2/EntityIOQueuePrioritizedEvent_t.md) | class | 248 | 10 |  |
 | [GameTick_t](entity2/GameTick_t.md) | class | 4 | 1 |  |
 | [GameTime_t](entity2/GameTime_t.md) | class | 4 | 1 |  |
 | [EntityDormancyType_t](entity2/EntityDormancyType_t.md) | enum | — | 3 |  |

@@ -8,9 +8,9 @@ kind: class
 
 # CVoiceContainerGranulator
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 344 bytes (`0x158`) · **Align:** 8 · **Module:** soundsystem_voicecontainers
+**Kind:** class · **Size:** 368 bytes (`0x170`) · **Align:** 8 · **Module:** soundsystem_voicecontainers
 
 **Inherits from:** [CVoiceContainerAsyncGenerator](../soundsystem_voicecontainers/CVoiceContainerAsyncGenerator.md)
 
@@ -28,7 +28,7 @@ classDiagram
 
 ## Memory layout
 
-8 fields (6 declared here, 2 inherited). Offsets are absolute from the object base.
+10 fields (8 declared here, 2 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -40,6 +40,8 @@ classDiagram
 | `0x8c` | `m_flPlaybackJitter` | float32 |  |  |
 | `0x90` | `m_bShouldWraparound` | bool |  |  |
 | `0x98` | `m_sourceAudio` | CStrongHandle< [InfoForResourceTypeCVoiceContainerBase](../resourcesystem/InfoForResourceTypeCVoiceContainerBase.md) > |  |  |
+| `0xa0` | `m_bDoubleBufferSourceAudio` | bool |  | `MPropertyFriendlyName Double Buffer Source Audio` |
+| `0xa4` | `m_flMaxSourceLength` | float32 |  | `MPropertyFriendlyName Max Source Length (seconds)` |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -65,6 +67,8 @@ classDiagram
 	&quot;m_flStartJitter&quot;: 0.000000,
 	&quot;m_flPlaybackJitter&quot;: 0.000000,
 	&quot;m_bShouldWraparound&quot;: false,
-	&quot;m_sourceAudio&quot;: &quot;&quot;
+	&quot;m_sourceAudio&quot;: &quot;&quot;,
+	&quot;m_bDoubleBufferSourceAudio&quot;: false,
+	&quot;m_flMaxSourceLength&quot;: 0.000000
 }</pre>
 </details>

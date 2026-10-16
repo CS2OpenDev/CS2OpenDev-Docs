@@ -504,6 +504,11 @@
       "def_index": 103,
       "loc_name": "#MusicKit_shockone_01",
       "name": "shockone_01"
+    },
+    {
+      "def_index": 104,
+      "loc_name": "#MusicKit_starjunk95_01",
+      "name": "starjunk95_01"
     }
   ]
 }

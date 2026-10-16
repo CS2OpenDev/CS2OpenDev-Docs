@@ -5,11 +5,11 @@ module: animlib
 
 # Module: animlib
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 [📊 View UML Diagram](../diagrams/animlib.md)
 
-217 types. Each links to its own page with the full field layout.
+229 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -22,6 +22,7 @@ module: animlib
 | [CNmBlendTask](animlib/CNmBlendTask.md) | class | 256 | 0 | [CNmBlendTaskBase](animlib/CNmBlendTaskBase.md) |
 | [CNmBlendTaskBase](animlib/CNmBlendTaskBase.md) | class | 256 | 0 | [CNmPoseTask](animlib/CNmPoseTask.md) |
 | [CNmBodyGroupEvent](animlib/CNmBodyGroupEvent.md) | class | 48 | 3 | [CNmEvent](animlib/CNmEvent.md) |
+| [CNmBodyGroupNode::CDefinition](animlib/CNmBodyGroupNode.CDefinition.md) | class | 80 | 2 | [CNmPassthroughNode::CDefinition](animlib/CNmPassthroughNode.CDefinition.md) |
 | [CNmBoneMaskBlendNode::CDefinition](animlib/CNmBoneMaskBlendNode.CDefinition.md) | class | 24 | 3 | [CNmBoneMaskValueNode::CDefinition](animlib/CNmBoneMaskValueNode.CDefinition.md) |
 | [CNmBoneMaskNode::CDefinition](animlib/CNmBoneMaskNode.CDefinition.md) | class | 24 | 1 | [CNmBoneMaskValueNode::CDefinition](animlib/CNmBoneMaskValueNode.CDefinition.md) |
 | [CNmBoneMaskSelectorNode::CDefinition](animlib/CNmBoneMaskSelectorNode.CDefinition.md) | class | 120 | 6 | [CNmBoneMaskValueNode::CDefinition](animlib/CNmBoneMaskValueNode.CDefinition.md) |
@@ -36,6 +37,8 @@ module: animlib
 | [CNmCachedPoseWriteTask](animlib/CNmCachedPoseWriteTask.md) | class | 128 | 0 | [CNmPoseTask](animlib/CNmPoseTask.md) |
 | [CNmCachedTargetNode::CDefinition](animlib/CNmCachedTargetNode.CDefinition.md) | class | 24 | 2 | [CNmTargetValueNode::CDefinition](animlib/CNmTargetValueNode.CDefinition.md) |
 | [CNmCachedVectorNode::CDefinition](animlib/CNmCachedVectorNode.CDefinition.md) | class | 24 | 2 | [CNmVectorValueNode::CDefinition](animlib/CNmVectorValueNode.CDefinition.md) |
+| [CNmCameraDOFEvent](animlib/CNmCameraDOFEvent.md) | class | 88 | 1 | [CNmEvent](animlib/CNmEvent.md) |
+| [CNmCameraFOVEvent](animlib/CNmCameraFOVEvent.md) | class | 88 | 1 | [CNmEvent](animlib/CNmEvent.md) |
 | [CNmChainLookatNode::CDefinition](animlib/CNmChainLookatNode.CDefinition.md) | class | 120 | 9 | [CNmPassthroughNode::CDefinition](animlib/CNmPassthroughNode.CDefinition.md) |
 | [CNmChainLookatTask](animlib/CNmChainLookatTask.md) | class | 288 | 0 | [CNmPoseTask](animlib/CNmPoseTask.md) |
 | [CNmClip](animlib/CNmClip.md) | class | 512 | 13 |  |
@@ -43,11 +46,15 @@ module: animlib
 | [CNmClipNode::CDefinition](animlib/CNmClipNode.CDefinition.md) | class | 72 | 8 | [CNmClipReferenceNode::CDefinition](animlib/CNmClipReferenceNode.CDefinition.md) |
 | [CNmClipReferenceNode::CDefinition](animlib/CNmClipReferenceNode.CDefinition.md) | class | 16 | 0 | [CNmPoseNode::CDefinition](animlib/CNmPoseNode.CDefinition.md) |
 | [CNmClipSelectorNode::CDefinition](animlib/CNmClipSelectorNode.CDefinition.md) | class | 64 | 2 | [CNmClipReferenceNode::CDefinition](animlib/CNmClipReferenceNode.CDefinition.md) |
+| [CNmClothEvent](animlib/CNmClothEvent.md) | class | 64 | 7 | [CNmEvent](animlib/CNmEvent.md) |
 | [CNmConstBoolNode::CDefinition](animlib/CNmConstBoolNode.CDefinition.md) | class | 24 | 1 | [CNmBoolValueNode::CDefinition](animlib/CNmBoolValueNode.CDefinition.md) |
 | [CNmConstFloatNode::CDefinition](animlib/CNmConstFloatNode.CDefinition.md) | class | 24 | 1 | [CNmFloatValueNode::CDefinition](animlib/CNmFloatValueNode.CDefinition.md) |
 | [CNmConstIDNode::CDefinition](animlib/CNmConstIDNode.CDefinition.md) | class | 24 | 1 | [CNmIDValueNode::CDefinition](animlib/CNmIDValueNode.CDefinition.md) |
 | [CNmConstTargetNode::CDefinition](animlib/CNmConstTargetNode.CDefinition.md) | class | 64 | 1 | [CNmTargetValueNode::CDefinition](animlib/CNmTargetValueNode.CDefinition.md) |
 | [CNmConstVectorNode::CDefinition](animlib/CNmConstVectorNode.CDefinition.md) | class | 32 | 1 | [CNmVectorValueNode::CDefinition](animlib/CNmVectorValueNode.CDefinition.md) |
+| [CNmContactAudioActionVData](animlib/CNmContactAudioActionVData.md) | class | 1 | 0 |  |
+| [CNmContactAudioTypeVData](animlib/CNmContactAudioTypeVData.md) | class | 1 | 0 |  |
+| [CNmContactEvent](animlib/CNmContactEvent.md) | class | 80 | 5 | [CNmEvent](animlib/CNmEvent.md) |
 | [CNmControlParameterBoolNode::CDefinition](animlib/CNmControlParameterBoolNode.CDefinition.md) | class | 16 | 0 | [CNmBoolValueNode::CDefinition](animlib/CNmBoolValueNode.CDefinition.md) |
 | [CNmControlParameterFloatNode::CDefinition](animlib/CNmControlParameterFloatNode.CDefinition.md) | class | 16 | 0 | [CNmFloatValueNode::CDefinition](animlib/CNmFloatValueNode.CDefinition.md) |
 | [CNmControlParameterIDNode::CDefinition](animlib/CNmControlParameterIDNode.CDefinition.md) | class | 16 | 0 | [CNmIDValueNode::CDefinition](animlib/CNmIDValueNode.CDefinition.md) |
@@ -95,7 +102,7 @@ module: animlib
 | [CNmGraphDefinition::ReferencedGraphSlot_t](animlib/CNmGraphDefinition.ReferencedGraphSlot_t.md) | class | 4 | 2 |  |
 | [CNmGraphEventConditionNode::CDefinition](animlib/CNmGraphEventConditionNode.CDefinition.md) | class | 128 | 3 | [CNmBoolValueNode::CDefinition](animlib/CNmBoolValueNode.CDefinition.md) |
 | [CNmGraphEventConditionNode::Condition_t](animlib/CNmGraphEventConditionNode.Condition_t.md) | class | 16 | 2 |  |
-| [CNmGraphInstance](animlib/CNmGraphInstance.md) | class | 976 | 0 |  |
+| [CNmGraphInstance](animlib/CNmGraphInstance.md) | class | 944 | 0 |  |
 | [CNmGraphNode::CDefinition](animlib/CNmGraphNode.CDefinition.md) | class | 16 | 1 |  |
 | [CNmGraphVariationUserData](animlib/CNmGraphVariationUserData.md) | class | 8 | 0 |  |
 | [CNmIDBasedClipSelectorNode::CDefinition](animlib/CNmIDBasedClipSelectorNode.CDefinition.md) | class | 96 | 5 | [CNmClipReferenceNode::CDefinition](animlib/CNmClipReferenceNode.CDefinition.md) |
@@ -121,7 +128,7 @@ module: animlib
 | [CNmNotNode::CDefinition](animlib/CNmNotNode.CDefinition.md) | class | 24 | 1 | [CNmBoolValueNode::CDefinition](animlib/CNmBoolValueNode.CDefinition.md) |
 | [CNmOrNode::CDefinition](animlib/CNmOrNode.CDefinition.md) | class | 32 | 1 | [CNmBoolValueNode::CDefinition](animlib/CNmBoolValueNode.CDefinition.md) |
 | [CNmOrientationWarpEvent](animlib/CNmOrientationWarpEvent.md) | class | 24 | 0 | [CNmEvent](animlib/CNmEvent.md) |
-| [CNmOrientationWarpNode::CDefinition](animlib/CNmOrientationWarpNode.CDefinition.md) | class | 24 | 6 | [CNmPoseNode::CDefinition](animlib/CNmPoseNode.CDefinition.md) |
+| [CNmOrientationWarpNode::CDefinition](animlib/CNmOrientationWarpNode.CDefinition.md) | class | 32 | 7 | [CNmPoseNode::CDefinition](animlib/CNmPoseNode.CDefinition.md) |
 | [CNmOverlayBlendTask](animlib/CNmOverlayBlendTask.md) | class | 256 | 0 | [CNmBlendTaskBase](animlib/CNmBlendTaskBase.md) |
 | [CNmParameterizedBlendNode::BlendRange_t](animlib/CNmParameterizedBlendNode.BlendRange_t.md) | class | 12 | 3 |  |
 | [CNmParameterizedBlendNode::CDefinition](animlib/CNmParameterizedBlendNode.CDefinition.md) | class | 48 | 3 | [CNmPoseNode::CDefinition](animlib/CNmPoseNode.CDefinition.md) |
@@ -142,7 +149,8 @@ module: animlib
 | [CNmScaleNode::CDefinition](animlib/CNmScaleNode.CDefinition.md) | class | 32 | 2 | [CNmPassthroughNode::CDefinition](animlib/CNmPassthroughNode.CDefinition.md) |
 | [CNmScaleTask](animlib/CNmScaleTask.md) | class | 208 | 0 | [CNmPoseTask](animlib/CNmPoseTask.md) |
 | [CNmSelectorNode::CDefinition](animlib/CNmSelectorNode.CDefinition.md) | class | 64 | 2 | [CNmPoseNode::CDefinition](animlib/CNmPoseNode.CDefinition.md) |
-| [CNmSkeleton](animlib/CNmSkeleton.md) | class | 208 | 10 |  |
+| [CNmSkeleton](animlib/CNmSkeleton.md) | class | 256 | 13 |  |
+| [CNmSkeleton::ContactConfig_t](animlib/CNmSkeleton.ContactConfig_t.md) | class | 56 | 5 |  |
 | [CNmSkeleton::SecondarySkeleton_t](animlib/CNmSkeleton.SecondarySkeleton_t.md) | class | 16 | 2 |  |
 | [CNmSoundEvent](animlib/CNmSoundEvent.md) | class | 72 | 7 | [CNmEvent](animlib/CNmEvent.md) |
 | [CNmSpeedScaleBaseNode::CDefinition](animlib/CNmSpeedScaleBaseNode.CDefinition.md) | class | 32 | 2 | [CNmPassthroughNode::CDefinition](animlib/CNmPassthroughNode.CDefinition.md) |
@@ -161,16 +169,17 @@ module: animlib
 | [CNmTargetInfoNode::CDefinition](animlib/CNmTargetInfoNode.CDefinition.md) | class | 32 | 3 | [CNmFloatValueNode::CDefinition](animlib/CNmFloatValueNode.CDefinition.md) |
 | [CNmTargetOffsetNode::CDefinition](animlib/CNmTargetOffsetNode.CDefinition.md) | class | 64 | 4 | [CNmTargetValueNode::CDefinition](animlib/CNmTargetValueNode.CDefinition.md) |
 | [CNmTargetPointNode::CDefinition](animlib/CNmTargetPointNode.CDefinition.md) | class | 24 | 2 | [CNmVectorValueNode::CDefinition](animlib/CNmVectorValueNode.CDefinition.md) |
-| [CNmTargetSelectorNode::CDefinition](animlib/CNmTargetSelectorNode.CDefinition.md) | class | 56 | 6 | [CNmClipReferenceNode::CDefinition](animlib/CNmClipReferenceNode.CDefinition.md) |
+| [CNmTargetSelectorNode::CDefinition](animlib/CNmTargetSelectorNode.CDefinition.md) | class | 64 | 7 | [CNmClipReferenceNode::CDefinition](animlib/CNmClipReferenceNode.CDefinition.md) |
 | [CNmTargetValueNode::CDefinition](animlib/CNmTargetValueNode.CDefinition.md) | class | 16 | 0 | [CNmValueNode::CDefinition](animlib/CNmValueNode.CDefinition.md) |
 | [CNmTargetWarpEvent](animlib/CNmTargetWarpEvent.md) | class | 32 | 2 | [CNmEvent](animlib/CNmEvent.md) |
 | [CNmTargetWarpNode::CDefinition](animlib/CNmTargetWarpNode.CDefinition.md) | class | 56 | 11 | [CNmPoseNode::CDefinition](animlib/CNmPoseNode.CDefinition.md) |
 | [CNmTimeConditionNode::CDefinition](animlib/CNmTimeConditionNode.CDefinition.md) | class | 32 | 5 | [CNmBoolValueNode::CDefinition](animlib/CNmBoolValueNode.CDefinition.md) |
+| [CNmTimeControlledClipNode::CDefinition](animlib/CNmTimeControlledClipNode.CDefinition.md) | class | 64 | 5 | [CNmPoseNode::CDefinition](animlib/CNmPoseNode.CDefinition.md) |
 | [CNmTransitionEvent](animlib/CNmTransitionEvent.md) | class | 40 | 2 | [CNmEvent](animlib/CNmEvent.md) |
 | [CNmTransitionEventConditionNode::CDefinition](animlib/CNmTransitionEventConditionNode.CDefinition.md) | class | 32 | 4 | [CNmBoolValueNode::CDefinition](animlib/CNmBoolValueNode.CDefinition.md) |
 | [CNmTransitionNode::CDefinition](animlib/CNmTransitionNode.CDefinition.md) | class | 48 | 11 | [CNmPoseNode::CDefinition](animlib/CNmPoseNode.CDefinition.md) |
 | [CNmTwoBoneIKNode::CDefinition](animlib/CNmTwoBoneIKNode.CDefinition.md) | class | 48 | 7 | [CNmPassthroughNode::CDefinition](animlib/CNmPassthroughNode.CDefinition.md) |
-| [CNmTwoBoneIKTask](animlib/CNmTwoBoneIKTask.md) | class | 240 | 10 | [CNmPoseTask](animlib/CNmPoseTask.md) |
+| [CNmTwoBoneIKTask](animlib/CNmTwoBoneIKTask.md) | class | 240 | 3 | [CNmPoseTask](animlib/CNmPoseTask.md) |
 | [CNmValueNode::CDefinition](animlib/CNmValueNode.CDefinition.md) | class | 16 | 0 | [CNmGraphNode::CDefinition](animlib/CNmGraphNode.CDefinition.md) |
 | [CNmVectorCreateNode::CDefinition](animlib/CNmVectorCreateNode.CDefinition.md) | class | 24 | 4 | [CNmVectorValueNode::CDefinition](animlib/CNmVectorValueNode.CDefinition.md) |
 | [CNmVectorInfoNode::CDefinition](animlib/CNmVectorInfoNode.CDefinition.md) | class | 24 | 2 | [CNmFloatValueNode::CDefinition](animlib/CNmFloatValueNode.CDefinition.md) |
@@ -189,10 +198,12 @@ module: animlib
 | [NmBoneMaskSetDefinition_t](animlib/NmBoneMaskSetDefinition_t.md) | class | 296 | 3 |  |
 | [NmCompressionSettings_t](animlib/NmCompressionSettings_t.md) | class | 80 | 9 |  |
 | [NmCompressionSettings_t::QuantizationRange_t](animlib/NmCompressionSettings_t.QuantizationRange_t.md) | class | 8 | 2 |  |
+| [NmContactAudioInfo_t](animlib/NmContactAudioInfo_t.md) | class | 24 | 3 |  |
 | [NmFloatCurveCompressionSettings_t](animlib/NmFloatCurveCompressionSettings_t.md) | class | 12 | 2 |  |
 | [NmPercent_t](animlib/NmPercent_t.md) | class | 4 | 1 |  |
 | [NmSyncTrackTimeRange_t](animlib/NmSyncTrackTimeRange_t.md) | class | 16 | 2 |  |
 | [NmSyncTrackTime_t](animlib/NmSyncTrackTime_t.md) | class | 8 | 2 |  |
+| [CNmClothEvent::Type_t](animlib/CNmClothEvent.Type_t.md) | enum | — | 2 |  |
 | [CNmCurrentSyncEventNode::InfoType_t](animlib/CNmCurrentSyncEventNode.InfoType_t.md) | enum | — | 3 |  |
 | [CNmEventRelevance_t](animlib/CNmEventRelevance_t.md) | enum | — | 3 |  |
 | [CNmEventTargetEntity_t](animlib/CNmEventTargetEntity_t.md) | enum | — | 4 |  |
@@ -200,6 +211,7 @@ module: animlib
 | [CNmFloatComparisonNode::Comparison_t](animlib/CNmFloatComparisonNode.Comparison_t.md) | enum | — | 5 |  |
 | [CNmFloatMathNode::Operator_t](animlib/CNmFloatMathNode.Operator_t.md) | enum | — | 12 |  |
 | [CNmIDComparisonNode::Comparison_t](animlib/CNmIDComparisonNode.Comparison_t.md) | enum | — | 2 |  |
+| [CNmOrientationWarpNode::AlignmentMode_t](animlib/CNmOrientationWarpNode.AlignmentMode_t.md) | enum | — | 2 |  |
 | [CNmParticleEvent::Type_t](animlib/CNmParticleEvent.Type_t.md) | enum | — | 2 |  |
 | [CNmRootMotionData::SamplingMode_t](animlib/CNmRootMotionData.SamplingMode_t.md) | enum | — | 2 |  |
 | [CNmRootMotionOverrideNode::OverrideFlags_t](animlib/CNmRootMotionOverrideNode.OverrideFlags_t.md) | enum | — | 5 |  |

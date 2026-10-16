@@ -8,9 +8,9 @@ kind: class
 
 # CPAssignment_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 1736 bytes (`0x6c8`) · **Align:** 8 · **Module:** particles
+**Kind:** class · **Size:** 1768 bytes (`0x6e8`) · **Align:** 8 · **Module:** particles
 
 **Relationships:**
 
@@ -28,7 +28,7 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x0` | `m_nCPNumber` | int32 |  | `MPropertyFriendlyName Control Point Number` |
 | `0x8` | `m_Pos` | [CPerParticleVecInput](../particleslib/CPerParticleVecInput.md) |  | `MPropertyFriendlyName CP Position` |
-| `0x6c0` | `m_nOrientationMode` | [ParticleOrientationSetMode_t](../particles/ParticleOrientationSetMode_t.md) |  | `MPropertyFriendlyName CP Orientation Type` |
+| `0x6e0` | `m_nOrientationMode` | [ParticleOrientationSetMode_t](../particles/ParticleOrientationSetMode_t.md) |  | `MPropertyFriendlyName CP Orientation Type` |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -151,7 +151,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_FloatComponentY&quot;:
 		{
@@ -226,7 +227,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_FloatComponentZ&quot;:
 		{
@@ -301,7 +303,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_FloatInterp&quot;:
 		{
@@ -376,7 +379,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_flInterpInput0&quot;: 0.000000,
 		&quot;m_flInterpInput1&quot;: 1.000000,

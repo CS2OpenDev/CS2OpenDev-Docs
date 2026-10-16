@@ -5,7 +5,7 @@ module: modellib
 
 # Module: modellib
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 [📊 View UML Diagram](../diagrams/modellib.md)
 
@@ -53,12 +53,12 @@ module: modellib
 | [CHitBox](modellib/CHitBox.md) | class | 112 | 13 |  |
 | [CHitBoxSet](modellib/CHitBoxSet.md) | class | 48 | 4 |  |
 | [CHitBoxSetList](modellib/CHitBoxSetList.md) | class | 24 | 1 |  |
-| [CMaterialDrawDescriptor](modellib/CMaterialDrawDescriptor.md) | class | 280 | 18 |  |
+| [CMaterialDrawDescriptor](modellib/CMaterialDrawDescriptor.md) | class | 288 | 19 |  |
 | [CMaterialDrawDescriptor::RigidMeshPart_t](modellib/CMaterialDrawDescriptor.RigidMeshPart_t.md) | class | 12 | 4 |  |
-| [CMeshletDescriptor](modellib/CMeshletDescriptor.md) | class | 24 | 6 |  |
+| [CMeshletDescriptor](modellib/CMeshletDescriptor.md) | class | 24 | 7 |  |
 | [CModelConfig](modellib/CModelConfig.md) | class | 40 | 4 |  |
 | [CModelConfigElement](modellib/CModelConfigElement.md) | class | 72 | 2 |  |
-| [CModelConfigElement_AttachedModel](modellib/CModelConfigElement_AttachedModel.md) | class | 232 | 13 | [CModelConfigElement](modellib/CModelConfigElement.md) |
+| [CModelConfigElement_AttachedModel](modellib/CModelConfigElement_AttachedModel.md) | class | 240 | 15 | [CModelConfigElement](modellib/CModelConfigElement.md) |
 | [CModelConfigElement_Command](modellib/CModelConfigElement_Command.md) | class | 96 | 2 | [CModelConfigElement](modellib/CModelConfigElement.md) |
 | [CModelConfigElement_RandomColor](modellib/CModelConfigElement_RandomColor.md) | class | 96 | 1 | [CModelConfigElement](modellib/CModelConfigElement.md) |
 | [CModelConfigElement_RandomPick](modellib/CModelConfigElement_RandomPick.md) | class | 128 | 2 | [CModelConfigElement](modellib/CModelConfigElement.md) |
@@ -85,10 +85,10 @@ module: modellib
 | [CPointConstraint](modellib/CPointConstraint.md) | class | 96 | 0 | [CBaseConstraint](modellib/CBaseConstraint.md) |
 | [CRenderBufferBinding](modellib/CRenderBufferBinding.md) | class | 32 | 2 |  |
 | [CRenderGroom](modellib/CRenderGroom.md) | class | 176 | 14 |  |
-| [CRenderMesh](modellib/CRenderMesh.md) | class | 552 | 7 |  |
+| [CRenderMesh](modellib/CRenderMesh.md) | class | 568 | 7 |  |
 | [CRenderSkeleton](modellib/CRenderSkeleton.md) | class | 80 | 3 |  |
 | [CSceneObjectData](modellib/CSceneObjectData.md) | class | 184 | 7 |  |
-| [CSceneObjectData::RTProxyDrawDescriptor_t](modellib/CSceneObjectData.RTProxyDrawDescriptor_t.md) | class | 352 | 13 |  |
+| [CSceneObjectData::RTProxyDrawDescriptor_t](modellib/CSceneObjectData.RTProxyDrawDescriptor_t.md) | class | 360 | 13 |  |
 | [CTiltTwistConstraint](modellib/CTiltTwistConstraint.md) | class | 144 | 2 | [CBaseConstraint](modellib/CBaseConstraint.md) |
 | [CTwistConstraint](modellib/CTwistConstraint.md) | class | 144 | 3 | [CBaseConstraint](modellib/CBaseConstraint.md) |
 | [CVPhysXSurfacePropertiesList](modellib/CVPhysXSurfacePropertiesList.md) | class | 24 | 1 |  |
@@ -117,14 +117,14 @@ module: modellib
 | [SkeletonAnimCapture_t::Frame_t](modellib/SkeletonAnimCapture_t.Frame_t.md) | class | 192 | 9 |  |
 | [SkeletonBoneBounds_t](modellib/SkeletonBoneBounds_t.md) | class | 24 | 2 |  |
 | [SkeletonDemoDb_t](modellib/SkeletonDemoDb_t.md) | class | 56 | 3 |  |
-| [VPhysXAggregateData_t](modellib/VPhysXAggregateData_t.md) | class | 336 | 17 |  |
-| [VPhysXBodyPart_t](modellib/VPhysXBodyPart_t.md) | class | 168 | 12 |  |
+| [VPhysXAggregateData_t](modellib/VPhysXAggregateData_t.md) | class | 336 | 18 |  |
+| [VPhysXBodyPart_t](modellib/VPhysXBodyPart_t.md) | class | 152 | 12 |  |
 | [VPhysXCollisionAttributes_t](modellib/VPhysXCollisionAttributes_t.md) | class | 208 | 11 |  |
 | [VPhysXConstraint2_t](modellib/VPhysXConstraint2_t.md) | class | 256 | 4 |  |
 | [VPhysXConstraintParams_t](modellib/VPhysXConstraintParams_t.md) | class | 248 | 46 |  |
 | [VPhysXJoint_t](modellib/VPhysXJoint_t.md) | class | 208 | 30 |  |
 | [VPhysXRange_t](modellib/VPhysXRange_t.md) | class | 8 | 2 |  |
-| [VPhysics2ShapeDef_t](modellib/VPhysics2ShapeDef_t.md) | class | 120 | 5 |  |
+| [VPhysics2ShapeDef_t](modellib/VPhysics2ShapeDef_t.md) | class | 104 | 6 |  |
 | [VsInputSignatureElement_t](modellib/VsInputSignatureElement_t.md) | class | 196 | 4 |  |
 | [VsInputSignature_t](modellib/VsInputSignature_t.md) | class | 48 | 2 |  |
 | [FlexOpCode_t](modellib/FlexOpCode_t.md) | enum | — | 26 |  |
@@ -132,11 +132,11 @@ module: modellib
 | [MeshDrawPrimitiveFlags_t](modellib/MeshDrawPrimitiveFlags_t.md) | enum | — | 8 |  |
 | [ModelBoneFlexComponent_t](modellib/ModelBoneFlexComponent_t.md) | enum | — | 4 |  |
 | [ModelConfigAttachmentType_t](modellib/ModelConfigAttachmentType_t.md) | enum | — | 5 |  |
-| [ModelMeshBufferUsage_t](modellib/ModelMeshBufferUsage_t.md) | enum | — | 8 |  |
+| [ModelMeshBufferUsage_t](modellib/ModelMeshBufferUsage_t.md) | enum | — | 10 |  |
 | [ModelSkeletonData_t::BoneFlags_t](modellib/ModelSkeletonData_t.BoneFlags_t.md) | enum | — | 22 |  |
 | [MorphBundleType_t](modellib/MorphBundleType_t.md) | enum | — | 4 |  |
 | [MorphFlexControllerRemapType_t](modellib/MorphFlexControllerRemapType_t.md) | enum | — | 4 |  |
-| [MovementCapability_t](modellib/MovementCapability_t.md) | enum | — | 10 |  |
+| [MovementCapability_t](modellib/MovementCapability_t.md) | enum | — | 11 |  |
 | [NPCPhysicsHullType_t](modellib/NPCPhysicsHullType_t.md) | enum | — | 7 |  |
 | [PermModelInfo_t::FlagEnum](modellib/PermModelInfo_t.FlagEnum.md) | enum | — | 15 |  |
 | [RenderBufferFlags_t](modellib/RenderBufferFlags_t.md) | enum | — | 14 |  |

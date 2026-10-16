@@ -50,15 +50,15 @@ direction LR
     k_EMsgGCCraft
     k_EMsgGCCraftResponse
     k_EMsgGCDelete
-    k_EMsgGCVerifyCacheSubscription
+    k_EMsgGCVerifyCacheSubscription_DEPRECATED
     k_EMsgGCNameItem
     k_EMsgGCUnlockCrate_DEPRECATED
     k_EMsgGCUnlockCrateResponse
-    k_EMsgGCPaintItem
-    k_EMsgGCPaintItemResponse
-    k_EMsgGCGoldenWrenchBroadcast
-    k_EMsgGCMOTDRequest
-    k_EMsgGCMOTDRequestResponse
+    k_EMsgGCPaintItem_DEPRECATED
+    k_EMsgGCPaintItemResponse_DEPRECATED
+    k_EMsgGCGoldenWrenchBroadcast_DEPRECATED
+    k_EMsgGCMOTDRequest_DEPRECATED
+    k_EMsgGCMOTDRequestResponse_DEPRECATED
     k_EMsgGCAddItemToSocket_DEPRECATED
     k_EMsgGCAddItemToSocketResponse_DEPRECATED
     k_EMsgGCAddSocketToBaseItem_DEPRECATED
@@ -68,59 +68,59 @@ direction LR
     k_EMsgGCNameBaseItemResponse
     k_EMsgGCRemoveSocketItem_DEPRECATED
     k_EMsgGCRemoveSocketItemResponse_DEPRECATED
-    k_EMsgGCCustomizeItemTexture
-    k_EMsgGCCustomizeItemTextureResponse
+    k_EMsgGCCustomizeItemTexture_DEPRECATED
+    k_EMsgGCCustomizeItemTextureResponse_DEPRECATED
     k_EMsgGCUseItemRequest
     k_EMsgGCUseItemResponse
     k_EMsgGCGiftedItems_DEPRECATED
     k_EMsgGCRemoveItemName
-    k_EMsgGCRemoveItemPaint
-    k_EMsgGCGiftWrapItem
-    k_EMsgGCGiftWrapItemResponse
-    k_EMsgGCDeliverGift
-    k_EMsgGCDeliverGiftResponseGiver
-    k_EMsgGCDeliverGiftResponseReceiver
-    k_EMsgGCUnwrapGiftRequest
-    k_EMsgGCUnwrapGiftResponse
-    k_EMsgGCSetItemStyle
-    k_EMsgGCUsedClaimCodeItem
+    k_EMsgGCRemoveItemPaint_DEPRECATED
+    k_EMsgGCGiftWrapItem_DEPRECATED
+    k_EMsgGCGiftWrapItemResponse_DEPRECATED
+    k_EMsgGCDeliverGift_DEPRECATED
+    k_EMsgGCDeliverGiftResponseGiver_DEPRECATED
+    k_EMsgGCDeliverGiftResponseReceiver_DEPRECATED
+    k_EMsgGCUnwrapGiftRequest_DEPRECATED
+    k_EMsgGCUnwrapGiftResponse_DEPRECATED
+    k_EMsgGCSetItemStyle_DEPRECATED
+    k_EMsgGCUsedClaimCodeItem_DEPRECATED
     k_EMsgGCSortItems
     k_EMsgGC_RevolvingLootList_DEPRECATED
-    k_EMsgGCLookupAccount
-    k_EMsgGCLookupAccountResponse
-    k_EMsgGCLookupAccountName
-    k_EMsgGCLookupAccountNameResponse
+    k_EMsgGCLookupAccount_DEPRECATED
+    k_EMsgGCLookupAccountResponse_DEPRECATED
+    k_EMsgGCLookupAccountName_DEPRECATED
+    k_EMsgGCLookupAccountNameResponse_DEPRECATED
     k_EMsgGCUpdateItemSchema
-    k_EMsgGCRemoveCustomTexture
-    k_EMsgGCRemoveCustomTextureResponse
-    k_EMsgGCRemoveMakersMark
-    k_EMsgGCRemoveMakersMarkResponse
-    k_EMsgGCRemoveUniqueCraftIndex
-    k_EMsgGCRemoveUniqueCraftIndexResponse
+    k_EMsgGCRemoveCustomTexture_DEPRECATED
+    k_EMsgGCRemoveCustomTextureResponse_DEPRECATED
+    k_EMsgGCRemoveMakersMark_DEPRECATED
+    k_EMsgGCRemoveMakersMarkResponse_DEPRECATED
+    k_EMsgGCRemoveUniqueCraftIndex_DEPRECATED
+    k_EMsgGCRemoveUniqueCraftIndexResponse_DEPRECATED
     k_EMsgGCSaxxyBroadcast
     k_EMsgGCBackpackSortFinished
-    k_EMsgGCCollectItem
+    k_EMsgGCCollectItem_DEPRECATED
     k_EMsgGCItemAcknowledged__DEPRECATED
     k_EMsgGC_ReportAbuse
     k_EMsgGC_ReportAbuseResponse
     k_EMsgGCNameItemNotification
-    k_EMsgGCApplyConsumableEffects
+    k_EMsgGCApplyConsumableEffects_DEPRECATED
     k_EMsgGCConsumableExhausted
     k_EMsgGCShowItemsPickedUp
-    k_EMsgGCClientDisplayNotification
-    k_EMsgGCApplyStrangePart
+    k_EMsgGCClientDisplayNotification_DEPRECATED
+    k_EMsgGCApplyStrangePart_DEPRECATED
     k_EMsgGC_IncrementKillCountAttribute
     k_EMsgGC_IncrementKillCountResponse
-    k_EMsgGCApplyPennantUpgrade
+    k_EMsgGCApplyPennantUpgrade_DEPRECATED
     k_EMsgGCSetItemPositions
-    k_EMsgGCApplyEggEssence
-    k_EMsgGCNameEggEssenceResponse
-    k_EMsgGCPaintKitItem
-    k_EMsgGCPaintKitBaseItem
-    k_EMsgGCPaintKitItemResponse
+    k_EMsgGCApplyEggEssence_DEPRECATED
+    k_EMsgGCNameEggEssenceResponse_DEPRECATED
+    k_EMsgGCPaintKitItem_DEPRECATED
+    k_EMsgGCPaintKitBaseItem_DEPRECATED
+    k_EMsgGCPaintKitItemResponse_DEPRECATED
     k_EMsgGCGiftedItems
-    k_EMsgGCUnlockItemStyle
-    k_EMsgGCUnlockItemStyleResponse
+    k_EMsgGCUnlockItemStyle_DEPRECATED
+    k_EMsgGCUnlockItemStyleResponse_DEPRECATED
     k_EMsgGCApplySticker
     k_EMsgGCItemAcknowledged
     k_EMsgGCStatTrakSwap
@@ -130,19 +130,19 @@ direction LR
     k_EMsgGCCasketItemAdd
     k_EMsgGCCasketItemExtract
     k_EMsgGCCasketItemLoadContents
-    k_EMsgGCServerBrowser_FavoriteServer
-    k_EMsgGCServerBrowser_BlacklistServer
-    k_EMsgGCServerRentalsBase
-    k_EMsgGCItemPreviewCheckStatus
-    k_EMsgGCItemPreviewStatusResponse
-    k_EMsgGCItemPreviewRequest
-    k_EMsgGCItemPreviewRequestResponse
-    k_EMsgGCItemPreviewExpire
-    k_EMsgGCItemPreviewExpireNotification
-    k_EMsgGCItemPreviewItemBoughtNotification
+    k_EMsgGCServerBrowser_FavoriteServer_DEPRECATED
+    k_EMsgGCServerBrowser_BlacklistServer_DEPRECATED
+    k_EMsgGCServerRentalsBase_DEPRECATED
+    k_EMsgGCItemPreviewCheckStatus_DEPRECATED
+    k_EMsgGCItemPreviewStatusResponse_DEPRECATED
+    k_EMsgGCItemPreviewRequest_DEPRECATED
+    k_EMsgGCItemPreviewRequestResponse_DEPRECATED
+    k_EMsgGCItemPreviewExpire_DEPRECATED
+    k_EMsgGCItemPreviewExpireNotification_DEPRECATED
+    k_EMsgGCItemPreviewItemBoughtNotification_DEPRECATED
     k_EMsgGCDev_NewItemRequest
     k_EMsgGCDev_NewItemRequestResponse
-    k_EMsgGCDev_PaintKitDropItem
+    k_EMsgGCDev_PaintKitDropItem_DEPRECATED
     k_EMsgGCDev_SchemaReservationRequest
     k_EMsgGCStoreGetUserData
     k_EMsgGCStoreGetUserDataResponse
@@ -152,8 +152,8 @@ direction LR
     k_EMsgGCStorePurchaseFinalizeResponse
     k_EMsgGCStorePurchaseCancel
     k_EMsgGCStorePurchaseCancelResponse
-    k_EMsgGCStorePurchaseQueryTxn
-    k_EMsgGCStorePurchaseQueryTxnResponse
+    k_EMsgGCStorePurchaseQueryTxn_DEPRECATED
+    k_EMsgGCStorePurchaseQueryTxnResponse_DEPRECATED
     k_EMsgGCStorePurchaseInit
     k_EMsgGCStorePurchaseInitResponse
     k_EMsgGCBannedWordListRequest
@@ -193,16 +193,6 @@ direction LR
     k_EGCMsgFailedToCreate
     k_EGCMsgLimitExceeded
     k_EGCMsgCommitUnfinalized
-  }
-
-  class EUnlockStyle{
-    <<enumeration>>
-    k_UnlockStyle_Succeeded
-    k_UnlockStyle_Failed_PreReq
-    k_UnlockStyle_Failed_CantAfford
-    k_UnlockStyle_Failed_CantCommit
-    k_UnlockStyle_Failed_CantLockCache
-    k_UnlockStyle_Failed_CantAffordAttrib
   }
 
   class EGCItemCustomizationNotification{
@@ -250,15 +240,15 @@ direction LR
 | `k_EMsgGCCraft` | 1002 |
 | `k_EMsgGCCraftResponse` | 1003 |
 | `k_EMsgGCDelete` | 1004 |
-| `k_EMsgGCVerifyCacheSubscription` | 1005 |
+| `k_EMsgGCVerifyCacheSubscription_DEPRECATED` | 1005 |
 | `k_EMsgGCNameItem` | 1006 |
 | `k_EMsgGCUnlockCrate_DEPRECATED` | 1007 |
 | `k_EMsgGCUnlockCrateResponse` | 1008 |
-| `k_EMsgGCPaintItem` | 1009 |
-| `k_EMsgGCPaintItemResponse` | 1010 |
-| `k_EMsgGCGoldenWrenchBroadcast` | 1011 |
-| `k_EMsgGCMOTDRequest` | 1012 |
-| `k_EMsgGCMOTDRequestResponse` | 1013 |
+| `k_EMsgGCPaintItem_DEPRECATED` | 1009 |
+| `k_EMsgGCPaintItemResponse_DEPRECATED` | 1010 |
+| `k_EMsgGCGoldenWrenchBroadcast_DEPRECATED` | 1011 |
+| `k_EMsgGCMOTDRequest_DEPRECATED` | 1012 |
+| `k_EMsgGCMOTDRequestResponse_DEPRECATED` | 1013 |
 | `k_EMsgGCAddItemToSocket_DEPRECATED` | 1014 |
 | `k_EMsgGCAddItemToSocketResponse_DEPRECATED` | 1015 |
 | `k_EMsgGCAddSocketToBaseItem_DEPRECATED` | 1016 |
@@ -268,59 +258,59 @@ direction LR
 | `k_EMsgGCNameBaseItemResponse` | 1020 |
 | `k_EMsgGCRemoveSocketItem_DEPRECATED` | 1021 |
 | `k_EMsgGCRemoveSocketItemResponse_DEPRECATED` | 1022 |
-| `k_EMsgGCCustomizeItemTexture` | 1023 |
-| `k_EMsgGCCustomizeItemTextureResponse` | 1024 |
+| `k_EMsgGCCustomizeItemTexture_DEPRECATED` | 1023 |
+| `k_EMsgGCCustomizeItemTextureResponse_DEPRECATED` | 1024 |
 | `k_EMsgGCUseItemRequest` | 1025 |
 | `k_EMsgGCUseItemResponse` | 1026 |
 | `k_EMsgGCGiftedItems_DEPRECATED` | 1027 |
 | `k_EMsgGCRemoveItemName` | 1030 |
-| `k_EMsgGCRemoveItemPaint` | 1031 |
-| `k_EMsgGCGiftWrapItem` | 1032 |
-| `k_EMsgGCGiftWrapItemResponse` | 1033 |
-| `k_EMsgGCDeliverGift` | 1034 |
-| `k_EMsgGCDeliverGiftResponseGiver` | 1035 |
-| `k_EMsgGCDeliverGiftResponseReceiver` | 1036 |
-| `k_EMsgGCUnwrapGiftRequest` | 1037 |
-| `k_EMsgGCUnwrapGiftResponse` | 1038 |
-| `k_EMsgGCSetItemStyle` | 1039 |
-| `k_EMsgGCUsedClaimCodeItem` | 1040 |
+| `k_EMsgGCRemoveItemPaint_DEPRECATED` | 1031 |
+| `k_EMsgGCGiftWrapItem_DEPRECATED` | 1032 |
+| `k_EMsgGCGiftWrapItemResponse_DEPRECATED` | 1033 |
+| `k_EMsgGCDeliverGift_DEPRECATED` | 1034 |
+| `k_EMsgGCDeliverGiftResponseGiver_DEPRECATED` | 1035 |
+| `k_EMsgGCDeliverGiftResponseReceiver_DEPRECATED` | 1036 |
+| `k_EMsgGCUnwrapGiftRequest_DEPRECATED` | 1037 |
+| `k_EMsgGCUnwrapGiftResponse_DEPRECATED` | 1038 |
+| `k_EMsgGCSetItemStyle_DEPRECATED` | 1039 |
+| `k_EMsgGCUsedClaimCodeItem_DEPRECATED` | 1040 |
 | `k_EMsgGCSortItems` | 1041 |
 | `k_EMsgGC_RevolvingLootList_DEPRECATED` | 1042 |
-| `k_EMsgGCLookupAccount` | 1043 |
-| `k_EMsgGCLookupAccountResponse` | 1044 |
-| `k_EMsgGCLookupAccountName` | 1045 |
-| `k_EMsgGCLookupAccountNameResponse` | 1046 |
+| `k_EMsgGCLookupAccount_DEPRECATED` | 1043 |
+| `k_EMsgGCLookupAccountResponse_DEPRECATED` | 1044 |
+| `k_EMsgGCLookupAccountName_DEPRECATED` | 1045 |
+| `k_EMsgGCLookupAccountNameResponse_DEPRECATED` | 1046 |
 | `k_EMsgGCUpdateItemSchema` | 1049 |
-| `k_EMsgGCRemoveCustomTexture` | 1051 |
-| `k_EMsgGCRemoveCustomTextureResponse` | 1052 |
-| `k_EMsgGCRemoveMakersMark` | 1053 |
-| `k_EMsgGCRemoveMakersMarkResponse` | 1054 |
-| `k_EMsgGCRemoveUniqueCraftIndex` | 1055 |
-| `k_EMsgGCRemoveUniqueCraftIndexResponse` | 1056 |
+| `k_EMsgGCRemoveCustomTexture_DEPRECATED` | 1051 |
+| `k_EMsgGCRemoveCustomTextureResponse_DEPRECATED` | 1052 |
+| `k_EMsgGCRemoveMakersMark_DEPRECATED` | 1053 |
+| `k_EMsgGCRemoveMakersMarkResponse_DEPRECATED` | 1054 |
+| `k_EMsgGCRemoveUniqueCraftIndex_DEPRECATED` | 1055 |
+| `k_EMsgGCRemoveUniqueCraftIndexResponse_DEPRECATED` | 1056 |
 | `k_EMsgGCSaxxyBroadcast` | 1057 |
 | `k_EMsgGCBackpackSortFinished` | 1058 |
-| `k_EMsgGCCollectItem` | 1061 |
+| `k_EMsgGCCollectItem_DEPRECATED` | 1061 |
 | `k_EMsgGCItemAcknowledged__DEPRECATED` | 1062 |
 | `k_EMsgGC_ReportAbuse` | 1065 |
 | `k_EMsgGC_ReportAbuseResponse` | 1066 |
 | `k_EMsgGCNameItemNotification` | 1068 |
-| `k_EMsgGCApplyConsumableEffects` | 1069 |
+| `k_EMsgGCApplyConsumableEffects_DEPRECATED` | 1069 |
 | `k_EMsgGCConsumableExhausted` | 1070 |
 | `k_EMsgGCShowItemsPickedUp` | 1071 |
-| `k_EMsgGCClientDisplayNotification` | 1072 |
-| `k_EMsgGCApplyStrangePart` | 1073 |
+| `k_EMsgGCClientDisplayNotification_DEPRECATED` | 1072 |
+| `k_EMsgGCApplyStrangePart_DEPRECATED` | 1073 |
 | `k_EMsgGC_IncrementKillCountAttribute` | 1074 |
 | `k_EMsgGC_IncrementKillCountResponse` | 1075 |
-| `k_EMsgGCApplyPennantUpgrade` | 1076 |
+| `k_EMsgGCApplyPennantUpgrade_DEPRECATED` | 1076 |
 | `k_EMsgGCSetItemPositions` | 1077 |
-| `k_EMsgGCApplyEggEssence` | 1078 |
-| `k_EMsgGCNameEggEssenceResponse` | 1079 |
-| `k_EMsgGCPaintKitItem` | 1080 |
-| `k_EMsgGCPaintKitBaseItem` | 1081 |
-| `k_EMsgGCPaintKitItemResponse` | 1082 |
+| `k_EMsgGCApplyEggEssence_DEPRECATED` | 1078 |
+| `k_EMsgGCNameEggEssenceResponse_DEPRECATED` | 1079 |
+| `k_EMsgGCPaintKitItem_DEPRECATED` | 1080 |
+| `k_EMsgGCPaintKitBaseItem_DEPRECATED` | 1081 |
+| `k_EMsgGCPaintKitItemResponse_DEPRECATED` | 1082 |
 | `k_EMsgGCGiftedItems` | 1083 |
-| `k_EMsgGCUnlockItemStyle` | 1084 |
-| `k_EMsgGCUnlockItemStyleResponse` | 1085 |
+| `k_EMsgGCUnlockItemStyle_DEPRECATED` | 1084 |
+| `k_EMsgGCUnlockItemStyleResponse_DEPRECATED` | 1085 |
 | `k_EMsgGCApplySticker` | 1086 |
 | `k_EMsgGCItemAcknowledged` | 1087 |
 | `k_EMsgGCStatTrakSwap` | 1088 |
@@ -330,19 +320,19 @@ direction LR
 | `k_EMsgGCCasketItemAdd` | 1092 |
 | `k_EMsgGCCasketItemExtract` | 1093 |
 | `k_EMsgGCCasketItemLoadContents` | 1094 |
-| `k_EMsgGCServerBrowser_FavoriteServer` | 1601 |
-| `k_EMsgGCServerBrowser_BlacklistServer` | 1602 |
-| `k_EMsgGCServerRentalsBase` | 1700 |
-| `k_EMsgGCItemPreviewCheckStatus` | 1701 |
-| `k_EMsgGCItemPreviewStatusResponse` | 1702 |
-| `k_EMsgGCItemPreviewRequest` | 1703 |
-| `k_EMsgGCItemPreviewRequestResponse` | 1704 |
-| `k_EMsgGCItemPreviewExpire` | 1705 |
-| `k_EMsgGCItemPreviewExpireNotification` | 1706 |
-| `k_EMsgGCItemPreviewItemBoughtNotification` | 1707 |
+| `k_EMsgGCServerBrowser_FavoriteServer_DEPRECATED` | 1601 |
+| `k_EMsgGCServerBrowser_BlacklistServer_DEPRECATED` | 1602 |
+| `k_EMsgGCServerRentalsBase_DEPRECATED` | 1700 |
+| `k_EMsgGCItemPreviewCheckStatus_DEPRECATED` | 1701 |
+| `k_EMsgGCItemPreviewStatusResponse_DEPRECATED` | 1702 |
+| `k_EMsgGCItemPreviewRequest_DEPRECATED` | 1703 |
+| `k_EMsgGCItemPreviewRequestResponse_DEPRECATED` | 1704 |
+| `k_EMsgGCItemPreviewExpire_DEPRECATED` | 1705 |
+| `k_EMsgGCItemPreviewExpireNotification_DEPRECATED` | 1706 |
+| `k_EMsgGCItemPreviewItemBoughtNotification_DEPRECATED` | 1707 |
 | `k_EMsgGCDev_NewItemRequest` | 2001 |
 | `k_EMsgGCDev_NewItemRequestResponse` | 2002 |
-| `k_EMsgGCDev_PaintKitDropItem` | 2003 |
+| `k_EMsgGCDev_PaintKitDropItem_DEPRECATED` | 2003 |
 | `k_EMsgGCDev_SchemaReservationRequest` | 2004 |
 | `k_EMsgGCStoreGetUserData` | 2500 |
 | `k_EMsgGCStoreGetUserDataResponse` | 2501 |
@@ -352,8 +342,8 @@ direction LR
 | `k_EMsgGCStorePurchaseFinalizeResponse` | 2505 |
 | `k_EMsgGCStorePurchaseCancel` | 2506 |
 | `k_EMsgGCStorePurchaseCancelResponse` | 2507 |
-| `k_EMsgGCStorePurchaseQueryTxn` | 2508 |
-| `k_EMsgGCStorePurchaseQueryTxnResponse` | 2509 |
+| `k_EMsgGCStorePurchaseQueryTxn_DEPRECATED` | 2508 |
+| `k_EMsgGCStorePurchaseQueryTxnResponse_DEPRECATED` | 2509 |
 | `k_EMsgGCStorePurchaseInit` | 2510 |
 | `k_EMsgGCStorePurchaseInitResponse` | 2511 |
 | `k_EMsgGCBannedWordListRequest` | 2512 |
@@ -394,17 +384,6 @@ direction LR
 | `k_EGCMsgFailedToCreate` | 8 |
 | `k_EGCMsgLimitExceeded` | 9 |
 | `k_EGCMsgCommitUnfinalized` | 10 |
-
-### `EUnlockStyle`
-
-| Name | Value |
-|------|-------|
-| `k_UnlockStyle_Succeeded` | 0 |
-| `k_UnlockStyle_Failed_PreReq` | 1 |
-| `k_UnlockStyle_Failed_CantAfford` | 2 |
-| `k_UnlockStyle_Failed_CantCommit` | 3 |
-| `k_UnlockStyle_Failed_CantLockCache` | 4 |
-| `k_UnlockStyle_Failed_CantAffordAttrib` | 5 |
 
 ### `EGCItemCustomizationNotification`
 

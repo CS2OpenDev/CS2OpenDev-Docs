@@ -8,9 +8,9 @@ kind: class
 
 # CNmGraphDocGraph
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 80 bytes (`0x50`) · **Align:** 8 · **Module:** animdoclib
+**Kind:** class · **Size:** 88 bytes (`0x58`) · **Align:** 8 · **Module:** animdoclib
 
 **Derived by:** [CNmGraphDocFlowGraph](../animdoclib/CNmGraphDocFlowGraph.md), [CNmGraphDocStateMachineGraph](../animdoclib/CNmGraphDocStateMachineGraph.md)
 

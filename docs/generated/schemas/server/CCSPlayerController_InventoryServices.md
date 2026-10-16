@@ -8,11 +8,11 @@ kind: class
 
 # CCSPlayerController_InventoryServices
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 Loadout and persona component of CCSPlayerController: equipped items, music kit, rank, and public-profile data.
 
-**Kind:** class · **Size:** 4064 bytes (`0xfe0`) · **Align:** n/a (unspecified) · **Module:** server
+**Kind:** class · **Size:** 4128 bytes (`0x1020`) · **Align:** n/a (unspecified) · **Module:** server
 
 **Twin:** [CCSPlayerController_InventoryServices (client)](../client/CCSPlayerController_InventoryServices.md)
 
@@ -41,6 +41,6 @@ classDiagram
 | `0x64` | `m_nPersonaDataPublicCommendsTeacher` | int32 |  |  |
 | `0x68` | `m_nPersonaDataPublicCommendsFriendly` | int32 |  |  |
 | `0x6c` | `m_nPersonaDataXpTrailLevel` | int32 |  |  |
-| `0xf48` | `m_unEquippedPlayerSprayIDs` | uint32[1] |  |  |
-| `0xf50` | `m_unCurrentLoadoutHash` | uint64 |  |  |
-| `0xf58` | `m_vecServerAuthoritativeWeaponSlots` | CUtlVectorEmbeddedNetworkVar< [ServerAuthoritativeWeaponSlot_t](../server/ServerAuthoritativeWeaponSlot_t.md) > |  |  |
+| `0xf88` | `m_unEquippedPlayerSprayIDs` | uint32[1] |  |  |
+| `0xf90` | `m_unCurrentLoadoutHash` | uint64 |  |  |
+| `0xf98` | `m_vecServerAuthoritativeWeaponSlots` | CUtlVectorEmbeddedNetworkVar< [ServerAuthoritativeWeaponSlot_t](../server/ServerAuthoritativeWeaponSlot_t.md) > |  |  |

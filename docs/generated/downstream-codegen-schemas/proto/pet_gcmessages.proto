@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+// Injected by CS2OpenDev-Docs (issue #21.3): a single shared C# namespace
+// so message types don't land in the global namespace (CS0433 hazard).
+option csharp_namespace = "CS2OpenDev.Protobuf";
+
+enum EGCPetMsg {
+  k_EMsgGCAckPetEvent = 2538;
+}
+
+message CMsgAckPetEvent {
+  optional uint64 pet_item_id = 1;
+}

@@ -8,9 +8,9 @@ kind: class
 
 # C_OP_RenderOmni2Light
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 6024 bytes (`0x1788`) · **Align:** 8 · **Module:** particles
+**Kind:** class · **Size:** 11912 bytes (`0x2e88`) · **Align:** 8 · **Module:** particles
 
 **Inherits from:** [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md)
 
@@ -26,56 +26,66 @@ classDiagram
     C_OP_RenderOmni2Light *-- CPerParticleFloatInput
     C_OP_RenderOmni2Light *-- ParticleLightUnitChoiceList_t
     C_OP_RenderOmni2Light *-- CParticleCollectionFloatInput
+    C_OP_RenderOmni2Light *-- ParticleOmni2LighOrientationChoiceList_t
+    C_OP_RenderOmni2Light *-- CPerParticleVecInput
     C_OP_RenderOmni2Light *-- InfoForResourceTypeCTextureBase
 ```
 
 ## Memory layout
 
-41 fields (21 declared here, 20 inherited). Offsets are absolute from the object base.
+49 fields (30 declared here, 19 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flOpStrength` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator strength` `MPropertySortPriority -100` |
-| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
-| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
-| `0x180` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
-| `0x184` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
-| `0x188` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
-| `0x18c` | `m_flOpEndFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadeout` `MPropertySortPriority -100` |
-| `0x190` | `m_flOpFadeOscillatePeriod` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade oscillate` `MPropertySortPriority -100` |
-| `0x194` | `m_bNormalizeToStopTime` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName normalize fade times to endcap` `MPropertySortPriority -100` |
-| `0x198` | `m_flOpTimeOffsetMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset min` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Time Offset` |
-| `0x19c` | `m_flOpTimeOffsetMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset max` `MPropertySortPriority -100` |
-| `0x1a0` | `m_nOpTimeOffsetSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset seed` `MPropertySortPriority -100` |
-| `0x1a4` | `m_nOpTimeScaleSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale seed` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Timescale Modifiers` |
-| `0x1a8` | `m_flOpTimeScaleMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale min` `MPropertySortPriority -100` |
-| `0x1ac` | `m_flOpTimeScaleMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale max` `MPropertySortPriority -100` |
-| `0x1b2` | `m_bDisableOperator` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyStartGroup` `MPropertySuppressField` |
-| `0x1b8` | `m_Notes` | CUtlString | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleHelpField` `MPropertyFriendlyName operator help and notes` `MPropertySortPriority -100` |
-| `0x1d8` | `VisibilityInputs` | [CParticleVisibilityInputs](../particles/CParticleVisibilityInputs.md) | [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md) | `MPropertySortPriority -1` |
-| `0x220` | `m_bCannotBeRefracted` | bool | [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md) | `MPropertyFriendlyName I cannot be refracted through refracting objects like water` `MPropertySortPriority -1` `MPropertyStartGroup Rendering filter` |
-| `0x221` | `m_bSkipRenderingOnMobile` | bool | [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md) | `MPropertyFriendlyName Skip rendering on mobile` `MPropertySortPriority -1` |
-| `0x228` | `m_nLightType` | [ParticleOmni2LightTypeChoiceList_t](../particles/ParticleOmni2LightTypeChoiceList_t.md) |  | `MPropertyFriendlyName Type` |
-| `0x22c` | `m_nMaxAllowed` | uint16 |  | `MPropertyAttributeRange 1 512` `MPropertyFriendlyName maximum light count` |
-| `0x230` | `m_vColorBlend` | [CParticleCollectionVecInput](../particleslib/CParticleCollectionVecInput.md) |  | `MPropertyFriendlyName Color Blend` |
-| `0x8e8` | `m_nColorBlendType` | [ParticleColorBlendType_t](../particleslib/ParticleColorBlendType_t.md) |  | `MPropertyFriendlyName Color Blend Type` `MPropertySortPriority 700` |
-| `0x8f0` | `m_strLightStyle` | CUtlString |  | `MPropertyAttributeEditor VDataChoice( scripts/light_styles.vdata )` `MPropertyFriendlyName light style` `MPropertySortPriority 700` |
-| `0x8f8` | `m_flLightStyleTime` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName light style time` `MPropertySuppressExpr m_strLightStyle == ''` |
-| `0xa68` | `m_nBrightnessUnit` | [ParticleLightUnitChoiceList_t](../particles/ParticleLightUnitChoiceList_t.md) |  |  |
-| `0xa70` | `m_flBrightnessLumens` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Lumens` `MPropertySuppressExpr m_nBrightnessUnit != PARTICLE_LIGHT_UNIT_LUMENS` |
-| `0xbe0` | `m_flBrightnessCandelas` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Candelas` `MPropertySuppressExpr m_nBrightnessUnit != PARTICLE_LIGHT_UNIT_CANDELAS` |
-| `0xd50` | `m_bCastShadows` | bool |  | `MPropertyFriendlyName Shadows` `MPropertySuppressExpr mod == csgo` |
-| `0xd51` | `m_bDynamicBounce` | bool |  | `MPropertyFriendlyName Dynamic Bounce (RTGI)` `MPropertySuppressExpr !m_bCastShadows &#124;&#124; mod == csgo` |
-| `0xd58` | `m_flBounceScale` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName bounce scale` `MPropertySuppressExpr !m_bDynamicBounce` |
-| `0xec8` | `m_bFog` | bool |  | `MPropertyFriendlyName Fog` |
-| `0xed0` | `m_flFogScale` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Fog Scale` `MPropertySuppressExpr !m_bFog` |
-| `0x1040` | `m_flLuminaireRadius` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Light Radius` |
-| `0x11b0` | `m_flSkirt` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Skirt` |
-| `0x1320` | `m_flRange` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Range` |
-| `0x1490` | `m_flInnerConeAngle` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Inner Cone Angle` |
-| `0x1600` | `m_flOuterConeAngle` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Outer Cone Angle` |
-| `0x1770` | `m_hLightCookie` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  | `MPropertyFriendlyName Cookie` |
-| `0x1778` | `m_bSphericalCookie` | bool |  | `MPropertyFriendlyName Cookie is Spherically Mapped` |
+| `0x180` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
+| `0x184` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
+| `0x188` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
+| `0x18c` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
+| `0x190` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
+| `0x194` | `m_flOpEndFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadeout` `MPropertySortPriority -100` |
+| `0x198` | `m_flOpFadeOscillatePeriod` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade oscillate` `MPropertySortPriority -100` |
+| `0x19c` | `m_bNormalizeToStopTime` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName normalize fade times to endcap` `MPropertySortPriority -100` |
+| `0x1a0` | `m_flOpTimeOffsetMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset min` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Time Offset` |
+| `0x1a4` | `m_flOpTimeOffsetMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset max` `MPropertySortPriority -100` |
+| `0x1a8` | `m_nOpTimeOffsetSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset seed` `MPropertySortPriority -100` |
+| `0x1ac` | `m_nOpTimeScaleSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale seed` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Timescale Modifiers` |
+| `0x1b0` | `m_flOpTimeScaleMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale min` `MPropertySortPriority -100` |
+| `0x1b4` | `m_flOpTimeScaleMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale max` `MPropertySortPriority -100` |
+| `0x1ba` | `m_bDisableOperator` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyStartGroup` `MPropertySuppressField` |
+| `0x1c0` | `m_Notes` | CUtlString | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleHelpField` `MPropertyAttributeEditor TextBlock()` `MPropertyFriendlyName operator help and notes` `MPropertySortPriority -100` |
+| `0x1e0` | `VisibilityInputs` | [CParticleVisibilityInputs](../particles/CParticleVisibilityInputs.md) | [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md) | `MPropertySortPriority -1` |
+| `0x228` | `m_bCannotBeRefracted` | bool | [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md) | `MPropertyFriendlyName I cannot be refracted through refracting objects like water` `MPropertySortPriority -1` `MPropertyStartGroup Rendering filter` |
+| `0x230` | `m_nLightType` | [ParticleOmni2LightTypeChoiceList_t](../particles/ParticleOmni2LightTypeChoiceList_t.md) |  | `MPropertyFriendlyName Type` |
+| `0x234` | `m_nMaxAllowed` | uint16 |  | `MPropertyAttributeRange 1 512` `MPropertyFriendlyName maximum light count` |
+| `0x238` | `m_vColorBlend` | [CParticleCollectionVecInput](../particleslib/CParticleCollectionVecInput.md) |  | `MPropertyFriendlyName Color Blend` |
+| `0x910` | `m_nColorBlendType` | [ParticleColorBlendType_t](../particleslib/ParticleColorBlendType_t.md) |  | `MPropertyFriendlyName Color Blend Type` `MPropertySortPriority 700` |
+| `0x918` | `m_strLightStyle` | CUtlString |  | `MPropertyAttributeEditor VDataChoice( scripts/light_styles.vdata )` `MPropertyFriendlyName light style` `MPropertySortPriority 700` |
+| `0x920` | `m_flLightStyleTime` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName light style time` `MPropertySuppressExpr m_strLightStyle == ''` |
+| `0xa98` | `m_nBrightnessUnit` | [ParticleLightUnitChoiceList_t](../particles/ParticleLightUnitChoiceList_t.md) |  |  |
+| `0xaa0` | `m_flBrightnessLumens` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Lumens` `MPropertySuppressExpr m_nBrightnessUnit != PARTICLE_LIGHT_UNIT_LUMENS` |
+| `0xc18` | `m_flBrightnessCandelas` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Candelas` `MPropertySuppressExpr m_nBrightnessUnit != PARTICLE_LIGHT_UNIT_CANDELAS` |
+| `0xd90` | `m_bCastShadows` | bool |  | `MPropertyFriendlyName Shadows` `MPropertySuppressExpr mod == csgo` |
+| `0xd91` | `m_bDynamicBounce` | bool |  | `MPropertyFriendlyName Dynamic Bounce (RTGI)` `MPropertySuppressExpr !m_bCastShadows &#124;&#124; mod == csgo` |
+| `0xd98` | `m_flBounceScale` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName bounce scale` `MPropertySuppressExpr !m_bDynamicBounce` |
+| `0xf10` | `m_bFog` | bool |  | `MPropertyFriendlyName Fog` |
+| `0xf18` | `m_flFogScale` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Fog Scale` `MPropertySuppressExpr !m_bFog` |
+| `0x1090` | `m_flLuminaireRadius` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Light Radius` `MPropertySuppressExpr m_nLightType != PARTICLE_OMNI2_LIGHT_TYPE_SPHERE` |
+| `0x1208` | `m_nOrientationType` | [ParticleOmni2LighOrientationChoiceList_t](../particles/ParticleOmni2LighOrientationChoiceList_t.md) |  | `MPropertyFriendlyName Light Orientation Type` |
+| `0x1210` | `m_vNormal` | [CPerParticleVecInput](../particleslib/CPerParticleVecInput.md) |  | `MPropertyFriendlyName Normal Vector` `MPropertySuppressExpr m_nOrientationType != PARTICLE_OMNI2_LIGHT_ORIENTATION_NORMAL && m_nOrientationType != PARTICLE_OMNI2_LIGHT_ORIENTATION_NORMAL_ROLL` |
+| `0x18e8` | `m_vTarget` | [CPerParticleVecInput](../particleslib/CPerParticleVecInput.md) |  | `MPropertyFriendlyName Target` `MPropertySuppressExpr m_nOrientationType != PARTICLE_OMNI2_LIGHT_ORIENTATION_TARGET && m_nOrientationType != PARTICLE_OMNI2_LIGHT_ORIENTATION_TARGET_ROLL` |
+| `0x1fc0` | `m_flFOVAngle` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Barn FOV Angle` `MPropertySuppressExpr m_nLightType != PARTICLE_OMNI2_LIGHT_TYPE_BARN` |
+| `0x2138` | `m_flBarnShape` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Aperture Shape` `MPropertySuppressExpr m_nLightType != PARTICLE_OMNI2_LIGHT_TYPE_BARN` |
+| `0x22b0` | `m_flBarnNearSizeX` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Aperture Near Size X` `MPropertySuppressExpr m_nLightType != PARTICLE_OMNI2_LIGHT_TYPE_BARN` |
+| `0x2428` | `m_flBarnNearSizeY` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Aperture Near Size Y` `MPropertySuppressExpr m_nLightType != PARTICLE_OMNI2_LIGHT_TYPE_BARN` |
+| `0x25a0` | `m_flBarnSoftX` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Aperture Softness X` `MPropertySuppressExpr m_nLightType != PARTICLE_OMNI2_LIGHT_TYPE_BARN` |
+| `0x2718` | `m_flBarnSoftY` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Aperture Softness Y` `MPropertySuppressExpr m_nLightType != PARTICLE_OMNI2_LIGHT_TYPE_BARN` |
+| `0x2890` | `m_flSkirt` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Skirt (far falloff)` |
+| `0x2a08` | `m_flRange` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Range` |
+| `0x2b80` | `m_flInnerConeAngle` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Inner Cone Angle` `MPropertySuppressExpr m_nLightType == PARTICLE_OMNI2_LIGHT_TYPE_BARN` |
+| `0x2cf8` | `m_flOuterConeAngle` | [CPerParticleFloatInput](../particleslib/CPerParticleFloatInput.md) |  | `MPropertyFriendlyName Outer Cone Angle` `MPropertySuppressExpr m_nLightType == PARTICLE_OMNI2_LIGHT_TYPE_BARN` |
+| `0x2e70` | `m_hLightCookie` | CStrongHandle< [InfoForResourceTypeCTextureBase](../resourcesystem/InfoForResourceTypeCTextureBase.md) > |  | `MPropertyFriendlyName Cookie` |
+| `0x2e78` | `m_bSphericalCookie` | bool |  | `MPropertyFriendlyName Cookie is Spherically Mapped` `MPropertySuppressExpr m_nLightType == PARTICLE_OMNI2_LIGHT_TYPE_BARN` |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -154,7 +164,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_nOpEndCapState&quot;: &quot;PARTICLE_ENDCAP_ALWAYS_ON&quot;,
 	&quot;m_nToolsState&quot;: &quot;PARTICLE_TOOLS_STATE_ALWAYS_ON&quot;,
@@ -195,7 +206,6 @@ classDiagram
 		&quot;m_bRightEye&quot;: false
 	},
 	&quot;m_bCannotBeRefracted&quot;: true,
-	&quot;m_bSkipRenderingOnMobile&quot;: false,
 	&quot;m_nLightType&quot;: &quot;PARTICLE_OMNI2_LIGHT_TYPE_POINT&quot;,
 	&quot;m_nMaxAllowed&quot;: 32,
 	&quot;m_vColorBlend&quot;:
@@ -315,7 +325,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_FloatComponentY&quot;:
 		{
@@ -390,7 +401,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_FloatComponentZ&quot;:
 		{
@@ -465,7 +477,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_FloatInterp&quot;:
 		{
@@ -540,7 +553,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_flInterpInput0&quot;: 0.000000,
 		&quot;m_flInterpInput1&quot;: 1.000000,
@@ -650,7 +664,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_nBrightnessUnit&quot;: &quot;PARTICLE_LIGHT_UNIT_LUMENS&quot;,
 	&quot;m_flBrightnessLumens&quot;:
@@ -726,7 +741,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flBrightnessCandelas&quot;:
 	{
@@ -801,7 +817,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_bCastShadows&quot;: false,
 	&quot;m_bDynamicBounce&quot;: false,
@@ -878,7 +895,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_bFog&quot;: false,
 	&quot;m_flFogScale&quot;:
@@ -954,7 +972,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flLuminaireRadius&quot;:
 	{
@@ -1029,7 +1048,1227 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
+	},
+	&quot;m_nOrientationType&quot;: &quot;PARTICLE_OMNI2_LIGHT_ORIENTATION_ROTATIONS&quot;,
+	&quot;m_vNormal&quot;:
+	{
+		&quot;m_nType&quot;: &quot;PVEC_TYPE_PARTICLE_VECTOR&quot;,
+		&quot;m_vLiteralValue&quot;:
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		&quot;m_LiteralColor&quot;:
+		[
+			0,
+			0,
+			0
+		],
+		&quot;m_NamedValue&quot;: &quot;&quot;,
+		&quot;m_bFollowNamedValue&quot;: false,
+		&quot;m_nVectorAttribute&quot;: 21,
+		&quot;m_vVectorAttributeScale&quot;:
+		[
+			1.000000,
+			1.000000,
+			1.000000
+		],
+		&quot;m_nControlPoint&quot;: 0,
+		&quot;m_nDeltaControlPoint&quot;: 0,
+		&quot;m_vCPValueScale&quot;:
+		[
+			1.000000,
+			1.000000,
+			1.000000
+		],
+		&quot;m_vCPRelativePosition&quot;:
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		&quot;m_vCPRelativeDir&quot;:
+		[
+			1.000000,
+			0.000000,
+			0.000000
+		],
+		&quot;m_FloatComponentX&quot;:
+		{
+			&quot;m_nType&quot;: &quot;PF_TYPE_LITERAL&quot;,
+			&quot;m_nMapType&quot;: &quot;PF_MAP_TYPE_DIRECT&quot;,
+			&quot;m_flLiteralValue&quot;: 0.000000,
+			&quot;m_NamedValue&quot;: &quot;&quot;,
+			&quot;m_nControlPoint&quot;: 0,
+			&quot;m_nScalarAttribute&quot;: 3,
+			&quot;m_nVectorAttribute&quot;: 6,
+			&quot;m_nVectorComponent&quot;: 0,
+			&quot;m_bReverseOrder&quot;: false,
+			&quot;m_flRandomMin&quot;: 0.000000,
+			&quot;m_flRandomMax&quot;: 1.000000,
+			&quot;m_bHasRandomSignFlip&quot;: false,
+			&quot;m_nRandomSeed&quot;: &lt;HIDDEN FOR DIFF&gt;,
+			&quot;m_nRandomMode&quot;: &quot;PF_RANDOM_MODE_CONSTANT&quot;,
+			&quot;m_strSnapshotSubset&quot;: &quot;&quot;,
+			&quot;m_flLOD0&quot;: 0.000000,
+			&quot;m_flLOD1&quot;: 0.000000,
+			&quot;m_flLOD2&quot;: 0.000000,
+			&quot;m_flLOD3&quot;: 0.000000,
+			&quot;m_nNoiseInputVectorAttribute&quot;: 0,
+			&quot;m_flNoiseOutputMin&quot;: 0.000000,
+			&quot;m_flNoiseOutputMax&quot;: 1.000000,
+			&quot;m_flNoiseScale&quot;: 0.100000,
+			&quot;m_vecNoiseOffsetRate&quot;:
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			&quot;m_flNoiseOffset&quot;: 0.000000,
+			&quot;m_nNoiseOctaves&quot;: 1,
+			&quot;m_nNoiseTurbulence&quot;: &quot;PF_NOISE_TURB_NONE&quot;,
+			&quot;m_nNoiseType&quot;: &quot;PF_NOISE_TYPE_PERLIN&quot;,
+			&quot;m_nNoiseModifier&quot;: &quot;PF_NOISE_MODIFIER_NONE&quot;,
+			&quot;m_flNoiseTurbulenceScale&quot;: 1.000000,
+			&quot;m_flNoiseTurbulenceMix&quot;: 0.500000,
+			&quot;m_flNoiseImgPreviewScale&quot;: 1.000000,
+			&quot;m_bNoiseImgPreviewLive&quot;: true,
+			&quot;m_flNoCameraFallback&quot;: 0.000000,
+			&quot;m_bUseBoundsCenter&quot;: false,
+			&quot;m_nInputMode&quot;: &quot;PF_INPUT_MODE_CLAMPED&quot;,
+			&quot;m_flMultFactor&quot;: 1.000000,
+			&quot;m_flInput0&quot;: 0.000000,
+			&quot;m_flInput1&quot;: 1.000000,
+			&quot;m_flOutput0&quot;: 0.000000,
+			&quot;m_flOutput1&quot;: 1.000000,
+			&quot;m_flNotchedRangeMin&quot;: 0.000000,
+			&quot;m_flNotchedRangeMax&quot;: 1.000000,
+			&quot;m_flNotchedOutputOutside&quot;: 0.000000,
+			&quot;m_flNotchedOutputInside&quot;: 1.000000,
+			&quot;m_nRoundType&quot;: &quot;PF_ROUND_TYPE_NEAREST&quot;,
+			&quot;m_nBiasType&quot;: &quot;PF_BIAS_TYPE_STANDARD&quot;,
+			&quot;m_flBiasParameter&quot;: 0.000000,
+			&quot;m_Curve&quot;:
+			{
+				&quot;m_spline&quot;:
+				[
+				],
+				&quot;m_tangents&quot;:
+				[
+				],
+				&quot;m_vDomainMins&quot;:
+				[
+					0.000000,
+					0.000000
+				],
+				&quot;m_vDomainMaxs&quot;:
+				[
+					0.000000,
+					0.000000
+				]
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
+		},
+		&quot;m_FloatComponentY&quot;:
+		{
+			&quot;m_nType&quot;: &quot;PF_TYPE_LITERAL&quot;,
+			&quot;m_nMapType&quot;: &quot;PF_MAP_TYPE_DIRECT&quot;,
+			&quot;m_flLiteralValue&quot;: 0.000000,
+			&quot;m_NamedValue&quot;: &quot;&quot;,
+			&quot;m_nControlPoint&quot;: 0,
+			&quot;m_nScalarAttribute&quot;: 3,
+			&quot;m_nVectorAttribute&quot;: 6,
+			&quot;m_nVectorComponent&quot;: 0,
+			&quot;m_bReverseOrder&quot;: false,
+			&quot;m_flRandomMin&quot;: 0.000000,
+			&quot;m_flRandomMax&quot;: 1.000000,
+			&quot;m_bHasRandomSignFlip&quot;: false,
+			&quot;m_nRandomSeed&quot;: &lt;HIDDEN FOR DIFF&gt;,
+			&quot;m_nRandomMode&quot;: &quot;PF_RANDOM_MODE_CONSTANT&quot;,
+			&quot;m_strSnapshotSubset&quot;: &quot;&quot;,
+			&quot;m_flLOD0&quot;: 0.000000,
+			&quot;m_flLOD1&quot;: 0.000000,
+			&quot;m_flLOD2&quot;: 0.000000,
+			&quot;m_flLOD3&quot;: 0.000000,
+			&quot;m_nNoiseInputVectorAttribute&quot;: 0,
+			&quot;m_flNoiseOutputMin&quot;: 0.000000,
+			&quot;m_flNoiseOutputMax&quot;: 1.000000,
+			&quot;m_flNoiseScale&quot;: 0.100000,
+			&quot;m_vecNoiseOffsetRate&quot;:
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			&quot;m_flNoiseOffset&quot;: 0.000000,
+			&quot;m_nNoiseOctaves&quot;: 1,
+			&quot;m_nNoiseTurbulence&quot;: &quot;PF_NOISE_TURB_NONE&quot;,
+			&quot;m_nNoiseType&quot;: &quot;PF_NOISE_TYPE_PERLIN&quot;,
+			&quot;m_nNoiseModifier&quot;: &quot;PF_NOISE_MODIFIER_NONE&quot;,
+			&quot;m_flNoiseTurbulenceScale&quot;: 1.000000,
+			&quot;m_flNoiseTurbulenceMix&quot;: 0.500000,
+			&quot;m_flNoiseImgPreviewScale&quot;: 1.000000,
+			&quot;m_bNoiseImgPreviewLive&quot;: true,
+			&quot;m_flNoCameraFallback&quot;: 0.000000,
+			&quot;m_bUseBoundsCenter&quot;: false,
+			&quot;m_nInputMode&quot;: &quot;PF_INPUT_MODE_CLAMPED&quot;,
+			&quot;m_flMultFactor&quot;: 1.000000,
+			&quot;m_flInput0&quot;: 0.000000,
+			&quot;m_flInput1&quot;: 1.000000,
+			&quot;m_flOutput0&quot;: 0.000000,
+			&quot;m_flOutput1&quot;: 1.000000,
+			&quot;m_flNotchedRangeMin&quot;: 0.000000,
+			&quot;m_flNotchedRangeMax&quot;: 1.000000,
+			&quot;m_flNotchedOutputOutside&quot;: 0.000000,
+			&quot;m_flNotchedOutputInside&quot;: 1.000000,
+			&quot;m_nRoundType&quot;: &quot;PF_ROUND_TYPE_NEAREST&quot;,
+			&quot;m_nBiasType&quot;: &quot;PF_BIAS_TYPE_STANDARD&quot;,
+			&quot;m_flBiasParameter&quot;: 0.000000,
+			&quot;m_Curve&quot;:
+			{
+				&quot;m_spline&quot;:
+				[
+				],
+				&quot;m_tangents&quot;:
+				[
+				],
+				&quot;m_vDomainMins&quot;:
+				[
+					0.000000,
+					0.000000
+				],
+				&quot;m_vDomainMaxs&quot;:
+				[
+					0.000000,
+					0.000000
+				]
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
+		},
+		&quot;m_FloatComponentZ&quot;:
+		{
+			&quot;m_nType&quot;: &quot;PF_TYPE_LITERAL&quot;,
+			&quot;m_nMapType&quot;: &quot;PF_MAP_TYPE_DIRECT&quot;,
+			&quot;m_flLiteralValue&quot;: 0.000000,
+			&quot;m_NamedValue&quot;: &quot;&quot;,
+			&quot;m_nControlPoint&quot;: 0,
+			&quot;m_nScalarAttribute&quot;: 3,
+			&quot;m_nVectorAttribute&quot;: 6,
+			&quot;m_nVectorComponent&quot;: 0,
+			&quot;m_bReverseOrder&quot;: false,
+			&quot;m_flRandomMin&quot;: 0.000000,
+			&quot;m_flRandomMax&quot;: 1.000000,
+			&quot;m_bHasRandomSignFlip&quot;: false,
+			&quot;m_nRandomSeed&quot;: &lt;HIDDEN FOR DIFF&gt;,
+			&quot;m_nRandomMode&quot;: &quot;PF_RANDOM_MODE_CONSTANT&quot;,
+			&quot;m_strSnapshotSubset&quot;: &quot;&quot;,
+			&quot;m_flLOD0&quot;: 0.000000,
+			&quot;m_flLOD1&quot;: 0.000000,
+			&quot;m_flLOD2&quot;: 0.000000,
+			&quot;m_flLOD3&quot;: 0.000000,
+			&quot;m_nNoiseInputVectorAttribute&quot;: 0,
+			&quot;m_flNoiseOutputMin&quot;: 0.000000,
+			&quot;m_flNoiseOutputMax&quot;: 1.000000,
+			&quot;m_flNoiseScale&quot;: 0.100000,
+			&quot;m_vecNoiseOffsetRate&quot;:
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			&quot;m_flNoiseOffset&quot;: 0.000000,
+			&quot;m_nNoiseOctaves&quot;: 1,
+			&quot;m_nNoiseTurbulence&quot;: &quot;PF_NOISE_TURB_NONE&quot;,
+			&quot;m_nNoiseType&quot;: &quot;PF_NOISE_TYPE_PERLIN&quot;,
+			&quot;m_nNoiseModifier&quot;: &quot;PF_NOISE_MODIFIER_NONE&quot;,
+			&quot;m_flNoiseTurbulenceScale&quot;: 1.000000,
+			&quot;m_flNoiseTurbulenceMix&quot;: 0.500000,
+			&quot;m_flNoiseImgPreviewScale&quot;: 1.000000,
+			&quot;m_bNoiseImgPreviewLive&quot;: true,
+			&quot;m_flNoCameraFallback&quot;: 0.000000,
+			&quot;m_bUseBoundsCenter&quot;: false,
+			&quot;m_nInputMode&quot;: &quot;PF_INPUT_MODE_CLAMPED&quot;,
+			&quot;m_flMultFactor&quot;: 1.000000,
+			&quot;m_flInput0&quot;: 0.000000,
+			&quot;m_flInput1&quot;: 1.000000,
+			&quot;m_flOutput0&quot;: 0.000000,
+			&quot;m_flOutput1&quot;: 1.000000,
+			&quot;m_flNotchedRangeMin&quot;: 0.000000,
+			&quot;m_flNotchedRangeMax&quot;: 1.000000,
+			&quot;m_flNotchedOutputOutside&quot;: 0.000000,
+			&quot;m_flNotchedOutputInside&quot;: 1.000000,
+			&quot;m_nRoundType&quot;: &quot;PF_ROUND_TYPE_NEAREST&quot;,
+			&quot;m_nBiasType&quot;: &quot;PF_BIAS_TYPE_STANDARD&quot;,
+			&quot;m_flBiasParameter&quot;: 0.000000,
+			&quot;m_Curve&quot;:
+			{
+				&quot;m_spline&quot;:
+				[
+				],
+				&quot;m_tangents&quot;:
+				[
+				],
+				&quot;m_vDomainMins&quot;:
+				[
+					0.000000,
+					0.000000
+				],
+				&quot;m_vDomainMaxs&quot;:
+				[
+					0.000000,
+					0.000000
+				]
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
+		},
+		&quot;m_FloatInterp&quot;:
+		{
+			&quot;m_nType&quot;: &quot;PF_TYPE_LITERAL&quot;,
+			&quot;m_nMapType&quot;: &quot;PF_MAP_TYPE_DIRECT&quot;,
+			&quot;m_flLiteralValue&quot;: 0.000000,
+			&quot;m_NamedValue&quot;: &quot;&quot;,
+			&quot;m_nControlPoint&quot;: 0,
+			&quot;m_nScalarAttribute&quot;: 3,
+			&quot;m_nVectorAttribute&quot;: 6,
+			&quot;m_nVectorComponent&quot;: 0,
+			&quot;m_bReverseOrder&quot;: false,
+			&quot;m_flRandomMin&quot;: 0.000000,
+			&quot;m_flRandomMax&quot;: 1.000000,
+			&quot;m_bHasRandomSignFlip&quot;: false,
+			&quot;m_nRandomSeed&quot;: &lt;HIDDEN FOR DIFF&gt;,
+			&quot;m_nRandomMode&quot;: &quot;PF_RANDOM_MODE_CONSTANT&quot;,
+			&quot;m_strSnapshotSubset&quot;: &quot;&quot;,
+			&quot;m_flLOD0&quot;: 0.000000,
+			&quot;m_flLOD1&quot;: 0.000000,
+			&quot;m_flLOD2&quot;: 0.000000,
+			&quot;m_flLOD3&quot;: 0.000000,
+			&quot;m_nNoiseInputVectorAttribute&quot;: 0,
+			&quot;m_flNoiseOutputMin&quot;: 0.000000,
+			&quot;m_flNoiseOutputMax&quot;: 1.000000,
+			&quot;m_flNoiseScale&quot;: 0.100000,
+			&quot;m_vecNoiseOffsetRate&quot;:
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			&quot;m_flNoiseOffset&quot;: 0.000000,
+			&quot;m_nNoiseOctaves&quot;: 1,
+			&quot;m_nNoiseTurbulence&quot;: &quot;PF_NOISE_TURB_NONE&quot;,
+			&quot;m_nNoiseType&quot;: &quot;PF_NOISE_TYPE_PERLIN&quot;,
+			&quot;m_nNoiseModifier&quot;: &quot;PF_NOISE_MODIFIER_NONE&quot;,
+			&quot;m_flNoiseTurbulenceScale&quot;: 1.000000,
+			&quot;m_flNoiseTurbulenceMix&quot;: 0.500000,
+			&quot;m_flNoiseImgPreviewScale&quot;: 1.000000,
+			&quot;m_bNoiseImgPreviewLive&quot;: true,
+			&quot;m_flNoCameraFallback&quot;: 0.000000,
+			&quot;m_bUseBoundsCenter&quot;: false,
+			&quot;m_nInputMode&quot;: &quot;PF_INPUT_MODE_CLAMPED&quot;,
+			&quot;m_flMultFactor&quot;: 1.000000,
+			&quot;m_flInput0&quot;: 0.000000,
+			&quot;m_flInput1&quot;: 1.000000,
+			&quot;m_flOutput0&quot;: 0.000000,
+			&quot;m_flOutput1&quot;: 1.000000,
+			&quot;m_flNotchedRangeMin&quot;: 0.000000,
+			&quot;m_flNotchedRangeMax&quot;: 1.000000,
+			&quot;m_flNotchedOutputOutside&quot;: 0.000000,
+			&quot;m_flNotchedOutputInside&quot;: 1.000000,
+			&quot;m_nRoundType&quot;: &quot;PF_ROUND_TYPE_NEAREST&quot;,
+			&quot;m_nBiasType&quot;: &quot;PF_BIAS_TYPE_STANDARD&quot;,
+			&quot;m_flBiasParameter&quot;: 0.000000,
+			&quot;m_Curve&quot;:
+			{
+				&quot;m_spline&quot;:
+				[
+				],
+				&quot;m_tangents&quot;:
+				[
+				],
+				&quot;m_vDomainMins&quot;:
+				[
+					0.000000,
+					0.000000
+				],
+				&quot;m_vDomainMaxs&quot;:
+				[
+					0.000000,
+					0.000000
+				]
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
+		},
+		&quot;m_flInterpInput0&quot;: 0.000000,
+		&quot;m_flInterpInput1&quot;: 1.000000,
+		&quot;m_vInterpOutput0&quot;:
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		&quot;m_vInterpOutput1&quot;:
+		[
+			1.000000,
+			1.000000,
+			1.000000
+		],
+		&quot;m_Gradient&quot;:
+		{
+			&quot;m_Stops&quot;:
+			[
+			]
+		},
+		&quot;m_vRandomMin&quot;:
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		&quot;m_vRandomMax&quot;:
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		]
+	},
+	&quot;m_vTarget&quot;:
+	{
+		&quot;m_nType&quot;: &quot;PVEC_TYPE_LITERAL&quot;,
+		&quot;m_vLiteralValue&quot;:
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		&quot;m_LiteralColor&quot;:
+		[
+			0,
+			0,
+			0
+		],
+		&quot;m_NamedValue&quot;: &quot;&quot;,
+		&quot;m_bFollowNamedValue&quot;: false,
+		&quot;m_nVectorAttribute&quot;: 6,
+		&quot;m_vVectorAttributeScale&quot;:
+		[
+			1.000000,
+			1.000000,
+			1.000000
+		],
+		&quot;m_nControlPoint&quot;: 0,
+		&quot;m_nDeltaControlPoint&quot;: 0,
+		&quot;m_vCPValueScale&quot;:
+		[
+			1.000000,
+			1.000000,
+			1.000000
+		],
+		&quot;m_vCPRelativePosition&quot;:
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		&quot;m_vCPRelativeDir&quot;:
+		[
+			1.000000,
+			0.000000,
+			0.000000
+		],
+		&quot;m_FloatComponentX&quot;:
+		{
+			&quot;m_nType&quot;: &quot;PF_TYPE_LITERAL&quot;,
+			&quot;m_nMapType&quot;: &quot;PF_MAP_TYPE_DIRECT&quot;,
+			&quot;m_flLiteralValue&quot;: 0.000000,
+			&quot;m_NamedValue&quot;: &quot;&quot;,
+			&quot;m_nControlPoint&quot;: 0,
+			&quot;m_nScalarAttribute&quot;: 3,
+			&quot;m_nVectorAttribute&quot;: 6,
+			&quot;m_nVectorComponent&quot;: 0,
+			&quot;m_bReverseOrder&quot;: false,
+			&quot;m_flRandomMin&quot;: 0.000000,
+			&quot;m_flRandomMax&quot;: 1.000000,
+			&quot;m_bHasRandomSignFlip&quot;: false,
+			&quot;m_nRandomSeed&quot;: &lt;HIDDEN FOR DIFF&gt;,
+			&quot;m_nRandomMode&quot;: &quot;PF_RANDOM_MODE_CONSTANT&quot;,
+			&quot;m_strSnapshotSubset&quot;: &quot;&quot;,
+			&quot;m_flLOD0&quot;: 0.000000,
+			&quot;m_flLOD1&quot;: 0.000000,
+			&quot;m_flLOD2&quot;: 0.000000,
+			&quot;m_flLOD3&quot;: 0.000000,
+			&quot;m_nNoiseInputVectorAttribute&quot;: 0,
+			&quot;m_flNoiseOutputMin&quot;: 0.000000,
+			&quot;m_flNoiseOutputMax&quot;: 1.000000,
+			&quot;m_flNoiseScale&quot;: 0.100000,
+			&quot;m_vecNoiseOffsetRate&quot;:
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			&quot;m_flNoiseOffset&quot;: 0.000000,
+			&quot;m_nNoiseOctaves&quot;: 1,
+			&quot;m_nNoiseTurbulence&quot;: &quot;PF_NOISE_TURB_NONE&quot;,
+			&quot;m_nNoiseType&quot;: &quot;PF_NOISE_TYPE_PERLIN&quot;,
+			&quot;m_nNoiseModifier&quot;: &quot;PF_NOISE_MODIFIER_NONE&quot;,
+			&quot;m_flNoiseTurbulenceScale&quot;: 1.000000,
+			&quot;m_flNoiseTurbulenceMix&quot;: 0.500000,
+			&quot;m_flNoiseImgPreviewScale&quot;: 1.000000,
+			&quot;m_bNoiseImgPreviewLive&quot;: true,
+			&quot;m_flNoCameraFallback&quot;: 0.000000,
+			&quot;m_bUseBoundsCenter&quot;: false,
+			&quot;m_nInputMode&quot;: &quot;PF_INPUT_MODE_CLAMPED&quot;,
+			&quot;m_flMultFactor&quot;: 1.000000,
+			&quot;m_flInput0&quot;: 0.000000,
+			&quot;m_flInput1&quot;: 1.000000,
+			&quot;m_flOutput0&quot;: 0.000000,
+			&quot;m_flOutput1&quot;: 1.000000,
+			&quot;m_flNotchedRangeMin&quot;: 0.000000,
+			&quot;m_flNotchedRangeMax&quot;: 1.000000,
+			&quot;m_flNotchedOutputOutside&quot;: 0.000000,
+			&quot;m_flNotchedOutputInside&quot;: 1.000000,
+			&quot;m_nRoundType&quot;: &quot;PF_ROUND_TYPE_NEAREST&quot;,
+			&quot;m_nBiasType&quot;: &quot;PF_BIAS_TYPE_STANDARD&quot;,
+			&quot;m_flBiasParameter&quot;: 0.000000,
+			&quot;m_Curve&quot;:
+			{
+				&quot;m_spline&quot;:
+				[
+				],
+				&quot;m_tangents&quot;:
+				[
+				],
+				&quot;m_vDomainMins&quot;:
+				[
+					0.000000,
+					0.000000
+				],
+				&quot;m_vDomainMaxs&quot;:
+				[
+					0.000000,
+					0.000000
+				]
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
+		},
+		&quot;m_FloatComponentY&quot;:
+		{
+			&quot;m_nType&quot;: &quot;PF_TYPE_LITERAL&quot;,
+			&quot;m_nMapType&quot;: &quot;PF_MAP_TYPE_DIRECT&quot;,
+			&quot;m_flLiteralValue&quot;: 0.000000,
+			&quot;m_NamedValue&quot;: &quot;&quot;,
+			&quot;m_nControlPoint&quot;: 0,
+			&quot;m_nScalarAttribute&quot;: 3,
+			&quot;m_nVectorAttribute&quot;: 6,
+			&quot;m_nVectorComponent&quot;: 0,
+			&quot;m_bReverseOrder&quot;: false,
+			&quot;m_flRandomMin&quot;: 0.000000,
+			&quot;m_flRandomMax&quot;: 1.000000,
+			&quot;m_bHasRandomSignFlip&quot;: false,
+			&quot;m_nRandomSeed&quot;: &lt;HIDDEN FOR DIFF&gt;,
+			&quot;m_nRandomMode&quot;: &quot;PF_RANDOM_MODE_CONSTANT&quot;,
+			&quot;m_strSnapshotSubset&quot;: &quot;&quot;,
+			&quot;m_flLOD0&quot;: 0.000000,
+			&quot;m_flLOD1&quot;: 0.000000,
+			&quot;m_flLOD2&quot;: 0.000000,
+			&quot;m_flLOD3&quot;: 0.000000,
+			&quot;m_nNoiseInputVectorAttribute&quot;: 0,
+			&quot;m_flNoiseOutputMin&quot;: 0.000000,
+			&quot;m_flNoiseOutputMax&quot;: 1.000000,
+			&quot;m_flNoiseScale&quot;: 0.100000,
+			&quot;m_vecNoiseOffsetRate&quot;:
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			&quot;m_flNoiseOffset&quot;: 0.000000,
+			&quot;m_nNoiseOctaves&quot;: 1,
+			&quot;m_nNoiseTurbulence&quot;: &quot;PF_NOISE_TURB_NONE&quot;,
+			&quot;m_nNoiseType&quot;: &quot;PF_NOISE_TYPE_PERLIN&quot;,
+			&quot;m_nNoiseModifier&quot;: &quot;PF_NOISE_MODIFIER_NONE&quot;,
+			&quot;m_flNoiseTurbulenceScale&quot;: 1.000000,
+			&quot;m_flNoiseTurbulenceMix&quot;: 0.500000,
+			&quot;m_flNoiseImgPreviewScale&quot;: 1.000000,
+			&quot;m_bNoiseImgPreviewLive&quot;: true,
+			&quot;m_flNoCameraFallback&quot;: 0.000000,
+			&quot;m_bUseBoundsCenter&quot;: false,
+			&quot;m_nInputMode&quot;: &quot;PF_INPUT_MODE_CLAMPED&quot;,
+			&quot;m_flMultFactor&quot;: 1.000000,
+			&quot;m_flInput0&quot;: 0.000000,
+			&quot;m_flInput1&quot;: 1.000000,
+			&quot;m_flOutput0&quot;: 0.000000,
+			&quot;m_flOutput1&quot;: 1.000000,
+			&quot;m_flNotchedRangeMin&quot;: 0.000000,
+			&quot;m_flNotchedRangeMax&quot;: 1.000000,
+			&quot;m_flNotchedOutputOutside&quot;: 0.000000,
+			&quot;m_flNotchedOutputInside&quot;: 1.000000,
+			&quot;m_nRoundType&quot;: &quot;PF_ROUND_TYPE_NEAREST&quot;,
+			&quot;m_nBiasType&quot;: &quot;PF_BIAS_TYPE_STANDARD&quot;,
+			&quot;m_flBiasParameter&quot;: 0.000000,
+			&quot;m_Curve&quot;:
+			{
+				&quot;m_spline&quot;:
+				[
+				],
+				&quot;m_tangents&quot;:
+				[
+				],
+				&quot;m_vDomainMins&quot;:
+				[
+					0.000000,
+					0.000000
+				],
+				&quot;m_vDomainMaxs&quot;:
+				[
+					0.000000,
+					0.000000
+				]
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
+		},
+		&quot;m_FloatComponentZ&quot;:
+		{
+			&quot;m_nType&quot;: &quot;PF_TYPE_LITERAL&quot;,
+			&quot;m_nMapType&quot;: &quot;PF_MAP_TYPE_DIRECT&quot;,
+			&quot;m_flLiteralValue&quot;: 0.000000,
+			&quot;m_NamedValue&quot;: &quot;&quot;,
+			&quot;m_nControlPoint&quot;: 0,
+			&quot;m_nScalarAttribute&quot;: 3,
+			&quot;m_nVectorAttribute&quot;: 6,
+			&quot;m_nVectorComponent&quot;: 0,
+			&quot;m_bReverseOrder&quot;: false,
+			&quot;m_flRandomMin&quot;: 0.000000,
+			&quot;m_flRandomMax&quot;: 1.000000,
+			&quot;m_bHasRandomSignFlip&quot;: false,
+			&quot;m_nRandomSeed&quot;: &lt;HIDDEN FOR DIFF&gt;,
+			&quot;m_nRandomMode&quot;: &quot;PF_RANDOM_MODE_CONSTANT&quot;,
+			&quot;m_strSnapshotSubset&quot;: &quot;&quot;,
+			&quot;m_flLOD0&quot;: 0.000000,
+			&quot;m_flLOD1&quot;: 0.000000,
+			&quot;m_flLOD2&quot;: 0.000000,
+			&quot;m_flLOD3&quot;: 0.000000,
+			&quot;m_nNoiseInputVectorAttribute&quot;: 0,
+			&quot;m_flNoiseOutputMin&quot;: 0.000000,
+			&quot;m_flNoiseOutputMax&quot;: 1.000000,
+			&quot;m_flNoiseScale&quot;: 0.100000,
+			&quot;m_vecNoiseOffsetRate&quot;:
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			&quot;m_flNoiseOffset&quot;: 0.000000,
+			&quot;m_nNoiseOctaves&quot;: 1,
+			&quot;m_nNoiseTurbulence&quot;: &quot;PF_NOISE_TURB_NONE&quot;,
+			&quot;m_nNoiseType&quot;: &quot;PF_NOISE_TYPE_PERLIN&quot;,
+			&quot;m_nNoiseModifier&quot;: &quot;PF_NOISE_MODIFIER_NONE&quot;,
+			&quot;m_flNoiseTurbulenceScale&quot;: 1.000000,
+			&quot;m_flNoiseTurbulenceMix&quot;: 0.500000,
+			&quot;m_flNoiseImgPreviewScale&quot;: 1.000000,
+			&quot;m_bNoiseImgPreviewLive&quot;: true,
+			&quot;m_flNoCameraFallback&quot;: 0.000000,
+			&quot;m_bUseBoundsCenter&quot;: false,
+			&quot;m_nInputMode&quot;: &quot;PF_INPUT_MODE_CLAMPED&quot;,
+			&quot;m_flMultFactor&quot;: 1.000000,
+			&quot;m_flInput0&quot;: 0.000000,
+			&quot;m_flInput1&quot;: 1.000000,
+			&quot;m_flOutput0&quot;: 0.000000,
+			&quot;m_flOutput1&quot;: 1.000000,
+			&quot;m_flNotchedRangeMin&quot;: 0.000000,
+			&quot;m_flNotchedRangeMax&quot;: 1.000000,
+			&quot;m_flNotchedOutputOutside&quot;: 0.000000,
+			&quot;m_flNotchedOutputInside&quot;: 1.000000,
+			&quot;m_nRoundType&quot;: &quot;PF_ROUND_TYPE_NEAREST&quot;,
+			&quot;m_nBiasType&quot;: &quot;PF_BIAS_TYPE_STANDARD&quot;,
+			&quot;m_flBiasParameter&quot;: 0.000000,
+			&quot;m_Curve&quot;:
+			{
+				&quot;m_spline&quot;:
+				[
+				],
+				&quot;m_tangents&quot;:
+				[
+				],
+				&quot;m_vDomainMins&quot;:
+				[
+					0.000000,
+					0.000000
+				],
+				&quot;m_vDomainMaxs&quot;:
+				[
+					0.000000,
+					0.000000
+				]
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
+		},
+		&quot;m_FloatInterp&quot;:
+		{
+			&quot;m_nType&quot;: &quot;PF_TYPE_LITERAL&quot;,
+			&quot;m_nMapType&quot;: &quot;PF_MAP_TYPE_DIRECT&quot;,
+			&quot;m_flLiteralValue&quot;: 0.000000,
+			&quot;m_NamedValue&quot;: &quot;&quot;,
+			&quot;m_nControlPoint&quot;: 0,
+			&quot;m_nScalarAttribute&quot;: 3,
+			&quot;m_nVectorAttribute&quot;: 6,
+			&quot;m_nVectorComponent&quot;: 0,
+			&quot;m_bReverseOrder&quot;: false,
+			&quot;m_flRandomMin&quot;: 0.000000,
+			&quot;m_flRandomMax&quot;: 1.000000,
+			&quot;m_bHasRandomSignFlip&quot;: false,
+			&quot;m_nRandomSeed&quot;: &lt;HIDDEN FOR DIFF&gt;,
+			&quot;m_nRandomMode&quot;: &quot;PF_RANDOM_MODE_CONSTANT&quot;,
+			&quot;m_strSnapshotSubset&quot;: &quot;&quot;,
+			&quot;m_flLOD0&quot;: 0.000000,
+			&quot;m_flLOD1&quot;: 0.000000,
+			&quot;m_flLOD2&quot;: 0.000000,
+			&quot;m_flLOD3&quot;: 0.000000,
+			&quot;m_nNoiseInputVectorAttribute&quot;: 0,
+			&quot;m_flNoiseOutputMin&quot;: 0.000000,
+			&quot;m_flNoiseOutputMax&quot;: 1.000000,
+			&quot;m_flNoiseScale&quot;: 0.100000,
+			&quot;m_vecNoiseOffsetRate&quot;:
+			[
+				0.000000,
+				0.000000,
+				0.000000
+			],
+			&quot;m_flNoiseOffset&quot;: 0.000000,
+			&quot;m_nNoiseOctaves&quot;: 1,
+			&quot;m_nNoiseTurbulence&quot;: &quot;PF_NOISE_TURB_NONE&quot;,
+			&quot;m_nNoiseType&quot;: &quot;PF_NOISE_TYPE_PERLIN&quot;,
+			&quot;m_nNoiseModifier&quot;: &quot;PF_NOISE_MODIFIER_NONE&quot;,
+			&quot;m_flNoiseTurbulenceScale&quot;: 1.000000,
+			&quot;m_flNoiseTurbulenceMix&quot;: 0.500000,
+			&quot;m_flNoiseImgPreviewScale&quot;: 1.000000,
+			&quot;m_bNoiseImgPreviewLive&quot;: true,
+			&quot;m_flNoCameraFallback&quot;: 0.000000,
+			&quot;m_bUseBoundsCenter&quot;: false,
+			&quot;m_nInputMode&quot;: &quot;PF_INPUT_MODE_CLAMPED&quot;,
+			&quot;m_flMultFactor&quot;: 1.000000,
+			&quot;m_flInput0&quot;: 0.000000,
+			&quot;m_flInput1&quot;: 1.000000,
+			&quot;m_flOutput0&quot;: 0.000000,
+			&quot;m_flOutput1&quot;: 1.000000,
+			&quot;m_flNotchedRangeMin&quot;: 0.000000,
+			&quot;m_flNotchedRangeMax&quot;: 1.000000,
+			&quot;m_flNotchedOutputOutside&quot;: 0.000000,
+			&quot;m_flNotchedOutputInside&quot;: 1.000000,
+			&quot;m_nRoundType&quot;: &quot;PF_ROUND_TYPE_NEAREST&quot;,
+			&quot;m_nBiasType&quot;: &quot;PF_BIAS_TYPE_STANDARD&quot;,
+			&quot;m_flBiasParameter&quot;: 0.000000,
+			&quot;m_Curve&quot;:
+			{
+				&quot;m_spline&quot;:
+				[
+				],
+				&quot;m_tangents&quot;:
+				[
+				],
+				&quot;m_vDomainMins&quot;:
+				[
+					0.000000,
+					0.000000
+				],
+				&quot;m_vDomainMaxs&quot;:
+				[
+					0.000000,
+					0.000000
+				]
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
+		},
+		&quot;m_flInterpInput0&quot;: 0.000000,
+		&quot;m_flInterpInput1&quot;: 1.000000,
+		&quot;m_vInterpOutput0&quot;:
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		&quot;m_vInterpOutput1&quot;:
+		[
+			1.000000,
+			1.000000,
+			1.000000
+		],
+		&quot;m_Gradient&quot;:
+		{
+			&quot;m_Stops&quot;:
+			[
+			]
+		},
+		&quot;m_vRandomMin&quot;:
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		&quot;m_vRandomMax&quot;:
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		]
+	},
+	&quot;m_flFOVAngle&quot;:
+	{
+		&quot;m_nType&quot;: &quot;PF_TYPE_LITERAL&quot;,
+		&quot;m_nMapType&quot;: &quot;PF_MAP_TYPE_DIRECT&quot;,
+		&quot;m_flLiteralValue&quot;: 30.000000,
+		&quot;m_NamedValue&quot;: &quot;&quot;,
+		&quot;m_nControlPoint&quot;: 0,
+		&quot;m_nScalarAttribute&quot;: 3,
+		&quot;m_nVectorAttribute&quot;: 6,
+		&quot;m_nVectorComponent&quot;: 0,
+		&quot;m_bReverseOrder&quot;: false,
+		&quot;m_flRandomMin&quot;: 0.000000,
+		&quot;m_flRandomMax&quot;: 1.000000,
+		&quot;m_bHasRandomSignFlip&quot;: false,
+		&quot;m_nRandomSeed&quot;: &lt;HIDDEN FOR DIFF&gt;,
+		&quot;m_nRandomMode&quot;: &quot;PF_RANDOM_MODE_CONSTANT&quot;,
+		&quot;m_strSnapshotSubset&quot;: &quot;&quot;,
+		&quot;m_flLOD0&quot;: 0.000000,
+		&quot;m_flLOD1&quot;: 0.000000,
+		&quot;m_flLOD2&quot;: 0.000000,
+		&quot;m_flLOD3&quot;: 0.000000,
+		&quot;m_nNoiseInputVectorAttribute&quot;: 0,
+		&quot;m_flNoiseOutputMin&quot;: 0.000000,
+		&quot;m_flNoiseOutputMax&quot;: 1.000000,
+		&quot;m_flNoiseScale&quot;: 0.100000,
+		&quot;m_vecNoiseOffsetRate&quot;:
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		&quot;m_flNoiseOffset&quot;: 0.000000,
+		&quot;m_nNoiseOctaves&quot;: 1,
+		&quot;m_nNoiseTurbulence&quot;: &quot;PF_NOISE_TURB_NONE&quot;,
+		&quot;m_nNoiseType&quot;: &quot;PF_NOISE_TYPE_PERLIN&quot;,
+		&quot;m_nNoiseModifier&quot;: &quot;PF_NOISE_MODIFIER_NONE&quot;,
+		&quot;m_flNoiseTurbulenceScale&quot;: 1.000000,
+		&quot;m_flNoiseTurbulenceMix&quot;: 0.500000,
+		&quot;m_flNoiseImgPreviewScale&quot;: 1.000000,
+		&quot;m_bNoiseImgPreviewLive&quot;: true,
+		&quot;m_flNoCameraFallback&quot;: 0.000000,
+		&quot;m_bUseBoundsCenter&quot;: false,
+		&quot;m_nInputMode&quot;: &quot;PF_INPUT_MODE_CLAMPED&quot;,
+		&quot;m_flMultFactor&quot;: 1.000000,
+		&quot;m_flInput0&quot;: 0.000000,
+		&quot;m_flInput1&quot;: 1.000000,
+		&quot;m_flOutput0&quot;: 0.000000,
+		&quot;m_flOutput1&quot;: 1.000000,
+		&quot;m_flNotchedRangeMin&quot;: 0.000000,
+		&quot;m_flNotchedRangeMax&quot;: 1.000000,
+		&quot;m_flNotchedOutputOutside&quot;: 0.000000,
+		&quot;m_flNotchedOutputInside&quot;: 1.000000,
+		&quot;m_nRoundType&quot;: &quot;PF_ROUND_TYPE_NEAREST&quot;,
+		&quot;m_nBiasType&quot;: &quot;PF_BIAS_TYPE_STANDARD&quot;,
+		&quot;m_flBiasParameter&quot;: 0.000000,
+		&quot;m_Curve&quot;:
+		{
+			&quot;m_spline&quot;:
+			[
+			],
+			&quot;m_tangents&quot;:
+			[
+			],
+			&quot;m_vDomainMins&quot;:
+			[
+				0.000000,
+				0.000000
+			],
+			&quot;m_vDomainMaxs&quot;:
+			[
+				0.000000,
+				0.000000
+			]
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
+	},
+	&quot;m_flBarnShape&quot;:
+	{
+		&quot;m_nType&quot;: &quot;PF_TYPE_LITERAL&quot;,
+		&quot;m_nMapType&quot;: &quot;PF_MAP_TYPE_DIRECT&quot;,
+		&quot;m_flLiteralValue&quot;: 1.000000,
+		&quot;m_NamedValue&quot;: &quot;&quot;,
+		&quot;m_nControlPoint&quot;: 0,
+		&quot;m_nScalarAttribute&quot;: 3,
+		&quot;m_nVectorAttribute&quot;: 6,
+		&quot;m_nVectorComponent&quot;: 0,
+		&quot;m_bReverseOrder&quot;: false,
+		&quot;m_flRandomMin&quot;: 0.000000,
+		&quot;m_flRandomMax&quot;: 1.000000,
+		&quot;m_bHasRandomSignFlip&quot;: false,
+		&quot;m_nRandomSeed&quot;: &lt;HIDDEN FOR DIFF&gt;,
+		&quot;m_nRandomMode&quot;: &quot;PF_RANDOM_MODE_CONSTANT&quot;,
+		&quot;m_strSnapshotSubset&quot;: &quot;&quot;,
+		&quot;m_flLOD0&quot;: 0.000000,
+		&quot;m_flLOD1&quot;: 0.000000,
+		&quot;m_flLOD2&quot;: 0.000000,
+		&quot;m_flLOD3&quot;: 0.000000,
+		&quot;m_nNoiseInputVectorAttribute&quot;: 0,
+		&quot;m_flNoiseOutputMin&quot;: 0.000000,
+		&quot;m_flNoiseOutputMax&quot;: 1.000000,
+		&quot;m_flNoiseScale&quot;: 0.100000,
+		&quot;m_vecNoiseOffsetRate&quot;:
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		&quot;m_flNoiseOffset&quot;: 0.000000,
+		&quot;m_nNoiseOctaves&quot;: 1,
+		&quot;m_nNoiseTurbulence&quot;: &quot;PF_NOISE_TURB_NONE&quot;,
+		&quot;m_nNoiseType&quot;: &quot;PF_NOISE_TYPE_PERLIN&quot;,
+		&quot;m_nNoiseModifier&quot;: &quot;PF_NOISE_MODIFIER_NONE&quot;,
+		&quot;m_flNoiseTurbulenceScale&quot;: 1.000000,
+		&quot;m_flNoiseTurbulenceMix&quot;: 0.500000,
+		&quot;m_flNoiseImgPreviewScale&quot;: 1.000000,
+		&quot;m_bNoiseImgPreviewLive&quot;: true,
+		&quot;m_flNoCameraFallback&quot;: 0.000000,
+		&quot;m_bUseBoundsCenter&quot;: false,
+		&quot;m_nInputMode&quot;: &quot;PF_INPUT_MODE_CLAMPED&quot;,
+		&quot;m_flMultFactor&quot;: 1.000000,
+		&quot;m_flInput0&quot;: 0.000000,
+		&quot;m_flInput1&quot;: 1.000000,
+		&quot;m_flOutput0&quot;: 0.000000,
+		&quot;m_flOutput1&quot;: 1.000000,
+		&quot;m_flNotchedRangeMin&quot;: 0.000000,
+		&quot;m_flNotchedRangeMax&quot;: 1.000000,
+		&quot;m_flNotchedOutputOutside&quot;: 0.000000,
+		&quot;m_flNotchedOutputInside&quot;: 1.000000,
+		&quot;m_nRoundType&quot;: &quot;PF_ROUND_TYPE_NEAREST&quot;,
+		&quot;m_nBiasType&quot;: &quot;PF_BIAS_TYPE_STANDARD&quot;,
+		&quot;m_flBiasParameter&quot;: 0.000000,
+		&quot;m_Curve&quot;:
+		{
+			&quot;m_spline&quot;:
+			[
+			],
+			&quot;m_tangents&quot;:
+			[
+			],
+			&quot;m_vDomainMins&quot;:
+			[
+				0.000000,
+				0.000000
+			],
+			&quot;m_vDomainMaxs&quot;:
+			[
+				0.000000,
+				0.000000
+			]
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
+	},
+	&quot;m_flBarnNearSizeX&quot;:
+	{
+		&quot;m_nType&quot;: &quot;PF_TYPE_LITERAL&quot;,
+		&quot;m_nMapType&quot;: &quot;PF_MAP_TYPE_DIRECT&quot;,
+		&quot;m_flLiteralValue&quot;: 1.000000,
+		&quot;m_NamedValue&quot;: &quot;&quot;,
+		&quot;m_nControlPoint&quot;: 0,
+		&quot;m_nScalarAttribute&quot;: 3,
+		&quot;m_nVectorAttribute&quot;: 6,
+		&quot;m_nVectorComponent&quot;: 0,
+		&quot;m_bReverseOrder&quot;: false,
+		&quot;m_flRandomMin&quot;: 0.000000,
+		&quot;m_flRandomMax&quot;: 1.000000,
+		&quot;m_bHasRandomSignFlip&quot;: false,
+		&quot;m_nRandomSeed&quot;: &lt;HIDDEN FOR DIFF&gt;,
+		&quot;m_nRandomMode&quot;: &quot;PF_RANDOM_MODE_CONSTANT&quot;,
+		&quot;m_strSnapshotSubset&quot;: &quot;&quot;,
+		&quot;m_flLOD0&quot;: 0.000000,
+		&quot;m_flLOD1&quot;: 0.000000,
+		&quot;m_flLOD2&quot;: 0.000000,
+		&quot;m_flLOD3&quot;: 0.000000,
+		&quot;m_nNoiseInputVectorAttribute&quot;: 0,
+		&quot;m_flNoiseOutputMin&quot;: 0.000000,
+		&quot;m_flNoiseOutputMax&quot;: 1.000000,
+		&quot;m_flNoiseScale&quot;: 0.100000,
+		&quot;m_vecNoiseOffsetRate&quot;:
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		&quot;m_flNoiseOffset&quot;: 0.000000,
+		&quot;m_nNoiseOctaves&quot;: 1,
+		&quot;m_nNoiseTurbulence&quot;: &quot;PF_NOISE_TURB_NONE&quot;,
+		&quot;m_nNoiseType&quot;: &quot;PF_NOISE_TYPE_PERLIN&quot;,
+		&quot;m_nNoiseModifier&quot;: &quot;PF_NOISE_MODIFIER_NONE&quot;,
+		&quot;m_flNoiseTurbulenceScale&quot;: 1.000000,
+		&quot;m_flNoiseTurbulenceMix&quot;: 0.500000,
+		&quot;m_flNoiseImgPreviewScale&quot;: 1.000000,
+		&quot;m_bNoiseImgPreviewLive&quot;: true,
+		&quot;m_flNoCameraFallback&quot;: 0.000000,
+		&quot;m_bUseBoundsCenter&quot;: false,
+		&quot;m_nInputMode&quot;: &quot;PF_INPUT_MODE_CLAMPED&quot;,
+		&quot;m_flMultFactor&quot;: 1.000000,
+		&quot;m_flInput0&quot;: 0.000000,
+		&quot;m_flInput1&quot;: 1.000000,
+		&quot;m_flOutput0&quot;: 0.000000,
+		&quot;m_flOutput1&quot;: 1.000000,
+		&quot;m_flNotchedRangeMin&quot;: 0.000000,
+		&quot;m_flNotchedRangeMax&quot;: 1.000000,
+		&quot;m_flNotchedOutputOutside&quot;: 0.000000,
+		&quot;m_flNotchedOutputInside&quot;: 1.000000,
+		&quot;m_nRoundType&quot;: &quot;PF_ROUND_TYPE_NEAREST&quot;,
+		&quot;m_nBiasType&quot;: &quot;PF_BIAS_TYPE_STANDARD&quot;,
+		&quot;m_flBiasParameter&quot;: 0.000000,
+		&quot;m_Curve&quot;:
+		{
+			&quot;m_spline&quot;:
+			[
+			],
+			&quot;m_tangents&quot;:
+			[
+			],
+			&quot;m_vDomainMins&quot;:
+			[
+				0.000000,
+				0.000000
+			],
+			&quot;m_vDomainMaxs&quot;:
+			[
+				0.000000,
+				0.000000
+			]
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
+	},
+	&quot;m_flBarnNearSizeY&quot;:
+	{
+		&quot;m_nType&quot;: &quot;PF_TYPE_LITERAL&quot;,
+		&quot;m_nMapType&quot;: &quot;PF_MAP_TYPE_DIRECT&quot;,
+		&quot;m_flLiteralValue&quot;: 1.000000,
+		&quot;m_NamedValue&quot;: &quot;&quot;,
+		&quot;m_nControlPoint&quot;: 0,
+		&quot;m_nScalarAttribute&quot;: 3,
+		&quot;m_nVectorAttribute&quot;: 6,
+		&quot;m_nVectorComponent&quot;: 0,
+		&quot;m_bReverseOrder&quot;: false,
+		&quot;m_flRandomMin&quot;: 0.000000,
+		&quot;m_flRandomMax&quot;: 1.000000,
+		&quot;m_bHasRandomSignFlip&quot;: false,
+		&quot;m_nRandomSeed&quot;: &lt;HIDDEN FOR DIFF&gt;,
+		&quot;m_nRandomMode&quot;: &quot;PF_RANDOM_MODE_CONSTANT&quot;,
+		&quot;m_strSnapshotSubset&quot;: &quot;&quot;,
+		&quot;m_flLOD0&quot;: 0.000000,
+		&quot;m_flLOD1&quot;: 0.000000,
+		&quot;m_flLOD2&quot;: 0.000000,
+		&quot;m_flLOD3&quot;: 0.000000,
+		&quot;m_nNoiseInputVectorAttribute&quot;: 0,
+		&quot;m_flNoiseOutputMin&quot;: 0.000000,
+		&quot;m_flNoiseOutputMax&quot;: 1.000000,
+		&quot;m_flNoiseScale&quot;: 0.100000,
+		&quot;m_vecNoiseOffsetRate&quot;:
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		&quot;m_flNoiseOffset&quot;: 0.000000,
+		&quot;m_nNoiseOctaves&quot;: 1,
+		&quot;m_nNoiseTurbulence&quot;: &quot;PF_NOISE_TURB_NONE&quot;,
+		&quot;m_nNoiseType&quot;: &quot;PF_NOISE_TYPE_PERLIN&quot;,
+		&quot;m_nNoiseModifier&quot;: &quot;PF_NOISE_MODIFIER_NONE&quot;,
+		&quot;m_flNoiseTurbulenceScale&quot;: 1.000000,
+		&quot;m_flNoiseTurbulenceMix&quot;: 0.500000,
+		&quot;m_flNoiseImgPreviewScale&quot;: 1.000000,
+		&quot;m_bNoiseImgPreviewLive&quot;: true,
+		&quot;m_flNoCameraFallback&quot;: 0.000000,
+		&quot;m_bUseBoundsCenter&quot;: false,
+		&quot;m_nInputMode&quot;: &quot;PF_INPUT_MODE_CLAMPED&quot;,
+		&quot;m_flMultFactor&quot;: 1.000000,
+		&quot;m_flInput0&quot;: 0.000000,
+		&quot;m_flInput1&quot;: 1.000000,
+		&quot;m_flOutput0&quot;: 0.000000,
+		&quot;m_flOutput1&quot;: 1.000000,
+		&quot;m_flNotchedRangeMin&quot;: 0.000000,
+		&quot;m_flNotchedRangeMax&quot;: 1.000000,
+		&quot;m_flNotchedOutputOutside&quot;: 0.000000,
+		&quot;m_flNotchedOutputInside&quot;: 1.000000,
+		&quot;m_nRoundType&quot;: &quot;PF_ROUND_TYPE_NEAREST&quot;,
+		&quot;m_nBiasType&quot;: &quot;PF_BIAS_TYPE_STANDARD&quot;,
+		&quot;m_flBiasParameter&quot;: 0.000000,
+		&quot;m_Curve&quot;:
+		{
+			&quot;m_spline&quot;:
+			[
+			],
+			&quot;m_tangents&quot;:
+			[
+			],
+			&quot;m_vDomainMins&quot;:
+			[
+				0.000000,
+				0.000000
+			],
+			&quot;m_vDomainMaxs&quot;:
+			[
+				0.000000,
+				0.000000
+			]
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
+	},
+	&quot;m_flBarnSoftX&quot;:
+	{
+		&quot;m_nType&quot;: &quot;PF_TYPE_LITERAL&quot;,
+		&quot;m_nMapType&quot;: &quot;PF_MAP_TYPE_DIRECT&quot;,
+		&quot;m_flLiteralValue&quot;: 0.250000,
+		&quot;m_NamedValue&quot;: &quot;&quot;,
+		&quot;m_nControlPoint&quot;: 0,
+		&quot;m_nScalarAttribute&quot;: 3,
+		&quot;m_nVectorAttribute&quot;: 6,
+		&quot;m_nVectorComponent&quot;: 0,
+		&quot;m_bReverseOrder&quot;: false,
+		&quot;m_flRandomMin&quot;: 0.000000,
+		&quot;m_flRandomMax&quot;: 1.000000,
+		&quot;m_bHasRandomSignFlip&quot;: false,
+		&quot;m_nRandomSeed&quot;: &lt;HIDDEN FOR DIFF&gt;,
+		&quot;m_nRandomMode&quot;: &quot;PF_RANDOM_MODE_CONSTANT&quot;,
+		&quot;m_strSnapshotSubset&quot;: &quot;&quot;,
+		&quot;m_flLOD0&quot;: 0.000000,
+		&quot;m_flLOD1&quot;: 0.000000,
+		&quot;m_flLOD2&quot;: 0.000000,
+		&quot;m_flLOD3&quot;: 0.000000,
+		&quot;m_nNoiseInputVectorAttribute&quot;: 0,
+		&quot;m_flNoiseOutputMin&quot;: 0.000000,
+		&quot;m_flNoiseOutputMax&quot;: 1.000000,
+		&quot;m_flNoiseScale&quot;: 0.100000,
+		&quot;m_vecNoiseOffsetRate&quot;:
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		&quot;m_flNoiseOffset&quot;: 0.000000,
+		&quot;m_nNoiseOctaves&quot;: 1,
+		&quot;m_nNoiseTurbulence&quot;: &quot;PF_NOISE_TURB_NONE&quot;,
+		&quot;m_nNoiseType&quot;: &quot;PF_NOISE_TYPE_PERLIN&quot;,
+		&quot;m_nNoiseModifier&quot;: &quot;PF_NOISE_MODIFIER_NONE&quot;,
+		&quot;m_flNoiseTurbulenceScale&quot;: 1.000000,
+		&quot;m_flNoiseTurbulenceMix&quot;: 0.500000,
+		&quot;m_flNoiseImgPreviewScale&quot;: 1.000000,
+		&quot;m_bNoiseImgPreviewLive&quot;: true,
+		&quot;m_flNoCameraFallback&quot;: 0.000000,
+		&quot;m_bUseBoundsCenter&quot;: false,
+		&quot;m_nInputMode&quot;: &quot;PF_INPUT_MODE_CLAMPED&quot;,
+		&quot;m_flMultFactor&quot;: 1.000000,
+		&quot;m_flInput0&quot;: 0.000000,
+		&quot;m_flInput1&quot;: 1.000000,
+		&quot;m_flOutput0&quot;: 0.000000,
+		&quot;m_flOutput1&quot;: 1.000000,
+		&quot;m_flNotchedRangeMin&quot;: 0.000000,
+		&quot;m_flNotchedRangeMax&quot;: 1.000000,
+		&quot;m_flNotchedOutputOutside&quot;: 0.000000,
+		&quot;m_flNotchedOutputInside&quot;: 1.000000,
+		&quot;m_nRoundType&quot;: &quot;PF_ROUND_TYPE_NEAREST&quot;,
+		&quot;m_nBiasType&quot;: &quot;PF_BIAS_TYPE_STANDARD&quot;,
+		&quot;m_flBiasParameter&quot;: 0.000000,
+		&quot;m_Curve&quot;:
+		{
+			&quot;m_spline&quot;:
+			[
+			],
+			&quot;m_tangents&quot;:
+			[
+			],
+			&quot;m_vDomainMins&quot;:
+			[
+				0.000000,
+				0.000000
+			],
+			&quot;m_vDomainMaxs&quot;:
+			[
+				0.000000,
+				0.000000
+			]
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
+	},
+	&quot;m_flBarnSoftY&quot;:
+	{
+		&quot;m_nType&quot;: &quot;PF_TYPE_LITERAL&quot;,
+		&quot;m_nMapType&quot;: &quot;PF_MAP_TYPE_DIRECT&quot;,
+		&quot;m_flLiteralValue&quot;: 0.250000,
+		&quot;m_NamedValue&quot;: &quot;&quot;,
+		&quot;m_nControlPoint&quot;: 0,
+		&quot;m_nScalarAttribute&quot;: 3,
+		&quot;m_nVectorAttribute&quot;: 6,
+		&quot;m_nVectorComponent&quot;: 0,
+		&quot;m_bReverseOrder&quot;: false,
+		&quot;m_flRandomMin&quot;: 0.000000,
+		&quot;m_flRandomMax&quot;: 1.000000,
+		&quot;m_bHasRandomSignFlip&quot;: false,
+		&quot;m_nRandomSeed&quot;: &lt;HIDDEN FOR DIFF&gt;,
+		&quot;m_nRandomMode&quot;: &quot;PF_RANDOM_MODE_CONSTANT&quot;,
+		&quot;m_strSnapshotSubset&quot;: &quot;&quot;,
+		&quot;m_flLOD0&quot;: 0.000000,
+		&quot;m_flLOD1&quot;: 0.000000,
+		&quot;m_flLOD2&quot;: 0.000000,
+		&quot;m_flLOD3&quot;: 0.000000,
+		&quot;m_nNoiseInputVectorAttribute&quot;: 0,
+		&quot;m_flNoiseOutputMin&quot;: 0.000000,
+		&quot;m_flNoiseOutputMax&quot;: 1.000000,
+		&quot;m_flNoiseScale&quot;: 0.100000,
+		&quot;m_vecNoiseOffsetRate&quot;:
+		[
+			0.000000,
+			0.000000,
+			0.000000
+		],
+		&quot;m_flNoiseOffset&quot;: 0.000000,
+		&quot;m_nNoiseOctaves&quot;: 1,
+		&quot;m_nNoiseTurbulence&quot;: &quot;PF_NOISE_TURB_NONE&quot;,
+		&quot;m_nNoiseType&quot;: &quot;PF_NOISE_TYPE_PERLIN&quot;,
+		&quot;m_nNoiseModifier&quot;: &quot;PF_NOISE_MODIFIER_NONE&quot;,
+		&quot;m_flNoiseTurbulenceScale&quot;: 1.000000,
+		&quot;m_flNoiseTurbulenceMix&quot;: 0.500000,
+		&quot;m_flNoiseImgPreviewScale&quot;: 1.000000,
+		&quot;m_bNoiseImgPreviewLive&quot;: true,
+		&quot;m_flNoCameraFallback&quot;: 0.000000,
+		&quot;m_bUseBoundsCenter&quot;: false,
+		&quot;m_nInputMode&quot;: &quot;PF_INPUT_MODE_CLAMPED&quot;,
+		&quot;m_flMultFactor&quot;: 1.000000,
+		&quot;m_flInput0&quot;: 0.000000,
+		&quot;m_flInput1&quot;: 1.000000,
+		&quot;m_flOutput0&quot;: 0.000000,
+		&quot;m_flOutput1&quot;: 1.000000,
+		&quot;m_flNotchedRangeMin&quot;: 0.000000,
+		&quot;m_flNotchedRangeMax&quot;: 1.000000,
+		&quot;m_flNotchedOutputOutside&quot;: 0.000000,
+		&quot;m_flNotchedOutputInside&quot;: 1.000000,
+		&quot;m_nRoundType&quot;: &quot;PF_ROUND_TYPE_NEAREST&quot;,
+		&quot;m_nBiasType&quot;: &quot;PF_BIAS_TYPE_STANDARD&quot;,
+		&quot;m_flBiasParameter&quot;: 0.000000,
+		&quot;m_Curve&quot;:
+		{
+			&quot;m_spline&quot;:
+			[
+			],
+			&quot;m_tangents&quot;:
+			[
+			],
+			&quot;m_vDomainMins&quot;:
+			[
+				0.000000,
+				0.000000
+			],
+			&quot;m_vDomainMaxs&quot;:
+			[
+				0.000000,
+				0.000000
+			]
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flSkirt&quot;:
 	{
@@ -1104,7 +2343,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flRange&quot;:
 	{
@@ -1179,7 +2419,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flInnerConeAngle&quot;:
 	{
@@ -1254,7 +2495,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flOuterConeAngle&quot;:
 	{
@@ -1329,7 +2571,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_hLightCookie&quot;: &quot;&quot;,
 	&quot;m_bSphericalCookie&quot;: true

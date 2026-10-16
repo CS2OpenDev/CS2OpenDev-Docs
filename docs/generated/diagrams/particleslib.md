@@ -28,6 +28,7 @@ classDiagram
     CNewParticleEffect --> CParticleProperty
     CParticleFloatInput *-- ParticleFloatType_t
     CParticleFloatInput *-- ParticleFloatMapType_t
+    CParticleFloatInput *-- ParticleAttributeIndex_t
     CParticleFloatInput *-- ParticleFloatRandomMode_t
     CParticleFloatInput *-- PFNoiseTurbulence_t
     CParticleFloatInput *-- PFNoiseType_t
@@ -38,6 +39,7 @@ classDiagram
     CParticleModelInput *-- ParticleModelType_t
     CParticleTransformInput *-- ParticleTransformType_t
     CParticleVecInput *-- ParticleVecType_t
+    CParticleVecInput *-- ParticleAttributeIndex_t
     CParticleVecInput *-- CParticleFloatInput
     ParticleNamedValueSource_t *-- ParticleNamedValueConfiguration_t
 ```

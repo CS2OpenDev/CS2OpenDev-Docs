@@ -71,6 +71,14 @@ direction LR
     +uint32 netframes_size_exceeds_mtu
     +uint32 netframes_size_p95
     +uint32 netframes_size_p99
+    +uint32 netframes_size_uncompressed_p50
+    +uint32 netframes_size_uncompressed_p95
+    +uint32 netframes_size_uncompressed_p99
+    +uint32 netframes_size_uncompressed_max
+    +uint32 netframes_msgs_p50
+    +uint32 netframes_msgs_p95
+    +uint32 netframes_msgs_p99
+    +uint32 netframes_msgs_max
     +uint32 ticks_total
     +uint32 ticks_good
     +uint32 ticks_good_almost_late
@@ -100,6 +108,18 @@ direction LR
     +uint32 net_ping_p5
     +uint32 net_ping_p50
     +uint32 net_ping_p95
+    +uint32 msgproc_usec_p50
+    +uint32 msgproc_usec_p95
+    +uint32 msgproc_usec_p99
+    +uint32 msgproc_usec_max
+    +uint32 msgproc_usec_avg_p50
+    +uint32 msgproc_usec_avg_p95
+    +uint32 msgproc_usec_avg_p99
+    +uint32 msgproc_usec_avg_max
+    +uint32 queuedmsgs_p50
+    +uint32 queuedmsgs_p95
+    +uint32 queuedmsgs_p99
+    +uint32 queuedmsgs_max
   }
 
   class CMsgSource2PerfIntervalSample {
@@ -328,6 +348,14 @@ direction LR
 | `bytes_total_voice` | 7 | uint64 | optional |  |
 | `bytes_sec_p95` | 10 | uint32 | optional |  |
 | `bytes_sec_p99` | 11 | uint32 | optional |  |
+| `netframes_size_uncompressed_p50` | 12 | uint32 | optional |  |
+| `netframes_size_uncompressed_p95` | 13 | uint32 | optional |  |
+| `netframes_size_uncompressed_p99` | 14 | uint32 | optional |  |
+| `netframes_size_uncompressed_max` | 15 | uint32 | optional |  |
+| `netframes_msgs_p50` | 16 | uint32 | optional |  |
+| `netframes_msgs_p95` | 17 | uint32 | optional |  |
+| `netframes_msgs_p99` | 18 | uint32 | optional |  |
+| `netframes_msgs_max` | 19 | uint32 | optional |  |
 | `enginemsgs_total` | 20 | uint32 | optional |  |
 | `enginemsgs_sec_p95` | 21 | uint32 | optional |  |
 | `enginemsgs_sec_p99` | 22 | uint32 | optional |  |
@@ -366,6 +394,18 @@ direction LR
 | `net_ping_p5` | 80 | uint32 | optional |  |
 | `net_ping_p50` | 81 | uint32 | optional |  |
 | `net_ping_p95` | 82 | uint32 | optional |  |
+| `msgproc_usec_p50` | 90 | uint32 | optional |  |
+| `msgproc_usec_p95` | 91 | uint32 | optional |  |
+| `msgproc_usec_p99` | 92 | uint32 | optional |  |
+| `msgproc_usec_max` | 93 | uint32 | optional |  |
+| `msgproc_usec_avg_p50` | 94 | uint32 | optional |  |
+| `msgproc_usec_avg_p95` | 95 | uint32 | optional |  |
+| `msgproc_usec_avg_p99` | 96 | uint32 | optional |  |
+| `msgproc_usec_avg_max` | 97 | uint32 | optional |  |
+| `queuedmsgs_p50` | 100 | uint32 | optional |  |
+| `queuedmsgs_p95` | 101 | uint32 | optional |  |
+| `queuedmsgs_p99` | 102 | uint32 | optional |  |
+| `queuedmsgs_max` | 103 | uint32 | optional |  |
 
 ### `CMsgSource2PerfIntervalSample`
 

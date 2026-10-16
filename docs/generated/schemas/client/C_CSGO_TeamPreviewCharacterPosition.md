@@ -8,9 +8,9 @@ kind: class
 
 # C_CSGO_TeamPreviewCharacterPosition
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 5024 bytes (`0x13a0`) · **Align:** n/a (unspecified) · **Module:** client
+**Kind:** class · **Size:** 7448 bytes (`0x1d18`) · **Align:** n/a (unspecified) · **Module:** client
 
 **Inherits from:** [C_BaseEntity](../client/C_BaseEntity.md)
 
@@ -30,7 +30,7 @@ classDiagram
 
 ## Memory layout
 
-93 fields (8 declared here, 85 inherited). Offsets are absolute from the object base.
+94 fields (9 declared here, 85 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -125,5 +125,6 @@ classDiagram
 | `0x610` | `m_sWeaponName` | CUtlString |  |  |
 | `0x618` | `m_xuid` | uint64 |  |  |
 | `0x620` | `m_agentItem` | [C_EconItemView](../client/C_EconItemView.md) |  |  |
-| `0xa90` | `m_glovesItem` | [C_EconItemView](../client/C_EconItemView.md) |  |  |
-| `0xf00` | `m_weaponItem` | [C_EconItemView](../client/C_EconItemView.md) |  |  |
+| `0xbd0` | `m_glovesItem` | [C_EconItemView](../client/C_EconItemView.md) |  |  |
+| `0x1180` | `m_weaponItem` | [C_EconItemView](../client/C_EconItemView.md) |  |  |
+| `0x1730` | `m_petItem` | [C_EconItemView](../client/C_EconItemView.md) |  |  |

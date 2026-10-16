@@ -8,7 +8,7 @@ kind: class
 
 # C_PointCamera
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 1632 bytes (`0x660`) · **Align:** 8 · **Module:** client
 
@@ -121,7 +121,7 @@ classDiagram
 | `0x600` | `m_FOV` | float32 |  |  |
 | `0x604` | `m_Resolution` | float32 |  |  |
 | `0x608` | `m_bFogEnable` | bool |  |  |
-| `0x609` | `m_FogColor` | Color |  |  |
+| `0x60c` | `m_FogColor` | Color |  |  |
 | `0x610` | `m_flFogStart` | float32 |  |  |
 | `0x614` | `m_flFogEnd` | float32 |  |  |
 | `0x618` | `m_flFogMaxDensity` | float32 |  |  |

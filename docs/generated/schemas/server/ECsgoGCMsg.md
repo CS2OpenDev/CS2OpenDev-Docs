@@ -8,7 +8,7 @@ kind: enum
 
 # ECsgoGCMsg
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** server
 
@@ -103,13 +103,9 @@ kind: enum
 | `k_EMsgGCCStrike15_v2_ClientPerfReport` | 9202 |  |
 | `k_EMsgGCCStrike15_v2_GetEventFavorites_Response` | 9203 |  |
 | `k_EMsgGCCStrike15_v2_ClientRequestSouvenir` | 9204 |  |
-| `k_EMsgGCCStrike15_v2_GC2ClientRefuseSecureMode` | 9206 |  |
-| `k_EMsgGCCStrike15_v2_GC2ClientRequestValidation` | 9207 |  |
 | `k_EMsgGCCStrike15_v2_ClientRedeemMissionReward` | 9209 |  |
 | `k_EMsgGCCStrike15_ClientDeepStats` | 9210 |  |
 | `k_EMsgGCCStrike15_StartAgreementSessionInGame` | 9211 |  |
-| `k_EMsgGCCStrike15_v2_GC2ClientInitSystem` | 9212 |  |
-| `k_EMsgGCCStrike15_v2_GC2ClientInitSystem_Response` | 9213 |  |
 | `k_EMsgGCCStrike15_v2_PrivateQueues` | 9214 |  |
 | `k_EMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt` | 9215 |  |
 | `k_EMsgGCCStrike15_v2_BetaEnrollment` | 9217 |  |

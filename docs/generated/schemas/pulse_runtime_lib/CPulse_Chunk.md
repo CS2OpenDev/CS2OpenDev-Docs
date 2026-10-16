@@ -8,9 +8,9 @@ kind: class
 
 # CPulse_Chunk
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 88 bytes (`0x58`) · **Align:** 8 · **Module:** pulse_runtime_lib
+**Kind:** class · **Size:** 96 bytes (`0x60`) · **Align:** 8 · **Module:** pulse_runtime_lib
 
 **Relationships:**
 
@@ -19,17 +19,19 @@ classDiagram
     CPulse_Chunk *-- PGDInstruction_t
     CPulse_Chunk *-- CPulse_RegisterInfo
     CPulse_Chunk *-- CPulse_InstructionDebug
+    CPulse_Chunk *-- PulseRuntimeTempVarBankIndex_t
 ```
 
 ## Memory layout
 
-3 fields (3 declared here, 0 inherited). Offsets are absolute from the object base.
+4 fields (4 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_Instructions` | CUtlLeanVector< [PGDInstruction_t](../pulse_runtime_lib/PGDInstruction_t.md) > |  |  |
 | `0x10` | `m_Registers` | CUtlLeanVector< [CPulse_RegisterInfo](../pulse_runtime_lib/CPulse_RegisterInfo.md) > |  |  |
 | `0x20` | `m_InstructionDebugInfos` | CUtlLeanVector< [CPulse_InstructionDebug](../pulse_runtime_lib/CPulse_InstructionDebug.md) > |  |  |
+| `0x30` | `m_nTempVarBank` | [PulseRuntimeTempVarBankIndex_t](../pulse_runtime_lib/PulseRuntimeTempVarBankIndex_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -42,6 +44,7 @@ classDiagram
 	],
 	&quot;m_InstructionDebugInfos&quot;:
 	[
-	]
+	],
+	&quot;m_nTempVarBank&quot;: -1
 }</pre>
 </details>

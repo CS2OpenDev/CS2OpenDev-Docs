@@ -8,7 +8,7 @@ kind: class
 
 # CMixPlateverb
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 64 bytes (`0x40`) · **Align:** 8 · **Module:** sounddoc_lib
 
@@ -25,7 +25,7 @@ classDiagram
 
 ## Memory layout
 
-12 fields (7 declared here, 5 inherited). Offsets are absolute from the object base.
+13 fields (7 declared here, 6 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -34,6 +34,7 @@ classDiagram
 | `0x18` | `m_bActive` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x19` | `m_bSolo` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x1a` | `m_bEditProperties` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
+| `0x1c` | `m_nGenerationId` | int32 | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x20` | `m_flPrefilter` | float32 |  | `MPropertyAttributeRange 0.0 1.0` `MPropertyFriendlyName Prefilter` |
 | `0x24` | `m_flInputDiffusion1` | float32 |  | `MPropertyAttributeRange 0.0 1.0` `MPropertyFriendlyName Input Diffusion 1` |
 | `0x28` | `m_flInputDiffusion2` | float32 |  | `MPropertyAttributeRange 0.0 1.0` `MPropertyFriendlyName Input Diffusion 2` |
@@ -51,6 +52,7 @@ classDiagram
 	&quot;m_bActive&quot;: true,
 	&quot;m_bSolo&quot;: false,
 	&quot;m_bEditProperties&quot;: false,
+	&quot;m_nGenerationId&quot;: 0,
 	&quot;m_flPrefilter&quot;: 0.500000,
 	&quot;m_flInputDiffusion1&quot;: 0.500000,
 	&quot;m_flInputDiffusion2&quot;: 0.500000,

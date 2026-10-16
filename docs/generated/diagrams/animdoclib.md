@@ -11,6 +11,10 @@ Class relationships (inheritance and composition) for the `animdoclib` module.
 ```mermaid
 classDiagram
     CNmClipDocEvent <|-- CNmClipDocEvent_BodyGroup
+    CNmClipDocEvent <|-- CNmClipDocEvent_CameraDOF
+    CNmClipDocEvent <|-- CNmClipDocEvent_CameraFOV
+    CNmClipDocEvent <|-- CNmClipDocEvent_Cloth
+    CNmClipDocEvent <|-- CNmClipDocEvent_Contact
     CNmClipDocEvent <|-- CNmClipDocEvent_EntityAttribute
     CNmClipDocEvent <|-- CNmClipDocEvent_FloatCurve
     CNmClipDocEvent <|-- CNmClipDocEvent_Foot
@@ -30,6 +34,8 @@ classDiagram
     `CNmGraphDocVariationDataNode::CData` <|-- `CNmGraphDocAnimationPoseNode::CData`
     CNmGraphDocFlowNode <|-- CNmGraphDocBlend1DNode
     CNmGraphDocFlowNode <|-- CNmGraphDocBlend2DNode
+    CNmGraphDocVariationDataNode <|-- CNmGraphDocBodyGroupNode
+    `CNmGraphDocVariationDataNode::CData` <|-- `CNmGraphDocBodyGroupNode::CData`
     CNmGraphDocFlowNode <|-- CNmGraphDocBoneMaskBlendNode
     CNmGraphDocVariationDataNode <|-- CNmGraphDocBoneMaskNode
     `CNmGraphDocVariationDataNode::CData` <|-- `CNmGraphDocBoneMaskNode::CData`
@@ -137,14 +143,19 @@ classDiagram
     CNmGraphDocParameterReferenceNode <|-- CNmGraphDocTargetParameterReferenceNode
     CNmGraphDocFlowNode <|-- CNmGraphDocTargetPointNode
     CNmGraphDocResultNode <|-- CNmGraphDocTargetResultNode
-    CNmGraphDocFlowNode <|-- CNmGraphDocTargetSelectorNode
+    CNmGraphDocVariationDataNode <|-- CNmGraphDocTargetSelectorNode
+    `CNmGraphDocVariationDataNode::CData` <|-- `CNmGraphDocTargetSelectorNode::CData`
     CNmGraphDocVirtualParameterNode <|-- CNmGraphDocTargetVirtualParameterNode
     CNmGraphDocVariationDataNode <|-- CNmGraphDocTargetWarpNode
     `CNmGraphDocVariationDataNode::CData` <|-- `CNmGraphDocTargetWarpNode::CData`
     CNmGraphDocFlowNode <|-- CNmGraphDocTimeConditionNode
+    CNmGraphDocVariationDataNode <|-- CNmGraphDocTimeControlledClipNode
+    `CNmGraphDocVariationDataNode::CData` <|-- `CNmGraphDocTimeControlledClipNode::CData`
     CNmGraphDocStateMachineGraphNode <|-- CNmGraphDocTransitionConduitNode
     CNmGraphDocFlowNode <|-- CNmGraphDocTransitionEventConditionNode
     CNmGraphDocResultNode <|-- CNmGraphDocTransitionNode
+    CNmGraphDocVariationDataNode <|-- CNmGraphDocVariationConstBoneTargetNode
+    `CNmGraphDocVariationDataNode::CData` <|-- `CNmGraphDocVariationConstBoneTargetNode::CData`
     CNmGraphDocFlowNode <|-- CNmGraphDocVariationDataNode
     CNmGraphDocVariationDataNode <|-- CNmGraphDocVariationIDComparisonNode
     `CNmGraphDocVariationDataNode::CData` <|-- `CNmGraphDocVariationIDComparisonNode::CData`
@@ -220,7 +231,9 @@ classDiagram
     CNmGraphDocument --> CNmGraphDocFlowGraph
     CNmGraphDocument *-- CNmVariationHierarchy
     CNmGraphDocument *-- `CNmGraphDocument::DebugParameterSet_t`
+    CNmGraphDocument *-- `CNmGraphDocument::DebugBoneFilterSet_t`
     CNmPreviewArchetype *-- `CNmPreviewArchetype::SecondarySkeleton_t`
+    CNmSkeletonDocument *-- `CNmSkeletonDocument::ContactConfig_t`
     CNmSkeletonDocument *-- `CNmSkeletonDocument::SecondarySkeleton_t`
     CNmVariationHierarchy *-- NmVariation_t
 ```

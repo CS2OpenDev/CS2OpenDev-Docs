@@ -8,9 +8,9 @@ kind: class
 
 # CNmTargetSelectorNode::CDefinition
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 56 bytes (`0x38`) · **Align:** 8 · **Module:** animlib
+**Kind:** class · **Size:** 64 bytes (`0x40`) · **Align:** 8 · **Module:** animlib
 
 **Inherits from:** [CNmClipReferenceNode::CDefinition](../animlib/CNmClipReferenceNode.CDefinition.md)
 
@@ -25,7 +25,7 @@ classDiagram
 
 ## Memory layout
 
-7 fields (6 declared here, 1 inherited). Offsets are absolute from the object base.
+8 fields (7 declared here, 1 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -36,6 +36,7 @@ classDiagram
 | `0x30` | `m_parameterNodeIdx` | int16 |  |  |
 | `0x32` | `m_bIgnoreInvalidOptions` | bool |  |  |
 | `0x33` | `m_bIsWorldSpaceTarget` | bool |  |  |
+| `0x38` | `m_alignmentBoneID` | CGlobalSymbol |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -49,6 +50,7 @@ classDiagram
 	&quot;m_flPositionScoreWeight&quot;: 1.000000,
 	&quot;m_parameterNodeIdx&quot;: -1,
 	&quot;m_bIgnoreInvalidOptions&quot;: false,
-	&quot;m_bIsWorldSpaceTarget&quot;: true
+	&quot;m_bIsWorldSpaceTarget&quot;: true,
+	&quot;m_alignmentBoneID&quot;: &quot;&quot;
 }</pre>
 </details>

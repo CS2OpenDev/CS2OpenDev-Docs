@@ -31,6 +31,8 @@ classDiagram
     PhysFeModelDesc_t *-- FeQuad_t
     PhysFeModelDesc_t *-- FeSimdQuad_t
     PhysFeModelDesc_t *-- FeSimdTri_t
+    PhysFeModelDesc_t *-- FePrism_t
+    PhysFeModelDesc_t *-- FeSimdPrism_t
     PhysFeModelDesc_t *-- FeSimdRodConstraint_t
     PhysFeModelDesc_t *-- FeSimdRodConstraintAnim_t
     PhysFeModelDesc_t *-- FeRodConstraint_t
@@ -73,9 +75,11 @@ classDiagram
     RnBodyDesc_t *-- DynamicContinuousContactBehavior_t
     RnCapsuleDesc_t *-- RnCapsule_t
     RnCompoundDesc_t *-- RnCompound_t
-    RnCompound_t *-- RnCapsule_t
-    RnCompound_t *-- RnHull_t
+    RnCompoundTree_t *-- RnCompoundTreeNode_t
+    RnCompound_t *-- RnCompoundTree_t
     RnCompound_t *-- RnMesh_t
+    RnCompound_t *-- RnHull_t
+    RnCompound_t *-- RnCapsule_t
     RnHullDesc_t *-- RnHull_t
     RnHull_t *-- RnPlane_t
     RnHull_t --> CRegionSVM

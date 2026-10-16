@@ -8,9 +8,9 @@ kind: class
 
 # CRenderMesh
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 552 bytes (`0x228`) · **Align:** 8 · **Module:** modellib
+**Kind:** class · **Size:** 568 bytes (`0x238`) · **Align:** 8 · **Module:** modellib
 
 **Relationships:**
 
@@ -32,10 +32,10 @@ classDiagram
 | `0x10` | `m_sceneObjects` | CUtlLeanVectorFixedGrowable< [CSceneObjectData](../modellib/CSceneObjectData.md), 1 > |  |  |
 | `0xd0` | `m_constraints` | CUtlLeanVector< [CBaseConstraint](../modellib/CBaseConstraint.md)* > |  |  |
 | `0xe0` | `m_skeleton` | [CRenderSkeleton](../modellib/CRenderSkeleton.md) |  |  |
-| `0x1ec` | `m_bUseUV2ForCharting` | bool |  |  |
-| `0x1ed` | `m_bEmbeddedMapMesh` | bool |  |  |
-| `0x210` | `m_meshDeformParams` | [DynamicMeshDeformParams_t](../modellib/DynamicMeshDeformParams_t.md) |  |  |
-| `0x220` | `m_pGroomData` | [CRenderGroom](../modellib/CRenderGroom.md)* |  |  |
+| `0x1f8` | `m_bUseUV2ForCharting` | bool |  |  |
+| `0x1f9` | `m_bEmbeddedMapMesh` | bool |  |  |
+| `0x220` | `m_meshDeformParams` | [DynamicMeshDeformParams_t](../modellib/DynamicMeshDeformParams_t.md) |  |  |
+| `0x230` | `m_pGroomData` | [CRenderGroom](../modellib/CRenderGroom.md)* |  |  |
 
 <details><summary>KV3 class defaults</summary>
 

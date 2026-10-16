@@ -559,6 +559,42 @@
       }
     },
     {
+      "classname": "chicken_egg",
+      "def_index": 4948,
+      "description_token": "#chicken_egg_desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#chicken_egg",
+      "name": "chicken_egg",
+      "name_token": "#chicken_egg",
+      "prefab_id": "",
+      "resolution": {
+        "classname": "own",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "own",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "chicken_feed",
+      "def_index": 4949,
+      "description_token": "#chicken_feed_desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#chicken_feed",
+      "name": "chicken_feed",
+      "name_token": "#chicken_feed",
+      "prefab_id": "",
+      "resolution": {
+        "classname": "own",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "own",
+        "nameToken": "own"
+      }
+    },
+    {
       "classname": "collectible_item",
       "def_index": 996,
       "description_token": "#CSGO_CollectibleCoin_CoinCsgo_Desc",
@@ -6932,6 +6968,42 @@
     },
     {
       "classname": "supply_crate",
+      "def_index": 7043,
+      "description_token": "#coupon_desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_WeaponCase",
+      "name": "coupon - starjunk95_01",
+      "name_token": "#coupon_starjunk95_01",
+      "prefab_id": "coupon_prefab",
+      "resolution": {
+        "classname": "prefab:weapon_case_base",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:weapon_case_base",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "supply_crate",
+      "def_index": 7044,
+      "description_token": "#coupon_desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_WeaponCase",
+      "name": "coupon - starjunk95_01_stattrak",
+      "name_token": "#coupon_starjunk95_01_stattrak",
+      "prefab_id": "coupon_prefab",
+      "resolution": {
+        "classname": "prefab:weapon_case_base",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "prefab:weapon_case_base",
+        "nameToken": "own"
+      }
+    },
+    {
+      "classname": "supply_crate",
       "def_index": 20018,
       "description_token": "#coupon_desc",
       "is_default": false,
@@ -11655,7 +11727,7 @@
       "item_type_name": "#CSGO_Type_WeaponCase",
       "name": "crate_highlights_pack_cologne2026_1",
       "name_token": "#keychain_kc_cologne2026",
-      "prefab_id": "cologne2026_sticker_capsule_prefab volatile_pricing_uniform1",
+      "prefab_id": "cologne2026_sticker_capsule_prefab_volatile volatile_pricing_uniform1",
       "resolution": {
         "classname": "prefab:weapon_case_base",
         "descriptionToken": "own",
@@ -11673,7 +11745,7 @@
       "item_type_name": "#CSGO_Type_WeaponCase",
       "name": "crate_highlights_pack_cologne2026_2",
       "name_token": "#keychain_kc_cologne2026",
-      "prefab_id": "cologne2026_sticker_capsule_prefab volatile_pricing_uniform1",
+      "prefab_id": "cologne2026_sticker_capsule_prefab_volatile volatile_pricing_uniform1",
       "resolution": {
         "classname": "prefab:weapon_case_base",
         "descriptionToken": "own",
@@ -11691,7 +11763,7 @@
       "item_type_name": "#CSGO_Type_WeaponCase",
       "name": "crate_highlights_pack_cologne2026_3",
       "name_token": "#keychain_kc_cologne2026",
-      "prefab_id": "cologne2026_sticker_capsule_prefab volatile_pricing_uniform1",
+      "prefab_id": "cologne2026_sticker_capsule_prefab_volatile volatile_pricing_uniform1",
       "resolution": {
         "classname": "prefab:weapon_case_base",
         "descriptionToken": "own",
@@ -11709,7 +11781,7 @@
       "item_type_name": "#CSGO_Type_WeaponCase",
       "name": "crate_highlights_pack_cologne2026_4",
       "name_token": "#keychain_kc_cologne2026",
-      "prefab_id": "cologne2026_sticker_capsule_prefab volatile_pricing_uniform1",
+      "prefab_id": "cologne2026_sticker_capsule_prefab_volatile volatile_pricing_uniform1",
       "resolution": {
         "classname": "prefab:weapon_case_base",
         "descriptionToken": "own",
@@ -11727,7 +11799,7 @@
       "item_type_name": "#CSGO_Type_WeaponCase",
       "name": "crate_highlights_pack_cologne2026_5",
       "name_token": "#keychain_kc_cologne2026",
-      "prefab_id": "cologne2026_sticker_capsule_prefab volatile_pricing_uniform1",
+      "prefab_id": "cologne2026_sticker_capsule_prefab_volatile volatile_pricing_uniform1",
       "resolution": {
         "classname": "prefab:weapon_case_base",
         "descriptionToken": "own",
@@ -11745,7 +11817,7 @@
       "item_type_name": "#CSGO_Type_WeaponCase",
       "name": "crate_highlights_pack_cologne2026_6",
       "name_token": "#keychain_kc_cologne2026",
-      "prefab_id": "cologne2026_sticker_capsule_prefab volatile_pricing_uniform1",
+      "prefab_id": "cologne2026_sticker_capsule_prefab_volatile volatile_pricing_uniform1",
       "resolution": {
         "classname": "prefab:weapon_case_base",
         "descriptionToken": "own",
@@ -18009,7 +18081,7 @@
       "item_type_name": "#CSGO_Type_WeaponCase",
       "name": "crate_sticker_pack_cologne2026_all",
       "name_token": "#CSGO_crate_sticker_pack_cologne2026_all",
-      "prefab_id": "cologne2026_sticker_capsule_prefab volatile_pricing_stickercap1",
+      "prefab_id": "cologne2026_sticker_capsule_prefab_volatile volatile_pricing_stickercap1",
       "resolution": {
         "classname": "prefab:weapon_case_base",
         "descriptionToken": "own",
@@ -18027,7 +18099,7 @@
       "item_type_name": "#CSGO_Type_WeaponCase",
       "name": "crate_sticker_pack_cologne2026_champion",
       "name_token": "#CSGO_crate_sticker_pack_cologne2026_all",
-      "prefab_id": "cologne2026_sticker_capsule_prefab volatile_pricing_stickercap1",
+      "prefab_id": "cologne2026_sticker_capsule_prefab_volatile volatile_pricing_stickercap1",
       "resolution": {
         "classname": "prefab:weapon_case_base",
         "descriptionToken": "own",
@@ -18063,7 +18135,7 @@
       "item_type_name": "#CSGO_Type_WeaponCase",
       "name": "crate_sticker_pack_cologne2026_rankings",
       "name_token": "#CSGO_crate_sticker_pack_cologne2026_all",
-      "prefab_id": "cologne2026_sticker_capsule_prefab volatile_pricing_stickercap1",
+      "prefab_id": "cologne2026_sticker_capsule_prefab_volatile volatile_pricing_stickercap1 volatile_pricing_fixed",
       "resolution": {
         "classname": "prefab:weapon_case_base",
         "descriptionToken": "own",
@@ -25597,6 +25669,24 @@
       }
     },
     {
+      "classname": "expired_itemdef",
+      "def_index": 1202,
+      "description_token": "#expired_itemdef_desc",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#expired_itemdef",
+      "name": "expired_itemdef",
+      "name_token": "#expired_itemdef",
+      "prefab_id": "",
+      "resolution": {
+        "classname": "own",
+        "descriptionToken": "own",
+        "itemSlot": "unresolved",
+        "itemTypeName": "own",
+        "nameToken": "own"
+      }
+    },
+    {
       "classname": "collectible_item",
       "def_index": 962,
       "description_token": "#CSGO_CollectibleCoin_London2018_Champion_Desc",
@@ -29140,6 +29230,24 @@
         "itemSlot": "unresolved",
         "itemTypeName": "prefab:collectible",
         "nameToken": "own"
+      }
+    },
+    {
+      "classname": "pet",
+      "def_index": 4681,
+      "description_token": "",
+      "is_default": false,
+      "item_slot": "",
+      "item_type_name": "#CSGO_Type_Pet",
+      "name": "pet",
+      "name_token": "",
+      "prefab_id": "",
+      "resolution": {
+        "classname": "own",
+        "descriptionToken": "unresolved",
+        "itemSlot": "unresolved",
+        "itemTypeName": "own",
+        "nameToken": "unresolved"
       }
     },
     {
@@ -37173,7 +37281,7 @@
       "item_slot": "",
       "item_type_name": "#CSGO_Type_C4",
       "name_token": "#SFUI_WPNHUD_C4",
-      "parent_prefab": "weapon_base weapon_supports_keychains"
+      "parent_prefab": "weapon_base weapon_supports_stickers weapon_supports_keychains"
     },
     {
       "classname": "collectible_item",
@@ -37254,6 +37362,14 @@
       "item_type_name": "",
       "name_token": "",
       "parent_prefab": "weapon_case_base"
+    },
+    {
+      "classname": "",
+      "id": "cologne2026_sticker_capsule_prefab_volatile",
+      "item_slot": "",
+      "item_type_name": "",
+      "name_token": "",
+      "parent_prefab": "cologne2026_sticker_capsule_prefab"
     },
     {
       "classname": "",

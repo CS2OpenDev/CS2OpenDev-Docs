@@ -8,9 +8,9 @@ kind: class
 
 # CPointClientUIWorldTextPanel
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 2864 bytes (`0xb30`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 3088 bytes (`0xc10`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md)
 
@@ -27,7 +27,7 @@ classDiagram
 
 ## Memory layout
 
-168 fields (1 declared here, 167 inherited). Offsets are absolute from the object base.
+172 fields (1 declared here, 171 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -147,7 +147,8 @@ classDiagram
 | `0x570` | `m_clrRender` | Color | [CBaseModelEntity](../server/CBaseModelEntity.md) | RGBA tint colour multiplied onto the entity's diffuse texture. |
 | `0x578` | `m_vecRenderAttributes` | CUtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../server/EntityRenderAttribute_t.md) > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e0` | `m_bRenderToCubemaps` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x5e1` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e1` | `m_bExpandRenderBoundsToIncludeCloth` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e2` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e8` | `m_Collision` | [CCollisionProperty](../server/CCollisionProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CCollisionProperty struct encoding the entity's collision bounding box shape and flags. |
 | `0x6a0` | `m_Glow` | [CGlowProperty](../server/CGlowProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CGlowProperty struct controlling the entity's glow outline (colour, radius, visibility rules). |
 | `0x6f8` | `m_flGlowBackfaceMult` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Multiplier for the glow effect on back-facing surfaces of the model. |
@@ -156,46 +157,49 @@ classDiagram
 | `0x704` | `m_flFadeScale` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Scale factor applied to fade distances; 0 disables distance fading. |
 | `0x708` | `m_flShadowStrength` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Opacity of this entity's cast shadow (0 = no shadow, 1 = full shadow). |
 | `0x70c` | `m_nObjectCulling` | uint8 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x710` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x738` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
-| `0x768` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
-| `0x770` | `m_bEnabled` | bool | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
-| `0x778` | `m_DialogXMLName` | CUtlSymbolLarge | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
-| `0x780` | `m_PanelClassName` | CUtlSymbolLarge | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
-| `0x788` | `m_PanelID` | CUtlSymbolLarge | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
-| `0x790` | `m_CustomOutput0` | CEntityOutputTemplate< CUtlString > | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
-| `0x7b0` | `m_CustomOutput1` | CEntityOutputTemplate< CUtlString > | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
-| `0x7d0` | `m_CustomOutput2` | CEntityOutputTemplate< CUtlString > | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
-| `0x7f0` | `m_CustomOutput3` | CEntityOutputTemplate< CUtlString > | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
-| `0x810` | `m_CustomOutput4` | CEntityOutputTemplate< CUtlString > | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
-| `0x830` | `m_CustomOutput5` | CEntityOutputTemplate< CUtlString > | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
-| `0x850` | `m_CustomOutput6` | CEntityOutputTemplate< CUtlString > | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
-| `0x870` | `m_CustomOutput7` | CEntityOutputTemplate< CUtlString > | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
-| `0x890` | `m_CustomOutput8` | CEntityOutputTemplate< CUtlString > | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
-| `0x8b0` | `m_CustomOutput9` | CEntityOutputTemplate< CUtlString > | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
-| `0x8d0` | `m_bIgnoreInput` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
-| `0x8d1` | `m_bLit` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
-| `0x8d2` | `m_bFollowPlayerAcrossTeleport` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
-| `0x8d4` | `m_flWidth` | float32 | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
-| `0x8d8` | `m_flHeight` | float32 | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
-| `0x8dc` | `m_flDPI` | float32 | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
-| `0x8e0` | `m_flInteractDistance` | float32 | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
-| `0x8e4` | `m_flDepthOffset` | float32 | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
-| `0x8e8` | `m_unOwnerContext` | uint32 | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
-| `0x8ec` | `m_unHorizontalAlign` | uint32 | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
-| `0x8f0` | `m_unVerticalAlign` | uint32 | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
-| `0x8f4` | `m_unOrientation` | uint32 | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
-| `0x8f8` | `m_bAllowInteractionFromAllSceneWorlds` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
-| `0x900` | `m_vecCSSClasses` | CNetworkUtlVectorBase< CUtlSymbolLarge > | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
-| `0x918` | `m_bOpaque` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
-| `0x919` | `m_bNoDepth` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
-| `0x91a` | `m_bVisibleWhenParentNoDraw` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
-| `0x91b` | `m_bRenderBackface` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
-| `0x91c` | `m_bUseOffScreenIndicator` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
-| `0x91d` | `m_bExcludeFromSaveGames` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
-| `0x91e` | `m_bGrabbable` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
-| `0x91f` | `m_bOnlyRenderToTexture` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
-| `0x920` | `m_bDisableMipGen` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
-| `0x924` | `m_nExplicitImageLayout` | int32 | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
-| `0x928` | `m_bIgnoreParentOrientation` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
-| `0x930` | `m_messageText` | char[512] |  |  |
+| `0x710` | `m_bodyGroupTotalRequestCount` | uint32 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x718` | `m_bodyGroupRequests` | CUtlVectorFixedGrowable< [CBaseModelEntity::BodyGroupRequest_t](../server/CBaseModelEntity.BodyGroupRequest_t.md), 8 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x7f0` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x818` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
+| `0x848` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
+| `0x850` | `m_bEnabled` | bool | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
+| `0x858` | `m_DialogXMLName` | CUtlSymbolLarge | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
+| `0x860` | `m_PanelClassName` | CUtlSymbolLarge | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
+| `0x868` | `m_PanelID` | CUtlSymbolLarge | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
+| `0x870` | `m_CustomOutput0` | CEntityOutputTemplate< CUtlString > | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
+| `0x890` | `m_CustomOutput1` | CEntityOutputTemplate< CUtlString > | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
+| `0x8b0` | `m_CustomOutput2` | CEntityOutputTemplate< CUtlString > | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
+| `0x8d0` | `m_CustomOutput3` | CEntityOutputTemplate< CUtlString > | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
+| `0x8f0` | `m_CustomOutput4` | CEntityOutputTemplate< CUtlString > | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
+| `0x910` | `m_CustomOutput5` | CEntityOutputTemplate< CUtlString > | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
+| `0x930` | `m_CustomOutput6` | CEntityOutputTemplate< CUtlString > | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
+| `0x950` | `m_CustomOutput7` | CEntityOutputTemplate< CUtlString > | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
+| `0x970` | `m_CustomOutput8` | CEntityOutputTemplate< CUtlString > | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
+| `0x990` | `m_CustomOutput9` | CEntityOutputTemplate< CUtlString > | [CBaseClientUIEntity](../server/CBaseClientUIEntity.md) |  |
+| `0x9b0` | `m_bIgnoreInput` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0x9b1` | `m_bLit` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0x9b2` | `m_bFollowPlayerAcrossTeleport` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0x9b4` | `m_flWidth` | float32 | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0x9b8` | `m_flHeight` | float32 | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0x9bc` | `m_flDPI` | float32 | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0x9c0` | `m_flWindowUIScale` | float32 | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0x9c4` | `m_flInteractDistance` | float32 | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0x9c8` | `m_flDepthOffset` | float32 | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0x9cc` | `m_unOwnerContext` | uint32 | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0x9d0` | `m_unHorizontalAlign` | uint32 | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0x9d4` | `m_unVerticalAlign` | uint32 | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0x9d8` | `m_unOrientation` | uint32 | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0x9dc` | `m_bAllowInteractionFromAllSceneWorlds` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0x9e0` | `m_vecCSSClasses` | CNetworkUtlVectorBase< CUtlSymbolLarge > | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0x9f8` | `m_bOpaque` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0x9f9` | `m_bNoDepth` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0x9fa` | `m_bVisibleWhenParentNoDraw` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0x9fb` | `m_bRenderBackface` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0x9fc` | `m_bUseOffScreenIndicator` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0x9fd` | `m_bExcludeFromSaveGames` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0x9fe` | `m_bGrabbable` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0x9ff` | `m_bOnlyRenderToTexture` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0xa00` | `m_bDisableMipGen` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0xa04` | `m_nExplicitImageLayout` | int32 | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0xa08` | `m_bIgnoreParentOrientation` | bool | [CPointClientUIWorldPanel](../server/CPointClientUIWorldPanel.md) |  |
+| `0xa10` | `m_messageText` | char[512] |  |  |

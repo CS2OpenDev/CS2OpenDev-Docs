@@ -8,7 +8,7 @@ kind: class
 
 # CNmClipNode::CDefinition
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** 8 · **Module:** animlib
 
@@ -31,10 +31,10 @@ classDiagram
 |--------|-------|------|------|-------------|
 | `0x8` | `m_nNodeIdx` | int16 | [CNmGraphNode::CDefinition](../animlib/CNmGraphNode.CDefinition.md) |  |
 | `0x10` | `m_nPlayInReverseValueNodeIdx` | int16 |  |  |
-| `0x12` | `m_nResetTimeValueNodeIdx` | int16 |  |  |
-| `0x14` | `m_bSampleRootMotion` | bool |  |  |
-| `0x15` | `m_bAllowLooping` | bool |  |  |
-| `0x16` | `m_nDataSlotIdx` | int16 |  |  |
+| `0x12` | `m_bSampleRootMotion` | bool |  |  |
+| `0x13` | `m_bAllowLooping` | bool |  |  |
+| `0x14` | `m_nDataSlotIdx` | int16 |  |  |
+| `0x16` | `m_nResetTimeValueNodeIdx` | int16 |  |  |
 | `0x18` | `m_graphEvents` | CUtlVectorFixedGrowable< CGlobalSymbol, 2 > |  |  |
 | `0x40` | `m_flSpeedMultiplier` | float32 |  |  |
 | `0x44` | `m_nStartSyncEventOffset` | int32 |  |  |
@@ -45,10 +45,10 @@ classDiagram
 	&quot;_class&quot;: &quot;CNmClipNode::CDefinition&quot;,
 	&quot;m_nNodeIdx&quot;: -1,
 	&quot;m_nPlayInReverseValueNodeIdx&quot;: -1,
-	&quot;m_nResetTimeValueNodeIdx&quot;: -1,
 	&quot;m_bSampleRootMotion&quot;: true,
 	&quot;m_bAllowLooping&quot;: false,
 	&quot;m_nDataSlotIdx&quot;: -1,
+	&quot;m_nResetTimeValueNodeIdx&quot;: -1,
 	&quot;m_graphEvents&quot;:
 	[
 	],
