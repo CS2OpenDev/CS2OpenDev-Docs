@@ -4,7 +4,7 @@ title: Commands
 
 # Console Commands
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 All console commands extracted from CS2.
 
@@ -310,6 +310,7 @@ All console commands extracted from CS2.
 | `crash_error_thread` | `cheat` | Cause the engine to crash by Plat_FatalError on non-main thread (Debug!!) |
 | `crash_job` | `cheat` | Cause the engine to crash in a job thread (Debug!!) |
 | `crash_thread` | `cheat` | Cause the engine to crash in a brand new non-main thread (Debug!!) |
+| `create_explosion_damage` | `gamedll` `cheat` | Explosion where you're looking, or at x y z, with a real explosion's physics force (unlike create_radius_damage). |
 | `create_radius_damage` | `gamedll` `cheat` | Causes radius damage where you're looking, at the passed in radius. |
 | `creditsdone` | `developmentonly` `gamedll` `defensive` |  |
 | `cs_quit_prompt` | `clientdll` `release` | Quit the game |
@@ -394,8 +395,10 @@ All console commands extracted from CS2.
 | `ent_debug_origin_changes` | `developmentonly` `gamedll` | turn on, off, or toggle origin changes on server for entity by index |
 | `ent_find` | `gamedll` `cheat` | Find and list all entities with classnames or targetnames that contain the specified substrings.<br>Format: find_ent &lt;substring&gt; |
 | `ent_find_index` | `gamedll` `cheat` | Display data for entity matching specified index.<br>Format: find_ent_index &lt;index&gt; |
-| `ent_fire` | `gamedll` `cheat` `vconsole_fuzzy_matching` `autocomplete` | Usage:<br>ent_fire &lt;target&gt; [action] [value] [delay] |
-| `ent_fire_output` | `gamedll` `cheat` `vconsole_fuzzy_matching` `autocomplete` | Usage:<br>ent_fire_output &lt;target&gt; [output name] [value] [delay] |
+| `ent_fire` | `gamedll` `cheat` `vconsole_fuzzy_matching` `autocomplete` | Usage:<br>ent_fire &lt;target&gt; [action] [value0] [value1] ... [valueN] |
+| `ent_fire_delay` | `gamedll` `cheat` `vconsole_fuzzy_matching` `autocomplete` | Usage:<br>ent_fire_delay &lt;target&gt; [action] [value0] [value1] ... [valueN] [delay] |
+| `ent_fire_output` | `gamedll` `cheat` `vconsole_fuzzy_matching` `autocomplete` | Usage:<br>ent_fire_output &lt;target&gt; [output name] [value0] [value1] ... [valueN] |
+| `ent_fire_output_delay` | `gamedll` `cheat` `vconsole_fuzzy_matching` `autocomplete` | Usage:<br>ent_fire_output_delay &lt;target&gt; [output name] [value0] [value1] ... [valueN] [delay] |
 | `ent_gib` | `gamedll` `cheat` | Gibs the given entity(s)<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `ent_grab` | `gamedll` `cheat` | grabs the object in front of the player. Options: -loose -multiple -toggle |
 | `ent_hierarchy` | `gamedll` `cheat` | Prints the entity hierarchy tree rooted at the specified ent(s) |
@@ -463,11 +466,11 @@ All console commands extracted from CS2.
 | `force_assert` | `developmentonly` | Fire an assertion failure |
 | `force_fatal_error` | `developmentonly` | Fire a fatal error |
 | `force_floating_point_exceptions` | `developmentonly` | Enable floating point exceptions to find bugs |
-| `force_hibernate` | `developmentonly` | Force toggle hibernation state |
 | `fs_clear_open_duplicate_times` | `developmentonly` `defensive` | Clear the list of files that have been opened. |
 | `fs_dump_open_duplicate_times` | `developmentonly` `defensive` | Set fs_report_long_reads 1 before loading to use this. Prints a list of files that were opened more than once and ~how long was spent reading from them. |
 | `func_mover_count` | `gamedll` `cheat` |  |
 | `func_mover_enable_debug_all` | `gamedll` `cheat` |  |
+| `func_mover_step_movement` | `gamedll` `cheat` |  |
 | `game_alias` | `release` `autocomplete` | Set the configuration of game type and mode based on game alias like "deathmatch". |
 | `game_particle_manager_dump_requeue` | `developmentonly` `clientdll` | Dump contents of particle manager requeue |
 | `game_particle_manager_list_active` | `developmentonly` `clientdll` | Dump counts of active particles |
@@ -707,7 +710,7 @@ All console commands extracted from CS2.
 | `particle_stop_all` | `developmentonly` `clientdll` `cheat` | Stops all particle systems currently playing |
 | `particle_stop_specified` | `developmentonly` `clientdll` `cheat` | Stops all particle systems that match specified name |
 | `particle_stop_unspecified` | `developmentonly` `clientdll` `cheat` | Stops all particle systems that don't match specified name |
-| `particle_test_create` | `gamedll` `cheat` | Creates the named particle system where the player is looking.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
+| `particle_test_create` | `gamedll` `cheat` | Creates the named particle system where the player is looking.  Can be used on an entity if pointed at the entity.  Optionally takes a particle config name.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `particle_test_destroy` | `gamedll` `cheat` | Destroys all particle systems matching the specified name.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `particle_test_start` | `gamedll` `cheat` | Dispatches the test particle system with the parameters specified in particle_test_file,<br>particle_test_attach_mode and particle_test_attach_param on the entity the player is looking at.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
 | `particle_test_stop` | `gamedll` `cheat` | Stops all particle systems on the selected entities.<br>Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at} |
@@ -861,6 +864,7 @@ All console commands extracted from CS2.
 | `server_snd_pos` | `gamedll` `cheat` | Starts a sound event at a given position. The sound event will retrigger periodically. Usage: server_snd_pos &lt;eventname&gt; &lt;retrigger time&gt; &lt;x&gt; &lt;y&gt; &lt;z&gt;. |
 | `servervoice_clear` | `developmentonly` `clientdll` `defensive` | servervoice_clear |
 | `servervoice_dump` | `developmentonly` `clientdll` `defensive` | servervoice_dump |
+| `set_server_cvar` | `developmentonly` `clientdll` | Change a server convar if allowed |
 | `setang` | `gamedll` `cheat` `client_can_execute` | Snap player eyes to specified pitch yaw &lt;roll:optional&gt; (must have sv_cheats). |
 | `setang_exact` | `gamedll` `cheat` `client_can_execute` | Snap player eyes and orientation to specified pitch yaw &lt;roll:optional&gt; (must have sv_cheats). |
 | `setinfo` | `clientcmd_can_execute` | Adds a new user info value |
@@ -989,6 +993,7 @@ All console commands extracted from CS2.
 | `soundscape_dumpclient` | `clientdll` `cheat` | Dumps the client's soundscape data. |
 | `soundscape_flush` | `developmentonly` `gamedll` `defensive` | Flushes the server &amp; client side soundscapes |
 | `soundsysteminfo` | `developmentonly` `defensive` | Describe the current sound device without an active voice list. |
+| `spawnBrokenGlass` | `developmentonly` `gamedll` `cheat` |  |
 | `spawnCashStack` | `developmentonly` `gamedll` `cheat` |  |
 | `spec_goto` | `clientdll` `clientcmd_can_execute` | Move the spectator camera to a specific location. `spec_goto x y z pitch yaw` |
 | `spec_lock_to_current_player` | `developmentonly` `clientdll` | As an observer, lock the spectator target to the currently observed target |
@@ -1041,6 +1046,7 @@ All console commands extracted from CS2.
 | `sv_setsteamaccount` | `release` | token<br>Set game server account token to use for logging in to a persistent game server account |
 | `sv_showtags` | `developmentonly` `defensive` | Describe current gametags. |
 | `sv_shutdown` | `release` | Sets the server to shutdown when all games have completed |
+| `sv_smoke_lighting_changed` | `gamedll` `release` | Recompute smoke volume LPV caches |
 | `sv_soundscape_printdebuginfo` | `gamedll` `cheat` | print soundscapes |
 | `sv_spewmeta` | `cheat` `autocomplete` | Spew serializer meta |
 | `sv_spewworldgroups` | `developmentonly` | Spew world groups (server) |

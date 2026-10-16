@@ -8,11 +8,11 @@ kind: class
 
 # CCSPlayer_ActionTrackingServices
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 Component tracking scoring-relevant actions: weapon purchases and hostage rescue status.
 
-**Kind:** class · **Size:** 784 bytes (`0x310`) · **Align:** n/a (unspecified) · **Module:** server
+**Kind:** class · **Size:** 896 bytes (`0x380`) · **Align:** n/a (unspecified) · **Module:** server
 
 **Twin:** [CCSPlayer_ActionTrackingServices (client)](../client/CCSPlayer_ActionTrackingServices.md)
 
@@ -29,7 +29,7 @@ classDiagram
 
 ## Memory layout
 
-6 fields (4 declared here, 2 inherited). Offsets are absolute from the object base.
+7 fields (5 declared here, 2 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -39,3 +39,4 @@ classDiagram
 | `0x224` | `m_bIsRescuing` | bool |  | True while the player is escorting a hostage to the rescue zone. |
 | `0x228` | `m_weaponPurchasesThisMatch` | [WeaponPurchaseTracker_t](../server/WeaponPurchaseTracker_t.md) |  | WeaponPurchaseTracker_t recording which weapons were bought during the match (used for match-stats). |
 | `0x298` | `m_weaponPurchasesThisRound` | [WeaponPurchaseTracker_t](../server/WeaponPurchaseTracker_t.md) |  | WeaponPurchaseTracker_t recording which weapons were bought this round (used for in-round stats and economy tracking). |
+| `0x308` | `m_weaponCarryOverIntoThisRound` | [WeaponPurchaseTracker_t](../server/WeaponPurchaseTracker_t.md) |  |  |

@@ -8,9 +8,9 @@ kind: class
 
 # C_OP_RenderCables
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 5440 bytes (`0x1540`) · **Align:** 8 · **Module:** particles
+**Kind:** class · **Size:** 5544 bytes (`0x15a8`) · **Align:** 8 · **Module:** particles
 
 **Inherits from:** [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md)
 
@@ -32,54 +32,53 @@ classDiagram
 
 ## Memory layout
 
-44 fields (24 declared here, 20 inherited). Offsets are absolute from the object base.
+43 fields (24 declared here, 19 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x8` | `m_flOpStrength` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator strength` `MPropertySortPriority -100` |
-| `0x178` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
-| `0x17c` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
-| `0x180` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
-| `0x184` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
-| `0x188` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
-| `0x18c` | `m_flOpEndFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadeout` `MPropertySortPriority -100` |
-| `0x190` | `m_flOpFadeOscillatePeriod` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade oscillate` `MPropertySortPriority -100` |
-| `0x194` | `m_bNormalizeToStopTime` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName normalize fade times to endcap` `MPropertySortPriority -100` |
-| `0x198` | `m_flOpTimeOffsetMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset min` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Time Offset` |
-| `0x19c` | `m_flOpTimeOffsetMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset max` `MPropertySortPriority -100` |
-| `0x1a0` | `m_nOpTimeOffsetSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset seed` `MPropertySortPriority -100` |
-| `0x1a4` | `m_nOpTimeScaleSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale seed` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Timescale Modifiers` |
-| `0x1a8` | `m_flOpTimeScaleMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale min` `MPropertySortPriority -100` |
-| `0x1ac` | `m_flOpTimeScaleMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale max` `MPropertySortPriority -100` |
-| `0x1b2` | `m_bDisableOperator` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyStartGroup` `MPropertySuppressField` |
-| `0x1b8` | `m_Notes` | CUtlString | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleHelpField` `MPropertyFriendlyName operator help and notes` `MPropertySortPriority -100` |
-| `0x1d8` | `VisibilityInputs` | [CParticleVisibilityInputs](../particles/CParticleVisibilityInputs.md) | [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md) | `MPropertySortPriority -1` |
-| `0x220` | `m_bCannotBeRefracted` | bool | [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md) | `MPropertyFriendlyName I cannot be refracted through refracting objects like water` `MPropertySortPriority -1` `MPropertyStartGroup Rendering filter` |
-| `0x221` | `m_bSkipRenderingOnMobile` | bool | [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md) | `MPropertyFriendlyName Skip rendering on mobile` `MPropertySortPriority -1` |
-| `0x228` | `m_flRadiusScale` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName Radius Scale` `MPropertySortPriority 700` `MPropertyStartGroup Renderer Modifiers` |
-| `0x398` | `m_flAlphaScale` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName alpha scale` `MPropertySortPriority 700` |
-| `0x508` | `m_vecColorScale` | [CParticleCollectionVecInput](../particleslib/CParticleCollectionVecInput.md) |  | `MPropertyFriendlyName color blend` `MPropertySortPriority 700` |
-| `0xbc0` | `m_nColorBlendType` | [ParticleColorBlendType_t](../particleslib/ParticleColorBlendType_t.md) |  | `MPropertyFriendlyName color blend type` `MPropertySortPriority 700` |
-| `0xbc8` | `m_hMaterial` | CStrongHandle< [InfoForResourceTypeIMaterial2](../resourcesystem/InfoForResourceTypeIMaterial2.md) > |  | `MPropertyAttributeEditor AssetBrowse( vmat, *extraFilterString=(shader=cables.vfx) )` `MPropertyFriendlyName cable material` `MPropertyStartGroup` |
-| `0xbd0` | `m_nTextureRepetitionMode` | [TextureRepetitionMode_t](../particles/TextureRepetitionMode_t.md) |  | `MPropertyFriendlyName texture repetition mode` |
-| `0xbd8` | `m_flTextureRepeatsPerSegment` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName texture repetitions` |
-| `0xd48` | `m_flTextureRepeatsCircumference` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName texture repetitions around cable` |
-| `0xeb8` | `m_flColorMapOffsetV` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName color map offset along path` |
-| `0x1028` | `m_flColorMapOffsetU` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName color map offset around cable` |
-| `0x1198` | `m_flNormalMapOffsetV` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName normal map offset along path` |
-| `0x1308` | `m_flNormalMapOffsetU` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName normal map offset around cable` |
-| `0x1478` | `m_bDrawCableCaps` | bool |  | `MPropertyFriendlyName draw caps at each end of the cable` |
-| `0x147c` | `m_flCapRoundness` | float32 |  | `MPropertyAttributeRange 0 2` `MPropertyFriendlyName cable end cap shape factor` |
-| `0x1480` | `m_flCapOffsetAmount` | float32 |  | `MPropertyAttributeRange 0 2` `MPropertyFriendlyName cable end cap offset amount` |
-| `0x1484` | `m_flTessScale` | float32 |  | `MPropertyFriendlyName tessellation scale factor` |
-| `0x1488` | `m_nMinTesselation` | int32 |  | `MPropertyFriendlyName minimum steps between particles` |
-| `0x148c` | `m_nMaxTesselation` | int32 |  | `MPropertyFriendlyName maximum steps between particles` |
-| `0x1490` | `m_nRoundness` | int32 |  | `MPropertyAttributeRange 0 3` `MPropertyFriendlyName roundness factor` |
-| `0x1494` | `m_nForceRoundnessFixed` | bool |  | `MPropertyFriendlyName force roundness factor fixed` |
-| `0x1495` | `m_bOnlyRenderInEffectsBloomPass` | bool |  | `MPropertyFriendlyName Only Render in effects bloom pass` `MPropertySortPriority 1100` |
-| `0x1498` | `m_LightingTransform` | [CParticleTransformInput](../particleslib/CParticleTransformInput.md) |  | `MParticleInputOptional` `MPropertyFriendlyName diffuse lighting origin` |
-| `0x1500` | `m_MaterialFloatVars` | CUtlLeanVector< [FloatInputMaterialVariable_t](../particles/FloatInputMaterialVariable_t.md) > |  | `MPropertyFriendlyName material float variables` |
-| `0x1520` | `m_MaterialVecVars` | CUtlLeanVector< [VecInputMaterialVariable_t](../particles/VecInputMaterialVariable_t.md) > |  | `MPropertyFriendlyName material vector variables` |
+| `0x180` | `m_nOpEndCapState` | [ParticleEndcapMode_t](../particles/ParticleEndcapMode_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator end cap state` `MPropertySortPriority -100` |
+| `0x184` | `m_nToolsState` | [ParticleToolsState_t](../particles/ParticleToolsState_t.md) | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyFriendlyName operator enabled in tools or game only` `MPropertySortPriority -100` |
+| `0x188` | `m_flOpStartFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadein` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade` |
+| `0x18c` | `m_flOpEndFadeInTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadein` `MPropertySortPriority -100` |
+| `0x190` | `m_flOpStartFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator start fadeout` `MPropertySortPriority -100` |
+| `0x194` | `m_flOpEndFadeOutTime` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator end fadeout` `MPropertySortPriority -100` |
+| `0x198` | `m_flOpFadeOscillatePeriod` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade oscillate` `MPropertySortPriority -100` |
+| `0x19c` | `m_bNormalizeToStopTime` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName normalize fade times to endcap` `MPropertySortPriority -100` |
+| `0x1a0` | `m_flOpTimeOffsetMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset min` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Time Offset` |
+| `0x1a4` | `m_flOpTimeOffsetMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset max` `MPropertySortPriority -100` |
+| `0x1a8` | `m_nOpTimeOffsetSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time offset seed` `MPropertySortPriority -100` |
+| `0x1ac` | `m_nOpTimeScaleSeed` | int32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale seed` `MPropertySortPriority -100` `MPropertyStartGroup Operator Fade Timescale Modifiers` |
+| `0x1b0` | `m_flOpTimeScaleMin` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale min` `MPropertySortPriority -100` |
+| `0x1b4` | `m_flOpTimeScaleMax` | float32 | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleAdvancedField` `MPropertyFriendlyName operator fade time scale max` `MPropertySortPriority -100` |
+| `0x1ba` | `m_bDisableOperator` | bool | [CParticleFunction](../particles/CParticleFunction.md) | `MPropertyStartGroup` `MPropertySuppressField` |
+| `0x1c0` | `m_Notes` | CUtlString | [CParticleFunction](../particles/CParticleFunction.md) | `MParticleHelpField` `MPropertyAttributeEditor TextBlock()` `MPropertyFriendlyName operator help and notes` `MPropertySortPriority -100` |
+| `0x1e0` | `VisibilityInputs` | [CParticleVisibilityInputs](../particles/CParticleVisibilityInputs.md) | [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md) | `MPropertySortPriority -1` |
+| `0x228` | `m_bCannotBeRefracted` | bool | [CParticleFunctionRenderer](../particles/CParticleFunctionRenderer.md) | `MPropertyFriendlyName I cannot be refracted through refracting objects like water` `MPropertySortPriority -1` `MPropertyStartGroup Rendering filter` |
+| `0x230` | `m_flRadiusScale` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName Radius Scale` `MPropertySortPriority 700` `MPropertyStartGroup Renderer Modifiers` |
+| `0x3a8` | `m_flAlphaScale` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName alpha scale` `MPropertySortPriority 700` |
+| `0x520` | `m_vecColorScale` | [CParticleCollectionVecInput](../particleslib/CParticleCollectionVecInput.md) |  | `MPropertyFriendlyName color blend` `MPropertySortPriority 700` |
+| `0xbf8` | `m_nColorBlendType` | [ParticleColorBlendType_t](../particleslib/ParticleColorBlendType_t.md) |  | `MPropertyFriendlyName color blend type` `MPropertySortPriority 700` |
+| `0xc00` | `m_hMaterial` | CStrongHandle< [InfoForResourceTypeIMaterial2](../resourcesystem/InfoForResourceTypeIMaterial2.md) > |  | `MPropertyAttributeEditor AssetBrowse( vmat, *extraFilterString=(shader=cables.vfx) )` `MPropertyFriendlyName cable material` `MPropertyStartGroup` |
+| `0xc08` | `m_nTextureRepetitionMode` | [TextureRepetitionMode_t](../particles/TextureRepetitionMode_t.md) |  | `MPropertyFriendlyName texture repetition mode` |
+| `0xc10` | `m_flTextureRepeatsPerSegment` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName texture repetitions` |
+| `0xd88` | `m_flTextureRepeatsCircumference` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName texture repetitions around cable` |
+| `0xf00` | `m_flColorMapOffsetV` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName color map offset along path` |
+| `0x1078` | `m_flColorMapOffsetU` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName color map offset around cable` |
+| `0x11f0` | `m_flNormalMapOffsetV` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName normal map offset along path` |
+| `0x1368` | `m_flNormalMapOffsetU` | [CParticleCollectionFloatInput](../particleslib/CParticleCollectionFloatInput.md) |  | `MPropertyFriendlyName normal map offset around cable` |
+| `0x14e0` | `m_bDrawCableCaps` | bool |  | `MPropertyFriendlyName draw caps at each end of the cable` |
+| `0x14e4` | `m_flCapRoundness` | float32 |  | `MPropertyAttributeRange 0 2` `MPropertyFriendlyName cable end cap shape factor` |
+| `0x14e8` | `m_flCapOffsetAmount` | float32 |  | `MPropertyAttributeRange 0 2` `MPropertyFriendlyName cable end cap offset amount` |
+| `0x14ec` | `m_flTessScale` | float32 |  | `MPropertyFriendlyName tessellation scale factor` |
+| `0x14f0` | `m_nMinTesselation` | int32 |  | `MPropertyFriendlyName minimum steps between particles` |
+| `0x14f4` | `m_nMaxTesselation` | int32 |  | `MPropertyFriendlyName maximum steps between particles` |
+| `0x14f8` | `m_nRoundness` | int32 |  | `MPropertyAttributeRange 0 3` `MPropertyFriendlyName roundness factor` |
+| `0x14fc` | `m_nForceRoundnessFixed` | bool |  | `MPropertyFriendlyName force roundness factor fixed` |
+| `0x14fd` | `m_bOnlyRenderInEffectsBloomPass` | bool |  | `MPropertyFriendlyName Only Render in effects bloom pass` `MPropertySortPriority 1100` |
+| `0x1500` | `m_LightingTransform` | [CParticleTransformInput](../particleslib/CParticleTransformInput.md) |  | `MParticleInputOptional` `MPropertyFriendlyName diffuse lighting origin` |
+| `0x1568` | `m_MaterialFloatVars` | CUtlLeanVector< [FloatInputMaterialVariable_t](../particles/FloatInputMaterialVariable_t.md) > |  | `MPropertyFriendlyName material float variables` |
+| `0x1588` | `m_MaterialVecVars` | CUtlLeanVector< [VecInputMaterialVariable_t](../particles/VecInputMaterialVariable_t.md) > |  | `MPropertyFriendlyName material vector variables` |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -158,7 +157,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_nOpEndCapState&quot;: &quot;PARTICLE_ENDCAP_ALWAYS_ON&quot;,
 	&quot;m_nToolsState&quot;: &quot;PARTICLE_TOOLS_STATE_ALWAYS_ON&quot;,
@@ -199,7 +199,6 @@ classDiagram
 		&quot;m_bRightEye&quot;: false
 	},
 	&quot;m_bCannotBeRefracted&quot;: true,
-	&quot;m_bSkipRenderingOnMobile&quot;: false,
 	&quot;m_flRadiusScale&quot;:
 	{
 		&quot;m_nType&quot;: &quot;PF_TYPE_LITERAL&quot;,
@@ -273,7 +272,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flAlphaScale&quot;:
 	{
@@ -348,7 +348,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_vecColorScale&quot;:
 	{
@@ -467,7 +468,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_FloatComponentY&quot;:
 		{
@@ -542,7 +544,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_FloatComponentZ&quot;:
 		{
@@ -617,7 +620,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_FloatInterp&quot;:
 		{
@@ -692,7 +696,8 @@ classDiagram
 					0.000000,
 					0.000000
 				]
-			}
+			},
+			&quot;m_flCompareValue&quot;: 0.000000
 		},
 		&quot;m_flInterpInput0&quot;: 0.000000,
 		&quot;m_flInterpInput1&quot;: 1.000000,
@@ -803,7 +808,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flTextureRepeatsCircumference&quot;:
 	{
@@ -878,7 +884,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flColorMapOffsetV&quot;:
 	{
@@ -953,7 +960,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flColorMapOffsetU&quot;:
 	{
@@ -1028,7 +1036,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flNormalMapOffsetV&quot;:
 	{
@@ -1103,7 +1112,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flNormalMapOffsetU&quot;:
 	{
@@ -1178,7 +1188,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_bDrawCableCaps&quot;: false,
 	&quot;m_flCapRoundness&quot;: 1.000000,

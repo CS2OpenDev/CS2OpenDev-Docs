@@ -8,11 +8,11 @@ kind: class
 
 # CPlantedC4
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 Entity created when a Terrorist player successfully plants the bomb. Contains all state needed to track detonation, defuse progress, and whose responsibility it is.
 
-**Kind:** class · **Size:** 3456 bytes (`0xd80`) · **Align:** 16 · **Module:** server
+**Kind:** class · **Size:** 4000 bytes (`0xfa0`) · **Align:** 16 · **Module:** server
 
 **Inherits from:** [CBaseAnimGraph](../server/CBaseAnimGraph.md), [IHasAttributes](../server/IHasAttributes.md)
 
@@ -33,7 +33,7 @@ classDiagram
 
 ## Memory layout
 
-170 fields (27 declared here, 143 inherited). Offsets are absolute from the object base.
+174 fields (27 declared here, 147 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -153,7 +153,8 @@ classDiagram
 | `0x570` | `m_clrRender` | Color | [CBaseModelEntity](../server/CBaseModelEntity.md) | RGBA tint colour multiplied onto the entity's diffuse texture. |
 | `0x578` | `m_vecRenderAttributes` | CUtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../server/EntityRenderAttribute_t.md) > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e0` | `m_bRenderToCubemaps` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x5e1` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e1` | `m_bExpandRenderBoundsToIncludeCloth` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e2` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e8` | `m_Collision` | [CCollisionProperty](../server/CCollisionProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CCollisionProperty struct encoding the entity's collision bounding box shape and flags. |
 | `0x6a0` | `m_Glow` | [CGlowProperty](../server/CGlowProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CGlowProperty struct controlling the entity's glow outline (colour, radius, visibility rules). |
 | `0x6f8` | `m_flGlowBackfaceMult` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Multiplier for the glow effect on back-facing surfaces of the model. |
@@ -162,50 +163,53 @@ classDiagram
 | `0x704` | `m_flFadeScale` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Scale factor applied to fade distances; 0 disables distance fading. |
 | `0x708` | `m_flShadowStrength` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Opacity of this entity's cast shadow (0 = no shadow, 1 = full shadow). |
 | `0x70c` | `m_nObjectCulling` | uint8 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x710` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x738` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
-| `0x768` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
-| `0x770` | `m_graphControllerManager` | [CAnimGraphControllerManager](../server/CAnimGraphControllerManager.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x808` | `m_pMainGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | The primary animation-graph controller instance for this entity. |
-| `0x810` | `m_bInitiallyPopulateInterpHistory` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x818` | `m_OnLayerCycleUpdated` | CEntityOutputTemplate< float32 > | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x838` | `m_OnExternalChoreoGraphChanged` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x850` | `m_pChoreoServices` | [IChoreoServices](../server/IChoreoServices.md)* | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MKV3TransferSaveOpsForField GetChoreoServicesSaveRestoreOps` |
-| `0x858` | `m_bAnimGraphUpdateEnabled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x859` | `m_bAnimationUpdateScheduled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x85c` | `m_vecForce` | Vector | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x868` | `m_nForceBone` | int32 | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x878` | `m_pRagdollControl` | [IPhysicsRagdollControl](../vphysics2/IPhysicsRagdollControl.md)* | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MPhysPtr` |
-| `0x880` | `m_RagdollPose` | [PhysicsRagdollPose_t](../server/PhysicsRagdollPose_t.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x8a8` | `m_bRagdollEnabled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | True while the entity is simulated as a ragdoll rather than animated. |
-| `0x8a9` | `m_bRagdollClientSide` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x8b0` | `m_xParentedRagdollRootInEntitySpace` | CTransform | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x9b8` | `m_bBombTicking` | bool |  | True once the bomb has been armed and the countdown has started. |
-| `0x9bc` | `m_flC4Blow` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime at which the bomb will detonate if not defused. *Compute remaining time as: m_flC4Blow - current_game_time.* |
-| `0x9c0` | `m_nBombSite` | int32 |  | Which bombsite the bomb was planted on (0 = site A, 1 = site B; matches the bombsite trigger index). |
-| `0x9c4` | `m_nSourceSoundscapeHash` | int32 |  | Hash of the soundscape entity to activate when players are near the planted bomb. |
-| `0x9c8` | `m_bAbortDetonationBecauseWorldIsFrozen` | bool |  |  |
-| `0x9d0` | `m_AttributeManager` | [CAttributeContainer](../server/CAttributeContainer.md) |  |  |
-| `0xcc8` | `m_OnBombDefused` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
-| `0xce0` | `m_OnBombBeginDefuse` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
-| `0xcf8` | `m_OnBombDefuseAborted` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
-| `0xd10` | `m_bCannotBeDefused` | bool |  | True when the bomb is in a state where it physically cannot be defused (e.g. during some special game modes). |
-| `0xd18` | `m_entitySpottedState` | [EntitySpottedState_t](../server/EntitySpottedState_t.md) |  | EntitySpottedState_t tracking which players have spotted (radar dot) the planted bomb. |
-| `0xd30` | `m_nSpotRules` | int32 |  |  |
-| `0xd34` | `m_bHasExploded` | bool |  | True after the bomb has detonated. |
-| `0xd35` | `m_bBombDefused` | bool |  | True after the bomb has been successfully defused. |
-| `0xd36` | `m_bTrainingPlacedByPlayer` | bool |  |  |
-| `0xd38` | `m_flTimerLength` | float32 |  | Total bomb-timer duration in seconds (mirrors mp_c4timer value at plant time). |
-| `0xd3c` | `m_bBeingDefused` | bool |  | True while a CT player is actively pressing the defuse key on the bomb. |
-| `0xd44` | `m_fLastDefuseTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0xd4c` | `m_flDefuseLength` | float32 |  | Total defuse time in seconds: 5 s with kit, 10 s without. |
-| `0xd50` | `m_flDefuseCountDown` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime at which the defuse will complete if uninterrupted. *Remaining defuse time = m_flDefuseCountDown - current_game_time.* |
-| `0xd54` | `m_hBombDefuser` | CHandle< [CCSPlayerPawn](../server/CCSPlayerPawn.md) > |  | CHandle to the CCSPlayerPawn currently defusing the bomb (INVALID_EHANDLE if not being defused). |
-| `0xd58` | `m_iProgressBarTime` | int32 |  |  |
-| `0xd5c` | `m_bVoiceAlertFired` | bool |  |  |
-| `0xd5d` | `m_bVoiceAlertPlayed` | bool[4] |  |  |
-| `0xd64` | `m_flNextBotBeepTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0xd6c` | `m_angCatchUpToPlayerEye` | QAngle |  |  |
-| `0xd78` | `m_flLastSpinDetectionTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0x710` | `m_bodyGroupTotalRequestCount` | uint32 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x718` | `m_bodyGroupRequests` | CUtlVectorFixedGrowable< [CBaseModelEntity::BodyGroupRequest_t](../server/CBaseModelEntity.BodyGroupRequest_t.md), 8 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x7f0` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x818` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
+| `0x848` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
+| `0x850` | `m_graphControllerManager` | [CAnimGraphControllerManager](../server/CAnimGraphControllerManager.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x8e8` | `m_pMainGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | The primary animation-graph controller instance for this entity. |
+| `0x8f0` | `m_bInitiallyPopulateInterpHistory` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x8f8` | `m_OnLayerCycleUpdated` | CEntityOutputTemplate< float32 > | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x918` | `m_OnExternalChoreoGraphChanged` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x930` | `m_pChoreoServices` | [IChoreoServices](../server/IChoreoServices.md)* | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MKV3TransferSaveOpsForField GetChoreoServicesSaveRestoreOps` |
+| `0x938` | `m_bAnimGraphUpdateEnabled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x939` | `m_bAnimationUpdateScheduled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x93c` | `m_vecForce` | Vector | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x948` | `m_nForceBone` | int32 | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x958` | `m_pRagdollControl` | [IPhysicsRagdollControl](../vphysics2/IPhysicsRagdollControl.md)* | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MPhysPtr` |
+| `0x960` | `m_RagdollPose` | [PhysicsRagdollPose_t](../server/PhysicsRagdollPose_t.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x988` | `m_bRagdollEnabled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | True while the entity is simulated as a ragdoll rather than animated. |
+| `0x989` | `m_bRagdollClientSide` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x98a` | `m_bShouldUpdateTransformations` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x990` | `m_xParentedRagdollRootInEntitySpace` | CTransform | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0xa98` | `m_bBombTicking` | bool |  | True once the bomb has been armed and the countdown has started. |
+| `0xa9c` | `m_flC4Blow` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime at which the bomb will detonate if not defused. *Compute remaining time as: m_flC4Blow - current_game_time.* |
+| `0xaa0` | `m_nBombSite` | int32 |  | Which bombsite the bomb was planted on (0 = site A, 1 = site B; matches the bombsite trigger index). |
+| `0xaa4` | `m_nSourceSoundscapeHash` | int32 |  | Hash of the soundscape entity to activate when players are near the planted bomb. |
+| `0xaa8` | `m_bAbortDetonationBecauseWorldIsFrozen` | bool |  |  |
+| `0xab0` | `m_AttributeManager` | [CAttributeContainer](../server/CAttributeContainer.md) |  |  |
+| `0xee8` | `m_OnBombDefused` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
+| `0xf00` | `m_OnBombBeginDefuse` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
+| `0xf18` | `m_OnBombDefuseAborted` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
+| `0xf30` | `m_bCannotBeDefused` | bool |  | True when the bomb is in a state where it physically cannot be defused (e.g. during some special game modes). |
+| `0xf38` | `m_entitySpottedState` | [EntitySpottedState_t](../server/EntitySpottedState_t.md) |  | EntitySpottedState_t tracking which players have spotted (radar dot) the planted bomb. |
+| `0xf50` | `m_nSpotRules` | int32 |  |  |
+| `0xf54` | `m_bHasExploded` | bool |  | True after the bomb has detonated. |
+| `0xf55` | `m_bBombDefused` | bool |  | True after the bomb has been successfully defused. |
+| `0xf56` | `m_bTrainingPlacedByPlayer` | bool |  |  |
+| `0xf58` | `m_flTimerLength` | float32 |  | Total bomb-timer duration in seconds (mirrors mp_c4timer value at plant time). |
+| `0xf5c` | `m_bBeingDefused` | bool |  | True while a CT player is actively pressing the defuse key on the bomb. |
+| `0xf64` | `m_fLastDefuseTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0xf6c` | `m_flDefuseLength` | float32 |  | Total defuse time in seconds: 5 s with kit, 10 s without. |
+| `0xf70` | `m_flDefuseCountDown` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime at which the defuse will complete if uninterrupted. *Remaining defuse time = m_flDefuseCountDown - current_game_time.* |
+| `0xf74` | `m_hBombDefuser` | CHandle< [CCSPlayerPawn](../server/CCSPlayerPawn.md) > |  | CHandle to the CCSPlayerPawn currently defusing the bomb (INVALID_EHANDLE if not being defused). |
+| `0xf78` | `m_iProgressBarTime` | int32 |  |  |
+| `0xf7c` | `m_bVoiceAlertFired` | bool |  |  |
+| `0xf7d` | `m_bVoiceAlertPlayed` | bool[4] |  |  |
+| `0xf84` | `m_flNextBotBeepTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0xf8c` | `m_angCatchUpToPlayerEye` | QAngle |  |  |
+| `0xf98` | `m_flLastSpinDetectionTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
 
 **Also inherits (secondary base classes):** [IHasAttributes](../server/IHasAttributes.md) — additional-base fields sit at a shifted offset the schema does not record; see each base's own page for its layout.

@@ -8,9 +8,9 @@ kind: class
 
 # CCS2UIPawnGraphController
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 472 bytes (`0x1d8`) · **Align:** 8 · **Module:** client
+**Kind:** class · **Size:** 576 bytes (`0x240`) · **Align:** 8 · **Module:** client
 
 **Inherits from:** [CAnimGraphControllerBase](../server/CAnimGraphControllerBase.md)
 
@@ -23,25 +23,27 @@ classDiagram
 
 ## Memory layout
 
-15 fields (14 declared here, 1 inherited). Offsets are absolute from the object base.
+17 fields (16 declared here, 1 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x10` | `m_hExternalGraph` | [ExternalAnimGraphHandle_t](../server/ExternalAnimGraphHandle_t.md) | [CAnimGraphControllerBase](../server/CAnimGraphControllerBase.md) |  |
-| `0x88` | `m_nAnimationSeed` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
-| `0xa0` | `m_characterMode` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
-| `0xb8` | `m_bCharacterModeReset` | CAnimGraph2ParamOptionalRef< bool > |  |  |
-| `0xd0` | `m_nTeamPreviewVariant` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
-| `0xe8` | `m_nTeamPreviewRandom` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
-| `0x100` | `m_nTeamPreviewPosition` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
-| `0x118` | `m_endOfMatchCelebration` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
-| `0x130` | `m_action` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
-| `0x148` | `m_bannerAnimation` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
-| `0x160` | `m_weaponCategory` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
-| `0x178` | `m_weaponType` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
-| `0x190` | `m_weaponState` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
-| `0x1a8` | `m_inspectTurnAngle` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
-| `0x1c0` | `m_bCT` | CAnimGraph2ParamOptionalRef< bool > |  |  |
+| `0x4c` | `m_hExternalGraph` | [ExternalAnimGraphHandle_t](../server/ExternalAnimGraphHandle_t.md) | [CAnimGraphControllerBase](../server/CAnimGraphControllerBase.md) |  |
+| `0xc0` | `m_nAnimationSeed` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
+| `0xd8` | `m_characterMode` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
+| `0xf0` | `m_bCharacterModeReset` | CAnimGraph2ParamOptionalRef< bool > |  |  |
+| `0x108` | `m_nTeamPreviewVariant` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
+| `0x120` | `m_nTeamPreviewRandom` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
+| `0x138` | `m_nTeamPreviewPosition` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
+| `0x150` | `m_endOfMatchCelebration` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
+| `0x168` | `m_action` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
+| `0x180` | `m_bannerAnimation` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
+| `0x198` | `m_weaponCategory` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
+| `0x1b0` | `m_weaponType` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
+| `0x1c8` | `m_weaponState` | CAnimGraph2ParamOptionalRef< CGlobalSymbol > |  |  |
+| `0x1e0` | `m_inspectTurnAngle` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
+| `0x1f8` | `m_nChickSnapshotVariant` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
+| `0x210` | `m_nChickLifeStage` | CAnimGraph2ParamOptionalRef< float32 > |  |  |
+| `0x228` | `m_bCT` | CAnimGraph2ParamOptionalRef< bool > |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -61,6 +63,8 @@ classDiagram
 	&quot;m_weaponType&quot;: null,
 	&quot;m_weaponState&quot;: null,
 	&quot;m_inspectTurnAngle&quot;: null,
+	&quot;m_nChickSnapshotVariant&quot;: null,
+	&quot;m_nChickLifeStage&quot;: null,
 	&quot;m_bCT&quot;: null
 }</pre>
 </details>

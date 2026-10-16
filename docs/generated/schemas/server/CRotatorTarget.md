@@ -8,9 +8,9 @@ kind: class
 
 # CRotatorTarget
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 1224 bytes (`0x4c8`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 1192 bytes (`0x4a8`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CPointEntity](../server/CPointEntity.md)
 
@@ -21,13 +21,11 @@ classDiagram
     CPointEntity <|-- CRotatorTarget
     CBaseEntity <|-- CPointEntity
     CEntityInstance <|-- CBaseEntity
-    CRotatorTarget *-- CEntityIOOutput
-    CRotatorTarget *-- RotatorTargetSpace_t
 ```
 
 ## Memory layout
 
-90 fields (2 declared here, 88 inherited). Offsets are absolute from the object base.
+88 fields (0 declared here, 88 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -119,5 +117,3 @@ classDiagram
 | `0x498` | `m_flVPhysicsUpdateLocalTime` | float32 | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x49c` | `m_nBloodType` | [BloodType](../server/BloodType.md) | [CBaseEntity](../server/CBaseEntity.md) |  |
 | `0x4a0` | `m_pPulseGraphInstance` | [CPulseGraphInstance_ServerEntity](../server/CPulseGraphInstance_ServerEntity.md)* | [CBaseEntity](../server/CBaseEntity.md) | `MKV3TransferSaveOpsForField GetPulseInstanceSaveRestoreOps` |
-| `0x4a8` | `m_OnArrivedAt` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) |  |  |
-| `0x4c0` | `m_eSpace` | [RotatorTargetSpace_t](../server/RotatorTargetSpace_t.md) |  |  |

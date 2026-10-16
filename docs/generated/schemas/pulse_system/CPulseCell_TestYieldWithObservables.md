@@ -8,9 +8,9 @@ kind: class
 
 # CPulseCell_TestYieldWithObservables
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 544 bytes (`0x220`) · **Align:** 8 · **Module:** pulse_system
+**Kind:** class · **Size:** 592 bytes (`0x250`) · **Align:** 8 · **Module:** pulse_system
 
 **Inherits from:** [CPulseCell_BaseYieldingInflow](../pulse_runtime_lib/CPulseCell_BaseYieldingInflow.md)
 
@@ -35,9 +35,9 @@ classDiagram
 | `0x90` | `m_BaseFlow_WhileActive` | [CPulse_ResumePoint](../pulse_runtime_lib/CPulse_ResumePoint.md) | [CPulseCell_BaseYieldingInflow](../pulse_runtime_lib/CPulseCell_BaseYieldingInflow.md) | `MPulseFGDSkipField` |
 | `0xd8` | `m_flWatchForFloatValue` | float32 |  |  |
 | `0xe0` | `m_LiveFloatValue` | CPulseObservableExpression< float32 > |  |  |
-| `0x158` | `m_WatchForStringValue` | CUtlString |  |  |
-| `0x160` | `m_LiveStringValue` | CPulseObservableExpression< CUtlString > |  |  |
-| `0x1d8` | `m_WakeResume` | [CPulse_ResumePoint](../pulse_runtime_lib/CPulse_ResumePoint.md) |  |  |
+| `0x170` | `m_WatchForStringValue` | CUtlString |  |  |
+| `0x178` | `m_LiveStringValue` | CPulseObservableExpression< CUtlString > |  |  |
+| `0x208` | `m_WakeResume` | [CPulse_ResumePoint](../pulse_runtime_lib/CPulse_ResumePoint.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -70,6 +70,9 @@ classDiagram
 		],
 		&quot;m_DependentObservableBlackboardReferences&quot;:
 		[
+		],
+		&quot;m_DependentObservableTempVars&quot;:
+		[
 		]
 	},
 	&quot;m_WatchForStringValue&quot;: &quot;&quot;,
@@ -85,6 +88,9 @@ classDiagram
 		[
 		],
 		&quot;m_DependentObservableBlackboardReferences&quot;:
+		[
+		],
+		&quot;m_DependentObservableTempVars&quot;:
 		[
 		]
 	},

@@ -8,11 +8,11 @@ kind: class
 
 # CBasePlayerController
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 Base class for all player controller entities in Source 2.  A controller is the persistent, session-level entity that represents a connected client; it is never recreated between rounds.  The controller owns one or more pawn entities (the physical in-world representation).
 
-**Kind:** class · **Size:** 2040 bytes (`0x7f8`) · **Align:** 8 · **Module:** client
+**Kind:** class · **Size:** 2048 bytes (`0x800`) · **Align:** 8 · **Module:** client
 
 **Twin:** [CBasePlayerController (server)](../server/CBasePlayerController.md)
 
@@ -129,14 +129,14 @@ classDiagram
 | `0x6bc` | `m_hPawn` | CHandle< [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) > |  | CHandle to the base pawn currently controlled by this controller. *For CS2 human players the concrete type is CCSPlayerPawn.  Use m_hPlayerPawn on CCSPlayerController for the typed handle.* |
 | `0x6c0` | `m_bKnownTeamMismatch` | bool |  |  |
 | `0x6c4` | `m_hPredictedPawn` | CHandle< [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) > |  | `MNotSaved` |
-| `0x6c8` | `m_nSplitScreenSlot` | CSplitScreenSlot |  | `MNotSaved` |
-| `0x6cc` | `m_hSplitOwner` | CHandle< [CBasePlayerController](../client/CBasePlayerController.md) > |  | `MNotSaved` |
-| `0x6d0` | `m_hSplitScreenPlayers` | CUtlVector< CHandle< [CBasePlayerController](../client/CBasePlayerController.md) > > |  | `MNotSaved` |
-| `0x6e8` | `m_bIsHLTV` | bool |  |  |
-| `0x6ec` | `m_iConnected` | [PlayerConnectedState](../server/PlayerConnectedState.md) |  | PlayerConnectedState enum – 0 = Disconnected, 1 = Connected, 2 = Connecting. `MNotSaved` |
-| `0x6f0` | `m_iMostConnected` | [PlayerConnectedState](../server/PlayerConnectedState.md) |  | `MNotSaved` |
-| `0x6f4` | `m_iszPlayerName` | char[128] |  | Display name of the player, as reported by Steam (up to 128 bytes, UTF-8). `MNotSaved` |
-| `0x780` | `m_steamID` | uint64 |  | 64-bit Steam account ID (SteamID64) of the connected client. *Transmitted as a fixed64; only sent to the owning player and GOTV.* `MNotSaved` |
-| `0x788` | `m_bIsLocalPlayerController` | bool |  | `MNotSaved` |
-| `0x789` | `m_bNoClipEnabled` | bool |  | True when sv_cheats noclip is active for this player. |
-| `0x78c` | `m_iDesiredFOV` | uint32 |  | Field-of-view override requested by the player (0 = use server default). |
+| `0x6cc` | `m_nSplitScreenSlot` | CSplitScreenSlot |  | `MNotSaved` |
+| `0x6d0` | `m_hSplitOwner` | CHandle< [CBasePlayerController](../client/CBasePlayerController.md) > |  | `MNotSaved` |
+| `0x6d8` | `m_hSplitScreenPlayers` | CUtlVector< CHandle< [CBasePlayerController](../client/CBasePlayerController.md) > > |  | `MNotSaved` |
+| `0x6f0` | `m_bIsHLTV` | bool |  |  |
+| `0x6f4` | `m_iConnected` | [PlayerConnectedState](../server/PlayerConnectedState.md) |  | PlayerConnectedState enum – 0 = Disconnected, 1 = Connected, 2 = Connecting. `MNotSaved` |
+| `0x6f8` | `m_iMostConnected` | [PlayerConnectedState](../server/PlayerConnectedState.md) |  | `MNotSaved` |
+| `0x6fc` | `m_iszPlayerName` | char[128] |  | Display name of the player, as reported by Steam (up to 128 bytes, UTF-8). `MNotSaved` |
+| `0x788` | `m_steamID` | uint64 |  | 64-bit Steam account ID (SteamID64) of the connected client. *Transmitted as a fixed64; only sent to the owning player and GOTV.* `MNotSaved` |
+| `0x790` | `m_bIsLocalPlayerController` | bool |  | `MNotSaved` |
+| `0x791` | `m_bNoClipEnabled` | bool |  | True when sv_cheats noclip is active for this player. |
+| `0x794` | `m_iDesiredFOV` | uint32 |  | Field-of-view override requested by the player (0 = use server default). |

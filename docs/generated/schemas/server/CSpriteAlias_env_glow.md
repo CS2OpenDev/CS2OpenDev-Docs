@@ -8,9 +8,9 @@ kind: class
 
 # CSpriteAlias_env_glow
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 2016 bytes (`0x7e0`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 2240 bytes (`0x8c0`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CSprite](../server/CSprite.md)
 
@@ -26,7 +26,7 @@ classDiagram
 
 ## Memory layout
 
-152 fields (0 declared here, 152 inherited). Offsets are absolute from the object base.
+155 fields (0 declared here, 155 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -146,7 +146,8 @@ classDiagram
 | `0x570` | `m_clrRender` | Color | [CBaseModelEntity](../server/CBaseModelEntity.md) | RGBA tint colour multiplied onto the entity's diffuse texture. |
 | `0x578` | `m_vecRenderAttributes` | CUtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../server/EntityRenderAttribute_t.md) > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e0` | `m_bRenderToCubemaps` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x5e1` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e1` | `m_bExpandRenderBoundsToIncludeCloth` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e2` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e8` | `m_Collision` | [CCollisionProperty](../server/CCollisionProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CCollisionProperty struct encoding the entity's collision bounding box shape and flags. |
 | `0x6a0` | `m_Glow` | [CGlowProperty](../server/CGlowProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CGlowProperty struct controlling the entity's glow outline (colour, radius, visibility rules). |
 | `0x6f8` | `m_flGlowBackfaceMult` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Multiplier for the glow effect on back-facing surfaces of the model. |
@@ -155,30 +156,32 @@ classDiagram
 | `0x704` | `m_flFadeScale` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Scale factor applied to fade distances; 0 disables distance fading. |
 | `0x708` | `m_flShadowStrength` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Opacity of this entity's cast shadow (0 = no shadow, 1 = full shadow). |
 | `0x70c` | `m_nObjectCulling` | uint8 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x710` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x738` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
-| `0x768` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
-| `0x770` | `m_hSpriteMaterial` | CStrongHandle< [InfoForResourceTypeIMaterial2](../resourcesystem/InfoForResourceTypeIMaterial2.md) > | [CSprite](../server/CSprite.md) |  |
-| `0x778` | `m_hAttachedToEntity` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CSprite](../server/CSprite.md) |  |
-| `0x77c` | `m_nAttachment` | [AttachmentHandle_t](../modellib/AttachmentHandle_t.md) | [CSprite](../server/CSprite.md) |  |
-| `0x780` | `m_flSpriteFramerate` | float32 | [CSprite](../server/CSprite.md) |  |
-| `0x784` | `m_flFrame` | float32 | [CSprite](../server/CSprite.md) |  |
-| `0x788` | `m_flDieTime` | [GameTime_t](../entity2/GameTime_t.md) | [CSprite](../server/CSprite.md) |  |
-| `0x798` | `m_nBrightness` | uint32 | [CSprite](../server/CSprite.md) |  |
-| `0x79c` | `m_flBrightnessDuration` | float32 | [CSprite](../server/CSprite.md) |  |
-| `0x7a0` | `m_flSpriteScale` | float32 | [CSprite](../server/CSprite.md) |  |
-| `0x7a4` | `m_flScaleDuration` | float32 | [CSprite](../server/CSprite.md) |  |
-| `0x7a8` | `m_bWorldSpaceScale` | bool | [CSprite](../server/CSprite.md) |  |
-| `0x7ac` | `m_flGlowProxySize` | float32 | [CSprite](../server/CSprite.md) |  |
-| `0x7b0` | `m_flHDRColorScale` | float32 | [CSprite](../server/CSprite.md) |  |
-| `0x7b4` | `m_flLastTime` | [GameTime_t](../entity2/GameTime_t.md) | [CSprite](../server/CSprite.md) |  |
-| `0x7b8` | `m_flMaxFrame` | float32 | [CSprite](../server/CSprite.md) |  |
-| `0x7bc` | `m_flStartScale` | float32 | [CSprite](../server/CSprite.md) |  |
-| `0x7c0` | `m_flDestScale` | float32 | [CSprite](../server/CSprite.md) |  |
-| `0x7c4` | `m_flScaleTimeStart` | [GameTime_t](../entity2/GameTime_t.md) | [CSprite](../server/CSprite.md) |  |
-| `0x7c8` | `m_nStartBrightness` | int32 | [CSprite](../server/CSprite.md) |  |
-| `0x7cc` | `m_nDestBrightness` | int32 | [CSprite](../server/CSprite.md) |  |
-| `0x7d0` | `m_flBrightnessTimeStart` | [GameTime_t](../entity2/GameTime_t.md) | [CSprite](../server/CSprite.md) |  |
-| `0x7d4` | `m_nSpriteWidth` | int32 | [CSprite](../server/CSprite.md) | `MNotSaved` |
-| `0x7d8` | `m_nSpriteHeight` | int32 | [CSprite](../server/CSprite.md) | `MNotSaved` |
-| `0x7dc` | `m_flSpeed` | float32 | [CSprite](../server/CSprite.md) |  |
+| `0x710` | `m_bodyGroupTotalRequestCount` | uint32 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x718` | `m_bodyGroupRequests` | CUtlVectorFixedGrowable< [CBaseModelEntity::BodyGroupRequest_t](../server/CBaseModelEntity.BodyGroupRequest_t.md), 8 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x7f0` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x818` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
+| `0x848` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
+| `0x850` | `m_hSpriteMaterial` | CStrongHandle< [InfoForResourceTypeIMaterial2](../resourcesystem/InfoForResourceTypeIMaterial2.md) > | [CSprite](../server/CSprite.md) |  |
+| `0x858` | `m_hAttachedToEntity` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > | [CSprite](../server/CSprite.md) |  |
+| `0x85c` | `m_nAttachment` | [AttachmentHandle_t](../modellib/AttachmentHandle_t.md) | [CSprite](../server/CSprite.md) |  |
+| `0x860` | `m_flSpriteFramerate` | float32 | [CSprite](../server/CSprite.md) |  |
+| `0x864` | `m_flFrame` | float32 | [CSprite](../server/CSprite.md) |  |
+| `0x868` | `m_flDieTime` | [GameTime_t](../entity2/GameTime_t.md) | [CSprite](../server/CSprite.md) |  |
+| `0x878` | `m_nBrightness` | uint32 | [CSprite](../server/CSprite.md) |  |
+| `0x87c` | `m_flBrightnessDuration` | float32 | [CSprite](../server/CSprite.md) |  |
+| `0x880` | `m_flSpriteScale` | float32 | [CSprite](../server/CSprite.md) |  |
+| `0x884` | `m_flScaleDuration` | float32 | [CSprite](../server/CSprite.md) |  |
+| `0x888` | `m_bWorldSpaceScale` | bool | [CSprite](../server/CSprite.md) |  |
+| `0x88c` | `m_flGlowProxySize` | float32 | [CSprite](../server/CSprite.md) |  |
+| `0x890` | `m_flHDRColorScale` | float32 | [CSprite](../server/CSprite.md) |  |
+| `0x894` | `m_flLastTime` | [GameTime_t](../entity2/GameTime_t.md) | [CSprite](../server/CSprite.md) |  |
+| `0x898` | `m_flMaxFrame` | float32 | [CSprite](../server/CSprite.md) |  |
+| `0x89c` | `m_flStartScale` | float32 | [CSprite](../server/CSprite.md) |  |
+| `0x8a0` | `m_flDestScale` | float32 | [CSprite](../server/CSprite.md) |  |
+| `0x8a4` | `m_flScaleTimeStart` | [GameTime_t](../entity2/GameTime_t.md) | [CSprite](../server/CSprite.md) |  |
+| `0x8a8` | `m_nStartBrightness` | int32 | [CSprite](../server/CSprite.md) |  |
+| `0x8ac` | `m_nDestBrightness` | int32 | [CSprite](../server/CSprite.md) |  |
+| `0x8b0` | `m_flBrightnessTimeStart` | [GameTime_t](../entity2/GameTime_t.md) | [CSprite](../server/CSprite.md) |  |
+| `0x8b4` | `m_nSpriteWidth` | int32 | [CSprite](../server/CSprite.md) | `MNotSaved` |
+| `0x8b8` | `m_nSpriteHeight` | int32 | [CSprite](../server/CSprite.md) | `MNotSaved` |
+| `0x8bc` | `m_flSpeed` | float32 | [CSprite](../server/CSprite.md) |  |

@@ -5,7 +5,7 @@ module: hammer
 
 # Module: hammer
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 [📊 View UML Diagram](../diagrams/hammer.md)
 
@@ -13,9 +13,9 @@ module: hammer
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
-| [ColorOptionsEditableData_t](hammer/ColorOptionsEditableData_t.md) | class | 30 | 9 |  |
+| [ColorOptionsEditableData_t](hammer/ColorOptionsEditableData_t.md) | class | 32 | 9 |  |
 | [GeneralOptionsEditableData_t](hammer/GeneralOptionsEditableData_t.md) | class | 56 | 16 |  |
-| [ImportExportOptionsEditableData_t](hammer/ImportExportOptionsEditableData_t.md) | class | 16 | 6 |  |
+| [ImportExportOptionsEditableData_t](hammer/ImportExportOptionsEditableData_t.md) | class | 20 | 8 |  |
 | [TexturesOptionsEditableData_t](hammer/TexturesOptionsEditableData_t.md) | class | 8 | 1 |  |
 | [ToolsOptionsEditableData_t](hammer/ToolsOptionsEditableData_t.md) | class | 9 | 9 |  |
 | [View2DOptionsEditableData_t](hammer/View2DOptionsEditableData_t.md) | class | 12 | 4 |  |

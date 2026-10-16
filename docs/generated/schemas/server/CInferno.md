@@ -8,11 +8,11 @@ kind: class
 
 # CInferno
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 Entity created when a molotov or incendiary grenade detonates.  Manages an array of individual fire positions that expand and spread across the surface. Deals damage to all entities within burning fire positions each tick.
 
-**Kind:** class · **Size:** 5112 bytes (`0x13f8`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 5336 bytes (`0x14d8`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CBaseModelEntity](../server/CBaseModelEntity.md)
 
@@ -33,7 +33,7 @@ classDiagram
 
 ## Memory layout
 
-152 fields (24 declared here, 128 inherited). Offsets are absolute from the object base.
+155 fields (24 declared here, 131 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -153,7 +153,8 @@ classDiagram
 | `0x570` | `m_clrRender` | Color | [CBaseModelEntity](../server/CBaseModelEntity.md) | RGBA tint colour multiplied onto the entity's diffuse texture. |
 | `0x578` | `m_vecRenderAttributes` | CUtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../server/EntityRenderAttribute_t.md) > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e0` | `m_bRenderToCubemaps` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x5e1` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e1` | `m_bExpandRenderBoundsToIncludeCloth` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e2` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e8` | `m_Collision` | [CCollisionProperty](../server/CCollisionProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CCollisionProperty struct encoding the entity's collision bounding box shape and flags. |
 | `0x6a0` | `m_Glow` | [CGlowProperty](../server/CGlowProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CGlowProperty struct controlling the entity's glow outline (colour, radius, visibility rules). |
 | `0x6f8` | `m_flGlowBackfaceMult` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Multiplier for the glow effect on back-facing surfaces of the model. |
@@ -162,30 +163,32 @@ classDiagram
 | `0x704` | `m_flFadeScale` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Scale factor applied to fade distances; 0 disables distance fading. |
 | `0x708` | `m_flShadowStrength` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Opacity of this entity's cast shadow (0 = no shadow, 1 = full shadow). |
 | `0x70c` | `m_nObjectCulling` | uint8 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x710` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x738` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
-| `0x768` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
-| `0x770` | `m_firePositions` | VectorWS[64] |  | Array of up to 64 world-space positions of active fire cells. |
-| `0xa70` | `m_fireParentPositions` | VectorWS[64] |  | Array of parent fire-cell positions that spawned each fire cell (for spread graph). |
-| `0xd70` | `m_bFireIsBurning` | bool[64] |  | Per-cell boolean array; true when the corresponding fire cell is actively burning. |
-| `0xdb0` | `m_BurnNormal` | Vector[64] |  | Surface normal at each fire-cell position; used to orient flame effects. |
-| `0x10b0` | `m_fireCount` | int32 |  | Number of active fire cells currently burning. |
-| `0x10b4` | `m_nInfernoType` | int32 |  | Type of fire: 0 = molotov, 1 = incendiary grenade. |
-| `0x10b8` | `m_nFireEffectTickBegin` | int32 |  | Server tick on which the fire visual effects started; used by clients to synchronise particle timing. |
-| `0x10bc` | `m_nFireLifetime` | float32 |  | Total lifetime of the inferno entity in seconds. |
-| `0x10c0` | `m_bInPostEffectTime` | bool |  | True during the brief post-fire period after all flames have died but before the entity is removed (allows smoke and heat-shimmer to linger). |
-| `0x10c1` | `m_bWasCreatedInSmoke` | bool |  |  |
-| `0x12c8` | `m_extent` | [Extent](../navlib/Extent.md) |  |  |
-| `0x12e0` | `m_damageTimer` | [CountdownTimer](../server/CountdownTimer.md) |  |  |
-| `0x12f8` | `m_damageRampTimer` | [CountdownTimer](../server/CountdownTimer.md) |  |  |
-| `0x1310` | `m_splashVelocity` | Vector |  |  |
-| `0x131c` | `m_InitialSplashVelocity` | Vector |  |  |
-| `0x1328` | `m_startPos` | VectorWS |  |  |
-| `0x1334` | `m_vecOriginalSpawnLocation` | VectorWS |  |  |
-| `0x1340` | `m_activeTimer` | [IntervalTimer](../server/IntervalTimer.md) |  |  |
-| `0x1350` | `m_fireSpawnOffset` | int32 |  |  |
-| `0x1354` | `m_nMaxFlames` | int32 |  |  |
-| `0x1358` | `m_nSpreadCount` | int32 |  |  |
-| `0x1360` | `m_BookkeepingTimer` | [CountdownTimer](../server/CountdownTimer.md) |  |  |
-| `0x1378` | `m_NextSpreadTimer` | [CountdownTimer](../server/CountdownTimer.md) |  |  |
-| `0x1390` | `m_nSourceItemDefIndex` | uint16 |  |  |
+| `0x710` | `m_bodyGroupTotalRequestCount` | uint32 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x718` | `m_bodyGroupRequests` | CUtlVectorFixedGrowable< [CBaseModelEntity::BodyGroupRequest_t](../server/CBaseModelEntity.BodyGroupRequest_t.md), 8 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x7f0` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x818` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
+| `0x848` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
+| `0x850` | `m_firePositions` | VectorWS[64] |  | Array of up to 64 world-space positions of active fire cells. |
+| `0xb50` | `m_fireParentPositions` | VectorWS[64] |  | Array of parent fire-cell positions that spawned each fire cell (for spread graph). |
+| `0xe50` | `m_bFireIsBurning` | bool[64] |  | Per-cell boolean array; true when the corresponding fire cell is actively burning. |
+| `0xe90` | `m_BurnNormal` | Vector[64] |  | Surface normal at each fire-cell position; used to orient flame effects. |
+| `0x1190` | `m_fireCount` | int32 |  | Number of active fire cells currently burning. |
+| `0x1194` | `m_nInfernoType` | int32 |  | Type of fire: 0 = molotov, 1 = incendiary grenade. |
+| `0x1198` | `m_nFireEffectTickBegin` | int32 |  | Server tick on which the fire visual effects started; used by clients to synchronise particle timing. |
+| `0x119c` | `m_nFireLifetime` | float32 |  | Total lifetime of the inferno entity in seconds. |
+| `0x11a0` | `m_bInPostEffectTime` | bool |  | True during the brief post-fire period after all flames have died but before the entity is removed (allows smoke and heat-shimmer to linger). |
+| `0x11a1` | `m_bWasCreatedInSmoke` | bool |  |  |
+| `0x13a8` | `m_extent` | [Extent](../navlib/Extent.md) |  |  |
+| `0x13c0` | `m_damageTimer` | [CountdownTimer](../server/CountdownTimer.md) |  |  |
+| `0x13d8` | `m_damageRampTimer` | [CountdownTimer](../server/CountdownTimer.md) |  |  |
+| `0x13f0` | `m_splashVelocity` | Vector |  |  |
+| `0x13fc` | `m_InitialSplashVelocity` | Vector |  |  |
+| `0x1408` | `m_startPos` | VectorWS |  |  |
+| `0x1414` | `m_vecOriginalSpawnLocation` | VectorWS |  |  |
+| `0x1420` | `m_activeTimer` | [IntervalTimer](../server/IntervalTimer.md) |  |  |
+| `0x1430` | `m_fireSpawnOffset` | int32 |  |  |
+| `0x1434` | `m_nMaxFlames` | int32 |  |  |
+| `0x1438` | `m_nSpreadCount` | int32 |  |  |
+| `0x1440` | `m_BookkeepingTimer` | [CountdownTimer](../server/CountdownTimer.md) |  |  |
+| `0x1458` | `m_NextSpreadTimer` | [CountdownTimer](../server/CountdownTimer.md) |  |  |
+| `0x1470` | `m_nSourceItemDefIndex` | uint16 |  |  |

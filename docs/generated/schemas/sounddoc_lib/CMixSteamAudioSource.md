@@ -8,7 +8,7 @@ kind: class
 
 # CMixSteamAudioSource
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 48 bytes (`0x30`) · **Align:** 8 · **Module:** sounddoc_lib
 
@@ -26,7 +26,7 @@ classDiagram
 
 ## Memory layout
 
-9 fields (4 declared here, 5 inherited). Offsets are absolute from the object base.
+10 fields (4 declared here, 6 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -35,6 +35,7 @@ classDiagram
 | `0x18` | `m_bActive` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x19` | `m_bSolo` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x1a` | `m_bEditProperties` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
+| `0x1c` | `m_nGenerationId` | int32 | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x20` | `m_nInterpolation` | [SteamAudioHRTFInterpolationType_t](../sounddoc_lib/SteamAudioHRTFInterpolationType_t.md) |  | `MPropertyFriendlyName HRTF Interpolation` |
 | `0x24` | `m_flDirectMixLevel` | float32 |  | `MPropertyAttributeRange 0 1` `MPropertyFriendlyName Direct Mix Level` |
 | `0x28` | `m_bEnablePerspectiveCorrection` | bool |  | `MPropertyDescription If checked, enables perspective correction for spatialized sound sources. When perspective correction is enabled, instead of spatializing sounds from their world - space position relative to the listener, sounds are spatialized from their on - screen position relative to the user. This can improve perceived localization accuracy in 3D non - VR applications.` `MPropertyFriendlyName Enable Perspective Correction` |
@@ -49,6 +50,7 @@ classDiagram
 	&quot;m_bActive&quot;: true,
 	&quot;m_bSolo&quot;: false,
 	&quot;m_bEditProperties&quot;: false,
+	&quot;m_nGenerationId&quot;: 0,
 	&quot;m_nInterpolation&quot;: &quot;SA_HRTFINTEROP_BILINEAR&quot;,
 	&quot;m_flDirectMixLevel&quot;: 1.000000,
 	&quot;m_bEnablePerspectiveCorrection&quot;: false,

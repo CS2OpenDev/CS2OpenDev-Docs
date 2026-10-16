@@ -8,13 +8,13 @@ kind: class
 
 # CCSPlayerController
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 The server-side controller entity for a CS2 player.  One CCSPlayerController exists per connected client for the lifetime of the connection; it persists across rounds.  The controller owns a CCSPlayerPawn (the physical in-world representation) which may be recreated each round.
 
 > 📝 The controller / pawn split mirrors the Source 2 architecture described in the HL2SDK: a lightweight controller manages session-level state (score, team, competitive rank) while the pawn carries per-round physics and animation state.  Demo parsers should track m_hPlayerPawn to find the corresponding pawn entity handle each round.
 
-**Kind:** class · **Size:** 2400 bytes (`0x960`) · **Align:** 8 · **Module:** client
+**Kind:** class · **Size:** 2432 bytes (`0x980`) · **Align:** 8 · **Module:** client
 
 **Twin:** [CCSPlayerController (server)](../server/CCSPlayerController.md)
 
@@ -39,7 +39,7 @@ classDiagram
 
 ## Memory layout
 
-170 fields (68 declared here, 102 inherited). Offsets are absolute from the object base.
+172 fields (70 declared here, 102 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -134,82 +134,84 @@ classDiagram
 | `0x6bc` | `m_hPawn` | CHandle< [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) > | [CBasePlayerController](../client/CBasePlayerController.md) | CHandle to the base pawn currently controlled by this controller. *For CS2 human players the concrete type is CCSPlayerPawn.  Use m_hPlayerPawn on CCSPlayerController for the typed handle.* |
 | `0x6c0` | `m_bKnownTeamMismatch` | bool | [CBasePlayerController](../client/CBasePlayerController.md) |  |
 | `0x6c4` | `m_hPredictedPawn` | CHandle< [C_BasePlayerPawn](../client/C_BasePlayerPawn.md) > | [CBasePlayerController](../client/CBasePlayerController.md) | `MNotSaved` |
-| `0x6c8` | `m_nSplitScreenSlot` | CSplitScreenSlot | [CBasePlayerController](../client/CBasePlayerController.md) | `MNotSaved` |
-| `0x6cc` | `m_hSplitOwner` | CHandle< [CBasePlayerController](../client/CBasePlayerController.md) > | [CBasePlayerController](../client/CBasePlayerController.md) | `MNotSaved` |
-| `0x6d0` | `m_hSplitScreenPlayers` | CUtlVector< CHandle< [CBasePlayerController](../client/CBasePlayerController.md) > > | [CBasePlayerController](../client/CBasePlayerController.md) | `MNotSaved` |
-| `0x6e8` | `m_bIsHLTV` | bool | [CBasePlayerController](../client/CBasePlayerController.md) |  |
-| `0x6ec` | `m_iConnected` | [PlayerConnectedState](../server/PlayerConnectedState.md) | [CBasePlayerController](../client/CBasePlayerController.md) | PlayerConnectedState enum – 0 = Disconnected, 1 = Connected, 2 = Connecting. `MNotSaved` |
-| `0x6f0` | `m_iMostConnected` | [PlayerConnectedState](../server/PlayerConnectedState.md) | [CBasePlayerController](../client/CBasePlayerController.md) | `MNotSaved` |
-| `0x6f4` | `m_iszPlayerName` | char[128] | [CBasePlayerController](../client/CBasePlayerController.md) | Display name of the player, as reported by Steam (up to 128 bytes, UTF-8). `MNotSaved` |
-| `0x780` | `m_steamID` | uint64 | [CBasePlayerController](../client/CBasePlayerController.md) | 64-bit Steam account ID (SteamID64) of the connected client. *Transmitted as a fixed64; only sent to the owning player and GOTV.* `MNotSaved` |
-| `0x788` | `m_bIsLocalPlayerController` | bool | [CBasePlayerController](../client/CBasePlayerController.md) | `MNotSaved` |
-| `0x789` | `m_bNoClipEnabled` | bool | [CBasePlayerController](../client/CBasePlayerController.md) | True when sv_cheats noclip is active for this player. |
-| `0x78c` | `m_iDesiredFOV` | uint32 | [CBasePlayerController](../client/CBasePlayerController.md) | Field-of-view override requested by the player (0 = use server default). |
-| `0x810` | `m_pInGameMoneyServices` | [CCSPlayerController_InGameMoneyServices](../client/CCSPlayerController_InGameMoneyServices.md)* |  |  |
-| `0x818` | `m_pInventoryServices` | [CCSPlayerController_InventoryServices](../client/CCSPlayerController_InventoryServices.md)* |  |  |
-| `0x820` | `m_pActionTrackingServices` | [CCSPlayerController_ActionTrackingServices](../client/CCSPlayerController_ActionTrackingServices.md)* |  |  |
-| `0x828` | `m_pDamageServices` | [CCSPlayerController_DamageServices](../client/CCSPlayerController_DamageServices.md)* |  |  |
-| `0x830` | `m_iPing` | uint32 |  | Player's current network round-trip latency, in milliseconds. *Smoothed by m_flSmoothedPing server-side; updated roughly every 5 s.* |
-| `0x834` | `m_bHasCommunicationAbuseMute` | bool |  |  |
-| `0x838` | `m_uiCommunicationMuteFlags` | uint32 |  |  |
-| `0x840` | `m_szCrosshairCodes` | CUtlSymbolLarge |  | Encoded crosshair configuration string (same format as the cl_crosshair_reticle_* convars share-code). |
-| `0x848` | `m_iPendingTeamNum` | uint8 |  | Team number the player will be moved to at the next team-change opportunity. |
-| `0x84c` | `m_flForceTeamTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime after which team-forcing is no longer applied. |
-| `0x850` | `m_iCompTeammateColor` | int32 |  |  |
-| `0x854` | `m_bEverPlayedOnTeam` | bool |  | True once this player has played at least one round as a non-spectator. |
-| `0x858` | `m_flPreviousForceJoinTeamTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0x860` | `m_szClan` | CUtlSymbolLarge |  | Player's clan tag string, displayed next to the name in the scoreboard. |
-| `0x868` | `m_sSanitizedPlayerName` | CUtlString |  |  |
-| `0x870` | `m_iCoachingTeam` | int32 |  | Team number this player is coaching (0 if not coaching). |
-| `0x878` | `m_nPlayerDominated` | uint64 |  | 64-bit bitmask; bit N set means this player is dominating player-slot N. |
-| `0x880` | `m_nPlayerDominatingMe` | uint64 |  | 64-bit mask of player-slot bits that are currently dominating this player. |
-| `0x888` | `m_iCompetitiveRanking` | int32 |  | Player's current Premier/Competitive numeric skill rating. |
-| `0x88c` | `m_iCompetitiveWins` | int32 |  | Total number of ranked wins accumulated on this account. |
-| `0x890` | `m_iCompetitiveRankType` | int8 |  | Rank type identifier (e.g. 0 = unranked, 11 = Premier, 12 = Competitive). |
-| `0x894` | `m_iCompetitiveRankingPredicted_Win` | int32 |  | Predicted rating delta if the match ends in a win for this player. |
-| `0x898` | `m_iCompetitiveRankingPredicted_Loss` | int32 |  | Predicted rating delta if the match ends in a loss. |
-| `0x89c` | `m_iCompetitiveRankingPredicted_Tie` | int32 |  | Predicted rating delta if the match ends in a tie/draw. |
-| `0x8a0` | `m_nEndMatchNextMapVote` | int32 |  | Index of the map this player has voted for in the end-of-match map vote. |
-| `0x8a4` | `m_unActiveQuestId` | uint16 |  | Active operation mission ID for this player (0 if none active). |
-| `0x8a8` | `m_rtActiveMissionPeriod` | uint32 |  |  |
-| `0x8ac` | `m_nQuestProgressReason` | [QuestProgress::Reason](../server/QuestProgress.Reason.md) |  | Reason code for the last quest-progress update sent to this player. |
-| `0x8b0` | `m_unPlayerTvControlFlags` | uint32 |  |  |
-| `0x8e0` | `m_iDraftIndex` | int32 |  |  |
-| `0x8e4` | `m_msQueuedModeDisconnectionTimestamp` | uint32 |  |  |
-| `0x8e8` | `m_uiAbandonRecordedReason` | uint32 |  |  |
-| `0x8ec` | `m_eNetworkDisconnectionReason` | uint32 |  |  |
-| `0x8f0` | `m_bCannotBeKicked` | bool |  |  |
-| `0x8f1` | `m_bEverFullyConnected` | bool |  |  |
-| `0x8f2` | `m_bAbandonAllowsSurrender` | bool |  |  |
-| `0x8f3` | `m_bAbandonOffersInstantSurrender` | bool |  |  |
-| `0x8f4` | `m_bDisconnection1MinWarningPrinted` | bool |  |  |
-| `0x8f5` | `m_bScoreReported` | bool |  |  |
-| `0x8f8` | `m_nDisconnectionTick` | int32 |  | Server tick at which this player disconnected (used for reconnect grace period). |
-| `0x908` | `m_bControllingBot` | bool |  | True when this human controller has taken over a bot pawn. |
-| `0x909` | `m_bHasControlledBotThisRound` | bool |  | True if the player took over a bot at any point this round. |
-| `0x90a` | `m_bHasBeenControlledByPlayerThisRound` | bool |  |  |
-| `0x90c` | `m_nBotsControlledThisRound` | int32 |  |  |
-| `0x910` | `m_bCanControlObservedBot` | bool |  | True when the player is allowed to take control of the bot they are spectating. |
-| `0x914` | `m_hPlayerPawn` | CHandle< [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) > |  | CHandle pointing to the player's active CCSPlayerPawn. *Becomes invalid (INVALID_EHANDLE) when the player is dead and their pawn has been removed.  Check m_bPawnIsAlive before dereferencing.* |
-| `0x918` | `m_hObserverPawn` | CHandle< [C_CSObserverPawn](../client/C_CSObserverPawn.md) > |  | CHandle to the CCSObserverPawn when the player is spectating. *Valid only while the player is in spectator mode; otherwise INVALID_EHANDLE.* |
-| `0x91c` | `m_bPawnIsAlive` | bool |  | True while the player's pawn is alive and spawned. |
-| `0x920` | `m_iPawnHealth` | uint32 |  | Current health of the pawn, networked to teammates and spectators. *Only sent to TeammateAndSpectatorExclusive group; enemies do not receive this.* |
-| `0x924` | `m_iPawnArmor` | int32 |  | Current armor value of the pawn (0–100 for vest, 100+ for helmet). |
-| `0x928` | `m_bPawnHasDefuser` | bool |  | True when the pawn is carrying a defuse kit. |
-| `0x929` | `m_bPawnHasHelmet` | bool |  | True when the pawn has a full helmet (takes head-shot armor penalty into account). |
-| `0x92a` | `m_nPawnCharacterDefIndex` | uint16 |  | Item definition index of the character/agent skin equipped on the pawn. |
-| `0x92c` | `m_iPawnLifetimeStart` | int32 |  | Server tick on which the current pawn was spawned. |
-| `0x930` | `m_iPawnLifetimeEnd` | int32 |  | Server tick on which the current pawn died (0 while still alive). |
-| `0x934` | `m_iPawnBotDifficulty` | int32 |  |  |
-| `0x938` | `m_hOriginalControllerOfCurrentPawn` | CHandle< [CCSPlayerController](../client/CCSPlayerController.md) > |  | When a human takes over a bot, this holds a handle back to the original bot controller so the pawn can be returned after the human disconnects. |
-| `0x93c` | `m_iScore` | int32 |  | Lifetime score for this connection (frags minus team-kills, etc.). |
-| `0x940` | `m_recentKillQueue` | uint8[8] |  | Circular buffer of the 8 most-recent enemy kills this round (pawn entity indices). *Used to determine domination/revenge streaks.* |
-| `0x948` | `m_nFirstKill` | uint8 |  | Index within m_recentKillQueue of the oldest valid entry. |
-| `0x949` | `m_nKillCount` | uint8 |  | Number of valid entries currently in m_recentKillQueue. |
-| `0x94a` | `m_bMvpNoMusic` | bool |  | True when the MVP jingle should be suppressed for this player's MVP award. |
-| `0x94c` | `m_eMvpReason` | int32 |  | Reason for the most recent MVP award (enum: 1 = most kills, 2 = bomb defuse, 3 = bomb plant, etc.). |
-| `0x950` | `m_iMusicKitID` | int32 |  | Item definition index of the music kit active for this player. |
-| `0x954` | `m_iMusicKitMVPs` | int32 |  | Number of MVPs awarded while this music kit has been equipped (affects music kit stat tracking). |
-| `0x958` | `m_iMVPs` | int32 |  | Number of MVP stars the player has earned in the current match. |
-| `0x95c` | `m_bIsPlayerNameDirty` | bool |  |  |
-| `0x95d` | `m_bFireBulletsSeedSynchronized` | bool |  | True once the client's bullet-fire PRNG seed has been synchronised with the server. *Only sent to the owning player (LocalPlayerExclusive).* |
+| `0x6cc` | `m_nSplitScreenSlot` | CSplitScreenSlot | [CBasePlayerController](../client/CBasePlayerController.md) | `MNotSaved` |
+| `0x6d0` | `m_hSplitOwner` | CHandle< [CBasePlayerController](../client/CBasePlayerController.md) > | [CBasePlayerController](../client/CBasePlayerController.md) | `MNotSaved` |
+| `0x6d8` | `m_hSplitScreenPlayers` | CUtlVector< CHandle< [CBasePlayerController](../client/CBasePlayerController.md) > > | [CBasePlayerController](../client/CBasePlayerController.md) | `MNotSaved` |
+| `0x6f0` | `m_bIsHLTV` | bool | [CBasePlayerController](../client/CBasePlayerController.md) |  |
+| `0x6f4` | `m_iConnected` | [PlayerConnectedState](../server/PlayerConnectedState.md) | [CBasePlayerController](../client/CBasePlayerController.md) | PlayerConnectedState enum – 0 = Disconnected, 1 = Connected, 2 = Connecting. `MNotSaved` |
+| `0x6f8` | `m_iMostConnected` | [PlayerConnectedState](../server/PlayerConnectedState.md) | [CBasePlayerController](../client/CBasePlayerController.md) | `MNotSaved` |
+| `0x6fc` | `m_iszPlayerName` | char[128] | [CBasePlayerController](../client/CBasePlayerController.md) | Display name of the player, as reported by Steam (up to 128 bytes, UTF-8). `MNotSaved` |
+| `0x788` | `m_steamID` | uint64 | [CBasePlayerController](../client/CBasePlayerController.md) | 64-bit Steam account ID (SteamID64) of the connected client. *Transmitted as a fixed64; only sent to the owning player and GOTV.* `MNotSaved` |
+| `0x790` | `m_bIsLocalPlayerController` | bool | [CBasePlayerController](../client/CBasePlayerController.md) | `MNotSaved` |
+| `0x791` | `m_bNoClipEnabled` | bool | [CBasePlayerController](../client/CBasePlayerController.md) | True when sv_cheats noclip is active for this player. |
+| `0x794` | `m_iDesiredFOV` | uint32 | [CBasePlayerController](../client/CBasePlayerController.md) | Field-of-view override requested by the player (0 = use server default). |
+| `0x818` | `m_pInGameMoneyServices` | [CCSPlayerController_InGameMoneyServices](../client/CCSPlayerController_InGameMoneyServices.md)* |  |  |
+| `0x820` | `m_pInventoryServices` | [CCSPlayerController_InventoryServices](../client/CCSPlayerController_InventoryServices.md)* |  |  |
+| `0x828` | `m_pActionTrackingServices` | [CCSPlayerController_ActionTrackingServices](../client/CCSPlayerController_ActionTrackingServices.md)* |  |  |
+| `0x830` | `m_pDamageServices` | [CCSPlayerController_DamageServices](../client/CCSPlayerController_DamageServices.md)* |  |  |
+| `0x838` | `m_iPing` | uint32 |  | Player's current network round-trip latency, in milliseconds. *Smoothed by m_flSmoothedPing server-side; updated roughly every 5 s.* |
+| `0x83c` | `m_bHasCommunicationAbuseMute` | bool |  |  |
+| `0x840` | `m_uiCommunicationMuteFlags` | uint32 |  |  |
+| `0x848` | `m_szCrosshairCodes` | CUtlSymbolLarge |  | Encoded crosshair configuration string (same format as the cl_crosshair_reticle_* convars share-code). |
+| `0x850` | `m_iPendingTeamNum` | uint8 |  | Team number the player will be moved to at the next team-change opportunity. |
+| `0x854` | `m_flForceTeamTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime after which team-forcing is no longer applied. |
+| `0x858` | `m_iCompTeammateColor` | int32 |  |  |
+| `0x85c` | `m_bEverPlayedOnTeam` | bool |  | True once this player has played at least one round as a non-spectator. |
+| `0x860` | `m_flPreviousForceJoinTeamTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0x868` | `m_szClan` | CUtlSymbolLarge |  | Player's clan tag string, displayed next to the name in the scoreboard. |
+| `0x870` | `m_unClanId32bit` | uint32 |  |  |
+| `0x878` | `m_sSanitizedPlayerName` | CUtlString |  |  |
+| `0x880` | `m_sSanitizedClanTag` | CUtlString |  |  |
+| `0x888` | `m_iCoachingTeam` | int32 |  | Team number this player is coaching (0 if not coaching). |
+| `0x890` | `m_nPlayerDominated` | uint64 |  | 64-bit bitmask; bit N set means this player is dominating player-slot N. |
+| `0x898` | `m_nPlayerDominatingMe` | uint64 |  | 64-bit mask of player-slot bits that are currently dominating this player. |
+| `0x8a0` | `m_iCompetitiveRanking` | int32 |  | Player's current Premier/Competitive numeric skill rating. |
+| `0x8a4` | `m_iCompetitiveWins` | int32 |  | Total number of ranked wins accumulated on this account. |
+| `0x8a8` | `m_iCompetitiveRankType` | int8 |  | Rank type identifier (e.g. 0 = unranked, 11 = Premier, 12 = Competitive). |
+| `0x8ac` | `m_iCompetitiveRankingPredicted_Win` | int32 |  | Predicted rating delta if the match ends in a win for this player. |
+| `0x8b0` | `m_iCompetitiveRankingPredicted_Loss` | int32 |  | Predicted rating delta if the match ends in a loss. |
+| `0x8b4` | `m_iCompetitiveRankingPredicted_Tie` | int32 |  | Predicted rating delta if the match ends in a tie/draw. |
+| `0x8b8` | `m_nEndMatchNextMapVote` | int32 |  | Index of the map this player has voted for in the end-of-match map vote. |
+| `0x8bc` | `m_unActiveQuestId` | uint16 |  | Active operation mission ID for this player (0 if none active). |
+| `0x8c0` | `m_rtActiveMissionPeriod` | uint32 |  |  |
+| `0x8c4` | `m_nQuestProgressReason` | [QuestProgress::Reason](../server/QuestProgress.Reason.md) |  | Reason code for the last quest-progress update sent to this player. |
+| `0x8c8` | `m_unPlayerTvControlFlags` | uint32 |  |  |
+| `0x8f8` | `m_iDraftIndex` | int32 |  |  |
+| `0x8fc` | `m_msQueuedModeDisconnectionTimestamp` | uint32 |  |  |
+| `0x900` | `m_uiAbandonRecordedReason` | uint32 |  |  |
+| `0x904` | `m_eNetworkDisconnectionReason` | uint32 |  |  |
+| `0x908` | `m_bCannotBeKicked` | bool |  |  |
+| `0x909` | `m_bEverFullyConnected` | bool |  |  |
+| `0x90a` | `m_bAbandonAllowsSurrender` | bool |  |  |
+| `0x90b` | `m_bAbandonOffersInstantSurrender` | bool |  |  |
+| `0x90c` | `m_bDisconnection1MinWarningPrinted` | bool |  |  |
+| `0x90d` | `m_bScoreReported` | bool |  |  |
+| `0x910` | `m_nDisconnectionTick` | int32 |  | Server tick at which this player disconnected (used for reconnect grace period). |
+| `0x920` | `m_bControllingBot` | bool |  | True when this human controller has taken over a bot pawn. |
+| `0x921` | `m_bHasControlledBotThisRound` | bool |  | True if the player took over a bot at any point this round. |
+| `0x922` | `m_bHasBeenControlledByPlayerThisRound` | bool |  |  |
+| `0x924` | `m_nBotsControlledThisRound` | int32 |  |  |
+| `0x928` | `m_bCanControlObservedBot` | bool |  | True when the player is allowed to take control of the bot they are spectating. |
+| `0x92c` | `m_hPlayerPawn` | CHandle< [C_CSPlayerPawn](../client/C_CSPlayerPawn.md) > |  | CHandle pointing to the player's active CCSPlayerPawn. *Becomes invalid (INVALID_EHANDLE) when the player is dead and their pawn has been removed.  Check m_bPawnIsAlive before dereferencing.* |
+| `0x930` | `m_hObserverPawn` | CHandle< [C_CSObserverPawn](../client/C_CSObserverPawn.md) > |  | CHandle to the CCSObserverPawn when the player is spectating. *Valid only while the player is in spectator mode; otherwise INVALID_EHANDLE.* |
+| `0x934` | `m_bPawnIsAlive` | bool |  | True while the player's pawn is alive and spawned. |
+| `0x938` | `m_iPawnHealth` | uint32 |  | Current health of the pawn, networked to teammates and spectators. *Only sent to TeammateAndSpectatorExclusive group; enemies do not receive this.* |
+| `0x93c` | `m_iPawnArmor` | int32 |  | Current armor value of the pawn (0–100 for vest, 100+ for helmet). |
+| `0x940` | `m_bPawnHasDefuser` | bool |  | True when the pawn is carrying a defuse kit. |
+| `0x941` | `m_bPawnHasHelmet` | bool |  | True when the pawn has a full helmet (takes head-shot armor penalty into account). |
+| `0x942` | `m_nPawnCharacterDefIndex` | uint16 |  | Item definition index of the character/agent skin equipped on the pawn. |
+| `0x944` | `m_iPawnLifetimeStart` | int32 |  | Server tick on which the current pawn was spawned. |
+| `0x948` | `m_iPawnLifetimeEnd` | int32 |  | Server tick on which the current pawn died (0 while still alive). |
+| `0x94c` | `m_iPawnBotDifficulty` | int32 |  |  |
+| `0x950` | `m_hOriginalControllerOfCurrentPawn` | CHandle< [CCSPlayerController](../client/CCSPlayerController.md) > |  | When a human takes over a bot, this holds a handle back to the original bot controller so the pawn can be returned after the human disconnects. |
+| `0x954` | `m_iScore` | int32 |  | Lifetime score for this connection (frags minus team-kills, etc.). |
+| `0x958` | `m_recentKillQueue` | uint8[8] |  | Circular buffer of the 8 most-recent enemy kills this round (pawn entity indices). *Used to determine domination/revenge streaks.* |
+| `0x960` | `m_nFirstKill` | uint8 |  | Index within m_recentKillQueue of the oldest valid entry. |
+| `0x961` | `m_nKillCount` | uint8 |  | Number of valid entries currently in m_recentKillQueue. |
+| `0x962` | `m_bMvpNoMusic` | bool |  | True when the MVP jingle should be suppressed for this player's MVP award. |
+| `0x964` | `m_eMvpReason` | int32 |  | Reason for the most recent MVP award (enum: 1 = most kills, 2 = bomb defuse, 3 = bomb plant, etc.). |
+| `0x968` | `m_iMusicKitID` | int32 |  | Item definition index of the music kit active for this player. |
+| `0x96c` | `m_iMusicKitMVPs` | int32 |  | Number of MVPs awarded while this music kit has been equipped (affects music kit stat tracking). |
+| `0x970` | `m_iMVPs` | int32 |  | Number of MVP stars the player has earned in the current match. |
+| `0x974` | `m_bIsPlayerNameDirty` | bool |  |  |
+| `0x97c` | `m_bFireBulletsSeedSynchronized` | bool |  | True once the client's bullet-fire PRNG seed has been synchronised with the server. *Only sent to the owning player (LocalPlayerExclusive).* |

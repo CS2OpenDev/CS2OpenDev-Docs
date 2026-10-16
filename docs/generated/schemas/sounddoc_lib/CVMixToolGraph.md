@@ -8,45 +8,46 @@ kind: class
 
 # CVMixToolGraph
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** 8 · **Module:** sounddoc_lib
+
+**Derived by:** [CVMixToolGraphEntry](../sounddoc_lib/CVMixToolGraphEntry.md)
 
 **Relationships:**
 
 ```mermaid
 classDiagram
-    CVMixToolGraph *-- CVMixGraphDescData
+    CVMixToolGraph <|-- CVMixToolGraphEntry
     CVMixToolGraph *-- CVMixEditorNode
     CVMixToolGraph *-- CVMixEditorEdge
 ```
 
 ## Memory layout
 
-4 fields (4 declared here, 0 inherited). Offsets are absolute from the object base.
+6 fields (6 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x0` | `m_graphDescData` | [CVMixGraphDescData](../soundsystem_lowlevel/CVMixGraphDescData.md) |  |  |
-| `0x10` | `m_editorNodes` | CUtlVector< [CVMixEditorNode](../sounddoc_lib/CVMixEditorNode.md) > |  |  |
-| `0x28` | `m_editorEdges` | CUtlVector< [CVMixEditorEdge](../sounddoc_lib/CVMixEditorEdge.md) > |  |  |
-| `0x40` | `m_nPreviewNode` | int32 |  |  |
+| `0x0` | `m_name` | CUtlString |  | `MKV3TransferName Name` |
+| `0x8` | `m_nGraphOutputChannels` | int32 |  |  |
+| `0xc` | `m_bIsMainGraph` | bool |  |  |
+| `0x10` | `m_nPreviewNode` | int32 |  |  |
+| `0x18` | `m_editorNodes` | CUtlVector< [CVMixEditorNode](../sounddoc_lib/CVMixEditorNode.md) > |  | `MKV3TransferName m_EditorNodes` |
+| `0x30` | `m_editorEdges` | CUtlVector< [CVMixEditorEdge](../sounddoc_lib/CVMixEditorEdge.md) > |  | `MKV3TransferName m_EditorEdges` |
 
 <details><summary>KV3 class defaults</summary>
 
 <pre>{
-	&quot;m_graphDescData&quot;:
-	{
-		&quot;Name&quot;: &quot;&quot;,
-		&quot;m_nGraphOutputChannels&quot;: -1,
-		&quot;m_bIsMainGraph&quot;: false
-	},
-	&quot;m_editorNodes&quot;:
+	&quot;Name&quot;: &quot;&quot;,
+	&quot;m_nGraphOutputChannels&quot;: -1,
+	&quot;m_bIsMainGraph&quot;: false,
+	&quot;m_nPreviewNode&quot;: 0,
+	&quot;m_EditorNodes&quot;:
 	[
 	],
-	&quot;m_editorEdges&quot;:
+	&quot;m_EditorEdges&quot;:
 	[
-	],
-	&quot;m_nPreviewNode&quot;: 0
+	]
 }</pre>
 </details>

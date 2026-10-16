@@ -1,0 +1,37 @@
+---
+title: CPulse_TempVarBankDefinition
+module: pulse_runtime_lib
+kind: class
+---
+
+[Schemas](../../schemas.md) / [pulse_runtime_lib](../pulse_runtime_lib.md) / CPulse_TempVarBankDefinition
+
+# CPulse_TempVarBankDefinition
+
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+
+**Kind:** class · **Size:** 40 bytes (`0x28`) · **Align:** 8 · **Module:** pulse_runtime_lib
+
+**Relationships:**
+
+```mermaid
+classDiagram
+    CPulse_TempVarBankDefinition *-- CPulse_TempVarInfo
+```
+
+## Memory layout
+
+1 field (1 declared here, 0 inherited). Offsets are absolute from the object base.
+
+| Offset | Field | Type | From | Annotations |
+|--------|-------|------|------|-------------|
+| `0x0` | `m_TempVars` | CUtlVector< [CPulse_TempVarInfo](../pulse_runtime_lib/CPulse_TempVarInfo.md) > |  |  |
+
+<details><summary>KV3 class defaults</summary>
+
+<pre>{
+	&quot;m_TempVars&quot;:
+	[
+	]
+}</pre>
+</details>

@@ -8,9 +8,9 @@ kind: class
 
 # CPathMover
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 1600 bytes (`0x640`) · **Align:** 16 · **Module:** server
+**Kind:** class · **Size:** 1616 bytes (`0x650`) · **Align:** 16 · **Module:** server
 
 **Inherits from:** [CPathWithDynamicNodes](../server/CPathWithDynamicNodes.md)
 
@@ -29,7 +29,7 @@ classDiagram
 
 ## Memory layout
 
-99 fields (6 declared here, 93 inherited). Offsets are absolute from the object base.
+101 fields (6 declared here, 95 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -126,9 +126,11 @@ classDiagram
 | `0x5a8` | `m_bClosedLoop` | bool | [CPathSimple](../server/CPathSimple.md) |  |
 | `0x5b0` | `m_vecPathNodes` | CNetworkUtlVectorBase< CHandle< [CPathNode](../server/CPathNode.md) > > | [CPathWithDynamicNodes](../server/CPathWithDynamicNodes.md) |  |
 | `0x5d0` | `m_xInitialPathWorldToLocal` | CTransform | [CPathWithDynamicNodes](../server/CPathWithDynamicNodes.md) |  |
-| `0x5f0` | `m_vecMovers` | CUtlVector< CHandle< [CFuncMover](../server/CFuncMover.md) > > |  |  |
-| `0x608` | `m_vecSpawners` | CUtlVector< CHandle< [CPathMoverEntitySpawner](../server/CPathMoverEntitySpawner.md) > > |  |  |
-| `0x620` | `m_iszMoverSpawnerName` | CUtlSymbolLarge |  |  |
-| `0x628` | `m_hMoverRouter` | CHandle< [CFuncMoverRouter](../server/CFuncMoverRouter.md) > |  |  |
-| `0x630` | `m_iszMoverRouterName` | CUtlSymbolLarge |  |  |
-| `0x638` | `m_flSampleSpacing` | float32 |  |  |
+| `0x5f0` | `m_eDesiredDirection` | [DirectionAlongSimplePath_t](../server/DirectionAlongSimplePath_t.md) | [CPathWithDynamicNodes](../server/CPathWithDynamicNodes.md) |  |
+| `0x5f4` | `m_bIgnoreParentRotation` | bool | [CPathWithDynamicNodes](../server/CPathWithDynamicNodes.md) |  |
+| `0x600` | `m_vecMovers` | CUtlVector< CHandle< [CFuncMover](../server/CFuncMover.md) > > |  |  |
+| `0x618` | `m_vecSpawners` | CUtlVector< CHandle< [CPathMoverEntitySpawner](../server/CPathMoverEntitySpawner.md) > > |  |  |
+| `0x630` | `m_iszMoverSpawnerName` | CUtlSymbolLarge |  |  |
+| `0x638` | `m_hMoverRouter` | CHandle< [CFuncMoverRouter](../server/CFuncMoverRouter.md) > |  |  |
+| `0x640` | `m_iszMoverRouterName` | CUtlSymbolLarge |  |  |
+| `0x648` | `m_flSampleSpacing` | float32 |  |  |

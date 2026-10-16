@@ -8,7 +8,7 @@ kind: class
 
 # PhysicsRagdollPose_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** 8 · **Module:** client
 
@@ -27,7 +27,7 @@ classDiagram
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x8` | `m_Transforms` | C_NetworkUtlVectorBase< CTransform > |  |  |
+| `0x8` | `m_RelativeTransforms` | C_NetworkUtlVectorBase< CTransform > |  |  |
 | `0x20` | `m_hOwner` | CHandle< [C_BaseEntity](../client/C_BaseEntity.md) > |  |  |
 | `0x24` | `m_bSetFromDebugHistory` | bool |  | `MNotSaved` |
 
@@ -35,7 +35,7 @@ classDiagram
 
 <pre>{
 	&quot;_class&quot;: &quot;PhysicsRagdollPose_t&quot;,
-	&quot;m_Transforms&quot;:
+	&quot;m_RelativeTransforms&quot;:
 	[
 	],
 	&quot;m_hOwner&quot;: null

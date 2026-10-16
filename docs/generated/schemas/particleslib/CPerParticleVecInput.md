@@ -8,9 +8,9 @@ kind: class
 
 # CPerParticleVecInput
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 1720 bytes (`0x6b8`) · **Align:** 8 · **Module:** particleslib
+**Kind:** class · **Size:** 1752 bytes (`0x6d8`) · **Align:** 8 · **Module:** particleslib
 
 **Inherits from:** [CParticleVecInput](../particleslib/CParticleVecInput.md)
 
@@ -35,7 +35,7 @@ classDiagram
 | `0x20` | `m_LiteralColor` | Color | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
 | `0x28` | `m_NamedValue` | CParticleNamedValueRef | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
 | `0x68` | `m_bFollowNamedValue` | bool | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
-| `0x6c` | `m_nVectorAttribute` | [ParticleAttributeIndex_t](../particles/ParticleAttributeIndex_t.md) | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
+| `0x6c` | `m_nVectorAttribute` | [ParticleAttributeIndex_t](../particleslib/ParticleAttributeIndex_t.md) | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
 | `0x70` | `m_vVectorAttributeScale` | Vector | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
 | `0x7c` | `m_nControlPoint` | int32 | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
 | `0x80` | `m_nDeltaControlPoint` | int32 | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
@@ -43,16 +43,16 @@ classDiagram
 | `0x90` | `m_vCPRelativePosition` | Vector | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
 | `0x9c` | `m_vCPRelativeDir` | Vector | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
 | `0xa8` | `m_FloatComponentX` | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
-| `0x218` | `m_FloatComponentY` | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
-| `0x388` | `m_FloatComponentZ` | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
-| `0x4f8` | `m_FloatInterp` | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
-| `0x668` | `m_flInterpInput0` | float32 | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
-| `0x66c` | `m_flInterpInput1` | float32 | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
-| `0x670` | `m_vInterpOutput0` | Vector | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
-| `0x67c` | `m_vInterpOutput1` | Vector | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
-| `0x688` | `m_Gradient` | CColorGradient | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
-| `0x6a0` | `m_vRandomMin` | Vector | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
-| `0x6ac` | `m_vRandomMax` | Vector | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
+| `0x220` | `m_FloatComponentY` | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
+| `0x398` | `m_FloatComponentZ` | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
+| `0x510` | `m_FloatInterp` | [CParticleFloatInput](../particleslib/CParticleFloatInput.md) | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
+| `0x688` | `m_flInterpInput0` | float32 | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
+| `0x68c` | `m_flInterpInput1` | float32 | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
+| `0x690` | `m_vInterpOutput0` | Vector | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
+| `0x69c` | `m_vInterpOutput1` | Vector | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
+| `0x6a8` | `m_Gradient` | CColorGradient | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
+| `0x6c0` | `m_vRandomMin` | Vector | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
+| `0x6cc` | `m_vRandomMax` | Vector | [CParticleVecInput](../particleslib/CParticleVecInput.md) |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -172,7 +172,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_FloatComponentY&quot;:
 	{
@@ -247,7 +248,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_FloatComponentZ&quot;:
 	{
@@ -322,7 +324,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_FloatInterp&quot;:
 	{
@@ -397,7 +400,8 @@ classDiagram
 				0.000000,
 				0.000000
 			]
-		}
+		},
+		&quot;m_flCompareValue&quot;: 0.000000
 	},
 	&quot;m_flInterpInput0&quot;: 0.000000,
 	&quot;m_flInterpInput1&quot;: 1.000000,

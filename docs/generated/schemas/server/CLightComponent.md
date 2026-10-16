@@ -8,7 +8,7 @@ kind: class
 
 # CLightComponent
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 448 bytes (`0x1c0`) · **Align:** n/a (unspecified) · **Module:** server
 
@@ -33,8 +33,8 @@ classDiagram
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x38` | `__m_pChainEntity` | [CNetworkVarChainer](../entity2/CNetworkVarChainer.md) |  | `MNotSaved` |
-| `0x75` | `m_Color` | Color |  |  |
-| `0x79` | `m_SecondaryColor` | Color |  |  |
+| `0x78` | `m_Color` | Color |  |  |
+| `0x7c` | `m_SecondaryColor` | Color |  |  |
 | `0x80` | `m_flBrightness` | float32 |  |  |
 | `0x84` | `m_flBrightnessScale` | float32 |  |  |
 | `0x88` | `m_flBrightnessMult` | float32 |  |  |

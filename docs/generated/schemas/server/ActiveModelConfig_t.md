@@ -8,9 +8,9 @@ kind: class
 
 # ActiveModelConfig_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 112 bytes (`0x70`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 160 bytes (`0xa0`) · **Align:** 8 · **Module:** server
 
 **Twin:** [ActiveModelConfig_t (client)](../client/ActiveModelConfig_t.md)
 
@@ -24,7 +24,7 @@ classDiagram
 
 ## Memory layout
 
-4 fields (4 declared here, 0 inherited). Offsets are absolute from the object base.
+6 fields (6 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -32,6 +32,8 @@ classDiagram
 | `0x38` | `m_Name` | CUtlSymbolLarge |  |  |
 | `0x40` | `m_AssociatedEntities` | CNetworkUtlVectorBase< CHandle< [CBaseModelEntity](../server/CBaseModelEntity.md) > > |  |  |
 | `0x58` | `m_AssociatedEntityNames` | CNetworkUtlVectorBase< CUtlSymbolLarge > |  |  |
+| `0x70` | `m_vecAssociatedEntityCollidesWithHierarchy` | CUtlLeanVector< bool > |  |  |
+| `0x80` | `m_vecAssociatedEntityCollidesOutsideHierarchy` | CUtlLeanVector< bool > |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -43,6 +45,12 @@ classDiagram
 	[
 	],
 	&quot;m_AssociatedEntityNames&quot;:
+	[
+	],
+	&quot;m_vecAssociatedEntityCollidesWithHierarchy&quot;:
+	[
+	],
+	&quot;m_vecAssociatedEntityCollidesOutsideHierarchy&quot;:
 	[
 	]
 }</pre>

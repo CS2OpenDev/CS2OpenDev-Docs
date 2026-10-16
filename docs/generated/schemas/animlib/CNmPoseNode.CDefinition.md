@@ -8,13 +8,13 @@ kind: class
 
 # CNmPoseNode::CDefinition
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 16 bytes (`0x10`) · **Align:** n/a (unspecified) · **Module:** animlib
 
 **Inherits from:** [CNmGraphNode::CDefinition](../animlib/CNmGraphNode.CDefinition.md)
 
-**Derived by:** [CNmAnimationPoseNode::CDefinition](../animlib/CNmAnimationPoseNode.CDefinition.md), [CNmBlend2DNode::CDefinition](../animlib/CNmBlend2DNode.CDefinition.md), [CNmClipReferenceNode::CDefinition](../animlib/CNmClipReferenceNode.CDefinition.md), [CNmExternalPoseNode::CDefinition](../animlib/CNmExternalPoseNode.CDefinition.md), [CNmIDBasedSelectorNode::CDefinition](../animlib/CNmIDBasedSelectorNode.CDefinition.md), [CNmLayerBlendNode::CDefinition](../animlib/CNmLayerBlendNode.CDefinition.md), [CNmOrientationWarpNode::CDefinition](../animlib/CNmOrientationWarpNode.CDefinition.md), [CNmParameterizedBlendNode::CDefinition](../animlib/CNmParameterizedBlendNode.CDefinition.md), [CNmParameterizedSelectorNode::CDefinition](../animlib/CNmParameterizedSelectorNode.CDefinition.md), [CNmPassthroughNode::CDefinition](../animlib/CNmPassthroughNode.CDefinition.md), [CNmReferencePoseNode::CDefinition](../animlib/CNmReferencePoseNode.CDefinition.md), [CNmReferencedGraphNode::CDefinition](../animlib/CNmReferencedGraphNode.CDefinition.md), [CNmSelectorNode::CDefinition](../animlib/CNmSelectorNode.CDefinition.md), [CNmStateMachineNode::CDefinition](../animlib/CNmStateMachineNode.CDefinition.md), [CNmStateNode::CDefinition](../animlib/CNmStateNode.CDefinition.md), [CNmTargetWarpNode::CDefinition](../animlib/CNmTargetWarpNode.CDefinition.md), [CNmTransitionNode::CDefinition](../animlib/CNmTransitionNode.CDefinition.md), [CNmZeroPoseNode::CDefinition](../animlib/CNmZeroPoseNode.CDefinition.md)
+**Derived by:** [CNmAnimationPoseNode::CDefinition](../animlib/CNmAnimationPoseNode.CDefinition.md), [CNmBlend2DNode::CDefinition](../animlib/CNmBlend2DNode.CDefinition.md), [CNmClipReferenceNode::CDefinition](../animlib/CNmClipReferenceNode.CDefinition.md), [CNmExternalPoseNode::CDefinition](../animlib/CNmExternalPoseNode.CDefinition.md), [CNmIDBasedSelectorNode::CDefinition](../animlib/CNmIDBasedSelectorNode.CDefinition.md), [CNmLayerBlendNode::CDefinition](../animlib/CNmLayerBlendNode.CDefinition.md), [CNmOrientationWarpNode::CDefinition](../animlib/CNmOrientationWarpNode.CDefinition.md), [CNmParameterizedBlendNode::CDefinition](../animlib/CNmParameterizedBlendNode.CDefinition.md), [CNmParameterizedSelectorNode::CDefinition](../animlib/CNmParameterizedSelectorNode.CDefinition.md), [CNmPassthroughNode::CDefinition](../animlib/CNmPassthroughNode.CDefinition.md), [CNmReferencePoseNode::CDefinition](../animlib/CNmReferencePoseNode.CDefinition.md), [CNmReferencedGraphNode::CDefinition](../animlib/CNmReferencedGraphNode.CDefinition.md), [CNmSelectorNode::CDefinition](../animlib/CNmSelectorNode.CDefinition.md), [CNmStateMachineNode::CDefinition](../animlib/CNmStateMachineNode.CDefinition.md), [CNmStateNode::CDefinition](../animlib/CNmStateNode.CDefinition.md), [CNmTargetWarpNode::CDefinition](../animlib/CNmTargetWarpNode.CDefinition.md), [CNmTimeControlledClipNode::CDefinition](../animlib/CNmTimeControlledClipNode.CDefinition.md), [CNmTransitionNode::CDefinition](../animlib/CNmTransitionNode.CDefinition.md), [CNmZeroPoseNode::CDefinition](../animlib/CNmZeroPoseNode.CDefinition.md)
 
 **Relationships:**
 
@@ -37,6 +37,7 @@ classDiagram
     `CNmPoseNode::CDefinition` <|-- `CNmStateMachineNode::CDefinition`
     `CNmPoseNode::CDefinition` <|-- `CNmStateNode::CDefinition`
     `CNmPoseNode::CDefinition` <|-- `CNmTargetWarpNode::CDefinition`
+    `CNmPoseNode::CDefinition` <|-- `CNmTimeControlledClipNode::CDefinition`
     `CNmPoseNode::CDefinition` <|-- `CNmTransitionNode::CDefinition`
     `CNmPoseNode::CDefinition` <|-- `CNmZeroPoseNode::CDefinition`
 ```

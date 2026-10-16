@@ -8,9 +8,9 @@ kind: class
 
 # CResourceAssetTypeInfo
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 328 bytes (`0x148`) · **Align:** 8 · **Module:** toolutils2
+**Kind:** class · **Size:** 336 bytes (`0x150`) · **Align:** 8 · **Module:** toolutils2
 
 **Inherits from:** [CSimpleAssetTypeInfo](../toolutils2/CSimpleAssetTypeInfo.md)
 
@@ -27,7 +27,7 @@ classDiagram
 
 ## Memory layout
 
-32 fields (8 declared here, 24 inherited). Offsets are absolute from the object base.
+33 fields (8 declared here, 25 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -54,15 +54,16 @@ classDiagram
 | `0xef` | `m_bPresentInGameTree` | bool | [CSimpleAssetTypeInfo](../toolutils2/CSimpleAssetTypeInfo.md) |  |
 | `0xf0` | `m_bShouldCompileErrorFallbackToDisk` | bool | [CSimpleAssetTypeInfo](../toolutils2/CSimpleAssetTypeInfo.md) |  |
 | `0xf4` | `m_nAssetTypeVersion` | int32 | [CSimpleAssetTypeInfo](../toolutils2/CSimpleAssetTypeInfo.md) |  |
-| `0xf8` | `m_Test_InjectSearchable` | CUtlString | [CSimpleAssetTypeInfo](../toolutils2/CSimpleAssetTypeInfo.md) |  |
-| `0x100` | `m_CompilerIdentifier` | CUtlString |  |  |
-| `0x108` | `m_CompileDependsOnResourceTypes` | CUtlVector< CUtlString > |  |  |
-| `0x120` | `m_Blocks` | CUtlVector< [ResourceBlockTypeInfo_t](../toolutils2/ResourceBlockTypeInfo_t.md) > |  |  |
-| `0x138` | `m_RequiredSpecialDependency` | CUtlString |  |  |
-| `0x140` | `m_bPreventDirectCompile` | bool |  |  |
-| `0x141` | `m_bCannotBeAMultiParentChildCompile` | bool |  |  |
-| `0x142` | `m_bPrefersIconForThumbnail` | bool |  |  |
-| `0x143` | `m_bAllowedToCompileInTestMode` | bool |  |  |
+| `0xf8` | `m_nAssetThumbnailVersion` | int32 | [CSimpleAssetTypeInfo](../toolutils2/CSimpleAssetTypeInfo.md) |  |
+| `0x100` | `m_Test_InjectSearchable` | CUtlString | [CSimpleAssetTypeInfo](../toolutils2/CSimpleAssetTypeInfo.md) |  |
+| `0x108` | `m_CompilerIdentifier` | CUtlString |  |  |
+| `0x110` | `m_CompileDependsOnResourceTypes` | CUtlVector< CUtlString > |  |  |
+| `0x128` | `m_Blocks` | CUtlVector< [ResourceBlockTypeInfo_t](../toolutils2/ResourceBlockTypeInfo_t.md) > |  |  |
+| `0x140` | `m_RequiredSpecialDependency` | CUtlString |  |  |
+| `0x148` | `m_bPreventDirectCompile` | bool |  |  |
+| `0x149` | `m_bCannotBeAMultiParentChildCompile` | bool |  |  |
+| `0x14a` | `m_bPrefersIconForThumbnail` | bool |  |  |
+| `0x14b` | `m_bAllowedToCompileInTestMode` | bool |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -105,6 +106,7 @@ classDiagram
 	&quot;m_bPresentInGameTree&quot;: false,
 	&quot;m_bShouldCompileErrorFallbackToDisk&quot;: false,
 	&quot;m_nAssetTypeVersion&quot;: 0,
+	&quot;m_nAssetThumbnailVersion&quot;: 0,
 	&quot;m_Test_InjectSearchable&quot;: &quot;&quot;,
 	&quot;m_CompilerIdentifier&quot;: &quot;&quot;,
 	&quot;m_CompileDependsOnResourceTypes&quot;:

@@ -8,11 +8,13 @@ kind: class
 
 # C_GradientFog
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 1688 bytes (`0x698`) · **Align:** 8 · **Module:** client
 
 **Inherits from:** [C_BaseEntity](../client/C_BaseEntity.md)
+
+**Metadata:** `MEntityAllowsPortraitWorldSpawn`
 
 **Relationships:**
 

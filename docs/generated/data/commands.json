@@ -2928,6 +2928,16 @@
         "gamedll"
       ],
       "has_completion_callback": false,
+      "help": "Explosion where you're looking, or at x y z, with a real explosion's physics force (unlike create_radius_damage).",
+      "name": "create_explosion_damage",
+      "prefix": "create"
+    },
+    {
+      "flags": [
+        "cheat",
+        "gamedll"
+      ],
+      "has_completion_callback": false,
       "help": "Causes radius damage where you're looking, at the passed in radius.",
       "name": "create_radius_damage",
       "prefix": "create"
@@ -3777,7 +3787,7 @@
         "vconsole_fuzzy_matching"
       ],
       "has_completion_callback": true,
-      "help": "Usage:\n   ent_fire <target> [action] [value] [delay]\n",
+      "help": "Usage:\n   ent_fire <target> [action] [value0] [value1] ... [valueN]\n",
       "name": "ent_fire",
       "prefix": "ent"
     },
@@ -3788,8 +3798,30 @@
         "vconsole_fuzzy_matching"
       ],
       "has_completion_callback": true,
-      "help": "Usage:\n   ent_fire_output <target> [output name] [value] [delay]\n",
+      "help": "Usage:\n   ent_fire_delay <target> [action] [value0] [value1] ... [valueN] [delay]\n",
+      "name": "ent_fire_delay",
+      "prefix": "ent"
+    },
+    {
+      "flags": [
+        "cheat",
+        "gamedll",
+        "vconsole_fuzzy_matching"
+      ],
+      "has_completion_callback": true,
+      "help": "Usage:\n   ent_fire_output <target> [output name] [value0] [value1] ... [valueN]\n",
       "name": "ent_fire_output",
+      "prefix": "ent"
+    },
+    {
+      "flags": [
+        "cheat",
+        "gamedll",
+        "vconsole_fuzzy_matching"
+      ],
+      "has_completion_callback": true,
+      "help": "Usage:\n   ent_fire_output_delay <target> [output name] [value0] [value1] ... [valueN] [delay]\n",
+      "name": "ent_fire_output_delay",
       "prefix": "ent"
     },
     {
@@ -4470,15 +4502,6 @@
     },
     {
       "flags": [
-        "developmentonly"
-      ],
-      "has_completion_callback": false,
-      "help": "Force toggle hibernation state",
-      "name": "force_hibernate",
-      "prefix": "force"
-    },
-    {
-      "flags": [
         "defensive",
         "developmentonly"
       ],
@@ -4515,6 +4538,16 @@
       "has_completion_callback": false,
       "help": "",
       "name": "func_mover_enable_debug_all",
+      "prefix": "func"
+    },
+    {
+      "flags": [
+        "cheat",
+        "gamedll"
+      ],
+      "has_completion_callback": false,
+      "help": "",
+      "name": "func_mover_step_movement",
       "prefix": "func"
     },
     {
@@ -6957,7 +6990,7 @@
         "gamedll"
       ],
       "has_completion_callback": false,
-      "help": "Creates the named particle system where the player is looking.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}",
+      "help": "Creates the named particle system where the player is looking.  Can be used on an entity if pointed at the entity.  Optionally takes a particle config name.\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}",
       "name": "particle_test_create",
       "prefix": "particle"
     },
@@ -8508,6 +8541,16 @@
     },
     {
       "flags": [
+        "clientdll",
+        "developmentonly"
+      ],
+      "has_completion_callback": false,
+      "help": "Change a server convar if allowed",
+      "name": "set_server_cvar",
+      "prefix": "set"
+    },
+    {
+      "flags": [
         "cheat",
         "client_can_execute",
         "gamedll"
@@ -9776,6 +9819,17 @@
       ],
       "has_completion_callback": false,
       "help": "",
+      "name": "spawnBrokenGlass",
+      "prefix": "spawnBrokenGlass"
+    },
+    {
+      "flags": [
+        "cheat",
+        "developmentonly",
+        "gamedll"
+      ],
+      "has_completion_callback": false,
+      "help": "",
       "name": "spawnCashStack",
       "prefix": "spawnCashStack"
     },
@@ -10305,6 +10359,16 @@
       "has_completion_callback": false,
       "help": "Sets the server to shutdown when all games have completed",
       "name": "sv_shutdown",
+      "prefix": "sv"
+    },
+    {
+      "flags": [
+        "gamedll",
+        "release"
+      ],
+      "has_completion_callback": false,
+      "help": "Recompute smoke volume LPV caches",
+      "name": "sv_smoke_lighting_changed",
       "prefix": "sv"
     },
     {
@@ -11427,13 +11491,13 @@
   "flags": [
     {
       "command_count": 0,
-      "convar_count": 466,
+      "convar_count": 503,
       "description": "Value is written to config.cfg on shutdown and reloaded on startup.",
       "name": "archive"
     },
     {
-      "command_count": 449,
-      "convar_count": 982,
+      "command_count": 454,
+      "convar_count": 975,
       "description": "Requires sv_cheats 1 to change; reset when cheats are disabled.",
       "name": "cheat"
     },
@@ -11450,20 +11514,20 @@
       "name": "clientcmd_can_execute"
     },
     {
-      "command_count": 343,
-      "convar_count": 1858,
+      "command_count": 344,
+      "convar_count": 1917,
       "description": "Registered by the client binary (client.dll).",
       "name": "clientdll"
     },
     {
       "command_count": 0,
-      "convar_count": 270,
+      "convar_count": 278,
       "description": "Can be forced from the command line; a command-line value locks out later changes.",
       "name": "commandline_enforced"
     },
     {
       "command_count": 333,
-      "convar_count": 1153,
+      "convar_count": 1157,
       "description": "",
       "name": "defensive"
     },
@@ -11474,8 +11538,8 @@
       "name": "demo"
     },
     {
-      "command_count": 442,
-      "convar_count": 1858,
+      "command_count": 443,
+      "convar_count": 1905,
       "description": "Present only in development builds; stripped or inert in shipping builds.",
       "name": "developmentonly"
     },
@@ -11492,14 +11556,14 @@
       "name": "execute_per_tick"
     },
     {
-      "command_count": 361,
-      "convar_count": 1530,
+      "command_count": 367,
+      "convar_count": 1555,
       "description": "Registered by the game server binary (server.dll).",
       "name": "gamedll"
     },
     {
       "command_count": 40,
-      "convar_count": 138,
+      "convar_count": 140,
       "description": "Omitted from cvarlist/find output; still usable directly by name.",
       "name": "hidden"
     },
@@ -11511,7 +11575,7 @@
     },
     {
       "command_count": 0,
-      "convar_count": 54,
+      "convar_count": 55,
       "description": "Exposed as an item in the in-game menu bar / options UI.",
       "name": "menubar_item"
     },
@@ -11523,7 +11587,7 @@
     },
     {
       "command_count": 0,
-      "convar_count": 96,
+      "convar_count": 100,
       "description": "Tracked per split-screen/local user rather than as one global value.",
       "name": "per_user"
     },
@@ -11535,7 +11599,7 @@
     },
     {
       "command_count": 0,
-      "convar_count": 6,
+      "convar_count": 5,
       "description": "Value is withheld from clients (e.g. never sent over rcon output).",
       "name": "protected"
     },
@@ -11546,14 +11610,14 @@
       "name": "reference"
     },
     {
-      "command_count": 198,
-      "convar_count": 1033,
+      "command_count": 199,
+      "convar_count": 1079,
       "description": "Present in release/shipping builds, not just internal ones.",
       "name": "release"
     },
     {
       "command_count": 2,
-      "convar_count": 883,
+      "convar_count": 888,
       "description": "Server's value is sent to and enforced on connected clients.",
       "name": "replicated"
     },
@@ -11577,12 +11641,12 @@
     },
     {
       "command_count": 0,
-      "convar_count": 37,
+      "convar_count": 36,
       "description": "Part of the player's userinfo string, sent to the server on change.",
       "name": "userinfo"
     },
     {
-      "command_count": 21,
+      "command_count": 23,
       "convar_count": 0,
       "description": "",
       "name": "vconsole_fuzzy_matching"

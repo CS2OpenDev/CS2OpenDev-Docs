@@ -8,7 +8,7 @@ kind: class
 
 # C_PointCameraVFOV
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 1640 bytes (`0x668`) · **Align:** 8 · **Module:** client
 
@@ -117,7 +117,7 @@ classDiagram
 | `0x600` | `m_FOV` | float32 | [C_PointCamera](../client/C_PointCamera.md) |  |
 | `0x604` | `m_Resolution` | float32 | [C_PointCamera](../client/C_PointCamera.md) |  |
 | `0x608` | `m_bFogEnable` | bool | [C_PointCamera](../client/C_PointCamera.md) |  |
-| `0x609` | `m_FogColor` | Color | [C_PointCamera](../client/C_PointCamera.md) |  |
+| `0x60c` | `m_FogColor` | Color | [C_PointCamera](../client/C_PointCamera.md) |  |
 | `0x610` | `m_flFogStart` | float32 | [C_PointCamera](../client/C_PointCamera.md) |  |
 | `0x614` | `m_flFogEnd` | float32 | [C_PointCamera](../client/C_PointCamera.md) |  |
 | `0x618` | `m_flFogMaxDensity` | float32 | [C_PointCamera](../client/C_PointCamera.md) |  |

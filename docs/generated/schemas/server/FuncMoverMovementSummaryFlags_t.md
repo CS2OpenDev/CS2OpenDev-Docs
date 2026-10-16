@@ -8,7 +8,7 @@ kind: enum
 
 # FuncMoverMovementSummaryFlags_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** server
 
@@ -25,3 +25,4 @@ kind: enum
 | `eLoopToStart` | 32 |  |
 | `eLoopToEnd` | 64 |  |
 | `eTransitionComplete` | 128 |  |
+| `eStoppedDuringTransition` | 256 |  |

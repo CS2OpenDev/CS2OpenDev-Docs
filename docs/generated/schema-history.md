@@ -4,14 +4,14 @@ title: Schema History
 
 # Schema History
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 Field-precise, build-to-build evolution of the CS2 C++ entity schema, derived by diffing every committed `entity_schema.json` snapshot (SchemaTracker's cumulative `schema_evolution.json`, Layer A).  Unlike the coarse [Changelog](changelog.md) — which only reports *that* a class changed — this reports *which field* was added, removed, retyped, or moved.
 
 - **Platform:** `windows-x86_64` (the canonical render; windows is a strict **superset** in class coverage — historical Windows-only tool binaries such as `hammer.dll` / `sfm.dll` have no Linux counterparts — while shared classes differ in offsets/sizes per platform)
-- **Baseline build:** `10832117` · **Latest build:** `25218825`
-- **Artifact schema version:** `0.10.0` (SchemaTracker's `schemas/schema_evolution.proto` family)
-- **Transitions:** 388 total, **145 with structural changes** (243 no-op builds)
+- **Baseline build:** `10832117` · **Latest build:** `25966348`
+- **Artifact schema version:** `0.12.0` (SchemaTracker's `schemas/schema_evolution.proto` family)
+- **Transitions:** 399 total, **152 with structural changes** (247 no-op builds)
 - **Full per-field history:** the portable [`field_history.json`](downstream-codegen-schemas/field_history.json) carries first/last-seen and the type history for every `(class, field)` across all builds.  Its `[firstSeenBuild, lastSeenBuild]` interval is a presence **hull**, not continuous presence — a field can be absent for intermediate builds with no trace there; exact presence replays from the transitions below.
 
 To bring an instance captured under build *X* forward to build *Y*, apply each transition in `[X, Y)` in order.  Every op carries both endpoints, so the same chain replays backward.
@@ -35,6 +35,13 @@ Later artifact revisions add further facts: **0.7.0** covers class-attribute cha
 
 | Transition | Date | Classes +/−/~ | Enums +/−/~ | Field ops |
 |------------|------|---------------|-------------|-----------|
+| `25947352` → `25966348` | 2026-10-15 | 0 / 0 / 2 | 0 / 0 / 0 | 0 |
+| `25815307` → `25947352` | 2026-10-15 | 0 / 0 / 5 | 0 / 0 / 0 | 116 |
+| `25738536` → `25815307` | 2026-10-08 | 0 / 0 / 5 | 0 / 1 / 2 | 122 |
+| `25588766` → `25640462` | 2026-09-30 | 0 / 0 / 50 | 0 / 1 / 1 | 88 |
+| `25515854` → `25537370` | 2026-09-25 | 0 / 0 / 3 | 0 / 0 / 0 | 9 |
+| `25492732` → `25515854` | 2026-09-24 | 0 / 0 / 50 | 0 / 0 / 0 | 69 |
+| `25218825` → `25472966` | 2026-09-23 | 154 / 467 / 1438 | 27 / 21 / 25 | 7708 |
 | `25175329` → `25218825` | 2026-09-09 | 2 / 0 / 6 | 1 / 0 / 2 | 19 |
 | `25000182` → `25175329` | 2026-09-07 | 0 / 0 / 2 | 0 / 0 / 0 | 0 |
 | `24934554` → `24957633` | 2026-08-26 | 0 / 0 / 6 | 0 / 0 / 0 | 10 |
@@ -183,26 +190,9 @@ Later artifact revisions add further facts: **0.7.0** covers class-attribute cha
 
 ## Most recent structural changes
 
-### `25175329` → `25218825`
+### `25947352` → `25966348`
 
-*Steam manifests created `2026-09-07T21:44:07Z` → `2026-09-09T22:31:50Z`*
-
-**Classes added (2):** `client.dll/CCSCustomPlayerCamera`, `server.dll/CCSCustomPlayerCamera`
-
-**Classes changed (6):**
-
-| Class | Field ops | Layout |
-|-------|-----------|--------|
-| `!GlobalTypes/dynpitchvol_base_t` | meta×1 | — |
-| `!GlobalTypes/dynpitchvol_t` | meta×1 | — |
-| `client.dll/CCSCustomHudLayout` | ＋field×1, ~offset×6 | resize 2088→2112 |
-| `client.dll/CCSPlayerCamera` | −field×3 | resize 1544→1600, reparent |
-| `server.dll/CCSCustomHudLayout` | ＋field×1, ~offset×5 | resize 2024→2032 |
-| `server.dll/CCSPlayerCamera` | −field×3 | resize 1200→1256, reparent |
-
-### `25000182` → `25175329`
-
-*Steam manifests created `2026-08-28T20:16:08Z` → `2026-09-07T21:44:07Z`*
+*Steam manifests created `2026-10-15T00:07:09Z` → `2026-10-15T17:24:20Z`*
 
 **Classes changed (2):**
 
@@ -211,17 +201,30 @@ Later artifact revisions add further facts: **0.7.0** covers class-attribute cha
 | `!GlobalTypes/dynpitchvol_base_t` | meta×1 | — |
 | `!GlobalTypes/dynpitchvol_t` | meta×1 | — |
 
-### `24934554` → `24957633`
+### `25815307` → `25947352`
 
-*Steam manifests created `2026-08-25T18:35:52Z` → `2026-08-26T20:58:46Z`*
+*Steam manifests created `2026-10-08T22:02:30Z` → `2026-10-15T00:07:09Z`*
 
-**Classes changed (6):**
+**Classes changed (5):**
 
 | Class | Field ops | Layout |
 |-------|-----------|--------|
-| `!GlobalTypes/dynpitchvol_base_t` | meta×1 | — |
-| `!GlobalTypes/dynpitchvol_t` | meta×1 | — |
-| `client.dll/CCSCustomHudLayout` | ~offset×3 | resize 2096→2088 |
-| `client.dll/CCSCustomHudLayoutState` | ~offset×2 | resize 272→264 |
-| `server.dll/CCSCustomHudLayout` | ~offset×3 | resize 2032→2024 |
-| `server.dll/CCSCustomHudLayoutState` | ~offset×2 | resize 416→408 |
+| `client.dll/CCSMinimapVolume` | ~offset×1 | resize 4488→4520 |
+| `client.dll/CCSObserver_ObserverServices` | ~offset×1 | resize 240→256 |
+| `client.dll/C_CSPlayerPawn` | ＋field×1, ~offset×43, −field×1 | — |
+| `server.dll/CCSMinimapVolume` | ~offset×1 | resize 2512→2536 |
+| `server.dll/CCSPlayerPawn` | ~offset×66, −field×2 | resize 5600→5568 |
+
+### `25738536` → `25815307`
+
+*Steam manifests created `2026-10-05T22:27:25Z` → `2026-10-08T22:02:30Z`*
+
+**Classes changed (5):**
+
+| Class | Field ops | Layout |
+|-------|-----------|--------|
+| `client.dll/C_CSGO_PreviewPlayer` | ~offset×2 | resize 14272→14288 |
+| `client.dll/C_CSGO_PreviewPlayerAlias_csgo_player_previewmodel` | — | resize 14272→14288 |
+| `client.dll/C_CSGO_TeamPreviewModel` | — | resize 14272→14288 |
+| `client.dll/C_CSPlayerPawn` | ＋field×1, ~offset×11 | resize 14096→14112 |
+| `server.dll/CCSPlayerPawn` | ＋field×1, ~offset×107 | resize 5584→5600 |

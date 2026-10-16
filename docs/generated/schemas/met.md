@@ -5,7 +5,7 @@ module: met
 
 # Module: met
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 [📊 View UML Diagram](../diagrams/met.md)
 
@@ -15,4 +15,4 @@ module: met
 |------|------|------|--------|----------|
 | [EMaterialLayer_t](met/EMaterialLayer_t.md) | class | 112 | 8 |  |
 | [EMaterialVariable_t](met/EMaterialVariable_t.md) | class | 248 | 36 |  |
-| [EMaterialVariables_t](met/EMaterialVariables_t.md) | class | 64 | 3 |  |
+| [EMaterialVariables_t](met/EMaterialVariables_t.md) | class | 72 | 3 |  |

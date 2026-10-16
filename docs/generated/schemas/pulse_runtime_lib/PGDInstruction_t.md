@@ -8,7 +8,7 @@ kind: class
 
 # PGDInstruction_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 56 bytes (`0x38`) · **Align:** 8 · **Module:** pulse_runtime_lib
 
@@ -25,11 +25,12 @@ classDiagram
     PGDInstruction_t *-- PulseRuntimeConstantIndex_t
     PGDInstruction_t *-- PulseRuntimeDomainValueIndex_t
     PGDInstruction_t *-- PulseRuntimeBlackboardReferenceIndex_t
+    PGDInstruction_t *-- PulseRuntimeTempVarIndex_t
 ```
 
 ## Memory layout
 
-12 fields (12 declared here, 0 inherited). Offsets are absolute from the object base.
+13 fields (13 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -45,6 +46,7 @@ classDiagram
 | `0x20` | `m_nConstIdx` | [PulseRuntimeConstantIndex_t](../pulse_runtime_lib/PulseRuntimeConstantIndex_t.md) |  |  |
 | `0x22` | `m_nDomainValueIdx` | [PulseRuntimeDomainValueIndex_t](../pulse_runtime_lib/PulseRuntimeDomainValueIndex_t.md) |  |  |
 | `0x24` | `m_nBlackboardReferenceIdx` | [PulseRuntimeBlackboardReferenceIndex_t](../pulse_runtime_lib/PulseRuntimeBlackboardReferenceIndex_t.md) |  |  |
+| `0x26` | `m_nTempVarIdx` | [PulseRuntimeTempVarIndex_t](../pulse_runtime_lib/PulseRuntimeTempVarIndex_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -60,6 +62,7 @@ classDiagram
 	&quot;m_nCallInfoIndex&quot;: -1,
 	&quot;m_nConstIdx&quot;: -1,
 	&quot;m_nDomainValueIdx&quot;: -1,
-	&quot;m_nBlackboardReferenceIdx&quot;: -1
+	&quot;m_nBlackboardReferenceIdx&quot;: -1,
+	&quot;m_nTempVarIdx&quot;: -1
 }</pre>
 </details>

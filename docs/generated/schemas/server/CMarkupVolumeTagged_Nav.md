@@ -8,9 +8,9 @@ kind: class
 
 # CMarkupVolumeTagged_Nav
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 1976 bytes (`0x7b8`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 2200 bytes (`0x898`) · **Align:** 8 · **Module:** server
 
 **Inherits from:** [CMarkupVolumeTagged](../server/CMarkupVolumeTagged.md)
 
@@ -28,7 +28,7 @@ classDiagram
 
 ## Memory layout
 
-137 fields (1 declared here, 136 inherited). Offsets are absolute from the object base.
+140 fields (1 declared here, 139 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -148,7 +148,8 @@ classDiagram
 | `0x570` | `m_clrRender` | Color | [CBaseModelEntity](../server/CBaseModelEntity.md) | RGBA tint colour multiplied onto the entity's diffuse texture. |
 | `0x578` | `m_vecRenderAttributes` | CUtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../server/EntityRenderAttribute_t.md) > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e0` | `m_bRenderToCubemaps` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x5e1` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e1` | `m_bExpandRenderBoundsToIncludeCloth` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e2` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e8` | `m_Collision` | [CCollisionProperty](../server/CCollisionProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CCollisionProperty struct encoding the entity's collision bounding box shape and flags. |
 | `0x6a0` | `m_Glow` | [CGlowProperty](../server/CGlowProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CGlowProperty struct controlling the entity's glow outline (colour, radius, visibility rules). |
 | `0x6f8` | `m_flGlowBackfaceMult` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Multiplier for the glow effect on back-facing surfaces of the model. |
@@ -157,15 +158,17 @@ classDiagram
 | `0x704` | `m_flFadeScale` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Scale factor applied to fade distances; 0 disables distance fading. |
 | `0x708` | `m_flShadowStrength` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Opacity of this entity's cast shadow (0 = no shadow, 1 = full shadow). |
 | `0x70c` | `m_nObjectCulling` | uint8 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x710` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x738` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
-| `0x768` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
-| `0x770` | `m_bDisabled` | bool | [CMarkupVolume](../server/CMarkupVolume.md) |  |
-| `0x778` | `m_GroupNames` | CUtlVector< CGlobalSymbol > | [CMarkupVolumeTagged](../server/CMarkupVolumeTagged.md) |  |
-| `0x790` | `m_Tags` | CUtlVector< CGlobalSymbol > | [CMarkupVolumeTagged](../server/CMarkupVolumeTagged.md) |  |
-| `0x7a8` | `m_bIsGroup` | bool | [CMarkupVolumeTagged](../server/CMarkupVolumeTagged.md) | `MNotSaved` |
-| `0x7a9` | `m_bGroupByPrefab` | bool | [CMarkupVolumeTagged](../server/CMarkupVolumeTagged.md) |  |
-| `0x7aa` | `m_bGroupByVolume` | bool | [CMarkupVolumeTagged](../server/CMarkupVolumeTagged.md) |  |
-| `0x7ab` | `m_bGroupOtherGroups` | bool | [CMarkupVolumeTagged](../server/CMarkupVolumeTagged.md) |  |
-| `0x7ac` | `m_bIsInGroup` | bool | [CMarkupVolumeTagged](../server/CMarkupVolumeTagged.md) | `MNotSaved` |
-| `0x7b0` | `m_nScopes` | [NavScopeFlags_t](../server/NavScopeFlags_t.md) |  |  |
+| `0x710` | `m_bodyGroupTotalRequestCount` | uint32 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x718` | `m_bodyGroupRequests` | CUtlVectorFixedGrowable< [CBaseModelEntity::BodyGroupRequest_t](../server/CBaseModelEntity.BodyGroupRequest_t.md), 8 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x7f0` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x818` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
+| `0x848` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
+| `0x850` | `m_bDisabled` | bool | [CMarkupVolume](../server/CMarkupVolume.md) |  |
+| `0x858` | `m_GroupNames` | CUtlVector< CGlobalSymbol > | [CMarkupVolumeTagged](../server/CMarkupVolumeTagged.md) |  |
+| `0x870` | `m_Tags` | CUtlVector< CGlobalSymbol > | [CMarkupVolumeTagged](../server/CMarkupVolumeTagged.md) |  |
+| `0x888` | `m_bIsGroup` | bool | [CMarkupVolumeTagged](../server/CMarkupVolumeTagged.md) | `MNotSaved` |
+| `0x889` | `m_bGroupByPrefab` | bool | [CMarkupVolumeTagged](../server/CMarkupVolumeTagged.md) |  |
+| `0x88a` | `m_bGroupByVolume` | bool | [CMarkupVolumeTagged](../server/CMarkupVolumeTagged.md) |  |
+| `0x88b` | `m_bGroupOtherGroups` | bool | [CMarkupVolumeTagged](../server/CMarkupVolumeTagged.md) |  |
+| `0x88c` | `m_bIsInGroup` | bool | [CMarkupVolumeTagged](../server/CMarkupVolumeTagged.md) | `MNotSaved` |
+| `0x890` | `m_nScopes` | [NavScopeFlags_t](../server/NavScopeFlags_t.md) |  |  |

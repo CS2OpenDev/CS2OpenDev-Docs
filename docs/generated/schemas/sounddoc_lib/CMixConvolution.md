@@ -8,7 +8,7 @@ kind: class
 
 # CMixConvolution
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 64 bytes (`0x40`) · **Align:** 8 · **Module:** sounddoc_lib
 
@@ -26,7 +26,7 @@ classDiagram
 
 ## Memory layout
 
-6 fields (1 declared here, 5 inherited). Offsets are absolute from the object base.
+7 fields (1 declared here, 6 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -35,6 +35,7 @@ classDiagram
 | `0x18` | `m_bActive` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x19` | `m_bSolo` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x1a` | `m_bEditProperties` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
+| `0x1c` | `m_nGenerationId` | int32 | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x20` | `m_desc` | [VMixConvolutionDesc_t](../soundsystem_lowlevel/VMixConvolutionDesc_t.md) |  | `MPropertyAutoExpandSelf` |
 
 <details><summary>KV3 class defaults</summary>
@@ -46,6 +47,7 @@ classDiagram
 	&quot;m_bActive&quot;: true,
 	&quot;m_bSolo&quot;: false,
 	&quot;m_bEditProperties&quot;: false,
+	&quot;m_nGenerationId&quot;: 0,
 	&quot;m_desc&quot;:
 	{
 		&quot;m_fldbGain&quot;: -12.000000,

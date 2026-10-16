@@ -8,9 +8,9 @@ kind: class
 
 # CRR_Response
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 464 bytes (`0x1d0`) · **Align:** 8 · **Module:** server
+**Kind:** class · **Size:** 440 bytes (`0x1b8`) · **Align:** 8 · **Module:** server
 
 **Relationships:**
 
@@ -35,7 +35,7 @@ classDiagram
 | `0x188` | `m_szSpeakerContext` | char* |  | `MNotSaved` |
 | `0x190` | `m_szWorldContext` | char* |  | `MNotSaved` |
 | `0x198` | `m_Followup` | [ResponseFollowup](../server/ResponseFollowup.md) |  | `MNotSaved` |
-| `0x1ca` | `m_recipientFilter` | CUtlSymbol |  | `MNotSaved` |
+| `0x1b4` | `m_recipientFilter` | CUtlSymbol |  | `MNotSaved` |
 
 <details><summary>KV3 class defaults</summary>
 

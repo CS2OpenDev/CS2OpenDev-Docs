@@ -8,9 +8,9 @@ kind: class
 
 # CCSObserver_ObserverServices
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 240 bytes (`0xf0`) · **Align:** n/a (unspecified) · **Module:** client
+**Kind:** class · **Size:** 256 bytes (`0x100`) · **Align:** n/a (unspecified) · **Module:** client
 
 **Twin:** [CCSObserver_ObserverServices (server)](../server/CCSObserver_ObserverServices.md)
 
@@ -39,4 +39,4 @@ classDiagram
 | `0x54` | `m_bForcedObserverMode` | bool | [CPlayer_ObserverServices](../client/CPlayer_ObserverServices.md) |  |
 | `0x58` | `m_flObserverChaseDistance` | float32 | [CPlayer_ObserverServices](../client/CPlayer_ObserverServices.md) | `MNotSaved` |
 | `0x5c` | `m_flObserverChaseDistanceCalcTime` | [GameTime_t](../entity2/GameTime_t.md) | [CPlayer_ObserverServices](../client/CPlayer_ObserverServices.md) | `MNotSaved` |
-| `0x68` | `m_obsInterpState` | [ObserverInterpState_t](../server/ObserverInterpState_t.md) |  |  |
+| `0x70` | `m_obsInterpState` | [ObserverInterpState_t](../server/ObserverInterpState_t.md) |  |  |

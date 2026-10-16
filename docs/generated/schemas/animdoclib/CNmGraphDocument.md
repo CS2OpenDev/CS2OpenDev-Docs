@@ -8,9 +8,9 @@ kind: class
 
 # CNmGraphDocument
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 184 bytes (`0xb8`) · **Align:** 8 · **Module:** animdoclib
+**Kind:** class · **Size:** 200 bytes (`0xc8`) · **Align:** 8 · **Module:** animdoclib
 
 **Inherits from:** [CNmAnimDocument](../animdoclib/CNmAnimDocument.md)
 
@@ -22,11 +22,12 @@ classDiagram
     CNmGraphDocument --> CNmGraphDocFlowGraph
     CNmGraphDocument *-- CNmVariationHierarchy
     CNmGraphDocument *-- `CNmGraphDocument::DebugParameterSet_t`
+    CNmGraphDocument *-- `CNmGraphDocument::DebugBoneFilterSet_t`
 ```
 
 ## Memory layout
 
-5 fields (4 declared here, 1 inherited). Offsets are absolute from the object base.
+6 fields (5 declared here, 1 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -34,7 +35,8 @@ classDiagram
 | `0x70` | `m_pRootGraph` | [CNmGraphDocFlowGraph](../animdoclib/CNmGraphDocFlowGraph.md)* |  |  |
 | `0x78` | `m_variationHierarchy` | [CNmVariationHierarchy](../animdoclib/CNmVariationHierarchy.md) |  |  |
 | `0x90` | `m_debugParameterSets` | CUtlLeanVector< [CNmGraphDocument::DebugParameterSet_t](../animdoclib/CNmGraphDocument.DebugParameterSet_t.md) > |  |  |
-| `0xa0` | `m_dictionaryIDSetIDs` | CUtlVector< V_uuid_t > |  |  |
+| `0xa0` | `m_debugBoneFilterSets` | CUtlLeanVector< [CNmGraphDocument::DebugBoneFilterSet_t](../animdoclib/CNmGraphDocument.DebugBoneFilterSet_t.md) > |  |  |
+| `0xb0` | `m_dictionaryIDSetIDs` | CUtlVector< V_uuid_t > |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -55,6 +57,9 @@ classDiagram
 		]
 	},
 	&quot;m_debugParameterSets&quot;:
+	[
+	],
+	&quot;m_debugBoneFilterSets&quot;:
 	[
 	],
 	&quot;m_dictionaryIDSetIDs&quot;:

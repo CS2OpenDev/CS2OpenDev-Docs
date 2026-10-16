@@ -4,7 +4,7 @@ title: "UML: server"
 
 # UML: server
 
-Class relationships (inheritance and composition) for the `server` module (showing 300 of 647 relationships).
+Class relationships (inheritance and composition) for the `server` module (showing 300 of 674 relationships).
 
 **Arrow legend:** `<|--` inheritance &nbsp; `*--` composition &nbsp; `-->` association/pointer
 
@@ -13,6 +13,7 @@ classDiagram
     DebugSnapshotBaseStructuredData_t <|-- AI_BaseNPC_DebugSnapshotData_t
     DebugSnapshotBaseStructuredData_t <|-- AI_DefaultNPC_DebugSnapshotData_t
     DebugSnapshotBaseStructuredData_t <|-- AI_GroundRootMotionMotor_DebugSnapshotData_t
+    CNavPathCost <|-- ApproachAreaCost
     CAI_Expresser <|-- CAI_ExpresserWithFollowup
     CAnimGraphControllerBase <|-- CBaseAnimGraphDestructibleParts_GraphController
     CNmGraphVariationUserData <|-- CBaseAnimGraphVariationUserData
@@ -20,16 +21,22 @@ classDiagram
     CBtNode <|-- CBtNodeDecorator
     CAnimGraphControllerBase <|-- CCS2ChickenGraphController
     CAnimGraphControllerBase <|-- CChoreo_GraphController
+    CAnimGraphControllerBase <|-- CDynamicPropGraphController
     CAnimGraphControllerBase <|-- CEmptyGraphController
     IChoreoServices <|-- CGameChoreoServices
     INavPathCostAreaFilter <|-- CMarkupSearch_PathCostAreaFilter
     CAI_ExpresserWithFollowup <|-- CMultiplayer_Expresser
+    CNavPathCost <|-- CNavPathCostForTests
     CNavVolumeCalculatedVector <|-- CNavVolumeBreadthFirstSearch
     CNavVolume <|-- CNavVolumeCalculatedVector
     CNavVolume <|-- CNavVolumeMarkupVolume
     `CNmPassthroughNode::CDefinition` <|-- `CNmAimCSNode::CDefinition`
     CNmPoseTask <|-- CNmAimCSTask
     CNmEventConsumer <|-- CNmEventConsumerAttributes
+    CNmEventConsumer <|-- CNmEventConsumerBodyGroup
+    CNmEventConsumer <|-- CNmEventConsumerCamera
+    CNmEventConsumer <|-- CNmEventConsumerCloth
+    CNmEventConsumer <|-- CNmEventConsumerContact
     CNmEventConsumer <|-- CNmEventConsumerLegacy
     CNmEventConsumer <|-- CNmEventConsumerParticle
     CNmEventConsumer <|-- CNmEventConsumerPulse
@@ -45,8 +52,11 @@ classDiagram
     CStopwatchBase <|-- CStopwatch
     CSimpleSimTimer <|-- CStopwatchBase
     CTestPulseIOComponent <|-- CTestPulseIOComponent_Derived
+    CNavPathCost <|-- ChickenPathCost
     DebugSnapshotBaseStructuredData_t <|-- DebugDrawBoneTransforms_t
     AmmoTypeInfo_t <|-- GameAmmoTypeInfo_t
+    CNavPathCost <|-- HostagePathCost
+    CNavPathCost <|-- PathCost
     Relationship_t <|-- RelationshipOverride_t
     dynpitchvol_base_t <|-- dynpitchvol_t
     CBaseModelEntity <|-- CBaseAnimGraph
@@ -63,23 +73,28 @@ classDiagram
     CBodyComponent <|-- CBodyComponentPoint
     CBodyComponent <|-- CBodyComponentSkeletonInstance
     CBaseTrigger <|-- CBombTarget
+    CBaseModelEntity <|-- CBrokenGlassTrap
     CCS2WeaponGraphController <|-- CCS2PawnGraphController
     CAnimGraphControllerBase <|-- CCS2WeaponGraphController
     CBaseEntity <|-- CCSCustomHudLayout
     CBaseEntity <|-- CCSCustomPlayerCamera
     CCSGO_EndOfMatchLineupEndpoint <|-- CCSGO_EndOfMatchLineupEnd
+    CCSGO_TeamIntroCharacterPosition <|-- CCSGO_RushIntroCharacterPosition
+    CCSGO_RushIntroCharacterPosition <|-- CCSGO_RushIntroCounterTerroristPosition
+    CCSGO_RushIntroCharacterPosition <|-- CCSGO_RushIntroTerroristPosition
     CCSGO_TeamIntroCharacterPosition <|-- CCSGO_WingmanIntroCharacterPosition
     CCSGO_WingmanIntroCharacterPosition <|-- CCSGO_WingmanIntroCounterTerroristPosition
     CCSGO_WingmanIntroCharacterPosition <|-- CCSGO_WingmanIntroTerroristPosition
     CCSGameModeRules <|-- CCSGameModeRules_ArmsRace
     CCSGameModeRules <|-- CCSGameModeRules_Deathmatch
     CCSGameModeRules <|-- CCSGameModeRules_Noop
+    CBaseTrigger <|-- CCSMinimapVolume
+    CBaseEntity <|-- CCSObservableElement
     CCSPlayerBase_CameraServices <|-- CCSObserver_CameraServices
     CPlayer_MovementServices <|-- CCSObserver_MovementServices
     CPlayer_ObserverServices <|-- CCSObserver_ObserverServices
     CPlayer_UseServices <|-- CCSObserver_UseServices
     CPlayer_CameraServices <|-- CCSPlayerBase_CameraServices
-    CCSCustomPlayerCamera <|-- CCSPlayerCamera
     CBasePlayerController <|-- CCSPlayerController
     CPlayerControllerComponent <|-- CCSPlayerController_ActionTrackingServices
     CPlayerControllerComponent <|-- CCSPlayerController_DamageServices
@@ -98,6 +113,7 @@ classDiagram
     CPlayer_UseServices <|-- CCSPlayer_UseServices
     CPlayer_WaterServices <|-- CCSPlayer_WaterServices
     CPlayer_WeaponServices <|-- CCSPlayer_WeaponServices
+    CBaseEntity <|-- CCSRadarElement
     CBasePlayerWeaponVData <|-- CCSWeaponBaseVData
     CBaseModelEntity <|-- CCashStack
     CPointEntity <|-- CChoreoInfoTarget
@@ -185,7 +201,6 @@ classDiagram
     CEntityInstance <|-- CBaseEntity
     CBaseAnimGraph <|-- CBaseGrenade
     CBaseEntity <|-- CBaseModelEntity
-    CPathKeyFrame <|-- CBaseMoveBehavior
     CBaseToggle <|-- CBasePlatTrain
     CBaseCombatCharacter <|-- CBasePlayerPawn
     CEconEntity <|-- CBasePlayerWeapon
@@ -287,8 +302,6 @@ classDiagram
     CBaseEntity <|-- CEnvVolumetricFogController
     CBaseEntity <|-- CEnvVolumetricFogVolume
     CBaseEntity <|-- CEnvWind
-    CBaseEntity <|-- CEnvWindController
-    CBaseEntity <|-- CEnvWindVolume
     CBaseFilter <|-- CFilterContext
     CBaseFilter <|-- CFilterEnemy
     CInferno <|-- CFireCrackerBlast
@@ -297,17 +310,4 @@ classDiagram
     CBaseCSGrenade <|-- CFlashbang
     CBaseCSGrenadeProjectile <|-- CFlashbangProjectile
     CBaseEntity <|-- CFogController
-    CBaseTrigger <|-- CFogTrigger
-    CServerOnlyModelEntity <|-- CFogVolume
-    CBaseTrigger <|-- CFootstepControl
-    CBaseModelEntity <|-- CFuncBrush
-    CBaseModelEntity <|-- CFuncConveyor
-    CFuncBrush <|-- CFuncElectrifiedVolume
-    CBaseModelEntity <|-- CFuncIllusionary
-    CBaseModelEntity <|-- CFuncInteractionLayerClip
-    CBaseModelEntity <|-- CFuncLadder
-    CFuncLadder <|-- CFuncLadderAlias_func_useableladder
-    CFuncBrush <|-- CFuncMonitor
-    CBaseToggle <|-- CFuncMoveLinear
-    CFuncMoveLinear <|-- CFuncMoveLinearAlias_momentary_door
 ```

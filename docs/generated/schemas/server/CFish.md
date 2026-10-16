@@ -8,9 +8,9 @@ kind: class
 
 # CFish
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 2672 bytes (`0xa70`) · **Align:** 16 · **Module:** server
+**Kind:** class · **Size:** 2896 bytes (`0xb50`) · **Align:** 16 · **Module:** server
 
 **Inherits from:** [CBaseAnimGraph](../server/CBaseAnimGraph.md)
 
@@ -28,7 +28,7 @@ classDiagram
 
 ## Memory layout
 
-167 fields (24 declared here, 143 inherited). Offsets are absolute from the object base.
+171 fields (24 declared here, 147 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -148,7 +148,8 @@ classDiagram
 | `0x570` | `m_clrRender` | Color | [CBaseModelEntity](../server/CBaseModelEntity.md) | RGBA tint colour multiplied onto the entity's diffuse texture. |
 | `0x578` | `m_vecRenderAttributes` | CUtlVectorEmbeddedNetworkVar< [EntityRenderAttribute_t](../server/EntityRenderAttribute_t.md) > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e0` | `m_bRenderToCubemaps` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x5e1` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e1` | `m_bExpandRenderBoundsToIncludeCloth` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x5e2` | `m_bNoInterpolate` | bool | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
 | `0x5e8` | `m_Collision` | [CCollisionProperty](../server/CCollisionProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CCollisionProperty struct encoding the entity's collision bounding box shape and flags. |
 | `0x6a0` | `m_Glow` | [CGlowProperty](../server/CGlowProperty.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | CGlowProperty struct controlling the entity's glow outline (colour, radius, visibility rules). |
 | `0x6f8` | `m_flGlowBackfaceMult` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Multiplier for the glow effect on back-facing surfaces of the model. |
@@ -157,45 +158,48 @@ classDiagram
 | `0x704` | `m_flFadeScale` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Scale factor applied to fade distances; 0 disables distance fading. |
 | `0x708` | `m_flShadowStrength` | float32 | [CBaseModelEntity](../server/CBaseModelEntity.md) | Opacity of this entity's cast shadow (0 = no shadow, 1 = full shadow). |
 | `0x70c` | `m_nObjectCulling` | uint8 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x710` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
-| `0x738` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
-| `0x768` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
-| `0x770` | `m_graphControllerManager` | [CAnimGraphControllerManager](../server/CAnimGraphControllerManager.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x808` | `m_pMainGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | The primary animation-graph controller instance for this entity. |
-| `0x810` | `m_bInitiallyPopulateInterpHistory` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x818` | `m_OnLayerCycleUpdated` | CEntityOutputTemplate< float32 > | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x838` | `m_OnExternalChoreoGraphChanged` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x850` | `m_pChoreoServices` | [IChoreoServices](../server/IChoreoServices.md)* | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MKV3TransferSaveOpsForField GetChoreoServicesSaveRestoreOps` |
-| `0x858` | `m_bAnimGraphUpdateEnabled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x859` | `m_bAnimationUpdateScheduled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x85c` | `m_vecForce` | Vector | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x868` | `m_nForceBone` | int32 | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x878` | `m_pRagdollControl` | [IPhysicsRagdollControl](../vphysics2/IPhysicsRagdollControl.md)* | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MPhysPtr` |
-| `0x880` | `m_RagdollPose` | [PhysicsRagdollPose_t](../server/PhysicsRagdollPose_t.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x8a8` | `m_bRagdollEnabled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | True while the entity is simulated as a ragdoll rather than animated. |
-| `0x8a9` | `m_bRagdollClientSide` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
-| `0x8b0` | `m_xParentedRagdollRootInEntitySpace` | CTransform | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
-| `0x960` | `m_pool` | CHandle< [CFishPool](../server/CFishPool.md) > |  |  |
-| `0x964` | `m_id` | uint32 |  |  |
-| `0x968` | `m_x` | float32 |  | `MNotSaved` |
-| `0x96c` | `m_y` | float32 |  | `MNotSaved` |
-| `0x970` | `m_z` | float32 |  | `MNotSaved` |
-| `0x974` | `m_angle` | float32 |  |  |
-| `0x978` | `m_angleChange` | float32 |  |  |
-| `0x97c` | `m_forward` | Vector |  |  |
-| `0x988` | `m_perp` | Vector |  |  |
-| `0x994` | `m_poolOrigin` | VectorWS |  |  |
-| `0x9a0` | `m_waterLevel` | float32 |  |  |
-| `0x9a4` | `m_speed` | float32 |  |  |
-| `0x9a8` | `m_desiredSpeed` | float32 |  |  |
-| `0x9ac` | `m_calmSpeed` | float32 |  |  |
-| `0x9b0` | `m_panicSpeed` | float32 |  |  |
-| `0x9b4` | `m_avoidRange` | float32 |  |  |
-| `0x9b8` | `m_turnTimer` | [CountdownTimer](../server/CountdownTimer.md) |  | `MNotSaved` |
-| `0x9d0` | `m_turnClockwise` | bool |  |  |
-| `0x9d8` | `m_goTimer` | [CountdownTimer](../server/CountdownTimer.md) |  | `MNotSaved` |
-| `0x9f0` | `m_moveTimer` | [CountdownTimer](../server/CountdownTimer.md) |  | `MNotSaved` |
-| `0xa08` | `m_panicTimer` | [CountdownTimer](../server/CountdownTimer.md) |  | `MNotSaved` |
-| `0xa20` | `m_disperseTimer` | [CountdownTimer](../server/CountdownTimer.md) |  | `MNotSaved` |
-| `0xa38` | `m_proximityTimer` | [CountdownTimer](../server/CountdownTimer.md) |  | `MNotSaved` |
-| `0xa50` | `m_visible` | CUtlVector< [CFish](../server/CFish.md)* > |  | `MNotSaved` |
+| `0x710` | `m_bodyGroupTotalRequestCount` | uint32 | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x718` | `m_bodyGroupRequests` | CUtlVectorFixedGrowable< [CBaseModelEntity::BodyGroupRequest_t](../server/CBaseModelEntity.BodyGroupRequest_t.md), 8 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x7f0` | `m_bodyGroupChoices` | CUtlOrderedMap< CGlobalSymbol, int32 > | [CBaseModelEntity](../server/CBaseModelEntity.md) |  |
+| `0x818` | `m_vecViewOffset` | [CNetworkViewOffsetVector](../server/CNetworkViewOffsetVector.md) | [CBaseModelEntity](../server/CBaseModelEntity.md) | Offset from the entity origin to the player's view position (eye height). |
+| `0x848` | `m_bvDisabledHitGroups` | uint32[1] | [CBaseModelEntity](../server/CBaseModelEntity.md) | `MKV3TransferSaveOpsForField GetHitgroupDisableListSaveRestoreOps` |
+| `0x850` | `m_graphControllerManager` | [CAnimGraphControllerManager](../server/CAnimGraphControllerManager.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x8e8` | `m_pMainGraphController` | [CAnimGraphControllerPtr](../server/CAnimGraphControllerPtr.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | The primary animation-graph controller instance for this entity. |
+| `0x8f0` | `m_bInitiallyPopulateInterpHistory` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x8f8` | `m_OnLayerCycleUpdated` | CEntityOutputTemplate< float32 > | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x918` | `m_OnExternalChoreoGraphChanged` | [CEntityIOOutput](../entity2/CEntityIOOutput.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x930` | `m_pChoreoServices` | [IChoreoServices](../server/IChoreoServices.md)* | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MKV3TransferSaveOpsForField GetChoreoServicesSaveRestoreOps` |
+| `0x938` | `m_bAnimGraphUpdateEnabled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x939` | `m_bAnimationUpdateScheduled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x93c` | `m_vecForce` | Vector | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x948` | `m_nForceBone` | int32 | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x958` | `m_pRagdollControl` | [IPhysicsRagdollControl](../vphysics2/IPhysicsRagdollControl.md)* | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MPhysPtr` |
+| `0x960` | `m_RagdollPose` | [PhysicsRagdollPose_t](../server/PhysicsRagdollPose_t.md) | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x988` | `m_bRagdollEnabled` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | True while the entity is simulated as a ragdoll rather than animated. |
+| `0x989` | `m_bRagdollClientSide` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) | `MNotSaved` |
+| `0x98a` | `m_bShouldUpdateTransformations` | bool | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0x990` | `m_xParentedRagdollRootInEntitySpace` | CTransform | [CBaseAnimGraph](../server/CBaseAnimGraph.md) |  |
+| `0xa40` | `m_pool` | CHandle< [CFishPool](../server/CFishPool.md) > |  |  |
+| `0xa44` | `m_id` | uint32 |  |  |
+| `0xa48` | `m_x` | float32 |  | `MNotSaved` |
+| `0xa4c` | `m_y` | float32 |  | `MNotSaved` |
+| `0xa50` | `m_z` | float32 |  | `MNotSaved` |
+| `0xa54` | `m_angle` | float32 |  |  |
+| `0xa58` | `m_angleChange` | float32 |  |  |
+| `0xa5c` | `m_forward` | Vector |  |  |
+| `0xa68` | `m_perp` | Vector |  |  |
+| `0xa74` | `m_poolOrigin` | VectorWS |  |  |
+| `0xa80` | `m_waterLevel` | float32 |  |  |
+| `0xa84` | `m_speed` | float32 |  |  |
+| `0xa88` | `m_desiredSpeed` | float32 |  |  |
+| `0xa8c` | `m_calmSpeed` | float32 |  |  |
+| `0xa90` | `m_panicSpeed` | float32 |  |  |
+| `0xa94` | `m_avoidRange` | float32 |  |  |
+| `0xa98` | `m_turnTimer` | [CountdownTimer](../server/CountdownTimer.md) |  | `MNotSaved` |
+| `0xab0` | `m_turnClockwise` | bool |  |  |
+| `0xab8` | `m_goTimer` | [CountdownTimer](../server/CountdownTimer.md) |  | `MNotSaved` |
+| `0xad0` | `m_moveTimer` | [CountdownTimer](../server/CountdownTimer.md) |  | `MNotSaved` |
+| `0xae8` | `m_panicTimer` | [CountdownTimer](../server/CountdownTimer.md) |  | `MNotSaved` |
+| `0xb00` | `m_disperseTimer` | [CountdownTimer](../server/CountdownTimer.md) |  | `MNotSaved` |
+| `0xb18` | `m_proximityTimer` | [CountdownTimer](../server/CountdownTimer.md) |  | `MNotSaved` |
+| `0xb30` | `m_visible` | CUtlVector< [CFish](../server/CFish.md)* > |  | `MNotSaved` |

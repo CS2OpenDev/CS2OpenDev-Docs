@@ -5,11 +5,11 @@ module: sounddoc_lib
 
 # Module: sounddoc_lib
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 [📊 View UML Diagram](../diagrams/sounddoc_lib.md)
 
-141 types. Each links to its own page with the full field layout.
+143 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -66,7 +66,7 @@ module: sounddoc_lib
 | [CDelayImpulseResponseNodeDesc](sounddoc_lib/CDelayImpulseResponseNodeDesc.md) | class | 136 | 0 | [CVNodeTypeDesc](sounddoc_lib/CVNodeTypeDesc.md) |
 | [CEffectNameInputNodeDesc](sounddoc_lib/CEffectNameInputNodeDesc.md) | class | 136 | 0 | [CVNodeTypeDesc](sounddoc_lib/CVNodeTypeDesc.md) |
 | [CEffectsPreviewList](sounddoc_lib/CEffectsPreviewList.md) | class | 48 | 3 |  |
-| [CFilterStage](sounddoc_lib/CFilterStage.md) | class | 24 | 6 |  |
+| [CFilterStage](sounddoc_lib/CFilterStage.md) | class | 24 | 7 |  |
 | [CGraphEditorState](sounddoc_lib/CGraphEditorState.md) | class | 40 | 1 |  |
 | [CGraphPreviewList](sounddoc_lib/CGraphPreviewList.md) | class | 40 | 2 |  |
 | [CImpulseResponseInputNodeDesc](sounddoc_lib/CImpulseResponseInputNodeDesc.md) | class | 136 | 0 | [CVNodeTypeDesc](sounddoc_lib/CVNodeTypeDesc.md) |
@@ -99,7 +99,7 @@ module: sounddoc_lib
 | [CMixDualCompressor](sounddoc_lib/CMixDualCompressor.md) | class | 88 | 2 | [CMixPropertyBase](sounddoc_lib/CMixPropertyBase.md) |
 | [CMixDynamics](sounddoc_lib/CMixDynamics.md) | class | 88 | 14 | [CMixPropertyBase](sounddoc_lib/CMixPropertyBase.md) |
 | [CMixDynamics3Band](sounddoc_lib/CMixDynamics3Band.md) | class | 184 | 12 | [CMixPropertyBase](sounddoc_lib/CMixPropertyBase.md) |
-| [CMixDynamicsCompressor](sounddoc_lib/CMixDynamicsCompressor.md) | class | 80 | 4 | [CMixPropertyBase](sounddoc_lib/CMixPropertyBase.md) |
+| [CMixDynamicsCompressor](sounddoc_lib/CMixDynamicsCompressor.md) | class | 88 | 4 | [CMixPropertyBase](sounddoc_lib/CMixPropertyBase.md) |
 | [CMixEQ8](sounddoc_lib/CMixEQ8.md) | class | 232 | 2 | [CMixPropertyBase](sounddoc_lib/CMixPropertyBase.md) |
 | [CMixEffectChain](sounddoc_lib/CMixEffectChain.md) | class | 56 | 3 | [CMixPropertyBase](sounddoc_lib/CMixPropertyBase.md) |
 | [CMixEffectName](sounddoc_lib/CMixEffectName.md) | class | 40 | 1 | [CMixPropertyBase](sounddoc_lib/CMixPropertyBase.md) |
@@ -119,7 +119,7 @@ module: sounddoc_lib
 | [CMixPitchShift](sounddoc_lib/CMixPitchShift.md) | class | 56 | 5 | [CMixPropertyBase](sounddoc_lib/CMixPropertyBase.md) |
 | [CMixPlateverb](sounddoc_lib/CMixPlateverb.md) | class | 64 | 7 | [CMixPropertyBase](sounddoc_lib/CMixPropertyBase.md) |
 | [CMixPresetDSP](sounddoc_lib/CMixPresetDSP.md) | class | 56 | 3 | [CMixPropertyBase](sounddoc_lib/CMixPropertyBase.md) |
-| [CMixPropertyBase](sounddoc_lib/CMixPropertyBase.md) | class | 32 | 5 |  |
+| [CMixPropertyBase](sounddoc_lib/CMixPropertyBase.md) | class | 32 | 6 |  |
 | [CMixRemapVsndToImpulseResponse](sounddoc_lib/CMixRemapVsndToImpulseResponse.md) | class | 40 | 1 | [CMixPropertyBase](sounddoc_lib/CMixPropertyBase.md) |
 | [CMixShaper](sounddoc_lib/CMixShaper.md) | class | 56 | 1 | [CMixPropertyBase](sounddoc_lib/CMixPropertyBase.md) |
 | [CMixSplitter](sounddoc_lib/CMixSplitter.md) | class | 64 | 8 | [CMixPropertyBase](sounddoc_lib/CMixPropertyBase.md) |
@@ -132,7 +132,7 @@ module: sounddoc_lib
 | [CMixSubgraph](sounddoc_lib/CMixSubgraph.md) | class | 48 | 2 | [CMixPropertyBase](sounddoc_lib/CMixPropertyBase.md) |
 | [CMixSubgraphSwitch](sounddoc_lib/CMixSubgraphSwitch.md) | class | 104 | 7 | [CMixPropertyBase](sounddoc_lib/CMixPropertyBase.md) |
 | [CMixSum](sounddoc_lib/CMixSum.md) | class | 128 | 9 | [CMixPropertyBase](sounddoc_lib/CMixPropertyBase.md) |
-| [CMixTrack](sounddoc_lib/CMixTrack.md) | class | 80 | 7 | [CMixPropertyBase](sounddoc_lib/CMixPropertyBase.md) |
+| [CMixTrack](sounddoc_lib/CMixTrack.md) | class | 72 | 4 | [CMixPropertyBase](sounddoc_lib/CMixPropertyBase.md) |
 | [CMixUtility](sounddoc_lib/CMixUtility.md) | class | 56 | 1 | [CMixPropertyBase](sounddoc_lib/CMixPropertyBase.md) |
 | [CMixVocoder](sounddoc_lib/CMixVocoder.md) | class | 72 | 10 | [CMixPropertyBase](sounddoc_lib/CMixPropertyBase.md) |
 | [CMixVsndName](sounddoc_lib/CMixVsndName.md) | class | 40 | 1 | [CMixPropertyBase](sounddoc_lib/CMixPropertyBase.md) |
@@ -147,9 +147,11 @@ module: sounddoc_lib
 | [CVControlNodeBaseDesc](sounddoc_lib/CVControlNodeBaseDesc.md) | class | 136 | 0 | [CVNodeTypeDesc](sounddoc_lib/CVNodeTypeDesc.md) |
 | [CVMixEditorEdge](sounddoc_lib/CVMixEditorEdge.md) | class | 16 | 2 |  |
 | [CVMixEditorNode](sounddoc_lib/CVMixEditorNode.md) | class | 56 | 6 |  |
+| [CVMixToolDoc](sounddoc_lib/CVMixToolDoc.md) | class | 112 | 4 |  |
 | [CVMixToolEditorData](sounddoc_lib/CVMixToolEditorData.md) | class | 8 | 2 |  |
-| [CVMixToolGraph](sounddoc_lib/CVMixToolGraph.md) | class | 72 | 4 |  |
-| [CVMixToolGraphEntry](sounddoc_lib/CVMixToolGraphEntry.md) | class | 152 | 3 |  |
+| [CVMixToolEffectsList](sounddoc_lib/CVMixToolEffectsList.md) | class | 32 | 2 |  |
+| [CVMixToolGraph](sounddoc_lib/CVMixToolGraph.md) | class | 72 | 6 |  |
+| [CVMixToolGraphEntry](sounddoc_lib/CVMixToolGraphEntry.md) | class | 152 | 2 | [CVMixToolGraph](sounddoc_lib/CVMixToolGraph.md) |
 | [CVNodeTypeDesc](sounddoc_lib/CVNodeTypeDesc.md) | class | 136 | 15 |  |
 | [CVsndInputNodeDesc](sounddoc_lib/CVsndInputNodeDesc.md) | class | 136 | 0 | [CVNodeTypeDesc](sounddoc_lib/CVNodeTypeDesc.md) |
 | [SteamAudioHRTFInterpolationType_t](sounddoc_lib/SteamAudioHRTFInterpolationType_t.md) | enum | — | 2 |  |

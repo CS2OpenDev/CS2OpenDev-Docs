@@ -8,7 +8,7 @@ kind: enum
 
 # CFuncMover::Move_t
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** enum · **Underlying:** `uint32_t` · **Module:** server
 
@@ -16,6 +16,6 @@ kind: enum
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `MOVE_LOOP` | 0 |  |
-| `MOVE_OSCILLATE` | 1 |  |
-| `MOVE_STOP_AT_END` | 2 |  |
+| `MOVE_LOOP` | 0 | Loop |
+| `MOVE_OSCILLATE` | 1 | Oscillate |
+| `MOVE_STOP_AT_END` | 2 | Stop at End |

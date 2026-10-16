@@ -8,13 +8,13 @@ kind: class
 
 # C_CSGO_TeamIntroCharacterPosition
 
-> Source: **Build 25218825** · 2026-09-09 · `windows-x86_64` · schema `0.10.0`
+> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 5024 bytes (`0x13a0`) · **Align:** n/a (unspecified) · **Module:** client
+**Kind:** class · **Size:** 7448 bytes (`0x1d18`) · **Align:** n/a (unspecified) · **Module:** client
 
 **Inherits from:** [C_CSGO_TeamPreviewCharacterPosition](../client/C_CSGO_TeamPreviewCharacterPosition.md)
 
-**Derived by:** [CCSGO_WingmanIntroCharacterPosition](../client/CCSGO_WingmanIntroCharacterPosition.md), [C_CSGO_TeamIntroCounterTerroristPosition](../client/C_CSGO_TeamIntroCounterTerroristPosition.md), [C_CSGO_TeamIntroTerroristPosition](../client/C_CSGO_TeamIntroTerroristPosition.md)
+**Derived by:** [CCSGO_RushIntroCharacterPosition](../client/CCSGO_RushIntroCharacterPosition.md), [CCSGO_WingmanIntroCharacterPosition](../client/CCSGO_WingmanIntroCharacterPosition.md), [C_CSGO_TeamIntroCounterTerroristPosition](../client/C_CSGO_TeamIntroCounterTerroristPosition.md), [C_CSGO_TeamIntroTerroristPosition](../client/C_CSGO_TeamIntroTerroristPosition.md)
 
 **Relationships:**
 
@@ -23,6 +23,7 @@ classDiagram
     C_CSGO_TeamPreviewCharacterPosition <|-- C_CSGO_TeamIntroCharacterPosition
     C_BaseEntity <|-- C_CSGO_TeamPreviewCharacterPosition
     CEntityInstance <|-- C_BaseEntity
+    C_CSGO_TeamIntroCharacterPosition <|-- CCSGO_RushIntroCharacterPosition
     C_CSGO_TeamIntroCharacterPosition <|-- CCSGO_WingmanIntroCharacterPosition
     C_CSGO_TeamIntroCharacterPosition <|-- C_CSGO_TeamIntroCounterTerroristPosition
     C_CSGO_TeamIntroCharacterPosition <|-- C_CSGO_TeamIntroTerroristPosition
@@ -30,7 +31,7 @@ classDiagram
 
 ## Memory layout
 
-93 fields (0 declared here, 93 inherited). Offsets are absolute from the object base.
+94 fields (0 declared here, 94 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -125,5 +126,6 @@ classDiagram
 | `0x610` | `m_sWeaponName` | CUtlString | [C_CSGO_TeamPreviewCharacterPosition](../client/C_CSGO_TeamPreviewCharacterPosition.md) |  |
 | `0x618` | `m_xuid` | uint64 | [C_CSGO_TeamPreviewCharacterPosition](../client/C_CSGO_TeamPreviewCharacterPosition.md) |  |
 | `0x620` | `m_agentItem` | [C_EconItemView](../client/C_EconItemView.md) | [C_CSGO_TeamPreviewCharacterPosition](../client/C_CSGO_TeamPreviewCharacterPosition.md) |  |
-| `0xa90` | `m_glovesItem` | [C_EconItemView](../client/C_EconItemView.md) | [C_CSGO_TeamPreviewCharacterPosition](../client/C_CSGO_TeamPreviewCharacterPosition.md) |  |
-| `0xf00` | `m_weaponItem` | [C_EconItemView](../client/C_EconItemView.md) | [C_CSGO_TeamPreviewCharacterPosition](../client/C_CSGO_TeamPreviewCharacterPosition.md) |  |
+| `0xbd0` | `m_glovesItem` | [C_EconItemView](../client/C_EconItemView.md) | [C_CSGO_TeamPreviewCharacterPosition](../client/C_CSGO_TeamPreviewCharacterPosition.md) |  |
+| `0x1180` | `m_weaponItem` | [C_EconItemView](../client/C_EconItemView.md) | [C_CSGO_TeamPreviewCharacterPosition](../client/C_CSGO_TeamPreviewCharacterPosition.md) |  |
+| `0x1730` | `m_petItem` | [C_EconItemView](../client/C_EconItemView.md) | [C_CSGO_TeamPreviewCharacterPosition](../client/C_CSGO_TeamPreviewCharacterPosition.md) |  |
