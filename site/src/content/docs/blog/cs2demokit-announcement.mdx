@@ -1,26 +1,26 @@
 ---
-title: Introducing CS2DemoKit - A High-Performance .NET Counter-Strike 2 Demo Toolkit 
-date: 2026-09-12
-excerpt: An introduction for CS2DemoKit, a new optimized high-performance .NET parsing and analysis toolkit for Counter-Strike 2 demo files. Free Forever (no takesies-backsies) 
+title: Introducing CS2DemoKit - A High-Performance .NET Counter-Strike 2 Demo Toolkit
+date: 2026-10-21
+excerpt: CS2DemoKit is a new, fast .NET toolkit for parsing and analyzing Counter-Strike 2 demo files. Free forever (no takesies-backsies).
 ---
 
 import Mermaid from '../../../components/Mermaid.astro';
 
 ## What is CS2DemoKit
 
-Today we are announcing a new, highly optimized Counter-Strike 2 demo parsing tool that has been in the works for about 18 months so far. CS2DemoKit aims to provide high-quality, well-maintained tools that anyone in the Counter-Strike community can use and build the next generation of analysis tools on. From the start, the goal was high-performance libraries to read, work with, and analyze server-side and POV (client-side) demos of real matches from a variety of sources.
+Today we're announcing CS2DemoKit, a fast Counter-Strike 2 demo parsing and analysis toolkit that has been in the works for about 18 months. The goal is to give the Counter-Strike community high-quality, well-maintained libraries that anyone can use to build the next generation of analysis tools. From the start, that meant fast libraries for reading, working with, and analyzing both server-side and POV (client-side) demos of real matches from a variety of sources.
 
-If you want to know more about the CS2OpenDev initiative and what our commitments are to the CS Community please take a look at our [CS2OpenDev Organization Introduction](../cs2opendev-organizaton/).
+If you want to know more about the CS2OpenDev initiative and what we're committing to for the CS community, take a look at our [CS2OpenDev organization introduction](../cs2opendev-organization/).
 
 ## What ships today
 
-Three NuGet packages, versioned in lockstep, targeting `net10.0`, with no UI dependencies and nothing to install beyond the packages themselves:
+Three NuGet packages, all released with the same version number, targeting `net10.0`. There are no UI dependencies and nothing to install beyond the packages themselves:
 
 | Package | What it gives you |
 |---|---|
-| `CS2DemoKit.Parser` | The demo parse pipeline: frames and net messages, 270-plus typed game events, entity tracking with tick seeking, and typed entity reads. |
-| `CS2DemoKit.Analysis` | A rule-driven analysis engine over a parsed demo: state-graph evaluator, per-player stats, highlights, clip planning, and a 3D line-of-sight engine. |
-| `CS2DemoKit.Analysis.Rules` | The rules language's semantic core: lexer, parser, canonical AST, resolver, typed checker and canonical hashing. Zero dependencies, for editors and validation services. |
+| `CS2DemoKit.Parser` | Reads a `.dem` file: frames and network messages, 270-plus typed game events, and optional entity tracking (player positions, health, weapons and so on) that you can seek to any tick. |
+| `CS2DemoKit.Analysis` | Turns a parsed demo into numbers: per-player stats, highlights, clip planning, and a 3D line-of-sight engine, all driven by rule files. |
+| `CS2DemoKit.Analysis.Rules` | The core of the rules language (parser, type checker and so on) on its own, with zero dependencies. Useful for editors and validation services. |
 
 <Mermaid
   code={`flowchart TD
@@ -39,7 +39,7 @@ Three NuGet packages, versioned in lockstep, targeting `net10.0`, with no UI dep
   caption="How the three packages, the opt-in entity replay, and the external SDK contract fit together."
 />
 
-`CS2DemoKit.Analysis` sits at the top of the dependency graph, so installing it alone pulls a known-good set of all three. The smallest useful thing you can write is about six lines:
+`CS2DemoKit.Analysis` depends on the other two, so installing it alone gets you a matching set of all three. The smallest useful program is two statements:
 
 ```csharp
 using CS2DemoKit.Parser;
@@ -50,66 +50,62 @@ ParsedDemo demo = MemoryMappedDemoSource.ParseFile("match.dem");
 AnalysisRun run = DemoAnalysis.Run(demo, YamlConfigLoader.LoadShippedEmbedded().Rulesets);
 ```
 
-Four baseline rulesets (KAST, per-player stats, weapon stats, and post-plant multi-kills) are embedded in the assembly, so a consumer with no rules directory on disk still gets a working scoreboard out of the box. When you want different numbers you write a YAML file, not C#. The entire rating stack lives in those files, coefficients included, so "I disagree with how that is computed" is an edit rather than a fork.
+Four starter rulesets (KAST, per-player stats, weapon stats, and post-plant multi-kills) are built into the package, so you get a working scoreboard without any rule files on disk. When you want different numbers, you write a YAML file, not C#. The whole rating calculation lives in those files, coefficients included, so if you disagree with how something is computed, you edit a file instead of forking the library.
 
-On a ten-core machine, a 290 MB full match parses in about 384 ms and evaluates the four shipped rulesets in about 1.4 seconds. Those numbers, the corpus they came from, and the several ways they can mislead you are written down in `docs/perf/baseline.md` in the repo rather than rounded off for a headline.
+On a ten-core machine, a 290 MB full-match demo parses in about 384 ms. Evaluating the four starter rulesets took about 1.4 seconds when we measured our baseline, and later work (described below) has cut evaluation time by about a fifth since then. Those numbers, the demos they came from, and the ways they can mislead you are all written down in [`docs/perf/baseline.md`](https://github.com/CS2OpenDev/CS2DemoKit/blob/main/docs/perf/baseline.md) in the repo.
 
-{/* DO NOT MERGE THIS PARAGRAPH YET: cross-project numbers, gated on the same
-    maintainer review windows and public harness as Part 1's comparison section
-    (CS2OpenDev-Comparisons docs/fairness.md, rules 3 and 4). */}
-
-Those are measurements of CS2DemoKit against itself, which is the right tool for deciding whether a change helped and no evidence at all about how it stacks up against anything else. So we also ran it against demofile-net and demoparser2 on ten matchmaking demos, and every arm had to produce the same event counts, totals and rosters before its time counted. On game events, the forward-only `DemoReader` added in 0.13.0-beta0001 was the fastest arm, at a median of 1,152 ms against demoparser2's 1,592 ms and demofile-net's 2,257 ms, while allocating 6.7x less than demofile-net. The retaining path the rest of the library is built on also beats demofile-net on time, but demoparser2 beats it, and it holds 5.7x demofile-net's private memory. Those runs are serial, on one machine, against a prerelease. [Part 1](../cs2demokit-parser/#how-this-compares-to-other-parsers) has the full tables, the losses, and why an apples-to-apples comparison is harder than running two stopwatches.
+Those are measurements of CS2DemoKit against itself, which is useful for telling whether a change helped but says nothing about how it compares to other parsers. We've also benchmarked it against demofile-net and demoparser2. We'll publish those results once the maintainers of those libraries have had a chance to check that we're using their code fairly, along with the benchmark harness so anyone can rerun it. [Part 1](../cs2demokit-parser/#how-this-compares-to-other-parsers) explains how the comparison works and why it's harder to do fairly than it sounds.
 
 ## What can CS2DemoKit be used for
 
-**Stats and scoreboards, without writing code.** The rules language is the main way in. You describe what you want measured in a small YAML file (count these events, sum this value, keep the max over the match) and the engine walks every round of the demo and produces the numbers. You cannot crash the parser from a rule file. The worst outcome is a validation error telling you what to fix, with a line and column inside the expression and a ranked "did you mean" list for typos.
+**Stats and scoreboards, without writing code.** The rules language is the main way in. You describe what you want measured in a small YAML file (count these events, add up this value, keep the highest value over the match) and the engine goes through every round of the demo and produces the numbers. A rule file can't crash the parser. The worst that happens is a validation error telling you what to fix, with the line and column and a "did you mean" list for typos.
 
-**Match review and highlight reels.** Highlights are per-round achievements that come back stamped with a frame-clock tick, and `CS2DemoKit.Analysis.Clips` turns those into renderer-neutral clip windows: reach-back, coalescing, per-round grouping, the lot. Rendering the video is your problem. Deciding *which twelve seconds matter* is the part this does.
+**Match review and highlight reels.** Highlights are per-round achievements stamped with the tick they happened on, and `CS2DemoKit.Analysis.Clips` turns them into clip windows you can hand to any video tool: it adds lead-in time, merges overlapping clips, and groups them by round. Rendering the video is up to you. Deciding *which twelve seconds matter* is what this does.
 
-**Aim and movement analysis.** The `shot` and `shot_landed` views carry sixteen and twenty-one attributes respectively, including counter-strafe admission, spray segmentation, first-bullet detection and, if you supply baked map geometry, how far the crosshair travelled from first contact and how much it overshot. This is the newest part of the toolkit and has the most caveats attached (see below).
+**Aim and movement analysis.** The `shot` and `shot_landed` views have sixteen and twenty-one attributes respectively, including counter-strafe detection, spray tracking, first-bullet detection and, if you provide map geometry, how far the crosshair moved after first seeing an enemy and how much it overshot. This is the newest part of the toolkit and comes with the most caveats (see below).
 
-**Interactive tooling.** If you want to build a demo browser that shows the wire bytes beside the decoded entity diff, the API is shaped for exactly that. The parser hands out every byte offset an inspector needs and none of the presentation: per-frame raw ranges, per-inner-message ranges inside a decompressed payload, on-demand decompression of a single frame, and an entity tracker you can seek to any frame index, snapshot, or peek at without disturbing.
+**Interactive tools.** If you want to build a demo browser that shows raw bytes next to the decoded entity changes, the API is designed for it. The parser gives you every byte offset an inspector needs: the raw byte range of each frame and each message, decompression of a single frame on demand, and an entity tracker you can jump to any frame, snapshot, or peek at without disturbing its state.
 
-Rule tooling doesn't need the engine at all. `CS2DemoKit.Analysis.Rules` is deliberately BCL-only, with no protobuf, no YAML, no evaluator and no demo parser, so if you are writing an editor extension, a linter, or an upload-validation service you can lex, parse, resolve, type-check and canonically hash a rule expression without dragging in anything that knows what a demo is.
+Rule tools don't need the engine at all. `CS2DemoKit.Analysis.Rules` uses only the .NET base library, with no protobuf, YAML, or demo parser, so if you're writing an editor extension, a linter, or a service that validates uploaded rules, you can check a rule expression without pulling in anything that knows what a demo is.
 
-**Batch pipelines.** Nothing in the library touches a UI toolkit or a filesystem convention you cannot override, and determinism is treated as a feature rather than an accident: parsing is deterministic in the input bytes down to the order of its own warnings, entity replay is deterministic in the frames, and the parallel geometry build produces a bit-identical tree at one thread and at thirty-two.
+**Batch pipelines.** Nothing in the library depends on a UI toolkit or a folder layout you can't override. Results are deterministic: the same demo produces the same output every time, down to the order of its warnings, and the multi-threaded geometry build produces the identical tree with one thread or thirty-two.
 
-**The boring compatibility work you would otherwise do yourself.** Tournament demos recorded through SourceTV are byte-identical to Valve matchmaking in the file header and use a different round-end event. The event every stats tool reaches for first does not fire at all in the demos we have studied. Positions are a cell index plus an offset, not a vector. A field that was never networked is not the same as a field that is zero. None of that is interesting work and all of it is load-bearing, and it is already done.
+**The compatibility work you'd otherwise do yourself.** Tournament demos recorded through SourceTV look the same as Valve matchmaking demos in the file header, but use a different event to mark the end of a round. `round_end`, the event most stats tools reach for first, has never fired in any demo we've checked. Player positions are stored as a grid cell plus an offset, not as a plain vector. A field that was never sent is not the same as a field that is zero. None of that is interesting work, but all of it has to be right, and it's already done.
 
-## What CAN'T CS2DemoKit be used for
+## What CS2DemoKit can't do
 
-Worth being blunt about, because several of these look like they should work.
+Several of these look like they should work, so it's worth being clear.
 
-**It is not a demo player.** No renderer, no 2D radar, no playback clock, no UI of any kind. It gives you the data a player would draw. Drawing it is a different project.
+**It is not a demo player.** There's no renderer, no 2D radar, no playback controls, and no UI of any kind. It gives you the data a player would draw. Drawing it is a different project.
 
-**It does not find or fetch demos.** No Steam integration, no match-history API, no download manager. You hand it a `.dem` file you already have.
+**It doesn't find or download demos.** There's no Steam integration, match-history API, or download manager. You give it a `.dem` file you already have.
 
-**It does not ship map geometry.** Line of sight is recomputed from baked map collision triangles, because there is no usable "spotted" bit on the wire to fall back on. That geometry is Valve-derived and large, so it is distributed out of band rather than inside a NuGet package. What the package carries is the *convention* for finding a bake (an environment variable and a directory walk-up) and a clean "not available" answer when there isn't one. Without a bake, visibility-gated stats report zero rather than guessing, and the build emits a coverage row naming the stat, the attribute, and which prerequisite is missing.
+**It doesn't include map geometry.** Line of sight is computed from map collision geometry ("bakes"), because the demo doesn't contain a usable "this player can see that one" signal. That geometry comes from Valve's files and is large, so it's distributed separately rather than inside a NuGet package. The package knows how to find a bake (via an environment variable or by searching parent folders) and reports cleanly when there isn't one. Without a bake, visibility-based stats report zero instead of guessing, and the analysis output includes a coverage note naming the stat and what's missing.
 
-**It does not know where the bombsites are.** Zone membership needs trigger volumes or baked zone geometry, and neither is in a demo file. You can register your own provider and address it from rules by name like any built-in, but the library will not pretend to resolve `BombsiteA` for you. The nav-mesh place name *is* available, which covers most of what people actually want.
+**It doesn't know the exact shape of bombsites.** Telling whether a player is standing inside a bombsite needs the map's trigger volumes, and those aren't in a demo file. You can register your own zone provider and use it from rules like any built-in one. What *is* available is the map's named location for each player (like `BombsiteA`), which also tells you which site the bomb was planted at. That covers most of what people actually want.
 
-**It is not an anti-cheat, and we are not going to make it one.** A demo is a recording of what the server networked, and several of the things people reach for when they want to prove something are not in it. The aim-punch columns are the clearest example. They do not currently decode to a real recoil kick (values come back clustered near ±90 degrees, which is not a recoil kick by any reading), so the framework rejects every value that column produces rather than reporting a 300-degree recoil residual as data. That is the right behaviour, and it is also exactly the sort of thing that gets quietly ignored when somebody wants a number more than they want a correct one.
+**It is not an anti-cheat, and we're not going to make it one.** A demo is a recording of what the server sent, and several of the things people want when they're trying to prove something aren't in it. The aim-punch (recoil) values are the clearest example. They don't currently decode to a real recoil value: on our sample demo they come back clustered near -94 and +89 degrees, when real recoil is a couple of degrees. So the library rejects every value from that column instead of reporting a 300-degree recoil error as data.
 
-**It cannot recover what was never networked.** `flash_duration` is the instructive case: the wire carries a latched duration rather than a live countdown, and the two fields that would let you compute remaining blind time are never sent at all. We established that over 230,856 pawn-frames rather than guessing. Where a value is not recoverable, the library says so instead of interpolating something plausible.
+**It can't recover data that was never sent.** `flash_duration` is a good example: the demo stores how long a flash was set to last, not a live countdown, and the two fields you'd need to work out how much blind time is left are never sent at all. We confirmed that across 230,856 frames of player data. When a value can't be recovered, the library says so instead of making up a plausible one.
 
-**POV demos decode partially.** A client-recorded demo sends deltas for entities the recording client never received a full update for. We skip those rather than throwing, which gives you a usable but incomplete entity replay. `EntityTracker.DeltaUnknownCount` is a public counter, so you can see how much of that happened before trusting per-tick entity values. Game events are unaffected either way: anything derived from kills, deaths, damage or shots is correct regardless of what the entity decoder did.
+**POV demos decode partially.** A demo recorded on a player's own client contains updates for entities that client never received a full copy of. We skip those instead of failing, which gives you a usable but incomplete picture of entity state. `EntityTracker.DeltaUnknownCount` tells you how many were skipped, so you can check before trusting per-tick entity values. Game events aren't affected: anything based on kills, deaths, damage or shots is correct either way.
 
-**It is not a server plugin, and it does not read a live connection.** The same messages that end up in a demo file are what the server sends clients during a match, so a live path is not architecturally impossible. Nothing in the library is wired for one today.
+**It is not a server plugin, and it doesn't read a live connection.** The messages in a demo file are the same ones a server sends to players during a match, so a live mode isn't impossible in principle. Nothing in the library supports one today.
 
-## What next for CS2DemoKit
+## What's next for CS2DemoKit
 
-`0.11.0` is on nuget.org now. We are pre-1.0 and the API does still move between minor versions; every break is written down in `docs/releasing.md` with its mechanism and its fix, because "adding an optional parameter is a compatible change" is true right up until it isn't.
+`0.12.0` is on nuget.org now, with newer versions available as prereleases. We're pre-1.0 and the API still changes between minor versions. Every breaking change is written down in [`docs/releasing.md`](https://github.com/CS2OpenDev/CS2DemoKit/blob/main/docs/releasing.md) with what changed and how to fix your code.
 
-Four things are in front of us, all of them items the repository already tracks as open rather than roadmap invented for a blog post.
+These are the four things in front of us, all already tracked as open work in the repository:
 
-**Evaluation is where the time is.** Parsing is 21% of a demo load and its one structural lever has been pulled. Evaluation is 72 to 81%, and roughly 30% of *that* is the garbage collector. The last round of work there carried only the per-pawn cells that changed instead of a full readout every frame. That took evaluation down 22% and total load down 17% across a fifteen-demo corpus, and all fifteen improved. There is more of that kind of win available.
+**Make evaluation faster.** Parsing is about 21% of the time it takes to load and analyze a demo. Evaluating rules is 72 to 81%, and roughly 30% of *that* is .NET garbage collection. The last round of work stopped re-sending every player's full state on every frame and sent only what changed. That cut evaluation time by 22% and total time by 17% across fifteen demos, and every one of them got faster. There's more of that kind of improvement available.
 
-**The aim-punch column needs to decode.** Until it does, spray-residual metrics measure the decode rather than the player, and we would rather say so in the documentation than ship a plausible number.
+**Decode the aim-punch values properly.** Until they decode correctly, spray-control metrics measure our decoder rather than the player, and we'd rather say so in the documentation than ship a number that only looks right.
 
-**CI needs a demo corpus.** The test suites run in CI against a committed four-round sample, which means the parity and determinism tests that matter most only run locally. Closing that is a matter of getting full-match demos somewhere CI can reach them without committing them to the repository.
+**Run full-match demos in CI.** Today the automated tests run against a small four-round sample, so the tests that compare results across full matches only run on developer machines. Fixing that means getting full-match demos somewhere CI can reach without committing them to the repository.
 
-**1.0 when the API stops moving.** Not on a date, but when a release goes by without a compatibility note.
+**1.0 when the API stops changing.** Not on a fixed date, but once a release goes by without a compatibility note.
 
-If you use it and something is wrong, missing, or worse than whatever you were using before, file it on [the GitHub repo](https://github.com/CS2OpenDev/CS2DemoKit/issues). A bug report with a demo attached is worth roughly ten without one.
+If you use it and something is wrong, missing, or worse than what you were using before, file an issue on [the GitHub repo](https://github.com/CS2OpenDev/CS2DemoKit/issues). A bug report with a demo attached is far easier to fix than one without.
 
-If you want the technical version, it runs in three parts: [Part 1: the parser](../cs2demokit-parser/), [Part 2: the analysis engine](../cs2demokit-analysisengine/), and [Part 3: the rules language](../cs2demokit-rules/).
+If you want the technical details, there's a three-part series: [Part 1: the parser](../cs2demokit-parser/), [Part 2: the analysis engine](../cs2demokit-analysisengine/), and [Part 3: the rules language](../cs2demokit-rules/).
