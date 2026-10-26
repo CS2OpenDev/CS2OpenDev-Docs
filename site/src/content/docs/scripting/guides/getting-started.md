@@ -104,6 +104,5 @@ These are community projects, not Valve's, and we don't control what they publis
 - [Source2Wiki cs_script section](https://www.source2.wiki/Scripting/Counter-Strike%202/cs_script/introduction): prose docs and examples, regenerated when the game updates.
 - [Source2ZE/cs_script](https://github.com/Source2ZE/cs_script): the `@s2ze/*` npm packages (repackaged types, a scheduler, maths helpers) and the `create-cs-script` scaffolder.
 - [Source2ZE/cs_script_boilerplate](https://github.com/Source2ZE/cs_script_boilerplate): a TypeScript and Rollup starter project.
-- [SteamTracking/GameTracking-CS2](https://github.com/SteamTracking/GameTracking-CS2): a mirror of Valve's shipped files. Its git history is the raw diff of `point_script.d.ts` between builds.
 
 Valve asks for feedback at `CSGOTeamFeedback@valvesoftware.com` with "cs_script Feedback" in the subject line.
