@@ -2,6 +2,7 @@
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import DataTable, { PAGE_SIZE, type Column } from '../components/islands/DataTable';
 import TableRowsNote from '../components/TableRowsNote.astro';
+import RowAnchors from '../components/RowAnchors.astro';
 import { provenanceLine } from '../lib/provenance';
 import { commandRows, flagAnchor, flagLegend, loadCommands } from '../lib/data/commands';
 import { identifierAliases } from '../lib/data/schema';
@@ -114,6 +115,7 @@ const headings = [
 				client:idle
 			/>
 		</div>
+		<RowAnchors names={commands.map((c) => c.name)} rendered={rows.map((r) => String(r.name))} />
 		<TableRowsNote shown={rows.length} total={commands.length} rowsHref={rowsHref} artifact="commands_schema.json" />
 	</div>
 </StarlightPage>

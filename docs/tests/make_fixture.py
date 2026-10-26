@@ -16,6 +16,10 @@ change.  It keeps, deliberately:
 * convars and commands whose descriptions carry newlines, pipes and
   ``<placeholder>`` tokens
 * the overlay entries that apply, including two keys that resolve to nothing
+* when the source build has them, a cut of ``cs_script_api.json`` (a few
+  hooks, the ``CSPlayerPawn`` chain, the renumbered ``CSMoveType``) and of
+  ``entity_io.json`` (two classes), with ``cs_script.yml`` and
+  ``entity_classnames.yml`` overlays written to resolve against the cut
 
 Usage:
     python3 docs/tests/make_fixture.py \\
@@ -209,6 +213,80 @@ def build_content(build_dir: Path, dst_dir: Path) -> None:
         json.dumps(mods, indent=1) + "\n", encoding="utf-8")
 
 
+# Members kept per script type; every other type is dropped.
+KEEP_SCRIPT_MEMBERS = {
+    "IPointScript": {"OnActivate", "OnRoundEnd", "OnPlayerJump", "OnGunFire",
+                     "FindEntitiesByClass", "EntFireAtName"},
+    "Entity": {"GetClassName", "GetAbsOrigin"},
+    "BaseModelEntity": {"SetModel"},
+    "CSPlayerPawn": {"GetArmor", "GiveNamedItem"},
+    "Vector": set(),
+}
+KEEP_SCRIPT_ENUMS = {"CSMoveType"}
+KEEP_FGD_CLASSES = {"func_brush", "point_script"}
+
+
+def build_tools_content(build_dir: Path, dst_dir: Path) -> None:
+    """Cuts of the Workshop Tools artifacts, when the source build has them.
+
+    Built by hand-picked name rather than by count so the fixture keeps one
+    hook paired with a game event, one with none, one unlisted, a class chain
+    the fixture schema resolves, and an enum whose values differ from the
+    engine's.
+    """
+    api_src = build_dir / "cs_script_api.json"
+    io_src = build_dir / "entity_io.json"
+    if not (api_src.is_file() and io_src.is_file()):
+        return
+    api = json.loads(api_src.read_text(encoding="utf-8"))
+    api["buildId"] = BUILD_ID
+    api["exports"] = [x for x in api.get("exports", []) if x["name"] == "Instance"]
+    types = []
+    for t in api.get("types", []):
+        if t["name"] in KEEP_SCRIPT_MEMBERS:
+            t["members"] = [m for m in t.get("members", []) if m["name"] in KEEP_SCRIPT_MEMBERS[t["name"]]]
+            types.append(t)
+    api["types"] = types
+    api["enums"] = [e for e in api.get("enums", []) if e["name"] in KEEP_SCRIPT_ENUMS]
+    (dst_dir / "cs_script_api.json").write_text(
+        json.dumps(api, indent=1) + "\n", encoding="utf-8")
+
+    io = json.loads(io_src.read_text(encoding="utf-8"))
+    io["buildId"] = BUILD_ID
+    classes = []
+    for c in io.get("classes", []):
+        if c["name"] in KEEP_FGD_CLASSES:
+            c["keyvalues"] = c.get("keyvalues", [])[:3]
+            c["inputs"] = c.get("inputs", [])[:4]
+            c["outputs"] = c.get("outputs", [])[:3]
+            classes.append(c)
+    io["classes"] = classes
+    io["excluded"] = io.get("excluded", [])[:2]
+    (dst_dir / "entity_io.json").write_text(
+        json.dumps(io, indent=1) + "\n", encoding="utf-8")
+
+
+FIXTURE_CS_SCRIPT_OVERLAY = """classes:
+  Entity: {schema: CBaseEntity, module: server}
+  BaseModelEntity: {schema: CBaseModelEntity, module: server}
+  CSPlayerPawn: {schema: CCSPlayerPawn, module: server}
+enums:
+  CSMoveType: {schema: MoveType_t, module: server, prefix: MOVETYPE_}
+hooks:
+  OnRoundEnd: {events: [round_end], verified: false}
+  OnPlayerJump: {events: [player_jump], verified: true}
+  OnActivate: {events: [], verified: false, notes: Runs once per script, not per round.}
+members:
+  IPointScript.FindEntitiesByClass: {see: [entities]}
+"""
+
+FIXTURE_ENTITY_CLASSNAMES_OVERLAY = """classnames:
+  func_brush: {class: CBaseModelEntity, module: server}
+runtime:
+  player: {class: CCSPlayerPawn, module: server}
+"""
+
+
 def build_schema_evolution(dst: Path, classes: list[str]) -> None:
     """A small synthetic evolution artifact covering the fixture's classes."""
     a, b = classes[0], classes[1] if len(classes) > 1 else classes[0]
@@ -312,6 +390,10 @@ def build_overlays(repo_root: Path, dst_dir: Path, kept: dict[str, list[str]]) -
         encoding="utf-8",
     )
 
+    (dst_dir / "cs_script.yml").write_text(FIXTURE_CS_SCRIPT_OVERLAY, encoding="utf-8")
+    (dst_dir / "entity_classnames.yml").write_text(
+        FIXTURE_ENTITY_CLASSNAMES_OVERLAY, encoding="utf-8")
+
     (dst_dir / "schema-lens.yml").write_text(
         "description: Fixture schema-lens overlay.\n"
         "notes: |\n"
@@ -390,6 +472,7 @@ def main(argv: list[str] | None = None) -> int:
     build_gameevents(build_dir / "gameevents.json", out_build / "gameevents.json")
     build_provenance(build_dir / "provenance.json", out_build / "provenance.json")
     build_content(build_dir, out_build)
+    build_tools_content(build_dir, out_build)
     build_schema_evolution(
         FIXTURE / "artifacts" / "schema_evolution" / f"{PLATFORM}.json",
         kept["classes"],

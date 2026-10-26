@@ -1,0 +1,4 @@
+classnames:
+  func_brush: {class: CBaseModelEntity, module: server}
+runtime:
+  player: {class: CCSPlayerPawn, module: server}

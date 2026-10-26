@@ -2,10 +2,34 @@
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import { provenanceLine } from '../lib/provenance';
 import { loadChangelog } from '../lib/data/changelog';
-import { schemaHistoryTransitionAnchorHref } from '../lib/urls';
+import { loadCsScript, pagedTypes } from '../lib/data/cs_script';
+import { loadEntityIo } from '../lib/data/entity_io';
+import {
+	entityIoClassHref,
+	schemaHistoryTransitionAnchorHref,
+	scriptAnchorHref,
+	scriptTypeHref,
+} from '../lib/urls';
 import '../styles/content.css';
 
 const changelog = loadChangelog();
+
+// Entry keys: cs_script_api rows are `export:<Name>`, `<Type>`, `<Type>.<member>#<n>`,
+// `<Enum>` or `<Enum>.<MEMBER>`; entity_io rows are classnames. Only names this
+// build still has get a link; a removed one has no page to land on.
+const api = loadCsScript();
+const scriptPages = new Set(api ? pagedTypes(api).map((t) => t.name) : []);
+const scriptAnchors = new Set(api ? [...api.enums, ...api.types.filter((t) => !scriptPages.has(t.name))].map((x) => x.name) : []);
+const ioClasses = new Set(loadEntityIo()?.classes.map((c) => c.name) ?? []);
+
+function entryHref(family: string, name: string): string | undefined {
+	if (family === 'entity_io') return ioClasses.has(name) ? entityIoClassHref(name) : undefined;
+	if (family !== 'cs_script_api') return undefined;
+	const head = name.replace(/^export:/, '').split(/[.#]/)[0];
+	if (scriptPages.has(head)) return scriptTypeHref(head);
+	if (scriptAnchors.has(head)) return scriptAnchorHref(head);
+	return undefined;
+}
 
 const FAMILY_LABEL: Record<string, string> = {
 	classes: 'Classes',
@@ -13,6 +37,8 @@ const FAMILY_LABEL: Record<string, string> = {
 	convars: 'ConVars',
 	commands: 'Commands',
 	engine_constants: 'Engine constants',
+	cs_script_api: 'cs_script API',
+	entity_io: 'Entity I/O (FGD)',
 };
 
 function label(family: string): string {
@@ -90,7 +116,7 @@ const headings = [
 					{f.added_count > 0 && (
 						<>
 							<p><strong>Added</strong> <span class="cs2-count">({f.added_count})</span></p>
-							<ul class="cs2-cols">{f.added.map((n) => <li><code>{n}</code></li>)}</ul>
+							<ul class="cs2-cols">{f.added.map((n) => <li>{entryHref(f.family, n) ? <a href={entryHref(f.family, n)}><code>{n}</code></a> : <code>{n}</code>}</li>)}</ul>
 						</>
 					)}
 					{f.removed_count > 0 && (
@@ -113,7 +139,7 @@ const headings = [
 									<tbody>
 										{f.changed.map((c) => (
 											<tr>
-												<td><code>{c.name}</code></td>
+												<td>{entryHref(f.family, c.name) ? <a href={entryHref(f.family, c.name)}><code>{c.name}</code></a> : <code>{c.name}</code>}</td>
 												<td class="ann">
 													{c.field_changes.map((fc) => (
 														<div>

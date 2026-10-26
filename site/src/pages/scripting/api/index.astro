@@ -1,0 +1,307 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { provenanceLine } from '../../../lib/provenance';
+import { docHtml, linkTypesHtml, loadCsScript, pagedTypes } from '../../../lib/data/cs_script';
+import {
+	changelogHref,
+	codegenSchemasHref,
+	entityHref,
+	entityIoClassHref,
+	gameEventAnchorHref,
+	gameEventsHref,
+	scriptGuideHref,
+	scriptTypeHref,
+} from '../../../lib/urls';
+import '../../../styles/content.css';
+import '../../../styles/scripting.css';
+
+const api = loadCsScript();
+const EMPTY_TEXT =
+	'This build carries no cs_script API. It is read from the Workshop Tools depot, which SchemaTracker acquires for Windows builds only.';
+
+const classes = api ? pagedTypes(api).filter((t) => t.kind === 'class') : [];
+const interfaces = api ? pagedTypes(api).filter((t) => t.kind !== 'class') : [];
+const aliases = api ? api.types.filter((t) => t.kind === 'type_alias') : [];
+const liveHooks = api ? api.hooks.filter((h) => !h.deprecated) : [];
+const deprecatedHooks = api ? api.hooks.filter((h) => h.deprecated) : [];
+const renumbered = api ? api.enums.filter((e) => e.values_agree === false) : [];
+
+/** The callback parameter is the useful part of a hook's signature. */
+function callbackText(signature: string): string {
+	const m = signature.match(/callback: (.*)\): void$/);
+	return m ? m[1] : signature;
+}
+
+const headings = api
+	? [
+			{ depth: 2, slug: 'exports', text: 'Exports' },
+			{ depth: 2, slug: 'hooks', text: 'Hooks' },
+			{ depth: 2, slug: 'classes', text: 'Entity classes' },
+			{ depth: 2, slug: 'interfaces', text: 'Interfaces' },
+			{ depth: 2, slug: 'type-aliases', text: 'Type aliases' },
+			{ depth: 2, slug: 'enums', text: 'Enums' },
+		]
+	: [];
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'cs_script API',
+		description: api
+			? `The cs_script/point_script module for CS2 map scripts: ${api.types.length} types, ${api.enums.length} enums and ${api.hooks.length} event hooks, generated from Valve's point_script.d.ts.`
+			: EMPTY_TEXT,
+	}}
+	headings={headings}
+>
+	{!api && (
+		<div>
+			<p class="cs2-provenance">{provenanceLine()}</p>
+			<p class="cs2-empty">{EMPTY_TEXT}</p>
+		</div>
+	)}
+	{api && (
+		<div>
+			<p>
+				Every declaration in <code>{api.module}</code>, the module a <code>point_script</code> entity's
+				JavaScript imports. It is generated from Valve's own <code>point_script.d.ts</code> (
+				<code>{api.source_path}</code> in the Workshop Tools), so the docs below are Valve's. Scripts run as{' '}
+				<code>{api.es_target}</code>. New to cs_script? Start with{' '}
+				<a href={scriptGuideHref('getting-started')}>Getting started</a>. A typings file with every Hammer
+				classname, input and output is on the <a href={codegenSchemasHref()}>codegen schemas</a> page, and
+				API changes between builds show up in the <a href={changelogHref()}>changelog</a>.
+			</p>
+
+			<p class="cs2-provenance">{provenanceLine()} · d.ts sha256 <code>{api.source_sha256.slice(0, 12)}</code></p>
+
+			<details>
+				<summary>Valve's module notes</summary>
+				<p class="cs2-doc-block">{api.module_doc}</p>
+			</details>
+
+			<h2 id="exports">Exports</h2>
+			<div class="cs2-table-wrap">
+				<table>
+					<thead>
+						<tr>
+							<th scope="col">Export</th>
+							<th scope="col">Type</th>
+						</tr>
+					</thead>
+					<tbody>
+						{api.exports.map((x) => (
+							<tr>
+								<td><code>{x.name}</code></td>
+								<td><a href={scriptTypeHref(x.type)}><code>{x.type}</code></a></td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+
+			<h2 id="hooks">Hooks</h2>
+			<p>
+				Callbacks registered on <code>Instance</code>. cs_script has no generic game-event listener, so these{' '}
+				{liveHooks.length} hooks are the whole set of game moments a script can react to. The{' '}
+				<strong>Game event</strong> column names the event from the{' '}
+				<a href={gameEventsHref()}>game-event registry</a> that reports the same moment, for
+				readers coming from server plugins or demo parsing. It is a pairing by name and documentation (
+				<code>docs/overlays/cs_script.yml</code>), marked unverified until someone confirms it in game.
+			</p>
+			<div class="cs2-table-wrap">
+				<table>
+					<thead>
+						<tr>
+							<th scope="col">Hook</th>
+							<th scope="col">Callback</th>
+							<th scope="col">Game event</th>
+							<th scope="col" class="ann">Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						{liveHooks.map((h) => (
+							<tr id={h.name}>
+								<td><a href={`${scriptTypeHref('IPointScript')}#${h.name}`}><code>{h.name}</code></a></td>
+								<td><code set:html={linkTypesHtml(api, callbackText(h.signature))} /></td>
+								<td>
+									{h.events.map((e) => (
+										<div><a href={gameEventAnchorHref(e.anchor)}><code>{e.name}</code></a></div>
+									))}
+									{h.mapped && h.events.length === 0 && <span>none</span>}
+									{h.mapped && h.events.length > 0 && !h.verified && (
+										<span class="cs2-badge cs2-badge-unverified">unverified</span>
+									)}
+								</td>
+								<td class="ann">
+									<span set:html={docHtml(h.doc)} />
+									{h.notes && <div><em>{h.notes}</em></div>}
+								</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+			{deprecatedHooks.length > 0 && (
+				<p>
+					Deprecated, kept for old scripts:{' '}
+					{deprecatedHooks.map((h, i) => (
+						<>
+							{i > 0 && ', '}
+							<a href={`${scriptTypeHref('IPointScript')}#${h.name}`}><code>{h.name}</code></a>
+						</>
+					))}
+					.
+				</p>
+			)}
+
+			<h2 id="classes">Entity classes</h2>
+			<p>
+				What <code>FindEntityByName</code>, <code>FindEntitiesByClass</code> and the hooks hand back. A script
+				object only exposes the methods listed on its page. <strong>Classnames</strong> lists what to pass to{' '}
+				<code>FindEntitiesByClass</code> to get this type back: the Hammer classnames (through the curated{' '}
+				<code>docs/overlays/entity_classnames.yml</code>) and the ones the game creates itself, such as{' '}
+				<code>player</code> for every player pawn.
+			</p>
+			<div class="cs2-table-wrap">
+				<table>
+					<thead>
+						<tr>
+							<th scope="col">Class</th>
+							<th scope="col">Extends</th>
+							<th scope="col" class="value">Members</th>
+							<th scope="col">Classnames</th>
+						</tr>
+					</thead>
+					<tbody>
+						{classes.map((t) => (
+							<tr>
+								<td>
+									<a href={scriptTypeHref(t.name)}><code>{t.name}</code></a>{' '}
+									{t.experimental && <span class="cs2-badge cs2-badge-experimental">experimental</span>}
+								</td>
+								<td>{t.extends.map((p) => <a href={scriptTypeHref(p)}><code>{p}</code></a>)}</td>
+								<td class="value">{t.members.length}</td>
+								<td>
+									{t.runtime_classnames.map((c) => <code>{c}</code>)}{' '}
+									{t.classnames.length > 0 && t.classnames.length <= 3
+										? t.classnames.map((c) => <a href={entityIoClassHref(c)}><code>{c}</code></a>)
+										: t.classnames.length > 3 && <span>{t.classnames.length} Hammer classnames</span>}
+								</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+
+			<h2 id="interfaces">Interfaces</h2>
+			<p>
+				The exported singletons' types (<code>IPointScript</code>, <code>IConsole</code>,{' '}
+				<code>IGameRules</code>) and the shapes of event payloads, trace configs and results.
+			</p>
+			<ul class="cs2-cols">
+				{interfaces.map((t) => (
+					<li>
+						<a href={scriptTypeHref(t.name)}><code>{t.name}</code></a>
+						<span class="cs2-count"> ({t.members.length})</span>
+					</li>
+				))}
+			</ul>
+
+			<h2 id="type-aliases">Type aliases</h2>
+			<div class="cs2-table-wrap">
+				<table>
+					<thead>
+						<tr>
+							<th scope="col">Alias</th>
+							<th scope="col">Definition</th>
+						</tr>
+					</thead>
+					<tbody>
+						{aliases.map((t) => (
+							<tr id={t.name}>
+								<td><code>{t.name}</code></td>
+								<td><code set:html={linkTypesHtml(api, t.type, t.name)} /></td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+
+			<h2 id="enums">Enums</h2>
+			<p>
+				{api.enums.length} enums. Where an enum mirrors an engine enum the <strong>Engine</strong> column pairs
+				each member with the engine member of the same name.{' '}
+				{renumbered.length > 0 && (
+					<>
+						<strong>{renumbered.length} of them are renumbered</strong> ({renumbered.map((e, i) => (
+							<>
+								{i > 0 && ', '}
+								<a href={`#${e.name}`}><code>{e.name}</code></a>
+							</>
+						))}). The script value is what script methods take and return (<code>SetMoveType</code>,{' '}
+						<code>GetMoveType</code>). An integer that goes through the map instead, as a <code>KeyValue</code>{' '}
+						(<code>movetype 2</code>) or an input parameter, is read by the engine, so it is most likely the
+						engine number: <code>CSMoveType.WALK</code> is 1 but <code>MOVETYPE_WALK</code> is 2. That last
+						point is unverified in game, so test before relying on it. Values from a schema dump, a demo or a
+						server plugin are engine numbers too.
+					</>
+				)}
+			</p>
+			{api.enums.map((e) => (
+				<section>
+					<h3 id={e.name}>
+						<code>{e.name}</code>{' '}
+						{e.deprecated && <span class="cs2-badge cs2-badge-deprecated">deprecated</span>}
+						{e.values_agree === true && <span class="cs2-badge cs2-badge-ok">same values as engine</span>}
+						{e.values_agree === false && <span class="cs2-badge cs2-badge-differs">renumbered</span>}
+					</h3>
+					{e.doc && <p set:html={docHtml(e.doc)} />}
+					{e.schema && (
+						<p>
+							Engine enum: <a href={entityHref(e.schema.module, e.schema.name)}><code>{e.schema.name}</code></a>
+						</p>
+					)}
+					{e.members.length === 0 ? (
+						<p class="cs2-empty">No members declared.</p>
+					) : (
+						<div class="cs2-table-wrap">
+							<table>
+								<thead>
+									<tr>
+										<th scope="col">Member</th>
+										<th scope="col" class="value">Value</th>
+										{e.schema && <th scope="col">Engine</th>}
+										<th scope="col" class="ann">Notes</th>
+									</tr>
+								</thead>
+								<tbody>
+									{e.members.map((m) => (
+										<tr>
+											<td><code>{m.name}</code></td>
+											<td class="value"><code>{m.initializer && m.initializer !== String(m.value) ? `${m.value} (${m.initializer})` : m.value}</code></td>
+											{e.schema && (
+												<td>
+													{m.engine_name ? (
+														<>
+															<code>{m.engine_name} = {m.engine_value}</code>{' '}
+															{!m.engine_match && <span class="cs2-badge cs2-badge-differs">differs</span>}
+														</>
+													) : (
+														<span>no counterpart</span>
+													)}
+												</td>
+											)}
+											<td class="ann">
+												{m.deprecated && <span class="cs2-badge cs2-badge-deprecated">deprecated</span>}{' '}
+												<span set:html={docHtml(m.doc, m.convars)} />
+											</td>
+										</tr>
+									))}
+								</tbody>
+							</table>
+						</div>
+					)}
+				</section>
+			))}
+		</div>
+	)}
+</StarlightPage>

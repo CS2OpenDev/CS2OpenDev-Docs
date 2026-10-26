@@ -29,7 +29,7 @@ deterministic).
 | `test_golden.py` | Runs `main()` over the fixture into a temporary directory and compares every byte against `expected/`, then asserts named facts about the golden text so a failure says which rendering rule broke. |
 | `fixture/` | A trimmed SchemaTracker artifact set plus the overlays that apply to it. Committed. |
 | `expected/` | The generator's output for that fixture. Committed. |
-| `make_fixture.py` | Rebuilds `fixture/` from a real artifact set. |
+| `make_fixture.py` | Rebuilds `fixture/` from a real artifact set. When that set carries `cs_script_api.json` and `entity_io.json` it also cuts those (a few hooks, the `CSPlayerPawn` chain, the renumbered `CSMoveType`, two FGD classes) and writes matching `cs_script.yml` / `entity_classnames.yml` overlays. |
 | `update_expected.py` | Rebuilds `expected/` from `fixture/`. |
 | `_gen.py` | Loads `docs/generate_docs.py` by path as the module `gd`. |
 

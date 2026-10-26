@@ -350,6 +350,34 @@ class ContentTests(unittest.TestCase):
                  if "No schema-visible fields" in p.read_text(encoding="utf-8")]
         self.assertTrue(pages, "expected at least one class page with no fields")
 
+    def test_cs_script_renumbered_enum_is_flagged(self):
+        import json
+        api = json.loads(self._read("generated/data/cs_script.json"))
+        move = next(e for e in api["enums"] if e["name"] == "CSMoveType")
+        self.assertIs(move["values_agree"], False)
+        walk = next(m for m in move["members"] if m["name"] == "WALK")
+        self.assertEqual((walk["value"], walk["engine_name"], walk["engine_value"]),
+                         (1, "MOVETYPE_WALK", "2"))
+
+    def test_cs_script_hooks_link_duplicate_events_to_the_first_anchor(self):
+        import json
+        hooks = {h["name"]: h for h in json.loads(self._read("generated/data/cs_script.json"))["hooks"]}
+        self.assertEqual(hooks["OnRoundEnd"]["events"], [{"name": "round_end", "anchor": "round_end-core"}])
+        self.assertTrue(hooks["OnActivate"]["mapped"])
+        self.assertEqual(hooks["OnActivate"]["events"], [])
+        self.assertFalse(hooks["OnGunFire"]["mapped"])
+
+    def test_cs_script_types_carry_classnames(self):
+        import json
+        types = {t["name"]: t for t in json.loads(self._read("generated/data/cs_script.json"))["types"]}
+        self.assertEqual(types["BaseModelEntity"]["classnames"], ["func_brush"])
+        self.assertEqual(types["CSPlayerPawn"]["runtime_classnames"], ["player"])
+
+    def test_entity_io_typings_reference_valves_file_first(self):
+        dts = self._read("generated/downstream-codegen-schemas/cs2_entity_io.d.ts")
+        self.assertTrue(dts.startswith('/// <reference path="point_script.d.ts" />'))
+        self.assertIn('"player": CSPlayerPawn;', dts)
+
 
 if __name__ == "__main__":
     unittest.main()
