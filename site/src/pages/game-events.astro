@@ -4,7 +4,8 @@ import DataTable, { PAGE_SIZE, type Column } from '../components/islands/DataTab
 import TableRowsNote from '../components/TableRowsNote.astro';
 import { inlineCodeHtml } from '../lib/html';
 import { provenanceLine } from '../lib/provenance';
-import { protoMessageHref, withBase } from '../lib/urls';
+import { protoMessageHref, scriptAnchorHref, withBase } from '../lib/urls';
+import { loadCsScript } from '../lib/data/cs_script';
 import { loadProtoIndex, schemaEnumHref } from '../lib/data/protobufs';
 import { identifierAliases, loadSchemaIndex } from '../lib/data/schema';
 import {
@@ -18,6 +19,12 @@ import {
 import '../styles/console.css';
 
 const { events, duplicates, sources, type_legend: typeLegend } = loadGameEventsData();
+
+// Event anchor -> the cs_script hooks docs/overlays/cs_script.yml pairs with it.
+const hooksByAnchor = new Map<string, string[]>();
+for (const h of loadCsScript()?.hooks ?? []) {
+	for (const e of h.events) hooksByAnchor.set(e.anchor, [...(hooksByAnchor.get(e.anchor) ?? []), h.name]);
+}
 const protoIdx = loadProtoIndex();
 const schemaIdx = loadSchemaIndex();
 
@@ -245,6 +252,18 @@ const headings = [
 					<strong>Source:</strong> <code>{ev.source}</code>
 					{' · '}
 					<strong>Fields:</strong> {ev.fields.length}
+					{hooksByAnchor.has(ev.anchor) && (
+						<>
+							{' · '}
+							<strong>cs_script hook:</strong>{' '}
+							{hooksByAnchor.get(ev.anchor)!.map((h, i) => (
+								<>
+									{i > 0 && ', '}
+									<a href={scriptAnchorHref(h)}><code>{h}</code></a>
+								</>
+							))}
+						</>
+					)}
 				</p>
 				{ev.fields.length === 0 ? (
 					<p class="cs2-empty">This event carries no fields.</p>

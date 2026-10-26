@@ -84,6 +84,8 @@ const referenceSidebar = [
 		collapsed: true,
 		items: [
 			{ label: 'Getting started', link: '/scripting/guides/getting-started/' },
+			{ label: 'API reference', link: '/scripting/api/' },
+			{ label: 'Entity I/O', link: '/entities/' },
 			{ label: 'Runtime semantics', link: '/scripting/guides/runtime-semantics/' },
 			{ label: 'Custom HUD layouts', link: '/scripting/guides/custom-hud/' },
 			{ label: 'vs VScript and Panorama', link: '/scripting/guides/not-vscript/' },
