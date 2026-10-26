@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -927,6 +928,263 @@ def build_schema_history(evolution: dict, lens_overlay: dict, source_info: dict)
 
 
 # ---------------------------------------------------------------------------
+# cs_script.json / entity_io.json
+# ---------------------------------------------------------------------------
+
+_IDENT_RE = re.compile(r"[A-Za-z_][A-Za-z0-9_]*")
+
+
+def _names_in(text: str, pool: set[str]) -> list[str]:
+    """Identifiers in *text* that are members of *pool*, sorted and deduped."""
+    return sorted({m for m in _IDENT_RE.findall(text or "") if m in pool})
+
+
+def _enum_value_pairs(script_enum: dict, schema_enum: dict, prefix: str) -> list[dict]:
+    """Pair script members with engine members by name once *prefix* is stripped."""
+    def norm(s: str) -> str:
+        return re.sub(r"[^a-z0-9]", "", s.lower())
+
+    engine: dict[str, tuple[str, str]] = {}
+    for f in schema_enum.get("fields", []):
+        name = f.get("name", "")
+        short = name[len(prefix):] if prefix and name.startswith(prefix) else name
+        engine.setdefault(norm(short), (name, str(f.get("value", ""))))
+    out = []
+    for m in script_enum.get("members", []):
+        hit = engine.get(norm(m["name"]))
+        out.append({
+            "name": m["name"],
+            "value": m["value"],
+            "engine_name": hit[0] if hit else "",
+            "engine_value": hit[1] if hit else "",
+            "match": bool(hit) and hit[1] == str(m["value"]),
+        })
+    return out
+
+
+def build_cs_script(
+    api: dict,
+    overlays: dict[str, dict],
+    entities: dict[str, dict],
+    entity_io: dict | None,
+    convars: list[dict],
+    gameevents: list[dict],
+) -> dict:
+    """*gameevents* is build_gameevents()'s ``events`` list, which carries the page anchors."""
+    cs = gd.cs_script_overlay(overlays)
+    convar_names = {c["name"] for c in convars}
+    # The overlay names events, not sources; a name declared in several files links
+    # to the first declaration on the page.
+    event_anchor: dict[str, str] = {}
+    for e in gameevents:
+        event_anchor.setdefault(e["name"], e["anchor"])
+
+    def schema_ref(entry: dict | None, kind: str) -> dict | None:
+        if not entry:
+            return None
+        name, module = entry.get("schema"), entry.get("module", "server")
+        v = gd._variant_in_module(str(name), module, entities) if name else None
+        return {"name": name, "module": module} if v is not None and v.get("kind") == kind else None
+
+    by_script: dict[str, list[str]] = defaultdict(list)
+    if entity_io:
+        for classname, t in gd.classname_script_types(overlays, entities, entity_io).items():
+            if t["script_type"]:
+                by_script[t["script_type"]].append(classname)
+
+    runtime_by_script: dict[str, list[str]] = defaultdict(list)
+    for classname, t in gd.runtime_classname_script_types(overlays, entities).items():
+        if t["script_type"]:
+            runtime_by_script[t["script_type"]].append(classname)
+
+    subclasses: dict[str, list[str]] = defaultdict(list)
+    for t in api.get("types", []):
+        for parent in t.get("extends", []):
+            subclasses[parent].append(t["name"])
+
+    def doc_fields(o: dict) -> dict:
+        return {
+            "doc": o.get("doc", ""),
+            "deprecated": bool(o.get("deprecated")),
+            "deprecation_note": o.get("deprecationNote", ""),
+            "experimental": bool(o.get("experimental")),
+            "experimental_note": o.get("experimentalNote", ""),
+        }
+
+    types_out = []
+    hooks_out = []
+    for t in sorted(api.get("types", []), key=lambda t: t["name"]):
+        members_out = []
+        for m in t.get("members", []):
+            see = (cs["members"].get(f"{t['name']}.{m['name']}") or {}).get("see") or []
+            members_out.append({
+                "name": m["name"],
+                "kind": m.get("kind", ""),
+                "overload_index": m.get("overloadIndex", 0),
+                "signature": m.get("signatureText", ""),
+                "optional": bool(m.get("optional")),
+                "modifiers": m.get("modifiers", []),
+                "type_params": m.get("typeParams", []),
+                "params": [
+                    {"name": p["name"], "type": p.get("typeText", ""),
+                     "optional": bool(p.get("optional")), "rest": bool(p.get("rest"))}
+                    for p in m.get("params", [])
+                ],
+                "param_docs": m.get("paramDocs", {}),
+                "return_type": m.get("returnTypeText", ""),
+                "returns_doc": m.get("returnsDoc", ""),
+                "type": m.get("typeText", ""),
+                "default_value": m.get("defaultValue", ""),
+                "examples": m.get("examples", []),
+                "referenced_types": m.get("referencedTypes", []),
+                "convars": _names_in(m.get("doc", ""), convar_names),
+                "see": [s for s in see if s in gd.CS_SCRIPT_SEE_TARGETS],
+                **doc_fields(m),
+            })
+            if t["name"] == "IPointScript" and m["name"].startswith("On") and m.get("kind") == "method":
+                hov = cs["hooks"].get(m["name"])
+                events = [e for e in (hov or {}).get("events") or [] if e in event_anchor]
+                hooks_out.append({
+                    "name": m["name"],
+                    "signature": m.get("signatureText", ""),
+                    "mapped": hov is not None,
+                    "events": [{"name": e, "anchor": event_anchor[e]} for e in events],
+                    "verified": bool((hov or {}).get("verified")),
+                    "notes": _overlay_text((hov or {}).get("notes")),
+                    **doc_fields(m),
+                })
+        classnames = sorted(by_script.get(t["name"], []))
+        types_out.append({
+            "name": t["name"],
+            "kind": t.get("kind", ""),
+            "exported": bool(t.get("exported")),
+            "extends": t.get("extends", []),
+            "implements": t.get("implements", []),
+            "subclasses": sorted(subclasses.get(t["name"], [])),
+            "type_params": t.get("typeParams", []),
+            "type": t.get("typeText", ""),
+            "examples": t.get("examples", []),
+            "referenced_types": t.get("referencedTypes", []),
+            "schema": schema_ref(cs["classes"].get(t["name"]), "class"),
+            "classnames": classnames,
+            "runtime_classnames": sorted(runtime_by_script.get(t["name"], [])),
+            "convars": _names_in(t.get("doc", ""), convar_names),
+            "members": members_out,
+            **doc_fields(t),
+        })
+
+    enums_out = []
+    for e in sorted(api.get("enums", []), key=lambda e: e["name"]):
+        eov = cs["enums"].get(e["name"])
+        ref = schema_ref(eov, "enum")
+        pairs: list[dict] = []
+        if ref:
+            schema_enum = gd._variant_in_module(ref["name"], ref["module"], entities) or {}
+            pairs = _enum_value_pairs(e, schema_enum, str(eov.get("prefix") or ""))
+        paired = [p for p in pairs if p["engine_name"]]
+        enums_out.append({
+            "name": e["name"],
+            "exported": bool(e.get("exported")),
+            "schema": ref,
+            "values_agree": (all(p["match"] for p in paired) if paired else None),
+            "members": [
+                {
+                    "name": m["name"],
+                    "value": m.get("value", 0),
+                    "initializer": m.get("initializerText", ""),
+                    "doc": m.get("doc", ""),
+                    "deprecated": bool(m.get("deprecated")),
+                    "deprecation_note": m.get("deprecationNote", ""),
+                    "convars": _names_in(m.get("doc", ""), convar_names),
+                    "engine_name": (pairs[i]["engine_name"] if pairs else ""),
+                    "engine_value": (pairs[i]["engine_value"] if pairs else ""),
+                    "engine_match": (pairs[i]["match"] if pairs else False),
+                }
+                for i, m in enumerate(e.get("members", []))
+            ],
+            **doc_fields(e),
+        })
+
+    return {
+        "build_id": str(api.get("buildId", "")),
+        "module": api.get("module", ""),
+        "module_doc": api.get("moduleDoc", ""),
+        "file_doc": api.get("fileDoc", ""),
+        "es_target": api.get("esTarget", ""),
+        "source_path": api.get("sourcePath", ""),
+        "source_sha256": api.get("sourceSha256", ""),
+        "tsconfig_path": api.get("tsconfigPath", ""),
+        "exports": [
+            {"name": x["name"], "type": x.get("type", ""), "doc": x.get("doc", "")}
+            for x in api.get("exports", [])
+        ],
+        "types": types_out,
+        "enums": enums_out,
+        "hooks": hooks_out,
+    }
+
+
+def build_entity_io(
+    data: dict, overlays: dict[str, dict], entities: dict[str, dict],
+) -> dict:
+    typed = gd.classname_script_types(overlays, entities, data)
+
+    def port(p: dict) -> dict:
+        return {
+            "name": p["name"],
+            "param_type": p.get("paramType", ""),
+            "description": p.get("description", ""),
+            "declared_in": p.get("declaredIn", ""),
+        }
+
+    classes_out = []
+    for c in sorted(data.get("classes", []), key=lambda c: c["name"]):
+        if c.get("isBase"):
+            continue
+        t = typed.get(c["name"])
+        classes_out.append({
+            "name": c["name"],
+            "class_type": c.get("classType", ""),
+            "description": c.get("description", ""),
+            "bases": c.get("bases", []),
+            "helpers": c.get("helpers", []),
+            "source_file": c.get("sourceFile", ""),
+            "schema": {"name": t["schema"], "module": t["module"]} if t else None,
+            "script_type": t["script_type"] if t else None,
+            "keyvalues": [
+                {
+                    "name": k["name"],
+                    "type": k.get("type", ""),
+                    "display_name": k.get("displayName", ""),
+                    "default_value": k.get("defaultValue", ""),
+                    "description": k.get("description", ""),
+                    "declared_in": k.get("declaredIn", ""),
+                    "choices": [
+                        {"value": ch.get("value", ""), "label": ch.get("label", "")}
+                        for ch in k.get("choices", [])
+                    ],
+                    "flags": [
+                        {"value": f.get("value", 0), "label": f.get("label", ""),
+                         "default": bool(f.get("default"))}
+                        for f in k.get("flags", [])
+                    ],
+                }
+                for k in c.get("keyvalues", [])
+            ],
+            "inputs": [port(p) for p in c.get("inputs", [])],
+            "outputs": [port(p) for p in c.get("outputs", [])],
+        })
+    return {
+        "build_id": str(data.get("buildId", "")),
+        "root": data.get("root", ""),
+        "sources": [s.get("path", "") for s in data.get("sources", [])],
+        "base_class_count": sum(1 for c in data.get("classes", []) if c.get("isBase")),
+        "excluded": [x.get("name", "") for x in data.get("excluded", [])],
+        "classes": classes_out,
+    }
+
+
+# ---------------------------------------------------------------------------
 # meta.json
 # ---------------------------------------------------------------------------
 
@@ -1244,6 +1502,35 @@ class flagged `metadata_only: true` when every one of its field ops is
 a real structural change). `breaking[]` is `docs/overlays/schema-lens.yml`'s
 `breaking:` list, passed through as-is.
 
+## cs_script.json ({kb('cs_script.json') if 'cs_script.json' in sizes else 'not generated -- no cs_script_api.json in this build'})
+
+The cs_script map-scripting API, from SchemaTracker's `cs_script_api.json`
+(a parse of Valve's `point_script.d.ts` from the Workshop Tools depot).
+`exports[]`, `types[]` (interfaces, classes and type aliases, sorted by name;
+`members[]` keep declaration order, one entry per overload) and `enums[]`.
+Doc text, `@deprecated` and `@experimental` notes are passed through. Joins
+added here: `schema` on a type or enum is the schema class/enum
+`docs/overlays/cs_script.yml` pairs it with (or `null`); `classnames` lists
+the FGD classnames whose most-derived script type this is, through
+`docs/overlays/entity_classnames.yml`, and `runtime_classnames` the
+classnames the game creates itself (`player`), which have no FGD entry;
+`convars` lists convar names quoted in
+the doc text; `see` names other reference pages. Each enum member carries
+the engine member it pairs with by name and whether the two values agree
+(`values_agree` on the enum is `null` when nothing paired). `hooks[]` is
+every `IPointScript.On*` method with the game events the overlay pairs it
+with; `mapped` is `false` for a hook the overlay does not list.
+
+## entity_io.json ({kb('entity_io.json') if 'entity_io.json' in sizes else 'not generated -- no entity_io.json in this build'})
+
+Hammer's entity definitions from SchemaTracker's `entity_io.json` (the
+build's FGD files, root `game/csgo/csgo.fgd`). `classes[]` holds the
+placeable classes only, sorted by name, with keyvalues, inputs and outputs
+already resolved through the FGD base classes; `declared_in` names the FGD
+class that declares each one. `schema` and `script_type` come from
+`docs/overlays/entity_classnames.yml` and are `null` for an unmapped
+classname. FGD property metadata blocks are not carried.
+
 ## Fields with no page yet
 
 Emitted for completeness but rendered by no site page on this build:
@@ -1276,8 +1563,8 @@ def emit_site_data(
     Self-contained: resolves the build and loads every artifact itself, so
     it can be called independently of generate_docs.main()'s internal
     state. Returns {filename: bytes_written} for the files actually
-    produced (schema-history.json is omitted when no schema_evolution.json
-    exists for this platform).
+    produced (schema-history.json, cs_script.json and entity_io.json are
+    omitted when the build carries no source artifact for them).
     """
     WARNINGS.clear()
     INFOS.clear()
@@ -1341,6 +1628,17 @@ def emit_site_data(
         lens_overlay = overlays.get("schema-lens", {}) or {}
         schema_history_data = build_schema_history(evolution, lens_overlay, source_info)
 
+    # Tools-depot families: absent on Linux and on builds extracted before
+    # SchemaTracker acquired the FGDs and point_script.d.ts.
+    api_json = gd._load_content_json(build_dir, "cs_script_api.json")
+    entity_io_json = gd._load_content_json(build_dir, "entity_io.json")
+    cs_script_data = (
+        build_cs_script(api_json, overlays, entities, entity_io_json, convars,
+                        gameevents_data["events"])
+        if api_json else None
+    )
+    entity_io_data = build_entity_io(entity_io_json, overlays, entities) if entity_io_json else None
+
     n_messages = sum(len(f["messages"]) for f in protobufs_data["files"])
     counts = {
         "proto_files": len(protobufs_data["files"]),
@@ -1356,6 +1654,10 @@ def emit_site_data(
         "game_modes": sum(len(gt["modes"]) for gt in gamemodes_data["game_types"]),
         "surfaces": sum(len(m["rows"]) for m in surfaces_data["materials"]),
         "modules": len(modules_data["modules"]),
+        "script_types": len(cs_script_data["types"]) if cs_script_data else 0,
+        "script_enums": len(cs_script_data["enums"]) if cs_script_data else 0,
+        "script_hooks": len(cs_script_data["hooks"]) if cs_script_data else 0,
+        "entity_classes": len(entity_io_data["classes"]) if entity_io_data else 0,
     }
     meta_data = build_meta(source_info, entities, counts)
 
@@ -1380,8 +1682,17 @@ def emit_site_data(
     emit("modules.json", modules_data)
     emit("network.json", network_data)
     emit("changelog.json", changelog_data)
-    if schema_history_data is not None:
-        emit("schema-history.json", schema_history_data)
+    # Optional families: a file left behind by an earlier run against a build
+    # that had the artifact would otherwise keep the pages alive.
+    for name, obj in (
+        ("schema-history.json", schema_history_data),
+        ("cs_script.json", cs_script_data),
+        ("entity_io.json", entity_io_data),
+    ):
+        if obj is not None:
+            emit(name, obj)
+        elif (data_dir / name).is_file():
+            (data_dir / name).unlink()
 
     facts = {
         "classes": meta_data["counts"]["classes"],

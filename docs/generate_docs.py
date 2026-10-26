@@ -4279,7 +4279,10 @@ def generate_field_history_json(
 # ---------------------------------------------------------------------------
 
 # Overlay files whose top-level shape is not a map of entity names.
-_NON_ENTITY_OVERLAYS = {"convar_flags", "gameevents", "schema-lens", "well_known_constants"}
+_NON_ENTITY_OVERLAYS = {
+    "convar_flags", "cs_script", "entity_classnames", "gameevents", "schema-lens",
+    "well_known_constants",
+}
 
 
 def _nearest(name: str, pool: Any) -> str:
@@ -4416,6 +4419,368 @@ def check_overlay_keys(
                         )
 
     return unresolved, mismatched
+
+
+# ---------------------------------------------------------------------------
+# cs_script (point_script.d.ts) and entity I/O (FGD) joins
+# ---------------------------------------------------------------------------
+#
+# cs_script_api.json and entity_io.json come from Valve's Workshop Tools depot,
+# so a build without them (Linux, or one SchemaTracker extracted before it
+# acquired those files) renders none of this and checks only the schema side
+# of the overlays.
+
+CS_SCRIPT_SEE_TARGETS = ("entities", "game_modes", "items", "convars", "commands", "game_events")
+
+
+def cs_script_overlay(overlays: dict[str, dict]) -> dict[str, dict]:
+    """The four sections of ``cs_script.yml``, each ``{}`` when absent."""
+    raw = overlays.get("cs_script", {}) or {}
+    out: dict[str, dict] = {}
+    for section in ("classes", "enums", "hooks", "members"):
+        val = raw.get(section)
+        out[section] = (
+            {k: v for k, v in val.items() if isinstance(v, dict)} if isinstance(val, dict) else {}
+        )
+    return out
+
+
+def entity_classnames_overlay(
+    overlays: dict[str, dict], section: str = "classnames",
+) -> dict[str, dict]:
+    """One map of ``entity_classnames.yml``: classname -> {class, module}.
+
+    ``classnames`` holds FGD (placeable) classnames; ``runtime`` holds the ones
+    the game creates itself, such as ``player``.
+    """
+    raw = (overlays.get("entity_classnames", {}) or {}).get(section)
+    if not isinstance(raw, dict):
+        return {}
+    return {k: v for k, v in raw.items() if isinstance(v, dict)}
+
+
+def _variant_in_module(name: str, module: str, entities: dict[str, dict]) -> dict[str, Any] | None:
+    for v in _all_variants(name, entities):
+        if v.get("module") == module:
+            return v
+    return None
+
+
+def script_type_for_class(
+    schema_name: str, module: str, script_by_schema: dict[str, str], entities: dict[str, dict],
+) -> str | None:
+    """The most-derived cs_script type wrapping *schema_name* or one of its bases.
+
+    *script_by_schema* maps a schema class name to the script type the
+    ``classes`` overlay pairs it with.  Breadth-first over ``bases`` so the
+    primary (first) base is tried before a mixin.
+    """
+    seen: set[str] = set()
+    queue = [schema_name]
+    while queue:
+        name = queue.pop(0)
+        if name in seen:
+            continue
+        seen.add(name)
+        if name in script_by_schema:
+            return script_by_schema[name]
+        v = _variant_in_module(name, module, entities)
+        if v is not None:
+            queue.extend(v.get("bases") or [])
+    return None
+
+
+def classname_script_types(
+    overlays: dict[str, dict], entities: dict[str, dict], entity_io: dict[str, Any],
+) -> dict[str, dict[str, Any]]:
+    """classname -> {schema, module, script_type} for every mapped, placeable class.
+
+    ``script_type`` is None when no overlay-paired script type is an ancestor
+    (cs_script then hands the entity back as a plain ``Entity``).
+    """
+    classes = cs_script_overlay(overlays)["classes"]
+    script_by_schema = {
+        str(v.get("schema")): name for name, v in classes.items() if v.get("schema")
+    }
+    known = {c["name"] for c in entity_io.get("classes", []) if not c.get("isBase")}
+    out: dict[str, dict[str, Any]] = {}
+    for classname, v in sorted(entity_classnames_overlay(overlays).items()):
+        schema, module = v.get("class"), v.get("module", "server")
+        if classname not in known or not schema or _variant_in_module(schema, module, entities) is None:
+            continue
+        out[classname] = {
+            "schema": schema,
+            "module": module,
+            "script_type": script_type_for_class(schema, module, script_by_schema, entities),
+        }
+    return out
+
+
+def runtime_classname_script_types(
+    overlays: dict[str, dict], entities: dict[str, dict],
+) -> dict[str, dict[str, Any]]:
+    """Like :func:`classname_script_types`, for the overlay's ``runtime`` classnames."""
+    classes = cs_script_overlay(overlays)["classes"]
+    script_by_schema = {
+        str(v.get("schema")): name for name, v in classes.items() if v.get("schema")
+    }
+    out: dict[str, dict[str, Any]] = {}
+    for classname, v in sorted(entity_classnames_overlay(overlays, "runtime").items()):
+        schema, module = v.get("class"), v.get("module", "server")
+        if not schema or _variant_in_module(schema, module, entities) is None:
+            continue
+        out[classname] = {
+            "schema": schema,
+            "module": module,
+            "script_type": script_type_for_class(schema, module, script_by_schema, entities),
+        }
+    return out
+
+
+def check_cs_script_overlays(
+    overlays: dict[str, dict],
+    entities: dict[str, dict],
+    gameevents: list[dict[str, Any]],
+    cs_script_api: dict[str, Any] | None,
+    entity_io: dict[str, Any] | None,
+) -> list[str]:
+    """Unresolved keys in ``cs_script.yml`` and ``entity_classnames.yml``.
+
+    The schema and game-event side is always checked; the script and FGD side
+    only when this build carries the artifact, so a build without the tools
+    depot neither fails nor silently passes a typo it could have caught.
+    """
+    out: list[str] = []
+    cs = cs_script_overlay(overlays)
+
+    def check_schema(key: str, name: Any, module: Any, kind: str) -> None:
+        if not name:
+            out.append(f"{key}: no schema name given")
+            return
+        variants = _all_variants(str(name), entities)
+        if not variants:
+            out.append(f"{key}: no such schema {kind} {name}{_nearest(str(name), entities)}")
+            return
+        mod = str(module or "server")
+        v = next((x for x in variants if x.get("module") == mod), None)
+        if v is None:
+            mods = ", ".join(sorted({x.get("module", "") for x in variants}))
+            out.append(f"{key}: {name} is not in module {mod} (lives in {mods})")
+        elif v.get("kind") != kind:
+            out.append(f"{key}: {name} is a {v.get('kind')}, not a {kind}")
+
+    for name, v in sorted(cs["classes"].items()):
+        check_schema(f"cs_script/classes.{name}", v.get("schema"), v.get("module"), "class")
+    for name, v in sorted(cs["enums"].items()):
+        check_schema(f"cs_script/enums.{name}", v.get("schema"), v.get("module"), "enum")
+    for classname, v in sorted(entity_classnames_overlay(overlays).items()):
+        check_schema(f"entity_classnames/{classname}", v.get("class"), v.get("module"), "class")
+    for classname, v in sorted(entity_classnames_overlay(overlays, "runtime").items()):
+        check_schema(f"entity_classnames/runtime.{classname}", v.get("class"), v.get("module"), "class")
+
+    event_names = {e["name"] for e in gameevents}
+    for hook, v in sorted(cs["hooks"].items()):
+        events = v.get("events")
+        if not isinstance(events, list):
+            out.append(f"cs_script/hooks.{hook}: `events` must be a list (use [] for none)")
+            continue
+        for ev in events:
+            if ev not in event_names:
+                out.append(f"cs_script/hooks.{hook}: no such game event {ev}{_nearest(str(ev), event_names)}")
+    for key, v in sorted(cs["members"].items()):
+        for target in v.get("see") or []:
+            if target not in CS_SCRIPT_SEE_TARGETS:
+                out.append(
+                    f"cs_script/members.{key}: unknown see target {target} "
+                    f"(one of {', '.join(CS_SCRIPT_SEE_TARGETS)})"
+                )
+
+    if cs_script_api:
+        types = {t["name"]: t for t in cs_script_api.get("types", [])}
+        enums = {e["name"]: e for e in cs_script_api.get("enums", [])}
+        hooks = {m["name"] for m in types.get("IPointScript", {}).get("members", [])
+                 if m["name"].startswith("On") and m.get("kind") == "method"}
+        for name in sorted(cs["classes"]):
+            if name not in types:
+                out.append(f"cs_script/classes.{name}: no such script type{_nearest(name, types)}")
+        for name in sorted(cs["enums"]):
+            if name not in enums:
+                out.append(f"cs_script/enums.{name}: no such script enum{_nearest(name, enums)}")
+        for name in sorted(cs["hooks"]):
+            if name not in hooks:
+                out.append(f"cs_script/hooks.{name}: no such IPointScript hook{_nearest(name, hooks)}")
+        for key in sorted(cs["members"]):
+            tname, _, mname = key.partition(".")
+            if tname not in types:
+                out.append(f"cs_script/members.{key}: no such script type{_nearest(tname, types)}")
+                continue
+            members = {m["name"] for m in types[tname].get("members", [])}
+            if mname not in members:
+                out.append(f"cs_script/members.{key}: no such member{_nearest(mname, members)}")
+
+    if entity_io:
+        placeable = {c["name"] for c in entity_io.get("classes", []) if not c.get("isBase")}
+        for classname in sorted(entity_classnames_overlay(overlays)):
+            if classname not in placeable:
+                out.append(
+                    f"entity_classnames/{classname}: no such FGD classname{_nearest(classname, placeable)}"
+                )
+        for classname in sorted(entity_classnames_overlay(overlays, "runtime")):
+            if classname in placeable:
+                out.append(
+                    f"entity_classnames/runtime.{classname}: is an FGD classname; "
+                    "list it under `classnames` instead"
+                )
+    return out
+
+
+_TS_IDENT_RE = re.compile(r"[^A-Za-z0-9_]")
+
+
+def _ts_string_union(names: list[str]) -> str:
+    return " | ".join(json.dumps(n) for n in names) if names else "never"
+
+
+def generate_entity_io_dts(
+    entity_io: dict[str, Any] | None,
+    cs_script_api: dict[str, Any] | None,
+    overlays: dict[str, dict],
+    entities: dict[str, dict],
+    out_dir: Path,
+    source_info: dict[str, Any] | None = None,
+) -> Path | None:
+    """Write ``downstream-codegen-schemas/cs2_entity_io.d.ts``, or delete a stale one.
+
+    A declaration file that sits next to Valve's ``point_script.d.ts`` and
+    merges into its ``cs_script/point_script`` module: the FGD classnames as a
+    string union, each class's input and output names, and overloads that let
+    an editor complete them in ``EntFireAtName``/``EntFireAtTarget``/
+    ``ConnectOutput`` and type ``FindEntitiesByClass`` results.  Names a script
+    does not know still type-check (``string & {}``), so it narrows nothing a
+    map could legitimately do.
+
+    Input and output names are emitted per declaring FGD class (the ``Targetname``
+    base, say) and composed per classname, which keeps the file a few hundred
+    KB instead of repeating the shared bases on every class.
+    """
+    path = out_dir / "downstream-codegen-schemas" / "cs2_entity_io.d.ts"
+    if not entity_io or not cs_script_api:
+        if path.is_file():
+            path.unlink()
+        return None
+
+    classes = sorted(
+        (c for c in entity_io.get("classes", []) if not c.get("isBase")), key=lambda c: c["name"]
+    )
+    script_types = {t["name"] for t in cs_script_api.get("types", [])}
+    typed = classname_script_types(overlays, entities, entity_io)
+    runtime = runtime_classname_script_types(overlays, entities)
+
+    def ident(kind: str, declared_in: str) -> str:
+        return f"Fgd{kind}_{_TS_IDENT_RE.sub('_', declared_in)}"
+
+    # Own names per declaring class, collected over every class that inherits them.
+    declared: dict[str, dict[str, set[str]]] = {"Inputs": defaultdict(set), "Outputs": defaultdict(set)}
+    for c in classes:
+        for kind, key in (("Inputs", "inputs"), ("Outputs", "outputs")):
+            for p in c.get(key, []):
+                declared[kind][p.get("declaredIn") or c["name"]].add(p["name"])
+
+    def composed(c: dict[str, Any], kind: str, key: str) -> str:
+        groups: dict[str, set[str]] = defaultdict(set)
+        for p in c.get(key, []):
+            groups[p.get("declaredIn") or c["name"]].add(p["name"])
+        parts: list[str] = []
+        inline: set[str] = set()
+        for d in sorted(groups):
+            if groups[d] == declared[kind][d]:
+                parts.append(ident(kind, d))
+            else:
+                inline |= groups[d]
+        if inline:
+            parts.append(_ts_string_union(sorted(inline)))
+        return " | ".join(parts) if parts else "never"
+
+    build = (source_info or {}).get("build_id", entity_io.get("buildId", "?"))
+    # The reference makes TypeScript read Valve's file first, so these overloads
+    # merge in after its `string` ones and take precedence over them.
+    lines = [
+        '/// <reference path="point_script.d.ts" />',
+        "// cs2_entity_io.d.ts: Hammer entity classnames, inputs and outputs for cs_script.",
+        f"// Generated by docs/generate_docs.py from CS2 build {build}: entity_io.json",
+        "// (the build's FGD files) and cs_script_api.json (Valve's point_script.d.ts).",
+        "// Do not edit; regenerate.",
+        "//",
+        "// Put this file next to point_script.d.ts and tsconfig.json.  It merges into the",
+        '// "cs_script/point_script" module, so nothing needs importing.  Input and output',
+        "// names come from the FGDs Hammer reads; the game may accept others, which is why",
+        "// every overload still takes any string (inputs are matched case-insensitively).",
+        "// It is a plain module augmentation, so it also works next to @s2ze/types.",
+        "",
+        'declare module "cs_script/point_script" {',
+        "    /** Every placeable classname in this build's FGDs. */",
+        f"    type EntityClassName = {_ts_string_union([c['name'] for c in classes])};",
+        "    /** Classnames the game creates itself; no FGD declares them. */",
+        f"    type RuntimeClassName = {_ts_string_union(sorted(runtime))};",
+        "",
+    ]
+    for kind in ("Inputs", "Outputs"):
+        lines.append(f"    // {kind.lower()} by the FGD class that declares them")
+        for d in sorted(declared[kind]):
+            lines.append(f"    type {ident(kind, d)} = {_ts_string_union(sorted(declared[kind][d]))};")
+        lines.append("")
+    for kind, key in (("Inputs", "inputs"), ("Outputs", "outputs")):
+        lines.append(f"    interface Entity{kind}ByClass {{")
+        for c in classes:
+            lines.append(f"        {json.dumps(c['name'])}: {composed(c, kind, key)};")
+        lines.append("    }")
+        lines.append("")
+    lines += [
+        "    /** Input names of one classname, or of every classname. */",
+        "    type EntityInputName<C extends EntityClassName = EntityClassName> = EntityInputsByClass[C];",
+        "    /** Output names of one classname, or of every classname. */",
+        "    type EntityOutputName<C extends EntityClassName = EntityClassName> = EntityOutputsByClass[C];",
+        "",
+        "    /**",
+        "     * The cs_script type FindEntitiesByClass returns for a classname, where",
+        "     * docs/overlays/entity_classnames.yml pairs the classname with a schema class",
+        "     * that a script type wraps; Entity otherwise.",
+        "     */",
+        "    interface EntityScriptTypeByClass {",
+    ]
+    for name, st in sorted(
+        [(c["name"], (typed.get(c["name"]) or {}).get("script_type")) for c in classes]
+        + [(n, t["script_type"]) for n, t in runtime.items()]
+    ):
+        lines.append(f"        {json.dumps(name)}: {st if st in script_types else 'Entity'};")
+    weapon = "CSWeaponBase" if "CSWeaponBase" in script_types else "Entity"
+    lines += [
+        "    }",
+        "",
+        "    /** EntityScriptTypeByClass, with any other weapon_* as a weapon and anything else as Entity. */",
+        "    type EntityScriptType<C extends string> = C extends keyof EntityScriptTypeByClass",
+        "        ? EntityScriptTypeByClass[C]",
+        f"        : C extends `weapon_${{string}}` ? {weapon} : Entity;",
+        "",
+        "    interface IPointScript {",
+        "        FindEntityByClass<C extends EntityClassName | RuntimeClassName | (string & {})>(className: C):"
+        " EntityScriptType<C> | undefined;",
+        "        FindEntitiesByClass<C extends EntityClassName | RuntimeClassName | (string & {})>(className: C):"
+        " EntityScriptType<C>[];",
+        "        EntFireAtName(config: { name: string, input: EntityInputName | (string & {}), value?: InputValue,"
+        " caller?: Entity, activator?: Entity, delay?: number }): void;",
+        "        EntFireAtTarget(config: { target: Entity, input: EntityInputName | (string & {}), value?: InputValue,"
+        " caller?: Entity, activator?: Entity, delay?: number }): void;",
+        "        ConnectOutput(target: Entity, output: EntityOutputName | (string & {}), callback: (inputData:"
+        " { value?: InputValue, caller?: Entity, activator?: Entity }) => any): number | undefined;",
+        "    }",
+        "}",
+        "",
+    ]
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="\n") as fh:
+        fh.write("\n".join(lines))
+    return path
 
 
 # ---------------------------------------------------------------------------
@@ -4704,6 +5069,18 @@ def main(argv: list[str] | None = None) -> int:
     else:
         print("  No schema_evolution.json for this platform — skipped.")
 
+    print("Generating cs_script entity I/O typings…")
+    cs_script_api = _load_content_json(build_dir, "cs_script_api.json")
+    entity_io = _load_content_json(build_dir, "entity_io.json")
+    dts_path = generate_entity_io_dts(
+        entity_io, cs_script_api, overlays, entities, generated_dir,
+        source_info=schema_source_info,
+    )
+    if dts_path:
+        print(f"  Wrote {dts_path.name} ({dts_path.stat().st_size // 1024} KiB).")
+    else:
+        print("  No cs_script_api.json / entity_io.json for this build — skipped.")
+
     print("Generating Markdown home page…")
     generate_index_md(
         entities, protos, convars, commands, out_dir,
@@ -4713,6 +5090,9 @@ def main(argv: list[str] | None = None) -> int:
     print("Checking overlay keys against this build…")
     overlay_unresolved, overlay_mismatched = check_overlay_keys(
         overlays, entities, protos, gameevents
+    )
+    overlay_unresolved += check_cs_script_overlays(
+        overlays, entities, gameevents, cs_script_api, entity_io
     )
     print(f"  {len(overlay_unresolved)} unresolved overlay key(s), "
           f"{len(overlay_mismatched)} filed under the wrong module.")

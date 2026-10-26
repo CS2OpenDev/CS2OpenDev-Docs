@@ -5,7 +5,9 @@ Run with pytest or `python3 -m unittest`; see docs/tests/README.md.
 
 from __future__ import annotations
 
+import tempfile
 import unittest
+from pathlib import Path
 
 from _gen import gd, sd
 
@@ -495,6 +497,154 @@ class TableCheckTests(unittest.TestCase):
             self.assertEqual(
                 self._write(Path(d), "```mermaid\nclassDiagram\n  A <|-- B\n```\n"), []
             )
+
+
+def cs_script_entities():
+    """A server chain CBaseEntity <- CBaseModelEntity <- CButton / CPawn, plus one enum."""
+    entities: dict[str, dict] = {}
+    for rec in (
+        _cls("CBaseEntity", "server", "server.dll"),
+        _cls("CBaseModelEntity", "server", "server.dll",
+             bases=["CBaseEntity"], base_modules=["server.dll"]),
+        _cls("CButton", "server", "server.dll",
+             bases=["CBaseModelEntity"], base_modules=["server.dll"]),
+        _cls("CPawn", "server", "server.dll",
+             bases=["CBaseModelEntity"], base_modules=["server.dll"]),
+        _cls("MoveType_t", "server", "server.dll", kind="enum",
+             fields=[{"name": "MOVETYPE_NONE", "value": "0"},
+                     {"name": "MOVETYPE_WALK", "value": "2"}]),
+    ):
+        gd._add_entity(entities, rec)
+    return entities
+
+
+CS_OVERLAYS = {
+    "cs_script": {
+        "classes": {"Entity": {"schema": "CBaseEntity", "module": "server"},
+                    "BaseModelEntity": {"schema": "CBaseModelEntity", "module": "server"},
+                    "Pawn": {"schema": "CPawn", "module": "server"}},
+        "enums": {"CSMoveType": {"schema": "MoveType_t", "module": "server", "prefix": "MOVETYPE_"}},
+        "hooks": {"OnRoundEnd": {"events": ["round_end"]}},
+        "members": {"IPointScript.FindEntitiesByClass": {"see": ["entities"]}},
+    },
+    "entity_classnames": {
+        "classnames": {"func_button": {"class": "CButton", "module": "server"}},
+        "runtime": {"player": {"class": "CPawn", "module": "server"}},
+    },
+}
+
+CS_API = {
+    "buildId": "1",
+    "exports": [{"name": "Instance", "type": "IPointScript"}],
+    "types": [
+        {"name": "IPointScript", "kind": "interface", "members": [
+            {"name": "OnRoundEnd", "kind": "method"},
+            {"name": "FindEntitiesByClass", "kind": "method"},
+        ]},
+        {"name": "Entity", "kind": "class", "members": []},
+        {"name": "BaseModelEntity", "kind": "class", "extends": ["Entity"], "members": []},
+        {"name": "Pawn", "kind": "class", "extends": ["BaseModelEntity"], "members": []},
+    ],
+    "enums": [{"name": "CSMoveType", "members": [{"name": "NONE", "value": 0},
+                                                 {"name": "WALK", "value": 1}]}],
+}
+
+CS_IO = {"classes": [
+    {"name": "func_button", "isBase": False, "keyvalues": [],
+     "inputs": [{"name": "Kill", "declaredIn": "Targetname"},
+                {"name": "Lock", "declaredIn": "func_button"}],
+     "outputs": [{"name": "OnPressed", "declaredIn": "func_button"}]},
+    {"name": "info_target", "isBase": False, "keyvalues": [], "outputs": [],
+     "inputs": [{"name": "Kill", "declaredIn": "Targetname"}]},
+    {"name": "Targetname", "isBase": True, "keyvalues": [], "inputs": [], "outputs": []},
+]}
+
+CS_EVENTS = [{"name": "round_end", "source": "core.gameevents", "fields": []}]
+
+
+class CsScriptTests(unittest.TestCase):
+    def setUp(self):
+        self.entities = cs_script_entities()
+
+    def check(self, overlays=CS_OVERLAYS, api=CS_API, io=CS_IO):
+        return gd.check_cs_script_overlays(overlays, self.entities, CS_EVENTS, api, io)
+
+    def test_valid_overlays_resolve(self):
+        self.assertEqual(self.check(), [])
+
+    def test_script_type_is_the_nearest_mapped_ancestor(self):
+        by_schema = {"CBaseEntity": "Entity", "CBaseModelEntity": "BaseModelEntity"}
+        self.assertEqual(
+            gd.script_type_for_class("CButton", "server", by_schema, self.entities),
+            "BaseModelEntity")
+        self.assertIsNone(gd.script_type_for_class("CButton", "server", {}, self.entities))
+
+    def test_classnames_and_runtime_classnames_resolve(self):
+        typed = gd.classname_script_types(CS_OVERLAYS, self.entities, CS_IO)
+        self.assertEqual(typed["func_button"]["script_type"], "BaseModelEntity")
+        runtime = gd.runtime_classname_script_types(CS_OVERLAYS, self.entities)
+        self.assertEqual(runtime["player"]["script_type"], "Pawn")
+
+    def test_unknown_names_are_unresolved(self):
+        overlays = {
+            "cs_script": {
+                "classes": {"Pawn": {"schema": "CPawnTypo", "module": "server"}},
+                "hooks": {"OnRoundEnds": {"events": ["round_endd"]}},
+                "members": {"IPointScript.Nope": {"see": ["wiki"]}},
+            },
+            "entity_classnames": {
+                "classnames": {"func_buton": {"class": "CButton", "module": "server"}},
+                "runtime": {"func_button": {"class": "CButton", "module": "server"}},
+            },
+        }
+        joined = "\n".join(self.check(overlays))
+        for needle in ("classes.Pawn: no such schema class CPawnTypo",
+                       "hooks.OnRoundEnds: no such game event round_endd",
+                       "hooks.OnRoundEnds: no such IPointScript hook (nearest: OnRoundEnd)",
+                       "members.IPointScript.Nope: unknown see target wiki",
+                       "members.IPointScript.Nope: no such member",
+                       "entity_classnames/func_buton: no such FGD classname (nearest: func_button)",
+                       "runtime.func_button: is an FGD classname"):
+            self.assertIn(needle, joined)
+
+    def test_absent_artifacts_skip_only_the_script_side(self):
+        overlays = {"cs_script": {"hooks": {"OnNoSuchHook": {"events": ["round_endd"]}}}}
+        joined = "\n".join(self.check(overlays, api=None, io=None))
+        self.assertIn("no such game event round_endd", joined)
+        self.assertNotIn("no such IPointScript hook", joined)
+        self.assertEqual(self.check(api=None, io=None), [])
+
+    def test_hook_events_must_be_a_list(self):
+        overlays = {"cs_script": {"hooks": {"OnRoundEnd": {"events": "round_end"}}}}
+        self.assertIn("`events` must be a list", "\n".join(self.check(overlays)))
+
+    def test_enum_values_are_paired_by_name_after_the_prefix(self):
+        pairs = sd._enum_value_pairs(
+            CS_API["enums"][0], self.entities["MoveType_t"], "MOVETYPE_")
+        self.assertEqual([(p["name"], p["engine_name"], p["match"]) for p in pairs],
+                         [("NONE", "MOVETYPE_NONE", True), ("WALK", "MOVETYPE_WALK", False)])
+
+    def test_dts_composes_shared_base_inputs(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = gd.generate_entity_io_dts(CS_IO, CS_API, CS_OVERLAYS, self.entities, Path(tmp))
+            text = path.read_text(encoding="utf-8")
+        self.assertIn('type FgdInputs_Targetname = "Kill";', text)
+        self.assertIn('"func_button": FgdInputs_Targetname | FgdInputs_func_button;', text)
+        self.assertIn('"func_button": BaseModelEntity;', text)
+        self.assertIn('"player": Pawn;', text)
+        self.assertNotIn('"Targetname":', text)
+
+    def test_dts_is_removed_when_the_artifacts_are_absent(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            stale = Path(tmp) / "downstream-codegen-schemas" / "cs2_entity_io.d.ts"
+            stale.parent.mkdir(parents=True)
+            stale.write_text("old", encoding="utf-8")
+            self.assertIsNone(gd.generate_entity_io_dts(None, CS_API, {}, self.entities, Path(tmp)))
+            self.assertFalse(stale.exists())
+
+    def test_doc_text_names_only_known_convars(self):
+        self.assertEqual(sd._names_in("cash_team_x then mp_x, not cash", {"cash_team_x", "mp_x"}),
+                         ["cash_team_x", "mp_x"])
 
 
 if __name__ == "__main__":

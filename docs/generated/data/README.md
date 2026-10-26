@@ -10,7 +10,7 @@ preserves the descriptor's own dependency order) it is left as upstream
 gives it; every other list is explicitly sorted so two runs on the same
 input are byte-identical.
 
-## meta.json (4.6 KB)
+## meta.json (4.7 KB)
 
 Build identity (`build_id`, `steam_date`, `steam_manifest_utc` and
 `platform` from the build's own `provenance.json`, `schema_version`,
@@ -254,6 +254,35 @@ class flagged `metadata_only: true` when every one of its field ops is
 `META_CHANGE` (a metadata-only churn class, previously shown identically to
 a real structural change). `breaking[]` is `docs/overlays/schema-lens.yml`'s
 `breaking:` list, passed through as-is.
+
+## cs_script.json (not generated -- no cs_script_api.json in this build)
+
+The cs_script map-scripting API, from SchemaTracker's `cs_script_api.json`
+(a parse of Valve's `point_script.d.ts` from the Workshop Tools depot).
+`exports[]`, `types[]` (interfaces, classes and type aliases, sorted by name;
+`members[]` keep declaration order, one entry per overload) and `enums[]`.
+Doc text, `@deprecated` and `@experimental` notes are passed through. Joins
+added here: `schema` on a type or enum is the schema class/enum
+`docs/overlays/cs_script.yml` pairs it with (or `null`); `classnames` lists
+the FGD classnames whose most-derived script type this is, through
+`docs/overlays/entity_classnames.yml`, and `runtime_classnames` the
+classnames the game creates itself (`player`), which have no FGD entry;
+`convars` lists convar names quoted in
+the doc text; `see` names other reference pages. Each enum member carries
+the engine member it pairs with by name and whether the two values agree
+(`values_agree` on the enum is `null` when nothing paired). `hooks[]` is
+every `IPointScript.On*` method with the game events the overlay pairs it
+with; `mapped` is `false` for a hook the overlay does not list.
+
+## entity_io.json (not generated -- no entity_io.json in this build)
+
+Hammer's entity definitions from SchemaTracker's `entity_io.json` (the
+build's FGD files, root `game/csgo/csgo.fgd`). `classes[]` holds the
+placeable classes only, sorted by name, with keyvalues, inputs and outputs
+already resolved through the FGD base classes; `declared_in` names the FGD
+class that declares each one. `schema` and `script_type` come from
+`docs/overlays/entity_classnames.yml` and are `null` for an unmapped
+classname. FGD property metadata blocks are not carried.
 
 ## Fields with no page yet
 

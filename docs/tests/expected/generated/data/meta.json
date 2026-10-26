@@ -4,6 +4,7 @@
     "classes": 19,
     "commands": 6,
     "convars": 9,
+    "entity_classes": 2,
     "enums": 5,
     "events": 8,
     "fields": 675,
@@ -15,6 +16,9 @@
     "music_kits": 2,
     "paint_kits": 3,
     "proto_files": 3,
+    "script_enums": 1,
+    "script_hooks": 4,
+    "script_types": 5,
     "sticker_kits": 3,
     "surfaces": 4
   },
