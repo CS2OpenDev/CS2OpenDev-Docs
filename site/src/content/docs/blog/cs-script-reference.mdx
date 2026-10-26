@@ -1,0 +1,41 @@
+---
+title: A generated reference for cs_script
+date: 2026-10-26T12:00:00Z
+draft: true
+excerpt: CS2's JavaScript map scripting now has an API reference, entity I/O pages and editor typings, generated from Valve's own files on every build.
+---
+
+CS2 maps can run JavaScript. A `point_script` entity points at a script that imports `cs_script/point_script`, and from there the script registers callbacks for round starts, kills and bomb plants, fires inputs at other entities, and draws custom HUDs. Valve documents the API in one file, `point_script.d.ts`, which ships with the Workshop Tools next to a handful of demo scripts.
+
+Until now this site had nothing on it beyond an empty schema page for `CCSPointScriptEntity`. This release adds a reference section, generated the same way as the rest of the site, from the game files of each build.
+
+## What is new
+
+- **[API reference](../../scripting/api/).** Every type, member, enum and hook in `cs_script/point_script`, with Valve's doc comments and the `@deprecated` and `@experimental` notes. Classes get a page each, and every hook is listed in one table.
+- **[Entity I/O](../../entities/).** Every entity a mapper can place in Hammer, with its keyvalues, inputs and outputs, inherited ones included and tagged with the FGD class that declares them. These are the strings `EntFireAtName`, `ConnectOutput` and `FindEntitiesByClass` take.
+- **Editor typings.** `cs2_entity_io.d.ts`, on the [codegen schemas](../../codegen-schemas/) page, sits next to `point_script.d.ts` and gives an editor the classname, input and output names to complete. It also types `FindEntitiesByClass("player")` as `CSPlayerPawn[]` instead of `Entity[]`. Every overload still accepts any string, so nothing a map does legitimately becomes an error.
+- **API changes per build.** The [changelog](../../changelog/) gains two families, the cs_script API and the entity definitions, so a renamed member or a removed input shows up the day the build lands.
+- **[Guides](../../scripting/guides/getting-started/)**, written by hand: getting started, runtime semantics, custom HUD layouts, and how cs_script differs from VScript and Panorama.
+
+## Things the reference makes visible
+
+**There is no generic game-event listener.** A script reacts to the game through the `On*` hooks on `Instance` and nothing else. The hooks table pairs each one with the game event that reports the same moment (`OnPlayerKill` with `player_death`, `OnBeginRoundRestart` with `cs_pre_restart`), and each event on the [game events](../../game-events/) page links back to its hook. A few hooks, such as `OnModifyPlayerDamage`, have no event at all. The pairings come from names and documentation and are marked unverified until someone confirms them in game.
+
+**Several script enums are renumbered.** `CSMoveType.WALK` is 1; the engine's `MOVETYPE_WALK` is 2. `CSDamageTypes`, `CSInputs` and `CSLoadoutSlot` differ too. The enum tables put both numberings side by side. That matters as soon as an integer crosses between the two worlds: a value read from a demo or a server plugin is an engine number, and one passed through a `KeyValue` such as `movetype 2` is read by the engine.
+
+**Some classnames have no Hammer entry.** The game creates players, controllers and planted bombs itself, so no FGD declares `player` or `cs_player_controller`, yet scripts look them up by those names all the time. The typings and the class pages list them.
+
+## How it is built
+
+[SchemaTracker](https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker) already downloads the Workshop Tools depot for each Windows build. It now also keeps `point_script.d.ts` and the FGD files, parses both with its own parsers, and publishes them as two artifacts. This site reads those artifacts and joins them to the data it already had: game events, convars, and the entity schema.
+
+Two joins are curated by hand, because the game files don't state them. One maps Hammer classnames to schema classes (`func_button` to `CBaseButton`); SchemaTracker will be able to extract it from the game itself later. The other holds the hook-to-event pairings. Both are YAML files under [`docs/overlays/`](https://github.com/CS2OpenDev/CS2OpenDev-Docs/tree/main/docs/overlays), checked against every build.
+
+## Help wanted
+
+If you script maps, two things would make this better:
+
+- **Confirm a hook pairing.** If you've checked that a hook fires exactly when its paired game event does, or found that it doesn't, a one-line change to `cs_script.yml` setting `verified: true` (or fixing the pairing) is the most useful contribution there is.
+- **Fill in classnames.** About 270 of 354 Hammer classnames are mapped to a schema class. An unmapped one still works; it is just typed as `Entity`.
+
+The community has been ahead of us here. [Source2ZE's `@s2ze` packages](https://github.com/Source2ZE/cs_script) hand-maintain the same kind of classname map, plus a TypeScript template that bundles a script into the single file CS2 loads. [Source2Wiki](https://source2.wiki) has the best written introduction. The typings here are a plain module augmentation, so they work alongside `@s2ze/types`.
