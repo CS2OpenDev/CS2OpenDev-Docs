@@ -8,7 +8,7 @@ import Mermaid from '../../../components/Mermaid.astro';
 
 This is Part 3. [Part 1](../cs2demokit-parser/) covers the parser, and [Part 2](../cs2demokit-analysisengine/) covers the analysis engine that runs rules against a demo. This post is about the rules themselves.
 
-It describes the rules language as of CS2DemoKit 0.12.0, the current stable release. Newer prereleases add more views and contexts, along with a `for: each_team` scope. The generated catalog in the repository is always the up-to-date reference.
+It describes the rules language as of CS2DemoKit 0.14.0, the current stable release. The generated catalog in the repository is always the up-to-date reference.
 
 ## Why a language at all
 
@@ -26,7 +26,7 @@ So rules are YAML documents, they compile into the state graph from Part 2, and 
 
 A **ruleset** is a named group of **stats**. Each stat is one measurement, and you choose four things:
 
-- **`for:`** says whether it's per player (`each_player`) or for the whole match (`match`)
+- **`for:`** says who it's measured for: each player (`each_player`), each side (`each_team`), each grenade thrown (`each_projectile`), or the whole match (`match`)
 - **the kind** is *how* to measure: count events, add up a value, keep the highest, compute a formula
 - **the source** is *what* to measure: either a view like `kill`, or another of your stats
 - **`per:`** is when it resets: every `round`, or once per `match`
@@ -51,11 +51,11 @@ Validate that and you have a working stat. Validation doesn't need a demo at all
 
 You don't reference raw game events. You trigger on **views**, which are friendly names that already handle the CS2 details:
 
-`kill` · `death` · `assist` · `damage_dealt` · `damage_taken` · `shot` · `shot_landed` · `blinded` · `blinded_enemy` · `bomb_planted` · `bomb_defused` · `he_grenade` · `flash_grenade` · `smoke_grenade` · `molotov` · `round_won` · `round_lost` · `enemy_spotted`
+`kill` · `death` · `assist` · `damage_dealt` · `damage_taken` · `shot` · `shot_landed` · `blinded` · `blinded_enemy` · `bomb_planted` · `bomb_defused` · `grenade_released` · `he_grenade` · `flash_grenade` · `smoke_grenade` · `molotov` · `decoy_started` · `inferno_started` · `projectile_thrown` · `projectile_landed` · `round_decided` · `round_ended` · `round_won` · `round_lost` · `enemy_spotted`
 
-There are eighteen of them in 0.12.0, built on top of 67 cataloged game events and 48 enrichments (extra values the engine calculates for you). `kill`, `death` and `assist` are all the same game event (`player_death`) seen from three different points of view, with the roles already sorted out. `molotov` and `enemy_spotted` aren't game events at all. The first is built from entity state, because GOTV doesn't record a usable molotov event, and the second comes from the visibility engine.
+There are twenty-six of them in 0.14.0, counting `cadence_tick`, which sits behind timed triggers (`on: cadence.<id>`, once per period) and isn't used by name. They're built on top of 72 cataloged game events and 49 enrichments (extra values the engine calculates for you). `kill`, `death` and `assist` are all the same game event (`player_death`) seen from three different points of view, with the roles already sorted out. Several views aren't game events at all. `molotov`, `projectile_thrown`, `projectile_landed` and `round_decided` are built from entity state (GOTV doesn't record a usable molotov event, for example), and `enemy_spotted` comes from the visibility engine.
 
-And as Part 2 describes, `round_won` and `round_lost` are built on a *logical* round-end event that each recording type maps differently, because the event a rule would obviously reach for doesn't fire in the demos we've studied. That's the kind of thing views are for.
+And as Part 2 describes, `round_won` and `round_lost` are built on a *logical* round-end event that each recording type maps differently, because the event a rule would obviously reach for doesn't fire in the demos we've studied. They fire only for the players on the side that won or lost, and the winner is the server's own verdict, which `round_decided` also gives you on the frame the round is decided. A stat about the round itself rather than its result, like "rounds survived", counts `round_ended`, which fires for everyone. That's the kind of thing views are for.
 
 Each view has **facets**: typed attributes you can filter on. The `kill` view has nine (`enemy`, `teamkill`, `headshot`, `no_scope`, `through_smoke`, `trade`, `flash_assisted`, `weapon`, `ticks_since_spot`). The `shot` view has sixteen and `shot_landed` has twenty-one; most of the aim analysis happens there.
 
@@ -130,11 +130,11 @@ eco_kills:
 
 ## Reading live game state
 
-Inside `when:`, `where:` and `compute:` you can read the state of the game. In 0.12.0 there are twenty-two contexts and twenty-one entity data sources, covering round facts (`round.number`, `round.bomb.was_planted`, `round.clutch.size`), match facts (`match.map`, `match.phase`, `match.freeze_period`), team totals relative to the player (`round.team.alive` against `round.enemies.alive`), and the player's own state (`player.health`, `player.armor`, `player.place`, `player.max_speed`, `player.is_scoped`).
+Inside `when:`, `where:` and `compute:` you can read the state of the game. In 0.14.0 there are twenty-seven contexts and forty-six data sources (thirty-eight read from entity state, eight from the player's own commands), covering round facts (`round.number`, `round.bomb.was_planted`, `round.bomb.site`, `round.clutch.size`), match facts (`match.map`, `match.phase`, `match.freeze_period`), team totals relative to the player (`round.team.alive` against `round.enemies.alive`, `round.team.money`), and the player's own state (`player.health`, `player.armor`, `player.money`, `player.place`, `player.max_speed`, `player.is_scoped`). In a `where:` or an event-triggered value you can also read the player's input, rebuilt from the commands their client sent (`player.cmd.buttons`, `player.cmd.view_yaw`), and look a player's entity value up to 64 ticks back: `player.pos_x@-8` is the position eight ticks earlier.
 
 Two details here matter a lot.
 
-Reading entity state has a cost, and you only pay for what you use. Each data source a ruleset reads adds a column to the per-player digest, and a ruleset that reads none pays nothing. The three position axes are the expensive case, for the reasons in Part 2.
+Reading entity state has a cost, and you only pay for what you use. Each entity data source a ruleset reads adds a column to the per-player digest, and a ruleset that reads none pays nothing. Command reads work the same way: the run only rebuilds user commands if some rule reads one. The three position axes are the expensive case, for the reasons in Part 2.
 
 *Where* you read a value matters as much as *what* you read. In an event-based place (a `where:`, a `sum:` value, a `while:`), an entity value is read *at the moment of the event*: the victim's health at the kill. In a formula (a `compute:` or a `flag: when:`), it's the value at the end of the round. Both are useful; they answer different questions. In a view's rules you can also read another role's state by name, so `victim.health` works in a `where:` on the `kill` view.
 
@@ -185,9 +185,9 @@ This made some working rulesets fail in 0.11.0, for anyone who had been adding u
 
 CS2 demos carry two clocks: a frame clock and the server's absolute tick count. On a typical GOTV recording they're about twenty thousand ticks apart.
 
-In 0.12.0, `event.tick` doesn't use the same clock for every view. On a regular game event it's the server tick. The two views the engine builds from entity state, `enemy_spotted` and `molotov`, don't have a server timestamp, so there it's the frame clock. A `where:` that subtracts a molotov tick from a kill tick is off by twenty thousand, and *nothing reports it*, because both are perfectly valid numbers.
+`event.tick` doesn't use the same clock for every view. On a regular game event it's the server tick. The views the engine builds from entity state (`enemy_spotted`, `molotov`, `projectile_thrown`, `projectile_landed` and `round_decided`) don't have a server timestamp, so there it's the frame clock. A `where:` that subtracts a molotov tick from a kill tick using `event.tick` is off by twenty thousand, and *nothing reports it*, because both are perfectly valid numbers.
 
-In 0.12.0 nothing warns about this. To compare timing across views, use the `ticks_since_*` facets instead, which the engine calculates on a single clock so you can't mix them up. Newer prereleases also add `event.frame_tick`, which uses the frame clock on every view.
+The fix is `event.frame_tick`, which is the frame clock on every view. Use it whenever you compare ticks across views or hand a tick to a video tool, since clips are cut on the frame clock too. The `ticks_since_*` facets are already durations on a single clock, so they need neither. A results table also records which clock each of its tick columns is on (`MetricTable.ColumnClocks`), so the program reading it doesn't have to know which views are synthesized.
 
 ### Angles wrap around
 
@@ -299,7 +299,7 @@ The language is split across the packages on purpose.
 
 **`CS2DemoKit.Analysis`** handles everything beyond a single expression: combining documents, references between rulesets, looking up names in the built-in catalog, and building the state graph.
 
-**`catalog.json`** is generated, not written by hand and not taken from the rule files. Most of it comes straight from the engine: the generator builds the real enrichment machinery against a throwaway graph and lists what it produces. The one hand-written part, the list of views and their facets, is checked against the engine's registries by the same generator, so a mismatch fails the build. In 0.12.0 the catalog has 18 views, 48 enrichments, 22 contexts, 21 data sources, 67 events and 5 recording types. The file is committed, and CI checks that regenerating it produces exactly the committed copy. The same generator produces the editor's JSON schema, so one line at the top of your rules file gets you validation and autocomplete for exactly what the engine supports:
+**`catalog.json`** is generated, not written by hand and not taken from the rule files. Most of it comes straight from the engine: the generator builds the real enrichment machinery against a throwaway graph and lists what it produces. The one hand-written part, the list of views and their facets, is checked against the engine's registries by the same generator, so a mismatch fails the build. In 0.14.0 the catalog has 26 views, 49 enrichments, 27 contexts, 46 data sources, 72 events and 5 recording types. The file is committed, and CI checks that regenerating it produces exactly the committed copy. The same generator produces the editor's JSON schema, so one line at the top of your rules file gets you validation and autocomplete for exactly what the engine supports:
 
 ```yaml
 # yaml-language-server: $schema=./cs2demokit-rules.schema.json
@@ -312,6 +312,8 @@ That chain, from engine to catalog to schema to editor, is why the names your ed
 No stage of the pipeline throws an exception on bad input from a user. The lexer, parser, normalizer and checker each return a result with a list of diagnostics, and each diagnostic has a stable code, the problem text, the line and column inside the expression, and ranked "did you mean" suggestions for unknown names.
 
 The one thing that throws is calling `Require()` on a failed result, which is a programming mistake, not a user one.
+
+The same holds one step later. A ruleset that passes validation but still can't be compiled into the graph doesn't take the whole run down. It's dropped onto `BuildResult.ExcludedRulesets` with a diagnostic naming the stat that failed, and the rest of the set builds and runs.
 
 References between rulesets get their own handling. When `player_stats` reads `kast.kast_pct`, the engine checks for four specific mistakes: unknown ruleset, unknown stat, stat not exported, and ruleset not listed in `use:`. Those checks run *before* the full resolve, so the error you see is the one you caused, not sixty knock-on errors after it.
 

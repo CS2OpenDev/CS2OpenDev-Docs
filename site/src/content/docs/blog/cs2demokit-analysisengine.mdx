@@ -33,7 +33,7 @@ The best way to picture it is a spreadsheet, not a loop over events. Rules compi
 
 ## The state graph
 
-The building blocks are small and simple. An **edge** fires on something: a game event, a network message, or a change in entity state. A **node** holds a value: a counter, a captured value, a computed formula, or a flag. **Conjunction** (and) and **disjunction** (or) nodes combine other nodes. A **per-player template** creates a whole set of nodes for each player the first time that player appears, which is how one rule written in the singular ("count *this player's* kills") turns into ten live copies.
+The building blocks are small and simple. An **edge** fires on something: a game event, a network message, or a change in entity state. A **node** holds a value: a counter, a captured value, a computed formula, or a flag. **Conjunction** (and) and **disjunction** (or) nodes combine other nodes. A **per-player template** creates a whole set of nodes for each player the first time that player appears, which is how one rule written in the singular ("count *this player's* kills") turns into ten live copies. The same idea works per side (`for: each_team`, two copies) and per grenade (`for: each_projectile`, one copy for each grenade from the throw until it's gone).
 
 Rule expressions aren't interpreted while the demo runs. During `Build` they're compiled into .NET code (via LINQ expression trees), and reading an event's fields goes through cached, compiled accessors. By the time the frame loop starts, there's nothing left to interpret.
 
@@ -151,6 +151,8 @@ The obvious fix, listening for both, doesn't work: on Valve matchmaking demos bo
 
 So classification happens twice. The header gives a first guess, and then the *events the demo actually contains* get a vote: a recording that never fires `round_officially_ended` but does fire `cs_pre_restart` is reclassified as a tournament demo. Rules don't listen for `round_end` directly. They listen for a **logical** `$round_end`, which each recording type maps to whichever event it actually uses, with built-in guards on anything that must only fire once per round.
 
+Who *won* the round is a separate question. Working it out from bomb state and who's left alive gets some rounds wrong, a surrender being the obvious one. So the engine reads the server's own verdict, the game rules' round-win status in the entity data, and turns it into a synthesized `round_decided` event on the frame the round is decided. The old derivation is only a fallback for a run that has no entity data to read.
+
 A logical event that no loaded recording type can map is a clear build error, not a silent zero, and unknown event names get "did you mean" suggestions. A related bug needed a different fix: a knife round before a match restart produced a 14-11 score across 25 rounds, because the restart needs to roll back per-match state and nothing was doing it. Now the engine saves each value's state at the match start and restores it when the match restarts.
 
 A note on scope: these are observations from the demos we've studied, not a guarantee about every CS2 recording that exists. That's why the engine decides from the evidence in each demo, instead of from a table we maintain by hand.
@@ -265,7 +267,7 @@ Two parts of it *can* be compared, and both are on the list.
 
 Neither is measured yet. Our first comparison runs had no scoreboard workload, because none of the other parsers in them produce per-player stats out of the box. awpy, the obvious candidate, needs Python 3.11 or later, which the test machine didn't have, and it has no per-player scoreboard function either.
 
-When they are measured, the same rules apply as everywhere else in this project: the benchmark harness is published alongside the numbers, and the losses go in the same table as the wins.
+When they are measured, the same rules apply as everywhere else in this project: the benchmark harness is published alongside the numbers, the losses go in the same table as the wins, and pull requests that make the comparison fairer are welcome.
 
 ## Golden tests that can't pass by accident
 

@@ -206,14 +206,20 @@ You don't have to deal with the split unless you want to. `DemoFrame.DecodedMess
 
 Those created entries are *not* cached on purpose. A short-lived object that's collected right away costs almost nothing, and caching them would bring back the object-count problem the shared block was built to solve.
 
-If you want the decoded subtick input, `SubTickExtractor.Extract(demo.Frames)` reads the movement steps out. For anything else in there, take the raw bytes:
+Reading them back takes one more step than it used to. Since CS2 build 10896, servers send almost every command as a delta against the same player's previous command, and only the occasional one in full. On current matchmaking demos 99.8 to 99.9% of commands are deltas, so parsing the raw payloads with protobuf alone sees a tiny fraction of the input. `UserCmdReconstructor` rebuilds every command in full, as long as you feed it frames in order:
 
 ```csharp
-for (int i = 0; i < frame.UserCmdsPayloadCount; i++)
+var input = new UserCmdReconstructor();
+foreach (DemoFrame frame in demo.Frames)
 {
-    var cmds = CSVCMsg_UserCommands.Parser.ParseFrom(frame.GetUserCmdsPayload(i));
+    foreach (ReconstructedUserCmd cmd in input.AdvanceOneFrame(frame))
+    {
+        CSGOUserCmdPB full = cmd.Command;   // buttons, view angles, movement, subtick moves
+    }
 }
 ```
+
+If all you want is the subtick movement steps, `SubTickExtractor.Extract(demo.Frames)` does the same walk and returns one event per step. The raw bytes are still there through `frame.GetUserCmdsPayload(i)` if you'd rather decode them yourself.
 
 ### Pass 3: sequential enrichment
 
@@ -292,6 +298,8 @@ The tracker takes advantage of it. With tracing enabled, it records every field-
 
 Other failures are visible without being fatal. A POV demo contains updates for entities the recording client never received a full copy of. The tracker skips those and counts them in a public counter instead of throwing. The documentation calls that skip "the pragmatic choice, not a proof of safety", which is why the counter exists. Check it before trusting per-tick entity values from a recording you didn't classify.
 
+The tracker also notices when the chain of changes breaks. Each of the seven tournament demos we have on hand drops the snapshot at the intermission, and a decoder that keeps applying later changes on top of the old state ends up with stale values until the end of the match. When a change refers to a tick the tracker never applied, it reloads its state from the next full snapshot and counts that in `EntityTracker.SnapshotResyncCount`.
+
 ### Typed wrappers as a portable contract
 
 One more layer sits on top, and it's the part of the design we're most pleased with.
@@ -356,7 +364,7 @@ The string-table entry limit, for example, includes its own derivation: the smal
 
 Hitting a limit is never fatal: the structure is rejected, a warning is recorded, and the parse continues. Each limit can be triggered from tests, so a test can confirm it works.
 
-One caveat: the size check before decompression only covers string tables. The frame-level Snappy decompression in pass 2 sizes its buffer from the declared uncompressed length with no ceiling. It's a gap we know about and haven't closed yet.
+One caveat: the size check before decompression covers string tables and entity baselines, but not frames. The frame-level Snappy decompression in pass 2 sizes its buffer from the declared uncompressed length with no ceiling. It's a gap we know about and haven't closed yet.
 
 The best argument for all of this is a bug report written into the source. The parser once read a length as a regular protobuf varint (8-bit units) where the data actually used a `UBitVar` (6 bits here). That threw off the rest of the string-table entry and made the parser discard the `userinfo` table on every CS2 demo. The player list survived only because a different message filled it back in, so the visible symptoms were a bogus "this demo may be damaged" warning and a missing slot for the GOTV recorder. Without that warning, the bug might never have been found.
 
@@ -364,7 +372,7 @@ The best argument for all of this is a bug report written into the source. The p
 
 Every number in this post so far is CS2DemoKit measured against itself. That's the right way to tell whether a change helped, but it says nothing about whether this is a fast parser compared to anything else. So we built a separate benchmark harness and ran it against [demofile-net](https://github.com/saul/demofile-net) and [demoparser2](https://github.com/LaihoE/demoparser).
 
-We aren't publishing those results yet. Before we do, the maintainers of both libraries will get a chance to check that we're using their code the way it's meant to be used, and the harness itself will be public so anyone can rerun it. If a maintainer tells us we're holding their library wrong, we'll fix it and re-run before anything goes out. What we can share now is how the comparison works, because doing it fairly is harder than it sounds.
+The results will be published together with the harness, in a public repository, so anyone can rerun them. We know our own library far better than we know anyone else's, so if you think we're using demofile-net or demoparser2 wrong, or that a workload is unfair to any of them, pull requests are welcome. The goal is the most accurate comparison, not the most flattering one. What we can share here is how the comparison works, because doing it fairly is harder than it sounds.
 
 **The libraries don't do the same amount of work.** "Parse time" isn't one measurement. CS2DemoKit's three passes leave entity data undecoded on purpose; entity replay is a separate, optional step. Some other parsers decode entities as they go. Comparing our parse to theirs would compare a smaller job to a bigger one, and make us look faster by exactly the amount of work we skipped.
 

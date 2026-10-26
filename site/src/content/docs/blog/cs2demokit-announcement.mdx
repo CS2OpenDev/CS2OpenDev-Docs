@@ -33,10 +33,10 @@ Three NuGet packages, all released with the same version number, targeting `net1
     ET --> SCAN["EntityChangeScanner<br/>per-frame change digests"]
     SCAN --> AN
     RULES["CS2DemoKit.Analysis.Rules<br/>lexer / parser / checker / hasher<br/>(zero dependencies)"] --> AN
-    AN --> OUT["metric tables, golden stats,<br/>highlights to clip plans"]
-    PD --> VIS["Visibility engine<br/>baked map geometry, raycasts"]
-    VIS --> OUT`}
-  caption="How the three packages, the opt-in entity replay, and the external SDK contract fit together."
+    BAKE["map bake<br/>(collision triangles, shipped separately)"] --> VIS["Visibility engine (in CS2DemoKit.Analysis)<br/>raycasts against map geometry"]
+    VIS -- "only when a rule needs it" --> AN
+    AN --> OUT["metric tables, golden stats,<br/>highlights to clip plans"]`}
+  caption="How the three packages, the opt-in entity replay, the visibility engine, and the external SDK contract fit together."
 />
 
 `CS2DemoKit.Analysis` depends on the other two, so installing it alone gets you a matching set of all three. The smallest useful program is two statements:
@@ -50,27 +50,27 @@ ParsedDemo demo = MemoryMappedDemoSource.ParseFile("match.dem");
 AnalysisRun run = DemoAnalysis.Run(demo, YamlConfigLoader.LoadShippedEmbedded().Rulesets);
 ```
 
-Four starter rulesets (KAST, per-player stats, weapon stats, and post-plant multi-kills) are built into the package, so you get a working scoreboard without any rule files on disk. When you want different numbers, you write a YAML file, not C#. The whole rating calculation lives in those files, coefficients included, so if you disagree with how something is computed, you edit a file instead of forking the library.
+Four starter rulesets (KAST, per-player stats, weapon stats, and post-plant multi-kills) are built into the package, so you get a working scoreboard without needing any custom rule files. When you want different numbers based on any desired situation or event in a match, you write a YAML file, not C#. The whole rating calculation lives in those files, coefficients included, so if you disagree with how something is computed, you edit a file instead of forking the library.
 
 On a ten-core machine, a 290 MB full-match demo parses in about 384 ms. Evaluating the four starter rulesets took about 1.4 seconds when we measured our baseline, and later work (described below) has cut evaluation time by about a fifth since then. Those numbers, the demos they came from, and the ways they can mislead you are all written down in [`docs/perf/baseline.md`](https://github.com/CS2OpenDev/CS2DemoKit/blob/main/docs/perf/baseline.md) in the repo.
 
-Those are measurements of CS2DemoKit against itself, which is useful for telling whether a change helped but says nothing about how it compares to other parsers. We've also benchmarked it against demofile-net and demoparser2. We'll publish those results once the maintainers of those libraries have had a chance to check that we're using their code fairly, along with the benchmark harness so anyone can rerun it. [Part 1](../cs2demokit-parser/#how-this-compares-to-other-parsers) explains how the comparison works and why it's harder to do fairly than it sounds.
+Those are measurements of CS2DemoKit against itself, which is useful for telling whether a change helped but says nothing about how it compares to other parsers. We have shared more information about the comparisons to other libraries in [CS2DemoKit Technical Blog - Part 1](../cs2demokit-parser/#how-this-compares-to-other-parsers).
 
 ## What can CS2DemoKit be used for
 
-**Stats and scoreboards, without writing code.** The rules language is the main way in. You describe what you want measured in a small YAML file (count these events, add up this value, keep the highest value over the match) and the engine goes through every round of the demo and produces the numbers. A rule file can't crash the parser. The worst that happens is a validation error telling you what to fix, with the line and column and a "did you mean" list for typos.
+**Stats and scoreboards, without writing code.** The rules language is the main way in. You describe what you want measured in a small YAML file (count these events, add up this value, keep the highest value over the match) and the engine goes through every round of the demo and produces the numbers. A ruleset can measure each player, each side, each grenade thrown, or the match as a whole. A rule file can't crash the parser. The worst that happens is a validation error telling you what to fix, with the line and column and a "did you mean" list for typos.
 
 **Match review and highlight reels.** Highlights are per-round achievements stamped with the tick they happened on, and `CS2DemoKit.Analysis.Clips` turns them into clip windows you can hand to any video tool: it adds lead-in time, merges overlapping clips, and groups them by round. Rendering the video is up to you. Deciding *which twelve seconds matter* is what this does.
 
-**Aim and movement analysis.** The `shot` and `shot_landed` views have sixteen and twenty-one attributes respectively, including counter-strafe detection, spray tracking, first-bullet detection and, if you provide map geometry, how far the crosshair moved after first seeing an enemy and how much it overshot. This is the newest part of the toolkit and comes with the most caveats (see below).
+**Aim and movement analysis.** The `shot` and `shot_landed` views have sixteen and twenty-one attributes respectively, including counter-strafe detection, spray tracking, first-bullet detection and, if you provide map geometry, how far the crosshair moved after first seeing an enemy and how much it overshot. Rules can also read each player's own input, rebuilt from the commands their client sent: buttons, movement and view angles. This part of the toolkit comes with the most caveats (see below).
 
-**Interactive tools.** If you want to build a demo browser that shows raw bytes next to the decoded entity changes, the API is designed for it. The parser gives you every byte offset an inspector needs: the raw byte range of each frame and each message, decompression of a single frame on demand, and an entity tracker you can jump to any frame, snapshot, or peek at without disturbing its state.
+**Interactive tools.** If you want to build a demo browser that shows raw bytes next to the decoded entity changes, the API is designed for it. The parser gives you every byte offset an inspector needs: the raw byte range of each frame and each message, decompression of a single frame on demand, and an entity tracker you can jump to any frame, snapshot, or peek at without disturbing its state. If you want per-frame state for your own code, such as player positions for a radar, a frame observer hands you each frame's values during the same run that computes the stats, so the demo isn't decoded twice.
 
 Rule tools don't need the engine at all. `CS2DemoKit.Analysis.Rules` uses only the .NET base library, with no protobuf, YAML, or demo parser, so if you're writing an editor extension, a linter, or a service that validates uploaded rules, you can check a rule expression without pulling in anything that knows what a demo is.
 
 **Batch pipelines.** Nothing in the library depends on a UI toolkit or a folder layout you can't override. Results are deterministic: the same demo produces the same output every time, down to the order of its warnings, and the multi-threaded geometry build produces the identical tree with one thread or thirty-two.
 
-**The compatibility work you'd otherwise do yourself.** Tournament demos recorded through SourceTV look the same as Valve matchmaking demos in the file header, but use a different event to mark the end of a round. `round_end`, the event most stats tools reach for first, has never fired in any demo we've checked. Player positions are stored as a grid cell plus an offset, not as a plain vector. A field that was never sent is not the same as a field that is zero. None of that is interesting work, but all of it has to be right, and it's already done.
+**The compatibility work you'd otherwise do yourself.** Tournament demos recorded through SourceTV look the same as Valve matchmaking demos in the file header, but use a different event to mark the end of a round. `round_end`, the event most stats tools reach for first, has never fired in any demo we've checked. The winner of each round is read from the server's own round-win status instead of guessed from who's left alive, which matters when a team surrenders. Player positions are stored as a grid cell plus an offset, not as a plain vector. A field that was never sent is not the same as a field that is zero. None of that is interesting work, but all of it has to be right, and it's already done.
 
 ## What CS2DemoKit can't do
 
@@ -94,9 +94,9 @@ Several of these look like they should work, so it's worth being clear.
 
 ## What's next for CS2DemoKit
 
-`0.12.0` is on nuget.org now, with newer versions available as prereleases. We're pre-1.0 and the API still changes between minor versions. Every breaking change is written down in [`docs/releasing.md`](https://github.com/CS2OpenDev/CS2DemoKit/blob/main/docs/releasing.md) with what changed and how to fix your code.
+`0.14.0` is on nuget.org now. We're pre-1.0 and the API still changes between minor versions. Every breaking change is written down in [`docs/releasing.md`](https://github.com/CS2OpenDev/CS2DemoKit/blob/main/docs/releasing.md) with what changed and how to fix your code, and each minor release has a migration guide next to it in `docs/`.
 
-These are the four things in front of us, all already tracked as open work in the repository:
+These are the four things in front of us:
 
 **Make evaluation faster.** Parsing is about 21% of the time it takes to load and analyze a demo. Evaluating rules is 72 to 81%, and roughly 30% of *that* is .NET garbage collection. The last round of work stopped re-sending every player's full state on every frame and sent only what changed. That cut evaluation time by 22% and total time by 17% across fifteen demos, and every one of them got faster. There's more of that kind of improvement available.
 
