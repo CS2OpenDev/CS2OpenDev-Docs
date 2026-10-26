@@ -62,6 +62,7 @@ The documentation covers:
 | **Maps / game modes / surfaces / props** | Radar overviews and bomb-site coordinates, game types & modes, surface physics, breakable-prop data: each its own page now | `/maps/`, `/game-modes/`, `/surfaces/`, `/props/` |
 | **Binaries / modules** | Every binary in the build, with SHA-256 and, where the binary matches a schema module, the `projectName` it registers | `/modules/` |
 | **Changelog** | Per-build diff (added / removed / changed) against the previous build | `/changelog/` |
+| **Map scripting guides** | Hand-written guides to cs_script, CS2's JavaScript map scripting: setup, runtime semantics, custom HUD layouts, and how it differs from VScript and Panorama. See [Map scripting (cs_script)](#map-scripting-cs_script) below. | `/scripting/guides/` |
 | **UML diagrams** | Mermaid class-hierarchy diagrams; every module has its own at `/schemas/<module>/hierarchy/`, and `/schemas/hierarchy/` is the combined server + client tree that replaced the old single `server_hierarchy` diagram | `/schemas/hierarchy/` |
 | **Codegen schema formats** | Overview of the five downstream JSON schema files below: shape, versioning, migration notes | `/codegen-schemas/` |
 | **Entity schema** | `downstream-codegen-schemas/cs2_schema.json`: the entity schema in SchemaTracker's **native** shape (top-level `generator` / `build_id` / `platform` / `revision` / `version_date` / `version_time` / `classes` / `enums`), enriched with optional community `annotations`.  See the [format reference](#cs2_schemajson-format) below. | `/generated/downstream-codegen-schemas/cs2_schema.json` |
@@ -350,6 +351,52 @@ Field `type` values are the raw .gameevents type tags — `none`,
 `player_controller`, `player_controller_and_pawn`, `player_pawn`,
 `ehandle`.  See the [generated reference page](https://cs2opendev.github.io/CS2OpenDev-Docs/game-events/)
 for human-readable type meanings.
+
+---
+
+## Map scripting (cs_script)
+
+CS2 maps are scripted in JavaScript. A `point_script` entity (server class
+`CCSPointScriptEntity`) has a `cs_script` keyvalue that references a `.js`
+file as a vjs asset. The script imports from the module
+`cs_script/point_script`. This is **not** VScript (CS:GO's Squirrel, or the
+Lua other Source 2 games use) and **not** Panorama UI JavaScript. Don't
+generate VScript, SourceMod or Metamod calls for a map script.
+
+The authoritative API is Valve's TypeScript declaration file,
+`content/csgo_addons/cs_script_demo/maps/scripts/point_script.d.ts` in a CS2
+install. Its `tsconfig.json` targets ES2022. The module exports:
+
+| Export | Covers |
+|---|---|
+| `Instance` | Typed event hooks (`OnActivate`, `OnScriptInput`, `OnRoundStart`, `OnPlayerKill`, `OnModifyPlayerDamage`, `OnBombPlant`, `OnGunFire`, `OnCustomHudClicked`, …), entity I/O (`EntFireAtName`, `EntFireAtTarget`, `ConnectOutput`), lookups (`FindEntityByName`, `FindEntitiesByClass`, `GetPlayerController`), traces (`TraceLine`, `TraceBullet`, …), timing (`SetThink`, `SetNextThink`, `Delay`, `QueueAfterThinks`), save data, and dev-only debug drawing |
+| `Console` | `Log`, typed ConVar getters and `SetConvar`, `ServerCommand`, `ClientCommand`, `RegisterCheatCommand` |
+| `GameRules` | Warmup, freeze and intro periods, round time, team score, `TerminateRound`, `AddTeamMoney` |
+
+The module also exports the entity classes (`Entity`, `BaseModelEntity`,
+`CSPlayerPawn`, `CSPlayerController`, `CSWeaponBase`, `CSPlantedC4`,
+`CustomHudLayout`, `PointTemplate`, …) and the enums (`CSRoundEndReason`,
+`CSDamageFlags`, `CSInputs`, `CSHitGroup`, …).
+
+Facts that trip up generated code:
+
+- There is **no generic game-event listener**. `Instance.OnGameEvent` was
+  removed. A game event without a typed `On*` hook can't be reached from script.
+- `Console` and `GameRules` were split out of `Instance`. `Instance.Msg`,
+  `Instance.ServerCommand`, `Instance.IsWarmupPeriod`, `Instance.AddTeamMoney`
+  and the positional overloads of `EntFireAtName` / `Teleport` / `Debug*` are
+  deprecated. Use `Console.Log`, `GameRules.*` and the config-object forms.
+- Entity I/O names are plain strings. Valid inputs and outputs come from the
+  game's FGD files (`game/csgo/csgo.fgd`, `game/core/base.fgd`). Map logic
+  calls into a script with `RunScriptInput(<name>)`, which is handled by
+  `Instance.OnScriptInput(name, cb)`.
+- Timing snaps to the nearest tick. In tools mode a reload clears callbacks
+  but keeps globals and entity objects.
+- Each `point_script` runs in isolation, with its own `Instance` and globals.
+
+Guides: `/scripting/guides/getting-started/`,
+`/scripting/guides/runtime-semantics/`, `/scripting/guides/custom-hud/`,
+`/scripting/guides/not-vscript/`.
 
 ---
 
@@ -711,5 +758,6 @@ content for a specific section:
 | Decode player commands | `cs_usercmd.proto` → `CSGOUserCmdPB` |
 | Find all convars for a system | ConVars reference, filter by flag or prefix |
 | Build a server plugin (Metamod/CS2) | `server` schema for entity offsets, `netmessages.proto` for hooking |
+| Script a map (cs_script / point_script) | [Map scripting (cs_script)](#map-scripting-cs_script) above, Valve's `point_script.d.ts`, `/scripting/guides/` |
 | Work with item/skin data | `cstrike15_gcmessages.proto`, `CCSPlayerController_InventoryServices` |
 | Understand rank/matchmaking | `cstrike15_gcmessages.proto` GC message types |
