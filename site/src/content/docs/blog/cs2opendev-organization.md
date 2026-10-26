@@ -1,6 +1,6 @@
 ---
 title: Introducing the CS2OpenDev Organization
-date: 2026-10-21
+date: 2026-10-21T09:00:00Z
 excerpt: What CS2OpenDev is, why it exists, and what it commits to for the Counter-Strike 2 community.
 ---
 
