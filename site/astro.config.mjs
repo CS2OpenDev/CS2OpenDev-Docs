@@ -79,6 +79,16 @@ const referenceSidebar = [
 			...coreProtoStems.map((stem) => ({ label: `${stem}.proto`, link: `/protobufs/${stem}/` })),
 		],
 	},
+	{
+		label: 'Map Scripting',
+		collapsed: true,
+		items: [
+			{ label: 'Getting started', link: '/scripting/guides/getting-started/' },
+			{ label: 'Runtime semantics', link: '/scripting/guides/runtime-semantics/' },
+			{ label: 'Custom HUD layouts', link: '/scripting/guides/custom-hud/' },
+			{ label: 'vs VScript and Panorama', link: '/scripting/guides/not-vscript/' },
+		],
+	},
 	...flatPages.map(([label, link]) => ({ label, link })),
 ];
 
