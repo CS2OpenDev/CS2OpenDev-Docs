@@ -63,6 +63,8 @@ The documentation covers:
 | **Binaries / modules** | Every binary in the build, with SHA-256 and, where the binary matches a schema module, the `projectName` it registers | `/modules/` |
 | **Changelog** | Per-build diff (added / removed / changed) against the previous build | `/changelog/` |
 | **Map scripting guides** | Hand-written guides to cs_script, CS2's JavaScript map scripting: setup, runtime semantics, custom HUD layouts, and how it differs from VScript and Panorama. See [Map scripting (cs_script)](#map-scripting-cs_script) below. | `/scripting/guides/` |
+| **cs_script API reference** | Every type, member, enum and hook in `cs_script/point_script`, generated from Valve's `point_script.d.ts` (Windows builds only). Hooks are paired with the game event that reports the same moment; enums that mirror an engine enum show both numberings | `/scripting/api/`, `/scripting/api/<Type>/` |
+| **Entity I/O** | Every placeable Hammer classname with its keyvalues, inputs and outputs (inherited ones included, each tagged with the FGD class that declares it), generated from the build's FGD files (Windows builds only) | `/entities/`, `/entities/<classname>/` |
 | **UML diagrams** | Mermaid class-hierarchy diagrams; every module has its own at `/schemas/<module>/hierarchy/`, and `/schemas/hierarchy/` is the combined server + client tree that replaced the old single `server_hierarchy` diagram | `/schemas/hierarchy/` |
 | **Codegen schema formats** | Overview of the five downstream JSON schema files below: shape, versioning, migration notes | `/codegen-schemas/` |
 | **Entity schema** | `downstream-codegen-schemas/cs2_schema.json`: the entity schema in SchemaTracker's **native** shape (top-level `generator` / `build_id` / `platform` / `revision` / `version_date` / `version_time` / `classes` / `enums`), enriched with optional community `annotations`.  See the [format reference](#cs2_schemajson-format) below. | `/generated/downstream-codegen-schemas/cs2_schema.json` |
@@ -71,6 +73,7 @@ The documentation covers:
 | **Commands schema** | `downstream-codegen-schemas/commands_schema.json`: top-level `commands` list, each `{ name, flags, description, has_completion_callback }`. | `/generated/downstream-codegen-schemas/commands_schema.json` |
 | **Well-known constants** | `downstream-codegen-schemas/well_known_constants.json`: integer / enum values downstream tooling needs but that the schema doesn't expose as named enum types (team numbers, `m_gamePhase`, `CSWeaponState_t`, …).  Source of truth is `docs/overlays/well_known_constants.yml`. | `/generated/downstream-codegen-schemas/well_known_constants.json` |
 | **Schema history** | Field-precise build-to-build evolution of the entity schema, rendered from SchemaTracker's cumulative, facts-only `schema_evolution.json` (Layer A).  Documents the artifact's neutral rename/move **evidence surfaces**: the frozen `pairedEvidence` 1:1 pairs plus the unselected candidate lists added in artifact rev 0.6.0 (`pairCandidates`, `classPairCandidates`, `fieldMoveCandidates`), the 0.7.0 calendar axis (`fromManifestCreatedUtc` / `toManifestCreatedUtc`) and attribute coverage, and the 0.8.0 per-key `metaOps`.  No rename or safety verdict is ever asserted; promotion happens via `docs/overlays/schema-lens.yml`. | `/schema-history/` |
+| **Entity I/O typings** | `downstream-codegen-schemas/cs2_entity_io.d.ts`: a TypeScript declaration file that merges into `cs_script/point_script`: an `EntityClassName` union, per-classname input/output name unions, `EntityScriptTypeByClass`, and typed `FindEntitiesByClass` / `FindEntityByClass` / `EntFireAtName` / `EntFireAtTarget` / `ConnectOutput` overloads (every one still accepts any string). Place it next to `point_script.d.ts`. Absent on a build without the Workshop Tools files. | `/generated/downstream-codegen-schemas/cs2_entity_io.d.ts` |
 | **Field history schema** | `downstream-codegen-schemas/field_history.json`: whole-history record per `(class, field)`: `firstSeenBuild` / `lastSeenBuild` / `typeHistory`, plus a community-verified `confirmedRename` block where one exists.  **`[firstSeenBuild, lastSeenBuild]` is a presence *hull*, not continuous presence**. Reconstruct exact presence from `schema_evolution.json`'s transitions.  Windows is the canonical platform and a strict superset in class coverage (historical Windows-only tool binaries such as `hammer.dll` / `sfm.dll` have no Linux counterparts). | `/generated/downstream-codegen-schemas/field_history.json` |
 
 ### URL scheme
@@ -92,8 +95,13 @@ e.g. `https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/server/CBaseEntity/`.
   anchor: `/convars/#<name>`, `/commands/#<name>`, `/game-events/#<anchor>`.
   A game event name that repeats across `.gameevents` source files gets a
   source suffix on the anchor instead of colliding, e.g. `player_death-mod`.
-- The five `downstream-codegen-schemas/*.json` files and `field_history.json`
-  are the one exception to the new scheme: they keep serving at
+- cs_script API: `/scripting/api/<Type>/` for each interface and class, with
+  `#<member>` per member; enums, type aliases and hooks are anchors on the
+  index, `/scripting/api/#<Name>` (`#CSHitGroup`, `#Vector`, `#OnRoundEnd`).
+- Entity I/O: `/entities/<classname>/`, with `#in-<Input>`, `#out-<Output>`
+  and `#kv-<key>` per row.
+- The five `downstream-codegen-schemas/*.json` files, `field_history.json`
+  and `cs2_entity_io.d.ts` are the one exception to the new scheme: they keep serving at
   `/generated/downstream-codegen-schemas/<file>`, matching their path in
   the git repository.
 
@@ -386,15 +394,25 @@ Facts that trip up generated code:
   `Instance.ServerCommand`, `Instance.IsWarmupPeriod`, `Instance.AddTeamMoney`
   and the positional overloads of `EntFireAtName` / `Teleport` / `Debug*` are
   deprecated. Use `Console.Log`, `GameRules.*` and the config-object forms.
-- Entity I/O names are plain strings. Valid inputs and outputs come from the
-  game's FGD files (`game/csgo/csgo.fgd`, `game/core/base.fgd`). Map logic
-  calls into a script with `RunScriptInput(<name>)`, which is handled by
+- Entity I/O names are plain strings, matched case-insensitively. Valid
+  inputs and outputs per classname are on `/entities/<classname>/`, from the
+  game's FGD files (`game/csgo/csgo.fgd`, `game/core/base.fgd`), and
+  `cs2_entity_io.d.ts` types them for an editor. Map logic calls into a
+  script with `RunScriptInput(<name>)`, which is handled by
   `Instance.OnScriptInput(name, cb)`.
+- Some classnames have no FGD entry because the game creates them:
+  `FindEntitiesByClass("player")` returns every `CSPlayerPawn`, and
+  `cs_player_controller` every `CSPlayerController`.
+- Several script enums are **renumbered** relative to the engine enum they
+  mirror: `CSMoveType.WALK` is 1, engine `MOVETYPE_WALK` is 2. Script methods
+  (`SetMoveType`) take the script value. A schema dump, a demo or a server
+  plugin gives engine values. `/scripting/api/#<Enum>` shows both columns.
 - Timing snaps to the nearest tick. In tools mode a reload clears callbacks
   but keeps globals and entity objects.
 - Each `point_script` runs in isolation, with its own `Instance` and globals.
 
-Guides: `/scripting/guides/getting-started/`,
+Reference: `/scripting/api/` (types, enums, hooks), `/entities/` (entity
+I/O). Guides: `/scripting/guides/getting-started/`,
 `/scripting/guides/runtime-semantics/`, `/scripting/guides/custom-hud/`,
 `/scripting/guides/not-vscript/`.
 
