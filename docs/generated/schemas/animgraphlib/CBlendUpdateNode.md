@@ -8,7 +8,7 @@ kind: class
 
 # CBlendUpdateNode
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 224 bytes (`0xe0`) · **Align:** 8 · **Module:** animgraphlib
 

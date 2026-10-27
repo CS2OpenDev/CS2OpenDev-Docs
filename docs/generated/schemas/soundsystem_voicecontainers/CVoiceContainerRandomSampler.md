@@ -8,9 +8,9 @@ kind: class
 
 # CVoiceContainerRandomSampler
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 424 bytes (`0x1a8`) · **Align:** 8 · **Module:** soundsystem_voicecontainers
+**Kind:** class · **Size:** 432 bytes (`0x1b0`) · **Align:** 8 · **Module:** soundsystem_voicecontainers
 
 **Inherits from:** [CVoiceContainerAsyncGenerator](../soundsystem_voicecontainers/CVoiceContainerAsyncGenerator.md)
 
@@ -28,23 +28,27 @@ classDiagram
 
 ## Memory layout
 
-8 fields (6 declared here, 2 inherited). Offsets are absolute from the object base.
+10 fields (6 declared here, 4 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x28` | `m_vSound` | [CVSound](../soundsystem_voicecontainers/CVSound.md) | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressField` |
-| `0x68` | `m_pEnvelopeAnalyzer` | [CVoiceContainerAnalysisBase](../soundsystem_voicecontainers/CVoiceContainerAnalysisBase.md)* | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressExpr true` |
-| `0x80` | `m_flAmplitude` | float32 |  |  |
-| `0x84` | `m_flAmplitudeJitter` | float32 |  |  |
-| `0x88` | `m_flTimeJitter` | float32 |  |  |
-| `0x8c` | `m_flMaxLength` | float32 |  |  |
-| `0x90` | `m_nNumDelayVariations` | int32 |  |  |
-| `0x98` | `m_grainResources` | CUtlVector< CStrongHandle< [InfoForResourceTypeCVoiceContainerBase](../resourcesystem/InfoForResourceTypeCVoiceContainerBase.md) > > |  |  |
+| `0x10` | `m_bRegisteredVMix` | bool | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) |  |
+| `0x14` | `m_nResourceName` | CUtlStringToken | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) |  |
+| `0x30` | `m_vSound` | [CVSound](../soundsystem_voicecontainers/CVSound.md) | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressField` |
+| `0x70` | `m_pEnvelopeAnalyzer` | [CVoiceContainerAnalysisBase](../soundsystem_voicecontainers/CVoiceContainerAnalysisBase.md)* | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressExpr true` |
+| `0x88` | `m_flAmplitude` | float32 |  |  |
+| `0x8c` | `m_flAmplitudeJitter` | float32 |  |  |
+| `0x90` | `m_flTimeJitter` | float32 |  |  |
+| `0x94` | `m_flMaxLength` | float32 |  |  |
+| `0x98` | `m_nNumDelayVariations` | int32 |  |  |
+| `0xa0` | `m_grainResources` | CUtlVector< CStrongHandle< [InfoForResourceTypeCVoiceContainerBase](../resourcesystem/InfoForResourceTypeCVoiceContainerBase.md) > > |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
 <pre>{
 	&quot;_class&quot;: &quot;CVoiceContainerRandomSampler&quot;,
+	&quot;m_bRegisteredVMix&quot;: false,
+	&quot;m_nResourceName&quot;: &quot;&quot;,
 	&quot;m_vSound&quot;:
 	{
 		&quot;m_Sentences&quot;:

@@ -8,7 +8,7 @@ kind: class
 
 # CMixTrack
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 72 bytes (`0x48`) · **Align:** 8 · **Module:** sounddoc_lib
 
@@ -22,12 +22,13 @@ kind: class
 classDiagram
     CMixPropertyBase <|-- CMixTrack
     CMixTrack *-- VMixMixDownRule_t
+    CMixTrack *-- VMixUpMixRule_t
     CMixTrack *-- VMixSendOperator_t
 ```
 
 ## Memory layout
 
-10 fields (4 declared here, 6 inherited). Offsets are absolute from the object base.
+11 fields (5 declared here, 6 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -38,7 +39,8 @@ classDiagram
 | `0x1a` | `m_bEditProperties` | bool | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x1c` | `m_nGenerationId` | int32 | [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md) | `MPropertyHideField` `MPropertySortPriority -1` |
 | `0x20` | `m_nChannels` | int32 |  | `MPropertyAttributeChoiceName channel_count` `MPropertyDescription Leave this as "Automatic" unless you are forcing mono/stereo for some reason.  That way each graph will get configured to match the incoming vsnd (for a voice graph) or the audio device (main mix graph)` |
-| `0x24` | `m_nMixDown` | [VMixMixDownRule_t](../soundsystem_lowlevel/VMixMixDownRule_t.md) |  | `MPropertyDescription This determines what happens when your incoming audio doesn't match the channel count for the track.  e.g. for a mono track, this is the rule for what happens to stereo audio` `MPropertyFriendlyName Mix Down Rule` |
+| `0x24` | `m_nMixDown` | [VMixMixDownRule_t](../soundsystem_lowlevel/VMixMixDownRule_t.md) |  | `MPropertyDescription This determines what happens when your incoming audio has more channels than the track.  e.g. for a mono track, this is the rule for what happens to stereo audio` `MPropertyFriendlyName Mix Down Rule` |
+| `0x25` | `m_nUpMixRule` | [VMixUpMixRule_t](../soundsystem_lowlevel/VMixUpMixRule_t.md) |  | `MPropertyDescription This determines what happens when your incoming audio is mono and the track has more channels.  e.g. for a stereo track, this is the rule for what happens to mono audio` `MPropertyFriendlyName Up Mix Rule` |
 | `0x26` | `m_nSendOperator` | [VMixSendOperator_t](../soundsystem_lowlevel/VMixSendOperator_t.md) |  | `MPropertyDescription This refers to a piece of code in the sound engine that will select specific child voices to be mixed into this track and at what mix level each voice will be mixed.<br>If you want to drive that with data, choose "By Named Send" and author a list of send names for this track.  Then any sound event can send to one of those names and the audio will be mixed here.` `MPropertyFriendlyName Send Child Voices` `MPropertyGroupName Child Voices` |
 | `0x28` | `m_SendNames` | CUtlString[4] |  | `MPropertyFriendlyName Send Names` `MPropertyGroupName Child Voices` |
 
@@ -54,6 +56,7 @@ classDiagram
 	&quot;m_nGenerationId&quot;: 0,
 	&quot;m_nChannels&quot;: -1,
 	&quot;m_nMixDown&quot;: &quot;SUM&quot;,
+	&quot;m_nUpMixRule&quot;: &quot;DIVIDE&quot;,
 	&quot;m_nSendOperator&quot;: &quot;NAMED_SEND&quot;,
 	&quot;m_SendNames&quot;:
 	[

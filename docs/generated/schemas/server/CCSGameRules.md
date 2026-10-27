@@ -8,7 +8,7 @@ kind: class
 
 # CCSGameRules
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
 Singleton entity that holds all CS2 match-level state: phase, round timer, team time-outs, map layout flags, match stats, and end-of-round information. Accessible via the CCSGameRulesProxy entity on the client.
 

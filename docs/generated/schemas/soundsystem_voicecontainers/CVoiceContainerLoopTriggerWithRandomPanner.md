@@ -8,9 +8,9 @@ kind: class
 
 # CVoiceContainerLoopTriggerWithRandomPanner
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 192 bytes (`0xc0`) · **Align:** 8 · **Module:** soundsystem_voicecontainers
+**Kind:** class · **Size:** 200 bytes (`0xc8`) · **Align:** 8 · **Module:** soundsystem_voicecontainers
 
 **Inherits from:** [CVoiceContainerLoopTrigger](../soundsystem_voicecontainers/CVoiceContainerLoopTrigger.md)
 
@@ -27,23 +27,27 @@ classDiagram
 
 ## Memory layout
 
-8 fields (1 declared here, 7 inherited). Offsets are absolute from the object base.
+10 fields (1 declared here, 9 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x28` | `m_vSound` | [CVSound](../soundsystem_voicecontainers/CVSound.md) | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressField` |
-| `0x68` | `m_pEnvelopeAnalyzer` | [CVoiceContainerAnalysisBase](../soundsystem_voicecontainers/CVoiceContainerAnalysisBase.md)* | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressExpr true` |
-| `0x70` | `m_flRetriggerTimeMin` | float32 | [CVoiceContainerLoopTrigger](../soundsystem_voicecontainers/CVoiceContainerLoopTrigger.md) |  |
-| `0x74` | `m_flRetriggerTimeMax` | float32 | [CVoiceContainerLoopTrigger](../soundsystem_voicecontainers/CVoiceContainerLoopTrigger.md) |  |
-| `0x78` | `m_flFadeTime` | float32 | [CVoiceContainerLoopTrigger](../soundsystem_voicecontainers/CVoiceContainerLoopTrigger.md) |  |
-| `0x7c` | `m_bCrossFade` | bool | [CVoiceContainerLoopTrigger](../soundsystem_voicecontainers/CVoiceContainerLoopTrigger.md) |  |
-| `0x80` | `m_sound` | [CSoundContainerReference](../soundsystem_voicecontainers/CSoundContainerReference.md) | [CVoiceContainerLoopTrigger](../soundsystem_voicecontainers/CVoiceContainerLoopTrigger.md) | `MPropertyFriendlyName Vsnd Reference` |
-| `0xa0` | `m_randomPannerControls` | [CRandomPannerControls](../soundsystem_voicecontainers/CRandomPannerControls.md) |  | `MPropertyFriendlyName Random Panner Control` |
+| `0x10` | `m_bRegisteredVMix` | bool | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) |  |
+| `0x14` | `m_nResourceName` | CUtlStringToken | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) |  |
+| `0x30` | `m_vSound` | [CVSound](../soundsystem_voicecontainers/CVSound.md) | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressField` |
+| `0x70` | `m_pEnvelopeAnalyzer` | [CVoiceContainerAnalysisBase](../soundsystem_voicecontainers/CVoiceContainerAnalysisBase.md)* | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressExpr true` |
+| `0x78` | `m_flRetriggerTimeMin` | float32 | [CVoiceContainerLoopTrigger](../soundsystem_voicecontainers/CVoiceContainerLoopTrigger.md) |  |
+| `0x7c` | `m_flRetriggerTimeMax` | float32 | [CVoiceContainerLoopTrigger](../soundsystem_voicecontainers/CVoiceContainerLoopTrigger.md) |  |
+| `0x80` | `m_flFadeTime` | float32 | [CVoiceContainerLoopTrigger](../soundsystem_voicecontainers/CVoiceContainerLoopTrigger.md) |  |
+| `0x84` | `m_bCrossFade` | bool | [CVoiceContainerLoopTrigger](../soundsystem_voicecontainers/CVoiceContainerLoopTrigger.md) |  |
+| `0x88` | `m_sound` | [CSoundContainerReference](../soundsystem_voicecontainers/CSoundContainerReference.md) | [CVoiceContainerLoopTrigger](../soundsystem_voicecontainers/CVoiceContainerLoopTrigger.md) | `MPropertyFriendlyName Vsnd Reference` |
+| `0xa8` | `m_randomPannerControls` | [CRandomPannerControls](../soundsystem_voicecontainers/CRandomPannerControls.md) |  | `MPropertyFriendlyName Random Panner Control` |
 
 <details><summary>KV3 class defaults</summary>
 
 <pre>{
 	&quot;_class&quot;: &quot;CVoiceContainerLoopTriggerWithRandomPanner&quot;,
+	&quot;m_bRegisteredVMix&quot;: false,
+	&quot;m_nResourceName&quot;: &quot;&quot;,
 	&quot;m_vSound&quot;:
 	{
 		&quot;m_Sentences&quot;:

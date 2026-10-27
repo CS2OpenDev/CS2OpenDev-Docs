@@ -8,9 +8,9 @@ kind: class
 
 # CVoiceContainerVMixSnd
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 384 bytes (`0x180`) · **Align:** 8 · **Module:** soundsystem
+**Kind:** class · **Size:** 400 bytes (`0x190`) · **Align:** 8 · **Module:** soundsystem
 
 **Inherits from:** [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md)
 
@@ -25,17 +25,22 @@ classDiagram
 
 ## Memory layout
 
-2 fields (0 declared here, 2 inherited). Offsets are absolute from the object base.
+5 fields (1 declared here, 4 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x28` | `m_vSound` | [CVSound](../soundsystem_voicecontainers/CVSound.md) | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressField` |
-| `0x68` | `m_pEnvelopeAnalyzer` | [CVoiceContainerAnalysisBase](../soundsystem_voicecontainers/CVoiceContainerAnalysisBase.md)* | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressExpr true` |
+| `0x10` | `m_bRegisteredVMix` | bool | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) |  |
+| `0x14` | `m_nResourceName` | CUtlStringToken | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) |  |
+| `0x30` | `m_vSound` | [CVSound](../soundsystem_voicecontainers/CVSound.md) | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressField` |
+| `0x70` | `m_pEnvelopeAnalyzer` | [CVoiceContainerAnalysisBase](../soundsystem_voicecontainers/CVoiceContainerAnalysisBase.md)* | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressExpr true` |
+| `0x188` | `m_resourceName` | CUtlString |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
 <pre>{
 	&quot;_class&quot;: &quot;CVoiceContainerVMixSnd&quot;,
+	&quot;m_bRegisteredVMix&quot;: false,
+	&quot;m_nResourceName&quot;: &quot;&quot;,
 	&quot;m_vSound&quot;:
 	{
 		&quot;m_Sentences&quot;:
@@ -50,6 +55,7 @@ classDiagram
 		&quot;m_nStreamingSize&quot;: 0,
 		&quot;m_nLoopEnd&quot;: 0
 	},
-	&quot;m_pEnvelopeAnalyzer&quot;: null
+	&quot;m_pEnvelopeAnalyzer&quot;: null,
+	&quot;m_resourceName&quot;: &quot;&quot;
 }</pre>
 </details>

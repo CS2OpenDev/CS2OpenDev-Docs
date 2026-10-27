@@ -8,13 +8,13 @@ kind: class
 
 # CCSPlayerPawn
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
 The physical in-world representation of a CS2 player.  Carries per-round state: health, armor, position, animations, and weapon inventory.  A new CCSPlayerPawn is created each round on (re)spawn; the corresponding CCSPlayerController persists across rounds.
 
 > 📝 Source 2 architecture separates the controller (session/connection state) from the pawn (physics/animation state).  Demo parsers must follow m_hController → CCSPlayerController to resolve name, team, and stats.
 
-**Kind:** class · **Size:** 5568 bytes (`0x15c0`) · **Align:** 16 · **Module:** server
+**Kind:** class · **Size:** 5584 bytes (`0x15d0`) · **Align:** 16 · **Module:** server
 
 **Inherits from:** [CCSPlayerPawnBase](../server/CCSPlayerPawnBase.md)
 
@@ -253,98 +253,98 @@ classDiagram
 | `0xe6a` | `m_bHasFemaleVoice` | bool |  | True when the equipped agent skin uses a female voice pack. |
 | `0xe70` | `m_strVOPrefix` | CUtlString |  |  |
 | `0xe78` | `m_szLastPlaceName` | char[18] |  | Human-readable area/landmark name from the nav mesh where the player was last located (e.g. 'CTSpawn', 'BombsiteA'). |
-| `0xf68` | `m_bInHostageResetZone` | bool |  |  |
-| `0xf69` | `m_bInBuyZone` | bool |  | True while the player is standing inside a buy zone. |
-| `0xf70` | `m_TouchingBuyZones` | CUtlVector< CHandle< [CBaseEntity](../server/CBaseEntity.md) > > |  |  |
-| `0xf88` | `m_bWasInBuyZone` | bool |  |  |
-| `0xf89` | `m_bInHostageRescueZone` | bool |  | True while the player is inside a hostage rescue zone. |
-| `0xf8a` | `m_bInBombZone` | bool |  | True while the player is standing inside a bomb-plant zone (bombsite trigger). *m_nWhichBombZone indicates which site (0 = not in any, 1 = A, 2 = B).* |
-| `0xf8b` | `m_bWasInHostageRescueZone` | bool |  |  |
-| `0xf8c` | `m_iRetakesOffering` | int32 |  | Retakes-mode offering index: which weapon/utility load-out this player was offered for the retake. |
-| `0xf90` | `m_iRetakesOfferingCard` | int32 |  | Card index the player selected in the retakes offering interface. |
-| `0xf94` | `m_bRetakesHasDefuseKit` | bool |  | True when the retakes system has granted this player a defuse kit for the retake round. |
-| `0xf95` | `m_bRetakesMVPLastRound` | bool |  | True if this player earned the retakes MVP award in the previous round. |
-| `0xf98` | `m_iRetakesMVPBoostItem` | int32 |  | Item definition index of the bonus item awarded to the retakes MVP. |
-| `0xf9c` | `m_RetakesMVPBoostExtraUtility` | loadout_slot_t |  |  |
-| `0xfa0` | `m_flHealthShotBoostExpirationTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime at which the health-shot (medshot) movement speed boost expires. |
-| `0xfa4` | `m_flLandingTimeSeconds` | float32 |  |  |
-| `0xfa8` | `m_bIsBuyMenuOpen` | bool |  | True while the player's buy menu is open. |
-| `0xfe0` | `m_lastLandTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0xfe4` | `m_bOnGroundLastTick` | bool |  |  |
-| `0xfe8` | `m_iPlayerLocked` | int32 |  |  |
-| `0xff0` | `m_flTimeOfLastInjury` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime of the most-recent damage event that reduced this player's health. |
-| `0xff4` | `m_flNextSprayDecalTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0xff8` | `m_bNextSprayDecalTimeExpedited` | bool |  |  |
-| `0xffc` | `m_nRagdollDamageBone` | int32 |  | Bone index of the last hit that caused a ragdoll impulse. |
-| `0x1000` | `m_vRagdollDamageForce` | Vector |  | World-space impulse vector applied to the ragdoll bone on death. |
-| `0x100c` | `m_szRagdollDamageWeaponName` | char[64] |  | Class name of the weapon that killed this player (used to select the correct death ragdoll). |
-| `0x104c` | `m_bRagdollDamageHeadshot` | bool |  | True if the fatal blow was a headshot, used to trigger headshot-specific ragdoll animation. |
-| `0x1050` | `m_vRagdollServerOrigin` | VectorWS |  | World-space position of the player's origin at the moment of death. |
-| `0x1060` | `m_EconGloves` | [CEconItemView](../server/CEconItemView.md) |  | CEconItemView describing the glove skin equipped on this player. |
-| `0x1448` | `m_nEconGlovesChanged` | uint8 |  | Incremented each time the glove loadout changes, so the client can refresh the glove model. |
-| `0x144c` | `m_qDeathEyeAngles` | QAngle |  | Eye angles at the moment of death, used to pose the ragdoll's head correctly. |
-| `0x1458` | `m_bLeftHanded` | bool |  | True when the player has switched the weapon to the left hand (cl_lefthand 1). |
-| `0x145c` | `m_fSwitchedHandednessTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime at which the player last toggled handedness (prevents rapid toggling). |
-| `0x1460` | `m_flViewmodelOffsetX` | float32 |  | Custom viewmodel X offset in world units (cl_viewmodel_offset_x). |
-| `0x1464` | `m_flViewmodelOffsetY` | float32 |  | Custom viewmodel Y offset in world units (cl_viewmodel_offset_y). |
-| `0x1468` | `m_flViewmodelOffsetZ` | float32 |  | Custom viewmodel Z offset in world units (cl_viewmodel_offset_z). |
-| `0x146c` | `m_flViewmodelFOV` | float32 |  | Custom viewmodel FOV in degrees (cl_viewmodel_fov; clamped to 60–68). |
-| `0x1470` | `m_bIsWalking` | bool |  | True while the player is in walk mode (shift-walk / cl_showpos = 1 walking). |
-| `0x1474` | `m_fLastGivenDefuserTime` | float32 |  |  |
-| `0x1478` | `m_fLastGivenBombTime` | float32 |  |  |
-| `0x147c` | `m_flDealtDamageToEnemyMostRecentTimestamp` | float32 |  |  |
-| `0x1480` | `m_iDisplayHistoryBits` | uint32 |  |  |
-| `0x1484` | `m_flLastAttackedTeammate` | float32 |  |  |
-| `0x1488` | `m_allowAutoFollowTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0x148c` | `m_bResetArmorNextSpawn` | bool |  |  |
-| `0x1490` | `m_nLastKillerIndex` | CEntityIndex |  | Entity index of the player or entity that last killed this pawn. |
-| `0x1498` | `m_entitySpottedState` | [EntitySpottedState_t](../server/EntitySpottedState_t.md) |  | EntitySpottedState_t struct tracking which players have spotted (ESP-radar dot) this entity. *See also m_bSpotted and the spotted bitmask used by the minimap.* |
-| `0x14b0` | `m_nSpotRules` | int32 |  |  |
-| `0x14b4` | `m_bIsScoped` | bool |  | True while the player is looking through a weapon scope. |
-| `0x14b5` | `m_bResumeZoom` | bool |  | True when the scope should be re-engaged automatically after the next shot (AWP/SSG 08 bolt-action mechanic). |
-| `0x14b6` | `m_bIsDefusing` | bool |  | True while the player is actively defusing the planted bomb. |
-| `0x14b7` | `m_bIsGrabbingHostage` | bool |  | True while the player is picking up a hostage entity. |
-| `0x14b8` | `m_iBlockingUseActionInProgress` | [CSPlayerBlockingUseAction_t](../server/CSPlayerBlockingUseAction_t.md) |  | CSPlayerBlockingUseAction_t enum indicating a use-action in progress that blocks other actions (e.g. defuse, hostage grab). |
-| `0x14bc` | `m_flEmitSoundTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime of the next footstep sound emission; controls footstep sound spacing. |
-| `0x14c0` | `m_bInNoDefuseArea` | bool |  | True when the player is in a location where defusing is not permitted. |
-| `0x14c4` | `m_iBombSiteIndex` | CEntityIndex |  |  |
-| `0x14c8` | `m_nWhichBombZone` | int32 |  | Indicates which bomb site the player is currently inside (0 = none, 1 = A, 2 = B). |
-| `0x14cc` | `m_bInBombZoneTrigger` | bool |  |  |
-| `0x14cd` | `m_bWasInBombZoneTrigger` | bool |  |  |
-| `0x14d0` | `m_iShotsFired` | int32 |  | Number of bullets fired since the player last stopped firing (resets when trigger is released or weapon changes). *Used to drive the walk-run bobbing animation state.* |
-| `0x14d4` | `m_flFlinchStack` | float32 |  | Accumulated flinch value from recent damage; drives the camera-shake magnitude. *Only sent to the owning player (LocalPlayerExclusive).* |
-| `0x14d8` | `m_flVelocityModifier` | float32 |  | Multiplicative speed modifier applied on top of base movement speed (0.0–1.0 typically; reduced while injured or tased). |
-| `0x14dc` | `m_vecTotalBulletForce` | Vector |  |  |
-| `0x14e8` | `m_bWaitForNoAttack` | bool |  | True when the weapon's fire input must be fully released before the next shot is accepted (prevents auto-fire on re-deploy). |
-| `0x14ec` | `m_ignoreLadderJumpTime` | float32 |  |  |
-| `0x14f0` | `m_bKilledByHeadshot` | bool |  | True if the killing blow on this player was a headshot. |
-| `0x14f4` | `m_LastHitBox` | int32 |  |  |
-| `0x14f8` | `m_pBot` | [CCSBot](../server/CCSBot.md)* |  |  |
-| `0x1500` | `m_bBotAllowActive` | bool |  |  |
-| `0x1504` | `m_nLastPickupPriority` | int32 |  |  |
-| `0x1508` | `m_flLastPickupPriorityTime` | float32 |  |  |
-| `0x150c` | `m_ArmorValue` | int32 |  | Current armor HP (0–100). Combined-arms note: vest+helmet does not exceed 100 armor points. |
-| `0x1510` | `m_unCurrentEquipmentValue` | uint16 |  | Total buy value (in dollars) of equipment currently held by the player. |
-| `0x1512` | `m_unRoundStartEquipmentValue` | uint16 |  | Equipment value at the start of the current round (after freeze-time buy phase ends). |
-| `0x1514` | `m_unFreezetimeEndEquipmentValue` | uint16 |  | Equipment value at the moment freeze time ended. |
-| `0x1518` | `m_iLastWeaponFireUsercmd` | int32 |  |  |
-| `0x151c` | `m_bIsSpawning` | bool |  |  |
-| `0x1528` | `m_iDeathFlags` | int32 |  |  |
-| `0x152c` | `m_bHasDeathInfo` | bool |  |  |
-| `0x1530` | `m_flDeathInfoTime` | float32 |  |  |
-| `0x1534` | `m_vecDeathInfoOrigin` | VectorWS |  |  |
-| `0x1540` | `m_vecPlayerPatchEconIndices` | uint32[5] |  | Array of 5 item-definition indices for the agent patch slots (team patches worn on the uniform). |
-| `0x1554` | `m_GunGameImmunityColor` | Color |  | Color applied to the player model while gun-game immunity is active. |
-| `0x1558` | `m_grenadeParameterStashTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0x155c` | `m_bGrenadeParametersStashed` | bool |  |  |
-| `0x1560` | `m_angStashedShootAngles` | QAngle |  |  |
-| `0x156c` | `m_vecStashedGrenadeThrowPosition` | VectorWS |  |  |
-| `0x1578` | `m_vecStashedGrenadeThrowPawnCenter` | VectorWS |  |  |
-| `0x1584` | `m_vecStashedVelocity` | Vector |  |  |
-| `0x1598` | `m_bCommittingSuicideOnTeamChange` | bool |  |  |
-| `0x1599` | `m_wasNotKilledNaturally` | bool |  |  |
-| `0x159c` | `m_fImmuneToGunGameDamageTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime until which the player is immune to damage in Gun Game / Arms Race mode. |
-| `0x15a0` | `m_bGunGameImmunity` | bool |  | True while the player has gun-game spawn immunity (brief invincibility after spawning in Arms Race mode). |
-| `0x15a4` | `m_flModifier0` | float32 |  |  |
-| `0x15a8` | `m_fMolotovDamageTime` | float32 |  | GameTime at which molotov/incendiary damage will next be applied to this player. |
-| `0x15ac` | `m_angEyeAngles` | QAngle |  | Server-authoritative eye angles (pitch, yaw, roll) used for hit-box calculation and third-person rendering. *Encoded at full qangle_precise precision. The definitive source for a player's look direction.* |
+| `0xf70` | `m_bInHostageResetZone` | bool |  |  |
+| `0xf71` | `m_bInBuyZone` | bool |  | True while the player is standing inside a buy zone. |
+| `0xf78` | `m_TouchingBuyZones` | CUtlVector< CHandle< [CBaseEntity](../server/CBaseEntity.md) > > |  |  |
+| `0xf90` | `m_bWasInBuyZone` | bool |  |  |
+| `0xf91` | `m_bInHostageRescueZone` | bool |  | True while the player is inside a hostage rescue zone. |
+| `0xf92` | `m_bInBombZone` | bool |  | True while the player is standing inside a bomb-plant zone (bombsite trigger). *m_nWhichBombZone indicates which site (0 = not in any, 1 = A, 2 = B).* |
+| `0xf93` | `m_bWasInHostageRescueZone` | bool |  |  |
+| `0xf94` | `m_iRetakesOffering` | int32 |  | Retakes-mode offering index: which weapon/utility load-out this player was offered for the retake. |
+| `0xf98` | `m_iRetakesOfferingCard` | int32 |  | Card index the player selected in the retakes offering interface. |
+| `0xf9c` | `m_bRetakesHasDefuseKit` | bool |  | True when the retakes system has granted this player a defuse kit for the retake round. |
+| `0xf9d` | `m_bRetakesMVPLastRound` | bool |  | True if this player earned the retakes MVP award in the previous round. |
+| `0xfa0` | `m_iRetakesMVPBoostItem` | int32 |  | Item definition index of the bonus item awarded to the retakes MVP. |
+| `0xfa4` | `m_RetakesMVPBoostExtraUtility` | loadout_slot_t |  |  |
+| `0xfa8` | `m_flHealthShotBoostExpirationTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime at which the health-shot (medshot) movement speed boost expires. |
+| `0xfac` | `m_flLandingTimeSeconds` | float32 |  |  |
+| `0xfb0` | `m_bIsBuyMenuOpen` | bool |  | True while the player's buy menu is open. |
+| `0xfe8` | `m_lastLandTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0xfec` | `m_bOnGroundLastTick` | bool |  |  |
+| `0xff0` | `m_iPlayerLocked` | int32 |  |  |
+| `0xff8` | `m_flTimeOfLastInjury` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime of the most-recent damage event that reduced this player's health. |
+| `0xffc` | `m_flNextSprayDecalTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0x1000` | `m_bNextSprayDecalTimeExpedited` | bool |  |  |
+| `0x1004` | `m_nRagdollDamageBone` | int32 |  | Bone index of the last hit that caused a ragdoll impulse. |
+| `0x1008` | `m_vRagdollDamageForce` | Vector |  | World-space impulse vector applied to the ragdoll bone on death. |
+| `0x1014` | `m_szRagdollDamageWeaponName` | char[64] |  | Class name of the weapon that killed this player (used to select the correct death ragdoll). |
+| `0x1054` | `m_bRagdollDamageHeadshot` | bool |  | True if the fatal blow was a headshot, used to trigger headshot-specific ragdoll animation. |
+| `0x1058` | `m_vRagdollServerOrigin` | VectorWS |  | World-space position of the player's origin at the moment of death. |
+| `0x1068` | `m_EconGloves` | [CEconItemView](../server/CEconItemView.md) |  | CEconItemView describing the glove skin equipped on this player. |
+| `0x1450` | `m_nEconGlovesChanged` | uint8 |  | Incremented each time the glove loadout changes, so the client can refresh the glove model. |
+| `0x1454` | `m_qDeathEyeAngles` | QAngle |  | Eye angles at the moment of death, used to pose the ragdoll's head correctly. |
+| `0x1460` | `m_bLeftHanded` | bool |  | True when the player has switched the weapon to the left hand (cl_lefthand 1). |
+| `0x1464` | `m_fSwitchedHandednessTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime at which the player last toggled handedness (prevents rapid toggling). |
+| `0x1468` | `m_flViewmodelOffsetX` | float32 |  | Custom viewmodel X offset in world units (cl_viewmodel_offset_x). |
+| `0x146c` | `m_flViewmodelOffsetY` | float32 |  | Custom viewmodel Y offset in world units (cl_viewmodel_offset_y). |
+| `0x1470` | `m_flViewmodelOffsetZ` | float32 |  | Custom viewmodel Z offset in world units (cl_viewmodel_offset_z). |
+| `0x1474` | `m_flViewmodelFOV` | float32 |  | Custom viewmodel FOV in degrees (cl_viewmodel_fov; clamped to 60–68). |
+| `0x1478` | `m_bIsWalking` | bool |  | True while the player is in walk mode (shift-walk / cl_showpos = 1 walking). |
+| `0x147c` | `m_fLastGivenDefuserTime` | float32 |  |  |
+| `0x1480` | `m_fLastGivenBombTime` | float32 |  |  |
+| `0x1484` | `m_flDealtDamageToEnemyMostRecentTimestamp` | float32 |  |  |
+| `0x1488` | `m_iDisplayHistoryBits` | uint32 |  |  |
+| `0x148c` | `m_flLastAttackedTeammate` | float32 |  |  |
+| `0x1490` | `m_allowAutoFollowTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0x1494` | `m_bResetArmorNextSpawn` | bool |  |  |
+| `0x1498` | `m_nLastKillerIndex` | CEntityIndex |  | Entity index of the player or entity that last killed this pawn. |
+| `0x14a0` | `m_entitySpottedState` | [EntitySpottedState_t](../server/EntitySpottedState_t.md) |  | EntitySpottedState_t struct tracking which players have spotted (ESP-radar dot) this entity. *See also m_bSpotted and the spotted bitmask used by the minimap.* |
+| `0x14b8` | `m_nSpotRules` | int32 |  |  |
+| `0x14bc` | `m_bIsScoped` | bool |  | True while the player is looking through a weapon scope. |
+| `0x14bd` | `m_bResumeZoom` | bool |  | True when the scope should be re-engaged automatically after the next shot (AWP/SSG 08 bolt-action mechanic). |
+| `0x14be` | `m_bIsDefusing` | bool |  | True while the player is actively defusing the planted bomb. |
+| `0x14bf` | `m_bIsGrabbingHostage` | bool |  | True while the player is picking up a hostage entity. |
+| `0x14c0` | `m_iBlockingUseActionInProgress` | [CSPlayerBlockingUseAction_t](../server/CSPlayerBlockingUseAction_t.md) |  | CSPlayerBlockingUseAction_t enum indicating a use-action in progress that blocks other actions (e.g. defuse, hostage grab). |
+| `0x14c4` | `m_flEmitSoundTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime of the next footstep sound emission; controls footstep sound spacing. |
+| `0x14c8` | `m_bInNoDefuseArea` | bool |  | True when the player is in a location where defusing is not permitted. |
+| `0x14cc` | `m_iBombSiteIndex` | CEntityIndex |  |  |
+| `0x14d0` | `m_nWhichBombZone` | int32 |  | Indicates which bomb site the player is currently inside (0 = none, 1 = A, 2 = B). |
+| `0x14d4` | `m_bInBombZoneTrigger` | bool |  |  |
+| `0x14d5` | `m_bWasInBombZoneTrigger` | bool |  |  |
+| `0x14d8` | `m_iShotsFired` | int32 |  | Number of bullets fired since the player last stopped firing (resets when trigger is released or weapon changes). *Used to drive the walk-run bobbing animation state.* |
+| `0x14dc` | `m_flFlinchStack` | float32 |  | Accumulated flinch value from recent damage; drives the camera-shake magnitude. *Only sent to the owning player (LocalPlayerExclusive).* |
+| `0x14e0` | `m_flVelocityModifier` | float32 |  | Multiplicative speed modifier applied on top of base movement speed (0.0–1.0 typically; reduced while injured or tased). |
+| `0x14e4` | `m_vecTotalBulletForce` | Vector |  |  |
+| `0x14f0` | `m_bWaitForNoAttack` | bool |  | True when the weapon's fire input must be fully released before the next shot is accepted (prevents auto-fire on re-deploy). |
+| `0x14f4` | `m_ignoreLadderJumpTime` | float32 |  |  |
+| `0x14f8` | `m_bKilledByHeadshot` | bool |  | True if the killing blow on this player was a headshot. |
+| `0x14fc` | `m_LastHitBox` | int32 |  |  |
+| `0x1500` | `m_pBot` | [CCSBot](../server/CCSBot.md)* |  |  |
+| `0x1508` | `m_bBotAllowActive` | bool |  |  |
+| `0x150c` | `m_nLastPickupPriority` | int32 |  |  |
+| `0x1510` | `m_flLastPickupPriorityTime` | float32 |  |  |
+| `0x1514` | `m_ArmorValue` | int32 |  | Current armor HP (0–100). Combined-arms note: vest+helmet does not exceed 100 armor points. |
+| `0x1518` | `m_unCurrentEquipmentValue` | uint16 |  | Total buy value (in dollars) of equipment currently held by the player. |
+| `0x151a` | `m_unRoundStartEquipmentValue` | uint16 |  | Equipment value at the start of the current round (after freeze-time buy phase ends). |
+| `0x151c` | `m_unFreezetimeEndEquipmentValue` | uint16 |  | Equipment value at the moment freeze time ended. |
+| `0x1520` | `m_iLastWeaponFireUsercmd` | int32 |  |  |
+| `0x1524` | `m_bIsSpawning` | bool |  |  |
+| `0x1530` | `m_iDeathFlags` | int32 |  |  |
+| `0x1534` | `m_bHasDeathInfo` | bool |  |  |
+| `0x1538` | `m_flDeathInfoTime` | float32 |  |  |
+| `0x153c` | `m_vecDeathInfoOrigin` | VectorWS |  |  |
+| `0x1548` | `m_vecPlayerPatchEconIndices` | uint32[5] |  | Array of 5 item-definition indices for the agent patch slots (team patches worn on the uniform). |
+| `0x155c` | `m_GunGameImmunityColor` | Color |  | Color applied to the player model while gun-game immunity is active. |
+| `0x1560` | `m_grenadeParameterStashTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0x1564` | `m_bGrenadeParametersStashed` | bool |  |  |
+| `0x1568` | `m_angStashedShootAngles` | QAngle |  |  |
+| `0x1574` | `m_vecStashedGrenadeThrowPosition` | VectorWS |  |  |
+| `0x1580` | `m_vecStashedGrenadeThrowPawnCenter` | VectorWS |  |  |
+| `0x158c` | `m_vecStashedVelocity` | Vector |  |  |
+| `0x15a0` | `m_bCommittingSuicideOnTeamChange` | bool |  |  |
+| `0x15a1` | `m_wasNotKilledNaturally` | bool |  |  |
+| `0x15a4` | `m_fImmuneToGunGameDamageTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime until which the player is immune to damage in Gun Game / Arms Race mode. |
+| `0x15a8` | `m_bGunGameImmunity` | bool |  | True while the player has gun-game spawn immunity (brief invincibility after spawning in Arms Race mode). |
+| `0x15ac` | `m_flModifier0` | float32 |  |  |
+| `0x15b0` | `m_fMolotovDamageTime` | float32 |  | GameTime at which molotov/incendiary damage will next be applied to this player. |
+| `0x15b4` | `m_angEyeAngles` | QAngle |  | Server-authoritative eye angles (pitch, yaw, roll) used for hit-box calculation and third-person rendering. *Encoded at full qangle_precise precision. The definitive source for a player's look direction.* |

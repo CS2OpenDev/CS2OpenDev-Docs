@@ -4,7 +4,7 @@ title: ConVars
 
 # ConVar Reference
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
 All console variables extracted from CS2, with the value type and the bounds the engine enforces where it declares them.
 
@@ -3991,6 +3991,15 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `voice_threshold_ramp_min_db` | `Float32` | `-60.000000` |  | `developmentonly` | A dB floor of when to stop transmitting packets, the volume between this and voice_threshold will still transmit packets to allow for volume ramping. |
 | `voice_vox` | `Int32` | `0` |  | `clientdll` `archive` `per_user` | Voice chat uses a vox-style always on |
 | `voice_vox_current_peak` | `Float32` | `0.000000` |  | `developmentonly` `clientdll` `defensive` | Current peak value (out of 64k) of the incoming voice stream |
+| `voice_webrtc_aec` | `Bool` | `true` |  | `archive` | WebRTC: cancel game audio echoing from the speakers into the microphone (AEC3). |
+| `voice_webrtc_agc` | `Bool` | `true` |  | `archive` | WebRTC: adaptive digital automatic gain control (AGC2). |
+| `voice_webrtc_apm` | `Bool` | `false` |  | `archive` | Process in-process voice chat microphone audio with the WebRTC audio processing module (requires voice_in_process). |
+| `voice_webrtc_fixed_gain_db` | `Float32` | `0.000000` | `0.000000 .. 50.000000` | `archive` | WebRTC: fixed digital gain in dB applied to the microphone before the adaptive gain stage. |
+| `voice_webrtc_hpf` | `Bool` | `true` |  | `archive` | WebRTC: high-pass filter to remove DC offset and low rumble. |
+| `voice_webrtc_ns` | `Bool` | `true` |  | `archive` | WebRTC: noise suppression. |
+| `voice_webrtc_ns_level` | `Int32` | `2` | `0 .. 3` | `archive` | WebRTC: noise suppression aggressiveness, 0 (low) to 3 (very high). |
+| `voice_webrtc_stats` | `Bool` | `false` |  | `developmentonly` | WebRTC: periodically print echo canceller statistics. |
+| `voice_webrtc_stream_delay_ms` | `Int32` | `-1` |  | `developmentonly` | WebRTC: speaker-to-microphone delay hint in ms for the echo canceller; -1 relies on AEC3's own delay estimation. |
 | `volume` | `Float32` | `1.000000` | `0.000000 .. 1.000000` | `archive` | Sound volume |
 | `volume_fog_debug_volumes` | `Bool` | `false` |  | `cheat` |  |
 | `volume_fog_density_scale` | `Float32` | `1.000000` |  | `developmentonly` `cheat` | Scale global volume fog density |

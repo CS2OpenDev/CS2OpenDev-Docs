@@ -8,7 +8,7 @@ kind: class
 
 # CBaseAnimGraph
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
 Entity layer that drives the Source 2 animation graph — skeleton, ragdoll, and choreo.  Base for all animated model entities, including player pawns.
 

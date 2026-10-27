@@ -11491,7 +11491,7 @@
   "flags": [
     {
       "command_count": 0,
-      "convar_count": 503,
+      "convar_count": 510,
       "description": "Value is written to config.cfg on shutdown and reloaded on startup.",
       "name": "archive"
     },
@@ -11539,7 +11539,7 @@
     },
     {
       "command_count": 443,
-      "convar_count": 1905,
+      "convar_count": 1907,
       "description": "Present only in development builds; stripped or inert in shipping builds.",
       "name": "developmentonly"
     },

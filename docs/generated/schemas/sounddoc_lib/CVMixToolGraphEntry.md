@@ -8,9 +8,9 @@ kind: class
 
 # CVMixToolGraphEntry
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 152 bytes (`0x98`) · **Align:** 8 · **Module:** sounddoc_lib
+**Kind:** class · **Size:** 160 bytes (`0xa0`) · **Align:** 8 · **Module:** sounddoc_lib
 
 **Inherits from:** [CVMixToolGraph](../sounddoc_lib/CVMixToolGraph.md)
 
@@ -36,7 +36,7 @@ classDiagram
 | `0x18` | `m_editorNodes` | CUtlVector< [CVMixEditorNode](../sounddoc_lib/CVMixEditorNode.md) > | [CVMixToolGraph](../sounddoc_lib/CVMixToolGraph.md) | `MKV3TransferName m_EditorNodes` |
 | `0x30` | `m_editorEdges` | CUtlVector< [CVMixEditorEdge](../sounddoc_lib/CVMixEditorEdge.md) > | [CVMixToolGraph](../sounddoc_lib/CVMixToolGraph.md) | `MKV3TransferName m_EditorEdges` |
 | `0x48` | `m_graphPreview` | [CGraphPreviewList](../sounddoc_lib/CGraphPreviewList.md) |  |  |
-| `0x70` | `m_editorState` | [CGraphEditorState](../sounddoc_lib/CGraphEditorState.md) |  | `MKV3TransferName m_EditorState` |
+| `0x78` | `m_editorState` | [CGraphEditorState](../sounddoc_lib/CGraphEditorState.md) |  | `MKV3TransferName m_EditorState` |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -60,7 +60,8 @@ classDiagram
 			[
 			],
 			&quot;m_bPreviewInGame&quot;: false
-		}
+		},
+		&quot;m_previewGraphName&quot;: &quot;&quot;
 	},
 	&quot;m_EditorState&quot;:
 	{

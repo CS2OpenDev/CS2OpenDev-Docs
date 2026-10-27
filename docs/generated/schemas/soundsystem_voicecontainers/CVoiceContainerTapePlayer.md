@@ -8,9 +8,9 @@ kind: class
 
 # CVoiceContainerTapePlayer
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 208 bytes (`0xd0`) · **Align:** 8 · **Module:** soundsystem_voicecontainers
+**Kind:** class · **Size:** 216 bytes (`0xd8`) · **Align:** 8 · **Module:** soundsystem_voicecontainers
 
 **Inherits from:** [CVoiceContainerAsyncGenerator](../soundsystem_voicecontainers/CVoiceContainerAsyncGenerator.md)
 
@@ -28,21 +28,25 @@ classDiagram
 
 ## Memory layout
 
-6 fields (4 declared here, 2 inherited). Offsets are absolute from the object base.
+8 fields (4 declared here, 4 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x28` | `m_vSound` | [CVSound](../soundsystem_voicecontainers/CVSound.md) | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressField` |
-| `0x68` | `m_pEnvelopeAnalyzer` | [CVoiceContainerAnalysisBase](../soundsystem_voicecontainers/CVoiceContainerAnalysisBase.md)* | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressExpr true` |
-| `0x80` | `m_bShouldWraparound` | bool |  |  |
-| `0x88` | `m_sourceAudio` | CStrongHandle< [InfoForResourceTypeCVoiceContainerBase](../resourcesystem/InfoForResourceTypeCVoiceContainerBase.md) > |  |  |
-| `0x90` | `m_flTapeSpeedAttackTime` | float32 |  |  |
-| `0x94` | `m_flTapeSpeedReleaseTime` | float32 |  |  |
+| `0x10` | `m_bRegisteredVMix` | bool | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) |  |
+| `0x14` | `m_nResourceName` | CUtlStringToken | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) |  |
+| `0x30` | `m_vSound` | [CVSound](../soundsystem_voicecontainers/CVSound.md) | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressField` |
+| `0x70` | `m_pEnvelopeAnalyzer` | [CVoiceContainerAnalysisBase](../soundsystem_voicecontainers/CVoiceContainerAnalysisBase.md)* | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressExpr true` |
+| `0x88` | `m_bShouldWraparound` | bool |  |  |
+| `0x90` | `m_sourceAudio` | CStrongHandle< [InfoForResourceTypeCVoiceContainerBase](../resourcesystem/InfoForResourceTypeCVoiceContainerBase.md) > |  |  |
+| `0x98` | `m_flTapeSpeedAttackTime` | float32 |  |  |
+| `0x9c` | `m_flTapeSpeedReleaseTime` | float32 |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
 <pre>{
 	&quot;_class&quot;: &quot;CVoiceContainerTapePlayer&quot;,
+	&quot;m_bRegisteredVMix&quot;: false,
+	&quot;m_nResourceName&quot;: &quot;&quot;,
 	&quot;m_vSound&quot;:
 	{
 		&quot;m_Sentences&quot;:

@@ -8,9 +8,9 @@ kind: class
 
 # CGraphPreviewList
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 40 bytes (`0x28`) · **Align:** 8 · **Module:** sounddoc_lib
+**Kind:** class · **Size:** 48 bytes (`0x30`) · **Align:** 8 · **Module:** sounddoc_lib
 
 **Relationships:**
 
@@ -21,12 +21,13 @@ classDiagram
 
 ## Memory layout
 
-2 fields (2 declared here, 0 inherited). Offsets are absolute from the object base.
+3 fields (3 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
 | `0x0` | `m_flVolume` | float32 |  |  |
 | `0x8` | `m_previewList` | [CPreviewList](../sounddoc_lib/CPreviewList.md) |  |  |
+| `0x28` | `m_previewGraphName` | CUtlString |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -38,6 +39,7 @@ classDiagram
 		[
 		],
 		&quot;m_bPreviewInGame&quot;: false
-	}
+	},
+	&quot;m_previewGraphName&quot;: &quot;&quot;
 }</pre>
 </details>

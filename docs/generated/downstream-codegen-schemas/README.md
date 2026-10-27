@@ -9,7 +9,7 @@ source instead of a chain of third-party dumps.
 ## Platform & provenance
 
 Every file here projects **one** `(build, platform)` artifact set:
-`windows-x86_64` (CS2 build `25966348`).  The `build_id` (the Steam CS2 game build,
+`windows-x86_64` (CS2 build `26144732`).  The `build_id` (the Steam CS2 game build,
 numeric and monotonic) and `platform` are stamped into each schema's header
 alongside the walker `revision` and the build timestamps — read them there
 rather than assuming.
@@ -139,7 +139,7 @@ never ships in the game.
 
 ## Class records with `size > 0` and no fields
 
-112 classes in `cs2_schema.json` report a non-zero `size` but
+111 classes in `cs2_schema.json` report a non-zero `size` but
 expose zero fields.  These are internal Source 2 runtime classes that the
 schema system knows the binary size of but never registers field-level
 reflection for.  Downstream codegen consumers can safely emit them as
@@ -296,4 +296,4 @@ the documented vocabulary tracks upstream additions.
 - `MVectorIsSometimesCoordinate`
 
 
-_Last regenerated against CS2 build `hl2sdk-cs2/5f891c9026230cce0fc0a3fc4b5fef1c467a1385/v1/3d1200e346019c59` (2026-10-15)._
+_Last regenerated against CS2 build `hl2sdk-cs2/5f891c9026230cce0fc0a3fc4b5fef1c467a1385/v1/3d1200e346019c59` (2026-10-22)._

@@ -8,7 +8,7 @@ kind: class
 
 # CBaseEntity
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
 Root entity class in Source 2 from which all server-side entities derive. Provides health, team, physics, timing, and transmit state.
 

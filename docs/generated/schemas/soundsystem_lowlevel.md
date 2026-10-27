@@ -5,11 +5,11 @@ module: soundsystem_lowlevel
 
 # Module: soundsystem_lowlevel
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
 [📊 View UML Diagram](../diagrams/soundsystem_lowlevel.md)
 
-93 types. Each links to its own page with the full field layout.
+94 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -61,7 +61,7 @@ module: soundsystem_lowlevel
 | [CVMixSteamAudioPathingProcessorDesc](soundsystem_lowlevel/CVMixSteamAudioPathingProcessorDesc.md) | class | 72 | 7 | [CVMixBaseProcessorDesc](soundsystem_lowlevel/CVMixBaseProcessorDesc.md) |
 | [CVMixStereoDelayProcessorDesc](soundsystem_lowlevel/CVMixStereoDelayProcessorDesc.md) | class | 48 | 2 | [CVMixBaseProcessorDesc](soundsystem_lowlevel/CVMixBaseProcessorDesc.md) |
 | [CVMixSubgraphSwitchProcessorDesc](soundsystem_lowlevel/CVMixSubgraphSwitchProcessorDesc.md) | class | 104 | 3 | [CVMixBaseProcessorDesc](soundsystem_lowlevel/CVMixBaseProcessorDesc.md) |
-| [CVMixSubmix](soundsystem_lowlevel/CVMixSubmix.md) | class | 56 | 6 |  |
+| [CVMixSubmix](soundsystem_lowlevel/CVMixSubmix.md) | class | 56 | 7 |  |
 | [CVMixUtilityProcessorDesc](soundsystem_lowlevel/CVMixUtilityProcessorDesc.md) | class | 64 | 1 | [CVMixBaseProcessorDesc](soundsystem_lowlevel/CVMixBaseProcessorDesc.md) |
 | [CVMixVocoderProcessorDesc](soundsystem_lowlevel/CVMixVocoderProcessorDesc.md) | class | 88 | 2 | [CVMixBaseProcessorDesc](soundsystem_lowlevel/CVMixBaseProcessorDesc.md) |
 | [CVMixVsndInput](soundsystem_lowlevel/CVMixVsndInput.md) | class | 24 | 1 |  |
@@ -106,3 +106,4 @@ module: soundsystem_lowlevel
 | [VMixPannerType_t](soundsystem_lowlevel/VMixPannerType_t.md) | enum | — | 2 |  |
 | [VMixSendOperator_t](soundsystem_lowlevel/VMixSendOperator_t.md) | enum | — | 10 |  |
 | [VMixSubgraphSwitchInterpolationType_t](soundsystem_lowlevel/VMixSubgraphSwitchInterpolationType_t.md) | enum | — | 3 |  |
+| [VMixUpMixRule_t](soundsystem_lowlevel/VMixUpMixRule_t.md) | enum | — | 2 |  |

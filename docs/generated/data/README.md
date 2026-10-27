@@ -17,7 +17,7 @@ Build identity (`build_id`, `steam_date`, `steam_manifest_utc` and
 `tool_version`), a `counts` object per family, and a `modules` list of
 `{module, classes, enums}`. `classes`/`enums`/`fields` in `counts` are
 distinct top-level entity names (matching what a reader would call
-"3,459 classes"); the per-module `modules[]` counts
+"3,458 classes"); the per-module `modules[]` counts
 additionally include client/server twin duplicate records, so they can sum
 to more than the top-level totals -- see the `note` field on the object.
 `counts.messages` is `protobufs.json`'s flattened total (top-level plus
@@ -90,7 +90,7 @@ than guessed at.
 `network.json` performs a second, separate join using these same rules
 against the RTTI-recovered id tables -- see below.
 
-## convars.json (1211.1 KB) / commands.json (288.6 KB)
+## convars.json (1213.8 KB) / commands.json (288.6 KB)
 
 `convars[]`/`commands[]`: `name`, `default` (convars only), `value_type`
 (convars only, e.g. `Float32`/`Int32`/`Bool`/`String`), `min`/`max` (convars
@@ -236,7 +236,7 @@ Which enum feeds which channel/id range:
 | `GameEvents` | 200, 213-214, 450-453 | `EBaseGameEvents`, `ECsgoGameEvents` |
 | `Demo stream` | 0-19, 64 | `EDemoCommands` |
 
-## changelog.json (1.2 KB)
+## changelog.json (3.1 KB)
 
 For the one build-pair transition the current artifact set carries: every
 family is always listed (with `added_count`/`removed_count`/`changed_count`,
@@ -245,7 +245,7 @@ across the whole transition (which it is on this build), and
 `schema_history_anchor` links to the matching transition's anchor in
 `schema-history.json`.
 
-## schema-history.json (167.5 KB)
+## schema-history.json (183.9 KB)
 
 `transitions[]`: every recorded transition (from/to build, dates, op
 counts, `anchor`, `is_empty`). `detail[]`: full per-class field-op detail

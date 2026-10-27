@@ -5,7 +5,7 @@ module: server
 
 # Module: server
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
 [📊 View UML Diagram](../diagrams/server.md)
 
@@ -149,7 +149,7 @@ module: server
 | [CCSPlayerController_InventoryServices::NetworkedLoadoutSlot_t](server/CCSPlayerController_InventoryServices.NetworkedLoadoutSlot_t.md) | class | 16 | 3 |  |
 | [CCSPlayerLegacyJump](server/CCSPlayerLegacyJump.md) | class | 24 | 2 |  |
 | [CCSPlayerModernJump](server/CCSPlayerModernJump.md) | class | 56 | 9 |  |
-| [CCSPlayerPawn](server/CCSPlayerPawn.md) | class | 5568 | 106 | [CCSPlayerPawnBase](server/CCSPlayerPawnBase.md) |
+| [CCSPlayerPawn](server/CCSPlayerPawn.md) | class | 5584 | 106 | [CCSPlayerPawnBase](server/CCSPlayerPawnBase.md) |
 | [CCSPlayerPawnBase](server/CCSPlayerPawnBase.md) | class | 3616 | 15 | [CBasePlayerPawn](server/CBasePlayerPawn.md) |
 | [CCSPlayerResource](server/CCSPlayerResource.md) | class | 1344 | 10 | [CBaseEntity](server/CBaseEntity.md) |
 | [CCSPlayer_ActionTrackingServices](server/CCSPlayer_ActionTrackingServices.md) | class | 896 | 5 | [CPlayerPawnComponent](server/CPlayerPawnComponent.md) |
@@ -166,7 +166,7 @@ module: server
 | [CCSPlayer_UseServices](server/CCSPlayer_UseServices.md) | class | 88 | 3 | [CPlayer_UseServices](server/CPlayer_UseServices.md) |
 | [CCSPlayer_WaterServices](server/CCSPlayer_WaterServices.md) | class | 128 | 6 | [CPlayer_WaterServices](server/CPlayer_WaterServices.md) |
 | [CCSPlayer_WeaponServices](server/CCSPlayer_WeaponServices.md) | class | 6328 | 13 | [CPlayer_WeaponServices](server/CPlayer_WeaponServices.md) |
-| [CCSPointScriptEntity](server/CCSPointScriptEntity.md) | class | 1576 | 0 | [CBaseEntity](server/CBaseEntity.md) |
+| [CCSPointScriptEntity](server/CCSPointScriptEntity.md) | class | 1640 | 0 | [CBaseEntity](server/CBaseEntity.md) |
 | [CCSRadarElement](server/CCSRadarElement.md) | class | 1232 | 3 | [CBaseEntity](server/CBaseEntity.md) |
 | [CCSSprite](server/CCSSprite.md) | class | 2240 | 0 | [CSprite](server/CSprite.md) |
 | [CCSTeam](server/CCSTeam.md) | class | 2080 | 14 | [CTeam](server/CTeam.md) |
@@ -344,7 +344,7 @@ module: server
 | [CHintMessage](server/CHintMessage.md) | class | 40 | 3 |  |
 | [CHintMessageQueue](server/CHintMessageQueue.md) | class | 40 | 3 |  |
 | [CHitboxComponent](server/CHitboxComponent.md) | class | 24 | 1 | [CEntityComponent](entity2/CEntityComponent.md) |
-| [CHostage](server/CHostage.md) | class | 11680 | 39 | [CHostageExpresserShim](server/CHostageExpresserShim.md) |
+| [CHostage](server/CHostage.md) | class | 11680 | 40 | [CHostageExpresserShim](server/CHostageExpresserShim.md) |
 | [CHostageAlias_info_hostage_spawn](server/CHostageAlias_info_hostage_spawn.md) | class | 11680 | 0 | [CHostage](server/CHostage.md) |
 | [CHostageCarriableProp](server/CHostageCarriableProp.md) | class | 2624 | 0 | [CBaseAnimGraph](server/CBaseAnimGraph.md) |
 | [CHostageExpresserShim](server/CHostageExpresserShim.md) | class | 2848 | 1 | [CBaseCombatCharacter](server/CBaseCombatCharacter.md) |

@@ -1,11 +1,11 @@
 {
   "schema_format_version": "2.2",
   "generator": "https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker",
-  "build_id": 25966348,
+  "build_id": 26144732,
   "platform": "windows-x86_64",
   "revision": "hl2sdk-cs2/5f891c9026230cce0fc0a3fc4b5fef1c467a1385/v1/3d1200e346019c59",
-  "version_date": "2026-10-15",
-  "version_time": "2026-10-15T17:24:20Z",
+  "version_date": "2026-10-22",
+  "version_time": "2026-10-22T21:24:50Z",
   "commands": [
     {
       "name": "+bugvoice",

@@ -54376,6 +54376,114 @@
       "value_type": "Float32"
     },
     {
+      "default": "true",
+      "flags": [
+        "archive"
+      ],
+      "help": "WebRTC: cancel game audio echoing from the speakers into the microphone (AEC3).",
+      "max": null,
+      "min": null,
+      "name": "voice_webrtc_aec",
+      "prefix": "voice",
+      "value_type": "Bool"
+    },
+    {
+      "default": "true",
+      "flags": [
+        "archive"
+      ],
+      "help": "WebRTC: adaptive digital automatic gain control (AGC2).",
+      "max": null,
+      "min": null,
+      "name": "voice_webrtc_agc",
+      "prefix": "voice",
+      "value_type": "Bool"
+    },
+    {
+      "default": "false",
+      "flags": [
+        "archive"
+      ],
+      "help": "Process in-process voice chat microphone audio with the WebRTC audio processing module (requires voice_in_process).",
+      "max": null,
+      "min": null,
+      "name": "voice_webrtc_apm",
+      "prefix": "voice",
+      "value_type": "Bool"
+    },
+    {
+      "default": "0.000000",
+      "flags": [
+        "archive"
+      ],
+      "help": "WebRTC: fixed digital gain in dB applied to the microphone before the adaptive gain stage.",
+      "max": 50,
+      "min": 0,
+      "name": "voice_webrtc_fixed_gain_db",
+      "prefix": "voice",
+      "value_type": "Float32"
+    },
+    {
+      "default": "true",
+      "flags": [
+        "archive"
+      ],
+      "help": "WebRTC: high-pass filter to remove DC offset and low rumble.",
+      "max": null,
+      "min": null,
+      "name": "voice_webrtc_hpf",
+      "prefix": "voice",
+      "value_type": "Bool"
+    },
+    {
+      "default": "true",
+      "flags": [
+        "archive"
+      ],
+      "help": "WebRTC: noise suppression.",
+      "max": null,
+      "min": null,
+      "name": "voice_webrtc_ns",
+      "prefix": "voice",
+      "value_type": "Bool"
+    },
+    {
+      "default": "2",
+      "flags": [
+        "archive"
+      ],
+      "help": "WebRTC: noise suppression aggressiveness, 0 (low) to 3 (very high).",
+      "max": 3,
+      "min": 0,
+      "name": "voice_webrtc_ns_level",
+      "prefix": "voice",
+      "value_type": "Int32"
+    },
+    {
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "help": "WebRTC: periodically print echo canceller statistics.",
+      "max": null,
+      "min": null,
+      "name": "voice_webrtc_stats",
+      "prefix": "voice",
+      "value_type": "Bool"
+    },
+    {
+      "default": "-1",
+      "flags": [
+        "developmentonly"
+      ],
+      "help": "WebRTC: speaker-to-microphone delay hint in ms for the echo canceller; -1 relies on AEC3's own delay estimation.",
+      "max": null,
+      "min": null,
+      "name": "voice_webrtc_stream_delay_ms",
+      "prefix": "voice",
+      "value_type": "Int32"
+    },
+    {
       "default": "1.000000",
       "flags": [
         "archive"
@@ -55182,7 +55290,7 @@
   "flags": [
     {
       "command_count": 0,
-      "convar_count": 503,
+      "convar_count": 510,
       "description": "Value is written to config.cfg on shutdown and reloaded on startup.",
       "name": "archive"
     },
@@ -55230,7 +55338,7 @@
     },
     {
       "command_count": 443,
-      "convar_count": 1905,
+      "convar_count": 1907,
       "description": "Present only in development builds; stripped or inert in shipping builds.",
       "name": "developmentonly"
     },

@@ -8,7 +8,7 @@ kind: class
 
 # CBasePlayerWeapon
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
 Base class for all player-held weapons in Source 2.  Manages clip ammo, reserve ammo, and attack scheduling.
 

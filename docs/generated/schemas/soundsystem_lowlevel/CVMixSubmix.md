@@ -8,7 +8,7 @@ kind: class
 
 # CVMixSubmix
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 56 bytes (`0x38`) · **Align:** 8 · **Module:** soundsystem_lowlevel
 
@@ -21,11 +21,12 @@ classDiagram
     CVMixSubmix <|-- CSubmix
     CVMixSubmix *-- VMixSendOperator_t
     CVMixSubmix *-- VMixMixDownRule_t
+    CVMixSubmix *-- VMixUpMixRule_t
 ```
 
 ## Memory layout
 
-6 fields (6 declared here, 0 inherited). Offsets are absolute from the object base.
+7 fields (7 declared here, 0 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -35,6 +36,7 @@ classDiagram
 | `0x30` | `m_nChannels` | int32 |  |  |
 | `0x34` | `m_nSendOperator` | [VMixSendOperator_t](../soundsystem_lowlevel/VMixSendOperator_t.md) |  | `MPropertyFriendlyName Send Operator` |
 | `0x36` | `m_nMixDownRule` | [VMixMixDownRule_t](../soundsystem_lowlevel/VMixMixDownRule_t.md) |  |  |
+| `0x37` | `m_nUpMixRule` | [VMixUpMixRule_t](../soundsystem_lowlevel/VMixUpMixRule_t.md) |  |  |
 
 <details><summary>KV3 class defaults</summary>
 
@@ -50,6 +52,7 @@ classDiagram
 	&quot;m_nSoloNameHash&quot;: 0,
 	&quot;m_nChannels&quot;: -1,
 	&quot;m_nSendOperator&quot;: &quot;NAMED_SEND&quot;,
-	&quot;m_nMixDownRule&quot;: &quot;SUM&quot;
+	&quot;m_nMixDownRule&quot;: &quot;SUM&quot;,
+	&quot;m_nUpMixRule&quot;: &quot;DIVIDE&quot;
 }</pre>
 </details>

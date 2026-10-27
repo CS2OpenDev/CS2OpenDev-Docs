@@ -4,7 +4,7 @@ title: Schemas
 
 # Schema Reference
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
 Every class, struct, and enum extracted from CS2's runtime schema, organised by module. Each module page lists its types; each type has its own page carrying the full **memory layout** — field offsets, class size, and fields inherited from base classes.
 
@@ -43,13 +43,13 @@ Every class, struct, and enum extracted from CS2's runtime schema, organised by 
 | [rendersystemdx11](schemas/rendersystemdx11.md) | 7 | [📊 Diagram](diagrams/rendersystemdx11.md) |
 | [resourcecompiler](schemas/resourcecompiler.md) | 19 | [📊 Diagram](diagrams/resourcecompiler.md) |
 | [resourcefile](schemas/resourcefile.md) | 6 | [📊 Diagram](diagrams/resourcefile.md) |
-| [resourcesystem](schemas/resourcesystem.md) | 49 | [📊 Diagram](diagrams/resourcesystem.md) |
+| [resourcesystem](schemas/resourcesystem.md) | 48 | [📊 Diagram](diagrams/resourcesystem.md) |
 | [scenesystem](schemas/scenesystem.md) | 16 | [📊 Diagram](diagrams/scenesystem.md) |
 | [schemasystem](schemas/schemasystem.md) | 3 | — |
 | [server](schemas/server.md) | 1123 | [📊 Diagram](diagrams/server.md) |
 | [sounddoc_lib](schemas/sounddoc_lib.md) | 143 | [📊 Diagram](diagrams/sounddoc_lib.md) |
 | [soundsystem](schemas/soundsystem.md) | 50 | [📊 Diagram](diagrams/soundsystem.md) |
-| [soundsystem_lowlevel](schemas/soundsystem_lowlevel.md) | 93 | [📊 Diagram](diagrams/soundsystem_lowlevel.md) |
+| [soundsystem_lowlevel](schemas/soundsystem_lowlevel.md) | 94 | [📊 Diagram](diagrams/soundsystem_lowlevel.md) |
 | [soundsystem_voicecontainers](schemas/soundsystem_voicecontainers.md) | 49 | [📊 Diagram](diagrams/soundsystem_voicecontainers.md) |
 | [steamaudio](schemas/steamaudio.md) | 17 | [📊 Diagram](diagrams/steamaudio.md) |
 | [texturelib](schemas/texturelib.md) | 14 | [📊 Diagram](diagrams/texturelib.md) |

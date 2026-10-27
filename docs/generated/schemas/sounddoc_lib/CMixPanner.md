@@ -8,13 +8,13 @@ kind: class
 
 # CMixPanner
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 40 bytes (`0x28`) · **Align:** 8 · **Module:** sounddoc_lib
 
 **Inherits from:** [CMixPropertyBase](../sounddoc_lib/CMixPropertyBase.md)
 
-**Metadata:** `MPropertyDescription Adjust the stereo panning of an audio track.`, `MPropertyFriendlyName VMix Panner Audio Node`
+**Metadata:** `MPropertyDescription Adjust the stereo panning of an audio track. -1 pans left, +1 pans right`, `MPropertyFriendlyName VMix Panner Audio Node`
 
 **Relationships:**
 

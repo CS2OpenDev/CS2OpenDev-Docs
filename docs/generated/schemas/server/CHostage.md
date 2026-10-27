@@ -8,7 +8,7 @@ kind: class
 
 # CHostage
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
 Entity representing a hostage NPC in hostage-rescue game mode.  Each hostage has a simple navigation AI that follows the rescuing CT player.
 
@@ -39,7 +39,7 @@ classDiagram
 
 ## Memory layout
 
-197 fields (39 declared here, 158 inherited). Offsets are absolute from the object base.
+198 fields (40 declared here, 158 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -231,12 +231,13 @@ classDiagram
 | `0x2d1d` | `m_bHandsHaveBeenCut` | bool |  | True once a CT has interacted with this hostage to free it (deprecated mechanic from CS:GO; retained for compatibility). |
 | `0x2d20` | `m_hHostageGrabber` | CHandle< [CCSPlayerPawn](../server/CCSPlayerPawn.md) > |  | CHandle to the CCSPlayerPawn currently grabbing/carrying this hostage. |
 | `0x2d24` | `m_fLastGrabTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0x2d28` | `m_vecPositionWhenStartedDroppingToGround` | VectorWS |  |  |
-| `0x2d34` | `m_vecGrabbedPos` | VectorWS |  |  |
-| `0x2d40` | `m_flRescueStartTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime at which the current rescue attempt began. |
-| `0x2d44` | `m_flGrabSuccessTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime at which the grab interaction successfully completed and carrying began. |
-| `0x2d48` | `m_flDropStartTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime at which the carrier started dropping the hostage. |
-| `0x2d4c` | `m_nApproachRewardPayouts` | int32 |  |  |
-| `0x2d50` | `m_nPickupEventCount` | int32 |  |  |
-| `0x2d54` | `m_vecSpawnGroundPos` | VectorWS |  |  |
-| `0x2d8c` | `m_vecHostageResetPosition` | VectorWS |  |  |
+| `0x2d28` | `m_flGrabStartTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0x2d2c` | `m_vecPositionWhenStartedDroppingToGround` | VectorWS |  |  |
+| `0x2d38` | `m_vecGrabbedPos` | VectorWS |  |  |
+| `0x2d44` | `m_flRescueStartTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime at which the current rescue attempt began. |
+| `0x2d48` | `m_flGrabSuccessTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime at which the grab interaction successfully completed and carrying began. |
+| `0x2d4c` | `m_flDropStartTime` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime at which the carrier started dropping the hostage. |
+| `0x2d50` | `m_nApproachRewardPayouts` | int32 |  |  |
+| `0x2d54` | `m_nPickupEventCount` | int32 |  |  |
+| `0x2d58` | `m_vecSpawnGroundPos` | VectorWS |  |  |
+| `0x2d90` | `m_vecHostageResetPosition` | VectorWS |  |  |

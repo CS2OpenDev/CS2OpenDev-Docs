@@ -20,7 +20,7 @@
       ],
       "schema_module": "animationsystem",
       "schema_registration_count": 69,
-      "sha256": "fb2b4cd71468e880c3b3845e8e7a18c9d550dd3c4504e4a257a2110fb91c1235",
+      "sha256": "8aa57d0c5b90cb49ad5fd9f141004710180a601b08159e50e93c4470142ea132",
       "stem": "animationsystem"
     },
     {
@@ -30,27 +30,27 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 66,
-      "sha256": "6d1582ffe09e02343d9935442321b59762fdc5f447563e500da9de5ca172b8fc",
+      "sha256": "1968bc2e28521f0e93fb5ee7c78ff47bba51b175a453fa52d7713cabc5f2d390",
       "stem": "assetbrowser"
     },
     {
       "export_count": 7,
-      "file_size": "48611480",
+      "file_size": "48612504",
       "path": "game/bin/win64/assetpreview.dll",
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 66,
-      "sha256": "95a64c6cf9d09866a0269c5a17d32169deab1853b719a7479cd0f1b35c6f35d1",
+      "sha256": "80e4f67dc1e0b320367fdfaf6a0b8d284b292c682d65db5f5d51b921ce3c4c3b",
       "stem": "assetpreview"
     },
     {
       "export_count": 6,
-      "file_size": "33820312",
+      "file_size": "33821336",
       "path": "game/bin/win64/assetrename.dll",
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 73,
-      "sha256": "738f18fd9e96d2250ee217201ec0592b67953635721f9301e18cf3b34133e877",
+      "sha256": "bb77e4cf73d602a4f269084453504f3a7691a057af353f41301e3a1c8aaa2a79",
       "stem": "assetrename"
     },
     {
@@ -60,7 +60,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "613c2f8d52eb270e342285dec827ea88317ae11335c6b29f4770eb6b3fae9071",
+      "sha256": "15e8853d602838b3e77ad6c62086a17740b6af451b3a396175e2dcd29e612853",
       "stem": "assetsystem"
     },
     {
@@ -90,7 +90,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "e6af51f8c4277c73ccb6100ae58a07907d73c8a390535806b910ed0765c42a4d",
+      "sha256": "b670a16c455005269061a5bce9ff60e3daf188a1da28d575cd51099f248dc1c6",
       "stem": "bugreporter_filequeue"
     },
     {
@@ -135,7 +135,7 @@
     },
     {
       "export_count": 43,
-      "file_size": "6829720",
+      "file_size": "7497880",
       "path": "game/bin/win64/engine2.dll",
       "resolved_interfaces": [
         "EngineServiceMgr001",
@@ -148,7 +148,7 @@
       ],
       "schema_module": "engine2",
       "schema_registration_count": 4,
-      "sha256": "6456df18d8f954394024c2c07da8c848df15a5ace74ce7390d78970ceb39ee21",
+      "sha256": "e8533af07adc3426eac95391cb70804a0a27f8391c03d36f1cfa06f50d901d29",
       "stem": "engine2"
     },
     {
@@ -158,12 +158,12 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "311c82e1b29f6a173fc2dbd8bfb47705948a5b2af77a83fc092532ae1e76d4be",
+      "sha256": "0e659b945744f925a172f69509df2c4be33270f252c37e3952623fde34a0f8ee",
       "stem": "exportsystem"
     },
     {
       "export_count": 6,
-      "file_size": "2259096",
+      "file_size": "2260120",
       "path": "game/bin/win64/filesystem_stdio.dll",
       "resolved_interfaces": [
         "VAsyncFileSystem2_001",
@@ -171,7 +171,7 @@
       ],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "f5651b082ecd2c4d4f9ec29eba882a2a8151f8b41f66e8cdb4bd99b4c8d5a945",
+      "sha256": "465be859c2cc231666301328939da3ed4f7b087ebdbaad325631b481717da183",
       "stem": "filesystem_stdio"
     },
     {
@@ -186,12 +186,12 @@
     },
     {
       "export_count": 6,
-      "file_size": "756376",
+      "file_size": "755864",
       "path": "game/bin/win64/helpsystem.dll",
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "8da21e3cf916f29c5f523a586acb8a229a309e530be7afd9ca3a34cf26cbfb4c",
+      "sha256": "9fecba24b747084a4593909e2ea976cb6b02e4af47d6a8e1f80c6c3d430454c5",
       "stem": "helpsystem"
     },
     {
@@ -201,7 +201,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "b08c61116da0e10faf002857280de099b7e20e20122c6802e49486c6d2ac97af",
+      "sha256": "114f8ddef16f8817e108c4af2479d2f7df62e5385acb977c7a3d38fc36be5a5f",
       "stem": "imemanager"
     },
     {
@@ -213,7 +213,7 @@
       ],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "bed6c10a27f1629054f2e4552a7bf6f9325dc9e08d1295ca367fc14141f1e07d",
+      "sha256": "a74a4ac1906f6d1fc5e7180b6615b9f11cbd14457a323038c7c47f81a0aef52a",
       "stem": "inputsystem"
     },
     {
@@ -383,12 +383,12 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "8f3abab5247f5a97ed62caffd0a4399c11a17901a64aea28e34ec6e46c94f449",
+      "sha256": "8bd83648f42c1e1dcdc0c97a7e0befc5a53526ffa176e518f54fbe7edf6e702d",
       "stem": "localize"
     },
     {
       "export_count": 6,
-      "file_size": "1429144",
+      "file_size": "1428632",
       "path": "game/bin/win64/materialsystem2.dll",
       "resolved_interfaces": [
         "TextLayout_001",
@@ -396,7 +396,7 @@
       ],
       "schema_module": "materialsystem2",
       "schema_registration_count": 0,
-      "sha256": "b4d5c667eb65f13d9193d743a88eb1f9dfa623cc8f745cef764d9977969e38b6",
+      "sha256": "2fe9750177006c24aacd0f86b14efbc00d04ca61d86f27f1b07b263eefb06d69",
       "stem": "materialsystem2"
     },
     {
@@ -406,17 +406,17 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "f66f01a90a2b2492dd281e41291e92a2151336c733c4b85d5f577714e0dfef4b",
+      "sha256": "e81beee25e94456b88b0af426c9bb4d0ee6ae2eba8cf303a205b4e4c9da98643",
       "stem": "meshsystem"
     },
     {
       "export_count": 6,
-      "file_size": "16949400",
+      "file_size": "16949912",
       "path": "game/bin/win64/modeldoc_utils.dll",
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 68,
-      "sha256": "aab84f3eec6246886a29633ea09034df8190e6c288f1734d29663b74c3e5639e",
+      "sha256": "3095df9fd12309275f8cfbb455d0f791a7cfdf84d9d77781e4597ca302cb11ca",
       "stem": "modeldoc_utils"
     },
     {
@@ -426,7 +426,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "919803ec647ac53c95524a6be8193fb19fddede2936ed05a8b8cda984f33098e",
+      "sha256": "1d26430b4dd3cad5fc080e3a54d68328fc9b55cca50e59d35dda3d0c06a55a57",
       "stem": "navsystem"
     },
     {
@@ -441,7 +441,7 @@
       ],
       "schema_module": "networksystem",
       "schema_registration_count": 0,
-      "sha256": "be7e13ad771b21c986e25d9469993a1225be5649473f3d722ca5eefe375d1bec",
+      "sha256": "251f3d21652a65584d7034969eed0517378f01b7da02616c757802f0f1013275",
       "stem": "networksystem"
     },
     {
@@ -511,7 +511,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "546db31107ef8c322673c341930fb34479d19d490bd91d54d6ad56f6b3cee5f6",
+      "sha256": "c06116d4c645364b99b6b050ff050fd580470803f1b62c41f82f223a13a62a14",
       "stem": "p4lib"
     },
     {
@@ -523,7 +523,7 @@
       ],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "b5028e9077f0176cd338e6cdac92b8d5024519e6833bd0e979a2f1062ccef412",
+      "sha256": "b8b6d555059e6ddcaf80695f63061ef75f31fc18b909d86677cb40dce53ac602",
       "stem": "panorama"
     },
     {
@@ -533,7 +533,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "0035ed5eaf603ea76c784d719f48a1d6c7ee1f882c57aee322688d0bdfcc92ad",
+      "sha256": "be3d52eb2e8f217d62063c60a7b448374128063b102f85b5e5e7d99874c82d86",
       "stem": "panorama_text_pango"
     },
     {
@@ -545,7 +545,7 @@
       ],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "060333bbf66a1b393b8239b2ee916e4b6b8165785de02db77887ed67fd3a4738",
+      "sha256": "d86de934a196ad4326c19a182d82f58d4acd7390b2d82df82032afea8b22b0c6",
       "stem": "panoramauiclient"
     },
     {
@@ -557,7 +557,7 @@
       ],
       "schema_module": "particles",
       "schema_registration_count": 68,
-      "sha256": "04579a505614df9962bfb3248105ccfc079e1da65c9e0ee110989088c64a75a6",
+      "sha256": "dfc4faf5df7625fcdd26c26991d7ac76db5985671c9d361433d17bb7be932878",
       "stem": "particles"
     },
     {
@@ -582,12 +582,12 @@
     },
     {
       "export_count": 6,
-      "file_size": "13949592",
+      "file_size": "13950616",
       "path": "game/bin/win64/physicsbuilder.dll",
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "2b833eb7c91abe8430af9eb274d47babc458ddf0e488e189c3b846ba182e9522",
+      "sha256": "8e7ce19e8ab53f08f095d3062a64b100bb39f21ab48618bb6e99e37cf79a3755",
       "stem": "physicsbuilder"
     },
     {
@@ -612,12 +612,12 @@
     },
     {
       "export_count": 6,
-      "file_size": "1534256",
+      "file_size": "1522840",
       "path": "game/bin/win64/propertyeditor.dll",
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "47ef7d5e7339e5d0526114ff20141eb59466ef4528ae198f0135daf630d2cde0",
+      "sha256": "ac06e2668947608fb2c879e211c8ea65e3e86ff33204b89fe848e7e91780894d",
       "stem": "propertyeditor"
     },
     {
@@ -629,7 +629,7 @@
       ],
       "schema_module": "pulse_system",
       "schema_registration_count": 102,
-      "sha256": "e547f35a9f669f7714add1e87a247c4fc4a8001f2cdf084ccace3596965c17c6",
+      "sha256": "c39b87ea223dd8e2696a2ad9a12376d8fee1c58dda1492a3fa13478e29d7ea58",
       "stem": "pulse_system"
     },
     {
@@ -762,17 +762,17 @@
       ],
       "schema_module": "rendersystemdx11",
       "schema_registration_count": 0,
-      "sha256": "34efae18998db8af3e9b9663006a45c3dada8dd34757bce880e27ea853ba51d8",
+      "sha256": "fbd28df3458e1f5d0a21ff03c2c25e63a372063098dc4f455b07b80b3473eb8f",
       "stem": "rendersystemdx11"
     },
     {
       "export_count": 6,
-      "file_size": "1774232",
+      "file_size": "1774744",
       "path": "game/bin/win64/rendersystemempty.dll",
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "b2213d65d1712ea0bcb90d02792a1b082e63ceb2114aac0dc89ee702be5c9b79",
+      "sha256": "b129dbed7decc0d0eccaf68b7e34e46051a31a8b93a3c03758b186d157da2da1",
       "stem": "rendersystemempty"
     },
     {
@@ -785,17 +785,17 @@
       ],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "2febd86471b9ed1953e75875296f3e76999661f1e86cb68e928c0cb12a2afb4a",
+      "sha256": "f1fe4ee70c284f85401919dcc85307e6fa00760fc1a0f2041a1bc25d9d1562cb",
       "stem": "rendersystemvulkan"
     },
     {
       "export_count": 6,
-      "file_size": "56337048",
+      "file_size": "56351896",
       "path": "game/bin/win64/resourcecompiler.dll",
       "resolved_interfaces": [],
       "schema_module": "resourcecompiler",
       "schema_registration_count": 73,
-      "sha256": "204e16e550fd3936585bd467303b9b2033fdd7de9f1038c045095b3f5e15ac78",
+      "sha256": "eee3b5a3cbb92359ce8fffdf7cf1c83e938b03202daef8277c575bda42cc8d7a",
       "stem": "resourcecompiler"
     },
     {
@@ -807,7 +807,7 @@
       ],
       "schema_module": "resourcesystem",
       "schema_registration_count": 0,
-      "sha256": "0004439e37b6ffd5a37683f9f288726584be2a3b4ccc6674af8303cde0343027",
+      "sha256": "29d503822278305b197c5d4c299b77961f6c5b9c0ab989dae81723c8546fa75f",
       "stem": "resourcesystem"
     },
     {
@@ -817,7 +817,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "25676a2da9a8c292a41a6125d22aa414b5b0012d0022221f9c849a0ac5ef6d36",
+      "sha256": "5f24f532cf687d73ad1bbb9806c5ea52b780bc833daaa90bcd859497a7ec71f8",
       "stem": "scenefilecache"
     },
     {
@@ -830,7 +830,7 @@
       ],
       "schema_module": "scenesystem",
       "schema_registration_count": 0,
-      "sha256": "040eb851fa7875523346b890f1ed6e158abc59e08bccbd8dc60539435277efa5",
+      "sha256": "0f17ccdc083290a496e6ac13e4fe54413077ad2b83b7dfd281749cffd2733d9b",
       "stem": "scenesystem"
     },
     {
@@ -840,7 +840,7 @@
       "resolved_interfaces": [],
       "schema_module": "schemasystem",
       "schema_registration_count": 0,
-      "sha256": "d2a9b5164cb68953e77d0ef424c1263d2cc452a75e935316bc8b4c4500e63648",
+      "sha256": "2d2d04c4aa2ed8aca1c9b57f3f0d82278907e898156c417a2dd38f48c63c44f0",
       "stem": "schemasystem"
     },
     {
@@ -860,19 +860,19 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "2e7782278b4054ee286ac28c3e30310e94022b6e5ac39ea0a90e1699eed2e91a",
+      "sha256": "658e02187d1b6fdeee1c7979a3774221af0c967b78a9098a619d250e47f7cf66",
       "stem": "smartprops"
     },
     {
       "export_count": 42,
-      "file_size": "5849752",
+      "file_size": "5837464",
       "path": "game/bin/win64/soundsystem.dll",
       "resolved_interfaces": [
         "SoundSystem001"
       ],
       "schema_module": "soundsystem",
       "schema_registration_count": 0,
-      "sha256": "4de8a596efcca2619fa55a46bedb151b7e835a52560c37849bbfb03ade7ad36b",
+      "sha256": "d11169711d97a3e7641b1c277cf22076559fd3b754408bb169b2873a7039dfe2",
       "stem": "soundsystem"
     },
     {
@@ -892,7 +892,7 @@
       "resolved_interfaces": [],
       "schema_module": "steamaudio",
       "schema_registration_count": 0,
-      "sha256": "772d645c48f6dc2394311297fdc2fecf3cb930b3223b1d1c0ee732454df351ff",
+      "sha256": "50a9eb97250dd9bc09c03b8c3abadb8f2c971712dc94db020d6a1c1691de5d1c",
       "stem": "steamaudio"
     },
     {
@@ -912,7 +912,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "1f8fe13200eb5e9fcb4bd5a574cd2cfec4e9e3778884fee6e711d0d466addcd9",
+      "sha256": "3a2813e5d2a8a8b2749bf460030ae44c649e10f07c0b8490c3d2c36b64f23d78",
       "stem": "convarhelper_subtool"
     },
     {
@@ -922,7 +922,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "26baa2433d74433b697b240ba9e87d5ee4ea0366cc584997c085ffbc723f1103",
+      "sha256": "f649a72fd5a8d5d3aed55bd4672adafbc0281ca060849929b9271478a214502d",
       "stem": "dashboard_subtool"
     },
     {
@@ -932,7 +932,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "debe1a7c046ad4f910339278cb8bdd44dea57226efae5aa16e4f76efade3cb84",
+      "sha256": "e69d2b66d8232111ccbe665fb296508a56810ab251534ebf7cec407b91e1a38e",
       "stem": "netgraph_subtool"
     },
     {
@@ -942,7 +942,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "fba1d5e4e649bac34b8872d9e65e0f4a2dd701d4546a4d048b302e76c4d0fd79",
+      "sha256": "7ece3e430fab369a06d8f8771a7f1425deed85d57e7108b554ebfcfffcf4deaa",
       "stem": "soundviewer_subtool"
     },
     {
@@ -952,7 +952,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "4c6a33bd836d721bb02eb21d30a64dc3ed6fcd6549ca5ab11540b134a0f825cf",
+      "sha256": "807f92f2af50835a92b6e2bd3d1a3d9e2cfeaec653d3e9dcd31c5762b2b1c062",
       "stem": "vprof_subtool"
     },
     {
@@ -1022,17 +1022,17 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "990ea56bf1626d299ba54b64b423f2e409bd592bb737c7a5edf7972ad5c7143e",
+      "sha256": "f96f4f9666be66ee3dd42a015b305d954b5dd5582b0608a74e50548df426584d",
       "stem": "tier0"
     },
     {
       "export_count": 6,
-      "file_size": "13707928",
+      "file_size": "13708952",
       "path": "game/bin/win64/toolframework2.dll",
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "56c674c1b10c59f7ada962782a4acd23e7b2806ede7496e2a714ecb1c24aa01e",
+      "sha256": "a14d41f14d9c6c043f0e2fc02518cd335b4412756e8958f69d58efb4d2ca8b87",
       "stem": "toolframework2"
     },
     {
@@ -1042,7 +1042,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "71a44c156ac4550825a464b9c965b73eb05a52db93d9a8a916d4655ae33954a1",
+      "sha256": "6b247c536aed32e2b6784dccf7854455bf79e42118b9101e068752ab84b93d0e",
       "stem": "cs2_item_editor"
     },
     {
@@ -1052,37 +1052,37 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "c24f88e8cea50f2a2c0f151d673f4d5836a107962e953531b19ab2caaf22bf26",
+      "sha256": "8187622f3d616e57e3fc80cb52965a2c1f5431ace3cf47098a6b340f1f84a4e6",
       "stem": "cs2_workshop_manager"
     },
     {
       "export_count": 6,
-      "file_size": "39611032",
+      "file_size": "39611544",
       "path": "game/bin/win64/tools/hammer.dll",
       "resolved_interfaces": [],
       "schema_module": "hammer",
       "schema_registration_count": 72,
-      "sha256": "46884a34b9b51fda1d46499d6c9963b6ba218518278f76df85e042fa388c3d41",
+      "sha256": "5901a11ceb483a2a8af05ec576eb5485b96adcb3779875ca3939fe67b28b0de1",
       "stem": "hammer"
     },
     {
       "export_count": 6,
-      "file_size": "4767896",
+      "file_size": "4787352",
       "path": "game/bin/win64/tools/met.dll",
       "resolved_interfaces": [],
       "schema_module": "met",
       "schema_registration_count": 66,
-      "sha256": "e35f1ba62a804d4eb982947c3bd16a94b12345c768b36d783baf363773bcfe4e",
+      "sha256": "8fa22b8dfd923228ef8a3dcb18fa581cda07c1ca61e2403bd9f1713ae629f7a1",
       "stem": "met"
     },
     {
       "export_count": 6,
-      "file_size": "27271320",
+      "file_size": "27271832",
       "path": "game/bin/win64/tools/modeldoc_editor.dll",
       "resolved_interfaces": [],
       "schema_module": "modeldoc_editor",
       "schema_registration_count": 66,
-      "sha256": "e2754b9b62bf12161320e642f75ab906d5f4e7bdd233f8a78710a82c9439de9d",
+      "sha256": "e834dd88349fe1a6bc4134b82e5bba89728ec9a9b7c7dcf60c7d53d4aa70b09c",
       "stem": "modeldoc_editor"
     },
     {
@@ -1092,7 +1092,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 68,
-      "sha256": "84970e41a22c99f6825b17a14a9630bb0aff991982046504697d69bf56f34cc8",
+      "sha256": "e930bd6925c98a5325d04ab59b6156c72c8b3e24ffd7fe075d39b1f7caae347f",
       "stem": "pet"
     },
     {
@@ -1102,17 +1102,17 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 66,
-      "sha256": "1d3329f0ca8964d644546e67b3d9826c8fdc28621fb1e0d90d937b643f7efec8",
+      "sha256": "c41c952a18efc5b99ff997e0eb80db3abbf7cd7c9ee5c7d41c215a1c93bf557b",
       "stem": "postprocessingeditor"
     },
     {
       "export_count": 7,
-      "file_size": "13459096",
+      "file_size": "13459608",
       "path": "game/bin/win64/tools/sfm.dll",
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 70,
-      "sha256": "895a88ac1b74eed5c549b03e50b909a898a648696ff03b20e7a4a76a31bdfe1e",
+      "sha256": "82f89e0e369da91982310b2a9cdf56a20b2879607241aa3abb9f3b2e9205af94",
       "stem": "sfm"
     },
     {
@@ -1122,7 +1122,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "cdb4e25218cf578f9aa18d15deaa5c3e4a708fad5c549c415b650c6090795e64",
+      "sha256": "951c1c092d2acb9a32428cae7a8cb3f3993316e1a39ca9f8cbe3119cecfcab87",
       "stem": "subrecteditor"
     },
     {
@@ -1132,7 +1132,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 70,
-      "sha256": "aab7e3059a0e1534c1f22a312668a80de05da34e7be524cff8821741c75b565f",
+      "sha256": "bb2f255781ab3dd8605b657dac0a860e56b3eb0ee8baaec218b816ea677fd8be",
       "stem": "toolscenenodes"
     },
     {
@@ -1202,7 +1202,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "c899c3e6f41207fb1b7cb3bef8e60cd5021fd4343a2c236ac60088c8710fb263",
+      "sha256": "eb81a399ac01a58c1584632e77aa7342c4df62d6c825c8024b2ceb9610592b1a",
       "stem": "v8system"
     },
     {
@@ -1212,7 +1212,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "d9bbb9584ea18799b40130a1f27c02a2c379aba234cde4419ae669c3ba22b253",
+      "sha256": "5497b56d5636e823d683c7600aad0e450eb8c5b434d25954993b4c7f8b5e95e4",
       "stem": "valve_avi"
     },
     {
@@ -1222,7 +1222,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "6a217650120eebf98f788383128d90efbbc5488ab98a411c1a63652098a39e29",
+      "sha256": "5b74f0e172ff91465e9a38c066db63d133a4e666b9a58bc0aa3b13aaaa7d5b7c",
       "stem": "valve_webm"
     },
     {
@@ -1232,7 +1232,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "6d1508b751cd6c681d7981fa50e350028782d49b46f77a72bba82b6c5b385a5e",
+      "sha256": "1ee20672d343dcf57a6704c72cb3b00173997b110fba2e78251af87daa6d2f79",
       "stem": "valve_wmf"
     },
     {
@@ -1242,7 +1242,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "8757565488a6097bae89945075f5c54317ca94b600b7a456d0ee5919e5ffa325",
+      "sha256": "724b4e429bcf996f929a5b1cab460110054a994566e1e7c6bf04cb11ee8ae734",
       "stem": "vconcomm"
     },
     {
@@ -1252,7 +1252,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "03a334dbb9d49ce2adbd2724970b022904788ab634ac940e2fa0bb3e4c68b0d3",
+      "sha256": "37269128f34bf8e430fac7038c697edd3b5d8d24ef8e4f3e32d86fbbf853b95c",
       "stem": "vfx_dx11"
     },
     {
@@ -1272,7 +1272,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "ff000621c4492258de141eaecf7dd29eea7cacbaa0c4ab0da7f73234b841a022",
+      "sha256": "df83ca4a539e4984e82d894dfd660f3c3e501c68d1f4d420a89bda973c5b96af",
       "stem": "visbuilder"
     },
     {
@@ -1284,7 +1284,7 @@
       ],
       "schema_module": "vphysics2",
       "schema_registration_count": 0,
-      "sha256": "1d7680455eb1ca3ad7c9b92165515351f607e96db66cf466140aaf3f00946dba",
+      "sha256": "3f5c2890aa694e4ad2da55528844e1cc3981466ff932619796f5876e009cc2be",
       "stem": "vphysics2"
     },
     {
@@ -1294,7 +1294,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "640aa494e082e93639fe0a6a583321abb8cb3930d6dbd9162e3a9e2a951bf9b3",
+      "sha256": "c3fc929ee60d100e92d4758ed6990653caa9bdaa59709354b0663ece44ed264b",
       "stem": "vrad3"
     },
     {
@@ -1304,7 +1304,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "e03cd94d4060c6230a6699eaf6e123d51e54c0486eba63bb1a969f342c06d8ee",
+      "sha256": "9b10dd0023dbe05057165f6a5c7199317a6c26cf55b2c10215578a76045f6f49",
       "stem": "vscript"
     },
     {
@@ -1316,12 +1316,12 @@
       ],
       "schema_module": "worldrenderer",
       "schema_registration_count": 4,
-      "sha256": "f9eeff50acb10a89ab78c98d2726d3e5e6b5adf7a8b11be2a41cb5ebded11dac",
+      "sha256": "e0b1ed04a652f8268fd9d6b75b5a97910ab57197e2cdb8a0a4966703a5ec8322",
       "stem": "worldrenderer"
     },
     {
       "export_count": 6,
-      "file_size": "39205528",
+      "file_size": "39215768",
       "path": "game/csgo/bin/win64/client.dll",
       "resolved_interfaces": [
         "Source2Client002",
@@ -1331,7 +1331,7 @@
       ],
       "schema_module": "client",
       "schema_registration_count": 516,
-      "sha256": "659940c1db362ed981d1df10637cec8c2a3d99409b77fc3b73e435e4649e36b0",
+      "sha256": "ccaf4e4926babc052994502b19ec61198a11008a39dce712921b93dd993be9f5",
       "stem": "client"
     },
     {
@@ -1344,7 +1344,7 @@
       ],
       "schema_module": "host",
       "schema_registration_count": 0,
-      "sha256": "56efa66a333edb347f044c9bcbc5236bd7d006e478623b3364e5d0a7d681b9cc",
+      "sha256": "f7db2685acbba12c27b3237aa0efa3f17a1698b0055adb0b950f0ee24519783c",
       "stem": "host"
     },
     {
@@ -1356,24 +1356,24 @@
       ],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "d41c00304993e8a584423c5e66cb101d39beceef27029c9778df87bb3a8b8b1d",
+      "sha256": "aa7553299fe6e053a535b798280db32d7c0e7e9d49651adaca9393b1d3998e2f",
       "stem": "matchmaking"
     },
     {
       "export_count": 6,
-      "file_size": "17944216",
+      "file_size": "17946264",
       "path": "game/csgo/bin/win64/modtools.dll",
       "resolved_interfaces": [
         "Source2ModTools001"
       ],
       "schema_module": "modtools",
       "schema_registration_count": 0,
-      "sha256": "31a29e428fd5e9bacf66614e7d11a44d273cdd74636bb3c45256e541655c18d6",
+      "sha256": "c9c4d68a8a235ed541f4ca07eae1f02b94830cceba94bc37f55e7cc9f1b18b68",
       "stem": "modtools"
     },
     {
       "export_count": 6,
-      "file_size": "34628248",
+      "file_size": "34687128",
       "path": "game/csgo/bin/win64/server.dll",
       "resolved_interfaces": [
         "Source2GameClients001",
@@ -1383,7 +1383,7 @@
       ],
       "schema_module": "server",
       "schema_registration_count": 766,
-      "sha256": "09e8c04c5f44040155d04fa79a3f43491d542a386f45807ed77785729e5925a9",
+      "sha256": "2a229dd46c8af0b52c1f49a3e343b99d9ffe946c102c56102a45b00f6a52349c",
       "stem": "server"
     },
     {

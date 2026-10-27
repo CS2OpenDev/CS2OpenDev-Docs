@@ -8,7 +8,7 @@ kind: class
 
 # C_OP_RenderRopes
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 13608 bytes (`0x3528`) · **Align:** 8 · **Module:** particles
 

@@ -8,9 +8,9 @@ kind: class
 
 # CVoiceContainerVsndTrigger
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 2296 bytes (`0x8f8`) · **Align:** 8 · **Module:** soundsystem_voicecontainers
+**Kind:** class · **Size:** 2304 bytes (`0x900`) · **Align:** 8 · **Module:** soundsystem_voicecontainers
 
 **Inherits from:** [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md)
 
@@ -26,34 +26,38 @@ classDiagram
 
 ## Memory layout
 
-19 fields (17 declared here, 2 inherited). Offsets are absolute from the object base.
+21 fields (17 declared here, 4 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x28` | `m_vSound` | [CVSound](../soundsystem_voicecontainers/CVSound.md) | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressField` |
-| `0x68` | `m_pEnvelopeAnalyzer` | [CVoiceContainerAnalysisBase](../soundsystem_voicecontainers/CVoiceContainerAnalysisBase.md)* | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressExpr true` |
-| `0x70` | `m_namespace` | CUtlString |  | `MPropertyFriendlyName Namespace` |
-| `0x78` | `m_slot1` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 01` |
-| `0x100` | `m_slot2` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 02` |
-| `0x188` | `m_slot3` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 03` |
-| `0x210` | `m_slot4` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 04` |
-| `0x298` | `m_slot5` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 05` |
-| `0x320` | `m_slot6` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 06` |
-| `0x3a8` | `m_slot7` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 07` |
-| `0x430` | `m_slot8` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 08` |
-| `0x4b8` | `m_slot9` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 09` |
-| `0x540` | `m_slot10` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 10` |
-| `0x5c8` | `m_slot11` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 11` |
-| `0x650` | `m_slot12` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 12` |
-| `0x6d8` | `m_slot13` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 13` |
-| `0x760` | `m_slot14` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 14` |
-| `0x7e8` | `m_slot15` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 15` |
-| `0x870` | `m_slot16` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 16` |
+| `0x10` | `m_bRegisteredVMix` | bool | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) |  |
+| `0x14` | `m_nResourceName` | CUtlStringToken | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) |  |
+| `0x30` | `m_vSound` | [CVSound](../soundsystem_voicecontainers/CVSound.md) | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressField` |
+| `0x70` | `m_pEnvelopeAnalyzer` | [CVoiceContainerAnalysisBase](../soundsystem_voicecontainers/CVoiceContainerAnalysisBase.md)* | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressExpr true` |
+| `0x78` | `m_namespace` | CUtlString |  | `MPropertyFriendlyName Namespace` |
+| `0x80` | `m_slot1` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 01` |
+| `0x108` | `m_slot2` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 02` |
+| `0x190` | `m_slot3` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 03` |
+| `0x218` | `m_slot4` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 04` |
+| `0x2a0` | `m_slot5` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 05` |
+| `0x328` | `m_slot6` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 06` |
+| `0x3b0` | `m_slot7` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 07` |
+| `0x438` | `m_slot8` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 08` |
+| `0x4c0` | `m_slot9` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 09` |
+| `0x548` | `m_slot10` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 10` |
+| `0x5d0` | `m_slot11` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 11` |
+| `0x658` | `m_slot12` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 12` |
+| `0x6e0` | `m_slot13` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 13` |
+| `0x768` | `m_slot14` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 14` |
+| `0x7f0` | `m_slot15` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 15` |
+| `0x878` | `m_slot16` | [CVsndTriggerSlot](../soundsystem_voicecontainers/CVsndTriggerSlot.md) |  | `MPropertyFriendlyName Vsnd 16` |
 
 <details><summary>KV3 class defaults</summary>
 
 <pre>{
 	&quot;_class&quot;: &quot;CVoiceContainerVsndTrigger&quot;,
+	&quot;m_bRegisteredVMix&quot;: false,
+	&quot;m_nResourceName&quot;: &quot;&quot;,
 	&quot;m_vSound&quot;:
 	{
 		&quot;m_Sentences&quot;:

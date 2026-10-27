@@ -5,7 +5,7 @@ module: soundsystem
 
 # Module: soundsystem
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
 [📊 View UML Diagram](../diagrams/soundsystem.md)
 
@@ -37,7 +37,7 @@ module: soundsystem
 | [CSosSoundEventGroupSchema](soundsystem/CSosSoundEventGroupSchema.md) | class | 112 | 16 |  |
 | [CSubmix](soundsystem/CSubmix.md) | class | 80 | 0 | [CVMixSubmix](soundsystem_lowlevel/CVMixSubmix.md) |
 | [CVMixDescription](soundsystem/CVMixDescription.md) | class | 272 | 4 | [CVMixBaseGraphDescription](soundsystem_lowlevel/CVMixBaseGraphDescription.md) |
-| [CVoiceContainerVMixSnd](soundsystem/CVoiceContainerVMixSnd.md) | class | 384 | 0 | [CVoiceContainerBase](soundsystem_voicecontainers/CVoiceContainerBase.md) |
+| [CVoiceContainerVMixSnd](soundsystem/CVoiceContainerVMixSnd.md) | class | 400 | 1 | [CVoiceContainerBase](soundsystem_voicecontainers/CVoiceContainerBase.md) |
 | [ISndSeqInstruments](soundsystem/ISndSeqInstruments.md) | class | 8 | 0 |  |
 | [KeyGroup_t](soundsystem/KeyGroup_t.md) | class | 16 | 5 |  |
 | [SamplerVoice_t](soundsystem/SamplerVoice_t.md) | class | 8 | 1 |  |

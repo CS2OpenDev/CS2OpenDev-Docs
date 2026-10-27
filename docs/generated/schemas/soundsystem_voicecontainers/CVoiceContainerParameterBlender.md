@@ -8,9 +8,9 @@ kind: class
 
 # CVoiceContainerParameterBlender
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
-**Kind:** class · **Size:** 448 bytes (`0x1c0`) · **Align:** 8 · **Module:** soundsystem_voicecontainers
+**Kind:** class · **Size:** 456 bytes (`0x1c8`) · **Align:** 8 · **Module:** soundsystem_voicecontainers
 
 **Inherits from:** [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md)
 
@@ -26,25 +26,29 @@ classDiagram
 
 ## Memory layout
 
-10 fields (8 declared here, 2 inherited). Offsets are absolute from the object base.
+12 fields (8 declared here, 4 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
-| `0x28` | `m_vSound` | [CVSound](../soundsystem_voicecontainers/CVSound.md) | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressField` |
-| `0x68` | `m_pEnvelopeAnalyzer` | [CVoiceContainerAnalysisBase](../soundsystem_voicecontainers/CVoiceContainerAnalysisBase.md)* | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressExpr true` |
-| `0x70` | `m_firstSound` | [CSoundContainerReference](../soundsystem_voicecontainers/CSoundContainerReference.md) |  | `MPropertyFriendlyName First Sound` |
-| `0x90` | `m_secondSound` | [CSoundContainerReference](../soundsystem_voicecontainers/CSoundContainerReference.md) |  | `MPropertyFriendlyName Second Sound` |
-| `0xb0` | `m_bEnableOcclusionBlend` | bool |  | `MPropertyFriendlyName Enable Occlusion Blend` `MPropertyStartGroup Occlusion` |
-| `0xb8` | `m_curve1` | CPiecewiseCurve |  | `MPropertyFriendlyName First Curve` `MPropertySuppressExpr m_bEnableOcclusionBlend == false` |
-| `0xf8` | `m_curve2` | CPiecewiseCurve |  | `MPropertyFriendlyName Second Curve` `MPropertySuppressExpr m_bEnableOcclusionBlend == false` |
-| `0x138` | `m_bEnableDistanceBlend` | bool |  | `MPropertyFriendlyName Enable Distance Blend` `MPropertyStartGroup Distance` |
-| `0x140` | `m_curve3` | CPiecewiseCurve |  | `MPropertyFriendlyName First Curve` `MPropertySuppressExpr m_bEnableDistanceBlend == false` |
-| `0x180` | `m_curve4` | CPiecewiseCurve |  | `MPropertyFriendlyName Second Curve` `MPropertySuppressExpr m_bEnableDistanceBlend == false` |
+| `0x10` | `m_bRegisteredVMix` | bool | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) |  |
+| `0x14` | `m_nResourceName` | CUtlStringToken | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) |  |
+| `0x30` | `m_vSound` | [CVSound](../soundsystem_voicecontainers/CVSound.md) | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressField` |
+| `0x70` | `m_pEnvelopeAnalyzer` | [CVoiceContainerAnalysisBase](../soundsystem_voicecontainers/CVoiceContainerAnalysisBase.md)* | [CVoiceContainerBase](../soundsystem_voicecontainers/CVoiceContainerBase.md) | `MPropertySuppressExpr true` |
+| `0x78` | `m_firstSound` | [CSoundContainerReference](../soundsystem_voicecontainers/CSoundContainerReference.md) |  | `MPropertyFriendlyName First Sound` |
+| `0x98` | `m_secondSound` | [CSoundContainerReference](../soundsystem_voicecontainers/CSoundContainerReference.md) |  | `MPropertyFriendlyName Second Sound` |
+| `0xb8` | `m_bEnableOcclusionBlend` | bool |  | `MPropertyFriendlyName Enable Occlusion Blend` `MPropertyStartGroup Occlusion` |
+| `0xc0` | `m_curve1` | CPiecewiseCurve |  | `MPropertyFriendlyName First Curve` `MPropertySuppressExpr m_bEnableOcclusionBlend == false` |
+| `0x100` | `m_curve2` | CPiecewiseCurve |  | `MPropertyFriendlyName Second Curve` `MPropertySuppressExpr m_bEnableOcclusionBlend == false` |
+| `0x140` | `m_bEnableDistanceBlend` | bool |  | `MPropertyFriendlyName Enable Distance Blend` `MPropertyStartGroup Distance` |
+| `0x148` | `m_curve3` | CPiecewiseCurve |  | `MPropertyFriendlyName First Curve` `MPropertySuppressExpr m_bEnableDistanceBlend == false` |
+| `0x188` | `m_curve4` | CPiecewiseCurve |  | `MPropertyFriendlyName Second Curve` `MPropertySuppressExpr m_bEnableDistanceBlend == false` |
 
 <details><summary>KV3 class defaults</summary>
 
 <pre>{
 	&quot;_class&quot;: &quot;CVoiceContainerParameterBlender&quot;,
+	&quot;m_bRegisteredVMix&quot;: false,
+	&quot;m_nResourceName&quot;: &quot;&quot;,
 	&quot;m_vSound&quot;:
 	{
 		&quot;m_Sentences&quot;:

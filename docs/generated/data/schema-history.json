@@ -3,6 +3,706 @@
   "breaking": [],
   "detail": [
     {
+      "anchor": "25966348-26144732",
+      "class_pair_candidates_count": 0,
+      "classes_added": [],
+      "classes_changed": [
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "ADD": 1
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CGraphPreviewList",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "40",
+            "to": "48"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CMixPanner",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "ADD": 1,
+            "META_CHANGE": 1
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CMixTrack",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CSubmix",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "ADD": 1
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVMixSubmix",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 1
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVMixToolGraphEntry",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "152",
+            "to": "160"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 1
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerAmpedDecayingSineWave",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "128",
+            "to": "136"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerAsyncGenerator",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "128",
+            "to": "136"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "ADD": 2,
+            "OFFSET_CHANGE": 2
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerBase",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "112",
+            "to": "120"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 3
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerBlender",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "184",
+            "to": "192"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 2
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerDecayingSineWave",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "120",
+            "to": "128"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerDefault",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "112",
+            "to": "120"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 3
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerEnum",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "176",
+            "to": "184"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerGenerator",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "112",
+            "to": "120"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 8
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerGranulator",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "368",
+            "to": "376"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 5
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerLoopTrigger",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "160",
+            "to": "168"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 1
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerLoopTriggerWithRandomPanner",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "192",
+            "to": "200"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 8
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerLoopXFade",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "168",
+            "to": "176"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 3
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerMultiBlender",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "176",
+            "to": "184"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerNull",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "112",
+            "to": "120"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 8
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerParameterBlender",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "448",
+            "to": "456"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 6
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerRandomSampler",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "424",
+            "to": "432"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 3
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerRealtimeFMSineWave",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "128",
+            "to": "136"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 3
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerSelector",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "232",
+            "to": "240"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 1
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerSet",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "160",
+            "to": "168"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 9
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerShapedNoise",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "328",
+            "to": "336"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 1
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerStaticAdditiveSynth",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "176",
+            "to": "184"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 1
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerSwitch",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "136",
+            "to": "144"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 4
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerTapePlayer",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "208",
+            "to": "216"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "ADD": 1
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerVMixSnd",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "384",
+            "to": "400"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 17
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerVsndRadioButton",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "2296",
+            "to": "2304"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 17
+          },
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/CVoiceContainerVsndTrigger",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "2296",
+            "to": "2304"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/dynpitchvol_base_t",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/dynpitchvol_t",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 45
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_CSPlayerPawn",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "OFFSET_CHANGE": 95
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "server.dll/CCSPlayerPawn",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "5568",
+            "to": "5584"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "server.dll/CCSPointScriptEntity",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "1576",
+            "to": "1640"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "ADD": 1,
+            "OFFSET_CHANGE": 9
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "server.dll/CHostage",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        }
+      ],
+      "classes_changed_total": 38,
+      "classes_changed_truncated": false,
+      "classes_removed": [
+        "!GlobalTypes/InfoForResourceTypeCVMixListResource"
+      ],
+      "field_move_candidates_count": 0,
+      "from_build": "25966348",
+      "from_date": "2026-10-15",
+      "to_build": "26144732",
+      "to_date": "2026-10-22"
+    },
+    {
       "anchor": "25947352-25966348",
       "class_pair_candidates_count": 0,
       "classes_added": [],
@@ -154,117 +854,9 @@
       "from_date": "2026-10-08",
       "to_build": "25947352",
       "to_date": "2026-10-15"
-    },
-    {
-      "anchor": "25738536-25815307",
-      "class_pair_candidates_count": 0,
-      "classes_added": [],
-      "classes_changed": [
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {
-            "OFFSET_CHANGE": 2
-          },
-          "flags_changed": false,
-          "meta_ops": 0,
-          "metadata_only": false,
-          "name": "client.dll/C_CSGO_PreviewPlayer",
-          "pair_candidates": 0,
-          "paired_evidence": 0,
-          "realign": false,
-          "reparent": false,
-          "resize": {
-            "from": "14272",
-            "to": "14288"
-          },
-          "static_field_ops": 0
-        },
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {},
-          "flags_changed": false,
-          "meta_ops": 0,
-          "metadata_only": false,
-          "name": "client.dll/C_CSGO_PreviewPlayerAlias_csgo_player_previewmodel",
-          "pair_candidates": 0,
-          "paired_evidence": 0,
-          "realign": false,
-          "reparent": false,
-          "resize": {
-            "from": "14272",
-            "to": "14288"
-          },
-          "static_field_ops": 0
-        },
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {},
-          "flags_changed": false,
-          "meta_ops": 0,
-          "metadata_only": false,
-          "name": "client.dll/C_CSGO_TeamPreviewModel",
-          "pair_candidates": 0,
-          "paired_evidence": 0,
-          "realign": false,
-          "reparent": false,
-          "resize": {
-            "from": "14272",
-            "to": "14288"
-          },
-          "static_field_ops": 0
-        },
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {
-            "ADD": 1,
-            "OFFSET_CHANGE": 11
-          },
-          "flags_changed": false,
-          "meta_ops": 0,
-          "metadata_only": false,
-          "name": "client.dll/C_CSPlayerPawn",
-          "pair_candidates": 0,
-          "paired_evidence": 0,
-          "realign": false,
-          "reparent": false,
-          "resize": {
-            "from": "14096",
-            "to": "14112"
-          },
-          "static_field_ops": 0
-        },
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {
-            "ADD": 1,
-            "OFFSET_CHANGE": 107
-          },
-          "flags_changed": false,
-          "meta_ops": 0,
-          "metadata_only": false,
-          "name": "server.dll/CCSPlayerPawn",
-          "pair_candidates": 0,
-          "paired_evidence": 0,
-          "realign": false,
-          "reparent": false,
-          "resize": {
-            "from": "5584",
-            "to": "5600"
-          },
-          "static_field_ops": 0
-        }
-      ],
-      "classes_changed_total": 5,
-      "classes_changed_truncated": false,
-      "classes_removed": [],
-      "field_move_candidates_count": 0,
-      "from_build": "25738536",
-      "from_date": "2026-10-05",
-      "to_build": "25815307",
-      "to_date": "2026-10-08"
     }
   ],
-  "latest_build": "25966348",
+  "latest_build": "26144732",
   "platform": "windows-x86_64",
   "schema_version": "0.12.0",
   "transitions": [
@@ -7050,6 +7642,23 @@
       "is_empty": false,
       "to_build": "25966348",
       "to_date": "2026-10-15"
+    },
+    {
+      "anchor": "25966348-26144732",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 38,
+        "class_removed": 1,
+        "enum_added": 1,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 264
+      },
+      "from_build": "25966348",
+      "from_date": "2026-10-15",
+      "is_empty": false,
+      "to_build": "26144732",
+      "to_date": "2026-10-22"
     }
   ]
 }

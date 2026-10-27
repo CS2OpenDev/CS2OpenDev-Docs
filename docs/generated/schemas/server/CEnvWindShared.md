@@ -8,7 +8,7 @@ kind: class
 
 # CEnvWindShared
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 304 bytes (`0x130`) · **Align:** 8 · **Module:** server
 

@@ -8,7 +8,7 @@ kind: class
 
 # CFuncLadderAlias_func_useableladder
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
 **Kind:** class · **Size:** 2272 bytes (`0x8e0`) · **Align:** 8 · **Module:** server
 

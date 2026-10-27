@@ -5,11 +5,11 @@ module: resourcesystem
 
 # Module: resourcesystem
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
 
 [📊 View UML Diagram](../diagrams/resourcesystem.md)
 
-49 types. Each links to its own page with the full field layout.
+48 types. Each links to its own page with the full field layout.
 
 | Type | Kind | Size | Fields | Inherits |
 |------|------|------|--------|----------|
@@ -44,7 +44,6 @@ module: resourcesystem
 | [InfoForResourceTypeCVDSPResource](resourcesystem/InfoForResourceTypeCVDSPResource.md) | class | 1 | 0 |  |
 | [InfoForResourceTypeCVDataItemDefs](resourcesystem/InfoForResourceTypeCVDataItemDefs.md) | class | 1 | 0 |  |
 | [InfoForResourceTypeCVDataResource](resourcesystem/InfoForResourceTypeCVDataResource.md) | class | 1 | 0 |  |
-| [InfoForResourceTypeCVMixListResource](resourcesystem/InfoForResourceTypeCVMixListResource.md) | class | 1 | 0 |  |
 | [InfoForResourceTypeCVPhysXSurfacePropertiesList](resourcesystem/InfoForResourceTypeCVPhysXSurfacePropertiesList.md) | class | 1 | 0 |  |
 | [InfoForResourceTypeCVSoundEventScriptList](resourcesystem/InfoForResourceTypeCVSoundEventScriptList.md) | class | 1 | 0 |  |
 | [InfoForResourceTypeCVSoundStackScriptList](resourcesystem/InfoForResourceTypeCVSoundStackScriptList.md) | class | 1 | 0 |  |

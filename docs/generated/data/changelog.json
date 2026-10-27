@@ -3,16 +3,81 @@
     {
       "added": [],
       "added_count": 0,
-      "changed": [],
-      "changed_count": 0,
+      "changed": [
+        {
+          "field_changes": [
+            {
+              "field": "field_count",
+              "new_value": "3",
+              "old_value": "2"
+            }
+          ],
+          "name": "!GlobalTypes/CGraphPreviewList"
+        },
+        {
+          "field_changes": [
+            {
+              "field": "field_count",
+              "new_value": "5",
+              "old_value": "4"
+            }
+          ],
+          "name": "!GlobalTypes/CMixTrack"
+        },
+        {
+          "field_changes": [
+            {
+              "field": "field_count",
+              "new_value": "7",
+              "old_value": "6"
+            }
+          ],
+          "name": "!GlobalTypes/CVMixSubmix"
+        },
+        {
+          "field_changes": [
+            {
+              "field": "field_count",
+              "new_value": "4",
+              "old_value": "2"
+            }
+          ],
+          "name": "!GlobalTypes/CVoiceContainerBase"
+        },
+        {
+          "field_changes": [
+            {
+              "field": "field_count",
+              "new_value": "1",
+              "old_value": "0"
+            }
+          ],
+          "name": "!GlobalTypes/CVoiceContainerVMixSnd"
+        },
+        {
+          "field_changes": [
+            {
+              "field": "field_count",
+              "new_value": "40",
+              "old_value": "39"
+            }
+          ],
+          "name": "server.dll/CHostage"
+        }
+      ],
+      "changed_count": 6,
       "family": "classes",
-      "removed": [],
-      "removed_count": 0,
+      "removed": [
+        "!GlobalTypes/InfoForResourceTypeCVMixListResource"
+      ],
+      "removed_count": 1,
       "truncated": false
     },
     {
-      "added": [],
-      "added_count": 0,
+      "added": [
+        "!GlobalTypes/VMixUpMixRule_t"
+      ],
+      "added_count": 1,
       "changed": [],
       "changed_count": 0,
       "family": "enums",
@@ -21,8 +86,18 @@
       "truncated": false
     },
     {
-      "added": [],
-      "added_count": 0,
+      "added": [
+        "voice_webrtc_aec",
+        "voice_webrtc_agc",
+        "voice_webrtc_apm",
+        "voice_webrtc_fixed_gain_db",
+        "voice_webrtc_hpf",
+        "voice_webrtc_ns",
+        "voice_webrtc_ns_level",
+        "voice_webrtc_stats",
+        "voice_webrtc_stream_delay_ms"
+      ],
+      "added_count": 9,
       "changed": [],
       "changed_count": 0,
       "family": "convars",
@@ -41,8 +116,11 @@
       "truncated": false
     },
     {
-      "added": [],
-      "added_count": 0,
+      "added": [
+        "schema_enum:!GlobalTypes/VMixUpMixRule_t/VMixUpMixRule_t::BROADCAST",
+        "schema_enum:!GlobalTypes/VMixUpMixRule_t/VMixUpMixRule_t::DIVIDE"
+      ],
+      "added_count": 2,
       "changed": [],
       "changed_count": 0,
       "family": "engine_constants",
@@ -51,9 +129,9 @@
       "truncated": false
     }
   ],
-  "from_build": "25947352",
-  "no_changes": true,
+  "from_build": "25966348",
+  "no_changes": false,
   "platform": "windows-x86_64",
-  "schema_history_anchor": "25947352-25966348",
-  "to_build": "25966348"
+  "schema_history_anchor": "25966348-26144732",
+  "to_build": "26144732"
 }

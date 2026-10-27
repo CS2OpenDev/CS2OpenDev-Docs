@@ -1,11 +1,11 @@
 {
   "schema_format_version": "2.2",
   "generator": "https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker",
-  "build_id": 25966348,
+  "build_id": 26144732,
   "platform": "windows-x86_64",
   "revision": "hl2sdk-cs2/5f891c9026230cce0fc0a3fc4b5fef1c467a1385/v1/3d1200e346019c59",
-  "version_date": "2026-10-15",
-  "version_time": "2026-10-15T17:24:20Z",
+  "version_date": "2026-10-22",
+  "version_time": "2026-10-22T21:24:50Z",
   "classes": [
     {
       "alignment": 255,
@@ -77266,7 +77266,7 @@
         {
           "metadata": [],
           "name": "m_bInHostageResetZone",
-          "offset": "3944",
+          "offset": "3952",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77279,7 +77279,7 @@
         {
           "metadata": [],
           "name": "m_bInBuyZone",
-          "offset": "3945",
+          "offset": "3953",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77295,7 +77295,7 @@
         {
           "metadata": [],
           "name": "m_TouchingBuyZones",
-          "offset": "3952",
+          "offset": "3960",
           "type": {
             "atomicCategory": "ATOMIC_COLLECTION_OF_T",
             "category": "ATOMIC",
@@ -77322,7 +77322,7 @@
         {
           "metadata": [],
           "name": "m_bWasInBuyZone",
-          "offset": "3976",
+          "offset": "3984",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77335,7 +77335,7 @@
         {
           "metadata": [],
           "name": "m_bInHostageRescueZone",
-          "offset": "3977",
+          "offset": "3985",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77351,7 +77351,7 @@
         {
           "metadata": [],
           "name": "m_bInBombZone",
-          "offset": "3978",
+          "offset": "3986",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77368,7 +77368,7 @@
         {
           "metadata": [],
           "name": "m_bWasInHostageRescueZone",
-          "offset": "3979",
+          "offset": "3987",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77381,7 +77381,7 @@
         {
           "metadata": [],
           "name": "m_iRetakesOffering",
-          "offset": "3980",
+          "offset": "3988",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77397,7 +77397,7 @@
         {
           "metadata": [],
           "name": "m_iRetakesOfferingCard",
-          "offset": "3984",
+          "offset": "3992",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77413,7 +77413,7 @@
         {
           "metadata": [],
           "name": "m_bRetakesHasDefuseKit",
-          "offset": "3988",
+          "offset": "3996",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77429,7 +77429,7 @@
         {
           "metadata": [],
           "name": "m_bRetakesMVPLastRound",
-          "offset": "3989",
+          "offset": "3997",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77445,7 +77445,7 @@
         {
           "metadata": [],
           "name": "m_iRetakesMVPBoostItem",
-          "offset": "3992",
+          "offset": "4000",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77461,7 +77461,7 @@
         {
           "metadata": [],
           "name": "m_RetakesMVPBoostExtraUtility",
-          "offset": "3996",
+          "offset": "4004",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_ENUM",
@@ -77474,7 +77474,7 @@
         {
           "metadata": [],
           "name": "m_flHealthShotBoostExpirationTime",
-          "offset": "4000",
+          "offset": "4008",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -77490,7 +77490,7 @@
         {
           "metadata": [],
           "name": "m_flLandingTimeSeconds",
-          "offset": "4004",
+          "offset": "4012",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77503,7 +77503,7 @@
         {
           "metadata": [],
           "name": "m_bIsBuyMenuOpen",
-          "offset": "4008",
+          "offset": "4016",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77519,7 +77519,7 @@
         {
           "metadata": [],
           "name": "m_lastLandTime",
-          "offset": "4064",
+          "offset": "4072",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -77532,7 +77532,7 @@
         {
           "metadata": [],
           "name": "m_bOnGroundLastTick",
-          "offset": "4068",
+          "offset": "4076",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77545,7 +77545,7 @@
         {
           "metadata": [],
           "name": "m_iPlayerLocked",
-          "offset": "4072",
+          "offset": "4080",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77558,7 +77558,7 @@
         {
           "metadata": [],
           "name": "m_flTimeOfLastInjury",
-          "offset": "4080",
+          "offset": "4088",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -77574,7 +77574,7 @@
         {
           "metadata": [],
           "name": "m_flNextSprayDecalTime",
-          "offset": "4084",
+          "offset": "4092",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -77587,7 +77587,7 @@
         {
           "metadata": [],
           "name": "m_bNextSprayDecalTimeExpedited",
-          "offset": "4088",
+          "offset": "4096",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77600,7 +77600,7 @@
         {
           "metadata": [],
           "name": "m_nRagdollDamageBone",
-          "offset": "4092",
+          "offset": "4100",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77616,7 +77616,7 @@
         {
           "metadata": [],
           "name": "m_vRagdollDamageForce",
-          "offset": "4096",
+          "offset": "4104",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -77632,7 +77632,7 @@
         {
           "metadata": [],
           "name": "m_szRagdollDamageWeaponName",
-          "offset": "4108",
+          "offset": "4116",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "FIXED_ARRAY",
@@ -77655,7 +77655,7 @@
         {
           "metadata": [],
           "name": "m_bRagdollDamageHeadshot",
-          "offset": "4172",
+          "offset": "4180",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77671,7 +77671,7 @@
         {
           "metadata": [],
           "name": "m_vRagdollServerOrigin",
-          "offset": "4176",
+          "offset": "4184",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -77687,7 +77687,7 @@
         {
           "metadata": [],
           "name": "m_EconGloves",
-          "offset": "4192",
+          "offset": "4200",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -77703,7 +77703,7 @@
         {
           "metadata": [],
           "name": "m_nEconGlovesChanged",
-          "offset": "5192",
+          "offset": "5200",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77719,7 +77719,7 @@
         {
           "metadata": [],
           "name": "m_qDeathEyeAngles",
-          "offset": "5196",
+          "offset": "5204",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -77735,7 +77735,7 @@
         {
           "metadata": [],
           "name": "m_bLeftHanded",
-          "offset": "5208",
+          "offset": "5216",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77751,7 +77751,7 @@
         {
           "metadata": [],
           "name": "m_fSwitchedHandednessTime",
-          "offset": "5212",
+          "offset": "5220",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -77767,7 +77767,7 @@
         {
           "metadata": [],
           "name": "m_flViewmodelOffsetX",
-          "offset": "5216",
+          "offset": "5224",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77783,7 +77783,7 @@
         {
           "metadata": [],
           "name": "m_flViewmodelOffsetY",
-          "offset": "5220",
+          "offset": "5228",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77799,7 +77799,7 @@
         {
           "metadata": [],
           "name": "m_flViewmodelOffsetZ",
-          "offset": "5224",
+          "offset": "5232",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77815,7 +77815,7 @@
         {
           "metadata": [],
           "name": "m_flViewmodelFOV",
-          "offset": "5228",
+          "offset": "5236",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77831,7 +77831,7 @@
         {
           "metadata": [],
           "name": "m_bIsWalking",
-          "offset": "5232",
+          "offset": "5240",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77847,32 +77847,6 @@
         {
           "metadata": [],
           "name": "m_fLastGivenDefuserTime",
-          "offset": "5236",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "float32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_fLastGivenBombTime",
-          "offset": "5240",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "float32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_flDealtDamageToEnemyMostRecentTimestamp",
           "offset": "5244",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -77885,20 +77859,20 @@
         },
         {
           "metadata": [],
-          "name": "m_iDisplayHistoryBits",
+          "name": "m_fLastGivenBombTime",
           "offset": "5248",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
             "count": "0",
             "module": "",
-            "name": "uint32"
+            "name": "float32"
           },
           "typeModule": ""
         },
         {
           "metadata": [],
-          "name": "m_flLastAttackedTeammate",
+          "name": "m_flDealtDamageToEnemyMostRecentTimestamp",
           "offset": "5252",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -77911,8 +77885,34 @@
         },
         {
           "metadata": [],
-          "name": "m_allowAutoFollowTime",
+          "name": "m_iDisplayHistoryBits",
           "offset": "5256",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "uint32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_flLastAttackedTeammate",
+          "offset": "5260",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_allowAutoFollowTime",
+          "offset": "5264",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -77925,7 +77925,7 @@
         {
           "metadata": [],
           "name": "m_bResetArmorNextSpawn",
-          "offset": "5260",
+          "offset": "5268",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77938,7 +77938,7 @@
         {
           "metadata": [],
           "name": "m_nLastKillerIndex",
-          "offset": "5264",
+          "offset": "5272",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -77954,7 +77954,7 @@
         {
           "metadata": [],
           "name": "m_entitySpottedState",
-          "offset": "5272",
+          "offset": "5280",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -77971,7 +77971,7 @@
         {
           "metadata": [],
           "name": "m_nSpotRules",
-          "offset": "5296",
+          "offset": "5304",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -77984,7 +77984,7 @@
         {
           "metadata": [],
           "name": "m_bIsScoped",
-          "offset": "5300",
+          "offset": "5308",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78000,7 +78000,7 @@
         {
           "metadata": [],
           "name": "m_bResumeZoom",
-          "offset": "5301",
+          "offset": "5309",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78016,7 +78016,7 @@
         {
           "metadata": [],
           "name": "m_bIsDefusing",
-          "offset": "5302",
+          "offset": "5310",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78032,7 +78032,7 @@
         {
           "metadata": [],
           "name": "m_bIsGrabbingHostage",
-          "offset": "5303",
+          "offset": "5311",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78048,7 +78048,7 @@
         {
           "metadata": [],
           "name": "m_iBlockingUseActionInProgress",
-          "offset": "5304",
+          "offset": "5312",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_ENUM",
@@ -78064,7 +78064,7 @@
         {
           "metadata": [],
           "name": "m_flEmitSoundTime",
-          "offset": "5308",
+          "offset": "5316",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -78080,7 +78080,7 @@
         {
           "metadata": [],
           "name": "m_bInNoDefuseArea",
-          "offset": "5312",
+          "offset": "5320",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78096,7 +78096,7 @@
         {
           "metadata": [],
           "name": "m_iBombSiteIndex",
-          "offset": "5316",
+          "offset": "5324",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -78109,7 +78109,7 @@
         {
           "metadata": [],
           "name": "m_nWhichBombZone",
-          "offset": "5320",
+          "offset": "5328",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78125,7 +78125,7 @@
         {
           "metadata": [],
           "name": "m_bInBombZoneTrigger",
-          "offset": "5324",
+          "offset": "5332",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78138,7 +78138,7 @@
         {
           "metadata": [],
           "name": "m_bWasInBombZoneTrigger",
-          "offset": "5325",
+          "offset": "5333",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78151,7 +78151,7 @@
         {
           "metadata": [],
           "name": "m_iShotsFired",
-          "offset": "5328",
+          "offset": "5336",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78168,7 +78168,7 @@
         {
           "metadata": [],
           "name": "m_flFlinchStack",
-          "offset": "5332",
+          "offset": "5340",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78185,7 +78185,7 @@
         {
           "metadata": [],
           "name": "m_flVelocityModifier",
-          "offset": "5336",
+          "offset": "5344",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78201,7 +78201,7 @@
         {
           "metadata": [],
           "name": "m_vecTotalBulletForce",
-          "offset": "5340",
+          "offset": "5348",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -78214,7 +78214,7 @@
         {
           "metadata": [],
           "name": "m_bWaitForNoAttack",
-          "offset": "5352",
+          "offset": "5360",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78230,7 +78230,7 @@
         {
           "metadata": [],
           "name": "m_ignoreLadderJumpTime",
-          "offset": "5356",
+          "offset": "5364",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78243,7 +78243,7 @@
         {
           "metadata": [],
           "name": "m_bKilledByHeadshot",
-          "offset": "5360",
+          "offset": "5368",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78259,7 +78259,7 @@
         {
           "metadata": [],
           "name": "m_LastHitBox",
-          "offset": "5364",
+          "offset": "5372",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78272,7 +78272,7 @@
         {
           "metadata": [],
           "name": "m_pBot",
-          "offset": "5368",
+          "offset": "5376",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "PTR",
@@ -78292,7 +78292,7 @@
         {
           "metadata": [],
           "name": "m_bBotAllowActive",
-          "offset": "5376",
+          "offset": "5384",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78305,7 +78305,7 @@
         {
           "metadata": [],
           "name": "m_nLastPickupPriority",
-          "offset": "5380",
+          "offset": "5388",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78318,7 +78318,7 @@
         {
           "metadata": [],
           "name": "m_flLastPickupPriorityTime",
-          "offset": "5384",
+          "offset": "5392",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78331,7 +78331,7 @@
         {
           "metadata": [],
           "name": "m_ArmorValue",
-          "offset": "5388",
+          "offset": "5396",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78347,7 +78347,7 @@
         {
           "metadata": [],
           "name": "m_unCurrentEquipmentValue",
-          "offset": "5392",
+          "offset": "5400",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78363,7 +78363,7 @@
         {
           "metadata": [],
           "name": "m_unRoundStartEquipmentValue",
-          "offset": "5394",
+          "offset": "5402",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78379,7 +78379,7 @@
         {
           "metadata": [],
           "name": "m_unFreezetimeEndEquipmentValue",
-          "offset": "5396",
+          "offset": "5404",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78395,7 +78395,7 @@
         {
           "metadata": [],
           "name": "m_iLastWeaponFireUsercmd",
-          "offset": "5400",
+          "offset": "5408",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78408,7 +78408,7 @@
         {
           "metadata": [],
           "name": "m_bIsSpawning",
-          "offset": "5404",
+          "offset": "5412",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78421,7 +78421,7 @@
         {
           "metadata": [],
           "name": "m_iDeathFlags",
-          "offset": "5416",
+          "offset": "5424",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78434,7 +78434,7 @@
         {
           "metadata": [],
           "name": "m_bHasDeathInfo",
-          "offset": "5420",
+          "offset": "5428",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78447,7 +78447,7 @@
         {
           "metadata": [],
           "name": "m_flDeathInfoTime",
-          "offset": "5424",
+          "offset": "5432",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78460,7 +78460,7 @@
         {
           "metadata": [],
           "name": "m_vecDeathInfoOrigin",
-          "offset": "5428",
+          "offset": "5436",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -78473,7 +78473,7 @@
         {
           "metadata": [],
           "name": "m_vecPlayerPatchEconIndices",
-          "offset": "5440",
+          "offset": "5448",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "FIXED_ARRAY",
@@ -78496,7 +78496,7 @@
         {
           "metadata": [],
           "name": "m_GunGameImmunityColor",
-          "offset": "5460",
+          "offset": "5468",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -78512,7 +78512,7 @@
         {
           "metadata": [],
           "name": "m_grenadeParameterStashTime",
-          "offset": "5464",
+          "offset": "5472",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -78525,7 +78525,7 @@
         {
           "metadata": [],
           "name": "m_bGrenadeParametersStashed",
-          "offset": "5468",
+          "offset": "5476",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78538,7 +78538,7 @@
         {
           "metadata": [],
           "name": "m_angStashedShootAngles",
-          "offset": "5472",
+          "offset": "5480",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -78551,7 +78551,7 @@
         {
           "metadata": [],
           "name": "m_vecStashedGrenadeThrowPosition",
-          "offset": "5484",
+          "offset": "5492",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -78564,7 +78564,7 @@
         {
           "metadata": [],
           "name": "m_vecStashedGrenadeThrowPawnCenter",
-          "offset": "5496",
+          "offset": "5504",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -78577,7 +78577,7 @@
         {
           "metadata": [],
           "name": "m_vecStashedVelocity",
-          "offset": "5508",
+          "offset": "5516",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -78590,7 +78590,7 @@
         {
           "metadata": [],
           "name": "m_bCommittingSuicideOnTeamChange",
-          "offset": "5528",
+          "offset": "5536",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78603,7 +78603,7 @@
         {
           "metadata": [],
           "name": "m_wasNotKilledNaturally",
-          "offset": "5529",
+          "offset": "5537",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78616,7 +78616,7 @@
         {
           "metadata": [],
           "name": "m_fImmuneToGunGameDamageTime",
-          "offset": "5532",
+          "offset": "5540",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -78632,7 +78632,7 @@
         {
           "metadata": [],
           "name": "m_bGunGameImmunity",
-          "offset": "5536",
+          "offset": "5544",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78648,7 +78648,7 @@
         {
           "metadata": [],
           "name": "m_flModifier0",
-          "offset": "5540",
+          "offset": "5548",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78661,7 +78661,7 @@
         {
           "metadata": [],
           "name": "m_fMolotovDamageTime",
-          "offset": "5544",
+          "offset": "5552",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -78677,7 +78677,7 @@
         {
           "metadata": [],
           "name": "m_angEyeAngles",
-          "offset": "5548",
+          "offset": "5556",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -78707,7 +78707,7 @@
       ],
       "projectName": "server",
       "singleInheritanceDepth": 7,
-      "size": "5568",
+      "size": "5584",
       "staticFields": [],
       "annotations": {
         "description": "The physical in-world representation of a CS2 player.  Carries per-round state: health, armor, position, animations, and weapon inventory.  A new CCSPlayerPawn is created each round on (re)spawn; the corresponding CCSPlayerController persists across rounds.",
@@ -82392,7 +82392,7 @@
       ],
       "projectName": "server",
       "singleInheritanceDepth": 2,
-      "size": "1576",
+      "size": "1640",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/server/hierarchy/"
     },
@@ -125000,6 +125000,19 @@
             "name": "CPreviewList"
           },
           "typeModule": "!GlobalTypes"
+        },
+        {
+          "metadata": [],
+          "name": "m_previewGraphName",
+          "offset": "40",
+          "type": {
+            "atomicCategory": "ATOMIC_PLAIN",
+            "category": "ATOMIC",
+            "count": "0",
+            "module": "",
+            "name": "CUtlString"
+          },
+          "typeModule": ""
         }
       ],
       "flags": 288,
@@ -125007,13 +125020,14 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"m_flVolume\": 1.000000,\n\t\"m_previewList\":\n\t{\n\t\t\"m_sounds\":\n\t\t[\n\t\t],\n\t\t\"m_bPreviewInGame\": false\n\t}\n}",
+          "value": "{\n\t\"m_flVolume\": 1.000000,\n\t\"m_previewList\":\n\t{\n\t\t\"m_sounds\":\n\t\t[\n\t\t],\n\t\t\"m_bPreviewInGame\": false\n\t},\n\t\"m_previewGraphName\": \"\"\n}",
           "value_parsed": {
             "m_flVolume": 1.0,
             "m_previewList": {
               "m_sounds": [],
               "m_bPreviewInGame": false
-            }
+            },
+            "m_previewGraphName": ""
           }
         }
       ],
@@ -125023,7 +125037,7 @@
       "parents": [],
       "projectName": "sounddoc_lib",
       "singleInheritanceDepth": 0,
-      "size": "40",
+      "size": "48",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/sounddoc_lib/hierarchy/"
     },
@@ -126622,8 +126636,21 @@
         },
         {
           "metadata": [],
-          "name": "m_vecPositionWhenStartedDroppingToGround",
+          "name": "m_flGrabStartTime",
           "offset": "11560",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "DECLARED_CLASS",
+            "count": "0",
+            "module": "!GlobalTypes",
+            "name": "GameTime_t"
+          },
+          "typeModule": "!GlobalTypes"
+        },
+        {
+          "metadata": [],
+          "name": "m_vecPositionWhenStartedDroppingToGround",
+          "offset": "11564",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -126636,7 +126663,7 @@
         {
           "metadata": [],
           "name": "m_vecGrabbedPos",
-          "offset": "11572",
+          "offset": "11576",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -126649,7 +126676,7 @@
         {
           "metadata": [],
           "name": "m_flRescueStartTime",
-          "offset": "11584",
+          "offset": "11588",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -126665,7 +126692,7 @@
         {
           "metadata": [],
           "name": "m_flGrabSuccessTime",
-          "offset": "11588",
+          "offset": "11592",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -126681,7 +126708,7 @@
         {
           "metadata": [],
           "name": "m_flDropStartTime",
-          "offset": "11592",
+          "offset": "11596",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -126697,19 +126724,6 @@
         {
           "metadata": [],
           "name": "m_nApproachRewardPayouts",
-          "offset": "11596",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "int32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_nPickupEventCount",
           "offset": "11600",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -126722,8 +126736,21 @@
         },
         {
           "metadata": [],
-          "name": "m_vecSpawnGroundPos",
+          "name": "m_nPickupEventCount",
           "offset": "11604",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "int32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_vecSpawnGroundPos",
+          "offset": "11608",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -126736,7 +126763,7 @@
         {
           "metadata": [],
           "name": "m_vecHostageResetPosition",
-          "offset": "11660",
+          "offset": "11664",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -149821,7 +149848,7 @@
         },
         {
           "name": "MPropertyDescription",
-          "value": "Adjust the stereo panning of an audio track."
+          "value": "Adjust the stereo panning of an audio track. -1 pans left, +1 pans right"
         },
         {
           "name": "MPropertyFriendlyName",
@@ -152289,7 +152316,7 @@
           "metadata": [
             {
               "name": "MPropertyDescription",
-              "value": "This determines what happens when your incoming audio doesn't match the channel count for the track.  e.g. for a mono track, this is the rule for what happens to stereo audio"
+              "value": "This determines what happens when your incoming audio has more channels than the track.  e.g. for a mono track, this is the rule for what happens to stereo audio"
             },
             {
               "name": "MPropertyFriendlyName",
@@ -152304,6 +152331,28 @@
             "count": "0",
             "module": "!GlobalTypes",
             "name": "VMixMixDownRule_t"
+          },
+          "typeModule": "!GlobalTypes"
+        },
+        {
+          "metadata": [
+            {
+              "name": "MPropertyDescription",
+              "value": "This determines what happens when your incoming audio is mono and the track has more channels.  e.g. for a stereo track, this is the rule for what happens to mono audio"
+            },
+            {
+              "name": "MPropertyFriendlyName",
+              "value": "Up Mix Rule"
+            }
+          ],
+          "name": "m_nUpMixRule",
+          "offset": "37",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "DECLARED_ENUM",
+            "count": "0",
+            "module": "!GlobalTypes",
+            "name": "VMixUpMixRule_t"
           },
           "typeModule": "!GlobalTypes"
         },
@@ -152368,7 +152417,7 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CMixTrack\",\n\t\"m_name\": \"\",\n\t\"m_Comment\": \"\",\n\t\"m_bActive\": true,\n\t\"m_bSolo\": false,\n\t\"m_bEditProperties\": false,\n\t\"m_nGenerationId\": 0,\n\t\"m_nChannels\": -1,\n\t\"m_nMixDown\": \"SUM\",\n\t\"m_nSendOperator\": \"NAMED_SEND\",\n\t\"m_SendNames\":\n\t[\n\t\t\"\",\n\t\t\"\",\n\t\t\"\",\n\t\t\"\"\n\t]\n}",
+          "value": "{\n\t\"_class\": \"CMixTrack\",\n\t\"m_name\": \"\",\n\t\"m_Comment\": \"\",\n\t\"m_bActive\": true,\n\t\"m_bSolo\": false,\n\t\"m_bEditProperties\": false,\n\t\"m_nGenerationId\": 0,\n\t\"m_nChannels\": -1,\n\t\"m_nMixDown\": \"SUM\",\n\t\"m_nUpMixRule\": \"DIVIDE\",\n\t\"m_nSendOperator\": \"NAMED_SEND\",\n\t\"m_SendNames\":\n\t[\n\t\t\"\",\n\t\t\"\",\n\t\t\"\",\n\t\t\"\"\n\t]\n}",
           "value_parsed": {
             "_class": "CMixTrack",
             "m_name": "",
@@ -152379,6 +152428,7 @@
             "m_nGenerationId": 0,
             "m_nChannels": -1,
             "m_nMixDown": "SUM",
+            "m_nUpMixRule": "DIVIDE",
             "m_nSendOperator": "NAMED_SEND",
             "m_SendNames": [
               "",
@@ -258258,7 +258308,7 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"m_name\": \"\",\n\t\"m_SendNames\":\n\t[\n\t\t\"\",\n\t\t\"\",\n\t\t\"\",\n\t\t\"\"\n\t],\n\t\"m_nSoloNameHash\": 0,\n\t\"m_nChannels\": -1,\n\t\"m_nSendOperator\": \"NAMED_SEND\",\n\t\"m_nMixDownRule\": \"SUM\"\n}",
+          "value": "{\n\t\"m_name\": \"\",\n\t\"m_SendNames\":\n\t[\n\t\t\"\",\n\t\t\"\",\n\t\t\"\",\n\t\t\"\"\n\t],\n\t\"m_nSoloNameHash\": 0,\n\t\"m_nChannels\": -1,\n\t\"m_nSendOperator\": \"NAMED_SEND\",\n\t\"m_nMixDownRule\": \"SUM\",\n\t\"m_nUpMixRule\": \"DIVIDE\"\n}",
           "value_parsed": {
             "m_name": "",
             "m_SendNames": [
@@ -258270,7 +258320,8 @@
             "m_nSoloNameHash": 0,
             "m_nChannels": -1,
             "m_nSendOperator": "NAMED_SEND",
-            "m_nMixDownRule": "SUM"
+            "m_nMixDownRule": "SUM",
+            "m_nUpMixRule": "DIVIDE"
           }
         }
       ],
@@ -272525,6 +272576,19 @@
             "name": "VMixMixDownRule_t"
           },
           "typeModule": "!GlobalTypes"
+        },
+        {
+          "metadata": [],
+          "name": "m_nUpMixRule",
+          "offset": "55",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "DECLARED_ENUM",
+            "count": "0",
+            "module": "!GlobalTypes",
+            "name": "VMixUpMixRule_t"
+          },
+          "typeModule": "!GlobalTypes"
         }
       ],
       "flags": 288,
@@ -272532,7 +272596,7 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"m_name\": \"\",\n\t\"m_SendNames\":\n\t[\n\t\t\"\",\n\t\t\"\",\n\t\t\"\",\n\t\t\"\"\n\t],\n\t\"m_nSoloNameHash\": 0,\n\t\"m_nChannels\": -1,\n\t\"m_nSendOperator\": \"NAMED_SEND\",\n\t\"m_nMixDownRule\": \"SUM\"\n}",
+          "value": "{\n\t\"m_name\": \"\",\n\t\"m_SendNames\":\n\t[\n\t\t\"\",\n\t\t\"\",\n\t\t\"\",\n\t\t\"\"\n\t],\n\t\"m_nSoloNameHash\": 0,\n\t\"m_nChannels\": -1,\n\t\"m_nSendOperator\": \"NAMED_SEND\",\n\t\"m_nMixDownRule\": \"SUM\",\n\t\"m_nUpMixRule\": \"DIVIDE\"\n}",
           "value_parsed": {
             "m_name": "",
             "m_SendNames": [
@@ -272544,7 +272608,8 @@
             "m_nSoloNameHash": 0,
             "m_nChannels": -1,
             "m_nSendOperator": "NAMED_SEND",
-            "m_nMixDownRule": "SUM"
+            "m_nMixDownRule": "SUM",
+            "m_nUpMixRule": "DIVIDE"
           }
         }
       ],
@@ -272965,7 +273030,7 @@
             }
           ],
           "name": "m_editorState",
-          "offset": "112",
+          "offset": "120",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -272981,7 +273046,7 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"Name\": \"\",\n\t\"m_nGraphOutputChannels\": -1,\n\t\"m_bIsMainGraph\": false,\n\t\"m_nPreviewNode\": 0,\n\t\"m_EditorNodes\":\n\t[\n\t],\n\t\"m_EditorEdges\":\n\t[\n\t],\n\t\"m_graphPreview\":\n\t{\n\t\t\"m_flVolume\": 1.000000,\n\t\t\"m_previewList\":\n\t\t{\n\t\t\t\"m_sounds\":\n\t\t\t[\n\t\t\t],\n\t\t\t\"m_bPreviewInGame\": false\n\t\t}\n\t},\n\t\"m_EditorState\":\n\t{\n\t\t\"m_viewConfig\":\n\t\t{\n\t\t\t\"XAxis\":\n\t\t\t{\n\t\t\t\t\"pos\": 0.000000,\n\t\t\t\t\"scrollpos\": 0,\n\t\t\t\t\"min\": 0.000000,\n\t\t\t\t\"max\": 1.000000,\n\t\t\t\t\"scale\": 1.000000\n\t\t\t},\n\t\t\t\"YAxis\":\n\t\t\t{\n\t\t\t\t\"pos\": 0.000000,\n\t\t\t\t\"scrollpos\": 0,\n\t\t\t\t\"min\": 0.000000,\n\t\t\t\t\"max\": 1.000000,\n\t\t\t\t\"scale\": 1.000000\n\t\t\t}\n\t\t}\n\t}\n}",
+          "value": "{\n\t\"Name\": \"\",\n\t\"m_nGraphOutputChannels\": -1,\n\t\"m_bIsMainGraph\": false,\n\t\"m_nPreviewNode\": 0,\n\t\"m_EditorNodes\":\n\t[\n\t],\n\t\"m_EditorEdges\":\n\t[\n\t],\n\t\"m_graphPreview\":\n\t{\n\t\t\"m_flVolume\": 1.000000,\n\t\t\"m_previewList\":\n\t\t{\n\t\t\t\"m_sounds\":\n\t\t\t[\n\t\t\t],\n\t\t\t\"m_bPreviewInGame\": false\n\t\t},\n\t\t\"m_previewGraphName\": \"\"\n\t},\n\t\"m_EditorState\":\n\t{\n\t\t\"m_viewConfig\":\n\t\t{\n\t\t\t\"XAxis\":\n\t\t\t{\n\t\t\t\t\"pos\": 0.000000,\n\t\t\t\t\"scrollpos\": 0,\n\t\t\t\t\"min\": 0.000000,\n\t\t\t\t\"max\": 1.000000,\n\t\t\t\t\"scale\": 1.000000\n\t\t\t},\n\t\t\t\"YAxis\":\n\t\t\t{\n\t\t\t\t\"pos\": 0.000000,\n\t\t\t\t\"scrollpos\": 0,\n\t\t\t\t\"min\": 0.000000,\n\t\t\t\t\"max\": 1.000000,\n\t\t\t\t\"scale\": 1.000000\n\t\t\t}\n\t\t}\n\t}\n}",
           "value_parsed": {
             "Name": "",
             "m_nGraphOutputChannels": -1,
@@ -272994,7 +273059,8 @@
               "m_previewList": {
                 "m_sounds": [],
                 "m_bPreviewInGame": false
-              }
+              },
+              "m_previewGraphName": ""
             },
             "m_EditorState": {
               "m_viewConfig": {
@@ -273029,7 +273095,7 @@
       ],
       "projectName": "sounddoc_lib",
       "singleInheritanceDepth": 1,
-      "size": "152",
+      "size": "160",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/sounddoc_lib/hierarchy/"
     },
@@ -274147,7 +274213,7 @@
             }
           ],
           "name": "m_flGainAmount",
-          "offset": "120",
+          "offset": "128",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -274163,9 +274229,11 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CVoiceContainerAmpedDecayingSineWave\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_flFrequency\": 0.000000,\n\t\"m_flDecayTime\": 0.000000,\n\t\"m_flGainAmount\": 0.000000\n}",
+          "value": "{\n\t\"_class\": \"CVoiceContainerAmpedDecayingSineWave\",\n\t\"m_bRegisteredVMix\": false,\n\t\"m_nResourceName\": \"\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_flFrequency\": 0.000000,\n\t\"m_flDecayTime\": 0.000000,\n\t\"m_flGainAmount\": 0.000000\n}",
           "value_parsed": {
             "_class": "CVoiceContainerAmpedDecayingSineWave",
+            "m_bRegisteredVMix": false,
+            "m_nResourceName": "",
             "m_vSound": {
               "m_Sentences": [],
               "m_nRate": 0,
@@ -274204,7 +274272,7 @@
       ],
       "projectName": "soundsystem_voicecontainers",
       "singleInheritanceDepth": 3,
-      "size": "128",
+      "size": "136",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/hierarchy/"
     },
@@ -274304,7 +274372,7 @@
       ],
       "projectName": "soundsystem_voicecontainers",
       "singleInheritanceDepth": 2,
-      "size": "128",
+      "size": "136",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/hierarchy/"
     },
@@ -274313,6 +274381,32 @@
       "cppName": "CVoiceContainerBase",
       "fields": [
         {
+          "metadata": [],
+          "name": "m_bRegisteredVMix",
+          "offset": "16",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "bool"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_nResourceName",
+          "offset": "20",
+          "type": {
+            "atomicCategory": "ATOMIC_PLAIN",
+            "category": "ATOMIC",
+            "count": "0",
+            "module": "",
+            "name": "CUtlStringToken"
+          },
+          "typeModule": ""
+        },
+        {
           "metadata": [
             {
               "name": "MPropertySuppressField",
@@ -274320,7 +274414,7 @@
             }
           ],
           "name": "m_vSound",
-          "offset": "40",
+          "offset": "48",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -274338,7 +274432,7 @@
             }
           ],
           "name": "m_pEnvelopeAnalyzer",
-          "offset": "104",
+          "offset": "112",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "PTR",
@@ -274398,7 +274492,7 @@
       "parents": [],
       "projectName": "soundsystem_voicecontainers",
       "singleInheritanceDepth": 0,
-      "size": "112",
+      "size": "120",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/hierarchy/"
     },
@@ -274409,7 +274503,7 @@
         {
           "metadata": [],
           "name": "m_firstSound",
-          "offset": "112",
+          "offset": "120",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -274422,7 +274516,7 @@
         {
           "metadata": [],
           "name": "m_secondSound",
-          "offset": "144",
+          "offset": "152",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -274435,7 +274529,7 @@
         {
           "metadata": [],
           "name": "m_flBlendFactor",
-          "offset": "176",
+          "offset": "184",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -274451,9 +274545,11 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CVoiceContainerBlender\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_firstSound\":\n\t{\n\t\t\"m_namespace\": \"\",\n\t\t\"m_bUseReference\": true,\n\t\t\"m_sound\": \"\",\n\t\t\"m_pSound\": null\n\t},\n\t\"m_secondSound\":\n\t{\n\t\t\"m_namespace\": \"\",\n\t\t\"m_bUseReference\": true,\n\t\t\"m_sound\": \"\",\n\t\t\"m_pSound\": null\n\t},\n\t\"m_flBlendFactor\": 0.000000\n}",
+          "value": "{\n\t\"_class\": \"CVoiceContainerBlender\",\n\t\"m_bRegisteredVMix\": false,\n\t\"m_nResourceName\": \"\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_firstSound\":\n\t{\n\t\t\"m_namespace\": \"\",\n\t\t\"m_bUseReference\": true,\n\t\t\"m_sound\": \"\",\n\t\t\"m_pSound\": null\n\t},\n\t\"m_secondSound\":\n\t{\n\t\t\"m_namespace\": \"\",\n\t\t\"m_bUseReference\": true,\n\t\t\"m_sound\": \"\",\n\t\t\"m_pSound\": null\n\t},\n\t\"m_flBlendFactor\": 0.000000\n}",
           "value_parsed": {
             "_class": "CVoiceContainerBlender",
+            "m_bRegisteredVMix": false,
+            "m_nResourceName": "",
             "m_vSound": {
               "m_Sentences": [],
               "m_nRate": 0,
@@ -274502,7 +274598,7 @@
       ],
       "projectName": "soundsystem_voicecontainers",
       "singleInheritanceDepth": 1,
-      "size": "184",
+      "size": "192",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/hierarchy/"
     },
@@ -274522,7 +274618,7 @@
             }
           ],
           "name": "m_flFrequency",
-          "offset": "112",
+          "offset": "120",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -274544,7 +274640,7 @@
             }
           ],
           "name": "m_flDecayTime",
-          "offset": "116",
+          "offset": "124",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -274560,9 +274656,11 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CVoiceContainerDecayingSineWave\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_flFrequency\": 0.000000,\n\t\"m_flDecayTime\": 0.000000\n}",
+          "value": "{\n\t\"_class\": \"CVoiceContainerDecayingSineWave\",\n\t\"m_bRegisteredVMix\": false,\n\t\"m_nResourceName\": \"\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_flFrequency\": 0.000000,\n\t\"m_flDecayTime\": 0.000000\n}",
           "value_parsed": {
             "_class": "CVoiceContainerDecayingSineWave",
+            "m_bRegisteredVMix": false,
+            "m_nResourceName": "",
             "m_vSound": {
               "m_Sentences": [],
               "m_nRate": 0,
@@ -274600,7 +274698,7 @@
       ],
       "projectName": "soundsystem_voicecontainers",
       "singleInheritanceDepth": 2,
-      "size": "120",
+      "size": "128",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/hierarchy/"
     },
@@ -274613,9 +274711,11 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CVoiceContainerDefault\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null\n}",
+          "value": "{\n\t\"_class\": \"CVoiceContainerDefault\",\n\t\"m_bRegisteredVMix\": false,\n\t\"m_nResourceName\": \"\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null\n}",
           "value_parsed": {
             "_class": "CVoiceContainerDefault",
+            "m_bRegisteredVMix": false,
+            "m_nResourceName": "",
             "m_vSound": {
               "m_Sentences": [],
               "m_nRate": 0,
@@ -274651,7 +274751,7 @@
       ],
       "projectName": "soundsystem_voicecontainers",
       "singleInheritanceDepth": 1,
-      "size": "112",
+      "size": "120",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/hierarchy/"
     },
@@ -274667,7 +274767,7 @@
             }
           ],
           "name": "m_soundsToPlay",
-          "offset": "112",
+          "offset": "120",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -274685,7 +274785,7 @@
             }
           ],
           "name": "m_iSelection",
-          "offset": "168",
+          "offset": "176",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -274703,7 +274803,7 @@
             }
           ],
           "name": "m_flCrossfadeTime",
-          "offset": "172",
+          "offset": "180",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -274719,9 +274819,11 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CVoiceContainerEnum\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_soundsToPlay\":\n\t{\n\t\t\"m_bUseReference\": true,\n\t\t\"m_sounds\":\n\t\t[\n\t\t],\n\t\t\"m_pSounds\":\n\t\t[\n\t\t]\n\t},\n\t\"m_iSelection\": 0,\n\t\"m_flCrossfadeTime\": 0.100000\n}",
+          "value": "{\n\t\"_class\": \"CVoiceContainerEnum\",\n\t\"m_bRegisteredVMix\": false,\n\t\"m_nResourceName\": \"\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_soundsToPlay\":\n\t{\n\t\t\"m_bUseReference\": true,\n\t\t\"m_sounds\":\n\t\t[\n\t\t],\n\t\t\"m_pSounds\":\n\t\t[\n\t\t]\n\t},\n\t\"m_iSelection\": 0,\n\t\"m_flCrossfadeTime\": 0.100000\n}",
           "value_parsed": {
             "_class": "CVoiceContainerEnum",
+            "m_bRegisteredVMix": false,
+            "m_nResourceName": "",
             "m_vSound": {
               "m_Sentences": [],
               "m_nRate": 0,
@@ -274764,7 +274866,7 @@
       ],
       "projectName": "soundsystem_voicecontainers",
       "singleInheritanceDepth": 1,
-      "size": "176",
+      "size": "184",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/hierarchy/"
     },
@@ -274901,7 +275003,7 @@
       ],
       "projectName": "soundsystem_voicecontainers",
       "singleInheritanceDepth": 1,
-      "size": "112",
+      "size": "120",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/hierarchy/"
     },
@@ -274912,32 +275014,6 @@
         {
           "metadata": [],
           "name": "m_flGrainLength",
-          "offset": "128",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "float32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_flGrainCrossfadeAmount",
-          "offset": "132",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "float32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_flStartJitter",
           "offset": "136",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -274950,7 +275026,7 @@
         },
         {
           "metadata": [],
-          "name": "m_flPlaybackJitter",
+          "name": "m_flGrainCrossfadeAmount",
           "offset": "140",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -274963,8 +275039,34 @@
         },
         {
           "metadata": [],
-          "name": "m_bShouldWraparound",
+          "name": "m_flStartJitter",
           "offset": "144",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_flPlaybackJitter",
+          "offset": "148",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_bShouldWraparound",
+          "offset": "152",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -274977,7 +275079,7 @@
         {
           "metadata": [],
           "name": "m_sourceAudio",
-          "offset": "152",
+          "offset": "160",
           "type": {
             "atomicCategory": "ATOMIC_T",
             "category": "ATOMIC",
@@ -275002,7 +275104,7 @@
             }
           ],
           "name": "m_bDoubleBufferSourceAudio",
-          "offset": "160",
+          "offset": "168",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -275020,7 +275122,7 @@
             }
           ],
           "name": "m_flMaxSourceLength",
-          "offset": "164",
+          "offset": "172",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -275036,9 +275138,11 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CVoiceContainerGranulator\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_flGrainLength\": 0.100000,\n\t\"m_flGrainCrossfadeAmount\": 0.100000,\n\t\"m_flStartJitter\": 0.000000,\n\t\"m_flPlaybackJitter\": 0.000000,\n\t\"m_bShouldWraparound\": false,\n\t\"m_sourceAudio\": \"\",\n\t\"m_bDoubleBufferSourceAudio\": false,\n\t\"m_flMaxSourceLength\": 0.000000\n}",
+          "value": "{\n\t\"_class\": \"CVoiceContainerGranulator\",\n\t\"m_bRegisteredVMix\": false,\n\t\"m_nResourceName\": \"\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_flGrainLength\": 0.100000,\n\t\"m_flGrainCrossfadeAmount\": 0.100000,\n\t\"m_flStartJitter\": 0.000000,\n\t\"m_flPlaybackJitter\": 0.000000,\n\t\"m_bShouldWraparound\": false,\n\t\"m_sourceAudio\": \"\",\n\t\"m_bDoubleBufferSourceAudio\": false,\n\t\"m_flMaxSourceLength\": 0.000000\n}",
           "value_parsed": {
             "_class": "CVoiceContainerGranulator",
+            "m_bRegisteredVMix": false,
+            "m_nResourceName": "",
             "m_vSound": {
               "m_Sentences": [],
               "m_nRate": 0,
@@ -275078,7 +275182,7 @@
       ],
       "projectName": "soundsystem_voicecontainers",
       "singleInheritanceDepth": 3,
-      "size": "368",
+      "size": "376",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/hierarchy/"
     },
@@ -275089,32 +275193,6 @@
         {
           "metadata": [],
           "name": "m_flRetriggerTimeMin",
-          "offset": "112",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "float32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_flRetriggerTimeMax",
-          "offset": "116",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "float32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_flFadeTime",
           "offset": "120",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -275127,8 +275205,34 @@
         },
         {
           "metadata": [],
-          "name": "m_bCrossFade",
+          "name": "m_flRetriggerTimeMax",
           "offset": "124",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_flFadeTime",
+          "offset": "128",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_bCrossFade",
+          "offset": "132",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -275146,7 +275250,7 @@
             }
           ],
           "name": "m_sound",
-          "offset": "128",
+          "offset": "136",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -275162,9 +275266,11 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CVoiceContainerLoopTrigger\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_flRetriggerTimeMin\": 1.000000,\n\t\"m_flRetriggerTimeMax\": 1.000000,\n\t\"m_flFadeTime\": 0.500000,\n\t\"m_bCrossFade\": false,\n\t\"m_sound\":\n\t{\n\t\t\"m_namespace\": \"\",\n\t\t\"m_bUseReference\": true,\n\t\t\"m_sound\": \"\",\n\t\t\"m_pSound\": null\n\t}\n}",
+          "value": "{\n\t\"_class\": \"CVoiceContainerLoopTrigger\",\n\t\"m_bRegisteredVMix\": false,\n\t\"m_nResourceName\": \"\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_flRetriggerTimeMin\": 1.000000,\n\t\"m_flRetriggerTimeMax\": 1.000000,\n\t\"m_flFadeTime\": 0.500000,\n\t\"m_bCrossFade\": false,\n\t\"m_sound\":\n\t{\n\t\t\"m_namespace\": \"\",\n\t\t\"m_bUseReference\": true,\n\t\t\"m_sound\": \"\",\n\t\t\"m_pSound\": null\n\t}\n}",
           "value_parsed": {
             "_class": "CVoiceContainerLoopTrigger",
+            "m_bRegisteredVMix": false,
+            "m_nResourceName": "",
             "m_vSound": {
               "m_Sentences": [],
               "m_nRate": 0,
@@ -275210,7 +275316,7 @@
       ],
       "projectName": "soundsystem_voicecontainers",
       "singleInheritanceDepth": 1,
-      "size": "160",
+      "size": "168",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/hierarchy/"
     },
@@ -275226,7 +275332,7 @@
             }
           ],
           "name": "m_randomPannerControls",
-          "offset": "160",
+          "offset": "168",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -275242,9 +275348,11 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CVoiceContainerLoopTriggerWithRandomPanner\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_flRetriggerTimeMin\": 1.000000,\n\t\"m_flRetriggerTimeMax\": 1.000000,\n\t\"m_flFadeTime\": 0.500000,\n\t\"m_bCrossFade\": false,\n\t\"m_sound\":\n\t{\n\t\t\"m_namespace\": \"\",\n\t\t\"m_bUseReference\": true,\n\t\t\"m_sound\": \"\",\n\t\t\"m_pSound\": null\n\t},\n\t\"m_randomPannerControls\":\n\t{\n\t\t\"m_panningControlInputName\": \"random_pan\",\n\t\t\"m_volumeControlInputName\": \"random_volume\",\n\t\t\"m_flMinVolume\": -12.000000,\n\t\t\"m_flMaxVolume\": 0.000000,\n\t\t\"m_strVectorStackParam\": \"ListenerForwardVector\"\n\t}\n}",
+          "value": "{\n\t\"_class\": \"CVoiceContainerLoopTriggerWithRandomPanner\",\n\t\"m_bRegisteredVMix\": false,\n\t\"m_nResourceName\": \"\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_flRetriggerTimeMin\": 1.000000,\n\t\"m_flRetriggerTimeMax\": 1.000000,\n\t\"m_flFadeTime\": 0.500000,\n\t\"m_bCrossFade\": false,\n\t\"m_sound\":\n\t{\n\t\t\"m_namespace\": \"\",\n\t\t\"m_bUseReference\": true,\n\t\t\"m_sound\": \"\",\n\t\t\"m_pSound\": null\n\t},\n\t\"m_randomPannerControls\":\n\t{\n\t\t\"m_panningControlInputName\": \"random_pan\",\n\t\t\"m_volumeControlInputName\": \"random_volume\",\n\t\t\"m_flMinVolume\": -12.000000,\n\t\t\"m_flMaxVolume\": 0.000000,\n\t\t\"m_strVectorStackParam\": \"ListenerForwardVector\"\n\t}\n}",
           "value_parsed": {
             "_class": "CVoiceContainerLoopTriggerWithRandomPanner",
+            "m_bRegisteredVMix": false,
+            "m_nResourceName": "",
             "m_vSound": {
               "m_Sentences": [],
               "m_nRate": 0,
@@ -275297,7 +275405,7 @@
       ],
       "projectName": "soundsystem_voicecontainers",
       "singleInheritanceDepth": 2,
-      "size": "192",
+      "size": "200",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/hierarchy/"
     },
@@ -275313,7 +275421,7 @@
             }
           ],
           "name": "m_sound",
-          "offset": "112",
+          "offset": "120",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -275326,32 +275434,6 @@
         {
           "metadata": [],
           "name": "m_flLoopEnd",
-          "offset": "144",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "float32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_flLoopStart",
-          "offset": "148",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "float32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_flFadeOut",
           "offset": "152",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -275364,7 +275446,7 @@
         },
         {
           "metadata": [],
-          "name": "m_flFadeIn",
+          "name": "m_flLoopStart",
           "offset": "156",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -275377,8 +275459,34 @@
         },
         {
           "metadata": [],
-          "name": "m_bPlayHead",
+          "name": "m_flFadeOut",
           "offset": "160",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_flFadeIn",
+          "offset": "164",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_bPlayHead",
+          "offset": "168",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -275391,7 +275499,7 @@
         {
           "metadata": [],
           "name": "m_bPlayTail",
-          "offset": "161",
+          "offset": "169",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -275404,7 +275512,7 @@
         {
           "metadata": [],
           "name": "m_bEqualPow",
-          "offset": "162",
+          "offset": "170",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -275420,9 +275528,11 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CVoiceContainerLoopXFade\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_sound\":\n\t{\n\t\t\"m_namespace\": \"\",\n\t\t\"m_bUseReference\": true,\n\t\t\"m_sound\": \"\",\n\t\t\"m_pSound\": null\n\t},\n\t\"m_flLoopEnd\": 0.000000,\n\t\"m_flLoopStart\": 0.000000,\n\t\"m_flFadeOut\": 0.000000,\n\t\"m_flFadeIn\": 0.000000,\n\t\"m_bPlayHead\": false,\n\t\"m_bPlayTail\": false,\n\t\"m_bEqualPow\": false\n}",
+          "value": "{\n\t\"_class\": \"CVoiceContainerLoopXFade\",\n\t\"m_bRegisteredVMix\": false,\n\t\"m_nResourceName\": \"\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_sound\":\n\t{\n\t\t\"m_namespace\": \"\",\n\t\t\"m_bUseReference\": true,\n\t\t\"m_sound\": \"\",\n\t\t\"m_pSound\": null\n\t},\n\t\"m_flLoopEnd\": 0.000000,\n\t\"m_flLoopStart\": 0.000000,\n\t\"m_flFadeOut\": 0.000000,\n\t\"m_flFadeIn\": 0.000000,\n\t\"m_bPlayHead\": false,\n\t\"m_bPlayTail\": false,\n\t\"m_bEqualPow\": false\n}",
           "value_parsed": {
             "_class": "CVoiceContainerLoopXFade",
+            "m_bRegisteredVMix": false,
+            "m_nResourceName": "",
             "m_vSound": {
               "m_Sentences": [],
               "m_nRate": 0,
@@ -275471,7 +275581,7 @@
       ],
       "projectName": "soundsystem_voicecontainers",
       "singleInheritanceDepth": 1,
-      "size": "168",
+      "size": "176",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/hierarchy/"
     },
@@ -275487,7 +275597,7 @@
             }
           ],
           "name": "m_soundsToPlay",
-          "offset": "112",
+          "offset": "120",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -275505,7 +275615,7 @@
             }
           ],
           "name": "m_flBlendFactor",
-          "offset": "168",
+          "offset": "176",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -275523,7 +275633,7 @@
             }
           ],
           "name": "m_flCrossover",
-          "offset": "172",
+          "offset": "180",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -275539,9 +275649,11 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CVoiceContainerMultiBlender\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_soundsToPlay\":\n\t{\n\t\t\"m_bUseReference\": true,\n\t\t\"m_sounds\":\n\t\t[\n\t\t],\n\t\t\"m_pSounds\":\n\t\t[\n\t\t]\n\t},\n\t\"m_flBlendFactor\": 0.000000,\n\t\"m_flCrossover\": 1.000000\n}",
+          "value": "{\n\t\"_class\": \"CVoiceContainerMultiBlender\",\n\t\"m_bRegisteredVMix\": false,\n\t\"m_nResourceName\": \"\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_soundsToPlay\":\n\t{\n\t\t\"m_bUseReference\": true,\n\t\t\"m_sounds\":\n\t\t[\n\t\t],\n\t\t\"m_pSounds\":\n\t\t[\n\t\t]\n\t},\n\t\"m_flBlendFactor\": 0.000000,\n\t\"m_flCrossover\": 1.000000\n}",
           "value_parsed": {
             "_class": "CVoiceContainerMultiBlender",
+            "m_bRegisteredVMix": false,
+            "m_nResourceName": "",
             "m_vSound": {
               "m_Sentences": [],
               "m_nRate": 0,
@@ -275584,7 +275696,7 @@
       ],
       "projectName": "soundsystem_voicecontainers",
       "singleInheritanceDepth": 1,
-      "size": "176",
+      "size": "184",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/hierarchy/"
     },
@@ -275597,9 +275709,11 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CVoiceContainerNull\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null\n}",
+          "value": "{\n\t\"_class\": \"CVoiceContainerNull\",\n\t\"m_bRegisteredVMix\": false,\n\t\"m_nResourceName\": \"\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null\n}",
           "value_parsed": {
             "_class": "CVoiceContainerNull",
+            "m_bRegisteredVMix": false,
+            "m_nResourceName": "",
             "m_vSound": {
               "m_Sentences": [],
               "m_nRate": 0,
@@ -275635,7 +275749,7 @@
       ],
       "projectName": "soundsystem_voicecontainers",
       "singleInheritanceDepth": 2,
-      "size": "112",
+      "size": "120",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/hierarchy/"
     },
@@ -275651,7 +275765,7 @@
             }
           ],
           "name": "m_firstSound",
-          "offset": "112",
+          "offset": "120",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -275669,7 +275783,7 @@
             }
           ],
           "name": "m_secondSound",
-          "offset": "144",
+          "offset": "152",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -275691,7 +275805,7 @@
             }
           ],
           "name": "m_bEnableOcclusionBlend",
-          "offset": "176",
+          "offset": "184",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -275713,7 +275827,7 @@
             }
           ],
           "name": "m_curve1",
-          "offset": "184",
+          "offset": "192",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -275735,7 +275849,7 @@
             }
           ],
           "name": "m_curve2",
-          "offset": "248",
+          "offset": "256",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -275757,7 +275871,7 @@
             }
           ],
           "name": "m_bEnableDistanceBlend",
-          "offset": "312",
+          "offset": "320",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -275779,7 +275893,7 @@
             }
           ],
           "name": "m_curve3",
-          "offset": "320",
+          "offset": "328",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -275801,7 +275915,7 @@
             }
           ],
           "name": "m_curve4",
-          "offset": "384",
+          "offset": "392",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -275817,9 +275931,11 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CVoiceContainerParameterBlender\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_firstSound\":\n\t{\n\t\t\"m_namespace\": \"\",\n\t\t\"m_bUseReference\": true,\n\t\t\"m_sound\": \"\",\n\t\t\"m_pSound\": null\n\t},\n\t\"m_secondSound\":\n\t{\n\t\t\"m_namespace\": \"\",\n\t\t\"m_bUseReference\": true,\n\t\t\"m_sound\": \"\",\n\t\t\"m_pSound\": null\n\t},\n\t\"m_bEnableOcclusionBlend\": false,\n\t\"m_curve1\":\n\t{\n\t\t\"m_spline\":\n\t\t[\n\t\t],\n\t\t\"m_tangents\":\n\t\t[\n\t\t],\n\t\t\"m_vDomainMins\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t],\n\t\t\"m_vDomainMaxs\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t]\n\t},\n\t\"m_curve2\":\n\t{\n\t\t\"m_spline\":\n\t\t[\n\t\t],\n\t\t\"m_tangents\":\n\t\t[\n\t\t],\n\t\t\"m_vDomainMins\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t],\n\t\t\"m_vDomainMaxs\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t]\n\t},\n\t\"m_bEnableDistanceBlend\": false,\n\t\"m_curve3\":\n\t{\n\t\t\"m_spline\":\n\t\t[\n\t\t],\n\t\t\"m_tangents\":\n\t\t[\n\t\t],\n\t\t\"m_vDomainMins\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t],\n\t\t\"m_vDomainMaxs\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t]\n\t},\n\t\"m_curve4\":\n\t{\n\t\t\"m_spline\":\n\t\t[\n\t\t],\n\t\t\"m_tangents\":\n\t\t[\n\t\t],\n\t\t\"m_vDomainMins\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t],\n\t\t\"m_vDomainMaxs\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t]\n\t}\n}",
+          "value": "{\n\t\"_class\": \"CVoiceContainerParameterBlender\",\n\t\"m_bRegisteredVMix\": false,\n\t\"m_nResourceName\": \"\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_firstSound\":\n\t{\n\t\t\"m_namespace\": \"\",\n\t\t\"m_bUseReference\": true,\n\t\t\"m_sound\": \"\",\n\t\t\"m_pSound\": null\n\t},\n\t\"m_secondSound\":\n\t{\n\t\t\"m_namespace\": \"\",\n\t\t\"m_bUseReference\": true,\n\t\t\"m_sound\": \"\",\n\t\t\"m_pSound\": null\n\t},\n\t\"m_bEnableOcclusionBlend\": false,\n\t\"m_curve1\":\n\t{\n\t\t\"m_spline\":\n\t\t[\n\t\t],\n\t\t\"m_tangents\":\n\t\t[\n\t\t],\n\t\t\"m_vDomainMins\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t],\n\t\t\"m_vDomainMaxs\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t]\n\t},\n\t\"m_curve2\":\n\t{\n\t\t\"m_spline\":\n\t\t[\n\t\t],\n\t\t\"m_tangents\":\n\t\t[\n\t\t],\n\t\t\"m_vDomainMins\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t],\n\t\t\"m_vDomainMaxs\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t]\n\t},\n\t\"m_bEnableDistanceBlend\": false,\n\t\"m_curve3\":\n\t{\n\t\t\"m_spline\":\n\t\t[\n\t\t],\n\t\t\"m_tangents\":\n\t\t[\n\t\t],\n\t\t\"m_vDomainMins\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t],\n\t\t\"m_vDomainMaxs\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t]\n\t},\n\t\"m_curve4\":\n\t{\n\t\t\"m_spline\":\n\t\t[\n\t\t],\n\t\t\"m_tangents\":\n\t\t[\n\t\t],\n\t\t\"m_vDomainMins\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t],\n\t\t\"m_vDomainMaxs\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t]\n\t}\n}",
           "value_parsed": {
             "_class": "CVoiceContainerParameterBlender",
+            "m_bRegisteredVMix": false,
+            "m_nResourceName": "",
             "m_vSound": {
               "m_Sentences": [],
               "m_nRate": 0,
@@ -275917,7 +276033,7 @@
       ],
       "projectName": "soundsystem_voicecontainers",
       "singleInheritanceDepth": 1,
-      "size": "448",
+      "size": "456",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/hierarchy/"
     },
@@ -275928,32 +276044,6 @@
         {
           "metadata": [],
           "name": "m_flAmplitude",
-          "offset": "128",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "float32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_flAmplitudeJitter",
-          "offset": "132",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "float32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_flTimeJitter",
           "offset": "136",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -275966,7 +276056,7 @@
         },
         {
           "metadata": [],
-          "name": "m_flMaxLength",
+          "name": "m_flAmplitudeJitter",
           "offset": "140",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -275979,8 +276069,34 @@
         },
         {
           "metadata": [],
-          "name": "m_nNumDelayVariations",
+          "name": "m_flTimeJitter",
           "offset": "144",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_flMaxLength",
+          "offset": "148",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_nNumDelayVariations",
+          "offset": "152",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -275993,7 +276109,7 @@
         {
           "metadata": [],
           "name": "m_grainResources",
-          "offset": "152",
+          "offset": "160",
           "type": {
             "atomicCategory": "ATOMIC_COLLECTION_OF_T",
             "category": "ATOMIC",
@@ -276023,9 +276139,11 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CVoiceContainerRandomSampler\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_flAmplitude\": 0.800000,\n\t\"m_flAmplitudeJitter\": 0.100000,\n\t\"m_flTimeJitter\": 0.200000,\n\t\"m_flMaxLength\": -1.000000,\n\t\"m_nNumDelayVariations\": 0,\n\t\"m_grainResources\":\n\t[\n\t]\n}",
+          "value": "{\n\t\"_class\": \"CVoiceContainerRandomSampler\",\n\t\"m_bRegisteredVMix\": false,\n\t\"m_nResourceName\": \"\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_flAmplitude\": 0.800000,\n\t\"m_flAmplitudeJitter\": 0.100000,\n\t\"m_flTimeJitter\": 0.200000,\n\t\"m_flMaxLength\": -1.000000,\n\t\"m_nNumDelayVariations\": 0,\n\t\"m_grainResources\":\n\t[\n\t]\n}",
           "value_parsed": {
             "_class": "CVoiceContainerRandomSampler",
+            "m_bRegisteredVMix": false,
+            "m_nResourceName": "",
             "m_vSound": {
               "m_Sentences": [],
               "m_nRate": 0,
@@ -276067,7 +276185,7 @@
       ],
       "projectName": "soundsystem_voicecontainers",
       "singleInheritanceDepth": 3,
-      "size": "424",
+      "size": "432",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/hierarchy/"
     },
@@ -276087,7 +276205,7 @@
             }
           ],
           "name": "m_flCarrierFrequency",
-          "offset": "112",
+          "offset": "120",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -276109,7 +276227,7 @@
             }
           ],
           "name": "m_flModulatorFrequency",
-          "offset": "116",
+          "offset": "124",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -276131,7 +276249,7 @@
             }
           ],
           "name": "m_flModulatorAmount",
-          "offset": "120",
+          "offset": "128",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -276147,9 +276265,11 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CVoiceContainerRealtimeFMSineWave\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_flCarrierFrequency\": 0.000000,\n\t\"m_flModulatorFrequency\": 0.000000,\n\t\"m_flModulatorAmount\": 0.000000\n}",
+          "value": "{\n\t\"_class\": \"CVoiceContainerRealtimeFMSineWave\",\n\t\"m_bRegisteredVMix\": false,\n\t\"m_nResourceName\": \"\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_flCarrierFrequency\": 0.000000,\n\t\"m_flModulatorFrequency\": 0.000000,\n\t\"m_flModulatorAmount\": 0.000000\n}",
           "value_parsed": {
             "_class": "CVoiceContainerRealtimeFMSineWave",
+            "m_bRegisteredVMix": false,
+            "m_nResourceName": "",
             "m_vSound": {
               "m_Sentences": [],
               "m_nRate": 0,
@@ -276188,7 +276308,7 @@
       ],
       "projectName": "soundsystem_voicecontainers",
       "singleInheritanceDepth": 2,
-      "size": "128",
+      "size": "136",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/hierarchy/"
     },
@@ -276204,7 +276324,7 @@
             }
           ],
           "name": "m_mode",
-          "offset": "112",
+          "offset": "120",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_ENUM",
@@ -276222,7 +276342,7 @@
             }
           ],
           "name": "m_soundsToPlay",
-          "offset": "120",
+          "offset": "128",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -276240,7 +276360,7 @@
             }
           ],
           "name": "m_fProbabilityWeights",
-          "offset": "176",
+          "offset": "184",
           "type": {
             "atomicCategory": "ATOMIC_COLLECTION_OF_T",
             "category": "ATOMIC",
@@ -276263,9 +276383,11 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CVoiceContainerSelector\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_mode\": \"Random\",\n\t\"m_soundsToPlay\":\n\t{\n\t\t\"m_bUseReference\": true,\n\t\t\"m_sounds\":\n\t\t[\n\t\t],\n\t\t\"m_pSounds\":\n\t\t[\n\t\t]\n\t},\n\t\"m_fProbabilityWeights\":\n\t[\n\t]\n}",
+          "value": "{\n\t\"_class\": \"CVoiceContainerSelector\",\n\t\"m_bRegisteredVMix\": false,\n\t\"m_nResourceName\": \"\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_mode\": \"Random\",\n\t\"m_soundsToPlay\":\n\t{\n\t\t\"m_bUseReference\": true,\n\t\t\"m_sounds\":\n\t\t[\n\t\t],\n\t\t\"m_pSounds\":\n\t\t[\n\t\t]\n\t},\n\t\"m_fProbabilityWeights\":\n\t[\n\t]\n}",
           "value_parsed": {
             "_class": "CVoiceContainerSelector",
+            "m_bRegisteredVMix": false,
+            "m_nResourceName": "",
             "m_vSound": {
               "m_Sentences": [],
               "m_nRate": 0,
@@ -276308,7 +276430,7 @@
       ],
       "projectName": "soundsystem_voicecontainers",
       "singleInheritanceDepth": 1,
-      "size": "232",
+      "size": "240",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/hierarchy/"
     },
@@ -276324,7 +276446,7 @@
             }
           ],
           "name": "m_soundsToPlay",
-          "offset": "112",
+          "offset": "120",
           "type": {
             "atomicCategory": "ATOMIC_COLLECTION_OF_T",
             "category": "ATOMIC",
@@ -276347,9 +276469,11 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CVoiceContainerSet\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_soundsToPlay\":\n\t[\n\t]\n}",
+          "value": "{\n\t\"_class\": \"CVoiceContainerSet\",\n\t\"m_bRegisteredVMix\": false,\n\t\"m_nResourceName\": \"\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_soundsToPlay\":\n\t[\n\t]\n}",
           "value_parsed": {
             "_class": "CVoiceContainerSet",
+            "m_bRegisteredVMix": false,
+            "m_nResourceName": "",
             "m_vSound": {
               "m_Sentences": [],
               "m_nRate": 0,
@@ -276386,7 +276510,7 @@
       ],
       "projectName": "soundsystem_voicecontainers",
       "singleInheritanceDepth": 1,
-      "size": "160",
+      "size": "168",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/hierarchy/"
     },
@@ -276460,7 +276584,7 @@
         {
           "metadata": [],
           "name": "m_bUseCurveForFrequency",
-          "offset": "112",
+          "offset": "120",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -276478,7 +276602,7 @@
             }
           ],
           "name": "m_flFrequency",
-          "offset": "116",
+          "offset": "124",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -276500,7 +276624,7 @@
             }
           ],
           "name": "m_frequencySweep",
-          "offset": "120",
+          "offset": "128",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -276513,7 +276637,7 @@
         {
           "metadata": [],
           "name": "m_bUseCurveForResonance",
-          "offset": "184",
+          "offset": "192",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -276531,7 +276655,7 @@
             }
           ],
           "name": "m_flResonance",
-          "offset": "188",
+          "offset": "196",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -276553,7 +276677,7 @@
             }
           ],
           "name": "m_resonanceSweep",
-          "offset": "192",
+          "offset": "200",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -276566,7 +276690,7 @@
         {
           "metadata": [],
           "name": "m_bUseCurveForAmplitude",
-          "offset": "256",
+          "offset": "264",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -276584,7 +276708,7 @@
             }
           ],
           "name": "m_flGainInDecibels",
-          "offset": "260",
+          "offset": "268",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -276606,7 +276730,7 @@
             }
           ],
           "name": "m_gainSweep",
-          "offset": "264",
+          "offset": "272",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -276622,9 +276746,11 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CVoiceContainerShapedNoise\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_bUseCurveForFrequency\": false,\n\t\"m_flFrequency\": 440.000000,\n\t\"m_frequencySweep\":\n\t{\n\t\t\"m_spline\":\n\t\t[\n\t\t],\n\t\t\"m_tangents\":\n\t\t[\n\t\t],\n\t\t\"m_vDomainMins\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t],\n\t\t\"m_vDomainMaxs\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t]\n\t},\n\t\"m_bUseCurveForResonance\": false,\n\t\"m_flResonance\": 4.000000,\n\t\"m_resonanceSweep\":\n\t{\n\t\t\"m_spline\":\n\t\t[\n\t\t],\n\t\t\"m_tangents\":\n\t\t[\n\t\t],\n\t\t\"m_vDomainMins\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t],\n\t\t\"m_vDomainMaxs\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t]\n\t},\n\t\"m_bUseCurveForAmplitude\": false,\n\t\"m_flGainInDecibels\": 1.000000,\n\t\"m_gainSweep\":\n\t{\n\t\t\"m_spline\":\n\t\t[\n\t\t],\n\t\t\"m_tangents\":\n\t\t[\n\t\t],\n\t\t\"m_vDomainMins\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t],\n\t\t\"m_vDomainMaxs\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t]\n\t}\n}",
+          "value": "{\n\t\"_class\": \"CVoiceContainerShapedNoise\",\n\t\"m_bRegisteredVMix\": false,\n\t\"m_nResourceName\": \"\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_bUseCurveForFrequency\": false,\n\t\"m_flFrequency\": 440.000000,\n\t\"m_frequencySweep\":\n\t{\n\t\t\"m_spline\":\n\t\t[\n\t\t],\n\t\t\"m_tangents\":\n\t\t[\n\t\t],\n\t\t\"m_vDomainMins\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t],\n\t\t\"m_vDomainMaxs\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t]\n\t},\n\t\"m_bUseCurveForResonance\": false,\n\t\"m_flResonance\": 4.000000,\n\t\"m_resonanceSweep\":\n\t{\n\t\t\"m_spline\":\n\t\t[\n\t\t],\n\t\t\"m_tangents\":\n\t\t[\n\t\t],\n\t\t\"m_vDomainMins\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t],\n\t\t\"m_vDomainMaxs\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t]\n\t},\n\t\"m_bUseCurveForAmplitude\": false,\n\t\"m_flGainInDecibels\": 1.000000,\n\t\"m_gainSweep\":\n\t{\n\t\t\"m_spline\":\n\t\t[\n\t\t],\n\t\t\"m_tangents\":\n\t\t[\n\t\t],\n\t\t\"m_vDomainMins\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t],\n\t\t\"m_vDomainMaxs\":\n\t\t[\n\t\t\t0.000000,\n\t\t\t0.000000\n\t\t]\n\t}\n}",
           "value_parsed": {
             "_class": "CVoiceContainerShapedNoise",
+            "m_bRegisteredVMix": false,
+            "m_nResourceName": "",
             "m_vSound": {
               "m_Sentences": [],
               "m_nRate": 0,
@@ -276702,7 +276828,7 @@
       ],
       "projectName": "soundsystem_voicecontainers",
       "singleInheritanceDepth": 2,
-      "size": "328",
+      "size": "336",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/hierarchy/"
     },
@@ -276713,7 +276839,7 @@
         {
           "metadata": [],
           "name": "m_tones",
-          "offset": "128",
+          "offset": "136",
           "type": {
             "atomicCategory": "ATOMIC_COLLECTION_OF_T",
             "category": "ATOMIC",
@@ -276736,9 +276862,11 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CVoiceContainerStaticAdditiveSynth\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_tones\":\n\t[\n\t]\n}",
+          "value": "{\n\t\"_class\": \"CVoiceContainerStaticAdditiveSynth\",\n\t\"m_bRegisteredVMix\": false,\n\t\"m_nResourceName\": \"\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_tones\":\n\t[\n\t]\n}",
           "value_parsed": {
             "_class": "CVoiceContainerStaticAdditiveSynth",
+            "m_bRegisteredVMix": false,
+            "m_nResourceName": "",
             "m_vSound": {
               "m_Sentences": [],
               "m_nRate": 0,
@@ -276775,7 +276903,7 @@
       ],
       "projectName": "soundsystem_voicecontainers",
       "singleInheritanceDepth": 3,
-      "size": "176",
+      "size": "184",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/hierarchy/"
     },
@@ -277161,7 +277289,7 @@
             }
           ],
           "name": "m_soundsToPlay",
-          "offset": "112",
+          "offset": "120",
           "type": {
             "atomicCategory": "ATOMIC_COLLECTION_OF_T",
             "category": "ATOMIC",
@@ -277184,9 +277312,11 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CVoiceContainerSwitch\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_soundsToPlay\":\n\t[\n\t]\n}",
+          "value": "{\n\t\"_class\": \"CVoiceContainerSwitch\",\n\t\"m_bRegisteredVMix\": false,\n\t\"m_nResourceName\": \"\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_soundsToPlay\":\n\t[\n\t]\n}",
           "value_parsed": {
             "_class": "CVoiceContainerSwitch",
+            "m_bRegisteredVMix": false,
+            "m_nResourceName": "",
             "m_vSound": {
               "m_Sentences": [],
               "m_nRate": 0,
@@ -277223,7 +277353,7 @@
       ],
       "projectName": "soundsystem_voicecontainers",
       "singleInheritanceDepth": 1,
-      "size": "136",
+      "size": "144",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/hierarchy/"
     },
@@ -277234,7 +277364,7 @@
         {
           "metadata": [],
           "name": "m_bShouldWraparound",
-          "offset": "128",
+          "offset": "136",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -277247,7 +277377,7 @@
         {
           "metadata": [],
           "name": "m_sourceAudio",
-          "offset": "136",
+          "offset": "144",
           "type": {
             "atomicCategory": "ATOMIC_T",
             "category": "ATOMIC",
@@ -277267,7 +277397,7 @@
         {
           "metadata": [],
           "name": "m_flTapeSpeedAttackTime",
-          "offset": "144",
+          "offset": "152",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -277280,7 +277410,7 @@
         {
           "metadata": [],
           "name": "m_flTapeSpeedReleaseTime",
-          "offset": "148",
+          "offset": "156",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -277296,9 +277426,11 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CVoiceContainerTapePlayer\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_bShouldWraparound\": false,\n\t\"m_sourceAudio\": \"\",\n\t\"m_flTapeSpeedAttackTime\": 0.300000,\n\t\"m_flTapeSpeedReleaseTime\": 0.700000\n}",
+          "value": "{\n\t\"_class\": \"CVoiceContainerTapePlayer\",\n\t\"m_bRegisteredVMix\": false,\n\t\"m_nResourceName\": \"\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_bShouldWraparound\": false,\n\t\"m_sourceAudio\": \"\",\n\t\"m_flTapeSpeedAttackTime\": 0.300000,\n\t\"m_flTapeSpeedReleaseTime\": 0.700000\n}",
           "value_parsed": {
             "_class": "CVoiceContainerTapePlayer",
+            "m_bRegisteredVMix": false,
+            "m_nResourceName": "",
             "m_vSound": {
               "m_Sentences": [],
               "m_nRate": 0,
@@ -277334,22 +277466,38 @@
       ],
       "projectName": "soundsystem_voicecontainers",
       "singleInheritanceDepth": 3,
-      "size": "208",
+      "size": "216",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/hierarchy/"
     },
     {
       "alignment": 8,
       "cppName": "CVoiceContainerVMixSnd",
-      "fields": [],
+      "fields": [
+        {
+          "metadata": [],
+          "name": "m_resourceName",
+          "offset": "392",
+          "type": {
+            "atomicCategory": "ATOMIC_PLAIN",
+            "category": "ATOMIC",
+            "count": "0",
+            "module": "",
+            "name": "CUtlString"
+          },
+          "typeModule": ""
+        }
+      ],
       "flags": 262433,
       "flags2": 0,
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CVoiceContainerVMixSnd\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null\n}",
+          "value": "{\n\t\"_class\": \"CVoiceContainerVMixSnd\",\n\t\"m_bRegisteredVMix\": false,\n\t\"m_nResourceName\": \"\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_resourceName\": \"\"\n}",
           "value_parsed": {
             "_class": "CVoiceContainerVMixSnd",
+            "m_bRegisteredVMix": false,
+            "m_nResourceName": "",
             "m_vSound": {
               "m_Sentences": [],
               "m_nRate": 0,
@@ -277361,7 +277509,8 @@
               "m_nStreamingSize": 0,
               "m_nLoopEnd": 0
             },
-            "m_pEnvelopeAnalyzer": null
+            "m_pEnvelopeAnalyzer": null,
+            "m_resourceName": ""
           }
         },
         {
@@ -277385,7 +277534,7 @@
       ],
       "projectName": "soundsystem",
       "singleInheritanceDepth": 1,
-      "size": "384",
+      "size": "400",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem/hierarchy/"
     },
@@ -277401,7 +277550,7 @@
             }
           ],
           "name": "m_namespace",
-          "offset": "112",
+          "offset": "120",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -277419,7 +277568,7 @@
             }
           ],
           "name": "m_slot1",
-          "offset": "120",
+          "offset": "128",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -277437,7 +277586,7 @@
             }
           ],
           "name": "m_slot2",
-          "offset": "256",
+          "offset": "264",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -277455,7 +277604,7 @@
             }
           ],
           "name": "m_slot3",
-          "offset": "392",
+          "offset": "400",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -277473,7 +277622,7 @@
             }
           ],
           "name": "m_slot4",
-          "offset": "528",
+          "offset": "536",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -277491,7 +277640,7 @@
             }
           ],
           "name": "m_slot5",
-          "offset": "664",
+          "offset": "672",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -277509,7 +277658,7 @@
             }
           ],
           "name": "m_slot6",
-          "offset": "800",
+          "offset": "808",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -277527,7 +277676,7 @@
             }
           ],
           "name": "m_slot7",
-          "offset": "936",
+          "offset": "944",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -277545,7 +277694,7 @@
             }
           ],
           "name": "m_slot8",
-          "offset": "1072",
+          "offset": "1080",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -277563,7 +277712,7 @@
             }
           ],
           "name": "m_slot9",
-          "offset": "1208",
+          "offset": "1216",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -277581,7 +277730,7 @@
             }
           ],
           "name": "m_slot10",
-          "offset": "1344",
+          "offset": "1352",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -277599,7 +277748,7 @@
             }
           ],
           "name": "m_slot11",
-          "offset": "1480",
+          "offset": "1488",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -277617,7 +277766,7 @@
             }
           ],
           "name": "m_slot12",
-          "offset": "1616",
+          "offset": "1624",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -277635,7 +277784,7 @@
             }
           ],
           "name": "m_slot13",
-          "offset": "1752",
+          "offset": "1760",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -277653,7 +277802,7 @@
             }
           ],
           "name": "m_slot14",
-          "offset": "1888",
+          "offset": "1896",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -277671,7 +277820,7 @@
             }
           ],
           "name": "m_slot15",
-          "offset": "2024",
+          "offset": "2032",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -277689,7 +277838,7 @@
             }
           ],
           "name": "m_slot16",
-          "offset": "2160",
+          "offset": "2168",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -277705,9 +277854,11 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CVoiceContainerVsndRadioButton\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_namespace\": \"\",\n\t\"m_slot1\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot2\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot3\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot4\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot5\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot6\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot7\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot8\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot9\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot10\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot11\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot12\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot13\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot14\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot15\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot16\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t}\n}",
+          "value": "{\n\t\"_class\": \"CVoiceContainerVsndRadioButton\",\n\t\"m_bRegisteredVMix\": false,\n\t\"m_nResourceName\": \"\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_namespace\": \"\",\n\t\"m_slot1\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot2\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot3\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot4\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot5\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot6\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot7\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot8\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot9\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot10\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot11\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot12\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot13\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot14\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot15\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot16\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_group\": 1,\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t}\n}",
           "value_parsed": {
             "_class": "CVoiceContainerVsndRadioButton",
+            "m_bRegisteredVMix": false,
+            "m_nResourceName": "",
             "m_vSound": {
               "m_Sentences": [],
               "m_nRate": 0,
@@ -278176,7 +278327,7 @@
       ],
       "projectName": "soundsystem_voicecontainers",
       "singleInheritanceDepth": 1,
-      "size": "2296",
+      "size": "2304",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/hierarchy/"
     },
@@ -278192,7 +278343,7 @@
             }
           ],
           "name": "m_namespace",
-          "offset": "112",
+          "offset": "120",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -278210,7 +278361,7 @@
             }
           ],
           "name": "m_slot1",
-          "offset": "120",
+          "offset": "128",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -278228,7 +278379,7 @@
             }
           ],
           "name": "m_slot2",
-          "offset": "256",
+          "offset": "264",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -278246,7 +278397,7 @@
             }
           ],
           "name": "m_slot3",
-          "offset": "392",
+          "offset": "400",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -278264,7 +278415,7 @@
             }
           ],
           "name": "m_slot4",
-          "offset": "528",
+          "offset": "536",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -278282,7 +278433,7 @@
             }
           ],
           "name": "m_slot5",
-          "offset": "664",
+          "offset": "672",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -278300,7 +278451,7 @@
             }
           ],
           "name": "m_slot6",
-          "offset": "800",
+          "offset": "808",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -278318,7 +278469,7 @@
             }
           ],
           "name": "m_slot7",
-          "offset": "936",
+          "offset": "944",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -278336,7 +278487,7 @@
             }
           ],
           "name": "m_slot8",
-          "offset": "1072",
+          "offset": "1080",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -278354,7 +278505,7 @@
             }
           ],
           "name": "m_slot9",
-          "offset": "1208",
+          "offset": "1216",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -278372,7 +278523,7 @@
             }
           ],
           "name": "m_slot10",
-          "offset": "1344",
+          "offset": "1352",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -278390,7 +278541,7 @@
             }
           ],
           "name": "m_slot11",
-          "offset": "1480",
+          "offset": "1488",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -278408,7 +278559,7 @@
             }
           ],
           "name": "m_slot12",
-          "offset": "1616",
+          "offset": "1624",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -278426,7 +278577,7 @@
             }
           ],
           "name": "m_slot13",
-          "offset": "1752",
+          "offset": "1760",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -278444,7 +278595,7 @@
             }
           ],
           "name": "m_slot14",
-          "offset": "1888",
+          "offset": "1896",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -278462,7 +278613,7 @@
             }
           ],
           "name": "m_slot15",
-          "offset": "2024",
+          "offset": "2032",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -278480,7 +278631,7 @@
             }
           ],
           "name": "m_slot16",
-          "offset": "2160",
+          "offset": "2168",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -278496,9 +278647,11 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"_class\": \"CVoiceContainerVsndTrigger\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_namespace\": \"\",\n\t\"m_slot1\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot2\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot3\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot4\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot5\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot6\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot7\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot8\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot9\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot10\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot11\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot12\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot13\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot14\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot15\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot16\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t}\n}",
+          "value": "{\n\t\"_class\": \"CVoiceContainerVsndTrigger\",\n\t\"m_bRegisteredVMix\": false,\n\t\"m_nResourceName\": \"\",\n\t\"m_vSound\":\n\t{\n\t\t\"m_Sentences\":\n\t\t[\n\t\t],\n\t\t\"m_nRate\": 0,\n\t\t\"m_nFormat\": \"PCM16\",\n\t\t\"m_nChannels\": 0,\n\t\t\"m_nLoopStart\": 0,\n\t\t\"m_nSampleCount\": 0,\n\t\t\"m_flDuration\": 0.000000,\n\t\t\"m_nStreamingSize\": 0,\n\t\t\"m_nLoopEnd\": 0\n\t},\n\t\"m_pEnvelopeAnalyzer\": null,\n\t\"m_namespace\": \"\",\n\t\"m_slot1\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot2\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot3\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot4\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot5\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot6\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot7\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot8\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot9\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot10\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot11\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot12\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot13\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot14\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot15\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t},\n\t\"m_slot16\":\n\t{\n\t\t\"m_bEnableVsnd\": true,\n\t\t\"m_vsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableEndcap\": false,\n\t\t\"m_endcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_bEnableLoopcap\": false,\n\t\t\"m_loopcapVsnd\":\n\t\t{\n\t\t\t\"m_namespace\": \"\",\n\t\t\t\"m_bUseReference\": true,\n\t\t\t\"m_sound\": \"\",\n\t\t\t\"m_pSound\": null\n\t\t},\n\t\t\"m_volume\": 1.000000,\n\t\t\"m_fadeOut\": 0.000000,\n\t\t\"m_mode\": \"Trigger\"\n\t}\n}",
           "value_parsed": {
             "_class": "CVoiceContainerVsndTrigger",
+            "m_bRegisteredVMix": false,
+            "m_nResourceName": "",
             "m_vSound": {
               "m_Sentences": [],
               "m_nRate": 0,
@@ -278951,7 +279104,7 @@
       ],
       "projectName": "soundsystem_voicecontainers",
       "singleInheritanceDepth": 1,
-      "size": "2296",
+      "size": "2304",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/soundsystem_voicecontainers/hierarchy/"
     },
@@ -291813,7 +291966,7 @@
         {
           "metadata": [],
           "name": "m_hHudModelArms",
-          "offset": "7588",
+          "offset": "7592",
           "type": {
             "atomicCategory": "ATOMIC_T",
             "category": "ATOMIC",
@@ -291833,7 +291986,7 @@
         {
           "metadata": [],
           "name": "m_qDeathEyeAngles",
-          "offset": "7592",
+          "offset": "7596",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -291846,7 +291999,7 @@
         {
           "metadata": [],
           "name": "m_bLeftHanded",
-          "offset": "7604",
+          "offset": "7608",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -291859,7 +292012,7 @@
         {
           "metadata": [],
           "name": "m_fSwitchedHandednessTime",
-          "offset": "7608",
+          "offset": "7612",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -291872,19 +292025,6 @@
         {
           "metadata": [],
           "name": "m_flViewmodelOffsetX",
-          "offset": "7612",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "float32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_flViewmodelOffsetY",
           "offset": "7616",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -291897,7 +292037,7 @@
         },
         {
           "metadata": [],
-          "name": "m_flViewmodelOffsetZ",
+          "name": "m_flViewmodelOffsetY",
           "offset": "7620",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -291910,7 +292050,7 @@
         },
         {
           "metadata": [],
-          "name": "m_flViewmodelFOV",
+          "name": "m_flViewmodelOffsetZ",
           "offset": "7624",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -291923,8 +292063,21 @@
         },
         {
           "metadata": [],
-          "name": "m_vecPlayerPatchEconIndices",
+          "name": "m_flViewmodelFOV",
           "offset": "7628",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_vecPlayerPatchEconIndices",
+          "offset": "7632",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "FIXED_ARRAY",
@@ -291944,7 +292097,7 @@
         {
           "metadata": [],
           "name": "m_GunGameImmunityColor",
-          "offset": "7696",
+          "offset": "7704",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -291957,7 +292110,7 @@
         {
           "metadata": [],
           "name": "m_vecBulletHitModels",
-          "offset": "7776",
+          "offset": "7784",
           "type": {
             "atomicCategory": "ATOMIC_COLLECTION_OF_T",
             "category": "ATOMIC",
@@ -291984,7 +292137,7 @@
         {
           "metadata": [],
           "name": "m_bIsWalking",
-          "offset": "7800",
+          "offset": "7808",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -291997,7 +292150,7 @@
         {
           "metadata": [],
           "name": "m_entitySpottedState",
-          "offset": "7808",
+          "offset": "7816",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -292010,7 +292163,7 @@
         {
           "metadata": [],
           "name": "m_bIsScoped",
-          "offset": "7832",
+          "offset": "7840",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292023,7 +292176,7 @@
         {
           "metadata": [],
           "name": "m_bResumeZoom",
-          "offset": "7833",
+          "offset": "7841",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292036,7 +292189,7 @@
         {
           "metadata": [],
           "name": "m_bIsDefusing",
-          "offset": "7834",
+          "offset": "7842",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292049,7 +292202,7 @@
         {
           "metadata": [],
           "name": "m_bIsGrabbingHostage",
-          "offset": "7835",
+          "offset": "7843",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292062,7 +292215,7 @@
         {
           "metadata": [],
           "name": "m_iBlockingUseActionInProgress",
-          "offset": "7836",
+          "offset": "7844",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_ENUM",
@@ -292075,7 +292228,7 @@
         {
           "metadata": [],
           "name": "m_flEmitSoundTime",
-          "offset": "7840",
+          "offset": "7848",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -292088,7 +292241,7 @@
         {
           "metadata": [],
           "name": "m_flEmitSoundTime_Client",
-          "offset": "7844",
+          "offset": "7852",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -292101,7 +292254,7 @@
         {
           "metadata": [],
           "name": "m_bInNoDefuseArea",
-          "offset": "7848",
+          "offset": "7856",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292114,7 +292267,7 @@
         {
           "metadata": [],
           "name": "m_nWhichBombZone",
-          "offset": "7852",
+          "offset": "7860",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292127,7 +292280,7 @@
         {
           "metadata": [],
           "name": "m_iShotsFired",
-          "offset": "7856",
+          "offset": "7864",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292140,7 +292293,7 @@
         {
           "metadata": [],
           "name": "m_flFlinchStack",
-          "offset": "7860",
+          "offset": "7868",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292153,32 +292306,6 @@
         {
           "metadata": [],
           "name": "m_flVelocityModifier",
-          "offset": "7864",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "float32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_bWaitForNoAttack",
-          "offset": "7868",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "bool"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_ignoreLadderJumpTime",
           "offset": "7872",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -292191,8 +292318,34 @@
         },
         {
           "metadata": [],
+          "name": "m_bWaitForNoAttack",
+          "offset": "7876",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "bool"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_ignoreLadderJumpTime",
+          "offset": "7880",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
           "name": "m_bKilledByHeadshot",
-          "offset": "7877",
+          "offset": "7885",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292205,7 +292358,7 @@
         {
           "metadata": [],
           "name": "m_ArmorValue",
-          "offset": "7880",
+          "offset": "7888",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292218,7 +292371,7 @@
         {
           "metadata": [],
           "name": "m_unCurrentEquipmentValue",
-          "offset": "7884",
+          "offset": "7892",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292231,7 +292384,7 @@
         {
           "metadata": [],
           "name": "m_unRoundStartEquipmentValue",
-          "offset": "7886",
+          "offset": "7894",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292244,7 +292397,7 @@
         {
           "metadata": [],
           "name": "m_unFreezetimeEndEquipmentValue",
-          "offset": "7888",
+          "offset": "7896",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292257,7 +292410,7 @@
         {
           "metadata": [],
           "name": "m_nLastKillerIndex",
-          "offset": "7892",
+          "offset": "7900",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -292270,7 +292423,7 @@
         {
           "metadata": [],
           "name": "m_bOldIsScoped",
-          "offset": "7896",
+          "offset": "7904",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292283,7 +292436,7 @@
         {
           "metadata": [],
           "name": "m_bHasDeathInfo",
-          "offset": "7897",
+          "offset": "7905",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292296,7 +292449,7 @@
         {
           "metadata": [],
           "name": "m_flDeathInfoTime",
-          "offset": "7900",
+          "offset": "7908",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292309,7 +292462,7 @@
         {
           "metadata": [],
           "name": "m_vecDeathInfoOrigin",
-          "offset": "7904",
+          "offset": "7912",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -292322,7 +292475,7 @@
         {
           "metadata": [],
           "name": "m_grenadeParameterStashTime",
-          "offset": "7960",
+          "offset": "7968",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -292335,7 +292488,7 @@
         {
           "metadata": [],
           "name": "m_bGrenadeParametersStashed",
-          "offset": "7964",
+          "offset": "7972",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292348,7 +292501,7 @@
         {
           "metadata": [],
           "name": "m_angStashedShootAngles",
-          "offset": "7968",
+          "offset": "7976",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -292361,7 +292514,7 @@
         {
           "metadata": [],
           "name": "m_vecStashedGrenadeThrowPosition",
-          "offset": "7980",
+          "offset": "7988",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -292374,7 +292527,7 @@
         {
           "metadata": [],
           "name": "m_vecStashedGrenadeThrowPawnCenter",
-          "offset": "7992",
+          "offset": "8000",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -292387,7 +292540,7 @@
         {
           "metadata": [],
           "name": "m_vecStashedVelocity",
-          "offset": "8004",
+          "offset": "8012",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -292400,7 +292553,7 @@
         {
           "metadata": [],
           "name": "m_flInterpolatedInaccuracy",
-          "offset": "8016",
+          "offset": "8024",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -292491,7 +292644,7 @@
         {
           "metadata": [],
           "name": "m_nPlayerInfernoBodyFx",
-          "offset": "13696",
+          "offset": "13704",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -511246,28 +511399,6 @@
     },
     {
       "alignment": 255,
-      "cppName": "InfoForResourceTypeCVMixListResource",
-      "fields": [],
-      "flags": 172,
-      "flags2": 0,
-      "metadata": [
-        {
-          "name": "MResourceTypeForInfoType",
-          "value": "vmix"
-        }
-      ],
-      "module": "!GlobalTypes",
-      "multipleInheritanceDepth": 1,
-      "name": "InfoForResourceTypeCVMixListResource",
-      "parents": [],
-      "projectName": "resourcesystem",
-      "singleInheritanceDepth": 0,
-      "size": "1",
-      "staticFields": [],
-      "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/resourcesystem/hierarchy/"
-    },
-    {
-      "alignment": 255,
       "cppName": "InfoForResourceTypeCVPhysXSurfacePropertiesList",
       "fields": [],
       "flags": 172,
@@ -547060,7 +547191,7 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"preset\": 0,\n\t\"pitchrun\": 0,\n\t\"pitchstart\": 0,\n\t\"spinup\": 0,\n\t\"spindown\": 0,\n\t\"volrun\": 0,\n\t\"volstart\": 0,\n\t\"fadein\": 0,\n\t\"fadeout\": 0,\n\t\"lfotype\": 0,\n\t\"lforate\": 0,\n\t\"lfomodpitch\": 0,\n\t\"lfomodvol\": 0,\n\t\"cspinup\": 0,\n\t\"cspincount\": 0,\n\t\"pitch\": 0,\n\t\"spinupsav\": 0,\n\t\"spindownsav\": 0,\n\t\"pitchfrac\": <HIDDEN FOR DIFF>,\n\t\"vol\": 32764,\n\t\"fadeinsav\": 0,\n\t\"fadeoutsav\": 0,\n\t\"volfrac\": 0,\n\t\"lfofrac\": 0,\n\t\"lfomult\": 0\n}",
+          "value": "{\n\t\"preset\": 0,\n\t\"pitchrun\": 0,\n\t\"pitchstart\": 0,\n\t\"spinup\": 0,\n\t\"spindown\": 0,\n\t\"volrun\": 0,\n\t\"volstart\": 0,\n\t\"fadein\": 0,\n\t\"fadeout\": 0,\n\t\"lfotype\": 0,\n\t\"lforate\": 0,\n\t\"lfomodpitch\": 0,\n\t\"lfomodvol\": 0,\n\t\"cspinup\": 0,\n\t\"cspincount\": 0,\n\t\"pitch\": 0,\n\t\"spinupsav\": 0,\n\t\"spindownsav\": 0,\n\t\"pitchfrac\": <HIDDEN FOR DIFF>,\n\t\"vol\": 32766,\n\t\"fadeinsav\": 0,\n\t\"fadeoutsav\": 0,\n\t\"volfrac\": 0,\n\t\"lfofrac\": 0,\n\t\"lfomult\": 0\n}",
           "value_parsed": {
             "preset": 0,
             "pitchrun": 0,
@@ -547081,7 +547212,7 @@
             "spinupsav": 0,
             "spindownsav": 0,
             "pitchfrac": null,
-            "vol": 32764,
+            "vol": 32766,
             "fadeinsav": 0,
             "fadeoutsav": 0,
             "volfrac": 0,
@@ -547109,7 +547240,7 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"preset\": 0,\n\t\"pitchrun\": 0,\n\t\"pitchstart\": 0,\n\t\"spinup\": 0,\n\t\"spindown\": 0,\n\t\"volrun\": 0,\n\t\"volstart\": 0,\n\t\"fadein\": 0,\n\t\"fadeout\": 0,\n\t\"lfotype\": 0,\n\t\"lforate\": 0,\n\t\"lfomodpitch\": 0,\n\t\"lfomodvol\": 0,\n\t\"cspinup\": 0,\n\t\"cspincount\": 0,\n\t\"pitch\": 0,\n\t\"spinupsav\": 0,\n\t\"spindownsav\": 0,\n\t\"pitchfrac\": <HIDDEN FOR DIFF>,\n\t\"vol\": 32764,\n\t\"fadeinsav\": 0,\n\t\"fadeoutsav\": 0,\n\t\"volfrac\": 0,\n\t\"lfofrac\": 0,\n\t\"lfomult\": 0\n}",
+          "value": "{\n\t\"preset\": 0,\n\t\"pitchrun\": 0,\n\t\"pitchstart\": 0,\n\t\"spinup\": 0,\n\t\"spindown\": 0,\n\t\"volrun\": 0,\n\t\"volstart\": 0,\n\t\"fadein\": 0,\n\t\"fadeout\": 0,\n\t\"lfotype\": 0,\n\t\"lforate\": 0,\n\t\"lfomodpitch\": 0,\n\t\"lfomodvol\": 0,\n\t\"cspinup\": 0,\n\t\"cspincount\": 0,\n\t\"pitch\": 0,\n\t\"spinupsav\": 0,\n\t\"spindownsav\": 0,\n\t\"pitchfrac\": <HIDDEN FOR DIFF>,\n\t\"vol\": 32766,\n\t\"fadeinsav\": 0,\n\t\"fadeoutsav\": 0,\n\t\"volfrac\": 0,\n\t\"lfofrac\": 0,\n\t\"lfomult\": 0\n}",
           "value_parsed": {
             "preset": 0,
             "pitchrun": 0,
@@ -547130,7 +547261,7 @@
             "spinupsav": 0,
             "spindownsav": 0,
             "pitchfrac": null,
-            "vol": 32764,
+            "vol": 32766,
             "fadeinsav": 0,
             "fadeoutsav": 0,
             "volfrac": 0,
@@ -584263,6 +584394,36 @@
       "name": "VMixSubgraphSwitchInterpolationType_t",
       "projectName": "soundsystem_lowlevel",
       "size": 4
+    },
+    {
+      "alignment": "uint8_t",
+      "flags": 41,
+      "members": [
+        {
+          "metadata": [
+            {
+              "name": "MPropertyFriendlyName",
+              "value": "Divide into channels"
+            }
+          ],
+          "name": "DIVIDE",
+          "value": "0"
+        },
+        {
+          "metadata": [
+            {
+              "name": "MPropertyFriendlyName",
+              "value": "Broadcast Mono"
+            }
+          ],
+          "name": "BROADCAST",
+          "value": "1"
+        }
+      ],
+      "module": "!GlobalTypes",
+      "name": "VMixUpMixRule_t",
+      "projectName": "soundsystem_lowlevel",
+      "size": 1
     },
     {
       "alignment": "uint32_t",
