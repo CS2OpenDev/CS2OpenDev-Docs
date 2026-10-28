@@ -5,7 +5,7 @@ module: server
 
 # Module: server
 
-> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26281801** · 2026-10-28 · `windows-x86_64` · schema `0.13.0`
 
 [📊 View UML Diagram](../diagrams/server.md)
 
@@ -127,7 +127,7 @@ module: server
 | [CCSGameModeRules_ArmsRace](server/CCSGameModeRules_ArmsRace.md) | class | 136 | 1 | [CCSGameModeRules](server/CCSGameModeRules.md) |
 | [CCSGameModeRules_Deathmatch](server/CCSGameModeRules_Deathmatch.md) | class | 136 | 3 | [CCSGameModeRules](server/CCSGameModeRules.md) |
 | [CCSGameModeRules_Noop](server/CCSGameModeRules_Noop.md) | class | 48 | 0 | [CCSGameModeRules](server/CCSGameModeRules.md) |
-| [CCSGameRules](server/CCSGameRules.md) | class | 70728 | 189 | [CTeamplayRules](server/CTeamplayRules.md) |
+| [CCSGameRules](server/CCSGameRules.md) | class | 70736 | 190 | [CTeamplayRules](server/CTeamplayRules.md) |
 | [CCSGameRulesProxy](server/CCSGameRulesProxy.md) | class | 1200 | 1 | [CGameRulesProxy](server/CGameRulesProxy.md) |
 | [CCSMinimapBoundary](server/CCSMinimapBoundary.md) | class | 1192 | 0 | [CBaseEntity](server/CBaseEntity.md) |
 | [CCSMinimapVolume](server/CCSMinimapVolume.md) | class | 2536 | 1 | [CBaseTrigger](server/CBaseTrigger.md) |
@@ -170,7 +170,7 @@ module: server
 | [CCSRadarElement](server/CCSRadarElement.md) | class | 1232 | 3 | [CBaseEntity](server/CBaseEntity.md) |
 | [CCSSprite](server/CCSSprite.md) | class | 2240 | 0 | [CSprite](server/CSprite.md) |
 | [CCSTeam](server/CCSTeam.md) | class | 2080 | 14 | [CTeam](server/CTeam.md) |
-| [CCSWeaponBase](server/CCSWeaponBase.md) | class | 4736 | 59 | [CBasePlayerWeapon](server/CBasePlayerWeapon.md) |
+| [CCSWeaponBase](server/CCSWeaponBase.md) | class | 4736 | 58 | [CBasePlayerWeapon](server/CBasePlayerWeapon.md) |
 | [CCSWeaponBaseGun](server/CCSWeaponBaseGun.md) | class | 4768 | 10 | [CCSWeaponBase](server/CCSWeaponBase.md) |
 | [CCSWeaponBaseShotgun](server/CCSWeaponBaseShotgun.md) | class | 4736 | 0 | [CCSWeaponBase](server/CCSWeaponBase.md) |
 | [CCSWeaponBaseVData](server/CCSWeaponBaseVData.md) | class | 2208 | 83 | [CBasePlayerWeaponVData](server/CBasePlayerWeaponVData.md) |
@@ -1120,7 +1120,7 @@ module: server
 | [VoiceDataFormat_t](server/VoiceDataFormat_t.md) | enum | — | 3 |  |
 | [WaterLevel_t](server/WaterLevel_t.md) | enum | — | 7 |  |
 | [WeaponAttackType_t](server/WeaponAttackType_t.md) | enum | — | 4 |  |
-| [WeaponGameplayAnimState](server/WeaponGameplayAnimState.md) | enum | — | 29 |  |
+| [WeaponGameplayAnimState](server/WeaponGameplayAnimState.md) | enum | — | 31 |  |
 | [WeaponSound_t](server/WeaponSound_t.md) | enum | — | 25 |  |
 | [WeaponSwitchReason_t](server/WeaponSwitchReason_t.md) | enum | — | 5 |  |
 | [WorldTextPanelHorizontalAlign_t](server/WorldTextPanelHorizontalAlign_t.md) | enum | — | 3 |  |

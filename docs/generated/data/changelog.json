@@ -8,78 +8,60 @@
           "field_changes": [
             {
               "field": "field_count",
-              "new_value": "3",
-              "old_value": "2"
+              "new_value": "99",
+              "old_value": "98"
             }
           ],
-          "name": "!GlobalTypes/CGraphPreviewList"
+          "name": "client.dll/C_CSGameRules"
         },
         {
           "field_changes": [
             {
               "field": "field_count",
-              "new_value": "5",
-              "old_value": "4"
+              "new_value": "190",
+              "old_value": "189"
             }
           ],
-          "name": "!GlobalTypes/CMixTrack"
+          "name": "server.dll/CCSGameRules"
         },
         {
           "field_changes": [
             {
               "field": "field_count",
-              "new_value": "7",
-              "old_value": "6"
+              "new_value": "58",
+              "old_value": "59"
             }
           ],
-          "name": "!GlobalTypes/CVMixSubmix"
-        },
-        {
-          "field_changes": [
-            {
-              "field": "field_count",
-              "new_value": "4",
-              "old_value": "2"
-            }
-          ],
-          "name": "!GlobalTypes/CVoiceContainerBase"
-        },
-        {
-          "field_changes": [
-            {
-              "field": "field_count",
-              "new_value": "1",
-              "old_value": "0"
-            }
-          ],
-          "name": "!GlobalTypes/CVoiceContainerVMixSnd"
-        },
-        {
-          "field_changes": [
-            {
-              "field": "field_count",
-              "new_value": "40",
-              "old_value": "39"
-            }
-          ],
-          "name": "server.dll/CHostage"
+          "name": "server.dll/CCSWeaponBase"
         }
       ],
-      "changed_count": 6,
+      "changed_count": 3,
       "family": "classes",
-      "removed": [
-        "!GlobalTypes/InfoForResourceTypeCVMixListResource"
-      ],
-      "removed_count": 1,
+      "removed": [],
+      "removed_count": 0,
       "truncated": false
     },
     {
-      "added": [
-        "!GlobalTypes/VMixUpMixRule_t"
+      "added": [],
+      "added_count": 0,
+      "changed": [
+        {
+          "field_changes": [
+            {
+              "field": "member:WPN_ANIMSTATE_RELOAD_OUTRO_SILENT",
+              "new_value": "803",
+              "old_value": ""
+            },
+            {
+              "field": "member:WPN_ANIMSTATE_RELOAD_SILENT",
+              "new_value": "802",
+              "old_value": ""
+            }
+          ],
+          "name": "!GlobalTypes/WeaponGameplayAnimState"
+        }
       ],
-      "added_count": 1,
-      "changed": [],
-      "changed_count": 0,
+      "changed_count": 1,
       "family": "enums",
       "removed": [],
       "removed_count": 0,
@@ -87,17 +69,10 @@
     },
     {
       "added": [
-        "voice_webrtc_aec",
-        "voice_webrtc_agc",
-        "voice_webrtc_apm",
-        "voice_webrtc_fixed_gain_db",
-        "voice_webrtc_hpf",
-        "voice_webrtc_ns",
-        "voice_webrtc_ns_level",
-        "voice_webrtc_stats",
-        "voice_webrtc_stream_delay_ms"
+        "cl_weapon_stealth_reload_toggle",
+        "vulkan_pipeline_cache_max_size_mb"
       ],
-      "added_count": 9,
+      "added_count": 2,
       "changed": [],
       "changed_count": 0,
       "family": "convars",
@@ -117,8 +92,8 @@
     },
     {
       "added": [
-        "schema_enum:!GlobalTypes/VMixUpMixRule_t/VMixUpMixRule_t::BROADCAST",
-        "schema_enum:!GlobalTypes/VMixUpMixRule_t/VMixUpMixRule_t::DIVIDE"
+        "schema_enum:!GlobalTypes/WeaponGameplayAnimState/WeaponGameplayAnimState::WPN_ANIMSTATE_RELOAD_OUTRO_SILENT",
+        "schema_enum:!GlobalTypes/WeaponGameplayAnimState/WeaponGameplayAnimState::WPN_ANIMSTATE_RELOAD_SILENT"
       ],
       "added_count": 2,
       "changed": [],
@@ -129,9 +104,9 @@
       "truncated": false
     }
   ],
-  "from_build": "25966348",
+  "from_build": "26144732",
   "no_changes": false,
   "platform": "windows-x86_64",
-  "schema_history_anchor": "25966348-26144732",
-  "to_build": "26144732"
+  "schema_history_anchor": "26144732-26281801",
+  "to_build": "26281801"
 }

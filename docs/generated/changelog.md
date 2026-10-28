@@ -4,33 +4,30 @@ title: Changelog
 
 # Build Changelog
 
-> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26281801** · 2026-10-28 · `windows-x86_64` · schema `0.13.0`
 
-Difference between build **25966348** and **26144732** (`windows-x86_64`), grouped by data family.
+Difference between build **26144732** and **26281801** (`windows-x86_64`), grouped by data family.
 
 Families diffed: `classes`, `enums`, `convars`, `commands`, `engine_constants`.
 
-## classes (+0 / −1 / ~6)
-
-**Removed:** `!GlobalTypes/InfoForResourceTypeCVMixListResource`
+## classes (+0 / −0 / ~3)
 
 | Entry | Field changes |
 |-------|---------------|
-| `!GlobalTypes/CGraphPreviewList` | field_count: `2` → `3` |
-| `!GlobalTypes/CMixTrack` | field_count: `4` → `5` |
-| `!GlobalTypes/CVMixSubmix` | field_count: `6` → `7` |
-| `!GlobalTypes/CVoiceContainerBase` | field_count: `2` → `4` |
-| `!GlobalTypes/CVoiceContainerVMixSnd` | field_count: `0` → `1` |
-| `server.dll/CHostage` | field_count: `39` → `40` |
+| `client.dll/C_CSGameRules` | field_count: `98` → `99` |
+| `server.dll/CCSGameRules` | field_count: `189` → `190` |
+| `server.dll/CCSWeaponBase` | field_count: `59` → `58` |
 
-## enums (+1 / −0 / ~0)
+## enums (+0 / −0 / ~1)
 
-**Added:** `!GlobalTypes/VMixUpMixRule_t`
+| Entry | Field changes |
+|-------|---------------|
+| `!GlobalTypes/WeaponGameplayAnimState` | member:WPN_ANIMSTATE_RELOAD_OUTRO_SILENT:  → `803`; member:WPN_ANIMSTATE_RELOAD_SILENT:  → `802` |
 
-## convars (+9 / −0 / ~0)
+## convars (+2 / −0 / ~0)
 
-**Added:** `voice_webrtc_aec`, `voice_webrtc_agc`, `voice_webrtc_apm`, `voice_webrtc_fixed_gain_db`, `voice_webrtc_hpf`, `voice_webrtc_ns`, `voice_webrtc_ns_level`, `voice_webrtc_stats`, `voice_webrtc_stream_delay_ms`
+**Added:** `cl_weapon_stealth_reload_toggle`, `vulkan_pipeline_cache_max_size_mb`
 
 ## engine_constants (+2 / −0 / ~0)
 
-**Added:** `schema_enum:!GlobalTypes/VMixUpMixRule_t/VMixUpMixRule_t::BROADCAST`, `schema_enum:!GlobalTypes/VMixUpMixRule_t/VMixUpMixRule_t::DIVIDE`
+**Added:** `schema_enum:!GlobalTypes/WeaponGameplayAnimState/WeaponGameplayAnimState::WPN_ANIMSTATE_RELOAD_OUTRO_SILENT`, `schema_enum:!GlobalTypes/WeaponGameplayAnimState/WeaponGameplayAnimState::WPN_ANIMSTATE_RELOAD_SILENT`

@@ -8,9 +8,9 @@ kind: class
 
 # C_CSGameRules
 
-> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26281801** · 2026-10-28 · `windows-x86_64` · schema `0.13.0`
 
-**Kind:** class · **Size:** 20320 bytes (`0x4f60`) · **Align:** n/a (unspecified) · **Module:** client
+**Kind:** class · **Size:** 20328 bytes (`0x4f68`) · **Align:** n/a (unspecified) · **Module:** client
 
 **Inherits from:** [C_TeamplayRules](../client/C_TeamplayRules.md)
 
@@ -28,7 +28,7 @@ classDiagram
 
 ## Memory layout
 
-102 fields (98 declared here, 4 inherited). Offsets are absolute from the object base.
+103 fields (99 declared here, 4 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -98,39 +98,40 @@ classDiagram
 | `0xa30` | `m_iMatchStats_PlayersAlive_CT` | int32[30] |  |  |
 | `0xaa8` | `m_iMatchStats_PlayersAlive_T` | int32[30] |  |  |
 | `0xb20` | `m_TeamRespawnWaveTimes` | float32[32] |  |  |
-| `0xba0` | `m_flNextRespawnWave` | [GameTime_t](../entity2/GameTime_t.md)[32] |  |  |
-| `0xc20` | `m_vMinimapMins` | VectorWS |  |  |
-| `0xc2c` | `m_vMinimapMaxs` | VectorWS |  |  |
-| `0xc38` | `m_MinimapVerticalSectionHeights` | float32[8] |  |  |
-| `0xc58` | `m_ullLocalMatchID` | uint64 |  |  |
-| `0xc60` | `m_nEndMatchMapGroupVoteTypes` | int32[10] |  |  |
-| `0xc88` | `m_nEndMatchMapGroupVoteOptions` | int32[10] |  |  |
-| `0xcb0` | `m_nEndMatchMapVoteWinner` | int32 |  |  |
-| `0xcb4` | `m_iNumConsecutiveCTLoses` | int32 |  |  |
-| `0xcb8` | `m_iNumConsecutiveTerroristLoses` | int32 |  |  |
-| `0xd78` | `m_nMatchAbortedEarlyReason` | int32 |  |  |
-| `0xd7c` | `m_bHasTriggeredRoundStartMusic` | bool |  |  |
-| `0xd7d` | `m_bSwitchingTeamsAtRoundReset` | bool |  |  |
-| `0xd98` | `m_pGameModeRules` | [CCSGameModeRules](../client/CCSGameModeRules.md)* |  |  |
-| `0xda0` | `m_RetakeRules` | [C_RetakeGameRules](../client/C_RetakeGameRules.md) |  |  |
-| `0xef8` | `m_nMatchEndCount` | uint8 |  |  |
-| `0xefc` | `m_nTTeamIntroVariant` | int32 |  |  |
-| `0xf00` | `m_nCTTeamIntroVariant` | int32 |  |  |
-| `0xf04` | `m_bTeamIntroPeriod` | bool |  |  |
-| `0xf08` | `m_iRoundEndWinnerTeam` | int32 |  |  |
-| `0xf0c` | `m_eRoundEndReason` | int32 |  |  |
-| `0xf10` | `m_bRoundEndShowTimerDefend` | bool |  |  |
-| `0xf14` | `m_iRoundEndTimerTime` | int32 |  |  |
-| `0xf18` | `m_sRoundEndFunFactToken` | CUtlString |  |  |
-| `0xf20` | `m_iRoundEndFunFactPlayerSlot` | CPlayerSlot |  |  |
-| `0xf24` | `m_iRoundEndFunFactData1` | int32 |  |  |
-| `0xf28` | `m_iRoundEndFunFactData2` | int32 |  |  |
-| `0xf2c` | `m_iRoundEndFunFactData3` | int32 |  |  |
-| `0xf30` | `m_sRoundEndMessage` | CUtlString |  |  |
-| `0xf38` | `m_iRoundEndPlayerCount` | int32 |  |  |
-| `0xf3c` | `m_bRoundEndNoMusic` | bool |  |  |
-| `0xf40` | `m_iRoundEndLegacy` | int32 |  |  |
-| `0xf44` | `m_nRoundEndCount` | uint8 |  |  |
-| `0xf48` | `m_iRoundStartRoundNumber` | int32 |  |  |
-| `0xf4c` | `m_nRoundStartCount` | uint8 |  |  |
-| `0x4f58` | `m_flLastPerfSampleTime` | float64 |  |  |
+| `0xba0` | `m_nActiveMutators` | int32 |  |  |
+| `0xba4` | `m_flNextRespawnWave` | [GameTime_t](../entity2/GameTime_t.md)[32] |  |  |
+| `0xc24` | `m_vMinimapMins` | VectorWS |  |  |
+| `0xc30` | `m_vMinimapMaxs` | VectorWS |  |  |
+| `0xc3c` | `m_MinimapVerticalSectionHeights` | float32[8] |  |  |
+| `0xc60` | `m_ullLocalMatchID` | uint64 |  |  |
+| `0xc68` | `m_nEndMatchMapGroupVoteTypes` | int32[10] |  |  |
+| `0xc90` | `m_nEndMatchMapGroupVoteOptions` | int32[10] |  |  |
+| `0xcb8` | `m_nEndMatchMapVoteWinner` | int32 |  |  |
+| `0xcbc` | `m_iNumConsecutiveCTLoses` | int32 |  |  |
+| `0xcc0` | `m_iNumConsecutiveTerroristLoses` | int32 |  |  |
+| `0xd80` | `m_nMatchAbortedEarlyReason` | int32 |  |  |
+| `0xd84` | `m_bHasTriggeredRoundStartMusic` | bool |  |  |
+| `0xd85` | `m_bSwitchingTeamsAtRoundReset` | bool |  |  |
+| `0xda0` | `m_pGameModeRules` | [CCSGameModeRules](../client/CCSGameModeRules.md)* |  |  |
+| `0xda8` | `m_RetakeRules` | [C_RetakeGameRules](../client/C_RetakeGameRules.md) |  |  |
+| `0xf00` | `m_nMatchEndCount` | uint8 |  |  |
+| `0xf04` | `m_nTTeamIntroVariant` | int32 |  |  |
+| `0xf08` | `m_nCTTeamIntroVariant` | int32 |  |  |
+| `0xf0c` | `m_bTeamIntroPeriod` | bool |  |  |
+| `0xf10` | `m_iRoundEndWinnerTeam` | int32 |  |  |
+| `0xf14` | `m_eRoundEndReason` | int32 |  |  |
+| `0xf18` | `m_bRoundEndShowTimerDefend` | bool |  |  |
+| `0xf1c` | `m_iRoundEndTimerTime` | int32 |  |  |
+| `0xf20` | `m_sRoundEndFunFactToken` | CUtlString |  |  |
+| `0xf28` | `m_iRoundEndFunFactPlayerSlot` | CPlayerSlot |  |  |
+| `0xf2c` | `m_iRoundEndFunFactData1` | int32 |  |  |
+| `0xf30` | `m_iRoundEndFunFactData2` | int32 |  |  |
+| `0xf34` | `m_iRoundEndFunFactData3` | int32 |  |  |
+| `0xf38` | `m_sRoundEndMessage` | CUtlString |  |  |
+| `0xf40` | `m_iRoundEndPlayerCount` | int32 |  |  |
+| `0xf44` | `m_bRoundEndNoMusic` | bool |  |  |
+| `0xf48` | `m_iRoundEndLegacy` | int32 |  |  |
+| `0xf4c` | `m_nRoundEndCount` | uint8 |  |  |
+| `0xf50` | `m_iRoundStartRoundNumber` | int32 |  |  |
+| `0xf54` | `m_nRoundStartCount` | uint8 |  |  |
+| `0x4f60` | `m_flLastPerfSampleTime` | float64 |  |  |

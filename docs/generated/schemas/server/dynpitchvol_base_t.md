@@ -8,7 +8,7 @@ kind: class
 
 # dynpitchvol_base_t
 
-> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26281801** · 2026-10-28 · `windows-x86_64` · schema `0.13.0`
 
 **Kind:** class · **Size:** 100 bytes (`0x64`) · **Align:** 4 · **Module:** server
 
@@ -75,7 +75,7 @@ classDiagram
 	&quot;spinupsav&quot;: 0,
 	&quot;spindownsav&quot;: 0,
 	&quot;pitchfrac&quot;: &lt;HIDDEN FOR DIFF&gt;,
-	&quot;vol&quot;: 32766,
+	&quot;vol&quot;: 32767,
 	&quot;fadeinsav&quot;: 0,
 	&quot;fadeoutsav&quot;: 0,
 	&quot;volfrac&quot;: 0,

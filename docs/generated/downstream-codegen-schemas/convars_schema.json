@@ -1,11 +1,11 @@
 {
   "schema_format_version": "2.2",
   "generator": "https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker",
-  "build_id": 26144732,
+  "build_id": 26281801,
   "platform": "windows-x86_64",
   "revision": "hl2sdk-cs2/5f891c9026230cce0fc0a3fc4b5fef1c467a1385/v1/3d1200e346019c59",
-  "version_date": "2026-10-22",
-  "version_time": "2026-10-22T21:24:50Z",
+  "version_date": "2026-10-28",
+  "version_time": "2026-10-28T20:59:18Z",
   "convars": [
     {
       "name": "CS_WarnFriendlyDamageInterval",
@@ -10098,6 +10098,20 @@
         "release"
       ],
       "description": "",
+      "value_type": "Bool",
+      "min": null,
+      "max": null
+    },
+    {
+      "name": "cl_weapon_stealth_reload_toggle",
+      "default": "false",
+      "flags": [
+        "clientdll",
+        "archive",
+        "userinfo",
+        "per_user"
+      ],
+      "description": "Should the silent reload act like a toggle",
       "value_type": "Bool",
       "min": null,
       "max": null
@@ -50798,6 +50812,17 @@
       "description": "",
       "value_type": "Bool",
       "min": null,
+      "max": null
+    },
+    {
+      "name": "vulkan_pipeline_cache_max_size_mb",
+      "default": "4096",
+      "flags": [
+        "release"
+      ],
+      "description": "Max pipeline cache size",
+      "value_type": "Int32",
+      "min": 1,
       "max": null
     },
     {

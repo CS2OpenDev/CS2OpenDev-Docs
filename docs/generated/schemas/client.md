@@ -5,7 +5,7 @@ module: client
 
 # Module: client
 
-> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26281801** · 2026-10-28 · `windows-x86_64` · schema `0.13.0`
 
 [📊 View UML Diagram](../diagrams/client.md)
 
@@ -231,7 +231,7 @@ module: client
 | [C_CSGO_TerroristRushIntroCamera](client/C_CSGO_TerroristRushIntroCamera.md) | class | 1680 | 0 | [C_CSGO_TeamPreviewCameraBone](client/C_CSGO_TeamPreviewCameraBone.md) |
 | [C_CSGO_TerroristTeamIntroCamera](client/C_CSGO_TerroristTeamIntroCamera.md) | class | 1680 | 0 | [C_CSGO_TeamPreviewCamera](client/C_CSGO_TeamPreviewCamera.md) |
 | [C_CSGO_TerroristWingmanIntroCamera](client/C_CSGO_TerroristWingmanIntroCamera.md) | class | 1680 | 0 | [C_CSGO_TeamPreviewCamera](client/C_CSGO_TeamPreviewCamera.md) |
-| [C_CSGameRules](client/C_CSGameRules.md) | class | 20320 | 98 | [C_TeamplayRules](client/C_TeamplayRules.md) |
+| [C_CSGameRules](client/C_CSGameRules.md) | class | 20328 | 99 | [C_TeamplayRules](client/C_TeamplayRules.md) |
 | [C_CSGameRulesProxy](client/C_CSGameRulesProxy.md) | class | 1544 | 1 | [C_GameRulesProxy](client/C_GameRulesProxy.md) |
 | [C_CSMinimapBoundary](client/C_CSMinimapBoundary.md) | class | 1536 | 0 | [C_BaseEntity](client/C_BaseEntity.md) |
 | [C_CSObserverPawn](client/C_CSObserverPawn.md) | class | 5488 | 1 | [C_CSPlayerPawnBase](client/C_CSPlayerPawnBase.md) |

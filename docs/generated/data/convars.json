@@ -10858,6 +10858,21 @@
       "value_type": "Bool"
     },
     {
+      "default": "false",
+      "flags": [
+        "archive",
+        "clientdll",
+        "per_user",
+        "userinfo"
+      ],
+      "help": "Should the silent reload act like a toggle",
+      "max": null,
+      "min": null,
+      "name": "cl_weapon_stealth_reload_toggle",
+      "prefix": "cl",
+      "value_type": "Bool"
+    },
+    {
       "default": "120.000000",
       "flags": [
         "clientdll",
@@ -54809,6 +54824,18 @@
       "value_type": "Bool"
     },
     {
+      "default": "4096",
+      "flags": [
+        "release"
+      ],
+      "help": "Max pipeline cache size",
+      "max": null,
+      "min": 1,
+      "name": "vulkan_pipeline_cache_max_size_mb",
+      "prefix": "vulkan",
+      "value_type": "Int32"
+    },
+    {
       "default": "false",
       "flags": [
         "defensive",
@@ -55290,7 +55317,7 @@
   "flags": [
     {
       "command_count": 0,
-      "convar_count": 510,
+      "convar_count": 511,
       "description": "Value is written to config.cfg on shutdown and reloaded on startup.",
       "name": "archive"
     },
@@ -55314,7 +55341,7 @@
     },
     {
       "command_count": 344,
-      "convar_count": 1917,
+      "convar_count": 1918,
       "description": "Registered by the client binary (client.dll).",
       "name": "clientdll"
     },
@@ -55386,7 +55413,7 @@
     },
     {
       "command_count": 0,
-      "convar_count": 100,
+      "convar_count": 101,
       "description": "Tracked per split-screen/local user rather than as one global value.",
       "name": "per_user"
     },
@@ -55410,7 +55437,7 @@
     },
     {
       "command_count": 199,
-      "convar_count": 1079,
+      "convar_count": 1080,
       "description": "Present in release/shipping builds, not just internal ones.",
       "name": "release"
     },
@@ -55440,7 +55467,7 @@
     },
     {
       "command_count": 0,
-      "convar_count": 36,
+      "convar_count": 37,
       "description": "Part of the player's userinfo string, sent to the server on change.",
       "name": "userinfo"
     },

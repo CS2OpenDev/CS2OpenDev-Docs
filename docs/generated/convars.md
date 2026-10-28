@@ -4,7 +4,7 @@ title: ConVars
 
 # ConVar Reference
 
-> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26281801** · 2026-10-28 · `windows-x86_64` · schema `0.13.0`
 
 All console variables extracted from CS2, with the value type and the bounds the engine enforces where it declares them.
 
@@ -799,6 +799,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `cl_weapon_debug_show_accuracy` | `Int32` | `0` |  | `clientdll` `cheat` `release` | Draws a circle representing the effective range with every shot. |
 | `cl_weapon_debug_show_accuracy_duration` | `Float32` | `10.000000` |  | `clientdll` `cheat` `release` |  |
 | `cl_weapon_selection_rarity_color` | `Bool` | `false` |  | `clientdll` `archive` `release` |  |
+| `cl_weapon_stealth_reload_toggle` | `Bool` | `false` |  | `clientdll` `archive` `userinfo` `per_user` | Should the silent reload act like a toggle |
 | `cl_workshop_map_download_timeout` | `Float32` | `120.000000` |  | `developmentonly` `clientdll` `defensive` |  |
 | `cl_yawspeed` | `Float32` | `210.000000` |  | `developmentonly` `clientdll` `defensive` |  |
 | `clear_debug_flags_on_death` | `Bool` | `true` |  | `developmentonly` `gamedll` `defensive` |  |
@@ -4025,6 +4026,7 @@ All console variables extracted from CS2, with the value type and the bounds the
 | `vulkan_batch_submits` | `Bool` | `true` |  | `developmentonly` `defensive` |  |
 | `vulkan_dedicated_allocation_threshold` | `UInt64` | `512` |  | `developmentonly` `defensive` | Size (in KBs) above which textures should be allocated in dedicated memory (NV-only). |
 | `vulkan_link_time_optimize_libraries` | `Bool` | `true` |  | `release` |  |
+| `vulkan_pipeline_cache_max_size_mb` | `Int32` | `4096` | `>= 1` | `release` | Max pipeline cache size |
 | `vulkan_pipeline_compile_spew` | `Bool` | `false` |  | `developmentonly` `defensive` |  |
 | `vulkan_pipeline_compile_throttle_ms` | `Float32` | `0.000000` |  | `developmentonly` `defensive` |  |
 | `vulkan_unpause_workers_after_each_texture_deallocation` | `Bool` | `false` |  | `developmentonly` | If true, the main thread pauses and unpauses the Vulkan worker threads around each texture deallocation, which allows the workers to make a little bit of progress but results in main thread stalls. If false, we keep the workers paused until all deallocations are done, allowing the deallocations to complete significantly faster. |

@@ -90,7 +90,7 @@ than guessed at.
 `network.json` performs a second, separate join using these same rules
 against the RTTI-recovered id tables -- see below.
 
-## convars.json (1213.8 KB) / commands.json (288.6 KB)
+## convars.json (1214.4 KB) / commands.json (288.6 KB)
 
 `convars[]`/`commands[]`: `name`, `default` (convars only), `value_type`
 (convars only, e.g. `Float32`/`Int32`/`Bool`/`String`), `min`/`max` (convars
@@ -236,7 +236,7 @@ Which enum feeds which channel/id range:
 | `GameEvents` | 200, 213-214, 450-453 | `EBaseGameEvents`, `ECsgoGameEvents` |
 | `Demo stream` | 0-19, 64 | `EDemoCommands` |
 
-## changelog.json (3.1 KB)
+## changelog.json (2.6 KB)
 
 For the one build-pair transition the current artifact set carries: every
 family is always listed (with `added_count`/`removed_count`/`changed_count`,
@@ -245,7 +245,7 @@ across the whole transition (which it is on this build), and
 `schema_history_anchor` links to the matching transition's anchor in
 `schema-history.json`.
 
-## schema-history.json (183.9 KB)
+## schema-history.json (185.4 KB)
 
 `transitions[]`: every recorded transition (from/to build, dates, op
 counts, `anchor`, `is_empty`). `detail[]`: full per-class field-op detail

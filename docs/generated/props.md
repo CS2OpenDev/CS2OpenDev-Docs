@@ -4,7 +4,7 @@ title: Prop Data
 
 # Prop & Collision Data
 
-> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26281801** · 2026-10-28 · `windows-x86_64` · schema `0.13.0`
 
 ## Prop classes
 

@@ -8,7 +8,7 @@ kind: enum
 
 # WeaponGameplayAnimState
 
-> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26281801** · 2026-10-28 · `windows-x86_64` · schema `0.13.0`
 
 **Kind:** enum · **Underlying:** `uint16_t` · **Module:** server
 
@@ -40,6 +40,8 @@ kind: enum
 | `WPN_ANIMSTATE_SILENCER_REMOVE` | 601 |  |
 | `WPN_ANIMSTATE_RELOAD` | 800 |  |
 | `WPN_ANIMSTATE_RELOAD_OUTRO` | 801 |  |
+| `WPN_ANIMSTATE_RELOAD_SILENT` | 802 |  |
+| `WPN_ANIMSTATE_RELOAD_OUTRO_SILENT` | 803 |  |
 | `WPN_ANIMSTATE_INSPECT` | 1000 |  |
 | `WPN_ANIMSTATE_INSPECT_OUTRO` | 1001 |  |
 | `WPN_ANIMSTATE_INVENTORY_UI_TUMBLE` | 1500 |  |

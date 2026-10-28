@@ -8,7 +8,7 @@ kind: class
 
 # C_OP_Decay
 
-> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26281801** · 2026-10-28 · `windows-x86_64` · schema `0.13.0`
 
 **Kind:** class · **Size:** 488 bytes (`0x1e8`) · **Align:** 8 · **Module:** particles
 

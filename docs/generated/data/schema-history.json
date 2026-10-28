@@ -3,6 +3,158 @@
   "breaking": [],
   "detail": [
     {
+      "anchor": "26144732-26281801",
+      "class_pair_candidates_count": 0,
+      "classes_added": [],
+      "classes_changed": [
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/dynpitchvol_base_t",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {},
+          "flags_changed": false,
+          "meta_ops": 1,
+          "metadata_only": false,
+          "name": "!GlobalTypes/dynpitchvol_t",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "ADD": 1,
+            "OFFSET_CHANGE": 36
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_CSGameRules",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "20320",
+            "to": "20328"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "ADD": 1,
+            "REMOVE": 1
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_CSPlayerPawn",
+          "pair_candidates": 1,
+          "paired_evidence": 1,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "ADD": 2,
+            "REMOVE": 2
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "client.dll/C_CSWeaponBase",
+          "pair_candidates": 2,
+          "paired_evidence": 2,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "ADD": 1,
+            "OFFSET_CHANGE": 127
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "server.dll/CCSGameRules",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": {
+            "from": "70728",
+            "to": "70736"
+          },
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "ADD": 1,
+            "REMOVE": 1
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "server.dll/CCSPlayerPawn",
+          "pair_candidates": 1,
+          "paired_evidence": 1,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        },
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "ADD": 2,
+            "OFFSET_CHANGE": 1,
+            "REMOVE": 3
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "server.dll/CCSWeaponBase",
+          "pair_candidates": 3,
+          "paired_evidence": 2,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        }
+      ],
+      "classes_changed_total": 8,
+      "classes_changed_truncated": false,
+      "classes_removed": [],
+      "field_move_candidates_count": 0,
+      "from_build": "26144732",
+      "from_date": "2026-10-22",
+      "to_build": "26281801",
+      "to_date": "2026-10-28"
+    },
+    {
       "anchor": "25966348-26144732",
       "class_pair_candidates_count": 0,
       "classes_added": [],
@@ -744,121 +896,11 @@
       "from_date": "2026-10-15",
       "to_build": "25966348",
       "to_date": "2026-10-15"
-    },
-    {
-      "anchor": "25815307-25947352",
-      "class_pair_candidates_count": 0,
-      "classes_added": [],
-      "classes_changed": [
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {
-            "OFFSET_CHANGE": 1
-          },
-          "flags_changed": false,
-          "meta_ops": 0,
-          "metadata_only": false,
-          "name": "client.dll/CCSMinimapVolume",
-          "pair_candidates": 0,
-          "paired_evidence": 0,
-          "realign": false,
-          "reparent": false,
-          "resize": {
-            "from": "4488",
-            "to": "4520"
-          },
-          "static_field_ops": 0
-        },
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {
-            "OFFSET_CHANGE": 1
-          },
-          "flags_changed": false,
-          "meta_ops": 0,
-          "metadata_only": false,
-          "name": "client.dll/CCSObserver_ObserverServices",
-          "pair_candidates": 0,
-          "paired_evidence": 0,
-          "realign": false,
-          "reparent": false,
-          "resize": {
-            "from": "240",
-            "to": "256"
-          },
-          "static_field_ops": 0
-        },
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {
-            "ADD": 1,
-            "OFFSET_CHANGE": 43,
-            "REMOVE": 1
-          },
-          "flags_changed": false,
-          "meta_ops": 0,
-          "metadata_only": false,
-          "name": "client.dll/C_CSPlayerPawn",
-          "pair_candidates": 0,
-          "paired_evidence": 0,
-          "realign": false,
-          "reparent": false,
-          "resize": null,
-          "static_field_ops": 0
-        },
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {
-            "OFFSET_CHANGE": 1
-          },
-          "flags_changed": false,
-          "meta_ops": 0,
-          "metadata_only": false,
-          "name": "server.dll/CCSMinimapVolume",
-          "pair_candidates": 0,
-          "paired_evidence": 0,
-          "realign": false,
-          "reparent": false,
-          "resize": {
-            "from": "2512",
-            "to": "2536"
-          },
-          "static_field_ops": 0
-        },
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {
-            "OFFSET_CHANGE": 66,
-            "REMOVE": 2
-          },
-          "flags_changed": false,
-          "meta_ops": 0,
-          "metadata_only": false,
-          "name": "server.dll/CCSPlayerPawn",
-          "pair_candidates": 0,
-          "paired_evidence": 0,
-          "realign": false,
-          "reparent": false,
-          "resize": {
-            "from": "5600",
-            "to": "5568"
-          },
-          "static_field_ops": 0
-        }
-      ],
-      "classes_changed_total": 5,
-      "classes_changed_truncated": false,
-      "classes_removed": [],
-      "field_move_candidates_count": 0,
-      "from_build": "25815307",
-      "from_date": "2026-10-08",
-      "to_build": "25947352",
-      "to_date": "2026-10-15"
     }
   ],
-  "latest_build": "26144732",
+  "latest_build": "26281801",
   "platform": "windows-x86_64",
-  "schema_version": "0.12.0",
+  "schema_version": "0.13.0",
   "transitions": [
     {
       "anchor": "10832117-10834038",
@@ -7659,6 +7701,23 @@
       "is_empty": false,
       "to_build": "26144732",
       "to_date": "2026-10-22"
+    },
+    {
+      "anchor": "26144732-26281801",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 8,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 1,
+        "enum_removed": 0,
+        "field_ops": 179
+      },
+      "from_build": "26144732",
+      "from_date": "2026-10-22",
+      "is_empty": false,
+      "to_build": "26281801",
+      "to_date": "2026-10-28"
     }
   ]
 }

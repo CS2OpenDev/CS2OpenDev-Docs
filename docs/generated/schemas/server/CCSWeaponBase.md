@@ -8,7 +8,7 @@ kind: class
 
 # CCSWeaponBase
 
-> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26281801** · 2026-10-28 · `windows-x86_64` · schema `0.13.0`
 
 Extends CBasePlayerWeapon with CS2-specific mechanics: recoil accumulation, accuracy penalty, silencer state, burst-fire mode, and weapon inspect.
 
@@ -44,7 +44,7 @@ classDiagram
 
 ## Memory layout
 
-223 fields (59 declared here, 164 inherited). Offsets are absolute from the object base.
+222 fields (58 declared here, 164 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -242,11 +242,10 @@ classDiagram
 | `0xfbc` | `m_bIsHauledBack` | bool |  | True while the player is winding up to throw a grenade (held throw). |
 | `0xfbd` | `m_bSilencerOn` | bool |  | True when the suppressor is attached (M4A1-S / USP-S). |
 | `0xfc0` | `m_flTimeSilencerSwitchComplete` | [GameTime_t](../entity2/GameTime_t.md) |  | GameTime at which the suppressor attach/detach animation completes. |
-| `0xfc4` | `m_bStealthy` | bool |  |  |
+| `0xfc4` | `m_bIsInStealthReload` | bool |  |  |
 | `0xfc5` | `m_bInSilentReloadSection` | bool |  |  |
-| `0xfc6` | `m_bSilentReloadStatCounted` | bool |  |  |
-| `0xfc7` | `m_bSilentReloadStatPending` | bool |  |  |
-| `0xfc8` | `m_flStealthHoldStartTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0xfc6` | `m_bSilentReloadStatPending` | bool |  |  |
+| `0xfc8` | `m_flStealthReloadHoldStartTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
 | `0xfcc` | `m_bReloadHeldSinceStart` | bool |  |  |
 | `0xfd0` | `m_flWeaponActionPlaybackRate` | float32 |  |  |
 | `0xfd4` | `m_iOriginalTeamNumber` | int32 |  | Team that originally spawned this weapon; buy-zone weapon pools are filtered by this. |

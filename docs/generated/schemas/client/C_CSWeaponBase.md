@@ -8,7 +8,7 @@ kind: class
 
 # C_CSWeaponBase
 
-> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26281801** · 2026-10-28 · `windows-x86_64` · schema `0.13.0`
 
 **Kind:** class · **Size:** 7968 bytes (`0x1f20`) · **Align:** n/a (unspecified) · **Module:** client
 
@@ -251,9 +251,9 @@ classDiagram
 | `0x1a50` | `m_bIsHauledBack` | bool |  |  |
 | `0x1a51` | `m_bSilencerOn` | bool |  |  |
 | `0x1a54` | `m_flTimeSilencerSwitchComplete` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0x1a58` | `m_bStealthy` | bool |  |  |
+| `0x1a58` | `m_bIsInStealthReload` | bool |  |  |
 | `0x1a59` | `m_bInSilentReloadSection` | bool |  |  |
-| `0x1a5c` | `m_flStealthHoldStartTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0x1a5c` | `m_flStealthReloadHoldStartTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
 | `0x1a60` | `m_bReloadHeldSinceStart` | bool |  |  |
 | `0x1a64` | `m_flWeaponActionPlaybackRate` | float32 |  |  |
 | `0x1a68` | `m_iOriginalTeamNumber` | int32 |  |  |

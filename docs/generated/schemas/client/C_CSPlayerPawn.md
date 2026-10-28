@@ -8,7 +8,7 @@ kind: class
 
 # C_CSPlayerPawn
 
-> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26281801** · 2026-10-28 · `windows-x86_64` · schema `0.13.0`
 
 **Kind:** class · **Size:** 14112 bytes (`0x3720`) · **Align:** 16 · **Module:** client
 
@@ -347,7 +347,7 @@ classDiagram
 | `0x3504` | `m_fImmuneToGunGameDamageTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
 | `0x3508` | `m_bGunGameImmunity` | bool |  |  |
 | `0x350c` | `m_fImmuneToGunGameDamageTimeLast` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0x3510` | `m_flModifier0` | float32 |  |  |
+| `0x3510` | `m_flBigHeadScale` | float32 |  |  |
 | `0x3514` | `m_fMolotovDamageTime` | float32 |  |  |
 | `0x3588` | `m_nPlayerInfernoBodyFx` | [ParticleIndex_t](../server/ParticleIndex_t.md) |  |  |
 | `0x3600` | `m_angEyeAngles` | QAngle |  |  |

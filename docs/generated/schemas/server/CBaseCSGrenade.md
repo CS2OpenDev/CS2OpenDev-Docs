@@ -8,7 +8,7 @@ kind: class
 
 # CBaseCSGrenade
 
-> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26281801** · 2026-10-28 · `windows-x86_64` · schema `0.13.0`
 
 Base class for a held (in-hand) grenade weapon before it is thrown — pin/throw state.  The thrown object is a CBaseCSGrenadeProjectile.
 
@@ -39,7 +39,7 @@ classDiagram
 
 ## Memory layout
 
-236 fields (13 declared here, 223 inherited). Offsets are absolute from the object base.
+235 fields (13 declared here, 222 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -237,11 +237,10 @@ classDiagram
 | `0xfbc` | `m_bIsHauledBack` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) | True while the player is winding up to throw a grenade (held throw). |
 | `0xfbd` | `m_bSilencerOn` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) | True when the suppressor is attached (M4A1-S / USP-S). |
 | `0xfc0` | `m_flTimeSilencerSwitchComplete` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) | GameTime at which the suppressor attach/detach animation completes. |
-| `0xfc4` | `m_bStealthy` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xfc4` | `m_bIsInStealthReload` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
 | `0xfc5` | `m_bInSilentReloadSection` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xfc6` | `m_bSilentReloadStatCounted` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xfc7` | `m_bSilentReloadStatPending` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
-| `0xfc8` | `m_flStealthHoldStartTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xfc6` | `m_bSilentReloadStatPending` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
+| `0xfc8` | `m_flStealthReloadHoldStartTime` | [GameTime_t](../entity2/GameTime_t.md) | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
 | `0xfcc` | `m_bReloadHeldSinceStart` | bool | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
 | `0xfd0` | `m_flWeaponActionPlaybackRate` | float32 | [CCSWeaponBase](../server/CCSWeaponBase.md) |  |
 | `0xfd4` | `m_iOriginalTeamNumber` | int32 | [CCSWeaponBase](../server/CCSWeaponBase.md) | Team that originally spawned this weapon; buy-zone weapon pools are filtered by this. |

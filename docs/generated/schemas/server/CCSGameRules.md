@@ -8,13 +8,13 @@ kind: class
 
 # CCSGameRules
 
-> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26281801** · 2026-10-28 · `windows-x86_64` · schema `0.13.0`
 
 Singleton entity that holds all CS2 match-level state: phase, round timer, team time-outs, map layout flags, match stats, and end-of-round information. Accessible via the CCSGameRulesProxy entity on the client.
 
 > 📝 Many fields here are the ground truth for demo-parsing tools (e.g. demoinfocs-golang).  Round phase transitions are driven by m_gamePhase and m_bFreezePeriod / m_bWarmupPeriod.
 
-**Kind:** class · **Size:** 70728 bytes (`0x11448`) · **Align:** n/a (unspecified) · **Module:** server
+**Kind:** class · **Size:** 70736 bytes (`0x11450`) · **Align:** n/a (unspecified) · **Module:** server
 
 **Inherits from:** [CTeamplayRules](../server/CTeamplayRules.md)
 
@@ -34,7 +34,7 @@ classDiagram
 
 ## Memory layout
 
-197 fields (189 declared here, 8 inherited). Offsets are absolute from the object base.
+198 fields (190 declared here, 8 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -108,130 +108,131 @@ classDiagram
 | `0xac8` | `m_iMatchStats_PlayersAlive_CT` | int32[30] |  | Array of 30 values – number of CT players alive at the end of each round. |
 | `0xb40` | `m_iMatchStats_PlayersAlive_T` | int32[30] |  | Array of 30 values – number of T players alive at the end of each round. |
 | `0xbb8` | `m_TeamRespawnWaveTimes` | float32[32] |  |  |
-| `0xc38` | `m_flNextRespawnWave` | [GameTime_t](../entity2/GameTime_t.md)[32] |  |  |
-| `0xcb8` | `m_vMinimapMins` | VectorWS |  | World-space minimum corner of the minimap bounding box. |
-| `0xcc4` | `m_vMinimapMaxs` | VectorWS |  | World-space maximum corner of the minimap bounding box. |
-| `0xcd0` | `m_MinimapVerticalSectionHeights` | float32[8] |  | Array of 8 height values dividing the map into vertical sections for the radar's floor-switching feature. |
-| `0xcf0` | `m_ullLocalMatchID` | uint64 |  |  |
-| `0xcf8` | `m_nEndMatchMapGroupVoteTypes` | int32[10] |  | Array of 10 vote-type codes for the end-of-match map vote options. |
-| `0xd20` | `m_nEndMatchMapGroupVoteOptions` | int32[10] |  | Array of 10 map-group option indices corresponding to the vote types. |
-| `0xd48` | `m_nEndMatchMapVoteWinner` | int32 |  | Index of the winning map-vote option (-1 while voting is in progress). |
-| `0xd4c` | `m_iNumConsecutiveCTLoses` | int32 |  | Number of consecutive rounds the CT side has lost; drives the loss-bonus economy. |
-| `0xd50` | `m_iNumConsecutiveTerroristLoses` | int32 |  | Number of consecutive rounds the T side has lost; drives the loss-bonus economy. |
-| `0xd70` | `m_bHasHostageBeenTouched` | bool |  |  |
-| `0xd74` | `m_flIntermissionStartTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0xd78` | `m_flIntermissionEndTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0xd7c` | `m_bLevelInitialized` | bool |  |  |
-| `0xd80` | `m_iTotalRoundsPlayed` | int32 |  |  |
-| `0xd84` | `m_iUnBalancedRounds` | int32 |  |  |
-| `0xd88` | `m_endMatchOnRoundReset` | bool |  |  |
-| `0xd89` | `m_endMatchOnThink` | bool |  |  |
-| `0xd8c` | `m_iNumTerrorist` | int32 |  |  |
-| `0xd90` | `m_iNumCT` | int32 |  |  |
-| `0xd94` | `m_iNumSpawnableTerrorist` | int32 |  |  |
-| `0xd98` | `m_iNumSpawnableCT` | int32 |  |  |
-| `0xda0` | `m_arrSelectedHostageSpawnIndices` | CUtlVector< int32 > |  |  |
-| `0xdb8` | `m_nSpawnPointsRandomSeed` | int32 |  |  |
-| `0xdbc` | `m_bFirstConnected` | bool |  |  |
-| `0xdbd` | `m_bCompleteReset` | bool |  |  |
-| `0xdbe` | `m_bPickNewTeamsOnReset` | bool |  |  |
-| `0xdbf` | `m_bScrambleTeamsOnRestart` | bool |  |  |
-| `0xdc0` | `m_bSwapTeamsOnRestart` | bool |  |  |
-| `0xdc8` | `m_nEndMatchTiedVotes` | CUtlVector< int32 > |  |  |
-| `0xde4` | `m_bNeedToAskPlayersForContinueVote` | bool |  |  |
-| `0xde8` | `m_numQueuedMatchmakingAccounts` | uint32 |  |  |
-| `0xdec` | `m_fAvgPlayerRank` | float32 |  |  |
-| `0xdf0` | `m_pQueuedMatchmakingReservationString` | char* |  |  |
-| `0xdf8` | `m_numTotalTournamentDrops` | uint32 |  |  |
-| `0xdfc` | `m_numSpectatorsCountMax` | uint32 |  |  |
-| `0xe00` | `m_numSpectatorsCountMaxTV` | uint32 |  |  |
-| `0xe04` | `m_numSpectatorsCountMaxLnk` | uint32 |  |  |
-| `0xe10` | `m_nCTsAliveAtFreezetimeEnd` | int32 |  |  |
-| `0xe14` | `m_nTerroristsAliveAtFreezetimeEnd` | int32 |  |  |
-| `0xe18` | `m_bForceTeamChangeSilent` | bool |  |  |
-| `0xe19` | `m_bLoadingRoundBackupData` | bool |  |  |
-| `0xe50` | `m_nMatchInfoShowType` | int32 |  |  |
-| `0xe54` | `m_flMatchInfoDecidedTime` | float32 |  |  |
-| `0xe70` | `mTeamDMLastWinningTeamNumber` | int32 |  |  |
-| `0xe74` | `mTeamDMLastThinkTime` | float32 |  |  |
-| `0xe78` | `m_flTeamDMLastAnnouncementTime` | float32 |  |  |
-| `0xe7c` | `m_iAccountTerrorist` | int32 |  |  |
-| `0xe80` | `m_iAccountCT` | int32 |  |  |
-| `0xe84` | `m_iSpawnPointCount_Terrorist` | int32 |  |  |
-| `0xe88` | `m_iSpawnPointCount_CT` | int32 |  |  |
-| `0xe8c` | `m_iMaxNumTerrorists` | int32 |  |  |
-| `0xe90` | `m_iMaxNumCTs` | int32 |  |  |
-| `0xe94` | `m_iLoserBonusMostRecentTeam` | int32 |  |  |
-| `0xe98` | `m_tmNextPeriodicThink` | float32 |  |  |
-| `0xe9c` | `m_bVoiceWonMatchBragFired` | bool |  |  |
-| `0xea0` | `m_fWarmupNextChatNoticeTime` | float32 |  |  |
-| `0xea8` | `m_iHostagesRescued` | int32 |  |  |
-| `0xeac` | `m_iHostagesTouched` | int32 |  |  |
-| `0xeb0` | `m_flNextHostageAnnouncement` | float32 |  |  |
-| `0xeb4` | `m_bNoTerroristsKilled` | bool |  |  |
-| `0xeb5` | `m_bNoCTsKilled` | bool |  |  |
-| `0xeb6` | `m_bNoEnemiesKilled` | bool |  |  |
-| `0xeb7` | `m_bCanDonateWeapons` | bool |  |  |
-| `0xebc` | `m_firstKillTime` | float32 |  |  |
-| `0xec4` | `m_firstBloodTime` | float32 |  |  |
-| `0xee0` | `m_hostageWasInjured` | bool |  |  |
-| `0xee1` | `m_hostageWasKilled` | bool |  |  |
-| `0xef0` | `m_bVoteCalled` | bool |  |  |
-| `0xef1` | `m_bServerVoteOnReset` | bool |  |  |
-| `0xef4` | `m_flVoteCheckThrottle` | float32 |  |  |
-| `0xef8` | `m_bBuyTimeEnded` | bool |  |  |
-| `0xefc` | `m_nLastFreezeEndBeep` | int32 |  |  |
-| `0xf00` | `m_bTargetBombed` | bool |  |  |
-| `0xf01` | `m_bBombDefused` | bool |  |  |
-| `0xf02` | `m_bMapHasBombZone` | bool |  |  |
-| `0xf50` | `m_vecMainCTSpawnPos` | VectorWS |  |  |
-| `0xf60` | `m_CTSpawnPointsMasterList` | CUtlVector< CHandle< [SpawnPoint](../server/SpawnPoint.md) > > |  |  |
-| `0xf78` | `m_TerroristSpawnPointsMasterList` | CUtlVector< CHandle< [SpawnPoint](../server/SpawnPoint.md) > > |  |  |
-| `0xf90` | `m_bRespawningAllRespawnablePlayers` | bool |  |  |
-| `0xf94` | `m_iNextCTSpawnPoint` | int32 |  |  |
-| `0xf98` | `m_flCTSpawnPointUsedTime` | float32 |  |  |
-| `0xf9c` | `m_iNextTerroristSpawnPoint` | int32 |  |  |
-| `0xfa0` | `m_flTerroristSpawnPointUsedTime` | float32 |  |  |
-| `0xfa8` | `m_CTSpawnPoints` | CUtlVector< CHandle< [SpawnPoint](../server/SpawnPoint.md) > > |  |  |
-| `0xfc0` | `m_TerroristSpawnPoints` | CUtlVector< CHandle< [SpawnPoint](../server/SpawnPoint.md) > > |  |  |
-| `0xfd8` | `m_bIsUnreservedGameServer` | bool |  |  |
-| `0xfdc` | `m_fAutobalanceDisplayTime` | float32 |  |  |
-| `0x1018` | `m_bAllowWeaponSwitch` | bool |  |  |
-| `0x1019` | `m_bRoundTimeWarningTriggered` | bool |  |  |
-| `0x101c` | `m_phaseChangeAnnouncementTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0x1020` | `m_fNextUpdateTeamClanNamesTime` | float32 |  |  |
-| `0x1024` | `m_flLastThinkTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0x1028` | `m_fAccumulatedRoundOffDamage` | float32 |  |  |
-| `0x102c` | `m_nShorthandedBonusLastEvalRound` | int32 |  |  |
-| `0x1078` | `m_nMatchAbortedEarlyReason` | int32 |  | Reason code for an early match abort (0 = not aborted, non-zero codes map to abandonment reasons). |
-| `0x107c` | `m_bHasTriggeredRoundStartMusic` | bool |  |  |
-| `0x107d` | `m_bSwitchingTeamsAtRoundReset` | bool |  |  |
-| `0x1098` | `m_pGameModeRules` | [CCSGameModeRules](../server/CCSGameModeRules.md)* |  | Polymorphic pointer to CCSGameModeRules (sub-classed for Arms Race, Deathmatch, etc.). *Use the MNetworkPolymorphic annotation when decoding; concrete types: CCSGameModeRules_ArmsRace, _Deathmatch, _Noop.* |
-| `0x10a0` | `m_BtGlobalBlackboard` | KeyValues3 |  |  |
-| `0x1138` | `m_hPlayerResource` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
-| `0x1140` | `m_RetakeRules` | [CRetakeGameRules](../server/CRetakeGameRules.md) |  | CRetakeGameRules struct holding all Retakes-mode specific state. |
-| `0x1330` | `m_arrTeamUniqueKillWeaponsMatch` | CUtlVector< int32 >[4] |  |  |
-| `0x1390` | `m_bTeamLastKillUsedUniqueWeaponMatch` | bool[4] |  |  |
-| `0x13b8` | `m_nMatchEndCount` | uint8 |  | Incremented each time a match-end event fires; clients trigger their match-end UI on the change. |
-| `0x13bc` | `m_nTTeamIntroVariant` | int32 |  | Variant index for the Terrorist team intro cinematic sequence. |
-| `0x13c0` | `m_nCTTeamIntroVariant` | int32 |  | Variant index for the CT team intro cinematic sequence. |
-| `0x13c4` | `m_bTeamIntroPeriod` | bool |  | True while the pre-round team-intro cinematic is playing. |
-| `0x13c8` | `m_fTeamIntroPeriodEnd` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
-| `0x13cc` | `m_bPlayedTeamIntroVO` | bool |  |  |
-| `0x13d0` | `m_iRoundEndWinnerTeam` | int32 |  | Team number of the team that won the most-recently ended round. |
-| `0x13d4` | `m_eRoundEndReason` | int32 |  | RoundEndReason_t enum describing how the round ended (bomb exploded, time ran out, all enemies eliminated, etc.). |
-| `0x13d8` | `m_bRoundEndShowTimerDefend` | bool |  | True when the end-of-round panel should show a 'defend' timer countdown. |
-| `0x13dc` | `m_iRoundEndTimerTime` | int32 |  | Remaining time in seconds shown in the round-end countdown panel. |
-| `0x13e0` | `m_sRoundEndFunFactToken` | CUtlString |  | Localization token for the fun-fact string shown in the round-end panel. |
-| `0x13e8` | `m_iRoundEndFunFactPlayerSlot` | CPlayerSlot |  | Player slot of the player featured in the fun-fact message. |
-| `0x13ec` | `m_iRoundEndFunFactData1` | int32 |  | First numeric argument substituted into the fun-fact localization string. |
-| `0x13f0` | `m_iRoundEndFunFactData2` | int32 |  | Second numeric argument substituted into the fun-fact localization string. |
-| `0x13f4` | `m_iRoundEndFunFactData3` | int32 |  | Third numeric argument substituted into the fun-fact localization string. |
-| `0x13f8` | `m_sRoundEndMessage` | CUtlString |  | Custom message string displayed in the round-end overlay (tournament use). |
-| `0x1400` | `m_iRoundEndPlayerCount` | int32 |  |  |
-| `0x1404` | `m_bRoundEndNoMusic` | bool |  | True when the end-of-round music stinger should be suppressed. |
-| `0x1408` | `m_iRoundEndLegacy` | int32 |  |  |
-| `0x140c` | `m_nRoundEndCount` | uint8 |  | Incremented each time a round-end event fires; clients trigger round-end UI on the change. |
-| `0x1410` | `m_iRoundStartRoundNumber` | int32 |  | The round number associated with the most-recent round-start event. |
-| `0x1414` | `m_nRoundStartCount` | uint8 |  | Incremented each time a round-start event fires; clients initialize per-round state on the change. |
-| `0x5420` | `m_flLastPerfSampleTime` | float64 |  |  |
+| `0xc38` | `m_nActiveMutators` | int32 |  |  |
+| `0xc3c` | `m_flNextRespawnWave` | [GameTime_t](../entity2/GameTime_t.md)[32] |  |  |
+| `0xcbc` | `m_vMinimapMins` | VectorWS |  | World-space minimum corner of the minimap bounding box. |
+| `0xcc8` | `m_vMinimapMaxs` | VectorWS |  | World-space maximum corner of the minimap bounding box. |
+| `0xcd4` | `m_MinimapVerticalSectionHeights` | float32[8] |  | Array of 8 height values dividing the map into vertical sections for the radar's floor-switching feature. |
+| `0xcf8` | `m_ullLocalMatchID` | uint64 |  |  |
+| `0xd00` | `m_nEndMatchMapGroupVoteTypes` | int32[10] |  | Array of 10 vote-type codes for the end-of-match map vote options. |
+| `0xd28` | `m_nEndMatchMapGroupVoteOptions` | int32[10] |  | Array of 10 map-group option indices corresponding to the vote types. |
+| `0xd50` | `m_nEndMatchMapVoteWinner` | int32 |  | Index of the winning map-vote option (-1 while voting is in progress). |
+| `0xd54` | `m_iNumConsecutiveCTLoses` | int32 |  | Number of consecutive rounds the CT side has lost; drives the loss-bonus economy. |
+| `0xd58` | `m_iNumConsecutiveTerroristLoses` | int32 |  | Number of consecutive rounds the T side has lost; drives the loss-bonus economy. |
+| `0xd78` | `m_bHasHostageBeenTouched` | bool |  |  |
+| `0xd7c` | `m_flIntermissionStartTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0xd80` | `m_flIntermissionEndTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0xd84` | `m_bLevelInitialized` | bool |  |  |
+| `0xd88` | `m_iTotalRoundsPlayed` | int32 |  |  |
+| `0xd8c` | `m_iUnBalancedRounds` | int32 |  |  |
+| `0xd90` | `m_endMatchOnRoundReset` | bool |  |  |
+| `0xd91` | `m_endMatchOnThink` | bool |  |  |
+| `0xd94` | `m_iNumTerrorist` | int32 |  |  |
+| `0xd98` | `m_iNumCT` | int32 |  |  |
+| `0xd9c` | `m_iNumSpawnableTerrorist` | int32 |  |  |
+| `0xda0` | `m_iNumSpawnableCT` | int32 |  |  |
+| `0xda8` | `m_arrSelectedHostageSpawnIndices` | CUtlVector< int32 > |  |  |
+| `0xdc0` | `m_nSpawnPointsRandomSeed` | int32 |  |  |
+| `0xdc4` | `m_bFirstConnected` | bool |  |  |
+| `0xdc5` | `m_bCompleteReset` | bool |  |  |
+| `0xdc6` | `m_bPickNewTeamsOnReset` | bool |  |  |
+| `0xdc7` | `m_bScrambleTeamsOnRestart` | bool |  |  |
+| `0xdc8` | `m_bSwapTeamsOnRestart` | bool |  |  |
+| `0xdd0` | `m_nEndMatchTiedVotes` | CUtlVector< int32 > |  |  |
+| `0xdec` | `m_bNeedToAskPlayersForContinueVote` | bool |  |  |
+| `0xdf0` | `m_numQueuedMatchmakingAccounts` | uint32 |  |  |
+| `0xdf4` | `m_fAvgPlayerRank` | float32 |  |  |
+| `0xdf8` | `m_pQueuedMatchmakingReservationString` | char* |  |  |
+| `0xe00` | `m_numTotalTournamentDrops` | uint32 |  |  |
+| `0xe04` | `m_numSpectatorsCountMax` | uint32 |  |  |
+| `0xe08` | `m_numSpectatorsCountMaxTV` | uint32 |  |  |
+| `0xe0c` | `m_numSpectatorsCountMaxLnk` | uint32 |  |  |
+| `0xe18` | `m_nCTsAliveAtFreezetimeEnd` | int32 |  |  |
+| `0xe1c` | `m_nTerroristsAliveAtFreezetimeEnd` | int32 |  |  |
+| `0xe20` | `m_bForceTeamChangeSilent` | bool |  |  |
+| `0xe21` | `m_bLoadingRoundBackupData` | bool |  |  |
+| `0xe58` | `m_nMatchInfoShowType` | int32 |  |  |
+| `0xe5c` | `m_flMatchInfoDecidedTime` | float32 |  |  |
+| `0xe78` | `mTeamDMLastWinningTeamNumber` | int32 |  |  |
+| `0xe7c` | `mTeamDMLastThinkTime` | float32 |  |  |
+| `0xe80` | `m_flTeamDMLastAnnouncementTime` | float32 |  |  |
+| `0xe84` | `m_iAccountTerrorist` | int32 |  |  |
+| `0xe88` | `m_iAccountCT` | int32 |  |  |
+| `0xe8c` | `m_iSpawnPointCount_Terrorist` | int32 |  |  |
+| `0xe90` | `m_iSpawnPointCount_CT` | int32 |  |  |
+| `0xe94` | `m_iMaxNumTerrorists` | int32 |  |  |
+| `0xe98` | `m_iMaxNumCTs` | int32 |  |  |
+| `0xe9c` | `m_iLoserBonusMostRecentTeam` | int32 |  |  |
+| `0xea0` | `m_tmNextPeriodicThink` | float32 |  |  |
+| `0xea4` | `m_bVoiceWonMatchBragFired` | bool |  |  |
+| `0xea8` | `m_fWarmupNextChatNoticeTime` | float32 |  |  |
+| `0xeb0` | `m_iHostagesRescued` | int32 |  |  |
+| `0xeb4` | `m_iHostagesTouched` | int32 |  |  |
+| `0xeb8` | `m_flNextHostageAnnouncement` | float32 |  |  |
+| `0xebc` | `m_bNoTerroristsKilled` | bool |  |  |
+| `0xebd` | `m_bNoCTsKilled` | bool |  |  |
+| `0xebe` | `m_bNoEnemiesKilled` | bool |  |  |
+| `0xebf` | `m_bCanDonateWeapons` | bool |  |  |
+| `0xec4` | `m_firstKillTime` | float32 |  |  |
+| `0xecc` | `m_firstBloodTime` | float32 |  |  |
+| `0xee8` | `m_hostageWasInjured` | bool |  |  |
+| `0xee9` | `m_hostageWasKilled` | bool |  |  |
+| `0xef8` | `m_bVoteCalled` | bool |  |  |
+| `0xef9` | `m_bServerVoteOnReset` | bool |  |  |
+| `0xefc` | `m_flVoteCheckThrottle` | float32 |  |  |
+| `0xf00` | `m_bBuyTimeEnded` | bool |  |  |
+| `0xf04` | `m_nLastFreezeEndBeep` | int32 |  |  |
+| `0xf08` | `m_bTargetBombed` | bool |  |  |
+| `0xf09` | `m_bBombDefused` | bool |  |  |
+| `0xf0a` | `m_bMapHasBombZone` | bool |  |  |
+| `0xf58` | `m_vecMainCTSpawnPos` | VectorWS |  |  |
+| `0xf68` | `m_CTSpawnPointsMasterList` | CUtlVector< CHandle< [SpawnPoint](../server/SpawnPoint.md) > > |  |  |
+| `0xf80` | `m_TerroristSpawnPointsMasterList` | CUtlVector< CHandle< [SpawnPoint](../server/SpawnPoint.md) > > |  |  |
+| `0xf98` | `m_bRespawningAllRespawnablePlayers` | bool |  |  |
+| `0xf9c` | `m_iNextCTSpawnPoint` | int32 |  |  |
+| `0xfa0` | `m_flCTSpawnPointUsedTime` | float32 |  |  |
+| `0xfa4` | `m_iNextTerroristSpawnPoint` | int32 |  |  |
+| `0xfa8` | `m_flTerroristSpawnPointUsedTime` | float32 |  |  |
+| `0xfb0` | `m_CTSpawnPoints` | CUtlVector< CHandle< [SpawnPoint](../server/SpawnPoint.md) > > |  |  |
+| `0xfc8` | `m_TerroristSpawnPoints` | CUtlVector< CHandle< [SpawnPoint](../server/SpawnPoint.md) > > |  |  |
+| `0xfe0` | `m_bIsUnreservedGameServer` | bool |  |  |
+| `0xfe4` | `m_fAutobalanceDisplayTime` | float32 |  |  |
+| `0x1020` | `m_bAllowWeaponSwitch` | bool |  |  |
+| `0x1021` | `m_bRoundTimeWarningTriggered` | bool |  |  |
+| `0x1024` | `m_phaseChangeAnnouncementTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0x1028` | `m_fNextUpdateTeamClanNamesTime` | float32 |  |  |
+| `0x102c` | `m_flLastThinkTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0x1030` | `m_fAccumulatedRoundOffDamage` | float32 |  |  |
+| `0x1034` | `m_nShorthandedBonusLastEvalRound` | int32 |  |  |
+| `0x1080` | `m_nMatchAbortedEarlyReason` | int32 |  | Reason code for an early match abort (0 = not aborted, non-zero codes map to abandonment reasons). |
+| `0x1084` | `m_bHasTriggeredRoundStartMusic` | bool |  |  |
+| `0x1085` | `m_bSwitchingTeamsAtRoundReset` | bool |  |  |
+| `0x10a0` | `m_pGameModeRules` | [CCSGameModeRules](../server/CCSGameModeRules.md)* |  | Polymorphic pointer to CCSGameModeRules (sub-classed for Arms Race, Deathmatch, etc.). *Use the MNetworkPolymorphic annotation when decoding; concrete types: CCSGameModeRules_ArmsRace, _Deathmatch, _Noop.* |
+| `0x10a8` | `m_BtGlobalBlackboard` | KeyValues3 |  |  |
+| `0x1140` | `m_hPlayerResource` | CHandle< [CBaseEntity](../server/CBaseEntity.md) > |  |  |
+| `0x1148` | `m_RetakeRules` | [CRetakeGameRules](../server/CRetakeGameRules.md) |  | CRetakeGameRules struct holding all Retakes-mode specific state. |
+| `0x1338` | `m_arrTeamUniqueKillWeaponsMatch` | CUtlVector< int32 >[4] |  |  |
+| `0x1398` | `m_bTeamLastKillUsedUniqueWeaponMatch` | bool[4] |  |  |
+| `0x13c0` | `m_nMatchEndCount` | uint8 |  | Incremented each time a match-end event fires; clients trigger their match-end UI on the change. |
+| `0x13c4` | `m_nTTeamIntroVariant` | int32 |  | Variant index for the Terrorist team intro cinematic sequence. |
+| `0x13c8` | `m_nCTTeamIntroVariant` | int32 |  | Variant index for the CT team intro cinematic sequence. |
+| `0x13cc` | `m_bTeamIntroPeriod` | bool |  | True while the pre-round team-intro cinematic is playing. |
+| `0x13d0` | `m_fTeamIntroPeriodEnd` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
+| `0x13d4` | `m_bPlayedTeamIntroVO` | bool |  |  |
+| `0x13d8` | `m_iRoundEndWinnerTeam` | int32 |  | Team number of the team that won the most-recently ended round. |
+| `0x13dc` | `m_eRoundEndReason` | int32 |  | RoundEndReason_t enum describing how the round ended (bomb exploded, time ran out, all enemies eliminated, etc.). |
+| `0x13e0` | `m_bRoundEndShowTimerDefend` | bool |  | True when the end-of-round panel should show a 'defend' timer countdown. |
+| `0x13e4` | `m_iRoundEndTimerTime` | int32 |  | Remaining time in seconds shown in the round-end countdown panel. |
+| `0x13e8` | `m_sRoundEndFunFactToken` | CUtlString |  | Localization token for the fun-fact string shown in the round-end panel. |
+| `0x13f0` | `m_iRoundEndFunFactPlayerSlot` | CPlayerSlot |  | Player slot of the player featured in the fun-fact message. |
+| `0x13f4` | `m_iRoundEndFunFactData1` | int32 |  | First numeric argument substituted into the fun-fact localization string. |
+| `0x13f8` | `m_iRoundEndFunFactData2` | int32 |  | Second numeric argument substituted into the fun-fact localization string. |
+| `0x13fc` | `m_iRoundEndFunFactData3` | int32 |  | Third numeric argument substituted into the fun-fact localization string. |
+| `0x1400` | `m_sRoundEndMessage` | CUtlString |  | Custom message string displayed in the round-end overlay (tournament use). |
+| `0x1408` | `m_iRoundEndPlayerCount` | int32 |  |  |
+| `0x140c` | `m_bRoundEndNoMusic` | bool |  | True when the end-of-round music stinger should be suppressed. |
+| `0x1410` | `m_iRoundEndLegacy` | int32 |  |  |
+| `0x1414` | `m_nRoundEndCount` | uint8 |  | Incremented each time a round-end event fires; clients trigger round-end UI on the change. |
+| `0x1418` | `m_iRoundStartRoundNumber` | int32 |  | The round number associated with the most-recent round-start event. |
+| `0x141c` | `m_nRoundStartCount` | uint8 |  | Incremented each time a round-start event fires; clients initialize per-round state on the change. |
+| `0x5428` | `m_flLastPerfSampleTime` | float64 |  |  |

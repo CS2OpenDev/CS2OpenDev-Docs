@@ -1,11 +1,11 @@
 {
   "schema_format_version": "2.2",
   "generator": "https://github.com/CS2OpenDev/CS2OpenDev-SchemaTracker",
-  "build_id": 26144732,
+  "build_id": 26281801,
   "platform": "windows-x86_64",
   "revision": "hl2sdk-cs2/5f891c9026230cce0fc0a3fc4b5fef1c467a1385/v1/3d1200e346019c59",
-  "version_date": "2026-10-22",
-  "version_time": "2026-10-22T21:24:50Z",
+  "version_date": "2026-10-28",
+  "version_time": "2026-10-28T20:59:18Z",
   "classes": [
     {
       "alignment": 255,
@@ -70062,8 +70062,21 @@
         },
         {
           "metadata": [],
-          "name": "m_flNextRespawnWave",
+          "name": "m_nActiveMutators",
           "offset": "3128",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "int32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_flNextRespawnWave",
+          "offset": "3132",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "FIXED_ARRAY",
@@ -70083,7 +70096,7 @@
         {
           "metadata": [],
           "name": "m_vMinimapMins",
-          "offset": "3256",
+          "offset": "3260",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -70099,7 +70112,7 @@
         {
           "metadata": [],
           "name": "m_vMinimapMaxs",
-          "offset": "3268",
+          "offset": "3272",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -70115,7 +70128,7 @@
         {
           "metadata": [],
           "name": "m_MinimapVerticalSectionHeights",
-          "offset": "3280",
+          "offset": "3284",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "FIXED_ARRAY",
@@ -70138,7 +70151,7 @@
         {
           "metadata": [],
           "name": "m_ullLocalMatchID",
-          "offset": "3312",
+          "offset": "3320",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70151,7 +70164,7 @@
         {
           "metadata": [],
           "name": "m_nEndMatchMapGroupVoteTypes",
-          "offset": "3320",
+          "offset": "3328",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "FIXED_ARRAY",
@@ -70174,7 +70187,7 @@
         {
           "metadata": [],
           "name": "m_nEndMatchMapGroupVoteOptions",
-          "offset": "3360",
+          "offset": "3368",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "FIXED_ARRAY",
@@ -70197,7 +70210,7 @@
         {
           "metadata": [],
           "name": "m_nEndMatchMapVoteWinner",
-          "offset": "3400",
+          "offset": "3408",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70213,7 +70226,7 @@
         {
           "metadata": [],
           "name": "m_iNumConsecutiveCTLoses",
-          "offset": "3404",
+          "offset": "3412",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70229,7 +70242,7 @@
         {
           "metadata": [],
           "name": "m_iNumConsecutiveTerroristLoses",
-          "offset": "3408",
+          "offset": "3416",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70245,7 +70258,7 @@
         {
           "metadata": [],
           "name": "m_bHasHostageBeenTouched",
-          "offset": "3440",
+          "offset": "3448",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70258,7 +70271,7 @@
         {
           "metadata": [],
           "name": "m_flIntermissionStartTime",
-          "offset": "3444",
+          "offset": "3452",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -70271,7 +70284,7 @@
         {
           "metadata": [],
           "name": "m_flIntermissionEndTime",
-          "offset": "3448",
+          "offset": "3456",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -70284,7 +70297,7 @@
         {
           "metadata": [],
           "name": "m_bLevelInitialized",
-          "offset": "3452",
+          "offset": "3460",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70297,7 +70310,7 @@
         {
           "metadata": [],
           "name": "m_iTotalRoundsPlayed",
-          "offset": "3456",
+          "offset": "3464",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70310,45 +70323,6 @@
         {
           "metadata": [],
           "name": "m_iUnBalancedRounds",
-          "offset": "3460",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "int32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_endMatchOnRoundReset",
-          "offset": "3464",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "bool"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_endMatchOnThink",
-          "offset": "3465",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "bool"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_iNumTerrorist",
           "offset": "3468",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -70361,20 +70335,33 @@
         },
         {
           "metadata": [],
-          "name": "m_iNumCT",
+          "name": "m_endMatchOnRoundReset",
           "offset": "3472",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
             "count": "0",
             "module": "",
-            "name": "int32"
+            "name": "bool"
           },
           "typeModule": ""
         },
         {
           "metadata": [],
-          "name": "m_iNumSpawnableTerrorist",
+          "name": "m_endMatchOnThink",
+          "offset": "3473",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "bool"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_iNumTerrorist",
           "offset": "3476",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -70387,7 +70374,7 @@
         },
         {
           "metadata": [],
-          "name": "m_iNumSpawnableCT",
+          "name": "m_iNumCT",
           "offset": "3480",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -70400,8 +70387,34 @@
         },
         {
           "metadata": [],
-          "name": "m_arrSelectedHostageSpawnIndices",
+          "name": "m_iNumSpawnableTerrorist",
+          "offset": "3484",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "int32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_iNumSpawnableCT",
           "offset": "3488",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "int32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_arrSelectedHostageSpawnIndices",
+          "offset": "3496",
           "type": {
             "atomicCategory": "ATOMIC_COLLECTION_OF_T",
             "category": "ATOMIC",
@@ -70421,7 +70434,7 @@
         {
           "metadata": [],
           "name": "m_nSpawnPointsRandomSeed",
-          "offset": "3512",
+          "offset": "3520",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70434,7 +70447,7 @@
         {
           "metadata": [],
           "name": "m_bFirstConnected",
-          "offset": "3516",
+          "offset": "3524",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70447,7 +70460,7 @@
         {
           "metadata": [],
           "name": "m_bCompleteReset",
-          "offset": "3517",
+          "offset": "3525",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70460,7 +70473,7 @@
         {
           "metadata": [],
           "name": "m_bPickNewTeamsOnReset",
-          "offset": "3518",
+          "offset": "3526",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70473,7 +70486,7 @@
         {
           "metadata": [],
           "name": "m_bScrambleTeamsOnRestart",
-          "offset": "3519",
+          "offset": "3527",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70486,7 +70499,7 @@
         {
           "metadata": [],
           "name": "m_bSwapTeamsOnRestart",
-          "offset": "3520",
+          "offset": "3528",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70499,7 +70512,7 @@
         {
           "metadata": [],
           "name": "m_nEndMatchTiedVotes",
-          "offset": "3528",
+          "offset": "3536",
           "type": {
             "atomicCategory": "ATOMIC_COLLECTION_OF_T",
             "category": "ATOMIC",
@@ -70519,7 +70532,7 @@
         {
           "metadata": [],
           "name": "m_bNeedToAskPlayersForContinueVote",
-          "offset": "3556",
+          "offset": "3564",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70532,7 +70545,7 @@
         {
           "metadata": [],
           "name": "m_numQueuedMatchmakingAccounts",
-          "offset": "3560",
+          "offset": "3568",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70545,7 +70558,7 @@
         {
           "metadata": [],
           "name": "m_fAvgPlayerRank",
-          "offset": "3564",
+          "offset": "3572",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70558,7 +70571,7 @@
         {
           "metadata": [],
           "name": "m_pQueuedMatchmakingReservationString",
-          "offset": "3568",
+          "offset": "3576",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "PTR",
@@ -70578,32 +70591,6 @@
         {
           "metadata": [],
           "name": "m_numTotalTournamentDrops",
-          "offset": "3576",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "uint32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_numSpectatorsCountMax",
-          "offset": "3580",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "uint32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_numSpectatorsCountMaxTV",
           "offset": "3584",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -70616,7 +70603,7 @@
         },
         {
           "metadata": [],
-          "name": "m_numSpectatorsCountMaxLnk",
+          "name": "m_numSpectatorsCountMax",
           "offset": "3588",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -70629,8 +70616,34 @@
         },
         {
           "metadata": [],
+          "name": "m_numSpectatorsCountMaxTV",
+          "offset": "3592",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "uint32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_numSpectatorsCountMaxLnk",
+          "offset": "3596",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "uint32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
           "name": "m_nCTsAliveAtFreezetimeEnd",
-          "offset": "3600",
+          "offset": "3608",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70643,7 +70656,7 @@
         {
           "metadata": [],
           "name": "m_nTerroristsAliveAtFreezetimeEnd",
-          "offset": "3604",
+          "offset": "3612",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70656,7 +70669,7 @@
         {
           "metadata": [],
           "name": "m_bForceTeamChangeSilent",
-          "offset": "3608",
+          "offset": "3616",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70669,7 +70682,7 @@
         {
           "metadata": [],
           "name": "m_bLoadingRoundBackupData",
-          "offset": "3609",
+          "offset": "3617",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70682,7 +70695,7 @@
         {
           "metadata": [],
           "name": "m_nMatchInfoShowType",
-          "offset": "3664",
+          "offset": "3672",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70695,7 +70708,7 @@
         {
           "metadata": [],
           "name": "m_flMatchInfoDecidedTime",
-          "offset": "3668",
+          "offset": "3676",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70708,7 +70721,7 @@
         {
           "metadata": [],
           "name": "mTeamDMLastWinningTeamNumber",
-          "offset": "3696",
+          "offset": "3704",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70721,7 +70734,7 @@
         {
           "metadata": [],
           "name": "mTeamDMLastThinkTime",
-          "offset": "3700",
+          "offset": "3708",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70734,7 +70747,7 @@
         {
           "metadata": [],
           "name": "m_flTeamDMLastAnnouncementTime",
-          "offset": "3704",
+          "offset": "3712",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70747,32 +70760,6 @@
         {
           "metadata": [],
           "name": "m_iAccountTerrorist",
-          "offset": "3708",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "int32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_iAccountCT",
-          "offset": "3712",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "int32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_iSpawnPointCount_Terrorist",
           "offset": "3716",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -70785,7 +70772,7 @@
         },
         {
           "metadata": [],
-          "name": "m_iSpawnPointCount_CT",
+          "name": "m_iAccountCT",
           "offset": "3720",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -70798,7 +70785,7 @@
         },
         {
           "metadata": [],
-          "name": "m_iMaxNumTerrorists",
+          "name": "m_iSpawnPointCount_Terrorist",
           "offset": "3724",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -70811,7 +70798,7 @@
         },
         {
           "metadata": [],
-          "name": "m_iMaxNumCTs",
+          "name": "m_iSpawnPointCount_CT",
           "offset": "3728",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -70824,7 +70811,7 @@
         },
         {
           "metadata": [],
-          "name": "m_iLoserBonusMostRecentTeam",
+          "name": "m_iMaxNumTerrorists",
           "offset": "3732",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -70837,33 +70824,33 @@
         },
         {
           "metadata": [],
-          "name": "m_tmNextPeriodicThink",
+          "name": "m_iMaxNumCTs",
           "offset": "3736",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
             "count": "0",
             "module": "",
-            "name": "float32"
+            "name": "int32"
           },
           "typeModule": ""
         },
         {
           "metadata": [],
-          "name": "m_bVoiceWonMatchBragFired",
+          "name": "m_iLoserBonusMostRecentTeam",
           "offset": "3740",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
             "count": "0",
             "module": "",
-            "name": "bool"
+            "name": "int32"
           },
           "typeModule": ""
         },
         {
           "metadata": [],
-          "name": "m_fWarmupNextChatNoticeTime",
+          "name": "m_tmNextPeriodicThink",
           "offset": "3744",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -70876,8 +70863,34 @@
         },
         {
           "metadata": [],
-          "name": "m_iHostagesRescued",
+          "name": "m_bVoiceWonMatchBragFired",
+          "offset": "3748",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "bool"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_fWarmupNextChatNoticeTime",
           "offset": "3752",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_iHostagesRescued",
+          "offset": "3760",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70890,7 +70903,7 @@
         {
           "metadata": [],
           "name": "m_iHostagesTouched",
-          "offset": "3756",
+          "offset": "3764",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70903,7 +70916,7 @@
         {
           "metadata": [],
           "name": "m_flNextHostageAnnouncement",
-          "offset": "3760",
+          "offset": "3768",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70916,7 +70929,7 @@
         {
           "metadata": [],
           "name": "m_bNoTerroristsKilled",
-          "offset": "3764",
+          "offset": "3772",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70929,7 +70942,7 @@
         {
           "metadata": [],
           "name": "m_bNoCTsKilled",
-          "offset": "3765",
+          "offset": "3773",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70942,7 +70955,7 @@
         {
           "metadata": [],
           "name": "m_bNoEnemiesKilled",
-          "offset": "3766",
+          "offset": "3774",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70955,7 +70968,7 @@
         {
           "metadata": [],
           "name": "m_bCanDonateWeapons",
-          "offset": "3767",
+          "offset": "3775",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -70968,19 +70981,6 @@
         {
           "metadata": [],
           "name": "m_firstKillTime",
-          "offset": "3772",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "float32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_firstBloodTime",
           "offset": "3780",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -70993,8 +70993,21 @@
         },
         {
           "metadata": [],
+          "name": "m_firstBloodTime",
+          "offset": "3788",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
           "name": "m_hostageWasInjured",
-          "offset": "3808",
+          "offset": "3816",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71007,7 +71020,7 @@
         {
           "metadata": [],
           "name": "m_hostageWasKilled",
-          "offset": "3809",
+          "offset": "3817",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71020,45 +71033,6 @@
         {
           "metadata": [],
           "name": "m_bVoteCalled",
-          "offset": "3824",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "bool"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_bServerVoteOnReset",
-          "offset": "3825",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "bool"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_flVoteCheckThrottle",
-          "offset": "3828",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "float32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_bBuyTimeEnded",
           "offset": "3832",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -71071,20 +71045,33 @@
         },
         {
           "metadata": [],
-          "name": "m_nLastFreezeEndBeep",
+          "name": "m_bServerVoteOnReset",
+          "offset": "3833",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "bool"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_flVoteCheckThrottle",
           "offset": "3836",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
             "count": "0",
             "module": "",
-            "name": "int32"
+            "name": "float32"
           },
           "typeModule": ""
         },
         {
           "metadata": [],
-          "name": "m_bTargetBombed",
+          "name": "m_bBuyTimeEnded",
           "offset": "3840",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -71097,8 +71084,34 @@
         },
         {
           "metadata": [],
+          "name": "m_nLastFreezeEndBeep",
+          "offset": "3844",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "int32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_bTargetBombed",
+          "offset": "3848",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "bool"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
           "name": "m_bBombDefused",
-          "offset": "3841",
+          "offset": "3849",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71111,7 +71124,7 @@
         {
           "metadata": [],
           "name": "m_bMapHasBombZone",
-          "offset": "3842",
+          "offset": "3850",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71124,7 +71137,7 @@
         {
           "metadata": [],
           "name": "m_vecMainCTSpawnPos",
-          "offset": "3920",
+          "offset": "3928",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -71137,7 +71150,7 @@
         {
           "metadata": [],
           "name": "m_CTSpawnPointsMasterList",
-          "offset": "3936",
+          "offset": "3944",
           "type": {
             "atomicCategory": "ATOMIC_COLLECTION_OF_T",
             "category": "ATOMIC",
@@ -71164,7 +71177,7 @@
         {
           "metadata": [],
           "name": "m_TerroristSpawnPointsMasterList",
-          "offset": "3960",
+          "offset": "3968",
           "type": {
             "atomicCategory": "ATOMIC_COLLECTION_OF_T",
             "category": "ATOMIC",
@@ -71191,7 +71204,7 @@
         {
           "metadata": [],
           "name": "m_bRespawningAllRespawnablePlayers",
-          "offset": "3984",
+          "offset": "3992",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71204,32 +71217,6 @@
         {
           "metadata": [],
           "name": "m_iNextCTSpawnPoint",
-          "offset": "3988",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "int32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_flCTSpawnPointUsedTime",
-          "offset": "3992",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "float32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_iNextTerroristSpawnPoint",
           "offset": "3996",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -71242,7 +71229,7 @@
         },
         {
           "metadata": [],
-          "name": "m_flTerroristSpawnPointUsedTime",
+          "name": "m_flCTSpawnPointUsedTime",
           "offset": "4000",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -71255,8 +71242,34 @@
         },
         {
           "metadata": [],
-          "name": "m_CTSpawnPoints",
+          "name": "m_iNextTerroristSpawnPoint",
+          "offset": "4004",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "int32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_flTerroristSpawnPointUsedTime",
           "offset": "4008",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_CTSpawnPoints",
+          "offset": "4016",
           "type": {
             "atomicCategory": "ATOMIC_COLLECTION_OF_T",
             "category": "ATOMIC",
@@ -71283,7 +71296,7 @@
         {
           "metadata": [],
           "name": "m_TerroristSpawnPoints",
-          "offset": "4032",
+          "offset": "4040",
           "type": {
             "atomicCategory": "ATOMIC_COLLECTION_OF_T",
             "category": "ATOMIC",
@@ -71310,7 +71323,7 @@
         {
           "metadata": [],
           "name": "m_bIsUnreservedGameServer",
-          "offset": "4056",
+          "offset": "4064",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71323,7 +71336,7 @@
         {
           "metadata": [],
           "name": "m_fAutobalanceDisplayTime",
-          "offset": "4060",
+          "offset": "4068",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71336,7 +71349,7 @@
         {
           "metadata": [],
           "name": "m_bAllowWeaponSwitch",
-          "offset": "4120",
+          "offset": "4128",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71349,7 +71362,7 @@
         {
           "metadata": [],
           "name": "m_bRoundTimeWarningTriggered",
-          "offset": "4121",
+          "offset": "4129",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71362,32 +71375,6 @@
         {
           "metadata": [],
           "name": "m_phaseChangeAnnouncementTime",
-          "offset": "4124",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "DECLARED_CLASS",
-            "count": "0",
-            "module": "!GlobalTypes",
-            "name": "GameTime_t"
-          },
-          "typeModule": "!GlobalTypes"
-        },
-        {
-          "metadata": [],
-          "name": "m_fNextUpdateTeamClanNamesTime",
-          "offset": "4128",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "float32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_flLastThinkTime",
           "offset": "4132",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -71400,7 +71387,7 @@
         },
         {
           "metadata": [],
-          "name": "m_fAccumulatedRoundOffDamage",
+          "name": "m_fNextUpdateTeamClanNamesTime",
           "offset": "4136",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -71413,8 +71400,34 @@
         },
         {
           "metadata": [],
-          "name": "m_nShorthandedBonusLastEvalRound",
+          "name": "m_flLastThinkTime",
           "offset": "4140",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "DECLARED_CLASS",
+            "count": "0",
+            "module": "!GlobalTypes",
+            "name": "GameTime_t"
+          },
+          "typeModule": "!GlobalTypes"
+        },
+        {
+          "metadata": [],
+          "name": "m_fAccumulatedRoundOffDamage",
+          "offset": "4144",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "float32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_nShorthandedBonusLastEvalRound",
+          "offset": "4148",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71427,7 +71440,7 @@
         {
           "metadata": [],
           "name": "m_nMatchAbortedEarlyReason",
-          "offset": "4216",
+          "offset": "4224",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71443,7 +71456,7 @@
         {
           "metadata": [],
           "name": "m_bHasTriggeredRoundStartMusic",
-          "offset": "4220",
+          "offset": "4228",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71456,7 +71469,7 @@
         {
           "metadata": [],
           "name": "m_bSwitchingTeamsAtRoundReset",
-          "offset": "4221",
+          "offset": "4229",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71469,7 +71482,7 @@
         {
           "metadata": [],
           "name": "m_pGameModeRules",
-          "offset": "4248",
+          "offset": "4256",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "PTR",
@@ -71493,7 +71506,7 @@
         {
           "metadata": [],
           "name": "m_BtGlobalBlackboard",
-          "offset": "4256",
+          "offset": "4264",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -71506,7 +71519,7 @@
         {
           "metadata": [],
           "name": "m_hPlayerResource",
-          "offset": "4408",
+          "offset": "4416",
           "type": {
             "atomicCategory": "ATOMIC_T",
             "category": "ATOMIC",
@@ -71526,7 +71539,7 @@
         {
           "metadata": [],
           "name": "m_RetakeRules",
-          "offset": "4416",
+          "offset": "4424",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -71542,7 +71555,7 @@
         {
           "metadata": [],
           "name": "m_arrTeamUniqueKillWeaponsMatch",
-          "offset": "4912",
+          "offset": "4920",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "FIXED_ARRAY",
@@ -71569,7 +71582,7 @@
         {
           "metadata": [],
           "name": "m_bTeamLastKillUsedUniqueWeaponMatch",
-          "offset": "5008",
+          "offset": "5016",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "FIXED_ARRAY",
@@ -71589,7 +71602,7 @@
         {
           "metadata": [],
           "name": "m_nMatchEndCount",
-          "offset": "5048",
+          "offset": "5056",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71605,7 +71618,7 @@
         {
           "metadata": [],
           "name": "m_nTTeamIntroVariant",
-          "offset": "5052",
+          "offset": "5060",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71621,7 +71634,7 @@
         {
           "metadata": [],
           "name": "m_nCTTeamIntroVariant",
-          "offset": "5056",
+          "offset": "5064",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71637,7 +71650,7 @@
         {
           "metadata": [],
           "name": "m_bTeamIntroPeriod",
-          "offset": "5060",
+          "offset": "5068",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71653,7 +71666,7 @@
         {
           "metadata": [],
           "name": "m_fTeamIntroPeriodEnd",
-          "offset": "5064",
+          "offset": "5072",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -71666,7 +71679,7 @@
         {
           "metadata": [],
           "name": "m_bPlayedTeamIntroVO",
-          "offset": "5068",
+          "offset": "5076",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71679,7 +71692,7 @@
         {
           "metadata": [],
           "name": "m_iRoundEndWinnerTeam",
-          "offset": "5072",
+          "offset": "5080",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71695,7 +71708,7 @@
         {
           "metadata": [],
           "name": "m_eRoundEndReason",
-          "offset": "5076",
+          "offset": "5084",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71711,7 +71724,7 @@
         {
           "metadata": [],
           "name": "m_bRoundEndShowTimerDefend",
-          "offset": "5080",
+          "offset": "5088",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71727,7 +71740,7 @@
         {
           "metadata": [],
           "name": "m_iRoundEndTimerTime",
-          "offset": "5084",
+          "offset": "5092",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71743,7 +71756,7 @@
         {
           "metadata": [],
           "name": "m_sRoundEndFunFactToken",
-          "offset": "5088",
+          "offset": "5096",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -71759,7 +71772,7 @@
         {
           "metadata": [],
           "name": "m_iRoundEndFunFactPlayerSlot",
-          "offset": "5096",
+          "offset": "5104",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -71775,7 +71788,7 @@
         {
           "metadata": [],
           "name": "m_iRoundEndFunFactData1",
-          "offset": "5100",
+          "offset": "5108",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71791,7 +71804,7 @@
         {
           "metadata": [],
           "name": "m_iRoundEndFunFactData2",
-          "offset": "5104",
+          "offset": "5112",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71807,7 +71820,7 @@
         {
           "metadata": [],
           "name": "m_iRoundEndFunFactData3",
-          "offset": "5108",
+          "offset": "5116",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71823,7 +71836,7 @@
         {
           "metadata": [],
           "name": "m_sRoundEndMessage",
-          "offset": "5112",
+          "offset": "5120",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -71839,7 +71852,7 @@
         {
           "metadata": [],
           "name": "m_iRoundEndPlayerCount",
-          "offset": "5120",
+          "offset": "5128",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71852,7 +71865,7 @@
         {
           "metadata": [],
           "name": "m_bRoundEndNoMusic",
-          "offset": "5124",
+          "offset": "5132",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71868,7 +71881,7 @@
         {
           "metadata": [],
           "name": "m_iRoundEndLegacy",
-          "offset": "5128",
+          "offset": "5136",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71881,7 +71894,7 @@
         {
           "metadata": [],
           "name": "m_nRoundEndCount",
-          "offset": "5132",
+          "offset": "5140",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71897,7 +71910,7 @@
         {
           "metadata": [],
           "name": "m_iRoundStartRoundNumber",
-          "offset": "5136",
+          "offset": "5144",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71913,7 +71926,7 @@
         {
           "metadata": [],
           "name": "m_nRoundStartCount",
-          "offset": "5140",
+          "offset": "5148",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71929,7 +71942,7 @@
         {
           "metadata": [],
           "name": "m_flLastPerfSampleTime",
-          "offset": "21536",
+          "offset": "21544",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -71955,7 +71968,7 @@
       ],
       "projectName": "server",
       "singleInheritanceDepth": 3,
-      "size": "70728",
+      "size": "70736",
       "staticFields": [],
       "annotations": {
         "description": "Singleton entity that holds all CS2 match-level state: phase, round timer, team time-outs, map layout flags, match stats, and end-of-round information. Accessible via the CCSGameRulesProxy entity on the client.",
@@ -78647,7 +78660,7 @@
         },
         {
           "metadata": [],
-          "name": "m_flModifier0",
+          "name": "m_flBigHeadScale",
           "offset": "5548",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -83257,7 +83270,7 @@
         },
         {
           "metadata": [],
-          "name": "m_bStealthy",
+          "name": "m_bIsInStealthReload",
           "offset": "4036",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -83283,7 +83296,7 @@
         },
         {
           "metadata": [],
-          "name": "m_bSilentReloadStatCounted",
+          "name": "m_bSilentReloadStatPending",
           "offset": "4038",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -83296,20 +83309,7 @@
         },
         {
           "metadata": [],
-          "name": "m_bSilentReloadStatPending",
-          "offset": "4039",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "bool"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_flStealthHoldStartTime",
+          "name": "m_flStealthReloadHoldStartTime",
           "offset": "4040",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -290663,8 +290663,21 @@
         },
         {
           "metadata": [],
-          "name": "m_flNextRespawnWave",
+          "name": "m_nActiveMutators",
           "offset": "2976",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "int32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_flNextRespawnWave",
+          "offset": "2980",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "FIXED_ARRAY",
@@ -290684,7 +290697,7 @@
         {
           "metadata": [],
           "name": "m_vMinimapMins",
-          "offset": "3104",
+          "offset": "3108",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -290697,7 +290710,7 @@
         {
           "metadata": [],
           "name": "m_vMinimapMaxs",
-          "offset": "3116",
+          "offset": "3120",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -290710,7 +290723,7 @@
         {
           "metadata": [],
           "name": "m_MinimapVerticalSectionHeights",
-          "offset": "3128",
+          "offset": "3132",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "FIXED_ARRAY",
@@ -290730,7 +290743,7 @@
         {
           "metadata": [],
           "name": "m_ullLocalMatchID",
-          "offset": "3160",
+          "offset": "3168",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -290743,7 +290756,7 @@
         {
           "metadata": [],
           "name": "m_nEndMatchMapGroupVoteTypes",
-          "offset": "3168",
+          "offset": "3176",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "FIXED_ARRAY",
@@ -290763,7 +290776,7 @@
         {
           "metadata": [],
           "name": "m_nEndMatchMapGroupVoteOptions",
-          "offset": "3208",
+          "offset": "3216",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "FIXED_ARRAY",
@@ -290783,32 +290796,6 @@
         {
           "metadata": [],
           "name": "m_nEndMatchMapVoteWinner",
-          "offset": "3248",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "int32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_iNumConsecutiveCTLoses",
-          "offset": "3252",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "int32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_iNumConsecutiveTerroristLoses",
           "offset": "3256",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -290821,8 +290808,34 @@
         },
         {
           "metadata": [],
+          "name": "m_iNumConsecutiveCTLoses",
+          "offset": "3260",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "int32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_iNumConsecutiveTerroristLoses",
+          "offset": "3264",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "int32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
           "name": "m_nMatchAbortedEarlyReason",
-          "offset": "3448",
+          "offset": "3456",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -290835,7 +290848,7 @@
         {
           "metadata": [],
           "name": "m_bHasTriggeredRoundStartMusic",
-          "offset": "3452",
+          "offset": "3460",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -290848,7 +290861,7 @@
         {
           "metadata": [],
           "name": "m_bSwitchingTeamsAtRoundReset",
-          "offset": "3453",
+          "offset": "3461",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -290861,7 +290874,7 @@
         {
           "metadata": [],
           "name": "m_pGameModeRules",
-          "offset": "3480",
+          "offset": "3488",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "PTR",
@@ -290881,7 +290894,7 @@
         {
           "metadata": [],
           "name": "m_RetakeRules",
-          "offset": "3488",
+          "offset": "3496",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "DECLARED_CLASS",
@@ -290894,7 +290907,7 @@
         {
           "metadata": [],
           "name": "m_nMatchEndCount",
-          "offset": "3832",
+          "offset": "3840",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -290907,7 +290920,7 @@
         {
           "metadata": [],
           "name": "m_nTTeamIntroVariant",
-          "offset": "3836",
+          "offset": "3844",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -290920,32 +290933,6 @@
         {
           "metadata": [],
           "name": "m_nCTTeamIntroVariant",
-          "offset": "3840",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "int32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_bTeamIntroPeriod",
-          "offset": "3844",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "bool"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_iRoundEndWinnerTeam",
           "offset": "3848",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -290958,21 +290945,8 @@
         },
         {
           "metadata": [],
-          "name": "m_eRoundEndReason",
+          "name": "m_bTeamIntroPeriod",
           "offset": "3852",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "int32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_bRoundEndShowTimerDefend",
-          "offset": "3856",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -290984,7 +290958,20 @@
         },
         {
           "metadata": [],
-          "name": "m_iRoundEndTimerTime",
+          "name": "m_iRoundEndWinnerTeam",
+          "offset": "3856",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "int32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_eRoundEndReason",
           "offset": "3860",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -290997,8 +290984,34 @@
         },
         {
           "metadata": [],
-          "name": "m_sRoundEndFunFactToken",
+          "name": "m_bRoundEndShowTimerDefend",
           "offset": "3864",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "bool"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_iRoundEndTimerTime",
+          "offset": "3868",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "int32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_sRoundEndFunFactToken",
+          "offset": "3872",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -291011,7 +291024,7 @@
         {
           "metadata": [],
           "name": "m_iRoundEndFunFactPlayerSlot",
-          "offset": "3872",
+          "offset": "3880",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -291024,32 +291037,6 @@
         {
           "metadata": [],
           "name": "m_iRoundEndFunFactData1",
-          "offset": "3876",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "int32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_iRoundEndFunFactData2",
-          "offset": "3880",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "int32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_iRoundEndFunFactData3",
           "offset": "3884",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -291062,8 +291049,34 @@
         },
         {
           "metadata": [],
-          "name": "m_sRoundEndMessage",
+          "name": "m_iRoundEndFunFactData2",
           "offset": "3888",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "int32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_iRoundEndFunFactData3",
+          "offset": "3892",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "int32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_sRoundEndMessage",
+          "offset": "3896",
           "type": {
             "atomicCategory": "ATOMIC_PLAIN",
             "category": "ATOMIC",
@@ -291076,32 +291089,6 @@
         {
           "metadata": [],
           "name": "m_iRoundEndPlayerCount",
-          "offset": "3896",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "int32"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_bRoundEndNoMusic",
-          "offset": "3900",
-          "type": {
-            "atomicCategory": "ATOMIC_UNSPECIFIED",
-            "category": "BUILTIN",
-            "count": "0",
-            "module": "",
-            "name": "bool"
-          },
-          "typeModule": ""
-        },
-        {
-          "metadata": [],
-          "name": "m_iRoundEndLegacy",
           "offset": "3904",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -291114,20 +291101,20 @@
         },
         {
           "metadata": [],
-          "name": "m_nRoundEndCount",
+          "name": "m_bRoundEndNoMusic",
           "offset": "3908",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
             "count": "0",
             "module": "",
-            "name": "uint8"
+            "name": "bool"
           },
           "typeModule": ""
         },
         {
           "metadata": [],
-          "name": "m_iRoundStartRoundNumber",
+          "name": "m_iRoundEndLegacy",
           "offset": "3912",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -291140,7 +291127,7 @@
         },
         {
           "metadata": [],
-          "name": "m_nRoundStartCount",
+          "name": "m_nRoundEndCount",
           "offset": "3916",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -291153,8 +291140,34 @@
         },
         {
           "metadata": [],
+          "name": "m_iRoundStartRoundNumber",
+          "offset": "3920",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "int32"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
+          "name": "m_nRoundStartCount",
+          "offset": "3924",
+          "type": {
+            "atomicCategory": "ATOMIC_UNSPECIFIED",
+            "category": "BUILTIN",
+            "count": "0",
+            "module": "",
+            "name": "uint8"
+          },
+          "typeModule": ""
+        },
+        {
+          "metadata": [],
           "name": "m_flLastPerfSampleTime",
-          "offset": "20312",
+          "offset": "20320",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
             "category": "BUILTIN",
@@ -291180,7 +291193,7 @@
       ],
       "projectName": "client",
       "singleInheritanceDepth": 3,
-      "size": "20320",
+      "size": "20328",
       "staticFields": [],
       "diagram_url": "https://cs2opendev.github.io/CS2OpenDev-Docs/schemas/client/hierarchy/"
     },
@@ -292617,7 +292630,7 @@
         },
         {
           "metadata": [],
-          "name": "m_flModifier0",
+          "name": "m_flBigHeadScale",
           "offset": "13584",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -293929,7 +293942,7 @@
         },
         {
           "metadata": [],
-          "name": "m_bStealthy",
+          "name": "m_bIsInStealthReload",
           "offset": "6744",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -293955,7 +293968,7 @@
         },
         {
           "metadata": [],
-          "name": "m_flStealthHoldStartTime",
+          "name": "m_flStealthReloadHoldStartTime",
           "offset": "6748",
           "type": {
             "atomicCategory": "ATOMIC_UNSPECIFIED",
@@ -547191,7 +547204,7 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"preset\": 0,\n\t\"pitchrun\": 0,\n\t\"pitchstart\": 0,\n\t\"spinup\": 0,\n\t\"spindown\": 0,\n\t\"volrun\": 0,\n\t\"volstart\": 0,\n\t\"fadein\": 0,\n\t\"fadeout\": 0,\n\t\"lfotype\": 0,\n\t\"lforate\": 0,\n\t\"lfomodpitch\": 0,\n\t\"lfomodvol\": 0,\n\t\"cspinup\": 0,\n\t\"cspincount\": 0,\n\t\"pitch\": 0,\n\t\"spinupsav\": 0,\n\t\"spindownsav\": 0,\n\t\"pitchfrac\": <HIDDEN FOR DIFF>,\n\t\"vol\": 32766,\n\t\"fadeinsav\": 0,\n\t\"fadeoutsav\": 0,\n\t\"volfrac\": 0,\n\t\"lfofrac\": 0,\n\t\"lfomult\": 0\n}",
+          "value": "{\n\t\"preset\": 0,\n\t\"pitchrun\": 0,\n\t\"pitchstart\": 0,\n\t\"spinup\": 0,\n\t\"spindown\": 0,\n\t\"volrun\": 0,\n\t\"volstart\": 0,\n\t\"fadein\": 0,\n\t\"fadeout\": 0,\n\t\"lfotype\": 0,\n\t\"lforate\": 0,\n\t\"lfomodpitch\": 0,\n\t\"lfomodvol\": 0,\n\t\"cspinup\": 0,\n\t\"cspincount\": 0,\n\t\"pitch\": 0,\n\t\"spinupsav\": 0,\n\t\"spindownsav\": 0,\n\t\"pitchfrac\": <HIDDEN FOR DIFF>,\n\t\"vol\": 32767,\n\t\"fadeinsav\": 0,\n\t\"fadeoutsav\": 0,\n\t\"volfrac\": 0,\n\t\"lfofrac\": 0,\n\t\"lfomult\": 0\n}",
           "value_parsed": {
             "preset": 0,
             "pitchrun": 0,
@@ -547212,7 +547225,7 @@
             "spinupsav": 0,
             "spindownsav": 0,
             "pitchfrac": null,
-            "vol": 32766,
+            "vol": 32767,
             "fadeinsav": 0,
             "fadeoutsav": 0,
             "volfrac": 0,
@@ -547240,7 +547253,7 @@
       "metadata": [
         {
           "name": "MGetKV3ClassDefaults",
-          "value": "{\n\t\"preset\": 0,\n\t\"pitchrun\": 0,\n\t\"pitchstart\": 0,\n\t\"spinup\": 0,\n\t\"spindown\": 0,\n\t\"volrun\": 0,\n\t\"volstart\": 0,\n\t\"fadein\": 0,\n\t\"fadeout\": 0,\n\t\"lfotype\": 0,\n\t\"lforate\": 0,\n\t\"lfomodpitch\": 0,\n\t\"lfomodvol\": 0,\n\t\"cspinup\": 0,\n\t\"cspincount\": 0,\n\t\"pitch\": 0,\n\t\"spinupsav\": 0,\n\t\"spindownsav\": 0,\n\t\"pitchfrac\": <HIDDEN FOR DIFF>,\n\t\"vol\": 32766,\n\t\"fadeinsav\": 0,\n\t\"fadeoutsav\": 0,\n\t\"volfrac\": 0,\n\t\"lfofrac\": 0,\n\t\"lfomult\": 0\n}",
+          "value": "{\n\t\"preset\": 0,\n\t\"pitchrun\": 0,\n\t\"pitchstart\": 0,\n\t\"spinup\": 0,\n\t\"spindown\": 0,\n\t\"volrun\": 0,\n\t\"volstart\": 0,\n\t\"fadein\": 0,\n\t\"fadeout\": 0,\n\t\"lfotype\": 0,\n\t\"lforate\": 0,\n\t\"lfomodpitch\": 0,\n\t\"lfomodvol\": 0,\n\t\"cspinup\": 0,\n\t\"cspincount\": 0,\n\t\"pitch\": 0,\n\t\"spinupsav\": 0,\n\t\"spindownsav\": 0,\n\t\"pitchfrac\": <HIDDEN FOR DIFF>,\n\t\"vol\": 32767,\n\t\"fadeinsav\": 0,\n\t\"fadeoutsav\": 0,\n\t\"volfrac\": 0,\n\t\"lfofrac\": 0,\n\t\"lfomult\": 0\n}",
           "value_parsed": {
             "preset": 0,
             "pitchrun": 0,
@@ -547261,7 +547274,7 @@
             "spinupsav": 0,
             "spindownsav": 0,
             "pitchfrac": null,
-            "vol": 32766,
+            "vol": 32767,
             "fadeinsav": 0,
             "fadeoutsav": 0,
             "volfrac": 0,
@@ -585236,6 +585249,16 @@
           "metadata": [],
           "name": "WPN_ANIMSTATE_RELOAD_OUTRO",
           "value": "801"
+        },
+        {
+          "metadata": [],
+          "name": "WPN_ANIMSTATE_RELOAD_SILENT",
+          "value": "802"
+        },
+        {
+          "metadata": [],
+          "name": "WPN_ANIMSTATE_RELOAD_OUTRO_SILENT",
+          "value": "803"
         },
         {
           "metadata": [],

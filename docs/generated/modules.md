@@ -4,7 +4,7 @@ title: Modules
 
 # Binary Modules
 
-> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26281801** · 2026-10-28 · `windows-x86_64` · schema `0.13.0`
 
 140 binaries read for this build, each with its SHA-256, size, export / schema-registration counts, and the engine interface versions it resolved at load.
 
@@ -34,7 +34,7 @@ title: Modules
 | `game/bin/win64/d3dcompiler_47.dll` | 4346120 | 29 | 0 |  |
 | `game/bin/win64/dbghelp.dll` | 1558912 | 203 | 0 |  |
 | `game/bin/win64/embree3.dll` | 21996904 | 117 | 0 |  |
-| `game/bin/win64/engine2.dll` | 7497880 | 43 | 4 | `EngineServiceMgr001`, `GameResourceServiceClientV001`, `HostStateMgr001`, `NetworkClientService_001`, `NetworkServerService_001`, `Source2EngineToClient001`, `Source2EngineToServer001` |
+| `game/bin/win64/engine2.dll` | 7498392 | 43 | 4 | `EngineServiceMgr001`, `GameResourceServiceClientV001`, `HostStateMgr001`, `NetworkClientService_001`, `NetworkServerService_001`, `Source2EngineToClient001`, `Source2EngineToServer001` |
 | `game/bin/win64/exportsystem.dll` | 3682968 | 6 | 0 |  |
 | `game/bin/win64/filesystem_stdio.dll` | 2260120 | 6 | 0 | `VAsyncFileSystem2_001`, `VFileSystem017` |
 | `game/bin/win64/gfsdk_aftermath_lib.x64.dll` | 5736000 | 43 | 0 |  |
@@ -85,14 +85,14 @@ title: Modules
 | `game/bin/win64/qtadvanceddocking-qt5.dll` | 828928 | 739 | 0 |  |
 | `game/bin/win64/rendersystemdx11.dll` | 4545688 | 49 | 0 | `RenderDeviceMgr001`, `RenderUtils_001` |
 | `game/bin/win64/rendersystemempty.dll` | 1774744 | 6 | 0 |  |
-| `game/bin/win64/rendersystemvulkan.dll` | 6248600 | 58 | 0 | `RenderDeviceMgr001`, `RenderUtils_001` |
+| `game/bin/win64/rendersystemvulkan.dll` | 6249624 | 58 | 0 | `RenderDeviceMgr001`, `RenderUtils_001` |
 | `game/bin/win64/resourcecompiler.dll` | 56351896 | 6 | 73 |  |
 | `game/bin/win64/resourcesystem.dll` | 532632 | 6 | 0 | `ResourceSystem013` |
 | `game/bin/win64/scenefilecache.dll` | 1297048 | 6 | 0 |  |
 | `game/bin/win64/scenesystem.dll` | 7094936 | 6 | 0 | `SceneSystem_002`, `SceneUtils_001` |
 | `game/bin/win64/schemasystem.dll` | 445592 | 6 | 0 |  |
 | `game/bin/win64/smartprops.dll` | 1511576 | 6 | 0 |  |
-| `game/bin/win64/soundsystem.dll` | 5837464 | 42 | 0 | `SoundSystem001` |
+| `game/bin/win64/soundsystem.dll` | 5837976 | 42 | 0 | `SoundSystem001` |
 | `game/bin/win64/steam_api64.dll` | 317080 | 1046 | 0 |  |
 | `game/bin/win64/steamaudio.dll` | 3547288 | 6 | 0 |  |
 | `game/bin/win64/steamnetworkingsockets.dll` | 4290200 | 32 | 0 |  |
@@ -137,11 +137,11 @@ title: Modules
 | `game/bin/win64/vrad3.dll` | 3269272 | 6 | 0 |  |
 | `game/bin/win64/vscript.dll` | 1352856 | 183 | 0 |  |
 | `game/bin/win64/worldrenderer.dll` | 2029720 | 6 | 4 | `WorldRendererMgr001` |
-| `game/csgo/bin/win64/client.dll` | 39215768 | 6 | 516 | `Source2Client002`, `Source2ClientConfig001`, `Source2ClientPrediction001`, `Source2ClientUI001` |
+| `game/csgo/bin/win64/client.dll` | 39224472 | 6 | 516 | `Source2Client002`, `Source2ClientConfig001`, `Source2ClientPrediction001`, `Source2ClientUI001` |
 | `game/csgo/bin/win64/host.dll` | 1389208 | 6 | 0 | `GameSystem2HostHook`, `Source2Host001` |
 | `game/csgo/bin/win64/matchmaking.dll` | 1890968 | 6 | 0 | `MATCHFRAMEWORK_001` |
 | `game/csgo/bin/win64/modtools.dll` | 17946264 | 6 | 0 | `Source2ModTools001` |
-| `game/csgo/bin/win64/server.dll` | 34687128 | 6 | 766 | `Source2GameClients001`, `Source2GameEntities001`, `Source2Server001`, `Source2ServerConfig001` |
+| `game/csgo/bin/win64/server.dll` | 34690200 | 6 | 766 | `Source2GameClients001`, `Source2GameEntities001`, `Source2Server001`, `Source2ServerConfig001` |
 | `game/csgo/import_scripts/bin/filesystem_stdio.dll` | 434176 | 1 | 0 | `VAsyncFileSystem2_001`, `VFileSystem017` |
 | `game/csgo/import_scripts/bin/materialsystem.dll` | 881664 | 1 | 0 |  |
 | `game/csgo/import_scripts/bin/shaderapiempty.dll` | 85504 | 1 | 0 |  |

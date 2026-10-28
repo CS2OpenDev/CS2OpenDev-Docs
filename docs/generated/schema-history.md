@@ -4,14 +4,14 @@ title: Schema History
 
 # Schema History
 
-> Source: **Build 26144732** · 2026-10-22 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26281801** · 2026-10-28 · `windows-x86_64` · schema `0.13.0`
 
 Field-precise, build-to-build evolution of the CS2 C++ entity schema, derived by diffing every committed `entity_schema.json` snapshot (SchemaTracker's cumulative `schema_evolution.json`, Layer A).  Unlike the coarse [Changelog](changelog.md) — which only reports *that* a class changed — this reports *which field* was added, removed, retyped, or moved.
 
 - **Platform:** `windows-x86_64` (the canonical render; windows is a strict **superset** in class coverage — historical Windows-only tool binaries such as `hammer.dll` / `sfm.dll` have no Linux counterparts — while shared classes differ in offsets/sizes per platform)
-- **Baseline build:** `10832117` · **Latest build:** `26144732`
-- **Artifact schema version:** `0.12.0` (SchemaTracker's `schemas/schema_evolution.proto` family)
-- **Transitions:** 400 total, **153 with structural changes** (247 no-op builds)
+- **Baseline build:** `10832117` · **Latest build:** `26281801`
+- **Artifact schema version:** `0.13.0` (SchemaTracker's `schemas/schema_evolution.proto` family)
+- **Transitions:** 401 total, **154 with structural changes** (247 no-op builds)
 - **Full per-field history:** the portable [`field_history.json`](downstream-codegen-schemas/field_history.json) carries first/last-seen and the type history for every `(class, field)` across all builds.  Its `[firstSeenBuild, lastSeenBuild]` interval is a presence **hull**, not continuous presence — a field can be absent for intermediate builds with no trace there; exact presence replays from the transitions below.
 
 To bring an instance captured under build *X* forward to build *Y*, apply each transition in `[X, Y)` in order.  Every op carries both endpoints, so the same chain replays backward.
@@ -35,6 +35,7 @@ Later artifact revisions add further facts: **0.7.0** covers class-attribute cha
 
 | Transition | Date | Classes +/−/~ | Enums +/−/~ | Field ops |
 |------------|------|---------------|-------------|-----------|
+| `26144732` → `26281801` | 2026-10-28 | 0 / 0 / 8 | 0 / 0 / 1 | 179 |
 | `25966348` → `26144732` | 2026-10-22 | 0 / 1 / 38 | 1 / 0 / 0 | 264 |
 | `25947352` → `25966348` | 2026-10-15 | 0 / 0 / 2 | 0 / 0 / 0 | 0 |
 | `25815307` → `25947352` | 2026-10-15 | 0 / 0 / 5 | 0 / 0 / 0 | 116 |
@@ -191,6 +192,23 @@ Later artifact revisions add further facts: **0.7.0** covers class-attribute cha
 
 ## Most recent structural changes
 
+### `26144732` → `26281801`
+
+*Steam manifests created `2026-10-22T21:24:50Z` → `2026-10-28T20:59:18Z`*
+
+**Classes changed (8):**
+
+| Class | Field ops | Layout |
+|-------|-----------|--------|
+| `!GlobalTypes/dynpitchvol_base_t` | meta×1 | — |
+| `!GlobalTypes/dynpitchvol_t` | meta×1 | — |
+| `client.dll/C_CSGameRules` | ＋field×1, ~offset×36 | resize 20320→20328 |
+| `client.dll/C_CSPlayerPawn` | ＋field×1, −field×1, paired×1, cand×1 | — |
+| `client.dll/C_CSWeaponBase` | ＋field×2, −field×2, paired×2, cand×2 | — |
+| `server.dll/CCSGameRules` | ＋field×1, ~offset×127 | resize 70728→70736 |
+| `server.dll/CCSPlayerPawn` | ＋field×1, −field×1, paired×1, cand×1 | — |
+| `server.dll/CCSWeaponBase` | ＋field×2, ~offset×1, −field×3, paired×2, cand×3 | — |
+
 ### `25966348` → `26144732`
 
 *Steam manifests created `2026-10-15T17:24:20Z` → `2026-10-22T21:24:50Z`*
@@ -250,17 +268,3 @@ Later artifact revisions add further facts: **0.7.0** covers class-attribute cha
 |-------|-----------|--------|
 | `!GlobalTypes/dynpitchvol_base_t` | meta×1 | — |
 | `!GlobalTypes/dynpitchvol_t` | meta×1 | — |
-
-### `25815307` → `25947352`
-
-*Steam manifests created `2026-10-08T22:02:30Z` → `2026-10-15T00:07:09Z`*
-
-**Classes changed (5):**
-
-| Class | Field ops | Layout |
-|-------|-----------|--------|
-| `client.dll/CCSMinimapVolume` | ~offset×1 | resize 4488→4520 |
-| `client.dll/CCSObserver_ObserverServices` | ~offset×1 | resize 240→256 |
-| `client.dll/C_CSPlayerPawn` | ＋field×1, ~offset×43, −field×1 | — |
-| `server.dll/CCSMinimapVolume` | ~offset×1 | resize 2512→2536 |
-| `server.dll/CCSPlayerPawn` | ~offset×66, −field×2 | resize 5600→5568 |
