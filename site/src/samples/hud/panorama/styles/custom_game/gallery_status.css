@@ -1,0 +1,47 @@
+.Root {
+    width: 100%;
+    height: 100%;
+}
+
+#status {
+    horizontal-align: left;
+    vertical-align: bottom;
+    margin-left: 24px;
+    margin-bottom: 140px;
+    flow-children: right;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: #00000099;
+    color: white;
+
+    transition-property: opacity;
+    transition-duration: .2s;
+    opacity: 1;
+
+    &.Hidden {
+        opacity: 0;
+    }
+}
+
+.HUD_SCOREBOARD_VISIBLE #status {
+    opacity: 0;
+}
+
+.Stat {
+    flow-children: down;
+    margin-right: 18px;
+}
+
+.StatName {
+    font-size: 14px;
+    color: #c8ccd2;
+}
+
+.StatValue {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#status.OnStreak #status_streak {
+    color: #ffc145;
+}

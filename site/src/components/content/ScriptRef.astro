@@ -1,0 +1,49 @@
+---
+/**
+ * A cs_script or entity name in hand-written prose, linked when this build has a
+ * page for it. The API and entity pages only exist when the build carries
+ * cs_script_api.json and entity_io.json, so a plain link would break without them.
+ *
+ *   <ScriptRef name="CustomHudLayout.SetHasClass" />   type member
+ *   <ScriptRef name="OnCustomHudClicked" />            hook
+ *   <ScriptRef name="CSRadarIcon" />                   type, alias or enum
+ *   <ScriptRef entity="game_text" input="Display" />   entity, optionally one input
+ */
+import { loadCsScript, scriptNameHref } from '../../lib/data/cs_script';
+import { loadEntityIo } from '../../lib/data/entity_io';
+import { entityIoClassHref, scriptAnchorHref, scriptTypeHref } from '../../lib/urls';
+
+interface Props {
+	name?: string;
+	entity?: string;
+	input?: string;
+}
+
+const { name, entity, input } = Astro.props;
+const label = name ?? (input ? `${entity}.${input}` : entity) ?? '';
+let href: string | undefined;
+
+if (name) {
+	const api = loadCsScript();
+	if (api) {
+		const [typeName, member] = name.split('.', 2);
+		const type = api.types.find((t) => t.name === typeName);
+		if (member && type && type.kind !== 'type_alias' && type.members.some((m) => m.name === member)) {
+			href = `${scriptTypeHref(typeName)}#${member}`;
+		} else if (!member && api.hooks.some((h) => h.name === name)) {
+			href = scriptAnchorHref(name);
+		} else if (!member) {
+			href = scriptNameHref(api, name);
+		}
+	}
+} else if (entity) {
+	const io = loadEntityIo();
+	const cls = io?.classes.find((c) => c.name === entity);
+	if (cls) {
+		const hasInput = input !== undefined && cls.inputs.some((i) => i.name === input);
+		href = entityIoClassHref(entity) + (hasInput ? `#in-${input}` : '');
+	}
+}
+---
+
+{href ? <a href={href}><code>{label}</code></a> : <code>{label}</code>}

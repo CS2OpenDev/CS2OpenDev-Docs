@@ -1,0 +1,38 @@
+---
+import { Code, TabItem, Tabs } from '@astrojs/starlight/components';
+import HudShot from './HudShot.astro';
+import { hudScreenshot, hudSample, hudSource } from '../../lib/hud-samples';
+import '../../styles/hud.css';
+
+interface Props {
+	slug: string;
+}
+
+const sample = hudSample(Astro.props.slug);
+const captured = hudScreenshot(sample.slug) !== undefined;
+const files = sample.files.map((path) => ({
+	path,
+	name: path.replace(/^.*\//, ''),
+	lang: path.endsWith('.xml') ? 'xml' : path.endsWith('.css') ? 'css' : 'js',
+	text: hudSource(path),
+}));
+---
+
+<HudShot slug={sample.slug} />
+<p class="cs2-hud-status">
+	{
+		captured
+			? 'Screenshot taken in game. The files below are the ones that produced it.'
+			: 'Not yet confirmed in game. The script typechecks against point_script.d.ts, but nobody has run this layout and captured it yet.'
+	}
+</p>
+
+<Tabs>
+	{
+		files.map((f) => (
+			<TabItem label={f.name}>
+				<Code code={f.text} lang={f.lang} title={f.path} />
+			</TabItem>
+		))
+	}
+</Tabs>

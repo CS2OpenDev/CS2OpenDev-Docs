@@ -1,0 +1,30 @@
+---
+title: Clickable menu
+description: A cs_script custom_hud_layout menu opened from chat, with input capture, a per-player selected state, and a close button.
+---
+
+import HudSample from '../../../../components/content/HudSample.astro';
+import ScriptRef from '../../../../components/content/ScriptRef.astro';
+
+Type `!menu` in chat to open a loadout menu. Clicking an option highlights it and confirms the choice underneath; **Close** gives the player their movement back.
+
+<HudSample slug="menu" />
+
+## Map setup
+
+| Entity | Name | Properties |
+|---|---|---|
+| <ScriptRef entity="custom_hud_layout" /> | `gallery_menu_layout` | `layout`: `panorama/layout/custom_game/gallery_menu.vxml` |
+| <ScriptRef entity="point_script" /> | any | `cs_script`: `maps/scripts/gallery_menu.vjs` |
+
+## How it works
+
+- <ScriptRef name="OnPlayerChat" /> opens the menu. Its `player` can be undefined, so check it first.
+- Opening the menu removes `Closed` for that player and turns on input capture. A player in capture mode has a cursor and can't move, so the menu always needs a way out.
+- `:hover` works on a `<Button>` with no script involved. `Selected` is set per player and per button, so picking one option clears the others.
+- A layout can't run code of its own, so even the highlight comes from the server, one round trip after the click.
+
+## Make it yours
+
+- To open the menu from a map trigger instead of chat, fire `RunScriptInput` at the `point_script` with a value such as `open_menu`, and handle it with `Instance.OnScriptInput("open_menu", ...)`. The `activator` is the player who touched the trigger.
+- To hand out the loadout, store the choice per slot and give the items on <ScriptRef name="OnPlayerReset" />.

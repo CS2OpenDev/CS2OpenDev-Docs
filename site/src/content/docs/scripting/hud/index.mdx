@@ -1,0 +1,43 @@
+---
+title: HUD gallery
+description: Copy-paste samples of custom HUD layouts, world text, screen text and radar markers for CS2 map scripts, each with its layout, stylesheet, script and Hammer setup.
+---
+
+import HudGallery from '../../../../components/content/HudGallery.astro';
+
+Eight working starting points for showing things to players from a cs_script map. Six use a `custom_hud_layout`; the last two use entities the game already draws, driven from the script through entity inputs or their script class. Each page has the files laid out the way an addon expects them, the entities to place in Hammer, and what to change.
+
+<HudGallery />
+
+## Before you start
+
+- Read [Custom HUD layouts](../guides/custom-hud/) for how the entity, the layout file and the script fit together.
+- Read [HUD gotchas](./gotchas/) before writing your own CSS. Panorama looks like web CSS and isn't, and a single unsupported attribute stops a layout from loading without an error.
+- Every script imports `cs_script/point_script`. Put Valve's `point_script.d.ts` next to it with the `tsconfig.json` from the [samples folder](https://github.com/CS2OpenDev/CS2OpenDev-Docs/tree/main/site/src/samples/hud) and your editor checks each call. The declaration file ships with the Workshop Tools in `content/csgo_addons/cs_script_demo/maps/scripts/`; this repository does not redistribute it.
+
+## Using a sample
+
+1. Copy its files into your addon: layouts under `content/csgo_addons/<addon>/panorama/layout/custom_game/`, stylesheets under `panorama/styles/custom_game/`, scripts under `maps/scripts/`.
+2. Place the entities from the sample's **Map setup** table and give them the names it lists.
+3. Add a `point_script` entity and set its `cs_script` property to the sample's script (`maps/scripts/gallery_<name>.vjs`).
+
+Each sample uses its own entity names and its own `gallery_` file names, so several can run in one map. `point_script` entities run isolated from each other, so use one per sample.
+
+## Screenshots
+
+Each sample's picture is taken in game from the files on its page. A sample without one hasn't been checked in game yet: its script typechecks against `point_script.d.ts`, but nobody has confirmed the layout renders the way the CSS intends. If you run one, a screenshot (1920×1080, unscaled, game HUD visible) is the most useful contribution there is; the [capture notes](https://github.com/CS2OpenDev/CS2OpenDev-Docs/tree/main/site/src/samples/hud#screenshots) say where it goes.
+
+## Community HUD projects
+
+Larger, real-world layouts, most of them built for server plugins. The layout files work the same from a map script; only the code that drives them differs. Check each license before reusing code.
+
+| Project | What it shows | License |
+|---|---|---|
+| [nvmxre/cs2-ui-kit](https://github.com/nvmxre/cs2-ui-kit) | Toasts, a vote card and a shop menu, with a long list of Panorama gotchas | MIT |
+| [nicedayzhu/CustomHudProbeSW2](https://github.com/nicedayzhu/CustomHudProbeSW2) | Showcase cards, flip cards and a menu | MIT |
+| [Rmgs123/cs2-map-mcp](https://github.com/Rmgs123/cs2-map-mcp) | A reusable map-script HUD wrapper with per-player text and throttling | MIT |
+| [Orb-Workshop/scriptedeuch](https://github.com/Orb-Workshop/scriptedeuch) | A TypeScript map-script setup built on Valve's welcome dialog | MIT |
+| [Deidakom/CS2_Soccer_Mod](https://github.com/Deidakom/CS2_Soccer_Mod) | A soccer mode menu driven from a map script | MIT |
+| [girlglock/csQuake](https://github.com/girlglock/csQuake) | A Quake status bar built from class-switched digit sprites | GPL-2.0 |
+| [Kandru/cs2-challenges](https://github.com/Kandru/cs2-challenges) | A challenge tracker and menu | GPL-3.0 |
+| [KZGlobalTeam/cs2kz-metamod](https://github.com/KZGlobalTeam/cs2kz-metamod) | A timer and speed HUD, menus and replay UI | AGPL-3.0 |

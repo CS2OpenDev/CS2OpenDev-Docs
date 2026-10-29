@@ -1,0 +1,30 @@
+---
+title: Player stat card
+description: A per-player cs_script HUD card showing each player's kills and kill streak, using per-player dialog variables and classes.
+---
+
+import HudSample from '../../../../components/content/HudSample.astro';
+import ScriptRef from '../../../../components/content/ScriptRef.astro';
+
+A small card in the bottom-left corner with a player's kills and current streak. Every player sees their own numbers, from one layout.
+
+<HudSample slug="status" />
+
+## Map setup
+
+| Entity | Name | Properties |
+|---|---|---|
+| <ScriptRef entity="custom_hud_layout" /> | `gallery_status_layout` | `layout`: `panorama/layout/custom_game/gallery_status.vxml`; turn on `observable` so spectators see the card of the player they're watching |
+| <ScriptRef entity="point_script" /> | any | `cs_script`: `maps/scripts/gallery_status.vjs` |
+
+## How it works
+
+- Both value Labels read a variable called `value`, but each has its own id, so the script sets them separately. A dialog variable is addressed by panel id and variable name together.
+- Everything is per player: <ScriptRef name="CustomHudLayout.SetDialogVariableStringForPlayer" /> and <ScriptRef name="CustomHudLayout.SetHasClassForPlayer" /> take the player's slot.
+- <ScriptRef name="OnPlayerKill" /> passes pawns, not controllers. The script checks `attacker instanceof CSPlayerPawn`, since a kill can come from the world or a trigger, and gets the slot through <ScriptRef name="CSPlayerPawn.GetPlayerController" />.
+- The script keeps its stats in a `Map` keyed by slot and drops the entry on disconnect, along with the layout's per-player state.
+
+## Make it yours
+
+- Stats reset when the script reloads. To keep them across a hot reload in Tools mode, hand them over with `Instance.OnScriptReload`.
+- To add a stat, copy a `.Stat` panel, give its value Label a new id, and set that id from `render`.

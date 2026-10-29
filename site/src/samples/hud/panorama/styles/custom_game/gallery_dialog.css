@@ -1,0 +1,53 @@
+.Root {
+    width: 100%;
+    height: 100%;
+}
+
+#dialog {
+    width: 420px;
+    margin-top: 220px;
+    horizontal-align: center;
+    flow-children: down;
+
+    padding: 24px;
+    background-color: #0b0f14ee;
+    border: 1px solid #d4a72c;
+    border-radius: 6px;
+    color: white;
+
+    transition-property: opacity;
+    transition-duration: .15s;
+    opacity: 1;
+
+    &.Dismissed {
+        opacity: 0;
+    }
+}
+
+.Title {
+    font-size: 30px;
+    font-weight: bold;
+    horizontal-align: center;
+}
+
+.Body {
+    margin-top: 12px;
+    font-size: 20px;
+    color: #c8ccd2;
+    text-align: center;
+}
+
+#dismiss_button {
+    horizontal-align: center;
+    margin-top: 20px;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 22px;
+
+    transition-property: background-color;
+    transition-duration: .1s;
+    background-color: #d4a72c44;
+    &:hover {
+        background-color: #d4a72caa;
+    }
+}

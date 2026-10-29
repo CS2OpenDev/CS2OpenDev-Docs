@@ -1,0 +1,18 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/gallery_status.css" />
+	</styles>
+
+	<Panel class="Root" hittest="false">
+		<Panel id="status" class="Hidden" hittest="false">
+			<Panel class="Stat" hittest="false">
+				<Label class="StatName" text="Kills" hittest="false" />
+				<Label id="status_kills" class="StatValue" text="{s:value}" hittest="false" />
+			</Panel>
+			<Panel class="Stat" hittest="false">
+				<Label class="StatName" text="Streak" hittest="false" />
+				<Label id="status_streak" class="StatValue" text="{s:value}" hittest="false" />
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

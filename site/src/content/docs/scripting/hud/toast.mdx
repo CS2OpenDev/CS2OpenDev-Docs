@@ -1,0 +1,31 @@
+---
+title: Notification toast
+description: A cs_script custom_hud_layout toast that slides in for bomb plants, defuses and round starts, using Instance.Delay and class transitions.
+---
+
+import HudSample from '../../../../components/content/HudSample.astro';
+import ScriptRef from '../../../../components/content/ScriptRef.astro';
+
+A notification card that slides in from the right, stays for three seconds, and slides out. A new toast replaces the current one with a fresh slide rather than a jump cut.
+
+<HudSample slug="toast" />
+
+## Map setup
+
+| Entity | Name | Properties |
+|---|---|---|
+| <ScriptRef entity="custom_hud_layout" /> | `gallery_toast_layout` | `layout`: `panorama/layout/custom_game/gallery_toast.vxml` |
+| <ScriptRef entity="point_script" /> | any | `cs_script`: `maps/scripts/gallery_toast.vjs` |
+
+## How it works
+
+- The slide is two CSS transitions, on `opacity` and `transform`, between the default state and `.Show`.
+- `toast()` is an `async` function built on `await Instance.Delay(seconds)`. Delays land on the nearest tick, so the timing is approximate.
+- A replacement hides the card, waits, and shows it again. Removing and re-adding a class in the same tick is reported to send nothing (see [HUD gotchas](../gotchas/#classes-and-dialog-variables)), so the card wouldn't animate.
+- `generation` makes a stale toast's timer harmless: once a newer toast has started, the older one's hide is skipped.
+- `Danger` and `Success` only change the accent colour, so one layout covers every kind of message.
+
+## Make it yours
+
+- To toast one player, swap `SetHasClass` and `SetDialogVariableString` for their `ForPlayer` versions and keep a `generation` per slot.
+- For a stack of toasts, give each card its own id and place it with a row class instead of flow. The cs2-ui-kit project listed on the [gallery page](../#community-hud-projects) works this way.

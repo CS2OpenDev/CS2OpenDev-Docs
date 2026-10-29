@@ -1,0 +1,30 @@
+---
+title: Countdown timer
+description: A cs_script round countdown in a custom_hud_layout that turns red near zero and hides while the scoreboard or buy menu is open.
+---
+
+import HudSample from '../../../../components/content/HudSample.astro';
+import ScriptRef from '../../../../components/content/ScriptRef.astro';
+
+A countdown at the top of the screen that starts with each round, turns red for the last ten seconds, and gets out of the way while the scoreboard or the buy menu is open.
+
+<HudSample slug="timer" />
+
+## Map setup
+
+| Entity | Name | Properties |
+|---|---|---|
+| <ScriptRef entity="custom_hud_layout" /> | `gallery_timer_layout` | `layout`: `panorama/layout/custom_game/gallery_timer.vxml` |
+| <ScriptRef entity="point_script" /> | any | `cs_script`: `maps/scripts/gallery_timer.vjs` |
+
+## How it works
+
+- The script drives itself with `Instance.SetThink` and `Instance.SetNextThink`. A script has one think callback, so a script that needs several timers multiplexes them inside it.
+- The think runs ten times a second but calls <ScriptRef name="CustomHudLayout.SetDialogVariableString" /> only when the displayed second changes. Layout state is sent to every client, so don't resend a value that hasn't changed.
+- `.HUD_SCOREBOARD_VISIBLE #timer` hides the timer while the scoreboard is open. The game sets that class, and the others listed in [Custom HUD layouts](../../guides/custom-hud/#what-a-layout-may-contain), on an ancestor of your layout.
+- The red colour is a class (`Urgent`) with a `color` transition, so the script never deals in colours.
+
+## Make it yours
+
+- To track the real round timer, read `mp_roundtime` with `Console.GetConvarNumber` (it's in minutes) and start counting when <ScriptRef name="IGameRules.IsFreezePeriod" /> turns false.
+- To act when the timer hits zero, fire an input from the `left === 0` branch, for example `Instance.EntFireAtName({ name: "door", input: "Open" })`.

@@ -1,0 +1,51 @@
+.Root {
+    width: 100%;
+    height: 100%;
+}
+
+#capture {
+    horizontal-align: center;
+    vertical-align: bottom;
+    margin-bottom: 220px;
+    flow-children: down;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: #00000099;
+    color: white;
+
+    transition-property: opacity;
+    transition-duration: .2s;
+    opacity: 1;
+
+    &.Hidden {
+        opacity: 0;
+    }
+}
+
+.CaptureLabel {
+    horizontal-align: center;
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.Bar {
+    flow-children: right;
+}
+
+.Seg {
+    width: 28px;
+    height: 10px;
+    margin-right: 3px;
+    background-color: #ffffff22;
+
+    transition-property: background-color;
+    transition-duration: .15s;
+
+    &.On {
+        background-color: #ffc145;
+    }
+}
+
+#capture.Contested .Seg.On {
+    background-color: #ff5a4f;
+}

@@ -1,0 +1,24 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/gallery_menu.css" />
+	</styles>
+
+	<Panel class="Root" hittest="false">
+		<Panel id="menu" class="Closed">
+			<Label class="MenuTitle" text="Pick a loadout" />
+			<Button id="opt_rifle" class="Option">
+				<Label text="Rifle" />
+			</Button>
+			<Button id="opt_smg" class="Option">
+				<Label text="SMG" />
+			</Button>
+			<Button id="opt_pistol" class="Option">
+				<Label text="Pistol only" />
+			</Button>
+			<Label id="menu_choice" class="Choice" text="{s:choice}" />
+			<Button id="opt_close" class="Close">
+				<Label text="Close" />
+			</Button>
+		</Panel>
+	</Panel>
+</root>

@@ -1,0 +1,38 @@
+---
+title: Radar markers
+description: Controlling radar_element markers from a CS2 map script with CSRadarPoint, changing icon, colour and team visibility as objectives change hands.
+---
+
+import HudSample from '../../../../components/content/HudSample.astro';
+import ScriptRef from '../../../../components/content/ScriptRef.astro';
+
+Two objective markers on the radar and overview map. They start as white towers and take the colour of the team that claims them. Once the bomb is planted, marker A turns into a red C4 icon that only the Counter-Terrorists see.
+
+<HudSample slug="radar" />
+
+## Map setup
+
+| Entity | Name | Properties |
+|---|---|---|
+| <ScriptRef entity="radar_element" /> | `gallery_radar_a`, `gallery_radar_b` | One at each objective |
+| <ScriptRef entity="trigger_multiple" /> | any | `OnStartTouch` → the `point_script`, input `RunScriptInput`, value `claim_a` (or `claim_b`) |
+| <ScriptRef entity="point_script" /> | any | `cs_script`: `maps/scripts/gallery_radar.vjs` |
+
+## Icons and colours
+
+| <ScriptRef name="CSRadarIcon" /> | <ScriptRef name="CSRadarColor" /> | Team filter (Hammer only) |
+|---|---|---|
+| `TOWER`, `C4`, `HOSTAGE` | `PLAYERHUD`, `GRAY`, `WHITE`, `CT`, `T`, `RED`, `GREEN` | Everybody, CT-only, T-only, Exclude Observers, Observers-only, Exclude T, Exclude CT |
+
+The script can't change the Hammer team filter, but <ScriptRef name="CSRadarPoint.SetVisibleToTeam" /> shows or hides a marker per team at run time.
+
+## How it works
+
+- `FindEntityByName` returns a plain `Entity`, so the script checks `instanceof CSRadarPoint` before calling <ScriptRef name="CSRadarPoint.SetIcon" /> and <ScriptRef name="CSRadarPoint.SetColor" />.
+- <ScriptRef name="OnRoundStart" /> puts both markers back to their starting state at the start of each round.
+- A trigger fires `RunScriptInput` at the `point_script`, and <ScriptRef name="IPointScript.OnScriptInput" /> receives it with the touching player as `activator`.
+
+## Make it yours
+
+- To follow a moving objective, parent the `radar_element` to it in Hammer.
+- `observable_element` is the spectating counterpart: <ScriptRef name="CSObservablePoint" /> lets dead players watch a model once no teammates are alive.
