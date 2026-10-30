@@ -111,6 +111,7 @@ const referenceSidebar = [
  */
 const redirects = /** @type {Record<string, string>} */ ({
 	'/generated/schemas': `${BASE}/schemas/`,
+	'/scripting/guides/custom-hud': `${BASE}/scripting/hud/`,
 });
 for (const module of idx.modules) {
 	redirects[`/generated/schemas/${module}`] = `${BASE}/schemas/${module}/`;

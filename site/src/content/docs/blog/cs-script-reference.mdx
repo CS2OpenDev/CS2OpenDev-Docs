@@ -15,7 +15,7 @@ Until now this site had nothing on it beyond an empty schema page for `CCSPointS
 - **[Entity I/O](../../entities/).** Every entity a mapper can place in Hammer, with its keyvalues, inputs and outputs, inherited ones included and tagged with the FGD class that declares them. These are the strings `EntFireAtName`, `ConnectOutput` and `FindEntitiesByClass` take.
 - **Editor typings.** `cs2_entity_io.d.ts`, on the [codegen schemas](../../codegen-schemas/) page, sits next to `point_script.d.ts` and gives an editor the classname, input and output names to complete. It also types `FindEntitiesByClass("player")` as `CSPlayerPawn[]` instead of `Entity[]`. Every overload still accepts any string, so nothing a map does legitimately becomes an error.
 - **API changes per build.** The [changelog](../../changelog/) gains two families, the cs_script API and the entity definitions, so a renamed member or a removed input shows up the day the build lands.
-- **[Guides](../../scripting/guides/getting-started/)**, written by hand: getting started, runtime semantics, custom HUD layouts, and how cs_script differs from VScript and Panorama.
+- **[Guides](../../scripting/guides/getting-started/)**, written by hand: getting started, runtime semantics, the [Scripting HUD](../../scripting/hud/), and how cs_script differs from VScript and Panorama.
 
 ## Things the reference makes visible
 
