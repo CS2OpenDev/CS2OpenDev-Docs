@@ -37,7 +37,10 @@
    against 0.42: .right-sidebar-container, .main-pane and [data-has-toc] are
    TwoColumnContent.astro; .right-sidebar and .right-sidebar-panel are
    PageSidebar.astro; #starlight__sidebar is SidebarPersister.astro and
-   .top-level / .large are SidebarSublist.astro. Re-check on every upgrade.
+   .top-level / .large are SidebarSublist.astro. The nested-group rules
+   (#starlight__sidebar ul ul summary .large and ul ul summary .caret) depend
+   on SidebarSublist.astro's .large and .caret as well. Re-check on every
+   upgrade.
 --------------------------------------------------------------------------- */
 
 @media (min-width: 72rem) {
@@ -109,6 +112,23 @@
 
 #starlight__sidebar .top-level > li + li {
 	margin-top: 0.35rem;
+}
+
+/* Starlight gives every group label .large, so a group nested inside another
+   (Map Scripting > Scripting HUD) looks like a top-level heading. Style it like
+   the links beside it instead. */
+#starlight__sidebar ul ul summary .large {
+	font-size: 0.75rem;
+	font-weight: 400;
+	line-height: 1.35;
+	color: var(--sl-color-gray-2);
+}
+#starlight__sidebar ul ul summary:hover .large {
+	color: var(--sl-color-white);
+}
+#starlight__sidebar ul ul summary .caret {
+	width: 1rem;
+	height: 1rem;
 }
 
 #starlight__sidebar ul ul li {
