@@ -8,11 +8,11 @@ Panorama looks like HTML and CSS, but it's its own engine, and `custom_hud_layou
 Each item is marked by where it comes from:
 
 - **Valve:** stated in `point_script.d.ts` or shown in Valve's `cs_script_demo` addon.
-- **Reported:** written up by community authors from their own testing, and not yet confirmed here. The sources are [cs2-ui-kit's GOTCHAS.md](https://github.com/nvmxre/cs2-ui-kit/blob/master/docs/GOTCHAS.md), [PanoramaHUD-Skills' runtime notes](https://github.com/Next-il/PanoramaHUD-Skills/blob/main/cs2-panorama-hud/references/runtime-behaviour.md) and [cs2-challenges' Panorama CSS notes](https://github.com/Kandru/cs2-challenges/blob/main/workshop/panorama-css.md). If you've confirmed or disproved one, a change to this page is welcome.
+- **Reported:** written up by community authors from their own testing, and not yet confirmed here. The sources are [cs2-ui-kit's GOTCHAS.md](https://github.com/nvmxre/cs2-ui-kit/blob/f145a39ce2769e0fee78b8af92e77c822c38fcf5/docs/GOTCHAS.md), [PanoramaHUD-Skills' runtime notes](https://github.com/Next-il/PanoramaHUD-Skills/blob/c6c90c02ccded876c536502bf31d7c1202ae3d52/cs2-panorama-hud/references/runtime-behaviour.md) and [cs2-challenges' Panorama CSS notes](https://github.com/Kandru/cs2-challenges/blob/bd4c33842bfb147cc3b3c937bfbfddf0eef995e1/workshop/panorama-css.md). If you've confirmed or disproved one, a change to this page is welcome.
 
 ## Markup
 
-- **Valve:** a layout may contain only `<Panel>` (`id`, `class`, `hittest`), `<Label>` (`id`, `class`, `hittest`, `text`), `<Image>` (`id`, `class`, `hittest`, `src`) and `<Button>` (`id`, `class`). Events and client-side scripting aren't supported.
+- **Valve:** the allowed elements and attributes are listed under [What a layout may contain](../#what-a-layout-may-contain).
 - **Reported:** one disallowed panel type or attribute stops the whole layout from loading. `style`, `hittestchildren` and `scaling` are all rejected.
 - **Reported:** the root panel may not have an `id`; the resource compiler refuses the file. Put the id on a panel inside it. Valve's demo root has only a `class`.
 - **Reported:** because the root is always visible, hide and show a panel inside it, never the root itself.
@@ -30,9 +30,9 @@ Each item is marked by where it comes from:
 
 ## Classes and dialog variables
 
-- **Valve:** `SetHasClass` and `SetDialogVariableString` apply to every player; the `ForPlayer` versions override them for one slot. Omitting the value on a `ForPlayer` call falls back to the all-player value.
-- **Valve:** while the matching stock UI is open, the game sets `HUD_TEAMINTRO_VISIBLE`, `HUD_BUYMENU_VISIBLE`, `HUD_SCOREBOARD_VISIBLE`, `HUD_WINPANEL_VISIBLE`, `HUD_ENDOFMATCH_VISIBLE`, `HUD_TEAMMENU_VISIBLE` or `HUD_CHAT_VISIBLE` on an ancestor panel. A selector such as `.HUD_SCOREBOARD_VISIBLE #mine` reacts to it.
-- **Reported:** a Label shows a dialog variable with `text="{s:name}"`, and the script sets it with the Label's id and `name`.
+- **Valve:** how the `ForPlayer` methods override the all-player value and fall back to it is under [Driving it from script](../#driving-it-from-script).
+- **Valve:** the seven `HUD_*_VISIBLE` classes the game sets while stock UI is open are listed under [What a layout may contain](../#what-a-layout-may-contain). A selector such as `.HUD_SCOREBOARD_VISIBLE #mine` reacts to one.
+- **Reported:** the dialog-variable syntax for a Label's `text` is under [What a layout may contain](../#what-a-layout-may-contain).
 - **Reported:** class changes reach clients as a difference from the last state, so removing and re-adding a class in the same tick sends nothing. To replay an animation, remove the class and add it back on a later tick, or alternate between two class names.
 - **Reported:** setting a dialog variable restarts any `width` transition in the same part of the layout. Build bars from fixed segments, or with `clip: rect()`.
 - **Reported:** each `custom_hud_layout` can intern at most 1024 distinct ids, class names and variable names.

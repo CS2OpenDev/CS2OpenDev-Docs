@@ -1,5 +1,5 @@
 ---
-title: Custom HUD layouts
+title: Scripting HUD
 description: Showing custom Panorama UI from a CS2 map script with custom_hud_layout, its supported panels, CSS hooks and the CustomHudLayout API.
 ---
 
@@ -7,7 +7,7 @@ description: Showing custom Panorama UI from a CS2 map script with custom_hud_la
 
 ## Setup
 
-1. Add a Panorama layout `.xml` under `panorama/layout/custom_game/` in your addon. Its stylesheet goes under `panorama/styles/custom_game/` and is referenced as `.vcss`.
+1. Add a Panorama layout `.xml` under `panorama/layout/custom_game/` in your addon. Its stylesheet goes under `panorama/styles/custom_game/`. The layout includes the stylesheet by its `.css` source path, and the compiled file is `.vcss_c`.
 2. Add a `custom_hud_layout` point entity to the map, give it a name, and set its `layout` property to the layout's `.vxml` asset.
 3. Optionally set `observable`. When it's on, whoever is spectating a player sees that player's version of the UI.
 4. In your script, find the entity, which comes back as a `CustomHudLayout`, and drive it.
@@ -23,7 +23,7 @@ description: Showing custom Panorama UI from a CS2 map script with custom_hud_la
 
 CSS styling works. Events and client-side scripting don't: a layout is markup and styles only.
 
-A layout pulls in its stylesheet with `<styles><include src="file://{resources}/styles/custom_game/<name>.css" /></styles>` at the top of `<root>`, as Valve's demo does. A Label shows a dialog variable with `text="{s:<variable>}"`, and the script sets it with the Label's `id` and the variable name. [HUD gotchas](./gotchas/) lists what else Panorama accepts and rejects, and [HUD examples](./examples/) points to complete layouts in community projects.
+A layout pulls in its stylesheet with `<styles><include src="file://{resources}/styles/custom_game/<name>.css" /></styles>` at the top of `<root>`, as Valve's demo does. Community projects show a dialog variable in a Label with `text="{s:<variable>}"` and set it from the script with the Label's `id` and the variable name. Valve's demo doesn't use this syntax. [HUD gotchas](./gotchas/) lists what else Panorama accepts and rejects, and [HUD examples](./examples/) points to complete layouts in community projects.
 
 While the matching game UI is showing, the game sets these classes on an ancestor panel, so your CSS can hide or move things out of the way:
 
