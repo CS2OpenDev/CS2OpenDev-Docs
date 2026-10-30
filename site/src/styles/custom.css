@@ -37,7 +37,10 @@
    against 0.42: .right-sidebar-container, .main-pane and [data-has-toc] are
    TwoColumnContent.astro; .right-sidebar and .right-sidebar-panel are
    PageSidebar.astro; #starlight__sidebar is SidebarPersister.astro and
-   .top-level / .large are SidebarSublist.astro. Re-check on every upgrade.
+   .top-level / .large are SidebarSublist.astro. The nested-group rules
+   (#starlight__sidebar ul ul summary .large and ul ul summary .caret) depend
+   on SidebarSublist.astro's .large and .caret as well. Re-check on every
+   upgrade.
 --------------------------------------------------------------------------- */
 
 @media (min-width: 72rem) {
