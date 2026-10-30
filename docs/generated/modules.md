@@ -4,7 +4,7 @@ title: Modules
 
 # Binary Modules
 
-> Source: **Build 26281801** · 2026-10-28 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26334290** · 2026-10-30 · `windows-x86_64` · schema `0.13.0`
 
 140 binaries read for this build, each with its SHA-256, size, export / schema-registration counts, and the engine interface versions it resolved at load.
 
@@ -92,7 +92,7 @@ title: Modules
 | `game/bin/win64/scenesystem.dll` | 7094936 | 6 | 0 | `SceneSystem_002`, `SceneUtils_001` |
 | `game/bin/win64/schemasystem.dll` | 445592 | 6 | 0 |  |
 | `game/bin/win64/smartprops.dll` | 1511576 | 6 | 0 |  |
-| `game/bin/win64/soundsystem.dll` | 5837976 | 42 | 0 | `SoundSystem001` |
+| `game/bin/win64/soundsystem.dll` | 5838488 | 42 | 0 | `SoundSystem001` |
 | `game/bin/win64/steam_api64.dll` | 317080 | 1046 | 0 |  |
 | `game/bin/win64/steamaudio.dll` | 3547288 | 6 | 0 |  |
 | `game/bin/win64/steamnetworkingsockets.dll` | 4290200 | 32 | 0 |  |

@@ -865,14 +865,14 @@
     },
     {
       "export_count": 42,
-      "file_size": "5837976",
+      "file_size": "5838488",
       "path": "game/bin/win64/soundsystem.dll",
       "resolved_interfaces": [
         "SoundSystem001"
       ],
       "schema_module": "soundsystem",
       "schema_registration_count": 0,
-      "sha256": "fd84d31dbe684cdee10a6346843a044bbe2c38ca7744048286de62fdab5f5eea",
+      "sha256": "79c5583c71f5e3d5bd8f0f321d5db4801579540544a7c944cc99a6a430857a7b",
       "stem": "soundsystem"
     },
     {
@@ -1331,7 +1331,7 @@
       ],
       "schema_module": "client",
       "schema_registration_count": 516,
-      "sha256": "08a741030c1e569d8b854c5886a87fcafc21d0d0e2f05dfd380e8a351171501d",
+      "sha256": "d618bbf8e6afb36baa09b3a282035996a88300458c55d2aa5cb81f0495c0ec54",
       "stem": "client"
     },
     {
@@ -1383,7 +1383,7 @@
       ],
       "schema_module": "server",
       "schema_registration_count": 766,
-      "sha256": "3788afaa2dbce98a7b2fa1e15b6b1a304759dd5b0f05802268952341b40777c4",
+      "sha256": "84a06ec3a3ef2ff9fe668aa7a77d0d6c0156e0b3bccdae22f628a9919ad082b6",
       "stem": "server"
     },
     {

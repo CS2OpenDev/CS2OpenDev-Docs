@@ -8,7 +8,7 @@ kind: class
 
 # CHostageExpresserShim
 
-> Source: **Build 26281801** · 2026-10-28 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26334290** · 2026-10-30 · `windows-x86_64` · schema `0.13.0`
 
 **Kind:** class · **Size:** 2848 bytes (`0xb20`) · **Align:** 16 · **Module:** server
 

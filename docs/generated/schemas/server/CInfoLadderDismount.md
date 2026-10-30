@@ -8,7 +8,7 @@ kind: class
 
 # CInfoLadderDismount
 
-> Source: **Build 26281801** · 2026-10-28 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26334290** · 2026-10-30 · `windows-x86_64` · schema `0.13.0`
 
 **Kind:** class · **Size:** 1192 bytes (`0x4a8`) · **Align:** 8 · **Module:** server
 

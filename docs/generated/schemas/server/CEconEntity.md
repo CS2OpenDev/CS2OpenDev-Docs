@@ -8,7 +8,7 @@ kind: class
 
 # CEconEntity
 
-> Source: **Build 26281801** · 2026-10-28 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26334290** · 2026-10-30 · `windows-x86_64` · schema `0.13.0`
 
 Base class for entities carrying Steam Economy item data (weapons, knives, gloves): paint kit, wear, StatTrak, and original owner.
 

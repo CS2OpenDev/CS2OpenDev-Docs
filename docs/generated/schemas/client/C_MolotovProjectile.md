@@ -8,7 +8,7 @@ kind: class
 
 # C_MolotovProjectile
 
-> Source: **Build 26281801** · 2026-10-28 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26334290** · 2026-10-30 · `windows-x86_64` · schema `0.13.0`
 
 **Kind:** class · **Size:** 4976 bytes (`0x1370`) · **Align:** 8 · **Module:** client
 

@@ -8,7 +8,7 @@ kind: class
 
 # CCSTeam
 
-> Source: **Build 26281801** · 2026-10-28 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26334290** · 2026-10-30 · `windows-x86_64` · schema `0.13.0`
 
 Server-side entity representing one team in a CS2 match (T or CT).  Two CCSTeam entities exist per match: one for teamnum 2 (Terrorist) and one for teamnum 3 (Counter-Terrorist).  Inherits the shared score from CTeam.
 

@@ -8,7 +8,7 @@ kind: class
 
 # CBaseCombatCharacter
 
-> Source: **Build 26281801** · 2026-10-28 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26334290** · 2026-10-30 · `windows-x86_64` · schema `0.13.0`
 
 Base class for characters that can carry weapons and take part in combat (players, hostages, bots).  Adds wearables and navigation on top of the animated-model base.
 

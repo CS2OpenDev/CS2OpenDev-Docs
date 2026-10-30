@@ -8,7 +8,7 @@ kind: class
 
 # CCSObserverPawn
 
-> Source: **Build 26281801** · 2026-10-28 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26334290** · 2026-10-30 · `windows-x86_64` · schema `0.13.0`
 
 Lightweight pawn used when a player is in spectator mode.  Created when the player joins as spectator or dies and has not yet respawned.  Overrides the movement and camera services with observer-specific implementations.
 

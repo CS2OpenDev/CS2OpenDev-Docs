@@ -8,7 +8,7 @@ kind: class
 
 # C_FuncMonitor
 
-> Source: **Build 26281801** · 2026-10-28 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26334290** · 2026-10-30 · `windows-x86_64` · schema `0.13.0`
 
 **Kind:** class · **Size:** 5392 bytes (`0x1510`) · **Align:** 16 · **Module:** client
 
