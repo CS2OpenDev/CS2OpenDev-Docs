@@ -236,7 +236,7 @@ Which enum feeds which channel/id range:
 | `GameEvents` | 200, 213-214, 450-453 | `EBaseGameEvents`, `ECsgoGameEvents` |
 | `Demo stream` | 0-19, 64 | `EDemoCommands` |
 
-## changelog.json (2.6 KB)
+## changelog.json (83.5 KB)
 
 For the one build-pair transition the current artifact set carries: every
 family is always listed (with `added_count`/`removed_count`/`changed_count`,

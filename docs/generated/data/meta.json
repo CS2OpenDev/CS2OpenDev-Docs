@@ -255,6 +255,6 @@
   "schema_version": "0.13.0",
   "steam_date": "2026-10-28",
   "steam_manifest_utc": "2026-10-28T20:59:18Z",
-  "tool_commit": "91ddc22141b8c8ac1fc7efe687ebfaedefb9beb1",
+  "tool_commit": "f740f5ef9edf7ec7c63c97416e08e46e055a87aa",
   "tool_version": "0.13.0"
 }

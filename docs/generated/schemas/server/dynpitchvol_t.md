@@ -75,7 +75,7 @@ classDiagram
 	&quot;spinupsav&quot;: 0,
 	&quot;spindownsav&quot;: 0,
 	&quot;pitchfrac&quot;: &lt;HIDDEN FOR DIFF&gt;,
-	&quot;vol&quot;: 32767,
+	&quot;vol&quot;: &lt;HIDDEN FOR DIFF&gt;,
 	&quot;fadeinsav&quot;: 0,
 	&quot;fadeoutsav&quot;: 0,
 	&quot;volfrac&quot;: 0,
