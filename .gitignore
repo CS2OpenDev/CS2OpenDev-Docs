@@ -17,6 +17,3 @@ site/public/generated/
 
 # Local research / scratch notes and diagram sources. Never committed.
 .scratch/
-
-# Valve's cs_script declaration file, copied in locally to typecheck the HUD samples. Not ours to redistribute.
-site/src/samples/hud/maps/scripts/point_script.d.ts

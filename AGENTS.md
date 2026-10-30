@@ -413,8 +413,9 @@ Facts that trip up generated code:
 
 Reference: `/scripting/api/` (types, enums, hooks), `/entities/` (entity
 I/O). Guides: `/scripting/guides/getting-started/`,
-`/scripting/guides/runtime-semantics/`, `/scripting/guides/custom-hud/`,
-`/scripting/guides/not-vscript/`.
+`/scripting/guides/runtime-semantics/`, `/scripting/guides/not-vscript/`. HUD:
+`/scripting/hud/` (custom_hud_layout), `/scripting/hud/gotchas/` (what Panorama
+rejects), `/scripting/hud/examples/` (community layouts).
 
 ---
 

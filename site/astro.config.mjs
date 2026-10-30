@@ -87,9 +87,15 @@ const referenceSidebar = [
 			{ label: 'API reference', link: '/scripting/api/' },
 			{ label: 'Entity I/O', link: '/entities/' },
 			{ label: 'Runtime semantics', link: '/scripting/guides/runtime-semantics/' },
-			{ label: 'Custom HUD layouts', link: '/scripting/guides/custom-hud/' },
-			{ label: 'HUD gallery', link: '/scripting/hud/' },
-			{ label: 'HUD gotchas', link: '/scripting/hud/gotchas/' },
+			{
+				label: 'Scripting HUD',
+				collapsed: true,
+				items: [
+					{ label: 'Overview', link: '/scripting/hud/' },
+					{ label: 'Examples', link: '/scripting/hud/examples/' },
+					{ label: 'Gotchas', link: '/scripting/hud/gotchas/' },
+				],
+			},
 			{ label: 'vs VScript and Panorama', link: '/scripting/guides/not-vscript/' },
 		],
 	},

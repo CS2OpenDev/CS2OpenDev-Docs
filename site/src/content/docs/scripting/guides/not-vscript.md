@@ -17,7 +17,7 @@ CS2's entity definitions are layered on Source 2's shared `game/core/base.fgd`. 
 
 ## About Panorama
 
-`custom_hud_layout` takes a Panorama layout (`.vxml`) with its stylesheet (`.vcss`), and the server script changes it through `CustomHudLayout` methods. Valve's declaration file is explicit: "Events and client side scripting are not supported." Your Panorama files are markup and styles only; all the logic stays in cs_script. See [Custom HUD layouts](../custom-hud/).
+`custom_hud_layout` takes a Panorama layout (`.vxml`) with its stylesheet (`.vcss`), and the server script changes it through `CustomHudLayout` methods. Valve's declaration file is explicit: "Events and client side scripting are not supported." Your Panorama files are markup and styles only; all the logic stays in cs_script. See [Custom HUD layouts](../../hud/).
 
 ## Migrating from CS:GO
 

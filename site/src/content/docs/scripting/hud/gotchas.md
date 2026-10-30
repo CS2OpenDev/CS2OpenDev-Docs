@@ -33,8 +33,8 @@ Each item is marked by where it comes from:
 - **Valve:** `SetHasClass` and `SetDialogVariableString` apply to every player; the `ForPlayer` versions override them for one slot. Omitting the value on a `ForPlayer` call falls back to the all-player value.
 - **Valve:** while the matching stock UI is open, the game sets `HUD_TEAMINTRO_VISIBLE`, `HUD_BUYMENU_VISIBLE`, `HUD_SCOREBOARD_VISIBLE`, `HUD_WINPANEL_VISIBLE`, `HUD_ENDOFMATCH_VISIBLE`, `HUD_TEAMMENU_VISIBLE` or `HUD_CHAT_VISIBLE` on an ancestor panel. A selector such as `.HUD_SCOREBOARD_VISIBLE #mine` reacts to it.
 - **Reported:** a Label shows a dialog variable with `text="{s:name}"`, and the script sets it with the Label's id and `name`.
-- **Reported:** class changes reach clients as a difference from the last state, so removing and re-adding a class in the same tick sends nothing. To replay an animation, remove the class and add it back on a later tick, or alternate between two class names. The [toast sample](../toast/) does this.
-- **Reported:** setting a dialog variable restarts any `width` transition in the same part of the layout. Build bars from fixed segments, as the [capture sample](../capture/) does, or with `clip: rect()`.
+- **Reported:** class changes reach clients as a difference from the last state, so removing and re-adding a class in the same tick sends nothing. To replay an animation, remove the class and add it back on a later tick, or alternate between two class names.
+- **Reported:** setting a dialog variable restarts any `width` transition in the same part of the layout. Build bars from fixed segments, or with `clip: rect()`.
 - **Reported:** each `custom_hud_layout` can intern at most 1024 distinct ids, class names and variable names.
 
 ## Images

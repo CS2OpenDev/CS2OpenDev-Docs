@@ -23,7 +23,7 @@ description: Showing custom Panorama UI from a CS2 map script with custom_hud_la
 
 CSS styling works. Events and client-side scripting don't: a layout is markup and styles only.
 
-A layout pulls in its stylesheet with `<styles><include src="file://{resources}/styles/custom_game/<name>.css" /></styles>` at the top of `<root>`, as Valve's demo does. A Label shows a dialog variable with `text="{s:<variable>}"`, and the script sets it with the Label's `id` and the variable name. The [HUD gotchas](../../hud/gotchas/) page lists what else Panorama accepts and rejects, and the [HUD gallery](../../hud/) has complete layouts to start from.
+A layout pulls in its stylesheet with `<styles><include src="file://{resources}/styles/custom_game/<name>.css" /></styles>` at the top of `<root>`, as Valve's demo does. A Label shows a dialog variable with `text="{s:<variable>}"`, and the script sets it with the Label's `id` and the variable name. [HUD gotchas](./gotchas/) lists what else Panorama accepts and rejects, and [HUD examples](./examples/) points to complete layouts in community projects.
 
 While the matching game UI is showing, the game sets these classes on an ancestor panel, so your CSS can hide or move things out of the way:
 
