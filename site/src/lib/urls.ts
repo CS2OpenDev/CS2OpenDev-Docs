@@ -149,3 +149,28 @@ export function gameEventsHref(): string {
 export function gameEventAnchorHref(anchor: string): string {
 	return withBase(`/game-events/#${anchor}`);
 }
+
+export function scriptingApiHref(): string {
+	return withBase('/scripting/api/');
+}
+
+export function scriptTypeHref(name: string): string {
+	return withBase(`/scripting/api/${name}/`);
+}
+
+/** Enums, type aliases and hooks are sections of the API index, not pages. */
+export function scriptAnchorHref(anchor: string): string {
+	return withBase(`/scripting/api/#${anchor}`);
+}
+
+export function scriptGuideHref(slug: string): string {
+	return withBase(`/scripting/guides/${slug}/`);
+}
+
+export function entityIoHref(): string {
+	return withBase('/entities/');
+}
+
+export function entityIoClassHref(classname: string): string {
+	return withBase(`/entities/${classname}/`);
+}

@@ -1,5 +1,5 @@
 ---
-import { readdirSync, statSync } from 'node:fs';
+import { existsSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import { provenanceLine } from '../lib/provenance';
@@ -48,6 +48,16 @@ const artifacts = [
 		file: 'field_history.json',
 		purpose: 'Whole-history evolution of every (class, field): first/last seen build, type history.',
 	},
+	// Present only for a build that carries the Workshop Tools FGDs and point_script.d.ts.
+	...(existsSync(join(dir, 'cs2_entity_io.d.ts'))
+		? [
+				{
+					file: 'cs2_entity_io.d.ts',
+					purpose:
+						'TypeScript declarations for cs_script: every Hammer classname, its input and output names, and typed FindEntitiesByClass / EntFireAtName / ConnectOutput overloads. Drop it next to point_script.d.ts.',
+				},
+			]
+		: []),
 ].map((a) => ({ ...a, size: fileSize(a.file), href: codegenArtifactHref(a.file) }));
 
 const protoFiles = readdirSync(join(dir, 'proto')).filter((f) => f.endsWith('.proto'));
@@ -73,7 +83,7 @@ const headings = [
 		<p>
 			These are the raw artifacts the rest of this site is rendered from, meant for a build step
 			rather than a browser: a code generator, a demo parser's schema loader, or a plugin's build
-			pipeline. Every file below shares one <code>schema_format_version</code>, currently{' '}
+			pipeline. Every JSON file below shares one <code>schema_format_version</code>, currently{' '}
 			<code>{header.schema_format_version}</code>, bumped as a family whenever a field is added,
 			removed, or renamed in any of them.
 		</p>

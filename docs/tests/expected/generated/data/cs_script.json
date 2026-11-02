@@ -1,0 +1,737 @@
+{
+  "build_id": "9000001",
+  "enums": [
+    {
+      "deprecated": false,
+      "deprecation_note": "",
+      "doc": "",
+      "experimental": false,
+      "experimental_note": "",
+      "exported": true,
+      "members": [
+        {
+          "convars": [],
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "",
+          "engine_match": false,
+          "engine_name": "MOVETYPE_INVALID",
+          "engine_value": "11",
+          "initializer": "-1",
+          "name": "INVALID",
+          "value": -1
+        },
+        {
+          "convars": [],
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "",
+          "engine_match": true,
+          "engine_name": "MOVETYPE_NONE",
+          "engine_value": "0",
+          "initializer": "",
+          "name": "NONE",
+          "value": 0
+        },
+        {
+          "convars": [],
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "",
+          "engine_match": false,
+          "engine_name": "MOVETYPE_WALK",
+          "engine_value": "2",
+          "initializer": "",
+          "name": "WALK",
+          "value": 1
+        },
+        {
+          "convars": [],
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "",
+          "engine_match": false,
+          "engine_name": "MOVETYPE_FLYGRAVITY",
+          "engine_value": "4",
+          "initializer": "",
+          "name": "FLYGRAVITY",
+          "value": 2
+        },
+        {
+          "convars": [],
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "",
+          "engine_match": false,
+          "engine_name": "MOVETYPE_VPHYSICS",
+          "engine_value": "5",
+          "initializer": "",
+          "name": "VPHYSICS",
+          "value": 3
+        },
+        {
+          "convars": [],
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "",
+          "engine_match": false,
+          "engine_name": "MOVETYPE_NOCLIP",
+          "engine_value": "7",
+          "initializer": "",
+          "name": "NOCLIP",
+          "value": 4
+        },
+        {
+          "convars": [],
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "",
+          "engine_match": false,
+          "engine_name": "MOVETYPE_OBSERVER",
+          "engine_value": "8",
+          "initializer": "",
+          "name": "OBSERVER",
+          "value": 5
+        },
+        {
+          "convars": [],
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "",
+          "engine_match": false,
+          "engine_name": "MOVETYPE_LADDER",
+          "engine_value": "9",
+          "initializer": "",
+          "name": "LADDER",
+          "value": 6
+        },
+        {
+          "convars": [],
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "",
+          "engine_match": false,
+          "engine_name": "MOVETYPE_CUSTOM",
+          "engine_value": "10",
+          "initializer": "",
+          "name": "CUSTOM",
+          "value": 7
+        }
+      ],
+      "name": "CSMoveType",
+      "schema": {
+        "module": "server",
+        "name": "MoveType_t"
+      },
+      "values_agree": false
+    }
+  ],
+  "es_target": "es2022",
+  "exports": [
+    {
+      "doc": "",
+      "name": "Instance",
+      "type": "IPointScript"
+    }
+  ],
+  "file_doc": "This file, `point_script.d.ts`, documents the JavaScript API for cs_script scripts attached to point_script entities.\nThis file is a TypeScript Declaration file. https://www.typescriptlang.org/docs/handbook/2/type-declarations.html#dts-files\nThis file can be used by various editors to provide tooling while editing JavaScript. https://www.typescriptlang.org/docs/handbook/intro-to-js-ts.html\nNext to this file is a `tsconfig.json` file configured for editing JavaScript targetting the current version used by CS2.\nPlace copies of these two files, `point_script.d.ts` and `tsconfig.json`, next to your scripts and some editors will begin providing tooling without further configuration.\nThese two files will be maintained as the cs_script API changes or the JavaScript version in CS2 is updated.\nPlease send feedback to CSGOTeamFeedback@valvesoftware.com with \"cs_script Feedback\" in the subject line.",
+  "hooks": [
+    {
+      "deprecated": false,
+      "deprecation_note": "",
+      "doc": "Called when the point_script entity is activated",
+      "events": [],
+      "experimental": false,
+      "experimental_note": "",
+      "mapped": true,
+      "name": "OnActivate",
+      "notes": "Runs once per script",
+      "signature": "OnActivate(callback: () => void): void",
+      "verified": false
+    },
+    {
+      "deprecated": false,
+      "deprecation_note": "",
+      "doc": "Called when a team wins a round",
+      "events": [
+        {
+          "anchor": "round_end-core",
+          "name": "round_end"
+        }
+      ],
+      "experimental": false,
+      "experimental_note": "",
+      "mapped": true,
+      "name": "OnRoundEnd",
+      "notes": "",
+      "signature": "OnRoundEnd(callback: (event: { winningTeam: number, reason: CSRoundEndReason }) => void): void",
+      "verified": false
+    },
+    {
+      "deprecated": false,
+      "deprecation_note": "",
+      "doc": "Called when a player jumps off the ground.",
+      "events": [
+        {
+          "anchor": "player_jump",
+          "name": "player_jump"
+        }
+      ],
+      "experimental": false,
+      "experimental_note": "",
+      "mapped": true,
+      "name": "OnPlayerJump",
+      "notes": "",
+      "signature": "OnPlayerJump(callback: (event: { player: CSPlayerPawn }) => void): void",
+      "verified": true
+    },
+    {
+      "deprecated": false,
+      "deprecation_note": "",
+      "doc": "Called when a gun emits bullets. A shotgun will only trigger this once when emitting multiple bullets at once.",
+      "events": [],
+      "experimental": false,
+      "experimental_note": "",
+      "mapped": false,
+      "name": "OnGunFire",
+      "notes": "",
+      "signature": "OnGunFire(callback: (event: { weapon: CSWeaponBase }) => void): void",
+      "verified": false
+    }
+  ],
+  "module": "cs_script/point_script",
+  "module_doc": "`\"cs_script/point_script\"` is the module provided to scripts loaded for point_script entities.\n\n# Setup:\n- Create a JavaScript file (.js) that imports this module.\n     - See `hello.js` for an example.\n- Create a point_script entity in your map and set its cs_script field to reference your JavaScript file as a vjs asset.\n     - See example addon cs_script_demo. There is a point_script entity in the cs_script_demo.vmap named \"hello_cs_script\" that runs `hello.js`. There are a handful of other examples as well.\n\n# Execution:\n- The compiled version of your script (.vjs_c) will be loaded during map load.\n- When the point_script entity is spawned it will execute all code at the top level scope of your script.\n- Register callbacks on `Instance` to setup code that executes at various times throughout the lifetime of the map.\n     - A function passed to `Instance.OnActivate` will be invoked when the point_script entity is activated.\n     - A function passed to `Instance.OnPlayerJump` will be invoked when any player in the map jumps.\n\n# Tips:\n- Entity variables are stable. Two variables referring to the same entity will be reference equals (===).\n- Extra values attached to an entity variable will still be there if the variable is fetched again.\n- A map can have multiple point_script entities. Each script will run with its own Instance, set of globals, and set of entity variables.\n\n# Tools Mode:\n- In tools mode, saving changes to your script will recompile your file, clear all registered callbacks, and re-run the top level scope of your script.\n- Global variables and instances of entity variables will persist across reloads.\n     - Beware. This is an avenue for holding references to code from previous iterations of your script. This is only a concern in tools mode.\n- See `Instance.OnScriptReload` for a tool to handle edge cases around reloading.",
+  "source_path": "content/csgo_addons/cs_script_demo/maps/scripts/point_script.d.ts",
+  "source_sha256": "f8199913876ba1633ece831594b47874e9826f185076fbd17c980d888f713bd3",
+  "tsconfig_path": "content/csgo_addons/cs_script_demo/maps/scripts/tsconfig.json",
+  "types": [
+    {
+      "classnames": [
+        "func_brush"
+      ],
+      "convars": [],
+      "deprecated": false,
+      "deprecation_note": "",
+      "doc": "",
+      "examples": [],
+      "experimental": false,
+      "experimental_note": "",
+      "exported": true,
+      "extends": [
+        "Entity"
+      ],
+      "implements": [],
+      "kind": "class",
+      "members": [
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "SetModel",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [
+            {
+              "name": "modelName",
+              "optional": false,
+              "rest": false,
+              "type": "string"
+            }
+          ],
+          "referenced_types": [],
+          "return_type": "void",
+          "returns_doc": "",
+          "see": [],
+          "signature": "SetModel(modelName: string): void",
+          "type": "",
+          "type_params": []
+        }
+      ],
+      "name": "BaseModelEntity",
+      "referenced_types": [],
+      "runtime_classnames": [],
+      "schema": {
+        "module": "server",
+        "name": "CBaseModelEntity"
+      },
+      "subclasses": [
+        "CSPlayerPawn"
+      ],
+      "type": "",
+      "type_params": []
+    },
+    {
+      "classnames": [],
+      "convars": [],
+      "deprecated": false,
+      "deprecation_note": "",
+      "doc": "",
+      "examples": [],
+      "experimental": false,
+      "experimental_note": "",
+      "exported": true,
+      "extends": [
+        "BaseModelEntity"
+      ],
+      "implements": [],
+      "kind": "class",
+      "members": [
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "GiveNamedItem",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [
+            {
+              "name": "name",
+              "optional": false,
+              "rest": false,
+              "type": "string"
+            },
+            {
+              "name": "autoDeploy",
+              "optional": true,
+              "rest": false,
+              "type": "boolean"
+            }
+          ],
+          "referenced_types": [],
+          "return_type": "void",
+          "returns_doc": "",
+          "see": [],
+          "signature": "GiveNamedItem(name: string, autoDeploy?: boolean): void",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "GetArmor",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [],
+          "referenced_types": [],
+          "return_type": "number",
+          "returns_doc": "",
+          "see": [],
+          "signature": "GetArmor(): number",
+          "type": "",
+          "type_params": []
+        }
+      ],
+      "name": "CSPlayerPawn",
+      "referenced_types": [],
+      "runtime_classnames": [
+        "player"
+      ],
+      "schema": {
+        "module": "server",
+        "name": "CCSPlayerPawn"
+      },
+      "subclasses": [],
+      "type": "",
+      "type_params": []
+    },
+    {
+      "classnames": [],
+      "convars": [],
+      "deprecated": false,
+      "deprecation_note": "",
+      "doc": "The base class for all entities",
+      "examples": [],
+      "experimental": false,
+      "experimental_note": "",
+      "exported": true,
+      "extends": [],
+      "implements": [],
+      "kind": "class",
+      "members": [
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "The position of the origin of this entity relative to the world.",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "GetAbsOrigin",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [],
+          "referenced_types": [
+            "Vector"
+          ],
+          "return_type": "Vector",
+          "returns_doc": "",
+          "see": [],
+          "signature": "GetAbsOrigin(): Vector",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "GetClassName",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [],
+          "referenced_types": [],
+          "return_type": "string",
+          "returns_doc": "",
+          "see": [],
+          "signature": "GetClassName(): string",
+          "type": "",
+          "type_params": []
+        }
+      ],
+      "name": "Entity",
+      "referenced_types": [],
+      "runtime_classnames": [],
+      "schema": {
+        "module": "server",
+        "name": "CBaseEntity"
+      },
+      "subclasses": [
+        "BaseModelEntity"
+      ],
+      "type": "",
+      "type_params": []
+    },
+    {
+      "classnames": [],
+      "convars": [],
+      "deprecated": false,
+      "deprecation_note": "",
+      "doc": "The API provided to scripts attached to a point_script entity.\nAccess these functions by importing Instance from \"cs_script/point_script\".",
+      "examples": [],
+      "experimental": false,
+      "experimental_note": "",
+      "exported": false,
+      "extends": [],
+      "implements": [],
+      "kind": "interface",
+      "members": [
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "Called when the point_script entity is activated",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "OnActivate",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [
+            {
+              "name": "callback",
+              "optional": false,
+              "rest": false,
+              "type": "() => void"
+            }
+          ],
+          "referenced_types": [],
+          "return_type": "void",
+          "returns_doc": "",
+          "see": [],
+          "signature": "OnActivate(callback: () => void): void",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "Called when a team wins a round",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "OnRoundEnd",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [
+            {
+              "name": "callback",
+              "optional": false,
+              "rest": false,
+              "type": "(event: { winningTeam: number, reason: CSRoundEndReason }) => void"
+            }
+          ],
+          "referenced_types": [
+            "CSRoundEndReason"
+          ],
+          "return_type": "void",
+          "returns_doc": "",
+          "see": [],
+          "signature": "OnRoundEnd(callback: (event: { winningTeam: number, reason: CSRoundEndReason }) => void): void",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "Called when a player jumps off the ground.",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "OnPlayerJump",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [
+            {
+              "name": "callback",
+              "optional": false,
+              "rest": false,
+              "type": "(event: { player: CSPlayerPawn }) => void"
+            }
+          ],
+          "referenced_types": [
+            "CSPlayerPawn"
+          ],
+          "return_type": "void",
+          "returns_doc": "",
+          "see": [],
+          "signature": "OnPlayerJump(callback: (event: { player: CSPlayerPawn }) => void): void",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "Called when a gun emits bullets. A shotgun will only trigger this once when emitting multiple bullets at once.",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "OnGunFire",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [
+            {
+              "name": "callback",
+              "optional": false,
+              "rest": false,
+              "type": "(event: { weapon: CSWeaponBase }) => void"
+            }
+          ],
+          "referenced_types": [
+            "CSWeaponBase"
+          ],
+          "return_type": "void",
+          "returns_doc": "",
+          "see": [],
+          "signature": "OnGunFire(callback: (event: { weapon: CSWeaponBase }) => void): void",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "Fire the input on all targets matching the specified names.",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "EntFireAtName",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [
+            {
+              "name": "config",
+              "optional": false,
+              "rest": false,
+              "type": "{ name: string, input: string, value?: InputValue, caller?: Entity, activator?: Entity, delay?: number }"
+            }
+          ],
+          "referenced_types": [
+            "Entity",
+            "InputValue"
+          ],
+          "return_type": "void",
+          "returns_doc": "",
+          "see": [],
+          "signature": "EntFireAtName(config: { name: string, input: string, value?: InputValue, caller?: Entity, activator?: Entity, delay?: number }): void",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "Find entities of the specified class name.",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "FindEntitiesByClass",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [
+            {
+              "name": "className",
+              "optional": false,
+              "rest": false,
+              "type": "string"
+            }
+          ],
+          "referenced_types": [
+            "Entity"
+          ],
+          "return_type": "Entity[]",
+          "returns_doc": "",
+          "see": [
+            "entities"
+          ],
+          "signature": "FindEntitiesByClass(className: string): Entity[]",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": true,
+          "deprecation_note": "This overload will be removed in a future update",
+          "doc": "",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "EntFireAtName",
+          "optional": false,
+          "overload_index": 1,
+          "param_docs": {},
+          "params": [
+            {
+              "name": "name",
+              "optional": false,
+              "rest": false,
+              "type": "string"
+            },
+            {
+              "name": "input",
+              "optional": false,
+              "rest": false,
+              "type": "string"
+            },
+            {
+              "name": "inputData",
+              "optional": true,
+              "rest": false,
+              "type": "InputValue | { value?: InputValue, caller?: Entity, activator?: Entity }"
+            },
+            {
+              "name": "delay",
+              "optional": true,
+              "rest": false,
+              "type": "number"
+            }
+          ],
+          "referenced_types": [
+            "Entity",
+            "InputValue"
+          ],
+          "return_type": "void",
+          "returns_doc": "",
+          "see": [],
+          "signature": "EntFireAtName(name: string, input: string, inputData?: InputValue | { value?: InputValue, caller?: Entity, activator?: Entity }, delay?: number): void",
+          "type": "",
+          "type_params": []
+        }
+      ],
+      "name": "IPointScript",
+      "referenced_types": [],
+      "runtime_classnames": [],
+      "schema": null,
+      "subclasses": [],
+      "type": "",
+      "type_params": []
+    },
+    {
+      "classnames": [],
+      "convars": [],
+      "deprecated": false,
+      "deprecation_note": "",
+      "doc": "",
+      "examples": [],
+      "experimental": false,
+      "experimental_note": "",
+      "exported": false,
+      "extends": [],
+      "implements": [],
+      "kind": "type_alias",
+      "members": [],
+      "name": "Vector",
+      "referenced_types": [],
+      "runtime_classnames": [],
+      "schema": null,
+      "subclasses": [],
+      "type": "{ x: number, y: number, z: number }",
+      "type_params": []
+    }
+  ]
+}

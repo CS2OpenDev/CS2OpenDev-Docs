@@ -1,0 +1,84 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import DataTable, { PAGE_SIZE, type Column } from '../../components/islands/DataTable';
+import TableRowsNote from '../../components/TableRowsNote.astro';
+import { provenanceLine } from '../../lib/provenance';
+import { entityIoRows, loadEntityIo } from '../../lib/data/entity_io';
+import { codegenSchemasHref, scriptGuideHref, scriptingApiHref, withBase } from '../../lib/urls';
+import '../../styles/content.css';
+
+const io = loadEntityIo();
+const EMPTY_TEXT =
+	"This build carries no entity I/O data. It is read from the FGD files in the Workshop Tools depot, which SchemaTracker acquires for Windows builds only.";
+
+const columns: Column[] = [
+	{ key: 'name', label: 'Classname', mono: true, hrefKey: 'href' },
+	{ key: 'class_type', label: 'Kind', facet: true },
+	{ key: 'inputs', label: 'Inputs', numeric: true },
+	{ key: 'outputs', label: 'Outputs', numeric: true },
+	{ key: 'keyvalues', label: 'Keyvalues', numeric: true },
+	{ key: 'script_type', label: 'cs_script type', mono: true, facet: true },
+	{ key: 'description', label: 'Description' },
+];
+
+const all = entityIoRows();
+const rows = all.slice(0, PAGE_SIZE);
+const rowsHref = withBase('/entities/rows.json');
+const mapped = io ? io.classes.filter((c) => c.schema).length : 0;
+
+const headings = io ? [{ depth: 2, slug: 'classes', text: 'Classes' }] : [];
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Entity I/O',
+		description: io
+			? `${io.classes.length} Hammer entity classes with their keyvalues, inputs and outputs, from this build's FGD files.`
+			: EMPTY_TEXT,
+	}}
+	headings={headings}
+>
+	{!io && (
+		<div>
+			<p class="cs2-provenance">{provenanceLine()}</p>
+			<p class="cs2-empty">{EMPTY_TEXT}</p>
+		</div>
+	)}
+	{io && (
+		<div>
+			<p>
+				Every entity class a mapper can place in Hammer, with the keyvalues, inputs and outputs the build's
+				FGD files declare for it, inherited ones included. These are the strings a map's I/O and a{' '}
+				<a href={scriptingApiHref()}>cs_script</a> pass around: <code>EntFireAtName</code> and{' '}
+				<code>EntFireAtTarget</code> take an input name, <code>ConnectOutput</code> an output name, and{' '}
+				<code>FindEntitiesByClass</code> a classname. None of them are checked when the script compiles, so a
+				typo fails silently at run time; the <a href={codegenSchemasHref()}>generated typings</a> catch it in
+				the editor instead. See <a href={scriptGuideHref('getting-started')}>Getting started</a> for wiring
+				map I/O to a script.
+			</p>
+			<p>
+				Parsed from <code>{io.root}</code> and the {io.sources.length - 1} files it includes ({io.base_class_count}{' '}
+				base classes resolved into the classes below). The <strong>cs_script type</strong> column is what a
+				script gets back for that classname. It is known for {mapped} of {io.classes.length} classnames,
+				through a curated classname-to-class list (<code>docs/overlays/entity_classnames.yml</code>); a blank
+				means unmapped, not untyped.
+			</p>
+
+			<p class="cs2-provenance">{provenanceLine()}</p>
+
+			<h2 id="classes">Classes</h2>
+			<DataTable
+				id="eio"
+				columns={columns}
+				rows={rows}
+				src={rowsHref}
+				anchorKey="name"
+				caption={`${io.classes.length} entity classes`}
+				pageSize={PAGE_SIZE}
+				initialSort={{ key: 'name', dir: 'asc' }}
+				client:idle
+			/>
+			<TableRowsNote shown={rows.length} total={all.length} rowsHref={rowsHref} />
+		</div>
+	)}
+</StarlightPage>

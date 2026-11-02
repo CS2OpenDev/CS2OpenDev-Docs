@@ -1,0 +1,165 @@
+{
+  "base_class_count": 0,
+  "build_id": "9000001",
+  "classes": [
+    {
+      "bases": [
+        "Targetname",
+        "Parentname",
+        "RenderFields",
+        "Global",
+        "Inputfilter",
+        "EnableDisable",
+        "Shadow"
+      ],
+      "class_type": "SolidClass",
+      "description": "An brush built entity with various features.",
+      "helpers": [
+        "sphere(fademindist)",
+        "sphere(fademaxdist)"
+      ],
+      "inputs": [
+        {
+          "declared_in": "VScript",
+          "description": "Load and execute a script file",
+          "name": "RunScriptFile",
+          "param_type": "string"
+        },
+        {
+          "declared_in": "VScript",
+          "description": "Execute a fragment of script code",
+          "name": "RunScriptCode",
+          "param_type": "string"
+        },
+        {
+          "declared_in": "VScript",
+          "description": "Call a script function",
+          "name": "CallScriptFunction",
+          "param_type": "string"
+        },
+        {
+          "declared_in": "VScript",
+          "description": "Calls a script function from this entity's private script scope.",
+          "name": "CallPrivateScriptFunction",
+          "param_type": "string"
+        }
+      ],
+      "keyvalues": [
+        {
+          "choices": [],
+          "declared_in": "VScript",
+          "default_value": "",
+          "description": "Name(s) of script files that are executed after all entities have spawned.",
+          "display_name": "Entity Scripts",
+          "flags": [],
+          "name": "vscripts",
+          "type": "scriptlist"
+        },
+        {
+          "choices": [],
+          "declared_in": "Targetname",
+          "default_value": "",
+          "description": "The name that other entities refer to this entity by.",
+          "display_name": "Name",
+          "flags": [],
+          "name": "targetname",
+          "type": "target_source"
+        },
+        {
+          "choices": [],
+          "declared_in": "Parentname",
+          "default_value": "",
+          "description": "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent.",
+          "display_name": "Parent",
+          "flags": [],
+          "name": "parentname",
+          "type": "target_destination"
+        }
+      ],
+      "name": "func_brush",
+      "outputs": [
+        {
+          "declared_in": "GameEntity",
+          "description": "Fired in response to FireUser1 input.",
+          "name": "OnUser1",
+          "param_type": "void"
+        },
+        {
+          "declared_in": "GameEntity",
+          "description": "Fired in response to FireUser2 input.",
+          "name": "OnUser2",
+          "param_type": "void"
+        },
+        {
+          "declared_in": "GameEntity",
+          "description": "Fired in response to FireUser3 input.",
+          "name": "OnUser3",
+          "param_type": "void"
+        }
+      ],
+      "schema": {
+        "module": "server",
+        "name": "CBaseModelEntity"
+      },
+      "script_type": "BaseModelEntity",
+      "source_file": "game/core/base.fgd"
+    },
+    {
+      "bases": [],
+      "class_type": "PointClass",
+      "description": "",
+      "helpers": [
+        "iconsprite(\"materials/editor/point_script.vmat\")"
+      ],
+      "inputs": [
+        {
+          "declared_in": "point_script",
+          "description": "Run callback registered using OnScriptInput.",
+          "name": "RunScriptInput",
+          "param_type": "string"
+        }
+      ],
+      "keyvalues": [
+        {
+          "choices": [],
+          "declared_in": "point_script",
+          "default_value": "",
+          "description": "The name that other entities refer to this entity by.",
+          "display_name": "Name",
+          "flags": [],
+          "name": "targetname",
+          "type": "target_source"
+        },
+        {
+          "choices": [],
+          "declared_in": "point_script",
+          "default_value": "",
+          "description": "",
+          "display_name": "cs_script",
+          "flags": [],
+          "name": "cs_script",
+          "type": "resource:vjs"
+        }
+      ],
+      "name": "point_script",
+      "outputs": [],
+      "schema": null,
+      "script_type": null,
+      "source_file": "game/csgo/csgo.fgd"
+    }
+  ],
+  "excluded": [
+    "beam_spotlight",
+    "color_correction"
+  ],
+  "root": "game/csgo/csgo.fgd",
+  "sources": [
+    "game/core/base.fgd",
+    "game/core/lights.fgd",
+    "game/core/lights2.fgd",
+    "game/core/lights_base.fgd",
+    "game/core/markup_volumes.fgd",
+    "game/csgo/csgo.fgd",
+    "game/csgo/postprocessing.fgd"
+  ]
+}

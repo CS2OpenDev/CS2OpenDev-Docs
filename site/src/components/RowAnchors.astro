@@ -1,0 +1,21 @@
+---
+/**
+ * Static ids for DataTable rows past the server-rendered first page, so a
+ * `#<name>` link from another page resolves in the built HTML (and passes
+ * check-links). Placed after the table: once the island renders the real row,
+ * getElementById finds the row first and the reveal scrolls to it.
+ */
+import { anchorId } from './islands/DataTable';
+
+interface Props {
+	names: string[];
+	/** Anchor values of the rows already rendered on the SSR page. */
+	rendered: string[];
+}
+
+const { names, rendered } = Astro.props;
+const skip = new Set(rendered.map(anchorId));
+const ids = [...new Set(names.map(anchorId))].filter((id) => !skip.has(id));
+---
+
+<div hidden>{ids.map((id) => <span id={id} />)}</div>

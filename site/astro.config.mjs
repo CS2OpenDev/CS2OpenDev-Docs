@@ -79,6 +79,26 @@ const referenceSidebar = [
 			...coreProtoStems.map((stem) => ({ label: `${stem}.proto`, link: `/protobufs/${stem}/` })),
 		],
 	},
+	{
+		label: 'Map Scripting',
+		collapsed: true,
+		items: [
+			{ label: 'Getting started', link: '/scripting/guides/getting-started/' },
+			{ label: 'API reference', link: '/scripting/api/' },
+			{ label: 'Entity I/O', link: '/entities/' },
+			{ label: 'Runtime semantics', link: '/scripting/guides/runtime-semantics/' },
+			{
+				label: 'Scripting HUD',
+				collapsed: true,
+				items: [
+					{ label: 'Overview', link: '/scripting/hud/' },
+					{ label: 'Examples', link: '/scripting/hud/examples/' },
+					{ label: 'Gotchas', link: '/scripting/hud/gotchas/' },
+				],
+			},
+			{ label: 'vs VScript and Panorama', link: '/scripting/guides/not-vscript/' },
+		],
+	},
 	...flatPages.map(([label, link]) => ({ label, link })),
 ];
 

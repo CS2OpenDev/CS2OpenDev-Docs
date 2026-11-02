@@ -1,0 +1,193 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { provenanceLine } from '../../../lib/provenance';
+import {
+	SEE_LABEL,
+	docHtml,
+	linkTypesHtml,
+	loadCsScript,
+	memberGroups,
+	pagedTypes,
+	seeHref,
+	typeByName,
+} from '../../../lib/data/cs_script';
+import { entityHref, entityIoClassHref, scriptAnchorHref, scriptingApiHref, scriptTypeHref } from '../../../lib/urls';
+import '../../../styles/content.css';
+import '../../../styles/scripting.css';
+
+export function getStaticPaths() {
+	const api = loadCsScript();
+	return api ? pagedTypes(api).map((t) => ({ params: { type: t.name } })) : [];
+}
+
+const api = loadCsScript()!;
+const types = typeByName(api);
+const t = types.get(Astro.params.type!);
+if (!t) throw new Error(`Unknown cs_script type ${Astro.params.type}`);
+
+const groups = memberGroups(t);
+const hooksByName = new Map(api.hooks.map((h) => [h.name, h]));
+const exportedAs = api.exports.filter((x) => x.type === t.name).map((x) => x.name);
+
+// The ancestors whose members this type inherits, nearest first.
+const chain: string[] = [];
+for (let p = t.extends[0]; p && types.has(p) && !chain.includes(p); p = types.get(p)!.extends[0]) chain.push(p);
+
+/** Classname lists past this length are a count only; the entity I/O index filters by type. */
+const CLASSNAME_LIST_CAP = 60;
+
+const headings = groups.map((g) => ({ depth: 3, slug: g.name, text: g.name }));
+const kindLabel = t.kind === 'class' ? 'class' : 'interface';
+---
+
+<StarlightPage
+	frontmatter={{
+		title: t.name,
+		description: `cs_script ${kindLabel} ${t.name}: ${groups.length} members${t.extends.length ? `, extends ${t.extends.join(', ')}` : ''}.`,
+	}}
+	headings={[{ depth: 2, slug: 'members', text: 'Members' }, ...headings]}
+>
+	<div>
+		<p class="cs2-breadcrumb">
+			<a href={scriptingApiHref()}>cs_script API</a> / <code>{t.name}</code>
+		</p>
+		<p>
+			{t.exported ? 'Exported ' : ''}{kindLabel} in <code>{api.module}</code>
+			{exportedAs.length > 0 && (
+				<>
+					{' '}— the type of <code>{exportedAs.join(', ')}</code>
+				</>
+			)}
+			.{' '}
+			{t.deprecated && <span class="cs2-badge cs2-badge-deprecated">deprecated</span>}{' '}
+			{t.experimental && <span class="cs2-badge cs2-badge-experimental">experimental</span>}
+		</p>
+		{t.doc && <p class="cs2-doc-block" set:html={docHtml(t.doc, t.convars)} />}
+		{t.experimental_note && <p class="cs2-note"><strong>Experimental:</strong> {t.experimental_note}</p>}
+		{t.deprecation_note && <p class="cs2-note"><strong>Deprecated:</strong> {t.deprecation_note}</p>}
+
+		<ul>
+			{chain.length > 0 && (
+				<li>
+					Extends{' '}
+					{chain.map((p, i) => (
+						<>
+							{i > 0 && ' → '}
+							<a href={scriptTypeHref(p)}><code>{p}</code></a>
+						</>
+					))}
+					; inherited members are on those pages.
+				</li>
+			)}
+			{t.subclasses.length > 0 && (
+				<li>
+					Extended by{' '}
+					{t.subclasses.map((s, i) => (
+						<>
+							{i > 0 && ', '}
+							<a href={scriptTypeHref(s)}><code>{s}</code></a>
+						</>
+					))}
+					.
+				</li>
+			)}
+			{t.runtime_classnames.length > 0 && (
+				<li>
+					Returned for{' '}
+					{t.runtime_classnames.map((c, i) => (
+						<>
+							{i > 0 && ', '}
+							<code>{c}</code>
+						</>
+					))}
+					, which the game creates itself (no Hammer entry): <code>FindEntitiesByClass("{t.runtime_classnames[0]}")</code>.
+				</li>
+			)}
+			{t.classnames.length > 0 && t.classnames.length <= CLASSNAME_LIST_CAP && (
+				<li>
+					Returned for classnames{' '}
+					{t.classnames.map((c, i) => (
+						<>
+							{i > 0 && ', '}
+							<a href={entityIoClassHref(c)}><code>{c}</code></a>
+						</>
+					))}
+					.
+				</li>
+			)}
+			{t.classnames.length > CLASSNAME_LIST_CAP && (
+				<li>Returned for {t.classnames.length} Hammer classnames with no more specific script type.</li>
+			)}
+		</ul>
+
+		<p class="cs2-provenance">
+			{provenanceLine()}
+			{t.schema && (
+				<>
+					{' · '}engine class{' '}
+					<a href={entityHref(t.schema.module, t.schema.name)}><code>{t.schema.name}</code></a>
+				</>
+			)}
+		</p>
+
+		<h2 id="members">Members</h2>
+		{groups.map((g) => {
+			const hook = hooksByName.get(g.name);
+			return (
+				<section class="cs2-member">
+					<h3 id={g.name}>
+						<code>{g.name}</code>{' '}
+						{g.overloads.every((m) => m.deprecated) && <span class="cs2-badge cs2-badge-deprecated">deprecated</span>}{' '}
+						{g.overloads.some((m) => m.experimental) && (
+							<span class="cs2-badge cs2-badge-experimental">experimental</span>
+						)}
+					</h3>
+					{g.overloads.map((m) => (
+						<>
+							<pre class="cs2-signature"><code set:html={linkTypesHtml(api, m.signature || `${m.name}: ${m.type}`, t.name)} /></pre>
+							{m.doc && <p class="cs2-doc-block" set:html={docHtml(m.doc, m.convars)} />}
+							{Object.keys(m.param_docs).length > 0 && (
+								<ul>
+									{Object.entries(m.param_docs).map(([p, d]) => (
+										<li><code>{p}</code>: <span set:html={docHtml(d)} /></li>
+									))}
+								</ul>
+							)}
+							{m.returns_doc && <p><strong>Returns:</strong> <span set:html={docHtml(m.returns_doc)} /></p>}
+							{m.default_value && <p><strong>Default:</strong> <code>{m.default_value}</code></p>}
+							{m.deprecation_note && <p class="cs2-note"><strong>Deprecated:</strong> {m.deprecation_note}</p>}
+							{m.experimental_note && <p class="cs2-note"><strong>Experimental:</strong> {m.experimental_note}</p>}
+							{m.examples.map((ex) => <pre><code>{ex}</code></pre>)}
+						</>
+					))}
+					{hook && (hook.events.length > 0 || hook.notes) && (
+						<p>
+							{hook.events.length > 0 && (
+								<>
+									Same moment as game event{hook.events.length > 1 ? 's' : ''}{' '}
+									<a href={scriptAnchorHref(hook.name)}>
+										{hook.events.map((e) => e.name).join(', ')}
+									</a>
+									{!hook.verified && <> <span class="cs2-badge cs2-badge-unverified">unverified</span></>}.{' '}
+								</>
+							)}
+							{hook.notes}
+						</p>
+					)}
+					{g.overloads[0].see.length > 0 && (
+						<p>
+							See also:{' '}
+							{g.overloads[0].see.map((s, i) => (
+								<>
+									{i > 0 && ', '}
+									<a href={seeHref(s)}>{SEE_LABEL[s]}</a>
+								</>
+							))}
+							.
+						</p>
+					)}
+				</section>
+			);
+		})}
+	</div>
+</StarlightPage>

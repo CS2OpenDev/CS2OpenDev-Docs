@@ -1,0 +1,37 @@
+/* /scripting/api/ and /entities/ */
+.sl-markdown-content .cs2-badge {
+	display: inline-block;
+	padding: 0 0.4em;
+	border-radius: 0.25rem;
+	font-size: var(--sl-text-xs);
+	font-weight: 600;
+	vertical-align: middle;
+	border: 1px solid currentColor;
+}
+.sl-markdown-content .cs2-badge-deprecated {
+	color: var(--sl-color-red-high);
+}
+.sl-markdown-content .cs2-badge-experimental {
+	color: var(--sl-color-orange-high);
+}
+.sl-markdown-content .cs2-badge-unverified {
+	color: var(--sl-color-gray-3);
+}
+.sl-markdown-content .cs2-badge-ok {
+	color: var(--sl-color-green-high);
+}
+.sl-markdown-content .cs2-badge-differs {
+	color: var(--sl-color-orange-high);
+}
+.sl-markdown-content pre.cs2-signature {
+	white-space: pre-wrap;
+	word-break: break-word;
+	padding: 0.5rem 0.75rem;
+	margin: 0.25rem 0;
+}
+.sl-markdown-content .cs2-member + .cs2-member {
+	margin-top: 1.5rem;
+}
+.sl-markdown-content .cs2-doc-block {
+	white-space: pre-wrap;
+}

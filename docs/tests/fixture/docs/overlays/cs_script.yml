@@ -1,0 +1,12 @@
+classes:
+  Entity: {schema: CBaseEntity, module: server}
+  BaseModelEntity: {schema: CBaseModelEntity, module: server}
+  CSPlayerPawn: {schema: CCSPlayerPawn, module: server}
+enums:
+  CSMoveType: {schema: MoveType_t, module: server, prefix: MOVETYPE_}
+hooks:
+  OnRoundEnd: {events: [round_end], verified: false}
+  OnPlayerJump: {events: [player_jump], verified: true}
+  OnActivate: {events: [], verified: false, notes: Runs once per script, not per round.}
+members:
+  IPointScript.FindEntitiesByClass: {see: [entities]}

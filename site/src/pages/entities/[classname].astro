@@ -1,0 +1,155 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { provenanceLine } from '../../lib/provenance';
+import { loadEntityIo, type EntityPort } from '../../lib/data/entity_io';
+import { entityHref, entityIoHref, scriptTypeHref } from '../../lib/urls';
+import '../../styles/content.css';
+import '../../styles/scripting.css';
+
+export function getStaticPaths() {
+	const io = loadEntityIo();
+	return io ? io.classes.map((c) => ({ params: { classname: c.name } })) : [];
+}
+
+const io = loadEntityIo()!;
+const cls = io.classes.find((c) => c.name === Astro.params.classname);
+if (!cls) throw new Error(`Unknown entity class ${Astro.params.classname}`);
+
+/** Declared on the class itself, or inherited from an FGD base. */
+function origin(declaredIn: string): string {
+	return declaredIn === cls!.name ? '' : declaredIn;
+}
+
+const ports: [string, string, EntityPort[]][] = [
+	['inputs', 'Inputs', cls.inputs],
+	['outputs', 'Outputs', cls.outputs],
+];
+
+const headings = [
+	{ depth: 2, slug: 'inputs', text: `Inputs (${cls.inputs.length})` },
+	{ depth: 2, slug: 'outputs', text: `Outputs (${cls.outputs.length})` },
+	{ depth: 2, slug: 'keyvalues', text: `Keyvalues (${cls.keyvalues.length})` },
+];
+---
+
+<StarlightPage
+	frontmatter={{
+		title: cls.name,
+		description: `${cls.name}: ${cls.inputs.length} inputs, ${cls.outputs.length} outputs and ${cls.keyvalues.length} keyvalues from the CS2 FGDs.${cls.description ? ' ' + cls.description.slice(0, 120) : ''}`,
+	}}
+	headings={headings}
+>
+	<div>
+		<p class="cs2-breadcrumb">
+			<a href={entityIoHref()}>Entity I/O</a> / <code>{cls.name}</code>
+		</p>
+		{cls.description && <p class="cs2-doc-block">{cls.description}</p>}
+		<ul>
+			<li>
+				FGD <code>@{cls.class_type}</code> in <code>{cls.source_file}</code>
+				{cls.bases.length > 0 && (
+					<>
+						, bases <code>{cls.bases.join(', ')}</code>
+					</>
+				)}
+				.
+			</li>
+			{cls.script_type && (
+				<li>
+					cs_script type: <a href={scriptTypeHref(cls.script_type)}><code>{cls.script_type}</code></a>, what{' '}
+					<code>FindEntitiesByClass("{cls.name}")</code> returns.
+				</li>
+			)}
+			{cls.schema && (
+				<li>
+					Native class: <a href={entityHref(cls.schema.module, cls.schema.name)}><code>{cls.schema.name}</code></a>{' '}
+					(curated pairing).
+				</li>
+			)}
+		</ul>
+
+		<p class="cs2-provenance">{provenanceLine()}</p>
+
+		{ports.map(([slug, title, list]) => (
+			<>
+				<h2 id={slug}>{title} ({list.length})</h2>
+				{list.length === 0 ? (
+					<p class="cs2-empty">None declared.</p>
+				) : (
+					<div class="cs2-table-wrap">
+						<table>
+							<thead>
+								<tr>
+									<th scope="col">Name</th>
+									<th scope="col">Parameter</th>
+									<th scope="col">From</th>
+									<th scope="col" class="ann">Description</th>
+								</tr>
+							</thead>
+							<tbody>
+								{list.map((p) => (
+									<tr id={`${slug === 'inputs' ? 'in' : 'out'}-${p.name}`}>
+										<td><code>{p.name}</code></td>
+										<td>{p.param_type !== 'void' && <code>{p.param_type}</code>}</td>
+										<td>{origin(p.declared_in)}</td>
+										<td class="ann">{p.description}</td>
+									</tr>
+								))}
+							</tbody>
+						</table>
+					</div>
+				)}
+			</>
+		))}
+
+		<h2 id="keyvalues">Keyvalues ({cls.keyvalues.length})</h2>
+		<p>
+			The names Hammer saves and the <code>KeyValue</code> input and <code>AddOutput</code> take at run time.
+			An entity reads some keys only when it spawns, so changing one later may do nothing. Integer keys
+			such as <code>movetype</code> take engine numbers, not the renumbered cs_script enum values.
+		</p>
+		<div class="cs2-table-wrap">
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Key</th>
+						<th scope="col">Type</th>
+						<th scope="col">Default</th>
+						<th scope="col">From</th>
+						<th scope="col" class="ann">Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					{cls.keyvalues.map((k) => (
+						<tr id={`kv-${k.name}`}>
+							<td>
+								<code>{k.name}</code>
+								{k.display_name && k.display_name !== k.name && <div>{k.display_name}</div>}
+							</td>
+							<td><code>{k.type}</code></td>
+							<td>{k.default_value && <code>{k.default_value}</code>}</td>
+							<td>{origin(k.declared_in)}</td>
+							<td class="ann">
+								{k.description}
+								{k.choices.length > 0 && (
+									<ul>
+										{k.choices.map((ch) => (
+											<li><code>{ch.value}</code> {ch.label}</li>
+										))}
+									</ul>
+								)}
+								{k.flags.length > 0 && (
+									<ul>
+										{k.flags.map((f) => (
+											<li><code>{f.value}</code> {f.label}{f.default && ' (on by default)'}</li>
+										))}
+									</ul>
+								)}
+							</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</StarlightPage>

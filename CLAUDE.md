@@ -35,6 +35,7 @@ committed build for the chosen platform, default `windows-x86_64`). Inputs the g
 - `convars.json`, `commands.json`: loaded as structured JSON (richer than the old text dumps: `valueType`, min/max, completion-callback flags).
 - `gameevents.json`: structurally-parsed game-event registry.
 - `provenance.json`: build id, Steam date, schema/tool versions (page/schema headers).
+- `cs_script_api.json`, `entity_io.json` (optional, Windows only): Valve's `point_script.d.ts` and the FGD entity definitions from the Workshop Tools depot. A build without them renders the `/scripting/api/` and `/entities/` pages empty and writes no `cs2_entity_io.d.ts`.
 
 `windows-x86_64` is a superset build: SchemaTracker walks both the shipped CS2 **runtime** binaries and the Windows-only **tool** binaries (`hammer`, `resourcecompiler`, `worldrenderer`, `modeldoc_editor`, and others), so the schema spans 47 modules. See `docs/generated/data/meta.json` for the current per-build module list and counts. Content artifacts (items, game modes, surfaces, props, maps, network/demo message tables) are wired into `docs/generated/data/`; see `docs/generated/data/README.md`.
 

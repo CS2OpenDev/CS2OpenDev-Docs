@@ -22,6 +22,11 @@ export interface MetaCounts {
 	music_kits: number;
 	paint_kits: number;
 	proto_files: number;
+	/** cs_script and entity I/O counts are 0 on a build without the Workshop Tools files. */
+	script_enums: number;
+	script_hooks: number;
+	script_types: number;
+	entity_classes: number;
 	sticker_kits: number;
 	surfaces: number;
 }
@@ -74,6 +79,10 @@ export function loadMeta(): Meta {
 		'music_kits',
 		'paint_kits',
 		'proto_files',
+		'script_enums',
+		'script_hooks',
+		'script_types',
+		'entity_classes',
 		'sticker_kits',
 		'surfaces',
 	], 'counts');

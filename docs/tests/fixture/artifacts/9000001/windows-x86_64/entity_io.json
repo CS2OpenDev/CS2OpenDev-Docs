@@ -1,0 +1,199 @@
+{
+ "buildId": "9000001",
+ "classes": [
+  {
+   "bases": [
+    "Targetname",
+    "Parentname",
+    "RenderFields",
+    "Global",
+    "Inputfilter",
+    "EnableDisable",
+    "Shadow"
+   ],
+   "classType": "SolidClass",
+   "description": "An brush built entity with various features.",
+   "helpers": [
+    "sphere(fademindist)",
+    "sphere(fademaxdist)"
+   ],
+   "inputs": [
+    {
+     "declaredIn": "VScript",
+     "description": "Load and execute a script file",
+     "metadata": "",
+     "name": "RunScriptFile",
+     "paramType": "string"
+    },
+    {
+     "declaredIn": "VScript",
+     "description": "Execute a fragment of script code",
+     "metadata": "",
+     "name": "RunScriptCode",
+     "paramType": "string"
+    },
+    {
+     "declaredIn": "VScript",
+     "description": "Call a script function",
+     "metadata": "",
+     "name": "CallScriptFunction",
+     "paramType": "string"
+    },
+    {
+     "declaredIn": "VScript",
+     "description": "Calls a script function from this entity's private script scope.",
+     "metadata": "",
+     "name": "CallPrivateScriptFunction",
+     "paramType": "string"
+    }
+   ],
+   "isBase": false,
+   "keyvalues": [
+    {
+     "choices": [],
+     "declaredIn": "VScript",
+     "defaultValue": "",
+     "description": "Name(s) of script files that are executed after all entities have spawned.",
+     "displayName": "Entity Scripts",
+     "flags": [],
+     "metadata": "[ group=\"Misc\" ]",
+     "name": "vscripts",
+     "type": "scriptlist"
+    },
+    {
+     "choices": [],
+     "declaredIn": "Targetname",
+     "description": "The name that other entities refer to this entity by.",
+     "displayName": "Name",
+     "flags": [],
+     "metadata": "{ sort_priority = 90 }",
+     "name": "targetname",
+     "type": "target_source"
+    },
+    {
+     "choices": [],
+     "declaredIn": "Parentname",
+     "description": "The name of this entity's parent in the movement hierarchy. Entities with parents move with their parent.",
+     "displayName": "Parent",
+     "flags": [],
+     "metadata": "{ group=\"Hierarchy\" }",
+     "name": "parentname",
+     "type": "target_destination"
+    }
+   ],
+   "name": "func_brush",
+   "outputs": [
+    {
+     "declaredIn": "GameEntity",
+     "description": "Fired in response to FireUser1 input.",
+     "metadata": "",
+     "name": "OnUser1",
+     "paramType": "void"
+    },
+    {
+     "declaredIn": "GameEntity",
+     "description": "Fired in response to FireUser2 input.",
+     "metadata": "",
+     "name": "OnUser2",
+     "paramType": "void"
+    },
+    {
+     "declaredIn": "GameEntity",
+     "description": "Fired in response to FireUser3 input.",
+     "metadata": "",
+     "name": "OnUser3",
+     "paramType": "void"
+    }
+   ],
+   "overrideSources": [],
+   "sourceFile": "game/core/base.fgd"
+  },
+  {
+   "bases": [],
+   "classType": "PointClass",
+   "description": "",
+   "helpers": [
+    "iconsprite(\"materials/editor/point_script.vmat\")"
+   ],
+   "inputs": [
+    {
+     "declaredIn": "point_script",
+     "description": "Run callback registered using OnScriptInput.",
+     "metadata": "",
+     "name": "RunScriptInput",
+     "paramType": "string"
+    }
+   ],
+   "isBase": false,
+   "keyvalues": [
+    {
+     "choices": [],
+     "declaredIn": "point_script",
+     "description": "The name that other entities refer to this entity by.",
+     "displayName": "Name",
+     "flags": [],
+     "metadata": "{ sort_priority = 90 }",
+     "name": "targetname",
+     "type": "target_source"
+    },
+    {
+     "choices": [],
+     "declaredIn": "point_script",
+     "description": "",
+     "displayName": "cs_script",
+     "flags": [],
+     "metadata": "",
+     "name": "cs_script",
+     "type": "resource:vjs"
+    }
+   ],
+   "name": "point_script",
+   "outputs": [],
+   "overrideSources": [],
+   "sourceFile": "game/csgo/csgo.fgd"
+  }
+ ],
+ "excluded": [
+  {
+   "name": "beam_spotlight",
+   "sourceFile": "game/csgo/csgo.fgd"
+  },
+  {
+   "name": "color_correction",
+   "sourceFile": "game/csgo/csgo.fgd"
+  }
+ ],
+ "platform": "windows-x86_64",
+ "root": "game/csgo/csgo.fgd",
+ "schemaVersion": "0.13.0",
+ "sources": [
+  {
+   "path": "game/core/base.fgd",
+   "sha256": "426ef8de29d465f66f6d455cecb64a9f949f87f79699b810c58e6c3587a68748"
+  },
+  {
+   "path": "game/core/lights.fgd",
+   "sha256": "0d3f9576c38bbc3b631f28a783db943c437c407d0130ffedc376917c0c5991fd"
+  },
+  {
+   "path": "game/core/lights2.fgd",
+   "sha256": "b39c2db2434f3b60fc4130ee9d3dc9ce48db793e10b29201e95483d4749a76e6"
+  },
+  {
+   "path": "game/core/lights_base.fgd",
+   "sha256": "7aeed5c46b175a5564babaefe02797a8d92ed9e27ab835c931ec9b38b3990c9e"
+  },
+  {
+   "path": "game/core/markup_volumes.fgd",
+   "sha256": "14c68fd85aa4dc9364ed08e212a8e81c5519811bfc81827751d00f577c4fba62"
+  },
+  {
+   "path": "game/csgo/csgo.fgd",
+   "sha256": "841e421708b39de649f8d870557ec622391e3d5c8b0c59c366b8bd50ce45b546"
+  },
+  {
+   "path": "game/csgo/postprocessing.fgd",
+   "sha256": "9803b539a2f06c850eabdb73248d7cf0967de7b1d3a8bd68083ee931e918d61b"
+  }
+ ]
+}

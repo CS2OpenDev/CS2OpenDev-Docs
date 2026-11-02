@@ -13,6 +13,8 @@ docs/overlays/
 ├── README.md            ← you are here
 ├── server.yml           ← multi-entity overlay for the 'server' module
 ├── gameevents.yml       ← overlay for game events (from .gameevents files)
+├── cs_script.yml        ← cs_script API joins (classes, enums, hooks, see-also)
+├── entity_classnames.yml ← Hammer classname -> schema class
 ├── protobufs/           ← overlays for Protobufs/*.proto (single-file format)
 │   └── cs_gameevents.yml
 └── <module>.yml         ← multi-entity overlays for any schema module
@@ -199,6 +201,53 @@ events:
     description: "Fired when a round ends."
     warning: "The 'reason' field uses CS-specific enum values not documented here."
 ```
+
+---
+
+## cs_script and entity classname overlays
+
+Two files join the cs_script API and the FGD entity definitions (both read
+from the Workshop Tools depot, so Windows builds only) to the rest of the
+site.  `--strict` checks the schema and game-event side of every entry on
+every build, and the script and FGD side whenever the build carries
+`cs_script_api.json` / `entity_io.json`.
+
+`cs_script.yml` has four maps:
+
+```yaml
+# docs/overlays/cs_script.yml
+classes:      # script class -> the schema class it wraps
+  CSPlayerPawn: {schema: CCSPlayerPawn, module: server}
+enums:        # script enum -> the engine enum it mirrors; prefix is stripped
+  CSMoveType: {schema: MoveType_t, module: server, prefix: MOVETYPE_}   # before pairing by name
+hooks:        # IPointScript.On* hook -> game events reporting the same moment
+  OnRoundEnd: {events: [round_end], verified: false}
+  OnPlayerLand: {events: [], verified: false}   # [] = no event matches
+members:      # <Type>.<member> -> reference pages for its values
+  IPointScript.GetGameType: {see: [game_modes]}  # entities, game_modes, items,
+                                                 # convars, commands, game_events
+```
+
+A hook pairing is by name and documentation until someone confirms it in
+game; set `verified: true` only then.  An optional `notes` string renders
+next to the pairing.
+
+`entity_classnames.yml` maps Hammer classnames to server schema classes,
+until SchemaTracker extracts the game's own `m_designerName` table:
+
+```yaml
+# docs/overlays/entity_classnames.yml
+classnames:   # FGD (placeable) classnames
+  func_button: {class: CBaseButton, module: server}
+runtime:      # classnames the game creates itself; must not be FGD classnames
+  player: {class: CCSPlayerPawn, module: server}
+```
+
+With `classes:` above, these decide which cs_script type
+`FindEntitiesByClass` returns for a classname: the nearest ancestor of the
+schema class that a script class wraps.  `docs/tools/seed_entity_classnames.py`
+prints name-based candidates for new classnames; review each one before
+adding it.
 
 ---
 

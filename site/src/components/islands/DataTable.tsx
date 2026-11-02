@@ -97,7 +97,7 @@ function renderCellContent(col: Column, row: Row) {
 
 /** Row ids double as URL fragments. `+` stays because `+attack` and `-attack`
  * are both commands; any other run outside [A-Za-z0-9_.+] becomes one dash. */
-function anchorId(value: unknown): string {
+export function anchorId(value: unknown): string {
 	return String(value).replace(/[^A-Za-z0-9_.+]+/g, '-');
 }
 

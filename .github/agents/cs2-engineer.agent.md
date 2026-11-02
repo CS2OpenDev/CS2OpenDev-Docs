@@ -92,6 +92,19 @@ Includes:
 
 ---
 
+### cs_script (CS2 map scripting)
+
+Valve's `point_script.d.ts` and `tsconfig.json`, shipped in the CS2 install at
+`content/csgo_addons/cs_script_demo/maps/scripts/`, are the authoritative API for
+map scripts. CS2OpenDev-Docs publishes guides at `/scripting/guides/` and describes
+the module in `AGENTS.md`.
+
+* JavaScript (ES2022 per Valve's tsconfig), imported from `cs_script/point_script`
+* Runs in a server-side `point_script` entity, not VScript and not Panorama
+* No generic game-event listener: only the typed `Instance.On*` hooks exist
+
+---
+
 ### Source SDK (HL2SDK – Community Maintained)
 
 [https://github.com/alliedmodders/hl2sdk](https://github.com/alliedmodders/hl2sdk)
@@ -300,6 +313,13 @@ Avoid:
 * Rendering independence
 * External orchestration over injection
 
+### For Map Scripts (cs_script)
+
+* Only call APIs declared in the current `point_script.d.ts`; never invent VScript, SourceMod or Metamod calls for a map script
+* Drive map entities through I/O (`EntFireAtName`, `ConnectOutput`, `RunScriptInput`)
+* Check `IsValid()` on entity references kept across ticks
+* Prefer the config-object overloads; the positional ones are deprecated
+
 ---
 
 ## 7. Safety Framing Requirements
@@ -393,12 +413,3 @@ This repository is for:
 Always assume good intent.
 Always prefer documented interfaces.
 Always separate architecture from exploitation.
-
----
-
-If you'd like, I can now generate:
-
-* A **condensed token-optimized version** for smaller LLM contexts
-* A **strict system-prompt version** for use as an AI guardrail
-* A **RAG-optimized version** formatted for embedding pipelines
-* A **deep technical research version** focused specifically on demo architecture

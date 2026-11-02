@@ -1,0 +1,598 @@
+{
+ "buildId": "9000001",
+ "enums": [
+  {
+   "deprecated": false,
+   "deprecationNote": "",
+   "doc": "",
+   "experimental": false,
+   "experimentalNote": "",
+   "exported": true,
+   "members": [
+    {
+     "deprecated": false,
+     "deprecationNote": "",
+     "doc": "",
+     "initializerText": "-1",
+     "name": "INVALID",
+     "otherTags": [],
+     "value": -1
+    },
+    {
+     "deprecated": false,
+     "deprecationNote": "",
+     "doc": "",
+     "initializerText": "",
+     "name": "NONE",
+     "otherTags": [],
+     "value": 0
+    },
+    {
+     "deprecated": false,
+     "deprecationNote": "",
+     "doc": "",
+     "initializerText": "",
+     "name": "WALK",
+     "otherTags": [],
+     "value": 1
+    },
+    {
+     "deprecated": false,
+     "deprecationNote": "",
+     "doc": "",
+     "initializerText": "",
+     "name": "FLYGRAVITY",
+     "otherTags": [],
+     "value": 2
+    },
+    {
+     "deprecated": false,
+     "deprecationNote": "",
+     "doc": "",
+     "initializerText": "",
+     "name": "VPHYSICS",
+     "otherTags": [],
+     "value": 3
+    },
+    {
+     "deprecated": false,
+     "deprecationNote": "",
+     "doc": "",
+     "initializerText": "",
+     "name": "NOCLIP",
+     "otherTags": [],
+     "value": 4
+    },
+    {
+     "deprecated": false,
+     "deprecationNote": "",
+     "doc": "",
+     "initializerText": "",
+     "name": "OBSERVER",
+     "otherTags": [],
+     "value": 5
+    },
+    {
+     "deprecated": false,
+     "deprecationNote": "",
+     "doc": "",
+     "initializerText": "",
+     "name": "LADDER",
+     "otherTags": [],
+     "value": 6
+    },
+    {
+     "deprecated": false,
+     "deprecationNote": "",
+     "doc": "",
+     "initializerText": "",
+     "name": "CUSTOM",
+     "otherTags": [],
+     "value": 7
+    }
+   ],
+   "name": "CSMoveType",
+   "otherTags": []
+  }
+ ],
+ "esTarget": "es2022",
+ "exports": [
+  {
+   "doc": "",
+   "name": "Instance",
+   "otherTags": [],
+   "referencedTypes": [
+    "IPointScript"
+   ],
+   "type": "IPointScript"
+  }
+ ],
+ "fileDoc": "This file, `point_script.d.ts`, documents the JavaScript API for cs_script scripts attached to point_script entities.\nThis file is a TypeScript Declaration file. https://www.typescriptlang.org/docs/handbook/2/type-declarations.html#dts-files\nThis file can be used by various editors to provide tooling while editing JavaScript. https://www.typescriptlang.org/docs/handbook/intro-to-js-ts.html\nNext to this file is a `tsconfig.json` file configured for editing JavaScript targetting the current version used by CS2.\nPlace copies of these two files, `point_script.d.ts` and `tsconfig.json`, next to your scripts and some editors will begin providing tooling without further configuration.\nThese two files will be maintained as the cs_script API changes or the JavaScript version in CS2 is updated.\nPlease send feedback to CSGOTeamFeedback@valvesoftware.com with \"cs_script Feedback\" in the subject line.",
+ "module": "cs_script/point_script",
+ "moduleDoc": "`\"cs_script/point_script\"` is the module provided to scripts loaded for point_script entities.\n\n# Setup:\n- Create a JavaScript file (.js) that imports this module.\n     - See `hello.js` for an example.\n- Create a point_script entity in your map and set its cs_script field to reference your JavaScript file as a vjs asset.\n     - See example addon cs_script_demo. There is a point_script entity in the cs_script_demo.vmap named \"hello_cs_script\" that runs `hello.js`. There are a handful of other examples as well.\n\n# Execution:\n- The compiled version of your script (.vjs_c) will be loaded during map load.\n- When the point_script entity is spawned it will execute all code at the top level scope of your script.\n- Register callbacks on `Instance` to setup code that executes at various times throughout the lifetime of the map.\n     - A function passed to `Instance.OnActivate` will be invoked when the point_script entity is activated.\n     - A function passed to `Instance.OnPlayerJump` will be invoked when any player in the map jumps.\n\n# Tips:\n- Entity variables are stable. Two variables referring to the same entity will be reference equals (===).\n- Extra values attached to an entity variable will still be there if the variable is fetched again.\n- A map can have multiple point_script entities. Each script will run with its own Instance, set of globals, and set of entity variables.\n\n# Tools Mode:\n- In tools mode, saving changes to your script will recompile your file, clear all registered callbacks, and re-run the top level scope of your script.\n- Global variables and instances of entity variables will persist across reloads.\n     - Beware. This is an avenue for holding references to code from previous iterations of your script. This is only a concern in tools mode.\n- See `Instance.OnScriptReload` for a tool to handle edge cases around reloading.",
+ "platform": "windows-x86_64",
+ "schemaVersion": "0.13.0",
+ "sourcePath": "content/csgo_addons/cs_script_demo/maps/scripts/point_script.d.ts",
+ "sourceSha256": "f8199913876ba1633ece831594b47874e9826f185076fbd17c980d888f713bd3",
+ "tsconfigPath": "content/csgo_addons/cs_script_demo/maps/scripts/tsconfig.json",
+ "tsconfigSha256": "c923105c41bc5020828d32e60b9212a3d6c012e65f6aa8786d1ed72b11df718c",
+ "types": [
+  {
+   "deprecated": false,
+   "deprecationNote": "",
+   "doc": "",
+   "examples": [],
+   "experimental": false,
+   "experimentalNote": "",
+   "exported": true,
+   "extends": [
+    "Entity"
+   ],
+   "implements": [],
+   "kind": "class",
+   "members": [
+    {
+     "defaultValue": "",
+     "deprecated": false,
+     "deprecationNote": "",
+     "doc": "",
+     "examples": [],
+     "experimental": false,
+     "experimentalNote": "",
+     "kind": "method",
+     "modifiers": [],
+     "name": "SetModel",
+     "optional": false,
+     "otherTags": [],
+     "overloadIndex": 0,
+     "paramDocs": {},
+     "params": [
+      {
+       "name": "modelName",
+       "optional": false,
+       "rest": false,
+       "typeText": "string"
+      }
+     ],
+     "referencedTypes": [],
+     "returnTypeText": "void",
+     "returnsDoc": "",
+     "signatureText": "SetModel(modelName: string): void",
+     "typeParams": [],
+     "typeText": ""
+    }
+   ],
+   "name": "BaseModelEntity",
+   "otherTags": [],
+   "referencedTypes": [],
+   "typeParams": [],
+   "typeText": ""
+  },
+  {
+   "deprecated": false,
+   "deprecationNote": "",
+   "doc": "",
+   "examples": [],
+   "experimental": false,
+   "experimentalNote": "",
+   "exported": true,
+   "extends": [
+    "BaseModelEntity"
+   ],
+   "implements": [],
+   "kind": "class",
+   "members": [
+    {
+     "defaultValue": "",
+     "deprecated": false,
+     "deprecationNote": "",
+     "doc": "",
+     "examples": [],
+     "experimental": false,
+     "experimentalNote": "",
+     "kind": "method",
+     "modifiers": [],
+     "name": "GiveNamedItem",
+     "optional": false,
+     "otherTags": [],
+     "overloadIndex": 0,
+     "paramDocs": {},
+     "params": [
+      {
+       "name": "name",
+       "optional": false,
+       "rest": false,
+       "typeText": "string"
+      },
+      {
+       "name": "autoDeploy",
+       "optional": true,
+       "rest": false,
+       "typeText": "boolean"
+      }
+     ],
+     "referencedTypes": [],
+     "returnTypeText": "void",
+     "returnsDoc": "",
+     "signatureText": "GiveNamedItem(name: string, autoDeploy?: boolean): void",
+     "typeParams": [],
+     "typeText": ""
+    },
+    {
+     "defaultValue": "",
+     "deprecated": false,
+     "deprecationNote": "",
+     "doc": "",
+     "examples": [],
+     "experimental": false,
+     "experimentalNote": "",
+     "kind": "method",
+     "modifiers": [],
+     "name": "GetArmor",
+     "optional": false,
+     "otherTags": [],
+     "overloadIndex": 0,
+     "paramDocs": {},
+     "params": [],
+     "referencedTypes": [],
+     "returnTypeText": "number",
+     "returnsDoc": "",
+     "signatureText": "GetArmor(): number",
+     "typeParams": [],
+     "typeText": ""
+    }
+   ],
+   "name": "CSPlayerPawn",
+   "otherTags": [],
+   "referencedTypes": [],
+   "typeParams": [],
+   "typeText": ""
+  },
+  {
+   "deprecated": false,
+   "deprecationNote": "",
+   "doc": "The base class for all entities",
+   "examples": [],
+   "experimental": false,
+   "experimentalNote": "",
+   "exported": true,
+   "extends": [],
+   "implements": [],
+   "kind": "class",
+   "members": [
+    {
+     "defaultValue": "",
+     "deprecated": false,
+     "deprecationNote": "",
+     "doc": "The position of the origin of this entity relative to the world.",
+     "examples": [],
+     "experimental": false,
+     "experimentalNote": "",
+     "kind": "method",
+     "modifiers": [],
+     "name": "GetAbsOrigin",
+     "optional": false,
+     "otherTags": [],
+     "overloadIndex": 0,
+     "paramDocs": {},
+     "params": [],
+     "referencedTypes": [
+      "Vector"
+     ],
+     "returnTypeText": "Vector",
+     "returnsDoc": "",
+     "signatureText": "GetAbsOrigin(): Vector",
+     "typeParams": [],
+     "typeText": ""
+    },
+    {
+     "defaultValue": "",
+     "deprecated": false,
+     "deprecationNote": "",
+     "doc": "",
+     "examples": [],
+     "experimental": false,
+     "experimentalNote": "",
+     "kind": "method",
+     "modifiers": [],
+     "name": "GetClassName",
+     "optional": false,
+     "otherTags": [],
+     "overloadIndex": 0,
+     "paramDocs": {},
+     "params": [],
+     "referencedTypes": [],
+     "returnTypeText": "string",
+     "returnsDoc": "",
+     "signatureText": "GetClassName(): string",
+     "typeParams": [],
+     "typeText": ""
+    }
+   ],
+   "name": "Entity",
+   "otherTags": [],
+   "referencedTypes": [],
+   "typeParams": [],
+   "typeText": ""
+  },
+  {
+   "deprecated": false,
+   "deprecationNote": "",
+   "doc": "The API provided to scripts attached to a point_script entity.\nAccess these functions by importing Instance from \"cs_script/point_script\".",
+   "examples": [],
+   "experimental": false,
+   "experimentalNote": "",
+   "exported": false,
+   "extends": [],
+   "implements": [],
+   "kind": "interface",
+   "members": [
+    {
+     "defaultValue": "",
+     "deprecated": false,
+     "deprecationNote": "",
+     "doc": "Called when the point_script entity is activated",
+     "examples": [],
+     "experimental": false,
+     "experimentalNote": "",
+     "kind": "method",
+     "modifiers": [],
+     "name": "OnActivate",
+     "optional": false,
+     "otherTags": [],
+     "overloadIndex": 0,
+     "paramDocs": {},
+     "params": [
+      {
+       "name": "callback",
+       "optional": false,
+       "rest": false,
+       "typeText": "() => void"
+      }
+     ],
+     "referencedTypes": [],
+     "returnTypeText": "void",
+     "returnsDoc": "",
+     "signatureText": "OnActivate(callback: () => void): void",
+     "typeParams": [],
+     "typeText": ""
+    },
+    {
+     "defaultValue": "",
+     "deprecated": false,
+     "deprecationNote": "",
+     "doc": "Called when a team wins a round",
+     "examples": [],
+     "experimental": false,
+     "experimentalNote": "",
+     "kind": "method",
+     "modifiers": [],
+     "name": "OnRoundEnd",
+     "optional": false,
+     "otherTags": [],
+     "overloadIndex": 0,
+     "paramDocs": {},
+     "params": [
+      {
+       "name": "callback",
+       "optional": false,
+       "rest": false,
+       "typeText": "(event: { winningTeam: number, reason: CSRoundEndReason }) => void"
+      }
+     ],
+     "referencedTypes": [
+      "CSRoundEndReason"
+     ],
+     "returnTypeText": "void",
+     "returnsDoc": "",
+     "signatureText": "OnRoundEnd(callback: (event: { winningTeam: number, reason: CSRoundEndReason }) => void): void",
+     "typeParams": [],
+     "typeText": ""
+    },
+    {
+     "defaultValue": "",
+     "deprecated": false,
+     "deprecationNote": "",
+     "doc": "Called when a player jumps off the ground.",
+     "examples": [],
+     "experimental": false,
+     "experimentalNote": "",
+     "kind": "method",
+     "modifiers": [],
+     "name": "OnPlayerJump",
+     "optional": false,
+     "otherTags": [],
+     "overloadIndex": 0,
+     "paramDocs": {},
+     "params": [
+      {
+       "name": "callback",
+       "optional": false,
+       "rest": false,
+       "typeText": "(event: { player: CSPlayerPawn }) => void"
+      }
+     ],
+     "referencedTypes": [
+      "CSPlayerPawn"
+     ],
+     "returnTypeText": "void",
+     "returnsDoc": "",
+     "signatureText": "OnPlayerJump(callback: (event: { player: CSPlayerPawn }) => void): void",
+     "typeParams": [],
+     "typeText": ""
+    },
+    {
+     "defaultValue": "",
+     "deprecated": false,
+     "deprecationNote": "",
+     "doc": "Called when a gun emits bullets. A shotgun will only trigger this once when emitting multiple bullets at once.",
+     "examples": [],
+     "experimental": false,
+     "experimentalNote": "",
+     "kind": "method",
+     "modifiers": [],
+     "name": "OnGunFire",
+     "optional": false,
+     "otherTags": [],
+     "overloadIndex": 0,
+     "paramDocs": {},
+     "params": [
+      {
+       "name": "callback",
+       "optional": false,
+       "rest": false,
+       "typeText": "(event: { weapon: CSWeaponBase }) => void"
+      }
+     ],
+     "referencedTypes": [
+      "CSWeaponBase"
+     ],
+     "returnTypeText": "void",
+     "returnsDoc": "",
+     "signatureText": "OnGunFire(callback: (event: { weapon: CSWeaponBase }) => void): void",
+     "typeParams": [],
+     "typeText": ""
+    },
+    {
+     "defaultValue": "",
+     "deprecated": false,
+     "deprecationNote": "",
+     "doc": "Fire the input on all targets matching the specified names.",
+     "examples": [],
+     "experimental": false,
+     "experimentalNote": "",
+     "kind": "method",
+     "modifiers": [],
+     "name": "EntFireAtName",
+     "optional": false,
+     "otherTags": [],
+     "overloadIndex": 0,
+     "paramDocs": {},
+     "params": [
+      {
+       "name": "config",
+       "optional": false,
+       "rest": false,
+       "typeText": "{ name: string, input: string, value?: InputValue, caller?: Entity, activator?: Entity, delay?: number }"
+      }
+     ],
+     "referencedTypes": [
+      "Entity",
+      "InputValue"
+     ],
+     "returnTypeText": "void",
+     "returnsDoc": "",
+     "signatureText": "EntFireAtName(config: { name: string, input: string, value?: InputValue, caller?: Entity, activator?: Entity, delay?: number }): void",
+     "typeParams": [],
+     "typeText": ""
+    },
+    {
+     "defaultValue": "",
+     "deprecated": false,
+     "deprecationNote": "",
+     "doc": "Find entities of the specified class name.",
+     "examples": [],
+     "experimental": false,
+     "experimentalNote": "",
+     "kind": "method",
+     "modifiers": [],
+     "name": "FindEntitiesByClass",
+     "optional": false,
+     "otherTags": [],
+     "overloadIndex": 0,
+     "paramDocs": {},
+     "params": [
+      {
+       "name": "className",
+       "optional": false,
+       "rest": false,
+       "typeText": "string"
+      }
+     ],
+     "referencedTypes": [
+      "Entity"
+     ],
+     "returnTypeText": "Entity[]",
+     "returnsDoc": "",
+     "signatureText": "FindEntitiesByClass(className: string): Entity[]",
+     "typeParams": [],
+     "typeText": ""
+    },
+    {
+     "defaultValue": "",
+     "deprecated": true,
+     "deprecationNote": "This overload will be removed in a future update",
+     "doc": "",
+     "examples": [],
+     "experimental": false,
+     "experimentalNote": "",
+     "kind": "method",
+     "modifiers": [],
+     "name": "EntFireAtName",
+     "optional": false,
+     "otherTags": [],
+     "overloadIndex": 1,
+     "paramDocs": {},
+     "params": [
+      {
+       "name": "name",
+       "optional": false,
+       "rest": false,
+       "typeText": "string"
+      },
+      {
+       "name": "input",
+       "optional": false,
+       "rest": false,
+       "typeText": "string"
+      },
+      {
+       "name": "inputData",
+       "optional": true,
+       "rest": false,
+       "typeText": "InputValue | { value?: InputValue, caller?: Entity, activator?: Entity }"
+      },
+      {
+       "name": "delay",
+       "optional": true,
+       "rest": false,
+       "typeText": "number"
+      }
+     ],
+     "referencedTypes": [
+      "Entity",
+      "InputValue"
+     ],
+     "returnTypeText": "void",
+     "returnsDoc": "",
+     "signatureText": "EntFireAtName(name: string, input: string, inputData?: InputValue | { value?: InputValue, caller?: Entity, activator?: Entity }, delay?: number): void",
+     "typeParams": [],
+     "typeText": ""
+    }
+   ],
+   "name": "IPointScript",
+   "otherTags": [],
+   "referencedTypes": [],
+   "typeParams": [],
+   "typeText": ""
+  },
+  {
+   "deprecated": false,
+   "deprecationNote": "",
+   "doc": "",
+   "examples": [],
+   "experimental": false,
+   "experimentalNote": "",
+   "exported": false,
+   "extends": [],
+   "implements": [],
+   "kind": "type_alias",
+   "members": [],
+   "name": "Vector",
+   "otherTags": [],
+   "referencedTypes": [],
+   "typeParams": [],
+   "typeText": "{ x: number, y: number, z: number }"
+  }
+ ]
+}

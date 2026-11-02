@@ -1,0 +1,129 @@
+# docs/overlays/cs_script.yml
+#
+# Joins between the cs_script API (cs_script_api.json, parsed from Valve's
+# point_script.d.ts) and the rest of this site.  Rendered on /scripting/api/
+# and its pages; validated under --strict against this build's
+# cs_script_api.json, entity schema and game-event registry.  When a build
+# carries no cs_script_api.json nothing here is checked or rendered.
+#
+# Format reference: docs/overlays/README.md
+
+# Script class -> the server schema class the script object wraps.  The class
+# page links to the schema page, and the entity I/O pages use the pairing (with
+# entity_classnames.yml) to say which cs_script type FindEntitiesByClass and
+# friends return for a classname.
+classes:
+  Entity: {schema: CBaseEntity, module: server}
+  BaseModelEntity: {schema: CBaseModelEntity, module: server}
+  C4: {schema: CC4, module: server}
+  CSGrenadeProjectileBase: {schema: CBaseCSGrenadeProjectile, module: server}
+  CSHostage: {schema: CHostage, module: server}
+  CSObservablePoint: {schema: CCSObservableElement, module: server}
+  CSObserverPawn: {schema: CCSObserverPawn, module: server}
+  CSPlantedC4: {schema: CPlantedC4, module: server}
+  CSPlayerController: {schema: CCSPlayerController, module: server}
+  CSPlayerPawn: {schema: CCSPlayerPawn, module: server}
+  CSRadarPoint: {schema: CCSRadarElement, module: server}
+  CSWeaponBase: {schema: CCSWeaponBase, module: server}
+  CSWeaponData: {schema: CCSWeaponBaseVData, module: server}
+  CustomHudLayout: {schema: CCSCustomHudLayout, module: server}
+  CustomPlayerCamera: {schema: CCSCustomPlayerCamera, module: server}
+  PointTemplate: {schema: CPointTemplate, module: server}
+
+# Script enum -> the engine enum it mirrors.  `prefix` is stripped from the
+# engine member names before they are paired with the script members by name;
+# the page then shows, member by member, whether the numeric values agree.
+# Most do not: the script enums are renumbered, so an engine value read from
+# a schema dump or a demo is not a valid script enum value.
+enums:
+  CSDamageFlags: {schema: TakeDamageFlags_t, module: server, prefix: DFLAG_}
+  CSDamageTypes: {schema: DamageTypes_t, module: server, prefix: DMG_}
+  CSGearSlot: {schema: gear_slot_t, module: server, prefix: GEAR_SLOT_}
+  CSHitGroup: {schema: HitGroup_t, module: server, prefix: HITGROUP_}
+  CSInputs: {schema: InputBitMask_t, module: server, prefix: IN_}
+  CSLoadoutSlot: {schema: loadout_slot_t, module: server, prefix: LOADOUT_SLOT_}
+  CSMoveType: {schema: MoveType_t, module: server, prefix: MOVETYPE_}
+  CSObserverMode: {schema: ObserverMode_t, module: server, prefix: OBS_MODE_}
+  CSWeaponAttackType: {schema: WeaponAttackType_t, module: server, prefix: e}
+  CSWeaponType: {schema: CSWeaponType, module: server, prefix: WEAPONTYPE_}
+  CustomCameraMode: {schema: CustomCameraMode_t, module: server, prefix: CUSTOM_CAMERA_MODE_}
+
+# IPointScript hook -> the game event(s) that report the same moment.  cs_script
+# has no generic game-event listener, so this is how to tell which events a
+# script can react to at all.  `events: []` records that no event matches.
+# Every pairing is by name and documentation only until someone confirms it in
+# game and sets `verified: true`.
+hooks:
+  OnPlayerConnect: {events: [player_connect], verified: false}
+  OnPlayerActivate: {events: [player_activate], verified: false}
+  OnPlayerDisconnect: {events: [player_disconnect], verified: false}
+  OnPlayerReset:
+    events: [player_spawn]
+    verified: false
+    notes: Also fires on a team change and on a round-restart respawn.
+  OnPlayerTeamChanged: {events: [player_team], verified: false}
+  OnRoundStart: {events: [round_start], verified: false}
+  OnRoundEnd: {events: [round_end], verified: false}
+  OnBeginRoundRestart: {events: [cs_pre_restart], verified: false}
+  OnBombPlantStart: {events: [bomb_beginplant], verified: false}
+  OnBombPlantAbort: {events: [bomb_abortplant], verified: false}
+  OnBombPlant: {events: [bomb_planted], verified: false}
+  OnBombDefuseStart: {events: [bomb_begindefuse], verified: false}
+  OnBombDefuseAbort: {events: [bomb_abortdefuse], verified: false}
+  OnBombDefuse: {events: [bomb_defused], verified: false}
+  OnBombExplode: {events: [bomb_exploded], verified: false}
+  OnHostagePickUpStart: {events: [], verified: false}
+  OnHostagePickUpAbort: {events: [], verified: false}
+  OnHostagePickUp: {events: [hostage_follows], verified: false}
+  OnHostageDrop: {events: [hostage_stops_following], verified: false}
+  OnHostageRescue: {events: [hostage_rescued], verified: false}
+  OnHostageKill: {events: [hostage_killed], verified: false}
+  OnModifyPlayerDamage:
+    events: []
+    verified: false
+    notes: Runs before damage is applied, so no event exists yet; player_hurt follows it.
+  OnPlayerDamage: {events: [player_hurt], verified: false}
+  OnPlayerKill: {events: [player_death], verified: false}
+  OnPlayerJump: {events: [player_jump], verified: false}
+  OnPlayerLand: {events: [], verified: false}
+  OnPlayerChat: {events: [player_chat], verified: false}
+  OnPlayerPing: {events: [player_ping], verified: false}
+  OnGunReload: {events: [weapon_reload], verified: false}
+  OnGunFire: {events: [weapon_fire], verified: false}
+  OnBulletImpact: {events: [bullet_impact], verified: false}
+  OnWeaponDrop:
+    events: [item_remove]
+    verified: false
+    notes: There is no weapon_drop event; item_remove is the nearest and also fires when an item is removed for other reasons.
+  OnWeaponPickup: {events: [item_pickup], verified: false}
+  OnGrenadeThrow: {events: [grenade_thrown], verified: false}
+  OnGrenadeBounce: {events: [grenade_bounce], verified: false}
+  OnKnifeAttack: {events: [], verified: false}
+  OnCustomHudClicked: {events: [], verified: false}
+
+# <Type>.<member> -> other reference pages that hold the values the member
+# takes or returns.  Allowed targets: entities, game_modes, items, convars,
+# commands, game_events.
+members:
+  IPointScript.GetGameType: {see: [game_modes]}
+  IPointScript.GetGameMode: {see: [game_modes]}
+  IPointScript.EntFireAtName: {see: [entities]}
+  IPointScript.EntFireAtTarget: {see: [entities]}
+  IPointScript.ConnectOutput: {see: [entities]}
+  IPointScript.FindEntityByClass: {see: [entities]}
+  IPointScript.FindEntitiesByClass: {see: [entities]}
+  IPointScript.ServerCommand: {see: [commands, convars]}
+  IPointScript.ClientCommand: {see: [commands]}
+  IConsole.ServerCommand: {see: [commands, convars]}
+  IConsole.ClientCommand: {see: [commands]}
+  IConsole.GetConvarBoolean: {see: [convars]}
+  IConsole.GetConvarColor: {see: [convars]}
+  IConsole.GetConvarNumber: {see: [convars]}
+  IConsole.GetConvarQAngle: {see: [convars]}
+  IConsole.GetConvarString: {see: [convars]}
+  IConsole.GetConvarVector: {see: [convars]}
+  IConsole.SetConvar: {see: [convars]}
+  CSPlayerPawn.GiveNamedItem: {see: [items]}
+  CSPlayerPawn.FindWeapon: {see: [items]}
+  CSPlayerController.GetWeaponDataForLoadoutSlot: {see: [items]}
+  Entity.GetClassName: {see: [entities]}
