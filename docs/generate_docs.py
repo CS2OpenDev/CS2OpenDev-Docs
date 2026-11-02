@@ -4472,22 +4472,26 @@ def script_type_for_class(
     """The most-derived cs_script type wrapping *schema_name* or one of its bases.
 
     *script_by_schema* maps a schema class name to the script type the
-    ``classes`` overlay pairs it with.  Breadth-first over ``bases`` so the
-    primary (first) base is tried before a mixin.
+    ``classes`` overlay pairs it with.  Depth-first with the first base tried
+    first, so the whole primary chain is searched before any mixin, and each
+    base is resolved in the module ``base_modules`` records for it.
     """
-    seen: set[str] = set()
-    queue = [schema_name]
-    while queue:
-        name = queue.pop(0)
-        if name in seen:
-            continue
-        seen.add(name)
+    seen: set[tuple[str, str]] = set()
+
+    def walk(name: str, v: dict[str, Any] | None) -> str | None:
+        key = (name, (v or {}).get("module", ""))
+        if key in seen:
+            return None
+        seen.add(key)
         if name in script_by_schema:
             return script_by_schema[name]
-        v = _variant_in_module(name, module, entities)
-        if v is not None:
-            queue.extend(v.get("bases") or [])
-    return None
+        for b in (v or {}).get("bases") or []:
+            hit = walk(b, _base_variant_for(v, b, entities))
+            if hit is not None:
+                return hit
+        return None
+
+    return walk(schema_name, _variant_in_module(schema_name, module, entities))
 
 
 def classname_script_types(
@@ -4748,10 +4752,11 @@ def generate_entity_io_dts(
         "     */",
         "    interface EntityScriptTypeByClass {",
     ]
-    for name, st in sorted(
-        [(c["name"], (typed.get(c["name"]) or {}).get("script_type")) for c in classes]
-        + [(n, t["script_type"]) for n, t in runtime.items()]
-    ):
+    by_class = {c["name"]: (typed.get(c["name"]) or {}).get("script_type") for c in classes}
+    for n, t in runtime.items():
+        # An FGD classname wins; a duplicate key would break every consumer's compile.
+        by_class.setdefault(n, t["script_type"])
+    for name, st in sorted(by_class.items()):
         lines.append(f"        {json.dumps(name)}: {st if st in script_types else 'Entity'};")
     weapon = "CSWeaponBase" if "CSWeaponBase" in script_types else "Entity"
     lines += [

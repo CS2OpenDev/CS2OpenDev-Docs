@@ -935,8 +935,12 @@ _IDENT_RE = re.compile(r"[A-Za-z_][A-Za-z0-9_]*")
 
 
 def _names_in(text: str, pool: set[str]) -> list[str]:
-    """Identifiers in *text* that are members of *pool*, sorted and deduped."""
-    return sorted({m for m in _IDENT_RE.findall(text or "") if m in pool})
+    """Identifiers in *text* that are members of *pool*, sorted and deduped.
+
+    Only names with an underscore count: CS2 has convars such as `name`, and
+    plain English words must not be linked to them.
+    """
+    return sorted({m for m in _IDENT_RE.findall(text or "") if "_" in m and m in pool})
 
 
 def _enum_value_pairs(script_enum: dict, schema_enum: dict, prefix: str) -> list[dict]:
@@ -1041,7 +1045,8 @@ def build_cs_script(
                 "see": [s for s in see if s in gd.CS_SCRIPT_SEE_TARGETS],
                 **doc_fields(m),
             })
-            if t["name"] == "IPointScript" and m["name"].startswith("On") and m.get("kind") == "method":
+            if (t["name"] == "IPointScript" and m["name"].startswith("On") and m.get("kind") == "method"
+                    and all(h["name"] != m["name"] for h in hooks_out)):
                 hov = cs["hooks"].get(m["name"])
                 events = [e for e in (hov or {}).get("events") or [] if e in event_anchor]
                 hooks_out.append({

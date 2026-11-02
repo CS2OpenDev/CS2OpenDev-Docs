@@ -255,7 +255,7 @@ class flagged `metadata_only: true` when every one of its field ops is
 a real structural change). `breaking[]` is `docs/overlays/schema-lens.yml`'s
 `breaking:` list, passed through as-is.
 
-## cs_script.json (418.8 KB)
+## cs_script.json (418.6 KB)
 
 The cs_script map-scripting API, from SchemaTracker's `cs_script_api.json`
 (a parse of Valve's `point_script.d.ts` from the Workshop Tools depot).

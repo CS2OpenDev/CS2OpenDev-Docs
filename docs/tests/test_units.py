@@ -579,6 +579,25 @@ class CsScriptTests(unittest.TestCase):
             "BaseModelEntity")
         self.assertIsNone(gd.script_type_for_class("CButton", "server", {}, self.entities))
 
+    def test_script_type_prefers_the_primary_chain_over_a_mixin(self):
+        # CMixed derives from CButton (primary) and CMixin; only CBaseEntity on
+        # the primary chain and the mixin itself are paired.
+        for rec in (
+            _cls("CMixin", "server", "server.dll"),
+            _cls("CMixed", "server", "server.dll", bases=["CButton", "CMixin"],
+                 base_modules=["server.dll", "server.dll"]),
+        ):
+            gd._add_entity(self.entities, rec)
+        by_schema = {"CBaseEntity": "Entity", "CMixin": "Mixin"}
+        self.assertEqual(
+            gd.script_type_for_class("CMixed", "server", by_schema, self.entities), "Entity")
+
+    def test_convar_names_need_an_underscore(self):
+        pool = {"name", "sv_cheats", "mp_round"}
+        self.assertEqual(
+            sd._names_in("Find by name. Needs sv_cheats; mp_roundtime is another.", pool),
+            ["sv_cheats"])
+
     def test_classnames_and_runtime_classnames_resolve(self):
         typed = gd.classname_script_types(CS_OVERLAYS, self.entities, CS_IO)
         self.assertEqual(typed["func_button"]["script_type"], "BaseModelEntity")

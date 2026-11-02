@@ -225,12 +225,20 @@ export function linkTypesHtml(api: CsScript, text: string, self?: string): strin
  * name the generator found in the text linked to its row on /convars/.
  */
 export function docHtml(text: string, convars: string[] = []): string {
-	let html = inlineCodeHtml(text).replace(/\n/g, '<br />');
-	for (const name of convars) {
-		const re = new RegExp(`(?<![\w/#])${name}(?![\w])`, 'g');
-		html = html.replace(re, `<a href="${convarAnchorHref(name)}"><code>${name}</code></a>`);
-	}
-	return html;
+	const html = inlineCodeHtml(text).replace(/\n/g, '<br />');
+	if (convars.length === 0) return html;
+	const known = new Set(convars);
+	const link = (name: string) => `<a href="${convarAnchorHref(name)}"><code>${name}</code></a>`;
+	// One pass, so nothing already turned into HTML is rewritten: a code span that
+	// is exactly a convar name becomes a link, other code spans and tags are kept,
+	// and a bare name is linked only when it is a whole identifier.
+	return html.replace(
+		/<code>([^<]*)<\/code>|<[^>]*>|[A-Za-z_][A-Za-z0-9_]*/g,
+		(m: string, code: string | undefined) => {
+			if (code !== undefined) return known.has(code) ? link(code) : m;
+			return m.startsWith('<') || !known.has(m) ? m : link(m);
+		},
+	);
 }
 
 export const SEE_LABEL: Record<SeeTarget, string> = {
