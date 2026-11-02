@@ -117,14 +117,18 @@
 /* Starlight gives every group label .large, so a group nested inside another
    (Map Scripting > Scripting HUD) looks like a top-level heading. Style it like
    the links beside it instead. */
+#starlight__sidebar ul ul summary {
+	padding-block: 0.2rem;
+	color: var(--sl-color-gray-2);
+}
+#starlight__sidebar ul ul summary:is(:hover, :focus-visible) {
+	color: var(--sl-color-white);
+}
 #starlight__sidebar ul ul summary .large {
 	font-size: 0.75rem;
 	font-weight: 400;
 	line-height: 1.35;
-	color: var(--sl-color-gray-2);
-}
-#starlight__sidebar ul ul summary:hover .large {
-	color: var(--sl-color-white);
+	color: inherit;
 }
 #starlight__sidebar ul ul summary .caret {
 	width: 1rem;

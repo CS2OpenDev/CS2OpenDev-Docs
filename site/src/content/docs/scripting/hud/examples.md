@@ -29,7 +29,7 @@ Valve's own example ships with the Workshop Tools: the `cs_script_demo` addon un
 
 - [cs2kz-metamod `cs2kz/mhud.xml`](https://github.com/KZGlobalTeam/cs2kz-metamod/blob/6f7ad5eb778cc80cfc1f31c330084616ffb753bc/workshop/panorama/layout/custom_game/cs2kz/mhud.xml) (AGPL-3.0): a timer and speed HUD that players can drag and resize.
 - [cs2-challenges `challenges/tracker_v5.xml`](https://github.com/Kandru/cs2-challenges/blob/bd4c33842bfb147cc3b3c937bfbfddf0eef995e1/workshop/content/panorama/layout/custom_game/challenges/tracker_v5.xml) (GPL-3.0): an on-screen challenge tracker.
-- [csQuake `quake_hud.xml`](https://github.com/girlglock/csQuake/blob/ac0ee17410c8de11971959b5b5d1b7a5ac99588f/panorama/layout/custom_game/quake_hud.xml) (GPL-2.0): a Quake status bar driven from a map script. Its digits are empty panels whose sprite is switched by class, which works around the server being unable to change an `<Image>`'s `src`.
+- [csQuake `quake_hud.xml`](https://github.com/girlglock/csQuake/blob/ac0ee17410c8de11971959b5b5d1b7a5ac99588f/panorama/layout/custom_game/quake_hud.xml) (GPL-2.0): a Quake status bar driven from a map script. Its digits are empty panels whose sprite is switched by class, which works around the [reported](../gotchas/#images) limit that the server can't change an `<Image>`'s `src`.
 
 ## Driving a layout from a map script
 

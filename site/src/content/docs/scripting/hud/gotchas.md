@@ -32,7 +32,7 @@ Each item is marked by where it comes from:
 
 - **Valve:** how the `ForPlayer` methods override the all-player value and fall back to it is under [Driving it from script](../#driving-it-from-script).
 - **Valve:** the seven `HUD_*_VISIBLE` classes the game sets while stock UI is open are listed under [What a layout may contain](../#what-a-layout-may-contain). A selector such as `.HUD_SCOREBOARD_VISIBLE #mine` reacts to one.
-- **Reported:** the dialog-variable syntax for a Label's `text` is under [What a layout may contain](../#what-a-layout-may-contain).
+- **Reported:** the dialog-variable syntax for a Label's `text` is under [What a layout may contain](../#what-a-layout-may-contain). Valve's demo doesn't use it; community layouts such as [cs2-ui-kit's example menu](https://github.com/nvmxre/cs2-ui-kit/blob/f145a39ce2769e0fee78b8af92e77c822c38fcf5/hud/layout/example_menu.xml) do.
 - **Reported:** class changes reach clients as a difference from the last state, so removing and re-adding a class in the same tick sends nothing. To replay an animation, remove the class and add it back on a later tick, or alternate between two class names.
 - **Reported:** setting a dialog variable restarts any `width` transition in the same part of the layout. Build bars from fixed segments, or with `clip: rect()`.
 - **Reported:** each `custom_hud_layout` can intern at most 1024 distinct ids, class names and variable names.
