@@ -1,13 +1,13 @@
 {
-  "build_id": "25966348",
+  "build_id": "26334290",
   "counts": {
-    "classes": 3459,
+    "classes": 3458,
     "commands": 1138,
-    "convars": 4039,
-    "entity_classes": 0,
-    "enums": 616,
+    "convars": 4050,
+    "entity_classes": 354,
+    "enums": 617,
     "events": 289,
-    "fields": 18686,
+    "fields": 18694,
     "game_modes": 16,
     "items": 2060,
     "maps": 23,
@@ -16,9 +16,9 @@
     "music_kits": 102,
     "paint_kits": 1481,
     "proto_files": 41,
-    "script_enums": 0,
-    "script_hooks": 0,
-    "script_types": 0,
+    "script_enums": 17,
+    "script_hooks": 43,
+    "script_types": 43,
     "sticker_kits": 11789,
     "surfaces": 303
   },
@@ -179,7 +179,7 @@
       "module": "resourcefile"
     },
     {
-      "classes": 49,
+      "classes": 48,
       "enums": 0,
       "module": "resourcesystem"
     },
@@ -210,7 +210,7 @@
     },
     {
       "classes": 80,
-      "enums": 13,
+      "enums": 14,
       "module": "soundsystem_lowlevel"
     },
     {
@@ -256,9 +256,9 @@
   ],
   "note": "classes/enums/fields count distinct top-level entity names and their own declared fields; the modules[] list additionally counts client/server twin records (duplicates), so summing its per-module classes/enums can exceed the top-level totals above.",
   "platform": "windows-x86_64",
-  "schema_version": "0.12.0",
-  "steam_date": "2026-10-15",
-  "steam_manifest_utc": "2026-10-15T17:24:20Z",
-  "tool_commit": "8428d765665bbbf77191e47feb182332e54c0477",
-  "tool_version": "0.12.0"
+  "schema_version": "0.13.0",
+  "steam_date": "2026-10-30",
+  "steam_manifest_utc": "2026-10-30T21:06:20Z",
+  "tool_commit": "f740f5ef9edf7ec7c63c97416e08e46e055a87aa",
+  "tool_version": "0.13.0"
 }

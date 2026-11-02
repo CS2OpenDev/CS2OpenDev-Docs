@@ -10858,6 +10858,21 @@
       "value_type": "Bool"
     },
     {
+      "default": "false",
+      "flags": [
+        "archive",
+        "clientdll",
+        "per_user",
+        "userinfo"
+      ],
+      "help": "Should the silent reload act like a toggle",
+      "max": null,
+      "min": null,
+      "name": "cl_weapon_stealth_reload_toggle",
+      "prefix": "cl",
+      "value_type": "Bool"
+    },
+    {
       "default": "120.000000",
       "flags": [
         "clientdll",
@@ -54376,6 +54391,114 @@
       "value_type": "Float32"
     },
     {
+      "default": "true",
+      "flags": [
+        "archive"
+      ],
+      "help": "WebRTC: cancel game audio echoing from the speakers into the microphone (AEC3).",
+      "max": null,
+      "min": null,
+      "name": "voice_webrtc_aec",
+      "prefix": "voice",
+      "value_type": "Bool"
+    },
+    {
+      "default": "true",
+      "flags": [
+        "archive"
+      ],
+      "help": "WebRTC: adaptive digital automatic gain control (AGC2).",
+      "max": null,
+      "min": null,
+      "name": "voice_webrtc_agc",
+      "prefix": "voice",
+      "value_type": "Bool"
+    },
+    {
+      "default": "false",
+      "flags": [
+        "archive"
+      ],
+      "help": "Process in-process voice chat microphone audio with the WebRTC audio processing module (requires voice_in_process).",
+      "max": null,
+      "min": null,
+      "name": "voice_webrtc_apm",
+      "prefix": "voice",
+      "value_type": "Bool"
+    },
+    {
+      "default": "0.000000",
+      "flags": [
+        "archive"
+      ],
+      "help": "WebRTC: fixed digital gain in dB applied to the microphone before the adaptive gain stage.",
+      "max": 50,
+      "min": 0,
+      "name": "voice_webrtc_fixed_gain_db",
+      "prefix": "voice",
+      "value_type": "Float32"
+    },
+    {
+      "default": "true",
+      "flags": [
+        "archive"
+      ],
+      "help": "WebRTC: high-pass filter to remove DC offset and low rumble.",
+      "max": null,
+      "min": null,
+      "name": "voice_webrtc_hpf",
+      "prefix": "voice",
+      "value_type": "Bool"
+    },
+    {
+      "default": "true",
+      "flags": [
+        "archive"
+      ],
+      "help": "WebRTC: noise suppression.",
+      "max": null,
+      "min": null,
+      "name": "voice_webrtc_ns",
+      "prefix": "voice",
+      "value_type": "Bool"
+    },
+    {
+      "default": "2",
+      "flags": [
+        "archive"
+      ],
+      "help": "WebRTC: noise suppression aggressiveness, 0 (low) to 3 (very high).",
+      "max": 3,
+      "min": 0,
+      "name": "voice_webrtc_ns_level",
+      "prefix": "voice",
+      "value_type": "Int32"
+    },
+    {
+      "default": "false",
+      "flags": [
+        "developmentonly"
+      ],
+      "help": "WebRTC: periodically print echo canceller statistics.",
+      "max": null,
+      "min": null,
+      "name": "voice_webrtc_stats",
+      "prefix": "voice",
+      "value_type": "Bool"
+    },
+    {
+      "default": "-1",
+      "flags": [
+        "developmentonly"
+      ],
+      "help": "WebRTC: speaker-to-microphone delay hint in ms for the echo canceller; -1 relies on AEC3's own delay estimation.",
+      "max": null,
+      "min": null,
+      "name": "voice_webrtc_stream_delay_ms",
+      "prefix": "voice",
+      "value_type": "Int32"
+    },
+    {
       "default": "1.000000",
       "flags": [
         "archive"
@@ -54699,6 +54822,18 @@
       "name": "vulkan_link_time_optimize_libraries",
       "prefix": "vulkan",
       "value_type": "Bool"
+    },
+    {
+      "default": "4096",
+      "flags": [
+        "release"
+      ],
+      "help": "Max pipeline cache size",
+      "max": null,
+      "min": 1,
+      "name": "vulkan_pipeline_cache_max_size_mb",
+      "prefix": "vulkan",
+      "value_type": "Int32"
     },
     {
       "default": "false",
@@ -55182,7 +55317,7 @@
   "flags": [
     {
       "command_count": 0,
-      "convar_count": 503,
+      "convar_count": 511,
       "description": "Value is written to config.cfg on shutdown and reloaded on startup.",
       "name": "archive"
     },
@@ -55206,7 +55341,7 @@
     },
     {
       "command_count": 344,
-      "convar_count": 1917,
+      "convar_count": 1918,
       "description": "Registered by the client binary (client.dll).",
       "name": "clientdll"
     },
@@ -55230,7 +55365,7 @@
     },
     {
       "command_count": 443,
-      "convar_count": 1905,
+      "convar_count": 1907,
       "description": "Present only in development builds; stripped or inert in shipping builds.",
       "name": "developmentonly"
     },
@@ -55278,7 +55413,7 @@
     },
     {
       "command_count": 0,
-      "convar_count": 100,
+      "convar_count": 101,
       "description": "Tracked per split-screen/local user rather than as one global value.",
       "name": "per_user"
     },
@@ -55302,7 +55437,7 @@
     },
     {
       "command_count": 199,
-      "convar_count": 1079,
+      "convar_count": 1080,
       "description": "Present in release/shipping builds, not just internal ones.",
       "name": "release"
     },
@@ -55332,7 +55467,7 @@
     },
     {
       "command_count": 0,
-      "convar_count": 36,
+      "convar_count": 37,
       "description": "Part of the player's userinfo string, sent to the server on change.",
       "name": "userinfo"
     },

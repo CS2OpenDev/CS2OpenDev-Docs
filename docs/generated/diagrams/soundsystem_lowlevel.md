@@ -125,6 +125,7 @@ classDiagram
     CVMixSubgraphSwitchProcessorDesc *-- CVMixParameterFloat
     CVMixSubmix *-- VMixSendOperator_t
     CVMixSubmix *-- VMixMixDownRule_t
+    CVMixSubmix *-- VMixUpMixRule_t
     CVMixUtilityProcessorDesc *-- VMixUtilityDesc_t
     CVMixVocoderProcessorDesc *-- VMixVocoderDesc_t
     CVMixVocoderProcessorDesc *-- CVMixParameterFloat

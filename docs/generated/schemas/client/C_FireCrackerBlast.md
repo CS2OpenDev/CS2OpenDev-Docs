@@ -8,7 +8,7 @@ kind: class
 
 # C_FireCrackerBlast
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26334290** · 2026-10-30 · `windows-x86_64` · schema `0.13.0`
 
 **Kind:** class · **Size:** 34464 bytes (`0x86a0`) · **Align:** 16 · **Module:** client
 

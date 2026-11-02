@@ -5,7 +5,7 @@ module: server
 
 # Module: server
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26334290** · 2026-10-30 · `windows-x86_64` · schema `0.13.0`
 
 [📊 View UML Diagram](../diagrams/server.md)
 
@@ -127,7 +127,7 @@ module: server
 | [CCSGameModeRules_ArmsRace](server/CCSGameModeRules_ArmsRace.md) | class | 136 | 1 | [CCSGameModeRules](server/CCSGameModeRules.md) |
 | [CCSGameModeRules_Deathmatch](server/CCSGameModeRules_Deathmatch.md) | class | 136 | 3 | [CCSGameModeRules](server/CCSGameModeRules.md) |
 | [CCSGameModeRules_Noop](server/CCSGameModeRules_Noop.md) | class | 48 | 0 | [CCSGameModeRules](server/CCSGameModeRules.md) |
-| [CCSGameRules](server/CCSGameRules.md) | class | 70728 | 189 | [CTeamplayRules](server/CTeamplayRules.md) |
+| [CCSGameRules](server/CCSGameRules.md) | class | 70736 | 190 | [CTeamplayRules](server/CTeamplayRules.md) |
 | [CCSGameRulesProxy](server/CCSGameRulesProxy.md) | class | 1200 | 1 | [CGameRulesProxy](server/CGameRulesProxy.md) |
 | [CCSMinimapBoundary](server/CCSMinimapBoundary.md) | class | 1192 | 0 | [CBaseEntity](server/CBaseEntity.md) |
 | [CCSMinimapVolume](server/CCSMinimapVolume.md) | class | 2536 | 1 | [CBaseTrigger](server/CBaseTrigger.md) |
@@ -149,7 +149,7 @@ module: server
 | [CCSPlayerController_InventoryServices::NetworkedLoadoutSlot_t](server/CCSPlayerController_InventoryServices.NetworkedLoadoutSlot_t.md) | class | 16 | 3 |  |
 | [CCSPlayerLegacyJump](server/CCSPlayerLegacyJump.md) | class | 24 | 2 |  |
 | [CCSPlayerModernJump](server/CCSPlayerModernJump.md) | class | 56 | 9 |  |
-| [CCSPlayerPawn](server/CCSPlayerPawn.md) | class | 5568 | 106 | [CCSPlayerPawnBase](server/CCSPlayerPawnBase.md) |
+| [CCSPlayerPawn](server/CCSPlayerPawn.md) | class | 5584 | 106 | [CCSPlayerPawnBase](server/CCSPlayerPawnBase.md) |
 | [CCSPlayerPawnBase](server/CCSPlayerPawnBase.md) | class | 3616 | 15 | [CBasePlayerPawn](server/CBasePlayerPawn.md) |
 | [CCSPlayerResource](server/CCSPlayerResource.md) | class | 1344 | 10 | [CBaseEntity](server/CBaseEntity.md) |
 | [CCSPlayer_ActionTrackingServices](server/CCSPlayer_ActionTrackingServices.md) | class | 896 | 5 | [CPlayerPawnComponent](server/CPlayerPawnComponent.md) |
@@ -166,11 +166,11 @@ module: server
 | [CCSPlayer_UseServices](server/CCSPlayer_UseServices.md) | class | 88 | 3 | [CPlayer_UseServices](server/CPlayer_UseServices.md) |
 | [CCSPlayer_WaterServices](server/CCSPlayer_WaterServices.md) | class | 128 | 6 | [CPlayer_WaterServices](server/CPlayer_WaterServices.md) |
 | [CCSPlayer_WeaponServices](server/CCSPlayer_WeaponServices.md) | class | 6328 | 13 | [CPlayer_WeaponServices](server/CPlayer_WeaponServices.md) |
-| [CCSPointScriptEntity](server/CCSPointScriptEntity.md) | class | 1576 | 0 | [CBaseEntity](server/CBaseEntity.md) |
+| [CCSPointScriptEntity](server/CCSPointScriptEntity.md) | class | 1640 | 0 | [CBaseEntity](server/CBaseEntity.md) |
 | [CCSRadarElement](server/CCSRadarElement.md) | class | 1232 | 3 | [CBaseEntity](server/CBaseEntity.md) |
 | [CCSSprite](server/CCSSprite.md) | class | 2240 | 0 | [CSprite](server/CSprite.md) |
 | [CCSTeam](server/CCSTeam.md) | class | 2080 | 14 | [CTeam](server/CTeam.md) |
-| [CCSWeaponBase](server/CCSWeaponBase.md) | class | 4736 | 59 | [CBasePlayerWeapon](server/CBasePlayerWeapon.md) |
+| [CCSWeaponBase](server/CCSWeaponBase.md) | class | 4736 | 58 | [CBasePlayerWeapon](server/CBasePlayerWeapon.md) |
 | [CCSWeaponBaseGun](server/CCSWeaponBaseGun.md) | class | 4768 | 10 | [CCSWeaponBase](server/CCSWeaponBase.md) |
 | [CCSWeaponBaseShotgun](server/CCSWeaponBaseShotgun.md) | class | 4736 | 0 | [CCSWeaponBase](server/CCSWeaponBase.md) |
 | [CCSWeaponBaseVData](server/CCSWeaponBaseVData.md) | class | 2208 | 83 | [CBasePlayerWeaponVData](server/CBasePlayerWeaponVData.md) |
@@ -344,7 +344,7 @@ module: server
 | [CHintMessage](server/CHintMessage.md) | class | 40 | 3 |  |
 | [CHintMessageQueue](server/CHintMessageQueue.md) | class | 40 | 3 |  |
 | [CHitboxComponent](server/CHitboxComponent.md) | class | 24 | 1 | [CEntityComponent](entity2/CEntityComponent.md) |
-| [CHostage](server/CHostage.md) | class | 11680 | 39 | [CHostageExpresserShim](server/CHostageExpresserShim.md) |
+| [CHostage](server/CHostage.md) | class | 11680 | 40 | [CHostageExpresserShim](server/CHostageExpresserShim.md) |
 | [CHostageAlias_info_hostage_spawn](server/CHostageAlias_info_hostage_spawn.md) | class | 11680 | 0 | [CHostage](server/CHostage.md) |
 | [CHostageCarriableProp](server/CHostageCarriableProp.md) | class | 2624 | 0 | [CBaseAnimGraph](server/CBaseAnimGraph.md) |
 | [CHostageExpresserShim](server/CHostageExpresserShim.md) | class | 2848 | 1 | [CBaseCombatCharacter](server/CBaseCombatCharacter.md) |
@@ -1120,7 +1120,7 @@ module: server
 | [VoiceDataFormat_t](server/VoiceDataFormat_t.md) | enum | — | 3 |  |
 | [WaterLevel_t](server/WaterLevel_t.md) | enum | — | 7 |  |
 | [WeaponAttackType_t](server/WeaponAttackType_t.md) | enum | — | 4 |  |
-| [WeaponGameplayAnimState](server/WeaponGameplayAnimState.md) | enum | — | 29 |  |
+| [WeaponGameplayAnimState](server/WeaponGameplayAnimState.md) | enum | — | 31 |  |
 | [WeaponSound_t](server/WeaponSound_t.md) | enum | — | 25 |  |
 | [WeaponSwitchReason_t](server/WeaponSwitchReason_t.md) | enum | — | 5 |  |
 | [WorldTextPanelHorizontalAlign_t](server/WorldTextPanelHorizontalAlign_t.md) | enum | — | 3 |  |

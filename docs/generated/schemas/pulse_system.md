@@ -5,7 +5,7 @@ module: pulse_system
 
 # Module: pulse_system
 
-> Source: **Build 25966348** · 2026-10-15 · `windows-x86_64` · schema `0.12.0`
+> Source: **Build 26334290** · 2026-10-30 · `windows-x86_64` · schema `0.13.0`
 
 [📊 View UML Diagram](../diagrams/pulse_system.md)
 
