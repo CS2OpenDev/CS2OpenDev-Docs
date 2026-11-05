@@ -3,5 +3,7 @@
 *.gif binary
 *.png binary
 *.jpg binary
+*.mp4 binary
+*.webm binary
 
 *.descriptorset binary
