@@ -740,3 +740,25 @@
 		position: static;
 	}
 }
+
+/* Blog media: smaller than the content column so the text stays the focus; images open full size. */
+.dv-media {
+	max-width: 39rem;
+	margin-inline: auto;
+}
+.dv-media img,
+.dv-media video {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 0.375rem;
+}
+.dv-media figcaption {
+	font-size: var(--sl-text-sm);
+	color: var(--sl-color-gray-3);
+	margin-top: 0.5rem;
+}
+/* Side-by-side clips (two screens in one frame) need the full column to stay legible. */
+.dv-media.dv-wide {
+	max-width: none;
+}

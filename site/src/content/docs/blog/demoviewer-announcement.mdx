@@ -18,21 +18,20 @@ import themeDark from '../../../assets/blog/demoviewer/theme-dark.png';
 import themeHighContrast from '../../../assets/blog/demoviewer/theme-high-contrast.png';
 import updatesToggle from '../../../assets/blog/demoviewer/updates-toggle.png';
 import parser from '../../../assets/blog/demoviewer/parser.png';
+import liveSyncPoster from '../../../assets/blog/demoviewer/livesync-poster.jpg';
+import reelPoster from '../../../assets/blog/demoviewer/reel-poster.jpg';
 
 export const media = (file) => withBase(`/blog/demoviewer/${file}`);
 
-<figure>
-	<video src={media('hero-screen.mp4')} poster={heroPoster.src} width="1920" height="1080" autoplay muted loop playsinline controls preload="metadata" style="width: 100%; height: auto;">
+<figure class="dv-media">
+	<video src={media('hero-screen.mp4')} poster={heroPoster.src} width="1920" height="1080" autoplay muted loop playsinline controls preload="metadata">
 		Your browser can't play this video. <a href={media('hero-screen.mp4')}>Download the clip (MP4)</a>.
 	</video>
 	<figcaption>The 2D replay of IEM Beijing 2026, FaZe vs Falcons on Ancient. A red circle pinned to Twistzz follows him through a round-16 retake into a 3K, then the clip is exported with the drawing and HUD burned in.</figcaption>
 </figure>
 
-I've been building DemoViewer.NET for about 18 months. `[AUTHOR]` Most of that time it lived in a private repo. The code has been public on GitHub since August, but this is the first time I've announced it anywhere, because I wanted it to be worth your time before I asked for any.
+I've been building DemoViewer.NET for about 18 months. Most of that time it lived in a private repo. The code has been public on GitHub since August, but this is the first time I've announced it anywhere, because I wanted it to be worth your time before I asked for any.
 
-:::caution[AUTHOR placeholder]
-AUTHOR: one or two sentences of backstory or dated evidence for the 18 months, e.g. an early screenshot or the 0.5.x release date. (Goes where the `[AUTHOR]` marker sits in the paragraph above.)
-:::
 
 It's a desktop app for CS2 demos. Point it at your replays folder, or open any `.dem`, and you get stats that show their working, highlights, a 2D replay you can draw on, clips you can export, and a view of one player across every demo you have. It's free and open source (MIT), and it runs on your own machine with no account and no upload. v0.10.1 is out for Windows x64 and Linux x64 (AppImage). There's also an Apple Silicon Mac build, signed and notarized, but it gets the least testing.
 
@@ -46,8 +45,8 @@ It's a desktop app for CS2 demos. Point it at your replays folder, or open any `
 
 Every rate has a count column showing how many shots it was measured over. That matters: when two tools disagree by 30 points on your counter-strafing, they usually agree about the shots and disagree about which shots to count. So the board ships both readings. CS % is clean counter-strafes over the shots where you attempted one. CS All % is clean counter-strafes over every bullet you fired.
 
-<figure>
-	<Image src={aimBoard} alt="The Stats tab's Accuracy group for FaZe vs Falcons on Ancient: one row per player with Acc %, HS Acc %, HS Dmg %, CS %, CS All %, Linear %, First Bullet %, Spotted Acc %, Spray Acc % and CS Attempts columns, grouped by team with team totals." />
+<figure class="dv-media">
+	<a href={aimBoard.src} title="Open full size"><Image src={aimBoard} alt="The Stats tab's Accuracy group for FaZe vs Falcons on Ancient: one row per player with Acc %, HS Acc %, HS Dmg %, CS %, CS All %, Linear %, First Bullet %, Spotted Acc %, Spray Acc % and CS Attempts columns, grouped by team with team totals." /></a>
 	<figcaption>The Accuracy columns. CS % and CS All % sit side by side, and the CS Attempts column shows how many shots each rate was measured over. Twistzz's 67.4 CS % is 26.4 when every bullet counts.</figcaption>
 </figure>
 
@@ -61,15 +60,15 @@ The pen is the part I use most. Ink can stay put, pin to the demo clock, or pin 
 
 **Your whole library.** The Library reads your demo folders in the background and knows each demo by its content, so moving a file doesn't throw away its analysis. Player Overview follows one player across every demo you have: match history, trends, maps and sides, teammates, head-to-head, aim quality and personal bests. Its percentiles compare a player with the others in *your* library, not a global population.
 
-<figure>
-	<Image src={playerOverview} alt="Player Overview for Twistzz across 42 demos: a match history table with date, map, score, K-D-A, ADR, HS, KAST and rating per match, and a Maps and sides panel with a card per map showing matches, win rate, K/D, ADR and rating, plus CT and T side totals." />
+<figure class="dv-media">
+	<a href={playerOverview.src} title="Open full size"><Image src={playerOverview} alt="Player Overview for Twistzz across 42 demos: a match history table with date, map, score, K-D-A, ADR, HS, KAST and rating per match, and a Maps and sides panel with a card per map showing matches, win rate, K/D, ADR and rating, plus CT and T side totals." /></a>
 	<figcaption>Player Overview for Twistzz across the 42 demos in one library: match history on the left, maps and sides on the right.</figcaption>
 </figure>
 
 **Strat Book (beta), for teams and coaches.** It comes in the box, and one switch turns it off. Situation Search finds rounds by where players stood, the Round Tagger suggests tags such as execute, fake or opener, and the Utility Book builds grenade lineups from your own demos. It's the newest part of the app, so tell me what breaks.
 
-<figure>
-	<Image src={stratBook} alt="The Strat Book's Situations page: a round index over 49 of 59 demos, a de_ancient map with CT 1-5 and T 1-5 slots to place on it, and filters for side, buy, phase, clock, man count, score, opponent, date and source." />
+<figure class="dv-media">
+	<a href={stratBook.src} title="Open full size"><Image src={stratBook} alt="The Strat Book's Situations page: a round index over 49 of 59 demos, a de_ancient map with CT 1-5 and T 1-5 slots to place on it, and filters for side, buy, phase, clock, man count, score, opponent, date and source." /></a>
 	<figcaption>Strat Book (beta): Situation Search on Ancient, where you place players on the map and search the indexed rounds.</figcaption>
 </figure>
 
@@ -103,27 +102,27 @@ highlights:
 
 The stat is a per-round flag: the player won a clutch they entered against three enemies. The highlight fires on it.
 
-<figure>
-	<Image src={ruleHighlight} alt="Match Overview for FaZe vs Falcons on Ancient, 3-13, with the highlights list expanded for Twistzz, including '3K (round 16)'." />
+<figure class="dv-media">
+	<a href={ruleHighlight.src} title="Open full size"><Image src={ruleHighlight} alt="Match Overview for FaZe vs Falcons on Ancient, 3-13, with the highlights list expanded for Twistzz, including '3K (round 16)'." /></a>
 	<figcaption>Twistzz's round-16 3K, the moment from the clip above, in Match Overview's highlights.</figcaption>
 </figure>
 
-<figure>
-	<Image src={ruleAuthoring} alt="The Authoring tab with highlights_multikill.rules.yaml open, showing the ace, quad_kill and triple_kill highlights (triple_kill: when enemy_kills_round at least 3, per round, score 55) and the Evaluate result: a scoreboard of aces, quads and triples per player for the open demo." />
+<figure class="dv-media">
+	<a href={ruleAuthoring.src} title="Open full size"><Image src={ruleAuthoring} alt="The Authoring tab with highlights_multikill.rules.yaml open, showing the ace, quad_kill and triple_kill highlights (triple_kill: when enemy_kills_round at least 3, per round, score 55) and the Evaluate result: a scoreboard of aces, quads and triples per player for the open demo." /></a>
 	<figcaption>The rule that produced it: <code>triple_kill</code> in <code>rules/highlights_multikill.rules.yaml</code>, evaluated against the open demo in the Authoring tab.</figcaption>
 </figure>
 
 If you think a stat or highlight should work differently, copy the ruleset into your user rules folder and change it. Giving it the same id as a shipped ruleset replaces that ruleset, a new id adds to the shipped ones, and `enabled: false` turns one off. The Rule Workbench in the app edits rules with completion and validation against the schema. The Analysis tab shows the rule graph that ran for a player, with breakpoints, so you can see why a rule did or didn't fire. The rules language belongs to CS2DemoKit and is documented in its rules authoring guide.
 
-<figure>
-	<video src={media('rule-edit.mp4')} poster={ruleEditPoster.src} width="1920" height="1080" muted loop playsinline controls preload="metadata" style="width: 100%; height: auto;">
+<figure class="dv-media">
+	<video src={media('rule-edit.mp4')} poster={ruleEditPoster.src} width="1920" height="1080" muted loop playsinline controls preload="metadata">
 		Your browser can't play this video. <a href={media('rule-edit.mp4')}>Download the clip (MP4)</a>.
 	</video>
 	<figcaption>Changing a rule and re-running it. In <code>highlights_rapid.rules.yaml</code>, the <code>double_burst</code> window ("2 kills in a blink") goes from <code>"3s"</code> to <code>"20s"</code>, Evaluate runs it against the open demo, and <code>rapid_double</code> goes from 10 fires to 18. Nothing is saved.</figcaption>
 </figure>
 
-<figure>
-	<Image src={ruleEditAfter} alt="The Authoring tab after the edit: highlights_rapid.rules.yaml with double_burst's window set to 20s, and the result panel reading 'rapid_double (highlight, 18 fires)' with the tick, round and player of each fire." />
+<figure class="dv-media">
+	<a href={ruleEditAfter.src} title="Open full size"><Image src={ruleEditAfter} alt="The Authoring tab after the edit: highlights_rapid.rules.yaml with double_burst's window set to 20s, and the result panel reading 'rapid_double (highlight, 18 fires)' with the tick, round and player of each fire." /></a>
 	<figcaption>After the edit: <code>rapid_double</code> fires 18 times on this demo.</figcaption>
 </figure>
 
@@ -158,15 +157,15 @@ The public surface is about 4,700 entries across the four packages. Analyzers tr
 
 **Themes.** A theme is a JSON file: choose Light or Dark as a base and override any of the app's colour tokens. That covers the panels, the 2D canvas, the analysis graph and the syntax highlighter. You don't have to write the JSON by hand: Settings > Theme > Customize… copies any theme and lets you change every colour with a live preview, and can apply it to the whole app while you edit. Or drop a file in your themes folder and click Reload themes, with no restart. A theme from an older version that's missing newer colours falls back to its base theme instead of failing. Themes are parsed as data, so a theme file can't run code. The full token catalogue is in `docs/ui/theme-token-catalog.md`, and complete examples of the four built-in themes are in `samples/Themes`.
 
-<figure>
-	<video src={media('theme-switch.mp4')} poster={themeDark.src} width="1920" height="1080" muted loop playsinline controls preload="metadata" style="width: 100%; height: auto;">
+<figure class="dv-media">
+	<video src={media('theme-switch.mp4')} poster={themeDark.src} width="1920" height="1080" muted loop playsinline controls preload="metadata">
 		Your browser can't play this video. <a href={media('theme-switch.mp4')}>Download the clip (MP4)</a>.
 	</video>
 	<figcaption>The same live 2D Playback frame switched through Dark, High Contrast and Light and back to Dark, with no restart.</figcaption>
 </figure>
 
-<figure>
-	<Image src={themeHighContrast} alt="The 2D Playback tab in the High Contrast theme: the Ancient map with player markers, the annotation toolbar, the round timeline and the player cards, with brighter text and borders than the Dark theme." />
+<figure class="dv-media">
+	<a href={themeHighContrast.src} title="Open full size"><Image src={themeHighContrast} alt="The 2D Playback tab in the High Contrast theme: the Ancient map with player markers, the annotation toolbar, the round timeline and the player cards, with brighter text and borders than the Dark theme." /></a>
 	<figcaption>The High Contrast theme, one of the four built-in themes.</figcaption>
 </figure>
 
@@ -174,8 +173,8 @@ The public surface is about 4,700 entries across the four packages. Analyzers tr
 
 **The developer tabs.** The Parser tab takes any frame down to the message, byte range and `.proto` field that decoded it. The Entity tab shows any entity at any tick. Both are hidden if you pick the Consumer profile; Settings turns them back on.
 
-<figure>
-	<Image src={parser} alt="The Parser tab: a list of frames on the left, the selected DEM_Packet frame's 14 inner messages as cards in the middle (svc_UserCmds, net_Tick, svc_PacketEntities and a GE_Source1LegacyGameEvent), and the raw bytes and the normalized bitstream in hex panes on the right." />
+<figure class="dv-media">
+	<a href={parser.src} title="Open full size"><Image src={parser} alt="The Parser tab: a list of frames on the left, the selected DEM_Packet frame's 14 inner messages as cards in the middle (svc_UserCmds, net_Tick, svc_PacketEntities and a GE_Source1LegacyGameEvent), and the raw bytes and the normalized bitstream in hex panes on the right." /></a>
 	<figcaption>The Parser tab: one packet frame broken into its inner messages, with the raw and decompressed bytes alongside.</figcaption>
 </figure>
 
@@ -195,11 +194,8 @@ Installing a third-party extension is a manual folder copy for now. I'll keep ma
 
 ## Built on CS2OpenDev, and an invitation
 
-DemoViewer.NET doesn't parse demos itself. It lives in CS2OpenDev (github.com/CS2OpenDev), an organisation I started `[AUTHOR]` for free, MIT-licensed CS2 infrastructure, and sits on the org's libraries:
+DemoViewer.NET doesn't parse demos itself. It lives in CS2OpenDev (github.com/CS2OpenDev), an organisation I started as a home for this project and for free, MIT-licensed CS2 infrastructure, and sits on the org's libraries:
 
-:::caution[AUTHOR placeholder]
-AUTHOR: confirm the wording of your relationship to the org. (Goes where the `[AUTHOR]` marker sits in the sentence above.)
-:::
 
 - **CS2DemoKit:** the demo parser and the rule-based analysis engine. Every stat and highlight in the app runs on it.
 - **CS2OpenDev-SDK:** typed C# access to CS2's entity schemas, on NuGet.
@@ -223,11 +219,8 @@ I've spent a lot of this project on speed and memory, because a demo tool you ha
 - **Analysis (0.7.2).** Parsing got about 25% faster, evaluation about 13% faster, and total allocation dropped by a third to a half against 0.7.1. That's the median of three runs across nine demos.
 - **The 2D view** draws each frame as a single Skia operation that allocates nothing per frame. CI times the renderer on every build and fails the build if it goes over its frame-time budget.
 
-These are relative numbers; I only compare runs measured side by side. `[AUTHOR]` The work isn't finished, and optimisation will keep going release by release.
+These are relative numbers; I only compare runs measured side by side. The work isn't finished, and optimisation will keep going release by release.
 
-:::caution[AUTHOR placeholder]
-AUTHOR: consider adding the machine and method to the next release's notes and linking them here, per CS2OpenDev's "measured claims" standard. (Goes where the `[AUTHOR]` marker sits in the paragraph above.)
-:::
 
 ## Offline by default, always
 
@@ -235,8 +228,8 @@ DemoViewer.NET is offline by default, and that won't change. It sends no telemet
 
 On its own, it checks GitHub for updates to the app and its bundled extension, and that's all. At launch an installed copy checks for an app update and, if there is one, fetches its release notes; it downloads only when you click. After an update it fetches that version's notes once. When you open Settings, at most once an hour, it checks for an update to the bundled Strat Book. Turn off "Check for updates automatically" in Settings > Updates and it makes neither check until you click Check. Everything else that goes online is something you choose: the ffmpeg download, the beta channel (off by default), starting CS2 through Live Sync or Reels, and links that open in your browser. That's how it will stay. Any online feature added to the core app will need you to opt in or give explicit one-time permission.
 
-<figure>
-	<Image src={updatesToggle} alt="Settings > Updates in v0.10.1: the current version, a 'Check for updates automatically' toggle with the caption 'When this is off, the app only checks for app and extension updates when you click Check', a 'Subscribe to beta releases' toggle that is off, and a Check for updates button." />
+<figure class="dv-media">
+	<a href={updatesToggle.src} title="Open full size"><Image src={updatesToggle} alt="Settings > Updates in v0.10.1: the current version, a 'Check for updates automatically' toggle with the caption 'When this is off, the app only checks for app and extension updates when you click Check', a 'Subscribe to beta releases' toggle that is off, and a Check for updates button." /></a>
 	<figcaption>Settings &gt; Updates. With "Check for updates automatically" off, the app only checks when you click Check.</figcaption>
 </figure>
 
@@ -246,6 +239,20 @@ Two optional features drive CS2 itself:
 
 - **Live Sync** seeks a running CS2 to the tick you're looking at, so you can check a moment in-engine. It's off until you enable it in Settings.
 - **In-game reels** record highlight clips from the game. Reels only start CS2 when you press Generate.
+
+<figure class="dv-media dv-wide">
+	<video src={media('livesync.mp4')} poster={liveSyncPoster.src} width="1920" height="540" muted loop playsinline controls preload="metadata">
+		Your browser can't play this video. <a href={media('livesync.mp4')}>Download the clip (MP4)</a>.
+	</video>
+	<figcaption>Live Sync on the same round: DemoViewer.NET on the left, CS2 on the right. CS2 starts on Twistzz. Clicking NiKo's card in DemoViewer switches CS2 to NiKo; after he dies, clicking Twistzz's card switches it back, and both play the retake through to the bomb going off. The server's chat line is blurred.</figcaption>
+</figure>
+
+<figure class="dv-media">
+	<video src={media('reel.mp4')} poster={reelPoster.src} width="1280" height="720" muted loop playsinline controls preload="metadata">
+		Your browser can't play this video. <a href={media('reel.mp4')}>Download the clip (MP4)</a>.
+	</video>
+	<figcaption>An in-game reel of the same 3K: Add clips, narrow to Twistzz's triple kill, stage it and press Generate. CS2 records the clip through to the bomb going off (1080p60, shown here at 720p) and closes, and the job strip reports it done. The server's chat line is blurred.</figcaption>
+</figure>
 
 Both use CS2VideoGenerator. To work, they:
 
@@ -262,11 +269,8 @@ Reading demos never touches your game; only these two features do. They're built
 
 ## How it was built
 
-I've used AI and LLM tools while building this, and I'd rather say so up front than have someone find it. `[AUTHOR]` It's still more than 18 months of my own work: designing it, testing it against real demos, and throwing out what didn't hold up.
+I've used AI and LLM tools while building this, and I'd rather say so up front than have someone find it. I mostly used them on the UI layout code and to write tests: there are 5,000+ test methods, golden-image tests on the 2D renderer and a frame-time gate in CI. The core libraries were written by hand, and that's where I spent most of my time refining and validating; AI helped me spot issues along the way. It's still more than 18 months of my own work: designing it, testing it against real demos, and throwing out what didn't hold up.
 
-:::caution[AUTHOR placeholder]
-AUTHOR: one or two specific sentences on what you designed and wrote yourself and what AI tools helped with. Don't publish a vague version. (Goes where the `[AUTHOR]` marker sits in the paragraph above.)
-:::
 
 The public history starts in August 2026, when I imported the project as a single commit to make the repo public at 0.7.0, which is why `git log` looks young. If you'd rather judge the work than trust me, the repo has over 5,000 test methods, golden-image tests and a frame-time gate for the 2D renderer, and analyzers that stop the SDK's public API changing silently.
 
