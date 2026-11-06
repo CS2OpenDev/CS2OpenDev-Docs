@@ -8,7 +8,7 @@ kind: class
 
 # CCSPlayerPawnBase
 
-> Source: **Build 26334290** · 2026-10-30 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26393695** · 2026-11-03 · `windows-x86_64` · schema `0.13.0`
 
 Abstract base class shared by CCSPlayerPawn and CCSObserverPawn, providing the flash-bang state, progress bar, and original-controller link.
 

@@ -3,6 +3,38 @@
   "breaking": [],
   "detail": [
     {
+      "anchor": "26334290-26393695",
+      "class_pair_candidates_count": 0,
+      "classes_added": [],
+      "classes_changed": [
+        {
+          "confirmed_rename_count": 0,
+          "field_ops": {
+            "ADD": 1,
+            "OFFSET_CHANGE": 4
+          },
+          "flags_changed": false,
+          "meta_ops": 0,
+          "metadata_only": false,
+          "name": "server.dll/CCSGameRules",
+          "pair_candidates": 0,
+          "paired_evidence": 0,
+          "realign": false,
+          "reparent": false,
+          "resize": null,
+          "static_field_ops": 0
+        }
+      ],
+      "classes_changed_total": 1,
+      "classes_changed_truncated": false,
+      "classes_removed": [],
+      "field_move_candidates_count": 0,
+      "from_build": "26334290",
+      "from_date": "2026-10-30",
+      "to_build": "26393695",
+      "to_date": "2026-11-03"
+    },
+    {
       "anchor": "26144732-26281801",
       "class_pair_candidates_count": 0,
       "classes_added": [],
@@ -853,52 +885,9 @@
       "from_date": "2026-10-15",
       "to_build": "26144732",
       "to_date": "2026-10-22"
-    },
-    {
-      "anchor": "25947352-25966348",
-      "class_pair_candidates_count": 0,
-      "classes_added": [],
-      "classes_changed": [
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {},
-          "flags_changed": false,
-          "meta_ops": 1,
-          "metadata_only": false,
-          "name": "!GlobalTypes/dynpitchvol_base_t",
-          "pair_candidates": 0,
-          "paired_evidence": 0,
-          "realign": false,
-          "reparent": false,
-          "resize": null,
-          "static_field_ops": 0
-        },
-        {
-          "confirmed_rename_count": 0,
-          "field_ops": {},
-          "flags_changed": false,
-          "meta_ops": 1,
-          "metadata_only": false,
-          "name": "!GlobalTypes/dynpitchvol_t",
-          "pair_candidates": 0,
-          "paired_evidence": 0,
-          "realign": false,
-          "reparent": false,
-          "resize": null,
-          "static_field_ops": 0
-        }
-      ],
-      "classes_changed_total": 2,
-      "classes_changed_truncated": false,
-      "classes_removed": [],
-      "field_move_candidates_count": 0,
-      "from_build": "25947352",
-      "from_date": "2026-10-15",
-      "to_build": "25966348",
-      "to_date": "2026-10-15"
     }
   ],
-  "latest_build": "26334290",
+  "latest_build": "26393695",
   "platform": "windows-x86_64",
   "schema_version": "0.13.0",
   "transitions": [
@@ -7735,6 +7724,23 @@
       "is_empty": true,
       "to_build": "26334290",
       "to_date": "2026-10-30"
+    },
+    {
+      "anchor": "26334290-26393695",
+      "counts": {
+        "class_added": 0,
+        "class_changed": 1,
+        "class_removed": 0,
+        "enum_added": 0,
+        "enum_changed": 0,
+        "enum_removed": 0,
+        "field_ops": 5
+      },
+      "from_build": "26334290",
+      "from_date": "2026-10-30",
+      "is_empty": false,
+      "to_build": "26393695",
+      "to_date": "2026-11-03"
     }
   ]
 }

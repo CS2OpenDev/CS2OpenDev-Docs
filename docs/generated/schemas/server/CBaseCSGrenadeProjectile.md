@@ -8,7 +8,7 @@ kind: class
 
 # CBaseCSGrenadeProjectile
 
-> Source: **Build 26334290** · 2026-10-30 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26393695** · 2026-11-03 · `windows-x86_64` · schema `0.13.0`
 
 Base class for all CS2 grenade projectile entities (HE, flash, smoke, molotov, decoy).  Tracks the initial throw parameters so clients can predict the trajectory.
 

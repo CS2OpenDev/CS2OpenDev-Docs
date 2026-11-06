@@ -5,7 +5,7 @@ module: server
 
 # Module: server
 
-> Source: **Build 26334290** · 2026-10-30 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26393695** · 2026-11-03 · `windows-x86_64` · schema `0.13.0`
 
 [📊 View UML Diagram](../diagrams/server.md)
 
@@ -127,7 +127,7 @@ module: server
 | [CCSGameModeRules_ArmsRace](server/CCSGameModeRules_ArmsRace.md) | class | 136 | 1 | [CCSGameModeRules](server/CCSGameModeRules.md) |
 | [CCSGameModeRules_Deathmatch](server/CCSGameModeRules_Deathmatch.md) | class | 136 | 3 | [CCSGameModeRules](server/CCSGameModeRules.md) |
 | [CCSGameModeRules_Noop](server/CCSGameModeRules_Noop.md) | class | 48 | 0 | [CCSGameModeRules](server/CCSGameModeRules.md) |
-| [CCSGameRules](server/CCSGameRules.md) | class | 70736 | 190 | [CTeamplayRules](server/CTeamplayRules.md) |
+| [CCSGameRules](server/CCSGameRules.md) | class | 70736 | 191 | [CTeamplayRules](server/CTeamplayRules.md) |
 | [CCSGameRulesProxy](server/CCSGameRulesProxy.md) | class | 1200 | 1 | [CGameRulesProxy](server/CGameRulesProxy.md) |
 | [CCSMinimapBoundary](server/CCSMinimapBoundary.md) | class | 1192 | 0 | [CBaseEntity](server/CBaseEntity.md) |
 | [CCSMinimapVolume](server/CCSMinimapVolume.md) | class | 2536 | 1 | [CBaseTrigger](server/CBaseTrigger.md) |

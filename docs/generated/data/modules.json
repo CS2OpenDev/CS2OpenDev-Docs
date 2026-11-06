@@ -20,7 +20,7 @@
       ],
       "schema_module": "animationsystem",
       "schema_registration_count": 69,
-      "sha256": "e8803e6e1d6356c210cd66dbd23681e0ce52a5ff4216653fe91df1361960bfc7",
+      "sha256": "cbe069aeaefdd5f93d969985562af8d04991a478dbda58e8a2914cbeac2bea47",
       "stem": "animationsystem"
     },
     {
@@ -30,7 +30,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 66,
-      "sha256": "b14b5fae4314c9301cd02a5912871805dc452f4edbbe44c1d65453b405da5d85",
+      "sha256": "94192298852893cba440501604680e08cb2ef337ead5bb422ab6f49cb129a2e2",
       "stem": "assetbrowser"
     },
     {
@@ -40,7 +40,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 66,
-      "sha256": "5418f3a1fdb20ed8581191471c6ec5f10cb758faa9dd46846175791eec4ff962",
+      "sha256": "189558c1a54610407b652143b20bea2954f6265b3d30b233789908638d99a326",
       "stem": "assetpreview"
     },
     {
@@ -50,7 +50,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 73,
-      "sha256": "a9c37471599771c050e0c33bf1877ef97d1df65712420179d7c9035fb2aad63a",
+      "sha256": "e7526885666323f43015478e6138fcb1a5eecac0d3b094dc393d3d8ae97a3d8e",
       "stem": "assetrename"
     },
     {
@@ -60,7 +60,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "6e1212499c926f8843ec0f2c6ecffe0526e252c8e7d51e5fb41f096bdd7f69c0",
+      "sha256": "b01d2202f2012d8111a1b563e7d18fd67882b9b30109cd7c2c61ae37c1379dd4",
       "stem": "assetsystem"
     },
     {
@@ -90,7 +90,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "b670a16c455005269061a5bce9ff60e3daf188a1da28d575cd51099f248dc1c6",
+      "sha256": "bd5e12600bfe5280b5559f323f9bff1f58a0784548215d4ab628032ae4331b09",
       "stem": "bugreporter_filequeue"
     },
     {
@@ -148,7 +148,7 @@
       ],
       "schema_module": "engine2",
       "schema_registration_count": 4,
-      "sha256": "42e0549c7314321e1b69c8d60046efe94e0356f54d7a2fb79dd6b993e6e3658b",
+      "sha256": "a1b682acb5cedf11bed4784b0191a5452e93ee8f3023f95fa11ab3c3676b0fbc",
       "stem": "engine2"
     },
     {
@@ -158,7 +158,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "93d69e41b893340b6cafef21b30ecd60d9336a6352b73dedef8b5051274da853",
+      "sha256": "1387f6c5544246236e636b009ca209239a680635730265c0487b6107325b7812",
       "stem": "exportsystem"
     },
     {
@@ -171,7 +171,7 @@
       ],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "ed9c9016e121b1a3c28332a35fb1400ca4b3a5ad84cd68e4f1e14fe5e17bf613",
+      "sha256": "8e4c94030146e4182efb1dbecb7ac5f0fd27c0a78d31a0de00b9e7d8461215f5",
       "stem": "filesystem_stdio"
     },
     {
@@ -191,7 +191,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "c6de9441a460d2d89ce126d260ebabee7fb2a0c8cfd8614dd4a9d80a0f2aeb38",
+      "sha256": "c5a19fc37b02d28e74f67bb3b11547e052437790da78c37232dc7b3e8c38ce5b",
       "stem": "helpsystem"
     },
     {
@@ -201,7 +201,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "bd092321c5e3e5693ea42918ed5029509e1cdfaf165aaa1c64f2c71eda18b988",
+      "sha256": "f5d7a271ced3cb69582dd6c18ef8c8607d3fff5188e651b6a03f2d9734717538",
       "stem": "imemanager"
     },
     {
@@ -213,7 +213,7 @@
       ],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "6774a3922362b7505beb07c02da88364b6bfea3fc1a339fe4912d3090cff18c3",
+      "sha256": "7bb1dc2a787de5b6e2992b235f863924c3b512ba70fc39323ef5a861436b023a",
       "stem": "inputsystem"
     },
     {
@@ -383,7 +383,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "2e7b4813d83bb0af556ff996f9958982f24b74ce3737a7e0ae275a3334fecdd6",
+      "sha256": "9dad33a58beeaf985a28a53c5012c19fe1d4ffe4a67a4da5f4a8f0bf74b8780a",
       "stem": "localize"
     },
     {
@@ -396,7 +396,7 @@
       ],
       "schema_module": "materialsystem2",
       "schema_registration_count": 0,
-      "sha256": "f96093bbbc3f1b6df0fba856e37af60e774d9049e4b83dfd8aa69cc6ae9ead8e",
+      "sha256": "7aa863a1a17ca42092f0282d7e0607d3cff4a85a659ccaeda01958f8d4b971d1",
       "stem": "materialsystem2"
     },
     {
@@ -406,7 +406,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "5a615f63db146b99e3b0a5017b16032cbc5d6d77dc79a44d74902b40f5441933",
+      "sha256": "142b5749c114652bdb4de63731f4eed2fb59bff7089f6002bc11d33a35360805",
       "stem": "meshsystem"
     },
     {
@@ -416,7 +416,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 68,
-      "sha256": "713e10768ffcc4319883e70060bfd12fbad04a6c29c3320030f731983846d2bf",
+      "sha256": "f64837956f9c9c81b337ebb3fa2e0b44eda6efbe0bf65dd6bc4524c00564ce25",
       "stem": "modeldoc_utils"
     },
     {
@@ -426,7 +426,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "44353c1d4f2be39e68dc7ec18abdaebdf5452d2da92e18bb6416c98ff9b5c2cd",
+      "sha256": "025596bd94254749826242f4300946f0d5a878edc5db79b2f93e4fc95c70fd32",
       "stem": "navsystem"
     },
     {
@@ -441,7 +441,7 @@
       ],
       "schema_module": "networksystem",
       "schema_registration_count": 0,
-      "sha256": "4ca64d0c83c6f5a35d7d6ecbff027552718b64193ffdb9117ae080363c095450",
+      "sha256": "94adbbf6bdbfeb047ea1bbbc0d8b155cc3e990e365c3beaedf5b09cb6c01d0d1",
       "stem": "networksystem"
     },
     {
@@ -511,7 +511,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "c06116d4c645364b99b6b050ff050fd580470803f1b62c41f82f223a13a62a14",
+      "sha256": "641b0538923c1de3e9381a3247c3e6458ed86c4ce660f32a57e41626a6c1b60a",
       "stem": "p4lib"
     },
     {
@@ -523,7 +523,7 @@
       ],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "f98c04a7a3cfb1a8a40a6d6bf3bdcc376d6c9fda0d4861354a0383a3cfd9a39e",
+      "sha256": "c9d86e0e59ec0c0976306e3eea9ea9f9a9c89130475e1acc771cd96a206fb2f7",
       "stem": "panorama"
     },
     {
@@ -533,7 +533,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "334c3317f2f1db97d2bc331d0fb79a687729621387bb91567d69e56fa059d173",
+      "sha256": "dc79507fc7347782508ecd22757e8880a852b7697b55bba74504baad8e6a736b",
       "stem": "panorama_text_pango"
     },
     {
@@ -545,7 +545,7 @@
       ],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "072a43970aedb716f7181f8acf039c515eecae518ec9dbbe2a1c6795bee9d3fe",
+      "sha256": "d8fa2fc75f886c142876b15b5177d6995d676d947897603e740acc819ccbd3f5",
       "stem": "panoramauiclient"
     },
     {
@@ -557,7 +557,7 @@
       ],
       "schema_module": "particles",
       "schema_registration_count": 68,
-      "sha256": "e4b95f49392f990556c3f81198e55d019fb39a48bfeac841188128a2cbe7ab76",
+      "sha256": "1a81a66f33c860a8e537b58d7b222960513bb99919e0f24b48d8adbec60bc699",
       "stem": "particles"
     },
     {
@@ -587,7 +587,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "7752dc5bb6c2226b4832740fd6019a1df41d1eb8c7ebb1edda03e1fdf1a9885b",
+      "sha256": "da29aa7490a53c0b9645e5ef91d501cc202aac9cb413eb3176d5e4b6e4f05201",
       "stem": "physicsbuilder"
     },
     {
@@ -617,7 +617,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "6ce0a551e86694ba9df3c59955c1b5b74f19bbfe54a522455fa1cdc43d1952e8",
+      "sha256": "c2f05d15f895a84f01bd11c2ceac9bcd9918e9d51fb4839c2365f72c1f962da2",
       "stem": "propertyeditor"
     },
     {
@@ -629,7 +629,7 @@
       ],
       "schema_module": "pulse_system",
       "schema_registration_count": 102,
-      "sha256": "d36c2df6681ccdf13683fa103cfe450b96b01160e783bec6f75c5142bd869be1",
+      "sha256": "646776a058fa34c89bae0bec1817f257dd9756eed8f5868a564e76470390b3d8",
       "stem": "pulse_system"
     },
     {
@@ -762,7 +762,7 @@
       ],
       "schema_module": "rendersystemdx11",
       "schema_registration_count": 0,
-      "sha256": "4d517b70af02d1c835f53a2e43e9ec951f03a294102226f905763bafbe54a4ae",
+      "sha256": "6a41ee0329b5e54c87a9d64f7b884479720408412bf018ebdd9947ff12dffe34",
       "stem": "rendersystemdx11"
     },
     {
@@ -772,7 +772,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "9bef90ceb4aee25779155254b3757a5e399f5c699fea08947e26929add13df97",
+      "sha256": "b633c112e9d287a48c7acb1e841a48ffa160fdade4e7734073449201ae9d1f0f",
       "stem": "rendersystemempty"
     },
     {
@@ -785,7 +785,7 @@
       ],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "5b98ea77b77e4f1be27f1a8254618d06ff1659798ee9d9887e9444fe4943668d",
+      "sha256": "2693b2557af64363a192e667a069f705bd6a90893d12ac36622a840cd77095ad",
       "stem": "rendersystemvulkan"
     },
     {
@@ -795,7 +795,7 @@
       "resolved_interfaces": [],
       "schema_module": "resourcecompiler",
       "schema_registration_count": 73,
-      "sha256": "a253dd2e183296ef8b545ce53bf165185c0edb0d0cd54c72df49f6dbfa845615",
+      "sha256": "14bea9c54b59e7638cf15f846dda8fdba145e3a242eacc5a9f7eba0518afeb7c",
       "stem": "resourcecompiler"
     },
     {
@@ -807,7 +807,7 @@
       ],
       "schema_module": "resourcesystem",
       "schema_registration_count": 0,
-      "sha256": "62b0cda55540f02ce4ce240b28249f4abf9b894f6497d54c7fca14d4746eeeb0",
+      "sha256": "4b86d2c2607178c1a8320e3a3b2bcce3d5dcedfbf0b43cf39a929a2e001d504f",
       "stem": "resourcesystem"
     },
     {
@@ -817,7 +817,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "9035d10eee02f618e81b88dca19d77353f6e2efa68e3554e12e761b2b2e78e3c",
+      "sha256": "7e09058ecd0e1eacf0ed237409c406d038809b76c662ae34f5bfe3d3a4ba9194",
       "stem": "scenefilecache"
     },
     {
@@ -830,7 +830,7 @@
       ],
       "schema_module": "scenesystem",
       "schema_registration_count": 0,
-      "sha256": "fc780a9d4cf2e96514714aceaf6c49aaeb6bfc21f31fef5965639fb879bac407",
+      "sha256": "393116764e8fd5e79e932941ca82b48678d4abaf26a397c7b25be91538309701",
       "stem": "scenesystem"
     },
     {
@@ -840,7 +840,7 @@
       "resolved_interfaces": [],
       "schema_module": "schemasystem",
       "schema_registration_count": 0,
-      "sha256": "6ea6c2e95360572d78352260f808e390bc24c9a4370184c067481f5b4d6e94c9",
+      "sha256": "d94cc30d01521e0a7cfdfda6d5ba305029ff7093e6ce53452c8cf3a9b97895b3",
       "stem": "schemasystem"
     },
     {
@@ -860,7 +860,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "14ec616b36a384464e80fba4a5df4955a00739724c9190bab50dc02e67acb90c",
+      "sha256": "d6833257e97b79f91eced1dcc763e331f2d96f908027d76bab4ef598219e2350",
       "stem": "smartprops"
     },
     {
@@ -872,7 +872,7 @@
       ],
       "schema_module": "soundsystem",
       "schema_registration_count": 0,
-      "sha256": "79c5583c71f5e3d5bd8f0f321d5db4801579540544a7c944cc99a6a430857a7b",
+      "sha256": "2260047a6db739b6805e4f6fb72d1b34ac5add22df796fce55f6c9bd0229f698",
       "stem": "soundsystem"
     },
     {
@@ -892,7 +892,7 @@
       "resolved_interfaces": [],
       "schema_module": "steamaudio",
       "schema_registration_count": 0,
-      "sha256": "f559df02f7bc75c945b660471d09d66b46e60d4546677d737f7f22d860a23b47",
+      "sha256": "adecab23ef847de22f60d226f4c53589eefef0f800539df15b17f908891d5326",
       "stem": "steamaudio"
     },
     {
@@ -912,7 +912,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "b4da0e801c9cd8fcee27cefb0f520896c3765e8b9392ad3cb72049dd20940ffb",
+      "sha256": "373374af8df4d46787d87c4fabf337cf30457e7186093b0d9854d279aa83c199",
       "stem": "convarhelper_subtool"
     },
     {
@@ -922,7 +922,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "ee3b3aaed5cceb9a562bfdd12572e2d270ca0168d86689c493ee9fdd79894447",
+      "sha256": "ad672c0fbd1af1a8c0cb5817fa2700fe5d1d0f2614a6aa07242ff98ec1e7b8c8",
       "stem": "dashboard_subtool"
     },
     {
@@ -932,7 +932,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "b5381234b7278d2c9ce9cf588141fbca99d47c6b950b667aee578ffb759fd0fc",
+      "sha256": "245537de1016dc2dd3adad8b274f1769686151d8dd0a450db27f39d9245be2fb",
       "stem": "netgraph_subtool"
     },
     {
@@ -942,7 +942,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "c0e0bea977cdced8276f2ab4b74c3f3a76da1e1b18e40e20972bf14f88c3c5ab",
+      "sha256": "1a51875f5b07c2c6a7dce8e0e04be2420367029f3364bd697f02298c26c2b150",
       "stem": "soundviewer_subtool"
     },
     {
@@ -952,7 +952,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "d6c10e76b49451fd0cf3ca9f20e1fa657ef3f633ae13a01cffcbe8428bf62793",
+      "sha256": "ebae8d5b06960a197b3fa45aa32900377b65b59cddf6497728647b53d6b20363",
       "stem": "vprof_subtool"
     },
     {
@@ -1022,7 +1022,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "f96f4f9666be66ee3dd42a015b305d954b5dd5582b0608a74e50548df426584d",
+      "sha256": "030d4fa04a62208d4f28d4bd6a35f8234f3da4fdbb74062020e6ebe5b4abbbe8",
       "stem": "tier0"
     },
     {
@@ -1032,7 +1032,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "38d243352f1f4f20e192a7eca24cc14bc9aa8dd4ef258d2b583220384b430961",
+      "sha256": "a68bb2509fba7dbcf03ecb586c017c33bcfe074c91d0c343991fee5f2685b1cf",
       "stem": "toolframework2"
     },
     {
@@ -1042,7 +1042,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "ea3cc1d6414a371c37e0742599406a785148f812180d999da2a67dda2f5415ba",
+      "sha256": "e7ab07f2ff4c0519f7ac4aab2d25fa3c72edecb032f082bace87ba219f62f9aa",
       "stem": "cs2_item_editor"
     },
     {
@@ -1052,7 +1052,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "51224a11c0f2de6be2cc45e5c0504d4d2101ed1e583d1580dc12697253896226",
+      "sha256": "1af9b75ca23a815b80ba030067d39b56b1a1fb87df6cb336764a9dc602428752",
       "stem": "cs2_workshop_manager"
     },
     {
@@ -1062,7 +1062,7 @@
       "resolved_interfaces": [],
       "schema_module": "hammer",
       "schema_registration_count": 72,
-      "sha256": "0102b4af254fb0c06f391b51441f2e70dee077bffc0eb6d26ce27166c0599f5b",
+      "sha256": "b34998a67b78af1ae39cf4174e85547f90cd8d9015df2314175e350129abccf4",
       "stem": "hammer"
     },
     {
@@ -1072,7 +1072,7 @@
       "resolved_interfaces": [],
       "schema_module": "met",
       "schema_registration_count": 66,
-      "sha256": "9558bb05a4b5ad28547477e0b7cb0a6486b32442f58454d830c068188456c34e",
+      "sha256": "19c65cbe16148d07ee76659d27cdb0ce971916d125b4388fcc27376302494087",
       "stem": "met"
     },
     {
@@ -1082,7 +1082,7 @@
       "resolved_interfaces": [],
       "schema_module": "modeldoc_editor",
       "schema_registration_count": 66,
-      "sha256": "8314880cb60d8c73bbd04502596ab218db2105c358206fecd03e3954135a8c0a",
+      "sha256": "b61dd3468e9782b6228399d3e3f13d421bd769843f5beed7a542957894a0339f",
       "stem": "modeldoc_editor"
     },
     {
@@ -1092,7 +1092,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 68,
-      "sha256": "a14da347f8e58f0f837c25ae2a72bd413a8902201cf65a9f2e9a8249c6253961",
+      "sha256": "a145cc538686c5f7de84aa93e81227bb0b4834dba78d90ac664f569ea0ad3d39",
       "stem": "pet"
     },
     {
@@ -1102,7 +1102,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 66,
-      "sha256": "02cfe295faa17dca8d86d57b25cd5975c17b405ea7a7d0e53fe73b05b24c182a",
+      "sha256": "d7874f08253827d43f9894374d3dbaa0922de147e75b1a0867b927c9518efcd9",
       "stem": "postprocessingeditor"
     },
     {
@@ -1112,7 +1112,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 70,
-      "sha256": "4e2450b182d37ae21914b31d36df77916b096594e4461d20365b8e674f366f96",
+      "sha256": "2e122e4eccc266998ecb9d4f3bf1a813ccb8f65ac43b577581d72cedcbf41c21",
       "stem": "sfm"
     },
     {
@@ -1122,7 +1122,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "e0452e8935a53ca4bd1c80e975bf1d643c25feaeb88656d0a532fd01ce571d4e",
+      "sha256": "288287c50a6b5dee60da07b75fa50a36d69b2f7b6a63a9b2bfc7c722a2306251",
       "stem": "subrecteditor"
     },
     {
@@ -1132,7 +1132,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 70,
-      "sha256": "dd3215f5d6d6c1883affd990b4159544d44e7f29b24ed5f7a343d74b8a6bdc2d",
+      "sha256": "634fb605731db2d2a0026715ab906c7dd6724bb22771064fed9e68d60243408f",
       "stem": "toolscenenodes"
     },
     {
@@ -1202,7 +1202,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "071fba925e05c144e061451bda8c3e7206ebfb7de965bad95a71f06e25acd84e",
+      "sha256": "52f4150606da52c0eb11cbdbd951afef8e5eafd77b29f0dac46c7db460d6d372",
       "stem": "v8system"
     },
     {
@@ -1212,7 +1212,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "d34779f83093721dbe4ff72bd1cad34f75446bfb4aff010be9df3d2ea8eef2ac",
+      "sha256": "2587d836b328375c27037ba817ee54d05810768d5d04251a4835cf69cb6509a2",
       "stem": "valve_avi"
     },
     {
@@ -1222,7 +1222,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "cf7dd19eff46eff80b6fa5b4e7179fd21d6745c0617f57d7c15a0c9b0b99e820",
+      "sha256": "b68f7ad40d5ff371aea0dfb39408bcacb04baeed4caeae6d277d1f81e3d79e12",
       "stem": "valve_webm"
     },
     {
@@ -1232,7 +1232,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "6bbbf5a4ed4b3bc73faac11ad4e4ba90e3bb476ee40f8baa83a4be7103d4d65d",
+      "sha256": "90357b160d7c3b242b72b2e944bb114c86cc0a88d406f8585a331d03a3d4236b",
       "stem": "valve_wmf"
     },
     {
@@ -1242,7 +1242,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "a7a35444f1431deed68af8aa4ba832dc86a93ae8b024f0d6741f54f4a89b7a79",
+      "sha256": "2f551bdec2a0332ae750c0cad953f932f16493645d08963eb5761d23addafe45",
       "stem": "vconcomm"
     },
     {
@@ -1252,7 +1252,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "01c9d4805ba084c59b706a0e331d6f45a9555b41bc1770ba34055261b7e503e9",
+      "sha256": "d6e56883a62c37b4f0145b14d34c646081dad9c76576df34e1e761c8451be1f9",
       "stem": "vfx_dx11"
     },
     {
@@ -1272,7 +1272,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "a6127a3120d73ea205ba2b87eebfbc30eac5bedac46078433565557a809cf0d5",
+      "sha256": "eeaef8dacdcd902b6d53f08649374a03acd17f777c464771d9342d2fbea599bb",
       "stem": "visbuilder"
     },
     {
@@ -1284,7 +1284,7 @@
       ],
       "schema_module": "vphysics2",
       "schema_registration_count": 0,
-      "sha256": "07ed1ef6060de6a4a0c71702e10cb69d8d0b7384c860c04b029a32ab90acfcad",
+      "sha256": "a294b2ed167173e0e78fdb3e35498128bfeac923e14c4177fc3b3d2c6fd33aa8",
       "stem": "vphysics2"
     },
     {
@@ -1294,7 +1294,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "6dabd4c3d1aa77380630802d2b7eb2528d69b849483274b759c605e14ae374bd",
+      "sha256": "272e7de57dd87400937f97fc22b73fd511e17f30ff043905a578a25193a595a7",
       "stem": "vrad3"
     },
     {
@@ -1304,7 +1304,7 @@
       "resolved_interfaces": [],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "61f4d87d69bd4a06c0597c7db0da99292a7f6ead445522af4a70edff631674e7",
+      "sha256": "14c72b76fea545252b4100ae267a3c51cea0f0d6058b0afcdadb93e3d7a1fd2c",
       "stem": "vscript"
     },
     {
@@ -1316,7 +1316,7 @@
       ],
       "schema_module": "worldrenderer",
       "schema_registration_count": 4,
-      "sha256": "d46a7f36bbcb90ff559aa3b1e9c5029106d9408e64c49c55893551b2b4d451ff",
+      "sha256": "92659ab5b4f9656d3d69599acf96b128c6e576e3f858fc1b380276785e3b6478",
       "stem": "worldrenderer"
     },
     {
@@ -1331,7 +1331,7 @@
       ],
       "schema_module": "client",
       "schema_registration_count": 516,
-      "sha256": "d618bbf8e6afb36baa09b3a282035996a88300458c55d2aa5cb81f0495c0ec54",
+      "sha256": "57ee728e15c50881070d847d7516d632d70456e0648d486a53f2528ec53f6ee0",
       "stem": "client"
     },
     {
@@ -1344,7 +1344,7 @@
       ],
       "schema_module": "host",
       "schema_registration_count": 0,
-      "sha256": "216f086eb3fead58df28f5d3462a510e875f74816d56c59a40f76e8659a61a55",
+      "sha256": "38d7e26029ce5ab6efd473b16aa55833751895c164727b2b779825f1c0a27061",
       "stem": "host"
     },
     {
@@ -1356,19 +1356,19 @@
       ],
       "schema_module": null,
       "schema_registration_count": 0,
-      "sha256": "35ddc4cc51d13f46eaf3d8dbd3a2ae7c3a6b02336d4edace75a99fb14af279b5",
+      "sha256": "ef3796f725ba9a299c742d6c1650590331454f245e2bee9b55656e710cbb1551",
       "stem": "matchmaking"
     },
     {
       "export_count": 6,
-      "file_size": "17946264",
+      "file_size": "17946776",
       "path": "game/csgo/bin/win64/modtools.dll",
       "resolved_interfaces": [
         "Source2ModTools001"
       ],
       "schema_module": "modtools",
       "schema_registration_count": 0,
-      "sha256": "5baf63445d7f072721e97d020dc8a37f0cb8501700539bb2ce1238d05d7fef2b",
+      "sha256": "c3dfe5eaf3478437c428f89aefe91c3310756023b9ba7a155c41d0897c646c05",
       "stem": "modtools"
     },
     {
@@ -1383,7 +1383,7 @@
       ],
       "schema_module": "server",
       "schema_registration_count": 766,
-      "sha256": "84a06ec3a3ef2ff9fe668aa7a77d0d6c0156e0b3bccdae22f628a9919ad082b6",
+      "sha256": "7e88b23196b0a746d99c7c622f947b96c25de61cc4d921d8dda79e515c4b48a8",
       "stem": "server"
     },
     {

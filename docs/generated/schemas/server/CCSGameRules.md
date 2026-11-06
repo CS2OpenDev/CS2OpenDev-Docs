@@ -8,7 +8,7 @@ kind: class
 
 # CCSGameRules
 
-> Source: **Build 26334290** · 2026-10-30 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26393695** · 2026-11-03 · `windows-x86_64` · schema `0.13.0`
 
 Singleton entity that holds all CS2 match-level state: phase, round timer, team time-outs, map layout flags, match stats, and end-of-round information. Accessible via the CCSGameRulesProxy entity on the client.
 
@@ -34,7 +34,7 @@ classDiagram
 
 ## Memory layout
 
-198 fields (190 declared here, 8 inherited). Offsets are absolute from the object base.
+199 fields (191 declared here, 8 inherited). Offsets are absolute from the object base.
 
 | Offset | Field | Type | From | Annotations |
 |--------|-------|------|------|-------------|
@@ -147,10 +147,11 @@ classDiagram
 | `0xe04` | `m_numSpectatorsCountMax` | uint32 |  |  |
 | `0xe08` | `m_numSpectatorsCountMaxTV` | uint32 |  |  |
 | `0xe0c` | `m_numSpectatorsCountMaxLnk` | uint32 |  |  |
-| `0xe18` | `m_nCTsAliveAtFreezetimeEnd` | int32 |  |  |
-| `0xe1c` | `m_nTerroristsAliveAtFreezetimeEnd` | int32 |  |  |
-| `0xe20` | `m_bForceTeamChangeSilent` | bool |  |  |
-| `0xe21` | `m_bLoadingRoundBackupData` | bool |  |  |
+| `0xe18` | `m_bQueuedMatchmakingReportedRoundStatsPendingSend` | bool |  |  |
+| `0xe1c` | `m_nCTsAliveAtFreezetimeEnd` | int32 |  |  |
+| `0xe20` | `m_nTerroristsAliveAtFreezetimeEnd` | int32 |  |  |
+| `0xe24` | `m_bForceTeamChangeSilent` | bool |  |  |
+| `0xe25` | `m_bLoadingRoundBackupData` | bool |  |  |
 | `0xe58` | `m_nMatchInfoShowType` | int32 |  |  |
 | `0xe5c` | `m_flMatchInfoDecidedTime` | float32 |  |  |
 | `0xe78` | `mTeamDMLastWinningTeamNumber` | int32 |  |  |
