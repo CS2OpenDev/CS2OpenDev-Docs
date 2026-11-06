@@ -8,7 +8,7 @@ kind: class
 
 # CCSWeaponBase
 
-> Source: **Build 26393695** · 2026-11-03 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
 
 Extends CBasePlayerWeapon with CS2-specific mechanics: recoil accumulation, accuracy penalty, silencer state, burst-fire mode, and weapon inspect.
 

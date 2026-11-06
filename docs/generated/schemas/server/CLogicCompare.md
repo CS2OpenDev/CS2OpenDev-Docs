@@ -8,7 +8,7 @@ kind: class
 
 # CLogicCompare
 
-> Source: **Build 26393695** · 2026-11-03 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
 
 **Kind:** class · **Size:** 1328 bytes (`0x530`) · **Align:** 8 · **Module:** server
 

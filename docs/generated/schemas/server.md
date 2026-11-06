@@ -5,7 +5,7 @@ module: server
 
 # Module: server
 
-> Source: **Build 26393695** · 2026-11-03 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
 
 [📊 View UML Diagram](../diagrams/server.md)
 
@@ -166,7 +166,7 @@ module: server
 | [CCSPlayer_UseServices](server/CCSPlayer_UseServices.md) | class | 88 | 3 | [CPlayer_UseServices](server/CPlayer_UseServices.md) |
 | [CCSPlayer_WaterServices](server/CCSPlayer_WaterServices.md) | class | 128 | 6 | [CPlayer_WaterServices](server/CPlayer_WaterServices.md) |
 | [CCSPlayer_WeaponServices](server/CCSPlayer_WeaponServices.md) | class | 6328 | 13 | [CPlayer_WeaponServices](server/CPlayer_WeaponServices.md) |
-| [CCSPointScriptEntity](server/CCSPointScriptEntity.md) | class | 1640 | 0 | [CBaseEntity](server/CBaseEntity.md) |
+| [CCSPointScriptEntity](server/CCSPointScriptEntity.md) | class | 1648 | 0 | [CBaseEntity](server/CBaseEntity.md) |
 | [CCSRadarElement](server/CCSRadarElement.md) | class | 1232 | 3 | [CBaseEntity](server/CBaseEntity.md) |
 | [CCSSprite](server/CCSSprite.md) | class | 2240 | 0 | [CSprite](server/CSprite.md) |
 | [CCSTeam](server/CCSTeam.md) | class | 2080 | 14 | [CTeam](server/CTeam.md) |

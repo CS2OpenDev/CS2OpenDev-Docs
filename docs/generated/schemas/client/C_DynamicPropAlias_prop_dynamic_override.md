@@ -8,7 +8,7 @@ kind: class
 
 # C_DynamicPropAlias_prop_dynamic_override
 
-> Source: **Build 26393695** · 2026-11-03 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
 
 **Kind:** class · **Size:** 5296 bytes (`0x14b0`) · **Align:** 16 · **Module:** client
 

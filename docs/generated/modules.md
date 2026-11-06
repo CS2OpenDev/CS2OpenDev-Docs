@@ -4,7 +4,7 @@ title: Modules
 
 # Binary Modules
 
-> Source: **Build 26393695** · 2026-11-03 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
 
 140 binaries read for this build, each with its SHA-256, size, export / schema-registration counts, and the engine interface versions it resolved at load.
 
@@ -74,7 +74,7 @@ title: Modules
 | `game/bin/win64/pi_level_zero.dll` | 831616 | 332 | 0 |  |
 | `game/bin/win64/pi_win_proxy_loader.dll` | 95360 | 2 | 0 |  |
 | `game/bin/win64/propertyeditor.dll` | 1522840 | 6 | 0 |  |
-| `game/bin/win64/pulse_system.dll` | 2031768 | 6 | 102 | `IPulseSystem_001` |
+| `game/bin/win64/pulse_system.dll` | 2032792 | 6 | 102 | `IPulseSystem_001` |
 | `game/bin/win64/qt5_plugins/imageformats/qgif.dll` | 112640 | 2 | 0 |  |
 | `game/bin/win64/qt5_plugins/imageformats/qico.dll` | 110592 | 2 | 0 |  |
 | `game/bin/win64/qt5_plugins/imageformats/qjpeg.dll` | 550400 | 2 | 0 |  |
@@ -137,11 +137,11 @@ title: Modules
 | `game/bin/win64/vrad3.dll` | 3269272 | 6 | 0 |  |
 | `game/bin/win64/vscript.dll` | 1352856 | 183 | 0 |  |
 | `game/bin/win64/worldrenderer.dll` | 2029720 | 6 | 4 | `WorldRendererMgr001` |
-| `game/csgo/bin/win64/client.dll` | 39224472 | 6 | 516 | `Source2Client002`, `Source2ClientConfig001`, `Source2ClientPrediction001`, `Source2ClientUI001` |
+| `game/csgo/bin/win64/client.dll` | 39227544 | 6 | 516 | `Source2Client002`, `Source2ClientConfig001`, `Source2ClientPrediction001`, `Source2ClientUI001` |
 | `game/csgo/bin/win64/host.dll` | 1389208 | 6 | 0 | `GameSystem2HostHook`, `Source2Host001` |
 | `game/csgo/bin/win64/matchmaking.dll` | 1890968 | 6 | 0 | `MATCHFRAMEWORK_001` |
 | `game/csgo/bin/win64/modtools.dll` | 17946776 | 6 | 0 | `Source2ModTools001` |
-| `game/csgo/bin/win64/server.dll` | 34690200 | 6 | 766 | `Source2GameClients001`, `Source2GameEntities001`, `Source2Server001`, `Source2ServerConfig001` |
+| `game/csgo/bin/win64/server.dll` | 34672792 | 6 | 766 | `Source2GameClients001`, `Source2GameEntities001`, `Source2Server001`, `Source2ServerConfig001` |
 | `game/csgo/import_scripts/bin/filesystem_stdio.dll` | 434176 | 1 | 0 | `VAsyncFileSystem2_001`, `VFileSystem017` |
 | `game/csgo/import_scripts/bin/materialsystem.dll` | 881664 | 1 | 0 |  |
 | `game/csgo/import_scripts/bin/shaderapiempty.dll` | 85504 | 1 | 0 |  |

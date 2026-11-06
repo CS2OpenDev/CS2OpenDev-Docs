@@ -4,14 +4,14 @@ title: Schema History
 
 # Schema History
 
-> Source: **Build 26393695** · 2026-11-03 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
 
 Field-precise, build-to-build evolution of the CS2 C++ entity schema, derived by diffing every committed `entity_schema.json` snapshot (SchemaTracker's cumulative `schema_evolution.json`, Layer A).  Unlike the coarse [Changelog](changelog.md) — which only reports *that* a class changed — this reports *which field* was added, removed, retyped, or moved.
 
 - **Platform:** `windows-x86_64` (the canonical render; windows is a strict **superset** in class coverage — historical Windows-only tool binaries such as `hammer.dll` / `sfm.dll` have no Linux counterparts — while shared classes differ in offsets/sizes per platform)
-- **Baseline build:** `10832117` · **Latest build:** `26393695`
+- **Baseline build:** `10832117` · **Latest build:** `26445667`
 - **Artifact schema version:** `0.13.0` (SchemaTracker's `schemas/schema_evolution.proto` family)
-- **Transitions:** 403 total, **155 with structural changes** (248 no-op builds)
+- **Transitions:** 404 total, **156 with structural changes** (248 no-op builds)
 - **Full per-field history:** the portable [`field_history.json`](downstream-codegen-schemas/field_history.json) carries first/last-seen and the type history for every `(class, field)` across all builds.  Its `[firstSeenBuild, lastSeenBuild]` interval is a presence **hull**, not continuous presence — a field can be absent for intermediate builds with no trace there; exact presence replays from the transitions below.
 
 To bring an instance captured under build *X* forward to build *Y*, apply each transition in `[X, Y)` in order.  Every op carries both endpoints, so the same chain replays backward.
@@ -35,6 +35,7 @@ Later artifact revisions add further facts: **0.7.0** covers class-attribute cha
 
 | Transition | Date | Classes +/−/~ | Enums +/−/~ | Field ops |
 |------------|------|---------------|-------------|-----------|
+| `26393695` → `26445667` | 2026-11-05 | 0 / 0 / 2 | 0 / 0 / 0 | 1 |
 | `26334290` → `26393695` | 2026-11-03 | 0 / 0 / 1 | 0 / 0 / 0 | 5 |
 | `26144732` → `26281801` | 2026-10-28 | 0 / 0 / 8 | 0 / 0 / 1 | 179 |
 | `25966348` → `26144732` | 2026-10-22 | 0 / 1 / 38 | 1 / 0 / 0 | 264 |
@@ -193,6 +194,17 @@ Later artifact revisions add further facts: **0.7.0** covers class-attribute cha
 
 ## Most recent structural changes
 
+### `26393695` → `26445667`
+
+*Steam manifests created `2026-11-03T00:27:26Z` → `2026-11-05T00:10:12Z`*
+
+**Classes changed (2):**
+
+| Class | Field ops | Layout |
+|-------|-----------|--------|
+| `server.dll/CCSPointScriptEntity` | — | resize 1640→1648 |
+| `server.dll/CChicken` | ~offset×1 | — |
+
 ### `26334290` → `26393695`
 
 *Steam manifests created `2026-10-30T21:06:20Z` → `2026-11-03T00:27:26Z`*
@@ -219,52 +231,3 @@ Later artifact revisions add further facts: **0.7.0** covers class-attribute cha
 | `server.dll/CCSGameRules` | ＋field×1, ~offset×127 | resize 70728→70736 |
 | `server.dll/CCSPlayerPawn` | ＋field×1, −field×1, paired×1, cand×1 | — |
 | `server.dll/CCSWeaponBase` | ＋field×2, ~offset×1, −field×3, paired×2, cand×3 | — |
-
-### `25966348` → `26144732`
-
-*Steam manifests created `2026-10-15T17:24:20Z` → `2026-10-22T21:24:50Z`*
-
-**Classes removed (1):** `!GlobalTypes/InfoForResourceTypeCVMixListResource`
-
-**Classes changed (38):**
-
-| Class | Field ops | Layout |
-|-------|-----------|--------|
-| `!GlobalTypes/CGraphPreviewList` | ＋field×1, meta×1 | resize 40→48 |
-| `!GlobalTypes/CMixPanner` | meta×1 | — |
-| `!GlobalTypes/CMixTrack` | ＋field×1, ~meta×1, meta×1 | — |
-| `!GlobalTypes/CSubmix` | meta×1 | — |
-| `!GlobalTypes/CVMixSubmix` | ＋field×1, meta×1 | — |
-| `!GlobalTypes/CVMixToolGraphEntry` | ~offset×1, meta×1 | resize 152→160 |
-| `!GlobalTypes/CVoiceContainerAmpedDecayingSineWave` | ~offset×1, meta×1 | resize 128→136 |
-| `!GlobalTypes/CVoiceContainerAsyncGenerator` | — | resize 128→136 |
-| `!GlobalTypes/CVoiceContainerBase` | ＋field×2, ~offset×2 | resize 112→120 |
-| `!GlobalTypes/CVoiceContainerBlender` | ~offset×3, meta×1 | resize 184→192 |
-| `!GlobalTypes/CVoiceContainerDecayingSineWave` | ~offset×2, meta×1 | resize 120→128 |
-| `!GlobalTypes/CVoiceContainerDefault` | meta×1 | resize 112→120 |
-| `!GlobalTypes/CVoiceContainerEnum` | ~offset×3, meta×1 | resize 176→184 |
-| `!GlobalTypes/CVoiceContainerGenerator` | — | resize 112→120 |
-| `!GlobalTypes/CVoiceContainerGranulator` | ~offset×8, meta×1 | resize 368→376 |
-| `!GlobalTypes/CVoiceContainerLoopTrigger` | ~offset×5, meta×1 | resize 160→168 |
-| `!GlobalTypes/CVoiceContainerLoopTriggerWithRandomPanner` | ~offset×1, meta×1 | resize 192→200 |
-| `!GlobalTypes/CVoiceContainerLoopXFade` | ~offset×8, meta×1 | resize 168→176 |
-| `!GlobalTypes/CVoiceContainerMultiBlender` | ~offset×3, meta×1 | resize 176→184 |
-| `!GlobalTypes/CVoiceContainerNull` | meta×1 | resize 112→120 |
-| `!GlobalTypes/CVoiceContainerParameterBlender` | ~offset×8, meta×1 | resize 448→456 |
-| `!GlobalTypes/CVoiceContainerRandomSampler` | ~offset×6, meta×1 | resize 424→432 |
-| `!GlobalTypes/CVoiceContainerRealtimeFMSineWave` | ~offset×3, meta×1 | resize 128→136 |
-| `!GlobalTypes/CVoiceContainerSelector` | ~offset×3, meta×1 | resize 232→240 |
-| `!GlobalTypes/CVoiceContainerSet` | ~offset×1, meta×1 | resize 160→168 |
-| `!GlobalTypes/CVoiceContainerShapedNoise` | ~offset×9, meta×1 | resize 328→336 |
-| `!GlobalTypes/CVoiceContainerStaticAdditiveSynth` | ~offset×1, meta×1 | resize 176→184 |
-| `!GlobalTypes/CVoiceContainerSwitch` | ~offset×1, meta×1 | resize 136→144 |
-| `!GlobalTypes/CVoiceContainerTapePlayer` | ~offset×4, meta×1 | resize 208→216 |
-| `!GlobalTypes/CVoiceContainerVMixSnd` | ＋field×1, meta×1 | resize 384→400 |
-| `!GlobalTypes/CVoiceContainerVsndRadioButton` | ~offset×17, meta×1 | resize 2296→2304 |
-| `!GlobalTypes/CVoiceContainerVsndTrigger` | ~offset×17, meta×1 | resize 2296→2304 |
-| `!GlobalTypes/dynpitchvol_base_t` | meta×1 | — |
-| `!GlobalTypes/dynpitchvol_t` | meta×1 | — |
-| `client.dll/C_CSPlayerPawn` | ~offset×45 | — |
-| `server.dll/CCSPlayerPawn` | ~offset×95 | resize 5568→5584 |
-| `server.dll/CCSPointScriptEntity` | — | resize 1576→1640 |
-| `server.dll/CHostage` | ＋field×1, ~offset×9 | — |

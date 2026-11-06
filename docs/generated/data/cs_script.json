@@ -1,5 +1,5 @@
 {
-  "build_id": "26393695",
+  "build_id": "26445667",
   "enums": [
     {
       "deprecated": false,
@@ -2099,6 +2099,11 @@
       "doc": "",
       "name": "GameRules",
       "type": "IGameRules"
+    },
+    {
+      "doc": "",
+      "name": "Entities",
+      "type": "IEntities"
     }
   ],
   "file_doc": "This file, `point_script.d.ts`, documents the JavaScript API for cs_script scripts attached to point_script entities.\nThis file is a TypeScript Declaration file. https://www.typescriptlang.org/docs/handbook/2/type-declarations.html#dts-files\nThis file can be used by various editors to provide tooling while editing JavaScript. https://www.typescriptlang.org/docs/handbook/intro-to-js-ts.html\nNext to this file is a `tsconfig.json` file configured for editing JavaScript targetting the current version used by CS2.\nPlace copies of these two files, `point_script.d.ts` and `tsconfig.json`, next to your scripts and some editors will begin providing tooling without further configuration.\nThese two files will be maintained as the cs_script API changes or the JavaScript version in CS2 is updated.\nPlease send feedback to CSGOTeamFeedback@valvesoftware.com with \"cs_script Feedback\" in the subject line.",
@@ -2212,6 +2217,19 @@
       "name": "OnPlayerReset",
       "notes": "Also fires on a team change and on a round-restart respawn.",
       "signature": "OnPlayerReset(callback: (event: { player: CSPlayerPawn }) => void): void",
+      "verified": false
+    },
+    {
+      "deprecated": false,
+      "deprecation_note": "",
+      "doc": "Called when a player takes or releases control of a bot.",
+      "events": [],
+      "experimental": false,
+      "experimental_note": "",
+      "mapped": false,
+      "name": "OnBotControl",
+      "notes": "",
+      "signature": "OnBotControl(callback: (event: { controller: CSPlayerController }) => void): void",
       "verified": false
     },
     {
@@ -2821,7 +2839,7 @@
   "module": "cs_script/point_script",
   "module_doc": "`\"cs_script/point_script\"` is the module provided to scripts loaded for point_script entities.\n\n# Setup:\n- Create a JavaScript file (.js) that imports this module.\n     - See `hello.js` for an example.\n- Create a point_script entity in your map and set its cs_script field to reference your JavaScript file as a vjs asset.\n     - See example addon cs_script_demo. There is a point_script entity in the cs_script_demo.vmap named \"hello_cs_script\" that runs `hello.js`. There are a handful of other examples as well.\n\n# Execution:\n- The compiled version of your script (.vjs_c) will be loaded during map load.\n- When the point_script entity is spawned it will execute all code at the top level scope of your script.\n- Register callbacks on `Instance` to setup code that executes at various times throughout the lifetime of the map.\n     - A function passed to `Instance.OnActivate` will be invoked when the point_script entity is activated.\n     - A function passed to `Instance.OnPlayerJump` will be invoked when any player in the map jumps.\n\n# Tips:\n- Entity variables are stable. Two variables referring to the same entity will be reference equals (===).\n- Extra values attached to an entity variable will still be there if the variable is fetched again.\n- A map can have multiple point_script entities. Each script will run with its own Instance, set of globals, and set of entity variables.\n\n# Tools Mode:\n- In tools mode, saving changes to your script will recompile your file, clear all registered callbacks, and re-run the top level scope of your script.\n- Global variables and instances of entity variables will persist across reloads.\n     - Beware. This is an avenue for holding references to code from previous iterations of your script. This is only a concern in tools mode.\n- See `Instance.OnScriptReload` for a tool to handle edge cases around reloading.",
   "source_path": "content/csgo_addons/cs_script_demo/maps/scripts/point_script.d.ts",
-  "source_sha256": "f8199913876ba1633ece831594b47874e9826f185076fbd17c980d888f713bd3",
+  "source_sha256": "20a4fcd50eac467a992d9b0f33e1ae53668b1d4001d9457f3428c756eed28835",
   "tsconfig_path": "content/csgo_addons/cs_script_demo/maps/scripts/tsconfig.json",
   "types": [
     {
@@ -4970,6 +4988,56 @@
           "experimental_note": "",
           "kind": "method",
           "modifiers": [],
+          "name": "IsControllingBot",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [],
+          "referenced_types": [],
+          "return_type": "boolean",
+          "returns_doc": "",
+          "see": [],
+          "signature": "IsControllingBot(): boolean",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "GetControlledBotPawn",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [],
+          "referenced_types": [
+            "CSPlayerPawn"
+          ],
+          "return_type": "CSPlayerPawn | undefined",
+          "returns_doc": "",
+          "see": [],
+          "signature": "GetControlledBotPawn(): CSPlayerPawn | undefined",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
           "name": "GetScore",
           "optional": false,
           "overload_index": 0,
@@ -5348,6 +5416,30 @@
           "returns_doc": "",
           "see": [],
           "signature": "GetOriginalPlayerController(): CSPlayerController",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "Reset the player to full health and ammo. If dead they will be alive with the default weapon loadout. Cancels any bot takeover.",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "Reset",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [],
+          "referenced_types": [],
+          "return_type": "void",
+          "returns_doc": "",
+          "see": [],
+          "signature": "Reset(): void",
           "type": "",
           "type_params": []
         },
@@ -8850,6 +8942,40 @@
         {
           "convars": [],
           "default_value": "",
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "Fire the input on this entity.",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "FireInput",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [
+            {
+              "name": "config",
+              "optional": false,
+              "rest": false,
+              "type": "{ input: string, value?: InputValue, caller?: Entity, activator?: Entity, delay?: number }"
+            }
+          ],
+          "referenced_types": [
+            "Entity",
+            "InputValue"
+          ],
+          "return_type": "void",
+          "returns_doc": "",
+          "see": [],
+          "signature": "FireInput(config: { input: string, value?: InputValue, caller?: Entity, activator?: Entity, delay?: number }): void",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
           "deprecated": true,
           "deprecation_note": "This overload will be removed in a future update",
           "doc": "",
@@ -9114,6 +9240,31 @@
       "schema": null,
       "subclasses": [],
       "type": "",
+      "type_params": []
+    },
+    {
+      "classnames": [],
+      "convars": [],
+      "deprecated": false,
+      "deprecation_note": "",
+      "doc": "",
+      "examples": [],
+      "experimental": false,
+      "experimental_note": "",
+      "exported": false,
+      "extends": [],
+      "implements": [],
+      "kind": "type_alias",
+      "members": [],
+      "name": "EntityKeyValue",
+      "referenced_types": [
+        "QAngle",
+        "Vector"
+      ],
+      "runtime_classnames": [],
+      "schema": null,
+      "subclasses": [],
+      "type": "boolean | number | string | Vector | QAngle",
       "type_params": []
     },
     {
@@ -9647,6 +9798,230 @@
         }
       ],
       "name": "IConsole",
+      "referenced_types": [],
+      "runtime_classnames": [],
+      "schema": null,
+      "subclasses": [],
+      "type": "",
+      "type_params": []
+    },
+    {
+      "classnames": [],
+      "convars": [],
+      "deprecated": false,
+      "deprecation_note": "",
+      "doc": "An API provided to scripts for general entity interaction.\nAccess these functions by importing Entities from \"cs_script/point_script\".",
+      "examples": [],
+      "experimental": false,
+      "experimental_note": "",
+      "exported": false,
+      "extends": [],
+      "implements": [],
+      "kind": "interface",
+      "members": [
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "Spawns a set of entities.",
+          "examples": [],
+          "experimental": true,
+          "experimental_note": "This feature is experimental and may experience breaking changes.\nPlease send feedback to CSGOTeamFeedback@valvesoftware.com with \"cs_script Feedback\" in the subject line.",
+          "kind": "method",
+          "modifiers": [],
+          "name": "Spawn",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [
+            {
+              "name": "entities",
+              "optional": false,
+              "rest": false,
+              "type": "({ classname: string, origin?: Vector, angles?: QAngle } & { [key: string]: EntityKeyValue })[]"
+            }
+          ],
+          "referenced_types": [
+            "Entity",
+            "EntityKeyValue",
+            "QAngle",
+            "Vector"
+          ],
+          "return_type": "Entity[]",
+          "returns_doc": "",
+          "see": [],
+          "signature": "Spawn(entities: ({ classname: string, origin?: Vector, angles?: QAngle } & { [key: string]: EntityKeyValue })[]): Entity[]",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "Find all entities with the specified name.",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "FindByName",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [
+            {
+              "name": "name",
+              "optional": false,
+              "rest": false,
+              "type": "string"
+            }
+          ],
+          "referenced_types": [
+            "Entity"
+          ],
+          "return_type": "Entity[]",
+          "returns_doc": "",
+          "see": [],
+          "signature": "FindByName(name: string): Entity[]",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "Find all entities of the specified class name.",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "FindByClass",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [
+            {
+              "name": "className",
+              "optional": false,
+              "rest": false,
+              "type": "string"
+            }
+          ],
+          "referenced_types": [
+            "Entity"
+          ],
+          "return_type": "Entity[]",
+          "returns_doc": "",
+          "see": [],
+          "signature": "FindByClass(className: string): Entity[]",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "Fire the input on all entities with the specified name.",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "FireInput",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [
+            {
+              "name": "config",
+              "optional": false,
+              "rest": false,
+              "type": "{ name: string, input: string, value?: InputValue, caller?: Entity, activator?: Entity, delay?: number }"
+            }
+          ],
+          "referenced_types": [
+            "Entity",
+            "InputValue"
+          ],
+          "return_type": "void",
+          "returns_doc": "",
+          "see": [],
+          "signature": "FireInput(config: { name: string, input: string, value?: InputValue, caller?: Entity, activator?: Entity, delay?: number }): void",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "Connect the output of an entity to a callback. The return value is a connection id that can be used in `DisconnectOutput`",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "ConnectOutput",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [
+            {
+              "name": "config",
+              "optional": false,
+              "rest": false,
+              "type": "{ target: Entity, output: string, callback: (inputData: { value?: InputValue, caller?: Entity, activator?: Entity }) => any }"
+            }
+          ],
+          "referenced_types": [
+            "Entity",
+            "InputValue"
+          ],
+          "return_type": "number | undefined",
+          "returns_doc": "",
+          "see": [],
+          "signature": "ConnectOutput(config: { target: Entity, output: string, callback: (inputData: { value?: InputValue, caller?: Entity, activator?: Entity }) => any }): number | undefined",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "Disconnect an output connection made by `ConnectOutput`.",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "DisconnectOutput",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [
+            {
+              "name": "connectionId",
+              "optional": false,
+              "rest": false,
+              "type": "number"
+            }
+          ],
+          "referenced_types": [],
+          "return_type": "void",
+          "returns_doc": "",
+          "see": [],
+          "signature": "DisconnectOutput(connectionId: number): void",
+          "type": "",
+          "type_params": []
+        }
+      ],
+      "name": "IEntities",
       "referenced_types": [],
       "runtime_classnames": [],
       "schema": null,
@@ -10586,6 +10961,39 @@
           "returns_doc": "",
           "see": [],
           "signature": "OnPlayerReset(callback: (event: { player: CSPlayerPawn }) => void): void",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": false,
+          "deprecation_note": "",
+          "doc": "Called when a player takes or releases control of a bot.",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "OnBotControl",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [
+            {
+              "name": "callback",
+              "optional": false,
+              "rest": false,
+              "type": "(event: { controller: CSPlayerController }) => void"
+            }
+          ],
+          "referenced_types": [
+            "CSPlayerController"
+          ],
+          "return_type": "void",
+          "returns_doc": "",
+          "see": [],
+          "signature": "OnBotControl(callback: (event: { controller: CSPlayerController }) => void): void",
           "type": "",
           "type_params": []
         },
@@ -11694,293 +12102,6 @@
           "default_value": "",
           "deprecated": false,
           "deprecation_note": "",
-          "doc": "Fire the input on all targets matching the specified names.",
-          "examples": [],
-          "experimental": false,
-          "experimental_note": "",
-          "kind": "method",
-          "modifiers": [],
-          "name": "EntFireAtName",
-          "optional": false,
-          "overload_index": 0,
-          "param_docs": {},
-          "params": [
-            {
-              "name": "config",
-              "optional": false,
-              "rest": false,
-              "type": "{ name: string, input: string, value?: InputValue, caller?: Entity, activator?: Entity, delay?: number }"
-            }
-          ],
-          "referenced_types": [
-            "Entity",
-            "InputValue"
-          ],
-          "return_type": "void",
-          "returns_doc": "",
-          "see": [
-            "entities"
-          ],
-          "signature": "EntFireAtName(config: { name: string, input: string, value?: InputValue, caller?: Entity, activator?: Entity, delay?: number }): void",
-          "type": "",
-          "type_params": []
-        },
-        {
-          "convars": [],
-          "default_value": "",
-          "deprecated": false,
-          "deprecation_note": "",
-          "doc": "Fire the input on the specified target.",
-          "examples": [],
-          "experimental": false,
-          "experimental_note": "",
-          "kind": "method",
-          "modifiers": [],
-          "name": "EntFireAtTarget",
-          "optional": false,
-          "overload_index": 0,
-          "param_docs": {},
-          "params": [
-            {
-              "name": "config",
-              "optional": false,
-              "rest": false,
-              "type": "{ target: Entity, input: string, value?: InputValue, caller?: Entity, activator?: Entity, delay?: number }"
-            }
-          ],
-          "referenced_types": [
-            "Entity",
-            "InputValue"
-          ],
-          "return_type": "void",
-          "returns_doc": "",
-          "see": [
-            "entities"
-          ],
-          "signature": "EntFireAtTarget(config: { target: Entity, input: string, value?: InputValue, caller?: Entity, activator?: Entity, delay?: number }): void",
-          "type": "",
-          "type_params": []
-        },
-        {
-          "convars": [],
-          "default_value": "",
-          "deprecated": false,
-          "deprecation_note": "",
-          "doc": "Connect the output of an entity to a callback. The return value is a connection id that can be used in `DisconnectOutput`",
-          "examples": [],
-          "experimental": false,
-          "experimental_note": "",
-          "kind": "method",
-          "modifiers": [],
-          "name": "ConnectOutput",
-          "optional": false,
-          "overload_index": 0,
-          "param_docs": {},
-          "params": [
-            {
-              "name": "target",
-              "optional": false,
-              "rest": false,
-              "type": "Entity"
-            },
-            {
-              "name": "output",
-              "optional": false,
-              "rest": false,
-              "type": "string"
-            },
-            {
-              "name": "callback",
-              "optional": false,
-              "rest": false,
-              "type": "(inputData: { value?: InputValue, caller?: Entity, activator?: Entity }) => any"
-            }
-          ],
-          "referenced_types": [
-            "Entity",
-            "InputValue"
-          ],
-          "return_type": "number | undefined",
-          "returns_doc": "",
-          "see": [
-            "entities"
-          ],
-          "signature": "ConnectOutput(target: Entity, output: string, callback: (inputData: { value?: InputValue, caller?: Entity, activator?: Entity }) => any): number | undefined",
-          "type": "",
-          "type_params": []
-        },
-        {
-          "convars": [],
-          "default_value": "",
-          "deprecated": false,
-          "deprecation_note": "",
-          "doc": "Find entities by name.",
-          "examples": [],
-          "experimental": false,
-          "experimental_note": "",
-          "kind": "method",
-          "modifiers": [],
-          "name": "DisconnectOutput",
-          "optional": false,
-          "overload_index": 0,
-          "param_docs": {},
-          "params": [
-            {
-              "name": "connectionId",
-              "optional": false,
-              "rest": false,
-              "type": "number"
-            }
-          ],
-          "referenced_types": [],
-          "return_type": "void",
-          "returns_doc": "",
-          "see": [],
-          "signature": "DisconnectOutput(connectionId: number): void",
-          "type": "",
-          "type_params": []
-        },
-        {
-          "convars": [],
-          "default_value": "",
-          "deprecated": false,
-          "deprecation_note": "",
-          "doc": "Find the first entity matching the specified name.",
-          "examples": [],
-          "experimental": false,
-          "experimental_note": "",
-          "kind": "method",
-          "modifiers": [],
-          "name": "FindEntityByName",
-          "optional": false,
-          "overload_index": 0,
-          "param_docs": {},
-          "params": [
-            {
-              "name": "name",
-              "optional": false,
-              "rest": false,
-              "type": "string"
-            }
-          ],
-          "referenced_types": [
-            "Entity"
-          ],
-          "return_type": "Entity | undefined",
-          "returns_doc": "",
-          "see": [],
-          "signature": "FindEntityByName(name: string): Entity | undefined",
-          "type": "",
-          "type_params": []
-        },
-        {
-          "convars": [],
-          "default_value": "",
-          "deprecated": false,
-          "deprecation_note": "",
-          "doc": "Find entities matching the specified name.",
-          "examples": [],
-          "experimental": false,
-          "experimental_note": "",
-          "kind": "method",
-          "modifiers": [],
-          "name": "FindEntitiesByName",
-          "optional": false,
-          "overload_index": 0,
-          "param_docs": {},
-          "params": [
-            {
-              "name": "name",
-              "optional": false,
-              "rest": false,
-              "type": "string"
-            }
-          ],
-          "referenced_types": [
-            "Entity"
-          ],
-          "return_type": "Entity[]",
-          "returns_doc": "",
-          "see": [],
-          "signature": "FindEntitiesByName(name: string): Entity[]",
-          "type": "",
-          "type_params": []
-        },
-        {
-          "convars": [],
-          "default_value": "",
-          "deprecated": false,
-          "deprecation_note": "",
-          "doc": "Find the first entity of the specified class name.",
-          "examples": [],
-          "experimental": false,
-          "experimental_note": "",
-          "kind": "method",
-          "modifiers": [],
-          "name": "FindEntityByClass",
-          "optional": false,
-          "overload_index": 0,
-          "param_docs": {},
-          "params": [
-            {
-              "name": "className",
-              "optional": false,
-              "rest": false,
-              "type": "string"
-            }
-          ],
-          "referenced_types": [
-            "Entity"
-          ],
-          "return_type": "Entity | undefined",
-          "returns_doc": "",
-          "see": [
-            "entities"
-          ],
-          "signature": "FindEntityByClass(className: string): Entity | undefined",
-          "type": "",
-          "type_params": []
-        },
-        {
-          "convars": [],
-          "default_value": "",
-          "deprecated": false,
-          "deprecation_note": "",
-          "doc": "Find entities of the specified class name.",
-          "examples": [],
-          "experimental": false,
-          "experimental_note": "",
-          "kind": "method",
-          "modifiers": [],
-          "name": "FindEntitiesByClass",
-          "optional": false,
-          "overload_index": 0,
-          "param_docs": {},
-          "params": [
-            {
-              "name": "className",
-              "optional": false,
-              "rest": false,
-              "type": "string"
-            }
-          ],
-          "referenced_types": [
-            "Entity"
-          ],
-          "return_type": "Entity[]",
-          "returns_doc": "",
-          "see": [
-            "entities"
-          ],
-          "signature": "FindEntitiesByClass(className: string): Entity[]",
-          "type": "",
-          "type_params": []
-        },
-        {
-          "convars": [],
-          "default_value": "",
-          "deprecated": false,
-          "deprecation_note": "",
           "doc": "Get the player controller in the given slot.",
           "examples": [],
           "experimental": false,
@@ -12369,7 +12490,7 @@
           "default_value": "",
           "deprecated": false,
           "deprecation_note": "",
-          "doc": "Loads resources on the server and clients to avoid hitches when later referenced.\nSupports .vmdl, .vpcf, .vmat, and .vsnd resources.",
+          "doc": "Loads resources on the server and clients to avoid hitches when later referenced.\n`resources` supports .vmdl, .vpcf, .vmat, and .vsnd resources.\n`entities` takes entity class names or subclass names.",
           "examples": [],
           "experimental": true,
           "experimental_note": "This feature is experimental and may experience breaking changes.\nPlease send feedback to CSGOTeamFeedback@valvesoftware.com with \"cs_script Feedback\" in the subject line.",
@@ -12384,7 +12505,7 @@
               "name": "config",
               "optional": false,
               "rest": false,
-              "type": "{ resources: string[] }"
+              "type": "{ resources?: string[], entities?: string[] }"
             }
           ],
           "referenced_types": [
@@ -12393,7 +12514,7 @@
           "return_type": "CSPrecache | undefined",
           "returns_doc": "",
           "see": [],
-          "signature": "Precache(config: { resources: string[] }): CSPrecache | undefined",
+          "signature": "Precache(config: { resources?: string[], entities?: string[] }): CSPrecache | undefined",
           "type": "",
           "type_params": []
         },
@@ -12707,7 +12828,43 @@
           "convars": [],
           "default_value": "",
           "deprecated": true,
-          "deprecation_note": "This overload will be removed in a future update",
+          "deprecation_note": "This method will be removed in a future update",
+          "doc": "",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "EntFireAtName",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [
+            {
+              "name": "config",
+              "optional": false,
+              "rest": false,
+              "type": "{ name: string, input: string, value?: InputValue, caller?: Entity, activator?: Entity, delay?: number }"
+            }
+          ],
+          "referenced_types": [
+            "Entity",
+            "InputValue"
+          ],
+          "return_type": "void",
+          "returns_doc": "",
+          "see": [
+            "entities"
+          ],
+          "signature": "EntFireAtName(config: { name: string, input: string, value?: InputValue, caller?: Entity, activator?: Entity, delay?: number }): void",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": true,
+          "deprecation_note": "This method will be removed in a future update",
           "doc": "",
           "examples": [],
           "experimental": false,
@@ -12761,7 +12918,43 @@
           "convars": [],
           "default_value": "",
           "deprecated": true,
-          "deprecation_note": "This overload will be removed in a future update",
+          "deprecation_note": "This method will be removed in a future update",
+          "doc": "",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "EntFireAtTarget",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [
+            {
+              "name": "config",
+              "optional": false,
+              "rest": false,
+              "type": "{ target: Entity, input: string, value?: InputValue, caller?: Entity, activator?: Entity, delay?: number }"
+            }
+          ],
+          "referenced_types": [
+            "Entity",
+            "InputValue"
+          ],
+          "return_type": "void",
+          "returns_doc": "",
+          "see": [
+            "entities"
+          ],
+          "signature": "EntFireAtTarget(config: { target: Entity, input: string, value?: InputValue, caller?: Entity, activator?: Entity, delay?: number }): void",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": true,
+          "deprecation_note": "This method will be removed in a future update",
           "doc": "",
           "examples": [],
           "experimental": false,
@@ -13145,6 +13338,221 @@
           "returns_doc": "",
           "see": [],
           "signature": "AddTeamMoney(team: number, reason: CSTeamMoneyReason, amount?: number): void",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": true,
+          "deprecation_note": "This method will be removed in a future update",
+          "doc": "",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "FindEntityByName",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [
+            {
+              "name": "name",
+              "optional": false,
+              "rest": false,
+              "type": "string"
+            }
+          ],
+          "referenced_types": [
+            "Entity"
+          ],
+          "return_type": "Entity | undefined",
+          "returns_doc": "",
+          "see": [],
+          "signature": "FindEntityByName(name: string): Entity | undefined",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": true,
+          "deprecation_note": "This method will be removed in a future update",
+          "doc": "",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "FindEntitiesByName",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [
+            {
+              "name": "name",
+              "optional": false,
+              "rest": false,
+              "type": "string"
+            }
+          ],
+          "referenced_types": [
+            "Entity"
+          ],
+          "return_type": "Entity[]",
+          "returns_doc": "",
+          "see": [],
+          "signature": "FindEntitiesByName(name: string): Entity[]",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": true,
+          "deprecation_note": "This method will be removed in a future update",
+          "doc": "",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "FindEntityByClass",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [
+            {
+              "name": "className",
+              "optional": false,
+              "rest": false,
+              "type": "string"
+            }
+          ],
+          "referenced_types": [
+            "Entity"
+          ],
+          "return_type": "Entity | undefined",
+          "returns_doc": "",
+          "see": [
+            "entities"
+          ],
+          "signature": "FindEntityByClass(className: string): Entity | undefined",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": true,
+          "deprecation_note": "This method will be removed in a future update",
+          "doc": "",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "FindEntitiesByClass",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [
+            {
+              "name": "className",
+              "optional": false,
+              "rest": false,
+              "type": "string"
+            }
+          ],
+          "referenced_types": [
+            "Entity"
+          ],
+          "return_type": "Entity[]",
+          "returns_doc": "",
+          "see": [
+            "entities"
+          ],
+          "signature": "FindEntitiesByClass(className: string): Entity[]",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": true,
+          "deprecation_note": "This method will be removed in a future update",
+          "doc": "",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "ConnectOutput",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [
+            {
+              "name": "target",
+              "optional": false,
+              "rest": false,
+              "type": "Entity"
+            },
+            {
+              "name": "output",
+              "optional": false,
+              "rest": false,
+              "type": "string"
+            },
+            {
+              "name": "callback",
+              "optional": false,
+              "rest": false,
+              "type": "(inputData: { value?: InputValue, caller?: Entity, activator?: Entity }) => any"
+            }
+          ],
+          "referenced_types": [
+            "Entity",
+            "InputValue"
+          ],
+          "return_type": "number | undefined",
+          "returns_doc": "",
+          "see": [
+            "entities"
+          ],
+          "signature": "ConnectOutput(target: Entity, output: string, callback: (inputData: { value?: InputValue, caller?: Entity, activator?: Entity }) => any): number | undefined",
+          "type": "",
+          "type_params": []
+        },
+        {
+          "convars": [],
+          "default_value": "",
+          "deprecated": true,
+          "deprecation_note": "This method will be removed in a future update",
+          "doc": "",
+          "examples": [],
+          "experimental": false,
+          "experimental_note": "",
+          "kind": "method",
+          "modifiers": [],
+          "name": "DisconnectOutput",
+          "optional": false,
+          "overload_index": 0,
+          "param_docs": {},
+          "params": [
+            {
+              "name": "connectionId",
+              "optional": false,
+              "rest": false,
+              "type": "number"
+            }
+          ],
+          "referenced_types": [],
+          "return_type": "void",
+          "returns_doc": "",
+          "see": [],
+          "signature": "DisconnectOutput(connectionId: number): void",
           "type": "",
           "type_params": []
         }

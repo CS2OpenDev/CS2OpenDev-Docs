@@ -236,7 +236,7 @@ Which enum feeds which channel/id range:
 | `GameEvents` | 200, 213-214, 450-453 | `EBaseGameEvents`, `ECsgoGameEvents` |
 | `Demo stream` | 0-19, 64 | `EDemoCommands` |
 
-## changelog.json (1.8 KB)
+## changelog.json (6.2 KB)
 
 For the one build-pair transition the current artifact set carries: every
 family is always listed (with `added_count`/`removed_count`/`changed_count`,
@@ -245,7 +245,7 @@ across the whole transition (which it is on this build), and
 `schema_history_anchor` links to the matching transition's anchor in
 `schema-history.json`.
 
-## schema-history.json (185.9 KB)
+## schema-history.json (168.7 KB)
 
 `transitions[]`: every recorded transition (from/to build, dates, op
 counts, `anchor`, `is_empty`). `detail[]`: full per-class field-op detail
@@ -255,7 +255,7 @@ class flagged `metadata_only: true` when every one of its field ops is
 a real structural change). `breaking[]` is `docs/overlays/schema-lens.yml`'s
 `breaking:` list, passed through as-is.
 
-## cs_script.json (418.6 KB)
+## cs_script.json (431.1 KB)
 
 The cs_script map-scripting API, from SchemaTracker's `cs_script_api.json`
 (a parse of Valve's `point_script.d.ts` from the Workshop Tools depot).

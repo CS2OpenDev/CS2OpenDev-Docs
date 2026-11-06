@@ -5,7 +5,7 @@ module: mathlib_extended
 
 # Module: mathlib_extended
 
-> Source: **Build 26393695** · 2026-11-03 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
 
 [📊 View UML Diagram](../diagrams/mathlib_extended.md)
 

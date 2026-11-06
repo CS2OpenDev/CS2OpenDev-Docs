@@ -1,5 +1,5 @@
 {
-  "build_id": "26393695",
+  "build_id": "26445667",
   "counts": {
     "classes": 3458,
     "commands": 1138,
@@ -17,8 +17,8 @@
     "paint_kits": 1481,
     "proto_files": 41,
     "script_enums": 17,
-    "script_hooks": 43,
-    "script_types": 43,
+    "script_hooks": 44,
+    "script_types": 45,
     "sticker_kits": 11789,
     "surfaces": 303
   },
@@ -257,8 +257,8 @@
   "note": "classes/enums/fields count distinct top-level entity names and their own declared fields; the modules[] list additionally counts client/server twin records (duplicates), so summing its per-module classes/enums can exceed the top-level totals above.",
   "platform": "windows-x86_64",
   "schema_version": "0.13.0",
-  "steam_date": "2026-11-03",
-  "steam_manifest_utc": "2026-11-03T00:27:26Z",
-  "tool_commit": "f740f5ef9edf7ec7c63c97416e08e46e055a87aa",
+  "steam_date": "2026-11-05",
+  "steam_manifest_utc": "2026-11-05T00:10:12Z",
+  "tool_commit": "056455e9fe3921148e8b38581d7a7e45fd28e2cf",
   "tool_version": "0.13.0"
 }

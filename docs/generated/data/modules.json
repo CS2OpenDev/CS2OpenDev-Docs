@@ -622,14 +622,14 @@
     },
     {
       "export_count": 6,
-      "file_size": "2031768",
+      "file_size": "2032792",
       "path": "game/bin/win64/pulse_system.dll",
       "resolved_interfaces": [
         "IPulseSystem_001"
       ],
       "schema_module": "pulse_system",
       "schema_registration_count": 102,
-      "sha256": "646776a058fa34c89bae0bec1817f257dd9756eed8f5868a564e76470390b3d8",
+      "sha256": "707a4f3fdbec6f8b08025ca71ee9674cba2fa7dc6571024d0dadd4e2b834f8ee",
       "stem": "pulse_system"
     },
     {
@@ -1321,7 +1321,7 @@
     },
     {
       "export_count": 6,
-      "file_size": "39224472",
+      "file_size": "39227544",
       "path": "game/csgo/bin/win64/client.dll",
       "resolved_interfaces": [
         "Source2Client002",
@@ -1331,7 +1331,7 @@
       ],
       "schema_module": "client",
       "schema_registration_count": 516,
-      "sha256": "57ee728e15c50881070d847d7516d632d70456e0648d486a53f2528ec53f6ee0",
+      "sha256": "9279421852772522121be2f13409dd37436e8c809ff48898c8c3d41b09e77844",
       "stem": "client"
     },
     {
@@ -1373,7 +1373,7 @@
     },
     {
       "export_count": 6,
-      "file_size": "34690200",
+      "file_size": "34672792",
       "path": "game/csgo/bin/win64/server.dll",
       "resolved_interfaces": [
         "Source2GameClients001",
@@ -1383,7 +1383,7 @@
       ],
       "schema_module": "server",
       "schema_registration_count": 766,
-      "sha256": "7e88b23196b0a746d99c7c622f947b96c25de61cc4d921d8dda79e515c4b48a8",
+      "sha256": "70c66e850b2ce72c8c7ca026de6989ef4de7f12dad64ec503645fbd2a7f06d9f",
       "stem": "server"
     },
     {

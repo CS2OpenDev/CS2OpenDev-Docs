@@ -8,7 +8,7 @@ kind: class
 
 # CCSPlayerController_ActionTrackingServices
 
-> Source: **Build 26393695** · 2026-11-03 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
 
 Scoreboard / stat-tracking component of CCSPlayerController: per-round and per-match kill and damage statistics.
 

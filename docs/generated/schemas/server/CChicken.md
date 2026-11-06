@@ -8,7 +8,7 @@ kind: class
 
 # CChicken
 
-> Source: **Build 26393695** · 2026-11-03 · `windows-x86_64` · schema `0.13.0`
+> Source: **Build 26445667** · 2026-11-05 · `windows-x86_64` · schema `0.13.0`
 
 **Kind:** class · **Size:** 13040 bytes (`0x32f0`) · **Align:** 16 · **Module:** server
 
@@ -270,6 +270,6 @@ classDiagram
 | `0x32a4` | `m_flActiveFollowStartTime` | [GameTime_t](../entity2/GameTime_t.md) |  |  |
 | `0x32a8` | `m_followMinuteTimer` | [CountdownTimer](../server/CountdownTimer.md) |  |  |
 | `0x32c8` | `m_BlockDirectionTimer` | [CountdownTimer](../server/CountdownTimer.md) |  |  |
-| `0x32e2` | `m_bSpawnDyingParticles` | bool |  |  |
+| `0x32e3` | `m_bSpawnDyingParticles` | bool |  |  |
 
 **Also inherits (secondary base classes):** [IHasAttributes](../server/IHasAttributes.md) — additional-base fields sit at a shifted offset the schema does not record; see each base's own page for its layout.
